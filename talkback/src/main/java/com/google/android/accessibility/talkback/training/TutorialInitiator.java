@@ -16,13 +16,10 @@
 
 package com.google.android.accessibility.talkback.training;
 
-import static com.google.android.accessibility.talkback.trainingcommon.TrainingConfig.TrainingId.TRAINING_ID_FIRST_RUN_KEYBOARD_TUTORIAL;
 import static com.google.android.accessibility.talkback.trainingcommon.TrainingConfig.TrainingId.TRAINING_ID_TUTORIAL_FOR_TV;
 import static com.google.android.accessibility.talkback.trainingcommon.TrainingConfig.TrainingId.TRAINING_ID_TUTORIAL_FOR_WATCH;
-import static com.google.android.accessibility.talkback.trainingcommon.TrainingConfig.TrainingId.TRAINING_ID_TUTORIAL_KEYBOARD;
 import static com.google.android.accessibility.talkback.trainingcommon.TrainingConfig.TrainingId.TRAINING_ID_TUTORIAL_PRACTICE_GESTURE;
 import static com.google.android.accessibility.talkback.trainingcommon.TrainingConfig.TrainingId.TRAINING_ID_TUTORIAL_PRACTICE_GESTURE_PRE_R;
-import static com.google.android.accessibility.talkback.trainingcommon.TrainingConfig.TrainingId.TRAINING_ID_TUTORIAL_PRACTICE_KEYBOARD_GESTURE;
 
 import android.content.Context;
 import android.content.Intent;
@@ -54,8 +51,7 @@ public class TutorialInitiator {
       return TrainingActivity.createTrainingIntent(context, TRAINING_ID_TUTORIAL_FOR_TV);
     } else if (FeatureFlagReader.enableShowTalkbackKeyboardTutorial(context)
         && inputDeviceMonitor.hasPhysicalKeyboard()) {
-      return TrainingActivity.createTrainingIntent(
-          context, TRAINING_ID_FIRST_RUN_KEYBOARD_TUTORIAL, /* showExitBanner= */ true);
+      return TutorialActivity.keyboardIntent(context);
     } else {
       return TutorialActivity.intent(context);
     }
@@ -78,7 +74,7 @@ public class TutorialInitiator {
       return new Intent(context, TutorialChooserActivity.class);
     } else if (FeatureFlagReader.enableShowTalkbackKeyboardTutorial(context)
         && inputDeviceMonitor.hasPhysicalKeyboard()) {
-      return TrainingActivity.createTrainingIntent(context, TRAINING_ID_TUTORIAL_KEYBOARD);
+      return TutorialActivity.keyboardIntent(context);
     } else {
       return TutorialActivity.intent(context);
     }
@@ -96,24 +92,11 @@ public class TutorialInitiator {
   }
 
   public static Intent createKeyboardTutorialIntent(Context context) {
-    return TrainingActivity.createTrainingIntent(context, TRAINING_ID_TUTORIAL_KEYBOARD);
+    return TutorialActivity.keyboardIntent(context);
   }
 
   public static Intent createPracticeKeyboardShortcutsIntent(Context context) {
-    // The keyboard learn mode page supports both keyboard shortcuts and multi-finger gestures.
-    if (FeatureFlagReader.enableShowLearnModePageKeyboard(context)
-        && FeatureSupport.isMultiFingerGestureSupported()) {
-      return TrainingActivity.createTrainingIntent(
-          context, TRAINING_ID_TUTORIAL_PRACTICE_KEYBOARD_GESTURE);
-    } else {
-      // TODO: Remove this failsafe once the flag is fully rolled out.
-      // Default to gestures page in the edge case that this intent get called without the
-      // necessary features flags enabled.
-      return TrainingActivity.createTrainingIntent(
-          context,
-          FeatureSupport.isMultiFingerGestureSupported()
-              ? TRAINING_ID_TUTORIAL_PRACTICE_GESTURE
-              : TRAINING_ID_TUTORIAL_PRACTICE_GESTURE_PRE_R);
-    }
+    return TutorialActivity.keyboardIntent(context, TutorialLessons.PRACTICE_LESSON);
   }
+
 }

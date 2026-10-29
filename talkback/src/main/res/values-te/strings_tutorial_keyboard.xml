@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="sandfly_keyboard_tutorial_title">SandFly కీబోర్డ్ ట్యుటోరియల్</string>
+    <string name="sandfly_keyboard_tutorial_no_key"><xliff:g id="command" example="తర్వాత అంశం">%1$s</xliff:g>కి కీబోర్డ్ షార్ట్‌కట్ లేదు. “ఆదేశాలు”లో ఒకదాన్ని కేటాయించండి, లేదా “దశను స్కిప్ చేయండి”ని ఉపయోగించండి.</string>
+    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">బ్రౌజింగ్ మోడ్‌కు “మెరుగుపరచబడిన కీ-మ్యాప్” అవసరం. దాన్ని <xliff:g id="settings_path" example="SandFly సెట్టింగ్‌లు &gt; కీబోర్డ్ షార్ట్‌కట్‌లు &gt; కీమ్యాప్‌ను ఎంచుకోండి">%1$s</xliff:g>లో ఎంచుకోండి, లేదా “దశను స్కిప్ చేయండి”ని ఉపయోగించండి.</string>
+    <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g> రెండుసార్లు</string>
+    <string name="sandfly_keyboard_tutorial_lesson_complete_next">పాఠం పూర్తయింది. తర్వాతి పాఠాన్ని ప్రారంభించడానికి <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> నొక్కండి.</string>
+    <string name="sandfly_keyboard_tutorial_lesson_complete_last">పాఠం పూర్తయింది. ట్యుటోరియల్‌ను ముగించడానికి <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> నొక్కండి.</string>
+    <string name="sandfly_keyboard_tutorial_chapter_web">వెబ్ పేజీలు</string>
+
+    <string name="sandfly_keyboard_tutorial_welcome_intro">ఈ ట్యుటోరియల్ SandFly కీబోర్డ్ షార్ట్‌కట్‌లను నేర్పుతుంది. వాటిలో చాలావరకు <xliff:g id="key" example="Action">%1$s</xliff:g> కీని ఇతర కీలతో కలిపి ఉపయోగిస్తాయి. <xliff:g id="location" example="యాక్షన్ కీ అనేది ఎడమ వైపున ఉన్న Alt కీ పక్కన ఉండే Windows కీ.">%2$s</xliff:g> Ctrl స్పీచ్‌ను ఆపుతుంది. ప్రతి పాఠం ఒక సూచనను ఇస్తుంది, అది పేర్కొన్న కీలను మీరు నొక్కే వరకు వేచి ఉంటుంది, ఆపై తర్వాతి సూచనను ఇస్తుంది. పాఠం పేరు తర్వాత ఉన్న మొదటి ఐటెమ్ సూచన. “విషయ సూచిక” ప్రతి పాఠాన్ని లిస్ట్ చేస్తుంది, మీరు ఉన్న పాఠం వద్దే ట్యుటోరియల్ మళ్లీ తెరుచుకుంటుంది.</string>
+    <string name="sandfly_keyboard_tutorial_action_key_location">యాక్షన్ కీ అనేది ఎడమ వైపున ఉన్న Alt కీ పక్కన ఉండే Windows కీ. Apple కీబోర్డ్‌లలో, ఇది స్పేస్ బార్ పక్కన ఉండే Command కీ.</string>
+    <string name="sandfly_keyboard_tutorial_alt_key_location">Alt కీ స్పేస్ బార్ పక్కన ఉంటుంది.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_start">ప్రారంభించడానికి <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> నొక్కండి.</string>
+
+    <string name="sandfly_keyboard_tutorial_move_intro">“తర్వాత అంశం”, “మునుపటి అంశం” స్క్రీన్‌పై ఉన్న ఐటెమ్‌ల మధ్య చదివే క్రమంలో కదులుతాయి.</string>
+    <string name="sandfly_keyboard_tutorial_move_next">తర్వాతి ఐటెమ్‌కు వెళ్లడానికి <xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g> నొక్కండి. <xliff:g id="item" example="గుడ్లు">%2$s</xliff:g> వచ్చే వరకు కొనసాగించండి.</string>
+    <string name="sandfly_keyboard_tutorial_move_previous">మునుపటి ఐటెమ్‌కు వెళ్లడానికి <xliff:g id="keys" example="Action + Left arrow">%1$s</xliff:g> నొక్కండి. <xliff:g id="item" example="బ్రెడ్">%2$s</xliff:g>కు తిరిగి వెళ్లండి.</string>
+
+    <string name="sandfly_keyboard_tutorial_activate_intro">యాక్టివేట్ చేయడం ఫోకస్ ఉన్న ఐటెమ్‌పై పని చేస్తుంది.</string>
+    <string name="sandfly_keyboard_tutorial_activate_button"><xliff:g id="button" example="గంట కొట్టండి">%2$s</xliff:g>కు వెళ్లండి. దాన్ని యాక్టివేట్ చేయడానికి <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> నొక్కండి.</string>
+    <string name="sandfly_keyboard_tutorial_activate_check_box"><xliff:g id="keys" example="Action + Space">%1$s</xliff:g>తో <xliff:g id="check_box" example="అదనపు చీజ్">%2$s</xliff:g>ని చెక్ చేయండి.</string>
+    <string name="sandfly_keyboard_tutorial_activate_hold">కొన్ని ఐటెమ్‌లను నొక్కి ఉంచినప్పుడు అవి వేరే పని చేస్తాయి. <xliff:g id="button" example="వివరాలు">%2$s</xliff:g>కు వెళ్లండి. దాన్ని నొక్కి ఉంచడానికి <xliff:g id="keys" example="Action + Shift + Space">%1$s</xliff:g> నొక్కండి.</string>
+
+    <string name="sandfly_keyboard_tutorial_reading_controls_intro">పైకి, కిందికి కదిలితే ఏమి జరుగుతుందో రీడింగ్ కంట్రోల్స్ నిర్ణయిస్తాయి, ఉదాహరణకు పదం వారీగా లేదా అక్షరం వారీగా కదలడం. “తర్వాత అంశం”, “మునుపటి అంశం” ఇప్పటికీ ఐటెమ్‌ల మధ్య కదులుతాయి.</string>
+    <string name="sandfly_keyboard_tutorial_choose_reading_control">రీడింగ్ కంట్రోల్‌ను మార్చడానికి <xliff:g id="keys" example="Action + Shift + Right arrow">%1$s</xliff:g> లేదా <xliff:g id="keys" example="Action + Shift + Left arrow">%2$s</xliff:g> నొక్కండి. <xliff:g id="reading_control" example="పదాలు">%3$s</xliff:g>ని ఎంచుకోండి.</string>
+    <string name="sandfly_keyboard_tutorial_next_word">తర్వాతి పదానికి వెళ్లడానికి <xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g> నొక్కండి. మూడు పదాలు కదలండి.</string>
+    <string name="sandfly_keyboard_tutorial_characters">రీడింగ్ కంట్రోల్‌ను <xliff:g id="reading_control" example="అక్షరాలు">%2$s</xliff:g>కి మార్చండి. ఒక అక్షరం కదలడానికి <xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g> నొక్కండి.</string>
+    <string name="sandfly_keyboard_tutorial_headings_jump">తర్వాతి హెడింగ్‌కు వెళ్లడానికి <xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g> నొక్కండి. <xliff:g id="heading" example="వారాంతం">%2$s</xliff:g>కు వెళ్లండి.</string>
+
+    <string name="sandfly_keyboard_tutorial_continuous_intro">ఫోకస్ చేసిన ఐటెమ్ నుండి స్క్రీన్ చివరి వరకు SandFly చదవగలదు. Ctrl చదవడాన్ని ఆపుతుంది.</string>
+    <string name="sandfly_keyboard_tutorial_continuous_read">ఫోకస్ చేసిన ఐటెమ్ నుండి చదవడానికి <xliff:g id="keys" example="Action + Ctrl + R">%1$s</xliff:g> నొక్కండి.</string>
+
+    <string name="sandfly_keyboard_tutorial_scrolling_intro">లిస్ట్‌లు ఒకేసారి తమ ఐటెమ్‌లలో కొన్నింటిని మాత్రమే చూపిస్తాయి. చూపిన చివరి ఐటెమ్ దాటి కదిలితే లిస్ట్ స్క్రోల్ అవుతుంది.</string>
+    <string name="sandfly_keyboard_tutorial_scrolling_next"><xliff:g id="item" example="ఐటెమ్ 15">%2$s</xliff:g> వచ్చే వరకు <xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g> నొక్కండి.</string>
+
+    <string name="sandfly_keyboard_tutorial_actions_intro">కొన్ని ఐటెమ్‌లకు యాక్టివేట్ చేయడం కాకుండా ఇతర చర్యలు ఉంటాయి, ఉదాహరణకు మెసేజ్‌కు ఆర్కైవ్ లేదా తొలగించండి. చర్యల మెనూ వాటిని లిస్ట్ చేస్తుంది.</string>
+    <string name="sandfly_keyboard_tutorial_actions_archive">మెసేజ్‌కు వెళ్లండి. దాని చర్యలను తెరవడానికి <xliff:g id="keys" example="Action + Ctrl + A">%1$s</xliff:g> నొక్కండి. <xliff:g id="action" example="ఆర్కైవ్ చేయండి">%2$s</xliff:g>ని ఎంచుకోండి.</string>
+
+    <string name="sandfly_keyboard_tutorial_typing_intro">టెక్స్ట్ ఫీల్డ్‌ను యాక్టివేట్ చేస్తే అందులో టైప్ చేయవచ్చు.</string>
+    <string name="sandfly_keyboard_tutorial_typing_open"><xliff:g id="field" example="పేరు">%2$s</xliff:g> ఫీల్డ్‌కు వెళ్లండి. టైప్ చేయడం ప్రారంభించడానికి <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> నొక్కండి.</string>
+    <string name="sandfly_keyboard_tutorial_typing_delete">బ్యాక్‌స్పేస్‌తో చివరి అక్షరాన్ని తొలగించండి.</string>
+
+    <string name="sandfly_keyboard_tutorial_system_intro">Androidకు యాక్షన్ కీతో సొంత కీబోర్డ్ షార్ట్‌కట్‌లు ఉన్నాయి. అవి ప్రతి స్క్రీన్‌లో పని చేస్తాయి. ఈ పాఠంలో, ప్రతి షార్ట్‌కట్‌ను చేయడానికి బదులుగా అది ఏమి చేస్తుందో ట్యుటోరియల్ చెబుతుంది.</string>
+    <string name="sandfly_keyboard_tutorial_system_back">వెనుకకు వెళ్లడానికి <xliff:g id="keys" example="Action + Esc">%1$s</xliff:g> నొక్కండి.</string>
+    <string name="sandfly_keyboard_tutorial_system_home">హోమ్ స్క్రీన్‌కు వెళ్లడానికి <xliff:g id="keys" example="Action + H">%1$s</xliff:g> నొక్కండి.</string>
+    <string name="sandfly_keyboard_tutorial_system_overview">ఇటీవలి యాప్‌లను చూపడానికి <xliff:g id="keys" example="Action + Tab">%1$s</xliff:g> నొక్కండి. Alt + Tab యాప్‌ల మధ్య మారుస్తుంది.</string>
+    <string name="sandfly_keyboard_tutorial_system_notifications">నోటిఫికేషన్‌లను తెరవడానికి <xliff:g id="keys" example="Action + N">%1$s</xliff:g> నొక్కండి.</string>
+
+    <string name="sandfly_keyboard_tutorial_menu_open">SandFly మెనూను తెరవడానికి <xliff:g id="keys" example="Action + Ctrl + M">%1$s</xliff:g> నొక్కండి. దాని ఆదేశాల మధ్య కదలండి. Esc మెనూను మూసివేస్తుంది.</string>
+    <string name="sandfly_keyboard_tutorial_menu_close">మెనూను మూసివేయడానికి Esc నొక్కండి.</string>
+
+    <string name="sandfly_keyboard_tutorial_shortcut_list_title">కీబోర్డ్ షార్ట్‌కట్‌ల లిస్ట్</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_intro">SandFly ప్రతి కీబోర్డ్ షార్ట్‌కట్‌ను దాని ఆదేశంతో లిస్ట్ చేస్తుంది.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_open">లిస్ట్‌ను తెరవడానికి <xliff:g id="keys" example="Action + Shift + /">%1$s</xliff:g> నొక్కండి. Esc దాన్ని మూసివేస్తుంది.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_close">లిస్ట్‌ను మూసివేయడానికి Esc నొక్కండి.</string>
+
+    <string name="sandfly_keyboard_tutorial_commands_copy">SandFly చివరిగా పలికిన టెక్స్ట్‌ను క్లిప్‌బోర్డ్‌కు కాపీ చేయడానికి <xliff:g id="keys" example="Action + Ctrl + C">%1$s</xliff:g> నొక్కండి.</string>
+    <string name="sandfly_keyboard_tutorial_commands_search">స్క్రీన్‌పై టెక్స్ట్ కోసం వెతకడానికి <xliff:g id="keys" example="Action + Ctrl + /">%1$s</xliff:g> నొక్కండి. ఈ పాఠంలో, బదులుగా అది ఏమి చేస్తుందో ట్యుటోరియల్ చెబుతుంది.</string>
+
+    <string name="sandfly_keyboard_tutorial_browse_mode_title">బ్రౌజింగ్ మోడ్</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_intro">బ్రౌజింగ్ మోడ్‌లో, ఒక్కో అక్షరం ఒక రకానికి చెందిన తర్వాతి ఐటెమ్‌కు వెళ్తుంది, ఉదాహరణకు హెడింగ్‌లకు H, లింక్‌లకు K, బటన్‌లకు B. అక్షరంతో Shift వెనుకకు వెళ్తుంది. టెక్స్ట్ ఫీల్డ్‌లో టైప్ చేస్తున్నప్పుడు బ్రౌజింగ్ మోడ్ ఆఫ్ అవుతుంది.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_on">బ్రౌజింగ్ మోడ్‌ను ఆన్ చేయడానికి <xliff:g id="keys" example="Action twice">%1$s</xliff:g> నొక్కండి.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_heading">తర్వాతి హెడింగ్‌కు వెళ్లడానికి <xliff:g id="keys" example="H">%1$s</xliff:g> నొక్కండి. <xliff:g id="heading" example="వారాంతం">%2$s</xliff:g>కు వెళ్లండి.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_off">బ్రౌజింగ్ మోడ్‌ను ఆఫ్ చేయడానికి <xliff:g id="keys" example="Action twice">%1$s</xliff:g> నొక్కండి.</string>
+
+    <string name="sandfly_keyboard_tutorial_practice_title">కీబోర్డ్ ప్రాక్టీస్</string>
+    <string name="sandfly_keyboard_tutorial_practice_intro">ప్రతి కీబోర్డ్ షార్ట్‌కట్ తన ఆదేశాన్ని రన్ చేయకుండా, తన కీలను, ఆదేశాన్ని చెబుతుంది. “తర్వాత అంశం”, “మునుపటి అంశం”, యాక్టివేట్ చేయడం ఇప్పటికీ పని చేస్తాయి.</string>
+    <string name="sandfly_keyboard_tutorial_practice_step">ఏదైనా కీబోర్డ్ షార్ట్‌కట్ ఏమి చేస్తుందో వినడానికి దాన్ని నొక్కండి. ఆపడానికి, <xliff:g id="button" example="ప్రాక్టీస్‌ను ముగించండి">%1$s</xliff:g>ని యాక్టివేట్ చేయండి.</string>
+</resources>

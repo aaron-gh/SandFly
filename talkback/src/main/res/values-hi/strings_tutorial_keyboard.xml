@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="sandfly_keyboard_tutorial_title">SandFly कीबोर्ड ट्यूटोरियल</string>
+    <string name="sandfly_keyboard_tutorial_no_key"><xliff:g id="command" example="Next item">%1$s</xliff:g> के लिए कोई कीबोर्ड शॉर्टकट नहीं है. \'निर्देश\' में कोई शॉर्टकट असाइन करें या \'चरण छोड़ें\' का इस्तेमाल करें.</string>
+    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">\'ब्राउज़ करें\' मोड के लिए \'बेहतर कीमैप\' ज़रूरी है. इसे <xliff:g id="settings_path" example="SandFly settings &gt; Keyboard shortcuts &gt; Choose a keymap">%1$s</xliff:g> में चुनें या \'चरण छोड़ें\' का इस्तेमाल करें.</string>
+    <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g> दो बार</string>
+    <string name="sandfly_keyboard_tutorial_lesson_complete_next">पाठ पूरा हुआ. अगला पाठ शुरू करने के लिए <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> दबाएं.</string>
+    <string name="sandfly_keyboard_tutorial_lesson_complete_last">पाठ पूरा हुआ. ट्यूटोरियल पूरा करने के लिए <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> दबाएं.</string>
+    <string name="sandfly_keyboard_tutorial_chapter_web">वेब पेज</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">यह ट्यूटोरियल SandFly के कीबोर्ड शॉर्टकट सिखाता है. इनमें से ज़्यादातर शॉर्टकट दूसरे बटन के साथ <xliff:g id="key" example="Action">%1$s</xliff:g> का इस्तेमाल करते हैं. <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> Ctrl से बोली बंद होती है. हर पाठ एक निर्देश देता है, जब तक आप उसमें बताए गए बटन नहीं दबाते तब तक इंतज़ार करता है, फिर अगला निर्देश देता है. निर्देश, पाठ के नाम के बाद वाला पहला आइटम होता है. \'विषय-सूची\' में सभी पाठ दिए गए हैं, और ट्यूटोरियल उसी पाठ पर दोबारा खुलता है जिस पर आप थे.</string>
+    <string name="sandfly_keyboard_tutorial_action_key_location">ऐक्शन बटन, Windows बटन है, जो बाईं ओर मौजूद Alt बटन के बगल में है. Apple कीबोर्ड पर, यह Command बटन है, जो Space बटन के बगल में है.</string>
+    <string name="sandfly_keyboard_tutorial_alt_key_location">Alt बटन, Space बटन के बगल में है.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_start">शुरू करने के लिए <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> दबाएं.</string>
+    <string name="sandfly_keyboard_tutorial_move_intro">\'अगला आइटम\' और \'पिछला आइटम\' स्क्रीन पर मौजूद आइटम पर पढ़ने के क्रम में ले जाते हैं.</string>
+    <string name="sandfly_keyboard_tutorial_move_next">अगले आइटम पर जाने के लिए <xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g> दबाएं. <xliff:g id="item" example="Eggs">%2$s</xliff:g> तक पहुंचने तक ऐसा करते रहें.</string>
+    <string name="sandfly_keyboard_tutorial_move_previous">पिछले आइटम पर जाने के लिए <xliff:g id="keys" example="Action + Left arrow">%1$s</xliff:g> दबाएं. वापस <xliff:g id="item" example="Bread">%2$s</xliff:g> पर जाएं.</string>
+    <string name="sandfly_keyboard_tutorial_activate_intro">चालू करने की कार्रवाई फ़ोकस वाले आइटम पर होती है.</string>
+    <string name="sandfly_keyboard_tutorial_activate_button"><xliff:g id="button" example="Ring the bell">%2$s</xliff:g> पर जाएं. इसे चालू करने के लिए <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> दबाएं.</string>
+    <string name="sandfly_keyboard_tutorial_activate_check_box"><xliff:g id="keys" example="Action + Space">%1$s</xliff:g> से <xliff:g id="check_box" example="Extra cheese">%2$s</xliff:g> को चेक करें.</string>
+    <string name="sandfly_keyboard_tutorial_activate_hold">कुछ आइटम दबाकर रखने पर कुछ और करते हैं. <xliff:g id="button" example="Details">%2$s</xliff:g> पर जाएं. इसे दबाकर रखने के लिए <xliff:g id="keys" example="Action + Shift + Space">%1$s</xliff:g> दबाएं.</string>
+    <string name="sandfly_keyboard_tutorial_reading_controls_intro">टेक्स्ट पढ़ने से जुड़े कंट्रोल तय करते हैं कि ऊपर और नीचे जाने पर क्या होगा, जैसे शब्द या वर्ण के हिसाब से आगे बढ़ना. \'अगला आइटम\' और \'पिछला आइटम\' अब भी एक आइटम से दूसरे आइटम पर ले जाते हैं.</string>
+    <string name="sandfly_keyboard_tutorial_choose_reading_control">टेक्स्ट पढ़ने से जुड़ा कंट्रोल बदलने के लिए <xliff:g id="keys" example="Action + Shift + Right arrow">%1$s</xliff:g> या <xliff:g id="keys" example="Action + Shift + Left arrow">%2$s</xliff:g> दबाएं. <xliff:g id="reading_control" example="Words">%3$s</xliff:g> चुनें.</string>
+    <string name="sandfly_keyboard_tutorial_next_word">अगले शब्द पर जाने के लिए <xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g> दबाएं. तीन शब्द आगे जाएं.</string>
+    <string name="sandfly_keyboard_tutorial_characters">टेक्स्ट पढ़ने से जुड़े कंट्रोल को <xliff:g id="reading_control" example="Characters">%2$s</xliff:g> पर सेट करें. एक वर्ण आगे जाने के लिए <xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g> दबाएं.</string>
+    <string name="sandfly_keyboard_tutorial_headings_jump">अगली हेडिंग पर जाने के लिए <xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g> दबाएं. <xliff:g id="heading" example="Weekend">%2$s</xliff:g> पर जाएं.</string>
+    <string name="sandfly_keyboard_tutorial_continuous_intro">SandFly फ़ोकस वाले आइटम से स्क्रीन के आखिर तक पढ़ सकता है. Ctrl से पढ़ना बंद होता है.</string>
+    <string name="sandfly_keyboard_tutorial_continuous_read">फ़ोकस वाले आइटम से पढ़ने के लिए <xliff:g id="keys" example="Action + Ctrl + R">%1$s</xliff:g> दबाएं.</string>
+    <string name="sandfly_keyboard_tutorial_scrolling_intro">सूचियां एक बार में अपने कुछ ही आइटम दिखाती हैं. दिखाए गए आखिरी आइटम से आगे जाने पर सूची स्क्रोल होती है.</string>
+    <string name="sandfly_keyboard_tutorial_scrolling_next"><xliff:g id="item" example="Item 15">%2$s</xliff:g> तक पहुंचने तक <xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g> दबाएं.</string>
+    <string name="sandfly_keyboard_tutorial_actions_intro">कुछ आइटम में चालू करने के अलावा दूसरी कार्रवाइयां भी होती हैं, जैसे किसी संदेश के लिए \'संग्रहित करें\' या \'मिटाएं\'. कार्रवाइयों के मेन्यू में ये कार्रवाइयां दी गई होती हैं.</string>
+    <string name="sandfly_keyboard_tutorial_actions_archive">संदेश पर जाएं. इसकी कार्रवाइयां खोलने के लिए <xliff:g id="keys" example="Action + Ctrl + A">%1$s</xliff:g> दबाएं. <xliff:g id="action" example="Archive">%2$s</xliff:g> चुनें.</string>
+    <string name="sandfly_keyboard_tutorial_typing_intro">टेक्स्ट फ़ील्ड चालू करने पर उसमें टाइप किया जा सकता है.</string>
+    <string name="sandfly_keyboard_tutorial_typing_open"><xliff:g id="field" example="Name">%2$s</xliff:g> फ़ील्ड पर जाएं. टाइप करना शुरू करने के लिए <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> दबाएं.</string>
+    <string name="sandfly_keyboard_tutorial_typing_delete">Backspace से आखिरी अक्षर मिटाएं.</string>
+    <string name="sandfly_keyboard_tutorial_system_intro">Android के ऐक्शन बटन वाले अपने कीबोर्ड शॉर्टकट हैं. ये हर स्क्रीन पर काम करते हैं. इस पाठ में, शॉर्टकट की कार्रवाई होने के बजाय ट्यूटोरियल बताता है कि हर शॉर्टकट क्या करता है.</string>
+    <string name="sandfly_keyboard_tutorial_system_back">वापस जाने के लिए <xliff:g id="keys" example="Action + Esc">%1$s</xliff:g> दबाएं.</string>
+    <string name="sandfly_keyboard_tutorial_system_home">होम स्क्रीन पर जाने के लिए <xliff:g id="keys" example="Action + H">%1$s</xliff:g> दबाएं.</string>
+    <string name="sandfly_keyboard_tutorial_system_overview">हाल ही में इस्तेमाल किए गए ऐप्लिकेशन दिखाने के लिए <xliff:g id="keys" example="Action + Tab">%1$s</xliff:g> दबाएं. Alt + Tab से एक ऐप्लिकेशन से दूसरे ऐप्लिकेशन पर स्विच होता है.</string>
+    <string name="sandfly_keyboard_tutorial_system_notifications">सूचनाएं खोलने के लिए <xliff:g id="keys" example="Action + N">%1$s</xliff:g> दबाएं.</string>
+    <string name="sandfly_keyboard_tutorial_menu_open">SandFly मेन्यू खोलने के लिए <xliff:g id="keys" example="Action + Ctrl + M">%1$s</xliff:g> दबाएं. इसके निर्देशों पर एक-एक करके जाएं. Esc से मेन्यू बंद होता है.</string>
+    <string name="sandfly_keyboard_tutorial_menu_close">मेन्यू बंद करने के लिए Esc दबाएं.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_title">कीबोर्ड शॉर्टकट की सूची</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_intro">SandFly हर कीबोर्ड शॉर्टकट को उसके निर्देश के साथ सूची में दिखाता है.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_open">सूची खोलने के लिए <xliff:g id="keys" example="Action + Shift + /">%1$s</xliff:g> दबाएं. Esc से यह बंद होती है.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_close">सूची बंद करने के लिए Esc दबाएं.</string>
+    <string name="sandfly_keyboard_tutorial_commands_copy">SandFly का बोला गया पिछला टेक्स्ट क्लिपबोर्ड पर कॉपी करने के लिए <xliff:g id="keys" example="Action + Ctrl + C">%1$s</xliff:g> दबाएं.</string>
+    <string name="sandfly_keyboard_tutorial_commands_search">स्क्रीन पर टेक्स्ट खोजने के लिए <xliff:g id="keys" example="Action + Ctrl + /">%1$s</xliff:g> दबाएं. इस पाठ में, यह कार्रवाई होने के बजाय ट्यूटोरियल बताता है कि यह क्या करती है.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_title">\'ब्राउज़ करें\' मोड</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_intro">\'ब्राउज़ करें\' मोड में, एक अक्षर दबाने पर किसी एक तरह के अगले आइटम पर पहुंचते हैं, जैसे हेडिंग के लिए H, लिंक के लिए K, और बटन के लिए B. अक्षर के साथ Shift दबाने पर पीछे जाते हैं. टेक्स्ट फ़ील्ड में टाइप करते समय \'ब्राउज़ करें\' मोड बंद रहता है.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_on">\'ब्राउज़ करें\' मोड चालू करने के लिए <xliff:g id="keys" example="Action twice">%1$s</xliff:g> दबाएं.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_heading">अगली हेडिंग पर जाने के लिए <xliff:g id="keys" example="H">%1$s</xliff:g> दबाएं. <xliff:g id="heading" example="Weekend">%2$s</xliff:g> पर जाएं.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_off">\'ब्राउज़ करें\' मोड बंद करने के लिए <xliff:g id="keys" example="Action twice">%1$s</xliff:g> दबाएं.</string>
+    <string name="sandfly_keyboard_tutorial_practice_title">कीबोर्ड का अभ्यास</string>
+    <string name="sandfly_keyboard_tutorial_practice_intro">हर कीबोर्ड शॉर्टकट पर उसका निर्देश चलने के बजाय, उसके बटन और निर्देश बोले जाते हैं. \'अगला आइटम\', \'पिछला आइटम\' और चालू करना अब भी काम करते हैं.</string>
+    <string name="sandfly_keyboard_tutorial_practice_step">कोई भी कीबोर्ड शॉर्टकट दबाकर सुनें कि वह क्या करता है. बंद करने के लिए, <xliff:g id="button" example="End practice">%1$s</xliff:g> को चालू करें.</string>
+</resources>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="sandfly_keyboard_tutorial_title">บทแนะนำแป้นพิมพ์ของ SandFly</string>
+    <string name="sandfly_keyboard_tutorial_no_key"><xliff:g id="command" example="รายการถัดไป">%1$s</xliff:g> ไม่มีแป้นพิมพ์ลัด กำหนดได้ในคำสั่ง หรือใช้ข้ามขั้นตอน</string>
+    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">โหมดอ่านต้องใช้คีย์แมปที่ปรับปรุงแล้ว เลือกได้ใน <xliff:g id="settings_path" example="การตั้งค่า SandFly &gt; แป้นพิมพ์ลัด &gt; เลือกคีย์แมป">%1$s</xliff:g> หรือใช้ข้ามขั้นตอน</string>
+    <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g> สองครั้ง</string>
+    <string name="sandfly_keyboard_tutorial_lesson_complete_next">จบบทเรียนแล้ว กด <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> เพื่อเริ่มบทเรียนถัดไป</string>
+    <string name="sandfly_keyboard_tutorial_lesson_complete_last">จบบทเรียนแล้ว กด <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> เพื่อจบบทแนะนำ</string>
+    <string name="sandfly_keyboard_tutorial_chapter_web">หน้าเว็บ</string>
+
+    <string name="sandfly_keyboard_tutorial_welcome_intro">บทแนะนำนี้สอนแป้นพิมพ์ลัดของ SandFly แป้นพิมพ์ลัดส่วนใหญ่ใช้แป้น <xliff:g id="key" example="Action">%1$s</xliff:g> ร่วมกับแป้นอื่น <xliff:g id="location" example="แป้นดำเนินการคือแป้น Windows ซึ่งอยู่ข้างแป้น Alt ด้านซ้าย">%2$s</xliff:g> Ctrl หยุดการพูด แต่ละบทเรียนจะให้คำแนะนำ รอจนกว่าคุณกดแป้นที่ระบุ แล้วจึงให้คำแนะนำถัดไป คำแนะนำคือรายการแรกต่อจากชื่อบทเรียน สารบัญแสดงทุกบทเรียน และบทแนะนำจะเปิดอีกครั้งที่บทเรียนที่คุณเรียนอยู่</string>
+    <string name="sandfly_keyboard_tutorial_action_key_location">แป้นดำเนินการคือแป้น Windows ซึ่งอยู่ข้างแป้น Alt ด้านซ้าย สำหรับแป้นพิมพ์ Apple จะเป็นแป้น Command ซึ่งอยู่ข้างแป้นเว้นวรรค</string>
+    <string name="sandfly_keyboard_tutorial_alt_key_location">แป้น Alt อยู่ข้างแป้นเว้นวรรค</string>
+    <string name="sandfly_keyboard_tutorial_welcome_start">กด <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> เพื่อเริ่ม</string>
+
+    <string name="sandfly_keyboard_tutorial_move_intro">รายการถัดไปและรายการก่อนหน้าจะย้ายไปตามรายการบนหน้าจอตามลำดับการอ่าน</string>
+    <string name="sandfly_keyboard_tutorial_move_next">กด <xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g> เพื่อไปยังรายการถัดไป ทำต่อจนถึง <xliff:g id="item" example="ไข่">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_tutorial_move_previous">กด <xliff:g id="keys" example="Action + Left arrow">%1$s</xliff:g> เพื่อไปยังรายการก่อนหน้า กลับไปที่ <xliff:g id="item" example="ขนมปัง">%2$s</xliff:g></string>
+
+    <string name="sandfly_keyboard_tutorial_activate_intro">การเปิดใช้งานมีผลกับรายการที่มีโฟกัส</string>
+    <string name="sandfly_keyboard_tutorial_activate_button">ไปที่ <xliff:g id="button" example="กดกริ่ง">%2$s</xliff:g> กด <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> เพื่อเปิดใช้งาน</string>
+    <string name="sandfly_keyboard_tutorial_activate_check_box">เลือก <xliff:g id="check_box" example="เพิ่มชีส">%2$s</xliff:g> ด้วย <xliff:g id="keys" example="Action + Space">%1$s</xliff:g></string>
+    <string name="sandfly_keyboard_tutorial_activate_hold">บางรายการทำงานอย่างอื่นเมื่อกดค้างไว้ ไปที่ <xliff:g id="button" example="รายละเอียด">%2$s</xliff:g> กด <xliff:g id="keys" example="Action + Shift + Space">%1$s</xliff:g> เพื่อกดค้างไว้</string>
+
+    <string name="sandfly_keyboard_tutorial_reading_controls_intro">การควบคุมการอ่านกำหนดว่าการย้ายขึ้นและลงจะทำอะไร เช่น ย้ายทีละคำหรือทีละอักขระ รายการถัดไปและรายการก่อนหน้ายังคงย้ายระหว่างรายการ</string>
+    <string name="sandfly_keyboard_tutorial_choose_reading_control">กด <xliff:g id="keys" example="Action + Shift + Right arrow">%1$s</xliff:g> หรือ <xliff:g id="keys" example="Action + Shift + Left arrow">%2$s</xliff:g> เพื่อเปลี่ยนการควบคุมการอ่าน เลือก <xliff:g id="reading_control" example="คำ">%3$s</xliff:g></string>
+    <string name="sandfly_keyboard_tutorial_next_word">กด <xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g> เพื่อไปยังคำถัดไป ย้ายไปสามคำ</string>
+    <string name="sandfly_keyboard_tutorial_characters">เปลี่ยนการควบคุมการอ่านเป็น <xliff:g id="reading_control" example="อักขระ">%2$s</xliff:g> กด <xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g> เพื่อย้ายทีละอักขระ</string>
+    <string name="sandfly_keyboard_tutorial_headings_jump">กด <xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g> เพื่อข้ามไปยังส่วนหัวถัดไป ข้ามไปที่ <xliff:g id="heading" example="สุดสัปดาห์">%2$s</xliff:g></string>
+
+    <string name="sandfly_keyboard_tutorial_continuous_intro">SandFly อ่านจากรายการที่โฟกัสไปจนถึงท้ายหน้าจอได้ Ctrl หยุดการอ่าน</string>
+    <string name="sandfly_keyboard_tutorial_continuous_read">กด <xliff:g id="keys" example="Action + Ctrl + R">%1$s</xliff:g> เพื่ออ่านจากรายการที่โฟกัส</string>
+
+    <string name="sandfly_keyboard_tutorial_scrolling_intro">รายการจะแสดงเพียงบางส่วนในแต่ละครั้ง การย้ายผ่านรายการสุดท้ายที่แสดงอยู่จะเลื่อนรายการ</string>
+    <string name="sandfly_keyboard_tutorial_scrolling_next">กด <xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g> จนถึง <xliff:g id="item" example="รายการ 15">%2$s</xliff:g></string>
+
+    <string name="sandfly_keyboard_tutorial_actions_intro">บางรายการมีการดำเนินการอื่นนอกเหนือจากการเปิดใช้งาน เช่น เก็บถาวรหรือลบสำหรับข้อความ เมนูการดำเนินการจะแสดงการดำเนินการเหล่านั้น</string>
+    <string name="sandfly_keyboard_tutorial_actions_archive">ไปที่ข้อความ กด <xliff:g id="keys" example="Action + Ctrl + A">%1$s</xliff:g> เพื่อเปิดการดำเนินการของข้อความ เลือก <xliff:g id="action" example="เก็บถาวร">%2$s</xliff:g></string>
+
+    <string name="sandfly_keyboard_tutorial_typing_intro">การเปิดใช้งานช่องข้อความจะทำให้พิมพ์ในช่องนั้นได้</string>
+    <string name="sandfly_keyboard_tutorial_typing_open">ไปที่ช่อง <xliff:g id="field" example="ชื่อ">%2$s</xliff:g> กด <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> เพื่อเริ่มพิมพ์</string>
+    <string name="sandfly_keyboard_tutorial_typing_delete">ลบตัวอักษรตัวสุดท้ายด้วย Backspace</string>
+
+    <string name="sandfly_keyboard_tutorial_system_intro">Android มีแป้นพิมพ์ลัดของตัวเองที่ใช้แป้นดำเนินการ ซึ่งใช้ได้ในทุกหน้าจอ ในบทเรียนนี้ บทแนะนำจะบอกว่าแต่ละแป้นพิมพ์ลัดทำอะไรแทนการทำงานจริง</string>
+    <string name="sandfly_keyboard_tutorial_system_back">กด <xliff:g id="keys" example="Action + Esc">%1$s</xliff:g> เพื่อกลับ</string>
+    <string name="sandfly_keyboard_tutorial_system_home">กด <xliff:g id="keys" example="Action + H">%1$s</xliff:g> เพื่อไปที่หน้าจอหลัก</string>
+    <string name="sandfly_keyboard_tutorial_system_overview">กด <xliff:g id="keys" example="Action + Tab">%1$s</xliff:g> เพื่อแสดงแอปล่าสุด Alt + Tab สลับระหว่างแอป</string>
+    <string name="sandfly_keyboard_tutorial_system_notifications">กด <xliff:g id="keys" example="Action + N">%1$s</xliff:g> เพื่อเปิดการแจ้งเตือน</string>
+
+    <string name="sandfly_keyboard_tutorial_menu_open">กด <xliff:g id="keys" example="Action + Ctrl + M">%1$s</xliff:g> เพื่อเปิดเมนู SandFly ไล่ดูคำสั่งในเมนู Esc จะปิดเมนู</string>
+    <string name="sandfly_keyboard_tutorial_menu_close">กด Esc เพื่อปิดเมนู</string>
+
+    <string name="sandfly_keyboard_tutorial_shortcut_list_title">รายการแป้นพิมพ์ลัด</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_intro">SandFly แสดงแป้นพิมพ์ลัดทั้งหมดพร้อมคำสั่งของแต่ละแป้นพิมพ์ลัด</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_open">กด <xliff:g id="keys" example="Action + Shift + /">%1$s</xliff:g> เพื่อเปิดรายการ Esc จะปิดรายการ</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_close">กด Esc เพื่อปิดรายการ</string>
+
+    <string name="sandfly_keyboard_tutorial_commands_copy">กด <xliff:g id="keys" example="Action + Ctrl + C">%1$s</xliff:g> เพื่อคัดลอกข้อความล่าสุดที่ SandFly พูดไปยังคลิปบอร์ด</string>
+    <string name="sandfly_keyboard_tutorial_commands_search">กด <xliff:g id="keys" example="Action + Ctrl + /">%1$s</xliff:g> เพื่อค้นหาข้อความบนหน้าจอ ในบทเรียนนี้ บทแนะนำจะบอกว่าคำสั่งทำอะไรแทนการทำงานจริง</string>
+
+    <string name="sandfly_keyboard_tutorial_browse_mode_title">โหมดอ่าน</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_intro">ในโหมดอ่าน ตัวอักษรตัวเดียวจะข้ามไปยังรายการถัดไปของประเภทหนึ่ง เช่น H สำหรับส่วนหัว K สำหรับลิงก์ และ B สำหรับปุ่ม Shift ร่วมกับตัวอักษรจะข้ามย้อนกลับ โหมดอ่านจะปิดขณะที่คุณพิมพ์ในช่องข้อความ</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_on">กด <xliff:g id="keys" example="Action twice">%1$s</xliff:g> เพื่อเปิดโหมดอ่าน</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_heading">กด <xliff:g id="keys" example="H">%1$s</xliff:g> เพื่อข้ามไปยังส่วนหัวถัดไป ข้ามไปที่ <xliff:g id="heading" example="สุดสัปดาห์">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_off">กด <xliff:g id="keys" example="Action twice">%1$s</xliff:g> เพื่อปิดโหมดอ่าน</string>
+
+    <string name="sandfly_keyboard_tutorial_practice_title">ฝึกใช้แป้นพิมพ์</string>
+    <string name="sandfly_keyboard_tutorial_practice_intro">แป้นพิมพ์ลัดแต่ละรายการจะบอกแป้นและคำสั่งของตัวเองแทนการทำงานจริง รายการถัดไป รายการก่อนหน้า และการเปิดใช้งานยังคงใช้ได้</string>
+    <string name="sandfly_keyboard_tutorial_practice_step">กดแป้นพิมพ์ลัดใดก็ได้เพื่อฟังว่าแป้นพิมพ์ลัดนั้นทำอะไร หากต้องการหยุด ให้เปิดใช้งาน <xliff:g id="button" example="จบการฝึก">%1$s</xliff:g></string>
+</resources>

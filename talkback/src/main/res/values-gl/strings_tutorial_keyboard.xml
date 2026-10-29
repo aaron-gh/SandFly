@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="sandfly_keyboard_tutorial_title">Titorial de teclado de SandFly</string>
+    <string name="sandfly_keyboard_tutorial_no_key"><xliff:g id="command" example="Next item">%1$s</xliff:g> non ten ningún atallo de teclado. Asigna un en Comandos ou usa Omitir paso.</string>
+    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">O modo de navegación necesita o Mapa de teclas mellorado. Escóllelo en <xliff:g id="settings_path" example="SandFly settings &gt; Keyboard shortcuts &gt; Choose a keymap">%1$s</xliff:g> ou usa Omitir paso.</string>
+    <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g> dúas veces</string>
+    <string name="sandfly_keyboard_tutorial_lesson_complete_next">Lección completada. Preme <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> para iniciar a seguinte lección.</string>
+    <string name="sandfly_keyboard_tutorial_lesson_complete_last">Lección completada. Preme <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> para finalizar o titorial.</string>
+    <string name="sandfly_keyboard_tutorial_chapter_web">Páxinas web</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">Este titorial ensina os atallos de teclado de SandFly. A maioría usan a tecla <xliff:g id="key" example="Action">%1$s</xliff:g> con outras teclas. <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> Ctrl detén a fala. Cada lección dá unha instrución, agarda ata que premas as teclas que indica e despois dá a seguinte. A instrución é o primeiro elemento despois do nome da lección. Contido lista todas as leccións, e o titorial ábrese de novo na lección na que estabas.</string>
+    <string name="sandfly_keyboard_tutorial_action_key_location">A tecla de acción é a tecla Windows, xunto á tecla Alt da esquerda. Nos teclados de Apple, é a tecla Comando, xunto á barra de espazo.</string>
+    <string name="sandfly_keyboard_tutorial_alt_key_location">A tecla Alt está xunto á barra de espazo.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_start">Preme <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> para comezar.</string>
+    <string name="sandfly_keyboard_tutorial_move_intro">Seguinte elemento e Elemento anterior percorren os elementos da pantalla na orde de lectura.</string>
+    <string name="sandfly_keyboard_tutorial_move_next">Preme <xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g> para ir ao seguinte elemento. Continúa ata chegar a <xliff:g id="item" example="Eggs">%2$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_move_previous">Preme <xliff:g id="keys" example="Action + Left arrow">%1$s</xliff:g> para ir ao elemento anterior. Volve a <xliff:g id="item" example="Bread">%2$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_activate_intro">A activación funciona sobre o elemento enfocado.</string>
+    <string name="sandfly_keyboard_tutorial_activate_button">Vai a <xliff:g id="button" example="Ring the bell">%2$s</xliff:g>. Preme <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> para activalo.</string>
+    <string name="sandfly_keyboard_tutorial_activate_check_box">Marca <xliff:g id="check_box" example="Extra cheese">%2$s</xliff:g> con <xliff:g id="keys" example="Action + Space">%1$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_activate_hold">Algúns elementos fan outra cousa se se manteñen premidos. Vai a <xliff:g id="button" example="Details">%2$s</xliff:g>. Preme <xliff:g id="keys" example="Action + Shift + Space">%1$s</xliff:g> para mantelo premido.</string>
+    <string name="sandfly_keyboard_tutorial_reading_controls_intro">Os controis de lectura determinan o que fai moverse cara arriba e cara abaixo, como moverse por palabras ou por caracteres. Seguinte elemento e Elemento anterior seguen movendo entre elementos.</string>
+    <string name="sandfly_keyboard_tutorial_choose_reading_control">Preme <xliff:g id="keys" example="Action + Shift + Right arrow">%1$s</xliff:g> ou <xliff:g id="keys" example="Action + Shift + Left arrow">%2$s</xliff:g> para cambiar o control de lectura. Escolle <xliff:g id="reading_control" example="Words">%3$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_next_word">Preme <xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g> para ir á seguinte palabra. Avanza tres palabras.</string>
+    <string name="sandfly_keyboard_tutorial_characters">Cambia o control de lectura a <xliff:g id="reading_control" example="Characters">%2$s</xliff:g>. Preme <xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g> para moverte un carácter.</string>
+    <string name="sandfly_keyboard_tutorial_headings_jump">Preme <xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g> para saltar ao seguinte título. Salta a <xliff:g id="heading" example="Weekend">%2$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_continuous_intro">SandFly pode ler desde o elemento enfocado ata o final da pantalla. Ctrl detén a lectura.</string>
+    <string name="sandfly_keyboard_tutorial_continuous_read">Preme <xliff:g id="keys" example="Action + Ctrl + R">%1$s</xliff:g> para ler desde o elemento enfocado.</string>
+    <string name="sandfly_keyboard_tutorial_scrolling_intro">As listas só mostran algúns dos seus elementos á vez. Ao pasar máis alá do último elemento mostrado, desprázase a lista.</string>
+    <string name="sandfly_keyboard_tutorial_scrolling_next">Preme <xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g> ata chegar a <xliff:g id="item" example="Item 15">%2$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_actions_intro">Algúns elementos teñen accións ademais de activalos, como Arquivar ou Eliminar nunha mensaxe. O menú de accións lístaas.</string>
+    <string name="sandfly_keyboard_tutorial_actions_archive">Vai á mensaxe. Preme <xliff:g id="keys" example="Action + Ctrl + A">%1$s</xliff:g> para abrir as súas accións. Escolle <xliff:g id="action" example="Archive">%2$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_typing_intro">Ao activar un campo de texto, podes escribir nel.</string>
+    <string name="sandfly_keyboard_tutorial_typing_open">Vai ao campo <xliff:g id="field" example="Name">%2$s</xliff:g>. Preme <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> para comezar a escribir.</string>
+    <string name="sandfly_keyboard_tutorial_typing_delete">Elimina a última letra con Retroceso.</string>
+    <string name="sandfly_keyboard_tutorial_system_intro">Android ten os seus propios atallos de teclado coa tecla de acción. Funcionan en todas as pantallas. Nesta lección, o titorial di o que fai cada un en lugar de facelo.</string>
+    <string name="sandfly_keyboard_tutorial_system_back">Preme <xliff:g id="keys" example="Action + Esc">%1$s</xliff:g> para volver atrás.</string>
+    <string name="sandfly_keyboard_tutorial_system_home">Preme <xliff:g id="keys" example="Action + H">%1$s</xliff:g> para ir á pantalla de inicio.</string>
+    <string name="sandfly_keyboard_tutorial_system_overview">Preme <xliff:g id="keys" example="Action + Tab">%1$s</xliff:g> para mostrar as aplicacións recentes. Alt + Tabulador cambia entre aplicacións.</string>
+    <string name="sandfly_keyboard_tutorial_system_notifications">Preme <xliff:g id="keys" example="Action + N">%1$s</xliff:g> para abrir as notificacións.</string>
+    <string name="sandfly_keyboard_tutorial_menu_open">Preme <xliff:g id="keys" example="Action + Ctrl + M">%1$s</xliff:g> para abrir o menú de SandFly. Percorre os seus comandos. Esc pecha o menú.</string>
+    <string name="sandfly_keyboard_tutorial_menu_close">Preme Esc para pechar o menú.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_title">Lista de atallos de teclado</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_intro">SandFly lista cada atallo de teclado co seu comando.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_open">Preme <xliff:g id="keys" example="Action + Shift + /">%1$s</xliff:g> para abrir a lista. Esc pechaa.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_close">Preme Esc para pechar a lista.</string>
+    <string name="sandfly_keyboard_tutorial_commands_copy">Preme <xliff:g id="keys" example="Action + Ctrl + C">%1$s</xliff:g> para copiar no portapapeis o último texto que dixo SandFly.</string>
+    <string name="sandfly_keyboard_tutorial_commands_search">Preme <xliff:g id="keys" example="Action + Ctrl + /">%1$s</xliff:g> para buscar texto na pantalla. Nesta lección, o titorial di o que fai o comando en lugar de executalo.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_title">Modo de navegación</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_intro">No modo de navegación, unha soa letra salta ao seguinte elemento dun tipo, como H para os títulos, K para as ligazóns e B para os botóns. Maiús coa letra salta cara atrás. O modo de navegación desactívase mentres escribes nun campo de texto.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_on">Preme <xliff:g id="keys" example="Action twice">%1$s</xliff:g> para activar o modo de navegación.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_heading">Preme <xliff:g id="keys" example="H">%1$s</xliff:g> para saltar ao seguinte título. Salta a <xliff:g id="heading" example="Weekend">%2$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_off">Preme <xliff:g id="keys" example="Action twice">%1$s</xliff:g> para desactivar o modo de navegación.</string>
+    <string name="sandfly_keyboard_tutorial_practice_title">Práctica de teclado</string>
+    <string name="sandfly_keyboard_tutorial_practice_intro">Cada atallo de teclado di as súas teclas e o seu comando en lugar de executalo. Seguinte elemento, Elemento anterior e activar seguen funcionando.</string>
+    <string name="sandfly_keyboard_tutorial_practice_step">Preme calquera atallo de teclado para oír o que fai. Para parar, activa <xliff:g id="button" example="End practice">%1$s</xliff:g>.</string>
+</resources>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="sandfly_keyboard_tutorial_title">SandFly klavye eğitimi</string>
+    <string name="sandfly_keyboard_tutorial_no_key"><xliff:g id="command" example="Sonraki öğe">%1$s</xliff:g> için klavye kısayolu yok. “Komutlar” bölümünden bir kısayol atayın veya “Adımı atla”yı kullanın.</string>
+    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">Tarayıcı modu için “Gelişmiş tuş eşleme” gerekir. <xliff:g id="settings_path" example="SandFly ayarları &gt; Klavye kısayolları &gt; Tuş eşleme seç">%1$s</xliff:g> bölümünden seçin veya “Adımı atla”yı kullanın.</string>
+    <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g> tuşuna iki kez</string>
+    <string name="sandfly_keyboard_tutorial_lesson_complete_next">Ders tamamlandı. Sonraki derse başlamak için <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> tuşlarına basın.</string>
+    <string name="sandfly_keyboard_tutorial_lesson_complete_last">Ders tamamlandı. Eğitimi bitirmek için <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> tuşlarına basın.</string>
+    <string name="sandfly_keyboard_tutorial_chapter_web">Web sayfaları</string>
+
+    <string name="sandfly_keyboard_tutorial_welcome_intro">Bu eğitim SandFly\'in klavye kısayollarını öğretir. Çoğu, <xliff:g id="key" example="Action">%1$s</xliff:g> tuşunu diğer tuşlarla birlikte kullanır. <xliff:g id="location" example="Eylem tuşu, soldaki Alt tuşunun yanındaki Windows tuşudur.">%2$s</xliff:g> Ctrl konuşmayı durdurur. Her ders bir talimat verir, siz belirttiği tuşlara basana kadar bekler, ardından sonrakini verir. Talimat, dersin adından sonraki ilk öğedir. İçindekiler tüm dersleri listeler; eğitim, kaldığınız dersten yeniden açılır.</string>
+    <string name="sandfly_keyboard_tutorial_action_key_location">Eylem tuşu, soldaki Alt tuşunun yanındaki Windows tuşudur. Apple klavyelerde, boşluk çubuğunun yanındaki Komut tuşudur.</string>
+    <string name="sandfly_keyboard_tutorial_alt_key_location">Alt tuşu boşluk çubuğunun yanındadır.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_start">Başlamak için <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> tuşlarına basın.</string>
+
+    <string name="sandfly_keyboard_tutorial_move_intro">Sonraki öğe ve Önceki öğe, ekrandaki öğeler arasında okuma sırasıyla geçer.</string>
+    <string name="sandfly_keyboard_tutorial_move_next"><xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g> tuşlarıyla sonraki öğeye geçin. <xliff:g id="item" example="Yumurta">%2$s</xliff:g> öğesine ulaşana kadar devam edin.</string>
+    <string name="sandfly_keyboard_tutorial_move_previous"><xliff:g id="keys" example="Action + Left arrow">%1$s</xliff:g> tuşlarıyla önceki öğeye geçin. <xliff:g id="item" example="Ekmek">%2$s</xliff:g> öğesine geri dönün.</string>
+
+    <string name="sandfly_keyboard_tutorial_activate_intro">Etkinleştirme, odaktaki öğede çalışır.</string>
+    <string name="sandfly_keyboard_tutorial_activate_button"><xliff:g id="button" example="Zili çal">%2$s</xliff:g> öğesine gidin. <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> tuşlarıyla etkinleştirin.</string>
+    <string name="sandfly_keyboard_tutorial_activate_check_box"><xliff:g id="check_box" example="Ekstra peynir">%2$s</xliff:g> öğesini <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> tuşlarıyla işaretleyin.</string>
+    <string name="sandfly_keyboard_tutorial_activate_hold">Bazı öğeler basılı tutulduğunda başka bir şey yapar. <xliff:g id="button" example="Ayrıntılar">%2$s</xliff:g> öğesine gidin. <xliff:g id="keys" example="Action + Shift + Space">%1$s</xliff:g> tuşlarıyla basılı tutun.</string>
+
+    <string name="sandfly_keyboard_tutorial_reading_controls_intro">Okuma kontrolleri, yukarı ve aşağı hareketin ne yapacağını seçer; örneğin kelime veya karakter ilerleme. Sonraki öğe ve Önceki öğe yine öğeler arasında geçer.</string>
+    <string name="sandfly_keyboard_tutorial_choose_reading_control">Okuma kontrolünü değiştirmek için <xliff:g id="keys" example="Action + Shift + Right arrow">%1$s</xliff:g> veya <xliff:g id="keys" example="Action + Shift + Left arrow">%2$s</xliff:g> tuşlarına basın. <xliff:g id="reading_control" example="Kelime">%3$s</xliff:g> seçeneğini seçin.</string>
+    <string name="sandfly_keyboard_tutorial_next_word"><xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g> tuşlarıyla sonraki kelimeye geçin. Üç kelime ilerleyin.</string>
+    <string name="sandfly_keyboard_tutorial_characters">Okuma kontrolünü <xliff:g id="reading_control" example="Karakter">%2$s</xliff:g> olarak değiştirin. <xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g> tuşlarıyla bir karakter ilerleyin.</string>
+    <string name="sandfly_keyboard_tutorial_headings_jump"><xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g> tuşlarıyla sonraki başlığa atlayın. <xliff:g id="heading" example="Hafta sonu">%2$s</xliff:g> başlığına atlayın.</string>
+
+    <string name="sandfly_keyboard_tutorial_continuous_intro">SandFly, odaktaki öğeden ekranın sonuna kadar okuyabilir. Ctrl okumayı durdurur.</string>
+    <string name="sandfly_keyboard_tutorial_continuous_read"><xliff:g id="keys" example="Action + Ctrl + R">%1$s</xliff:g> tuşlarıyla odaktaki öğeden okuyun.</string>
+
+    <string name="sandfly_keyboard_tutorial_scrolling_intro">Listeler öğelerinin yalnızca bir kısmını aynı anda gösterir. Gösterilen son öğeden sonra ilerlemek listeyi kaydırır.</string>
+    <string name="sandfly_keyboard_tutorial_scrolling_next"><xliff:g id="item" example="Öğe 15">%2$s</xliff:g> öğesine ulaşana kadar <xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g> tuşlarına basın.</string>
+
+    <string name="sandfly_keyboard_tutorial_actions_intro">Bazı öğelerin etkinleştirme dışında işlemleri vardır; örneğin bir mesaj için Arşivle veya Sil. İşlemler menüsü bunları listeler.</string>
+    <string name="sandfly_keyboard_tutorial_actions_archive">Mesaja gidin. İşlemlerini açmak için <xliff:g id="keys" example="Action + Ctrl + A">%1$s</xliff:g> tuşlarına basın. <xliff:g id="action" example="Arşivle">%2$s</xliff:g> işlemini seçin.</string>
+
+    <string name="sandfly_keyboard_tutorial_typing_intro">Bir metin alanını etkinleştirmek, alana yazmanızı sağlar.</string>
+    <string name="sandfly_keyboard_tutorial_typing_open"><xliff:g id="field" example="Ad">%2$s</xliff:g> alanına gidin. <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> tuşlarıyla yazmaya başlayın.</string>
+    <string name="sandfly_keyboard_tutorial_typing_delete">Son harfi Geri tuşuyla silin.</string>
+
+    <string name="sandfly_keyboard_tutorial_system_intro">Android\'in Eylem tuşuyla kullanılan kendi klavye kısayolları vardır. Bunlar her ekranda çalışır. Bu derste eğitim, her kısayolu çalıştırmak yerine ne yaptığını söyler.</string>
+    <string name="sandfly_keyboard_tutorial_system_back"><xliff:g id="keys" example="Action + Esc">%1$s</xliff:g> tuşlarıyla geri gidin.</string>
+    <string name="sandfly_keyboard_tutorial_system_home"><xliff:g id="keys" example="Action + H">%1$s</xliff:g> tuşlarıyla ana ekrana gidin.</string>
+    <string name="sandfly_keyboard_tutorial_system_overview"><xliff:g id="keys" example="Action + Tab">%1$s</xliff:g> tuşlarıyla son uygulamaları gösterin. Alt + Tab uygulamalar arasında geçiş yapar.</string>
+    <string name="sandfly_keyboard_tutorial_system_notifications"><xliff:g id="keys" example="Action + N">%1$s</xliff:g> tuşlarıyla bildirimleri açın.</string>
+
+    <string name="sandfly_keyboard_tutorial_menu_open"><xliff:g id="keys" example="Action + Ctrl + M">%1$s</xliff:g> tuşlarıyla SandFly menüsünü açın. Komutları arasında gezinin. Esc menüyü kapatır.</string>
+    <string name="sandfly_keyboard_tutorial_menu_close">Esc tuşuyla menüyü kapatın.</string>
+
+    <string name="sandfly_keyboard_tutorial_shortcut_list_title">Klavye kısayolu listesi</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_intro">SandFly, her klavye kısayolunu komutuyla birlikte listeler.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_open"><xliff:g id="keys" example="Action + Shift + /">%1$s</xliff:g> tuşlarıyla listeyi açın. Esc listeyi kapatır.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_close">Esc tuşuyla listeyi kapatın.</string>
+
+    <string name="sandfly_keyboard_tutorial_commands_copy"><xliff:g id="keys" example="Action + Ctrl + C">%1$s</xliff:g> tuşları, SandFly\'in son söylediği metni panoya kopyalar.</string>
+    <string name="sandfly_keyboard_tutorial_commands_search"><xliff:g id="keys" example="Action + Ctrl + /">%1$s</xliff:g> tuşları ekranda metin arar. Bu derste eğitim, kısayolu çalıştırmak yerine ne yaptığını söyler.</string>
+
+    <string name="sandfly_keyboard_tutorial_browse_mode_title">Tarayıcı modu</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_intro">Tarayıcı modunda tek harfler, bir türün sonraki öğesine atlar; örneğin başlıklar için H, bağlantılar için K ve düğmeler için B. Harfle birlikte Üst Karakter geri atlar. Bir metin alanına yazarken tarayıcı modu kapanır.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_on">Tarayıcı modunu açmak için <xliff:g id="keys" example="Action twice">%1$s</xliff:g> basın.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_heading"><xliff:g id="keys" example="H">%1$s</xliff:g> tuşuyla sonraki başlığa atlayın. <xliff:g id="heading" example="Hafta sonu">%2$s</xliff:g> başlığına atlayın.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_off">Tarayıcı modunu kapatmak için <xliff:g id="keys" example="Action twice">%1$s</xliff:g> basın.</string>
+
+    <string name="sandfly_keyboard_tutorial_practice_title">Klavye alıştırması</string>
+    <string name="sandfly_keyboard_tutorial_practice_intro">Her klavye kısayolu, çalışmak yerine tuşlarını ve komutunu söyler. Sonraki öğe, Önceki öğe ve etkinleştirme çalışmaya devam eder.</string>
+    <string name="sandfly_keyboard_tutorial_practice_step">Ne yaptığını duymak için herhangi bir klavye kısayoluna basın. Durdurmak için <xliff:g id="button" example="Alıştırmayı bitir">%1$s</xliff:g> düğmesini etkinleştirin.</string>
+</resources>

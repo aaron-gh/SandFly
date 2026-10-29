@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="sandfly_keyboard_tutorial_title">SandFly 鍵盤教學</string>
+    <string name="sandfly_keyboard_tutorial_no_key">「<xliff:g id="command" example="下一個項目">%1$s</xliff:g>」沒有鍵盤快速鍵。請在「命令」中指派一個，或使用「略過步驟」。</string>
+    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">瀏覽模式需要「強化版按鍵對應配置」。請在<xliff:g id="settings_path" example="SandFly 設定 &gt; 鍵盤快速鍵 &gt; 選擇按鍵對應配置">%1$s</xliff:g>中選擇，或使用「略過步驟」。</string>
+    <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g>兩次</string>
+    <string name="sandfly_keyboard_tutorial_lesson_complete_next">課程完成。按下<xliff:g id="keys" example="Action + Space">%1$s</xliff:g>即可開始下一個課程。</string>
+    <string name="sandfly_keyboard_tutorial_lesson_complete_last">課程完成。按下<xliff:g id="keys" example="Action + Space">%1$s</xliff:g>即可完成教學課程。</string>
+    <string name="sandfly_keyboard_tutorial_chapter_web">網頁</string>
+
+    <string name="sandfly_keyboard_tutorial_welcome_intro">本教學課程介紹 SandFly 的鍵盤快速鍵。大多數快速鍵會將<xliff:g id="key" example="Action">%1$s</xliff:g>與其他按鍵一起使用。<xliff:g id="location" example="快捷操作鍵是 Windows 鍵，位於左側 Alt 鍵旁邊。">%2$s</xliff:g>按下 Ctrl 鍵會停止語音。每個課程會提供一項指示，等你按下指示中所說的按鍵後，再提供下一項。指示是課程名稱後的第一個項目。「目錄」會列出所有課程，教學課程會在你上次所在的課程重新開啟。</string>
+    <string name="sandfly_keyboard_tutorial_action_key_location">快捷操作鍵是 Windows 鍵，位於左側 Alt 鍵旁邊。在 Apple 鍵盤上，快捷操作鍵是 Command 鍵，位於空格鍵旁邊。</string>
+    <string name="sandfly_keyboard_tutorial_alt_key_location">Alt 鍵位於空格鍵旁邊。</string>
+    <string name="sandfly_keyboard_tutorial_welcome_start">按下<xliff:g id="keys" example="Action + Space">%1$s</xliff:g>即可開始。</string>
+
+    <string name="sandfly_keyboard_tutorial_move_intro">「下一個項目」和「上一個項目」會依閱讀順序在畫面上的項目之間移動。</string>
+    <string name="sandfly_keyboard_tutorial_move_next">按下<xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g>可移至下一個項目。繼續移動，直到抵達「<xliff:g id="item" example="雞蛋">%2$s</xliff:g>」。</string>
+    <string name="sandfly_keyboard_tutorial_move_previous">按下<xliff:g id="keys" example="Action + Left arrow">%1$s</xliff:g>可移至上一個項目。返回「<xliff:g id="item" example="麵包">%2$s</xliff:g>」。</string>
+
+    <string name="sandfly_keyboard_tutorial_activate_intro">啟用作用於取得焦點的項目。</string>
+    <string name="sandfly_keyboard_tutorial_activate_button">移至「<xliff:g id="button" example="按鈴">%2$s</xliff:g>」。按下<xliff:g id="keys" example="Action + Space">%1$s</xliff:g>即可啟用。</string>
+    <string name="sandfly_keyboard_tutorial_activate_check_box">按下<xliff:g id="keys" example="Action + Space">%1$s</xliff:g>勾選「<xliff:g id="check_box" example="加起司">%2$s</xliff:g>」。</string>
+    <string name="sandfly_keyboard_tutorial_activate_hold">有些項目按住時會執行其他操作。移至「<xliff:g id="button" example="詳細資料">%2$s</xliff:g>」。按下<xliff:g id="keys" example="Action + Shift + Space">%1$s</xliff:g>即可按住。</string>
+
+    <string name="sandfly_keyboard_tutorial_reading_controls_intro">朗讀控制項決定向上和向下移動的作用，例如按字詞或字元移動。「下一個項目」和「上一個項目」仍會在項目之間移動。</string>
+    <string name="sandfly_keyboard_tutorial_choose_reading_control">按下<xliff:g id="keys" example="Action + Shift + Right arrow">%1$s</xliff:g>或<xliff:g id="keys" example="Action + Shift + Left arrow">%2$s</xliff:g>可變更朗讀控制項。選擇「<xliff:g id="reading_control" example="字詞">%3$s</xliff:g>」。</string>
+    <string name="sandfly_keyboard_tutorial_next_word">按下<xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g>可移至下一個字詞。移動三個字詞。</string>
+    <string name="sandfly_keyboard_tutorial_characters">將朗讀控制項變更為「<xliff:g id="reading_control" example="字元">%2$s</xliff:g>」。按下<xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g>可移動一個字元。</string>
+    <string name="sandfly_keyboard_tutorial_headings_jump">按下<xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g>可跳到下一個標題。跳到「<xliff:g id="heading" example="週末">%2$s</xliff:g>」。</string>
+
+    <string name="sandfly_keyboard_tutorial_continuous_intro">SandFly 可從焦點項目朗讀到畫面結尾。按下 Ctrl 鍵會停止朗讀。</string>
+    <string name="sandfly_keyboard_tutorial_continuous_read">按下<xliff:g id="keys" example="Action + Ctrl + R">%1$s</xliff:g>可從焦點項目開始朗讀。</string>
+
+    <string name="sandfly_keyboard_tutorial_scrolling_intro">清單一次只會顯示部分項目。移過顯示的最後一個項目會捲動清單。</string>
+    <string name="sandfly_keyboard_tutorial_scrolling_next">按下<xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g>，直到抵達「<xliff:g id="item" example="項目 15">%2$s</xliff:g>」。</string>
+
+    <string name="sandfly_keyboard_tutorial_actions_intro">有些項目除了啟用之外還有其他動作，例如訊息的「封存」或「刪除」。動作選單會列出這些動作。</string>
+    <string name="sandfly_keyboard_tutorial_actions_archive">移至這則訊息。按下<xliff:g id="keys" example="Action + Ctrl + A">%1$s</xliff:g>可開啟它的動作。選擇「<xliff:g id="action" example="封存">%2$s</xliff:g>」。</string>
+
+    <string name="sandfly_keyboard_tutorial_typing_intro">啟用文字欄位後即可在其中輸入。</string>
+    <string name="sandfly_keyboard_tutorial_typing_open">移至「<xliff:g id="field" example="名稱">%2$s</xliff:g>」欄位。按下<xliff:g id="keys" example="Action + Space">%1$s</xliff:g>即可開始輸入。</string>
+    <string name="sandfly_keyboard_tutorial_typing_delete">用 Backspace 鍵刪除最後一個字。</string>
+
+    <string name="sandfly_keyboard_tutorial_system_intro">Android 有自己的鍵盤快速鍵，使用快捷操作鍵。這些快速鍵在任何畫面上都能使用。在本課程中，教學課程會說出每個快速鍵的作用，而不會執行。</string>
+    <string name="sandfly_keyboard_tutorial_system_back">按下<xliff:g id="keys" example="Action + Esc">%1$s</xliff:g>可返回。</string>
+    <string name="sandfly_keyboard_tutorial_system_home">按下<xliff:g id="keys" example="Action + H">%1$s</xliff:g>可前往主畫面。</string>
+    <string name="sandfly_keyboard_tutorial_system_overview">按下<xliff:g id="keys" example="Action + Tab">%1$s</xliff:g>可顯示最近使用的應用程式。Alt + Tab 可在應用程式之間切換。</string>
+    <string name="sandfly_keyboard_tutorial_system_notifications">按下<xliff:g id="keys" example="Action + N">%1$s</xliff:g>可開啟通知。</string>
+
+    <string name="sandfly_keyboard_tutorial_menu_open">按下<xliff:g id="keys" example="Action + Ctrl + M">%1$s</xliff:g>可開啟 SandFly 選單。瀏覽其中的命令。Esc 鍵可關閉選單。</string>
+    <string name="sandfly_keyboard_tutorial_menu_close">按下 Esc 鍵可關閉選單。</string>
+
+    <string name="sandfly_keyboard_tutorial_shortcut_list_title">鍵盤快速鍵清單</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_intro">SandFly 會列出每個鍵盤快速鍵及其命令。</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_open">按下<xliff:g id="keys" example="Action + Shift + /">%1$s</xliff:g>可開啟清單。Esc 鍵可關閉清單。</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_close">按下 Esc 鍵可關閉清單。</string>
+
+    <string name="sandfly_keyboard_tutorial_commands_copy">按下<xliff:g id="keys" example="Action + Ctrl + C">%1$s</xliff:g>可將 SandFly 最後唸出的文字複製到剪貼簿。</string>
+    <string name="sandfly_keyboard_tutorial_commands_search">按下<xliff:g id="keys" example="Action + Ctrl + /">%1$s</xliff:g>可在畫面上搜尋文字。在本課程中，教學課程會說出這個命令的作用，而不會執行。</string>
+
+    <string name="sandfly_keyboard_tutorial_browse_mode_title">瀏覽模式</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_intro">在瀏覽模式中，單個字母可跳到某類項目的下一個項目，例如 H 跳到標題，K 跳到連結，B 跳到按鈕。Shift 鍵加字母可向後跳。在文字欄位中輸入時，瀏覽模式會關閉。</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_on">按下<xliff:g id="keys" example="Action twice">%1$s</xliff:g>可開啟瀏覽模式。</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_heading">按下<xliff:g id="keys" example="H">%1$s</xliff:g>可跳到下一個標題。跳到「<xliff:g id="heading" example="週末">%2$s</xliff:g>」。</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_off">按下<xliff:g id="keys" example="Action twice">%1$s</xliff:g>可關閉瀏覽模式。</string>
+
+    <string name="sandfly_keyboard_tutorial_practice_title">鍵盤練習</string>
+    <string name="sandfly_keyboard_tutorial_practice_intro">每個鍵盤快速鍵都會說出按鍵和命令，而不會執行。「下一個項目」、「上一個項目」和啟用仍然有效。</string>
+    <string name="sandfly_keyboard_tutorial_practice_step">按下任何鍵盤快速鍵即可聽到它的作用。如要停止，請啟用「<xliff:g id="button" example="結束練習">%1$s</xliff:g>」。</string>
+</resources>

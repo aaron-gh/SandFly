@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="sandfly_keyboard_tutorial_title">آموزش گام‌به‌گام صفحه‌کلید SandFly</string>
+    <string name="sandfly_keyboard_tutorial_no_key">«<xliff:g id="command" example="مورد بعدی">%1$s</xliff:g>» میان‌بر صفحه‌کلید ندارد. در «فرمان‌ها» میان‌بری اختصاص دهید، یا از «رد شدن از مرحله» استفاده کنید.</string>
+    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">«حالت مرور» به «نقشه‌کلید بهبودیافته» نیاز دارد. آن را در «<xliff:g id="settings_path" example="‏تنظیمات SandFly &gt; میان‌برهای صفحه‌کلید &gt; انتخاب نقشه‌کلید">%1$s</xliff:g>» انتخاب کنید، یا از «رد شدن از مرحله» استفاده کنید.</string>
+    <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="کلید «کنش»">%1$s</xliff:g> دو بار</string>
+    <string name="sandfly_keyboard_tutorial_lesson_complete_next">درس تمام شد. برای شروع درس بعدی، <xliff:g id="keys" example="کلید «کنش» + فاصله">%1$s</xliff:g> را فشار دهید.</string>
+    <string name="sandfly_keyboard_tutorial_lesson_complete_last">درس تمام شد. برای پایان دادن به آموزش گام‌به‌گام، <xliff:g id="keys" example="کلید «کنش» + فاصله">%1$s</xliff:g> را فشار دهید.</string>
+    <string name="sandfly_keyboard_tutorial_chapter_web">صفحه‌های وب</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">این آموزش گام‌به‌گام میان‌برهای صفحه‌کلید SandFly را آموزش می‌دهد. بیشتر آن‌ها از <xliff:g id="key" example="کلید «کنش»">%1$s</xliff:g> همراه با کلیدهای دیگر استفاده می‌کنند. <xliff:g id="location" example="کلید «کنش» همان کلید Windows است، کنار کلید Alt سمت چپ.">%2$s</xliff:g> کلید Ctrl گفتار را متوقف می‌کند. هر درس یک دستورالعمل می‌دهد، منتظر می‌ماند تا کلیدهایی را که نام می‌برد فشار دهید، سپس دستورالعمل بعدی را می‌دهد. دستورالعمل اولین مورد پس از نام درس است. «فهرست مطالب» همه درس‌ها را فهرست می‌کند، و آموزش گام‌به‌گام در درسی که در آن بودید دوباره باز می‌شود.</string>
+    <string name="sandfly_keyboard_tutorial_action_key_location">کلید «کنش» همان کلید Windows است، کنار کلید Alt سمت چپ. در صفحه‌کلیدهای Apple، این کلید Command است، کنار کلید فاصله.</string>
+    <string name="sandfly_keyboard_tutorial_alt_key_location">کلید Alt کنار کلید فاصله است.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_start">برای شروع، <xliff:g id="keys" example="کلید «کنش» + فاصله">%1$s</xliff:g> را فشار دهید.</string>
+    <string name="sandfly_keyboard_tutorial_move_intro">«مورد بعدی» و «مورد قبلی» به‌ترتیب خواندن بین موارد صفحه جابه‌جا می‌شوند.</string>
+    <string name="sandfly_keyboard_tutorial_move_next">برای رفتن به مورد بعدی، <xliff:g id="keys" example="کلید «کنش» + پیکان راست">%1$s</xliff:g> را فشار دهید. ادامه دهید تا به «<xliff:g id="item" example="تخم‌مرغ">%2$s</xliff:g>» برسید.</string>
+    <string name="sandfly_keyboard_tutorial_move_previous">برای رفتن به مورد قبلی، <xliff:g id="keys" example="کلید «کنش» + پیکان چپ">%1$s</xliff:g> را فشار دهید. به «<xliff:g id="item" example="نان">%2$s</xliff:g>» برگردید.</string>
+    <string name="sandfly_keyboard_tutorial_activate_intro">فعال کردن روی مورد کانونی‌شده کار می‌کند.</string>
+    <string name="sandfly_keyboard_tutorial_activate_button">به «<xliff:g id="button" example="زنگ را بزنید">%2$s</xliff:g>» بروید. برای فعال کردن آن، <xliff:g id="keys" example="کلید «کنش» + فاصله">%1$s</xliff:g> را فشار دهید.</string>
+    <string name="sandfly_keyboard_tutorial_activate_check_box">«<xliff:g id="check_box" example="پنیر اضافه">%2$s</xliff:g>» را با <xliff:g id="keys" example="کلید «کنش» + فاصله">%1$s</xliff:g> علامت بزنید.</string>
+    <string name="sandfly_keyboard_tutorial_activate_hold">برخی موارد وقتی نگه داشته شوند کار دیگری انجام می‌دهند. به «<xliff:g id="button" example="جزئیات">%2$s</xliff:g>» بروید. برای نگه داشتن آن، <xliff:g id="keys" example="کلید «کنش» + Shift + فاصله">%1$s</xliff:g> را فشار دهید.</string>
+    <string name="sandfly_keyboard_tutorial_reading_controls_intro">کنترل‌های خواندن تعیین می‌کنند جابه‌جایی به بالا و پایین چه کند، مانند جابه‌جایی کلمه‌به‌کلمه یا نویسه‌به‌نویسه. «مورد بعدی» و «مورد قبلی» همچنان بین موارد جابه‌جا می‌شوند.</string>
+    <string name="sandfly_keyboard_tutorial_choose_reading_control">برای تغییر کنترل خواندن، <xliff:g id="keys" example="کلید «کنش» + Shift + پیکان راست">%1$s</xliff:g> یا <xliff:g id="keys" example="کلید «کنش» + Shift + پیکان چپ">%2$s</xliff:g> را فشار دهید. «<xliff:g id="reading_control" example="کلمه‌ها">%3$s</xliff:g>» را انتخاب کنید.</string>
+    <string name="sandfly_keyboard_tutorial_next_word">برای رفتن به کلمه بعدی، <xliff:g id="keys" example="کلید «کنش» + پیکان رو به پایین">%1$s</xliff:g> را فشار دهید. سه کلمه جلو بروید.</string>
+    <string name="sandfly_keyboard_tutorial_characters">کنترل خواندن را به «<xliff:g id="reading_control" example="نویسه‌ها">%2$s</xliff:g>» تغییر دهید. برای جابه‌جایی یک نویسه، <xliff:g id="keys" example="کلید «کنش» + پیکان رو به پایین">%1$s</xliff:g> را فشار دهید.</string>
+    <string name="sandfly_keyboard_tutorial_headings_jump">برای پریدن به سرصفحه بعدی، <xliff:g id="keys" example="کلید «کنش» + پیکان رو به پایین">%1$s</xliff:g> را فشار دهید. به «<xliff:g id="heading" example="آخر هفته">%2$s</xliff:g>» بپرید.</string>
+    <string name="sandfly_keyboard_tutorial_continuous_intro">‏SandFly می‌تواند از مورد کانونی‌شده تا انتهای صفحه را بخواند. کلید Ctrl خواندن را متوقف می‌کند.</string>
+    <string name="sandfly_keyboard_tutorial_continuous_read">برای خواندن از مورد کانونی‌شده، <xliff:g id="keys" example="کلید «کنش» + Ctrl + R">%1$s</xliff:g> را فشار دهید.</string>
+    <string name="sandfly_keyboard_tutorial_scrolling_intro">فهرست‌ها هر بار فقط برخی از موارد خود را نشان می‌دهند. رفتن از آخرین مورد نمایش‌داده‌شده فهرست را پیمایش می‌کند.</string>
+    <string name="sandfly_keyboard_tutorial_scrolling_next"><xliff:g id="keys" example="کلید «کنش» + پیکان راست">%1$s</xliff:g> را فشار دهید تا به «<xliff:g id="item" example="مورد 15">%2$s</xliff:g>» برسید.</string>
+    <string name="sandfly_keyboard_tutorial_actions_intro">برخی موارد به‌جز فعال کردن کنش‌های دیگری هم دارند، مانند «بایگانی» یا «حذف» برای یک پیام. منوی کنش‌ها آن‌ها را فهرست می‌کند.</string>
+    <string name="sandfly_keyboard_tutorial_actions_archive">به پیام بروید. برای باز کردن کنش‌های آن، <xliff:g id="keys" example="کلید «کنش» + Ctrl + A">%1$s</xliff:g> را فشار دهید. «<xliff:g id="action" example="بایگانی">%2$s</xliff:g>» را انتخاب کنید.</string>
+    <string name="sandfly_keyboard_tutorial_typing_intro">فعال کردن فیلد متن امکان تایپ در آن را می‌دهد.</string>
+    <string name="sandfly_keyboard_tutorial_typing_open">به فیلد «<xliff:g id="field" example="نام">%2$s</xliff:g>» بروید. برای شروع تایپ، <xliff:g id="keys" example="کلید «کنش» + فاصله">%1$s</xliff:g> را فشار دهید.</string>
+    <string name="sandfly_keyboard_tutorial_typing_delete">آخرین حرف را با کلید پس‌بر پاک کنید.</string>
+    <string name="sandfly_keyboard_tutorial_system_intro">‏Android میان‌برهای صفحه‌کلید خودش را با کلید «کنش» دارد. این میان‌برها در همه صفحه‌ها کار می‌کنند. در این درس، آموزش گام‌به‌گام به‌جای انجام هر میان‌بر می‌گوید چه کاری انجام می‌دهد.</string>
+    <string name="sandfly_keyboard_tutorial_system_back">برای برگشتن، <xliff:g id="keys" example="کلید «کنش» + Esc">%1$s</xliff:g> را فشار دهید.</string>
+    <string name="sandfly_keyboard_tutorial_system_home">برای رفتن به صفحه اصلی، <xliff:g id="keys" example="کلید «کنش» + H">%1$s</xliff:g> را فشار دهید.</string>
+    <string name="sandfly_keyboard_tutorial_system_overview">برای نمایش برنامه‌های اخیر، <xliff:g id="keys" example="کلید «کنش» + Tab">%1$s</xliff:g> را فشار دهید. کلیدهای Alt + Tab بین برنامه‌ها جابه‌جا می‌شوند.</string>
+    <string name="sandfly_keyboard_tutorial_system_notifications">برای باز کردن اعلان‌ها، <xliff:g id="keys" example="کلید «کنش» + N">%1$s</xliff:g> را فشار دهید.</string>
+    <string name="sandfly_keyboard_tutorial_menu_open">برای باز کردن منوی SandFly، <xliff:g id="keys" example="کلید «کنش» + Ctrl + M">%1$s</xliff:g> را فشار دهید. فرمان‌های آن را مرور کنید. کلید Esc منو را می‌بندد.</string>
+    <string name="sandfly_keyboard_tutorial_menu_close">برای بستن منو، Esc را فشار دهید.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_title">فهرست میان‌برهای صفحه‌کلید</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_intro">‏SandFly هر میان‌بر صفحه‌کلید را همراه با فرمانش فهرست می‌کند.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_open">برای باز کردن فهرست، <xliff:g id="keys" example="کلید «کنش» + Shift + /">%1$s</xliff:g> را فشار دهید. کلید Esc آن را می‌بندد.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_close">برای بستن فهرست، Esc را فشار دهید.</string>
+    <string name="sandfly_keyboard_tutorial_commands_copy">برای کپی کردن آخرین متنی که SandFly گفت در بریده‌دان، <xliff:g id="keys" example="کلید «کنش» + Ctrl + C">%1$s</xliff:g> را فشار دهید.</string>
+    <string name="sandfly_keyboard_tutorial_commands_search">برای جستجوی متن در صفحه، <xliff:g id="keys" example="کلید «کنش» + Ctrl + /">%1$s</xliff:g> را فشار دهید. در این درس، آموزش گام‌به‌گام به‌جای اجرای آن می‌گوید چه کاری انجام می‌دهد.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_title">حالت مرور</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_intro">در «حالت مرور»، هر حرف به مورد بعدی از یک نوع می‌پرد، مانند H برای سرصفحه‌ها، K برای پیوندها و B برای دکمه‌ها. ‏Shift همراه با حرف به عقب می‌پرد. «حالت مرور» هنگام تایپ در فیلد متن خاموش می‌شود.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_on">برای روشن کردن «حالت مرور»، <xliff:g id="keys" example="کلید «کنش» دو بار">%1$s</xliff:g> را فشار دهید.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_heading">برای پریدن به سرصفحه بعدی، <xliff:g id="keys" example="H">%1$s</xliff:g> را فشار دهید. به «<xliff:g id="heading" example="آخر هفته">%2$s</xliff:g>» بپرید.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_off">برای خاموش کردن «حالت مرور»، <xliff:g id="keys" example="کلید «کنش» دو بار">%1$s</xliff:g> را فشار دهید.</string>
+    <string name="sandfly_keyboard_tutorial_practice_title">تمرین صفحه‌کلید</string>
+    <string name="sandfly_keyboard_tutorial_practice_intro">هر میان‌بر صفحه‌کلید به‌جای اجرا شدن، کلیدها و فرمان خود را می‌گوید. «مورد بعدی»، «مورد قبلی» و فعال کردن همچنان کار می‌کنند.</string>
+    <string name="sandfly_keyboard_tutorial_practice_step">هر میان‌بر صفحه‌کلیدی را فشار دهید تا بشنوید چه می‌کند. برای توقف، «<xliff:g id="button" example="پایان تمرین">%1$s</xliff:g>» را فعال کنید.</string>
+</resources>

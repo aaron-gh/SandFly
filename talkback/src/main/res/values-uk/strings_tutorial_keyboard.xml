@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="sandfly_keyboard_tutorial_title">Навчальний посібник із клавіатури SandFly</string>
+    <string name="sandfly_keyboard_tutorial_no_key">Для дії «<xliff:g id="command" example="Наступний елемент">%1$s</xliff:g>» немає комбінації клавіш. Призначте її в розділі «Команди» або скористайтеся кнопкою «Пропустити крок».</string>
+    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">Для режиму перегляду потрібна «Покращена розкладка». Виберіть її в розділі <xliff:g id="settings_path" example="Налаштування SandFly &gt; Комбінації клавіш &gt; Вибрати прив’язку клавіш">%1$s</xliff:g> або скористайтеся кнопкою «Пропустити крок».</string>
+    <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g> двічі</string>
+    <string name="sandfly_keyboard_tutorial_lesson_complete_next">Урок завершено. <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> — почати наступний урок.</string>
+    <string name="sandfly_keyboard_tutorial_lesson_complete_last">Урок завершено. <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> — завершити посібник.</string>
+    <string name="sandfly_keyboard_tutorial_chapter_web">Вебсторінки</string>
+
+    <string name="sandfly_keyboard_tutorial_welcome_intro">Цей посібник навчає комбінацій клавіш SandFly. Більшість із них використовують клавішу «<xliff:g id="key" example="Action">%1$s</xliff:g>» разом з іншими клавішами. <xliff:g id="location" example="Клавіша дії – це клавіша Windows поруч із лівою клавішею Alt.">%2$s</xliff:g> Ctrl зупиняє мовлення. Кожен урок дає інструкцію, чекає, доки ви натиснете клавіші, які вона називає, а потім дає наступну. Інструкція — перший елемент після назви уроку. «Зміст» містить усі уроки, а посібник знову відкривається на уроці, на якому ви зупинилися.</string>
+    <string name="sandfly_keyboard_tutorial_action_key_location">Клавіша дії – це клавіша Windows поруч із лівою клавішею Alt. На клавіатурах Apple це клавіша Command поруч із пробілом.</string>
+    <string name="sandfly_keyboard_tutorial_alt_key_location">Клавіша Alt розташована поруч із пробілом.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_start"><xliff:g id="keys" example="Action + Space">%1$s</xliff:g> — почати.</string>
+
+    <string name="sandfly_keyboard_tutorial_move_intro">«Наступний елемент» і «Попередній елемент» переходять між елементами на екрані в порядку читання.</string>
+    <string name="sandfly_keyboard_tutorial_move_next"><xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g> — перейти до наступного елемента. Продовжуйте, доки не дійдете до елемента «<xliff:g id="item" example="Яйця">%2$s</xliff:g>».</string>
+    <string name="sandfly_keyboard_tutorial_move_previous"><xliff:g id="keys" example="Action + Left arrow">%1$s</xliff:g> — перейти до попереднього елемента. Поверніться до елемента «<xliff:g id="item" example="Хліб">%2$s</xliff:g>».</string>
+
+    <string name="sandfly_keyboard_tutorial_activate_intro">Активація діє на елемент у фокусі.</string>
+    <string name="sandfly_keyboard_tutorial_activate_button">Перейдіть до елемента «<xliff:g id="button" example="Подзвонити в дзвоник">%2$s</xliff:g>». <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> — активувати його.</string>
+    <string name="sandfly_keyboard_tutorial_activate_check_box">Встановіть прапорець «<xliff:g id="check_box" example="Додатковий сир">%2$s</xliff:g>» клавішами <xliff:g id="keys" example="Action + Space">%1$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_activate_hold">Деякі елементи виконують іншу дію, якщо їх утримувати. Перейдіть до елемента «<xliff:g id="button" example="Деталі">%2$s</xliff:g>». <xliff:g id="keys" example="Action + Shift + Space">%1$s</xliff:g> — утримати його.</string>
+
+    <string name="sandfly_keyboard_tutorial_reading_controls_intro">Елементи керування читанням визначають, що роблять переміщення вгору й униз, наприклад переміщення по словах або символах. «Наступний елемент» і «Попередній елемент», як і раніше, переходять між елементами.</string>
+    <string name="sandfly_keyboard_tutorial_choose_reading_control"><xliff:g id="keys" example="Action + Shift + Right arrow">%1$s</xliff:g> або <xliff:g id="keys" example="Action + Shift + Left arrow">%2$s</xliff:g> — змінити елемент керування читанням. Виберіть «<xliff:g id="reading_control" example="Слова">%3$s</xliff:g>».</string>
+    <string name="sandfly_keyboard_tutorial_next_word"><xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g> — перейти до наступного слова. Перейдіть на три слова.</string>
+    <string name="sandfly_keyboard_tutorial_characters">Змініть елемент керування читанням на «<xliff:g id="reading_control" example="Символи">%2$s</xliff:g>». <xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g> — перейти на один символ.</string>
+    <string name="sandfly_keyboard_tutorial_headings_jump"><xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g> — перейти до наступного заголовка. Перейдіть до заголовка «<xliff:g id="heading" example="Вихідні">%2$s</xliff:g>».</string>
+
+    <string name="sandfly_keyboard_tutorial_continuous_intro">SandFly може читати від елемента у фокусі до кінця екрана. Ctrl зупиняє читання.</string>
+    <string name="sandfly_keyboard_tutorial_continuous_read"><xliff:g id="keys" example="Action + Ctrl + R">%1$s</xliff:g> — читати від елемента у фокусі.</string>
+
+    <string name="sandfly_keyboard_tutorial_scrolling_intro">Списки показують лише частину своїх елементів одночасно. Перехід за останній показаний елемент прокручує список.</string>
+    <string name="sandfly_keyboard_tutorial_scrolling_next"><xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g> — переходити по списку, доки не дійдете до елемента «<xliff:g id="item" example="Елемент 15">%2$s</xliff:g>».</string>
+
+    <string name="sandfly_keyboard_tutorial_actions_intro">Деякі елементи мають дії, крім активації, наприклад «Архівувати» або «Видалити» для повідомлення. Меню дій містить їх.</string>
+    <string name="sandfly_keyboard_tutorial_actions_archive">Перейдіть до повідомлення. <xliff:g id="keys" example="Action + Ctrl + A">%1$s</xliff:g> — відкрити його дії. Виберіть «<xliff:g id="action" example="Архівувати">%2$s</xliff:g>».</string>
+
+    <string name="sandfly_keyboard_tutorial_typing_intro">Активація текстового поля дає змогу вводити в нього текст.</string>
+    <string name="sandfly_keyboard_tutorial_typing_open">Перейдіть до поля «<xliff:g id="field" example="Ім’я">%2$s</xliff:g>». <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> — почати введення.</string>
+    <string name="sandfly_keyboard_tutorial_typing_delete">Видаліть останню літеру клавішею Backspace.</string>
+
+    <string name="sandfly_keyboard_tutorial_system_intro">Android має власні комбінації клавіш із клавішею дії. Вони працюють на кожному екрані. У цьому уроці посібник озвучує, що робить кожна з них, замість того щоб виконувати дію.</string>
+    <string name="sandfly_keyboard_tutorial_system_back"><xliff:g id="keys" example="Action + Esc">%1$s</xliff:g> — повернутися назад.</string>
+    <string name="sandfly_keyboard_tutorial_system_home"><xliff:g id="keys" example="Action + H">%1$s</xliff:g> — перейти на головний екран.</string>
+    <string name="sandfly_keyboard_tutorial_system_overview"><xliff:g id="keys" example="Action + Tab">%1$s</xliff:g> — показати останні додатки. Alt + Tab перемикає між додатками.</string>
+    <string name="sandfly_keyboard_tutorial_system_notifications"><xliff:g id="keys" example="Action + N">%1$s</xliff:g> — відкрити сповіщення.</string>
+
+    <string name="sandfly_keyboard_tutorial_menu_open"><xliff:g id="keys" example="Action + Ctrl + M">%1$s</xliff:g> — відкрити меню SandFly. Перегляньте його команди. Esc закриває меню.</string>
+    <string name="sandfly_keyboard_tutorial_menu_close">Esc — закрити меню.</string>
+
+    <string name="sandfly_keyboard_tutorial_shortcut_list_title">Список комбінацій клавіш</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_intro">SandFly показує кожну комбінацію клавіш із її командою.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_open"><xliff:g id="keys" example="Action + Shift + /">%1$s</xliff:g> — відкрити список. Esc закриває його.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_close">Esc — закрити список.</string>
+
+    <string name="sandfly_keyboard_tutorial_commands_copy"><xliff:g id="keys" example="Action + Ctrl + C">%1$s</xliff:g> — скопіювати в буфер обміну останній текст, озвучений SandFly.</string>
+    <string name="sandfly_keyboard_tutorial_commands_search"><xliff:g id="keys" example="Action + Ctrl + /">%1$s</xliff:g> — шукати текст на екрані. У цьому уроці посібник замість виконання озвучує, що робить команда.</string>
+
+    <string name="sandfly_keyboard_tutorial_browse_mode_title">Режим перегляду</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_intro">У режимі перегляду окремі літери переходять до наступного елемента певного типу, наприклад H – до заголовків, K – до посилань, B – до кнопок. Shift із літерою переходить назад. Режим перегляду вимикається, поки ви вводите текст у текстове поле.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_on"><xliff:g id="keys" example="Action twice">%1$s</xliff:g> — увімкнути режим перегляду.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_heading"><xliff:g id="keys" example="H">%1$s</xliff:g> — перейти до наступного заголовка. Перейдіть до заголовка «<xliff:g id="heading" example="Вихідні">%2$s</xliff:g>».</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_off"><xliff:g id="keys" example="Action twice">%1$s</xliff:g> — вимкнути режим перегляду.</string>
+
+    <string name="sandfly_keyboard_tutorial_practice_title">Практика клавіатури</string>
+    <string name="sandfly_keyboard_tutorial_practice_intro">Кожна комбінація клавіш озвучує свої клавіші й команду замість її виконання. «Наступний елемент», «Попередній елемент» і активація працюють як завжди.</string>
+    <string name="sandfly_keyboard_tutorial_practice_step">Натисніть будь-яку комбінацію клавіш, щоб почути, що вона робить. Щоб зупинитися, активуйте кнопку «<xliff:g id="button" example="Завершити практику">%1$s</xliff:g>».</string>
+</resources>

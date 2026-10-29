@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="sandfly_keyboard_tutorial_title">Руководство по клавиатуре SandFly</string>
+    <string name="sandfly_keyboard_tutorial_no_key">У команды «<xliff:g id="command" example="Следующий объект">%1$s</xliff:g>» нет быстрой клавиши. Назначьте её в разделе «Команды» или используйте «Пропустить шаг».</string>
+    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">Для режима обзора нужна «Улучшенная раскладка». Выберите её в разделе <xliff:g id="settings_path" example="Настройки SandFly &gt; Быстрые клавиши &gt; Выбрать раскладку">%1$s</xliff:g> или используйте «Пропустить шаг».</string>
+    <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g> дважды</string>
+    <string name="sandfly_keyboard_tutorial_lesson_complete_next">Урок пройден. Нажмите <xliff:g id="keys" example="Action + Space">%1$s</xliff:g>, чтобы начать следующий урок.</string>
+    <string name="sandfly_keyboard_tutorial_lesson_complete_last">Урок пройден. Нажмите <xliff:g id="keys" example="Action + Space">%1$s</xliff:g>, чтобы завершить руководство.</string>
+    <string name="sandfly_keyboard_tutorial_chapter_web">Веб-страницы</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">Это руководство обучает быстрым клавишам SandFly. Большинство из них использует клавишу <xliff:g id="key" example="Action">%1$s</xliff:g> вместе с другими клавишами. <xliff:g id="location" example="Клавиша действия – это клавиша Windows рядом с левой клавишей Alt.">%2$s</xliff:g> Ctrl останавливает речь. Каждый урок даёт инструкцию, ждёт, пока вы нажмёте указанные в ней клавиши, и даёт следующую. Инструкция – первый элемент после названия урока. В разделе «Содержание» перечислены все уроки, а руководство открывается на уроке, на котором вы остановились.</string>
+    <string name="sandfly_keyboard_tutorial_action_key_location">Клавиша действия – это клавиша Windows рядом с левой клавишей Alt. На клавиатурах Apple это клавиша Command рядом с клавишей пробела.</string>
+    <string name="sandfly_keyboard_tutorial_alt_key_location">Клавиша Alt находится рядом с клавишей пробела.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_start">Нажмите <xliff:g id="keys" example="Action + Space">%1$s</xliff:g>, чтобы начать.</string>
+    <string name="sandfly_keyboard_tutorial_move_intro">Команды «Следующий объект» и «Предыдущий объект» перемещают по элементам на экране в порядке чтения.</string>
+    <string name="sandfly_keyboard_tutorial_move_next">Нажмите <xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g>, чтобы перейти к следующему элементу. Продолжайте, пока не дойдёте до элемента «<xliff:g id="item" example="Яйца">%2$s</xliff:g>».</string>
+    <string name="sandfly_keyboard_tutorial_move_previous">Нажмите <xliff:g id="keys" example="Action + Left arrow">%1$s</xliff:g>, чтобы перейти к предыдущему элементу. Вернитесь к элементу «<xliff:g id="item" example="Хлеб">%2$s</xliff:g>».</string>
+    <string name="sandfly_keyboard_tutorial_activate_intro">Активация срабатывает для элемента в фокусе.</string>
+    <string name="sandfly_keyboard_tutorial_activate_button">Перейдите к кнопке «<xliff:g id="button" example="Позвонить в колокольчик">%2$s</xliff:g>». Нажмите <xliff:g id="keys" example="Action + Space">%1$s</xliff:g>, чтобы активировать её.</string>
+    <string name="sandfly_keyboard_tutorial_activate_check_box">Установите флажок «<xliff:g id="check_box" example="Дополнительный сыр">%2$s</xliff:g>» клавишами <xliff:g id="keys" example="Action + Space">%1$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_activate_hold">Некоторые элементы при удержании выполняют другое действие. Перейдите к кнопке «<xliff:g id="button" example="Подробности">%2$s</xliff:g>». Нажмите <xliff:g id="keys" example="Action + Shift + Space">%1$s</xliff:g>, чтобы удержать её.</string>
+    <string name="sandfly_keyboard_tutorial_reading_controls_intro">Элементы управления чтением определяют, что делает перемещение вверх и вниз, например перемещение по словам или символам. Команды «Следующий объект» и «Предыдущий объект» по-прежнему перемещают между элементами.</string>
+    <string name="sandfly_keyboard_tutorial_choose_reading_control">Нажмите <xliff:g id="keys" example="Action + Shift + Right arrow">%1$s</xliff:g> или <xliff:g id="keys" example="Action + Shift + Left arrow">%2$s</xliff:g>, чтобы сменить элемент управления чтением. Выберите «<xliff:g id="reading_control" example="Слова">%3$s</xliff:g>».</string>
+    <string name="sandfly_keyboard_tutorial_next_word">Нажмите <xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g>, чтобы перейти к следующему слову. Переместитесь на три слова.</string>
+    <string name="sandfly_keyboard_tutorial_characters">Выберите элемент управления чтением «<xliff:g id="reading_control" example="Символы">%2$s</xliff:g>». Нажмите <xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g>, чтобы переместиться на один символ.</string>
+    <string name="sandfly_keyboard_tutorial_headings_jump">Нажмите <xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g>, чтобы перейти к следующему заголовку. Перейдите к заголовку «<xliff:g id="heading" example="Выходные">%2$s</xliff:g>».</string>
+    <string name="sandfly_keyboard_tutorial_continuous_intro">SandFly может читать от элемента в фокусе до конца экрана. Ctrl останавливает чтение.</string>
+    <string name="sandfly_keyboard_tutorial_continuous_read">Нажмите <xliff:g id="keys" example="Action + Ctrl + R">%1$s</xliff:g>, чтобы читать с элемента в фокусе.</string>
+    <string name="sandfly_keyboard_tutorial_scrolling_intro">Списки показывают только часть элементов за раз. Перемещение дальше последнего показанного элемента прокручивает список.</string>
+    <string name="sandfly_keyboard_tutorial_scrolling_next">Нажимайте <xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g>, пока не дойдёте до элемента «<xliff:g id="item" example="Элемент 15">%2$s</xliff:g>».</string>
+    <string name="sandfly_keyboard_tutorial_actions_intro">У некоторых элементов есть действия помимо активации, например «Архивировать» или «Удалить» у сообщения. Меню действий перечисляет их.</string>
+    <string name="sandfly_keyboard_tutorial_actions_archive">Перейдите к сообщению. Нажмите <xliff:g id="keys" example="Action + Ctrl + A">%1$s</xliff:g>, чтобы открыть его действия. Выберите «<xliff:g id="action" example="Архивировать">%2$s</xliff:g>».</string>
+    <string name="sandfly_keyboard_tutorial_typing_intro">Активация текстового поля позволяет вводить в нём текст.</string>
+    <string name="sandfly_keyboard_tutorial_typing_open">Перейдите к полю «<xliff:g id="field" example="Имя">%2$s</xliff:g>». Нажмите <xliff:g id="keys" example="Action + Space">%1$s</xliff:g>, чтобы начать ввод.</string>
+    <string name="sandfly_keyboard_tutorial_typing_delete">Удалите последнюю букву клавишей Backspace.</string>
+    <string name="sandfly_keyboard_tutorial_system_intro">В Android есть собственные быстрые клавиши с клавишей действия. Они работают на любом экране. В этом уроке руководство вместо выполнения сообщает, что делает каждая из них.</string>
+    <string name="sandfly_keyboard_tutorial_system_back">Нажмите <xliff:g id="keys" example="Action + Esc">%1$s</xliff:g>, чтобы вернуться назад.</string>
+    <string name="sandfly_keyboard_tutorial_system_home">Нажмите <xliff:g id="keys" example="Action + H">%1$s</xliff:g>, чтобы перейти на главный экран.</string>
+    <string name="sandfly_keyboard_tutorial_system_overview">Нажмите <xliff:g id="keys" example="Action + Tab">%1$s</xliff:g>, чтобы показать недавние приложения. Alt + Tab переключает между приложениями.</string>
+    <string name="sandfly_keyboard_tutorial_system_notifications">Нажмите <xliff:g id="keys" example="Action + N">%1$s</xliff:g>, чтобы открыть уведомления.</string>
+    <string name="sandfly_keyboard_tutorial_menu_open">Нажмите <xliff:g id="keys" example="Action + Ctrl + M">%1$s</xliff:g>, чтобы открыть меню SandFly. Переместитесь по его командам. Esc закрывает меню.</string>
+    <string name="sandfly_keyboard_tutorial_menu_close">Нажмите Esc, чтобы закрыть меню.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_title">Список быстрых клавиш</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_intro">SandFly показывает список всех быстрых клавиш с их командами.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_open">Нажмите <xliff:g id="keys" example="Action + Shift + /">%1$s</xliff:g>, чтобы открыть список. Esc закрывает его.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_close">Нажмите Esc, чтобы закрыть список.</string>
+    <string name="sandfly_keyboard_tutorial_commands_copy">Нажмите <xliff:g id="keys" example="Action + Ctrl + C">%1$s</xliff:g>, чтобы скопировать в буфер обмена последний текст, произнесённый SandFly.</string>
+    <string name="sandfly_keyboard_tutorial_commands_search">Нажмите <xliff:g id="keys" example="Action + Ctrl + /">%1$s</xliff:g>, чтобы найти текст на экране. В этом уроке руководство вместо этого сообщает, что делает команда.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_title">Режим обзора</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_intro">В режиме обзора отдельные буквы переходят к следующему элементу определённого типа, например H – к заголовкам, K – к ссылкам, B – к кнопкам. Буква с Shift переходит назад. Режим обзора отключается, пока вы вводите текст в текстовом поле.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_on">Нажмите <xliff:g id="keys" example="Action twice">%1$s</xliff:g>, чтобы включить режим обзора.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_heading">Нажмите <xliff:g id="keys" example="H">%1$s</xliff:g>, чтобы перейти к следующему заголовку. Перейдите к заголовку «<xliff:g id="heading" example="Выходные">%2$s</xliff:g>».</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_off">Нажмите <xliff:g id="keys" example="Action twice">%1$s</xliff:g>, чтобы отключить режим обзора.</string>
+    <string name="sandfly_keyboard_tutorial_practice_title">Практика клавиатуры</string>
+    <string name="sandfly_keyboard_tutorial_practice_intro">Каждая быстрая клавиша вместо выполнения называет свои клавиши и команду. Команды «Следующий объект» и «Предыдущий объект» и активация продолжают работать.</string>
+    <string name="sandfly_keyboard_tutorial_practice_step">Нажмите любую быструю клавишу, чтобы узнать, что она делает. Чтобы закончить, активируйте кнопку «<xliff:g id="button" example="Завершить практику">%1$s</xliff:g>».</string>
+</resources>

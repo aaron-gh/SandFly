@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="sandfly_keyboard_tutorial_title">SandFly-toetsenbordtutorial</string>
+    <string name="sandfly_keyboard_tutorial_no_key"><xliff:g id="command" example="Volgend item">%1$s</xliff:g> heeft geen sneltoets. Wijs er een toe in Commando\'s, of gebruik Stap overslaan.</string>
+    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">Browsemodus vereist de Verbeterde keymap. Kies deze in <xliff:g id="settings_path" example="Instellingen voor SandFly &gt; Sneltoetsen &gt; Een keymap kiezen">%1$s</xliff:g>, of gebruik Stap overslaan.</string>
+    <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g> twee keer</string>
+    <string name="sandfly_keyboard_tutorial_lesson_complete_next">Les voltooid. Druk op <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> om de volgende les te starten.</string>
+    <string name="sandfly_keyboard_tutorial_lesson_complete_last">Les voltooid. Druk op <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> om de tutorial af te ronden.</string>
+    <string name="sandfly_keyboard_tutorial_chapter_web">Webpagina\'s</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">Deze tutorial leert je de sneltoetsen van SandFly. De meeste gebruiken de <xliff:g id="key" example="Action">%1$s</xliff:g>-toets met andere toetsen. <xliff:g id="location" example="De Actie-toets is de Windows-toets, naast de linker Alt-toets.">%2$s</xliff:g> Ctrl stopt de spraak. Elke les geeft een instructie, wacht tot je de toetsen hebt ingedrukt die erin worden genoemd en geeft dan de volgende. De instructie is het eerste item na de naam van de les. Inhoud toont alle lessen, en de tutorial wordt weer geopend bij de les waar je was.</string>
+    <string name="sandfly_keyboard_tutorial_action_key_location">De Actie-toets is de Windows-toets, naast de linker Alt-toets. Op Apple-toetsenborden is dit de Command-toets, naast de spatiebalk.</string>
+    <string name="sandfly_keyboard_tutorial_alt_key_location">De Alt-toets zit naast de spatiebalk.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_start">Druk op <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> om te beginnen.</string>
+    <string name="sandfly_keyboard_tutorial_move_intro">Volgend item en Vorig item gaan in leesvolgorde door de items op het scherm.</string>
+    <string name="sandfly_keyboard_tutorial_move_next">Druk op <xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g> om naar het volgende item te gaan. Ga door tot je bij <xliff:g id="item" example="Eieren">%2$s</xliff:g> bent.</string>
+    <string name="sandfly_keyboard_tutorial_move_previous">Druk op <xliff:g id="keys" example="Action + Left arrow">%1$s</xliff:g> om naar het vorige item te gaan. Ga terug naar <xliff:g id="item" example="Brood">%2$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_activate_intro">Activeren werkt op het item dat focus heeft.</string>
+    <string name="sandfly_keyboard_tutorial_activate_button">Ga naar <xliff:g id="button" example="Bel laten rinkelen">%2$s</xliff:g>. Druk op <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> om het te activeren.</string>
+    <string name="sandfly_keyboard_tutorial_activate_check_box">Vink <xliff:g id="check_box" example="Extra kaas">%2$s</xliff:g> aan met <xliff:g id="keys" example="Action + Space">%1$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_activate_hold">Sommige items doen iets anders als je ze vasthoudt. Ga naar <xliff:g id="button" example="Details">%2$s</xliff:g>. Druk op <xliff:g id="keys" example="Action + Shift + Space">%1$s</xliff:g> om het vast te houden.</string>
+    <string name="sandfly_keyboard_tutorial_reading_controls_intro">Leesinstellingen bepalen wat omhoog en omlaag gaan doet, zoals per woord of per teken bewegen. Volgend item en Vorig item gaan nog steeds tussen items.</string>
+    <string name="sandfly_keyboard_tutorial_choose_reading_control">Druk op <xliff:g id="keys" example="Action + Shift + Right arrow">%1$s</xliff:g> of <xliff:g id="keys" example="Action + Shift + Left arrow">%2$s</xliff:g> om de leesinstelling te wijzigen. Kies <xliff:g id="reading_control" example="Woorden">%3$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_next_word">Druk op <xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g> om naar het volgende woord te gaan. Ga drie woorden verder.</string>
+    <string name="sandfly_keyboard_tutorial_characters">Wijzig de leesinstelling in <xliff:g id="reading_control" example="Tekens">%2$s</xliff:g>. Druk op <xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g> om een teken verder te gaan.</string>
+    <string name="sandfly_keyboard_tutorial_headings_jump">Druk op <xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g> om naar de volgende kop te springen. Spring naar <xliff:g id="heading" example="Weekend">%2$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_continuous_intro">SandFly kan voorlezen vanaf het item waarop is gefocust tot het einde van het scherm. Ctrl stopt het voorlezen.</string>
+    <string name="sandfly_keyboard_tutorial_continuous_read">Druk op <xliff:g id="keys" example="Action + Ctrl + R">%1$s</xliff:g> om voor te lezen vanaf het item waarop is gefocust.</string>
+    <string name="sandfly_keyboard_tutorial_scrolling_intro">Lijsten tonen maar een deel van hun items tegelijk. Als je voorbij het laatst getoonde item gaat, scrolt de lijst.</string>
+    <string name="sandfly_keyboard_tutorial_scrolling_next">Druk op <xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g> tot je bij <xliff:g id="item" example="Item 15">%2$s</xliff:g> bent.</string>
+    <string name="sandfly_keyboard_tutorial_actions_intro">Sommige items hebben naast activeren nog andere acties, zoals Archiveren of Verwijderen voor een bericht. Het actiemenu toont ze.</string>
+    <string name="sandfly_keyboard_tutorial_actions_archive">Ga naar het bericht. Druk op <xliff:g id="keys" example="Action + Ctrl + A">%1$s</xliff:g> om de acties ervan te openen. Kies <xliff:g id="action" example="Archiveren">%2$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_typing_intro">Als je een tekstveld activeert, kun je erin typen.</string>
+    <string name="sandfly_keyboard_tutorial_typing_open">Ga naar het veld <xliff:g id="field" example="Naam">%2$s</xliff:g>. Druk op <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> om te beginnen met typen.</string>
+    <string name="sandfly_keyboard_tutorial_typing_delete">Verwijder de laatste letter met Backspace.</string>
+    <string name="sandfly_keyboard_tutorial_system_intro">Android heeft eigen sneltoetsen met de Actie-toets. Ze werken op elk scherm. In deze les zegt de tutorial wat elke sneltoets doet in plaats van het uit te voeren.</string>
+    <string name="sandfly_keyboard_tutorial_system_back">Druk op <xliff:g id="keys" example="Action + Esc">%1$s</xliff:g> om terug te gaan.</string>
+    <string name="sandfly_keyboard_tutorial_system_home">Druk op <xliff:g id="keys" example="Action + H">%1$s</xliff:g> om naar het startscherm te gaan.</string>
+    <string name="sandfly_keyboard_tutorial_system_overview">Druk op <xliff:g id="keys" example="Action + Tab">%1$s</xliff:g> om recente apps te tonen. Alt + Tab wisselt tussen apps.</string>
+    <string name="sandfly_keyboard_tutorial_system_notifications">Druk op <xliff:g id="keys" example="Action + N">%1$s</xliff:g> om meldingen te openen.</string>
+    <string name="sandfly_keyboard_tutorial_menu_open">Druk op <xliff:g id="keys" example="Action + Ctrl + M">%1$s</xliff:g> om het SandFly-menu te openen. Ga door de commando\'s. Esc sluit het menu.</string>
+    <string name="sandfly_keyboard_tutorial_menu_close">Druk op Esc om het menu te sluiten.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_title">Lijst met sneltoetsen</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_intro">SandFly toont elke sneltoets met het bijbehorende commando.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_open">Druk op <xliff:g id="keys" example="Action + Shift + /">%1$s</xliff:g> om de lijst te openen. Esc sluit de lijst.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_close">Druk op Esc om de lijst te sluiten.</string>
+    <string name="sandfly_keyboard_tutorial_commands_copy">Druk op <xliff:g id="keys" example="Action + Ctrl + C">%1$s</xliff:g> om de laatste tekst die SandFly heeft uitgesproken naar het klembord te kopiëren.</string>
+    <string name="sandfly_keyboard_tutorial_commands_search">Druk op <xliff:g id="keys" example="Action + Ctrl + /">%1$s</xliff:g> om tekst op het scherm te zoeken. In deze les zegt de tutorial in plaats daarvan wat de sneltoets doet.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_title">Browsemodus</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_intro">In de browsemodus springen losse letters naar het volgende item van een type, zoals H voor koppen, K voor links en B voor knoppen. Shift met de letter springt terug. De browsemodus gaat uit terwijl je in een tekstveld typt.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_on">Druk op <xliff:g id="keys" example="Action twice">%1$s</xliff:g> om de browsemodus aan te zetten.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_heading">Druk op <xliff:g id="keys" example="H">%1$s</xliff:g> om naar de volgende kop te springen. Spring naar <xliff:g id="heading" example="Weekend">%2$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_off">Druk op <xliff:g id="keys" example="Action twice">%1$s</xliff:g> om de browsemodus uit te zetten.</string>
+    <string name="sandfly_keyboard_tutorial_practice_title">Toetsenbord oefenen</string>
+    <string name="sandfly_keyboard_tutorial_practice_intro">Elke sneltoets zegt zijn toetsen en commando in plaats van het commando uit te voeren. Volgend item, Vorig item en activeren werken nog wel.</string>
+    <string name="sandfly_keyboard_tutorial_practice_step">Druk op een willekeurige sneltoets om te horen wat die doet. Activeer <xliff:g id="button" example="Oefenen beëindigen">%1$s</xliff:g> om te stoppen.</string>
+</resources>

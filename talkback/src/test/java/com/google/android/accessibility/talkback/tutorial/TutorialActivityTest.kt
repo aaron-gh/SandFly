@@ -19,12 +19,14 @@ package com.google.android.accessibility.talkback.tutorial
 import android.accessibilityservice.AccessibilityService.GESTURE_SWIPE_RIGHT
 import android.content.Context
 import android.os.Looper
+import android.view.KeyEvent
 import android.view.View
 import android.view.ViewGroup
 import android.view.accessibility.AccessibilityNodeInfo
 import android.widget.TextView
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.utils.FormFactorUtils
+import com.google.android.accessibility.utils.SharedPreferencesUtils
 import org.junit.After
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNotNull
@@ -57,6 +59,30 @@ class TutorialActivityTest {
   private fun open(lesson: String) =
     Robolectric.buildActivity(TutorialActivity::class.java, TutorialActivity.intent(context, lesson))
       .setup()
+
+  private fun openKeyboard(lesson: String) =
+    Robolectric.buildActivity(
+        TutorialActivity::class.java,
+        TutorialActivity.keyboardIntent(context, lesson),
+      )
+      .setup()
+
+  private fun useEnhancedKeymap() {
+    SharedPreferencesUtils.getSharedPreferences(context)
+      .edit()
+      .putString(
+        context.getString(R.string.pref_select_keymap_key),
+        context.getString(R.string.new_keymap_entry_value),
+      )
+      .commit()
+  }
+
+  /** Gives the activity's window focus, which Robolectric doesn't. */
+  private fun focusWindow(activity: TutorialActivity) {
+    val info =
+      View::class.java.getDeclaredField("mAttachInfo").apply { isAccessible = true }.get(activity.window.decorView)
+    info.javaClass.getDeclaredField("mHasWindowFocus").apply { isAccessible = true }.setBoolean(info, true)
+  }
 
   private fun texts(view: View): List<TextView> =
     when (view) {
@@ -123,6 +149,86 @@ class TutorialActivityTest {
     for (lesson in TutorialLessons.all) {
       assertNotNull(lesson.id, activity.find(activity.getString(lesson.title)))
     }
+  }
+
+  @Test
+  fun everyKeyboardLessonOpensWithItsKeysInBothKeymaps() {
+    for (enhanced in listOf(false, true)) {
+      if (enhanced) useEnhancedKeymap()
+      for (lesson in TutorialLessons.keyboard) {
+        val activity = openKeyboard(lesson.id).get()
+        val heading = activity.getString(lesson.title)
+        assertTrue(lesson.id, texts(activity.window.decorView).any { it.text.startsWith(heading) })
+        for (view in texts(activity.window.decorView)) {
+          assertFalse(lesson.id, view.text.contains("%"))
+        }
+      }
+    }
+  }
+
+  @Test
+  fun enhancedKeymapNamesEveryKeyboardLessonsKeys() {
+    useEnhancedKeymap()
+    val missing = context.getString(R.string.sandfly_keyboard_tutorial_no_key).substringAfter("%1\$s")
+    for (lesson in TutorialLessons.keyboard) {
+      val activity = openKeyboard(lesson.id).get()
+      activity.find(activity.getString(R.string.sandfly_tutorial_skip_step))!!.apply {
+        for (step in lesson.steps) {
+          assertFalse(
+            lesson.id,
+            texts(activity.window.decorView).any { it.text.contains(missing.take(20)) },
+          )
+          performClick()
+        }
+      }
+    }
+  }
+
+  @Test
+  fun welcomeNamesTheActionKeyInTheEnhancedKeymap() {
+    useEnhancedKeymap()
+    val activity = openKeyboard("welcome").get()
+    assertNotNull(
+      texts(activity.window.decorView).firstOrNull {
+        it.text.contains(activity.getString(R.string.sandfly_keyboard_tutorial_action_key_location))
+      }
+    )
+  }
+
+  @Test
+  fun keysToEggsGoToTheNextStep() {
+    val activity = openKeyboard("move").get()
+    val listener = TutorialHooks.listener!!
+    assertFalse(listener.onKeys("Alt + Right arrow", activity.getString(R.string.shortcut_value_next)))
+    activity
+      .find(activity.getString(R.string.sandfly_tutorial_item_eggs))!!
+      .performAccessibilityAction(AccessibilityNodeInfo.ACTION_ACCESSIBILITY_FOCUS, null)
+    shadowOf(Looper.getMainLooper()).idle()
+    assertTrue(activity.instruction().contains(activity.getString(R.string.sandfly_tutorial_item_bread)))
+  }
+
+  @Test
+  fun systemKeysAreTakenAndCountInTheirStep() {
+    val activity = openKeyboard("system").get()
+    val listener = TutorialHooks.listener!!
+    assertFalse(listener.onSystemKeys(KeyEvent.KEYCODE_ESCAPE))
+    focusWindow(activity)
+    assertTrue(listener.onSystemKeys(KeyEvent.KEYCODE_ESCAPE))
+    shadowOf(Looper.getMainLooper()).idle()
+    assertTrue(activity.instruction().startsWith(activity.getString(R.string.sandfly_tutorial_step).take(4)))
+    assertTrue(activity.instruction().contains("H"))
+  }
+
+  @Test
+  fun keyboardAndTouchTutorialsKeepTheirOwnLesson() {
+    openKeyboard("typing")
+    val touch = open("move").get()
+    assertNotNull(touch.find(touch.getString(R.string.sandfly_tutorial_item_eggs)))
+    val keyboard =
+      Robolectric.buildActivity(TutorialActivity::class.java, TutorialActivity.keyboardIntent(context))
+        .setup()
+        .get()
+    assertNotNull(keyboard.find(keyboard.getString(R.string.sandfly_tutorial_name)))
   }
 
   @Test

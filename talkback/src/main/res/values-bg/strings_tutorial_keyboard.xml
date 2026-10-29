@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="sandfly_keyboard_tutorial_title">Обучение за клавиатурата в SandFly</string>
+    <string name="sandfly_keyboard_tutorial_no_key">„<xliff:g id="command" example="Следващ елемент">%1$s</xliff:g>“ няма клавишна комбинация. Присвоете комбинация в „Команди“ или използвайте „Пропускане на стъпката“.</string>
+    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">Режимът за четене изисква „Подобрена клавиатурна подредба“. Изберете я в „<xliff:g id="settings_path" example="Настройки на SandFly &gt; Клавишни комбинации &gt; Избиране на клавишна карта">%1$s</xliff:g>“ или използвайте „Пропускане на стъпката“.</string>
+    <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Клавиш за действия">%1$s</xliff:g> два пъти</string>
+    <string name="sandfly_keyboard_tutorial_lesson_complete_next">Урокът е завършен. Натиснете <xliff:g id="keys" example="Клавиш за действия + Интервал">%1$s</xliff:g>, за да започнете следващия урок.</string>
+    <string name="sandfly_keyboard_tutorial_lesson_complete_last">Урокът е завършен. Натиснете <xliff:g id="keys" example="Клавиш за действия + Интервал">%1$s</xliff:g>, за да завършите обучението.</string>
+    <string name="sandfly_keyboard_tutorial_chapter_web">Уеб страници</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">Това обучение представя клавишните комбинации на SandFly. Повечето от тях използват клавиша „<xliff:g id="key" example="Клавиш за действия">%1$s</xliff:g>“ заедно с други клавиши. <xliff:g id="location" example="Клавишът за действия е клавишът Windows до левия клавиш Alt.">%2$s</xliff:g> Ctrl спира говора. Всеки урок дава инструкция, изчаква да натиснете посочените в нея клавиши и след това дава следващата. Инструкцията е първият елемент след името на урока. „Съдържание“ показва всички уроци, а обучението се отваря отново на урока, на който сте били.</string>
+    <string name="sandfly_keyboard_tutorial_action_key_location">Клавишът за действия е клавишът Windows до левия клавиш Alt. На клавиатурите на Apple това е клавишът Command до клавиша за интервал.</string>
+    <string name="sandfly_keyboard_tutorial_alt_key_location">Клавишът Alt е до клавиша за интервал.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_start">Натиснете <xliff:g id="keys" example="Клавиш за действия + Интервал">%1$s</xliff:g>, за да започнете.</string>
+    <string name="sandfly_keyboard_tutorial_move_intro">„Следващ елемент“ и „Предишен елемент“ преминават през елементите на екрана по реда на четене.</string>
+    <string name="sandfly_keyboard_tutorial_move_next">Натиснете <xliff:g id="keys" example="Клавиш за действия + Стрелка надясно">%1$s</xliff:g>, за да преминете към следващия елемент. Продължете, докато стигнете до „<xliff:g id="item" example="Яйца">%2$s</xliff:g>“.</string>
+    <string name="sandfly_keyboard_tutorial_move_previous">Натиснете <xliff:g id="keys" example="Клавиш за действия + Стрелка наляво">%1$s</xliff:g>, за да преминете към предишния елемент. Върнете се към „<xliff:g id="item" example="Хляб">%2$s</xliff:g>“.</string>
+    <string name="sandfly_keyboard_tutorial_activate_intro">Активирането действа върху елемента на фокус.</string>
+    <string name="sandfly_keyboard_tutorial_activate_button">Преминете към „<xliff:g id="button" example="Позвъняване на звънеца">%2$s</xliff:g>“. Натиснете <xliff:g id="keys" example="Клавиш за действия + Интервал">%1$s</xliff:g>, за да го активирате.</string>
+    <string name="sandfly_keyboard_tutorial_activate_check_box">Поставете отметка в „<xliff:g id="check_box" example="Допълнително сирене">%2$s</xliff:g>“ с <xliff:g id="keys" example="Клавиш за действия + Интервал">%1$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_activate_hold">Някои елементи правят друго при задържане. Преминете към „<xliff:g id="button" example="Подробности">%2$s</xliff:g>“. Натиснете <xliff:g id="keys" example="Клавиш за действия + Shift + Интервал">%1$s</xliff:g>, за да го задържите.</string>
+    <string name="sandfly_keyboard_tutorial_reading_controls_intro">Контролите за четене определят какво прави придвижването нагоре и надолу, например придвижване по думи или по знаци. „Следващ елемент“ и „Предишен елемент“ продължават да преминават между елементите.</string>
+    <string name="sandfly_keyboard_tutorial_choose_reading_control">Натиснете <xliff:g id="keys" example="Клавиш за действия + Shift + Стрелка надясно">%1$s</xliff:g> или <xliff:g id="keys" example="Клавиш за действия + Shift + Стрелка наляво">%2$s</xliff:g>, за да смените контролата за четене. Изберете „<xliff:g id="reading_control" example="Думи">%3$s</xliff:g>“.</string>
+    <string name="sandfly_keyboard_tutorial_next_word">Натиснете <xliff:g id="keys" example="Клавиш за действия + Стрелка надолу">%1$s</xliff:g>, за да преминете към следващата дума. Придвижете се с три думи.</string>
+    <string name="sandfly_keyboard_tutorial_characters">Сменете контролата за четене на „<xliff:g id="reading_control" example="Знаци">%2$s</xliff:g>“. Натиснете <xliff:g id="keys" example="Клавиш за действия + Стрелка надолу">%1$s</xliff:g>, за да се придвижите с един знак.</string>
+    <string name="sandfly_keyboard_tutorial_headings_jump">Натиснете <xliff:g id="keys" example="Клавиш за действия + Стрелка надолу">%1$s</xliff:g>, за да прескочите до следващото заглавие. Прескочете до „<xliff:g id="heading" example="Уикенд">%2$s</xliff:g>“.</string>
+    <string name="sandfly_keyboard_tutorial_continuous_intro">SandFly може да чете от елемента на фокус до края на екрана. Ctrl спира четенето.</string>
+    <string name="sandfly_keyboard_tutorial_continuous_read">Натиснете <xliff:g id="keys" example="Клавиш за действия + Ctrl + R">%1$s</xliff:g>, за да четете от елемента на фокус.</string>
+    <string name="sandfly_keyboard_tutorial_scrolling_intro">Списъците показват само част от елементите си наведнъж. Придвижването след последния показан елемент превърта списъка.</string>
+    <string name="sandfly_keyboard_tutorial_scrolling_next">Натискайте <xliff:g id="keys" example="Клавиш за действия + Стрелка надясно">%1$s</xliff:g>, докато стигнете до „<xliff:g id="item" example="Елемент 15">%2$s</xliff:g>“.</string>
+    <string name="sandfly_keyboard_tutorial_actions_intro">Някои елементи имат действия освен активирането, например „Архивиране“ или „Изтриване“ за съобщение. Менюто с действия ги показва.</string>
+    <string name="sandfly_keyboard_tutorial_actions_archive">Преминете към съобщението. Натиснете <xliff:g id="keys" example="Клавиш за действия + Ctrl + A">%1$s</xliff:g>, за да отворите действията му. Изберете „<xliff:g id="action" example="Архивиране">%2$s</xliff:g>“.</string>
+    <string name="sandfly_keyboard_tutorial_typing_intro">Активирането на текстово поле ви позволява да въвеждате текст в него.</string>
+    <string name="sandfly_keyboard_tutorial_typing_open">Преминете към полето „<xliff:g id="field" example="Име">%2$s</xliff:g>“. Натиснете <xliff:g id="keys" example="Клавиш за действия + Интервал">%1$s</xliff:g>, за да започнете въвеждането.</string>
+    <string name="sandfly_keyboard_tutorial_typing_delete">Изтрийте последната буква с Backspace.</string>
+    <string name="sandfly_keyboard_tutorial_system_intro">Android има свои клавишни комбинации с клавиша за действия. Те работят на всеки екран. В този урок обучението казва какво прави всяка от тях, вместо да я изпълни.</string>
+    <string name="sandfly_keyboard_tutorial_system_back">Натиснете <xliff:g id="keys" example="Клавиш за действия + Esc">%1$s</xliff:g>, за да се върнете назад.</string>
+    <string name="sandfly_keyboard_tutorial_system_home">Натиснете <xliff:g id="keys" example="Клавиш за действия + H">%1$s</xliff:g>, за да преминете към началния екран.</string>
+    <string name="sandfly_keyboard_tutorial_system_overview">Натиснете <xliff:g id="keys" example="Клавиш за действия + Tab">%1$s</xliff:g>, за да покажете скорошните приложения. Alt + Tab превключва между приложенията.</string>
+    <string name="sandfly_keyboard_tutorial_system_notifications">Натиснете <xliff:g id="keys" example="Клавиш за действия + N">%1$s</xliff:g>, за да отворите известията.</string>
+    <string name="sandfly_keyboard_tutorial_menu_open">Натиснете <xliff:g id="keys" example="Клавиш за действия + Ctrl + M">%1$s</xliff:g>, за да отворите менюто на SandFly. Преминете през командите му. Esc затваря менюто.</string>
+    <string name="sandfly_keyboard_tutorial_menu_close">Натиснете Esc, за да затворите менюто.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_title">Списък с клавишни комбинации</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_intro">SandFly показва всяка клавишна комбинация с командата ѝ.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_open">Натиснете <xliff:g id="keys" example="Клавиш за действия + Shift + /">%1$s</xliff:g>, за да отворите списъка. Esc го затваря.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_close">Натиснете Esc, за да затворите списъка.</string>
+    <string name="sandfly_keyboard_tutorial_commands_copy">Натиснете <xliff:g id="keys" example="Клавиш за действия + Ctrl + C">%1$s</xliff:g>, за да копирате последния изговорен от SandFly текст в буфера за обмен.</string>
+    <string name="sandfly_keyboard_tutorial_commands_search">Натиснете <xliff:g id="keys" example="Клавиш за действия + Ctrl + /">%1$s</xliff:g>, за да търсите текст на екрана. В този урок вместо това обучението казва какво прави командата.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_title">Режим за четене</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_intro">В режима за четене отделни букви прескачат до следващия елемент от даден вид, например H за заглавия, K за връзки и B за бутони. Shift с буквата прескача назад. Режимът за четене се изключва, докато въвеждате текст в текстово поле.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_on">Натиснете <xliff:g id="keys" example="Клавиш за действия два пъти">%1$s</xliff:g>, за да включите режима за четене.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_heading">Натиснете <xliff:g id="keys" example="H">%1$s</xliff:g>, за да прескочите до следващото заглавие. Прескочете до „<xliff:g id="heading" example="Уикенд">%2$s</xliff:g>“.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_off">Натиснете <xliff:g id="keys" example="Клавиш за действия два пъти">%1$s</xliff:g>, за да изключите режима за четене.</string>
+    <string name="sandfly_keyboard_tutorial_practice_title">Упражнение с клавиатурата</string>
+    <string name="sandfly_keyboard_tutorial_practice_intro">Всяка клавишна комбинация изговаря клавишите и командата си, вместо да я изпълни. „Следващ елемент“, „Предишен елемент“ и активирането продължават да работят.</string>
+    <string name="sandfly_keyboard_tutorial_practice_step">Натиснете произволна клавишна комбинация, за да чуете какво прави. За да спрете, активирайте „<xliff:g id="button" example="Край на упражнението">%1$s</xliff:g>“.</string>
+</resources>

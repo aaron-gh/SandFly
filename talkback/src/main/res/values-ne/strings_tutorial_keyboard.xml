@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="sandfly_keyboard_tutorial_title">SandFly को किबोर्ड ट्युटोरियल</string>
+    <string name="sandfly_keyboard_tutorial_no_key"><xliff:g id="command" example="अर्को वस्तु">%1$s</xliff:g> को कुनै किबोर्ड सर्टकट छैन। “आदेशहरू” मा एउटा तोक्नुहोस्, वा “चरण छोड्नुहोस्” प्रयोग गर्नुहोस्।</string>
+    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">ब्राउज मोडका लागि “परिष्कृत किम्याप” चाहिन्छ। यसलाई <xliff:g id="settings_path" example="SandFly का सेटिङ &gt; किबोर्ड सर्टकटहरू &gt; किम्याप चयन गर्नुहोस्">%1$s</xliff:g> मा छान्नुहोस्, वा “चरण छोड्नुहोस्” प्रयोग गर्नुहोस्।</string>
+    <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g> दुई पटक</string>
+    <string name="sandfly_keyboard_tutorial_lesson_complete_next">पाठ पूरा भयो। अर्को पाठ सुरु गर्न <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> थिच्नुहोस्।</string>
+    <string name="sandfly_keyboard_tutorial_lesson_complete_last">पाठ पूरा भयो। ट्यूटोरियल समाप्त गर्न <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> थिच्नुहोस्।</string>
+    <string name="sandfly_keyboard_tutorial_chapter_web">वेब पेजहरू</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">यो ट्यूटोरियलले SandFly का किबोर्ड सर्टकटहरू सिकाउँछ। तीमध्ये धेरैजसोले अन्य कीहरूसँग <xliff:g id="key" example="Action">%1$s</xliff:g> की प्रयोग गर्छन्। <xliff:g id="location" example="एक्सन की बायाँ Alt कीको छेउमा रहेको Windows की हो।">%2$s</xliff:g> Ctrl ले बोली रोक्छ। प्रत्येक पाठले एउटा निर्देशन दिन्छ, त्यसले बताएका कीहरू तपाईंले नथिचेसम्म पर्खन्छ, अनि अर्को दिन्छ। निर्देशन पाठको नामपछिको पहिलो वस्तु हो। “विषयसूची” ले सबै पाठ देखाउँछ, र ट्यूटोरियल तपाईं भएकै पाठमा फेरि खुल्छ।</string>
+    <string name="sandfly_keyboard_tutorial_action_key_location">एक्सन की बायाँ Alt कीको छेउमा रहेको Windows की हो। Apple किबोर्डहरूमा यो स्पेस बारको छेउमा रहेको Command की हो।</string>
+    <string name="sandfly_keyboard_tutorial_alt_key_location">Alt की स्पेस बारको छेउमा हुन्छ।</string>
+    <string name="sandfly_keyboard_tutorial_welcome_start">सुरु गर्न <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> थिच्नुहोस्।</string>
+    <string name="sandfly_keyboard_tutorial_move_intro">“अर्को वस्तु” र “अघिल्लो वस्तु” ले स्क्रिनका वस्तुहरूमा पढ्ने क्रममा सार्छन्।</string>
+    <string name="sandfly_keyboard_tutorial_move_next">अर्को वस्तुमा जान <xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g> थिच्नुहोस्। <xliff:g id="item" example="अण्डा">%2$s</xliff:g> सम्म नपुगुन्जेल जारी राख्नुहोस्।</string>
+    <string name="sandfly_keyboard_tutorial_move_previous">अघिल्लो वस्तुमा जान <xliff:g id="keys" example="Action + Left arrow">%1$s</xliff:g> थिच्नुहोस्। <xliff:g id="item" example="पाउरोटी">%2$s</xliff:g> मा फर्कनुहोस्।</string>
+    <string name="sandfly_keyboard_tutorial_activate_intro">सक्रिय पार्ने काम फोकस भएको वस्तुमा हुन्छ।</string>
+    <string name="sandfly_keyboard_tutorial_activate_button"><xliff:g id="button" example="घण्टी बजाउनुहोस्">%2$s</xliff:g> मा जानुहोस्। यसलाई सक्रिय पार्न <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> थिच्नुहोस्।</string>
+    <string name="sandfly_keyboard_tutorial_activate_check_box"><xliff:g id="keys" example="Action + Space">%1$s</xliff:g> ले <xliff:g id="check_box" example="थप चिज">%2$s</xliff:g> चेक गर्नुहोस्।</string>
+    <string name="sandfly_keyboard_tutorial_activate_hold">केही वस्तुले थिचिराख्दा अर्कै काम गर्छन्। <xliff:g id="button" example="विवरण">%2$s</xliff:g> मा जानुहोस्। यसलाई थिचिराख्न <xliff:g id="keys" example="Action + Shift + Space">%1$s</xliff:g> थिच्नुहोस्।</string>
+    <string name="sandfly_keyboard_tutorial_reading_controls_intro">रिडिङ कन्ट्रोलहरूले माथि र तल सर्दा के हुन्छ भनेर छान्छन्, जस्तै शब्द वा वर्णअनुसार सर्ने। “अर्को वस्तु” र “अघिल्लो वस्तु” ले अझै वस्तुहरूबीच सार्छन्।</string>
+    <string name="sandfly_keyboard_tutorial_choose_reading_control">रिडिङ कन्ट्रोल बदल्न <xliff:g id="keys" example="Action + Shift + Right arrow">%1$s</xliff:g> वा <xliff:g id="keys" example="Action + Shift + Left arrow">%2$s</xliff:g> थिच्नुहोस्। <xliff:g id="reading_control" example="शब्दहरु">%3$s</xliff:g> छान्नुहोस्।</string>
+    <string name="sandfly_keyboard_tutorial_next_word">अर्को शब्दमा जान <xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g> थिच्नुहोस्। तीन शब्द सार्नुहोस्।</string>
+    <string name="sandfly_keyboard_tutorial_characters">रिडिङ कन्ट्रोल <xliff:g id="reading_control" example="वर्णहरू">%2$s</xliff:g> मा बदल्नुहोस्। एक वर्ण सार्न <xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g> थिच्नुहोस्।</string>
+    <string name="sandfly_keyboard_tutorial_headings_jump">अर्को शीर्षकमा जान <xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g> थिच्नुहोस्। <xliff:g id="heading" example="सप्ताहान्त">%2$s</xliff:g> मा जानुहोस्।</string>
+    <string name="sandfly_keyboard_tutorial_continuous_intro">SandFly ले फोकस भएको वस्तुदेखि स्क्रिनको अन्त्यसम्म पढ्न सक्छ। Ctrl ले पढ्न रोक्छ।</string>
+    <string name="sandfly_keyboard_tutorial_continuous_read">फोकस भएको वस्तुबाट पढ्न <xliff:g id="keys" example="Action + Ctrl + R">%1$s</xliff:g> थिच्नुहोस्।</string>
+    <string name="sandfly_keyboard_tutorial_scrolling_intro">सूचीहरूले एकपटकमा आफ्ना केही वस्तु मात्र देखाउँछन्। देखिएको अन्तिम वस्तुभन्दा पर सर्दा सूची स्क्रोल हुन्छ।</string>
+    <string name="sandfly_keyboard_tutorial_scrolling_next"><xliff:g id="item" example="वस्तु 15">%2$s</xliff:g> मा नपुगुन्जेल <xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g> थिच्नुहोस्।</string>
+    <string name="sandfly_keyboard_tutorial_actions_intro">केही वस्तुमा सक्रिय पार्नेबाहेक अन्य कारबाहीहरू पनि हुन्छन्, जस्तै सन्देशका लागि संग्रह गर्ने वा मेटाउने। कारबाहीहरूको मेनुले ती देखाउँछ।</string>
+    <string name="sandfly_keyboard_tutorial_actions_archive">सन्देशमा जानुहोस्। यसका कारबाहीहरू खोल्न <xliff:g id="keys" example="Action + Ctrl + A">%1$s</xliff:g> थिच्नुहोस्। <xliff:g id="action" example="संग्रह गर्नुहोस्">%2$s</xliff:g> छान्नुहोस्।</string>
+    <string name="sandfly_keyboard_tutorial_typing_intro">टेक्स्ट फिल्ड सक्रिय पार्दा तपाईं त्यसमा टाइप गर्न सक्नुहुन्छ।</string>
+    <string name="sandfly_keyboard_tutorial_typing_open"><xliff:g id="field" example="नाम">%2$s</xliff:g> फिल्डमा जानुहोस्। टाइप गर्न सुरु गर्न <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> थिच्नुहोस्।</string>
+    <string name="sandfly_keyboard_tutorial_typing_delete">Backspace ले अन्तिम अक्षर मेटाउनुहोस्।</string>
+    <string name="sandfly_keyboard_tutorial_system_intro">Android का एक्सन की प्रयोग गर्ने आफ्नै किबोर्ड सर्टकटहरू छन्। ती हरेक स्क्रिनमा काम गर्छन्। यस पाठमा ट्यूटोरियलले प्रत्येक सर्टकटको काम गर्नुको सट्टा त्यसले के गर्छ भनेर बताउँछ।</string>
+    <string name="sandfly_keyboard_tutorial_system_back">पछाडि जान <xliff:g id="keys" example="Action + Esc">%1$s</xliff:g> थिच्नुहोस्।</string>
+    <string name="sandfly_keyboard_tutorial_system_home">होम स्क्रिनमा जान <xliff:g id="keys" example="Action + H">%1$s</xliff:g> थिच्नुहोस्।</string>
+    <string name="sandfly_keyboard_tutorial_system_overview">हालै चलाइएका एप देखाउन <xliff:g id="keys" example="Action + Tab">%1$s</xliff:g> थिच्नुहोस्। Alt + Tab ले एपहरूबीच बदल्छ।</string>
+    <string name="sandfly_keyboard_tutorial_system_notifications">नोटिफिकेसनहरू खोल्न <xliff:g id="keys" example="Action + N">%1$s</xliff:g> थिच्नुहोस्।</string>
+    <string name="sandfly_keyboard_tutorial_menu_open">SandFly मेनु खोल्न <xliff:g id="keys" example="Action + Ctrl + M">%1$s</xliff:g> थिच्नुहोस्। यसका आदेशहरूमा सर्नुहोस्। Esc ले मेनु बन्द गर्छ।</string>
+    <string name="sandfly_keyboard_tutorial_menu_close">मेनु बन्द गर्न Esc थिच्नुहोस्।</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_title">किबोर्ड सर्टकटको सूची</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_intro">SandFly ले प्रत्येक किबोर्ड सर्टकटलाई त्यसको आदेशसहित सूचीमा देखाउँछ।</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_open">सूची खोल्न <xliff:g id="keys" example="Action + Shift + /">%1$s</xliff:g> थिच्नुहोस्। Esc ले यसलाई बन्द गर्छ।</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_close">सूची बन्द गर्न Esc थिच्नुहोस्।</string>
+    <string name="sandfly_keyboard_tutorial_commands_copy">SandFly ले पछिल्लो पटक बोलेको पाठ क्लिपबोर्डमा कपी गर्न <xliff:g id="keys" example="Action + Ctrl + C">%1$s</xliff:g> थिच्नुहोस्।</string>
+    <string name="sandfly_keyboard_tutorial_commands_search">स्क्रिनमा पाठ खोज्न <xliff:g id="keys" example="Action + Ctrl + /">%1$s</xliff:g> थिच्नुहोस्। यस पाठमा ट्यूटोरियलले त्यसको सट्टा यसले के गर्छ भनेर बताउँछ।</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_title">ब्राउज मोड</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_intro">ब्राउज मोडमा एउटै अक्षरले कुनै प्रकारको अर्को वस्तुमा पुर्‍याउँछ, जस्तै शीर्षकका लागि H, लिंकका लागि K र बटनका लागि B। अक्षरसँग Shift थिच्दा पछाडि जान्छ। टेक्स्ट फिल्डमा टाइप गर्दा ब्राउज मोड अफ हुन्छ।</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_on">ब्राउज मोड अन गर्न <xliff:g id="keys" example="Action twice">%1$s</xliff:g> थिच्नुहोस्।</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_heading">अर्को शीर्षकमा जान <xliff:g id="keys" example="H">%1$s</xliff:g> थिच्नुहोस्। <xliff:g id="heading" example="सप्ताहान्त">%2$s</xliff:g> मा जानुहोस्।</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_off">ब्राउज मोड अफ गर्न <xliff:g id="keys" example="Action twice">%1$s</xliff:g> थिच्नुहोस्।</string>
+    <string name="sandfly_keyboard_tutorial_practice_title">किबोर्ड अभ्यास</string>
+    <string name="sandfly_keyboard_tutorial_practice_intro">प्रत्येक किबोर्ड सर्टकटले आदेश चलाउनुको सट्टा आफ्ना कीहरू र आदेश बताउँछ। “अर्को वस्तु”, “अघिल्लो वस्तु” र सक्रिय पार्ने काम अझै चल्छन्।</string>
+    <string name="sandfly_keyboard_tutorial_practice_step">कुनै पनि किबोर्ड सर्टकट थिचेर त्यसले के गर्छ सुन्नुहोस्। रोक्न <xliff:g id="button" example="अभ्यास अन्त्य गर्नुहोस्">%1$s</xliff:g> सक्रिय पार्नुहोस्।</string>
+</resources>

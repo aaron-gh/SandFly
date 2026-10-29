@@ -62,6 +62,7 @@ import com.google.android.accessibility.talkback.monitor.BatteryMonitor;
 import com.google.android.accessibility.talkback.scripting.Scripts;
 import com.google.android.accessibility.talkback.selector.SelectorController;
 import com.google.android.accessibility.talkback.trainingcommon.TrainingActivity;
+import com.google.android.accessibility.talkback.tutorial.TutorialHooks;
 import com.google.android.accessibility.utils.AccessibilityEventListener;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.Performance;
@@ -246,6 +247,9 @@ public class KeyComboManager
             new ArrowKeyNavKeyHandler.Callbacks() {
               @Override
               public void perform(String command) {
+                if (TutorialHooks.onKeys(/* keys= */ null, command)) {
+                  return;
+                }
                 performCommandFromKeyboard(
                     command,
                     Performance.getInstance()
@@ -578,6 +582,7 @@ public class KeyComboManager
   public void setBrowseModeEnabled(boolean enabled) {
     browseModeTurnedOffByUser = !enabled;
     setBrowseModeEnabledInternal(enabled, /* makeSpeechFeedbackInterruptive= */ true);
+    TutorialHooks.onBrowseMode(isBrowseModeEnabled());
     if (focusedPackage != null && isBrowseModeSupported()) {
       BrowseModeApps.remember(context, focusedPackage, enabled);
     }
@@ -1053,6 +1058,15 @@ public class KeyComboManager
       }
     }
 
+    // Android's own shortcuts with the Action key, which the tutorial can take while it teaches them.
+    if (event.getRepeatCount() == 0
+        && (event.getModifiers() & KEY_EVENT_MODIFIER_MASK) == KeyEvent.META_META_ON
+        && TutorialHooks.SYSTEM_KEY_CODES.contains(event.getKeyCode())
+        && TutorialHooks.onSystemKeys(event.getKeyCode())) {
+      performedCombo = true;
+      return true;
+    }
+
     // Check modifier.
     int triggerModifier = keyComboModel.getTriggerModifier();
     event = convertMetaKeyCombo(triggerModifier, event);
@@ -1207,6 +1221,20 @@ public class KeyComboManager
       }
       if (match == EXACT_MATCH) {
         @Nullable String commandValue = Commands.valueOfShortcutKey(key);
+        if (commandValue != null && commandPerformer == null) {
+          continue;
+        }
+        if (TutorialHooks.onKeys(
+            getKeyComboStringRepresentation(targetKeyCombo),
+            commandValue != null
+                ? commandValue
+                : Commands.valueOfKeyboardAction(
+                    context,
+                    TalkBackPhysicalKeyboardShortcut.getActionFromKey(
+                        context.getResources(), key)))) {
+          performedCombo = true;
+          return true;
+        }
         if (commandValue != null) {
           // A command without a keyboard action of its own runs as a gesture would run it.
           if (commandPerformer == null) {
