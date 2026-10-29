@@ -130,7 +130,7 @@ final class VoiceCommandAndHelpConfigs {
       PageConfig.builder(
               PageId.PAGE_ID_VOICE_COMMAND_OTHER_COMMANDS,
               R.string.voice_commands_help_other_commands_title)
-          .addTextWithBullet(R.string.voice_commands_talkback_settings)
+          .addTextWithBullet(R.string.voice_commands_sandfly_settings)
           .addTextWithBullet(R.string.shortcut_enable_dimming)
           .addSubText(R.string.voice_commands_help_hide_screen_description)
           .addTextWithBullet(R.string.shortcut_disable_dimming)

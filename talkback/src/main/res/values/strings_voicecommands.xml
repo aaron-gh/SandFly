@@ -167,6 +167,10 @@
   <string name="voice_commands_write">Write</string>
   <!-- Voice-shortcut command word to input text to editable ui. [CHAR_LIMIT=20] -->
   <string name="voice_commands_Spell">Spell</string>
+  <!-- Voice-shortcut command to open SandFly settings, shown in the voice command help. Write it as the title of SandFly settings in this language. [CHAR_LIMIT=30] -->
+  <string name="voice_commands_sandfly_settings">SandFly settings</string>
+  <!-- Voice-shortcut command to open SandFly settings, singular form. [CHAR_LIMIT=30] -->
+  <string name="voice_commands_sandfly_setting">SandFly setting</string>
   <!-- Voice-shortcut command to launch TalkBack Settings. [CHAR_LIMIT=30] -->
   <string name="voice_commands_talkback_settings">TalkBack settings</string>
   <!-- Voice-shortcut command to launch TalkBack Settings. [CHAR_LIMIT=30] -->

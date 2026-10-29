@@ -154,7 +154,10 @@ public class VoiceCommandProcessor {
   };
 
   private static final int[] talkbackSettingCommandResArray = {
-    R.string.voice_commands_talkback_settings, R.string.voice_commands_talkback_setting
+    R.string.voice_commands_sandfly_settings,
+    R.string.voice_commands_sandfly_setting,
+    R.string.voice_commands_talkback_settings,
+    R.string.voice_commands_talkback_setting
   };
 
   private static final int[] finishSelectCommandResArray = {

@@ -374,12 +374,12 @@
       Description: The user can check or not check this. [CHAR LIMIT=120]
     -->
     <string name="title_pref_cover_proximity_sensor">Cover proximity sensor to stop speech</string>
-    <!-- Title of a switch in Advanced Settings on Wear OS watches. Reserves two-finger single and double taps for Samsung's Vibration Watch feature, which tells the time through vibrations. [CHAR LIMIT=NONE] -->
+    <!-- Title of a switch in Gestures settings on Wear OS watches. Reserves two-finger single and double taps for Samsung's Vibration Watch feature, which tells the time through vibrations. [CHAR LIMIT=NONE] -->
     <string name="title_pref_reserve_vibration_watch_gestures">Reserve gestures for Vibration Watch</string>
     <!-- Summary of the Vibration Watch gesture switch. SandFly stops handling the two gestures; the user must separately enable Samsung's Vibration Watch feature in the watch's accessibility settings. [CHAR LIMIT=NONE] -->
     <string name="summary_pref_reserve_vibration_watch_gestures">Stops SandFly handling two-finger single and double taps so Samsung Vibration Watch can use them. Enable Vibration Watch in your watch’s accessibility settings.</string>
-    <!-- Explanation shown instead of a gesture's assigned action when the Vibration Watch switch in Advanced Settings makes its two-finger single or double tap unavailable to SandFly. [CHAR LIMIT=NONE] -->
-    <string name="shortcut_reserved_for_vibration_watch">Reserved for Vibration Watch in Advanced Settings</string>
+    <!-- Explanation shown instead of a gesture's assigned action when the Vibration Watch switch in Gestures settings makes its two-finger single or double tap unavailable to SandFly. [CHAR LIMIT=NONE] -->
+    <string name="shortcut_reserved_for_vibration_watch">Reserved for Vibration Watch under Gestures</string>
     <!-- Title of the setting that moves calls to the speaker when the phone is away from the ear. [CHAR LIMIT=NONE] -->
     <string name="title_pref_speakerphone_away_from_ear">Speaker when away from your ear</string>
     <!-- Summary of that setting. [CHAR LIMIT=NONE] -->
@@ -403,7 +403,7 @@
     <!-- Title of the notification that asks whether an app may speak through SandFly. The app's name is filled in. [CHAR LIMIT=NONE] -->
     <string name="speech_control_ask_title">Allow <xliff:g id="app" example="Tasker">%1$s</xliff:g> to speak through SandFly?</string>
     <!-- Text of that notification. [CHAR LIMIT=NONE] -->
-    <string name="speech_control_ask_text">It can say text in your SandFly voice. You can change this in Advanced settings.</string>
+    <string name="speech_control_ask_text">It can say text in your SandFly voice. You can change this under Settings, Speech, Let other apps speak.</string>
     <!-- Button in that notification that lets the app speak. [CHAR LIMIT=30] -->
     <string name="speech_control_allow">Allow</string>
     <!-- Button in that notification that stops the app from speaking. [CHAR LIMIT=30] -->
@@ -933,7 +933,7 @@
     <!-- The hint text of TalkBack mis-trigger-prevention watermark. [CHAR_LIMIT=NONE]-->
     <string name="talkback_exit_watermark_hint_text">Showing banner indicating SandFly is on. To turn off SandFly, hold 2 fingers on the screen for 5 seconds. To remove this banner, go to SandFly Settings.</string>
     <!-- The text of the SandFly-on banner when no 3-finger tap opens the SandFly menu. [CHAR_LIMIT=NONE]-->
-    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly on. Hold 2 fingers on screen for 5 seconds to turn off. To stop showing this message, turn off SandFly settings &gt; Advanced settings &gt; Show instructions for turning off SandFly.</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly on. Hold 2 fingers on screen for 5 seconds to turn off. To stop showing this message, turn off SandFly settings &gt; Pause and turn off &gt; Show instructions for turning off SandFly.</string>
 
     <!-- Label for the reset gesture settings. [CHAR_LIMIT=66] -->
     <string name="reset_gesture_settings_title">Reset gesture settings</string>
@@ -3516,18 +3516,18 @@
   <string name="keyboard_smart_browse_mode_title">Keyboard: Smart browse mode</string>
   <!-- The text about smart browse mode for keyboard page. [CHAR_LIMIT=NONE]-->
   <string name="keyboard_smart_browse_mode_text">SandFly smart browse mode turns off browse mode on an edit field to help you type with a physical keyboard when you browse the web. It then turns it back on when you jump to a non-edit field on the web so that you can continue browsing efficiently. You can turn \"Smart browse mode\" on or off in <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <!-- The path of advanced settings in TalkBack Settings. [CHAR_LIMIT=NONE]-->
-  <string name="advanced_settings_link">SandFly settings > Advanced settings</string>
-  <!-- The speech of the path of advanced settings  in TalkBack Settings. [CHAR_LIMIT=NONE]-->
-  <string name="advanced_settings_link_tts">SandFly settings then Advanced settings</string>
+  <!-- The path of the Navigation settings, which hold Smart browse mode. [CHAR_LIMIT=NONE]-->
+  <string name="navigation_settings_link">SandFly settings > Navigation</string>
+  <!-- Spoken form of the path of the Navigation settings. [CHAR_LIMIT=NONE]-->
+  <string name="navigation_settings_link_tts">SandFly settings then Navigation</string>
   <!-- The title about keyboard tutorial page. [CHAR_LIMIT=NONE]-->
   <string name="keyboard_tutorial_title">Keyboard tutorial</string>
   <!-- The text about keyboard tutorial page. [CHAR_LIMIT=NONE]-->
   <string name="keyboard_tutorial_text">SandFly now includes a Keyboard Tutorial designed to help you learn the keyboard shortcuts and commands for the Enhanced keymap when using a physical keyboard. To access the tutorial, navigate to: <xliff:g id="settings_path">%1$s</xliff:g>.</string>
   <!-- The path of TalkBack tutorial in TalkBack Settings. [CHAR_LIMIT=NONE]-->
-  <string name="tutorial_link">SandFly settings > SandFly tutorial</string>
+  <string name="tutorial_link">SandFly settings > Help &amp; feedback > SandFly tutorial</string>
   <!-- The speech of the path of TalkBack tutorial in TalkBack Settings. [CHAR_LIMIT=NONE]-->
-  <string name="tutorial_link_tts">SandFly settings then SandFly tutorial</string>
+  <string name="tutorial_link_tts">SandFly settings then Help &amp; feedback then SandFly tutorial</string>
 
   <!-- For tutorial. -->
   <!-- An item in settings page to explain how to use TalkBack. [CHAR_LIMIT=25]-->
@@ -4483,8 +4483,8 @@
   <string name="dictation_whisper_use">Use</string>
   <!-- Dictation setting: the AI service that corrects dictated text. [CHAR_LIMIT=NONE] -->
   <string name="title_pref_dictation_ai_service">AI service for dictation</string>
-  <!-- AI service for dictation choice: the AI service chosen in Automatic descriptions settings. [CHAR_LIMIT=NONE] -->
-  <string name="dictation_ai_same">Same as automatic descriptions</string>
+  <!-- AI service for dictation choice: the AI service chosen in the Image and screen descriptions settings. "Image and screen descriptions" is a setting name. [CHAR_LIMIT=NONE] -->
+  <string name="dictation_ai_same">Same as Image and screen descriptions</string>
   <!-- Switch that keeps browse mode on or off in each app as the user last left it there. [CHAR_LIMIT=NONE] -->
   <string name="title_pref_browse_mode_per_app">Remember browse mode in each app</string>
   <!-- Smart Browse Mode toggle's summary in the settings. [CHAR_LIMIT=NONE] -->

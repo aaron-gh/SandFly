@@ -18,7 +18,7 @@ package com.google.android.accessibility.talkback.training;
 
 import static com.google.android.accessibility.talkback.trainingcommon.NavigationButtonBar.BUTTON_TYPE_EXIT;
 import static com.google.android.accessibility.talkback.trainingcommon.NavigationButtonBar.DEFAULT_BUTTONS;
-import static com.google.android.accessibility.talkback.trainingcommon.PageConfig.LinkInfo.ADVANCED_SETTING;
+import static com.google.android.accessibility.talkback.trainingcommon.PageConfig.LinkInfo.NAVIGATION_SETTINGS;
 import static com.google.android.accessibility.talkback.trainingcommon.PageConfig.LinkInfo.BRAILLE_DISPLAY;
 import static com.google.android.accessibility.talkback.trainingcommon.PageConfig.LinkInfo.KEYBOARD_SHORTCUT;
 import static com.google.android.accessibility.talkback.trainingcommon.PageConfig.LinkInfo.TEXT_FORMATTING_OPTIONS;
@@ -201,9 +201,9 @@ final class OnboardingConfigs {
               PAGE_ID_KEYBOARD_SMART_BROWSE_MODE, R.string.keyboard_smart_browse_mode_title)
           .addTextWithSettingsLinks(
               R.string.keyboard_smart_browse_mode_text,
-              ImmutableList.of(R.string.advanced_settings_link),
-              ImmutableList.of(R.string.advanced_settings_link_tts),
-              ImmutableList.of(ADVANCED_SETTING));
+              ImmutableList.of(R.string.navigation_settings_link),
+              ImmutableList.of(R.string.navigation_settings_link_tts),
+              ImmutableList.of(NAVIGATION_SETTINGS));
 
   static final PageConfig.Builder keyboardTutorial =
       PageConfig.builder(PAGE_ID_KEYBOARD_TUTORIAL, R.string.keyboard_tutorial_title)
