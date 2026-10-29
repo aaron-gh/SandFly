@@ -28,7 +28,7 @@ internal sealed interface TutorialInput {
    */
   data class Command(val action: String) : TutorialInput
 
-  /** One of Android's own shortcuts with the Action key, [keyCode] with it, taken by the tutorial. */
+  /** Android's own shortcut with the Action key and [keyCode], taken by the tutorial. */
   data class SystemKey(val keyCode: Int) : TutorialInput
 
   data class BrowseMode(val enabled: Boolean) : TutorialInput
@@ -127,7 +127,10 @@ internal class TutorialLesson(
   @StringRes val intro: Int,
   val practice: Practice,
   val steps: List<TutorialStep>,
-  /** [intro] has placeholders for the name of the key that most keyboard shortcuts use and where it is. */
+  /**
+   * [intro] has placeholders for the name of the key that most keyboard shortcuts use, and for
+   * where it is.
+   */
   val introNamesKey: Boolean = false,
 )
 
@@ -690,9 +693,10 @@ internal object TutorialLessons {
         introNamesKey = true,
         steps =
           listOf(
-            TutorialStep(R.string.sandfly_keyboard_tutorial_welcome_start, actions = listOf(click)) {
-              input,
-              c ->
+            TutorialStep(
+              R.string.sandfly_keyboard_tutorial_welcome_start,
+              actions = listOf(click),
+            ) { input, c ->
               command(click)(input, c) ?: clicked(Targets.INSTRUCTION)(input, c)
             }
           ),

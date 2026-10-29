@@ -104,4 +104,16 @@ class CommandsTest {
     val key = context.getString(R.string.keycombo_shortcut_navigate_next_default)
     assertEquals(context.getString(R.string.shortcut_next), Commands.labelOfKeyboardKey(context, key))
   }
+
+  @Test
+  fun keyboardActionsRunTheCommandThatHasThem() {
+    assertEquals(
+      context.getString(R.string.shortcut_value_next),
+      Commands.valueOfKeyboardAction(context, TalkBackPhysicalKeyboardShortcut.NAVIGATE_NEXT_DEFAULT),
+    )
+    assertEquals(
+      Commands.keyboardValue(context, TalkBackPhysicalKeyboardShortcut.NAVIGATE_BELOW),
+      Commands.valueOfKeyboardAction(context, TalkBackPhysicalKeyboardShortcut.NAVIGATE_BELOW),
+    )
+  }
 }

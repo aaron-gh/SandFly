@@ -133,7 +133,9 @@ class TutorialActivity : AppCompatActivity() {
   private val hooks =
     object : TutorialHooks.Listener {
       override fun onGesture(gestureId: Int, action: String): Boolean =
-        onCommand(action) { GestureShortcutMapping.getGestureString(this@TutorialActivity, gestureId) }
+        onCommand(action) {
+          GestureShortcutMapping.getGestureString(this@TutorialActivity, gestureId)
+        }
 
       override fun onKeys(keys: String?, command: String): Boolean = onCommand(command) { keys }
 
@@ -143,7 +145,9 @@ class TutorialActivity : AppCompatActivity() {
         val name = systemKeyLabel(keyCode)
         when {
           lesson?.id == TutorialLessons.PRACTICE_LESSON && !lessonDone ->
-            speakNow(getString(R.string.sandfly_tutorial_practice_gesture, systemKeyName(keyCode), name))
+            speakNow(
+              getString(R.string.sandfly_tutorial_practice_gesture, systemKeyName(keyCode), name)
+            )
           step?.systemKey == keyCode -> {
             speakNow(name)
             handler.post { onInput(TutorialInput.SystemKey(keyCode)) }
@@ -267,6 +271,9 @@ class TutorialActivity : AppCompatActivity() {
 
   override fun onNewIntent(intent: Intent) {
     super.onNewIntent(intent)
+    // Brought back from the background, where Android restores focus to the item that last had
+    // it: the heading gets focus when the window does, as when the tutorial first opens.
+    if (!hasWindowFocus()) shown = false
     val keyboard = intent.getBooleanExtra(EXTRA_KEYBOARD, false)
     if (keyboard != this.keyboard) {
       // The other tutorial, which has lessons of its own.
@@ -509,8 +516,8 @@ class TutorialActivity : AppCompatActivity() {
     if (keyboard) keyName(action) else gestureName(action)
 
   /**
-   * The value of the command in [res]: a command value, or a keyboard action's key, which stands for
-   * the command that the keyboard action runs.
+   * The value of the command in [res]: a command value, or a keyboard action's key, which stands
+   * for the command that the keyboard action runs.
    */
   private fun commandValue(@StringRes res: Int): String {
     val key = getString(res)
@@ -622,7 +629,8 @@ class TutorialActivity : AppCompatActivity() {
       // Double tap's own action has no name in the list of actions that gestures can have.
       action == getString(R.string.shortcut_value_action_setting_activate_current_action) ->
         getString(R.string.shortcut_perform_click_action)
-      keyboard -> Commands.label(this, action) ?: GestureShortcutMapping.getActionString(this, action)
+      keyboard ->
+        Commands.label(this, action) ?: GestureShortcutMapping.getActionString(this, action)
       else -> GestureShortcutMapping.getActionString(this, action)
     }
 
