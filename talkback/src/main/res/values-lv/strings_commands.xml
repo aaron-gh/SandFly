@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="command_add_arrow_keys">Pievienot bulttaustiņus</string>
+    <string name="command_add_gesture">Pievienot žestu</string>
+    <string name="command_choose_arrow_keys">Izvēlēties bulttaustiņus</string>
+    <string name="command_choose_gesture">Izvēlēties žestu</string>
+    <string name="command_gesture_assigned"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g>: <xliff:g id="command" example="Describe image">%2$s</xliff:g></string>
+    <string name="command_gestures">Žesti</string>
+    <string name="command_keyboard_shortcut">Īsinājumtaustiņš</string>
+    <string name="command_no_arrow_keys">Nav bulttaustiņu</string>
+    <string name="command_no_gestures">Nav žestu</string>
+    <string name="command_remove_arrow_keys">Noņemt bulttaustiņus</string>
+    <string name="command_remove_gesture">Noņemt žestu</string>
+    <string name="command_replace">Aizstāt</string>
+    <string name="command_replace_gesture"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g> izpilda komandu <xliff:g id="old_command" example="Read from top">%2$s</xliff:g>. Vai to izmantot komandai <xliff:g id="new_command" example="Describe image">%3$s</xliff:g>?</string>
+    <string name="commands_category_activation">Aktivizēšana</string>
+    <string name="commands_category_media">Multivide un skaļums</string>
+    <string name="commands_category_sandfly">SandFly</string>
+    <string name="commands_category_scrolling">Ritināšana</string>
+    <string name="commands_category_speech">Runa</string>
+    <string name="commands_category_tables">Tabulas</string>
+    <string name="commands_category_web">Tīmeklis</string>
+    <string name="item_list_current">Pašreizējie</string>
+    <string name="item_list_not_in_reading_controls">Nav lasīšanas vadīklās</string>
+    <string name="item_list_not_in_sandfly_menu">Nav SandFly izvēlnē</string>
+    <string name="item_list_options">Opcijas</string>
+    <string name="sounds_category_sounds">Skaņas</string>
+    <string name="sounds_category_vibration">Vibrācija</string>
+    <string name="speech_category_languages">Valodas</string>
+    <string name="speech_category_other_apps">Citas lietotnes</string>
+    <string name="speech_category_pronunciation">Izruna</string>
+    <string name="speech_category_stopping">Runas apturēšana</string>
+    <string name="speech_category_voice">Balss</string>
+    <string name="title_pref_audio_output">Audio izvade</string>
+    <string name="title_pref_backup">Dublēšana un atjaunošana</string>
+    <string name="title_pref_braille">Braila raksts</string>
+    <string name="title_pref_commands">Komandas</string>
+    <string name="title_pref_display">Displejs</string>
+    <string name="title_pref_image_and_screen_descriptions">Attēlu un ekrāna apraksti</string>
+    <string name="title_pref_pause">Pauzēšana un izslēgšana</string>
+    <string name="title_pref_quick_settings_screen">Ātrie iestatījumi</string>
+    <string name="title_pref_speech">Runa</string>
+    <string name="title_pref_speech_stream_control">Runas skaļuma vadīkla</string>
+    <string name="title_pref_touch">Pieskāriens</string>
+    <string name="title_pref_typing">Rakstīšana</string>
+    <string name="title_pref_updates">Atjauninājumi un instalēšana</string>
+    <string name="title_pref_volume_keys">Skaļuma taustiņi</string>
+    <string name="typing_category_other_input">Citi rakstīšanas veidi</string>
+    <string name="verbosity_category_announcements">Paziņojumi par izmaiņām</string>
+    <string name="verbosity_category_items">Vienumi</string>
+    <string name="verbosity_category_text">Teksts un simboli</string>
+</resources>

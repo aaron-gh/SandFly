@@ -1774,4 +1774,24 @@
     <string name="settings_export_failed">Instellings kon nie uitgevoer word nie</string>
     <string name="settings_import_done">Instellings ingevoer</string>
     <string name="settings_import_failed">Hierdie lêer is nie \'n SandFly of Backtalk instellingslêer nie, of kon nie gelees word nie</string>
+    <string name="arrow_key_nav_assign_instruction">Druk een sleutel of twee sleutels saam, met of sonder wysigersleutels. Druk Backspace om uit te vee, Ctrl + Backspace om na verstek terug te stel, Enter om te stoor of Escape om te kanselleer.</string>
+    <string name="arrow_key_nav_off">Pyltjiesleutelnavigasie af</string>
+    <string name="arrow_key_nav_on">Pyltjiesleutelnavigasie aan</string>
+    <string name="arrow_key_nav_page_left">Blaai links</string>
+    <string name="arrow_key_nav_page_right">Blaai regs</string>
+    <string name="arrow_key_nav_toggle">Skakel pyltjiesleutelnavigasie aan of af</string>
+    <string name="keycombo_menu_category_arrow_key_nav">Pyltjiesleutelnavigasie</string>
+    <string-array name="pref_dictation_auto_stop_entries">
+        <item>Af</item>
+        <item>3 sekondes</item>
+        <item>5 sekondes</item>
+        <item>10 sekondes</item>
+        <item>15 sekondes</item>
+        <item>30 sekondes</item>
+        <item>1 minuut</item>
+    </string-array>
+    <string name="shortcut_next_track">Volgende snit</string>
+    <string name="shortcut_previous_track">Vorige snit</string>
+    <string name="sound_mode_needs_access">Gee toegang tot Moenie Steur Nie om Demp aan of af te skakel.</string>
+    <string name="title_pref_dictation_auto_stop">Stop outomaties ná stilte</string>
 </resources>

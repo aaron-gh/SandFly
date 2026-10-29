@@ -1069,8 +1069,8 @@
   <string name="checking_notifications_tips">Als je je meldingsgeschiedenis wilt checken, swipe je met 2 vingers omlaag vanaf de bovenkant van het scherm</string>
   <string name="image_description_playground_title">Probeer beschrijvingen van afbeeldingen te krijgen</string>
   <string name="image_description_playground_content_one">Als je de focus op een afbeelding plaatst, open je het SandFly-menu en selecteer je Afbeelding beschrijven.\n\nHieronder staat één foto. Probeer een beschrijving te krijgen.</string>
-  <string name="image_description_playground_content_two">Je kunt de instellingen voor afbeeldingsbeschrijvingen op elk moment wijzigen via Instellingen voor SandFly &gt; Automatische beschrijvingen.</string>
-  <string name="image_description_playground_content_two_tts">Je kunt de instellingen voor afbeeldingsbeschrijvingen op elk moment wijzigen via Instellingen voor SandFly en dan Automatische beschrijvingen.</string>
+    <string name="image_description_playground_content_two">Je kunt de instellingen voor afbeeldingsbeschrijvingen op elk moment wijzigen via Instellingen voor SandFly &gt; Afbeeldings- en schermbeschrijvingen.</string>
+    <string name="image_description_playground_content_two_tts">Je kunt de instellingen voor afbeeldingsbeschrijvingen op elk moment wijzigen via Instellingen voor SandFly en dan Afbeeldings- en schermbeschrijvingen.</string>
   <string name="image_description_sample_image_content_description">Voorbeeldafbeelding. Tik met 3 vingers om het SandFly-menu te openen en selecteer Afbeelding beschrijven om een beschrijving te horen.</string>
   <string name="practice_gestures_title">Gebaren oefenen</string>
   <string name="practice_keyboard_gestures_title">Sneltoetsen oefenen</string>
@@ -1735,7 +1735,7 @@
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> neergezet. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly zegt de details van een item in deze volgorde. Als u dit wilt wijzigen, houdt u uw vinger op een detail en sleept u het vervolgens omhoog of omlaag. Terwijl SandFly is ingeschakeld, dubbeltikt u, houdt u vast en sleept u vervolgens. U kunt ook de acties Omhoog en Omlaag gebruiken.</string>
     <string name="title_pref_speak_items_before_scroll">Items uitspreken voordat ze in beeld scrollen</string>
-    <string name="gemini_error_api_key">Gemini heeft de API-sleutel niet geaccepteerd. Controleer de sleutel in Instellingen voor automatische beschrijvingen.</string>
+    <string name="gemini_error_api_key">Gemini heeft de API-sleutel niet geaccepteerd. Controleer de sleutel in de instellingen voor Afbeeldings- en schermbeschrijvingen.</string>
     <string name="gemini_error_quota">De gebruikslimiet voor uw Gemini API-sleutel is bereikt. Probeer het later opnieuw.</string>
     <string name="gemini_error_busy">Gemini is momenteel bezig. Probeer het zo nog eens.</string>
     <string name="gemini_error_timeout">Gemini duurde te lang om te antwoorden. Probeer het opnieuw.</string>
@@ -1774,4 +1774,24 @@
     <string name="settings_export_failed">Instellingen konden niet worden geëxporteerd</string>
     <string name="settings_import_done">Instellingen geïmporteerd</string>
     <string name="settings_import_failed">Dit bestand is geen SandFly- of Backtalk-instellingenbestand, of het kon niet worden gelezen</string>
+    <string name="sound_mode_needs_access">Sta toegang tot Niet storen toe om Dempen aan of uit te zetten.</string>
+    <string name="keycombo_menu_category_arrow_key_nav">Navigatie met pijltoetsen</string>
+    <string name="arrow_key_nav_toggle">Navigatie met pijltoetsen aan- of uitzetten</string>
+    <string name="arrow_key_nav_on">Navigatie met pijltoetsen aan</string>
+    <string name="arrow_key_nav_off">Navigatie met pijltoetsen uit</string>
+    <string name="arrow_key_nav_page_left">Pagina naar links</string>
+    <string name="arrow_key_nav_page_right">Pagina naar rechts</string>
+    <string name="arrow_key_nav_assign_instruction">Druk op een toets of op twee toetsen tegelijk, met of zonder aanpassingstoetsen. Druk op Backspace om te wissen, Ctrl + Backspace om de standaard te herstellen, Enter om op te slaan of Escape om te annuleren.</string>
+    <string name="shortcut_next_track">Volgend nummer</string>
+    <string name="shortcut_previous_track">Vorig nummer</string>
+    <string-array name="pref_dictation_auto_stop_entries">
+        <item>Uit</item>
+        <item>3 seconden</item>
+        <item>5 seconden</item>
+        <item>10 seconden</item>
+        <item>15 seconden</item>
+        <item>30 seconden</item>
+        <item>1 minuut</item>
+    </string-array>
+    <string name="title_pref_dictation_auto_stop">Automatisch stoppen na stilte</string>
 </resources>

@@ -1069,8 +1069,8 @@
   <string name="checking_notifications_tips">Para conferir seu histórico de notificações, deslize a tela de cima para baixo com dois dedos</string>
   <string name="image_description_playground_title">Tente ouvir as descrições de imagens</string>
   <string name="image_description_playground_content_one">Quando você focar em uma imagem, abra o menu do SandFly e selecione \"Descrever a imagem\".\n\nTente ouvir a descrição da foto mostrada abaixo.</string>
-  <string name="image_description_playground_content_two">Você pode alterar as configurações de descrição de imagens a qualquer momento em Configurações do SandFly &gt; Descrições automáticas.</string>
-  <string name="image_description_playground_content_two_tts">Você pode alterar as configurações de descrição de imagens a qualquer momento em Configurações do SandFly e depois em Descrições automáticas.</string>
+    <string name="image_description_playground_content_two">Você pode alterar as configurações de descrição de imagens a qualquer momento em Configurações do SandFly &gt; Descrições de imagens e da tela.</string>
+    <string name="image_description_playground_content_two_tts">Você pode alterar as configurações de descrição de imagens a qualquer momento em Configurações do SandFly e depois em Descrições de imagens e da tela.</string>
   <string name="image_description_sample_image_content_description">Imagem de amostra. Toque com 3 dedos para abrir o menu do SandFly e selecione \"Descrever imagem\" para ouvir uma descrição.</string>
   <string name="practice_gestures_title">Praticar gestos</string>
   <string name="practice_keyboard_gestures_title">Praticar atalhos do teclado</string>
@@ -1458,6 +1458,7 @@
     <plurals name="notification_list_group_count">
         <item quantity="one">%d notificação</item>
         <item quantity="other">%d notificações</item>
+        <item quantity="many">%d notificações</item>
     </plurals>
     <string name="title_pref_quick_settings">Usar as configurações rápidas do SandFly</string>
     <string name="title_pref_quick_settings_items">Painel de configurações rápidas</string>
@@ -1508,10 +1509,12 @@
     <plurals name="quick_settings_seconds">
         <item quantity="one">%d segundo</item>
         <item quantity="other">%d segundos</item>
+        <item quantity="many">%d segundos</item>
     </plurals>
     <plurals name="quick_settings_minutes">
         <item quantity="one">%d minuto</item>
         <item quantity="other">%d minutos</item>
+        <item quantity="many">%d minutos</item>
     </plurals>
     <string name="quick_settings_connected">Conectado</string>
     <string name="quick_settings_battery">Bateria</string>
@@ -1538,6 +1541,7 @@
     <plurals name="quick_settings_others_moved">
         <item quantity="one">%d outro item movido</item>
         <item quantity="other">%d outros itens movidos</item>
+        <item quantity="many">%d outros itens movidos</item>
     </plurals>
     <string name="quick_settings_remove">Remover</string>
     <string name="quick_settings_added">%1$s adicionado</string>
@@ -1735,7 +1739,7 @@
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> solto. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly indica os detalhes de um item nesta ordem. Para alterá-lo, toque e segure um detalhe e arraste-o para cima ou para baixo. Com SandFly ativado, toque duas vezes e segure e arraste. Você também pode usar as ações Mover para cima e Mover para baixo.</string>
     <string name="title_pref_speak_items_before_scroll">Falar itens antes que apareçam ao rolar</string>
-    <string name="gemini_error_api_key">O Gemini não aceitou a chave de API. Verifique a chave nas configurações de descrições automáticas.</string>
+    <string name="gemini_error_api_key">O Gemini não aceitou a chave de API. Verifique a chave nas configurações de Descrições de imagens e da tela.</string>
     <string name="gemini_error_quota">O limite de uso da sua chave de API do Gemini foi atingido. Tente novamente mais tarde.</string>
     <string name="gemini_error_busy">Gemini está ocupado agora. Tente novamente em alguns instantes.</string>
     <string name="gemini_error_timeout">O Gemini demorou muito para responder. Tente novamente.</string>
@@ -1774,4 +1778,24 @@
     <string name="settings_export_failed">Não foi possível exportar as configurações</string>
     <string name="settings_import_done">Configurações importadas</string>
     <string name="settings_import_failed">Este arquivo não é um arquivo de configurações SandFly ou Backtalk ou não pôde ser lido</string>
+    <string name="sound_mode_needs_access">Permita o acesso a Não perturbe para ativar ou desativar o modo Silencioso.</string>
+    <string name="keycombo_menu_category_arrow_key_nav">Navegação com as setas</string>
+    <string name="arrow_key_nav_toggle">Ativar ou desativar a navegação com as setas</string>
+    <string name="arrow_key_nav_on">Navegação com as setas ativada</string>
+    <string name="arrow_key_nav_off">Navegação com as setas desativada</string>
+    <string name="arrow_key_nav_page_left">Página à esquerda</string>
+    <string name="arrow_key_nav_page_right">Página à direita</string>
+    <string name="arrow_key_nav_assign_instruction">Pressione uma tecla ou duas teclas juntas, com ou sem teclas modificadoras. Pressione Backspace para limpar, Ctrl + Backspace para restaurar o padrão, Enter para salvar ou Esc para cancelar.</string>
+    <string name="shortcut_next_track">Próxima faixa</string>
+    <string name="shortcut_previous_track">Faixa anterior</string>
+    <string-array name="pref_dictation_auto_stop_entries">
+        <item>Desativado</item>
+        <item>3 segundos</item>
+        <item>5 segundos</item>
+        <item>10 segundos</item>
+        <item>15 segundos</item>
+        <item>30 segundos</item>
+        <item>1 minuto</item>
+    </string-array>
+    <string name="title_pref_dictation_auto_stop">Parada automática após silêncio</string>
 </resources>

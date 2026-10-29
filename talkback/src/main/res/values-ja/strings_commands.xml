@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="command_add_arrow_keys">矢印キーを追加</string>
+    <string name="command_add_gesture">ジェスチャーを追加</string>
+    <string name="command_choose_arrow_keys">矢印キーを選択</string>
+    <string name="command_choose_gesture">ジェスチャーを選択</string>
+    <string name="command_gesture_assigned"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g>: <xliff:g id="command" example="Describe image">%2$s</xliff:g></string>
+    <string name="command_gestures">ジェスチャー</string>
+    <string name="command_keyboard_shortcut">キーボード ショートカット</string>
+    <string name="command_no_arrow_keys">矢印キーなし</string>
+    <string name="command_no_gestures">ジェスチャーなし</string>
+    <string name="command_remove_arrow_keys">矢印キーを削除</string>
+    <string name="command_remove_gesture">ジェスチャーを削除</string>
+    <string name="command_replace">置き換える</string>
+    <string name="command_replace_gesture"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g>は「<xliff:g id="old_command" example="Read from top">%2$s</xliff:g>」を実行します。代わりに「<xliff:g id="new_command" example="Describe image">%3$s</xliff:g>」に使用しますか？</string>
+    <string name="commands_category_activation">有効化</string>
+    <string name="commands_category_media">メディアと音量</string>
+    <string name="commands_category_sandfly">SandFly</string>
+    <string name="commands_category_scrolling">スクロール</string>
+    <string name="commands_category_speech">読み上げ</string>
+    <string name="commands_category_tables">表</string>
+    <string name="commands_category_web">ウェブ</string>
+    <string name="item_list_current">現在</string>
+    <string name="item_list_not_in_reading_controls">読み上げコントロールにないもの</string>
+    <string name="item_list_not_in_sandfly_menu">SandFly メニューにないもの</string>
+    <string name="item_list_options">オプション</string>
+    <string name="sounds_category_sounds">音</string>
+    <string name="sounds_category_vibration">バイブレーション</string>
+    <string name="speech_category_languages">言語</string>
+    <string name="speech_category_other_apps">他のアプリ</string>
+    <string name="speech_category_pronunciation">発音</string>
+    <string name="speech_category_stopping">読み上げの停止</string>
+    <string name="speech_category_voice">音声</string>
+    <string name="title_pref_audio_output">音声出力</string>
+    <string name="title_pref_backup">バックアップと復元</string>
+    <string name="title_pref_braille">点字</string>
+    <string name="title_pref_commands">コマンド</string>
+    <string name="title_pref_display">表示</string>
+    <string name="title_pref_image_and_screen_descriptions">画像と画面の説明</string>
+    <string name="title_pref_pause">一時停止とオフ</string>
+    <string name="title_pref_quick_settings_screen">クイック設定</string>
+    <string name="title_pref_speech">読み上げ</string>
+    <string name="title_pref_speech_stream_control">読み上げに使う音量</string>
+    <string name="title_pref_touch">タッチ</string>
+    <string name="title_pref_typing">文字入力</string>
+    <string name="title_pref_updates">アップデートとインストール</string>
+    <string name="title_pref_volume_keys">音量ボタン</string>
+    <string name="typing_category_other_input">その他の入力方法</string>
+    <string name="verbosity_category_announcements">アナウンス</string>
+    <string name="verbosity_category_items">項目</string>
+    <string name="verbosity_category_text">テキストと記号</string>
+</resources>

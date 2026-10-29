@@ -18,7 +18,7 @@
     <string name="ai_service_model_hint">Model</string>
     <string name="ai_service_address_invalid">Alamat harus dimulai dengan https://. Tidak ada yang disimpan.</string>
     <string name="dialog_message_ai_service_consent">Gambar dan screenshot dikirim ke <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> untuk dideskripsikan, yang memerlukan beberapa detik. Persyaratan dan kebijakan privasi layanan tersebut berlaku. AI generatif masih eksperimental, jadi akan membuat kesalahan.</string>
-    <string name="ai_service_error_api_key">Layanan AI tidak menerima kunci API. Periksa pengaturannya di Deskripsi otomatis.</string>
+    <string name="ai_service_error_api_key">Layanan AI tidak menerima kunci API. Periksa pengaturannya di Deskripsi gambar dan layar.</string>
     <string name="ai_service_error_quota">Batas penggunaan layanan AI telah tercapai. Coba lagi nanti.</string>
     <string name="ai_service_error_busy">Layanan AI sedang sibuk saat ini. Coba lagi sebentar lagi.</string>
     <string name="ai_service_error_timeout">Layanan AI membutuhkan waktu terlalu lama untuk menjawab. Coba lagi.</string>
@@ -30,7 +30,7 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">Tidak ada</string>
-    <string name="ai_service_not_set_up">Tidak ada layanan AI yang digunakan. Siapkan satu atau pilih salah satu di Pengaturan deskripsi otomatis.</string>
+    <string name="ai_service_not_set_up">Tidak ada layanan AI yang digunakan. Siapkan satu atau pilih salah satu di Pengaturan deskripsi gambar dan layar.</string>
     <string name="ai_provider_none_set_up">Tidak ada layanan AI yang disiapkan. Atur satu dalam pengaturannya di bawah.</string>
     <string name="ai_provider_other">Layanan lainnya</string>
     <string name="title_pref_category_ai_services">Layanan AI</string>

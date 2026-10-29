@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_translation_auto">Dịch tự động</string>
+    <string name="title_pref_translation_auto_service">Dịch vụ dịch tự động</string>
+    <string name="title_pref_translation_copy">Sao chép bản dịch vào bảng nhớ tạm</string>
+    <string name="title_pref_translation_download_all">Tải xuống tất cả ngôn ngữ</string>
+    <string name="title_pref_translation_languages">Ngôn ngữ trên thiết bị</string>
+    <string name="title_pref_translation_notifications">Dịch thông báo</string>
+    <string name="title_pref_translation_region">Khu vực</string>
+    <string name="title_pref_translation_say_source">Đọc ngôn ngữ gốc</string>
+    <string name="title_pref_translation_second_target">Dịch văn bản ở ngôn ngữ đích sang</string>
+    <string name="title_pref_translation_service">Dịch vụ dịch</string>
+    <string name="title_pref_translation_source">Dịch từ</string>
+    <string name="title_pref_translation_swap">Hoán đổi ngôn ngữ</string>
+    <string name="title_pref_translation_target">Dịch sang</string>
+    <string name="title_pref_translation_target_voice">Dùng giọng nói cho ngôn ngữ đích</string>
+    <string name="title_pref_translation_untranslated">Ngôn ngữ không dịch</string>
+    <string name="title_pref_translation_wifi_only">Chỉ tải ngôn ngữ xuống qua Wi-Fi</string>
+    <string name="title_translate_last_spoken_phrase">Dịch cụm từ được nói gần đây nhất</string>
+    <string name="translation_address_hint">Địa chỉ, chẳng hạn như https://libretranslate.com</string>
+    <string name="translation_address_message">Địa chỉ của một máy chủ LibreTranslate, chẳng hạn như https://libretranslate.com. Máy chủ không phải của bạn có thể cần khoá API.</string>
+    <string name="translation_all_downloaded">Đã tải xuống tất cả ngôn ngữ</string>
+    <string name="translation_already_in">Đã là <xliff:g id="language" example="English">%1$s</xliff:g></string>
+    <string name="translation_auto_state">Dịch tự động <xliff:g id="state" example="on">%1$s</xliff:g></string>
+    <string name="translation_category_speech">Lời nói</string>
+    <string name="translation_detect">Phát hiện ngôn ngữ</string>
+    <string name="translation_device_language">Ngôn ngữ của thiết bị (<xliff:g id="language" example="English">%1$s</xliff:g>)</string>
+    <plurals name="translation_download_all_failed">
+        <item quantity="other"><xliff:g id="count" example="3">%1$d</xliff:g> ngôn ngữ chưa được tải xuống</item>
+    </plurals>
+    <plurals name="translation_download_all_message">
+        <item quantity="other"><xliff:g id="count" example="57">%1$d</xliff:g> ngôn ngữ, khoảng <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+    </plurals>
+    <string name="translation_download_all_progress">Đang tải xuống, <xliff:g id="done" example="12">%1$d</xliff:g>/<xliff:g id="total" example="57">%2$d</xliff:g></string>
+    <string name="translation_download_all_stop">Dừng</string>
+    <string name="translation_download_all_stop_title">Dừng tải ngôn ngữ xuống?</string>
+    <string name="translation_download_done">Đã tải xuống <xliff:g id="language" example="German">%1$s</xliff:g></string>
+    <string name="translation_download_failed">Chưa tải xuống được <xliff:g id="language" example="German">%1$s</xliff:g></string>
+    <string name="translation_download_message">Khoảng 30 MB.</string>
+    <string name="translation_download_title">Tải <xliff:g id="language" example="German">%1$s</xliff:g> xuống?</string>
+    <string name="translation_downloading">Đang tải <xliff:g id="languages" example="German and English">%1$s</xliff:g> xuống để dịch trên thiết bị</string>
+    <string name="translation_error"><xliff:g id="service" example="DeepL">%1$s</xliff:g> không dịch được văn bản.</string>
+    <string name="translation_error_api_key"><xliff:g id="service" example="DeepL">%1$s</xliff:g> không chấp nhận khoá API.</string>
+    <string name="translation_error_connection">Không kết nối được với <xliff:g id="service" example="DeepL">%1$s</xliff:g>.</string>
+    <string name="translation_error_details"><xliff:g id="service" example="DeepL">%1$s</xliff:g> không dịch được văn bản: <xliff:g id="details" example="Wrong endpoint">%2$s</xliff:g></string>
+    <string name="translation_error_detection_downloading">Tính năng phát hiện ngôn ngữ đang tải xuống. Hãy thử lại sau giây lát.</string>
+    <string name="translation_error_download">Không tải xuống được ngôn ngữ để dịch trên thiết bị.</string>
+    <string name="translation_error_downloading">Ngôn ngữ để dịch trên thiết bị vẫn đang tải xuống</string>
+    <string name="translation_error_language">Tính năng dịch <xliff:g id="service" example="On-device">%1$s</xliff:g> không hỗ trợ <xliff:g id="language" example="Klingon">%2$s</xliff:g>.</string>
+    <string name="translation_error_no_address">Nhập địa chỉ <xliff:g id="service" example="LibreTranslate">%1$s</xliff:g> trong phần cài đặt Dịch.</string>
+    <string name="translation_error_no_key">Nhập khoá API <xliff:g id="service" example="DeepL">%1$s</xliff:g> trong phần cài đặt Dịch.</string>
+    <string name="translation_error_not_detected">Không phát hiện được ngôn ngữ</string>
+    <string name="translation_error_quota">Đã đạt đến giới hạn sử dụng của <xliff:g id="service" example="DeepL">%1$s</xliff:g>.</string>
+    <string name="translation_from">Từ <xliff:g id="language" example="German">%1$s</xliff:g>:</string>
+    <string name="translation_key_message">Dán khoá API <xliff:g id="service" example="DeepL">%1$s</xliff:g> của bạn. Để xoá khoá, xoá nội dung trong trường rồi lưu. Văn bản bạn dịch được gửi đến <xliff:g id="service" example="DeepL">%1$s</xliff:g>.</string>
+    <string name="translation_language_downloaded"><xliff:g id="language" example="German">%1$s</xliff:g>, đã tải xuống</string>
+    <string name="translation_language_downloading"><xliff:g id="language" example="German">%1$s</xliff:g>, đang tải xuống</string>
+    <string name="translation_languages_summary">Đã tải xuống: <xliff:g id="languages" example="English, German">%1$s</xliff:g></string>
+    <string name="translation_nothing">Không có gì để dịch</string>
+    <string name="translation_region_global">Toàn cầu</string>
+    <string name="translation_region_message">Khu vực của tài nguyên Translator trong Azure, chẳng hạn như westeurope. Để trống đối với tài nguyên toàn cầu.</string>
+    <string name="translation_second_none">Không dịch</string>
+    <string name="translation_service_ai">Dịch vụ AI</string>
+    <string name="translation_service_deepl">DeepL</string>
+    <string name="translation_service_google_cloud">Google Cloud Translation</string>
+    <string name="translation_service_libretranslate">LibreTranslate</string>
+    <string name="translation_service_microsoft">Microsoft Translator</string>
+    <string name="translation_service_not_set_up"><xliff:g id="service" example="DeepL">%1$s</xliff:g>, chưa thiết lập</string>
+    <string name="translation_service_on_device">Trên thiết bị</string>
+    <string name="translation_swapped">Từ <xliff:g id="source" example="German">%1$s</xliff:g> sang <xliff:g id="target" example="English">%2$s</xliff:g></string>
+    <string name="translation_title">Dịch</string>
+    <string name="translation_untranslated_none">Không có</string>
+</resources>

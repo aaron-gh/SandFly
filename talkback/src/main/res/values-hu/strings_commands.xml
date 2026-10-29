@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="command_add_arrow_keys">Nyílbillentyűk hozzáadása</string>
+    <string name="command_add_gesture">Kézmozdulat hozzáadása</string>
+    <string name="command_choose_arrow_keys">Nyílbillentyűk kiválasztása</string>
+    <string name="command_choose_gesture">Kézmozdulat kiválasztása</string>
+    <string name="command_gesture_assigned"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g>: <xliff:g id="command" example="Describe image">%2$s</xliff:g></string>
+    <string name="command_gestures">Kézmozdulatok</string>
+    <string name="command_keyboard_shortcut">Billentyűparancs</string>
+    <string name="command_no_arrow_keys">Nincsenek nyílbillentyűk</string>
+    <string name="command_no_gestures">Nincsenek kézmozdulatok</string>
+    <string name="command_remove_arrow_keys">Nyílbillentyűk eltávolítása</string>
+    <string name="command_remove_gesture">Kézmozdulat eltávolítása</string>
+    <string name="command_replace">Csere</string>
+    <string name="command_replace_gesture">A(z) <xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g> jelenleg ezt futtatja: <xliff:g id="old_command" example="Read from top">%2$s</xliff:g>. Inkább ezt futtassa: <xliff:g id="new_command" example="Describe image">%3$s</xliff:g>?</string>
+    <string name="commands_category_activation">Aktiválás</string>
+    <string name="commands_category_media">Média és hangerő</string>
+    <string name="commands_category_sandfly">SandFly</string>
+    <string name="commands_category_scrolling">Görgetés</string>
+    <string name="commands_category_speech">Beszéd</string>
+    <string name="commands_category_tables">Táblázatok</string>
+    <string name="commands_category_web">Web</string>
+    <string name="item_list_current">Jelenlegi</string>
+    <string name="item_list_not_in_reading_controls">Nincs a felolvasásvezérlésben</string>
+    <string name="item_list_not_in_sandfly_menu">Nincs a SandFly-menüben</string>
+    <string name="item_list_options">Beállítások</string>
+    <string name="sounds_category_sounds">Hangok</string>
+    <string name="sounds_category_vibration">Rezgés</string>
+    <string name="speech_category_languages">Nyelvek</string>
+    <string name="speech_category_other_apps">Más alkalmazások</string>
+    <string name="speech_category_pronunciation">Kiejtés</string>
+    <string name="speech_category_stopping">A beszéd leállítása</string>
+    <string name="speech_category_voice">Hang</string>
+    <string name="title_pref_audio_output">Hangkimenet</string>
+    <string name="title_pref_backup">Biztonsági mentés és visszaállítás</string>
+    <string name="title_pref_braille">Braille</string>
+    <string name="title_pref_commands">Parancsok</string>
+    <string name="title_pref_display">Megjelenítés</string>
+    <string name="title_pref_image_and_screen_descriptions">Kép- és képernyőleírások</string>
+    <string name="title_pref_pause">Szüneteltetés és kikapcsolás</string>
+    <string name="title_pref_quick_settings_screen">Gyors beállítások</string>
+    <string name="title_pref_speech">Beszéd</string>
+    <string name="title_pref_speech_stream_control">A beszéd hangerő-szabályzója</string>
+    <string name="title_pref_touch">Érintés</string>
+    <string name="title_pref_typing">Gépelés</string>
+    <string name="title_pref_updates">Frissítések és telepítés</string>
+    <string name="title_pref_volume_keys">Hangerőgombok</string>
+    <string name="typing_category_other_input">Más beviteli módok</string>
+    <string name="verbosity_category_announcements">Bejelentések</string>
+    <string name="verbosity_category_items">Elemek</string>
+    <string name="verbosity_category_text">Szöveg és szimbólumok</string>
+</resources>

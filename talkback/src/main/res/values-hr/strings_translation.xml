@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_translation_auto">Automatsko prevođenje</string>
+    <string name="title_pref_translation_auto_service">Usluga automatskog prevođenja</string>
+    <string name="title_pref_translation_copy">Kopiraj prijevode u međuspremnik</string>
+    <string name="title_pref_translation_download_all">Preuzmi sve jezike</string>
+    <string name="title_pref_translation_languages">Jezici na uređaju</string>
+    <string name="title_pref_translation_notifications">Prevodi obavijesti</string>
+    <string name="title_pref_translation_region">Regija</string>
+    <string name="title_pref_translation_say_source">Izgovori izvorni jezik</string>
+    <string name="title_pref_translation_second_target">Tekst na ciljnom jeziku prevodi na</string>
+    <string name="title_pref_translation_service">Usluga prevođenja</string>
+    <string name="title_pref_translation_source">Prevodi s</string>
+    <string name="title_pref_translation_swap">Zamijeni jezike</string>
+    <string name="title_pref_translation_target">Prevodi na</string>
+    <string name="title_pref_translation_target_voice">Upotrijebi glas za ciljni jezik</string>
+    <string name="title_pref_translation_untranslated">Jezici koji se ne prevode</string>
+    <string name="title_pref_translation_wifi_only">Preuzimaj jezike samo putem Wi-Fija</string>
+    <string name="title_translate_last_spoken_phrase">Prevođenje posljednje izgovorene fraze</string>
+    <string name="translation_address_hint">Adresa, na primjer https://libretranslate.com</string>
+    <string name="translation_address_message">Adresa poslužitelja LibreTranslate, na primjer https://libretranslate.com. Poslužitelji koji nisu vaši mogu zahtijevati API ključ.</string>
+    <string name="translation_all_downloaded">Svi su jezici preuzeti</string>
+    <string name="translation_already_in">Već na jeziku: <xliff:g id="language" example="English">%1$s</xliff:g></string>
+    <string name="translation_auto_state">Automatsko prevođenje: <xliff:g id="state" example="on">%1$s</xliff:g></string>
+    <string name="translation_category_speech">Govor</string>
+    <string name="translation_detect">Prepoznaj jezik</string>
+    <string name="translation_device_language">Jezik uređaja (<xliff:g id="language" example="English">%1$s</xliff:g>)</string>
+    <plurals name="translation_download_all_failed">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> jezik nije preuzet</item>
+        <item quantity="few"><xliff:g id="count" example="3">%1$d</xliff:g> jezika nisu preuzeta</item>
+        <item quantity="other"><xliff:g id="count" example="3">%1$d</xliff:g> jezika nije preuzeto</item>
+    </plurals>
+    <plurals name="translation_download_all_message">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> jezik, oko <xliff:g id="size" example="30 MB">%2$s</xliff:g>.</item>
+        <item quantity="few"><xliff:g id="count" example="57">%1$d</xliff:g> jezika, oko <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+        <item quantity="other"><xliff:g id="count" example="57">%1$d</xliff:g> jezika, oko <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+    </plurals>
+    <string name="translation_download_all_progress">Preuzimanje, <xliff:g id="done" example="12">%1$d</xliff:g> od <xliff:g id="total" example="57">%2$d</xliff:g></string>
+    <string name="translation_download_all_stop">Zaustavi</string>
+    <string name="translation_download_all_stop_title">Zaustaviti preuzimanje jezika?</string>
+    <string name="translation_download_done">Preuzeto: <xliff:g id="language" example="German">%1$s</xliff:g></string>
+    <string name="translation_download_failed">Nije preuzeto: <xliff:g id="language" example="German">%1$s</xliff:g></string>
+    <string name="translation_download_message">Oko 30 MB.</string>
+    <string name="translation_download_title">Preuzeti jezik <xliff:g id="language" example="German">%1$s</xliff:g>?</string>
+    <string name="translation_downloading">Preuzimanje jezika za prevođenje na uređaju: <xliff:g id="languages" example="German and English">%1$s</xliff:g></string>
+    <string name="translation_error">Usluga <xliff:g id="service" example="DeepL">%1$s</xliff:g> nije mogla prevesti tekst.</string>
+    <string name="translation_error_api_key">Usluga <xliff:g id="service" example="DeepL">%1$s</xliff:g> nije prihvatila API ključ.</string>
+    <string name="translation_error_connection">Usluga <xliff:g id="service" example="DeepL">%1$s</xliff:g> nije dostupna.</string>
+    <string name="translation_error_details">Usluga <xliff:g id="service" example="DeepL">%1$s</xliff:g> nije mogla prevesti tekst: <xliff:g id="details" example="Wrong endpoint">%2$s</xliff:g></string>
+    <string name="translation_error_detection_downloading">Prepoznavanje jezika se preuzima. Pokušajte ponovno za trenutak.</string>
+    <string name="translation_error_download">Jezici za prevođenje na uređaju nisu preuzeti.</string>
+    <string name="translation_error_downloading">Jezici za prevođenje na uređaju još se preuzimaju</string>
+    <string name="translation_error_language">Usluga prevođenja <xliff:g id="service" example="On-device">%1$s</xliff:g> ne podržava jezik: <xliff:g id="language" example="Klingon">%2$s</xliff:g>.</string>
+    <string name="translation_error_no_address">Unesite adresu usluge <xliff:g id="service" example="LibreTranslate">%1$s</xliff:g> u postavkama prevođenja.</string>
+    <string name="translation_error_no_key">Unesite API ključ usluge <xliff:g id="service" example="DeepL">%1$s</xliff:g> u postavkama prevođenja.</string>
+    <string name="translation_error_not_detected">Jezik nije prepoznat</string>
+    <string name="translation_error_quota">Dosegnuto je ograničenje upotrebe usluge <xliff:g id="service" example="DeepL">%1$s</xliff:g>.</string>
+    <string name="translation_from">Izvorni jezik: <xliff:g id="language" example="German">%1$s</xliff:g>.</string>
+    <string name="translation_key_message">Zalijepite API ključ usluge <xliff:g id="service" example="DeepL">%1$s</xliff:g>. Da biste ga uklonili, ispraznite polje i spremite. Tekst koji prevodite šalje se usluzi <xliff:g id="service" example="DeepL">%1$s</xliff:g>.</string>
+    <string name="translation_language_downloaded"><xliff:g id="language" example="German">%1$s</xliff:g>, preuzeto</string>
+    <string name="translation_language_downloading"><xliff:g id="language" example="German">%1$s</xliff:g>, preuzimanje</string>
+    <string name="translation_languages_summary">Preuzeto: <xliff:g id="languages" example="English, German">%1$s</xliff:g></string>
+    <string name="translation_nothing">Nema ničega za prijevod</string>
+    <string name="translation_region_global">Globalno</string>
+    <string name="translation_region_message">Regija vašeg resursa Translator u Azureu, na primjer westeurope. Za globalni resurs ostavite prazno.</string>
+    <string name="translation_second_none">Ne prevodi</string>
+    <string name="translation_service_ai">AI usluga</string>
+    <string name="translation_service_deepl">DeepL</string>
+    <string name="translation_service_google_cloud">Google Cloud Translation</string>
+    <string name="translation_service_libretranslate">LibreTranslate</string>
+    <string name="translation_service_microsoft">Microsoft Translator</string>
+    <string name="translation_service_not_set_up"><xliff:g id="service" example="DeepL">%1$s</xliff:g>, nije postavljeno</string>
+    <string name="translation_service_on_device">Na uređaju</string>
+    <string name="translation_swapped">Prevođenje s: <xliff:g id="source" example="German">%1$s</xliff:g>, na: <xliff:g id="target" example="English">%2$s</xliff:g></string>
+    <string name="translation_title">Prevođenje</string>
+    <string name="translation_untranslated_none">Nijedan</string>
+</resources>

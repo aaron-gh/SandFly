@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_translation_auto">Avtomatik tərcümə</string>
+    <string name="title_pref_translation_auto_service">Avtomatik tərcümə xidməti</string>
+    <string name="title_pref_translation_copy">Tərcümələri mübadilə buferinə kopyala</string>
+    <string name="title_pref_translation_download_all">Bütün dilləri endir</string>
+    <string name="title_pref_translation_languages">Cihazdakı dillər</string>
+    <string name="title_pref_translation_notifications">Bildirişləri tərcümə et</string>
+    <string name="title_pref_translation_region">Region</string>
+    <string name="title_pref_translation_say_source">Orijinal dili de</string>
+    <string name="title_pref_translation_second_target">Hədəf dildəki mətni bu dilə tərcümə et</string>
+    <string name="title_pref_translation_service">Tərcümə xidməti</string>
+    <string name="title_pref_translation_source">Mənbə dil</string>
+    <string name="title_pref_translation_swap">Dilləri dəyiş</string>
+    <string name="title_pref_translation_target">Hədəf dil</string>
+    <string name="title_pref_translation_target_voice">Hədəf dil üçün səsdən istifadə et</string>
+    <string name="title_pref_translation_untranslated">Tərcümə edilməyən dillər</string>
+    <string name="title_pref_translation_wifi_only">Dilləri yalnız Wi-Fi ilə endir</string>
+    <string name="title_translate_last_spoken_phrase">Son deyilən ifadəni tərcümə et</string>
+    <string name="translation_address_hint">Ünvan, məsələn, https://libretranslate.com</string>
+    <string name="translation_address_message">LibreTranslate serverinin ünvanı, məsələn, https://libretranslate.com. Sizin öz serverinizdən başqa serverlər API açarı tələb edə bilər.</string>
+    <string name="translation_all_downloaded">Bütün dillər endirildi</string>
+    <string name="translation_already_in">Artıq <xliff:g id="language" example="English">%1$s</xliff:g> dilindədir</string>
+    <string name="translation_auto_state">Avtomatik tərcümə <xliff:g id="state" example="on">%1$s</xliff:g></string>
+    <string name="translation_category_speech">Nitq</string>
+    <string name="translation_detect">Dili aşkar et</string>
+    <string name="translation_device_language">Cihazın dili (<xliff:g id="language" example="English">%1$s</xliff:g>)</string>
+    <plurals name="translation_download_all_failed">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> dil endirilmədi</item>
+        <item quantity="other"><xliff:g id="count" example="3">%1$d</xliff:g> dil endirilmədi</item>
+    </plurals>
+    <plurals name="translation_download_all_message">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> dil, təxminən <xliff:g id="size" example="30 MB">%2$s</xliff:g>.</item>
+        <item quantity="other"><xliff:g id="count" example="57">%1$d</xliff:g> dil, təxminən <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+    </plurals>
+    <string name="translation_download_all_progress">Endirilir, <xliff:g id="done" example="12">%1$d</xliff:g> / <xliff:g id="total" example="57">%2$d</xliff:g></string>
+    <string name="translation_download_all_stop">Dayandır</string>
+    <string name="translation_download_all_stop_title">Dillərin endirilməsi dayandırılsın?</string>
+    <string name="translation_download_done"><xliff:g id="language" example="German">%1$s</xliff:g> endirildi</string>
+    <string name="translation_download_failed"><xliff:g id="language" example="German">%1$s</xliff:g> endirilmədi</string>
+    <string name="translation_download_message">Təxminən 30 MB.</string>
+    <string name="translation_download_title"><xliff:g id="language" example="German">%1$s</xliff:g> endirilsin?</string>
+    <string name="translation_downloading">Cihazda tərcümə üçün <xliff:g id="languages" example="German and English">%1$s</xliff:g> endirilir</string>
+    <string name="translation_error"><xliff:g id="service" example="DeepL">%1$s</xliff:g> mətni tərcümə edə bilmədi.</string>
+    <string name="translation_error_api_key"><xliff:g id="service" example="DeepL">%1$s</xliff:g> API açarını qəbul etmədi.</string>
+    <string name="translation_error_connection"><xliff:g id="service" example="DeepL">%1$s</xliff:g> xidmətinə qoşulmaq mümkün olmadı.</string>
+    <string name="translation_error_details"><xliff:g id="service" example="DeepL">%1$s</xliff:g> mətni tərcümə edə bilmədi: <xliff:g id="details" example="Wrong endpoint">%2$s</xliff:g></string>
+    <string name="translation_error_detection_downloading">Dilin aşkarlanması endirilir. Bir azdan yenidən cəhd edin.</string>
+    <string name="translation_error_download">Cihazda tərcümə üçün dillər endirilə bilmədi.</string>
+    <string name="translation_error_downloading">Cihazda tərcümə üçün dillər hələ endirilir</string>
+    <string name="translation_error_language"><xliff:g id="service" example="On-device">%1$s</xliff:g> tərcümə <xliff:g id="language" example="Klingon">%2$s</xliff:g> dilini dəstəkləmir.</string>
+    <string name="translation_error_no_address">Tərcümə ayarlarında <xliff:g id="service" example="LibreTranslate">%1$s</xliff:g> ünvanını daxil edin.</string>
+    <string name="translation_error_no_key">Tərcümə ayarlarında <xliff:g id="service" example="DeepL">%1$s</xliff:g> API açarını daxil edin.</string>
+    <string name="translation_error_not_detected">Dil aşkar edilmədi</string>
+    <string name="translation_error_quota"><xliff:g id="service" example="DeepL">%1$s</xliff:g> istifadə limitinə çatıldı.</string>
+    <string name="translation_from"><xliff:g id="language" example="German">%1$s</xliff:g> dilindən:</string>
+    <string name="translation_key_message"><xliff:g id="service" example="DeepL">%1$s</xliff:g> API açarınızı yapışdırın. Silmək üçün sahəni təmizləyib yadda saxlayın. Tərcümə etdiyiniz mətn <xliff:g id="service" example="DeepL">%1$s</xliff:g> xidmətinə göndərilir.</string>
+    <string name="translation_language_downloaded"><xliff:g id="language" example="German">%1$s</xliff:g>, endirilib</string>
+    <string name="translation_language_downloading"><xliff:g id="language" example="German">%1$s</xliff:g>, endirilir</string>
+    <string name="translation_languages_summary">Endirilib: <xliff:g id="languages" example="English, German">%1$s</xliff:g></string>
+    <string name="translation_nothing">Tərcümə ediləcək heç nə yoxdur</string>
+    <string name="translation_region_global">Qlobal</string>
+    <string name="translation_region_message">Azure-dakı Translator resursunuzun regionu, məsələn, westeurope. Qlobal resurs üçün boş saxlayın.</string>
+    <string name="translation_second_none">Tərcümə etmə</string>
+    <string name="translation_service_ai">AI xidməti</string>
+    <string name="translation_service_deepl">DeepL</string>
+    <string name="translation_service_google_cloud">Google Cloud Translation</string>
+    <string name="translation_service_libretranslate">LibreTranslate</string>
+    <string name="translation_service_microsoft">Microsoft Translator</string>
+    <string name="translation_service_not_set_up"><xliff:g id="service" example="DeepL">%1$s</xliff:g>, ayarlanmayıb</string>
+    <string name="translation_service_on_device">Cihazda</string>
+    <string name="translation_swapped"><xliff:g id="source" example="German">%1$s</xliff:g> dilindən <xliff:g id="target" example="English">%2$s</xliff:g> dilinə</string>
+    <string name="translation_title">Tərcümə</string>
+    <string name="translation_untranslated_none">Heç biri</string>
+</resources>

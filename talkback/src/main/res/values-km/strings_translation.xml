@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_translation_auto">ការបកប្រែស្វ័យប្រវត្តិ</string>
+    <string name="title_pref_translation_auto_service">សេវាកម្មបកប្រែស្វ័យប្រវត្តិ</string>
+    <string name="title_pref_translation_copy">ចម្លងការបកប្រែទៅឃ្លីបបត</string>
+    <string name="title_pref_translation_download_all">ទាញយកភាសាទាំងអស់</string>
+    <string name="title_pref_translation_languages">ភាសានៅលើឧបករណ៍</string>
+    <string name="title_pref_translation_notifications">បកប្រែការជូនដំណឹង</string>
+    <string name="title_pref_translation_region">តំបន់</string>
+    <string name="title_pref_translation_say_source">និយាយភាសាដើម</string>
+    <string name="title_pref_translation_second_target">បកប្រែអត្ថបទដែលជាភាសាគោលដៅទៅជា</string>
+    <string name="title_pref_translation_service">សេវាកម្មបកប្រែ</string>
+    <string name="title_pref_translation_source">បកប្រែពី</string>
+    <string name="title_pref_translation_swap">ប្ដូរភាសា</string>
+    <string name="title_pref_translation_target">បកប្រែទៅជា</string>
+    <string name="title_pref_translation_target_voice">ប្រើសំឡេងសម្រាប់ភាសាគោលដៅ</string>
+    <string name="title_pref_translation_untranslated">ភាសាដែលមិនបកប្រែ</string>
+    <string name="title_pref_translation_wifi_only">ទាញយកភាសាតាម Wi-Fi តែប៉ុណ្ណោះ</string>
+    <string name="title_translate_last_spoken_phrase">បកប្រែឃ្លានិយាយចុងក្រោយ</string>
+    <string name="translation_address_hint">អាសយដ្ឋាន ដូចជា https://libretranslate.com</string>
+    <string name="translation_address_message">អាសយដ្ឋានរបស់ម៉ាស៊ីនមេ LibreTranslate ដូចជា https://libretranslate.com។ ម៉ាស៊ីនមេដែលមិនមែនជារបស់អ្នកអាចត្រូវការសោ API។</string>
+    <string name="translation_all_downloaded">បានទាញយកភាសាទាំងអស់</string>
+    <string name="translation_already_in">ជា<xliff:g id="language" example="English">%1$s</xliff:g>រួចហើយ</string>
+    <string name="translation_auto_state">ការបកប្រែស្វ័យប្រវត្តិ <xliff:g id="state" example="on">%1$s</xliff:g></string>
+    <string name="translation_category_speech">ការនិយាយ</string>
+    <string name="translation_detect">រកមើលភាសា</string>
+    <string name="translation_device_language">ភាសាឧបករណ៍ (<xliff:g id="language" example="English">%1$s</xliff:g>)</string>
+    <plurals name="translation_download_all_failed">
+        <item quantity="other">មិនបានទាញយក <xliff:g id="count" example="3">%1$d</xliff:g> ភាសា</item>
+    </plurals>
+    <plurals name="translation_download_all_message">
+        <item quantity="other"><xliff:g id="count" example="57">%1$d</xliff:g> ភាសា ប្រហែល <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>។</item>
+    </plurals>
+    <string name="translation_download_all_progress">កំពុងទាញយក <xliff:g id="done" example="12">%1$d</xliff:g> នៃ <xliff:g id="total" example="57">%2$d</xliff:g></string>
+    <string name="translation_download_all_stop">ឈប់</string>
+    <string name="translation_download_all_stop_title">ឈប់ទាញយកភាសាឬ?</string>
+    <string name="translation_download_done">បានទាញយក<xliff:g id="language" example="German">%1$s</xliff:g></string>
+    <string name="translation_download_failed">មិនបានទាញយក<xliff:g id="language" example="German">%1$s</xliff:g></string>
+    <string name="translation_download_message">ប្រហែល 30 MB។</string>
+    <string name="translation_download_title">ទាញយក<xliff:g id="language" example="German">%1$s</xliff:g>ឬ?</string>
+    <string name="translation_downloading">កំពុងទាញយក<xliff:g id="languages" example="German and English">%1$s</xliff:g>សម្រាប់ការបកប្រែនៅលើឧបករណ៍</string>
+    <string name="translation_error"><xliff:g id="service" example="DeepL">%1$s</xliff:g> មិនអាចបកប្រែអត្ថបទបានទេ។</string>
+    <string name="translation_error_api_key"><xliff:g id="service" example="DeepL">%1$s</xliff:g> មិនបានទទួលយកសោ API ទេ។</string>
+    <string name="translation_error_connection">មិនអាចភ្ជាប់ទៅ <xliff:g id="service" example="DeepL">%1$s</xliff:g> បានទេ។</string>
+    <string name="translation_error_details"><xliff:g id="service" example="DeepL">%1$s</xliff:g> មិនអាចបកប្រែអត្ថបទបានទេ៖ <xliff:g id="details" example="Wrong endpoint">%2$s</xliff:g></string>
+    <string name="translation_error_detection_downloading">ការរកមើលភាសាកំពុងទាញយក។ សាកល្បងម្ដងទៀតបន្តិចទៀត។</string>
+    <string name="translation_error_download">មិនអាចទាញយកភាសាសម្រាប់ការបកប្រែនៅលើឧបករណ៍បានទេ។</string>
+    <string name="translation_error_downloading">ភាសាសម្រាប់ការបកប្រែនៅលើឧបករណ៍នៅតែកំពុងទាញយក</string>
+    <string name="translation_error_language">ការបកប្រែ<xliff:g id="service" example="On-device">%1$s</xliff:g>មិនគាំទ្រ<xliff:g id="language" example="Klingon">%2$s</xliff:g>ទេ។</string>
+    <string name="translation_error_no_address">បញ្ចូលអាសយដ្ឋាន <xliff:g id="service" example="LibreTranslate">%1$s</xliff:g> នៅក្នុងការកំណត់ «ការបកប្រែ»។</string>
+    <string name="translation_error_no_key">បញ្ចូលសោ API របស់ <xliff:g id="service" example="DeepL">%1$s</xliff:g> នៅក្នុងការកំណត់ «ការបកប្រែ»។</string>
+    <string name="translation_error_not_detected">រកមិនឃើញភាសា</string>
+    <string name="translation_error_quota"><xliff:g id="service" example="DeepL">%1$s</xliff:g> បានដល់កម្រិតប្រើប្រាស់។</string>
+    <string name="translation_from">ពី<xliff:g id="language" example="German">%1$s</xliff:g>៖</string>
+    <string name="translation_key_message">ដាក់សោ API របស់ <xliff:g id="service" example="DeepL">%1$s</xliff:g>។ ដើម្បីដកវាចេញ សម្អាតកន្លែងបញ្ចូល ហើយរក្សាទុក។ អត្ថបទដែលអ្នកបកប្រែត្រូវបានផ្ញើទៅ <xliff:g id="service" example="DeepL">%1$s</xliff:g>។</string>
+    <string name="translation_language_downloaded"><xliff:g id="language" example="German">%1$s</xliff:g>, បានទាញយក</string>
+    <string name="translation_language_downloading"><xliff:g id="language" example="German">%1$s</xliff:g>, កំពុងទាញយក</string>
+    <string name="translation_languages_summary">បានទាញយក៖ <xliff:g id="languages" example="English, German">%1$s</xliff:g></string>
+    <string name="translation_nothing">គ្មានអ្វីត្រូវបកប្រែ</string>
+    <string name="translation_region_global">សកល</string>
+    <string name="translation_region_message">តំបន់នៃធនធាន Translator របស់អ្នកនៅក្នុង Azure ដូចជា westeurope។ ទុកវាឱ្យទទេសម្រាប់ធនធានសកល។</string>
+    <string name="translation_second_none">កុំបកប្រែ</string>
+    <string name="translation_service_ai">សេវាកម្ម AI</string>
+    <string name="translation_service_deepl">DeepL</string>
+    <string name="translation_service_google_cloud">Google Cloud Translation</string>
+    <string name="translation_service_libretranslate">LibreTranslate</string>
+    <string name="translation_service_microsoft">Microsoft Translator</string>
+    <string name="translation_service_not_set_up"><xliff:g id="service" example="DeepL">%1$s</xliff:g>, មិនទាន់រៀបចំ</string>
+    <string name="translation_service_on_device">នៅលើឧបករណ៍</string>
+    <string name="translation_swapped">ពី<xliff:g id="source" example="German">%1$s</xliff:g>ទៅ<xliff:g id="target" example="English">%2$s</xliff:g></string>
+    <string name="translation_title">ការបកប្រែ</string>
+    <string name="translation_untranslated_none">គ្មាន</string>
+</resources>

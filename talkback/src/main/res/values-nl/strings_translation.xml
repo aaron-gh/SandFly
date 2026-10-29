@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_translation_auto">Automatische vertaling</string>
+    <string name="title_pref_translation_auto_service">Service voor automatische vertaling</string>
+    <string name="title_pref_translation_copy">Vertalingen naar het klembord kopiëren</string>
+    <string name="title_pref_translation_download_all">Alle talen downloaden</string>
+    <string name="title_pref_translation_languages">Talen op het apparaat</string>
+    <string name="title_pref_translation_notifications">Meldingen vertalen</string>
+    <string name="title_pref_translation_region">Regio</string>
+    <string name="title_pref_translation_say_source">Oorspronkelijke taal uitspreken</string>
+    <string name="title_pref_translation_second_target">Tekst in de doeltaal vertalen naar</string>
+    <string name="title_pref_translation_service">Vertaalservice</string>
+    <string name="title_pref_translation_source">Vertalen vanuit</string>
+    <string name="title_pref_translation_swap">Talen omwisselen</string>
+    <string name="title_pref_translation_target">Vertalen naar</string>
+    <string name="title_pref_translation_target_voice">Stem voor de doeltaal gebruiken</string>
+    <string name="title_pref_translation_untranslated">Niet-vertaalde talen</string>
+    <string name="title_pref_translation_wifi_only">Talen alleen via Wi-Fi downloaden</string>
+    <string name="title_translate_last_spoken_phrase">Laatst uitgesproken woordgroep vertalen</string>
+    <string name="translation_address_hint">Adres, zoals https://libretranslate.com</string>
+    <string name="translation_address_message">Het adres van een LibreTranslate-server, zoals https://libretranslate.com. Andere servers dan je eigen server hebben mogelijk een API-sleutel nodig.</string>
+    <string name="translation_all_downloaded">Alle talen gedownload</string>
+    <string name="translation_already_in">Al in het <xliff:g id="language" example="English">%1$s</xliff:g></string>
+    <string name="translation_auto_state">Automatische vertaling <xliff:g id="state" example="on">%1$s</xliff:g></string>
+    <string name="translation_category_speech">Spraak</string>
+    <string name="translation_detect">Taal detecteren</string>
+    <string name="translation_device_language">Apparaattaal (<xliff:g id="language" example="English">%1$s</xliff:g>)</string>
+    <plurals name="translation_download_all_failed">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> taal niet gedownload</item>
+        <item quantity="other"><xliff:g id="count" example="3">%1$d</xliff:g> talen niet gedownload</item>
+    </plurals>
+    <plurals name="translation_download_all_message">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> taal, ongeveer <xliff:g id="size" example="30 MB">%2$s</xliff:g>.</item>
+        <item quantity="other"><xliff:g id="count" example="57">%1$d</xliff:g> talen, ongeveer <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+    </plurals>
+    <string name="translation_download_all_progress">Downloaden, <xliff:g id="done" example="12">%1$d</xliff:g> van <xliff:g id="total" example="57">%2$d</xliff:g></string>
+    <string name="translation_download_all_stop">Stoppen</string>
+    <string name="translation_download_all_stop_title">Downloaden van talen stoppen?</string>
+    <string name="translation_download_done"><xliff:g id="language" example="German">%1$s</xliff:g> gedownload</string>
+    <string name="translation_download_failed"><xliff:g id="language" example="German">%1$s</xliff:g> niet gedownload</string>
+    <string name="translation_download_message">Ongeveer 30 MB.</string>
+    <string name="translation_download_title"><xliff:g id="language" example="German">%1$s</xliff:g> downloaden?</string>
+    <string name="translation_downloading"><xliff:g id="languages" example="German and English">%1$s</xliff:g> wordt gedownload voor vertaling op het apparaat</string>
+    <string name="translation_error"><xliff:g id="service" example="DeepL">%1$s</xliff:g> kon de tekst niet vertalen.</string>
+    <string name="translation_error_api_key"><xliff:g id="service" example="DeepL">%1$s</xliff:g> heeft de API-sleutel niet geaccepteerd.</string>
+    <string name="translation_error_connection"><xliff:g id="service" example="DeepL">%1$s</xliff:g> is niet bereikbaar.</string>
+    <string name="translation_error_details"><xliff:g id="service" example="DeepL">%1$s</xliff:g> kon de tekst niet vertalen: <xliff:g id="details" example="Wrong endpoint">%2$s</xliff:g></string>
+    <string name="translation_error_detection_downloading">Taaldetectie wordt gedownload. Probeer het zo opnieuw.</string>
+    <string name="translation_error_download">Talen voor vertaling op het apparaat konden niet worden gedownload.</string>
+    <string name="translation_error_downloading">Talen voor vertaling op het apparaat worden nog gedownload</string>
+    <string name="translation_error_language">Vertaling (<xliff:g id="service" example="On-device">%1$s</xliff:g>) ondersteunt <xliff:g id="language" example="Klingon">%2$s</xliff:g> niet.</string>
+    <string name="translation_error_no_address">Voer het adres van <xliff:g id="service" example="LibreTranslate">%1$s</xliff:g> in bij de instellingen voor Vertaling.</string>
+    <string name="translation_error_no_key">Voer de API-sleutel van <xliff:g id="service" example="DeepL">%1$s</xliff:g> in bij de instellingen voor Vertaling.</string>
+    <string name="translation_error_not_detected">Taal niet gedetecteerd</string>
+    <string name="translation_error_quota">Gebruikslimiet van <xliff:g id="service" example="DeepL">%1$s</xliff:g> bereikt.</string>
+    <string name="translation_from">Uit het <xliff:g id="language" example="German">%1$s</xliff:g>:</string>
+    <string name="translation_key_message">Plak je API-sleutel van <xliff:g id="service" example="DeepL">%1$s</xliff:g>. Maak het veld leeg en sla op om de sleutel te verwijderen. Tekst die je vertaalt, wordt naar <xliff:g id="service" example="DeepL">%1$s</xliff:g> gestuurd.</string>
+    <string name="translation_language_downloaded"><xliff:g id="language" example="German">%1$s</xliff:g>, gedownload</string>
+    <string name="translation_language_downloading"><xliff:g id="language" example="German">%1$s</xliff:g>, wordt gedownload</string>
+    <string name="translation_languages_summary">Gedownload: <xliff:g id="languages" example="English, German">%1$s</xliff:g></string>
+    <string name="translation_nothing">Niets te vertalen</string>
+    <string name="translation_region_global">Globaal</string>
+    <string name="translation_region_message">De regio van je Translator-resource in Azure, zoals westeurope. Laat dit leeg voor een globale resource.</string>
+    <string name="translation_second_none">Niet vertalen</string>
+    <string name="translation_service_ai">AI-service</string>
+    <string name="translation_service_deepl">DeepL</string>
+    <string name="translation_service_google_cloud">Google Cloud Translation</string>
+    <string name="translation_service_libretranslate">LibreTranslate</string>
+    <string name="translation_service_microsoft">Microsoft Translator</string>
+    <string name="translation_service_not_set_up"><xliff:g id="service" example="DeepL">%1$s</xliff:g>, niet ingesteld</string>
+    <string name="translation_service_on_device">Op het apparaat</string>
+    <string name="translation_swapped">Van <xliff:g id="source" example="German">%1$s</xliff:g> naar <xliff:g id="target" example="English">%2$s</xliff:g></string>
+    <string name="translation_title">Vertaling</string>
+    <string name="translation_untranslated_none">Geen</string>
+</resources>

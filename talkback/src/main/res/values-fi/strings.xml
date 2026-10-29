@@ -1069,8 +1069,8 @@
   <string name="checking_notifications_tips">Jos haluat tarkistaa ilmoitushistorian, pyyhkäise näytön yläreunasta alas kahdella sormella</string>
   <string name="image_description_playground_title">Kokeile kuvien kuvauksia</string>
   <string name="image_description_playground_content_one">Kun olet kohdistanut kuvaan, avaa SandFly-valikko ja valitse Kuvaile kuvaa.\n\nAlla on yksi kuva. Kokeile saada sen kuvaus.</string>
-  <string name="image_description_playground_content_two">Voit muuttaa kuvien kuvausten asetuksia milloin tahansa valitsemalla SandFly-asetukset &gt; Automaattiset kuvaukset.</string>
-  <string name="image_description_playground_content_two_tts">Voit muuttaa kuvien kuvausten asetuksia milloin tahansa valitsemalla SandFly-asetukset ja sitten Automaattiset kuvaukset.</string>
+    <string name="image_description_playground_content_two">Voit muuttaa kuvien kuvausten asetuksia milloin tahansa valitsemalla SandFly-asetukset &gt; Kuvien ja näytön kuvaukset.</string>
+    <string name="image_description_playground_content_two_tts">Voit muuttaa kuvien kuvausten asetuksia milloin tahansa valitsemalla SandFly-asetukset ja sitten Kuvien ja näytön kuvaukset.</string>
   <string name="image_description_sample_image_content_description">Esimerkkikuva: Avaa SandFly-valikko napauttamalla näyttöä kolmella sormella ja valitse \"Kuvaile kuvaa\", niin kuulet kuvauksen.</string>
   <string name="practice_gestures_title">Eleiden harjoittelu</string>
   <string name="practice_keyboard_gestures_title">Harjoittele pikanäppäinten käyttöä</string>
@@ -1550,7 +1550,7 @@
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> pudotettu. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly sanoo kohteen tiedot tässä järjestyksessä. Voit muuttaa järjestystä koskettamalla tietoa pitkään ja vetämällä sitä ylös tai alas. Kun SandFly on päällä, kaksoisnapauta ja pidä painettuna ja vedä sitten. Voit myös käyttää toimintoja Siirrä ylös ja Siirrä alas.</string>
     <string name="title_pref_speak_items_before_scroll">Sano kohteet ennen kuin ne vierittyvät näkyviin</string>
-    <string name="gemini_error_api_key">Gemini ei hyväksynyt API-avainta. Tarkista avain Automaattiset kuvaukset ‑asetuksista.</string>
+    <string name="gemini_error_api_key">Gemini ei hyväksynyt API-avainta. Tarkista avain kohdan Kuvien ja näytön kuvaukset asetuksista.</string>
     <string name="gemini_error_quota">Gemini API ‑avaimesi käyttöraja on täynnä. Yritä myöhemmin uudelleen.</string>
     <string name="gemini_error_busy">Gemini on juuri nyt ruuhkautunut. Yritä hetken kuluttua uudelleen.</string>
     <string name="gemini_error_timeout">Geminin vastaus kesti liian kauan. Yritä uudelleen.</string>
@@ -1774,4 +1774,24 @@
     <string name="settings_export_failed">Asetuksia ei voitu viedä</string>
     <string name="settings_import_done">Asetukset tuotu</string>
     <string name="settings_import_failed">Tämä tiedosto ei ole SandFly- tai Backtalk-asetustiedosto, tai sitä ei voitu lukea</string>
+    <string name="sound_mode_needs_access">Salli Älä häiritse -käyttöoikeus, jotta Äänetön-tilan voi ottaa käyttöön tai poistaa käytöstä.</string>
+    <string name="keycombo_menu_category_arrow_key_nav">Nuolinäppäinnavigointi</string>
+    <string name="arrow_key_nav_toggle">Nuolinäppäinnavigointi päälle tai pois</string>
+    <string name="arrow_key_nav_on">Nuolinäppäinnavigointi päällä</string>
+    <string name="arrow_key_nav_off">Nuolinäppäinnavigointi pois</string>
+    <string name="arrow_key_nav_page_left">Sivu vasemmalle</string>
+    <string name="arrow_key_nav_page_right">Sivu oikealle</string>
+    <string name="arrow_key_nav_assign_instruction">Paina yhtä näppäintä tai kahta näppäintä yhtä aikaa, muokkausnäppäinten kanssa tai ilman. Tyhjennä painamalla Backspace, palauta oletus painamalla Ctrl + Backspace, tallenna painamalla Enter tai peruuta painamalla Escape.</string>
+    <string name="shortcut_next_track">Seuraava kappale</string>
+    <string name="shortcut_previous_track">Edellinen kappale</string>
+    <string-array name="pref_dictation_auto_stop_entries">
+        <item>Pois</item>
+        <item>3 sekuntia</item>
+        <item>5 sekuntia</item>
+        <item>10 sekuntia</item>
+        <item>15 sekuntia</item>
+        <item>30 sekuntia</item>
+        <item>1 minuutti</item>
+    </string-array>
+    <string name="title_pref_dictation_auto_stop">Automaattinen pysäytys hiljaisuuden jälkeen</string>
 </resources>

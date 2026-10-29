@@ -18,7 +18,7 @@
     <string name="ai_service_model_hint">Μοντέλο</string>
     <string name="ai_service_address_invalid">Η διεύθυνση πρέπει να ξεκινά με https://. Δεν αποθηκεύτηκε τίποτα.</string>
     <string name="dialog_message_ai_service_consent">Οι εικόνες και τα στιγμιότυπα οθόνης αποστέλλονται στο <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> για περιγραφή, κάτι που διαρκεί αρκετά δευτερόλεπτα. Ισχύουν οι όροι και η πολιτική απορρήτου της υπηρεσίας. Η παραγωγική τεχνητή νοημοσύνη είναι πειραματική, επομένως θα κάνει λάθη.</string>
-    <string name="ai_service_error_api_key">Η υπηρεσία AI δεν αποδέχτηκε το κλειδί API. Ελέγξτε τις ρυθμίσεις του στις Αυτόματες περιγραφές.</string>
+    <string name="ai_service_error_api_key">Η υπηρεσία AI δεν αποδέχτηκε το κλειδί API. Ελέγξτε τις ρυθμίσεις της στις Περιγραφές εικόνας και οθόνης.</string>
     <string name="ai_service_error_quota">Το όριο χρήσης της υπηρεσίας AI έχει συμπληρωθεί. Δοκιμάστε ξανά αργότερα.</string>
     <string name="ai_service_error_busy">Η υπηρεσία AI είναι απασχολημένη αυτή τη στιγμή. Δοκιμάστε ξανά σε λίγο.</string>
     <string name="ai_service_error_timeout">Η υπηρεσία AI άργησε να απαντήσει. Προσπαθήστε ξανά.</string>
@@ -30,7 +30,7 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">Κανένα</string>
-    <string name="ai_service_not_set_up">Δεν χρησιμοποιείται καμία υπηρεσία AI. Ρυθμίστε ή επιλέξτε μία στις ρυθμίσεις Αυτόματες περιγραφές.</string>
+    <string name="ai_service_not_set_up">Δεν χρησιμοποιείται καμία υπηρεσία AI. Ρυθμίστε ή επιλέξτε μία στις ρυθμίσεις Περιγραφές εικόνας και οθόνης.</string>
     <string name="ai_provider_none_set_up">Δεν έχει ρυθμιστεί υπηρεσία AI. Ρυθμίστε μία στις ρυθμίσεις της παρακάτω.</string>
     <string name="ai_provider_other">Άλλη υπηρεσία</string>
     <string name="title_pref_category_ai_services">Υπηρεσίες AI</string>

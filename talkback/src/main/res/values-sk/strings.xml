@@ -1782,4 +1782,24 @@
     <string name="settings_export_failed">Nastavenia sa nepodarilo exportovať</string>
     <string name="settings_import_done">Nastavenia boli importované</string>
     <string name="settings_import_failed">Tento súbor nie je súbor s nastaveniami SandFly alebo Backtalk alebo sa nedá prečítať</string>
+    <string name="arrow_key_nav_assign_instruction">Stlačte kláves alebo dva klávesy naraz, s modifikačnými klávesmi alebo bez nich. Backspace vymaže, Ctrl + Backspace obnoví predvolené, Enter uloží a Escape zruší.</string>
+    <string name="arrow_key_nav_off">Navigácia šípkami vypnutá</string>
+    <string name="arrow_key_nav_on">Navigácia šípkami zapnutá</string>
+    <string name="arrow_key_nav_page_left">O stránku doľava</string>
+    <string name="arrow_key_nav_page_right">O stránku doprava</string>
+    <string name="arrow_key_nav_toggle">Zapnúť alebo vypnúť navigáciu šípkami</string>
+    <string name="keycombo_menu_category_arrow_key_nav">Navigácia šípkami</string>
+    <string-array name="pref_dictation_auto_stop_entries">
+        <item>Vypnuté</item>
+        <item>3 sekundy</item>
+        <item>5 sekúnd</item>
+        <item>10 sekúnd</item>
+        <item>15 sekúnd</item>
+        <item>30 sekúnd</item>
+        <item>1 minúta</item>
+    </string-array>
+    <string name="shortcut_next_track">Ďalšia skladba</string>
+    <string name="shortcut_previous_track">Predchádzajúca skladba</string>
+    <string name="sound_mode_needs_access">Na zapnutie alebo vypnutie stlmenia povoľte prístup k režimu Nerušiť.</string>
+    <string name="title_pref_dictation_auto_stop">Automatické zastavenie po tichu</string>
 </resources>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="command_add_arrow_keys">Додај тастере са стрелицама</string>
+    <string name="command_add_gesture">Додај покрет</string>
+    <string name="command_choose_arrow_keys">Изаберите тастере са стрелицама</string>
+    <string name="command_choose_gesture">Изаберите покрет</string>
+    <string name="command_gesture_assigned"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g>: <xliff:g id="command" example="Describe image">%2$s</xliff:g></string>
+    <string name="command_gestures">Покрети</string>
+    <string name="command_keyboard_shortcut">Тастерска пречица</string>
+    <string name="command_no_arrow_keys">Нема тастера са стрелицама</string>
+    <string name="command_no_gestures">Нема покрета</string>
+    <string name="command_remove_arrow_keys">Уклони тастере са стрелицама</string>
+    <string name="command_remove_gesture">Уклони покрет</string>
+    <string name="command_replace">Замени</string>
+    <string name="command_replace_gesture">Покрет „<xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g>“ покреће команду „<xliff:g id="old_command" example="Read from top">%2$s</xliff:g>“. Желите ли да га користите за команду „<xliff:g id="new_command" example="Describe image">%3$s</xliff:g>“?</string>
+    <string name="commands_category_activation">Активирање</string>
+    <string name="commands_category_media">Медији и јачина звука</string>
+    <string name="commands_category_sandfly">SandFly</string>
+    <string name="commands_category_scrolling">Померање</string>
+    <string name="commands_category_speech">Говор</string>
+    <string name="commands_category_tables">Табеле</string>
+    <string name="commands_category_web">Веб</string>
+    <string name="item_list_current">Тренутно</string>
+    <string name="item_list_not_in_reading_controls">Није у контролама читања</string>
+    <string name="item_list_not_in_sandfly_menu">Није у SandFly менију</string>
+    <string name="item_list_options">Опције</string>
+    <string name="sounds_category_sounds">Звукови</string>
+    <string name="sounds_category_vibration">Вибрација</string>
+    <string name="speech_category_languages">Језици</string>
+    <string name="speech_category_other_apps">Друге апликације</string>
+    <string name="speech_category_pronunciation">Изговор</string>
+    <string name="speech_category_stopping">Заустављање говора</string>
+    <string name="speech_category_voice">Глас</string>
+    <string name="title_pref_audio_output">Аудио излаз</string>
+    <string name="title_pref_backup">Резервна копија и враћање</string>
+    <string name="title_pref_braille">Брајево писмо</string>
+    <string name="title_pref_commands">Команде</string>
+    <string name="title_pref_display">Приказ</string>
+    <string name="title_pref_image_and_screen_descriptions">Описи слика и екрана</string>
+    <string name="title_pref_pause">Пауза и искључивање</string>
+    <string name="title_pref_quick_settings_screen">Брза подешавања</string>
+    <string name="title_pref_speech">Говор</string>
+    <string name="title_pref_speech_stream_control">Контрола јачине звука за говор</string>
+    <string name="title_pref_touch">Додир</string>
+    <string name="title_pref_typing">Унос текста</string>
+    <string name="title_pref_updates">Ажурирања и инсталација</string>
+    <string name="title_pref_volume_keys">Тастери за јачину звука</string>
+    <string name="typing_category_other_input">Други начини уноса</string>
+    <string name="verbosity_category_announcements">Обавештења о променама</string>
+    <string name="verbosity_category_items">Ставке</string>
+    <string name="verbosity_category_text">Текст и симболи</string>
+</resources>

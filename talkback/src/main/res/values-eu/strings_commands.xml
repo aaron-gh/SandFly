@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="command_add_arrow_keys">Gehitu gezi-teklak</string>
+    <string name="command_add_gesture">Gehitu keinua</string>
+    <string name="command_choose_arrow_keys">Aukeratu gezi-teklak</string>
+    <string name="command_choose_gesture">Aukeratu keinua</string>
+    <string name="command_gesture_assigned"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g>: <xliff:g id="command" example="Describe image">%2$s</xliff:g></string>
+    <string name="command_gestures">Keinuak</string>
+    <string name="command_keyboard_shortcut">Lasterbidea</string>
+    <string name="command_no_arrow_keys">Ez dago gezi-teklarik</string>
+    <string name="command_no_gestures">Ez dago keinurik</string>
+    <string name="command_remove_arrow_keys">Kendu gezi-teklak</string>
+    <string name="command_remove_gesture">Kendu keinua</string>
+    <string name="command_replace">Ordezkatu</string>
+    <string name="command_replace_gesture"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g> keinuak «<xliff:g id="old_command" example="Read from top">%2$s</xliff:g>» exekutatzen du. «<xliff:g id="new_command" example="Describe image">%3$s</xliff:g>» aginduarekin erabili nahi duzu haren ordez?</string>
+    <string name="commands_category_activation">Aktibazioa</string>
+    <string name="commands_category_media">Multimedia eta bolumena</string>
+    <string name="commands_category_sandfly">SandFly</string>
+    <string name="commands_category_scrolling">Korritzea</string>
+    <string name="commands_category_speech">Hizketa</string>
+    <string name="commands_category_tables">Taulak</string>
+    <string name="commands_category_web">Weba</string>
+    <string name="item_list_current">Unekoak</string>
+    <string name="item_list_not_in_reading_controls">Irakurketa kontrolatzeko aukeretan ez daudenak</string>
+    <string name="item_list_not_in_sandfly_menu">SandFly-en menuan ez daudenak</string>
+    <string name="item_list_options">Aukerak</string>
+    <string name="sounds_category_sounds">Soinuak</string>
+    <string name="sounds_category_vibration">Dardara</string>
+    <string name="speech_category_languages">Hizkuntzak</string>
+    <string name="speech_category_other_apps">Beste aplikazio batzuk</string>
+    <string name="speech_category_pronunciation">Ahoskera</string>
+    <string name="speech_category_stopping">Hizketa gelditzea</string>
+    <string name="speech_category_voice">Ahotsa</string>
+    <string name="title_pref_audio_output">Audio-irteera</string>
+    <string name="title_pref_backup">Babeskopia eta leheneratzea</string>
+    <string name="title_pref_braille">Braillea</string>
+    <string name="title_pref_commands">Aginduak</string>
+    <string name="title_pref_display">Bistaratzea</string>
+    <string name="title_pref_image_and_screen_descriptions">Irudien eta pantailaren azalpenak</string>
+    <string name="title_pref_pause">Pausatu eta desaktibatu</string>
+    <string name="title_pref_quick_settings_screen">Ezarpen bizkorrak</string>
+    <string name="title_pref_speech">Hizketa</string>
+    <string name="title_pref_speech_stream_control">Hizketaren bolumen-kontrola</string>
+    <string name="title_pref_touch">Ukipena</string>
+    <string name="title_pref_typing">Idaztea</string>
+    <string name="title_pref_updates">Eguneratzeak eta instalazioa</string>
+    <string name="title_pref_volume_keys">Bolumen-botoiak</string>
+    <string name="typing_category_other_input">Idazteko beste modu batzuk</string>
+    <string name="verbosity_category_announcements">Iragarpenak</string>
+    <string name="verbosity_category_items">Elementuak</string>
+    <string name="verbosity_category_text">Testua eta ikurrak</string>
+</resources>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="command_add_arrow_keys">Aggiungi tasti freccia</string>
+    <string name="command_add_gesture">Aggiungi gesto</string>
+    <string name="command_choose_arrow_keys">Scegli i tasti freccia</string>
+    <string name="command_choose_gesture">Scegli un gesto</string>
+    <string name="command_gesture_assigned"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g>: <xliff:g id="command" example="Describe image">%2$s</xliff:g></string>
+    <string name="command_gestures">Gesti</string>
+    <string name="command_keyboard_shortcut">Scorciatoia da tastiera</string>
+    <string name="command_no_arrow_keys">Nessun tasto freccia</string>
+    <string name="command_no_gestures">Nessun gesto</string>
+    <string name="command_remove_arrow_keys">Rimuovi tasti freccia</string>
+    <string name="command_remove_gesture">Rimuovi gesto</string>
+    <string name="command_replace">Sostituisci</string>
+    <string name="command_replace_gesture"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g> esegue <xliff:g id="old_command" example="Read from top">%2$s</xliff:g>. Usarlo invece per <xliff:g id="new_command" example="Describe image">%3$s</xliff:g>?</string>
+    <string name="commands_category_activation">Attivazione</string>
+    <string name="commands_category_media">Media e volume</string>
+    <string name="commands_category_sandfly">SandFly</string>
+    <string name="commands_category_scrolling">Scorrimento</string>
+    <string name="commands_category_speech">Voce</string>
+    <string name="commands_category_tables">Tabelle</string>
+    <string name="commands_category_web">Web</string>
+    <string name="item_list_current">Attuali</string>
+    <string name="item_list_not_in_reading_controls">Non nei controlli di lettura</string>
+    <string name="item_list_not_in_sandfly_menu">Non nel menu di SandFly</string>
+    <string name="item_list_options">Opzioni</string>
+    <string name="sounds_category_sounds">Suoni</string>
+    <string name="sounds_category_vibration">Vibrazione</string>
+    <string name="speech_category_languages">Lingue</string>
+    <string name="speech_category_other_apps">Altre app</string>
+    <string name="speech_category_pronunciation">Pronuncia</string>
+    <string name="speech_category_stopping">Interruzione della voce</string>
+    <string name="speech_category_voice">Voce</string>
+    <string name="title_pref_audio_output">Uscita audio</string>
+    <string name="title_pref_backup">Backup e ripristino</string>
+    <string name="title_pref_braille">Braille</string>
+    <string name="title_pref_commands">Comandi</string>
+    <string name="title_pref_display">Display</string>
+    <string name="title_pref_image_and_screen_descriptions">Descrizioni di immagini e schermo</string>
+    <string name="title_pref_pause">Pausa e disattivazione</string>
+    <string name="title_pref_quick_settings_screen">Impostazioni rapide</string>
+    <string name="title_pref_speech">Voce</string>
+    <string name="title_pref_speech_stream_control">Controllo del volume della voce</string>
+    <string name="title_pref_touch">Tocco</string>
+    <string name="title_pref_typing">Digitazione</string>
+    <string name="title_pref_updates">Aggiornamenti e installazione</string>
+    <string name="title_pref_volume_keys">Tasti del volume</string>
+    <string name="typing_category_other_input">Altri modi di digitare</string>
+    <string name="verbosity_category_announcements">Annunci</string>
+    <string name="verbosity_category_items">Elementi</string>
+    <string name="verbosity_category_text">Testo e simboli</string>
+</resources>

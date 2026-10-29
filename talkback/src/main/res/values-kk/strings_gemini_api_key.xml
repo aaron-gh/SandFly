@@ -18,7 +18,7 @@
     <string name="ai_service_model_hint">Үлгі</string>
     <string name="ai_service_address_invalid">Мекенжай https:// деп басталуы керек. Ештеңе сақталмады.</string>
     <string name="dialog_message_ai_service_consent">Суреттер мен скриншоттар сипаттау үшін <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> қызметіне жіберіледі, бұл бірнеше секундқа созылады. Қызметтің өз шарттары мен құпиялық саясаты қолданылады. Генеративтік ЖИ сынақ кезеңінде, сондықтан қателеседі.</string>
-    <string name="ai_service_error_api_key">AI қызметі API кілтін қабылдамады. Оның параметрлерін Автоматты сипаттамаларда тексеріңіз.</string>
+    <string name="ai_service_error_api_key">AI қызметі API кілтін қабылдамады. Оның параметрлерін «Сурет және экран сипаттамалары» бөлімінде тексеріңіз.</string>
     <string name="ai_service_error_quota">AI қызметін пайдалану шегіне жетті. Әрекетті кейінірек қайталаңыз.</string>
     <string name="ai_service_error_busy">AI қызметі қазір бос емес. Біраз уақыттан кейін қайталап көріңіз.</string>
     <string name="ai_service_error_timeout">AI қызметі жауап беру үшін тым ұзақ болды. Қайтадан байқап көріңіз.</string>
@@ -30,7 +30,7 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">Жоқ</string>
-    <string name="ai_service_not_set_up">Ешқандай AI қызметі қолданылмайды. Біреуін орнатыңыз немесе Автоматты сипаттамалар параметрлерінде біреуін таңдаңыз.</string>
+    <string name="ai_service_not_set_up">Ешқандай AI қызметі қолданылмайды. «Сурет және экран сипаттамалары» параметрлерінде біреуін орнатыңыз немесе таңдаңыз.</string>
     <string name="ai_provider_none_set_up">Ешқандай AI қызметі орнатылмаған. Төмендегі параметрлерде біреуін орнатыңыз.</string>
     <string name="ai_provider_other">Басқа қызмет</string>
     <string name="title_pref_category_ai_services">AI қызметтері</string>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_translation_auto">Awtomatikong pagsasalin</string>
+    <string name="title_pref_translation_auto_service">Serbisyo ng awtomatikong pagsasalin</string>
+    <string name="title_pref_translation_copy">Kopyahin ang mga pagsasalin sa clipboard</string>
+    <string name="title_pref_translation_download_all">I-download ang lahat ng wika</string>
+    <string name="title_pref_translation_languages">Mga on-device na wika</string>
+    <string name="title_pref_translation_notifications">Isalin ang mga notification</string>
+    <string name="title_pref_translation_region">Rehiyon</string>
+    <string name="title_pref_translation_say_source">Sabihin ang orihinal na wika</string>
+    <string name="title_pref_translation_second_target">Isalin ang text na nasa target na wika sa</string>
+    <string name="title_pref_translation_service">Serbisyo ng pagsasalin</string>
+    <string name="title_pref_translation_source">Isalin mula sa</string>
+    <string name="title_pref_translation_swap">Pagpalitin ang mga wika</string>
+    <string name="title_pref_translation_target">Isalin sa</string>
+    <string name="title_pref_translation_target_voice">Gumamit ng boses para sa target na wika</string>
+    <string name="title_pref_translation_untranslated">Mga wikang hindi isinasalin</string>
+    <string name="title_pref_translation_wifi_only">Mag-download ng mga wika sa Wi-Fi lang</string>
+    <string name="title_translate_last_spoken_phrase">Isalin ang huling binigkas na parirala</string>
+    <string name="translation_address_hint">Address, gaya ng https://libretranslate.com</string>
+    <string name="translation_address_message">Ang address ng isang LibreTranslate server, gaya ng https://libretranslate.com. Puwedeng mangailangan ng API key ang mga server na hindi sa iyo.</string>
+    <string name="translation_all_downloaded">Na-download na ang lahat ng wika</string>
+    <string name="translation_already_in">Nasa <xliff:g id="language" example="English">%1$s</xliff:g> na</string>
+    <string name="translation_auto_state">Awtomatikong pagsasalin <xliff:g id="state" example="on">%1$s</xliff:g></string>
+    <string name="translation_category_speech">Pagsasalita</string>
+    <string name="translation_detect">I-detect ang wika</string>
+    <string name="translation_device_language">Wika ng device (<xliff:g id="language" example="English">%1$s</xliff:g>)</string>
+    <plurals name="translation_download_all_failed">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> wika ang hindi na-download</item>
+        <item quantity="other"><xliff:g id="count" example="3">%1$d</xliff:g> wika ang hindi na-download</item>
+    </plurals>
+    <plurals name="translation_download_all_message">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> wika, mga <xliff:g id="size" example="30 MB">%2$s</xliff:g>.</item>
+        <item quantity="other"><xliff:g id="count" example="57">%1$d</xliff:g> wika, mga <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+    </plurals>
+    <string name="translation_download_all_progress">Nagda-download, <xliff:g id="done" example="12">%1$d</xliff:g> sa <xliff:g id="total" example="57">%2$d</xliff:g></string>
+    <string name="translation_download_all_stop">Ihinto</string>
+    <string name="translation_download_all_stop_title">Ihinto ang pag-download ng mga wika?</string>
+    <string name="translation_download_done">Na-download ang <xliff:g id="language" example="German">%1$s</xliff:g></string>
+    <string name="translation_download_failed">Hindi na-download ang <xliff:g id="language" example="German">%1$s</xliff:g></string>
+    <string name="translation_download_message">Mga 30 MB.</string>
+    <string name="translation_download_title">I-download ang <xliff:g id="language" example="German">%1$s</xliff:g>?</string>
+    <string name="translation_downloading">Dina-download ang <xliff:g id="languages" example="German and English">%1$s</xliff:g> para sa on-device na pagsasalin</string>
+    <string name="translation_error">Hindi naisalin ng <xliff:g id="service" example="DeepL">%1$s</xliff:g> ang text.</string>
+    <string name="translation_error_api_key">Hindi tinanggap ng <xliff:g id="service" example="DeepL">%1$s</xliff:g> ang API key.</string>
+    <string name="translation_error_connection">Hindi maabot ang <xliff:g id="service" example="DeepL">%1$s</xliff:g>.</string>
+    <string name="translation_error_details">Hindi naisalin ng <xliff:g id="service" example="DeepL">%1$s</xliff:g> ang text: <xliff:g id="details" example="Wrong endpoint">%2$s</xliff:g></string>
+    <string name="translation_error_detection_downloading">Dina-download ang pag-detect ng wika. Subukan ulit mamaya.</string>
+    <string name="translation_error_download">Hindi ma-download ang mga wika para sa on-device na pagsasalin.</string>
+    <string name="translation_error_downloading">Dina-download pa ang mga wika para sa on-device na pagsasalin</string>
+    <string name="translation_error_language">Hindi sinusuportahan ng <xliff:g id="service" example="On-device">%1$s</xliff:g> na pagsasalin ang <xliff:g id="language" example="Klingon">%2$s</xliff:g>.</string>
+    <string name="translation_error_no_address">Ilagay ang address ng <xliff:g id="service" example="LibreTranslate">%1$s</xliff:g> sa mga setting ng Pagsasalin.</string>
+    <string name="translation_error_no_key">Ilagay ang API key ng <xliff:g id="service" example="DeepL">%1$s</xliff:g> sa mga setting ng Pagsasalin.</string>
+    <string name="translation_error_not_detected">Hindi na-detect ang wika</string>
+    <string name="translation_error_quota">Naabot na ang limitasyon sa paggamit ng <xliff:g id="service" example="DeepL">%1$s</xliff:g>.</string>
+    <string name="translation_from">Mula sa <xliff:g id="language" example="German">%1$s</xliff:g>:</string>
+    <string name="translation_key_message">I-paste ang iyong API key ng <xliff:g id="service" example="DeepL">%1$s</xliff:g>. Para alisin ito, i-clear ang field at i-save. Ipinapadala sa <xliff:g id="service" example="DeepL">%1$s</xliff:g> ang text na isinasalin mo.</string>
+    <string name="translation_language_downloaded"><xliff:g id="language" example="German">%1$s</xliff:g>, na-download</string>
+    <string name="translation_language_downloading"><xliff:g id="language" example="German">%1$s</xliff:g>, dina-download</string>
+    <string name="translation_languages_summary">Na-download: <xliff:g id="languages" example="English, German">%1$s</xliff:g></string>
+    <string name="translation_nothing">Walang isasalin</string>
+    <string name="translation_region_global">Global</string>
+    <string name="translation_region_message">Ang rehiyon ng iyong Translator resource sa Azure, gaya ng westeurope. Iwanang walang laman para sa global na resource.</string>
+    <string name="translation_second_none">Huwag isalin</string>
+    <string name="translation_service_ai">Serbisyo ng AI</string>
+    <string name="translation_service_deepl">DeepL</string>
+    <string name="translation_service_google_cloud">Google Cloud Translation</string>
+    <string name="translation_service_libretranslate">LibreTranslate</string>
+    <string name="translation_service_microsoft">Microsoft Translator</string>
+    <string name="translation_service_not_set_up"><xliff:g id="service" example="DeepL">%1$s</xliff:g>, hindi naka-set up</string>
+    <string name="translation_service_on_device">On-device</string>
+    <string name="translation_swapped">Mula <xliff:g id="source" example="German">%1$s</xliff:g> papunta sa <xliff:g id="target" example="English">%2$s</xliff:g></string>
+    <string name="translation_title">Pagsasalin</string>
+    <string name="translation_untranslated_none">Wala</string>
+</resources>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_translation_auto">Аўтаматычны пераклад</string>
+    <string name="title_pref_translation_auto_service">Сэрвіс аўтаматычнага перакладу</string>
+    <string name="title_pref_translation_copy">Капіраваць пераклады ў буфер абмену</string>
+    <string name="title_pref_translation_download_all">Спампаваць усе мовы</string>
+    <string name="title_pref_translation_languages">Мовы на прыладзе</string>
+    <string name="title_pref_translation_notifications">Перакладаць апавяшчэнні</string>
+    <string name="title_pref_translation_region">Рэгіён</string>
+    <string name="title_pref_translation_say_source">Называць зыходную мову</string>
+    <string name="title_pref_translation_second_target">Тэкст на мэтавай мове перакладаць на</string>
+    <string name="title_pref_translation_service">Сэрвіс перакладу</string>
+    <string name="title_pref_translation_source">Перакладаць з</string>
+    <string name="title_pref_translation_swap">Памяняць мовы месцамі</string>
+    <string name="title_pref_translation_target">Перакладаць на</string>
+    <string name="title_pref_translation_target_voice">Голас для мэтавай мовы</string>
+    <string name="title_pref_translation_untranslated">Мовы без перакладу</string>
+    <string name="title_pref_translation_wifi_only">Спампоўваць мовы толькі праз Wi-Fi</string>
+    <string name="title_translate_last_spoken_phrase">Перакласці апошнюю фразу</string>
+    <string name="translation_address_hint">Адрас, напрыклад https://libretranslate.com</string>
+    <string name="translation_address_message">Адрас сервера LibreTranslate, напрыклад https://libretranslate.com. Для сервераў, акрамя вашага ўласнага, можа спатрэбіцца ключ API.</string>
+    <string name="translation_all_downloaded">Усе мовы спампаваны</string>
+    <string name="translation_already_in">Тэкст ужо на мове «<xliff:g id="language" example="English">%1$s</xliff:g>»</string>
+    <string name="translation_auto_state">Аўтаматычны пераклад: <xliff:g id="state" example="on">%1$s</xliff:g></string>
+    <string name="translation_category_speech">Маўленне</string>
+    <string name="translation_detect">Вызначаць мову</string>
+    <string name="translation_device_language">Мова прылады (<xliff:g id="language" example="English">%1$s</xliff:g>)</string>
+    <plurals name="translation_download_all_failed">
+        <item quantity="one">Не спампавана <xliff:g id="count" example="1">%1$d</xliff:g> мова</item>
+        <item quantity="few">Не спампавана <xliff:g id="count" example="3">%1$d</xliff:g> мовы</item>
+        <item quantity="many">Не спампавана <xliff:g id="count" example="3">%1$d</xliff:g> моў</item>
+        <item quantity="other">Не спампавана <xliff:g id="count" example="3">%1$d</xliff:g> мовы</item>
+    </plurals>
+    <plurals name="translation_download_all_message">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> мова, каля <xliff:g id="size" example="30 MB">%2$s</xliff:g>.</item>
+        <item quantity="few"><xliff:g id="count" example="57">%1$d</xliff:g> мовы, каля <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+        <item quantity="many"><xliff:g id="count" example="57">%1$d</xliff:g> моў, каля <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+        <item quantity="other"><xliff:g id="count" example="57">%1$d</xliff:g> мовы, каля <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+    </plurals>
+    <string name="translation_download_all_progress">Спампоўванне: <xliff:g id="done" example="12">%1$d</xliff:g> з <xliff:g id="total" example="57">%2$d</xliff:g></string>
+    <string name="translation_download_all_stop">Спыніць</string>
+    <string name="translation_download_all_stop_title">Спыніць спампоўванне моў?</string>
+    <string name="translation_download_done">Мова «<xliff:g id="language" example="German">%1$s</xliff:g>» спампавана</string>
+    <string name="translation_download_failed">Мова «<xliff:g id="language" example="German">%1$s</xliff:g>» не спампавана</string>
+    <string name="translation_download_message">Каля 30 МБ.</string>
+    <string name="translation_download_title">Спампаваць мову «<xliff:g id="language" example="German">%1$s</xliff:g>»?</string>
+    <string name="translation_downloading">Спампоўванне моў для перакладу на прыладзе: <xliff:g id="languages" example="German and English">%1$s</xliff:g></string>
+    <string name="translation_error"><xliff:g id="service" example="DeepL">%1$s</xliff:g>: не ўдалося перакласці тэкст.</string>
+    <string name="translation_error_api_key"><xliff:g id="service" example="DeepL">%1$s</xliff:g>: ключ API не прыняты.</string>
+    <string name="translation_error_connection"><xliff:g id="service" example="DeepL">%1$s</xliff:g>: няма злучэння з сэрвісам.</string>
+    <string name="translation_error_details"><xliff:g id="service" example="DeepL">%1$s</xliff:g>: не ўдалося перакласці тэкст: <xliff:g id="details" example="Wrong endpoint">%2$s</xliff:g></string>
+    <string name="translation_error_detection_downloading">Вызначэнне мовы яшчэ спампоўваецца. Паўтарыце спробу праз хвіліну.</string>
+    <string name="translation_error_download">Не ўдалося спампаваць мовы для перакладу на прыладзе.</string>
+    <string name="translation_error_downloading">Мовы для перакладу на прыладзе яшчэ спампоўваюцца</string>
+    <string name="translation_error_language">Пераклад «<xliff:g id="service" example="On-device">%1$s</xliff:g>» не падтрымлівае мову «<xliff:g id="language" example="Klingon">%2$s</xliff:g>».</string>
+    <string name="translation_error_no_address">Увядзіце адрас <xliff:g id="service" example="LibreTranslate">%1$s</xliff:g> у наладах перакладу.</string>
+    <string name="translation_error_no_key">Увядзіце ключ API <xliff:g id="service" example="DeepL">%1$s</xliff:g> у наладах перакладу.</string>
+    <string name="translation_error_not_detected">Мова не вызначана</string>
+    <string name="translation_error_quota"><xliff:g id="service" example="DeepL">%1$s</xliff:g>: дасягнуты ліміт выкарыстання.</string>
+    <string name="translation_from">З мовы «<xliff:g id="language" example="German">%1$s</xliff:g>»:</string>
+    <string name="translation_key_message">Устаўце ключ API <xliff:g id="service" example="DeepL">%1$s</xliff:g>. Каб выдаліць яго, ачысціце поле і захавайце. Тэкст, які вы перакладаеце, адпраўляецца ў <xliff:g id="service" example="DeepL">%1$s</xliff:g>.</string>
+    <string name="translation_language_downloaded"><xliff:g id="language" example="German">%1$s</xliff:g>, спампавана</string>
+    <string name="translation_language_downloading"><xliff:g id="language" example="German">%1$s</xliff:g>, спампоўваецца</string>
+    <string name="translation_languages_summary">Спампаваны: <xliff:g id="languages" example="English, German">%1$s</xliff:g></string>
+    <string name="translation_nothing">Няма чаго перакладаць</string>
+    <string name="translation_region_global">Глабальны</string>
+    <string name="translation_region_message">Рэгіён вашага рэсурсу Translator у Azure, напрыклад westeurope. Для глабальнага рэсурсу пакіньце поле пустым.</string>
+    <string name="translation_second_none">Не перакладаць</string>
+    <string name="translation_service_ai">Сэрвіс штучнага інтэлекту</string>
+    <string name="translation_service_deepl">DeepL</string>
+    <string name="translation_service_google_cloud">Google Cloud Translation</string>
+    <string name="translation_service_libretranslate">LibreTranslate</string>
+    <string name="translation_service_microsoft">Microsoft Translator</string>
+    <string name="translation_service_not_set_up"><xliff:g id="service" example="DeepL">%1$s</xliff:g>, не наладжана</string>
+    <string name="translation_service_on_device">На прыладзе</string>
+    <string name="translation_swapped">З мовы «<xliff:g id="source" example="German">%1$s</xliff:g>» на «<xliff:g id="target" example="English">%2$s</xliff:g>»</string>
+    <string name="translation_title">Пераклад</string>
+    <string name="translation_untranslated_none">Няма</string>
+</resources>

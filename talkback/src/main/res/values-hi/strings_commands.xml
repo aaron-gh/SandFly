@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="command_add_arrow_keys">ऐरो कुंजियां जोड़ें</string>
+    <string name="command_add_gesture">जेस्चर जोड़ें</string>
+    <string name="command_choose_arrow_keys">ऐरो कुंजियां चुनें</string>
+    <string name="command_choose_gesture">जेस्चर चुनें</string>
+    <string name="command_gesture_assigned"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g>: <xliff:g id="command" example="Describe image">%2$s</xliff:g></string>
+    <string name="command_gestures">जेस्चर</string>
+    <string name="command_keyboard_shortcut">कीबोर्ड शॉर्टकट</string>
+    <string name="command_no_arrow_keys">कोई ऐरो कुंजी नहीं</string>
+    <string name="command_no_gestures">कोई जेस्चर नहीं</string>
+    <string name="command_remove_arrow_keys">ऐरो कुंजियां हटाएं</string>
+    <string name="command_remove_gesture">जेस्चर हटाएं</string>
+    <string name="command_replace">बदलें</string>
+    <string name="command_replace_gesture"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g> से अभी <xliff:g id="old_command" example="Read from top">%2$s</xliff:g> चलता है. इसके बजाय इसे <xliff:g id="new_command" example="Describe image">%3$s</xliff:g> के लिए इस्तेमाल करें?</string>
+    <string name="commands_category_activation">चालू करना</string>
+    <string name="commands_category_media">मीडिया और वॉल्यूम</string>
+    <string name="commands_category_sandfly">SandFly</string>
+    <string name="commands_category_scrolling">स्क्रोल करना</string>
+    <string name="commands_category_speech">बोली</string>
+    <string name="commands_category_tables">टेबल</string>
+    <string name="commands_category_web">वेब</string>
+    <string name="item_list_current">मौजूदा</string>
+    <string name="item_list_not_in_reading_controls">टेक्स्ट पढ़ने से जुड़े कंट्रोल में नहीं</string>
+    <string name="item_list_not_in_sandfly_menu">SandFly मेन्यू में नहीं</string>
+    <string name="item_list_options">विकल्प</string>
+    <string name="sounds_category_sounds">आवाज़ें</string>
+    <string name="sounds_category_vibration">वाइब्रेशन</string>
+    <string name="speech_category_languages">भाषाएं</string>
+    <string name="speech_category_other_apps">दूसरे ऐप्लिकेशन</string>
+    <string name="speech_category_pronunciation">उच्चारण</string>
+    <string name="speech_category_stopping">बोली रोकना</string>
+    <string name="speech_category_voice">वॉइस</string>
+    <string name="title_pref_audio_output">ऑडियो आउटपुट</string>
+    <string name="title_pref_backup">बैक अप और रीस्टोर करें</string>
+    <string name="title_pref_braille">ब्रेल</string>
+    <string name="title_pref_commands">निर्देश</string>
+    <string name="title_pref_display">डिसप्ले</string>
+    <string name="title_pref_image_and_screen_descriptions">इमेज और स्क्रीन के बारे में जानकारी</string>
+    <string name="title_pref_pause">रोकें और बंद करें</string>
+    <string name="title_pref_quick_settings_screen">फटाफट सेटिंग</string>
+    <string name="title_pref_speech">बोली</string>
+    <string name="title_pref_speech_stream_control">बोली के लिए वॉल्यूम कंट्रोल</string>
+    <string name="title_pref_touch">टच</string>
+    <string name="title_pref_typing">टाइपिंग</string>
+    <string name="title_pref_updates">अपडेट और इंस्टॉलेशन</string>
+    <string name="title_pref_volume_keys">वॉल्यूम बटन</string>
+    <string name="typing_category_other_input">टाइप करने के दूसरे तरीके</string>
+    <string name="verbosity_category_announcements">घोषणाएं</string>
+    <string name="verbosity_category_items">आइटम</string>
+    <string name="verbosity_category_text">टेक्स्ट और सिंबल</string>
+</resources>

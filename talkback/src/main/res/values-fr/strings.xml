@@ -1069,8 +1069,8 @@
   <string name="checking_notifications_tips">Pour consulter votre historique de notifications, balayez l\'écran du haut vers le bas avec deux doigts</string>
   <string name="image_description_playground_title">Essayer d\'obtenir des descriptions d\'images</string>
   <string name="image_description_playground_content_one">Lorsque vous sélectionnez une image, ouvrez le menu \"SandFly\", puis sélectionnez \"Décrire l\'image\".\n\nUne photo est proposée ci-dessous. Essayez d\'obtenir une description pour ce type de contenu.</string>
-  <string name="image_description_playground_content_two">Vous pouvez modifier les paramètres de description des images à tout moment dans Paramètres SandFly &gt; Descriptions automatiques.</string>
-  <string name="image_description_playground_content_two_tts">Vous pouvez modifier les paramètres de description des images à tout moment dans les paramètres SandFly, puis dans Descriptions automatiques.</string>
+    <string name="image_description_playground_content_two">Vous pouvez modifier les paramètres de description des images à tout moment dans Paramètres SandFly &gt; Descriptions d\'images et d\'écran.</string>
+    <string name="image_description_playground_content_two_tts">Vous pouvez modifier les paramètres de description des images à tout moment dans les paramètres SandFly, puis dans Descriptions d\'images et d\'écran.</string>
   <string name="image_description_sample_image_content_description">Image d\'exemple : appuyez avec trois doigts pour ouvrir le menu SandFly et sélectionnez \"Décrire l\'image\" pour entendre une description.</string>
   <string name="practice_gestures_title">Essayer les gestes</string>
   <string name="practice_keyboard_gestures_title">Utiliser les raccourcis clavier</string>
@@ -1551,7 +1551,7 @@
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> déposé. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly énonce les détails d\'un élément dans cet ordre. Pour le modifier, appuyez de manière prolongée sur un détail, puis faites-le glisser vers le haut ou vers le bas. Lorsque SandFly est activé, appuyez deux fois de manière prolongée, puis faites glisser. Vous pouvez aussi utiliser les actions Déplacer vers le haut et Déplacer vers le bas.</string>
     <string name="title_pref_speak_items_before_scroll">Énoncer les éléments avant qu\'ils n\'apparaissent par défilement</string>
-    <string name="gemini_error_api_key">Gemini n\'a pas accepté la clé API. Vérifiez la clé dans les paramètres Descriptions automatiques.</string>
+    <string name="gemini_error_api_key">Gemini n\'a pas accepté la clé API. Vérifiez la clé dans les paramètres Descriptions d\'images et d\'écran.</string>
     <string name="gemini_error_quota">La limite d\'utilisation de votre clé API Gemini a été atteinte. Réessayez plus tard.</string>
     <string name="gemini_error_busy">Gemini est occupé. Réessayez dans un instant.</string>
     <string name="gemini_error_timeout">Gemini a mis trop de temps à répondre. Réessayez.</string>
@@ -1778,4 +1778,24 @@
     <string name="settings_export_failed">Les paramètres n\'ont pas pu être exportés</string>
     <string name="settings_import_done">Paramètres importés</string>
     <string name="settings_import_failed">Ce fichier n\'est pas un fichier de paramètres SandFly ou Backtalk, ou n\'a pas pu être lu</string>
+    <string name="sound_mode_needs_access">Autorisez l\'accès à Ne pas déranger pour activer ou désactiver le mode Silencieux.</string>
+    <string name="keycombo_menu_category_arrow_key_nav">Navigation avec les flèches</string>
+    <string name="arrow_key_nav_toggle">Activer ou désactiver la navigation avec les flèches</string>
+    <string name="arrow_key_nav_on">Navigation avec les flèches activée</string>
+    <string name="arrow_key_nav_off">Navigation avec les flèches désactivée</string>
+    <string name="arrow_key_nav_page_left">Page vers la gauche</string>
+    <string name="arrow_key_nav_page_right">Page vers la droite</string>
+    <string name="arrow_key_nav_assign_instruction">Appuyez sur une touche ou sur deux touches ensemble, avec ou sans touches de modification. Appuyez sur Retour arrière pour effacer, Ctrl + Retour arrière pour rétablir la valeur par défaut, Entrée pour enregistrer ou Échap pour annuler.</string>
+    <string name="shortcut_next_track">Piste suivante</string>
+    <string name="shortcut_previous_track">Piste précédente</string>
+    <string-array name="pref_dictation_auto_stop_entries">
+        <item>Désactivé</item>
+        <item>3 secondes</item>
+        <item>5 secondes</item>
+        <item>10 secondes</item>
+        <item>15 secondes</item>
+        <item>30 secondes</item>
+        <item>1 minute</item>
+    </string-array>
+    <string name="title_pref_dictation_auto_stop">Arrêt automatique après un silence</string>
 </resources>

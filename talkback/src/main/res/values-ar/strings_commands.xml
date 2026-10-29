@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="command_add_arrow_keys">إضافة مفاتيح أسهم</string>
+    <string name="command_add_gesture">إضافة إيماءة</string>
+    <string name="command_choose_arrow_keys">اختيار مفاتيح الأسهم</string>
+    <string name="command_choose_gesture">اختيار إيماءة</string>
+    <string name="command_gesture_assigned"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g>: <xliff:g id="command" example="Describe image">%2$s</xliff:g></string>
+    <string name="command_gestures">الإيماءات</string>
+    <string name="command_keyboard_shortcut">اختصار لوحة المفاتيح</string>
+    <string name="command_no_arrow_keys">بلا مفاتيح أسهم</string>
+    <string name="command_no_gestures">بلا إيماءات</string>
+    <string name="command_remove_arrow_keys">إزالة مفاتيح الأسهم</string>
+    <string name="command_remove_gesture">إزالة الإيماءة</string>
+    <string name="command_replace">استبدال</string>
+    <string name="command_replace_gesture">الإيماءة «<xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g>» تنفّذ الأمر «<xliff:g id="old_command" example="Read from top">%2$s</xliff:g>». هل تريد استخدامها للأمر «<xliff:g id="new_command" example="Describe image">%3$s</xliff:g>» بدلاً منه؟</string>
+    <string name="commands_category_activation">التفعيل</string>
+    <string name="commands_category_media">الوسائط ومستوى الصوت</string>
+    <string name="commands_category_sandfly">SandFly</string>
+    <string name="commands_category_scrolling">التنقّل في الصفحات</string>
+    <string name="commands_category_speech">الكلام</string>
+    <string name="commands_category_tables">الجداول</string>
+    <string name="commands_category_web">الويب</string>
+    <string name="item_list_current">الحالية</string>
+    <string name="item_list_not_in_reading_controls">غير موجودة في عناصر التحكّم في القراءة</string>
+    <string name="item_list_not_in_sandfly_menu">غير موجودة في قائمة SandFly</string>
+    <string name="item_list_options">الخيارات</string>
+    <string name="sounds_category_sounds">الأصوات</string>
+    <string name="sounds_category_vibration">الاهتزاز</string>
+    <string name="speech_category_languages">اللغات</string>
+    <string name="speech_category_other_apps">التطبيقات الأخرى</string>
+    <string name="speech_category_pronunciation">النطق</string>
+    <string name="speech_category_stopping">إيقاف الكلام</string>
+    <string name="speech_category_voice">الصوت</string>
+    <string name="title_pref_audio_output">إخراج الصوت</string>
+    <string name="title_pref_backup">الاحتفاظ بنسخة احتياطية والاستعادة</string>
+    <string name="title_pref_braille">برايل</string>
+    <string name="title_pref_commands">الأوامر</string>
+    <string name="title_pref_display">العرض</string>
+    <string name="title_pref_image_and_screen_descriptions">أوصاف الصور والشاشة</string>
+    <string name="title_pref_pause">الإيقاف المؤقت والإيقاف</string>
+    <string name="title_pref_quick_settings_screen">الإعدادات السريعة</string>
+    <string name="title_pref_speech">الكلام</string>
+    <string name="title_pref_speech_stream_control">التحكّم في مستوى صوت الكلام</string>
+    <string name="title_pref_touch">اللمس</string>
+    <string name="title_pref_typing">الكتابة</string>
+    <string name="title_pref_updates">التحديثات والتثبيت</string>
+    <string name="title_pref_volume_keys">مفاتيح مستوى الصوت</string>
+    <string name="typing_category_other_input">طرق أخرى للكتابة</string>
+    <string name="verbosity_category_announcements">الإعلانات</string>
+    <string name="verbosity_category_items">العناصر</string>
+    <string name="verbosity_category_text">النص والرموز</string>
+</resources>

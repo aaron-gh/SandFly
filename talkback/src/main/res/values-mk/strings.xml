@@ -1774,4 +1774,24 @@
     <string name="settings_export_failed">Поставките не може да се извезат</string>
     <string name="settings_import_done">Поставките се увезени</string>
     <string name="settings_import_failed">Оваа датотека не е датотека со поставки SandFly или Backtalk или не може да се прочита</string>
+    <string name="arrow_key_nav_assign_instruction">Притиснете копче или две копчиња заедно, со или без модификаторски копчиња. Backspace – бришење, Ctrl + Backspace – враќање на стандардното, Enter – зачувување, Escape – откажување.</string>
+    <string name="arrow_key_nav_off">Навигацијата со стрелки е исклучена</string>
+    <string name="arrow_key_nav_on">Навигацијата со стрелки е вклучена</string>
+    <string name="arrow_key_nav_page_left">Страница налево</string>
+    <string name="arrow_key_nav_page_right">Страница надесно</string>
+    <string name="arrow_key_nav_toggle">Вклучи или исклучи навигација со стрелки</string>
+    <string name="keycombo_menu_category_arrow_key_nav">Навигација со стрелки</string>
+    <string-array name="pref_dictation_auto_stop_entries">
+        <item>Исклучено</item>
+        <item>3 секунди</item>
+        <item>5 секунди</item>
+        <item>10 секунди</item>
+        <item>15 секунди</item>
+        <item>30 секунди</item>
+        <item>1 минута</item>
+    </string-array>
+    <string name="shortcut_next_track">Следна песна</string>
+    <string name="shortcut_previous_track">Претходна песна</string>
+    <string name="sound_mode_needs_access">Дозволете пристап до „Не вознемирувај“ за да се вклучува и исклучува „Без звук“.</string>
+    <string name="title_pref_dictation_auto_stop">Автоматско запирање по тишина</string>
 </resources>

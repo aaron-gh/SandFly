@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="command_add_arrow_keys">Добавить клавиши со стрелками</string>
+    <string name="command_add_gesture">Добавить жест</string>
+    <string name="command_choose_arrow_keys">Выберите клавиши со стрелками</string>
+    <string name="command_choose_gesture">Выберите жест</string>
+    <string name="command_gesture_assigned"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g>: <xliff:g id="command" example="Describe image">%2$s</xliff:g></string>
+    <string name="command_gestures">Жесты</string>
+    <string name="command_keyboard_shortcut">Быстрая клавиша</string>
+    <string name="command_no_arrow_keys">Нет клавиш со стрелками</string>
+    <string name="command_no_gestures">Нет жестов</string>
+    <string name="command_remove_arrow_keys">Удалить клавиши со стрелками</string>
+    <string name="command_remove_gesture">Удалить жест</string>
+    <string name="command_replace">Заменить</string>
+    <string name="command_replace_gesture">Жест «<xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g>» выполняет команду «<xliff:g id="old_command" example="Read from top">%2$s</xliff:g>». Использовать его для команды «<xliff:g id="new_command" example="Describe image">%3$s</xliff:g>»?</string>
+    <string name="commands_category_activation">Активация</string>
+    <string name="commands_category_media">Медиа и громкость</string>
+    <string name="commands_category_sandfly">SandFly</string>
+    <string name="commands_category_scrolling">Прокрутка</string>
+    <string name="commands_category_speech">Речь</string>
+    <string name="commands_category_tables">Таблицы</string>
+    <string name="commands_category_web">Веб</string>
+    <string name="item_list_current">Текущие</string>
+    <string name="item_list_not_in_reading_controls">Нет в управлении чтением</string>
+    <string name="item_list_not_in_sandfly_menu">Нет в меню SandFly</string>
+    <string name="item_list_options">Параметры</string>
+    <string name="sounds_category_sounds">Звуки</string>
+    <string name="sounds_category_vibration">Вибрация</string>
+    <string name="speech_category_languages">Языки</string>
+    <string name="speech_category_other_apps">Другие приложения</string>
+    <string name="speech_category_pronunciation">Произношение</string>
+    <string name="speech_category_stopping">Остановка речи</string>
+    <string name="speech_category_voice">Голос</string>
+    <string name="title_pref_audio_output">Вывод звука</string>
+    <string name="title_pref_backup">Резервное копирование и восстановление</string>
+    <string name="title_pref_braille">Шрифт Брайля</string>
+    <string name="title_pref_commands">Команды</string>
+    <string name="title_pref_display">Экран</string>
+    <string name="title_pref_image_and_screen_descriptions">Описания изображений и экрана</string>
+    <string name="title_pref_pause">Приостановка и отключение</string>
+    <string name="title_pref_quick_settings_screen">Быстрые настройки</string>
+    <string name="title_pref_speech">Речь</string>
+    <string name="title_pref_speech_stream_control">Регулятор громкости речи</string>
+    <string name="title_pref_touch">Касание</string>
+    <string name="title_pref_typing">Ввод текста</string>
+    <string name="title_pref_updates">Обновления и установка</string>
+    <string name="title_pref_volume_keys">Клавиши громкости</string>
+    <string name="typing_category_other_input">Другие способы ввода</string>
+    <string name="verbosity_category_announcements">Объявления</string>
+    <string name="verbosity_category_items">Элементы</string>
+    <string name="verbosity_category_text">Текст и символы</string>
+</resources>

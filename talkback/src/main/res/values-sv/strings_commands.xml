@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="command_add_arrow_keys">Lägg till piltangenter</string>
+    <string name="command_add_gesture">Lägg till rörelse</string>
+    <string name="command_choose_arrow_keys">Välj piltangenter</string>
+    <string name="command_choose_gesture">Välj rörelse</string>
+    <string name="command_gesture_assigned"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g>: <xliff:g id="command" example="Describe image">%2$s</xliff:g></string>
+    <string name="command_gestures">Rörelser</string>
+    <string name="command_keyboard_shortcut">Kortkommando</string>
+    <string name="command_no_arrow_keys">Inga piltangenter</string>
+    <string name="command_no_gestures">Inga rörelser</string>
+    <string name="command_remove_arrow_keys">Ta bort piltangenter</string>
+    <string name="command_remove_gesture">Ta bort rörelse</string>
+    <string name="command_replace">Ersätt</string>
+    <string name="command_replace_gesture"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g> kör <xliff:g id="old_command" example="Read from top">%2$s</xliff:g>. Använda den för <xliff:g id="new_command" example="Describe image">%3$s</xliff:g> i stället?</string>
+    <string name="commands_category_activation">Aktivering</string>
+    <string name="commands_category_media">Media och volym</string>
+    <string name="commands_category_sandfly">SandFly</string>
+    <string name="commands_category_scrolling">Rullning</string>
+    <string name="commands_category_speech">Tal</string>
+    <string name="commands_category_tables">Tabeller</string>
+    <string name="commands_category_web">Webb</string>
+    <string name="item_list_current">Nuvarande</string>
+    <string name="item_list_not_in_reading_controls">Inte i läsinställningarna</string>
+    <string name="item_list_not_in_sandfly_menu">Inte i SandFly-menyn</string>
+    <string name="item_list_options">Alternativ</string>
+    <string name="sounds_category_sounds">Ljud</string>
+    <string name="sounds_category_vibration">Vibration</string>
+    <string name="speech_category_languages">Språk</string>
+    <string name="speech_category_other_apps">Andra appar</string>
+    <string name="speech_category_pronunciation">Uttal</string>
+    <string name="speech_category_stopping">Stoppa tal</string>
+    <string name="speech_category_voice">Röst</string>
+    <string name="title_pref_audio_output">Ljudutgång</string>
+    <string name="title_pref_backup">Säkerhetskopiera och återställ</string>
+    <string name="title_pref_braille">Punktskrift</string>
+    <string name="title_pref_commands">Kommandon</string>
+    <string name="title_pref_display">Visning</string>
+    <string name="title_pref_image_and_screen_descriptions">Bild- och skärmbeskrivningar</string>
+    <string name="title_pref_pause">Pausa och stäng av</string>
+    <string name="title_pref_quick_settings_screen">Snabbinställningar</string>
+    <string name="title_pref_speech">Tal</string>
+    <string name="title_pref_speech_stream_control">Volymreglage för tal</string>
+    <string name="title_pref_touch">Beröring</string>
+    <string name="title_pref_typing">Skrivning</string>
+    <string name="title_pref_updates">Uppdateringar och installation</string>
+    <string name="title_pref_volume_keys">Volymknappar</string>
+    <string name="typing_category_other_input">Andra sätt att skriva</string>
+    <string name="verbosity_category_announcements">Meddelanden</string>
+    <string name="verbosity_category_items">Objekt</string>
+    <string name="verbosity_category_text">Text och symboler</string>
+</resources>

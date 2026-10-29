@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_translation_auto">Përkthimi automatik</string>
+    <string name="title_pref_translation_auto_service">Shërbimi i përkthimit automatik</string>
+    <string name="title_pref_translation_copy">Kopjo përkthimet në kujtesën e fragmenteve</string>
+    <string name="title_pref_translation_download_all">Shkarko të gjitha gjuhët</string>
+    <string name="title_pref_translation_languages">Gjuhët në pajisje</string>
+    <string name="title_pref_translation_notifications">Përkthe njoftimet</string>
+    <string name="title_pref_translation_region">Rajoni</string>
+    <string name="title_pref_translation_say_source">Thuaj gjuhën origjinale</string>
+    <string name="title_pref_translation_second_target">Përkthe tekstin në gjuhën e synuar në</string>
+    <string name="title_pref_translation_service">Shërbimi i përkthimit</string>
+    <string name="title_pref_translation_source">Përkthe nga</string>
+    <string name="title_pref_translation_swap">Ndërro gjuhët</string>
+    <string name="title_pref_translation_target">Përkthe në</string>
+    <string name="title_pref_translation_target_voice">Përdor një zë për gjuhën e synuar</string>
+    <string name="title_pref_translation_untranslated">Gjuhët që nuk përkthehen</string>
+    <string name="title_pref_translation_wifi_only">Shkarko gjuhët vetëm me Wi-Fi</string>
+    <string name="title_translate_last_spoken_phrase">Përkthe frazën e fundit të thënë</string>
+    <string name="translation_address_hint">Adresa, si https://libretranslate.com</string>
+    <string name="translation_address_message">Adresa e një serveri LibreTranslate, si https://libretranslate.com. Serverët që nuk janë të tutë mund të kërkojnë çelës API.</string>
+    <string name="translation_all_downloaded">Të gjitha gjuhët u shkarkuan</string>
+    <string name="translation_already_in">Është tashmë në <xliff:g id="language" example="English">%1$s</xliff:g></string>
+    <string name="translation_auto_state">Përkthimi automatik <xliff:g id="state" example="on">%1$s</xliff:g></string>
+    <string name="translation_category_speech">Ligjërimi</string>
+    <string name="translation_detect">Zbulo gjuhën</string>
+    <string name="translation_device_language">Gjuha e pajisjes (<xliff:g id="language" example="English">%1$s</xliff:g>)</string>
+    <plurals name="translation_download_all_failed">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> gjuhë nuk u shkarkua</item>
+        <item quantity="other"><xliff:g id="count" example="3">%1$d</xliff:g> gjuhë nuk u shkarkuan</item>
+    </plurals>
+    <plurals name="translation_download_all_message">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> gjuhë, rreth <xliff:g id="size" example="30 MB">%2$s</xliff:g>.</item>
+        <item quantity="other"><xliff:g id="count" example="57">%1$d</xliff:g> gjuhë, rreth <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+    </plurals>
+    <string name="translation_download_all_progress">Po shkarkohet, <xliff:g id="done" example="12">%1$d</xliff:g> nga <xliff:g id="total" example="57">%2$d</xliff:g></string>
+    <string name="translation_download_all_stop">Ndalo</string>
+    <string name="translation_download_all_stop_title">Të ndalohet shkarkimi i gjuhëve?</string>
+    <string name="translation_download_done"><xliff:g id="language" example="German">%1$s</xliff:g> u shkarkua</string>
+    <string name="translation_download_failed"><xliff:g id="language" example="German">%1$s</xliff:g> nuk u shkarkua</string>
+    <string name="translation_download_message">Rreth 30 MB.</string>
+    <string name="translation_download_title">Të shkarkohet <xliff:g id="language" example="German">%1$s</xliff:g>?</string>
+    <string name="translation_downloading">Po shkarkohet <xliff:g id="languages" example="German and English">%1$s</xliff:g> për përkthimin në pajisje</string>
+    <string name="translation_error"><xliff:g id="service" example="DeepL">%1$s</xliff:g> nuk mundi ta përkthente tekstin.</string>
+    <string name="translation_error_api_key"><xliff:g id="service" example="DeepL">%1$s</xliff:g> nuk e pranoi çelësin API.</string>
+    <string name="translation_error_connection"><xliff:g id="service" example="DeepL">%1$s</xliff:g> nuk mund të arrihej.</string>
+    <string name="translation_error_details"><xliff:g id="service" example="DeepL">%1$s</xliff:g> nuk mundi ta përkthente tekstin: <xliff:g id="details" example="Wrong endpoint">%2$s</xliff:g></string>
+    <string name="translation_error_detection_downloading">Zbulimi i gjuhës po shkarkohet. Provo përsëri pas pak.</string>
+    <string name="translation_error_download">Gjuhët për përkthimin në pajisje nuk mund të shkarkoheshin.</string>
+    <string name="translation_error_downloading">Gjuhët për përkthimin në pajisje ende po shkarkohen</string>
+    <string name="translation_error_language">Përkthimi <xliff:g id="service" example="On-device">%1$s</xliff:g>: <xliff:g id="language" example="Klingon">%2$s</xliff:g> nuk mbështetet.</string>
+    <string name="translation_error_no_address">Fut adresën e <xliff:g id="service" example="LibreTranslate">%1$s</xliff:g> te cilësimet e Përkthimit.</string>
+    <string name="translation_error_no_key">Fut çelësin API të <xliff:g id="service" example="DeepL">%1$s</xliff:g> te cilësimet e Përkthimit.</string>
+    <string name="translation_error_not_detected">Gjuha nuk u zbulua</string>
+    <string name="translation_error_quota">U arrit kufiri i përdorimit të <xliff:g id="service" example="DeepL">%1$s</xliff:g>.</string>
+    <string name="translation_from">Nga <xliff:g id="language" example="German">%1$s</xliff:g>:</string>
+    <string name="translation_key_message">Ngjit çelësin tënd API të <xliff:g id="service" example="DeepL">%1$s</xliff:g>. Për ta hequr, pastro fushën dhe ruaje. Teksti që përkthen dërgohet te <xliff:g id="service" example="DeepL">%1$s</xliff:g>.</string>
+    <string name="translation_language_downloaded"><xliff:g id="language" example="German">%1$s</xliff:g>, e shkarkuar</string>
+    <string name="translation_language_downloading"><xliff:g id="language" example="German">%1$s</xliff:g>, po shkarkohet</string>
+    <string name="translation_languages_summary">Të shkarkuara: <xliff:g id="languages" example="English, German">%1$s</xliff:g></string>
+    <string name="translation_nothing">Asgjë për të përkthyer</string>
+    <string name="translation_region_global">Global</string>
+    <string name="translation_region_message">Rajoni i burimit tënd Translator në Azure, si westeurope. Lëre bosh për një burim global.</string>
+    <string name="translation_second_none">Mos përkthe</string>
+    <string name="translation_service_ai">Shërbimi i AI</string>
+    <string name="translation_service_deepl">DeepL</string>
+    <string name="translation_service_google_cloud">Google Cloud Translation</string>
+    <string name="translation_service_libretranslate">LibreTranslate</string>
+    <string name="translation_service_microsoft">Microsoft Translator</string>
+    <string name="translation_service_not_set_up"><xliff:g id="service" example="DeepL">%1$s</xliff:g>, i pakonfiguruar</string>
+    <string name="translation_service_on_device">Në pajisje</string>
+    <string name="translation_swapped">Nga <xliff:g id="source" example="German">%1$s</xliff:g> në <xliff:g id="target" example="English">%2$s</xliff:g></string>
+    <string name="translation_title">Përkthimi</string>
+    <string name="translation_untranslated_none">Asnjë</string>
+</resources>

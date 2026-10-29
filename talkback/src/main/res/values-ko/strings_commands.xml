@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="command_add_arrow_keys">화살표 키 추가</string>
+    <string name="command_add_gesture">동작 추가</string>
+    <string name="command_choose_arrow_keys">화살표 키 선택</string>
+    <string name="command_choose_gesture">동작 선택</string>
+    <string name="command_gesture_assigned"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g>: <xliff:g id="command" example="Describe image">%2$s</xliff:g></string>
+    <string name="command_gestures">동작</string>
+    <string name="command_keyboard_shortcut">단축키</string>
+    <string name="command_no_arrow_keys">화살표 키 없음</string>
+    <string name="command_no_gestures">동작 없음</string>
+    <string name="command_remove_arrow_keys">화살표 키 삭제</string>
+    <string name="command_remove_gesture">동작 삭제</string>
+    <string name="command_replace">바꾸기</string>
+    <string name="command_replace_gesture"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g> 동작은 ‘<xliff:g id="old_command" example="Read from top">%2$s</xliff:g>’ 명령을 실행합니다. 대신 ‘<xliff:g id="new_command" example="Describe image">%3$s</xliff:g>’에 사용하시겠습니까?</string>
+    <string name="commands_category_activation">활성화</string>
+    <string name="commands_category_media">미디어 및 볼륨</string>
+    <string name="commands_category_sandfly">SandFly</string>
+    <string name="commands_category_scrolling">스크롤</string>
+    <string name="commands_category_speech">음성</string>
+    <string name="commands_category_tables">표</string>
+    <string name="commands_category_web">웹</string>
+    <string name="item_list_current">현재</string>
+    <string name="item_list_not_in_reading_controls">읽기 제어 설정에 없는 항목</string>
+    <string name="item_list_not_in_sandfly_menu">SandFly 메뉴에 없는 항목</string>
+    <string name="item_list_options">옵션</string>
+    <string name="sounds_category_sounds">소리</string>
+    <string name="sounds_category_vibration">진동</string>
+    <string name="speech_category_languages">언어</string>
+    <string name="speech_category_other_apps">다른 앱</string>
+    <string name="speech_category_pronunciation">발음</string>
+    <string name="speech_category_stopping">음성 중지</string>
+    <string name="speech_category_voice">음성</string>
+    <string name="title_pref_audio_output">오디오 출력</string>
+    <string name="title_pref_backup">백업 및 복원</string>
+    <string name="title_pref_braille">점자</string>
+    <string name="title_pref_commands">명령</string>
+    <string name="title_pref_display">디스플레이</string>
+    <string name="title_pref_image_and_screen_descriptions">이미지 및 화면 설명</string>
+    <string name="title_pref_pause">일시중지 및 끄기</string>
+    <string name="title_pref_quick_settings_screen">빠른 설정</string>
+    <string name="title_pref_speech">음성</string>
+    <string name="title_pref_speech_stream_control">음성에 사용할 볼륨</string>
+    <string name="title_pref_touch">터치</string>
+    <string name="title_pref_typing">입력</string>
+    <string name="title_pref_updates">업데이트 및 설치</string>
+    <string name="title_pref_volume_keys">볼륨 키</string>
+    <string name="typing_category_other_input">기타 입력 방법</string>
+    <string name="verbosity_category_announcements">안내</string>
+    <string name="verbosity_category_items">항목</string>
+    <string name="verbosity_category_text">텍스트 및 기호</string>
+</resources>

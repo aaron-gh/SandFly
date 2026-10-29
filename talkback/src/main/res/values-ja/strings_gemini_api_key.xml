@@ -18,7 +18,7 @@
     <string name="ai_service_model_hint">モデル</string>
     <string name="ai_service_address_invalid">アドレスは https:// で始まる必要があります。何も保存されませんでした。</string>
     <string name="dialog_message_ai_service_consent">画像とスクリーンショットは説明のために <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> に送信され、数秒かかります。そのサービス独自の利用規約とプライバシー ポリシーが適用されます。生成 AI は試験運用中のため、誤りがあります。</string>
-    <string name="ai_service_error_api_key">AI サービスは API キーを受け入れませんでした。自動の説明で設定を確認してください。</string>
+    <string name="ai_service_error_api_key">AI サービスは API キーを受け入れませんでした。画像と画面の説明で設定を確認してください。</string>
     <string name="ai_service_error_quota">AIサービスの利用制限に達しました。後でもう一度試してください。</string>
     <string name="ai_service_error_busy">AI サービスは現在ビジー状態です。しばらくしてからもう一度試してください。</string>
     <string name="ai_service_error_timeout">AI サービスの応答に時間がかかりすぎました。もう一度やり直してください。</string>
@@ -30,7 +30,7 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">なし</string>
-    <string name="ai_service_not_set_up">AI サービスは使用されていません。セットアップするか、自動説明設定でいずれかを選択します。</string>
+    <string name="ai_service_not_set_up">AI サービスは使用されていません。セットアップするか、画像と画面の説明の設定でいずれかを選択します。</string>
     <string name="ai_provider_none_set_up">AI サービスが設定されていません。以下の設定で設定してください。</string>
     <string name="ai_provider_other">その他のサービス</string>
     <string name="title_pref_category_ai_services">AIサービス</string>

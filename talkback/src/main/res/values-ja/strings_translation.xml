@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_translation_auto">自動翻訳</string>
+    <string name="title_pref_translation_auto_service">自動翻訳のサービス</string>
+    <string name="title_pref_translation_copy">翻訳をクリップボードにコピー</string>
+    <string name="title_pref_translation_download_all">すべての言語をダウンロード</string>
+    <string name="title_pref_translation_languages">オンデバイスの言語</string>
+    <string name="title_pref_translation_notifications">通知を翻訳</string>
+    <string name="title_pref_translation_region">リージョン</string>
+    <string name="title_pref_translation_say_source">元の言語を読み上げる</string>
+    <string name="title_pref_translation_second_target">翻訳先の言語のテキストの翻訳先</string>
+    <string name="title_pref_translation_service">翻訳サービス</string>
+    <string name="title_pref_translation_source">翻訳元</string>
+    <string name="title_pref_translation_swap">言語を入れ替え</string>
+    <string name="title_pref_translation_target">翻訳先</string>
+    <string name="title_pref_translation_target_voice">翻訳先の言語の音声を使用</string>
+    <string name="title_pref_translation_untranslated">翻訳しない言語</string>
+    <string name="title_pref_translation_wifi_only">Wi-Fi 接続時のみ言語をダウンロード</string>
+    <string name="title_translate_last_spoken_phrase">最後に読み上げたフレーズを翻訳</string>
+    <string name="translation_address_hint">アドレス（例: https://libretranslate.com）</string>
+    <string name="translation_address_message">LibreTranslate サーバーのアドレスです（例: https://libretranslate.com）。自分のサーバー以外では API キーが必要な場合があります。</string>
+    <string name="translation_all_downloaded">すべての言語をダウンロードしました</string>
+    <string name="translation_already_in">すでに<xliff:g id="language" example="English">%1$s</xliff:g>です</string>
+    <string name="translation_auto_state">自動翻訳 <xliff:g id="state" example="on">%1$s</xliff:g></string>
+    <string name="translation_category_speech">読み上げ</string>
+    <string name="translation_detect">言語を検出</string>
+    <string name="translation_device_language">デバイスの言語（<xliff:g id="language" example="English">%1$s</xliff:g>）</string>
+    <plurals name="translation_download_all_failed">
+        <item quantity="other"><xliff:g id="count" example="3">%1$d</xliff:g> 個の言語をダウンロードできませんでした</item>
+    </plurals>
+    <plurals name="translation_download_all_message">
+        <item quantity="other"><xliff:g id="count" example="57">%1$d</xliff:g> 個の言語、約 <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>。</item>
+    </plurals>
+    <string name="translation_download_all_progress">ダウンロード中、<xliff:g id="total" example="57">%2$d</xliff:g> 個中 <xliff:g id="done" example="12">%1$d</xliff:g> 個</string>
+    <string name="translation_download_all_stop">停止</string>
+    <string name="translation_download_all_stop_title">言語のダウンロードを停止しますか？</string>
+    <string name="translation_download_done"><xliff:g id="language" example="German">%1$s</xliff:g>をダウンロードしました</string>
+    <string name="translation_download_failed"><xliff:g id="language" example="German">%1$s</xliff:g>をダウンロードできませんでした</string>
+    <string name="translation_download_message">約 30 MB。</string>
+    <string name="translation_download_title"><xliff:g id="language" example="German">%1$s</xliff:g>をダウンロードしますか？</string>
+    <string name="translation_downloading">オンデバイス翻訳用に<xliff:g id="languages" example="German and English">%1$s</xliff:g>をダウンロードしています</string>
+    <string name="translation_error"><xliff:g id="service" example="DeepL">%1$s</xliff:g> でテキストを翻訳できませんでした。</string>
+    <string name="translation_error_api_key"><xliff:g id="service" example="DeepL">%1$s</xliff:g> で API キーが受け入れられませんでした。</string>
+    <string name="translation_error_connection"><xliff:g id="service" example="DeepL">%1$s</xliff:g> に接続できませんでした。</string>
+    <string name="translation_error_details"><xliff:g id="service" example="DeepL">%1$s</xliff:g> でテキストを翻訳できませんでした: <xliff:g id="details" example="Wrong endpoint">%2$s</xliff:g></string>
+    <string name="translation_error_detection_downloading">言語検出をダウンロードしています。しばらくしてからもう一度お試しください。</string>
+    <string name="translation_error_download">オンデバイス翻訳用の言語をダウンロードできませんでした。</string>
+    <string name="translation_error_downloading">オンデバイス翻訳用の言語はまだダウンロード中です</string>
+    <string name="translation_error_language"><xliff:g id="service" example="On-device">%1$s</xliff:g>翻訳は<xliff:g id="language" example="Klingon">%2$s</xliff:g>に対応していません。</string>
+    <string name="translation_error_no_address">翻訳の設定で <xliff:g id="service" example="LibreTranslate">%1$s</xliff:g> のアドレスを入力してください。</string>
+    <string name="translation_error_no_key">翻訳の設定で <xliff:g id="service" example="DeepL">%1$s</xliff:g> の API キーを入力してください。</string>
+    <string name="translation_error_not_detected">言語を検出できませんでした</string>
+    <string name="translation_error_quota"><xliff:g id="service" example="DeepL">%1$s</xliff:g> の使用量の上限に達しました。</string>
+    <string name="translation_from"><xliff:g id="language" example="German">%1$s</xliff:g>から:</string>
+    <string name="translation_key_message"><xliff:g id="service" example="DeepL">%1$s</xliff:g> の API キーを貼り付けてください。削除するには、フィールドを空にして保存します。翻訳するテキストは <xliff:g id="service" example="DeepL">%1$s</xliff:g> に送信されます。</string>
+    <string name="translation_language_downloaded"><xliff:g id="language" example="German">%1$s</xliff:g>、ダウンロード済み</string>
+    <string name="translation_language_downloading"><xliff:g id="language" example="German">%1$s</xliff:g>、ダウンロード中</string>
+    <string name="translation_languages_summary">ダウンロード済み: <xliff:g id="languages" example="English, German">%1$s</xliff:g></string>
+    <string name="translation_nothing">翻訳する内容がありません</string>
+    <string name="translation_region_global">グローバル</string>
+    <string name="translation_region_message">Azure の Translator リソースのリージョンです（例: westeurope）。グローバル リソースの場合は空欄にします。</string>
+    <string name="translation_second_none">翻訳しない</string>
+    <string name="translation_service_ai">AI サービス</string>
+    <string name="translation_service_deepl">DeepL</string>
+    <string name="translation_service_google_cloud">Google Cloud Translation</string>
+    <string name="translation_service_libretranslate">LibreTranslate</string>
+    <string name="translation_service_microsoft">Microsoft Translator</string>
+    <string name="translation_service_not_set_up"><xliff:g id="service" example="DeepL">%1$s</xliff:g>、未設定</string>
+    <string name="translation_service_on_device">オンデバイス</string>
+    <string name="translation_swapped"><xliff:g id="source" example="German">%1$s</xliff:g>から<xliff:g id="target" example="English">%2$s</xliff:g>へ</string>
+    <string name="translation_title">翻訳</string>
+    <string name="translation_untranslated_none">なし</string>
+</resources>

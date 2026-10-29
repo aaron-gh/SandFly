@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="sandfly_tutorial_actions_archive">Siirry viestiin. <xliff:g id="gesture" example="Swipe up">%1$s</xliff:g> tai <xliff:g id="gesture" example="Swipe down">%2$s</xliff:g>: käy läpi sen toiminnot. <xliff:g id="gesture" example="Double-tap">%3$s</xliff:g>: suorita kuulemasi toiminto. Suorita <xliff:g id="action" example="Archive">%4$s</xliff:g>.</string>
+    <string name="sandfly_tutorial_actions_intro">Joillakin kohteilla on aktivoinnin lisäksi muita toimintoja, kuten viestin Arkistoi tai Poista. Kun tällainen kohde on kohdistettuna, Toiminnot-lukuasetus käy ne läpi.</string>
+    <string name="sandfly_tutorial_actions_title">Toiminnot</string>
+    <string name="sandfly_tutorial_activate_button">Siirry kohteeseen <xliff:g id="button" example="Ring the bell">%2$s</xliff:g>. <xliff:g id="gesture" example="Double-tap">%1$s</xliff:g>: aktivoi se.</string>
+    <string name="sandfly_tutorial_activate_check_box">Valitse <xliff:g id="check_box" example="Extra cheese">%1$s</xliff:g> samalla tavalla.</string>
+    <string name="sandfly_tutorial_activate_hold">Jotkin kohteet tekevät jotain muuta, kun niitä pidetään painettuna. Siirry kohteeseen <xliff:g id="button" example="Details">%2$s</xliff:g>. <xliff:g id="gesture" example="Double-tap and hold">%1$s</xliff:g>: pidä sitä painettuna.</string>
+    <string name="sandfly_tutorial_activate_intro">Aktivointi koskee kohdistettua kohdetta riippumatta siitä, mihin kohtaan näyttöä napautat.</string>
+    <string name="sandfly_tutorial_activate_title">Kohteiden aktivointi</string>
+    <string name="sandfly_tutorial_back_in_lesson">Takaisin ei poistu oppitunnilta. Valitse toinen oppitunti kohdasta Sisältö.</string>
+    <string name="sandfly_tutorial_bell">Soita kelloa</string>
+    <string name="sandfly_tutorial_bell_rung">Soittokerrat: <xliff:g id="count" example="1">%1$d</xliff:g></string>
+    <string name="sandfly_tutorial_brightness">Kirkkaus</string>
+    <string name="sandfly_tutorial_chapter_basics">Perusteet</string>
+    <string name="sandfly_tutorial_chapter_controls">Säätimet ja teksti</string>
+    <string name="sandfly_tutorial_chapter_getting_around">Liikkuminen</string>
+    <string name="sandfly_tutorial_chapter_practice">Harjoittelu</string>
+    <string name="sandfly_tutorial_chapter_reading">Lukeminen</string>
+    <string name="sandfly_tutorial_choose_reading_control"><xliff:g id="gesture" example="Swipe down then up">%1$s</xliff:g> tai <xliff:g id="gesture" example="Swipe up then down">%2$s</xliff:g>: vaihda lukuasetusta. Valitse <xliff:g id="reading_control" example="Words">%3$s</xliff:g>.</string>
+    <string name="sandfly_tutorial_close">Sulje opetusohjelma</string>
+    <string name="sandfly_tutorial_commands_copy"><xliff:g id="gesture" example="Triple-tap with 3 fingers">%1$s</xliff:g>: kopioi SandFlyn viimeksi sanoma teksti leikepöydälle.</string>
+    <string name="sandfly_tutorial_commands_intro">Nämä komennot toimivat kaikilla näytöillä.</string>
+    <string name="sandfly_tutorial_commands_search"><xliff:g id="gesture" example="Swipe left then down">%1$s</xliff:g>: hae tekstiä näytöltä. Tällä oppitunnilla opetusohjelma kertoo sen sijaan, mitä komento tekee.</string>
+    <string name="sandfly_tutorial_commands_speech_off"><xliff:g id="gesture" example="Double-tap with 3 fingers">%1$s</xliff:g>: laita puhe pois päältä ja uudelleen tehtynä päälle. Tällä oppitunnilla opetusohjelma kertoo sen sijaan, mitä komento tekee.</string>
+    <string name="sandfly_tutorial_commands_status"><xliff:g id="gesture" example="Triple-tap with 2 fingers">%1$s</xliff:g>: kuule kellonaika, akun varaus ja muut tilatiedot.</string>
+    <string name="sandfly_tutorial_commands_title">Hyödyllisiä komentoja</string>
+    <string name="sandfly_tutorial_contents">Sisältö</string>
+    <string name="sandfly_tutorial_contents_intro">Oppitunnit järjestyksessä. Jokaisen voi avata erikseen.</string>
+    <string name="sandfly_tutorial_continuous_intro">SandFly voi lukea korostetusta kohteesta näytön loppuun ilman pyyhkäisyjä. Näytön koskettaminen lopettaa lukemisen.</string>
+    <string name="sandfly_tutorial_continuous_move">Siirry reseptin ensimmäiselle riville.</string>
+    <string name="sandfly_tutorial_continuous_read"><xliff:g id="gesture" example="Swipe down then right">%1$s</xliff:g>: lue korostetusta kohteesta alkaen.</string>
+    <string name="sandfly_tutorial_continuous_read_from_menu"><xliff:g id="gesture" example="Tap with 3 fingers">%1$s</xliff:g>: avaa SandFly-valikko ja valitse sitten <xliff:g id="command" example="Read from focused item">%2$s</xliff:g>.</string>
+    <string name="sandfly_tutorial_continuous_title">Jatkuva lukeminen</string>
+    <string name="sandfly_tutorial_details">Tiedot</string>
+    <string name="sandfly_tutorial_details_shown">Pöytä kahdelle klo 19, ikkunan vieressä.</string>
+    <string name="sandfly_tutorial_done">Valmis</string>
+    <string name="sandfly_tutorial_end_practice">Lopeta harjoittelu</string>
+    <string name="sandfly_tutorial_explore_activate">Kosketa kohdetta Tähti ja nosta sormi. <xliff:g id="gesture" example="Double-tap">%1$s</xliff:g> missä tahansa: aktivoi se.</string>
+    <string name="sandfly_tutorial_explore_find">Liu\'uta yhtä sormea näytöllä ja etsi neljä ruutua: Aurinko, Kuu, Tähti ja Pilvi.</string>
+    <string name="sandfly_tutorial_explore_intro">Näytön koskettaminen sanoo sormen alla olevan kohteen. Kohteen koskettaminen ei aktivoi sitä.</string>
+    <string name="sandfly_tutorial_explore_title">Kosketuksella tutkiminen</string>
+    <string name="sandfly_tutorial_extra_cheese">Lisäjuusto</string>
+    <string name="sandfly_tutorial_finish">Lopeta opetusohjelma</string>
+    <string name="sandfly_tutorial_forecast_today">Tänään</string>
+    <string name="sandfly_tutorial_forecast_today_text">Aurinkoista ja lämmintä, heikkoa tuulta.</string>
+    <string name="sandfly_tutorial_forecast_tomorrow">Huomenna</string>
+    <string name="sandfly_tutorial_forecast_tomorrow_text">Aamulla pilvistä, keskipäivästä alkaen sadetta.</string>
+    <string name="sandfly_tutorial_forecast_weekend">Viikonloppu</string>
+    <string name="sandfly_tutorial_forecast_weekend_text">Lauantaina tuulista, sunnuntaina selkeää.</string>
+    <string name="sandfly_tutorial_headings_intro">Näytöt ja verkkosivut jakavat sisältönsä otsikoilla. Otsikot-lukuasetus siirtyy otsikosta seuraavaan.</string>
+    <string name="sandfly_tutorial_headings_jump"><xliff:g id="gesture" example="Swipe down">%1$s</xliff:g>: siirry seuraavaan otsikkoon. Siirry otsikkoon <xliff:g id="heading" example="Weekend">%2$s</xliff:g>.</string>
+    <string name="sandfly_tutorial_headings_title">Otsikot</string>
+    <string name="sandfly_tutorial_item_apples">Omenat</string>
+    <string name="sandfly_tutorial_item_bread">Leipä</string>
+    <string name="sandfly_tutorial_item_cheese">Juusto</string>
+    <string name="sandfly_tutorial_item_dates">Taatelit</string>
+    <string name="sandfly_tutorial_item_eggs">Kananmunat</string>
+    <string name="sandfly_tutorial_lesson_complete">Oppitunti suoritettu.</string>
+    <string name="sandfly_tutorial_lesson_complete_last">Oppitunti suoritettu. <xliff:g id="gesture" example="Double-tap">%1$s</xliff:g>: lopeta opetusohjelma.</string>
+    <string name="sandfly_tutorial_lesson_complete_next">Oppitunti suoritettu. <xliff:g id="gesture" example="Double-tap">%1$s</xliff:g>: aloita seuraava oppitunti.</string>
+    <string name="sandfly_tutorial_lesson_heading"><xliff:g id="lesson" example="Moving between items">%1$s</xliff:g>, oppitunti <xliff:g id="number" example="3">%2$d</xliff:g>/<xliff:g id="count" example="17">%3$d</xliff:g></string>
+    <string name="sandfly_tutorial_list_item">Kohde <xliff:g id="number" example="15">%1$d</xliff:g></string>
+    <string name="sandfly_tutorial_menu_close"><xliff:g id="gesture" example="Swipe down then left">%1$s</xliff:g>: sulje valikko.</string>
+    <string name="sandfly_tutorial_menu_intro">SandFly-valikossa on komentoja korostetulle kohteelle ja nykyiselle näytölle.</string>
+    <string name="sandfly_tutorial_menu_open"><xliff:g id="gesture" example="Tap with 3 fingers">%1$s</xliff:g>: avaa SandFly-valikko. Pyyhkäise sen komentojen läpi. <xliff:g id="gesture" example="Swipe down then left">%2$s</xliff:g> sulkee valikon.</string>
+    <string name="sandfly_tutorial_menu_title">SandFly-valikko</string>
+    <string name="sandfly_tutorial_message">Viesti Samilta: Lounas keskipäivällä?</string>
+    <string name="sandfly_tutorial_message_archive">Arkistoi</string>
+    <string name="sandfly_tutorial_message_delete">Poista</string>
+    <string name="sandfly_tutorial_message_reply">Vastaa</string>
+    <string name="sandfly_tutorial_move_intro">Pyyhkäiseminen siirtää näytön seuraavaan tai edelliseen kohteeseen lukujärjestyksessä.</string>
+    <string name="sandfly_tutorial_move_next"><xliff:g id="gesture" example="Swipe right">%1$s</xliff:g>: siirry seuraavaan kohteeseen. Jatka, kunnes pääset kohteeseen <xliff:g id="item" example="Eggs">%2$s</xliff:g>.</string>
+    <string name="sandfly_tutorial_move_previous"><xliff:g id="gesture" example="Swipe left">%1$s</xliff:g>: siirry edelliseen kohteeseen. Palaa kohteeseen <xliff:g id="item" example="Bread">%2$s</xliff:g>.</string>
+    <string name="sandfly_tutorial_move_title">Kohteesta toiseen siirtyminen</string>
+    <string name="sandfly_tutorial_name">Nimi</string>
+    <string name="sandfly_tutorial_next_lesson">Seuraava oppitunti: <xliff:g id="lesson" example="Activating items">%1$s</xliff:g></string>
+    <string name="sandfly_tutorial_no_gesture">Toiminnolla <xliff:g id="action" example="Next item">%1$s</xliff:g> ei ole elettä. Määritä ele kohdassa Komennot tai käytä painiketta Ohita vaihe.</string>
+    <string name="sandfly_tutorial_not_in_lesson">Toimintoa <xliff:g id="action" example="Home">%1$s</xliff:g> ei tehdä oppitunnilla. Poistu opetusohjelmasta valitsemalla Sisältö-kohdasta Sulje opetusohjelma.</string>
+    <string name="sandfly_tutorial_not_in_lesson_short">Toimintoa <xliff:g id="action" example="Turn speech on or off">%1$s</xliff:g> ei tehdä oppitunnilla.</string>
+    <string name="sandfly_tutorial_pause_intro">Puheen voi keskeyttää kesken kohteen ja jatkaa siitä, mihin se jäi.</string>
+    <string name="sandfly_tutorial_pause_pause">Siirry alla olevaan tarinaan. <xliff:g id="gesture" example="Tap with 2 fingers">%1$s</xliff:g> sen lukemisen aikana: keskeytä puhe. Uudelleen tehtynä puhe jatkuu.</string>
+    <string name="sandfly_tutorial_pause_resume"><xliff:g id="gesture" example="Tap with 2 fingers">%1$s</xliff:g> uudelleen: jatka puhetta.</string>
+    <string name="sandfly_tutorial_pause_title">Puheen keskeyttäminen</string>
+    <string name="sandfly_tutorial_practice_gesture"><xliff:g id="gesture" example="Swipe right">%1$s</xliff:g>: <xliff:g id="action" example="Next item">%2$s</xliff:g></string>
+    <string name="sandfly_tutorial_practice_intro">Jokainen ele sanoo nimensä ja toimintonsa sen suorittamisen sijaan. Siirtyminen seuraavaan ja edelliseen kohteeseen sekä aktivointi toimivat edelleen.</string>
+    <string name="sandfly_tutorial_practice_step">Tee mikä tahansa ele kuullaksesi, mitä se tekee. Lopeta aktivoimalla <xliff:g id="button" example="End practice">%1$s</xliff:g>.</string>
+    <string name="sandfly_tutorial_practice_title">Eleharjoittelu</string>
+    <string name="sandfly_tutorial_progress"><xliff:g id="done" example="2">%1$d</xliff:g>/<xliff:g id="count" example="4">%2$d</xliff:g>.</string>
+    <string name="sandfly_tutorial_reading_controls_characters">Vaihda lukuasetukseksi <xliff:g id="reading_control" example="Characters">%2$s</xliff:g>. <xliff:g id="gesture" example="Swipe down">%1$s</xliff:g>: siirry yksi merkki.</string>
+    <string name="sandfly_tutorial_reading_controls_intro">Lukuasetukset valitsevat, mitä ylös ja alas pyyhkäiseminen tekee, esimerkiksi siirtyminen sana tai merkki kerrallaan tai puheen nopeuden muuttaminen. Oikealle ja vasemmalle pyyhkäiseminen siirtää edelleen kohteesta toiseen.</string>
+    <string name="sandfly_tutorial_reading_controls_move">Siirry alla olevaan lauseeseen.</string>
+    <string name="sandfly_tutorial_reading_controls_next_word"><xliff:g id="gesture" example="Swipe down">%1$s</xliff:g>: siirry seuraavaan sanaan. Siirry kolme sanaa.</string>
+    <string name="sandfly_tutorial_reading_controls_title">Lukuasetukset</string>
+    <string name="sandfly_tutorial_recipe_1">Ohukaiset: sekoita jauhot, kananmunat ja maito tasaiseksi taikinaksi.</string>
+    <string name="sandfly_tutorial_recipe_2">Kuumenna vähän voita paistinpannulla.</string>
+    <string name="sandfly_tutorial_recipe_3">Kaada pannulle sen verran taikinaa, että pohja peittyy ohuelti.</string>
+    <string name="sandfly_tutorial_recipe_4">Käännä ohukainen, kun alapuoli on kullanruskea.</string>
+    <string name="sandfly_tutorial_recipe_5">Tarjoile sitruunan ja sokerin kanssa.</string>
+    <string name="sandfly_tutorial_scrolling_intro">Luettelot näyttävät kerralla vain osan kohteistaan. Kun pyyhkäiset viimeisen näkyvän kohteen ohi, luettelo vierittyy.</string>
+    <string name="sandfly_tutorial_scrolling_page"><xliff:g id="gesture" example="Swipe right then left">%1$s</xliff:g>: vieritä sivun verran eteenpäin.</string>
+    <string name="sandfly_tutorial_scrolling_swipe"><xliff:g id="gesture" example="Swipe right">%1$s</xliff:g>: käy luetteloa läpi, kunnes pääset kohteeseen <xliff:g id="item" example="Item 15">%2$s</xliff:g>.</string>
+    <string name="sandfly_tutorial_scrolling_title">Luetteloiden vierittäminen</string>
+    <string name="sandfly_tutorial_sentence">Viekas kettu punaturkki laiskan koiran takaa kurkki.</string>
+    <string name="sandfly_tutorial_skip_step">Ohita vaihe</string>
+    <string name="sandfly_tutorial_sliders_change">Siirry liukusäätimeen <xliff:g id="slider" example="Brightness">%3$s</xliff:g>. <xliff:g id="gesture" example="Swipe up">%1$s</xliff:g> tai <xliff:g id="gesture" example="Swipe down">%2$s</xliff:g>: muuta sen arvoa.</string>
+    <string name="sandfly_tutorial_sliders_highest">Aseta <xliff:g id="slider" example="Brightness">%1$s</xliff:g> arvoon 100 prosenttia, joka on sen suurin arvo.</string>
+    <string name="sandfly_tutorial_sliders_intro">Kun liukusäädin on kohdistettuna, ylös ja alas pyyhkäiseminen muuttaa sen arvoa.</string>
+    <string name="sandfly_tutorial_sliders_title">Liukusäätimet</string>
+    <string name="sandfly_tutorial_step">Vaihe <xliff:g id="number" example="1">%1$d</xliff:g>/<xliff:g id="count" example="2">%2$d</xliff:g>: <xliff:g id="instruction" example="Swipe right to move to the next item.">%3$s</xliff:g></string>
+    <string name="sandfly_tutorial_story">Hietakärpäset ovat pieniä kärpäsiä, jotka elävät rannoilla, joenpenkoilla ja metsissä. Ne ovat aktiivisimmillaan aamu- ja iltahämärissä, kun ilma on tyyni. Vain naaraat purevat, koska ne tarvitsevat verta munien tuottamiseen. Puremat kutisevat päiviä, joten hietakärpästen alueilla vierailevat kantavat mukanaan hyönteiskarkotetta. Hietakärpäset ovat heikkoja lentäjiä, ja kevytkin tuulenvire pitää ne poissa.</string>
+    <string name="sandfly_tutorial_system_back"><xliff:g id="gesture" example="Swipe down then left">%1$s</xliff:g>: palaa takaisin.</string>
+    <string name="sandfly_tutorial_system_home"><xliff:g id="gesture" example="Swipe up then left">%1$s</xliff:g>: siirry aloitusnäytölle.</string>
+    <string name="sandfly_tutorial_system_intro">Nämä eleet toimivat kaikilla näytöillä. Tällä oppitunnilla opetusohjelma kertoo, mitä kukin ele tekee, sen tekemisen sijaan.</string>
+    <string name="sandfly_tutorial_system_notifications"><xliff:g id="gesture" example="Swipe right then down">%1$s</xliff:g>: avaa ilmoitukset.</string>
+    <string name="sandfly_tutorial_system_overview"><xliff:g id="gesture" example="Swipe left then up">%1$s</xliff:g>: näytä viimeaikaiset sovellukset.</string>
+    <string name="sandfly_tutorial_system_title">Takaisin, aloitusnäyttö ja ilmoitukset</string>
+    <string name="sandfly_tutorial_tile_cloud">Pilvi</string>
+    <string name="sandfly_tutorial_tile_moon">Kuu</string>
+    <string name="sandfly_tutorial_tile_star">Tähti</string>
+    <string name="sandfly_tutorial_tile_sun">Aurinko</string>
+    <string name="sandfly_tutorial_title">SandFly-opetusohjelma</string>
+    <string name="sandfly_tutorial_typing_delete">Poista viimeinen kirjain näppäimistön poistonäppäimellä.</string>
+    <string name="sandfly_tutorial_typing_intro">Tekstikentän aktivointi avaa näppäimistön. Kosketa näppäintä kuullaksesi sen ja kirjoita se nostamalla sormi.</string>
+    <string name="sandfly_tutorial_typing_open">Siirry kenttään <xliff:g id="field" example="Name">%2$s</xliff:g>. <xliff:g id="gesture" example="Double-tap">%1$s</xliff:g>: aloita kirjoittaminen.</string>
+    <string name="sandfly_tutorial_typing_title">Kirjoittaminen</string>
+    <string name="sandfly_tutorial_typing_type">Kirjoita sana <xliff:g id="word" example="cat">%1$s</xliff:g>.</string>
+    <string name="sandfly_tutorial_typing_word">kissa</string>
+    <string name="sandfly_tutorial_welcome_intro">Tämä opetusohjelma opettaa SandFlyn eleet. Jokainen oppitunti antaa ohjeen, odottaa, kunnes olet tehnyt sen omilla eleilläsi, ja antaa sitten seuraavan. Ohje on ensimmäinen kohde oppitunnin nimen jälkeen. Sisältö luettelee kaikki oppitunnit, ja opetusohjelma avautuu uudelleen siihen oppituntiin, jossa olit.</string>
+    <string name="sandfly_tutorial_welcome_start"><xliff:g id="gesture" example="Double-tap">%1$s</xliff:g> missä tahansa näytöllä: aloita.</string>
+    <string name="sandfly_tutorial_welcome_title">Tervetuloa</string>
+</resources>

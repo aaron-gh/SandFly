@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_translation_auto">Traducció automàtica</string>
+    <string name="title_pref_translation_auto_service">Servei de traducció automàtica</string>
+    <string name="title_pref_translation_copy">Copia les traduccions al porta-retalls</string>
+    <string name="title_pref_translation_download_all">Baixa tots els idiomes</string>
+    <string name="title_pref_translation_languages">Idiomes al dispositiu</string>
+    <string name="title_pref_translation_notifications">Tradueix les notificacions</string>
+    <string name="title_pref_translation_region">Regió</string>
+    <string name="title_pref_translation_say_source">Digues l\'idioma original</string>
+    <string name="title_pref_translation_second_target">Tradueix el text que ja és a l\'idioma de destinació a</string>
+    <string name="title_pref_translation_service">Servei de traducció</string>
+    <string name="title_pref_translation_source">Tradueix de</string>
+    <string name="title_pref_translation_swap">Intercanvia els idiomes</string>
+    <string name="title_pref_translation_target">Tradueix a</string>
+    <string name="title_pref_translation_target_voice">Utilitza una veu de l\'idioma de destinació</string>
+    <string name="title_pref_translation_untranslated">Idiomes sense traduir</string>
+    <string name="title_pref_translation_wifi_only">Baixa idiomes només amb Wi-Fi</string>
+    <string name="title_translate_last_spoken_phrase">Tradueix la darrera frase dita</string>
+    <string name="translation_address_hint">Adreça, com ara https://libretranslate.com</string>
+    <string name="translation_address_message">L\'adreça d\'un servidor de LibreTranslate, com ara https://libretranslate.com. Els servidors que no són teus poden necessitar una clau d\'API.</string>
+    <string name="translation_all_downloaded">Tots els idiomes baixats</string>
+    <string name="translation_already_in">Ja és en <xliff:g id="language" example="English">%1$s</xliff:g></string>
+    <string name="translation_auto_state">Traducció automàtica <xliff:g id="state" example="on">%1$s</xliff:g></string>
+    <string name="translation_category_speech">Veu</string>
+    <string name="translation_detect">Detecta l\'idioma</string>
+    <string name="translation_device_language">Idioma del dispositiu (<xliff:g id="language" example="English">%1$s</xliff:g>)</string>
+    <plurals name="translation_download_all_failed">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> idioma no baixat</item>
+        <item quantity="many"><xliff:g id="count" example="3">%1$d</xliff:g> idiomes no baixats</item>
+        <item quantity="other"><xliff:g id="count" example="3">%1$d</xliff:g> idiomes no baixats</item>
+    </plurals>
+    <plurals name="translation_download_all_message">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> idioma, uns <xliff:g id="size" example="30 MB">%2$s</xliff:g>.</item>
+        <item quantity="many"><xliff:g id="count" example="57">%1$d</xliff:g> idiomes, uns <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+        <item quantity="other"><xliff:g id="count" example="57">%1$d</xliff:g> idiomes, uns <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+    </plurals>
+    <string name="translation_download_all_progress">S\'està baixant, <xliff:g id="done" example="12">%1$d</xliff:g> de <xliff:g id="total" example="57">%2$d</xliff:g></string>
+    <string name="translation_download_all_stop">Atura</string>
+    <string name="translation_download_all_stop_title">Vols aturar la baixada d\'idiomes?</string>
+    <string name="translation_download_done"><xliff:g id="language" example="German">%1$s</xliff:g> baixat</string>
+    <string name="translation_download_failed"><xliff:g id="language" example="German">%1$s</xliff:g> no baixat</string>
+    <string name="translation_download_message">Uns 30 MB.</string>
+    <string name="translation_download_title">Vols baixar <xliff:g id="language" example="German">%1$s</xliff:g>?</string>
+    <string name="translation_downloading">S\'està baixant <xliff:g id="languages" example="German and English">%1$s</xliff:g> per a la traducció al dispositiu</string>
+    <string name="translation_error"><xliff:g id="service" example="DeepL">%1$s</xliff:g> no ha pogut traduir el text.</string>
+    <string name="translation_error_api_key"><xliff:g id="service" example="DeepL">%1$s</xliff:g> no ha acceptat la clau d\'API.</string>
+    <string name="translation_error_connection">No s\'ha pogut connectar amb <xliff:g id="service" example="DeepL">%1$s</xliff:g>.</string>
+    <string name="translation_error_details"><xliff:g id="service" example="DeepL">%1$s</xliff:g> no ha pogut traduir el text: <xliff:g id="details" example="Wrong endpoint">%2$s</xliff:g></string>
+    <string name="translation_error_detection_downloading">S\'està baixant la detecció d\'idioma. Torna-ho a provar d\'aquí a un moment.</string>
+    <string name="translation_error_download">No s\'han pogut baixar els idiomes per a la traducció al dispositiu.</string>
+    <string name="translation_error_downloading">Encara s\'estan baixant els idiomes per a la traducció al dispositiu</string>
+    <string name="translation_error_language">La traducció <xliff:g id="service" example="On-device">%1$s</xliff:g> no admet <xliff:g id="language" example="Klingon">%2$s</xliff:g>.</string>
+    <string name="translation_error_no_address">Introdueix l\'adreça de <xliff:g id="service" example="LibreTranslate">%1$s</xliff:g> a la configuració de Traducció.</string>
+    <string name="translation_error_no_key">Introdueix la clau d\'API de <xliff:g id="service" example="DeepL">%1$s</xliff:g> a la configuració de Traducció.</string>
+    <string name="translation_error_not_detected">No s\'ha detectat l\'idioma</string>
+    <string name="translation_error_quota">S\'ha arribat al límit d\'ús de <xliff:g id="service" example="DeepL">%1$s</xliff:g>.</string>
+    <string name="translation_from">De l\'idioma <xliff:g id="language" example="German">%1$s</xliff:g>:</string>
+    <string name="translation_key_message">Enganxa la teva clau d\'API de <xliff:g id="service" example="DeepL">%1$s</xliff:g>. Per suprimir-la, buida el camp i desa. El text que tradueixes s\'envia a <xliff:g id="service" example="DeepL">%1$s</xliff:g>.</string>
+    <string name="translation_language_downloaded"><xliff:g id="language" example="German">%1$s</xliff:g>, baixat</string>
+    <string name="translation_language_downloading"><xliff:g id="language" example="German">%1$s</xliff:g>, s\'està baixant</string>
+    <string name="translation_languages_summary">Baixats: <xliff:g id="languages" example="English, German">%1$s</xliff:g></string>
+    <string name="translation_nothing">No hi ha res per traduir</string>
+    <string name="translation_region_global">Global</string>
+    <string name="translation_region_message">La regió del teu recurs de Translator a Azure, com ara westeurope. Deixa-ho en blanc per a un recurs global.</string>
+    <string name="translation_second_none">No tradueixis</string>
+    <string name="translation_service_ai">Servei d\'IA</string>
+    <string name="translation_service_deepl">DeepL</string>
+    <string name="translation_service_google_cloud">Google Cloud Translation</string>
+    <string name="translation_service_libretranslate">LibreTranslate</string>
+    <string name="translation_service_microsoft">Microsoft Translator</string>
+    <string name="translation_service_not_set_up"><xliff:g id="service" example="DeepL">%1$s</xliff:g>, no configurat</string>
+    <string name="translation_service_on_device">Al dispositiu</string>
+    <string name="translation_swapped"><xliff:g id="source" example="German">%1$s</xliff:g> a <xliff:g id="target" example="English">%2$s</xliff:g></string>
+    <string name="translation_title">Traducció</string>
+    <string name="translation_untranslated_none">Cap</string>
+</resources>

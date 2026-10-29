@@ -1774,4 +1774,24 @@
     <string name="settings_export_failed">Настройките не можаха да бъдат експортирани</string>
     <string name="settings_import_done">Настройките са импортирани</string>
     <string name="settings_import_failed">Този файл не е файл с настройки SandFly или Backtalk или не може да бъде прочетен</string>
+    <string name="arrow_key_nav_assign_instruction">Натиснете клавиш или два клавиша заедно, със или без модифициращи клавиши. Backspace – изчистване, Ctrl + Backspace – връщане към стандартното, Enter – запазване, Escape – отказ.</string>
+    <string name="arrow_key_nav_off">Навигацията със стрелки е изключена</string>
+    <string name="arrow_key_nav_on">Навигацията със стрелки е включена</string>
+    <string name="arrow_key_nav_page_left">Страница наляво</string>
+    <string name="arrow_key_nav_page_right">Страница надясно</string>
+    <string name="arrow_key_nav_toggle">Превключване на навигацията със стрелки</string>
+    <string name="keycombo_menu_category_arrow_key_nav">Навигация със стрелки</string>
+    <string-array name="pref_dictation_auto_stop_entries">
+        <item>Изкл.</item>
+        <item>3 секунди</item>
+        <item>5 секунди</item>
+        <item>10 секунди</item>
+        <item>15 секунди</item>
+        <item>30 секунди</item>
+        <item>1 минута</item>
+    </string-array>
+    <string name="shortcut_next_track">Следваща песен</string>
+    <string name="shortcut_previous_track">Предишна песен</string>
+    <string name="sound_mode_needs_access">Разрешете достъп до „Не безпокойте“, за да включвате и изключвате „Без звук“.</string>
+    <string name="title_pref_dictation_auto_stop">Автоматично спиране след тишина</string>
 </resources>

@@ -1069,8 +1069,8 @@
   <string name="checking_notifications_tips">Билдирмелердин таржымалын көрүү үчүн 2 манжаңыз менен экрандын жогору жагынан төмөн карай сүрүңүз</string>
   <string name="image_description_playground_title">Сүрөттөрдүн түшүндүрмөлөрүн алып көрүү</string>
   <string name="image_description_playground_content_one">Сүрөттү басып, SandFly менюсун ачып, \"Сүрөттүн түшүндүрмөсүн угуу\" параметрин тандаңыз.\n\nТөмөндө сүрөт берилди. Анын түшүндүрмөсүн угуп көрүңүз.</string>
-  <string name="image_description_playground_content_two">Сүрөттөрдү сүрөттөө жөндөөлөрүн каалаган убакта SandFly параметрлери &gt; Автоматтык учкай маалыматтар бөлүмүнөн өзгөртө аласыз.</string>
-  <string name="image_description_playground_content_two_tts">Сүрөттөрдү сүрөттөө жөндөөлөрүн каалаган убакта SandFly параметрлеринен, андан кийин Автоматтык учкай маалыматтар бөлүмүнөн өзгөртө аласыз.</string>
+    <string name="image_description_playground_content_two">Сүрөттөрдү сүрөттөө жөндөөлөрүн каалаган убакта SandFly параметрлери &gt; Сүрөт жана экран сүрөттөмөлөрү бөлүмүнөн өзгөртө аласыз.</string>
+    <string name="image_description_playground_content_two_tts">Сүрөттөрдү сүрөттөө жөндөөлөрүн каалаган убакта SandFly параметрлеринен, андан кийин Сүрөт жана экран сүрөттөмөлөрү бөлүмүнөн өзгөртө аласыз.</string>
   <string name="image_description_sample_image_content_description">Үлгү сүрөт; SandFly менюсун ачуу үчүн 3 манжаңыз менен таптап, түшүндүрмөсүн угуу үчүн \"Сүрөттүн түшүндүрмөсүн угуу\" параметрин тандаңыз.</string>
   <string name="practice_gestures_title">Жаңсоолорду үйрөнүү</string>
   <string name="practice_keyboard_gestures_title">Ыкчам баскычтарды үйрөнүү</string>
@@ -1735,7 +1735,7 @@
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> коюлду. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly буюмдун чоо-жайын ушул тартипте айтат. Аны өзгөртүү үчүн деталга тийип, кармап туруңуз, андан кийин аны өйдө же ылдый сүйрөңүз. SandFly күйгүзүлгөндө, эки жолу таптап, кармап туруңуз, анан сүйрөңүз. Сиз ошондой эле өйдө жана ылдый жылдыруу аракеттерин колдоно аласыз.</string>
     <string name="title_pref_speak_items_before_scroll">Элементтерди көрүнүшкө жылганга чейин айтуу</string>
-    <string name="gemini_error_api_key">Gemini API ачкычын кабыл алган жок. Автоматтык сүрөттөмөлөр жөндөөлөрүндөгү ачкычты текшериңиз.</string>
+    <string name="gemini_error_api_key">Gemini API ачкычын кабыл алган жок. «Сүрөт жана экран сүрөттөмөлөрү» жөндөөлөрүндөгү ачкычты текшериңиз.</string>
     <string name="gemini_error_quota">Gemini API ачкычыңыздын колдонуу чегине жеттиңиз. Кийинчерээк кайра аракет кылыңыз.</string>
     <string name="gemini_error_busy">Gemini азыр бош эмес. Бир аздан кийин кайталап көрүңүз.</string>
     <string name="gemini_error_timeout">Gemini өтө көпкө жооп берген жок. Кайра аракет кылыңыз.</string>
@@ -1774,4 +1774,24 @@
     <string name="settings_export_failed">Жөндөөлөрдү экспорттоо мүмкүн болбоду</string>
     <string name="settings_import_done">Орнотуулар импорттолду</string>
     <string name="settings_import_failed">Бул файл SandFly же Backtalk жөндөө файлы эмес же окуу мүмкүн эмес</string>
+    <string name="sound_mode_needs_access">Үнсүз режимди күйгүзүү же өчүрүү үчүн «Тынчымды алба» режимине мүмкүнчүлүк бериңиз.</string>
+    <string name="keycombo_menu_category_arrow_key_nav">Жебе баскычтары менен чабыттоо</string>
+    <string name="arrow_key_nav_toggle">Жебе баскычтары менен чабыттоону күйгүзүү/өчүрүү</string>
+    <string name="arrow_key_nav_on">Жебе баскычтары менен чабыттоо күйүк</string>
+    <string name="arrow_key_nav_off">Жебе баскычтары менен чабыттоо өчүк</string>
+    <string name="arrow_key_nav_page_left">Бир барак солго</string>
+    <string name="arrow_key_nav_page_right">Бир барак оңго</string>
+    <string name="arrow_key_nav_assign_instruction">Бир баскычты же эки баскычты чогуу басыңыз, өзгөрткүч баскычтар менен же аларсыз. Тазалоо үчүн Backspace, демейки абалга кайтаруу үчүн Ctrl + Backspace, сактоо үчүн Enter, жокко чыгаруу үчүн Escape баскычын басыңыз.</string>
+    <string name="shortcut_next_track">Кийинки трек</string>
+    <string name="shortcut_previous_track">Мурунку трек</string>
+    <string-array name="pref_dictation_auto_stop_entries">
+        <item>Өчүк</item>
+        <item>3 секунд</item>
+        <item>5 секунд</item>
+        <item>10 секунд</item>
+        <item>15 секунд</item>
+        <item>30 секунд</item>
+        <item>1 мүнөт</item>
+    </string-array>
+    <string name="title_pref_dictation_auto_stop">Тынчтыктан кийин автоматтык түрдө токтотуу</string>
 </resources>

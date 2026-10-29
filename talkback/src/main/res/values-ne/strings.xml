@@ -1775,4 +1775,24 @@
     <string name="settings_export_failed">सेटिङहरू एक्सपोर्ट गर्न सकिएन</string>
     <string name="settings_import_done">सेटिङ्हरू आयात गरियो</string>
     <string name="settings_import_failed">यो फाइल SandFly वा Backtalk सेटिङ फाइल होइन, वा पढ्न सकिँदैन</string>
+    <string name="arrow_key_nav_assign_instruction">एउटा की वा दुईवटा की एकसाथ, मोडिफायर की सहित वा बिना थिच्नुहोस्। खाली गर्न Backspace, डिफल्टमा रिसेट गर्न Ctrl + Backspace, सेभ गर्न Enter वा रद्द गर्न Escape थिच्नुहोस्।</string>
+    <string name="arrow_key_nav_off">एरो की नेभिगेसन अफ</string>
+    <string name="arrow_key_nav_on">एरो की नेभिगेसन अन</string>
+    <string name="arrow_key_nav_page_left">पृष्ठ बायाँ सार्नुहोस्</string>
+    <string name="arrow_key_nav_page_right">पृष्ठ दायाँ सार्नुहोस्</string>
+    <string name="arrow_key_nav_toggle">एरो की नेभिगेसन अन वा अफ गर्नुहोस्</string>
+    <string name="keycombo_menu_category_arrow_key_nav">एरो की नेभिगेसन</string>
+    <string-array name="pref_dictation_auto_stop_entries">
+        <item>अफ</item>
+        <item>३ सेकेन्ड</item>
+        <item>५ सेकेन्ड</item>
+        <item>१० सेकेन्ड</item>
+        <item>१५ सेकेन्ड</item>
+        <item>३० सेकेन्ड</item>
+        <item>१ मिनेट</item>
+    </string-array>
+    <string name="shortcut_next_track">अर्को ट्र्याक</string>
+    <string name="shortcut_previous_track">अघिल्लो ट्र्याक</string>
+    <string name="sound_mode_needs_access">मौन अन वा अफ गर्न “डिस्टर्ब नगर्नुहोस्” पहुँचको अनुमति दिनुहोस्।</string>
+    <string name="title_pref_dictation_auto_stop">मौनपछि स्वतः रोक</string>
 </resources>

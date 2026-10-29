@@ -18,7 +18,7 @@
     <string name="ai_service_model_hint">Модел</string>
     <string name="ai_service_address_invalid">Дарек https:// менен башталышы керек. Эч нерсе сакталган жок.</string>
     <string name="dialog_message_ai_service_consent">Сүрөттөр жана скриншоттор сүрөттөп берүү үчүн <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> кызматына жөнөтүлөт, бул бир нече секундга созулат. Кызматтын өз шарттары жана купуялык саясаты колдонулат. Генеративдик ЖИ сыноо баскычында, ошондуктан ката кетирет.</string>
-    <string name="ai_service_error_api_key">AI кызматы API ачкычын кабыл алган жок. Анын орнотууларын Автоматтык сүрөттөмөлөрдөн текшериңиз.</string>
+    <string name="ai_service_error_api_key">AI кызматы API ачкычын кабыл алган жок. Анын жөндөөлөрүн «Сүрөт жана экран сүрөттөмөлөрү» бөлүмүнөн текшериңиз.</string>
     <string name="ai_service_error_quota">AI кызматын колдонуу чегине жетти. Кийинчерээк кайра аракет кылыңыз.</string>
     <string name="ai_service_error_busy">AI кызматы азыр бош эмес. Бир аздан кийин кайталап көрүңүз.</string>
     <string name="ai_service_error_timeout">AI кызматы жооп берүү үчүн өтө көпкө созулду. Кайра аракет кыл.</string>
@@ -30,7 +30,7 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">Жок</string>
-    <string name="ai_service_not_set_up">Эч кандай AI кызматы колдонулбайт. Бирди орнотуңуз же Автоматтык сүрөттөмөлөр жөндөөлөрүнөн бирин тандаңыз.</string>
+    <string name="ai_service_not_set_up">Эч кандай AI кызматы колдонулбайт. «Сүрөт жана экран сүрөттөмөлөрү» жөндөөлөрүнөн бирин орнотуңуз же тандаңыз.</string>
     <string name="ai_provider_none_set_up">Эч кандай AI кызматы орнотулган эмес. Төмөнкү жөндөөлөрүнөн бирин орнотуңуз.</string>
     <string name="ai_provider_other">Башка кызмат</string>
     <string name="title_pref_category_ai_services">AI кызматтары</string>

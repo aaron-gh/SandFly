@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_translation_auto">Automatisk oversættelse</string>
+    <string name="title_pref_translation_auto_service">Tjeneste til automatisk oversættelse</string>
+    <string name="title_pref_translation_copy">Kopiér oversættelser til udklipsholderen</string>
+    <string name="title_pref_translation_download_all">Download alle sprog</string>
+    <string name="title_pref_translation_languages">Sprog på enheden</string>
+    <string name="title_pref_translation_notifications">Oversæt notifikationer</string>
+    <string name="title_pref_translation_region">Område</string>
+    <string name="title_pref_translation_say_source">Sig originalsproget</string>
+    <string name="title_pref_translation_second_target">Oversæt tekst på målsproget til</string>
+    <string name="title_pref_translation_service">Oversættelsestjeneste</string>
+    <string name="title_pref_translation_source">Oversæt fra</string>
+    <string name="title_pref_translation_swap">Byt om på sprog</string>
+    <string name="title_pref_translation_target">Oversæt til</string>
+    <string name="title_pref_translation_target_voice">Brug en stemme til målsproget</string>
+    <string name="title_pref_translation_untranslated">Sprog, der ikke oversættes</string>
+    <string name="title_pref_translation_wifi_only">Download kun sprog via Wi-Fi</string>
+    <string name="title_translate_last_spoken_phrase">Oversæt den seneste sætning</string>
+    <string name="translation_address_hint">Adresse, f.eks. https://libretranslate.com</string>
+    <string name="translation_address_message">Adressen på en LibreTranslate-server, f.eks. https://libretranslate.com. Andre servere end din egen kræver muligvis en API-nøgle.</string>
+    <string name="translation_all_downloaded">Alle sprog er downloadet</string>
+    <string name="translation_already_in">Allerede på <xliff:g id="language" example="English">%1$s</xliff:g></string>
+    <string name="translation_auto_state">Automatisk oversættelse <xliff:g id="state" example="on">%1$s</xliff:g></string>
+    <string name="translation_category_speech">Tale</string>
+    <string name="translation_detect">Registrer sprog</string>
+    <string name="translation_device_language">Enhedens sprog (<xliff:g id="language" example="English">%1$s</xliff:g>)</string>
+    <plurals name="translation_download_all_failed">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> sprog blev ikke downloadet</item>
+        <item quantity="other"><xliff:g id="count" example="3">%1$d</xliff:g> sprog blev ikke downloadet</item>
+    </plurals>
+    <plurals name="translation_download_all_message">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> sprog, ca. <xliff:g id="size" example="30 MB">%2$s</xliff:g>.</item>
+        <item quantity="other"><xliff:g id="count" example="57">%1$d</xliff:g> sprog, ca. <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+    </plurals>
+    <string name="translation_download_all_progress">Downloader, <xliff:g id="done" example="12">%1$d</xliff:g> af <xliff:g id="total" example="57">%2$d</xliff:g></string>
+    <string name="translation_download_all_stop">Stop</string>
+    <string name="translation_download_all_stop_title">Vil du stoppe download af sprog?</string>
+    <string name="translation_download_done"><xliff:g id="language" example="German">%1$s</xliff:g> er downloadet</string>
+    <string name="translation_download_failed"><xliff:g id="language" example="German">%1$s</xliff:g> blev ikke downloadet</string>
+    <string name="translation_download_message">Ca. 30 MB.</string>
+    <string name="translation_download_title">Vil du downloade <xliff:g id="language" example="German">%1$s</xliff:g>?</string>
+    <string name="translation_downloading">Downloader <xliff:g id="languages" example="German and English">%1$s</xliff:g> til oversættelse på enheden</string>
+    <string name="translation_error"><xliff:g id="service" example="DeepL">%1$s</xliff:g> kunne ikke oversætte teksten.</string>
+    <string name="translation_error_api_key"><xliff:g id="service" example="DeepL">%1$s</xliff:g> accepterede ikke API-nøglen.</string>
+    <string name="translation_error_connection"><xliff:g id="service" example="DeepL">%1$s</xliff:g> kunne ikke kontaktes.</string>
+    <string name="translation_error_details"><xliff:g id="service" example="DeepL">%1$s</xliff:g> kunne ikke oversætte teksten: <xliff:g id="details" example="Wrong endpoint">%2$s</xliff:g></string>
+    <string name="translation_error_detection_downloading">Sprogregistrering downloades. Prøv igen om et øjeblik.</string>
+    <string name="translation_error_download">Sprog til oversættelse på enheden kunne ikke downloades.</string>
+    <string name="translation_error_downloading">Sprog til oversættelse på enheden downloades stadig</string>
+    <string name="translation_error_language">Oversættelse med <xliff:g id="service" example="On-device">%1$s</xliff:g> understøtter ikke <xliff:g id="language" example="Klingon">%2$s</xliff:g>.</string>
+    <string name="translation_error_no_address">Angiv adressen til <xliff:g id="service" example="LibreTranslate">%1$s</xliff:g> i indstillingerne for Oversættelse.</string>
+    <string name="translation_error_no_key">Angiv API-nøglen til <xliff:g id="service" example="DeepL">%1$s</xliff:g> i indstillingerne for Oversættelse.</string>
+    <string name="translation_error_not_detected">Sproget blev ikke registreret</string>
+    <string name="translation_error_quota"><xliff:g id="service" example="DeepL">%1$s</xliff:g>: forbrugsgrænsen er nået.</string>
+    <string name="translation_from">Fra <xliff:g id="language" example="German">%1$s</xliff:g>:</string>
+    <string name="translation_key_message">Indsæt din API-nøgle til <xliff:g id="service" example="DeepL">%1$s</xliff:g>. Ryd feltet, og gem for at fjerne den. Tekst, du oversætter, sendes til <xliff:g id="service" example="DeepL">%1$s</xliff:g>.</string>
+    <string name="translation_language_downloaded"><xliff:g id="language" example="German">%1$s</xliff:g>, downloadet</string>
+    <string name="translation_language_downloading"><xliff:g id="language" example="German">%1$s</xliff:g>, downloades</string>
+    <string name="translation_languages_summary">Downloadet: <xliff:g id="languages" example="English, German">%1$s</xliff:g></string>
+    <string name="translation_nothing">Intet at oversætte</string>
+    <string name="translation_region_global">Global</string>
+    <string name="translation_region_message">Området for din Translator-ressource i Azure, f.eks. westeurope. Lad feltet være tomt for en global ressource.</string>
+    <string name="translation_second_none">Oversæt ikke</string>
+    <string name="translation_service_ai">AI-tjeneste</string>
+    <string name="translation_service_deepl">DeepL</string>
+    <string name="translation_service_google_cloud">Google Cloud Translation</string>
+    <string name="translation_service_libretranslate">LibreTranslate</string>
+    <string name="translation_service_microsoft">Microsoft Translator</string>
+    <string name="translation_service_not_set_up"><xliff:g id="service" example="DeepL">%1$s</xliff:g>, ikke konfigureret</string>
+    <string name="translation_service_on_device">På enheden</string>
+    <string name="translation_swapped">Fra <xliff:g id="source" example="German">%1$s</xliff:g> til <xliff:g id="target" example="English">%2$s</xliff:g></string>
+    <string name="translation_title">Oversættelse</string>
+    <string name="translation_untranslated_none">Ingen</string>
+</resources>

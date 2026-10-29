@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="command_add_arrow_keys">Dodaj tastere sa strelicama</string>
+    <string name="command_add_gesture">Dodaj pokret</string>
+    <string name="command_choose_arrow_keys">Izaberite tastere sa strelicama</string>
+    <string name="command_choose_gesture">Izaberite pokret</string>
+    <string name="command_gesture_assigned"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g>: <xliff:g id="command" example="Describe image">%2$s</xliff:g></string>
+    <string name="command_gestures">Pokreti</string>
+    <string name="command_keyboard_shortcut">Tasterska prečica</string>
+    <string name="command_no_arrow_keys">Nema tastera sa strelicama</string>
+    <string name="command_no_gestures">Nema pokreta</string>
+    <string name="command_remove_arrow_keys">Ukloni tastere sa strelicama</string>
+    <string name="command_remove_gesture">Ukloni pokret</string>
+    <string name="command_replace">Zameni</string>
+    <string name="command_replace_gesture">Pokret „<xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g>“ pokreće komandu „<xliff:g id="old_command" example="Read from top">%2$s</xliff:g>“. Želite li da ga koristite za komandu „<xliff:g id="new_command" example="Describe image">%3$s</xliff:g>“?</string>
+    <string name="commands_category_activation">Aktiviranje</string>
+    <string name="commands_category_media">Mediji i jačina zvuka</string>
+    <string name="commands_category_sandfly">SandFly</string>
+    <string name="commands_category_scrolling">Pomeranje</string>
+    <string name="commands_category_speech">Govor</string>
+    <string name="commands_category_tables">Tabele</string>
+    <string name="commands_category_web">Veb</string>
+    <string name="item_list_current">Trenutno</string>
+    <string name="item_list_not_in_reading_controls">Nije u kontrolama čitanja</string>
+    <string name="item_list_not_in_sandfly_menu">Nije u SandFly meniju</string>
+    <string name="item_list_options">Opcije</string>
+    <string name="sounds_category_sounds">Zvukovi</string>
+    <string name="sounds_category_vibration">Vibracija</string>
+    <string name="speech_category_languages">Jezici</string>
+    <string name="speech_category_other_apps">Druge aplikacije</string>
+    <string name="speech_category_pronunciation">Izgovor</string>
+    <string name="speech_category_stopping">Zaustavljanje govora</string>
+    <string name="speech_category_voice">Glas</string>
+    <string name="title_pref_audio_output">Audio izlaz</string>
+    <string name="title_pref_backup">Rezervna kopija i vraćanje</string>
+    <string name="title_pref_braille">Brajevo pismo</string>
+    <string name="title_pref_commands">Komande</string>
+    <string name="title_pref_display">Prikaz</string>
+    <string name="title_pref_image_and_screen_descriptions">Opisi slika i ekrana</string>
+    <string name="title_pref_pause">Pauza i isključivanje</string>
+    <string name="title_pref_quick_settings_screen">Brza podešavanja</string>
+    <string name="title_pref_speech">Govor</string>
+    <string name="title_pref_speech_stream_control">Kontrola jačine zvuka za govor</string>
+    <string name="title_pref_touch">Dodir</string>
+    <string name="title_pref_typing">Unos teksta</string>
+    <string name="title_pref_updates">Ažuriranja i instalacija</string>
+    <string name="title_pref_volume_keys">Tasteri za jačinu zvuka</string>
+    <string name="typing_category_other_input">Drugi načini unosa</string>
+    <string name="verbosity_category_announcements">Obaveštenja o promenama</string>
+    <string name="verbosity_category_items">Stavke</string>
+    <string name="verbosity_category_text">Tekst i simboli</string>
+</resources>

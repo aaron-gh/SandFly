@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="command_add_arrow_keys">Сум товч нэмэх</string>
+    <string name="command_add_gesture">Зангаа нэмэх</string>
+    <string name="command_choose_arrow_keys">Сум товч сонгох</string>
+    <string name="command_choose_gesture">Зангаа сонгох</string>
+    <string name="command_gesture_assigned"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g>: <xliff:g id="command" example="Describe image">%2$s</xliff:g></string>
+    <string name="command_gestures">Зангаа</string>
+    <string name="command_keyboard_shortcut">Гарын товчлол</string>
+    <string name="command_no_arrow_keys">Сум товч байхгүй</string>
+    <string name="command_no_gestures">Зангаа байхгүй</string>
+    <string name="command_remove_arrow_keys">Сум товчийг устгах</string>
+    <string name="command_remove_gesture">Зангааг устгах</string>
+    <string name="command_replace">Солих</string>
+    <string name="command_replace_gesture"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g> одоо <xliff:g id="old_command" example="Read from top">%2$s</xliff:g> тушаалыг гүйцэтгэдэг. Оронд нь <xliff:g id="new_command" example="Describe image">%3$s</xliff:g>-д ашиглах уу?</string>
+    <string name="commands_category_activation">Идэвхжүүлэлт</string>
+    <string name="commands_category_media">Медиа ба дууны түвшин</string>
+    <string name="commands_category_sandfly">SandFly</string>
+    <string name="commands_category_scrolling">Гүйлгэх</string>
+    <string name="commands_category_speech">Яриа</string>
+    <string name="commands_category_tables">Хүснэгт</string>
+    <string name="commands_category_web">Веб</string>
+    <string name="item_list_current">Одоогийн</string>
+    <string name="item_list_not_in_reading_controls">Уншилтын хяналтад байхгүй</string>
+    <string name="item_list_not_in_sandfly_menu">SandFly цэсэд байхгүй</string>
+    <string name="item_list_options">Сонголтууд</string>
+    <string name="sounds_category_sounds">Дуунууд</string>
+    <string name="sounds_category_vibration">Чичиргээ</string>
+    <string name="speech_category_languages">Хэлнүүд</string>
+    <string name="speech_category_other_apps">Бусад програмууд</string>
+    <string name="speech_category_pronunciation">Дуудлага</string>
+    <string name="speech_category_stopping">Яриаг зогсоох</string>
+    <string name="speech_category_voice">Дуу хоолой</string>
+    <string name="title_pref_audio_output">Аудио гаралт</string>
+    <string name="title_pref_backup">Нөөцлөх ба сэргээх</string>
+    <string name="title_pref_braille">Брайл</string>
+    <string name="title_pref_commands">Тушаалууд</string>
+    <string name="title_pref_display">Дэлгэц</string>
+    <string name="title_pref_image_and_screen_descriptions">Зураг ба дэлгэцийн тайлбар</string>
+    <string name="title_pref_pause">Түр зогсоох ба унтраах</string>
+    <string name="title_pref_quick_settings_screen">Шуурхай тохиргоо</string>
+    <string name="title_pref_speech">Яриа</string>
+    <string name="title_pref_speech_stream_control">Ярианы дууны түвшний удирдлага</string>
+    <string name="title_pref_touch">Хүрэлт</string>
+    <string name="title_pref_typing">Бичих</string>
+    <string name="title_pref_updates">Шинэчлэлт ба суулгалт</string>
+    <string name="title_pref_volume_keys">Дууны товчнууд</string>
+    <string name="typing_category_other_input">Бичих бусад арга</string>
+    <string name="verbosity_category_announcements">Зарлал</string>
+    <string name="verbosity_category_items">Зүйлс</string>
+    <string name="verbosity_category_text">Текст ба тэмдэгт</string>
+</resources>

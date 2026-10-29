@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="command_add_arrow_keys">Dodaj puščične tipke</string>
+    <string name="command_add_gesture">Dodaj potezo</string>
+    <string name="command_choose_arrow_keys">Izberite puščične tipke</string>
+    <string name="command_choose_gesture">Izberite potezo</string>
+    <string name="command_gesture_assigned"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g>: <xliff:g id="command" example="Describe image">%2$s</xliff:g></string>
+    <string name="command_gestures">Poteze</string>
+    <string name="command_keyboard_shortcut">Bližnjična tipka</string>
+    <string name="command_no_arrow_keys">Ni puščičnih tipk</string>
+    <string name="command_no_gestures">Ni potez</string>
+    <string name="command_remove_arrow_keys">Odstrani puščične tipke</string>
+    <string name="command_remove_gesture">Odstrani potezo</string>
+    <string name="command_replace">Zamenjaj</string>
+    <string name="command_replace_gesture"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g> zažene ukaz <xliff:g id="old_command" example="Read from top">%2$s</xliff:g>. Želite potezo namesto tega uporabiti za ukaz <xliff:g id="new_command" example="Describe image">%3$s</xliff:g>?</string>
+    <string name="commands_category_activation">Aktiviranje</string>
+    <string name="commands_category_media">Predstavnost in glasnost</string>
+    <string name="commands_category_sandfly">SandFly</string>
+    <string name="commands_category_scrolling">Pomikanje</string>
+    <string name="commands_category_speech">Govor</string>
+    <string name="commands_category_tables">Tabele</string>
+    <string name="commands_category_web">Splet</string>
+    <string name="item_list_current">Trenutno</string>
+    <string name="item_list_not_in_reading_controls">Ni med kontrolniki za branje</string>
+    <string name="item_list_not_in_sandfly_menu">Ni v meniju SandFly</string>
+    <string name="item_list_options">Možnosti</string>
+    <string name="sounds_category_sounds">Zvoki</string>
+    <string name="sounds_category_vibration">Vibriranje</string>
+    <string name="speech_category_languages">Jeziki</string>
+    <string name="speech_category_other_apps">Druge aplikacije</string>
+    <string name="speech_category_pronunciation">Izgovorjava</string>
+    <string name="speech_category_stopping">Ustavljanje govora</string>
+    <string name="speech_category_voice">Glas</string>
+    <string name="title_pref_audio_output">Avdio izhod</string>
+    <string name="title_pref_backup">Varnostno kopiranje in obnovitev</string>
+    <string name="title_pref_braille">Brajica</string>
+    <string name="title_pref_commands">Ukazi</string>
+    <string name="title_pref_display">Prikaz</string>
+    <string name="title_pref_image_and_screen_descriptions">Opisi slik in zaslona</string>
+    <string name="title_pref_pause">Začasna ustavitev in izklop</string>
+    <string name="title_pref_quick_settings_screen">Hitre nastavitve</string>
+    <string name="title_pref_speech">Govor</string>
+    <string name="title_pref_speech_stream_control">Upravljanje glasnosti govora</string>
+    <string name="title_pref_touch">Dotik</string>
+    <string name="title_pref_typing">Tipkanje</string>
+    <string name="title_pref_updates">Posodobitve in namestitev</string>
+    <string name="title_pref_volume_keys">Tipki za glasnost</string>
+    <string name="typing_category_other_input">Drugi načini vnosa</string>
+    <string name="verbosity_category_announcements">Najave</string>
+    <string name="verbosity_category_items">Elementi</string>
+    <string name="verbosity_category_text">Besedilo in simboli</string>
+</resources>

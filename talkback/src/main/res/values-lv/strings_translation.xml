@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_translation_auto">Automātiskā tulkošana</string>
+    <string name="title_pref_translation_auto_service">Automātiskās tulkošanas pakalpojums</string>
+    <string name="title_pref_translation_copy">Kopēt tulkojumus starpliktuvē</string>
+    <string name="title_pref_translation_download_all">Lejupielādēt visas valodas</string>
+    <string name="title_pref_translation_languages">Valodas ierīcē</string>
+    <string name="title_pref_translation_notifications">Tulkot paziņojumus</string>
+    <string name="title_pref_translation_region">Reģions</string>
+    <string name="title_pref_translation_say_source">Izrunāt oriģinālvalodu</string>
+    <string name="title_pref_translation_second_target">Mērķvalodā esošo tekstu tulkot uz</string>
+    <string name="title_pref_translation_service">Tulkošanas pakalpojums</string>
+    <string name="title_pref_translation_source">Tulkot no</string>
+    <string name="title_pref_translation_swap">Samainīt valodas</string>
+    <string name="title_pref_translation_target">Tulkot uz</string>
+    <string name="title_pref_translation_target_voice">Izmantot mērķvalodas balsi</string>
+    <string name="title_pref_translation_untranslated">Netulkojamās valodas</string>
+    <string name="title_pref_translation_wifi_only">Lejupielādēt valodas tikai Wi-Fi tīklā</string>
+    <string name="title_translate_last_spoken_phrase">Tulkot pēdējo izrunāto frāzi</string>
+    <string name="translation_address_hint">Adrese, piemēram, https://libretranslate.com</string>
+    <string name="translation_address_message">LibreTranslate servera adrese, piemēram, https://libretranslate.com. Serveriem, kas nav jūsu pašu, var būt nepieciešama API atslēga.</string>
+    <string name="translation_all_downloaded">Visas valodas lejupielādētas</string>
+    <string name="translation_already_in">Jau ir šajā valodā: <xliff:g id="language" example="English">%1$s</xliff:g></string>
+    <string name="translation_auto_state">Automātiskā tulkošana: <xliff:g id="state" example="on">%1$s</xliff:g></string>
+    <string name="translation_category_speech">Runa</string>
+    <string name="translation_detect">Noteikt valodu</string>
+    <string name="translation_device_language">Ierīces valoda (<xliff:g id="language" example="English">%1$s</xliff:g>)</string>
+    <plurals name="translation_download_all_failed">
+        <item quantity="zero"><xliff:g id="count" example="3">%1$d</xliff:g> valodas netika lejupielādētas</item>
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> valoda netika lejupielādēta</item>
+        <item quantity="other"><xliff:g id="count" example="3">%1$d</xliff:g> valodas netika lejupielādētas</item>
+    </plurals>
+    <plurals name="translation_download_all_message">
+        <item quantity="zero"><xliff:g id="count" example="57">%1$d</xliff:g> valodas, aptuveni <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> valoda, aptuveni <xliff:g id="size" example="30 MB">%2$s</xliff:g>.</item>
+        <item quantity="other"><xliff:g id="count" example="57">%1$d</xliff:g> valodas, aptuveni <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+    </plurals>
+    <string name="translation_download_all_progress">Notiek lejupielāde, <xliff:g id="done" example="12">%1$d</xliff:g> no <xliff:g id="total" example="57">%2$d</xliff:g></string>
+    <string name="translation_download_all_stop">Apturēt</string>
+    <string name="translation_download_all_stop_title">Vai apturēt valodu lejupielādi?</string>
+    <string name="translation_download_done">Lejupielādēta valoda: <xliff:g id="language" example="German">%1$s</xliff:g></string>
+    <string name="translation_download_failed">Netika lejupielādēta valoda: <xliff:g id="language" example="German">%1$s</xliff:g></string>
+    <string name="translation_download_message">Aptuveni 30 MB.</string>
+    <string name="translation_download_title">Vai lejupielādēt valodu: <xliff:g id="language" example="German">%1$s</xliff:g>?</string>
+    <string name="translation_downloading">Notiek lejupielāde tulkošanai ierīcē: <xliff:g id="languages" example="German and English">%1$s</xliff:g></string>
+    <string name="translation_error"><xliff:g id="service" example="DeepL">%1$s</xliff:g> nevarēja iztulkot tekstu.</string>
+    <string name="translation_error_api_key"><xliff:g id="service" example="DeepL">%1$s</xliff:g> nepieņēma API atslēgu.</string>
+    <string name="translation_error_connection">Nevarēja sazināties ar <xliff:g id="service" example="DeepL">%1$s</xliff:g>.</string>
+    <string name="translation_error_details"><xliff:g id="service" example="DeepL">%1$s</xliff:g> nevarēja iztulkot tekstu: <xliff:g id="details" example="Wrong endpoint">%2$s</xliff:g></string>
+    <string name="translation_error_detection_downloading">Notiek valodas noteikšanas lejupielāde. Pēc brīža mēģiniet vēlreiz.</string>
+    <string name="translation_error_download">Nevarēja lejupielādēt valodas tulkošanai ierīcē.</string>
+    <string name="translation_error_downloading">Valodas tulkošanai ierīcē joprojām tiek lejupielādētas</string>
+    <string name="translation_error_language">Tulkošanas pakalpojums <xliff:g id="service" example="On-device">%1$s</xliff:g> neatbalsta valodu: <xliff:g id="language" example="Klingon">%2$s</xliff:g>.</string>
+    <string name="translation_error_no_address">Ievadiet <xliff:g id="service" example="LibreTranslate">%1$s</xliff:g> adresi tulkošanas iestatījumos.</string>
+    <string name="translation_error_no_key">Ievadiet <xliff:g id="service" example="DeepL">%1$s</xliff:g> API atslēgu tulkošanas iestatījumos.</string>
+    <string name="translation_error_not_detected">Valoda netika noteikta</string>
+    <string name="translation_error_quota">Sasniegts <xliff:g id="service" example="DeepL">%1$s</xliff:g> lietošanas ierobežojums.</string>
+    <string name="translation_from">No valodas <xliff:g id="language" example="German">%1$s</xliff:g>:</string>
+    <string name="translation_key_message">Ielīmējiet savu <xliff:g id="service" example="DeepL">%1$s</xliff:g> API atslēgu. Lai to noņemtu, notīriet lauku un saglabājiet. Teksts, ko tulkojat, tiek nosūtīts uz <xliff:g id="service" example="DeepL">%1$s</xliff:g>.</string>
+    <string name="translation_language_downloaded"><xliff:g id="language" example="German">%1$s</xliff:g>, lejupielādēta</string>
+    <string name="translation_language_downloading"><xliff:g id="language" example="German">%1$s</xliff:g>, notiek lejupielāde</string>
+    <string name="translation_languages_summary">Lejupielādētas: <xliff:g id="languages" example="English, German">%1$s</xliff:g></string>
+    <string name="translation_nothing">Nav ko tulkot</string>
+    <string name="translation_region_global">Globāls</string>
+    <string name="translation_region_message">Jūsu Translator resursa reģions pakalpojumā Azure, piemēram, westeurope. Globālam resursam atstājiet tukšu.</string>
+    <string name="translation_second_none">Netulkot</string>
+    <string name="translation_service_ai">AI pakalpojums</string>
+    <string name="translation_service_deepl">DeepL</string>
+    <string name="translation_service_google_cloud">Google Cloud Translation</string>
+    <string name="translation_service_libretranslate">LibreTranslate</string>
+    <string name="translation_service_microsoft">Microsoft Translator</string>
+    <string name="translation_service_not_set_up"><xliff:g id="service" example="DeepL">%1$s</xliff:g>, nav iestatīts</string>
+    <string name="translation_service_on_device">Ierīcē</string>
+    <string name="translation_swapped">No valodas <xliff:g id="source" example="German">%1$s</xliff:g> uz valodu <xliff:g id="target" example="English">%2$s</xliff:g></string>
+    <string name="translation_title">Tulkošana</string>
+    <string name="translation_untranslated_none">Nav</string>
+</resources>

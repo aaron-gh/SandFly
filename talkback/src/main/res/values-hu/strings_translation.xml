@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_translation_auto">Automatikus fordítás</string>
+    <string name="title_pref_translation_auto_service">Automatikus fordítás szolgáltatása</string>
+    <string name="title_pref_translation_copy">Fordítások másolása a vágólapra</string>
+    <string name="title_pref_translation_download_all">Összes nyelv letöltése</string>
+    <string name="title_pref_translation_languages">Eszközön lévő nyelvek</string>
+    <string name="title_pref_translation_notifications">Értesítések fordítása</string>
+    <string name="title_pref_translation_region">Régió</string>
+    <string name="title_pref_translation_say_source">Az eredeti nyelv kimondása</string>
+    <string name="title_pref_translation_second_target">Célnyelvű szöveg fordítása erre a nyelvre</string>
+    <string name="title_pref_translation_service">Fordítási szolgáltatás</string>
+    <string name="title_pref_translation_source">Fordítás erről a nyelvről</string>
+    <string name="title_pref_translation_swap">Nyelvek felcserélése</string>
+    <string name="title_pref_translation_target">Fordítás erre a nyelvre</string>
+    <string name="title_pref_translation_target_voice">Célnyelvi hang használata</string>
+    <string name="title_pref_translation_untranslated">Nem fordított nyelvek</string>
+    <string name="title_pref_translation_wifi_only">Nyelvek letöltése csak Wi-Fi-n</string>
+    <string name="title_translate_last_spoken_phrase">Az utolsó felolvasott mondat fordítása</string>
+    <string name="translation_address_hint">Cím, például https://libretranslate.com</string>
+    <string name="translation_address_message">Egy LibreTranslate-szerver címe, például https://libretranslate.com. A nem saját szerverekhez API-kulcs lehet szükséges.</string>
+    <string name="translation_all_downloaded">Minden nyelv letöltve</string>
+    <string name="translation_already_in">Már ezen a nyelven van: <xliff:g id="language" example="English">%1$s</xliff:g></string>
+    <string name="translation_auto_state">Automatikus fordítás: <xliff:g id="state" example="on">%1$s</xliff:g></string>
+    <string name="translation_category_speech">Beszéd</string>
+    <string name="translation_detect">Nyelv felismerése</string>
+    <string name="translation_device_language">Eszköz nyelve (<xliff:g id="language" example="English">%1$s</xliff:g>)</string>
+    <plurals name="translation_download_all_failed">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> nyelv nincs letöltve</item>
+        <item quantity="other"><xliff:g id="count" example="3">%1$d</xliff:g> nyelv nincs letöltve</item>
+    </plurals>
+    <plurals name="translation_download_all_message">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> nyelv, körülbelül <xliff:g id="size" example="30 MB">%2$s</xliff:g>.</item>
+        <item quantity="other"><xliff:g id="count" example="57">%1$d</xliff:g> nyelv, körülbelül <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+    </plurals>
+    <string name="translation_download_all_progress">Letöltés, <xliff:g id="done" example="12">%1$d</xliff:g> / <xliff:g id="total" example="57">%2$d</xliff:g></string>
+    <string name="translation_download_all_stop">Leállítás</string>
+    <string name="translation_download_all_stop_title">Leállítja a nyelvek letöltését?</string>
+    <string name="translation_download_done"><xliff:g id="language" example="German">%1$s</xliff:g> letöltve</string>
+    <string name="translation_download_failed"><xliff:g id="language" example="German">%1$s</xliff:g> nincs letöltve</string>
+    <string name="translation_download_message">Körülbelül 30 MB.</string>
+    <string name="translation_download_title">Letölti ezt a nyelvet: <xliff:g id="language" example="German">%1$s</xliff:g>?</string>
+    <string name="translation_downloading"><xliff:g id="languages" example="German and English">%1$s</xliff:g> letöltése az eszközön futó fordításhoz</string>
+    <string name="translation_error">A(z) <xliff:g id="service" example="DeepL">%1$s</xliff:g> nem tudta lefordítani a szöveget.</string>
+    <string name="translation_error_api_key">A(z) <xliff:g id="service" example="DeepL">%1$s</xliff:g> nem fogadta el az API-kulcsot.</string>
+    <string name="translation_error_connection">A(z) <xliff:g id="service" example="DeepL">%1$s</xliff:g> nem érhető el.</string>
+    <string name="translation_error_details">A(z) <xliff:g id="service" example="DeepL">%1$s</xliff:g> nem tudta lefordítani a szöveget: <xliff:g id="details" example="Wrong endpoint">%2$s</xliff:g></string>
+    <string name="translation_error_detection_downloading">A nyelvfelismerés letöltése folyamatban van. Próbálja újra egy pillanat múlva.</string>
+    <string name="translation_error_download">Az eszközön futó fordítás nyelveit nem sikerült letölteni.</string>
+    <string name="translation_error_downloading">Az eszközön futó fordítás nyelveinek letöltése még folyamatban van</string>
+    <string name="translation_error_language">A(z) <xliff:g id="service" example="On-device">%1$s</xliff:g> fordítás nem támogatja ezt a nyelvet: <xliff:g id="language" example="Klingon">%2$s</xliff:g>.</string>
+    <string name="translation_error_no_address">Adja meg a(z) <xliff:g id="service" example="LibreTranslate">%1$s</xliff:g> címét a Fordítás beállításainál.</string>
+    <string name="translation_error_no_key">Adja meg a(z) <xliff:g id="service" example="DeepL">%1$s</xliff:g> API-kulcsát a Fordítás beállításainál.</string>
+    <string name="translation_error_not_detected">A nyelv nem ismerhető fel</string>
+    <string name="translation_error_quota">A(z) <xliff:g id="service" example="DeepL">%1$s</xliff:g> használati korlátja elérve.</string>
+    <string name="translation_from"><xliff:g id="language" example="German">%1$s</xliff:g> nyelvről:</string>
+    <string name="translation_key_message">Illessze be a(z) <xliff:g id="service" example="DeepL">%1$s</xliff:g> API-kulcsát. Az eltávolításához ürítse ki a mezőt, és mentsen. A lefordított szöveg a(z) <xliff:g id="service" example="DeepL">%1$s</xliff:g> szolgáltatáshoz kerül.</string>
+    <string name="translation_language_downloaded"><xliff:g id="language" example="German">%1$s</xliff:g>, letöltve</string>
+    <string name="translation_language_downloading"><xliff:g id="language" example="German">%1$s</xliff:g>, letöltés folyamatban</string>
+    <string name="translation_languages_summary">Letöltve: <xliff:g id="languages" example="English, German">%1$s</xliff:g></string>
+    <string name="translation_nothing">Nincs mit lefordítani</string>
+    <string name="translation_region_global">Globális</string>
+    <string name="translation_region_message">A Translator-erőforrás régiója az Azure-ban, például westeurope. Globális erőforrás esetén hagyja üresen.</string>
+    <string name="translation_second_none">Ne legyen fordítás</string>
+    <string name="translation_service_ai">AI-szolgáltatás</string>
+    <string name="translation_service_deepl">DeepL</string>
+    <string name="translation_service_google_cloud">Google Cloud Translation</string>
+    <string name="translation_service_libretranslate">LibreTranslate</string>
+    <string name="translation_service_microsoft">Microsoft Translator</string>
+    <string name="translation_service_not_set_up"><xliff:g id="service" example="DeepL">%1$s</xliff:g>, nincs beállítva</string>
+    <string name="translation_service_on_device">Eszközön futó</string>
+    <string name="translation_swapped">Fordítás <xliff:g id="source" example="German">%1$s</xliff:g> nyelvről <xliff:g id="target" example="English">%2$s</xliff:g> nyelvre</string>
+    <string name="translation_title">Fordítás</string>
+    <string name="translation_untranslated_none">Nincs</string>
+</resources>

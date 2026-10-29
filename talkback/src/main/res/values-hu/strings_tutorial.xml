@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="sandfly_tutorial_actions_archive">Lépjen az üzenetre. <xliff:g id="gesture" example="Swipe up">%1$s</xliff:g> vagy <xliff:g id="gesture" example="Swipe down">%2$s</xliff:g>: lépkedés a műveletei között. <xliff:g id="gesture" example="Double-tap">%3$s</xliff:g>: a hallott művelet végrehajtása. Hajtsa végre ezt: <xliff:g id="action" example="Archive">%4$s</xliff:g>.</string>
+    <string name="sandfly_tutorial_actions_intro">Egyes elemeknek az aktiváláson kívül más műveleteik is vannak, például egy üzenetnél Archiválás vagy Törlés. Amíg egy ilyen elemen van a fókusz, a „Műveletek” felolvasásvezérlő végighalad rajtuk.</string>
+    <string name="sandfly_tutorial_actions_title">Műveletek</string>
+    <string name="sandfly_tutorial_activate_button">Lépjen ide: <xliff:g id="button" example="Ring the bell">%2$s</xliff:g>. <xliff:g id="gesture" example="Double-tap">%1$s</xliff:g>: aktiválás.</string>
+    <string name="sandfly_tutorial_activate_check_box">Jelölje be ugyanígy ezt: <xliff:g id="check_box" example="Extra cheese">%1$s</xliff:g>.</string>
+    <string name="sandfly_tutorial_activate_hold">Egyes elemek nyomva tartva mást csinálnak. Lépjen ide: <xliff:g id="button" example="Details">%2$s</xliff:g>. <xliff:g id="gesture" example="Double-tap and hold">%1$s</xliff:g>: nyomva tartás.</string>
+    <string name="sandfly_tutorial_activate_intro">Az aktiválás a fókuszban lévő elemre hat, bárhol koppint is a képernyőn.</string>
+    <string name="sandfly_tutorial_activate_title">Elemek aktiválása</string>
+    <string name="sandfly_tutorial_back_in_lesson">A Vissza nem lép ki a leckéből. Másik lecke kiválasztásához használja a Tartalom gombot.</string>
+    <string name="sandfly_tutorial_bell">Csengetés</string>
+    <string name="sandfly_tutorial_bell_rung">Csengetések száma: <xliff:g id="count" example="1">%1$d</xliff:g></string>
+    <string name="sandfly_tutorial_brightness">Fényerő</string>
+    <string name="sandfly_tutorial_chapter_basics">Alapok</string>
+    <string name="sandfly_tutorial_chapter_controls">Vezérlők és szöveg</string>
+    <string name="sandfly_tutorial_chapter_getting_around">Navigálás</string>
+    <string name="sandfly_tutorial_chapter_practice">Gyakorlás</string>
+    <string name="sandfly_tutorial_chapter_reading">Olvasás</string>
+    <string name="sandfly_tutorial_choose_reading_control"><xliff:g id="gesture" example="Swipe down then up">%1$s</xliff:g> vagy <xliff:g id="gesture" example="Swipe up then down">%2$s</xliff:g>: a felolvasásvezérlő váltása. Válassza ezt: <xliff:g id="reading_control" example="Words">%3$s</xliff:g>.</string>
+    <string name="sandfly_tutorial_close">Útmutató bezárása</string>
+    <string name="sandfly_tutorial_commands_copy"><xliff:g id="gesture" example="Triple-tap with 3 fingers">%1$s</xliff:g>: a SandFly által utoljára kimondott szöveg másolása a vágólapra.</string>
+    <string name="sandfly_tutorial_commands_intro">Ezek a parancsok minden képernyőn működnek.</string>
+    <string name="sandfly_tutorial_commands_search"><xliff:g id="gesture" example="Swipe left then down">%1$s</xliff:g>: szöveg keresése a képernyőn. Ebben a leckében az útmutató ehelyett kimondja, mit csinál.</string>
+    <string name="sandfly_tutorial_commands_speech_off"><xliff:g id="gesture" example="Double-tap with 3 fingers">%1$s</xliff:g>: a beszéd kikapcsolása, ismét: bekapcsolása. Ebben a leckében az útmutató ehelyett kimondja, mit csinál.</string>
+    <string name="sandfly_tutorial_commands_status"><xliff:g id="gesture" example="Triple-tap with 2 fingers">%1$s</xliff:g>: az idő, az akkumulátor töltöttsége és egyéb állapotok kimondása.</string>
+    <string name="sandfly_tutorial_commands_title">Hasznos parancsok</string>
+    <string name="sandfly_tutorial_contents">Tartalom</string>
+    <string name="sandfly_tutorial_contents_intro">A leckék sorrendben. Mindegyik külön is megnyitható.</string>
+    <string name="sandfly_tutorial_continuous_intro">A SandFly csúsztatás nélkül is fel tudja olvasni a tartalmat a fókuszált elemtől a képernyő végéig. A képernyő megérintése leállítja az olvasást.</string>
+    <string name="sandfly_tutorial_continuous_move">Lépjen a recept első sorára.</string>
+    <string name="sandfly_tutorial_continuous_read"><xliff:g id="gesture" example="Swipe down then right">%1$s</xliff:g>: olvasás a fókuszált elemtől.</string>
+    <string name="sandfly_tutorial_continuous_read_from_menu"><xliff:g id="gesture" example="Tap with 3 fingers">%1$s</xliff:g>: a SandFly-menü megnyitása. Ezután válassza ezt: <xliff:g id="command" example="Read from focused item">%2$s</xliff:g>.</string>
+    <string name="sandfly_tutorial_continuous_title">Folyamatos olvasás</string>
+    <string name="sandfly_tutorial_details">Részletek</string>
+    <string name="sandfly_tutorial_details_shown">Asztal 2 főre este 7-kor, az ablaknál.</string>
+    <string name="sandfly_tutorial_done">Kész</string>
+    <string name="sandfly_tutorial_end_practice">Gyakorlás befejezése</string>
+    <string name="sandfly_tutorial_explore_activate">Érintse meg a Csillagot, és emelje fel az ujját. <xliff:g id="gesture" example="Double-tap">%1$s</xliff:g> bárhol a képernyőn: aktiválás.</string>
+    <string name="sandfly_tutorial_explore_find">Húzza végig egy ujját a képernyőn, és keresse meg a négy négyzetet: Nap, Hold, Csillag és Felhő.</string>
+    <string name="sandfly_tutorial_explore_intro">A képernyő megérintésekor a SandFly kimondja az ujja alatti elemet. Egy elem megérintése nem aktiválja azt.</string>
+    <string name="sandfly_tutorial_explore_title">Felfedezés érintéssel</string>
+    <string name="sandfly_tutorial_extra_cheese">Extra sajt</string>
+    <string name="sandfly_tutorial_finish">Útmutató befejezése</string>
+    <string name="sandfly_tutorial_forecast_today">Ma</string>
+    <string name="sandfly_tutorial_forecast_today_text">Napos és meleg, enyhe széllel.</string>
+    <string name="sandfly_tutorial_forecast_tomorrow">Holnap</string>
+    <string name="sandfly_tutorial_forecast_tomorrow_text">Délelőtt felhős, déltől eső.</string>
+    <string name="sandfly_tutorial_forecast_weekend">Hétvége</string>
+    <string name="sandfly_tutorial_forecast_weekend_text">Szombaton szeles, vasárnap derült idő.</string>
+    <string name="sandfly_tutorial_headings_intro">A képernyők és a weboldalak címsorokkal tagolják a tartalmukat. A „Címsorok” felolvasásvezérlő az egyik címsorról a következőre ugrik.</string>
+    <string name="sandfly_tutorial_headings_jump"><xliff:g id="gesture" example="Swipe down">%1$s</xliff:g>: ugrás a következő címsorra. Ugorjon ide: <xliff:g id="heading" example="Weekend">%2$s</xliff:g>.</string>
+    <string name="sandfly_tutorial_headings_title">Címsorok</string>
+    <string name="sandfly_tutorial_item_apples">Alma</string>
+    <string name="sandfly_tutorial_item_bread">Kenyér</string>
+    <string name="sandfly_tutorial_item_cheese">Sajt</string>
+    <string name="sandfly_tutorial_item_dates">Datolya</string>
+    <string name="sandfly_tutorial_item_eggs">Tojás</string>
+    <string name="sandfly_tutorial_lesson_complete">A lecke kész.</string>
+    <string name="sandfly_tutorial_lesson_complete_last">A lecke kész. <xliff:g id="gesture" example="Double-tap">%1$s</xliff:g>: az útmutató befejezése.</string>
+    <string name="sandfly_tutorial_lesson_complete_next">A lecke kész. <xliff:g id="gesture" example="Double-tap">%1$s</xliff:g>: a következő lecke indítása.</string>
+    <string name="sandfly_tutorial_lesson_heading"><xliff:g id="lesson" example="Moving between items">%1$s</xliff:g>, <xliff:g id="number" example="3">%2$d</xliff:g>. lecke (összesen <xliff:g id="count" example="17">%3$d</xliff:g>)</string>
+    <string name="sandfly_tutorial_list_item"><xliff:g id="number" example="15">%1$d</xliff:g>. elem</string>
+    <string name="sandfly_tutorial_menu_close"><xliff:g id="gesture" example="Swipe down then left">%1$s</xliff:g>: a menü bezárása.</string>
+    <string name="sandfly_tutorial_menu_intro">A SandFly-menüben a fókuszált elemre és az aktuális képernyőre vonatkozó parancsok vannak.</string>
+    <string name="sandfly_tutorial_menu_open"><xliff:g id="gesture" example="Tap with 3 fingers">%1$s</xliff:g>: a SandFly-menü megnyitása. Csúsztasson végig a parancsain. <xliff:g id="gesture" example="Swipe down then left">%2$s</xliff:g>: a menü bezárása.</string>
+    <string name="sandfly_tutorial_menu_title">SandFly-menü</string>
+    <string name="sandfly_tutorial_message">Üzenet Samtől: Ebéd délben?</string>
+    <string name="sandfly_tutorial_message_archive">Archiválás</string>
+    <string name="sandfly_tutorial_message_delete">Törlés</string>
+    <string name="sandfly_tutorial_message_reply">Válasz</string>
+    <string name="sandfly_tutorial_move_intro">A csúsztatás a képernyő következő vagy előző elemére lép, olvasási sorrendben.</string>
+    <string name="sandfly_tutorial_move_next"><xliff:g id="gesture" example="Swipe right">%1$s</xliff:g>: lépés a következő elemre. Folytassa, amíg el nem éri ezt: <xliff:g id="item" example="Eggs">%2$s</xliff:g>.</string>
+    <string name="sandfly_tutorial_move_previous"><xliff:g id="gesture" example="Swipe left">%1$s</xliff:g>: lépés az előző elemre. Lépjen vissza ide: <xliff:g id="item" example="Bread">%2$s</xliff:g>.</string>
+    <string name="sandfly_tutorial_move_title">Mozgás az elemek között</string>
+    <string name="sandfly_tutorial_name">Név</string>
+    <string name="sandfly_tutorial_next_lesson">Következő lecke: <xliff:g id="lesson" example="Activating items">%1$s</xliff:g></string>
+    <string name="sandfly_tutorial_no_gesture">A(z) <xliff:g id="action" example="Next item">%1$s</xliff:g> művelethez nincs kézmozdulat. Rendeljen hozzá egyet a „Parancsok” alatt, vagy használja a Lépés kihagyása gombot.</string>
+    <string name="sandfly_tutorial_not_in_lesson">A(z) <xliff:g id="action" example="Home">%1$s</xliff:g> nem hajtható végre leckében. Az útmutatóból a Tartalom alatti Útmutató bezárása gombbal léphet ki.</string>
+    <string name="sandfly_tutorial_not_in_lesson_short">A(z) <xliff:g id="action" example="Turn speech on or off">%1$s</xliff:g> nem hajtható végre leckében.</string>
+    <string name="sandfly_tutorial_pause_intro">A beszéd egy elem közepén szüneteltethető, és onnan folytatható, ahol megállt.</string>
+    <string name="sandfly_tutorial_pause_pause">Lépjen az alábbi történetre. <xliff:g id="gesture" example="Tap with 2 fingers">%1$s</xliff:g> a felolvasása közben: a beszéd szüneteltetése, ismét: folytatása.</string>
+    <string name="sandfly_tutorial_pause_resume"><xliff:g id="gesture" example="Tap with 2 fingers">%1$s</xliff:g> ismét: a beszéd folytatása.</string>
+    <string name="sandfly_tutorial_pause_title">A beszéd szüneteltetése</string>
+    <string name="sandfly_tutorial_practice_gesture"><xliff:g id="gesture" example="Swipe right">%1$s</xliff:g>: <xliff:g id="action" example="Next item">%2$s</xliff:g></string>
+    <string name="sandfly_tutorial_practice_intro">Minden kézmozdulat végrehajtás helyett kimondja a nevét és a műveletét. A következő és az előző elemre lépés és az aktiválás továbbra is működik.</string>
+    <string name="sandfly_tutorial_practice_step">Végezzen bármilyen kézmozdulatot, és a SandFly kimondja, mit csinál. A befejezéshez aktiválja ezt: <xliff:g id="button" example="End practice">%1$s</xliff:g>.</string>
+    <string name="sandfly_tutorial_practice_title">Kézmozdulat-gyakorlás</string>
+    <string name="sandfly_tutorial_progress"><xliff:g id="done" example="2">%1$d</xliff:g> / <xliff:g id="count" example="4">%2$d</xliff:g>.</string>
+    <string name="sandfly_tutorial_reading_controls_characters">Állítsa a felolvasásvezérlőt erre: <xliff:g id="reading_control" example="Characters">%2$s</xliff:g>. <xliff:g id="gesture" example="Swipe down">%1$s</xliff:g>: lépés egy karakterrel.</string>
+    <string name="sandfly_tutorial_reading_controls_intro">A felolvasásvezérlés határozza meg, mit tesz a felfelé és a lefelé csúsztatás, például szavanként vagy karakterenként léptet, vagy módosítja a beszéd sebességét. A jobbra és a balra csúsztatás továbbra is az elemek között lép.</string>
+    <string name="sandfly_tutorial_reading_controls_move">Lépjen az alábbi mondatra.</string>
+    <string name="sandfly_tutorial_reading_controls_next_word"><xliff:g id="gesture" example="Swipe down">%1$s</xliff:g>: lépés a következő szóra. Lépjen tovább három szót.</string>
+    <string name="sandfly_tutorial_reading_controls_title">Felolvasásvezérlés</string>
+    <string name="sandfly_tutorial_recipe_1">Palacsinta: keverje simára a lisztet, a tojást és a tejet.</string>
+    <string name="sandfly_tutorial_recipe_2">Hevítsen kevés vajat egy serpenyőben.</string>
+    <string name="sandfly_tutorial_recipe_3">Öntsön bele annyi tésztát, hogy vékonyan befedje a serpenyő alját.</string>
+    <string name="sandfly_tutorial_recipe_4">Fordítsa meg a palacsintát, amikor az alja aranybarna.</string>
+    <string name="sandfly_tutorial_recipe_5">Citrommal és cukorral tálalja.</string>
+    <string name="sandfly_tutorial_scrolling_intro">A listák egyszerre csak néhány elemüket jelenítik meg. Az utolsó megjelenített elemen túl csúsztatva a lista görget.</string>
+    <string name="sandfly_tutorial_scrolling_page"><xliff:g id="gesture" example="Swipe right then left">%1$s</xliff:g>: görgetés előre egy oldallal.</string>
+    <string name="sandfly_tutorial_scrolling_swipe"><xliff:g id="gesture" example="Swipe right">%1$s</xliff:g>: haladjon végig a listán, amíg el nem éri ezt: <xliff:g id="item" example="Item 15">%2$s</xliff:g>.</string>
+    <string name="sandfly_tutorial_scrolling_title">Listák görgetése</string>
+    <string name="sandfly_tutorial_sentence">A gyors barna róka átugrik a lusta kutyán.</string>
+    <string name="sandfly_tutorial_skip_step">Lépés kihagyása</string>
+    <string name="sandfly_tutorial_sliders_change">Lépjen a(z) <xliff:g id="slider" example="Brightness">%3$s</xliff:g> csúszkára. <xliff:g id="gesture" example="Swipe up">%1$s</xliff:g> vagy <xliff:g id="gesture" example="Swipe down">%2$s</xliff:g>: az érték módosítása.</string>
+    <string name="sandfly_tutorial_sliders_highest">Állítsa a(z) <xliff:g id="slider" example="Brightness">%1$s</xliff:g> értékét 100 százalékra, a legnagyobb értékére.</string>
+    <string name="sandfly_tutorial_sliders_intro">Ha egy csúszkán van a fókusz, a felfelé és a lefelé csúsztatás módosítja az értékét.</string>
+    <string name="sandfly_tutorial_sliders_title">Csúszkák</string>
+    <string name="sandfly_tutorial_step"><xliff:g id="number" example="1">%1$d</xliff:g>. lépés (összesen <xliff:g id="count" example="2">%2$d</xliff:g>): <xliff:g id="instruction" example="Swipe right to move to the next item.">%3$s</xliff:g></string>
+    <string name="sandfly_tutorial_story">A homoki legyek kis legyek, amelyek tengerpartokon, folyópartokon és erdőkben élnek. Hajnalban és alkonyatkor a legaktívabbak, amikor a levegő mozdulatlan. Csak a nőstények csípnek, mert vérre van szükségük a petéik létrehozásához. A csípések napokig viszketnek, ezért aki homokilégy-vidékre látogat, rovarriasztót visz magával. A homoki legyek gyengén repülnek, és már egy enyhe szellő is távol tartja őket.</string>
+    <string name="sandfly_tutorial_system_back"><xliff:g id="gesture" example="Swipe down then left">%1$s</xliff:g>: visszalépés.</string>
+    <string name="sandfly_tutorial_system_home"><xliff:g id="gesture" example="Swipe up then left">%1$s</xliff:g>: ugrás a kezdőképernyőre.</string>
+    <string name="sandfly_tutorial_system_intro">Ezek a kézmozdulatok minden képernyőn működnek. Ebben a leckében az útmutató végrehajtás helyett kimondja, mit csinál az adott kézmozdulat.</string>
+    <string name="sandfly_tutorial_system_notifications"><xliff:g id="gesture" example="Swipe right then down">%1$s</xliff:g>: az értesítések megnyitása.</string>
+    <string name="sandfly_tutorial_system_overview"><xliff:g id="gesture" example="Swipe left then up">%1$s</xliff:g>: a legutóbbi alkalmazások megjelenítése.</string>
+    <string name="sandfly_tutorial_system_title">Vissza, kezdőképernyő és értesítések</string>
+    <string name="sandfly_tutorial_tile_cloud">Felhő</string>
+    <string name="sandfly_tutorial_tile_moon">Hold</string>
+    <string name="sandfly_tutorial_tile_star">Csillag</string>
+    <string name="sandfly_tutorial_tile_sun">Nap</string>
+    <string name="sandfly_tutorial_title">SandFly-útmutató</string>
+    <string name="sandfly_tutorial_typing_delete">Törölje az utolsó betűt a billentyűzet Törlés billentyűjével.</string>
+    <string name="sandfly_tutorial_typing_intro">Egy szövegmező aktiválása megnyitja a billentyűzetet. Egy billentyű megérintésekor a SandFly kimondja a billentyűt, az ujj felemelésekor pedig beírja.</string>
+    <string name="sandfly_tutorial_typing_open">Lépjen a(z) <xliff:g id="field" example="Name">%2$s</xliff:g> mezőre. <xliff:g id="gesture" example="Double-tap">%1$s</xliff:g>: a gépelés megkezdése.</string>
+    <string name="sandfly_tutorial_typing_title">Gépelés</string>
+    <string name="sandfly_tutorial_typing_type">Írja be ezt a szót: <xliff:g id="word" example="cat">%1$s</xliff:g>.</string>
+    <string name="sandfly_tutorial_typing_word">cica</string>
+    <string name="sandfly_tutorial_welcome_intro">Ez az útmutató a SandFly kézmozdulatait tanítja. Minden lecke ad egy utasítást, megvárja, amíg a saját kézmozdulataival végrehajtja, majd megadja a következőt. Az utasítás a lecke neve utáni első elem. A Tartalom felsorolja az összes leckét, és az útmutató annál a leckénél nyílik meg újra, ahol abbahagyta.</string>
+    <string name="sandfly_tutorial_welcome_start"><xliff:g id="gesture" example="Double-tap">%1$s</xliff:g> bárhol a képernyőn: kezdés.</string>
+    <string name="sandfly_tutorial_welcome_title">Üdvözöljük</string>
+</resources>

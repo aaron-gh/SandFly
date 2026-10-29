@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_translation_auto">Sjálfvirk þýðing</string>
+    <string name="title_pref_translation_auto_service">Þjónusta fyrir sjálfvirka þýðingu</string>
+    <string name="title_pref_translation_copy">Afrita þýðingar á klippiborðið</string>
+    <string name="title_pref_translation_download_all">Sækja öll tungumál</string>
+    <string name="title_pref_translation_languages">Tungumál í tækinu</string>
+    <string name="title_pref_translation_notifications">Þýða tilkynningar</string>
+    <string name="title_pref_translation_region">Svæði</string>
+    <string name="title_pref_translation_say_source">Segja upprunamálið</string>
+    <string name="title_pref_translation_second_target">Þýða texta á markmálinu yfir á</string>
+    <string name="title_pref_translation_service">Þýðingarþjónusta</string>
+    <string name="title_pref_translation_source">Þýða úr</string>
+    <string name="title_pref_translation_swap">Víxla tungumálum</string>
+    <string name="title_pref_translation_target">Þýða yfir á</string>
+    <string name="title_pref_translation_target_voice">Nota rödd fyrir markmálið</string>
+    <string name="title_pref_translation_untranslated">Tungumál sem eru ekki þýdd</string>
+    <string name="title_pref_translation_wifi_only">Sækja tungumál aðeins um Wi-Fi</string>
+    <string name="title_translate_last_spoken_phrase">Þýða síðustu setningu sem var sögð</string>
+    <string name="translation_address_hint">Vistfang, t.d. https://libretranslate.com</string>
+    <string name="translation_address_message">Vistfang LibreTranslate-þjóns, t.d. https://libretranslate.com. Aðrir þjónar en þínir eigin gætu þurft API-lykil.</string>
+    <string name="translation_all_downloaded">Öll tungumál sótt</string>
+    <string name="translation_already_in">Tungumálið er þegar <xliff:g id="language" example="English">%1$s</xliff:g></string>
+    <string name="translation_auto_state">Sjálfvirk þýðing <xliff:g id="state" example="on">%1$s</xliff:g></string>
+    <string name="translation_category_speech">Tal</string>
+    <string name="translation_detect">Greina tungumál</string>
+    <string name="translation_device_language">Tungumál tækis (<xliff:g id="language" example="English">%1$s</xliff:g>)</string>
+    <plurals name="translation_download_all_failed">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> tungumál ekki sótt</item>
+        <item quantity="other"><xliff:g id="count" example="3">%1$d</xliff:g> tungumál ekki sótt</item>
+    </plurals>
+    <plurals name="translation_download_all_message">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> tungumál, um <xliff:g id="size" example="30 MB">%2$s</xliff:g>.</item>
+        <item quantity="other"><xliff:g id="count" example="57">%1$d</xliff:g> tungumál, um <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+    </plurals>
+    <string name="translation_download_all_progress">Sækir, <xliff:g id="done" example="12">%1$d</xliff:g> af <xliff:g id="total" example="57">%2$d</xliff:g></string>
+    <string name="translation_download_all_stop">Stöðva</string>
+    <string name="translation_download_all_stop_title">Stöðva niðurhal tungumála?</string>
+    <string name="translation_download_done"><xliff:g id="language" example="German">%1$s</xliff:g> sótt</string>
+    <string name="translation_download_failed"><xliff:g id="language" example="German">%1$s</xliff:g> ekki sótt</string>
+    <string name="translation_download_message">Um 30 MB.</string>
+    <string name="translation_download_title">Sækja tungumálið <xliff:g id="language" example="German">%1$s</xliff:g>?</string>
+    <string name="translation_downloading">Sækir tungumál fyrir þýðingu í tækinu: <xliff:g id="languages" example="German and English">%1$s</xliff:g></string>
+    <string name="translation_error"><xliff:g id="service" example="DeepL">%1$s</xliff:g> gat ekki þýtt textann.</string>
+    <string name="translation_error_api_key"><xliff:g id="service" example="DeepL">%1$s</xliff:g> samþykkti ekki API-lykilinn.</string>
+    <string name="translation_error_connection">Ekki náðist samband við <xliff:g id="service" example="DeepL">%1$s</xliff:g>.</string>
+    <string name="translation_error_details"><xliff:g id="service" example="DeepL">%1$s</xliff:g> gat ekki þýtt textann: <xliff:g id="details" example="Wrong endpoint">%2$s</xliff:g></string>
+    <string name="translation_error_detection_downloading">Verið er að sækja tungumálagreiningu. Reyndu aftur eftir augnablik.</string>
+    <string name="translation_error_download">Ekki tókst að sækja tungumál fyrir þýðingu í tækinu.</string>
+    <string name="translation_error_downloading">Enn er verið að sækja tungumál fyrir þýðingu í tækinu</string>
+    <string name="translation_error_language">Þýðing með <xliff:g id="service" example="On-device">%1$s</xliff:g> styður ekki tungumálið <xliff:g id="language" example="Klingon">%2$s</xliff:g>.</string>
+    <string name="translation_error_no_address">Sláðu inn vistfang <xliff:g id="service" example="LibreTranslate">%1$s</xliff:g> í stillingum Þýðingar.</string>
+    <string name="translation_error_no_key">Sláðu inn API-lykil <xliff:g id="service" example="DeepL">%1$s</xliff:g> í stillingum Þýðingar.</string>
+    <string name="translation_error_not_detected">Tungumál greindist ekki</string>
+    <string name="translation_error_quota">Notkunarmörkum <xliff:g id="service" example="DeepL">%1$s</xliff:g> náð.</string>
+    <string name="translation_from">Upprunamál <xliff:g id="language" example="German">%1$s</xliff:g>:</string>
+    <string name="translation_key_message">Límdu inn API-lykilinn þinn fyrir <xliff:g id="service" example="DeepL">%1$s</xliff:g>. Til að fjarlægja hann skaltu hreinsa reitinn og vista. Texti sem þú þýðir er sendur til <xliff:g id="service" example="DeepL">%1$s</xliff:g>.</string>
+    <string name="translation_language_downloaded"><xliff:g id="language" example="German">%1$s</xliff:g>, sótt</string>
+    <string name="translation_language_downloading"><xliff:g id="language" example="German">%1$s</xliff:g>, verið að sækja</string>
+    <string name="translation_languages_summary">Sótt: <xliff:g id="languages" example="English, German">%1$s</xliff:g></string>
+    <string name="translation_nothing">Ekkert að þýða</string>
+    <string name="translation_region_global">Alþjóðlegt</string>
+    <string name="translation_region_message">Svæði Translator-tilfangsins þíns í Azure, t.d. westeurope. Skildu reitinn eftir auðan fyrir alþjóðlegt tilfang.</string>
+    <string name="translation_second_none">Ekki þýða</string>
+    <string name="translation_service_ai">Gervigreindarþjónusta</string>
+    <string name="translation_service_deepl">DeepL</string>
+    <string name="translation_service_google_cloud">Google Cloud Translation</string>
+    <string name="translation_service_libretranslate">LibreTranslate</string>
+    <string name="translation_service_microsoft">Microsoft Translator</string>
+    <string name="translation_service_not_set_up"><xliff:g id="service" example="DeepL">%1$s</xliff:g>, ekki uppsett</string>
+    <string name="translation_service_on_device">Í tækinu</string>
+    <string name="translation_swapped">Þýða úr: <xliff:g id="source" example="German">%1$s</xliff:g>. Þýða yfir á: <xliff:g id="target" example="English">%2$s</xliff:g></string>
+    <string name="translation_title">Þýðing</string>
+    <string name="translation_untranslated_none">Ekkert</string>
+</resources>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="command_add_arrow_keys">Add arrow keys</string>
+    <string name="command_add_gesture">Add gesture</string>
+    <string name="command_choose_arrow_keys">Choose arrow keys</string>
+    <string name="command_choose_gesture">Choose gesture</string>
+    <string name="command_gesture_assigned"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g>: <xliff:g id="command" example="Describe image">%2$s</xliff:g></string>
+    <string name="command_gestures">Gestures</string>
+    <string name="command_keyboard_shortcut">Keyboard shortcut</string>
+    <string name="command_no_arrow_keys">No arrow keys</string>
+    <string name="command_no_gestures">No gestures</string>
+    <string name="command_remove_arrow_keys">Remove arrow keys</string>
+    <string name="command_remove_gesture">Remove gesture</string>
+    <string name="command_replace">Replace</string>
+    <string name="command_replace_gesture"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g> runs <xliff:g id="old_command" example="Read from top">%2$s</xliff:g>. Use it for <xliff:g id="new_command" example="Describe image">%3$s</xliff:g> instead?</string>
+    <string name="commands_category_activation">Activation</string>
+    <string name="commands_category_media">Media and volume</string>
+    <string name="commands_category_sandfly">SandFly</string>
+    <string name="commands_category_scrolling">Scrolling</string>
+    <string name="commands_category_speech">Speech</string>
+    <string name="commands_category_tables">Tables</string>
+    <string name="commands_category_web">Web</string>
+    <string name="item_list_current">Current</string>
+    <string name="item_list_not_in_reading_controls">Not in reading controls</string>
+    <string name="item_list_not_in_sandfly_menu">Not in SandFly menu</string>
+    <string name="item_list_options">Options</string>
+    <string name="sounds_category_sounds">Sounds</string>
+    <string name="sounds_category_vibration">Vibration</string>
+    <string name="speech_category_languages">Languages</string>
+    <string name="speech_category_other_apps">Other apps</string>
+    <string name="speech_category_pronunciation">Pronunciation</string>
+    <string name="speech_category_stopping">Stopping speech</string>
+    <string name="speech_category_voice">Voice</string>
+    <string name="title_pref_audio_output">Audio output</string>
+    <string name="title_pref_backup">Back up and restore</string>
+    <string name="title_pref_braille">Braille</string>
+    <string name="title_pref_commands">Commands</string>
+    <string name="title_pref_display">Display</string>
+    <string name="title_pref_image_and_screen_descriptions">Image and screen descriptions</string>
+    <string name="title_pref_pause">Pause and turn off</string>
+    <string name="title_pref_quick_settings_screen">Quick settings</string>
+    <string name="title_pref_speech">Speech</string>
+    <string name="title_pref_speech_stream_control">Volume control for speech</string>
+    <string name="title_pref_touch">Touch</string>
+    <string name="title_pref_typing">Typing</string>
+    <string name="title_pref_updates">Updates and installation</string>
+    <string name="title_pref_volume_keys">Volume keys</string>
+    <string name="typing_category_other_input">Other ways to type</string>
+    <string name="verbosity_category_announcements">Announcements</string>
+    <string name="verbosity_category_items">Items</string>
+    <string name="verbosity_category_text">Text and symbols</string>
+</resources>

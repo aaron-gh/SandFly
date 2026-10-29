@@ -1067,8 +1067,8 @@
   <string name="checking_notifications_tips">如需查看通知历史记录，请用两根手指从屏幕顶部向下滑动</string>
   <string name="image_description_playground_title">尝试获取图片描述</string>
   <string name="image_description_playground_content_one">将焦点置于某个图片上时，打开 SandFly 菜单并选择“描述图片”。\n\n下面有一张图片。请尝试获取图片描述。</string>
-  <string name="image_description_playground_content_two">您可以随时在 SandFly 设置 &gt; 自动描述中更改图片描述设置。</string>
-  <string name="image_description_playground_content_two_tts">您可以随时依次前往 SandFly 设置、自动描述，更改图片描述设置。</string>
+    <string name="image_description_playground_content_two">您可以随时在 SandFly 设置 &gt; 图片和屏幕描述中更改图片描述设置。</string>
+    <string name="image_description_playground_content_two_tts">您可以随时依次前往 SandFly 设置、图片和屏幕描述，更改图片描述设置。</string>
   <string name="image_description_sample_image_content_description">示例图片；用三根手指点按图片，打开 SandFly 菜单，然后选择“描述图片”聆听描述。</string>
   <string name="practice_gestures_title">练习手势</string>
   <string name="practice_keyboard_gestures_title">练习使用键盘快捷键</string>
@@ -2038,7 +2038,7 @@
     <!-- The content of typo correction edit box typos example. [CHAR_LIMIT=NONE]-->
 
     <!-- Gemini rejected the API key the user entered in Automatic descriptions settings. [CHAR_LIMIT=NONE]-->
-    <string name="gemini_error_api_key">Gemini 不接受该 API 密钥。请在自动描述设置中检查密钥。</string>
+    <string name="gemini_error_api_key">Gemini 不接受该 API 密钥。请在图片和屏幕描述设置中检查密钥。</string>
 
     <!-- The usage limit of the user's Gemini API key was reached. [CHAR_LIMIT=NONE]-->
     <string name="gemini_error_quota">你的 Gemini API 密钥用量已达上限。请稍后再试。</string>
@@ -2339,4 +2339,24 @@
     <string name="settings_export_failed">无法导出设置</string>
     <string name="settings_import_done">设置已导入</string>
     <string name="settings_import_failed">该文件不是 SandFly 或 Backtalk 设置文件，或者无法读取</string>
+    <string name="sound_mode_needs_access">要开启或关闭静音，请授予“勿扰”权限。</string>
+    <string name="keycombo_menu_category_arrow_key_nav">箭头键导航</string>
+    <string name="arrow_key_nav_toggle">开启或关闭箭头键导航</string>
+    <string name="arrow_key_nav_on">箭头键导航已开启</string>
+    <string name="arrow_key_nav_off">箭头键导航已关闭</string>
+    <string name="arrow_key_nav_page_left">向左翻页</string>
+    <string name="arrow_key_nav_page_right">向右翻页</string>
+    <string name="arrow_key_nav_assign_instruction">按一个键或同时按两个键，可带或不带辅助键。按 Backspace 键清除，按 Ctrl + Backspace 重置为默认值，按 Enter 键保存，或按 Esc 键取消。</string>
+    <string name="shortcut_next_track">下一曲目</string>
+    <string name="shortcut_previous_track">上一曲目</string>
+    <string-array name="pref_dictation_auto_stop_entries">
+        <item>关闭</item>
+        <item>3 秒</item>
+        <item>5 秒</item>
+        <item>10 秒</item>
+        <item>15 秒</item>
+        <item>30 秒</item>
+        <item>1 分钟</item>
+    </string-array>
+    <string name="title_pref_dictation_auto_stop">静音后自动停止</string>
 </resources>

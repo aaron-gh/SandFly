@@ -1069,8 +1069,8 @@
   <string name="checking_notifications_tips">Para consultar tu historial de notificaciones, desliza 2 dedos hacia abajo desde la parte superior de la pantalla.</string>
   <string name="image_description_playground_title">Prueba a obtener descripciones de imágenes</string>
   <string name="image_description_playground_content_one">Cuando enfoques una imagen, abre el menú de SandFly y selecciona Describir imagen.\n\nAbajo hay una foto. Prueba a obtener una descripción.</string>
-  <string name="image_description_playground_content_two">Puedes cambiar los ajustes de descripción de imágenes cuando quieras en Ajustes de SandFly &gt; Descripciones automáticas.</string>
-  <string name="image_description_playground_content_two_tts">Puedes cambiar los ajustes de descripción de imágenes cuando quieras en Ajustes de SandFly y, a continuación, en Descripciones automáticas.</string>
+    <string name="image_description_playground_content_two">Puedes cambiar los ajustes de descripción de imágenes cuando quieras en Ajustes de SandFly &gt; Descripciones de imagen y pantalla.</string>
+    <string name="image_description_playground_content_two_tts">Puedes cambiar los ajustes de descripción de imágenes cuando quieras en Ajustes de SandFly y, a continuación, en Descripciones de imagen y pantalla.</string>
   <string name="image_description_sample_image_content_description">Imagen de ejemplo. Toca con 3 dedos para abrir el menú de SandFly y selecciona Describir imagen para oír una descripción.</string>
   <string name="practice_gestures_title">Practicar gestos</string>
   <string name="practice_keyboard_gestures_title">Practicar combinaciones de teclas</string>
@@ -1551,7 +1551,7 @@
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> soltado. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly dice los detalles de un elemento en este orden. Para cambiarlo, mantén pulsado un detalle y arrástralo hacia arriba o hacia abajo. Con SandFly activado, toca dos veces, mantén pulsado y arrastra. También puedes usar las acciones Subir y Bajar.</string>
     <string name="title_pref_speak_items_before_scroll">Decir los elementos antes de que se muestren al desplazarse</string>
-    <string name="gemini_error_api_key">Gemini no ha aceptado la clave de API. Comprueba la clave en los ajustes de Descripciones automáticas.</string>
+    <string name="gemini_error_api_key">Gemini no ha aceptado la clave de API. Comprueba la clave en los ajustes de Descripciones de imagen y pantalla.</string>
     <string name="gemini_error_quota">Se ha alcanzado el límite de uso de tu clave de API de Gemini. Vuelve a intentarlo más tarde.</string>
     <string name="gemini_error_busy">Gemini está ocupado en este momento. Vuelve a intentarlo dentro de un momento.</string>
     <string name="gemini_error_timeout">Gemini ha tardado demasiado en responder. Vuelve a intentarlo.</string>
@@ -1778,4 +1778,24 @@
     <string name="settings_export_failed">La configuración no se pudo exportar</string>
     <string name="settings_import_done">Configuraciones importadas</string>
     <string name="settings_import_failed">Este archivo no es un archivo de configuración SandFly o Backtalk, o no se pudo leer</string>
+    <string name="sound_mode_needs_access">Permite el acceso a No molestar para activar o desactivar Silencio.</string>
+    <string name="keycombo_menu_category_arrow_key_nav">Navegación con flechas</string>
+    <string name="arrow_key_nav_toggle">Activar o desactivar la navegación con flechas</string>
+    <string name="arrow_key_nav_on">Navegación con flechas activada</string>
+    <string name="arrow_key_nav_off">Navegación con flechas desactivada</string>
+    <string name="arrow_key_nav_page_left">Página a la izquierda</string>
+    <string name="arrow_key_nav_page_right">Página a la derecha</string>
+    <string name="arrow_key_nav_assign_instruction">Pulsa una tecla o dos teclas a la vez, con o sin teclas modificadoras. Pulsa Retroceso para borrar, Ctrl + Retroceso para restablecer el valor predeterminado, Intro para guardar o Escape para cancelar.</string>
+    <string name="shortcut_next_track">Pista siguiente</string>
+    <string name="shortcut_previous_track">Pista anterior</string>
+    <string-array name="pref_dictation_auto_stop_entries">
+        <item>Desactivado</item>
+        <item>3 segundos</item>
+        <item>5 segundos</item>
+        <item>10 segundos</item>
+        <item>15 segundos</item>
+        <item>30 segundos</item>
+        <item>1 minuto</item>
+    </string-array>
+    <string name="title_pref_dictation_auto_stop">Detener automáticamente tras un silencio</string>
 </resources>

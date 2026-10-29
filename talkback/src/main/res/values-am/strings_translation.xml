@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_translation_auto">ራስ-ሰር ትርጉም</string>
+    <string name="title_pref_translation_auto_service">የራስ-ሰር ትርጉም አገልግሎት</string>
+    <string name="title_pref_translation_copy">ትርጉሞችን ወደ ቅንጥብ ሰሌዳው ቅዳ</string>
+    <string name="title_pref_translation_download_all">ሁሉንም ቋንቋዎች አውርድ</string>
+    <string name="title_pref_translation_languages">በመሣሪያ ላይ ያሉ ቋንቋዎች</string>
+    <string name="title_pref_translation_notifications">ማሳወቂያዎችን ተርጉም</string>
+    <string name="title_pref_translation_region">ክልል</string>
+    <string name="title_pref_translation_say_source">የመጀመሪያውን ቋንቋ ተናገር</string>
+    <string name="title_pref_translation_second_target">በዒላማ ቋንቋው ያለን ጽሑፍ የሚተረጎምበት</string>
+    <string name="title_pref_translation_service">የትርጉም አገልግሎት</string>
+    <string name="title_pref_translation_source">ተርጉም ከ</string>
+    <string name="title_pref_translation_swap">ቋንቋዎችን አለዋውጥ</string>
+    <string name="title_pref_translation_target">ተርጉም ወደ</string>
+    <string name="title_pref_translation_target_voice">ለዒላማ ቋንቋው ድምፅ ተጠቀም</string>
+    <string name="title_pref_translation_untranslated">የማይተረጎሙ ቋንቋዎች</string>
+    <string name="title_pref_translation_wifi_only">ቋንቋዎችን በWi-Fi ላይ ብቻ አውርድ</string>
+    <string name="title_translate_last_spoken_phrase">የመጨረሻውን የተነገረ ሐረግ ተርጉም</string>
+    <string name="translation_address_hint">አድራሻ፣ ለምሳሌ https://libretranslate.com</string>
+    <string name="translation_address_message">የLibreTranslate አገልጋይ አድራሻ፣ ለምሳሌ https://libretranslate.com። ከእርስዎ ሌላ የሆኑ አገልጋዮች የAPI ቁልፍ ሊያስፈልጋቸው ይችላል።</string>
+    <string name="translation_all_downloaded">ሁሉም ቋንቋዎች ወርደዋል</string>
+    <string name="translation_already_in">አስቀድሞ በ<xliff:g id="language" example="English">%1$s</xliff:g> ነው</string>
+    <string name="translation_auto_state">ራስ-ሰር ትርጉም <xliff:g id="state" example="on">%1$s</xliff:g></string>
+    <string name="translation_category_speech">ንግግር</string>
+    <string name="translation_detect">ቋንቋን ፈልግ</string>
+    <string name="translation_device_language">የመሣሪያ ቋንቋ (<xliff:g id="language" example="English">%1$s</xliff:g>)</string>
+    <plurals name="translation_download_all_failed">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> ቋንቋ አልወረደም</item>
+        <item quantity="other"><xliff:g id="count" example="3">%1$d</xliff:g> ቋንቋዎች አልወረዱም</item>
+    </plurals>
+    <plurals name="translation_download_all_message">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> ቋንቋ፣ በግምት <xliff:g id="size" example="30 MB">%2$s</xliff:g>።</item>
+        <item quantity="other"><xliff:g id="count" example="57">%1$d</xliff:g> ቋንቋዎች፣ በግምት <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>።</item>
+    </plurals>
+    <string name="translation_download_all_progress">በማውረድ ላይ፣ <xliff:g id="done" example="12">%1$d</xliff:g> ከ<xliff:g id="total" example="57">%2$d</xliff:g></string>
+    <string name="translation_download_all_stop">አቁም</string>
+    <string name="translation_download_all_stop_title">ቋንቋዎችን ማውረድ ይቁም?</string>
+    <string name="translation_download_done"><xliff:g id="language" example="German">%1$s</xliff:g> ወርዷል</string>
+    <string name="translation_download_failed"><xliff:g id="language" example="German">%1$s</xliff:g> አልወረደም</string>
+    <string name="translation_download_message">በግምት 30 ሜባ።</string>
+    <string name="translation_download_title"><xliff:g id="language" example="German">%1$s</xliff:g> ይውረድ?</string>
+    <string name="translation_downloading">በመሣሪያ ላይ ለሚደረግ ትርጉም <xliff:g id="languages" example="German and English">%1$s</xliff:g>ን በማውረድ ላይ</string>
+    <string name="translation_error"><xliff:g id="service" example="DeepL">%1$s</xliff:g> ጽሑፉን መተርጎም አልቻለም።</string>
+    <string name="translation_error_api_key"><xliff:g id="service" example="DeepL">%1$s</xliff:g> የAPI ቁልፉን አልተቀበለም።</string>
+    <string name="translation_error_connection"><xliff:g id="service" example="DeepL">%1$s</xliff:g>ን ማግኘት አልተቻለም።</string>
+    <string name="translation_error_details"><xliff:g id="service" example="DeepL">%1$s</xliff:g> ጽሑፉን መተርጎም አልቻለም፦ <xliff:g id="details" example="Wrong endpoint">%2$s</xliff:g></string>
+    <string name="translation_error_detection_downloading">የቋንቋ ማወቂያ በመውረድ ላይ ነው። ከትንሽ ቆይታ በኋላ እንደገና ይሞክሩ።</string>
+    <string name="translation_error_download">በመሣሪያ ላይ ለሚደረግ ትርጉም ቋንቋዎችን ማውረድ አልተቻለም።</string>
+    <string name="translation_error_downloading">በመሣሪያ ላይ ለሚደረግ ትርጉም ቋንቋዎች አሁንም በመውረድ ላይ ናቸው</string>
+    <string name="translation_error_language">የ<xliff:g id="service" example="On-device">%1$s</xliff:g> ትርጉም <xliff:g id="language" example="Klingon">%2$s</xliff:g>ን አይደግፍም።</string>
+    <string name="translation_error_no_address">የ<xliff:g id="service" example="LibreTranslate">%1$s</xliff:g> አድራሻውን በትርጉም ቅንብሮች ውስጥ ያስገቡ።</string>
+    <string name="translation_error_no_key">የ<xliff:g id="service" example="DeepL">%1$s</xliff:g> API ቁልፉን በትርጉም ቅንብሮች ውስጥ ያስገቡ።</string>
+    <string name="translation_error_not_detected">ቋንቋ አልተገኘም</string>
+    <string name="translation_error_quota">የ<xliff:g id="service" example="DeepL">%1$s</xliff:g> የአጠቃቀም ገደብ ላይ ተደርሷል።</string>
+    <string name="translation_from">ከ<xliff:g id="language" example="German">%1$s</xliff:g>፦</string>
+    <string name="translation_key_message">የ<xliff:g id="service" example="DeepL">%1$s</xliff:g> API ቁልፍዎን ይለጥፉ። ለማስወገድ፣ መስኩን ያጽዱ እና ያስቀምጡ። የሚተረጉሙት ጽሑፍ ወደ <xliff:g id="service" example="DeepL">%1$s</xliff:g> ይላካል።</string>
+    <string name="translation_language_downloaded"><xliff:g id="language" example="German">%1$s</xliff:g>፣ ወርዷል</string>
+    <string name="translation_language_downloading"><xliff:g id="language" example="German">%1$s</xliff:g>፣ በመውረድ ላይ</string>
+    <string name="translation_languages_summary">የወረዱ፦ <xliff:g id="languages" example="English, German">%1$s</xliff:g></string>
+    <string name="translation_nothing">የሚተረጎም ነገር የለም</string>
+    <string name="translation_region_global">ዓለም አቀፍ</string>
+    <string name="translation_region_message">በAzure ውስጥ ያለው የእርስዎ Translator ሀብት ክልል፣ ለምሳሌ westeurope። ለዓለም አቀፍ ሀብት ባዶ ይተዉት።</string>
+    <string name="translation_second_none">አትተርጉም</string>
+    <string name="translation_service_ai">AI አገልግሎት</string>
+    <string name="translation_service_deepl">DeepL</string>
+    <string name="translation_service_google_cloud">Google Cloud Translation</string>
+    <string name="translation_service_libretranslate">LibreTranslate</string>
+    <string name="translation_service_microsoft">Microsoft Translator</string>
+    <string name="translation_service_not_set_up"><xliff:g id="service" example="DeepL">%1$s</xliff:g>፣ አልተዋቀረም</string>
+    <string name="translation_service_on_device">በመሣሪያ ላይ</string>
+    <string name="translation_swapped">ከ<xliff:g id="source" example="German">%1$s</xliff:g> ወደ <xliff:g id="target" example="English">%2$s</xliff:g></string>
+    <string name="translation_title">ትርጉም</string>
+    <string name="translation_untranslated_none">ምንም</string>
+</resources>

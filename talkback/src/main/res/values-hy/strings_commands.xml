@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="command_add_arrow_keys">Ավելացնել սլաքներ</string>
+    <string name="command_add_gesture">Ավելացնել ժեստ</string>
+    <string name="command_choose_arrow_keys">Ընտրեք սլաքները</string>
+    <string name="command_choose_gesture">Ընտրեք ժեստը</string>
+    <string name="command_gesture_assigned"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g>: <xliff:g id="command" example="Describe image">%2$s</xliff:g></string>
+    <string name="command_gestures">Ժեստեր</string>
+    <string name="command_keyboard_shortcut">Ստեղնային դյուրանցում</string>
+    <string name="command_no_arrow_keys">Սլաքներ չկան</string>
+    <string name="command_no_gestures">Ժեստեր չկան</string>
+    <string name="command_remove_arrow_keys">Հեռացնել սլաքները</string>
+    <string name="command_remove_gesture">Հեռացնել ժեստը</string>
+    <string name="command_replace">Փոխարինել</string>
+    <string name="command_replace_gesture">«<xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g>» ժեստը կատարում է «<xliff:g id="old_command" example="Read from top">%2$s</xliff:g>» հրամանը։ Օգտագործե՞լ այն «<xliff:g id="new_command" example="Describe image">%3$s</xliff:g>» հրամանի համար։</string>
+    <string name="commands_category_activation">Ակտիվացում</string>
+    <string name="commands_category_media">Մեդիա և ձայնի ուժգնություն</string>
+    <string name="commands_category_sandfly">SandFly</string>
+    <string name="commands_category_scrolling">Ոլորում</string>
+    <string name="commands_category_speech">Խոսք</string>
+    <string name="commands_category_tables">Աղյուսակներ</string>
+    <string name="commands_category_web">Վեբ</string>
+    <string name="item_list_current">Ընթացիկ</string>
+    <string name="item_list_not_in_reading_controls">Ընթերցման կառավարման տարրերում չեն</string>
+    <string name="item_list_not_in_sandfly_menu">SandFly-ի ընտրացանկում չեն</string>
+    <string name="item_list_options">Ընտրանքներ</string>
+    <string name="sounds_category_sounds">Ձայներ</string>
+    <string name="sounds_category_vibration">Թրթռոց</string>
+    <string name="speech_category_languages">Լեզուներ</string>
+    <string name="speech_category_other_apps">Այլ հավելվածներ</string>
+    <string name="speech_category_pronunciation">Արտասանություն</string>
+    <string name="speech_category_stopping">Խոսքի կանգնեցում</string>
+    <string name="speech_category_voice">Ձայն</string>
+    <string name="title_pref_audio_output">Աուդիո ելք</string>
+    <string name="title_pref_backup">Պահուստավորում և վերականգնում</string>
+    <string name="title_pref_braille">Բրայլ</string>
+    <string name="title_pref_commands">Հրամաններ</string>
+    <string name="title_pref_display">Էկրան</string>
+    <string name="title_pref_image_and_screen_descriptions">Պատկերների և էկրանի նկարագրություններ</string>
+    <string name="title_pref_pause">Դադարեցում և անջատում</string>
+    <string name="title_pref_quick_settings_screen">Արագ կարգավորումներ</string>
+    <string name="title_pref_speech">Խոսք</string>
+    <string name="title_pref_speech_stream_control">Խոսքի ձայնի ուժգնության կառավարում</string>
+    <string name="title_pref_touch">Հպում</string>
+    <string name="title_pref_typing">Մուտքագրում</string>
+    <string name="title_pref_updates">Թարմացումներ և տեղադրում</string>
+    <string name="title_pref_volume_keys">Ձայնի ուժգնության ստեղներ</string>
+    <string name="typing_category_other_input">Մուտքագրման այլ եղանակներ</string>
+    <string name="verbosity_category_announcements">Հայտարարություններ</string>
+    <string name="verbosity_category_items">Տարրեր</string>
+    <string name="verbosity_category_text">Տեքստ և նշաններ</string>
+</resources>

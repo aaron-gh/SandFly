@@ -18,7 +18,7 @@
     <string name="ai_service_model_hint">Modell</string>
     <string name="ai_service_address_invalid">Adressen måste börja med https://. Ingenting sparades.</string>
     <string name="dialog_message_ai_service_consent">Bilder och skärmbilder skickas till <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> för att beskrivas, vilket tar några sekunder. Tjänstens egna villkor och integritetspolicy gäller. Generativ AI är experimentell och kommer därför att göra fel.</string>
-    <string name="ai_service_error_api_key">AI-tjänsten accepterade inte API-nyckeln. Kontrollera dess inställningar i Automatiska beskrivningar.</string>
+    <string name="ai_service_error_api_key">AI-tjänsten accepterade inte API-nyckeln. Kontrollera dess inställningar i Bild- och skärmbeskrivningar.</string>
     <string name="ai_service_error_quota">Användningsgränsen för AI-tjänsten har nåtts. Försök igen senare.</string>
     <string name="ai_service_error_busy">AI-tjänsten är upptagen just nu. Försök igen om ett ögonblick.</string>
     <string name="ai_service_error_timeout">AI-tjänsten tog för lång tid att svara. Försök igen.</string>
@@ -30,7 +30,7 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">Ingen</string>
-    <string name="ai_service_not_set_up">Ingen AI-tjänst används. Ställ in en eller välj en i inställningarna för Automatiska beskrivningar.</string>
+    <string name="ai_service_not_set_up">Ingen AI-tjänst används. Ställ in en eller välj en i inställningarna för Bild- och skärmbeskrivningar.</string>
     <string name="ai_provider_none_set_up">Ingen AI-tjänst är inställd. Ställ in en i dess inställningar nedan.</string>
     <string name="ai_provider_other">Annan tjänst</string>
     <string name="title_pref_category_ai_services">AI-tjänster</string>

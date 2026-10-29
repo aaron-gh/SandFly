@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_translation_auto">자동 번역</string>
+    <string name="title_pref_translation_auto_service">자동 번역 서비스</string>
+    <string name="title_pref_translation_copy">번역을 클립보드에 복사</string>
+    <string name="title_pref_translation_download_all">모든 언어 다운로드</string>
+    <string name="title_pref_translation_languages">온디바이스 언어</string>
+    <string name="title_pref_translation_notifications">알림 번역</string>
+    <string name="title_pref_translation_region">지역</string>
+    <string name="title_pref_translation_say_source">원래 언어 말하기</string>
+    <string name="title_pref_translation_second_target">대상 언어로 된 텍스트를 번역할 언어</string>
+    <string name="title_pref_translation_service">번역 서비스</string>
+    <string name="title_pref_translation_source">원본 언어</string>
+    <string name="title_pref_translation_swap">언어 바꾸기</string>
+    <string name="title_pref_translation_target">대상 언어</string>
+    <string name="title_pref_translation_target_voice">대상 언어의 음성 사용</string>
+    <string name="title_pref_translation_untranslated">번역하지 않을 언어</string>
+    <string name="title_pref_translation_wifi_only">Wi-Fi에서만 언어 다운로드</string>
+    <string name="title_translate_last_spoken_phrase">마지막으로 말한 문구 번역</string>
+    <string name="translation_address_hint">주소(예: https://libretranslate.com)</string>
+    <string name="translation_address_message">LibreTranslate 서버 주소입니다(예: https://libretranslate.com). 직접 운영하는 서버가 아니면 API 키가 필요할 수 있습니다.</string>
+    <string name="translation_all_downloaded">모든 언어 다운로드됨</string>
+    <string name="translation_already_in">이미 <xliff:g id="language" example="English">%1$s</xliff:g>입니다</string>
+    <string name="translation_auto_state">자동 번역 <xliff:g id="state" example="on">%1$s</xliff:g></string>
+    <string name="translation_category_speech">음성</string>
+    <string name="translation_detect">언어 감지</string>
+    <string name="translation_device_language">기기 언어(<xliff:g id="language" example="English">%1$s</xliff:g>)</string>
+    <plurals name="translation_download_all_failed">
+        <item quantity="other"><xliff:g id="count" example="3">%1$d</xliff:g>개 언어가 다운로드되지 않음</item>
+    </plurals>
+    <plurals name="translation_download_all_message">
+        <item quantity="other"><xliff:g id="count" example="57">%1$d</xliff:g>개 언어, 약 <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+    </plurals>
+    <string name="translation_download_all_progress">다운로드 중, <xliff:g id="total" example="57">%2$d</xliff:g>개 중 <xliff:g id="done" example="12">%1$d</xliff:g>개</string>
+    <string name="translation_download_all_stop">중지</string>
+    <string name="translation_download_all_stop_title">언어 다운로드를 중지하시겠습니까?</string>
+    <string name="translation_download_done"><xliff:g id="language" example="German">%1$s</xliff:g> 다운로드됨</string>
+    <string name="translation_download_failed"><xliff:g id="language" example="German">%1$s</xliff:g> 다운로드되지 않음</string>
+    <string name="translation_download_message">약 30MB.</string>
+    <string name="translation_download_title"><xliff:g id="language" example="German">%1$s</xliff:g>을(를) 다운로드하시겠습니까?</string>
+    <string name="translation_downloading">온디바이스 번역을 위해 <xliff:g id="languages" example="German and English">%1$s</xliff:g> 다운로드 중</string>
+    <string name="translation_error"><xliff:g id="service" example="DeepL">%1$s</xliff:g>에서 텍스트를 번역할 수 없습니다.</string>
+    <string name="translation_error_api_key"><xliff:g id="service" example="DeepL">%1$s</xliff:g>에서 API 키를 수락하지 않았습니다.</string>
+    <string name="translation_error_connection"><xliff:g id="service" example="DeepL">%1$s</xliff:g>에 연결할 수 없습니다.</string>
+    <string name="translation_error_details"><xliff:g id="service" example="DeepL">%1$s</xliff:g>에서 텍스트를 번역할 수 없습니다: <xliff:g id="details" example="Wrong endpoint">%2$s</xliff:g></string>
+    <string name="translation_error_detection_downloading">언어 감지를 다운로드하는 중입니다. 잠시 후 다시 시도하세요.</string>
+    <string name="translation_error_download">온디바이스 번역용 언어를 다운로드할 수 없습니다.</string>
+    <string name="translation_error_downloading">온디바이스 번역용 언어를 아직 다운로드하는 중</string>
+    <string name="translation_error_language"><xliff:g id="service" example="On-device">%1$s</xliff:g> 번역은 <xliff:g id="language" example="Klingon">%2$s</xliff:g>을(를) 지원하지 않습니다.</string>
+    <string name="translation_error_no_address">번역 설정에서 <xliff:g id="service" example="LibreTranslate">%1$s</xliff:g> 주소를 입력하세요.</string>
+    <string name="translation_error_no_key">번역 설정에서 <xliff:g id="service" example="DeepL">%1$s</xliff:g> API 키를 입력하세요.</string>
+    <string name="translation_error_not_detected">언어가 감지되지 않음</string>
+    <string name="translation_error_quota"><xliff:g id="service" example="DeepL">%1$s</xliff:g> 사용 한도에 도달했습니다.</string>
+    <string name="translation_from"><xliff:g id="language" example="German">%1$s</xliff:g>에서 번역:</string>
+    <string name="translation_key_message"><xliff:g id="service" example="DeepL">%1$s</xliff:g> API 키를 붙여넣으세요. 삭제하려면 입력란을 비우고 저장하세요. 번역하는 텍스트는 <xliff:g id="service" example="DeepL">%1$s</xliff:g>(으)로 전송됩니다.</string>
+    <string name="translation_language_downloaded"><xliff:g id="language" example="German">%1$s</xliff:g>, 다운로드됨</string>
+    <string name="translation_language_downloading"><xliff:g id="language" example="German">%1$s</xliff:g>, 다운로드 중</string>
+    <string name="translation_languages_summary">다운로드됨: <xliff:g id="languages" example="English, German">%1$s</xliff:g></string>
+    <string name="translation_nothing">번역할 내용 없음</string>
+    <string name="translation_region_global">전역</string>
+    <string name="translation_region_message">Azure에 있는 Translator 리소스의 지역입니다(예: westeurope). 전역 리소스는 비워 두세요.</string>
+    <string name="translation_second_none">번역 안함</string>
+    <string name="translation_service_ai">AI 서비스</string>
+    <string name="translation_service_deepl">DeepL</string>
+    <string name="translation_service_google_cloud">Google Cloud Translation</string>
+    <string name="translation_service_libretranslate">LibreTranslate</string>
+    <string name="translation_service_microsoft">Microsoft Translator</string>
+    <string name="translation_service_not_set_up"><xliff:g id="service" example="DeepL">%1$s</xliff:g>, 설정되지 않음</string>
+    <string name="translation_service_on_device">온디바이스</string>
+    <string name="translation_swapped"><xliff:g id="source" example="German">%1$s</xliff:g>에서 <xliff:g id="target" example="English">%2$s</xliff:g>(으)로</string>
+    <string name="translation_title">번역</string>
+    <string name="translation_untranslated_none">없음</string>
+</resources>

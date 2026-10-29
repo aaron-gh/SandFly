@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="command_add_arrow_keys">ისრების დამატება</string>
+    <string name="command_add_gesture">ჟესტის დამატება</string>
+    <string name="command_choose_arrow_keys">აირჩიეთ ისრები</string>
+    <string name="command_choose_gesture">აირჩიეთ ჟესტი</string>
+    <string name="command_gesture_assigned"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g>: <xliff:g id="command" example="Describe image">%2$s</xliff:g></string>
+    <string name="command_gestures">ჟესტები</string>
+    <string name="command_keyboard_shortcut">კლავიატურის მალსახმობი</string>
+    <string name="command_no_arrow_keys">ისრები არ არის</string>
+    <string name="command_no_gestures">ჟესტები არ არის</string>
+    <string name="command_remove_arrow_keys">ისრების ამოღება</string>
+    <string name="command_remove_gesture">ჟესტის ამოღება</string>
+    <string name="command_replace">ჩანაცვლება</string>
+    <string name="command_replace_gesture">ჟესტი „<xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g>“ ასრულებს ბრძანებას „<xliff:g id="old_command" example="Read from top">%2$s</xliff:g>“. გამოვიყენოთ ის ბრძანებისთვის „<xliff:g id="new_command" example="Describe image">%3$s</xliff:g>“?</string>
+    <string name="commands_category_activation">გააქტიურება</string>
+    <string name="commands_category_media">მედია და ხმის დონე</string>
+    <string name="commands_category_sandfly">SandFly</string>
+    <string name="commands_category_scrolling">გადახვევა</string>
+    <string name="commands_category_speech">მეტყველება</string>
+    <string name="commands_category_tables">ცხრილები</string>
+    <string name="commands_category_web">ვები</string>
+    <string name="item_list_current">მიმდინარე</string>
+    <string name="item_list_not_in_reading_controls">არ არის კითხვის მართვაში</string>
+    <string name="item_list_not_in_sandfly_menu">არ არის SandFly-ის მენიუში</string>
+    <string name="item_list_options">ვარიანტები</string>
+    <string name="sounds_category_sounds">ხმები</string>
+    <string name="sounds_category_vibration">ვიბრაცია</string>
+    <string name="speech_category_languages">ენები</string>
+    <string name="speech_category_other_apps">სხვა აპები</string>
+    <string name="speech_category_pronunciation">გამოთქმა</string>
+    <string name="speech_category_stopping">მეტყველების შეწყვეტა</string>
+    <string name="speech_category_voice">ხმა</string>
+    <string name="title_pref_audio_output">აუდიო გამოსავალი</string>
+    <string name="title_pref_backup">სარეზერვო ასლი და აღდგენა</string>
+    <string name="title_pref_braille">ბრაილი</string>
+    <string name="title_pref_commands">ბრძანებები</string>
+    <string name="title_pref_display">ეკრანი</string>
+    <string name="title_pref_image_and_screen_descriptions">სურათებისა და ეკრანის აღწერილობები</string>
+    <string name="title_pref_pause">პაუზა და გამორთვა</string>
+    <string name="title_pref_quick_settings_screen">სწრაფი პარამეტრები</string>
+    <string name="title_pref_speech">მეტყველება</string>
+    <string name="title_pref_speech_stream_control">მეტყველების ხმის დონის მართვა</string>
+    <string name="title_pref_touch">შეხება</string>
+    <string name="title_pref_typing">აკრეფა</string>
+    <string name="title_pref_updates">განახლებები და ინსტალაცია</string>
+    <string name="title_pref_volume_keys">ხმის კლავიშები</string>
+    <string name="typing_category_other_input">აკრეფის სხვა ხერხები</string>
+    <string name="verbosity_category_announcements">გამოცხადებები</string>
+    <string name="verbosity_category_items">ერთეულები</string>
+    <string name="verbosity_category_text">ტექსტი და სიმბოლოები</string>
+</resources>

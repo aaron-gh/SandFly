@@ -1774,4 +1774,24 @@
     <string name="settings_export_failed">সেটিংস এক্সপোর্ট করা যায়নি</string>
     <string name="settings_import_done">সেটিংস ইমপোর্ট করা হয়েছে</string>
     <string name="settings_import_failed">এই ফাইলটি একটি SandFly বা Backtalk সেটিংস ফাইল নয়, বা পড়া যাবে না</string>
+    <string name="arrow_key_nav_assign_instruction">একটি কী বা একসাথে দুটি কী টিপুন, মডিফায়ার কী সহ বা ছাড়া। মুছতে Backspace, ডিফল্টে রিসেট করতে Ctrl + Backspace, সেভ করতে Enter বা বাতিল করতে Escape টিপুন।</string>
+    <string name="arrow_key_nav_off">অ্যারো কী নেভিগেশন বন্ধ</string>
+    <string name="arrow_key_nav_on">অ্যারো কী নেভিগেশন চালু</string>
+    <string name="arrow_key_nav_page_left">পেজ বাঁদিকে</string>
+    <string name="arrow_key_nav_page_right">পেজ ডানদিকে</string>
+    <string name="arrow_key_nav_toggle">অ্যারো কী নেভিগেশন চালু বা বন্ধ করুন</string>
+    <string name="keycombo_menu_category_arrow_key_nav">অ্যারো কী নেভিগেশন</string>
+    <string-array name="pref_dictation_auto_stop_entries">
+        <item>বন্ধ</item>
+        <item>৩ সেকেন্ড</item>
+        <item>৫ সেকেন্ড</item>
+        <item>১০ সেকেন্ড</item>
+        <item>১৫ সেকেন্ড</item>
+        <item>৩০ সেকেন্ড</item>
+        <item>১ মিনিট</item>
+    </string-array>
+    <string name="shortcut_next_track">পরের ট্র্যাক</string>
+    <string name="shortcut_previous_track">আগের ট্র্যাক</string>
+    <string name="sound_mode_needs_access">নিঃশব্দ চালু বা বন্ধ করতে “বিরক্ত করবে না” অ্যাক্সেসের অনুমতি দিন।</string>
+    <string name="title_pref_dictation_auto_stop">নীরবতার পরে অটো স্টপ</string>
 </resources>

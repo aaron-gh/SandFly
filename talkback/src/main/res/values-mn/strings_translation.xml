@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_translation_auto">Автомат орчуулга</string>
+    <string name="title_pref_translation_auto_service">Автомат орчуулгын үйлчилгээ</string>
+    <string name="title_pref_translation_copy">Орчуулгыг санах ойд хуулах</string>
+    <string name="title_pref_translation_download_all">Бүх хэлийг татах</string>
+    <string name="title_pref_translation_languages">Төхөөрөмж дээрх хэлнүүд</string>
+    <string name="title_pref_translation_notifications">Мэдэгдлийг орчуулах</string>
+    <string name="title_pref_translation_region">Бүс</string>
+    <string name="title_pref_translation_say_source">Эх хэлийг хэлэх</string>
+    <string name="title_pref_translation_second_target">Зорилтот хэл дээрх текстийг орчуулах хэл</string>
+    <string name="title_pref_translation_service">Орчуулгын үйлчилгээ</string>
+    <string name="title_pref_translation_source">Эх хэл</string>
+    <string name="title_pref_translation_swap">Хэлийг солих</string>
+    <string name="title_pref_translation_target">Зорилтот хэл</string>
+    <string name="title_pref_translation_target_voice">Зорилтот хэлний дуу хоолойг ашиглах</string>
+    <string name="title_pref_translation_untranslated">Орчуулахгүй хэлнүүд</string>
+    <string name="title_pref_translation_wifi_only">Хэлийг зөвхөн Wi-Fi-аар татах</string>
+    <string name="title_translate_last_spoken_phrase">Сүүлд хэлсэн хэллэгийг орчуулах</string>
+    <string name="translation_address_hint">Хаяг, жишээ нь https://libretranslate.com</string>
+    <string name="translation_address_message">LibreTranslate серверийн хаяг, жишээ нь https://libretranslate.com. Өөрийн серверээс бусад сервер API түлхүүр шаардаж болно.</string>
+    <string name="translation_all_downloaded">Бүх хэлийг татсан</string>
+    <string name="translation_already_in">Аль хэдийн <xliff:g id="language" example="English">%1$s</xliff:g> хэл дээр байна</string>
+    <string name="translation_auto_state">Автомат орчуулга <xliff:g id="state" example="on">%1$s</xliff:g></string>
+    <string name="translation_category_speech">Яриа</string>
+    <string name="translation_detect">Хэл илрүүлэх</string>
+    <string name="translation_device_language">Төхөөрөмжийн хэл (<xliff:g id="language" example="English">%1$s</xliff:g>)</string>
+    <plurals name="translation_download_all_failed">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> хэлийг татаж чадсангүй</item>
+        <item quantity="other"><xliff:g id="count" example="3">%1$d</xliff:g> хэлийг татаж чадсангүй</item>
+    </plurals>
+    <plurals name="translation_download_all_message">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> хэл, ойролцоогоор <xliff:g id="size" example="30 MB">%2$s</xliff:g>.</item>
+        <item quantity="other"><xliff:g id="count" example="57">%1$d</xliff:g> хэл, ойролцоогоор <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+    </plurals>
+    <string name="translation_download_all_progress">Татаж байна, <xliff:g id="done" example="12">%1$d</xliff:g>/<xliff:g id="total" example="57">%2$d</xliff:g></string>
+    <string name="translation_download_all_stop">Зогсоох</string>
+    <string name="translation_download_all_stop_title">Хэл татахыг зогсоох уу?</string>
+    <string name="translation_download_done"><xliff:g id="language" example="German">%1$s</xliff:g> татагдсан</string>
+    <string name="translation_download_failed"><xliff:g id="language" example="German">%1$s</xliff:g> татагдсангүй</string>
+    <string name="translation_download_message">Ойролцоогоор 30 МБ.</string>
+    <string name="translation_download_title"><xliff:g id="language" example="German">%1$s</xliff:g>-г татах уу?</string>
+    <string name="translation_downloading">Төхөөрөмж дээрх орчуулгад зориулж <xliff:g id="languages" example="German and English">%1$s</xliff:g>-г татаж байна</string>
+    <string name="translation_error"><xliff:g id="service" example="DeepL">%1$s</xliff:g> текстийг орчуулж чадсангүй.</string>
+    <string name="translation_error_api_key"><xliff:g id="service" example="DeepL">%1$s</xliff:g> API түлхүүрийг хүлээн аваагүй.</string>
+    <string name="translation_error_connection"><xliff:g id="service" example="DeepL">%1$s</xliff:g>-д холбогдож чадсангүй.</string>
+    <string name="translation_error_details"><xliff:g id="service" example="DeepL">%1$s</xliff:g> текстийг орчуулж чадсангүй: <xliff:g id="details" example="Wrong endpoint">%2$s</xliff:g></string>
+    <string name="translation_error_detection_downloading">Хэл илрүүлэгч татагдаж байна. Хэсэг хугацааны дараа дахин оролдоно уу.</string>
+    <string name="translation_error_download">Төхөөрөмж дээрх орчуулгын хэлнүүдийг татаж чадсангүй.</string>
+    <string name="translation_error_downloading">Төхөөрөмж дээрх орчуулгын хэлнүүд татагдсаар байна</string>
+    <string name="translation_error_language"><xliff:g id="service" example="On-device">%1$s</xliff:g> орчуулга <xliff:g id="language" example="Klingon">%2$s</xliff:g> хэлийг дэмждэггүй.</string>
+    <string name="translation_error_no_address">Орчуулгын тохиргоонд <xliff:g id="service" example="LibreTranslate">%1$s</xliff:g> хаягийг оруулна уу.</string>
+    <string name="translation_error_no_key">Орчуулгын тохиргоонд <xliff:g id="service" example="DeepL">%1$s</xliff:g> API түлхүүрийг оруулна уу.</string>
+    <string name="translation_error_not_detected">Хэл илрүүлэгдсэнгүй</string>
+    <string name="translation_error_quota"><xliff:g id="service" example="DeepL">%1$s</xliff:g> ашиглалтын хязгаарт хүрсэн.</string>
+    <string name="translation_from"><xliff:g id="language" example="German">%1$s</xliff:g> хэлнээс:</string>
+    <string name="translation_key_message"><xliff:g id="service" example="DeepL">%1$s</xliff:g> API түлхүүрээ буулгана уу. Үүнийг устгахын тулд талбарыг хоослоод хадгална уу. Таны орчуулах текст <xliff:g id="service" example="DeepL">%1$s</xliff:g> руу илгээгдэнэ.</string>
+    <string name="translation_language_downloaded"><xliff:g id="language" example="German">%1$s</xliff:g>, татагдсан</string>
+    <string name="translation_language_downloading"><xliff:g id="language" example="German">%1$s</xliff:g>, татаж байна</string>
+    <string name="translation_languages_summary">Татагдсан: <xliff:g id="languages" example="English, German">%1$s</xliff:g></string>
+    <string name="translation_nothing">Орчуулах зүйл алга</string>
+    <string name="translation_region_global">Глобал</string>
+    <string name="translation_region_message">Azure дахь Translator нөөцийн тань бүс, жишээ нь westeurope. Глобал нөөцийн хувьд хоосон үлдээнэ үү.</string>
+    <string name="translation_second_none">Орчуулахгүй</string>
+    <string name="translation_service_ai">AI үйлчилгээ</string>
+    <string name="translation_service_deepl">DeepL</string>
+    <string name="translation_service_google_cloud">Google Cloud Translation</string>
+    <string name="translation_service_libretranslate">LibreTranslate</string>
+    <string name="translation_service_microsoft">Microsoft Translator</string>
+    <string name="translation_service_not_set_up"><xliff:g id="service" example="DeepL">%1$s</xliff:g>, тохируулаагүй</string>
+    <string name="translation_service_on_device">Төхөөрөмж дээр</string>
+    <string name="translation_swapped"><xliff:g id="source" example="German">%1$s</xliff:g> хэлнээс <xliff:g id="target" example="English">%2$s</xliff:g> хэл рүү</string>
+    <string name="translation_title">Орчуулга</string>
+    <string name="translation_untranslated_none">Байхгүй</string>
+</resources>

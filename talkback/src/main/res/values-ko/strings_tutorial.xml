@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="sandfly_tutorial_actions_archive">메시지로 이동하세요. <xliff:g id="gesture" example="Swipe up">%1$s</xliff:g> 또는 <xliff:g id="gesture" example="Swipe down">%2$s</xliff:g> 동작으로 메시지의 작업을 탐색합니다. <xliff:g id="gesture" example="Double-tap">%3$s</xliff:g> 동작을 하면 들리는 작업이 실행됩니다. ‘<xliff:g id="action" example="Archive">%4$s</xliff:g>’ 작업을 실행하세요.</string>
+    <string name="sandfly_tutorial_actions_intro">일부 항목에는 활성화 외에 메시지의 보관처리나 삭제 같은 작업이 있습니다. 이러한 항목에 포커스가 있으면 작업 읽기 제어 설정으로 작업을 탐색합니다.</string>
+    <string name="sandfly_tutorial_actions_title">작업</string>
+    <string name="sandfly_tutorial_activate_button">‘<xliff:g id="button" example="Ring the bell">%2$s</xliff:g>’(으)로 이동하세요. <xliff:g id="gesture" example="Double-tap">%1$s</xliff:g> 동작을 하면 활성화됩니다.</string>
+    <string name="sandfly_tutorial_activate_check_box">같은 방법으로 ‘<xliff:g id="check_box" example="Extra cheese">%1$s</xliff:g>’을(를) 선택하세요.</string>
+    <string name="sandfly_tutorial_activate_hold">일부 항목은 길게 누르면 다른 작업을 합니다. ‘<xliff:g id="button" example="Details">%2$s</xliff:g>’(으)로 이동하세요. <xliff:g id="gesture" example="Double-tap and hold">%1$s</xliff:g> 동작을 하면 길게 누릅니다.</string>
+    <string name="sandfly_tutorial_activate_intro">활성화는 화면의 어디를 탭하든 포커스가 있는 항목에 적용됩니다.</string>
+    <string name="sandfly_tutorial_activate_title">항목 활성화</string>
+    <string name="sandfly_tutorial_back_in_lesson">뒤로는 레슨을 종료하지 않습니다. 다른 레슨을 선택하려면 목차를 사용하세요.</string>
+    <string name="sandfly_tutorial_bell">벨 울리기</string>
+    <string name="sandfly_tutorial_bell_rung">울린 횟수: <xliff:g id="count" example="1">%1$d</xliff:g></string>
+    <string name="sandfly_tutorial_brightness">밝기</string>
+    <string name="sandfly_tutorial_chapter_basics">기본</string>
+    <string name="sandfly_tutorial_chapter_controls">컨트롤 및 텍스트</string>
+    <string name="sandfly_tutorial_chapter_getting_around">이동하기</string>
+    <string name="sandfly_tutorial_chapter_practice">연습</string>
+    <string name="sandfly_tutorial_chapter_reading">읽기</string>
+    <string name="sandfly_tutorial_choose_reading_control"><xliff:g id="gesture" example="Swipe down then up">%1$s</xliff:g> 또는 <xliff:g id="gesture" example="Swipe up then down">%2$s</xliff:g> 동작으로 읽기 제어 설정을 변경합니다. ‘<xliff:g id="reading_control" example="Words">%3$s</xliff:g>’을(를) 선택하세요.</string>
+    <string name="sandfly_tutorial_close">튜토리얼 닫기</string>
+    <string name="sandfly_tutorial_commands_copy"><xliff:g id="gesture" example="Triple-tap with 3 fingers">%1$s</xliff:g> 동작을 하면 SandFly가 마지막으로 말한 텍스트가 클립보드에 복사됩니다.</string>
+    <string name="sandfly_tutorial_commands_intro">이 명령은 모든 화면에서 작동합니다.</string>
+    <string name="sandfly_tutorial_commands_search"><xliff:g id="gesture" example="Swipe left then down">%1$s</xliff:g> 동작을 하면 화면에서 텍스트를 검색합니다. 이 레슨에서는 실행하는 대신 튜토리얼이 그 기능을 알려 줍니다.</string>
+    <string name="sandfly_tutorial_commands_speech_off"><xliff:g id="gesture" example="Double-tap with 3 fingers">%1$s</xliff:g> 동작을 하면 음성이 꺼지고, 다시 하면 켜집니다. 이 레슨에서는 실행하는 대신 튜토리얼이 그 기능을 알려 줍니다.</string>
+    <string name="sandfly_tutorial_commands_status"><xliff:g id="gesture" example="Triple-tap with 2 fingers">%1$s</xliff:g> 동작을 하면 시간, 배터리 잔량 및 기타 상태를 들을 수 있습니다.</string>
+    <string name="sandfly_tutorial_commands_title">유용한 명령</string>
+    <string name="sandfly_tutorial_contents">목차</string>
+    <string name="sandfly_tutorial_contents_intro">레슨이 순서대로 나열되어 있습니다. 각 레슨을 따로 열 수 있습니다.</string>
+    <string name="sandfly_tutorial_continuous_intro">SandFly는 스와이프하지 않아도 포커스가 있는 항목부터 화면 끝까지 읽을 수 있습니다. 화면을 터치하면 읽기가 중지됩니다.</string>
+    <string name="sandfly_tutorial_continuous_move">조리법의 첫 줄로 이동하세요.</string>
+    <string name="sandfly_tutorial_continuous_read"><xliff:g id="gesture" example="Swipe down then right">%1$s</xliff:g> 동작을 하면 포커스가 있는 항목부터 읽습니다.</string>
+    <string name="sandfly_tutorial_continuous_read_from_menu"><xliff:g id="gesture" example="Tap with 3 fingers">%1$s</xliff:g> 동작으로 SandFly 메뉴를 연 다음 ‘<xliff:g id="command" example="Read from focused item">%2$s</xliff:g>’을(를) 선택하세요.</string>
+    <string name="sandfly_tutorial_continuous_title">연속으로 읽기</string>
+    <string name="sandfly_tutorial_details">세부정보</string>
+    <string name="sandfly_tutorial_details_shown">오후 7시, 2인석, 창가 자리.</string>
+    <string name="sandfly_tutorial_done">완료</string>
+    <string name="sandfly_tutorial_end_practice">연습 종료</string>
+    <string name="sandfly_tutorial_explore_activate">별을 터치한 다음 손가락을 떼세요. <xliff:g id="gesture" example="Double-tap">%1$s</xliff:g> 동작을 하면 활성화됩니다. 화면 어디에서 해도 됩니다.</string>
+    <string name="sandfly_tutorial_explore_find">한 손가락으로 화면 위를 움직여 해, 달, 별, 구름 네 개의 사각형을 찾으세요.</string>
+    <string name="sandfly_tutorial_explore_intro">화면을 터치하면 손가락 아래의 항목을 읽어 줍니다. 항목을 터치해도 활성화되지 않습니다.</string>
+    <string name="sandfly_tutorial_explore_title">터치하여 탐색</string>
+    <string name="sandfly_tutorial_extra_cheese">치즈 추가</string>
+    <string name="sandfly_tutorial_finish">튜토리얼 완료</string>
+    <string name="sandfly_tutorial_forecast_today">오늘</string>
+    <string name="sandfly_tutorial_forecast_today_text">맑고 따뜻하며 바람이 약함.</string>
+    <string name="sandfly_tutorial_forecast_tomorrow">내일</string>
+    <string name="sandfly_tutorial_forecast_tomorrow_text">오전에 흐리고 정오부터 비.</string>
+    <string name="sandfly_tutorial_forecast_weekend">주말</string>
+    <string name="sandfly_tutorial_forecast_weekend_text">토요일은 바람이 강하고 일요일은 맑음.</string>
+    <string name="sandfly_tutorial_headings_intro">화면과 웹페이지는 제목으로 콘텐츠를 나눕니다. 제목 읽기 제어 설정은 한 제목에서 다음 제목으로 건너뜁니다.</string>
+    <string name="sandfly_tutorial_headings_jump"><xliff:g id="gesture" example="Swipe down">%1$s</xliff:g> 동작을 하면 다음 제목으로 건너뜁니다. ‘<xliff:g id="heading" example="Weekend">%2$s</xliff:g>’(으)로 건너뛰세요.</string>
+    <string name="sandfly_tutorial_headings_title">제목</string>
+    <string name="sandfly_tutorial_item_apples">사과</string>
+    <string name="sandfly_tutorial_item_bread">빵</string>
+    <string name="sandfly_tutorial_item_cheese">치즈</string>
+    <string name="sandfly_tutorial_item_dates">대추야자</string>
+    <string name="sandfly_tutorial_item_eggs">달걀</string>
+    <string name="sandfly_tutorial_lesson_complete">레슨 완료.</string>
+    <string name="sandfly_tutorial_lesson_complete_last">레슨 완료. <xliff:g id="gesture" example="Double-tap">%1$s</xliff:g> 동작을 하면 튜토리얼을 마칩니다.</string>
+    <string name="sandfly_tutorial_lesson_complete_next">레슨 완료. <xliff:g id="gesture" example="Double-tap">%1$s</xliff:g> 동작을 하면 다음 레슨을 시작합니다.</string>
+    <string name="sandfly_tutorial_lesson_heading"><xliff:g id="lesson" example="Moving between items">%1$s</xliff:g>, 레슨 <xliff:g id="number" example="3">%2$d</xliff:g>/<xliff:g id="count" example="17">%3$d</xliff:g></string>
+    <string name="sandfly_tutorial_list_item">항목 <xliff:g id="number" example="15">%1$d</xliff:g></string>
+    <string name="sandfly_tutorial_menu_close"><xliff:g id="gesture" example="Swipe down then left">%1$s</xliff:g> 동작을 하면 메뉴가 닫힙니다.</string>
+    <string name="sandfly_tutorial_menu_intro">SandFly 메뉴에는 포커스가 있는 항목과 현재 화면에 사용할 수 있는 명령이 있습니다.</string>
+    <string name="sandfly_tutorial_menu_open"><xliff:g id="gesture" example="Tap with 3 fingers">%1$s</xliff:g> 동작을 하면 SandFly 메뉴가 열립니다. 스와이프하여 명령을 탐색하세요. <xliff:g id="gesture" example="Swipe down then left">%2$s</xliff:g> 동작을 하면 메뉴가 닫힙니다.</string>
+    <string name="sandfly_tutorial_menu_title">SandFly 메뉴</string>
+    <string name="sandfly_tutorial_message">Sam의 메시지: 정오에 점심 어때?</string>
+    <string name="sandfly_tutorial_message_archive">보관처리</string>
+    <string name="sandfly_tutorial_message_delete">삭제</string>
+    <string name="sandfly_tutorial_message_reply">답장</string>
+    <string name="sandfly_tutorial_move_intro">스와이프하면 읽기 순서에 따라 화면의 다음 또는 이전 항목으로 이동합니다.</string>
+    <string name="sandfly_tutorial_move_next"><xliff:g id="gesture" example="Swipe right">%1$s</xliff:g> 동작을 하면 다음 항목으로 이동합니다. ‘<xliff:g id="item" example="Eggs">%2$s</xliff:g>’에 도달할 때까지 계속하세요.</string>
+    <string name="sandfly_tutorial_move_previous"><xliff:g id="gesture" example="Swipe left">%1$s</xliff:g> 동작을 하면 이전 항목으로 이동합니다. ‘<xliff:g id="item" example="Bread">%2$s</xliff:g>’(으)로 돌아가세요.</string>
+    <string name="sandfly_tutorial_move_title">항목 간 이동</string>
+    <string name="sandfly_tutorial_name">이름</string>
+    <string name="sandfly_tutorial_next_lesson">다음 레슨: <xliff:g id="lesson" example="Activating items">%1$s</xliff:g></string>
+    <string name="sandfly_tutorial_no_gesture">‘<xliff:g id="action" example="Next item">%1$s</xliff:g>’에 할당된 동작이 없습니다. 명령에서 할당하거나 단계 건너뛰기를 사용하세요.</string>
+    <string name="sandfly_tutorial_not_in_lesson">레슨 중에는 ‘<xliff:g id="action" example="Home">%1$s</xliff:g>’이(가) 실행되지 않습니다. 튜토리얼을 나가려면 목차에서 튜토리얼 닫기를 사용하세요.</string>
+    <string name="sandfly_tutorial_not_in_lesson_short">레슨 중에는 ‘<xliff:g id="action" example="Turn speech on or off">%1$s</xliff:g>’이(가) 실행되지 않습니다.</string>
+    <string name="sandfly_tutorial_pause_intro">음성은 항목 중간에 일시중지하고 멈춘 곳에서 다시 시작할 수 있습니다.</string>
+    <string name="sandfly_tutorial_pause_pause">아래 이야기로 이동하세요. 읽는 동안 <xliff:g id="gesture" example="Tap with 2 fingers">%1$s</xliff:g> 동작을 하면 음성이 일시중지되고, 다시 하면 재개됩니다.</string>
+    <string name="sandfly_tutorial_pause_resume"><xliff:g id="gesture" example="Tap with 2 fingers">%1$s</xliff:g> 동작을 다시 하면 음성이 재개됩니다.</string>
+    <string name="sandfly_tutorial_pause_title">음성 일시중지</string>
+    <string name="sandfly_tutorial_practice_gesture"><xliff:g id="gesture" example="Swipe right">%1$s</xliff:g>: <xliff:g id="action" example="Next item">%2$s</xliff:g></string>
+    <string name="sandfly_tutorial_practice_intro">각 동작은 실행되지 않고 이름과 작업을 말합니다. 다음 항목과 이전 항목으로 이동 및 활성화는 그대로 작동합니다.</string>
+    <string name="sandfly_tutorial_practice_step">아무 동작이나 하면 그 기능을 들을 수 있습니다. 끝내려면 ‘<xliff:g id="button" example="End practice">%1$s</xliff:g>’을(를) 활성화하세요.</string>
+    <string name="sandfly_tutorial_practice_title">동작 연습</string>
+    <string name="sandfly_tutorial_progress"><xliff:g id="count" example="4">%2$d</xliff:g>개 중 <xliff:g id="done" example="2">%1$d</xliff:g>개.</string>
+    <string name="sandfly_tutorial_reading_controls_characters">읽기 제어 설정을 ‘<xliff:g id="reading_control" example="Characters">%2$s</xliff:g>’(으)로 변경하세요. <xliff:g id="gesture" example="Swipe down">%1$s</xliff:g> 동작을 하면 한 문자씩 이동합니다.</string>
+    <string name="sandfly_tutorial_reading_controls_intro">읽기 제어 설정은 위아래로 스와이프할 때의 기능을 정합니다. 예를 들어 단어나 문자 단위로 이동하거나 말하기 속도를 변경합니다. 오른쪽과 왼쪽으로 스와이프하면 계속 항목 간에 이동합니다.</string>
+    <string name="sandfly_tutorial_reading_controls_move">아래 문장으로 이동하세요.</string>
+    <string name="sandfly_tutorial_reading_controls_next_word"><xliff:g id="gesture" example="Swipe down">%1$s</xliff:g> 동작을 하면 다음 단어로 이동합니다. 세 단어를 이동하세요.</string>
+    <string name="sandfly_tutorial_reading_controls_title">읽기 제어 설정</string>
+    <string name="sandfly_tutorial_recipe_1">팬케이크: 밀가루, 달걀, 우유를 섞어 부드러운 반죽을 만듭니다.</string>
+    <string name="sandfly_tutorial_recipe_2">프라이팬에 버터를 조금 넣고 달굽니다.</string>
+    <string name="sandfly_tutorial_recipe_3">팬을 얇게 덮을 만큼 반죽을 붓습니다.</string>
+    <string name="sandfly_tutorial_recipe_4">아랫면이 노릇해지면 팬케이크를 뒤집습니다.</string>
+    <string name="sandfly_tutorial_recipe_5">레몬과 설탕을 곁들여 냅니다.</string>
+    <string name="sandfly_tutorial_scrolling_intro">목록은 한 번에 일부 항목만 표시합니다. 표시된 마지막 항목을 지나 스와이프하면 목록이 스크롤됩니다.</string>
+    <string name="sandfly_tutorial_scrolling_page"><xliff:g id="gesture" example="Swipe right then left">%1$s</xliff:g> 동작을 하면 한 페이지 앞으로 스크롤합니다.</string>
+    <string name="sandfly_tutorial_scrolling_swipe"><xliff:g id="gesture" example="Swipe right">%1$s</xliff:g> 동작으로 ‘<xliff:g id="item" example="Item 15">%2$s</xliff:g>’에 도달할 때까지 목록을 탐색하세요.</string>
+    <string name="sandfly_tutorial_scrolling_title">목록 스크롤</string>
+    <string name="sandfly_tutorial_sentence">다람쥐 헌 쳇바퀴에 타고파.</string>
+    <string name="sandfly_tutorial_skip_step">단계 건너뛰기</string>
+    <string name="sandfly_tutorial_sliders_change">‘<xliff:g id="slider" example="Brightness">%3$s</xliff:g>’ 슬라이더로 이동하세요. <xliff:g id="gesture" example="Swipe up">%1$s</xliff:g> 또는 <xliff:g id="gesture" example="Swipe down">%2$s</xliff:g> 동작으로 값을 변경합니다.</string>
+    <string name="sandfly_tutorial_sliders_highest">‘<xliff:g id="slider" example="Brightness">%1$s</xliff:g>’을(를) 최고값인 100퍼센트로 설정하세요.</string>
+    <string name="sandfly_tutorial_sliders_intro">슬라이더에 포커스가 있으면 위아래로 스와이프하여 값을 변경합니다.</string>
+    <string name="sandfly_tutorial_sliders_title">슬라이더</string>
+    <string name="sandfly_tutorial_step"><xliff:g id="count" example="2">%2$d</xliff:g>단계 중 <xliff:g id="number" example="1">%1$d</xliff:g>단계: <xliff:g id="instruction" example="Swipe right to move to the next item.">%3$s</xliff:g></string>
+    <string name="sandfly_tutorial_story">모래파리는 해변, 강기슭, 숲에 사는 작은 파리입니다. 공기가 잔잔한 새벽과 해 질 녘에 가장 활발합니다. 알을 낳는 데 피가 필요하기 때문에 암컷만 뭅니다. 물린 곳은 며칠 동안 가렵기 때문에 모래파리가 사는 지역을 찾는 사람들은 방충제를 가지고 다닙니다. 모래파리는 잘 날지 못해서 약한 바람만 불어도 다가오지 않습니다.</string>
+    <string name="sandfly_tutorial_system_back"><xliff:g id="gesture" example="Swipe down then left">%1$s</xliff:g> 동작을 하면 뒤로 이동합니다.</string>
+    <string name="sandfly_tutorial_system_home"><xliff:g id="gesture" example="Swipe up then left">%1$s</xliff:g> 동작을 하면 홈 화면으로 이동합니다.</string>
+    <string name="sandfly_tutorial_system_intro">이 동작은 모든 화면에서 작동합니다. 이 레슨에서는 실행하는 대신 튜토리얼이 각 동작의 기능을 알려 줍니다.</string>
+    <string name="sandfly_tutorial_system_notifications"><xliff:g id="gesture" example="Swipe right then down">%1$s</xliff:g> 동작을 하면 알림이 열립니다.</string>
+    <string name="sandfly_tutorial_system_overview"><xliff:g id="gesture" example="Swipe left then up">%1$s</xliff:g> 동작을 하면 최근 사용 앱이 표시됩니다.</string>
+    <string name="sandfly_tutorial_system_title">뒤로, 홈, 알림</string>
+    <string name="sandfly_tutorial_tile_cloud">구름</string>
+    <string name="sandfly_tutorial_tile_moon">달</string>
+    <string name="sandfly_tutorial_tile_star">별</string>
+    <string name="sandfly_tutorial_tile_sun">해</string>
+    <string name="sandfly_tutorial_title">SandFly 튜토리얼</string>
+    <string name="sandfly_tutorial_typing_delete">키보드의 삭제 키로 마지막 글자를 삭제하세요.</string>
+    <string name="sandfly_tutorial_typing_intro">텍스트 입력란을 활성화하면 키보드가 열립니다. 키를 터치하면 키 이름을 읽어 주고, 손가락을 떼면 입력됩니다.</string>
+    <string name="sandfly_tutorial_typing_open">‘<xliff:g id="field" example="Name">%2$s</xliff:g>’ 입력란으로 이동하세요. <xliff:g id="gesture" example="Double-tap">%1$s</xliff:g> 동작을 하면 입력을 시작합니다.</string>
+    <string name="sandfly_tutorial_typing_title">입력</string>
+    <string name="sandfly_tutorial_typing_type">‘<xliff:g id="word" example="cat">%1$s</xliff:g>’을(를) 입력하세요.</string>
+    <string name="sandfly_tutorial_typing_word">나무</string>
+    <string name="sandfly_tutorial_welcome_intro">이 튜토리얼에서는 SandFly의 동작을 배웁니다. 각 레슨은 안내를 제공하고, 직접 동작을 수행할 때까지 기다린 다음 다음 안내를 제공합니다. 안내는 레슨 이름 다음의 첫 번째 항목입니다. 목차에는 모든 레슨이 있으며, 튜토리얼은 마지막으로 진행한 레슨에서 다시 열립니다.</string>
+    <string name="sandfly_tutorial_welcome_start"><xliff:g id="gesture" example="Double-tap">%1$s</xliff:g> 동작을 하면 시작합니다. 화면 어디에서 해도 됩니다.</string>
+    <string name="sandfly_tutorial_welcome_title">환영합니다</string>
+</resources>

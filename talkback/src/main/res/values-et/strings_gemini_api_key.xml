@@ -18,7 +18,7 @@
     <string name="ai_service_model_hint">Mudel</string>
     <string name="ai_service_address_invalid">Aadress peab algama osaga https://. Midagi ei salvestatud.</string>
     <string name="dialog_message_ai_service_consent">Pildid ja ekraanipildid saadetakse kirjeldamiseks teenusele <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g>, mis võtab mitu sekundit. Kehtivad selle teenuse tingimused ja privaatsuseeskirjad. Generatiivne tehisintellekt on katseline, nii et see teeb vigu.</string>
-    <string name="ai_service_error_api_key">AI-teenus ei aktsepteerinud API-võtit. Kontrollige selle seadeid jaotises Automaatsed kirjeldused.</string>
+    <string name="ai_service_error_api_key">AI-teenus ei aktsepteerinud API-võtit. Kontrollige selle seadeid jaotises Pildi- ja ekraanikirjeldused.</string>
     <string name="ai_service_error_quota">AI-teenuse kasutuslimiit on täis. Proovige hiljem uuesti.</string>
     <string name="ai_service_error_busy">AI-teenus on praegu hõivatud. Proovige hetke pärast uuesti.</string>
     <string name="ai_service_error_timeout">AI-teenusel võttis vastamine liiga kaua aega. Proovi uuesti.</string>
@@ -30,7 +30,7 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">Puudub</string>
-    <string name="ai_service_not_set_up">AI-teenust ei kasutata. Seadistage see või valige see automaatsete kirjelduste seadetes.</string>
+    <string name="ai_service_not_set_up">AI-teenust ei kasutata. Seadistage see või valige see jaotise Pildi- ja ekraanikirjeldused seadetes.</string>
     <string name="ai_provider_none_set_up">AI-teenust pole seadistatud. Seadistage see allolevates seadetes.</string>
     <string name="ai_provider_other">Muu teenus</string>
     <string name="title_pref_category_ai_services">AI teenused</string>

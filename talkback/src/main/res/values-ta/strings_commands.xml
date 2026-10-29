@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="command_add_arrow_keys">அம்புக்குறி விசைகளைச் சேர்</string>
+    <string name="command_add_gesture">சைகையைச் சேர்</string>
+    <string name="command_choose_arrow_keys">அம்புக்குறி விசைகளைத் தேர்ந்தெடு</string>
+    <string name="command_choose_gesture">சைகையைத் தேர்ந்தெடு</string>
+    <string name="command_gesture_assigned"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g>: <xliff:g id="command" example="Describe image">%2$s</xliff:g></string>
+    <string name="command_gestures">சைகைகள்</string>
+    <string name="command_keyboard_shortcut">கீபோர்டு ஷார்ட்கட்</string>
+    <string name="command_no_arrow_keys">அம்புக்குறி விசைகள் இல்லை</string>
+    <string name="command_no_gestures">சைகைகள் இல்லை</string>
+    <string name="command_remove_arrow_keys">அம்புக்குறி விசைகளை அகற்று</string>
+    <string name="command_remove_gesture">சைகையை அகற்று</string>
+    <string name="command_replace">மாற்றவும்</string>
+    <string name="command_replace_gesture"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g> தற்போது <xliff:g id="old_command" example="Read from top">%2$s</xliff:g> கட்டளையை இயக்குகிறது. அதற்குப் பதிலாக <xliff:g id="new_command" example="Describe image">%3$s</xliff:g> கட்டளைக்கு இதைப் பயன்படுத்தவா?</string>
+    <string name="commands_category_activation">செயல்படுத்துதல்</string>
+    <string name="commands_category_media">மீடியா மற்றும் ஒலியளவு</string>
+    <string name="commands_category_sandfly">SandFly</string>
+    <string name="commands_category_scrolling">நகர்த்துதல்</string>
+    <string name="commands_category_speech">பேச்சு</string>
+    <string name="commands_category_tables">அட்டவணைகள்</string>
+    <string name="commands_category_web">இணையம்</string>
+    <string name="item_list_current">தற்போதுள்ளவை</string>
+    <string name="item_list_not_in_reading_controls">வாசிப்புக் கட்டுப்பாடுகளில் இல்லாதவை</string>
+    <string name="item_list_not_in_sandfly_menu">SandFly மெனுவில் இல்லாதவை</string>
+    <string name="item_list_options">விருப்பங்கள்</string>
+    <string name="sounds_category_sounds">ஒலிகள்</string>
+    <string name="sounds_category_vibration">அதிர்வு</string>
+    <string name="speech_category_languages">மொழிகள்</string>
+    <string name="speech_category_other_apps">பிற ஆப்ஸ்</string>
+    <string name="speech_category_pronunciation">உச்சரிப்பு</string>
+    <string name="speech_category_stopping">பேச்சை நிறுத்துதல்</string>
+    <string name="speech_category_voice">குரல்</string>
+    <string name="title_pref_audio_output">ஆடியோ வெளியீடு</string>
+    <string name="title_pref_backup">காப்புப் பிரதியும் மீட்டமைத்தலும்</string>
+    <string name="title_pref_braille">பிரெயில்</string>
+    <string name="title_pref_commands">கட்டளைகள்</string>
+    <string name="title_pref_display">காட்சி</string>
+    <string name="title_pref_image_and_screen_descriptions">படம் மற்றும் திரை விளக்கங்கள்</string>
+    <string name="title_pref_pause">இடைநிறுத்துதலும் முடக்குதலும்</string>
+    <string name="title_pref_quick_settings_screen">விரைவு அமைப்புகள்</string>
+    <string name="title_pref_speech">பேச்சு</string>
+    <string name="title_pref_speech_stream_control">பேச்சுக்கான ஒலியளவுக் கட்டுப்பாடு</string>
+    <string name="title_pref_touch">தொடுதல்</string>
+    <string name="title_pref_typing">டைப் செய்தல்</string>
+    <string name="title_pref_updates">புதுப்பிப்புகளும் நிறுவலும்</string>
+    <string name="title_pref_volume_keys">ஒலியளவு பட்டன்கள்</string>
+    <string name="typing_category_other_input">டைப் செய்வதற்கான பிற வழிகள்</string>
+    <string name="verbosity_category_announcements">அறிவிப்புகள்</string>
+    <string name="verbosity_category_items">உருப்படிகள்</string>
+    <string name="verbosity_category_text">உரையும் குறியீடுகளும்</string>
+</resources>

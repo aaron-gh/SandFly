@@ -1069,8 +1069,8 @@
   <string name="checking_notifications_tips">Untuk menyemak sejarah pemberitahuan anda, leret ke bawah menggunakan 2 jari daripada bahagian atas skrin anda</string>
   <string name="image_description_playground_title">Cuba dapatkan perihalan imej</string>
   <string name="image_description_playground_content_one">Apabila anda memfokuskan imej, buka menu SandFly dan pilih “Perihalkan imej”.\n\nTerdapat satu foto di bawah. Cuba dapatkan perihalan untuk imej tersebut.</string>
-  <string name="image_description_playground_content_two">Anda boleh menukar tetapan perihalan imej pada bila-bila masa dalam tetapan SandFly &gt; Perihalan automatik.</string>
-  <string name="image_description_playground_content_two_tts">Anda boleh menukar tetapan perihalan imej pada bila-bila masa dalam tetapan SandFly kemudian Perihalan automatik.</string>
+    <string name="image_description_playground_content_two">Anda boleh menukar tetapan perihalan imej pada bila-bila masa dalam tetapan SandFly &gt; Perihalan imej dan skrin.</string>
+    <string name="image_description_playground_content_two_tts">Anda boleh menukar tetapan perihalan imej pada bila-bila masa dalam tetapan SandFly kemudian Perihalan imej dan skrin.</string>
   <string name="image_description_sample_image_content_description">Imej contoh, ketik dengan 3 jari untuk membuka menu SandFly dan pilih \"Perihalkan imej\" untuk mendengar perihalan.</string>
   <string name="practice_gestures_title">Berlatih gerak isyarat</string>
   <string name="practice_keyboard_gestures_title">Pintasan papan kekunci latihan</string>
@@ -1735,7 +1735,7 @@
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> dilepaskan. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly menyebut butiran item dalam susunan ini. Untuk menukarnya, sentuh dan tahan butiran, kemudian seret ke atas atau ke bawah. Apabila SandFly dihidupkan, ketik dua kali dan tahan, kemudian seret. Anda juga boleh menggunakan tindakan Alihkan ke atas dan Alihkan ke bawah.</string>
     <string name="title_pref_speak_items_before_scroll">Sebut item sebelum ditatal ke paparan</string>
-    <string name="gemini_error_api_key">Gemini tidak menerima kunci API. Semak kunci dalam tetapan Perihalan automatik.</string>
+    <string name="gemini_error_api_key">Gemini tidak menerima kunci API. Semak kunci dalam tetapan Perihalan imej dan skrin.</string>
     <string name="gemini_error_quota">Had penggunaan untuk kunci API Gemini anda telah dicapai. Cuba lagi nanti.</string>
     <string name="gemini_error_busy">Gemini sibuk sekarang. Cuba lagi sebentar lagi.</string>
     <string name="gemini_error_timeout">Gemini mengambil masa terlalu lama untuk menjawab. Cuba lagi.</string>
@@ -1774,4 +1774,24 @@
     <string name="settings_export_failed">Tetapan tidak dapat dieksport</string>
     <string name="settings_import_done">Tetapan diimport</string>
     <string name="settings_import_failed">Fail ini bukan fail tetapan SandFly atau Backtalk, atau tidak boleh dibaca</string>
+    <string name="sound_mode_needs_access">Benarkan akses Jangan Ganggu untuk menghidupkan atau mematikan Redam.</string>
+    <string name="keycombo_menu_category_arrow_key_nav">Navigasi kekunci anak panah</string>
+    <string name="arrow_key_nav_toggle">Hidupkan atau matikan navigasi kekunci anak panah</string>
+    <string name="arrow_key_nav_on">Navigasi kekunci anak panah dihidupkan</string>
+    <string name="arrow_key_nav_off">Navigasi kekunci anak panah dimatikan</string>
+    <string name="arrow_key_nav_page_left">Halaman ke kiri</string>
+    <string name="arrow_key_nav_page_right">Halaman ke kanan</string>
+    <string name="arrow_key_nav_assign_instruction">Tekan satu kekunci atau dua kekunci serentak, dengan atau tanpa kekunci pengubah suai. Tekan Backspace untuk mengosongkan, Ctrl + Backspace untuk menetapkan semula kepada lalai, Enter untuk menyimpan atau Escape untuk membatalkan.</string>
+    <string name="shortcut_next_track">Lagu seterusnya</string>
+    <string name="shortcut_previous_track">Lagu sebelumnya</string>
+    <string-array name="pref_dictation_auto_stop_entries">
+        <item>Mati</item>
+        <item>3 saat</item>
+        <item>5 saat</item>
+        <item>10 saat</item>
+        <item>15 saat</item>
+        <item>30 saat</item>
+        <item>1 minit</item>
+    </string-array>
+    <string name="title_pref_dictation_auto_stop">Henti automatik selepas senyap</string>
 </resources>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_translation_auto">Автоматичний переклад</string>
+    <string name="title_pref_translation_auto_service">Сервіс автоматичного перекладу</string>
+    <string name="title_pref_translation_copy">Копіювати переклади в буфер обміну</string>
+    <string name="title_pref_translation_download_all">Завантажити всі мови</string>
+    <string name="title_pref_translation_languages">Мови на пристрої</string>
+    <string name="title_pref_translation_notifications">Перекладати сповіщення</string>
+    <string name="title_pref_translation_region">Регіон</string>
+    <string name="title_pref_translation_say_source">Озвучувати мову оригіналу</string>
+    <string name="title_pref_translation_second_target">Текст мовою перекладу перекладати на</string>
+    <string name="title_pref_translation_service">Сервіс перекладу</string>
+    <string name="title_pref_translation_source">Перекладати з</string>
+    <string name="title_pref_translation_swap">Поміняти мови місцями</string>
+    <string name="title_pref_translation_target">Перекладати на</string>
+    <string name="title_pref_translation_target_voice">Використовувати голос мови перекладу</string>
+    <string name="title_pref_translation_untranslated">Мови без перекладу</string>
+    <string name="title_pref_translation_wifi_only">Завантажувати мови лише через Wi-Fi</string>
+    <string name="title_translate_last_spoken_phrase">Перекласти останню озвучену фразу</string>
+    <string name="translation_address_hint">Адреса, наприклад https://libretranslate.com</string>
+    <string name="translation_address_message">Адреса сервера LibreTranslate, наприклад https://libretranslate.com. Сервери, крім вашого власного, можуть вимагати ключ API.</string>
+    <string name="translation_all_downloaded">Усі мови завантажено</string>
+    <string name="translation_already_in">Текст уже мовою: <xliff:g id="language" example="English">%1$s</xliff:g></string>
+    <string name="translation_auto_state">Автоматичний переклад: <xliff:g id="state" example="on">%1$s</xliff:g></string>
+    <string name="translation_category_speech">Мовлення</string>
+    <string name="translation_detect">Визначити мову</string>
+    <string name="translation_device_language">Мова пристрою (<xliff:g id="language" example="English">%1$s</xliff:g>)</string>
+    <plurals name="translation_download_all_failed">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> мову не завантажено</item>
+        <item quantity="few"><xliff:g id="count" example="3">%1$d</xliff:g> мови не завантажено</item>
+        <item quantity="many"><xliff:g id="count" example="3">%1$d</xliff:g> мов не завантажено</item>
+        <item quantity="other"><xliff:g id="count" example="3">%1$d</xliff:g> мови не завантажено</item>
+    </plurals>
+    <plurals name="translation_download_all_message">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> мова, приблизно <xliff:g id="size" example="30 MB">%2$s</xliff:g>.</item>
+        <item quantity="few"><xliff:g id="count" example="57">%1$d</xliff:g> мови, приблизно <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+        <item quantity="many"><xliff:g id="count" example="57">%1$d</xliff:g> мов, приблизно <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+        <item quantity="other"><xliff:g id="count" example="57">%1$d</xliff:g> мови, приблизно <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+    </plurals>
+    <string name="translation_download_all_progress">Завантаження: <xliff:g id="done" example="12">%1$d</xliff:g> з <xliff:g id="total" example="57">%2$d</xliff:g></string>
+    <string name="translation_download_all_stop">Зупинити</string>
+    <string name="translation_download_all_stop_title">Зупинити завантаження мов?</string>
+    <string name="translation_download_done"><xliff:g id="language" example="German">%1$s</xliff:g>: завантажено</string>
+    <string name="translation_download_failed"><xliff:g id="language" example="German">%1$s</xliff:g>: не завантажено</string>
+    <string name="translation_download_message">Приблизно 30 МБ.</string>
+    <string name="translation_download_title">Завантажити мову: <xliff:g id="language" example="German">%1$s</xliff:g>?</string>
+    <string name="translation_downloading">Завантаження мов для перекладу на пристрої: <xliff:g id="languages" example="German and English">%1$s</xliff:g></string>
+    <string name="translation_error">Сервісу <xliff:g id="service" example="DeepL">%1$s</xliff:g> не вдалося перекласти текст.</string>
+    <string name="translation_error_api_key">Сервіс <xliff:g id="service" example="DeepL">%1$s</xliff:g> не прийняв ключ API.</string>
+    <string name="translation_error_connection">Не вдалося підключитися до <xliff:g id="service" example="DeepL">%1$s</xliff:g>.</string>
+    <string name="translation_error_details">Сервісу <xliff:g id="service" example="DeepL">%1$s</xliff:g> не вдалося перекласти текст: <xliff:g id="details" example="Wrong endpoint">%2$s</xliff:g></string>
+    <string name="translation_error_detection_downloading">Модуль визначення мови завантажується. Повторіть спробу за мить.</string>
+    <string name="translation_error_download">Не вдалося завантажити мови для перекладу на пристрої.</string>
+    <string name="translation_error_downloading">Мови для перекладу на пристрої ще завантажуються</string>
+    <string name="translation_error_language">Переклад «<xliff:g id="service" example="On-device">%1$s</xliff:g>» не підтримує мову: <xliff:g id="language" example="Klingon">%2$s</xliff:g>.</string>
+    <string name="translation_error_no_address">Введіть адресу <xliff:g id="service" example="LibreTranslate">%1$s</xliff:g> у налаштуваннях «Переклад».</string>
+    <string name="translation_error_no_key">Введіть ключ API <xliff:g id="service" example="DeepL">%1$s</xliff:g> у налаштуваннях «Переклад».</string>
+    <string name="translation_error_not_detected">Мову не визначено</string>
+    <string name="translation_error_quota">Досягнуто ліміту використання <xliff:g id="service" example="DeepL">%1$s</xliff:g>.</string>
+    <string name="translation_from">Мова оригіналу — <xliff:g id="language" example="German">%1$s</xliff:g>:</string>
+    <string name="translation_key_message">Вставте свій ключ API <xliff:g id="service" example="DeepL">%1$s</xliff:g>. Щоб видалити його, очистьте поле й збережіть. Текст, який ви перекладаєте, надсилається в <xliff:g id="service" example="DeepL">%1$s</xliff:g>.</string>
+    <string name="translation_language_downloaded"><xliff:g id="language" example="German">%1$s</xliff:g>, завантажено</string>
+    <string name="translation_language_downloading"><xliff:g id="language" example="German">%1$s</xliff:g>, завантажується</string>
+    <string name="translation_languages_summary">Завантажено: <xliff:g id="languages" example="English, German">%1$s</xliff:g></string>
+    <string name="translation_nothing">Немає тексту для перекладу</string>
+    <string name="translation_region_global">Глобальний</string>
+    <string name="translation_region_message">Регіон вашого ресурсу Translator в Azure, наприклад westeurope. Для глобального ресурсу залиште поле порожнім.</string>
+    <string name="translation_second_none">Не перекладати</string>
+    <string name="translation_service_ai">Сервіс ШІ</string>
+    <string name="translation_service_deepl">DeepL</string>
+    <string name="translation_service_google_cloud">Google Cloud Translation</string>
+    <string name="translation_service_libretranslate">LibreTranslate</string>
+    <string name="translation_service_microsoft">Microsoft Translator</string>
+    <string name="translation_service_not_set_up"><xliff:g id="service" example="DeepL">%1$s</xliff:g>, не налаштовано</string>
+    <string name="translation_service_on_device">На пристрої</string>
+    <string name="translation_swapped">З мови: <xliff:g id="source" example="German">%1$s</xliff:g>, на мову: <xliff:g id="target" example="English">%2$s</xliff:g></string>
+    <string name="translation_title">Переклад</string>
+    <string name="translation_untranslated_none">Немає</string>
+</resources>

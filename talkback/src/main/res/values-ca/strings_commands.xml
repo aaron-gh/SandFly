@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="command_add_arrow_keys">Afegeix tecles de fletxa</string>
+    <string name="command_add_gesture">Afegeix un gest</string>
+    <string name="command_choose_arrow_keys">Tria les tecles de fletxa</string>
+    <string name="command_choose_gesture">Tria un gest</string>
+    <string name="command_gesture_assigned"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g>: <xliff:g id="command" example="Describe image">%2$s</xliff:g></string>
+    <string name="command_gestures">Gestos</string>
+    <string name="command_keyboard_shortcut">Tecla de drecera</string>
+    <string name="command_no_arrow_keys">Cap tecla de fletxa</string>
+    <string name="command_no_gestures">Cap gest</string>
+    <string name="command_remove_arrow_keys">Suprimeix les tecles de fletxa</string>
+    <string name="command_remove_gesture">Suprimeix el gest</string>
+    <string name="command_replace">Substitueix</string>
+    <string name="command_replace_gesture"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g> executa <xliff:g id="old_command" example="Read from top">%2$s</xliff:g>. Vols utilitzar-lo per a <xliff:g id="new_command" example="Describe image">%3$s</xliff:g>?</string>
+    <string name="commands_category_activation">Activació</string>
+    <string name="commands_category_media">Multimèdia i volum</string>
+    <string name="commands_category_sandfly">SandFly</string>
+    <string name="commands_category_scrolling">Desplaçament</string>
+    <string name="commands_category_speech">Veu</string>
+    <string name="commands_category_tables">Taules</string>
+    <string name="commands_category_web">Web</string>
+    <string name="item_list_current">Actuals</string>
+    <string name="item_list_not_in_reading_controls">No són als controls de lectura</string>
+    <string name="item_list_not_in_sandfly_menu">No són al menú de SandFly</string>
+    <string name="item_list_options">Opcions</string>
+    <string name="sounds_category_sounds">Sons</string>
+    <string name="sounds_category_vibration">Vibració</string>
+    <string name="speech_category_languages">Idiomes</string>
+    <string name="speech_category_other_apps">Altres aplicacions</string>
+    <string name="speech_category_pronunciation">Pronunciació</string>
+    <string name="speech_category_stopping">Aturar la veu</string>
+    <string name="speech_category_voice">Veu</string>
+    <string name="title_pref_audio_output">Sortida d\'àudio</string>
+    <string name="title_pref_backup">Còpia de seguretat i restauració</string>
+    <string name="title_pref_braille">Braille</string>
+    <string name="title_pref_commands">Ordres</string>
+    <string name="title_pref_display">Pantalla</string>
+    <string name="title_pref_image_and_screen_descriptions">Descripcions d\'imatges i pantalla</string>
+    <string name="title_pref_pause">Pausa i desactivació</string>
+    <string name="title_pref_quick_settings_screen">Configuració ràpida</string>
+    <string name="title_pref_speech">Veu</string>
+    <string name="title_pref_speech_stream_control">Control de volum de la veu</string>
+    <string name="title_pref_touch">Tacte</string>
+    <string name="title_pref_typing">Escriptura</string>
+    <string name="title_pref_updates">Actualitzacions i instal·lació</string>
+    <string name="title_pref_volume_keys">Tecles de volum</string>
+    <string name="typing_category_other_input">Altres maneres d\'escriure</string>
+    <string name="verbosity_category_announcements">Anuncis</string>
+    <string name="verbosity_category_items">Elements</string>
+    <string name="verbosity_category_text">Text i símbols</string>
+</resources>

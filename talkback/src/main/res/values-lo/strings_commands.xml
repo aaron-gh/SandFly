@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="command_add_arrow_keys">ເພີ່ມປຸ່ມລູກສອນ</string>
+    <string name="command_add_gesture">ເພີ່ມທ່າທາງ</string>
+    <string name="command_choose_arrow_keys">ເລືອກປຸ່ມລູກສອນ</string>
+    <string name="command_choose_gesture">ເລືອກທ່າທາງ</string>
+    <string name="command_gesture_assigned"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g>: <xliff:g id="command" example="Describe image">%2$s</xliff:g></string>
+    <string name="command_gestures">ທ່າທາງ</string>
+    <string name="command_keyboard_shortcut">ປຸ່ມລັດແປ້ນພິມ</string>
+    <string name="command_no_arrow_keys">ບໍ່ມີປຸ່ມລູກສອນ</string>
+    <string name="command_no_gestures">ບໍ່ມີທ່າທາງ</string>
+    <string name="command_remove_arrow_keys">ລຶບປຸ່ມລູກສອນອອກ</string>
+    <string name="command_remove_gesture">ລຶບທ່າທາງອອກ</string>
+    <string name="command_replace">ແທນທີ່</string>
+    <string name="command_replace_gesture"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g> ໃຊ້ສຳລັບ <xliff:g id="old_command" example="Read from top">%2$s</xliff:g> ຢູ່. ໃຊ້ທ່າທາງນີ້ສຳລັບ <xliff:g id="new_command" example="Describe image">%3$s</xliff:g> ແທນບໍ?</string>
+    <string name="commands_category_activation">ການເປີດນຳໃຊ້</string>
+    <string name="commands_category_media">ມີເດຍ ແລະ ລະດັບສຽງ</string>
+    <string name="commands_category_sandfly">SandFly</string>
+    <string name="commands_category_scrolling">ການເລື່ອນ</string>
+    <string name="commands_category_speech">ການເວົ້າ</string>
+    <string name="commands_category_tables">ຕາຕະລາງ</string>
+    <string name="commands_category_web">ເວັບ</string>
+    <string name="item_list_current">ປັດຈຸບັນ</string>
+    <string name="item_list_not_in_reading_controls">ບໍ່ຢູ່ໃນຕົວຄວບຄຸມການອ່ານ</string>
+    <string name="item_list_not_in_sandfly_menu">ບໍ່ຢູ່ໃນເມນູ SandFly</string>
+    <string name="item_list_options">ຕົວເລືອກ</string>
+    <string name="sounds_category_sounds">ສຽງ</string>
+    <string name="sounds_category_vibration">ການສັ່ນ</string>
+    <string name="speech_category_languages">ພາສາ</string>
+    <string name="speech_category_other_apps">ແອັບອື່ນໆ</string>
+    <string name="speech_category_pronunciation">ການອອກສຽງ</string>
+    <string name="speech_category_stopping">ການຢຸດສຽງເວົ້າ</string>
+    <string name="speech_category_voice">ສຽງ</string>
+    <string name="title_pref_audio_output">ເອົາພຸດສຽງ</string>
+    <string name="title_pref_backup">ສຳຮອງ ແລະ ກູ້ຄືນ</string>
+    <string name="title_pref_braille">ອັກສອນນູນ</string>
+    <string name="title_pref_commands">ຄໍາສັ່ງ</string>
+    <string name="title_pref_display">ການສະແດງຜົນ</string>
+    <string name="title_pref_image_and_screen_descriptions">ຄຳອະທິບາຍຮູບ ແລະ ໜ້າຈໍ</string>
+    <string name="title_pref_pause">ຢຸດຊົ່ວຄາວ ແລະ ປິດ</string>
+    <string name="title_pref_quick_settings_screen">ການຕັ້ງຄ່າດ່ວນ</string>
+    <string name="title_pref_speech">ການເວົ້າ</string>
+    <string name="title_pref_speech_stream_control">ການຄວບຄຸມລະດັບສຽງສຳລັບສຽງເວົ້າ</string>
+    <string name="title_pref_touch">ການສຳຜັດ</string>
+    <string name="title_pref_typing">ການພິມ</string>
+    <string name="title_pref_updates">ການອັບເດດ ແລະ ການຕິດຕັ້ງ</string>
+    <string name="title_pref_volume_keys">ປຸ່ມລະດັບສຽງ</string>
+    <string name="typing_category_other_input">ວິທີພິມອື່ນໆ</string>
+    <string name="verbosity_category_announcements">ການປະກາດ</string>
+    <string name="verbosity_category_items">ລາຍການ</string>
+    <string name="verbosity_category_text">ຂໍ້ຄວາມ ແລະ ສັນຍາລັກ</string>
+</resources>

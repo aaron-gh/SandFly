@@ -1069,8 +1069,8 @@
   <string name="checking_notifications_tips">For å sjekke varselloggen, sveip ned med to fingre fra toppen av skjermen</string>
   <string name="image_description_playground_title">Prøv å få bildebeskrivelser</string>
   <string name="image_description_playground_content_one">Når du har uthevet et bilde, åpner du SandFly-menyen og velger «Beskriv bildet».\n\nEtt bilde vises nedenfor. Prøv å få en beskrivelse av det.</string>
-  <string name="image_description_playground_content_two">Du kan endre bildebeskrivelsesinnstillinger når som helst i SandFly-innstillinger &gt; Automatiske beskrivelser.</string>
-  <string name="image_description_playground_content_two_tts">Du kan endre bildebeskrivelsesinnstillinger når som helst i SandFly-innstillingene og deretter Automatiske beskrivelser.</string>
+    <string name="image_description_playground_content_two">Du kan endre bildebeskrivelsesinnstillinger når som helst i SandFly-innstillinger &gt; Bilde- og skjermbeskrivelser.</string>
+    <string name="image_description_playground_content_two_tts">Du kan endre bildebeskrivelsesinnstillinger når som helst i SandFly-innstillingene og deretter Bilde- og skjermbeskrivelser.</string>
   <string name="image_description_sample_image_content_description">Eksempelbilde: Trykk med tre fingre for å åpne SandFly-menyen, og velg «Beskriv bildet» for å høre en beskrivelse.</string>
   <string name="practice_gestures_title">Øv på bevegelser</string>
   <string name="practice_keyboard_gestures_title">Øv på hurtigtaster</string>
@@ -1735,7 +1735,7 @@
     <string name="template_item_details_order_dropped">Sluppet: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly leser opp detaljene for et element i denne rekkefølgen. For å endre den, trykk og hold på en detalj og dra den opp eller ned. Når SandFly er på, dobbelttrykker du og holder, og drar. Du kan også bruke handlingene Flytt opp og Flytt ned.</string>
     <string name="title_pref_speak_items_before_scroll">Les elementer før de ruller inn i visningen</string>
-    <string name="gemini_error_api_key">Gemini godtok ikke API-nøkkelen. Sjekk nøkkelen i innstillinger for automatiske beskrivelser.</string>
+    <string name="gemini_error_api_key">Gemini godtok ikke API-nøkkelen. Sjekk nøkkelen i innstillingene for Bilde- og skjermbeskrivelser.</string>
     <string name="gemini_error_quota">Bruksgrensen for Gemini API-nøkkelen din er nådd. Prøv igjen senere.</string>
     <string name="gemini_error_busy">Gemini er opptatt akkurat nå. Prøv igjen om et øyeblikk.</string>
     <string name="gemini_error_timeout">Gemini tok for lang tid å svare. Prøv igjen.</string>
@@ -1774,4 +1774,24 @@
     <string name="settings_export_failed">Innstillinger kunne ikke eksporteres</string>
     <string name="settings_import_done">Innstillinger importert</string>
     <string name="settings_import_failed">Denne filen er ikke en SandFly- eller Backtalk-innstillingsfil, eller den kunne ikke leses</string>
+    <string name="sound_mode_needs_access">Gi tilgang til Ikke forstyrr for å slå Lydløs på eller av.</string>
+    <string name="keycombo_menu_category_arrow_key_nav">Piltastnavigering</string>
+    <string name="arrow_key_nav_toggle">Slå piltastnavigering på eller av</string>
+    <string name="arrow_key_nav_on">Piltastnavigering på</string>
+    <string name="arrow_key_nav_off">Piltastnavigering av</string>
+    <string name="arrow_key_nav_page_left">Side til venstre</string>
+    <string name="arrow_key_nav_page_right">Side til høyre</string>
+    <string name="arrow_key_nav_assign_instruction">Trykk på én tast eller to taster samtidig, med eller uten modifikatortaster. Trykk på Backspace for å tømme, Ctrl + Backspace for å tilbakestille til standard, Enter for å lagre eller Escape for å avbryte.</string>
+    <string name="shortcut_next_track">Neste spor</string>
+    <string name="shortcut_previous_track">Forrige spor</string>
+    <string-array name="pref_dictation_auto_stop_entries">
+        <item>Av</item>
+        <item>3 sekunder</item>
+        <item>5 sekunder</item>
+        <item>10 sekunder</item>
+        <item>15 sekunder</item>
+        <item>30 sekunder</item>
+        <item>1 minutt</item>
+    </string-array>
+    <string name="title_pref_dictation_auto_stop">Automatisk stopp etter stillhet</string>
 </resources>

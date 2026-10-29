@@ -18,7 +18,7 @@
     <string name="ai_service_model_hint">Model</string>
     <string name="ai_service_address_invalid">Adresa mora počinjati s https://. Ništa nije spremljeno.</string>
     <string name="dialog_message_ai_service_consent">Slike i snimke zaslona šalju se usluzi <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> radi opisa, što traje nekoliko sekundi. Primjenjuju se uvjeti i pravila o privatnosti te usluge. Generativna umjetna inteligencija je eksperimentalna pa će griješiti.</string>
-    <string name="ai_service_error_api_key">AI usluga nije prihvatila API ključ. Provjerite njezine postavke u odjeljku Automatski opisi.</string>
+    <string name="ai_service_error_api_key">AI usluga nije prihvatila API ključ. Provjerite njezine postavke u odjeljku Opisi slika i zaslona.</string>
     <string name="ai_service_error_quota">Dosegnuto je ograničenje upotrebe AI usluge. Pokušajte ponovno kasnije.</string>
     <string name="ai_service_error_busy">AI usluga je trenutno zauzeta. Pokušajte ponovno za trenutak.</string>
     <string name="ai_service_error_timeout">AI službi trebalo je predugo da odgovori. Pokušajte ponovno.</string>
@@ -30,7 +30,7 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">Ništa</string>
-    <string name="ai_service_not_set_up">Ne koristi se nijedna AI usluga. Postavite ili odaberite jednu u postavkama Automatski opisi.</string>
+    <string name="ai_service_not_set_up">Ne koristi se nijedna AI usluga. Postavite ili odaberite jednu u postavkama Opisi slika i zaslona.</string>
     <string name="ai_provider_none_set_up">Nije postavljena nijedna AI usluga. Postavite jednu u njezinim postavkama u nastavku.</string>
     <string name="ai_provider_other">Druga usluga</string>
     <string name="title_pref_category_ai_services">AI usluge</string>

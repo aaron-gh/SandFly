@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_translation_auto">Avtomatik tarjima</string>
+    <string name="title_pref_translation_auto_service">Avtomatik tarjima xizmati</string>
+    <string name="title_pref_translation_copy">Tarjimalarni vaqtinchalik xotiraga nusxalash</string>
+    <string name="title_pref_translation_download_all">Barcha tillarni yuklab olish</string>
+    <string name="title_pref_translation_languages">Qurilmadagi tillar</string>
+    <string name="title_pref_translation_notifications">Bildirishnomalarni tarjima qilish</string>
+    <string name="title_pref_translation_region">Mintaqa</string>
+    <string name="title_pref_translation_say_source">Asl tilni aytish</string>
+    <string name="title_pref_translation_second_target">Maqsad tildagi matnni tarjima qilish tili</string>
+    <string name="title_pref_translation_service">Tarjima xizmati</string>
+    <string name="title_pref_translation_source">Qaysi tildan</string>
+    <string name="title_pref_translation_swap">Tillarni almashtirish</string>
+    <string name="title_pref_translation_target">Qaysi tilga</string>
+    <string name="title_pref_translation_target_voice">Maqsad til uchun ovozdan foydalanish</string>
+    <string name="title_pref_translation_untranslated">Tarjima qilinmaydigan tillar</string>
+    <string name="title_pref_translation_wifi_only">Tillarni faqat Wi-Fi orqali yuklab olish</string>
+    <string name="title_translate_last_spoken_phrase">Oxirgi aytilgan iborani tarjima qilish</string>
+    <string name="translation_address_hint">Manzil, masalan, https://libretranslate.com</string>
+    <string name="translation_address_message">LibreTranslate serverining manzili, masalan, https://libretranslate.com. Oʻz serveringizdan boshqa serverlar API kalitini talab qilishi mumkin.</string>
+    <string name="translation_all_downloaded">Barcha tillar yuklab olindi</string>
+    <string name="translation_already_in">Matn allaqachon <xliff:g id="language" example="English">%1$s</xliff:g> tilida</string>
+    <string name="translation_auto_state">Avtomatik tarjima <xliff:g id="state" example="on">%1$s</xliff:g></string>
+    <string name="translation_category_speech">Nutq</string>
+    <string name="translation_detect">Tilni aniqlash</string>
+    <string name="translation_device_language">Qurilma tili (<xliff:g id="language" example="English">%1$s</xliff:g>)</string>
+    <plurals name="translation_download_all_failed">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> ta til yuklab olinmadi</item>
+        <item quantity="other"><xliff:g id="count" example="3">%1$d</xliff:g> ta til yuklab olinmadi</item>
+    </plurals>
+    <plurals name="translation_download_all_message">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> ta til, taxminan <xliff:g id="size" example="30 MB">%2$s</xliff:g>.</item>
+        <item quantity="other"><xliff:g id="count" example="57">%1$d</xliff:g> ta til, taxminan <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+    </plurals>
+    <string name="translation_download_all_progress">Yuklab olinmoqda, <xliff:g id="done" example="12">%1$d</xliff:g>/<xliff:g id="total" example="57">%2$d</xliff:g></string>
+    <string name="translation_download_all_stop">Toʻxtatish</string>
+    <string name="translation_download_all_stop_title">Tillarni yuklab olish toʻxtatilsinmi?</string>
+    <string name="translation_download_done"><xliff:g id="language" example="German">%1$s</xliff:g> yuklab olindi</string>
+    <string name="translation_download_failed"><xliff:g id="language" example="German">%1$s</xliff:g> yuklab olinmadi</string>
+    <string name="translation_download_message">Taxminan 30 MB.</string>
+    <string name="translation_download_title"><xliff:g id="language" example="German">%1$s</xliff:g> yuklab olinsinmi?</string>
+    <string name="translation_downloading">Qurilmada tarjima uchun <xliff:g id="languages" example="German and English">%1$s</xliff:g> yuklab olinmoqda</string>
+    <string name="translation_error"><xliff:g id="service" example="DeepL">%1$s</xliff:g> matnni tarjima qila olmadi.</string>
+    <string name="translation_error_api_key"><xliff:g id="service" example="DeepL">%1$s</xliff:g> API kalitini qabul qilmadi.</string>
+    <string name="translation_error_connection"><xliff:g id="service" example="DeepL">%1$s</xliff:g> xizmatiga ulanib boʻlmadi.</string>
+    <string name="translation_error_details"><xliff:g id="service" example="DeepL">%1$s</xliff:g> matnni tarjima qila olmadi: <xliff:g id="details" example="Wrong endpoint">%2$s</xliff:g></string>
+    <string name="translation_error_detection_downloading">Tilni aniqlash vositasi yuklab olinmoqda. Birozdan keyin qayta urining.</string>
+    <string name="translation_error_download">Qurilmada tarjima uchun tillarni yuklab boʻlmadi.</string>
+    <string name="translation_error_downloading">Qurilmada tarjima uchun tillar hali yuklab olinmoqda</string>
+    <string name="translation_error_language"><xliff:g id="service" example="On-device">%1$s</xliff:g> tarjima <xliff:g id="language" example="Klingon">%2$s</xliff:g> tilini qoʻllab-quvvatlamaydi.</string>
+    <string name="translation_error_no_address">Tarjima sozlamalarida <xliff:g id="service" example="LibreTranslate">%1$s</xliff:g> manzilini kiriting.</string>
+    <string name="translation_error_no_key">Tarjima sozlamalarida <xliff:g id="service" example="DeepL">%1$s</xliff:g> API kalitini kiriting.</string>
+    <string name="translation_error_not_detected">Til aniqlanmadi</string>
+    <string name="translation_error_quota"><xliff:g id="service" example="DeepL">%1$s</xliff:g> foydalanish limitiga yetildi.</string>
+    <string name="translation_from"><xliff:g id="language" example="German">%1$s</xliff:g> tilidan:</string>
+    <string name="translation_key_message"><xliff:g id="service" example="DeepL">%1$s</xliff:g> API kalitingizni joylang. Uni olib tashlash uchun maydonni tozalab, saqlang. Siz tarjima qiladigan matn <xliff:g id="service" example="DeepL">%1$s</xliff:g> xizmatiga yuboriladi.</string>
+    <string name="translation_language_downloaded"><xliff:g id="language" example="German">%1$s</xliff:g>, yuklab olingan</string>
+    <string name="translation_language_downloading"><xliff:g id="language" example="German">%1$s</xliff:g>, yuklab olinmoqda</string>
+    <string name="translation_languages_summary">Yuklab olingan: <xliff:g id="languages" example="English, German">%1$s</xliff:g></string>
+    <string name="translation_nothing">Tarjima qilinadigan narsa yoʻq</string>
+    <string name="translation_region_global">Global</string>
+    <string name="translation_region_message">Azureʼdagi Translator resursingiz mintaqasi, masalan, westeurope. Global resurs uchun boʻsh qoldiring.</string>
+    <string name="translation_second_none">Tarjima qilinmasin</string>
+    <string name="translation_service_ai">AI xizmati</string>
+    <string name="translation_service_deepl">DeepL</string>
+    <string name="translation_service_google_cloud">Google Cloud Translation</string>
+    <string name="translation_service_libretranslate">LibreTranslate</string>
+    <string name="translation_service_microsoft">Microsoft Translator</string>
+    <string name="translation_service_not_set_up"><xliff:g id="service" example="DeepL">%1$s</xliff:g>, sozlanmagan</string>
+    <string name="translation_service_on_device">Qurilmada</string>
+    <string name="translation_swapped"><xliff:g id="source" example="German">%1$s</xliff:g> tilidan <xliff:g id="target" example="English">%2$s</xliff:g> tiliga</string>
+    <string name="translation_title">Tarjima</string>
+    <string name="translation_untranslated_none">Hech qanday</string>
+</resources>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_translation_auto">Automatinis vertimas</string>
+    <string name="title_pref_translation_auto_service">Automatinio vertimo paslauga</string>
+    <string name="title_pref_translation_copy">Kopijuoti vertimus į iškarpinę</string>
+    <string name="title_pref_translation_download_all">Atsisiųsti visas kalbas</string>
+    <string name="title_pref_translation_languages">Kalbos įrenginyje</string>
+    <string name="title_pref_translation_notifications">Versti pranešimus</string>
+    <string name="title_pref_translation_region">Regionas</string>
+    <string name="title_pref_translation_say_source">Pasakyti originalo kalbą</string>
+    <string name="title_pref_translation_second_target">Tikslinės kalbos tekstą versti į</string>
+    <string name="title_pref_translation_service">Vertimo paslauga</string>
+    <string name="title_pref_translation_source">Versti iš</string>
+    <string name="title_pref_translation_swap">Sukeisti kalbas</string>
+    <string name="title_pref_translation_target">Versti į</string>
+    <string name="title_pref_translation_target_voice">Naudoti tikslinės kalbos balsą</string>
+    <string name="title_pref_translation_untranslated">Neverčiamos kalbos</string>
+    <string name="title_pref_translation_wifi_only">Atsisiųsti kalbas tik per Wi-Fi</string>
+    <string name="title_translate_last_spoken_phrase">Versti paskutinę ištartą frazę</string>
+    <string name="translation_address_hint">Adresas, pvz., https://libretranslate.com</string>
+    <string name="translation_address_message">LibreTranslate serverio adresas, pvz., https://libretranslate.com. Ne jūsų serveriams gali reikėti API rakto.</string>
+    <string name="translation_all_downloaded">Visos kalbos atsisiųstos</string>
+    <string name="translation_already_in">Jau yra kalba: <xliff:g id="language" example="English">%1$s</xliff:g></string>
+    <string name="translation_auto_state">Automatinis vertimas: <xliff:g id="state" example="on">%1$s</xliff:g></string>
+    <string name="translation_category_speech">Kalba</string>
+    <string name="translation_detect">Aptikti kalbą</string>
+    <string name="translation_device_language">Įrenginio kalba (<xliff:g id="language" example="English">%1$s</xliff:g>)</string>
+    <plurals name="translation_download_all_failed">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> kalba neatsisiųsta</item>
+        <item quantity="few"><xliff:g id="count" example="3">%1$d</xliff:g> kalbos neatsisiųstos</item>
+        <item quantity="many"><xliff:g id="count" example="3">%1$d</xliff:g> kalbos neatsisiųsta</item>
+        <item quantity="other"><xliff:g id="count" example="3">%1$d</xliff:g> kalbų neatsisiųsta</item>
+    </plurals>
+    <plurals name="translation_download_all_message">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> kalba, apie <xliff:g id="size" example="30 MB">%2$s</xliff:g>.</item>
+        <item quantity="few"><xliff:g id="count" example="57">%1$d</xliff:g> kalbos, apie <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+        <item quantity="many"><xliff:g id="count" example="57">%1$d</xliff:g> kalbos, apie <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+        <item quantity="other"><xliff:g id="count" example="57">%1$d</xliff:g> kalbų, apie <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+    </plurals>
+    <string name="translation_download_all_progress">Atsisiunčiama, <xliff:g id="done" example="12">%1$d</xliff:g> iš <xliff:g id="total" example="57">%2$d</xliff:g></string>
+    <string name="translation_download_all_stop">Sustabdyti</string>
+    <string name="translation_download_all_stop_title">Sustabdyti kalbų atsisiuntimą?</string>
+    <string name="translation_download_done">Atsisiųsta: <xliff:g id="language" example="German">%1$s</xliff:g></string>
+    <string name="translation_download_failed">Neatsisiųsta: <xliff:g id="language" example="German">%1$s</xliff:g></string>
+    <string name="translation_download_message">Apie 30 MB.</string>
+    <string name="translation_download_title">Atsisiųsti: <xliff:g id="language" example="German">%1$s</xliff:g>?</string>
+    <string name="translation_downloading">Vertimui įrenginyje atsisiunčiama: <xliff:g id="languages" example="German and English">%1$s</xliff:g></string>
+    <string name="translation_error"><xliff:g id="service" example="DeepL">%1$s</xliff:g> nepavyko išversti teksto.</string>
+    <string name="translation_error_api_key"><xliff:g id="service" example="DeepL">%1$s</xliff:g> nepriėmė API rakto.</string>
+    <string name="translation_error_connection">Nepavyko pasiekti <xliff:g id="service" example="DeepL">%1$s</xliff:g>.</string>
+    <string name="translation_error_details"><xliff:g id="service" example="DeepL">%1$s</xliff:g> nepavyko išversti teksto: <xliff:g id="details" example="Wrong endpoint">%2$s</xliff:g></string>
+    <string name="translation_error_detection_downloading">Atsisiunčiamas kalbos aptikimas. Netrukus bandykite dar kartą.</string>
+    <string name="translation_error_download">Nepavyko atsisiųsti kalbų vertimui įrenginyje.</string>
+    <string name="translation_error_downloading">Kalbos vertimui įrenginyje dar atsisiunčiamos</string>
+    <string name="translation_error_language">Vertimo paslauga „<xliff:g id="service" example="On-device">%1$s</xliff:g>“ nepalaiko kalbos: <xliff:g id="language" example="Klingon">%2$s</xliff:g>.</string>
+    <string name="translation_error_no_address">Įveskite <xliff:g id="service" example="LibreTranslate">%1$s</xliff:g> adresą vertimo nustatymuose.</string>
+    <string name="translation_error_no_key">Įveskite <xliff:g id="service" example="DeepL">%1$s</xliff:g> API raktą vertimo nustatymuose.</string>
+    <string name="translation_error_not_detected">Kalba neaptikta</string>
+    <string name="translation_error_quota">Pasiektas <xliff:g id="service" example="DeepL">%1$s</xliff:g> naudojimo limitas.</string>
+    <string name="translation_from">Iš kalbos <xliff:g id="language" example="German">%1$s</xliff:g>:</string>
+    <string name="translation_key_message">Įklijuokite savo <xliff:g id="service" example="DeepL">%1$s</xliff:g> API raktą. Norėdami jį pašalinti, išvalykite lauką ir išsaugokite. Jūsų verčiamas tekstas siunčiamas į <xliff:g id="service" example="DeepL">%1$s</xliff:g>.</string>
+    <string name="translation_language_downloaded"><xliff:g id="language" example="German">%1$s</xliff:g>, atsisiųsta</string>
+    <string name="translation_language_downloading"><xliff:g id="language" example="German">%1$s</xliff:g>, atsisiunčiama</string>
+    <string name="translation_languages_summary">Atsisiųsta: <xliff:g id="languages" example="English, German">%1$s</xliff:g></string>
+    <string name="translation_nothing">Nėra ką versti</string>
+    <string name="translation_region_global">Visuotinis</string>
+    <string name="translation_region_message">Jūsų Translator ištekliaus regionas Azure, pvz., westeurope. Visuotiniam ištekliui palikite tuščią.</string>
+    <string name="translation_second_none">Neversti</string>
+    <string name="translation_service_ai">DI paslauga</string>
+    <string name="translation_service_deepl">DeepL</string>
+    <string name="translation_service_google_cloud">Google Cloud Translation</string>
+    <string name="translation_service_libretranslate">LibreTranslate</string>
+    <string name="translation_service_microsoft">Microsoft Translator</string>
+    <string name="translation_service_not_set_up"><xliff:g id="service" example="DeepL">%1$s</xliff:g>, nenustatyta</string>
+    <string name="translation_service_on_device">Įrenginyje</string>
+    <string name="translation_swapped">Iš kalbos <xliff:g id="source" example="German">%1$s</xliff:g> į kalbą <xliff:g id="target" example="English">%2$s</xliff:g></string>
+    <string name="translation_title">Vertimas</string>
+    <string name="translation_untranslated_none">Nėra</string>
+</resources>

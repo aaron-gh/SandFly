@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="command_add_arrow_keys">Добавяне на клавиши със стрелки</string>
+    <string name="command_add_gesture">Добавяне на жест</string>
+    <string name="command_choose_arrow_keys">Изберете клавиши със стрелки</string>
+    <string name="command_choose_gesture">Изберете жест</string>
+    <string name="command_gesture_assigned"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g>: <xliff:g id="command" example="Describe image">%2$s</xliff:g></string>
+    <string name="command_gestures">Жестове</string>
+    <string name="command_keyboard_shortcut">Клавишна комбинация</string>
+    <string name="command_no_arrow_keys">Няма клавиши със стрелки</string>
+    <string name="command_no_gestures">Няма жестове</string>
+    <string name="command_remove_arrow_keys">Премахване на клавишите със стрелки</string>
+    <string name="command_remove_gesture">Премахване на жеста</string>
+    <string name="command_replace">Замяна</string>
+    <string name="command_replace_gesture">Жестът „<xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g>“ изпълнява „<xliff:g id="old_command" example="Read from top">%2$s</xliff:g>“. Да се използва ли вместо това за „<xliff:g id="new_command" example="Describe image">%3$s</xliff:g>“?</string>
+    <string name="commands_category_activation">Активиране</string>
+    <string name="commands_category_media">Мултимедия и сила на звука</string>
+    <string name="commands_category_sandfly">SandFly</string>
+    <string name="commands_category_scrolling">Превъртане</string>
+    <string name="commands_category_speech">Говор</string>
+    <string name="commands_category_tables">Таблици</string>
+    <string name="commands_category_web">Уеб</string>
+    <string name="item_list_current">Текущи</string>
+    <string name="item_list_not_in_reading_controls">Не са в контролите за четене</string>
+    <string name="item_list_not_in_sandfly_menu">Не са в менюто на SandFly</string>
+    <string name="item_list_options">Опции</string>
+    <string name="sounds_category_sounds">Звуци</string>
+    <string name="sounds_category_vibration">Вибриране</string>
+    <string name="speech_category_languages">Езици</string>
+    <string name="speech_category_other_apps">Други приложения</string>
+    <string name="speech_category_pronunciation">Произношение</string>
+    <string name="speech_category_stopping">Спиране на говора</string>
+    <string name="speech_category_voice">Глас</string>
+    <string name="title_pref_audio_output">Аудиоизход</string>
+    <string name="title_pref_backup">Резервно копие и възстановяване</string>
+    <string name="title_pref_braille">Брайл</string>
+    <string name="title_pref_commands">Команди</string>
+    <string name="title_pref_display">Екран</string>
+    <string name="title_pref_image_and_screen_descriptions">Описания на изображения и екрана</string>
+    <string name="title_pref_pause">Пауза и изключване</string>
+    <string name="title_pref_quick_settings_screen">Бързи настройки</string>
+    <string name="title_pref_speech">Говор</string>
+    <string name="title_pref_speech_stream_control">Контрола за силата на звука на говора</string>
+    <string name="title_pref_touch">Докосване</string>
+    <string name="title_pref_typing">Въвеждане</string>
+    <string name="title_pref_updates">Актуализации и инсталиране</string>
+    <string name="title_pref_volume_keys">Бутони за сила на звука</string>
+    <string name="typing_category_other_input">Други начини за въвеждане</string>
+    <string name="verbosity_category_announcements">Съобщения</string>
+    <string name="verbosity_category_items">Елементи</string>
+    <string name="verbosity_category_text">Текст и символи</string>
+</resources>

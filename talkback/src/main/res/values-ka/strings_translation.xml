@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_translation_auto">ავტომატური თარგმანი</string>
+    <string name="title_pref_translation_auto_service">ავტომატური თარგმანის სერვისი</string>
+    <string name="title_pref_translation_copy">თარგმანების კოპირება გაცვლის ბუფერში</string>
+    <string name="title_pref_translation_download_all">ყველა ენის ჩამოტვირთვა</string>
+    <string name="title_pref_translation_languages">მოწყობილობაზე არსებული ენები</string>
+    <string name="title_pref_translation_notifications">შეტყობინებების თარგმნა</string>
+    <string name="title_pref_translation_region">რეგიონი</string>
+    <string name="title_pref_translation_say_source">ორიგინალი ენის წარმოთქმა</string>
+    <string name="title_pref_translation_second_target">სამიზნე ენაზე დაწერილი ტექსტის თარგმანის ენა</string>
+    <string name="title_pref_translation_service">თარგმანის სერვისი</string>
+    <string name="title_pref_translation_source">წყარო ენა</string>
+    <string name="title_pref_translation_swap">ენების ადგილების შეცვლა</string>
+    <string name="title_pref_translation_target">სამიზნე ენა</string>
+    <string name="title_pref_translation_target_voice">სამიზნე ენის ხმის გამოყენება</string>
+    <string name="title_pref_translation_untranslated">ენები, რომლებიც არ ითარგმნება</string>
+    <string name="title_pref_translation_wifi_only">ენების ჩამოტვირთვა მხოლოდ Wi-Fi-ით</string>
+    <string name="title_translate_last_spoken_phrase">ბოლო წარმოთქმული ფრაზის თარგმნა</string>
+    <string name="translation_address_hint">მისამართი, მაგალითად https://libretranslate.com</string>
+    <string name="translation_address_message">LibreTranslate სერვერის მისამართი, მაგალითად https://libretranslate.com. თქვენი საკუთარის გარდა სხვა სერვერებს შეიძლება API გასაღები სჭირდებოდეს.</string>
+    <string name="translation_all_downloaded">ყველა ენა ჩამოტვირთულია</string>
+    <string name="translation_already_in">ტექსტი უკვე ამ ენაზეა: <xliff:g id="language" example="English">%1$s</xliff:g></string>
+    <string name="translation_auto_state">ავტომატური თარგმანი: <xliff:g id="state" example="on">%1$s</xliff:g></string>
+    <string name="translation_category_speech">მეტყველება</string>
+    <string name="translation_detect">ენის ამოცნობა</string>
+    <string name="translation_device_language">მოწყობილობის ენა (<xliff:g id="language" example="English">%1$s</xliff:g>)</string>
+    <plurals name="translation_download_all_failed">
+        <item quantity="one"><xliff:g id="count" example="3">%1$d</xliff:g> ენა ვერ ჩამოიტვირთა</item>
+        <item quantity="other"><xliff:g id="count" example="3">%1$d</xliff:g> ენა ვერ ჩამოიტვირთა</item>
+    </plurals>
+    <plurals name="translation_download_all_message">
+        <item quantity="one"><xliff:g id="count" example="57">%1$d</xliff:g> ენა, დაახლოებით <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+        <item quantity="other"><xliff:g id="count" example="57">%1$d</xliff:g> ენა, დაახლოებით <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+    </plurals>
+    <string name="translation_download_all_progress">მიმდინარეობს ჩამოტვირთვა, <xliff:g id="done" example="12">%1$d</xliff:g> / <xliff:g id="total" example="57">%2$d</xliff:g></string>
+    <string name="translation_download_all_stop">შეჩერება</string>
+    <string name="translation_download_all_stop_title">შეჩერდეს ენების ჩამოტვირთვა?</string>
+    <string name="translation_download_done"><xliff:g id="language" example="German">%1$s</xliff:g>: ჩამოტვირთულია</string>
+    <string name="translation_download_failed"><xliff:g id="language" example="German">%1$s</xliff:g>: ვერ ჩამოიტვირთა</string>
+    <string name="translation_download_message">დაახლოებით 30 მბ.</string>
+    <string name="translation_download_title">ჩამოიტვირთოს ენა: <xliff:g id="language" example="German">%1$s</xliff:g>?</string>
+    <string name="translation_downloading">მოწყობილობაზე თარგმანისთვის იტვირთება: <xliff:g id="languages" example="German and English">%1$s</xliff:g></string>
+    <string name="translation_error"><xliff:g id="service" example="DeepL">%1$s</xliff:g>-მა ვერ თარგმნა ტექსტი.</string>
+    <string name="translation_error_api_key"><xliff:g id="service" example="DeepL">%1$s</xliff:g>-მა არ მიიღო API გასაღები.</string>
+    <string name="translation_error_connection"><xliff:g id="service" example="DeepL">%1$s</xliff:g>-თან დაკავშირება ვერ მოხერხდა.</string>
+    <string name="translation_error_details"><xliff:g id="service" example="DeepL">%1$s</xliff:g>-მა ვერ თარგმნა ტექსტი: <xliff:g id="details" example="Wrong endpoint">%2$s</xliff:g></string>
+    <string name="translation_error_detection_downloading">ენის ამოცნობა იტვირთება. ცოტა ხანში ცადეთ ხელახლა.</string>
+    <string name="translation_error_download">მოწყობილობაზე თარგმანის ენები ვერ ჩამოიტვირთა.</string>
+    <string name="translation_error_downloading">მოწყობილობაზე თარგმანის ენები ჯერ კიდევ იტვირთება</string>
+    <string name="translation_error_language">თარგმანი (<xliff:g id="service" example="On-device">%1$s</xliff:g>) ამ ენას არ უჭერს მხარს: <xliff:g id="language" example="Klingon">%2$s</xliff:g>.</string>
+    <string name="translation_error_no_address">შეიყვანეთ <xliff:g id="service" example="LibreTranslate">%1$s</xliff:g>-ის მისამართი თარგმანის პარამეტრებში.</string>
+    <string name="translation_error_no_key">შეიყვანეთ <xliff:g id="service" example="DeepL">%1$s</xliff:g>-ის API გასაღები თარგმანის პარამეტრებში.</string>
+    <string name="translation_error_not_detected">ენა ვერ ამოიცნო</string>
+    <string name="translation_error_quota"><xliff:g id="service" example="DeepL">%1$s</xliff:g>-ის გამოყენების ლიმიტი ამოიწურა.</string>
+    <string name="translation_from">ორიგინალი ენა: <xliff:g id="language" example="German">%1$s</xliff:g>.</string>
+    <string name="translation_key_message">ჩასვით თქვენი <xliff:g id="service" example="DeepL">%1$s</xliff:g>-ის API გასაღები. მის წასაშლელად გაასუფთავეთ ველი და შეინახეთ. თქვენ მიერ სათარგმნი ტექსტი იგზავნება <xliff:g id="service" example="DeepL">%1$s</xliff:g>-ში.</string>
+    <string name="translation_language_downloaded"><xliff:g id="language" example="German">%1$s</xliff:g>, ჩამოტვირთულია</string>
+    <string name="translation_language_downloading"><xliff:g id="language" example="German">%1$s</xliff:g>, იტვირთება</string>
+    <string name="translation_languages_summary">ჩამოტვირთულია: <xliff:g id="languages" example="English, German">%1$s</xliff:g></string>
+    <string name="translation_nothing">სათარგმნი არაფერია</string>
+    <string name="translation_region_global">გლობალური</string>
+    <string name="translation_region_message">თქვენი Translator რესურსის რეგიონი Azure-ში, მაგალითად westeurope. გლობალური რესურსისთვის დატოვეთ ცარიელი.</string>
+    <string name="translation_second_none">არ ითარგმნოს</string>
+    <string name="translation_service_ai">AI სერვისი</string>
+    <string name="translation_service_deepl">DeepL</string>
+    <string name="translation_service_google_cloud">Google Cloud Translation</string>
+    <string name="translation_service_libretranslate">LibreTranslate</string>
+    <string name="translation_service_microsoft">Microsoft Translator</string>
+    <string name="translation_service_not_set_up"><xliff:g id="service" example="DeepL">%1$s</xliff:g>, არ არის დაყენებული</string>
+    <string name="translation_service_on_device">მოწყობილობაზე</string>
+    <string name="translation_swapped">წყარო: <xliff:g id="source" example="German">%1$s</xliff:g>, სამიზნე: <xliff:g id="target" example="English">%2$s</xliff:g></string>
+    <string name="translation_title">თარგმანი</string>
+    <string name="translation_untranslated_none">არცერთი</string>
+</resources>

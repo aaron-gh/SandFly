@@ -1775,4 +1775,24 @@
     <string name="settings_export_failed">ไม่สามารถส่งออกการตั้งค่าได้</string>
     <string name="settings_import_done">นำเข้าการตั้งค่าแล้ว</string>
     <string name="settings_import_failed">ไฟล์นี้ไม่ใช่ไฟล์การตั้งค่า SandFly หรือ Backtalk หรือไม่สามารถอ่านได้</string>
+    <string name="arrow_key_nav_assign_instruction">กดแป้นเดียวหรือสองแป้นพร้อมกัน โดยมีหรือไม่มีแป้นกำหนดร่วมก็ได้ กด Backspace เพื่อล้าง, Ctrl + Backspace เพื่อรีเซ็ตเป็นค่าเริ่มต้น, Enter เพื่อบันทึก หรือ Escape เพื่อยกเลิก</string>
+    <string name="arrow_key_nav_off">ปิดการนำทางด้วยแป้นลูกศรแล้ว</string>
+    <string name="arrow_key_nav_on">เปิดการนำทางด้วยแป้นลูกศรแล้ว</string>
+    <string name="arrow_key_nav_page_left">หน้าทางซ้าย</string>
+    <string name="arrow_key_nav_page_right">หน้าทางขวา</string>
+    <string name="arrow_key_nav_toggle">เปิดหรือปิดการนำทางด้วยแป้นลูกศร</string>
+    <string name="keycombo_menu_category_arrow_key_nav">การนำทางด้วยแป้นลูกศร</string>
+    <string-array name="pref_dictation_auto_stop_entries">
+        <item>ปิด</item>
+        <item>3 วินาที</item>
+        <item>5 วินาที</item>
+        <item>10 วินาที</item>
+        <item>15 วินาที</item>
+        <item>30 วินาที</item>
+        <item>1 นาที</item>
+    </string-array>
+    <string name="shortcut_next_track">แทร็กถัดไป</string>
+    <string name="shortcut_previous_track">แทร็กก่อนหน้า</string>
+    <string name="sound_mode_needs_access">อนุญาตการเข้าถึงห้ามรบกวนเพื่อเปิดหรือปิดปิดเสียง</string>
+    <string name="title_pref_dictation_auto_stop">หยุดอัตโนมัติหลังจากเงียบ</string>
 </resources>

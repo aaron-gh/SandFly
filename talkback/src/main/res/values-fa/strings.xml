@@ -1775,4 +1775,24 @@
     <string name="settings_export_failed">تنظیمات صادر نشد</string>
     <string name="settings_import_done">تنظیمات وارد شد</string>
     <string name="settings_import_failed">این فایل یک فایل تنظیمات SandFly یا Backtalk نیست یا قابل خواندن نیست</string>
+    <string name="arrow_key_nav_assign_instruction">یک کلید یا دو کلید را باهم، با کلیدهای توصیف‌گر یا بدون آن‌ها، فشار دهید. برای پاک کردن، Backspace را فشار دهید؛ برای بازنشانی به پیش‌فرض، Ctrl + Backspace؛ برای ذخیره، Enter؛ یا برای لغو، Escape.</string>
+    <string name="arrow_key_nav_off">پیمایش با کلیدهای پیکان خاموش</string>
+    <string name="arrow_key_nav_on">پیمایش با کلیدهای پیکان روشن</string>
+    <string name="arrow_key_nav_page_left">صفحه به چپ</string>
+    <string name="arrow_key_nav_page_right">صفحه به راست</string>
+    <string name="arrow_key_nav_toggle">روشن یا خاموش کردن پیمایش با کلیدهای پیکان</string>
+    <string name="keycombo_menu_category_arrow_key_nav">پیمایش با کلیدهای پیکان</string>
+    <string-array name="pref_dictation_auto_stop_entries">
+        <item>خاموش</item>
+        <item>۳ ثانیه</item>
+        <item>۵ ثانیه</item>
+        <item>۱۰ ثانیه</item>
+        <item>۱۵ ثانیه</item>
+        <item>۳۰ ثانیه</item>
+        <item>۱ دقیقه</item>
+    </string-array>
+    <string name="shortcut_next_track">آهنگ بعدی</string>
+    <string name="shortcut_previous_track">آهنگ قبلی</string>
+    <string name="sound_mode_needs_access">برای روشن یا خاموش کردن «بی صدا»، دسترسی «مزاحم نشوید» را مجاز کنید.</string>
+    <string name="title_pref_dictation_auto_stop">توقف خودکار پس از سکوت</string>
 </resources>

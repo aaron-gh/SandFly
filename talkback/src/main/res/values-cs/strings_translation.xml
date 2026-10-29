@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_translation_auto">Automatický překlad</string>
+    <string name="title_pref_translation_auto_service">Služba automatického překladu</string>
+    <string name="title_pref_translation_copy">Kopírovat překlady do schránky</string>
+    <string name="title_pref_translation_download_all">Stáhnout všechny jazyky</string>
+    <string name="title_pref_translation_languages">Jazyky v zařízení</string>
+    <string name="title_pref_translation_notifications">Překládat oznámení</string>
+    <string name="title_pref_translation_region">Oblast</string>
+    <string name="title_pref_translation_say_source">Vyslovit původní jazyk</string>
+    <string name="title_pref_translation_second_target">Text v cílovém jazyce překládat do</string>
+    <string name="title_pref_translation_service">Služba překladu</string>
+    <string name="title_pref_translation_source">Překládat z</string>
+    <string name="title_pref_translation_swap">Prohodit jazyky</string>
+    <string name="title_pref_translation_target">Překládat do</string>
+    <string name="title_pref_translation_target_voice">Použít hlas pro cílový jazyk</string>
+    <string name="title_pref_translation_untranslated">Nepřekládané jazyky</string>
+    <string name="title_pref_translation_wifi_only">Stahovat jazyky jen přes Wi-Fi</string>
+    <string name="title_translate_last_spoken_phrase">Přeložit poslední vyslovenou frázi</string>
+    <string name="translation_address_hint">Adresa, například https://libretranslate.com</string>
+    <string name="translation_address_message">Adresa serveru LibreTranslate, například https://libretranslate.com. Jiné než vaše vlastní servery mohou vyžadovat klíč API.</string>
+    <string name="translation_all_downloaded">Všechny jazyky staženy</string>
+    <string name="translation_already_in">Již v jazyce: <xliff:g id="language" example="English">%1$s</xliff:g></string>
+    <string name="translation_auto_state">Automatický překlad: <xliff:g id="state" example="on">%1$s</xliff:g></string>
+    <string name="translation_category_speech">Řeč</string>
+    <string name="translation_detect">Rozpoznat jazyk</string>
+    <string name="translation_device_language">Jazyk zařízení (<xliff:g id="language" example="English">%1$s</xliff:g>)</string>
+    <plurals name="translation_download_all_failed">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> jazyk nebyl stažen</item>
+        <item quantity="few"><xliff:g id="count" example="3">%1$d</xliff:g> jazyky nebyly staženy</item>
+        <item quantity="many"><xliff:g id="count" example="3">%1$d</xliff:g> jazyka nebylo staženo</item>
+        <item quantity="other"><xliff:g id="count" example="3">%1$d</xliff:g> jazyků nebylo staženo</item>
+    </plurals>
+    <plurals name="translation_download_all_message">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> jazyk, přibližně <xliff:g id="size" example="30 MB">%2$s</xliff:g>.</item>
+        <item quantity="few"><xliff:g id="count" example="57">%1$d</xliff:g> jazyky, přibližně <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+        <item quantity="many"><xliff:g id="count" example="57">%1$d</xliff:g> jazyka, přibližně <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+        <item quantity="other"><xliff:g id="count" example="57">%1$d</xliff:g> jazyků, přibližně <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+    </plurals>
+    <string name="translation_download_all_progress">Stahování, <xliff:g id="done" example="12">%1$d</xliff:g> z <xliff:g id="total" example="57">%2$d</xliff:g></string>
+    <string name="translation_download_all_stop">Zastavit</string>
+    <string name="translation_download_all_stop_title">Zastavit stahování jazyků?</string>
+    <string name="translation_download_done">Staženo: <xliff:g id="language" example="German">%1$s</xliff:g></string>
+    <string name="translation_download_failed">Nestaženo: <xliff:g id="language" example="German">%1$s</xliff:g></string>
+    <string name="translation_download_message">Přibližně 30 MB.</string>
+    <string name="translation_download_title">Stáhnout jazyk <xliff:g id="language" example="German">%1$s</xliff:g>?</string>
+    <string name="translation_downloading">Stahování jazyků pro překlad v zařízení: <xliff:g id="languages" example="German and English">%1$s</xliff:g></string>
+    <string name="translation_error">Služba <xliff:g id="service" example="DeepL">%1$s</xliff:g> nemohla text přeložit.</string>
+    <string name="translation_error_api_key">Služba <xliff:g id="service" example="DeepL">%1$s</xliff:g> nepřijala klíč API.</string>
+    <string name="translation_error_connection">Službu <xliff:g id="service" example="DeepL">%1$s</xliff:g> nelze kontaktovat.</string>
+    <string name="translation_error_details">Služba <xliff:g id="service" example="DeepL">%1$s</xliff:g> nemohla text přeložit: <xliff:g id="details" example="Wrong endpoint">%2$s</xliff:g></string>
+    <string name="translation_error_detection_downloading">Rozpoznávání jazyka se stahuje. Zkuste to za chvíli znovu.</string>
+    <string name="translation_error_download">Jazyky pro překlad v zařízení se nepodařilo stáhnout.</string>
+    <string name="translation_error_downloading">Jazyky pro překlad v zařízení se stále stahují</string>
+    <string name="translation_error_language">Služba překladu <xliff:g id="service" example="On-device">%1$s</xliff:g> nepodporuje jazyk: <xliff:g id="language" example="Klingon">%2$s</xliff:g>.</string>
+    <string name="translation_error_no_address">Zadejte adresu služby <xliff:g id="service" example="LibreTranslate">%1$s</xliff:g> v nastavení Překlad.</string>
+    <string name="translation_error_no_key">Zadejte klíč API služby <xliff:g id="service" example="DeepL">%1$s</xliff:g> v nastavení Překlad.</string>
+    <string name="translation_error_not_detected">Jazyk nebyl rozpoznán</string>
+    <string name="translation_error_quota">Byl dosažen limit využití služby <xliff:g id="service" example="DeepL">%1$s</xliff:g>.</string>
+    <string name="translation_from">Původní jazyk: <xliff:g id="language" example="German">%1$s</xliff:g>.</string>
+    <string name="translation_key_message">Vložte klíč API služby <xliff:g id="service" example="DeepL">%1$s</xliff:g>. Chcete-li ho odstranit, vymažte pole a uložte. Text, který překládáte, se odesílá službě <xliff:g id="service" example="DeepL">%1$s</xliff:g>.</string>
+    <string name="translation_language_downloaded"><xliff:g id="language" example="German">%1$s</xliff:g>, staženo</string>
+    <string name="translation_language_downloading"><xliff:g id="language" example="German">%1$s</xliff:g>, stahuje se</string>
+    <string name="translation_languages_summary">Staženo: <xliff:g id="languages" example="English, German">%1$s</xliff:g></string>
+    <string name="translation_nothing">Nic k překladu</string>
+    <string name="translation_region_global">Globální</string>
+    <string name="translation_region_message">Oblast vašeho prostředku Translator v Azure, například westeurope. Pro globální prostředek nechte prázdné.</string>
+    <string name="translation_second_none">Nepřekládat</string>
+    <string name="translation_service_ai">Služba AI</string>
+    <string name="translation_service_deepl">DeepL</string>
+    <string name="translation_service_google_cloud">Google Cloud Translation</string>
+    <string name="translation_service_libretranslate">LibreTranslate</string>
+    <string name="translation_service_microsoft">Microsoft Translator</string>
+    <string name="translation_service_not_set_up"><xliff:g id="service" example="DeepL">%1$s</xliff:g>, nenastaveno</string>
+    <string name="translation_service_on_device">V zařízení</string>
+    <string name="translation_swapped">Překlad z: <xliff:g id="source" example="German">%1$s</xliff:g>, do: <xliff:g id="target" example="English">%2$s</xliff:g></string>
+    <string name="translation_title">Překlad</string>
+    <string name="translation_untranslated_none">Žádné</string>
+</resources>

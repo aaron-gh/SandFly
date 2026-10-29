@@ -25,7 +25,7 @@
     <string name="ai_service_model_hint">模型</string>
     <string name="ai_service_address_invalid">地址必须以 https:// 开头。未保存任何内容。</string>
     <string name="dialog_message_ai_service_consent">图片和屏幕截图会发送到 <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> 进行描述，需要几秒钟。适用该服务自己的条款和隐私权政策。生成式 AI 仍处于实验阶段，因此会出错。</string>
-    <string name="ai_service_error_api_key">AI 服务未接受 API 密钥。请在“自动描述”中检查其设置。</string>
+    <string name="ai_service_error_api_key">AI 服务未接受 API 密钥。请在“图片和屏幕描述”中检查其设置。</string>
     <string name="ai_service_error_quota">AI 服务已达到使用上限。请稍后再试。</string>
     <string name="ai_service_error_busy">AI 服务目前繁忙。请稍后再试。</string>
     <string name="ai_service_error_timeout">AI 服务响应时间过长。再试一次。</string>
@@ -37,7 +37,7 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">无</string>
-    <string name="ai_service_not_set_up">目前未使用任何 AI 服务。请设置一个，或在“自动描述”设置中选择一个。</string>
+    <string name="ai_service_not_set_up">目前未使用任何 AI 服务。请设置一个，或在“图片和屏幕描述”设置中选择一个。</string>
     <string name="ai_provider_none_set_up">未设置 AI 服务。请在下方相应的设置中设置一个。</string>
     <string name="ai_provider_other">其他服务</string>
     <string name="title_pref_category_ai_services">人工智能服务</string>

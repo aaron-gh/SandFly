@@ -1774,4 +1774,24 @@
     <string name="settings_export_failed">ക്രമീകരണങ്ങൾ എക്‌സ്‌പോർട്ട് ചെയ്യാനായില്ല</string>
     <string name="settings_import_done">ക്രമീകരണങ്ങൾ ഇറക്കുമതി ചെയ്തു</string>
     <string name="settings_import_failed">ഈ ഫയൽ SandFly അല്ലെങ്കിൽ Backtalk ക്രമീകരണ ഫയലല്ല, അല്ലെങ്കിൽ വായിക്കാൻ കഴിഞ്ഞില്ല</string>
+    <string name="arrow_key_nav_assign_instruction">ഒരു കീയോ രണ്ട് കീകൾ ഒരുമിച്ചോ അമർത്തുക, മോഡിഫയർ കീകളോടെയോ അല്ലാതെയോ. മായ്ക്കാൻ Backspace, ഡിഫോൾട്ടിലേക്ക് റീസെറ്റ് ചെയ്യാൻ Ctrl + Backspace, സംരക്ഷിക്കാൻ Enter, അല്ലെങ്കിൽ റദ്ദാക്കാൻ Escape അമർത്തുക.</string>
+    <string name="arrow_key_nav_off">ആരോ കീ നാവിഗേഷൻ ഓഫ്</string>
+    <string name="arrow_key_nav_on">ആരോ കീ നാവിഗേഷൻ ഓൺ</string>
+    <string name="arrow_key_nav_page_left">പേജ് ഇടത്തോട്ട്</string>
+    <string name="arrow_key_nav_page_right">പേജ് വലത്തോട്ട്</string>
+    <string name="arrow_key_nav_toggle">ആരോ കീ നാവിഗേഷൻ ഓണാക്കുകയോ ഓഫാക്കുകയോ ചെയ്യുക</string>
+    <string name="keycombo_menu_category_arrow_key_nav">ആരോ കീ നാവിഗേഷൻ</string>
+    <string-array name="pref_dictation_auto_stop_entries">
+        <item>ഓഫ്</item>
+        <item>3 സെക്കൻഡ്</item>
+        <item>5 സെക്കൻഡ്</item>
+        <item>10 സെക്കൻഡ്</item>
+        <item>15 സെക്കൻഡ്</item>
+        <item>30 സെക്കൻഡ്</item>
+        <item>1 മിനിറ്റ്</item>
+    </string-array>
+    <string name="shortcut_next_track">അടുത്ത ട്രാക്ക്</string>
+    <string name="shortcut_previous_track">മുമ്പത്തെ ട്രാക്ക്</string>
+    <string name="sound_mode_needs_access">മ്യൂട്ട് ഓണാക്കാനോ ഓഫാക്കാനോ “ശല്യപ്പെടുത്തരുത്” ആക്‌സസ് അനുവദിക്കുക.</string>
+    <string name="title_pref_dictation_auto_stop">നിശബ്ദതയ്ക്ക് ശേഷം സ്വയമേവ നിർത്തുക</string>
 </resources>

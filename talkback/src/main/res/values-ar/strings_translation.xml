@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_translation_auto">الترجمة التلقائية</string>
+    <string name="title_pref_translation_auto_service">خدمة الترجمة التلقائية</string>
+    <string name="title_pref_translation_copy">نسخ الترجمات إلى الحافظة</string>
+    <string name="title_pref_translation_download_all">تنزيل كل اللغات</string>
+    <string name="title_pref_translation_languages">اللغات على الجهاز</string>
+    <string name="title_pref_translation_notifications">ترجمة الإشعارات</string>
+    <string name="title_pref_translation_region">المنطقة</string>
+    <string name="title_pref_translation_say_source">قول اللغة الأصلية</string>
+    <string name="title_pref_translation_second_target">ترجمة النص المكتوب باللغة الهدف إلى</string>
+    <string name="title_pref_translation_service">خدمة الترجمة</string>
+    <string name="title_pref_translation_source">الترجمة من</string>
+    <string name="title_pref_translation_swap">تبديل اللغتين</string>
+    <string name="title_pref_translation_target">الترجمة إلى</string>
+    <string name="title_pref_translation_target_voice">استخدام صوت للغة الهدف</string>
+    <string name="title_pref_translation_untranslated">اللغات التي لا تتم ترجمتها</string>
+    <string name="title_pref_translation_wifi_only">تنزيل اللغات عبر Wi-Fi فقط</string>
+    <string name="title_translate_last_spoken_phrase">ترجمة آخر عبارة منطوقة</string>
+    <string name="translation_address_hint">العنوان، مثل https://libretranslate.com</string>
+    <string name="translation_address_message">عنوان خادم LibreTranslate، مثل https://libretranslate.com. قد تتطلّب الخوادم غير خادمك مفتاح واجهة برمجة تطبيقات.</string>
+    <string name="translation_all_downloaded">تم تنزيل كل اللغات</string>
+    <string name="translation_already_in">النص باللغة <xliff:g id="language" example="English">%1$s</xliff:g> بالفعل</string>
+    <string name="translation_auto_state">الترجمة التلقائية <xliff:g id="state" example="on">%1$s</xliff:g></string>
+    <string name="translation_category_speech">الكلام</string>
+    <string name="translation_detect">كشف اللغة</string>
+    <string name="translation_device_language">لغة الجهاز (<xliff:g id="language" example="English">%1$s</xliff:g>)</string>
+    <plurals name="translation_download_all_failed">
+        <item quantity="zero">لم يتم تنزيل <xliff:g id="count" example="3">%1$d</xliff:g> لغة</item>
+        <item quantity="one">لم يتم تنزيل لغة واحدة (<xliff:g id="count" example="3">%1$d</xliff:g>)</item>
+        <item quantity="two">لم يتم تنزيل لغتين (<xliff:g id="count" example="3">%1$d</xliff:g>)</item>
+        <item quantity="few">لم يتم تنزيل <xliff:g id="count" example="3">%1$d</xliff:g> لغات</item>
+        <item quantity="many">لم يتم تنزيل <xliff:g id="count" example="3">%1$d</xliff:g> لغة</item>
+        <item quantity="other">لم يتم تنزيل <xliff:g id="count" example="3">%1$d</xliff:g> لغة</item>
+    </plurals>
+    <plurals name="translation_download_all_message">
+        <item quantity="zero"><xliff:g id="count" example="57">%1$d</xliff:g> لغة، حوالي <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+        <item quantity="one">لغة واحدة (<xliff:g id="count" example="57">%1$d</xliff:g>)، حوالي <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+        <item quantity="two">لغتان (<xliff:g id="count" example="57">%1$d</xliff:g>)، حوالي <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+        <item quantity="few"><xliff:g id="count" example="57">%1$d</xliff:g> لغات، حوالي <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+        <item quantity="many"><xliff:g id="count" example="57">%1$d</xliff:g> لغة، حوالي <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+        <item quantity="other"><xliff:g id="count" example="57">%1$d</xliff:g> لغة، حوالي <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+    </plurals>
+    <string name="translation_download_all_progress">جارٍ التنزيل، <xliff:g id="done" example="12">%1$d</xliff:g> من <xliff:g id="total" example="57">%2$d</xliff:g></string>
+    <string name="translation_download_all_stop">إيقاف</string>
+    <string name="translation_download_all_stop_title">هل تريد إيقاف تنزيل اللغات؟</string>
+    <string name="translation_download_done">تم تنزيل <xliff:g id="language" example="German">%1$s</xliff:g></string>
+    <string name="translation_download_failed">لم يتم تنزيل <xliff:g id="language" example="German">%1$s</xliff:g></string>
+    <string name="translation_download_message">حوالي 30 ميغابايت.</string>
+    <string name="translation_download_title">هل تريد تنزيل <xliff:g id="language" example="German">%1$s</xliff:g>؟</string>
+    <string name="translation_downloading">جارٍ تنزيل <xliff:g id="languages" example="German and English">%1$s</xliff:g> للترجمة على الجهاز</string>
+    <string name="translation_error">تعذّر على <xliff:g id="service" example="DeepL">%1$s</xliff:g> ترجمة النص.</string>
+    <string name="translation_error_api_key">لم يقبل <xliff:g id="service" example="DeepL">%1$s</xliff:g> مفتاح واجهة برمجة التطبيقات.</string>
+    <string name="translation_error_connection">تعذّر الوصول إلى <xliff:g id="service" example="DeepL">%1$s</xliff:g>.</string>
+    <string name="translation_error_details">تعذّر على <xliff:g id="service" example="DeepL">%1$s</xliff:g> ترجمة النص: <xliff:g id="details" example="Wrong endpoint">%2$s</xliff:g></string>
+    <string name="translation_error_detection_downloading">جارٍ تنزيل كشف اللغة. أعِد المحاولة بعد قليل.</string>
+    <string name="translation_error_download">تعذّر تنزيل لغات الترجمة على الجهاز.</string>
+    <string name="translation_error_downloading">لا يزال تنزيل لغات الترجمة على الجهاز جاريًا</string>
+    <string name="translation_error_language">لا تتوفّر اللغة <xliff:g id="language" example="Klingon">%2$s</xliff:g> في الترجمة <xliff:g id="service" example="On-device">%1$s</xliff:g>.</string>
+    <string name="translation_error_no_address">أدخِل عنوان <xliff:g id="service" example="LibreTranslate">%1$s</xliff:g> في إعدادات «الترجمة».</string>
+    <string name="translation_error_no_key">أدخِل مفتاح واجهة برمجة التطبيقات لـ <xliff:g id="service" example="DeepL">%1$s</xliff:g> في إعدادات «الترجمة».</string>
+    <string name="translation_error_not_detected">لم يتم كشف اللغة</string>
+    <string name="translation_error_quota">تم بلوغ حد الاستخدام في <xliff:g id="service" example="DeepL">%1$s</xliff:g>.</string>
+    <string name="translation_from">من اللغة <xliff:g id="language" example="German">%1$s</xliff:g>:</string>
+    <string name="translation_key_message">الصق مفتاح واجهة برمجة التطبيقات لـ <xliff:g id="service" example="DeepL">%1$s</xliff:g>. لإزالته، امحُ الحقل واحفظ. يتم إرسال النص الذي تترجمه إلى <xliff:g id="service" example="DeepL">%1$s</xliff:g>.</string>
+    <string name="translation_language_downloaded"><xliff:g id="language" example="German">%1$s</xliff:g>، تم التنزيل</string>
+    <string name="translation_language_downloading"><xliff:g id="language" example="German">%1$s</xliff:g>، جارٍ التنزيل</string>
+    <string name="translation_languages_summary">تم التنزيل: <xliff:g id="languages" example="English, German">%1$s</xliff:g></string>
+    <string name="translation_nothing">لا شيء للترجمة</string>
+    <string name="translation_region_global">عامة</string>
+    <string name="translation_region_message">منطقة مورد Translator في Azure، مثل westeurope. اترك الحقل فارغًا لمورد عام.</string>
+    <string name="translation_second_none">عدم الترجمة</string>
+    <string name="translation_service_ai">خدمة الذكاء الاصطناعي</string>
+    <string name="translation_service_deepl">DeepL</string>
+    <string name="translation_service_google_cloud">Google Cloud Translation</string>
+    <string name="translation_service_libretranslate">LibreTranslate</string>
+    <string name="translation_service_microsoft">Microsoft Translator</string>
+    <string name="translation_service_not_set_up"><xliff:g id="service" example="DeepL">%1$s</xliff:g>، غير معدّة</string>
+    <string name="translation_service_on_device">على الجهاز</string>
+    <string name="translation_swapped">من <xliff:g id="source" example="German">%1$s</xliff:g> إلى <xliff:g id="target" example="English">%2$s</xliff:g></string>
+    <string name="translation_title">الترجمة</string>
+    <string name="translation_untranslated_none">لا شيء</string>
+</resources>

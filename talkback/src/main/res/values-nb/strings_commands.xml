@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="command_add_arrow_keys">Legg til piltaster</string>
+    <string name="command_add_gesture">Legg til bevegelse</string>
+    <string name="command_choose_arrow_keys">Velg piltaster</string>
+    <string name="command_choose_gesture">Velg bevegelse</string>
+    <string name="command_gesture_assigned"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g>: <xliff:g id="command" example="Describe image">%2$s</xliff:g></string>
+    <string name="command_gestures">Bevegelser</string>
+    <string name="command_keyboard_shortcut">Hurtigtast</string>
+    <string name="command_no_arrow_keys">Ingen piltaster</string>
+    <string name="command_no_gestures">Ingen bevegelser</string>
+    <string name="command_remove_arrow_keys">Fjern piltaster</string>
+    <string name="command_remove_gesture">Fjern bevegelse</string>
+    <string name="command_replace">Erstatt</string>
+    <string name="command_replace_gesture"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g> kjører «<xliff:g id="old_command" example="Read from top">%2$s</xliff:g>». Vil du bruke den til «<xliff:g id="new_command" example="Describe image">%3$s</xliff:g>» i stedet?</string>
+    <string name="commands_category_activation">Aktivering</string>
+    <string name="commands_category_media">Medier og volum</string>
+    <string name="commands_category_sandfly">SandFly</string>
+    <string name="commands_category_scrolling">Rulling</string>
+    <string name="commands_category_speech">Tale</string>
+    <string name="commands_category_tables">Tabeller</string>
+    <string name="commands_category_web">Nett</string>
+    <string name="item_list_current">Nåværende</string>
+    <string name="item_list_not_in_reading_controls">Ikke i lesekontrollene</string>
+    <string name="item_list_not_in_sandfly_menu">Ikke i SandFly-menyen</string>
+    <string name="item_list_options">Alternativer</string>
+    <string name="sounds_category_sounds">Lyder</string>
+    <string name="sounds_category_vibration">Vibrering</string>
+    <string name="speech_category_languages">Språk</string>
+    <string name="speech_category_other_apps">Andre apper</string>
+    <string name="speech_category_pronunciation">Uttale</string>
+    <string name="speech_category_stopping">Stoppe tale</string>
+    <string name="speech_category_voice">Stemme</string>
+    <string name="title_pref_audio_output">Lydutgang</string>
+    <string name="title_pref_backup">Sikkerhetskopiering og gjenoppretting</string>
+    <string name="title_pref_braille">Punktskrift</string>
+    <string name="title_pref_commands">Kommandoer</string>
+    <string name="title_pref_display">Skjerm</string>
+    <string name="title_pref_image_and_screen_descriptions">Bilde- og skjermbeskrivelser</string>
+    <string name="title_pref_pause">Pause og avslåing</string>
+    <string name="title_pref_quick_settings_screen">Hurtiginnstillinger</string>
+    <string name="title_pref_speech">Tale</string>
+    <string name="title_pref_speech_stream_control">Volumkontroll for tale</string>
+    <string name="title_pref_touch">Berøring</string>
+    <string name="title_pref_typing">Skriving</string>
+    <string name="title_pref_updates">Oppdateringer og installasjon</string>
+    <string name="title_pref_volume_keys">Volumtaster</string>
+    <string name="typing_category_other_input">Andre måter å skrive på</string>
+    <string name="verbosity_category_announcements">Kunngjøringer</string>
+    <string name="verbosity_category_items">Elementer</string>
+    <string name="verbosity_category_text">Tekst og symboler</string>
+</resources>

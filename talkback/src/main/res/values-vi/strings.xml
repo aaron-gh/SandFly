@@ -1770,4 +1770,24 @@
     <string name="title_pref_dictation_ai_service">Dịch vụ AI cho tính năng nhập bằng giọng nói</string>
     <string name="dictation_ai_same">Giống như tính năng tự động mô tả</string>
     <string name="title_pref_browse_mode_per_app">Ghi nhớ chế độ duyệt trong từng ứng dụng</string>
+    <string name="arrow_key_nav_assign_instruction">Nhấn một phím hoặc hai phím cùng lúc, có hoặc không có phím bổ trợ. Nhấn Backspace để xoá, Ctrl + Backspace để đặt lại về mặc định, Enter để lưu hoặc Escape để huỷ.</string>
+    <string name="arrow_key_nav_off">Đã tắt điều hướng bằng phím mũi tên</string>
+    <string name="arrow_key_nav_on">Đã bật điều hướng bằng phím mũi tên</string>
+    <string name="arrow_key_nav_page_left">Trang bên trái</string>
+    <string name="arrow_key_nav_page_right">Trang bên phải</string>
+    <string name="arrow_key_nav_toggle">Bật hoặc tắt điều hướng bằng phím mũi tên</string>
+    <string name="keycombo_menu_category_arrow_key_nav">Điều hướng bằng phím mũi tên</string>
+    <string-array name="pref_dictation_auto_stop_entries">
+        <item>Tắt</item>
+        <item>3 giây</item>
+        <item>5 giây</item>
+        <item>10 giây</item>
+        <item>15 giây</item>
+        <item>30 giây</item>
+        <item>1 phút</item>
+    </string-array>
+    <string name="shortcut_next_track">Bản nhạc tiếp theo</string>
+    <string name="shortcut_previous_track">Bản nhạc trước</string>
+    <string name="sound_mode_needs_access">Cấp quyền truy cập Không làm phiền để bật hoặc tắt Tắt tiếng.</string>
+    <string name="title_pref_dictation_auto_stop">Tự động dừng sau khoảng lặng</string>
 </resources>

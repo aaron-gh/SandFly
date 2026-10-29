@@ -1778,4 +1778,24 @@
     <string name="settings_export_failed">לא ניתן לייצא את ההגדרות</string>
     <string name="settings_import_done">הגדרות יובאו</string>
     <string name="settings_import_failed">קובץ זה אינו קובץ הגדרות SandFly או Backtalk, או שלא ניתן היה לקרוא אותו</string>
+    <string name="arrow_key_nav_assign_instruction">לוחצים על מקש אחד או על שני מקשים יחד, עם מקשי צירוף או בלעדיהם. לוחצים על Backspace כדי לנקות, על Ctrl + Backspace כדי לאפס לברירת המחדל, על Enter כדי לשמור או על Escape כדי לבטל.</string>
+    <string name="arrow_key_nav_off">הניווט במקשי החיצים מושבת</string>
+    <string name="arrow_key_nav_on">הניווט במקשי החיצים מופעל</string>
+    <string name="arrow_key_nav_page_left">דף שמאלה</string>
+    <string name="arrow_key_nav_page_right">דף ימינה</string>
+    <string name="arrow_key_nav_toggle">הפעלה או השבתה של הניווט במקשי החיצים</string>
+    <string name="keycombo_menu_category_arrow_key_nav">ניווט במקשי החיצים</string>
+    <string-array name="pref_dictation_auto_stop_entries">
+        <item>כבוי</item>
+        <item>3 שניות</item>
+        <item>5 שניות</item>
+        <item>10 שניות</item>
+        <item>15 שניות</item>
+        <item>30 שניות</item>
+        <item>דקה אחת</item>
+    </string-array>
+    <string name="shortcut_next_track">הרצועה הבאה</string>
+    <string name="shortcut_previous_track">הרצועה הקודמת</string>
+    <string name="sound_mode_needs_access">כדי להפעיל או להשבית את ההשתקה, צריך לתת גישה ל\"נא לא להפריע\".</string>
+    <string name="title_pref_dictation_auto_stop">עצירה אוטומטית אחרי שקט</string>
 </resources>

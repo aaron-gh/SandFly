@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="command_add_arrow_keys">添加箭头键</string>
+    <string name="command_add_gesture">添加手势</string>
+    <string name="command_choose_arrow_keys">选择箭头键</string>
+    <string name="command_choose_gesture">选择手势</string>
+    <string name="command_gesture_assigned"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g>：<xliff:g id="command" example="Describe image">%2$s</xliff:g></string>
+    <string name="command_gestures">手势</string>
+    <string name="command_keyboard_shortcut">键盘快捷键</string>
+    <string name="command_no_arrow_keys">无箭头键</string>
+    <string name="command_no_gestures">无手势</string>
+    <string name="command_remove_arrow_keys">移除箭头键</string>
+    <string name="command_remove_gesture">移除手势</string>
+    <string name="command_replace">替换</string>
+    <string name="command_replace_gesture"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g>当前运行“<xliff:g id="old_command" example="Read from top">%2$s</xliff:g>”。要改为用于“<xliff:g id="new_command" example="Describe image">%3$s</xliff:g>”吗？</string>
+    <string name="commands_category_activation">激活</string>
+    <string name="commands_category_media">媒体和音量</string>
+    <string name="commands_category_sandfly">SandFly</string>
+    <string name="commands_category_scrolling">滚动</string>
+    <string name="commands_category_speech">语音</string>
+    <string name="commands_category_tables">表格</string>
+    <string name="commands_category_web">网页</string>
+    <string name="item_list_current">当前</string>
+    <string name="item_list_not_in_reading_controls">不在朗读控件中</string>
+    <string name="item_list_not_in_sandfly_menu">不在 SandFly 菜单中</string>
+    <string name="item_list_options">选项</string>
+    <string name="sounds_category_sounds">提示音</string>
+    <string name="sounds_category_vibration">振动</string>
+    <string name="speech_category_languages">语言</string>
+    <string name="speech_category_other_apps">其他应用</string>
+    <string name="speech_category_pronunciation">发音</string>
+    <string name="speech_category_stopping">停止语音</string>
+    <string name="speech_category_voice">声音</string>
+    <string name="title_pref_audio_output">音频输出</string>
+    <string name="title_pref_backup">备份和恢复</string>
+    <string name="title_pref_braille">盲文</string>
+    <string name="title_pref_commands">命令</string>
+    <string name="title_pref_display">显示</string>
+    <string name="title_pref_image_and_screen_descriptions">图片和屏幕描述</string>
+    <string name="title_pref_pause">暂停和关闭</string>
+    <string name="title_pref_quick_settings_screen">快速设置</string>
+    <string name="title_pref_speech">语音</string>
+    <string name="title_pref_speech_stream_control">语音所用的音量</string>
+    <string name="title_pref_touch">触摸</string>
+    <string name="title_pref_typing">输入</string>
+    <string name="title_pref_updates">更新和安装</string>
+    <string name="title_pref_volume_keys">音量键</string>
+    <string name="typing_category_other_input">其他输入方式</string>
+    <string name="verbosity_category_announcements">播报</string>
+    <string name="verbosity_category_items">项</string>
+    <string name="verbosity_category_text">文本和符号</string>
+</resources>

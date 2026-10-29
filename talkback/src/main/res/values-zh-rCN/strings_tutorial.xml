@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="sandfly_tutorial_actions_archive">移到这条消息。<xliff:g id="gesture" example="Swipe up">%1$s</xliff:g>或<xliff:g id="gesture" example="Swipe down">%2$s</xliff:g>可浏览它的操作。<xliff:g id="gesture" example="Double-tap">%3$s</xliff:g>可执行听到的操作。执行“<xliff:g id="action" example="Archive">%4$s</xliff:g>”。</string>
+    <string name="sandfly_tutorial_actions_intro">有些项除了激活之外还有其他操作，例如消息的“归档”或“删除”。此类项获得焦点时，“操作”朗读控件可浏览这些操作。</string>
+    <string name="sandfly_tutorial_actions_title">操作</string>
+    <string name="sandfly_tutorial_activate_button">移到“<xliff:g id="button" example="Ring the bell">%2$s</xliff:g>”。<xliff:g id="gesture" example="Double-tap">%1$s</xliff:g>即可激活它。</string>
+    <string name="sandfly_tutorial_activate_check_box">用同样的方法勾选“<xliff:g id="check_box" example="Extra cheese">%1$s</xliff:g>”。</string>
+    <string name="sandfly_tutorial_activate_hold">有些项在按住时会执行其他操作。移到“<xliff:g id="button" example="Details">%2$s</xliff:g>”。<xliff:g id="gesture" example="Double-tap and hold">%1$s</xliff:g>即可按住它。</string>
+    <string name="sandfly_tutorial_activate_intro">激活作用于获得焦点的项，无论你点按屏幕的哪个位置。</string>
+    <string name="sandfly_tutorial_activate_title">激活项</string>
+    <string name="sandfly_tutorial_back_in_lesson">“返回”不会离开课程。如需选择其他课程，请使用“目录”。</string>
+    <string name="sandfly_tutorial_bell">按铃</string>
+    <string name="sandfly_tutorial_bell_rung">按铃次数：<xliff:g id="count" example="1">%1$d</xliff:g></string>
+    <string name="sandfly_tutorial_brightness">亮度</string>
+    <string name="sandfly_tutorial_chapter_basics">基础知识</string>
+    <string name="sandfly_tutorial_chapter_controls">控件和文本</string>
+    <string name="sandfly_tutorial_chapter_getting_around">导航</string>
+    <string name="sandfly_tutorial_chapter_practice">练习</string>
+    <string name="sandfly_tutorial_chapter_reading">阅读</string>
+    <string name="sandfly_tutorial_choose_reading_control"><xliff:g id="gesture" example="Swipe down then up">%1$s</xliff:g>或<xliff:g id="gesture" example="Swipe up then down">%2$s</xliff:g>可更改朗读控件。选择“<xliff:g id="reading_control" example="Words">%3$s</xliff:g>”。</string>
+    <string name="sandfly_tutorial_close">关闭教程</string>
+    <string name="sandfly_tutorial_commands_copy"><xliff:g id="gesture" example="Triple-tap with 3 fingers">%1$s</xliff:g>可将 SandFly 最后说出的文本复制到剪贴板。</string>
+    <string name="sandfly_tutorial_commands_intro">这些命令在任何屏幕上都可用。</string>
+    <string name="sandfly_tutorial_commands_search"><xliff:g id="gesture" example="Swipe left then down">%1$s</xliff:g>可在屏幕上搜索文本。在本课中，教程会说出该命令的作用，而不会执行它。</string>
+    <string name="sandfly_tutorial_commands_speech_off"><xliff:g id="gesture" example="Double-tap with 3 fingers">%1$s</xliff:g>可关闭语音，再次执行可开启语音。在本课中，教程会说出该命令的作用，而不会执行它。</string>
+    <string name="sandfly_tutorial_commands_status"><xliff:g id="gesture" example="Triple-tap with 2 fingers">%1$s</xliff:g>可听取时间、电池电量和其他状态。</string>
+    <string name="sandfly_tutorial_commands_title">实用命令</string>
+    <string name="sandfly_tutorial_contents">目录</string>
+    <string name="sandfly_tutorial_contents_intro">课程按顺序排列。每节课都可以单独打开。</string>
+    <string name="sandfly_tutorial_continuous_intro">SandFly 无需滑动即可从获得焦点的项朗读到屏幕末尾。触摸屏幕会停止朗读。</string>
+    <string name="sandfly_tutorial_continuous_move">移到食谱的第一行。</string>
+    <string name="sandfly_tutorial_continuous_read"><xliff:g id="gesture" example="Swipe down then right">%1$s</xliff:g>可从获得焦点的项开始朗读。</string>
+    <string name="sandfly_tutorial_continuous_read_from_menu"><xliff:g id="gesture" example="Tap with 3 fingers">%1$s</xliff:g>可打开 SandFly 菜单，然后选择“<xliff:g id="command" example="Read from focused item">%2$s</xliff:g>”。</string>
+    <string name="sandfly_tutorial_continuous_title">连续朗读</string>
+    <string name="sandfly_tutorial_details">详情</string>
+    <string name="sandfly_tutorial_details_shown">2 人桌，晚上 7 点，靠窗。</string>
+    <string name="sandfly_tutorial_done">已完成</string>
+    <string name="sandfly_tutorial_end_practice">结束练习</string>
+    <string name="sandfly_tutorial_explore_activate">触摸“星星”后抬起手指。<xliff:g id="gesture" example="Double-tap">%1$s</xliff:g>屏幕上的任意位置即可激活它。</string>
+    <string name="sandfly_tutorial_explore_find">用一根手指在屏幕上滑动，找到四个方块：太阳、月亮、星星和云朵。</string>
+    <string name="sandfly_tutorial_explore_intro">触摸屏幕会读出手指下方的项。触摸项不会激活它。</string>
+    <string name="sandfly_tutorial_explore_title">触摸浏览</string>
+    <string name="sandfly_tutorial_extra_cheese">加奶酪</string>
+    <string name="sandfly_tutorial_finish">完成教程</string>
+    <string name="sandfly_tutorial_forecast_today">今天</string>
+    <string name="sandfly_tutorial_forecast_today_text">晴朗温暖，有微风。</string>
+    <string name="sandfly_tutorial_forecast_tomorrow">明天</string>
+    <string name="sandfly_tutorial_forecast_tomorrow_text">上午多云，中午起有雨。</string>
+    <string name="sandfly_tutorial_forecast_weekend">周末</string>
+    <string name="sandfly_tutorial_forecast_weekend_text">周六有风，周日晴朗。</string>
+    <string name="sandfly_tutorial_headings_intro">屏幕和网页用标题划分内容。“标题”朗读控件可从一个标题跳到下一个标题。</string>
+    <string name="sandfly_tutorial_headings_jump"><xliff:g id="gesture" example="Swipe down">%1$s</xliff:g>可跳到下一个标题。跳到“<xliff:g id="heading" example="Weekend">%2$s</xliff:g>”。</string>
+    <string name="sandfly_tutorial_headings_title">标题</string>
+    <string name="sandfly_tutorial_item_apples">苹果</string>
+    <string name="sandfly_tutorial_item_bread">面包</string>
+    <string name="sandfly_tutorial_item_cheese">奶酪</string>
+    <string name="sandfly_tutorial_item_dates">椰枣</string>
+    <string name="sandfly_tutorial_item_eggs">鸡蛋</string>
+    <string name="sandfly_tutorial_lesson_complete">本课完成。</string>
+    <string name="sandfly_tutorial_lesson_complete_last">本课完成。<xliff:g id="gesture" example="Double-tap">%1$s</xliff:g>即可完成教程。</string>
+    <string name="sandfly_tutorial_lesson_complete_next">本课完成。<xliff:g id="gesture" example="Double-tap">%1$s</xliff:g>即可开始下一课。</string>
+    <string name="sandfly_tutorial_lesson_heading"><xliff:g id="lesson" example="Moving between items">%1$s</xliff:g>，第 <xliff:g id="number" example="3">%2$d</xliff:g> 课，共 <xliff:g id="count" example="17">%3$d</xliff:g> 课</string>
+    <string name="sandfly_tutorial_list_item">项目 <xliff:g id="number" example="15">%1$d</xliff:g></string>
+    <string name="sandfly_tutorial_menu_close"><xliff:g id="gesture" example="Swipe down then left">%1$s</xliff:g>可关闭菜单。</string>
+    <string name="sandfly_tutorial_menu_intro">SandFly 菜单包含针对焦点所在项和当前屏幕的命令。</string>
+    <string name="sandfly_tutorial_menu_open"><xliff:g id="gesture" example="Tap with 3 fingers">%1$s</xliff:g>可打开 SandFly 菜单。滑动浏览其中的命令。<xliff:g id="gesture" example="Swipe down then left">%2$s</xliff:g>可关闭菜单。</string>
+    <string name="sandfly_tutorial_menu_title">SandFly 菜单</string>
+    <string name="sandfly_tutorial_message">来自 Sam 的消息：中午一起吃午饭吗？</string>
+    <string name="sandfly_tutorial_message_archive">归档</string>
+    <string name="sandfly_tutorial_message_delete">删除</string>
+    <string name="sandfly_tutorial_message_reply">回复</string>
+    <string name="sandfly_tutorial_move_intro">滑动可按阅读顺序移到屏幕上的下一项或上一项。</string>
+    <string name="sandfly_tutorial_move_next"><xliff:g id="gesture" example="Swipe right">%1$s</xliff:g>可移到下一项。继续移动，直到到达“<xliff:g id="item" example="Eggs">%2$s</xliff:g>”。</string>
+    <string name="sandfly_tutorial_move_previous"><xliff:g id="gesture" example="Swipe left">%1$s</xliff:g>可移到上一项。返回到“<xliff:g id="item" example="Bread">%2$s</xliff:g>”。</string>
+    <string name="sandfly_tutorial_move_title">在项之间移动</string>
+    <string name="sandfly_tutorial_name">姓名</string>
+    <string name="sandfly_tutorial_next_lesson">下一课：<xliff:g id="lesson" example="Activating items">%1$s</xliff:g></string>
+    <string name="sandfly_tutorial_no_gesture">“<xliff:g id="action" example="Next item">%1$s</xliff:g>”没有手势。请在“命令”中分配一个，或使用“跳过步骤”。</string>
+    <string name="sandfly_tutorial_not_in_lesson">课程中不会执行“<xliff:g id="action" example="Home">%1$s</xliff:g>”。如需退出教程，请使用“目录”中的“关闭教程”。</string>
+    <string name="sandfly_tutorial_not_in_lesson_short">课程中不会执行“<xliff:g id="action" example="Turn speech on or off">%1$s</xliff:g>”。</string>
+    <string name="sandfly_tutorial_pause_intro">语音可在某项读到一半时暂停，并从停止处继续。</string>
+    <string name="sandfly_tutorial_pause_pause">移到下方的故事。朗读时，<xliff:g id="gesture" example="Tap with 2 fingers">%1$s</xliff:g>可暂停语音，再次执行可继续。</string>
+    <string name="sandfly_tutorial_pause_resume">再次<xliff:g id="gesture" example="Tap with 2 fingers">%1$s</xliff:g>即可继续语音。</string>
+    <string name="sandfly_tutorial_pause_title">暂停语音</string>
+    <string name="sandfly_tutorial_practice_gesture"><xliff:g id="gesture" example="Swipe right">%1$s</xliff:g>：<xliff:g id="action" example="Next item">%2$s</xliff:g></string>
+    <string name="sandfly_tutorial_practice_intro">每个手势会说出其名称和操作，而不会执行它。移到下一项、上一项和激活仍然有效。</string>
+    <string name="sandfly_tutorial_practice_step">执行任意手势即可听到它的作用。如需停止，请激活“<xliff:g id="button" example="End practice">%1$s</xliff:g>”。</string>
+    <string name="sandfly_tutorial_practice_title">手势练习</string>
+    <string name="sandfly_tutorial_progress">已完成 <xliff:g id="done" example="2">%1$d</xliff:g> 个，共 <xliff:g id="count" example="4">%2$d</xliff:g> 个。</string>
+    <string name="sandfly_tutorial_reading_controls_characters">将朗读控件更改为“<xliff:g id="reading_control" example="Characters">%2$s</xliff:g>”。<xliff:g id="gesture" example="Swipe down">%1$s</xliff:g>可移动一个字符。</string>
+    <string name="sandfly_tutorial_reading_controls_intro">朗读控件决定向上和向下滑动的作用，例如按字词或字符移动，或更改语速。向右和向左滑动仍会在项之间移动。</string>
+    <string name="sandfly_tutorial_reading_controls_move">移到下方的句子。</string>
+    <string name="sandfly_tutorial_reading_controls_next_word"><xliff:g id="gesture" example="Swipe down">%1$s</xliff:g>可移到下一个字词。移动三个字词。</string>
+    <string name="sandfly_tutorial_reading_controls_title">朗读控件</string>
+    <string name="sandfly_tutorial_recipe_1">薄煎饼：将面粉、鸡蛋和牛奶混合成顺滑的面糊。</string>
+    <string name="sandfly_tutorial_recipe_2">在平底锅中加热少许黄油。</string>
+    <string name="sandfly_tutorial_recipe_3">倒入适量面糊，薄薄地铺满锅底。</string>
+    <string name="sandfly_tutorial_recipe_4">底面呈金黄色时，将薄煎饼翻面。</string>
+    <string name="sandfly_tutorial_recipe_5">配柠檬和白糖食用。</string>
+    <string name="sandfly_tutorial_scrolling_intro">列表一次只显示部分项。滑过显示的最后一项会滚动列表。</string>
+    <string name="sandfly_tutorial_scrolling_page"><xliff:g id="gesture" example="Swipe right then left">%1$s</xliff:g>可向前滚动一页。</string>
+    <string name="sandfly_tutorial_scrolling_swipe"><xliff:g id="gesture" example="Swipe right">%1$s</xliff:g>浏览列表，直到到达“<xliff:g id="item" example="Item 15">%2$s</xliff:g>”。</string>
+    <string name="sandfly_tutorial_scrolling_title">滚动列表</string>
+    <string name="sandfly_tutorial_sentence">敏捷的棕色狐狸跳过了那只懒狗。</string>
+    <string name="sandfly_tutorial_skip_step">跳过步骤</string>
+    <string name="sandfly_tutorial_sliders_change">移到“<xliff:g id="slider" example="Brightness">%3$s</xliff:g>”滑块。<xliff:g id="gesture" example="Swipe up">%1$s</xliff:g>或<xliff:g id="gesture" example="Swipe down">%2$s</xliff:g>可更改它的值。</string>
+    <string name="sandfly_tutorial_sliders_highest">将“<xliff:g id="slider" example="Brightness">%1$s</xliff:g>”设为百分之百，即最大值。</string>
+    <string name="sandfly_tutorial_sliders_intro">滑块获得焦点时，向上和向下滑动可更改它的值。</string>
+    <string name="sandfly_tutorial_sliders_title">滑块</string>
+    <string name="sandfly_tutorial_step">第 <xliff:g id="number" example="1">%1$d</xliff:g> 步，共 <xliff:g id="count" example="2">%2$d</xliff:g> 步：<xliff:g id="instruction" example="Swipe right to move to the next item.">%3$s</xliff:g></string>
+    <string name="sandfly_tutorial_story">沙蝇是生活在海滩、河岸和森林中的小型蝇类。它们在黎明和黄昏空气静止时最为活跃。只有雌性会叮人，因为它们需要血液来产卵。叮咬处会痒好几天，所以前往沙蝇出没地区的人会携带驱虫剂。沙蝇飞行能力很弱，即使是微风也能让它们远离。</string>
+    <string name="sandfly_tutorial_system_back"><xliff:g id="gesture" example="Swipe down then left">%1$s</xliff:g>可返回。</string>
+    <string name="sandfly_tutorial_system_home"><xliff:g id="gesture" example="Swipe up then left">%1$s</xliff:g>可前往主屏幕。</string>
+    <string name="sandfly_tutorial_system_intro">这些手势在任何屏幕上都可用。在本课中，教程会说出每个手势的作用，而不会执行它。</string>
+    <string name="sandfly_tutorial_system_notifications"><xliff:g id="gesture" example="Swipe right then down">%1$s</xliff:g>可打开通知。</string>
+    <string name="sandfly_tutorial_system_overview"><xliff:g id="gesture" example="Swipe left then up">%1$s</xliff:g>可显示最近使用的应用。</string>
+    <string name="sandfly_tutorial_system_title">返回、主屏幕和通知</string>
+    <string name="sandfly_tutorial_tile_cloud">云朵</string>
+    <string name="sandfly_tutorial_tile_moon">月亮</string>
+    <string name="sandfly_tutorial_tile_star">星星</string>
+    <string name="sandfly_tutorial_tile_sun">太阳</string>
+    <string name="sandfly_tutorial_title">SandFly 教程</string>
+    <string name="sandfly_tutorial_typing_delete">用键盘上的删除键删除最后一个字。</string>
+    <string name="sandfly_tutorial_typing_intro">激活文本框会打开键盘。触摸按键可听到它，抬起手指即可输入。</string>
+    <string name="sandfly_tutorial_typing_open">移到“<xliff:g id="field" example="Name">%2$s</xliff:g>”文本框。<xliff:g id="gesture" example="Double-tap">%1$s</xliff:g>即可开始输入。</string>
+    <string name="sandfly_tutorial_typing_title">输入</string>
+    <string name="sandfly_tutorial_typing_type">输入“<xliff:g id="word" example="cat">%1$s</xliff:g>”。</string>
+    <string name="sandfly_tutorial_typing_word">你好</string>
+    <string name="sandfly_tutorial_welcome_intro">本教程讲解 SandFly 的手势。每节课会给出一条指示，等你用自己的手势完成后，再给出下一条。指示是课程名称之后的第一项。“目录”列出所有课程，教程会在你上次所在的课程处重新打开。</string>
+    <string name="sandfly_tutorial_welcome_start"><xliff:g id="gesture" example="Double-tap">%1$s</xliff:g>屏幕上的任意位置即可开始。</string>
+    <string name="sandfly_tutorial_welcome_title">欢迎</string>
+</resources>
