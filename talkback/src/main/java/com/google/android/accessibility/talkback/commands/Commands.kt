@@ -690,6 +690,8 @@ object Commands {
         }
         gesture(R.string.shortcut_value_next_track, R.string.shortcut_next_track)
         gesture(R.string.shortcut_value_previous_track, R.string.shortcut_previous_track)
+        gesture(R.string.shortcut_value_rewind, R.string.shortcut_rewind)
+        gesture(R.string.shortcut_value_fast_forward, R.string.shortcut_fast_forward)
         gesture(R.string.shortcut_value_increase_volume, R.string.shortcut_increase_volume)
         gesture(R.string.shortcut_value_decrease_volume, R.string.shortcut_decrease_volume)
         gesture(
