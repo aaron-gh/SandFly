@@ -117,28 +117,17 @@
 &lt;li&gt;Разлики в някои модификатори.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">Научете повече за клавишните карти</string>
   <string name="keycombo_go_to_settings">Към настройките</string>
-  <string name="keycombo_new_keymap_notification_dialog_positive_button">Разбрах</string>
-  <string name="keycombo_new_keymap_notification_dialog_negative_button">Настройки</string>
-  <string name="keycombo_new_keymap_notification_dialog_neutral_button">Научете повече</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_classic_keymap">Традиционната клавишна карта вече не се поддържа</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">Вече използвате основната клавишна карта на SandFly. Има и нова подобрена клавишна карта с много нови команди. Научете повече в Помощния център или превключете към новата клавишна карта от настройките.</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">Налице е нова клавишна карта</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">Новата подобрена клавишна карта на SandFly въвежда много нови команди. Научете повече в Помощния център или превключете към новата клавишна карта от настройките.</string>
   <string name="keycombo_warning_content_description">Още информация за модифициращия клавиш</string>
   <string name="keycombo_menu_category_select_keymap">Клавишна карта</string>
   <string name="keycombo_menu_select_keymap">Избиране на клавишна карта</string>
   <string name="keycombo_menu_reset_keymap">Нулиране на клавишната карта</string>
   <string name="keycombo_menu_view_system_keyboard_shortcuts">Преглед на системните клавишни комбинации</string>
-  <string name="keycombo_menu_choose_trigger_modifier">Избиране на модифициращ клавиш</string>
-  <string name="keycombo_menu_alert_title_trigger_modifier">Да се използва ли %1$s като модифициращ клавиш?</string>
-  <string name="keycombo_menu_alert_message_trigger_modifier">Понастоящем SandFly използва <xliff:g id="current_trigger_modifier" example="Alt">%1$s</xliff:g> като модифициращ клавиш.</string>
-  <string name="keycombo_menu_alert_button_trigger_modifier">Използване на %1$s</string>
-  <string name="keycombo_menu_announce_new_trigger_modifier">Новият модифициращ клавиш е „%1$s“.</string>
+  <string name="keycombo_menu_choose_trigger_modifier">Избиране на клавиш за SandFly</string>
+  <string name="keycombo_menu_announce_new_trigger_modifier">Клавишът за SandFly е променен на %1$s.</string>
   <string name="keycombo_menu_announce_active_keymap">Клавишната карта „%1$s“ вече е активна.</string>
   <string name="keycombo_menu_announce_reset_keymap">Клавишната карта е нулирана.</string>
   <string name="keycombo_announce_shortcut_not_supported">Комбинацията не се поддържа</string>
-  <string name="value_default_keymap">Стандартна клавишна карта</string>
-  <string name="value_new_keymap">Подобрена клавиатурна подредба</string>
+  <string name="value_new_keymap">Клавишна карта на SandFly</string>
   <string name="keycombo_menu_category_navigation">Действия за придвижване</string>
   <string name="keycombo_menu_navigate_next">Придвижване до следващия елемент</string>
   <string name="keycombo_menu_navigate_previous">Придвижване до предишния елемент</string>
@@ -266,7 +255,7 @@
   <string name="message_in_reset_keymap_confirm_dialog">Наистина ли искате да възстановите стандартните стойности на клавишните комбинации за тази клавишна карта? Моля, обърнете внимание, че действието не може да бъде отменено.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">Нулиране</string>
   <string name="template_keycombo_menu_browse_mode_command">%1$s в режим за четене</string>
-  <string name="keycombo_assign_dialog_default_keymap_instruction">Натиснете клавишна комбинация с модифициращия клавиш „%1$s“, за да зададете нова комбинация.</string>
+  <string name="keycombo_assign_dialog_default_keymap_instruction">Натиснете клавишна комбинация с клавиша за SandFly (%1$s), за да зададете нова клавишна комбинация.</string>
   <string name="keycombo_unassigned">Незададена</string>
   <string name="save_button_in_keycombo_assign_dialog">Запазване</string>
   <string name="clear_button_in_keycombo_assign_dialog">Изчистване</string>
@@ -1804,4 +1793,10 @@
   <string name="title_pref_speech_dictionary">Речник на речта</string>
   <string name="speech_dictionary_all_apps">Всички приложения</string>
   <string name="speech_dictionary_not_said"><xliff:g id="text" example="#">%1$s</xliff:g> не се изговаря</string>
+  <string name="keycombo_key_modifier_insert">Insert</string>
+  <string name="keycombo_key_modifier_numpad_insert">Insert на цифровата клавиатура</string>
+  <string name="keycombo_menu_navigate_next_paragraph">Навигиране до следващия абзац</string>
+  <string name="keycombo_menu_navigate_previous_paragraph">Навигиране до предишния абзац</string>
+  <string name="keycombo_key_modifier_ctrl_alt">Ctrl + Alt</string>
+  <string name="value_voiceover_keymap">Клавишна карта на VoiceOver</string>
 </resources>

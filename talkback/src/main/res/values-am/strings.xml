@@ -117,28 +117,17 @@
       &lt;li&gt;የተወሰኑት የአሻሻይ ቁልፎች የተለዩ ናቸው።&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">ስለ የቁልፍ ካርታዎች የበለጠ ይወቁ</string>
   <string name="keycombo_go_to_settings">ወደ ቅንብሮች ሂድ</string>
-  <string name="keycombo_new_keymap_notification_dialog_positive_button">ገባኝ</string>
-  <string name="keycombo_new_keymap_notification_dialog_negative_button">ቅንብሮች</string>
-  <string name="keycombo_new_keymap_notification_dialog_neutral_button">የበለጠ ይወቁ</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_classic_keymap">የታወቀ የቁልፍ ካርታ ከእንግዲህ አይደገፍም</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">አሁን የSandFly ነባሪ የቁልፍ ካርታን በመጠቀም ላይ ነዎት። እንዲሁም በርካታ አዲስ ትዕዛዞች ያሉት አዲስ የተሻሻለ የቁልፍ ካርታ አለ። የእገዛ ማዕከል ውስጥ የበለጠ ይወቁ ወይም ቅንብሮች ውስጥ ወደ አዲስ የቁልፍ ካርታ ይቀይሩ።</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">የቁልፍ ካርታ ይገኛል</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">አዲሱ SandFly የተሻሻለ የቁልፍ ካርታ በርካታ አዲስ ትዕዛዞችን ያክላል። የእገዛ ማዕከል ውስጥ የበለጠ ይወቁ ወይም ቅንብሮች ውስጥ ወደ አዲስ የቁልፍ ካርታ ይቀይሩ።</string>
   <string name="keycombo_warning_content_description">ስለ የአሻሻይ ቁልፍዎ ተጨማሪ መረጃ</string>
   <string name="keycombo_menu_category_select_keymap">የቁልፍ ካርታ</string>
   <string name="keycombo_menu_select_keymap">የቁልፍ ካርታን ይምረጡ</string>
   <string name="keycombo_menu_reset_keymap">የቁልፍ ካርታን ዳግም ያስጀምሩት</string>
   <string name="keycombo_menu_view_system_keyboard_shortcuts">የሥርዓት የቁልፍ ሰሌዳ አቋራጮችን አሳይ</string>
-  <string name="keycombo_menu_choose_trigger_modifier">ቀያሪ ቁልፍ ይምረጡ</string>
-  <string name="keycombo_menu_alert_title_trigger_modifier">%1$s እንደ የአሻሻይ ቁልፍዎ ጥቅል ላይ ይዋል?</string>
-  <string name="keycombo_menu_alert_message_trigger_modifier">SandFly በአሁኑ ጊዜ <xliff:g id="current_trigger_modifier" example="Alt">%1$s</xliff:g> እንደ የአሻሻይ ቁልፍ ይጠቀማል።</string>
-  <string name="keycombo_menu_alert_button_trigger_modifier">%1$s ተጠቀም</string>
-  <string name="keycombo_menu_announce_new_trigger_modifier">ቀያሪ ቁልፉ ወደ %1$s ተቀይሯል።</string>
+  <string name="keycombo_menu_choose_trigger_modifier">የSandFly ቁልፍ ይምረጡ</string>
+  <string name="keycombo_menu_announce_new_trigger_modifier">የSandFly ቁልፍ ወደ %1$s ተለውጧል።</string>
   <string name="keycombo_menu_announce_active_keymap">%1$s አሁን ገቢር ነው።</string>
   <string name="keycombo_menu_announce_reset_keymap">የቁልፍ ካርታው ዳግም ተጀምሯል።</string>
   <string name="keycombo_announce_shortcut_not_supported">አቋራጭ አይደገፍም</string>
-  <string name="value_default_keymap">ነባሪ የቁልፍ ካርታ</string>
-  <string name="value_new_keymap">የተሻሻለ የቁልፍ ካርታ</string>
+  <string name="value_new_keymap">የSandFly ቁልፍ ካርታ</string>
   <string name="keycombo_menu_category_navigation">የአሰሳ እርምጃዎች</string>
   <string name="keycombo_menu_navigate_next">ወደ ቀጣዩ ንጥል አስስ</string>
   <string name="keycombo_menu_navigate_previous">ወደ ቀዳሚው ንጥል አስስ</string>
@@ -266,7 +255,7 @@
   <string name="message_in_reset_keymap_confirm_dialog">እርግጠኛ ነዎት የዚህ የቁልፍ ካርታ አቋራጭ ቁልፎችዎን ወደ ነባሪ እሴቶቻቸው ዳግም ማስጀመር ይፈልጋሉ?ይህ እርምጃ ሊቀለበስ የማይችል መሆኑን እባክዎ ልብ ይበሉ።</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">ዳግም አስጀምር</string>
   <string name="template_keycombo_menu_browse_mode_command">የአሰሳ ሁነታ ውስጥ ያለ %1$s</string>
-  <string name="keycombo_assign_dialog_default_keymap_instruction">አዲስ አቋራጭ ለማዘጋጀት የቁልፍ ጥምር ከ%1$s ቀያሪ ቁልፍ ጋር ይጫኑ።</string>
+  <string name="keycombo_assign_dialog_default_keymap_instruction">አዲስ አቋራጭ ለማቀናበር የቁልፍ ጥምረትን በ%1$s የSandFly ቁልፍ ይጫኑ።</string>
   <string name="keycombo_unassigned">አልተመደበም</string>
   <string name="save_button_in_keycombo_assign_dialog">አስቀምጥ</string>
   <string name="clear_button_in_keycombo_assign_dialog">አጽዳ</string>
@@ -1804,4 +1793,10 @@
   <string name="title_pref_speech_dictionary">የንግግር መዝገበ ቃላት</string>
   <string name="speech_dictionary_all_apps">ሁሉም መተግበሪያዎች</string>
   <string name="speech_dictionary_not_said"><xliff:g id="text" example="#">%1$s</xliff:g> አይነገርም</string>
+  <string name="keycombo_key_modifier_insert">አስገባ</string>
+  <string name="keycombo_key_modifier_numpad_insert">የቁጥር ሰሌዳ ማስገቢያ</string>
+  <string name="keycombo_menu_navigate_next_paragraph">ወደ ቀጣዩ አንቀጽ አስስ</string>
+  <string name="keycombo_menu_navigate_previous_paragraph">ወደ ቀዳሚው አንቀጽ አስስ</string>
+  <string name="keycombo_key_modifier_ctrl_alt">Ctrl + Alt</string>
+  <string name="value_voiceover_keymap">የVoiceOver ቁልፍ ካርታ</string>
 </resources>

@@ -117,28 +117,17 @@
       &lt;li&gt;Neki od modifikujućih tastera se razlikuju.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">Saznajte više o rasporedima tastera</string>
   <string name="keycombo_go_to_settings">Idi u Podešavanja</string>
-  <string name="keycombo_new_keymap_notification_dialog_positive_button">Važi</string>
-  <string name="keycombo_new_keymap_notification_dialog_negative_button">Podešavanja</string>
-  <string name="keycombo_new_keymap_notification_dialog_neutral_button">Saznajte više</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_classic_keymap">Klasični raspored tastera više nije podržan</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">Sada koristite podrazumevani raspored tastera SandFly-a. Postoji i novi poboljšani raspored tastera koji ima mnogo novih komandi. Saznajte više u centru za pomoć ili pređite na novi raspored tastera u Podešavanjima.</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">Dostupan je novi raspored tastera</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">Novi, poboljšani raspored tastera SandFly-a sadrži mnogo novih komandi. Saznajte više u centru za pomoć ili pređite na novi raspored tastera u Podešavanjima.</string>
   <string name="keycombo_warning_content_description">Više informacija o modifikujućem tasteru</string>
   <string name="keycombo_menu_category_select_keymap">Raspored tastera</string>
   <string name="keycombo_menu_select_keymap">Izaberi raspored tastera</string>
   <string name="keycombo_menu_reset_keymap">Resetuj raspored tastera</string>
   <string name="keycombo_menu_view_system_keyboard_shortcuts">Prikaži sistemske tasterske prečice</string>
-  <string name="keycombo_menu_choose_trigger_modifier">Izaberi modifikujući taster</string>
-  <string name="keycombo_menu_alert_title_trigger_modifier">Želite da koristite „%1$s“ kao modifikujući taster?</string>
-  <string name="keycombo_menu_alert_message_trigger_modifier">SandFly trenutno koristi „<xliff:g id="current_trigger_modifier" example="Alt">%1$s</xliff:g>“ kao modifikujući taster.</string>
-  <string name="keycombo_menu_alert_button_trigger_modifier">Koristi „%1$s“</string>
-  <string name="keycombo_menu_announce_new_trigger_modifier">Modifikujući taster je promenjen u %1$s.</string>
+  <string name="keycombo_menu_choose_trigger_modifier">Odaberite taster za SandFly</string>
+  <string name="keycombo_menu_announce_new_trigger_modifier">Taster za SandFly je promenjen u %1$s.</string>
   <string name="keycombo_menu_announce_active_keymap">Raspored tastera %1$s je sada aktivan.</string>
   <string name="keycombo_menu_announce_reset_keymap">Raspored tastera je resetovan.</string>
   <string name="keycombo_announce_shortcut_not_supported">Prečica nije podržana</string>
-  <string name="value_default_keymap">Podrazumevan raspored tastera</string>
-  <string name="value_new_keymap">Poboljšani raspored tastera</string>
+  <string name="value_new_keymap">Raspored tastera SandFly</string>
   <string name="keycombo_menu_category_navigation">Radnje za navigaciju</string>
   <string name="keycombo_menu_navigate_next">Idi na sledeću stavku</string>
   <string name="keycombo_menu_navigate_previous">Idi na prethodnu stavku</string>
@@ -266,7 +255,7 @@
   <string name="message_in_reset_keymap_confirm_dialog">Želite li stvarno da resetujete tasterske prečice za ovaj raspored tastera na podrazumevane vrednosti? Imajte na umu da ova radnja ne može da se opozove.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">Resetuj</string>
   <string name="template_keycombo_menu_browse_mode_command">%1$s u režimu pregledanja</string>
-  <string name="keycombo_assign_dialog_default_keymap_instruction">Pritisnite kombinaciju tastera sa modifikujućim tasterom %1$s da biste podesili novu prečicu.</string>
+  <string name="keycombo_assign_dialog_default_keymap_instruction">Pritisnite kombinaciju tastera sa tasterom za SandFly %1$s da biste podesili novu prečicu.</string>
   <string name="keycombo_unassigned">Nedodeljeno</string>
   <string name="save_button_in_keycombo_assign_dialog">Sačuvaj</string>
   <string name="clear_button_in_keycombo_assign_dialog">Obriši</string>
@@ -1808,4 +1797,10 @@
   <string name="title_pref_speech_dictionary">Rečnik govora</string>
   <string name="speech_dictionary_all_apps">Sve aplikacije</string>
   <string name="speech_dictionary_not_said"><xliff:g id="text" example="#">%1$s</xliff:g> se ne izgovara</string>
+  <string name="keycombo_key_modifier_insert">Umetni</string>
+  <string name="keycombo_key_modifier_numpad_insert">Umetanje na numeričkoj tastaturi</string>
+  <string name="keycombo_menu_navigate_next_paragraph">Prelazak na sledeći pasus</string>
+  <string name="keycombo_menu_navigate_previous_paragraph">Prelazak na prethodni pasus</string>
+  <string name="keycombo_key_modifier_ctrl_alt">Ctrl + Alt</string>
+  <string name="value_voiceover_keymap">Raspored tastera VoiceOver</string>
 </resources>

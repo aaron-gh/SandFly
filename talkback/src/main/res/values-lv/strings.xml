@@ -117,28 +117,17 @@
       &lt;li&gt;Atšķiras daži modificētājtaustiņi.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">Uzzināt vairāk par taustiņu piesaisti</string>
   <string name="keycombo_go_to_settings">Pāriet uz iestatījumiem</string>
-  <string name="keycombo_new_keymap_notification_dialog_positive_button">Labi</string>
-  <string name="keycombo_new_keymap_notification_dialog_negative_button">Iestatījumi</string>
-  <string name="keycombo_new_keymap_notification_dialog_neutral_button">Uzzināt vairāk</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_classic_keymap">Klasiskā taustiņu piesaiste vairs netiek atbalstīta</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">Tagad tiek izmantota SandFly noklusējuma taustiņu piesaiste. Ir pieejama arī jauna uzlabota taustiņu piesaiste, kurā ir daudz jaunu komandu. Uzziniet vairāk palīdzības centrā vai pārslēdzieties uz jauno taustiņu piesaisti sadaļā Iestatījumi.</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">Pieejama jauna taustiņu piesaiste</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">Jaunajā uzlabotajā SandFly taustiņu piesaistes versijā ir daudz jaunu komandu. Uzziniet vairāk palīdzības centrā vai pārslēdzieties uz jauno taustiņu piesaisti sadaļā Iestatījumi.</string>
   <string name="keycombo_warning_content_description">Plašāka informācija par modificētājtaustiņu</string>
   <string name="keycombo_menu_category_select_keymap">Taustiņu piesaiste</string>
   <string name="keycombo_menu_select_keymap">Izvēlēties taustiņu piesaisti</string>
   <string name="keycombo_menu_reset_keymap">Atiestatīt taustiņu piesaisti</string>
   <string name="keycombo_menu_view_system_keyboard_shortcuts">Skatīt sistēmas īsinājumtaustiņus</string>
-  <string name="keycombo_menu_choose_trigger_modifier">Izvēlēties modificētājtaustiņu</string>
-  <string name="keycombo_menu_alert_title_trigger_modifier">Vai izmantot taustiņu %1$s kā modificētājtaustiņu?</string>
-  <string name="keycombo_menu_alert_message_trigger_modifier">SandFly pašlaik izmanto taustiņu <xliff:g id="current_trigger_modifier" example="Alt">%1$s</xliff:g> kā modificētājtaustiņu.</string>
-  <string name="keycombo_menu_alert_button_trigger_modifier">Izmantot taustiņu %1$s</string>
-  <string name="keycombo_menu_announce_new_trigger_modifier">Modificētājtaustiņš ir atiestatīts uz šādu: %1$s.</string>
+  <string name="keycombo_menu_choose_trigger_modifier">SandFly taustiņa izvēle</string>
+  <string name="keycombo_menu_announce_new_trigger_modifier">SandFly taustiņš ir mainīts uz %1$s.</string>
   <string name="keycombo_menu_announce_active_keymap">Taustiņu piesaiste %1$s ir aktīva.</string>
   <string name="keycombo_menu_announce_reset_keymap">Taustiņu piesaiste tika atiestatīta.</string>
   <string name="keycombo_announce_shortcut_not_supported">Īsinājumtaustiņš netiek atbalstīts.</string>
-  <string name="value_default_keymap">Noklusējuma taustiņu piesaiste</string>
-  <string name="value_new_keymap">Uzlabota taustiņu piesaiste</string>
+  <string name="value_new_keymap">SandFly taustiņu piesaiste</string>
   <string name="keycombo_menu_category_navigation">Navigācijas darbības</string>
   <string name="keycombo_menu_navigate_next">Pāriet uz nākamo vienumu</string>
   <string name="keycombo_menu_navigate_previous">Pāriet uz iepriekšējo vienumu</string>
@@ -266,7 +255,7 @@
   <string name="message_in_reset_keymap_confirm_dialog">Vai tiešām vēlaties atiestatīt šīs taustiņu piesaistes īsinājumtaustiņus uz to noklusējuma vērtībām? Ņemiet vērā, ka šo darbību nevar atsaukt.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">Atiestatīt</string>
   <string name="template_keycombo_menu_browse_mode_command">%1$s pārlūkošanas režīmā</string>
-  <string name="keycombo_assign_dialog_default_keymap_instruction">Lai iestatītu jaunu īsinājumtaustiņu, nospiediet taustiņu kombināciju kopā ar modificētājtaustiņu %1$s.</string>
+  <string name="keycombo_assign_dialog_default_keymap_instruction">Lai iestatītu jaunu īsinājumtaustiņu, nospiediet taustiņu kombināciju kopā ar SandFly taustiņu %1$s.</string>
   <string name="keycombo_unassigned">Nav piešķirts</string>
   <string name="save_button_in_keycombo_assign_dialog">Saglabāt</string>
   <string name="clear_button_in_keycombo_assign_dialog">Notīrīt</string>
@@ -1809,4 +1798,10 @@
   <string name="title_pref_speech_dictionary">Runas vārdnīca</string>
   <string name="speech_dictionary_all_apps">Visas lietotnes</string>
   <string name="speech_dictionary_not_said"><xliff:g id="text" example="#">%1$s</xliff:g> netiek izrunāts</string>
+  <string name="keycombo_key_modifier_insert">Ievietot</string>
+  <string name="keycombo_key_modifier_numpad_insert">Cipartastatūras iespraušanas taustiņš</string>
+  <string name="keycombo_menu_navigate_next_paragraph">Pāriet uz nākamo rindkopu</string>
+  <string name="keycombo_menu_navigate_previous_paragraph">Pāriet uz iepriekšējo rindkopu</string>
+  <string name="keycombo_key_modifier_ctrl_alt">Vadīšanas taustiņš + Alternēšanas taustiņš</string>
+  <string name="value_voiceover_keymap">VoiceOver taustiņu piesaiste</string>
 </resources>

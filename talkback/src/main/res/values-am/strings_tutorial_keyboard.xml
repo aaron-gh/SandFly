@@ -2,14 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">የSandFly የቁልፍ ሰሌዳ አጋዥ ሥልጠና</string>
     <string name="sandfly_keyboard_tutorial_no_key"><xliff:g id="command" example="ቀጣይ ንጥል">%1$s</xliff:g> የቁልፍ ሰሌዳ አቋራጭ የለውም። በትዕዛዞች ውስጥ አንዱን ይመድቡ፣ ወይም ደረጃን ዝለልን ይጠቀሙ።</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">የአሰሳ ሁነታ የተሻሻለ የቁልፍ ካርታን ይፈልጋል። በ<xliff:g id="settings_path" example="የSandFly ቅንብሮች &gt; የቁልፍ ሰሌዳ አቋራጮች &gt; የቁልፍ ካርታን ይምረጡ">%1$s</xliff:g> ውስጥ ይምረጡት፣ ወይም ደረጃን ዝለልን ይጠቀሙ።</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="እርምጃ">%1$s</xliff:g> ሁለቴ</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">ትምህርቱ ተጠናቋል። ቀጣዩን ትምህርት ለመጀመር <xliff:g id="keys" example="እርምጃ + ክፍተት">%1$s</xliff:g> ይጫኑ።</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">ትምህርቱ ተጠናቋል። አጋዥ ሥልጠናውን ለመጨረስ <xliff:g id="keys" example="እርምጃ + ክፍተት">%1$s</xliff:g> ይጫኑ።</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">ድረ-ገጾች</string>
-    <string name="sandfly_keyboard_tutorial_welcome_intro">ይህ አጋዥ ሥልጠና የSandFlyን የቁልፍ ሰሌዳ አቋራጮች ያስተምራል። አብዛኛዎቹ የ<xliff:g id="key" example="እርምጃ">%1$s</xliff:g> ቁልፍን ከሌሎች ቁልፎች ጋር ይጠቀማሉ። <xliff:g id="location" example="የእርምጃ ቁልፉ ከግራ Alt ቁልፍ አጠገብ ያለው የWindows ቁልፍ ነው።">%2$s</xliff:g> Ctrl ንግግርን ያቆማል። እያንዳንዱ ትምህርት መመሪያ ይሰጣል፣ የሚጠቅሳቸውን ቁልፎች እስኪጫኑ ድረስ ይጠብቃል፣ ከዚያ ቀጣዩን ይሰጣል። መመሪያው ከትምህርቱ ስም በኋላ ያለው የመጀመሪያው ንጥል ነው። ማውጫ እያንዳንዱን ትምህርት ይዘረዝራል፣ እና አጋዥ ሥልጠናው በነበሩበት ትምህርት ላይ እንደገና ይከፈታል።</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">ይህ አጋዥ ሥልጠና የSandFlyን የቁልፍ ሰሌዳ አቋራጮች ያስተምራል። አብዛኛዎቹ የSandFly ቁልፍን፣ <xliff:g id="key" example="Action">%1$s</xliff:g>፣ ከሌሎች ቁልፎች ጋር ይጠቀማሉ። <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> Ctrl ንግግርን ያቆማል። እያንዳንዱ ትምህርት መመሪያ ይሰጣል፣ የሚጠቅሳቸውን ቁልፎች እስኪጫኑ ድረስ ይጠብቃል፣ ከዚያ ቀጣዩን ይሰጣል። መመሪያው ከትምህርቱ ስም በኋላ ያለው የመጀመሪያው ንጥል ነው። ማውጫ እያንዳንዱን ትምህርት ይዘረዝራል፣ እና አጋዥ ሥልጠናው በነበሩበት ትምህርት ላይ እንደገና ይከፈታል።</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">የእርምጃ ቁልፉ ከግራ Alt ቁልፍ አጠገብ ያለው የWindows ቁልፍ ነው። በApple ቁልፍ ሰሌዳዎች ላይ ከክፍተት አሞሌው አጠገብ ያለው የCommand ቁልፍ ነው።</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">የAlt ቁልፉ ከክፍተት አሞሌው አጠገብ ነው።</string>
     <string name="sandfly_keyboard_tutorial_welcome_start">ለመጀመር <xliff:g id="keys" example="እርምጃ + ክፍተት">%1$s</xliff:g> ይጫኑ።</string>
     <string name="sandfly_keyboard_tutorial_move_intro">ቀጣይ ንጥል እና ቀዳሚ ንጥል በማያ ገጹ ላይ ባሉ ንጥሎች ውስጥ በንባብ ቅደም ተከተል ያንቀሳቅሳሉ።</string>
     <string name="sandfly_keyboard_tutorial_move_next">ወደ ቀጣዩ ንጥል ለመሄድ <xliff:g id="keys" example="እርምጃ + ቀኝ ቀስት">%1$s</xliff:g> ይጫኑ። <xliff:g id="item" example="እንቁላል">%2$s</xliff:g> እስኪደርሱ ድረስ ይቀጥሉ።</string>
@@ -53,4 +51,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">የቁልፍ ሰሌዳ ልምምድ</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">እያንዳንዱ የቁልፍ ሰሌዳ አቋራጭ ከማሄድ ይልቅ ቁልፎቹን እና ትዕዛዙን ይናገራል። ቀጣይ ንጥል፣ ቀዳሚ ንጥል እና ማግበር አሁንም ይሠራሉ።</string>
     <string name="sandfly_keyboard_tutorial_practice_step">ምን እንደሚያደርግ ለመስማት ማንኛውንም የቁልፍ ሰሌዳ አቋራጭ ይጫኑ። ለማቆም <xliff:g id="button" example="ልምምድን ጨርስ">%1$s</xliff:g>ን ያግብሩ።</string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">Ctrl እና Altን አንድ ላይ ተጭነው ይያዙ። ሁለቱም በቁልፍ ሰሌዳው ታችኛው ግራ ላይ ናቸው።</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">በአብዛኛዎቹ የቁልፍ ሰሌዳዎች ላይ፣ አስገባ ከቀስት ቁልፎቹ በላይ ባለው የስድስት ቁልፎች ቡድን ውስጥ ነው።</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">የቁጥር ሰሌዳ ማስገቢያ Num Lock ጠፍቶ ሳለ የቁጥር ሰሌዳው 0 ቁልፍ ነው።</string>
 </resources>

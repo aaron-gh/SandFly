@@ -2,15 +2,13 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">Hướng dẫn về bàn phím SandFly</string>
     <string name="sandfly_keyboard_tutorial_no_key"><xliff:g id="command" example="Mục tiếp theo">%1$s</xliff:g> chưa có phím tắt. Hãy gán một phím tắt trong Lệnh hoặc dùng Bỏ qua bước.</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">Chế độ duyệt web cần Sơ đồ bàn phím nâng cao. Chọn sơ đồ này trong <xliff:g id="settings_path" example="Cài đặt SandFly &gt; Phím tắt &gt; Chọn sơ đồ bàn phím">%1$s</xliff:g> hoặc dùng Bỏ qua bước.</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g> hai lần</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">Đã hoàn tất bài học. Nhấn <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> để bắt đầu bài học tiếp theo.</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">Đã hoàn tất bài học. Nhấn <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> để hoàn tất hướng dẫn.</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">Trang web</string>
 
-    <string name="sandfly_keyboard_tutorial_welcome_intro">Hướng dẫn này dạy các phím tắt của SandFly. Hầu hết các phím tắt dùng phím <xliff:g id="key" example="Action">%1$s</xliff:g> cùng với các phím khác. <xliff:g id="location" example="Phím Hành động là phím Windows, nằm cạnh phím Alt bên trái.">%2$s</xliff:g> Ctrl dừng lời nói. Mỗi bài học đưa ra một chỉ dẫn, chờ đến khi bạn nhấn các phím được nêu, rồi đưa ra chỉ dẫn tiếp theo. Chỉ dẫn là mục đầu tiên sau tên bài học. Mục lục liệt kê mọi bài học, và hướng dẫn mở lại ở bài học bạn đang học.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">Hướng dẫn này dạy các phím tắt của SandFly. Hầu hết các phím tắt dùng phím SandFly, <xliff:g id="key" example="Action">%1$s</xliff:g>, cùng với các phím khác. <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> Ctrl dừng lời nói. Mỗi bài học đưa ra một chỉ dẫn, chờ đến khi bạn nhấn các phím được nêu, rồi đưa ra chỉ dẫn tiếp theo. Chỉ dẫn là mục đầu tiên sau tên bài học. Mục lục liệt kê mọi bài học, và hướng dẫn mở lại ở bài học bạn đang học.</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">Phím Hành động là phím Windows, nằm cạnh phím Alt bên trái. Trên bàn phím Apple, đó là phím Command, nằm cạnh phím cách.</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">Phím Alt nằm cạnh phím cách.</string>
     <string name="sandfly_keyboard_tutorial_welcome_start">Nhấn <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> để bắt đầu.</string>
 
     <string name="sandfly_keyboard_tutorial_move_intro">Mục tiếp theo và Mục trước di chuyển qua các mục trên màn hình theo thứ tự đọc.</string>
@@ -67,4 +65,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">Thực hành bàn phím</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">Mỗi phím tắt đọc các phím và lệnh của nó thay vì chạy lệnh. Mục tiếp theo, Mục trước và kích hoạt vẫn hoạt động.</string>
     <string name="sandfly_keyboard_tutorial_practice_step">Nhấn phím tắt bất kỳ để nghe tác dụng của phím tắt đó. Để dừng, kích hoạt <xliff:g id="button" example="Kết thúc thực hành">%1$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">Giữ đồng thời phím Ctrl và Alt. Cả hai phím đều nằm ở góc dưới bên trái bàn phím.</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">Trên hầu hết bàn phím, phím Chèn nằm trong nhóm sáu phím phía trên các phím mũi tên.</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">Phím Insert trên bàn phím số là phím 0 của bàn phím số khi tắt Num Lock.</string>
 </resources>

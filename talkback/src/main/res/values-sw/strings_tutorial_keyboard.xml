@@ -2,15 +2,13 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">Mafunzo ya kibodi ya SandFly</string>
     <string name="sandfly_keyboard_tutorial_no_key"><xliff:g id="command" example="Kipengee kinachofuata">%1$s</xliff:g> haina mkato wa kibodi. Kabidhi mkato katika Amri, au utumie Ruka hatua.</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">Hali ya kuvinjari inahitaji Ramani ya vitufe iliyoboreshwa. Ichague katika <xliff:g id="settings_path" example="Mipangilio ya SandFly &gt; Mikato ya kibodi &gt; Chagua ramani ya vitufe">%1$s</xliff:g>, au utumie Ruka hatua.</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g> mara mbili</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">Somo limekamilika. Bonyeza <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> ili uanze somo linalofuata.</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">Somo limekamilika. Bonyeza <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> ili ukamilishe mafunzo.</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">Kurasa za wavuti</string>
 
-    <string name="sandfly_keyboard_tutorial_welcome_intro">Mafunzo haya hufundisha mikato ya kibodi ya SandFly. Mingi yake hutumia kitufe cha <xliff:g id="key" example="Action">%1$s</xliff:g> pamoja na vitufe vingine. <xliff:g id="location" example="Kitufe cha Vitendo ni kitufe cha Windows, karibu na kitufe cha Alt cha kushoto.">%2$s</xliff:g> Ctrl husimamisha utamkaji. Kila somo hutoa maagizo, husubiri hadi ubonyeze vitufe yanayotaja, kisha hutoa maagizo yanayofuata. Maagizo ni kipengee cha kwanza baada ya jina la somo. Yaliyomo huorodhesha kila somo, na mafunzo hufunguka tena kwenye somo ulilokuwa ukifanya.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">Mafunzo haya hufundisha mikato ya kibodi ya SandFly. Mingi yake hutumia kitufe cha SandFly, <xliff:g id="key" example="Action">%1$s</xliff:g>, pamoja na vitufe vingine. <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> Ctrl husimamisha utamkaji. Kila somo hutoa maagizo, husubiri hadi ubonyeze vitufe yanayotaja, kisha hutoa maagizo yanayofuata. Maagizo ni kipengee cha kwanza baada ya jina la somo. Yaliyomo huorodhesha kila somo, na mafunzo hufunguka tena kwenye somo ulilokuwa ukifanya.</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">Kitufe cha Vitendo ni kitufe cha Windows, karibu na kitufe cha Alt cha kushoto. Kwenye kibodi za Apple, ni kitufe cha Command, karibu na kitufe cha Space.</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">Kitufe cha Alt kiko karibu na kitufe cha Space.</string>
     <string name="sandfly_keyboard_tutorial_welcome_start">Bonyeza <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> ili uanze.</string>
 
     <string name="sandfly_keyboard_tutorial_move_intro">Kipengee kinachofuata na Kipengee kilichotangulia husogeza kwenye vipengee vya skrini kwa mpangilio wa kusoma.</string>
@@ -67,4 +65,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">Mazoezi ya kibodi</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">Kila mkato wa kibodi hutamka vitufe na amri yake badala ya kuitekeleza. Kipengee kinachofuata, Kipengee kilichotangulia na kuwasha bado hufanya kazi.</string>
     <string name="sandfly_keyboard_tutorial_practice_step">Bonyeza mkato wowote wa kibodi ili usikie unachofanya. Ili usimamishe, washa <xliff:g id="button" example="Maliza mazoezi">%1$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">Shikilia Ctrl na Alt pamoja. Vyote viwili viko sehemu ya chini kushoto ya kibodi.</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">Kwenye kibodi nyingi, kitufe cha Weka kiko kwenye kundi la vitufe sita juu ya vitufe vya vishale.</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">Weka kibodi ya namba ni kitufe cha 0 cha kibodi ya namba, Num Lock ikiwa imezimwa.</string>
 </resources>

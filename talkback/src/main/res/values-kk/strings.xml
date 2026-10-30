@@ -117,28 +117,17 @@
       &lt;li&gt;Кейбір өзгерткіш пернелер басқа болады.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">Пернетата схемалары туралы толық ақпарат</string>
   <string name="keycombo_go_to_settings">Параметрлерге өту</string>
-  <string name="keycombo_new_keymap_notification_dialog_positive_button">Түсінікті</string>
-  <string name="keycombo_new_keymap_notification_dialog_negative_button">Параметрлер</string>
-  <string name="keycombo_new_keymap_notification_dialog_neutral_button">Толық ақпарат</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_classic_keymap">Классикалық пернетақта схемасына енді қолдау көрсетілмейді</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">Әдепкі SandFly пернетақта схемасын қолданып жатырсыз. Көптеген жаңа пәрмені бар жақсартылған жаңа пернетақта схемасы да бар. Анықтамалық орталықтан ақпарат алыңыз. Параметрлерде жаңа пернетақта схемасына ауысыңыз.</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">Жаңа пернетақта схемасы қолжетімді</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">Жақсартылған жаңа SandFly пернетақта схемасына көптеген жаңа пәрмен қосылды. Анықтамалық орталықтан ақпарат алыңыз. Параметрлерде жаңа пернетақта схемасына ауысыңыз.</string>
   <string name="keycombo_warning_content_description">Өзгерткіш перне туралы толық ақпарат.</string>
   <string name="keycombo_menu_category_select_keymap">Пернетақта схемасы</string>
   <string name="keycombo_menu_select_keymap">Пернетақта схемасын таңдау</string>
   <string name="keycombo_menu_reset_keymap">Пернетақта схемасын қалпына келтіру</string>
   <string name="keycombo_menu_view_system_keyboard_shortcuts">Жүйенің перне тіркесімдерін көру</string>
-  <string name="keycombo_menu_choose_trigger_modifier">Өзгерткіш пернені таңдау</string>
-  <string name="keycombo_menu_alert_title_trigger_modifier">%1$s пернесін өзгерткіш перне ретінде пайдаланасыз ба?</string>
-  <string name="keycombo_menu_alert_message_trigger_modifier">SandFly қазіргі уақытта <xliff:g id="current_trigger_modifier" example="Alt">%1$s</xliff:g> пернесін өзгерткіш перне ретінде пайдаланады.</string>
-  <string name="keycombo_menu_alert_button_trigger_modifier">%1$s пернесін пайдалану</string>
-  <string name="keycombo_menu_announce_new_trigger_modifier">Өзгерткіш перне %1$s пернесіне өзгертілді.</string>
+  <string name="keycombo_menu_choose_trigger_modifier">SandFly пернесін таңдау</string>
+  <string name="keycombo_menu_announce_new_trigger_modifier">SandFly пернесі %1$s болып өзгертілді.</string>
   <string name="keycombo_menu_announce_active_keymap">%1$s енді белсенді.</string>
   <string name="keycombo_menu_announce_reset_keymap">Пернетақта схемасы қалпына келтірілді.</string>
   <string name="keycombo_announce_shortcut_not_supported">Пернелер тіркесіміне қолдау көрсетілмейді</string>
-  <string name="value_default_keymap">Әдепкі пернетақта схемасы</string>
-  <string name="value_new_keymap">Жақсартылған пернетақта схемасы</string>
+  <string name="value_new_keymap">SandFly пернетақта схемасы</string>
   <string name="keycombo_menu_category_navigation">Навигация әрекеттері</string>
   <string name="keycombo_menu_navigate_next">Келесі элементке өту</string>
   <string name="keycombo_menu_navigate_previous">Алдыңғы элементке өту</string>
@@ -266,7 +255,7 @@
   <string name="message_in_reset_keymap_confirm_dialog">Осы пернетақта схемасы үшін пернелер тіркесімдерін әдепкі мәндеріне қайтару керек пе? Бұл әрекетті болдырмау мүмкін емес екенін ескеріңіз.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">Қалпына келтіру</string>
   <string name="template_keycombo_menu_browse_mode_command">Шолу режиміндегі %1$s</string>
-  <string name="keycombo_assign_dialog_default_keymap_instruction">Жаңа перне тіркесімін орнату үшін оны %1$s өзгерткіш пернесімен бірге басыңыз.</string>
+  <string name="keycombo_assign_dialog_default_keymap_instruction">Жаңа пернелер тіркесімін орнату үшін %1$s SandFly пернесімен бірге пернелер тіркесімін басыңыз.</string>
   <string name="keycombo_unassigned">Тағайындалмаған</string>
   <string name="save_button_in_keycombo_assign_dialog">Сақтау</string>
   <string name="clear_button_in_keycombo_assign_dialog">Тазарту</string>
@@ -1804,4 +1793,10 @@
   <string name="title_pref_speech_dictionary">Сөйлеу сөздігі</string>
   <string name="speech_dictionary_all_apps">Барлық қолданба</string>
   <string name="speech_dictionary_not_said"><xliff:g id="text" example="#">%1$s</xliff:g> айтылмайды</string>
+  <string name="keycombo_key_modifier_insert">Енгізу</string>
+  <string name="keycombo_key_modifier_numpad_insert">Цифрлық пернетақтада енгізу</string>
+  <string name="keycombo_menu_navigate_next_paragraph">Келесі абзацқа өту</string>
+  <string name="keycombo_menu_navigate_previous_paragraph">Алдыңғы абзацқа өту</string>
+  <string name="keycombo_key_modifier_ctrl_alt">Ctrl + Alt</string>
+  <string name="value_voiceover_keymap">VoiceOver пернетақта схемасы</string>
 </resources>

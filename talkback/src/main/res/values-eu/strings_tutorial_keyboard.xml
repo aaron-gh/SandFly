@@ -2,14 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">SandFly-en teklatuaren tutoriala</string>
     <string name="sandfly_keyboard_tutorial_no_key"><xliff:g id="command" example="Hurrengo elementua">%1$s</xliff:g> aginduak ez du lasterbiderik. Esleitu bat Aginduak atalean edo erabili Saltatu urratsa.</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">Arakatze moduak Teklen mapa hobetua behar du. Aukeratu <xliff:g id="settings_path" example="SandFly-en ezarpenak &gt; Lasterbideak &gt; Aukeratu teklen mapa bat">%1$s</xliff:g> atalean edo erabili Saltatu urratsa.</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Ekintza">%1$s</xliff:g> bi aldiz</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">Ikasgaia osatu da. Sakatu <xliff:g id="keys" example="Ekintza + Zuriunea">%1$s</xliff:g> hurrengo ikasgaiari ekiteko.</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">Ikasgaia osatu da. Sakatu <xliff:g id="keys" example="Ekintza + Zuriunea">%1$s</xliff:g> tutoriala amaitzeko.</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">Web-orriak</string>
-    <string name="sandfly_keyboard_tutorial_welcome_intro">Tutorial honek SandFly-en lasterbideak irakasten ditu. Gehienek <xliff:g id="key" example="Ekintza">%1$s</xliff:g> tekla erabiltzen dute beste tekla batzuekin batera. <xliff:g id="location" example="Ekintza-tekla Windows tekla da, ezkerreko Alt teklaren ondoan.">%2$s</xliff:g> Ktrl teklak hizketa gelditzen du. Ikasgai bakoitzak argibide bat ematen du, aipatzen dituen teklak sakatu arte itxaroten du, eta, ondoren, hurrengoa ematen du. Argibidea ikasgaiaren izenaren ondorengo lehen elementua da. Edukia atalean ikasgai guztiak agertzen dira, eta tutoriala zinen ikasgaian irekitzen da berriro.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">Tutorial honek SandFly-en lasterbideak irakasten ditu. Gehienek SandFly-en tekla, <xliff:g id="key" example="Action">%1$s</xliff:g>, erabiltzen dute beste tekla batzuekin batera. <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> Ktrl teklak hizketa gelditzen du. Ikasgai bakoitzak argibide bat ematen du, aipatzen dituen teklak sakatu arte itxaroten du, eta, ondoren, hurrengoa ematen du. Argibidea ikasgaiaren izenaren ondorengo lehen elementua da. Edukia atalean ikasgai guztiak agertzen dira, eta tutoriala zinen ikasgaian irekitzen da berriro.</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">Ekintza-tekla Windows tekla da, ezkerreko Alt teklaren ondoan. Apple-ren teklatuetan, Command tekla da, zuriune-barraren ondoan.</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">Alt tekla zuriune-barraren ondoan dago.</string>
     <string name="sandfly_keyboard_tutorial_welcome_start">Sakatu <xliff:g id="keys" example="Ekintza + Zuriunea">%1$s</xliff:g> hasteko.</string>
     <string name="sandfly_keyboard_tutorial_move_intro">Hurrengo elementua eta Aurreko elementua aginduek pantailako elementuetan zehar mugitzen dute, irakurketa-ordenan.</string>
     <string name="sandfly_keyboard_tutorial_move_next">Sakatu <xliff:g id="keys" example="Ekintza + Eskuinera gezia">%1$s</xliff:g> hurrengo elementura joateko. Jarraitu <xliff:g id="item" example="Arrautzak">%2$s</xliff:g> elementura iritsi arte.</string>
@@ -53,4 +51,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">Teklatuaren praktika</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">Lasterbide bakoitzak bere teklak eta agindua esaten ditu, exekutatu beharrean. Hurrengo elementua, Aurreko elementua eta aktibatzea funtzionatzen jarraitzen dute.</string>
     <string name="sandfly_keyboard_tutorial_practice_step">Sakatu edozein lasterbide zer egiten duen entzuteko. Gelditzeko, aktibatu <xliff:g id="button" example="Amaitu praktika">%1$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">Eduki sakatuta Ktrl eta Alt aldi berean. Biak teklatuaren beheko ezkerraldean daude.</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">Teklatu gehienetan, Txertatu gezi-teklen gaineko sei teklako taldean dago.</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">Zenbaki-teklatuko txertatze-tekla zenbaki-teklatuko 0 tekla da, Num Lock desaktibatuta dagoenean.</string>
 </resources>

@@ -2,14 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">Titorial de teclado de SandFly</string>
     <string name="sandfly_keyboard_tutorial_no_key"><xliff:g id="command" example="Next item">%1$s</xliff:g> non ten ningún atallo de teclado. Asigna un en Comandos ou usa Omitir paso.</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">O modo de navegación necesita o Mapa de teclas mellorado. Escóllelo en <xliff:g id="settings_path" example="SandFly settings &gt; Keyboard shortcuts &gt; Choose a keymap">%1$s</xliff:g> ou usa Omitir paso.</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g> dúas veces</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">Lección completada. Preme <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> para iniciar a seguinte lección.</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">Lección completada. Preme <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> para finalizar o titorial.</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">Páxinas web</string>
-    <string name="sandfly_keyboard_tutorial_welcome_intro">Este titorial ensina os atallos de teclado de SandFly. A maioría usan a tecla <xliff:g id="key" example="Action">%1$s</xliff:g> con outras teclas. <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> Ctrl detén a fala. Cada lección dá unha instrución, agarda ata que premas as teclas que indica e despois dá a seguinte. A instrución é o primeiro elemento despois do nome da lección. Contido lista todas as leccións, e o titorial ábrese de novo na lección na que estabas.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">Este titorial ensina os atallos de teclado de SandFly. A maioría usan a tecla de SandFly, <xliff:g id="key" example="Action">%1$s</xliff:g>, con outras teclas. <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> Ctrl detén a fala. Cada lección dá unha instrución, agarda ata que premas as teclas que indica e despois dá a seguinte. A instrución é o primeiro elemento despois do nome da lección. Contido lista todas as leccións, e o titorial ábrese de novo na lección na que estabas.</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">A tecla de acción é a tecla Windows, xunto á tecla Alt da esquerda. Nos teclados de Apple, é a tecla Comando, xunto á barra de espazo.</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">A tecla Alt está xunto á barra de espazo.</string>
     <string name="sandfly_keyboard_tutorial_welcome_start">Preme <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> para comezar.</string>
     <string name="sandfly_keyboard_tutorial_move_intro">Seguinte elemento e Elemento anterior percorren os elementos da pantalla na orde de lectura.</string>
     <string name="sandfly_keyboard_tutorial_move_next">Preme <xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g> para ir ao seguinte elemento. Continúa ata chegar a <xliff:g id="item" example="Eggs">%2$s</xliff:g>.</string>
@@ -53,4 +51,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">Práctica de teclado</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">Cada atallo de teclado di as súas teclas e o seu comando en lugar de executalo. Seguinte elemento, Elemento anterior e activar seguen funcionando.</string>
     <string name="sandfly_keyboard_tutorial_practice_step">Preme calquera atallo de teclado para oír o que fai. Para parar, activa <xliff:g id="button" example="End practice">%1$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">Mantén premidas Ctrl e Alt á vez. As dúas están na parte inferior esquerda do teclado.</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">Na maioría dos teclados, Inserir está no grupo de seis teclas que hai enriba das teclas de frecha.</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">Inserir do teclado numérico é a tecla 0 do teclado numérico, co Bloq Num desactivado.</string>
 </resources>

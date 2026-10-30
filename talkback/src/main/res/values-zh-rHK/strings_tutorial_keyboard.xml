@@ -2,15 +2,13 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">SandFly 鍵盤教學</string>
     <string name="sandfly_keyboard_tutorial_no_key">「<xliff:g id="command" example="下一個項目">%1$s</xliff:g>」沒有鍵盤快速鍵。請在「命令」中指派一個，或使用「略過步驟」。</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">瀏覽模式需要「強化按鍵配置」。請在<xliff:g id="settings_path" example="SandFly 設定 &gt; 鍵盤快速鍵 &gt; 選擇按鍵配置">%1$s</xliff:g>中選擇，或使用「略過步驟」。</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g>兩次</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">課程完成。按下<xliff:g id="keys" example="Action + Space">%1$s</xliff:g>即可開始下一個課程。</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">課程完成。按下<xliff:g id="keys" example="Action + Space">%1$s</xliff:g>即可完成教學課程。</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">網頁</string>
 
-    <string name="sandfly_keyboard_tutorial_welcome_intro">本教學課程介紹 SandFly 的鍵盤快速鍵。大部分快速鍵會將<xliff:g id="key" example="Action">%1$s</xliff:g>與其他按鍵一起使用。<xliff:g id="location" example="快捷操作鍵是 Windows 鍵，位於左 Alt 鍵旁邊。">%2$s</xliff:g>按下 Ctrl 鍵會停止語音。每個課程會提供一項指示，等你按下指示中所說的按鍵後，再提供下一項。指示是課程名稱後的第一個項目。「目錄」會列出所有課程，教學課程會在你上次所在的課程重新開啟。</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">本教學課程介紹 SandFly 的鍵盤快速鍵。大部分快速鍵會將 SandFly 鍵（<xliff:g id="key" example="Action">%1$s</xliff:g>）與其他按鍵一起使用。<xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g>按下 Ctrl 鍵會停止語音。每個課程會提供一項指示，等你按下指示中所說的按鍵後，再提供下一項。指示是課程名稱後的第一個項目。「目錄」會列出所有課程，教學課程會在你上次所在的課程重新開啟。</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">快捷操作鍵是 Windows 鍵，位於左 Alt 鍵旁邊。在 Apple 鍵盤上，快捷操作鍵是 Command 鍵，位於空白鍵旁邊。</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">Alt 鍵位於空白鍵旁邊。</string>
     <string name="sandfly_keyboard_tutorial_welcome_start">按下<xliff:g id="keys" example="Action + Space">%1$s</xliff:g>即可開始。</string>
 
     <string name="sandfly_keyboard_tutorial_move_intro">「下一個項目」和「上一個項目」會依閱讀順序在畫面上的項目之間移動。</string>
@@ -67,4 +65,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">鍵盤練習</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">每個鍵盤快速鍵都會說出按鍵和命令，而不會執行。「下一個項目」、「上一個項目」和啟用仍然有效。</string>
     <string name="sandfly_keyboard_tutorial_practice_step">按下任何鍵盤快速鍵即可聽到它的作用。如要停止，請啟用「<xliff:g id="button" example="結束練習">%1$s</xliff:g>」。</string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">同時按住 Ctrl 鍵和 Alt 鍵。這兩個鍵都位於鍵盤左下角。</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">在大部分鍵盤上，插入鍵位於方向鍵上方的六個按鍵之中。</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">數字鍵盤 Insert 鍵是關閉 Num Lock 時數字鍵盤上的 0 鍵。</string>
 </resources>

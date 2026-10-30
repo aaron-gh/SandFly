@@ -2,15 +2,13 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">บทแนะนำแป้นพิมพ์ของ SandFly</string>
     <string name="sandfly_keyboard_tutorial_no_key"><xliff:g id="command" example="รายการถัดไป">%1$s</xliff:g> ไม่มีแป้นพิมพ์ลัด กำหนดได้ในคำสั่ง หรือใช้ข้ามขั้นตอน</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">โหมดอ่านต้องใช้คีย์แมปที่ปรับปรุงแล้ว เลือกได้ใน <xliff:g id="settings_path" example="การตั้งค่า SandFly &gt; แป้นพิมพ์ลัด &gt; เลือกคีย์แมป">%1$s</xliff:g> หรือใช้ข้ามขั้นตอน</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g> สองครั้ง</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">จบบทเรียนแล้ว กด <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> เพื่อเริ่มบทเรียนถัดไป</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">จบบทเรียนแล้ว กด <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> เพื่อจบบทแนะนำ</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">หน้าเว็บ</string>
 
-    <string name="sandfly_keyboard_tutorial_welcome_intro">บทแนะนำนี้สอนแป้นพิมพ์ลัดของ SandFly แป้นพิมพ์ลัดส่วนใหญ่ใช้แป้น <xliff:g id="key" example="Action">%1$s</xliff:g> ร่วมกับแป้นอื่น <xliff:g id="location" example="แป้นดำเนินการคือแป้น Windows ซึ่งอยู่ข้างแป้น Alt ด้านซ้าย">%2$s</xliff:g> Ctrl หยุดการพูด แต่ละบทเรียนจะให้คำแนะนำ รอจนกว่าคุณกดแป้นที่ระบุ แล้วจึงให้คำแนะนำถัดไป คำแนะนำคือรายการแรกต่อจากชื่อบทเรียน สารบัญแสดงทุกบทเรียน และบทแนะนำจะเปิดอีกครั้งที่บทเรียนที่คุณเรียนอยู่</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">บทแนะนำนี้สอนแป้นพิมพ์ลัดของ SandFly แป้นพิมพ์ลัดส่วนใหญ่ใช้แป้น SandFly ซึ่งคือ <xliff:g id="key" example="Action">%1$s</xliff:g> ร่วมกับแป้นอื่น <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> Ctrl หยุดการพูด แต่ละบทเรียนจะให้คำแนะนำ รอจนกว่าคุณกดแป้นที่ระบุ แล้วจึงให้คำแนะนำถัดไป คำแนะนำคือรายการแรกต่อจากชื่อบทเรียน สารบัญแสดงทุกบทเรียน และบทแนะนำจะเปิดอีกครั้งที่บทเรียนที่คุณเรียนอยู่</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">แป้นดำเนินการคือแป้น Windows ซึ่งอยู่ข้างแป้น Alt ด้านซ้าย สำหรับแป้นพิมพ์ Apple จะเป็นแป้น Command ซึ่งอยู่ข้างแป้นเว้นวรรค</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">แป้น Alt อยู่ข้างแป้นเว้นวรรค</string>
     <string name="sandfly_keyboard_tutorial_welcome_start">กด <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> เพื่อเริ่ม</string>
 
     <string name="sandfly_keyboard_tutorial_move_intro">รายการถัดไปและรายการก่อนหน้าจะย้ายไปตามรายการบนหน้าจอตามลำดับการอ่าน</string>
@@ -67,4 +65,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">ฝึกใช้แป้นพิมพ์</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">แป้นพิมพ์ลัดแต่ละรายการจะบอกแป้นและคำสั่งของตัวเองแทนการทำงานจริง รายการถัดไป รายการก่อนหน้า และการเปิดใช้งานยังคงใช้ได้</string>
     <string name="sandfly_keyboard_tutorial_practice_step">กดแป้นพิมพ์ลัดใดก็ได้เพื่อฟังว่าแป้นพิมพ์ลัดนั้นทำอะไร หากต้องการหยุด ให้เปิดใช้งาน <xliff:g id="button" example="จบการฝึก">%1$s</xliff:g></string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">กด Ctrl และ Alt ค้างไว้พร้อมกัน ทั้งสองแป้นอยู่ที่ด้านซ้ายล่างของแป้นพิมพ์</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">ในแป้นพิมพ์ส่วนใหญ่ แป้น Insert อยู่ในกลุ่มแป้น 6 แป้นเหนือแป้นลูกศร</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">Insert บนแป้นตัวเลขคือแป้น 0 ของแป้นตัวเลขเมื่อปิด Num Lock</string>
 </resources>

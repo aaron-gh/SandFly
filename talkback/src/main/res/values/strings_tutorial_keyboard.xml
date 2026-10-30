@@ -4,8 +4,6 @@
     <string name="sandfly_keyboard_tutorial_title">SandFly keyboard tutorial</string>
     <!-- Instruction of a step whose command has no keyboard shortcut. [CHAR LIMIT=NONE] -->
     <string name="sandfly_keyboard_tutorial_no_key"><xliff:g id="command" example="Next item">%1$s</xliff:g> has no keyboard shortcut. Assign one in Commands, or use Skip step.</string>
-    <!-- Instruction of a browse mode step when browse mode isn't available. The placeholder is the settings path where the keymap is chosen. [CHAR LIMIT=NONE] -->
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">Browse mode needs the Enhanced keymap. Choose it in <xliff:g id="settings_path" example="SandFly settings &gt; Keyboard shortcuts &gt; Choose a keymap">%1$s</xliff:g>, or use Skip step.</string>
     <!-- How the keys that turn browse mode on or off are named in an instruction: a key pressed twice. [CHAR LIMIT=40] -->
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g> twice</string>
     <!-- Said when a lesson is done and focus moves to the button that starts the next lesson. [CHAR LIMIT=NONE] -->
@@ -16,11 +14,15 @@
     <string name="sandfly_keyboard_tutorial_chapter_web">Web pages</string>
 
     <!-- Introduction of the first lesson. The first placeholder is the key that most keyboard shortcuts use, the second says where it is. [CHAR LIMIT=NONE] -->
-    <string name="sandfly_keyboard_tutorial_welcome_intro">This tutorial teaches SandFly\'s keyboard shortcuts. Most of them use the <xliff:g id="key" example="Action">%1$s</xliff:g> key with other keys. <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> Ctrl stops speech. Each lesson gives an instruction, waits until you have pressed the keys it names, then gives the next one. The instruction is the first item after the name of the lesson. Contents lists every lesson, and the tutorial reopens at the lesson you were on.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">This tutorial teaches SandFly\'s keyboard shortcuts. Most of them use the SandFly key, <xliff:g id="key" example="Action">%1$s</xliff:g>, with other keys. <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> Ctrl stops speech. Each lesson gives an instruction, waits until you have pressed the keys it names, then gives the next one. The instruction is the first item after the name of the lesson. Contents lists every lesson, and the tutorial reopens at the lesson you were on.</string>
     <!-- Where the Action key is on the keyboard. [CHAR LIMIT=NONE] -->
     <string name="sandfly_keyboard_tutorial_action_key_location">The Action key is the Windows key, next to the left Alt key. On Apple keyboards, it\'s the Command key, next to the space bar.</string>
-    <!-- Where the Alt key is on the keyboard. [CHAR LIMIT=NONE] -->
-    <string name="sandfly_keyboard_tutorial_alt_key_location">The Alt key is next to the space bar.</string>
+    <!-- Where the Ctrl and Alt keys, held together as the SandFly key, are on the keyboard. [CHAR LIMIT=NONE] -->
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">Hold Ctrl and Alt down together. Both are at the bottom left of the keyboard.</string>
+    <!-- Where the Insert key is on the keyboard. [CHAR LIMIT=NONE] -->
+    <string name="sandfly_keyboard_tutorial_insert_key_location">On most keyboards, Insert is in the group of six keys above the arrow keys.</string>
+    <!-- Where Numpad Insert is on the keyboard. [CHAR LIMIT=NONE] -->
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">Numpad Insert is the 0 key of the number pad, with Num Lock off.</string>
     <!-- Instruction of the first lesson. [CHAR LIMIT=NONE] -->
     <string name="sandfly_keyboard_tutorial_welcome_start">Press <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> to start.</string>
 

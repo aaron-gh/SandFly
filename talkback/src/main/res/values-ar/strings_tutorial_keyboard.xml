@@ -2,14 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">الدليل التوجيهي عن لوحة المفاتيح في SandFly</string>
     <string name="sandfly_keyboard_tutorial_no_key">لا يوجد اختصار لوحة مفاتيح لـ «<xliff:g id="command" example="العنصر التالي">%1$s</xliff:g>». خصِّص اختصارًا في «الأوامر»، أو استخدِم «تخطّي الخطوة».</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">يتطلّب وضع التصفّح «خريطة مفاتيح محسّنة». اخترها في <xliff:g id="settings_path" example="‏إعدادات SandFly &gt; اختصارات لوحة المفاتيح &gt; اختيار خريطة مفاتيح">%1$s</xliff:g>، أو استخدِم «تخطّي الخطوة».</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="مفتاح الإجراء">%1$s</xliff:g> مرتين</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">اكتمل الدرس. اضغط على <xliff:g id="keys" example="مفتاح الإجراء + مسافة">%1$s</xliff:g> لبدء الدرس التالي.</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">اكتمل الدرس. اضغط على <xliff:g id="keys" example="مفتاح الإجراء + مسافة">%1$s</xliff:g> لإنهاء الدليل التوجيهي.</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">صفحات الويب</string>
-    <string name="sandfly_keyboard_tutorial_welcome_intro">يعلّم هذا الدليل التوجيهي اختصارات لوحة المفاتيح في SandFly. يستخدم معظمها <xliff:g id="key" example="مفتاح الإجراء">%1$s</xliff:g> مع مفاتيح أخرى. <xliff:g id="location" example="مفتاح الإجراء هو مفتاح Windows، بجانب مفتاح Alt الأيسر.">%2$s</xliff:g> يؤدي Ctrl إلى إيقاف الكلام. يقدّم كل درس تعليمة، وينتظر حتى تضغط على المفاتيح التي تذكرها، ثم يقدّم التعليمة التالية. التعليمة هي أول عنصر بعد اسم الدرس. تعرض «المحتويات» كل الدروس، ويُفتح الدليل التوجيهي مرة أخرى على الدرس الذي توقّفت عنده.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">يعلّم هذا الدليل التوجيهي اختصارات لوحة المفاتيح في SandFly. يستخدم معظمها مفتاح SandFly، وهو <xliff:g id="key" example="Action">%1$s</xliff:g>، مع مفاتيح أخرى. <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> يؤدي Ctrl إلى إيقاف الكلام. يقدّم كل درس تعليمة، وينتظر حتى تضغط على المفاتيح التي تذكرها، ثم يقدّم التعليمة التالية. التعليمة هي أول عنصر بعد اسم الدرس. تعرض «المحتويات» كل الدروس، ويُفتح الدليل التوجيهي مرة أخرى على الدرس الذي توقّفت عنده.</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">مفتاح الإجراء هو مفتاح Windows، بجانب مفتاح Alt الأيسر. وفي لوحات مفاتيح Apple، هو مفتاح Command، بجانب مفتاح المسافة.</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">مفتاح Alt بجانب مفتاح المسافة.</string>
     <string name="sandfly_keyboard_tutorial_welcome_start">اضغط على <xliff:g id="keys" example="مفتاح الإجراء + مسافة">%1$s</xliff:g> للبدء.</string>
     <string name="sandfly_keyboard_tutorial_move_intro">ينتقل «العنصر التالي» و«العنصر السابق» بين العناصر على الشاشة بترتيب القراءة.</string>
     <string name="sandfly_keyboard_tutorial_move_next">اضغط على <xliff:g id="keys" example="مفتاح الإجراء + السهم المتّجه لليمين">%1$s</xliff:g> للانتقال إلى العنصر التالي. استمر حتى تصل إلى «<xliff:g id="item" example="بيض">%2$s</xliff:g>».</string>
@@ -53,4 +51,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">التدرّب على لوحة المفاتيح</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">يقول كل اختصار لوحة مفاتيح مفاتيحه وأمره بدلاً من تنفيذه. ولا يزال «العنصر التالي» و«العنصر السابق» والتفعيل تعمل.</string>
     <string name="sandfly_keyboard_tutorial_practice_step">اضغط على أي اختصار لوحة مفاتيح لسماع ما يفعله. للإيقاف، فعِّل «<xliff:g id="button" example="إنهاء التدرّب">%1$s</xliff:g>».</string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">اضغط مع الاستمرار على Ctrl وAlt معًا. يقع كلاهما في أسفل يسار لوحة المفاتيح.</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">في معظم لوحات المفاتيح، يقع مفتاح «إدراج» في مجموعة المفاتيح الستة فوق مفاتيح الأسهم.</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">مفتاح Insert في لوحة الأرقام هو المفتاح 0 في لوحة الأرقام، مع إيقاف Num Lock.</string>
 </resources>

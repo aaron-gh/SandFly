@@ -117,28 +117,17 @@
       &lt;li&gt;Tekla aldatzaile batzuk desberdinak dira.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">Lortu teklen mapei buruzko informazio gehiago</string>
   <string name="keycombo_go_to_settings">Joan Ezarpenak atalera</string>
-  <string name="keycombo_new_keymap_notification_dialog_positive_button">Ados</string>
-  <string name="keycombo_new_keymap_notification_dialog_negative_button">Ezarpenak</string>
-  <string name="keycombo_new_keymap_notification_dialog_neutral_button">Lortu informazio gehiago</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_classic_keymap">Teklen mapa klasikoa ez da onartzen jada</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">SandFly-en teklen mapa lehenetsia darabilzu. Agindu berri asko dituen teklen mapa berri hobetu bat dago ere. Lortu informazio gehiago laguntza-zentroan edo aldatu teklen mapa berrira Ezarpenak atalean.</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">Teklen mapa berri bat dago</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">SandFly-en teklen mapa hobetu berriak agindu berri asko dakartza. Lortu informazio gehiago laguntza-zentroan edo aldatu teklen mapa berrira Ezarpenak atalean.</string>
   <string name="keycombo_warning_content_description">Tekla aldatzaileari buruzko informazio gehiago</string>
   <string name="keycombo_menu_category_select_keymap">Teklen mapa</string>
   <string name="keycombo_menu_select_keymap">Aukeratu teklen mapa bat</string>
   <string name="keycombo_menu_reset_keymap">Berrezarri teklen mapa</string>
   <string name="keycombo_menu_view_system_keyboard_shortcuts">Ikusi sistemaren lasterbideak</string>
-  <string name="keycombo_menu_choose_trigger_modifier">Aukeratu tekla aldatzailea</string>
-  <string name="keycombo_menu_alert_title_trigger_modifier">%1$s erabili nahi duzu tekla aldatzaile gisa?</string>
-  <string name="keycombo_menu_alert_message_trigger_modifier">SandFly-ek <xliff:g id="current_trigger_modifier" example="Alt">%1$s</xliff:g> erabiltzen du tekla aldatzaile gisa.</string>
-  <string name="keycombo_menu_alert_button_trigger_modifier">Erabili %1$s</string>
-  <string name="keycombo_menu_announce_new_trigger_modifier">%1$s izendatu da tekla aldatzaile.</string>
+  <string name="keycombo_menu_choose_trigger_modifier">Aukeratu SandFly-en tekla</string>
+  <string name="keycombo_menu_announce_new_trigger_modifier">SandFly-en tekla aldatu da, eta %1$s ezarri.</string>
   <string name="keycombo_menu_announce_active_keymap">Aktibo dago %1$s.</string>
   <string name="keycombo_menu_announce_reset_keymap">Berrezarri da teklen mapa.</string>
   <string name="keycombo_announce_shortcut_not_supported">Ez da onartzen lasterbidea</string>
-  <string name="value_default_keymap">Teklen mapa lehenetsia</string>
-  <string name="value_new_keymap">Teklen mapa hobetua</string>
+  <string name="value_new_keymap">SandFly-en teklen mapa</string>
   <string name="keycombo_menu_category_navigation">Nabigazio-ekintzak</string>
   <string name="keycombo_menu_navigate_next">Joan hurrengo elementura</string>
   <string name="keycombo_menu_navigate_previous">Joan aurreko elementura</string>
@@ -266,7 +255,7 @@
   <string name="message_in_reset_keymap_confirm_dialog">Ziur teklen mapa honetako lasterbideen balio lehenetsiak berrezarri nahi dituzula? Kontuan izan ekintza hori ezin dela desegin.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">Berrezarri</string>
   <string name="template_keycombo_menu_browse_mode_command">%1$s arakatze moduan</string>
-  <string name="keycombo_assign_dialog_default_keymap_instruction">Beste lasterbide bat ezartzeko, sakatu teklen konbinazioa %1$s tekla aldatzailearekin batera.</string>
+  <string name="keycombo_assign_dialog_default_keymap_instruction">Sakatu tekla-konbinazioa %1$s SandFly-en teklarekin batera lasterbide berria ezartzeko.</string>
   <string name="keycombo_unassigned">Esleitu gabe</string>
   <string name="save_button_in_keycombo_assign_dialog">Gorde</string>
   <string name="clear_button_in_keycombo_assign_dialog">Garbitu</string>
@@ -1804,4 +1793,10 @@
   <string name="title_pref_speech_dictionary">Ahotsaren hiztegia</string>
   <string name="speech_dictionary_all_apps">Aplikazio guztiak</string>
   <string name="speech_dictionary_not_said"><xliff:g id="text" example="#">%1$s</xliff:g> ez da esaten</string>
+  <string name="keycombo_key_modifier_insert">Txertatu</string>
+  <string name="keycombo_key_modifier_numpad_insert">Zenbaki-teklatuko txertatze-tekla</string>
+  <string name="keycombo_menu_navigate_next_paragraph">Joan hurrengo paragrafora</string>
+  <string name="keycombo_menu_navigate_previous_paragraph">Joan aurreko paragrafora</string>
+  <string name="keycombo_key_modifier_ctrl_alt">Ktrl + Alt</string>
+  <string name="value_voiceover_keymap">VoiceOver-en teklen mapa</string>
 </resources>

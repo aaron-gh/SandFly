@@ -286,7 +286,6 @@ import com.google.android.accessibility.utils.BuildVersionUtils;
 import com.google.android.accessibility.utils.FeatureSupport;
 import com.google.android.accessibility.utils.FocusFinder;
 import com.google.android.accessibility.utils.FormFactorUtils;
-import com.google.android.accessibility.utils.KeyboardUtils;
 import com.google.android.accessibility.utils.Logger;
 import com.google.android.accessibility.utils.PackageManagerUtils;
 import com.google.android.accessibility.utils.Performance;
@@ -1508,8 +1507,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     boolean passThroughThisKey = false;
     boolean triggerModifierPressed =
         FeatureFlagReader.enableSpeechVolumeKeyboard(this)
-            && (keyEvent.getModifiers() & keyComboManager.getKeyComboModel().getTriggerModifier())
-                != 0;
+            && keyComboManager.isSandFlyKeyPressed(keyEvent);
     if (NotificationReader.onKeyEvent(keyEvent)) {
       return true;
     }
@@ -2131,15 +2129,6 @@ public class TalkBackService extends AccessibilityServiceCompat
 
     if (shouldShowTutorial || FormFactorUtils.isAndroidTv()) {
       setFirstTimeUser(false);
-    }
-
-    // If TalkBack shows the tutorial for users (e.g. first time users), don't show the new keymap
-    // notification dialog. In this case, the new keymap notification will be shown next time
-    // TalkBack is on (e.g. restart TalkBack or a device).
-    if (KeyboardUtils.isHardKeyboardActive(this) && !shouldShowTutorial) {
-      // `keyComboManager` must not be null here as it is initialized in
-      // `initializeInfrastructure()` above.
-      keyComboManager.maybeSwitchKeymapAndShowNewKeymapNotificationDialog();
     }
 
     updateTalkBackEnabledCount();

@@ -117,28 +117,17 @@
       &lt;li&gt;ചില മോഡിഫയർ കീകൾ വ്യത്യസ്തം.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">കീമാപ്പുകളെ കുറിച്ച് കൂടുതലറിയുക</string>
   <string name="keycombo_go_to_settings">ക്രമീകരണത്തിലേക്ക് പോകുക</string>
-  <string name="keycombo_new_keymap_notification_dialog_positive_button">മനസ്സിലായി</string>
-  <string name="keycombo_new_keymap_notification_dialog_negative_button">ക്രമീകരണം</string>
-  <string name="keycombo_new_keymap_notification_dialog_neutral_button">കൂടുതലറിയുക</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_classic_keymap">ക്ലാസിക് കീമാപ്പ് ഇനി പിന്തുണയ്ക്കില്ല</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">ഇപ്പോൾ SandFly ഡിഫോൾട്ട് കീമാപ്പ് ആണ് ഉപയോഗിക്കുന്നത്. പുതിയ നിരവധി കമാൻഡുള്ള, മെച്ചപ്പെട്ട പുതിയ കീമാപ്പും ലഭ്യമാണ്. സഹായകേന്ദ്രത്തിൽ കൂടുതലറിയൂ അല്ലെങ്കിൽ ക്രമീകരണത്തിൽ പുതിയ കീമാപ്പിലേക്ക് മാറൂ.</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">പുതിയ കീമാപ്പ് ലഭ്യമാണ്</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">പുതിയ SandFly മെച്ചപ്പെടുത്തിയ കീമാപ്പ് നിരവധി പുതിയ കമാൻഡുകൾ ചേർത്തിരിക്കുന്നു. സഹായകേന്ദ്രത്തിൽ കൂടുതലറിയൂ അല്ലെങ്കിൽ ക്രമീകരണത്തിൽ പുതിയ കീമാപ്പിലേക്ക് മാറൂ.</string>
   <string name="keycombo_warning_content_description">നിങ്ങളുടെ മോഡിഫയർ കീയെ കുറിച്ചുള്ള കൂടുതൽ വിവരങ്ങൾ</string>
   <string name="keycombo_menu_category_select_keymap">കീമാപ്പ്</string>
   <string name="keycombo_menu_select_keymap">ഒരു കീമാപ്പ് തിരഞ്ഞെടുക്കുക</string>
   <string name="keycombo_menu_reset_keymap">കീമാപ്പ് പുനഃക്രമീകരിക്കുക</string>
   <string name="keycombo_menu_view_system_keyboard_shortcuts">സിസ്റ്റം കീബോർഡ് കുറുക്കുവഴികൾ കാണുക</string>
-  <string name="keycombo_menu_choose_trigger_modifier">മോഡിഫയർ കീ തിരഞ്ഞെടുക്കുക</string>
-  <string name="keycombo_menu_alert_title_trigger_modifier">നിങ്ങളുടെ മോഡിഫയർ കീയായി %1$s ഉപയോഗിക്കണോ?</string>
-  <string name="keycombo_menu_alert_message_trigger_modifier">SandFly നിലവിൽ മോഡിഫയർ കീയായി <xliff:g id="current_trigger_modifier" example="Alt">%1$s</xliff:g> ഉപയോഗിക്കുന്നു.</string>
-  <string name="keycombo_menu_alert_button_trigger_modifier">%1$s ഉപയോഗിക്കുക</string>
-  <string name="keycombo_menu_announce_new_trigger_modifier">%1$s എന്നതിലേക്ക് മോഡിഫയർ കീ മാറ്റിയിരിക്കുന്നു.</string>
+  <string name="keycombo_menu_choose_trigger_modifier">SandFly കീ തിരഞ്ഞെടുക്കുക</string>
+  <string name="keycombo_menu_announce_new_trigger_modifier">SandFly കീ %1$s എന്നതിലേക്ക് മാറ്റി.</string>
   <string name="keycombo_menu_announce_active_keymap">%1$s ഇപ്പോൾ സജീവമാണ്.</string>
   <string name="keycombo_menu_announce_reset_keymap">കീമാപ്പ് പുനഃക്രമീകരിച്ചു.</string>
   <string name="keycombo_announce_shortcut_not_supported">കുറുക്കുവഴിക്ക് പിന്തുണയില്ല</string>
-  <string name="value_default_keymap">ഡിഫോൾട്ട് കീമാപ്പ്</string>
-  <string name="value_new_keymap">മെച്ചപ്പെടുത്തിയ കീമാപ്പ്</string>
+  <string name="value_new_keymap">SandFly കീമാപ്പ്</string>
   <string name="keycombo_menu_category_navigation">നാവിഗേഷൻ പ്രവർത്തനങ്ങൾ</string>
   <string name="keycombo_menu_navigate_next">അടുത്തതിലേക്ക് നാവിഗേറ്റ് ചെയ്യുക</string>
   <string name="keycombo_menu_navigate_previous">മുമ്പത്തേതിലേക്ക് നാവിഗേറ്റ് ചെയ്യുക</string>
@@ -266,7 +255,7 @@
   <string name="message_in_reset_keymap_confirm_dialog">ഈ കീമാപ്പിനായുള്ള കുറുക്കുവഴികൾ, അവയുടെ ഡിഫോൾട്ട് മൂല്യങ്ങളിലേക്ക് പുനഃക്രമീകരിക്കാൻ ആഗ്രഹിക്കുന്നുവെന്ന് തീർച്ചയാണോ? ശ്രദ്ധിക്കുക, ഈ പ്രവൃത്തി പഴയപടിയാക്കാനാകില്ല.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">പുനഃക്രമീകരിക്കുക</string>
   <string name="template_keycombo_menu_browse_mode_command">ബ്രൗസ് മോഡിലുള്ള %1$s</string>
-  <string name="keycombo_assign_dialog_default_keymap_instruction">പുതിയ കുറുക്കുവഴി സജ്ജമാക്കുന്നതിന് %1$s മോഡിഫയർ കീയ്ക്കൊപ്പം കീ കോമ്പിനേഷൻ അമർത്തുക.</string>
+  <string name="keycombo_assign_dialog_default_keymap_instruction">പുതിയ കുറുക്കുവഴി സജ്ജീകരിക്കാൻ %1$s SandFly കീ ഉപയോഗിച്ച് കീ കോമ്പിനേഷൻ അമർത്തുക.</string>
   <string name="keycombo_unassigned">നൽകിയിട്ടില്ല</string>
   <string name="save_button_in_keycombo_assign_dialog">സംരക്ഷിക്കുക</string>
   <string name="clear_button_in_keycombo_assign_dialog">മായ്ക്കുക</string>
@@ -1804,4 +1793,10 @@
   <string name="title_pref_speech_dictionary">സംഭാഷണ നിഘണ്ടു</string>
   <string name="speech_dictionary_all_apps">എല്ലാ ആപ്പുകളും</string>
   <string name="speech_dictionary_not_said"><xliff:g id="text" example="#">%1$s</xliff:g> പറയില്ല</string>
+  <string name="keycombo_key_modifier_insert">ചേർക്കുക</string>
+  <string name="keycombo_key_modifier_numpad_insert">Numpad insert</string>
+  <string name="keycombo_menu_navigate_next_paragraph">അടുത്ത ഖണ്ഡികയിലേക്ക് നാവിഗേറ്റ് ചെയ്യുക</string>
+  <string name="keycombo_menu_navigate_previous_paragraph">മുമ്പത്തെ ഖണ്ഡികയിലേക്ക് നാവിഗേറ്റ് ചെയ്യുക</string>
+  <string name="keycombo_key_modifier_ctrl_alt">കൺട്രോൾ + ആൾട്ട്</string>
+  <string name="value_voiceover_keymap">VoiceOver കീമാപ്പ്</string>
 </resources>

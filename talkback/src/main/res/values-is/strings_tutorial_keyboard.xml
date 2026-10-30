@@ -2,14 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">SandFly-lyklaborðsleiðsögn</string>
     <string name="sandfly_keyboard_tutorial_no_key"><xliff:g id="command" example="Næsta atriði">%1$s</xliff:g> hefur engan flýtilykil. Tengdu flýtilykil við hana undir „Skipanir“ eða notaðu Sleppa skrefi.</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">Flettihamur þarf Endurbætt flýtilyklakort. Veldu það í <xliff:g id="settings_path" example="SandFly-stillingar &gt; Flýtilyklar &gt; Velja flýtilyklakort">%1$s</xliff:g> eða notaðu Sleppa skrefi.</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Aðgerðalykill">%1$s</xliff:g> tvisvar</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">Kennslustund lokið. Ýttu á <xliff:g id="keys" example="Aðgerðalykill + bilslá">%1$s</xliff:g> til að hefja næstu kennslustund.</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">Kennslustund lokið. Ýttu á <xliff:g id="keys" example="Aðgerðalykill + bilslá">%1$s</xliff:g> til að ljúka leiðsögninni.</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">Vefsíður</string>
-    <string name="sandfly_keyboard_tutorial_welcome_intro">Þessi leiðsögn kennir flýtilykla SandFly. Flestir þeirra nota <xliff:g id="key" example="Aðgerðalykill">%1$s</xliff:g> með öðrum lyklum. <xliff:g id="location" example="Aðgerðalykillinn er Windows-lykillinn, við hliðina á vinstri Alt-lyklinum.">%2$s</xliff:g> Ctrl stöðvar tal. Hver kennslustund gefur fyrirmæli, bíður þar til þú hefur ýtt á lyklana sem þau nefna, og gefur svo þau næstu. Fyrirmælin eru fyrsta atriðið á eftir heiti kennslustundarinnar. Efnisyfirlit sýnir allar kennslustundir, og leiðsögnin opnast aftur á kennslustundinni sem þú varst í.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">Þessi leiðsögn kennir flýtilykla SandFly. Flestir þeirra nota SandFly-lykilinn, <xliff:g id="key" example="Action">%1$s</xliff:g>, með öðrum lyklum. <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> Ctrl stöðvar tal. Hver kennslustund gefur fyrirmæli, bíður þar til þú hefur ýtt á lyklana sem þau nefna, og gefur svo þau næstu. Fyrirmælin eru fyrsta atriðið á eftir heiti kennslustundarinnar. Efnisyfirlit sýnir allar kennslustundir, og leiðsögnin opnast aftur á kennslustundinni sem þú varst í.</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">Aðgerðalykillinn er Windows-lykillinn, við hliðina á vinstri Alt-lyklinum. Á Apple-lyklaborðum er það Command-lykillinn, við hliðina á bilslánni.</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">Alt-lykillinn er við hliðina á bilslánni.</string>
     <string name="sandfly_keyboard_tutorial_welcome_start">Ýttu á <xliff:g id="keys" example="Aðgerðalykill + bilslá">%1$s</xliff:g> til að byrja.</string>
     <string name="sandfly_keyboard_tutorial_move_intro">Næsta atriði og Fyrra atriði fara á milli atriðanna á skjánum í lesröð.</string>
     <string name="sandfly_keyboard_tutorial_move_next">Ýttu á <xliff:g id="keys" example="Aðgerðalykill + ör til hægri">%1$s</xliff:g> til að fara í næsta atriði. Haltu áfram þar til þú kemur að <xliff:g id="item" example="Egg">%2$s</xliff:g>.</string>
@@ -53,4 +51,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">Lyklaborðsæfing</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">Hver flýtilykill segir lykla sína og skipun í stað þess að framkvæma hana. Næsta atriði, Fyrra atriði og virkjun virka áfram.</string>
     <string name="sandfly_keyboard_tutorial_practice_step">Ýttu á einhvern flýtilykil til að heyra hvað hann gerir. Til að hætta skaltu virkja <xliff:g id="button" example="Ljúka æfingu">%1$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">Haltu Ctrl og Alt niðri samtímis. Báðir eru neðst til vinstri á lyklaborðinu.</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">Á flestum lyklaborðum er Setja inn-lykillinn í sex lykla hópnum fyrir ofan örvalyklana.</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">Setja inn numpad er 0-lykill talnaborðsins þegar Num Lock er óvirkt.</string>
 </resources>

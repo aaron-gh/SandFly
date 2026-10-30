@@ -989,22 +989,6 @@
     <!-- TalkBack keyboard go to settings button. Click the button will open the TalkBack keyboard settings. [CHAR LIMIT=40] -->
     <string name="keycombo_go_to_settings">Go to Settings</string>
     <!-- Keyboard new key map notification dialog. -->
-    <!-- TalkBack new keymap notification positive button. Click the button will close the dialog. [CHAR LIMIT=40] -->
-    <string name="keycombo_new_keymap_notification_dialog_positive_button">Got it</string>
-    <!-- TalkBack new keymap notification negative button. Click the button will open the TalkBack keyboard settings. [CHAR LIMIT=40] -->
-    <string name="keycombo_new_keymap_notification_dialog_negative_button">Settings</string>
-    <!-- TalkBack new keymap notification neutral button. Click the button will open the help center page. [CHAR LIMIT=40] -->
-    <string name="keycombo_new_keymap_notification_dialog_neutral_button">Learn more</string>
-    <!-- Keyboard new key map notification dialog for classic keymap users. -->
-    <!-- Title of the dialog to notify classic keymap users. [CHAR LIMIT=60] -->
-    <string name="keycombo_new_keymap_notification_dialog_title_for_classic_keymap">Classic keymap is no longer supported</string>
-    <!-- Message of the dialog to notify classic keymap users. [CHAR LIMIT=200] -->
-    <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">You\'re now using the SandFly default keymap. There is also a new enhanced keymap that has many new commands. Learn more in the help center or switch to the new keymap in Settings.</string>
-    <!-- Keyboard new key map notification dialog for default keymap users. -->
-    <!-- Title of the dialog to notify default keymap users. [CHAR LIMIT=60] -->
-    <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">New keymap available</string>
-    <!-- Message of the dialog to notify default keymap users. [CHAR LIMIT=200] -->
-    <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">The new SandFly enhanced keymap adds many new commands. Learn more in the help center or switch to the new keymap in Settings.</string>
     <!-- TalkBack keyboard update modifier key dialog. -->
     <!-- Content description of an icon to open TalkBack keyboard update modifier key dialog. [CHAR LIMIT=80] -->
     <string name="keycombo_warning_content_description">More information about your modifier key</string>
@@ -1018,16 +1002,10 @@
     <string name="keycombo_menu_reset_keymap">Reset the keymap</string>
     <!-- View system keyboard shortcuts [CHAR LIMIT=60] -->
     <string name="keycombo_menu_view_system_keyboard_shortcuts">View system keyboard shortcuts</string>
-    <!-- Choose modifier key [CHAR LIMIT=40] -->
-    <string name="keycombo_menu_choose_trigger_modifier">Choose modifier key</string>
-    <!-- Title of alert dialog to reset keymap for changing trigger modifier [CHAR LIMIT=60] -->
-    <string name="keycombo_menu_alert_title_trigger_modifier">Use <xliff:g id="new_trigger_modifier" example="Action">%1$s</xliff:g> as your modifier key?</string>
-    <!-- Message of alert dialog to reset keymap for changing trigger modifier [CHAR LIMIT=200] -->
-    <string name="keycombo_menu_alert_message_trigger_modifier">SandFly currently uses <xliff:g id="current_trigger_modifier" example="Alt">%1$s</xliff:g> as the modifier key.</string>
-    <!-- Button of alert dialog to reset keymap for changing trigger modifier [CHAR LIMIT=40] -->
-    <string name="keycombo_menu_alert_button_trigger_modifier">Use <xliff:g id="new_trigger_modifier" example="Action">%1$s</xliff:g></string>
+    <!-- Setting that chooses the SandFly key, the key keyboard shortcuts are pressed with. [CHAR LIMIT=40] -->
+    <string name="keycombo_menu_choose_trigger_modifier">Choose SandFly key</string>
     <!-- Announce that modifier key is changed -->
-    <string name="keycombo_menu_announce_new_trigger_modifier">Modifier key has been changed to <xliff:g id="new_trigger_modifier" example="Alt">%1$s</xliff:g>.</string>
+    <string name="keycombo_menu_announce_new_trigger_modifier">SandFly key has been changed to <xliff:g id="new_trigger_modifier" example="Insert">%1$s</xliff:g>.</string>
     <!-- Announce active keymap -->
     <string name="keycombo_menu_announce_active_keymap"><xliff:g id="keymap_name" example="Default keymap">%1$s</xliff:g> is now active.</string>
     <!-- Announce reset the keymap -->
@@ -1036,10 +1014,10 @@
     <string name="keycombo_menu_global_announce_toggle_sound_feedback" translatable="false">@string/shortcut_toggle_sound_feedback</string>
     <!-- Announce that pressed keyboard shortcut is not supported on the current focused item. -->
     <string name="keycombo_announce_shortcut_not_supported">Shortcut not supported</string>
-    <!-- Default keymap [CHAR LIMIT=40] -->
-    <string name="value_default_keymap">Default keymap</string>
-    <!-- New keymap; user-facing name is Enhanced keymap. [CHAR LIMIT=40] -->
-    <string name="value_new_keymap">Enhanced keymap</string>
+    <!-- Name of SandFly's own keymap. [CHAR LIMIT=40] -->
+    <string name="value_new_keymap">SandFly keymap</string>
+    <!-- Name of the keymap with VoiceOver's keyboard commands. VoiceOver is Apple's screen reader; don't translate it. [CHAR LIMIT=40] -->
+    <string name="value_voiceover_keymap">VoiceOver keymap</string>
     <!-- Navigation actions group name title [CHAR LIMIT=40] -->
     <string name="keycombo_menu_category_navigation">Navigation actions</string>
     <!-- Keyboard key combination assignment for Navigate to next item action [CHAR LIMIT=40] -->
@@ -1070,6 +1048,10 @@
     <string name="keycombo_menu_navigate_next_line">Navigate to next line</string>
     <!-- Keyboard key combination assignment for Navigate to previous line action [CHAR LIMIT=40] -->
     <string name="keycombo_menu_navigate_previous_line">Navigate to previous line</string>
+    <!-- Keyboard key combination assignment for Navigate to next paragraph action [CHAR LIMIT=40] -->
+    <string name="keycombo_menu_navigate_next_paragraph">Navigate to next paragraph</string>
+    <!-- Keyboard key combination assignment for Navigate to previous paragraph action [CHAR LIMIT=40] -->
+    <string name="keycombo_menu_navigate_previous_paragraph">Navigate to previous paragraph</string>
     <!-- Keyboard key combination assignment for Navigate to next container [CHAR LIMIT=40] -->
     <string name="keycombo_menu_navigate_next_container">Navigate to next container</string>
     <!-- Keyboard key combination assignment for Navigate to previous container [CHAR LIMIT=40] -->
@@ -1350,7 +1332,7 @@
     <string name="template_keycombo_menu_browse_mode_command"><xliff:g id="key_combo_name">%1$s</xliff:g> in browse mode</string>
 
     <!-- Dialog message that describes how to assign other keyboard shortcut for current action in default keymap -->
-    <string name="keycombo_assign_dialog_default_keymap_instruction">Press key combination with <xliff:g id="trigger_modifier_name" example="alt">%1$s</xliff:g> modifier key to set new shortcut.</string>
+    <string name="keycombo_assign_dialog_default_keymap_instruction">Press a key combination with the SandFly key, <xliff:g id="trigger_modifier_name" example="Action">%1$s</xliff:g>, to set a new shortcut.</string>
     <!-- Message that key combination is not assigned to the action [CHAR LIMIT=40] -->
     <string name="keycombo_unassigned">Unassigned</string>
 
@@ -1379,6 +1361,12 @@
     <string name="keycombo_key_modifier_ctrl">Ctrl</string>
     <!-- String representation of modifier key meta. This is the key which has a magnifier icon on Android keyboard. e.g. Action + A. -->
     <string name="keycombo_key_modifier_meta">Action</string>
+    <!-- The Ctrl and Alt keys held together as the SandFly key. e.g. Ctrl + Alt + A. [CHAR LIMIT=20] -->
+    <string name="keycombo_key_modifier_ctrl_alt">Ctrl + Alt</string>
+    <!-- The Insert key. e.g. Insert + A. [CHAR LIMIT=20] -->
+    <string name="keycombo_key_modifier_insert">Insert</string>
+    <!-- The 0 key of the number pad with Num Lock off, where it is Insert. e.g. Numpad Insert + A. [CHAR LIMIT=20] -->
+    <string name="keycombo_key_modifier_numpad_insert">Numpad Insert</string>
     <!-- String representation of arrow right key. e.g. Action + Arrow Right. -->
     <string name="keycombo_key_arrow_right">Arrow Right</string>
     <!-- String representation of arrow left key. e.g. Action + Arrow Left. -->

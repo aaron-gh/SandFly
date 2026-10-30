@@ -61,6 +61,7 @@ import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping
 import com.google.android.accessibility.talkback.gesture.OpenAppActions
 import com.google.android.accessibility.talkback.keyboard.ArrowKeyNav
 import com.google.android.accessibility.talkback.keyboard.KeyCombo
+import com.google.android.accessibility.talkback.keyboard.SandFlyKey
 import com.google.android.accessibility.talkback.keyboard.TalkBackPhysicalKeyboardShortcut
 import com.google.android.accessibility.talkback.selector.SelectorController
 import com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED
@@ -489,9 +490,6 @@ class TutorialActivity : AppCompatActivity() {
    * The instruction of [step] with the user's gestures or keys, or what to do when one has none.
    */
   private fun instructionOf(step: TutorialStep): String {
-    if (step.needsBrowseMode && !CommandBindings.keyComboManager(this).isBrowseModeSupported) {
-      return getString(R.string.sandfly_keyboard_tutorial_needs_enhanced_keymap, keymapPath())
-    }
     val names = step.names.map { getString(it) }.toMutableList()
     if (step.listItem > 0) names += getString(R.string.sandfly_tutorial_list_item, step.listItem)
     if (step.systemKey != 0) {
@@ -540,8 +538,15 @@ class TutorialActivity : AppCompatActivity() {
     val model = manager.keyComboModel ?: return null
     val value = commandValue(action)
     if (value == getString(R.string.shortcut_value_toggle_browse_mode)) {
-      // Browse mode turns on and off with the key that keyboard shortcuts use, pressed twice.
+      // Browse mode turns on and off with the SandFly key pressed twice, or with its own shortcut
+      // where the SandFly key is two keys.
       if (!manager.isBrowseModeSupported) return null
+      if (manager.sandFlyKey == SandFlyKey.CTRL_ALT) {
+        return CommandBindings.keyboardShortcutText(
+          manager,
+          getString(R.string.keycombo_shortcut_other_toggle_browse_mode_extra),
+        )
+      }
       return getString(
         R.string.sandfly_keyboard_tutorial_key_twice,
         manager.getTriggerKeyUserFacingName(model.triggerModifier),
@@ -581,26 +586,20 @@ class TutorialActivity : AppCompatActivity() {
       )
     )
 
-  /** Where the keymap is chosen, as a settings path. */
-  private fun keymapPath(): String =
-    listOf(
-        R.string.talkback_preferences_title,
-        R.string.title_pref_manage_keyboard_shortcuts,
-        R.string.keycombo_menu_select_keymap,
-      )
-      .joinToString(" > ") { getString(it) }
-
   /** The introduction of [lesson], with the key that keyboard shortcuts use where it names it. */
   private fun introOf(lesson: TutorialLesson): String {
     if (!lesson.introNamesKey) return getString(lesson.intro)
-    val manager = CommandBindings.keyComboManager(this)
-    val modifier = manager.keyComboModel?.triggerModifier ?: KeyEvent.META_META_ON
+    val key = CommandBindings.keyComboManager(this).sandFlyKey ?: SandFlyKey.ACTION
     return getString(
       lesson.intro,
-      manager.getTriggerKeyUserFacingName(modifier),
+      getString(key.nameRes),
       getString(
-        if (modifier == KeyEvent.META_ALT_ON) R.string.sandfly_keyboard_tutorial_alt_key_location
-        else R.string.sandfly_keyboard_tutorial_action_key_location
+        when (key) {
+          SandFlyKey.ACTION -> R.string.sandfly_keyboard_tutorial_action_key_location
+          SandFlyKey.CTRL_ALT -> R.string.sandfly_keyboard_tutorial_ctrl_alt_key_location
+          SandFlyKey.INSERT -> R.string.sandfly_keyboard_tutorial_insert_key_location
+          SandFlyKey.NUMPAD_INSERT -> R.string.sandfly_keyboard_tutorial_numpad_insert_key_location
+        }
       ),
     )
   }

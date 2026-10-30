@@ -2,14 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">SandFly 키보드 튜토리얼</string>
     <string name="sandfly_keyboard_tutorial_no_key">‘<xliff:g id="command" example="Next item">%1$s</xliff:g>’에 할당된 단축키가 없습니다. 명령에서 할당하거나 단계 건너뛰기를 사용하세요.</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">탐색 모드에는 향상된 키맵이 필요합니다. <xliff:g id="settings_path" example="SandFly settings &gt; Keyboard shortcuts &gt; Choose a keymap">%1$s</xliff:g>에서 선택하거나 단계 건너뛰기를 사용하세요.</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g> 두 번</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">레슨 완료. <xliff:g id="keys" example="Action + Space">%1$s</xliff:g>을(를) 누르면 다음 레슨을 시작합니다.</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">레슨 완료. <xliff:g id="keys" example="Action + Space">%1$s</xliff:g>을(를) 누르면 튜토리얼을 마칩니다.</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">웹페이지</string>
-    <string name="sandfly_keyboard_tutorial_welcome_intro">이 튜토리얼에서는 SandFly의 단축키를 배웁니다. 대부분의 단축키는 <xliff:g id="key" example="Action">%1$s</xliff:g> 키를 다른 키와 함께 사용합니다. <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> Ctrl 키를 누르면 음성이 중지됩니다. 각 레슨은 안내를 제공하고, 안내에 나온 키를 누를 때까지 기다린 다음 다음 안내를 제공합니다. 안내는 레슨 이름 다음의 첫 번째 항목입니다. 목차에는 모든 레슨이 있으며, 튜토리얼은 마지막으로 진행한 레슨에서 다시 열립니다.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">이 튜토리얼에서는 SandFly의 단축키를 배웁니다. 대부분의 단축키는 SandFly 키인 <xliff:g id="key" example="Action">%1$s</xliff:g> 키를 다른 키와 함께 사용합니다. <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> Ctrl 키를 누르면 음성이 중지됩니다. 각 레슨은 안내를 제공하고, 안내에 나온 키를 누를 때까지 기다린 다음 다음 안내를 제공합니다. 안내는 레슨 이름 다음의 첫 번째 항목입니다. 목차에는 모든 레슨이 있으며, 튜토리얼은 마지막으로 진행한 레슨에서 다시 열립니다.</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">작업 키는 Windows 키이며 왼쪽 Alt 키 옆에 있습니다. Apple 키보드에서는 스페이스 바 옆에 있는 Command 키입니다.</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">Alt 키는 스페이스 바 옆에 있습니다.</string>
     <string name="sandfly_keyboard_tutorial_welcome_start"><xliff:g id="keys" example="Action + Space">%1$s</xliff:g>을(를) 누르면 시작합니다.</string>
     <string name="sandfly_keyboard_tutorial_move_intro">다음 항목과 이전 항목은 읽기 순서에 따라 화면의 항목 간에 이동합니다.</string>
     <string name="sandfly_keyboard_tutorial_move_next"><xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g>을(를) 누르면 다음 항목으로 이동합니다. ‘<xliff:g id="item" example="Eggs">%2$s</xliff:g>’에 도달할 때까지 계속하세요.</string>
@@ -53,4 +51,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">키보드 연습</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">각 단축키는 실행되지 않고 키와 명령을 말합니다. 다음 항목, 이전 항목, 활성화는 그대로 작동합니다.</string>
     <string name="sandfly_keyboard_tutorial_practice_step">아무 단축키나 누르면 그 기능을 들을 수 있습니다. 끝내려면 ‘<xliff:g id="button" example="End practice">%1$s</xliff:g>’을(를) 활성화하세요.</string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">Ctrl 키와 Alt 키를 함께 누른 상태로 유지합니다. 두 키 모두 키보드 왼쪽 하단에 있습니다.</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">대부분의 키보드에서 삽입 키는 화살표 키 위에 있는 6개 키 그룹에 있습니다.</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">숫자 패드 Insert는 Num Lock이 꺼져 있을 때 숫자 패드의 0 키입니다.</string>
 </resources>

@@ -117,28 +117,17 @@
       &lt;li&gt;Unele taste de modificare sunt diferite.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">Află mai multe despre configurările de taste</string>
   <string name="keycombo_go_to_settings">Accesează Setările</string>
-  <string name="keycombo_new_keymap_notification_dialog_positive_button">OK</string>
-  <string name="keycombo_new_keymap_notification_dialog_negative_button">Setări</string>
-  <string name="keycombo_new_keymap_notification_dialog_neutral_button">Află mai multe</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_classic_keymap">Configurarea clasică a tastelor nu mai este acceptată</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">Acum folosești configurarea tastelor prestabilită pentru SandFly. Este disponibilă și o nouă configurare îmbunătățită a tastelor, care are multe comenzi noi. Află mai multe în centrul de ajutor sau comută la noua configurare a tastelor în Setări.</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">Configurare nouă a tastelor disponibilă</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">Noua configurare a tastelor îmbunătățită pentru SandFly are multe comenzi noi. Află mai multe în centrul de ajutor sau comută la noua configurare a tastelor în Setări.</string>
   <string name="keycombo_warning_content_description">Mai multe informații despre tasta de modificare</string>
   <string name="keycombo_menu_category_select_keymap">Aranjarea tastelor</string>
   <string name="keycombo_menu_select_keymap">Alege o aranjare a tastelor</string>
   <string name="keycombo_menu_reset_keymap">Resetează aranjarea tastelor</string>
   <string name="keycombo_menu_view_system_keyboard_shortcuts">Vezi comenzile rapide de la tastatură ale sistemului</string>
-  <string name="keycombo_menu_choose_trigger_modifier">Alege tasta de modificare</string>
-  <string name="keycombo_menu_alert_title_trigger_modifier">Folosești %1$s ca tastă de modificare?</string>
-  <string name="keycombo_menu_alert_message_trigger_modifier">SandFly folosește momentan <xliff:g id="current_trigger_modifier" example="Alt">%1$s</xliff:g> ca tastă de modificare.</string>
-  <string name="keycombo_menu_alert_button_trigger_modifier">Folosește %1$s</string>
-  <string name="keycombo_menu_announce_new_trigger_modifier">Tasta de modificare a fost schimbată cu %1$s.</string>
+  <string name="keycombo_menu_choose_trigger_modifier">Alege tasta SandFly</string>
+  <string name="keycombo_menu_announce_new_trigger_modifier">Tasta SandFly a fost schimbată în %1$s.</string>
   <string name="keycombo_menu_announce_active_keymap">%1$s este acum activă.</string>
   <string name="keycombo_menu_announce_reset_keymap">Aranjarea tastelor a fost resetată.</string>
   <string name="keycombo_announce_shortcut_not_supported">Comanda rapidă nu este acceptată</string>
-  <string name="value_default_keymap">Aranjarea prestabilită a tastelor</string>
-  <string name="value_new_keymap">Configurare de taste îmbunătățită</string>
+  <string name="value_new_keymap">Aranjarea tastelor SandFly</string>
   <string name="keycombo_menu_category_navigation">Acțiuni de navigare</string>
   <string name="keycombo_menu_navigate_next">Navighează la elementul următor</string>
   <string name="keycombo_menu_navigate_previous">Navighează la elementul anterior</string>
@@ -266,7 +255,7 @@
   <string name="message_in_reset_keymap_confirm_dialog">Sigur dorești să resetezi tastele de comenzi rapide pentru această aranjare a tastelor la valorile prestabilite? Reține că acțiunea este ireversibilă.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">Resetează</string>
   <string name="template_keycombo_menu_browse_mode_command">%1$s în modul de navigare</string>
-  <string name="keycombo_assign_dialog_default_keymap_instruction">Ca să setezi o comandă rapidă nouă, apasă combinația de taste folosind tasta de modificare %1$s.</string>
+  <string name="keycombo_assign_dialog_default_keymap_instruction">Apasă combinația de taste cu tasta SandFly %1$s pentru a seta o nouă comandă rapidă.</string>
   <string name="keycombo_unassigned">Neatribuit</string>
   <string name="save_button_in_keycombo_assign_dialog">Salvează</string>
   <string name="clear_button_in_keycombo_assign_dialog">Șterge</string>
@@ -1808,4 +1797,10 @@
   <string name="title_pref_speech_dictionary">Dicționar de vorbire</string>
   <string name="speech_dictionary_all_apps">Toate aplicațiile</string>
   <string name="speech_dictionary_not_said"><xliff:g id="text" example="#">%1$s</xliff:g> nu se rostește</string>
+  <string name="keycombo_key_modifier_insert">Inserează</string>
+  <string name="keycombo_key_modifier_numpad_insert">Inserare de pe tastatura numerică</string>
+  <string name="keycombo_menu_navigate_next_paragraph">Navighează la paragraful următor</string>
+  <string name="keycombo_menu_navigate_previous_paragraph">Navighează la paragraful anterior</string>
+  <string name="keycombo_key_modifier_ctrl_alt">Ctrl + Alt</string>
+  <string name="value_voiceover_keymap">Aranjarea tastelor VoiceOver</string>
 </resources>

@@ -117,28 +117,17 @@
       &lt;li&gt;คีย์ตัวปรับแต่งบางคีย์จะแตกต่างกัน&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">ดูข้อมูลเพิ่มเติมเกี่ยวกับคีย์แมป</string>
   <string name="keycombo_go_to_settings">ไปที่การตั้งค่า</string>
-  <string name="keycombo_new_keymap_notification_dialog_positive_button">รับทราบ</string>
-  <string name="keycombo_new_keymap_notification_dialog_negative_button">การตั้งค่า</string>
-  <string name="keycombo_new_keymap_notification_dialog_neutral_button">ดูข้อมูลเพิ่มเติม</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_classic_keymap">ไม่รองรับคีย์แมปคลาสสิกอีกต่อไป</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">ตอนนี้คุณใช้คีย์แมปเริ่มต้นของ SandFly นอกจากนี้ยังมีคีย์แมปปรับปรุงใหม่ที่มีคำสั่งใหม่ๆ มากมาย ดูข้อมูลเพิ่มเติมในศูนย์ช่วยเหลือหรือเปลี่ยนไปใช้คีย์แมปใหม่ในการตั้งค่า</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">คีย์แมปใหม่พร้อมใช้งาน</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">คีย์แมปปรับปรุงใหม่ของ SandFly เพิ่มคำสั่งใหม่ๆ มากมาย ดูข้อมูลเพิ่มเติมในศูนย์ช่วยเหลือหรือเปลี่ยนไปใช้คีย์แมปใหม่ในการตั้งค่า</string>
   <string name="keycombo_warning_content_description">ข้อมูลเพิ่มเติมเกี่ยวกับแป้นกดร่วม</string>
   <string name="keycombo_menu_category_select_keymap">คีย์แมป</string>
   <string name="keycombo_menu_select_keymap">เลือกคีย์แมป</string>
   <string name="keycombo_menu_reset_keymap">รีเซ็ตคีย์แมปนี้</string>
   <string name="keycombo_menu_view_system_keyboard_shortcuts">ดูแป้นพิมพ์ลัดของระบบ</string>
-  <string name="keycombo_menu_choose_trigger_modifier">เลือกแป้นกดร่วม</string>
-  <string name="keycombo_menu_alert_title_trigger_modifier">ใช้ %1$s เป็นแป้นกดร่วมไหม</string>
-  <string name="keycombo_menu_alert_message_trigger_modifier">ขณะนี้ SandFly ใช้ <xliff:g id="current_trigger_modifier" example="Alt">%1$s</xliff:g> เป็นแป้นกดร่วม</string>
-  <string name="keycombo_menu_alert_button_trigger_modifier">ใช้ %1$s</string>
-  <string name="keycombo_menu_announce_new_trigger_modifier">แป้นกดร่วมเปลี่ยนเป็น %1$s</string>
+  <string name="keycombo_menu_choose_trigger_modifier">เลือกแป้น SandFly</string>
+  <string name="keycombo_menu_announce_new_trigger_modifier">เปลี่ยนแป้น SandFly เป็น %1$s แล้ว</string>
   <string name="keycombo_menu_announce_active_keymap">กำลังใช้งาน %1$s อยู่</string>
   <string name="keycombo_menu_announce_reset_keymap">รีเซ็ตคีย์แมปแล้ว</string>
   <string name="keycombo_announce_shortcut_not_supported">ไม่รองรับแป้นพิมพ์ลัด</string>
-  <string name="value_default_keymap">คีย์แมปเริ่มต้น</string>
-  <string name="value_new_keymap">คีย์แมปที่ปรับปรุงแล้ว</string>
+  <string name="value_new_keymap">คีย์แมป SandFly</string>
   <string name="keycombo_menu_category_navigation">การไปยังส่วนต่างๆ</string>
   <string name="keycombo_menu_navigate_next">ไปยังรายการถัดไป</string>
   <string name="keycombo_menu_navigate_previous">ไปยังรายการก่อนหน้า</string>
@@ -266,7 +255,7 @@
   <string name="message_in_reset_keymap_confirm_dialog">คุณแน่ใจไหมว่าต้องการรีเซ็ตแป้นพิมพ์ลัดสำหรับคีย์แมปนี้เป็นค่าเริ่มต้น โปรดทราบว่าการดำเนินการนี้ไม่สามารถเลิกทำได้</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">รีเซ็ต</string>
   <string name="template_keycombo_menu_browse_mode_command">%1$s ในโหมดอ่าน</string>
-  <string name="keycombo_assign_dialog_default_keymap_instruction">กดแป้นที่กดร่วมกันพร้อมกับ %1$s ซึ่งเป็นแป้นกดร่วม เพื่อตั้งค่าแป้นพิมพ์ลัดใหม่</string>
+  <string name="keycombo_assign_dialog_default_keymap_instruction">กดแป้นที่กดร่วมกันพร้อมกับ %1$s ซึ่งเป็นแป้น SandFly เพื่อตั้งค่าแป้นพิมพ์ลัดใหม่</string>
   <string name="keycombo_unassigned">ไม่ได้กำหนด</string>
   <string name="save_button_in_keycombo_assign_dialog">บันทึก</string>
   <string name="clear_button_in_keycombo_assign_dialog">ล้าง</string>
@@ -1805,4 +1794,10 @@
   <string name="title_pref_speech_dictionary">พจนานุกรมการพูด</string>
   <string name="speech_dictionary_all_apps">แอปทั้งหมด</string>
   <string name="speech_dictionary_not_said">ไม่พูด <xliff:g id="text" example="#">%1$s</xliff:g></string>
+  <string name="keycombo_key_modifier_insert">Insert</string>
+  <string name="keycombo_key_modifier_numpad_insert">Insert บนแป้นตัวเลข</string>
+  <string name="keycombo_menu_navigate_next_paragraph">ไปยังย่อหน้าถัดไป</string>
+  <string name="keycombo_menu_navigate_previous_paragraph">ไปยังย่อหน้าก่อนหน้า</string>
+  <string name="keycombo_key_modifier_ctrl_alt">Ctrl + Alt</string>
+  <string name="value_voiceover_keymap">คีย์แมป VoiceOver</string>
 </resources>

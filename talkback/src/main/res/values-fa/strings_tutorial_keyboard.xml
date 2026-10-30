@@ -2,14 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">آموزش گام‌به‌گام صفحه‌کلید SandFly</string>
     <string name="sandfly_keyboard_tutorial_no_key">«<xliff:g id="command" example="مورد بعدی">%1$s</xliff:g>» میان‌بر صفحه‌کلید ندارد. در «فرمان‌ها» میان‌بری اختصاص دهید، یا از «رد شدن از مرحله» استفاده کنید.</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">«حالت مرور» به «نقشه‌کلید بهبودیافته» نیاز دارد. آن را در «<xliff:g id="settings_path" example="‏تنظیمات SandFly &gt; میان‌برهای صفحه‌کلید &gt; انتخاب نقشه‌کلید">%1$s</xliff:g>» انتخاب کنید، یا از «رد شدن از مرحله» استفاده کنید.</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="کلید «کنش»">%1$s</xliff:g> دو بار</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">درس تمام شد. برای شروع درس بعدی، <xliff:g id="keys" example="کلید «کنش» + فاصله">%1$s</xliff:g> را فشار دهید.</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">درس تمام شد. برای پایان دادن به آموزش گام‌به‌گام، <xliff:g id="keys" example="کلید «کنش» + فاصله">%1$s</xliff:g> را فشار دهید.</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">صفحه‌های وب</string>
-    <string name="sandfly_keyboard_tutorial_welcome_intro">این آموزش گام‌به‌گام میان‌برهای صفحه‌کلید SandFly را آموزش می‌دهد. بیشتر آن‌ها از <xliff:g id="key" example="کلید «کنش»">%1$s</xliff:g> همراه با کلیدهای دیگر استفاده می‌کنند. <xliff:g id="location" example="کلید «کنش» همان کلید Windows است، کنار کلید Alt سمت چپ.">%2$s</xliff:g> کلید Ctrl گفتار را متوقف می‌کند. هر درس یک دستورالعمل می‌دهد، منتظر می‌ماند تا کلیدهایی را که نام می‌برد فشار دهید، سپس دستورالعمل بعدی را می‌دهد. دستورالعمل اولین مورد پس از نام درس است. «فهرست مطالب» همه درس‌ها را فهرست می‌کند، و آموزش گام‌به‌گام در درسی که در آن بودید دوباره باز می‌شود.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">این آموزش گام‌به‌گام میان‌برهای صفحه‌کلید SandFly را آموزش می‌دهد. بیشتر آن‌ها از کلید SandFly، <xliff:g id="key" example="Action">%1$s</xliff:g>، همراه با کلیدهای دیگر استفاده می‌کنند. <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> کلید Ctrl گفتار را متوقف می‌کند. هر درس یک دستورالعمل می‌دهد، منتظر می‌ماند تا کلیدهایی را که نام می‌برد فشار دهید، سپس دستورالعمل بعدی را می‌دهد. دستورالعمل اولین مورد پس از نام درس است. «فهرست مطالب» همه درس‌ها را فهرست می‌کند، و آموزش گام‌به‌گام در درسی که در آن بودید دوباره باز می‌شود.</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">کلید «کنش» همان کلید Windows است، کنار کلید Alt سمت چپ. در صفحه‌کلیدهای Apple، این کلید Command است، کنار کلید فاصله.</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">کلید Alt کنار کلید فاصله است.</string>
     <string name="sandfly_keyboard_tutorial_welcome_start">برای شروع، <xliff:g id="keys" example="کلید «کنش» + فاصله">%1$s</xliff:g> را فشار دهید.</string>
     <string name="sandfly_keyboard_tutorial_move_intro">«مورد بعدی» و «مورد قبلی» به‌ترتیب خواندن بین موارد صفحه جابه‌جا می‌شوند.</string>
     <string name="sandfly_keyboard_tutorial_move_next">برای رفتن به مورد بعدی، <xliff:g id="keys" example="کلید «کنش» + پیکان راست">%1$s</xliff:g> را فشار دهید. ادامه دهید تا به «<xliff:g id="item" example="تخم‌مرغ">%2$s</xliff:g>» برسید.</string>
@@ -53,4 +51,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">تمرین صفحه‌کلید</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">هر میان‌بر صفحه‌کلید به‌جای اجرا شدن، کلیدها و فرمان خود را می‌گوید. «مورد بعدی»، «مورد قبلی» و فعال کردن همچنان کار می‌کنند.</string>
     <string name="sandfly_keyboard_tutorial_practice_step">هر میان‌بر صفحه‌کلیدی را فشار دهید تا بشنوید چه می‌کند. برای توقف، «<xliff:g id="button" example="پایان تمرین">%1$s</xliff:g>» را فعال کنید.</string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">کلیدهای Ctrl و Alt را با هم نگه دارید. هر دو در پایین سمت چپ صفحه‌کلید هستند.</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">در بیشتر صفحه‌کلیدها، Insert در گروه شش‌تایی کلیدهای بالای کلیدهای جهت‌نما است.</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">Insert در صفحه‌کلید عددی همان کلید 0 صفحه‌کلید عددی است، وقتی Num Lock خاموش است.</string>
 </resources>

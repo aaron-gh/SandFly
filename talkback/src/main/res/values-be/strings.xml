@@ -115,28 +115,17 @@
       &lt;br&gt;&lt;br&gt;&lt;b&gt;Чым адрозніваецца стандартная?&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;li&gt;Больш дзеянняў для навігацыі.&lt;/li&gt;&lt;li&gt;Адрозніваюцца некаторыя клавішы-мадыфікатары.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">Даведацца больш пра раскладкі спалучэнняў клавіш</string>
   <string name="keycombo_go_to_settings">Перайсці ў налады</string>
-  <string name="keycombo_new_keymap_notification_dialog_positive_button">Зразумела</string>
-  <string name="keycombo_new_keymap_notification_dialog_negative_button">Налады</string>
-  <string name="keycombo_new_keymap_notification_dialog_neutral_button">Даведацца больш</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_classic_keymap">Класічная раскладка спалучэнняў больш не падтрымліваецца</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">Цяпер вы выкарыстоўваеце стандартную раскладку SandFly. Таксама ёсць новая раскладка з новымі камандамі. Атрымайце больш інфармацыі ў Даведачным цэнтры або пераключыцеся на новую раскладку ў Наладах.</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">Даступная новая раскладка спалучэнняў клавіш</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">Новая пашыраная раскладка спалучэнняў клавіш SandFly змяшчае мноства новых каманд. Атрымайце больш інфармацыі ў Даведачным цэнтры або пераключыцеся на новую раскладку ў Наладах.</string>
   <string name="keycombo_warning_content_description">Дадатковая інфармацыя пра клавішу-мадыфікатар</string>
   <string name="keycombo_menu_category_select_keymap">Раскладка клавіятуры</string>
   <string name="keycombo_menu_select_keymap">Выбраць раскладку клавіятуры</string>
   <string name="keycombo_menu_reset_keymap">Скінуць раскладку клавіятуры</string>
   <string name="keycombo_menu_view_system_keyboard_shortcuts">Праглядзець сістэмныя спалучэнні клавіш</string>
-  <string name="keycombo_menu_choose_trigger_modifier">Выберыце службовую клавішу</string>
-  <string name="keycombo_menu_alert_title_trigger_modifier">Выкарыстоўваць клавішу \"%1$s\" як клавішу-мадыфікатар?</string>
-  <string name="keycombo_menu_alert_message_trigger_modifier">У гэты момант SandFly выкарыстоўвае клавішу \"<xliff:g id="current_trigger_modifier" example="Alt">%1$s</xliff:g>\" як клавішу-мадыфікатар.</string>
-  <string name="keycombo_menu_alert_button_trigger_modifier">Скарыстаць клавішу \"%1$s\"</string>
-  <string name="keycombo_menu_announce_new_trigger_modifier">Службовая клавіша зменена на %1$s.</string>
+  <string name="keycombo_menu_choose_trigger_modifier">Выбар клавішы SandFly</string>
+  <string name="keycombo_menu_announce_new_trigger_modifier">Клавіша SandFly зменена на \"%1$s\".</string>
   <string name="keycombo_menu_announce_active_keymap">Раскладк %1$s зараз актыўная.</string>
   <string name="keycombo_menu_announce_reset_keymap">Раскладка клавіятуры была скінута.</string>
   <string name="keycombo_announce_shortcut_not_supported">Спалучэнне клавіш не падтрымліваецца</string>
-  <string name="value_default_keymap">Стандартная раскладка клавіятуры</string>
-  <string name="value_new_keymap">Пашыраная раскладка спалучэнняў клавіш</string>
+  <string name="value_new_keymap">Раскладка клавіятуры SandFly</string>
   <string name="keycombo_menu_category_navigation">Дзеянні навігацыі</string>
   <string name="keycombo_menu_navigate_next">Пераход да наступнага элемента</string>
   <string name="keycombo_menu_navigate_previous">Пераход да папярэдняга элемента</string>
@@ -264,7 +253,7 @@
   <string name="message_in_reset_keymap_confirm_dialog">Вы ўпэўненыя, што хочаце скінуць свае спалучэнні клавіш для гэтай раскладкі клавіятуры да стандартных значэнняў? Звярніце ўвагу на тое, што гэта дзеянне нельга будзе адрабіць.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">Скінуць</string>
   <string name="template_keycombo_menu_browse_mode_command">%1$s – у рэжыме прагляду</string>
-  <string name="keycombo_assign_dialog_default_keymap_instruction">Каб задаць новае спалучэнне клавіш, націсніце службовую клавішу %1$s у камбінацыі з патрэбнай клавішай.</string>
+  <string name="keycombo_assign_dialog_default_keymap_instruction">Каб задаць новае спалучэнне клавіш, націсніце клавішу SandFly \"%1$s\" разам з патрэбнай клавішай.</string>
   <string name="keycombo_unassigned">Не прызначана</string>
   <string name="save_button_in_keycombo_assign_dialog">Захаваць</string>
   <string name="clear_button_in_keycombo_assign_dialog">Ачысціць</string>
@@ -1810,4 +1799,10 @@
   <string name="title_pref_speech_dictionary">Слоўнік маўлення</string>
   <string name="speech_dictionary_all_apps">Усе праграмы</string>
   <string name="speech_dictionary_not_said"><xliff:g id="text" example="#">%1$s</xliff:g> не прамаўляецца</string>
+  <string name="keycombo_key_modifier_insert">Insert</string>
+  <string name="keycombo_key_modifier_numpad_insert">Insert на лічбавай клавіятуры</string>
+  <string name="keycombo_menu_navigate_next_paragraph">Перайсці да наступнага абзаца</string>
+  <string name="keycombo_menu_navigate_previous_paragraph">Перайсці да папярэдняга абзаца</string>
+  <string name="keycombo_key_modifier_ctrl_alt">Ctrl + Alt</string>
+  <string name="value_voiceover_keymap">Раскладка клавіятуры VoiceOver</string>
 </resources>

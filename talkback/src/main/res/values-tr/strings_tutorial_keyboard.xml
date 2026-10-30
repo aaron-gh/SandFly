@@ -2,15 +2,13 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">SandFly klavye eğitimi</string>
     <string name="sandfly_keyboard_tutorial_no_key"><xliff:g id="command" example="Sonraki öğe">%1$s</xliff:g> için klavye kısayolu yok. “Komutlar” bölümünden bir kısayol atayın veya “Adımı atla”yı kullanın.</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">Tarayıcı modu için “Gelişmiş tuş eşleme” gerekir. <xliff:g id="settings_path" example="SandFly ayarları &gt; Klavye kısayolları &gt; Tuş eşleme seç">%1$s</xliff:g> bölümünden seçin veya “Adımı atla”yı kullanın.</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g> tuşuna iki kez</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">Ders tamamlandı. Sonraki derse başlamak için <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> tuşlarına basın.</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">Ders tamamlandı. Eğitimi bitirmek için <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> tuşlarına basın.</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">Web sayfaları</string>
 
-    <string name="sandfly_keyboard_tutorial_welcome_intro">Bu eğitim SandFly\'in klavye kısayollarını öğretir. Çoğu, <xliff:g id="key" example="Action">%1$s</xliff:g> tuşunu diğer tuşlarla birlikte kullanır. <xliff:g id="location" example="Eylem tuşu, soldaki Alt tuşunun yanındaki Windows tuşudur.">%2$s</xliff:g> Ctrl konuşmayı durdurur. Her ders bir talimat verir, siz belirttiği tuşlara basana kadar bekler, ardından sonrakini verir. Talimat, dersin adından sonraki ilk öğedir. İçindekiler tüm dersleri listeler; eğitim, kaldığınız dersten yeniden açılır.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">Bu eğitim SandFly\'in klavye kısayollarını öğretir. Çoğu, SandFly tuşunu (<xliff:g id="key" example="Action">%1$s</xliff:g>) diğer tuşlarla birlikte kullanır. <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> Ctrl konuşmayı durdurur. Her ders bir talimat verir, siz belirttiği tuşlara basana kadar bekler, ardından sonrakini verir. Talimat, dersin adından sonraki ilk öğedir. İçindekiler tüm dersleri listeler; eğitim, kaldığınız dersten yeniden açılır.</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">Eylem tuşu, soldaki Alt tuşunun yanındaki Windows tuşudur. Apple klavyelerde, boşluk çubuğunun yanındaki Komut tuşudur.</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">Alt tuşu boşluk çubuğunun yanındadır.</string>
     <string name="sandfly_keyboard_tutorial_welcome_start">Başlamak için <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> tuşlarına basın.</string>
 
     <string name="sandfly_keyboard_tutorial_move_intro">Sonraki öğe ve Önceki öğe, ekrandaki öğeler arasında okuma sırasıyla geçer.</string>
@@ -67,4 +65,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">Klavye alıştırması</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">Her klavye kısayolu, çalışmak yerine tuşlarını ve komutunu söyler. Sonraki öğe, Önceki öğe ve etkinleştirme çalışmaya devam eder.</string>
     <string name="sandfly_keyboard_tutorial_practice_step">Ne yaptığını duymak için herhangi bir klavye kısayoluna basın. Durdurmak için <xliff:g id="button" example="Alıştırmayı bitir">%1$s</xliff:g> düğmesini etkinleştirin.</string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">Ctrl ve Alt tuşlarını birlikte basılı tutun. İkisi de klavyenin sol alt köşesindedir.</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">Çoğu klavyede Ekle tuşu, ok tuşlarının üstündeki altı tuşluk gruptadır.</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">Sayısal tuş takımındaki Insert tuşu, Num Lock kapalıyken sayısal tuş takımının 0 tuşudur.</string>
 </resources>

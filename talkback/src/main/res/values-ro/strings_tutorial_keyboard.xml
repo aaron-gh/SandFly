@@ -2,14 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">Tutorial SandFly pentru tastatură</string>
     <string name="sandfly_keyboard_tutorial_no_key"><xliff:g id="command" example="Elementul următor">%1$s</xliff:g> nu are nicio comandă rapidă de la tastatură. Atribuie una în Comenzi sau folosește Omite pasul.</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">Modul de navigare necesită Configurare de taste îmbunătățită. Alege-o în <xliff:g id="settings_path" example="Setări SandFly &gt; Comenzi rapide de la tastatură &gt; Alege o aranjare a tastelor">%1$s</xliff:g> sau folosește Omite pasul.</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g> de două ori</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">Lecție finalizată. Apasă <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> pentru a începe lecția următoare.</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">Lecție finalizată. Apasă <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> pentru a încheia tutorialul.</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">Pagini web</string>
-    <string name="sandfly_keyboard_tutorial_welcome_intro">Acest tutorial te învață comenzile rapide de la tastatură ale SandFly. Majoritatea folosesc tasta <xliff:g id="key" example="Action">%1$s</xliff:g> împreună cu alte taste. <xliff:g id="location" example="Tasta de acțiuni este tasta Windows, de lângă tasta Alt din stânga.">%2$s</xliff:g> Ctrl oprește vorbirea. Fiecare lecție dă o instrucțiune, așteaptă până apeși tastele pe care le numește, apoi o dă pe următoarea. Instrucțiunea este primul element după numele lecției. Cuprins listează toate lecțiile, iar tutorialul se redeschide la lecția la care ai rămas.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">Acest tutorial te învață comenzile rapide de la tastatură ale SandFly. Majoritatea folosesc tasta SandFly, <xliff:g id="key" example="Action">%1$s</xliff:g>, împreună cu alte taste. <xliff:g id="location" example="Tasta de acțiuni este tasta Windows, de lângă tasta Alt din stânga.">%2$s</xliff:g> Ctrl oprește vorbirea. Fiecare lecție dă o instrucțiune, așteaptă până apeși tastele pe care le numește, apoi o dă pe următoarea. Instrucțiunea este primul element după numele lecției. Cuprins listează toate lecțiile, iar tutorialul se redeschide la lecția la care ai rămas.</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">Tasta de acțiuni este tasta Windows, de lângă tasta Alt din stânga. Pe tastaturile Apple, este tasta Comandă, de lângă bara de spațiu.</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">Tasta Alt se află lângă bara de spațiu.</string>
     <string name="sandfly_keyboard_tutorial_welcome_start">Apasă <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> pentru a începe.</string>
     <string name="sandfly_keyboard_tutorial_move_intro">Elementul următor și Elementul anterior parcurg elementele de pe ecran în ordinea de citire.</string>
     <string name="sandfly_keyboard_tutorial_move_next">Apasă <xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g> pentru a trece la elementul următor. Continuă până ajungi la <xliff:g id="item" example="Ouă">%2$s</xliff:g>.</string>
@@ -53,4 +51,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">Exersarea tastaturii</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">Fiecare comandă rapidă de la tastatură își spune tastele și comanda în loc s-o execute. Elementul următor, Elementul anterior și activarea funcționează în continuare.</string>
     <string name="sandfly_keyboard_tutorial_practice_step">Apasă orice comandă rapidă de la tastatură pentru a auzi ce face. Pentru a opri, activează <xliff:g id="button" example="Încheie exersarea">%1$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">Ține apăsate simultan Ctrl și Alt. Ambele sunt în stânga jos pe tastatură.</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">Pe majoritatea tastaturilor, Inserează (Insert) se află în grupul de șase taste de deasupra tastelor săgeți.</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">Inserare de pe tastatura numerică este tasta 0 de pe tastatura numerică, cu Num Lock dezactivat.</string>
 </resources>

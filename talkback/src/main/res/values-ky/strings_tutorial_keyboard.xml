@@ -2,14 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">SandFly баскычтоп үйрөткүчү</string>
     <string name="sandfly_keyboard_tutorial_no_key"><xliff:g id="command" example="Кийинки нерсе">%1$s</xliff:g> аракетинин ыкчам баскычы жок. Аны «Командалар» бөлүмүнөн дайындаңыз же «Кадамды өткөрүп жиберүү» баскычын колдонуңуз.</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">Кароо режими үчүн «Жакшыртылган баскычтардын айкалыш конфигурациясы» керек. Аны <xliff:g id="settings_path" example="SandFly параметрлери &gt; Ыкчам баскычтар &gt; Баскычтардын жайгашуусун тандоо">%1$s</xliff:g> бөлүмүнөн тандаңыз же «Кадамды өткөрүп жиберүү» баскычын колдонуңуз.</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g> эки жолу</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">Сабак бүттү. Кийинки сабакты баштоо үчүн <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> баскычын басыңыз.</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">Сабак бүттү. Үйрөткүчтү бүтүрүү үчүн <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> баскычын басыңыз.</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">Веб баракчалар</string>
-    <string name="sandfly_keyboard_tutorial_welcome_intro">Бул үйрөткүч SandFly\'дын ыкчам баскычтарын үйрөтөт. Алардын көбү <xliff:g id="key" example="Action">%1$s</xliff:g> баскычын башка баскычтар менен бирге колдонот. <xliff:g id="location" example="Аракет баскычы – сол жактагы Alt баскычынын жанындагы Windows баскычы.">%2$s</xliff:g> Ctrl кепти токтотот. Ар бир сабак көрсөтмө берет, сиз анда аталган баскычтарды басканыңызды күтөт, андан кийин кийинкисин берет. Көрсөтмө – сабактын аталышынан кийинки биринчи нерсе. «Мазмуну» бардык сабактарды көрсөтөт, ал эми үйрөткүч сиз токтогон сабактан кайра ачылат.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">Бул үйрөткүч SandFly\'дын ыкчам баскычтарын үйрөтөт. Алардын көбү SandFly баскычын (<xliff:g id="key" example="Action">%1$s</xliff:g>) башка баскычтар менен бирге колдонот. <xliff:g id="location" example="Аракет баскычы – сол жактагы Alt баскычынын жанындагы Windows баскычы.">%2$s</xliff:g> Ctrl кепти токтотот. Ар бир сабак көрсөтмө берет, сиз анда аталган баскычтарды басканыңызды күтөт, андан кийин кийинкисин берет. Көрсөтмө – сабактын аталышынан кийинки биринчи нерсе. «Мазмуну» бардык сабактарды көрсөтөт, ал эми үйрөткүч сиз токтогон сабактан кайра ачылат.</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">Аракет баскычы – сол жактагы Alt баскычынын жанындагы Windows баскычы. Apple баскычтопторунда бул Боштук баскычынын жанындагы Command баскычы.</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">Alt баскычы Боштук баскычынын жанында.</string>
     <string name="sandfly_keyboard_tutorial_welcome_start">Баштоо үчүн <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> баскычын басыңыз.</string>
     <string name="sandfly_keyboard_tutorial_move_intro">«Кийинки нерсе» жана «Мурунку нерсе» экрандагы нерселер боюнча окуу ирети менен өтөт.</string>
     <string name="sandfly_keyboard_tutorial_move_next">Кийинки нерсеге өтүү үчүн <xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g> баскычын басыңыз. <xliff:g id="item" example="Жумуртка">%2$s</xliff:g> нерсесине жеткенче улантыңыз.</string>
@@ -53,4 +51,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">Баскычтоп көнүгүүсү</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">Ар бир ыкчам баскыч аткарылбай, өзүнүн баскычтарын жана командасын айтат. «Кийинки нерсе», «Мурунку нерсе» жана иштетүү мурдагыдай иштейт.</string>
     <string name="sandfly_keyboard_tutorial_practice_step">Эмне кыларын угуу үчүн каалаган ыкчам баскычты басыңыз. Токтотуу үчүн <xliff:g id="button" example="Көнүгүүнү бүтүрүү">%1$s</xliff:g> баскычын иштетиңиз.</string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">Ctrl жана Alt баскычтарын чогуу басып кармап туруңуз. Экөө тең баскычтоптун сол жак ылдыйында.</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">Көпчүлүк баскычтоптордо Кыстаруу (Insert) баскычы жебе баскычтарынын үстүндөгү алты баскычтан турган топто.</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">Сандык Insert баскычы – Num Lock өчүк болгондо сандык баскычтоптун 0 баскычы.</string>
 </resources>

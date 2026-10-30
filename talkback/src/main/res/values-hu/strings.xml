@@ -117,28 +117,17 @@
       &lt;li&gt;A módosító billentyűk némelyike eltér.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">További információ a billentyűzetkiosztásról</string>
   <string name="keycombo_go_to_settings">Ugrás a Beállításokhoz</string>
-  <string name="keycombo_new_keymap_notification_dialog_positive_button">Rendben</string>
-  <string name="keycombo_new_keymap_notification_dialog_negative_button">Beállítások</string>
-  <string name="keycombo_new_keymap_notification_dialog_neutral_button">További információ</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_classic_keymap">A klasszikus billentyűzetkiosztás már nem támogatott</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">Most a SandFly alapértelmezett billentyűzetkiosztását használja. Van egy új, bővített billentyűzetkiosztás is számos új paranccsal. Váltson át rá a Beállításokban, vagy tekintse meg a Súgót.</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">Rendelkezésre áll egy új billentyűzetkiosztás</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">A SandFly új, bővített billentyűzetkiosztása számos új parancsot tartalmaz. Váltson át rá a Beállításokban, vagy tekintse meg a Súgót.</string>
   <string name="keycombo_warning_content_description">További információ az Ön módosító billentyűjéről</string>
   <string name="keycombo_menu_category_select_keymap">Billentyűzetkiosztás</string>
   <string name="keycombo_menu_select_keymap">Billentyűzetkiosztás választása</string>
   <string name="keycombo_menu_reset_keymap">Billentyűzetkiosztás visszaállítása</string>
   <string name="keycombo_menu_view_system_keyboard_shortcuts">Rendszer-billentyűparancsok megtekintése</string>
-  <string name="keycombo_menu_choose_trigger_modifier">Módosító billentyű választása</string>
-  <string name="keycombo_menu_alert_title_trigger_modifier">A(z) %1$s billentyűt szeretné használni módosító billentyűként?</string>
-  <string name="keycombo_menu_alert_message_trigger_modifier">A SandFly jelenleg a következőt használja módosító billentyűként: <xliff:g id="current_trigger_modifier" example="Alt">%1$s</xliff:g>.</string>
-  <string name="keycombo_menu_alert_button_trigger_modifier">%1$s használata</string>
-  <string name="keycombo_menu_announce_new_trigger_modifier">A módosító billentyű a következőre változott: %1$s.</string>
+  <string name="keycombo_menu_choose_trigger_modifier">SandFly-billentyű kiválasztása</string>
+  <string name="keycombo_menu_announce_new_trigger_modifier">A SandFly-billentyű a következőre módosult: %1$s.</string>
   <string name="keycombo_menu_announce_active_keymap">%1$s mostantól aktív.</string>
   <string name="keycombo_menu_announce_reset_keymap">Billentyűzetkiosztás visszaállítva.</string>
   <string name="keycombo_announce_shortcut_not_supported">A billentyűkód nem támogatott</string>
-  <string name="value_default_keymap">Alapértelmezett billentyűzetkiosztás</string>
-  <string name="value_new_keymap">Továbbfejlesztett billentyűzetkiosztás</string>
+  <string name="value_new_keymap">SandFly-billentyűzetkiosztás</string>
   <string name="keycombo_menu_category_navigation">Navigációs műveletek</string>
   <string name="keycombo_menu_navigate_next">Ugrás a következő elemre</string>
   <string name="keycombo_menu_navigate_previous">Ugrás az előző elemre</string>
@@ -266,7 +255,7 @@
   <string name="message_in_reset_keymap_confirm_dialog">Biztosan visszaállítja a billentyűzetkiosztás billentyűkódjait az alapértelmezett értékekre? Felhívjuk figyelmét, hogy ezt a műveletet nem lehet visszavonni.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">Visszaállítás</string>
   <string name="template_keycombo_menu_browse_mode_command">%1$s böngészés módban</string>
-  <string name="keycombo_assign_dialog_default_keymap_instruction">Gyorsparancs törlése a %1$s módosító billentyűvel új gyorsparancs beállításához.</string>
+  <string name="keycombo_assign_dialog_default_keymap_instruction">Új billentyűparancs beállításához nyomja meg a billentyűkombinációt a(z) %1$s SandFly-billentyűvel.</string>
   <string name="keycombo_unassigned">Nincs társítva</string>
   <string name="save_button_in_keycombo_assign_dialog">Mentés</string>
   <string name="clear_button_in_keycombo_assign_dialog">Törlés</string>
@@ -1804,4 +1793,10 @@
   <string name="title_pref_speech_dictionary">Beszédszótár</string>
   <string name="speech_dictionary_all_apps">Az összes alkalmazás</string>
   <string name="speech_dictionary_not_said"><xliff:g id="text" example="#">%1$s</xliff:g> nincs kimondva</string>
+  <string name="keycombo_key_modifier_insert">Insert</string>
+  <string name="keycombo_key_modifier_numpad_insert">Numerikus billentyűzet – Insert</string>
+  <string name="keycombo_menu_navigate_next_paragraph">Navigálás a következő bekezdésre</string>
+  <string name="keycombo_menu_navigate_previous_paragraph">Navigálás az előző bekezdésre</string>
+  <string name="keycombo_key_modifier_ctrl_alt">Ctrl + Alt</string>
+  <string name="value_voiceover_keymap">VoiceOver-billentyűzetkiosztás</string>
 </resources>

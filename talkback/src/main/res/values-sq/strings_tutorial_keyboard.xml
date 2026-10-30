@@ -2,15 +2,13 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">Udhëzuesi i tastierës së SandFly</string>
     <string name="sandfly_keyboard_tutorial_no_key"><xliff:g id="command" example="Artikulli tjetër">%1$s</xliff:g> nuk ka shkurtore të tastierës. Cakto një te Komandat ose përdor Kapërce hapin.</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">Modaliteti i shfletimit kërkon Hartën e përmirësuar të tasteve. Zgjidhe te <xliff:g id="settings_path" example="Cilësimet e SandFly &gt; Shkurtoret e tastierës &gt; Zgjidh një hartë të tasteve">%1$s</xliff:g> ose përdor Kapërce hapin.</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g> dy herë</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">Mësimi përfundoi. Shtyp <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> për të nisur mësimin tjetër.</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">Mësimi përfundoi. Shtyp <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> për të përfunduar udhëzuesin.</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">Faqet e uebit</string>
 
-    <string name="sandfly_keyboard_tutorial_welcome_intro">Ky udhëzues mëson shkurtoret e tastierës së SandFly. Shumica e tyre përdorin tastin <xliff:g id="key" example="Action">%1$s</xliff:g> me taste të tjera. <xliff:g id="location" example="Tasti i veprimit është tasti Windows, pranë tastit Alt majtas.">%2$s</xliff:g> Ctrl e ndalon të folurit. Çdo mësim jep një udhëzim, pret derisa të shtypësh tastet që përmend dhe pastaj jep tjetrin. Udhëzimi është artikulli i parë pas emrit të mësimit. Përmbajtja liston çdo mësim, dhe udhëzuesi rihapet te mësimi ku ishe.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">Ky udhëzues mëson shkurtoret e tastierës së SandFly. Shumica e tyre përdorin tastin e SandFly, <xliff:g id="key" example="Action">%1$s</xliff:g>, me taste të tjera. <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> Ctrl e ndalon të folurit. Çdo mësim jep një udhëzim, pret derisa të shtypësh tastet që përmend dhe pastaj jep tjetrin. Udhëzimi është artikulli i parë pas emrit të mësimit. Përmbajtja liston çdo mësim, dhe udhëzuesi rihapet te mësimi ku ishe.</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">Tasti i veprimit është tasti Windows, pranë tastit Alt majtas. Në tastierat Apple, është tasti Command, pranë shiritit të hapësirës.</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">Tasti Alt është pranë shiritit të hapësirës.</string>
     <string name="sandfly_keyboard_tutorial_welcome_start">Shtyp <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> për të filluar.</string>
 
     <string name="sandfly_keyboard_tutorial_move_intro">Artikulli tjetër dhe Artikulli i mëparshëm lëvizin nëpër artikujt në ekran sipas radhës së leximit.</string>
@@ -67,4 +65,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">Praktika e tastierës</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">Çdo shkurtore e tastierës thotë tastet dhe komandën e saj në vend që ta ekzekutojë. Artikulli tjetër, Artikulli i mëparshëm dhe aktivizimi funksionojnë ende.</string>
     <string name="sandfly_keyboard_tutorial_practice_step">Shtyp çfarëdo shkurtoreje të tastierës për të dëgjuar çfarë bën. Për të ndaluar, aktivizo <xliff:g id="button" example="Përfundo praktikën">%1$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">Mbaj shtypur njëkohësisht Ctrl dhe Alt. Të dy ndodhen poshtë majtas në tastierë.</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">Në shumicën e tastierave, tasti Fut është në grupin e gjashtë tasteve mbi tastet e shigjetave.</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">Numpad insert është tasti 0 i bllokut numerik, me Num Lock të çaktivizuar.</string>
 </resources>

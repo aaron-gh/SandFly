@@ -2,14 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">SandFly কীবোর্ড টিউটোরিয়াল</string>
     <string name="sandfly_keyboard_tutorial_no_key"><xliff:g id="command" example="পরের আইটেম">%1$s</xliff:g>-এর কোনও কীবোর্ড শর্টকাট নেই। “কমান্ড”-এ একটি অ্যাসাইন করুন, বা “ধাপ এড়িয়ে যান” ব্যবহার করুন।</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">ব্রাউজ মোডের জন্য “উন্নত কীম্যাপ” দরকার। <xliff:g id="settings_path" example="SandFly সেটিংস &gt; কীবোর্ড শর্টকাট &gt; একটি কীম্যাপ বাছুন">%1$s</xliff:g>-এ এটি বেছে নিন, বা “ধাপ এড়িয়ে যান” ব্যবহার করুন।</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="অ্যাকশন">%1$s</xliff:g> দুবার</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">পাঠ সম্পূর্ণ। পরের পাঠ শুরু করতে <xliff:g id="keys" example="অ্যাকশন + স্পেস">%1$s</xliff:g> প্রেস করুন।</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">পাঠ সম্পূর্ণ। টিউটোরিয়াল শেষ করতে <xliff:g id="keys" example="অ্যাকশন + স্পেস">%1$s</xliff:g> প্রেস করুন।</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">ওয়েব পেজ</string>
-    <string name="sandfly_keyboard_tutorial_welcome_intro">এই টিউটোরিয়াল SandFly-এর কীবোর্ড শর্টকাট শেখায়। এগুলির বেশিরভাগ অন্য কীয়ের সাথে <xliff:g id="key" example="অ্যাকশন">%1$s</xliff:g> কী ব্যবহার করে। <xliff:g id="location" example="অ্যাকশন কী হল Windows কী, বাঁদিকের Alt কীয়ের পাশে।">%2$s</xliff:g> Ctrl স্পিচ থামায়। প্রতিটি পাঠ একটি নির্দেশ দেয়, আপনি এতে বলা কীগুলি প্রেস না করা পর্যন্ত অপেক্ষা করে, তারপর পরেরটি দেয়। নির্দেশটি পাঠের নামের পরের প্রথম আইটেম। “সূচিপত্র” সব পাঠ দেখায়, এবং টিউটোরিয়াল আপনি যে পাঠে ছিলেন সেখানেই আবার খোলে।</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">এই টিউটোরিয়াল SandFly-এর কীবোর্ড শর্টকাট শেখায়। এগুলির বেশিরভাগ অন্য কীয়ের সাথে SandFly কী, <xliff:g id="key" example="Action">%1$s</xliff:g>, ব্যবহার করে। <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> Ctrl স্পিচ থামায়। প্রতিটি পাঠ একটি নির্দেশ দেয়, আপনি এতে বলা কীগুলি প্রেস না করা পর্যন্ত অপেক্ষা করে, তারপর পরেরটি দেয়। নির্দেশটি পাঠের নামের পরের প্রথম আইটেম। “সূচিপত্র” সব পাঠ দেখায়, এবং টিউটোরিয়াল আপনি যে পাঠে ছিলেন সেখানেই আবার খোলে।</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">অ্যাকশন কী হল Windows কী, বাঁদিকের Alt কীয়ের পাশে। Apple কীবোর্ডে এটি Command কী, স্পেস বারের পাশে।</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">Alt কী স্পেস বারের পাশে।</string>
     <string name="sandfly_keyboard_tutorial_welcome_start">শুরু করতে <xliff:g id="keys" example="অ্যাকশন + স্পেস">%1$s</xliff:g> প্রেস করুন।</string>
     <string name="sandfly_keyboard_tutorial_move_intro">“পরের আইটেম” ও “আগের আইটেম” স্ক্রিনের আইটেমগুলির মধ্যে পড়ার ক্রমে যায়।</string>
     <string name="sandfly_keyboard_tutorial_move_next">পরের আইটেমে যেতে <xliff:g id="keys" example="অ্যাকশন + ডানদিকের তীরচিহ্ন">%1$s</xliff:g> প্রেস করুন। <xliff:g id="item" example="ডিম">%2$s</xliff:g> পর্যন্ত চালিয়ে যান।</string>
@@ -53,4 +51,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">কীবোর্ড অনুশীলন</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">প্রতিটি কীবোর্ড শর্টকাট চালানোর বদলে তার কী ও কমান্ড বলে। “পরের আইটেম”, “আগের আইটেম” এবং অ্যাক্টিভেট করা এখনও কাজ করে।</string>
     <string name="sandfly_keyboard_tutorial_practice_step">কোনও কীবোর্ড শর্টকাট প্রেস করে শুনুন সেটি কী করে। থামাতে <xliff:g id="button" example="অনুশীলন শেষ করুন">%1$s</xliff:g> অ্যাক্টিভেট করুন।</string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">Ctrl এবং Alt একসাথে প্রেস করে ধরে রাখুন। দুটিই কীবোর্ডের নিচে বাঁদিকে আছে।</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">বেশিরভাগ কীবোর্ডে, ইনসার্ট অ্যারো কীগুলির উপরে ছয়টি কীয়ের গ্রুপে থাকে।</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">নামপ্যাড ইনসার্ট হল নম্বর প্যাডের 0 কী, Num Lock বন্ধ থাকলে।</string>
 </resources>

@@ -117,28 +117,17 @@
       &lt;li&gt;განსხვავდება ზოგიერთი მოდიფიკატორი კლავიში.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">შეიტყვეთ მეტი კლავიშთა განლაგების შესახებ</string>
   <string name="keycombo_go_to_settings">პარამეტრებზე გადასვლა</string>
-  <string name="keycombo_new_keymap_notification_dialog_positive_button">გასაგებია</string>
-  <string name="keycombo_new_keymap_notification_dialog_negative_button">პარამეტრები</string>
-  <string name="keycombo_new_keymap_notification_dialog_neutral_button">შეიტყვეთ მეტი</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_classic_keymap">კლავიშთა კლასიკური განლაგება აღარ არის მხარდაჭერილი</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">ახლა იყენებთ SandFly-ის კლავიშთა ნაგულისხმევ განლაგებას. ასევე, არსებობს გაუმჯობესებული ახალი განლაგება ბევრი ახალი ბრძანებით. შეიტყვეთ მეტი დახმარების ცენტრში ან გადართეთ კლავიშთა ახალ განლაგებაზე.</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">ხელმისაწვდომია კლავიშთა ახალი განლაგება</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">SandFly-ის კლავიშთა გაუმჯობესებული ახალი განლაგებით ემატა ბევრი ახალი ბრძანება. შეიტყვეთ მეტი დახმარების ცენტრში ან გადართეთ კლავიშთა ახალ განლაგებაზე.</string>
   <string name="keycombo_warning_content_description">მეტი ინფორმაცია თქვენი მოდიფიკატორი კლავიშის შესახებ</string>
   <string name="keycombo_menu_category_select_keymap">კლავიშთა განლაგება</string>
   <string name="keycombo_menu_select_keymap">განლაგების არჩევა</string>
   <string name="keycombo_menu_reset_keymap">განლაგების გადაყენება</string>
   <string name="keycombo_menu_view_system_keyboard_shortcuts">სისტემის კლავიატურის მალსახმობების ნახვა</string>
-  <string name="keycombo_menu_choose_trigger_modifier">აირჩიეთ მოდიფიკატორი კლავიში</string>
-  <string name="keycombo_menu_alert_title_trigger_modifier">გსურთ %1$s-ის თქვენს მოდიფიკატორ კლავიშად გამოყენება?</string>
-  <string name="keycombo_menu_alert_message_trigger_modifier">ამჟამად SandFly მოდიფიკატორი კლავიშის სახით <xliff:g id="current_trigger_modifier" example="Alt">%1$s</xliff:g>-ს იყენებს.</string>
-  <string name="keycombo_menu_alert_button_trigger_modifier">%1$s-ის გამოყენება</string>
-  <string name="keycombo_menu_announce_new_trigger_modifier">მოდიფიკატორი კლავიში გახდა %1$s.</string>
+  <string name="keycombo_menu_choose_trigger_modifier">SandFly-ის კლავიშის არჩევა</string>
+  <string name="keycombo_menu_announce_new_trigger_modifier">SandFly-ის კლავიში შეიცვალა და გახდა %1$s.</string>
   <string name="keycombo_menu_announce_active_keymap">%1$s გააქტიურდა.</string>
   <string name="keycombo_menu_announce_reset_keymap">განლაგება გადაყენებულია.</string>
   <string name="keycombo_announce_shortcut_not_supported">მალსახმობი მხარდაუჭერელია</string>
-  <string name="value_default_keymap">ნაგულისხმევი განლაგება</string>
-  <string name="value_new_keymap">გაუმჯობესებული კლავიშთა განლაგება</string>
+  <string name="value_new_keymap">SandFly-ის კლავიშთა განლაგება</string>
   <string name="keycombo_menu_category_navigation">ნავიგაციის ქმედებები</string>
   <string name="keycombo_menu_navigate_next">შემდეგ ერთეულზე გადასვლა</string>
   <string name="keycombo_menu_navigate_previous">წინა ერთეულზე გადასვლა</string>
@@ -266,7 +255,7 @@
   <string name="message_in_reset_keymap_confirm_dialog">ნამდვილად გსურთ ამ განლაგებაში არსებული მალსახმობების კლავიშების ნაგულისხმევ მნიშვნელობებზე დაბრუნება? გთხოვთ, გაითვალისწინოთ, რომ ამ მოქმედების გაუქმება შეუძლებელი იქნება.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">გადაყენება</string>
   <string name="template_keycombo_menu_browse_mode_command">%1$s არის დათვალიერების რეჟიმში</string>
-  <string name="keycombo_assign_dialog_default_keymap_instruction">ახალი მალსახმობის დასაყენებლად, დააჭირეთ კლავიშთა კომბინაციას %1$s მოდიფიკატორ კლავიშთან ერთად.</string>
+  <string name="keycombo_assign_dialog_default_keymap_instruction">დააჭირეთ კლავიშთა კომბინაციას %1$s SandFly კლავიშით, რათა დააყენოთ ახალი მალსახმობი.</string>
   <string name="keycombo_unassigned">მიუმაგრებელი</string>
   <string name="save_button_in_keycombo_assign_dialog">შენახვა</string>
   <string name="clear_button_in_keycombo_assign_dialog">გასუფთავება</string>
@@ -1804,4 +1793,10 @@
   <string name="title_pref_speech_dictionary">მეტყველების ლექსიკონი</string>
   <string name="speech_dictionary_all_apps">ყველა აპი</string>
   <string name="speech_dictionary_not_said"><xliff:g id="text" example="#">%1$s</xliff:g> არ წარმოითქმება</string>
+  <string name="keycombo_key_modifier_insert">Insert</string>
+  <string name="keycombo_key_modifier_numpad_insert">Insert რიცხვების პანელზე</string>
+  <string name="keycombo_menu_navigate_next_paragraph">შემდეგ აბზაცზე გადასვლა</string>
+  <string name="keycombo_menu_navigate_previous_paragraph">წინა აბზაცზე გადასვლა</string>
+  <string name="keycombo_key_modifier_ctrl_alt">Ctrl + Alt</string>
+  <string name="value_voiceover_keymap">VoiceOver-ის კლავიშთა განლაგება</string>
 </resources>

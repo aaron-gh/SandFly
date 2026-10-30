@@ -28,6 +28,8 @@ public interface KeyComboModel {
   int KEY_COMBO_CODE_INVALID = -1;
   int NO_MODIFIER = 0;
   int NO_PREFIX_KEY_CODE = 0;
+  // The modifier bit that stands for a held SandFly key, such as Insert. Android uses no such bit.
+  int HELD_KEY_MODIFIER = 0x40000000;
 
   // TODO: Migrating currently using (null) shared preference key to
   // classic_key_combo_model.

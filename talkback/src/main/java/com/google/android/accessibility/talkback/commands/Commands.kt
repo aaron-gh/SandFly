@@ -853,6 +853,7 @@ object Commands {
           "CHARACTER",
           "WORD",
           "LINE",
+          "PARAGRAPH",
           "HEADING",
           "LINK",
           "CONTROL",

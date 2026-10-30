@@ -39,7 +39,6 @@ import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityWindowInfo;
-import androidx.annotation.StringRes;
 import androidx.annotation.VisibleForTesting;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.talkback.gesture.AppGestures;
@@ -94,7 +93,7 @@ import org.checkerframework.checker.nullness.qual.Nullable;
 public class KeyComboManager
     implements ServiceKeyEventListener, ServiceStateListener, AccessibilityEventListener {
   private static final String TAG = "KeyComboManager";
-  public static final int KEYMAP_DEFAULT = R.string.default_keymap_entry_value;
+  public static final int KEYMAP_DEFAULT = R.string.new_keymap_entry_value;
 
   /** These KeyEvent can works independently due to handle by input frameworks. */
   private static final ImmutableSet<Integer> KEY_EVENT_INDEPENDENT_FUNCTIONAL_KEYS =
@@ -148,6 +147,11 @@ public class KeyComboManager
 
     int modifier = keyEvent.getModifiers() & KEY_EVENT_MODIFIER_MASK;
     return KeyCombo.computeKeyComboCode(modifier, getConvertedKeyCode(keyEvent));
+  }
+
+  /** Returns keyComboCode that represents [keyEvent], with the SandFly key while it's held. */
+  public long getKeyComboCodeWithSandFlyKey(KeyEvent keyEvent) {
+    return KeyCombo.computeKeyComboCode(modifiersOf(keyEvent), getConvertedKeyCode(keyEvent));
   }
 
   /**
@@ -216,10 +220,11 @@ public class KeyComboManager
   private TalkBackAnalytics analytics;
   private int hardwareKeyboardStatus = HARDKEYBOARDHIDDEN_UNDEFINED;
   private A11yAlertDialogWrapper updateModifierKeysDialog;
+  // Whether a SandFly key that Android doesn't treat as a modifier, such as Insert, is down.
+  private boolean sandFlyKeyHeld;
   private KeyComboPassThroughState keyComboPassThroughState = KeyComboPassThroughState.INACTIVE;
   private ScheduledExecutorService scheduler;
   private Future<Boolean> scheduleToOpenSearchApp;
-  private NewKeymapNotificationDialog newKeymapNotificationDialog;
   private final ArrowKeyNavKeyHandler arrowKeyNavKeyHandler;
 
   private enum KeyComboPassThroughState {
@@ -372,6 +377,7 @@ public class KeyComboManager
    */
   @Override
   public boolean onKeyEvent(KeyEvent event, EventId eventId) {
+    trackSandFlyKey(event);
     if (keyEventDelegate != null) {
       if (keyEventDelegate.onKeyEvent(event, eventId)) {
         arrowKeyNavKeyHandler.onKeyEventConsumedElsewhere(event);
@@ -462,6 +468,7 @@ public class KeyComboManager
   /** Refreshes key combo model after key map changes. */
   public void refreshKeyComboModel() {
     keyComboModel = createKeyComboModel();
+    sandFlyKeyHeld = false;
   }
 
   /** Returns key combo model. */
@@ -490,9 +497,14 @@ public class KeyComboManager
             && (keyCombo.getPrefixKeyCode() != KeyComboModel.NO_PREFIX_KEY_CODE);
 
     StringBuilder assignedShortcut = new StringBuilder();
-    // Append trigger modifier if key combo code contains it.
+    // Append the SandFly key if key combo code contains it.
     if (keyCombo.isTriggerModifierUsed()) {
-      appendModifiers(triggerModifier, assignedShortcut);
+      @Nullable SandFlyKey sandFlyKey = getSandFlyKey();
+      if (sandFlyKey != null) {
+        assignedShortcut.append(context.getString(sandFlyKey.getNameRes()));
+      } else {
+        appendModifiers(triggerModifier, assignedShortcut);
+      }
     }
     // Append modifier except trigger modifier.
     appendModifiers(keyCombo.getModifiers(), assignedShortcut);
@@ -514,30 +526,8 @@ public class KeyComboManager
         if (hardwareKeyboardStatus == KEYBOARDHIDDEN_YES) {
           analytics.onKeymapTypeUsed(keyComboModel);
           analytics.onModifierKeyUsed(keyComboModel.getTriggerModifier());
-        } else if (hardwareKeyboardStatus == HARDKEYBOARDHIDDEN_NO
-            && FeatureFlagReader.enableNewKeymap(context)) {
-          maybeSwitchKeymapAndShowNewKeymapNotificationDialog();
         }
       }
-    }
-  }
-
-  /**
-   * Switches to the default keymap if the user was using the classic keymap or if the new keymap
-   * gets disabled after its release. Also shows the new keymap notification dialog if the new
-   * keymap is enabled and the user hasn't seen the dialog yet.
-   */
-  public void maybeSwitchKeymapAndShowNewKeymapNotificationDialog() {
-    if (shouldSwitchToDefaultKeymap()) {
-      // If the user switched to the new keymap after its release and the new keymap PH flag is
-      // disabled, fall back to the default keymap; in this case, the new keymap notification dialog
-      // will not be shown due to the new keymap flag being disabled.
-      switchKeymap(R.string.default_keymap_entry_value);
-      refreshKeyComboModel();
-    }
-
-    if (shouldShowNewKeymapNotificationDialog()) {
-      showNewKeymapNotificationDialog();
     }
   }
 
@@ -564,6 +554,10 @@ public class KeyComboManager
 
   /** Returns the user facing name of the given modifier. */
   public String getTriggerKeyUserFacingName(int modifier) {
+    @Nullable SandFlyKey sandFlyKey = getSandFlyKey();
+    if (sandFlyKey != null && sandFlyKey.getModifiers() == modifier) {
+      return context.getString(sandFlyKey.getNameRes());
+    }
     return switch (modifier) {
       case KeyEvent.META_ALT_ON -> context.getString(R.string.keycombo_key_modifier_alt);
       case KeyEvent.META_META_ON -> context.getString(R.string.keycombo_key_modifier_meta);
@@ -755,104 +749,13 @@ public class KeyComboManager
     return browseModeOnlyCommands;
   }
 
-  // TODO: b/411392314 - Do not show the new keymap notification dialog on TV.
-  private boolean shouldShowNewKeymapNotificationDialog() {
-    if (!FeatureFlagReader.enableNewKeymap(context)) {
-      return false;
-    }
-
-    int userNotifiedOfNewKeymap =
-        SharedPreferencesUtils.getIntPref(
-            sharedPreferences,
-            context.getResources(),
-            R.string.pref_notify_new_keymap_key,
-            R.integer.pref_notify_new_keymap_value_default);
-    int userNotNotifiedOfNewKeymapYet =
-        context.getResources().getInteger(R.integer.pref_notify_new_keymap_value_default);
-
-    return userNotifiedOfNewKeymap == userNotNotifiedOfNewKeymapYet
-        && !(keyComboModel instanceof NewKeyComboModel);
-  }
-
-  private boolean shouldSwitchToDefaultKeymap() {
-    return !FeatureFlagReader.enableNewKeymap(context)
-        && !(keyComboModel instanceof DefaultKeyComboModel);
-  }
-
-  private void showNewKeymapNotificationDialog() {
-    boolean shouldShowDialogForClassicKeymapUsers =
-        sharedPreferences.getBoolean(
-            context.getString(R.string.pref_used_classic_keymap_key),
-            context.getResources().getBoolean(R.bool.pref_used_classic_keymap_default));
-    if (shouldShowDialogForClassicKeymapUsers) {
-      newKeymapNotificationDialog =
-          new NewKeymapNotificationDialog(
-              context,
-              R.string.keycombo_new_keymap_notification_dialog_title_for_classic_keymap,
-              R.string.keycombo_new_keymap_notification_dialog_message_for_classic_keymap);
-    } else {
-      newKeymapNotificationDialog =
-          new NewKeymapNotificationDialog(
-              context,
-              R.string.keycombo_new_keymap_notification_dialog_title_for_default_keymap,
-              R.string.keycombo_new_keymap_notification_dialog_message_for_default_keymap);
-    }
-    newKeymapNotificationDialog.showDialog();
-  }
-
-  /**
-   * Switch to the given keymap. This method is only used when the classic keymap is removed and/or
-   * when the new keymap is enabled.
-   */
-  private void switchKeymap(@StringRes int keymapEntryValueResId) {
-    String keymapEntryValue = context.getString(keymapEntryValueResId);
-    if (TextUtils.isEmpty(keymapEntryValue)) {
-      LogUtils.w(TAG, "switchKeymap: keymapEntryValue is empty");
-      return;
-    }
-
-    sharedPreferences
-        .edit()
-        .putString(context.getString(R.string.pref_select_keymap_key), keymapEntryValue)
-        .apply();
-  }
-
-  /**
-   * Make keymap default value consist with xml set up, which is the intended default keymap value.
-   */
+  /** Saves the SandFly keymap for new users and for users of the removed Default and classic keymaps. */
   private void initializeDefaultPreferenceValues() {
-    if (sharedPreferences.contains(context.getString(R.string.pref_select_keymap_key))) {
-      fallBackToDefaultKeymapIfNeeded();
-      return;
-    }
-
-    // Once the new keymap is released, the new keymap will be set by default for new users.
-    if (FeatureFlagReader.enableNewKeymap(context)) {
-      sharedPreferences
-          .edit()
-          .putString(
-              context.getString(R.string.pref_select_keymap_key),
-              context.getString(R.string.new_keymap_entry_value))
-          .apply();
-    } else {
-      sharedPreferences
-          .edit()
-          .putString(
-              context.getString(R.string.pref_select_keymap_key), context.getString(KEYMAP_DEFAULT))
-          .apply();
-    }
-  }
-
-  private void fallBackToDefaultKeymapIfNeeded() {
-    if (FeatureFlagReader.enableNewKeymap(context)) {
-      return;
-    }
-
-    String keymap = getKeymap();
-    if (keymap.equals(context.getString(R.string.new_keymap_entry_value))) {
-      switchKeymap(KEYMAP_DEFAULT);
-      refreshKeyComboModel();
-      LogUtils.w(TAG, "fallBackToDefaultKeymapIfNeeded: switch to default keymap");
+    String key = context.getString(R.string.pref_select_keymap_key);
+    String keymap = sharedPreferences.getString(key, null);
+    String value = context.getString(Keymap.of(context, keymap).getValueRes());
+    if (!value.equals(keymap)) {
+      sharedPreferences.edit().putString(key, value).apply();
     }
   }
 
@@ -869,6 +772,8 @@ public class KeyComboManager
             context.getString(R.string.keycombo_shortcut_navigate_previous_word),
             context.getString(R.string.keycombo_shortcut_navigate_next_line),
             context.getString(R.string.keycombo_shortcut_navigate_previous_line),
+            context.getString(R.string.keycombo_shortcut_navigate_next_paragraph),
+            context.getString(R.string.keycombo_shortcut_navigate_previous_paragraph),
             // Jump commands
             context.getString(R.string.keycombo_shortcut_navigate_next_aria_landmark),
             context.getString(R.string.keycombo_shortcut_navigate_previous_aria_landmark),
@@ -938,20 +843,7 @@ public class KeyComboManager
 
   /** Creates key combo model by keymap key and return it. */
   private KeyComboModel createKeyComboModel() {
-    String keymap = getKeymap();
-    if (keymap.equals(context.getString(R.string.new_keymap_entry_value))) {
-      return new NewKeyComboModel(context);
-    } else if (keymap.equals(context.getString(R.string.classic_keymap_entry_value))) {
-      // Classic keymap is not supported in 16.1 and later. If the user selected the classic keymap
-      // before its deprecation, record it in the shared preferences to show the new keymap
-      // notification dialog designed for classic keymap users and fall back to the default keymap.
-      sharedPreferences
-          .edit()
-          .putBoolean(context.getString(R.string.pref_used_classic_keymap_key), true)
-          .apply();
-      switchKeymap(KEYMAP_DEFAULT);
-    }
-    return new DefaultKeyComboModel(context);
+    return new NewKeyComboModel(context, Keymap.of(context, getKeymap()));
   }
 
   /** Appends modifier. */
@@ -987,6 +879,11 @@ public class KeyComboManager
   /** Appends string representation of target key code. */
   private void appendKey(int keyCode, StringBuilder sb) {
     if (keyCode <= 0 || KeyEvent.isModifierKey(keyCode)) {
+      return;
+    }
+    // A held SandFly key is named with the SandFly key.
+    @Nullable SandFlyKey sandFlyKey = getSandFlyKey();
+    if (sandFlyKey != null && sandFlyKey.isHeldKey() && keyCode == sandFlyKey.getKeyCode()) {
       return;
     }
 
@@ -1059,6 +956,28 @@ public class KeyComboManager
       }
     }
 
+    // A held SandFly key is SandFly's alone. Pressed twice, it turns browse mode on or off, as
+    // Action does.
+    @Nullable SandFlyKey sandFlyKey = getSandFlyKey();
+    if (sandFlyKey != null && sandFlyKey.isKey(event)) {
+      if (event.getRepeatCount() == 0) {
+        currentKeyCombo =
+            new KeyCombo(
+                KeyComboModel.NO_MODIFIER,
+                KeyComboModel.NO_PREFIX_KEY_CODE,
+                event.getKeyCode(),
+                /* triggerModifierUsed= */ true);
+        if (isBrowseModeSupported() && isEqualToLastKeyComboAndDurationLessThanThreshold()) {
+          setBrowseModeEnabled(!browseModeEnabled);
+          if (!browseModeEnabled) {
+            recordBrowseModeStateWhenOff(BROWSE_MODE_TURNED_OFF_BY_USER);
+          }
+        }
+      }
+      hasPartialMatch = true;
+      return true;
+    }
+
     // Android's own shortcuts with the Action key, which the tutorial can take while it teaches them.
     if (event.getRepeatCount() == 0
         && (event.getModifiers() & KEY_EVENT_MODIFIER_MASK) == KeyEvent.META_META_ON
@@ -1072,13 +991,17 @@ public class KeyComboManager
     int triggerModifier = keyComboModel.getTriggerModifier();
     event = convertMetaKeyCombo(triggerModifier, event);
     boolean hasModifier = triggerModifier != KeyComboModel.NO_MODIFIER;
+    int modifiers = modifiersOf(event);
     boolean pressedTriggerModifier =
-        hasModifier && ((triggerModifier & event.getModifiers()) == triggerModifier);
+        hasModifier && ((triggerModifier & modifiers) == triggerModifier);
+    // Only a pressed SandFly key leaves the modifiers, so Ctrl alone stays Ctrl where the SandFly key
+    // is Ctrl + Alt.
+    int otherModifiers = modifiers & ~(pressedTriggerModifier ? triggerModifier : 0);
     boolean startedSequenceKeyCombo =
         isSequenceKeyInfraSupported()
             && previousKeyCombo.getPrefixKeyCode() != KeyComboModel.KEY_COMBO_CODE_UNASSIGNED;
     boolean enabledBrowseMode = isBrowseModeEnabled();
-    int scriptModifiers = (event.getModifiers() & KEY_EVENT_MODIFIER_MASK) & ~triggerModifier;
+    int scriptModifiers = otherModifiers;
     KeyCombo scriptKeyCombo =
         new KeyCombo(
             scriptModifiers,
@@ -1133,7 +1056,7 @@ public class KeyComboManager
 
     currentKeyCombo =
         new KeyCombo(
-            (event.getModifiers() & KEY_EVENT_MODIFIER_MASK) & ~triggerModifier,
+            otherModifiers,
             KeyComboModel.NO_PREFIX_KEY_CODE,
             getConvertedKeyCode(event),
             pressedTriggerModifier);
@@ -1369,6 +1292,37 @@ public class KeyComboManager
       pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.sound(R.raw.chime_down));
     }
     keyComboPassThroughState = nextState;
+  }
+
+  /** Returns the SandFly key of the keymap. */
+  public @Nullable SandFlyKey getSandFlyKey() {
+    return keyComboModel instanceof NewKeyComboModel model ? model.getSandFlyKey() : null;
+  }
+
+  /** Notes whether a held SandFly key, such as Insert, is down. */
+  private void trackSandFlyKey(KeyEvent event) {
+    @Nullable SandFlyKey sandFlyKey = getSandFlyKey();
+    if (sandFlyKey == null || event.getKeyCode() != sandFlyKey.getKeyCode()) {
+      return;
+    }
+    if (event.getAction() == KeyEvent.ACTION_UP) {
+      sandFlyKeyHeld = false;
+    } else if (event.getAction() == KeyEvent.ACTION_DOWN && sandFlyKey.isKey(event)) {
+      sandFlyKeyHeld = true;
+    }
+  }
+
+  /** Returns the modifiers of [event], with the SandFly key's bit while a held SandFly key is down. */
+  public int modifiersOf(KeyEvent event) {
+    int modifiers = event.getModifiers() & KEY_EVENT_MODIFIER_MASK;
+    return sandFlyKeyHeld ? modifiers | KeyComboModel.HELD_KEY_MODIFIER : modifiers;
+  }
+
+  /** Returns whether the SandFly key is down while [event] happens. */
+  public boolean isSandFlyKeyPressed(KeyEvent event) {
+    int triggerModifier = keyComboModel.getTriggerModifier();
+    return triggerModifier != KeyComboModel.NO_MODIFIER
+        && (modifiersOf(event) & triggerModifier) == triggerModifier;
   }
 
   private boolean isAnyModifierKeyPressed(KeyEvent event) {

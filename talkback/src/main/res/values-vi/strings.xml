@@ -117,28 +117,17 @@
 &lt;li&gt;Có một số phím bổ trợ khác.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">Tìm hiểu thêm về sơ đồ bàn phím</string>
   <string name="keycombo_go_to_settings">Vào phần Cài đặt</string>
-  <string name="keycombo_new_keymap_notification_dialog_positive_button">Tôi hiểu</string>
-  <string name="keycombo_new_keymap_notification_dialog_negative_button">Cài đặt</string>
-  <string name="keycombo_new_keymap_notification_dialog_neutral_button">Tìm hiểu thêm</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_classic_keymap">Sơ đồ bàn phím kiểu cũ không còn được hỗ trợ</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">Bạn đang dùng sơ đồ bàn phím mặc định của SandFly. Có một sơ đồ bàn phím nâng cao mới có nhiều lệnh mới. Tìm hiểu thêm trong trung tâm trợ giúp hoặc chuyển sang sơ đồ bàn phím mới trong phần Cài đặt.</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">Có sơ đồ bàn phím mới</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">Sơ đồ bàn phím nâng cao mới của SandFly bổ sung nhiều lệnh mới. Tìm hiểu thêm trong trung tâm trợ giúp hoặc chuyển sang sơ đồ bàn phím mới trong phần Cài đặt.</string>
   <string name="keycombo_warning_content_description">Thông tin khác về phím bổ trợ của bạn</string>
   <string name="keycombo_menu_category_select_keymap">Sơ đồ bàn phím</string>
   <string name="keycombo_menu_select_keymap">Chọn sơ đồ bàn phím</string>
   <string name="keycombo_menu_reset_keymap">Đặt lại sơ đồ bàn phím</string>
   <string name="keycombo_menu_view_system_keyboard_shortcuts">Xem các phím tắt của hệ thống</string>
-  <string name="keycombo_menu_choose_trigger_modifier">Chọn phím bổ trợ</string>
-  <string name="keycombo_menu_alert_title_trigger_modifier">Dùng %1$s làm phím bổ trợ?</string>
-  <string name="keycombo_menu_alert_message_trigger_modifier">SandFly hiện dùng <xliff:g id="current_trigger_modifier" example="Alt">%1$s</xliff:g> làm phím bổ trợ.</string>
-  <string name="keycombo_menu_alert_button_trigger_modifier">Sử dụng %1$s</string>
-  <string name="keycombo_menu_announce_new_trigger_modifier">Đã đổi phím bổ trợ thành %1$s.</string>
+  <string name="keycombo_menu_choose_trigger_modifier">Chọn phím SandFly</string>
+  <string name="keycombo_menu_announce_new_trigger_modifier">Phím SandFly đã được thay đổi thành %1$s.</string>
   <string name="keycombo_menu_announce_active_keymap">%1$s đang hoạt động.</string>
   <string name="keycombo_menu_announce_reset_keymap">Đã đặt lại sơ đồ bàn phím.</string>
   <string name="keycombo_announce_shortcut_not_supported">Không hỗ trợ phím tắt</string>
-  <string name="value_default_keymap">Sơ đồ bàn phím mặc định</string>
-  <string name="value_new_keymap">Sơ đồ bàn phím nâng cao</string>
+  <string name="value_new_keymap">Sơ đồ bàn phím SandFly</string>
   <string name="keycombo_menu_category_navigation">Thao tác di chuyển</string>
   <string name="keycombo_menu_navigate_next">Chuyển đến mục tiếp theo</string>
   <string name="keycombo_menu_navigate_previous">Chuyển đến mục trước</string>
@@ -266,7 +255,7 @@
   <string name="message_in_reset_keymap_confirm_dialog">Bạn có chắc chắn muốn đặt lại các phím tắt của mình cho sơ đồ bàn phím này về các giá trị mặc định không? Xin lưu ý rằng bạn không thể hoàn tác hành động này.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">Đặt lại</string>
   <string name="template_keycombo_menu_browse_mode_command">%1$s ở chế độ duyệt web</string>
-  <string name="keycombo_assign_dialog_default_keymap_instruction">Nhấn tổ hợp phím với phím bổ trợ %1$s để đặt phím tắt mới.</string>
+  <string name="keycombo_assign_dialog_default_keymap_instruction">Nhấn tổ hợp phím với phím SandFly %1$s để đặt phím tắt mới.</string>
   <string name="keycombo_unassigned">Chưa gán</string>
   <string name="save_button_in_keycombo_assign_dialog">Lưu</string>
   <string name="clear_button_in_keycombo_assign_dialog">Xoá</string>
@@ -1800,4 +1789,10 @@
   <string name="title_pref_speech_dictionary">Từ điển giọng nói</string>
   <string name="speech_dictionary_all_apps">Tất cả ứng dụng</string>
   <string name="speech_dictionary_not_said">Không đọc <xliff:g id="text" example="#">%1$s</xliff:g></string>
+  <string name="keycombo_key_modifier_insert">Chèn</string>
+  <string name="keycombo_key_modifier_numpad_insert">Phím Insert trên bàn phím số</string>
+  <string name="keycombo_menu_navigate_next_paragraph">Chuyển đến đoạn tiếp theo</string>
+  <string name="keycombo_menu_navigate_previous_paragraph">Chuyển về đoạn trước</string>
+  <string name="keycombo_key_modifier_ctrl_alt">Ctrl + Alt</string>
+  <string name="value_voiceover_keymap">Sơ đồ bàn phím VoiceOver</string>
 </resources>

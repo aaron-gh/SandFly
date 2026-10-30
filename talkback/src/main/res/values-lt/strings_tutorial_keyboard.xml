@@ -2,14 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">SandFly klaviatūros mokymo programa</string>
     <string name="sandfly_keyboard_tutorial_no_key">Veiksmui „<xliff:g id="command" example="Kitas elementas">%1$s</xliff:g>“ nepriskirtas spartusis klavišas. Priskirkite jį skiltyje „Komandos“ arba naudokite „Praleisti veiksmą“.</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">Naršymo režimui reikia „Patobulinta klavišų schema“. Pasirinkite ją skiltyje <xliff:g id="settings_path" example="„SandFly“ nustatymai &gt; Spartieji klavišai &gt; Pasirinkti klavišų schemą">%1$s</xliff:g> arba naudokite „Praleisti veiksmą“.</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g> du kartus</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">Pamoka baigta. Paspauskite <xliff:g id="keys" example="Action + Space">%1$s</xliff:g>, kad pradėtumėte kitą pamoką.</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">Pamoka baigta. Paspauskite <xliff:g id="keys" example="Action + Space">%1$s</xliff:g>, kad baigtumėte mokymo programą.</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">Tinklalapiai</string>
-    <string name="sandfly_keyboard_tutorial_welcome_intro">Ši mokymo programa moko SandFly sparčiųjų klavišų. Dauguma jų naudoja klavišą „<xliff:g id="key" example="Action">%1$s</xliff:g>“ kartu su kitais klavišais. <xliff:g id="location" example="Veiksmų klavišas yra „Windows“ klavišas, esantis šalia kairiojo klavišo „Alt“.">%2$s</xliff:g> „Ctrl“ sustabdo kalbėjimą. Kiekviena pamoka pateikia nurodymą, laukia, kol paspausite jame nurodytus klavišus, tada pateikia kitą. Nurodymas yra pirmas elementas po pamokos pavadinimo. „Turinys“ pateikia visas pamokas, o mokymo programa vėl atidaroma toje pamokoje, kurioje buvote.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">Ši mokymo programa moko SandFly sparčiųjų klavišų. Dauguma jų naudoja „SandFly“ klavišą „<xliff:g id="key" example="Action">%1$s</xliff:g>“ kartu su kitais klavišais. <xliff:g id="location" example="Veiksmų klavišas yra „Windows“ klavišas, esantis šalia kairiojo klavišo „Alt“.">%2$s</xliff:g> „Ctrl“ sustabdo kalbėjimą. Kiekviena pamoka pateikia nurodymą, laukia, kol paspausite jame nurodytus klavišus, tada pateikia kitą. Nurodymas yra pirmas elementas po pamokos pavadinimo. „Turinys“ pateikia visas pamokas, o mokymo programa vėl atidaroma toje pamokoje, kurioje buvote.</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">Veiksmų klavišas yra „Windows“ klavišas, esantis šalia kairiojo klavišo „Alt“. „Apple“ klaviatūrose tai klavišas „Command“, esantis šalia tarpo klavišo.</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">Klavišas „Alt“ yra šalia tarpo klavišo.</string>
     <string name="sandfly_keyboard_tutorial_welcome_start">Paspauskite <xliff:g id="keys" example="Action + Space">%1$s</xliff:g>, kad pradėtumėte.</string>
     <string name="sandfly_keyboard_tutorial_move_intro">„Kitas elementas“ ir „Ankstesnis elementas“ pereina per ekrano elementus skaitymo tvarka.</string>
     <string name="sandfly_keyboard_tutorial_move_next">Paspauskite <xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g>, kad pereitumėte prie kito elemento. Tęskite, kol pasieksite „<xliff:g id="item" example="Kiaušiniai">%2$s</xliff:g>“.</string>
@@ -53,4 +51,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">Klaviatūros praktika</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">Kiekvienas spartusis klavišas, užuot atlikęs komandą, pasako savo klavišus ir komandą. „Kitas elementas“, „Ankstesnis elementas“ ir suaktyvinimas vis tiek veikia.</string>
     <string name="sandfly_keyboard_tutorial_practice_step">Paspauskite bet kurį spartųjį klavišą, kad išgirstumėte, ką jis daro. Norėdami baigti, suaktyvinkite „<xliff:g id="button" example="Baigti praktiką">%1$s</xliff:g>“.</string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">Kartu laikykite nuspaudę klavišus „Ctrl“ ir „Alt“. Abu yra kairėje klaviatūros apačioje.</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">Daugumoje klaviatūrų klavišas „Įterpti“ (Insert) yra šešių klavišų grupėje virš rodyklių klavišų.</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">Skaitmenų klaviatūros klavišas „Įterpti“ yra skaitmenų klaviatūros klavišas 0, kai „Num Lock“ išjungtas.</string>
 </resources>

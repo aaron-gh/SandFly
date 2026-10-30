@@ -2,14 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">SandFly пернетақта оқулығы</string>
     <string name="sandfly_keyboard_tutorial_no_key"><xliff:g id="command" example="Next item">%1$s</xliff:g> командасының пернелер тіркесімі жоқ. Оны «Командалар» бөлімінде тағайындаңыз не «Қадамды өткізіп жіберу» түймесін пайдаланыңыз.</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">Шолу режиміне «Жақсартылған пернетақта схемасы» қажет. Оны <xliff:g id="settings_path" example="SandFly settings &gt; Keyboard shortcuts &gt; Choose a keymap">%1$s</xliff:g> бөлімінде таңдаңыз не «Қадамды өткізіп жіберу» түймесін пайдаланыңыз.</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g> пернесін екі рет</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">Сабақ аяқталды. Келесі сабақты бастау үшін <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> тіркесімін басыңыз.</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">Сабақ аяқталды. Оқулықты аяқтау үшін <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> тіркесімін басыңыз.</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">Веб-беттер</string>
-    <string name="sandfly_keyboard_tutorial_welcome_intro">Бұл оқулық SandFly пернелер тіркесімдерін үйретеді. Олардың көбі басқа пернелермен бірге <xliff:g id="key" example="Action">%1$s</xliff:g> пернесін пайдаланады. <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> Ctrl сөйлеуді тоқтатады. Әр сабақ нұсқау береді, онда аталған пернелерді басқанша күтеді, содан кейін келесісін береді. Нұсқау – сабақ атауынан кейінгі бірінші элемент. «Мазмұн» барлық сабақтарды көрсетеді, ал оқулық сіз тоқтаған сабақтан қайта ашылады.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">Бұл оқулық SandFly пернелер тіркесімдерін үйретеді. Олардың көбі басқа пернелермен бірге SandFly пернесін (<xliff:g id="key" example="Action">%1$s</xliff:g>) пайдаланады. <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> Ctrl сөйлеуді тоқтатады. Әр сабақ нұсқау береді, онда аталған пернелерді басқанша күтеді, содан кейін келесісін береді. Нұсқау – сабақ атауынан кейінгі бірінші элемент. «Мазмұн» барлық сабақтарды көрсетеді, ал оқулық сіз тоқтаған сабақтан қайта ашылады.</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">Әрекет пернесі – Windows пернесі, ол сол жақ Alt пернесінің жанында. Apple пернетақталарында бұл – Command пернесі, ол бос орын пернесінің жанында.</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">Alt пернесі бос орын пернесінің жанында.</string>
     <string name="sandfly_keyboard_tutorial_welcome_start">Бастау үшін <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> тіркесімін басыңыз.</string>
     <string name="sandfly_keyboard_tutorial_move_intro">«Келесі элемент» және «Алдыңғы элемент» экрандағы элементтер бойынша оқу ретімен жылжиды.</string>
     <string name="sandfly_keyboard_tutorial_move_next">Келесі элементке өту үшін <xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g> тіркесімін басыңыз. <xliff:g id="item" example="Eggs">%2$s</xliff:g> элементіне жеткенше жалғастырыңыз.</string>
@@ -53,4 +51,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">Пернетақта жаттығуы</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">Әр пернелер тіркесімі орындалудың орнына өз пернелері мен командасын айтады. «Келесі элемент», «Алдыңғы элемент» және іске қосу бұрынғыдай жұмыс істейді.</string>
     <string name="sandfly_keyboard_tutorial_practice_step">Не істейтінін есту үшін кез келген пернелер тіркесімін басыңыз. Тоқтату үшін <xliff:g id="button" example="End practice">%1$s</xliff:g> түймесін іске қосыңыз.</string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">Ctrl және Alt пернелерін бірге басып тұрыңыз. Екеуі де пернетақтаның төменгі сол жағында орналасқан.</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">Көп пернетақтада Енгізу пернесі көрсеткі пернелерінің үстіндегі алты пернелік топта орналасқан.</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">Цифрлық пернетақтада енгізу – Num Lock өшірулі кезде цифрлық пернетақтаның 0 пернесі.</string>
 </resources>

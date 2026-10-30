@@ -2,14 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">Vodič za tipkovnicu u SandFlyu</string>
     <string name="sandfly_keyboard_tutorial_no_key"><xliff:g id="command" example="Next item">%1$s</xliff:g> nema tipkovni prečac. Dodijelite ga u odjeljku Naredbe ili upotrijebite Preskoči korak.</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">Način pregledavanja zahtijeva Poboljšanu konfiguraciju prečaca. Odaberite je u odjeljku <xliff:g id="settings_path" example="SandFly settings &gt; Keyboard shortcuts &gt; Choose a keymap">%1$s</xliff:g> ili upotrijebite Preskoči korak.</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g> dvaput</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">Lekcija dovršena. Pritisnite <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> za početak sljedeće lekcije.</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">Lekcija dovršena. Pritisnite <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> za završetak vodiča.</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">Web-stranice</string>
-    <string name="sandfly_keyboard_tutorial_welcome_intro">Ovaj vodič poučava tipkovne prečace SandFlya. Većina njih koristi tipku <xliff:g id="key" example="Action">%1$s</xliff:g> s drugim tipkama. <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> Ctrl zaustavlja govor. Svaka lekcija daje uputu, čeka dok ne pritisnete tipke koje navodi, a zatim daje sljedeću. Uputa je prva stavka nakon naziva lekcije. Sadržaj navodi sve lekcije, a vodič se ponovno otvara na lekciji na kojoj ste bili.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">Ovaj vodič poučava tipkovne prečace SandFlya. Većina njih koristi tipku SandFlya, <xliff:g id="key" example="Action">%1$s</xliff:g>, s drugim tipkama. <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> Ctrl zaustavlja govor. Svaka lekcija daje uputu, čeka dok ne pritisnete tipke koje navodi, a zatim daje sljedeću. Uputa je prva stavka nakon naziva lekcije. Sadržaj navodi sve lekcije, a vodič se ponovno otvara na lekciji na kojoj ste bili.</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">Tipka za radnju je tipka Windows, pokraj lijeve tipke Alt. Na Appleovim tipkovnicama to je tipka Command, pokraj razmaknice.</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">Tipka Alt nalazi se pokraj razmaknice.</string>
     <string name="sandfly_keyboard_tutorial_welcome_start">Pritisnite <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> za početak.</string>
     <string name="sandfly_keyboard_tutorial_move_intro">Sljedeća stavka i Prethodna stavka pomiču kroz stavke na zaslonu redoslijedom čitanja.</string>
     <string name="sandfly_keyboard_tutorial_move_next">Pritisnite <xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g> za prelazak na sljedeću stavku. Nastavite dok ne dođete do stavke <xliff:g id="item" example="Eggs">%2$s</xliff:g>.</string>
@@ -53,4 +51,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">Vježba tipkovnice</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">Svaki tipkovni prečac umjesto izvršavanja izgovara svoje tipke i naredbu. Sljedeća stavka, Prethodna stavka i aktiviranje i dalje rade.</string>
     <string name="sandfly_keyboard_tutorial_practice_step">Pritisnite bilo koji tipkovni prečac da biste čuli što radi. Za završetak aktivirajte <xliff:g id="button" example="End practice">%1$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">Držite pritisnute tipke Ctrl i Alt istodobno. Obje se nalaze u donjem lijevom dijelu tipkovnice.</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">Na većini tipkovnica Insert se nalazi u skupini od šest tipki iznad tipki sa strelicama.</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">Insert na brojčanoj tipkovnici tipka je 0 na brojčanoj tipkovnici kada je Num Lock isključen.</string>
 </resources>

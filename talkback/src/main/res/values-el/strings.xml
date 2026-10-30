@@ -117,28 +117,17 @@
       &lt;li&gt;Κάποια πλήκτρα τροποπ. διαφέρουν.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">Μάθετε περισσότερα σχετικά με τις αντιστοιχίσεις πλήκτρων</string>
   <string name="keycombo_go_to_settings">Μετάβαση στις Ρυθμίσεις</string>
-  <string name="keycombo_new_keymap_notification_dialog_positive_button">Το κατάλαβα</string>
-  <string name="keycombo_new_keymap_notification_dialog_negative_button">Ρυθμίσεις</string>
-  <string name="keycombo_new_keymap_notification_dialog_neutral_button">Μάθετε περισσότερα</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_classic_keymap">Η κλασική αντιστοίχιση πλήκτρων δεν υποστηρίζεται πλέον</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">Χρησιμοποιείτε την προεπιλ. αντιστοίχιση πλήκτρων SandFly. Υπάρχει βελτιωμένη αντιστοίχιση πλήκτρων με νέες εντολές. Περισσότερα στο Κέντρο βοήθειας ή εναλλαγή σε νέα αντιστ. πλήκτρων στις Ρυθμίσεις.</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">Διατίθεται νέα αντιστοίχιση πλήκτρων</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">Η νέα βελτιωμένη αντιστοίχιση πλήκτρων του SandFly προσθέτει πολλές νέες εντολές. Μάθετε περισσότερα στο Κέντρο βοήθειας ή κάντε εναλλαγή στη νέα αντιστοίχιση πλήκτρων από τις Ρυθμίσεις.</string>
   <string name="keycombo_warning_content_description">Περισσότερες πληροφορίες σχετικά με το πλήκτρο τροποποίησης</string>
   <string name="keycombo_menu_category_select_keymap">Διάταξη πληκτρολογίου</string>
   <string name="keycombo_menu_select_keymap">Επιλέξτε διάταξη πληκτρολογίου</string>
   <string name="keycombo_menu_reset_keymap">Επαναφορά διάταξης πληκτρολογίου</string>
   <string name="keycombo_menu_view_system_keyboard_shortcuts">Προβολή συντομεύσεων πληκτρολογίου συστήματος</string>
-  <string name="keycombo_menu_choose_trigger_modifier">Επιλέξτε πλήκτρο τροποποίησης</string>
-  <string name="keycombo_menu_alert_title_trigger_modifier">Χρήση του πλήκτρου %1$s ως πλήκτρο τροποποίησης;</string>
-  <string name="keycombo_menu_alert_message_trigger_modifier">Προς το παρόν, το SandFly χρησιμοποιεί το πλήκτρο <xliff:g id="current_trigger_modifier" example="Alt">%1$s</xliff:g> ως πλήκτρο τροποποίησης.</string>
-  <string name="keycombo_menu_alert_button_trigger_modifier">Χρήση του πλήκτρου %1$s</string>
-  <string name="keycombo_menu_announce_new_trigger_modifier">Το πλήκτρο τροποποίησης έχει αλλάξει σε %1$s.</string>
+  <string name="keycombo_menu_choose_trigger_modifier">Επιλογή πλήκτρου SandFly</string>
+  <string name="keycombo_menu_announce_new_trigger_modifier">Το πλήκτρο SandFly άλλαξε σε %1$s.</string>
   <string name="keycombo_menu_announce_active_keymap">Η διάταξη πληκτρολογίου %1$s είναι πλέον ενεργή.</string>
   <string name="keycombo_menu_announce_reset_keymap">Έγινε επαναφορά της διάταξης πληκτρολογίου.</string>
   <string name="keycombo_announce_shortcut_not_supported">Η συντόμευση δεν υποστηρίζεται</string>
-  <string name="value_default_keymap">Προεπιλεγμένη διάταξη πληκτρολογίου</string>
-  <string name="value_new_keymap">Βελτιωμένη αντιστοίχιση πλήκτρων</string>
+  <string name="value_new_keymap">Διάταξη πληκτρολογίου SandFly</string>
   <string name="keycombo_menu_category_navigation">Ενέργειες πλοήγησης</string>
   <string name="keycombo_menu_navigate_next">Μετάβαση στο επόμενο στοιχείο</string>
   <string name="keycombo_menu_navigate_previous">Μετάβαση στο προηγούμενο στοιχείο</string>
@@ -266,7 +255,7 @@
   <string name="message_in_reset_keymap_confirm_dialog">Είστε βέβαιοι ότι θέλετε να επαναφέρετε τα πλήκτρα των συντομεύσεών σας γι\' αυτήν τη διάταξη πληκτρολογίου στις προεπιλεγμένες τιμές τους; Λάβετε υπόψη ότι δεν είναι δυνατή η αναίρεση αυτής της ενέργειας.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">Επαναφορά</string>
   <string name="template_keycombo_menu_browse_mode_command">%1$s σε λειτουργία περιήγησης</string>
-  <string name="keycombo_assign_dialog_default_keymap_instruction">Πατήστε τον συνδυασμό πλήκτρων με το πλήκτρο τροποποίησης %1$s για να ορίσετε νέα συντόμευση.</string>
+  <string name="keycombo_assign_dialog_default_keymap_instruction">Πατήστε έναν συνδυασμό πλήκτρων μαζί με το πλήκτρο SandFly %1$s για να ορίσετε μια νέα συντόμευση.</string>
   <string name="keycombo_unassigned">Χωρίς αντιστοιχία</string>
   <string name="save_button_in_keycombo_assign_dialog">Αποθήκευση</string>
   <string name="clear_button_in_keycombo_assign_dialog">Διαγραφή</string>
@@ -1804,4 +1793,10 @@
   <string name="title_pref_speech_dictionary">Λεξικό ομιλίας</string>
   <string name="speech_dictionary_all_apps">Όλες οι εφαρμογές</string>
   <string name="speech_dictionary_not_said">Το <xliff:g id="text" example="#">%1$s</xliff:g> δεν εκφωνείται</string>
+  <string name="keycombo_key_modifier_insert">Εισαγωγή</string>
+  <string name="keycombo_key_modifier_numpad_insert">Εισαγωγή αριθμητικού πληκτρολογίου</string>
+  <string name="keycombo_menu_navigate_next_paragraph">Πλοήγηση στην επόμενη παράγραφο</string>
+  <string name="keycombo_menu_navigate_previous_paragraph">Πλοήγηση στην προηγούμενη παράγραφο</string>
+  <string name="keycombo_key_modifier_ctrl_alt">Ctrl + Alt</string>
+  <string name="value_voiceover_keymap">Διάταξη πληκτρολογίου VoiceOver</string>
 </resources>

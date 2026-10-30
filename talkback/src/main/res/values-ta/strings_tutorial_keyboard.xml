@@ -2,15 +2,13 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">SandFly கீபோர்டு பயிற்சி</string>
     <string name="sandfly_keyboard_tutorial_no_key"><xliff:g id="command" example="அடுத்தது">%1$s</xliff:g> கட்டளைக்குக் கீபோர்டு ஷார்ட்கட் இல்லை. “கட்டளைகள்” என்பதில் ஒன்றை ஒதுக்கவும், அல்லது “படியைத் தவிர்” என்பதைப் பயன்படுத்தவும்.</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">பிரவுசிங் பயன்முறைக்கு “மேம்படுத்தப்பட்ட கீ-மேப்” தேவை. அதை <xliff:g id="settings_path" example="SandFly அமைப்புகள் &gt; கீபோர்டு ஷார்ட்கட்கள் &gt; கீ-மேப்பைத் தேர்ந்தெடு">%1$s</xliff:g> என்பதில் தேர்ந்தெடுக்கவும், அல்லது “படியைத் தவிர்” என்பதைப் பயன்படுத்தவும்.</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g> இருமுறை</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">பாடம் முடிந்தது. <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> அழுத்தி அடுத்த பாடத்தைத் தொடங்கவும்.</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">பாடம் முடிந்தது. <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> அழுத்தி பயிற்சியை முடிக்கவும்.</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">இணையப் பக்கங்கள்</string>
 
-    <string name="sandfly_keyboard_tutorial_welcome_intro">இந்தப் பயிற்சி SandFly-இன் கீபோர்டு ஷார்ட்கட்களைக் கற்பிக்கிறது. அவற்றில் பெரும்பாலானவை <xliff:g id="key" example="Action">%1$s</xliff:g> விசையை மற்ற விசைகளுடன் பயன்படுத்தும். <xliff:g id="location" example="Action விசை என்பது இடதுபுற Alt விசைக்கு அருகில் உள்ள Windows விசை ஆகும்.">%2$s</xliff:g> Ctrl பேச்சை நிறுத்தும். ஒவ்வொரு பாடமும் ஒரு வழிமுறையைத் தரும், அது குறிப்பிடும் விசைகளை நீங்கள் அழுத்தும் வரை காத்திருக்கும், பிறகு அடுத்ததைத் தரும். வழிமுறை என்பது பாடத்தின் பெயருக்குப் பிறகு உள்ள முதல் உருப்படி. “உள்ளடக்கம்” எல்லாப் பாடங்களையும் பட்டியலிடும், நீங்கள் இருந்த பாடத்திலேயே பயிற்சி மீண்டும் திறக்கும்.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">இந்தப் பயிற்சி SandFly-இன் கீபோர்டு ஷார்ட்கட்களைக் கற்பிக்கிறது. அவற்றில் பெரும்பாலானவை SandFly பட்டனை (<xliff:g id="key" example="Action">%1$s</xliff:g>) மற்ற விசைகளுடன் பயன்படுத்தும். <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> Ctrl பேச்சை நிறுத்தும். ஒவ்வொரு பாடமும் ஒரு வழிமுறையைத் தரும், அது குறிப்பிடும் விசைகளை நீங்கள் அழுத்தும் வரை காத்திருக்கும், பிறகு அடுத்ததைத் தரும். வழிமுறை என்பது பாடத்தின் பெயருக்குப் பிறகு உள்ள முதல் உருப்படி. “உள்ளடக்கம்” எல்லாப் பாடங்களையும் பட்டியலிடும், நீங்கள் இருந்த பாடத்திலேயே பயிற்சி மீண்டும் திறக்கும்.</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">Action விசை என்பது இடதுபுற Alt விசைக்கு அருகில் உள்ள Windows விசை ஆகும். Apple கீபோர்டுகளில், இது Space விசைக்கு அருகில் உள்ள Command விசை ஆகும்.</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">Alt விசை Space விசைக்கு அருகில் உள்ளது.</string>
     <string name="sandfly_keyboard_tutorial_welcome_start"><xliff:g id="keys" example="Action + Space">%1$s</xliff:g> அழுத்தித் தொடங்கவும்.</string>
 
     <string name="sandfly_keyboard_tutorial_move_intro">“அடுத்தது”, “முந்தையது” ஆகியவை திரையில் உள்ள உருப்படிகளுக்கு இடையே வாசிப்பு வரிசைப்படி நகரும்.</string>
@@ -67,4 +65,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">கீபோர்டு பயிற்சி</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">ஒவ்வொரு கீபோர்டு ஷார்ட்கட்டும் இயங்குவதற்குப் பதிலாகத் தன் விசைகளையும் கட்டளையையும் சொல்லும். “அடுத்தது”, “முந்தையது”, செயல்படுத்துதல் ஆகியவை வழக்கம்போல் வேலை செய்யும்.</string>
     <string name="sandfly_keyboard_tutorial_practice_step">ஏதேனும் கீபோர்டு ஷார்ட்கட் என்ன செய்யும் என்று கேட்க அதை அழுத்தவும். நிறுத்த, <xliff:g id="button" example="பயிற்சியை முடி">%1$s</xliff:g> என்பதைச் செயல்படுத்தவும்.</string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">Ctrl, Alt இரண்டையும் ஒன்றாக அழுத்திப் பிடிக்கவும். இரண்டும் கீபோர்டின் கீழ் இடதுபுறத்தில் உள்ளன.</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">பெரும்பாலான கீபோர்டுகளில், Insert விசை அம்புக்குறி விசைகளுக்கு மேலே உள்ள ஆறு விசைகளின் குழுவில் இருக்கும்.</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">Numpad insert என்பது Num Lock முடக்கப்பட்டிருக்கும்போது எண் பேடின் 0 விசை ஆகும்.</string>
 </resources>

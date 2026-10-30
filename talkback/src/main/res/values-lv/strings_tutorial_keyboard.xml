@@ -2,14 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">SandFly tastatūras pamācība</string>
     <string name="sandfly_keyboard_tutorial_no_key">Darbībai <xliff:g id="command" example="Nākamais vienums">%1$s</xliff:g> nav īsinājumtaustiņa. Piešķiriet to sadaļā Komandas vai izmantojiet Izlaist darbību.</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">Pārlūkošanas režīmam ir nepieciešama Uzlabota taustiņu piesaiste. Izvēlieties to sadaļā <xliff:g id="settings_path" example="SandFly iestatījumi &gt; Īsinājumtaustiņi &gt; Izvēlēties taustiņu piesaisti">%1$s</xliff:g> vai izmantojiet Izlaist darbību.</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g> divreiz</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">Nodarbība pabeigta. Nospiediet <xliff:g id="keys" example="Action + Space">%1$s</xliff:g>, lai sāktu nākamo nodarbību.</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">Nodarbība pabeigta. Nospiediet <xliff:g id="keys" example="Action + Space">%1$s</xliff:g>, lai pabeigtu mācības.</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">Tīmekļa lapas</string>
-    <string name="sandfly_keyboard_tutorial_welcome_intro">Šīs mācības iemāca SandFly īsinājumtaustiņus. Lielākā daļa no tiem izmanto taustiņu <xliff:g id="key" example="Action">%1$s</xliff:g> kopā ar citiem taustiņiem. <xliff:g id="location" example="Darbību taustiņš ir Windows taustiņš, kas atrodas blakus kreisajam taustiņam Alt.">%2$s</xliff:g> Taustiņš Ctrl aptur runu. Katra nodarbība dod norādījumu, gaida, līdz nospiežat tajā minētos taustiņus, un tad dod nākamo. Norādījums ir pirmais vienums pēc nodarbības nosaukuma. Saturs uzskaita visas nodarbības, un mācības atkal atveras nodarbībā, kurā bijāt.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">Šīs mācības iemāca SandFly īsinājumtaustiņus. Lielākā daļa no tiem izmanto SandFly taustiņu, <xliff:g id="key" example="Action">%1$s</xliff:g>, kopā ar citiem taustiņiem. <xliff:g id="location" example="Darbību taustiņš ir Windows taustiņš, kas atrodas blakus kreisajam taustiņam Alt.">%2$s</xliff:g> Taustiņš Ctrl aptur runu. Katra nodarbība dod norādījumu, gaida, līdz nospiežat tajā minētos taustiņus, un tad dod nākamo. Norādījums ir pirmais vienums pēc nodarbības nosaukuma. Saturs uzskaita visas nodarbības, un mācības atkal atveras nodarbībā, kurā bijāt.</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">Darbību taustiņš ir Windows taustiņš, kas atrodas blakus kreisajam taustiņam Alt. Apple tastatūrās tas ir taustiņš Command, kas atrodas blakus atstarpes taustiņam.</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">Taustiņš Alt atrodas blakus atstarpes taustiņam.</string>
     <string name="sandfly_keyboard_tutorial_welcome_start">Nospiediet <xliff:g id="keys" example="Action + Space">%1$s</xliff:g>, lai sāktu.</string>
     <string name="sandfly_keyboard_tutorial_move_intro">Nākamais vienums un Iepriekšējais vienums pārvietojas pa ekrāna vienumiem lasīšanas secībā.</string>
     <string name="sandfly_keyboard_tutorial_move_next">Nospiediet <xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g>, lai pārietu uz nākamo vienumu. Turpiniet, līdz sasniedzat vienumu <xliff:g id="item" example="Olas">%2$s</xliff:g>.</string>
@@ -53,4 +51,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">Tastatūras prakse</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">Katrs īsinājumtaustiņš komandas izpildes vietā pasaka savus taustiņus un komandu. Nākamais vienums, Iepriekšējais vienums un aktivizēšana joprojām darbojas.</string>
     <string name="sandfly_keyboard_tutorial_practice_step">Nospiediet jebkuru īsinājumtaustiņu, lai uzzinātu, ko tas dara. Lai beigtu, aktivizējiet <xliff:g id="button" example="Beigt praksi">%1$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">Vienlaikus turiet nospiestus taustiņus Ctrl un Alt. Abi atrodas tastatūras apakšējā kreisajā daļā.</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">Lielākajā daļā tastatūru taustiņš Ievietot (Insert) atrodas sešu taustiņu grupā virs bulttaustiņiem.</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">Cipartastatūras iespraušanas taustiņš ir cipartastatūras taustiņš 0, kad Num Lock ir izslēgts.</string>
 </resources>

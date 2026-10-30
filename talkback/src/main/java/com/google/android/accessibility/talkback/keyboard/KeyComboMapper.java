@@ -49,6 +49,7 @@ import static com.google.android.accessibility.talkback.selector.SelectorControl
 import static com.google.android.accessibility.utils.input.CursorGranularity.CHARACTER;
 import static com.google.android.accessibility.utils.input.CursorGranularity.DEFAULT;
 import static com.google.android.accessibility.utils.input.CursorGranularity.LINE;
+import static com.google.android.accessibility.utils.input.CursorGranularity.PARAGRAPH;
 import static com.google.android.accessibility.utils.input.CursorGranularity.WORD;
 import static com.google.android.accessibility.utils.monitor.InputModeTracker.INPUT_MODE_KEYBOARD;
 import static com.google.android.accessibility.utils.preference.PreferencesActivity.FRAGMENT_NAME;
@@ -303,6 +304,20 @@ public class KeyComboMapper {
                       .setInputMode(INPUT_MODE_KEYBOARD)
                       .setGranularity(LINE)
                       .setSkipEdgeCheck(true));
+      case NAVIGATE_NEXT_PARAGRAPH ->
+          result =
+              pipeline.returnFeedback(
+                  eventId,
+                  Feedback.focusDirection(SEARCH_FOCUS_FORWARD)
+                      .setInputMode(INPUT_MODE_KEYBOARD)
+                      .setGranularity(PARAGRAPH));
+      case NAVIGATE_PREVIOUS_PARAGRAPH ->
+          result =
+              pipeline.returnFeedback(
+                  eventId,
+                  Feedback.focusDirection(SEARCH_FOCUS_BACKWARD)
+                      .setInputMode(INPUT_MODE_KEYBOARD)
+                      .setGranularity(PARAGRAPH));
       // Native or Web navigation actions.
       case NAVIGATE_NEXT_HEADING ->
           result =

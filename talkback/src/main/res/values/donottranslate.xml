@@ -540,24 +540,17 @@
 
   <!-- Keyboard preferences -->
   <string name="pref_select_keymap_key">pref_select_keymap</string>
-  <string name="pref_default_keymap_trigger_modifier_key">pref_default_keymap_trigger_modifier</string>
   <string name="pref_new_keymap_trigger_modifier_key">pref_new_keymap_trigger_modifier</string>
+  <string name="pref_voiceover_keymap_trigger_modifier_key">pref_voiceover_keymap_trigger_modifier</string>
 
-  <!-- New keymap notification preferences. -->
-  <string name="pref_notify_new_keymap_key">pref_notify_new_keymap_key</string>
-  <integer name="pref_notify_new_keymap_value_default">0</integer>
-
-  <!-- Classic keymap deprecated in b/370662049. -->
-  <string name="classic_keymap_entry_value">classic_keymap</string>
-  <!-- Preference indicating whether the user used the classic keymap before the deprecation. -->
-  <string name="pref_used_classic_keymap_key">pref_used_classic_keymap</string>
-  <bool name="pref_used_classic_keymap_default">false</bool>
-
-  <string name="default_keymap_entry_value">default_keymap</string>
+  <!-- The SandFly keymap keeps the value of the enhanced keymap it was. -->
   <string name="new_keymap_entry_value">new_keymap</string>
+  <string name="voiceover_keymap_entry_value">voiceover_keymap</string>
 
-  <string name="trigger_modifier_alt_entry_value">trigger_modifier_alt</string>
   <string name="trigger_modifier_meta_entry_value">trigger_modifier_meta</string>
+  <string name="trigger_modifier_ctrl_alt_entry_value">trigger_modifier_ctrl_alt</string>
+  <string name="trigger_modifier_insert_entry_value">trigger_modifier_insert</string>
+  <string name="trigger_modifier_numpad_insert_entry_value">trigger_modifier_numpad_insert</string>
 
   <string name="keycombo_shortcut_navigate_next">keycombo_shortcut_navigate_next</string>
   <string name="keycombo_shortcut_navigate_previous">keycombo_shortcut_navigate_previous</string>
@@ -607,6 +600,8 @@
   <string name="keycombo_shortcut_navigate_up">keycombo_shortcut_navigate_up</string>
   <string name="keycombo_shortcut_navigate_down">keycombo_shortcut_navigate_down</string>
   <string name="keycombo_shortcut_navigate_next_word">keycombo_shortcut_navigate_next_word</string>
+  <string name="keycombo_shortcut_navigate_next_paragraph">keycombo_shortcut_navigate_next_paragraph</string>
+  <string name="keycombo_shortcut_navigate_previous_paragraph">keycombo_shortcut_navigate_previous_paragraph</string>
   <string name="keycombo_shortcut_navigate_previous_word">keycombo_shortcut_navigate_previous_word</string>
   <string name="keycombo_shortcut_navigate_next_character">keycombo_shortcut_navigate_next_character</string>
   <string name="keycombo_shortcut_navigate_previous_character">keycombo_shortcut_navigate_previous_character</string>
@@ -810,24 +805,39 @@
     <string name="pref_show_pass_through_mode_dialog" translatable="false">pref_show_pass_through_mode_dialog</string>
     <string name="pref_show_voice_input_download_dialog">pref_show_voice_input_download_dialog</string>
 
+    <!-- Keymap.kt lists the keymaps and their SandFly keys the same way. -->
     <string-array name="pref_select_keymap_entries">
-        <item>@string/value_default_keymap</item>
         <item>@string/value_new_keymap</item>
+        <item>@string/value_voiceover_keymap</item>
     </string-array>
 
     <string-array name="pref_select_keymap_values">
-        <item>@string/default_keymap_entry_value</item>
         <item>@string/new_keymap_entry_value</item>
+        <item>@string/voiceover_keymap_entry_value</item>
     </string-array>
 
-    <string-array name="pref_choose_trigger_modifier_entries">
-        <item>@string/keycombo_key_modifier_alt</item>
+    <string-array name="pref_sandfly_keymap_sandfly_key_entries">
         <item>@string/keycombo_key_modifier_meta</item>
+        <item>@string/keycombo_key_modifier_insert</item>
+        <item>@string/keycombo_key_modifier_numpad_insert</item>
     </string-array>
 
-    <string-array name="pref_choose_trigger_modifier_values">
-        <item>@string/trigger_modifier_alt_entry_value</item>
+    <string-array name="pref_sandfly_keymap_sandfly_key_values">
         <item>@string/trigger_modifier_meta_entry_value</item>
+        <item>@string/trigger_modifier_insert_entry_value</item>
+        <item>@string/trigger_modifier_numpad_insert_entry_value</item>
+    </string-array>
+
+    <string-array name="pref_voiceover_keymap_sandfly_key_entries">
+        <item>@string/keycombo_key_modifier_ctrl_alt</item>
+        <item>@string/keycombo_key_modifier_insert</item>
+        <item>@string/keycombo_key_modifier_numpad_insert</item>
+    </string-array>
+
+    <string-array name="pref_voiceover_keymap_sandfly_key_values">
+        <item>@string/trigger_modifier_ctrl_alt_entry_value</item>
+        <item>@string/trigger_modifier_insert_entry_value</item>
+        <item>@string/trigger_modifier_numpad_insert_entry_value</item>
     </string-array>
 
 

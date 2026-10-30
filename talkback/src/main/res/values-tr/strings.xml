@@ -117,28 +117,17 @@
       &lt;li&gt;Bazı değiştirici tuşlar farklıdır.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">Tuş eşleme hakkında daha fazla bilgi</string>
   <string name="keycombo_go_to_settings">Ayarlar\'a git</string>
-  <string name="keycombo_new_keymap_notification_dialog_positive_button">Anladım</string>
-  <string name="keycombo_new_keymap_notification_dialog_negative_button">Ayarlar</string>
-  <string name="keycombo_new_keymap_notification_dialog_neutral_button">Daha fazla bilgi</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_classic_keymap">Klasik tuş eşleme artık desteklenmiyor</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">Artık varsayılan SandFly tuş eşlemesini kullanıyorsunuz. Yeni komutlar içeren yeni ve gelişmiş bir tuş eşleme de mevcut. Bilgi için Yardım Merkezi\'ne gidin veya Ayarlar\'dan yeni tuş eşlemeye geçin.</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">Yeni tuş eşleme mevcut</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">Yeni SandFly gelişmiş tuş eşleme birçok yeni komut içeriyor. Bilgi için Yardım Merkezi\'ne gidin veya Ayarlar\'dan yeni tuş eşlemeye geçin.</string>
   <string name="keycombo_warning_content_description">Değiştirici tuşunuzla ilgili daha fazla bilgi</string>
   <string name="keycombo_menu_category_select_keymap">Tuş eşleme</string>
   <string name="keycombo_menu_select_keymap">Tuş eşleme seç</string>
   <string name="keycombo_menu_reset_keymap">Tuş eşlemeyi sıfırla</string>
   <string name="keycombo_menu_view_system_keyboard_shortcuts">Sistem klavye kısayollarını göster</string>
-  <string name="keycombo_menu_choose_trigger_modifier">Değiştirici tuşu seçin</string>
-  <string name="keycombo_menu_alert_title_trigger_modifier">Değiştirici tuşunuz olarak %1$s tuşu kullanılsın mı?</string>
-  <string name="keycombo_menu_alert_message_trigger_modifier">SandFly şu anda değiştirici tuş olarak <xliff:g id="current_trigger_modifier" example="Alt">%1$s</xliff:g> tuşunu kullanıyor.</string>
-  <string name="keycombo_menu_alert_button_trigger_modifier">%1$s hareketini kullanın</string>
-  <string name="keycombo_menu_announce_new_trigger_modifier">Değiştirici tuş, %1$s yapıldı.</string>
+  <string name="keycombo_menu_choose_trigger_modifier">SandFly tuşunu seçin</string>
+  <string name="keycombo_menu_announce_new_trigger_modifier">SandFly tuşu, %1$s olarak değiştirildi.</string>
   <string name="keycombo_menu_announce_active_keymap">%1$s şu anda aktif.</string>
   <string name="keycombo_menu_announce_reset_keymap">Tuş eşleme sıfırlandı.</string>
   <string name="keycombo_announce_shortcut_not_supported">Kısayol desteklenmiyor</string>
-  <string name="value_default_keymap">Varsayılan tuş eşlemesi</string>
-  <string name="value_new_keymap">Gelişmiş tuş eşleme</string>
+  <string name="value_new_keymap">SandFly tuş eşlemesi</string>
   <string name="keycombo_menu_category_navigation">Gezinme işlemleri</string>
   <string name="keycombo_menu_navigate_next">Sonraki öğeye git</string>
   <string name="keycombo_menu_navigate_previous">Önceki öğeye git</string>
@@ -266,7 +255,7 @@
   <string name="message_in_reset_keymap_confirm_dialog">Bu tuş eşleme için kısayol tuşlarını varsayılan değerlerine sıfırlamak istediğinizden emin misiniz? Bu işlemin geri alınamayacağını lütfen unutmayın.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">Sıfırla</string>
   <string name="template_keycombo_menu_browse_mode_command">Tarayıcı modunda %1$s</string>
-  <string name="keycombo_assign_dialog_default_keymap_instruction">Yeni bir kısayol ayarlamak için %1$s değiştirici tuşu ile birlikte tuş bileşimine basın.</string>
+  <string name="keycombo_assign_dialog_default_keymap_instruction">Yeni kısayol ayarlamak için %1$s SandFly tuşuyla birlikte tuş kombinasyonuna basın.</string>
   <string name="keycombo_unassigned">Atanmamış</string>
   <string name="save_button_in_keycombo_assign_dialog">Kaydet</string>
   <string name="clear_button_in_keycombo_assign_dialog">Temizle</string>
@@ -1804,4 +1793,10 @@
   <string name="title_pref_speech_dictionary">Konuşma sözlüğü</string>
   <string name="speech_dictionary_all_apps">Tüm uygulamalar</string>
   <string name="speech_dictionary_not_said"><xliff:g id="text" example="#">%1$s</xliff:g> söylenmez</string>
+  <string name="keycombo_key_modifier_insert">Ekle</string>
+  <string name="keycombo_key_modifier_numpad_insert">Sayısal tuş takımındaki Insert tuşu</string>
+  <string name="keycombo_menu_navigate_next_paragraph">Sonraki paragrafa git</string>
+  <string name="keycombo_menu_navigate_previous_paragraph">Önceki paragrafa git</string>
+  <string name="keycombo_key_modifier_ctrl_alt">Ctrl + Alt</string>
+  <string name="value_voiceover_keymap">VoiceOver tuş eşlemesi</string>
 </resources>

@@ -117,28 +117,17 @@
       &lt;li&gt;కొన్ని మోడిఫయర్ కీలు భిన్నంగా ఉంటాయి.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">కీ-మ్యాప్‌ల గురించి మరింత తెలుసుకోండి</string>
   <string name="keycombo_go_to_settings">సెట్టింగ్‌లకు వెళ్లండి</string>
-  <string name="keycombo_new_keymap_notification_dialog_positive_button">సరే</string>
-  <string name="keycombo_new_keymap_notification_dialog_negative_button">సెట్టింగ్‌లు</string>
-  <string name="keycombo_new_keymap_notification_dialog_neutral_button">మరింత తెలుసుకోండి</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_classic_keymap">క్లాసిక్ కీ-మ్యాప్ ఇకపై సపోర్ట్ చేయదు</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">మీరు ఇప్పుడు SandFly ఆటోమేటిక్ కీ-మ్యాప్‌ను ఉపయోగిస్తున్నారు. ఇది సరికొత్తది, మెరుగైనది, ఇందులో కొత్త కమాండ్లు ఉన్నాయి. సహాయ కేంద్రంలో మరింత తెలుసుకోండి లేదా సెట్టింగ్స్‌లో కొత్త కీ-మ్యాప్‌కు మారండి.</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">కొత్త కీ-మ్యాప్ అందుబాటులో ఉంది</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">మెరుగుపరచబడిన కొత్త కీ-మ్యాప్ SandFlyలో పలు కొత్త కమాండ్‌లను జోడిస్తుంది. సహాయ కేంద్రంలో మరింత తెలుసుకోండి లేదా సెట్టింగ్స్‌లో కొత్త కీ-మ్యాప్‌నకు మారండి.</string>
   <string name="keycombo_warning_content_description">మీ మోడిఫయర్ కీ గురించి మరింత సమాచారం</string>
   <string name="keycombo_menu_category_select_keymap">కీమ్యాప్</string>
   <string name="keycombo_menu_select_keymap">కీమ్యాప్‌ను ఎంచుకోండి</string>
   <string name="keycombo_menu_reset_keymap">కీమ్యాప్‌ను రీసెట్ చేయండి</string>
   <string name="keycombo_menu_view_system_keyboard_shortcuts">సిస్టమ్ కీబోర్డ్ షార్ట్‌కట్‌లను చూడండి</string>
-  <string name="keycombo_menu_choose_trigger_modifier">మాడిఫైయర్ కీని ఎంచుకోండి</string>
-  <string name="keycombo_menu_alert_title_trigger_modifier">%1$s‌ను మీ మాడిఫైయర్ కీగా ఉపయోగించాలా?</string>
-  <string name="keycombo_menu_alert_message_trigger_modifier">SandFly ప్రస్తుతం <xliff:g id="current_trigger_modifier" example="Alt">%1$s</xliff:g>‌ను మాడిఫైయర్ కీగా ఉపయోగిస్తోంది.</string>
-  <string name="keycombo_menu_alert_button_trigger_modifier">%1$sను ఉపయోగించండి</string>
-  <string name="keycombo_menu_announce_new_trigger_modifier">మాడిఫైయర్ కీ %1$sకి మార్చబడింది.</string>
+  <string name="keycombo_menu_choose_trigger_modifier">SandFly కీని ఎంచుకోండి</string>
+  <string name="keycombo_menu_announce_new_trigger_modifier">SandFly కీ %1$s‌కు మారింది.</string>
   <string name="keycombo_menu_announce_active_keymap">%1$s ఇప్పుడు యాక్టివ్‌గా ఉంది.</string>
   <string name="keycombo_menu_announce_reset_keymap">కీమ్యాప్ రీసెట్ చేయబడింది.</string>
   <string name="keycombo_announce_shortcut_not_supported">షార్ట్‌కట్‌కు మద్దతు లేదు</string>
-  <string name="value_default_keymap">ఆటోమేటిక్ కీమ్యాప్</string>
-  <string name="value_new_keymap">మెరుగుపరచబడిన కీ-మ్యాప్</string>
+  <string name="value_new_keymap">SandFly కీమ్యాప్</string>
   <string name="keycombo_menu_category_navigation">నావిగేషన్ చర్యలు</string>
   <string name="keycombo_menu_navigate_next">తర్వాతి ఐటెమ్‌కు నావిగేట్ చేయండి</string>
   <string name="keycombo_menu_navigate_previous">మునుపటి ఐటెమ్‌కు నావిగేట్ చేయండి</string>
@@ -266,7 +255,7 @@
   <string name="message_in_reset_keymap_confirm_dialog">మీరు ఖచ్చితంగా ఈ కీమ్యాప్ కోసం మీ షార్ట్‌కట్‌ కీలను వాటి ఆటోమేటిక్ విలువలకు రీసెట్ చేయాలనుకుంటున్నారా? దయచేసి గమనించండి, ఈ చర్యను ఒకసారి అమలు చేస్తే తిరిగి రద్దు చేయలేరు.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">రీసెట్ చేయండి</string>
   <string name="template_keycombo_menu_browse_mode_command">బ్రౌజింగ్ మోడ్‌లో %1$s</string>
-  <string name="keycombo_assign_dialog_default_keymap_instruction">కొత్త షార్ట్‌కట్‌ను సెట్ చేయడానికి %1$s మాడిఫైయర్ కీతో కీ కాంబినేషన్‌ను నొక్కండి.</string>
+  <string name="keycombo_assign_dialog_default_keymap_instruction">కొత్త షార్ట్‌కట్‌ను సెట్ చేయడానికి %1$s SandFly కీతో పాటు ఇతర కీలను కలిపి నొక్కండి.</string>
   <string name="keycombo_unassigned">కేటాయించలేదు</string>
   <string name="save_button_in_keycombo_assign_dialog">సేవ్ చేయండి</string>
   <string name="clear_button_in_keycombo_assign_dialog">క్లియర్ చేయండి</string>
@@ -1795,4 +1784,10 @@
   <string name="title_pref_speech_dictionary">ప్రసంగ నిఘంటువు</string>
   <string name="speech_dictionary_all_apps">అన్ని యాప్‌లు</string>
   <string name="speech_dictionary_not_said"><xliff:g id="text" example="#">%1$s</xliff:g> చెప్పబడదు</string>
+  <string name="keycombo_key_modifier_insert">ఇన్‌సర్ట్ చేయండి</string>
+  <string name="keycombo_key_modifier_numpad_insert">నంబర్ ప్యాడ్ ఇన్‌సర్ట్</string>
+  <string name="keycombo_menu_navigate_next_paragraph">తదుపరి పేరాకు నావిగేట్ చేయండి</string>
+  <string name="keycombo_menu_navigate_previous_paragraph">మునుపటి పేరాకు నావిగేట్ చేయండి</string>
+  <string name="keycombo_key_modifier_ctrl_alt">Ctrl + Alt</string>
+  <string name="value_voiceover_keymap">VoiceOver కీమ్యాప్</string>
 </resources>

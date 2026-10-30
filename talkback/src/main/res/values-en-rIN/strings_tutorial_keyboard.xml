@@ -2,14 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">SandFly keyboard tutorial</string>
     <string name="sandfly_keyboard_tutorial_no_key"><xliff:g id="command" example="Next item">%1$s</xliff:g> has no keyboard shortcut. Assign one in Commands, or use Skip step.</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">Browse mode needs the Enhanced keymap. Choose it in <xliff:g id="settings_path" example="SandFly settings &gt; Keyboard shortcuts &gt; Choose a keymap">%1$s</xliff:g>, or use Skip step.</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g> twice</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">Lesson complete. Press <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> to start the next lesson.</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">Lesson complete. Press <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> to finish the tutorial.</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">Web pages</string>
-    <string name="sandfly_keyboard_tutorial_welcome_intro">This tutorial teaches SandFly\'s keyboard shortcuts. Most of them use the <xliff:g id="key" example="Action">%1$s</xliff:g> key with other keys. <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> Ctrl stops speech. Each lesson gives an instruction, waits until you have pressed the keys it names, then gives the next one. The instruction is the first item after the name of the lesson. Contents lists every lesson, and the tutorial reopens at the lesson you were on.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">This tutorial teaches SandFly\'s keyboard shortcuts. Most of them use the SandFly key, <xliff:g id="key" example="Action">%1$s</xliff:g>, with other keys. <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> Ctrl stops speech. Each lesson gives an instruction, waits until you have pressed the keys it names, then gives the next one. The instruction is the first item after the name of the lesson. Contents lists every lesson, and the tutorial reopens at the lesson you were on.</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">The Action key is the Windows key, next to the left Alt key. On Apple keyboards, it\'s the Command key, next to the space bar.</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">The Alt key is next to the space bar.</string>
     <string name="sandfly_keyboard_tutorial_welcome_start">Press <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> to start.</string>
     <string name="sandfly_keyboard_tutorial_move_intro">Next item and Previous item move through the items on the screen in reading order.</string>
     <string name="sandfly_keyboard_tutorial_move_next">Press <xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g> to move to the next item. Continue until you reach <xliff:g id="item" example="Eggs">%2$s</xliff:g>.</string>
@@ -53,4 +51,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">Keyboard practice</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">Each keyboard shortcut says its keys and command instead of running it. Next item, Previous item and activating still work.</string>
     <string name="sandfly_keyboard_tutorial_practice_step">Press any keyboard shortcut to hear what it does. To stop, activate <xliff:g id="button" example="End practice">%1$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">Hold Ctrl and Alt down together. Both are at the bottom left of the keyboard.</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">On most keyboards, Insert is in the group of six keys above the arrow keys.</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">Numpad insert is the 0 key of the number pad, with Num Lock off.</string>
 </resources>

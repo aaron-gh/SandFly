@@ -117,28 +117,17 @@
       &lt;li&gt;Bəzi dəyişdirici düymələr fərqlidir.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">Klaviatura düzülüşü haqqında ətraflı</string>
   <string name="keycombo_go_to_settings">Ayarlara keçin</string>
-  <string name="keycombo_new_keymap_notification_dialog_positive_button">Anladım</string>
-  <string name="keycombo_new_keymap_notification_dialog_negative_button">Ayarlar</string>
-  <string name="keycombo_new_keymap_notification_dialog_neutral_button">Ətraflı məlumat</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_classic_keymap">Klassik klaviatura düzülüşü artıq dəstəklənmir</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">SandFly defolt klaviatura düzülüşündən istifadə edirsiniz. Bir çox yeni əmri olan təkmilləşdirilmiş yeni klaviatura düzülüşü də mövcuddur. Yardım mərkəzində ətraflı məlumat əldə edin və ya Ayarlarda yeni klaviatura düzülüşünə keçin.</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">Yeni klaviatura düzülüşü əlçatandır</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">Təkmilləşdirilmiş yeni SandFly klaviatura düzülüşü bir çox yeni əmrlər təqdim edir. Yardım mərkəzində ətraflı məlumat əldə edin və ya Ayarlarda yeni klaviatura düzülüşünə keçin.</string>
   <string name="keycombo_warning_content_description">Dəyişdirici düymə haqqında ətraflı</string>
   <string name="keycombo_menu_category_select_keymap">Əsas xəritə</string>
   <string name="keycombo_menu_select_keymap">Əsas xəritə seçin</string>
   <string name="keycombo_menu_reset_keymap">Əsas xəritəni sıfırlayın</string>
   <string name="keycombo_menu_view_system_keyboard_shortcuts">Sistem üçün klaviatura qısayollarına baxın</string>
-  <string name="keycombo_menu_choose_trigger_modifier">Dəyişdirici açarı seçin</string>
-  <string name="keycombo_menu_alert_title_trigger_modifier">%1$s dəyişdirici düymə kimi istifadə edilsin?</string>
-  <string name="keycombo_menu_alert_message_trigger_modifier">SandFly hazırda dəyişdirici düymə kimi <xliff:g id="current_trigger_modifier" example="Alt">%1$s</xliff:g> istifadə edir.</string>
-  <string name="keycombo_menu_alert_button_trigger_modifier">%1$s istifadə edin</string>
-  <string name="keycombo_menu_announce_new_trigger_modifier">Dəyişdirici açar %1$s ilə dəyişdirildi.</string>
+  <string name="keycombo_menu_choose_trigger_modifier">SandFly düyməsi seçin</string>
+  <string name="keycombo_menu_announce_new_trigger_modifier">SandFly düyməsi %1$s olaraq dəyişdirildi.</string>
   <string name="keycombo_menu_announce_active_keymap">%1$s indi aktivdir.</string>
   <string name="keycombo_menu_announce_reset_keymap">Əsas xəritə sıfırlandı.</string>
   <string name="keycombo_announce_shortcut_not_supported">Qısayol dəstəklənmir</string>
-  <string name="value_default_keymap">Defolt əsas xəritə</string>
-  <string name="value_new_keymap">Təkmilləşdirilmiş klaviatura düzülüşü</string>
+  <string name="value_new_keymap">SandFly əsas xəritəsi</string>
   <string name="keycombo_menu_category_navigation">Naviqasiya əməliyyatları</string>
   <string name="keycombo_menu_navigate_next">Növbəti elementə keçin</string>
   <string name="keycombo_menu_navigate_previous">Əvvəlki elementə keçin</string>
@@ -266,7 +255,7 @@
   <string name="message_in_reset_keymap_confirm_dialog">Bu əsas xəritə üçün qısayol düymələrini defolt dəyərlərə sıfırlamaq istədiyinizə əminsiniz. Lütfən, nəzərə alın ki, bu əməliyyat geri qaytarıla bilməz.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">Sıfırlayın</string>
   <string name="template_keycombo_menu_browse_mode_command">Axtarış rejimində %1$s</string>
-  <string name="keycombo_assign_dialog_default_keymap_instruction">Yeni qısayol yerləşdirmək üçün %1$s dəyişdirici açarı ilə birlikdə açar kombinasiyasına basın.</string>
+  <string name="keycombo_assign_dialog_default_keymap_instruction">Yeni qısayol ayarlamaq üçün %1$s SandFly düyməsi ilə düymə kombinasiyasına basın.</string>
   <string name="keycombo_unassigned">Təyin edilməyib</string>
   <string name="save_button_in_keycombo_assign_dialog">Yadda saxlayın</string>
   <string name="clear_button_in_keycombo_assign_dialog">Silin</string>
@@ -1804,4 +1793,10 @@
   <string name="title_pref_speech_dictionary">Nitq lüğəti</string>
   <string name="speech_dictionary_all_apps">Bütün tətbiqlər</string>
   <string name="speech_dictionary_not_said"><xliff:g id="text" example="#">%1$s</xliff:g> deyilmir</string>
+  <string name="keycombo_key_modifier_insert">Daxil edin</string>
+  <string name="keycombo_key_modifier_numpad_insert">Rəqəm paneli daxil etmək</string>
+  <string name="keycombo_menu_navigate_next_paragraph">Növbəti abzasa keçin</string>
+  <string name="keycombo_menu_navigate_previous_paragraph">Əvvəlki abzasa keçin</string>
+  <string name="keycombo_key_modifier_ctrl_alt">Ctrl + Alt</string>
+  <string name="value_voiceover_keymap">VoiceOver əsas xəritəsi</string>
 </resources>

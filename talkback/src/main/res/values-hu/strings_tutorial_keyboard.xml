@@ -2,14 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">SandFly billentyűzet-útmutató</string>
     <string name="sandfly_keyboard_tutorial_no_key">A(z) <xliff:g id="command" example="Next item">%1$s</xliff:g> parancshoz nem tartozik billentyűparancs. Rendeljen hozzá egyet a Parancsok képernyőn, vagy használja a Lépés kihagyása gombot.</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">A böngészés módhoz a Továbbfejlesztett billentyűzetkiosztás szükséges. Válassza ki itt: <xliff:g id="settings_path" example="SandFly settings &gt; Keyboard shortcuts &gt; Choose a keymap">%1$s</xliff:g>, vagy használja a Lépés kihagyása gombot.</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g> kétszer</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">A lecke kész. <xliff:g id="keys" example="Action + Space">%1$s</xliff:g>: a következő lecke indítása.</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">A lecke kész. <xliff:g id="keys" example="Action + Space">%1$s</xliff:g>: az útmutató befejezése.</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">Weboldalak</string>
-    <string name="sandfly_keyboard_tutorial_welcome_intro">Ez az útmutató a SandFly billentyűparancsait tanítja. A legtöbbjük a(z) <xliff:g id="key" example="Action">%1$s</xliff:g> billentyűt használja más billentyűkkel együtt. <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> A Ctrl leállítja a beszédet. Minden lecke ad egy utasítást, megvárja, amíg lenyomja a benne megnevezett billentyűket, majd megadja a következőt. Az utasítás a lecke neve utáni első elem. A Tartalom felsorolja az összes leckét, és az útmutató annál a leckénél nyílik meg újra, ahol tartott.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">Ez az útmutató a SandFly billentyűparancsait tanítja. A legtöbbjük a SandFly-billentyűt (<xliff:g id="key" example="Action">%1$s</xliff:g>) használja más billentyűkkel együtt. <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> A Ctrl leállítja a beszédet. Minden lecke ad egy utasítást, megvárja, amíg lenyomja a benne megnevezett billentyűket, majd megadja a következőt. Az utasítás a lecke neve utáni első elem. A Tartalom felsorolja az összes leckét, és az útmutató annál a leckénél nyílik meg újra, ahol tartott.</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">A Művelet billentyű a Windows billentyű, a bal oldali Alt billentyű mellett. Apple billentyűzeteken ez a Command billentyű, a szóköz billentyű mellett.</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">Az Alt billentyű a szóköz billentyű mellett van.</string>
     <string name="sandfly_keyboard_tutorial_welcome_start"><xliff:g id="keys" example="Action + Space">%1$s</xliff:g>: indítás.</string>
     <string name="sandfly_keyboard_tutorial_move_intro">A Következő elem és az Előző elem olvasási sorrendben lépked a képernyő elemei között.</string>
     <string name="sandfly_keyboard_tutorial_move_next"><xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g>: lépés a következő elemre. Folytassa, amíg el nem éri ezt: <xliff:g id="item" example="Eggs">%2$s</xliff:g>.</string>
@@ -53,4 +51,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">Billentyűzet-gyakorlás</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">Minden billentyűparancs végrehajtás helyett kimondja a billentyűit és a parancsát. A Következő elem, az Előző elem és az aktiválás továbbra is működik.</string>
     <string name="sandfly_keyboard_tutorial_practice_step">Nyomjon le bármilyen billentyűparancsot, és a SandFly kimondja, mit csinál. A befejezéshez aktiválja ezt: <xliff:g id="button" example="End practice">%1$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">Tartsa lenyomva egyszerre a Ctrl és az Alt billentyűt. Mindkettő a billentyűzet bal alsó részén található.</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">A legtöbb billentyűzeten az Insert a nyílbillentyűk feletti hatbillentyűs csoportban található.</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">A numerikus billentyűzet Insert billentyűje a numerikus billentyűzet 0 billentyűje, ha a Num Lock ki van kapcsolva.</string>
 </resources>
