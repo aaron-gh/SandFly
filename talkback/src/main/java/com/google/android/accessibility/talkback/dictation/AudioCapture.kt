@@ -27,8 +27,9 @@ import java.nio.ByteOrder
 
 /**
  * Records the microphone as 16 kHz mono 16-bit audio, the format Whisper and Gemini 3.5 Transcribe
- * take, from [start] until [stop]. Recording ends by itself after [MAX_SECONDS], and then
- * [onLimit] runs on the recording thread, as does [onChunk], with each tenth of a second recorded.
+ * take, from [start] until [stop]. Recording ends by itself after [MAX_SECONDS] or when the
+ * microphone fails, and then [onLimit] runs on the recording thread, as does [onChunk], with each
+ * tenth of a second recorded.
  */
 class AudioCapture(
   private val onLimit: () -> Unit,
@@ -91,7 +92,10 @@ class AudioCapture(
       while (recording) {
         val read = record.read(buffer, 0, buffer.size)
         if (read < 0) {
+          // Such as after the audio server restarted. Dictation stops and uses what was recorded.
           LogUtils.e(TAG, "Recording failed: %d", read)
+          recording = false
+          onLimit()
           break
         }
         synchronized(audio) { audio.write(buffer, 0, read) }
