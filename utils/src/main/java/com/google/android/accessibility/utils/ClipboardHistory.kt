@@ -39,6 +39,8 @@ object ClipboardHistory {
 
   private const val FILE = "clipboard_history"
   private const val KEY = "entries"
+  /** ClipDescription.EXTRA_IS_SENSITIVE, which apps set before Android 13 too. */
+  private const val EXTRA_IS_SENSITIVE = "android.content.extra.IS_SENSITIVE"
 
   private val listeners = mutableListOf<() -> Unit>()
 
@@ -114,8 +116,12 @@ object ClipboardHistory {
         null
       } else {
         readClipTime = time
+        // Password managers and keyboards mark passwords as sensitive, which the history doesn't
+        // keep.
+        val sensitive =
+          clipboard.primaryClipDescription?.extras?.getBoolean(EXTRA_IS_SENSITIVE) == true
         clipboard.primaryClip
-          ?.takeIf { it.itemCount > 0 }
+          ?.takeIf { !sensitive && it.itemCount > 0 }
           ?.getItemAt(0)
           ?.coerceToText(context)
           ?.toString()
