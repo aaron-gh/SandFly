@@ -502,7 +502,8 @@ class ThemeSoundsFragment : TalkbackBaseFragment() {
           } ?: SoundThemes.Result.FAILED
         } catch (e: IOException) {
           SoundThemes.Result.FAILED
-        } catch (e: SecurityException) {
+        } catch (e: RuntimeException) {
+          // Another app's provider can throw anything, such as SecurityException.
           SoundThemes.Result.FAILED
         }
       activity.runOnUiThread {
