@@ -155,6 +155,13 @@ public class NewKeyComboModel implements KeyComboModel {
           NO_MODIFIER, NO_PREFIX_KEY_CODE, KeyEvent.KEYCODE_SPACE, /* triggerModifierUsed= */ true);
     }
 
+    // Browse mode also turns on and off with SandFly key + Q, for SandFly keys that can't be
+    // pressed twice, such as Ctrl + Alt.
+    if (key.equals(context.getString(R.string.keycombo_shortcut_other_toggle_browse_mode_extra))) {
+      return new KeyCombo(
+          NO_MODIFIER, NO_PREFIX_KEY_CODE, KeyEvent.KEYCODE_Q, /* triggerModifierUsed= */ true);
+    }
+
     if (key.equals(context.getString(R.string.keycombo_shortcut_perform_long_click))) {
       return new KeyCombo(
           KeyEvent.META_SHIFT_ON,

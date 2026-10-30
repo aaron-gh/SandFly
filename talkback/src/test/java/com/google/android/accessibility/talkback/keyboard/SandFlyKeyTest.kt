@@ -191,7 +191,38 @@ class SandFlyKeyTest {
         context.getString(Keymap.VOICEOVER.valueRes),
       )
       .putString("pref_voiceover_keymap_trigger_modifier", context.getString(SandFlyKey.CTRL_ALT.valueRes))
+      // Every install has the SandFly keymap's old SandFly key.
+      .putString(context.getString(R.string.pref_sandfly_key), context.getString(SandFlyKey.META.valueRes))
       .commit()
     assertEquals(SandFlyKey.CTRL_ALT, KeyComboManager.create(context).sandFlyKey)
+
+    // Once moved, a SandFly key chosen later stays.
+    SharedPreferencesUtils.getSharedPreferences(context)
+      .edit()
+      .putString(context.getString(R.string.pref_sandfly_key), context.getString(SandFlyKey.INSERT.valueRes))
+      .commit()
+    assertEquals(SandFlyKey.INSERT, KeyComboManager.create(context).sandFlyKey)
+  }
+
+  @Test
+  fun sandFlyKeymapTurnsBrowseModeOnWithCtrlAltQ() {
+    val manager = manager(Keymap.SANDFLY, SandFlyKey.CTRL_ALT)
+    assertEquals(
+      KeyCombo(0, 0, KeyEvent.KEYCODE_Q, true),
+      manager.keyComboModel.getKeyComboForKey(
+        context.getString(R.string.keycombo_shortcut_other_toggle_browse_mode_extra)
+      ),
+    )
+  }
+
+  @Test
+  fun arrowKeyNavigationLeavesInsertArrowShortcuts() {
+    ArrowKeyNav.reset(context)
+    ArrowKeyNav.setOn(context, true)
+    val manager = manager(Keymap.NVDA, SandFlyKey.INSERT)
+    assertTrue(manager.down(KeyEvent.KEYCODE_INSERT))
+    assertTrue(manager.down(KeyEvent.KEYCODE_DPAD_DOWN))
+    // NVDA + Down reads from the focused item.
+    assertEquals(listOf<String?>("Insert + Arrow Down"), keys)
   }
 }

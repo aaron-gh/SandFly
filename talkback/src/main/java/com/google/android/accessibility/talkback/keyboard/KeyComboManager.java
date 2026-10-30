@@ -138,6 +138,8 @@ public class KeyComboManager
    * this interval, exit the sequence key mode.
    */
   private static final Duration SEQUENCE_KEY_MODE_TIMEOUT = Duration.ofSeconds(3);
+  // Set once the SandFly key of the keymap in use has become the one for all keymaps.
+  private static final String SANDFLY_KEY_MIGRATED_PREF = "pref_sandfly_key_migrated";
 
   /** Returns keyComboCode that represent keyEvent. */
   public static long getKeyComboCode(KeyEvent keyEvent) {
@@ -366,6 +368,8 @@ public class KeyComboManager
     // The following method will cause the key history to be reset.
     setMatchKeyCombo(matchKeyCombo);
     arrowKeyNavKeyHandler.reset();
+    // The up event of a held SandFly key may be lost the same way.
+    sandFlyKeyHeld = false;
     serviceState = newState;
   }
 
@@ -385,12 +389,16 @@ public class KeyComboManager
       }
     }
 
-    if (arrowKeyNavKeyHandler.onKeyEvent(
-        event,
-        /* canAct= */ serviceState == SERVICE_STATE_ACTIVE
-            && matchKeyCombo
-            && keyComboMapper != null
-            && keyComboPassThroughState != KeyComboPassThroughState.ACTIVE)) {
+    // Arrow keys pressed with a held SandFly key are SandFly key shortcuts, not arrow key
+    // navigation; the held key itself is a modifier to arrow key navigation.
+    if (!isHeldSandFlyKey(event)
+        && arrowKeyNavKeyHandler.onKeyEvent(
+            event,
+            /* canAct= */ serviceState == SERVICE_STATE_ACTIVE
+                && matchKeyCombo
+                && keyComboMapper != null
+                && keyComboPassThroughState != KeyComboPassThroughState.ACTIVE
+                && !sandFlyKeyHeld)) {
       return true;
     }
 
@@ -522,6 +530,8 @@ public class KeyComboManager
   public void onConfigurationChanged(Configuration newConfig) {
     if (newConfig.hardKeyboardHidden != hardwareKeyboardStatus) {
       hardwareKeyboardStatus = newConfig.hardKeyboardHidden;
+      // A keyboard that went away can't send the up event of a held SandFly key.
+      sandFlyKeyHeld = false;
       if (serviceState == SERVICE_STATE_ACTIVE) {
         if (hardwareKeyboardStatus == KEYBOARDHIDDEN_YES) {
           analytics.onKeymapTypeUsed(keyComboModel);
@@ -759,13 +769,19 @@ public class KeyComboManager
     if (!value.equals(keymapValue)) {
       sharedPreferences.edit().putString(key, value).apply();
     }
-    // Keymaps had SandFly keys of their own; the active keymap's becomes the one for all.
-    String sandFlyKeyPref = context.getString(R.string.pref_sandfly_key);
-    if (!sharedPreferences.contains(sandFlyKeyPref) && keymap.getOldSandFlyKeyPref() != null) {
-      String oldSandFlyKey = sharedPreferences.getString(keymap.getOldSandFlyKeyPref(), null);
+    // Keymaps had SandFly keys of their own; the active keymap's becomes the one for all, once.
+    // The SandFly key's pref is the SandFly keymap's old one, which every install has written.
+    if (!sharedPreferences.getBoolean(SANDFLY_KEY_MIGRATED_PREF, false)) {
+      SharedPreferences.Editor editor =
+          sharedPreferences.edit().putBoolean(SANDFLY_KEY_MIGRATED_PREF, true);
+      String oldSandFlyKey =
+          keymap.getOldSandFlyKeyPref() == null
+              ? null
+              : sharedPreferences.getString(keymap.getOldSandFlyKeyPref(), null);
       if (oldSandFlyKey != null) {
-        sharedPreferences.edit().putString(sandFlyKeyPref, oldSandFlyKey).apply();
+        editor.putString(context.getString(R.string.pref_sandfly_key), oldSandFlyKey);
       }
+      editor.apply();
     }
   }
 
@@ -1309,8 +1325,19 @@ public class KeyComboManager
     return keyComboModel instanceof NewKeyComboModel model ? model.getSandFlyKey() : null;
   }
 
-  /** Notes whether a held SandFly key, such as Insert, is down. */
-  private void trackSandFlyKey(KeyEvent event) {
+  /** Returns whether [event] presses or releases the SandFly key where it's a held key. */
+  private boolean isHeldSandFlyKey(KeyEvent event) {
+    @Nullable SandFlyKey sandFlyKey = getSandFlyKey();
+    return sandFlyKey != null
+        && sandFlyKey.isHeldKey()
+        && event.getKeyCode() == sandFlyKey.getKeyCode();
+  }
+
+  /**
+   * Notes whether a held SandFly key, such as Insert, is down. Callers that see key events before
+   * this manager, such as the pause controller, call it too.
+   */
+  public void trackSandFlyKey(KeyEvent event) {
     @Nullable SandFlyKey sandFlyKey = getSandFlyKey();
     if (sandFlyKey == null || event.getKeyCode() != sandFlyKey.getKeyCode()) {
       return;
@@ -1336,9 +1363,8 @@ public class KeyComboManager
   }
 
   private boolean isAnyModifierKeyPressed(KeyEvent event) {
-    int modifiers = event.getModifiers();
-    // Check if any of the modifiers are set. If any are set, we return true.
-    return (modifiers & KEY_EVENT_MODIFIER_MASK) != 0;
+    // Check if any of the modifiers, a held SandFly key among them, are set.
+    return modifiersOf(event) != 0;
   }
 
   private boolean isKeyComboPassThroughFeatureAvailable() {
@@ -1400,6 +1426,7 @@ public class KeyComboManager
     // key (meta key) once.
     if (isBrowseModeSupported()
         && maxKeysDown == 1
+        && getSandFlyKey() == SandFlyKey.META
         && isMetaKey(event.getKeyCode())
         && !isEqualToLastKeyComboAndDurationLessThanThreshold()) {
       // Schedule to open search app if it's not already scheduled.
