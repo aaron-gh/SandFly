@@ -227,7 +227,7 @@ class SandFlyKeyTest {
   }
 
   @Test
-  fun defaultKeymapUsersKeepTheirShortcutsAndAlt() {
+  fun defaultKeymapIsKeptAsACustomKeymap() {
     // An older version's Default keymap: Alt as its modifier and Alt + J to activate.
     KeyComboPersister(context, "default_key_combo_model")
       .saveKeyCombo(
@@ -241,16 +241,54 @@ class SandFlyKeyTest {
       .putString(context.getString(R.string.pref_sandfly_key), context.getString(SandFlyKey.META.valueRes))
       .commit()
     val manager = KeyComboManager.create(context)
+    assertTrue(manager.isCustomKeymap)
+    assertEquals("Custom", (manager.keyComboModel as NewKeyComboModel).customKeymap?.name)
     assertEquals(SandFlyKey.ALT, manager.sandFlyKey)
+    val click = context.getString(R.string.keycombo_shortcut_perform_click)
+    assertEquals(KeyCombo(0, 0, KeyEvent.KEYCODE_J, true), manager.keyComboModel.getKeyComboForKey(click))
+    // Resetting it goes back to it as it was kept.
+    assertEquals(KeyCombo(0, 0, KeyEvent.KEYCODE_J, true), manager.keyComboModel.getDefaultKeyCombo(click))
+    // Commands the Default keymap didn't have are unassigned.
     assertEquals(
-      KeyCombo(0, 0, KeyEvent.KEYCODE_J, true),
-      manager.keyComboModel.getKeyComboForKey(
-        context.getString(R.string.keycombo_shortcut_perform_click)
-      ),
+      0L,
+      manager.keyComboModel
+        .getKeyComboForKey(context.getString(R.string.keycombo_shortcut_navigate_next_paragraph))
+        .keyComboCode,
     )
-    // Alt + J is its own; the SandFly keymap's other defaults stay off it.
-    val combos = manager.keyComboModel.keyComboMap.values.filter { it.keyComboCode != 0L }
-    assertEquals(combos.size, combos.toSet().size)
+  }
+
+  @Test
+  fun customKeymapTakesKeysWithoutTheSandFlyKey() {
+    val custom =
+      CustomKeymaps.create(
+        context,
+        "Mine",
+        usesSequences = false,
+        mapOf(
+          context.getString(R.string.keycombo_shortcut_perform_click) to
+            KeyCombo(0, 0, KeyEvent.KEYCODE_F2, false)
+        ),
+      )
+    SharedPreferencesUtils.getSharedPreferences(context)
+      .edit()
+      .putString(context.getString(R.string.pref_select_keymap_key), custom.value)
+      .putString(context.getString(R.string.pref_sandfly_key), context.getString(SandFlyKey.META.valueRes))
+      .commit()
+    val manager = KeyComboManager.create(context).apply {
+      onServiceStateChanged(ServiceStateListener.SERVICE_STATE_ACTIVE)
+    }
+    assertTrue(manager.keyComboModel.isEligibleKeyCombo(KeyCombo(KeyEvent.META_CTRL_ON, 0, KeyEvent.KEYCODE_N, false)))
+    // F2 alone activates, outside browse mode; Ctrl alone and other keys go to the app.
+    assertTrue(manager.down(KeyEvent.KEYCODE_F2))
+    assertEquals(1, keys.size)
+    manager.up(KeyEvent.KEYCODE_F2)
+    val ctrl = KeyEvent.META_CTRL_ON or KeyEvent.META_CTRL_LEFT_ON
+    assertFalse(manager.down(KeyEvent.KEYCODE_CTRL_LEFT, ctrl))
+    assertFalse(manager.down(KeyEvent.KEYCODE_C, ctrl))
+    assertEquals(1, keys.size)
+
+    CustomKeymaps.delete(context, custom)
+    assertTrue(CustomKeymaps.all(context).isEmpty())
   }
 
   @Test

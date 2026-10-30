@@ -1024,6 +1024,22 @@
     <string name="value_jaws_keymap">JAWS keymap</string>
     <!-- Name of the keymap with Orca's keyboard commands. Orca is a screen reader for Linux; don't translate it. [CHAR LIMIT=40] -->
     <string name="value_orca_keymap">Orca keymap</string>
+    <!-- Name of the keymap that keeps an older version's Default keymap, with the user's shortcuts. [CHAR LIMIT=40] -->
+    <string name="keycombo_custom_keymap_default_name">Custom</string>
+    <!-- Setting that makes a keymap of the user's own, as a copy of the keymap in use. [CHAR LIMIT=40] -->
+    <string name="keycombo_menu_new_keymap">New keymap</string>
+    <!-- Name suggested for a new keymap; the placeholder is the name of the keymap it copies. [CHAR LIMIT=40] -->
+    <string name="keycombo_new_keymap_default_name">Copy of <xliff:g id="keymap_name" example="NVDA keymap">%1$s</xliff:g></string>
+    <!-- Setting that renames the keymap in use, one the user made. [CHAR LIMIT=40] -->
+    <string name="keycombo_menu_rename_keymap">Rename keymap</string>
+    <!-- Setting that deletes the keymap in use, one the user made. [CHAR LIMIT=40] -->
+    <string name="keycombo_menu_delete_keymap">Delete keymap</string>
+    <!-- Title of the dialog that asks before deleting a keymap the user made. [CHAR LIMIT=60] -->
+    <string name="keycombo_delete_keymap_title">Delete <xliff:g id="keymap_name" example="Custom">%1$s</xliff:g>?</string>
+    <!-- Button that deletes a keymap the user made. [CHAR LIMIT=20] -->
+    <string name="keycombo_delete_keymap_button">Delete</string>
+    <!-- Instruction when setting a shortcut in a keymap the user made, which takes any keys. [CHAR LIMIT=NONE] -->
+    <string name="keycombo_assign_dialog_custom_keymap_instruction">Press the keys of the new shortcut.</string>
     <!-- Navigation actions group name title [CHAR LIMIT=40] -->
     <string name="keycombo_menu_category_navigation">Navigation actions</string>
     <!-- Keyboard key combination assignment for Navigate to next item action [CHAR LIMIT=40] -->

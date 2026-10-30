@@ -80,6 +80,7 @@ import com.google.android.accessibility.utils.output.SpeechController.SpeakOptio
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import com.google.common.collect.ImmutableSet;
 import java.time.Duration;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
@@ -566,7 +567,7 @@ public class KeyComboManager
   public boolean isSequenceKeyInfraSupported() {
     return FeatureFlagReader.enableSequenceKeyInfra(context)
         && keyComboModel instanceof NewKeyComboModel model
-        && model.getKeymap().getUsesSequences();
+        && model.usesSequences();
   }
 
   /** Returns true if the given key code is a meta key. */
@@ -786,17 +787,23 @@ public class KeyComboManager
   }
 
 
-  /** Saves the SandFly keymap for new users and for users of the removed Default and classic keymaps. */
+  /**
+   * Saves the SandFly keymap for new users and for users of the classic keymap, and keeps the
+   * removed Default keymap as a custom keymap for the users who chose it.
+   */
   private void initializeDefaultPreferenceValues() {
     String key = context.getString(R.string.pref_select_keymap_key);
     String keymapValue = sharedPreferences.getString(key, null);
     if (DEFAULT_KEYMAP_VALUE.equals(keymapValue)) {
-      moveDefaultKeymapToSandFlyKeymap();
+      keymapValue = keepDefaultKeymapAsCustomKeymap().getValue();
+      sharedPreferences.edit().putString(key, keymapValue).apply();
     }
     Keymap keymap = Keymap.of(context, keymapValue);
-    String value = context.getString(keymap.getValueRes());
-    if (!value.equals(keymapValue)) {
-      sharedPreferences.edit().putString(key, value).apply();
+    if (CustomKeymaps.of(context, keymapValue) == null) {
+      String value = context.getString(keymap.getValueRes());
+      if (!value.equals(keymapValue)) {
+        sharedPreferences.edit().putString(key, value).apply();
+      }
     }
     // Keymaps had SandFly keys of their own; the active keymap's becomes the one for all, once.
     // The SandFly key's pref is the SandFly keymap's old one, which every install has written.
@@ -896,6 +903,10 @@ public class KeyComboManager
 
   /** Creates key combo model by keymap key and return it. */
   private KeyComboModel createKeyComboModel() {
+    @Nullable CustomKeymap customKeymap = CustomKeymaps.of(context, getKeymap());
+    if (customKeymap != null) {
+      return new NewKeyComboModel(context, customKeymap);
+    }
     return new NewKeyComboModel(context, Keymap.of(context, getKeymap()));
   }
 
@@ -1078,6 +1089,22 @@ public class KeyComboManager
     boolean triggerModifierNotPressedWhenNeeded =
         hasModifier && !pressedTriggerModifier && !startedSequenceKeyCombo && !enabledBrowseMode;
     if (triggerModifierNotPressedWhenNeeded) {
+      // A custom keymap's shortcuts without the SandFly key work anywhere. Modifier keys pressed on
+      // their own always go to the app.
+      if (isCustomKeymap() && !KeyEvent.isModifierKey(event.getKeyCode())) {
+        KeyCombo plainKeyCombo =
+            new KeyCombo(
+                otherModifiers,
+                KeyComboModel.NO_PREFIX_KEY_CODE,
+                getConvertedKeyCode(event),
+                /* triggerModifierUsed= */ false);
+        currentKeyCombo = plainKeyCombo;
+        performedCombo = matchAndPerformKeyCombo(plainKeyCombo, triggerModifier);
+        hasPartialMatch = false;
+        if (performedCombo) {
+          return true;
+        }
+      }
       // TalkBack may not handle the key event in this case. Add the current keys to the passed
       // keys set to avoid the key event being handled by TalkBack when not needed.
       passedKeys.addAll(currentKeysDown);
@@ -1357,11 +1384,10 @@ public class KeyComboManager
   }
 
   /**
-   * Gives users of the removed Default keymap its shortcuts, changed or not, in the SandFly keymap,
-   * with its modifier, Alt or Meta, as the SandFly key. Commands the Default keymap didn't have get
-   * the SandFly keymap's defaults where those keys are free.
+   * Keeps the removed Default keymap, with its shortcuts, changed or not, as a custom keymap named
+   * Custom, and its modifier, Alt or Meta, as the SandFly key. Returns the custom keymap.
    */
-  private void moveDefaultKeymapToSandFlyKeymap() {
+  private CustomKeymap keepDefaultKeymapAsCustomKeymap() {
     SandFlyKey sandFlyKey =
         "trigger_modifier_meta"
                 .equals(sharedPreferences.getString("pref_default_keymap_trigger_modifier", null))
@@ -1375,13 +1401,20 @@ public class KeyComboManager
         .putBoolean(SANDFLY_KEY_MIGRATED_PREF, true)
         .apply();
     KeyComboPersister from = new KeyComboPersister(context, "default_key_combo_model");
-    KeyComboPersister to =
-        new KeyComboPersister(context, Keymap.SANDFLY.persisterPrefix(sandFlyKey));
+    Map<String, KeyCombo> shortcuts = new HashMap<>();
     for (String key : from.keysStartingWith("")) {
-      if (!to.contains(key)) {
-        to.saveKeyCombo(key, from.getKeyCombo(key));
-      }
+      shortcuts.put(key, from.getKeyCombo(key));
     }
+    return CustomKeymaps.create(
+        context,
+        context.getString(R.string.keycombo_custom_keymap_default_name),
+        /* usesSequences= */ false,
+        shortcuts);
+  }
+
+  /** Returns whether the keymap in use is one the user made. */
+  public boolean isCustomKeymap() {
+    return keyComboModel instanceof NewKeyComboModel model && model.getCustomKeymap() != null;
   }
 
   /** Returns whether the keymap turns browse mode on and off with the SandFly key pressed twice. */

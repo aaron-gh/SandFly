@@ -2365,4 +2365,12 @@
   <string name="value_jaws_keymap">JAWS 按键映射</string>
   <string name="value_orca_keymap">Orca 按键映射</string>
   <string name="keycombo_key_modifier_ctrl_meta">Ctrl 键 + Meta</string>
+  <string name="keycombo_custom_keymap_default_name">自定义</string>
+  <string name="keycombo_menu_new_keymap">新建按键映射</string>
+  <string name="keycombo_new_keymap_default_name"><xliff:g id="keymap_name" example="NVDA keymap">%1$s</xliff:g>的副本</string>
+  <string name="keycombo_menu_rename_keymap">重命名按键映射</string>
+  <string name="keycombo_menu_delete_keymap">删除按键映射</string>
+  <string name="keycombo_delete_keymap_title">要删除<xliff:g id="keymap_name" example="Custom">%1$s</xliff:g>吗？</string>
+  <string name="keycombo_delete_keymap_button">删除</string>
+  <string name="keycombo_assign_dialog_custom_keymap_instruction">请按下新快捷键的按键。</string>
 </resources>

@@ -1803,4 +1803,12 @@
   <string name="value_jaws_keymap">JAWS-näppäinkartta</string>
   <string name="value_orca_keymap">Orca-näppäinkartta</string>
   <string name="keycombo_key_modifier_ctrl_meta">Ctrl + Meta</string>
+  <string name="keycombo_custom_keymap_default_name">Muokattu</string>
+  <string name="keycombo_menu_new_keymap">Uusi näppäinkartta</string>
+  <string name="keycombo_new_keymap_default_name">Kopio: <xliff:g id="keymap_name" example="NVDA keymap">%1$s</xliff:g></string>
+  <string name="keycombo_menu_rename_keymap">Nimeä näppäinkartta uudelleen</string>
+  <string name="keycombo_menu_delete_keymap">Poista näppäinkartta</string>
+  <string name="keycombo_delete_keymap_title">Poistetaanko <xliff:g id="keymap_name" example="Custom">%1$s</xliff:g>?</string>
+  <string name="keycombo_delete_keymap_button">Poista</string>
+  <string name="keycombo_assign_dialog_custom_keymap_instruction">Paina uuden pikanäppäimen näppäimiä.</string>
 </resources>
