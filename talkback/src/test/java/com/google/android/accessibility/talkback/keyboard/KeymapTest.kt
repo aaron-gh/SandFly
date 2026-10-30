@@ -127,6 +127,6 @@ class KeymapTest {
       KeyEvent(0, 0, KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_NUMPAD_0, 0, KeyEvent.META_NUM_LOCK_ON)
     assertTrue(SandFlyKey.NUMPAD_INSERT.isKey(numLockOff))
     assertFalse(SandFlyKey.NUMPAD_INSERT.isKey(numLockOn))
-    assertFalse(SandFlyKey.ACTION.isKey(numLockOff))
+    assertFalse(SandFlyKey.META.isKey(numLockOff))
   }
 }

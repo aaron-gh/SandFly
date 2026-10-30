@@ -33,7 +33,7 @@ import java.util.List;
 
 /**
  * The keyboard shortcuts that each keyboard tutorial text names. The texts are written for the
- * enhanced keymap with its default keys and the Action key as the modifier; with any other keys,
+ * enhanced keymap with its default keys and the Meta key as the modifier; with any other keys,
  * the text is replaced by a line for each shortcut with the user's keys, built from translated
  * shortcut names and key names.
  */

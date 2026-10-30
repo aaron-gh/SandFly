@@ -566,14 +566,14 @@ class TutorialActivity : AppCompatActivity() {
       ?.toString()
   }
 
-  /** Android's own shortcut with the Action key and [keyCode], such as "Action + H". */
+  /** Android's own shortcut with the Meta key and [keyCode], such as "Action + H". */
   private fun systemKeyName(keyCode: Int): String =
     CommandBindings.keyComboManager(this)
       .getArrowKeysStringRepresentation(
         KeyCombo.computeKeyComboCode(KeyEvent.META_META_ON, keyCode)
       )
 
-  /** What Android's own shortcut with the Action key and [keyCode] does. */
+  /** What Android's own shortcut with the Meta key and [keyCode] does. */
   private fun systemKeyLabel(keyCode: Int): String =
     actionName(
       getString(
@@ -589,13 +589,13 @@ class TutorialActivity : AppCompatActivity() {
   /** The introduction of [lesson], with the key that keyboard shortcuts use where it names it. */
   private fun introOf(lesson: TutorialLesson): String {
     if (!lesson.introNamesKey) return getString(lesson.intro)
-    val key = CommandBindings.keyComboManager(this).sandFlyKey ?: SandFlyKey.ACTION
+    val key = CommandBindings.keyComboManager(this).sandFlyKey ?: SandFlyKey.META
     return getString(
       lesson.intro,
       getString(key.nameRes),
       getString(
         when (key) {
-          SandFlyKey.ACTION -> R.string.sandfly_keyboard_tutorial_action_key_location
+          SandFlyKey.META -> R.string.sandfly_keyboard_tutorial_action_key_location
           SandFlyKey.CTRL_ALT -> R.string.sandfly_keyboard_tutorial_ctrl_alt_key_location
           SandFlyKey.INSERT -> R.string.sandfly_keyboard_tutorial_insert_key_location
           SandFlyKey.NUMPAD_INSERT -> R.string.sandfly_keyboard_tutorial_numpad_insert_key_location

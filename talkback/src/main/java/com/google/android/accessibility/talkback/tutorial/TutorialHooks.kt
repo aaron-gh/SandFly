@@ -39,7 +39,7 @@ object TutorialHooks {
     fun onKeys(keys: String?, command: String): Boolean
 
     /**
-     * [keyCode] was pressed with the Action key, one of Android's own shortcuts in
+     * [keyCode] was pressed with the Meta key, one of Android's own shortcuts in
      * [SYSTEM_KEY_CODES]. Returns true if the tutorial takes it, so that Android doesn't act on it.
      */
     fun onSystemKeys(keyCode: Int): Boolean
@@ -50,7 +50,7 @@ object TutorialHooks {
     fun onContinuousReading(active: Boolean)
   }
 
-  /** Keys that Android acts on with the Action key: Back, Home, recent apps and notifications. */
+  /** Keys that Android acts on with the Meta key: Back, Home, recent apps and notifications. */
   @JvmField
   val SYSTEM_KEY_CODES =
     setOf(KeyEvent.KEYCODE_ESCAPE, KeyEvent.KEYCODE_H, KeyEvent.KEYCODE_TAB, KeyEvent.KEYCODE_N)

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" xmlns:tools="http://schemas.android.com/tools">
   <!--The text for the instructions for the keyboard tutorial. [CHAR_LIMIT=NONE]-->
-  <string name="talkback_keyboard_tutorial_text">This tutorial is for the enhanced keymap, which includes many new commands. To select the keymap, go to SandFly settings > Keyboard shortcuts.\n\nPress Action + Right arrow to select a topic. For the best experience, turn on SandFly before getting started.</string>
+  <string name="talkback_keyboard_tutorial_text">This tutorial is for the enhanced keymap, which includes many new commands. To select the keymap, go to SandFly settings > Keyboard shortcuts.\n\nPress Meta + Right arrow to select a topic. For the best experience, turn on SandFly before getting started.</string>
   <!-- The text of basic interaction on the index page. [CHAR_LIMIT=NONE]-->
   <string name="basic_interaction_link_text">Basic interaction</string>
   <!-- The subtext of basic interaction on the index page. [CHAR_LIMIT=NONE]-->
@@ -25,25 +25,25 @@
 
   <!-- Welcome to TalkBack keyboard tutorial pages. -->
   <!-- The text of the keyboard tutorial welcome to talkback page. [CHAR_LIMIT=NONE]-->
-  <string name ="keyboard_tutorial_welcome_to_talkback_page_text">SandFly provides spoken feedback so that you can use your device without looking at the screen. SandFly can be helpful for people who have difficulty seeing the screen. When SandFly is on, the focused item on the screen is spoken out loud.\n\nFirst let\'s get familiar with your keyboard. The Action key is the Windows key, next to the left Alt key. On Apple keyboards, it\'s the Command key, next to the space bar. The arrow keys are at the bottom right of the keyboard. Press Action + Right arrow to move to the next item.</string>
+  <string name ="keyboard_tutorial_welcome_to_talkback_page_text">SandFly provides spoken feedback so that you can use your device without looking at the screen. SandFly can be helpful for people who have difficulty seeing the screen. When SandFly is on, the focused item on the screen is spoken out loud.\n\nFirst let\'s get familiar with your keyboard. The Meta key is the Windows key, next to the left Alt key. On Apple keyboards, it\'s the Command key, next to the space bar. The arrow keys are at the bottom right of the keyboard. Press Meta + Right arrow to move to the next item.</string>
   <!-- The text of the keyboard tutorial next item. [CHAR_LIMIT=NONE]-->
-  <string name="keyboard_tutorial_welcome_to_talkback_next_item_text">This is the next item. To move to the previous item, press Action + Left arrow.\n\nWhen you move to an interactive item like a button, press Action + Space to activate it. Find the next button and continue the tutorial.</string>
+  <string name="keyboard_tutorial_welcome_to_talkback_next_item_text">This is the next item. To move to the previous item, press Meta + Left arrow.\n\nWhen you move to an interactive item like a button, press Meta + Space to activate it. Find the next button and continue the tutorial.</string>
   <!-- The title of the keyboard tutorial reading by lines, words and characters page. [CHAR_LIMIT=NONE]-->
   <string name="keyboard_tutorial_chars_words_paragraphs_page_title">Read by character, word, or paragraph</string>
   <!-- The description of how to read by lines, words and characters. [CHAR_LIMIT=NONE]-->
-  <string name="keyboard_tutorial_chars_words_paragraphs_page_text">Sometimes, you might want to hear text read aloud one character at a time.\n\nTo do this, you can use reading controls navigation. Press Action + Shift + Right or Left arrow until you hear "characters."\n\nNext, press Action + Up arrow to move the navigation focus backward by character. Press Action + Down arrow down to move the navigation focus forward by character.\n\nTry it now. You can also choose to read by words, lines, or paragraphs using Action + Shift + Right or Left arrow.</string>
+  <string name="keyboard_tutorial_chars_words_paragraphs_page_text">Sometimes, you might want to hear text read aloud one character at a time.\n\nTo do this, you can use reading controls navigation. Press Meta + Shift + Right or Left arrow until you hear "characters."\n\nNext, press Meta + Up arrow to move the navigation focus backward by character. Press Meta + Down arrow down to move the navigation focus forward by character.\n\nTry it now. You can also choose to read by words, lines, or paragraphs using Meta + Shift + Right or Left arrow.</string>
   <!-- The title of the keyboard tutorial system navigation page. [CHAR_LIMIT=NONE]-->
   <string name="keyboard_tutorial_system_navigation_page_title">System navigation</string>
   <!-- The description of how to navigate to system pages. "Search" is a generic term, not a product name. [CHAR_LIMIT=NONE]-->
-  <string name="keyboard_tutorial_system_navigation_page_text">Trying these keyboard shortcuts now will close the tutorial. You may want to wait until you\'ve completed the tutorial.\n\nTo jump between open app windows and system elements like notifications and the Taskbar, press Action + Alt + Ctrl + Up or Down arrow.\n\nTo open the app list, press Action.\n\nTo go to the Home screen and minimize all open windows, press Action + H.\n\nTo go to your recent apps, press Action + Tab.\n\nTo quickly jump between windows, hold down Alt and press Tab.\n\nTo go back, press Action + Esc.\n\nTo open notifications, press Action + N.</string>
+  <string name="keyboard_tutorial_system_navigation_page_text">Trying these keyboard shortcuts now will close the tutorial. You may want to wait until you\'ve completed the tutorial.\n\nTo jump between open app windows and system elements like notifications and the Taskbar, press Meta + Alt + Ctrl + Up or Down arrow.\n\nTo open the app list, press Meta.\n\nTo go to the Home screen and minimize all open windows, press Meta + H.\n\nTo go to your recent apps, press Meta + Tab.\n\nTo quickly jump between windows, hold down Alt and press Tab.\n\nTo go back, press Meta + Esc.\n\nTo open notifications, press Meta + N.</string>
   <!-- The title of the keyboard tutorial speech settings page. [CHAR_LIMIT=NONE]-->
   <string name="keyboard_tutorial_speech_settings_page_title">Adjust speech settings</string>
   <!-- The description of how to adjust speech settings. [CHAR_LIMIT=NONE]-->
-  <string name="keyboard_tutorial_speech_settings_page_text">The volume for SandFly speech is called the accessibility volume. It\'s adjusted separately from the media volume.\n\nTo adjust the accessibility volume, press Action + Volume up or down.\n\nTo adjust the speech rate, press Action + Ctrl + Volume up to increase and Action + Ctrl + Volume down to decrease.\n\nTo stop speech at any time, press Ctrl.</string>
+  <string name="keyboard_tutorial_speech_settings_page_text">The volume for SandFly speech is called the accessibility volume. It\'s adjusted separately from the media volume.\n\nTo adjust the accessibility volume, press Meta + Volume up or down.\n\nTo adjust the speech rate, press Meta + Ctrl + Volume up to increase and Meta + Ctrl + Volume down to decrease.\n\nTo stop speech at any time, press Ctrl.</string>
   <!-- The title of the keyboard tutorial more keyboard shortcuts page. [CHAR_LIMIT=NONE]-->
   <string name="keyboard_tutorial_more_keyboard_shortcuts_page_title">SandFly menu and more keyboard shortcuts</string>
   <!-- The description of how to use the talkback menu and more keyboard shortcuts. [CHAR_LIMIT=NONE]-->
-  <string name="keyboard_tutorial_more_keyboard_shortcuts_page_text">The SandFly menu includes settings and controls that you may need often.\n\nTo open the SandFly menu, press Action + Ctrl + M. You can customize the SandFly menu and your reading controls later in SandFly settings.\n\nThe SandFly keyboard shortcuts menu includes all the keyboard shortcuts you can use.\n\nTo open the keyboard shortcuts menu, press Action + Shift + /.\n\nTo learn more about the keyboard and practice keyboard shortcuts, press Action + 0 to open the practice screen.</string>
+  <string name="keyboard_tutorial_more_keyboard_shortcuts_page_text">The SandFly menu includes settings and controls that you may need often.\n\nTo open the SandFly menu, press Meta + Ctrl + M. You can customize the SandFly menu and your reading controls later in SandFly settings.\n\nThe SandFly keyboard shortcuts menu includes all the keyboard shortcuts you can use.\n\nTo open the keyboard shortcuts menu, press Meta + Shift + /.\n\nTo learn more about the keyboard and practice keyboard shortcuts, press Meta + 0 to open the practice screen.</string>
   <!-- The title of the keyboard tutorial finished page. [CHAR_LIMIT=NONE]-->
   <string name="keyboard_tutorial_finished_page_title">All set!</string>
   <!-- The description of the keyboard tutorial finished page. "Keep" is a generic term, not a product name. [CHAR_LIMIT=NONE]-->
@@ -53,54 +53,54 @@
   <!-- The title of the keyboard tutorial browse mode page. [CHAR_LIMIT=NONE]-->
   <string name ="keyboard_tutorial_browse_mode_page_title">Navigate web content faster with browse mode</string>
   <!-- The description of how to use browse mode. [CHAR_LIMIT=NONE]-->
-  <string name="keyboard_tutorial_browse_mode_page_text">When you are in the browser and web apps, you can turn on browse mode and jump between different types of reading granularity and controls with a single press of a key. It makes navigating a page similar to navigating in a text editing box, such as left and right arrows to move by character and up and down arrows to move by line.\n\nTo turn on or off browse mode, double-press the Action key.\n\nWhen browse mode is on, press D to jump to the next landmark, F for the next control or form field, B for the next button, K for the next link and H for the next heading. Hold Shift and press these keys to move backward.\n\nYou can also use Up and Down arrows to jump by lines, Left and Right arrows to jump by letters, and Ctrl + Left and Right arrows to jump by words.\n\nPress Action + Right arrow to enter a practice area. While in the practice area links, form fields, and buttons won\'t do anything.</string>
+  <string name="keyboard_tutorial_browse_mode_page_text">When you are in the browser and web apps, you can turn on browse mode and jump between different types of reading granularity and controls with a single press of a key. It makes navigating a page similar to navigating in a text editing box, such as left and right arrows to move by character and up and down arrows to move by line.\n\nTo turn on or off browse mode, double-press the Meta key.\n\nWhen browse mode is on, press D to jump to the next landmark, F for the next control or form field, B for the next button, K for the next link and H for the next heading. Hold Shift and press these keys to move backward.\n\nYou can also use Up and Down arrows to jump by lines, Left and Right arrows to jump by letters, and Ctrl + Left and Right arrows to jump by words.\n\nPress Meta + Right arrow to enter a practice area. While in the practice area links, form fields, and buttons won\'t do anything.</string>
   <!-- The title of the keyboard tutorial heading levels page. [CHAR_LIMIT=NONE]-->
   <string name="keyboard_tutorial_heading_levels_page_title">Heading levels</string>
   <!-- The description of how to use heading levels. [CHAR_LIMIT=NONE]-->
-  <string name="keyboard_tutorial_heading_levels_page_text">Websites and web apps often use headings with different levels to structure the content. When browse mode is on, press 1 through 6 to jump to the heading levels. Hold Shift and press these keys to move backward.\n\nPress Action + Right arrow to enter a practice area.</string>
+  <string name="keyboard_tutorial_heading_levels_page_text">Websites and web apps often use headings with different levels to structure the content. When browse mode is on, press 1 through 6 to jump to the heading levels. Hold Shift and press these keys to move backward.\n\nPress Meta + Right arrow to enter a practice area.</string>
   <!-- The title of the keyboard tutorial tables page. [CHAR_LIMIT=NONE]-->
   <string name="keyboard_tutorial_tables_page_title">Tables</string>
   <!-- The description of how to use tables. [CHAR_LIMIT=NONE]-->
-  <string name="keyboard_tutorial_tables_page_text">Browse mode also makes table navigation easier. When browse mode is on, press Alt + Ctrl + Up and Down arrows to jump between rows and Alt + Ctrl + Left and Right arrows to jump between columns.\n\nPress Action + Right arrow to enter a practice area.</string>
+  <string name="keyboard_tutorial_tables_page_text">Browse mode also makes table navigation easier. When browse mode is on, press Alt + Ctrl + Up and Down arrows to jump between rows and Alt + Ctrl + Left and Right arrows to jump between columns.\n\nPress Meta + Right arrow to enter a practice area.</string>
   <!-- The title of the keyboard tutorial editing text page. [CHAR_LIMIT=NONE]-->
   <string name="keyboard_tutorial_editing_text_page_title">Editing text</string>
   <!-- The description of how to use editing text. [CHAR_LIMIT=NONE]-->
-  <string name="keyboard_tutorial_editing_text_page_text">When you enter a text field, browse mode will be temporarily turned off so that you can use all the keys to type. You will hear an announcement and a sound when it’s turned off. Once you leave the text field, browse mode will turn back on and you will hear another announcement and sound.\n\nPress Action + Right arrow to enter a practice area.</string>
+  <string name="keyboard_tutorial_editing_text_page_text">When you enter a text field, browse mode will be temporarily turned off so that you can use all the keys to type. You will hear an announcement and a sound when it’s turned off. Once you leave the text field, browse mode will turn back on and you will hear another announcement and sound.\n\nPress Meta + Right arrow to enter a practice area.</string>
   <!-- The title of the keyboard tutorial more browse mode page. [CHAR_LIMIT=NONE]-->
   <string name="keyboard_tutorial_more_browse_mode_page_title">More about browse mode</string>
   <!-- The description of how to use more browse mode. [CHAR_LIMIT=NONE]-->
-  <string name="keyboard_tutorial_more_browse_mode_page_text">To check the complete list of items you can jump between in browse mode, press Action + Shift + / and search for\"browse mode\" in the keyboard shortcuts menu.</string>
+  <string name="keyboard_tutorial_more_browse_mode_page_text">To check the complete list of items you can jump between in browse mode, press Meta + Shift + / and search for\"browse mode\" in the keyboard shortcuts menu.</string>
 
 
   <!-- Reading controls pages in keyboard tutorial. -->
   <!-- The title of the keyboard tutorial reading controls page. [CHAR_LIMIT=NONE]-->
   <string name="keyboard_tutorial_reading_controls_page_title">Read by character, word, or paragraph</string>
   <!-- The description of how to use reading controls. [CHAR_LIMIT=NONE]-->
-  <string name="keyboard_tutorial_reading_controls_page_text">Sometimes, you might want to hear text read aloud one character at a time.\n\nTo do this, you can use reading controls navigation. Press Action + Shift + Right or Left arrow until you hear "characters." Next, press Action + Up arrow to move the navigation focus backward by character. Press Action + Down arrow down to move the navigation focus forward by character.\n\nTry it now. You can also choose to read by words, lines or paragraphs using Action + Shift + Right or Left arrow.</string>
+  <string name="keyboard_tutorial_reading_controls_page_text">Sometimes, you might want to hear text read aloud one character at a time.\n\nTo do this, you can use reading controls navigation. Press Meta + Shift + Right or Left arrow until you hear "characters." Next, press Meta + Up arrow to move the navigation focus backward by character. Press Meta + Down arrow down to move the navigation focus forward by character.\n\nTry it now. You can also choose to read by words, lines or paragraphs using Meta + Shift + Right or Left arrow.</string>
   <!-- The title of the keyboard tutorial jump between controls page. [CHAR_LIMIT=NONE]-->
   <string name="keyboard_tutorial_jump_between_controls_page_title">Jump between controls</string>
   <!-- The description of how to use jump between controls. [CHAR_LIMIT=NONE]-->
-  <string name="keyboard_tutorial_jump_between_controls_page_text">Controls are items that you can interact with, like buttons, checkboxes, and text boxes.\n\nOn some pages, you may want to jump between controls to quickly find an action, like the next button.\n\nTo do this, press Action + Shift + Right arrow until you hear "controls." Next, press Action + Up arrow to go to the previous button and Action + Down arrow to go to the next button.\n\nTry it now and find the next button.</string>
+  <string name="keyboard_tutorial_jump_between_controls_page_text">Controls are items that you can interact with, like buttons, checkboxes, and text boxes.\n\nOn some pages, you may want to jump between controls to quickly find an action, like the next button.\n\nTo do this, press Meta + Shift + Right arrow until you hear "controls." Next, press Meta + Up arrow to go to the previous button and Meta + Down arrow to go to the next button.\n\nTry it now and find the next button.</string>
   <!-- The title of the keyboard tutorial jump between links page. [CHAR_LIMIT=NONE]-->
   <string name="keyboard_tutorial_jump_between_links_page_title">Jump between links</string>
   <!-- The description of how to use jump between links. [CHAR_LIMIT=NONE]-->
-  <string name="keyboard_tutorial_jump_between_links_page_text">You can also jump between links on a page.\n\nTo do this, press Action + Shift + Right arrow until you hear "links." Next, press Action + Down arrow to find the link named "Link 5." While in the tutorial, double tapping this link won\'t do anything.\n\nPress Action + Right arrow to find the next button and go to the next page.</string>
+  <string name="keyboard_tutorial_jump_between_links_page_text">You can also jump between links on a page.\n\nTo do this, press Meta + Shift + Right arrow until you hear "links." Next, press Meta + Down arrow to find the link named "Link 5." While in the tutorial, double tapping this link won\'t do anything.\n\nPress Meta + Right arrow to find the next button and go to the next page.</string>
   <!-- The title of the keyboard tutorial jump between headings page. [CHAR_LIMIT=NONE]-->
   <string name="keyboard_tutorial_jump_between_headings_page_title">Jump between headings</string>
   <!-- The description of how to use jump between headings. [CHAR_LIMIT=NONE]-->
-  <string name="keyboard_tutorial_jump_between_headings_page_text">You can also jump between headings on a page.\n\nTo try it now, press Action + Shift + Right arrow until you hear "headings." Next, press Action + Down arrow to find the "Navigation" heading.</string>
+  <string name="keyboard_tutorial_jump_between_headings_page_text">You can also jump between headings on a page.\n\nTo try it now, press Meta + Shift + Right arrow until you hear "headings." Next, press Meta + Down arrow to find the "Navigation" heading.</string>
   <!-- The description of how to find next button using the keyboard. [CHAR_LIMIT=NONE]-->
-  <string name="keyboard_tutorial_find_next_button">Press Action + Right arrow to find the next button.</string>
+  <string name="keyboard_tutorial_find_next_button">Press Meta + Right arrow to find the next button.</string>
   <!-- The title of the keyboard tutorial jump between containers page. [CHAR_LIMIT=NONE]-->
   <string name="keyboard_tutorial_jump_between_containers_page_title">Jump between containers</string>
   <!-- The description of how to use jump between containers. [CHAR_LIMIT=NONE]-->
-  <string name="keyboard_tutorial_jump_between_containers_page_text">To exit out of a container, like a list or grid, press Action + Alt + Ctrl + Right or Left arrow. This is useful when you want to move out of a long list of items.\n\nTo try it now, press Action + Right arrow to enter the list. Then press Action + Alt + Ctrl + Right arrow to go to the next container.</string>
+  <string name="keyboard_tutorial_jump_between_containers_page_text">To exit out of a container, like a list or grid, press Meta + Alt + Ctrl + Right or Left arrow. This is useful when you want to move out of a long list of items.\n\nTo try it now, press Meta + Right arrow to enter the list. Then press Meta + Alt + Ctrl + Right arrow to go to the next container.</string>
   <!-- The description of how to go to the next container using the keyboard. [CHAR_LIMIT=NONE]-->
-  <string name="keyboard_tutorial_go_to_next_container">To go to the next container, press Action + Alt + Ctrl + Right arrow</string>
+  <string name="keyboard_tutorial_go_to_next_container">To go to the next container, press Meta + Alt + Ctrl + Right arrow</string>
   <!-- The description of how to exit out of a container using the keyboard. [CHAR_LIMIT=NONE]-->
-  <string name="keyboard_tutorial_exit_container">To exit this container, press Action + Alt + Ctrl + Right arrow</string>
+  <string name="keyboard_tutorial_exit_container">To exit this container, press Meta + Alt + Ctrl + Right arrow</string>
   <!-- The description of how to add containers to reading controls. [CHAR_LIMIT=NONE]-->
-  <string name="keyboard_tutorial_add_container_reading_controls">You\'ve exited the container. You can also add containers to your reading controls and then press Action + Shift + Right or Left arrow to select containers and Action + Down or Up arrow to jump between containers. To update reading controls, go to SandFly settings > Reading controls.\n\nPress Action + Right arrow to find the next button.</string>
+  <string name="keyboard_tutorial_add_container_reading_controls">You\'ve exited the container. You can also add containers to your reading controls and then press Meta + Shift + Right or Left arrow to select containers and Meta + Down or Up arrow to jump between containers. To update reading controls, go to SandFly settings > Reading controls.\n\nPress Meta + Right arrow to find the next button.</string>
   <!-- The title of the keyboard tutorial customize reading controls page. [CHAR_LIMIT=NONE]-->
   <string name="keyboard_tutorial_customize_reading_controls_page_title">Customize reading controls</string>
   <!-- The description of how to use customize reading controls. [CHAR_LIMIT=NONE]-->
@@ -111,30 +111,30 @@
   <!-- The title of the keyboard tutorial image description page. [CHAR_LIMIT=NONE]-->
   <string name="keyboard_tutorial_image_description_page_title">Try getting image descriptions</string>
   <!-- The description of how to use image description. [CHAR_LIMIT=NONE]-->
-  <string name="keyboard_tutorial_image_description_page_text">When you\'re focused on an image, press Action + R, then I. There\'s one photo below. Try getting a description for it.</string>
+  <string name="keyboard_tutorial_image_description_page_text">When you\'re focused on an image, press Meta + R, then I. There\'s one photo below. Try getting a description for it.</string>
   <!-- Keyboard tutorial image description settings description. [CHAR_LIMIT=NONE] -->
   <string name="keyboard_tutorial_image_description_settings_description">You can change image description settings anytime in SandFly settings > Image and screen descriptions.</string>
   <!-- Keyboard tutorial image description settings description for TTS. [CHAR_LIMIT=NONE] -->
   <string name="keyboard_tutorial_image_description_settings_description_tts">You can change image description settings anytime in SandFly settings then Image and screen descriptions.</string>
   <!-- Keyboard tutorial image description sample image content description. [CHAR_LIMIT=NONE] -->
-  <string name="keyboard_tutorial_image_description_sample_image_content_description">Sample image. Press Action + R, then I to hear a description.</string>
+  <string name="keyboard_tutorial_image_description_sample_image_content_description">Sample image. Press Meta + R, then I to hear a description.</string>
 
 
   <!-- Voice commands pages in keyboard tutorial. -->
   <!-- The title of the keyboard tutorial voice commands page. [CHAR_LIMIT=NONE]-->
   <string name="keyboard_tutorial_voice_commands_page_title">Voice commands</string>
   <!-- The description of how to use voice commands. [CHAR_LIMIT=NONE]-->
-  <string name="keyboard_tutorial_voice_commands_page_text">You can use your voice to control SandFly quickly.\n\nFor example, say a command to change navigation, jump to the next heading, copy text and more.\n\nTo try it now, press Action + \\.</string>
+  <string name="keyboard_tutorial_voice_commands_page_text">You can use your voice to control SandFly quickly.\n\nFor example, say a command to change navigation, jump to the next heading, copy text and more.\n\nTo try it now, press Meta + \\.</string>
 
   <!-- Screen search pages in keyboard tutorial. -->
   <!-- The title of the keyboard tutorial screen search page. [CHAR_LIMIT=NONE]-->
   <string name="keyboard_tutorial_screen_search_page_title">Using screen search</string>
   <!-- The description of how to use screen search. [CHAR_LIMIT=NONE]-->
-  <string name="keyboard_tutorial_screen_search_page_text">The screen search feature allows you to look for specific content on the screen.\n\nTo try it, press Action + CTRL + /. Type in a keyword, like \"next,\" to find items with the text on the screen.\n\nTry searching for \"next\" now to find the next button.</string>
+  <string name="keyboard_tutorial_screen_search_page_text">The screen search feature allows you to look for specific content on the screen.\n\nTo try it, press Meta + CTRL + /. Type in a keyword, like \"next,\" to find items with the text on the screen.\n\nTry searching for \"next\" now to find the next button.</string>
   <!-- The title of the keyboard tutorial navigate to screen search page. [CHAR_LIMIT=NONE]-->
   <string name="keyboard_tutorial_navigate_to_screen_search_page_title">Navigate by screen search</string>
   <!-- The description of how to use navigate to screen search. [CHAR_LIMIT=NONE]-->
-  <string name="keyboard_tutorial_navigate_to_screen_search_page_text">You can quickly move between different search results from screen search after you\'ve selected a result.\n\nTo do this, you can use reading controls navigation. Press Action + Shift + Right or Left arrow until you hear \"screen search.\" Next, press Action + Down or Up arrow to navigate by screen search results.\n\nLet\'s try it now. Below is a list of 3 buttons, all of them containing the text\"action.\" Search for\"action\" using screen search, then navigate by screen search to move between them.</string>
+  <string name="keyboard_tutorial_navigate_to_screen_search_page_text">You can quickly move between different search results from screen search after you\'ve selected a result.\n\nTo do this, you can use reading controls navigation. Press Meta + Shift + Right or Left arrow until you hear \"screen search.\" Next, press Meta + Down or Up arrow to navigate by screen search results.\n\nLet\'s try it now. Below is a list of 3 buttons, all of them containing the text\"action.\" Search for\"action\" using screen search, then navigate by screen search to move between them.</string>
 
 
   <!-- Practice area with various web elements like headings, links, and buttons to navigate. [CHAR_LIMIT=NONE]-->

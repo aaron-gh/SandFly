@@ -20,7 +20,7 @@ import androidx.annotation.StringRes
 import com.google.android.accessibility.talkback.R
 
 /**
- * A key that can be the SandFly key, which keymap shortcuts are pressed with. Action and Ctrl + Alt
+ * A key that can be the SandFly key, which keymap shortcuts are pressed with. Meta and Ctrl + Alt
  * are modifiers to Android; Insert and Numpad Insert are ordinary keys that SandFly takes and treats
  * as a modifier while they're held.
  */
@@ -35,7 +35,7 @@ enum class SandFlyKey(
   /** The key code of a held key, or [KeyEvent.KEYCODE_UNKNOWN] for modifiers. */
   val keyCode: Int,
 ) {
-  ACTION(
+  META(
     R.string.trigger_modifier_meta_entry_value,
     R.string.keycombo_key_modifier_meta,
     KeyEvent.META_META_ON,

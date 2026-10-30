@@ -23,7 +23,7 @@ import com.google.android.accessibility.talkback.R
 
 /**
  * The default shortcuts of the VoiceOver keymap: VoiceOver's keyboard commands on iPhone, with the
- * SandFly key as the VO key (Ctrl + Alt) and Action as Command. In browse mode, single keys move as
+ * SandFly key as the VO key (Ctrl + Alt) and Meta as Command. In browse mode, single keys move as
  * VoiceOver's single-key Quick Nav does.
  */
 object VoiceOverKeymap {

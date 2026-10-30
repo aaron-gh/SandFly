@@ -24,7 +24,7 @@ import com.google.android.accessibility.utils.SharedPreferencesUtils
 
 /**
  * Arrow key navigation: while it is on, the arrow keys, alone, two pressed together, or with Control
- * or Alt, run commands without the Action key. Each of these [ArrowKeys] runs a command, as a gesture
+ * or Alt, run commands without the Meta key. Each of these [ArrowKeys] runs a command, as a gesture
  * does, saved as the command's value; the defaults are VoiceOver's keys on iOS.
  */
 object ArrowKeyNav {

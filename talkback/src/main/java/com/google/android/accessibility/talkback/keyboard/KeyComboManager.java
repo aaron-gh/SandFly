@@ -584,7 +584,7 @@ public class KeyComboManager
   }
 
   /**
-   * Turns browse mode on or off, as the user asks with a gesture or a shortcut other than Action
+   * Turns browse mode on or off, as the user asks with a gesture or a shortcut other than Meta
    * twice. Returns false when browse mode isn't available.
    */
   public boolean toggleBrowseModeByUser() {
@@ -957,7 +957,7 @@ public class KeyComboManager
     }
 
     // A held SandFly key is SandFly's alone. Pressed twice, it turns browse mode on or off, as
-    // Action does.
+    // Meta does.
     @Nullable SandFlyKey sandFlyKey = getSandFlyKey();
     if (sandFlyKey != null && sandFlyKey.isKey(event)) {
       if (event.getRepeatCount() == 0) {
@@ -978,7 +978,7 @@ public class KeyComboManager
       return true;
     }
 
-    // Android's own shortcuts with the Action key, which the tutorial can take while it teaches them.
+    // Android's own shortcuts with the Meta key, which the tutorial can take while it teaches them.
     if (event.getRepeatCount() == 0
         && (event.getModifiers() & KEY_EVENT_MODIFIER_MASK) == KeyEvent.META_META_ON
         && TutorialHooks.SYSTEM_KEY_CODES.contains(event.getKeyCode())
