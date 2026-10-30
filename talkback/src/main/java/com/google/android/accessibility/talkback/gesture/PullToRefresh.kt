@@ -52,6 +52,8 @@ class PullToRefresh(
   private var scrolls = 0
   private var eventId: EventId? = null
   private var pendingPull: Runnable? = null
+  /** Whether a pull has locked touch pass-through and not ended. */
+  private var passingThrough = false
 
   private val step = Runnable { scrollOnce() }
 
@@ -61,6 +63,8 @@ class PullToRefresh(
    */
   fun refresh(eventId: EventId?): Boolean {
     cancel()
+    // Before Android 11 there is no pull, and the list would only be scrolled to its top.
+    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) return false
     val found = findList() ?: return false
     this.eventId = eventId
     list = found
@@ -82,12 +86,11 @@ class PullToRefresh(
 
   /** Stops scrolling to the top, such as when the user touches the screen or presses a key. */
   fun cancel() {
+    // Also drops the swipe's end, which would unlock pass-through.
     handler.removeCallbacksAndMessages(null)
     list = null
-    if (pendingPull != null) {
-      pendingPull = null
-      endPassThrough()
-    }
+    pendingPull = null
+    if (passingThrough) endPassThrough()
   }
 
   private fun scrollOnce() {
@@ -137,12 +140,18 @@ class PullToRefresh(
       GestureDescription.Builder()
         .addStroke(GestureDescription.StrokeDescription(path, 0, PULL_DURATION_MS))
         .build()
-    // Touch exploration would take the swipe as a SandFly gesture, so the screen passes touch
-    // through to the app until the swipe ends.
-    val metrics = service.resources.displayMetrics
+    // Touch exploration would take the swipe as a SandFly gesture, so touch passes through to the
+    // app where the swipe starts, which decides, until it ends. Elsewhere the user's touches are
+    // still explored.
+    val x = bounds.exactCenterX().toInt()
+    val y = startY.toInt()
+    passingThrough = true
     pipeline.returnFeedback(
       eventId,
-      Feedback.passThroughMode(LOCK_PASS_THROUGH, Region(0, 0, metrics.widthPixels, metrics.heightPixels)),
+      Feedback.passThroughMode(
+        LOCK_PASS_THROUGH,
+        Region(x - PASS_THROUGH_RADIUS, y - PASS_THROUGH_RADIUS, x + PASS_THROUGH_RADIUS, y + PASS_THROUGH_RADIUS),
+      ),
     )
     val ended =
       object : AccessibilityService.GestureResultCallback() {
@@ -163,6 +172,7 @@ class PullToRefresh(
   }
 
   private fun endPassThrough() {
+    passingThrough = false
     pipeline.returnFeedback(
       EVENT_ID_UNTRACKED,
       Feedback.passThroughMode(LOCK_PASS_THROUGH, /* region= */ null),
@@ -207,5 +217,7 @@ class PullToRefresh(
     const val PULL_DURATION_MS = 400L
 
     const val PASS_THROUGH_WAIT_MS = 350L
+    /** Around where the swipe starts; touch exploration checks where a touch goes down. */
+    const val PASS_THROUGH_RADIUS = 24
   }
 }
