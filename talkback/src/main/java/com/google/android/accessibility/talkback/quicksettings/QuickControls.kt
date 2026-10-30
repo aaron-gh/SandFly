@@ -508,7 +508,11 @@ class QuickControls(private val context: Context) {
     }
   }
 
-  fun setSlider(control: QuickControl, value: Int, onFailed: () -> Unit) {
+  /**
+   * Sets [control]'s slider to [value]. Returns [Change.OPENED] when a settings screen opened to
+   * allow it instead, such as Modify system settings for brightness.
+   */
+  fun setSlider(control: QuickControl, value: Int, onFailed: () -> Unit): Change {
     STREAMS[control]?.let { stream ->
       try {
         if (audio.getStreamVolume(stream) != value) {
@@ -520,10 +524,11 @@ class QuickControls(private val context: Context) {
         // Ring and notification volumes can't turn Do Not Disturb on or off without access.
         LogUtils.w(TAG, "Cannot change %s: %s", control, e)
         onFailed()
+        return Change.FAILED
       }
-      return
+      return Change.DONE
     }
-    when (control) {
+    return when (control) {
       QuickControl.BRIGHTNESS ->
         writeSystem(
           Settings.System.SCREEN_BRIGHTNESS,
@@ -531,17 +536,18 @@ class QuickControls(private val context: Context) {
           onFailed,
         )
       QuickControl.FLASHLIGHT_BRIGHTNESS -> {
-        val id = torchCamera ?: return
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-          try {
-            camera.turnOnTorchWithStrengthLevel(id, value.coerceIn(1, torchMaxLevel))
-          } catch (e: Exception) {
-            LogUtils.w(TAG, "Cannot change the flashlight brightness: %s", e)
-            onFailed()
-          }
+        val id = torchCamera ?: return Change.FAILED
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) return Change.FAILED
+        try {
+          camera.turnOnTorchWithStrengthLevel(id, value.coerceIn(1, torchMaxLevel))
+          Change.DONE
+        } catch (e: Exception) {
+          LogUtils.w(TAG, "Cannot change the flashlight brightness: %s", e)
+          onFailed()
+          Change.FAILED
         }
       }
-      else -> {}
+      else -> Change.FAILED
     }
   }
 
