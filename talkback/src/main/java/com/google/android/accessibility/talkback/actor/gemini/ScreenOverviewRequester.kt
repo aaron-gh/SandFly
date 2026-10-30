@@ -218,10 +218,21 @@ internal class ScreenOverviewRequester(
             }
             return
           }
-          try {
-            listener.onResponse(FinishReason.STOP, parse(ScreenJsonRepair.repair(text)))
-          } catch (e: ParseException) {
-            Log.w(TAG, "Could not parse the screen answer (${text.length} characters)", e)
+          // An empty answer or "null" parses to null, which fails Kotlin's null check rather than
+          // throwing ParseException.
+          val parsed =
+            try {
+              if (text.isBlank()) null else parse(ScreenJsonRepair.repair(text))
+            } catch (e: ParseException) {
+              Log.w(TAG, "Could not parse the screen answer (${text.length} characters)", e)
+              null
+            } catch (e: RuntimeException) {
+              Log.w(TAG, "Could not parse the screen answer (${text.length} characters)", e)
+              null
+            }
+          if (parsed != null) {
+            listener.onResponse(FinishReason.STOP, parsed)
+          } else {
             if (style == PromptStyle.CLOUD || text.isBlank()) {
               listener.onResponse(
                 FinishReason.ERROR_PARSING_RESULT,
