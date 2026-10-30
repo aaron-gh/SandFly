@@ -1234,7 +1234,10 @@ public class SelectorController implements UserInputEventListener {
             prefs.getString(
                 context.getString(R.string.pref_current_selector_setting_key),
                 context.getString(R.string.pref_selector_setting_default)));
-    return currentSetting == null ? getDefaultSetting() : currentSetting;
+    // Verbosity is no longer a reading control, and one saved from before would do nothing.
+    return currentSetting == null || currentSetting == Setting.VERBOSITY
+        ? getDefaultSetting()
+        : currentSetting;
   }
 
   /**
