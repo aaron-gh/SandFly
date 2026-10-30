@@ -324,9 +324,9 @@ class AudioDeviceRouter @JvmOverloads constructor(
     if (currentTarget == AudioTarget.SystemDefault) return
     if (stepsAside) return
     val now = SystemClock.uptimeMillis()
-    // If routing is actively verified, throttle to avoid redundant queries.
-    // If routing was dropped, bypass throttle immediately!
-    if (isRoutingActive && (now - lastEnsureRoutingTimeMs < 500)) return
+    // At most twice a second, as this runs for every accessibility event and every feedback. While
+    // the chosen output is missing, the device callback applies the routing when it comes back.
+    if (now - lastEnsureRoutingTimeMs < 500) return
     lastEnsureRoutingTimeMs = now
     ensureRoutingInternal(force = false)
   }
