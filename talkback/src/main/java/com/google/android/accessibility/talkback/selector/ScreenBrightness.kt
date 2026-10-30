@@ -16,10 +16,12 @@
 
 package com.google.android.accessibility.talkback.selector
 
+import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.provider.Settings
+import com.google.android.libraries.accessibility.utils.log.LogUtils
 import kotlin.math.abs
 import kotlin.math.ln
 import kotlin.math.roundToInt
@@ -30,6 +32,7 @@ import kotlin.math.sqrt
  * scale as the system brightness slider.
  */
 internal object ScreenBrightness {
+  private const val TAG = "ScreenBrightness"
   private const val MIN_SETTING = 1
   private const val MAX_SETTING = 255
   private const val MAX_PERCENT = 100
@@ -49,7 +52,12 @@ internal object ScreenBrightness {
     val intent =
       Intent(Settings.ACTION_MANAGE_WRITE_SETTINGS, Uri.parse("package:${context.packageName}"))
         .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-    context.startActivity(intent)
+    try {
+      context.startActivity(intent)
+    } catch (e: ActivityNotFoundException) {
+      // Such as on watches and TVs that have no Modify system settings screen.
+      LogUtils.w(TAG, "No screen to allow changing the brightness: %s", e)
+    }
   }
 
   @JvmStatic
