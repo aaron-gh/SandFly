@@ -17,6 +17,7 @@
 package com.google.android.accessibility.talkback.scripting
 
 import android.app.Activity
+import android.app.AlertDialog
 import android.content.ContentResolver
 import android.content.Intent
 import android.net.Uri
@@ -47,6 +48,22 @@ class ScriptImportActivity : Activity() {
       if (!isFinishing) failed(getString(R.string.script_import_nothing))
       return
     }
+    // A link another app sent is downloaded only once the user agrees: any app can send one,
+    // without the user choosing SandFly to share it with.
+    if (source is Source.FromLink) {
+      AlertDialog.Builder(this, android.R.style.Theme_DeviceDefault_Dialog_Alert)
+        .setTitle(R.string.script_import)
+        .setMessage(source.url)
+        .setPositiveButton(R.string.confirm_download_positive_button_text) { _, _ -> read(source) }
+        .setNegativeButton(android.R.string.cancel) { _, _ -> finish() }
+        .setOnCancelListener { finish() }
+        .show()
+      return
+    }
+    read(source)
+  }
+
+  private fun read(source: Source) {
     val context = applicationContext
     executor.execute {
       val file = File(cacheDir, SHARED_FILE)
