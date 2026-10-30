@@ -42,6 +42,8 @@ import java.util.concurrent.Executors
  * the reports are opened, and posts a notification, with sound, for each report that has news.
  */
 object ReportInbox {
+  /** The report open on screen, or null. */
+  @Volatile var shownReportId: String? = null
   private const val TAG = "ReportInbox"
   private const val CHANNEL = "problem_reports"
   private const val CHECK_INTERVAL_MS = 60L * 60 * 1000
@@ -98,15 +100,22 @@ object ReportInbox {
     val followed = store.sentReports().filter { it.isFollowed(now) }
     if (followed.isEmpty()) return true
     val threads = ProblemReportSender.threads(context, followed.map { it.token }) ?: return false
+    // News that Android won't show stays news, so it is notified once notifications are allowed.
+    val canNotify = NotificationManagerCompat.from(context).areNotificationsEnabled()
     for (thread in threads) {
       val report = followed.firstOrNull { it.token == thread.token } ?: continue
+      // The report on screen shows its news and marks it read itself.
+      if (report.id == shownReportId) {
+        store.updateSent(report.id) { current -> merge(current, thread, now).withNotified() }
+        continue
+      }
       var news: News? = null
       store.updateSent(report.id) { current ->
         val merged = merge(current, thread, now)
         news = newsOf(merged)
-        merged.withNotified()
+        if (canNotify) merged.withNotified() else merged
       }
-      news?.let { notify(context, report.id, it) }
+      if (canNotify) news?.let { notify(context, report.id, it) }
     }
     return true
   }

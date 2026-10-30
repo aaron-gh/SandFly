@@ -38,11 +38,15 @@ data class ProblemReport(
   val isSuggestion: Boolean
     get() = type == SUGGESTION
 
+  /** The title on one line, as the report server takes it: pasted or dictated text can break it. */
+  val oneLineTitle: String
+    get() = title.replace(Regex("\\s+"), " ").trim()
+
   fun toJson(): JSONObject =
     JSONObject().apply {
       put("type", type)
       putIfFilled("area", area)
-      put("title", title.trim())
+      put("title", oneLineTitle)
       putIfFilled("app", app)
       put("description", description.trim())
       if (!isSuggestion) putIfFilled("steps", steps)
