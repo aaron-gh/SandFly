@@ -53,7 +53,7 @@ public final class ExternalDisplayApprovalActivity extends Activity {
     // to ask.
     if (app == null
         || !ExternalDisplayApps.displayServices(this, 0).containsKey(app)
-        || ExternalDisplayApps.state(ExternalDisplayApps.prefs(this), app)
+        || ExternalDisplayApps.state(this, ExternalDisplayApps.prefs(this), app)
             == ExternalDisplayApps.State.ALLOWED) {
       finish();
       return;
