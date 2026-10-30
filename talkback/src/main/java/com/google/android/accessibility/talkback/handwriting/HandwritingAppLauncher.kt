@@ -32,6 +32,9 @@ import com.google.android.accessibility.utils.output.FeedbackItem
 import com.google.android.accessibility.utils.output.SpeechController
 import com.google.android.accessibility.utils.output.SpeechController.SpeakOptions
 import com.google.android.libraries.accessibility.utils.log.LogUtils
+import java.util.concurrent.LinkedBlockingQueue
+import java.util.concurrent.ThreadPoolExecutor
+import java.util.concurrent.TimeUnit
 import kotlin.math.abs
 import kotlin.math.hypot
 
@@ -49,7 +52,13 @@ class HandwritingAppLauncher(
 ) {
   private val handler = Handler(Looper.getMainLooper())
   private val overlay =
-    HandwritingOverlay(service, actorState, service.getString(R.string.shortcut_write_app_name), ::onTouch)
+    HandwritingOverlay(
+      service,
+      pipeline,
+      actorState,
+      service.getString(R.string.shortcut_write_app_name),
+      ::onTouch,
+    )
   private val touchSlop = ViewConfiguration.get(service).scaledTouchSlop
   private val swipeDistance by lazy { service.resources.displayMetrics.ydpi / CM_PER_INCH }
   private var recognizer: HandwritingRecognizer? = null
@@ -67,6 +76,17 @@ class HandwritingAppLauncher(
 
   /** The apps on the home screen, read when the surface shows. */
   private var apps: List<OpenAppActions.App> = emptyList()
+  /**
+   * Whether [apps] is loaded. Loading reads every launcher app's label, which takes up to seconds
+   * and is done off the main thread; letters written before then wait in [waitingLetters].
+   */
+  private var appsLoaded = false
+  private var waitingLetters: List<String>? = null
+  private var loads = 0
+  private val loader =
+    ThreadPoolExecutor(0, 1, 30, TimeUnit.SECONDS, LinkedBlockingQueue<Runnable>()) {
+      Thread(it, "handwriting-apps").apply { isDaemon = true }
+    }
 
   /** The letters written so far, the apps that match them, and the one SandFly said last. */
   private var letters = ""
@@ -96,7 +116,7 @@ class HandwritingAppLauncher(
     letters = ""
     matches = emptyList()
     index = 0
-    apps = OpenAppActions.apps(service)
+    loadApps()
     pipeline.returnFeedback(
       EVENT_ID_UNTRACKED,
       Feedback.speech(
@@ -130,6 +150,9 @@ class HandwritingAppLauncher(
     handler.removeCallbacks(recognizeNow)
     handler.removeCallbacks(closeIdle)
     strokes.clear()
+    loads++
+    appsLoaded = false
+    waitingLetters = null
     apps = emptyList()
     matches = emptyList()
     overlay.remove()
@@ -139,6 +162,30 @@ class HandwritingAppLauncher(
     dismiss()
     recognizer?.close()
     recognizer = null
+    loader.shutdown()
+  }
+
+  private fun loadApps() {
+    val load = ++loads
+    appsLoaded = false
+    loader.execute {
+      val list =
+        try {
+          OpenAppActions.apps(service)
+        } catch (e: Throwable) {
+          LogUtils.e(TAG, "Could not list the apps: %s", e)
+          emptyList()
+        }
+      handler.post {
+        if (load != loads) return@post
+        apps = list
+        appsLoaded = true
+        waitingLetters?.let {
+          waitingLetters = null
+          addLetters(it)
+        }
+      }
+    }
   }
 
   private fun onTouch(event: MotionEvent) {
@@ -246,6 +293,10 @@ class HandwritingAppLauncher(
    * one app's does, opens it.
    */
   private fun addLetters(candidates: List<String>) {
+    if (!appsLoaded) {
+      waitingLetters = candidates
+      return
+    }
     // Only letters and digits count, so a stray dot or space doesn't add to the letters.
     val readings = candidates.map { it.filter(Char::isLetterOrDigit) }.filter { it.isNotEmpty() }.distinct()
     if (readings.isEmpty()) {

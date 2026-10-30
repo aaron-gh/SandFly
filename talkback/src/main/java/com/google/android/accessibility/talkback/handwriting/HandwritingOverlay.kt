@@ -28,6 +28,10 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.WindowManager
 import com.google.android.accessibility.talkback.ActorState
+import com.google.android.accessibility.talkback.Feedback
+import com.google.android.accessibility.talkback.Feedback.PassThroughMode.Action.LOCK_PASS_THROUGH
+import com.google.android.accessibility.talkback.Pipeline
+import com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 
 /**
@@ -36,6 +40,7 @@ import com.google.android.libraries.accessibility.utils.log.LogUtils
  */
 class HandwritingOverlay(
   private val service: AccessibilityService,
+  private val pipeline: Pipeline.FeedbackReturner,
   private val actorState: ActorState,
   /** The window's title. */
   private val title: String,
@@ -118,17 +123,18 @@ class HandwritingOverlay(
       service.getSystemService(DisplayManager::class.java)?.getDisplay(Display.DEFAULT_DISPLAY) ?: return
     val metrics = DisplayMetrics()
     @Suppress("DEPRECATION") display.getRealMetrics(metrics)
-    service.setTouchExplorationPassthroughRegion(
-      Display.DEFAULT_DISPLAY,
-      Region(0, 0, metrics.widthPixels, metrics.heightPixels),
+    // Through pass-through mode, which puts back the region it had, such as direct touch's.
+    pipeline.returnFeedback(
+      EVENT_ID_UNTRACKED,
+      Feedback.passThroughMode(LOCK_PASS_THROUGH, Region(0, 0, metrics.widthPixels, metrics.heightPixels)),
     )
     passthroughRegionSet = true
   }
 
   private fun clearPassthroughRegion() {
-    if (passthroughRegionSet && Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+    if (passthroughRegionSet) {
       passthroughRegionSet = false
-      service.setTouchExplorationPassthroughRegion(Display.DEFAULT_DISPLAY, Region())
+      pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.passThroughMode(LOCK_PASS_THROUGH, null))
     }
   }
 
