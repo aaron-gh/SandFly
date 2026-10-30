@@ -22,6 +22,7 @@ import android.os.Handler
 import android.os.Looper
 import com.google.android.accessibility.talkback.TalkBackService
 import com.google.android.accessibility.talkback.actor.gemini.AiTextRequests
+import com.google.android.accessibility.talkback.actor.gemini.GeminiFailure
 import com.google.android.accessibility.talkback.translation.TranslationFailure.Kind
 import com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED
 import com.google.android.accessibility.utils.SharedPreferencesUtils
@@ -133,23 +134,22 @@ class Translator(context: Context) {
     val input = text.take(TranslationApis.MAX_TEXT)
     when (service) {
       TranslationService.ON_DEVICE -> onDevice(input, source, target, second, downloads, onDownloaded, report, fail)
-      TranslationService.AI -> {
-        val ai = ai(appContext)
-        ai.cancel()
-        ai.ask(AiTranslationPrompt.prompt(input, source, target, second), json = true) { answer, failure ->
+      TranslationService.AI ->
+        enqueue(appContext, Ask(this, AiTranslationPrompt.prompt(input, source, target, second)) { answer, failure ->
           when {
             answer != null -> report(Result.Done(AiTranslationPrompt.parse(answer, target)))
             failure != null -> fail(Kind.OTHER, failure.userMessage(appContext))
+            // Cancelled by another user of the AI service, such as the on-device model's.
+            else -> fail(Kind.OTHER, "")
           }
-        }
-      }
+        })
       else -> web(service, input, source, target, second, report)
     }
   }
 
   fun cancel() {
     request++
-    ai?.cancel()
+    cancelAsks(this)
   }
 
   fun shutdown() {
@@ -318,6 +318,68 @@ class Translator(context: Context) {
 
     fun ai(context: Context): AiTextRequests =
       ai ?: AiTextRequests(context) { speak(it) }.also { ai = it }
+
+    /** An AI translation of [owner]'s, waiting for the AI service or being answered. */
+    private class Ask(
+      val owner: Translator,
+      val prompt: String,
+      val done: (String?, GeminiFailure?) -> Unit,
+    ) {
+      var ended = false
+    }
+
+    /**
+     * AI translations of every translator, asked one at a time: the AI service answers one request
+     * at a time, and a new one would cancel another translator's, such as a script's and automatic
+     * translation's.
+     */
+    private val asks = ArrayDeque<Ask>()
+    private var asking: Ask? = null
+
+    private fun enqueue(context: Context, ask: Ask) {
+      synchronized(asks) { asks.addLast(ask) }
+      askNext(context.applicationContext)
+    }
+
+    private fun askNext(context: Context) {
+      val ask =
+        synchronized(asks) {
+          if (asking != null) return
+          asks.removeFirstOrNull()?.also { asking = it } ?: return
+        }
+      ai(context).ask(ask.prompt, json = true) { answer, failure -> end(context, ask, answer, failure) }
+    }
+
+    private fun end(context: Context, ask: Ask, answer: String?, failure: GeminiFailure?) {
+      synchronized(asks) {
+        if (ask.ended) return
+        ask.ended = true
+        if (asking === ask) asking = null
+      }
+      ask.done(answer, failure)
+      askNext(context)
+    }
+
+    /**
+     * Drops [owner]'s AI translations, waiting or being answered. They don't report, as [owner]
+     * cancelled them.
+     */
+    private fun cancelAsks(owner: Translator) {
+      val running: Ask?
+      synchronized(asks) {
+        val dropped = asks.filter { it.owner === owner }
+        asks.removeAll(dropped)
+        dropped.forEach { it.ended = true }
+        running = asking?.takeIf { it.owner === owner }
+        if (running != null) {
+          running.ended = true
+          asking = null
+        }
+      }
+      if (running == null) return
+      ai?.cancel()
+      askNext(owner.appContext)
+    }
 
     /** Speaks why the on-device model couldn't answer, such as low memory. */
     private fun speak(message: String) {
