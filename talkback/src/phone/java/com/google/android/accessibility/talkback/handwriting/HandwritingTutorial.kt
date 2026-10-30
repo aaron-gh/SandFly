@@ -52,7 +52,14 @@ class HandwritingTutorial(
   private val text = StringBuilder()
   private var readings: List<String> = emptyList()
   private var reading = 0
-  private val repeat = Runnable { step?.let { say(res.getString(it.instruction)) } }
+  /** How often the instruction was said again since the user last did something. */
+  private var repeats = 0
+  private val repeat = Runnable {
+    step?.let {
+      repeats++
+      say(res.getString(it.instruction))
+    }
+  }
 
   val isActive: Boolean
     get() = step != null
@@ -149,12 +156,14 @@ class HandwritingTutorial(
 
   /** Says [result] and the instruction of [next]. */
   private fun go(next: Step, result: String) {
+    repeats = 0
     step = next
     say(sentence(result) + " " + res.getString(next.instruction))
   }
 
   /** Says [result] and the instruction of the step again. */
   private fun again(result: String) {
+    repeats = 0
     val current = step ?: return
     say(sentence(result) + " " + res.getString(current.instruction))
   }
@@ -166,11 +175,13 @@ class HandwritingTutorial(
   private fun say(text: String) {
     speak(text)
     handler.removeCallbacks(repeat)
-    if (step != null) handler.postDelayed(repeat, REPEAT_MS)
+    // As the tutorial does, a few times, rather than for as long as the keyboard is open.
+    if (step != null && repeats < MAX_REPEATS) handler.postDelayed(repeat, REPEAT_MS)
   }
 
   private companion object {
     /** The instruction is said again after this long without the step done. */
     const val REPEAT_MS = 20_000L
+    const val MAX_REPEATS = 3
   }
 }

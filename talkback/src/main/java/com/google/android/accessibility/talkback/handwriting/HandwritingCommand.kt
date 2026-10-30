@@ -48,7 +48,13 @@ class HandwritingCommand(
   private val touchSlop = ViewConfiguration.get(service).scaledTouchSlop
   private var recognizer: HandwritingRecognizer? = null
   private val overlay =
-    HandwritingOverlay(service, actorState, service.getString(R.string.shortcut_write_reading_control), ::onTouch)
+    HandwritingOverlay(
+      service,
+      pipeline,
+      actorState,
+      service.getString(R.string.shortcut_write_reading_control),
+      ::onTouch,
+    )
   private val strokes = mutableListOf<MutableList<InkPoint>>()
   /** Whether the strokes so far move further than a tap. */
   private var moved = false
