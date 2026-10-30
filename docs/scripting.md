@@ -198,7 +198,7 @@ A query finds items. It's an id as text, or a record with any of these; an item 
 | `role` | The role the app gave the item. |
 | `clickable` | `true` or `false`. |
 | `parentId` | The view id of the item's parent. |
-| `inside` | A query that one of the items around it must match: its parent, the parent's parent, and so on. `{ className = 'Button', inside = { textContains = 'play video' } }` matches every button in a video's row, and not the row itself. `inside` can't hold another `inside`. |
+| `inside` | A query that one of the items around it must match: its parent, the parent's parent, and so on. `{ className = 'Button', inside = { textContains = 'play video' } }` matches every button in a video's row, and not the row itself. `inside` can't hold another `inside`. *Version 2:* a list of queries, each of which one of the items around it must match. `{ clickable = true, inside = { { clickable = true }, { id = 'results' } } }` matches every item that can be clicked inside another one in the list `results`, and not the list's rows themselves. |
 | `has` | A query that one of the items inside it must match, up to 6 levels down and 60 items. `{ parentId = 'results', has = { textContains = 'Subscribe to' } }` matches a row in a list that holds a Subscribe button. `has` can't hold `has` or `inside`. |
 | `checkable`, `checked`, `longClickable`, `focusable`, `focused`, `selected`, `enabled`, `editable`, `scrollable`, `visible`, `heading`, `password` | *Version 2.* `true` or `false`. `{ className = 'CheckBox', checked = false }` matches unchecked check boxes. |
 
