@@ -283,7 +283,7 @@ public class KeyboardShortcutDialogPreference extends Preference
       return false;
     }
     return switch (sandFlyKey) {
-      case ACTION -> keyComboManager.isMetaKey(event.getKeyCode());
+      case META -> keyComboManager.isMetaKey(event.getKeyCode());
       case CTRL_ALT -> {
         int keyCode = event.getKeyCode();
         yield keyCode == KeyEvent.KEYCODE_CTRL_LEFT

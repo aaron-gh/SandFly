@@ -28,7 +28,7 @@ internal sealed interface TutorialInput {
    */
   data class Command(val action: String) : TutorialInput
 
-  /** Android's own shortcut with the Action key and [keyCode], taken by the tutorial. */
+  /** Android's own shortcut with the Meta key and [keyCode], taken by the tutorial. */
   data class SystemKey(val keyCode: Int) : TutorialInput
 
   data class BrowseMode(val enabled: Boolean) : TutorialInput
@@ -113,7 +113,7 @@ internal class TutorialStep(
   val distinct: Boolean = false,
   /** Says nothing when the step is done, because speech is paused or reading continues. */
   val silent: Boolean = false,
-  /** The key that Android acts on with the Action key, which the tutorial takes in this step. */
+  /** The key that Android acts on with the Meta key, which the tutorial takes in this step. */
   val systemKey: Int = 0,
   val check: StepCheck,
 )
@@ -669,7 +669,7 @@ internal object TutorialLessons {
   private val click = R.string.shortcut_value_perform_click_action
   private val moveDown = R.string.keycombo_shortcut_navigate_down
 
-  /** Android's own shortcut with the Action key and [keyCode], taken in this step. */
+  /** Android's own shortcut with the Meta key and [keyCode], taken in this step. */
   private fun systemKeyStep(@StringRes text: Int, keyCode: Int) =
     TutorialStep(text, systemKey = keyCode) { input, _ ->
       if (input is TutorialInput.SystemKey && input.keyCode == keyCode) "" else null

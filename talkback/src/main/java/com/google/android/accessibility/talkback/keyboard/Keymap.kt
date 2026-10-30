@@ -39,7 +39,7 @@ enum class Keymap(
     R.string.pref_new_keymap_trigger_modifier_key,
     R.xml.new_key_combo_preferences,
     // Its shortcuts use Shift, Ctrl and Alt.
-    listOf(SandFlyKey.ACTION, SandFlyKey.INSERT, SandFlyKey.NUMPAD_INSERT),
+    listOf(SandFlyKey.META, SandFlyKey.INSERT, SandFlyKey.NUMPAD_INSERT),
   ),
   VOICEOVER(
     R.string.voiceover_keymap_entry_value,
@@ -47,7 +47,7 @@ enum class Keymap(
     "voiceover_key_combo_model",
     R.string.pref_voiceover_keymap_trigger_modifier_key,
     R.xml.voiceover_key_combo_preferences,
-    // Its shortcuts use Shift and Action, as VoiceOver's use Shift and Command.
+    // Its shortcuts use Shift and Meta, as VoiceOver's use Shift and Command.
     listOf(SandFlyKey.CTRL_ALT, SandFlyKey.INSERT, SandFlyKey.NUMPAD_INSERT),
   );
 
