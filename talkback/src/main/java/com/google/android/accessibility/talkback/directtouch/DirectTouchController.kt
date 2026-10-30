@@ -138,7 +138,8 @@ class DirectTouchController(
       handler.removeCallbacks(recheck)
       handler.postDelayed(recheck, DEBOUNCE_MS)
     }
-    if (!active) {
+    // Also while a text field holds direct touch off, to see it lose focus.
+    if (!active && !textFieldFocused) {
       return
     }
     when (event.eventType) {
@@ -224,6 +225,10 @@ class DirectTouchController(
     handler.removeCallbacks(reevaluate)
     if (paused || !FeatureSupport.supportPassthrough()) {
       return
+    }
+    // Leaving a text field doesn't always send a focus event, such as when the keyboard closes.
+    if (textFieldFocused) {
+      textFieldFocused = service.findFocus(AccessibilityNodeInfo.FOCUS_INPUT)?.isEditable == true
     }
     val windows = service.windows.orEmpty()
     val mainPackage = windows.firstOrNull { it.id == mainWindowId }?.let { rootPackage(it) }
