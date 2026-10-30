@@ -74,7 +74,13 @@ class ModelDownloader(
         connection.disconnect()
       }
     }
-    val failure = ModelFiles.verifyAndInstall(part, target, expectedSize, expectedSha256)
+    // Reading the file back for its hash can fail too, such as when storage is removed.
+    val failure =
+      try {
+        ModelFiles.verifyAndInstall(part, target, expectedSize, expectedSha256)
+      } catch (_: IOException) {
+        ModelFiles.Failure.STORAGE
+      }
     return if (failure == null) Result.Done else Result.Failed(failure)
   }
 
