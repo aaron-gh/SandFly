@@ -66,8 +66,9 @@ class ScriptImportActivity : Activity() {
           null
         } catch (e: IOException) {
           e.message.orEmpty()
-        } catch (e: SecurityException) {
-          e.message.orEmpty()
+        } catch (e: RuntimeException) {
+          // Another app's provider can throw anything, such as SecurityException.
+          e.message ?: e.javaClass.simpleName
         }
       // Not what a download that stopped at the limit left behind.
       if (error != null) file.delete()
