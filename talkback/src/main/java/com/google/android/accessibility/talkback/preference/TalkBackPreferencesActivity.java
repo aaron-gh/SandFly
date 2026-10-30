@@ -141,7 +141,7 @@ public class TalkBackPreferencesActivity extends PreferencesActivity
 
     String fragmentName = intent.getStringExtra(FRAGMENT_NAME);
     PreferenceFragmentCompat fragment = getFragmentByName(fragmentName);
-    fragment.setArguments(intent.getBundleExtra(FRAGMENT_ARGS));
+    fragment.setArguments(argumentsOf(intent));
     LogUtils.e(TAG, "onNewIntent/getContainerId()= %s", getContainerId());
     getSupportFragmentManager()
         .beginTransaction()
@@ -155,14 +155,21 @@ public class TalkBackPreferencesActivity extends PreferencesActivity
   protected PreferenceFragmentCompat createPreferenceFragment() {
     Intent intent = getIntent();
     String fragmentName = null;
-    Bundle bundle = null;
     if (intent != null) {
       fragmentName = intent.getStringExtra(FRAGMENT_NAME);
-      bundle = intent.getBundleExtra(FRAGMENT_ARGS);
     }
     PreferenceFragmentCompat fragment = getFragmentByName(fragmentName);
-    fragment.setArguments(bundle);
+    fragment.setArguments(argumentsOf(intent));
     return fragment;
+  }
+
+  /**
+   * The fragment's arguments, empty when the intent has none. The activity is exported, and screens
+   * that call requireArguments() would otherwise stop the screen reader, which shares the process.
+   */
+  private static Bundle argumentsOf(@Nullable Intent intent) {
+    Bundle bundle = intent == null ? null : intent.getBundleExtra(FRAGMENT_ARGS);
+    return bundle == null ? new Bundle() : bundle;
   }
 
   @Override
