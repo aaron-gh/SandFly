@@ -273,6 +273,11 @@ public class KeyboardShortcutDialogPreference extends Preference
     return keyComboManager.getKeyComboModel().getTriggerModifier();
   }
 
+  /** Returns whether [event] has no modifiers, a held SandFly key such as Insert among them. */
+  private boolean hasNoModifiers(KeyEvent event) {
+    return keyComboManager.modifiersOf(event) == KeyComboModel.NO_MODIFIER;
+  }
+
   /** Returns whether [event] releases the SandFly key, or a key of it. */
   private boolean isSandFlyKeyRelease(KeyEvent event) {
     if (event.getAction() != KeyEvent.ACTION_UP) {
@@ -359,7 +364,7 @@ public class KeyboardShortcutDialogPreference extends Preference
       return false;
     }
 
-    if (event.getKeyCode() == KeyEvent.KEYCODE_DEL && event.hasNoModifiers()) {
+    if (event.getKeyCode() == KeyEvent.KEYCODE_DEL && hasNoModifiers(event)) {
       clearTemporaryKeyCombo();
       if (supportedSequenceKeyInfra) {
         currentSequenceKeyState = STATE_PREFIX_KEY_NOT_PRESSED;
@@ -369,7 +374,7 @@ public class KeyboardShortcutDialogPreference extends Preference
     }
 
     if (supportedSequenceKeyInfra
-        && (event.getModifiers() & KeyCombo.KEY_EVENT_MODIFIER_MASK) == KeyEvent.META_CTRL_ON
+        && keyComboManager.modifiersOf(event) == KeyEvent.META_CTRL_ON
         && event.getKeyCode() == KeyEvent.KEYCODE_DEL) {
       this.tempKeyCombo = keyComboManager.getKeyComboModel().getDefaultKeyCombo(getKey());
       currentSequenceKeyState = STATE_PREFIX_KEY_NOT_PRESSED;
@@ -488,8 +493,9 @@ public class KeyboardShortcutDialogPreference extends Preference
     }
 
     // Let the system handle the shift + tab key event and the tab key event when sequence key infra
-    // is supported.
-    if (supportedSequenceKeyInfra) {
+    // is supported, unless a held SandFly key such as Insert makes it a shortcut.
+    if (supportedSequenceKeyInfra
+        && (keyComboManager.modifiersOf(event) & KeyComboModel.HELD_KEY_MODIFIER) == 0) {
       if (event.getKeyCode() == KeyEvent.KEYCODE_TAB
           && (event.getModifiers() & KeyEvent.META_SHIFT_ON) != 0) {
         return false;
@@ -504,7 +510,7 @@ public class KeyboardShortcutDialogPreference extends Preference
     // keyAlreadyInUseDialog will be null when this dialog dismisses. If the sequence key infra
     // is supported, it won't save invalid key combo and only save valid key combo when the dialog
     // view is accessibility focused and the event action is ACTION_DOWN.
-    if (event.hasNoModifiers()
+    if (hasNoModifiers(event)
         && (event.getKeyCode() == KeyEvent.KEYCODE_ENTER)
         && (keyAlreadyInUseDialog == null)) {
       LinearLayout dialogView = setUpKeyComboDialog.findViewById(R.id.dialog_view);
@@ -528,7 +534,7 @@ public class KeyboardShortcutDialogPreference extends Preference
     boolean isDialogNavigation =
         event.getKeyCode() == KeyEvent.KEYCODE_ENTER
             || event.getKeyCode() == KeyEvent.KEYCODE_ESCAPE;
-    if (isDialogNavigation && event.hasNoModifiers()) {
+    if (isDialogNavigation && hasNoModifiers(event)) {
       return false;
     }
 

@@ -185,6 +185,8 @@ class PauseController(
    * presses of volume down, or the pause keyboard shortcut, resume Backtalk.
    */
   fun onKeyEvent(event: KeyEvent): Boolean? {
+    // While paused, keys don't reach the key combo manager, which knows whether Insert is held.
+    keyComboManager.trackSandFlyKey(event)
     val keyCode = event.keyCode
     when (event.action) {
       KeyEvent.ACTION_DOWN -> {
@@ -236,14 +238,15 @@ class PauseController(
     val target = pauseKeyCombo() ?: return false
     val triggerModifier = model.triggerModifier
     val hasTriggerModifier = triggerModifier != KeyComboModel.NO_MODIFIER
+    val modifiers = keyComboManager.modifiersOf(event)
     val pressedTriggerModifier =
-      hasTriggerModifier && (event.modifiers and triggerModifier) == triggerModifier
+      hasTriggerModifier && (modifiers and triggerModifier) == triggerModifier
     if (hasTriggerModifier && !pressedTriggerModifier) {
       return false
     }
     val combo =
       KeyCombo(
-        (event.modifiers and KeyCombo.KEY_EVENT_MODIFIER_MASK) and triggerModifier.inv(),
+        modifiers and triggerModifier.inv(),
         KeyComboManager.getConvertedKeyCode(event),
         pressedTriggerModifier,
       )
