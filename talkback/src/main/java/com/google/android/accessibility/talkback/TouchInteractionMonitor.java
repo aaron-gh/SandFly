@@ -1329,10 +1329,14 @@ public class TouchInteractionMonitor
    */
   private boolean handleRotation(MotionEvent event) {
     boolean wasRotating = rotationTracker.isRotating();
+    // Like scrubbing and pinching, only when a rotation does something: otherwise two fingers
+    // that turn a little would stop passing through, such as on a map.
     if (!wasRotating
         && (state != STATE_TOUCH_INTERACTING
             || gestureStarted
-            || !gestureDetector.isMultiFingerGesturesEnabled())) {
+            || !gestureDetector.isMultiFingerGesturesEnabled()
+            || !(isGestureAssigned(GESTURE_2_FINGER_ROTATE_CLOCKWISE)
+                || isGestureAssigned(GESTURE_2_FINGER_ROTATE_COUNTERCLOCKWISE)))) {
       if (GestureLog.getEnabled() && event.getActionMasked() == ACTION_POINTER_DOWN) {
         Log.d(
             DEBUG_GESTURE_TAG,
