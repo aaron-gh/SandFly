@@ -12,6 +12,12 @@ name = "PER_ADDRESS"
 namespace_id = "1001"
 simple = { limit = 2, period = 60 }
 
+# Reading replies: SandFly reads up to three times within seconds when Reports is opened.
+[[ratelimits]]
+name = "THREADS_PER_ADDRESS"
+namespace_id = "1002"
+simple = { limit = 10, period = 60 }
+
 # Daily report counts. Create with: npx wrangler kv namespace create COUNTS
 [[kv_namespaces]]
 binding = "COUNTS"
