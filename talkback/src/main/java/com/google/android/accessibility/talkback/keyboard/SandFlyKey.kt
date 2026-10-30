@@ -19,7 +19,6 @@ import android.content.Context
 import android.view.KeyEvent
 import androidx.annotation.StringRes
 import com.google.android.accessibility.talkback.R
-import com.google.android.accessibility.utils.SharedPreferencesUtils
 
 /**
  * A key that can be the SandFly key, which keymap shortcuts are pressed with. Meta, Alt, Ctrl + Alt
@@ -109,14 +108,10 @@ enum class SandFlyKey(
       (keyCode != KeyEvent.KEYCODE_NUMPAD_0 || !event.isNumLockOn)
 
   companion object {
-    /** The SandFly key the user chose; every keymap uses it. Meta when none was chosen. */
+    /** The SandFly key saved as [value], or null. */
     @JvmStatic
-    fun chosen(context: Context): SandFlyKey {
-      val value =
-        SharedPreferencesUtils.getSharedPreferences(context)
-          .getString(context.getString(R.string.pref_sandfly_key), null)
-      return entries.firstOrNull { context.getString(it.valueRes) == value } ?: META
-    }
+    fun fromValue(context: Context, value: String?): SandFlyKey? =
+      entries.firstOrNull { context.getString(it.valueRes) == value }
 
     /**
      * Returns [combo], written for [native] as the SandFly key, as it is pressed with [chosen].

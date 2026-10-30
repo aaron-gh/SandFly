@@ -10,13 +10,6 @@
             android:defaultValue="@string/new_keymap_entry_value"
             android:entries="@array/pref_select_keymap_entries"
             android:entryValues="@array/pref_select_keymap_values" />
-        <ListPreference
-            android:key="@string/pref_sandfly_key"
-            android:title="@string/keycombo_menu_choose_trigger_modifier"
-            android:summary="%s"
-            android:defaultValue="@string/trigger_modifier_meta_entry_value"
-            android:entries="@array/pref_sandfly_key_entries"
-            android:entryValues="@array/pref_sandfly_key_values" />
         <PreferenceScreen
             android:key="@string/pref_reset_keymap_key"
             android:title="@string/keycombo_menu_reset_keymap" />

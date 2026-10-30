@@ -76,7 +76,7 @@ class SandFlyKeyTest {
       context.getString(keymap.valueRes),
     )
     if (sandFlyKey != null) {
-      prefs.putString(context.getString(R.string.pref_sandfly_key), context.getString(sandFlyKey.valueRes))
+      prefs.putString(keymap.sandFlyKeyPref, context.getString(sandFlyKey.valueRes))
     }
     prefs.commit()
     return KeyComboManager.create(context).apply {
@@ -183,36 +183,21 @@ class SandFlyKeyTest {
   }
 
   @Test
-  fun keymapsSandFlyKeyMovesToTheOneForAllKeymaps() {
+  fun eachKeymapKeepsItsOwnSandFlyKey() {
     SharedPreferencesUtils.getSharedPreferences(context)
       .edit()
-      .putString(
-        context.getString(R.string.pref_select_keymap_key),
-        context.getString(Keymap.VOICEOVER.valueRes),
-      )
-      .putString("pref_voiceover_keymap_trigger_modifier", context.getString(SandFlyKey.CTRL_ALT.valueRes))
-      // Every install has the SandFly keymap's old SandFly key.
-      .putString(context.getString(R.string.pref_sandfly_key), context.getString(SandFlyKey.META.valueRes))
+      .putString(Keymap.VOICEOVER.sandFlyKeyPref, context.getString(SandFlyKey.INSERT.valueRes))
       .commit()
-    assertEquals(SandFlyKey.CTRL_ALT, KeyComboManager.create(context).sandFlyKey)
-
-    // Once moved, a SandFly key chosen later stays.
-    SharedPreferencesUtils.getSharedPreferences(context)
-      .edit()
-      .putString(context.getString(R.string.pref_sandfly_key), context.getString(SandFlyKey.INSERT.valueRes))
-      .commit()
-    assertEquals(SandFlyKey.INSERT, KeyComboManager.create(context).sandFlyKey)
+    assertEquals(SandFlyKey.META, manager(Keymap.SANDFLY).sandFlyKey)
+    assertEquals(SandFlyKey.INSERT, manager(Keymap.VOICEOVER).sandFlyKey)
+    assertEquals(SandFlyKey.INSERT, manager(Keymap.NVDA).sandFlyKey)
   }
 
   @Test
-  fun sandFlyKeymapTurnsBrowseModeOnWithCtrlAltQ() {
-    val manager = manager(Keymap.SANDFLY, SandFlyKey.CTRL_ALT)
-    assertEquals(
-      KeyCombo(0, 0, KeyEvent.KEYCODE_Q, true),
-      manager.keyComboModel.getKeyComboForKey(
-        context.getString(R.string.keycombo_shortcut_other_toggle_browse_mode_extra)
-      ),
-    )
+  fun aKeyTheKeymapDoesNotOfferIsNotUsed() {
+    // Ctrl + Alt would drop SandFly keymap shortcuts, so the SandFly keymap keeps Meta.
+    assertEquals(SandFlyKey.META, manager(Keymap.SANDFLY, SandFlyKey.CTRL_ALT).sandFlyKey)
+    assertEquals(SandFlyKey.CTRL_ALT, manager(Keymap.VOICEOVER, SandFlyKey.META).sandFlyKey)
   }
 
   @Test
@@ -238,7 +223,6 @@ class SandFlyKeyTest {
       .edit()
       .putString(context.getString(R.string.pref_select_keymap_key), "default_keymap")
       .putString("pref_default_keymap_trigger_modifier", "trigger_modifier_alt")
-      .putString(context.getString(R.string.pref_sandfly_key), context.getString(SandFlyKey.META.valueRes))
       .commit()
     val manager = KeyComboManager.create(context)
     assertTrue(manager.isCustomKeymap)
@@ -264,6 +248,7 @@ class SandFlyKeyTest {
         context,
         "Mine",
         usesSequences = false,
+        SandFlyKey.META,
         mapOf(
           context.getString(R.string.keycombo_shortcut_perform_click) to
             KeyCombo(0, 0, KeyEvent.KEYCODE_F2, false)
@@ -272,7 +257,6 @@ class SandFlyKeyTest {
     SharedPreferencesUtils.getSharedPreferences(context)
       .edit()
       .putString(context.getString(R.string.pref_select_keymap_key), custom.value)
-      .putString(context.getString(R.string.pref_sandfly_key), context.getString(SandFlyKey.META.valueRes))
       .commit()
     val manager = KeyComboManager.create(context).apply {
       onServiceStateChanged(ServiceStateListener.SERVICE_STATE_ACTIVE)

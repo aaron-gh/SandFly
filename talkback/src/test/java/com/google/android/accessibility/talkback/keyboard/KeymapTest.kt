@@ -52,33 +52,49 @@ class KeymapTest {
     assertEquals(Keymap.VOICEOVER, Keymap.of(context, "voiceover_keymap"))
   }
 
-  private fun choose(sandFlyKey: SandFlyKey) {
+  private fun choose(keymap: Keymap, sandFlyKey: SandFlyKey) {
     SharedPreferencesUtils.getSharedPreferences(context)
       .edit()
-      .putString(context.getString(R.string.pref_sandfly_key), context.getString(sandFlyKey.valueRes))
+      .putString(keymap.sandFlyKeyPref, context.getString(sandFlyKey.valueRes))
       .commit()
   }
 
   @Test
-  fun everyKeymapUsesMetaUntilAnotherKeyIsChosen() {
-    val model = NewKeyComboModel(context, Keymap.NVDA)
-    assertEquals(SandFlyKey.META, model.sandFlyKey)
-    assertEquals(KeyEvent.META_META_ON, model.triggerModifier)
+  fun eachKeymapUsesItsOwnKeyUntilAnotherIsChosen() {
+    assertEquals(SandFlyKey.META, NewKeyComboModel(context, Keymap.SANDFLY).sandFlyKey)
+    assertEquals(SandFlyKey.CTRL_ALT, NewKeyComboModel(context, Keymap.VOICEOVER).sandFlyKey)
+    val nvda = NewKeyComboModel(context, Keymap.NVDA)
+    assertEquals(SandFlyKey.INSERT, nvda.sandFlyKey)
     // NVDA's Insert + Shift + Right.
     assertEquals(
       KeyCombo(KeyEvent.META_SHIFT_ON, 0, KeyEvent.KEYCODE_DPAD_RIGHT, true),
-      model.getKeyComboForKey(context.getString(R.string.keycombo_shortcut_navigate_next_default)),
+      nvda.getKeyComboForKey(context.getString(R.string.keycombo_shortcut_navigate_next_default)),
     )
   }
 
   @Test
-  fun voiceOverCommandShortcutsKeepTheirKeysWithMeta() {
-    choose(SandFlyKey.META)
-    val model = NewKeyComboModel(context, Keymap.VOICEOVER)
-    // VO + Command + Right is Ctrl + Alt + Meta + Right; with Meta as the SandFly key, Ctrl + Alt
-    // are the other keys.
+  fun keymapsOfferTheirOwnKeys() {
     assertEquals(
-      KeyCombo(KeyEvent.META_CTRL_ON or KeyEvent.META_ALT_ON, 0, KeyEvent.KEYCODE_DPAD_RIGHT, true),
+      listOf(SandFlyKey.CTRL_ALT, SandFlyKey.INSERT, SandFlyKey.NUMPAD_INSERT),
+      Keymap.VOICEOVER.sandFlyKeys,
+    )
+    assertEquals(
+      listOf(SandFlyKey.META, SandFlyKey.INSERT, SandFlyKey.NUMPAD_INSERT),
+      Keymap.SANDFLY.sandFlyKeys,
+    )
+    for (keymap in listOf(Keymap.NVDA, Keymap.JAWS, Keymap.ORCA)) {
+      assertFalse(SandFlyKey.CTRL_ALT in keymap.sandFlyKeys)
+      assertFalse(SandFlyKey.CTRL_META in keymap.sandFlyKeys)
+    }
+  }
+
+  @Test
+  fun voiceOverCommandShortcutsWithInsert() {
+    choose(Keymap.VOICEOVER, SandFlyKey.INSERT)
+    val model = NewKeyComboModel(context, Keymap.VOICEOVER)
+    // VO + Command + Right is Insert + Meta + Right.
+    assertEquals(
+      KeyCombo(KeyEvent.META_META_ON, 0, KeyEvent.KEYCODE_DPAD_RIGHT, true),
       model.getKeyComboForKey(
         context.getString(R.string.keycombo_shortcut_global_scroll_forward_reading_menu)
       ),
@@ -87,7 +103,7 @@ class KeymapTest {
 
   @Test
   fun chosenSandFlyKeyIsUsed() {
-    choose(SandFlyKey.INSERT)
+    choose(Keymap.SANDFLY, SandFlyKey.INSERT)
     val model = NewKeyComboModel(context, Keymap.SANDFLY)
     assertEquals(SandFlyKey.INSERT, model.sandFlyKey)
     assertEquals(KeyComboModel.HELD_KEY_MODIFIER, model.triggerModifier)
@@ -96,33 +112,33 @@ class KeymapTest {
     assertTrue(model.isEligibleKeyCombo(KeyCombo(0, 0, KeyEvent.KEYCODE_J, true)))
   }
 
+  /** The defaults of [keymap] with [sandFlyKey], unassigned ones left out. */
+  private fun defaults(keymap: Keymap, sandFlyKey: SandFlyKey): Map<String, KeyCombo> {
+    choose(keymap, sandFlyKey)
+    val model = NewKeyComboModel(context, keymap)
+    return model.keyComboMap.keys
+      .associateWith { model.getDefaultKeyCombo(it) }
+      .filterValues { it.keyComboCode != KeyComboModel.KEY_COMBO_CODE_UNASSIGNED.toLong() }
+  }
+
   @Test
-  fun defaultShortcutsAreUniqueWithEverySandFlyKey() {
+  fun everyOfferedSandFlyKeyKeepsEveryDefault() {
     for (keymap in Keymap.entries) {
+      val own = defaults(keymap, keymap.nativeKey).keys
       for (sandFlyKey in keymap.sandFlyKeys) {
-        choose(sandFlyKey)
-        val model = NewKeyComboModel(context, keymap)
-        val seen = mutableMapOf<KeyCombo, String>()
-        for (key in model.keyComboMap.keys) {
-          val combo = model.getDefaultKeyCombo(key)
-          if (combo.keyComboCode == KeyComboModel.KEY_COMBO_CODE_UNASSIGNED.toLong()) continue
-          val other = seen.put(combo, key)
-          assertEquals("$keymap with $sandFlyKey: $key and $other share $combo", null, other)
-        }
-        println("$keymap with $sandFlyKey: ${seen.size} default shortcuts")
+        assertEquals("$keymap with $sandFlyKey", own, defaults(keymap, sandFlyKey).keys)
       }
     }
   }
 
   @Test
-  fun defaultShortcutsCanBePressedWithEverySandFlyKey() {
+  fun defaultShortcutsAreUniqueAndPressableWithEveryOfferedKey() {
     for (keymap in Keymap.entries) {
       for (sandFlyKey in keymap.sandFlyKeys) {
-        choose(sandFlyKey)
-        val model = NewKeyComboModel(context, keymap)
-        for (key in model.keyComboMap.keys) {
-          val combo = model.getDefaultKeyCombo(key)
-          if (combo.keyComboCode == KeyComboModel.KEY_COMBO_CODE_UNASSIGNED.toLong()) continue
+        val seen = mutableMapOf<KeyCombo, String>()
+        for ((key, combo) in defaults(keymap, sandFlyKey)) {
+          val other = seen.put(combo, key)
+          assertEquals("$keymap with $sandFlyKey: $key and $other share $combo", null, other)
           val shared = combo.modifiers and sandFlyKey.modifiers
           if (combo.isTriggerModifierUsed) {
             assertEquals("$keymap with $sandFlyKey: $key", 0, shared)
@@ -135,30 +151,12 @@ class KeymapTest {
   }
 
   @Test
-  fun screenReaderKeymapsOfferOneKeySandFlyKeysOnly() {
-    for (keymap in listOf(Keymap.NVDA, Keymap.JAWS, Keymap.ORCA)) {
-      assertFalse(SandFlyKey.CTRL_ALT in keymap.sandFlyKeys)
-      assertFalse(SandFlyKey.CTRL_META in keymap.sandFlyKeys)
-      assertTrue(SandFlyKey.ALT in keymap.sandFlyKeys)
-    }
-    assertEquals(SandFlyKey.entries, Keymap.SANDFLY.sandFlyKeys)
-    choose(SandFlyKey.CTRL_ALT)
-    // The keymap's own key, where it doesn't offer the chosen one.
-    assertEquals(SandFlyKey.INSERT, NewKeyComboModel(context, Keymap.NVDA).sandFlyKey)
-    assertEquals(SandFlyKey.CTRL_ALT, NewKeyComboModel(context, Keymap.VOICEOVER).sandFlyKey)
-  }
-
-  @Test
   fun browseModeTogglesWithTheSandFlyKeyTwiceOnlyWhereAssigned() {
     val key = context.getString(R.string.keycombo_shortcut_other_toggle_browse_mode)
     val unassigned = KeyComboModel.KEY_COMBO_CODE_UNASSIGNED.toLong()
-    choose(SandFlyKey.META)
     assertTrue(NewKeyComboModel(context, Keymap.SANDFLY).getKeyComboForKey(key).keyComboCode != unassigned)
     assertEquals(unassigned, NewKeyComboModel(context, Keymap.NVDA).getKeyComboForKey(key).keyComboCode)
-    choose(SandFlyKey.ALT)
-    assertTrue(NewKeyComboModel(context, Keymap.SANDFLY).getKeyComboForKey(key).keyComboCode != unassigned)
-    choose(SandFlyKey.CTRL_ALT)
-    assertEquals(unassigned, NewKeyComboModel(context, Keymap.SANDFLY).getKeyComboForKey(key).keyComboCode)
+    assertEquals(unassigned, NewKeyComboModel(context, Keymap.VOICEOVER).getKeyComboForKey(key).keyComboCode)
   }
 
   @Test
