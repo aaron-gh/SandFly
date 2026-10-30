@@ -86,9 +86,10 @@ class ScriptActivation(private val service: AccessibilityService) {
         is Boolean,
         is Int,
         is Long,
-        is Float,
-        is Double,
         is String -> meta.put(key, value)
+        // JSONObject refuses NaN and infinity, which an app's manifest can hold, such as "1e39".
+        is Float -> if (value.isFinite()) meta.put(key, value.toDouble())
+        is Double -> if (value.isFinite()) meta.put(key, value)
       }
     }
     return meta
