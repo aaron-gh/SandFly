@@ -311,7 +311,9 @@ public class GeminiRestEndpoint implements GeminiEndpoint {
       listener.onError(ErrorReason.UNSUPPORTED);
       return false;
     }
-    if (!NetworkUtils.isNetworkConnected(context)) {
+    // The on-device model answers without a network, as for text requests.
+    if (!LocalModelManager.Companion.get(context).answersRequests()
+        && !NetworkUtils.isNetworkConnected(context)) {
       listener.onError(ErrorReason.NETWORK_ERROR);
       return false;
     }
@@ -352,7 +354,8 @@ public class GeminiRestEndpoint implements GeminiEndpoint {
       return false;
     }
 
-    if (!NetworkUtils.isNetworkConnected(context)) {
+    if (!LocalModelManager.Companion.get(context).answersRequests()
+        && !NetworkUtils.isNetworkConnected(context)) {
       LogUtils.d(TAG, "Internet is not connected");
       geminiResponseListener.onError(ErrorReason.NETWORK_ERROR);
       return false;
