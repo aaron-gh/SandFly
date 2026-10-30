@@ -65,7 +65,7 @@ class ScriptItemActions(private val handler: Handler, private val feedback: Scri
         @Suppress("DEPRECATION") val copy = AccessibilityNodeInfoCompat.obtain(node)
         // Finding the action's target can visit every item on screen.
         ScriptItemAction(action.title) {
-          handler.post { ScriptThread.busy { run(runtime, action, copy) } }
+          handler.post { ScriptThread.busy(runtime.id) { run(runtime, action, copy) } }
         }
       }
 

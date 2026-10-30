@@ -87,7 +87,7 @@ class ScriptRuntime(
     val main =
       store.readFile(id, ScriptPackage.MAIN)
         ?: throw LuaEngine.ScriptError("${ScriptPackage.MAIN} is missing")
-    ScriptThread.busy {
+    ScriptThread.busy(id) {
       timed(LOAD_LIMIT_MS) { engine.start(prelude, MEMORY_LIMIT) }
       timed(LOAD_LIMIT_MS) { engine.runMain(main.decodeToString(), ScriptPackage.MAIN) }
     }
@@ -97,7 +97,7 @@ class ScriptRuntime(
     val runtime = lua?.takeUnless { it.isClosed || manager.isClosed } ?: return null
     return try {
       val event = jsonObject("type" to type, "data" to data).toString()
-      ScriptThread.busy { timed(timeLimitMs) { runtime.dispatch(event) } }
+      ScriptThread.busy(id) { timed(timeLimitMs) { runtime.dispatch(event) } }
     } catch (e: LuaEngine.ScriptError) {
       manager.onScriptError(this, "$type: ${e.message}", e.interrupted)
       null

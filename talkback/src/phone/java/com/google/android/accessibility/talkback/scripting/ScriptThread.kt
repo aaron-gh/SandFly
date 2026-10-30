@@ -16,7 +16,10 @@
 
 package com.google.android.accessibility.talkback.scripting
 
+import android.os.Handler
+import android.os.Looper
 import android.os.SystemClock
+import java.util.concurrent.atomic.AtomicBoolean
 
 /**
  * Knows whether the script thread is in the middle of something. The main thread waits a short
@@ -28,14 +31,54 @@ object ScriptThread {
   // Restarting the engine starts a new script thread while the old one may still be finishing, so
   // only the thread that set the time clears it.
   @Volatile private var owner: Thread? = null
+  /** The script the thread is busy for, if it is one script's work. */
+  @Volatile private var script: String? = null
   private val depth = ThreadLocal<Int>()
 
-  fun <T> busy(work: () -> T): T {
+  /**
+   * Told on the main thread when the script thread has been busy with one piece of work for
+   * [STUCK_MS], with the script it was for and the thread. The prelude's hook can't stop Lua inside
+   * one C function, such as a pattern match that backtracks for good, so the thread can't be
+   * stopped, only given up on.
+   */
+  @Volatile var onStuck: ((script: String?, thread: Thread) -> Unit)? = null
+
+  /** Checks for a stuck thread only while it is busy. */
+  private val main = Handler(Looper.getMainLooper())
+  private val watching = AtomicBoolean(false)
+  private val check =
+    object : Runnable {
+      override fun run() {
+        val since = busySince
+        val thread = owner
+        if (since == 0L || thread == null) {
+          watching.set(false)
+          // Busy again since the check was found idle.
+          if (busySince != 0L) watch()
+          return
+        }
+        val elapsed = SystemClock.uptimeMillis() - since
+        if (elapsed < STUCK_MS) {
+          main.postDelayed(this, STUCK_MS - elapsed)
+          return
+        }
+        watching.set(false)
+        onStuck?.invoke(script, thread)
+      }
+    }
+
+  private fun watch() {
+    if (watching.compareAndSet(false, true)) main.postDelayed(check, STUCK_MS)
+  }
+
+  fun <T> busy(scriptId: String? = null, work: () -> T): T {
     val outer = depth.get() ?: 0
     val thread = Thread.currentThread()
     if (outer == 0) {
       owner = thread
+      script = scriptId
       busySince = SystemClock.uptimeMillis()
+      watch()
     }
     depth.set(outer + 1)
     try {
@@ -45,6 +88,7 @@ object ScriptThread {
       if (outer == 0 && owner === thread) {
         busySince = 0L
         owner = null
+        script = null
       }
     }
   }
@@ -53,4 +97,7 @@ object ScriptThread {
     val since = busySince
     return since != 0L && SystemClock.uptimeMillis() - since > ms
   }
+
+  /** How long one piece of work may hold up the script thread before its script is turned off. */
+  const val STUCK_MS = 20_000L
 }

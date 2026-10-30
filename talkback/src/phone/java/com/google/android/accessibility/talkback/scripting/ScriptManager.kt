@@ -228,7 +228,9 @@ class ScriptManager(
         ScriptReadingControl(key, bound.navigation.title) { isNext ->
           // The search visits every item on screen, so it stays off the main thread.
           onScriptThread {
-            ScriptThread.busy { navigator.move(bound.runtime, bound.navigation.query, isNext) }
+            ScriptThread.busy(bound.runtime.id) {
+              navigator.move(bound.runtime, bound.navigation.query, isNext)
+            }
           }
         }
       }
@@ -240,6 +242,9 @@ class ScriptManager(
     store.allOff = !store.allOff
     return !store.allOff
   }
+
+  /** Whether [thread] is this manager's script thread. */
+  fun runsOn(thread: Thread): Boolean = scriptHandler.looper.thread === thread
 
   override fun shutdown() {
     closed = true
