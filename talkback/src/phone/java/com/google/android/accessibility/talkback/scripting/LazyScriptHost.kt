@@ -159,8 +159,10 @@ class LazyScriptHost(
     modifiers: Int,
     keyCode: Int,
     withBacktalkModifier: Boolean,
+    repeated: Boolean,
     fallback: Runnable,
-  ): Boolean = manager?.onKeys(modifiers, keyCode, withBacktalkModifier, fallback) == true
+  ): Boolean =
+    manager?.onKeys(modifiers, keyCode, withBacktalkModifier, repeated, fallback) == true
 
   override fun menuItems(): List<ScriptMenuItem> = manager?.menuItems().orEmpty()
 
