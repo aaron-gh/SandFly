@@ -36,6 +36,7 @@ object SpeechControlApproval {
   private const val TAG = "SpeechControlApproval"
   private const val ACTION_ALLOW = "fyi.quin.backtalk.action.ALLOW_APP_SPEECH"
   private const val ACTION_DENY = "fyi.quin.backtalk.action.DENY_APP_SPEECH"
+  private const val ACTION_DISMISSED = "fyi.quin.backtalk.action.DISMISS_APP_SPEECH"
   private const val EXTRA_APP = "app"
   private const val NOTIFICATION_ID_BASE = 0x5ec0
 
@@ -44,11 +45,12 @@ object SpeechControlApproval {
 
   /** Asks whether [app] may speak, unless it was asked already. Called on the main thread. */
   fun ask(context: Context, app: String) {
-    if (!asked.add(app)) return
+    // Not counted as asked when it can't be: it is asked once notifications are allowed.
     if (!NotificationUtils.hasPostNotificationPermission(context)) {
       LogUtils.w(TAG, "Can't ask about %s, since Backtalk can't post notifications", app)
       return
     }
+    if (!asked.add(app)) return
     val label = label(context, app)
     val notification =
       NotificationUtils.createDefaultNotificationBuilder(context)
@@ -57,6 +59,8 @@ object SpeechControlApproval {
         .setTicker(context.getString(R.string.speech_control_ask_title, label))
         .addAction(0, context.getString(R.string.speech_control_allow), answer(context, app, true))
         .addAction(0, context.getString(R.string.speech_control_deny), answer(context, app, false))
+        // Dismissed without an answer: asked again the next time the app speaks.
+        .setDeleteIntent(dismissed(context, app))
         .setAutoCancel(true)
         .setWhen(0)
         .build()
@@ -82,6 +86,16 @@ object SpeechControlApproval {
       PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT,
     )
 
+  private fun dismissed(context: Context, app: String): PendingIntent =
+    PendingIntent.getBroadcast(
+      context,
+      notificationId(app) * 2 + 0x10000,
+      Intent(context, AnswerReceiver::class.java)
+        .setAction(ACTION_DISMISSED)
+        .putExtra(EXTRA_APP, app),
+      PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT,
+    )
+
   private fun notificationId(app: String): Int = NOTIFICATION_ID_BASE + (app.hashCode() and 0xfff)
 
   /** Saves the user's answer from the notification. Not exported, so only it can call this. */
@@ -92,6 +106,10 @@ object SpeechControlApproval {
         when (intent.action) {
           ACTION_ALLOW -> true
           ACTION_DENY -> false
+          ACTION_DISMISSED -> {
+            asked.remove(app)
+            return
+          }
           else -> return
         }
       SpeechControlApps.setAllowed(SharedPreferencesUtils.getSharedPreferences(context), app, allow)
