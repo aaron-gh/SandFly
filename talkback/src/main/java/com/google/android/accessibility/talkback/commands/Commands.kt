@@ -354,7 +354,13 @@ object Commands {
         )
         gesture(R.string.shortcut_value_scroll_to_top, R.string.shortcut_scroll_to_top)
         gesture(R.string.shortcut_value_scroll_to_bottom, R.string.shortcut_scroll_to_bottom)
-        gesture(R.string.shortcut_value_refresh, R.string.shortcut_refresh, Key.REFRESH)
+        // The pull passes through touch exploration, which needs Android 11.
+        gesture(
+          R.string.shortcut_value_refresh,
+          R.string.shortcut_refresh,
+          Key.REFRESH,
+          available = FeatureSupport.supportPassthrough(),
+        )
       }
 
     private fun textNavigation() =
