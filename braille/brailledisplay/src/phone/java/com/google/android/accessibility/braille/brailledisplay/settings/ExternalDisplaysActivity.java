@@ -83,7 +83,7 @@ public class ExternalDisplaysActivity extends PreferencesActivity {
         allowed.setIconSpaceReserved(false);
         allowed.setTitle(label(context, app));
         allowed.setChecked(
-            ExternalDisplayApps.state(ExternalDisplayApps.prefs(context), app)
+            ExternalDisplayApps.state(context, ExternalDisplayApps.prefs(context), app)
                 == ExternalDisplayApps.State.ALLOWED);
         allowed.setOnPreferenceChangeListener(
             (preference, newValue) -> {

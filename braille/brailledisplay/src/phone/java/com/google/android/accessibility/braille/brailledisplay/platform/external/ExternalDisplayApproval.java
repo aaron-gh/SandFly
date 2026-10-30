@@ -126,7 +126,7 @@ public final class ExternalDisplayApproval {
 
   /** Saves the user's answer about {@code app}. */
   public static void setAllowed(Context context, String app, boolean allowed) {
-    ExternalDisplayApps.setAllowed(ExternalDisplayApps.prefs(context), app, allowed);
+    ExternalDisplayApps.setAllowed(context, ExternalDisplayApps.prefs(context), app, allowed);
     answered(context, app);
   }
 
