@@ -57,12 +57,14 @@ class ReportThreadFragment : TalkbackBaseFragment() {
   override fun onResume() {
     super.onResume()
     store.addListener(onChange)
+    ReportInbox.shownReportId = reportId
     markRead()
     ReportInbox.cancelNotification(requireContext(), reportId)
     ReportInbox.checkNow(requireContext())
   }
 
   override fun onPause() {
+    if (ReportInbox.shownReportId == reportId) ReportInbox.shownReportId = null
     store.removeListener(onChange)
     super.onPause()
   }
@@ -83,6 +85,8 @@ class ReportThreadFragment : TalkbackBaseFragment() {
       build()
       return
     }
+    // Replies and a status that arrive while the report is open are read here.
+    if (report.unreadMessages > 0 || report.statusUnread) markRead()
     status?.summary = getString(ReportInbox.statusName(report.status))
     val ids = report.messages.map { it.id }
     if (ids.take(shownMessageIds.size) == shownMessageIds) {
