@@ -75,8 +75,13 @@ object TutorialHooks {
     listener?.onBrowseMode(enabled)
   }
 
+  /** Whether continuous reading is on, kept while no tutorial listens. */
+  @JvmStatic @Volatile var continuousReading = false
+    private set
+
   @JvmStatic
   fun onContinuousReading(active: Boolean) {
+    continuousReading = active
     listener?.onContinuousReading(active)
   }
 }

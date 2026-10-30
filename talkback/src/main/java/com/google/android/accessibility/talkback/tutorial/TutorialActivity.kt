@@ -271,6 +271,8 @@ class TutorialActivity : AppCompatActivity() {
 
   override fun onNewIntent(intent: Intent) {
     super.onNewIntent(intent)
+    // What the tutorial shows now, for when the activity is made again.
+    setIntent(intent)
     // Brought back from the background, where Android restores focus to the item that last had
     // it: the heading gets focus when the window does, as when the tutorial first opens.
     if (!hasWindowFocus()) shown = false
@@ -294,6 +296,9 @@ class TutorialActivity : AppCompatActivity() {
   override fun onResume() {
     super.onResume()
     TutorialHooks.listener = hooks
+    // Continuous reading that started or stopped while the tutorial was in the background.
+    val continuous = TutorialHooks.continuousReading
+    if (reading != continuous) hooks.onContinuousReading(continuous)
     userActed()
   }
 
