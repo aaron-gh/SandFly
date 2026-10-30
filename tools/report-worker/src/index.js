@@ -15,6 +15,8 @@ const MAX_SMALL_REQUEST_BYTES = 40_000;
 const PER_ADDRESS_PER_DAY = 10;
 const ALL_PER_DAY = 100;
 const REPLIES_PER_ADDRESS_PER_DAY = 30;
+/** Each read costs two GitHub requests per report, from the Worker's one token. */
+const THREAD_READS_PER_ADDRESS_PER_DAY = 300;
 const DAY_SECONDS = 24 * 60 * 60;
 // The comments of a report that are read, which is more than any report has had.
 const MAX_COMMENTS = 100;
@@ -94,6 +96,11 @@ async function readThreads(json, request, env) {
   } catch (e) {
     return reply(400, `field:${e.message}`);
   }
+  const address = request.headers.get('cf-connecting-ip') || 'unknown';
+  const { success } = await env.THREADS_PER_ADDRESS.limit({ key: `threads:${address}` });
+  if (!success || !(await withinDailyLimit(env, 'threads', address, THREAD_READS_PER_ADDRESS_PER_DAY))) {
+    return reply(429, 'rate_limited');
+  }
   const threads = [];
   for (const token of tokens) {
     const number = await issueNumber(env, token);
@@ -105,6 +112,11 @@ async function readThreads(json, request, env) {
       github(env, 'GET', `/repos/${env.REPO}/issues/${number}`),
       github(env, 'GET', `/repos/${env.REPO}/issues/${number}/comments?per_page=${MAX_COMMENTS}`),
     ]);
+    // A deleted issue, such as spam, ends its report rather than every report of the device.
+    if (issue.status === 404 || issue.status === 410) {
+      threads.push({ token, status: 'unknown', messages: [] });
+      continue;
+    }
     if (!issue.ok || !comments.ok) {
       console.error('Thread not read', number, issue.status, comments.status);
       return reply(502, 'github');
@@ -127,7 +139,9 @@ async function addReply(json, request, env) {
   }
   const address = request.headers.get('cf-connecting-ip') || 'unknown';
   const { success } = await env.PER_ADDRESS.limit({ key: `reply:${address}` });
-  if (!success || !(await withinReplyLimit(env, address))) return reply(429, 'rate_limited');
+  if (!success || !(await withinDailyLimit(env, 'reply', address, REPLIES_PER_ADDRESS_PER_DAY))) {
+    return reply(429, 'rate_limited');
+  }
   const number = await issueNumber(env, parsed.token);
   if (number === null) return reply(404, 'unknown_report');
   const comment = await github(env, 'POST', `/repos/${env.REPO}/issues/${number}/comments`, {
@@ -197,12 +211,12 @@ async function withinDailyLimits(env, address) {
 }
 
 /** Counts the reply against the daily limit for its address. */
-async function withinReplyLimit(env, address) {
+async function withinDailyLimit(env, kind, address, limit) {
   const day = new Date().toISOString().slice(0, 10);
-  const key = `${day}:reply:${await sha256(address)}`;
-  const replies = await count(env, key);
-  if (replies >= REPLIES_PER_ADDRESS_PER_DAY) return false;
-  await env.COUNTS.put(key, String(replies + 1), { expirationTtl: 2 * DAY_SECONDS });
+  const key = `${day}:${kind}:${await sha256(address)}`;
+  const used = await count(env, key);
+  if (used >= limit) return false;
+  await env.COUNTS.put(key, String(used + 1), { expirationTtl: 2 * DAY_SECONDS });
   return true;
 }
 

@@ -174,7 +174,7 @@ class ProblemReportFragment : TalkbackBaseFragment(R.xml.problem_report_preferen
               id = id,
               token = token,
               type = report.type,
-              title = report.title.trim(),
+              title = report.oneLineTitle,
               description = report.description.trim(),
               sentAt = System.currentTimeMillis(),
             ),

@@ -38,6 +38,7 @@ throws('long reply', () => parseReply({ token, body: 'x'.repeat(10001) }), 'body
 throws('bad token', () => parseReply({ token: 'short', body: 'x' }), 'token');
 throws('token with a slash', () => parseReply({ token: token.replace('a', '/'), body: 'x' }), 'token');
 check('tokens', parseTokens({ tokens: [token] }).length === 1);
+check('same token once', parseTokens({ tokens: [token, token, token] }).length === 1);
 throws('too many tokens', () => parseTokens({ tokens: Array(21).fill(token) }), 'tokens');
 throws('no tokens', () => parseTokens({}), 'tokens');
 

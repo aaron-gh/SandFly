@@ -33,7 +33,8 @@ export function parseTokens(json) {
     throw new Error('tokens');
   }
   if (json.tokens.length > MAX_TOKENS) throw new Error('tokens');
-  return json.tokens.map(parseToken);
+  // Each token costs GitHub requests, so one sent twice is read once.
+  return [...new Set(json.tokens.map(parseToken))];
 }
 
 function parseToken(value) {
