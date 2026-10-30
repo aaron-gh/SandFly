@@ -257,6 +257,9 @@ class AudioDeviceRouter @JvmOverloads constructor(
     registerCommunicationDeviceListener(am)
     registerBroadcastReceiver()
     am.registerAudioPlaybackCallback(playbackCallback, mainHandler)
+    // The phone state broadcast only tells changes, so a call already on, such as when the service
+    // restarts during one, is read now, before routing changes the call's audio.
+    isPhoneCallActive = phoneCallNow(am)
     isVoiceInputActive = isVoiceInput(am.activeRecordingConfigurations)
     am.registerAudioRecordingCallback(recordingCallback, mainHandler)
 
@@ -265,6 +268,20 @@ class AudioDeviceRouter @JvmOverloads constructor(
     updateSpeakerDeviceConnected()
     applyRouting()
     scheduleReassertion()
+  }
+
+  /**
+   * Whether a phone call is ringing or on now. Without the phone permission, from the audio mode.
+   */
+  private fun phoneCallNow(am: AudioManager): Boolean {
+    val state =
+      try {
+        @Suppress("DEPRECATION") context.getSystemService(TelephonyManager::class.java)?.callState
+      } catch (e: SecurityException) {
+        null
+      }
+    if (state != null) return state != TelephonyManager.CALL_STATE_IDLE
+    return am.mode == AudioManager.MODE_IN_CALL || am.mode == AudioManager.MODE_RINGTONE
   }
 
   /** Re-evaluates and applies audio routing according to the selected target. */
