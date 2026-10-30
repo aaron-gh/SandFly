@@ -91,16 +91,17 @@ object ScriptUpdater {
 
   /**
    * Checks every installed script now, installing what can be installed on its own when
-   * [install], and calls [done] on the main thread. Does nothing when a check is running.
+   * [install], and calls [done] on the main thread. Does nothing and returns false when a check is
+   * running.
    */
-  fun check(context: Context, install: Boolean, done: ((Result) -> Unit)?) {
+  fun check(context: Context, install: Boolean, done: ((Result) -> Unit)?): Boolean {
     val app = context.applicationContext
-    if (!checking.compareAndSet(false, true)) return
+    if (!checking.compareAndSet(false, true)) return false
     executor.execute {
       val result =
         try {
           run(app, install)
-        } catch (e: RuntimeException) {
+        } catch (e: Throwable) {
           LogUtils.e(TAG, "Checking for script updates failed: %s", e)
           Result(emptyList(), emptyList(), 1)
         } finally {
@@ -114,6 +115,7 @@ object ScriptUpdater {
       }
       if (done != null) main.post { done(result) }
     }
+    return true
   }
 
   private fun run(context: Context, install: Boolean): Result {
@@ -136,9 +138,15 @@ object ScriptUpdater {
       }
     val updated = mutableListOf<String>()
     val available = mutableListOf<Available>()
+    // Scripts this check couldn't reach keep the updates an earlier check found.
+    val unchecked = mutableSetOf<String>()
     var downloads = 0
     for (script in installed) {
-      if (downloads >= MAX_DOWNLOADS) break
+      if (downloads >= MAX_DOWNLOADS) {
+        unchecked += script.id
+        continue
+      }
+      val failedBefore = failed
       // Its own source, or, for a script installed before sources were kept, a file named after
       // its id in any source.
       val candidates =
@@ -162,6 +170,7 @@ object ScriptUpdater {
             ScriptPackage.read(ScriptSources.download(file))
           } catch (e: IOException) {
             failed++
+            unchecked += script.id
             continue
           } catch (e: IllegalArgumentException) {
             // Not a script SandFly can read, such as one with a broken manifest.
@@ -179,9 +188,11 @@ object ScriptUpdater {
             manifest.compatibility == ApiCompatibility.COMPATIBLE
         if (install && safe) {
           try {
-            store.install(pkg, script.granted, origin = origin)
-            ScriptLog.add(script.id, ScriptLog.Level.INFO, "Updated to ${manifest.version}")
-            updated += manifest.name
+            // Not when the script was removed during the check.
+            if (store.update(pkg, origin)) {
+              ScriptLog.add(script.id, ScriptLog.Level.INFO, "Updated to ${manifest.version}")
+              updated += manifest.name
+            }
           } catch (e: IOException) {
             failed++
           }
@@ -190,8 +201,12 @@ object ScriptUpdater {
         }
         break
       }
+      if (failed > failedBefore) unchecked += script.id
     }
-    saveAvailable(context, available)
+    saveAvailable(
+      context,
+      available + readAvailable(context).filter { it.id in unchecked && available.none { a -> a.id == it.id } },
+    )
     return Result(updated, available, failed, installed.size)
   }
 

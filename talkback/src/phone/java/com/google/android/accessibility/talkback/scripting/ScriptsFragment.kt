@@ -123,24 +123,32 @@ class ScriptsFragment : ScriptInstallFragment() {
     if (checking) return
     checking = true
     rebuild()
-    ScriptUpdater.check(requireContext(), install = ScriptUpdater.isAutomatic(requireContext())) { result ->
+    val context = requireContext()
+    val started =
+      ScriptUpdater.check(context, install = ScriptUpdater.isAutomatic(context)) { result ->
+        checking = false
+        if (!isAdded) return@check
+        rebuild()
+        toast(
+          when {
+            result.updated.isNotEmpty() ->
+              resources.getQuantityString(
+                R.plurals.scripts_updated,
+                result.updated.size,
+                result.updated.size,
+                result.updated.joinToString(", "),
+              )
+            result.available.isNotEmpty() -> getString(R.string.scripts_updates_to_approve)
+            result.failed > 0 -> getString(R.string.scripts_update_check_failed)
+            else -> getString(R.string.scripts_up_to_date)
+          }
+        )
+      }
+    // The daily check is running and calls only its own callback.
+    if (!started) {
       checking = false
-      if (!isAdded) return@check
       rebuild()
-      toast(
-        when {
-          result.updated.isNotEmpty() ->
-            resources.getQuantityString(
-              R.plurals.scripts_updated,
-              result.updated.size,
-              result.updated.size,
-              result.updated.joinToString(", "),
-            )
-          result.available.isNotEmpty() -> getString(R.string.scripts_updates_to_approve)
-          result.failed > 0 -> getString(R.string.scripts_update_check_failed)
-          else -> getString(R.string.scripts_up_to_date)
-        }
-      )
+      toast(getString(R.string.scripts_checking_updates))
     }
   }
 
