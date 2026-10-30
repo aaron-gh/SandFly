@@ -36,6 +36,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
+import org.checkerframework.checker.nullness.qual.Nullable;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -85,7 +86,20 @@ public class GeminiRestRequestPerformer {
   private final Object retryToken = new Object();
 
   public GeminiRestRequestPerformer(Context context) {
-    requestQueue = Volley.newRequestQueue(context);
+    requestQueue = sharedQueue(context);
+  }
+
+  private static @Nullable RequestQueue sharedQueue;
+
+  /**
+   * The one request queue for AI requests. Each queue starts five threads that run until it is
+   * stopped, and performers are made at every service start.
+   */
+  static synchronized RequestQueue sharedQueue(Context context) {
+    if (sharedQueue == null) {
+      sharedQueue = Volley.newRequestQueue(context.getApplicationContext());
+    }
+    return sharedQueue;
   }
 
   public boolean isKeylessInitialized() {
