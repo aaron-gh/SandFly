@@ -38,6 +38,7 @@ import androidx.core.view.accessibility.AccessibilityNodeInfoCompat.Accessibilit
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.utils.widget.KeyboardSafeEditText
 
 /**
  * The granular editing screen: the text as a list of pieces, split by characters, words,
@@ -379,7 +380,7 @@ class GranularEditingActivity : AppCompatActivity() {
   }
 
   private fun editText(@StringRes hint: Int, initial: String): EditText =
-    EditText(this).apply {
+    KeyboardSafeEditText(this).apply {
       setHint(hint)
       // No automatic capitals: the text often goes in the middle of a sentence.
       inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_FLAG_MULTI_LINE
