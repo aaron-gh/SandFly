@@ -539,12 +539,13 @@ public class KeyComboManager
   /**
    * Returns true if the sequence key infra is supported.
    *
-   * <p>The sequence key infra is supported if the feature flag is enabled and the key combo model
-   * is the new key combo model.
+   * <p>The sequence key infra is supported if the feature flag is enabled and the keymap uses
+   * shortcuts of two keys one after the other.
    */
   public boolean isSequenceKeyInfraSupported() {
     return FeatureFlagReader.enableSequenceKeyInfra(context)
-        && keyComboModel instanceof NewKeyComboModel;
+        && keyComboModel instanceof NewKeyComboModel model
+        && model.getKeymap().getUsesSequences();
   }
 
   /** Returns true if the given key code is a meta key. */

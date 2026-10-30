@@ -542,10 +542,16 @@
   <string name="pref_select_keymap_key">pref_select_keymap</string>
   <string name="pref_new_keymap_trigger_modifier_key">pref_new_keymap_trigger_modifier</string>
   <string name="pref_voiceover_keymap_trigger_modifier_key">pref_voiceover_keymap_trigger_modifier</string>
+  <string name="pref_nvda_keymap_trigger_modifier_key">pref_nvda_keymap_trigger_modifier</string>
+  <string name="pref_jaws_keymap_trigger_modifier_key">pref_jaws_keymap_trigger_modifier</string>
+  <string name="pref_orca_keymap_trigger_modifier_key">pref_orca_keymap_trigger_modifier</string>
 
   <!-- The SandFly keymap keeps the value of the enhanced keymap it was. -->
   <string name="new_keymap_entry_value">new_keymap</string>
   <string name="voiceover_keymap_entry_value">voiceover_keymap</string>
+  <string name="nvda_keymap_entry_value">nvda_keymap</string>
+  <string name="jaws_keymap_entry_value">jaws_keymap</string>
+  <string name="orca_keymap_entry_value">orca_keymap</string>
 
   <string name="trigger_modifier_meta_entry_value">trigger_modifier_meta</string>
   <string name="trigger_modifier_ctrl_alt_entry_value">trigger_modifier_ctrl_alt</string>
@@ -809,11 +815,17 @@
     <string-array name="pref_select_keymap_entries">
         <item>@string/value_new_keymap</item>
         <item>@string/value_voiceover_keymap</item>
+        <item>@string/value_nvda_keymap</item>
+        <item>@string/value_jaws_keymap</item>
+        <item>@string/value_orca_keymap</item>
     </string-array>
 
     <string-array name="pref_select_keymap_values">
         <item>@string/new_keymap_entry_value</item>
         <item>@string/voiceover_keymap_entry_value</item>
+        <item>@string/nvda_keymap_entry_value</item>
+        <item>@string/jaws_keymap_entry_value</item>
+        <item>@string/orca_keymap_entry_value</item>
     </string-array>
 
     <string-array name="pref_sandfly_keymap_sandfly_key_entries">
@@ -826,6 +838,19 @@
         <item>@string/trigger_modifier_meta_entry_value</item>
         <item>@string/trigger_modifier_insert_entry_value</item>
         <item>@string/trigger_modifier_numpad_insert_entry_value</item>
+    </string-array>
+
+    <!-- The SandFly keys of the NVDA, JAWS and Orca keymaps. -->
+    <string-array name="pref_screen_reader_keymap_sandfly_key_entries">
+        <item>@string/keycombo_key_modifier_insert</item>
+        <item>@string/keycombo_key_modifier_numpad_insert</item>
+        <item>@string/keycombo_key_modifier_meta</item>
+    </string-array>
+
+    <string-array name="pref_screen_reader_keymap_sandfly_key_values">
+        <item>@string/trigger_modifier_insert_entry_value</item>
+        <item>@string/trigger_modifier_numpad_insert_entry_value</item>
+        <item>@string/trigger_modifier_meta_entry_value</item>
     </string-array>
 
     <string-array name="pref_voiceover_keymap_sandfly_key_entries">
