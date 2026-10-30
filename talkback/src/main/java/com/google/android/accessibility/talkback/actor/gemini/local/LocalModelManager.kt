@@ -25,6 +25,7 @@ import android.os.Looper
 import android.os.StatFs
 import android.os.SystemClock
 import com.google.android.accessibility.utils.SharedPreferencesUtils
+import com.google.android.libraries.accessibility.utils.log.LogUtils
 import java.io.File
 import java.io.IOException
 import java.util.concurrent.CopyOnWriteArraySet
@@ -168,7 +169,12 @@ class LocalModelManager private constructor(context: Context) {
     val resumedFrom = store.partialBytes(model)
     setState(State.Downloading(model, resumedFrom))
     ModelDownloadService.start(appContext)
-    worker.execute {
+    worker.execute { downloadNow(model, resumedFrom) }
+  }
+
+  private fun downloadNow(model: LocalModel, resumedFrom: Long) {
+    // Anything that escapes would stop SandFly and leave the model downloading for good.
+    try {
       var lastReportTime = SystemClock.elapsedRealtime()
       var lastReportBytes = resumedFrom
       var speed = 0L
@@ -201,6 +207,9 @@ class LocalModelManager private constructor(context: Context) {
           model.npuChip != null &&
           runCatching { NpuRuntime.ensure(appContext, model.npuChip) }.isFailure
       setState(if (runtimeFailed) State.Failed(ModelFiles.Failure.NETWORK) else stateAfter(result))
+    } catch (e: Throwable) {
+      LogUtils.e(TAG, "Downloading %s failed: %s", model, e)
+      setState(State.Failed(ModelFiles.Failure.STORAGE))
     }
   }
 
@@ -248,6 +257,10 @@ class LocalModelManager private constructor(context: Context) {
           }
         } catch (_: IOException) {
           null
+        } catch (e: Exception) {
+          // Another app's provider can throw anything, such as SecurityException.
+          LogUtils.e(TAG, "Importing a model failed: %s", e)
+          null
         }
       setState(if (model == null) State.Failed(ModelFiles.Failure.HASH_MISMATCH) else State.Idle)
       main.post { onDone(model) }
@@ -260,6 +273,7 @@ class LocalModelManager private constructor(context: Context) {
   }
 
   companion object {
+    private const val TAG = "LocalModelManager"
     private const val PROGRESS_INTERVAL_MS = 500L
 
     @Volatile private var instance: LocalModelManager? = null
