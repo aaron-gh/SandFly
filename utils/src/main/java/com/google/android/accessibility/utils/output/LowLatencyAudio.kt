@@ -255,12 +255,14 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
 
     /** The engine's format, from the start of synthesis. */
     fun begin(rate: Int, encoding: Int, channels: Int) {
+      val supported =
+        AudioDecoder.isSupportedEncoding(encoding) &&
+          SpatialSoundPlayer.isSupportedFormat(rate, channels)
+      // Its filter takes a while to work out, so not while the audio thread waits for the lock.
+      val built = if (supported) SincResampler(rate, sampleRate, channels) else null
       synchronized(lock) {
         lastActivity = SystemClock.uptimeMillis()
-        if (
-          !AudioDecoder.isSupportedEncoding(encoding) ||
-            !SpatialSoundPlayer.isSupportedFormat(rate, channels)
-        ) {
+        if (built == null) {
           // An engine can claim any format. One Backtalk cannot play is said the usual way.
           LogUtils.w(TAG, "Speech %s has unsupported format %d Hz %d ch %d", id, rate, channels, encoding)
           if (streams.remove(this)) abandon(playerFailed = false)
@@ -269,7 +271,7 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
         inChannels = channels
         inRate = rate
         inEncoding = encoding
-        resampler = SincResampler(rate, sampleRate, inChannels)
+        resampler = built
       }
     }
 
