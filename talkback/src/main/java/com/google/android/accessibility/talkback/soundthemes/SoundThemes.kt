@@ -36,6 +36,7 @@ import java.io.IOException
 import java.io.InputStream
 import java.io.OutputStream
 import java.util.Locale
+import java.util.UUID
 import java.util.zip.ZipEntry
 import java.util.zip.ZipFile
 import java.util.zip.ZipOutputStream
@@ -521,12 +522,19 @@ object SoundThemes {
   @Throws(IOException::class, NotAThemeException::class)
   fun stage(context: Context, zip: File, fallbackName: String): StagedTheme {
     val items = SOUNDS.associateBy { it.key }
-    val staging = File(themesDirectory(context), STAGING_PREFIX + System.currentTimeMillis())
+    val staging = File(themesDirectory(context), STAGING_PREFIX + UUID.randomUUID())
     staging.mkdirs()
     try {
       ZipFile(zip).use { file ->
-        val entries = file.entries().toList().filter { !it.isDirectory }
-        if (entries.size > MAX_ENTRIES) throw NotAThemeException("too many files")
+        // Counted while listed: a 60 MB zip can name a million files.
+        val entries = ArrayList<ZipEntry>()
+        val listed = file.entries()
+        while (listed.hasMoreElements()) {
+          val entry = listed.nextElement()
+          if (entry.isDirectory) continue
+          if (entries.size >= MAX_ENTRIES) throw NotAThemeException("too many files")
+          entries += entry
+        }
         val layout = ThemeLayout.of(entries.map { it.name })
         val manifest =
           layout.manifest?.let { path ->
@@ -602,7 +610,7 @@ object SoundThemes {
                 .map { "sounds.$it: set to none, so the sound file for it is not played" },
         )
       }
-    } catch (e: Exception) {
+    } catch (e: Throwable) {
       staging.deleteRecursively()
       throw e
     }
