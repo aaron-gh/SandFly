@@ -113,6 +113,12 @@ public class GeminiRestRequestPerformer {
       String apiKey,
       JSONObject postData,
       GeminiRestResponseCallback unloggedCallback) {
+    // Callers that pass no URLs rely on another service, which can stop being set up meanwhile,
+    // such as a SandFly Pro code that was revoked during live recognition.
+    if (urls.isEmpty()) {
+      loggingFailures(unloggedCallback).onFailure(GeminiFailure.other("No AI service is set up"));
+      return;
+    }
     send(
         urls, apiKey, postData, loggingFailures(unloggedCallback), 0, 0, SystemClock.uptimeMillis());
   }
