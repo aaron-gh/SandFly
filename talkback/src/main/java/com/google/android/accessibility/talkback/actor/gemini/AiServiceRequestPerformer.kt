@@ -21,14 +21,13 @@ import com.android.volley.DefaultRetryPolicy
 import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.toolbox.JsonObjectRequest
-import com.android.volley.toolbox.Volley
 import com.google.android.accessibility.talkback.actor.gemini.GeminiRestRequestPerformer.GeminiRestResponseCallback
 import org.json.JSONException
 import org.json.JSONObject
 
 /** Sends Gemini requests to the [AiService] the user set up, as chat requests. */
 internal class AiServiceRequestPerformer(context: Context) {
-  private val requestQueue: RequestQueue = Volley.newRequestQueue(context)
+  private val requestQueue: RequestQueue = GeminiRestRequestPerformer.sharedQueue(context)
 
   fun performRequest(
     address: String,

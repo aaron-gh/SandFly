@@ -233,6 +233,8 @@ class AiProviderFragment : TalkbackBaseFragment() {
           askModel()
         } else {
           provider.setModel(prefs, models[which - 1].id)
+          // As when the model is typed: a service set up now is used if none in use is.
+          AiProvider.afterSetUpChanged(prefs, provider)
           build()
         }
       }
