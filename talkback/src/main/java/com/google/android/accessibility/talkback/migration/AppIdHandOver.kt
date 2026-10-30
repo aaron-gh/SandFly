@@ -42,7 +42,8 @@ import com.google.android.libraries.accessibility.utils.log.LogUtils
  */
 object AppIdHandOver {
   private const val TAG = "AppIdHandOver"
-  private const val NOTIFICATION_ID = 0x0BAC7A1D
+  // Not the updater's download progress (0x0BAC7A1D), which would replace and then cancel it.
+  private const val NOTIFICATION_ID = 0x0BAC7A1F
   private const val KEY_UNINSTALL_OFFERED = "uninstall_offered"
   private const val BRAILLE_IME_CLASS = "com.google.android.accessibility.brailleime.BrailleIme"
 
