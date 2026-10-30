@@ -31,6 +31,10 @@ enum class Keymap(
   @XmlRes val preferencesRes: Int,
   /** The keys that can be the SandFly key, the default first. */
   val sandFlyKeys: List<SandFlyKey>,
+  /** Default shortcuts, or null for SandFly's own, which NewKeyComboModel has. */
+  val defaults: KeymapDefaults?,
+  /** Whether SandFly key + R or O starts a shortcut of two keys one after the other. */
+  val usesSequences: Boolean,
 ) {
   SANDFLY(
     R.string.new_keymap_entry_value,
@@ -40,6 +44,8 @@ enum class Keymap(
     R.xml.new_key_combo_preferences,
     // Its shortcuts use Shift, Ctrl and Alt.
     listOf(SandFlyKey.META, SandFlyKey.INSERT, SandFlyKey.NUMPAD_INSERT),
+    defaults = null,
+    usesSequences = true,
   ),
   VOICEOVER(
     R.string.voiceover_keymap_entry_value,
@@ -49,6 +55,39 @@ enum class Keymap(
     R.xml.voiceover_key_combo_preferences,
     // Its shortcuts use Shift and Meta, as VoiceOver's use Shift and Command.
     listOf(SandFlyKey.CTRL_ALT, SandFlyKey.INSERT, SandFlyKey.NUMPAD_INSERT),
+    VoiceOverKeymap,
+    usesSequences = true,
+  ),
+  NVDA(
+    R.string.nvda_keymap_entry_value,
+    R.string.value_nvda_keymap,
+    "nvda_key_combo_model",
+    R.string.pref_nvda_keymap_trigger_modifier_key,
+    R.xml.nvda_key_combo_preferences,
+    // Their shortcuts use Shift, Ctrl and Alt.
+    SCREEN_READER_KEYS,
+    NvdaKeymap,
+    usesSequences = false,
+  ),
+  JAWS(
+    R.string.jaws_keymap_entry_value,
+    R.string.value_jaws_keymap,
+    "jaws_key_combo_model",
+    R.string.pref_jaws_keymap_trigger_modifier_key,
+    R.xml.jaws_key_combo_preferences,
+    SCREEN_READER_KEYS,
+    JawsKeymap,
+    usesSequences = false,
+  ),
+  ORCA(
+    R.string.orca_keymap_entry_value,
+    R.string.value_orca_keymap,
+    "orca_key_combo_model",
+    R.string.pref_orca_keymap_trigger_modifier_key,
+    R.xml.orca_key_combo_preferences,
+    SCREEN_READER_KEYS,
+    OrcaKeymap,
+    usesSequences = false,
   );
 
   /** The SandFly key the user chose for this keymap. */
@@ -66,3 +105,7 @@ enum class Keymap(
       entries.firstOrNull { context.getString(it.valueRes) == value } ?: SANDFLY
   }
 }
+
+/** The SandFly keys of the NVDA, JAWS and Orca keymaps: Insert, as theirs is. */
+private val SCREEN_READER_KEYS =
+  listOf(SandFlyKey.INSERT, SandFlyKey.NUMPAD_INSERT, SandFlyKey.META)

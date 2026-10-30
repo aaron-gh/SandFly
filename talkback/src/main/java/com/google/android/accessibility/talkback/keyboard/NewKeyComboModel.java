@@ -129,8 +129,8 @@ public class NewKeyComboModel implements KeyComboModel {
       return new KeyCombo();
     }
 
-    if (keymap == Keymap.VOICEOVER) {
-      return VoiceOverKeymap.defaultKeyCombo(context, key);
+    if (keymap.getDefaults() != null) {
+      return keymap.getDefaults().defaultKeyCombo(context, key);
     }
 
     if (key.equals(context.getString(R.string.keycombo_shortcut_perform_click))) {
@@ -1249,7 +1249,7 @@ public class NewKeyComboModel implements KeyComboModel {
       return true;
     }
 
-    if (FeatureFlagReader.enableSequenceKeyInfra(context)) {
+    if (FeatureFlagReader.enableSequenceKeyInfra(context) && keymap.getUsesSequences()) {
       // Check whether the key combo contains an eligible prefix key if it is a sequence key combo.
       int prefixKeyCode = keyCombo.getPrefixKeyCode();
       if (prefixKeyCode != NO_PREFIX_KEY_CODE

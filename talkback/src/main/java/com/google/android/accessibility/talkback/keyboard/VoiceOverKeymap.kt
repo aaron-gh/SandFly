@@ -15,10 +15,7 @@
  */
 package com.google.android.accessibility.talkback.keyboard
 
-import android.content.Context
 import android.view.KeyEvent
-import android.view.KeyEvent.META_META_ON
-import android.view.KeyEvent.META_SHIFT_ON
 import com.google.android.accessibility.talkback.R
 
 /**
@@ -26,22 +23,10 @@ import com.google.android.accessibility.talkback.R
  * SandFly key as the VO key (Ctrl + Alt) and Meta as Command. In browse mode, single keys move as
  * VoiceOver's single-key Quick Nav does.
  */
-object VoiceOverKeymap {
-  private const val NONE = KeyComboModel.NO_MODIFIER
+object VoiceOverKeymap : KeymapDefaults() {
+  private fun vo(modifiers: Int, keyCode: Int) = sandFly(modifiers, keyCode)
 
-  /** A shortcut pressed with the SandFly key. */
-  private fun vo(modifiers: Int, keyCode: Int) =
-    KeyCombo(modifiers, KeyComboModel.NO_PREFIX_KEY_CODE, keyCode, /* triggerModifierUsed= */ true)
-
-  /** A SandFly key shortcut pressed as two keys one after the other, like SandFly + R, then U. */
-  private fun sequence(prefixKeyCode: Int, keyCode: Int) =
-    KeyCombo(NONE, prefixKeyCode, keyCode, /* triggerModifierUsed= */ true)
-
-  /** A key that works without the SandFly key in browse mode. */
-  private fun browse(modifiers: Int, keyCode: Int) =
-    KeyCombo(modifiers, KeyComboModel.NO_PREFIX_KEY_CODE, keyCode, /* triggerModifierUsed= */ false)
-
-  private val DEFAULTS: Map<Int, KeyCombo> =
+  override val defaults: Map<Int, KeyCombo> =
     buildMap {
       // Moving and activating.
       put(R.string.keycombo_shortcut_navigate_next_default, vo(NONE, KeyEvent.KEYCODE_DPAD_RIGHT))
@@ -49,24 +34,24 @@ object VoiceOverKeymap {
       put(R.string.keycombo_shortcut_navigate_first, vo(NONE, KeyEvent.KEYCODE_MOVE_HOME))
       put(R.string.keycombo_shortcut_navigate_last, vo(NONE, KeyEvent.KEYCODE_MOVE_END))
       put(R.string.keycombo_shortcut_perform_click, vo(NONE, KeyEvent.KEYCODE_SPACE))
-      put(R.string.keycombo_shortcut_perform_long_click, vo(META_SHIFT_ON, KeyEvent.KEYCODE_SPACE))
-      put(R.string.keycombo_shortcut_other_custom_actions, vo(META_META_ON, KeyEvent.KEYCODE_SPACE))
+      put(R.string.keycombo_shortcut_perform_long_click, vo(SHIFT, KeyEvent.KEYCODE_SPACE))
+      put(R.string.keycombo_shortcut_other_custom_actions, vo(META, KeyEvent.KEYCODE_SPACE))
       put(R.string.keycombo_shortcut_global_play_pause_media, vo(NONE, KeyEvent.KEYCODE_MINUS))
       put(
         R.string.keycombo_shortcut_navigate_next_window,
-        vo(META_SHIFT_ON or META_META_ON, KeyEvent.KEYCODE_DPAD_DOWN),
+        vo(SHIFT or META, KeyEvent.KEYCODE_DPAD_DOWN),
       )
       put(
         R.string.keycombo_shortcut_navigate_previous_window,
-        vo(META_SHIFT_ON or META_META_ON, KeyEvent.KEYCODE_DPAD_UP),
+        vo(SHIFT or META, KeyEvent.KEYCODE_DPAD_UP),
       )
       put(
         R.string.keycombo_shortcut_navigate_next_container,
-        vo(META_SHIFT_ON or META_META_ON, KeyEvent.KEYCODE_DPAD_RIGHT),
+        vo(SHIFT or META, KeyEvent.KEYCODE_DPAD_RIGHT),
       )
       put(
         R.string.keycombo_shortcut_navigate_previous_container,
-        vo(META_SHIFT_ON or META_META_ON, KeyEvent.KEYCODE_DPAD_LEFT),
+        vo(SHIFT or META, KeyEvent.KEYCODE_DPAD_LEFT),
       )
 
       // The rotor is the reading controls.
@@ -80,11 +65,11 @@ object VoiceOverKeymap {
       )
       put(
         R.string.keycombo_shortcut_global_scroll_forward_reading_menu,
-        vo(META_META_ON, KeyEvent.KEYCODE_DPAD_RIGHT),
+        vo(META, KeyEvent.KEYCODE_DPAD_RIGHT),
       )
       put(
         R.string.keycombo_shortcut_global_scroll_backward_reading_menu,
-        vo(META_META_ON, KeyEvent.KEYCODE_DPAD_LEFT),
+        vo(META, KeyEvent.KEYCODE_DPAD_LEFT),
       )
 
       // Reading.
@@ -92,18 +77,18 @@ object VoiceOverKeymap {
       put(R.string.keycombo_shortcut_other_read_from_top, vo(NONE, KeyEvent.KEYCODE_B))
       put(
         R.string.keycombo_shortcut_other_copy_last_spoken_phrase,
-        vo(META_SHIFT_ON, KeyEvent.KEYCODE_C),
+        vo(SHIFT, KeyEvent.KEYCODE_C),
       )
       put(R.string.keycombo_shortcut_other_toggle_search, vo(NONE, KeyEvent.KEYCODE_I))
       put(R.string.keycombo_shortcut_global_toggle_voice_feedback, vo(NONE, KeyEvent.KEYCODE_S))
-      put(R.string.keycombo_shortcut_global_hide_or_show_screen, vo(META_SHIFT_ON, KeyEvent.KEYCODE_S))
+      put(R.string.keycombo_shortcut_global_hide_or_show_screen, vo(SHIFT, KeyEvent.KEYCODE_S))
 
       // Device.
       put(R.string.keycombo_shortcut_global_home, vo(NONE, KeyEvent.KEYCODE_H))
-      put(R.string.keycombo_shortcut_global_recents, vo(META_SHIFT_ON, KeyEvent.KEYCODE_H))
+      put(R.string.keycombo_shortcut_global_recents, vo(SHIFT, KeyEvent.KEYCODE_H))
       put(R.string.keycombo_shortcut_global_notifications, vo(NONE, KeyEvent.KEYCODE_N))
-      put(R.string.keycombo_shortcut_other_talkback_context_menu, vo(META_SHIFT_ON, KeyEvent.KEYCODE_M))
-      put(R.string.keycombo_shortcut_other_language_options, vo(META_SHIFT_ON, KeyEvent.KEYCODE_L))
+      put(R.string.keycombo_shortcut_other_talkback_context_menu, vo(SHIFT, KeyEvent.KEYCODE_M))
+      put(R.string.keycombo_shortcut_other_language_options, vo(SHIFT, KeyEvent.KEYCODE_L))
 
       // Speech.
       put(
@@ -116,25 +101,29 @@ object VoiceOverKeymap {
       )
       put(
         R.string.keycombo_shortcut_global_speech_pitch_increase,
-        vo(META_SHIFT_ON, KeyEvent.KEYCODE_VOLUME_UP),
+        vo(SHIFT, KeyEvent.KEYCODE_VOLUME_UP),
       )
       put(
         R.string.keycombo_shortcut_global_speech_pitch_decrease,
-        vo(META_SHIFT_ON, KeyEvent.KEYCODE_VOLUME_DOWN),
+        vo(SHIFT, KeyEvent.KEYCODE_VOLUME_DOWN),
       )
       put(
         R.string.keycombo_shortcut_global_speech_rate_increase,
-        vo(META_META_ON, KeyEvent.KEYCODE_VOLUME_UP),
+        vo(META, KeyEvent.KEYCODE_VOLUME_UP),
       )
       put(
         R.string.keycombo_shortcut_global_speech_rate_decrease,
-        vo(META_META_ON, KeyEvent.KEYCODE_VOLUME_DOWN),
+        vo(META, KeyEvent.KEYCODE_VOLUME_DOWN),
       )
-      put(R.string.keycombo_shortcut_global_toggle_sound_feedback, vo(META_SHIFT_ON, KeyEvent.KEYCODE_E))
+      put(R.string.keycombo_shortcut_global_toggle_sound_feedback, vo(SHIFT, KeyEvent.KEYCODE_E))
 
       // Help.
+      put(
+        R.string.keycombo_shortcut_other_show_keyboard_shortcuts_dialog,
+        vo(SHIFT, KeyEvent.KEYCODE_SLASH),
+      )
       put(R.string.keycombo_shortcut_global_show_learn_mode_page, vo(NONE, KeyEvent.KEYCODE_K))
-      put(R.string.keycombo_shortcut_other_show_tutorial, vo(META_SHIFT_ON, KeyEvent.KEYCODE_K))
+      put(R.string.keycombo_shortcut_other_show_tutorial, vo(SHIFT, KeyEvent.KEYCODE_K))
 
       // Two keys one after the other, as in the SandFly keymap.
       put(R.string.keycombo_shortcut_other_read_current_url, sequence(KeyEvent.KEYCODE_R, KeyEvent.KEYCODE_U))
@@ -159,7 +148,7 @@ object VoiceOverKeymap {
       put(R.string.keycombo_shortcut_other_toggle_browse_mode_extra, vo(NONE, KeyEvent.KEYCODE_Q))
       fun pair(next: Int, previous: Int, keyCode: Int) {
         put(next, browse(NONE, keyCode))
-        put(previous, browse(META_SHIFT_ON, keyCode))
+        put(previous, browse(SHIFT, keyCode))
       }
       pair(
         R.string.keycombo_shortcut_navigate_next_aria_landmark,
@@ -245,12 +234,12 @@ object VoiceOverKeymap {
       )
       put(R.string.keycombo_shortcut_navigate_next_line, browse(NONE, KeyEvent.KEYCODE_DPAD_DOWN))
       put(R.string.keycombo_shortcut_navigate_previous_line, browse(NONE, KeyEvent.KEYCODE_DPAD_UP))
-      val ctrl = KeyEvent.META_CTRL_ON
+      val ctrl = CTRL
       put(R.string.keycombo_shortcut_navigate_next_word, browse(ctrl, KeyEvent.KEYCODE_DPAD_RIGHT))
       put(R.string.keycombo_shortcut_navigate_previous_word, browse(ctrl, KeyEvent.KEYCODE_DPAD_LEFT))
       put(R.string.keycombo_shortcut_navigate_next_paragraph, browse(ctrl, KeyEvent.KEYCODE_DPAD_DOWN))
       put(R.string.keycombo_shortcut_navigate_previous_paragraph, browse(ctrl, KeyEvent.KEYCODE_DPAD_UP))
-      val ctrlShift = KeyEvent.META_CTRL_ON or META_SHIFT_ON
+      val ctrlShift = CTRL or SHIFT
       put(R.string.keycombo_shortcut_navigate_next_row, browse(ctrlShift, KeyEvent.KEYCODE_DPAD_DOWN))
       put(R.string.keycombo_shortcut_navigate_previous_row, browse(ctrlShift, KeyEvent.KEYCODE_DPAD_UP))
       put(R.string.keycombo_shortcut_navigate_next_column, browse(ctrlShift, KeyEvent.KEYCODE_DPAD_RIGHT))
@@ -259,15 +248,4 @@ object VoiceOverKeymap {
         browse(ctrlShift, KeyEvent.KEYCODE_DPAD_LEFT),
       )
     }
-
-  /** Returns the default shortcut of the command saved under [key], or none. */
-  @JvmStatic
-  fun defaultKeyCombo(context: Context, key: String): KeyCombo {
-    for ((keyRes, combo) in DEFAULTS) {
-      if (context.getString(keyRes) == key) {
-        return combo
-      }
-    }
-    return KeyCombo()
-  }
 }

@@ -152,4 +152,24 @@ class SandFlyKeyTest {
     assertFalse(manager.down(KeyEvent.KEYCODE_DPAD_RIGHT, ctrl))
     assertTrue(keys.isEmpty())
   }
+
+  @Test
+  fun nvdaKeymapHasNoTwoKeyShortcuts() {
+    val manager = manager(Keymap.NVDA)
+    assertTrue(manager.down(KeyEvent.KEYCODE_INSERT))
+    assertTrue(manager.down(KeyEvent.KEYCODE_N))
+    // Robolectric names letter keys by number.
+    assertEquals(listOf<String?>("Insert + ${KeyEvent.KEYCODE_N}"), keys)
+    manager.up(KeyEvent.KEYCODE_N)
+    // Insert + O is a shortcut of its own, not the start of Insert + O, then a key.
+    assertFalse(manager.isSequenceKeyInfraSupported)
+  }
+
+  @Test
+  fun jawsKeymapTurnsBrowseModeOnWithInsertZ() {
+    val manager = manager(Keymap.JAWS)
+    assertTrue(manager.down(KeyEvent.KEYCODE_INSERT))
+    assertTrue(manager.down(KeyEvent.KEYCODE_Z))
+    assertEquals(listOf<String?>("Insert + ${KeyEvent.KEYCODE_Z}"), keys)
+  }
 }
