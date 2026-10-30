@@ -303,12 +303,27 @@ object ScreenElements {
    * [elements] sorted as they are read: rows from top to bottom, left to right within a row. Two
    * elements are in one row when they overlap vertically by at least half the smaller one's height.
    */
-  internal fun inReadingOrder(elements: List<ScreenElement>): List<ScreenElement> =
-    elements.sortedWith { a, b ->
-      val overlap = minOf(a.bounds.bottom, b.bounds.bottom) - maxOf(a.bounds.top, b.bounds.top)
-      val sameRow = overlap * 2 >= minOf(a.bounds.height(), b.bounds.height())
-      if (sameRow) a.bounds.left.compareTo(b.bounds.left) else a.bounds.top.compareTo(b.bounds.top)
+  internal fun inReadingOrder(elements: List<ScreenElement>): List<ScreenElement> {
+    // Rows are made by walking from the top, since comparing elements pair by pair isn't
+    // transitive and sorting with such a comparison can throw.
+    val rows = mutableListOf<MutableList<ScreenElement>>()
+    var rowTop = 0
+    var rowBottom = 0
+    for (element in elements.sortedBy { it.bounds.top }) {
+      val b = element.bounds
+      val row = rows.lastOrNull()
+      val overlap = minOf(rowBottom, b.bottom) - maxOf(rowTop, b.top)
+      if (row != null && overlap * 2 >= minOf(rowBottom - rowTop, b.height())) {
+        row += element
+        rowBottom = maxOf(rowBottom, b.bottom)
+      } else {
+        rows += mutableListOf(element)
+        rowTop = b.top
+        rowBottom = b.bottom
+      }
     }
+    return rows.flatMap { row -> row.sortedBy { it.bounds.left } }
+  }
 
   /** The index in [nodes] of the anchor of an element with [bounds], or -1. */
   internal fun anchorIndex(bounds: Rect, nodes: List<Rect>): Int {

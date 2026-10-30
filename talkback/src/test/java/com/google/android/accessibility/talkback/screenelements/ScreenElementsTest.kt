@@ -66,4 +66,20 @@ class ScreenElementsTest {
       ScreenElements.inReadingOrder(listOf(right, title, coins, help, left)).map { it.label },
     )
   }
+
+  @Test
+  fun elementsWithNoClearRowsAreStillSorted() {
+    // A tall element with items to its upper right and lower left, many times over: pairwise row
+    // comparison isn't transitive here.
+    val elements =
+      (0 until 40).flatMap { i ->
+        val y = i * 10
+        listOf(
+          ScreenElement("A$i", ScreenElement.Role.BUTTON, Rect(200, y, 260, y + 50)),
+          ScreenElement("B$i", ScreenElement.Role.BUTTON, Rect(100, y, 160, y + 400)),
+          ScreenElement("C$i", ScreenElement.Role.BUTTON, Rect(0, y + 300, 60, y + 350)),
+        )
+      }
+    assertEquals(elements.size, ScreenElements.inReadingOrder(elements.shuffled(java.util.Random(1))).size)
+  }
 }
