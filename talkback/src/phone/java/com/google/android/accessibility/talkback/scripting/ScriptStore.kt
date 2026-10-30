@@ -137,6 +137,19 @@ class ScriptStore private constructor(private val context: Context) {
     }
   }
 
+  /**
+   * Replaces the installed script with [pkg], keeping its permissions and switch, unless the script
+   * was removed meanwhile. Returns whether it was installed.
+   */
+  @Synchronized
+  @Throws(IOException::class)
+  fun update(pkg: ScriptPackage, origin: String): Boolean {
+    val existing = find(pkg.manifest.id) ?: return false
+    install(pkg, existing.granted, existing.enabled, origin)
+    return true
+  }
+
+  @Synchronized
   fun remove(id: String) {
     updateScripts { list -> list.filterNot { it.id == id } }
     codeDir(id).deleteRecursively()
