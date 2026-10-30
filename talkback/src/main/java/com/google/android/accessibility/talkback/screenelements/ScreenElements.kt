@@ -35,6 +35,7 @@ import android.view.WindowManager
 import android.view.accessibility.AccessibilityEvent
 import android.view.accessibility.AccessibilityNodeInfo
 import android.view.accessibility.AccessibilityWindowInfo
+import androidx.core.os.HandlerCompat
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import com.google.android.accessibility.talkback.Feedback
 import com.google.android.accessibility.talkback.Feedback.PassThroughMode.Action.LOCK_PASS_THROUGH
@@ -177,9 +178,12 @@ object ScreenElements {
     current.show(sorted)
     LogUtils.d(TAG, "Showing %d elements and %d labels over window %d of %s", elements.size, labels.size, windowId, packageName)
     if (focused != null) {
-      val index = sorted.indices.firstOrNull { sorted[it].bounds.contains(focused.centerX(), focused.centerY()) }
+      // By the windows shown, which leave out elements that couldn't be.
+      val index = current.elements.indexOfFirst { it.bounds.contains(focused.centerX(), focused.centerY()) }
       // The new windows take a moment to reach accessibility services.
-      if (index != null) handler.postDelayed({ current.focus(index) }, REFOCUS_DELAY_MS)
+      if (index >= 0) {
+        HandlerCompat.postDelayed(handler, { current.focus(index) }, REFOCUS_TOKEN, REFOCUS_DELAY_MS)
+      }
     }
   }
 
@@ -192,6 +196,7 @@ object ScreenElements {
 
   @JvmStatic
   fun clear() {
+    handler.removeCallbacksAndMessages(REFOCUS_TOKEN)
     windows?.clear()
     labels.clear()
     elementWindowIds.clear()
@@ -478,6 +483,7 @@ object ScreenElements {
   private const val SETTLE_MS = 800L
   private const val MAX_WAIT_MS = 3000L
   private const val REFOCUS_DELAY_MS = 300L
+  private val REFOCUS_TOKEN = Any()
 }
 
 /**
@@ -497,6 +503,8 @@ class ScreenElementWindows(
   private val windowManager = service.getSystemService(WindowManager::class.java)
   private val handler = Handler(Looper.getMainLooper())
   private val shown = ArrayList<Pair<ElementView, WindowManager.LayoutParams>>()
+  /** Whether a tap has locked touch pass-through over the screen and not ended. */
+  private var tapping = false
 
   /** The elements on screen, in reading order. */
   val elements: List<ScreenElement>
@@ -519,6 +527,11 @@ class ScreenElementWindows(
 
   fun clear() {
     handler.removeCallbacksAndMessages(null)
+    // The tap's end, which unlocks touch pass-through, was just dropped with the handler's work.
+    if (tapping) {
+      tapping = false
+      pipeline()?.returnFeedback(EVENT_ID_UNTRACKED, Feedback.passThroughMode(LOCK_PASS_THROUGH, null))
+    }
     for ((view, _) in shown) {
       try {
         windowManager.removeViewImmediate(view)
@@ -586,6 +599,7 @@ class ScreenElementWindows(
         .build()
     setTouchable(false)
     val metrics = service.resources.displayMetrics
+    tapping = true
     pipeline()?.returnFeedback(
       EVENT_ID_UNTRACKED,
       Feedback.passThroughMode(LOCK_PASS_THROUGH, Region(0, 0, metrics.widthPixels, metrics.heightPixels)),
@@ -605,6 +619,7 @@ class ScreenElementWindows(
   }
 
   private fun afterTap(view: ElementView) {
+    tapping = false
     pipeline()?.returnFeedback(EVENT_ID_UNTRACKED, Feedback.passThroughMode(LOCK_PASS_THROUGH, null))
     // The app gets time to respond. If the screen changed, whoever showed the elements replaces
     // them; until then, focus returns to the element that was tapped.
