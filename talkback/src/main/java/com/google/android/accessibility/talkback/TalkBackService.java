@@ -280,6 +280,7 @@ import com.google.android.accessibility.utils.AccessibilityEventListener;
 import com.google.android.accessibility.utils.monitor.RecentUserInput;
 import com.google.android.accessibility.utils.AccessibilityEventUtils;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
+import com.google.android.accessibility.utils.AccessibilityWindowInfoUtils;
 import com.google.android.accessibility.utils.BuildVersionUtils;
 import com.google.android.accessibility.utils.FeatureSupport;
 import com.google.android.accessibility.utils.FocusFinder;
@@ -1193,8 +1194,13 @@ public class TalkBackService extends AccessibilityServiceCompat
     }
     if (eventType == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED) {
       lastWindowPackage = event.getPackageName();
-      SpeechDictionary.onWindowShown(lastWindowPackage);
-      AppGestures.onWindowShown(lastWindowPackage);
+      // The app in front decides which app's gestures, keys and dictionary entries apply. The
+      // keyboard, the volume panel and the notification shade send this event too, and closing
+      // them sends none for the app under them.
+      if (isAppWindowEvent(event)) {
+        SpeechDictionary.onWindowShown(lastWindowPackage);
+        AppGestures.onWindowShown(lastWindowPackage);
+      }
     }
     if (eventType == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED
         && Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU
@@ -5043,5 +5049,22 @@ public class TalkBackService extends AccessibilityServiceCompat
             SharedPreferencesUtils.getBooleanPref(
                 prefs, res, R.string.pref_log_overlay_key, R.bool.pref_log_overlay_default)));
     dumpLogger.log("");
+  }
+
+  /**
+   * Whether [event] comes from an app's window, or from SandFly's own overlays, rather than from
+   * the keyboard or a system window. When its window can't be told, only the system UI's events
+   * count as not an app's.
+   */
+  private static boolean isAppWindowEvent(AccessibilityEvent event) {
+    switch (AccessibilityEventUtils.getWindowType(event)) {
+      case AccessibilityWindowInfo.TYPE_APPLICATION:
+      case AccessibilityWindowInfo.TYPE_ACCESSIBILITY_OVERLAY:
+        return true;
+      case AccessibilityWindowInfoUtils.WINDOW_TYPE_NONE:
+        return !"com.android.systemui".contentEquals(String.valueOf(event.getPackageName()));
+      default:
+        return false;
+    }
   }
 }
