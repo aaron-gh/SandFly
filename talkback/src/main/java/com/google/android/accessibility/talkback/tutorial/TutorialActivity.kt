@@ -38,7 +38,6 @@ import android.view.accessibility.AccessibilityNodeInfo
 import android.view.accessibility.AccessibilityNodeInfo.AccessibilityAction
 import android.widget.Button
 import android.widget.CheckBox
-import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.ScrollView
 import android.widget.SeekBar
@@ -68,6 +67,7 @@ import com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.accessibility.utils.output.FeedbackItem
 import com.google.android.accessibility.utils.output.SpeechController
+import com.google.android.accessibility.utils.widget.KeyboardSafeEditText
 
 /**
  * SandFly's tutorial: lessons in chapters, each with an instruction and practice items. Each step
@@ -896,7 +896,7 @@ class TutorialActivity : AppCompatActivity() {
         )
       Practice.TEXT_FIELD -> {
         val field =
-          EditText(this).apply {
+          KeyboardSafeEditText(this).apply {
             id = View.generateViewId()
             inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS
             setHint(R.string.sandfly_tutorial_name)
