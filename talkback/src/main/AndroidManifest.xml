@@ -430,7 +430,7 @@
         <!-- SandFly's interactive tutorial. In the service's process, which tells it each gesture. -->
         <activity
             android:name="com.google.android.accessibility.talkback.tutorial.TutorialActivity"
-            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize|keyboardHidden|uiMode|fontScale"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize|keyboard|keyboardHidden|navigation|uiMode|fontScale"
             android:exported="false"
             android:label="@string/sandfly_tutorial_title"
             android:launchMode="singleTask"
