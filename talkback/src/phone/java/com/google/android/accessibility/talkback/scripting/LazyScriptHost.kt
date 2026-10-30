@@ -59,6 +59,7 @@ class LazyScriptHost(
     }
 
   init {
+    ScriptThread.onStuck = ::onStuck
     store.addListener(this)
     val screenChanges =
       IntentFilter().apply {
@@ -91,8 +92,31 @@ class LazyScriptHost(
 
   override fun shutdown() {
     closed = true
+    if (ScriptThread.onStuck == ::onStuck) ScriptThread.onStuck = null
     store.removeListener(this)
     service.unregisterReceiver(screenReceiver)
+    update()
+  }
+
+  /**
+   * Gives up on a script thread that one call has held up for too long: its script is turned off
+   * and logged, and the other scripts run on a new thread. The old thread ends if the call does.
+   */
+  private fun onStuck(scriptId: String?, thread: Thread) {
+    val running = manager ?: return
+    if (!running.runsOn(thread)) return
+    LogUtils.e(TAG, "Script thread held up by %s; starting a new one", scriptId)
+    manager = null
+    running.shutdown()
+    TraversalTreeCache.clear("scripts restarted")
+    if (scriptId != null) {
+      ScriptLog.add(
+        scriptId,
+        ScriptLog.Level.ERROR,
+        "Turned off: one call ran for more than ${ScriptThread.STUCK_MS / 1000} seconds",
+      )
+      store.setEnabled(scriptId, false)
+    }
     update()
   }
 
