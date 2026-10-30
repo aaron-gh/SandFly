@@ -78,7 +78,7 @@ class NotificationListService : NotificationListenerService() {
     rebindHandler.removeCallbacksAndMessages(null)
     // Notifications already in the shade aren't new.
     runCatching { activeNotifications }.getOrNull()?.forEach {
-      postedTexts[it.key] = textOf(it.notification)
+      postedTexts[it.key] = Posted(textOf(it.notification), it.notification.`when`)
     }
     SharedPreferencesUtils.getSharedPreferences(this)
       .registerOnSharedPreferenceChangeListener(switchListener)
@@ -110,16 +110,26 @@ class NotificationListService : NotificationListenerService() {
     NotificationList.onDisconnected()
   }
 
+  private data class Posted(val text: String, val time: Long)
+
   /**
-   * The text of each notification posted while connected, by key, so that an update that only
-   * changes its time or progress isn't taken for a new notification.
+   * The text and time of each notification posted while connected, by key, so that an update that
+   * only changes its progress isn't taken for a new notification.
    */
-  private val postedTexts = LinkedHashMap<String, String>()
+  private val postedTexts = LinkedHashMap<String, Posted>()
 
   override fun onNotificationPosted(notification: StatusBarNotification, ranking: RankingMap?) {
     if (listEnabled()) NotificationList.onPosted(notification, ranking)
-    val text = textOf(notification.notification)
-    if (postedTexts.put(notification.key, text) != text) {
+    val posted = Posted(textOf(notification.notification), notification.notification.`when`)
+    val before = postedTexts.put(notification.key, posted)
+    // The same text posted again at a new time alerts again, such as the same message twice,
+    // unless the app asked to alert once or the notification is ongoing.
+    val flags = notification.notification.flags
+    val alertsAgain =
+      before != null &&
+        before.time != posted.time &&
+        flags and (Notification.FLAG_ONLY_ALERT_ONCE or Notification.FLAG_ONGOING_EVENT) == 0
+    if (before?.text != posted.text || alertsAgain) {
       while (postedTexts.size > MAX_POSTED_KEYS) postedTexts.remove(postedTexts.keys.first())
       val importance =
         Ranking().takeIf { ranking?.getRanking(notification.key, it) == true }?.importance

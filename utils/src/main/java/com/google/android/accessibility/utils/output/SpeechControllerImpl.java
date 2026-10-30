@@ -1867,6 +1867,34 @@ public class SpeechControllerImpl implements SpeechController {
     if (currentFeedbackItem == null || currentFeedbackItem.getUtteranceGroup() != utteranceGroup) {
       return;
     }
+    stopCurrentItem();
+  }
+
+  /**
+   * Stops the one item whose completed action is {@code completedAction}, waiting or being spoken,
+   * and goes on with the rest of the queue. The action gets {@link #STATUS_INTERRUPTED}.
+   */
+  public void stopItem(UtteranceCompleteRunnable completedAction) {
+    if (!mHandler.getLooper().isCurrentThread()) {
+      mHandler.post(() -> stopItem(completedAction));
+      return;
+    }
+    ListIterator<FeedbackItem> iterator = feedbackQueue.listIterator(0);
+    while (iterator.hasNext()) {
+      FeedbackItem item = iterator.next();
+      if (item.getCompletedAction() == completedAction) {
+        iterator.remove();
+        notifyItemInterrupted(item);
+        return;
+      }
+    }
+    if (currentFeedbackItem != null && currentFeedbackItem.getCompletedAction() == completedAction) {
+      stopCurrentItem();
+    }
+  }
+
+  /** Stops the item being spoken and starts the next. */
+  private void stopCurrentItem() {
     notifyItemInterrupted(currentFeedbackItem);
     currentFragmentIterator = null;
     // Stopped before the next item starts, which would otherwise queue behind it.

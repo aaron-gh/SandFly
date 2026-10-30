@@ -89,8 +89,15 @@ class NotificationVoice(private val context: Context) {
   /** The engine's voice named in the profile, found once, since listing voices is slow. */
   private var foundVoice: Voice? = null
   private var foundVoiceName: String? = null
+  /**
+   * Whether nothing is said or waiting. Text without a listener, such as the summary and the time,
+   * is only in [unstarted] and [speaking].
+   */
+  private val isIdle: Boolean
+    get() = listeners.isEmpty() && pending.isEmpty() && unstarted.isEmpty() && speaking.isEmpty()
+
   private val release = Runnable {
-    if (listeners.isEmpty() && pending.isEmpty()) {
+    if (isIdle) {
       LogUtils.d(TAG, "Releasing %s", profile?.engine)
       disconnect()
     }
@@ -120,6 +127,8 @@ class NotificationVoice(private val context: Context) {
   }
 
   private fun connect() {
+    // A connection starting already takes the pending requests when it's ready.
+    if (tts != null) return
     val profile = profile ?: return
     LogUtils.d(TAG, "Connecting %s", profile.engine)
     ready = false
@@ -164,7 +173,7 @@ class NotificationVoice(private val context: Context) {
   /** Releases the engine once nothing is said or waiting. */
   private fun releaseWhenIdle() {
     handler.removeCallbacks(release)
-    if (listeners.isEmpty() && pending.isEmpty()) handler.postDelayed(release, IDLE_MS)
+    if (isIdle) handler.postDelayed(release, IDLE_MS)
   }
 
   private fun onInit(connection: TextToSpeech?, status: Int) {
@@ -477,6 +486,32 @@ class NotificationVoice(private val context: Context) {
     }
     handler.removeCallbacks(startTimeout)
     if (ready) runCatching { tts?.stop() }
+    releaseWhenIdle()
+  }
+
+  /**
+   * Stops the request of [listener] alone, waiting or being said. The engine's queue can only be
+   * stopped whole, so the requests it took and hasn't started are sent to it again.
+   */
+  @MainThread
+  fun stop(listener: Listener) {
+    pending.firstOrNull { it.listener === listener }?.let {
+      pending.remove(it)
+      listener.onDone(false)
+      releaseWhenIdle()
+      return
+    }
+    val id = listeners.entries.firstOrNull { it.value === listener }?.key ?: return
+    // New IDs, so the engine's late reports about the stopped text don't end them.
+    val again =
+      unstarted.values
+        .filter { it.id != id }
+        .map { Request("notification_${nextId++}", it.text, false, it.locale, it.listener) }
+    (unstarted.keys.toList() + id).forEach(::forget)
+    handler.removeCallbacks(startTimeout)
+    if (ready) runCatching { tts?.stop() }
+    listener.onDone(false)
+    again.forEach(::speakNow)
     releaseWhenIdle()
   }
 

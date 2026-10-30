@@ -1,0 +1,27 @@
+{
+  "buildFiles": [
+    "/Users/aaron/Code/sandfly/luamemory/src/main/cpp/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/Users/aaron/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+      "-C",
+      "/Users/aaron/Code/sandfly/luamemory/.cxx/Debug/651g2p4j/arm64-v8a",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/Users/aaron/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+    "-C",
+    "/Users/aaron/Code/sandfly/luamemory/.cxx/Debug/651g2p4j/arm64-v8a",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "sandfly_lua_memory::@6890427a1f51a3e7e1df": {
+      "artifactName": "sandfly_lua_memory",
+      "abi": "arm64-v8a",
+      "output": "/Users/aaron/Code/sandfly/luamemory/build/intermediates/cxx/Debug/651g2p4j/obj/arm64-v8a/libsandfly_lua_memory.so",
+      "runtimeFiles": []
+    }
+  }
+}
