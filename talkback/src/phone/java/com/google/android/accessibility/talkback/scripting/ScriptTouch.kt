@@ -108,7 +108,38 @@ class ScriptTouch(private val service: AccessibilityService, private val feedbac
       return done(insert(focused, text))
     }
     requireShizuku("Typing outside an edit field, or into a password field,")
-    ShizukuShell.run(service, ShizukuCommand.INPUT_TEXT, text, done)
+    typeWithShell(text, done)
+  }
+
+  /**
+   * Types [text] through Shizuku's shell, which takes text without line breaks or tabs, up to
+   * [ShizukuCommand.MAX_TEXT] characters at a time: those are sent as Enter and Tab key presses,
+   * other control characters are left out, and the text goes in pieces, one after another.
+   */
+  private fun typeWithShell(text: String, done: (Boolean) -> Unit) {
+    val steps = mutableListOf<Pair<ShizukuCommand, String>>()
+    val piece = StringBuilder()
+    fun flush() {
+      piece.chunked(ShizukuCommand.MAX_TEXT).forEach { steps += ShizukuCommand.INPUT_TEXT to it }
+      piece.clear()
+    }
+    for (c in text.replace("\r\n", "\n")) {
+      when {
+        c == '\n' || c == '\r' || c == '\t' -> {
+          flush()
+          steps += ShizukuCommand.INPUT_KEYEVENT to if (c == '\t') "KEYCODE_TAB" else "KEYCODE_ENTER"
+        }
+        !c.isISOControl() -> piece.append(c)
+      }
+    }
+    flush()
+    if (steps.isEmpty()) return done(true)
+    fun run(index: Int) {
+      if (index == steps.size) return done(true)
+      val (command, argument) = steps[index]
+      ShizukuShell.run(service, command, argument) { ok -> if (ok) run(index + 1) else done(false) }
+    }
+    run(0)
   }
 
   private fun insert(node: AccessibilityNodeInfoCompat, text: String): Boolean {
