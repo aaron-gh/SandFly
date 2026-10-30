@@ -76,6 +76,12 @@ class AiDictation(
   private val handler = Handler(Looper.getMainLooper())
   private val worker =
     Executors.newSingleThreadExecutor { Thread(it, "dictation").apply { isDaemon = true } }
+  /**
+   * AI correction runs apart from recognition: a correction that outlasts its timeout keeps going
+   * until its request ends, and the next dictation would wait behind it.
+   */
+  private val correctors =
+    Executors.newCachedThreadPool { Thread(it, "dictation-correction").apply { isDaemon = true } }
   private val tones =
     ProgressTonePlayer(
       DefaultProgressToneProvider(),
@@ -167,7 +173,13 @@ class AiDictation(
    * recording could not start.
    */
   fun listen(callback: (String?) -> Unit): Boolean {
-    if (phase != Phase.IDLE) return start(null)
+    if (phase != Phase.IDLE) {
+      // A dictation into a field goes on; an earlier listen stops. Either way this caller is
+      // answered, or it would wait for good.
+      if (onText != null) start(null)
+      callback(null)
+      return false
+    }
     if (
       ContextCompat.checkSelfPermission(service, Manifest.permission.RECORD_AUDIO) !=
         PackageManager.PERMISSION_GRANTED
@@ -377,10 +389,7 @@ class AiDictation(
       LogUtils.w(TAG, "Google on-device recognition has no language pack, using %s", recognition)
       return
     }
-    if (phase == Phase.RECORDING) {
-      pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.speech(UNSILENCE))
-      pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.sound(R.raw.chime_down))
-    }
+    // While recording, finish() unsilences speech and plays the stop chime.
     finish()
     speak(
       service.getString(
@@ -430,7 +439,7 @@ class AiDictation(
     handler.postDelayed(fallback, correctionTimeoutMs(corrector))
     tones.play(/* playTone= */ true, /* delayPlayTone= */ false)
     val prompt = prompt(target?.let { textBeforeCursor(it) }.orEmpty(), heard)
-    worker.execute {
+    correctors.execute {
       val start = SystemClock.elapsedRealtime()
       val answer =
         try {
@@ -493,6 +502,13 @@ class AiDictation(
     if (corrector == DictationSettings.AI_DEVICE) DEVICE_CORRECTION_TIMEOUT_MS else CORRECTION_TIMEOUT_MS
 
   private fun finish() {
+    // Recognition can end by itself while recording, such as Google's after a pause.
+    if (phase == Phase.RECORDING) {
+      handler.removeCallbacks(autoStop)
+      continuous = null
+      pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.speech(UNSILENCE))
+      pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.sound(R.raw.chime_down))
+    }
     // For the next dictation: a language pack downloaded since the last one is used from then on.
     if (phase != Phase.IDLE) GoogleSpeechLanguages.refresh(service)
     phase = Phase.IDLE
@@ -512,9 +528,13 @@ class AiDictation(
     live = null
     transcriber?.cancel()
     if (phase == Phase.RECORDING) pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.speech(UNSILENCE))
+    // Not finish()'s chime and unsilencing, as SandFly is turning off.
+    phase = Phase.IDLE
     field = null
     deliver(null)
     finish()
+    worker.shutdown()
+    correctors.shutdown()
     if (SandflyDictation.instance === this) SandflyDictation.instance = null
   }
 

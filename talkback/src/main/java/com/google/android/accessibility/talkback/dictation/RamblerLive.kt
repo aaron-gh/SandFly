@@ -207,13 +207,12 @@ internal class RamblerLive(private val apiKey: String, private val url: String =
         return
       }
     if (json.has("setupComplete")) {
-      val queued: List<ByteArray>
+      // Sent under the lock, so a chunk the recording thread sends now goes after them.
       synchronized(lock) {
         ready = true
-        queued = waiting.toList()
+        waiting.forEach(::sendAudio)
         waiting.clear()
       }
-      queued.forEach(::sendAudio)
       return
     }
     // The session ends soon, as after ten minutes.
