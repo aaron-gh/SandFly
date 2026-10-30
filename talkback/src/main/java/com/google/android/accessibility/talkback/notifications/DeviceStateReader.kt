@@ -20,8 +20,6 @@ import android.Manifest
 import android.annotation.SuppressLint
 import android.app.KeyguardManager
 import android.app.UiModeManager
-import android.bluetooth.BluetoothManager
-import android.bluetooth.BluetoothProfile
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
@@ -111,10 +109,14 @@ class DeviceStateReader(private val context: Context) {
   @SuppressLint("MissingPermission")
   private fun bluetoothDevices(): Set<String> {
     if (!canUseBluetooth(context)) return emptySet()
-    val manager = context.getSystemService(BluetoothManager::class.java) ?: return emptySet()
+    // BluetoothManager.getConnectedDevices takes only GATT profiles and throws for HEADSET and A2DP.
+    // AudioDeviceInfo has addresses from Android 9.
+    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.P) return emptySet()
+    val audio = context.getSystemService(AudioManager::class.java) ?: return emptySet()
     return try {
-      listOf(BluetoothProfile.HEADSET, BluetoothProfile.A2DP)
-        .flatMap { manager.getConnectedDevices(it) }
+      audio
+        .getDevices(AudioManager.GET_DEVICES_OUTPUTS)
+        .filter { it.type in BLUETOOTH_OUTPUTS && it.address.isNotEmpty() }
         .map { it.address.uppercase() }
         .toSet()
     } catch (e: RuntimeException) {
@@ -139,6 +141,13 @@ class DeviceStateReader(private val context: Context) {
   companion object {
     /** What Android gives as the name of a network it won't name. */
     private const val UNKNOWN_SSID = "<unknown ssid>"
+    private val BLUETOOTH_OUTPUTS =
+      setOf(
+        AudioDeviceInfo.TYPE_BLUETOOTH_A2DP,
+        AudioDeviceInfo.TYPE_BLUETOOTH_SCO,
+        AudioDeviceInfo.TYPE_BLE_HEADSET,
+        AudioDeviceInfo.TYPE_BLE_SPEAKER,
+      )
 
     /** Whether SandFly may list Bluetooth devices, which needs a permission on Android 12. */
     fun canUseBluetooth(context: Context): Boolean =
