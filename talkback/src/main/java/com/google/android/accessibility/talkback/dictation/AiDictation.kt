@@ -147,7 +147,7 @@ class AiDictation(
       PermissionUtils.requestPermissions(service, Manifest.permission.RECORD_AUDIO)
       return false
     }
-    if (!startRecording(DictationSettings.effectiveRecognition(service, prefs))) {
+    if (!startRecording(DictationSettings.effectiveRecognition(service, prefs, skip(node)))) {
       speak(service.getString(R.string.dictation_unavailable))
       return false
     }
@@ -193,6 +193,13 @@ class AiDictation(
   /** Whether [listen] is recording, or recognizing what it recorded. */
   val isListening: Boolean
     get() = phase != Phase.IDLE && onText != null
+
+  /**
+   * A dictated password stays on the phone, so Rambler, which sends the audio to Gemini, isn't used
+   * for one.
+   */
+  private fun skip(node: AccessibilityNodeInfoCompat?): Set<Recognition> =
+    if (node?.isPassword == true) setOf(Recognition.RAMBLER) else emptySet()
 
   /** Starts recording for [used]. Returns false when it can't. */
   private fun startRecording(used: Recognition): Boolean {
@@ -359,7 +366,13 @@ class AiDictation(
       used == Recognition.GOOGLE &&
         phase == Phase.RECORDING &&
         error in LANGUAGE_ERRORS &&
-        startRecording(DictationSettings.effectiveRecognition(service, prefs, skip = Recognition.GOOGLE))
+        startRecording(
+          DictationSettings.effectiveRecognition(
+            service,
+            prefs,
+            skip(field) + Recognition.GOOGLE,
+          )
+        )
     ) {
       LogUtils.w(TAG, "Google on-device recognition has no language pack, using %s", recognition)
       return

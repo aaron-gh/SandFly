@@ -99,16 +99,17 @@ object DictationSettings {
 
   /**
    * The way speech is recognized now: the chosen one when it can be used, otherwise the first of
-   * Google on-device, Rambler, Whisper and Android speech recognition that can. [skip] is one that
-   * failed, such as Google on-device without a language pack for the phone's language.
+   * Google on-device, Rambler, Whisper and Android speech recognition that can, other than [skip]:
+   * one that failed, such as Google on-device without a language pack for the phone's language, or
+   * Rambler for a password.
    */
   fun effectiveRecognition(
     context: Context,
     prefs: SharedPreferences,
-    skip: Recognition? = null,
+    skip: Set<Recognition> = emptySet(),
   ): Recognition {
     val usable = { recognition: Recognition ->
-      recognition != skip &&
+      recognition !in skip &&
         when (recognition) {
           Recognition.GOOGLE ->
             googleInstalled(context) && GoogleSpeechLanguages.hasPhoneLanguage() != false
