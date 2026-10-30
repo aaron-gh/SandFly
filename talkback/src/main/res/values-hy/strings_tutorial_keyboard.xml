@@ -2,14 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">SandFly-ի ստեղնաշարի ուղեցույց</string>
     <string name="sandfly_keyboard_tutorial_no_key">«<xliff:g id="command" example="Next item">%1$s</xliff:g>» հրամանը ստեղնային դյուրանցում չունի։ Նշանակեք այն «Հրամաններ» բաժնում կամ օգտագործեք «Բաց թողնել քայլը» կոճակը։</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">Դիտարկման ռեժիմի համար անհրաժեշտ է «Ստեղների բարելավված շարվածք»։ Ընտրեք այն այստեղ՝ <xliff:g id="settings_path" example="SandFly settings &gt; Keyboard shortcuts &gt; Choose a keymap">%1$s</xliff:g>, կամ օգտագործեք «Բաց թողնել քայլը» կոճակը։</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g> երկու անգամ</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">Դասն ավարտված է։ Սեղմեք <xliff:g id="keys" example="Action + Space">%1$s</xliff:g>՝ հաջորդ դասը սկսելու համար։</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">Դասն ավարտված է։ Սեղմեք <xliff:g id="keys" example="Action + Space">%1$s</xliff:g>՝ ուղեցույցն ավարտելու համար։</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">Վեբ էջեր</string>
-    <string name="sandfly_keyboard_tutorial_welcome_intro">Այս ուղեցույցը սովորեցնում է SandFly-ի ստեղնային դյուրանցումները։ Դրանց մեծ մասն օգտագործում է <xliff:g id="key" example="Action">%1$s</xliff:g> ստեղնը այլ ստեղների հետ։ <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> Ctrl ստեղնը կանգնեցնում է հնչեցումը։ Յուրաքանչյուր դաս տալիս է հրահանգ, սպասում է, մինչև սեղմեք դրանում նշված ստեղները, ապա տալիս է հաջորդը։ Հրահանգը դասի անվանումից հետո առաջին տարրն է։ «Բովանդակություն» բաժնում թվարկված են բոլոր դասերը, և ուղեցույցը նորից բացվում է այն դասում, որտեղ եղել եք։</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">Այս ուղեցույցը սովորեցնում է SandFly-ի ստեղնային դյուրանցումները։ Դրանց մեծ մասն օգտագործում է SandFly-ի ստեղնը՝ <xliff:g id="key" example="Action">%1$s</xliff:g>, այլ ստեղների հետ։ <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> Ctrl ստեղնը կանգնեցնում է հնչեցումը։ Յուրաքանչյուր դաս տալիս է հրահանգ, սպասում է, մինչև սեղմեք դրանում նշված ստեղները, ապա տալիս է հաջորդը։ Հրահանգը դասի անվանումից հետո առաջին տարրն է։ «Բովանդակություն» բաժնում թվարկված են բոլոր դասերը, և ուղեցույցը նորից բացվում է այն դասում, որտեղ եղել եք։</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">Գործողության ստեղնը Windows ստեղնն է՝ ձախ Alt ստեղնի կողքին։ Apple ստեղնաշարերում դա Command ստեղնն է՝ բացատի ստեղնի կողքին։</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">Alt ստեղնը բացատի ստեղնի կողքին է։</string>
     <string name="sandfly_keyboard_tutorial_welcome_start">Սեղմեք <xliff:g id="keys" example="Action + Space">%1$s</xliff:g>՝ սկսելու համար։</string>
     <string name="sandfly_keyboard_tutorial_move_intro">«Հաջորդ տարրը» և «Նախորդ տարրը» հրամաններն անցնում են էկրանի տարրերի միջով՝ ընթերցման հերթականությամբ։</string>
     <string name="sandfly_keyboard_tutorial_move_next">Սեղմեք <xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g>՝ հաջորդ տարրին անցնելու համար։ Շարունակեք, մինչև հասնեք «<xliff:g id="item" example="Eggs">%2$s</xliff:g>» տարրին։</string>
@@ -53,4 +51,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">Ստեղնաշարի վարժություն</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">Յուրաքանչյուր ստեղնային դյուրանցում կատարվելու փոխարեն ասում է իր ստեղներն ու հրամանը։ «Հաջորդ տարրը», «Նախորդ տարրը» և ակտիվացումը շարունակում են աշխատել։</string>
     <string name="sandfly_keyboard_tutorial_practice_step">Սեղմեք ցանկացած ստեղնային դյուրանցում՝ լսելու համար, թե ինչ է այն անում։ Կանգնեցնելու համար ակտիվացրեք «<xliff:g id="button" example="End practice">%1$s</xliff:g>» կոճակը։</string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">Միաժամանակ սեղմած պահեք Ctrl և Alt ստեղները։ Երկուսն էլ ստեղնաշարի ներքևի ձախ մասում են։</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">Ստեղնաշարերի մեծ մասում Զետեղել ստեղնը սլաքների ստեղների վերևում գտնվող վեց ստեղների խմբում է։</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">Թվաշարի վրայի զետեղման ստեղնը թվաշարի 0 ստեղնն է, երբ Num Lock-ն անջատված է։</string>
 </resources>

@@ -2,14 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">SandFly-tastaturvejledning</string>
     <string name="sandfly_keyboard_tutorial_no_key"><xliff:g id="command" example="Næste element">%1$s</xliff:g> har ingen tastaturgenvej. Tildel en under Kommandoer, eller brug Spring trin over.</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">Browsertilstand kræver Forbedret tastaturoversigt. Vælg den under <xliff:g id="settings_path" example="SandFly-indstillinger &gt; Tastaturgenveje &gt; Vælg en tastaturoversigt">%1$s</xliff:g>, eller brug Spring trin over.</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Handling">%1$s</xliff:g> to gange</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">Lektion fuldført. Tryk på <xliff:g id="keys" example="Handling + Mellemrum">%1$s</xliff:g> for at starte næste lektion.</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">Lektion fuldført. Tryk på <xliff:g id="keys" example="Handling + Mellemrum">%1$s</xliff:g> for at afslutte vejledningen.</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">Websider</string>
-    <string name="sandfly_keyboard_tutorial_welcome_intro">Denne vejledning lærer dig SandFlys tastaturgenveje. De fleste af dem bruger <xliff:g id="key" example="Handling">%1$s</xliff:g>-tasten sammen med andre taster. <xliff:g id="location" example="Handlingstasten er Windows-tasten ved siden af den venstre Alt-tast.">%2$s</xliff:g> Ctrl stopper talen. Hver lektion giver en instruktion, venter, til du har trykket på de taster, den nævner, og giver derefter den næste. Instruktionen er det første element efter lektionens navn. Indhold viser alle lektioner, og vejledningen åbnes igen ved den lektion, du var i gang med.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">Denne vejledning lærer dig SandFlys tastaturgenveje. De fleste af dem bruger SandFly-tasten, <xliff:g id="key" example="Action">%1$s</xliff:g>, sammen med andre taster. <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> Ctrl stopper talen. Hver lektion giver en instruktion, venter, til du har trykket på de taster, den nævner, og giver derefter den næste. Instruktionen er det første element efter lektionens navn. Indhold viser alle lektioner, og vejledningen åbnes igen ved den lektion, du var i gang med.</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">Handlingstasten er Windows-tasten ved siden af den venstre Alt-tast. På Apple-tastaturer er det Kommando-tasten ved siden af mellemrumstasten.</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">Alt-tasten er ved siden af mellemrumstasten.</string>
     <string name="sandfly_keyboard_tutorial_welcome_start">Tryk på <xliff:g id="keys" example="Handling + Mellemrum">%1$s</xliff:g> for at starte.</string>
     <string name="sandfly_keyboard_tutorial_move_intro">Næste element og Forrige element flytter gennem elementerne på skærmen i læserækkefølge.</string>
     <string name="sandfly_keyboard_tutorial_move_next">Tryk på <xliff:g id="keys" example="Handling + Højrepil">%1$s</xliff:g> for at gå til næste element. Fortsæt, indtil du når <xliff:g id="item" example="Æg">%2$s</xliff:g>.</string>
@@ -53,4 +51,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">Øv tastaturet</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">Hver tastaturgenvej siger sine taster og sin kommando i stedet for at udføre den. Næste element, Forrige element og aktivering virker stadig.</string>
     <string name="sandfly_keyboard_tutorial_practice_step">Tryk på en vilkårlig tastaturgenvej for at høre, hvad den gør. Aktivér <xliff:g id="button" example="Afslut øvelse">%1$s</xliff:g> for at stoppe.</string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">Hold Ctrl og Alt nede samtidig. Begge sidder nederst til venstre på tastaturet.</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">På de fleste tastaturer sidder Indsæt i gruppen af seks taster over piletasterne.</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">Indsæt via numerisk tastatur er 0-tasten på det numeriske tastatur, når Num Lock er slået fra.</string>
 </resources>

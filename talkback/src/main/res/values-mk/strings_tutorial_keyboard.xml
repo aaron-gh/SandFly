@@ -2,14 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">Упатство за тастатура на SandFly</string>
     <string name="sandfly_keyboard_tutorial_no_key">„<xliff:g id="command" example="Следна ставка">%1$s</xliff:g>“ нема кратенка од тастатурата. Доделете кратенка во „Наредби“ или користете „Прескокни чекор“.</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">За режимот на прелистување е потребен „Подобрен распоред на копчиња“. Изберете го во <xliff:g id="settings_path" example="Поставки за SandFly &gt; Кратенки од тастатурата &gt; Изберете распоред на копчиња">%1$s</xliff:g> или користете „Прескокни чекор“.</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g> двапати</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">Лекцијата е завршена. Притиснете <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> за да ја започнете следната лекција.</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">Лекцијата е завршена. Притиснете <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> за да го завршите упатството.</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">Веб-страници</string>
-    <string name="sandfly_keyboard_tutorial_welcome_intro">Ова упатство ги учи кратенките од тастатурата на SandFly. Повеќето од нив го користат копчето <xliff:g id="key" example="Action">%1$s</xliff:g> со други копчиња. <xliff:g id="location" example="Копчето за дејство е копчето Windows, до левото копче Alt.">%2$s</xliff:g> Ctrl го запира говорот. Секоја лекција дава упатство, чека додека не ги притиснете копчињата што ги наведува, а потоа го дава следното. Упатството е првата ставка по името на лекцијата. „Содржина“ ги наведува сите лекции, а упатството повторно се отвора на лекцијата на која сте застанале.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">Ова упатство ги учи кратенките од тастатурата на SandFly. Повеќето од нив го користат копчето за SandFly, <xliff:g id="key" example="Action">%1$s</xliff:g>, со други копчиња. <xliff:g id="location" example="Копчето за дејство е копчето Windows, до левото копче Alt.">%2$s</xliff:g> Ctrl го запира говорот. Секоја лекција дава упатство, чека додека не ги притиснете копчињата што ги наведува, а потоа го дава следното. Упатството е првата ставка по името на лекцијата. „Содржина“ ги наведува сите лекции, а упатството повторно се отвора на лекцијата на која сте застанале.</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">Копчето за дејство е копчето Windows, до левото копче Alt. На тастатурите на Apple, тоа е копчето Command, до копчето за празно место.</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">Копчето Alt е до копчето за празно место.</string>
     <string name="sandfly_keyboard_tutorial_welcome_start">Притиснете <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> за да започнете.</string>
     <string name="sandfly_keyboard_tutorial_move_intro">„Следна ставка“ и „Претходна ставка“ преминуваат низ ставките на екранот по редоследот на читање.</string>
     <string name="sandfly_keyboard_tutorial_move_next">Притиснете <xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g> за да преминете на следната ставка. Продолжете додека не стигнете до „<xliff:g id="item" example="Јајца">%2$s</xliff:g>“.</string>
@@ -53,4 +51,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">Вежбање тастатура</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">Секоја кратенка од тастатурата ги кажува своите копчиња и наредба наместо да ја изврши. „Следна ставка“, „Претходна ставка“ и активирањето сѐ уште работат.</string>
     <string name="sandfly_keyboard_tutorial_practice_step">Притиснете која било кратенка од тастатурата за да слушнете што прави. За да запрете, активирајте „<xliff:g id="button" example="Заврши го вежбањето">%1$s</xliff:g>“.</string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">Држете ги Ctrl и Alt притиснати заедно. Двете се долу лево на тастатурата.</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">На повеќето тастатури, Вметнување (Insert) е во групата од шест копчиња над копчињата со стрелки.</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">Вметнување на нумеричката тастатура е копчето 0 на нумеричката тастатура, со исклучен Num Lock.</string>
 </resources>

@@ -117,28 +117,17 @@
       &lt;li&gt;部分辅助键有所不同。&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">详细了解按键映射</string>
   <string name="keycombo_go_to_settings">前往“设置”</string>
-  <string name="keycombo_new_keymap_notification_dialog_positive_button">知道了</string>
-  <string name="keycombo_new_keymap_notification_dialog_negative_button">设置</string>
-  <string name="keycombo_new_keymap_notification_dialog_neutral_button">了解详情</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_classic_keymap">传统按键映射不再受支持</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">您目前使用的是 SandFly 默认按键映射。还有一种新的增强型按键映射，提供许多新命令。您可在帮助中心内了解详情，也可在“设置”中切换到这种新的按键映射。</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">有新的按键映射</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">新的 SandFly 增强型按键映射增加了许多新命令。您可在帮助中心内了解详情，也可在“设置”中切换到这种新的按键映射。</string>
   <string name="keycombo_warning_content_description">关于辅助键的更多信息</string>
   <string name="keycombo_menu_category_select_keymap">按键映射</string>
   <string name="keycombo_menu_select_keymap">选择按键映射</string>
   <string name="keycombo_menu_reset_keymap">重置按键映射</string>
   <string name="keycombo_menu_view_system_keyboard_shortcuts">查看系统键盘快捷键</string>
-  <string name="keycombo_menu_choose_trigger_modifier">选择辅助键</string>
-  <string name="keycombo_menu_alert_title_trigger_modifier">要将%1$s键用作辅助键吗？</string>
-  <string name="keycombo_menu_alert_message_trigger_modifier">SandFly 目前使用<xliff:g id="current_trigger_modifier" example="Alt">%1$s</xliff:g>键作为辅助键。</string>
-  <string name="keycombo_menu_alert_button_trigger_modifier">使用%1$s键</string>
-  <string name="keycombo_menu_announce_new_trigger_modifier">辅助键已更改为 %1$s。</string>
+  <string name="keycombo_menu_choose_trigger_modifier">选择 SandFly 键</string>
+  <string name="keycombo_menu_announce_new_trigger_modifier">SandFly 键已更改为%1$s键。</string>
   <string name="keycombo_menu_announce_active_keymap">%1$s现已启用。</string>
   <string name="keycombo_menu_announce_reset_keymap">已重置按键映射。</string>
   <string name="keycombo_announce_shortcut_not_supported">不支持该快捷键</string>
-  <string name="value_default_keymap">默认按键映射</string>
-  <string name="value_new_keymap">增强型按键映射</string>
+  <string name="value_new_keymap">SandFly 按键映射</string>
   <string name="keycombo_menu_category_navigation">导航操作</string>
   <string name="keycombo_menu_navigate_next">前往下一项</string>
   <string name="keycombo_menu_navigate_previous">前往上一项</string>
@@ -266,7 +255,7 @@
   <string name="message_in_reset_keymap_confirm_dialog">确定要将此按键映射对应的快捷键重置为默认值吗？请注意，此操作无法撤消。</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">重置</string>
   <string name="template_keycombo_menu_browse_mode_command">浏览模式下的“%1$s”</string>
-  <string name="keycombo_assign_dialog_default_keymap_instruction">按下包含 %1$s 辅助键的组合键即可设置新的快捷键。</string>
+  <string name="keycombo_assign_dialog_default_keymap_instruction">按下包含%1$s SandFly 键的组合键即可设置新的快捷键。</string>
   <string name="keycombo_unassigned">未指定</string>
   <string name="save_button_in_keycombo_assign_dialog">保存</string>
   <string name="clear_button_in_keycombo_assign_dialog">清除</string>
@@ -2366,4 +2355,10 @@
   <string name="title_pref_speech_dictionary">朗读词典</string>
   <string name="speech_dictionary_all_apps">所有应用</string>
   <string name="speech_dictionary_not_said">不朗读 <xliff:g id="text" example="#">%1$s</xliff:g></string>
+  <string name="keycombo_key_modifier_insert">插入</string>
+  <string name="keycombo_key_modifier_numpad_insert">数字小键盘 Insert 键</string>
+  <string name="keycombo_menu_navigate_next_paragraph">前往下一段落</string>
+  <string name="keycombo_menu_navigate_previous_paragraph">前往上一段落</string>
+  <string name="keycombo_key_modifier_ctrl_alt">Ctrl 键 + Alt 键</string>
+  <string name="value_voiceover_keymap">VoiceOver 按键映射</string>
 </resources>

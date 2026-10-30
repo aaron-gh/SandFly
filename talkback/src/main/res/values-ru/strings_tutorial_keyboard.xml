@@ -2,14 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">Руководство по клавиатуре SandFly</string>
     <string name="sandfly_keyboard_tutorial_no_key">У команды «<xliff:g id="command" example="Следующий объект">%1$s</xliff:g>» нет быстрой клавиши. Назначьте её в разделе «Команды» или используйте «Пропустить шаг».</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">Для режима обзора нужна «Улучшенная раскладка». Выберите её в разделе <xliff:g id="settings_path" example="Настройки SandFly &gt; Быстрые клавиши &gt; Выбрать раскладку">%1$s</xliff:g> или используйте «Пропустить шаг».</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g> дважды</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">Урок пройден. Нажмите <xliff:g id="keys" example="Action + Space">%1$s</xliff:g>, чтобы начать следующий урок.</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">Урок пройден. Нажмите <xliff:g id="keys" example="Action + Space">%1$s</xliff:g>, чтобы завершить руководство.</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">Веб-страницы</string>
-    <string name="sandfly_keyboard_tutorial_welcome_intro">Это руководство обучает быстрым клавишам SandFly. Большинство из них использует клавишу <xliff:g id="key" example="Action">%1$s</xliff:g> вместе с другими клавишами. <xliff:g id="location" example="Клавиша действия – это клавиша Windows рядом с левой клавишей Alt.">%2$s</xliff:g> Ctrl останавливает речь. Каждый урок даёт инструкцию, ждёт, пока вы нажмёте указанные в ней клавиши, и даёт следующую. Инструкция – первый элемент после названия урока. В разделе «Содержание» перечислены все уроки, а руководство открывается на уроке, на котором вы остановились.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">Это руководство обучает быстрым клавишам SandFly. Большинство из них использует клавишу SandFly (<xliff:g id="key" example="Action">%1$s</xliff:g>) вместе с другими клавишами. <xliff:g id="location" example="Клавиша действия – это клавиша Windows рядом с левой клавишей Alt.">%2$s</xliff:g> Ctrl останавливает речь. Каждый урок даёт инструкцию, ждёт, пока вы нажмёте указанные в ней клавиши, и даёт следующую. Инструкция – первый элемент после названия урока. В разделе «Содержание» перечислены все уроки, а руководство открывается на уроке, на котором вы остановились.</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">Клавиша действия – это клавиша Windows рядом с левой клавишей Alt. На клавиатурах Apple это клавиша Command рядом с клавишей пробела.</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">Клавиша Alt находится рядом с клавишей пробела.</string>
     <string name="sandfly_keyboard_tutorial_welcome_start">Нажмите <xliff:g id="keys" example="Action + Space">%1$s</xliff:g>, чтобы начать.</string>
     <string name="sandfly_keyboard_tutorial_move_intro">Команды «Следующий объект» и «Предыдущий объект» перемещают по элементам на экране в порядке чтения.</string>
     <string name="sandfly_keyboard_tutorial_move_next">Нажмите <xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g>, чтобы перейти к следующему элементу. Продолжайте, пока не дойдёте до элемента «<xliff:g id="item" example="Яйца">%2$s</xliff:g>».</string>
@@ -53,4 +51,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">Практика клавиатуры</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">Каждая быстрая клавиша вместо выполнения называет свои клавиши и команду. Команды «Следующий объект» и «Предыдущий объект» и активация продолжают работать.</string>
     <string name="sandfly_keyboard_tutorial_practice_step">Нажмите любую быструю клавишу, чтобы узнать, что она делает. Чтобы закончить, активируйте кнопку «<xliff:g id="button" example="Завершить практику">%1$s</xliff:g>».</string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">Удерживайте Ctrl и Alt одновременно. Обе клавиши находятся в левом нижнем углу клавиатуры.</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">На большинстве клавиатур клавиша «Вставить» (Insert) находится в группе из шести клавиш над клавишами со стрелками.</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">Insert на цифровой клавиатуре – это клавиша 0 на цифровой клавиатуре при выключенном Num Lock.</string>
 </resources>

@@ -7,10 +7,16 @@
             android:key="@string/pref_select_keymap_key"
             android:title="@string/keycombo_menu_select_keymap"
             android:summary="%s"
-            android:defaultValue="@string/default_keymap_entry_value"
+            android:defaultValue="@string/new_keymap_entry_value"
             android:entries="@array/pref_select_keymap_entries"
             android:entryValues="@array/pref_select_keymap_values" />
-        <!-- The new keymap only works with the Action key, so there's nothing to choose. -->
+        <ListPreference
+            android:key="@string/pref_new_keymap_trigger_modifier_key"
+            android:title="@string/keycombo_menu_choose_trigger_modifier"
+            android:summary="%s"
+            android:defaultValue="@string/trigger_modifier_meta_entry_value"
+            android:entries="@array/pref_sandfly_keymap_sandfly_key_entries"
+            android:entryValues="@array/pref_sandfly_keymap_sandfly_key_values" />
         <PreferenceScreen
             android:key="@string/pref_reset_keymap_key"
             android:title="@string/keycombo_menu_reset_keymap" />

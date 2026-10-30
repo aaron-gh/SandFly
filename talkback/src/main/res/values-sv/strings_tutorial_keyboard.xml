@@ -2,15 +2,13 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">SandFlys tangentbordsguide</string>
     <string name="sandfly_keyboard_tutorial_no_key"><xliff:g id="command" example="Nästa objekt">%1$s</xliff:g> har inget kortkommando. Tilldela ett under Kommandon eller använd Hoppa över steg.</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">Läsläget kräver Förbättrad lista över kortkommandon. Välj den under <xliff:g id="settings_path" example="Inställningar för SandFly &gt; Kortkommandon &gt; Välj en tangentbordslayout">%1$s</xliff:g> eller använd Hoppa över steg.</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g> två gånger</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">Lektionen är klar. Tryck på <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> för att starta nästa lektion.</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">Lektionen är klar. Tryck på <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> för att avsluta guiden.</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">Webbsidor</string>
 
-    <string name="sandfly_keyboard_tutorial_welcome_intro">Den här guiden lär ut SandFlys kortkommandon. De flesta använder tangenten <xliff:g id="key" example="Action">%1$s</xliff:g> tillsammans med andra tangenter. <xliff:g id="location" example="Åtgärdstangenten är Windows-tangenten, bredvid vänster Alt-tangent.">%2$s</xliff:g> Ctrl stoppar talet. Varje lektion ger en instruktion, väntar tills du har tryckt på tangenterna den nämner och ger sedan nästa. Instruktionen är det första objektet efter lektionens namn. Innehåll visar alla lektioner, och guiden öppnas igen på lektionen du var på.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">Den här guiden lär ut SandFlys kortkommandon. De flesta använder SandFly-tangenten, <xliff:g id="key" example="Action">%1$s</xliff:g>, tillsammans med andra tangenter. <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> Ctrl stoppar talet. Varje lektion ger en instruktion, väntar tills du har tryckt på tangenterna den nämner och ger sedan nästa. Instruktionen är det första objektet efter lektionens namn. Innehåll visar alla lektioner, och guiden öppnas igen på lektionen du var på.</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">Åtgärdstangenten är Windows-tangenten, bredvid vänster Alt-tangent. På Apple-tangentbord är det kommandotangenten, bredvid blankstegstangenten.</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">Alt-tangenten finns bredvid blankstegstangenten.</string>
     <string name="sandfly_keyboard_tutorial_welcome_start">Tryck på <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> för att börja.</string>
 
     <string name="sandfly_keyboard_tutorial_move_intro">Nästa objekt och Föregående objekt flyttar genom objekten på skärmen i läsordning.</string>
@@ -67,4 +65,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">Öva kortkommandon</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">Varje kortkommando säger sina tangenter och sitt kommando i stället för att köra det. Nästa objekt, Föregående objekt och aktivering fungerar fortfarande.</string>
     <string name="sandfly_keyboard_tutorial_practice_step">Tryck på valfritt kortkommando för att höra vad det gör. Aktivera <xliff:g id="button" example="Avsluta övningen">%1$s</xliff:g> för att sluta.</string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">Håll ned Ctrl och Alt samtidigt. Båda finns längst ned till vänster på tangentbordet.</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">På de flesta tangentbord finns Infoga i gruppen med sex tangenter ovanför piltangenterna.</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">Infogning på det numeriska tangentbordet är 0-tangenten på det numeriska tangentbordet när Num Lock är av.</string>
 </resources>

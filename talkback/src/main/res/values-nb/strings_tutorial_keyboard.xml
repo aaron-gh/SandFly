@@ -2,14 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">SandFly-tastaturveiledning</string>
     <string name="sandfly_keyboard_tutorial_no_key"><xliff:g id="command" example="Neste element">%1$s</xliff:g> har ingen hurtigtast. Tilordne en under Kommandoer, eller bruk Hopp over trinn.</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">Surfemodus krever Utvidet tastaturoppsett. Velg det under <xliff:g id="settings_path" example="SandFly-innstillinger &gt; Hurtigtaster &gt; Velg et tastaturoppsett">%1$s</xliff:g>, eller bruk Hopp over trinn.</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g> to ganger</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">Leksjonen er fullført. Trykk på <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> for å starte neste leksjon.</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">Leksjonen er fullført. Trykk på <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> for å fullføre veiledningen.</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">Nettsider</string>
-    <string name="sandfly_keyboard_tutorial_welcome_intro">Denne veiledningen lærer deg hurtigtastene i SandFly. De fleste bruker <xliff:g id="key" example="Action">%1$s</xliff:g>-tasten sammen med andre taster. <xliff:g id="location" example="Handlingstasten er Windows-tasten, ved siden av den venstre Alt-tasten.">%2$s</xliff:g> Ctrl stopper talen. Hver leksjon gir en instruksjon, venter til du har trykket på tastene den nevner, og gir deretter den neste. Instruksjonen er det første elementet etter navnet på leksjonen. Innhold viser alle leksjonene, og veiledningen åpnes igjen på leksjonen du var på.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">Denne veiledningen lærer deg hurtigtastene i SandFly. De fleste bruker SandFly-tasten, <xliff:g id="key" example="Action">%1$s</xliff:g>, sammen med andre taster. <xliff:g id="location" example="Handlingstasten er Windows-tasten, ved siden av den venstre Alt-tasten.">%2$s</xliff:g> Ctrl stopper talen. Hver leksjon gir en instruksjon, venter til du har trykket på tastene den nevner, og gir deretter den neste. Instruksjonen er det første elementet etter navnet på leksjonen. Innhold viser alle leksjonene, og veiledningen åpnes igjen på leksjonen du var på.</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">Handlingstasten er Windows-tasten, ved siden av den venstre Alt-tasten. På Apple-tastaturer er det Kommando-tasten, ved siden av mellomromstasten.</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">Alt-tasten er ved siden av mellomromstasten.</string>
     <string name="sandfly_keyboard_tutorial_welcome_start">Trykk på <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> for å starte.</string>
     <string name="sandfly_keyboard_tutorial_move_intro">Neste element og Forrige element går gjennom elementene på skjermen i leserekkefølge.</string>
     <string name="sandfly_keyboard_tutorial_move_next">Trykk på <xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g> for å gå til neste element. Fortsett til du kommer til <xliff:g id="item" example="Egg">%2$s</xliff:g>.</string>
@@ -53,4 +51,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">Tastaturøving</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">Hver hurtigtast sier tastene og kommandoen sin i stedet for å utføre den. Neste element, Forrige element og aktivering fungerer fortsatt.</string>
     <string name="sandfly_keyboard_tutorial_practice_step">Trykk på en hvilken som helst hurtigtast for å høre hva den gjør. For å stoppe aktiverer du <xliff:g id="button" example="Avslutt øving">%1$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">Hold Ctrl og Alt nede samtidig. Begge er nederst til venstre på tastaturet.</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">På de fleste tastaturer er Sett inn (Insert) i gruppen på seks taster over piltastene.</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">Talltastatur – Insert er 0-tasten på talltastaturet når Num Lock er av.</string>
 </resources>

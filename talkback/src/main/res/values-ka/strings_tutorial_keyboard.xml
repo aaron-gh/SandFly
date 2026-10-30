@@ -2,14 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">SandFly-ის კლავიატურის სახელმძღვანელო</string>
     <string name="sandfly_keyboard_tutorial_no_key">„<xliff:g id="command" example="Next item">%1$s</xliff:g>“-ს კლავიატურის მალსახმობი არ აქვს. მიანიჭეთ მალსახმობი აქ: „ბრძანებები“, ან გამოიყენეთ „ნაბიჯის გამოტოვება“.</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">დათვალიერების რეჟიმს სჭირდება „გაუმჯობესებული კლავიშთა განლაგება“. აირჩიეთ ის აქ: <xliff:g id="settings_path" example="SandFly settings &gt; Keyboard shortcuts &gt; Choose a keymap">%1$s</xliff:g>, ან გამოიყენეთ „ნაბიჯის გამოტოვება“.</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g> ორჯერ</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">გაკვეთილი დასრულდა. დააჭირეთ „<xliff:g id="keys" example="Action + Space">%1$s</xliff:g>“ შემდეგი გაკვეთილის დასაწყებად.</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">გაკვეთილი დასრულდა. დააჭირეთ „<xliff:g id="keys" example="Action + Space">%1$s</xliff:g>“ სახელმძღვანელოს დასასრულებლად.</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">ვებგვერდები</string>
-    <string name="sandfly_keyboard_tutorial_welcome_intro">ეს სახელმძღვანელო SandFly-ის კლავიატურის მალსახმობებს გასწავლით. მათი უმეტესობა იყენებს „<xliff:g id="key" example="Action">%1$s</xliff:g>“-ს სხვა კლავიშებთან ერთად. <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> Ctrl მეტყველებას აჩერებს. თითოეული გაკვეთილი გაძლევთ მითითებას, ელოდება, სანამ მასში დასახელებულ კლავიშებს დააჭერთ, შემდეგ კი შემდეგ მითითებას გაძლევთ. მითითება გაკვეთილის სახელის შემდეგ პირველი ერთეულია. „სარჩევი“ ყველა გაკვეთილს აჩვენებს, და სახელმძღვანელო ხელახლა იხსნება იმ გაკვეთილზე, რომელზეც იყავით.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">ეს სახელმძღვანელო SandFly-ის კლავიატურის მალსახმობებს გასწავლით. მათი უმეტესობა იყენებს SandFly-ის კლავიშს, „<xliff:g id="key" example="Action">%1$s</xliff:g>“, სხვა კლავიშებთან ერთად. <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> Ctrl მეტყველებას აჩერებს. თითოეული გაკვეთილი გაძლევთ მითითებას, ელოდება, სანამ მასში დასახელებულ კლავიშებს დააჭერთ, შემდეგ კი შემდეგ მითითებას გაძლევთ. მითითება გაკვეთილის სახელის შემდეგ პირველი ერთეულია. „სარჩევი“ ყველა გაკვეთილს აჩვენებს, და სახელმძღვანელო ხელახლა იხსნება იმ გაკვეთილზე, რომელზეც იყავით.</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">მოქმედების კლავიში არის Windows კლავიში, მარცხენა Alt კლავიშის გვერდით. Apple-ის კლავიატურებზე ეს არის Command კლავიში, შორისის კლავიშის გვერდით.</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">Alt კლავიში შორისის კლავიშის გვერდითაა.</string>
     <string name="sandfly_keyboard_tutorial_welcome_start">დააჭირეთ „<xliff:g id="keys" example="Action + Space">%1$s</xliff:g>“ დასაწყებად.</string>
     <string name="sandfly_keyboard_tutorial_move_intro">„შემდეგი ერთეული“ და „წინა ერთეული“ ეკრანის ერთეულებს შორის კითხვის თანმიმდევრობით გადაადგილდება.</string>
     <string name="sandfly_keyboard_tutorial_move_next">დააჭირეთ „<xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g>“ შემდეგ ერთეულზე გადასასვლელად. გააგრძელეთ, სანამ არ მიაღწევთ ერთეულს „<xliff:g id="item" example="Eggs">%2$s</xliff:g>“.</string>
@@ -53,4 +51,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">კლავიატურის ვარჯიში</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">თითოეული კლავიატურის მალსახმობი შესრულების ნაცვლად ამბობს თავის კლავიშებს და ბრძანებას. „შემდეგი ერთეული“, „წინა ერთეული“ და გააქტიურება კვლავ მუშაობს.</string>
     <string name="sandfly_keyboard_tutorial_practice_step">დააჭირეთ ნებისმიერ კლავიატურის მალსახმობს, რომ მოისმინოთ, რას აკეთებს. შესაჩერებლად გააქტიურეთ „<xliff:g id="button" example="End practice">%1$s</xliff:g>“.</string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">ერთდროულად დააჭირეთ და გეჭიროთ Ctrl და Alt. ორივე კლავიატურის ქვედა მარცხენა ნაწილშია.</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">კლავიატურების უმეტესობაზე Insert ისრიანი კლავიშების ზემოთ მდებარე ექვსი კლავიშის ჯგუფშია.</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">Insert რიცხვების პანელზე არის რიცხვების პანელის 0 კლავიში, როცა Num Lock გამორთულია.</string>
 </resources>

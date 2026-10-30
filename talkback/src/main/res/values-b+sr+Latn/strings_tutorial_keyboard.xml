@@ -2,15 +2,13 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">Vodič za SandFly tastaturu</string>
     <string name="sandfly_keyboard_tutorial_no_key">„<xliff:g id="command" example="Sledeća stavka">%1$s</xliff:g>“ nema tastersku prečicu. Dodelite je u odeljku „Komande“ ili koristite „Preskoči korak“.</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">Režim pregledanja zahteva „Poboljšani raspored tastera“. Izaberite ga u odeljku <xliff:g id="settings_path" example="Podešavanja SandFly-a &gt; Tasterske prečice &gt; Izaberi raspored tastera">%1$s</xliff:g> ili koristite „Preskoči korak“.</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g> dvaput</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">Lekcija je završena. <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> – početak sledeće lekcije.</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">Lekcija je završena. <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> – završavanje vodiča.</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">Veb-stranice</string>
 
-    <string name="sandfly_keyboard_tutorial_welcome_intro">Ovaj vodič uči SandFly tasterske prečice. Većina njih koristi taster <xliff:g id="key" example="Action">%1$s</xliff:g> sa drugim tasterima. <xliff:g id="location" example="Taster Radnja je taster Windows, pored levog tastera Alt.">%2$s</xliff:g> Ctrl zaustavlja govor. Svaka lekcija daje uputstvo, čeka da pritisnete tastere koje navodi, a zatim daje sledeće. Uputstvo je prva stavka posle naziva lekcije. „Sadržaj“ navodi sve lekcije, a vodič se ponovo otvara na lekciji na kojoj ste stali.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">Ovaj vodič uči SandFly tasterske prečice. Većina njih koristi taster za SandFly, <xliff:g id="key" example="Action">%1$s</xliff:g>, sa drugim tasterima. <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> Ctrl zaustavlja govor. Svaka lekcija daje uputstvo, čeka da pritisnete tastere koje navodi, a zatim daje sledeće. Uputstvo je prva stavka posle naziva lekcije. „Sadržaj“ navodi sve lekcije, a vodič se ponovo otvara na lekciji na kojoj ste stali.</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">Taster Radnja je taster Windows, pored levog tastera Alt. Na Apple tastaturama to je taster Command, pored razmaknice.</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">Taster Alt je pored razmaknice.</string>
     <string name="sandfly_keyboard_tutorial_welcome_start"><xliff:g id="keys" example="Action + Space">%1$s</xliff:g> – početak.</string>
 
     <string name="sandfly_keyboard_tutorial_move_intro">„Sledeća stavka“ i „Prethodna stavka“ prelaze kroz stavke na ekranu redosledom čitanja.</string>
@@ -67,4 +65,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">Vežba tastature</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">Svaka tasterska prečica umesto izvršavanja izgovara svoje tastere i komandu. „Sledeća stavka“, „Prethodna stavka“ i aktiviranje i dalje rade.</string>
     <string name="sandfly_keyboard_tutorial_practice_step">Pritisnite bilo koju tastersku prečicu da biste čuli šta radi. Da biste prestali, aktivirajte „<xliff:g id="button" example="Završi vežbu">%1$s</xliff:g>“.</string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">Držite istovremeno pritisnute Ctrl i Alt. Oba su u donjem levom delu tastature.</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">Na većini tastatura, Umetni je u grupi od šest tastera iznad tastera sa strelicama.</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">Umetanje na numeričkoj tastaturi je taster 0 na numeričkoj tastaturi kada je Num Lock isključen.</string>
 </resources>

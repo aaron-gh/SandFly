@@ -117,28 +117,17 @@
       &lt;li&gt;គ្រាប់ចុចកែសម្រួលមួយចំនួនមានភាពខុសគ្នា។&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">ស្វែងយល់បន្ថែមអំពីផែនទីគ្រាប់ចុច</string>
   <string name="keycombo_go_to_settings">ចូលទៅកាន់ការកំណត់</string>
-  <string name="keycombo_new_keymap_notification_dialog_positive_button">យល់ហើយ</string>
-  <string name="keycombo_new_keymap_notification_dialog_negative_button">ការកំណត់</string>
-  <string name="keycombo_new_keymap_notification_dialog_neutral_button">ស្វែងយល់បន្ថែម</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_classic_keymap">ផែនទីគ្រាប់ចុចចាស់លែងអាចប្រើបានទៀតហើយ</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">ឥឡូវ អ្នកកំពុងប្រើផែនទីគ្រាប់ចុចលំនាំដើមរបស់ SandFly។ មានផែនទីគ្រាប់ចុចថ្មីដែលបានកែលម្អដែលមានឃ្លាបញ្ជាថ្មីៗជាច្រើនផងដែរ។ ស្វែងយល់បន្ថែមក្នុងមជ្ឈមណ្ឌលជំនួយ ឬប្ដូរទៅផែនទីគ្រាប់ចុចថ្មីក្នុង \"ការកំណត់\"។</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">មានផែនទីគ្រាប់ចុចថ្មី</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">ផែនទីគ្រាប់ចុចថ្មីដែលបានកែលម្អរបស់ SandFly បញ្ចូលឃ្លាបញ្ជាថ្មីៗជាច្រើន។ ស្វែងយល់បន្ថែមក្នុងមជ្ឈមណ្ឌលជំនួយ ឬប្ដូរទៅផែនទីគ្រាប់ចុចថ្មីក្នុង \"ការកំណត់\"។</string>
   <string name="keycombo_warning_content_description">ព័ត៌មានបន្ថែមអំពីគ្រាប់ចុចកែសម្រួលរបស់អ្នក</string>
   <string name="keycombo_menu_category_select_keymap">ផែនទីគ្រាប់ចុច</string>
   <string name="keycombo_menu_select_keymap">ជ្រើសរើសផែនទីគ្រាប់ចុច</string>
   <string name="keycombo_menu_reset_keymap">កំណត់ផែនទីគ្រាប់ចុចឡើងវិញ</string>
   <string name="keycombo_menu_view_system_keyboard_shortcuts">មើលផ្លូវកាត់​ក្ដារ​ចុចប្រព័ន្ធ</string>
-  <string name="keycombo_menu_choose_trigger_modifier">ជ្រើសរើសគ្រាប់ចុចកែសម្រួល</string>
-  <string name="keycombo_menu_alert_title_trigger_modifier">ប្រើ %1$s ជាគ្រាប់ចុចកែសម្រួលរបស់អ្នកឬ?</string>
-  <string name="keycombo_menu_alert_message_trigger_modifier">បច្ចុប្បន្ន SandFly ប្រើ <xliff:g id="current_trigger_modifier" example="Alt">%1$s</xliff:g> ជាគ្រាប់ចុចកែសម្រួល។</string>
-  <string name="keycombo_menu_alert_button_trigger_modifier">ប្រើ %1$s</string>
-  <string name="keycombo_menu_announce_new_trigger_modifier">គ្រាប់ចុចបន្សំត្រូវបានផ្លាស់ប្តូរទៅជា %1$s</string>
+  <string name="keycombo_menu_choose_trigger_modifier">ជ្រើសរើសគ្រាប់ចុច SandFly</string>
+  <string name="keycombo_menu_announce_new_trigger_modifier">គ្រាប់ចុច SandFly ត្រូវបានប្ដូរទៅ %1$s។</string>
   <string name="keycombo_menu_announce_active_keymap">%1$s ឥឡូវនេះសកម្ម</string>
   <string name="keycombo_menu_announce_reset_keymap">ផែនទីគ្រាប់ចុចត្រូវបានកំណត់ឡើងវិញ</string>
   <string name="keycombo_announce_shortcut_not_supported">មិនគាំទ្រផ្លូវកាត់ទេ</string>
-  <string name="value_default_keymap">ផែនទីគ្រាប់ចុចលំនាំដើម</string>
-  <string name="value_new_keymap">ផែនទីគ្រាប់ចុចប្រសើរជាងមុន</string>
+  <string name="value_new_keymap">ផែនទីគ្រាប់ចុច SandFly</string>
   <string name="keycombo_menu_category_navigation">សកម្មភាពរុករក</string>
   <string name="keycombo_menu_navigate_next">ទៅកាន់ធាតុបន្ទាប់</string>
   <string name="keycombo_menu_navigate_previous">ទៅកាន់ធាតុពីមុន</string>
@@ -266,7 +255,7 @@
   <string name="message_in_reset_keymap_confirm_dialog">តើអ្នកប្រាកដថាចង់កំណត់គ្រាប់ចុចផ្លូវកាត់របស់អ្នកសម្រាប់ផែនទីគ្រាប់ចុចនេះទៅតម្លៃលំនាំដើមរបស់ពួកវាឡើងវិញឬទេ? សូមកត់សម្គាល់ថា សកម្មភាពនេះមិនអាចត្រឡប់វិញបានទេ។</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">កំណត់ឡើងវិញ</string>
   <string name="template_keycombo_menu_browse_mode_command">%1$s ក្នុងមុខងាររុករក</string>
-  <string name="keycombo_assign_dialog_default_keymap_instruction">ចុចការផ្សំគ្រាប់ចុចដោយប្រើគ្រាប់ចុចបន្សំ %1$s ដើម្បីកំណត់ផ្លូវកាត់ថ្មី។</string>
+  <string name="keycombo_assign_dialog_default_keymap_instruction">ចុចបន្សំគ្រាប់ចុចជាមួយគ្រាប់ចុច SandFly %1$s ដើម្បីកំណត់ផ្លូវកាត់ថ្មី។</string>
   <string name="keycombo_unassigned">មិនបានចាត់</string>
   <string name="save_button_in_keycombo_assign_dialog">រក្សាទុក</string>
   <string name="clear_button_in_keycombo_assign_dialog">សម្អាត</string>
@@ -1804,4 +1793,10 @@
   <string name="title_pref_speech_dictionary">វចនានុក្រមការនិយាយ</string>
   <string name="speech_dictionary_all_apps">កម្មវិធីទាំងអស់</string>
   <string name="speech_dictionary_not_said">មិននិយាយ <xliff:g id="text" example="#">%1$s</xliff:g></string>
+  <string name="keycombo_key_modifier_insert">បញ្ចូល</string>
+  <string name="keycombo_key_modifier_numpad_insert">បញ្ចូលផ្ទាំងចុចលេខ</string>
+  <string name="keycombo_menu_navigate_next_paragraph">ទៅកាន់កថាខណ្ឌបន្ទាប់</string>
+  <string name="keycombo_menu_navigate_previous_paragraph">ទៅកាន់កថាខណ្ឌមុន</string>
+  <string name="keycombo_key_modifier_ctrl_alt">Ctrl + Alt</string>
+  <string name="value_voiceover_keymap">ផែនទីគ្រាប់ចុច VoiceOver</string>
 </resources>

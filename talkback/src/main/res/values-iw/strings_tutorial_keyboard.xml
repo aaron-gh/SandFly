@@ -2,14 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">מדריך המקלדת של SandFly</string>
     <string name="sandfly_keyboard_tutorial_no_key">ל\"<xliff:g id="command" example="הפריט הבא">%1$s</xliff:g>\" אין מקש קיצור. אפשר להקצות מקש קיצור ב\"פקודות\" או להשתמש ב\"דילוג על השלב\".</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">מצב הסמן דורש את \"מפת מקשים משופרת\". בוחרים בה ב<xliff:g id="settings_path" example="ההגדרות של SandFly &gt; מקשי קיצור &gt; בחירת מפת מקשים">%1$s</xliff:g>, או משתמשים ב\"דילוג על השלב\".</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="מקש הפעולה">%1$s</xliff:g> פעמיים</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">השיעור הושלם. לוחצים על <xliff:g id="keys" example="מקש הפעולה + רווח">%1$s</xliff:g> כדי להתחיל את השיעור הבא.</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">השיעור הושלם. לוחצים על <xliff:g id="keys" example="מקש הפעולה + רווח">%1$s</xliff:g> כדי לסיים את המדריך.</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">דפי אינטרנט</string>
-    <string name="sandfly_keyboard_tutorial_welcome_intro">המדריך הזה מלמד את מקשי הקיצור של SandFly. רובם משתמשים ב<xliff:g id="key" example="מקש הפעולה">%1$s</xliff:g> יחד עם מקשים אחרים. <xliff:g id="location" example="מקש הפעולה הוא מקש Windows, ליד מקש Alt השמאלי.">%2$s</xliff:g> ‏Ctrl עוצר את הדיבור. כל שיעור נותן הוראה, מחכה עד שלוחצים על המקשים שהיא מציינת, ואז נותן את ההוראה הבאה. ההוראה היא הפריט הראשון אחרי שם השיעור. ב\"תוכן העניינים\" מופיעים כל השיעורים, והמדריך נפתח מחדש בשיעור שבו הפסקת.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">המדריך הזה מלמד את מקשי הקיצור של SandFly. רובם משתמשים במקש SandFly, <xliff:g id="key" example="Action">%1$s</xliff:g>, יחד עם מקשים אחרים. <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> ‏Ctrl עוצר את הדיבור. כל שיעור נותן הוראה, מחכה עד שלוחצים על המקשים שהיא מציינת, ואז נותן את ההוראה הבאה. ההוראה היא הפריט הראשון אחרי שם השיעור. ב\"תוכן העניינים\" מופיעים כל השיעורים, והמדריך נפתח מחדש בשיעור שבו הפסקת.</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">מקש הפעולה הוא מקש Windows, ליד מקש Alt השמאלי. במקלדות של Apple, זה מקש Command, ליד מקש הרווח.</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">מקש Alt נמצא ליד מקש הרווח.</string>
     <string name="sandfly_keyboard_tutorial_welcome_start">לוחצים על <xliff:g id="keys" example="מקש הפעולה + רווח">%1$s</xliff:g> כדי להתחיל.</string>
     <string name="sandfly_keyboard_tutorial_move_intro">\"הפריט הבא\" ו\"הפריט הקודם\" עוברים בין הפריטים במסך לפי סדר ההקראה.</string>
     <string name="sandfly_keyboard_tutorial_move_next">לוחצים על <xliff:g id="keys" example="מקש הפעולה + חץ ימינה">%1$s</xliff:g> כדי לעבור לפריט הבא. ממשיכים עד שמגיעים אל \"<xliff:g id="item" example="ביצים">%2$s</xliff:g>\".</string>
@@ -53,4 +51,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">תרגול מקלדת</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">כל מקש קיצור אומר את המקשים ואת הפקודה שלו במקום לבצע אותה. \"הפריט הבא\", \"הפריט הקודם\" והפעלה עדיין פועלים.</string>
     <string name="sandfly_keyboard_tutorial_practice_step">לוחצים על מקש קיצור כלשהו כדי לשמוע מה הוא עושה. כדי לעצור, מפעילים את \"<xliff:g id="button" example="סיום התרגול">%1$s</xliff:g>\".</string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">יש ללחוץ לחיצה ארוכה על Ctrl ועל Alt יחד. שניהם נמצאים בפינה השמאלית התחתונה של המקלדת.</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">ברוב המקלדות, Insert נמצא בקבוצה של שישה מקשים מעל מקשי החיצים.</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">Insert במקלדת המספרים הוא מקש 0 במקלדת המספרים, כש-Num Lock כבוי.</string>
 </resources>

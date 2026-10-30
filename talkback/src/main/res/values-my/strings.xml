@@ -117,28 +117,17 @@
       &lt;li&gt;မွမ်းမံခလုတ်အချို့သည် မတူပါ။&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">ကီးမြေပုံများအကြောင်း ပိုမိုလေ့လာရန်</string>
   <string name="keycombo_go_to_settings">ဆက်တင်များသို့ သွားရန်</string>
-  <string name="keycombo_new_keymap_notification_dialog_positive_button">နားလည်ပြီ</string>
-  <string name="keycombo_new_keymap_notification_dialog_negative_button">ဆက်တင်များ</string>
-  <string name="keycombo_new_keymap_notification_dialog_neutral_button">ပိုလေ့လာရန်</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_classic_keymap">ကီးမြေပုံအဟောင်းကို မပံ့ပိုးတော့ပါ</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">သင်သည် SandFly မူရင်းကီးမြေပုံကို ယခုသုံးနေသည်။ ကွန်မန်းအသစ်များစွာပါသော အရည်အသွေးမြှင့်ထားသည့် ကီးမြေပုံအသစ်လည်း ရှိသည်။ ကူညီရေးဌာန၌ ပိုမိုလေ့လာပါ (သို့) ဆက်တင်များ၌ ကီးမြေပုံအသစ်သို့ ပြောင်းပါ။</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">ကီးမြေပုံအသစ် ရနိုင်သည်</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">SandFly ၏ အရည်အသွေးမြှင့်ထားသော ကီးမြေပုံတွင် ကွန်မန်းအသစ်များစွာ ထည့်ထားသည်။ ကူညီရေးဌာန၌ ပိုမိုလေ့လာပါ (သို့) ဆက်တင်များ၌ ကီးမြေပုံအသစ်သို့ ပြောင်းပါ။</string>
   <string name="keycombo_warning_content_description">မွမ်းမံခလုတ်အကြောင်း နောက်ထပ်အချက်အလက်များ</string>
   <string name="keycombo_menu_category_select_keymap">ကီးမြေပုံ</string>
   <string name="keycombo_menu_select_keymap">ကီးမြေပုံတစ်ခု ရွေးပါ</string>
   <string name="keycombo_menu_reset_keymap">ကီးမြေပုံကို ပြန်လည်သတ်မှတ်ပါ</string>
   <string name="keycombo_menu_view_system_keyboard_shortcuts">စနစ် လက်ကွက်ဖြတ်လမ်းများ ကြည့်ရန်</string>
-  <string name="keycombo_menu_choose_trigger_modifier">မွမ်းမံခလုတ်ကို ရွေးပါ</string>
-  <string name="keycombo_menu_alert_title_trigger_modifier">%1$s ကို သင်၏မွမ်းမံခလုတ်အဖြစ် သုံးမလား။</string>
-  <string name="keycombo_menu_alert_message_trigger_modifier">SandFly သည် လောလောဆယ်တွင် <xliff:g id="current_trigger_modifier" example="Alt">%1$s</xliff:g> ကို မွမ်းမံခလုတ်အဖြစ် သုံးသည်။</string>
-  <string name="keycombo_menu_alert_button_trigger_modifier">%1$s သုံးရန်</string>
-  <string name="keycombo_menu_announce_new_trigger_modifier">ပြင်ဆင်ရန်ခလုတ်ကို %1$s သို့ပြောင်းထားသည်။</string>
+  <string name="keycombo_menu_choose_trigger_modifier">SandFly ကီး ရွေးရန်</string>
+  <string name="keycombo_menu_announce_new_trigger_modifier">SandFly ကီးကို %1$s သို့ ပြောင်းလိုက်သည်။</string>
   <string name="keycombo_menu_announce_active_keymap">%1$s ယခုပွင့်နေပါပြီ။</string>
   <string name="keycombo_menu_announce_reset_keymap">ခလုတ်မြေပုံကို ပြန်လည်သတ်မှတ်ပြီးပါပြီ။</string>
   <string name="keycombo_announce_shortcut_not_supported">ဖြတ်လမ်းကို ပံ့ပိုးမထားပါ</string>
-  <string name="value_default_keymap">မူရင်း ကီးမြေပုံ</string>
-  <string name="value_new_keymap">အဆင့်မြင့်ကီးမြေပုံ</string>
+  <string name="value_new_keymap">SandFly ကီးမြေပုံ</string>
   <string name="keycombo_menu_category_navigation">လမ်းညွှန်လုပ်ဆောင်ချက်</string>
   <string name="keycombo_menu_navigate_next">နောက်တစ်ခုသို့ လမ်းညွှန်ရန်</string>
   <string name="keycombo_menu_navigate_previous">ယခင်တစ်ခုသို့ လမ်းညွှန်ရန်</string>
@@ -266,7 +255,7 @@
   <string name="message_in_reset_keymap_confirm_dialog">ဤခလုတ်ပြမြေပုံအတွက် ဖြတ်လမ်းခလုတ်များကို ၎င်းတို့၏မူရင်းသို့ ပြန်လည်သတ်မှတ်လိုသည်မှာ သေချာပါသလား။ မှတ်ချက်၊ ဤလုပ်ဆောင်ချက်ကို ပြန်ပြောင်း၍မရပါ။</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">ပြန်လည်သတ်မှတ်ပါ</string>
   <string name="template_keycombo_menu_browse_mode_command">ဘရောက်စ်မုဒ်ရှိ %1$s</string>
-  <string name="keycombo_assign_dialog_default_keymap_instruction">ဖြတ်လမ်းအသစ်သတ်မှတ်ရန် %1$s ခလုတ်နှင့် တွဲနှိပ်ပါ။</string>
+  <string name="keycombo_assign_dialog_default_keymap_instruction">ဖြတ်လမ်းလင့်ခ်အသစ် သတ်မှတ်ရန် %1$s SandFly ကီးနှင့် ကီးပေါင်းစပ်မှုကို နှိပ်ပါ။</string>
   <string name="keycombo_unassigned">တာဝန် ပေးမထား</string>
   <string name="save_button_in_keycombo_assign_dialog">သိမ်းရန်</string>
   <string name="clear_button_in_keycombo_assign_dialog">ရှင်းရန်</string>
@@ -1804,4 +1793,10 @@
   <string name="title_pref_speech_dictionary">စကားပြော အဘိဓာန်</string>
   <string name="speech_dictionary_all_apps">အက်ပ်အားလုံး</string>
   <string name="speech_dictionary_not_said"><xliff:g id="text" example="#">%1$s</xliff:g> ကို မပြောပါ</string>
+  <string name="keycombo_key_modifier_insert">ထည့်ရန်</string>
+  <string name="keycombo_key_modifier_numpad_insert">နံပါတ်ကွက် ထည့်ရန်</string>
+  <string name="keycombo_menu_navigate_next_paragraph">နောက်စာပိုဒ်သို့ သွားရန်</string>
+  <string name="keycombo_menu_navigate_previous_paragraph">ယခင်စာပိုဒ်သို့ သွားရန်</string>
+  <string name="keycombo_key_modifier_ctrl_alt">Ctrl + Alt</string>
+  <string name="value_voiceover_keymap">VoiceOver ကီးမြေပုံ</string>
 </resources>

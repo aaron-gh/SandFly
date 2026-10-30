@@ -2,14 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">SandFly-н гарын заавар</string>
     <string name="sandfly_keyboard_tutorial_no_key"><xliff:g id="command" example="Дараагийн зүйл">%1$s</xliff:g>-д гарын товчлол байхгүй. «Тушаалууд» хэсэгт товчлол онооно уу эсвэл «Алхмыг алгасах»-ыг ашиглана уу.</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">Үзэх горимд «Сайжруулсан гарын зураг» шаардлагатай. Үүнийг <xliff:g id="settings_path" example="SandFly-н тохиргоо &gt; Гарын товчлол &gt; Гарны зураглалыг сонгох">%1$s</xliff:g> хэсэгт сонгоно уу эсвэл «Алхмыг алгасах»-ыг ашиглана уу.</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g> хоёр удаа</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">Хичээл дууслаа. Дараагийн хичээлийг эхлүүлэхийн тулд <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> дээр дарна уу.</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">Хичээл дууслаа. Зааврыг дуусгахын тулд <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> дээр дарна уу.</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">Веб хуудас</string>
-    <string name="sandfly_keyboard_tutorial_welcome_intro">Энэ заавар SandFly-н гарын товчлолыг заана. Тэдгээрийн ихэнх нь <xliff:g id="key" example="Action">%1$s</xliff:g> товчийг бусад товчтой хамт ашигладаг. <xliff:g id="location" example="Тусгай товч нь зүүн талын Alt товчны хажууд байх Windows товч юм.">%2$s</xliff:g> Ctrl яриаг зогсооно. Хичээл бүр нэг заавар өгч, түүнд нэрлэсэн товчнуудыг таныг дарах хүртэл хүлээгээд, дараагийнхыг өгнө. Заавар нь хичээлийн нэрийн дараах эхний зүйл юм. «Агуулга» бүх хичээлийг жагсаах ба заавар таны зогссон хичээлээс дахин нээгдэнэ.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">Энэ заавар SandFly-н гарын товчлолыг заана. Тэдгээрийн ихэнх нь SandFly-н товчийг (<xliff:g id="key" example="Action">%1$s</xliff:g>) бусад товчтой хамт ашигладаг. <xliff:g id="location" example="Тусгай товч нь зүүн талын Alt товчны хажууд байх Windows товч юм.">%2$s</xliff:g> Ctrl яриаг зогсооно. Хичээл бүр нэг заавар өгч, түүнд нэрлэсэн товчнуудыг таныг дарах хүртэл хүлээгээд, дараагийнхыг өгнө. Заавар нь хичээлийн нэрийн дараах эхний зүйл юм. «Агуулга» бүх хичээлийг жагсаах ба заавар таны зогссон хичээлээс дахин нээгдэнэ.</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">Тусгай товч нь зүүн талын Alt товчны хажууд байх Windows товч юм. Apple-н гар дээр энэ нь Зай авах товчны хажууд байх Command товч юм.</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">Alt товч нь Зай авах товчны хажууд байдаг.</string>
     <string name="sandfly_keyboard_tutorial_welcome_start">Эхлэхийн тулд <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> дээр дарна уу.</string>
     <string name="sandfly_keyboard_tutorial_move_intro">«Дараагийн зүйл» болон «Өмнөх зүйл» нь дэлгэц дээрх зүйлсээр унших дарааллаар шилжинэ.</string>
     <string name="sandfly_keyboard_tutorial_move_next">Дараагийн зүйл рүү шилжихийн тулд <xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g> дээр дарна уу. <xliff:g id="item" example="Өндөг">%2$s</xliff:g> хүртэл үргэлжлүүлнэ үү.</string>
@@ -53,4 +51,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">Гарын дадлага</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">Гарын товчлол бүр гүйцэтгэгдэхийн оронд өөрийн товчнууд болон тушаалыг хэлнэ. «Дараагийн зүйл», «Өмнөх зүйл» болон идэвхжүүлэх нь ажилласаар байна.</string>
     <string name="sandfly_keyboard_tutorial_practice_step">Юу хийдгийг сонсохын тулд дурын гарын товчлол дээр дарна уу. Зогсоохын тулд <xliff:g id="button" example="Дадлагыг дуусгах">%1$s</xliff:g>-г идэвхжүүлнэ үү.</string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">Ctrl болон Alt товчийг зэрэг дарж барина уу. Хоёулаа гарны зүүн доод хэсэгт байдаг.</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">Ихэнх гар дээр Insert товч сумтай товчнуудын дээрх зургаан товчны бүлэгт байдаг.</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">Тооны гарын insert нь Num Lock унтраалттай үед тооны гарын 0 товч юм.</string>
 </resources>

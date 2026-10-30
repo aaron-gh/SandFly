@@ -115,8 +115,6 @@ internal class TutorialStep(
   val silent: Boolean = false,
   /** The key that Android acts on with the Action key, which the tutorial takes in this step. */
   val systemKey: Int = 0,
-  /** Only possible while browse mode is available. */
-  val needsBrowseMode: Boolean = false,
   val check: StepCheck,
 )
 
@@ -991,7 +989,6 @@ internal object TutorialLessons {
             TutorialStep(
               R.string.sandfly_keyboard_tutorial_browse_mode_on,
               actions = listOf(R.string.shortcut_value_toggle_browse_mode),
-              needsBrowseMode = true,
             ) { input, _ ->
               if (input == TutorialInput.BrowseMode(enabled = true)) "" else null
             },
@@ -999,13 +996,11 @@ internal object TutorialLessons {
               R.string.sandfly_keyboard_tutorial_browse_mode_heading,
               actions = listOf(R.string.keycombo_shortcut_navigate_next_heading),
               names = listOf(R.string.sandfly_tutorial_forecast_weekend),
-              needsBrowseMode = true,
               check = focusedBy(Targets.WEEKEND, R.string.keycombo_shortcut_navigate_next_heading),
             ),
             TutorialStep(
               R.string.sandfly_keyboard_tutorial_browse_mode_off,
               actions = listOf(R.string.shortcut_value_toggle_browse_mode),
-              needsBrowseMode = true,
             ) { input, _ ->
               if (input == TutorialInput.BrowseMode(enabled = false)) "" else null
             },

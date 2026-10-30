@@ -7,19 +7,22 @@
             android:key="@string/pref_select_keymap_key"
             android:title="@string/keycombo_menu_select_keymap"
             android:summary="%s"
-            android:defaultValue="@string/default_keymap_entry_value"
+            android:defaultValue="@string/new_keymap_entry_value"
             android:entries="@array/pref_select_keymap_entries"
             android:entryValues="@array/pref_select_keymap_values" />
         <ListPreference
-            android:key="@string/pref_default_keymap_trigger_modifier_key"
+            android:key="@string/pref_voiceover_keymap_trigger_modifier_key"
             android:title="@string/keycombo_menu_choose_trigger_modifier"
             android:summary="%s"
-            android:defaultValue="@string/trigger_modifier_alt_entry_value"
-            android:entries="@array/pref_choose_trigger_modifier_entries"
-            android:entryValues="@array/pref_choose_trigger_modifier_values" />
+            android:defaultValue="@string/trigger_modifier_ctrl_alt_entry_value"
+            android:entries="@array/pref_voiceover_keymap_sandfly_key_entries"
+            android:entryValues="@array/pref_voiceover_keymap_sandfly_key_values" />
         <PreferenceScreen
             android:key="@string/pref_reset_keymap_key"
             android:title="@string/keycombo_menu_reset_keymap" />
+        <PreferenceScreen
+            android:key="@string/pref_view_system_keyboard_shortcuts_key"
+            android:title="@string/keycombo_menu_view_system_keyboard_shortcuts" />
     </PreferenceCategory>
     <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
         android:fragment="com.google.android.accessibility.talkback.commands.AppGesturesFragment"

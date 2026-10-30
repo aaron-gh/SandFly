@@ -2,14 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">Tutorial papan kekunci SandFly</string>
     <string name="sandfly_keyboard_tutorial_no_key"><xliff:g id="command" example="Item seterusnya">%1$s</xliff:g> tiada pintasan papan kekunci. Berikan satu dalam Perintah, atau gunakan Langkau langkah.</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">Mod semak imbas memerlukan Peta kekunci dipertingkatkan. Pilih peta kekunci itu dalam <xliff:g id="settings_path" example="Tetapan SandFly &gt; Pintasan papan kekunci &gt; Pilih peta kekunci">%1$s</xliff:g>, atau gunakan Langkau langkah.</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g> dua kali</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">Pelajaran selesai. Tekan <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> untuk memulakan pelajaran seterusnya.</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">Pelajaran selesai. Tekan <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> untuk menamatkan tutorial.</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">Halaman web</string>
-    <string name="sandfly_keyboard_tutorial_welcome_intro">Tutorial ini mengajar pintasan papan kekunci SandFly. Kebanyakannya menggunakan kekunci <xliff:g id="key" example="Action">%1$s</xliff:g> bersama kekunci lain. <xliff:g id="location" example="Kekunci Tindakan ialah kekunci Windows, di sebelah kekunci Alt kiri.">%2$s</xliff:g> Ctrl menghentikan pertuturan. Setiap pelajaran memberikan arahan, menunggu sehingga anda menekan kekunci yang dinyatakannya, kemudian memberikan arahan seterusnya. Arahan ialah item pertama selepas nama pelajaran. Kandungan menyenaraikan setiap pelajaran, dan tutorial dibuka semula pada pelajaran terakhir anda.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">Tutorial ini mengajar pintasan papan kekunci SandFly. Kebanyakannya menggunakan kekunci SandFly, <xliff:g id="key" example="Action">%1$s</xliff:g>, bersama kekunci lain. <xliff:g id="location" example="Kekunci Tindakan ialah kekunci Windows, di sebelah kekunci Alt kiri.">%2$s</xliff:g> Ctrl menghentikan pertuturan. Setiap pelajaran memberikan arahan, menunggu sehingga anda menekan kekunci yang dinyatakannya, kemudian memberikan arahan seterusnya. Arahan ialah item pertama selepas nama pelajaran. Kandungan menyenaraikan setiap pelajaran, dan tutorial dibuka semula pada pelajaran terakhir anda.</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">Kekunci Tindakan ialah kekunci Windows, di sebelah kekunci Alt kiri. Pada papan kekunci Apple, kekunci ini ialah kekunci Command, di sebelah bar ruang.</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">Kekunci Alt terletak di sebelah bar ruang.</string>
     <string name="sandfly_keyboard_tutorial_welcome_start">Tekan <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> untuk bermula.</string>
     <string name="sandfly_keyboard_tutorial_move_intro">Item seterusnya dan Item sebelumnya beralih melalui item pada skrin mengikut susunan bacaan.</string>
     <string name="sandfly_keyboard_tutorial_move_next">Tekan <xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g> untuk beralih ke item seterusnya. Teruskan sehingga anda sampai ke <xliff:g id="item" example="Telur">%2$s</xliff:g>.</string>
@@ -53,4 +51,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">Latihan papan kekunci</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">Setiap pintasan papan kekunci menyebut kekunci dan perintahnya dan tidak menjalankannya. Item seterusnya, Item sebelumnya dan pengaktifan masih berfungsi.</string>
     <string name="sandfly_keyboard_tutorial_practice_step">Tekan sebarang pintasan papan kekunci untuk mendengar fungsinya. Untuk berhenti, aktifkan <xliff:g id="button" example="Tamatkan latihan">%1$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">Tahan Ctrl dan Alt serentak. Kedua-duanya berada di bahagian bawah kiri papan kekunci.</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">Pada kebanyakan papan kekunci, Sisip (Insert) berada dalam kumpulan enam kekunci di atas kekunci anak panah.</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">Sisipan pad nombor ialah kekunci 0 pad nombor, dengan Num Lock dimatikan.</string>
 </resources>

@@ -2,15 +2,13 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">Навчальний посібник із клавіатури SandFly</string>
     <string name="sandfly_keyboard_tutorial_no_key">Для дії «<xliff:g id="command" example="Наступний елемент">%1$s</xliff:g>» немає комбінації клавіш. Призначте її в розділі «Команди» або скористайтеся кнопкою «Пропустити крок».</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">Для режиму перегляду потрібна «Покращена розкладка». Виберіть її в розділі <xliff:g id="settings_path" example="Налаштування SandFly &gt; Комбінації клавіш &gt; Вибрати прив’язку клавіш">%1$s</xliff:g> або скористайтеся кнопкою «Пропустити крок».</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g> двічі</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">Урок завершено. <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> — почати наступний урок.</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">Урок завершено. <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> — завершити посібник.</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">Вебсторінки</string>
 
-    <string name="sandfly_keyboard_tutorial_welcome_intro">Цей посібник навчає комбінацій клавіш SandFly. Більшість із них використовують клавішу «<xliff:g id="key" example="Action">%1$s</xliff:g>» разом з іншими клавішами. <xliff:g id="location" example="Клавіша дії – це клавіша Windows поруч із лівою клавішею Alt.">%2$s</xliff:g> Ctrl зупиняє мовлення. Кожен урок дає інструкцію, чекає, доки ви натиснете клавіші, які вона називає, а потім дає наступну. Інструкція — перший елемент після назви уроку. «Зміст» містить усі уроки, а посібник знову відкривається на уроці, на якому ви зупинилися.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">Цей посібник навчає комбінацій клавіш SandFly. Більшість із них використовують клавішу SandFly, «<xliff:g id="key" example="Action">%1$s</xliff:g>», разом з іншими клавішами. <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> Ctrl зупиняє мовлення. Кожен урок дає інструкцію, чекає, доки ви натиснете клавіші, які вона називає, а потім дає наступну. Інструкція — перший елемент після назви уроку. «Зміст» містить усі уроки, а посібник знову відкривається на уроці, на якому ви зупинилися.</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">Клавіша дії – це клавіша Windows поруч із лівою клавішею Alt. На клавіатурах Apple це клавіша Command поруч із пробілом.</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">Клавіша Alt розташована поруч із пробілом.</string>
     <string name="sandfly_keyboard_tutorial_welcome_start"><xliff:g id="keys" example="Action + Space">%1$s</xliff:g> — почати.</string>
 
     <string name="sandfly_keyboard_tutorial_move_intro">«Наступний елемент» і «Попередній елемент» переходять між елементами на екрані в порядку читання.</string>
@@ -67,4 +65,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">Практика клавіатури</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">Кожна комбінація клавіш озвучує свої клавіші й команду замість її виконання. «Наступний елемент», «Попередній елемент» і активація працюють як завжди.</string>
     <string name="sandfly_keyboard_tutorial_practice_step">Натисніть будь-яку комбінацію клавіш, щоб почути, що вона робить. Щоб зупинитися, активуйте кнопку «<xliff:g id="button" example="Завершити практику">%1$s</xliff:g>».</string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">Утримуйте Ctrl і Alt одночасно. Обидві клавіші розташовані внизу ліворуч на клавіатурі.</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">На більшості клавіатур клавіша «Вставити» розташована в групі з шести клавіш над клавішами зі стрілками.</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">Insert на цифровій клавіатурі – це клавіша 0 цифрової клавіатури, коли Num Lock вимкнено.</string>
 </resources>

@@ -2,14 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">SandFly को किबोर्ड ट्युटोरियल</string>
     <string name="sandfly_keyboard_tutorial_no_key"><xliff:g id="command" example="अर्को वस्तु">%1$s</xliff:g> को कुनै किबोर्ड सर्टकट छैन। “आदेशहरू” मा एउटा तोक्नुहोस्, वा “चरण छोड्नुहोस्” प्रयोग गर्नुहोस्।</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">ब्राउज मोडका लागि “परिष्कृत किम्याप” चाहिन्छ। यसलाई <xliff:g id="settings_path" example="SandFly का सेटिङ &gt; किबोर्ड सर्टकटहरू &gt; किम्याप चयन गर्नुहोस्">%1$s</xliff:g> मा छान्नुहोस्, वा “चरण छोड्नुहोस्” प्रयोग गर्नुहोस्।</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g> दुई पटक</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">पाठ पूरा भयो। अर्को पाठ सुरु गर्न <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> थिच्नुहोस्।</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">पाठ पूरा भयो। ट्यूटोरियल समाप्त गर्न <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> थिच्नुहोस्।</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">वेब पेजहरू</string>
-    <string name="sandfly_keyboard_tutorial_welcome_intro">यो ट्यूटोरियलले SandFly का किबोर्ड सर्टकटहरू सिकाउँछ। तीमध्ये धेरैजसोले अन्य कीहरूसँग <xliff:g id="key" example="Action">%1$s</xliff:g> की प्रयोग गर्छन्। <xliff:g id="location" example="एक्सन की बायाँ Alt कीको छेउमा रहेको Windows की हो।">%2$s</xliff:g> Ctrl ले बोली रोक्छ। प्रत्येक पाठले एउटा निर्देशन दिन्छ, त्यसले बताएका कीहरू तपाईंले नथिचेसम्म पर्खन्छ, अनि अर्को दिन्छ। निर्देशन पाठको नामपछिको पहिलो वस्तु हो। “विषयसूची” ले सबै पाठ देखाउँछ, र ट्यूटोरियल तपाईं भएकै पाठमा फेरि खुल्छ।</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">यो ट्यूटोरियलले SandFly का किबोर्ड सर्टकटहरू सिकाउँछ। तीमध्ये धेरैजसोले अन्य कीहरूसँग SandFly की, <xliff:g id="key" example="Action">%1$s</xliff:g>, प्रयोग गर्छन्। <xliff:g id="location" example="एक्सन की बायाँ Alt कीको छेउमा रहेको Windows की हो।">%2$s</xliff:g> Ctrl ले बोली रोक्छ। प्रत्येक पाठले एउटा निर्देशन दिन्छ, त्यसले बताएका कीहरू तपाईंले नथिचेसम्म पर्खन्छ, अनि अर्को दिन्छ। निर्देशन पाठको नामपछिको पहिलो वस्तु हो। “विषयसूची” ले सबै पाठ देखाउँछ, र ट्यूटोरियल तपाईं भएकै पाठमा फेरि खुल्छ।</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">एक्सन की बायाँ Alt कीको छेउमा रहेको Windows की हो। Apple किबोर्डहरूमा यो स्पेस बारको छेउमा रहेको Command की हो।</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">Alt की स्पेस बारको छेउमा हुन्छ।</string>
     <string name="sandfly_keyboard_tutorial_welcome_start">सुरु गर्न <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> थिच्नुहोस्।</string>
     <string name="sandfly_keyboard_tutorial_move_intro">“अर्को वस्तु” र “अघिल्लो वस्तु” ले स्क्रिनका वस्तुहरूमा पढ्ने क्रममा सार्छन्।</string>
     <string name="sandfly_keyboard_tutorial_move_next">अर्को वस्तुमा जान <xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g> थिच्नुहोस्। <xliff:g id="item" example="अण्डा">%2$s</xliff:g> सम्म नपुगुन्जेल जारी राख्नुहोस्।</string>
@@ -53,4 +51,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">किबोर्ड अभ्यास</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">प्रत्येक किबोर्ड सर्टकटले आदेश चलाउनुको सट्टा आफ्ना कीहरू र आदेश बताउँछ। “अर्को वस्तु”, “अघिल्लो वस्तु” र सक्रिय पार्ने काम अझै चल्छन्।</string>
     <string name="sandfly_keyboard_tutorial_practice_step">कुनै पनि किबोर्ड सर्टकट थिचेर त्यसले के गर्छ सुन्नुहोस्। रोक्न <xliff:g id="button" example="अभ्यास अन्त्य गर्नुहोस्">%1$s</xliff:g> सक्रिय पार्नुहोस्।</string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">Ctrl र Alt सँगै थिचिराख्नुहोस्। दुवै किबोर्डको तल बायाँतिर हुन्छन्।</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">धेरैजसो किबोर्डमा, हाल्नुहोस् (Insert) की एरो कीहरूमाथिको छवटा कीको समूहमा हुन्छ।</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">Num Lock अफ हुँदा नम्प्याड इन्सर्ट की नम्बर प्याडको 0 की हो।</string>
 </resources>

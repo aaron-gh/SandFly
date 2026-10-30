@@ -2,14 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">Дапаможнік па клавіятуры SandFly</string>
     <string name="sandfly_keyboard_tutorial_no_key">У каманды «<xliff:g id="command" example="Наступны элемент">%1$s</xliff:g>» няма спалучэння клавіш. Прызначце яго ў раздзеле «Каманды» або выкарыстоўвайце «Прапусціць крок».</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">Для рэжыму прагляду патрэбна «Пашыраная раскладка спалучэнняў клавіш». Выберыце яе ў раздзеле «<xliff:g id="settings_path" example="Налады SandFly &gt; Спалучэнні клавіш &gt; Выбраць раскладку клавіятуры">%1$s</xliff:g>» або выкарыстоўвайце «Прапусціць крок».</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Клавіша дзеяння">%1$s</xliff:g> двойчы</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">Урок пройдзены. Націсніце <xliff:g id="keys" example="Клавіша дзеяння + Прабел">%1$s</xliff:g>, каб пачаць наступны ўрок.</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">Урок пройдзены. Націсніце <xliff:g id="keys" example="Клавіша дзеяння + Прабел">%1$s</xliff:g>, каб завяршыць дапаможнік.</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">Вэб-старонкі</string>
-    <string name="sandfly_keyboard_tutorial_welcome_intro">Гэты дапаможнік навучае спалучэнням клавіш SandFly. Большасць з іх выкарыстоўвае клавішу «<xliff:g id="key" example="Клавіша дзеяння">%1$s</xliff:g>» разам з іншымі клавішамі. <xliff:g id="location" example="Клавіша дзеяння – гэта клавіша Windows побач з левай клавішай Alt.">%2$s</xliff:g> Ctrl спыняе маўленне. Кожны ўрок дае інструкцыю, чакае, пакуль вы націснеце названыя ў ёй клавішы, і дае наступную. Інструкцыя – першы элемент пасля назвы ўрока. У раздзеле «Змест» пералічаны ўсе ўрокі, а дапаможнік адкрываецца на ўроку, на якім вы спыніліся.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">Гэты дапаможнік навучае спалучэнням клавіш SandFly. Большасць з іх выкарыстоўвае клавішу SandFly, «<xliff:g id="key" example="Action">%1$s</xliff:g>», разам з іншымі клавішамі. <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> Ctrl спыняе маўленне. Кожны ўрок дае інструкцыю, чакае, пакуль вы націснеце названыя ў ёй клавішы, і дае наступную. Інструкцыя – першы элемент пасля назвы ўрока. У раздзеле «Змест» пералічаны ўсе ўрокі, а дапаможнік адкрываецца на ўроку, на якім вы спыніліся.</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">Клавіша дзеяння – гэта клавіша Windows побач з левай клавішай Alt. На клавіятурах Apple гэта клавіша Command побач з клавішай прабелу.</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">Клавіша Alt знаходзіцца побач з клавішай прабелу.</string>
     <string name="sandfly_keyboard_tutorial_welcome_start">Націсніце <xliff:g id="keys" example="Клавіша дзеяння + Прабел">%1$s</xliff:g>, каб пачаць.</string>
     <string name="sandfly_keyboard_tutorial_move_intro">«Наступны элемент» і «Папярэдні элемент» перамяшчаюць па элементах на экране ў парадку чытання.</string>
     <string name="sandfly_keyboard_tutorial_move_next">Націсніце <xliff:g id="keys" example="Клавіша дзеяння + Стрэлка ўправа">%1$s</xliff:g>, каб перайсці да наступнага элемента. Працягвайце, пакуль не дойдзеце да элемента «<xliff:g id="item" example="Яйкі">%2$s</xliff:g>».</string>
@@ -53,4 +51,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">Практыка на клавіятуры</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">Кожнае спалучэнне клавіш замест выканання называе свае клавішы і каманду. «Наступны элемент», «Папярэдні элемент» і актывацыя працуюць як звычайна.</string>
     <string name="sandfly_keyboard_tutorial_practice_step">Націсніце любое спалучэнне клавіш, каб даведацца, што яно робіць. Каб скончыць, актывуйце кнопку «<xliff:g id="button" example="Завяршыць практыку">%1$s</xliff:g>».</string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">Утрымлівайце націснутымі Ctrl і Alt адначасова. Абедзве клавішы знаходзяцца ўнізе злева на клавіятуры.</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">На большасці клавіятур Insert знаходзіцца ў групе з шасці клавіш над клавішамі са стрэлкамі.</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">Insert на лічбавай клавіятуры – гэта клавіша 0 на лічбавай клавіятуры пры выключаным Num Lock.</string>
 </resources>

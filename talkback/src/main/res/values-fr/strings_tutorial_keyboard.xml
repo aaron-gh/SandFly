@@ -2,14 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">Tutoriel clavier SandFly</string>
     <string name="sandfly_keyboard_tutorial_no_key"><xliff:g id="command" example="Next item">%1$s</xliff:g> n\'a pas de raccourci clavier. Attribuez-en un dans Commandes ou utilisez « Ignorer l\'étape ».</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">Le mode navigation nécessite le jeu de raccourcis clavier amélioré. Choisissez-le dans <xliff:g id="settings_path" example="SandFly settings &gt; Keyboard shortcuts &gt; Choose a keymap">%1$s</xliff:g> ou utilisez « Ignorer l\'étape ».</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g> deux fois</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">Leçon terminée. Appuyez sur <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> pour commencer la leçon suivante.</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">Leçon terminée. Appuyez sur <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> pour terminer le tutoriel.</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">Pages Web</string>
-    <string name="sandfly_keyboard_tutorial_welcome_intro">Ce tutoriel présente les raccourcis clavier de SandFly. La plupart utilisent la touche <xliff:g id="key" example="Action">%1$s</xliff:g> avec d\'autres touches. <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> Ctrl arrête la voix. Chaque leçon donne une instruction, attend que vous ayez appuyé sur les touches indiquées, puis donne la suivante. L\'instruction est le premier élément après le nom de la leçon. Sommaire liste toutes les leçons, et le tutoriel se rouvre à la leçon en cours.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">Ce tutoriel présente les raccourcis clavier de SandFly. La plupart utilisent la touche SandFly, <xliff:g id="key" example="Action">%1$s</xliff:g>, avec d\'autres touches. <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> Ctrl arrête la voix. Chaque leçon donne une instruction, attend que vous ayez appuyé sur les touches indiquées, puis donne la suivante. L\'instruction est le premier élément après le nom de la leçon. Sommaire liste toutes les leçons, et le tutoriel se rouvre à la leçon en cours.</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">La touche d\'action est la touche Windows, à côté de la touche Alt de gauche. Sur les claviers Apple, il s\'agit de la touche Commande, à côté de la barre d\'espace.</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">La touche Alt se trouve à côté de la barre d\'espace.</string>
     <string name="sandfly_keyboard_tutorial_welcome_start">Appuyez sur <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> pour commencer.</string>
     <string name="sandfly_keyboard_tutorial_move_intro">Élément suivant et Élément précédent parcourent les éléments à l\'écran dans l\'ordre de lecture.</string>
     <string name="sandfly_keyboard_tutorial_move_next">Appuyez sur <xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g> pour passer à l\'élément suivant. Continuez jusqu\'à <xliff:g id="item" example="Eggs">%2$s</xliff:g>.</string>
@@ -53,4 +51,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">Entraînement au clavier</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">Chaque raccourci clavier énonce ses touches et sa commande au lieu de l\'exécuter. Élément suivant, Élément précédent et l\'activation fonctionnent toujours.</string>
     <string name="sandfly_keyboard_tutorial_practice_step">Appuyez sur un raccourci clavier pour savoir ce qu\'il fait. Pour arrêter, activez <xliff:g id="button" example="End practice">%1$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">Maintenez les touches Ctrl et Alt enfoncées ensemble. Les deux se trouvent en bas à gauche du clavier.</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">Sur la plupart des claviers, la touche Insérer se trouve dans le groupe de six touches au-dessus des touches fléchées.</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">La touche Insérer du pavé numérique est la touche 0 du pavé numérique, lorsque Verr. Num est désactivé.</string>
 </resources>

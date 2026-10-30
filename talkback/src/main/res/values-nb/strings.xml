@@ -117,28 +117,17 @@
       &lt;li&gt;Noen av modifikatortastene er annerledes.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">Finn ut mer om tastaturoppsett</string>
   <string name="keycombo_go_to_settings">Gå til Innstillinger</string>
-  <string name="keycombo_new_keymap_notification_dialog_positive_button">Greit</string>
-  <string name="keycombo_new_keymap_notification_dialog_negative_button">Innstillinger</string>
-  <string name="keycombo_new_keymap_notification_dialog_neutral_button">Finn ut mer</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_classic_keymap">Det klassiske tastaturoppsettet støttes ikke lenger</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">Nå bruker du tastaturoppsettet som er standard for SandFly. Det finnes også et nytt og bedre tastaturoppsett med mange nye kommandoer. Finn ut mer i brukerstøtten, eller bytt til det nye tastaturoppsettet i innstillingene.</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">Et nytt tastaturoppsett er tilgjengelig</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">Det nye, forbedrede tastaturoppsettet for SandFly har mange nye kommandoer. Finn ut mer i brukerstøtten, eller bytt til det nye tastaturoppsettet i innstillingene.</string>
   <string name="keycombo_warning_content_description">Mer informasjon om modifikatortasten</string>
   <string name="keycombo_menu_category_select_keymap">Tastaturoppsett</string>
   <string name="keycombo_menu_select_keymap">Velg et tastaturoppsett</string>
   <string name="keycombo_menu_reset_keymap">Tilbakestill tastaturoppsettet</string>
   <string name="keycombo_menu_view_system_keyboard_shortcuts">Se hurtigtaster for systemet</string>
-  <string name="keycombo_menu_choose_trigger_modifier">Velg modifikatortast</string>
-  <string name="keycombo_menu_alert_title_trigger_modifier">Vil du bruke %1$s som modifikatortast?</string>
-  <string name="keycombo_menu_alert_message_trigger_modifier">Nå bruker SandFly <xliff:g id="current_trigger_modifier" example="Alt">%1$s</xliff:g> som modifikatortast.</string>
-  <string name="keycombo_menu_alert_button_trigger_modifier">Bruk %1$s</string>
-  <string name="keycombo_menu_announce_new_trigger_modifier">Modifikatortasten er endret til %1$s.</string>
+  <string name="keycombo_menu_choose_trigger_modifier">Velg SandFly-tast</string>
+  <string name="keycombo_menu_announce_new_trigger_modifier">SandFly-tasten er endret til %1$s.</string>
   <string name="keycombo_menu_announce_active_keymap">%1$s er nå aktivt.</string>
   <string name="keycombo_menu_announce_reset_keymap">Tastaturoppsettet er tilbakestilt.</string>
   <string name="keycombo_announce_shortcut_not_supported">Hurtigtasten støttes ikke</string>
-  <string name="value_default_keymap">Standard tastaturoppsett</string>
-  <string name="value_new_keymap">Utvidet tastaturoppsett</string>
+  <string name="value_new_keymap">SandFly-tastaturoppsett</string>
   <string name="keycombo_menu_category_navigation">Navigasjonshandlinger</string>
   <string name="keycombo_menu_navigate_next">Gå til det neste elementet</string>
   <string name="keycombo_menu_navigate_previous">Gå til det forrige elementet</string>
@@ -266,7 +255,7 @@
   <string name="message_in_reset_keymap_confirm_dialog">Er du sikker på at du vil tilbakestille hurtigtastene for tastaturoppsettet til standardverdiene? Vær oppmerksom på at denne handlingen ikke kan angres.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">Tilbakestill</string>
   <string name="template_keycombo_menu_browse_mode_command">%1$s i surfemodus</string>
-  <string name="keycombo_assign_dialog_default_keymap_instruction">Trykk inn tastekombinasjonen med den utløsende modifikatortasten %1$s for å angi en ny hurtigtast.</string>
+  <string name="keycombo_assign_dialog_default_keymap_instruction">Trykk på tastekombinasjonen med SandFly-tasten %1$s for å angi en ny snarvei.</string>
   <string name="keycombo_unassigned">Ikke tildelt</string>
   <string name="save_button_in_keycombo_assign_dialog">Lagre</string>
   <string name="clear_button_in_keycombo_assign_dialog">Tøm</string>
@@ -1804,4 +1793,10 @@
   <string name="title_pref_speech_dictionary">Taleordbok</string>
   <string name="speech_dictionary_all_apps">Alle apper</string>
   <string name="speech_dictionary_not_said"><xliff:g id="text" example="#">%1$s</xliff:g> sies ikke</string>
+  <string name="keycombo_key_modifier_insert">Sett inn</string>
+  <string name="keycombo_key_modifier_numpad_insert">Talltastatur – Insert</string>
+  <string name="keycombo_menu_navigate_next_paragraph">Gå til neste avsnitt</string>
+  <string name="keycombo_menu_navigate_previous_paragraph">Gå til forrige avsnitt</string>
+  <string name="keycombo_key_modifier_ctrl_alt">Ctrl + Alt</string>
+  <string name="value_voiceover_keymap">VoiceOver-tastaturoppsett</string>
 </resources>

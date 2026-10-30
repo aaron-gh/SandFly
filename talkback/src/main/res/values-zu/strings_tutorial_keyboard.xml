@@ -2,15 +2,13 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">Okokufundisa kwekhibhodi ye-SandFly</string>
     <string name="sandfly_keyboard_tutorial_no_key">Okuthi <xliff:g id="command" example="Into elandelayo">%1$s</xliff:g> akunaso isinqamuleli sekhibhodi. Nikeza esisodwa kokuthi Imiyalo, noma usebenzise okuthi Yeqa isinyathelo.</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">Imodi yokubhrawuza idinga okuthi Imephu esemqoka ethuthukisiwe. Yikhethe kokuthi <xliff:g id="settings_path" example="Amasethingi weSandFly &gt; Izinqamuleli zekhibhodi &gt; Khetha ukhiye wemephu">%1$s</xliff:g>, noma usebenzise okuthi Yeqa isinyathelo.</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g> kabili</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">Isifundo siqediwe. Cindezela <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> ukuze uqale isifundo esilandelayo.</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">Isifundo siqediwe. Cindezela <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> ukuze uqede okokufundisa.</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">Amakhasi ewebhu</string>
 
-    <string name="sandfly_keyboard_tutorial_welcome_intro">Lokhu kokufundisa kufundisa izinqamuleli zekhibhodi ze-SandFly. Iningi lazo lisebenzisa inkinobho ethi <xliff:g id="key" example="Action">%1$s</xliff:g> nezinye izinkinobho. <xliff:g id="location" example="Inkinobho ethi Isenzo yinkinobho ethi Windows, eseduze nenkinobho ethi Alt engakwesobunxele.">%2$s</xliff:g> U-Ctrl umisa inkulumo. Isifundo ngasinye sinikeza umyalelo, silinde uze ucindezele izinkinobho ezishiwo umyalelo, bese sinikeza olandelayo. Umyalelo uyinto yokuqala ngemva kwegama lesifundo. Okuthi Okuqukethwe kubala zonke izifundo, futhi okokufundisa kuvuleka futhi esifundweni obukuso.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">Lokhu kokufundisa kufundisa izinqamuleli zekhibhodi ze-SandFly. Iningi lazo lisebenzisa ukhiye weSandFly, <xliff:g id="key" example="Action">%1$s</xliff:g>, nezinye izinkinobho. <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> U-Ctrl umisa inkulumo. Isifundo ngasinye sinikeza umyalelo, silinde uze ucindezele izinkinobho ezishiwo umyalelo, bese sinikeza olandelayo. Umyalelo uyinto yokuqala ngemva kwegama lesifundo. Okuthi Okuqukethwe kubala zonke izifundo, futhi okokufundisa kuvuleka futhi esifundweni obukuso.</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">Inkinobho ethi Isenzo yinkinobho ethi Windows, eseduze nenkinobho ethi Alt engakwesobunxele. Kumakhibhodi e-Apple, yinkinobho ethi Command, eseduze nenkinobho ethi Space.</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">Inkinobho ethi Alt iseduze nenkinobho ethi Space.</string>
     <string name="sandfly_keyboard_tutorial_welcome_start">Cindezela <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> ukuze uqale.</string>
 
     <string name="sandfly_keyboard_tutorial_move_intro">Okuthi Into elandelayo nokuthi Into yangaphambilini kuhamba ezintweni ezisesikrinini ngokulandelana kokufunda.</string>
@@ -67,4 +65,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">Ukuzijwayeza ikhibhodi</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">Isinqamuleli sekhibhodi ngasinye sisho izinkinobho zaso nomyalo waso esikhundleni sokuwusebenzisa. Okuthi Into elandelayo, okuthi Into yangaphambilini nokwenza kusebenze kusasebenza.</string>
     <string name="sandfly_keyboard_tutorial_practice_step">Cindezela noma yisiphi isinqamuleli sekhibhodi ukuze uzwe ukuthi senzani. Ukuze uyeke, yenza kusebenze okuthi <xliff:g id="button" example="Qeda ukuzijwayeza">%1$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">Bamba u-Ctrl no-Alt ndawonye. Kokubili kungezansi kwesokunxele kwekhibhodi.</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">Kumakhibhodi amaningi, inkinobho ethi Faka isequlwini lezinkinobho eziyisithupha ngaphezu kwezinkinobho zemicibisholo.</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">Ukufaka kweNumpad yinkinobho ethi 0 yephedi yezinombolo, uma i-Num Lock ivaliwe.</string>
 </resources>

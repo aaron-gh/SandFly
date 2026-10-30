@@ -2,14 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">SandFly-toetsenbordtutorial</string>
     <string name="sandfly_keyboard_tutorial_no_key"><xliff:g id="command" example="Volgend item">%1$s</xliff:g> heeft geen sneltoets. Wijs er een toe in Commando\'s, of gebruik Stap overslaan.</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">Browsemodus vereist de Verbeterde keymap. Kies deze in <xliff:g id="settings_path" example="Instellingen voor SandFly &gt; Sneltoetsen &gt; Een keymap kiezen">%1$s</xliff:g>, of gebruik Stap overslaan.</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g> twee keer</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">Les voltooid. Druk op <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> om de volgende les te starten.</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">Les voltooid. Druk op <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> om de tutorial af te ronden.</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">Webpagina\'s</string>
-    <string name="sandfly_keyboard_tutorial_welcome_intro">Deze tutorial leert je de sneltoetsen van SandFly. De meeste gebruiken de <xliff:g id="key" example="Action">%1$s</xliff:g>-toets met andere toetsen. <xliff:g id="location" example="De Actie-toets is de Windows-toets, naast de linker Alt-toets.">%2$s</xliff:g> Ctrl stopt de spraak. Elke les geeft een instructie, wacht tot je de toetsen hebt ingedrukt die erin worden genoemd en geeft dan de volgende. De instructie is het eerste item na de naam van de les. Inhoud toont alle lessen, en de tutorial wordt weer geopend bij de les waar je was.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">Deze tutorial leert je de sneltoetsen van SandFly. De meeste gebruiken de SandFly-toets, <xliff:g id="key" example="Action">%1$s</xliff:g>, met andere toetsen. <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> Ctrl stopt de spraak. Elke les geeft een instructie, wacht tot je de toetsen hebt ingedrukt die erin worden genoemd en geeft dan de volgende. De instructie is het eerste item na de naam van de les. Inhoud toont alle lessen, en de tutorial wordt weer geopend bij de les waar je was.</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">De Actie-toets is de Windows-toets, naast de linker Alt-toets. Op Apple-toetsenborden is dit de Command-toets, naast de spatiebalk.</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">De Alt-toets zit naast de spatiebalk.</string>
     <string name="sandfly_keyboard_tutorial_welcome_start">Druk op <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> om te beginnen.</string>
     <string name="sandfly_keyboard_tutorial_move_intro">Volgend item en Vorig item gaan in leesvolgorde door de items op het scherm.</string>
     <string name="sandfly_keyboard_tutorial_move_next">Druk op <xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g> om naar het volgende item te gaan. Ga door tot je bij <xliff:g id="item" example="Eieren">%2$s</xliff:g> bent.</string>
@@ -53,4 +51,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">Toetsenbord oefenen</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">Elke sneltoets zegt zijn toetsen en commando in plaats van het commando uit te voeren. Volgend item, Vorig item en activeren werken nog wel.</string>
     <string name="sandfly_keyboard_tutorial_practice_step">Druk op een willekeurige sneltoets om te horen wat die doet. Activeer <xliff:g id="button" example="Oefenen beëindigen">%1$s</xliff:g> om te stoppen.</string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">Houd Ctrl en Alt samen ingedrukt. Beide zitten linksonder op het toetsenbord.</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">Op de meeste toetsenborden zit Invoegen in de groep van zes toetsen boven de pijltoetsen.</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">Insert op het numerieke toetsenblok is de 0-toets van het numerieke toetsenblok, met Num Lock uit.</string>
 </resources>

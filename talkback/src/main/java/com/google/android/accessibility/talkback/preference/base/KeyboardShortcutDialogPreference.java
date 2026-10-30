@@ -38,6 +38,7 @@ import com.google.android.accessibility.talkback.commands.Commands;
 import com.google.android.accessibility.talkback.keyboard.KeyCombo;
 import com.google.android.accessibility.talkback.keyboard.KeyComboManager;
 import com.google.android.accessibility.talkback.keyboard.KeyComboModel;
+import com.google.android.accessibility.talkback.keyboard.SandFlyKey;
 import com.google.android.accessibility.talkback.preference.PreferencesActivityUtils;
 import com.google.android.accessibility.utils.Performance.EventId;
 import com.google.android.accessibility.utils.ServiceKeyEventListener;
@@ -241,12 +242,16 @@ public class KeyboardShortcutDialogPreference extends Preference
     // won't be used and must not be used in this function.
     KeyCombo keyCombo = new KeyCombo(keyComboCode, /* triggerModifierUsed= */ false);
     int triggerModifier = getTriggerModifier();
+    // The SandFly key is used only when all of it is pressed: Ctrl alone isn't Ctrl + Alt.
+    boolean triggerModifierUsed =
+        triggerModifier != KeyComboModel.NO_MODIFIER
+            && (keyCombo.getModifiers() & triggerModifier) == triggerModifier;
     this.tempKeyCombo =
         new KeyCombo(
-            keyCombo.getModifiers() & ~triggerModifier,
+            keyCombo.getModifiers() & ~(triggerModifierUsed ? triggerModifier : 0),
             keyCombo.getPrefixKeyCode(),
             keyCombo.getKeyCode(),
-            (keyCombo.getModifiers() & triggerModifier) != 0);
+            triggerModifierUsed);
   }
 
   /** Sets temporary key combo. */
@@ -266,6 +271,28 @@ public class KeyboardShortcutDialogPreference extends Preference
 
   private int getTriggerModifier() {
     return keyComboManager.getKeyComboModel().getTriggerModifier();
+  }
+
+  /** Returns whether [event] releases the SandFly key, or a key of it. */
+  private boolean isSandFlyKeyRelease(KeyEvent event) {
+    if (event.getAction() != KeyEvent.ACTION_UP) {
+      return false;
+    }
+    @Nullable SandFlyKey sandFlyKey = keyComboManager.getSandFlyKey();
+    if (sandFlyKey == null) {
+      return false;
+    }
+    return switch (sandFlyKey) {
+      case ACTION -> keyComboManager.isMetaKey(event.getKeyCode());
+      case CTRL_ALT -> {
+        int keyCode = event.getKeyCode();
+        yield keyCode == KeyEvent.KEYCODE_CTRL_LEFT
+            || keyCode == KeyEvent.KEYCODE_CTRL_RIGHT
+            || keyCode == KeyEvent.KEYCODE_ALT_LEFT
+            || keyCode == KeyEvent.KEYCODE_ALT_RIGHT;
+      }
+      case INSERT, NUMPAD_INSERT -> event.getKeyCode() == sandFlyKey.getKeyCode();
+    };
   }
 
   private void setKeyEventSource(int keyEventSource) {
@@ -352,7 +379,7 @@ public class KeyboardShortcutDialogPreference extends Preference
 
     if (supportedSequenceKeyInfra) {
       int currentKeyCode = event.getKeyCode();
-      int eventEffectiveModifiers = event.getModifiers() & KeyCombo.KEY_EVENT_MODIFIER_MASK;
+      int eventEffectiveModifiers = keyComboManager.modifiersOf(event);
       int triggerModifier = keyComboManager.getKeyComboModel().getTriggerModifier();
       if (currentSequenceKeyState == STATE_PREFIX_KEY_NOT_PRESSED) {
         boolean onlyTriggerModifierPressed = eventEffectiveModifiers == triggerModifier;
@@ -370,7 +397,7 @@ public class KeyboardShortcutDialogPreference extends Preference
           currentSequenceKeyState = STATE_PREFIX_KEY_PRESSED;
           triggerModifierUp = false;
         } else {
-          setTemporaryKeyCombo(KeyComboManager.getKeyComboCode(event));
+          setTemporaryKeyCombo(keyComboManager.getKeyComboCodeWithSandFlyKey(event));
         }
         updateKeyAssignmentText();
         return true;
@@ -425,13 +452,13 @@ public class KeyboardShortcutDialogPreference extends Preference
         } else {
           // Scenario 4: Abort the sequence key assignment and treat the keyevent as a normal key
           // combo.
-          setTemporaryKeyCombo(KeyComboManager.getKeyComboCode(event));
+          setTemporaryKeyCombo(keyComboManager.getKeyComboCodeWithSandFlyKey(event));
           currentSequenceKeyState = STATE_PREFIX_KEY_NOT_PRESSED;
         }
         updateKeyAssignmentText();
       }
     } else {
-      setTemporaryKeyCombo(KeyComboManager.getKeyComboCode(event));
+      setTemporaryKeyCombo(keyComboManager.getKeyComboCodeWithSandFlyKey(event));
       updateKeyAssignmentText();
     }
 
@@ -448,9 +475,7 @@ public class KeyboardShortcutDialogPreference extends Preference
     }
 
     // Check if a key up event is trigger modifier.
-    if (keyComboManager.getKeyComboModel().getTriggerModifier() == KeyEvent.META_META_ON
-        && keyComboManager.isMetaKey(event.getKeyCode())
-        && event.getAction() == KeyEvent.ACTION_UP) {
+    if (isSandFlyKeyRelease(event)) {
       triggerModifierUp = true;
     }
 

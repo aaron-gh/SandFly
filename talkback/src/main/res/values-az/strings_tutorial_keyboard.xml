@@ -2,14 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">SandFly klaviatura dərsliyi</string>
     <string name="sandfly_keyboard_tutorial_no_key"><xliff:g id="command" example="Növbəti element">%1$s</xliff:g> üçün klaviatura qısayolu yoxdur. “Əmrlər” bölməsində qısayol təyin edin və ya “Addımı ötür” istifadə edin.</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">Axtarış rejimi üçün “Təkmilləşdirilmiş klaviatura düzülüşü” lazımdır. Onu <xliff:g id="settings_path" example="SandFly ayarları &gt; Klaviatura qısayolları &gt; Əsas xəritə seçin">%1$s</xliff:g> bölməsində seçin və ya “Addımı ötür” istifadə edin.</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Əməliyyat">%1$s</xliff:g> iki dəfə</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">Dərs tamamlandı. Növbəti dərsə başlamaq üçün <xliff:g id="keys" example="Əməliyyat + Boşluq">%1$s</xliff:g> basın.</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">Dərs tamamlandı. Dərsliyi bitirmək üçün <xliff:g id="keys" example="Əməliyyat + Boşluq">%1$s</xliff:g> basın.</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">Veb səhifələr</string>
-    <string name="sandfly_keyboard_tutorial_welcome_intro">Bu dərslik SandFly-ın klaviatura qısayollarını öyrədir. Onların çoxu digər düymələrlə birlikdə <xliff:g id="key" example="Əməliyyat">%1$s</xliff:g> düyməsindən istifadə edir. <xliff:g id="location" example="Əməliyyat düyməsi sol Alt düyməsinin yanındakı Windows düyməsidir.">%2$s</xliff:g> Ctrl nitqi dayandırır. Hər dərs bir təlimat verir, onun adını çəkdiyi düymələrə basana qədər gözləyir, sonra növbətisini verir. Təlimat dərsin adından sonrakı ilk elementdir. Mündəricat bütün dərsləri göstərir və dərslik qaldığınız dərsdən yenidən açılır.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">Bu dərslik SandFly-ın klaviatura qısayollarını öyrədir. Onların çoxu digər düymələrlə birlikdə SandFly düyməsindən, <xliff:g id="key" example="Action">%1$s</xliff:g>, istifadə edir. <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> Ctrl nitqi dayandırır. Hər dərs bir təlimat verir, onun adını çəkdiyi düymələrə basana qədər gözləyir, sonra növbətisini verir. Təlimat dərsin adından sonrakı ilk elementdir. Mündəricat bütün dərsləri göstərir və dərslik qaldığınız dərsdən yenidən açılır.</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">Əməliyyat düyməsi sol Alt düyməsinin yanındakı Windows düyməsidir. Apple klaviaturalarında bu, boşluq düyməsinin yanındakı Command düyməsidir.</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">Alt düyməsi boşluq düyməsinin yanındadır.</string>
     <string name="sandfly_keyboard_tutorial_welcome_start">Başlamaq üçün <xliff:g id="keys" example="Əməliyyat + Boşluq">%1$s</xliff:g> basın.</string>
     <string name="sandfly_keyboard_tutorial_move_intro">Növbəti element və Əvvəlki element oxuma sırası ilə ekrandakı elementlər arasında keçir.</string>
     <string name="sandfly_keyboard_tutorial_move_next">Növbəti elementə keçmək üçün <xliff:g id="keys" example="Əməliyyat + Sağ ox">%1$s</xliff:g> basın. <xliff:g id="item" example="Yumurta">%2$s</xliff:g> elementinə çatana qədər davam edin.</string>
@@ -53,4 +51,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">Klaviatura məşqi</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">Hər klaviatura qısayolu icra edilmək əvəzinə düymələrini və əmrini deyir. Növbəti element, Əvvəlki element və aktivləşdirmə yenə işləyir.</string>
     <string name="sandfly_keyboard_tutorial_practice_step">Nə etdiyini eşitmək üçün istənilən klaviatura qısayoluna basın. Dayandırmaq üçün <xliff:g id="button" example="Məşqi bitir">%1$s</xliff:g> düyməsini aktivləşdirin.</string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">Ctrl və Alt düymələrini birlikdə basılı saxlayın. Hər ikisi klaviaturanın aşağı sol hissəsindədir.</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">Əksər klaviaturalarda Daxil edin düyməsi ox düymələrinin üstündəki altı düymədən ibarət qrupdadır.</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">Rəqəm paneli daxil etmək Num Lock söndürülmüş halda rəqəm panelinin 0 düyməsidir.</string>
 </resources>

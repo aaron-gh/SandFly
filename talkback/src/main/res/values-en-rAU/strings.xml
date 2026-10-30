@@ -117,28 +117,17 @@
       &lt;li&gt;Some of the modifier keys are different.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">Learn more about keymaps</string>
   <string name="keycombo_go_to_settings">Go to Settings</string>
-  <string name="keycombo_new_keymap_notification_dialog_positive_button">Got it</string>
-  <string name="keycombo_new_keymap_notification_dialog_negative_button">Settings</string>
-  <string name="keycombo_new_keymap_notification_dialog_neutral_button">Learn more</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_classic_keymap">Classic keymap is no longer supported</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">You\'re now using the SandFly default keymap. There is also a new enhanced keymap that has many new commands. Learn more in the Help Centre or switch to the new keymap in Settings.</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">New keymap available</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">The new SandFly enhanced keymap adds many new commands. Learn more in the Help Centre or switch to the new keymap in Settings.</string>
   <string name="keycombo_warning_content_description">More information about your modifier key</string>
   <string name="keycombo_menu_category_select_keymap">Keymap</string>
   <string name="keycombo_menu_select_keymap">Choose a keymap</string>
   <string name="keycombo_menu_reset_keymap">Reset the keymap</string>
   <string name="keycombo_menu_view_system_keyboard_shortcuts">View system keyboard shortcuts</string>
-  <string name="keycombo_menu_choose_trigger_modifier">Choose modifier key</string>
-  <string name="keycombo_menu_alert_title_trigger_modifier">Use %1$s as your modifier key?</string>
-  <string name="keycombo_menu_alert_message_trigger_modifier">SandFly currently uses %1$s as the modifier key.</string>
-  <string name="keycombo_menu_alert_button_trigger_modifier">Use %1$s</string>
-  <string name="keycombo_menu_announce_new_trigger_modifier">Modifier key has been changed to %1$s.</string>
+  <string name="keycombo_menu_choose_trigger_modifier">Choose SandFly key</string>
+  <string name="keycombo_menu_announce_new_trigger_modifier">SandFly key has been changed to %1$s.</string>
   <string name="keycombo_menu_announce_active_keymap">%1$s is now active.</string>
   <string name="keycombo_menu_announce_reset_keymap">The keymap has been reset.</string>
   <string name="keycombo_announce_shortcut_not_supported">Shortcut not supported</string>
-  <string name="value_default_keymap">Default keymap</string>
-  <string name="value_new_keymap">Enhanced keymap</string>
+  <string name="value_new_keymap">SandFly keymap</string>
   <string name="keycombo_menu_category_navigation">Navigation actions</string>
   <string name="keycombo_menu_navigate_next">Navigate to next item</string>
   <string name="keycombo_menu_navigate_previous">Navigate to previous item</string>
@@ -266,7 +255,7 @@
   <string name="message_in_reset_keymap_confirm_dialog">Are you sure that you would like to reset your shortcut keys for this keymap to their default values? Please note that this action cannot be undone.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">Reset</string>
   <string name="template_keycombo_menu_browse_mode_command">%1$s in browse mode</string>
-  <string name="keycombo_assign_dialog_default_keymap_instruction">Press key combination with %1$s modifier key to set new shortcut.</string>
+  <string name="keycombo_assign_dialog_default_keymap_instruction">Press key combination with %1$s SandFly key to set new shortcut.</string>
   <string name="keycombo_unassigned">Unassigned</string>
   <string name="save_button_in_keycombo_assign_dialog">Save</string>
   <string name="clear_button_in_keycombo_assign_dialog">Clear</string>
@@ -1804,4 +1793,10 @@
   <string name="title_pref_speech_dictionary">Speech dictionary</string>
   <string name="speech_dictionary_all_apps">All apps</string>
   <string name="speech_dictionary_not_said"><xliff:g id="text" example="#">%1$s</xliff:g> not said</string>
+  <string name="keycombo_key_modifier_insert">Insert</string>
+  <string name="keycombo_key_modifier_numpad_insert">Numpad insert</string>
+  <string name="keycombo_menu_navigate_next_paragraph">Navigate to next paragraph</string>
+  <string name="keycombo_menu_navigate_previous_paragraph">Navigate to previous paragraph</string>
+  <string name="keycombo_key_modifier_ctrl_alt">Ctrl + Alt</string>
+  <string name="value_voiceover_keymap">VoiceOver keymap</string>
 </resources>

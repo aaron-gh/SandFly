@@ -117,28 +117,17 @@
       &lt;li&gt;සමහර විකරණකාරක යතුරු වෙනස් වේ.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">යතුරු සිතියම් පිළිබඳව තව දැන ගන්න</string>
   <string name="keycombo_go_to_settings">සැකසීම් වෙත යන්න</string>
-  <string name="keycombo_new_keymap_notification_dialog_positive_button">තේරුණා</string>
-  <string name="keycombo_new_keymap_notification_dialog_negative_button">සැකසීම්</string>
-  <string name="keycombo_new_keymap_notification_dialog_neutral_button">තව දැන ගන්න</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_classic_keymap">සම්භාව්‍ය යතුරු සිතියම තවදුරටත් සහාය නොදක්වයි</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">ඔබ දැන් SandFly පෙරනිමි යතුරු සිතියම භාවිතා කරයි. නව විධාන රාශියක් ඇති නව ඉහළ නැංවූ යතුරු සිතියමක් ද ඇත. උදවු මධ්‍යස්ථානයෙන් තව දැන ගන්න හෝ සැකසීම් තුළ නව යතුරු සිතියමට මාරු වන්න.</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">නව යතුරු සිතියමක් තිබේ</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">නව SandFly ඉහළ නැංවූ යතුරු සිතියම නව විධාන රැසක් එක් කරයි. උදවු මධ්‍යස්ථානයෙන් තව දැන ගන්න හෝ සැකසීම් තුළ නව යතුරු සිතියමට මාරු වන්න.</string>
   <string name="keycombo_warning_content_description">ඔබේ විකරණකාරක යතුර පිළිබඳ වැඩිදුර තොරතුරු</string>
   <string name="keycombo_menu_category_select_keymap">යතුරු සිතියම</string>
   <string name="keycombo_menu_select_keymap">යතුරු සිතියමක් තෝරන්න</string>
   <string name="keycombo_menu_reset_keymap">මෙම යතුරු සිතියම නැවත සකසන්න</string>
   <string name="keycombo_menu_view_system_keyboard_shortcuts">පද්ධති යතුරුපුවරු කෙටිමං බලන්න</string>
-  <string name="keycombo_menu_choose_trigger_modifier">විකරණකාරක යතුර තෝරන්න</string>
-  <string name="keycombo_menu_alert_title_trigger_modifier">ඔබගේ සංස්කාරක යතුර ලෙස %1$s භාවිත කරන්නද?</string>
-  <string name="keycombo_menu_alert_message_trigger_modifier">SandFly දැනට <xliff:g id="current_trigger_modifier" example="Alt">%1$s</xliff:g> සංස්කාරක යතුර ලෙස භාවිත කරයි.</string>
-  <string name="keycombo_menu_alert_button_trigger_modifier">%1$s භාවිත කරන්න</string>
-  <string name="keycombo_menu_announce_new_trigger_modifier">විකරණකාරක යතුර %1$s වෙත වෙනස් කර ඇත.</string>
+  <string name="keycombo_menu_choose_trigger_modifier">SandFly යතුර තෝරා ගන්න</string>
+  <string name="keycombo_menu_announce_new_trigger_modifier">SandFly යතුර %1$s ලෙස වෙනස් කර ඇත.</string>
   <string name="keycombo_menu_announce_active_keymap">%1$s දැන් ක්‍රියාකාරීය.</string>
   <string name="keycombo_menu_announce_reset_keymap">මෙම යතුරු සිතියම නැවත සකස් කර ඇත.</string>
   <string name="keycombo_announce_shortcut_not_supported">කෙටි මග සහාය නොදක්වයි</string>
-  <string name="value_default_keymap">පෙරනිමි යතුරු සිතියම</string>
-  <string name="value_new_keymap">වැඩිදියුණු කළ යතුරු සිතියම</string>
+  <string name="value_new_keymap">SandFly යතුරු සිතියම</string>
   <string name="keycombo_menu_category_navigation">සංචාලන ක්‍රියා</string>
   <string name="keycombo_menu_navigate_next">ඊළඟ අයිතමය වෙත සංචාලනය කරන්න</string>
   <string name="keycombo_menu_navigate_previous">පෙර අයිතමය වෙත සංචාලනය කරන්න</string>
@@ -266,7 +255,7 @@
   <string name="message_in_reset_keymap_confirm_dialog">ඔබ මෙම යතුරු සිතියම සඳහා ඔබේ කෙටි මං යතුරු යළි සැකසීමට කැමති බව විශ්වාසද? මෙම ක්‍රියාව පසුගමනය කළ නොහැකි බව කරුණාකර සටහන් කර ගන්න.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">යළි පිහිටුවන්න</string>
   <string name="template_keycombo_menu_browse_mode_command">බ්‍රවුස් කිරීමේ ප්‍රකාරය තුළ %1$s</string>
-  <string name="keycombo_assign_dialog_default_keymap_instruction">නව කෙටි මග සැකසීමට යතුරු සංයෝජනය %1$s විකරණකාරක යතුර සමගින් ඔබන්න.</string>
+  <string name="keycombo_assign_dialog_default_keymap_instruction">නව කෙටිමඟක් සැකසීමට %1$s SandFly යතුර සමග යතුරු සංයෝජනය ඔබන්න.</string>
   <string name="keycombo_unassigned">නොපවරන ලද</string>
   <string name="save_button_in_keycombo_assign_dialog">සුරකින්න</string>
   <string name="clear_button_in_keycombo_assign_dialog">පැහැදිලි</string>
@@ -1804,4 +1793,10 @@
   <string name="title_pref_speech_dictionary">කථන ශබ්දකෝෂය</string>
   <string name="speech_dictionary_all_apps">සියලු යෙදුම්</string>
   <string name="speech_dictionary_not_said"><xliff:g id="text" example="#">%1$s</xliff:g> නොකියයි</string>
+  <string name="keycombo_key_modifier_insert">ඇතුළත් කරන්න</string>
+  <string name="keycombo_key_modifier_numpad_insert">අංක පෑඩ් ඇතුළත් කිරීම</string>
+  <string name="keycombo_menu_navigate_next_paragraph">ඊළඟ ඡේදයට සංචාලනය කරන්න</string>
+  <string name="keycombo_menu_navigate_previous_paragraph">පෙර ඡේදයට සංචාලනය කරන්න</string>
+  <string name="keycombo_key_modifier_ctrl_alt">Ctrl + Alt</string>
+  <string name="value_voiceover_keymap">VoiceOver යතුරු සිතියම</string>
 </resources>

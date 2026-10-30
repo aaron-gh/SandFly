@@ -117,28 +117,17 @@
       &lt;li&gt;Iba ang ilan sa mga modifier key.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">Matuto pa tungkol sa mga keymap</string>
   <string name="keycombo_go_to_settings">Pumunta sa Mga Setting</string>
-  <string name="keycombo_new_keymap_notification_dialog_positive_button">OK</string>
-  <string name="keycombo_new_keymap_notification_dialog_negative_button">Mga Setting</string>
-  <string name="keycombo_new_keymap_notification_dialog_neutral_button">Matuto pa</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_classic_keymap">Hindi na sinusuportahan ang classic na keymap</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">Ginagamit mo na ngayon ang default na keymap ng SandFly. Mayroon ding bagong pinahusay na keymap na may maraming bagong command. Matuto pa sa help center o lumipat sa bagong keymap sa Mga Setting.</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">May available na bagong keymap</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">Nagdagdag ng maraming bagong command ang bagong pinahusay na keymap ng SandFly. Matuto pa sa help center o lumipat sa bagong keymap sa Mga Setting.</string>
   <string name="keycombo_warning_content_description">Higit pang impormasyon tungkol sa iyong modifier key</string>
   <string name="keycombo_menu_category_select_keymap">Keymap</string>
   <string name="keycombo_menu_select_keymap">Pumili ng keymap</string>
   <string name="keycombo_menu_reset_keymap">I-reset ang keymap</string>
   <string name="keycombo_menu_view_system_keyboard_shortcuts">Tingnan ang mga keyboard shortcut ng system</string>
-  <string name="keycombo_menu_choose_trigger_modifier">Pumili ng modifier key</string>
-  <string name="keycombo_menu_alert_title_trigger_modifier">Gamitin ang %1$s bilang iyong modifier key?</string>
-  <string name="keycombo_menu_alert_message_trigger_modifier">Kasalukuyang ginagamit ng SandFly ang <xliff:g id="current_trigger_modifier" example="Alt">%1$s</xliff:g> bilang modifier key.</string>
-  <string name="keycombo_menu_alert_button_trigger_modifier">Gamitin ang %1$s</string>
-  <string name="keycombo_menu_announce_new_trigger_modifier">Ginawang %1$s ang modifier key.</string>
+  <string name="keycombo_menu_choose_trigger_modifier">Piliin ang SandFly key</string>
+  <string name="keycombo_menu_announce_new_trigger_modifier">Ginawang %1$s ang SandFly key.</string>
   <string name="keycombo_menu_announce_active_keymap">Aktibo na ang %1$s.</string>
   <string name="keycombo_menu_announce_reset_keymap">Na-reset na ang keymap.</string>
   <string name="keycombo_announce_shortcut_not_supported">Hindi sinusuportahan ang shortcut</string>
-  <string name="value_default_keymap">Default na keymap</string>
-  <string name="value_new_keymap">Pinahusay na keymap</string>
+  <string name="value_new_keymap">SandFly keymap</string>
   <string name="keycombo_menu_category_navigation">Mga pagkilos sa navigation</string>
   <string name="keycombo_menu_navigate_next">Mag-navigate sa susunod na item</string>
   <string name="keycombo_menu_navigate_previous">Mag-navigate sa nakaraang item</string>
@@ -266,7 +255,7 @@
   <string name="message_in_reset_keymap_confirm_dialog">Sigurado ka bang gusto mong i-reset ang iyong mga shortcut key para sa keymap na ito sa mga default na value ng mga ito? Pakitandaan, hindi na maa-undo ang pagkilos na ito.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">I-reset</string>
   <string name="template_keycombo_menu_browse_mode_command">%1$s sa browse mode</string>
-  <string name="keycombo_assign_dialog_default_keymap_instruction">Pindutin ang kumbinasyon ng key kasama ang %1$s na modifier key upang magtakda ng bagong shortcut.</string>
+  <string name="keycombo_assign_dialog_default_keymap_instruction">Pindutin ang kumbinasyon ng key gamit ang %1$s SandFly key para magtakda ng bagong shortcut.</string>
   <string name="keycombo_unassigned">Hindi nakatalaga</string>
   <string name="save_button_in_keycombo_assign_dialog">I-save</string>
   <string name="clear_button_in_keycombo_assign_dialog">I-clear</string>
@@ -1804,4 +1793,10 @@
   <string name="title_pref_speech_dictionary">Diksiyonaryo ng pagsasalita</string>
   <string name="speech_dictionary_all_apps">Lahat ng app</string>
   <string name="speech_dictionary_not_said">Hindi sinasabi ang <xliff:g id="text" example="#">%1$s</xliff:g></string>
+  <string name="keycombo_key_modifier_insert">Insert</string>
+  <string name="keycombo_key_modifier_numpad_insert">Numpad insert</string>
+  <string name="keycombo_menu_navigate_next_paragraph">Mag-navigate sa susunod na talata</string>
+  <string name="keycombo_menu_navigate_previous_paragraph">Mag-navigate sa nakaraang talata</string>
+  <string name="keycombo_key_modifier_ctrl_alt">Ctrl + Alt</string>
+  <string name="value_voiceover_keymap">VoiceOver keymap</string>
 </resources>

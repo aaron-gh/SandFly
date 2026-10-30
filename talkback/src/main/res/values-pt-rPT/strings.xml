@@ -117,28 +117,17 @@
       &lt;li&gt;Teclas de modificação diferentes.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">Saiba mais sobre os mapas de teclas</string>
   <string name="keycombo_go_to_settings">Aceder às definições</string>
-  <string name="keycombo_new_keymap_notification_dialog_positive_button">OK</string>
-  <string name="keycombo_new_keymap_notification_dialog_negative_button">Definições</string>
-  <string name="keycombo_new_keymap_notification_dialog_neutral_button">Saber mais</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_classic_keymap">O mapa de teclas clássico já não é compatível</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">Agora, está a usar o mapa de teclas predefinido do SandFly. Também existe um novo mapa de teclas melhorado com muitos comandos novos. Saiba mais no Centro de Ajuda ou mude para o novo mapa de teclas nas Definições.</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">Novo mapa de teclas disponível</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">O novo mapa de teclas melhorado do SandFly adiciona muitos comandos novos. Saiba mais no Centro de Ajuda ou mude para o novo mapa de teclas nas Definições.</string>
   <string name="keycombo_warning_content_description">Mais informações sobre a tecla de modificação</string>
   <string name="keycombo_menu_category_select_keymap">Mapa de teclas</string>
   <string name="keycombo_menu_select_keymap">Escolher um mapa de teclas</string>
   <string name="keycombo_menu_reset_keymap">Repor o mapa de teclas</string>
   <string name="keycombo_menu_view_system_keyboard_shortcuts">Ver atalhos de teclado do sistema</string>
-  <string name="keycombo_menu_choose_trigger_modifier">Escolher tecla de modificação</string>
-  <string name="keycombo_menu_alert_title_trigger_modifier">Usar a tecla %1$s como a tecla de modificação?</string>
-  <string name="keycombo_menu_alert_message_trigger_modifier">Atualmente, o SandFly usa a tecla <xliff:g id="current_trigger_modifier" example="Alt">%1$s</xliff:g> como a tecla de modificação.</string>
-  <string name="keycombo_menu_alert_button_trigger_modifier">Usar %1$s</string>
-  <string name="keycombo_menu_announce_new_trigger_modifier">A tecla de modificação foi alterada para %1$s.</string>
+  <string name="keycombo_menu_choose_trigger_modifier">Escolher tecla do SandFly</string>
+  <string name="keycombo_menu_announce_new_trigger_modifier">A tecla do SandFly foi alterada para %1$s.</string>
   <string name="keycombo_menu_announce_active_keymap">%1$s está agora ativo.</string>
   <string name="keycombo_menu_announce_reset_keymap">O mapa de teclas foi reposto.</string>
   <string name="keycombo_announce_shortcut_not_supported">Atalho não suportado</string>
-  <string name="value_default_keymap">Mapa de teclas predefinido</string>
-  <string name="value_new_keymap">Mapa de teclas melhorado</string>
+  <string name="value_new_keymap">Mapa de teclas do SandFly</string>
   <string name="keycombo_menu_category_navigation">Ações de navegação</string>
   <string name="keycombo_menu_navigate_next">Navegar para o item seguinte</string>
   <string name="keycombo_menu_navigate_previous">Navegar para o item anterior</string>
@@ -266,7 +255,7 @@
   <string name="message_in_reset_keymap_confirm_dialog">Tem a certeza de que quer repor os valores predefinidos das teclas de atalho deste mapa de teclas? Tenha em atenção que não é possível anular esta ação.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">Repor</string>
   <string name="template_keycombo_menu_browse_mode_command">%1$s no modo de navegação</string>
-  <string name="keycombo_assign_dialog_default_keymap_instruction">Prima a combinação de teclas com a tecla de modificação %1$s para definir um novo atalho.</string>
+  <string name="keycombo_assign_dialog_default_keymap_instruction">Prima a combinação de teclas com a tecla do SandFly %1$s para definir um novo atalho.</string>
   <string name="keycombo_unassigned">Não atribuído</string>
   <string name="save_button_in_keycombo_assign_dialog">Guardar</string>
   <string name="clear_button_in_keycombo_assign_dialog">Limpar</string>
@@ -1808,4 +1797,10 @@
   <string name="title_pref_speech_dictionary">Dicionário de fala</string>
   <string name="speech_dictionary_all_apps">Todas as apps</string>
   <string name="speech_dictionary_not_said"><xliff:g id="text" example="#">%1$s</xliff:g> não é dito</string>
+  <string name="keycombo_key_modifier_insert">Inserir</string>
+  <string name="keycombo_key_modifier_numpad_insert">Inserir do teclado numérico</string>
+  <string name="keycombo_menu_navigate_next_paragraph">Navegar para o parágrafo seguinte</string>
+  <string name="keycombo_menu_navigate_previous_paragraph">Navegar para o parágrafo anterior</string>
+  <string name="keycombo_key_modifier_ctrl_alt">Ctrl + Alt</string>
+  <string name="value_voiceover_keymap">Mapa de teclas do VoiceOver</string>
 </resources>

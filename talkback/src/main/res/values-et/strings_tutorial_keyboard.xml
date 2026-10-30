@@ -2,14 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">SandFlyi klaviatuuriõpetus</string>
     <string name="sandfly_keyboard_tutorial_no_key">Toimingul <xliff:g id="command" example="Järgmine üksus">%1$s</xliff:g> pole klaviatuuri otseteed. Määrake see jaotises Käsud või kasutage valikut Jäta samm vahele.</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">Sirvimisrežiim vajab täiustatud klahvitabelit. Valige see jaotises <xliff:g id="settings_path" example="SandFlyi seaded &gt; Klaviatuuri otseteed &gt; Klahvitabeli valimine">%1$s</xliff:g> või kasutage valikut Jäta samm vahele.</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Toiming">%1$s</xliff:g> kaks korda</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">Õppetund on lõpetatud. Järgmise õppetunni alustamiseks vajutage <xliff:g id="keys" example="Toiming + Tühik">%1$s</xliff:g>.</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">Õppetund on lõpetatud. Õpetuse lõpetamiseks vajutage <xliff:g id="keys" example="Toiming + Tühik">%1$s</xliff:g>.</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">Veebilehed</string>
-    <string name="sandfly_keyboard_tutorial_welcome_intro">See õpetus õpetab SandFlyi klaviatuuri otseteid. Enamik neist kasutab klahvi <xliff:g id="key" example="Toiming">%1$s</xliff:g> koos teiste klahvidega. <xliff:g id="location" example="Toiminguklahv on Windowsi klahv vasakpoolse Alt-klahvi kõrval.">%2$s</xliff:g> Ctrl peatab kõne. Iga õppetund annab juhise, ootab, kuni olete vajutanud selles nimetatud klahve, ja annab siis järgmise. Juhis on esimene üksus pärast õppetunni nime. Sisukord loetleb kõik õppetunnid ja õpetus avaneb uuesti õppetunnis, kus pooleli jäite.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">See õpetus õpetab SandFlyi klaviatuuri otseteid. Enamik neist kasutab SandFlyi klahvi, <xliff:g id="key" example="Action">%1$s</xliff:g>, koos teiste klahvidega. <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> Ctrl peatab kõne. Iga õppetund annab juhise, ootab, kuni olete vajutanud selles nimetatud klahve, ja annab siis järgmise. Juhis on esimene üksus pärast õppetunni nime. Sisukord loetleb kõik õppetunnid ja õpetus avaneb uuesti õppetunnis, kus pooleli jäite.</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">Toiminguklahv on Windowsi klahv vasakpoolse Alt-klahvi kõrval. Apple\'i klaviatuuridel on see Command-klahv tühikuklahvi kõrval.</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">Alt-klahv on tühikuklahvi kõrval.</string>
     <string name="sandfly_keyboard_tutorial_welcome_start">Alustamiseks vajutage <xliff:g id="keys" example="Toiming + Tühik">%1$s</xliff:g>.</string>
     <string name="sandfly_keyboard_tutorial_move_intro">Järgmine üksus ja Eelmine üksus liiguvad ekraanil üksuste vahel lugemisjärjekorras.</string>
     <string name="sandfly_keyboard_tutorial_move_next">Järgmisele üksusele liikumiseks vajutage <xliff:g id="keys" example="Toiming + Paremnool">%1$s</xliff:g>. Jätkake, kuni jõuate üksuseni <xliff:g id="item" example="Munad">%2$s</xliff:g>.</string>
@@ -53,4 +51,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">Klaviatuuri harjutamine</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">Iga klaviatuuri otsetee ütleb käivitamise asemel oma klahvid ja käsu. Järgmine üksus, Eelmine üksus ja aktiveerimine töötavad endiselt.</string>
     <string name="sandfly_keyboard_tutorial_practice_step">Vajutage mis tahes klaviatuuri otseteed, et kuulda, mida see teeb. Lõpetamiseks aktiveerige <xliff:g id="button" example="Lõpeta harjutamine">%1$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">Hoidke Ctrl ja Alt korraga all. Mõlemad asuvad klaviatuuri all vasakul.</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">Enamikul klaviatuuridel asub sisestusklahv nooleklahvide kohal olevas kuuest klahvist koosnevas rühmas.</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">Numbriklahvistiku sisestusklahv on numbriklahvistiku 0-klahv, kui Num Lock on välja lülitatud.</string>
 </resources>

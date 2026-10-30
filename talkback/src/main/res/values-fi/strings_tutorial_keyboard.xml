@@ -2,14 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">SandFlyn näppäimistön opetusohjelma</string>
     <string name="sandfly_keyboard_tutorial_no_key">Toiminnolla <xliff:g id="command" example="Next item">%1$s</xliff:g> ei ole pikanäppäintä. Määritä pikanäppäin kohdassa Komennot tai käytä painiketta Ohita vaihe.</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">Selaustila vaatii Parannetun näppäinkartan. Valitse se kohdassa <xliff:g id="settings_path" example="SandFly settings &gt; Keyboard shortcuts &gt; Choose a keymap">%1$s</xliff:g> tai käytä painiketta Ohita vaihe.</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g> kahdesti</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">Oppitunti suoritettu. Aloita seuraava oppitunti painamalla <xliff:g id="keys" example="Action + Space">%1$s</xliff:g>.</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">Oppitunti suoritettu. Lopeta opetusohjelma painamalla <xliff:g id="keys" example="Action + Space">%1$s</xliff:g>.</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">Verkkosivut</string>
-    <string name="sandfly_keyboard_tutorial_welcome_intro">Tämä opetusohjelma opettaa SandFlyn pikanäppäimet. Useimmissa niistä käytetään <xliff:g id="key" example="Action">%1$s</xliff:g>-näppäintä yhdessä muiden näppäinten kanssa. <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> Ctrl lopettaa puheen. Jokainen oppitunti antaa ohjeen, odottaa, kunnes olet painanut sen nimeämiä näppäimiä, ja antaa sitten seuraavan. Ohje on ensimmäinen kohde oppitunnin nimen jälkeen. Sisältö luettelee kaikki oppitunnit, ja opetusohjelma avautuu uudelleen siihen oppituntiin, jossa olit.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">Tämä opetusohjelma opettaa SandFlyn pikanäppäimet. Useimmissa niistä käytetään SandFly-näppäintä, <xliff:g id="key" example="Action">%1$s</xliff:g>, yhdessä muiden näppäinten kanssa. <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> Ctrl lopettaa puheen. Jokainen oppitunti antaa ohjeen, odottaa, kunnes olet painanut sen nimeämiä näppäimiä, ja antaa sitten seuraavan. Ohje on ensimmäinen kohde oppitunnin nimen jälkeen. Sisältö luettelee kaikki oppitunnit, ja opetusohjelma avautuu uudelleen siihen oppituntiin, jossa olit.</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">Toimintonäppäin on Windows-näppäin, vasemman Alt-näppäimen vieressä. Applen näppäimistöissä se on Komento-näppäin, välilyöntinäppäimen vieressä.</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">Alt-näppäin on välilyöntinäppäimen vieressä.</string>
     <string name="sandfly_keyboard_tutorial_welcome_start">Aloita painamalla <xliff:g id="keys" example="Action + Space">%1$s</xliff:g>.</string>
     <string name="sandfly_keyboard_tutorial_move_intro">Seuraava kohde ja Edellinen kohde siirtyvät näytön kohteiden läpi lukujärjestyksessä.</string>
     <string name="sandfly_keyboard_tutorial_move_next">Siirry seuraavaan kohteeseen painamalla <xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g>. Jatka, kunnes pääset kohteeseen <xliff:g id="item" example="Eggs">%2$s</xliff:g>.</string>
@@ -53,4 +51,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">Näppäimistöharjoittelu</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">Jokainen pikanäppäin sanoo näppäimensä ja komentonsa sen suorittamisen sijaan. Seuraava kohde, Edellinen kohde ja aktivointi toimivat edelleen.</string>
     <string name="sandfly_keyboard_tutorial_practice_step">Paina mitä tahansa pikanäppäintä kuullaksesi, mitä se tekee. Lopeta aktivoimalla <xliff:g id="button" example="End practice">%1$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">Pidä Ctrl- ja Alt-näppäimiä painettuna yhtä aikaa. Molemmat ovat näppäimistön vasemmassa alakulmassa.</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">Useimmissa näppäimistöissä Lisää-näppäin on nuolinäppäinten yläpuolella olevassa kuuden näppäimen ryhmässä.</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">Lisäys numeronäppäimistöllä on numeronäppäimistön 0-näppäin, kun Num Lock ei ole käytössä.</string>
 </resources>

@@ -2,14 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">Výukový program klávesnice SandFly</string>
     <string name="sandfly_keyboard_tutorial_no_key"><xliff:g id="command" example="Další položka">%1$s</xliff:g> nemá žádnou klávesovou zkratku. Přiřaďte ji v části Příkazy nebo použijte Přeskočit krok.</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">Režim procházení vyžaduje Vylepšenou mapu kláves. Vyberte ji v části <xliff:g id="settings_path" example="Nastavení funkce SandFly &gt; Klávesové zkratky &gt; Vybrat mapování kláves">%1$s</xliff:g> nebo použijte Přeskočit krok.</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Akce">%1$s</xliff:g> dvakrát</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">Lekce dokončena. Stisknutím <xliff:g id="keys" example="Akce + Mezerník">%1$s</xliff:g> zahájíte další lekci.</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">Lekce dokončena. Stisknutím <xliff:g id="keys" example="Akce + Mezerník">%1$s</xliff:g> výukový program dokončíte.</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">Webové stránky</string>
-    <string name="sandfly_keyboard_tutorial_welcome_intro">Tento výukový program učí klávesové zkratky SandFly. Většina z nich používá klávesu <xliff:g id="key" example="Akce">%1$s</xliff:g> s dalšími klávesami. <xliff:g id="location" example="Klávesa Akce je klávesa Windows vedle levé klávesy Alt.">%2$s</xliff:g> Ctrl zastaví řeč. Každá lekce zadá pokyn, počká, až stisknete klávesy, které uvádí, a pak zadá další. Pokyn je první položka za názvem lekce. Obsah uvádí všechny lekce a výukový program se znovu otevře na lekci, ve které jste skončili.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">Tento výukový program učí klávesové zkratky SandFly. Většina z nich používá klávesu SandFly, <xliff:g id="key" example="Action">%1$s</xliff:g>, s dalšími klávesami. <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> Ctrl zastaví řeč. Každá lekce zadá pokyn, počká, až stisknete klávesy, které uvádí, a pak zadá další. Pokyn je první položka za názvem lekce. Obsah uvádí všechny lekce a výukový program se znovu otevře na lekci, ve které jste skončili.</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">Klávesa Akce je klávesa Windows vedle levé klávesy Alt. Na klávesnicích Apple je to klávesa Command vedle mezerníku.</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">Klávesa Alt je vedle mezerníku.</string>
     <string name="sandfly_keyboard_tutorial_welcome_start">Začněte stisknutím <xliff:g id="keys" example="Akce + Mezerník">%1$s</xliff:g>.</string>
     <string name="sandfly_keyboard_tutorial_move_intro">Další položka a Předchozí položka procházejí položky na obrazovce v pořadí čtení.</string>
     <string name="sandfly_keyboard_tutorial_move_next">Stisknutím <xliff:g id="keys" example="Akce + Šipka vpravo">%1$s</xliff:g> se přesunete na další položku. Pokračujte, dokud nedojdete na položku <xliff:g id="item" example="Vejce">%2$s</xliff:g>.</string>
@@ -53,4 +51,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">Procvičování klávesnice</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">Každá klávesová zkratka místo provedení řekne své klávesy a příkaz. Další položka, Předchozí položka a aktivace fungují dál.</string>
     <string name="sandfly_keyboard_tutorial_practice_step">Stiskněte libovolnou klávesovou zkratku a uslyšíte, co dělá. Procvičování ukončíte aktivací tlačítka <xliff:g id="button" example="Ukončit procvičování">%1$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">Podržte současně Ctrl a Alt. Obě jsou vlevo dole na klávesnici.</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">Na většině klávesnic je Insert ve skupině šesti kláves nad klávesami se šipkami.</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">Insert na numerické klávesnici je klávesa 0 numerické klávesnice při vypnutém Num Lock.</string>
 </resources>

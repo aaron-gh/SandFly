@@ -30,7 +30,7 @@ import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import java.util.Map;
 import java.util.TreeMap;
 
-/** New key combo model. */
+/** The key combo model of the SandFly and VoiceOver keymaps. */
 public class NewKeyComboModel implements KeyComboModel {
   public static final String PREF_KEY_PREFIX = "new_key_combo_model";
 
@@ -39,11 +39,17 @@ public class NewKeyComboModel implements KeyComboModel {
   // structure; e.g., a static ImmutableMap.
   private final Map<String, KeyCombo> keyComboMap = new TreeMap<>();
   private final KeyComboPersister persister;
-  private final int triggerModifier = KeyEvent.META_META_ON;
+  private final Keymap keymap;
+  private SandFlyKey sandFlyKey;
 
   public NewKeyComboModel(Context context) {
+    this(context, Keymap.SANDFLY);
+  }
+
+  public NewKeyComboModel(Context context, Keymap keymap) {
     this.context = context;
-    persister = new KeyComboPersister(context, PREF_KEY_PREFIX);
+    this.keymap = keymap;
+    persister = new KeyComboPersister(context, keymap.getPersisterPrefix());
 
     loadTriggerModifierFromPreferences();
     addKeyCombos();
@@ -60,11 +66,21 @@ public class NewKeyComboModel implements KeyComboModel {
           .putString(getPreferenceKeyForTriggerModifier(), getDefaultTriggerModifier())
           .apply();
     }
+    sandFlyKey = keymap.sandFlyKey(context);
   }
 
   @Override
   public int getTriggerModifier() {
-    return triggerModifier;
+    return sandFlyKey.getModifiers();
+  }
+
+  /** Returns the key keymap shortcuts are pressed with. */
+  public SandFlyKey getSandFlyKey() {
+    return sandFlyKey;
+  }
+
+  public Keymap getKeymap() {
+    return keymap;
   }
 
   @Override
@@ -74,7 +90,7 @@ public class NewKeyComboModel implements KeyComboModel {
 
   @Override
   public String getPreferenceKeyForTriggerModifier() {
-    return context.getString(R.string.pref_new_keymap_trigger_modifier_key);
+    return context.getString(keymap.getSandFlyKeyPrefRes());
   }
 
   @Override
@@ -111,6 +127,10 @@ public class NewKeyComboModel implements KeyComboModel {
   public KeyCombo getDefaultKeyCombo(@Nullable String key) {
     if (key == null) {
       return new KeyCombo();
+    }
+
+    if (keymap == Keymap.VOICEOVER) {
+      return VoiceOverKeymap.defaultKeyCombo(context, key);
     }
 
     if (key.equals(context.getString(R.string.keycombo_shortcut_perform_click))) {
@@ -372,6 +392,22 @@ public class NewKeyComboModel implements KeyComboModel {
       if (key.equals(context.getString(R.string.keycombo_shortcut_navigate_next_line))) {
         return new KeyCombo(
             KeyComboModel.NO_MODIFIER,
+            NO_PREFIX_KEY_CODE,
+            KeyEvent.KEYCODE_DPAD_DOWN,
+            /* triggerModifierUsed= */ false);
+      }
+
+      if (key.equals(context.getString(R.string.keycombo_shortcut_navigate_previous_paragraph))) {
+        return new KeyCombo(
+            KeyEvent.META_CTRL_ON,
+            NO_PREFIX_KEY_CODE,
+            KeyEvent.KEYCODE_DPAD_UP,
+            /* triggerModifierUsed= */ false);
+      }
+
+      if (key.equals(context.getString(R.string.keycombo_shortcut_navigate_next_paragraph))) {
+        return new KeyCombo(
+            KeyEvent.META_CTRL_ON,
             NO_PREFIX_KEY_CODE,
             KeyEvent.KEYCODE_DPAD_DOWN,
             /* triggerModifierUsed= */ false);
@@ -1225,8 +1261,10 @@ public class NewKeyComboModel implements KeyComboModel {
     }
 
     int keyCode = keyCombo.getKeyCode();
-    // Do not allow a key combo which consists of only modifiers.
-    if (KeyEvent.isModifierKey(keyCode) || keyCode == KeyEvent.KEYCODE_UNKNOWN) {
+    // Do not allow a key combo which consists of only modifiers, or of only the SandFly key.
+    if (KeyEvent.isModifierKey(keyCode)
+        || keyCode == KeyEvent.KEYCODE_UNKNOWN
+        || (sandFlyKey.isHeldKey() && keyCode == sandFlyKey.getKeyCode())) {
       return false;
     }
 
@@ -1246,20 +1284,11 @@ public class NewKeyComboModel implements KeyComboModel {
   }
 
   private String getTriggerModifierName() {
-    SharedPreferences prefs = SharedPreferencesUtils.getSharedPreferences(context);
-    String triggerModifier =
-        prefs.getString(getPreferenceKeyForTriggerModifier(), getDefaultTriggerModifier());
-    String triggerModifierName = "";
-
-    if (triggerModifier.equals(context.getString(R.string.trigger_modifier_meta_entry_value))) {
-      triggerModifierName = context.getString(R.string.keycombo_key_modifier_meta);
-    }
-
-    return triggerModifierName;
+    return context.getString(sandFlyKey.getNameRes());
   }
 
   private String getDefaultTriggerModifier() {
-    return context.getString(R.string.trigger_modifier_meta_entry_value);
+    return context.getString(keymap.getSandFlyKeys().get(0).getValueRes());
   }
 
   private void addKeyCombos() {
@@ -1287,6 +1316,8 @@ public class NewKeyComboModel implements KeyComboModel {
     addKeyCombo(context.getString(R.string.keycombo_shortcut_navigate_previous_word));
     addKeyCombo(context.getString(R.string.keycombo_shortcut_navigate_previous_line));
     addKeyCombo(context.getString(R.string.keycombo_shortcut_navigate_next_line));
+    addKeyCombo(context.getString(R.string.keycombo_shortcut_navigate_previous_paragraph));
+    addKeyCombo(context.getString(R.string.keycombo_shortcut_navigate_next_paragraph));
     addKeyCombo(context.getString(R.string.keycombo_shortcut_navigate_next_button));
     addKeyCombo(context.getString(R.string.keycombo_shortcut_navigate_previous_button));
     addKeyCombo(context.getString(R.string.keycombo_shortcut_navigate_next_control));

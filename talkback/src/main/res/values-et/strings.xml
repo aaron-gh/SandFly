@@ -117,28 +117,17 @@
       &lt;li&gt;Mõned muuteklahvid on erinevad.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">Lisateave klahvitabelite kohta</string>
   <string name="keycombo_go_to_settings">Ava seaded</string>
-  <string name="keycombo_new_keymap_notification_dialog_positive_button">Selge</string>
-  <string name="keycombo_new_keymap_notification_dialog_negative_button">Seaded</string>
-  <string name="keycombo_new_keymap_notification_dialog_neutral_button">Lisateave</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_classic_keymap">Klassikalist klahvitabelit enam ei toetata</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">Kasutate nüüd SandFlyi vaikeklahvitabelit. Olemas on ka uus täiustatud klahvitabel, millel on palju uusi käske. Vaadake lisateavet abikeskusest või lülituge uuele klahvitabelile seadetes.</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">Saadaval on uus klahvitabel</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">Uue SandFlyi täiustatud klahvitabeliga lisandub palju uusi käske. Vaadake lisateavet abikeskusest või lülituge uuele klahvitabelile seadetes.</string>
   <string name="keycombo_warning_content_description">Lisateave muuteklahvi kohta</string>
   <string name="keycombo_menu_category_select_keymap">Klahvitabel</string>
   <string name="keycombo_menu_select_keymap">Klahvitabeli valimine</string>
   <string name="keycombo_menu_reset_keymap">Klahvitabeli lähtestamine</string>
   <string name="keycombo_menu_view_system_keyboard_shortcuts">Kuva süsteemi klaviatuuri otseteed</string>
-  <string name="keycombo_menu_choose_trigger_modifier">Muuteklahvi valimine</string>
-  <string name="keycombo_menu_alert_title_trigger_modifier">Kas kasutada teie muuteklahvina klahvi %1$s?</string>
-  <string name="keycombo_menu_alert_message_trigger_modifier">SandFly kasutab praegu muuteklahvina klahvi <xliff:g id="current_trigger_modifier" example="Alt">%1$s</xliff:g>.</string>
-  <string name="keycombo_menu_alert_button_trigger_modifier">Kasuta klahvi %1$s</string>
-  <string name="keycombo_menu_announce_new_trigger_modifier">Muuteklahviks määrati %1$s.</string>
+  <string name="keycombo_menu_choose_trigger_modifier">SandFlyi klahvi valimine</string>
+  <string name="keycombo_menu_announce_new_trigger_modifier">SandFlyi klahviks on nüüd muudetud klahv %1$s.</string>
   <string name="keycombo_menu_announce_active_keymap">Üksus %1$s on nüüd aktiivne.</string>
   <string name="keycombo_menu_announce_reset_keymap">Klahvitabel lähtestati.</string>
   <string name="keycombo_announce_shortcut_not_supported">Otseteed ei toetata</string>
-  <string name="value_default_keymap">Vaikeklahvitabel</string>
-  <string name="value_new_keymap">Täiustatud klahvitabel</string>
+  <string name="value_new_keymap">SandFlyi klahvitabel</string>
   <string name="keycombo_menu_category_navigation">Navigeerimistoimingud</string>
   <string name="keycombo_menu_navigate_next">Järgmisele üksusele navigeerimine</string>
   <string name="keycombo_menu_navigate_previous">Eelmisele üksusele navigeerimine</string>
@@ -266,7 +255,7 @@
   <string name="message_in_reset_keymap_confirm_dialog">Kas soovite kindlasti selle klahvitabeli otseteeklahvid lähtestada vaikeväärtustele? Pange tähele, et seda toimingut ei saa tagasi võtta.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">Lähtesta</string>
   <string name="template_keycombo_menu_browse_mode_command">%1$s sirvimisrežiimis</string>
-  <string name="keycombo_assign_dialog_default_keymap_instruction">Uue otsetee määramiseks vajutage klahvikombinatsiooni koos muuteklahviga %1$s.</string>
+  <string name="keycombo_assign_dialog_default_keymap_instruction">Uue otsetee määramiseks vajutage klahvikombinatsiooni koos SandFlyi klahviga %1$s.</string>
   <string name="keycombo_unassigned">Määramata</string>
   <string name="save_button_in_keycombo_assign_dialog">Salvesta</string>
   <string name="clear_button_in_keycombo_assign_dialog">Kustuta</string>
@@ -1804,4 +1793,10 @@
   <string name="title_pref_speech_dictionary">Kõnesõnastik</string>
   <string name="speech_dictionary_all_apps">Kõik rakendused</string>
   <string name="speech_dictionary_not_said"><xliff:g id="text" example="#">%1$s</xliff:g> jäetakse ütlemata</string>
+  <string name="keycombo_key_modifier_insert">Sisestusklahv</string>
+  <string name="keycombo_key_modifier_numpad_insert">Numbriklahvistiku sisestusklahv</string>
+  <string name="keycombo_menu_navigate_next_paragraph">Järgmise lõigu juurde navigeerimine</string>
+  <string name="keycombo_menu_navigate_previous_paragraph">Eelmise lõigu juurde navigeerimine</string>
+  <string name="keycombo_key_modifier_ctrl_alt">Ctrl + Alt</string>
+  <string name="value_voiceover_keymap">VoiceOveri klahvitabel</string>
 </resources>

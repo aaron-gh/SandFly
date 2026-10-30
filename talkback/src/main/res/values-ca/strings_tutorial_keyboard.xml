@@ -2,14 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">Tutorial del teclat de SandFly</string>
     <string name="sandfly_keyboard_tutorial_no_key"><xliff:g id="command" example="Element següent">%1$s</xliff:g> no té cap tecla de drecera. Assigna-n\'hi una a Ordres o utilitza Omet el pas.</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">El mode de navegació necessita el Mapa de teclat millorat. Tria\'l a <xliff:g id="settings_path" example="Configuració de SandFly &gt; Tecles de drecera &gt; Tria un mapa de teclat">%1$s</xliff:g> o utilitza Omet el pas.</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Acció">%1$s</xliff:g> dues vegades</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">Lliçó completada. Prem <xliff:g id="keys" example="Acció + Espai">%1$s</xliff:g> per començar la lliçó següent.</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">Lliçó completada. Prem <xliff:g id="keys" example="Acció + Espai">%1$s</xliff:g> per acabar el tutorial.</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">Pàgines web</string>
-    <string name="sandfly_keyboard_tutorial_welcome_intro">Aquest tutorial ensenya les tecles de drecera de SandFly. La majoria fan servir la tecla <xliff:g id="key" example="Acció">%1$s</xliff:g> amb altres tecles. <xliff:g id="location" example="La tecla Acció és la tecla Windows, al costat de la tecla Alt de l\'esquerra.">%2$s</xliff:g> Ctrl atura la veu. Cada lliçó dona una instrucció, espera que hagis premut les tecles que indica i després dona la següent. La instrucció és el primer element després del nom de la lliçó. Contingut mostra totes les lliçons, i el tutorial es torna a obrir a la lliçó on eres.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">Aquest tutorial ensenya les tecles de drecera de SandFly. La majoria fan servir la tecla de SandFly, <xliff:g id="key" example="Action">%1$s</xliff:g>, amb altres tecles. <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> Ctrl atura la veu. Cada lliçó dona una instrucció, espera que hagis premut les tecles que indica i després dona la següent. La instrucció és el primer element després del nom de la lliçó. Contingut mostra totes les lliçons, i el tutorial es torna a obrir a la lliçó on eres.</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">La tecla Acció és la tecla Windows, al costat de la tecla Alt de l\'esquerra. Als teclats d\'Apple, és la tecla Ordre, al costat de la barra espaiadora.</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">La tecla Alt és al costat de la barra espaiadora.</string>
     <string name="sandfly_keyboard_tutorial_welcome_start">Prem <xliff:g id="keys" example="Acció + Espai">%1$s</xliff:g> per començar.</string>
     <string name="sandfly_keyboard_tutorial_move_intro">Element següent i Element anterior recorren els elements de la pantalla en ordre de lectura.</string>
     <string name="sandfly_keyboard_tutorial_move_next">Prem <xliff:g id="keys" example="Acció + Fletxa dreta">%1$s</xliff:g> per anar a l\'element següent. Continua fins a arribar a <xliff:g id="item" example="Ous">%2$s</xliff:g>.</string>
@@ -53,4 +51,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">Pràctica de teclat</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">Cada tecla de drecera diu les seves tecles i la seva ordre en lloc d\'executar-la. Element següent, Element anterior i activar continuen funcionant.</string>
     <string name="sandfly_keyboard_tutorial_practice_step">Prem qualsevol tecla de drecera per sentir què fa. Per aturar-te, activa <xliff:g id="button" example="Acaba la pràctica">%1$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">Mantén premudes Ctrl i Alt alhora. Totes dues són a la part inferior esquerra del teclat.</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">A la majoria de teclats, Inser és al grup de sis tecles que hi ha a sobre de les tecles de fletxa.</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">Inser (teclat numèric) és la tecla 0 del teclat numèric, amb Bloq Núm desactivat.</string>
 </resources>

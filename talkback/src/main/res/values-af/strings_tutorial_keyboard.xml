@@ -2,14 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">SandFly-sleutelbordtutoriaal</string>
     <string name="sandfly_keyboard_tutorial_no_key"><xliff:g id="command" example="Volgende item">%1$s</xliff:g> het geen kortpadsleutel nie. Wys een in Opdragte toe, of gebruik Slaan stap oor.</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">Blaaimodus vereis die Verbeterde sleutelkaart. Kies dit in <xliff:g id="settings_path" example="SandFly-instellings &gt; Kortpadsleutels &gt; Kies \'n sleutelkaart">%1$s</xliff:g>, of gebruik Slaan stap oor.</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Handeling">%1$s</xliff:g> twee keer</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">Les voltooi. Druk <xliff:g id="keys" example="Handeling + Spasiebalk">%1$s</xliff:g> om die volgende les te begin.</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">Les voltooi. Druk <xliff:g id="keys" example="Handeling + Spasiebalk">%1$s</xliff:g> om die tutoriaal te voltooi.</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">Webbladsye</string>
-    <string name="sandfly_keyboard_tutorial_welcome_intro">Hierdie tutoriaal leer SandFly se kortpadsleutels. Die meeste daarvan gebruik die <xliff:g id="key" example="Handeling">%1$s</xliff:g>-sleutel saam met ander sleutels. <xliff:g id="location" example="Die Handeling-sleutel is die Windows-sleutel, langs die linker-Alt-sleutel.">%2$s</xliff:g> Ctrl stop spraak. Elke les gee \'n opdrag, wag totdat jy die sleutels gedruk het wat dit noem, en gee dan die volgende een. Die opdrag is die eerste item ná die naam van die les. Inhoud lys elke les, en die tutoriaal maak weer oop by die les waarby jy was.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">Hierdie tutoriaal leer SandFly se kortpadsleutels. Die meeste daarvan gebruik die SandFly-sleutel, <xliff:g id="key" example="Action">%1$s</xliff:g>, saam met ander sleutels. <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> Ctrl stop spraak. Elke les gee \'n opdrag, wag totdat jy die sleutels gedruk het wat dit noem, en gee dan die volgende een. Die opdrag is die eerste item ná die naam van die les. Inhoud lys elke les, en die tutoriaal maak weer oop by die les waarby jy was.</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">Die Handeling-sleutel is die Windows-sleutel, langs die linker-Alt-sleutel. Op Apple-sleutelborde is dit die Command-sleutel, langs die spasiebalk.</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">Die Alt-sleutel is langs die spasiebalk.</string>
     <string name="sandfly_keyboard_tutorial_welcome_start">Druk <xliff:g id="keys" example="Handeling + Spasiebalk">%1$s</xliff:g> om te begin.</string>
     <string name="sandfly_keyboard_tutorial_move_intro">Volgende item en Vorige item beweeg deur die items op die skerm in leesvolgorde.</string>
     <string name="sandfly_keyboard_tutorial_move_next">Druk <xliff:g id="keys" example="Handeling + regspyl">%1$s</xliff:g> om na die volgende item te beweeg. Gaan voort totdat jy <xliff:g id="item" example="Eiers">%2$s</xliff:g> bereik.</string>
@@ -53,4 +51,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">Sleutelbordoefening</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">Elke kortpadsleutel sê sy sleutels en opdrag in plaas daarvan om dit uit te voer. Volgende item, Vorige item en aktivering werk steeds.</string>
     <string name="sandfly_keyboard_tutorial_practice_step">Druk enige kortpadsleutel om te hoor wat dit doen. Aktiveer <xliff:g id="button" example="Beëindig oefening">%1$s</xliff:g> om te stop.</string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">Hou Ctrl en Alt saam ingedruk. Albei is links onder op die sleutelbord.</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">Op die meeste sleutelborde is Invoeg in die groep van ses sleutels bo die pyltjiesleutels.</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">Syferpaneel-invoeg is die 0-sleutel van die syferpaneel, met Num Lock af.</string>
 </resources>

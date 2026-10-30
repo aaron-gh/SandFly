@@ -2,14 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">SandFly कीबोर्ड ट्यूटोरियल</string>
     <string name="sandfly_keyboard_tutorial_no_key"><xliff:g id="command" example="पुढील आयटम">%1$s</xliff:g> साठी कोणताही कीबोर्ड शॉर्टकट नाही. “कमांड” मध्ये एक नियुक्त करा किंवा “पायरी वगळा” वापरा.</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">ब्राउझ मोडसाठी “वर्धित कीमॅप” आवश्यक आहे. तो <xliff:g id="settings_path" example="SandFly सेटिंग्ज &gt; कीबोर्ड शॉर्टकट &gt; कीमॅप निवडा">%1$s</xliff:g> मध्ये निवडा किंवा “पायरी वगळा” वापरा.</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g> दोनदा</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">धडा पूर्ण झाला. पुढील धडा सुरू करण्यासाठी <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> प्रेस करा.</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">धडा पूर्ण झाला. ट्यूटोरियल समाप्त करण्यासाठी <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> प्रेस करा.</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">वेब पेज</string>
-    <string name="sandfly_keyboard_tutorial_welcome_intro">हे ट्यूटोरियल SandFly चे कीबोर्ड शॉर्टकट शिकवते. त्यांपैकी बहुतेक इतर कींसोबत <xliff:g id="key" example="Action">%1$s</xliff:g> की वापरतात. <xliff:g id="location" example="ॲक्शन की ही लेफ्ट Alt कीच्या शेजारी असलेली Windows की आहे.">%2$s</xliff:g> Ctrl बोलणे थांबवते. प्रत्येक धडा एक सूचना देतो, तिच्यात नमूद केलेल्या की तुम्ही प्रेस करेपर्यंत थांबतो आणि नंतर पुढील सूचना देतो. सूचना ही धड्याच्या नावानंतरचा पहिला आयटम असते. “अनुक्रमणिका” मध्ये प्रत्येक धडा सूचीबद्ध असतो आणि ट्यूटोरियल तुम्ही ज्या धड्यावर होता तिथेच पुन्हा उघडते.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">हे ट्यूटोरियल SandFly चे कीबोर्ड शॉर्टकट शिकवते. त्यांपैकी बहुतेक इतर कींसोबत SandFly की, <xliff:g id="key" example="Action">%1$s</xliff:g>, वापरतात. <xliff:g id="location" example="ॲक्शन की ही लेफ्ट Alt कीच्या शेजारी असलेली Windows की आहे.">%2$s</xliff:g> Ctrl बोलणे थांबवते. प्रत्येक धडा एक सूचना देतो, तिच्यात नमूद केलेल्या की तुम्ही प्रेस करेपर्यंत थांबतो आणि नंतर पुढील सूचना देतो. सूचना ही धड्याच्या नावानंतरचा पहिला आयटम असते. “अनुक्रमणिका” मध्ये प्रत्येक धडा सूचीबद्ध असतो आणि ट्यूटोरियल तुम्ही ज्या धड्यावर होता तिथेच पुन्हा उघडते.</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">ॲक्शन की ही लेफ्ट Alt कीच्या शेजारी असलेली Windows की आहे. Apple कीबोर्डवर, ती स्पेस बारच्या शेजारी असलेली Command की आहे.</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">Alt की स्पेस बारच्या शेजारी आहे.</string>
     <string name="sandfly_keyboard_tutorial_welcome_start">सुरू करण्यासाठी <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> प्रेस करा.</string>
     <string name="sandfly_keyboard_tutorial_move_intro">“पुढील आयटम” आणि “मागील आयटम” स्क्रीनवरील आयटममधून वाचनाच्या क्रमाने जातात.</string>
     <string name="sandfly_keyboard_tutorial_move_next">पुढील आयटमवर जाण्यासाठी <xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g> प्रेस करा. <xliff:g id="item" example="अंडी">%2$s</xliff:g> पर्यंत पोहोचेपर्यंत सुरू ठेवा.</string>
@@ -53,4 +51,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">कीबोर्डचा सराव</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">प्रत्येक कीबोर्ड शॉर्टकट कमांड चालवण्याऐवजी त्याच्या की आणि कमांड सांगतो. “पुढील आयटम”, “मागील आयटम” आणि सक्रिय करणे अजूनही काम करते.</string>
     <string name="sandfly_keyboard_tutorial_practice_step">तो काय करतो ते ऐकण्यासाठी कोणताही कीबोर्ड शॉर्टकट प्रेस करा. थांबवण्यासाठी <xliff:g id="button" example="सराव संपवा">%1$s</xliff:g> सक्रिय करा.</string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">Ctrl आणि Alt एकत्र दाबून ठेवा. दोन्ही कीबोर्डच्या तळाशी डावीकडे असतात.</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">बहुतेक कीबोर्डवर, इन्सर्ट की ॲरो कींच्या वर असलेल्या सहा कींच्या गटात असते.</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">Num Lock बंद असताना, नंबरपॅड इन्सर्ट ही नंबर पॅडची 0 की असते.</string>
 </resources>

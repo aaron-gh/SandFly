@@ -116,28 +116,17 @@
       &lt;li&gt;一部の修飾キーが異なります。&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">キーマップの詳細</string>
   <string name="keycombo_go_to_settings">設定に移動</string>
-  <string name="keycombo_new_keymap_notification_dialog_positive_button">OK</string>
-  <string name="keycombo_new_keymap_notification_dialog_negative_button">設定</string>
-  <string name="keycombo_new_keymap_notification_dialog_neutral_button">詳細</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_classic_keymap">クラシック キーマップのサポートは終了しました</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">SandFly のデフォルト キーマップを現在使用しています。新しいコマンドを備えた新しい拡張キーマップもあります。詳しくはヘルプセンターをご覧ください。[設定] で新しいキーマップに切り替えることもできます。</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">新しいキーマップをご利用になれます</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">新しい SandFly 拡張キーマップには、多くの新しいコマンドが追加されています。詳しくはヘルプセンターをご覧ください。[設定] で新しいキーマップに切り替えることもできます。</string>
   <string name="keycombo_warning_content_description">修飾キーの詳細</string>
   <string name="keycombo_menu_category_select_keymap">キーマップ</string>
   <string name="keycombo_menu_select_keymap">キーマップを選択</string>
   <string name="keycombo_menu_reset_keymap">キーマップをリセット</string>
   <string name="keycombo_menu_view_system_keyboard_shortcuts">システムのキーボード ショートカットを表示</string>
-  <string name="keycombo_menu_choose_trigger_modifier">修飾キーを選択</string>
-  <string name="keycombo_menu_alert_title_trigger_modifier">%1$s を修飾キーとして使用しますか？</string>
-  <string name="keycombo_menu_alert_message_trigger_modifier">SandFly は現在、<xliff:g id="current_trigger_modifier" example="Alt">%1$s</xliff:g> を修飾キーとして使用しています。</string>
-  <string name="keycombo_menu_alert_button_trigger_modifier">%1$s を使用</string>
-  <string name="keycombo_menu_announce_new_trigger_modifier">修飾キーが %1$s に変更されました。</string>
+  <string name="keycombo_menu_choose_trigger_modifier">SandFly キーの選択</string>
+  <string name="keycombo_menu_announce_new_trigger_modifier">SandFly キーを %1$s に変更しました。</string>
   <string name="keycombo_menu_announce_active_keymap">%1$s が現在有効です。</string>
   <string name="keycombo_menu_announce_reset_keymap">キーマップがリセットされました。</string>
   <string name="keycombo_announce_shortcut_not_supported">ショートカットはサポートされていません</string>
-  <string name="value_default_keymap">デフォルト キーマップ</string>
-  <string name="value_new_keymap">拡張キーマップ</string>
+  <string name="value_new_keymap">SandFly キーマップ</string>
   <string name="keycombo_menu_category_navigation">移動操作</string>
   <string name="keycombo_menu_navigate_next">次の項目に移動</string>
   <string name="keycombo_menu_navigate_previous">前の項目に移動</string>
@@ -265,7 +254,7 @@
   <string name="message_in_reset_keymap_confirm_dialog">このキーマップのショートカット キーを既定値にリセットしてもよろしいですか？この操作は元に戻せないのでご注意ください。</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">リセット</string>
   <string name="template_keycombo_menu_browse_mode_command">ブラウズモードで%1$s</string>
-  <string name="keycombo_assign_dialog_default_keymap_instruction">新しいショートカットを設定するには、修飾キーとして %1$s キーを使ったキーの組み合わせを押してください。</string>
+  <string name="keycombo_assign_dialog_default_keymap_instruction">新しいショートカットを設定するには、%1$s SandFly キーと他のキーを同時に押してください。</string>
   <string name="keycombo_unassigned">未割り当て</string>
   <string name="save_button_in_keycombo_assign_dialog">保存</string>
   <string name="clear_button_in_keycombo_assign_dialog">クリア</string>
@@ -1801,4 +1790,10 @@
   <string name="title_pref_speech_dictionary">読み上げ辞書</string>
   <string name="speech_dictionary_all_apps">すべてのアプリ</string>
   <string name="speech_dictionary_not_said"><xliff:g id="text" example="#">%1$s</xliff:g> を読み上げない</string>
+  <string name="keycombo_key_modifier_insert">インサート</string>
+  <string name="keycombo_key_modifier_numpad_insert">テンキーのインサート</string>
+  <string name="keycombo_menu_navigate_next_paragraph">次の段落に移動</string>
+  <string name="keycombo_menu_navigate_previous_paragraph">前の段落に移動</string>
+  <string name="keycombo_key_modifier_ctrl_alt">Ctrl + Alt</string>
+  <string name="value_voiceover_keymap">VoiceOver キーマップ</string>
 </resources>

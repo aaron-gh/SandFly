@@ -19,7 +19,6 @@ package com.google.android.accessibility.talkback.trainingcommon;
 import android.content.Context;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.KeyEvent;
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 import androidx.annotation.VisibleForTesting;
@@ -28,7 +27,9 @@ import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping;
 import com.google.android.accessibility.talkback.keyboard.KeyCombo;
 import com.google.android.accessibility.talkback.keyboard.KeyComboManager;
 import com.google.android.accessibility.talkback.keyboard.KeyComboModel;
+import com.google.android.accessibility.talkback.keyboard.Keymap;
 import com.google.android.accessibility.talkback.keyboard.NewKeyComboModel;
+import com.google.android.accessibility.talkback.keyboard.SandFlyKey;
 import com.google.android.accessibility.utils.WindowUtils;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import com.google.common.collect.ImmutableSet;
@@ -79,7 +80,9 @@ public final class TutorialShortcuts {
     }
     data.putBoolean(
         KEYMAP_AS_WRITTEN,
-        model instanceof NewKeyComboModel && model.getTriggerModifier() == KeyEvent.META_META_ON);
+        model instanceof NewKeyComboModel newModel
+            && newModel.getKeymap() == Keymap.SANDFLY
+            && newModel.getSandFlyKey() == SandFlyKey.ACTION);
     for (String key : model.getKeyComboMap().keySet()) {
       KeyCombo combo = model.getKeyComboForKey(key);
       data.putString(

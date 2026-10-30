@@ -117,28 +117,17 @@
       &lt;li&gt;کچھ موڈیفائر کلیدیں مختلف ہیں۔&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">کی میپس کے بارے میں مزید جانیں</string>
   <string name="keycombo_go_to_settings">ترتیبات پر جائیں</string>
-  <string name="keycombo_new_keymap_notification_dialog_positive_button">سمجھ آ گئی</string>
-  <string name="keycombo_new_keymap_notification_dialog_negative_button">ترتیبات</string>
-  <string name="keycombo_new_keymap_notification_dialog_neutral_button">مزید جانیں</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_classic_keymap">کلاسک کی میپ مزید تعاون یافتہ نہیں ہے</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">‏اب آپ SandFly ڈیفالٹ کی میپ استعمال کر رہے ہیں۔ ایک نیا بہتر کردہ کی میپ بھی ہے جس میں بہت سے نئے کمانڈز شامل ہیں۔ ہیلپ سینٹر میں مزید جانیں یا ترتیبات میں نئے کی میپ پر سوئچ کریں۔</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">نیا کی میپ دستیاب ہے</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">‏نیا SandFly بہتر کردہ کی میپ بہت سے نئے کمانڈز کا اضافہ کرتا ہے۔ ہیلپ سینٹر میں مزید جانیں یا ترتیبات میں نئے کی میپ پر سوئچ کریں۔</string>
   <string name="keycombo_warning_content_description">آپ کی موڈیفائر کلید کے بارے میں مزید معلومات</string>
   <string name="keycombo_menu_category_select_keymap">کلیدی نقشہ</string>
   <string name="keycombo_menu_select_keymap">ایک کلیدی نقشہ منتخب کریں</string>
   <string name="keycombo_menu_reset_keymap">کلیدی نقشہ دوبارہ ترتیب دیں</string>
   <string name="keycombo_menu_view_system_keyboard_shortcuts">سسٹم کی بورڈ شارٹ کٹس دیکھیں</string>
-  <string name="keycombo_menu_choose_trigger_modifier">موڈیفائر کلید منتخب کریں</string>
-  <string name="keycombo_menu_alert_title_trigger_modifier">اپنی موڈیفائر کلید کے طور پر %1$s استعمال کریں؟</string>
-  <string name="keycombo_menu_alert_message_trigger_modifier">‏‫SandFly فی الحال موڈیفائر کلید کے طور پر <xliff:g id="current_trigger_modifier" example="Alt">%1$s</xliff:g> کا استعمال کرتی ہے۔</string>
-  <string name="keycombo_menu_alert_button_trigger_modifier">‫%1$s استعمال کریں</string>
-  <string name="keycombo_menu_announce_new_trigger_modifier">موڈیفائر کلید %1$s میں تبدیل ہو گئی ہے۔</string>
+  <string name="keycombo_menu_choose_trigger_modifier">‏‫SandFly کلید کا انتخاب کریں</string>
+  <string name="keycombo_menu_announce_new_trigger_modifier">‏‫SandFly کلید کو %1$s میں تبدیل کر دیا گیا ہے۔</string>
   <string name="keycombo_menu_announce_active_keymap">%1$s اب فعال ہے۔</string>
   <string name="keycombo_menu_announce_reset_keymap">کلیدی نقشہ دوبارہ ترتیب دے دیا گیا ہے۔</string>
   <string name="keycombo_announce_shortcut_not_supported">شارٹ کٹ تعاون یافتہ نہیں ہے</string>
-  <string name="value_default_keymap">ڈیفالٹ کلیدی نقشہ</string>
-  <string name="value_new_keymap">کی میپ بہتر بنائیں</string>
+  <string name="value_new_keymap">SandFly کلیدی نقشہ</string>
   <string name="keycombo_menu_category_navigation">نیویگیشن کارروائیاں</string>
   <string name="keycombo_menu_navigate_next">اگلے آئٹم پر نیویگیٹ کریں</string>
   <string name="keycombo_menu_navigate_previous">پچھلے آئٹم پر نیویگیٹ کریں</string>
@@ -266,7 +255,7 @@
   <string name="message_in_reset_keymap_confirm_dialog">کیا آپ واقعی اس کلیدی نقشہ کیلئے اپنی شارٹ کٹ کلیدوں کو ان کی ڈیفالٹ اقدار پر دوبارہ ترتیب دینا چاہتے ہیں؟ براہ کرم نوٹ کریں، یہ کارروائی کالعدم نہیں ہو سکتی۔</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">ری سیٹ کریں</string>
   <string name="template_keycombo_menu_browse_mode_command">‫%1$s براؤز وضع میں</string>
-  <string name="keycombo_assign_dialog_default_keymap_instruction">نیا شارٹ کٹ سیٹ کرنے کیلئے %1$s موڈیفائر کلید کے ساتھ کلید کا مجموعہ دبائیں۔</string>
+  <string name="keycombo_assign_dialog_default_keymap_instruction">‏نیا شارٹ کٹ سیٹ کرنے کے لیے %1$s SandFly کلید کے ساتھ کلید کا مجموعہ دبائیں۔</string>
   <string name="keycombo_unassigned">غیر مختص</string>
   <string name="save_button_in_keycombo_assign_dialog">محفوظ کریں</string>
   <string name="clear_button_in_keycombo_assign_dialog">صاف کریں</string>
@@ -1804,4 +1793,10 @@
   <string name="title_pref_speech_dictionary">تقریری لغت</string>
   <string name="speech_dictionary_all_apps">سبھی ایپس</string>
   <string name="speech_dictionary_not_said"><xliff:g id="text" example="#">%1$s</xliff:g> نہیں بولا جاتا</string>
+  <string name="keycombo_key_modifier_insert">داخل کریں</string>
+  <string name="keycombo_key_modifier_numpad_insert">نم پیڈ اِنسرٹ</string>
+  <string name="keycombo_menu_navigate_next_paragraph">اگلے پیراگراف پر نیویگیٹ کریں</string>
+  <string name="keycombo_menu_navigate_previous_paragraph">پچھلے پیراگراف پر نیویگیٹ کریں</string>
+  <string name="keycombo_key_modifier_ctrl_alt">Ctrl + Alt</string>
+  <string name="value_voiceover_keymap">VoiceOver کلیدی نقشہ</string>
 </resources>

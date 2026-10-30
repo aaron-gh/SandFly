@@ -2,14 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">Tutorial sa keyboard ng SandFly</string>
     <string name="sandfly_keyboard_tutorial_no_key">Walang keyboard shortcut ang <xliff:g id="command" example="Next item">%1$s</xliff:g>. Magtalaga ng isa sa Mga command, o gamitin ang Laktawan ang hakbang.</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">Kailangan ng browse mode ang Pinahusay na keymap. Piliin ito sa <xliff:g id="settings_path" example="SandFly settings &gt; Keyboard shortcuts &gt; Choose a keymap">%1$s</xliff:g>, o gamitin ang Laktawan ang hakbang.</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g> nang dalawang beses</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">Tapos na ang aralin. Pindutin ang <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> para simulan ang susunod na aralin.</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">Tapos na ang aralin. Pindutin ang <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> para tapusin ang tutorial.</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">Mga web page</string>
-    <string name="sandfly_keyboard_tutorial_welcome_intro">Itinuturo ng tutorial na ito ang mga keyboard shortcut ng SandFly. Ginagamit ng karamihan sa mga ito ang <xliff:g id="key" example="Action">%1$s</xliff:g> key kasama ng ibang key. <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> Pinapahinto ng Ctrl ang pagsasalita. Nagbibigay ng tagubilin ang bawat aralin, naghihintay hanggang mapindot mo ang mga key na binanggit nito, at saka ibibigay ang susunod. Ang tagubilin ang unang item pagkatapos ng pangalan ng aralin. Inililista ng Nilalaman ang bawat aralin, at muling bumubukas ang tutorial sa araling huli mong ginawa.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">Itinuturo ng tutorial na ito ang mga keyboard shortcut ng SandFly. Ginagamit ng karamihan sa mga ito ang SandFly key, <xliff:g id="key" example="Action">%1$s</xliff:g>, kasama ng ibang key. <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> Pinapahinto ng Ctrl ang pagsasalita. Nagbibigay ng tagubilin ang bawat aralin, naghihintay hanggang mapindot mo ang mga key na binanggit nito, at saka ibibigay ang susunod. Ang tagubilin ang unang item pagkatapos ng pangalan ng aralin. Inililista ng Nilalaman ang bawat aralin, at muling bumubukas ang tutorial sa araling huli mong ginawa.</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">Ang Pagkilos key ay ang Windows key, sa tabi ng kaliwang Alt key. Sa mga Apple keyboard, ito ang Command key, sa tabi ng space bar.</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">Nasa tabi ng space bar ang Alt key.</string>
     <string name="sandfly_keyboard_tutorial_welcome_start">Pindutin ang <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> para magsimula.</string>
     <string name="sandfly_keyboard_tutorial_move_intro">Lumilipat ang Susunod na item at Naunang item sa mga item sa screen, ayon sa pagkakasunod-sunod ng pagbabasa.</string>
     <string name="sandfly_keyboard_tutorial_move_next">Pindutin ang <xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g> para lumipat sa susunod na item. Magpatuloy hanggang makarating ka sa <xliff:g id="item" example="Eggs">%2$s</xliff:g>.</string>
@@ -53,4 +51,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">Pagsasanay sa keyboard</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">Sinasabi ng bawat keyboard shortcut ang mga key at command nito sa halip na gawin ito. Gumagana pa rin ang Susunod na item, Naunang item at ang pag-activate.</string>
     <string name="sandfly_keyboard_tutorial_practice_step">Pindutin ang anumang keyboard shortcut para marinig ang ginagawa nito. Para huminto, i-activate ang <xliff:g id="button" example="End practice">%1$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">Sabay na pindutin nang matagal ang Ctrl at Alt. Pareho silang nasa ibabang kaliwa ng keyboard.</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">Sa karamihan ng keyboard, nasa grupo ng anim na key sa itaas ng mga arrow key ang Insert.</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">Ang Numpad insert ay ang 0 key ng number pad, kapag naka-off ang Num Lock.</string>
 </resources>

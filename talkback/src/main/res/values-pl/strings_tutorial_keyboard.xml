@@ -2,14 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">Samouczek klawiatury SandFly</string>
     <string name="sandfly_keyboard_tutorial_no_key"><xliff:g id="command" example="Następny element">%1$s</xliff:g> nie ma skrótu klawiszowego. Przypisz go w sekcji Polecenia lub użyj przycisku Pomiń krok.</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">Tryb przeglądania wymaga mapy Ulepszona mapa klawiszy. Wybierz ją w sekcji <xliff:g id="settings_path" example="Ustawienia SandFly &gt; Skróty klawiszowe &gt; Wybierz mapę klawiszy">%1$s</xliff:g> lub użyj przycisku Pomiń krok.</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g> dwukrotnie</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">Lekcja ukończona. Naciśnij <xliff:g id="keys" example="Action + Space">%1$s</xliff:g>, aby rozpocząć następną lekcję.</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">Lekcja ukończona. Naciśnij <xliff:g id="keys" example="Action + Space">%1$s</xliff:g>, aby zakończyć samouczek.</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">Strony internetowe</string>
-    <string name="sandfly_keyboard_tutorial_welcome_intro">Ten samouczek uczy skrótów klawiszowych SandFly. Większość z nich używa klawisza <xliff:g id="key" example="Action">%1$s</xliff:g> razem z innymi klawiszami. <xliff:g id="location" example="Klawisz działania to klawisz Windows obok lewego klawisza Alt.">%2$s</xliff:g> Ctrl zatrzymuje mowę. Każda lekcja podaje instrukcję, czeka, aż naciśniesz wymienione w niej klawisze, a potem podaje następną. Instrukcja jest pierwszym elementem po nazwie lekcji. Spis treści zawiera wszystkie lekcje, a samouczek otwiera się ponownie na ostatnio otwartej lekcji.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">Ten samouczek uczy skrótów klawiszowych SandFly. Większość z nich używa klawisza SandFly, <xliff:g id="key" example="Action">%1$s</xliff:g>, razem z innymi klawiszami. <xliff:g id="location" example="Klawisz działania to klawisz Windows obok lewego klawisza Alt.">%2$s</xliff:g> Ctrl zatrzymuje mowę. Każda lekcja podaje instrukcję, czeka, aż naciśniesz wymienione w niej klawisze, a potem podaje następną. Instrukcja jest pierwszym elementem po nazwie lekcji. Spis treści zawiera wszystkie lekcje, a samouczek otwiera się ponownie na ostatnio otwartej lekcji.</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">Klawisz działania to klawisz Windows obok lewego klawisza Alt. Na klawiaturach Apple jest to klawisz Command obok spacji.</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">Klawisz Alt znajduje się obok spacji.</string>
     <string name="sandfly_keyboard_tutorial_welcome_start">Naciśnij <xliff:g id="keys" example="Action + Space">%1$s</xliff:g>, aby rozpocząć.</string>
     <string name="sandfly_keyboard_tutorial_move_intro">Następny element i Poprzedni element przechodzą przez elementy na ekranie w kolejności czytania.</string>
     <string name="sandfly_keyboard_tutorial_move_next">Naciśnij <xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g>, aby przejść do następnego elementu. Kontynuuj, aż dojdziesz do elementu <xliff:g id="item" example="Jajka">%2$s</xliff:g>.</string>
@@ -53,4 +51,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">Ćwiczenie klawiatury</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">Każdy skrót klawiszowy wypowiada swoje klawisze i polecenie zamiast je wykonywać. Następny element, Poprzedni element i aktywacja nadal działają.</string>
     <string name="sandfly_keyboard_tutorial_practice_step">Naciśnij dowolny skrót klawiszowy, aby usłyszeć, co robi. Aby zakończyć, aktywuj <xliff:g id="button" example="Zakończ ćwiczenie">%1$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">Przytrzymaj jednocześnie klawisze Ctrl i Alt. Oba znajdują się w lewym dolnym rogu klawiatury.</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">Na większości klawiatur klawisz Insert znajduje się w grupie sześciu klawiszy nad klawiszami strzałek.</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">Klawisz Insert na klawiaturze numerycznej to klawisz 0 na klawiaturze numerycznej przy wyłączonym Num Lock.</string>
 </resources>

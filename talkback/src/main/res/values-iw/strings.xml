@@ -117,28 +117,17 @@
       &lt;li&gt;חלק ממקשי הצירוף שונים.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">מידע נוסף על מפות המקשים</string>
   <string name="keycombo_go_to_settings">מעבר להגדרות</string>
-  <string name="keycombo_new_keymap_notification_dialog_positive_button">הבנתי</string>
-  <string name="keycombo_new_keymap_notification_dialog_negative_button">הגדרות</string>
-  <string name="keycombo_new_keymap_notification_dialog_neutral_button">מידע נוסף</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_classic_keymap">אין יותר תמיכה במפת המקשים הקלאסית</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">‏כרגע המערכת משתמשת במפת ברירת המחדל של SandFly. יש גם מפת מקשים חדשה ומשופרת עם הרבה פקודות חדשות. אפשר לקרוא מידע נוסף במרכז העזרה או לעבור למפת המקשים החדשה בהגדרות.</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">יש מפת מקשים חדשה</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">‏במפת המקשים החדשה והמשופרת של SandFly יש הרבה פקודות חדשות. אפשר לקרוא מידע נוסף במרכז העזרה או לעבור למפת המקשים החדשה בהגדרות.</string>
   <string name="keycombo_warning_content_description">מידע נוסף על מקש הצירוף</string>
   <string name="keycombo_menu_category_select_keymap">מפת מקשים</string>
   <string name="keycombo_menu_select_keymap">בחירה של מפת מקשים</string>
   <string name="keycombo_menu_reset_keymap">איפוס של מפת המקשים</string>
   <string name="keycombo_menu_view_system_keyboard_shortcuts">צפייה במקשי הקיצור של המערכת</string>
-  <string name="keycombo_menu_choose_trigger_modifier">בחירת מקש צירוף</string>
-  <string name="keycombo_menu_alert_title_trigger_modifier">להשתמש ב-%1$s כמקש הצירוף?</string>
-  <string name="keycombo_menu_alert_message_trigger_modifier">‏בשלב הזה, מקש הצירוף של SandFly הוא <xliff:g id="current_trigger_modifier" example="Alt">%1$s</xliff:g>.</string>
-  <string name="keycombo_menu_alert_button_trigger_modifier">שימוש ב-%1$s</string>
-  <string name="keycombo_menu_announce_new_trigger_modifier">מקש הצירוף השתנה ל-%1$s.</string>
+  <string name="keycombo_menu_choose_trigger_modifier">‏בחירת מקש SandFly</string>
+  <string name="keycombo_menu_announce_new_trigger_modifier">‏מקש SandFly השתנה ל-%1$s.</string>
   <string name="keycombo_menu_announce_active_keymap">%1$s פעיל כרגע.</string>
   <string name="keycombo_menu_announce_reset_keymap">מיפוי המקשים אופס.</string>
   <string name="keycombo_announce_shortcut_not_supported">מקש הקיצור לא נתמך</string>
-  <string name="value_default_keymap">מפת המקשים שמוגדרת כברירת מחדל</string>
-  <string name="value_new_keymap">מפת מקשים משופרת</string>
+  <string name="value_new_keymap">מפת מקשים של SandFly</string>
   <string name="keycombo_menu_category_navigation">פעולות ניווט</string>
   <string name="keycombo_menu_navigate_next">ניווט אל הפריט הבא</string>
   <string name="keycombo_menu_navigate_previous">ניווט אל הפריט הקודם</string>
@@ -266,7 +255,7 @@
   <string name="message_in_reset_keymap_confirm_dialog">האם לאפס את מקשי הקיצור למיפוי המקשים הזה לערכי ברירת המחדל שלהם? פעולה זו אינה הפיכה.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">איפוס</string>
   <string name="template_keycombo_menu_browse_mode_command">%1$s במצב הסמן</string>
-  <string name="keycombo_assign_dialog_default_keymap_instruction">הקש על צירוף מקשים הכולל את מקש הצירוף %1$s כדי להגדיר מקש קיצור חדש.</string>
+  <string name="keycombo_assign_dialog_default_keymap_instruction">‏כדי להגדיר מקש קיצור חדש, צריך ללחוץ על שילוב מקשים עם מקש SandFly ‏%1$s.</string>
   <string name="keycombo_unassigned">לא נבחר</string>
   <string name="save_button_in_keycombo_assign_dialog">שמירה</string>
   <string name="clear_button_in_keycombo_assign_dialog">מחיקה</string>
@@ -1808,4 +1797,10 @@
   <string name="title_pref_speech_dictionary">מילון דיבור</string>
   <string name="speech_dictionary_all_apps">כל האפליקציות</string>
   <string name="speech_dictionary_not_said"><xliff:g id="text" example="#">%1$s</xliff:g> לא נאמר</string>
+  <string name="keycombo_key_modifier_insert">Insert</string>
+  <string name="keycombo_key_modifier_numpad_insert">‏‫Insert במקלדת המספרים</string>
+  <string name="keycombo_menu_navigate_next_paragraph">ניווט לפסקה הבאה</string>
+  <string name="keycombo_menu_navigate_previous_paragraph">ניווט לפסקה הקודמת</string>
+  <string name="keycombo_key_modifier_ctrl_alt">Ctrl + Alt</string>
+  <string name="value_voiceover_keymap">מפת מקשים של VoiceOver</string>
 </resources>

@@ -2,14 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">SandFly-Tastatur-Tutorial</string>
     <string name="sandfly_keyboard_tutorial_no_key">„<xliff:g id="command" example="Nächstes Element">%1$s</xliff:g>“ hat keine Tastenkombination. Weise unter „Befehle“ eine zu oder verwende „Schritt überspringen“.</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">Der Suchmodus erfordert die „Erweiterte Tastaturbelegung“. Wähle sie unter „<xliff:g id="settings_path" example="SandFly-Einstellungen &gt; Tastenkombinationen &gt; Tastaturbelegung auswählen">%1$s</xliff:g>“ aus oder verwende „Schritt überspringen“.</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Aktion">%1$s</xliff:g> zweimal</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">Lektion abgeschlossen. Drücke <xliff:g id="keys" example="Aktion + Leertaste">%1$s</xliff:g>, um die nächste Lektion zu starten.</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">Lektion abgeschlossen. Drücke <xliff:g id="keys" example="Aktion + Leertaste">%1$s</xliff:g>, um das Tutorial abzuschließen.</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">Webseiten</string>
-    <string name="sandfly_keyboard_tutorial_welcome_intro">Dieses Tutorial bringt dir die Tastenkombinationen von SandFly bei. Die meisten verwenden die Taste „<xliff:g id="key" example="Aktion">%1$s</xliff:g>“ zusammen mit anderen Tasten. <xliff:g id="location" example="Die Aktionstaste ist die Windows-Taste neben der linken Alt-Taste.">%2$s</xliff:g> Strg stoppt die Sprachausgabe. Jede Lektion gibt eine Anweisung, wartet, bis du die genannten Tasten gedrückt hast, und gibt dann die nächste. Die Anweisung ist das erste Element nach dem Namen der Lektion. „Inhalt“ listet alle Lektionen auf, und das Tutorial öffnet sich wieder bei der Lektion, in der du warst.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">Dieses Tutorial bringt dir die Tastenkombinationen von SandFly bei. Die meisten verwenden die SandFly-Taste, „<xliff:g id="key" example="Action">%1$s</xliff:g>“, zusammen mit anderen Tasten. <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> Strg stoppt die Sprachausgabe. Jede Lektion gibt eine Anweisung, wartet, bis du die genannten Tasten gedrückt hast, und gibt dann die nächste. Die Anweisung ist das erste Element nach dem Namen der Lektion. „Inhalt“ listet alle Lektionen auf, und das Tutorial öffnet sich wieder bei der Lektion, in der du warst.</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">Die Aktionstaste ist die Windows-Taste neben der linken Alt-Taste. Auf Apple-Tastaturen ist es die Befehlstaste neben der Leertaste.</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">Die Alt-Taste befindet sich neben der Leertaste.</string>
     <string name="sandfly_keyboard_tutorial_welcome_start">Drücke <xliff:g id="keys" example="Aktion + Leertaste">%1$s</xliff:g>, um zu beginnen.</string>
     <string name="sandfly_keyboard_tutorial_move_intro">„Nächstes Element“ und „Vorheriges Element“ gehen in Lesereihenfolge durch die Elemente auf dem Bildschirm.</string>
     <string name="sandfly_keyboard_tutorial_move_next">Drücke <xliff:g id="keys" example="Aktion + Rechtspfeil">%1$s</xliff:g>, um zum nächsten Element zu wechseln. Mach weiter, bis du „<xliff:g id="item" example="Eier">%2$s</xliff:g>“ erreichst.</string>
@@ -53,4 +51,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">Tastatur üben</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">Jede Tastenkombination sagt ihre Tasten und ihren Befehl an, statt ihn auszuführen. „Nächstes Element“, „Vorheriges Element“ und das Aktivieren funktionieren weiterhin.</string>
     <string name="sandfly_keyboard_tutorial_practice_step">Drücke eine beliebige Tastenkombination, um zu hören, was sie tut. Zum Beenden aktiviere „<xliff:g id="button" example="Üben beenden">%1$s</xliff:g>“.</string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">Halte Strg und Alt gleichzeitig gedrückt. Beide befinden sich unten links auf der Tastatur.</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">Auf den meisten Tastaturen befindet sich Einfügen in der Gruppe aus sechs Tasten über den Pfeiltasten.</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">Die Einfügen-Taste auf dem Ziffernblock ist die Taste 0 des Ziffernblocks bei ausgeschaltetem Num-Lock.</string>
 </resources>

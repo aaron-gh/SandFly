@@ -117,28 +117,17 @@
       &lt;li&gt;केही मोडिफायर कीहरू फरक छन्।&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">किम्यापका बारेमा थप जान्नुहोस्</string>
   <string name="keycombo_go_to_settings">सेटिङमा जानुहोस्</string>
-  <string name="keycombo_new_keymap_notification_dialog_positive_button">बुझेँ</string>
-  <string name="keycombo_new_keymap_notification_dialog_negative_button">सेटिङ</string>
-  <string name="keycombo_new_keymap_notification_dialog_neutral_button">थप जान्नुहोस्</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_classic_keymap">अहिले क्लासिक किम्याप प्रयोग गर्न मिल्दैन</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">तपाईंले अहिले SandFly को डिफल्ट किम्याप प्रयोग गर्दै हुनुहुन्छ। साथै, थुप्रै नयाँ कमान्डहरू भएको नयाँ परिष्कृत किम्याप पनि उपलब्ध छ। मद्दत केन्द्रमा गई थप जान्नुहोस् वा सेटिङमा गई किम्याप बदलेर नयाँ किम्याप प्रयोग गर्न थाल्नुहोस्।</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">नयाँ किम्याप उपलब्ध छ</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">SandFly को परिष्कृत नयाँ किम्यापमा थुप्रै नयाँ कमान्डहरू समावेश गरिएका छन्। मद्दत केन्द्रमा गई थप जान्नुहोस् वा सेटिङमा गई किम्याप बदलेर नयाँ किम्याप प्रयोग गर्न थाल्नुहोस्।</string>
   <string name="keycombo_warning_content_description">तपाईंको मोडिफायर कीका बारेमा थप जानकारी</string>
   <string name="keycombo_menu_category_select_keymap">किम्याप</string>
   <string name="keycombo_menu_select_keymap">किम्याप चयन गर्नुहोस्</string>
   <string name="keycombo_menu_reset_keymap">किम्याप रिसेट गर्नुहोस्</string>
   <string name="keycombo_menu_view_system_keyboard_shortcuts">सिस्टमको किबोर्डका सर्टकटहरू हेर्नुहोस्</string>
-  <string name="keycombo_menu_choose_trigger_modifier">मोडिफायर की छान्नुहोस्</string>
-  <string name="keycombo_menu_alert_title_trigger_modifier">%1$s लाई आफ्नो मोडिफायर कीका रूपमा प्रयोग गर्ने हो?</string>
-  <string name="keycombo_menu_alert_message_trigger_modifier">SandFly ले हाल <xliff:g id="current_trigger_modifier" example="Alt">%1$s</xliff:g> लाई मोडिफायर कीका रूपमा प्रयोग गरिरहेको छ।</string>
-  <string name="keycombo_menu_alert_button_trigger_modifier">%1$s प्रयोग गर्नुहोस्</string>
-  <string name="keycombo_menu_announce_new_trigger_modifier">परिमार्जक कुञ्जीलाई %1$s मा परिवर्तन गरिएको छ।</string>
+  <string name="keycombo_menu_choose_trigger_modifier">SandFly की छनौट गर्नुहोस्</string>
+  <string name="keycombo_menu_announce_new_trigger_modifier">SandFly की परिवर्तन गरी %1$s बनाइएको छ।</string>
   <string name="keycombo_menu_announce_active_keymap">%1$s अहिले सक्रिय छ।</string>
   <string name="keycombo_menu_announce_reset_keymap">किम्याप रिसेट गरिएको छ।</string>
   <string name="keycombo_announce_shortcut_not_supported">सर्टकट समर्थित छैन</string>
-  <string name="value_default_keymap">डिफल्ट किम्याप</string>
-  <string name="value_new_keymap">परिष्कृत किम्याप</string>
+  <string name="value_new_keymap">SandFly किम्याप</string>
   <string name="keycombo_menu_category_navigation">नेभिगेसन कार्यहरू</string>
   <string name="keycombo_menu_navigate_next">अर्को वस्तुमा नेभिगेट गर्नुहोस्</string>
   <string name="keycombo_menu_navigate_previous">अघिल्लो वस्तुमा नेभिगेट गर्नुहोस्</string>
@@ -266,7 +255,7 @@
   <string name="message_in_reset_keymap_confirm_dialog">तपाईं साँच्चिकै यो किम्यापका सर्टकट कीहरू रिसेट गरेर तिनको डिफल्ट मान कायम गर्न चाहनुहुन्छ? कृपया यस कार्यलाई अन्डू गर्न सकिँदैन भन्ने कुरा ख्याल गर्नुहोस्।।</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">रिसेट गर्नुहोस्</string>
   <string name="template_keycombo_menu_browse_mode_command">ब्राउज मोडमा रहेको %1$s</string>
-  <string name="keycombo_assign_dialog_default_keymap_instruction">नयाँ सर्टकट सेट गर्नाका लागि %1$s मोडिफायर की सँगसँगै कुनै अर्को की थिच्नुहोस्।</string>
+  <string name="keycombo_assign_dialog_default_keymap_instruction">नयाँ सर्टकट सेट गर्न %1$s SandFly कीसँगै की कम्बिनेसन थिच्नुहोस्।</string>
   <string name="keycombo_unassigned">असाइन गरिएको छैन</string>
   <string name="save_button_in_keycombo_assign_dialog">सेभ गर्नुहोस्</string>
   <string name="clear_button_in_keycombo_assign_dialog">हटाउनुहोस्</string>
@@ -1805,4 +1794,10 @@
   <string name="title_pref_speech_dictionary">वाचन शब्दकोश</string>
   <string name="speech_dictionary_all_apps">सबै एपहरू</string>
   <string name="speech_dictionary_not_said"><xliff:g id="text" example="#">%1$s</xliff:g> भनिँदैन</string>
+  <string name="keycombo_key_modifier_insert">हाल्नुहोस्</string>
+  <string name="keycombo_key_modifier_numpad_insert">नम्प्याड इन्सर्ट की</string>
+  <string name="keycombo_menu_navigate_next_paragraph">अर्को अनुच्छेदमा जानुहोस्</string>
+  <string name="keycombo_menu_navigate_previous_paragraph">अघिल्लो अनुच्छेदमा जानुहोस्</string>
+  <string name="keycombo_key_modifier_ctrl_alt">Ctrl + Alt</string>
+  <string name="value_voiceover_keymap">VoiceOver किम्याप</string>
 </resources>

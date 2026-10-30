@@ -2,14 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">SandFly キーボード チュートリアル</string>
     <string name="sandfly_keyboard_tutorial_no_key">「<xliff:g id="command" example="次の項目">%1$s</xliff:g>」にはキーボード ショートカットがありません。[コマンド] で割り当てるか、[ステップをスキップ] を使用します。</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">ブラウズモードには [拡張キーマップ] が必要です。<xliff:g id="settings_path" example="[SandFly の設定] &gt; [キーボード ショートカット] &gt; [キーマップを選択]">%1$s</xliff:g> で選択するか、[ステップをスキップ] を使用します。</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="アクション">%1$s</xliff:g>を 2 回</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">レッスン完了。<xliff:g id="keys" example="アクション + スペース">%1$s</xliff:g>を押して次のレッスンを開始します。</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">レッスン完了。<xliff:g id="keys" example="アクション + スペース">%1$s</xliff:g>を押してチュートリアルを終了します。</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">ウェブページ</string>
-    <string name="sandfly_keyboard_tutorial_welcome_intro">このチュートリアルでは SandFly のキーボード ショートカットを学びます。ほとんどのショートカットは、<xliff:g id="key" example="アクション">%1$s</xliff:g> キーと他のキーを組み合わせて使います。<xliff:g id="location" example="アクション キーは Windows キーで、左の Alt キーの隣にあります。">%2$s</xliff:g>Ctrl キーで読み上げが止まります。各レッスンでは指示が出され、指示されたキーを押すと次の指示に進みます。指示はレッスン名の次の項目です。[目次] にはすべてのレッスンがあり、チュートリアルは前回のレッスンから再開します。</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">このチュートリアルでは SandFly のキーボード ショートカットを学びます。ほとんどのショートカットは、SandFly キー（<xliff:g id="key" example="Action">%1$s</xliff:g>）と他のキーを組み合わせて使います。<xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g>Ctrl キーで読み上げが止まります。各レッスンでは指示が出され、指示されたキーを押すと次の指示に進みます。指示はレッスン名の次の項目です。[目次] にはすべてのレッスンがあり、チュートリアルは前回のレッスンから再開します。</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">アクション キーは Windows キーで、左の Alt キーの隣にあります。Apple のキーボードでは、スペースバーの隣にある command キーです。</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">Alt キーはスペースバーの隣にあります。</string>
     <string name="sandfly_keyboard_tutorial_welcome_start"><xliff:g id="keys" example="アクション + スペース">%1$s</xliff:g>を押して開始します。</string>
     <string name="sandfly_keyboard_tutorial_move_intro">[次の項目] と [前の項目] で、画面上の項目を読み上げ順に移動します。</string>
     <string name="sandfly_keyboard_tutorial_move_next"><xliff:g id="keys" example="アクション + 右矢印">%1$s</xliff:g>を押して次の項目に移動します。「<xliff:g id="item" example="卵">%2$s</xliff:g>」まで進んでください。</string>
@@ -53,4 +51,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">キーボードの練習</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">各キーボード ショートカットは、実行される代わりにキーとコマンドが読み上げられます。[次の項目]、[前の項目]、有効化はそのまま使えます。</string>
     <string name="sandfly_keyboard_tutorial_practice_step">任意のキーボード ショートカットを押すと、その動作が読み上げられます。終了するには「<xliff:g id="button" example="練習を終了">%1$s</xliff:g>」を有効にします。</string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">Ctrl キーと Alt キーを同時に押し続けます。どちらもキーボードの左下にあります。</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">ほとんどのキーボードでは、インサート キーは矢印キーの上にある 6 つのキーのグループにあります。</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">テンキーのインサートは、Num Lock がオフのときのテンキーの 0 キーです。</string>
 </resources>

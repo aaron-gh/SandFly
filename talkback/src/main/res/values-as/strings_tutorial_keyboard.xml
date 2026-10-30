@@ -2,14 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">SandFlyৰ কীব’ৰ্ড টিউট’ৰিয়েল</string>
     <string name="sandfly_keyboard_tutorial_no_key"><xliff:g id="command" example="পৰৱৰ্তী বস্তু">%1$s</xliff:g>ৰ কোনো কীব’ৰ্ড শ্বৰ্টকাট নাই। “কামাণ্ড”ত এটা আবণ্টন কৰক, বা “পদক্ষেপ বাদ দিয়ক” ব্যৱহাৰ কৰক।</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">ব্ৰাউজ কৰাৰ ম’ডৰ বাবে “বৰ্ধিত কীমেপ” লাগে। <xliff:g id="settings_path" example="SandFlyৰ ছেটিং &gt; কীব\'ৰ্ডৰ শ্বৰ্টকাটসমূহ &gt; কীমেপ বাছনি কৰক">%1$s</xliff:g>ত ইয়াক বাছনি কৰক, বা “পদক্ষেপ বাদ দিয়ক” ব্যৱহাৰ কৰক।</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="একশ্বন">%1$s</xliff:g> দুবাৰ</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">পাঠ সম্পূৰ্ণ। পৰৱৰ্তী পাঠ আৰম্ভ কৰিবলৈ <xliff:g id="keys" example="একশ্বন + স্পেচ">%1$s</xliff:g> টিপক।</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">পাঠ সম্পূৰ্ণ। টিউট’ৰিয়েল শেষ কৰিবলৈ <xliff:g id="keys" example="একশ্বন + স্পেচ">%1$s</xliff:g> টিপক।</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">ৱেব পৃষ্ঠা</string>
-    <string name="sandfly_keyboard_tutorial_welcome_intro">এই টিউট’ৰিয়েলে SandFlyৰ কীব’ৰ্ড শ্বৰ্টকাটসমূহ শিকায়। সেইবোৰৰ বেছিভাগেই <xliff:g id="key" example="একশ্বন">%1$s</xliff:g> কী আন কীৰ সৈতে ব্যৱহাৰ কৰে। <xliff:g id="location" example="একশ্বন কীটো হৈছে Windows কী, বাওঁফালৰ Alt কীটোৰ কাষত।">%2$s</xliff:g> Ctrlএ কথন বন্ধ কৰে। প্ৰতিটো পাঠে এটা নিৰ্দেশনা দিয়ে, আপুনি ই উল্লেখ কৰা কীসমূহ নিটিপালৈকে অপেক্ষা কৰে, তাৰ পাছত পৰৱৰ্তীটো দিয়ে। নিৰ্দেশনাটো পাঠৰ নামৰ পাছৰ প্ৰথম বস্তু। “সূচীপত্ৰ”এ সকলো পাঠ দেখুৱায়, আৰু টিউট’ৰিয়েলটো আপুনি থকা পাঠতে পুনৰ খোল খায়।</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">এই টিউট’ৰিয়েলে SandFlyৰ কীব’ৰ্ড শ্বৰ্টকাটসমূহ শিকায়। সেইবোৰৰ বেছিভাগেই SandFly কী, <xliff:g id="key" example="Action">%1$s</xliff:g>, আন কীৰ সৈতে ব্যৱহাৰ কৰে। <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> Ctrlএ কথন বন্ধ কৰে। প্ৰতিটো পাঠে এটা নিৰ্দেশনা দিয়ে, আপুনি ই উল্লেখ কৰা কীসমূহ নিটিপালৈকে অপেক্ষা কৰে, তাৰ পাছত পৰৱৰ্তীটো দিয়ে। নিৰ্দেশনাটো পাঠৰ নামৰ পাছৰ প্ৰথম বস্তু। “সূচীপত্ৰ”এ সকলো পাঠ দেখুৱায়, আৰু টিউট’ৰিয়েলটো আপুনি থকা পাঠতে পুনৰ খোল খায়।</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">একশ্বন কীটো হৈছে Windows কী, বাওঁফালৰ Alt কীটোৰ কাষত। Apple কীব’ৰ্ডত, এইটো হৈছে Command কী, স্পেচ বাৰৰ কাষত।</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">Alt কীটো স্পেচ বাৰৰ কাষত।</string>
     <string name="sandfly_keyboard_tutorial_welcome_start">আৰম্ভ কৰিবলৈ <xliff:g id="keys" example="একশ্বন + স্পেচ">%1$s</xliff:g> টিপক।</string>
     <string name="sandfly_keyboard_tutorial_move_intro">“পৰৱৰ্তী বস্তু” আৰু “পূৰ্বৱৰ্তী বস্তু”ই স্ক্ৰীনৰ বস্তুসমূহৰ মাজেৰে পঢ়াৰ ক্ৰমত যায়।</string>
     <string name="sandfly_keyboard_tutorial_move_next">পৰৱৰ্তী বস্তুলৈ যাবলৈ <xliff:g id="keys" example="একশ্বন + সোঁমুৱা কাঁড়চিহ্ন">%1$s</xliff:g> টিপক। <xliff:g id="item" example="কণী">%2$s</xliff:g> নোপোৱালৈকে চলাই থাকক।</string>
@@ -53,4 +51,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">কীব’ৰ্ডৰ অনুশীলন</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">প্ৰতিটো কীব’ৰ্ড শ্বৰ্টকাটে চলোৱাৰ সলনি নিজৰ কী আৰু কামাণ্ড কয়। “পৰৱৰ্তী বস্তু”, “পূৰ্বৱৰ্তী বস্তু” আৰু সক্ৰিয় কৰাটো এতিয়াও কাম কৰে।</string>
     <string name="sandfly_keyboard_tutorial_practice_step">যিকোনো কীব’ৰ্ড শ্বৰ্টকাট টিপি সি কি কৰে শুনক। বন্ধ কৰিবলৈ <xliff:g id="button" example="অনুশীলন সমাপ্ত কৰক">%1$s</xliff:g> সক্ৰিয় কৰক।</string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">Ctrl আৰু Alt একেলগে টিপি ধৰি ৰাখক। দুয়োটা কীব’ৰ্ডৰ তলৰ বাওঁফালে আছে।</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">বেছিভাগ কীব’ৰ্ডত, ইনছাৰ্ট কাঁড় চিহ্নৰ কীবোৰৰ ওপৰৰ ছটা কীৰ গোটটোত থাকে।</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">নামপেড ইনছাৰ্ট হৈছে নম্বৰ পেডৰ 0 কী, Num Lock অফ থকা অৱস্থাত।</string>
 </resources>

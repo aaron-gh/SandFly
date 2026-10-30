@@ -2,14 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">Обучение за клавиатурата в SandFly</string>
     <string name="sandfly_keyboard_tutorial_no_key">„<xliff:g id="command" example="Следващ елемент">%1$s</xliff:g>“ няма клавишна комбинация. Присвоете комбинация в „Команди“ или използвайте „Пропускане на стъпката“.</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">Режимът за четене изисква „Подобрена клавиатурна подредба“. Изберете я в „<xliff:g id="settings_path" example="Настройки на SandFly &gt; Клавишни комбинации &gt; Избиране на клавишна карта">%1$s</xliff:g>“ или използвайте „Пропускане на стъпката“.</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Клавиш за действия">%1$s</xliff:g> два пъти</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">Урокът е завършен. Натиснете <xliff:g id="keys" example="Клавиш за действия + Интервал">%1$s</xliff:g>, за да започнете следващия урок.</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">Урокът е завършен. Натиснете <xliff:g id="keys" example="Клавиш за действия + Интервал">%1$s</xliff:g>, за да завършите обучението.</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">Уеб страници</string>
-    <string name="sandfly_keyboard_tutorial_welcome_intro">Това обучение представя клавишните комбинации на SandFly. Повечето от тях използват клавиша „<xliff:g id="key" example="Клавиш за действия">%1$s</xliff:g>“ заедно с други клавиши. <xliff:g id="location" example="Клавишът за действия е клавишът Windows до левия клавиш Alt.">%2$s</xliff:g> Ctrl спира говора. Всеки урок дава инструкция, изчаква да натиснете посочените в нея клавиши и след това дава следващата. Инструкцията е първият елемент след името на урока. „Съдържание“ показва всички уроци, а обучението се отваря отново на урока, на който сте били.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">Това обучение представя клавишните комбинации на SandFly. Повечето от тях използват клавиша за SandFly, „<xliff:g id="key" example="Action">%1$s</xliff:g>“, заедно с други клавиши. <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> Ctrl спира говора. Всеки урок дава инструкция, изчаква да натиснете посочените в нея клавиши и след това дава следващата. Инструкцията е първият елемент след името на урока. „Съдържание“ показва всички уроци, а обучението се отваря отново на урока, на който сте били.</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">Клавишът за действия е клавишът Windows до левия клавиш Alt. На клавиатурите на Apple това е клавишът Command до клавиша за интервал.</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">Клавишът Alt е до клавиша за интервал.</string>
     <string name="sandfly_keyboard_tutorial_welcome_start">Натиснете <xliff:g id="keys" example="Клавиш за действия + Интервал">%1$s</xliff:g>, за да започнете.</string>
     <string name="sandfly_keyboard_tutorial_move_intro">„Следващ елемент“ и „Предишен елемент“ преминават през елементите на екрана по реда на четене.</string>
     <string name="sandfly_keyboard_tutorial_move_next">Натиснете <xliff:g id="keys" example="Клавиш за действия + Стрелка надясно">%1$s</xliff:g>, за да преминете към следващия елемент. Продължете, докато стигнете до „<xliff:g id="item" example="Яйца">%2$s</xliff:g>“.</string>
@@ -53,4 +51,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">Упражнение с клавиатурата</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">Всяка клавишна комбинация изговаря клавишите и командата си, вместо да я изпълни. „Следващ елемент“, „Предишен елемент“ и активирането продължават да работят.</string>
     <string name="sandfly_keyboard_tutorial_practice_step">Натиснете произволна клавишна комбинация, за да чуете какво прави. За да спрете, активирайте „<xliff:g id="button" example="Край на упражнението">%1$s</xliff:g>“.</string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">Задръжте едновременно Ctrl и Alt. И двата клавиша са в долния ляв ъгъл на клавиатурата.</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">На повечето клавиатури Insert е в групата от шест клавиша над клавишите със стрелки.</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">Insert на цифровата клавиатура е клавишът 0 на цифровата клавиатура, когато Num Lock е изключен.</string>
 </resources>

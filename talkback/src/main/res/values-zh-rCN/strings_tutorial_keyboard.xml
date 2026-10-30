@@ -2,15 +2,13 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">SandFly 键盘教程</string>
     <string name="sandfly_keyboard_tutorial_no_key">“<xliff:g id="command" example="下一项">%1$s</xliff:g>”没有键盘快捷键。请在“命令”中分配一个，或使用“跳过步骤”。</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">浏览模式需要“增强型按键映射”。请在<xliff:g id="settings_path" example="SandFly 设置 &gt; 键盘快捷键 &gt; 选择按键映射">%1$s</xliff:g>中选择它，或使用“跳过步骤”。</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g>两次</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">本课完成。按<xliff:g id="keys" example="Action + Space">%1$s</xliff:g>即可开始下一课。</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">本课完成。按<xliff:g id="keys" example="Action + Space">%1$s</xliff:g>即可完成教程。</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">网页</string>
 
-    <string name="sandfly_keyboard_tutorial_welcome_intro">本教程讲解 SandFly 的键盘快捷键。大多数快捷键将<xliff:g id="key" example="Action">%1$s</xliff:g>与其他按键组合使用。<xliff:g id="location" example="快捷操作按键是 Windows 键，位于左侧 Alt 键旁边。">%2$s</xliff:g>按 Ctrl 键会停止语音。每节课会给出一条指示，等你按下其中所说的按键后，再给出下一条。指示是课程名称之后的第一项。“目录”列出所有课程，教程会在你上次所在的课程处重新打开。</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">本教程讲解 SandFly 的键盘快捷键。大多数快捷键将 SandFly 键（<xliff:g id="key" example="Action">%1$s</xliff:g>）与其他按键组合使用。<xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g>按 Ctrl 键会停止语音。每节课会给出一条指示，等你按下其中所说的按键后，再给出下一条。指示是课程名称之后的第一项。“目录”列出所有课程，教程会在你上次所在的课程处重新打开。</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">快捷操作按键是 Windows 键，位于左侧 Alt 键旁边。在 Apple 键盘上，它是 Command 键，位于空格键旁边。</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">Alt 键位于空格键旁边。</string>
     <string name="sandfly_keyboard_tutorial_welcome_start">按<xliff:g id="keys" example="Action + Space">%1$s</xliff:g>即可开始。</string>
 
     <string name="sandfly_keyboard_tutorial_move_intro">“下一项”和“上一项”按阅读顺序在屏幕上的各项之间移动。</string>
@@ -67,4 +65,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">键盘练习</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">每个键盘快捷键会说出其按键和命令，而不会执行它。“下一项”“上一项”和激活仍然有效。</string>
     <string name="sandfly_keyboard_tutorial_practice_step">按任意键盘快捷键即可听到它的作用。如需停止，请激活“<xliff:g id="button" example="结束练习">%1$s</xliff:g>”。</string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">同时按住 Ctrl 键和 Alt 键。这两个键都位于键盘左下角。</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">在大多数键盘上，插入键位于方向键上方的六个按键中。</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">数字小键盘 Insert 键是关闭 Num Lock 时数字小键盘上的 0 键。</string>
 </resources>

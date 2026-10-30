@@ -117,28 +117,17 @@
       &lt;li&gt;Niektóre klawisze modyfikujące są inne.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">Więcej informacji o mapach klawiszy</string>
   <string name="keycombo_go_to_settings">Otwórz Ustawienia</string>
-  <string name="keycombo_new_keymap_notification_dialog_positive_button">OK</string>
-  <string name="keycombo_new_keymap_notification_dialog_negative_button">Ustawienia</string>
-  <string name="keycombo_new_keymap_notification_dialog_neutral_button">Więcej informacji</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_classic_keymap">Klasyczna mapa klawiszy nie jest już obsługiwana</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">Teraz używasz domyślnej mapy klawiszy SandFly. Dostępna jest też zmodernizowana mapa klawiszy z wieloma nowymi poleceniami. Więcej informacji znajdziesz w Centrum pomocy. Możesz też przełączyć się na nową mapę klawiszy w Ustawieniach.</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">Dostępna jest nowa mapa klawiszy</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">Zmodernizowana mapa klawiszy SandFly zawiera wiele nowych poleceń. Więcej informacji znajdziesz w Centrum pomocy. Możesz też przełączyć się na nową mapę klawiszy w Ustawieniach.</string>
   <string name="keycombo_warning_content_description">Więcej informacji o klawiszu modyfikującym</string>
   <string name="keycombo_menu_category_select_keymap">Mapa klawiszy</string>
   <string name="keycombo_menu_select_keymap">Wybierz mapę klawiszy</string>
   <string name="keycombo_menu_reset_keymap">Zresetuj mapę klawiszy</string>
   <string name="keycombo_menu_view_system_keyboard_shortcuts">Wyświetl systemowe skróty klawiszowe</string>
-  <string name="keycombo_menu_choose_trigger_modifier">Wybierz klawisz modyfikujący</string>
-  <string name="keycombo_menu_alert_title_trigger_modifier">Używać klawisza %1$s jako klawisza modyfikującego?</string>
-  <string name="keycombo_menu_alert_message_trigger_modifier">SandFly używa obecnie klawisza %1$s jako klawisza modyfikującego.</string>
-  <string name="keycombo_menu_alert_button_trigger_modifier">Używaj klawisza %1$s</string>
-  <string name="keycombo_menu_announce_new_trigger_modifier">Klawisz modyfikujący został zmieniony na %1$s.</string>
+  <string name="keycombo_menu_choose_trigger_modifier">Wybierz klawisz SandFly</string>
+  <string name="keycombo_menu_announce_new_trigger_modifier">Klawisz SandFly został zmieniony na %1$s.</string>
   <string name="keycombo_menu_announce_active_keymap">Mapa klawiszy %1$s jest aktywna.</string>
   <string name="keycombo_menu_announce_reset_keymap">Mapa klawiszy została zresetowana.</string>
   <string name="keycombo_announce_shortcut_not_supported">Skrót nie jest obsługiwany</string>
-  <string name="value_default_keymap">Domyślna mapa klawiszy</string>
-  <string name="value_new_keymap">Ulepszona mapa klawiszy</string>
+  <string name="value_new_keymap">Mapa klawiszy SandFly</string>
   <string name="keycombo_menu_category_navigation">Czynności nawigacyjne</string>
   <string name="keycombo_menu_navigate_next">Przejdź do następnego elementu</string>
   <string name="keycombo_menu_navigate_previous">Przejdź do poprzedniego elementu</string>
@@ -266,7 +255,7 @@
   <string name="message_in_reset_keymap_confirm_dialog">Na pewno chcesz przywrócić domyślne wartości skrótów klawiszowych tej mapy klawiszy? Pamiętaj, że tej czynności nie można cofnąć.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">Resetuj</string>
   <string name="template_keycombo_menu_browse_mode_command">%1$s w trybie przeglądania</string>
-  <string name="keycombo_assign_dialog_default_keymap_instruction">Aby ustawić nowy skrót, naciśnij kombinację klawiszy z wciśniętym klawiszem %1$s.</string>
+  <string name="keycombo_assign_dialog_default_keymap_instruction">Naciśnij kombinację klawiszy z klawiszem SandFly %1$s, aby ustawić nowy skrót.</string>
   <string name="keycombo_unassigned">Nieprzypisano</string>
   <string name="save_button_in_keycombo_assign_dialog">Zapisz</string>
   <string name="clear_button_in_keycombo_assign_dialog">Wyczyść</string>
@@ -1638,4 +1627,10 @@
   <string name="title_pref_speech_dictionary">Słownik mowy</string>
   <string name="speech_dictionary_all_apps">Wszystkie aplikacje</string>
   <string name="speech_dictionary_not_said"><xliff:g id="text" example="#">%1$s</xliff:g> nie jest wypowiadane</string>
+  <string name="keycombo_key_modifier_insert">Klawisz Insert</string>
+  <string name="keycombo_key_modifier_numpad_insert">Klawisz Insert na klawiaturze numerycznej</string>
+  <string name="keycombo_menu_navigate_next_paragraph">Przejdź do następnego akapitu</string>
+  <string name="keycombo_menu_navigate_previous_paragraph">Przejdź do poprzedniego akapitu</string>
+  <string name="keycombo_key_modifier_ctrl_alt">Ctrl + Alt</string>
+  <string name="value_voiceover_keymap">Mapa klawiszy VoiceOver</string>
 </resources>

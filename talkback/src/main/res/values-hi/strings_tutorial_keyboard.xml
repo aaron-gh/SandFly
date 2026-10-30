@@ -2,14 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">SandFly कीबोर्ड ट्यूटोरियल</string>
     <string name="sandfly_keyboard_tutorial_no_key"><xliff:g id="command" example="Next item">%1$s</xliff:g> के लिए कोई कीबोर्ड शॉर्टकट नहीं है. \'निर्देश\' में कोई शॉर्टकट असाइन करें या \'चरण छोड़ें\' का इस्तेमाल करें.</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">\'ब्राउज़ करें\' मोड के लिए \'बेहतर कीमैप\' ज़रूरी है. इसे <xliff:g id="settings_path" example="SandFly settings &gt; Keyboard shortcuts &gt; Choose a keymap">%1$s</xliff:g> में चुनें या \'चरण छोड़ें\' का इस्तेमाल करें.</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g> दो बार</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">पाठ पूरा हुआ. अगला पाठ शुरू करने के लिए <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> दबाएं.</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">पाठ पूरा हुआ. ट्यूटोरियल पूरा करने के लिए <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> दबाएं.</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">वेब पेज</string>
-    <string name="sandfly_keyboard_tutorial_welcome_intro">यह ट्यूटोरियल SandFly के कीबोर्ड शॉर्टकट सिखाता है. इनमें से ज़्यादातर शॉर्टकट दूसरे बटन के साथ <xliff:g id="key" example="Action">%1$s</xliff:g> का इस्तेमाल करते हैं. <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> Ctrl से बोली बंद होती है. हर पाठ एक निर्देश देता है, जब तक आप उसमें बताए गए बटन नहीं दबाते तब तक इंतज़ार करता है, फिर अगला निर्देश देता है. निर्देश, पाठ के नाम के बाद वाला पहला आइटम होता है. \'विषय-सूची\' में सभी पाठ दिए गए हैं, और ट्यूटोरियल उसी पाठ पर दोबारा खुलता है जिस पर आप थे.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">यह ट्यूटोरियल SandFly के कीबोर्ड शॉर्टकट सिखाता है. इनमें से ज़्यादातर शॉर्टकट दूसरे बटन के साथ SandFly बटन, यानी <xliff:g id="key" example="Action">%1$s</xliff:g>, का इस्तेमाल करते हैं. <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> Ctrl से बोली बंद होती है. हर पाठ एक निर्देश देता है, जब तक आप उसमें बताए गए बटन नहीं दबाते तब तक इंतज़ार करता है, फिर अगला निर्देश देता है. निर्देश, पाठ के नाम के बाद वाला पहला आइटम होता है. \'विषय-सूची\' में सभी पाठ दिए गए हैं, और ट्यूटोरियल उसी पाठ पर दोबारा खुलता है जिस पर आप थे.</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">ऐक्शन बटन, Windows बटन है, जो बाईं ओर मौजूद Alt बटन के बगल में है. Apple कीबोर्ड पर, यह Command बटन है, जो Space बटन के बगल में है.</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">Alt बटन, Space बटन के बगल में है.</string>
     <string name="sandfly_keyboard_tutorial_welcome_start">शुरू करने के लिए <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> दबाएं.</string>
     <string name="sandfly_keyboard_tutorial_move_intro">\'अगला आइटम\' और \'पिछला आइटम\' स्क्रीन पर मौजूद आइटम पर पढ़ने के क्रम में ले जाते हैं.</string>
     <string name="sandfly_keyboard_tutorial_move_next">अगले आइटम पर जाने के लिए <xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g> दबाएं. <xliff:g id="item" example="Eggs">%2$s</xliff:g> तक पहुंचने तक ऐसा करते रहें.</string>
@@ -53,4 +51,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">कीबोर्ड का अभ्यास</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">हर कीबोर्ड शॉर्टकट पर उसका निर्देश चलने के बजाय, उसके बटन और निर्देश बोले जाते हैं. \'अगला आइटम\', \'पिछला आइटम\' और चालू करना अब भी काम करते हैं.</string>
     <string name="sandfly_keyboard_tutorial_practice_step">कोई भी कीबोर्ड शॉर्टकट दबाकर सुनें कि वह क्या करता है. बंद करने के लिए, <xliff:g id="button" example="End practice">%1$s</xliff:g> को चालू करें.</string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">Ctrl और Alt बटन को एक साथ दबाकर रखें. दोनों कीबोर्ड पर सबसे नीचे बाईं ओर होते हैं.</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">ज़्यादातर कीबोर्ड पर, इंसर्ट बटन, ऐरो बटन के ऊपर मौजूद छह बटन के समूह में होता है.</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">नंबर पैड इंसर्ट, नंबर पैड का 0 बटन है, जब Num Lock बंद हो.</string>
 </resources>

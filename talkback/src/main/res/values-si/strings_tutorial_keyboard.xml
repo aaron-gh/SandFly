@@ -2,15 +2,13 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="sandfly_keyboard_tutorial_title">SandFly යතුරු පුවරු නිබන්ධනය</string>
     <string name="sandfly_keyboard_tutorial_no_key"><xliff:g id="command" example="ඊළඟ අයිතමය">%1$s</xliff:g> සඳහා යතුරු පුවරු කෙටිමඟක් නැත. “විධාන” තුළ එකක් පවරන්න, නැතහොත් “පියවර මඟ හරින්න” භාවිත කරන්න.</string>
-    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">බ්‍රව්සරය මාදිලියට “වැඩිදියුණු කළ යතුරු සිතියම” අවශ්‍යයි. එය <xliff:g id="settings_path" example="SandFly සැකසීම් &gt; යතුරු පුවරු කෙටිමං &gt; යතුරු සිතියමක් තෝරන්න">%1$s</xliff:g> තුළ තෝරන්න, නැතහොත් “පියවර මඟ හරින්න” භාවිත කරන්න.</string>
     <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g> දෙවරක්</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_next">පාඩම සම්පූර්ණයි. ඊළඟ පාඩම ආරම්භ කිරීමට <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> ඔබන්න.</string>
     <string name="sandfly_keyboard_tutorial_lesson_complete_last">පාඩම සම්පූර්ණයි. නිබන්ධනය අවසන් කිරීමට <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> ඔබන්න.</string>
     <string name="sandfly_keyboard_tutorial_chapter_web">වෙබ් පිටු</string>
 
-    <string name="sandfly_keyboard_tutorial_welcome_intro">මෙම නිබන්ධනය SandFly හි යතුරු පුවරු කෙටිමං උගන්වයි. ඒවායින් බොහොමයක් <xliff:g id="key" example="Action">%1$s</xliff:g> යතුර වෙනත් යතුරු සමඟ භාවිත කරයි. <xliff:g id="location" example="ක්‍රියා යතුර යනු වම් Alt යතුර අසල ඇති Windows යතුරයි.">%2$s</xliff:g> Ctrl කථනය නවත්වයි. සෑම පාඩමක්ම උපදෙසක් ලබා දී, එහි සඳහන් යතුරු ඔබ ඔබන තෙක් රැඳී, ඉන්පසු ඊළඟ උපදෙස ලබා දෙයි. උපදෙස පාඩමේ නමෙන් පසු පළමු අයිතමයයි. “පටුන” සෑම පාඩමක්ම ලැයිස්තුගත කරයි, නිබන්ධනය ඔබ සිටි පාඩමෙන් නැවත විවෘත වේ.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">මෙම නිබන්ධනය SandFly හි යතුරු පුවරු කෙටිමං උගන්වයි. ඒවායින් බොහොමයක් SandFly යතුර, <xliff:g id="key" example="Action">%1$s</xliff:g>, වෙනත් යතුරු සමඟ භාවිත කරයි. <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> Ctrl කථනය නවත්වයි. සෑම පාඩමක්ම උපදෙසක් ලබා දී, එහි සඳහන් යතුරු ඔබ ඔබන තෙක් රැඳී, ඉන්පසු ඊළඟ උපදෙස ලබා දෙයි. උපදෙස පාඩමේ නමෙන් පසු පළමු අයිතමයයි. “පටුන” සෑම පාඩමක්ම ලැයිස්තුගත කරයි, නිබන්ධනය ඔබ සිටි පාඩමෙන් නැවත විවෘත වේ.</string>
     <string name="sandfly_keyboard_tutorial_action_key_location">ක්‍රියා යතුර යනු වම් Alt යතුර අසල ඇති Windows යතුරයි. Apple යතුරු පුවරුවල, එය ඉඩ යතුර අසල ඇති Command යතුරයි.</string>
-    <string name="sandfly_keyboard_tutorial_alt_key_location">Alt යතුර ඉඩ යතුර අසල ඇත.</string>
     <string name="sandfly_keyboard_tutorial_welcome_start">ආරම්භ කිරීමට <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> ඔබන්න.</string>
 
     <string name="sandfly_keyboard_tutorial_move_intro">“ඊළඟ අයිතමය” සහ “පසුගිය අයිතමය” කියවීමේ පිළිවෙළට තිරයේ අයිතම හරහා ගමන් කරයි.</string>
@@ -67,4 +65,7 @@
     <string name="sandfly_keyboard_tutorial_practice_title">යතුරු පුවරු පුහුණුව</string>
     <string name="sandfly_keyboard_tutorial_practice_intro">සෑම යතුරු පුවරු කෙටිමඟක්ම එය ධාවනය කරනවා වෙනුවට එහි යතුරු සහ විධානය කියයි. “ඊළඟ අයිතමය”, “පසුගිය අයිතමය” සහ සක්‍රිය කිරීම තවමත් ක්‍රියා කරයි.</string>
     <string name="sandfly_keyboard_tutorial_practice_step">ඕනෑම යතුරු පුවරු කෙටිමඟක් කරන දේ ඇසීමට එය ඔබන්න. නැවැත්වීමට, <xliff:g id="button" example="පුහුණුව අවසන් කරන්න">%1$s</xliff:g> සක්‍රිය කරන්න.</string>
+    <string name="sandfly_keyboard_tutorial_ctrl_alt_key_location">Ctrl සහ Alt එකවර ඔබාගෙන සිටින්න. දෙකම යතුරු පුවරුවේ පහළ වම් පැත්තේ ඇත.</string>
+    <string name="sandfly_keyboard_tutorial_insert_key_location">බොහෝ යතුරු පුවරුවල, ඇතුළත් කරන්න යතුර ඊතල යතුරුවලට ඉහළින් ඇති යතුරු හයේ කාණ්ඩයේ ඇත.</string>
+    <string name="sandfly_keyboard_tutorial_numpad_insert_key_location">අංක පෑඩ් ඇතුළත් කිරීම යනු Num Lock අක්‍රිය විට අංක පෑඩයේ 0 යතුරයි.</string>
 </resources>

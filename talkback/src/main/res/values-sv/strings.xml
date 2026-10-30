@@ -117,28 +117,17 @@
       &lt;li&gt;Vissa av specialtangenterna är annorlunda.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">Läs mer om listor över kortkommandon</string>
   <string name="keycombo_go_to_settings">Öppna inställningarna</string>
-  <string name="keycombo_new_keymap_notification_dialog_positive_button">OK</string>
-  <string name="keycombo_new_keymap_notification_dialog_negative_button">Inställningar</string>
-  <string name="keycombo_new_keymap_notification_dialog_neutral_button">Läs mer</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_classic_keymap">Den klassiska tangentbordslayouten stöds inte längre</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">Du har SandFly-standardtangentbordet. Det finns även en ny förbättrad tangentbordslayout med många nya kommandon. Läs mer i hjälpcentret eller byt till den nya tangentbordslayouten i Inställningar.</string>
-  <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">Ny tangentbordslayout är tillgänglig</string>
-  <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">Den nya förbättrade tangentbordslayouten för SandFly innehåller många nya kommandon. Läs mer i hjälpcentret eller byt till den nya tangentbordslayouten i Inställningar.</string>
   <string name="keycombo_warning_content_description">Mer information om din specialtangent</string>
   <string name="keycombo_menu_category_select_keymap">Tangentbordslayout</string>
   <string name="keycombo_menu_select_keymap">Välj en tangentbordslayout</string>
   <string name="keycombo_menu_reset_keymap">Återställ tangentbordslayouten</string>
   <string name="keycombo_menu_view_system_keyboard_shortcuts">Visa kortkommandon för systemet</string>
-  <string name="keycombo_menu_choose_trigger_modifier">Välj specialtangent</string>
-  <string name="keycombo_menu_alert_title_trigger_modifier">Vill du använda %1$s som specialtangent?</string>
-  <string name="keycombo_menu_alert_message_trigger_modifier">SandFly använder för närvarande <xliff:g id="current_trigger_modifier" example="Alt">%1$s</xliff:g> som specialtangent.</string>
-  <string name="keycombo_menu_alert_button_trigger_modifier">Använd %1$s</string>
-  <string name="keycombo_menu_announce_new_trigger_modifier">Specialtangenten har ändrats till %1$s.</string>
+  <string name="keycombo_menu_choose_trigger_modifier">Välj SandFly-tangent</string>
+  <string name="keycombo_menu_announce_new_trigger_modifier">SandFly-tangenten har ändrats till %1$s.</string>
   <string name="keycombo_menu_announce_active_keymap">%1$s är nu aktiv.</string>
   <string name="keycombo_menu_announce_reset_keymap">Tangentbordslayouten har återställts.</string>
   <string name="keycombo_announce_shortcut_not_supported">Kortkommandot stöds inte</string>
-  <string name="value_default_keymap">Standardtangentbordslayout</string>
-  <string name="value_new_keymap">Förbättrad lista över kortkommandon</string>
+  <string name="value_new_keymap">SandFly-tangentbordslayout</string>
   <string name="keycombo_menu_category_navigation">Navigeringsåtgärder</string>
   <string name="keycombo_menu_navigate_next">Navigera till nästa objekt</string>
   <string name="keycombo_menu_navigate_previous">Navigera till föregående objekt</string>
@@ -266,7 +255,7 @@
   <string name="message_in_reset_keymap_confirm_dialog">Vill du återställa kortkommandona för den här tangentbordslayouten till standardvärdena? Åtgärden kan inte ändras.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">Återställ</string>
   <string name="template_keycombo_menu_browse_mode_command">%1$s i läsläge</string>
-  <string name="keycombo_assign_dialog_default_keymap_instruction">Ange ett nytt kortkommando genom att trycka på en tangentkombination med specialtangenten %1$s.</string>
+  <string name="keycombo_assign_dialog_default_keymap_instruction">Tryck på tangentkombinationen med SandFly-tangenten %1$s för att ställa in ett nytt kortkommando.</string>
   <string name="keycombo_unassigned">Ej tilldelade</string>
   <string name="save_button_in_keycombo_assign_dialog">Spara</string>
   <string name="clear_button_in_keycombo_assign_dialog">Rensa</string>
@@ -1804,4 +1793,10 @@
   <string name="title_pref_speech_dictionary">Talordlista</string>
   <string name="speech_dictionary_all_apps">Alla appar</string>
   <string name="speech_dictionary_not_said"><xliff:g id="text" example="#">%1$s</xliff:g> sägs inte</string>
+  <string name="keycombo_key_modifier_insert">Infoga</string>
+  <string name="keycombo_key_modifier_numpad_insert">Infogning på det numeriska tangentbordet</string>
+  <string name="keycombo_menu_navigate_next_paragraph">Navigera till nästa stycke</string>
+  <string name="keycombo_menu_navigate_previous_paragraph">Navigera till föregående stycke</string>
+  <string name="keycombo_key_modifier_ctrl_alt">Ctrl + Alt</string>
+  <string name="value_voiceover_keymap">VoiceOver-tangentbordslayout</string>
 </resources>
