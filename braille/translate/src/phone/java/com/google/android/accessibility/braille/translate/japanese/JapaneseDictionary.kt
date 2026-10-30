@@ -93,7 +93,9 @@ object JapaneseDictionary {
     if (state(context) != State.READY) return null
     return try {
       JapaneseAnalyzer(directory(context)).also { analyzer = it }
-    } catch (e: IOException) {
+    } catch (e: Exception) {
+      // A truncated file throws IndexOutOfBoundsException from its ByteBuffer rather than
+      // IOException, on the main thread.
       LogUtils.e(TAG, "Dictionary unreadable, downloading it again: %s", e)
       directory(context).deleteRecursively()
       setState(State.MISSING)
