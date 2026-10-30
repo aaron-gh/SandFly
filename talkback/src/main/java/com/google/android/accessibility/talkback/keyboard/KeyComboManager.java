@@ -753,10 +753,19 @@ public class KeyComboManager
   /** Saves the SandFly keymap for new users and for users of the removed Default and classic keymaps. */
   private void initializeDefaultPreferenceValues() {
     String key = context.getString(R.string.pref_select_keymap_key);
-    String keymap = sharedPreferences.getString(key, null);
-    String value = context.getString(Keymap.of(context, keymap).getValueRes());
-    if (!value.equals(keymap)) {
+    String keymapValue = sharedPreferences.getString(key, null);
+    Keymap keymap = Keymap.of(context, keymapValue);
+    String value = context.getString(keymap.getValueRes());
+    if (!value.equals(keymapValue)) {
       sharedPreferences.edit().putString(key, value).apply();
+    }
+    // Keymaps had SandFly keys of their own; the active keymap's becomes the one for all.
+    String sandFlyKeyPref = context.getString(R.string.pref_sandfly_key);
+    if (!sharedPreferences.contains(sandFlyKeyPref) && keymap.getOldSandFlyKeyPref() != null) {
+      String oldSandFlyKey = sharedPreferences.getString(keymap.getOldSandFlyKeyPref(), null);
+      if (oldSandFlyKey != null) {
+        sharedPreferences.edit().putString(sandFlyKeyPref, oldSandFlyKey).apply();
+      }
     }
   }
 

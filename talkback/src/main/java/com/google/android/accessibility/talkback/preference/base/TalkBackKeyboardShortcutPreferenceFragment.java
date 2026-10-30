@@ -85,8 +85,9 @@ public class TalkBackKeyboardShortcutPreferenceFragment extends TalkbackBaseFrag
   /** Updates fragment whenever their values change. */
   private final OnSharedPreferenceChangeListener sharedPreferenceChangeListener =
       (prefs, key) -> {
-        if (TextUtils.equals(key, getString(R.string.pref_select_keymap_key))) {
-          // Refreshes key combo model after keymap changes.
+        if (TextUtils.equals(key, getString(R.string.pref_select_keymap_key))
+            || TextUtils.equals(key, getString(R.string.pref_sandfly_key))) {
+          // Refreshes key combo model after keymap or SandFly key changes.
           KeyComboManager keyComboManager = getKeyComboManager();
           keyComboManager.refreshKeyComboModel();
           keymap = getKeymap();
@@ -160,37 +161,16 @@ public class TalkBackKeyboardShortcutPreferenceFragment extends TalkbackBaseFrag
           if (listPreference.getValue().equals(chosenTriggerModifier)) {
             return false;
           }
-          listPreference.setValue(chosenTriggerModifier);
-          changeSandFlyKey(
-              listPreference.getEntries()[listPreference.findIndexOfValue(chosenTriggerModifier)]);
-          return false;
+          PreferencesActivityUtils.announceText(
+              getString(
+                  R.string.keycombo_menu_announce_new_trigger_modifier,
+                  listPreference.getEntries()[
+                      listPreference.findIndexOfValue(chosenTriggerModifier)]),
+              getActivity());
+          return true;
         }
         return true;
       };
-
-  /**
-   * Applies the SandFly key just chosen. Shortcuts that use the new key with other keys go back to
-   * their defaults, as the new key can't be one of their other keys.
-   */
-  private void changeSandFlyKey(CharSequence name) {
-    KeyComboModel keyComboModel = getKeyComboManager().getKeyComboModel();
-    keyComboModel.notifyTriggerModifierChanged();
-    int triggerModifier = keyComboModel.getTriggerModifier();
-    for (String key : keyComboModel.getKeyComboMap().keySet()) {
-      KeyCombo keyCombo = keyComboModel.getKeyComboForKey(key);
-      if (!keyCombo.isTriggerModifierUsed() || (keyCombo.getModifiers() & triggerModifier) == 0) {
-        continue;
-      }
-      KeyCombo defaultKeyCombo = keyComboModel.getDefaultKeyCombo(key);
-      keyComboModel.saveKeyCombo(key, defaultKeyCombo);
-      if (findPreference(key) instanceof KeyboardShortcutDialogPreference preference) {
-        preference.setKeyCombo(defaultKeyCombo);
-      }
-    }
-    setUpDialogPreference(KeyboardShortcutDialogPreference::onTriggerModifierChanged);
-    PreferencesActivityUtils.announceText(
-        getString(R.string.keycombo_menu_announce_new_trigger_modifier, name), getActivity());
-  }
 
   private void resetKeymap() {
     KeyComboModel keyComboModel = getKeyComboManager().getKeyComboModel();
@@ -232,7 +212,7 @@ public class TalkBackKeyboardShortcutPreferenceFragment extends TalkbackBaseFrag
   }
 
   private int getPreferenceResourceId() {
-    return Keymap.of(getContext(), keymap).getPreferencesRes();
+    return R.xml.new_key_combo_preferences;
   }
 
   @Override
