@@ -16,6 +16,8 @@
 
 package com.google.android.accessibility.talkback.scripting
 
+import com.google.android.accessibility.luamemory.LuaMemory
+import com.google.android.libraries.accessibility.utils.log.LogUtils
 import java.io.Closeable
 import java.nio.ByteBuffer
 import party.iroiro.luajava.JFunction
@@ -37,6 +39,10 @@ import party.iroiro.luajava.lua54.Lua54
  * and checks the memory in use, and raises an error that the script can't catch. A call into
  * the script therefore ends soon after its time is up, except while it is inside one long C
  * function, such as a pattern match on a long text.
+ *
+ * The memory limit is also kept by Lua's allocator ([LuaMemory]), which refuses to grow past it
+ * even inside one string operation, while Lua code runs. A script with the java permission has
+ * only the hook's check, since LuaJava's `java` module changes the state from Java.
  */
 class LuaEngine(private val host: Host, private val withJava: Boolean) : Closeable {
 
@@ -56,6 +62,9 @@ class LuaEngine(private val host: Host, private val withJava: Boolean) : Closeab
 
   private var lua: Lua? = Lua54()
 
+  /** The allocator's budget for the state, or 0 when there is none. */
+  private var memory = 0L
+
   val isClosed: Boolean
     get() = lua == null
 
@@ -64,6 +73,12 @@ class LuaEngine(private val host: Host, private val withJava: Boolean) : Closeab
   fun start(prelude: String, memoryLimitBytes: Long) {
     val state = open()
     synchronized(state.mainState) {
+      if (!withJava) {
+        memory = LuaMemory.attach(state.pointer, memoryLimitBytes)
+        if (memory == 0L && LuaMemory.isAvailable) {
+          LogUtils.w(TAG, "No allocator budget; only the hook checks the memory limit")
+        }
+      }
       for (library in LIBRARIES) {
         state.openLibrary(library)
       }
@@ -79,7 +94,7 @@ class LuaEngine(private val host: Host, private val withJava: Boolean) : Closeab
         state.push(overtimeFunction)
         state.push(withJava)
         state.push(memoryLimitBytes / 1024)
-        state.pCall(5, 0)
+        enforcingMemory { state.pCall(5, 0) }
       }
     }
   }
@@ -97,7 +112,34 @@ class LuaEngine(private val host: Host, private val withJava: Boolean) : Closeab
   override fun close() {
     val state = lua ?: return
     lua = null
-    synchronized(state.mainState) { state.close() }
+    synchronized(state.mainState) {
+      state.close()
+      LuaMemory.free(memory)
+      memory = 0
+    }
+  }
+
+  /**
+   * Runs Lua code with the memory budget enforced. Java must change the state only while it isn't:
+   * a refused allocation raises a Lua error, which would jump over Java frames.
+   */
+  private inline fun <T> enforcingMemory(block: () -> T): T {
+    val was = LuaMemory.setEnforced(memory, true)
+    try {
+      return block()
+    } finally {
+      LuaMemory.setEnforced(memory, was)
+    }
+  }
+
+  /** Runs a Java function that Lua called, with the budget not enforced while it pushes values. */
+  private inline fun <T> inJava(block: () -> T): T {
+    val was = LuaMemory.setEnforced(memory, false)
+    try {
+      return block()
+    } finally {
+      LuaMemory.setEnforced(memory, was)
+    }
   }
 
   private fun callGlobal(function: String, where: String, vararg args: String): String? {
@@ -109,7 +151,7 @@ class LuaEngine(private val host: Host, private val withJava: Boolean) : Closeab
         for (arg in args) {
           pushText(state, arg)
         }
-        state.pCall(args.size, 1)
+        enforcingMemory { state.pCall(args.size, 1) }
         val result = if (state.isString(-1)) readText(state, -1) else null
         state.top = top
         result
@@ -151,7 +193,9 @@ class LuaEngine(private val host: Host, private val withJava: Boolean) : Closeab
   private fun open(): Lua = lua ?: throw ScriptError("The script was unloaded")
 
   // sf.call(method, json) gives true and the answer, or false and an error message.
-  private val callFunction = JFunction { state ->
+  private val callFunction = JFunction { state -> inJava { call(state) } }
+
+  private fun call(state: Lua): Int {
     val method = readText(state, 1).orEmpty()
     val json = if (state.isString(2)) readText(state, 2) else null
     try {
@@ -165,27 +209,33 @@ class LuaEngine(private val host: Host, private val withJava: Boolean) : Closeab
       state.push(false)
       pushText(state, e.message ?: e.toString())
     }
-    2
+    return 2
   }
 
   // Gives a Lua file's text from the script's package, or nothing.
   private val moduleFunction = JFunction { state ->
-    val name = readText(state, 1).orEmpty()
-    val bytes = host.loadModule(name)
-    if (bytes == null) {
-      state.pushNil()
-    } else {
-      state.push(ByteBuffer.allocateDirect(bytes.size).put(bytes).also { it.flip() })
+    inJava {
+      val name = readText(state, 1).orEmpty()
+      val bytes = host.loadModule(name)
+      if (bytes == null) {
+        state.pushNil()
+      } else {
+        state.push(ByteBuffer.allocateDirect(bytes.size).put(bytes).also { it.flip() })
+      }
+      1
     }
-    1
   }
 
   private val overtimeFunction = JFunction { state ->
-    state.push(host.isOvertime())
-    1
+    inJava {
+      state.push(host.isOvertime())
+      1
+    }
   }
 
   companion object {
+    private const val TAG = "LuaEngine"
+
     /** Raised by the prelude's hook. The script can't catch either. */
     const val OUT_OF_TIME = "The script ran out of time"
     const val OUT_OF_MEMORY = "The script used too much memory"
@@ -197,7 +247,10 @@ class LuaEngine(private val host: Host, private val withJava: Boolean) : Closeab
       Lua54().close()
     }
 
+    /** Lua's own message when the allocator refuses to go past the memory limit. */
+    private const val NOT_ENOUGH_MEMORY = "not enough memory"
+
     fun isInterruption(message: String): Boolean =
-      OUT_OF_TIME in message || OUT_OF_MEMORY in message
+      OUT_OF_TIME in message || OUT_OF_MEMORY in message || NOT_ENOUGH_MEMORY in message
   }
 }
