@@ -16,38 +16,45 @@
 
 package com.google.android.accessibility.talkback.preference.base;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.InputType;
 import android.text.TextUtils;
+import android.widget.EditText;
 import androidx.preference.ListPreference;
-import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
+import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceGroup;
 import androidx.preference.PreferenceScreen;
 import com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory;
 import com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference;
 import com.google.android.accessibility.talkback.R;
-import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.TalkBackService.TalkbackServiceStateNotifier.TalkBackServiceStateChangeListener;
+import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.commands.CommandBindings;
 import com.google.android.accessibility.talkback.commands.Commands;
+import com.google.android.accessibility.talkback.keyboard.ArrowKeyNav;
+import com.google.android.accessibility.talkback.keyboard.ArrowKeys;
+import com.google.android.accessibility.talkback.keyboard.CustomKeymap;
+import com.google.android.accessibility.talkback.keyboard.CustomKeymaps;
 import com.google.android.accessibility.talkback.keyboard.KeyCombo;
 import com.google.android.accessibility.talkback.keyboard.KeyComboManager;
 import com.google.android.accessibility.talkback.keyboard.KeyComboModel;
 import com.google.android.accessibility.talkback.keyboard.Keymap;
+import com.google.android.accessibility.talkback.keyboard.NewKeyComboModel;
 import com.google.android.accessibility.talkback.keyboard.SandFlyKey;
-import com.google.android.accessibility.talkback.keyboard.ArrowKeyNav;
-import com.google.android.accessibility.talkback.keyboard.ArrowKeys;
 import com.google.android.accessibility.talkback.keyboard.TalkBackPhysicalKeyboardShortcut;
 import com.google.android.accessibility.talkback.preference.PreferencesActivityUtils;
 import com.google.android.accessibility.talkback.preference.TalkBackPreferenceFilter;
 import com.google.android.accessibility.utils.PreferenceSettingsUtils;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import com.google.android.accessibility.utils.material.A11yAlertDialogWrapper;
+import com.google.android.accessibility.utils.widget.KeyboardSafeEditText;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import java.util.ArrayList;
 import java.util.List;
@@ -204,7 +211,8 @@ public class TalkBackKeyboardShortcutPreferenceFragment extends TalkbackBaseFrag
   }
 
   private String getKeymapName(String keymap) {
-    return getString(Keymap.of(getContext(), keymap).getNameRes());
+    @Nullable CustomKeymap custom = CustomKeymaps.of(getContext(), keymap);
+    return custom != null ? custom.getName() : getString(Keymap.of(getContext(), keymap).getNameRes());
   }
 
   private String getKeymap() {
@@ -259,6 +267,7 @@ public class TalkBackKeyboardShortcutPreferenceFragment extends TalkbackBaseFrag
 
     updateSelectKeymapPreferenceWithAvailableKeymaps();
     updateSandFlyKeyPreferenceWithKeymapsKeys();
+    addCustomKeymapActions();
 
     resetKeymapPreference = findPreference(getString(R.string.pref_reset_keymap_key));
     resetKeymapPreference.setOnPreferenceClickListener(resetKeymapPreferenceClickListener);
@@ -386,7 +395,9 @@ public class TalkBackKeyboardShortcutPreferenceFragment extends TalkbackBaseFrag
     if (preference == null) {
       return;
     }
-    Keymap current = Keymap.of(getContext(), keymap);
+    // A custom keymap offers every SandFly key, as the SandFly keymap does.
+    boolean custom = CustomKeymaps.of(getContext(), keymap) != null;
+    Keymap current = custom ? Keymap.SANDFLY : Keymap.of(getContext(), keymap);
     List<CharSequence> entries = new ArrayList<>();
     List<CharSequence> entryValues = new ArrayList<>();
     for (SandFlyKey sandFlyKey : current.getSandFlyKeys()) {
@@ -401,6 +412,124 @@ public class TalkBackKeyboardShortcutPreferenceFragment extends TalkbackBaseFrag
     }
   }
 
+  /**
+   * Adds New keymap, which copies the keymap in use under a name, and for a custom keymap, Rename
+   * keymap and Delete keymap.
+   */
+  private void addCustomKeymapActions() {
+    PreferenceCategory category = findPreference(getString(R.string.pref_keymap_category_key));
+    Context context = getContext();
+    if (category == null || context == null) {
+      return;
+    }
+    Preference create = new Preference(context);
+    create.setKey("pref_new_keymap");
+    create.setTitle(R.string.keycombo_menu_new_keymap);
+    create.setIconSpaceReserved(false);
+    create.setOnPreferenceClickListener(
+        preference -> {
+          askForKeymapName(
+              R.string.keycombo_menu_new_keymap,
+              "",
+              getString(R.string.keycombo_new_keymap_default_name, getKeymapName(keymap)),
+              this::createKeymap);
+          return true;
+        });
+    category.addPreference(create);
+    @Nullable CustomKeymap custom = CustomKeymaps.of(context, keymap);
+    if (custom == null) {
+      return;
+    }
+    Preference rename = new Preference(context);
+    rename.setKey("pref_rename_keymap");
+    rename.setTitle(R.string.keycombo_menu_rename_keymap);
+    rename.setIconSpaceReserved(false);
+    rename.setOnPreferenceClickListener(
+        preference -> {
+          askForKeymapName(
+              R.string.keycombo_menu_rename_keymap,
+              custom.getName(),
+              custom.getName(),
+              name -> {
+                CustomKeymaps.rename(getContext(), custom, name);
+                updateFragment();
+              });
+          return true;
+        });
+    category.addPreference(rename);
+    Preference delete = new Preference(context);
+    delete.setKey("pref_delete_keymap");
+    delete.setTitle(R.string.keycombo_menu_delete_keymap);
+    delete.setIconSpaceReserved(false);
+    delete.setOnPreferenceClickListener(
+        preference -> {
+          A11yAlertDialogWrapper.materialDialogBuilder(getActivity())
+              .setTitle(getString(R.string.keycombo_delete_keymap_title, custom.getName()))
+              .setPositiveButton(
+                  R.string.keycombo_delete_keymap_button, (dialog, which) -> deleteKeymap(custom))
+              .setNegativeButton(android.R.string.cancel, null)
+              .create()
+              .show();
+          return true;
+        });
+    category.addPreference(delete);
+  }
+
+  /** Asks for a keymap's name, starting from [current], or suggesting [suggested] when empty. */
+  private void askForKeymapName(
+      int titleRes, String current, String suggested, Consumer<String> onName) {
+    Context context = getContext();
+    if (context == null) {
+      return;
+    }
+    EditText field = new KeyboardSafeEditText(context);
+    field.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_CAP_SENTENCES);
+    field.setSingleLine(true);
+    if (current.isEmpty()) {
+      field.setHint(suggested);
+    } else {
+      field.setText(current);
+      field.setSelection(field.length());
+    }
+    new AlertDialog.Builder(context)
+        .setTitle(titleRes)
+        .setView(VoiceProfilesFragment.padded(context, field))
+        .setPositiveButton(
+            android.R.string.ok,
+            (dialog, which) -> {
+              String name = field.getText().toString().trim();
+              onName.accept(name.isEmpty() ? suggested : name);
+            })
+        .setNegativeButton(android.R.string.cancel, null)
+        .show();
+    field.requestFocus();
+  }
+
+  /** Makes a keymap named [name] from the shortcuts of the keymap in use, and uses it. */
+  private void createKeymap(String name) {
+    KeyComboModel model = getKeyComboManager().getKeyComboModel();
+    boolean usesSequences =
+        model instanceof NewKeyComboModel newModel && newModel.usesSequences();
+    CustomKeymap custom =
+        CustomKeymaps.create(getContext(), name, usesSequences, model.getKeyComboMap());
+    prefs.edit().putString(getString(R.string.pref_select_keymap_key), custom.getValue()).apply();
+    PreferencesActivityUtils.announceText(
+        getString(R.string.keycombo_menu_announce_active_keymap, name), getActivity());
+  }
+
+  /** Forgets [custom] and uses the SandFly keymap where it was in use. */
+  private void deleteKeymap(CustomKeymap custom) {
+    CustomKeymaps.delete(getContext(), custom);
+    prefs
+        .edit()
+        .putString(
+            getString(R.string.pref_select_keymap_key), getString(Keymap.SANDFLY.getValueRes()))
+        .apply();
+    PreferencesActivityUtils.announceText(
+        getString(R.string.keycombo_menu_announce_active_keymap, getString(Keymap.SANDFLY.getNameRes())),
+        getActivity());
+  }
+
   /** Updates select keymap preference with available keymaps. */
   private void updateSelectKeymapPreferenceWithAvailableKeymaps() {
     ListPreference keymapPreference = findPreference(getString(R.string.pref_select_keymap_key));
@@ -409,6 +538,10 @@ public class TalkBackKeyboardShortcutPreferenceFragment extends TalkbackBaseFrag
     for (Keymap available : Keymap.values()) {
       entries.add(getString(available.getNameRes()));
       entryValues.add(getString(available.getValueRes()));
+    }
+    for (CustomKeymap custom : CustomKeymaps.all(getContext())) {
+      entries.add(custom.getName());
+      entryValues.add(custom.getValue());
     }
     keymapPreference.setEntries(entries.toArray(new CharSequence[entries.size()]));
     keymapPreference.setEntryValues(entryValues.toArray(new CharSequence[entryValues.size()]));

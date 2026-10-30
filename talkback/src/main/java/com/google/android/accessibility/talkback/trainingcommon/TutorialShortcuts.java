@@ -82,6 +82,7 @@ public final class TutorialShortcuts {
         KEYMAP_AS_WRITTEN,
         model instanceof NewKeyComboModel newModel
             && newModel.getKeymap() == Keymap.SANDFLY
+            && newModel.getCustomKeymap() == null
             && newModel.getSandFlyKey() == SandFlyKey.META);
     for (String key : model.getKeyComboMap().keySet()) {
       KeyCombo combo = model.getKeyComboForKey(key);

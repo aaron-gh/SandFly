@@ -1807,4 +1807,12 @@
   <string name="value_jaws_keymap">Mapa de teclas do JAWS</string>
   <string name="value_orca_keymap">Mapa de teclas do Orca</string>
   <string name="keycombo_key_modifier_ctrl_meta">Ctrl + Meta</string>
+  <string name="keycombo_custom_keymap_default_name">Personalizado</string>
+  <string name="keycombo_menu_new_keymap">Novo mapa de teclas</string>
+  <string name="keycombo_new_keymap_default_name">Cópia de <xliff:g id="keymap_name" example="NVDA keymap">%1$s</xliff:g></string>
+  <string name="keycombo_menu_rename_keymap">Mudar o nome do mapa de teclas</string>
+  <string name="keycombo_menu_delete_keymap">Eliminar mapa de teclas</string>
+  <string name="keycombo_delete_keymap_title">Eliminar <xliff:g id="keymap_name" example="Custom">%1$s</xliff:g>?</string>
+  <string name="keycombo_delete_keymap_button">Eliminar</string>
+  <string name="keycombo_assign_dialog_custom_keymap_instruction">Prima as teclas do novo atalho.</string>
 </resources>
