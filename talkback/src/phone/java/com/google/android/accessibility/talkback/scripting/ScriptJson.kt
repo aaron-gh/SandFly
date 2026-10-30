@@ -26,7 +26,16 @@ fun parseJson(json: String?): Any =
   if (json == null) JSONObject.NULL else JSONArray("[$json]").get(0)
 
 fun jsonObject(vararg fields: Pair<String, Any?>): JSONObject =
-  JSONObject().apply { fields.forEach { (key, value) -> put(key, value ?: JSONObject.NULL) } }
+  JSONObject().apply { fields.forEach { (key, value) -> put(key, jsonValue(value)) } }
+
+/** JSONObject refuses NaN and infinity, which apps publish, such as in a slider's range. */
+private fun jsonValue(value: Any?): Any =
+  when (value) {
+    null -> JSONObject.NULL
+    is Double -> if (value.isFinite()) value else JSONObject.NULL
+    is Float -> if (value.isFinite()) value else JSONObject.NULL
+    else -> value
+  }
 
 fun JSONArray?.items(): List<Any> = if (this == null) emptyList() else List(length()) { get(it) }
 

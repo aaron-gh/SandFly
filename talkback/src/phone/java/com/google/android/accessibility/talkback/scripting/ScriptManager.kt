@@ -19,6 +19,7 @@ package com.google.android.accessibility.talkback.scripting
 import android.accessibilityservice.AccessibilityService
 import android.os.Handler
 import android.os.Looper
+import android.os.Message
 import android.os.SystemClock
 import android.view.KeyEvent
 import android.view.accessibility.AccessibilityEvent
@@ -27,6 +28,7 @@ import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.focusmanagement.TraversalTreeCache
 import com.google.android.accessibility.talkback.translation.Translator
+import com.google.android.libraries.accessibility.utils.log.LogUtils
 import java.util.concurrent.CountDownLatch
 import org.json.JSONObject
 
@@ -497,7 +499,22 @@ class ScriptManager(
           start()
         }
       ready.await()
-      return Handler(checkNotNull(looper))
+      return GuardedHandler(checkNotNull(looper))
+    }
+  }
+}
+
+/**
+ * Runs the script thread's work so that an exception in it, such as from a node an app filled
+ * with values SandFly doesn't expect, is logged instead of stopping the screen reader. Lua errors
+ * are already handled where scripts are called.
+ */
+private class GuardedHandler(looper: Looper) : Handler(looper) {
+  override fun dispatchMessage(msg: Message) {
+    try {
+      super.dispatchMessage(msg)
+    } catch (e: Throwable) {
+      LogUtils.e("ScriptManager", "Script thread work failed: %s", e)
     }
   }
 }
