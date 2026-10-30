@@ -139,8 +139,6 @@ public class KeyComboManager
    * this interval, exit the sequence key mode.
    */
   private static final Duration SEQUENCE_KEY_MODE_TIMEOUT = Duration.ofSeconds(3);
-  // Set once the SandFly key of the keymap in use has become the one for all keymaps.
-  private static final String SANDFLY_KEY_MIGRATED_PREF = "pref_sandfly_key_migrated";
   // The removed Default keymap's value of the keymap preference.
   private static final String DEFAULT_KEYMAP_VALUE = "default_keymap";
 
@@ -805,20 +803,6 @@ public class KeyComboManager
         sharedPreferences.edit().putString(key, value).apply();
       }
     }
-    // Keymaps had SandFly keys of their own; the active keymap's becomes the one for all, once.
-    // The SandFly key's pref is the SandFly keymap's old one, which every install has written.
-    if (!sharedPreferences.getBoolean(SANDFLY_KEY_MIGRATED_PREF, false)) {
-      SharedPreferences.Editor editor =
-          sharedPreferences.edit().putBoolean(SANDFLY_KEY_MIGRATED_PREF, true);
-      String oldSandFlyKey =
-          keymap.getOldSandFlyKeyPref() == null
-              ? null
-              : sharedPreferences.getString(keymap.getOldSandFlyKeyPref(), null);
-      if (oldSandFlyKey != null) {
-        editor.putString(context.getString(R.string.pref_sandfly_key), oldSandFlyKey);
-      }
-      editor.apply();
-    }
   }
 
   private ImmutableSet<String> initializeBrowseModeOnlyCommands() {
@@ -1393,13 +1377,6 @@ public class KeyComboManager
                 .equals(sharedPreferences.getString("pref_default_keymap_trigger_modifier", null))
             ? SandFlyKey.META
             : SandFlyKey.ALT;
-    sharedPreferences
-        .edit()
-        .putString(
-            context.getString(R.string.pref_sandfly_key),
-            context.getString(sandFlyKey.getValueRes()))
-        .putBoolean(SANDFLY_KEY_MIGRATED_PREF, true)
-        .apply();
     KeyComboPersister from = new KeyComboPersister(context, "default_key_combo_model");
     Map<String, KeyCombo> shortcuts = new HashMap<>();
     for (String key : from.keysStartingWith("")) {
@@ -1409,6 +1386,7 @@ public class KeyComboManager
         context,
         context.getString(R.string.keycombo_custom_keymap_default_name),
         /* usesSequences= */ false,
+        sandFlyKey,
         shortcuts);
   }
 

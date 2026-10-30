@@ -34,9 +34,21 @@ data class CustomKeymap(val id: String, val name: String, val usesSequences: Boo
   val originalPersisterPrefix: String
     get() = PREFIX + id + "_original"
 
+  /** Where its SandFly key, which can be any, is saved. */
+  val sandFlyKeyPref: String
+    get() = SANDFLY_KEY + id
+
+  /** The SandFly key chosen for this keymap, or Meta. */
+  fun sandFlyKey(context: Context): SandFlyKey =
+    SandFlyKey.fromValue(
+      context,
+      SharedPreferencesUtils.getSharedPreferences(context).getString(sandFlyKeyPref, null),
+    ) ?: SandFlyKey.META
+
   companion object {
     const val VALUE_PREFIX = "custom_keymap:"
     private const val PREFIX = "custom_key_combo_model_"
+    const val SANDFLY_KEY = "pref_custom_keymap_sandfly_key_"
   }
 }
 
@@ -70,14 +82,15 @@ object CustomKeymaps {
   }
 
   /**
-   * Makes a keymap named [name] with [shortcuts], by command key, which it also goes back to when
-   * reset. Returns it.
+   * Makes a keymap named [name] with [shortcuts], by command key, pressed with [sandFlyKey], which
+   * it also goes back to when reset. Returns it.
    */
   @JvmStatic
   fun create(
     context: Context,
     name: String,
     usesSequences: Boolean,
+    sandFlyKey: SandFlyKey,
     shortcuts: Map<String, KeyCombo>,
   ): CustomKeymap {
     val ids = ids(context)
@@ -92,6 +105,7 @@ object CustomKeymaps {
     prefs(context).edit {
       putString(NAME + id, name)
       putBoolean(SEQUENCES + id, usesSequences)
+      putString(keymap.sandFlyKeyPref, context.getString(sandFlyKey.valueRes))
       putString(IDS, (ids + id).joinToString(","))
     }
     return keymap
@@ -115,6 +129,7 @@ object CustomKeymaps {
     prefs(context).edit {
       remove(NAME + keymap.id)
       remove(SEQUENCES + keymap.id)
+      remove(keymap.sandFlyKeyPref)
       putString(IDS, remaining.joinToString(","))
     }
   }

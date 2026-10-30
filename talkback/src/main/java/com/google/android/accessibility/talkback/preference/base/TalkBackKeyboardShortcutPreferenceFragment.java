@@ -57,6 +57,7 @@ import com.google.android.accessibility.utils.material.A11yAlertDialogWrapper;
 import com.google.android.accessibility.utils.widget.KeyboardSafeEditText;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -94,7 +95,8 @@ public class TalkBackKeyboardShortcutPreferenceFragment extends TalkbackBaseFrag
   private final OnSharedPreferenceChangeListener sharedPreferenceChangeListener =
       (prefs, key) -> {
         if (TextUtils.equals(key, getString(R.string.pref_select_keymap_key))
-            || TextUtils.equals(key, getString(R.string.pref_sandfly_key))) {
+            || TextUtils.equals(
+                key, getKeyComboManager().getKeyComboModel().getPreferenceKeyForTriggerModifier())) {
           // Refreshes key combo model after keymap or SandFly key changes.
           KeyComboManager keyComboManager = getKeyComboManager();
           keyComboManager.refreshKeyComboModel();
@@ -266,8 +268,9 @@ public class TalkBackKeyboardShortcutPreferenceFragment extends TalkbackBaseFrag
     talkBackPreferenceFilter.filterPreferences(getPreferenceScreen());
 
     updateSelectKeymapPreferenceWithAvailableKeymaps();
-    updateSandFlyKeyPreferenceWithKeymapsKeys();
+    // The keymap's actions come after its other settings, which the SandFly key goes between.
     addCustomKeymapActions();
+    addSandFlyKeyPreference();
 
     resetKeymapPreference = findPreference(getString(R.string.pref_reset_keymap_key));
     resetKeymapPreference.setOnPreferenceClickListener(resetKeymapPreferenceClickListener);
@@ -387,28 +390,45 @@ public class TalkBackKeyboardShortcutPreferenceFragment extends TalkbackBaseFrag
   }
 
   /**
-   * Lists the SandFly keys the keymap offers. Where the key chosen for another keymap isn't one,
-   * the keymap's own is used and named, and the choice stays for the keymaps that offer it.
+   * Adds Choose SandFly key for the keymap in use, after Choose a keymap: each keymap has its own,
+   * offering the keys that keep all of its shortcuts, and a custom keymap any key.
    */
-  private void updateSandFlyKeyPreferenceWithKeymapsKeys() {
-    ListPreference preference = findPreference(getString(R.string.pref_sandfly_key));
-    if (preference == null) {
+  private void addSandFlyKeyPreference() {
+    PreferenceCategory category = findPreference(getString(R.string.pref_keymap_category_key));
+    Context context = getContext();
+    if (category == null || context == null) {
       return;
     }
-    // A custom keymap offers every SandFly key, as the SandFly keymap does.
-    boolean custom = CustomKeymaps.of(getContext(), keymap) != null;
-    Keymap current = custom ? Keymap.SANDFLY : Keymap.of(getContext(), keymap);
+    @Nullable CustomKeymap custom = CustomKeymaps.of(context, keymap);
+    Keymap builtIn = Keymap.of(context, keymap);
+    List<SandFlyKey> sandFlyKeys =
+        custom != null ? Arrays.asList(SandFlyKey.values()) : builtIn.getSandFlyKeys();
+    SandFlyKey used = custom != null ? custom.sandFlyKey(context) : builtIn.sandFlyKey(context);
     List<CharSequence> entries = new ArrayList<>();
     List<CharSequence> entryValues = new ArrayList<>();
-    for (SandFlyKey sandFlyKey : current.getSandFlyKeys()) {
+    for (SandFlyKey sandFlyKey : sandFlyKeys) {
       entries.add(getString(sandFlyKey.getNameRes()));
       entryValues.add(getString(sandFlyKey.getValueRes()));
     }
+    // Choose a keymap first, then this, then the rest in their order.
+    for (int i = 0; i < category.getPreferenceCount(); i++) {
+      category.getPreference(i).setOrder(i == 0 ? 0 : i * 2 + 2);
+    }
+    ListPreference preference = new ListPreference(context);
+    preference.setKey(getKeyComboManager().getKeyComboModel().getPreferenceKeyForTriggerModifier());
+    preference.setPersistent(true);
+    preference.setTitle(R.string.keycombo_menu_choose_trigger_modifier);
+    preference.setDialogTitle(R.string.keycombo_menu_choose_trigger_modifier);
     preference.setEntries(entries.toArray(new CharSequence[0]));
     preference.setEntryValues(entryValues.toArray(new CharSequence[0]));
-    SandFlyKey used = current.sandFlyKey(getContext());
-    if (SandFlyKey.chosen(getContext()) != used) {
-      preference.setSummary(getString(used.getNameRes()));
+    preference.setSummary("%s");
+    preference.setOrder(1);
+    preference.setIconSpaceReserved(false);
+    category.addPreference(preference);
+    // Shows the key in use where none, or one this keymap doesn't offer, was saved.
+    String usedValue = getString(used.getValueRes());
+    if (!usedValue.equals(preference.getValue())) {
+      preference.setValue(usedValue);
     }
   }
 
@@ -510,8 +530,15 @@ public class TalkBackKeyboardShortcutPreferenceFragment extends TalkbackBaseFrag
     KeyComboModel model = getKeyComboManager().getKeyComboModel();
     boolean usesSequences =
         model instanceof NewKeyComboModel newModel && newModel.usesSequences();
+    // The copy keeps the keymap's SandFly key, which its shortcuts are pressed with.
+    @Nullable SandFlyKey sandFlyKey = getKeyComboManager().getSandFlyKey();
     CustomKeymap custom =
-        CustomKeymaps.create(getContext(), name, usesSequences, model.getKeyComboMap());
+        CustomKeymaps.create(
+            getContext(),
+            name,
+            usesSequences,
+            sandFlyKey != null ? sandFlyKey : SandFlyKey.META,
+            model.getKeyComboMap());
     prefs.edit().putString(getString(R.string.pref_select_keymap_key), custom.getValue()).apply();
     PreferencesActivityUtils.announceText(
         getString(R.string.keycombo_menu_announce_active_keymap, name), getActivity());

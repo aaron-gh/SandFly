@@ -540,8 +540,6 @@
 
   <!-- Keyboard preferences -->
   <string name="pref_select_keymap_key">pref_select_keymap</string>
-  <!-- The SandFly key of every keymap; the SandFly keymap's own value from before is kept. -->
-  <string name="pref_sandfly_key">pref_new_keymap_trigger_modifier</string>
 
   <!-- The SandFly keymap keeps the value of the enhanced keymap it was. -->
   <string name="new_keymap_entry_value">new_keymap</string>
@@ -830,25 +828,6 @@
 
 
     <!-- Keyboard echo preference entries. Must be synchronized with TextFormatters.java. -->
-    <!-- SandFlyKey.kt lists the keys the same way; keymaps may offer fewer. -->
-    <string-array name="pref_sandfly_key_entries">
-        <item>@string/keycombo_key_modifier_meta</item>
-        <item>@string/keycombo_key_modifier_alt</item>
-        <item>@string/keycombo_key_modifier_ctrl_alt</item>
-        <item>@string/keycombo_key_modifier_ctrl_meta</item>
-        <item>@string/keycombo_key_modifier_insert</item>
-        <item>@string/keycombo_key_modifier_numpad_insert</item>
-    </string-array>
-
-    <string-array name="pref_sandfly_key_values">
-        <item>@string/trigger_modifier_meta_entry_value</item>
-        <item>@string/trigger_modifier_alt_entry_value</item>
-        <item>@string/trigger_modifier_ctrl_alt_entry_value</item>
-        <item>@string/trigger_modifier_ctrl_meta_entry_value</item>
-        <item>@string/trigger_modifier_insert_entry_value</item>
-        <item>@string/trigger_modifier_numpad_insert_entry_value</item>
-    </string-array>
-
     <string-array name="pref_keyboard_echo_entries">
         <item>@string/value_keyboard_echo_none</item>
         <item>@string/value_keyboard_echo_characters_only</item>

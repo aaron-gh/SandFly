@@ -71,7 +71,7 @@ public class NewKeyComboModel implements KeyComboModel {
     this.keymap = keymap;
     this.customKeymap = customKeymap;
     if (customKeymap != null) {
-      sandFlyKey = SandFlyKey.chosen(context);
+      sandFlyKey = customKeymap.sandFlyKey(context);
       persister = new KeyComboPersister(context, customKeymap.getPersisterPrefix());
       originalPersister = new KeyComboPersister(context, customKeymap.getOriginalPersisterPrefix());
     } else {
@@ -124,7 +124,7 @@ public class NewKeyComboModel implements KeyComboModel {
 
   @Override
   public String getPreferenceKeyForTriggerModifier() {
-    return context.getString(R.string.pref_sandfly_key);
+    return customKeymap != null ? customKeymap.getSandFlyKeyPref() : keymap.getSandFlyKeyPref();
   }
 
   @Override
