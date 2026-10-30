@@ -46,6 +46,15 @@ struct BrailleDataStruct {
   } reportInfo;
 };
 
+/*
+ * Adds the bits of reportCount fields of reportSize bits to a report's bit count. Both come from the
+ * device's descriptor, so the count stops at UINT32_MAX rather than wrap.
+ */
+static void addBits(uint32_t *bits, uint32_t reportSize, uint32_t reportCount) {
+  uint64_t next = (uint64_t)*bits + (uint64_t)reportSize * reportCount;
+  *bits = next > UINT32_MAX ? UINT32_MAX : (uint32_t)next;
+}
+
 // Parses the Braille display's HID report descriptor, in order to understand
 // how to parse input reports and prepare output reports.
 static int probeHidDisplay(BrailleDisplay *brl, HidItemsDescriptor *items) {
@@ -121,6 +130,12 @@ static int probeHidDisplay(BrailleDisplay *brl, HidItemsDescriptor *items) {
     if (item.tag == HID_ITM_Usage) {
       usageMin = usageMax = -1;
       uint32_t usage = item.value.u;
+      // The descriptor comes from the device.
+      if (usageIndex >= MAX_USAGE_COUNT) {
+        logMessage(LOG_ERR, "More than %u usages", MAX_USAGE_COUNT);
+        parsingError = 1;
+        break;
+      }
       usages[usageIndex++] = usage;
     }
     if (item.tag == HID_ITM_UsageMinimum) {
@@ -166,16 +181,16 @@ static int probeHidDisplay(BrailleDisplay *brl, HidItemsDescriptor *items) {
     if (item.tag == HID_ITM_Input) {
       uint32_t *inputReportBit = &inputReportBits[reportId & 0XFF];
       if (reportId != brl->data->reportInfo.inputReportId) {
-        *inputReportBit += reportSize * reportCount;
+        addBits(inputReportBit, reportSize, reportCount);
       } else {
         // Skip past constant bits
         if ((item.value.u & HID_USG_FLG_CONSTANT) == HID_USG_FLG_CONSTANT) {
-          *inputReportBit += reportSize * reportCount;
+          addBits(inputReportBit, reportSize, reportCount);
           continue;
         }
         // Skip past usages from unexpected pages.
         if (usagePage != HID_UPG_Braille && usagePage != HID_UPG_Button) {
-          *inputReportBit += reportSize * reportCount;
+          addBits(inputReportBit, reportSize, reportCount);
           continue;
         }
         // Ignore INPUT for the "Number of Braille Cells" usage.
@@ -185,7 +200,7 @@ static int probeHidDisplay(BrailleDisplay *brl, HidItemsDescriptor *items) {
         // cells indicated by the OUTPUT report.
         if (usagePage == HID_UPG_Braille &&
           usages[0] == HID_USG_BRL_CellCount) {
-          *inputReportBit += reportSize * reportCount;
+          addBits(inputReportBit, reportSize, reportCount);
           continue;
         }
         if ((item.value.u & HID_USG_FLG_VARIABLE) != HID_USG_FLG_VARIABLE) {
@@ -200,7 +215,8 @@ static int probeHidDisplay(BrailleDisplay *brl, HidItemsDescriptor *items) {
           parsingError = 1;
           break;
         }
-        if (*inputReportBit + reportCount > MAX_INPUT_SIZE) {
+        // In 64 bits: both come from the device, and the sum could wrap.
+        if ((uint64_t)*inputReportBit + reportCount > MAX_INPUT_SIZE) {
           logMessage(LOG_ERR, "Unexpected input report with more than %u bits",
                      MAX_INPUT_SIZE);
           parsingError = 1;
@@ -252,6 +268,12 @@ static int probeHidDisplay(BrailleDisplay *brl, HidItemsDescriptor *items) {
   }
   if (brl->textColumns == -1) {
     logMessage(LOG_ERR, "Could not find the Braille Display output cell count");
+    return 0;
+  }
+  // Each input bit has an entry in inputReportUsages and inputReportKeys, padding bits too.
+  if (brl->data->reportInfo.inputReportId != -1 &&
+      inputReportBits[brl->data->reportInfo.inputReportId & 0XFF] > MAX_INPUT_SIZE) {
+    logMessage(LOG_ERR, "Input report with more than %u bits", MAX_INPUT_SIZE);
     return 0;
   }
   for (int i = 0; i < MAX_INPUT_SIZE; i++) {
@@ -352,6 +374,9 @@ static void handlePressedKeysArray(BrailleDisplay *brl, unsigned char *keys) {
   for (int byteNum = 0; byteNum < numInputBytes; byteNum++) {
     for (int bit = 0; bit <= 7; bit++) {
       int bitNum = byteNum * 8 + bit;
+      if (bitNum >= MAX_INPUT_SIZE) {
+        return;
+      }
       char key;
       if (brl->data->reportInfo.inputReportUsages[bitNum] ==
           HID_USG_BRL_RouterKey) {

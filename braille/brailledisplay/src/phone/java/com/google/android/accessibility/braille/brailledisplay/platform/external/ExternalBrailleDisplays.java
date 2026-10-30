@@ -65,6 +65,8 @@ public final class ExternalBrailleDisplays {
       "fyi.quin.backtalk.action.BRAILLE_DISPLAYS_CHANGED";
 
   private static final long UNLOCK_CHECK_MS = 1000;
+  /** More than any braille display has, with every line of a multi-line one. */
+  private static final int MAX_CELLS = 1000;
 
   private final Context context;
   private final Controller controller;
@@ -277,7 +279,7 @@ public final class ExternalBrailleDisplays {
     Set<ComponentName> allowed = new HashSet<>();
     for (Map.Entry<String, ComponentName> service :
         ExternalDisplayApps.displayServices(context, flags).entrySet()) {
-      State state = ExternalDisplayApps.state(approvals, service.getKey());
+      State state = ExternalDisplayApps.state(context, approvals, service.getKey());
       if (state == State.ALLOWED) {
         allowed.add(service.getValue());
       } else if (state == State.UNKNOWN && ask) {
@@ -289,12 +291,13 @@ public final class ExternalBrailleDisplays {
 
   private boolean isAllowed(String app) {
     return ExternalDisplayApps.holdsPermission(context, app)
-        && ExternalDisplayApps.state(approvals, app) == State.ALLOWED;
+        && ExternalDisplayApps.state(context, approvals, app) == State.ALLOWED;
   }
 
   private void startDisplay(Connection connection, String name, int cellCount) {
     connection.name = name;
-    connection.cellCount = Math.max(cellCount, 0);
+    // From another app: no display has more cells, and each is drawn on the overlay.
+    connection.cellCount = Math.max(0, Math.min(cellCount, MAX_CELLS));
     connection.waiting = true;
     if (active == connection) {
       stopActive();
