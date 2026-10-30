@@ -22,9 +22,9 @@ import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 
 /**
- * A key that can be the SandFly key, which keymap shortcuts are pressed with. Meta and Ctrl + Alt
- * are modifiers to Android; Insert and Numpad Insert are ordinary keys that SandFly takes and treats
- * as a modifier while they're held.
+ * A key that can be the SandFly key, which keymap shortcuts are pressed with. Meta, Alt, Ctrl + Alt
+ * and Ctrl + Meta are modifiers to Android; Insert and Numpad Insert are ordinary keys that SandFly
+ * takes and treats as a modifier while they're held.
  */
 enum class SandFlyKey(
   @StringRes val valueRes: Int,
@@ -43,10 +43,22 @@ enum class SandFlyKey(
     KeyEvent.META_META_ON,
     KeyEvent.KEYCODE_UNKNOWN,
   ),
+  ALT(
+    R.string.trigger_modifier_alt_entry_value,
+    R.string.keycombo_key_modifier_alt,
+    KeyEvent.META_ALT_ON,
+    KeyEvent.KEYCODE_UNKNOWN,
+  ),
   CTRL_ALT(
     R.string.trigger_modifier_ctrl_alt_entry_value,
     R.string.keycombo_key_modifier_ctrl_alt,
     KeyEvent.META_CTRL_ON or KeyEvent.META_ALT_ON,
+    KeyEvent.KEYCODE_UNKNOWN,
+  ),
+  CTRL_META(
+    R.string.trigger_modifier_ctrl_meta_entry_value,
+    R.string.keycombo_key_modifier_ctrl_meta,
+    KeyEvent.META_CTRL_ON or KeyEvent.META_META_ON,
     KeyEvent.KEYCODE_UNKNOWN,
   ),
   INSERT(
@@ -61,6 +73,29 @@ enum class SandFlyKey(
     KeyComboModel.HELD_KEY_MODIFIER,
     KeyEvent.KEYCODE_NUMPAD_0,
   );
+
+  /** Whether this is one key, which can be pressed twice, as two held together can't. */
+  val canBePressedTwice: Boolean
+    get() = this != CTRL_ALT && this != CTRL_META
+
+  /** Whether [keyCode] is a key of this SandFly key, such as left or right Alt for Alt. */
+  fun hasKey(keyCode: Int): Boolean =
+    when (this) {
+      META -> keyCode == KeyEvent.KEYCODE_META_LEFT || keyCode == KeyEvent.KEYCODE_META_RIGHT
+      ALT -> keyCode == KeyEvent.KEYCODE_ALT_LEFT || keyCode == KeyEvent.KEYCODE_ALT_RIGHT
+      CTRL_ALT ->
+        keyCode == KeyEvent.KEYCODE_CTRL_LEFT ||
+          keyCode == KeyEvent.KEYCODE_CTRL_RIGHT ||
+          keyCode == KeyEvent.KEYCODE_ALT_LEFT ||
+          keyCode == KeyEvent.KEYCODE_ALT_RIGHT
+      CTRL_META ->
+        keyCode == KeyEvent.KEYCODE_CTRL_LEFT ||
+          keyCode == KeyEvent.KEYCODE_CTRL_RIGHT ||
+          keyCode == KeyEvent.KEYCODE_META_LEFT ||
+          keyCode == KeyEvent.KEYCODE_META_RIGHT
+      INSERT,
+      NUMPAD_INSERT -> keyCode == this.keyCode
+    }
 
   /** Whether this is an ordinary key held as a modifier. */
   val isHeldKey: Boolean
@@ -85,10 +120,12 @@ enum class SandFlyKey(
 
     /**
      * Returns [combo], written for [native] as the SandFly key, as it is pressed with [chosen].
-     * Where it uses the chosen key with other keys, [native] takes the chosen key's place there,
-     * so Ctrl + Alt + Meta + Right stays the same keys. Shortcuts that can't be pressed that way
-     * become unassigned: an ordinary key such as Insert can't be held with another SandFly key,
-     * and browse mode keys that press all of the SandFly key would be taken as its shortcuts.
+     * Where it uses the chosen key with other keys, another modifier takes the chosen key's place
+     * there: the native key, so Ctrl + Alt + Meta + Right stays the same keys, or, where the native
+     * key is an ordinary key such as Insert or shares a key with the chosen one, the first of Meta,
+     * Alt, Ctrl and Shift that the shortcut and the chosen key leave free. Browse mode keys that press all of the chosen key become shortcuts
+     * with it, as pressing them presses the SandFly key. Defaults that become the same keys are
+     * sorted out by the caller.
      */
     @JvmStatic
     fun adapt(combo: KeyCombo, native: SandFlyKey, chosen: SandFlyKey): KeyCombo {
@@ -101,20 +138,41 @@ enum class SandFlyKey(
       }
       val modifiers = combo.modifiers
       if (!combo.isTriggerModifierUsed) {
-        return if (modifiers and chosenModifiers == chosenModifiers) KeyCombo() else combo
+        if (modifiers and chosenModifiers != chosenModifiers) {
+          return combo
+        }
+        return KeyCombo(
+          modifiers and chosenModifiers.inv(),
+          combo.prefixKeyCode,
+          combo.keyCode,
+          /* triggerModifierUsed= */ true,
+        )
       }
       if (modifiers and chosenModifiers == 0) {
         return combo
       }
-      if (native.isHeldKey) {
-        return KeyCombo()
-      }
+      val others = modifiers and chosenModifiers.inv()
+      val taken = chosenModifiers or others
+      val replacement =
+        if (!native.isHeldKey && native.modifiers and taken == 0) {
+          native.modifiers
+        } else {
+          REPLACEMENTS.firstOrNull { it and taken == 0 } ?: return KeyCombo()
+        }
       return KeyCombo(
-        (modifiers and chosenModifiers.inv()) or native.modifiers,
+        others or replacement,
         combo.prefixKeyCode,
         combo.keyCode,
         /* triggerModifierUsed= */ true,
       )
     }
+
+    private val REPLACEMENTS =
+      listOf(
+        KeyEvent.META_META_ON,
+        KeyEvent.META_ALT_ON,
+        KeyEvent.META_CTRL_ON,
+        KeyEvent.META_SHIFT_ON,
+      )
   }
 }

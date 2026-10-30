@@ -61,6 +61,7 @@ import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping
 import com.google.android.accessibility.talkback.gesture.OpenAppActions
 import com.google.android.accessibility.talkback.keyboard.ArrowKeyNav
 import com.google.android.accessibility.talkback.keyboard.KeyCombo
+import com.google.android.accessibility.talkback.keyboard.KeyComboModel
 import com.google.android.accessibility.talkback.keyboard.SandFlyKey
 import com.google.android.accessibility.talkback.keyboard.TalkBackPhysicalKeyboardShortcut
 import com.google.android.accessibility.talkback.selector.SelectorController
@@ -539,18 +540,16 @@ class TutorialActivity : AppCompatActivity() {
     val value = commandValue(action)
     if (value == getString(R.string.shortcut_value_toggle_browse_mode)) {
       // Browse mode turns on and off with the SandFly key pressed twice, or with its own shortcut
-      // where the SandFly key is two keys.
+      // where the keymap has no double press.
       if (!manager.isBrowseModeSupported) return null
-      if (manager.sandFlyKey == SandFlyKey.CTRL_ALT) {
+      val twice = model.getKeyComboForKey(getString(R.string.keycombo_shortcut_other_toggle_browse_mode))
+      if (twice.keyComboCode == KeyComboModel.KEY_COMBO_CODE_UNASSIGNED.toLong()) {
         return CommandBindings.keyboardShortcutText(
           manager,
           getString(R.string.keycombo_shortcut_other_toggle_browse_mode_extra),
         )
       }
-      return getString(
-        R.string.sandfly_keyboard_tutorial_key_twice,
-        manager.getTriggerKeyUserFacingName(model.triggerModifier),
-      )
+      return manager.getKeyComboStringRepresentation(twice)
     }
     val key =
       Commands.keyboardActionFor(this, value)?.getKey(resources)?.takeIf {
@@ -596,7 +595,9 @@ class TutorialActivity : AppCompatActivity() {
       getString(
         when (key) {
           SandFlyKey.META -> R.string.sandfly_keyboard_tutorial_action_key_location
+          SandFlyKey.ALT -> R.string.sandfly_keyboard_tutorial_alt_key_location
           SandFlyKey.CTRL_ALT -> R.string.sandfly_keyboard_tutorial_ctrl_alt_key_location
+          SandFlyKey.CTRL_META -> R.string.sandfly_keyboard_tutorial_ctrl_meta_key_location
           SandFlyKey.INSERT -> R.string.sandfly_keyboard_tutorial_insert_key_location
           SandFlyKey.NUMPAD_INSERT -> R.string.sandfly_keyboard_tutorial_numpad_insert_key_location
         }

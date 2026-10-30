@@ -45,6 +45,8 @@ public class NewKeyComboModel implements KeyComboModel {
   // Default shortcuts as pressed with the chosen SandFly key, by key, and the ones given out.
   private final Map<String, KeyCombo> defaultKeyCombos = new HashMap<>();
   private final Set<KeyCombo> givenDefaultKeyCombos = new HashSet<>();
+  // Shortcuts saved before this model was made.
+  private final Set<KeyCombo> savedKeyCombos = new HashSet<>();
 
   public NewKeyComboModel(Context context) {
     this(context, Keymap.SANDFLY);
@@ -53,8 +55,15 @@ public class NewKeyComboModel implements KeyComboModel {
   public NewKeyComboModel(Context context, Keymap keymap) {
     this.context = context;
     this.keymap = keymap;
-    sandFlyKey = SandFlyKey.chosen(context);
+    sandFlyKey = keymap.sandFlyKey(context);
     persister = new KeyComboPersister(context, keymap.persisterPrefix(sandFlyKey));
+    // A default new to this version doesn't take keys the user or an earlier version gave a command.
+    for (String key : persister.keysStartingWith("")) {
+      KeyCombo keyCombo = persister.getKeyCombo(key);
+      if (keyCombo.getKeyComboCode() != KEY_COMBO_CODE_UNASSIGNED) {
+        savedKeyCombos.add(keyCombo);
+      }
+    }
 
     addKeyCombos();
     addCommandShortcuts();
@@ -123,6 +132,16 @@ public class NewKeyComboModel implements KeyComboModel {
     if (keyCombo != null) {
       return keyCombo;
     }
+    return adaptedDefaultKeyCombo(key);
+  }
+
+  /** Returns the default shortcut of [key] as pressed with the chosen SandFly key. */
+  private KeyCombo adaptedDefaultKeyCombo(String key) {
+    // Two keys held together, such as Ctrl + Alt, can't be pressed twice.
+    if (!sandFlyKey.getCanBePressedTwice()
+        && key.equals(context.getString(R.string.keycombo_shortcut_other_toggle_browse_mode))) {
+      return new KeyCombo();
+    }
     return SandFlyKey.adapt(getNativeDefaultKeyCombo(key), keymap.getNativeKey(), sandFlyKey);
   }
 
@@ -135,9 +154,10 @@ public class NewKeyComboModel implements KeyComboModel {
     if (keyCombo != null) {
       return keyCombo;
     }
-    keyCombo = SandFlyKey.adapt(getNativeDefaultKeyCombo(key), keymap.getNativeKey(), sandFlyKey);
+    keyCombo = adaptedDefaultKeyCombo(key);
     if (keyCombo.getKeyComboCode() != KEY_COMBO_CODE_UNASSIGNED
-        && !givenDefaultKeyCombos.add(keyCombo)) {
+        && (!givenDefaultKeyCombos.add(keyCombo)
+            || (!persister.contains(key) && savedKeyCombos.contains(keyCombo)))) {
       keyCombo = new KeyCombo();
     }
     defaultKeyCombos.put(key, keyCombo);

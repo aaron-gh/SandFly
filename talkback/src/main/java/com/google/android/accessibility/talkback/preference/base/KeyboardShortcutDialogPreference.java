@@ -287,17 +287,7 @@ public class KeyboardShortcutDialogPreference extends Preference
     if (sandFlyKey == null) {
       return false;
     }
-    return switch (sandFlyKey) {
-      case META -> keyComboManager.isMetaKey(event.getKeyCode());
-      case CTRL_ALT -> {
-        int keyCode = event.getKeyCode();
-        yield keyCode == KeyEvent.KEYCODE_CTRL_LEFT
-            || keyCode == KeyEvent.KEYCODE_CTRL_RIGHT
-            || keyCode == KeyEvent.KEYCODE_ALT_LEFT
-            || keyCode == KeyEvent.KEYCODE_ALT_RIGHT;
-      }
-      case INSERT, NUMPAD_INSERT -> event.getKeyCode() == sandFlyKey.getKeyCode();
-    };
+    return sandFlyKey.hasKey(event.getKeyCode());
   }
 
   private void setKeyEventSource(int keyEventSource) {

@@ -140,6 +140,8 @@ public class KeyComboManager
   private static final Duration SEQUENCE_KEY_MODE_TIMEOUT = Duration.ofSeconds(3);
   // Set once the SandFly key of the keymap in use has become the one for all keymaps.
   private static final String SANDFLY_KEY_MIGRATED_PREF = "pref_sandfly_key_migrated";
+  // The removed Default keymap's value of the keymap preference.
+  private static final String DEFAULT_KEYMAP_VALUE = "default_keymap";
 
   /** Returns keyComboCode that represent keyEvent. */
   public static long getKeyComboCode(KeyEvent keyEvent) {
@@ -498,6 +500,15 @@ public class KeyComboManager
     if (keyCombo.getKeyComboCode() == KeyComboModel.KEY_COMBO_CODE_UNASSIGNED) {
       return context.getString(R.string.keycombo_unassigned);
     }
+    // Browse mode's toggle is written as the SandFly key's Meta key with no key after it.
+    @Nullable SandFlyKey sandFlyKey = getSandFlyKey();
+    if (sandFlyKey != null
+        && keyCombo.isTriggerModifierUsed()
+        && keyCombo.getPrefixKeyCode() == KeyEvent.KEYCODE_META_RIGHT
+        && keyCombo.getKeyCode() == KeyComboModel.KEY_COMBO_CODE_UNASSIGNED) {
+      return context.getString(
+          R.string.sandfly_keyboard_tutorial_key_twice, context.getString(sandFlyKey.getNameRes()));
+    }
 
     int triggerModifier = keyComboModel.getTriggerModifier();
     boolean sequenceKeyCombo =
@@ -507,7 +518,7 @@ public class KeyComboManager
     StringBuilder assignedShortcut = new StringBuilder();
     // Append the SandFly key if key combo code contains it.
     if (keyCombo.isTriggerModifierUsed()) {
-      @Nullable SandFlyKey sandFlyKey = getSandFlyKey();
+      // The SandFly key looked up above.
       if (sandFlyKey != null) {
         assignedShortcut.append(context.getString(sandFlyKey.getNameRes()));
       } else {
@@ -756,14 +767,32 @@ public class KeyComboManager
    * Returns the set of commands that are only available in browse mode. The set stores their key
    * strings.
    */
+  /**
+   * Returns the commands whose shortcuts work only in browse mode: the ones browse mode has, and
+   * ones the keymap gives keys without the SandFly key, such as Orca's Alt + Shift + H.
+   */
   public ImmutableSet<String> getBrowseModeOnlyCommands() {
-    return browseModeOnlyCommands;
+    ImmutableSet.Builder<String> commands = ImmutableSet.<String>builder().addAll(browseModeOnlyCommands);
+    if (keyComboModel != null) {
+      for (String key : keyComboModel.getKeyComboMap().keySet()) {
+        KeyCombo keyCombo = keyComboModel.getDefaultKeyCombo(key);
+        if (keyCombo.getKeyComboCode() != KeyComboModel.KEY_COMBO_CODE_UNASSIGNED
+            && !keyCombo.isTriggerModifierUsed()) {
+          commands.add(key);
+        }
+      }
+    }
+    return commands.build();
   }
+
 
   /** Saves the SandFly keymap for new users and for users of the removed Default and classic keymaps. */
   private void initializeDefaultPreferenceValues() {
     String key = context.getString(R.string.pref_select_keymap_key);
     String keymapValue = sharedPreferences.getString(key, null);
+    if (DEFAULT_KEYMAP_VALUE.equals(keymapValue)) {
+      moveDefaultKeymapToSandFlyKeymap();
+    }
     Keymap keymap = Keymap.of(context, keymapValue);
     String value = context.getString(keymap.getValueRes());
     if (!value.equals(keymapValue)) {
@@ -861,9 +890,7 @@ public class KeyComboManager
               context.getString(R.string.keycombo_shortcut_other_announce_column_header),
               context.getString(R.string.keycombo_shortcut_other_announce_row_header)));
     }
-    if (FeatureFlagReader.enableReadCurrentUrl(context)) {
-      commands.add(context.getString(R.string.keycombo_shortcut_other_read_current_url));
-    }
+    // Reading the address works outside browse mode too, as JAWS's Insert + A does.
     return commands.build();
   }
 
@@ -993,7 +1020,9 @@ public class KeyComboManager
                 KeyComboModel.NO_PREFIX_KEY_CODE,
                 event.getKeyCode(),
                 /* triggerModifierUsed= */ true);
-        if (isBrowseModeSupported() && isEqualToLastKeyComboAndDurationLessThanThreshold()) {
+        if (isBrowseModeSupported()
+            && isBrowseModeToggleAssigned()
+            && isEqualToLastKeyComboAndDurationLessThanThreshold()) {
           setBrowseModeEnabled(!browseModeEnabled);
           if (!browseModeEnabled) {
             recordBrowseModeStateWhenOff(BROWSE_MODE_TURNED_OFF_BY_USER);
@@ -1098,8 +1127,10 @@ public class KeyComboManager
         && currentKeyComboTime - previousKeyComboTime < TIME_TO_DETECT_DOUBLE_TAP.toMillis()
         && currentKeyCombo.getModifiers() == KeyComboModel.NO_MODIFIER
         && currentKeyCombo.getPrefixKeyCode() == KeyComboModel.KEY_COMBO_CODE_UNASSIGNED
-        && isMetaKey(currentKeyCombo.getKeyCode())) {
-      if (isBrowseModeSupported()) {
+        && sandFlyKey != null
+        && sandFlyKey.getCanBePressedTwice()
+        && sandFlyKey.hasKey(currentKeyCombo.getKeyCode())) {
+      if (isBrowseModeSupported() && isBrowseModeToggleAssigned()) {
         // If `isBrowseModeSupported()`, cancel the executor for opening the search app and toggle
         // Browse Mode if the user has pressed search key (meta key) twice within
         // `TIME_TO_DETECT_DOUBLE_TAP`. This cancellation needs to be done in `onKeyDown()` to
@@ -1112,7 +1143,7 @@ public class KeyComboManager
         if (!browseModeEnabled) {
           recordBrowseModeStateWhenOff(BROWSE_MODE_TURNED_OFF_BY_USER);
         }
-      } else {
+      } else if (isMetaKey(currentKeyCombo.getKeyCode())) {
         // If not `isBrowseModeSupported()`, do not handle key event if user has pressed search key
         // (meta key) twice to open search app. Reset `currentKeyCombo` to not open search app again
         // with following search key event.
@@ -1323,6 +1354,42 @@ public class KeyComboManager
   /** Returns the SandFly key of the keymap. */
   public @Nullable SandFlyKey getSandFlyKey() {
     return keyComboModel instanceof NewKeyComboModel model ? model.getSandFlyKey() : null;
+  }
+
+  /**
+   * Gives users of the removed Default keymap its shortcuts, changed or not, in the SandFly keymap,
+   * with its modifier, Alt or Meta, as the SandFly key. Commands the Default keymap didn't have get
+   * the SandFly keymap's defaults where those keys are free.
+   */
+  private void moveDefaultKeymapToSandFlyKeymap() {
+    SandFlyKey sandFlyKey =
+        "trigger_modifier_meta"
+                .equals(sharedPreferences.getString("pref_default_keymap_trigger_modifier", null))
+            ? SandFlyKey.META
+            : SandFlyKey.ALT;
+    sharedPreferences
+        .edit()
+        .putString(
+            context.getString(R.string.pref_sandfly_key),
+            context.getString(sandFlyKey.getValueRes()))
+        .putBoolean(SANDFLY_KEY_MIGRATED_PREF, true)
+        .apply();
+    KeyComboPersister from = new KeyComboPersister(context, "default_key_combo_model");
+    KeyComboPersister to =
+        new KeyComboPersister(context, Keymap.SANDFLY.persisterPrefix(sandFlyKey));
+    for (String key : from.keysStartingWith("")) {
+      if (!to.contains(key)) {
+        to.saveKeyCombo(key, from.getKeyCombo(key));
+      }
+    }
+  }
+
+  /** Returns whether the keymap turns browse mode on and off with the SandFly key pressed twice. */
+  private boolean isBrowseModeToggleAssigned() {
+    return keyComboModel
+            .getKeyComboForKey(context.getString(R.string.keycombo_shortcut_other_toggle_browse_mode))
+            .getKeyComboCode()
+        != KeyComboModel.KEY_COMBO_CODE_UNASSIGNED;
   }
 
   /** Returns whether [event] presses or releases the SandFly key where it's a held key. */
