@@ -29,6 +29,7 @@ import android.view.Display
 import android.view.WindowManager
 import com.google.android.accessibility.talkback.ActorState
 import com.google.android.accessibility.talkback.Feedback
+import com.google.android.accessibility.talkback.Feedback.PassThroughMode.Action.LOCK_PASS_THROUGH
 import com.google.android.accessibility.talkback.Pipeline
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.contextmenu.ContextMenu
@@ -222,9 +223,14 @@ class RadialMenuController(
         ?: return
     val metrics = DisplayMetrics()
     @Suppress("DEPRECATION") display.getRealMetrics(metrics)
-    service.setTouchExplorationPassthroughRegion(
-      Display.DEFAULT_DISPLAY,
-      Region(0, 0, metrics.widthPixels, metrics.heightPixels),
+    // Through pass-through mode, which keeps direct touch's region from replacing it and puts that
+    // back when the menu closes.
+    pipeline.returnFeedback(
+      EVENT_ID_UNTRACKED,
+      Feedback.passThroughMode(
+        LOCK_PASS_THROUGH,
+        Region(0, 0, metrics.widthPixels, metrics.heightPixels),
+      ),
     )
     passthroughRegionSet = true
   }
@@ -232,7 +238,7 @@ class RadialMenuController(
   private fun clearPassthroughRegion() {
     if (passthroughRegionSet) {
       passthroughRegionSet = false
-      service.setTouchExplorationPassthroughRegion(Display.DEFAULT_DISPLAY, Region())
+      pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.passThroughMode(LOCK_PASS_THROUGH, null))
     }
   }
 
