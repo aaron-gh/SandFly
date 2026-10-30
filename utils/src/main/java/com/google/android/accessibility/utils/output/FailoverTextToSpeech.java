@@ -325,6 +325,13 @@ public class FailoverTextToSpeech {
   /** When a phone call was last seen active, or 0. */
   private long phoneCallSeenAt;
 
+  /**
+   * Whether speech already waited out the call audio mode in place now, which stayed after the
+   * call: some phones keep MODE_IN_CALL with no call. Speech doesn't wait for it again until the
+   * mode changes or another call starts.
+   */
+  private boolean callModeOutlasted;
+
   /** Speech waiting for the audio mode to leave a phone call that ended, in order. */
   private final List<Runnable> afterCallSpeech = new ArrayList<>();
 
@@ -845,6 +852,7 @@ public class FailoverTextToSpeech {
   private boolean callAudioEnding() {
     int mode = audioManager.getMode();
     if (mode != AudioManager.MODE_IN_CALL && mode != AudioManager.MODE_IN_COMMUNICATION) {
+      callModeOutlasted = false;
       return false;
     }
     int callState;
@@ -858,6 +866,10 @@ public class FailoverTextToSpeech {
     long now = SystemClock.uptimeMillis();
     if (callState != TelephonyManager.CALL_STATE_IDLE) {
       phoneCallSeenAt = now;
+      callModeOutlasted = false;
+      return false;
+    }
+    if (callModeOutlasted) {
       return false;
     }
     return mode == AudioManager.MODE_IN_CALL
@@ -874,6 +886,7 @@ public class FailoverTextToSpeech {
     if (inCall()) {
       // The mode stayed: it isn't the ended call's, so speech doesn't wait for it again.
       phoneCallSeenAt = 0;
+      callModeOutlasted = true;
     }
     LogUtils.d(TAG, "Speaking %d utterances after %d ms for the ended call's audio", afterCallSpeech.size(), waited);
     List<Runnable> waiting = new ArrayList<>(afterCallSpeech);
