@@ -19,6 +19,7 @@ dependencies {
     // Scripts run in Lua 5.4 through LuaJava.
     phoneImplementation libs.luajava
     phoneImplementation libs.luajava.lua54
+    phoneImplementation project(':luamemory')
     // Handwriting recognition on the device, with a model per language downloaded when first used.
     phoneImplementation libs.mlkit.digital.ink
     // Translation on the device, with a model per language downloaded when first used.
