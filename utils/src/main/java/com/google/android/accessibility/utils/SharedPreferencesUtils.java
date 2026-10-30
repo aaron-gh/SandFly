@@ -37,8 +37,14 @@ public class SharedPreferencesUtils {
    */
   public static int getIntFromStringPref(
       SharedPreferences prefs, Resources res, int keyResId, int defaultResId) {
-    final String strPref = prefs.getString(res.getString(keyResId), res.getString(defaultResId));
-    return Integer.parseInt(strPref);
+    // A value of another type or a non-number, from an imported file or an older version, reads as
+    // the default instead of stopping the screen reader.
+    try {
+      return Integer.parseInt(
+          prefs.getString(res.getString(keyResId), res.getString(defaultResId)));
+    } catch (ClassCastException | NumberFormatException e) {
+      return Integer.parseInt(res.getString(defaultResId));
+    }
   }
 
   /**
@@ -54,8 +60,12 @@ public class SharedPreferencesUtils {
    */
   public static float getFloatFromStringPref(
       SharedPreferences prefs, Resources res, int keyResId, int defaultResId) {
-    final String strPref = prefs.getString(res.getString(keyResId), res.getString(defaultResId));
-    return Float.parseFloat(strPref);
+    try {
+      return Float.parseFloat(
+          prefs.getString(res.getString(keyResId), res.getString(defaultResId)));
+    } catch (ClassCastException | NumberFormatException e) {
+      return Float.parseFloat(res.getString(defaultResId));
+    }
   }
 
   /**
