@@ -680,7 +680,13 @@ class QuickSettingsActivity : AppCompatActivity() {
 
   private fun changeSlider(seekBar: SeekBar, value: Int) {
     val binding = seekBar.getTag(R.id.quick_settings_slider) as? SliderBinding ?: return
-    controls.setSlider(binding.control, value) { scheduleRefresh() }
+    // A settings screen that opened to allow it takes over; the slider's later moves would open it
+    // again for each step.
+    val change = controls.setSlider(binding.control, value) { scheduleRefresh() }
+    if (change == QuickControls.Change.OPENED) {
+      finish()
+      return
+    }
     ViewCompat.setStateDescription(seekBar, controls.sliderText(binding.state.copy(value = value)))
   }
 
