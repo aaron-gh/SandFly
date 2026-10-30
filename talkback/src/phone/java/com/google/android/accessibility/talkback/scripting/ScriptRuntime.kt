@@ -205,10 +205,10 @@ class ScriptRuntime(
       val interrupt = args.optBoolean("interrupt") && !manager.inBacktalk
       if (args.optBoolean("wait")) {
         promise { settle ->
-          manager.feedback.speak(args.optString("text"), interrupt, voice(args)) { settle(true, it) }
+          manager.feedback.speak(args.text("text"), interrupt, voice(args)) { settle(true, it) }
         }
       } else {
-        manager.feedback.speak(args.optString("text"), interrupt, voice(args))
+        manager.feedback.speak(args.text("text"), interrupt, voice(args))
       }
     }
     on("speech.stop", SPEECH) { if (!manager.inBacktalk) manager.feedback.stopSpeech() }
@@ -402,20 +402,20 @@ class ScriptRuntime(
       promise { settle -> dialogs.choose(id, title(args), options, selected) { settle(true, it) } }
     }
     on("ui.prompt", DIALOGS) { args ->
-      val text = args.optString("text")
-      val hint = args.optString("hint")
+      val text = args.text("text")
+      val hint = args.text("hint")
       promise { settle -> dialogs.prompt(id, title(args), text, hint) { settle(true, it) } }
     }
     on("ui.confirm", DIALOGS) { args ->
-      val message = args.optString("message")
-      val ok = args.optString("ok").ifEmpty { null }
-      val cancel = args.optString("cancel").ifEmpty { null }
+      val message = args.text("message")
+      val ok = args.text("ok").ifEmpty { null }
+      val cancel = args.text("cancel").ifEmpty { null }
       promise { settle ->
         dialogs.confirm(id, title(args), message, ok, cancel) { settle(true, it) }
       }
     }
     on("ui.alert", DIALOGS) { args ->
-      val message = args.optString("message")
+      val message = args.text("message")
       promise { settle -> dialogs.alert(id, title(args), message) { settle(true, null) } }
     }
     on("ui.dialog", DIALOGS) { args ->
@@ -451,9 +451,11 @@ class ScriptRuntime(
 
   // Every dialog starts with the script's name. A dialog is drawn over whatever app is in front,
   // and someone who can't see it has only the title to tell it from the app's own dialogs.
+  private fun JSONObject.text(name: String): String = optString(name).take(MAX_TEXT_CHARS)
+
   private fun title(args: JSONObject): String {
     val name = script.manifest.name
-    val title = args.optString("title")
+    val title = args.text("title")
     return if (title.isEmpty() || title == name) {
       name
     } else {
@@ -632,6 +634,11 @@ class ScriptRuntime(
     const val CALL_LIMIT_MS = 2000L
     private const val MEMORY_LIMIT = 32L * 1024 * 1024
     private const val MAX_FIND = 200
+    /**
+     * The most characters of text a script speaks or shows in a dialog at once. Laying out or
+     * speaking megabytes of text holds up the main thread, which the screen reader shares.
+     */
+    private const val MAX_TEXT_CHARS = 20_000
     private const val MAX_KEY_LENGTH = 200
     private const val MAX_PATTERN = 20
     private const val MAX_VIBRATION_PART_MS = 2000L

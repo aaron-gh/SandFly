@@ -22,6 +22,7 @@ import com.google.android.libraries.accessibility.utils.log.LogUtils
 object ScriptLog {
   const val TAG = "BacktalkScript"
   private const val MAX_ENTRIES = 300
+  private const val MAX_MESSAGE_CHARS = 4000
 
   enum class Level(val priority: Int) {
     DEBUG(Log.DEBUG),
@@ -34,7 +35,11 @@ object ScriptLog {
 
   private val entries = HashMap<String, ArrayDeque<Entry>>()
 
-  fun add(id: String, level: Level, message: String) {
+  fun add(id: String, level: Level, fullMessage: String) {
+    // Scripts write the message, and up to MAX_ENTRIES of them are kept for each script.
+    val message =
+      if (fullMessage.length <= MAX_MESSAGE_CHARS) fullMessage
+      else fullMessage.take(MAX_MESSAGE_CHARS) + "…"
     // Scripts can log what is on screen or in notifications, so it only goes to logcat at the log
     // level chosen in developer settings. The script's own log screen always has it.
     LogUtils.log(TAG, level.priority, "[%s] %s", id, message)

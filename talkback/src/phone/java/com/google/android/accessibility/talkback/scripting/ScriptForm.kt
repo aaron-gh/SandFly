@@ -258,12 +258,16 @@ class ScriptForm(
     override fun apply(props: JSONObject) {
       props.text("label")?.let { label.text = it }
       val current = value() as Double
-      if (props.has("min")) min = props.optDouble("min", min)
-      if (props.has("max")) max = props.optDouble("max", max)
-      if (props.has("step")) step = props.optDouble("step", step).takeIf { it > 0 } ?: 1.0
+      // optDouble reads "NaN" and "Infinity", and roundToInt throws on them.
+      if (props.has("min")) min = props.optDouble("min", min).takeIf { it.isFinite() } ?: min
+      if (props.has("max")) max = props.optDouble("max", max).takeIf { it.isFinite() } ?: max
+      if (props.has("step")) {
+        step = props.optDouble("step", step).takeIf { it > 0 && it.isFinite() } ?: 1.0
+      }
       bar.max = ((max - min) / step).toInt().coerceIn(1, MAX_STEPS)
       bar.keyProgressIncrement = 1
-      val wanted = if (props.has("value")) props.optDouble("value", current) else current
+      val wanted =
+        props.optDouble("value", current).takeIf { props.has("value") && it.isFinite() } ?: current
       bar.progress = ((wanted - min) / step).roundToInt().coerceIn(0, bar.max)
     }
   }
