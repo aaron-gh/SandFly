@@ -19,6 +19,7 @@ package com.google.android.accessibility.talkback.shizuku
 import android.content.Context
 import android.content.ContextWrapper
 import android.net.wifi.WifiManager
+import android.os.Binder
 import android.os.IBinder
 import android.os.ParcelFileDescriptor
 import java.io.InputStream
@@ -173,7 +174,10 @@ class ShizukuGrantService(private val context: Context?) : IShizukuGrants.Stub()
     }
     // No -p (inherit from the installed package): the caller gives the complete APKs, and
     // inheriting fails a version upgrade because the inherited files are the old version's.
-    val create = shell(listOf("pm", "install-create", "-r", "-i", installer), null)
+    // Only for SandFly's own user: pm installs for every user by default, which would add SandFly
+    // to a work profile, private space and other users.
+    val user = (Binder.getCallingUid() / PER_USER_RANGE).toString()
+    val create = shell(listOf("pm", "install-create", "-r", "--user", user, "-i", installer), null)
     val session =
       SESSION_ID.find(create.second)?.groupValues?.get(1)
         ?: return "No install session: ${create.second}"
@@ -224,6 +228,8 @@ class ShizukuGrantService(private val context: Context?) : IShizukuGrants.Stub()
     val PACKAGE_NAME = Regex("""[A-Za-z][A-Za-z0-9_]*(\.[A-Za-z][A-Za-z0-9_]*)+""")
     val SESSION_ID = Regex("""\[(\d+)\]""")
     const val TIMEOUT_SECONDS = 10L
+    /** UIDs of one user, as in UserHandle.PER_USER_RANGE. */
+    const val PER_USER_RANGE = 100_000
     /** Installing is slower than a setting change, so it gets longer than the other commands. */
     const val INSTALL_TIMEOUT_SECONDS = 120L
     const val SHELL_PACKAGE = "com.android.shell"
