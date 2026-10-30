@@ -42,9 +42,7 @@ public final class ExternalDisplayApprovalActivity extends Activity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    if (savedInstanceState != null) {
-      return; // the warning is still showing
-    }
+    // Also when made again, such as after rotation: the warning went with the old window.
     String app = getIntent().getStringExtra(EXTRA_PACKAGE);
     if (app == null) {
       app = getCallingPackage();
