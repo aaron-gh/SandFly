@@ -163,6 +163,7 @@ import com.google.android.accessibility.talkback.contextmenu.ListMenuManager;
 import com.google.android.accessibility.talkback.controller.TelevisionNavigationController;
 import com.google.android.accessibility.talkback.controlsounds.ControlSoundsSettings;
 import com.google.android.accessibility.talkback.directtouch.DirectTouchController;
+import com.google.android.accessibility.talkback.directtouch.DirectTouchSettings;
 import com.google.android.accessibility.talkback.eventprocessor.AccessibilityEventProcessor;
 import com.google.android.accessibility.talkback.eventprocessor.AccessibilityEventProcessor.TalkBackListener;
 import com.google.android.accessibility.talkback.eventprocessor.PhoneticLetterMode;
@@ -4395,7 +4396,8 @@ public class TalkBackService extends AccessibilityServiceCompat
             || getString(R.string.talkback_enabled_count).equals(key)
             || getString(R.string.talkback_off_timestamp).equals(key)
             || PREF_HAS_TRAINING_FINISHED.equals(key)
-            || PREF_HAS_ONBOARDING_FINISHED.equals(key)) {
+            || PREF_HAS_ONBOARDING_FINISHED.equals(key)
+            || DirectTouchSettings.PREF_SEEN.equals(key)) {
           return;
         }
         reloadPreferences(key);
