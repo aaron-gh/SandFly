@@ -334,7 +334,8 @@ class TwoFingerRotationTracker(
     /** Sets the rotation for each step after the first, in degrees. */
     @JvmStatic
     fun setStepDegrees(degrees: Float) {
-      stepDegrees = degrees
+      // A step of 0 or less, such as from an imported settings file, would count steps forever.
+      stepDegrees = if (degrees >= 1f) degrees else DEFAULT_STEP_DEGREES
     }
 
     /** Rotation that starts the rotation and reports the first step, in degrees. */
