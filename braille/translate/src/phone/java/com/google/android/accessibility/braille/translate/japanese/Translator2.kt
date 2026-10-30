@@ -174,23 +174,26 @@ internal class Translator2(private val analyze: (String) -> List<String>) {
     useForeignQuotes: Boolean,
   ): Pair<String, List<Int>> {
     var text = inbuf
+    // The index in inbuf of each character of text, through the replacements that change its
+    // length, so that the positions returned are inbuf's.
+    val original = MutableList(inbuf.length) { it }
     // NVDA focus/review strings may contain CR/LF; MeCab path rejects them.
     if ('\r' in text || '\n' in text) {
-      text = text.replace("\r\n", "\n").replace("\r", "\n").replace("\n", " ")
+      text = replaceMapped(text, original, "\r\n", "\n").replace("\r", "\n").replace("\n", " ")
     }
     if (RE_HALF_KATAKANA.matches(text)) {
-      return text to text.indices.toList()
+      return text to inbufPositions(text.indices.toList(), original)
     }
 
     if (!nabcc && RE_MB_ALPHA_NUM_SPACE.matches(text)) {
       val outbuf = UnicodeUtil.unicodeNormalize(text)
       // fall through if contains alpha char (to be wrapped with foreign quote)
       if (useForeignQuotes && !outbuf.any { it.isLetter() }) {
-        return outbuf to outbuf.indices.toList()
+        return outbuf to inbufPositions(outbuf.indices.toList(), original)
       }
       // legacy behavior: always return result here
       if (!useForeignQuotes) {
-        return outbuf to outbuf.indices.toList()
+        return outbuf to inbufPositions(outbuf.indices.toList(), original)
       }
     }
 
@@ -204,11 +207,11 @@ internal class Translator2(private val analyze: (String) -> List<String>) {
       val inpos2 = mutableListOf(0)
       inpos2.addAll(outbuf.indices)
       inpos2.add(inpos2.last())
-      return outbuf to inpos2
+      return outbuf to inbufPositions(inpos2, original)
     }
 
     // 'あ゛ー' Unicode 正規化されて空白が入るので事前に補正する
-    text = text.replace("あ゛", "あ")
+    text = replaceMapped(text, original, "あ゛", "あ")
     text = text.replace("ヱ゛", "ヴェ")
     text = text.replace("ヲ゛", "ヴォ")
     text = text.replace("ワ゛", "ヴァ")
@@ -564,8 +567,41 @@ internal class Translator2(private val analyze: (String) -> List<String>) {
 
     outbuf = if (nabcc) outbuf.replace(TAB_CODE, "⡀") else outbuf.replace(TAB_CODE, " ")
 
-    return outbuf to inpos2
+    return outbuf to inbufPositions(inpos2, original)
   }
+
+  /**
+   * Replaces [old] with [new] in [text], with [map] holding each character's index in the original
+   * text: the characters of a replacement take those of the text it replaced.
+   */
+  private fun replaceMapped(text: String, map: MutableList<Int>, old: String, new: String): String {
+    if (old !in text) return text
+    val out = StringBuilder()
+    val outMap = ArrayList<Int>(map.size)
+    var i = 0
+    while (i < text.length) {
+      if (text.startsWith(old, i)) {
+        for (k in new.indices) outMap += map[i + minOf(k, old.length - 1)]
+        out.append(new)
+        i += old.length
+      } else {
+        out.append(text[i])
+        outMap += map[i]
+        i++
+      }
+    }
+    map.clear()
+    map.addAll(outMap)
+    return out.toString()
+  }
+
+  /**
+   * [positions] in the text after replacements, as positions in the original text by [map]. When
+   * no replacement changed the length, they are left as they are, including any past its end.
+   */
+  private fun inbufPositions(positions: List<Int>, map: List<Int>): List<Int> =
+    if (map.isEmpty() || map.withIndex().all { (i, v) -> i == v }) positions
+    else positions.map { map[it.coerceIn(0, map.lastIndex)] }
 
   /**
    * Replaces the inside of each foreign quotation ⠦...⠴ in [outbuf] by its translation from

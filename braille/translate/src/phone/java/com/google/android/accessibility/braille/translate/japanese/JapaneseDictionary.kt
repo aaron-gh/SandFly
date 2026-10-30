@@ -53,6 +53,7 @@ object JapaneseDictionary {
   private const val MAX_FILE_BYTES = 100L * 1024 * 1024
   private const val TIMEOUT_MS = 30_000
   private const val RETRY_MS = 10 * 60_000L
+  private const val HTTP_GONE = 410
 
   private val main = Handler(Looper.getMainLooper())
   private val listeners = CopyOnWriteArrayList<Runnable>()
@@ -112,11 +113,16 @@ object JapaneseDictionary {
   fun download(context: Context, retryNow: Boolean) {
     val current = state(context)
     if (current == State.READY || current == State.DOWNLOADING) return
+    // A download that can't work, such as a changed or missing archive, isn't repeated on its
+    // own: 15 MB every few minutes for as long as Japanese braille is used.
     if (
-      current == State.FAILED && !retryNow && SystemClock.elapsedRealtime() - failedAt < RETRY_MS
+      current == State.FAILED &&
+        !retryNow &&
+        (failedForGood || SystemClock.elapsedRealtime() - failedAt < RETRY_MS)
     ) {
       return
     }
+    failedForGood = false
     setState(State.DOWNLOADING)
     val app = context.applicationContext
     Thread(
@@ -125,10 +131,12 @@ object JapaneseDictionary {
             try {
               fetch(directory(app))
               true
-            } catch (e: IOException) {
-              LogUtils.e(TAG, "Download failed: %s", e)
+            } catch (e: PermanentFailure) {
+              LogUtils.e(TAG, "Download failed for good: %s", e)
+              failedForGood = true
               false
-            } catch (e: SecurityException) {
+            } catch (e: Exception) {
+              // Also what reading damaged files throws, such as IndexOutOfBoundsException.
               LogUtils.e(TAG, "Download failed: %s", e)
               false
             }
@@ -141,6 +149,11 @@ object JapaneseDictionary {
       .start()
   }
 
+  /** A download failure that trying again won't change, until the user asks. */
+  private class PermanentFailure(message: String) : IOException(message)
+
+  @Volatile private var failedForGood = false
+
   /** Downloads and checks the archive, then unpacks the dictionary files into [target]. */
   private fun fetch(target: File) {
     val parent = target.parentFile ?: throw IOException("No storage")
@@ -152,9 +165,11 @@ object JapaneseDictionary {
     connection.connectTimeout = TIMEOUT_MS
     connection.readTimeout = TIMEOUT_MS
     try {
-      if (connection.responseCode != HttpURLConnection.HTTP_OK) {
-        throw IOException("HTTP ${connection.responseCode}")
+      val code = connection.responseCode
+      if (code == HttpURLConnection.HTTP_NOT_FOUND || code == HTTP_GONE) {
+        throw PermanentFailure("HTTP $code")
       }
+      if (code != HttpURLConnection.HTTP_OK) throw IOException("HTTP $code")
       val digest = MessageDigest.getInstance("SHA-256")
       connection.inputStream.use { input ->
         archive.outputStream().use { output ->
@@ -164,14 +179,14 @@ object JapaneseDictionary {
             val read = input.read(buffer)
             if (read < 0) break
             total += read
-            if (total > MAX_FILE_BYTES) throw IOException("Archive too large")
+            if (total > MAX_FILE_BYTES) throw PermanentFailure("Archive too large")
             digest.update(buffer, 0, read)
             output.write(buffer, 0, read)
           }
         }
       }
       val hash = digest.digest().joinToString("") { "%02x".format(it) }
-      if (hash != SHA256) throw IOException("Archive checksum $hash")
+      if (hash != SHA256) throw PermanentFailure("Archive checksum $hash")
     } finally {
       connection.disconnect()
     }
@@ -197,7 +212,7 @@ object JapaneseDictionary {
       }
     }
     archive.delete()
-    if (!isComplete(unpacking)) throw IOException("Archive lacks dictionary files")
+    if (!isComplete(unpacking)) throw PermanentFailure("Archive lacks dictionary files")
     // Checks that the files can be read before they are used.
     JapaneseAnalyzer(unpacking)
     if (!unpacking.renameTo(target)) throw IOException("Can't move the dictionary into place")
