@@ -286,6 +286,8 @@ public class FailoverTextToSpeech {
   private final Map<String, LowLatencyAudio.SpeechStream> lowLatencyStreams =
       new ConcurrentHashMap<>();
 
+  private static final int MAX_LOW_LATENCY_STREAMS = 100;
+
   /**
    * The utterance whose low-latency speech is held, mid-word, since a touch interrupted it, or null.
    * If the pause gesture follows, it stays held until speech resumes, and carries on from exactly
@@ -427,6 +429,9 @@ public class FailoverTextToSpeech {
                   key, lowLatencyAudioDefault(FailoverTextToSpeech.this.context));
           if (wasOn && !lowLatencyAudio) {
             turnOffLowLatencyAudio();
+          } else if (!wasOn && lowLatencyAudio) {
+            // Turned on again: engines that failed it before get another chance.
+            enginesWithoutFileAudio.clear();
           }
         } else if (PREF_SWITCH_LANGUAGES_KEY.equals(key)
             || PREF_SWITCH_DIALECTS_KEY.equals(key)) {
@@ -733,6 +738,10 @@ public class FailoverTextToSpeech {
           TAG,
           "Speech %s waits for the ended call's audio",
           params.get(Engine.KEY_PARAM_UTTERANCE_ID));
+      // Copies: the speech controller fills the same maps again for each later utterance, which
+      // would be spoken under this one's ID otherwise.
+      Map<String, String> paramsCopy = new HashMap<>(params);
+      Map<String, Integer> flagsCopy = customFlags == null ? null : new HashMap<>(customFlags);
       afterCallSpeech.add(
           () ->
               speakNow(
@@ -740,8 +749,8 @@ public class FailoverTextToSpeech {
                   locale,
                   pitch,
                   rate,
-                  params,
-                  customFlags,
+                  paramsCopy,
+                  flagsCopy,
                   stream,
                   volume,
                   preventDeviceSleep,
@@ -1622,6 +1631,18 @@ public class FailoverTextToSpeech {
             lowLatencyListener);
     lowLatencyStreams.put(utteranceId, stream);
     lowLatencyRequests.put(utteranceId, Pair.create(text, bundle));
+    // A flush makes the engine drop queued pieces without a callback, so their finished streams
+    // would stay. They are kept for a while, so that late callbacks are still ignored.
+    if (lowLatencyStreams.size() > MAX_LOW_LATENCY_STREAMS) {
+      lowLatencyStreams.entrySet().removeIf(
+          entry -> {
+            if (!entry.getValue().isFinished()) {
+              return false;
+            }
+            lowLatencyRequests.remove(entry.getKey());
+            return true;
+          });
+    }
     // The engine speaks as usual but at no volume, and Backtalk plays the copy of its audio that
     // Android gives it. As the engine is still playing audio, Android and phone makers' battery
     // savers keep it running, which they do not do for an engine only making audio for an app.
@@ -1935,9 +1956,13 @@ public class FailoverTextToSpeech {
 
         @Override
         public void onStalled(String id) {
-          // Say it the usual way, and speak the usual way with this engine from now on.
+          // Say it the usual way. Only an engine that is idle and still sends nothing is at
+          // fault: one saying another app's speech, which shares it, or speech still ahead in its
+          // queue, just hasn't come to this yet, and low latency stays on for it.
           mHandler.post(
-              () -> speakAgainWithoutLowLatency(id, /* stream= */ null, /* engineAtFault= */ true));
+              () ->
+                  speakAgainWithoutLowLatency(
+                      id, /* stream= */ null, /* engineAtFault= */ !isEngineSpeaking()));
         }
 
         @Override

@@ -18,6 +18,7 @@ package com.google.android.accessibility.utils.output;
 
 import androidx.annotation.Nullable;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
@@ -29,6 +30,8 @@ import java.util.Map;
  * clause, so resuming may repeat a few words but does not skip any.
  */
 public final class SpeechProgressEstimator {
+  private static final int MAX_UTTERANCES = 200;
+
   /** Utterances shorter than this are mostly silence before and after, so they are not learned. */
   static final int MIN_LEARN_LENGTH = 40;
 
@@ -55,7 +58,18 @@ public final class SpeechProgressEstimator {
     }
   }
 
-  private final Map<String, Utterance> utterances = new HashMap<>();
+  /**
+   * The utterances queued and not finished, oldest first. Kept to the newest {@link
+   * #MAX_UTTERANCES}: an utterance the engine never reports the end of, such as one it failed to
+   * take or one on an engine that was replaced, would otherwise stay with its text for good.
+   */
+  private final Map<String, Utterance> utterances =
+      new LinkedHashMap<String, Utterance>() {
+        @Override
+        protected boolean removeEldestEntry(Map.Entry<String, Utterance> eldest) {
+          return size() > MAX_UTTERANCES;
+        }
+      };
   private final Map<String, Float> charsPerSecond = new HashMap<>();
   private @Nullable String currentId;
 
