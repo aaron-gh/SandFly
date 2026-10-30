@@ -15,9 +15,11 @@
  */
 package com.google.android.accessibility.talkback.keyboard
 
+import android.content.Context
 import android.view.KeyEvent
 import androidx.annotation.StringRes
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.utils.SharedPreferencesUtils
 
 /**
  * A key that can be the SandFly key, which keymap shortcuts are pressed with. Meta and Ctrl + Alt
@@ -70,4 +72,49 @@ enum class SandFlyKey(
       event.keyCode == keyCode &&
       // Numpad 0 is Insert only with Num Lock off.
       (keyCode != KeyEvent.KEYCODE_NUMPAD_0 || !event.isNumLockOn)
+
+  companion object {
+    /** The SandFly key the user chose; every keymap uses it. Meta when none was chosen. */
+    @JvmStatic
+    fun chosen(context: Context): SandFlyKey {
+      val value =
+        SharedPreferencesUtils.getSharedPreferences(context)
+          .getString(context.getString(R.string.pref_sandfly_key), null)
+      return entries.firstOrNull { context.getString(it.valueRes) == value } ?: META
+    }
+
+    /**
+     * Returns [combo], written for [native] as the SandFly key, as it is pressed with [chosen].
+     * Where it uses the chosen key with other keys, [native] takes the chosen key's place there,
+     * so Ctrl + Alt + Meta + Right stays the same keys. Shortcuts that can't be pressed that way
+     * become unassigned: an ordinary key such as Insert can't be held with another SandFly key,
+     * and browse mode keys that press all of the SandFly key would be taken as its shortcuts.
+     */
+    @JvmStatic
+    fun adapt(combo: KeyCombo, native: SandFlyKey, chosen: SandFlyKey): KeyCombo {
+      val chosenModifiers = chosen.modifiers
+      if (
+        combo.keyComboCode == KeyComboModel.KEY_COMBO_CODE_UNASSIGNED.toLong() ||
+          chosenModifiers == native.modifiers
+      ) {
+        return combo
+      }
+      val modifiers = combo.modifiers
+      if (!combo.isTriggerModifierUsed) {
+        return if (modifiers and chosenModifiers == chosenModifiers) KeyCombo() else combo
+      }
+      if (modifiers and chosenModifiers == 0) {
+        return combo
+      }
+      if (native.isHeldKey) {
+        return KeyCombo()
+      }
+      return KeyCombo(
+        (modifiers and chosenModifiers.inv()) or native.modifiers,
+        combo.prefixKeyCode,
+        combo.keyCode,
+        /* triggerModifierUsed= */ true,
+      )
+    }
+  }
 }

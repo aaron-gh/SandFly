@@ -17,7 +17,6 @@
 package com.google.android.accessibility.talkback.keyboard;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.view.KeyEvent;
 import androidx.annotation.Nullable;
 import com.google.android.accessibility.talkback.R;
@@ -26,8 +25,10 @@ import com.google.android.accessibility.talkback.actor.gemini.GeminiConfiguratio
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.utils.TalkbackFeatureSupport;
 import com.google.android.accessibility.utils.FeatureSupport;
-import com.google.android.accessibility.utils.SharedPreferencesUtils;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 import java.util.TreeMap;
 
 /** The key combo model of the SandFly and VoiceOver keymaps. */
@@ -40,7 +41,10 @@ public class NewKeyComboModel implements KeyComboModel {
   private final Map<String, KeyCombo> keyComboMap = new TreeMap<>();
   private final KeyComboPersister persister;
   private final Keymap keymap;
-  private SandFlyKey sandFlyKey;
+  private final SandFlyKey sandFlyKey;
+  // Default shortcuts as pressed with the chosen SandFly key, by key, and the ones given out.
+  private final Map<String, KeyCombo> defaultKeyCombos = new HashMap<>();
+  private final Set<KeyCombo> givenDefaultKeyCombos = new HashSet<>();
 
   public NewKeyComboModel(Context context) {
     this(context, Keymap.SANDFLY);
@@ -49,24 +53,11 @@ public class NewKeyComboModel implements KeyComboModel {
   public NewKeyComboModel(Context context, Keymap keymap) {
     this.context = context;
     this.keymap = keymap;
-    persister = new KeyComboPersister(context, keymap.getPersisterPrefix());
+    sandFlyKey = SandFlyKey.chosen(context);
+    persister = new KeyComboPersister(context, keymap.persisterPrefix(sandFlyKey));
 
-    loadTriggerModifierFromPreferences();
     addKeyCombos();
     addCommandShortcuts();
-  }
-
-  private void loadTriggerModifierFromPreferences() {
-    SharedPreferences prefs = SharedPreferencesUtils.getSharedPreferences(context);
-
-    if (!prefs.contains(getPreferenceKeyForTriggerModifier())) {
-      // Store default value in preferences to show it in preferences UI.
-      prefs
-          .edit()
-          .putString(getPreferenceKeyForTriggerModifier(), getDefaultTriggerModifier())
-          .apply();
-    }
-    sandFlyKey = keymap.sandFlyKey(context);
   }
 
   @Override
@@ -85,12 +76,12 @@ public class NewKeyComboModel implements KeyComboModel {
 
   @Override
   public void notifyTriggerModifierChanged() {
-    loadTriggerModifierFromPreferences();
+    // KeyComboManager makes a new model for a new SandFly key, whose shortcuts are kept apart.
   }
 
   @Override
   public String getPreferenceKeyForTriggerModifier() {
-    return context.getString(keymap.getSandFlyKeyPrefRes());
+    return context.getString(R.string.pref_sandfly_key);
   }
 
   @Override
@@ -128,7 +119,33 @@ public class NewKeyComboModel implements KeyComboModel {
     if (key == null) {
       return new KeyCombo();
     }
+    KeyCombo keyCombo = defaultKeyCombos.get(key);
+    if (keyCombo != null) {
+      return keyCombo;
+    }
+    return SandFlyKey.adapt(getNativeDefaultKeyCombo(key), keymap.getNativeKey(), sandFlyKey);
+  }
 
+  /**
+   * Returns the default shortcut of [key] as pressed with the chosen SandFly key. Where two
+   * defaults become the same keys with it, the first keeps them and the later one is unassigned.
+   */
+  private KeyCombo giveDefaultKeyCombo(String key) {
+    KeyCombo keyCombo = defaultKeyCombos.get(key);
+    if (keyCombo != null) {
+      return keyCombo;
+    }
+    keyCombo = SandFlyKey.adapt(getNativeDefaultKeyCombo(key), keymap.getNativeKey(), sandFlyKey);
+    if (keyCombo.getKeyComboCode() != KEY_COMBO_CODE_UNASSIGNED
+        && !givenDefaultKeyCombos.add(keyCombo)) {
+      keyCombo = new KeyCombo();
+    }
+    defaultKeyCombos.put(key, keyCombo);
+    return keyCombo;
+  }
+
+  /** Returns the default shortcut of [key] as written for the keymap's own SandFly key. */
+  private KeyCombo getNativeDefaultKeyCombo(String key) {
     if (keymap.getDefaults() != null) {
       return keymap.getDefaults().defaultKeyCombo(context, key);
     }
@@ -1287,10 +1304,6 @@ public class NewKeyComboModel implements KeyComboModel {
     return context.getString(sandFlyKey.getNameRes());
   }
 
-  private String getDefaultTriggerModifier() {
-    return context.getString(keymap.getSandFlyKeys().get(0).getValueRes());
-  }
-
   private void addKeyCombos() {
     addKeyCombo(context.getString(R.string.keycombo_shortcut_perform_click));
     addKeyCombo(context.getString(R.string.keycombo_shortcut_perform_long_click));
@@ -1524,8 +1537,8 @@ public class NewKeyComboModel implements KeyComboModel {
   }
 
   private void addKeyCombo(String key) {
+    KeyCombo defaultKeyCombo = giveDefaultKeyCombo(key);
     if (!persister.contains(key)) {
-      KeyCombo defaultKeyCombo = getDefaultKeyCombo(key);
       persister.saveKeyCombo(key, defaultKeyCombo);
     }
 

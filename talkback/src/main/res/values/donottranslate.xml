@@ -540,11 +540,8 @@
 
   <!-- Keyboard preferences -->
   <string name="pref_select_keymap_key">pref_select_keymap</string>
-  <string name="pref_new_keymap_trigger_modifier_key">pref_new_keymap_trigger_modifier</string>
-  <string name="pref_voiceover_keymap_trigger_modifier_key">pref_voiceover_keymap_trigger_modifier</string>
-  <string name="pref_nvda_keymap_trigger_modifier_key">pref_nvda_keymap_trigger_modifier</string>
-  <string name="pref_jaws_keymap_trigger_modifier_key">pref_jaws_keymap_trigger_modifier</string>
-  <string name="pref_orca_keymap_trigger_modifier_key">pref_orca_keymap_trigger_modifier</string>
+  <!-- The SandFly key of every keymap; the SandFly keymap's own value from before is kept. -->
+  <string name="pref_sandfly_key">pref_new_keymap_trigger_modifier</string>
 
   <!-- The SandFly keymap keeps the value of the enhanced keymap it was. -->
   <string name="new_keymap_entry_value">new_keymap</string>
@@ -811,7 +808,7 @@
     <string name="pref_show_pass_through_mode_dialog" translatable="false">pref_show_pass_through_mode_dialog</string>
     <string name="pref_show_voice_input_download_dialog">pref_show_voice_input_download_dialog</string>
 
-    <!-- Keymap.kt lists the keymaps and their SandFly keys the same way. -->
+    <!-- Keymap.kt lists the keymaps the same way. -->
     <string-array name="pref_select_keymap_entries">
         <item>@string/value_new_keymap</item>
         <item>@string/value_voiceover_keymap</item>
@@ -828,46 +825,23 @@
         <item>@string/orca_keymap_entry_value</item>
     </string-array>
 
-    <string-array name="pref_sandfly_keymap_sandfly_key_entries">
+
+
+    <!-- Keyboard echo preference entries. Must be synchronized with TextFormatters.java. -->
+    <string-array name="pref_sandfly_key_entries">
         <item>@string/keycombo_key_modifier_meta</item>
-        <item>@string/keycombo_key_modifier_insert</item>
-        <item>@string/keycombo_key_modifier_numpad_insert</item>
-    </string-array>
-
-    <string-array name="pref_sandfly_keymap_sandfly_key_values">
-        <item>@string/trigger_modifier_meta_entry_value</item>
-        <item>@string/trigger_modifier_insert_entry_value</item>
-        <item>@string/trigger_modifier_numpad_insert_entry_value</item>
-    </string-array>
-
-    <!-- The SandFly keys of the NVDA, JAWS and Orca keymaps. -->
-    <string-array name="pref_screen_reader_keymap_sandfly_key_entries">
-        <item>@string/keycombo_key_modifier_insert</item>
-        <item>@string/keycombo_key_modifier_numpad_insert</item>
-        <item>@string/keycombo_key_modifier_meta</item>
-    </string-array>
-
-    <string-array name="pref_screen_reader_keymap_sandfly_key_values">
-        <item>@string/trigger_modifier_insert_entry_value</item>
-        <item>@string/trigger_modifier_numpad_insert_entry_value</item>
-        <item>@string/trigger_modifier_meta_entry_value</item>
-    </string-array>
-
-    <string-array name="pref_voiceover_keymap_sandfly_key_entries">
         <item>@string/keycombo_key_modifier_ctrl_alt</item>
         <item>@string/keycombo_key_modifier_insert</item>
         <item>@string/keycombo_key_modifier_numpad_insert</item>
     </string-array>
 
-    <string-array name="pref_voiceover_keymap_sandfly_key_values">
+    <string-array name="pref_sandfly_key_values">
+        <item>@string/trigger_modifier_meta_entry_value</item>
         <item>@string/trigger_modifier_ctrl_alt_entry_value</item>
         <item>@string/trigger_modifier_insert_entry_value</item>
         <item>@string/trigger_modifier_numpad_insert_entry_value</item>
     </string-array>
 
-
-
-    <!-- Keyboard echo preference entries. Must be synchronized with TextFormatters.java. -->
     <string-array name="pref_keyboard_echo_entries">
         <item>@string/value_keyboard_echo_none</item>
         <item>@string/value_keyboard_echo_characters_only</item>

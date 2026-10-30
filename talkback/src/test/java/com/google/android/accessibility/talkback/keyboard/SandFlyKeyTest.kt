@@ -76,7 +76,7 @@ class SandFlyKeyTest {
       context.getString(keymap.valueRes),
     )
     if (sandFlyKey != null) {
-      prefs.putString(context.getString(keymap.sandFlyKeyPrefRes), context.getString(sandFlyKey.valueRes))
+      prefs.putString(context.getString(R.string.pref_sandfly_key), context.getString(sandFlyKey.valueRes))
     }
     prefs.commit()
     return KeyComboManager.create(context).apply {
@@ -135,7 +135,7 @@ class SandFlyKeyTest {
 
   @Test
   fun voiceOverKeymapUsesCtrlAlt() {
-    val manager = manager(Keymap.VOICEOVER)
+    val manager = manager(Keymap.VOICEOVER, SandFlyKey.CTRL_ALT)
     val ctrl = KeyEvent.META_CTRL_ON or KeyEvent.META_CTRL_LEFT_ON
     val ctrlAlt = ctrl or KeyEvent.META_ALT_ON or KeyEvent.META_ALT_LEFT_ON
     manager.down(KeyEvent.KEYCODE_CTRL_LEFT, ctrl)
@@ -146,7 +146,7 @@ class SandFlyKeyTest {
 
   @Test
   fun ctrlAloneIsNotCtrlAlt() {
-    val manager = manager(Keymap.VOICEOVER)
+    val manager = manager(Keymap.VOICEOVER, SandFlyKey.CTRL_ALT)
     val ctrl = KeyEvent.META_CTRL_ON or KeyEvent.META_CTRL_LEFT_ON
     manager.down(KeyEvent.KEYCODE_CTRL_LEFT, ctrl)
     assertFalse(manager.down(KeyEvent.KEYCODE_DPAD_RIGHT, ctrl))
@@ -155,7 +155,7 @@ class SandFlyKeyTest {
 
   @Test
   fun nvdaKeymapHasNoTwoKeyShortcuts() {
-    val manager = manager(Keymap.NVDA)
+    val manager = manager(Keymap.NVDA, SandFlyKey.INSERT)
     assertTrue(manager.down(KeyEvent.KEYCODE_INSERT))
     assertTrue(manager.down(KeyEvent.KEYCODE_N))
     // Robolectric names letter keys by number.
@@ -167,9 +167,31 @@ class SandFlyKeyTest {
 
   @Test
   fun jawsKeymapTurnsBrowseModeOnWithInsertZ() {
-    val manager = manager(Keymap.JAWS)
+    val manager = manager(Keymap.JAWS, SandFlyKey.INSERT)
     assertTrue(manager.down(KeyEvent.KEYCODE_INSERT))
     assertTrue(manager.down(KeyEvent.KEYCODE_Z))
     assertEquals(listOf<String?>("Insert + ${KeyEvent.KEYCODE_Z}"), keys)
+  }
+
+  @Test
+  fun nvdaKeymapUsesTheChosenSandFlyKey() {
+    val manager = manager(Keymap.NVDA, SandFlyKey.META)
+    val meta = KeyEvent.META_META_ON or KeyEvent.META_META_LEFT_ON
+    manager.down(KeyEvent.KEYCODE_META_LEFT, meta)
+    assertTrue(manager.down(KeyEvent.KEYCODE_N, meta))
+    assertEquals(listOf<String?>("Meta + ${KeyEvent.KEYCODE_N}"), keys)
+  }
+
+  @Test
+  fun keymapsSandFlyKeyMovesToTheOneForAllKeymaps() {
+    SharedPreferencesUtils.getSharedPreferences(context)
+      .edit()
+      .putString(
+        context.getString(R.string.pref_select_keymap_key),
+        context.getString(Keymap.VOICEOVER.valueRes),
+      )
+      .putString("pref_voiceover_keymap_trigger_modifier", context.getString(SandFlyKey.CTRL_ALT.valueRes))
+      .commit()
+    assertEquals(SandFlyKey.CTRL_ALT, KeyComboManager.create(context).sandFlyKey)
   }
 }
