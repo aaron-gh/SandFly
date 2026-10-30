@@ -97,6 +97,12 @@ object Updater {
   // Downloads have a thread of their own, so a check made meanwhile is answered.
   private val downloadExecutor = Executors.newSingleThreadExecutor()
   private val downloading = AtomicBoolean(false)
+  private val installing = AtomicBoolean(false)
+
+  /** Whether an update is downloading or being handed to the installer. */
+  @JvmStatic
+  val isBusy: Boolean
+    get() = downloading.get() || installing.get()
   private var serviceContext: Context? = null
 
   private val startupCheck = Runnable { serviceContext?.let { checkAutomatically(it, true) } }
@@ -329,6 +335,8 @@ object Updater {
           try {
             download(appContext, downloadUrl)
           } finally {
+            // Set before downloading ends, so that the update counts as busy throughout.
+            installing.set(true)
             downloading.set(false)
             cancelProgress(appContext)
           }
@@ -343,6 +351,8 @@ object Updater {
       } catch (e: Exception) {
         LogUtils.e(TAG, "Cannot install the update: %s", e)
         mainHandler.post { toast(appContext, R.string.update_install_failed) }
+      } finally {
+        installing.set(false)
       }
     }
   }
