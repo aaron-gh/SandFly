@@ -36,6 +36,8 @@ enum class Keymap(
   val usesSequences: Boolean,
   /** Where this keymap kept its own SandFly key before there was one for all keymaps. */
   val oldSandFlyKeyPref: String?,
+  /** Whether Ctrl + Alt and Ctrl + Meta can be the SandFly key with this keymap. */
+  val allowsTwoKeySandFlyKeys: Boolean = true,
 ) {
   SANDFLY(
     R.string.new_keymap_entry_value,
@@ -63,6 +65,8 @@ enum class Keymap(
     NvdaKeymap,
     usesSequences = false,
     "pref_nvda_keymap_trigger_modifier",
+    // Their shortcuts use Ctrl, and their users know one key.
+    allowsTwoKeySandFlyKeys = false,
   ),
   JAWS(
     R.string.jaws_keymap_entry_value,
@@ -72,6 +76,8 @@ enum class Keymap(
     JawsKeymap,
     usesSequences = false,
     "pref_jaws_keymap_trigger_modifier",
+    // Their shortcuts use Ctrl, and their users know one key.
+    allowsTwoKeySandFlyKeys = false,
   ),
   ORCA(
     R.string.orca_keymap_entry_value,
@@ -81,7 +87,17 @@ enum class Keymap(
     OrcaKeymap,
     usesSequences = false,
     "pref_orca_keymap_trigger_modifier",
+    // Their shortcuts use Ctrl, and their users know one key.
+    allowsTwoKeySandFlyKeys = false,
   );
+
+  /** The keys that can be the SandFly key with this keymap. */
+  val sandFlyKeys: List<SandFlyKey>
+    get() = SandFlyKey.entries.filter { allowsTwoKeySandFlyKeys || it.canBePressedTwice }
+
+  /** The SandFly key the user chose, or this keymap's own where it doesn't offer that one. */
+  fun sandFlyKey(context: Context): SandFlyKey =
+    SandFlyKey.chosen(context).takeIf { it in sandFlyKeys } ?: nativeKey
 
   /** Where shortcuts are saved with [sandFlyKey], so each SandFly key keeps its own changes. */
   fun persisterPrefix(sandFlyKey: SandFlyKey): String =

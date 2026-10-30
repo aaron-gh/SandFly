@@ -225,4 +225,41 @@ class SandFlyKeyTest {
     // NVDA + Down reads from the focused item.
     assertEquals(listOf<String?>("Insert + Arrow Down"), keys)
   }
+
+  @Test
+  fun defaultKeymapUsersKeepTheirShortcutsAndAlt() {
+    // An older version's Default keymap: Alt as its modifier and Alt + J to activate.
+    KeyComboPersister(context, "default_key_combo_model")
+      .saveKeyCombo(
+        context.getString(R.string.keycombo_shortcut_perform_click),
+        KeyCombo(0, 0, KeyEvent.KEYCODE_J, true),
+      )
+    SharedPreferencesUtils.getSharedPreferences(context)
+      .edit()
+      .putString(context.getString(R.string.pref_select_keymap_key), "default_keymap")
+      .putString("pref_default_keymap_trigger_modifier", "trigger_modifier_alt")
+      .putString(context.getString(R.string.pref_sandfly_key), context.getString(SandFlyKey.META.valueRes))
+      .commit()
+    val manager = KeyComboManager.create(context)
+    assertEquals(SandFlyKey.ALT, manager.sandFlyKey)
+    assertEquals(
+      KeyCombo(0, 0, KeyEvent.KEYCODE_J, true),
+      manager.keyComboModel.getKeyComboForKey(
+        context.getString(R.string.keycombo_shortcut_perform_click)
+      ),
+    )
+    // Alt + J is its own; the SandFly keymap's other defaults stay off it.
+    val combos = manager.keyComboModel.keyComboMap.values.filter { it.keyComboCode != 0L }
+    assertEquals(combos.size, combos.toSet().size)
+  }
+
+  @Test
+  fun browseModeToggleIsWrittenAsTheSandFlyKeyTwice() {
+    val manager = manager(Keymap.SANDFLY, SandFlyKey.META)
+    val combo =
+      manager.keyComboModel.getKeyComboForKey(
+        context.getString(R.string.keycombo_shortcut_other_toggle_browse_mode)
+      )
+    assertEquals("Meta twice", manager.getKeyComboStringRepresentation(combo))
+  }
 }

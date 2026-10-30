@@ -39,6 +39,7 @@ import com.google.android.accessibility.talkback.keyboard.KeyCombo;
 import com.google.android.accessibility.talkback.keyboard.KeyComboManager;
 import com.google.android.accessibility.talkback.keyboard.KeyComboModel;
 import com.google.android.accessibility.talkback.keyboard.Keymap;
+import com.google.android.accessibility.talkback.keyboard.SandFlyKey;
 import com.google.android.accessibility.talkback.keyboard.ArrowKeyNav;
 import com.google.android.accessibility.talkback.keyboard.ArrowKeys;
 import com.google.android.accessibility.talkback.keyboard.TalkBackPhysicalKeyboardShortcut;
@@ -257,6 +258,7 @@ public class TalkBackKeyboardShortcutPreferenceFragment extends TalkbackBaseFrag
     talkBackPreferenceFilter.filterPreferences(getPreferenceScreen());
 
     updateSelectKeymapPreferenceWithAvailableKeymaps();
+    updateSandFlyKeyPreferenceWithKeymapsKeys();
 
     resetKeymapPreference = findPreference(getString(R.string.pref_reset_keymap_key));
     resetKeymapPreference.setOnPreferenceClickListener(resetKeymapPreferenceClickListener);
@@ -373,6 +375,30 @@ public class TalkBackKeyboardShortcutPreferenceFragment extends TalkbackBaseFrag
       }
     }
     collapseCategories();
+  }
+
+  /**
+   * Lists the SandFly keys the keymap offers. Where the key chosen for another keymap isn't one,
+   * the keymap's own is used and named, and the choice stays for the keymaps that offer it.
+   */
+  private void updateSandFlyKeyPreferenceWithKeymapsKeys() {
+    ListPreference preference = findPreference(getString(R.string.pref_sandfly_key));
+    if (preference == null) {
+      return;
+    }
+    Keymap current = Keymap.of(getContext(), keymap);
+    List<CharSequence> entries = new ArrayList<>();
+    List<CharSequence> entryValues = new ArrayList<>();
+    for (SandFlyKey sandFlyKey : current.getSandFlyKeys()) {
+      entries.add(getString(sandFlyKey.getNameRes()));
+      entryValues.add(getString(sandFlyKey.getValueRes()));
+    }
+    preference.setEntries(entries.toArray(new CharSequence[0]));
+    preference.setEntryValues(entryValues.toArray(new CharSequence[0]));
+    SandFlyKey used = current.sandFlyKey(getContext());
+    if (SandFlyKey.chosen(getContext()) != used) {
+      preference.setSummary(getString(used.getNameRes()));
+    }
   }
 
   /** Updates select keymap preference with available keymaps. */

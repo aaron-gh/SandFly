@@ -551,7 +551,9 @@
   <string name="orca_keymap_entry_value">orca_keymap</string>
 
   <string name="trigger_modifier_meta_entry_value">trigger_modifier_meta</string>
+  <string name="trigger_modifier_alt_entry_value">trigger_modifier_alt</string>
   <string name="trigger_modifier_ctrl_alt_entry_value">trigger_modifier_ctrl_alt</string>
+  <string name="trigger_modifier_ctrl_meta_entry_value">trigger_modifier_ctrl_meta</string>
   <string name="trigger_modifier_insert_entry_value">trigger_modifier_insert</string>
   <string name="trigger_modifier_numpad_insert_entry_value">trigger_modifier_numpad_insert</string>
 
@@ -828,16 +830,21 @@
 
 
     <!-- Keyboard echo preference entries. Must be synchronized with TextFormatters.java. -->
+    <!-- SandFlyKey.kt lists the keys the same way; keymaps may offer fewer. -->
     <string-array name="pref_sandfly_key_entries">
         <item>@string/keycombo_key_modifier_meta</item>
+        <item>@string/keycombo_key_modifier_alt</item>
         <item>@string/keycombo_key_modifier_ctrl_alt</item>
+        <item>@string/keycombo_key_modifier_ctrl_meta</item>
         <item>@string/keycombo_key_modifier_insert</item>
         <item>@string/keycombo_key_modifier_numpad_insert</item>
     </string-array>
 
     <string-array name="pref_sandfly_key_values">
         <item>@string/trigger_modifier_meta_entry_value</item>
+        <item>@string/trigger_modifier_alt_entry_value</item>
         <item>@string/trigger_modifier_ctrl_alt_entry_value</item>
+        <item>@string/trigger_modifier_ctrl_meta_entry_value</item>
         <item>@string/trigger_modifier_insert_entry_value</item>
         <item>@string/trigger_modifier_numpad_insert_entry_value</item>
     </string-array>

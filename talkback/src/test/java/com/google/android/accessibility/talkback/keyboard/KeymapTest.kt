@@ -98,9 +98,9 @@ class KeymapTest {
 
   @Test
   fun defaultShortcutsAreUniqueWithEverySandFlyKey() {
-    for (sandFlyKey in SandFlyKey.entries) {
-      choose(sandFlyKey)
-      for (keymap in Keymap.entries) {
+    for (keymap in Keymap.entries) {
+      for (sandFlyKey in keymap.sandFlyKeys) {
+        choose(sandFlyKey)
         val model = NewKeyComboModel(context, keymap)
         val seen = mutableMapOf<KeyCombo, String>()
         for (key in model.keyComboMap.keys) {
@@ -116,9 +116,9 @@ class KeymapTest {
 
   @Test
   fun defaultShortcutsCanBePressedWithEverySandFlyKey() {
-    for (sandFlyKey in SandFlyKey.entries) {
-      choose(sandFlyKey)
-      for (keymap in Keymap.entries) {
+    for (keymap in Keymap.entries) {
+      for (sandFlyKey in keymap.sandFlyKeys) {
+        choose(sandFlyKey)
         val model = NewKeyComboModel(context, keymap)
         for (key in model.keyComboMap.keys) {
           val combo = model.getDefaultKeyCombo(key)
@@ -132,6 +132,33 @@ class KeymapTest {
         }
       }
     }
+  }
+
+  @Test
+  fun screenReaderKeymapsOfferOneKeySandFlyKeysOnly() {
+    for (keymap in listOf(Keymap.NVDA, Keymap.JAWS, Keymap.ORCA)) {
+      assertFalse(SandFlyKey.CTRL_ALT in keymap.sandFlyKeys)
+      assertFalse(SandFlyKey.CTRL_META in keymap.sandFlyKeys)
+      assertTrue(SandFlyKey.ALT in keymap.sandFlyKeys)
+    }
+    assertEquals(SandFlyKey.entries, Keymap.SANDFLY.sandFlyKeys)
+    choose(SandFlyKey.CTRL_ALT)
+    // The keymap's own key, where it doesn't offer the chosen one.
+    assertEquals(SandFlyKey.INSERT, NewKeyComboModel(context, Keymap.NVDA).sandFlyKey)
+    assertEquals(SandFlyKey.CTRL_ALT, NewKeyComboModel(context, Keymap.VOICEOVER).sandFlyKey)
+  }
+
+  @Test
+  fun browseModeTogglesWithTheSandFlyKeyTwiceOnlyWhereAssigned() {
+    val key = context.getString(R.string.keycombo_shortcut_other_toggle_browse_mode)
+    val unassigned = KeyComboModel.KEY_COMBO_CODE_UNASSIGNED.toLong()
+    choose(SandFlyKey.META)
+    assertTrue(NewKeyComboModel(context, Keymap.SANDFLY).getKeyComboForKey(key).keyComboCode != unassigned)
+    assertEquals(unassigned, NewKeyComboModel(context, Keymap.NVDA).getKeyComboForKey(key).keyComboCode)
+    choose(SandFlyKey.ALT)
+    assertTrue(NewKeyComboModel(context, Keymap.SANDFLY).getKeyComboForKey(key).keyComboCode != unassigned)
+    choose(SandFlyKey.CTRL_ALT)
+    assertEquals(unassigned, NewKeyComboModel(context, Keymap.SANDFLY).getKeyComboForKey(key).keyComboCode)
   }
 
   @Test
