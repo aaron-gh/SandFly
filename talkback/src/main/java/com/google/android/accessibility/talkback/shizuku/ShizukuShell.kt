@@ -108,7 +108,8 @@ enum class ShizukuCommand {
 
     private val SWITCH = Regex("""(on|off)(?:@(\d{1,6}))?""")
 
-    private const val MAX_TEXT = 1000
+    /** The most characters [INPUT_TEXT] types at once. */
+    const val MAX_TEXT = 1000
 
     private val KEY_CODES = Regex("""KEYCODE_[A-Z0-9_]{1,30}( KEYCODE_[A-Z0-9_]{1,30}){0,99}""")
 
