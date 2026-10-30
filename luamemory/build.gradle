@@ -1,0 +1,17 @@
+plugins {
+    id 'com.android.library'
+}
+
+apply from: "../shared.gradle"
+
+// A memory budget for each script's Lua state, enforced by Lua's allocator.
+android {
+    namespace = "com.google.android.accessibility.luamemory"
+    ndkVersion = "27.3.13750724"
+    externalNativeBuild {
+        cmake {
+            path = file('src/main/cpp/CMakeLists.txt')
+            version = "3.22.1"
+        }
+    }
+}
