@@ -4446,15 +4446,22 @@ public class TalkBackService extends AccessibilityServiceCompat
           this,
           pipeline.getFeedbackReturner(),
           () -> speechController.stopUtteranceGroup(SpeechController.UTTERANCE_GROUP_NOTIFICATIONS),
+          completedAction -> {
+            speechController.stopItem(completedAction);
+            return kotlin.Unit.INSTANCE;
+          },
           () -> speechController.isSpeaking(),
-          // What silences SandFly's own speech silences the notification voice too.
+          // What silences SandFly's own speech silences the notification voice too, and nothing is
+          // said while SandFly is paused.
           (overMedia, duringCalls) ->
               speechController.isMute()
                   || speechController.getShouldSilentSpeech()
+                  || PauseController.isPaused()
                   || (!duringCalls && isPhoneCallActive())
                   || isMicrophoneActiveAndHeadphoneOff()
                   || isSsbActive()
-                  || (!overMedia && isAudioPlaybackActive()));
+                  || (!overMedia && isAudioPlaybackActive()),
+          () -> isTouchInteracting);
       NotificationListService.onSandFlyStarted(this);
     }
     if (scriptHost != null || pipeline == null || !UserManagerCompat.isUserUnlocked(this)) {
