@@ -83,6 +83,25 @@ class SettingsBackupTest {
   }
 
   @Test
+  fun valuesOfAnotherTypeKeepThePhonesOwn() {
+    prefs.edit().clear().putString("a_number", "3").putBoolean("a_switch", true).commit()
+    val json =
+      """
+      {"format": "sandfly-settings", "version": 1, "files": {"device": {"default": {
+        "a_number": {"type": "string", "value": "fast"},
+        "a_switch": {"type": "int", "value": 1},
+        "pref_tts_overlay": {"type": "string", "value": "yes"},
+        "a_new_one": {"type": "int", "value": 2}
+      }}}}
+      """
+    assertTrue(SettingsBackup.import(context, json))
+    assertEquals("3", prefs.getString("a_number", null))
+    assertEquals(true, prefs.getBoolean("a_switch", false))
+    assertFalse(prefs.contains("pref_tts_overlay"))
+    assertEquals(2, prefs.getInt("a_new_one", 0))
+  }
+
+  @Test
   fun otherFilesAreRefusedAndChangeNothing() {
     prefs.edit().putBoolean("kept", true).commit()
     assertFalse(SettingsBackup.import(context, "{}"))
