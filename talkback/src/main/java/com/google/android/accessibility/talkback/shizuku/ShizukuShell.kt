@@ -288,6 +288,11 @@ object ShizukuShell {
    * [onResult] on the main thread: null if the call failed or the service didn't start.
    */
   private fun <T> call(context: Context, work: (IShizukuGrants) -> T?, onResult: (T?) -> Unit) {
+    // The connection's state is the main thread's; scripts and the updater call from their own.
+    if (Looper.myLooper() != Looper.getMainLooper()) {
+      mainHandler.post { call(context, work, onResult) }
+      return
+    }
     val request =
       Pending(
         call = { connected ->
@@ -320,7 +325,8 @@ object ShizukuShell {
     executor.execute { request.call(service) }
   }
 
-  private fun bind(context: Context) {
+  private fun bind(anyContext: Context) {
+    val context = anyContext.applicationContext
     if (connection != null) {
       return
     }
@@ -354,8 +360,15 @@ object ShizukuShell {
         }
 
         override fun onServiceDisconnected(name: ComponentName?) {
-          if (connection === this) {
-            service = null
+          if (connection !== this) {
+            return
+          }
+          // Shizuku forgets a connection whose service died, so only a new bind brings it back,
+          // and calls waiting for this one would wait forever.
+          unbind()
+          failPending()
+          if (holders > 0 && isAllowed()) {
+            bind(context)
           }
         }
       }
