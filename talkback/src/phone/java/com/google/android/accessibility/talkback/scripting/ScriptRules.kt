@@ -75,7 +75,7 @@ private constructor(
   val dependsOnAncestors =
     hidesInside ||
       silencesInside ||
-      (entries + actionEntries).any { it.rule.match?.inside != null }
+      (entries + actionEntries).any { it.rule.match?.inside?.isNotEmpty() == true }
 
   fun resolve(node: AccessibilityNodeInfoCompat, aspect: RuleAspect = RuleAspect.ANY): NodeRule? {
     if (changes.isEmpty || aspect !in aspects) {

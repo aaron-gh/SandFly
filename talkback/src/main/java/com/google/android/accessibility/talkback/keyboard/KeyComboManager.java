@@ -187,6 +187,8 @@ public class KeyComboManager
 
   private final Set<Integer> currentKeysDown = new HashSet<>();
   private final Set<Integer> passedKeys = new HashSet<>();
+  /** Keys whose key down a script took, so that their key up is not passed on either. */
+  private final Set<Integer> scriptKeys = new HashSet<>();
   private final Set<Integer> keyComboPassThroughPressedKeys = new HashSet<>();
 
   /** Commands only work in Browse Mode. Built during initialization. */
@@ -1039,6 +1041,7 @@ public class KeyComboManager
 
     // Check modifier.
     int triggerModifier = keyComboModel.getTriggerModifier();
+    int pressedKeyCode = event.getKeyCode();
     event = convertMetaKeyCombo(triggerModifier, event);
     boolean hasModifier = triggerModifier != KeyComboModel.NO_MODIFIER;
     int modifiers = modifiersOf(event);
@@ -1062,7 +1065,9 @@ public class KeyComboManager
         scriptModifiers,
         getConvertedKeyCode(event),
         pressedTriggerModifier,
+        /* repeated= */ event.getRepeatCount() > 0,
         () -> matchAndPerformKeyCombo(scriptKeyCombo, triggerModifier))) {
+      scriptKeys.add(pressedKeyCode);
       performedCombo = true;
       hasPartialMatch = false;
       return true;
@@ -1498,7 +1503,8 @@ public class KeyComboManager
       }
       currentKeysDown.remove(event.getKeyCode());
     }
-    boolean passed = passedKeys.remove(event.getKeyCode());
+    boolean takenByScript = scriptKeys.remove(event.getKeyCode());
+    boolean passed = passedKeys.remove(event.getKeyCode()) && !takenByScript;
 
     // If `isBrowseModeSupported()`, schedule to open the search app if the user has pressed search
     // key (meta key) once.
@@ -1552,6 +1558,7 @@ public class KeyComboManager
       currentKeyComboTime = 0;
       maxKeysDown = 0;
       passedKeys.clear();
+      scriptKeys.clear();
     }
 
     return !passed;

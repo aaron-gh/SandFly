@@ -46,10 +46,17 @@ interface ScriptHost {
 
   fun onGesture(name: String, fallback: Runnable): Boolean
 
+  /**
+   * Offers a key press to scripts, and returns whether a script took it. [fallback] runs SandFly's
+   * own command for keys pressed with the SandFly modifier when the script's command hands them
+   * back. Keys pressed without it that a script hands back in time are not taken, so they go on as
+   * if no script ran. [repeated] is true for key repeats of a key held down.
+   */
   fun onKeys(
     modifiers: Int,
     keyCode: Int,
     withBacktalkModifier: Boolean,
+    repeated: Boolean,
     fallback: Runnable,
   ): Boolean
 
@@ -236,12 +243,13 @@ object Scripts {
     modifiers: Int,
     keyCode: Int,
     withBacktalkModifier: Boolean,
+    repeated: Boolean,
     fallback: Runnable,
   ): Boolean =
     (withBacktalkModifier &&
       !KeyEvent.isModifierKey(keyCode) &&
       captured(ScriptInput.keysBinding(ScriptInput.Keys(modifiers, keyCode)))) ||
-      host?.onKeys(modifiers, keyCode, withBacktalkModifier, fallback) == true
+      host?.onKeys(modifiers, keyCode, withBacktalkModifier, repeated, fallback) == true
 
   fun captureNext(listener: ((String) -> Unit)?) {
     capture = listener

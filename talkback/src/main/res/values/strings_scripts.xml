@@ -260,7 +260,7 @@
     <!-- Action that types keys for a command. [CHAR LIMIT=40] -->
     <string name="script_binding_type_keys">Type keys</string>
     <!-- How to type keys for a command. [CHAR LIMIT=NONE] -->
-    <string name="script_binding_type_keys_summary">Like sf+shift+n, or sf+t, s</string>
+    <string name="script_binding_type_keys_summary">Like sf+shift+n, sf+t, s or shift+n</string>
     <!-- Shown when typed keys cannot be used. [CHAR LIMIT=NONE] -->
     <string name="script_binding_bad_keys">Can\'t use these keys. <xliff:g id="reason">%1$s</xliff:g></string>
     <!-- In the install dialog, before the commands a script adds. [CHAR LIMIT=NONE] -->

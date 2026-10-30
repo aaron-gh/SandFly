@@ -156,7 +156,7 @@ class ManifestParserTest {
   @Test
   fun aMatchCanNameAnItemTheItemIsInside() {
     assertEquals(
-      NodeQuery(className = "Button", inside = NodeQuery(textContains = "play video")),
+      NodeQuery(className = "Button", inside = listOf(NodeQuery(textContains = "play video"))),
       rule("""{"match":{"className":"Button","inside":{"textContains":"play video"}},"hide":true}""")
         .match,
     )
@@ -168,6 +168,27 @@ class ManifestParserTest {
       "another inside" in
         rejectsRule("""{"match":{"inside":{"id":"a","inside":{"id":"b"}}},"hide":true}""")
     )
+
+    assertTrue(
+      "another inside" in
+        rejectsRule("""{"match":{"inside":[{"id":"a","inside":{"id":"b"}}]},"hide":true}""")
+    )
+  }
+
+  @Test
+  fun aMatchCanNameSeveralItemsTheItemIsInside() {
+    assertEquals(
+      NodeQuery(clickable = true, inside = listOf(NodeQuery(clickable = true), NodeQuery(id = "results"))),
+      rule("""{"match":{"clickable":true,"inside":[{"clickable":true},{"id":"results"}]},"hide":true}""")
+        .match,
+    )
+    assertTrue("a list of up to" in rejectsRule("""{"match":{"inside":[]},"hide":true}"""))
+    assertTrue("a list of up to" in rejectsRule("""{"match":{"inside":["row"]},"hide":true}"""))
+    assertTrue(
+      "a list of up to" in
+        rejectsRule("""{"match":{"inside":[{"id":"a"},{"id":"b"},{"id":"c"},{"id":"d"},{"id":"e"}]},"hide":true}""")
+    )
+    assertTrue("colour" in rejectsRule("""{"match":{"inside":[{"id":"a"},{"colour":"red"}]},"hide":true}"""))
   }
 
   @Test
@@ -286,16 +307,22 @@ class ManifestParserTest {
         rejects(""",$permission,"commands":[{"id":"go","title":"Go","gesture":"wiggle"}]""")
     )
     assertTrue(
-      "must start with sf" in
-        rejects(""",$permission,"commands":[{"id":"go","title":"Go","keys":"shift+n"}]""")
+      "Unknown key shift" in
+        rejects(""",$permission,"commands":[{"id":"go","title":"Go","keys":"shift"}]""")
     )
 
     val keys =
-      parse(""",$permission,"commands":[{"id":"go","title":"Go","keys":"sf+shift+n"}]""")
+      parse(""",$permission,"commands":[{"id":"go","title":"Go","keys":["sf+shift+n","shift+n"]}]""")
         .commands[0]
         .keys
 
-    assertEquals(listOf(ScriptInput.Keys(KeyEvent.META_SHIFT_ON, KeyEvent.KEYCODE_N)), keys)
+    assertEquals(
+      listOf(
+        ScriptInput.Keys(KeyEvent.META_SHIFT_ON, KeyEvent.KEYCODE_N),
+        ScriptInput.Keys(KeyEvent.META_SHIFT_ON, KeyEvent.KEYCODE_N, plain = true),
+      ),
+      keys,
+    )
   }
 
   @Test

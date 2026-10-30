@@ -177,11 +177,21 @@ class ManifestParser(private val strict: Boolean) {
 
   private fun query(json: JSONObject, nested: Boolean = false): NodeQuery {
     json.allowOnly(NodeQuery.KEYS, "match")
-    manifestCheck(!json.has("inside") || json.opt("inside") is JSONObject) {
-      "inside is an object, like match"
+    val inside = json.opt("inside")
+    manifestCheck(
+      inside == null ||
+        inside is JSONObject ||
+        (inside is JSONArray &&
+          inside.length() in 1..MAX_INSIDE &&
+          (0 until inside.length()).all { inside.opt(it) is JSONObject })
+    ) {
+      "inside is an object, like match, or a list of up to $MAX_INSIDE of them"
     }
-    manifestCheck(!nested || !json.has("inside")) { "inside can't hold another inside" }
-    json.optJSONObject("inside")?.let { query(it, nested = true) }
+    manifestCheck(!nested || inside == null) { "inside can't hold another inside" }
+    when (inside) {
+      is JSONObject -> query(inside, nested = true)
+      is JSONArray -> (0 until inside.length()).forEach { query(inside.getJSONObject(it), nested = true) }
+    }
     manifestCheck(!json.has("has") || json.opt("has") is JSONObject) { "has is an object, like match" }
     manifestCheck(!nested || !json.has("has")) { "has can't hold another has, and inside can't hold has" }
     json.optJSONObject("has")?.let {
@@ -354,6 +364,7 @@ class ManifestParser(private val strict: Boolean) {
     const val MAX_RULE_ACTIONS = 10
     const val MAX_COMMANDS = 50
     const val MAX_NAVIGATION = 20
+    const val MAX_INSIDE = 4
     const val MIN_LONG_PRESS_AFTER = 100
     const val MAX_LONG_PRESS_AFTER = 10_000
     val NAVIGATION_KEYS = setOf("title", "id", "match")

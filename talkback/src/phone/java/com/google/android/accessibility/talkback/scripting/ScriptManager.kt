@@ -28,8 +28,11 @@ import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.focusmanagement.TraversalTreeCache
 import com.google.android.accessibility.talkback.translation.Translator
+import com.google.android.accessibility.utils.Role
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 import java.util.concurrent.CountDownLatch
+import java.util.concurrent.TimeUnit
+import java.util.concurrent.atomic.AtomicBoolean
 import org.json.JSONObject
 
 class ScriptManager(
@@ -63,6 +66,11 @@ class ScriptManager(
     service.assets.open(PRELUDE_ASSET).use { it.readBytes().decodeToString() }
   }
   private var layer: ScriptInput.Keys? = null
+  /**
+   * The keys without the SandFly modifier that a script last took, and the command their key
+   * repeats run, if any.
+   */
+  private var takenPlainKeys: Pair<ScriptInput.Keys, BoundCommand?>? = null
   private var layerTime = 0L
   private var lastApp: JSONObject? = null
   private var rulesSource: List<Pair<InstalledScript, List<ScriptRule>>> = emptyList()
@@ -179,37 +187,86 @@ class ScriptManager(
     modifiers: Int,
     keyCode: Int,
     withBacktalkModifier: Boolean,
+    repeated: Boolean,
     fallback: Runnable,
   ): Boolean {
     if (activation.inBacktalk) {
       return false
     }
     val pressed = ScriptInput.Keys(modifiers, keyCode)
+    val plain = pressed.copy(plain = true)
+    // A held key's repeats go where its press went: to the script's command, or on to the app.
+    if (repeated && !withBacktalkModifier) {
+      val taken = takenPlainKeys?.takeIf { it.first == plain } ?: return false
+      taken.second?.let { runCommand(it, "keys") }
+      return true
+    }
     val prefix = layer?.takeIf { SystemClock.uptimeMillis() - layerTime < LAYER_TIMEOUT_MS }
-    if (prefix != null && KeyEvent.isModifierKey(keyCode)) {
-      return false
+    if (KeyEvent.isModifierKey(keyCode)) {
+      if (prefix != null) {
+        return false
+      }
+    } else {
+      takenPlainKeys = null
     }
     layer = null
     val current = bindings
     if (prefix != null) {
       current.keys[prefix.copy(next = pressed)]?.let { runCommand(it, "keys") }
         ?: feedback.playSound(R.raw.complete)
+      takenPlainKeys = (plain to null).takeUnless { withBacktalkModifier }
       return true
     }
-    if (!withBacktalkModifier) {
+    val keys = if (withBacktalkModifier) pressed else plain
+    val bound = current.keys[keys]
+    val isLayer = keys in current.layers
+    // Typing in an edit field always reaches the field.
+    if ((bound == null && !isLayer) || (!withBacktalkModifier && isTyping())) {
       return false
     }
-    current.keys[pressed]?.let {
-      runCommand(it, "keys", fallback = fallback)
+    if (bound != null) {
+      if (withBacktalkModifier) {
+        runCommand(bound, "keys", fallback = fallback)
+        return true
+      }
+      return runForPlainKeys(bound).also { if (it) takenPlainKeys = plain to bound }
+    }
+    layer = keys
+    layerTime = SystemClock.uptimeMillis()
+    feedback.playSound(R.raw.tick)
+    takenPlainKeys = (plain to null).takeUnless { withBacktalkModifier }
+    return true
+  }
+
+  /**
+   * Runs a command for keys pressed without the SandFly modifier, and returns whether to take the
+   * keys from the app. The app gets them if the command returns false before it waits for anything,
+   * within [KEY_WAIT_MS]. A key event can't be given back once taken, so the key filter waits.
+   */
+  private fun runForPlainKeys(bound: BoundCommand): Boolean {
+    // A command, timer or reply that holds up the script thread would hold up the key too.
+    if (ScriptThread.heldUpFor(KEY_WAIT_MS)) {
+      runCommand(bound, "keys")
       return true
     }
-    if (pressed in current.layers) {
-      layer = pressed
-      layerTime = SystemClock.uptimeMillis()
-      feedback.playSound(R.raw.tick)
-      return true
+    val answered = CountDownLatch(1)
+    val handsBack = AtomicBoolean(false)
+    runCommand(bound, "keys", atFrontOfQueue = true) {
+      handsBack.set(it)
+      answered.countDown()
     }
-    return false
+    return try {
+      !(answered.await(KEY_WAIT_MS, TimeUnit.MILLISECONDS) && handsBack.get())
+    } catch (e: InterruptedException) {
+      Thread.currentThread().interrupt()
+      true
+    }
+  }
+
+  /** Whether an edit field has input focus, so that keys type into it. */
+  private fun isTyping(): Boolean {
+    val node = inputFocusedNode() ?: return false
+    return node.isFocused && (node.isEditable || Role.getRole(node) == Role.ROLE_EDIT_TEXT)
   }
 
   override fun menuItems(): List<ScriptMenuItem> =
@@ -426,9 +483,11 @@ class ScriptManager(
     node: AccessibilityNodeInfoCompat? = null,
     direction: String? = null,
     fallback: Runnable? = null,
+    atFrontOfQueue: Boolean = false,
+    answered: ((handsBack: Boolean) -> Unit)? = null,
   ) {
     @Suppress("DEPRECATION") val copy = node?.let { AccessibilityNodeInfoCompat.obtain(it) }
-    onScriptThread {
+    val run = Runnable {
       val runtime = bound.runtime
       val result =
         if (runtime.isLoaded) {
@@ -443,10 +502,13 @@ class ScriptManager(
         } else {
           FALLBACK
         }
-      if (fallback != null && handsBack(result)) {
+      val handsBack = handsBack(result)
+      answered?.invoke(handsBack)
+      if (fallback != null && handsBack) {
         mainHandler.post(fallback)
       }
     }
+    if (atFrontOfQueue) scriptHandler.postAtFrontOfQueue(run) else scriptHandler.post(run)
   }
 
   private fun handsBack(result: String?): Boolean =
@@ -481,6 +543,7 @@ class ScriptManager(
     const val UNLOAD_LIMIT_MS = 250L
     const val WINDOWS_DEBOUNCE_MS = 100L
     const val LAYER_TIMEOUT_MS = 3000L
+    const val KEY_WAIT_MS = 30L
     const val THREAD_STACK_BYTES = 4L * 1024 * 1024
     const val MAX_ERRORS = 5
     const val ERROR_WINDOW_MS = 60_000L

@@ -27,9 +27,19 @@ import com.google.android.accessibility.utils.gestures.GestureManifold
 
 @SuppressLint("InlinedApi")
 object ScriptInput {
-  data class Keys(val modifiers: Int, val keyCode: Int, val next: Keys? = null) {
+  /**
+   * Keys that run a command. [plain] keys are pressed without the SandFly modifier. Only the first
+   * keys of two after each other can be plain; the second never includes the SandFly modifier.
+   */
+  data class Keys(
+    val modifiers: Int,
+    val keyCode: Int,
+    val next: Keys? = null,
+    val plain: Boolean = false,
+  ) {
     val id: String
-      get() = "$modifiers:$keyCode" + next?.let { ">${it.id}" }.orEmpty()
+      get() =
+        (if (plain) PLAIN_ID else "") + "$modifiers:$keyCode" + next?.let { ">${it.id}" }.orEmpty()
 
     val first: Keys
       get() = copy(next = null)
@@ -147,6 +157,7 @@ object ScriptInput {
 
   const val GESTURE_BINDING = "gesture/"
   const val KEYS_BINDING = "keys/"
+  private const val PLAIN_ID = "p"
 
   fun gestureBinding(name: String): String = GESTURE_BINDING + name
 
@@ -157,15 +168,16 @@ object ScriptInput {
   fun isGesture(name: String): Boolean = name in gestures || name in fingerprintGestures
 
   fun keysFromId(id: String): Keys? {
+    val plain = id.startsWith(PLAIN_ID)
     val steps =
-      id.split('>').map { step ->
+      id.removePrefix(PLAIN_ID).split('>').map { step ->
         val numbers = step.split(':').mapNotNull { it.toIntOrNull() }
         if (numbers.size != 2) {
           return null
         }
         Keys(numbers[0], numbers[1])
       }
-    return steps.reduceRight { step, next -> step.copy(next = next) }
+    return steps.reduceRight { step, next -> step.copy(next = next) }.copy(plain = plain)
   }
 
   @JvmStatic fun gestureName(gestureId: Int): String? = gesturesById[gestureId]
@@ -183,29 +195,28 @@ object ScriptInput {
   fun parseKeys(text: String): Keys {
     val steps = text.split(',').map { it.trim() }
     require(steps.size <= 2) { "Keys are one combination, or two after each other: $text" }
-    val first = parseStep(steps.first(), text, needsModifier = true)
-    return if (steps.size == 2) first.copy(next = parseStep(steps[1], text, needsModifier = false))
+    val first = parseStep(steps.first(), text, isFirst = true)
+    return if (steps.size == 2) first.copy(next = parseStep(steps[1], text, isFirst = false))
     else first
   }
 
   fun keysTitle(context: Context, keys: Keys): String {
-    val first =
-      (listOf(context.getString(R.string.script_keys_backtalk_modifier)) + stepTitle(keys))
-        .joinToString("+")
+    val modifier =
+      if (keys.plain) emptyList()
+      else listOf(context.getString(R.string.script_keys_backtalk_modifier))
+    val first = (modifier + stepTitle(keys)).joinToString("+")
     val next = keys.next ?: return first
     return context.getString(R.string.script_keys_then, first, stepTitle(next).joinToString("+"))
   }
 
-  private fun parseStep(step: String, text: String, needsModifier: Boolean): Keys {
+  private fun parseStep(step: String, text: String, isFirst: Boolean): Keys {
     val parts = step.split('+').map { it.trim() }
     require(parts.none { it.isEmpty() }) {
-      "Keys look like sf+shift+n or sf+t, s: $text"
+      "Keys look like sf+shift+n, sf+t, s or shift+n: $text"
     }
     val modifiers = parts.dropLast(1).map { it.lowercase() }
-    require(("sf" in modifiers) == needsModifier) {
-      if (needsModifier) "Keys must start with sf, SandFly's modifier key: $text"
-      else "Only the first keys include sf: $text"
-    }
+    val withModifier = "sf" in modifiers
+    require(isFirst || !withModifier) { "Only the first keys include sf: $text" }
     val flags =
       modifiers
         .filter { it != "sf" }
@@ -217,7 +228,7 @@ object ScriptInput {
     val keyCode =
       keyCode(parts.last())?.takeUnless { KeyEvent.isModifierKey(it) }
         ?: throw IllegalArgumentException("Unknown key ${parts.last()} in $text")
-    return Keys(flags, keyCode)
+    return Keys(flags, keyCode, plain = isFirst && !withModifier)
   }
 
   private fun stepTitle(keys: Keys): List<String> =

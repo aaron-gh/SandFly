@@ -71,7 +71,28 @@ class NodeQueryHasTest {
     val query =
       NodeQuery.of(JSONObject("""{"has":{"has":{"text":"x"},"inside":{"text":"y"},"text":"z"}}"""))
     assertNull(query.has?.has)
-    assertNull(query.has?.inside)
+    assertTrue(query.has!!.inside.isEmpty())
+  }
+
+  @Test
+  fun inside_eachQueryMatchesAnItemAroundIt() {
+    val list = node("RecyclerView")
+    val row = node("ViewGroup")
+    val video = node("ViewGroup").apply { isClickable = true }
+    val menu = node("Button").apply { isClickable = true }
+    val player = node("ViewGroup").apply { isClickable = true }
+    val cast = node("Button").apply { isClickable = true }
+    add(list, row)
+    add(row, video)
+    add(video, menu)
+    add(player, cast)
+    list.viewIdResourceName = "com.example:id/results"
+
+    val query = NodeQuery.of(JSONObject("""{"clickable":true,"inside":[{"clickable":true},{"id":"results"}]}"""))
+
+    assertTrue(query.matches(AccessibilityNodeInfoCompat.wrap(menu)))
+    assertFalse(query.matches(AccessibilityNodeInfoCompat.wrap(video)))
+    assertFalse(query.matches(AccessibilityNodeInfoCompat.wrap(cast)))
   }
 
   private fun node(className: String, description: String? = null): AccessibilityNodeInfo =
