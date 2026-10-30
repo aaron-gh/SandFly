@@ -114,6 +114,9 @@ class ScriptScreen(private val service: AccessibilityService) {
           val bitmap =
             try {
               Bitmap.wrapHardwareBuffer(buffer, result.colorSpace)?.let { cropped(it, bounds) }
+            } catch (e: RuntimeException) {
+              LogUtils.w(TAG, "Could not crop the screenshot: %s", e)
+              null
             } finally {
               buffer.close()
             }
@@ -147,7 +150,8 @@ class ScriptScreen(private val service: AccessibilityService) {
     val area = Rect(0, 0, screenshot.width, screenshot.height)
     val software =
       try {
-        if (bounds != null && !area.intersect(bounds)) return null
+        // A collapsed item, of no width or height, still intersects the screen.
+        if (bounds != null && (!area.intersect(bounds) || area.isEmpty)) return null
         screenshot.copy(Bitmap.Config.ARGB_8888, false) ?: return null
       } finally {
         screenshot.recycle()
