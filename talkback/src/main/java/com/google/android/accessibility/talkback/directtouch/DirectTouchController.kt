@@ -387,7 +387,8 @@ class DirectTouchController(
     windows: List<AccessibilityWindowInfo>,
     mainPackage: String,
   ): Boolean {
-    if (mainPackage in IGNORED_PACKAGES) {
+    // Off means off: not even the package manager lookups for apps seen for the first time.
+    if (mainPackage in IGNORED_PACKAGES || !DirectTouchSettings.isMasterEnabled(prefs)) {
       return false
     }
     // Only the first sight of an app uses its manifest, which the package manager has to read.
