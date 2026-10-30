@@ -110,6 +110,8 @@ class DeviceStateReader(private val context: Context) {
   private fun bluetoothDevices(): Set<String> {
     if (!canUseBluetooth(context)) return emptySet()
     // BluetoothManager.getConnectedDevices takes only GATT profiles and throws for HEADSET and A2DP.
+    // AudioDeviceInfo has addresses from Android 9.
+    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.P) return emptySet()
     val audio = context.getSystemService(AudioManager::class.java) ?: return emptySet()
     return try {
       audio
