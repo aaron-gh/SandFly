@@ -49,15 +49,16 @@ class SoundPreview {
     }
     player =
       if (custom != null) {
+        val created = MediaPlayer()
         try {
-          MediaPlayer().apply {
+          created.apply {
             setAudioAttributes(attributes)
             setDataSource(custom.path)
             prepare()
           }
-        } catch (e: IOException) {
-          null
-        } catch (e: RuntimeException) {
+        } catch (e: Exception) {
+          // A sound file the player can't read; the player is released, not left to the collector.
+          created.release()
           null
         }
       } else {

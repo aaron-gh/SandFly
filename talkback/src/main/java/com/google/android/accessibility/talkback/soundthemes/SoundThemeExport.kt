@@ -12,7 +12,7 @@ internal object SoundThemeExport {
   fun message(context: Context, prefs: SharedPreferences, id: String, uri: Uri): String {
     val count = try {
       context.contentResolver.openOutputStream(uri)?.use { SoundThemes.export(context, prefs, id, it) }
-    } catch (error: IOException) { null } catch (error: SecurityException) { null }
+    } catch (error: IOException) { null } catch (error: RuntimeException) { null }
     return if (count == null) context.getString(R.string.sound_theme_export_failed)
       else context.resources.getQuantityString(R.plurals.sound_theme_exported, count, count)
   }

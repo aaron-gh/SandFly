@@ -212,6 +212,8 @@ class SoundThemesFragment : TalkbackBaseFragment() {
               if (duplicate) null else SoundThemes.createDraft(app, manifest)
             } catch (e: IOException) {
               null
+            } catch (e: RuntimeException) {
+              null
             }
           activity.runOnUiThread {
             if (!isAdded || !dialog.isShowing) {
