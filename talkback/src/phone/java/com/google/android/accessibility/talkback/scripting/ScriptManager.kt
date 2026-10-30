@@ -44,7 +44,8 @@ class ScriptManager(
   val touch = ScriptTouch(service, feedback)
   val screen = ScriptScreen(service)
   /** Used on the main thread only. */
-  val translator by lazy { Translator(service) }
+  private val translatorLazy = lazy { Translator(service) }
+  val translator by translatorLazy
 
   private val mainHandler = Handler(Looper.getMainLooper())
   private val scriptHandler = startScriptThread()
@@ -248,6 +249,8 @@ class ScriptManager(
 
   override fun shutdown() {
     closed = true
+    // It holds a thread and, once used, the on-device translation models.
+    if (translatorLazy.isInitialized()) translator.shutdown()
     store.removeListener(this)
     mainHandler.removeCallbacks(evaluateRunnable)
     // What scripts still had queued is dropped, so that turning scripts off stops them now.
