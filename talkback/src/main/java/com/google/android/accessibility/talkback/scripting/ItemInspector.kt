@@ -25,7 +25,9 @@ import android.os.Looper
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils
-import java.util.concurrent.Executors
+import java.util.concurrent.LinkedBlockingQueue
+import java.util.concurrent.ThreadPoolExecutor
+import java.util.concurrent.TimeUnit
 import java.util.function.Consumer
 import org.json.JSONArray
 import org.json.JSONObject
@@ -111,7 +113,9 @@ object ItemInspector {
     if (values.isNotEmpty()) put(key, JSONArray(values))
   }
 
-  private val treeReader by lazy { Executors.newSingleThreadExecutor() }
+  private val treeReader by lazy {
+    ThreadPoolExecutor(0, 1, 30, TimeUnit.SECONDS, LinkedBlockingQueue<Runnable>())
+  }
   private const val MAX_DEPTH = 60
   private const val MAX_ITEMS = 2000
 

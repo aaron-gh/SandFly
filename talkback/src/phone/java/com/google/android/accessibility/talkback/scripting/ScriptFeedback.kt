@@ -106,11 +106,15 @@ class ScriptFeedback(
   }
 
   fun playAudio(samples: FloatArray, sampleRate: Int, volume: Float) {
-    if (!soundOn() || !startPlaying()) return
+    // From the script: NaN would throw in roundToInt, after the sound counted as playing.
+    val gain = if (volume.isFinite()) volume.coerceIn(0f, 1f) else 1f
     val pcm =
       ShortArray(samples.size) {
-        (samples[it].coerceIn(-1f, 1f) * volume * Short.MAX_VALUE).roundToInt().toShort()
+        val sample = samples[it]
+        if (sample.isNaN()) 0
+        else (sample.coerceIn(-1f, 1f) * gain * Short.MAX_VALUE).roundToInt().toShort()
       }
+    if (!soundOn() || !startPlaying()) return
     val track =
       try {
         AudioTrack.Builder()

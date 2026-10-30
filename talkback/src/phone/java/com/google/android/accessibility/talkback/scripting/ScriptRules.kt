@@ -16,6 +16,7 @@
 
 package com.google.android.accessibility.talkback.scripting
 
+import android.os.SystemClock
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import com.google.android.accessibility.utils.NodeOverrides
 
@@ -154,6 +155,7 @@ private constructor(
   }
 
   companion object {
+    private const val ACTIVATE_LIMIT_MS = 150L
     private const val CACHE_SIZE = 512
 
     val EMPTY = ScriptRules(emptyList(), emptyList(), null) { null to null }
@@ -181,7 +183,11 @@ private constructor(
         group = rules.any { it.group },
         order = first(::orderOf),
         sources = sources,
-        activate = first { it.activate }?.let { query -> { node -> query.firstIn(node) } },
+        // On the main thread at each double tap, so the search gives up rather than hold it.
+        activate =
+          first { it.activate }?.let { query ->
+            { node -> query.firstIn(node, SystemClock.uptimeMillis() + ACTIVATE_LIMIT_MS) }
+          },
         silence = silence != null,
         silenceInside = silence == Hide.ALL,
         liftToActivate = rules.any { it.liftToActivate },

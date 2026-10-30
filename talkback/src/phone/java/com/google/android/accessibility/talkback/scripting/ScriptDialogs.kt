@@ -212,7 +212,8 @@ class ScriptDialogs(private val context: Context) {
     build: AlertDialog.Builder.(finish: (T) -> Unit) -> Unit,
   ) = onMain {
     // Scripts that open dialogs without closing them can't fill the screen with windows.
-    if (open.size >= MAX_OPEN) open.first().dialog.dismiss()
+    // Taken out now: its dismiss listener runs later, after other dialogs queued at once.
+    if (open.size >= MAX_OPEN) open.removeAt(0).dialog.dismiss()
     var result: T? = null
     lateinit var dialog: AlertDialog
     val builder =

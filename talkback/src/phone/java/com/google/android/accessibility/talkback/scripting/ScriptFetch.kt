@@ -21,8 +21,10 @@ import java.net.HttpURLConnection
 import java.net.MalformedURLException
 import java.net.URL
 import java.nio.charset.Charset
-import java.util.concurrent.Executors
 import java.util.concurrent.Future
+import java.util.concurrent.LinkedBlockingQueue
+import java.util.concurrent.ThreadPoolExecutor
+import java.util.concurrent.TimeUnit
 import org.json.JSONObject
 
 object ScriptFetch {
@@ -32,8 +34,12 @@ object ScriptFetch {
   private const val MAX_TIMEOUT_MS = 60_000
   private val METHODS = setOf("GET", "POST", "PUT", "DELETE", "HEAD", "OPTIONS")
 
+  // Its threads end when idle, as the object lives as long as the process.
   private val executor =
-    Executors.newFixedThreadPool(4) { Thread(it, "BacktalkScriptFetch").apply { isDaemon = true } }
+    ThreadPoolExecutor(4, 4, 30, TimeUnit.SECONDS, LinkedBlockingQueue<Runnable>()) {
+        Thread(it, "BacktalkScriptFetch").apply { isDaemon = true }
+      }
+      .apply { allowCoreThreadTimeOut(true) }
 
   class Request(
     val url: URL,
