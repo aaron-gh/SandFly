@@ -138,6 +138,12 @@ public class FocusActor implements UserInputEventListener {
   public boolean clickCurrentFocus(EventId eventId) {
     AccessibilityNodeInfoCompat currentFocus =
         accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ false);
+    // Activating an item stops speech, whatever Stop speech when touching the screen is set to.
+    // Touching stops it only when speech has started by the time the finger goes down, and keys
+    // and braille displays don't touch the screen at all.
+    if (currentFocus != null && pipeline != null) {
+      pipeline.returnFeedback(eventId, Feedback.part().setInterruptGentle(true));
+    }
     return clickNode(currentFocus, eventId);
   }
 
