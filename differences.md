@@ -467,7 +467,7 @@ With **Only on navigation bar** on Android 11 and later, touches on the navigati
 
 ### Speech kept while you touch the screen
 
-TalkBack stops speech when a finger touches the screen. To keep speech going until touch focuses an item, turn off **Controls** > **Touch and activation** > **Stop speech when touching the screen**. Speech of the item that touch focuses still interrupts, as do gestures that speak. It's on by default.
+TalkBack stops speech when a finger touches the screen. To keep speech going until touch focuses an item, turn off **Controls** > **Touch and activation** > **Stop speech when touching the screen**. Speech of the item that touch focuses still interrupts, as do gestures that speak. Activating an item, with a double tap, a key or a braille display, stops speech whether this is on or off. It's on by default.
 
 ### Wrap around
 
