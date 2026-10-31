@@ -31,6 +31,7 @@ import com.google.android.accessibility.talkback.CursorGranularityManager;
 import com.google.android.accessibility.talkback.Feedback;
 import com.google.android.accessibility.talkback.Feedback.Focus;
 import com.google.android.accessibility.talkback.Pipeline;
+import com.google.android.accessibility.talkback.TouchInteractionMonitor;
 import com.google.android.accessibility.talkback.actor.helper.FocusActorHelper;
 import com.google.android.accessibility.talkback.focusmanagement.AccessibilityFocusMonitor;
 import com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForScreenStateChange;
@@ -48,6 +49,7 @@ import com.google.android.accessibility.utils.Performance.EventId;
 import com.google.android.accessibility.utils.WebInterfaceUtils;
 import com.google.android.accessibility.utils.input.CursorGranularity;
 import com.google.android.accessibility.utils.input.WindowEventInterpreter;
+import com.google.android.accessibility.utils.output.LowLatencyAudio;
 import com.google.android.accessibility.utils.traversal.OrderedTraversalStrategy;
 import com.google.android.accessibility.utils.traversal.TraversalStrategy;
 import com.google.android.accessibility.utils.traversal.TraversalStrategyUtils;
@@ -253,6 +255,14 @@ public class FocusManagerInternal {
       // Has focus on screen.
       LogUtils.d(TAG, String.format("%s: Return, accessibility focus is already there.", subTag));
       return true;
+    }
+
+    // An app changing its controls while it records, such as a voice message's record button
+    // giving way to the recording's controls, would otherwise get focus placed elsewhere and
+    // spoken, into the recording.
+    if (LowLatencyAudio.isMicrophoneInUse() || TouchInteractionMonitor.isTouchPassedToApp()) {
+      LogUtils.d(TAG, String.format("%s: Return, an app records or has the touch.", subTag));
+      return false;
     }
 
     if (!FocusProcessorForScreenStateChange.focusesNewWindows()) {

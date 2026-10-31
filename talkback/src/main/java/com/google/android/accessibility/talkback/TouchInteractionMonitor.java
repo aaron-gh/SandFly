@@ -161,6 +161,10 @@ public class TouchInteractionMonitor
 
   // Queue size to hold the most recent change requests of controller state.
   private static final int MAX_CHANGE_REQUEST_SIZE = 5;
+
+  /** Whether a touch is passed to the app, such as the hold of a double-tap and hold. */
+  private static volatile boolean touchPassedToApp;
+
   /** Time after a swipe's start limit for its last motion event to arrive. */
   private static final int SWIPE_START_MARGIN_MS = 10;
 
@@ -819,6 +823,11 @@ public class TouchInteractionMonitor
     }
   }
 
+  /** Returns whether a touch is passed to the app now, such as the hold of a double-tap and hold. */
+  public static boolean isTouchPassedToApp() {
+    return touchPassedToApp;
+  }
+
   @MainThread
   @SuppressWarnings("Override")
   @Override
@@ -836,6 +845,7 @@ public class TouchInteractionMonitor
         TouchInteractionController.stateToString(this.state),
         TouchInteractionController.stateToString(state));
     touchExplorationModeFailureReporter.onTouchStateChanged(state);
+    touchPassedToApp = state == STATE_DELEGATING;
     if (this.state == STATE_CLEAR) {
       // Clear on transition to a new interaction
       clear();
