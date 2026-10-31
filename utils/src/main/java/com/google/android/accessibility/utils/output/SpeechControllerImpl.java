@@ -56,6 +56,7 @@ import com.google.android.accessibility.utils.FeatureSupport;
 import com.google.android.accessibility.utils.FormFactorUtils;
 import com.google.android.accessibility.utils.Logger;
 import com.google.android.accessibility.utils.Performance;
+import com.google.android.accessibility.utils.monitor.RecentUserInput;
 import com.google.android.accessibility.utils.Performance.EventId;
 import com.google.android.accessibility.utils.R;
 import com.google.android.accessibility.utils.SpannableUtils;
@@ -1608,6 +1609,12 @@ public class SpeechControllerImpl implements SpeechController {
     FeedbackItemFilter filter = new FeedbackItemFilter();
     if (SpeechController.hasQueueModeFlagSet(queueMode, QUEUE_MODE_BIT_INTERRUPT)) {
       filter.addFeedbackItemPredicate(new FeedbackItemInterruptiblePredicate());
+      // SandFly: notifications resist new speech, so that an app's own speech doesn't cut them
+      // off. Speech that follows a gesture or key the user made after a notification was handed
+      // to speech does, as the user has moved on.
+      if (RecentUserInput.isRecent()) {
+        filter.addFeedbackItemPredicate(new NotificationBeforeUserInputPredicate());
+      }
     }
 
     if (item.getUtteranceGroup() != UTTERANCE_GROUP_DEFAULT
@@ -3025,6 +3032,19 @@ public class SpeechControllerImpl implements SpeechController {
     @Override
     public boolean accept(FeedbackItem item) {
       return mPredicate1.accept(item) && mPredicate2.accept(item);
+    }
+  }
+
+  /** Accepts notifications handed to speech before the user's latest gesture or key. */
+  private static class NotificationBeforeUserInputPredicate implements FeedbackItemPredicate {
+    @Override
+    public boolean accept(FeedbackItem item) {
+      if (item == null || item.getUtteranceGroup() != UTTERANCE_GROUP_NOTIFICATIONS) {
+        return false;
+      }
+      // Items are stamped with the wall clock.
+      long age = System.currentTimeMillis() - item.getCreationTime();
+      return RecentUserInput.isRecentAfter(SystemClock.uptimeMillis() - age);
     }
   }
 
