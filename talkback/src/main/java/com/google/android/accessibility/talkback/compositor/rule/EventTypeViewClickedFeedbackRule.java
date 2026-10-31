@@ -65,18 +65,29 @@ public final class EventTypeViewClickedFeedbackRule {
           boolean tappedKey =
               AccessibilityNodeInfoUtils.isKeyboard(eventOptions.sourceNode)
                   && globalVariables.takeTapToTypeClick(SystemClock.uptimeMillis());
-          return EventFeedback.builder()
+          return clickFeedback()
               .setTtsOutput(computeTtsOutput(eventOptions.sourceNode, context, globalVariables))
-              .setQueueMode(QUEUE_MODE_QUEUE)
-              .setTtsAddToHistory(true)
-              .setForceFeedbackEvenIfAudioPlaybackActive(true)
-              .setForceFeedbackEvenIfMicrophoneActive(true)
-              .setForceFeedbackEvenIfSsbActive(true)
-              .setTtsSkipDuplicate(true)
-              .setEarcon(tappedKey ? -1 : R.raw.tick)
-              .setHaptic(tappedKey ? -1 : R.array.view_clicked_pattern)
+              .setEarcon(tappedKey ? -1 : CLICK_EARCON)
+              .setHaptic(tappedKey ? -1 : CLICK_HAPTIC)
               .build();
         });
+  }
+
+  /** The sound of a click. */
+  public static final int CLICK_EARCON = R.raw.tick;
+
+  /** The vibration of a click. */
+  public static final int CLICK_HAPTIC = R.array.view_clicked_pattern;
+
+  /** The feedback of a click, without its speech, sound and vibration. */
+  public static EventFeedback.Builder clickFeedback() {
+    return EventFeedback.builder()
+        .setQueueMode(QUEUE_MODE_QUEUE)
+        .setTtsAddToHistory(true)
+        .setForceFeedbackEvenIfAudioPlaybackActive(true)
+        .setForceFeedbackEvenIfMicrophoneActive(true)
+        .setForceFeedbackEvenIfSsbActive(true)
+        .setTtsSkipDuplicate(true);
   }
 
   private static Optional<CharSequence> computeTtsOutput(
@@ -145,7 +156,7 @@ public final class EventTypeViewClickedFeedbackRule {
   }
 
   /** Returns the node checked state text of the input node. */
-  private static CharSequence getNodeCheckedStateText(
+  public static CharSequence getNodeCheckedStateText(
       AccessibilityNodeInfoCompat node, Context context, GlobalVariables globalVariables) {
     if (node == null) {
       return "";

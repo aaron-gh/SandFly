@@ -17,6 +17,7 @@
 package com.google.android.accessibility.talkback.compositor;
 
 import static com.google.android.accessibility.talkback.compositor.TalkBackFeedbackProvider.EMPTY_FEEDBACK;
+import static com.google.android.accessibility.utils.output.SpeechController.QUEUE_MODE_INTERRUPT;
 import static com.google.android.accessibility.utils.output.SpeechController.QUEUE_MODE_QUEUE;
 import static com.google.android.accessibility.utils.output.SpeechController.QUEUE_MODE_UNINTERRUPTIBLE_BY_NEW_SPEECH_CAN_IGNORE_INTERRUPTS;
 
@@ -29,6 +30,7 @@ import androidx.annotation.IntDef;
 import androidx.annotation.VisibleForTesting;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.talkback.compositor.roledescription.RoleDescriptionExtractor;
+import com.google.android.accessibility.talkback.compositor.rule.EventTypeViewClickedFeedbackRule;
 import com.google.android.accessibility.talkback.eventprocessor.ProcessorPhoneticLetters;
 import com.google.android.accessibility.talkback.imagecaption.ImageContents;
 import com.google.android.accessibility.talkback.scripting.Scripts;
@@ -51,6 +53,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Locale;
+import java.util.Optional;
 import java.util.Set;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
@@ -298,6 +301,7 @@ public class Compositor {
   private final EventFeedbackProvider talkbackFeedbackProvider;
 
   private final GlobalVariables globalVariables;
+  private final ClickFeedback clickFeedback;
   private final TextComposer textComposer = this::parseTTSText;
 
   /////////////////////////////////////////////////////////////////////////////////
@@ -335,6 +339,7 @@ public class Compositor {
     this.speechController = speechController;
     this.globalVariables = globalVariables;
     mContext = context;
+    clickFeedback = new ClickFeedback(this, context, globalVariables);
 
     long startTime = SystemClock.uptimeMillis();
     // TODO remove the deprecated compositor json parse tree implementation
@@ -462,6 +467,37 @@ public class Compositor {
     handleEvent(eventType, eventId, options);
   }
 
+  /** The feedback for clicks that SandFly sends itself. */
+  public ClickFeedback clickFeedback() {
+    return clickFeedback;
+  }
+
+  /** Gives the sound and vibration of a click that SandFly is sending. */
+  void giveClickCues(@Nullable EventId eventId) {
+    HandleEventOptions options = new HandleEventOptions();
+    options.preparedFeedback =
+        EventTypeViewClickedFeedbackRule.clickFeedback()
+            .setEarcon(EventTypeViewClickedFeedbackRule.CLICK_EARCON)
+            .setHaptic(EventTypeViewClickedFeedbackRule.CLICK_HAPTIC)
+            .build();
+    handleEvent(EVENT_TYPE_VIEW_CLICKED, eventId, options);
+  }
+
+  /**
+   * Says {@code state}, the new state of {@code node} after a click that SandFly sent, cutting off
+   * what was being said about the item.
+   */
+  void sayClickState(
+      AccessibilityNodeInfoCompat node, CharSequence state, @Nullable EventId eventId) {
+    HandleEventOptions options = new HandleEventOptions().source(node);
+    options.preparedFeedback =
+        EventTypeViewClickedFeedbackRule.clickFeedback()
+            .setTtsOutput(Optional.of(state))
+            .setQueueMode(QUEUE_MODE_INTERRUPT)
+            .build();
+    handleEvent(EVENT_TYPE_VIEW_CLICKED, eventId, options);
+  }
+
   /**
    * Handles an event made inside Backtalk for {@code sourceNode}, which the event cannot hold. If
    * {@code preparedFeedback} is not null, it is the feedback that {@link #getFeedback} returned for
@@ -512,6 +548,10 @@ public class Compositor {
         (options.preparedFeedback != null)
             ? options.preparedFeedback
             : getEventFeedback(event, options);
+    if (options.eventObject != null) {
+      eventFeedback =
+          clickFeedback.filter(event, options.eventObject, options.sourceNode, eventFeedback);
+    }
     if (isSilencedByScript(event, options.sourceNode, eventFeedback)) {
       if (runnable != null) {
         runnable.run(SpeechController.STATUS_NOT_SPOKEN);

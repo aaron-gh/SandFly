@@ -193,6 +193,8 @@ public abstract class EventFeedback {
         .setInlineFormatting(false);
   }
 
+  public abstract Builder toBuilder();
+
   /** Builder for compositor event feedback data. */
   @AutoValue.Builder
   public abstract static class Builder {
