@@ -221,6 +221,9 @@ class TutorialActivity : AppCompatActivity() {
 
   override fun onNewIntent(intent: Intent) {
     super.onNewIntent(intent)
+    // Brought back from the background, where Android restores focus to the item that last had
+    // it: the heading gets focus when the window does, as when the tutorial first opens.
+    if (!hasWindowFocus()) shown = false
     // Opened again, so that the lesson is read again.
     val requested = TutorialLessons.indexOf(intent.getStringExtra(EXTRA_LESSON))
     when {
