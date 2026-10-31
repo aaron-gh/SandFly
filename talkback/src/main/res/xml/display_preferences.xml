@@ -9,4 +9,12 @@
       android:key="@string/pref_reduce_window_delay_key"
       android:summary="@string/pref_reduce_window_delay_summary"
       android:title="@string/pref_reduce_window_delay_title"/>
+  <com.google.android.accessibility.talkback.wallpaper.SandFlyWallpaperPreference
+      android:key="@string/pref_sandfly_wallpaper_key"
+      android:persistent="false"
+      android:title="@string/title_pref_sandfly_wallpaper" />
+  <com.google.android.accessibility.talkback.wallpaper.WallpaperImagePreference
+      android:key="@string/pref_sandfly_wallpaper_image_key"
+      android:persistent="false"
+      android:title="@string/title_pref_wallpaper_image" />
 </PreferenceScreen>

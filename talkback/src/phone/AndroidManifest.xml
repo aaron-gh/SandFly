@@ -45,5 +45,25 @@
                 <data android:mimeType="text/plain" />
             </intent-filter>
         </activity>
+        <!-- SandFly's live wallpaper. Android keeps the current wallpaper's process running, so
+             battery savers that stop background apps leave SandFly running. -->
+        <service
+            android:name="com.google.android.accessibility.talkback.wallpaper.SandFlyWallpaperService"
+            android:label="@string/talkback_title"
+            android:exported="true"
+            android:permission="android.permission.BIND_WALLPAPER">
+            <intent-filter>
+                <action android:name="android.service.wallpaper.WallpaperService" />
+            </intent-filter>
+            <meta-data
+                android:name="android.service.wallpaper"
+                android:resource="@xml/sandfly_wallpaper" />
+        </service>
+        <!-- Chooses the wallpaper's image. Exported for the wallpaper picker's settings button. -->
+        <activity
+            android:name="com.google.android.accessibility.talkback.wallpaper.WallpaperImageActivity"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:theme="@style/BlankActivityTheme" />
     </application>
 </manifest>

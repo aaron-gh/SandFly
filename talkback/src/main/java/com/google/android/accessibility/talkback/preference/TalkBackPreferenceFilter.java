@@ -151,6 +151,10 @@ public class TalkBackPreferenceFilter {
         HIDDEN_ON_TV | HIDDEN_SETUP | HIDDEN_ON_XR),
     // Scripts run on phones only; the watch build has no Scripts screen to open.
     SCRIPTS(R.string.pref_scripts_key, HIDDEN_ON_WATCH),
+    // Only phones and tablets have SandFly's wallpaper.
+    SANDFLY_WALLPAPER(R.string.pref_sandfly_wallpaper_key, HIDDEN_ON_WATCH | HIDDEN_ON_TV),
+    SANDFLY_WALLPAPER_IMAGE(
+        R.string.pref_sandfly_wallpaper_image_key, HIDDEN_ON_WATCH | HIDDEN_ON_TV),
     SINGLE_TAP_ACTIVATION(
         R.string.pref_single_tap_key, HIDDEN_ON_TV | HIDDEN_ON_XR),
     REDUCE_WINDOW_DELAY(

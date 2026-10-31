@@ -627,6 +627,10 @@ In **Verbosity** > **Screen on and off**, you can choose what SandFly says when 
 
 These switches are separate from **Status readout**, so the status gesture can say different things. SandFly doesn't make the screen-on announcement during calls, and the lock screen no longer cuts off "Screen off".
 
+### SandFly as the wallpaper
+
+Some phones, such as Vivo's, stop SandFly in the background even when it is exempt from battery optimization. **Display** > **Use SandFly as the wallpaper** opens Android's screen for setting SandFly's live wallpaper. Android keeps the current wallpaper running and restarts it if it stops, and SandFly's wallpaper runs in SandFly itself, so these phones leave SandFly running too. The wallpaper is black, or shows the image chosen with **Display** > **Wallpaper image**, and is drawn only when Android asks, so it uses no battery while it is shown. The setting says "SandFly is the wallpaper" while it is.
+
 ## Pausing SandFly
 
 ### Pause SandFly
