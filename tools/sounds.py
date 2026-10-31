@@ -109,9 +109,10 @@ def sounds():
     # A list scrolled; played faster or slower for the place in the list.
     s["scroll_tone"] = ([TALKBACK], [note(980, 0, 0.07, 0.02, partials=((1, 1.0), (2, 0.25)))],
                         0.08, -8)
-    # The end of reading, or of the screen: three rising notes.
-    s["complete"] = ([TALKBACK, BRAILLE], [note(C6, 0, 0.3, 0.12), note(E6, 0.09, 0.3, 0.12),
-                                           note(G6, 0.18, 0.4, 0.16)], 0.6, -5)
+    # A gesture that did nothing, such as a swipe past the last item, and the end of reading: two
+    # quick falling notes.
+    s["complete"] = ([TALKBACK, BRAILLE], [note(E6, 0, 0.06, 0.025), note(B5, 0.05, 0.1, 0.035)],
+                     0.15, -6)
     # A new window or screen: a soft rising slide with a breath of noise.
     s["window_state"] = ([UTILS], [note(420, 0, 0.18, 0.08, glide=840, partials=((1, 1.0), (2, 0.2))),
                                    click(0, 0.12, 0.04, 0.15, seed=7)], 0.2, -7)
