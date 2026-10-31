@@ -106,8 +106,6 @@
     <string name="theme_sound_summary_default">SandFly 的声音</string>
     <!-- Theme sounds: summary of a sound the theme replaces. [CHAR LIMIT=60] -->
     <string name="theme_sound_summary_custom">主题声音</string>
-    <!-- Theme sounds: summary of a control sound, which SandFly has no sound for, that the theme has no file for. [CHAR LIMIT=NONE] -->
-    <string name="theme_sound_summary_none">无声音。将播放焦点音。</string>
     <!-- Theme sounds: summary of a braille keyboard typing sound that plays Android's keyboard sound. [CHAR LIMIT=60] -->
     <string name="theme_sound_summary_android_keyboard">Android 的键盘音</string>
     <!-- Theme sounds: choice that goes back to Android's keyboard sound for a braille keyboard typing sound. [CHAR LIMIT=50] -->
@@ -128,8 +126,6 @@
     <string name="theme_sound_preview">试听</string>
     <!-- Theme sounds: choice that goes back to SandFly's own sound. [CHAR LIMIT=50] -->
     <string name="theme_sound_use_default">使用 SandFly 的声音</string>
-    <!-- Theme sounds: choice that removes the file of a control sound, which SandFly has no sound for. [CHAR LIMIT=50] -->
-    <string name="theme_sound_remove">移除该声音</string>
     <!-- Theme sounds: message when the chosen file is too large. [CHAR LIMIT=NONE] -->
     <string name="theme_sound_too_large">该文件过大。声音文件最大 5 MB。</string>
     <!-- Theme sounds: message when the chosen file cannot be played. [CHAR LIMIT=NONE] -->

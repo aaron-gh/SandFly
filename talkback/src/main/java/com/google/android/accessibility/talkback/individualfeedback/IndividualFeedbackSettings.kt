@@ -52,7 +52,7 @@ object IndividualFeedbackSettings {
       FeedbackItem("agentic_interaction_fail", R.string.individual_sound_agentic_interaction_fail),
     )
 
-  /** The vibrations of the agent sounds, which come only from sound themes. */
+  /** The vibrations of the agent sounds. */
   val AGENT_SOUND_VIBRATIONS = AGENT_SOUNDS.map { FeedbackItem("${it.key}_pattern", it.title) }
 
   val SOUNDS =
@@ -170,8 +170,6 @@ object IndividualFeedbackSettings {
       FeedbackItem("list_exited_pattern", R.string.individual_sound_chime_down),
       FeedbackItem("complete_pattern", R.string.individual_sound_complete),
       FeedbackItem("window_state_pattern", R.string.individual_vibration_window_state),
-      // Of the navigation sounds, only the edge gesture middle and top have SandFly
-      // vibrations. The others vibrate only with a sound theme's vibration.
       FeedbackItem(
         "next_reading_control_pattern",
         R.string.individual_sound_next_reading_control,
@@ -192,6 +190,7 @@ object IndividualFeedbackSettings {
       FeedbackItem("hyperlink_pattern", R.string.individual_sound_hyperlink),
       FeedbackItem("formatting_pattern", R.string.individual_sound_formatting),
       FeedbackItem("screen_off_pattern", R.string.individual_sound_screen_off),
+      FeedbackItem("screen_on_pattern", R.string.individual_sound_screen_on),
       FeedbackItem("loading_pattern", R.string.individual_sound_loading),
       FeedbackItem("browse_mode_on_pattern", R.string.individual_sound_browse_mode_on),
       FeedbackItem("browse_mode_off_pattern", R.string.individual_sound_browse_mode_off),
@@ -200,10 +199,15 @@ object IndividualFeedbackSettings {
         R.string.individual_sound_radial_menu,
         (1..8).map { "radial_menu_${it}_pattern" },
       ),
+      FeedbackItem("display_connected_pattern", R.string.individual_sound_display_connected),
+      FeedbackItem("display_disconnected_pattern", R.string.individual_sound_display_disconnected),
+      FeedbackItem("double_beep_pattern", R.string.individual_sound_double_beep),
+      FeedbackItem("turn_on_pattern", R.string.individual_sound_turn_on),
+      FeedbackItem("turn_off_pattern", R.string.individual_sound_turn_off),
+      FeedbackItem("calibration_done_pattern", R.string.individual_sound_calibration_done),
       FeedbackItem("notification_pattern", R.string.individual_vibration_notification),
       EDGE_GESTURE_VIBRATIONS,
       *BRAILLE_KEYBOARD_VIBRATIONS.toTypedArray(),
-      // Control vibrations come only from sound themes.
       FeedbackItem("control_button_pattern", R.string.individual_sound_control_button),
       FeedbackItem("control_checkbox_pattern", R.string.individual_sound_control_checkbox),
       FeedbackItem("control_radio_button_pattern", R.string.individual_sound_control_radio_button),

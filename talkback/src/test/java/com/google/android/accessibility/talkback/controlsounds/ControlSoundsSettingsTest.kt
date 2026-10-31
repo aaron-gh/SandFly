@@ -28,87 +28,81 @@ import org.junit.Test
 class ControlSoundsSettingsTest {
   private val prefs = FakeSharedPreferences()
 
-  private val allChosen = ControlSounds.SOUNDS.keys
-
   private fun turnOn() = prefs.edit().putBoolean(ControlSoundsSettings.PREF_ON, true).apply()
 
   @Test
   fun offByDefault() {
     assertFalse(ControlSoundsSettings.isOn(prefs))
     assertFalse(ControlSoundsSettings.speakRoles(prefs))
-    assertTrue(ControlSoundsSettings.playingSounds(prefs, true, emptySet(), allChosen).isEmpty())
+    assertTrue(ControlSoundsSettings.playingSounds(prefs, true, emptySet(), emptySet()).isEmpty())
   }
 
   @Test
-  fun everyChosenSoundPlaysWhenOn() {
+  fun everySoundPlaysWhenOn() {
     turnOn()
     assertEquals(
       ControlSounds.SOUNDS.values.toSet(),
-      ControlSoundsSettings.playingSounds(prefs, true, emptySet(), allChosen),
+      ControlSoundsSettings.playingSounds(prefs, true, emptySet(), emptySet()),
     )
   }
 
   @Test
-  fun onlyControlsWithAChosenSoundPlay() {
+  fun aSoundTheThemeSetsToNoneDoesNotPlay() {
     turnOn()
-    assertEquals(
-      setOf(R.id.control_button),
-      ControlSoundsSettings.playingSounds(prefs, true, emptySet(), setOf("control_button", "focus")),
-    )
-    assertTrue(ControlSoundsSettings.playingSounds(prefs, true, emptySet(), emptySet()).isEmpty())
+    val playing = ControlSoundsSettings.playingSounds(prefs, true, emptySet(), setOf("control_button"))
+    assertFalse(R.raw.control_button in playing)
+    assertTrue(R.raw.control_checkbox in playing)
   }
 
   @Test
   fun noSoundPlaysWithSoundFeedbackOff() {
     turnOn()
-    assertTrue(ControlSoundsSettings.playingSounds(prefs, false, emptySet(), allChosen).isEmpty())
+    assertTrue(ControlSoundsSettings.playingSounds(prefs, false, emptySet(), emptySet()).isEmpty())
   }
 
   @Test
   fun aSoundTurnedOffOnItsOwnDoesNotPlay() {
     turnOn()
-    val playing = ControlSoundsSettings.playingSounds(prefs, true, setOf("control_button"), allChosen)
-    assertFalse(R.id.control_button in playing)
-    assertTrue(R.id.control_checkbox in playing)
+    val playing = ControlSoundsSettings.playingSounds(prefs, true, setOf("control_button"), emptySet())
+    assertFalse(R.raw.control_button in playing)
+    assertTrue(R.raw.control_checkbox in playing)
   }
 
   @Test
-  fun onlyControlsTheThemeGivesAVibrationAreFelt() {
+  fun aVibrationTheThemeSetsToNoneIsNotFelt() {
     turnOn()
-    assertEquals(
-      setOf(R.id.control_button),
-      ControlSoundsSettings.vibratingSounds(prefs, true, emptySet(), setOf("control_button")),
-    )
-    assertTrue(ControlSoundsSettings.vibratingSounds(prefs, true, emptySet(), emptySet()).isEmpty())
+    val felt = ControlSoundsSettings.vibratingSounds(prefs, true, emptySet(), setOf("control_button"))
+    assertFalse(R.raw.control_button in felt)
+    assertTrue(R.raw.control_checkbox in felt)
   }
 
   @Test
   fun controlVibrationsAreFeltWithSoundFeedbackOffButNotWithVibrationOff() {
     turnOn()
-    assertTrue(ControlSoundsSettings.playingSounds(prefs, false, emptySet(), allChosen).isEmpty())
+    assertTrue(ControlSoundsSettings.playingSounds(prefs, false, emptySet(), emptySet()).isEmpty())
     assertEquals(
       ControlSounds.SOUNDS.values.toSet(),
-      ControlSoundsSettings.vibratingSounds(prefs, true, emptySet(), allChosen),
+      ControlSoundsSettings.vibratingSounds(prefs, true, emptySet(), emptySet()),
     )
-    assertTrue(ControlSoundsSettings.vibratingSounds(prefs, false, emptySet(), allChosen).isEmpty())
+    assertTrue(ControlSoundsSettings.vibratingSounds(prefs, false, emptySet(), emptySet()).isEmpty())
   }
 
   @Test
   fun aControlVibrationTurnedOffOnItsOwnIsNotFelt() {
     turnOn()
     val felt =
-      ControlSoundsSettings.vibratingSounds(prefs, true, setOf("control_button_pattern"), allChosen)
-    assertFalse(R.id.control_button in felt)
-    assertTrue(R.id.control_checkbox in felt)
+      ControlSoundsSettings.vibratingSounds(prefs, true, setOf("control_button_pattern"), emptySet())
+    assertFalse(R.raw.control_button in felt)
+    assertTrue(R.raw.control_checkbox in felt)
     // Links share the switch of the link vibration.
     val withoutLinks =
-      ControlSoundsSettings.vibratingSounds(prefs, true, setOf("hyperlink_pattern"), allChosen)
-    assertFalse(R.id.control_link in withoutLinks)
+      ControlSoundsSettings.vibratingSounds(prefs, true, setOf("hyperlink_pattern"), emptySet())
+    assertFalse(R.raw.control_link in withoutLinks)
   }
 
   @Test
   fun noControlVibrationsWithControlSoundsOff() {
-    assertTrue(ControlSoundsSettings.vibratingSounds(prefs, true, emptySet(), allChosen).isEmpty())
+    assertTrue(ControlSoundsSettings.vibratingSounds(prefs, true, emptySet(), emptySet()).isEmpty())
   }
 
   @Test

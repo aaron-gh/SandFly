@@ -208,17 +208,13 @@ class ThemeSoundsFragment : TalkbackBaseFragment() {
           chooseFile = { if (!closing && available()) launchChooser(item) },
           canPreview = {
             val theme = currentTheme()
-            theme != null &&
-              !SoundThemes.isNone(theme, item) &&
-              (SoundThemes.soundFiles(theme)[item.key] != null ||
-                (!isControlSound(item) && !SoundThemes.hasNoOwnSound(item.key)))
+            theme != null && !SoundThemes.isNone(theme, item)
           },
           isNone = { currentTheme()?.let { SoundThemes.isNone(it, item) } ?: false },
           canReset = {
             val theme = currentTheme()
             theme != null &&
-              (SoundThemes.soundFiles(theme)[item.key] != null ||
-                (SoundThemes.isNone(theme, item) && !SoundThemes.hasNoOwnSound(item.key)))
+              (SoundThemes.soundFiles(theme)[item.key] != null || SoundThemes.isNone(theme, item))
           },
         )
       row.setOnPreferenceClickListener {
@@ -403,8 +399,6 @@ class ThemeSoundsFragment : TalkbackBaseFragment() {
           when {
             SoundThemes.isNone(theme, row.item) -> R.string.theme_sound_summary_no_sound
             row.item.key in custom -> R.string.theme_sound_summary_custom
-            isControlSound(row.item) -> R.string.theme_sound_summary_none
-            SoundThemes.hasNoOwnSound(row.item.key) -> R.string.theme_sound_summary_no_sound
             isBrailleTypingSound(row.item) -> R.string.theme_sound_summary_android_keyboard
             else -> R.string.theme_sound_summary_default
           }
@@ -426,7 +420,7 @@ class ThemeSoundsFragment : TalkbackBaseFragment() {
         {
           launchChooser(item)
         }
-    if (!isNone && (hasCustom || (!isControlSound(item) && !SoundThemes.hasNoOwnSound(item.key)))) {
+    if (!isNone) {
       choices += R.string.theme_sound_preview to { preview(item) }
     }
     if (!isNone) {
@@ -439,13 +433,10 @@ class ThemeSoundsFragment : TalkbackBaseFragment() {
             }
           }
     }
-    if (hasCustom || (isNone && !SoundThemes.hasNoOwnSound(item.key))) {
+    if (hasCustom || isNone) {
       val label =
-        when {
-          isControlSound(item) || SoundThemes.hasNoOwnSound(item.key) -> R.string.theme_sound_remove
-          isBrailleTypingSound(item) -> R.string.theme_sound_use_android_keyboard
-          else -> R.string.theme_sound_use_default
-        }
+        if (isBrailleTypingSound(item)) R.string.theme_sound_use_android_keyboard
+        else R.string.theme_sound_use_default
       choices +=
         label to
           {
@@ -599,11 +590,8 @@ class ThemeSoundsFragment : TalkbackBaseFragment() {
       if (canReset()) {
         val resetLabel =
           context.getString(
-            when {
-              isControlSound(item) || SoundThemes.hasNoOwnSound(item.key) -> R.string.theme_sound_remove
-              isBrailleTypingSound(item) -> R.string.theme_sound_use_android_keyboard
-              else -> R.string.theme_sound_use_default
-            }
+            if (isBrailleTypingSound(item)) R.string.theme_sound_use_android_keyboard
+            else R.string.theme_sound_use_default
           )
         ViewCompat.replaceAccessibilityAction(
           holder.itemView,

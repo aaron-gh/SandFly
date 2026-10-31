@@ -46,8 +46,8 @@ object ColumnWrap {
   @JvmStatic
   fun sound(wrap: Int): Int =
     when (wrap) {
-      FORWARD -> R.id.column_wrap
-      BACK -> R.id.column_wrap_back
+      FORWARD -> R.raw.column_wrap
+      BACK -> R.raw.column_wrap_back
       else -> 0
     }
 

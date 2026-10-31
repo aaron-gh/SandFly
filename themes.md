@@ -38,12 +38,11 @@ Under **Settings of** the theme in use:
 *   **Control sounds and vibrations** gives each kind of control, such as buttons, checkboxes
     and edit fields, its own sound and its own vibration, in place of the focus sound and
     vibration, as the [Unspoken](https://github.com/ahicks92/Unspoken) add-on does for NVDA with
-    sounds. SandFly has no control sounds or vibrations of its own, so they come from the theme.
-    When a control's sound or vibration plays, SandFly leaves out saying what kind of control it
-    is. A control's vibration plays even with **Sound feedback** off, so you can learn the kinds of
-    control by touch alone. A kind of control that the theme gives a vibration but no sound plays
-    the focus sound with its own vibration. One the theme gives neither plays the focus sound and
-    vibration, and SandFly says what kind of control it is.
+    sounds. SandFly has a control sound and vibration of its own for each, which the theme can
+    replace. When a control's sound or vibration plays, SandFly leaves out saying what kind of
+    control it is. A control's vibration plays even with **Sound feedback** off, so you can learn
+    the kinds of control by touch alone. A kind of control whose sound the theme sets to no sound
+    plays the focus sound with its own vibration, and SandFly says what kind of control it is.
 *   **3D audio** sets when control sounds play in 3D: with headphones, always, or never.
 *   **Sounds** lists every sound, where you can replace any of them with a sound file of your own,
     preview it, or go back to SandFly's sound.
@@ -149,14 +148,14 @@ play is left out when the theme is installed, and SandFly says so.
 | `chime_down` | Leaving a list |
 | `complete` | Action done or end reached |
 | `window_state` | Window change |
-| `next_reading_control` | Next reading control (plays no sound in the SandFly theme) |
-| `previous_reading_control` | Previous reading control (plays no sound in the SandFly theme) |
-| `edge_gesture_bottom` | A finger touching an edge where an edge gesture starts, or sliding back to it (plays no sound in the SandFly theme) |
-| `edge_gesture_middle` | An edge gesture reaching its first stage, or sliding back to it (plays no sound in the SandFly theme) |
-| `edge_gesture_top` | An edge gesture reaching its second stage (plays no sound in the SandFly theme) |
-| `insertion_point_moved` | Moving by character, word, line or paragraph moves the cursor in a text field being edited (plays no sound in the SandFly theme) |
-| `column_wrap` | Swiping forward to an item on a row below (plays no sound in the SandFly theme) |
-| `column_wrap_back` | Swiping back to an item on a row above (plays no sound in the SandFly theme) |
+| `next_reading_control` | Next reading control |
+| `previous_reading_control` | Previous reading control |
+| `edge_gesture_bottom` | A finger touching an edge where an edge gesture starts, or sliding back to it |
+| `edge_gesture_middle` | An edge gesture reaching its first stage, or sliding back to it |
+| `edge_gesture_top` | An edge gesture reaching its second stage |
+| `insertion_point_moved` | Moving by character, word, line or paragraph moves the cursor in a text field being edited |
+| `column_wrap` | Swiping forward to an item on a row below |
+| `column_wrap_back` | Swiping back to an item on a row above |
 | `agentic_interaction_start` | The SandFly Pro agent starts a task |
 | `agentic_interaction_complete` | The agent finishes a task |
 | `agentic_interaction_ask` | The agent asks a question or asks to confirm an action |
@@ -166,7 +165,7 @@ play is left out when the theme is installed, and SandFly says so.
 | `hyperlink` | Link |
 | `formatting` | Formatted text |
 | `screen_off` | Screen off |
-| `screen_on` | Screen on (plays no sound by default in the SandFly theme) |
+| `screen_on` | Screen on |
 | `loading` | Loading |
 | `browse_mode_on_v4_2` | Browse mode on |
 | `browse_mode_off_v4_2` | Browse mode off |
@@ -231,14 +230,10 @@ Each sound has a vibration, which plays with it even when sound feedback is off.
 sound its own vibration by the name of the sound, as in the table above. It then replaces that
 vibration everywhere it plays: with the sound, and wherever SandFly plays the same vibration
 without the sound, such as the click vibration of the circle menu and the focus vibration of
-selection. `radial_menu` replaces the vibrations of all eight circle menu notes. The braille display
-sounds (`display_connected`, `display_disconnected`, `double_beep`, `turn_on`, `turn_off` and
-`calibration_done`) have no vibration, so they can't have one in a theme either.
-
-SandFly has no vibrations of its own for `next_reading_control`, `previous_reading_control`,
-`edge_gesture_bottom`, `insertion_point_moved`, `column_wrap`, `column_wrap_back` and the
-`agentic_interaction` sounds, so they vibrate only with the theme's. `column_wrap` and `column_wrap_back` play with the focus sound, and their
-vibrations play in place of the focus vibration.
+selection. `radial_menu` replaces the vibrations of all eight circle menu notes. `control_link`
+plays the vibration of `hyperlink`, but a theme can give it one of its own. `column_wrap` and
+`column_wrap_back` play with the focus sound, and their vibrations play in place of the focus
+vibration.
 
 These vibrations have no sound, and a theme replaces them by these names:
 

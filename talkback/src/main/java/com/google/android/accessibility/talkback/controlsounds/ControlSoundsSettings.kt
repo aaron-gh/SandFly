@@ -47,38 +47,39 @@ object ControlSoundsSettings {
 
   /**
    * The control sounds that play, which are none while control sounds or sound feedback are off.
-   * Only the ones with a custom sound in [customSounds] play, and not the ones turned off in
-   * Individual sounds and vibrations. A control whose sound does not play has its kind spoken.
+   * The ones turned off in Individual sounds and vibrations don't play, nor the ones the sound
+   * theme in use sets to no sound, in [silencedSounds]. A control whose sound does not play has its
+   * kind spoken.
    */
   @JvmStatic
   fun playingSounds(
     prefs: SharedPreferences,
     soundFeedbackOn: Boolean,
     mutedSounds: Set<String>,
-    customSounds: Set<String>,
+    silencedSounds: Set<String>,
   ): Set<Int> {
     if (!soundFeedbackOn || !isOn(prefs)) return emptySet()
-    return ControlSounds.SOUNDS.filterKeys { it in customSounds && it !in mutedSounds }
+    return ControlSounds.SOUNDS.filterKeys { it !in mutedSounds && it !in silencedSounds }
       .values
       .toSet()
   }
 
   /**
    * The control sounds whose vibrations play, which are none while control sounds or vibration
-   * feedback are off. Only the ones the sound theme in [themeVibrations] gives a vibration play,
-   * and not the ones turned off in Individual sounds and vibrations. A control's vibration plays
-   * even when its sound does not, so that the kind of control can be told by touch alone.
+   * feedback are off. The ones turned off in Individual sounds and vibrations don't play, nor the
+   * ones the sound theme in use sets to no vibration, in [unfeltVibrations]. A control's vibration
+   * plays even when its sound does not, so that the kind of control can be told by touch alone.
    */
   @JvmStatic
   fun vibratingSounds(
     prefs: SharedPreferences,
     vibrationFeedbackOn: Boolean,
     mutedVibrations: Set<String>,
-    themeVibrations: Set<String>,
+    unfeltVibrations: Set<String>,
   ): Set<Int> {
     if (!vibrationFeedbackOn || !isOn(prefs)) return emptySet()
     return ControlSounds.SOUNDS.filterKeys {
-        it in themeVibrations && SoundVibrations.switchOf(it) !in mutedVibrations
+        it !in unfeltVibrations && SoundVibrations.switchOf(it) !in mutedVibrations
       }
       .values
       .toSet()

@@ -1,7 +1,8 @@
 # Synthesises all of SandFly's built-in sounds and writes them where the app reads them: focus,
 # clicks, scrolling, windows, list chimes, links, formatting, typos, browse mode, loading, volume,
-# screen off, the circle menu, edge gestures and the agent in talkback and utils, and the braille
-# display sounds in braille/common.
+# screen off and on, the circle menu, reading controls, cursor moves, row wraps, edge gestures,
+# control sounds and the agent in talkback and utils, and the braille display sounds in
+# braille/common.
 #
 # Each sound is a 48 kHz, 16-bit mono WAV, peak-normalised to its own level and dithered. WAV is
 # lossless, and Android plays it everywhere; ffmpeg's built-in Vorbis encoder, used before, added
@@ -173,6 +174,9 @@ def sounds():
     # A volume change, and the braille display's beep.
     s["volume_beep"] = ([TALKBACK, BRAILLE], [note(1000, 0, 0.15, 0.08, partials=PURE, attack=0.005,
                                                    detune_cents=0)], 0.16, -6)
+    # The screen turned on: a rising slide. Off: the same falling.
+    s["screen_on"] = ([TALKBACK], [note(300, 0, 0.3, 0.12, glide=900, partials=((1, 1.0), (2, 0.2)))],
+                      0.32, -6)
     # The screen turned off: a falling slide.
     s["screen_off"] = ([TALKBACK], [note(900, 0, 0.3, 0.12, glide=300, partials=((1, 1.0), (2, 0.2)))],
                        0.32, -6)
@@ -180,6 +184,47 @@ def sounds():
     for i, pitch in enumerate(PENTATONIC, start=1):
         s[f"radial_menu_{i}"] = ([TALKBACK], [note(pitch, 0, 0.09, 0.035, brightness_decay=30,
                                                    partials=((1, 1.0), (4, 0.15)))], 0.1, -7)
+    # Another reading control: two quick notes, rising for the next, falling for the previous.
+    s["next_reading_control"] = ([TALKBACK], [note(A5, 0, 0.04, 0.015, partials=PURE),
+                                              note(D6, 0.035, 0.05, 0.018, partials=PURE)], 0.09, -7)
+    s["previous_reading_control"] = ([TALKBACK], [note(D6, 0, 0.04, 0.015, partials=PURE),
+                                                  note(A5, 0.035, 0.05, 0.018, partials=PURE)],
+                                     0.09, -7)
+    # The cursor moved in a text field: a very short soft tick.
+    s["insertion_point_moved"] = ([TALKBACK], [note(1200, 0, 0.025, 0.006, partials=PURE,
+                                                    detune_cents=0)], 0.03, -12)
+    # A swipe moved to the next row of a grid: a short rising slide; back up: falling.
+    s["column_wrap"] = ([TALKBACK], [note(500, 0, 0.04, 0.015, glide=750, partials=PURE)], 0.045, -10)
+    s["column_wrap_back"] = ([TALKBACK], [note(750, 0, 0.04, 0.015, glide=500, partials=PURE)],
+                             0.045, -10)
+    # Control sounds, played in place of the focus sound when Control sounds is on: each kind of
+    # control has its own short timbre.
+    s["control_button"] = ([TALKBACK], [note(520, 0, 0.06, 0.018, partials=HOLLOW)], 0.07, -6)
+    s["control_checkbox"] = ([TALKBACK], [click(0, 0.015, 0.003, 1.0, tone_hz=1500, seed=11),
+                                          click(0.03, 0.015, 0.003, 1.0, tone_hz=1500, seed=12)],
+                             0.05, -7)
+    s["control_radio_button"] = ([TALKBACK], [note(700, 0, 0.06, 0.02, glide=900, partials=PURE)],
+                                 0.07, -7)
+    s["control_edit_text"] = ([TALKBACK], [click(0, 0.05, 0.015, 0.5, cutoff_hz=3000, seed=13),
+                                           note(600, 0, 0.06, 0.02, partials=PURE)], 0.07, -8)
+    s["control_combo_box"] = ([TALKBACK], [note(660, 0, 0.04, 0.015), note(990, 0.03, 0.05, 0.018)],
+                              0.08, -7)
+    s["control_slider"] = ([TALKBACK], [note(400, 0, 0.07, 0.025, glide=800,
+                                             partials=((1, 1.0), (2, 0.2)))], 0.075, -7)
+    s["control_link"] = ([TALKBACK], [note(A6, 0, 0.05, 0.015, partials=((1, 1.0), (2, 0.2)))],
+                         0.055, -9)
+    s["control_image"] = ([TALKBACK], [note(C6, 0, 0.08, 0.025, 0.6), note(E6, 0, 0.08, 0.025, 0.5),
+                                       note(G6, 0, 0.08, 0.025, 0.4)], 0.085, -8)
+    s["control_clock"] = ([TALKBACK], [click(0, 0.012, 0.002, 1.0, tone_hz=2000, seed=14),
+                                       click(0.04, 0.012, 0.002, 1.0, tone_hz=1600, seed=15)],
+                          0.055, -8)
+    s["control_tab"] = ([TALKBACK], [note(330, 0, 0.05, 0.015, partials=HOLLOW)], 0.055, -6)
+    s["control_menu_item"] = ([TALKBACK], [note(1100, 0, 0.05, 0.015, partials=PURE)], 0.055, -9)
+    s["control_list_item"] = ([TALKBACK], [note(760, 0, 0.04, 0.012, partials=((1, 1.0), (2, 0.3)))],
+                              0.045, -8)
+    s["control_tree_item"] = ([TALKBACK], [note(760, 0, 0.035, 0.012, partials=((1, 1.0), (2, 0.3))),
+                                           note(570, 0.035, 0.04, 0.012, partials=((1, 1.0), (2, 0.3)))],
+                              0.08, -8)
     # Edge gestures: a low tick at the edge, a higher tone at the first click, two rising tones at
     # the second.
     edge = ((1, 1.0), (2, 0.25))

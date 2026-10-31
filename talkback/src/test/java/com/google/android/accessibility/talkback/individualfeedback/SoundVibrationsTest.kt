@@ -29,31 +29,13 @@ class SoundVibrationsTest {
   private val patterns: Map<String, Pattern> = loadPatterns()
   private val vibrationNames = IndividualFeedbackSettings.VIBRATIONS.flatMap { it.resourceNames }
 
-  // Switches of vibrations that only themes give, which Backtalk has no pattern for, and of the
-  // braille keyboard's, which the keyboard defines itself.
-  private val patternNames =
-    vibrationNames -
-      (SoundVibrations.THEME_ONLY_SWITCHES.values - SoundVibrations.PATTERNS.values) -
-      SoundVibrations.BRAILLE_KEYBOARD
+  // Every switch but the braille keyboard's, whose patterns the keyboard defines itself.
+  private val patternNames = vibrationNames - SoundVibrations.BRAILLE_KEYBOARD
 
   @Test
-  fun everySoundHasAVibrationUnlessItShouldNot() {
+  fun everySoundHasAVibration() {
     val sounds = IndividualFeedbackSettings.SOUNDS.flatMap { it.resourceNames }.toSet()
-    assertEquals(
-      sounds,
-      SoundVibrations.PATTERNS.keys +
-        SoundVibrations.WITHOUT_VIBRATION +
-        SoundVibrations.THEME_ONLY_SWITCHES.keys,
-    )
-    assertTrue(SoundVibrations.PATTERNS.keys.none { it in SoundVibrations.WITHOUT_VIBRATION })
-    assertTrue(SoundVibrations.PATTERNS.keys.none { it in SoundVibrations.THEME_ONLY_SWITCHES })
-  }
-
-  @Test
-  fun brailleSoundsDoNotVibrate() {
-    for (sound in listOf("display_connected", "double_beep", "calibration_done")) {
-      assertTrue(sound, sound !in SoundVibrations.PATTERNS)
-    }
+    assertEquals(sounds, SoundVibrations.PATTERNS.keys)
   }
 
   @Test
@@ -84,7 +66,7 @@ class SoundVibrationsTest {
 
   @Test
   fun everySoundVibrationHasASwitch() {
-    (SoundVibrations.PATTERNS.values + SoundVibrations.THEME_ONLY_SWITCHES.values).forEach {
+    SoundVibrations.PATTERNS.values.forEach {
       assertTrue("$it has no switch", it in vibrationNames)
     }
   }
@@ -137,13 +119,22 @@ class SoundVibrationsTest {
   }
 
   @Test
-  fun themesCanReplaceEveryVibrationButNotBrailleDisplaySounds() {
+  fun themesCanReplaceEveryVibration() {
     val names = SoundVibrations.themeNames(IndividualFeedbackSettings.SOUNDS.map { it.key })
     assertTrue("focus" in names)
     assertTrue("control_button" in names)
+    assertTrue("display_connected" in names)
     assertTrue("announcement" in names)
     assertTrue("direct_touch_off" in names)
-    SoundVibrations.WITHOUT_VIBRATION.forEach { assertTrue(it, it !in names) }
+  }
+
+  @Test
+  fun aThemesLinkControlVibrationLeavesTheLinkVibrationAlone() {
+    val link = intArrayOf(0, 7)
+    val played =
+      SoundVibrations.playedAs(mapOf("control_link" to link), mapOf("control_link" to listOf("control_link")))
+    assertTrue(played["control_link"] === link)
+    assertTrue("hyperlink_pattern" !in played)
   }
 
   @Test

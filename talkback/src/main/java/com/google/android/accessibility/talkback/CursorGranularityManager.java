@@ -432,7 +432,7 @@ public class CursorGranularityManager {
         && isEditing
         && currentGranularity != null
         && !currentGranularity.supportsWebGranularity()) {
-      pipeline.returnFeedback(eventId, Feedback.sound(R.id.insertion_point_moved));
+      pipeline.returnFeedback(eventId, Feedback.sound(R.raw.insertion_point_moved));
     }
     return result;
   }

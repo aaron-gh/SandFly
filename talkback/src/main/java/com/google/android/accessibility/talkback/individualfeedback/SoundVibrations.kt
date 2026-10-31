@@ -25,36 +25,15 @@ import com.google.android.accessibility.talkback.controlsounds.ControlSounds
  * vibration_backtalk.xml.
  */
 object SoundVibrations {
-  /** Sounds that play without a vibration: the braille display's sounds, and screen on. */
-  val WITHOUT_VIBRATION: Set<String> =
-    setOf(
-      "display_connected",
-      "display_disconnected",
-      "double_beep",
-      "turn_on",
-      "turn_off",
-      "calibration_done",
-      "screen_on",
-    )
-
-  /**
-   * The switches of vibrations that only sound themes give, by sound resource name: each kind of
-   * control can have its own vibration in a theme. Without one, a control plays the focus
-   * vibration. A link shares the switch of the link vibration. Navigation sounds without a SandFly
-   * vibration and the agent sounds have them too.
-   */
-  val THEME_ONLY_SWITCHES: Map<String, String> =
-    ControlSounds.SOUNDS.keys.associateWith {
-      if (it == "control_link") "hyperlink_pattern" else "${it}_pattern"
-    } +
-      NavigationSounds.SOUNDS.keys
-        .filter { it !in NavigationSounds.PATTERNS }
-        .associateWith { "${it}_pattern" } +
-      AgentSounds.NAMES.associateWith { "${it}_pattern" }
-
   /** The name of the switch that turns off the vibration of a sound, by its resource name. */
   @JvmStatic
-  fun switchOf(soundName: String): String? = PATTERNS[soundName] ?: THEME_ONLY_SWITCHES[soundName]
+  fun switchOf(soundName: String): String? = PATTERNS[soundName]
+
+  /**
+   * Sounds that play another sound's vibration, under that vibration's switch: a link control
+   * feels like a link in text. A theme's vibration for one of them replaces only its own.
+   */
+  private val SHARED_PATTERNS: Set<String> = setOf("control_link")
 
   /**
    * Vibrations without a sound that a sound theme can replace, by their names in theme.json, with
@@ -94,8 +73,7 @@ object SoundVibrations {
 
   /** The names of every vibration a sound theme can replace, as theme.json names them. */
   @JvmStatic
-  fun themeNames(soundKeys: Collection<String>): Set<String> =
-    soundKeys.filter { it !in WITHOUT_VIBRATION }.toSet() + VIBRATION_ONLY.keys
+  fun themeNames(soundKeys: Collection<String>): Set<String> = soundKeys.toSet() + VIBRATION_ONLY.keys
 
   /**
    * Turns a theme's vibrations, by their theme.json names, into the names they play under: the
@@ -112,9 +90,8 @@ object SoundVibrations {
     for ((name, pattern) in themeVibrations) {
       VIBRATION_ONLY[name]?.let { played[it] = pattern }
       soundResources[name]?.forEach { sound ->
-        if (sound in WITHOUT_VIBRATION) return@forEach
         played[sound] = pattern
-        PATTERNS[sound]?.let { played[it] = pattern }
+        if (sound !in SHARED_PATTERNS) PATTERNS[sound]?.let { played[it] = pattern }
       }
       ALSO_PLAYED_AS[name]?.forEach { played[it] = pattern }
     }
@@ -158,9 +135,21 @@ object SoundVibrations {
       "loading" to "loading_pattern",
       "browse_mode_on_v4_2" to "browse_mode_on_pattern",
       "browse_mode_off_v4_2" to "browse_mode_off_pattern",
+      "screen_on" to "screen_on_pattern",
+      // The braille display's sounds.
+      "display_connected" to "display_connected_pattern",
+      "display_disconnected" to "display_disconnected_pattern",
+      "double_beep" to "double_beep_pattern",
+      "turn_on" to "turn_on_pattern",
+      "turn_off" to "turn_off_pattern",
+      "calibration_done" to "calibration_done_pattern",
     ) +
       (1..8).associate { "radial_menu_$it" to "radial_menu_${it}_pattern" } +
-      NavigationSounds.PATTERNS
+      NavigationSounds.PATTERNS +
+      AgentSounds.NAMES.associateWith { "${it}_pattern" } +
+      ControlSounds.SOUNDS.keys.associateWith {
+        if (it in SHARED_PATTERNS) "hyperlink_pattern" else "${it}_pattern"
+      }
 
   /**
    * Vibration pattern resource IDs, by sound resource names, for the feedback controller. By name,

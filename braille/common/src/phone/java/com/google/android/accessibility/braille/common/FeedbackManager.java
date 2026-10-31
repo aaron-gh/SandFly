@@ -26,9 +26,8 @@ import com.google.android.accessibility.utils.output.FeedbackController;
  * Provides 'out of band feedback', that is feedback that is typically not output on the braille
  * display and that doesn't come from the UI itself. Examples include error beeps and other earcons.
  * Note that feedback that is not specific to braille navigation is handled by other accessibility
- * services.
+ * services. Each sound plays with its vibration.
  */
-// TODO: Add haptic feedback.
 public class FeedbackManager {
 
   /** * An enumeration of types. */
@@ -62,14 +61,14 @@ public class FeedbackManager {
    * braille keyboard, which plays its own.
    */
   public void emitFeedback(Type type) {
-    feedbackController.playAuditoryWithoutHaptic(type.resId, EVENT_ID_UNTRACKED);
+    feedbackController.playAuditory(type.resId, EVENT_ID_UNTRACKED);
   }
 
   /** Emits feedback with delay, as a sound only, like {@link #emitFeedback(Type)}. */
   public void emitFeedback(Type type, int delayMs) {
     new Handler()
         .postDelayed(
-            () -> feedbackController.playAuditoryWithoutHaptic(type.resId, EVENT_ID_UNTRACKED),
+            () -> feedbackController.playAuditory(type.resId, EVENT_ID_UNTRACKED),
             delayMs);
   }
 

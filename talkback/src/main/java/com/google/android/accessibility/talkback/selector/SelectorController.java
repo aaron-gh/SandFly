@@ -1458,7 +1458,7 @@ public class SelectorController implements UserInputEventListener {
     }
     pipeline.returnFeedback(
         eventId,
-        Feedback.sound(isNext ? R.id.next_reading_control : R.id.previous_reading_control));
+        Feedback.sound(isNext ? R.raw.next_reading_control : R.raw.previous_reading_control));
     if (index < settings.size()) {
       setCurrentSetting(eventId, settings.get(index), announceType, showOverlay);
     } else {
@@ -1500,7 +1500,7 @@ public class SelectorController implements UserInputEventListener {
         if (assigned == null || assigned != letterWanted) {
           continue;
         }
-        pipeline.returnFeedback(eventId, Feedback.sound(R.id.next_reading_control));
+        pipeline.returnFeedback(eventId, Feedback.sound(R.raw.next_reading_control));
         setCurrentSetting(eventId, setting, AnnounceType.DESCRIPTION_AND_HINT, false);
         return getSettingActionDescriptionAndHint(setting, EVENT_ID_UNTRACKED).description;
       }
@@ -1516,7 +1516,7 @@ public class SelectorController implements UserInputEventListener {
       if (name == null || !foldForLetter(name).startsWith(wanted)) {
         continue;
       }
-      pipeline.returnFeedback(eventId, Feedback.sound(R.id.next_reading_control));
+      pipeline.returnFeedback(eventId, Feedback.sound(R.raw.next_reading_control));
       if (index < settings.size()) {
         setCurrentSetting(eventId, settings.get(index), AnnounceType.DESCRIPTION_AND_HINT, false);
       } else {

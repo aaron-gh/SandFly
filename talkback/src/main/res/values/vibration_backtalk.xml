@@ -977,4 +977,644 @@
         <item>30</item><!-- delayMs -->
     </integer-array>
 
+    <!-- Next reading control: two taps, the second firmer. -->
+    <integer-array name="next_reading_control_pattern">
+        <item>0</item>
+        <item>12</item>
+        <item>20</item>
+        <item>20</item>
+        <item>-9998</item><!-- AMPLITUDES: ms, amplitude -->
+        <item>8</item>
+        <item>100</item>
+        <item>20</item>
+        <item>0</item>
+        <item>8</item>
+        <item>135</item>
+        <item>-9999</item><!-- SENTINEL SEPARATOR -->
+        <item>7</item><!-- TICK -->
+        <item>120</item><!-- scale -->
+        <item>0</item><!-- delayMs -->
+        <item>7</item><!-- TICK -->
+        <item>220</item><!-- scale -->
+        <item>20</item><!-- delayMs -->
+    </integer-array>
+
+    <!-- Previous reading control: two taps, the second lighter. -->
+    <integer-array name="previous_reading_control_pattern">
+        <item>0</item>
+        <item>20</item>
+        <item>20</item>
+        <item>12</item>
+        <item>-9998</item><!-- AMPLITUDES: ms, amplitude -->
+        <item>8</item>
+        <item>135</item>
+        <item>20</item>
+        <item>0</item>
+        <item>8</item>
+        <item>100</item>
+        <item>-9999</item><!-- SENTINEL SEPARATOR -->
+        <item>7</item><!-- TICK -->
+        <item>220</item><!-- scale -->
+        <item>0</item><!-- delayMs -->
+        <item>7</item><!-- TICK -->
+        <item>120</item><!-- scale -->
+        <item>20</item><!-- delayMs -->
+    </integer-array>
+
+    <!-- Edge gesture bottom: a finger touches an edge where an edge gesture starts. One light tap. -->
+    <integer-array name="edge_gesture_bottom_pattern">
+        <item>0</item>
+        <item>8</item>
+        <item>-9998</item><!-- AMPLITUDES: ms, amplitude -->
+        <item>6</item>
+        <item>100</item>
+        <item>-9999</item><!-- SENTINEL SEPARATOR -->
+        <item>7</item><!-- TICK -->
+        <item>180</item><!-- scale -->
+        <item>0</item><!-- delayMs -->
+    </integer-array>
+
+    <!-- Insertion point moved: the faintest tap, as it repeats while moving through text. -->
+    <integer-array name="insertion_point_moved_pattern">
+        <item>0</item>
+        <item>6</item>
+        <item>-9998</item><!-- AMPLITUDES: ms, amplitude -->
+        <item>5</item>
+        <item>90</item>
+        <item>-9999</item><!-- SENTINEL SEPARATOR -->
+        <item>7</item><!-- TICK -->
+        <item>90</item><!-- scale -->
+        <item>0</item><!-- delayMs -->
+    </integer-array>
+
+    <!-- Column wrap: a tap, then a click, for the start of the next row. -->
+    <integer-array name="column_wrap_pattern">
+        <item>0</item>
+        <item>10</item>
+        <item>15</item>
+        <item>25</item>
+        <item>-9998</item><!-- AMPLITUDES: ms, amplitude -->
+        <item>8</item>
+        <item>100</item>
+        <item>15</item>
+        <item>0</item>
+        <item>10</item>
+        <item>140</item>
+        <item>-9999</item><!-- SENTINEL SEPARATOR -->
+        <item>7</item><!-- TICK -->
+        <item>140</item><!-- scale -->
+        <item>0</item><!-- delayMs -->
+        <item>1</item><!-- CLICK -->
+        <item>180</item><!-- scale -->
+        <item>15</item><!-- delayMs -->
+    </integer-array>
+
+    <!-- Column wrap back: a click, then a tap. -->
+    <integer-array name="column_wrap_back_pattern">
+        <item>0</item>
+        <item>25</item>
+        <item>15</item>
+        <item>10</item>
+        <item>-9998</item><!-- AMPLITUDES: ms, amplitude -->
+        <item>10</item>
+        <item>140</item>
+        <item>15</item>
+        <item>0</item>
+        <item>8</item>
+        <item>100</item>
+        <item>-9999</item><!-- SENTINEL SEPARATOR -->
+        <item>1</item><!-- CLICK -->
+        <item>180</item><!-- scale -->
+        <item>0</item><!-- delayMs -->
+        <item>7</item><!-- TICK -->
+        <item>140</item><!-- scale -->
+        <item>15</item><!-- delayMs -->
+    </integer-array>
+
+    <!-- Screen on: a short swell up, the reverse of screen off. -->
+    <integer-array name="screen_on_pattern">
+        <item>0</item>
+        <item>22</item>
+        <item>-9998</item><!-- AMPLITUDES: ms, amplitude -->
+        <item>12</item>
+        <item>50</item>
+        <item>12</item>
+        <item>90</item>
+        <item>-9999</item><!-- SENTINEL SEPARATOR -->
+        <item>4</item><!-- QUICK_RISE -->
+        <item>120</item><!-- scale -->
+        <item>0</item><!-- delayMs -->
+    </integer-array>
+
+    <!-- Agent task started: a tap, then a click. -->
+    <integer-array name="agentic_interaction_start_pattern">
+        <item>0</item>
+        <item>15</item>
+        <item>60</item>
+        <item>25</item>
+        <item>-9998</item><!-- AMPLITUDES: ms, amplitude -->
+        <item>8</item>
+        <item>120</item>
+        <item>60</item>
+        <item>0</item>
+        <item>10</item>
+        <item>150</item>
+        <item>-9999</item><!-- SENTINEL SEPARATOR -->
+        <item>7</item><!-- TICK -->
+        <item>180</item><!-- scale -->
+        <item>0</item><!-- delayMs -->
+        <item>1</item><!-- CLICK -->
+        <item>230</item><!-- scale -->
+        <item>60</item><!-- delayMs -->
+    </integer-array>
+
+    <!-- Agent task complete: two taps and a click, rising. -->
+    <integer-array name="agentic_interaction_complete_pattern">
+        <item>0</item>
+        <item>15</item>
+        <item>40</item>
+        <item>15</item>
+        <item>40</item>
+        <item>40</item>
+        <item>-9998</item><!-- AMPLITUDES: ms, amplitude -->
+        <item>8</item>
+        <item>120</item>
+        <item>40</item>
+        <item>0</item>
+        <item>8</item>
+        <item>135</item>
+        <item>40</item>
+        <item>0</item>
+        <item>15</item>
+        <item>150</item>
+        <item>-9999</item><!-- SENTINEL SEPARATOR -->
+        <item>7</item><!-- TICK -->
+        <item>180</item><!-- scale -->
+        <item>0</item><!-- delayMs -->
+        <item>7</item><!-- TICK -->
+        <item>220</item><!-- scale -->
+        <item>40</item><!-- delayMs -->
+        <item>1</item><!-- CLICK -->
+        <item>255</item><!-- scale -->
+        <item>40</item><!-- delayMs -->
+    </integer-array>
+
+    <!-- Agent question: a click, then a rise. -->
+    <integer-array name="agentic_interaction_ask_pattern">
+        <item>0</item>
+        <item>20</item>
+        <item>80</item>
+        <item>20</item>
+        <item>-9998</item><!-- AMPLITUDES: ms, amplitude -->
+        <item>8</item>
+        <item>130</item>
+        <item>80</item>
+        <item>0</item>
+        <item>20</item>
+        <item>90</item>
+        <item>20</item>
+        <item>140</item>
+        <item>-9999</item><!-- SENTINEL SEPARATOR -->
+        <item>1</item><!-- CLICK -->
+        <item>200</item><!-- scale -->
+        <item>0</item><!-- delayMs -->
+        <item>4</item><!-- QUICK_RISE -->
+        <item>200</item><!-- scale -->
+        <item>80</item><!-- delayMs -->
+    </integer-array>
+
+    <!-- Agent safety stop: two long firm clicks. -->
+    <integer-array name="agentic_interaction_sensitive_stop_pattern">
+        <item>0</item>
+        <item>40</item>
+        <item>60</item>
+        <item>40</item>
+        <item>-9998</item><!-- AMPLITUDES: ms, amplitude -->
+        <item>10</item>
+        <item>150</item>
+        <item>10</item>
+        <item>150</item>
+        <item>60</item>
+        <item>0</item>
+        <item>10</item>
+        <item>150</item>
+        <item>10</item>
+        <item>150</item>
+        <item>-9999</item><!-- SENTINEL SEPARATOR -->
+        <item>1</item><!-- CLICK -->
+        <item>255</item><!-- scale -->
+        <item>0</item><!-- delayMs -->
+        <item>1</item><!-- CLICK -->
+        <item>255</item><!-- scale -->
+        <item>60</item><!-- delayMs -->
+    </integer-array>
+
+    <!-- Agent task failed: a click, then a fall. -->
+    <integer-array name="agentic_interaction_fail_pattern">
+        <item>0</item>
+        <item>30</item>
+        <item>50</item>
+        <item>60</item>
+        <item>-9998</item><!-- AMPLITUDES: ms, amplitude -->
+        <item>10</item>
+        <item>150</item>
+        <item>10</item>
+        <item>140</item>
+        <item>50</item>
+        <item>0</item>
+        <item>20</item>
+        <item>140</item>
+        <item>20</item>
+        <item>100</item>
+        <item>20</item>
+        <item>60</item>
+        <item>-9999</item><!-- SENTINEL SEPARATOR -->
+        <item>1</item><!-- CLICK -->
+        <item>255</item><!-- scale -->
+        <item>0</item><!-- delayMs -->
+        <item>6</item><!-- QUICK_FALL -->
+        <item>255</item><!-- scale -->
+        <item>50</item><!-- delayMs -->
+    </integer-array>
+
+    <!-- Control sounds: each kind of control is one short hit or two, as focus is frequent.
+         Button: one click. -->
+    <integer-array name="control_button_pattern">
+        <item>0</item>
+        <item>20</item>
+        <item>-9998</item><!-- AMPLITUDES: ms, amplitude -->
+        <item>8</item>
+        <item>140</item>
+        <item>-9999</item><!-- SENTINEL SEPARATOR -->
+        <item>1</item><!-- CLICK -->
+        <item>200</item><!-- scale -->
+        <item>0</item><!-- delayMs -->
+    </integer-array>
+
+    <!-- Checkbox: two light taps. -->
+    <integer-array name="control_checkbox_pattern">
+        <item>0</item>
+        <item>8</item>
+        <item>15</item>
+        <item>8</item>
+        <item>-9998</item><!-- AMPLITUDES: ms, amplitude -->
+        <item>6</item>
+        <item>120</item>
+        <item>15</item>
+        <item>0</item>
+        <item>6</item>
+        <item>120</item>
+        <item>-9999</item><!-- SENTINEL SEPARATOR -->
+        <item>7</item><!-- TICK -->
+        <item>180</item><!-- scale -->
+        <item>0</item><!-- delayMs -->
+        <item>7</item><!-- TICK -->
+        <item>180</item><!-- scale -->
+        <item>15</item><!-- delayMs -->
+    </integer-array>
+
+    <!-- Radio button: a tap, then a click. -->
+    <integer-array name="control_radio_button_pattern">
+        <item>0</item>
+        <item>8</item>
+        <item>15</item>
+        <item>16</item>
+        <item>-9998</item><!-- AMPLITUDES: ms, amplitude -->
+        <item>6</item>
+        <item>120</item>
+        <item>15</item>
+        <item>0</item>
+        <item>8</item>
+        <item>140</item>
+        <item>-9999</item><!-- SENTINEL SEPARATOR -->
+        <item>7</item><!-- TICK -->
+        <item>180</item><!-- scale -->
+        <item>0</item><!-- delayMs -->
+        <item>1</item><!-- CLICK -->
+        <item>180</item><!-- scale -->
+        <item>15</item><!-- delayMs -->
+    </integer-array>
+
+    <!-- Edit field: a quick swell. -->
+    <integer-array name="control_edit_text_pattern">
+        <item>0</item>
+        <item>30</item>
+        <item>-9998</item><!-- AMPLITUDES: ms, amplitude -->
+        <item>12</item>
+        <item>120</item>
+        <item>-9999</item><!-- SENTINEL SEPARATOR -->
+        <item>4</item><!-- QUICK_RISE -->
+        <item>150</item><!-- scale -->
+        <item>0</item><!-- delayMs -->
+    </integer-array>
+
+    <!-- Drop-down list: a click, then a tap. -->
+    <integer-array name="control_combo_box_pattern">
+        <item>0</item>
+        <item>16</item>
+        <item>15</item>
+        <item>8</item>
+        <item>-9998</item><!-- AMPLITUDES: ms, amplitude -->
+        <item>8</item>
+        <item>140</item>
+        <item>15</item>
+        <item>0</item>
+        <item>6</item>
+        <item>120</item>
+        <item>-9999</item><!-- SENTINEL SEPARATOR -->
+        <item>1</item><!-- CLICK -->
+        <item>180</item><!-- scale -->
+        <item>0</item><!-- delayMs -->
+        <item>7</item><!-- TICK -->
+        <item>180</item><!-- scale -->
+        <item>15</item><!-- delayMs -->
+    </integer-array>
+
+    <!-- Slider: three taps, getting firmer. -->
+    <integer-array name="control_slider_pattern">
+        <item>0</item>
+        <item>10</item>
+        <item>10</item>
+        <item>10</item>
+        <item>10</item>
+        <item>10</item>
+        <item>-9998</item><!-- AMPLITUDES: ms, amplitude -->
+        <item>6</item>
+        <item>100</item>
+        <item>10</item>
+        <item>0</item>
+        <item>6</item>
+        <item>120</item>
+        <item>10</item>
+        <item>0</item>
+        <item>6</item>
+        <item>140</item>
+        <item>-9999</item><!-- SENTINEL SEPARATOR -->
+        <item>7</item><!-- TICK -->
+        <item>120</item><!-- scale -->
+        <item>0</item><!-- delayMs -->
+        <item>7</item><!-- TICK -->
+        <item>160</item><!-- scale -->
+        <item>10</item><!-- delayMs -->
+        <item>7</item><!-- TICK -->
+        <item>200</item><!-- scale -->
+        <item>10</item><!-- delayMs -->
+    </integer-array>
+
+    <!-- Image: a short fall. -->
+    <integer-array name="control_image_pattern">
+        <item>0</item>
+        <item>28</item>
+        <item>-9998</item><!-- AMPLITUDES: ms, amplitude -->
+        <item>12</item>
+        <item>110</item>
+        <item>12</item>
+        <item>70</item>
+        <item>-9999</item><!-- SENTINEL SEPARATOR -->
+        <item>6</item><!-- QUICK_FALL -->
+        <item>150</item><!-- scale -->
+        <item>0</item><!-- delayMs -->
+    </integer-array>
+
+    <!-- Clock: two even taps, like a tick and a tock. -->
+    <integer-array name="control_clock_pattern">
+        <item>0</item>
+        <item>8</item>
+        <item>40</item>
+        <item>8</item>
+        <item>-9998</item><!-- AMPLITUDES: ms, amplitude -->
+        <item>6</item>
+        <item>110</item>
+        <item>40</item>
+        <item>0</item>
+        <item>6</item>
+        <item>110</item>
+        <item>-9999</item><!-- SENTINEL SEPARATOR -->
+        <item>7</item><!-- TICK -->
+        <item>150</item><!-- scale -->
+        <item>0</item><!-- delayMs -->
+        <item>7</item><!-- TICK -->
+        <item>150</item><!-- scale -->
+        <item>40</item><!-- delayMs -->
+    </integer-array>
+
+    <!-- Tab: a click, then a light tap. -->
+    <integer-array name="control_tab_pattern">
+        <item>0</item>
+        <item>18</item>
+        <item>12</item>
+        <item>8</item>
+        <item>-9998</item><!-- AMPLITUDES: ms, amplitude -->
+        <item>8</item>
+        <item>130</item>
+        <item>12</item>
+        <item>0</item>
+        <item>6</item>
+        <item>100</item>
+        <item>-9999</item><!-- SENTINEL SEPARATOR -->
+        <item>1</item><!-- CLICK -->
+        <item>160</item><!-- scale -->
+        <item>0</item><!-- delayMs -->
+        <item>7</item><!-- TICK -->
+        <item>120</item><!-- scale -->
+        <item>12</item><!-- delayMs -->
+    </integer-array>
+
+    <!-- Menu item: one firm tap. -->
+    <integer-array name="control_menu_item_pattern">
+        <item>0</item>
+        <item>13</item>
+        <item>-9998</item><!-- AMPLITUDES: ms, amplitude -->
+        <item>8</item>
+        <item>125</item>
+        <item>-9999</item><!-- SENTINEL SEPARATOR -->
+        <item>7</item><!-- TICK -->
+        <item>200</item><!-- scale -->
+        <item>0</item><!-- delayMs -->
+    </integer-array>
+
+    <!-- List item: one soft tap. -->
+    <integer-array name="control_list_item_pattern">
+        <item>0</item>
+        <item>9</item>
+        <item>-9998</item><!-- AMPLITUDES: ms, amplitude -->
+        <item>8</item>
+        <item>95</item>
+        <item>-9999</item><!-- SENTINEL SEPARATOR -->
+        <item>7</item><!-- TICK -->
+        <item>160</item><!-- scale -->
+        <item>0</item><!-- delayMs -->
+    </integer-array>
+
+    <!-- Tree item: two soft taps. -->
+    <integer-array name="control_tree_item_pattern">
+        <item>0</item>
+        <item>9</item>
+        <item>20</item>
+        <item>9</item>
+        <item>-9998</item><!-- AMPLITUDES: ms, amplitude -->
+        <item>8</item>
+        <item>95</item>
+        <item>20</item>
+        <item>0</item>
+        <item>8</item>
+        <item>95</item>
+        <item>-9999</item><!-- SENTINEL SEPARATOR -->
+        <item>7</item><!-- TICK -->
+        <item>160</item><!-- scale -->
+        <item>0</item><!-- delayMs -->
+        <item>7</item><!-- TICK -->
+        <item>160</item><!-- scale -->
+        <item>20</item><!-- delayMs -->
+    </integer-array>
+
+    <!-- Braille display connected: a tap, then a firm click. -->
+    <integer-array name="display_connected_pattern">
+        <item>0</item>
+        <item>15</item>
+        <item>50</item>
+        <item>30</item>
+        <item>-9998</item><!-- AMPLITUDES: ms, amplitude -->
+        <item>8</item>
+        <item>120</item>
+        <item>50</item>
+        <item>0</item>
+        <item>15</item>
+        <item>150</item>
+        <item>-9999</item><!-- SENTINEL SEPARATOR -->
+        <item>7</item><!-- TICK -->
+        <item>200</item><!-- scale -->
+        <item>0</item><!-- delayMs -->
+        <item>1</item><!-- CLICK -->
+        <item>255</item><!-- scale -->
+        <item>50</item><!-- delayMs -->
+    </integer-array>
+
+    <!-- Braille display disconnected: a firm click, then a tap. -->
+    <integer-array name="display_disconnected_pattern">
+        <item>0</item>
+        <item>30</item>
+        <item>50</item>
+        <item>15</item>
+        <item>-9998</item><!-- AMPLITUDES: ms, amplitude -->
+        <item>15</item>
+        <item>150</item>
+        <item>50</item>
+        <item>0</item>
+        <item>8</item>
+        <item>120</item>
+        <item>-9999</item><!-- SENTINEL SEPARATOR -->
+        <item>1</item><!-- CLICK -->
+        <item>255</item><!-- scale -->
+        <item>0</item><!-- delayMs -->
+        <item>7</item><!-- TICK -->
+        <item>200</item><!-- scale -->
+        <item>50</item><!-- delayMs -->
+    </integer-array>
+
+    <!-- Braille command failed: two even clicks. -->
+    <integer-array name="double_beep_pattern">
+        <item>0</item>
+        <item>20</item>
+        <item>60</item>
+        <item>20</item>
+        <item>-9998</item><!-- AMPLITUDES: ms, amplitude -->
+        <item>8</item>
+        <item>140</item>
+        <item>60</item>
+        <item>0</item>
+        <item>8</item>
+        <item>140</item>
+        <item>-9999</item><!-- SENTINEL SEPARATOR -->
+        <item>1</item><!-- CLICK -->
+        <item>220</item><!-- scale -->
+        <item>0</item><!-- delayMs -->
+        <item>1</item><!-- CLICK -->
+        <item>220</item><!-- scale -->
+        <item>60</item><!-- delayMs -->
+    </integer-array>
+
+    <!-- Braille auto scroll on: a tap, then a click. -->
+    <integer-array name="turn_on_pattern">
+        <item>0</item>
+        <item>12</item>
+        <item>40</item>
+        <item>25</item>
+        <item>-9998</item><!-- AMPLITUDES: ms, amplitude -->
+        <item>8</item>
+        <item>110</item>
+        <item>40</item>
+        <item>0</item>
+        <item>10</item>
+        <item>145</item>
+        <item>-9999</item><!-- SENTINEL SEPARATOR -->
+        <item>7</item><!-- TICK -->
+        <item>170</item><!-- scale -->
+        <item>0</item><!-- delayMs -->
+        <item>1</item><!-- CLICK -->
+        <item>220</item><!-- scale -->
+        <item>40</item><!-- delayMs -->
+    </integer-array>
+
+    <!-- Braille auto scroll off: a click, then a tap. -->
+    <integer-array name="turn_off_pattern">
+        <item>0</item>
+        <item>25</item>
+        <item>40</item>
+        <item>12</item>
+        <item>-9998</item><!-- AMPLITUDES: ms, amplitude -->
+        <item>10</item>
+        <item>145</item>
+        <item>40</item>
+        <item>0</item>
+        <item>8</item>
+        <item>110</item>
+        <item>-9999</item><!-- SENTINEL SEPARATOR -->
+        <item>1</item><!-- CLICK -->
+        <item>220</item><!-- scale -->
+        <item>0</item><!-- delayMs -->
+        <item>7</item><!-- TICK -->
+        <item>170</item><!-- scale -->
+        <item>40</item><!-- delayMs -->
+    </integer-array>
+
+    <!-- Braille keyboard calibrated: four quick taps. -->
+    <integer-array name="calibration_done_pattern">
+        <item>0</item>
+        <item>10</item>
+        <item>20</item>
+        <item>10</item>
+        <item>20</item>
+        <item>10</item>
+        <item>20</item>
+        <item>10</item>
+        <item>-9998</item><!-- AMPLITUDES: ms, amplitude -->
+        <item>6</item>
+        <item>110</item>
+        <item>20</item>
+        <item>0</item>
+        <item>6</item>
+        <item>110</item>
+        <item>20</item>
+        <item>0</item>
+        <item>6</item>
+        <item>110</item>
+        <item>20</item>
+        <item>0</item>
+        <item>6</item>
+        <item>110</item>
+        <item>-9999</item><!-- SENTINEL SEPARATOR -->
+        <item>7</item><!-- TICK -->
+        <item>150</item><!-- scale -->
+        <item>0</item><!-- delayMs -->
+        <item>7</item><!-- TICK -->
+        <item>150</item><!-- scale -->
+        <item>20</item><!-- delayMs -->
+        <item>7</item><!-- TICK -->
+        <item>150</item><!-- scale -->
+        <item>20</item><!-- delayMs -->
+        <item>7</item><!-- TICK -->
+        <item>150</item><!-- scale -->
+        <item>20</item><!-- delayMs -->
+    </integer-array>
 </resources>

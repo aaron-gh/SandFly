@@ -398,7 +398,7 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
       }
       pipeline.returnFeedback(
           eventId,
-          Feedback.part().setSound(Feedback.Sound.create(R.id.screen_on, 1.0f, volume)));
+          Feedback.part().setSound(Feedback.Sound.create(R.raw.screen_on, 1.0f, volume)));
     }
     for (ScreenChangedListener screenChangedListener : screenChangedListeners) {
       if (screenChangedListener != null) {

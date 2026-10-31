@@ -318,7 +318,7 @@ To replace single sounds with your own, open **Sounds** under the theme that you
 
 Like the [Unspoken](https://github.com/ahicks92/Unspoken) add-on for NVDA, SandFly can play a sound for each kind of element in place of the focus sound, and leave out words such as "button" and "checkbox". There are sounds and vibrations for buttons, checkboxes (which also cover switches and toggle buttons), radio buttons, edit fields, drop-down lists, sliders, images, clocks, tabs, menu items, and list items, and on web pages, for links and tree items. To turn them on, go to **Sound and vibration** > **Sound themes** and turn on **Control sounds and vibrations**.
 
-SandFly has no control sounds or vibrations of its own: they come from the sound theme that you're using. Until a kind of element has a sound or a vibration, it plays the focus sound and SandFly says what kind of element it is. An element that has a vibration but no sound plays the focus sound with its own vibration. A control's vibration plays even with sound feedback off, so you can learn the kinds of controls by touch alone.
+Each kind of element has a short sound and a vibration of SandFly's own, which a sound theme can replace. A kind of element whose sound is turned off, or set to no sound in the theme, plays the focus sound, and SandFly says what kind of element it is. A control's vibration plays even with sound feedback off, so you can learn the kinds of controls by touch alone.
 
 A row that isn't a control itself, such as a row in Settings, plays the sound of the control in it, such as its switch, and otherwise the sound for its kind of item, such as a list item. Plain text and keys on the keyboard keep the usual focus sound. Moving into or out of a list plays the list sound and the control's sound together, with the control's vibration.
 
@@ -326,14 +326,14 @@ To keep hearing the kind of control as well, turn on **Still say the kind of con
 
 ### Navigation sounds
 
-TalkBack plays a sound and vibration when a gesture starts and another when it ends. SandFly plays neither. In their place, it has these sounds, and a sound theme can give a sound and a vibration to each of them:
+TalkBack plays a sound and vibration when a gesture starts and another when it ends. SandFly plays neither. In their place, it has these sounds, each with a vibration, which a sound theme can replace:
 
 - **Next reading control** and **Previous reading control**: selecting another reading control, with a gesture, the rotor, a keyboard shortcut or the braille keyboard.
 - **Edge gesture bottom**, **Edge gesture middle** and **Edge gesture top**: a finger touching an edge where an edge gesture starts, the gesture reaching its first click, and the gesture reaching its second click. Sliding back plays the sound of the place the finger is back at. Lifting plays nothing.
 - **Insertion point moved**: moving by character, word, line or paragraph moves the cursor in a text field you are editing.
 - **Column wrap** and **Column wrap back**: swiping forward to an item below the row you are in, and back to an item above it. Each item of a list is a row of its own; items side by side, such as icons on a home screen, cells of a table, or a title with buttons beside it, share a row. The sound plays with the focus sound, and its vibration plays in place of the focus vibration.
 
-SandFly has sounds of its own only for the edge gestures: a low tick at the edge, a higher tone at the first click, and two rising tones at the second click. The others play only a theme's sound. The edge gesture middle and top have SandFly's edge gesture vibrations; the others vibrate only with a theme's vibration. Each has its own sound and vibration switch in **Individual sounds and vibrations**.
+The edge gestures play a low tick at the edge, a higher tone at the first click, and two rising tones at the second click. Each navigation sound has its own sound and vibration switch in **Individual sounds and vibrations**.
 
 Rows are found by where items are on the screen: an item is on another row when its middle is below the bottom of the focused item, or above its top. Column wrap doesn't play for swipes that move from one window to another.
 

@@ -128,8 +128,6 @@
     <string name="theme_sound_summary_default">SandFly\'s sound</string>
     <!-- Theme sounds: summary of a sound the theme replaces. [CHAR LIMIT=60] -->
     <string name="theme_sound_summary_custom">Theme sound</string>
-    <!-- Theme sounds: summary of a control sound, which SandFly has no sound for, that the theme has no file for. [CHAR LIMIT=NONE] -->
-    <string name="theme_sound_summary_none">No sound. The focus sound plays.</string>
     <!-- Theme sounds: summary of a braille keyboard typing sound that plays Android's keyboard sound. [CHAR LIMIT=60] -->
     <string name="theme_sound_summary_android_keyboard">Android\'s keyboard sound</string>
     <!-- Theme sounds: choice that goes back to Android's keyboard sound for a braille keyboard typing sound. [CHAR LIMIT=50] -->
@@ -156,8 +154,6 @@
     <string name="theme_sound_action_set_none">Set to no sound</string>
     <!-- Theme sounds: choice that goes back to SandFly's own sound. [CHAR LIMIT=50] -->
     <string name="theme_sound_use_default">Use SandFly\'s sound</string>
-    <!-- Theme sounds: choice that removes the file of a control sound, which SandFly has no sound for. [CHAR LIMIT=50] -->
-    <string name="theme_sound_remove">Remove the sound</string>
     <!-- Theme sounds: message when the chosen file is too large. [CHAR LIMIT=NONE] -->
     <string name="theme_sound_too_large">That file is too large. A sound can be up to 5 MB.</string>
     <!-- Theme sounds: message when the chosen file cannot be played. [CHAR LIMIT=NONE] -->
