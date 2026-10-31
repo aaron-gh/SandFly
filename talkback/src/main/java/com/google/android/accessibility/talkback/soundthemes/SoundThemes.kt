@@ -323,11 +323,15 @@ object SoundThemes {
         ControlSoundsSettings.PREF_3D,
         manifest.audio3d ?: ControlSoundsSettings.VALUE_3D_WITH_HEADPHONES,
       )
+      .putBoolean(
+        ControlSoundsSettings.PREF_SPEAK_ROLES,
+        manifest.speakRoles ?: ControlSoundsSettings.speakRolesDefault(theme.id),
+      )
       .putLong(PREF_CHANGED, System.currentTimeMillis())
       .apply()
   }
 
-  /** Saves the control sounds and 3D audio settings to the theme in use. */
+  /** Saves the control sounds, 3D audio and kind of control settings to the theme in use. */
   @JvmStatic
   fun saveSettings(context: Context, prefs: SharedPreferences) {
     val theme = edited(context, prefs)
@@ -338,6 +342,15 @@ object SoundThemes {
         audio3d =
           if (isDraft(theme.id) && !prefs.contains(ControlSoundsSettings.PREF_3D))
             theme.manifest.audio3d else prefs.getString(ControlSoundsSettings.PREF_3D, ControlSoundsSettings.VALUE_3D_WITH_HEADPHONES),
+        speakRoles =
+          if (isDraft(theme.id) && !prefs.contains(ControlSoundsSettings.PREF_SPEAK_ROLES)) {
+            theme.manifest.speakRoles
+          } else {
+            prefs.getBoolean(
+              ControlSoundsSettings.PREF_SPEAK_ROLES,
+              theme.manifest.speakRoles ?: ControlSoundsSettings.speakRolesDefault(theme.id),
+            )
+          },
       )
     if (manifest != theme.manifest) write(theme.copy(manifest = manifest))
   }

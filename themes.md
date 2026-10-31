@@ -44,12 +44,14 @@ Under **Settings of** the theme in use:
     the kinds of control by touch alone. A kind of control whose sound the theme sets to no sound
     plays the focus sound with its own vibration, and SandFly says what kind of control it is.
 *   **3D audio** sets when control sounds play in 3D: with headphones, always, or never.
+*   **Still say the kind of control** says the kind of control, such as "button", after its
+    sound. It is on by default for SandFly's theme and off for others.
 *   **Sounds** lists every sound, where you can replace any of them with a sound file of your own,
     preview it, or go back to SandFly's sound.
 
-Each theme remembers its own **Control sounds and vibrations** and **3D audio** settings, so
-switching themes switches them too. A theme starts with the settings in its `theme.json`. **Still
-say the kind of control**, in **Sound and vibration**, is the same for every theme.
+Each theme remembers its own **Control sounds and vibrations**, **3D audio** and **Still say the
+kind of control** settings, so switching themes switches them too. A theme starts with the
+settings in its `theme.json`.
 
 To replace a few sounds without installing anything, use **Sounds** with the SandFly theme in use.
 To share your sounds, select the theme and choose **Save as a theme file**.
@@ -127,6 +129,7 @@ Every field is optional.
 | `website` | Where to find out more, or get updates. |
 | `settings.control_sounds` | `true` or `false`: whether control sounds and vibrations are on with this theme. Without it, they are on when the theme has a control sound or a control vibration. |
 | `settings.3d_audio` | `"headphones"`, `"always"` or `"never"`: when control sounds play in 3D. Without it, `"headphones"`. |
+| `settings.speak_roles` | `true` or `false`: whether the kind of control is still said after its control sound. Without it, `false`. |
 | `sounds` | Settings for sounds by event name, such as `"scroll_tone": "none"` to play no sound for an event. |
 | `vibrations` | The theme's own vibrations, by the name of the sound they play with. See below. |
 

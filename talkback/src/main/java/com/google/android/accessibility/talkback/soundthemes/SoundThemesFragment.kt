@@ -73,10 +73,14 @@ class SoundThemesFragment : TalkbackBaseFragment() {
       if (uri != null && id != null) export(id, uri)
     }
 
-  // Saves the control sounds and 3D audio settings to the theme in use as soon as they change.
+  // Saves the theme's own settings to the theme in use as soon as they change.
   private val settingsListener =
     SharedPreferences.OnSharedPreferenceChangeListener { prefs, key ->
-      if (key == ControlSoundsSettings.PREF_ON || key == ControlSoundsSettings.PREF_3D) {
+      if (
+        key == ControlSoundsSettings.PREF_ON ||
+          key == ControlSoundsSettings.PREF_3D ||
+          key == ControlSoundsSettings.PREF_SPEAK_ROLES
+      ) {
         SoundThemes.saveSettings(requireContext(), prefs)
       }
     }
@@ -252,7 +256,6 @@ class SoundThemesFragment : TalkbackBaseFragment() {
         key = ControlSoundsSettings.PREF_ON
         setDefaultValue(false)
         setTitle(R.string.title_pref_control_sounds)
-        setSummary(R.string.summary_pref_control_sounds)
         isIconSpaceReserved = false
       }
     )
@@ -268,9 +271,18 @@ class SoundThemesFragment : TalkbackBaseFragment() {
         isIconSpaceReserved = false
       }
     )
-    // Placed sounds only play with control sounds on.
-    settings.findPreference<Preference>(ControlSoundsSettings.PREF_3D)?.dependency =
-      ControlSoundsSettings.PREF_ON
+    settings.addPreference(
+      AccessibilitySuiteSwitchPreference(context).apply {
+        key = ControlSoundsSettings.PREF_SPEAK_ROLES
+        setDefaultValue(ControlSoundsSettings.speakRolesDefault(active.id))
+        setTitle(R.string.title_pref_control_sounds_speak_roles)
+        isIconSpaceReserved = false
+      }
+    )
+    // Placed sounds and the kind of control only matter with control sounds on.
+    for (key in listOf(ControlSoundsSettings.PREF_3D, ControlSoundsSettings.PREF_SPEAK_ROLES)) {
+      settings.findPreference<Preference>(key)?.dependency = ControlSoundsSettings.PREF_ON
+    }
     settings.addPreference(
       AccessibilitySuitePreference(context).apply {
         fragment = ThemeSoundsFragment::class.java.name

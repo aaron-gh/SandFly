@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="title_pref_control_sounds">Звуки и вибрации элементов управления</string>
-  <string name="summary_pref_control_sounds">Назначить каждому типу элементов управления, например кнопкам, флажкам, полям редактирования и элементам списка, собственный звук и вибрацию из темы вместо обычного звука и вибрации фокуса, как в дополнении Unspoken для NVDA. Звук исходит из того места, где элемент находится на экране. SandFly при этом не произносит тип элемента.</string>
   <string name="title_pref_control_sounds_speak_roles">Озвучивать тип элемента даже при наличии звука</string>
-  <string name="summary_pref_control_sounds_speak_roles">При воспроизведении звука элемента управления также произносить его тип, например «кнопка». Применяется ко всем звуковым темам.</string>
   <string name="title_pref_control_sounds_3d">Объёмный звук</string>
   <string name="pref_control_sounds_3d_headphones">В наушниках</string>
   <string name="pref_control_sounds_3d_always">Всегда</string>

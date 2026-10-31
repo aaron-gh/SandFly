@@ -39,7 +39,7 @@ class SoundThemeManifestTest {
         """
         {"name": "Unspoken", "author": "Bryan Smart", "description": "Sounds for controls",
          "license": "GPL-2.0", "website": "https://example.com",
-         "settings": {"control_sounds": true, "3d_audio": "always"}}
+         "settings": {"control_sounds": true, "3d_audio": "always", "speak_roles": false}}
         """
       )
     assertEquals("Unspoken", manifest.name)
@@ -47,6 +47,7 @@ class SoundThemeManifestTest {
     assertEquals("GPL-2.0", manifest.license)
     assertEquals(true, manifest.controlSounds)
     assertEquals("always", manifest.audio3d)
+    assertEquals(false, manifest.speakRoles)
     assertTrue(manifest.warnings.isEmpty())
   }
 
@@ -56,14 +57,17 @@ class SoundThemeManifestTest {
     assertEquals("fallback", manifest.name)
     assertNull(manifest.controlSounds)
     assertNull(manifest.audio3d)
+    assertNull(manifest.speakRoles)
   }
 
   @Test
   fun badSettingsAreWarnedAboutAndLeftOut() {
-    val manifest = parse("""{"settings": {"control_sounds": "yes", "3d_audio": "loud"}}""")
+    val manifest =
+      parse("""{"settings": {"control_sounds": "yes", "3d_audio": "loud", "speak_roles": 1}}""")
     assertNull(manifest.controlSounds)
     assertNull(manifest.audio3d)
-    assertEquals(2, manifest.warnings.size)
+    assertNull(manifest.speakRoles)
+    assertEquals(3, manifest.warnings.size)
   }
 
   @Test

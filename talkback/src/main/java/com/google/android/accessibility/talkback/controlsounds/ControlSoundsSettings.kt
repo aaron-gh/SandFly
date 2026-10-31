@@ -18,12 +18,14 @@ package com.google.android.accessibility.talkback.controlsounds
 
 import android.content.SharedPreferences
 import com.google.android.accessibility.talkback.individualfeedback.SoundVibrations
+import com.google.android.accessibility.talkback.soundthemes.SoundThemes
 import com.google.android.accessibility.utils.output.FeedbackController
 
 /** Stored settings for control sounds. They are off by default. */
 object ControlSoundsSettings {
   const val PREF_ON = "pref_control_sounds"
-  const val PREF_SPEAK_ROLES = "pref_control_sounds_speak_roles"
+  /** Each theme's own. Named apart from the setting all themes once shared, which was off. */
+  const val PREF_SPEAK_ROLES = "pref_control_sounds_speak_roles_theme"
   const val PREF_3D = "pref_control_sounds_3d"
 
   const val VALUE_3D_WITH_HEADPHONES = "headphones"
@@ -32,9 +34,17 @@ object ControlSoundsSettings {
 
   @JvmStatic fun isOn(prefs: SharedPreferences): Boolean = prefs.getBoolean(PREF_ON, false)
 
-  /** Whether to still say "button" and the like when a control's sound plays. */
+  /**
+   * Whether to still say "button" and the like when a control's sound plays. Until set, it is on
+   * with SandFly's own theme and off with others.
+   */
   @JvmStatic
-  fun speakRoles(prefs: SharedPreferences): Boolean = prefs.getBoolean(PREF_SPEAK_ROLES, false)
+  fun speakRoles(prefs: SharedPreferences): Boolean =
+    prefs.getBoolean(PREF_SPEAK_ROLES, speakRolesDefault(SoundThemes.activeId(prefs)))
+
+  /** Whether the theme [themeId] says the kind of control when its theme.json doesn't say. */
+  @JvmStatic
+  fun speakRolesDefault(themeId: String): Boolean = themeId == SoundThemes.BACKTALK
 
   /** How control sounds are placed, as a [FeedbackController] spatial mode. */
   @JvmStatic

@@ -35,6 +35,8 @@ data class SoundThemeManifest(
   val controlSounds: Boolean? = null,
   /** When control sounds play in 3D: one of [AUDIO_3D_VALUES]. */
   val audio3d: String? = null,
+  /** Whether the kind of control is still said when its control sound plays. */
+  val speakRoles: Boolean? = null,
   /** Sounds set to "none", so that they do not play. */
   val sounds: Map<String, String> = emptyMap(),
   /**
@@ -57,10 +59,11 @@ data class SoundThemeManifest(
     description?.let { json.put(DESCRIPTION, it) }
     license?.let { json.put(LICENSE, it) }
     website?.let { json.put(WEBSITE, it) }
-    if (controlSounds != null || audio3d != null) {
+    if (controlSounds != null || audio3d != null || speakRoles != null) {
       val settings = JSONObject()
       controlSounds?.let { settings.put(CONTROL_SOUNDS, it) }
       audio3d?.let { settings.put(AUDIO_3D, it) }
+      speakRoles?.let { settings.put(SPEAK_ROLES, it) }
       json.put(SETTINGS, settings)
     }
     if (sounds.isNotEmpty()) {
@@ -92,6 +95,7 @@ data class SoundThemeManifest(
     private const val SETTINGS = "settings"
     private const val CONTROL_SOUNDS = "control_sounds"
     private const val AUDIO_3D = "3d_audio"
+    private const val SPEAK_ROLES = "speak_roles"
     private const val SOUNDS = "sounds"
     private const val VIBRATIONS = "vibrations"
     private const val PATTERN = "pattern"
@@ -154,6 +158,10 @@ data class SoundThemeManifest(
               warnings += "settings.$AUDIO_3D must be one of ${AUDIO_3D_VALUES.joinToString()}"
             }
         }
+      val speakRoles =
+        settings?.opt(SPEAK_ROLES)?.let {
+          it as? Boolean ?: null.also { warnings += "settings.$SPEAK_ROLES must be true or false" }
+        }
       val sounds = LinkedHashMap<String, String>()
       json.optJSONObject(SOUNDS)?.let { all ->
         for (key in all.keys()) {
@@ -195,6 +203,7 @@ data class SoundThemeManifest(
         website = text(json, WEBSITE, MAX_TEXT_LENGTH),
         controlSounds = controlSounds,
         audio3d = audio3d,
+        speakRoles = speakRoles,
         sounds = sounds,
         vibrations = vibrations,
         warnings = warnings,

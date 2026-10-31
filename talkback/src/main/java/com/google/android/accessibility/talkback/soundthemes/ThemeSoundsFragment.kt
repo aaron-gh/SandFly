@@ -143,7 +143,6 @@ class ThemeSoundsFragment : TalkbackBaseFragment() {
           true
         }
         setTitle(R.string.title_pref_control_sounds)
-        setSummary(R.string.summary_pref_control_sounds)
         isIconSpaceReserved = false
       })
       screen.addPreference(AccessibilitySuiteListPreference(context).apply {
@@ -162,9 +161,22 @@ class ThemeSoundsFragment : TalkbackBaseFragment() {
         summary = "%s"
         isIconSpaceReserved = false
       })
-      // Placed sounds only play with control sounds on.
-      findPreference<Preference>(ControlSoundsSettings.PREF_3D)?.dependency =
-        ControlSoundsSettings.PREF_ON
+      screen.addPreference(AccessibilitySuiteSwitchPreference(context).apply {
+        key = ControlSoundsSettings.PREF_SPEAK_ROLES
+        isPersistent = false
+        isChecked = prefs.getBoolean(key, false)
+        setOnPreferenceChangeListener { _, value ->
+          if (closing || !available()) return@setOnPreferenceChangeListener false
+          prefs.edit().putBoolean(key, value as Boolean).apply()
+          true
+        }
+        setTitle(R.string.title_pref_control_sounds_speak_roles)
+        isIconSpaceReserved = false
+      })
+      // Placed sounds and the kind of control only matter with control sounds on.
+      for (key in listOf(ControlSoundsSettings.PREF_3D, ControlSoundsSettings.PREF_SPEAK_ROLES)) {
+        findPreference<Preference>(key)?.dependency = ControlSoundsSettings.PREF_ON
+      }
     }
 
     val reset =

@@ -20,6 +20,7 @@ import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.directtouch.FakeSharedPreferences
 import com.google.android.accessibility.talkback.individualfeedback.IndividualFeedbackSettings
 import com.google.android.accessibility.utils.output.FeedbackController
+import com.google.android.accessibility.talkback.soundthemes.SoundThemes
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
@@ -31,9 +32,17 @@ class ControlSoundsSettingsTest {
   private fun turnOn() = prefs.edit().putBoolean(ControlSoundsSettings.PREF_ON, true).apply()
 
   @Test
+  fun theKindOfControlIsSaidByDefaultOnlyWithSandFlysTheme() {
+    assertTrue(ControlSoundsSettings.speakRoles(prefs))
+    prefs.edit().putString(SoundThemes.PREF_ACTIVE, "unspoken").apply()
+    assertFalse(ControlSoundsSettings.speakRoles(prefs))
+    prefs.edit().putBoolean(ControlSoundsSettings.PREF_SPEAK_ROLES, true).apply()
+    assertTrue(ControlSoundsSettings.speakRoles(prefs))
+  }
+
+  @Test
   fun offByDefault() {
     assertFalse(ControlSoundsSettings.isOn(prefs))
-    assertFalse(ControlSoundsSettings.speakRoles(prefs))
     assertTrue(ControlSoundsSettings.playingSounds(prefs, true, emptySet(), emptySet()).isEmpty())
   }
 

@@ -322,7 +322,7 @@ Each kind of element has a short sound and a vibration of SandFly's own, which a
 
 A row that isn't a control itself, such as a row in Settings, plays the sound of the control in it, such as its switch, and otherwise the sound for its kind of item, such as a list item. Plain text and keys on the keyboard keep the usual focus sound. Moving into or out of a list plays the list sound and the control's sound together, with the control's vibration.
 
-To keep hearing the kind of control as well, turn on **Still say the kind of control** in **Sound and vibration**. Each control sound and vibration also has its own switch in **Individual sounds and vibrations**.
+With SandFly's own theme, SandFly still says the kind of control after its sound. Each theme has its own **Still say the kind of control** setting, on by default only for SandFly's theme. Each control sound and vibration also has its own switch in **Individual sounds and vibrations**.
 
 ### Navigation sounds
 
@@ -341,7 +341,7 @@ Rows are found by where items are on the screen: an item is on another row when 
 
 Each control sound comes from where the element is on the screen: from the left for elements on the left, and from higher up for elements near the top. With headphones, the sounds play in 3D, using measurements of how a real head hears sound from each direction (the MIT Media Lab KEMAR measurements, by Bill Gardner and Keith Martin). On the phone speaker, the sounds only move between left and right.
 
-On Android 13 and later, SandFly uses 3D when its audio plays on wired or USB headphones, a hearing aid, a Bluetooth media device, or a Bluetooth LE headset. Bluetooth LE speakers, broadcasts, and call audio don't count. On earlier versions, any connected audio device counts. To play the sounds in 3D on the speaker as well, or never, change **3D audio** for the theme. Each theme has its own **Control sounds and vibrations** and **3D audio** settings.
+On Android 13 and later, SandFly uses 3D when its audio plays on wired or USB headphones, a hearing aid, a Bluetooth media device, or a Bluetooth LE headset. Bluetooth LE speakers, broadcasts, and call audio don't count. On earlier versions, any connected audio device counts. To play the sounds in 3D on the speaker as well, or never, change **3D audio** for the theme. Each theme has its own **Control sounds and vibrations**, **3D audio** and **Still say the kind of control** settings.
 
 ### Sound mode reading control
 
