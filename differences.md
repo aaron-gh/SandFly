@@ -30,6 +30,10 @@ When a swipe moves to a list item that is only partly on screen, the list scroll
 
 When you turn on **Controls** > **Touch and activation** > **Reduce delay** > **Speak items before they scroll into view**, SandFly speaks these items straight away too, including the parts that are still past the edge of the list, since they will be on screen once it has scrolled. Parts the app has hidden are still left out. Apps that follow Android's conventions work correctly with this setting on. It is off by default to protect you from apps that don't: in those, a part that the app keeps out of sight by moving it outside the item, instead of hiding it, is read even though it isn't shown, and so is a part that stays off screen when the list can't scroll the whole item into view.
 
+### No items skipped when a swipe scrolls a list
+
+When a swipe at the end of the screen scrolls a list a page, SandFly continues as soon as the list starts to move. TalkBack's node cache still held the list as it was then, so the search could find rows at their old places, or a reused row with its old text, and skip items or jump back. On Android 13 and later, SandFly reads the list again from the app at that moment, on several threads at once. When the next item still isn't on screen, SandFly looks again on each frame until the list stops, for at most about 300 ms, instead of scrolling a second page while the first is still moving. In walks through Android's Settings list on an emulator, the time from lifting your finger to speech on swipes that scroll was the same as before.
+
 ### Reading order kept between swipes
 
 TalkBack asked the app for every item on the screen on each swipe, and waited for each answer. SandFly keeps the reading order between swipes, and builds it again only when the screen changes, or when SandFly scrolls or clicks. Changes to text or state, such as a clock that ticks or a progress bar that moves, don't discard the order.
