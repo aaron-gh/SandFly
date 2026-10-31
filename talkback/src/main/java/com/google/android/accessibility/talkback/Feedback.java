@@ -1773,6 +1773,7 @@ public abstract class Feedback {
       DOUBLE_CLICK_NODE,
       LONG_CLICK_NODE,
       CLICK_CURRENT,
+      TOUCH_CLICK_CURRENT,
       DOUBLE_CLICK_CURRENT,
       LONG_CLICK_CURRENT,
       CLICK_ANCESTOR,

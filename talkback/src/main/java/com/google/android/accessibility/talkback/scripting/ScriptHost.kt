@@ -88,6 +88,7 @@ enum class RuleAspect {
   ACTIVATE,
   SILENCE,
   LIFT,
+  TOUCH,
 }
 
 class NodeRule(
@@ -110,6 +111,8 @@ class NodeRule(
   val liftToActivate: Boolean = false,
   /** How many milliseconds a finger held on the item takes to long-press it, if a rule says. */
   val longPressAfter: Int? = null,
+  /** Whether activating the item touches it on the screen instead of clicking it. */
+  val touchToActivate: Boolean = false,
 ) {
   val hidesDescendants: Boolean
     get() = hideInside || group
@@ -190,6 +193,11 @@ object Scripts {
   @JvmStatic
   fun liftsToActivate(node: AccessibilityNodeInfoCompat?): Boolean =
     node != null && rule(node, RuleAspect.LIFT)?.liftToActivate == true
+
+  /** Whether a script rule has activating {@code node} touch it on the screen. */
+  @JvmStatic
+  fun touchesToActivate(node: AccessibilityNodeInfoCompat?): Boolean =
+    node != null && rule(node, RuleAspect.TOUCH)?.touchToActivate == true
 
   /**
    * How many milliseconds a finger held on {@code node} takes to long-press it, or 0 if no script

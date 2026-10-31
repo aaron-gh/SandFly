@@ -165,6 +165,7 @@ A rule can set any of these:
 | `activate` | A [query](#queries) for the item inside it that a double-tap presses, such as the part of a grouped post that opens it. |
 | `liftToActivate` | `true` activates the item when the finger lifts from it after touching it, as **Lift to activate** does, whatever that setting is. |
 | `longPressAfter` | For an item with `liftToActivate`, a number of milliseconds from 100 to 10,000. Holding the finger on the item for that time long-presses it, and lifting the finger then does nothing more. Items that can't be long-pressed are left alone. |
+| `touchToActivate` | `true` activates the item by tapping it on the screen instead of sending it an accessibility click, for controls that ignore that click. Needs Android 13 or later and **Handle gestures in SandFly**; elsewhere the item is clicked as usual. |
 
 When several rules match an item, the first one that sets a field wins for that field. Rules from scripts for the app come before rules from scripts for all apps, and `sf.rules.add` comes before the manifest.
 

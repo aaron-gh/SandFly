@@ -86,6 +86,7 @@ class ManifestParser(private val strict: Boolean) {
         activate = json.optJSONObject("activate")?.let { query(it) },
         liftToActivate = json.optBoolean("liftToActivate", false),
         longPressAfter = longPressAfterOf(json.opt("longPressAfter")),
+        touchToActivate = json.optBoolean("touchToActivate", false),
       )
     with(rule) {
       manifestCheck(id != null || match != null) { "A rule needs id or match" }
@@ -95,7 +96,8 @@ class ManifestParser(private val strict: Boolean) {
       }
       manifestCheck(changesItem || actions.isNotEmpty()) {
         "The rule for $target needs label, speak, hide, silence, role, state, hint, heading, " +
-          "group, readBefore, readAfter, activate, liftToActivate, longPressAfter or actions"
+          "group, readBefore, readAfter, activate, liftToActivate, longPressAfter, " +
+          "touchToActivate or actions"
       }
     }
     return rule
@@ -389,6 +391,7 @@ class ManifestParser(private val strict: Boolean) {
         "activate",
         "liftToActivate",
         "longPressAfter",
+        "touchToActivate",
       )
   }
 }

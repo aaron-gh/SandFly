@@ -564,6 +564,7 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
     PERFORM_LONG_CLICK(
         R.string.shortcut_value_perform_long_click_action,
         R.string.shortcut_perform_long_click_action),
+    TOUCH_CLICK(R.string.shortcut_value_touch_click_action, R.string.shortcut_touch_click_action),
     PREVIOUS(R.string.shortcut_value_previous, R.string.shortcut_previous),
     NEXT(R.string.shortcut_value_next, R.string.shortcut_next),
     FIRST_IN_SCREEN(R.string.shortcut_value_first_in_screen, R.string.shortcut_first_in_screen),

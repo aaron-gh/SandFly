@@ -192,6 +192,7 @@ private constructor(
         silenceInside = silence == Hide.ALL,
         liftToActivate = rules.any { it.liftToActivate },
         longPressAfter = first { it.longPressAfter },
+        touchToActivate = rules.any { it.touchToActivate },
       )
     }
 
@@ -235,6 +236,7 @@ private constructor(
         RuleAspect.ACTIVATE.takeIf { rule.activate != null },
         RuleAspect.SILENCE.takeIf { rule.silence != Hide.NONE },
         RuleAspect.LIFT.takeIf { rule.liftToActivate || rule.longPressAfter != null },
+        RuleAspect.TOUCH.takeIf { rule.touchToActivate },
       )
   }
 

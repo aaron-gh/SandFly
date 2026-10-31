@@ -850,6 +850,11 @@ public class TouchInteractionMonitor
       // Clear on transition to a new interaction
       clear();
     }
+    if (state == STATE_CLEAR
+        && (this.state == STATE_DELEGATING || this.state == STATE_DRAGGING)) {
+      // A touch handed to the app ends with its lift sent to the app alone.
+      fingerDown = false;
+    }
     if (state == STATE_TOUCH_INTERACTING) {
       waitFirstMotionEvent = true;
     } else if (state == STATE_DRAGGING) {

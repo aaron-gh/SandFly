@@ -593,6 +593,7 @@ class Actors {
         case DOUBLE_CLICK_NODE -> success &= focuser.doubleClickNode(focus.target(), eventId);
         case LONG_CLICK_NODE -> success &= focuser.longClickNode(focus.target(), eventId);
         case CLICK_CURRENT -> success &= focuser.clickCurrentFocus(eventId);
+        case TOUCH_CLICK_CURRENT -> success &= focuser.touchClickCurrentFocus(eventId);
         case DOUBLE_CLICK_CURRENT -> success &= focuser.doubleClickCurrentFocus(eventId);
         case LONG_CLICK_CURRENT -> success &= focuser.longClickCurrentFocus(eventId);
         case CLICK_ANCESTOR -> success &= focuser.clickCurrentHierarchical(eventId);

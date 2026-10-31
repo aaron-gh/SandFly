@@ -40,6 +40,7 @@ import static com.google.android.accessibility.talkback.Feedback.EditText.Action
 import static com.google.android.accessibility.talkback.Feedback.Focus.Action.CLICK_CURRENT;
 import static com.google.android.accessibility.talkback.Feedback.Focus.Action.DOUBLE_CLICK_CURRENT;
 import static com.google.android.accessibility.talkback.Feedback.Focus.Action.LONG_CLICK_CURRENT;
+import static com.google.android.accessibility.talkback.Feedback.Focus.Action.TOUCH_CLICK_CURRENT;
 import static com.google.android.accessibility.talkback.Feedback.FocusDirection.Action.NEXT_GRANULARITY;
 import static com.google.android.accessibility.talkback.Feedback.FocusDirection.Action.NEXT_PAGE;
 import static com.google.android.accessibility.talkback.Feedback.FocusDirection.Action.PREVIOUS_GRANULARITY;
@@ -574,6 +575,8 @@ public class GestureController {
     } else if (action.equals(
         service.getString(R.string.shortcut_value_perform_long_click_action))) {
       result = pipeline.returnFeedback(eventId, Feedback.focus(LONG_CLICK_CURRENT));
+    } else if (action.equals(service.getString(R.string.shortcut_value_touch_click_action))) {
+      result = pipeline.returnFeedback(eventId, Feedback.focus(TOUCH_CLICK_CURRENT));
     } else if (action.equals(service.getString(R.string.shortcut_value_select_previous_setting))) {
       selectorController.selectPreviousOrNextSetting(
           eventId, AnnounceType.DESCRIPTION_AND_HINT, false);

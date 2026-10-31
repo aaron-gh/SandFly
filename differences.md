@@ -467,6 +467,10 @@ With **Only on navigation bar** on Android 11 and later, touches on the navigati
 
 **Lift to activate** is also a reading control, so you can change it with a swipe up or down.
 
+### Activate with a tap
+
+Some controls, such as some in TikTok, ignore the accessibility click that activating sends, and react only to a finger on the screen. The gesture action **Activate with a tap**, unassigned by default, taps the middle of the focused item on the screen instead. Android works out where to tap, also when the screen is magnified. A script rule with `touchToActivate` does the same for chosen items whenever they are activated. Both need Android 13 or later and **Handle gestures in SandFly**; otherwise the item is activated as usual.
+
 ### Speech kept while you touch the screen
 
 TalkBack stops speech when a finger touches the screen. To keep speech going until touch focuses an item, turn off **Controls** > **Touch and activation** > **Stop speech when touching the screen**. Speech of the item that touch focuses still interrupts, as do gestures that speak. Activating an item, with a double tap, a key or a braille display, stops speech whether this is on or off. It's on by default.
