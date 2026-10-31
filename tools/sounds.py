@@ -90,9 +90,9 @@ def sounds():
 
     # Focus moving to an item: a soft, short wooden tap. Items that can be activated are brighter.
     s["focus"] = ([TALKBACK], [click(0, 0.03, 0.004, 0.3, seed=2),
-                               note(1400, 0, 0.05, 0.012, partials=((1, 1.0), (2.4, 0.2)))], 0.06, -6)
+                               note(700, 0, 0.05, 0.014, partials=((1, 1.0), (2.4, 0.2)))], 0.06, -6)
     s["focus_actionable"] = ([TALKBACK], [click(0, 0.03, 0.004, 0.3, seed=3),
-                                          note(1900, 0, 0.06, 0.014, partials=((1, 1.0), (2, 0.35)))],
+                                          note(950, 0, 0.06, 0.016, partials=((1, 1.0), (2, 0.35)))],
                              0.07, -6)
     # A finger moving onto an item or empty space while exploring.
     s["view_entered"] = ([TALKBACK], [note(700, 0, 0.04, 0.01, partials=((1, 1.0),))], 0.05, -10)
@@ -104,7 +104,7 @@ def sounds():
     # Moving into and out of a scrolling list: a quick upward and downward slide.
     for name, dirs in (("chime_up", [TALKBACK, BRAILLE]), ("chime_down", [TALKBACK, BRAILLE])):
         up = name == "chime_up"
-        s[name] = (dirs, [note(760 if up else 1150, 0, 0.05, 0.03, glide=1150 if up else 760,
+        s[name] = (dirs, [note(420 if up else 640, 0, 0.05, 0.03, glide=640 if up else 420,
                                partials=((1, 1.0), (2, 0.15)))], 0.05, -6)
     # A list scrolled; played faster or slower for the place in the list.
     s["scroll_tone"] = ([TALKBACK], [note(980, 0, 0.07, 0.02, partials=((1, 1.0), (2, 0.25)))],
