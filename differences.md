@@ -439,6 +439,12 @@ Each step of 30 degrees, a twelfth of a turn, moves one reading control, so you 
 
 The rotor requires Android 13 or later and **Handle gestures in SandFly** turned on. You can assign other actions to **Rotate clockwise with 2 fingers** and **Rotate counterclockwise with 2 fingers** in gesture settings.
 
+### Swipe and hold
+
+Each one-finger swipe, back-and-forth swipe and angle swipe has a version that ends with the finger resting on the screen before it lifts, such as **Swipe right and hold** or **Swipe left then up and hold**. Swipe, keep the finger still for the hold time, then lift; the action happens on the lift. Lifting sooner is the ordinary swipe, and a pause where an angle or back-and-forth swipe turns stays part of that swipe. **Hold time after a swipe**, in gesture settings, sets the rest from 0.1 to 0.5 seconds, 0.25 by default.
+
+The 16 gestures are at the end of the **1 finger**, **1 finger back-and-forth** and **1 finger angle** categories, and have no action by default. A swipe and hold without an action isn't recognized, so swipes are unchanged until you assign one. Left and right follow right-to-left layouts, as the ordinary swipes do. They need Android 13 or later and **Handle gestures in SandFly**, and aren't on watches.
+
 ### Edge gestures and scrub
 
 As in VoiceOver on iOS, you can slide one finger in from an edge of the screen. Start at the very edge, such as on the gesture navigation bar or the status bar, and slide in:

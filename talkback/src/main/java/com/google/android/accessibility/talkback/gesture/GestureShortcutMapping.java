@@ -42,6 +42,22 @@ import static com.google.android.accessibility.utils.gestures.GestureManifold.GE
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_RIGHT_FROM_LEFT_TOP;
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_UP_FROM_BOTTOM;
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_FAKED_SPLIT_TYPING;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_SWIPE_DOWN_AND_HOLD;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_SWIPE_DOWN_AND_LEFT_AND_HOLD;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_SWIPE_DOWN_AND_RIGHT_AND_HOLD;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_SWIPE_DOWN_AND_UP_AND_HOLD;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_SWIPE_LEFT_AND_DOWN_AND_HOLD;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_SWIPE_LEFT_AND_HOLD;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_SWIPE_LEFT_AND_RIGHT_AND_HOLD;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_SWIPE_LEFT_AND_UP_AND_HOLD;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_SWIPE_RIGHT_AND_DOWN_AND_HOLD;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_SWIPE_RIGHT_AND_HOLD;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_SWIPE_RIGHT_AND_LEFT_AND_HOLD;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_SWIPE_RIGHT_AND_UP_AND_HOLD;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_SWIPE_UP_AND_DOWN_AND_HOLD;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_SWIPE_UP_AND_HOLD;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_SWIPE_UP_AND_LEFT_AND_HOLD;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_SWIPE_UP_AND_RIGHT_AND_HOLD;
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_TAP_HOLD_AND_2ND_FINGER_BACKWARD_DOUBLE_TAP;
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_TAP_HOLD_AND_2ND_FINGER_FORWARD_DOUBLE_TAP;
 
@@ -221,6 +237,116 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
         SINGLE_FINGER,
         R.string.pref_shortcut_left_and_up_key,
         R.string.pref_shortcut_left_and_up_default),
+    // One-finger swipes that end with the finger resting before it lifts. Only recognized when
+    // SandFly detects gestures itself.
+    SWIPE_UP_AND_HOLD(
+        GESTURE_SWIPE_UP_AND_HOLD,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_and_hold_key,
+        R.string.pref_shortcut_up_and_hold_default),
+    SWIPE_DOWN_AND_HOLD(
+        GESTURE_SWIPE_DOWN_AND_HOLD,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_and_hold_key,
+        R.string.pref_shortcut_down_and_hold_default),
+    SWIPE_LEFT_AND_HOLD(
+        GESTURE_SWIPE_LEFT_AND_HOLD,
+        SINGLE_FINGER,
+        LTR_GESTURE,
+        R.string.pref_shortcut_left_and_hold_key,
+        R.string.pref_shortcut_left_and_hold_default),
+    SWIPE_LEFT_AND_HOLD_RTL(
+        GESTURE_SWIPE_LEFT_AND_HOLD,
+        SINGLE_FINGER,
+        RTL_GESTURE,
+        R.string.pref_shortcut_right_and_hold_key,
+        R.string.pref_shortcut_right_and_hold_default),
+    SWIPE_RIGHT_AND_HOLD(
+        GESTURE_SWIPE_RIGHT_AND_HOLD,
+        SINGLE_FINGER,
+        LTR_GESTURE,
+        R.string.pref_shortcut_right_and_hold_key,
+        R.string.pref_shortcut_right_and_hold_default),
+    SWIPE_RIGHT_AND_HOLD_RTL(
+        GESTURE_SWIPE_RIGHT_AND_HOLD,
+        SINGLE_FINGER,
+        RTL_GESTURE,
+        R.string.pref_shortcut_left_and_hold_key,
+        R.string.pref_shortcut_left_and_hold_default),
+    SWIPE_UP_AND_DOWN_AND_HOLD(
+        GESTURE_SWIPE_UP_AND_DOWN_AND_HOLD,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_and_down_and_hold_key,
+        R.string.pref_shortcut_up_and_down_and_hold_default),
+    SWIPE_DOWN_AND_UP_AND_HOLD(
+        GESTURE_SWIPE_DOWN_AND_UP_AND_HOLD,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_and_up_and_hold_key,
+        R.string.pref_shortcut_down_and_up_and_hold_default),
+    SWIPE_LEFT_AND_RIGHT_AND_HOLD(
+        GESTURE_SWIPE_LEFT_AND_RIGHT_AND_HOLD,
+        SINGLE_FINGER,
+        LTR_GESTURE,
+        R.string.pref_shortcut_left_and_right_and_hold_key,
+        R.string.pref_shortcut_left_and_right_and_hold_default),
+    SWIPE_LEFT_AND_RIGHT_AND_HOLD_RTL(
+        GESTURE_SWIPE_LEFT_AND_RIGHT_AND_HOLD,
+        SINGLE_FINGER,
+        RTL_GESTURE,
+        R.string.pref_shortcut_right_and_left_and_hold_key,
+        R.string.pref_shortcut_right_and_left_and_hold_default),
+    SWIPE_RIGHT_AND_LEFT_AND_HOLD(
+        GESTURE_SWIPE_RIGHT_AND_LEFT_AND_HOLD,
+        SINGLE_FINGER,
+        LTR_GESTURE,
+        R.string.pref_shortcut_right_and_left_and_hold_key,
+        R.string.pref_shortcut_right_and_left_and_hold_default),
+    SWIPE_RIGHT_AND_LEFT_AND_HOLD_RTL(
+        GESTURE_SWIPE_RIGHT_AND_LEFT_AND_HOLD,
+        SINGLE_FINGER,
+        RTL_GESTURE,
+        R.string.pref_shortcut_left_and_right_and_hold_key,
+        R.string.pref_shortcut_left_and_right_and_hold_default),
+    SWIPE_UP_AND_LEFT_AND_HOLD(
+        GESTURE_SWIPE_UP_AND_LEFT_AND_HOLD,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_and_left_and_hold_key,
+        R.string.pref_shortcut_up_and_left_and_hold_default),
+    SWIPE_UP_AND_RIGHT_AND_HOLD(
+        GESTURE_SWIPE_UP_AND_RIGHT_AND_HOLD,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_and_right_and_hold_key,
+        R.string.pref_shortcut_up_and_right_and_hold_default),
+    SWIPE_DOWN_AND_LEFT_AND_HOLD(
+        GESTURE_SWIPE_DOWN_AND_LEFT_AND_HOLD,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_and_left_and_hold_key,
+        R.string.pref_shortcut_down_and_left_and_hold_default),
+    SWIPE_DOWN_AND_RIGHT_AND_HOLD(
+        GESTURE_SWIPE_DOWN_AND_RIGHT_AND_HOLD,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_and_right_and_hold_key,
+        R.string.pref_shortcut_down_and_right_and_hold_default),
+    SWIPE_LEFT_AND_UP_AND_HOLD(
+        GESTURE_SWIPE_LEFT_AND_UP_AND_HOLD,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_and_up_and_hold_key,
+        R.string.pref_shortcut_left_and_up_and_hold_default),
+    SWIPE_LEFT_AND_DOWN_AND_HOLD(
+        GESTURE_SWIPE_LEFT_AND_DOWN_AND_HOLD,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_and_down_and_hold_key,
+        R.string.pref_shortcut_left_and_down_and_hold_default),
+    SWIPE_RIGHT_AND_UP_AND_HOLD(
+        GESTURE_SWIPE_RIGHT_AND_UP_AND_HOLD,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_and_up_and_hold_key,
+        R.string.pref_shortcut_right_and_up_and_hold_default),
+    SWIPE_RIGHT_AND_DOWN_AND_HOLD(
+        GESTURE_SWIPE_RIGHT_AND_DOWN_AND_HOLD,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_and_down_and_hold_key,
+        R.string.pref_shortcut_right_and_down_and_hold_default),
     // One-finger Tap
     ONE_FINGER_DOUBLE_TAP(
         AccessibilityService.GESTURE_DOUBLE_TAP,
@@ -1429,6 +1555,38 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
           context.getString(R.string.title_pref_shortcut_edge_right_bottom_left);
       case GESTURE_EDGE_LONG_SWIPE_LEFT_FROM_RIGHT_BOTTOM ->
           context.getString(R.string.title_pref_shortcut_edge_right_bottom_long_left);
+      case GESTURE_SWIPE_UP_AND_HOLD ->
+          context.getString(R.string.title_pref_shortcut_up_and_hold);
+      case GESTURE_SWIPE_DOWN_AND_HOLD ->
+          context.getString(R.string.title_pref_shortcut_down_and_hold);
+      case GESTURE_SWIPE_LEFT_AND_HOLD ->
+          context.getString(R.string.title_pref_shortcut_left_and_hold);
+      case GESTURE_SWIPE_RIGHT_AND_HOLD ->
+          context.getString(R.string.title_pref_shortcut_right_and_hold);
+      case GESTURE_SWIPE_UP_AND_DOWN_AND_HOLD ->
+          context.getString(R.string.title_pref_shortcut_up_and_down_and_hold);
+      case GESTURE_SWIPE_DOWN_AND_UP_AND_HOLD ->
+          context.getString(R.string.title_pref_shortcut_down_and_up_and_hold);
+      case GESTURE_SWIPE_LEFT_AND_RIGHT_AND_HOLD ->
+          context.getString(R.string.title_pref_shortcut_left_and_right_and_hold);
+      case GESTURE_SWIPE_RIGHT_AND_LEFT_AND_HOLD ->
+          context.getString(R.string.title_pref_shortcut_right_and_left_and_hold);
+      case GESTURE_SWIPE_UP_AND_LEFT_AND_HOLD ->
+          context.getString(R.string.title_pref_shortcut_up_and_left_and_hold);
+      case GESTURE_SWIPE_UP_AND_RIGHT_AND_HOLD ->
+          context.getString(R.string.title_pref_shortcut_up_and_right_and_hold);
+      case GESTURE_SWIPE_DOWN_AND_LEFT_AND_HOLD ->
+          context.getString(R.string.title_pref_shortcut_down_and_left_and_hold);
+      case GESTURE_SWIPE_DOWN_AND_RIGHT_AND_HOLD ->
+          context.getString(R.string.title_pref_shortcut_down_and_right_and_hold);
+      case GESTURE_SWIPE_LEFT_AND_UP_AND_HOLD ->
+          context.getString(R.string.title_pref_shortcut_left_and_up_and_hold);
+      case GESTURE_SWIPE_LEFT_AND_DOWN_AND_HOLD ->
+          context.getString(R.string.title_pref_shortcut_left_and_down_and_hold);
+      case GESTURE_SWIPE_RIGHT_AND_UP_AND_HOLD ->
+          context.getString(R.string.title_pref_shortcut_right_and_up_and_hold);
+      case GESTURE_SWIPE_RIGHT_AND_DOWN_AND_HOLD ->
+          context.getString(R.string.title_pref_shortcut_right_and_down_and_hold);
       case GESTURE_TOUCH_EXPLORATION ->
           FeatureSupport.supportGestureMotionEvents()
               ? context.getString(R.string.gesture_name_touch_explore)

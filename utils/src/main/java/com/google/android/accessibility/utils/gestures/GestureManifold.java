@@ -24,6 +24,7 @@ import static com.google.android.accessibility.utils.gestures.TwoFingerSecondFin
 import static com.google.android.accessibility.utils.gestures.TwoFingerSecondFingerMultiTap.ROTATE_DIRECTION_FORWARD;
 
 import android.accessibilityservice.AccessibilityGestureEvent;
+import android.accessibilityservice.AccessibilityService;
 import android.content.Context;
 import android.os.Build;
 import android.view.MotionEvent;
@@ -82,6 +83,24 @@ public class GestureManifold implements GestureMatcher.StateChangeListener {
   public static final int GESTURE_EDGE_LONG_SWIPE_LEFT_FROM_RIGHT_TOP = -30;
   public static final int GESTURE_EDGE_SWIPE_LEFT_FROM_RIGHT_BOTTOM = -31;
   public static final int GESTURE_EDGE_LONG_SWIPE_LEFT_FROM_RIGHT_BOTTOM = -32;
+  // One-finger swipes whose finger rests at the end before lifting, which SandFly's own detection
+  // reports in place of the swipe when they have an action.
+  public static final int GESTURE_SWIPE_UP_AND_HOLD = -40;
+  public static final int GESTURE_SWIPE_DOWN_AND_HOLD = -41;
+  public static final int GESTURE_SWIPE_LEFT_AND_HOLD = -42;
+  public static final int GESTURE_SWIPE_RIGHT_AND_HOLD = -43;
+  public static final int GESTURE_SWIPE_UP_AND_DOWN_AND_HOLD = -44;
+  public static final int GESTURE_SWIPE_DOWN_AND_UP_AND_HOLD = -45;
+  public static final int GESTURE_SWIPE_LEFT_AND_RIGHT_AND_HOLD = -46;
+  public static final int GESTURE_SWIPE_RIGHT_AND_LEFT_AND_HOLD = -47;
+  public static final int GESTURE_SWIPE_UP_AND_LEFT_AND_HOLD = -48;
+  public static final int GESTURE_SWIPE_UP_AND_RIGHT_AND_HOLD = -49;
+  public static final int GESTURE_SWIPE_DOWN_AND_LEFT_AND_HOLD = -50;
+  public static final int GESTURE_SWIPE_DOWN_AND_RIGHT_AND_HOLD = -51;
+  public static final int GESTURE_SWIPE_LEFT_AND_UP_AND_HOLD = -52;
+  public static final int GESTURE_SWIPE_LEFT_AND_DOWN_AND_HOLD = -53;
+  public static final int GESTURE_SWIPE_RIGHT_AND_UP_AND_HOLD = -54;
+  public static final int GESTURE_SWIPE_RIGHT_AND_DOWN_AND_HOLD = -55;
 
   // Match the value of GESTURE_ID_2FINGER_1TAP_HOLD in TalkBack.
   public static final int GESTURE_2_FINGER_SINGLE_TAP_AND_HOLD = 63;
@@ -104,6 +123,29 @@ public class GestureManifold implements GestureMatcher.StateChangeListener {
   private boolean logMotionEvent = false;
 
   /** Define the interface to get project base feature settings. */
+  /** Returns the swipe and hold version of the one-finger swipe {@code swipeGestureId}, or 0. */
+  public static int swipeAndHoldOf(int swipeGestureId) {
+    return switch (swipeGestureId) {
+      case AccessibilityService.GESTURE_SWIPE_UP -> GESTURE_SWIPE_UP_AND_HOLD;
+      case AccessibilityService.GESTURE_SWIPE_DOWN -> GESTURE_SWIPE_DOWN_AND_HOLD;
+      case AccessibilityService.GESTURE_SWIPE_LEFT -> GESTURE_SWIPE_LEFT_AND_HOLD;
+      case AccessibilityService.GESTURE_SWIPE_RIGHT -> GESTURE_SWIPE_RIGHT_AND_HOLD;
+      case AccessibilityService.GESTURE_SWIPE_UP_AND_DOWN -> GESTURE_SWIPE_UP_AND_DOWN_AND_HOLD;
+      case AccessibilityService.GESTURE_SWIPE_DOWN_AND_UP -> GESTURE_SWIPE_DOWN_AND_UP_AND_HOLD;
+      case AccessibilityService.GESTURE_SWIPE_LEFT_AND_RIGHT -> GESTURE_SWIPE_LEFT_AND_RIGHT_AND_HOLD;
+      case AccessibilityService.GESTURE_SWIPE_RIGHT_AND_LEFT -> GESTURE_SWIPE_RIGHT_AND_LEFT_AND_HOLD;
+      case AccessibilityService.GESTURE_SWIPE_UP_AND_LEFT -> GESTURE_SWIPE_UP_AND_LEFT_AND_HOLD;
+      case AccessibilityService.GESTURE_SWIPE_UP_AND_RIGHT -> GESTURE_SWIPE_UP_AND_RIGHT_AND_HOLD;
+      case AccessibilityService.GESTURE_SWIPE_DOWN_AND_LEFT -> GESTURE_SWIPE_DOWN_AND_LEFT_AND_HOLD;
+      case AccessibilityService.GESTURE_SWIPE_DOWN_AND_RIGHT -> GESTURE_SWIPE_DOWN_AND_RIGHT_AND_HOLD;
+      case AccessibilityService.GESTURE_SWIPE_LEFT_AND_UP -> GESTURE_SWIPE_LEFT_AND_UP_AND_HOLD;
+      case AccessibilityService.GESTURE_SWIPE_LEFT_AND_DOWN -> GESTURE_SWIPE_LEFT_AND_DOWN_AND_HOLD;
+      case AccessibilityService.GESTURE_SWIPE_RIGHT_AND_UP -> GESTURE_SWIPE_RIGHT_AND_UP_AND_HOLD;
+      case AccessibilityService.GESTURE_SWIPE_RIGHT_AND_DOWN -> GESTURE_SWIPE_RIGHT_AND_DOWN_AND_HOLD;
+      default -> 0;
+    };
+  }
+
   public interface GestureConfigProvider {
     default float getDoubleTapSlopMultiplier() {
       return (float) 1.0;
@@ -122,6 +164,11 @@ public class GestureManifold implements GestureMatcher.StateChangeListener {
     }
 
     default boolean enableSplitTapAndHold() {
+      return false;
+    }
+
+    /** Returns whether {@code gestureId} has an action, so that it is worth matching. */
+    default boolean isGestureAssigned(int gestureId) {
       return false;
     }
   }

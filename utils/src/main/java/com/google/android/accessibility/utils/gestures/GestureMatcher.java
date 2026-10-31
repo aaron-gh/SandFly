@@ -295,6 +295,20 @@ public abstract class GestureMatcher {
     setState(STATE_GESTURE_COMPLETED, event);
   }
 
+  /**
+   * Indicates this gesture has been performed as {@code reportedGestureId}, a variant of this
+   * matcher's gesture, such as a swipe that ends with a hold.
+   */
+  protected final void completeGestureAs(
+      int reportedGestureId, EventId eventId, MotionEvent event) {
+    Performance.getInstance().onGestureLastMotionEventTime(eventId, event.getEventTime());
+    state = STATE_GESTURE_COMPLETED;
+    cancelPendingTransitions();
+    if (listener != null) {
+      listener.onStateChanged(reportedGestureId, STATE_GESTURE_COMPLETED, event);
+    }
+  }
+
   /** Extend the touch explore timer window. */
   protected final void processGesture(EventId eventId, MotionEvent event) {
     setState(STATE_GESTURE_PROCESSING, event);
