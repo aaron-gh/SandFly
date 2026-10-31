@@ -329,6 +329,20 @@ class TrackedGestureTest {
   }
 
   @Test
+  fun swipeDownFromTheTopIsTheFirstStageWhenTheLongSwipePassesThrough() {
+    assign(
+      R.string.shortcut_value_pass_through_next_gesture,
+      R.string.pref_shortcut_edge_top_right_long_down_key,
+    )
+    slide(260f, 5f, 90f)
+    slide(260f, 5f, 200f)
+    assertEquals(
+      listOf(GESTURE_EDGE_SWIPE_DOWN_FROM_TOP_RIGHT, GESTURE_EDGE_SWIPE_DOWN_FROM_TOP_RIGHT),
+      service.gestures,
+    )
+  }
+
+  @Test
   fun swipeInFromASideEdgeIsByHalf() {
     assign(
       R.string.shortcut_value_home,
