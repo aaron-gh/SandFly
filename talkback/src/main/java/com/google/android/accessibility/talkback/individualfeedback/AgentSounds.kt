@@ -19,7 +19,7 @@ package com.google.android.accessibility.talkback.individualfeedback
 /**
  * Sounds for SandFly Pro's agent: a task starting, finishing, asking the person something,
  * stopping at an action the safety check blocks, and failing. They are SandFly's own raw sounds,
- * made by tools/agent_sounds.py, which a sound theme can replace. They have no SandFly vibrations:
+ * made by tools/sounds.py, which a sound theme can replace. They have no SandFly vibrations:
  * they vibrate only with a theme's.
  */
 object AgentSounds {
