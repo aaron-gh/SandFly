@@ -22,6 +22,7 @@ import static com.google.android.accessibility.talkback.Feedback.Focus.Action.IN
 import static com.google.android.accessibility.talkback.Feedback.Focus.Action.INITIAL_FOCUS_RESTORE;
 
 import android.accessibilityservice.AccessibilityService;
+import android.os.Build;
 import android.os.SystemClock;
 import android.view.accessibility.AccessibilityNodeInfo;
 import androidx.annotation.VisibleForTesting;
@@ -260,7 +261,9 @@ public class FocusManagerInternal {
     // An app changing its controls while it records, such as a voice message's record button
     // giving way to the recording's controls, would otherwise get focus placed elsewhere and
     // spoken, into the recording.
-    if (LowLatencyAudio.isMicrophoneInUse() || TouchInteractionMonitor.isTouchPassedToApp()) {
+    if (LowLatencyAudio.isMicrophoneInUse()
+        || (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU
+            && TouchInteractionMonitor.isTouchPassedToApp())) {
       LogUtils.d(TAG, String.format("%s: Return, an app records or has the touch.", subTag));
       return false;
     }
