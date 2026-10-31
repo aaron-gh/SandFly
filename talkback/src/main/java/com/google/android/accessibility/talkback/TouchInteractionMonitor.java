@@ -1491,7 +1491,7 @@ public class TouchInteractionMonitor
         public void onEdgeTouched(Edge edge) {
           @Nullable FeedbackController feedbackController = feedbackController();
           if (feedbackController != null) {
-            feedbackController.playAuditory(R.id.edge_gesture_bottom, /* eventId= */ null);
+            feedbackController.playAuditory(R.raw.edge_gesture_bottom, /* eventId= */ null);
           }
         }
 
@@ -1511,16 +1511,16 @@ public class TouchInteractionMonitor
           // vibration.
           if (stage == 0) {
             feedbackController.playAuditoryWithoutHaptic(
-                R.id.edge_gesture_bottom, /* eventId= */ null);
+                R.raw.edge_gesture_bottom, /* eventId= */ null);
             feedbackController.playHaptic(R.array.edge_swipe_cancel_pattern, /* eventId= */ null);
           } else if (stage < previousStage) {
             feedbackController.playAuditoryWithoutHaptic(
-                R.id.edge_gesture_middle, /* eventId= */ null);
+                R.raw.edge_gesture_middle, /* eventId= */ null);
             feedbackController.playHaptic(R.array.edge_swipe_back_pattern, /* eventId= */ null);
           } else if (stage == 1) {
-            feedbackController.playAuditory(R.id.edge_gesture_middle, /* eventId= */ null);
+            feedbackController.playAuditory(R.raw.edge_gesture_middle, /* eventId= */ null);
           } else {
-            feedbackController.playAuditory(R.id.edge_gesture_top, /* eventId= */ null);
+            feedbackController.playAuditory(R.raw.edge_gesture_top, /* eventId= */ null);
           }
         }
 

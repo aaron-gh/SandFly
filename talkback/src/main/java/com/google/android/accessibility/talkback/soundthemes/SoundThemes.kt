@@ -251,10 +251,11 @@ object SoundThemes {
 
   /**
    * Whether the sound [key] has no sound of SandFly's own, so that it plays only a theme's: screen
-   * on and the navigation sounds.
+   * on and the navigation sounds other than the edge gestures.
    */
   @JvmStatic
-  fun hasNoOwnSound(key: String): Boolean = key == SCREEN_ON || key in NavigationSounds.SOUNDS
+  fun hasNoOwnSound(key: String): Boolean =
+    key == SCREEN_ON || key in NavigationSounds.WITHOUT_OWN_SOUND
 
   /** The sound files of [theme], by item key. */
   @JvmStatic

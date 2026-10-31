@@ -326,14 +326,14 @@ To keep hearing the kind of control as well, turn on **Still say the kind of con
 
 ### Navigation sounds
 
-TalkBack plays a sound and vibration when a gesture starts and another when it ends. SandFly plays neither. In their place, a sound theme can give a sound and a vibration to each of these:
+TalkBack plays a sound and vibration when a gesture starts and another when it ends. SandFly plays neither. In their place, it has these sounds, and a sound theme can give a sound and a vibration to each of them:
 
 - **Next reading control** and **Previous reading control**: selecting another reading control, with a gesture, the rotor, a keyboard shortcut or the braille keyboard.
 - **Edge gesture bottom**, **Edge gesture middle** and **Edge gesture top**: a finger touching an edge where an edge gesture starts, the gesture reaching its first click, and the gesture reaching its second click. Sliding back plays the sound of the place the finger is back at. Lifting plays nothing.
 - **Insertion point moved**: moving by character, word, line or paragraph moves the cursor in a text field you are editing.
 - **Column wrap** and **Column wrap back**: swiping forward to an item below the row you are in, and back to an item above it. Each item of a list is a row of its own; items side by side, such as icons on a home screen, cells of a table, or a title with buttons beside it, share a row. The sound plays with the focus sound, and its vibration plays in place of the focus vibration.
 
-SandFly has no sounds of its own for these. The edge gesture middle and top have SandFly's edge gesture vibrations; the others vibrate only with a theme's vibration. Each has its own sound and vibration switch in **Individual sounds and vibrations**.
+SandFly has sounds of its own only for the edge gestures: a low tick at the edge, a higher tone at the first click, and two rising tones at the second click. The others play only a theme's sound. The edge gesture middle and top have SandFly's edge gesture vibrations; the others vibrate only with a theme's vibration. Each has its own sound and vibration switch in **Individual sounds and vibrations**.
 
 Rows are found by where items are on the screen: an item is on another row when its middle is below the bottom of the focused item, or above its top. Column wrap doesn't play for swipes that move from one window to another.
 
@@ -441,7 +441,7 @@ As in VoiceOver on iOS, you can slide one finger in from an edge of the screen. 
 
 Only gestures that have an action click. A swipe that does nothing has no first click, and the slide stays an ordinary swipe until the second click. A long swipe that does nothing has no second click, so sliding further is still the swipe. Lifting before the first click there is an ordinary swipe. In a corner, the top or bottom edge comes first, unless its gestures do nothing.
 
-Sliding back from the second click to the first plays one short tap; sliding back to the edge plays two, and lifting there cancels the gesture. To turn off the clicks, turn off **Edge gesture middle** and **Edge gesture top** under vibrations in **Individual sounds and vibrations**; to turn off the taps, turn off **Edge gesture slide back**. A sound theme can give each stage a sound; see [Navigation sounds](#navigation-sounds). A slide that starts away from the edge, or that takes longer than about half a second to reach the first click, is an ordinary swipe or touch exploration. A finger resting at the edge for 0.2 seconds is touch exploration.
+Sliding back from the second click to the first plays one short tap; sliding back to the edge plays two, and lifting there cancels the gesture. Touching the edge, the first click and the second click each play a sound, which rises with each stage. To turn off the clicks, turn off **Edge gesture middle** and **Edge gesture top** under vibrations in **Individual sounds and vibrations**; to turn off the taps, turn off **Edge gesture slide back**. The sounds have switches of their own there, and a sound theme can replace them; see [Navigation sounds](#navigation-sounds). A slide that starts away from the edge, or that takes longer than about half a second to reach the first click, is an ordinary swipe or touch exploration. A finger resting at the edge for 0.2 seconds is touch exploration.
 
 To scrub, move two fingers quickly one way across the screen and back, each stroke about a centimeter long. By default, this goes back. Two fingers moved one way only still scroll.
 

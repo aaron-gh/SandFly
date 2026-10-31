@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  Navigation sounds have no sound of their own, only the one a sound theme gives each. These IDs
-  stand for them where the other sounds use their raw resource IDs, and their names are the names
-  of the theme sounds.
+  Navigation sounds other than the edge gestures have no sound of their own, only the one a sound
+  theme gives each. These IDs stand for them where the other sounds use their raw resource IDs,
+  and their names are the names of the theme sounds.
 -->
 <resources>
     <item name="next_reading_control" type="id" />
     <item name="previous_reading_control" type="id" />
-    <item name="edge_gesture_bottom" type="id" />
-    <item name="edge_gesture_middle" type="id" />
-    <item name="edge_gesture_top" type="id" />
     <item name="insertion_point_moved" type="id" />
     <item name="column_wrap" type="id" />
     <item name="column_wrap_back" type="id" />
