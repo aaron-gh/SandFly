@@ -470,7 +470,8 @@ public class FeedbackController {
       if (mSpatialSoundPlayer == null) {
         mSpatialSoundPlayer = new SpatialSoundPlayer(mContext);
       }
-      mSpatialSoundPlayer.play(resId, customSoundPath(resId), x, y, adjustedVolume);
+      mSpatialSoundPlayer.play(
+          resId, customSoundPath(resId), x, y, adjustedVolume * SandFlyVolume.gainUpToFull());
     } else {
       // Full volume in the middle, fading out of the far speaker towards either edge.
       float pan = Math.max(-1f, Math.min(1f, (x - 0.5f) * 2));
@@ -489,6 +490,11 @@ public class FeedbackController {
         && playLowLatency(resId, path, rate, leftVolume, rightVolume)) {
       return;
     }
+    // The low-latency player applies SandFly's own volume as it mixes. The pool can't play louder
+    // than full volume.
+    float gain = SandFlyVolume.gainUpToFull();
+    leftVolume *= gain;
+    rightVolume *= gain;
     int soundId = mSoundIds.get(resId);
     if (soundId != 0 && !TextUtils.equals(path, mLoadedPaths.get(resId))) {
       // The user chose another sound since this one was loaded.

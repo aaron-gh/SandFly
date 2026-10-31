@@ -16,7 +16,10 @@
 
 package com.google.android.accessibility.talkback.eventprocessor;
 
+import static com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED;
+
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.media.AudioManager;
 import android.os.Message;
 import android.os.PowerManager;
@@ -25,14 +28,23 @@ import android.os.SystemClock;
 import android.view.KeyEvent;
 import android.view.accessibility.AccessibilityEvent;
 import com.google.android.accessibility.talkback.ActorState;
+import com.google.android.accessibility.talkback.Feedback;
+import com.google.android.accessibility.talkback.Pipeline;
+import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.utils.AccessibilityEventListener;
 import com.google.android.accessibility.utils.Performance.EventId;
 import com.google.android.accessibility.utils.ServiceKeyEventListener;
+import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import com.google.android.accessibility.utils.WeakReferenceHandler;
 import com.google.android.accessibility.utils.compat.media.AudioManagerCompatUtils;
 import com.google.android.accessibility.utils.output.FailoverTextToSpeech;
+import com.google.android.accessibility.utils.output.FeedbackItem;
+import com.google.android.accessibility.utils.output.SandFlyVolume;
+import com.google.android.accessibility.utils.output.SpeechController;
+import com.google.android.accessibility.utils.output.SpeechController.SpeakOptions;
 import com.google.android.accessibility.utils.volumebutton.VolumeButtonPatternDetector;
+import org.checkerframework.checker.nullness.qual.Nullable;
 
 /**
  * Handles volume-key events to adjust various volume streams based on current speech state. Locks
@@ -62,6 +74,7 @@ public class ProcessorVolumeStream
           | AccessibilityEvent.TYPE_TOUCH_INTERACTION_END;
 
   private final Context context;
+  private final TalkBackService service;
 
   /** The audio manager, used to adjust speech volume. */
   private final AudioManager audioManager;
@@ -118,6 +131,7 @@ public class ProcessorVolumeStream
       TouchInteractingIndicator touchInteractingIndicator) {
 
     context = service;
+    this.service = service;
     audioManager = (AudioManager) service.getSystemService(Context.AUDIO_SERVICE);
     this.actorState = actorState;
     this.touchInteractingIndicator = touchInteractingIndicator;
@@ -195,6 +209,9 @@ public class ProcessorVolumeStream
       }
     }
 
+    if (shouldRouteToTalkBackStream && changeSandFlyVolume(direction == AudioManager.ADJUST_RAISE)) {
+      return;
+    }
     if (shouldRouteToTalkBackStream) {
       AudioManagerCompatUtils.adjustStreamVolume(
           audioManager,
@@ -210,6 +227,51 @@ public class ProcessorVolumeStream
       audioManager.adjustSuggestedStreamVolume(
           direction, STREAM_DEFAULT, DEFAULT_FLAGS_FOR_DEFAULT_STREAM);
     }
+  }
+
+  /**
+   * Changes SandFly's own volume one step, if it is in use, and says the new volume. Returns whether
+   * it was in use.
+   */
+  private boolean changeSandFlyVolume(boolean raise) {
+    SharedPreferences prefs = SharedPreferencesUtils.getSharedPreferences(context);
+    if (!SandFlyVolume.isActive(prefs)) {
+      return false;
+    }
+    @Nullable Integer stepped = SandFlyVolume.step(prefs, raise);
+    Pipeline.@Nullable FeedbackReturner pipeline = service.getFeedbackReturner();
+    boolean speak =
+        SharedPreferencesUtils.getBooleanPref(
+            prefs,
+            context.getResources(),
+            R.string.pref_speak_volume_changes_key,
+            R.bool.pref_speak_volume_changes_default);
+    if (pipeline != null && speak) {
+      CharSequence percent =
+          context.getString(
+              R.string.tb_template_percent, String.valueOf(SandFlyVolume.percent(prefs)));
+      CharSequence text =
+          stepped != null
+              ? context.getString(R.string.template_sandfly_volume, percent)
+              : context.getString(
+                  R.string.template_setting_limit,
+                  context.getString(
+                      raise
+                          ? R.string.template_volume_change_maximum
+                          : R.string.template_volume_change_minimum),
+                  percent);
+      pipeline.returnFeedback(
+          EVENT_ID_UNTRACKED,
+          Feedback.speech(
+              text,
+              SpeakOptions.create()
+                  .setQueueMode(SpeechController.QUEUE_MODE_INTERRUPT)
+                  .setFlags(
+                      FeedbackItem.FLAG_NO_HISTORY
+                          | FeedbackItem.FLAG_FORCE_FEEDBACK_ALL
+                          | FeedbackItem.FLAG_SKIP_DUPLICATE)));
+    }
+    return true;
   }
 
   @Override
