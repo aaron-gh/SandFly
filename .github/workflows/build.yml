@@ -34,6 +34,8 @@ jobs:
         uses: actions/checkout@v7
         with:
           repository: aaron-gh/sandfly-ai
+          # 0.2.x builds take SandFly AI as it was before screen recognition, which needs 0.3.0.
+          ref: 22f3fa0c4a8dd0a2c67a4eb62eb95ae31fb9ad4f
           ssh-key: ${{ secrets.SANDFLY_AI_DEPLOY_KEY }}
           path: sandfly-ai
           persist-credentials: false
