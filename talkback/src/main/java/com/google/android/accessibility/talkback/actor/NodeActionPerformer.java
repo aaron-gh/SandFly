@@ -4,6 +4,7 @@ import android.os.SystemClock;
 import android.view.accessibility.AccessibilityNodeInfo;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.talkback.Feedback.NodeAction;
+import com.google.android.accessibility.talkback.compositor.ClickFeedback;
 import com.google.android.accessibility.talkback.compositor.PreparedFocusSpeech;
 import com.google.android.accessibility.talkback.focusmanagement.TraversalTreeCache;
 import com.google.android.accessibility.utils.AccessibilityNode;
@@ -22,6 +23,16 @@ public class NodeActionPerformer {
   private static final String TAG = "NodeActionPerformer";
 
   private @Nullable NodeActionRecord actionRecord = null;
+  private final @Nullable ClickFeedback clickFeedback;
+
+  public NodeActionPerformer() {
+    this(null);
+  }
+
+  /** {@code clickFeedback} gives the feedback for the clicks sent, or null for the app's events. */
+  public NodeActionPerformer(@Nullable ClickFeedback clickFeedback) {
+    this.clickFeedback = clickFeedback;
+  }
 
   /**
    * Sends clicks on keyboard keys, one at a time and in order. A keyboard answers a click by asking
@@ -91,7 +102,18 @@ public class NodeActionPerformer {
             });
         return true;
       }
-      success = nodeActionTarget.performAction(nodeAction.actionId(), nodeAction.args(), eventId);
+      if (clickFeedback != null
+          && nodeAction.actionId() == AccessibilityNodeInfoCompat.ACTION_CLICK) {
+        success =
+            clickFeedback.click(
+                nodeActionTarget.getCompat(),
+                eventId,
+                () ->
+                    nodeActionTarget.performAction(
+                        nodeAction.actionId(), nodeAction.args(), eventId));
+      } else {
+        success = nodeActionTarget.performAction(nodeAction.actionId(), nodeAction.args(), eventId);
+      }
       Performance.getInstance()
           .onAccessibilityActionPerformed(
               eventId, nodeAction.actionId(), time, success, nodeActionTarget);

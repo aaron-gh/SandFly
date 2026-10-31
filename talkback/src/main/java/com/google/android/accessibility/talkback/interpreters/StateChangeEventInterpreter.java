@@ -9,6 +9,7 @@ import com.google.android.accessibility.talkback.ActorState;
 import com.google.android.accessibility.talkback.Interpretation.ID;
 import com.google.android.accessibility.talkback.Pipeline.InterpretationReceiver;
 import com.google.android.accessibility.talkback.actor.NodeActionPerformer.NodeActionRecord;
+import com.google.android.accessibility.talkback.compositor.ClickFeedback;
 import com.google.android.accessibility.utils.AccessibilityEventListener;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.Performance.EventId;
@@ -61,6 +62,12 @@ public class StateChangeEventInterpreter implements AccessibilityEventListener {
     }
     long timeDiff = event.getEventTime() - actionRecord.actionTime;
     if ((timeDiff < 0L) || (timeDiff > ACTION_TIMEOUT_MS)) {
+      return;
+    }
+    // Already said as soon as SandFly's click was carried out.
+    if (ClickFeedback.isSaid(
+        event.getEventTime(),
+        AccessibilityNodeInfoUtils.getState(AccessibilityNodeInfoUtils.toCompat(node)))) {
       return;
     }
     // When the node is within accessibility focus, it is handled by

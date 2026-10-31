@@ -18,6 +18,12 @@ While you listen to an item, SandFly works out what a swipe forward or back woul
 
 SandFly doesn't prepare anything for the first swipe on a screen or after the screen changes, and it discards prepared speech after 5 seconds.
 
+### Faster feedback after a double tap
+
+TalkBack gave the click sound and vibration, and said a new state such as "On", from the app's click event, which it handled 150 ms after the event arrived. That state was also queued behind other speech, such as the item's description or a summary that the click changed. When SandFly activates an item itself, with a double tap, the activation key or a braille display, it gives the click sound and vibration as it sends the click. It reads the item again as soon as the app has carried out the click, and says the new state at once, cutting off what was being said about the item. The app's own reports of the same click and state then give nothing more. On the Date & time switch **Use 24-hour format**, on an Android 17 emulator, the time from lifting your finger to hearing "On" or "Off" went from about 1.2 seconds to about 40 ms.
+
+Apps that update an item after the click has been carried out still have its state said from their own events. Keys on the on-screen keyboard keep the usual click feedback.
+
 ### Items that a swipe scrolls into view
 
 When a swipe moves to a list item that is only partly on screen, the list scrolls it into view. By default, SandFly then waits for the app to confirm the new focus, as TalkBack does, so these swipes don't get the faster speech above. Speaking straight away would come before the list had scrolled, when the item's text can still be off screen, and only its place in the list, such as "20 of 80", would be said.

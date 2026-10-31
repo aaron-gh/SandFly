@@ -152,6 +152,7 @@ import com.google.android.accessibility.talkback.braille.TalkBackForBrailleCommo
 import com.google.android.accessibility.talkback.braille.TalkBackForBrailleDisplayImpl;
 import com.google.android.accessibility.talkback.braille.TalkBackForBrailleImeImpl;
 import com.google.android.accessibility.talkback.braille.TalkBackForBrailleImeImpl.TalkBackPrivateMethodProvider;
+import com.google.android.accessibility.talkback.compositor.ClickFeedback;
 import com.google.android.accessibility.talkback.compositor.Compositor;
 import com.google.android.accessibility.talkback.compositor.CompositorUtils;
 import com.google.android.accessibility.talkback.compositor.EarlyFocusSpeech;
@@ -2511,7 +2512,7 @@ public class TalkBackService extends AccessibilityServiceCompat
                 directionNavigationActor,
                 editor,
                 labelManager,
-                new NodeActionPerformer(),
+                new NodeActionPerformer(compositor.clickFeedback()),
                 new SystemActionPerformer(this),
                 languageActor,
                 passThroughModeActor,
@@ -3423,6 +3424,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     // The saved reading order holds nodes, which would outlive the service and could be reused,
     // stale, when Backtalk is turned on again.
     TraversalTreeCache.clear("shutdown");
+    ClickFeedback.clear();
 
     if (fullScreenReadActor != null) {
       fullScreenReadActor.shutdown();
