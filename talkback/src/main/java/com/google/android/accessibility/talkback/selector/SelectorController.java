@@ -162,6 +162,11 @@ public class SelectorController implements UserInputEventListener {
   private boolean touchActive = false;
   // Accompanying the 'touchActive' flag, this variable avoids the reassign of the same node.
   private AccessibilityNodeInfo lastFocusedNode = null;
+  // Matching the reading control to an item asks the app about it. Right after a touch ends, as
+  // when a key is typed, the app is busy, and asking would hold up what the touch says. So the
+  // match waits until touches have paused, or until something uses the reading control.
+  private static final long SWITCH_AFTER_TOUCH_MS = 200;
+  private final Runnable switchAfterTouch = this::applyPendingSwitch;
 
   /** Audial feedback announce types. */
   public enum AnnounceType {
@@ -1159,6 +1164,7 @@ public class SelectorController implements UserInputEventListener {
    * automatically that make user easier to use screen search navigation.
    */
   public void searchActionPerformed() {
+    applyPendingSwitch();
     settingToRestore = GRANULARITY_SEARCH;
     setCurrentSetting(
         EVENT_ID_UNTRACKED,
@@ -1264,6 +1270,7 @@ public class SelectorController implements UserInputEventListener {
    */
   @Override
   public void editTextOrSelectableTextSelected(boolean isSelected) {
+    applyPendingSwitch();
     if (isSelected) {
       Setting current = getCurrentSetting(context, prefs);
       if (selectionGranularityOf(current) != null) {
@@ -1317,8 +1324,10 @@ public class SelectorController implements UserInputEventListener {
       return;
     }
     if (touchActive) {
+      handler.removeCallbacks(switchAfterTouch);
       lastFocusedNode = nodeInfo;
     } else {
+      handler.removeCallbacks(switchAfterTouch);
       switchCurrentSetting(nodeInfo);
     }
   }
@@ -1399,11 +1408,27 @@ public class SelectorController implements UserInputEventListener {
     if (active) {
       verticalNavigator.cancel();
     }
-    if (!touchActive) {
-      if (lastFocusedNode != null) {
-        switchCurrentSetting(lastFocusedNode);
-      }
+    handler.removeCallbacks(switchAfterTouch);
+    if (!touchActive && lastFocusedNode != null) {
+      handler.postDelayed(switchAfterTouch, SWITCH_AFTER_TOUCH_MS);
     }
+  }
+
+  /**
+   * Matches the reading control to the item that the last touch focused, if that is still waiting,
+   * so that the reading control is used as it would be for that item.
+   */
+  public void applyPendingSwitch() {
+    handler.removeCallbacks(switchAfterTouch);
+    if (lastFocusedNode != null) {
+      switchCurrentSetting(lastFocusedNode);
+    }
+  }
+
+  /** Forgets the item waiting for its reading control, such as when SandFly turns off. */
+  public void shutdown() {
+    handler.removeCallbacks(switchAfterTouch);
+    lastFocusedNode = null;
   }
 
   /** Selects the previous or next setting. For selecting setting via gesture. */
@@ -1425,6 +1450,7 @@ public class SelectorController implements UserInputEventListener {
 
   private boolean selectPreviousOrNext(
       EventId eventId, AnnounceType announceType, boolean isNext, boolean showOverlay) {
+    applyPendingSwitch();
     List<Setting> settings = getFilteredSettings();
     List<ScriptReadingControl> controls = Scripts.readingControls();
 
@@ -1627,6 +1653,7 @@ public class SelectorController implements UserInputEventListener {
     if (setting == null || !allowedSetting(setting)) {
       return false;
     }
+    applyPendingSwitch();
 
     setCurrentSetting(EVENT_ID_UNTRACKED, setting, announceType, showOverlay);
     return true;
@@ -1979,6 +2006,7 @@ public class SelectorController implements UserInputEventListener {
 
   /** Change the value of the selected setting or scroll forward/backard of the seeker. */
   public void adjustSelectedSetting(EventId eventId, boolean isNext) {
+    applyPendingSwitch();
     @Nullable ScriptReadingControl scriptControl = currentScriptControl(Scripts.readingControls());
     if (scriptControl != null) {
       scriptControl.adjust(isNext);
@@ -2211,6 +2239,7 @@ public class SelectorController implements UserInputEventListener {
 
   /** Activate the currently selected action in the actions setting. */
   public void activateCurrentAction(EventId eventId) {
+    applyPendingSwitch();
     if (!accessibilityFocusMonitor.hasAccessibilityFocus(/* useInputFocusIfEmpty= */ false)) {
       return;
     }
