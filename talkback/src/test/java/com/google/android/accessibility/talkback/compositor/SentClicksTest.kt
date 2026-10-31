@@ -25,17 +25,36 @@ class SentClicksTest {
   private val clicks = SentClicks { now }
 
   @Test
-  fun aClickEventSentWhileTheClickWasCarriedOutHadItsCuesGiven() {
-    clicks.add(start = 1_000L, end = 1_030L)
-    assertTrue(clicks.isSentDuring(1_000L))
-    assertTrue(clicks.isSentDuring(1_030L))
+  fun aClickEventSentWhileTheClickWasCarriedOutIsSandFlys() {
+    clicks.add(start = 1_000L, end = 1_030L, packageName = "app")
+    assertTrue(clicks.takeClickEvent(1_010L, "app"))
   }
 
   @Test
-  fun aClickEventSentBeforeOrAfterTheClickIsNotSandFlys() {
-    clicks.add(start = 1_000L, end = 1_030L)
-    assertFalse(clicks.isSentDuring(990L))
-    assertFalse(clicks.isSentDuring(1_100L))
+  fun aClickEventSentAfterTheClickReturnedIsSandFlys() {
+    // Web content carries the click out after the click returns.
+    clicks.add(start = 1_000L, end = 1_001L, packageName = "app")
+    assertTrue(clicks.takeClickEvent(1_027L, "app"))
+  }
+
+  @Test
+  fun eachClickMatchesOneClickEvent() {
+    clicks.add(start = 1_000L, end = 1_030L, packageName = "app")
+    assertTrue(clicks.takeClickEvent(1_010L, "app"))
+    assertFalse(clicks.takeClickEvent(1_020L, "app"))
+  }
+
+  @Test
+  fun aClickEventFromAnotherAppIsNotSandFlys() {
+    clicks.add(start = 1_000L, end = 1_030L, packageName = "app")
+    assertFalse(clicks.takeClickEvent(1_010L, "other"))
+  }
+
+  @Test
+  fun aClickEventSentBeforeOrLongAfterTheClickIsNotSandFlys() {
+    clicks.add(start = 1_000L, end = 1_030L, packageName = "app")
+    assertFalse(clicks.takeClickEvent(990L, "app"))
+    assertFalse(clicks.takeClickEvent(2_100L, "app"))
   }
 
   @Test
@@ -68,6 +87,6 @@ class SentClicksTest {
     clicks.add(start = 1_000L, end = 1_030L)
     now += 20_000L
     assertTrue(clicks.isEmpty())
-    assertFalse(clicks.isSentDuring(1_010L))
+    assertFalse(clicks.takeClickEvent(1_010L, null))
   }
 }
