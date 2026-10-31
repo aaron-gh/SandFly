@@ -62,4 +62,18 @@ public final class GestureConfiguration {
   public static void setMultiTapTimeoutMs(int timeoutMs) {
     multiTapTimeoutMs = timeoutMs;
   }
+
+  /** The default time the finger rests at the end of a swipe for a swipe and hold. */
+  public static final int DEFAULT_SWIPE_HOLD_TIME_MS = 250;
+
+  private static volatile int swipeHoldTimeMs = DEFAULT_SWIPE_HOLD_TIME_MS;
+
+  /** Returns how long the finger rests at the end of a swipe before lifting for a swipe and hold. */
+  public static int getSwipeHoldTimeMs() {
+    return swipeHoldTimeMs;
+  }
+
+  public static void setSwipeHoldTimeMs(int timeMs) {
+    swipeHoldTimeMs = timeMs;
+  }
 }

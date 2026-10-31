@@ -428,6 +428,11 @@ public class TouchInteractionMonitor
               public boolean enableSplitTapAndHold() {
                 return FeatureFlagReader.enableSplitTapAndHold(service);
               }
+
+              @Override
+              public boolean isGestureAssigned(int gestureId) {
+                return TouchInteractionMonitor.this.isGestureAssigned(gestureId);
+              }
             },
             logger,
             displayId,
@@ -545,6 +550,12 @@ public class TouchInteractionMonitor
             context.getResources(),
             R.string.pref_multi_tap_timeout_key,
             R.string.pref_multi_tap_timeout_default));
+    GestureConfiguration.setSwipeHoldTimeMs(
+        SharedPreferencesUtils.getIntFromStringPref(
+            prefs,
+            context.getResources(),
+            R.string.pref_swipe_hold_time_key,
+            R.string.pref_swipe_hold_time_default));
   }
 
   /** Reads how far edge gestures slide in to their first click, and on to their second. */
@@ -586,7 +597,8 @@ public class TouchInteractionMonitor
                       R.string.pref_touch_focus_time_out_key,
                       R.string.pref_touch_focus_time_out_default)
                   - 50;
-        } else if (context.getString(R.string.pref_multi_tap_timeout_key).equals(key)) {
+        } else if (context.getString(R.string.pref_multi_tap_timeout_key).equals(key)
+            || context.getString(R.string.pref_swipe_hold_time_key).equals(key)) {
           updateMultiTapTimeout(prefs);
         } else if (context.getString(R.string.pref_typing_confirmation_key).equals(key)) {
           typingMethod =

@@ -168,6 +168,58 @@ public class TalkBackPreferenceFilter {
     // Taps are timed by Backtalk's own gesture detection, so without it this does nothing.
     MULTI_TAP_TIMEOUT(
         R.string.pref_multi_tap_timeout_key, HIDDEN_ON_TV | SHOW_IF_SERVICE_GESTURE_DETECTION),
+    SWIPE_HOLD_TIME(
+        R.string.pref_swipe_hold_time_key,
+        HIDDEN_ON_TV | HIDDEN_ON_WATCH | SHOW_IF_SERVICE_GESTURE_DETECTION),
+    // Swipes that end with a rest, which only SandFly's own gesture detection recognizes.
+    CUSTOMIZE_GESTURE_UP_AND_HOLD(
+        R.string.pref_shortcut_up_and_hold_key,
+        SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
+    CUSTOMIZE_GESTURE_DOWN_AND_HOLD(
+        R.string.pref_shortcut_down_and_hold_key,
+        SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
+    CUSTOMIZE_GESTURE_LEFT_AND_HOLD(
+        R.string.pref_shortcut_left_and_hold_key,
+        SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
+    CUSTOMIZE_GESTURE_RIGHT_AND_HOLD(
+        R.string.pref_shortcut_right_and_hold_key,
+        SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
+    CUSTOMIZE_GESTURE_UP_AND_DOWN_AND_HOLD(
+        R.string.pref_shortcut_up_and_down_and_hold_key,
+        SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
+    CUSTOMIZE_GESTURE_DOWN_AND_UP_AND_HOLD(
+        R.string.pref_shortcut_down_and_up_and_hold_key,
+        SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
+    CUSTOMIZE_GESTURE_LEFT_AND_RIGHT_AND_HOLD(
+        R.string.pref_shortcut_left_and_right_and_hold_key,
+        SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
+    CUSTOMIZE_GESTURE_RIGHT_AND_LEFT_AND_HOLD(
+        R.string.pref_shortcut_right_and_left_and_hold_key,
+        SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
+    CUSTOMIZE_GESTURE_UP_AND_LEFT_AND_HOLD(
+        R.string.pref_shortcut_up_and_left_and_hold_key,
+        SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
+    CUSTOMIZE_GESTURE_UP_AND_RIGHT_AND_HOLD(
+        R.string.pref_shortcut_up_and_right_and_hold_key,
+        SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
+    CUSTOMIZE_GESTURE_DOWN_AND_LEFT_AND_HOLD(
+        R.string.pref_shortcut_down_and_left_and_hold_key,
+        SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
+    CUSTOMIZE_GESTURE_DOWN_AND_RIGHT_AND_HOLD(
+        R.string.pref_shortcut_down_and_right_and_hold_key,
+        SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
+    CUSTOMIZE_GESTURE_LEFT_AND_UP_AND_HOLD(
+        R.string.pref_shortcut_left_and_up_and_hold_key,
+        SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
+    CUSTOMIZE_GESTURE_LEFT_AND_DOWN_AND_HOLD(
+        R.string.pref_shortcut_left_and_down_and_hold_key,
+        SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
+    CUSTOMIZE_GESTURE_RIGHT_AND_UP_AND_HOLD(
+        R.string.pref_shortcut_right_and_up_and_hold_key,
+        SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
+    CUSTOMIZE_GESTURE_RIGHT_AND_DOWN_AND_HOLD(
+        R.string.pref_shortcut_right_and_down_and_hold_key,
+        SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
     PRIVACY_POLICY(R.string.pref_policy_key, HIDDEN_SETUP),
     TERMS_OF_SERVICE(R.string.pref_show_tos_key, HIDDEN_SETUP),
     // Help & Tutorial.

@@ -79,6 +79,20 @@ class Swipe extends GestureMatcher {
   private static final float ANGLE_THRESHOLD = 0.0f;
   private final boolean invalidSwipeGestureEarlyDetection;
 
+  // The swipe and hold version of this swipe, reported when the finger rests at the end of the
+  // stroke before lifting, or 0 if there is none.
+  private final int holdGestureId;
+  private final GestureConfigProvider configProvider;
+  // Whether the swipe and hold has an action in this touch. Without one, a rest is handled as
+  // before: a long rest cancels the swipe.
+  private boolean holdAssigned;
+  // Where the finger last moved beyond the touch slop, and when.
+  private float restX;
+  private float restY;
+  private long restStartTime;
+  // Whether a rest after a matching stroke has outlasted the time a swipe may pause.
+  private boolean resting;
+
   Swipe(
       Context context,
       int direction,
@@ -115,6 +129,8 @@ class Swipe extends GestureMatcher {
     int maxTimeToContinueSwipeMsPerCm =
         context.getResources().getInteger(R.integer.config_max_time_to_continue_swipe_ms_per_cm);
     invalidSwipeGestureEarlyDetection = configProvider.invalidSwipeGestureEarlyDetection();
+    this.configProvider = configProvider;
+    holdGestureId = GestureManifold.swipeAndHoldOf(gesture);
     maxStartThreshold = (int) (maxTimeToStartSwipeMsPerCm * gestureConfirmDistanceCm);
     maxContinueThreshold =
         // The tolerance of gesture time was actually greater than this value. Considering the
@@ -146,6 +162,11 @@ class Swipe extends GestureMatcher {
     baseTime = 0;
     previousGestureX = Float.NaN;
     previousGestureY = Float.NaN;
+    holdAssigned = false;
+    restX = Float.NaN;
+    restY = Float.NaN;
+    restStartTime = 0;
+    resting = false;
     strokeBuffer.clear();
     super.clear();
   }
@@ -158,6 +179,10 @@ class Swipe extends GestureMatcher {
       baseTime = event.getEventTime();
       previousGestureX = baseX;
       previousGestureY = baseY;
+      holdAssigned = holdGestureId != 0 && configProvider.isGestureAssigned(holdGestureId);
+      restX = baseX;
+      restY = baseY;
+      restStartTime = baseTime;
     }
     // Otherwise do nothing because this event doesn't make sense in the middle of a gesture.
   }
@@ -171,6 +196,16 @@ class Swipe extends GestureMatcher {
     final float dY = Math.abs(y - previousGestureY);
     final double moveDelta = Math.hypot(Math.abs(x - baseX), Math.abs(y - baseY));
     final long timeDelta = time - baseTime;
+    if (holdAssigned && Math.hypot(x - restX, y - restY) >= touchSlop) {
+      if (resting) {
+        // Moving on after a long rest is no longer this swipe, as before.
+        cancelGesture(event);
+        return;
+      }
+      restX = x;
+      restY = y;
+      restStartTime = time;
+    }
     gestureMotionEventLog(
         VERBOSE,
         "moveDelta: %g,  mGestureDetectionThreshold: %g",
@@ -210,6 +245,10 @@ class Swipe extends GestureMatcher {
         cancelGesture(event);
         return;
     } else if (getState() == STATE_GESTURE_STARTED && (timeDelta > maxContinueThreshold)) {
+      // A rest at the end of a matching stroke waits for the lift, which is the swipe and hold.
+      if (holdAssigned && (resting || (resting = strokeMatches(strokeWith(x, y))))) {
+        return;
+      }
       cancelGesture(event);
       return;
     }
@@ -248,7 +287,26 @@ class Swipe extends GestureMatcher {
     if (dX >= minPixelsBetweenSamplesX || dY >= minPixelsBetweenSamplesY) {
       strokeBuffer.add(new PointF(x, y));
     }
+    if (restedBeforeLift(event) && strokeMatches(strokeBuffer)) {
+      gestureMotionEventLog(VERBOSE, "Completed with a hold.");
+      completeGestureAs(holdGestureId, eventId, event);
+      return;
+    }
     recognizeGesture(eventId, event);
+  }
+
+  /** Whether the finger rested where it lifts for the hold time, with the hold assigned. */
+  private boolean restedBeforeLift(MotionEvent up) {
+    return holdAssigned
+        && Math.hypot(up.getX() - restX, up.getY() - restY) < touchSlop
+        && up.getEventTime() - restStartTime >= GestureConfiguration.getSwipeHoldTimeMs();
+  }
+
+  /** The stroke so far, ending at ({@code x}, {@code y}). */
+  private ArrayList<PointF> strokeWith(float x, float y) {
+    ArrayList<PointF> stroke = new ArrayList<>(strokeBuffer);
+    stroke.add(new PointF(x, y));
+    return stroke;
   }
 
   @Override
@@ -268,9 +326,18 @@ class Swipe extends GestureMatcher {
    * @param event The raw motion event to pass to the listener callbacks.
    */
   private void recognizeGesture(EventId eventId, MotionEvent event) {
-    if (strokeBuffer.size() < 2) {
+    if (strokeMatches(strokeBuffer)) {
+      gestureMotionEventLog(VERBOSE, "Completed.");
+      completeGesture(eventId, event);
+    } else {
       cancelGesture(event);
-      return;
+    }
+  }
+
+  /** Whether the sampled points of {@code stroke} follow this swipe's directions. */
+  private boolean strokeMatches(ArrayList<PointF> stroke) {
+    if (stroke.size() < 2) {
+      return false;
     }
 
     // Look at mStrokeBuffer and extract 2 line segments, delimited by near-perpendicular
@@ -280,7 +347,7 @@ class Swipe extends GestureMatcher {
     // 90 degrees.
 
     ArrayList<PointF> path = new ArrayList<>();
-    PointF lastDelimiter = strokeBuffer.get(0);
+    PointF lastDelimiter = stroke.get(0);
     path.add(lastDelimiter);
 
     float dX = 0; // Sum of unit vectors from last delimiter to each following point
@@ -289,8 +356,8 @@ class Swipe extends GestureMatcher {
     float length = 0; // Vector length from delimiter to most recent point
 
     PointF next = null;
-    for (int i = 1; i < strokeBuffer.size(); ++i) {
-      next = strokeBuffer.get(i);
+    for (int i = 1; i < stroke.size(); ++i) {
+      next = stroke.get(i);
       if (count > 0) {
         // Average of unit vectors from delimiter to following points
         float currentDX = dX / count;
@@ -338,21 +405,17 @@ class Swipe extends GestureMatcher {
 
     path.add(next);
     gestureMotionEventLog(VERBOSE, "path = %s", path.toString());
-    // Classify line segments, and call Listener callbacks.
-    recognizeGesturePath(eventId, event, path);
+    return pathMatches(path);
   }
 
   /**
-   * Classifies a pair of line segments, by direction. Calls Listener callbacks for success or
-   * failure.
+   * Classifies a pair of line segments, by direction.
    *
-   * @param event The raw motion event to pass to the listener's onGestureCanceled method.
-   * @param path A sequence of motion line segments derived from motion points in mStrokeBuffer.
+   * @param path A sequence of motion line segments derived from the motion points of a stroke.
    */
-  private void recognizeGesturePath(EventId eventId, MotionEvent event, ArrayList<PointF> path) {
+  private boolean pathMatches(ArrayList<PointF> path) {
     if (path.size() != directions.length + 1) {
-      cancelGesture(event);
-      return;
+      return false;
     }
     for (int i = 0; i < path.size() - 1; ++i) {
       PointF start = path.get(i);
@@ -367,12 +430,10 @@ class Swipe extends GestureMatcher {
             "Found direction %s  when expecting %s",
             directionToString(direction),
             directionToString(directions[i]));
-        cancelGesture(event);
-        return;
+        return false;
       }
     }
-    gestureMotionEventLog(VERBOSE, "Completed.");
-    completeGesture(eventId, event);
+    return true;
   }
 
   private static int toDirection(float dX, float dY) {
