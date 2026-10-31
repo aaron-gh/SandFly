@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SandFly's live wallpaper, set from Display > Use SandFly as the wallpaper. -->
+<wallpaper xmlns:android="http://schemas.android.com/apk/res/android"
+    android:description="@string/sandfly_wallpaper_description"
+    android:settingsActivity="com.google.android.accessibility.talkback.wallpaper.WallpaperImageActivity"
+    android:thumbnail="@drawable/icon" />

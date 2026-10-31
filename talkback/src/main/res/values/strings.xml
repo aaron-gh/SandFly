@@ -4,6 +4,18 @@
 
     <!--The human-readable name of this service. Do not translate. -->
     <string name="talkback_title" translatable="false">SandFly</string>
+    <!-- Title of the setting that opens Android's screen for setting SandFly as the live wallpaper, which keeps SandFly running on phones whose battery savers stop background apps. [CHAR_LIMIT=60] -->
+    <string name="title_pref_sandfly_wallpaper">Use SandFly as the wallpaper</string>
+    <!-- Shown under the setting while SandFly is the wallpaper. [CHAR_LIMIT=60] -->
+    <string name="summary_pref_sandfly_wallpaper_set">SandFly is the wallpaper</string>
+    <!-- Title of the setting that chooses the image SandFly's wallpaper shows. [CHAR_LIMIT=40] -->
+    <string name="title_pref_wallpaper_image">Wallpaper image</string>
+    <!-- Description of SandFly's live wallpaper in Android's wallpaper picker. [CHAR_LIMIT=NONE] -->
+    <string name="sandfly_wallpaper_description">Keeps SandFly running on phones whose battery savers stop background apps.</string>
+    <!-- Toast after the wallpaper image was set. [CHAR_LIMIT=40] -->
+    <string name="wallpaper_image_set">Wallpaper image set</string>
+    <!-- Toast when the chosen file can't be used as the wallpaper image. [CHAR_LIMIT=60] -->
+    <string name="wallpaper_image_failed">Can\'t use this image</string>
 
     <!--
       Source: A brief description of TalkBack.
