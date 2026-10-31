@@ -214,6 +214,12 @@ class ManifestParserTest {
   }
 
   @Test
+  fun touchToActivateIsARuleOfItsOwn() {
+    assertTrue(rule("""{"id":"a","touchToActivate":true}""").touchToActivate)
+    assertTrue("needs label" in rejectsRule("""{"id":"a","touchToActivate":false}"""))
+  }
+
+  @Test
   fun liftToActivateTakesALongPressTime() {
     val parsed = rule("""{"id":"a","liftToActivate":true,"longPressAfter":800}""")
     assertTrue(parsed.liftToActivate)

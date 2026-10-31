@@ -28,6 +28,7 @@ import android.accessibilityservice.GestureDescription.StrokeDescription;
 import android.accessibilityservice.TouchInteractionController;
 import android.graphics.Path;
 import android.graphics.Rect;
+import android.os.Build;
 import android.text.style.URLSpan;
 import android.view.ViewConfiguration;
 import android.view.accessibility.AccessibilityNodeInfo;
@@ -144,7 +145,45 @@ public class FocusActor implements UserInputEventListener {
     if (currentFocus != null && pipeline != null) {
       pipeline.returnFeedback(eventId, Feedback.part().setInterruptGentle(true));
     }
+    if (Scripts.touchesToActivate(currentFocus) && touchFocus(currentFocus, eventId)) {
+      return true;
+    }
     return clickNode(currentFocus, eventId);
+  }
+
+  /**
+   * Activates the focused item by touching it on the screen, for controls that ignore the click
+   * that activating sends. Where SandFly doesn't detect gestures itself, it is clicked as usual.
+   */
+  public boolean touchClickCurrentFocus(EventId eventId) {
+    AccessibilityNodeInfoCompat currentFocus =
+        accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ false);
+    if (currentFocus == null || pipeline == null) {
+      return false;
+    }
+    pipeline.returnFeedback(eventId, Feedback.part().setInterruptGentle(true));
+    return touchFocus(currentFocus, eventId) || clickNode(currentFocus, eventId);
+  }
+
+  /**
+   * Taps the place of accessibility focus, {@code focus}, which Android works out, also when the
+   * screen is magnified. Returns false where SandFly doesn't detect gestures itself.
+   */
+  private boolean touchFocus(AccessibilityNodeInfoCompat focus, EventId eventId) {
+    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU
+        || !gestureDetectionState.gestureDetector()
+        || pipeline == null) {
+      return false;
+    }
+    TouchInteractionController controller =
+        service.getTouchInteractionController(
+            AccessibilityWindowInfoUtils.getDisplayId(focus.getWindow()));
+    if (controller == null) {
+      return false;
+    }
+    pipeline.returnFeedback(eventId, Feedback.interrupt(Feedback.HINT, /* level= */ 2));
+    controller.performClick();
+    return true;
   }
 
   public boolean clickNode(AccessibilityNodeInfoCompat node, EventId eventId) {

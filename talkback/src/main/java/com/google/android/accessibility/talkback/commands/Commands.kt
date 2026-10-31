@@ -326,6 +326,7 @@ object Commands {
           R.string.shortcut_perform_long_click_action,
           Key.PERFORM_LONG_CLICK,
         )
+        gesture(R.string.shortcut_value_touch_click_action, R.string.shortcut_touch_click_action)
         gesture(
           R.string.shortcut_value_perform_double_click_action,
           R.string.shortcut_perform_double_click_action,

@@ -112,6 +112,8 @@ data class ScriptRule(
    * How many milliseconds a finger held on an item that lifts to activate takes to long-press it.
    */
   val longPressAfter: Int? = null,
+  /** Whether activating the item touches it on the screen instead of clicking it. */
+  val touchToActivate: Boolean = false,
 ) {
   val target: String
     get() = id ?: match.toString()
@@ -134,7 +136,8 @@ data class ScriptRule(
         hide != Hide.NONE ||
         silence != Hide.NONE ||
         group ||
-        liftToActivate
+        liftToActivate ||
+        touchToActivate
 }
 
 data class ScriptNavigation(val title: String, val query: NodeQuery)
