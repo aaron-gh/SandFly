@@ -195,6 +195,15 @@ public class FocusProcessorForLogicalNavigation {
   // Checks whether a page scroll has already moved the list, before its scroll event arrives.
   private final Handler earlyScrollCheckHandler = new Handler(Looper.getMainLooper());
 
+  // While a list that a swipe scrolled is still moving, its next item may not be on screen yet.
+  // The search is repeated once a frame until the list stops, for at most about 300 ms, rather
+  // than navigating again, which would scroll a second page and skip the items in between.
+  private static final long SETTLE_CHECK_MS = 16;
+  private static final int SETTLE_CHECKS = 20;
+
+  // Counts navigation actions, so that a search waiting for a list to stop gives way to a newer one.
+  private int navigationSerial;
+
   // Target to put focus on on the next window navigation action
   private @Nullable AccessibilityNodeInfoCompat stealWindowNavigationTarget = null;
   private @SearchDirectionOrUnknown int stealWindowNavigationTargetDirection =
@@ -243,6 +252,7 @@ public class FocusProcessorForLogicalNavigation {
   ///////////////////////////////////////////////////////////////////////////////////////////////
   // Methods
   public boolean onNavigationAction(NavigationAction navigationAction, EventId eventId) {
+    navigationSerial++;
     if (navigationAction == null || navigationAction.actionType == NavigationAction.UNKNOWN) {
       LogUtils.w(TAG, "Cannot perform navigation action: action type undefined.");
       return false;
@@ -3001,7 +3011,23 @@ public class FocusProcessorForLogicalNavigation {
     int deltaY = pivotPresent ? pivotBefore.top - pivotAfter.top : DELTA_UNDEFINED;
     LogUtils.d(TAG, "checkScrollEarly: scrolled, deltaX=%s deltaY=%s", deltaX, deltaY);
     scrollable.refresh();
+    readListAgain(scrollable);
     onAutoScrolled(scrollable, eventId, deltaX, deltaY);
+  }
+
+  /**
+   * Reads the items of {@code scrollable}, which has just scrolled, from the app again. Android's
+   * node cache keeps them as they were until the list's scroll events, which clear it, reach this
+   * thread, so a search before then would find rows at their old places, or a reused row with the
+   * text it had. The items are read on several threads at once, so this costs about one frame of
+   * the app's. Android 12 and older can't clear part of the cache, so this does nothing there.
+   */
+  private void readListAgain(AccessibilityNodeInfoCompat scrollable) {
+    if (!BuildVersionUtils.isAtLeastT()) {
+      return;
+    }
+    service.clearCachedSubtree(scrollable.unwrap());
+    WindowNodePrefetcher.prefetch(scrollable, service.getPackageName());
   }
 
   /**
@@ -3378,6 +3404,45 @@ public class FocusProcessorForLogicalNavigation {
       @NonNull AccessibilityNodeInfoCompat focusBeforeScroll,
       NavigationAction sourceAction,
       EventId eventId) {
+    handleViewAutoScrolledForDirectionalNavigationWithDefaultTarget(
+        scrolledNode, focusBeforeScroll, sourceAction, eventId, SETTLE_CHECKS);
+  }
+
+  /**
+   * Searches again {@code SETTLE_CHECK_MS} from now, after reading the list again, while it may
+   * still be moving. Gives up if the user navigates or focus moves elsewhere in the meantime.
+   */
+  private void searchAgainWhenListMoves(
+      @NonNull AccessibilityNodeInfoCompat scrolledNode,
+      @NonNull AccessibilityNodeInfoCompat focusBeforeScroll,
+      NavigationAction sourceAction,
+      EventId eventId,
+      int settleChecksLeft) {
+    int serial = navigationSerial;
+    earlyScrollCheckHandler.postDelayed(
+        () -> {
+          if (serial != navigationSerial) {
+            return;
+          }
+          AccessibilityNodeInfoCompat focus =
+              accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ false);
+          if (focus != null && !focus.equals(focusBeforeScroll)) {
+            return;
+          }
+          scrolledNode.refresh();
+          readListAgain(scrolledNode);
+          handleViewAutoScrolledForDirectionalNavigationWithDefaultTarget(
+              scrolledNode, focusBeforeScroll, sourceAction, eventId, settleChecksLeft);
+        },
+        SETTLE_CHECK_MS);
+  }
+
+  private void handleViewAutoScrolledForDirectionalNavigationWithDefaultTarget(
+      @NonNull AccessibilityNodeInfoCompat scrolledNode,
+      @NonNull AccessibilityNodeInfoCompat focusBeforeScroll,
+      NavigationAction sourceAction,
+      EventId eventId,
+      int settleChecksLeft) {
     // Prior to focus on position for scroll in grid.
     if (sourceAction.positionForScroll != null) {
       AccessibilityNodeInfoCompat grid =
@@ -3420,6 +3485,14 @@ public class FocusProcessorForLogicalNavigation {
               localTraversalStrategy, focusBeforeScroll, sourceAction.searchDirection, nodeFilter);
       if (nodeToFocus == null) {
         Rect newRect = getBoundsAfterScroll(focusBeforeScroll);
+        // The pivot moved since the scroll or the last look, so the list may still be moving and
+        // its next item not on screen yet. Navigating again now would scroll a second page.
+        if (!previousRect.equals(newRect) && settleChecksLeft > 0 && sourceAction.shouldScroll) {
+          LogUtils.d(TAG, "List still moving; searching again on the next frame.");
+          searchAgainWhenListMoves(
+              scrolledNode, focusBeforeScroll, sourceAction, eventId, settleChecksLeft - 1);
+          return;
+        }
         if (previousRect.equals(newRect) && sourceAction.shouldScroll) {
           if (sourceAction.isPrevScrolled) {
             LogUtils.d(TAG, "Pivot didn't move but has scrolls. Repeat until to find the next.");
