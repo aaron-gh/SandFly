@@ -419,6 +419,9 @@ public class FailoverTextToSpeech {
 
   private final OnSharedPreferenceChangeListener preferenceChangeListener =
       (sharedPrefs, key) -> {
+        if (SandFlyVolume.KEYS.contains(key)) {
+          SandFlyVolume.update(sharedPrefs);
+        }
         if (PREF_TTS_ENGINE_KEY.equals(key)) {
           preferredTtsEngine = readPreferredEngine(sharedPrefs);
           updateDefaultEngine();
@@ -426,6 +429,8 @@ public class FailoverTextToSpeech {
         } else if (PREF_USE_ACCESSIBILITY_STREAM_KEY.equals(key)
             || PREF_SPEECH_STREAM_KEY.equals(key)
             || PREF_ROUTE_FORCED_KEY.equals(key)) {
+          applyAudioAttributes();
+        } else if (SandFlyVolume.KEYS.contains(key)) {
           applyAudioAttributes();
         } else if (PREF_SPEAK_IN_PHRASES_KEY.equals(key)) {
           speakInPhrases = sharedPrefs.getBoolean(key, SPEAK_IN_PHRASES_DEFAULT);
@@ -563,6 +568,7 @@ public class FailoverTextToSpeech {
     readLanguageSwitches(prefs);
     VoiceProfiles.setActive(VoiceProfiles.readActive(prefs));
     prefs.registerOnSharedPreferenceChangeListener(preferenceChangeListener);
+    SandFlyVolume.update(prefs);
 
     // Updating the default engine reloads the list of installed engines and
     // the system engine. This also loads the default engine.
@@ -656,6 +662,11 @@ public class FailoverTextToSpeech {
     // as with the phone speaker chosen and nothing else connected, the user's choice stands.
     if (prefs.getBoolean(PREF_ROUTE_FORCED_KEY, false)) {
       return STREAM_VALUE_ACCESSIBILITY;
+    }
+    // SandFly's own volume on Bluetooth is a share of the device's volume, which is the media
+    // volume.
+    if (SandFlyVolume.isActive(prefs)) {
+      return STREAM_VALUE_MEDIA;
     }
     return chosenSpeechStream(prefs);
   }
@@ -1620,6 +1631,20 @@ public class FailoverTextToSpeech {
   }
 
   /**
+   * {@code bundle} with its volume scaled by SandFly's own volume, for an engine that plays the
+   * speech itself and so can't make it louder than full volume.
+   */
+  private static Bundle withSandFlyVolume(Bundle bundle) {
+    float gain = SandFlyVolume.gainUpToFull();
+    if (gain >= 1f) {
+      return bundle;
+    }
+    Bundle scaled = new Bundle(bundle);
+    scaled.putFloat(SpeechParam.VOLUME, floatParam(bundle, SpeechParam.VOLUME, 1f) * gain);
+    return scaled;
+  }
+
+  /**
    * Speaks text with the engine, through {@link LowLatencyAudio} if the setting is on and it can.
    * Then the engine synthesizes the speech and Backtalk plays it, so that it reaches the speaker
    * sooner than the engine's own playback.
@@ -1628,7 +1653,7 @@ public class FailoverTextToSpeech {
       CharSequence text, int queueMode, Bundle bundle, @Nullable String utteranceId) {
     @Nullable LowLatencyAudio player = lowLatencyPlayer();
     if (player == null || utteranceId == null || TextUtils.isEmpty(text)) {
-      return tts.speak(text, queueMode, bundle, utteranceId);
+      return tts.speak(text, queueMode, withSandFlyVolume(bundle), utteranceId);
     }
     watchForEngineHang(queueMode, utteranceId);
     if (queueMode != QUEUE_ADD) {
@@ -1666,7 +1691,7 @@ public class FailoverTextToSpeech {
       stream.discard();
       lowLatencyStreams.remove(utteranceId);
       lowLatencyRequests.remove(utteranceId);
-      return tts.speak(text, queueMode, bundle, utteranceId);
+      return tts.speak(text, queueMode, withSandFlyVolume(bundle), utteranceId);
     }
     return result;
   }

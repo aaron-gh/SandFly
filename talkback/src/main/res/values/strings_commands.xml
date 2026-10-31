@@ -102,6 +102,10 @@
     <string name="title_pref_updates">Updates and installation</string>
     <!-- Audio output setting: which volume control, such as Accessibility volume or Media volume, sets how loud speech is. [CHAR LIMIT=60] -->
     <string name="title_pref_speech_stream_control">Volume control for speech</string>
+    <!-- Title of the switch that makes SandFly use its own volume, a share of the Bluetooth device's volume, while audio plays on a Bluetooth device. [CHAR_LIMIT=60] -->
+    <string name="title_pref_sandfly_volume_bluetooth">SandFly volume on Bluetooth</string>
+    <!-- Title of the slider for SandFly's own volume on Bluetooth, in percent of the device's volume. [CHAR_LIMIT=40] -->
+    <string name="title_pref_sandfly_volume">SandFly volume</string>
     <!-- Shown in place of the arrow keys of a command that no arrow keys run. [CHAR LIMIT=40] -->
     <string name="command_no_arrow_keys">No arrow keys</string>
     <!-- Button that assigns arrow keys of arrow key navigation to the command shown. [CHAR LIMIT=40] -->

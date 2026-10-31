@@ -793,7 +793,12 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
     }
     val head = if (held) null else streams.peekFirst()
     if (head != null && !head.mixInto(out, burstFrames)) streams.removeFirst()
-    for (i in out.indices) out[i] = out[i].coerceIn(-1f, 1f)
+    val gain = SandFlyVolume.gain
+    if (gain == 1f) {
+      for (i in out.indices) out[i] = out[i].coerceIn(-1f, 1f)
+    } else {
+      for (i in out.indices) out[i] = SandFlyVolume.limit(out[i] * gain).coerceIn(-1f, 1f)
+    }
   }
 
   private fun createTrack(): AudioTrack? =
