@@ -53,7 +53,7 @@ class ClickFeedback(
     val before = items?.let { stateOf(it) }
     val start = SystemClock.uptimeMillis()
     val success = click()
-    val sent = SENT.add(start, SystemClock.uptimeMillis())
+    val sent = SENT.add(start, SystemClock.uptimeMillis(), target.packageName?.toString())
     if (!success || items == null) {
       return success
     }
@@ -87,7 +87,9 @@ class ClickFeedback(
       return feedback
     }
     val time = event.eventTime
-    val cuesGiven = type == Compositor.EVENT_TYPE_VIEW_CLICKED && SENT.isSentDuring(time)
+    val cuesGiven =
+      type == Compositor.EVENT_TYPE_VIEW_CLICKED &&
+        SENT.takeClickEvent(time, event.packageName?.toString())
     val tts = feedback.ttsOutput().orElse(null)
     val said =
       !TextUtils.isEmpty(tts) &&
@@ -185,26 +187,41 @@ class ClickFeedback(
 }
 
 /**
- * The clicks SandFly sent, by the [clock] time they were sent and carried out, with the state said
- * for each. Apps send a click's events with the time they sent them, and send its click event while
- * carrying it out.
+ * The clicks SandFly sent, by the [clock] time they were sent and returned, with the state said for
+ * each. Apps send a click's events with the time they sent them. Most send its click event while
+ * carrying it out, before the click returns; web content and some apps carry it out afterwards.
  */
 class SentClicks(private val clock: () -> Long) {
-  class Click(val start: Long, val end: Long) {
+  class Click(val start: Long, val end: Long, val packageName: String?) {
     /** The state said as soon as the click was carried out, or null. */
     var said: String? = null
+    /** Whether the app's click event for it has been matched. */
+    var eventTaken = false
   }
 
   private val clicks = RecentItems<Click>(MAX_CLICKS, MAX_AGE_MS, clock)
 
-  fun add(start: Long, end: Long): Click = Click(start, end).also { clicks.add(it) }
+  fun add(start: Long, end: Long, packageName: String? = null): Click =
+    Click(start, end, packageName).also { clicks.add(it) }
 
   fun isEmpty(): Boolean = clicks.isEmpty()
 
-  /** Whether an event sent at [eventTime] was sent while a click was carried out. */
-  fun isSentDuring(eventTime: Long): Boolean =
-    clicks.find { eventTime >= it.start - CLOCK_SLACK_MS && eventTime <= it.end + CLOCK_SLACK_MS } !=
-      null
+  /**
+   * Whether a click event that [packageName] sent at [eventTime] is the app's report of a click
+   * SandFly sent: the first from that app since the click was sent, and within [CLICK_EVENT_MS] of
+   * its return. Each click matches one event.
+   */
+  fun takeClickEvent(eventTime: Long, packageName: String?): Boolean {
+    val click =
+      clicks.find {
+        !it.eventTaken &&
+          (it.packageName == null || packageName == null || it.packageName == packageName) &&
+          eventTime >= it.start - CLOCK_SLACK_MS &&
+          eventTime <= it.end + CLICK_EVENT_MS
+      } ?: return false
+    click.eventTaken = true
+    return true
+  }
 
   /**
    * Whether [text], reported at [eventTime] by an event sent while or soon after a click was
@@ -224,6 +241,9 @@ class SentClicks(private val clock: () -> Long) {
   private companion object {
     // Event times and the clock are both whole milliseconds of uptime.
     const val CLOCK_SLACK_MS = 1L
+    // Web content and apps that carry out a click on another thread send its event after the click
+    // returns, in testing 26 ms after.
+    const val CLICK_EVENT_MS = 1_000L
     // Apps report a state change up to 100 ms after it, and some a frame or two after that.
     const val REPORT_MS = 600L
     const val MAX_CLICKS = 8
