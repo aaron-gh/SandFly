@@ -32,7 +32,7 @@ When you turn on **Controls** > **Touch and activation** > **Reduce delay** > **
 
 ### No items skipped when a swipe scrolls a list
 
-When a swipe at the end of the screen scrolls a list a page, SandFly continues as soon as the list starts to move. TalkBack's node cache still held the list as it was then, so the search could find rows at their old places, or a reused row with its old text, and skip items or jump back. On Android 13 and later, SandFly reads the list again from the app at that moment, on several threads at once. When the next item still isn't on screen, SandFly looks again on each frame until the list stops, for at most about 300 ms, instead of scrolling a second page while the first is still moving. In walks through Android's Settings list on an emulator, the time from lifting your finger to speech on swipes that scroll was the same as before.
+When a swipe at the end of the screen scrolls a list a page, SandFly continues as soon as the list starts to move. Android's node cache still held the list as it was then, so the search could find rows at their old places, or a reused row with its old text, and skip items or jump back. On Android 13 and later, SandFly reads the list again from the app at that moment, on several threads at once. When the next item still isn't on screen, SandFly looks again on each frame until the list stops, for at most about 300 ms, instead of scrolling a second page while the first is still moving. In walks through Android's Settings list on an emulator, the time from lifting your finger to speech on swipes that scroll was the same as before.
 
 ### Reading order kept between swipes
 
