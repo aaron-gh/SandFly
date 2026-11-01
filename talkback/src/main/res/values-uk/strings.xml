@@ -31,7 +31,7 @@
   <string name="title_pref_speech_volume">Гучність мовлення</string>
   <string name="title_pref_verbose_scroll_announcement">Завжди озвучувати кількість елементів списку</string>
   <string name="summary_pref_verbose_scroll_announcement">Після кожного прокручування озвучує, які елементи показано</string>
-  <string name="title_pref_cover_proximity_sensor">Зупиняти озвучення, коли прикрито датчик відстані</string>
+  <string name="title_pref_cover_proximity_sensor">Зупиняти мовлення, коли прикрито датчик відстані</string>
   <string name="title_pref_phonetic_letters">Озвучення літер із прикладами</string>
   <string name="summary_pref_phonetic_letters">Вибираючи клавіші клавіатури або переходячи між окремими символами, ви чутимете кожну літеру з прикладом, як-от: \"г, готель\"</string>
   <string name="title_pref_punctuation">Озвучувати розділові знаки й символи</string>
@@ -1333,12 +1333,12 @@
         <item>@string/speech_stream_call</item>
     </string-array>
     <string name="title_pref_speak_in_phrases">Надсилати довгий текст по одному реченню</string>
-    <string name="summary_pref_speak_in_phrases">Для мовних механізмів, які повільно зупиняються, наприклад Gryphon, проведення пальцем убік зупиняє довгий текст одразу. Багато механізмів роблять довшу паузу між реченнями, надісланими окремо, тому вимкніть цю функцію, якщо ваша швидко зупиняється.</string>
+    <string name="summary_pref_speak_in_phrases">Для синтезаторів, які не відразу зупиняють мовлення, наприклад Gryphon, Змахування відразу зупиняє читання довгого тексту. Багато синтезаторів роблять довшу паузу між реченнями, надісланими окремо, тому вимкніть цю функцію, якщо ваш синтезатор швидко зупиняється.</string>
     <string name="battery_optimization_notification_title">Оптимізація батареї може зупинити SandFly</string>
     <string name="battery_optimization_notification_text">На цьому телефоні режим економії заряду може зупинити SandFly після вимкнення екрана, і SandFly мовчатиме, доки його не буде перезапущено. Торкніться, щоб відкрити оптимізацію акумулятора, виберіть Усі програми, знайдіть SandFly і виберіть Не оптимізувати.</string>
-    <string name="title_pref_mute_speech_while_recording">Тихо під час запису</string>
-    <string name="summary_pref_mute_speech_while_recording">У той час як програма записує без під’єднаних навушників, SandFly говорить лише у відповідь на ваші жести, клавіші та введення тексту, а також мовчить для таких речей, як сповіщення, щоб вони не записувалися.</string>
-    <string name="title_pref_switch_languages">Перемикати мову автоматично</string>
+    <string name="title_pref_mute_speech_while_recording">Не говорити під час запису</string>
+    <string name="summary_pref_mute_speech_while_recording">Якщо в іншому додатку виконується запис без під’єднаних навушників, SandFly говорить лише у відповідь на ваші жести, клавіші та введення тексту, а також не озвучує такі речі, як сповіщення, щоб вони не записувалися.</string>
+    <string name="title_pref_switch_languages">Автоматичне перемикання мови</string>
     <string name="title_pref_switch_dialects">Автоматичне перемикання діалекту</string>
     <string name="category_collapsed">Згорнутий розділ</string>
     <string name="category_expanded">Розгорнутий розділ</string>
@@ -1613,7 +1613,7 @@
     <string name="shortcut_power_menu">Меню живлення</string>
     <string name="shortcut_increase_media_volume">Збільшити гучність медіа</string>
     <string name="shortcut_decrease_media_volume">Зменшити гучність медіа</string>
-    <string name="title_clear_selection">Очистити вибір</string>
+    <string name="title_clear_selection">Зняти виділення</string>
     <string name="title_pref_brightness">Яскравість</string>
     <string name="summary_support_change_brightness">Збільшуйте або зменшуйте яскравість екрана, навіть коли екран приховано</string>
     <string name="title_pref_shortcut_3finger_4tap">Чотири дотики трьома пальцями</string>
@@ -1621,7 +1621,7 @@
     <string name="title_pref_shortcut_2finger_rotate_counterclockwise">Поверніть двома пальцями проти годинникової стрілки</string>
     <string name="title_pref_shortcut_2finger_scrub">Потріть 2 пальцями</string>
     <string name="title_pref_shortcut_2finger_pinch">Зведення двох пальців</string>
-    <string name="title_pref_shortcut_2finger_spread">Розведіть 2 пальцями</string>
+    <string name="title_pref_shortcut_2finger_spread">Розведення двох пальців</string>
     <string name="title_pref_shortcut_3finger_pinch">Зведення трьох пальців</string>
     <string name="title_pref_shortcut_3finger_spread">Розведіть 3 пальцями</string>
     <string name="title_pref_shortcut_4finger_pinch">Зведення чотирьох пальців</string>
@@ -1674,7 +1674,7 @@
     <string name="template_lift_to_activate_changed">Підніміть, щоб активувати: <xliff:g id="mode">%1$s</xliff:g></string>
     <string name="title_pref_wrap_around">Циклічна навігація</string>
     <string name="summary_pref_wrap_around">Проведення повз останнього елемента переходить до першого, а повз першого – до останнього. Якщо вимкнено, наприкінці відтворюється звук.</string>
-    <string name="title_pref_fix_stuck_touch_exploration">Виправити зависання сенсорного дослідження</string>
+    <string name="title_pref_fix_stuck_touch_exploration">Виправити зависання дослідження дотиком</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Без дозволу DUMP SandFly може лише сказати, що дослідження дотиком може зависнути. Щоб виправити це, запустіть: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">Виправлення дослідження дотиком</string>
     <string name="stuck_touch_exploration_fixed">Дослідження дотиком виправлено</string>
@@ -1688,7 +1688,7 @@
     <string name="window_names_never">Ніколи</string>
     <string name="title_pref_selector_links_controls_web_only">Посилання та елементи керування лише у веб-контенті</string>
     <string name="title_pref_selector_auto_switch">Автоматично змінювати елемент керування читанням</string>
-    <string name="title_pref_touch_stops_speech">Зупиняти мовлення під час дотику до екрана</string>
+    <string name="title_pref_touch_stops_speech">Зупиняти мовлення, коли палець торкається екрана</string>
     <string name="title_pref_focus_new_windows">Перемістити фокус до нових вікон</string>
     <string name="title_pref_volume_keys_adjust_sliders">Клавіші гучності регулюють повзунки</string>
     <string name="summary_pref_volume_keys_adjust_sliders">Коли повзунок має фокус, збільшення та зменшення гучності змінюють його значення замість гучності</string>
@@ -1707,11 +1707,11 @@
     <string name="title_keyboard_echo_handwriting_keyboard">Ехо клавіатури рукописного тексту</string>
     <string name="title_keyboard_echo_braille_display">Відлуння брайлівського дисплея</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
-    <string name="title_pref_interrupt_typing">Переривати мовлення під час введення</string>
+    <string name="title_pref_interrupt_typing">Зупиняти мовлення під час вводу тексту</string>
     <string name="pref_interrupt_typing_entry_always">Завжди</string>
     <string name="pref_interrupt_typing_entry_edit_fields">У полях редагування</string>
     <string name="pref_interrupt_typing_entry_keyboard_echo">Під час відлуння клавіатури</string>
-    <string name="title_pref_interrupt_enter">Переривати мовлення клавішею Enter</string>
+    <string name="title_pref_interrupt_enter">Зупиняти мовлення клавішею Enter</string>
     <string name="pref_node_desc_order_entry_name_state_role_pos">Назва, стан, тип</string>
     <string name="pref_node_desc_order_entry_role_state_name_pos">Тип, стан, назва</string>
     <string name="pref_node_desc_order_entry_state_role_name_pos">Стан, тип, назва</string>
@@ -1798,7 +1798,7 @@
   <string name="clipboard_history_empty">Нічого не скопійовано</string>
   <string name="clipboard_history_clear">Очистити історію</string>
   <string name="template_text_added_to_clipboard">додано в буфер обміну, <xliff:g id="text">%1$s</xliff:g></string>
-  <string name="title_pref_speech_dictionary">Словник мовлення</string>
+  <string name="title_pref_speech_dictionary">Словник вимови</string>
   <string name="speech_dictionary_all_apps">Усі додатки</string>
   <string name="speech_dictionary_not_said"><xliff:g id="text" example="#">%1$s</xliff:g> не вимовляється</string>
   <string name="keycombo_key_modifier_insert">Вставити</string>
