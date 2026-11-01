@@ -70,7 +70,68 @@ class KeymapTest {
     // NVDA's Insert + Shift + Right.
     assertEquals(
       KeyCombo(KeyEvent.META_SHIFT_ON, 0, KeyEvent.KEYCODE_DPAD_RIGHT, true),
-      nvda.getKeyComboForKey(context.getString(R.string.keycombo_shortcut_navigate_next_default)),
+      nvda.getKeyComboForKey(context.getString(R.string.keycombo_shortcut_object_next)),
+    )
+  }
+
+  @Test
+  fun computerKeymapsMoveWithArrowsAndTab() {
+    for (keymap in listOf(Keymap.NVDA, Keymap.JAWS, Keymap.ORCA)) {
+      assertTrue(keymap.arrowsNavigate)
+      val model = NewKeyComboModel(context, keymap)
+      fun key(res: Int) = model.getKeyComboForKey(context.getString(res))
+      fun plain(modifiers: Int, keyCode: Int) = KeyCombo(modifiers, 0, keyCode, false)
+      assertEquals(plain(0, KeyEvent.KEYCODE_DPAD_DOWN), key(R.string.keycombo_shortcut_navigate_next_default))
+      assertEquals(plain(0, KeyEvent.KEYCODE_DPAD_UP), key(R.string.keycombo_shortcut_navigate_previous_default))
+      assertEquals(plain(0, KeyEvent.KEYCODE_DPAD_RIGHT), key(R.string.keycombo_shortcut_navigate_next_character))
+      assertEquals(plain(0, KeyEvent.KEYCODE_DPAD_LEFT), key(R.string.keycombo_shortcut_navigate_previous_character))
+      assertEquals(
+        plain(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_DPAD_RIGHT),
+        key(R.string.keycombo_shortcut_navigate_next_word),
+      )
+      assertEquals(
+        plain(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_DPAD_DOWN),
+        key(R.string.keycombo_shortcut_navigate_next_paragraph),
+      )
+      assertEquals(plain(0, KeyEvent.KEYCODE_TAB), key(R.string.keycombo_shortcut_navigate_next_focusable))
+      assertEquals(
+        plain(KeyEvent.META_SHIFT_ON, KeyEvent.KEYCODE_TAB),
+        key(R.string.keycombo_shortcut_navigate_previous_focusable),
+      )
+    }
+    assertFalse(Keymap.SANDFLY.arrowsNavigate)
+    assertFalse(Keymap.VOICEOVER.arrowsNavigate)
+  }
+
+  @Test
+  fun nvdaReviewAndObjectKeysAreItsLaptopKeys() {
+    val model = NewKeyComboModel(context, Keymap.NVDA)
+    fun key(res: Int) = model.getKeyComboForKey(context.getString(res))
+    fun nvda(modifiers: Int, keyCode: Int) = KeyCombo(modifiers, 0, keyCode, true)
+    assertEquals(nvda(KeyEvent.META_SHIFT_ON, KeyEvent.KEYCODE_DPAD_UP), key(R.string.keycombo_shortcut_object_parent))
+    assertEquals(nvda(0, KeyEvent.KEYCODE_DPAD_DOWN), key(R.string.keycombo_shortcut_review_next_line))
+    assertEquals(nvda(0, KeyEvent.KEYCODE_PERIOD), key(R.string.keycombo_shortcut_review_current_character))
+    assertEquals(nvda(0, KeyEvent.KEYCODE_R), key(R.string.keycombo_shortcut_recognize_screen_text))
+    assertEquals(nvda(0, KeyEvent.KEYCODE_A), key(R.string.keycombo_shortcut_other_read_from_cursor_item))
+  }
+
+  @Test
+  fun savedOldDefaultsGiveWayToNewOnes() {
+    val persister = KeyComboPersister(context, Keymap.NVDA.persisterPrefix)
+    val nextItem = context.getString(R.string.keycombo_shortcut_navigate_next_default)
+    val readFromCursor = context.getString(R.string.keycombo_shortcut_other_read_from_cursor_item)
+    // Version 1 saved its default for moving to the next item; the user changed reading from the
+    // cursor.
+    persister.saveKeyCombo(nextItem, KeyCombo(KeyEvent.META_SHIFT_ON, 0, KeyEvent.KEYCODE_DPAD_RIGHT, true))
+    persister.saveKeyCombo(readFromCursor, KeyCombo(0, 0, KeyEvent.KEYCODE_F9, true))
+    val model = NewKeyComboModel(context, Keymap.NVDA)
+    assertEquals(KeyCombo(0, 0, KeyEvent.KEYCODE_DPAD_DOWN, false), model.getKeyComboForKey(nextItem))
+    assertEquals(KeyCombo(0, 0, KeyEvent.KEYCODE_F9, true), model.getKeyComboForKey(readFromCursor))
+    // Only once: a later change stays.
+    persister.saveKeyCombo(nextItem, KeyCombo(KeyEvent.META_SHIFT_ON, 0, KeyEvent.KEYCODE_DPAD_RIGHT, true))
+    assertEquals(
+      KeyCombo(KeyEvent.META_SHIFT_ON, 0, KeyEvent.KEYCODE_DPAD_RIGHT, true),
+      NewKeyComboModel(context, Keymap.NVDA).getKeyComboForKey(nextItem),
     )
   }
 

@@ -56,6 +56,7 @@ import com.google.android.accessibility.talkback.contextmenu.ListMenuManager;
 import com.google.android.accessibility.talkback.eventprocessor.ProcessorPhoneticLetters;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.focusmanagement.AccessibilityFocusMonitor;
+import com.google.android.accessibility.talkback.review.ScreenReview;
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.ScreenStateMonitor;
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping;
 import com.google.android.accessibility.talkback.monitor.BatteryMonitor;
@@ -194,6 +195,9 @@ public class KeyComboManager
   /** Commands only work in Browse Mode. Built during initialization. */
   private final ImmutableSet<String> browseModeOnlyCommands;
 
+  /** Commands that move by character, word, line or paragraph. */
+  private final ImmutableSet<String> textGranularityKeys;
+
   private KeyCombo currentKeyCombo = new KeyCombo();
   private long currentKeyComboTime = 0;
   private KeyCombo previousKeyCombo = new KeyCombo();
@@ -279,6 +283,16 @@ public class KeyComboManager
         FeatureFlagReader.enableBrowseMode(context)
             ? ImmutableSet.copyOf(initializeBrowseModeOnlyCommands())
             : ImmutableSet.of();
+    textGranularityKeys =
+        ImmutableSet.of(
+            context.getString(R.string.keycombo_shortcut_navigate_next_character),
+            context.getString(R.string.keycombo_shortcut_navigate_previous_character),
+            context.getString(R.string.keycombo_shortcut_navigate_next_word),
+            context.getString(R.string.keycombo_shortcut_navigate_previous_word),
+            context.getString(R.string.keycombo_shortcut_navigate_next_line),
+            context.getString(R.string.keycombo_shortcut_navigate_previous_line),
+            context.getString(R.string.keycombo_shortcut_navigate_next_paragraph),
+            context.getString(R.string.keycombo_shortcut_navigate_previous_paragraph));
   }
 
   // TODO: KeyComboManager would be separated into KeyComboManager
@@ -361,6 +375,9 @@ public class KeyComboManager
       recordBrowseModeStateWhenOff(BROWSE_MODE_TURNED_OFF_ON_SERVICE_STOP);
     }
     dismissUpdateModifierKeysDialog();
+    if (keyComboMapper != null) {
+      keyComboMapper.getScreenReview().shutdown();
+    }
   }
 
   @Override
@@ -371,6 +388,9 @@ public class KeyComboManager
     // The following method will cause the key history to be reset.
     setMatchKeyCombo(matchKeyCombo);
     arrowKeyNavKeyHandler.reset();
+    if (keyComboMapper != null) {
+      keyComboMapper.getScreenReview().resetKeys();
+    }
     // The up event of a held SandFly key may be lost the same way.
     sandFlyKeyHeld = false;
     serviceState = newState;
@@ -390,6 +410,19 @@ public class KeyComboManager
         arrowKeyNavKeyHandler.onKeyEventConsumedElsewhere(event);
         return true;
       }
+    }
+
+    // While the review cursor is on, arrow keys and the like move it.
+    @Nullable ScreenReview screenReview = keyComboMapper == null ? null : keyComboMapper.getScreenReview();
+    if (screenReview != null
+        && (event.getAction() == KeyEvent.ACTION_UP
+            || (serviceState == SERVICE_STATE_ACTIVE
+                && matchKeyCombo
+                && keyComboPassThroughState != KeyComboPassThroughState.ACTIVE
+                && !sandFlyKeyHeld))
+        && screenReview.onKeyEvent(event)) {
+      arrowKeyNavKeyHandler.onKeyEventConsumedElsewhere(event);
+      return true;
     }
 
     // Arrow keys pressed with a held SandFly key are SandFly key shortcuts, not arrow key
@@ -425,7 +458,12 @@ public class KeyComboManager
   @Override
   public int getEventTypes() {
     return AccessibilityEvent.TYPE_VIEW_FOCUSED
-        | AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED;
+        | AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED
+        // The screen review reads the window again after these.
+        | AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED
+        | AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED
+        | AccessibilityEvent.TYPE_WINDOWS_CHANGED
+        | AccessibilityEvent.TYPE_VIEW_SCROLLED;
   }
 
   /**
@@ -438,6 +476,13 @@ public class KeyComboManager
    */
   @Override
   public void onAccessibilityEvent(AccessibilityEvent event, EventId eventId) {
+    if (keyComboMapper != null) {
+      keyComboMapper.getScreenReview().onAccessibilityEvent(event);
+    }
+    if (event.getEventType() != AccessibilityEvent.TYPE_VIEW_FOCUSED
+        && event.getEventType() != AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED) {
+      return;
+    }
     if (isBrowseModeSupported()
         && event.getEventType() == AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED) {
       applyRememberedBrowseMode(event);
@@ -654,6 +699,30 @@ public class KeyComboManager
     }
   }
 
+  /**
+   * Returns whether the command saved under [key] works only in browse mode. Moving by character,
+   * word, line and paragraph works anywhere in keymaps where arrow keys move SandFly focus.
+   */
+  private boolean isBrowseModeOnly(String key) {
+    return browseModeOnlyCommands.contains(key)
+        && !(arrowsNavigate() && textGranularityKeys.contains(key));
+  }
+
+  /** Returns whether arrow keys without the SandFly key move SandFly focus, as in NVDA. */
+  private boolean arrowsNavigate() {
+    return keyComboModel instanceof NewKeyComboModel model && model.arrowsNavigate();
+  }
+
+  /** Whether SandFly focus is on an item other than the one with input focus. */
+  private boolean isSandFlyFocusAwayFromInputFocus() {
+    if (accessibilityFocusMonitor == null) {
+      return false;
+    }
+    AccessibilityNodeInfoCompat focus =
+        accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ false);
+    return focus != null && !focus.equals(accessibilityFocusMonitor.getInputFocus());
+  }
+
   /** Whether SandFly focus is on the text field being edited. */
   private boolean isEditingTextWithAccessibilityFocus() {
     if (accessibilityFocusMonitor == null) {
@@ -770,11 +839,16 @@ public class KeyComboManager
    */
   /**
    * Returns the commands whose shortcuts work only in browse mode: the ones browse mode has, and
-   * ones the keymap gives keys without the SandFly key, such as Orca's Alt + Shift + H.
+   * ones the keymap gives keys without the SandFly key, unless such keys work anywhere in it.
    */
   public ImmutableSet<String> getBrowseModeOnlyCommands() {
-    ImmutableSet.Builder<String> commands = ImmutableSet.<String>builder().addAll(browseModeOnlyCommands);
-    if (keyComboModel != null) {
+    ImmutableSet.Builder<String> commands = ImmutableSet.<String>builder();
+    for (String command : browseModeOnlyCommands) {
+      if (isBrowseModeOnly(command)) {
+        commands.add(command);
+      }
+    }
+    if (keyComboModel != null && !arrowsNavigate()) {
       for (String key : keyComboModel.getKeyComboMap().keySet()) {
         KeyCombo keyCombo = keyComboModel.getDefaultKeyCombo(key);
         if (keyCombo.getKeyComboCode() != KeyComboModel.KEY_COMBO_CODE_UNASSIGNED
@@ -1077,10 +1151,37 @@ public class KeyComboManager
     // * Browse mode is on.
     boolean triggerModifierNotPressedWhenNeeded =
         hasModifier && !pressedTriggerModifier && !startedSequenceKeyCombo && !enabledBrowseMode;
+    // In a text field being edited, keys without the SandFly key are the text field's in keymaps
+    // whose shortcuts without it work outside browse mode.
+    if (hasModifier
+        && !pressedTriggerModifier
+        && !startedSequenceKeyCombo
+        && (isCustomKeymap() || arrowsNavigate())
+        && isEditingTextWithAccessibilityFocus()) {
+      passedKeys.addAll(currentKeysDown);
+      return false;
+    }
     if (triggerModifierNotPressedWhenNeeded) {
-      // A custom keymap's shortcuts without the SandFly key work anywhere. Modifier keys pressed on
-      // their own always go to the app.
-      if (isCustomKeymap() && !KeyEvent.isModifierKey(event.getKeyCode())) {
+      // Enter clicks SandFly focus where arrow keys move it, unless input focus is there already.
+      if (arrowsNavigate()
+          && event.getKeyCode() == KeyEvent.KEYCODE_ENTER
+          && otherModifiers == KeyComboModel.NO_MODIFIER
+          && event.getRepeatCount() == 0
+          && isSandFlyFocusAwayFromInputFocus()) {
+        currentKeyCombo =
+            new KeyCombo(
+                KeyComboModel.NO_MODIFIER,
+                KeyComboModel.NO_PREFIX_KEY_CODE,
+                KeyEvent.KEYCODE_ENTER,
+                /* triggerModifierUsed= */ false);
+        performKeyboardAction(TalkBackPhysicalKeyboardShortcut.PERFORM_CLICK, EVENT_ID_UNTRACKED);
+        performedCombo = true;
+        hasPartialMatch = false;
+        return true;
+      }
+      // A custom keymap's shortcuts without the SandFly key work anywhere, as do the NVDA, JAWS and
+      // Orca keymaps'. Modifier keys pressed on their own always go to the app.
+      if ((isCustomKeymap() || arrowsNavigate()) && !KeyEvent.isModifierKey(event.getKeyCode())) {
         KeyCombo plainKeyCombo =
             new KeyCombo(
                 otherModifiers,
@@ -1236,7 +1337,7 @@ public class KeyComboManager
       final String key = entry.getKey();
       final KeyCombo targetKeyCombo = entry.getValue();
       final int match = keyCombo.matchWith(triggerModifier, targetKeyCombo);
-      if (isBrowseModeSupported() && !browseModeEnabled && browseModeOnlyCommands.contains(key)) {
+      if (isBrowseModeSupported() && !browseModeEnabled && isBrowseModeOnly(key)) {
         continue;
       }
       if (match == EXACT_MATCH) {
