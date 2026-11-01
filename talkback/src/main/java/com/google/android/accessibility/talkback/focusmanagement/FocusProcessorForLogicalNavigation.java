@@ -1280,11 +1280,19 @@ public class FocusProcessorForLogicalNavigation {
         return past == null ? null : setAccessibilityFocusInternal(past, navigationAction, eventId);
       }
       if (!forward) {
-        return anchor != null && setAccessibilityFocusInternal(anchor, navigationAction, eventId);
+        if (anchor != null) {
+          return setAccessibilityFocusInternal(anchor, navigationAction, eventId);
+        }
+        return wrapAroundScreenElements(
+            ignoreDescendantsOfPivot, navigationAction, forward, eventId);
       }
       if (anchor == null) {
         @Nullable AccessibilityNodeInfoCompat first = ScreenElements.firstAppNodeOrNull();
-        return first != null && setAccessibilityFocusInternal(first, navigationAction, eventId);
+        if (first != null) {
+          return setAccessibilityFocusInternal(first, navigationAction, eventId);
+        }
+        return wrapAroundScreenElements(
+            ignoreDescendantsOfPivot, navigationAction, forward, eventId);
       }
       // Carry on from the anchor as if the swipe had started there.
       leavingScreenElementsOf = anchor;
@@ -1298,10 +1306,14 @@ public class FocusProcessorForLogicalNavigation {
     if (pivot.getWindowId() != ScreenElements.getHostWindow()) {
       return null;
     }
+    if (pivot.equals(leavingScreenElementsOf)) {
+      return null;
+    }
+    @Nullable AccessibilityNodeInfoCompat outside = ScreenElements.fromOutsideOrder(pivot, forward);
+    if (outside != null) {
+      return setAccessibilityFocusInternal(outside, navigationAction, eventId);
+    }
     if (forward) {
-      if (pivot.equals(leavingScreenElementsOf)) {
-        return null;
-      }
       @Nullable AccessibilityNodeInfoCompat element = ScreenElements.firstAfter(pivot);
       return element == null ? null : setAccessibilityFocusInternal(element, navigationAction, eventId);
     }
@@ -1312,6 +1324,34 @@ public class FocusProcessorForLogicalNavigation {
       }
     }
     return null;
+  }
+
+  /**
+   * Goes on from the first or last recognised element of a window when the swipe leaves the
+   * elements at the window's start or end: around the elements of a window without nodes of its
+   * own, such as a game, if wrapping is on; otherwise on from the window's first node.
+   */
+  private boolean wrapAroundScreenElements(
+      boolean ignoreDescendantsOfPivot,
+      NavigationAction navigationAction,
+      boolean forward,
+      EventId eventId) {
+    @Nullable AccessibilityNodeInfoCompat first = ScreenElements.firstAppNodeOrNull();
+    if (first == null) {
+      if (!navigationAction.shouldWrap || !wrapAround) {
+        return false;
+      }
+      @Nullable AccessibilityNodeInfoCompat element = ScreenElements.beforeFirstNode(forward);
+      return element != null && setAccessibilityFocusInternal(element, navigationAction, eventId);
+    }
+    // Before the window's first node, a backward swipe carries on from there, around the window.
+    leavingScreenElementsOf = first;
+    try {
+      return navigateToDefaultOrMacroGranularityTarget(
+          first, ignoreDescendantsOfPivot, navigationAction, eventId);
+    } finally {
+      leavingScreenElementsOf = null;
+    }
   }
 
   /** Gives each recognised screen element its anchor among the host window's nodes. */
@@ -1570,12 +1610,18 @@ public class FocusProcessorForLogicalNavigation {
       @Nullable AccessibilityNodeInfoCompat element = null;
       if (logicalDirection == TraversalStrategy.SEARCH_FOCUS_BACKWARD) {
         element = ScreenElements.lastBefore(target);
-      } else if (logicalDirection == TraversalStrategy.SEARCH_FOCUS_FORWARD
-          && ScreenElements.isCoveredHost(target)) {
+      } else if (logicalDirection == TraversalStrategy.SEARCH_FOCUS_FORWARD) {
         if (ScreenElements.getNeedsOrder()) {
           orderScreenElements();
         }
-        element = ScreenElements.firstAfter(target);
+        if (ScreenElements.isFirstAppNode(target)) {
+          // Wrapping around or coming from another window: the elements before the first node
+          // come first.
+          element = ScreenElements.beforeFirstNode(/* forward= */ true);
+        }
+        if (element == null && ScreenElements.isCoveredHost(target)) {
+          element = ScreenElements.firstAfter(target);
+        }
       }
       if (element != null) {
         return setAccessibilityFocusInternal(element, navigationAction, eventId);
