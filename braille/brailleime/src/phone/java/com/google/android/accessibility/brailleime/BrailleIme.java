@@ -114,6 +114,7 @@ import com.google.android.accessibility.brailleime.settings.BrailleImePreference
 import com.google.android.accessibility.brailleime.tutorial.TutorialView.TutorialCallback;
 import com.google.android.accessibility.brailleime.tutorial.TutorialView.TutorialState.State;
 import com.google.android.accessibility.utils.OwnKeyboards;
+import com.google.android.accessibility.utils.output.FeedbackController;
 import com.google.android.accessibility.utils.AccessibilityServiceCompatUtils.Constants;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import com.google.android.accessibility.utils.monitor.RecentUserInput;
@@ -305,6 +306,13 @@ public class BrailleIme extends InputMethodService {
     BrailleImePreferencesActivity.initialize(talkBackForBrailleIme);
     BrailleImeGestureCommandActivity.initialize(talkBackForBrailleIme);
     Utils.setComponentEnabled(context, Constants.BRAILLE_KEYBOARD, true);
+  }
+
+  /** SandFly's sound and vibration feedback, or null before SandFly starts the keyboard. */
+  static @Nullable FeedbackController feedbackController() {
+    return talkBackForBrailleCommon == null
+        ? null
+        : talkBackForBrailleCommon.getFeedBackController();
   }
 
   /** Releases what {@link #initialize} started, when TalkBack shuts down. */

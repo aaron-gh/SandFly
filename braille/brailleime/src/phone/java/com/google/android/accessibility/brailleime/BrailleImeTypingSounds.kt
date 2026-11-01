@@ -17,38 +17,30 @@
 package com.google.android.accessibility.brailleime
 
 import android.content.Context
-import android.media.AudioManager
 import com.google.android.accessibility.braille.common.BrailleUserPreferences
-import com.google.android.accessibility.utils.output.ThemeSounds
+import com.google.android.accessibility.braille.common.R
+import com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED
 
 /**
- * Plays Android's keyboard sounds as the braille keyboard types, when the user turns on typing
- * sounds: a key click for a character, and the space, delete and return sounds for those actions.
- * A sound theme can replace each by its theme name.
+ * Plays the braille keyboard's typing sounds, when the user turns on typing sounds: one for a
+ * character, and one each for space, delete and new line. They play like SandFly's other sounds,
+ * the sound theme's if it has them.
  */
 object BrailleImeTypingSounds {
   /** The kind of key to sound like. */
-  enum class Key(internal val effect: Int, internal val themeName: String) {
-    CHARACTER(AudioManager.FX_KEYPRESS_STANDARD, "braille_keyboard_character"),
-    SPACE(AudioManager.FX_KEYPRESS_SPACEBAR, "braille_keyboard_space"),
-    DELETE(AudioManager.FX_KEYPRESS_DELETE, "braille_keyboard_delete"),
-    NEW_LINE(AudioManager.FX_KEYPRESS_RETURN, "braille_keyboard_new_line"),
+  enum class Key(internal val resId: Int) {
+    CHARACTER(R.raw.braille_keyboard_character),
+    SPACE(R.raw.braille_keyboard_space),
+    DELETE(R.raw.braille_keyboard_delete),
+    NEW_LINE(R.raw.braille_keyboard_new_line),
   }
-
-  /**
-   * The sound effect volume. Given a volume, Android plays the sound even when touch sounds are
-   * off in its settings, since the user turned typing sounds on here.
-   */
-  private const val VOLUME = 0.5f
 
   @JvmStatic
   fun play(context: Context, key: Key) {
     if (!BrailleUserPreferences.readTypingSounds(context)) {
       return
     }
-    if (ThemeSounds.play(key.themeName, VOLUME)) {
-      return
-    }
-    context.getSystemService(AudioManager::class.java)?.playSoundEffect(key.effect, VOLUME)
+    // The braille keyboard vibrates on its own.
+    BrailleIme.feedbackController()?.playAuditoryWithoutHaptic(key.resId, EVENT_ID_UNTRACKED)
   }
 }

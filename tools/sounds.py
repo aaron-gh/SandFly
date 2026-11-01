@@ -1,8 +1,8 @@
 # Synthesises all of SandFly's built-in sounds and writes them where the app reads them: focus,
 # clicks, scrolling, windows, list chimes, links, formatting, typos, browse mode, loading, volume,
 # screen off and on, the circle menu, reading controls, cursor moves, row wraps, edge gestures,
-# control sounds and the agent in talkback and utils, and the braille display sounds in
-# braille/common.
+# control sounds and the agent in talkback and utils, and the braille display and braille
+# keyboard sounds in braille/common.
 #
 # Each sound is a 48 kHz, 16-bit mono WAV, peak-normalised to its own level and dithered. WAV is
 # lossless, and Android plays it everywhere; ffmpeg's built-in Vorbis encoder, used before, added
@@ -263,6 +263,23 @@ def sounds():
                         0.27, -6)
     s["turn_on"] = ([BRAILLE], [note(E5, 0, 0.1, 0.05), note(A5, 0.08, 0.14, 0.06)], 0.22, -6)
     s["turn_off"] = ([BRAILLE], [note(A5, 0, 0.1, 0.05), note(E5, 0.08, 0.16, 0.07)], 0.25, -6)
+
+    # Braille keyboard typing sounds: short, low wooden key taps. Space is deeper, delete falls,
+    # and a new line is two taps, rising.
+    s["braille_keyboard_character"] = ([BRAILLE], [
+        click(0, 0.025, 0.003, 0.5, cutoff_hz=2000, seed=7),
+        note(520, 0, 0.035, 0.008, partials=HOLLOW)], 0.04, -10)
+    s["braille_keyboard_space"] = ([BRAILLE], [
+        click(0, 0.03, 0.004, 0.5, cutoff_hz=1500, seed=8),
+        note(330, 0, 0.05, 0.012, partials=HOLLOW)], 0.055, -10)
+    s["braille_keyboard_delete"] = ([BRAILLE], [
+        click(0, 0.025, 0.003, 0.5, cutoff_hz=1800, seed=9),
+        note(560, 0, 0.055, 0.014, glide=380, partials=HOLLOW)], 0.06, -10)
+    s["braille_keyboard_new_line"] = ([BRAILLE], [
+        click(0, 0.025, 0.003, 0.5, cutoff_hz=1800, seed=10),
+        note(390, 0, 0.04, 0.01, partials=HOLLOW),
+        click(0.05, 0.025, 0.003, 0.5, cutoff_hz=2000, seed=11),
+        note(520, 0.05, 0.045, 0.011, partials=HOLLOW)], 0.1, -10)
     return s
 
 
