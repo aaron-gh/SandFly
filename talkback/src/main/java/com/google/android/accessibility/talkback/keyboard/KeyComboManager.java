@@ -1532,9 +1532,9 @@ public class KeyComboManager
   /** Returns whether the keymap turns browse mode on and off with the SandFly key pressed twice. */
   private boolean isBrowseModeToggleAssigned() {
     return keyComboModel
-            .getKeyComboForKey(context.getString(R.string.keycombo_shortcut_other_toggle_browse_mode))
-            .getKeyComboCode()
-        != KeyComboModel.KEY_COMBO_CODE_UNASSIGNED;
+        .getKeyComboForKey(
+            context.getString(R.string.keycombo_shortcut_other_toggle_browse_mode_extra))
+        .isSandFlyKeyPressedTwice();
   }
 
   /** Returns whether [event] presses or releases the SandFly key where it's a held key. */

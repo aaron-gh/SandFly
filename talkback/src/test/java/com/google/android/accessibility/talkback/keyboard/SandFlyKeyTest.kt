@@ -280,7 +280,7 @@ class SandFlyKeyTest {
     val manager = manager(Keymap.SANDFLY, SandFlyKey.META)
     val combo =
       manager.keyComboModel.getKeyComboForKey(
-        context.getString(R.string.keycombo_shortcut_other_toggle_browse_mode)
+        context.getString(R.string.keycombo_shortcut_other_toggle_browse_mode_extra)
       )
     assertEquals("Meta twice", manager.getKeyComboStringRepresentation(combo))
   }

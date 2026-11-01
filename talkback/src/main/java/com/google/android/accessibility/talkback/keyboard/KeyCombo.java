@@ -183,6 +183,23 @@ public final class KeyCombo {
     return NO_MATCH;
   }
 
+  /**
+   * Returns the shortcut of the SandFly key pressed twice, alone, written as its Meta key with no
+   * key after it. Only the browse mode toggle takes it.
+   */
+  public static KeyCombo sandFlyKeyPressedTwice() {
+    return new KeyCombo(
+        KeyComboModel.NO_MODIFIER,
+        KeyEvent.KEYCODE_META_RIGHT,
+        KeyComboModel.KEY_COMBO_CODE_UNASSIGNED,
+        /* triggerModifierUsed= */ true);
+  }
+
+  /** Returns whether this is the SandFly key pressed twice. */
+  public boolean isSandFlyKeyPressedTwice() {
+    return equals(sandFlyKeyPressedTwice());
+  }
+
   public boolean isSequenceKeyPrefixCombo() {
     // Check if it matches with Modifier + R or Modifier + O. Note that the prefix key code will be
     // stored in the key code field when the prefix key combo is pressed.

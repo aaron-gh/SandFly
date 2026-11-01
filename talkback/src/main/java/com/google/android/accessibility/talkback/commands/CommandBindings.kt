@@ -141,11 +141,6 @@ object CommandBindings {
     }
   }
 
-  /** Returns whether the keyboard shortcut kept under [key] can be changed. */
-  @JvmStatic
-  fun isCustomizable(context: Context, key: String): Boolean =
-    key != context.getString(R.string.keycombo_shortcut_other_toggle_browse_mode)
-
   /** Returns the text of the keyboard shortcut kept under [key], or null when there is none. */
   @JvmStatic
   fun keyboardShortcutText(manager: KeyComboManager, key: String): String? {

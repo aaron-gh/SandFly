@@ -32,12 +32,6 @@ public final class KeyComboManagerUtils {
     if (keyComboManager == null) {
       return "";
     }
-    // Browse mode toggle shortcut is currently hardcoded in the summary string of its
-    // `KeyboardShortcutDialogPreference` entry in new_key_combo_preferences.xml.
-    if (keyStringResId == R.string.keycombo_shortcut_other_toggle_browse_mode) {
-      return context.getString(R.string.keycombo_summary_other_toggle_browse_mode);
-    }
-
     KeyCombo keyCombo = getKeyComboForKey(context, keyComboManager, keyStringResId);
 
     return keyComboManager.getKeyComboStringRepresentation(keyCombo);
