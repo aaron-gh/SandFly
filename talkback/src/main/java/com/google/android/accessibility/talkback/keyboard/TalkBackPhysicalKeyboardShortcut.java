@@ -14,11 +14,11 @@ public enum TalkBackPhysicalKeyboardShortcut {
   NAVIGATE_NEXT(
       /* KeyboardShortcut.KEYBOARD_SHORTCUT_NAVIGATE_TO_NEXT_ITEM */ 0,
       R.string.keycombo_shortcut_navigate_next,
-      R.string.keycombo_menu_navigate_next),
+      R.string.keycombo_menu_navigate_next_by_setting),
   NAVIGATE_PREVIOUS(
       /* KeyboardShortcut.KEYBOARD_SHORTCUT_NAVIGATE_TO_PREVIOUS_ITEM */ 1,
       R.string.keycombo_shortcut_navigate_previous,
-      R.string.keycombo_menu_navigate_previous),
+      R.string.keycombo_menu_navigate_previous_by_setting),
   NAVIGATE_ABOVE(
       /* KeyboardShortcut.KEYBOARD_SHORTCUT_NAVIGATE_TO_ABOVE_ITEM */ 2,
       R.string.keycombo_shortcut_navigate_up,
