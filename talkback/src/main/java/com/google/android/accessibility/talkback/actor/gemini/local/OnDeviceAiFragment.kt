@@ -290,7 +290,7 @@ class OnDeviceAiFragment : TalkbackBaseFragment() {
         choices.map { processorLabel(it) }.toTypedArray(),
         choices.indexOf(OnDeviceAiSettings.processor(prefs)),
       ) { dialog, which ->
-        OnDeviceAiSettings.setProcessor(prefs, choices[which])
+        manager.setProcessor(choices[which])
         refresh()
         dialog.dismiss()
       }
