@@ -63,6 +63,8 @@ public class BtConnectManager extends ConnectManager {
   private static final long KEEP_SCANNING_DURATION_MS = 30_000;
   private static final String HID_UUID = "00001124-0000-1000-8000-00805f9b34fb";
   private static final String HID_OVER_GATT_UUID = "00001812-0000-1000-8000-00805f9b34fb";
+  // Serial Port Profile, which the RFCOMM fallback connects to.
+  private static final String SPP_UUID = "00001101-0000-1000-8000-00805f9b34fb";
   private final Context context;
   private final ConnectManager.Callback connectManagerCallback;
   // Some runtimes, such as emulators, do not have bluetooth; allow that btAdapter might be null.
@@ -74,6 +76,7 @@ public class BtConnectManager extends ConnectManager {
   private final BtScanReceiver btScanReceiver;
   private boolean isInitialScanCycle = true;
   private Connector btConnector;
+  @Nullable private HidConnectorCallback hidConnectorCallback;
   private D2dConnection deviceConnection;
   private final AtomicReference<ConnectableDevice> bondingDevice = new AtomicReference<>();
 
@@ -151,6 +154,10 @@ public class BtConnectManager extends ConnectManager {
   @Override
   public void disconnect() {
     BrailleDisplayLog.d(TAG, "disconnect");
+    if (hidConnectorCallback != null) {
+      hidConnectorCallback.cancelRetries();
+      hidConnectorCallback = null;
+    }
     if (btConnector != null) {
       btConnector.disconnect();
       btConnector = null;
@@ -345,14 +352,31 @@ public class BtConnectManager extends ConnectManager {
       BrailleDisplayLog.i(TAG, "Braille HID is supported.");
       connectManagerCallback.onConnectStarted(/* initial= */ true, ConnectStage.HID);
       // Try HID protocol first, if it fails, fallback to RFCOMM.
+      hidConnectorCallback = new HidConnectorCallback();
       btConnector =
-          new BtHidConnector(
-              context, device, new HidConnectorCallback(), getBrailleDisplayController());
+          new BtHidConnector(context, device, hidConnectorCallback, getBrailleDisplayController());
     } else {
       connectManagerCallback.onConnectStarted(/* initial= */ true, ConnectStage.RFCOMM);
       btConnector = new BtRfCommConnector(device, new BtRfCommConnectorCallback());
     }
     btConnector.connect();
+  }
+
+  /**
+   * Whether the RFCOMM fallback could reach a serial port on this device: it lists the Serial Port
+   * Profile, or its services aren't known.
+   */
+  private static boolean mayOfferSerialPort(BluetoothDevice bluetoothDevice) {
+    ParcelUuid[] uuids = bluetoothDevice.getUuids();
+    if (uuids == null || uuids.length == 0) {
+      return true;
+    }
+    for (ParcelUuid uuid : uuids) {
+      if (uuid.getUuid().toString().equals(SPP_UUID)) {
+        return true;
+      }
+    }
+    return false;
   }
 
   @VisibleForTesting
@@ -441,9 +465,31 @@ public class BtConnectManager extends ConnectManager {
       disconnect();
     }
 
+    /** Stops any retry that is waiting to run. */
+    private void cancelRetries() {
+      handler.removeCallbacksAndMessages(null);
+    }
+
+    /**
+     * Retries straight away with a fresh set of retries. Android only lets the display be opened
+     * once its HID host has connected, which can come seconds after the bond, so the retries that
+     * ran before then don't count.
+     */
+    private void retryNow() {
+      cancelRetries();
+      attemptedConnect = 0;
+      if (btConnector != null) {
+        btConnector.connect();
+      }
+    }
+
     @Override
     public void onConnectFailure(ConnectableDevice device, Exception exception) {
       BrailleDisplayLog.d(TAG, "HID onConnectFailure: " + exception.getMessage());
+      if (this != hidConnectorCallback) {
+        // A failure from a connection attempt that was since disconnected.
+        return;
+      }
       if (attemptedConnect < MAXIMUM_RETRY_TIMES) {
         attemptedConnect++;
         handler.postDelayed(
@@ -455,6 +501,14 @@ public class BtConnectManager extends ConnectManager {
             attemptedConnect * BRAILLE_DISPLAY_CONTROLLER_DELAY.toMillis());
       } else {
         disconnect();
+        if (!mayOfferSerialPort(((ConnectableBluetoothDevice) device).bluetoothDevice())) {
+          // Displays such as the NLS eReader offer only HID over Bluetooth. An RFCOMM attempt on
+          // them waits most of a minute for a serial port that isn't there, then fails anyway.
+          BrailleDisplayLog.e(TAG, "HID failed and the display has no serial port to fall back to");
+          connectManagerCallback.onConnectFailure(
+              device, ConnectStage.HID, new IOException("HID connection failed"));
+          return;
+        }
         // Fallback to old method.
         connectManagerCallback.onConnectStarted(/* initial= */ false, ConnectStage.RFCOMM);
         btConnector = new BtRfCommConnector(device, new BtRfCommConnectorCallback());
@@ -579,6 +633,18 @@ public class BtConnectManager extends ConnectManager {
           // The disconnected device might not be the current connected device.
           if (isConnectingOrConnected(device.getAddress())) {
             disconnect();
+          }
+        }
+
+        @Override
+        public void onHidHostConnected(BluetoothDevice device) {
+          BrailleDisplayLog.d(TAG, "onHidHostConnected");
+          // A display that was already paired is opened at once, often before its HID host has
+          // connected, so every attempt fails. Retry now that it has.
+          if (hidConnectorCallback != null
+              && deviceConnection == null
+              && isConnecting(device.getAddress())) {
+            hidConnectorCallback.retryNow();
           }
         }
 
