@@ -285,6 +285,7 @@ import com.google.android.accessibility.utils.AccessibilityEventListener;
 import com.google.android.accessibility.utils.monitor.RecentUserInput;
 import com.google.android.accessibility.utils.AccessibilityEventUtils;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
+import com.google.android.accessibility.utils.AccessibilityServiceCompatUtils;
 import com.google.android.accessibility.utils.AccessibilityWindowInfoUtils;
 import com.google.android.accessibility.utils.BuildVersionUtils;
 import com.google.android.accessibility.utils.FeatureSupport;
@@ -1209,6 +1210,14 @@ public class TalkBackService extends AccessibilityServiceCompat
       if (isAppWindowEvent(event)) {
         SpeechDictionary.onWindowShown(lastWindowPackage);
         AppGestures.onWindowShown(lastWindowPackage);
+      }
+    } else if (eventType == AccessibilityEvent.TYPE_WINDOWS_CHANGED) {
+      // Some launchers, such as Xiaomi's, send no window state change when the home screen is shown
+      // again, so the window list decides as well.
+      @Nullable CharSequence frontApp = frontAppPackage();
+      if (frontApp != null) {
+        SpeechDictionary.onWindowShown(frontApp);
+        AppGestures.onWindowShown(frontApp);
       }
     }
     if (eventType == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED
@@ -5080,5 +5089,30 @@ public class TalkBackService extends AccessibilityServiceCompat
       default:
         return false;
     }
+  }
+
+  /**
+   * The package of the app window in front: the active window if it is an app's or one of
+   * SandFly's own overlays, else the focused app window, or null when neither is shown.
+   */
+  @Nullable
+  private CharSequence frontAppPackage() {
+    @Nullable AccessibilityWindowInfo front = null;
+    for (AccessibilityWindowInfo window : AccessibilityServiceCompatUtils.getWindows(this)) {
+      int type = window.getType();
+      if (type != AccessibilityWindowInfo.TYPE_APPLICATION
+          && type != AccessibilityWindowInfo.TYPE_ACCESSIBILITY_OVERLAY) {
+        continue;
+      }
+      if (window.isActive()) {
+        front = window;
+        break;
+      }
+      if (front == null && window.isFocused()) {
+        front = window;
+      }
+    }
+    @Nullable AccessibilityNodeInfo root = front == null ? null : front.getRoot();
+    return root == null ? null : root.getPackageName();
   }
 }
