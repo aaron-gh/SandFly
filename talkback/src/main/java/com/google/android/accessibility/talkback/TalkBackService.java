@@ -147,7 +147,6 @@ import com.google.android.accessibility.talkback.actor.voicecommands.VoiceComman
 import com.google.android.accessibility.talkback.actor.voicecommands.VoiceCommandProcessor;
 import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics.PeriodicDataProvider;
 import com.google.android.accessibility.talkback.audio.AudioDeviceRouter;
-import com.google.android.accessibility.talkback.audio.BluetoothOutputWatcher;
 import com.google.android.accessibility.talkback.braille.BrailleHelper;
 import com.google.android.accessibility.talkback.braille.TalkBackForBrailleCommonImpl;
 import com.google.android.accessibility.talkback.braille.TalkBackForBrailleDisplayImpl;
@@ -338,7 +337,6 @@ import com.google.android.accessibility.utils.output.FeedbackController;
 import com.google.android.accessibility.utils.output.FeedbackProcessingUtils;
 import com.google.android.accessibility.utils.output.ScrollActionRecord;
 import com.google.android.accessibility.utils.output.SelectionStateReader;
-import com.google.android.accessibility.utils.output.SandFlyVolume;
 import com.google.android.accessibility.utils.output.SpeechController;
 import com.google.android.accessibility.utils.output.SpeechController.UtteranceCompleteRunnable;
 import com.google.android.accessibility.utils.output.SpeechControllerImpl;
@@ -826,7 +824,6 @@ public class TalkBackService extends AccessibilityServiceCompat
   private StuckTouchController stuckTouchController;
   private PauseController pauseController;
   private AudioDeviceRouter audioDeviceRouter;
-  private @Nullable BluetoothOutputWatcher bluetoothOutputWatcher;
   private @Nullable ScriptHost scriptHost;
   private InputMethodMonitor inputMethodMonitor;
   private DisplayMonitor displayMonitor;
@@ -1035,10 +1032,6 @@ public class TalkBackService extends AccessibilityServiceCompat
     NotificationReader.detach();
     NotificationListService.onSandFlyStopped();
 
-    if (bluetoothOutputWatcher != null) {
-      bluetoothOutputWatcher.stop();
-      bluetoothOutputWatcher = null;
-    }
     if (audioDeviceRouter != null) {
       audioDeviceRouter.shutdown();
       audioDeviceRouter = null;
@@ -2260,8 +2253,6 @@ public class TalkBackService extends AccessibilityServiceCompat
     feedbackController.setSoundHaptics(SoundVibrations.patternIds(this));
     audioDeviceRouter = new AudioDeviceRouter(this);
     audioDeviceRouter.startMonitoring();
-    bluetoothOutputWatcher = new BluetoothOutputWatcher(this);
-    bluetoothOutputWatcher.start();
     speechController =
         new SpeechControllerImpl(
             this,
@@ -3469,10 +3460,6 @@ public class TalkBackService extends AccessibilityServiceCompat
       feedbackController.shutdown();
     }
     EmojiSpeech.release();
-    if (bluetoothOutputWatcher != null) {
-      bluetoothOutputWatcher.stop();
-      bluetoothOutputWatcher = null;
-    }
     if (audioDeviceRouter != null) {
       audioDeviceRouter.shutdown();
       audioDeviceRouter = null;
@@ -4416,9 +4403,7 @@ public class TalkBackService extends AccessibilityServiceCompat
             || getString(R.string.talkback_off_timestamp).equals(key)
             || PREF_HAS_TRAINING_FINISHED.equals(key)
             || PREF_HAS_ONBOARDING_FINISHED.equals(key)
-            || DirectTouchSettings.PREF_SEEN.equals(key)
-            // Read where it is used, on each step of the volume keys.
-            || SandFlyVolume.PREF_PERCENT_KEY.equals(key)) {
+            || DirectTouchSettings.PREF_SEEN.equals(key)) {
           return;
         }
         reloadPreferences(key);

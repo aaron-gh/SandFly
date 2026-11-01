@@ -150,8 +150,6 @@ TalkBack always plays speech at the accessibility volume. In SandFly, **Text-to-
 
 The **Speech volume** reading control, which you can turn on in **Reading controls**, switches between them. While **Audio output device** sends speech to a device other than the system default, speech uses the accessibility volume.
 
-Some Bluetooth headsets tie the accessibility volume to another volume, such as the assistant volume. With **Audio output** > **SandFly volume on Bluetooth** on, off by default, speech and SandFly's sounds play at the device's volume, the media volume, while media plays on a Bluetooth device and no call is on. **SandFly volume** sets them as a percentage of it, from 5% to 200%: at 80%, SandFly plays at 80% of the device's volume, and above 100%, louder than other audio. While it is in use, holding a finger on the screen or SandFly speaking makes the volume keys change SandFly volume in steps of 5%, and the **Accessibility volume** reading control changes it too. Volumes above 100% need **Low-latency audio**; without it, speech and sounds play at 100% at most.
-
 ### Automatic language and dialect changes
 
 When text is marked as another language, TalkBack switches the voice to that language. SandFly lets you turn this off. In **Text-to-speech**, **Switch language automatically** controls changes to another language, and **Switch dialect automatically** controls changes to another country's form of the voice's language, such as US English text with a British English voice. Both are on by default.
