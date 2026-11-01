@@ -699,6 +699,7 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
     WRITE_READING_CONTROL(
         R.string.shortcut_value_write_reading_control, R.string.shortcut_write_reading_control),
     WRITE_APP_NAME(R.string.shortcut_value_write_app_name, R.string.shortcut_write_app_name),
+    BRAILLE_APP_NAME(R.string.shortcut_value_braille_app_name, R.string.shortcut_braille_app_name),
     SCROLL_TO_BOTTOM(R.string.shortcut_value_scroll_to_bottom, R.string.shortcut_scroll_to_bottom),
     REFRESH(R.string.shortcut_value_refresh, R.string.shortcut_refresh),
     TOGGLE_BROWSE_MODE(

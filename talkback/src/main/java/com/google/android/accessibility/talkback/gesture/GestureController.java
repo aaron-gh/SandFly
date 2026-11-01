@@ -120,6 +120,7 @@ import com.google.android.accessibility.talkback.scripting.Scripts;
 import com.google.android.accessibility.talkback.dictation.AiDictation;
 import com.google.android.accessibility.talkback.clipboard.ClipboardHistoryFragment;
 import com.google.android.accessibility.talkback.granularediting.GranularEditing;
+import com.google.android.accessibility.talkback.applauncher.BrailleAppLauncher;
 import com.google.android.accessibility.talkback.handwriting.HandwritingAppLauncher;
 import com.google.android.accessibility.talkback.handwriting.HandwritingCommand;
 import com.google.android.accessibility.talkback.sandflyai.SandflyAi;
@@ -193,6 +194,7 @@ public class GestureController {
   private final HandwritingCommand handwritingCommand;
   private final TranslateCommand translateCommand;
   private final HandwritingAppLauncher handwritingAppLauncher;
+  private final BrailleAppLauncher brailleAppLauncher;
   private final AiDictation dictation;
 
   private final @NonNull Map<Integer, Integer> captureGestureIdToAnnouncements = new HashMap<>();
@@ -249,6 +251,7 @@ public class GestureController {
     pullToRefresh = new PullToRefresh(service, pipeline, accessibilityFocusMonitor);
     handwritingCommand = new HandwritingCommand(service, pipeline, actorState, selectorController);
     handwritingAppLauncher = new HandwritingAppLauncher(service, pipeline, actorState);
+    brailleAppLauncher = new BrailleAppLauncher(service, pipeline, actorState);
     translateCommand = new TranslateCommand(service);
     dictation = new AiDictation(service, pipeline);
   }
@@ -259,6 +262,7 @@ public class GestureController {
     pullToRefresh.cancel();
     handwritingCommand.shutdown();
     handwritingAppLauncher.shutdown();
+    brailleAppLauncher.shutdown();
     translateCommand.shutdown();
     dictation.shutdown();
   }
@@ -399,6 +403,9 @@ public class GestureController {
       result = true;
     } else if (action.equals(service.getString(R.string.shortcut_value_write_app_name))) {
       handwritingAppLauncher.show();
+      result = true;
+    } else if (action.equals(service.getString(R.string.shortcut_value_braille_app_name))) {
+      brailleAppLauncher.show();
       result = true;
     } else if (action.equals(service.getString(R.string.shortcut_value_scroll_to_top))) {
       result = listEdgeScroller.scroll(/* toStart= */ true, eventId);

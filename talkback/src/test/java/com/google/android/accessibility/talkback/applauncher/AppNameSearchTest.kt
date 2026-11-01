@@ -14,18 +14,18 @@
  * the License.
  */
 
-package com.google.android.accessibility.talkback.handwriting
+package com.google.android.accessibility.talkback.applauncher
 
 import com.google.android.accessibility.talkback.gesture.OpenAppActions
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
-class HandwritingAppLauncherTest {
+class AppNameSearchTest {
   private val apps =
     listOf("Calculator", "Camera", "Google Maps", "Música", "WhatsApp", "WhatsApp Business", "Wallet")
       .map { OpenAppActions.App(it, "OPEN_APP:$it") }
 
-  private fun matching(letters: String) = HandwritingAppLauncher.matching(apps, letters).map { it.label }
+  private fun matching(letters: String) = AppNameSearch.matching(apps, letters).map { it.label }
 
   @Test
   fun matchesTheStartOfTheName_ignoringCase() {
