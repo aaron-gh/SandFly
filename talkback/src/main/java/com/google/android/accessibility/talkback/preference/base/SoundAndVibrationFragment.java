@@ -34,9 +34,11 @@ import androidx.preference.Preference;
 import androidx.preference.SeekBarPreference;
 import androidx.preference.TwoStatePreference;
 import com.google.android.accessibility.talkback.R;
+import com.google.android.accessibility.talkback.audio.AccessibilityAudioReset;
 import com.google.android.accessibility.talkback.audio.AudioDeviceRouter;
 import com.google.android.accessibility.talkback.audio.SpeakerDevices;
 import com.google.android.accessibility.talkback.shizuku.ShizukuGrants;
+import com.google.android.accessibility.talkback.shizuku.ShizukuShell;
 import com.google.android.accessibility.talkback.speakerphone.SpeakerphoneSettings;
 import com.google.android.accessibility.utils.FeatureSupport;
 import com.google.android.accessibility.utils.PreferenceSettingsUtils;
@@ -45,6 +47,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
+import kotlin.Unit;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 /** Fragment to display sound and vibration settings. */
@@ -142,6 +145,54 @@ public class SoundAndVibrationFragment extends TalkbackBaseFragment {
             if (isAdded()) {
               updateSpeakerphonePreference();
             }
+          });
+    }
+  }
+
+  /**
+   * Resetting accessibility audio runs as the shell user, through Shizuku. Until Shizuku allows
+   * SandFly, the setting shows the adb command that resets it once, and has an action that copies
+   * it. Turning it on asks Shizuku to allow SandFly.
+   */
+  private void updateResetAccessibilityAudioPreference() {
+    Preference pref = findPreference(getString(R.string.pref_reset_accessibility_audio_key));
+    if (pref == null) {
+      return;
+    }
+    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) {
+      PreferenceSettingsUtils.hidePreference(
+          getContext(), getPreferenceScreen(), R.string.pref_reset_accessibility_audio_key);
+      return;
+    }
+    boolean allowed = ShizukuShell.INSTANCE.isAllowed();
+    String command = AccessibilityAudioReset.INSTANCE.command(requireContext());
+    boolean checked = pref instanceof TwoStatePreference && ((TwoStatePreference) pref).isChecked();
+    pref.setEnabled(allowed || checked || ShizukuGrants.INSTANCE.isReady());
+    pref.setSummary(
+        allowed
+            ? null
+            : getString(R.string.summary_pref_reset_accessibility_audio_needs_shizuku, command));
+    if (pref instanceof CommandSwitchPreference) {
+      CommandSwitchPreference commandPreference = (CommandSwitchPreference) pref;
+      commandPreference.setCommand(allowed ? null : command);
+      commandPreference.setOnToggle(
+          (on, done) -> {
+            if (!on || ShizukuShell.INSTANCE.isAllowed()) {
+              done.accept(true);
+              return;
+            }
+            if (!ShizukuGrants.INSTANCE.isReady()) {
+              done.accept(false);
+              return;
+            }
+            ShizukuGrants.INSTANCE.withShizukuPermission(
+                granted -> {
+                  done.accept(granted);
+                  if (isAdded()) {
+                    updateResetAccessibilityAudioPreference();
+                  }
+                  return Unit.INSTANCE;
+                });
           });
     }
   }
@@ -261,6 +312,7 @@ public class SoundAndVibrationFragment extends TalkbackBaseFragment {
     updateAudioOutputPreference();
     updateSpeakerDevicesPreference();
     updateSpeakerphonePreference();
+    updateResetAccessibilityAudioPreference();
     Preference audioPref =
         PreferenceSettingsUtils.findPreference(activity, getString(R.string.pref_audio_output_device_key));
     if (audioPref instanceof ListPreference) {

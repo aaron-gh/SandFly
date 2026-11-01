@@ -54,6 +54,8 @@ Two settings need permissions that Android only grants through adb:
 
 With [Shizuku](https://shizuku.rikka.app) installed and running, SandFly grants these itself: DUMP when SandFly starts, and the call permission when you turn the setting on. The first time, Shizuku asks whether to allow SandFly. Without Shizuku, each setting shows the adb command, and its **Copy command** action copies it.
 
+**Audio output** > **Reset accessibility audio after calls** works only through Shizuku, as no permission that adb can grant allows it. Without Shizuku, the setting shows an adb command that resets the accessibility audio output once.
+
 ## Image descriptions
 
 **Describe image** and **Describe screen** can use an AI service with your own API key, or a model that runs on the phone. Google's source release does not include working Gemini support, so without one of these, **Describe image** only reads text in images, and **Describe screen** does not work. SandFly adds its own support for Describe screen, including follow-up questions.

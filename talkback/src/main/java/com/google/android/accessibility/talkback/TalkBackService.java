@@ -147,6 +147,7 @@ import com.google.android.accessibility.talkback.actor.voicecommands.VoiceComman
 import com.google.android.accessibility.talkback.actor.voicecommands.VoiceCommandProcessor;
 import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics.PeriodicDataProvider;
 import com.google.android.accessibility.talkback.audio.AudioDeviceRouter;
+import com.google.android.accessibility.talkback.audio.AccessibilityAudioWatcher;
 import com.google.android.accessibility.talkback.audio.BluetoothOutputWatcher;
 import com.google.android.accessibility.talkback.braille.BrailleHelper;
 import com.google.android.accessibility.talkback.braille.TalkBackForBrailleCommonImpl;
@@ -827,6 +828,7 @@ public class TalkBackService extends AccessibilityServiceCompat
   private PauseController pauseController;
   private AudioDeviceRouter audioDeviceRouter;
   private @Nullable BluetoothOutputWatcher bluetoothOutputWatcher;
+  private @Nullable AccessibilityAudioWatcher accessibilityAudioWatcher;
   private @Nullable ScriptHost scriptHost;
   private InputMethodMonitor inputMethodMonitor;
   private DisplayMonitor displayMonitor;
@@ -1038,6 +1040,11 @@ public class TalkBackService extends AccessibilityServiceCompat
     if (bluetoothOutputWatcher != null) {
       bluetoothOutputWatcher.stop();
       bluetoothOutputWatcher = null;
+    }
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU
+        && accessibilityAudioWatcher != null) {
+      accessibilityAudioWatcher.stop();
+      accessibilityAudioWatcher = null;
     }
     if (audioDeviceRouter != null) {
       audioDeviceRouter.shutdown();
@@ -2262,6 +2269,10 @@ public class TalkBackService extends AccessibilityServiceCompat
     audioDeviceRouter.startMonitoring();
     bluetoothOutputWatcher = new BluetoothOutputWatcher(this);
     bluetoothOutputWatcher.start();
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+      accessibilityAudioWatcher = new AccessibilityAudioWatcher(this);
+      accessibilityAudioWatcher.start();
+    }
     speechController =
         new SpeechControllerImpl(
             this,
@@ -3472,6 +3483,11 @@ public class TalkBackService extends AccessibilityServiceCompat
     if (bluetoothOutputWatcher != null) {
       bluetoothOutputWatcher.stop();
       bluetoothOutputWatcher = null;
+    }
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU
+        && accessibilityAudioWatcher != null) {
+      accessibilityAudioWatcher.stop();
+      accessibilityAudioWatcher = null;
     }
     if (audioDeviceRouter != null) {
       audioDeviceRouter.shutdown();

@@ -674,6 +674,12 @@ adb shell appops set io.github.aaron_gh.sandfly MANAGE_ONGOING_CALLS allow
 
 Without Shizuku, until you grant the permission, the setting is unavailable and shows the command, and its **Copy command** action copies the command to the clipboard. This feature requires Android 12 or later.
 
+### Reset accessibility audio after calls
+
+During a call, Android sends accessibility audio to the call's audio device. Some phones keep that device after the call ends: on a Galaxy Z Fold, after a WhatsApp call, speech played on the earpiece, and music on Bluetooth headphones stopped each time SandFly spoke.
+
+With **Audio output** > **Reset accessibility audio after calls** on, SandFly resets the accessibility audio output when Android sends it to the earpiece outside a call. The reset needs the shell user, so it runs through [Shizuku](https://shizuku.rikka.app); turning the setting on asks Shizuku to allow SandFly. Without Shizuku, the setting shows an adb command that resets the output once, and its **Copy command** action copies it. The command names the installed APK, so copy it again after SandFly updates. This feature requires Android 13 or later.
+
 ## Direct touch
 
 Audio games need raw touch, but explore by touch captures taps and swipes before the game sees them. With direct touch, SandFly passes your touches straight to the games that you choose, so you don't have to pause SandFly.
