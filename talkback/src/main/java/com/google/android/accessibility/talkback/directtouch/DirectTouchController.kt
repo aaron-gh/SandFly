@@ -138,8 +138,12 @@ class DirectTouchController(
       handler.removeCallbacks(recheck)
       handler.postDelayed(recheck, DEBOUNCE_MS)
     }
-    // Also while a text field holds direct touch off, to see it lose focus.
+    // Also while a text field holds direct touch off, to see it lose focus. Then only focus
+    // changes count: typing in it moves the cursor with every key, and each look asks the app.
     if (!active && !textFieldFocused) {
+      return
+    }
+    if (textFieldFocused && event.eventType == AccessibilityEvent.TYPE_VIEW_TEXT_SELECTION_CHANGED) {
       return
     }
     when (event.eventType) {

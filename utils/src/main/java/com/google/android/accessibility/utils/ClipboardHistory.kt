@@ -20,6 +20,7 @@ import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
 import android.content.SharedPreferences
+import android.os.UserManager
 import org.json.JSONArray
 import org.json.JSONException
 
@@ -154,11 +155,26 @@ object ClipboardHistory {
     synchronized(listeners) { listeners -= listener }
   }
 
-  private fun prefs(context: Context): SharedPreferences =
-    context.createDeviceProtectedStorageContext().getSharedPreferences(FILE, Context.MODE_PRIVATE)
+  @Volatile private var moved = false
+
+  /**
+   * The history's file, in storage that is encrypted until the person unlocks the device, as the
+   * history holds what other apps copied. Null while it is locked: nothing is kept until then.
+   */
+  private fun prefs(context: Context): SharedPreferences? {
+    val user = context.getSystemService(UserManager::class.java)
+    if (user != null && !user.isUserUnlocked) return null
+    val app = context.applicationContext ?: context
+    if (!moved) {
+      moved = true
+      // Kept in device-protected storage before 0.3.0.
+      app.moveSharedPreferencesFrom(app.createDeviceProtectedStorageContext(), FILE)
+    }
+    return app.getSharedPreferences(FILE, Context.MODE_PRIVATE)
+  }
 
   private fun read(context: Context): List<String> {
-    val json = prefs(context).getString(KEY, null) ?: return emptyList()
+    val json = prefs(context)?.getString(KEY, null) ?: return emptyList()
     return try {
       val array = JSONArray(json)
       (0 until array.length()).mapNotNull { array.optString(it).takeIf(String::isNotEmpty) }
@@ -168,7 +184,8 @@ object ClipboardHistory {
   }
 
   private fun write(context: Context, entries: List<String>) {
-    prefs(context).edit().putString(KEY, JSONArray(entries).toString()).apply()
+    val prefs = prefs(context) ?: return
+    prefs.edit().putString(KEY, JSONArray(entries).toString()).apply()
     val copy = synchronized(listeners) { listeners.toList() }
     android.os.Handler(android.os.Looper.getMainLooper()).post { copy.forEach { it() } }
   }

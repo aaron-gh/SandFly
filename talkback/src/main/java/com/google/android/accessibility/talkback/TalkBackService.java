@@ -1211,7 +1211,7 @@ public class TalkBackService extends AccessibilityServiceCompat
         SpeechDictionary.onWindowShown(lastWindowPackage);
         AppGestures.onWindowShown(lastWindowPackage);
       }
-    } else if (eventType == AccessibilityEvent.TYPE_WINDOWS_CHANGED) {
+    } else if (eventType == AccessibilityEvent.TYPE_WINDOWS_CHANGED && changesFrontWindow(event)) {
       // Some launchers, such as Xiaomi's, send no window state change when the home screen is shown
       // again, so the window list decides as well.
       @Nullable CharSequence frontApp = frontAppPackage();
@@ -5099,27 +5099,67 @@ public class TalkBackService extends AccessibilityServiceCompat
   }
 
   /**
+   * Whether a windows change may have changed the window in front: a window came or went, or
+   * another became active or focused. Bounds, title and layer changes come in bursts and don't.
+   */
+  private static boolean changesFrontWindow(AccessibilityEvent event) {
+    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.P) {
+      return true;
+    }
+    return (event.getWindowChanges()
+            & (AccessibilityEvent.WINDOWS_CHANGE_ADDED
+                | AccessibilityEvent.WINDOWS_CHANGE_REMOVED
+                | AccessibilityEvent.WINDOWS_CHANGE_ACTIVE
+                | AccessibilityEvent.WINDOWS_CHANGE_FOCUSED))
+        != 0;
+  }
+
+  // The window frontAppPackage last found in front, whose package was then taken.
+  private int lastFrontWindowId = -1;
+
+  /**
    * The package of the app window in front: the active window if it is an app's or one of
-   * SandFly's own overlays, else the focused app window, or null when neither is shown.
+   * SandFly's own overlays, else the focused app window. Null when neither is shown, or when the
+   * window in front is the one last found, so its package isn't asked for again. Recognized screen
+   * elements and other services' overlays are over the app, which stays the app in front.
    */
   @Nullable
   private CharSequence frontAppPackage() {
     @Nullable AccessibilityWindowInfo front = null;
+    // The root of an overlay in front, already asked for to check its package.
+    @Nullable AccessibilityNodeInfo frontRoot = null;
     for (AccessibilityWindowInfo window : AccessibilityServiceCompatUtils.getWindows(this)) {
       int type = window.getType();
       if (type != AccessibilityWindowInfo.TYPE_APPLICATION
           && type != AccessibilityWindowInfo.TYPE_ACCESSIBILITY_OVERLAY) {
         continue;
       }
+      boolean candidate = window.isActive() || (front == null && window.isFocused());
+      if (!candidate) {
+        continue;
+      }
+      @Nullable AccessibilityNodeInfo overlayRoot = null;
+      if (type == AccessibilityWindowInfo.TYPE_ACCESSIBILITY_OVERLAY) {
+        if (ScreenElements.isElementWindow(window.getId())) {
+          continue;
+        }
+        overlayRoot = window.getRoot();
+        if (overlayRoot == null
+            || !TextUtils.equals(overlayRoot.getPackageName(), getPackageName())) {
+          continue;
+        }
+      }
+      front = window;
+      frontRoot = overlayRoot;
       if (window.isActive()) {
-        front = window;
         break;
       }
-      if (front == null && window.isFocused()) {
-        front = window;
-      }
     }
-    @Nullable AccessibilityNodeInfo root = front == null ? null : front.getRoot();
+    if (front == null || front.getId() == lastFrontWindowId) {
+      return null;
+    }
+    lastFrontWindowId = front.getId();
+    @Nullable AccessibilityNodeInfo root = frontRoot != null ? frontRoot : front.getRoot();
     return root == null ? null : root.getPackageName();
   }
 }
