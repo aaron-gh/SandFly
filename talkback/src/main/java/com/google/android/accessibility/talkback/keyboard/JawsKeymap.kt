@@ -30,6 +30,8 @@ object JawsKeymap : KeymapDefaults() {
   override val defaults: Map<Int, KeyCombo> =
     buildMap {
       putDesktopKeys()
+      // Windows + D shows the desktop.
+      putSystemKeys(META)
       put(R.string.keycombo_shortcut_perform_click, sandFly(NONE, KeyEvent.KEYCODE_8))
       put(R.string.keycombo_shortcut_perform_long_click, sandFly(NONE, KeyEvent.KEYCODE_9))
       put(R.string.keycombo_shortcut_other_custom_actions, sandFly(NONE, KeyEvent.KEYCODE_MENU))

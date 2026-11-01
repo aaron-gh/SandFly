@@ -29,6 +29,8 @@ object NvdaKeymap : KeymapDefaults() {
   override val defaults: Map<Int, KeyCombo> =
     buildMap {
       putDesktopKeys()
+      // Windows + D shows the desktop.
+      putSystemKeys(META)
 
       // Object navigation.
       put(R.string.keycombo_shortcut_object_parent, sandFly(SHIFT, KeyEvent.KEYCODE_DPAD_UP))
