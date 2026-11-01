@@ -3262,7 +3262,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     PhoneticLetterMode.migrate(prefs, getResources());
     VerbosityPreferences.removePresets(prefs, getResources());
     // Arrow key navigation's own commands became arrow keys that run any command.
-    ArrowKeyNav.migrate(prefs);
+    ArrowKeyNav.migrate(this);
     VoiceProfiles.moveReadingControl(
         prefs,
         getString(R.string.pref_selector_voice_profile_moved_key),
