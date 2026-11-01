@@ -51,6 +51,9 @@ object CommandBindings {
     }
   }
 
+  /** A category of the Gestures screen, such as One finger gestures, with its gestures. */
+  class GestureCategory(val key: String?, val title: CharSequence?, val gestures: List<GestureSlot>)
+
   /**
    * Returns the gestures that can be assigned on this device, in the order of the Gestures screen,
    * read from that screen's own definition: [screen] is the inflated Gestures screen.
@@ -58,6 +61,23 @@ object CommandBindings {
   @JvmStatic
   fun gestures(context: Context, screen: PreferenceGroup): List<GestureSlot> {
     TalkBackPreferenceFilter(context).filterPreferences(screen)
+    return slots(context, listPreferences(screen))
+  }
+
+  /**
+   * Returns the categories of the Gestures screen that have gestures to assign, in order, as
+   * [gestures] reads them.
+   */
+  @JvmStatic
+  fun gestureCategories(context: Context, screen: PreferenceGroup): List<GestureCategory> {
+    TalkBackPreferenceFilter(context).filterPreferences(screen)
+    return (0 until screen.preferenceCount)
+      .mapNotNull { screen.getPreference(it) as? PreferenceGroup }
+      .map { GestureCategory(it.key, it.title, slots(context, listPreferences(it))) }
+      .filter { it.gestures.isNotEmpty() }
+  }
+
+  private fun slots(context: Context, preferences: List<GestureListPreference>): List<GestureSlot> {
     val prefs = SharedPreferencesUtils.getSharedPreferences(context)
     val gestureSet =
       if (
@@ -84,7 +104,7 @@ object CommandBindings {
       } else {
         emptySet()
       }
-    return listPreferences(screen)
+    return preferences
       .filter { it.key !in reserved }
       .map {
         GestureSlot(

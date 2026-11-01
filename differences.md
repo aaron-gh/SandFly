@@ -436,7 +436,7 @@ When you choose an action for a gesture, the categories of actions are collapsed
 
 ### Gesture profiles
 
-A gesture profile is a set of gestures that run other commands while the profile is in use. To add one, go to **Gestures** > **Gesture profiles** and choose **Add gesture profile**. The profile's screen lists every gesture, each set to **Default** at first. A gesture set to **Default** runs what it runs without the profile: its command on the Gestures screen, its command in **Gestures in apps**, or a script's. A gesture set to a command runs that command, before gestures in apps, scripts and row and column navigation. A gesture set to **Unassigned** does nothing. Profiles also have **Rename**, **Move up**, **Move down** and **Delete gesture profile**.
+A gesture profile is a set of gestures that run other commands while the profile is in use. To add one, go to **Gestures** > **Gesture profiles** and choose **Add gesture profile**. The profile's screen lists the gestures in the categories of the Gestures screen, each set to **Default** at first, and a gesture opens the same list of commands as on the Gestures screen, with **Default** first. A gesture set to **Default** runs what it runs without the profile: its command on the Gestures screen, its command in **Gestures in apps**, or a script's. A gesture set to a command runs that command, before gestures in apps, scripts and row and column navigation. A gesture set to **Tap to assign** does nothing. Profiles also have **Rename**, **Move up**, **Move down** and **Delete gesture profile**.
 
 **Default** uses no profile. To change profile:
 

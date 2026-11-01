@@ -37,6 +37,7 @@ import com.google.android.accessibility.material.preference.AccessibilitySuiteDi
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.commands.Commands;
 import com.google.android.accessibility.talkback.preference.TalkBackPreferencesActivity.TalkBackSubSettings;
+import com.google.android.accessibility.talkback.gesture.GestureProfiles;
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import com.google.android.accessibility.utils.StringBuilderUtils;
@@ -152,8 +153,18 @@ public final class GestureListPreference extends AccessibilitySuiteDialogPrefere
 
   /** The setter of the preference value. */
   public void setValue(String value) {
-    SharedPreferences sharedPreferences = SharedPreferencesUtils.getSharedPreferences(getContext());
-    sharedPreferences.edit().putString(getKey(), value).apply();
+    save(getContext(), getKey(), value);
+  }
+
+  /**
+   * Makes the gesture of preference key {@code key} run the command {@code value}, in its gesture
+   * profile for a row of a profile's screen.
+   */
+  public static void save(Context context, String key, String value) {
+    SharedPreferences sharedPreferences = SharedPreferencesUtils.getSharedPreferences(context);
+    if (!GestureProfiles.setRowValue(sharedPreferences, key, value)) {
+      sharedPreferences.edit().putString(key, value).apply();
+    }
   }
 
   /** The setter of the summary for disabled case. */
@@ -166,8 +177,12 @@ public final class GestureListPreference extends AccessibilitySuiteDialogPrefere
    * pointed to the action "Read from top".
    */
   public String getCurrentValue() {
-    String targetValue =
-        SharedPreferencesUtils.getSharedPreferences(getContext()).getString(getKey(), initialValue);
+    SharedPreferences prefs = SharedPreferencesUtils.getSharedPreferences(getContext());
+    @Nullable String profileValue = GestureProfiles.rowValue(prefs, getKey());
+    if (profileValue != null) {
+      return profileValue;
+    }
+    String targetValue = prefs.getString(getKey(), initialValue);
 
     // returns "TALKBACK_BREAKOUT" if targetText is "LOCAL_BREAKOUT"
     if (TextUtils.equals(
@@ -192,6 +207,9 @@ public final class GestureListPreference extends AccessibilitySuiteDialogPrefere
       return summaryWhenDisabled;
     }
     String value = getCurrentValue();
+    if (TextUtils.equals(value, GestureProfiles.DEFAULT_VALUE)) {
+      return getContext().getString(R.string.gesture_profile_default);
+    }
     if (TextUtils.equals(value, getContext().getString(R.string.shortcut_value_unassigned))) {
       return getContext().getResources().getString(R.string.shortcut_unassigned);
     }
@@ -205,6 +223,13 @@ public final class GestureListPreference extends AccessibilitySuiteDialogPrefere
 
   private void populateActionItems() {
     ImmutableList.Builder<ActionItem> builder = ImmutableList.builder();
+    if (GestureProfiles.isRowKey(getKey())) {
+      builder.add(
+          new ActionItem(
+              getContext().getString(R.string.gesture_profile_default),
+              GestureProfiles.DEFAULT_VALUE,
+              TYPE_ACTION_ITEM));
+    }
     builder.add(
         new ActionItem(
             getContext().getResources().getString(R.string.shortcut_unassigned),

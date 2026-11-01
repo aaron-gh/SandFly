@@ -20,7 +20,6 @@ import static com.google.android.accessibility.talkback.preference.base.GestureL
 import static com.google.android.accessibility.talkback.preference.base.GestureListPreference.TYPE_TITLE;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -45,7 +44,6 @@ import com.google.android.accessibility.material.preference.AccessibilitySuitePr
 import com.google.android.accessibility.material.preference.AccessibilitySuiteRadioButtonPreference;
 import com.google.android.accessibility.talkback.preference.base.GestureListPreference.ActionItem;
 import com.google.android.accessibility.utils.PreferenceSettingsUtils;
-import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
@@ -79,8 +77,7 @@ public class GesturePreferenceFragmentCompat extends TalkbackBaseFragment {
           }
 
           ActionItem item = (ActionItem) items[preference.getOrder()];
-          SharedPreferences prefs = SharedPreferencesUtils.getSharedPreferences(getContext());
-          prefs.edit().putString(preferenceKey, item.value).apply();
+          GestureListPreference.save(getContext(), preferenceKey, item.value);
           popBackStack();
           return true;
         }

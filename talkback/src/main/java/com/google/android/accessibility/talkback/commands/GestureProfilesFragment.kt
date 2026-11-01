@@ -17,11 +17,14 @@
 package com.google.android.accessibility.talkback.commands
 
 import android.os.Bundle
+import androidx.preference.Preference
 import androidx.preference.PreferenceGroup
+import com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.gesture.GestureProfiles
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping
 import com.google.android.accessibility.talkback.notifications.NotificationCodeFragment
+import com.google.android.accessibility.talkback.preference.base.GestureListPreference
 
 /** Gestures > Gesture profiles: the profile in use, and the profiles to add, change or delete. */
 class GestureProfilesFragment : NotificationCodeFragment(R.string.title_pref_gesture_profiles) {
@@ -76,13 +79,13 @@ class GestureProfileFragment : NotificationCodeFragment(R.string.title_pref_gest
 
   private val id: String by lazy { requireArguments().getString(ARG_ID).orEmpty() }
 
-  // The gestures that can be assigned, named and in order as on the Gestures screen.
-  private var slots: List<CommandBindings.GestureSlot> = emptyList()
+  // The gestures that can be assigned, named, grouped and in order as on the Gestures screen.
+  private var categories: List<CommandBindings.GestureCategory> = emptyList()
 
   override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
     preferenceManager.setStorageDeviceProtected()
     // Read from the Gestures screen, which the screen built in code then replaces.
-    slots = readGestures(this)
+    categories = readGestureCategories(this)
     super.onCreatePreferences(savedInstanceState, rootKey)
   }
 
@@ -117,49 +120,32 @@ class GestureProfileFragment : NotificationCodeFragment(R.string.title_pref_gest
       }
     }
 
-    val gestures = screen.category(R.string.command_gestures)
-    for (slot in slots) {
-      val key = baseKey(slot)
-      val title = getString(R.string.command_gesture_assigned, slot.name, label(profile.gestures[key]))
-      gestures.action(title) { chooseCommand(title) { assign(key, it) } }
-    }
-  }
-
-  /** The name of the command [value], Default when the profile leaves the gesture out. */
-  private fun label(value: String?): String =
-    when (value) {
-      null -> getString(R.string.gesture_profile_default)
-      getString(R.string.shortcut_value_unassigned) -> getString(R.string.keycombo_unassigned)
-      else -> Commands.label(requireContext(), value) ?: value
-    }
-
-  /** The gesture's key on the Gestures screen, without the gesture set. */
-  private fun baseKey(slot: CommandBindings.GestureSlot): String =
-    GestureShortcutMapping.getPrefKeyWithGestureSet(slot.key, 0)
-
-  /**
-   * Asks for a command, first its group, and gives its value to [then], or null for Default.
-   */
-  private fun chooseCommand(title: CharSequence, then: (String?) -> Unit) {
+    // The categories and rows of the Gestures screen, with the list of commands it opens.
     val context = requireContext()
-    val categories = Commands.categories(context)
-    val groups =
-      listOf(getString(R.string.gesture_profile_default), getString(R.string.keycombo_unassigned)) +
-        categories.map { getString(it.titleRes) }
-    choose(title, groups) { group ->
-      when (group) {
-        0 -> then(null)
-        1 -> then(getString(R.string.shortcut_value_unassigned))
-        else -> {
-          val commands = categories[group - 2].commands
-          choose(groups[group], commands.map { it.label }) { then(commands[it].value) }
+    for (category in categories) {
+      val group = AccessibilitySuitePreferenceCategory(context)
+      // The Gestures screen's key, which keeps whether it is expanded.
+      group.key = category.key
+      group.title = category.title
+      screen.addPreference(group)
+      for (slot in category.gestures) {
+        val key = GestureProfiles.rowKey(id, GestureShortcutMapping.getPrefKeyWithGestureSet(slot.key, 0))
+        GestureListPreference(context, key, slot.name, GestureProfiles.DEFAULT_VALUE).also {
+          it.isPersistent = false
+          it.isIconSpaceReserved = false
+          group.addPreference(it)
         }
       }
     }
+    collapseCategories()
   }
 
-  private fun assign(key: String, value: String?) {
-    update { it.copy(gestures = if (value == null) it.gestures - key else it.gestures + (key to value)) }
+  override fun onDisplayPreferenceDialog(preference: Preference) {
+    if (preference is GestureListPreference) {
+      GestureListPreference.showCommandList(this, preference)
+    } else {
+      super.onDisplayPreferenceDialog(preference)
+    }
   }
 
   private fun rename() {

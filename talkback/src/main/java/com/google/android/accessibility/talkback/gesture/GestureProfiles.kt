@@ -41,6 +41,15 @@ object GestureProfiles {
   /** Starts the value of the command that changes to a profile. It must never change once released. */
   private const val PREFIX = "GESTURE_PROFILE:"
 
+  /**
+   * The value of Default in the list of commands of a profile's gesture: the gesture runs what it
+   * runs without the profile. It is never saved.
+   */
+  const val DEFAULT_VALUE = "GESTURE_PROFILE_DEFAULT"
+
+  /** Starts the key of a gesture's row on a profile's screen. */
+  private const val ROW_PREFIX = "gesture_profile_row:"
+
   /** A gesture profile: its name and what each of its gestures runs. */
   data class Profile(val id: String, val name: String, val gestures: Map<String, String>)
 
@@ -128,6 +137,49 @@ object GestureProfiles {
       if (id.isEmpty()) context.getString(R.string.gesture_profile_default)
       else read(prefs).firstOrNull { it.id == id }?.name ?: return null
     return context.getString(R.string.shortcut_use_gesture_profile, name)
+  }
+
+  /** Returns the key of the row for the gesture of preference key [gestureKey] in profile [id]. */
+  @JvmStatic fun rowKey(id: String, gestureKey: String): String = "$ROW_PREFIX$id:$gestureKey"
+
+  /** Returns whether [key] is the key of a gesture's row on a profile's screen. */
+  @JvmStatic fun isRowKey(key: String?): Boolean = key != null && key.startsWith(ROW_PREFIX)
+
+  /**
+   * Returns the command that the gesture of row [key] runs in its profile, [DEFAULT_VALUE] when the
+   * profile leaves it out, or null when [key] isn't a row's key or the profile was deleted.
+   */
+  @JvmStatic
+  fun rowValue(prefs: SharedPreferences, key: String?): String? {
+    val (id, gestureKey) = parseRowKey(key) ?: return null
+    val profile = read(prefs).firstOrNull { it.id == id } ?: return null
+    return profile.gestures[gestureKey] ?: DEFAULT_VALUE
+  }
+
+  /**
+   * Makes the gesture of row [key] run [value] in its profile, or what it runs without the profile
+   * for [DEFAULT_VALUE]. Returns false when [key] isn't a row's key.
+   */
+  @JvmStatic
+  fun setRowValue(prefs: SharedPreferences, key: String?, value: String): Boolean {
+    val (id, gestureKey) = parseRowKey(key) ?: return false
+    write(
+      prefs,
+      read(prefs).map {
+        if (it.id != id) it
+        else if (value == DEFAULT_VALUE) it.copy(gestures = it.gestures - gestureKey)
+        else it.copy(gestures = it.gestures + (gestureKey to value))
+      },
+    )
+    return true
+  }
+
+  private fun parseRowKey(key: String?): Pair<String, String>? {
+    if (!isRowKey(key)) return null
+    val rest = key!!.removePrefix(ROW_PREFIX)
+    val colon = rest.indexOf(':')
+    if (colon <= 0 || colon == rest.length - 1) return null
+    return rest.substring(0, colon) to rest.substring(colon + 1)
   }
 
   /** Returns a new profile's ID. */
