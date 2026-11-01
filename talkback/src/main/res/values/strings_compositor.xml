@@ -667,8 +667,6 @@
     Description: This is spoken to the user. [CHAR_LIMIT=NONE]
   -->
   <string name="template_accessibility_volume_change_increase">Increase accessibility volume to <xliff:g id="percent">%1$d</xliff:g> percent.</string>
-  <!-- Spoken after SandFly's own volume on Bluetooth changes, such as "SandFly volume 85 percent". [CHAR_LIMIT=NONE] -->
-  <string name="template_sandfly_volume">SandFly volume <xliff:g id="percent">%1$s</xliff:g></string>
   <!--
     Source: String for notifying the user the accessibility volume is decreased.
     Description: This is spoken to the user. [CHAR_LIMIT=NONE]
