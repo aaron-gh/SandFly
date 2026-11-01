@@ -500,9 +500,10 @@ class QuickSettingsActivity : AppCompatActivity() {
 
   /**
    * Clicks a tile in the system's quick settings through SandFly's accessibility service, then
-   * focuses its row again and says its new state.
+   * focuses its row again and says its new state. [onNotFound] runs instead of saying that the tile
+   * wasn't found, if given.
    */
-  private fun clickThroughSystem(id: String, label: String) {
+  private fun clickThroughSystem(id: String, label: String, onNotFound: (() -> Unit)? = null) {
     SystemPanelClicker.click(label) { result ->
       if (isFinishing || isDestroyed) return@click
       when (result) {
@@ -511,7 +512,13 @@ class QuickSettingsActivity : AppCompatActivity() {
           refresh()
           readTiles()
         }
-        else -> announce(column, getString(R.string.quick_settings_tile_not_found, label))
+        else ->
+          if (onNotFound != null) {
+            onNotFound()
+            return@click
+          } else {
+            announce(column, getString(R.string.quick_settings_tile_not_found, label))
+          }
       }
       // After the row's new state has gone out: a row that kept focus says only the new state,
       // and one that lost it says everything once focused.
@@ -527,17 +534,26 @@ class QuickSettingsActivity : AppCompatActivity() {
   /**
    * Clicks an app's tile in the system's quick settings, adding it there first if it isn't there,
    * since SystemUI runs only the tiles it shows.
+   *
+   * The tile is clicked in the open system quick settings, as a finger would. Many tiles act on the
+   * state they last showed, such as a VPN's that connects when it shows disconnected, and a tile
+   * shows its state only while the system's quick settings are open; a tile clicked with them closed
+   * may act on a state it never showed, and do nothing. Shizuku's click, with them closed, is kept
+   * for a tile that isn't found there.
    */
   private fun clickTile(component: ComponentName, label: String) {
+    val id = QuickItem.Tile(component).id
     if (!ShizukuGrants.isReady()) {
       // Without Shizuku, the tile can still be used in the system's quick settings, if it's there.
-      clickThroughSystem(QuickItem.Tile(component).id, label)
+      clickThroughSystem(id, label)
       return
     }
     val argument = component.flattenToString()
     val click = {
-      ShizukuShell.run(this, ShizukuCommand.CLICK_TILE, argument) { worked ->
-        if (worked) readTilesLater()
+      clickThroughSystem(id, label) {
+        ShizukuShell.run(this, ShizukuCommand.CLICK_TILE, argument) { worked ->
+          if (worked) readTilesLater()
+        }
       }
     }
     val inSystemPanel =
@@ -550,6 +566,8 @@ class QuickSettingsActivity : AppCompatActivity() {
       if (added) {
         addedTiles += component
         handler.postDelayed(click, ADD_TILE_DELAY_MS)
+      } else {
+        announce(column, getString(R.string.quick_settings_tile_not_found, label))
       }
     }
   }
