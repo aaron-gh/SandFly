@@ -99,6 +99,7 @@ import com.google.android.accessibility.talkback.focusmanagement.LiftToActivateM
 import com.google.android.accessibility.talkback.focusmanagement.action.NavigationAction;
 import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionInfo;
 import com.google.android.accessibility.talkback.gesture.GestureHints;
+import com.google.android.accessibility.talkback.gesture.GestureProfiles;
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping;
 import com.google.android.accessibility.talkback.keyboardecho.KeyboardEchoSettings;
 import com.google.android.accessibility.talkback.menurules.NodeMenuRuleCreator;
@@ -441,7 +442,11 @@ public class SelectorController implements UserInputEventListener {
     SWITCH_VOICE_PROFILE(
         R.string.pref_selector_voice_profile_key,
         R.string.selector_voice_profile,
-        R.bool.pref_selector_voice_profile_default);
+        R.bool.pref_selector_voice_profile_default),
+    GESTURE_PROFILE(
+        R.string.pref_selector_gesture_profile_key,
+        R.string.selector_gesture_profile,
+        R.bool.pref_selector_gesture_profile_default);
 
     /** The preference key of the filter in the selector settings page. */
     final int prefKeyResId;
@@ -713,7 +718,8 @@ public class SelectorController implements UserInputEventListener {
           Setting.CONTROL_TELLING_TIME,
           Setting.SWITCH_TTS_ENGINE,
           Setting.SPEECH_STREAM,
-          Setting.SWITCH_VOICE_PROFILE);
+          Setting.SWITCH_VOICE_PROFILE,
+          Setting.GESTURE_PROFILE);
 
   /** Lists all {@link Setting} that should be hidden for users. */
   private final ImmutableList<Setting> hiddenSettings;
@@ -1082,6 +1088,10 @@ public class SelectorController implements UserInputEventListener {
       }
       case SWITCH_VOICE_PROFILE -> {
         actionDescription = context.getString(R.string.title_selector_voice_profile);
+        hint = getAdjustSelectedSettingGestures();
+      }
+      case GESTURE_PROFILE -> {
+        actionDescription = context.getString(R.string.title_gesture_profile);
         hint = getAdjustSelectedSettingGestures();
       }
       case LIVE_RECOGNITION -> {
@@ -1688,6 +1698,9 @@ public class SelectorController implements UserInputEventListener {
         // Audio focus is supported in all platforms.
         return true;
       }
+      case GESTURE_PROFILE -> {
+        return GestureProfiles.hasProfiles();
+      }
       case SCROLLING_SEQUENTIAL -> {
         return true;
       }
@@ -2136,6 +2149,10 @@ public class SelectorController implements UserInputEventListener {
         changeVoiceProfile(eventId, isNext, getAdjustSelectedSettingGestures());
         return;
       }
+      case GESTURE_PROFILE -> {
+        changeGestureProfile(eventId, isNext, getAdjustSelectedSettingGestures());
+        return;
+      }
       case GRANULARITY -> {
         // Granularity is phased out. Assigns to the character setting.
         updateSettingPref(context, GRANULARITY_CHARACTERS);
@@ -2446,6 +2463,42 @@ public class SelectorController implements UserInputEventListener {
     String displayText = VoiceProfileNames.nameOf(context, prefs, nextId);
     announceSetting(eventId, displayText, hint);
     showQuickMenuActionOverlay(eventId, displayText);
+  }
+
+  /** Changes to the previous or next gesture profile from a gesture, with Default first. */
+  public void changeGestureProfile(EventId eventId, boolean isNext) {
+    changeGestureProfile(eventId, isNext, /* hint= */ null);
+  }
+
+  /**
+   * Changes to the previous or next gesture profile, with Default first, and says its name, or says
+   * there are none to change to.
+   */
+  private void changeGestureProfile(EventId eventId, boolean isNext, @Nullable String hint) {
+    String displayText;
+    if (GestureProfiles.read(prefs).isEmpty()) {
+      displayText = context.getString(R.string.no_gesture_profiles);
+    } else {
+      String name =
+          GestureProfiles.select(context, prefs, GestureProfiles.adjacentId(prefs, isNext));
+      displayText = name != null ? name : context.getString(R.string.no_gesture_profiles);
+    }
+    announceSetting(eventId, displayText, hint);
+    showQuickMenuActionOverlay(eventId, displayText);
+  }
+
+  /**
+   * Changes to the gesture profile {@code id}, or Default for "", and says its name. Returns false
+   * when the profile was deleted.
+   */
+  public boolean selectGestureProfile(EventId eventId, String id) {
+    @Nullable String name = GestureProfiles.select(context, prefs, id);
+    if (name == null) {
+      return false;
+    }
+    announceSetting(eventId, name, /* hint= */ null);
+    showQuickMenuActionOverlay(eventId, name);
+    return true;
   }
 
   /** Changes to the previous or next installed language. */

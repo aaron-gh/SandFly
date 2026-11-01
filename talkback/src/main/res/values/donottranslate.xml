@@ -339,6 +339,7 @@
     <string name="pref_selector_auto_translation_key" translatable="false">pref_selector_auto_translation_key</string>
     <string name="pref_selector_vertical_navigation_key" translatable="false">pref_selector_vertical_navigation_key</string>
     <string name="pref_selector_voice_profile_key" translatable="false">pref_selector_voice_profile_key</string>
+    <string name="pref_selector_gesture_profile_key" translatable="false">pref_selector_gesture_profile_key</string>
     <string name="pref_selector_voice_profile_moved_key" translatable="false">pref_selector_voice_profile_moved</string>
     <string name="pref_selector_control_telling_time" translatable="false">pref_selector_control_telling_time</string>
     <string name="pref_selector_actions_key" translatable="false">pref_selector_actions_key </string>
@@ -1777,6 +1778,7 @@
     <bool name="pref_selector_auto_translation_default">false</bool>
     <bool name="pref_selector_vertical_navigation_default">false</bool>
     <bool name="pref_selector_voice_profile_default">false</bool>
+    <bool name="pref_selector_gesture_profile_default">true</bool>
     <bool name="pref_selector_touch_focus_latency_default">false</bool>
     <bool name="pref_selector_control_telling_time_default">false</bool>
     <bool name="pref_selector_audio_focus_default">false</bool>
@@ -2135,6 +2137,7 @@
     <string name="selector_auto_translation" translatable="false">SELECTOR_AUTO_TRANSLATION</string>
     <string name="selector_vertical_navigation" translatable="false">SELECTOR_VERTICAL_NAVIGATION</string>
     <string name="selector_voice_profile" translatable="false">SELECTOR_VOICE_PROFILE</string>
+    <string name="selector_gesture_profile" translatable="false">SELECTOR_GESTURE_PROFILE</string>
     <string name="selector_touch_focus_latency_change" translatable="false">SELECTOR_TOUCH_FOCUS_LATENCY_CHANGE</string>
     <string name="selector_control_telling_time" translatable="false">SELECTOR_CONTROL_TELLING_TIME</string>
     <string name="selector_actions" translatable="false">SELECTOR_ACTIONS</string>
@@ -2283,4 +2286,11 @@
   <bool name="pref_show_context_menu_voice_profile_default">false</bool>
   <item type="id" name="group_voice_profile" />
   <item type="id" name="voice_profile_menu" />
+  <string name="shortcut_value_gesture_profiles" translatable="false">GESTURE_PROFILES</string>
+  <string name="shortcut_value_previous_gesture_profile" translatable="false">PREVIOUS_GESTURE_PROFILE</string>
+  <string name="shortcut_value_next_gesture_profile" translatable="false">NEXT_GESTURE_PROFILE</string>
+  <string name="pref_show_context_menu_gesture_profile_setting_key" translatable="false">pref_gesture_profile_menu_setting_key</string>
+  <bool name="pref_show_context_menu_gesture_profile_default">true</bool>
+  <item type="id" name="group_gesture_profile" />
+  <item type="id" name="gesture_profile_menu" />
 </resources>

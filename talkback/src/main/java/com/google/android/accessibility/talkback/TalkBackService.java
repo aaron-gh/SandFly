@@ -190,6 +190,7 @@ import com.google.android.accessibility.talkback.focusmanagement.interpreter.Tou
 import com.google.android.accessibility.talkback.focusmanagement.record.AccessibilityFocusActionHistory;
 import com.google.android.accessibility.talkback.gesture.GestureController;
 import com.google.android.accessibility.talkback.gesture.GestureHistory;
+import com.google.android.accessibility.talkback.gesture.GestureProfiles;
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping;
 import com.google.android.accessibility.talkback.gesture.TwoFingerRotationTracker;
 import com.google.android.accessibility.talkback.gesture.VibrationWatchGestureSettings;
@@ -3612,6 +3613,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     AutomaticTranslation.update(this);
     SpeechDictionary.load(this, prefs);
     AppGestures.load(prefs);
+    GestureProfiles.load(prefs);
     FocusFeedbackMapper.setTouchStopsSpeech(
         getBooleanPref(
             R.string.pref_touch_stops_speech_key, R.bool.pref_touch_stops_speech_default));

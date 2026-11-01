@@ -349,6 +349,10 @@
             android:key="@string/pref_selector_sound_mode_key"
             android:title="@string/quick_settings_sound_mode"/>
         <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
+            android:defaultValue="@bool/pref_selector_gesture_profile_default"
+            android:key="@string/pref_selector_gesture_profile_key"
+            android:title="@string/title_gesture_profile"/>
+        <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
             android:defaultValue="@bool/pref_selector_auto_translation_default"
             android:key="@string/pref_selector_auto_translation_key"
             android:title="@string/title_pref_translation_auto"/>

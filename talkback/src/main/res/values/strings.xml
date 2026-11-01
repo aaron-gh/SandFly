@@ -107,6 +107,37 @@
     <string name="shortcut_previous_voice_profile">Previous voice profile</string>
     <!-- Gesture and keyboard shortcut action that changes to the next voice profile. [CHAR LIMIT=NONE] -->
     <string name="shortcut_next_voice_profile">Next voice profile</string>
+    <!--
+      Title for the screen of gesture profiles: sets of gestures that run other commands while the
+      profile is in use, before gestures in apps and scripts. [CHAR LIMIT=NONE]
+    -->
+    <string name="title_pref_gesture_profiles">Gesture profiles</string>
+    <!-- Title for the reading control, SandFly menu item and menu that change the gesture profile in use. [CHAR LIMIT=NONE] -->
+    <string name="title_gesture_profile">Gesture profile</string>
+    <!-- Name of the gesture profile that leaves every gesture as on the Gestures screen, in apps and in scripts. [CHAR LIMIT=NONE] -->
+    <string name="gesture_profile_default">Default</string>
+    <!-- Item in the menu of gesture profiles for the profile in use. [CHAR LIMIT=NONE] -->
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, in use</string>
+    <!-- Said when a command that changes gesture profile is used before any profile is added. [CHAR LIMIT=NONE] -->
+    <string name="no_gesture_profiles">No gesture profiles</string>
+    <!-- Gesture and keyboard shortcut command that opens a menu to choose the gesture profile in use. [CHAR LIMIT=NONE] -->
+    <string name="shortcut_gesture_profiles">Choose gesture profile</string>
+    <!-- Gesture and keyboard shortcut command that changes to the previous gesture profile. [CHAR LIMIT=NONE] -->
+    <string name="shortcut_previous_gesture_profile">Previous gesture profile</string>
+    <!-- Gesture and keyboard shortcut command that changes to the next gesture profile. [CHAR LIMIT=NONE] -->
+    <string name="shortcut_next_gesture_profile">Next gesture profile</string>
+    <!-- Gesture and keyboard shortcut command that changes to one gesture profile. %1$s is the profile's name, or Default. [CHAR LIMIT=NONE] -->
+    <string name="shortcut_use_gesture_profile">Use gesture profile <xliff:g id="name" example="Driving">%1$s</xliff:g></string>
+    <!-- Title for the setting that chooses the gesture profile in use. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_gesture_profile_in_use">Gesture profile in use</string>
+    <!-- Title for the button that adds a gesture profile. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_add_gesture_profile">Add gesture profile</string>
+    <!-- Name given to a new gesture profile, with a number to tell it apart. [CHAR LIMIT=NONE] -->
+    <string name="gesture_profile_new_name">Gesture profile <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <!-- Error on the name field when the name entered is already another gesture profile's, or Default. [CHAR LIMIT=NONE] -->
+    <string name="gesture_profile_name_taken">A gesture profile is already called <xliff:g id="name" example="Driving">%1$s</xliff:g></string>
+    <!-- Title for the button that removes a gesture profile. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_delete_gesture_profile">Delete gesture profile</string>
     <!-- Title for the setting that chooses the voice profile in use. [CHAR LIMIT=NONE] -->
     <string name="title_pref_voice_profile_in_use">Voice profile in use</string>
     <!-- Title for the button that adds a voice profile. [CHAR LIMIT=NONE] -->
