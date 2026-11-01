@@ -123,11 +123,12 @@ def sounds():
     """Each sound by file name, with the directories it goes in, its parts, length and peak."""
     s = {}
 
-    # Focus moving to an item: a soft, short wooden tap. Items that can be activated are brighter.
+    # Focus moving to an item: a soft, short wooden tap. Items that can be activated are lower,
+    # with a stronger second partial.
     s["focus"] = ([TALKBACK], [click(0, 0.03, 0.004, 0.3, cutoff_hz=2500, seed=2),
                                note(700, 0, 0.05, 0.014, partials=((1, 1.0), (2.4, 0.2)))], 0.06, -6)
-    s["focus_actionable"] = ([TALKBACK], [click(0, 0.03, 0.004, 0.3, cutoff_hz=3000, seed=3),
-                                          note(950, 0, 0.06, 0.016, partials=((1, 1.0), (2, 0.35)))],
+    s["focus_actionable"] = ([TALKBACK], [click(0, 0.03, 0.004, 0.3, cutoff_hz=2500, seed=3),
+                                          note(475, 0, 0.06, 0.016, partials=((1, 1.0), (2, 0.35)))],
                              0.07, -6)
     # A finger moving onto an item or empty space while exploring.
     s["view_entered"] = ([TALKBACK], [note(700, 0, 0.04, 0.01, partials=PURE)], 0.05, -10)
