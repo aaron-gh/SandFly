@@ -39,6 +39,7 @@ import com.google.android.accessibility.talkback.focusmanagement.record.FocusAct
 import com.google.android.accessibility.talkback.speechcontrol.ExternalSpeech
 import com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED
 import com.google.android.accessibility.utils.SharedPreferencesUtils
+import com.google.android.accessibility.utils.output.FeedbackItem
 import com.google.android.accessibility.utils.output.SpeechController
 import com.google.android.accessibility.utils.output.SpeechController.QUEUE_MODE_INTERRUPT
 import com.google.android.accessibility.utils.output.SpeechController.QUEUE_MODE_QUEUE
@@ -76,6 +77,8 @@ class ScriptFeedback(
       ExternalSpeech.options(
         if (interrupt) QUEUE_MODE_INTERRUPT else QUEUE_MODE_QUEUE,
         ExternalSpeech.params(voice.rate, voice.pitch),
+        // Also during calls, microphone recording and dictation.
+        FeedbackItem.FLAG_FORCE_FEEDBACK_ALL,
       )
     if (done != null) {
       val finished = AtomicBoolean()

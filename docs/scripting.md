@@ -340,7 +340,7 @@ Each entry becomes a reading control that moves to the next or previous item mat
 
 ### Speech, sound and vibration
 
-*   `sf.speak(text, { interrupt, rate, pitch, language, wait })`. `rate` and `pitch` are from 0.25 to 4, where 1 is the user's own setting. `language` is a tag such as `'de'`. With `wait = true`, it [waits](#waiting) until the text is said, and gives `true`, or `false` if it was interrupted or not said within 2 minutes.
+*   `sf.speak(text, { interrupt, rate, pitch, language, wait })`. `rate` and `pitch` are from 0.25 to 4, where 1 is the user's own setting. `language` is a tag such as `'de'`. With `wait = true`, it [waits](#waiting) until the text is said, and gives `true`, or `false` if it was interrupted or not said within 2 minutes. The text is said while media plays, during calls, while another app records from the microphone and during dictation, but not while speech is muted.
 *   `sf.message(text, { interrupt })` *Version 2.* Says the text, interrupting by default, and shows it on a connected braille display.
 *   `sf.speech.stop()` *Version 2.* Stops what SandFly is saying.
 *   `sf.speech.isSpeaking()` *Version 2.* Whether SandFly is speaking.

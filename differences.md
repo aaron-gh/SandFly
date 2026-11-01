@@ -928,7 +928,7 @@ Each script has a page with an on and off switch, a switch for each permission a
 
 Scripts never change SandFly's own screens, so the Scripts screen always works. **Turn off all scripts** on that screen stops every script at once, and so does the **Turn all scripts on or off** action, which you can assign to a gesture that scripts can't take over. Scripts don't run while the screen is off or SandFly is paused, and SandFly only starts the script engine once a script is turned on.
 
-Speech requested with `sf.speak` can be heard while media is playing, including queued and interrupting requests. The script still needs the Speech permission, and muting speech, recording, voice recognition and phone calls retain their existing speech policy.
+Speech requested with `sf.speak` is spoken while media plays, during calls, while another app records from the microphone and during dictation, including queued and interrupting requests. The script still needs the Speech permission, and muted speech stays muted.
 
 Hooks that change or suppress speech take priority over queued script work and share a 30-millisecond deadline. If the deadline expires or a long task is already running, SandFly uses its normal speech, so scripts should keep these hooks fast.
 
