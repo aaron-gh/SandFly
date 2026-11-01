@@ -26,6 +26,7 @@ import android.os.Handler
 import android.os.HandlerThread
 import android.os.IBinder
 import android.os.ParcelFileDescriptor
+import com.google.android.accessibility.talkback.audio.AccessibilityAudioReset
 import java.io.File
 import java.io.IOException
 import java.io.InputStream
@@ -71,6 +72,9 @@ class ShizukuGrantService(private val context: Context?) : IShizukuGrants.Stub()
     val which = ShizukuCommand.entries.getOrNull(command) ?: return "Unknown command $command"
     if (which == ShizukuCommand.ACCESSIBILITY_SHORTCUT) {
       return if (argument == null) "No accessibility service" else performAccessibilityShortcut(argument)
+    }
+    if (which == ShizukuCommand.RESET_ACCESSIBILITY_AUDIO) {
+      return AccessibilityAudioReset.reset()
     }
     if (which == ShizukuCommand.HOTSPOT) {
       return when (argument) {

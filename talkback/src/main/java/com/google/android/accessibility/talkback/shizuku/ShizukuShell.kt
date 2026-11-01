@@ -64,7 +64,9 @@ enum class ShizukuCommand {
    * the service being one of them. The argument is the service's component, with " button" after
    * it for a service that the shortcut opens rather than turns on or off.
    */
-  ACCESSIBILITY_SHORTCUT;
+  ACCESSIBILITY_SHORTCUT,
+  /** Clears the output that Android keeps for accessibility audio. It takes no argument. */
+  RESET_ACCESSIBILITY_AUDIO;
 
   /**
    * The command, as adb would run it after `adb shell`, or null if [argument] isn't one it takes.
@@ -112,6 +114,7 @@ enum class ShizukuCommand {
           )
         }
       ACCESSIBILITY_SHORTCUT -> null
+      RESET_ACCESSIBILITY_AUDIO -> null
     }
   }
 

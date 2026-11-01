@@ -147,6 +147,7 @@ import com.google.android.accessibility.talkback.actor.voicecommands.VoiceComman
 import com.google.android.accessibility.talkback.actor.voicecommands.VoiceCommandProcessor;
 import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics.PeriodicDataProvider;
 import com.google.android.accessibility.talkback.audio.AudioDeviceRouter;
+import com.google.android.accessibility.talkback.audio.AccessibilityAudioWatcher;
 import com.google.android.accessibility.talkback.braille.BrailleHelper;
 import com.google.android.accessibility.talkback.braille.TalkBackForBrailleCommonImpl;
 import com.google.android.accessibility.talkback.braille.TalkBackForBrailleDisplayImpl;
@@ -824,6 +825,7 @@ public class TalkBackService extends AccessibilityServiceCompat
   private StuckTouchController stuckTouchController;
   private PauseController pauseController;
   private AudioDeviceRouter audioDeviceRouter;
+  private @Nullable AccessibilityAudioWatcher accessibilityAudioWatcher;
   private @Nullable ScriptHost scriptHost;
   private InputMethodMonitor inputMethodMonitor;
   private DisplayMonitor displayMonitor;
@@ -1032,6 +1034,11 @@ public class TalkBackService extends AccessibilityServiceCompat
     NotificationReader.detach();
     NotificationListService.onSandFlyStopped();
 
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU
+        && accessibilityAudioWatcher != null) {
+      accessibilityAudioWatcher.stop();
+      accessibilityAudioWatcher = null;
+    }
     if (audioDeviceRouter != null) {
       audioDeviceRouter.shutdown();
       audioDeviceRouter = null;
@@ -2253,6 +2260,10 @@ public class TalkBackService extends AccessibilityServiceCompat
     feedbackController.setSoundHaptics(SoundVibrations.patternIds(this));
     audioDeviceRouter = new AudioDeviceRouter(this);
     audioDeviceRouter.startMonitoring();
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+      accessibilityAudioWatcher = new AccessibilityAudioWatcher(this);
+      accessibilityAudioWatcher.start();
+    }
     speechController =
         new SpeechControllerImpl(
             this,
@@ -3460,6 +3471,11 @@ public class TalkBackService extends AccessibilityServiceCompat
       feedbackController.shutdown();
     }
     EmojiSpeech.release();
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU
+        && accessibilityAudioWatcher != null) {
+      accessibilityAudioWatcher.stop();
+      accessibilityAudioWatcher = null;
+    }
     if (audioDeviceRouter != null) {
       audioDeviceRouter.shutdown();
       audioDeviceRouter = null;
