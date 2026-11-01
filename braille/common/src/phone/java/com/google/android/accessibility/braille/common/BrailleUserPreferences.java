@@ -72,6 +72,7 @@ public class BrailleUserPreferences {
   private static final boolean FLIP_DOTS_VERTICALLY_DEFAULT = false;
   private static final boolean TABLET_HELD_UP_FACES_AWAY_DEFAULT = true;
   private static final boolean TYPING_SOUNDS_DEFAULT = false;
+  private static final boolean SPEAK_SUBMITTING_DEFAULT = true;
   private static final boolean LAUNCH_TUTORIAL_DEFAULT = true;
   private static final int EXIT_KEYBOARD_DEFAULT = 0;
   private static final int SHOW_OPTION_DIALOG_DEFAULT = 0;
@@ -347,6 +348,22 @@ public class BrailleUserPreferences {
     getSharedPreferences(context, BRAILLE_SHARED_PREFS_FILENAME)
         .edit()
         .putBoolean(context.getString(R.string.pref_brailleime_typing_sounds), typingSounds)
+        .apply();
+  }
+
+  /** Reads whether the braille keyboard says "Submitting text" when it sends text. */
+  public static boolean readSpeakSubmitting(Context context) {
+    return getSharedPreferences(context, BRAILLE_SHARED_PREFS_FILENAME)
+        .getBoolean(
+            context.getString(R.string.pref_brailleime_speak_submitting),
+            SPEAK_SUBMITTING_DEFAULT);
+  }
+
+  /** Writes whether the braille keyboard says "Submitting text" when it sends text. */
+  public static void writeSpeakSubmitting(Context context, boolean speakSubmitting) {
+    getSharedPreferences(context, BRAILLE_SHARED_PREFS_FILENAME)
+        .edit()
+        .putBoolean(context.getString(R.string.pref_brailleime_speak_submitting), speakSubmitting)
         .apply();
   }
 

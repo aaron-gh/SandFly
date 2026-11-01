@@ -795,6 +795,12 @@ public class BrailleIme extends InputMethodService {
     if (editorAction == EditorInfo.IME_ACTION_NEXT) {
       BrailleCommonTalkBackSpeaker.getInstance().speak(getString(R.string.perform_action_next));
     } else {
+      speakSubmitting();
+    }
+  }
+
+  private void speakSubmitting() {
+    if (BrailleUserPreferences.readSpeakSubmitting(this)) {
       BrailleCommonTalkBackSpeaker.getInstance()
           .speak(getString(R.string.perform_action_submitting));
     }
@@ -811,8 +817,7 @@ public class BrailleIme extends InputMethodService {
         () -> {
           if (talkBackForBrailleIme != null
               && talkBackForBrailleIme.clickSendButton(getSendWords(editorInfo))) {
-            BrailleCommonTalkBackSpeaker.getInstance()
-                .speak(getString(R.string.perform_action_submitting));
+            speakSubmitting();
           } else if (attempt + 1 < SEND_BUTTON_ATTEMPT_DELAYS_MS.length) {
             clickSendButton(inputConnection, editorInfo, editorAction, attempt + 1);
           } else if (hasEditorAction(editorAction)) {
@@ -821,8 +826,7 @@ public class BrailleIme extends InputMethodService {
             inputConnection.sendKeyEvent(
                 new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ENTER));
             inputConnection.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_UP, KeyEvent.KEYCODE_ENTER));
-            BrailleCommonTalkBackSpeaker.getInstance()
-                .speak(getString(R.string.perform_action_submitting));
+            speakSubmitting();
           } else {
             BrailleCommonTalkBackSpeaker.getInstance()
                 .speak(getString(R.string.perform_action_no_send_button));

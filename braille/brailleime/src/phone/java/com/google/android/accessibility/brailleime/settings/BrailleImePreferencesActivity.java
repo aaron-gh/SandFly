@@ -247,6 +247,19 @@ public class BrailleImePreferencesActivity extends PreferencesActivity {
       }
 
       {
+        // Say "Submitting text" preference.
+        SwitchPreferenceCompat speakSubmittingPref =
+            findPreference(getString(R.string.pref_brailleime_speak_submitting));
+        speakSubmittingPref.setChecked(BrailleUserPreferences.readSpeakSubmitting(getContext()));
+        speakSubmittingPref.setOnPreferenceClickListener(
+            preference -> {
+              BrailleUserPreferences.writeSpeakSubmitting(
+                  getContext(), ((SwitchPreferenceCompat) preference).isChecked());
+              return true;
+            });
+      }
+
+      {
         // Swap top and bottom dots preference.
         SwitchPreferenceCompat flipDotsVerticallyPref =
             findPreference(getString(R.string.pref_brailleime_flip_dots_vertically));
