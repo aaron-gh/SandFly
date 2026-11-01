@@ -625,6 +625,12 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
     SHOW_LANGUAGE_OPTIONS(
         R.string.shortcut_value_show_language_options, R.string.shortcut_show_language_options),
     VOICE_PROFILES(R.string.shortcut_value_voice_profiles, R.string.shortcut_voice_profiles),
+    GESTURE_PROFILES(R.string.shortcut_value_gesture_profiles, R.string.shortcut_gesture_profiles),
+    PREVIOUS_GESTURE_PROFILE(
+        R.string.shortcut_value_previous_gesture_profile,
+        R.string.shortcut_previous_gesture_profile),
+    NEXT_GESTURE_PROFILE(
+        R.string.shortcut_value_next_gesture_profile, R.string.shortcut_next_gesture_profile),
     PREVIOUS_VOICE_PROFILE(
         R.string.shortcut_value_previous_voice_profile, R.string.shortcut_previous_voice_profile),
     NEXT_VOICE_PROFILE(
@@ -956,11 +962,24 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
    * @return action key string
    */
   public String getActionKeyFromGestureId(int gestureId) {
+    @Nullable String profileAction = getProfileActionKeyFromGestureId(gestureId);
+    if (profileAction != null) {
+      return profileAction;
+    }
     @Nullable String appAction = AppGestures.action(gestureIdToKey.get(gestureId));
     if (appAction != null) {
       return appAction;
     }
     return getActionKeyFromGestureId(currentGestureSet, gestureId);
+  }
+
+  /**
+   * Returns the action the gesture profile in use gives the gesture, which comes before every
+   * other, or null when the profile leaves the gesture out or none is in use.
+   */
+  @Nullable
+  public String getProfileActionKeyFromGestureId(int gestureId) {
+    return GestureProfiles.action(gestureIdToKey.get(gestureId));
   }
 
   private void loadGestureKeys() {

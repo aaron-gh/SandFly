@@ -101,6 +101,8 @@ public class TalkbackMenuProcessor {
   // ORDER_IMAGE_CAPTION share theirs. The menu keeps items with the same order in the order they're
   // added, and the menu settings sort them by title, so Emoji is added first to match.
   private static final int ORDER_VOICE_PROFILES = 15;
+  // Shares Emoji's order too, and is added between Emoji and Voice profile to match their titles.
+  private static final int ORDER_GESTURE_PROFILES = 15;
   // Shares Verbosity's order.
   private static final int ORDER_KEYBOARD_ECHO = 13;
   private static final int ORDER_SHOW_HIDE_SCREEN = 20;
@@ -213,7 +215,8 @@ public class TalkbackMenuProcessor {
     // Language
     addLanguageMenuIfValid(menu);
     addEmojiMenuIfValid(menu);
-    // Voice profile
+    // Gesture profile and voice profile
+    addGestureProfileMenuIfValid(menu);
     addVoiceProfileMenuIfValid(menu);
     // System Action
     addWindowActionMenu(menu);
@@ -339,6 +342,7 @@ public class TalkbackMenuProcessor {
     {R.string.pref_show_context_menu_verbosity_setting_key, R.id.verbosity},
     {R.string.pref_show_context_menu_language_setting_key, R.id.language_menu},
     {R.string.pref_show_context_menu_emoji_setting_key, R.id.emoji_menu},
+    {R.string.pref_show_context_menu_gesture_profile_setting_key, R.id.gesture_profile_menu},
     {R.string.pref_show_context_menu_voice_profile_setting_key, R.id.voice_profile_menu},
     {R.string.pref_show_context_menu_audio_ducking_setting_key, R.id.audio_ducking},
     {R.string.pref_show_context_menu_sound_feedback_setting_key, R.id.sound_feedback},
@@ -680,6 +684,27 @@ public class TalkbackMenuProcessor {
     // Shown only once there is a profile to choose besides Backtalk default.
     if (!VoiceProfileMenuProcessor.prepareVoiceProfileSubMenu(service, pipeline, subMenu)) {
       menu.removeItem(R.id.voice_profile_menu);
+    }
+  }
+
+  private void addGestureProfileMenuIfValid(ContextMenu menu) {
+    menu.removeItem(R.id.gesture_profile_menu);
+
+    if (!showMenuItem(
+        R.string.pref_show_context_menu_gesture_profile_setting_key,
+        R.bool.pref_show_context_menu_gesture_profile_default)) {
+      return;
+    }
+
+    ListSubMenu subMenu =
+        menu.addSubMenu(
+            /* groupId= */ 0,
+            /* itemId= */ R.id.gesture_profile_menu,
+            ORDER_GESTURE_PROFILES,
+            service.getString(R.string.title_gesture_profile));
+    // Shown only once there is a profile to choose besides Default.
+    if (!GestureProfileMenuProcessor.prepareGestureProfileSubMenu(service, pipeline, subMenu)) {
+      menu.removeItem(R.id.gesture_profile_menu);
     }
   }
 

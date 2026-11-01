@@ -22,6 +22,7 @@ import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.actor.GestureReporter
 import com.google.android.accessibility.talkback.actor.ImageCaptioner
 import com.google.android.accessibility.talkback.actor.gemini.GeminiConfiguration
+import com.google.android.accessibility.talkback.gesture.GestureProfiles
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader
 import com.google.android.accessibility.talkback.gesture.NavigationGestureActions
 import com.google.android.accessibility.talkback.gesture.OpenAppActions
@@ -135,11 +136,17 @@ object Commands {
     return values[action] ?: keyboardValue(context, action)
   }
 
-  /** Returns the commands available on this device, by category, ending with Open app. */
+  /**
+   * Returns the commands available on this device, by category, ending with Gesture profiles and
+   * Open app.
+   */
   @JvmStatic
   fun categories(context: Context): List<Category> = Builder(context, withApps = true).build()
 
-  /** Returns the commands available on this device, by category, without Open app. */
+  /**
+   * Returns the commands available on this device, by category, without Gesture profiles and Open
+   * app.
+   */
   private fun categoriesWithoutApps(context: Context): List<Category> =
     Builder(context, withApps = false).build()
 
@@ -150,6 +157,9 @@ object Commands {
       return null
     }
     OpenAppActions.label(context, value)?.let {
+      return Command(value, it, keyboardAction = null)
+    }
+    gestureProfileLabel(context, value)?.let {
       return Command(value, it, keyboardAction = null)
     }
     categoriesWithoutApps(context).forEach { category ->
@@ -169,6 +179,9 @@ object Commands {
     OpenAppActions.label(context, value)?.let {
       return it
     }
+    gestureProfileLabel(context, value)?.let {
+      return it
+    }
     NavigationGestureActions.label(context, value)?.let {
       return it
     }
@@ -177,6 +190,13 @@ object Commands {
     }
     return find(context, value)?.label
   }
+
+  private fun gestureProfileLabel(context: Context, value: String): String? =
+    if (GestureProfiles.isAction(value)) {
+      GestureProfiles.label(context, SharedPreferencesUtils.getSharedPreferences(context), value)
+    } else {
+      null
+    }
 
   /**
    * Returns the name of the command whose keyboard shortcut is kept under the key combo model
@@ -222,6 +242,7 @@ object Commands {
       sandFly()
       developer()
       if (withApps) {
+        gestureProfiles()
         openApp()
       }
       return categories
@@ -788,6 +809,15 @@ object Commands {
           val value = context.getString(R.string.shortcut_value_ai_agent)
           commands.add(Command(value, it.agentCommandLabel(context), null))
         }
+        gesture(R.string.shortcut_value_gesture_profiles, R.string.shortcut_gesture_profiles)
+        gesture(
+          R.string.shortcut_value_next_gesture_profile,
+          R.string.shortcut_next_gesture_profile,
+        )
+        gesture(
+          R.string.shortcut_value_previous_gesture_profile,
+          R.string.shortcut_previous_gesture_profile,
+        )
         gesture(R.string.shortcut_value_toggle_arrow_key_nav, R.string.arrow_key_nav_toggle)
         gesture(R.string.shortcut_value_toggle_scripts, R.string.shortcut_toggle_scripts)
         keyboard(Key.OPEN_TALKBACK_SETTINGS)
@@ -826,6 +856,22 @@ object Commands {
           R.string.shortcut_report_gesture,
           available = GestureReporter.ENABLED && SettingsUtils.allowLinksOutOfSettings(context),
         )
+      }
+
+    private fun gestureProfiles() =
+      category(R.string.title_pref_gesture_profiles) {
+        val prefs = SharedPreferencesUtils.getSharedPreferences(context)
+        // Without a profile, Default is the only choice and changes nothing.
+        if (GestureProfiles.read(prefs).isEmpty()) return@category
+        for ((id, name) in GestureProfiles.choices(context, prefs)) {
+          commands.add(
+            Command(
+              GestureProfiles.valueOf(id),
+              context.getString(R.string.shortcut_use_gesture_profile, name),
+              keyboardAction = null,
+            )
+          )
+        }
       }
 
     private fun openApp() =

@@ -417,6 +417,19 @@ SandFly adds these actions, which you can assign to gestures in gesture settings
 
 When you choose an action for a gesture, the categories of actions are collapsed, except the one with the gesture's current action. The categories in gesture settings, **Reading controls** and **SandFly menu** are collapsed too, and expand when you activate them.
 
+### Gesture profiles
+
+A gesture profile is a set of gestures that run other commands while the profile is in use. To add one, go to **Gestures** > **Gesture profiles** and choose **Add gesture profile**. The profile's screen lists every gesture, each set to **Default** at first. A gesture set to **Default** runs what it runs without the profile: its command on the Gestures screen, its command in **Gestures in apps**, or a script's. A gesture set to a command runs that command, before gestures in apps, scripts and row and column navigation. A gesture set to **Unassigned** does nothing. Profiles also have **Rename**, **Move up**, **Move down** and **Delete gesture profile**.
+
+**Default** uses no profile. To change profile:
+
+*   **Gesture profile in use** on the **Gesture profiles** screen.
+*   The **Gesture profile** reading control, which is shown once there is a profile.
+*   The **Gesture profile** item in the SandFly menu, which lists **Default** and the profiles and says which is in use.
+*   The **Choose gesture profile**, **Next gesture profile** and **Previous gesture profile** commands, in the **SandFly** group, and the **Gesture profiles** group of commands, shown once there is a profile, which has **Use gesture profile** for **Default** and each profile. These can be assigned to gestures, including in a profile, and keyboard shortcuts.
+
+SandFly says the profile's name when it changes. Next and previous go through **Default** and then the profiles in the order of the **Gesture profiles** screen. Profiles don't change fingerprint gestures or keyboard shortcuts, and spoken hints that name a gesture name the gesture set on the Gestures screen.
+
 ### Status gesture
 
 Triple-tap with two fingers to hear what the status bar shows: the time, the battery, the Wi-Fi network and its signal, and the mobile carrier, network type, and signal. SandFly also says the ringer, Do Not Disturb, and airplane mode when they aren't in their usual state. To hear the name of the Wi-Fi network, allow location access when SandFly asks the first time.
