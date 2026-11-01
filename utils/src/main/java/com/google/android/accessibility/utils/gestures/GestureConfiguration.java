@@ -73,7 +73,19 @@ public final class GestureConfiguration {
     return swipeHoldTimeMs;
   }
 
+  /** The shortest and longest hold times the setting offers. */
+  private static final int MIN_SWIPE_HOLD_TIME_MS = 100;
+
+  private static final int MAX_SWIPE_HOLD_TIME_MS = 500;
+
+  /**
+   * Sets the hold time. A value outside the setting's choices, such as 0 from a restored settings
+   * file, would make every swipe a swipe and hold, so it falls back to the default.
+   */
   public static void setSwipeHoldTimeMs(int timeMs) {
-    swipeHoldTimeMs = timeMs;
+    swipeHoldTimeMs =
+        timeMs >= MIN_SWIPE_HOLD_TIME_MS && timeMs <= MAX_SWIPE_HOLD_TIME_MS
+            ? timeMs
+            : DEFAULT_SWIPE_HOLD_TIME_MS;
   }
 }

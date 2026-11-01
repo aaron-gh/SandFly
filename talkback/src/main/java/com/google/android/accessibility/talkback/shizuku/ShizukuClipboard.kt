@@ -21,6 +21,7 @@ import android.content.res.Resources
 import android.os.SystemClock
 import android.view.accessibility.AccessibilityEvent
 import com.google.android.accessibility.utils.ClipboardHistory
+import com.google.android.accessibility.utils.SharedPreferencesUtils
 import java.util.Locale
 
 /**
@@ -54,12 +55,25 @@ object ShizukuClipboard {
   /** Starts watching the clipboard, if Shizuku runs and allows SandFly already. */
   @JvmStatic
   fun start(context: Context) {
-    if (watching || !ShizukuShell.isAllowed()) return
+    if (watching || !ShizukuShell.isAllowed() || !isWanted(context)) return
     this.context = context.applicationContext
     watching = true
     ShizukuShell.addConnectListener(onConnected)
     ShizukuShell.hold(context)
   }
+
+  /** Whether copies in other apps go into the history, which the person can turn off. */
+  @JvmStatic
+  fun isWanted(context: Context): Boolean =
+    SharedPreferencesUtils.getSharedPreferences(context).getBoolean(KEY_OTHER_APPS, true)
+
+  @JvmStatic
+  fun setWanted(context: Context, wanted: Boolean) {
+    SharedPreferencesUtils.getSharedPreferences(context).edit().putBoolean(KEY_OTHER_APPS, wanted).apply()
+    if (wanted) start(context) else stop()
+  }
+
+  private const val KEY_OTHER_APPS = "pref_clipboard_history_other_apps"
 
   /** Whether every copy goes into the history as it is made. */
   @JvmStatic fun isWatching(): Boolean = watching

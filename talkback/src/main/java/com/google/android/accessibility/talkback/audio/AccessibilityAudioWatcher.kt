@@ -78,33 +78,47 @@ class AccessibilityAudioWatcher(private val context: Context) {
 
   private val prefsListener =
     SharedPreferences.OnSharedPreferenceChangeListener { _, key ->
-      if (key == AccessibilityAudioReset.PREF_ENABLED) schedule()
+      if (key == AccessibilityAudioReset.PREF_ENABLED) listenWhileEnabled()
     }
 
+  // Whether the audio callbacks are registered: only while the setting is on.
+  private var listening = false
+
   fun start() {
-    val audio = audio ?: return
-    if (started) return
+    if (audio == null || started) return
     started = true
-    val onMain = Executor { handler.post(it) }
-    audio.registerAudioDeviceCallback(devices, handler)
-    audio.addOnModeChangedListener(onMain, modeListener)
-    audio.addOnCommunicationDeviceChangedListener(onMain, communicationListener)
-    audio.registerAudioPlaybackCallback(playback, handler)
     prefs.registerOnSharedPreferenceChangeListener(prefsListener)
-    schedule()
+    listenWhileEnabled()
   }
 
   fun stop() {
-    val audio = audio ?: return
-    if (!started) return
+    if (audio == null || !started) return
     started = false
-    handler.removeCallbacks(checkNow)
-    handler.removeCallbacks(checkAfterCall)
-    audio.unregisterAudioDeviceCallback(devices)
-    audio.removeOnModeChangedListener(modeListener)
-    audio.removeOnCommunicationDeviceChangedListener(communicationListener)
-    audio.unregisterAudioPlaybackCallback(playback)
     prefs.unregisterOnSharedPreferenceChangeListener(prefsListener)
+    listenWhileEnabled()
+  }
+
+  /** Registers the audio callbacks while the service runs and the setting is on, else removes them. */
+  private fun listenWhileEnabled() {
+    val audio = audio ?: return
+    val wanted = started && AccessibilityAudioReset.isEnabled(prefs)
+    if (wanted == listening) return
+    listening = wanted
+    if (wanted) {
+      val onMain = Executor { handler.post(it) }
+      audio.registerAudioDeviceCallback(devices, handler)
+      audio.addOnModeChangedListener(onMain, modeListener)
+      audio.addOnCommunicationDeviceChangedListener(onMain, communicationListener)
+      audio.registerAudioPlaybackCallback(playback, handler)
+      schedule()
+    } else {
+      handler.removeCallbacks(checkNow)
+      handler.removeCallbacks(checkAfterCall)
+      audio.unregisterAudioDeviceCallback(devices)
+      audio.removeOnModeChangedListener(modeListener)
+      audio.removeOnCommunicationDeviceChangedListener(communicationListener)
+      audio.unregisterAudioPlaybackCallback(playback)
+    }
   }
 
   /** Checks once things have stopped changing, as playback changes come in bursts. */

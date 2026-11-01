@@ -25,6 +25,7 @@ import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.notifications.NotificationCodeFragment
 import com.google.android.accessibility.talkback.preference.TalkBackPreferencesActivity
 import com.google.android.accessibility.talkback.shizuku.ShizukuClipboard
+import com.google.android.accessibility.talkback.shizuku.ShizukuShell
 import com.google.android.accessibility.utils.ClipboardHistory
 import com.google.android.accessibility.utils.preference.PreferencesActivity.FRAGMENT_NAME
 
@@ -57,6 +58,11 @@ class ClipboardHistoryFragment : NotificationCodeFragment(R.string.title_clipboa
 
   override fun build(screen: PreferenceGroup) {
     val context = requireContext()
+    if (ShizukuShell.isAllowed()) {
+      screen.switch(getString(R.string.title_clipboard_history_other_apps), ShizukuClipboard.isWanted(context)) {
+        ShizukuClipboard.setWanted(context, it)
+      }
+    }
     val entries = ClipboardHistory.entries(context)
     if (entries.isEmpty()) {
       screen.addPreference(

@@ -197,19 +197,31 @@ class ShizukuGrantService(private val context: Context?) : IShizukuGrants.Stub()
   /** Tells the watcher the new clip's text. The shell may read the clipboard in the background. */
   private fun onClipChanged() {
     val watcher = clipWatcher ?: return
+    // The description says what was copied without reading it, which would show Android's
+    // "pasted from your clipboard" message: passwords and pictures aren't read at all.
+    val description =
+      try {
+        clipboard?.primaryClipDescription
+      } catch (e: RuntimeException) {
+        null
+      } ?: return
+    if (
+      description.extras?.getBoolean(EXTRA_IS_SENSITIVE) == true ||
+        !description.hasMimeType("text/*")
+    ) {
+      return
+    }
     val clip =
       try {
         clipboard?.primaryClip
       } catch (e: RuntimeException) {
         null
       } ?: return
-    if (clip.description?.extras?.getBoolean(EXTRA_IS_SENSITIVE) == true || clip.itemCount == 0) {
-      return
-    }
-    val text = clip.getItemAt(0).text?.toString()?.take(MAX_CLIP_LENGTH)
-    if (text.isNullOrBlank()) return
+    // Read, so the watcher learns of it even without text, to leave Android's message unsaid.
+    val text =
+      clip.takeIf { it.itemCount > 0 }?.getItemAt(0)?.text?.toString()?.take(MAX_CLIP_LENGTH)
     try {
-      watcher.onClipText(text)
+      watcher.onClipText(text?.takeUnless { it.isBlank() })
     } catch (e: Exception) {
       // SandFly has stopped.
       watchClipboard(null)
