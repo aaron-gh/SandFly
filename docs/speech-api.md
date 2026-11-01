@@ -67,7 +67,7 @@ Both calls are one-way, so they return at once.
 
 The app that is the current keyboard speaks as SandFly's own keyboard echo does. It needs no permission from the user in **Let other apps speak**, has no rate limit or sound, still speaks while the device is locked, and with `interrupt` it stops all speech, SandFly's own included. Without `interrupt`, its speech waits for what is being said. Only the service gives this; broadcasts from a keyboard are handled as from any other app.
 
-A keyboard that says what is typed with it calls `setTypingSpoken(true)` when it opens, so that SandFly doesn't echo that typing too, and `setTypingSpoken(false)` when it stops speaking typing. SandFly still echoes typing on a physical keyboard or braille display. When the user switches to another keyboard, SandFly echoes typing again; the keyboard calls `setTypingSpoken(true)` again the next time it is the current keyboard.
+A keyboard that says what is typed with it calls `setTypingSpoken(true)` when it opens, so that SandFly doesn't speak that typing too, and `setTypingSpoken(false)` when it stops speaking typing. SandFly then leaves out what it would say about the on-screen keyboard's changes to the field: typed, deleted and replaced text, and cursor moves and selections. It still speaks its own text navigation and editing, and typing and cursor keys on a physical keyboard or braille display. When the user switches to another keyboard, SandFly echoes typing again; the keyboard calls `setTypingSpoken(true)` again the next time it is the current keyboard.
 
 ## Sending a broadcast
 
