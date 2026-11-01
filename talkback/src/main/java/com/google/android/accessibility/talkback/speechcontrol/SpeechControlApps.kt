@@ -47,6 +47,16 @@ object SpeechControlApps {
       .apply()
   }
 
+  /** Forgets the user's answer for [app], so it isn't listed. */
+  fun forget(prefs: SharedPreferences, app: String) {
+    if (state(prefs, app) == State.UNKNOWN) return
+    prefs
+      .edit()
+      .putStringSet(PREF_ALLOWED, set(prefs, PREF_ALLOWED) - app)
+      .putStringSet(PREF_DENIED, set(prefs, PREF_DENIED) - app)
+      .apply()
+  }
+
   /** Every app the user has answered for, allowed or not. */
   fun answered(prefs: SharedPreferences): Set<String> =
     set(prefs, PREF_ALLOWED) + set(prefs, PREF_DENIED)

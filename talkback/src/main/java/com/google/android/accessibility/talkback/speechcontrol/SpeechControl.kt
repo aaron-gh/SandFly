@@ -124,8 +124,11 @@ object SpeechControl {
     pitch: Float = 1f,
     volume: Float = 1f,
   ): Boolean {
-    context?.let { KeyboardSpeech.currentKeyboard(it, apps) }?.let {
-      return speakForKeyboard(text, interrupt, rate, pitch, volume)
+    context?.let { context ->
+      KeyboardSpeech.currentKeyboard(context, apps)?.let { keyboard ->
+        forgetAnswer(context, keyboard)
+        return speakForKeyboard(text, interrupt, rate, pitch, volume)
+      }
     }
     val app = allowedApp(apps) ?: return false
     val feedback = feedback ?: return false
@@ -194,8 +197,18 @@ object SpeechControl {
    * keyboard binds during boot.
    */
   @MainThread
-  fun setTypingSpoken(context: Context, apps: List<String>, spoken: Boolean): Boolean =
-    KeyboardSpeech.setTypingSpoken(context, apps, spoken)
+  fun setTypingSpoken(context: Context, apps: List<String>, spoken: Boolean): Boolean {
+    KeyboardSpeech.currentKeyboard(context, apps)?.let { forgetAnswer(context, it) }
+    return KeyboardSpeech.setTypingSpoken(context, apps, spoken)
+  }
+
+  /**
+   * Forgets the user's answer for [keyboard], the current keyboard, which speaks without one, so
+   * Let other apps speak doesn't list it.
+   */
+  private fun forgetAnswer(context: Context, keyboard: String) {
+    SpeechControlApps.forget(SharedPreferencesUtils.getSharedPreferences(context), keyboard)
+  }
 
   /** Stops what other apps are saying, for the first of [apps] that the user allowed. */
   @MainThread

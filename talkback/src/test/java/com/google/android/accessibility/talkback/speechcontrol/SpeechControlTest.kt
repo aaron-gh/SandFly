@@ -89,6 +89,31 @@ class SpeechControlTest {
   }
 
   @Test
+  fun speak_forgetsTheAnswerForTheCurrentKeyboard() {
+    SpeechControlApps.setAllowed(prefs, APP, true)
+    useKeyboard(APP)
+    SpeechControl.speak(listOf(APP), "Hello", interrupt = true)
+    assertEquals(SpeechControlApps.State.UNKNOWN, SpeechControlApps.state(prefs, APP))
+    assertTrue(SpeechControlApps.answered(prefs).isEmpty())
+  }
+
+  @Test
+  fun setTypingSpoken_forgetsTheAnswerForTheCurrentKeyboard() {
+    SpeechControlApps.setAllowed(prefs, APP, false)
+    useKeyboard(APP)
+    SpeechControl.setTypingSpoken(context, listOf(APP), true)
+    assertTrue(SpeechControlApps.answered(prefs).isEmpty())
+  }
+
+  @Test
+  fun setTypingSpoken_keepsTheAnswerForAnAppThatIsNotTheCurrentKeyboard() {
+    SpeechControlApps.setAllowed(prefs, APP, true)
+    useKeyboard("com.example.keyboard")
+    SpeechControl.setTypingSpoken(context, listOf(APP), true)
+    assertEquals(SpeechControlApps.State.ALLOWED, SpeechControlApps.state(prefs, APP))
+  }
+
+  @Test
   fun speak_treatsAnAppThatIsNotTheCurrentKeyboardAsAnyOther() {
     useKeyboard("com.example.keyboard")
     assertFalse(SpeechControl.speak(listOf(APP), "Hello", interrupt = false))
