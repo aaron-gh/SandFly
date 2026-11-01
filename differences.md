@@ -537,7 +537,7 @@ realme UI reports some volume sliders as not focusable and unlabeled, so TalkBac
 
 ### Vertical navigation
 
-The **Vertical navigation** reading control, which you can turn on in **Reading controls**, moves to the item below when you swipe down and to the item above when you swipe up. It skips the other items of the same row, such as the channel and options buttons beside a video in YouTube, or the buttons beside a file's name. Going up lands on the first item of the row above. In a list, it stays in the list: when there is no row below or above on screen, it scrolls the list a page and moves to the next row. At the end of the list, or outside one, it moves to the item below or above on screen, and plays the end sound when there is none.
+The **Vertical navigation** reading control, which you can turn on in **Reading controls**, moves to the item below when you swipe down and to the item above when you swipe up. It skips the other items of the same row, such as the channel and options buttons beside a video in YouTube, or the buttons beside a file's name. It stays in the column of the focused item: from a key on a keypad, it moves to the key below or above, and from the first item of a row, or an item as wide as the row, to the first item of the next row. In a list, it stays in the list: when there is no row below or above on screen, it scrolls the list a page and moves to the next row. At the end of the list, or outside one, it moves to the item below or above on screen, and plays the end sound when there is none.
 
 ### Reading control kept when focus moves
 
