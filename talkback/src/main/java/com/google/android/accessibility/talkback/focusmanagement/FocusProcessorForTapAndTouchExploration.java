@@ -30,6 +30,8 @@ import static com.google.android.accessibility.talkback.compositor.Compositor.EV
 import static com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED;
 
 import android.content.Context;
+import android.graphics.Point;
+import android.graphics.Rect;
 import android.os.Message;
 import android.os.SystemClock;
 import android.view.ViewConfiguration;
@@ -42,6 +44,7 @@ import com.google.android.accessibility.talkback.Interpretation;
 import com.google.android.accessibility.talkback.Pipeline;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics;
+import com.google.android.accessibility.talkback.directtouch.DirectTouchRegions;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.focusmanagement.action.TouchExplorationAction;
 import com.google.android.accessibility.talkback.scripting.Scripts;
@@ -52,6 +55,7 @@ import com.google.android.accessibility.utils.Performance.EventId;
 import com.google.android.accessibility.utils.Role;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import com.google.android.accessibility.utils.WeakReferenceHandler;
+import com.google.android.libraries.accessibility.utils.device.ScreenUtils;
 
 /** Event interpreter to handle accessibility focus during touch interaction. */
 public class FocusProcessorForTapAndTouchExploration {
@@ -400,10 +404,27 @@ public class FocusProcessorForTapAndTouchExploration {
             SharedPreferencesUtils.getSharedPreferences(context)
                 .getString(context.getString(R.string.pref_lift_to_activate_key), null));
     return LiftToActivate.shouldActivate(
-        mode,
-        mode == LiftToActivateMode.NAVIGATION_BAR
-            && LiftToActivate.isNavigationBarButton(
-                node.getPackageName(), node.getViewIdResourceName()));
+        mode, mode == LiftToActivateMode.NAVIGATION_BAR && isNavigationBarButton(node));
+  }
+
+  /**
+   * Returns whether {@code node} is a button of the system navigation bar: a System UI button with
+   * a navigation bar view id, or any node in a system window shaped like a navigation bar, since
+   * not every phone draws the bar in System UI.
+   */
+  private boolean isNavigationBarButton(AccessibilityNodeInfoCompat node) {
+    if (LiftToActivate.isNavigationBarButton(node.getPackageName(), node.getViewIdResourceName())) {
+      return true;
+    }
+    AccessibilityWindowInfoCompat window = AccessibilityNodeInfoUtils.getWindow(node);
+    if (window == null || window.getType() != AccessibilityWindowInfoCompat.TYPE_SYSTEM) {
+      return false;
+    }
+    Rect bounds = new Rect();
+    window.getBoundsInScreen(bounds);
+    Point display = ScreenUtils.getRealScreenSize(context);
+    return DirectTouchRegions.INSTANCE.isNavigationBar(
+        bounds.left, bounds.top, bounds.right, bounds.bottom, display.x, display.y);
   }
 
   /** @return {@code true} if the role of node support lift-to-type functionality. */

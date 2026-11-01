@@ -16,9 +16,7 @@
 
 package com.google.android.accessibility.talkback.directtouch
 
-import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
-import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
 import org.junit.Test
 
@@ -32,6 +30,7 @@ class DirectTouchSettingsTest {
     assertFalse(DirectTouchSettings.isHapticsEnabled(prefs))
     assertFalse(DirectTouchSettings.isAppEnabled(prefs, "a.b"))
     assertFalse(DirectTouchSettings.isDirectTyping(prefs, "a.b"))
+    assertFalse(DirectTouchSettings.isNavBarTapEnabled(prefs))
   }
 
   @Test
@@ -86,32 +85,20 @@ class DirectTouchSettingsTest {
   }
 
   @Test
-  fun oldNavBarSettingTurnsOnLiftToActivateForTheNavigationBar() {
+  fun oldNavBarSettingTurnsOnTapToActivateNavigationBarButtons() {
     val prefs = FakeSharedPreferences()
     prefs.edit().putBoolean("pref_direct_touch_nav_bar", true).apply()
-    DirectTouchSettings.migrateNavBarSetting(prefs, LIFT_KEY)
-    assertEquals("1", prefs.getString(LIFT_KEY, null))
+    DirectTouchSettings.migrateNavBarSetting(prefs)
+    assertTrue(DirectTouchSettings.isNavBarTapEnabled(prefs))
     assertFalse(prefs.contains("pref_direct_touch_nav_bar"))
-  }
-
-  @Test
-  fun oldNavBarSettingKeepsAChosenLiftToActivateMode() {
-    val prefs = FakeSharedPreferences()
-    prefs.edit().putBoolean("pref_direct_touch_nav_bar", true).putString(LIFT_KEY, "2").apply()
-    DirectTouchSettings.migrateNavBarSetting(prefs, LIFT_KEY)
-    assertEquals("2", prefs.getString(LIFT_KEY, null))
   }
 
   @Test
   fun oldNavBarSettingOffChangesNothing() {
     val prefs = FakeSharedPreferences()
     prefs.edit().putBoolean("pref_direct_touch_nav_bar", false).apply()
-    DirectTouchSettings.migrateNavBarSetting(prefs, LIFT_KEY)
-    assertNull(prefs.getString(LIFT_KEY, null))
+    DirectTouchSettings.migrateNavBarSetting(prefs)
+    assertFalse(prefs.contains(DirectTouchSettings.PREF_NAV_BAR_TAP))
     assertFalse(prefs.contains("pref_direct_touch_nav_bar"))
-  }
-
-  private companion object {
-    const val LIFT_KEY = "pref_lift_to_activate_key"
   }
 }
