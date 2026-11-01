@@ -98,7 +98,7 @@ class SpeechControlTest {
   @Test
   fun setTypingSpoken_suppressesEchoOnlyForTheCurrentKeyboard() {
     useKeyboard(APP)
-    assertTrue(SpeechControl.setTypingSpoken(listOf(APP), true))
+    assertTrue(SpeechControl.setTypingSpoken(context, listOf(APP), true))
     assertTrue(KeyboardSpeech.isTypingSpoken(context))
 
     useKeyboard("com.example.keyboard")
@@ -106,17 +106,25 @@ class SpeechControlTest {
   }
 
   @Test
+  fun setTypingSpoken_isRecordedBeforeSandFlyStarts() {
+    SpeechControl.detach()
+    useKeyboard(APP)
+    assertTrue(SpeechControl.setTypingSpoken(context, listOf(APP), true))
+    assertTrue(KeyboardSpeech.isTypingSpoken(context))
+  }
+
+  @Test
   fun setTypingSpoken_isIgnoredFromAnAppThatIsNotTheCurrentKeyboard() {
     useKeyboard("com.example.keyboard")
-    assertFalse(SpeechControl.setTypingSpoken(listOf(APP), true))
+    assertFalse(SpeechControl.setTypingSpoken(context, listOf(APP), true))
     assertFalse(KeyboardSpeech.isTypingSpoken(context))
   }
 
   @Test
   fun setTypingSpoken_canBeTurnedOff() {
     useKeyboard(APP)
-    SpeechControl.setTypingSpoken(listOf(APP), true)
-    SpeechControl.setTypingSpoken(listOf(APP), false)
+    SpeechControl.setTypingSpoken(context, listOf(APP), true)
+    SpeechControl.setTypingSpoken(context, listOf(APP), false)
     assertFalse(KeyboardSpeech.isTypingSpoken(context))
   }
 

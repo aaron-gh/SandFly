@@ -190,13 +190,12 @@ object SpeechControl {
 
   /**
    * Records whether the current keyboard, if it is one of [apps], says what is typed with it, so
-   * SandFly doesn't echo that typing.
+   * SandFly doesn't echo that typing. Recorded even before SandFly starts, such as when the
+   * keyboard binds during boot.
    */
   @MainThread
-  fun setTypingSpoken(apps: List<String>, spoken: Boolean): Boolean {
-    val context = context ?: return false
-    return KeyboardSpeech.setTypingSpoken(context, apps, spoken)
-  }
+  fun setTypingSpoken(context: Context, apps: List<String>, spoken: Boolean): Boolean =
+    KeyboardSpeech.setTypingSpoken(context, apps, spoken)
 
   /** Stops what other apps are saying, for the first of [apps] that the user allowed. */
   @MainThread

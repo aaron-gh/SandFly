@@ -51,7 +51,7 @@ class SpeechControlService : Service() {
 
       override fun setTypingSpoken(spoken: Boolean) {
         val apps = callingApps()
-        mainHandler.post { SpeechControl.setTypingSpoken(apps, spoken) }
+        mainHandler.post { SpeechControl.setTypingSpoken(applicationContext, apps, spoken) }
       }
     }
 
