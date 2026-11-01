@@ -20,7 +20,6 @@ import static com.google.android.accessibility.talkback.preference.base.GestureL
 import static com.google.android.accessibility.talkback.preference.base.GestureListPreference.TYPE_TITLE;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Parcelable;
 import androidx.fragment.app.FragmentActivity;
@@ -43,7 +42,6 @@ import com.google.android.accessibility.material.preference.AccessibilitySuiteRa
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.preference.base.GestureListPreference.ActionItem;
 import com.google.android.accessibility.utils.PreferenceSettingsUtils;
-import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import java.util.ArrayList;
 import java.util.List;
@@ -80,8 +78,7 @@ public class GesturePreferenceFragmentCompat extends TalkbackBaseFragment {
             return false;
           }
 
-          SharedPreferences prefs = SharedPreferencesUtils.getSharedPreferences(getContext());
-          prefs.edit().putString(preferenceKey, item.value).apply();
+          GestureListPreference.save(getContext(), preferenceKey, item.value);
           popBackStack();
           return true;
         }

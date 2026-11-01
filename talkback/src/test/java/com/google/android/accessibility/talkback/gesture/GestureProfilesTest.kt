@@ -124,6 +124,35 @@ class GestureProfilesTest {
   }
 
   @Test
+  fun rowsReadAndChangeTheirProfilesGesture() {
+    GestureProfiles.write(prefs, listOf(driving, reading))
+    val up = GestureProfiles.rowKey("a", "pref_shortcut_up")
+    val left = GestureProfiles.rowKey("a", "pref_shortcut_left")
+    assertTrue(GestureProfiles.isRowKey(up))
+    assertEquals("FAST_FORWARD", GestureProfiles.rowValue(prefs, up))
+    assertEquals(GestureProfiles.DEFAULT_VALUE, GestureProfiles.rowValue(prefs, left))
+
+    assertTrue(GestureProfiles.setRowValue(prefs, left, "READ_FROM_TOP"))
+    assertTrue(GestureProfiles.setRowValue(prefs, up, GestureProfiles.DEFAULT_VALUE))
+    val changed = GestureProfiles.read(prefs)
+    assertEquals(
+      mapOf("pref_shortcut_down" to "UNASSIGNED", "pref_shortcut_left" to "READ_FROM_TOP"),
+      changed[0].gestures,
+    )
+    assertEquals(reading, changed[1])
+  }
+
+  @Test
+  fun otherKeysAndDeletedProfilesHaveNoRowValue() {
+    GestureProfiles.write(prefs, listOf(driving))
+    assertFalse(GestureProfiles.isRowKey("pref_shortcut_up"))
+    assertNull(GestureProfiles.rowValue(prefs, "pref_shortcut_up"))
+    assertFalse(GestureProfiles.setRowValue(prefs, "pref_shortcut_up", "READ_FROM_TOP"))
+    assertNull(GestureProfiles.rowValue(prefs, GestureProfiles.rowKey("gone", "pref_shortcut_up")))
+    assertEquals(listOf(driving), GestureProfiles.read(prefs))
+  }
+
+  @Test
   fun jsonKeepsOrderNamesAndGestures() {
     val json = GestureProfiles.toJson(listOf(driving, reading))
     assertEquals(listOf(driving, reading), GestureProfiles.fromJson(json))

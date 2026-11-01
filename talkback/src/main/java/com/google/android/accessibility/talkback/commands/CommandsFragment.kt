@@ -119,3 +119,9 @@ internal fun readGestures(fragment: TalkbackBaseFragment): List<CommandBindings.
   fragment.addPreferencesFromResource(R.xml.gesture_preferences)
   return CommandBindings.gestures(fragment.requireContext(), fragment.preferenceScreen)
 }
+
+/** Returns the categories of the Gestures screen, with their gestures, as [readGestures] reads them. */
+internal fun readGestureCategories(fragment: TalkbackBaseFragment): List<CommandBindings.GestureCategory> {
+  fragment.addPreferencesFromResource(R.xml.gesture_preferences)
+  return CommandBindings.gestureCategories(fragment.requireContext(), fragment.preferenceScreen)
+}
