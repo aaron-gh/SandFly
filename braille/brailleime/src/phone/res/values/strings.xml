@@ -170,6 +170,8 @@
   <string name="title_pref_typing_sounds">Typing sounds</string>
   <!-- Summary of the option that plays keyboard sounds while typing braille. [CHAR_LIMIT=150]-->
   <string name="summary_pref_typing_sounds">Play keyboard clicks when you type a character, a space, a new line, or delete</string>
+  <!-- Title of the option that speaks "Submitting text" when the braille keyboard sends text. "Submitting text" is the announcement perform_action_submitting. [CHAR_LIMIT=60]-->
+  <string name="title_pref_speak_submitting">Say \"Submitting text\"</string>
 
   <!-- Preferred braille grade summary while the contracted braille. [CHAR_LIMIT=45] -->
   <string name="bd_preference_braille_contracted">Contracted braille</string>

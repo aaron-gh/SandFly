@@ -784,6 +784,10 @@ The braille languages include Mongolian, uncontracted and contracted, from the l
 
 In braille keyboard settings, **Typing sounds** plays a sound for each character, and a sound each for space, delete, and new line. It's off by default. The sounds are SandFly's, played at SandFly's sound volume, and a [sound theme](themes.md) can replace them with its own.
 
+### Say "Submitting text"
+
+In braille keyboard settings, **Say "Submitting text"** can be turned off to send text without the announcement. It's on by default.
+
 ### Swap top and bottom dots
 
 In braille keyboard settings, **Swap top and bottom dots** makes dot 1 trade places with dot 3, and dot 4 with dot 6. TalkBack's **Reverse dots** is called **Swap left and right dots** in SandFly. You can turn on both.

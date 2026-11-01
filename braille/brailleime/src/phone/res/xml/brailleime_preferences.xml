@@ -57,6 +57,10 @@
         android:summary="@string/summary_pref_typing_sounds"
         android:title="@string/title_pref_typing_sounds" />
 
+    <SwitchPreferenceCompat
+        android:key="@string/pref_brailleime_speak_submitting"
+        android:title="@string/title_pref_speak_submitting" />
+
   </PreferenceCategory>
 
 </PreferenceScreen>
