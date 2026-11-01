@@ -29,6 +29,7 @@ import com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.accessibility.utils.output.FeedbackItem.FLAG_CLEAR_QUEUED_UTTERANCES_WITH_SAME_UTTERANCE_GROUP
 import com.google.android.accessibility.utils.output.FeedbackItem.FLAG_INTERRUPT_CURRENT_UTTERANCE_WITH_SAME_UTTERANCE_GROUP
+import com.google.android.accessibility.utils.output.SpeechController.QUEUE_MODE_INTERRUPT
 import com.google.android.accessibility.utils.output.SpeechController.QUEUE_MODE_QUEUE
 import com.google.android.accessibility.utils.output.SpeechController.UTTERANCE_GROUP_OTHER_APPS
 import com.google.android.accessibility.utils.output.SpeechControllerImpl
@@ -45,6 +46,8 @@ import com.google.android.libraries.accessibility.utils.log.LogUtils
  * - Nothing is said while the device is locked, or while Backtalk is off or paused.
  * - Each app can speak a few times at once, then about once a second.
  * - Apps can replace or stop only speech from other apps, never Backtalk's own.
+ *
+ * The current keyboard is the exception, see [KeyboardSpeech].
  *
  * Everything runs on the main thread.
  */
@@ -121,6 +124,9 @@ object SpeechControl {
     pitch: Float = 1f,
     volume: Float = 1f,
   ): Boolean {
+    context?.let { KeyboardSpeech.currentKeyboard(it, apps) }?.let {
+      return speakForKeyboard(text, interrupt, rate, pitch, volume)
+    }
     val app = allowedApp(apps) ?: return false
     val feedback = feedback ?: return false
     val context = context ?: return false
@@ -155,6 +161,41 @@ object SpeechControl {
     if (playsSound(context)) speech.sound(R.raw.chime_up)
     return feedback.returnFeedback(EVENT_ID_UNTRACKED, speech)
   }
+
+  /**
+   * Says [text] for the current keyboard, as keyboard echo is said: interrupting all speech, or
+   * after it.
+   */
+  private fun speakForKeyboard(
+    text: CharSequence?,
+    interrupt: Boolean,
+    rate: Float,
+    pitch: Float,
+    volume: Float,
+  ): Boolean {
+    if (PauseController.isPaused()) return false
+    val feedback = feedback ?: return false
+    val say = SpeechControlPolicy.textToSay(text) ?: return false
+    val options =
+      ExternalSpeech.options(
+        if (interrupt) QUEUE_MODE_INTERRUPT else QUEUE_MODE_QUEUE,
+        ExternalSpeech.params(
+          SpeechControlPolicy.clampScale(rate),
+          SpeechControlPolicy.clampScale(pitch),
+          SpeechControlPolicy.clampVolume(volume),
+        ),
+      )
+    return feedback.returnFeedback(EVENT_ID_UNTRACKED, Feedback.speech(say, options))
+  }
+
+  /**
+   * Records whether the current keyboard, if it is one of [apps], says what is typed with it, so
+   * SandFly doesn't echo that typing. Recorded even before SandFly starts, such as when the
+   * keyboard binds during boot.
+   */
+  @MainThread
+  fun setTypingSpoken(context: Context, apps: List<String>, spoken: Boolean): Boolean =
+    KeyboardSpeech.setTypingSpoken(context, apps, spoken)
 
   /** Stops what other apps are saying, for the first of [apps] that the user allowed. */
   @MainThread

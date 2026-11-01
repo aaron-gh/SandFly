@@ -52,6 +52,34 @@ public class TextEventFilterTest {
   }
 
   @Test
+  public void keyboardThatSpeaksTypingSuppressesOnScreenKeyboardEcho() {
+    filter.setKeyboardEcho(TypingInput.ON_SCREEN_KEYBOARD, PREF_ECHO_CHARACTERS_AND_WORDS);
+    filter.setOnScreenKeyboardEchoSuppressor(() -> true);
+
+    assertFalse(filter.shouldEchoAddedText(EVENT_TIME));
+    assertFalse(filter.shouldEchoInitialWords(EVENT_TIME));
+  }
+
+  @Test
+  public void keyboardThatSpeaksTypingLeavesPhysicalKeyboardEcho() {
+    filter.setKeyboardEcho(TypingInput.PHYSICAL_KEYBOARD, PREF_ECHO_CHARACTERS_AND_WORDS);
+    filter.setOnScreenKeyboardEchoSuppressor(() -> true);
+    filter.setLastKeyEventTime(EVENT_TIME - 10);
+
+    assertTrue(filter.shouldEchoAddedText(EVENT_TIME));
+    assertTrue(filter.shouldEchoInitialWords(EVENT_TIME));
+  }
+
+  @Test
+  public void keyboardThatSpeaksTypingLeavesBrailleKeyboardEcho() {
+    filter.setKeyboardEcho(TypingInput.BRAILLE_KEYBOARD, PREF_ECHO_CHARACTERS);
+    filter.setBrailleInputReader(() -> TypingInput.BRAILLE_KEYBOARD);
+    filter.setOnScreenKeyboardEchoSuppressor(() -> true);
+
+    assertTrue(filter.shouldEchoAddedText(EVENT_TIME));
+  }
+
+  @Test
   public void brailleKeyboardHasItsOwnEcho() {
     filter.setKeyboardEcho(TypingInput.ON_SCREEN_KEYBOARD, PREF_ECHO_NONE);
     filter.setKeyboardEcho(TypingInput.BRAILLE_KEYBOARD, PREF_ECHO_WORDS);

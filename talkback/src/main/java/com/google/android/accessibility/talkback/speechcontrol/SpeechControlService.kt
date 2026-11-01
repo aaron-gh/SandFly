@@ -48,6 +48,11 @@ class SpeechControlService : Service() {
         val apps = callingApps()
         mainHandler.post { SpeechControl.stop(apps) }
       }
+
+      override fun setTypingSpoken(spoken: Boolean) {
+        val apps = callingApps()
+        mainHandler.post { SpeechControl.setTypingSpoken(applicationContext, apps, spoken) }
+      }
     }
 
   override fun onBind(intent: Intent): IBinder = binder
