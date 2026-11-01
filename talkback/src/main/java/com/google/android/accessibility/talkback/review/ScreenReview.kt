@@ -316,7 +316,13 @@ class ScreenReview(
 
   private fun placeAtFocus(cursor: ReviewCursor) {
     val focus = focus() ?: return
-    if (cursor.moveToSource { it is AccessibilityNodeInfoCompat && (it == focus || hasAncestor(it, focus)) }) {
+    // Words of one item share its node, so each node's ancestors are looked up once.
+    val inFocus = HashMap<AccessibilityNodeInfoCompat, Boolean>()
+    if (
+      cursor.moveToSource {
+        it is AccessibilityNodeInfoCompat && inFocus.getOrPut(it) { it == focus || hasAncestor(it, focus) }
+      }
+    ) {
       return
     }
     val bounds = Rect().also { focus.getBoundsInScreen(it) }

@@ -26,6 +26,7 @@ import androidx.core.view.accessibility.AccessibilityEventCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import androidx.core.view.accessibility.AccessibilityRecordCompat;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
+import com.google.android.accessibility.utils.PerformActionUtils;
 import com.google.android.accessibility.utils.Performance.EventId;
 import com.google.android.accessibility.utils.R;
 import com.google.android.accessibility.utils.input.TextEventInterpreter.InterpretationConsumer;
@@ -98,6 +99,7 @@ public class TextEventFilter {
   }
 
   private static final int PHYSICAL_KEY_TIMEOUT = 100;
+  private static final long SANDFLY_ACTION_MS = 1000;
 
   /**
    * Tells, for a text change at an event time, whether a keyboard that speaks for itself typed it,
@@ -391,6 +393,8 @@ public class TextEventFilter {
   private boolean isTypingSpokenByKeyboard(long textEventTime) {
     return onScreenKeyboardEchoSuppressor != null
         && getTypingInput(textEventTime) == TypingInput.ON_SCREEN_KEYBOARD
+        // A cursor placed or text cleared by SandFly's own click is SandFly's to say.
+        && textEventTime - PerformActionUtils.lastActionOutsideKeyboard() > SANDFLY_ACTION_MS
         && onScreenKeyboardEchoSuppressor.getAsBoolean();
   }
 
