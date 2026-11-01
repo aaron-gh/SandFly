@@ -52,6 +52,14 @@ class CommandsTest {
   }
 
   @Test
+  fun noTwoCommandsInACategoryHaveTheSameName() {
+    Commands.categories(context).forEach { category ->
+      val labels = category.commands.map { it.label }
+      assertEquals(labels.groupBy { it }.filter { it.value.size > 1 }.keys, emptySet<String>())
+    }
+  }
+
+  @Test
   fun everyCategoryHasCommands() {
     Commands.categories(context).forEach { assertTrue(it.commands.isNotEmpty()) }
   }

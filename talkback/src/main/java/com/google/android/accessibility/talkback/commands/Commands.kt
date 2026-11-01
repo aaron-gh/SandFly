@@ -604,8 +604,8 @@ object Commands {
         gesture(
           R.string.shortcut_value_start_selection_mode,
           R.string.title_edittext_breakout_start_selection_mode,
+          Key.TOGGLE_SELECTION,
         )
-        keyboard(Key.TOGGLE_SELECTION)
         gesture(
           R.string.shortcut_value_move_cursor_to_beginning,
           R.string.title_edittext_breakout_move_to_beginning,
