@@ -19,6 +19,8 @@ package com.google.android.accessibility.talkback.keyboard
 import android.content.Context
 import android.view.KeyEvent
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.talkback.commands.CommandBindings
+import com.google.android.accessibility.talkback.commands.Commands
 import com.google.android.accessibility.utils.FormFactorUtils
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import org.junit.Assert.assertEquals
@@ -167,5 +169,19 @@ class KeymapTest {
     assertTrue(SandFlyKey.NUMPAD_INSERT.isKey(numLockOff))
     assertFalse(SandFlyKey.NUMPAD_INSERT.isKey(numLockOn))
     assertFalse(SandFlyKey.META.isKey(numLockOff))
+  }
+
+  @Test
+  fun keyboardOnlyCommandsKeepShortcutsUnderTheirActions() {
+    val urlKey = context.getString(R.string.keycombo_shortcut_other_read_current_url)
+    val oldKey = Commands.shortcutKey(Commands.KEYBOARD_PREFIX + urlKey)
+    val persister = KeyComboPersister(context, Keymap.SANDFLY.persisterPrefix)
+    val shortcut = KeyCombo(KeyEvent.META_SHIFT_ON, 0, KeyEvent.KEYCODE_U, true)
+    persister.saveKeyCombo(oldKey, shortcut)
+    val model = NewKeyComboModel(context, Keymap.SANDFLY)
+    assertEquals(shortcut, model.getKeyComboForKey(urlKey))
+    assertFalse(persister.contains(oldKey))
+    val command = Commands.find(context, Commands.KEYBOARD_PREFIX + urlKey)!!
+    assertEquals(urlKey, CommandBindings.keyboardKey(context, model, command))
   }
 }
