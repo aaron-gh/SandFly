@@ -668,6 +668,7 @@ object Commands {
           R.string.shortcut_a11y_button_long_press,
           available = systemActions,
         )
+        gesture(R.string.shortcut_value_toggle_magnification, R.string.shortcut_toggle_magnification)
         gesture(R.string.shortcut_value_write_app_name, R.string.shortcut_write_app_name)
         gesture(
           R.string.shortcut_value_voice_commands,
