@@ -1600,7 +1600,22 @@ public class NewKeyComboModel implements KeyComboModel {
   /** Adds the keyboard shortcuts set for commands that have no keyboard action of their own. */
   private void addCommandShortcuts() {
     for (String key : persister.keysStartingWith(Commands.SHORTCUT_KEY_PREFIX)) {
-      keyComboMap.put(key, persister.getKeyCombo(key));
+      KeyCombo keyCombo = persister.getKeyCombo(key);
+      // A command only the keyboard code performs keeps its shortcut under its keyboard action,
+      // where settings show it. Earlier versions saved it under the command.
+      @Nullable String value = Commands.valueOfShortcutKey(key);
+      if (value != null && value.startsWith(Commands.KEYBOARD_PREFIX)) {
+        String actionKey = value.substring(Commands.KEYBOARD_PREFIX.length());
+        if (keyComboMap.containsKey(actionKey)) {
+          if (keyCombo.getKeyComboCode() != KEY_COMBO_CODE_UNASSIGNED) {
+            persister.saveKeyCombo(actionKey, keyCombo);
+            keyComboMap.put(actionKey, keyCombo);
+          }
+          persister.remove(key);
+          continue;
+        }
+      }
+      keyComboMap.put(key, keyCombo);
     }
   }
 

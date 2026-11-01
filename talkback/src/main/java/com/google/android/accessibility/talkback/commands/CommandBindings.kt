@@ -124,12 +124,16 @@ object CommandBindings {
     TalkBackService.getInstance()?.keyComboManager ?: KeyComboManager.create(context)
 
   /**
-   * Returns the key under which [model] keeps the keyboard shortcut of [command]: the command's
-   * keyboard action's own key when this keymap has it, otherwise a key for the command.
+   * Returns the key under which [model] keeps the keyboard shortcut of [command]: the key of the
+   * command's keyboard action, or of the action it is, when this keymap has it, otherwise a key for
+   * the command.
    */
   @JvmStatic
   fun keyboardKey(context: Context, model: KeyComboModel, command: Commands.Command): String {
-    val actionKey = command.keyboardAction?.getKey(context.resources)
+    // A command only the keyboard code performs is its keyboard action.
+    val actionKey =
+      (command.keyboardAction ?: Commands.keyboardActionOf(context, command.value))
+        ?.getKey(context.resources)
     return if (!actionKey.isNullOrEmpty() && model.keyComboMap.containsKey(actionKey)) {
       actionKey
     } else {
