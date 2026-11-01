@@ -488,11 +488,13 @@ You can assign actions to pinching and spreading with two, three or four fingers
 
 ### Lift to activate
 
-SandFly can activate the item under your finger when you lift your finger after exploring by touch, as TalkBack already does for keys on the keyboard. In **Controls** > **Touch and activation** > **Lift to activate**, choose **Only on navigation bar** to use it for the Back, Home, and Overview buttons only, or **Entire screen** to use it everywhere. It's **Disabled** by default. With **Only on navigation bar**, a single tap presses the button, and SandFly says which one, such as "Back" or "Home". To stop this, turn off **Controls** > **Touch and activation** > **Speak navigation bar buttons**.
-
-With **Only on navigation bar** on Android 11 and later, touches on the navigation bar go straight to Android, so a single tap presses a button and holding Home holds it, as without a screen reader. SandFly doesn't say the buttons as you touch them.
+SandFly can activate the item under your finger when you lift your finger after exploring by touch, as TalkBack already does for keys on the keyboard. In **Touch** > **Lift to activate**, choose **Only on navigation bar** to use it for the Back, Home, and Overview buttons only, or **Entire screen** to use it everywhere. It's **Disabled** by default.
 
 **Lift to activate** is also a reading control, so you can change it with a swipe up or down.
+
+### Tap to activate navigation bar buttons
+
+With **Touch** > **Tap to activate navigation bar buttons** on Android 11 and later, touches on the navigation bar go straight to Android, so a single tap presses a button and holding Home holds it, as without a screen reader. It's off by default. SandFly doesn't say the buttons as you touch them, but says the button a tap pressed, such as "Back" or "Home". To stop this, turn off **Touch** > **Speak navigation bar buttons**. While **Tap to activate navigation bar buttons** is on, **Lift to activate** doesn't apply to the navigation bar.
 
 ### Activate with a tap
 

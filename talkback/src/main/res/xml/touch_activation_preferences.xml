@@ -10,6 +10,15 @@
       android:summary="%s"
       android:title="@string/title_pref_lift_to_activate" />
   <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+      android:defaultValue="false"
+      android:key="pref_tap_nav_bar_buttons"
+      android:title="@string/title_pref_tap_nav_bar_buttons" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+      android:defaultValue="true"
+      android:dependency="pref_tap_nav_bar_buttons"
+      android:key="pref_speak_nav_bar_buttons"
+      android:title="@string/title_pref_speak_nav_bar_buttons" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
       android:defaultValue="@bool/pref_single_tap_default"
       android:key="@string/pref_single_tap_key"
       android:summary="@string/summary_pref_single_tap"
@@ -19,11 +28,6 @@
       android:key="@string/pref_touch_focus_time_out_key"
       app:summary="%s"
       android:title="@string/title_pref_touch_focus_timeout" />
-  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
-      android:defaultValue="true"
-      android:key="pref_speak_nav_bar_buttons"
-      android:summary="@string/summary_pref_speak_nav_bar_buttons"
-      android:title="@string/title_pref_speak_nav_bar_buttons" />
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
       android:fragment="com.google.android.accessibility.talkback.directtouch.DirectTouchFragment"
       android:key="@string/pref_direct_touch_key"

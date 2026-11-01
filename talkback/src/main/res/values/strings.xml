@@ -332,10 +332,10 @@
     -->
     <!-- Spoken for the battery level, such as when the screen turns on or in the status readout. [CHAR LIMIT=NONE] -->
     <!-- Spoken when a reading control is already at its lowest or highest value: "Minimum" or "Maximum", then the value, such as "Minimum, 0.15 seconds". [CHAR LIMIT=NONE] -->
-    <!-- Title of the setting that says Back, Home, or Overview when a single tap presses it, with lift to activate on the navigation bar. [CHAR LIMIT=NONE] -->
+    <!-- Title of the setting that lets a single tap press Back, Home, or Overview on the system navigation bar: touches on the navigation bar go to it directly, without touch exploration. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_tap_nav_bar_buttons">Tap to activate navigation bar buttons</string>
+    <!-- Title of the setting that says Back, Home, or Overview when a single tap presses it, with tap to activate navigation bar buttons on. [CHAR LIMIT=NONE] -->
     <string name="title_pref_speak_nav_bar_buttons">Speak navigation bar buttons</string>
-    <!-- Summary of the setting that says the navigation bar button a tap pressed. [CHAR LIMIT=NONE] -->
-    <string name="summary_pref_speak_nav_bar_buttons">With lift to activate on the navigation bar, say the button that a tap presses, such as Back or Home.</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">Battery <xliff:g id="battery_level" example="73">%1$s</xliff:g> percent</string>
     <!-- Spoken instead of template_battery_level when the battery level isn't known. [CHAR LIMIT=NONE] -->

@@ -17,7 +17,6 @@
 package com.google.android.accessibility.talkback.directtouch
 
 import android.content.SharedPreferences
-import com.google.android.accessibility.talkback.focusmanagement.LiftToActivateMode
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
@@ -34,6 +33,8 @@ object DirectTouchSettings {
   const val PREF_MASTER = "pref_direct_touch_master"
   const val PREF_SPEECH = "pref_direct_touch_speech"
   const val PREF_HAPTICS = "pref_direct_touch_haptics"
+  /** Whether the navigation bar takes touches directly, so that a single tap presses its buttons. */
+  const val PREF_NAV_BAR_TAP = "pref_tap_nav_bar_buttons"
   /** Whether a tap on a navigation bar button that takes touches directly says the button. */
   const val PREF_NAV_BAR_SPEECH = "pref_speak_nav_bar_buttons"
   private const val PREF_APPS = "pref_direct_touch_apps"
@@ -42,24 +43,17 @@ object DirectTouchSettings {
   private const val PREF_TYPING_PREFIX = "pref_direct_touch_typing_"
   private const val BACKUP_VERSION = 1
 
-  /**
-   * The old "Navigation bar always direct" setting. Lift to activate on the navigation bar
-   * replaced it, since that also lets a single tap press the buttons, and still says them.
-   */
+  /** The old "Navigation bar always direct" setting, which [PREF_NAV_BAR_TAP] replaced. */
   private const val OLD_PREF_NAV_BAR = "pref_direct_touch_nav_bar"
 
-  /**
-   * Turns lift to activate on for the navigation bar, stored under [liftToActivateKey], for users
-   * who had the old navigation bar setting on and lift to activate off. Runs once.
-   */
-  fun migrateNavBarSetting(prefs: SharedPreferences, liftToActivateKey: String) {
+  /** Turns [PREF_NAV_BAR_TAP] on for users who had the old navigation bar setting on. Runs once. */
+  fun migrateNavBarSetting(prefs: SharedPreferences) {
     if (!prefs.contains(OLD_PREF_NAV_BAR)) {
       return
     }
     val editor = prefs.edit().remove(OLD_PREF_NAV_BAR)
-    val liftToActivate = LiftToActivateMode.fromPrefValue(prefs.getString(liftToActivateKey, null))
-    if (prefs.getBoolean(OLD_PREF_NAV_BAR, false) && liftToActivate == LiftToActivateMode.DISABLED) {
-      editor.putString(liftToActivateKey, LiftToActivateMode.NAVIGATION_BAR.prefValue)
+    if (prefs.getBoolean(OLD_PREF_NAV_BAR, false)) {
+      editor.putBoolean(PREF_NAV_BAR_TAP, true)
     }
     editor.apply()
   }
@@ -73,6 +67,8 @@ object DirectTouchSettings {
   fun isSpeechEnabled(prefs: SharedPreferences): Boolean = prefs.getBoolean(PREF_SPEECH, true)
 
   fun isHapticsEnabled(prefs: SharedPreferences): Boolean = prefs.getBoolean(PREF_HAPTICS, false)
+
+  fun isNavBarTapEnabled(prefs: SharedPreferences): Boolean = prefs.getBoolean(PREF_NAV_BAR_TAP, false)
 
   fun isNavBarSpeechEnabled(prefs: SharedPreferences): Boolean =
     prefs.getBoolean(PREF_NAV_BAR_SPEECH, true)

@@ -35,7 +35,6 @@ import com.google.android.accessibility.talkback.Feedback
 import com.google.android.accessibility.talkback.Feedback.PassThroughMode.Action.DIRECT_TOUCH_REGION
 import com.google.android.accessibility.talkback.Pipeline
 import com.google.android.accessibility.talkback.R
-import com.google.android.accessibility.talkback.focusmanagement.LiftToActivateMode
 import com.google.android.accessibility.talkback.monitor.RingerModeAndScreenMonitor
 import com.google.android.accessibility.utils.AccessibilityWindowInfoUtils.WINDOW_ID_NONE
 import com.google.android.accessibility.utils.FeatureSupport
@@ -92,19 +91,20 @@ class DirectTouchController(
   // The system holds preference listeners weakly, so this must stay a field.
   private val prefsListener =
     SharedPreferences.OnSharedPreferenceChangeListener { _, key ->
-      if (key != null && (key.startsWith("pref_direct_touch") || key == liftToActivateKey)) {
+      if (
+        key != null &&
+          (key.startsWith("pref_direct_touch") || key == DirectTouchSettings.PREF_NAV_BAR_TAP)
+      ) {
         evaluate()
       }
     }
-
-  private val liftToActivateKey = service.getString(R.string.pref_lift_to_activate_key)
 
   // The last navigation bar button spoken, so that the same tap reported twice is said once.
   private var lastNavBarButton: CharSequence? = null
   private var lastNavBarButtonTime = 0L
 
   init {
-    DirectTouchSettings.migrateNavBarSetting(prefs, liftToActivateKey)
+    DirectTouchSettings.migrateNavBarSetting(prefs)
     prefs.registerOnSharedPreferenceChangeListener(prefsListener)
   }
 
@@ -255,13 +255,9 @@ class DirectTouchController(
 
   /**
    * Whether the navigation bar buttons take touches directly, so that a single tap presses them
-   * and holding Home holds it, as with lift to activate on the navigation bar. Lifting to activate
-   * a button Backtalk focused does not work on every phone, but touches that go straight to the
-   * navigation bar do.
+   * and holding Home holds it.
    */
-  private fun isNavBarDirect(): Boolean =
-    LiftToActivateMode.fromPrefValue(prefs.getString(liftToActivateKey, null)) ==
-      LiftToActivateMode.NAVIGATION_BAR
+  private fun isNavBarDirect(): Boolean = DirectTouchSettings.isNavBarTapEnabled(prefs)
 
   /**
    * Says the navigation bar button that a tap pressed, such as Back or Home, when the navigation
@@ -315,10 +311,10 @@ class DirectTouchController(
   }
 
   /**
-   * While direct touch is off, keeps the navigation bar in the passthrough region if lift to
-   * activate is on for it, and a keyboard in the direct touch list while it shows, and takes them
-   * out again once they aren't. The region is sent again on every look, because other services can
-   * clear the shared one.
+   * While direct touch is off, keeps the navigation bar in the passthrough region if tap to
+   * activate navigation bar buttons is on, and a keyboard in the direct touch list while it shows,
+   * and takes them out again once they aren't. The region is sent again on every look, because
+   * other services can clear the shared one.
    */
   private fun updatePartRegion(
     windows: List<AccessibilityWindowInfo>,
