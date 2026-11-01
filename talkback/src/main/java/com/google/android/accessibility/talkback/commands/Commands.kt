@@ -401,6 +401,7 @@ object Commands {
           available = FeatureSupport.supportPassthrough(),
         )
         keyboard(Key.TOGGLE_KEY_COMBO_PASS_THROUGH_ONCE)
+        keyboard(Key.TOGGLE_PASS_KEYS_TO_APP)
       }
 
     private fun scrolling() =

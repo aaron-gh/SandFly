@@ -313,4 +313,38 @@ class KeymapTest {
         .getKeyComboForKey(context.getString(R.string.keycombo_shortcut_global_home)),
     )
   }
+
+  @Test
+  fun computerKeymapsPassKeysToTheApp() {
+    fun sandFly(modifiers: Int, keyCode: Int) = KeyCombo(modifiers, 0, keyCode, true)
+    val keys =
+      mapOf(
+        Keymap.NVDA to (sandFly(0, KeyEvent.KEYCODE_F2) to sandFly(KeyEvent.META_SHIFT_ON, KeyEvent.KEYCODE_SPACE)),
+        Keymap.JAWS to (sandFly(0, KeyEvent.KEYCODE_3) to sandFly(KeyEvent.META_SHIFT_ON, KeyEvent.KEYCODE_Z)),
+        Keymap.ORCA to (sandFly(0, KeyEvent.KEYCODE_DEL) to sandFly(KeyEvent.META_SHIFT_ON, KeyEvent.KEYCODE_A)),
+      )
+    for ((keymap, expected) in keys) {
+      val model = NewKeyComboModel(context, keymap)
+      assertEquals(
+        expected.first,
+        model.getKeyComboForKey(
+          context.getString(R.string.keycombo_shortcut_global_toggle_key_combo_pass_through_once)
+        ),
+      )
+      assertEquals(
+        expected.second,
+        model.getKeyComboForKey(context.getString(R.string.keycombo_shortcut_toggle_pass_keys_to_app)),
+      )
+    }
+  }
+
+  @Test
+  fun passingKeysIsRememberedForEachApp() {
+    assertFalse(PassKeysApps.isOn(context, "com.example.game"))
+    assertTrue(PassKeysApps.toggle(context, "com.example.game"))
+    assertTrue(PassKeysApps.isOn(context, "com.example.game"))
+    assertFalse(PassKeysApps.isOn(context, "com.example.other"))
+    assertFalse(PassKeysApps.toggle(context, "com.example.game"))
+    assertFalse(PassKeysApps.isOn(context, "com.example.game"))
+  }
 }

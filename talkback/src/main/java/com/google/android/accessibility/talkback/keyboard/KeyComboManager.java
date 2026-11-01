@@ -32,6 +32,7 @@ import static java.lang.Math.max;
 import android.accessibilityservice.AccessibilityService;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.os.SystemClock;
 import android.text.SpannableStringBuilder;
@@ -434,7 +435,8 @@ public class KeyComboManager
                 && matchKeyCombo
                 && keyComboMapper != null
                 && keyComboPassThroughState != KeyComboPassThroughState.ACTIVE
-                && !sandFlyKeyHeld)) {
+                && !sandFlyKeyHeld
+                && !isPassingKeysToApp())) {
       return true;
     }
 
@@ -663,6 +665,36 @@ public class KeyComboManager
     if (!browseModeEnabled) {
       recordBrowseModeStateWhenOff(BROWSE_MODE_TURNED_OFF_BY_USER);
     }
+    return true;
+  }
+
+  /** Returns whether the app shown gets the keys pressed without the SandFly key. */
+  private boolean isPassingKeysToApp() {
+    return PassKeysApps.isOn(context, focusedPackage);
+  }
+
+  /**
+   * Makes the app shown get the keys pressed without the SandFly key, such as the arrow keys, or
+   * stop getting them, and says which. Returns false when no app is shown.
+   */
+  public boolean togglePassKeysToApp() {
+    @Nullable String app = focusedPackage;
+    if (app == null) {
+      return false;
+    }
+    boolean on = PassKeysApps.toggle(context, app);
+    CharSequence name = app;
+    try {
+      PackageManager packageManager = context.getPackageManager();
+      name = packageManager.getApplicationLabel(packageManager.getApplicationInfo(app, 0));
+    } catch (PackageManager.NameNotFoundException e) {
+      LogUtils.w(TAG, "No app %s", app);
+    }
+    pipeline.returnFeedback(
+        EVENT_ID_UNTRACKED,
+        Feedback.speech(
+            context.getString(on ? R.string.pass_keys_to_app_on : R.string.pass_keys_to_app_off, name),
+            INTERRUPTIVE_SPEAK_OPTIONS));
     return true;
   }
 
@@ -1173,6 +1205,14 @@ public class KeyComboManager
     // * Browse mode is on.
     boolean triggerModifierNotPressedWhenNeeded =
         hasModifier && !pressedTriggerModifier && !startedSequenceKeyCombo && !enabledBrowseMode;
+    // In an app that gets them, keys without the SandFly key are the app's, browse mode's too.
+    if (hasModifier
+        && !pressedTriggerModifier
+        && !startedSequenceKeyCombo
+        && isPassingKeysToApp()) {
+      passedKeys.addAll(currentKeysDown);
+      return false;
+    }
     // Keys without the SandFly key in keymaps whose shortcuts without it work outside browse mode.
     if (hasModifier
         && !pressedTriggerModifier
