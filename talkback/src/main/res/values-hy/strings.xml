@@ -1833,4 +1833,27 @@
   <string name="shortcut_toggle_magnification">Միացնել կամ անջատել խոշորացումը</string>
   <string name="shortcut_submit_text">Ուղարկել տեքստը</string>
   <string name="shortcut_title_accessibility_shortcuts">Հատուկ գործառույթների դյուրանցումներ</string>
+    <string name="title_pref_gesture_profiles">Ժեստերի պրոֆիլներ</string>
+    <string name="title_gesture_profile">Ժեստերի պրոֆիլ</string>
+    <string name="gesture_profile_default">Կանխադրված</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, օգտագործվում է</string>
+    <string name="no_gesture_profiles">Ժեստերի պրոֆիլներ չկան</string>
+    <string name="shortcut_gesture_profiles">Ընտրել ժեստերի պրոֆիլը</string>
+    <string name="shortcut_previous_gesture_profile">Ժեստերի նախորդ պրոֆիլը</string>
+    <string name="shortcut_next_gesture_profile">Ժեստերի հաջորդ պրոֆիլը</string>
+    <string name="shortcut_use_gesture_profile">Օգտագործել <xliff:g id="name" example="Driving">%1$s</xliff:g> ժեստերի պրոֆիլը</string>
+    <string name="title_pref_gesture_profile_in_use">Օգտագործվող ժեստերի պրոֆիլը</string>
+    <string name="title_pref_add_gesture_profile">Ավելացնել ժեստերի պրոֆիլ</string>
+    <string name="gesture_profile_new_name">Ժեստերի պրոֆիլ <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken"><xliff:g id="name" example="Driving">%1$s</xliff:g> անունով ժեստերի պրոֆիլ արդեն կա</string>
+    <string name="title_pref_delete_gesture_profile">Ջնջել ժեստերի պրոֆիլը</string>
+    <string name="title_pref_tap_nav_bar_buttons">Հպել՝ նավիգացիայի գոտու կոճակներն ակտիվացնելու համար</string>
+    <string name="title_pref_reset_accessibility_audio">Զանգերից հետո վերակայել հատուկ գործառույթների աուդիոն</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">Անհրաժեշտ է Shizuku։ Առանց Shizuku-ի գործարկեք այս հրամանը adb-ով, երբ զանգից հետո խոսքը հնչում է ականջակալով՝ %1$s</string>
+    <string name="arrow_key_nav_unavailable">Այս դասավորությունում սլաքներով նավիգացիա չկա</string>
+    <string name="shortcut_braille_app_name">Մուտքագրեք հավելվածի անունը Բրայլով՝ այն բացելու համար</string>
+    <string name="braille_app_prompt">Մուտքագրեք հավելվածի անունը Բրայլով</string>
+    <string name="braille_app_closed">Բրայլով հավելվածների որոնումը փակվեց</string>
+    <string name="braille_app_not_available">Հավելվածի անունը Բրայլով մուտքագրելը հասանելի չէ</string>
+    <string name="title_clipboard_history_other_apps">Ավելացնել այլ հավելվածներում պատճենածը</string>
 </resources>

@@ -35,6 +35,10 @@ class ScriptTouch(private val service: AccessibilityService, private val feedbac
   private val mainHandler = Handler(Looper.getMainLooper())
   // Gestures under way, counted on the main thread, which share the pass-through region.
   private var gestures = 0
+  // Whether the gestures under way set the pass-through region, and so clear it at the end.
+  private var ownsPassThrough = false
+  // Set on the main thread once scripts are off: gestures still waiting aren't performed.
+  private var closed = false
 
   /**
    * Performs strokes on the screen. Each stroke is `{ points, start, duration }`: a list of
@@ -69,11 +73,13 @@ class ScriptTouch(private val service: AccessibilityService, private val feedbac
     }
     val description = asApiError { builder.build() }
     mainHandler.post {
+      if (closed) return@post done(false)
       // Touch exploration would take the strokes as SandFly gestures, so touch passes through to
-      // apps until the gesture ends.
-      if (gestures++ == 0) feedback.passThrough(true)
+      // apps until the gesture ends. A lock the person or another SandFly screen holds stays theirs.
+      if (gestures++ == 0) ownsPassThrough = !feedback.services.isPassThroughActive()
+      if (gestures == 1 && ownsPassThrough) feedback.passThrough(true)
       val finish = { performed: Boolean ->
-        if (--gestures == 0) feedback.passThrough(false)
+        if (--gestures == 0 && ownsPassThrough) feedback.passThrough(false)
         done(performed)
       }
       val callback =
@@ -84,10 +90,17 @@ class ScriptTouch(private val service: AccessibilityService, private val feedbac
         }
       // Android applies the pass-through region a moment later.
       mainHandler.postDelayed(
-        { if (!service.dispatchGesture(description, callback, mainHandler)) finish(false) },
+        {
+          if (closed || !service.dispatchGesture(description, callback, mainHandler)) finish(false)
+        },
         PASS_THROUGH_WAIT_MS,
       )
     }
+  }
+
+  /** Stops gestures that haven't started. Called from any thread once scripts are off. */
+  fun close() {
+    mainHandler.post { closed = true }
   }
 
   /** Presses keys, given as names such as `enter` or `KEYCODE_TAB`, through Shizuku. */

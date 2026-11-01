@@ -1276,8 +1276,18 @@ public class FocusProcessorForLogicalNavigation {
         // A view the elements cover is passed over, also a WebView, which would otherwise take the
         // swipe into its own web navigation.
         @Nullable AccessibilityNodeInfoCompat past = ScreenElements.pastCoveredHost(anchor, forward);
-        // At the window's edge, the swipe goes on as SandFly's own: to the next window, or around.
-        return past == null ? null : setAccessibilityFocusInternal(past, navigationAction, eventId);
+        if (past != null) {
+          return setAccessibilityFocusInternal(past, navigationAction, eventId);
+        }
+        // At the window's edge, the swipe goes on from the covered view as SandFly's own: to the
+        // next window, or around the app's window.
+        leavingScreenElementsOf = anchor;
+        try {
+          return navigateToDefaultOrMacroGranularityTarget(
+              anchor, ignoreDescendantsOfPivot, navigationAction, eventId);
+        } finally {
+          leavingScreenElementsOf = null;
+        }
       }
       if (!forward) {
         if (anchor != null) {

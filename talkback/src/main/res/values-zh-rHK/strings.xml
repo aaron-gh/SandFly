@@ -1832,4 +1832,27 @@
   <string name="shortcut_toggle_magnification">開啟或關閉放大功能</string>
   <string name="shortcut_submit_text">提交文字</string>
   <string name="shortcut_title_accessibility_shortcuts">無障礙功能捷徑</string>
+    <string name="title_pref_gesture_profiles">手勢設定檔</string>
+    <string name="title_gesture_profile">手勢設定檔</string>
+    <string name="gesture_profile_default">預設</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>，使用中</string>
+    <string name="no_gesture_profiles">沒有手勢設定檔</string>
+    <string name="shortcut_gesture_profiles">選擇手勢設定檔</string>
+    <string name="shortcut_previous_gesture_profile">上一個手勢設定檔</string>
+    <string name="shortcut_next_gesture_profile">下一個手勢設定檔</string>
+    <string name="shortcut_use_gesture_profile">使用手勢設定檔 <xliff:g id="name" example="Driving">%1$s</xliff:g></string>
+    <string name="title_pref_gesture_profile_in_use">使用中的手勢設定檔</string>
+    <string name="title_pref_add_gesture_profile">新增手勢設定檔</string>
+    <string name="gesture_profile_new_name">手勢設定檔 <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken">已有名為 <xliff:g id="name" example="Driving">%1$s</xliff:g> 的手勢設定檔</string>
+    <string name="title_pref_delete_gesture_profile">刪除手勢設定檔</string>
+    <string name="title_pref_tap_nav_bar_buttons">輕按即可啟用導覽列按鈕</string>
+    <string name="title_pref_reset_accessibility_audio">通話後重設無障礙音訊</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">需要 Shizuku。如沒有 Shizuku，當通話後語音從聽筒播放時，請使用 adb 執行此命令：%1$s</string>
+    <string name="arrow_key_nav_unavailable">此按鍵配置沒有方向鍵瀏覽</string>
+    <string name="shortcut_braille_app_name">以點字輸入應用程式名稱以開啟</string>
+    <string name="braille_app_prompt">以點字輸入應用程式名稱</string>
+    <string name="braille_app_closed">已關閉點字應用程式搜尋</string>
+    <string name="braille_app_not_available">無法以點字輸入應用程式名稱</string>
+    <string name="title_clipboard_history_other_apps">加入其他應用程式的複製內容</string>
 </resources>

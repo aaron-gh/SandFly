@@ -1833,4 +1833,27 @@
   <string name="shortcut_toggle_magnification">Томруулалтыг асаах эсвэл унтраах</string>
   <string name="shortcut_submit_text">Текст илгээх</string>
   <string name="shortcut_title_accessibility_shortcuts">Хүртээмжийн товчлол</string>
+    <string name="title_pref_gesture_profiles">Зангааны профайл</string>
+    <string name="title_gesture_profile">Зангааны профайл</string>
+    <string name="gesture_profile_default">Өгөгдмөл</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, ашиглаж байна</string>
+    <string name="no_gesture_profiles">Зангааны профайл алга</string>
+    <string name="shortcut_gesture_profiles">Зангааны профайл сонгох</string>
+    <string name="shortcut_previous_gesture_profile">Өмнөх зангааны профайл</string>
+    <string name="shortcut_next_gesture_profile">Дараагийн зангааны профайл</string>
+    <string name="shortcut_use_gesture_profile"><xliff:g id="name" example="Driving">%1$s</xliff:g> зангааны профайлыг ашиглах</string>
+    <string name="title_pref_gesture_profile_in_use">Ашиглаж буй зангааны профайл</string>
+    <string name="title_pref_add_gesture_profile">Зангааны профайл нэмэх</string>
+    <string name="gesture_profile_new_name">Зангааны профайл <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken"><xliff:g id="name" example="Driving">%1$s</xliff:g> нэртэй зангааны профайл аль хэдийн байна</string>
+    <string name="title_pref_delete_gesture_profile">Зангааны профайлыг устгах</string>
+    <string name="title_pref_tap_nav_bar_buttons">Навигацийн самбарын товчлуурыг товшиж идэвхжүүлэх</string>
+    <string name="title_pref_reset_accessibility_audio">Дуудлагын дараа хүртээмжийн аудиог шинэчлэх</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">Shizuku шаардлагатай. Shizuku-гүй бол дуудлагын дараа яриа чихний чанга яригчаар гарч байвал энэ тушаалыг adb-ээр ажиллуулна уу: %1$s</string>
+    <string name="arrow_key_nav_unavailable">Энэ гарны зураглалд сум товчоор шилжих боломжгүй</string>
+    <string name="shortcut_braille_app_name">Аппыг нээхийн тулд нэрийг нь брайлаар бичих</string>
+    <string name="braille_app_prompt">Аппын нэрийг брайлаар бичнэ үү</string>
+    <string name="braille_app_closed">Брайлаар апп хайхыг хаасан</string>
+    <string name="braille_app_not_available">Аппын нэрийг брайлаар бичих боломжгүй</string>
+    <string name="title_clipboard_history_other_apps">Бусад аппын хуулбарыг нэмэх</string>
 </resources>

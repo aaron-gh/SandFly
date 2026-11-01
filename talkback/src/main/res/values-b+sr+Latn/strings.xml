@@ -1837,4 +1837,27 @@
   <string name="shortcut_toggle_magnification">Uključi ili isključi uvećanje</string>
   <string name="shortcut_submit_text">Pošalji tekst</string>
   <string name="shortcut_title_accessibility_shortcuts">Prečice za pristupačnost</string>
+    <string name="title_pref_gesture_profiles">Profili pokreta</string>
+    <string name="title_gesture_profile">Profil pokreta</string>
+    <string name="gesture_profile_default">Podrazumevano</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, u upotrebi</string>
+    <string name="no_gesture_profiles">Nema profila pokreta</string>
+    <string name="shortcut_gesture_profiles">Izaberi profil pokreta</string>
+    <string name="shortcut_previous_gesture_profile">Prethodni profil pokreta</string>
+    <string name="shortcut_next_gesture_profile">Sledeći profil pokreta</string>
+    <string name="shortcut_use_gesture_profile">Koristi profil pokreta <xliff:g id="name" example="Driving">%1$s</xliff:g></string>
+    <string name="title_pref_gesture_profile_in_use">Profil pokreta u upotrebi</string>
+    <string name="title_pref_add_gesture_profile">Dodaj profil pokreta</string>
+    <string name="gesture_profile_new_name">Profil pokreta <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken">Profil pokreta pod nazivom <xliff:g id="name" example="Driving">%1$s</xliff:g> već postoji</string>
+    <string name="title_pref_delete_gesture_profile">Izbriši profil pokreta</string>
+    <string name="title_pref_tap_nav_bar_buttons">Aktiviranje dugmadi na traci za navigaciju dodirom</string>
+    <string name="title_pref_reset_accessibility_audio">Resetovanje zvuka pristupačnosti posle poziva</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">Potreban je Shizuku. Bez Shizuku-a pokrenite ovu komandu pomoću alatke adb kada se govor pušta na slušalici posle poziva: %1$s</string>
+    <string name="arrow_key_nav_unavailable">Nema navigacije strelicama u ovom rasporedu tastera</string>
+    <string name="shortcut_braille_app_name">Ukucaj ime aplikacije na Brajevom pismu da bi je otvorio</string>
+    <string name="braille_app_prompt">Ukucajte ime aplikacije na Brajevom pismu</string>
+    <string name="braille_app_closed">Brajeva pretraga aplikacija je zatvorena</string>
+    <string name="braille_app_not_available">Kucanje imena aplikacije na Brajevom pismu nije dostupno</string>
+    <string name="title_clipboard_history_other_apps">Dodaj kopije iz drugih aplikacija</string>
 </resources>

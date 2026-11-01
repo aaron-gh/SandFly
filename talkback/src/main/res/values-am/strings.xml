@@ -1833,4 +1833,27 @@
   <string name="shortcut_toggle_magnification">ማጉላትን ያብሩ ወይም ያጥፉ</string>
   <string name="shortcut_submit_text">ጽሑፍ አስገባ</string>
   <string name="shortcut_title_accessibility_shortcuts">የተደራሽነት አቋራጮች</string>
+    <string name="title_pref_gesture_profiles">የእጅ ምልክት መገለጫዎች</string>
+    <string name="title_gesture_profile">የእጅ ምልክት መገለጫ</string>
+    <string name="gesture_profile_default">ነባሪ</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>፣ ጥቅም ላይ ነው</string>
+    <string name="no_gesture_profiles">ምንም የእጅ ምልክት መገለጫዎች የሉም</string>
+    <string name="shortcut_gesture_profiles">የእጅ ምልክት መገለጫ ይምረጡ</string>
+    <string name="shortcut_previous_gesture_profile">ቀዳሚ የእጅ ምልክት መገለጫ</string>
+    <string name="shortcut_next_gesture_profile">ቀጣይ የእጅ ምልክት መገለጫ</string>
+    <string name="shortcut_use_gesture_profile">የእጅ ምልክት መገለጫ <xliff:g id="name" example="Driving">%1$s</xliff:g>ን ተጠቀም</string>
+    <string name="title_pref_gesture_profile_in_use">ጥቅም ላይ ያለ የእጅ ምልክት መገለጫ</string>
+    <string name="title_pref_add_gesture_profile">የእጅ ምልክት መገለጫ አክል</string>
+    <string name="gesture_profile_new_name">የእጅ ምልክት መገለጫ <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken"><xliff:g id="name" example="Driving">%1$s</xliff:g> የሚባል የእጅ ምልክት መገለጫ አስቀድሞ አለ</string>
+    <string name="title_pref_delete_gesture_profile">የእጅ ምልክት መገለጫ ሰርዝ</string>
+    <string name="title_pref_tap_nav_bar_buttons">የአሰሳ አሞሌ አዝራሮችን ለማግበር መታ ያድርጉ</string>
+    <string name="title_pref_reset_accessibility_audio">ከጥሪዎች በኋላ የተደራሽነት ኦዲዮን ዳግም አስጀምር</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">Shizuku ያስፈልጋል። ያለ Shizuku፣ ከጥሪ በኋላ ንግግር በጆሮ ማዳመጫው ላይ ሲጫወት ይህን ትዕዛዝ በadb ያሂዱ፦ %1$s</string>
+    <string name="arrow_key_nav_unavailable">በዚህ የቁልፍ ካርታ ውስጥ የቀስት ቁልፍ አሰሳ የለም</string>
+    <string name="shortcut_braille_app_name">ለመክፈት የመተግበሪያ ስም በብሬይል ይተይቡ</string>
+    <string name="braille_app_prompt">የመተግበሪያ ስም በብሬይል ይተይቡ</string>
+    <string name="braille_app_closed">የብሬይል መተግበሪያ ፍለጋ ተዘግቷል</string>
+    <string name="braille_app_not_available">የመተግበሪያ ስም በብሬይል መተየብ አይገኝም</string>
+    <string name="title_clipboard_history_other_apps">ከሌሎች መተግበሪያዎች ቅጂዎችን አክል</string>
 </resources>

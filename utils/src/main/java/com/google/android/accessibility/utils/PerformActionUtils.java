@@ -17,6 +17,7 @@
 package com.google.android.accessibility.utils;
 
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.view.accessibility.AccessibilityNodeInfo.AccessibilityAction;
 import androidx.annotation.Nullable;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
@@ -27,6 +28,29 @@ import com.google.android.libraries.accessibility.utils.log.LogUtils;
 /** Used to perform an action on a AccessibilityNodeInfoCompat and log relevant information. */
 public class PerformActionUtils {
   private static final String TAG = "PerformActionUtils";
+
+  /** Whether an app may move the cursor or change the text of a field after {@code action}. */
+  private static boolean changesTextOrCursor(int action) {
+    return action == AccessibilityNodeInfoCompat.ACTION_CLICK
+        || action == AccessibilityNodeInfoCompat.ACTION_LONG_CLICK
+        || action == AccessibilityNodeInfoCompat.ACTION_SET_SELECTION
+        || action == AccessibilityNodeInfoCompat.ACTION_SET_TEXT
+        || action == AccessibilityNodeInfoCompat.ACTION_CUT
+        || action == AccessibilityNodeInfoCompat.ACTION_PASTE
+        || action == AccessibilityNodeInfoCompat.ACTION_NEXT_AT_MOVEMENT_GRANULARITY
+        || action == AccessibilityNodeInfoCompat.ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY;
+  }
+
+  // Far in the past, without overflowing when subtracted from an event time.
+  private static volatile long lastActionOutsideKeyboard = Long.MIN_VALUE / 2;
+
+  /**
+   * When SandFly last clicked an item or moved a cursor outside the keyboard, in uptime
+   * milliseconds: the cursor moves and text changes that follow are SandFly's, not the keyboard's.
+   */
+  public static long lastActionOutsideKeyboard() {
+    return lastActionOutsideKeyboard;
+  }
 
   public static boolean performAction(
       @Nullable AccessibilityNodeInfoCompat node, int action, @Nullable EventId eventId) {
@@ -43,6 +67,9 @@ public class PerformActionUtils {
     }
 
     boolean result = node.performAction(action, args);
+    if (result && changesTextOrCursor(action) && !AccessibilityNodeInfoUtils.isKeyboard(node)) {
+      lastActionOutsideKeyboard = SystemClock.uptimeMillis();
+    }
     LogUtils.d(
         TAG,
         "perform action=%d=%s returns %s with args=%s on node=%s for event=%s",

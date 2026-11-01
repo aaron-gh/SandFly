@@ -1833,4 +1833,27 @@
   <string name="shortcut_toggle_magnification">Böyütməni aktiv və ya deaktiv edin</string>
   <string name="shortcut_submit_text">Mətni təqdim edin</string>
   <string name="shortcut_title_accessibility_shortcuts">Əlçatımlılıq qısayolları</string>
+    <string name="title_pref_gesture_profiles">Jest profilləri</string>
+    <string name="title_gesture_profile">Jest profili</string>
+    <string name="gesture_profile_default">Defolt</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, istifadədədir</string>
+    <string name="no_gesture_profiles">Jest profili yoxdur</string>
+    <string name="shortcut_gesture_profiles">Jest profili seçin</string>
+    <string name="shortcut_previous_gesture_profile">Əvvəlki jest profili</string>
+    <string name="shortcut_next_gesture_profile">Növbəti jest profili</string>
+    <string name="shortcut_use_gesture_profile"><xliff:g id="name" example="Driving">%1$s</xliff:g> jest profilindən istifadə edin</string>
+    <string name="title_pref_gesture_profile_in_use">İstifadə olunan jest profili</string>
+    <string name="title_pref_add_gesture_profile">Jest profili əlavə edin</string>
+    <string name="gesture_profile_new_name">Jest profili <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken"><xliff:g id="name" example="Driving">%1$s</xliff:g> adlı jest profili artıq var</string>
+    <string name="title_pref_delete_gesture_profile">Jest profilini silin</string>
+    <string name="title_pref_tap_nav_bar_buttons">Naviqasiya paneli düymələrini toxunaraq aktiv edin</string>
+    <string name="title_pref_reset_accessibility_audio">Zənglərdən sonra əlçatımlılıq audiosunu sıfırlayın</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">Shizuku tələb olunur. Shizuku olmadan, zəngdən sonra nitq danışıq dinamikində səslənəndə bu əmri adb ilə icra edin: %1$s</string>
+    <string name="arrow_key_nav_unavailable">Bu əsas xəritədə ox düymələri ilə naviqasiya yoxdur</string>
+    <string name="shortcut_braille_app_name">Tətbiqi açmaq üçün adını Brayl ilə yazın</string>
+    <string name="braille_app_prompt">Tətbiqin adını Brayl ilə yazın</string>
+    <string name="braille_app_closed">Brayl ilə tətbiq axtarışı bağlandı</string>
+    <string name="braille_app_not_available">Tətbiqin adını Brayl ilə yazmaq mümkün deyil</string>
+    <string name="title_clipboard_history_other_apps">Digər tətbiqlərdən kopyaları əlavə edin</string>
 </resources>

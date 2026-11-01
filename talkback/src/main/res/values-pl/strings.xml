@@ -1668,4 +1668,27 @@
   <string name="shortcut_toggle_magnification">Włącz lub wyłącz powiększenie</string>
   <string name="shortcut_submit_text">Prześlij tekst</string>
   <string name="shortcut_title_accessibility_shortcuts">Skróty ułatwień dostępu</string>
+    <string name="title_pref_gesture_profiles">Profile gestów</string>
+    <string name="title_gesture_profile">Profil gestów</string>
+    <string name="gesture_profile_default">Domyślny</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, w użyciu</string>
+    <string name="no_gesture_profiles">Brak profili gestów</string>
+    <string name="shortcut_gesture_profiles">Wybierz profil gestów</string>
+    <string name="shortcut_previous_gesture_profile">Poprzedni profil gestów</string>
+    <string name="shortcut_next_gesture_profile">Następny profil gestów</string>
+    <string name="shortcut_use_gesture_profile">Użyj profilu gestów <xliff:g id="name" example="Driving">%1$s</xliff:g></string>
+    <string name="title_pref_gesture_profile_in_use">Używany profil gestów</string>
+    <string name="title_pref_add_gesture_profile">Dodaj profil gestów</string>
+    <string name="gesture_profile_new_name">Profil gestów <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken">Profil gestów o nazwie <xliff:g id="name" example="Driving">%1$s</xliff:g> już istnieje</string>
+    <string name="title_pref_delete_gesture_profile">Usuń profil gestów</string>
+    <string name="title_pref_tap_nav_bar_buttons">Aktywowanie przycisków paska nawigacji kliknięciem</string>
+    <string name="title_pref_reset_accessibility_audio">Resetuj dźwięk ułatwień dostępu po połączeniach</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">Wymaga Shizuku. Bez Shizuku uruchom to polecenie przez adb, gdy po połączeniu mowa jest odtwarzana z głośnika do rozmów: %1$s</string>
+    <string name="arrow_key_nav_unavailable">Brak nawigacji strzałkami w tej mapie klawiszy</string>
+    <string name="shortcut_braille_app_name">Wpisz nazwę aplikacji w brajlu, aby ją otworzyć</string>
+    <string name="braille_app_prompt">Wpisz nazwę aplikacji w brajlu</string>
+    <string name="braille_app_closed">Zamknięto wyszukiwanie aplikacji w brajlu</string>
+    <string name="braille_app_not_available">Wpisywanie nazwy aplikacji w brajlu jest niedostępne</string>
+    <string name="title_clipboard_history_other_apps">Dodawaj kopie z innych aplikacji</string>
 </resources>

@@ -1833,4 +1833,27 @@
   <string name="shortcut_toggle_magnification">Чоңойтууну күйгүзүү же өчүрүү</string>
   <string name="shortcut_submit_text">Текстти тапшыруу</string>
   <string name="shortcut_title_accessibility_shortcuts">Атайын мүмкүнчүлүктөрдүн ыкчам баскычтары</string>
+    <string name="title_pref_gesture_profiles">Жаңсоо профилдери</string>
+    <string name="title_gesture_profile">Жаңсоо профили</string>
+    <string name="gesture_profile_default">Демейки</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, колдонулууда</string>
+    <string name="no_gesture_profiles">Жаңсоо профилдери жок</string>
+    <string name="shortcut_gesture_profiles">Жаңсоо профилин тандоо</string>
+    <string name="shortcut_previous_gesture_profile">Мурунку жаңсоо профили</string>
+    <string name="shortcut_next_gesture_profile">Кийинки жаңсоо профили</string>
+    <string name="shortcut_use_gesture_profile"><xliff:g id="name" example="Driving">%1$s</xliff:g> жаңсоо профилин колдонуу</string>
+    <string name="title_pref_gesture_profile_in_use">Колдонулуп жаткан жаңсоо профили</string>
+    <string name="title_pref_add_gesture_profile">Жаңсоо профилин кошуу</string>
+    <string name="gesture_profile_new_name">Жаңсоо профили <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken"><xliff:g id="name" example="Driving">%1$s</xliff:g> деген жаңсоо профили бар</string>
+    <string name="title_pref_delete_gesture_profile">Жаңсоо профилин жок кылуу</string>
+    <string name="title_pref_tap_nav_bar_buttons">Чабыттоо тилкесинин баскычтарын таптап иштетүү</string>
+    <string name="title_pref_reset_accessibility_audio">Чалуулардан кийин атайын мүмкүнчүлүктөрдүн аудиосун баштапкы абалга келтирүү</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">Shizuku керек. Shizuku болбосо, чалуудан кийин кеп кулак динамигинен угулганда бул буйрукту adb менен аткарыңыз: %1$s</string>
+    <string name="arrow_key_nav_unavailable">Бул баскычтардын жайгашуусунда жебе баскычтары менен чабыттоо жок</string>
+    <string name="shortcut_braille_app_name">Колдонмону ачуу үчүн анын атын Брайль менен териңиз</string>
+    <string name="braille_app_prompt">Колдонмонун атын Брайль менен териңиз</string>
+    <string name="braille_app_closed">Колдонмону Брайль менен издөө жабылды</string>
+    <string name="braille_app_not_available">Колдонмонун атын Брайль менен терүү жеткиликсиз</string>
+    <string name="title_clipboard_history_other_apps">Башка колдонмолордогу көчүрмөлөрдү кошуу</string>
 </resources>

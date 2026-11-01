@@ -44,6 +44,9 @@ class ScriptScreen(private val service: AccessibilityService) {
   }
   private val recognizer by recognizerHolder
 
+  /** Set on the main thread, where the recognizer is made, once scripts are off. */
+  private var closed = false
+
   /**
    * Every window on screen, top first, with a snapshot of its top item. SandFly's own windows, such
    * as its menu, are left out, as scripts change nothing in SandFly.
@@ -121,6 +124,10 @@ class ScriptScreen(private val service: AccessibilityService) {
               buffer.close()
             }
           if (bitmap == null) return done(null, "The item is not on screen")
+          if (closed) {
+            bitmap.recycle()
+            return done(null, "Scripts are off")
+          }
           recognizer
             .process(InputImage.fromBitmap(bitmap, 0))
             .addOnSuccessListener { text -> done(textJson(text, bounds), null) }
@@ -187,8 +194,12 @@ class ScriptScreen(private val service: AccessibilityService) {
     )
   }
 
+  /** Closes the recognizer, on the main thread, where it's made. Called from any thread. */
   fun close() {
-    if (recognizerHolder.isInitialized()) recognizer.close()
+    mainHandler.post {
+      closed = true
+      if (recognizerHolder.isInitialized()) recognizer.close()
+    }
   }
 
   companion object {

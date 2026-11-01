@@ -1837,4 +1837,27 @@
   <string name="shortcut_toggle_magnification">Activează sau dezactivează mărirea</string>
   <string name="shortcut_submit_text">Trimite textul</string>
   <string name="shortcut_title_accessibility_shortcuts">Comenzi rapide de accesibilitate</string>
+    <string name="title_pref_gesture_profiles">Profiluri de gesturi</string>
+    <string name="title_gesture_profile">Profil de gesturi</string>
+    <string name="gesture_profile_default">Prestabilit</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, în uz</string>
+    <string name="no_gesture_profiles">Niciun profil de gesturi</string>
+    <string name="shortcut_gesture_profiles">Alege profilul de gesturi</string>
+    <string name="shortcut_previous_gesture_profile">Profilul de gesturi anterior</string>
+    <string name="shortcut_next_gesture_profile">Profilul de gesturi următor</string>
+    <string name="shortcut_use_gesture_profile">Folosește profilul de gesturi <xliff:g id="name" example="Driving">%1$s</xliff:g></string>
+    <string name="title_pref_gesture_profile_in_use">Profilul de gesturi în uz</string>
+    <string name="title_pref_add_gesture_profile">Adaugă un profil de gesturi</string>
+    <string name="gesture_profile_new_name">Profil de gesturi <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken">Există deja un profil de gesturi numit <xliff:g id="name" example="Driving">%1$s</xliff:g></string>
+    <string name="title_pref_delete_gesture_profile">Șterge profilul de gesturi</string>
+    <string name="title_pref_tap_nav_bar_buttons">Atinge pentru a activa butoanele barei de navigare</string>
+    <string name="title_pref_reset_accessibility_audio">Resetează audio de accesibilitate după apeluri</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">Necesită Shizuku. Fără Shizuku, rulează această comandă cu adb când vorbirea se aude în difuzorul de apel după un apel: %1$s</string>
+    <string name="arrow_key_nav_unavailable">Fără navigare cu săgeți în această aranjare a tastelor</string>
+    <string name="shortcut_braille_app_name">Scrie numele unei aplicații în braille pentru a o deschide</string>
+    <string name="braille_app_prompt">Scrie numele unei aplicații în braille</string>
+    <string name="braille_app_closed">Căutarea de aplicații în braille s-a închis</string>
+    <string name="braille_app_not_available">Scrierea numelui unei aplicații în braille nu este disponibilă</string>
+    <string name="title_clipboard_history_other_apps">Adaugă copiile din alte aplicații</string>
 </resources>

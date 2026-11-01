@@ -1833,4 +1833,27 @@
   <string name="shortcut_toggle_magnification">Aktivér eller deaktiver forstørrelse</string>
   <string name="shortcut_submit_text">Send tekst</string>
   <string name="shortcut_title_accessibility_shortcuts">Genveje til hjælpefunktioner</string>
+    <string name="title_pref_gesture_profiles">Bevægelsesprofiler</string>
+    <string name="title_gesture_profile">Bevægelsesprofil</string>
+    <string name="gesture_profile_default">Standard</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, i brug</string>
+    <string name="no_gesture_profiles">Ingen bevægelsesprofiler</string>
+    <string name="shortcut_gesture_profiles">Vælg bevægelsesprofil</string>
+    <string name="shortcut_previous_gesture_profile">Forrige bevægelsesprofil</string>
+    <string name="shortcut_next_gesture_profile">Næste bevægelsesprofil</string>
+    <string name="shortcut_use_gesture_profile">Brug bevægelsesprofilen <xliff:g id="name" example="Driving">%1$s</xliff:g></string>
+    <string name="title_pref_gesture_profile_in_use">Bevægelsesprofil i brug</string>
+    <string name="title_pref_add_gesture_profile">Tilføj bevægelsesprofil</string>
+    <string name="gesture_profile_new_name">Bevægelsesprofil <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken">En bevægelsesprofil hedder allerede <xliff:g id="name" example="Driving">%1$s</xliff:g></string>
+    <string name="title_pref_delete_gesture_profile">Slet bevægelsesprofil</string>
+    <string name="title_pref_tap_nav_bar_buttons">Tryk for at aktivere knapper på navigationslinjen</string>
+    <string name="title_pref_reset_accessibility_audio">Nulstil lyd til hjælpefunktioner efter opkald</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">Kræver Shizuku. Uden Shizuku skal du køre denne kommando med adb, når tale afspilles i ørehøjttaleren efter et opkald: %1$s</string>
+    <string name="arrow_key_nav_unavailable">Ingen navigation med piletaster i denne tastaturoversigt</string>
+    <string name="shortcut_braille_app_name">Skriv navnet på en app i braille for at åbne den</string>
+    <string name="braille_app_prompt">Skriv navnet på en app i braille</string>
+    <string name="braille_app_closed">Braillesøgning efter app lukket</string>
+    <string name="braille_app_not_available">Det er ikke muligt at skrive en apps navn i braille</string>
+    <string name="title_clipboard_history_other_apps">Tilføj kopier fra andre apps</string>
 </resources>

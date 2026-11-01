@@ -66,6 +66,9 @@ public class FocusManagerInternal {
 
   private static final String TAG = "FocusManagerInternal";
 
+  // How long after an app starts recording focus is left alone when the app changes its controls.
+  private static final long RECORDING_START_MS = 5000;
+
   ////////////////////////////////////////////////////////////////////////////////////////////////
   // Member variables
 
@@ -258,10 +261,11 @@ public class FocusManagerInternal {
       return true;
     }
 
-    // An app changing its controls while it records, such as a voice message's record button
+    // An app changing its controls as it starts recording, such as a voice message's record button
     // giving way to the recording's controls, would otherwise get focus placed elsewhere and
-    // spoken, into the recording.
-    if (LowLatencyAudio.isMicrophoneInUse()
+    // spoken, into the recording. Only then: a call or a recording in the background goes on for
+    // long, while focus lost in another app should come back.
+    if (LowLatencyAudio.startedRecordingWithin(RECORDING_START_MS)
         || (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU
             && TouchInteractionMonitor.isTouchPassedToApp())) {
       LogUtils.d(TAG, String.format("%s: Return, an app records or has the touch.", subTag));

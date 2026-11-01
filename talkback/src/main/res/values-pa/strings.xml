@@ -1833,4 +1833,27 @@
   <string name="shortcut_toggle_magnification">ਵੱਡਦਰਸ਼ੀਕਰਨ ਨੂੰ ਚਾਲੂ ਜਾਂ ਬੰਦ ਕਰੋ</string>
   <string name="shortcut_submit_text">ਲਿਖਤ ਸਪੁਰਦ ਕਰੋ</string>
   <string name="shortcut_title_accessibility_shortcuts">ਪਹੁੰਚਯੋਗਤਾ ਸ਼ਾਰਟਕੱਟ</string>
+    <string name="title_pref_gesture_profiles">ਇਸ਼ਾਰਾ ਪ੍ਰੋਫਾਈਲਾਂ</string>
+    <string name="title_gesture_profile">ਇਸ਼ਾਰਾ ਪ੍ਰੋਫਾਈਲ</string>
+    <string name="gesture_profile_default">ਪੂਰਵ-ਨਿਰਧਾਰਤ</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, ਵਰਤੋਂ ਵਿੱਚ</string>
+    <string name="no_gesture_profiles">ਕੋਈ ਇਸ਼ਾਰਾ ਪ੍ਰੋਫਾਈਲ ਨਹੀਂ</string>
+    <string name="shortcut_gesture_profiles">ਇਸ਼ਾਰਾ ਪ੍ਰੋਫਾਈਲ ਚੁਣੋ</string>
+    <string name="shortcut_previous_gesture_profile">ਪਿਛਲੀ ਇਸ਼ਾਰਾ ਪ੍ਰੋਫਾਈਲ</string>
+    <string name="shortcut_next_gesture_profile">ਅਗਲੀ ਇਸ਼ਾਰਾ ਪ੍ਰੋਫਾਈਲ</string>
+    <string name="shortcut_use_gesture_profile">ਇਸ਼ਾਰਾ ਪ੍ਰੋਫਾਈਲ <xliff:g id="name" example="Driving">%1$s</xliff:g> ਵਰਤੋ</string>
+    <string name="title_pref_gesture_profile_in_use">ਵਰਤੋਂ ਵਿੱਚ ਇਸ਼ਾਰਾ ਪ੍ਰੋਫਾਈਲ</string>
+    <string name="title_pref_add_gesture_profile">ਇਸ਼ਾਰਾ ਪ੍ਰੋਫਾਈਲ ਸ਼ਾਮਲ ਕਰੋ</string>
+    <string name="gesture_profile_new_name">ਇਸ਼ਾਰਾ ਪ੍ਰੋਫਾਈਲ <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken"><xliff:g id="name" example="Driving">%1$s</xliff:g> ਨਾਮ ਦੀ ਇਸ਼ਾਰਾ ਪ੍ਰੋਫਾਈਲ ਪਹਿਲਾਂ ਹੀ ਮੌਜੂਦ ਹੈ</string>
+    <string name="title_pref_delete_gesture_profile">ਇਸ਼ਾਰਾ ਪ੍ਰੋਫਾਈਲ ਮਿਟਾਓ</string>
+    <string name="title_pref_tap_nav_bar_buttons">ਨੈਵੀਗੇਸ਼ਨ ਬਾਰ ਬਟਨਾਂ ਨੂੰ ਕਿਰਿਆਸ਼ੀਲ ਕਰਨ ਲਈ ਟੈਪ ਕਰੋ</string>
+    <string name="title_pref_reset_accessibility_audio">ਕਾਲਾਂ ਤੋਂ ਬਾਅਦ ਪਹੁੰਚਯੋਗਤਾ ਆਡੀਓ ਰੀਸੈੱਟ ਕਰੋ</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">Shizuku ਦੀ ਲੋੜ ਹੈ। Shizuku ਤੋਂ ਬਿਨਾਂ, ਕਾਲ ਤੋਂ ਬਾਅਦ ਬੋਲੀ ਈਅਰਪੀਸ \'ਤੇ ਚੱਲਣ \'ਤੇ ਇਹ ਕਮਾਂਡ adb ਨਾਲ ਚਲਾਓ: %1$s</string>
+    <string name="arrow_key_nav_unavailable">ਇਸ ਕੀਮੈਪ ਵਿੱਚ ਤੀਰ ਕੁੰਜੀ ਨੈਵੀਗੇਸ਼ਨ ਨਹੀਂ ਹੈ</string>
+    <string name="shortcut_braille_app_name">ਕਿਸੇ ਐਪ ਨੂੰ ਖੋਲ੍ਹਣ ਲਈ ਉਸਦਾ ਨਾਮ ਬ੍ਰੇਲ ਵਿੱਚ ਟਾਈਪ ਕਰੋ</string>
+    <string name="braille_app_prompt">ਕਿਸੇ ਐਪ ਦਾ ਨਾਮ ਬ੍ਰੇਲ ਵਿੱਚ ਟਾਈਪ ਕਰੋ</string>
+    <string name="braille_app_closed">ਬ੍ਰੇਲ ਐਪ ਖੋਜ ਬੰਦ ਕੀਤੀ ਗਈ</string>
+    <string name="braille_app_not_available">ਬ੍ਰੇਲ ਵਿੱਚ ਐਪ ਦਾ ਨਾਮ ਟਾਈਪ ਕਰਨਾ ਉਪਲਬਧ ਨਹੀਂ ਹੈ</string>
+    <string name="title_clipboard_history_other_apps">ਹੋਰ ਐਪਾਂ ਤੋਂ ਕਾਪੀਆਂ ਸ਼ਾਮਲ ਕਰੋ</string>
 </resources>

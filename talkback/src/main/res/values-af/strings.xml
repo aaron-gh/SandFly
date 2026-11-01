@@ -1833,4 +1833,27 @@
   <string name="shortcut_toggle_magnification">Skakel vergroting aan of af</string>
   <string name="shortcut_submit_text">Dien teks in</string>
   <string name="shortcut_title_accessibility_shortcuts">Toeganklikheidkortpaaie</string>
+    <string name="title_pref_gesture_profiles">Gebaarprofiele</string>
+    <string name="title_gesture_profile">Gebaarprofiel</string>
+    <string name="gesture_profile_default">Verstek</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, in gebruik</string>
+    <string name="no_gesture_profiles">Geen gebaarprofiele nie</string>
+    <string name="shortcut_gesture_profiles">Kies gebaarprofiel</string>
+    <string name="shortcut_previous_gesture_profile">Vorige gebaarprofiel</string>
+    <string name="shortcut_next_gesture_profile">Volgende gebaarprofiel</string>
+    <string name="shortcut_use_gesture_profile">Gebruik gebaarprofiel <xliff:g id="name" example="Driving">%1$s</xliff:g></string>
+    <string name="title_pref_gesture_profile_in_use">Gebaarprofiel in gebruik</string>
+    <string name="title_pref_add_gesture_profile">Voeg gebaarprofiel by</string>
+    <string name="gesture_profile_new_name">Gebaarprofiel <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken">\'n Gebaarprofiel heet reeds <xliff:g id="name" example="Driving">%1$s</xliff:g></string>
+    <string name="title_pref_delete_gesture_profile">Vee gebaarprofiel uit</string>
+    <string name="title_pref_tap_nav_bar_buttons">Tik om navigasiebalkknoppies te aktiveer</string>
+    <string name="title_pref_reset_accessibility_audio">Stel toeganklikheidsoudio terug ná oproepe</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">Benodig Shizuku. Voer sonder Shizuku hierdie opdrag met adb uit wanneer spraak ná \'n oproep op die oorstuk speel: %1$s</string>
+    <string name="arrow_key_nav_unavailable">Geen pyltjiesleutelnavigasie in hierdie sleutelkaart nie</string>
+    <string name="shortcut_braille_app_name">Tik \'n app se naam in braille om dit oop te maak</string>
+    <string name="braille_app_prompt">Tik \'n app se naam in braille</string>
+    <string name="braille_app_closed">Braille-appsoektog toegemaak</string>
+    <string name="braille_app_not_available">Om \'n app se naam in braille te tik is nie beskikbaar nie</string>
+    <string name="title_clipboard_history_other_apps">Voeg kopieë uit ander apps by</string>
 </resources>

@@ -1833,4 +1833,27 @@
   <string name="shortcut_toggle_magnification">Vergrößerung ein- oder ausschalten</string>
   <string name="shortcut_submit_text">Text senden</string>
   <string name="shortcut_title_accessibility_shortcuts">Kurzbefehle für Bedienungshilfen</string>
+    <string name="title_pref_gesture_profiles">Gestenprofile</string>
+    <string name="title_gesture_profile">Gestenprofil</string>
+    <string name="gesture_profile_default">Standard</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, in Verwendung</string>
+    <string name="no_gesture_profiles">Keine Gestenprofile</string>
+    <string name="shortcut_gesture_profiles">Gestenprofil auswählen</string>
+    <string name="shortcut_previous_gesture_profile">Vorheriges Gestenprofil</string>
+    <string name="shortcut_next_gesture_profile">Nächstes Gestenprofil</string>
+    <string name="shortcut_use_gesture_profile">Gestenprofil <xliff:g id="name" example="Driving">%1$s</xliff:g> verwenden</string>
+    <string name="title_pref_gesture_profile_in_use">Verwendetes Gestenprofil</string>
+    <string name="title_pref_add_gesture_profile">Gestenprofil hinzufügen</string>
+    <string name="gesture_profile_new_name">Gestenprofil <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken">Ein Gestenprofil heißt bereits <xliff:g id="name" example="Driving">%1$s</xliff:g></string>
+    <string name="title_pref_delete_gesture_profile">Gestenprofil löschen</string>
+    <string name="title_pref_tap_nav_bar_buttons">Schaltflächen der Navigationsleiste durch Tippen aktivieren</string>
+    <string name="title_pref_reset_accessibility_audio">Bedienungshilfen-Audio nach Anrufen zurücksetzen</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">Erfordert Shizuku. Ohne Shizuku führen Sie diesen Befehl mit adb aus, wenn die Sprachausgabe nach einem Anruf über die Hörmuschel läuft: %1$s</string>
+    <string name="arrow_key_nav_unavailable">Keine Pfeiltastennavigation in dieser Tastaturbelegung</string>
+    <string name="shortcut_braille_app_name">Namen einer App in Braille eingeben, um sie zu öffnen</string>
+    <string name="braille_app_prompt">Namen einer App in Braille eingeben</string>
+    <string name="braille_app_closed">Braille-App-Suche geschlossen</string>
+    <string name="braille_app_not_available">Eingabe eines App-Namens in Braille nicht verfügbar</string>
+    <string name="title_clipboard_history_other_apps">Kopien aus anderen Apps hinzufügen</string>
 </resources>

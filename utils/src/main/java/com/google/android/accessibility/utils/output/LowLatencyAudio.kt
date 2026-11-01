@@ -1075,8 +1075,17 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
      */
     @JvmStatic
     fun setMicrophoneInUse(inUse: Boolean) {
+      if (inUse && !microphoneInUse) microphoneSince = SystemClock.uptimeMillis()
       microphoneInUse = inUse
     }
+
+    // When the recording under way started, in uptime milliseconds.
+    @Volatile private var microphoneSince = 0L
+
+    /** Whether an app started recording from the microphone within the last [ms] milliseconds. */
+    @JvmStatic
+    fun startedRecordingWithin(ms: Long): Boolean =
+      microphoneInUse && SystemClock.uptimeMillis() - microphoneSince < ms
 
     @JvmStatic
     fun players(): List<LowLatencyAudio> = synchronized(instances) { instances.values.toList() }

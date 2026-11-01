@@ -1833,4 +1833,27 @@
   <string name="shortcut_toggle_magnification">ज़ूम करने की सुविधा चालू या बंद करें</string>
   <string name="shortcut_submit_text">टेक्स्ट सबमिट करें</string>
   <string name="shortcut_title_accessibility_shortcuts">सुलभता शॉर्टकट</string>
+    <string name="title_pref_gesture_profiles">जेस्चर प्रोफ़ाइल</string>
+    <string name="title_gesture_profile">जेस्चर प्रोफ़ाइल</string>
+    <string name="gesture_profile_default">डिफ़ॉल्ट</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, इस्तेमाल में है</string>
+    <string name="no_gesture_profiles">कोई जेस्चर प्रोफ़ाइल नहीं है</string>
+    <string name="shortcut_gesture_profiles">जेस्चर प्रोफ़ाइल चुनें</string>
+    <string name="shortcut_previous_gesture_profile">पिछली जेस्चर प्रोफ़ाइल</string>
+    <string name="shortcut_next_gesture_profile">अगली जेस्चर प्रोफ़ाइल</string>
+    <string name="shortcut_use_gesture_profile">जेस्चर प्रोफ़ाइल <xliff:g id="name" example="Driving">%1$s</xliff:g> इस्तेमाल करें</string>
+    <string name="title_pref_gesture_profile_in_use">इस्तेमाल में मौजूद जेस्चर प्रोफ़ाइल</string>
+    <string name="title_pref_add_gesture_profile">जेस्चर प्रोफ़ाइल जोड़ें</string>
+    <string name="gesture_profile_new_name">जेस्चर प्रोफ़ाइल <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken"><xliff:g id="name" example="Driving">%1$s</xliff:g> नाम की जेस्चर प्रोफ़ाइल पहले से मौजूद है</string>
+    <string name="title_pref_delete_gesture_profile">जेस्चर प्रोफ़ाइल मिटाएं</string>
+    <string name="title_pref_tap_nav_bar_buttons">नेविगेशन बार के बटन ऐक्टिवेट करने के लिए टैप करें</string>
+    <string name="title_pref_reset_accessibility_audio">कॉल के बाद सुलभता ऑडियो रीसेट करें</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">Shizuku ज़रूरी है. Shizuku के बिना, अगर कॉल के बाद बोली ईयरपीस पर चलती है, तो यह निर्देश adb से चलाएं: %1$s</string>
+    <string name="arrow_key_nav_unavailable">इस कीमैप में ऐरो कुंजी नेविगेशन उपलब्ध नहीं है</string>
+    <string name="shortcut_braille_app_name">ब्रेल में किसी ऐप का नाम टाइप करके उसे खोलें</string>
+    <string name="braille_app_prompt">ब्रेल में किसी ऐप का नाम टाइप करें</string>
+    <string name="braille_app_closed">ब्रेल में ऐप खोजने की सुविधा बंद हो गई</string>
+    <string name="braille_app_not_available">ब्रेल में ऐप का नाम टाइप करने की सुविधा उपलब्ध नहीं है</string>
+    <string name="title_clipboard_history_other_apps">दूसरे ऐप्लिकेशन में की गई कॉपी जोड़ें</string>
 </resources>

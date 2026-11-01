@@ -1824,4 +1824,27 @@
   <string name="shortcut_toggle_magnification">మ్యాగ్నిఫికేషన్‌ను ఆన్ లేదా ఆఫ్ చేయండి</string>
   <string name="shortcut_submit_text">టెక్స్ట్‌ను సబ్మిట్ చేయడానికి</string>
   <string name="shortcut_title_accessibility_shortcuts">యాక్సెసిబిలిటీ షార్ట్‌కట్‌లు</string>
+    <string name="title_pref_gesture_profiles">సంజ్ఞ ప్రొఫైల్స్</string>
+    <string name="title_gesture_profile">సంజ్ఞ ప్రొఫైల్</string>
+    <string name="gesture_profile_default">డిఫాల్ట్</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, ఉపయోగంలో ఉంది</string>
+    <string name="no_gesture_profiles">సంజ్ఞ ప్రొఫైల్స్ లేవు</string>
+    <string name="shortcut_gesture_profiles">సంజ్ఞ ప్రొఫైల్‌ను ఎంచుకోండి</string>
+    <string name="shortcut_previous_gesture_profile">మునుపటి సంజ్ఞ ప్రొఫైల్</string>
+    <string name="shortcut_next_gesture_profile">తర్వాతి సంజ్ఞ ప్రొఫైల్</string>
+    <string name="shortcut_use_gesture_profile">సంజ్ఞ ప్రొఫైల్ <xliff:g id="name" example="Driving">%1$s</xliff:g> ఉపయోగించండి</string>
+    <string name="title_pref_gesture_profile_in_use">ఉపయోగంలో ఉన్న సంజ్ఞ ప్రొఫైల్</string>
+    <string name="title_pref_add_gesture_profile">సంజ్ఞ ప్రొఫైల్‌ను జోడించండి</string>
+    <string name="gesture_profile_new_name">సంజ్ఞ ప్రొఫైల్ <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken"><xliff:g id="name" example="Driving">%1$s</xliff:g> అనే పేరుతో ఇప్పటికే సంజ్ఞ ప్రొఫైల్ ఉంది</string>
+    <string name="title_pref_delete_gesture_profile">సంజ్ఞ ప్రొఫైల్‌ను తొలగించండి</string>
+    <string name="title_pref_tap_nav_bar_buttons">నావిగేషన్ బార్ బటన్‌లను యాక్టివేట్ చేయడానికి నొక్కండి</string>
+    <string name="title_pref_reset_accessibility_audio">కాల్స్ తర్వాత యాక్సెసిబిలిటీ ఆడియోను రీసెట్ చేయండి</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">Shizuku అవసరం. Shizuku లేకుండా, కాల్ తర్వాత స్పీచ్ ఇయర్‌పీస్‌లో ప్లే అయినప్పుడు ఈ ఆదేశాన్ని adbతో రన్ చేయండి: %1$s</string>
+    <string name="arrow_key_nav_unavailable">ఈ కీమ్యాప్‌లో బాణం కీ నావిగేషన్ లేదు</string>
+    <string name="shortcut_braille_app_name">యాప్‌ను తెరవడానికి దాని పేరును బ్రెయిలీలో టైప్ చేయండి</string>
+    <string name="braille_app_prompt">యాప్ పేరును బ్రెయిలీలో టైప్ చేయండి</string>
+    <string name="braille_app_closed">బ్రెయిలీ యాప్ సెర్చ్ మూసివేయబడింది</string>
+    <string name="braille_app_not_available">యాప్ పేరును బ్రెయిలీలో టైప్ చేయడం అందుబాటులో లేదు</string>
+    <string name="title_clipboard_history_other_apps">ఇతర యాప్‌ల నుండి కాపీలను జోడించు</string>
 </resources>

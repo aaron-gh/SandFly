@@ -1849,4 +1849,27 @@
   <string name="shortcut_toggle_magnification">تفعيل ميزة التكبير أو إيقافها</string>
   <string name="shortcut_submit_text">إرسال النص</string>
   <string name="shortcut_title_accessibility_shortcuts">اختصارات تسهيل الاستخدام</string>
+    <string name="title_pref_gesture_profiles">ملفات الإيماءات</string>
+    <string name="title_gesture_profile">ملف الإيماءات</string>
+    <string name="gesture_profile_default">تلقائي</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>، قيد الاستخدام</string>
+    <string name="no_gesture_profiles">لا تتوفّر ملفات إيماءات</string>
+    <string name="shortcut_gesture_profiles">اختيار ملف الإيماءات</string>
+    <string name="shortcut_previous_gesture_profile">ملف الإيماءات السابق</string>
+    <string name="shortcut_next_gesture_profile">ملف الإيماءات التالي</string>
+    <string name="shortcut_use_gesture_profile">استخدام ملف الإيماءات <xliff:g id="name" example="Driving">%1$s</xliff:g></string>
+    <string name="title_pref_gesture_profile_in_use">ملف الإيماءات قيد الاستخدام</string>
+    <string name="title_pref_add_gesture_profile">إضافة ملف إيماءات</string>
+    <string name="gesture_profile_new_name">ملف إيماءات <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken">هناك ملف إيماءات اسمه <xliff:g id="name" example="Driving">%1$s</xliff:g> بالفعل</string>
+    <string name="title_pref_delete_gesture_profile">حذف ملف الإيماءات</string>
+    <string name="title_pref_tap_nav_bar_buttons">النقر لتفعيل أزرار شريط التنقّل</string>
+    <string name="title_pref_reset_accessibility_audio">إعادة ضبط صوت تسهيل الاستخدام بعد المكالمات</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">يتطلّب Shizuku. بدون Shizuku، شغِّل هذا الأمر باستخدام adb عندما يصدر الكلام من سمّاعة الأذن بعد مكالمة: %1$s</string>
+    <string name="arrow_key_nav_unavailable">لا يتوفّر التنقّل بمفاتيح الأسهم في خريطة المفاتيح هذه</string>
+    <string name="shortcut_braille_app_name">اكتب اسم تطبيق بطريقة برايل لفتحه</string>
+    <string name="braille_app_prompt">اكتب اسم تطبيق بطريقة برايل</string>
+    <string name="braille_app_closed">تم إغلاق البحث عن التطبيقات بطريقة برايل</string>
+    <string name="braille_app_not_available">لا تتوفّر كتابة اسم التطبيق بطريقة برايل</string>
+    <string name="title_clipboard_history_other_apps">إضافة النسخ من التطبيقات الأخرى</string>
 </resources>

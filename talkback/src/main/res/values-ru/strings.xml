@@ -1842,4 +1842,27 @@
   <string name="shortcut_toggle_magnification">Включить или выключить увеличение</string>
   <string name="shortcut_submit_text">Отправить текст</string>
   <string name="shortcut_title_accessibility_shortcuts">Быстрые команды спецвозможностей</string>
+    <string name="title_pref_gesture_profiles">Профили жестов</string>
+    <string name="title_gesture_profile">Профиль жестов</string>
+    <string name="gesture_profile_default">По умолчанию</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, используется</string>
+    <string name="no_gesture_profiles">Нет профилей жестов</string>
+    <string name="shortcut_gesture_profiles">Выбрать профиль жестов</string>
+    <string name="shortcut_previous_gesture_profile">Предыдущий профиль жестов</string>
+    <string name="shortcut_next_gesture_profile">Следующий профиль жестов</string>
+    <string name="shortcut_use_gesture_profile">Использовать профиль жестов <xliff:g id="name" example="Driving">%1$s</xliff:g></string>
+    <string name="title_pref_gesture_profile_in_use">Используемый профиль жестов</string>
+    <string name="title_pref_add_gesture_profile">Добавить профиль жестов</string>
+    <string name="gesture_profile_new_name">Профиль жестов <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken">Профиль жестов с названием <xliff:g id="name" example="Driving">%1$s</xliff:g> уже существует</string>
+    <string name="title_pref_delete_gesture_profile">Удалить профиль жестов</string>
+    <string name="title_pref_tap_nav_bar_buttons">Активировать кнопки панели навигации одним нажатием</string>
+    <string name="title_pref_reset_accessibility_audio">Сбрасывать аудио спецвозможностей после звонков</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">Требуется Shizuku. Без Shizuku выполните эту команду через adb, если после звонка речь выводится через разговорный динамик: %1$s</string>
+    <string name="arrow_key_nav_unavailable">В этой раскладке нет навигации стрелками</string>
+    <string name="shortcut_braille_app_name">Ввести название приложения шрифтом Брайля, чтобы открыть его</string>
+    <string name="braille_app_prompt">Введите название приложения шрифтом Брайля</string>
+    <string name="braille_app_closed">Поиск приложения шрифтом Брайля закрыт</string>
+    <string name="braille_app_not_available">Ввод названия приложения шрифтом Брайля недоступен</string>
+    <string name="title_clipboard_history_other_apps">Добавлять скопированное в других приложениях</string>
 </resources>

@@ -1833,4 +1833,27 @@
   <string name="shortcut_toggle_magnification">I-on o i-off ang pag-magnify</string>
   <string name="shortcut_submit_text">Isumite ang text</string>
   <string name="shortcut_title_accessibility_shortcuts">Mga shortcut sa accessibility</string>
+    <string name="title_pref_gesture_profiles">Mga profile ng galaw</string>
+    <string name="title_gesture_profile">Profile ng galaw</string>
+    <string name="gesture_profile_default">Default</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, ginagamit</string>
+    <string name="no_gesture_profiles">Walang profile ng galaw</string>
+    <string name="shortcut_gesture_profiles">Pumili ng profile ng galaw</string>
+    <string name="shortcut_previous_gesture_profile">Nakaraang profile ng galaw</string>
+    <string name="shortcut_next_gesture_profile">Susunod na profile ng galaw</string>
+    <string name="shortcut_use_gesture_profile">Gamitin ang profile ng galaw na <xliff:g id="name" example="Driving">%1$s</xliff:g></string>
+    <string name="title_pref_gesture_profile_in_use">Profile ng galaw na ginagamit</string>
+    <string name="title_pref_add_gesture_profile">Magdagdag ng profile ng galaw</string>
+    <string name="gesture_profile_new_name">Profile ng galaw <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken">Mayroon nang profile ng galaw na may pangalang <xliff:g id="name" example="Driving">%1$s</xliff:g></string>
+    <string name="title_pref_delete_gesture_profile">I-delete ang profile ng galaw</string>
+    <string name="title_pref_tap_nav_bar_buttons">I-tap para i-activate ang mga button ng navigation bar</string>
+    <string name="title_pref_reset_accessibility_audio">I-reset ang audio ng accessibility pagkatapos ng mga tawag</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">Kailangan ng Shizuku. Kung walang Shizuku, patakbuhin ang command na ito gamit ang adb kapag sa earpiece nagpe-play ang pagsasalita pagkatapos ng tawag: %1$s</string>
+    <string name="arrow_key_nav_unavailable">Walang navigation gamit ang mga arrow key sa keymap na ito</string>
+    <string name="shortcut_braille_app_name">I-type sa braille ang pangalan ng app para buksan ito</string>
+    <string name="braille_app_prompt">I-type sa braille ang pangalan ng app</string>
+    <string name="braille_app_closed">Isinara ang paghahanap ng app sa braille</string>
+    <string name="braille_app_not_available">Hindi available ang pag-type ng pangalan ng app sa braille</string>
+    <string name="title_clipboard_history_other_apps">Idagdag ang mga kinopya sa ibang app</string>
 </resources>

@@ -1833,4 +1833,27 @@
   <string name="shortcut_toggle_magnification">Suurenduse sisse- või väljalülitamine</string>
   <string name="shortcut_submit_text">Teksti saatmine</string>
   <string name="shortcut_title_accessibility_shortcuts">Juurdepääsetavuse otseteed</string>
+    <string name="title_pref_gesture_profiles">Liigutuste profiilid</string>
+    <string name="title_gesture_profile">Liigutuste profiil</string>
+    <string name="gesture_profile_default">Vaikeseade</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, kasutusel</string>
+    <string name="no_gesture_profiles">Liigutuste profiile pole</string>
+    <string name="shortcut_gesture_profiles">Liigutuste profiili valimine</string>
+    <string name="shortcut_previous_gesture_profile">Eelmine liigutuste profiil</string>
+    <string name="shortcut_next_gesture_profile">Järgmine liigutuste profiil</string>
+    <string name="shortcut_use_gesture_profile">Liigutuste profiili <xliff:g id="name" example="Driving">%1$s</xliff:g> kasutamine</string>
+    <string name="title_pref_gesture_profile_in_use">Kasutusel olev liigutuste profiil</string>
+    <string name="title_pref_add_gesture_profile">Lisa liigutuste profiil</string>
+    <string name="gesture_profile_new_name">Liigutuste profiil <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken">Liigutuste profiil nimega <xliff:g id="name" example="Driving">%1$s</xliff:g> on juba olemas</string>
+    <string name="title_pref_delete_gesture_profile">Kustuta liigutuste profiil</string>
+    <string name="title_pref_tap_nav_bar_buttons">Navigeerimisriba nuppude aktiveerimine puudutusega</string>
+    <string name="title_pref_reset_accessibility_audio">Lähtesta juurdepääsetavuse heli pärast kõnesid</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">Vajab Shizukut. Ilma Shizukuta käitage see käsk adb-ga, kui kõne kõlab pärast telefonikõnet kuularist: %1$s</string>
+    <string name="arrow_key_nav_unavailable">Selles klahvitabelis pole nooleklahvinavigeerimist</string>
+    <string name="shortcut_braille_app_name">Sisestage rakenduse nimi brailles, et see avada</string>
+    <string name="braille_app_prompt">Sisestage rakenduse nimi brailles</string>
+    <string name="braille_app_closed">Rakenduse otsing brailles suleti</string>
+    <string name="braille_app_not_available">Rakenduse nime sisestamine brailles pole saadaval</string>
+    <string name="title_clipboard_history_other_apps">Lisa koopiad teistest rakendustest</string>
 </resources>

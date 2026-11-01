@@ -1833,4 +1833,27 @@
   <string name="shortcut_toggle_magnification">മാഗ്നിഫിക്കേഷൻ ഓണാക്കുകയോ ഓഫാക്കുകയോ ചെയ്യുക</string>
   <string name="shortcut_submit_text">ടെക്സ്റ്റ് സമർപ്പിക്കുക</string>
   <string name="shortcut_title_accessibility_shortcuts">ഉപയോഗസഹായി കുറുക്കുവഴികൾ</string>
+    <string name="title_pref_gesture_profiles">ജെസ്‌ചർ പ്രൊഫൈലുകൾ</string>
+    <string name="title_gesture_profile">ജെസ്‌ചർ പ്രൊഫൈൽ</string>
+    <string name="gesture_profile_default">ഡിഫോൾട്ട്</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, ഉപയോഗത്തിലുണ്ട്</string>
+    <string name="no_gesture_profiles">ജെസ്‌ചർ പ്രൊഫൈലുകളൊന്നുമില്ല</string>
+    <string name="shortcut_gesture_profiles">ജെസ്‌ചർ പ്രൊഫൈൽ തിരഞ്ഞെടുക്കുക</string>
+    <string name="shortcut_previous_gesture_profile">മുമ്പത്തെ ജെസ്‌ചർ പ്രൊഫൈൽ</string>
+    <string name="shortcut_next_gesture_profile">അടുത്ത ജെസ്‌ചർ പ്രൊഫൈൽ</string>
+    <string name="shortcut_use_gesture_profile"><xliff:g id="name" example="Driving">%1$s</xliff:g> ജെസ്‌ചർ പ്രൊഫൈൽ ഉപയോഗിക്കുക</string>
+    <string name="title_pref_gesture_profile_in_use">ഉപയോഗത്തിലുള്ള ജെസ്‌ചർ പ്രൊഫൈൽ</string>
+    <string name="title_pref_add_gesture_profile">ജെസ്‌ചർ പ്രൊഫൈൽ ചേർക്കുക</string>
+    <string name="gesture_profile_new_name">ജെസ്‌ചർ പ്രൊഫൈൽ <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken"><xliff:g id="name" example="Driving">%1$s</xliff:g> എന്ന പേരിൽ ഒരു ജെസ്‌ചർ പ്രൊഫൈൽ ഇതിനകം ഉണ്ട്</string>
+    <string name="title_pref_delete_gesture_profile">ജെസ്‌ചർ പ്രൊഫൈൽ ഇല്ലാതാക്കുക</string>
+    <string name="title_pref_tap_nav_bar_buttons">നാവിഗേഷൻ ബാർ ബട്ടണുകൾ സജീവമാക്കാൻ ടാപ്പ് ചെയ്യുക</string>
+    <string name="title_pref_reset_accessibility_audio">കോളുകൾക്ക് ശേഷം ഉപയോഗസഹായി ഓഡിയോ റീസെറ്റ് ചെയ്യുക</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">Shizuku ആവശ്യമാണ്. Shizuku ഇല്ലെങ്കിൽ, കോളിന് ശേഷം സംഭാഷണം ഇയർപീസിൽ പ്ലേ ചെയ്യുമ്പോൾ adb ഉപയോഗിച്ച് ഈ കമാൻഡ് റൺ ചെയ്യുക: %1$s</string>
+    <string name="arrow_key_nav_unavailable">ഈ കീമാപ്പിൽ ആരോ കീ നാവിഗേഷൻ ഇല്ല</string>
+    <string name="shortcut_braille_app_name">ആപ്പ് തുറക്കാൻ അതിന്റെ പേര് ബ്രെയ്‌ലിയിൽ ടൈപ്പ് ചെയ്യുക</string>
+    <string name="braille_app_prompt">ആപ്പിന്റെ പേര് ബ്രെയ്‌ലിയിൽ ടൈപ്പ് ചെയ്യുക</string>
+    <string name="braille_app_closed">ബ്രെയ്‌ലി ആപ്പ് തിരയൽ അടച്ചു</string>
+    <string name="braille_app_not_available">ആപ്പിന്റെ പേര് ബ്രെയ്‌ലിയിൽ ടൈപ്പ് ചെയ്യുന്നത് ലഭ്യമല്ല</string>
+    <string name="title_clipboard_history_other_apps">മറ്റ് ആപ്പുകളിൽ നിന്നുള്ള പകർപ്പുകൾ ചേർക്കുക</string>
 </resources>

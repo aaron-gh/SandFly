@@ -1841,4 +1841,27 @@
   <string name="shortcut_toggle_magnification">Zapnúť alebo vypnúť zväčšenie</string>
   <string name="shortcut_submit_text">Odoslanie textu</string>
   <string name="shortcut_title_accessibility_shortcuts">Skratky dostupnosti</string>
+    <string name="title_pref_gesture_profiles">Profily gest</string>
+    <string name="title_gesture_profile">Profil gest</string>
+    <string name="gesture_profile_default">Predvolený</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, používa sa</string>
+    <string name="no_gesture_profiles">Žiadne profily gest</string>
+    <string name="shortcut_gesture_profiles">Výber profilu gest</string>
+    <string name="shortcut_previous_gesture_profile">Predchádzajúci profil gest</string>
+    <string name="shortcut_next_gesture_profile">Ďalší profil gest</string>
+    <string name="shortcut_use_gesture_profile">Použiť profil gest <xliff:g id="name" example="Driving">%1$s</xliff:g></string>
+    <string name="title_pref_gesture_profile_in_use">Používaný profil gest</string>
+    <string name="title_pref_add_gesture_profile">Pridať profil gest</string>
+    <string name="gesture_profile_new_name">Profil gest <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken">Profil gest s názvom <xliff:g id="name" example="Driving">%1$s</xliff:g> už existuje</string>
+    <string name="title_pref_delete_gesture_profile">Odstrániť profil gest</string>
+    <string name="title_pref_tap_nav_bar_buttons">Aktivovať tlačidlá navigačnej lišty klepnutím</string>
+    <string name="title_pref_reset_accessibility_audio">Obnoviť zvuk dostupnosti po hovoroch</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">Vyžaduje Shizuku. Bez Shizuku spustite tento príkaz cez adb, keď sa reč po hovore prehráva v slúchadle: %1$s</string>
+    <string name="arrow_key_nav_unavailable">V tejto mape klávesov nie je navigácia šípkami</string>
+    <string name="shortcut_braille_app_name">Napísať názov aplikácie v Braillovom písme a otvoriť ju</string>
+    <string name="braille_app_prompt">Napíšte názov aplikácie v Braillovom písme</string>
+    <string name="braille_app_closed">Vyhľadávanie aplikácií v Braillovom písme bolo zatvorené</string>
+    <string name="braille_app_not_available">Písanie názvu aplikácie v Braillovom písme nie je k dispozícii</string>
+    <string name="title_clipboard_history_other_apps">Pridávať kópie z iných aplikácií</string>
 </resources>

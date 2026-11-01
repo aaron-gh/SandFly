@@ -361,7 +361,7 @@ Sounds and vibration follow the user's **Sound feedback** and **Vibration feedba
 *   `sf.screen.inputFocused()` *Version 2* is the item with input focus, such as the edit field the keyboard types into, or `nil`.
 *   `sf.screen.at(x, y)` *Version 2* is the innermost visible item at a point on the screen, in pixels, in the top window there.
 *   `sf.screen.windows()` *Version 2* lists the windows on screen, top first: `{ id, type, title, layer, active, focused, bounds, root }`. `type` is `'application'`, `'inputMethod'`, `'system'`, `'accessibilityOverlay'`, `'splitScreenDivider'` or `'magnificationOverlay'`, and `root` is the window's top item. `window.root:find(query)` searches a window that isn't active, such as the keyboard. SandFly's own windows, such as its menu, are not listed.
-*   `sf.screen.waitFor(query, timeout, interval)` *Version 2* [waits](#waiting) until an item matching the query is on screen and gives it, or gives `nil` after `timeout` milliseconds, 5,000 if left out. It looks every `interval` milliseconds, at least 100, and 250 if left out.
+*   `sf.screen.waitFor(query, timeout, interval)` *Version 2* [waits](#waiting) until an item matching the query is on screen and gives it, or gives `nil` after `timeout` milliseconds, 5,000 if left out and at most 60,000. It looks every `interval` milliseconds, at least 100, and 250 if left out.
 *   `sf.screen.click(query)` *Version 2* finds an item and clicks it, or taps it if it has no click action. It gives whether that worked, and needs `actions` too.
 *   `sf.screen.recognizeText()` *Version 2.* [Recognizes text](#recognizing-text) on the whole screen.
 *   `sf.app()` is `{ package, label, activity, window, meta }` for the app in front. `label` is the app's name. `activity` is `nil` until SandFly has seen the app change window. `meta` holds the meta-data in the app's manifest that has a true or false, number or text value, such as `sf.app().meta['com.example.flag']`.
@@ -387,7 +387,7 @@ Keys and typing through Shizuku need Shizuku running, with SandFly allowed in it
 *Version 2.* A script can run any command that a gesture or keys can be assigned to in SandFly, such as moving to the next heading, reading from the top or changing the reading control.
 
 *   `sf.commands.list()` lists them: `{ id, title, category }`, in the order of **Commands** in SandFly settings.
-*   `sf.commands.run(id)` runs one, as its gesture would, and gives whether it ran. It needs the `input` permission, and doesn't work on SandFly's own screens.
+*   `sf.commands.run(id)` runs one, as its gesture would, and gives whether it ran. It needs the `input` permission, and doesn't work on SandFly's own screens. Commands that pause or silence SandFly, act on the system (Back, Home, notifications, volume, lock screen, power menu), use the microphone or SandFly Pro also need `system`; commands that copy, cut, paste or open the clipboard history also need `clipboard`.
 
 ```lua
 sf.commands.run('NEXT')          -- Next item

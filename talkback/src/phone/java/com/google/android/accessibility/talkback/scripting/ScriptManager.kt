@@ -312,14 +312,17 @@ class ScriptManager(
     mainHandler.removeCallbacks(evaluateRunnable)
     // What scripts still had queued is dropped, so that turning scripts off stops them now.
     scriptHandler.removeCallbacksAndMessages(null)
+    // Not on the script thread, which may be stuck in a call that never ends: dialogs and windows
+    // close on the main thread.
+    dialogs.close()
+    screen.close()
+    touch.close()
     scriptHandler.postAtFrontOfQueue {
       loaded.values.forEach(ScriptRuntime::close)
       loaded.clear()
       speechHooks.clear()
       events.clear()
       actions.clear()
-      dialogs.close()
-      screen.close()
       bindings = ScriptBindings.EMPTY
       rules = ScriptRules.EMPTY
       rulesSource = emptyList()

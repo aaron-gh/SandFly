@@ -1833,4 +1833,27 @@
   <string name="shortcut_toggle_magnification">Hidupkan atau matikan pembesaran</string>
   <string name="shortcut_submit_text">Serahkan teks</string>
   <string name="shortcut_title_accessibility_shortcuts">Pintasan kebolehaksesan</string>
+    <string name="title_pref_gesture_profiles">Profil gerak isyarat</string>
+    <string name="title_gesture_profile">Profil gerak isyarat</string>
+    <string name="gesture_profile_default">Lalai</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, sedang digunakan</string>
+    <string name="no_gesture_profiles">Tiada profil gerak isyarat</string>
+    <string name="shortcut_gesture_profiles">Pilih profil gerak isyarat</string>
+    <string name="shortcut_previous_gesture_profile">Profil gerak isyarat sebelumnya</string>
+    <string name="shortcut_next_gesture_profile">Profil gerak isyarat seterusnya</string>
+    <string name="shortcut_use_gesture_profile">Gunakan profil gerak isyarat <xliff:g id="name" example="Driving">%1$s</xliff:g></string>
+    <string name="title_pref_gesture_profile_in_use">Profil gerak isyarat yang digunakan</string>
+    <string name="title_pref_add_gesture_profile">Tambahkan profil gerak isyarat</string>
+    <string name="gesture_profile_new_name">Profil gerak isyarat <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken">Profil gerak isyarat bernama <xliff:g id="name" example="Driving">%1$s</xliff:g> sudah wujud</string>
+    <string name="title_pref_delete_gesture_profile">Padamkan profil gerak isyarat</string>
+    <string name="title_pref_tap_nav_bar_buttons">Ketik untuk mengaktifkan butang bar navigasi</string>
+    <string name="title_pref_reset_accessibility_audio">Tetapkan semula audio kebolehaksesan selepas panggilan</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">Memerlukan Shizuku. Tanpa Shizuku, jalankan perintah ini dengan adb apabila pertuturan dimainkan pada pembesar suara telinga selepas panggilan: %1$s</string>
+    <string name="arrow_key_nav_unavailable">Tiada navigasi kekunci anak panah dalam peta kekunci ini</string>
+    <string name="shortcut_braille_app_name">Taip nama apl dalam braille untuk membukanya</string>
+    <string name="braille_app_prompt">Taip nama apl dalam braille</string>
+    <string name="braille_app_closed">Carian apl braille ditutup</string>
+    <string name="braille_app_not_available">Menaip nama apl dalam braille tidak tersedia</string>
+    <string name="title_clipboard_history_other_apps">Tambahkan salinan daripada apl lain</string>
 </resources>

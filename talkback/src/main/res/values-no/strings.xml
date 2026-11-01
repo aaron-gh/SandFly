@@ -1833,4 +1833,27 @@
   <string name="shortcut_toggle_magnification">Slå forstørring på eller av</string>
   <string name="shortcut_submit_text">Send inn teksten</string>
   <string name="shortcut_title_accessibility_shortcuts">Tilgjengelighetssnarveier</string>
+    <string name="title_pref_gesture_profiles">Bevegelsesprofiler</string>
+    <string name="title_gesture_profile">Bevegelsesprofil</string>
+    <string name="gesture_profile_default">Standard</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, i bruk</string>
+    <string name="no_gesture_profiles">Ingen bevegelsesprofiler</string>
+    <string name="shortcut_gesture_profiles">Velg bevegelsesprofil</string>
+    <string name="shortcut_previous_gesture_profile">Forrige bevegelsesprofil</string>
+    <string name="shortcut_next_gesture_profile">Neste bevegelsesprofil</string>
+    <string name="shortcut_use_gesture_profile">Bruk bevegelsesprofilen <xliff:g id="name" example="Driving">%1$s</xliff:g></string>
+    <string name="title_pref_gesture_profile_in_use">Bevegelsesprofil i bruk</string>
+    <string name="title_pref_add_gesture_profile">Legg til bevegelsesprofil</string>
+    <string name="gesture_profile_new_name">Bevegelsesprofil <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken">En bevegelsesprofil heter allerede <xliff:g id="name" example="Driving">%1$s</xliff:g></string>
+    <string name="title_pref_delete_gesture_profile">Slett bevegelsesprofil</string>
+    <string name="title_pref_tap_nav_bar_buttons">Trykk for å aktivere knapper på navigasjonslinjen</string>
+    <string name="title_pref_reset_accessibility_audio">Tilbakestill tilgjengelighetslyd etter samtaler</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">Krever Shizuku. Uten Shizuku kjører du denne kommandoen med adb når talen spilles av på ørehøyttaleren etter en samtale: %1$s</string>
+    <string name="arrow_key_nav_unavailable">Ingen piltastnavigering i dette tastaturoppsettet</string>
+    <string name="shortcut_braille_app_name">Skriv navnet på en app i punktskrift for å åpne den</string>
+    <string name="braille_app_prompt">Skriv navnet på en app i punktskrift</string>
+    <string name="braille_app_closed">Appsøk med punktskrift er lukket</string>
+    <string name="braille_app_not_available">Skriving av appnavn i punktskrift er ikke tilgjengelig</string>
+    <string name="title_clipboard_history_other_apps">Legg til kopier fra andre apper</string>
 </resources>

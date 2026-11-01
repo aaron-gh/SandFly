@@ -1833,4 +1833,27 @@
   <string name="shortcut_toggle_magnification">Ұлғайтуды қосу не өшіру</string>
   <string name="shortcut_submit_text">Мәтін жіберу</string>
   <string name="shortcut_title_accessibility_shortcuts">Арнайы мүмкіндіктер таңбашалары</string>
+    <string name="title_pref_gesture_profiles">Қимыл профильдері</string>
+    <string name="title_gesture_profile">Қимыл профилі</string>
+    <string name="gesture_profile_default">Әдепкі</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, пайдаланылуда</string>
+    <string name="no_gesture_profiles">Қимыл профильдері жоқ</string>
+    <string name="shortcut_gesture_profiles">Қимыл профилін таңдау</string>
+    <string name="shortcut_previous_gesture_profile">Алдыңғы қимыл профилі</string>
+    <string name="shortcut_next_gesture_profile">Келесі қимыл профилі</string>
+    <string name="shortcut_use_gesture_profile"><xliff:g id="name" example="Driving">%1$s</xliff:g> қимыл профилін пайдалану</string>
+    <string name="title_pref_gesture_profile_in_use">Пайдаланылатын қимыл профилі</string>
+    <string name="title_pref_add_gesture_profile">Қимыл профилін қосу</string>
+    <string name="gesture_profile_new_name">Қимыл профилі <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken"><xliff:g id="name" example="Driving">%1$s</xliff:g> деп аталатын қимыл профилі бар</string>
+    <string name="title_pref_delete_gesture_profile">Қимыл профилін жою</string>
+    <string name="title_pref_tap_nav_bar_buttons">Шарлау жолағы түймелерін түртіп іске қосу</string>
+    <string name="title_pref_reset_accessibility_audio">Қоңыраулардан кейін арнайы мүмкіндіктер дыбысын қалпына келтіру</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">Shizuku қажет. Shizuku болмаса, қоңыраудан кейін сөйлеу құлақ динамигінен ойнатылғанда осы команданы adb арқылы орындаңыз: %1$s</string>
+    <string name="arrow_key_nav_unavailable">Бұл пернетақта схемасында бағыт пернелерімен навигация жоқ</string>
+    <string name="shortcut_braille_app_name">Қолданбаны ашу үшін оның атауын Брайль арқылы теру</string>
+    <string name="braille_app_prompt">Қолданба атауын Брайль арқылы теріңіз</string>
+    <string name="braille_app_closed">Брайль арқылы қолданба іздеу жабылды</string>
+    <string name="braille_app_not_available">Қолданба атауын Брайль арқылы теру мүмкін емес</string>
+    <string name="title_clipboard_history_other_apps">Басқа қолданбалардағы көшірмелерді қосу</string>
 </resources>

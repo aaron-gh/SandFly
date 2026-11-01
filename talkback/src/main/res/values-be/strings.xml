@@ -1839,4 +1839,27 @@
   <string name="shortcut_toggle_magnification">Уключыць або выключыць павелічэнне</string>
   <string name="shortcut_submit_text">Адправіць тэкст</string>
   <string name="shortcut_title_accessibility_shortcuts">Ярлыкі спецыяльных магчымасцей</string>
+    <string name="title_pref_gesture_profiles">Профілі жэстаў</string>
+    <string name="title_gesture_profile">Профіль жэстаў</string>
+    <string name="gesture_profile_default">Стандартны</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, выкарыстоўваецца</string>
+    <string name="no_gesture_profiles">Няма профіляў жэстаў</string>
+    <string name="shortcut_gesture_profiles">Выбраць профіль жэстаў</string>
+    <string name="shortcut_previous_gesture_profile">Папярэдні профіль жэстаў</string>
+    <string name="shortcut_next_gesture_profile">Наступны профіль жэстаў</string>
+    <string name="shortcut_use_gesture_profile">Выкарыстоўваць профіль жэстаў <xliff:g id="name" example="Driving">%1$s</xliff:g></string>
+    <string name="title_pref_gesture_profile_in_use">Бягучы профіль жэстаў</string>
+    <string name="title_pref_add_gesture_profile">Дадаць профіль жэстаў</string>
+    <string name="gesture_profile_new_name">Профіль жэстаў <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken">Профіль жэстаў з назвай <xliff:g id="name" example="Driving">%1$s</xliff:g> ужо ёсць</string>
+    <string name="title_pref_delete_gesture_profile">Выдаліць профіль жэстаў</string>
+    <string name="title_pref_tap_nav_bar_buttons">Актывацыя кнопак панэлі навігацыі дотыкам</string>
+    <string name="title_pref_reset_accessibility_audio">Скідваць аўдыя спецыяльных магчымасцей пасля выклікаў</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">Патрабуецца Shizuku. Без Shizuku выканайце гэту каманду праз adb, калі пасля выкліку маўленне гучыць у навушніку: %1$s</string>
+    <string name="arrow_key_nav_unavailable">У гэтай раскладцы клавіятуры няма навігацыі стрэлкамі</string>
+    <string name="shortcut_braille_app_name">Увесці назву праграмы шрыфтам Брайля, каб адкрыць яе</string>
+    <string name="braille_app_prompt">Увядзіце назву праграмы шрыфтам Брайля</string>
+    <string name="braille_app_closed">Пошук праграмы шрыфтам Брайля закрыты</string>
+    <string name="braille_app_not_available">Увод назвы праграмы шрыфтам Брайля недаступны</string>
+    <string name="title_clipboard_history_other_apps">Дадаваць копіі з іншых праграм</string>
 </resources>

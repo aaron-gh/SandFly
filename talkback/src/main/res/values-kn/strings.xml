@@ -1834,4 +1834,27 @@
   <string name="shortcut_toggle_magnification">ಹಿಗ್ಗಿಸುವಿಕೆಯನ್ನು ಆನ್ ಅಥವಾ ಆಫ್ ಮಾಡಿ</string>
   <string name="shortcut_submit_text">ಪಠ್ಯವನ್ನು ಸಲ್ಲಿಸಿ</string>
   <string name="shortcut_title_accessibility_shortcuts">ಪ್ರವೇಶಿಸುವಿಕೆ ಶಾರ್ಟ್‌ಕಟ್‌ಗಳು</string>
+    <string name="title_pref_gesture_profiles">ಜೆಸ್ಚರ್ ಪ್ರೊಫೈಲ್‌ಗಳು</string>
+    <string name="title_gesture_profile">ಜೆಸ್ಚರ್ ಪ್ರೊಫೈಲ್</string>
+    <string name="gesture_profile_default">ಡೀಫಾಲ್ಟ್</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, ಬಳಕೆಯಲ್ಲಿದೆ</string>
+    <string name="no_gesture_profiles">ಯಾವುದೇ ಜೆಸ್ಚರ್ ಪ್ರೊಫೈಲ್‌ಗಳಿಲ್ಲ</string>
+    <string name="shortcut_gesture_profiles">ಜೆಸ್ಚರ್ ಪ್ರೊಫೈಲ್ ಆಯ್ಕೆಮಾಡಿ</string>
+    <string name="shortcut_previous_gesture_profile">ಹಿಂದಿನ ಜೆಸ್ಚರ್ ಪ್ರೊಫೈಲ್</string>
+    <string name="shortcut_next_gesture_profile">ಮುಂದಿನ ಜೆಸ್ಚರ್ ಪ್ರೊಫೈಲ್</string>
+    <string name="shortcut_use_gesture_profile"><xliff:g id="name" example="Driving">%1$s</xliff:g> ಜೆಸ್ಚರ್ ಪ್ರೊಫೈಲ್ ಬಳಸಿ</string>
+    <string name="title_pref_gesture_profile_in_use">ಬಳಕೆಯಲ್ಲಿರುವ ಜೆಸ್ಚರ್ ಪ್ರೊಫೈಲ್</string>
+    <string name="title_pref_add_gesture_profile">ಜೆಸ್ಚರ್ ಪ್ರೊಫೈಲ್ ಸೇರಿಸಿ</string>
+    <string name="gesture_profile_new_name">ಜೆಸ್ಚರ್ ಪ್ರೊಫೈಲ್ <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken"><xliff:g id="name" example="Driving">%1$s</xliff:g> ಎಂಬ ಹೆಸರಿನ ಜೆಸ್ಚರ್ ಪ್ರೊಫೈಲ್ ಈಗಾಗಲೇ ಇದೆ</string>
+    <string name="title_pref_delete_gesture_profile">ಜೆಸ್ಚರ್ ಪ್ರೊಫೈಲ್ ಅಳಿಸಿ</string>
+    <string name="title_pref_tap_nav_bar_buttons">ನ್ಯಾವಿಗೇಶನ್ ಬಾರ್ ಬಟನ್‌ಗಳನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಲು ಟ್ಯಾಪ್ ಮಾಡಿ</string>
+    <string name="title_pref_reset_accessibility_audio">ಕರೆಗಳ ನಂತರ ಪ್ರವೇಶಿಸುವಿಕೆ ಆಡಿಯೊವನ್ನು ರೀಸೆಟ್ ಮಾಡಿ</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">Shizuku ಅಗತ್ಯವಿದೆ. Shizuku ಇಲ್ಲದೆ, ಕರೆಯ ನಂತರ ಮಾತು ಇಯರ್‌ಪೀಸ್‌ನಲ್ಲಿ ಪ್ಲೇ ಆದಾಗ ಈ ಆಜ್ಞೆಯನ್ನು adb ಮೂಲಕ ರನ್ ಮಾಡಿ: %1$s</string>
+    <string name="arrow_key_nav_unavailable">ಈ ಕೀಮ್ಯಾಪ್‌ನಲ್ಲಿ ಆ್ಯರೋ ಕೀ ನ್ಯಾವಿಗೇಷನ್ ಇಲ್ಲ</string>
+    <string name="shortcut_braille_app_name">ಆ್ಯಪ್ ತೆರೆಯಲು ಅದರ ಹೆಸರನ್ನು ಬ್ರೈಲ್‌ನಲ್ಲಿ ಟೈಪ್ ಮಾಡಿ</string>
+    <string name="braille_app_prompt">ಆ್ಯಪ್‌ನ ಹೆಸರನ್ನು ಬ್ರೈಲ್‌ನಲ್ಲಿ ಟೈಪ್ ಮಾಡಿ</string>
+    <string name="braille_app_closed">ಬ್ರೈಲ್ ಆ್ಯಪ್ ಹುಡುಕಾಟವನ್ನು ಮುಚ್ಚಲಾಗಿದೆ</string>
+    <string name="braille_app_not_available">ಆ್ಯಪ್‌ನ ಹೆಸರನ್ನು ಬ್ರೈಲ್‌ನಲ್ಲಿ ಟೈಪ್ ಮಾಡುವುದು ಲಭ್ಯವಿಲ್ಲ</string>
+    <string name="title_clipboard_history_other_apps">ಇತರ ಆ್ಯಪ್‌ಗಳಿಂದ ಕಾಪಿಗಳನ್ನು ಸೇರಿಸಿ</string>
 </resources>

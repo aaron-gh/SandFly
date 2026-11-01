@@ -1833,4 +1833,27 @@
   <string name="shortcut_toggle_magnification">Washa au uzime ukuzaji wa skrini</string>
   <string name="shortcut_submit_text">Tuma maandishi</string>
   <string name="shortcut_title_accessibility_shortcuts">Njia za mkato za ufikivu</string>
+    <string name="title_pref_gesture_profiles">Wasifu wa ishara</string>
+    <string name="title_gesture_profile">Wasifu wa ishara</string>
+    <string name="gesture_profile_default">Chaguomsingi</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, unatumika</string>
+    <string name="no_gesture_profiles">Hakuna wasifu wa ishara</string>
+    <string name="shortcut_gesture_profiles">Chagua wasifu wa ishara</string>
+    <string name="shortcut_previous_gesture_profile">Wasifu wa ishara uliotangulia</string>
+    <string name="shortcut_next_gesture_profile">Wasifu wa ishara unaofuata</string>
+    <string name="shortcut_use_gesture_profile">Tumia wasifu wa ishara <xliff:g id="name" example="Driving">%1$s</xliff:g></string>
+    <string name="title_pref_gesture_profile_in_use">Wasifu wa ishara unaotumika</string>
+    <string name="title_pref_add_gesture_profile">Ongeza wasifu wa ishara</string>
+    <string name="gesture_profile_new_name">Wasifu wa ishara <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken">Tayari kuna wasifu wa ishara unaoitwa <xliff:g id="name" example="Driving">%1$s</xliff:g></string>
+    <string name="title_pref_delete_gesture_profile">Futa wasifu wa ishara</string>
+    <string name="title_pref_tap_nav_bar_buttons">Gusa ili uwashe vitufe vya upau wa kusogeza</string>
+    <string name="title_pref_reset_accessibility_audio">Weka upya sauti ya ufikivu baada ya simu</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">Inahitaji Shizuku. Bila Shizuku, tekeleza amri hii kwa adb matamshi yanapocheza kwenye spika ya sikioni baada ya simu: %1$s</string>
+    <string name="arrow_key_nav_unavailable">Hakuna usogezaji kwa vitufe vya vishale katika ramani hii ya vitufe</string>
+    <string name="shortcut_braille_app_name">Andika jina la programu kwa nukta nundu ili uifungue</string>
+    <string name="braille_app_prompt">Andika jina la programu kwa nukta nundu</string>
+    <string name="braille_app_closed">Utafutaji wa programu kwa nukta nundu umefungwa</string>
+    <string name="braille_app_not_available">Kuandika jina la programu kwa nukta nundu hakupatikani</string>
+    <string name="title_clipboard_history_other_apps">Ongeza nakala kutoka programu zingine</string>
 </resources>

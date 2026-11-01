@@ -1833,4 +1833,27 @@
   <string name="shortcut_toggle_magnification">Aktivizo ose çaktivizo zmadhimin</string>
   <string name="shortcut_submit_text">Dërgo tekstin</string>
   <string name="shortcut_title_accessibility_shortcuts">Shkurtoret e qasshmërisë</string>
+    <string name="title_pref_gesture_profiles">Profilet e gjesteve</string>
+    <string name="title_gesture_profile">Profili i gjesteve</string>
+    <string name="gesture_profile_default">I parazgjedhur</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, në përdorim</string>
+    <string name="no_gesture_profiles">Nuk ka profile gjestesh</string>
+    <string name="shortcut_gesture_profiles">Zgjidh profilin e gjesteve</string>
+    <string name="shortcut_previous_gesture_profile">Profili i mëparshëm i gjesteve</string>
+    <string name="shortcut_next_gesture_profile">Profili tjetër i gjesteve</string>
+    <string name="shortcut_use_gesture_profile">Përdor profilin e gjesteve <xliff:g id="name" example="Driving">%1$s</xliff:g></string>
+    <string name="title_pref_gesture_profile_in_use">Profili i gjesteve në përdorim</string>
+    <string name="title_pref_add_gesture_profile">Shto profilin e gjesteve</string>
+    <string name="gesture_profile_new_name">Profili i gjesteve <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken">Një profil gjestesh quhet tashmë <xliff:g id="name" example="Driving">%1$s</xliff:g></string>
+    <string name="title_pref_delete_gesture_profile">Fshi profilin e gjesteve</string>
+    <string name="title_pref_tap_nav_bar_buttons">Trokit për të aktivizuar butonat e shiritit të navigimit</string>
+    <string name="title_pref_reset_accessibility_audio">Rivendos audion e qasshmërisë pas telefonatave</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">Kërkon Shizuku. Pa Shizuku, ekzekuto këtë komandë me adb kur ligjërimi luhet në altoparlantin e bisedës pas një telefonate: %1$s</string>
+    <string name="arrow_key_nav_unavailable">Nuk ka navigim me tastet e shigjetave në këtë hartë të tasteve</string>
+    <string name="shortcut_braille_app_name">Shkruaj emrin e një aplikacioni në Braja për ta hapur</string>
+    <string name="braille_app_prompt">Shkruaj emrin e një aplikacioni në Braja</string>
+    <string name="braille_app_closed">Kërkimi i aplikacionit në Braja u mbyll</string>
+    <string name="braille_app_not_available">Shkrimi i emrit të një aplikacioni në Braja nuk ofrohet</string>
+    <string name="title_clipboard_history_other_apps">Shto kopjet nga aplikacionet e tjera</string>
 </resources>

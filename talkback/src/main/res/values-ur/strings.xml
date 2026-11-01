@@ -1833,4 +1833,27 @@
   <string name="shortcut_toggle_magnification">میگنیفکیشن آن یا آف کریں</string>
   <string name="shortcut_submit_text">ٹیکسٹ جمع کروائیں</string>
   <string name="shortcut_title_accessibility_shortcuts">ایکسیسبیلٹی شارٹ کٹس</string>
+    <string name="title_pref_gesture_profiles">اشارہ پروفائلز</string>
+    <string name="title_gesture_profile">اشارہ پروفائل</string>
+    <string name="gesture_profile_default">ڈیفالٹ</string>
+    <string name="gesture_profile_menu_item_in_use">‏<xliff:g id="name" example="Driving">%1$s</xliff:g>، زیر استعمال</string>
+    <string name="no_gesture_profiles">کوئی اشارہ پروفائل نہیں</string>
+    <string name="shortcut_gesture_profiles">اشارہ پروفائل منتخب کریں</string>
+    <string name="shortcut_previous_gesture_profile">پچھلا اشارہ پروفائل</string>
+    <string name="shortcut_next_gesture_profile">اگلا اشارہ پروفائل</string>
+    <string name="shortcut_use_gesture_profile">اشارہ پروفائل <xliff:g id="name" example="Driving">%1$s</xliff:g> استعمال کریں</string>
+    <string name="title_pref_gesture_profile_in_use">زیر استعمال اشارہ پروفائل</string>
+    <string name="title_pref_add_gesture_profile">اشارہ پروفائل شامل کریں</string>
+    <string name="gesture_profile_new_name">اشارہ پروفائل <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken">‏<xliff:g id="name" example="Driving">%1$s</xliff:g> نام کا اشارہ پروفائل پہلے سے موجود ہے</string>
+    <string name="title_pref_delete_gesture_profile">اشارہ پروفائل کو حذف کریں</string>
+    <string name="title_pref_tap_nav_bar_buttons">نیویگیشن بار کے بٹنز فعال کرنے کے لیے تھپتھپائیں</string>
+    <string name="title_pref_reset_accessibility_audio">کالز کے بعد ایکسیسبیلٹی آڈیو ری سیٹ کریں</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">‏Shizuku درکار ہے۔ Shizuku کے بغیر، جب کال کے بعد اسپیچ ایئر پیس پر چلے تو یہ کمانڈ adb کے ساتھ چلائیں: %1$s</string>
+    <string name="arrow_key_nav_unavailable">اس کلیدی نقشے میں تیر کلیدوں سے نیویگیشن نہیں ہے</string>
+    <string name="shortcut_braille_app_name">کسی ایپ کو کھولنے کے لیے بریل میں اس کا نام ٹائپ کریں</string>
+    <string name="braille_app_prompt">بریل میں ایپ کا نام ٹائپ کریں</string>
+    <string name="braille_app_closed">بریل ایپ تلاش بند ہو گئی</string>
+    <string name="braille_app_not_available">بریل میں ایپ کا نام ٹائپ کرنا دستیاب نہیں ہے</string>
+    <string name="title_clipboard_history_other_apps">دوسری ایپس سے کاپیز شامل کریں</string>
 </resources>

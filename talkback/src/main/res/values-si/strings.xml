@@ -1833,4 +1833,27 @@
   <string name="shortcut_toggle_magnification">විශාලනය ක්‍රියාත්මක හෝ ක්‍රියාවිරහිත කරන්න</string>
   <string name="shortcut_submit_text">පෙළ භාර දෙන්න</string>
   <string name="shortcut_title_accessibility_shortcuts">ප්‍රවේශ්‍යතා කෙටිමං</string>
+    <string name="title_pref_gesture_profiles">ඉංගිත පැතිකඩ</string>
+    <string name="title_gesture_profile">ඉංගිත පැතිකඩ</string>
+    <string name="gesture_profile_default">පෙරනිමි</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, භාවිතයේ ඇත</string>
+    <string name="no_gesture_profiles">ඉංගිත පැතිකඩ නැත</string>
+    <string name="shortcut_gesture_profiles">ඉංගිත පැතිකඩ තෝරන්න</string>
+    <string name="shortcut_previous_gesture_profile">පෙර ඉංගිත පැතිකඩ</string>
+    <string name="shortcut_next_gesture_profile">ඊළඟ ඉංගිත පැතිකඩ</string>
+    <string name="shortcut_use_gesture_profile">ඉංගිත පැතිකඩ <xliff:g id="name" example="Driving">%1$s</xliff:g> භාවිත කරන්න</string>
+    <string name="title_pref_gesture_profile_in_use">භාවිතයේ ඇති ඉංගිත පැතිකඩ</string>
+    <string name="title_pref_add_gesture_profile">ඉංගිත පැතිකඩ එක් කරන්න</string>
+    <string name="gesture_profile_new_name">ඉංගිත පැතිකඩ <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken"><xliff:g id="name" example="Driving">%1$s</xliff:g> නමින් ඉංගිත පැතිකඩක් දැනටමත් ඇත</string>
+    <string name="title_pref_delete_gesture_profile">ඉංගිත පැතිකඩ මකන්න</string>
+    <string name="title_pref_tap_nav_bar_buttons">සංචාලන තීරු බොත්තම් සක්‍රිය කිරීමට තට්ටු කරන්න</string>
+    <string name="title_pref_reset_accessibility_audio">ඇමතුම්වලින් පසු ප්‍රවේශ්‍යතා ශ්‍රව්‍ය යළි සකසන්න</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">Shizuku අවශ්‍යයි. Shizuku නොමැතිව, ඇමතුමකින් පසු කථනය කන් ස්පීකරයෙන් වාදනය වන විට මෙම විධානය adb සමඟ ධාවනය කරන්න: %1$s</string>
+    <string name="arrow_key_nav_unavailable">මෙම යතුරු සිතියමේ ඊතල යතුරු සංචාලනය නැත</string>
+    <string name="shortcut_braille_app_name">යෙදුමක් විවෘත කිරීමට එහි නම බ්‍රේල්වලින් ටයිප් කරන්න</string>
+    <string name="braille_app_prompt">යෙදුමක නම බ්‍රේල්වලින් ටයිප් කරන්න</string>
+    <string name="braille_app_closed">බ්‍රේල් යෙදුම් සෙවීම වසා ඇත</string>
+    <string name="braille_app_not_available">යෙදුමක නම බ්‍රේල්වලින් ටයිප් කිරීම ලබා ගත නොහැක</string>
+    <string name="title_clipboard_history_other_apps">වෙනත් යෙදුම්වලින් පිටපත් එක් කරන්න</string>
 </resources>

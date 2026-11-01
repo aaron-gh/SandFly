@@ -1833,4 +1833,27 @@
   <string name="shortcut_toggle_magnification">Kveikja eða slökkva á stækkun</string>
   <string name="shortcut_submit_text">Senda texta</string>
   <string name="shortcut_title_accessibility_shortcuts">Flýtileiðir aðgengis</string>
+    <string name="title_pref_gesture_profiles">Bendingasnið</string>
+    <string name="title_gesture_profile">Bendingasnið</string>
+    <string name="gesture_profile_default">Sjálfgefið</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, í notkun</string>
+    <string name="no_gesture_profiles">Engin bendingasnið</string>
+    <string name="shortcut_gesture_profiles">Velja bendingasnið</string>
+    <string name="shortcut_previous_gesture_profile">Fyrra bendingasnið</string>
+    <string name="shortcut_next_gesture_profile">Næsta bendingasnið</string>
+    <string name="shortcut_use_gesture_profile">Nota bendingasniðið <xliff:g id="name" example="Driving">%1$s</xliff:g></string>
+    <string name="title_pref_gesture_profile_in_use">Bendingasnið í notkun</string>
+    <string name="title_pref_add_gesture_profile">Bæta við bendingasniði</string>
+    <string name="gesture_profile_new_name">Bendingasnið <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken">Bendingasnið heitir nú þegar <xliff:g id="name" example="Driving">%1$s</xliff:g></string>
+    <string name="title_pref_delete_gesture_profile">Eyða bendingasniði</string>
+    <string name="title_pref_tap_nav_bar_buttons">Ýta til að virkja hnappa á leiðsagnarstiku</string>
+    <string name="title_pref_reset_accessibility_audio">Endurstilla aðgengishljóð eftir símtöl</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">Krefst Shizuku. Án Shizuku skaltu keyra þessa skipun með adb þegar tal heyrist í eyrnahátalaranum eftir símtal: %1$s</string>
+    <string name="arrow_key_nav_unavailable">Engin örvalyklafletting í þessari lyklaskipan</string>
+    <string name="shortcut_braille_app_name">Sláðu inn heiti forrits með blindraletri til að opna það</string>
+    <string name="braille_app_prompt">Sláðu inn heiti forrits með blindraletri</string>
+    <string name="braille_app_closed">Forritaleit með blindraletri lokað</string>
+    <string name="braille_app_not_available">Ekki er hægt að slá inn heiti forrits með blindraletri</string>
+    <string name="title_clipboard_history_other_apps">Bæta við afritum úr öðrum forritum</string>
 </resources>

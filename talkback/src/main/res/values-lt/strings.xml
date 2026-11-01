@@ -1841,4 +1841,27 @@
   <string name="shortcut_toggle_magnification">Įjungti arba išjungti didinimą</string>
   <string name="shortcut_submit_text">Pateikti tekstą</string>
   <string name="shortcut_title_accessibility_shortcuts">Pritaikymo neįgaliesiems spartieji klavišai</string>
+    <string name="title_pref_gesture_profiles">Gestų profiliai</string>
+    <string name="title_gesture_profile">Gestų profilis</string>
+    <string name="gesture_profile_default">Numatytasis</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, naudojamas</string>
+    <string name="no_gesture_profiles">Nėra gestų profilių</string>
+    <string name="shortcut_gesture_profiles">Pasirinkti gestų profilį</string>
+    <string name="shortcut_previous_gesture_profile">Ankstesnis gestų profilis</string>
+    <string name="shortcut_next_gesture_profile">Kitas gestų profilis</string>
+    <string name="shortcut_use_gesture_profile">Naudoti gestų profilį <xliff:g id="name" example="Driving">%1$s</xliff:g></string>
+    <string name="title_pref_gesture_profile_in_use">Naudojamas gestų profilis</string>
+    <string name="title_pref_add_gesture_profile">Pridėti gestų profilį</string>
+    <string name="gesture_profile_new_name">Gestų profilis <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken">Gestų profilis pavadinimu <xliff:g id="name" example="Driving">%1$s</xliff:g> jau yra</string>
+    <string name="title_pref_delete_gesture_profile">Ištrinti gestų profilį</string>
+    <string name="title_pref_tap_nav_bar_buttons">Suaktyvinti naršymo juostos mygtukus palietus</string>
+    <string name="title_pref_reset_accessibility_audio">Iš naujo nustatyti pritaikymo neįgaliesiems garsą po skambučių</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">Reikia Shizuku. Be Shizuku paleiskite šią komandą naudodami adb, kai po skambučio kalba skamba pokalbių garsiakalbyje: %1$s</string>
+    <string name="arrow_key_nav_unavailable">Šioje klavišų schemoje nėra naršymo rodyklių klavišais</string>
+    <string name="shortcut_braille_app_name">Įveskite programos pavadinimą Brailio raštu, kad ją atidarytumėte</string>
+    <string name="braille_app_prompt">Įveskite programos pavadinimą Brailio raštu</string>
+    <string name="braille_app_closed">Programų paieška Brailio raštu uždaryta</string>
+    <string name="braille_app_not_available">Programos pavadinimo įvedimas Brailio raštu nepasiekiamas</string>
+    <string name="title_clipboard_history_other_apps">Pridėti kopijas iš kitų programų</string>
 </resources>

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="new_features_0_2_0_arrow_keys">キーボードで左矢印キーと右矢印キーを同時に押すと、矢印キー ナビゲーションのオンとオフが切り替わります。オンのときは、iOS の VoiceOver と同様に矢印キーでコマンドを実行します。各矢印キーのコマンドは [設定]、[キーボード ショートカット] で変更します。</string>
-    <string name="new_features_0_2_0_arrow_keys_title">矢印キー ナビゲーション</string>
-    <string name="new_features_0_2_0_commands">[次のトラック] と [前のトラック] はメディアを操作し、[設定]、[コマンド] でジェスチャーやキーに割り当てられます。[サウンドモード] 読み上げコントロールは [音]、[バイブレーション]、[ミュート] を切り替えます。[設定]、[読み上げコントロール] で追加します。</string>
-    <string name="new_features_0_2_0_commands_title">新しいコマンド</string>
-    <string name="new_features_0_2_0_dictation">SandFly のすべての音声入力で SandFly の音声入力機能が使われるようになりました。対象は音声入力、画像と画面についての質問、音声コマンドです。[設定]、[文字入力]、[音声入力] の順に開き、音声認識（Google のオンデバイス音声認識、Rambler、Whisper など）と、AI でテキストを修正するかどうかを選択します。[無音で自動停止] は、選択した長さの無音の後に録音を終了します。</string>
-    <string name="new_features_0_2_0_dictation_title">音声入力</string>
-    <string name="new_features_0_2_0_pro">SandFly Pro は有料のアドオンです。AI エージェントがアプリを操作します。スクリーン リーダーで使えないアプリやゲームも操作でき、読み上げ速度の変更などの SandFly のコマンドも実行します。[設定]、[コマンド] で [AI エージェントのタスクを開始または停止] をジェスチャーかキーに割り当て、タスクを話すか入力します。重要な操作の前には安全確認で確認を求め、銀行アプリではエージェントは読み取りのみを行います。SandFly Pro は、画像と画面の説明、ライブ認識用の AI サービスでもあり、API キーは不要です。コードの購入や入力は [設定]、[SandFly Pro] で行います。</string>
-    <string name="new_features_0_2_0_pro_title">SandFly Pro</string>
-    <string name="new_features_0_2_0_settings">各設定は、変更する内容の名前が付いた画面に移動し、メイン画面は短くなりました。[コマンド] にはすべてのコマンドがジェスチャーとキーボード ショートカットとともに表示され、1 か所で割り当てられます。[読み上げコントロール] と [SandFly メニュー] には現在の項目が順番に表示され、移動や削除ができます。</string>
-    <string name="new_features_0_2_0_settings_title">トピック別の設定</string>
-    <string name="new_features_0_2_0_translation">SandFly は読み上げる内容を翻訳できます。[設定]、[コマンド] で [最後に読み上げたフレーズを翻訳] をジェスチャーかキーに割り当てます。[設定]、[翻訳] でサービスと言語を選択し、他の言語の音声を翻訳する [自動翻訳] や、通知の翻訳をオンにします。オンデバイス翻訳では各言語を一度ダウンロードすると、その後はオフラインで動作します。</string>
-    <string name="new_features_0_2_0_translation_title">翻訳</string>
-    <string name="new_features_0_2_0_tutorial">新しいチュートリアルで SandFly を段階的に学べます。各ジェスチャーを試すと、SandFly がそれを確認して結果を読み上げます。[設定]、[ヘルプとフィードバック]、[SandFly チュートリアル] の順に開きます。</string>
-    <string name="new_features_0_2_0_tutorial_title">インタラクティブ チュートリアル</string>
-    <string name="new_features_0_2_0_welcome">SandFly 0.2.0 の新機能を以降のページで説明します。後でもう一度読むには、SandFly の設定の一番上にある [SandFly の新機能] を開きます。</string>
+    <string name="new_features_0_3_0_welcome">SandFly 0.3.0 の新機能を次のページで説明します。後でもう一度読むには、SandFly の設定の上部にある [SandFly の新機能] を開きます。</string>
+    <string name="new_features_0_3_0_keymaps_title">キーマップ</string>
+    <string name="new_features_0_3_0_keymaps">物理キーボードでは、[設定]、[キーボード ショートカット]、[キーマップを選択] で SandFly、VoiceOver、NVDA、JAWS、Orca のいずれかのキーマップと、そのキーマップで使う SandFly キーを選択します。NVDA、JAWS、Orca のキーマップでは、矢印キーと Tab キーで SandFly キーを使わずに移動でき、オブジェクト ナビゲーション、レビュー カーソル、[画面上のテキストを認識] を使用できます。ブラウズモードのショートカットは変更でき、SandFly キーの 2 回押しにもできます。</string>
+    <string name="new_features_0_3_0_gestures_title">ジェスチャー プロファイル</string>
+    <string name="new_features_0_3_0_gestures">[設定]、[ジェスチャー] のジェスチャー プロファイルでは、ジェスチャーに別のコマンドを割り当て、[次のジェスチャー プロファイル] でプロファイルを切り替えます。[アプリ内のジェスチャー] と [アプリ内のキーボード ショートカット] では、選択したアプリでジェスチャーとキーに別のコマンドを割り当てます。1 本指の各スワイプには、スワイプして押し続ける操作もあります。スワイプし、指を止めてから離します。</string>
+    <string name="new_features_0_3_0_speech_title">読み上げ辞書とクリップボードの履歴</string>
+    <string name="new_features_0_3_0_speech">[設定]、[読み上げ] の読み上げ辞書では、指定したテキストの読み方をすべての読み上げで変更します。[他のアプリの読み上げを許可] では、アプリと現在のキーボードが SandFly を通じて読み上げます。クリップボードの履歴にはコピーした内容が保存され、Shizuku を使うと他のアプリでコピーした内容も保存されます。</string>
+    <string name="new_features_0_3_0_braille_title">点字</string>
+    <string name="new_features_0_3_0_braille">[点字でアプリ名を入力してアプリを開く] は、画面を点字キーボードにしてアプリ名の先頭を入力するコマンドです。新しい点字の言語として日本語が追加されました。物理キーボードの接続中は点字キーボードが非表示になります。</string>
+    <string name="new_features_0_3_0_commands_title">新しいコマンドと設定</string>
+    <string name="new_features_0_3_0_commands">[テキストを送信]、[拡大の ON / OFF を切り替える]、[巻き戻し]、[早送り]、[ユーザー補助のショートカット] は [設定]、[コマンド] で割り当てられます。[設定]、[表示] の [SandFly を壁紙として使用] は、バッテリー セーバーが SandFly を停止するスマートフォンで SandFly の実行を維持します。[設定]、[音声出力] の [通話後にユーザー補助の音声をリセット] は、通話後に読み上げを受話口から切り替えます。</string>
+    <string name="new_features_0_3_0_scripts_title">スクリプト</string>
+    <string name="new_features_0_3_0_scripts">スクリプトで、画面のタップ、キー入力、SandFly コマンドの実行、ウィンドウの表示、テキスト認識、通話中の読み上げができるようになりました。スクリプトをインストールする前に、SandFly は入手元と SandFly による署名の有無を表示します。</string>
+    <string name="new_features_0_3_0_pro_title">画面認識</string>
+    <string name="new_features_0_3_0_pro">SandFly Pro は、アプリやゲームがユーザー補助に公開せずに描画するボタン、テキストなどの要素を認識し、スワイプで移動してダブルタップできる項目として表示します。SandFly メニューで [画面を認識] を選択するか、SandFly メニューまたは [設定]、[SandFly Pro]、[自動画面認識] でアプリの画面認識をオンにします。</string>
 </resources>

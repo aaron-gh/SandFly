@@ -361,9 +361,15 @@ public class KeyboardShortcutDialogPreference extends Preference
 
     // The SandFly key pressed twice, alone, turns browse mode on and off.
     @Nullable SandFlyKey sandFlyKey = keyComboManager.getSandFlyKey();
+    // Key downs only: the release of the first press isn't a second press. Meta and Alt count too,
+    // which are modifiers rather than held keys.
     if (canTakeSandFlyKeyPressedTwice()
         && sandFlyKey != null
-        && sandFlyKey.isKey(event)
+        && sandFlyKey.getCanBePressedTwice()
+        && event.getAction() == KeyEvent.ACTION_DOWN
+        && (sandFlyKey.isHeldKey()
+            ? sandFlyKey.isKey(event)
+            : sandFlyKey.hasKey(event.getKeyCode()))
         && event.getRepeatCount() == 0) {
       if (event.getEventTime() - sandFlyKeyDownTime < SANDFLY_KEY_TWICE_MS) {
         sandFlyKeyDownTime = 0;

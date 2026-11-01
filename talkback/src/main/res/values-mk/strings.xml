@@ -1833,4 +1833,27 @@
   <string name="shortcut_toggle_magnification">Вклучи го или исклучи го зголемувањето</string>
   <string name="shortcut_submit_text">Испрати текст</string>
   <string name="shortcut_title_accessibility_shortcuts">Кратенки за пристапност</string>
+    <string name="title_pref_gesture_profiles">Профили на движења</string>
+    <string name="title_gesture_profile">Профил на движења</string>
+    <string name="gesture_profile_default">Стандарден</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, во употреба</string>
+    <string name="no_gesture_profiles">Нема профили на движења</string>
+    <string name="shortcut_gesture_profiles">Изберете профил на движења</string>
+    <string name="shortcut_previous_gesture_profile">Претходен профил на движења</string>
+    <string name="shortcut_next_gesture_profile">Следен профил на движења</string>
+    <string name="shortcut_use_gesture_profile">Користи го профилот на движења <xliff:g id="name" example="Driving">%1$s</xliff:g></string>
+    <string name="title_pref_gesture_profile_in_use">Профил на движења во употреба</string>
+    <string name="title_pref_add_gesture_profile">Додај профил на движења</string>
+    <string name="gesture_profile_new_name">Профил на движења <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken">Веќе постои профил на движења со име <xliff:g id="name" example="Driving">%1$s</xliff:g></string>
+    <string name="title_pref_delete_gesture_profile">Избриши го профилот на движења</string>
+    <string name="title_pref_tap_nav_bar_buttons">Допрете за да ги активирате копчињата на лентата за навигација</string>
+    <string name="title_pref_reset_accessibility_audio">Ресетирај го аудиото за пристапност по повиците</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">Потребен е Shizuku. Без Shizuku, извршете ја оваа наредба со adb кога говорот се слуша на слушалката по повик: %1$s</string>
+    <string name="arrow_key_nav_unavailable">Нема навигација со стрелки во овој распоред на копчиња</string>
+    <string name="shortcut_braille_app_name">Напишете го името на апликацијата на Брајово писмо за да ја отворите</string>
+    <string name="braille_app_prompt">Напишете го името на апликацијата на Брајово писмо</string>
+    <string name="braille_app_closed">Пребарувањето апликации на Брајово писмо е затворено</string>
+    <string name="braille_app_not_available">Пишувањето име на апликација на Брајово писмо не е достапно</string>
+    <string name="title_clipboard_history_other_apps">Додавај копии од други апликации</string>
 </resources>

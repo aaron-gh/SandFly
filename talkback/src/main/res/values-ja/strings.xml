@@ -1830,4 +1830,27 @@
   <string name="shortcut_toggle_magnification">拡大の ON / OFF を切り替える</string>
   <string name="shortcut_submit_text">テキストを送信</string>
   <string name="shortcut_title_accessibility_shortcuts">ユーザー補助のショートカット</string>
+    <string name="title_pref_gesture_profiles">ジェスチャー プロファイル</string>
+    <string name="title_gesture_profile">ジェスチャー プロファイル</string>
+    <string name="gesture_profile_default">デフォルト</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>、使用中</string>
+    <string name="no_gesture_profiles">ジェスチャー プロファイルがありません</string>
+    <string name="shortcut_gesture_profiles">ジェスチャー プロファイルを選択</string>
+    <string name="shortcut_previous_gesture_profile">前のジェスチャー プロファイル</string>
+    <string name="shortcut_next_gesture_profile">次のジェスチャー プロファイル</string>
+    <string name="shortcut_use_gesture_profile">ジェスチャー プロファイル <xliff:g id="name" example="Driving">%1$s</xliff:g> を使用</string>
+    <string name="title_pref_gesture_profile_in_use">使用中のジェスチャー プロファイル</string>
+    <string name="title_pref_add_gesture_profile">ジェスチャー プロファイルを追加</string>
+    <string name="gesture_profile_new_name">ジェスチャー プロファイル <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken"><xliff:g id="name" example="Driving">%1$s</xliff:g> という名前のジェスチャー プロファイルはすでにあります</string>
+    <string name="title_pref_delete_gesture_profile">ジェスチャー プロファイルを削除</string>
+    <string name="title_pref_tap_nav_bar_buttons">タップでナビゲーション バーのボタンを有効化</string>
+    <string name="title_pref_reset_accessibility_audio">通話後にユーザー補助の音声をリセット</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">Shizuku が必要です。Shizuku を使わない場合は、通話後に読み上げが受話口から流れるときに、次のコマンドを adb で実行します: %1$s</string>
+    <string name="arrow_key_nav_unavailable">このキーマップでは矢印キー ナビゲーションを使用できません</string>
+    <string name="shortcut_braille_app_name">点字でアプリ名を入力してアプリを開く</string>
+    <string name="braille_app_prompt">点字でアプリ名を入力</string>
+    <string name="braille_app_closed">点字のアプリ検索を終了しました</string>
+    <string name="braille_app_not_available">点字でのアプリ名入力は使用できません</string>
+    <string name="title_clipboard_history_other_apps">他のアプリでのコピーを追加</string>
 </resources>

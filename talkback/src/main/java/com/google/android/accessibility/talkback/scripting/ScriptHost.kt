@@ -127,6 +127,9 @@ interface ScriptServices {
 
   fun isSpeaking(): Boolean
 
+  /** Whether touch already passes through to apps, held by the person or another SandFly screen. */
+  fun isPassThroughActive(): Boolean
+
   /** The text of the last thing SandFly said, as Copy last spoken phrase copies it. */
   fun lastSpeech(): String?
 

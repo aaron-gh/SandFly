@@ -1833,4 +1833,27 @@
   <string name="shortcut_toggle_magnification">பெரிதாக்கலை ஆன்/ஆஃப் செய்</string>
   <string name="shortcut_submit_text">வார்த்தையைச் சமர்ப்பித்தல்</string>
   <string name="shortcut_title_accessibility_shortcuts">அணுகல்தன்மை ஷார்ட்கட்கள்</string>
+    <string name="title_pref_gesture_profiles">சைகை சுயவிவரங்கள்</string>
+    <string name="title_gesture_profile">சைகை சுயவிவரம்</string>
+    <string name="gesture_profile_default">இயல்பு</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, பயன்பாட்டில் உள்ளது</string>
+    <string name="no_gesture_profiles">சைகை சுயவிவரங்கள் இல்லை</string>
+    <string name="shortcut_gesture_profiles">சைகை சுயவிவரத்தைத் தேர்ந்தெடு</string>
+    <string name="shortcut_previous_gesture_profile">முந்தைய சைகை சுயவிவரம்</string>
+    <string name="shortcut_next_gesture_profile">அடுத்த சைகை சுயவிவரம்</string>
+    <string name="shortcut_use_gesture_profile"><xliff:g id="name" example="Driving">%1$s</xliff:g> சைகை சுயவிவரத்தைப் பயன்படுத்து</string>
+    <string name="title_pref_gesture_profile_in_use">பயன்பாட்டிலுள்ள சைகை சுயவிவரம்</string>
+    <string name="title_pref_add_gesture_profile">சைகை சுயவிவரத்தைச் சேர்</string>
+    <string name="gesture_profile_new_name">சைகை சுயவிவரம் <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken"><xliff:g id="name" example="Driving">%1$s</xliff:g> என்ற பெயரில் ஏற்கெனவே ஒரு சைகை சுயவிவரம் உள்ளது</string>
+    <string name="title_pref_delete_gesture_profile">சைகை சுயவிவரத்தை நீக்கு</string>
+    <string name="title_pref_tap_nav_bar_buttons">தட்டுவதன் மூலம் வழிசெலுத்தல் பட்டி பொத்தான்களை இயக்கு</string>
+    <string name="title_pref_reset_accessibility_audio">அழைப்புகளுக்குப் பிறகு அணுகல்தன்மை ஆடியோவை மீட்டமை</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">Shizuku தேவை. Shizuku இல்லாமல், அழைப்புக்குப் பிறகு பேச்சு இயர்பீஸில் ஒலிக்கும்போது இந்தக் கட்டளையை adb மூலம் இயக்கவும்: %1$s</string>
+    <string name="arrow_key_nav_unavailable">இந்தக் கீ-மேப்பில் அம்புக்குறி விசை வழிசெலுத்தல் இல்லை</string>
+    <string name="shortcut_braille_app_name">ஆப்ஸைத் திறக்க அதன் பெயரைப் பிரெயிலில் உள்ளிடுங்கள்</string>
+    <string name="braille_app_prompt">ஆப்ஸின் பெயரைப் பிரெயிலில் உள்ளிடுங்கள்</string>
+    <string name="braille_app_closed">பிரெயில் ஆப்ஸ் தேடல் மூடப்பட்டது</string>
+    <string name="braille_app_not_available">ஆப்ஸின் பெயரைப் பிரெயிலில் உள்ளிடும் வசதி கிடைக்கவில்லை</string>
+    <string name="title_clipboard_history_other_apps">பிற ஆப்ஸிலிருந்து நகல்களைச் சேர்</string>
 </resources>

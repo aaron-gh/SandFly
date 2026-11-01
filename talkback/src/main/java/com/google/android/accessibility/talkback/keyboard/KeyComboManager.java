@@ -759,8 +759,12 @@ public class KeyComboManager
         return true;
       }
     }
-    for (KeyCombo target : keyComboModel.getKeyComboMap().values()) {
-      if (keyCombo.matchWith(triggerModifier, target) != KeyCombo.NO_MATCH) {
+    for (Map.Entry<String, KeyCombo> entry : keyComboModel.getKeyComboMap().entrySet()) {
+      // Browse mode's letters are typing while browse mode is off, as in matchAndPerformKeyCombo.
+      if (isBrowseModeSupported() && !browseModeEnabled && isBrowseModeOnly(entry.getKey())) {
+        continue;
+      }
+      if (keyCombo.matchWith(triggerModifier, entry.getValue()) != KeyCombo.NO_MATCH) {
         return true;
       }
     }

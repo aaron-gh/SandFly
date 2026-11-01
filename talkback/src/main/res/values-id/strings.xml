@@ -1833,4 +1833,27 @@
   <string name="shortcut_toggle_magnification">Aktifkan atau nonaktifkan pembesaran</string>
   <string name="shortcut_submit_text">Kirim teks</string>
   <string name="shortcut_title_accessibility_shortcuts">Pintasan aksesibilitas</string>
+    <string name="title_pref_gesture_profiles">Profil gestur</string>
+    <string name="title_gesture_profile">Profil gestur</string>
+    <string name="gesture_profile_default">Default</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, sedang digunakan</string>
+    <string name="no_gesture_profiles">Tidak ada profil gestur</string>
+    <string name="shortcut_gesture_profiles">Pilih profil gestur</string>
+    <string name="shortcut_previous_gesture_profile">Profil gestur sebelumnya</string>
+    <string name="shortcut_next_gesture_profile">Profil gestur berikutnya</string>
+    <string name="shortcut_use_gesture_profile">Gunakan profil gestur <xliff:g id="name" example="Driving">%1$s</xliff:g></string>
+    <string name="title_pref_gesture_profile_in_use">Profil gestur yang digunakan</string>
+    <string name="title_pref_add_gesture_profile">Tambahkan profil gestur</string>
+    <string name="gesture_profile_new_name">Profil gestur <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken">Profil gestur bernama <xliff:g id="name" example="Driving">%1$s</xliff:g> sudah ada</string>
+    <string name="title_pref_delete_gesture_profile">Hapus profil gestur</string>
+    <string name="title_pref_tap_nav_bar_buttons">Ketuk untuk mengaktifkan tombol bilah navigasi</string>
+    <string name="title_pref_reset_accessibility_audio">Setel ulang audio aksesibilitas setelah panggilan</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">Memerlukan Shizuku. Tanpa Shizuku, jalankan perintah ini dengan adb saat ucapan diputar di lubang suara setelah panggilan: %1$s</string>
+    <string name="arrow_key_nav_unavailable">Tidak ada navigasi tombol panah di peta tombol ini</string>
+    <string name="shortcut_braille_app_name">Ketik nama aplikasi dalam braille untuk membukanya</string>
+    <string name="braille_app_prompt">Ketik nama aplikasi dalam braille</string>
+    <string name="braille_app_closed">Penelusuran aplikasi braille ditutup</string>
+    <string name="braille_app_not_available">Mengetik nama aplikasi dalam braille tidak tersedia</string>
+    <string name="title_clipboard_history_other_apps">Tambahkan salinan dari aplikasi lain</string>
 </resources>
