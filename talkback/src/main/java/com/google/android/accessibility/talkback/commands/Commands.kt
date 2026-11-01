@@ -212,6 +212,7 @@ object Commands {
 
     fun build(): List<Category> {
       navigation()
+      navigationSetting()
       objectNavigation()
       activation()
       scrolling()
@@ -288,8 +289,6 @@ object Commands {
           R.string.shortcut_previous,
           Key.NAVIGATE_PREVIOUS_DEFAULT,
         )
-        keyboard(Key.NAVIGATE_NEXT)
-        keyboard(Key.NAVIGATE_PREVIOUS)
         keyboard(Key.NAVIGATE_BELOW)
         keyboard(Key.NAVIGATE_ABOVE)
         gesture(
@@ -325,6 +324,14 @@ object Commands {
         keyboard(Key.REFOCUS_CURRENT_NODE)
         keyboard(Key.NAVIGATE_NEXT_FOCUSABLE)
         keyboard(Key.NAVIGATE_PREVIOUS_FOCUSABLE)
+      }
+
+    private fun navigationSetting() =
+      category(R.string.commands_category_navigation_setting) {
+        keyboard(Key.NAVIGATE_NEXT)
+        keyboard(Key.NAVIGATE_PREVIOUS)
+        keyboard(Key.NEXT_NAVIGATION_SETTING)
+        keyboard(Key.PREVIOUS_NAVIGATION_SETTING)
       }
 
     private fun objectNavigation() =
@@ -640,8 +647,6 @@ object Commands {
           R.string.shortcut_value_write_reading_control,
           R.string.shortcut_write_reading_control,
         )
-        keyboard(Key.NEXT_NAVIGATION_SETTING)
-        keyboard(Key.PREVIOUS_NAVIGATION_SETTING)
       }
 
     private fun textEditing() =

@@ -8,6 +8,12 @@
     <string name="commands_category_scrolling">Scrolling</string>
     <!-- Group of commands that move through tables. [CHAR LIMIT=40] -->
     <string name="commands_category_tables">Tables</string>
+    <!-- Group of commands that move by the navigation setting, such as headings or words, and change it. [CHAR LIMIT=40] -->
+    <string name="commands_category_navigation_setting">Navigation setting</string>
+    <!-- Command that moves to the next character, word, heading or other unit chosen with Next navigation setting, or the next item. [CHAR LIMIT=60] -->
+    <string name="keycombo_menu_navigate_next_by_setting">Next by navigation setting</string>
+    <!-- Command that moves to the previous character, word, heading or other unit chosen with Next navigation setting, or the previous item. [CHAR LIMIT=60] -->
+    <string name="keycombo_menu_navigate_previous_by_setting">Previous by navigation setting</string>
     <!-- Group of commands for web pages: browse mode, lists of headings and links, page addresses. [CHAR LIMIT=40] -->
     <string name="commands_category_web">Web</string>
     <!-- Group of commands that change speech: rate, pitch, volume, voice profile, language. [CHAR LIMIT=40] -->
