@@ -17,6 +17,7 @@
 package com.google.android.accessibility.talkback.selector
 
 import android.graphics.Rect
+import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test
@@ -43,5 +44,24 @@ class VerticalNavigationTest {
     assertTrue(VerticalNavigation.isOnOtherRow(nextTitle, title, forward = true))
     assertTrue(VerticalNavigation.isOnOtherRow(title, nextTitle, forward = false))
     assertFalse(VerticalNavigation.isOnSameRow(nextTitle, title))
+  }
+
+  @Test
+  fun aKeyMovesToTheKeyInItsColumn() {
+    val keys = listOf(Rect(0, 600, 300, 800), Rect(390, 600, 690, 800), Rect(780, 600, 1080, 800))
+    val middleKeyAbove = Rect(390, 380, 690, 580)
+    assertEquals(1, VerticalNavigation.columnItem(keys, middleKeyAbove))
+  }
+
+  @Test
+  fun aWideItemOrARowStartMovesToTheStartOfTheRow() {
+    assertEquals(0, VerticalNavigation.columnItem(listOf(nextTitle, button), Rect(0, 100, 1000, 300)))
+    assertEquals(0, VerticalNavigation.columnItem(listOf(nextTitle, button), title))
+  }
+
+  @Test
+  fun anItemOverNothingMovesToTheNearestItem() {
+    val shortRow = listOf(Rect(0, 600, 300, 800), Rect(390, 600, 690, 800))
+    assertEquals(1, VerticalNavigation.columnItem(shortRow, Rect(780, 380, 1080, 580)))
   }
 }
