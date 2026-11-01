@@ -66,6 +66,9 @@ public class FeedbackController {
 
   public static final long NO_SEPARATION = 0;
 
+  /** The path of a sound that plays nothing, as in a theme's "none". */
+  public static final String NO_SOUND = "none";
+
   /** Positioned sounds are panned between the left and right speakers. */
   public static final int SPATIAL_STEREO = 0;
 
@@ -538,7 +541,7 @@ public class FeedbackController {
    */
   private boolean hasSound(int resId) {
     @Nullable String custom = customSoundPath(resId);
-    if (ThemeSounds.NONE.equals(custom)) {
+    if (NO_SOUND.equals(custom)) {
       return false;
     }
     if (custom != null) {
@@ -809,7 +812,7 @@ public class FeedbackController {
       return;
     }
     for (String path : new HashSet<>(mCustomSoundPaths.values())) {
-      if (!ThemeSounds.NONE.equals(path)) {
+      if (!NO_SOUND.equals(path)) {
         synchronized (mClips) {
           decodeLater(player, path, /* resId= */ 0, path);
         }

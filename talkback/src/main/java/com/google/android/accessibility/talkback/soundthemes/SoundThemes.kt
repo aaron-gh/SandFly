@@ -18,7 +18,6 @@ package com.google.android.accessibility.talkback.soundthemes
 
 import android.content.Context
 import android.content.SharedPreferences
-import android.media.AudioManager
 import android.media.MediaExtractor
 import android.media.MediaFormat
 import androidx.core.content.ContextCompat
@@ -144,20 +143,7 @@ object SoundThemes {
   /** Thrown when a file is not a sound theme, with a message for the person installing it. */
   class NotAThemeException(message: String) : Exception(message)
 
-  /**
-   * The braille keyboard's typing sounds, which are Android's keyboard sounds unless the theme
-   * replaces them, with the Android sound effect each replaces. They play only with the braille
-   * keyboard's typing sounds setting on.
-   */
-  @JvmField
-  val BRAILLE_TYPING_EFFECTS: Map<String, Int> =
-    linkedMapOf(
-      "braille_keyboard_character" to AudioManager.FX_KEYPRESS_STANDARD,
-      "braille_keyboard_space" to AudioManager.FX_KEYPRESS_SPACEBAR,
-      "braille_keyboard_delete" to AudioManager.FX_KEYPRESS_DELETE,
-      "braille_keyboard_new_line" to AudioManager.FX_KEYPRESS_RETURN,
-    )
-
+  /** The braille keyboard's typing sounds, which play only with its typing sounds setting on. */
   private val BRAILLE_TYPING_SOUNDS =
     listOf(
       FeedbackItem("braille_keyboard_character", R.string.theme_sound_braille_character),
@@ -165,11 +151,6 @@ object SoundThemes {
       FeedbackItem("braille_keyboard_delete", R.string.theme_sound_braille_delete),
       FeedbackItem("braille_keyboard_new_line", R.string.theme_sound_braille_new_line),
     )
-
-  /** The braille keyboard's typing sounds among the theme's sound files by name. */
-  @JvmStatic
-  fun brailleTypingSounds(soundPaths: Map<String, String>): Map<String, String> =
-    soundPaths.filterKeys { it in BRAILLE_TYPING_EFFECTS }
 
   /** Every sound a theme can replace, in the order the settings show them. */
   @JvmStatic

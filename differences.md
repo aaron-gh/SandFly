@@ -782,7 +782,7 @@ The braille languages include Mongolian, uncontracted and contracted, from the l
 
 ### Typing sounds
 
-In braille keyboard settings, **Typing sounds** plays Android's keyboard clicks as you type: a click for each character, and the space, delete, and return sounds for those actions. It's off by default, and it works even when touch sounds are off in Android's settings. A [sound theme](themes.md) can replace these sounds with its own.
+In braille keyboard settings, **Typing sounds** plays a sound for each character, and a sound each for space, delete, and new line. It's off by default. The sounds are SandFly's, played at SandFly's sound volume, and a [sound theme](themes.md) can replace them with its own.
 
 ### Swap top and bottom dots
 

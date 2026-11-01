@@ -208,8 +208,8 @@ A theme can also set any sound to `"none"` in `theme.json` to silence it:
 
 This is useful for themes modeled after other screen readers, such as iOS VoiceOver, which play fewer sounds. In SandFly under **Sounds**, you can also select **No sound** (or use the accessibility action **Set to no sound**) for any sound event.
 
-The braille keyboard sounds replace Android's keyboard sounds, and play only with **Typing sounds**
-on in the braille keyboard's settings.
+The braille keyboard sounds play only with **Typing sounds** on in the braille keyboard's
+settings.
 
 The names are also shown in SandFly: in **Sounds**, selecting a sound shows its name after its
 title, such as "Click (tick)".
