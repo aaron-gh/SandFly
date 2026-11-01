@@ -862,15 +862,11 @@ public class KeyboardShortcutDialogPreference extends Preference
    */
   private boolean isValidKeyCombo(KeyCombo keyCombo) {
     String key = getKey();
-    boolean isBrowseModeCommand =
-        keyComboManager.isBrowseModeSupported()
-            && keyComboManager.getBrowseModeOnlyCommands().contains(key);
-
     boolean eligible = keyComboManager.getKeyComboModel().isEligibleKeyCombo(keyCombo);
-    if (isBrowseModeCommand && !eligible) {
-      // For browse mode commands, it's eligible even without trigger modifier when it's assigned to
-      // their default key combo. `isEligibleKeyCombo()` returns false only when a key combo is
-      // assigned but trigger modifier is not used.
+    if (!eligible) {
+      // A command's default keys are eligible even without the SandFly key, such as browse mode's
+      // letters and the arrow keys of the NVDA keymap. `isEligibleKeyCombo()` returns false only
+      // when a key combo is assigned but the SandFly key is not used.
       eligible = keyCombo.equals(keyComboManager.getKeyComboModel().getDefaultKeyCombo(key));
     }
 

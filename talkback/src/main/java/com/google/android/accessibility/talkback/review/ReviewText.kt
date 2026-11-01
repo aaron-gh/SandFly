@@ -30,7 +30,10 @@ class ReviewItem(
   /** The item split at line breaks, each line given an equal share of its height. */
   fun splitLines(): List<ReviewItem> {
     val lines = text.split('\n').map { it.trim() }
-    if (lines.size == 1) return listOf(this)
+    if (lines.size == 1) {
+      return if (lines[0] == text) listOf(this)
+      else listOf(ReviewItem(lines[0], left, top, right, bottom, source))
+    }
     val height = (bottom - top).coerceAtLeast(lines.size)
     return lines.mapIndexedNotNull { index, line ->
       if (line.isEmpty()) {
@@ -110,7 +113,8 @@ class ReviewLine(val items: List<ReviewItem>) {
 
 /**
  * Text on screen as lines, top to bottom, the way it looks rather than the order apps give it. Items
- * whose vertical centres each fall within the other's height share a line.
+ * whose vertical centres each fall within the other's height, measured against a line's shortest
+ * item, share a line.
  */
 class ReviewText(items: List<ReviewItem>) {
   val lines: List<ReviewLine>
@@ -123,10 +127,10 @@ class ReviewText(items: List<ReviewItem>) {
         .sortedWith(compareBy({ it.top }, { it.left }))
     val lines = mutableListOf<MutableList<ReviewItem>>()
     for (item in sorted) {
-      // The line's first item sets its height, so that a tall item, such as a labelled screen,
-      // doesn't take in everything beside it.
-      val first = lines.lastOrNull()?.first()
-      if (first != null && item.centerY in first.top..first.bottom && first.centerY in item.top..item.bottom) {
+      // The line's shortest item sets its height, so that a tall item, such as an icon beside a
+      // title and a summary or a labelled screen, doesn't take in everything beside it.
+      val band = lines.lastOrNull()?.minByOrNull { it.bottom - it.top }
+      if (band != null && item.centerY in band.top..band.bottom && band.centerY in item.top..item.bottom) {
         lines.last().add(item)
       } else {
         lines.add(mutableListOf(item))

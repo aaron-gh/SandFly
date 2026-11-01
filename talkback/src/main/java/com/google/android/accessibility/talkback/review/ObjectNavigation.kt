@@ -61,8 +61,10 @@ class ObjectNavigation(
     return true
   }
 
+  /** SandFly focus, or input focus when there is none, or the active window. */
   private fun current(): AccessibilityNodeInfoCompat? =
-    focusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ true)
+    focusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ false)
+      ?: focusMonitor.inputFocus
       ?: service.rootInActiveWindow?.let { AccessibilityNodeInfoCompat.wrap(it) }
 
   private fun parent(eventId: EventId?) {
@@ -151,10 +153,10 @@ class ObjectNavigation(
     if (
       node.text.isNullOrBlank() &&
         node.contentDescription.isNullOrBlank() &&
-        (role == Role.ROLE_NONE || role == Role.ROLE_VIEW_GROUP) &&
-        node.childCount > 0
+        (role == Role.ROLE_NONE || role == Role.ROLE_VIEW_GROUP)
     ) {
       val count = visibleChildren(node).size
+      if (count == 0) return
       pipeline.returnFeedback(
         eventId,
         Feedback.speech(
