@@ -265,6 +265,14 @@ object ScreenElements {
     return elements.count { bounds.contains(it.bounds.centerX(), it.bounds.centerY()) } >= 2
   }
 
+  /** Whether the window [windowId] is on screen over one of the elements. */
+  private fun coversElements(windowId: Int): Boolean {
+    val current = windows ?: return false
+    val window = current.service.windows.firstOrNull { it.id == windowId } ?: return false
+    val bounds = Rect().also(window::getBoundsInScreen)
+    return current.elements.any { Rect.intersects(bounds, it.bounds) }
+  }
+
   /** Whether the window with the elements is still the app window in front. */
   private fun hostInFront(): Boolean {
     val service = windows?.service ?: return true
@@ -385,6 +393,25 @@ object ScreenElements {
   fun isFirstAppNode(node: AccessibilityNodeInfoCompat): Boolean = firstAppNode == node
 
   /**
+   * The element a swipe goes to from host window [node] when nothing in the window has focus: from
+   * the window's root, or from any node of a window without nodes in reading order, such as a game.
+   * Going forward the first element before every node; going backward, in a window without nodes,
+   * the last element. Null otherwise.
+   */
+  @JvmStatic
+  fun fromOutsideOrder(node: AccessibilityNodeInfoCompat, forward: Boolean): AccessibilityNodeInfoCompat? {
+    if (appNodes.isNotEmpty() && (node in appNodes || node.parent != null)) return null
+    val unanchored = group(null)
+    val index =
+      when {
+        forward -> unanchored.firstOrNull()
+        appNodes.isEmpty() -> unanchored.lastOrNull()
+        else -> null
+      }
+    return index?.let(::nodeOf)
+  }
+
+  /**
    * Where a swipe from the element at [index] goes: the next or previous element of its group, or
    * null when the swipe leaves the group (see [anchorOf] and [firstAppNodeOrNull]).
    */
@@ -411,6 +438,18 @@ object ScreenElements {
   }
 
   @JvmStatic fun firstAppNodeOrNull(): AccessibilityNodeInfoCompat? = firstAppNode
+
+  /**
+   * The first ([forward]) or last of the elements before the host window's first node, which are
+   * all the elements in a window without nodes of its own. A forward swipe that wraps or comes from
+   * another window reaches the first; a backward swipe that wraps in a window without nodes, the
+   * last.
+   */
+  @JvmStatic
+  fun beforeFirstNode(forward: Boolean): AccessibilityNodeInfoCompat? {
+    val unanchored = group(null)
+    return (if (forward) unanchored.firstOrNull() else unanchored.lastOrNull())?.let(::nodeOf)
+  }
 
   /**
    * Clears the elements when the screen under them changes, and tells [listener]. Called for every
@@ -449,7 +488,15 @@ object ScreenElements {
           scheduleChange(pkg, Change.CONTENT)
           return
         }
-        if (showing) clear("window of $pkg")
+        if (showing) {
+          // System UI re-adds windows such as One UI's screen corner decoration from time to time;
+          // only a window over the elements removes them.
+          if (!coversElements(event.windowId)) {
+            LogUtils.d(TAG, "Keeping elements: window %d of %s covers none", event.windowId, pkg)
+            return
+          }
+          clear("window of $pkg")
+        }
         scheduleChange(pkg, Change.WINDOW)
       }
       AccessibilityEvent.TYPE_VIEW_SCROLLED -> {
