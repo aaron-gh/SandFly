@@ -367,7 +367,13 @@ public class BtConnectManager extends ConnectManager {
    * Profile, or its services aren't known.
    */
   private static boolean mayOfferSerialPort(BluetoothDevice bluetoothDevice) {
-    ParcelUuid[] uuids = bluetoothDevice.getUuids();
+    ParcelUuid[] uuids;
+    try {
+      uuids = bluetoothDevice.getUuids();
+    } catch (SecurityException e) {
+      // Without BLUETOOTH_CONNECT the services can't be read, so keep the old fallback.
+      return true;
+    }
     if (uuids == null || uuids.length == 0) {
       return true;
     }
