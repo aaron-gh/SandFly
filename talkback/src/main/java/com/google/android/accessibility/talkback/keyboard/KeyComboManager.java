@@ -713,6 +713,21 @@ public class KeyComboManager
     return keyComboModel instanceof NewKeyComboModel model && model.arrowsNavigate();
   }
 
+  /** Returns whether [keyCombo] is, or starts, a shortcut of the keymap or of the app shown. */
+  private boolean isShortcutKey(KeyCombo keyCombo, int triggerModifier) {
+    for (kotlin.Pair<KeyCombo, String> appKey : AppGestures.keys()) {
+      if (keyCombo.matchWith(triggerModifier, appKey.getFirst()) != KeyCombo.NO_MATCH) {
+        return true;
+      }
+    }
+    for (KeyCombo target : keyComboModel.getKeyComboMap().values()) {
+      if (keyCombo.matchWith(triggerModifier, target) != KeyCombo.NO_MATCH) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   /** Whether SandFly focus is on an item other than the one with input focus. */
   private boolean isSandFlyFocusAwayFromInputFocus() {
     if (accessibilityFocusMonitor == null) {
@@ -1151,34 +1166,47 @@ public class KeyComboManager
     // * Browse mode is on.
     boolean triggerModifierNotPressedWhenNeeded =
         hasModifier && !pressedTriggerModifier && !startedSequenceKeyCombo && !enabledBrowseMode;
-    // In a text field being edited, keys without the SandFly key are the text field's in keymaps
-    // whose shortcuts without it work outside browse mode.
+    // Keys without the SandFly key in keymaps whose shortcuts without it work outside browse mode.
     if (hasModifier
         && !pressedTriggerModifier
         && !startedSequenceKeyCombo
         && (isCustomKeymap() || arrowsNavigate())
-        && isEditingTextWithAccessibilityFocus()) {
-      passedKeys.addAll(currentKeysDown);
-      return false;
-    }
-    if (triggerModifierNotPressedWhenNeeded) {
+        && !KeyEvent.isModifierKey(event.getKeyCode())) {
       // Enter clicks SandFly focus where arrow keys move it, unless input focus is there already.
-      if (arrowsNavigate()
-          && event.getKeyCode() == KeyEvent.KEYCODE_ENTER
-          && otherModifiers == KeyComboModel.NO_MODIFIER
-          && event.getRepeatCount() == 0
-          && isSandFlyFocusAwayFromInputFocus()) {
+      boolean enter =
+          arrowsNavigate()
+              && (event.getKeyCode() == KeyEvent.KEYCODE_ENTER
+                  || event.getKeyCode() == KeyEvent.KEYCODE_NUMPAD_ENTER)
+              && otherModifiers == KeyComboModel.NO_MODIFIER
+              && event.getRepeatCount() == 0;
+      // In a text field being edited, they are the text field's. Only keys that are shortcuts wait
+      // for the focus lookups, which ask the app, so typing doesn't.
+      if ((enter
+              || isShortcutKey(
+                  new KeyCombo(
+                      otherModifiers,
+                      KeyComboModel.NO_PREFIX_KEY_CODE,
+                      getConvertedKeyCode(event),
+                      /* triggerModifierUsed= */ false),
+                  triggerModifier))
+          && isEditingTextWithAccessibilityFocus()) {
+        passedKeys.addAll(currentKeysDown);
+        return false;
+      }
+      if (enter && isSandFlyFocusAwayFromInputFocus()) {
         currentKeyCombo =
             new KeyCombo(
                 KeyComboModel.NO_MODIFIER,
                 KeyComboModel.NO_PREFIX_KEY_CODE,
-                KeyEvent.KEYCODE_ENTER,
+                event.getKeyCode(),
                 /* triggerModifierUsed= */ false);
         performKeyboardAction(TalkBackPhysicalKeyboardShortcut.PERFORM_CLICK, EVENT_ID_UNTRACKED);
         performedCombo = true;
         hasPartialMatch = false;
         return true;
       }
+    }
+    if (triggerModifierNotPressedWhenNeeded) {
       // A custom keymap's shortcuts without the SandFly key work anywhere, as do the NVDA, JAWS and
       // Orca keymaps'. Modifier keys pressed on their own always go to the app.
       if ((isCustomKeymap() || arrowsNavigate()) && !KeyEvent.isModifierKey(event.getKeyCode())) {

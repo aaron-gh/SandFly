@@ -54,6 +54,26 @@ class ReviewTextTest {
   }
 
   @Test
+  fun anIconBesideTwoLinesTakesOnlyTheFirst() {
+    val text =
+      ReviewText(
+        listOf(
+          item("Icon", 0, 0, 60, 60),
+          item("Title", 80, 5, 400, 30),
+          item("Summary", 80, 30, 400, 55),
+        )
+      )
+    assertEquals(listOf("Icon Title", "Summary"), text.lines.map { it.text })
+  }
+
+  @Test
+  fun spacesAroundAnItemAreDropped() {
+    val cursor = ReviewCursor(ReviewText(listOf(item(" end ", 0, 0, 50, 10))))
+    cursor.moveToLineEnd()
+    assertEquals('d', cursor.currentCharacter)
+  }
+
+  @Test
   fun lineBreaksSplitAnItem() {
     val text = ReviewText(listOf(item("First\nSecond", 0, 0, 100, 100)))
     assertEquals(listOf("First", "Second"), text.lines.map { it.text })

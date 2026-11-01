@@ -24,6 +24,7 @@ import android.graphics.Region
 import android.os.Build
 import android.os.Handler
 import android.os.Looper
+import android.os.SystemClock
 import android.view.Display
 import android.view.KeyEvent
 import android.view.ViewConfiguration
@@ -77,8 +78,14 @@ class ScreenReview(
   /** Whether [cursor] reviews recognized text rather than the window's items. */
   private var recognized = false
 
+  /** The app whose window was active when its text was recognized. */
+  private var recognizedPackage: CharSequence? = null
+
   /** Whether the window changed since [cursor]'s text was read from it. */
   private var stale = true
+
+  /** When [cursor]'s text was read from the window, in uptime milliseconds. */
+  private var readAt = 0L
 
   /**
    * Whether the next review command starts where SandFly focus is: after focus moves while the
@@ -101,8 +108,13 @@ class ScreenReview(
         if (!tapping && !isCursorOn) startAtFocus = true
       AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED -> {
         stale = true
-        // Recognized text belongs to the screen it was recognized on.
-        if (recognized && event.packageName?.toString() != service.packageName) {
+        // Recognized text belongs to the app it was recognized in, which a keyboard or a dialog
+        // of its own doesn't leave.
+        if (
+          recognized &&
+            event.packageName != service.packageName &&
+            service.rootInActiveWindow?.packageName?.let { it != recognizedPackage } == true
+        ) {
           closeRecognizedText(announce = true)
         }
       }
@@ -213,6 +225,10 @@ class ScreenReview(
 
   fun shutdown() {
     handler.removeCallbacksAndMessages(null)
+    if (tapping) {
+      pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.passThroughMode(LOCK_PASS_THROUGH, null))
+      tapping = false
+    }
     recognizer?.close()
     recognizer = null
   }
@@ -263,7 +279,13 @@ class ScreenReview(
     if (recognized && old != null) {
       return old
     }
-    if (old != null && !stale && !startAtFocus) {
+    // A window that keeps changing, such as one with a timer, is read again at most every
+    // REREAD_MS, so that held arrow keys don't read it on every repeat.
+    if (
+      old != null &&
+        !startAtFocus &&
+        (!stale || SystemClock.uptimeMillis() - readAt < REREAD_MS)
+    ) {
       return old
     }
     val text = ReviewText(screenItems())
@@ -287,12 +309,13 @@ class ScreenReview(
     }
     cursor = fresh
     stale = false
+    readAt = SystemClock.uptimeMillis()
     startAtFocus = false
     return fresh
   }
 
   private fun placeAtFocus(cursor: ReviewCursor) {
-    val focus = focusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ true) ?: return
+    val focus = focus() ?: return
     if (cursor.moveToSource { it is AccessibilityNodeInfoCompat && (it == focus || hasAncestor(it, focus)) }) {
       return
     }
@@ -303,14 +326,14 @@ class ScreenReview(
   private fun hasAncestor(node: AccessibilityNodeInfoCompat, ancestor: AccessibilityNodeInfoCompat) =
     AccessibilityNodeInfoUtils.hasAncestor(node, ancestor)
 
+  /** SandFly focus, or input focus when there is none. */
+  private fun focus(): AccessibilityNodeInfoCompat? =
+    focusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ false) ?: focusMonitor.inputFocus
+
   /** The window to review: the one with SandFly focus, or the active one. */
-  private fun reviewRoot(): AccessibilityNodeInfoCompat? {
-    val focus = focusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ true)
-    focus?.window?.root?.let {
-      return it
-    }
-    return service.rootInActiveWindow?.let { AccessibilityNodeInfoCompat.wrap(it) }
-  }
+  private fun reviewRoot(): AccessibilityNodeInfoCompat? =
+    AccessibilityNodeInfoUtils.getRoot(focus())
+      ?: service.rootInActiveWindow?.let { AccessibilityNodeInfoCompat.wrap(it) }
 
   /** Text of the window's items that show on screen. */
   private fun screenItems(): List<ReviewItem> {
@@ -333,8 +356,8 @@ class ScreenReview(
           ?: node.hintText?.toString()?.takeIf { it.isNotBlank() && node.isEditable }
       if (label != null) {
         items.add(ReviewItem(label, bounds.left, bounds.top, bounds.right, bounds.bottom, node))
-        // A described control, such as a button, is read as its description.
-        if (text == null && (node.isClickable || node.isFocusable)) continue
+        // A described item is read as its description, as SandFly speaks it, not its contents.
+        if (text == null && !node.contentDescription.isNullOrBlank()) continue
       }
       if (depth >= MAX_DEPTH) continue
       // Children go on the stack last first, so they come off in order.
@@ -359,7 +382,6 @@ class ScreenReview(
       return
     }
     if (recognized) closeRecognizedText(announce = false)
-    setCursorOn(false, announce = false)
     pipeline.returnFeedback(
       EVENT_ID_UNTRACKED,
       Feedback.focus(
@@ -422,7 +444,11 @@ class ScreenReview(
 
   /** Taps or holds the screen at ([x], [y]), passing the touch through to the app. */
   private fun tap(x: Int, y: Int, long: Boolean) {
-    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) return
+    // Touches pass through to the app only from Android 11.
+    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) {
+      speak(service.getString(R.string.review_cannot_click))
+      return
+    }
     val path = Path().apply { moveTo(x.toFloat(), y.toFloat()) }
     val duration =
       if (long) ViewConfiguration.getLongPressTimeout() * 2L
@@ -469,8 +495,6 @@ class ScreenReview(
     isCursorOn = on
     if (on) {
       startAtFocus = true
-    } else {
-      takenKeys.clear()
     }
     if (announce) {
       speak(service.getString(if (on) R.string.review_cursor_on else R.string.review_cursor_off))
@@ -576,6 +600,7 @@ class ScreenReview(
         }
         cursor = ReviewCursor(text)
         recognized = true
+        recognizedPackage = service.rootInActiveWindow?.packageName
         isCursorOn = true
         speak(cursor!!, Spoken.LINE)
       }
@@ -585,7 +610,8 @@ class ScreenReview(
         if (e is MlKitException && e.errorCode == MlKitException.UNAVAILABLE) {
           ModuleInstall.getClient(service)
             .installModules(ModuleInstallRequest.newBuilder().addApi(recognizer).build())
-          speak(service.getString(R.string.recognize_screen_text_downloading))
+            .addOnSuccessListener { speak(service.getString(R.string.recognize_screen_text_downloading)) }
+            .addOnFailureListener { speak(service.getString(R.string.recognize_screen_text_failed)) }
         } else {
           speak(service.getString(R.string.recognize_screen_text_failed))
         }
@@ -599,6 +625,7 @@ class ScreenReview(
     const val MAX_DEPTH = 60
     const val PASS_THROUGH_WAIT_MS = 350L
     const val SCREENSHOT_RETRY_MS = 400L
+    const val REREAD_MS = 500L
 
     // Kept in speech history, so that the last line read can be copied.
     val SPEAK_OPTIONS: SpeakOptions =
