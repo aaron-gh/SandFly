@@ -348,6 +348,16 @@ public class GestureController {
                   .setWrap(true));
     } else if (OpenAppActions.isAction(action)) {
       result = OpenAppActions.open(service, action);
+    } else if (AccessibilityShortcutActions.isAction(action)) {
+      AccessibilityShortcutActions.run(
+          service,
+          action,
+          ran -> {
+            if (!ran) {
+              pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.sound(R.raw.complete));
+            }
+            return kotlin.Unit.INSTANCE;
+          });
     } else if (Commands.keyboardActionOf(service, action) != null) {
       KeyComboManager keyComboManager = service.getKeyComboManager();
       result =
