@@ -249,6 +249,12 @@ public class TextEventFilter {
             LogUtils.d(TAG, "Drop TYPE_VIEW_TEXT_CHANGED event: Voice recognition is active.");
             return;
           }
+          // Removing and replacing text is spoken even with echo off, so a keyboard that speaks
+          // its own typing would be heard twice when it replaces a word or punctuation.
+          if (isTypingSpokenByKeyboard(event.getEventTime())) {
+            LogUtils.d(TAG, "Drop text change: the keyboard says what is typed with it.");
+            return;
+          }
         }
         // Text input selection change
       }
@@ -353,14 +359,18 @@ public class TextEventFilter {
     if (echoSuppressor != null && echoSuppressor.test(textEventTime)) {
       return PREF_ECHO_NONE;
     }
-    TypingInput input = getTypingInput(textEventTime);
-    if (input == TypingInput.ON_SCREEN_KEYBOARD
-        && onScreenKeyboardEchoSuppressor != null
-        && onScreenKeyboardEchoSuppressor.getAsBoolean()) {
+    if (isTypingSpokenByKeyboard(textEventTime)) {
       return PREF_ECHO_NONE;
     }
-    Integer echo = keyboardEcho.get(input);
+    Integer echo = keyboardEcho.get(getTypingInput(textEventTime));
     return echo == null ? PREF_ECHO_CHARACTERS_AND_WORDS : echo;
+  }
+
+  /** Whether a text change at this time was typed on an on-screen keyboard that speaks it. */
+  private boolean isTypingSpokenByKeyboard(long textEventTime) {
+    return onScreenKeyboardEchoSuppressor != null
+        && getTypingInput(textEventTime) == TypingInput.ON_SCREEN_KEYBOARD
+        && onScreenKeyboardEchoSuppressor.getAsBoolean();
   }
 
   public void setEchoSuppressor(@Nullable LongPredicate echoSuppressor) {
@@ -368,8 +378,8 @@ public class TextEventFilter {
   }
 
   /**
-   * Leaves out echo of on-screen keyboard typing while [suppressor] is true. Physical keyboard and
-   * braille typing are still echoed.
+   * Leaves out all speech of on-screen keyboard text changes, removals and replacements included,
+   * while [suppressor] is true. Physical keyboard and braille typing are still echoed.
    */
   public void setOnScreenKeyboardEchoSuppressor(@Nullable BooleanSupplier suppressor) {
     this.onScreenKeyboardEchoSuppressor = suppressor;

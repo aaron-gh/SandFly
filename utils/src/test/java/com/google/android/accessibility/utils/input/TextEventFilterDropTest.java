@@ -48,13 +48,39 @@ public class TextEventFilterDropTest {
   }
 
   private void change(long time, String initialWord) {
+    change(time, TextEventInterpretation.TEXT_ADD, initialWord);
+  }
+
+  private void change(long time, int kind, String initialWord) {
     AccessibilityEvent event = AccessibilityEvent.obtain(AccessibilityEvent.TYPE_VIEW_TEXT_CHANGED);
     event.setEventTime(time);
     event.setPackageName("app");
-    TextEventInterpretation interpretation =
-        new TextEventInterpretation(TextEventInterpretation.TEXT_ADD);
+    TextEventInterpretation interpretation = new TextEventInterpretation(kind);
     interpretation.setInitialWord(initialWord);
     filter.filterAndSendInterpretation(event, /* eventId= */ null, interpretation);
+  }
+
+  @Test
+  public void removalIsDroppedWhileTheKeyboardSpeaksTyping() {
+    filter.setOnScreenKeyboardEchoSuppressor(() -> true);
+    change(START, TextEventInterpretation.TEXT_REMOVE, "");
+    change(START + 500, TextEventInterpretation.TEXT_REPLACE, "");
+    assertEquals(0, sent.size());
+  }
+
+  @Test
+  public void removalIsSentWhileTheKeyboardDoesNotSpeakTyping() {
+    filter.setOnScreenKeyboardEchoSuppressor(() -> false);
+    change(START, TextEventInterpretation.TEXT_REMOVE, "");
+    assertEquals(1, sent.size());
+  }
+
+  @Test
+  public void physicalKeyboardRemovalIsSentWhileTheKeyboardSpeaksTyping() {
+    filter.setOnScreenKeyboardEchoSuppressor(() -> true);
+    filter.setLastKeyEventTime(START - 10);
+    change(START, TextEventInterpretation.TEXT_REMOVE, "");
+    assertEquals(1, sent.size());
   }
 
   @Test
