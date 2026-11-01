@@ -630,6 +630,8 @@ public class GestureController {
       result =
           pipeline.returnFeedback(
               eventId, Feedback.systemAction(GLOBAL_ACTION_ACCESSIBILITY_BUTTON_CHOOSER));
+    } else if (action.equals(service.getString(R.string.shortcut_value_toggle_magnification))) {
+      result = MagnificationToggle.toggle(service);
     } else if (action.equals(service.getString(R.string.shortcut_value_pause_or_resume_feedback))) {
       pipeline.returnFeedback(eventId, Feedback.speech(Feedback.Speech.Action.PAUSE_OR_RESUME));
     } else if (action.equals(service.getString(R.string.shortcut_value_start_selection_mode))) {
