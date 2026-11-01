@@ -360,6 +360,7 @@ object NotificationReader {
     val context = context ?: return false
     if (stateReader == null) return false
     if (notification.category == Notification.CATEGORY_CALL) return false
+    if (NotificationInfo.isSamsungPlaceholder(packageName, notification)) return true
     val touchBehavior = settings(context).touch
     if (touching && touchBehavior == TouchBehavior.SKIP) {
       noteUnread(packageName, notification, Outcome.TOUCHING)

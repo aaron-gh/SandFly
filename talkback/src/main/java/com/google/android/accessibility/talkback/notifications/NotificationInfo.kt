@@ -117,6 +117,19 @@ data class NotificationInfo(
     /** The extra One UI puts on its ongoing activity notifications, shown in the Now Bar. */
     private const val SAMSUNG_ONGOING_ACTIVITY_STYLE = "android.ongoingActivityNoti.style"
 
+    /**
+     * Whether [notification] is One UI's "N more notifications", which System UI posts in the
+     * shade in place of silent notifications.
+     */
+    @JvmStatic
+    fun isSamsungPlaceholder(packageName: String, notification: Notification): Boolean =
+      packageName == "com.android.systemui" &&
+        (notification.channelId == SAMSUNG_INSIGNIFICANT ||
+          notification.extras?.containsKey(SAMSUNG_INSIGNIFICANT_COUNT) == true)
+
+    private const val SAMSUNG_INSIGNIFICANT = "INSIGNIFICANT"
+    private const val SAMSUNG_INSIGNIFICANT_COUNT = "insignificant_child_count"
+
     /** Inbox lines, or the messages of a conversation as "sender: text". */
     private fun lines(extras: Bundle): List<String> {
       val messages = messages(extras)
