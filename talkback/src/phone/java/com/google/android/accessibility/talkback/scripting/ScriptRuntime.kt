@@ -226,6 +226,9 @@ class ScriptRuntime(
       apiCheck(commandList().items().any { (it as JSONObject).optString("id") == value }) {
         "Unknown command $value. sf.commands.list() gives the commands."
       }
+      // Commands that do what other calls need a permission for need that permission too.
+      (if (value.startsWith(SANDFLY_PRO_COMMAND_PREFIX)) SYSTEM else COMMAND_PERMISSIONS[value])
+        ?.let(::requirePermission)
       promise { settle -> manager.feedback.runCommand(value) { settle(true, it) } }
     }
     on("screen.inputFocused", SCREEN) { nodes.snapshot(manager.inputFocusedNode()) }
@@ -485,6 +488,8 @@ class ScriptRuntime(
     val to = args.optString("to").ifEmpty { null }
     return promise { settle ->
       manager.feedback.onMain {
+        // Turning scripts off meanwhile shut the translator down; don't make a new one.
+        if (manager.isClosed) return@onMain settle(false, "Scripts are off")
         manager.translator.translateTo(text, from, to) { result ->
           when (result) {
             is Translator.Result.Done ->
@@ -659,6 +664,30 @@ class ScriptRuntime(
     private const val MAX_RECOGNITIONS = 2
     private const val MAX_FILE_BYTES = 1024L * 1024
     private val REFUSED_COMMANDS = setOf("TOGGLE_SCRIPTS")
+
+    /** SandFly Pro's commands, which use the person's monthly allowance. */
+    private const val SANDFLY_PRO_COMMAND_PREFIX = "SFPRO_"
+
+    /**
+     * Commands that pause or silence SandFly, act on the system or the microphone, or use the
+     * clipboard: they need the permission of the calls that do the same.
+     */
+    private val COMMAND_PERMISSIONS: Map<String, ScriptPermission> =
+      listOf(
+          "PAUSE_BACKTALK", "PAUSE_FEEDBACK", "TOGGLE_VOICE_FEEDBACK", "TOGGLE_NOTIFICATION_SPEECH",
+          "LOCK_SCREEN", "POWER_MENU", "BACK", "HOME", "OVERVIEW", "ALL_APPS", "NOTIFICATIONS",
+          "SYSTEM_NOTIFICATIONS", "QUICK_SETTINGS", "SYSTEM_QUICK_SETTINGS", "ACCESSIBILITY_BUTTON",
+          "ACCESSIBILITY_BUTTON_CHOOSER", "INCREASE_VOLUME", "DECREASE_VOLUME",
+          "INCREASE_MEDIA_VOLUME", "DECREASE_MEDIA_VOLUME", "DICTATE", "VOICE_INPUT",
+          "VOICE_COMMANDS", "MEDIA_CONTROL_OR_VOICE_INPUT", "TOGGLE_MAGNIFICATION",
+          "TOGGLE_BRAILLE_DISPLAY", "ENABLE_PASS_THROUGH", "AI_AGENT",
+        )
+        .associateWith { SYSTEM } +
+        listOf(
+            "COPY", "CUT", "PASTE", "ADD_TO_CLIPBOARD", "COPY_LAST_SPOKEN_UTTERANCE",
+            "COPY_SCREEN_TREE", "CLIPBOARD_HISTORY",
+          )
+          .associateWith { CLIPBOARD }
 
     private val SOUNDS: Map<String, Int> =
       mapOf(

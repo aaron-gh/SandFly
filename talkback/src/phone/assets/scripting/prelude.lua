@@ -1473,7 +1473,8 @@ local function wait_for(query, timeout, interval)
     error('sf.screen.waitFor waits, so call it from an event handler, a command, a timer or sf.run', 2)
   end
   local started = call('clock')
-  timeout = tonumber(timeout) or 5000
+  -- At most a minute: each look searches the app's whole screen.
+  timeout = math.min(tonumber(timeout) or 5000, 60000)
   interval = math.max(100, tonumber(interval) or 250)
   while true do
     local found = node(find_nodes(query, 1)[1])

@@ -4556,6 +4556,12 @@ public class TalkBackService extends AccessibilityServiceCompat
     }
 
     @Override
+    public boolean isPassThroughActive() {
+      return pipeline != null
+          && pipeline.getActorState().getPassThroughModeState().isPassThroughModeActive();
+    }
+
+    @Override
     public @Nullable String lastSpeech() {
       FeedbackItem last = speechController == null ? null : speechController.getLastUtterance();
       if (last == null) {
