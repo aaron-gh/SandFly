@@ -97,4 +97,10 @@
         <item quantity="one">Group, %d item</item>
         <item quantity="other">Group, %d items</item>
     </plurals>
+    <!-- Name of a command that makes the app shown get keys pressed without the SandFly key, such as the arrow keys, or stop getting them. SandFly is the app name. [CHAR LIMIT=60] -->
+    <string name="keycombo_menu_toggle_pass_keys_to_app">Pass keys without the SandFly key to this app</string>
+    <!-- Spoken when keys pressed without the SandFly key go to the app shown from now on. %1$s is the app name. [CHAR LIMIT=NONE] -->
+    <string name="pass_keys_to_app_on">Passing keys to %1$s</string>
+    <!-- Spoken when keys pressed without the SandFly key go to SandFly again in the app shown. %1$s is the app name. [CHAR LIMIT=NONE] -->
+    <string name="pass_keys_to_app_off">Not passing keys to %1$s</string>
 </resources>

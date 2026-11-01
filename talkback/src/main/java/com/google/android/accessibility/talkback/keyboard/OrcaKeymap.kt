@@ -66,6 +66,13 @@ object OrcaKeymap : KeymapDefaults() {
         sandFly(SHIFT, KeyEvent.KEYCODE_SLASH),
       )
 
+      // Keys for the app: Orca's bypass mode for the next key, and every key without the SandFly key.
+      put(
+        R.string.keycombo_shortcut_global_toggle_key_combo_pass_through_once,
+        sandFly(NONE, KeyEvent.KEYCODE_DEL),
+      )
+      put(R.string.keycombo_shortcut_toggle_pass_keys_to_app, sandFly(SHIFT, KeyEvent.KEYCODE_A))
+
       put(R.string.keycombo_shortcut_other_toggle_browse_mode_extra, sandFly(NONE, KeyEvent.KEYCODE_A))
       put(R.string.keycombo_shortcut_other_show_heading_list, browse(ALT or SHIFT, KeyEvent.KEYCODE_H))
       put(R.string.keycombo_shortcut_other_show_link_list, browse(ALT or SHIFT, KeyEvent.KEYCODE_K))

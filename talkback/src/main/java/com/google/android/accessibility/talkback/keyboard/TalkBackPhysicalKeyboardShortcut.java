@@ -721,7 +721,11 @@ public enum TalkBackPhysicalKeyboardShortcut {
   RECOGNIZE_SCREEN_TEXT(
       /* KEYBOARD_SHORTCUT_RECOGNIZE_SCREEN_TEXT */ 1032,
       R.string.keycombo_shortcut_recognize_screen_text,
-      R.string.keycombo_menu_recognize_screen_text);
+      R.string.keycombo_menu_recognize_screen_text),
+  TOGGLE_PASS_KEYS_TO_APP(
+      /* KEYBOARD_SHORTCUT_TOGGLE_PASS_KEYS_TO_APP */ 1033,
+      R.string.keycombo_shortcut_toggle_pass_keys_to_app,
+      R.string.keycombo_menu_toggle_pass_keys_to_app);
 
   private static Map<String, TalkBackPhysicalKeyboardShortcut> keyShortcutMap;
   private static Map<Integer, TalkBackPhysicalKeyboardShortcut> ordinalShortcutMap;

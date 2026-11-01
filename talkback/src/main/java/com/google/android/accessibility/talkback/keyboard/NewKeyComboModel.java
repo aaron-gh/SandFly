@@ -1611,6 +1611,7 @@ public class NewKeyComboModel implements KeyComboModel {
     addKeyCombo(context.getString(R.string.keycombo_shortcut_review_cursor_on));
     addKeyCombo(context.getString(R.string.keycombo_shortcut_review_cursor_off));
     addKeyCombo(context.getString(R.string.keycombo_shortcut_recognize_screen_text));
+    addKeyCombo(context.getString(R.string.keycombo_shortcut_toggle_pass_keys_to_app));
   }
 
   /**

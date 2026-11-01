@@ -63,6 +63,13 @@ object JawsKeymap : KeymapDefaults() {
         sandFly(SHIFT, KeyEvent.KEYCODE_SLASH),
       )
 
+      // Keys for the app: JAWS's pass key through, and every key without the SandFly key.
+      put(
+        R.string.keycombo_shortcut_global_toggle_key_combo_pass_through_once,
+        sandFly(NONE, KeyEvent.KEYCODE_3),
+      )
+      put(R.string.keycombo_shortcut_toggle_pass_keys_to_app, sandFly(SHIFT, KeyEvent.KEYCODE_Z))
+
       // The virtual cursor is browse mode.
       put(R.string.keycombo_shortcut_other_toggle_browse_mode_extra, sandFly(NONE, KeyEvent.KEYCODE_Z))
       put(R.string.keycombo_shortcut_other_show_control_list, sandFly(NONE, KeyEvent.KEYCODE_F5))

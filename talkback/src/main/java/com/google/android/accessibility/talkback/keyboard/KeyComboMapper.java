@@ -671,6 +671,13 @@ public class KeyComboMapper {
           selectorController.changeVoiceProfile(eventId, /* isNext= */ false);
       case NEXT_VOICE_PROFILE -> selectorController.changeVoiceProfile(eventId, /* isNext= */ true);
       case REFRESH -> result = pullToRefresh.refresh(eventId);
+      case TOGGLE_PASS_KEYS_TO_APP -> {
+        KeyComboManager keyComboManager =
+            TalkBackService.getInstance() == null
+                ? null
+                : TalkBackService.getInstance().getKeyComboManager();
+        result = keyComboManager != null && keyComboManager.togglePassKeysToApp();
+      }
       case TOGGLE_BROWSE_MODE_EXTRA -> {
         KeyComboManager keyComboManager =
             TalkBackService.getInstance() == null

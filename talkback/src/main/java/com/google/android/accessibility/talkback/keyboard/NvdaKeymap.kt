@@ -92,6 +92,13 @@ object NvdaKeymap : KeymapDefaults() {
         sandFly(SHIFT, KeyEvent.KEYCODE_SLASH),
       )
 
+      // Keys for the app: NVDA's pass next key through, and every key without the SandFly key.
+      put(
+        R.string.keycombo_shortcut_global_toggle_key_combo_pass_through_once,
+        sandFly(NONE, KeyEvent.KEYCODE_F2),
+      )
+      put(R.string.keycombo_shortcut_toggle_pass_keys_to_app, sandFly(SHIFT, KeyEvent.KEYCODE_SPACE))
+
       // Browse mode.
       put(R.string.keycombo_shortcut_other_toggle_browse_mode_extra, sandFly(NONE, KeyEvent.KEYCODE_SPACE))
       put(R.string.keycombo_shortcut_other_show_link_list, sandFly(NONE, KeyEvent.KEYCODE_F7))
