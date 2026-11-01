@@ -236,9 +236,25 @@ class LocalModelManager private constructor(context: Context) {
     worker.execute {
       if (activeModel() == model) releaseLlm()
       store.delete(model)
+      // After the model closes, so that it doesn't write its caches again.
+      closer.execute { LiteRtCaches.deleteUnused(appContext.cacheDir, store.installedModels()) }
       // With no model left there is nothing to answer, so go back to the cloud.
       if (!isReady()) OnDeviceAiSettings.setOnDevice(prefs, false)
       setState(State.Idle)
+    }
+  }
+
+  /**
+   * Sets the processor that models run on, and deletes the caches made for the previous one once the
+   * running model closes.
+   */
+  fun setProcessor(processor: OnDeviceAiSettings.Processor) {
+    val previous = OnDeviceAiSettings.processor(prefs)
+    OnDeviceAiSettings.setProcessor(prefs, processor)
+    if (processor == previous) return
+    worker.execute {
+      releaseLlm()
+      closer.execute { LiteRtCaches.deleteAll(appContext.cacheDir) }
     }
   }
 

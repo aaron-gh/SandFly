@@ -34,5 +34,6 @@ public class TalkBackUpdateHelper {
   public void checkUpdate() {
     BatteryOptimizationCheck.check(service, sharedPreferences);
     PhoneticLetterMode.migrate(sharedPreferences, service.getResources());
+    CacheCleanup.INSTANCE.run(service, sharedPreferences);
   }
 }
