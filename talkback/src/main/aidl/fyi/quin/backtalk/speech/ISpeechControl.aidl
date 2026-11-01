@@ -29,4 +29,10 @@ oneway interface ISpeechControl {
 
     /** Stops what other apps are saying. */
     void stop();
+
+    /**
+     * From the current keyboard only: whether it says what is typed with it, so that SandFly
+     * doesn't echo that typing too. Forgotten when the user switches keyboards.
+     */
+    void setTypingSpoken(boolean spoken);
 }

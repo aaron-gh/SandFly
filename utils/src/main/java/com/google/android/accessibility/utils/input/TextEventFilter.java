@@ -36,6 +36,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.EnumMap;
+import java.util.function.BooleanSupplier;
 import java.util.function.LongPredicate;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
@@ -103,6 +104,9 @@ public class TextEventFilter {
    * so that it isn't echoed again.
    */
   private @Nullable LongPredicate echoSuppressor;
+
+  /** Tells whether the current on-screen keyboard says what is typed with it. */
+  private @Nullable BooleanSupplier onScreenKeyboardEchoSuppressor;
 
   ///////////////////////////////////////////////////////////////////////////////////
   // Member variables
@@ -349,12 +353,26 @@ public class TextEventFilter {
     if (echoSuppressor != null && echoSuppressor.test(textEventTime)) {
       return PREF_ECHO_NONE;
     }
-    Integer echo = keyboardEcho.get(getTypingInput(textEventTime));
+    TypingInput input = getTypingInput(textEventTime);
+    if (input == TypingInput.ON_SCREEN_KEYBOARD
+        && onScreenKeyboardEchoSuppressor != null
+        && onScreenKeyboardEchoSuppressor.getAsBoolean()) {
+      return PREF_ECHO_NONE;
+    }
+    Integer echo = keyboardEcho.get(input);
     return echo == null ? PREF_ECHO_CHARACTERS_AND_WORDS : echo;
   }
 
   public void setEchoSuppressor(@Nullable LongPredicate echoSuppressor) {
     this.echoSuppressor = echoSuppressor;
+  }
+
+  /**
+   * Leaves out echo of on-screen keyboard typing while [suppressor] is true. Physical keyboard and
+   * braille typing are still echoed.
+   */
+  public void setOnScreenKeyboardEchoSuppressor(@Nullable BooleanSupplier suppressor) {
+    this.onScreenKeyboardEchoSuppressor = suppressor;
   }
 
   public boolean shouldEchoAddedText(long eventTime) {

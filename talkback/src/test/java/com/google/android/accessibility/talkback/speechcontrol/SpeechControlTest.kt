@@ -19,6 +19,7 @@ package com.google.android.accessibility.talkback.speechcontrol
 import android.app.KeyguardManager
 import android.content.Context
 import android.content.SharedPreferences
+import android.provider.Settings
 import com.google.android.accessibility.talkback.Feedback
 import com.google.android.accessibility.talkback.Pipeline
 import com.google.android.accessibility.utils.SharedPreferencesUtils
@@ -54,6 +55,69 @@ class SpeechControlTest {
   @After
   fun tearDown() {
     SpeechControl.detach()
+    KeyboardSpeech.clear()
+  }
+
+  private fun useKeyboard(packageName: String) {
+    Settings.Secure.putString(
+      context.contentResolver,
+      Settings.Secure.DEFAULT_INPUT_METHOD,
+      "$packageName/.KeyboardService",
+    )
+  }
+
+  @Test
+  fun speak_saysTheCurrentKeyboardsSpeechWithoutBeingAllowed() {
+    useKeyboard(APP)
+    assertTrue(SpeechControl.speak(listOf(APP), "Hello", interrupt = true))
+    assertEquals(1, given.size)
+  }
+
+  @Test
+  fun speak_saysTheCurrentKeyboardsSpeechWhileTheDeviceIsLocked() {
+    useKeyboard(APP)
+    shadowOf(context.getSystemService(KeyguardManager::class.java)).setKeyguardLocked(true)
+    assertTrue(SpeechControl.speak(listOf(APP), "Hello", interrupt = false))
+    assertEquals(1, given.size)
+  }
+
+  @Test
+  fun speak_doesNotRateLimitTheCurrentKeyboard() {
+    useKeyboard(APP)
+    repeat(20) { assertTrue(SpeechControl.speak(listOf(APP), "a", interrupt = true)) }
+    assertEquals(20, given.size)
+  }
+
+  @Test
+  fun speak_treatsAnAppThatIsNotTheCurrentKeyboardAsAnyOther() {
+    useKeyboard("com.example.keyboard")
+    assertFalse(SpeechControl.speak(listOf(APP), "Hello", interrupt = false))
+    assertEquals(0, given.size)
+  }
+
+  @Test
+  fun setTypingSpoken_suppressesEchoOnlyForTheCurrentKeyboard() {
+    useKeyboard(APP)
+    assertTrue(SpeechControl.setTypingSpoken(listOf(APP), true))
+    assertTrue(KeyboardSpeech.isTypingSpoken(context))
+
+    useKeyboard("com.example.keyboard")
+    assertFalse(KeyboardSpeech.isTypingSpoken(context))
+  }
+
+  @Test
+  fun setTypingSpoken_isIgnoredFromAnAppThatIsNotTheCurrentKeyboard() {
+    useKeyboard("com.example.keyboard")
+    assertFalse(SpeechControl.setTypingSpoken(listOf(APP), true))
+    assertFalse(KeyboardSpeech.isTypingSpoken(context))
+  }
+
+  @Test
+  fun setTypingSpoken_canBeTurnedOff() {
+    useKeyboard(APP)
+    SpeechControl.setTypingSpoken(listOf(APP), true)
+    SpeechControl.setTypingSpoken(listOf(APP), false)
+    assertFalse(KeyboardSpeech.isTypingSpoken(context))
   }
 
   @Test

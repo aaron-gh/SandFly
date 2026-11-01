@@ -257,6 +257,7 @@ import com.google.android.accessibility.talkback.speech.SpeechCacheController;
 import com.google.android.accessibility.talkback.speech.VoiceProfileNames;
 import com.google.android.accessibility.talkback.speechbubble.DisableTalkBackDialog;
 import com.google.android.accessibility.talkback.migration.AppIdHandOver;
+import com.google.android.accessibility.talkback.speechcontrol.KeyboardSpeech;
 import com.google.android.accessibility.talkback.speechcontrol.SpeechControl;
 import com.google.android.accessibility.talkback.status.StatusReader;
 import com.google.android.accessibility.talkback.stucktouch.StuckTouchController;
@@ -2778,6 +2779,8 @@ public class TalkBackService extends AccessibilityServiceCompat
         new TextEventFilter(this, textCursorTracker, textEventHistory);
     // The handwriting keyboard echoes what it types itself, as its keyboard echo setting says.
     textEventFilter.setEchoSuppressor(eventTime -> HandwritingKeyboardHost.isTyping());
+    // So does a keyboard that speaks through SandFly and says so.
+    textEventFilter.setOnScreenKeyboardEchoSuppressor(() -> KeyboardSpeech.isTypingSpoken(this));
     textEventFilter.setBrailleInputReader(
         () -> {
           BrailleImeForTalkBack brailleIme = getBrailleImeForTalkBack();
