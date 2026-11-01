@@ -9,6 +9,7 @@ dependencies {
     implementation project(':utils')
     implementation project(':brailleime')
     phoneImplementation project(':braillecommon')
+    phoneImplementation project(':brailletranslate')
     implementation project(':brailleinterfaces')
     implementation project(':brailledisplay')
     implementation project(':materialflags')

@@ -24,17 +24,12 @@ import com.google.android.accessibility.talkback.ActorState
 import com.google.android.accessibility.talkback.Feedback
 import com.google.android.accessibility.talkback.Pipeline
 import com.google.android.accessibility.talkback.R
-import com.google.android.accessibility.talkback.gesture.OpenAppActions
+import com.google.android.accessibility.talkback.applauncher.AppNameSearch
 import com.google.android.accessibility.talkback.handwriting.HandwritingRecognizer.Result
 import com.google.android.accessibility.utils.FeatureSupport
 import com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED
-import com.google.android.accessibility.utils.output.FeedbackItem
 import com.google.android.accessibility.utils.output.SpeechController
-import com.google.android.accessibility.utils.output.SpeechController.SpeakOptions
 import com.google.android.libraries.accessibility.utils.log.LogUtils
-import java.util.concurrent.LinkedBlockingQueue
-import java.util.concurrent.ThreadPoolExecutor
-import java.util.concurrent.TimeUnit
 import kotlin.math.abs
 import kotlin.math.hypot
 
@@ -74,24 +69,7 @@ class HandwritingAppLauncher(
   private var lastX = 0f
   private var lastY = 0f
 
-  /** The apps on the home screen, read when the surface shows. */
-  private var apps: List<OpenAppActions.App> = emptyList()
-  /**
-   * Whether [apps] is loaded. Loading reads every launcher app's label, which takes up to seconds
-   * and is done off the main thread; letters written before then wait in [waitingLetters].
-   */
-  private var appsLoaded = false
-  private var waitingLetters: List<String>? = null
-  private var loads = 0
-  private val loader =
-    ThreadPoolExecutor(0, 1, 30, TimeUnit.SECONDS, LinkedBlockingQueue<Runnable>()) {
-      Thread(it, "handwriting-apps").apply { isDaemon = true }
-    }
-
-  /** The letters written so far, the apps that match them, and the one SandFly said last. */
-  private var letters = ""
-  private var matches: List<OpenAppActions.App> = emptyList()
-  private var index = 0
+  private val search = AppNameSearch(service, pipeline, R.string.handwriting_app_prompt, ::dismiss)
 
   val isShowing: Boolean
     get() = overlay.isShowing
@@ -113,10 +91,7 @@ class HandwritingAppLauncher(
     if (!overlay.show()) return
     strokes.clear()
     maxPointers = 0
-    letters = ""
-    matches = emptyList()
-    index = 0
-    loadApps()
+    search.start()
     pipeline.returnFeedback(
       EVENT_ID_UNTRACKED,
       Feedback.speech(
@@ -150,42 +125,15 @@ class HandwritingAppLauncher(
     handler.removeCallbacks(recognizeNow)
     handler.removeCallbacks(closeIdle)
     strokes.clear()
-    loads++
-    appsLoaded = false
-    waitingLetters = null
-    apps = emptyList()
-    matches = emptyList()
+    search.stop()
     overlay.remove()
   }
 
   fun shutdown() {
     dismiss()
+    search.shutdown()
     recognizer?.close()
     recognizer = null
-    loader.shutdown()
-  }
-
-  private fun loadApps() {
-    val load = ++loads
-    appsLoaded = false
-    loader.execute {
-      val list =
-        try {
-          OpenAppActions.apps(service)
-        } catch (e: Throwable) {
-          LogUtils.e(TAG, "Could not list the apps: %s", e)
-          emptyList()
-        }
-      handler.post {
-        if (load != loads) return@post
-        apps = list
-        appsLoaded = true
-        waitingLetters?.let {
-          waitingLetters = null
-          addLetters(it)
-        }
-      }
-    }
   }
 
   private fun onTouch(event: MotionEvent) {
@@ -256,13 +204,13 @@ class HandwritingAppLauncher(
     }
     if (fingers != 2 || !isShowing) return
     if (isTap(dx, dy)) {
-      if (duration < TAP_MS) sayApp()
+      if (duration < TAP_MS) search.sayApp()
       return
     }
     when {
       abs(dx) > abs(dy) -> if (dx < 0) deleteLetter()
-      dy > 0 -> openApp()
-      else -> nextApp()
+      dy > 0 -> search.open()
+      else -> search.nextApp()
     }
   }
 
@@ -275,16 +223,17 @@ class HandwritingAppLauncher(
       then?.invoke()
       return
     }
-    recognizer.recognize(written, overlay.width, overlay.height, letters) { result ->
+    recognizer.recognize(written, overlay.width, overlay.height, search.letters) { result ->
       if (!isShowing) return@recognize
       when (result) {
-        is Result.Candidates -> addLetters(result.texts)
+        is Result.Candidates -> search.whenLoaded { addLetters(result.texts) }
         Result.NotDownloaded,
         Result.Downloading,
         Result.UnsupportedLanguage -> notReady(result)
         Result.Failed -> speak(service.getString(R.string.handwriting_not_recognized))
       }
-      if (isShowing) then?.invoke()
+      // After the letters, which wait for the apps to load.
+      if (isShowing) then?.let { search.whenLoaded(it) }
     }
   }
 
@@ -293,71 +242,25 @@ class HandwritingAppLauncher(
    * one app's does, opens it.
    */
   private fun addLetters(candidates: List<String>) {
-    if (!appsLoaded) {
-      waitingLetters = candidates
-      return
-    }
+    if (!isShowing) return
     // Only letters and digits count, so a stray dot or space doesn't add to the letters.
     val readings = candidates.map { it.filter(Char::isLetterOrDigit) }.filter { it.isNotEmpty() }.distinct()
     if (readings.isEmpty()) {
       speak(service.getString(R.string.handwriting_not_recognized))
       return
     }
-    for (reading in readings) {
-      val found = matching(apps, letters + reading)
-      if (found.isEmpty()) continue
-      LogUtils.d(TAG, "Wrote %s, candidates %s, %d apps", reading, candidates, found.size)
-      letters += reading
-      matches = found
-      index = 0
-      if (found.size == 1) openApp() else sayApp()
-      return
-    }
-    speak(service.getString(R.string.handwriting_no_app, (letters + readings.first()).uppercase()))
-  }
-
-  private fun nextApp() {
-    if (matches.size < 2) {
-      speak(service.getString(R.string.handwriting_no_alternatives))
-      return
-    }
-    index = (index + 1) % matches.size
-    sayApp()
+    LogUtils.d(TAG, "Wrote candidates %s", candidates)
+    search.find(readings.map { search.letters + it })
   }
 
   private fun deleteLetter() {
+    val letters = search.letters
     if (letters.isEmpty()) {
       speak(service.getString(R.string.handwriting_empty))
       return
     }
-    val deleted = letters.last().toString()
-    letters = letters.dropLast(1)
-    matches = if (letters.isEmpty()) emptyList() else matching(apps, letters)
-    index = 0
-    speak(service.getString(R.string.template_text_removed, deleted.uppercase()))
-  }
-
-  /** Says the app that a swipe down opens, or that there is none yet. */
-  private fun sayApp() {
-    val app = matches.getOrNull(index)
-    when {
-      app != null -> speak(service.getString(R.string.handwriting_alternative, app.label, index + 1, matches.size))
-      letters.isEmpty() -> speak(service.getString(R.string.handwriting_app_prompt))
-      else -> speak(service.getString(R.string.handwriting_no_app, letters.uppercase()))
-    }
-  }
-
-  private fun openApp() {
-    val app = matches.getOrNull(index)
-    if (app == null) {
-      sayApp()
-      return
-    }
-    dismiss()
-    // The app's window says its name when it opens.
-    if (!OpenAppActions.open(service, app.value)) {
-      speak(service.getString(R.string.handwriting_app_not_opened, app.label))
-    }
+    search.shorten(letters.dropLast(1))
+    speak(service.getString(R.string.template_text_removed, letters.last().toString().uppercase()))
   }
 
   /**
@@ -386,12 +289,9 @@ class HandwritingAppLauncher(
     )
   }
 
-  private fun speakOptions(queueMode: Int): SpeakOptions =
-    SpeakOptions.create()
-      .setQueueMode(queueMode)
-      .setFlags(FeedbackItem.FLAG_NO_HISTORY or FeedbackItem.FLAG_FORCE_FEEDBACK_ALL)
+  private fun speakOptions(queueMode: Int) = AppNameSearch.speakOptions(queueMode)
 
-  internal companion object {
+  private companion object {
     private const val TAG = "HandwritingAppLauncher"
     /** The surface closes after this long without a touch. */
     private const val IDLE_CLOSE_MS = 10_000L
@@ -399,25 +299,5 @@ class HandwritingAppLauncher(
     private const val TAP_MS = 300L
     private const val MAX_STROKES = 40
     private const val MAX_POINTS = 2_000
-
-    /**
-     * The apps whose name starts with [letters], and then those with a later word that does, such as
-     * Google Maps for "ma". Case, spaces and accents don't count.
-     */
-    fun matching(apps: List<OpenAppActions.App>, letters: String): List<OpenAppActions.App> {
-      val key = normalize(letters)
-      if (key.isEmpty()) return emptyList()
-      val (starts, others) = apps.partition { normalize(it.label).startsWith(key) }
-      val words =
-        others.filter { app ->
-          app.label.split(' ', '-', '_', '.').drop(1).any { normalize(it).startsWith(key) }
-        }
-      return starts + words
-    }
-
-    private fun normalize(text: String): String =
-      java.text.Normalizer.normalize(text, java.text.Normalizer.Form.NFD)
-        .filter { it.isLetterOrDigit() }
-        .lowercase()
   }
 }

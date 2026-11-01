@@ -1226,6 +1226,7 @@
         <item>@string/shortcut_lock_screen</item>
         <item>@string/shortcut_power_menu</item>
         <item>@string/shortcut_write_app_name</item>
+        <item>@string/shortcut_braille_app_name</item>
     </string-array>
 
     <!-- Shortcut preference value of system actions -->
@@ -1240,6 +1241,7 @@
         <item>@string/shortcut_value_lock_screen</item>
         <item>@string/shortcut_value_power_menu</item>
         <item>@string/shortcut_value_write_app_name</item>
+        <item>@string/shortcut_value_braille_app_name</item>
     </string-array>
 
     <!-- Shortcut preference of reading control -->
@@ -1392,6 +1394,7 @@
   <string name="shortcut_value_select_next_setting">SELECT_NEXT_SETTING</string>
   <string name="shortcut_value_write_reading_control">WRITE_READING_CONTROL</string>
   <string name="shortcut_value_write_app_name">WRITE_APP_NAME</string>
+  <string name="shortcut_value_braille_app_name">BRAILLE_APP_NAME</string>
   <string name="pref_handwriting_keyboard_key" translatable="false">pref_handwriting_keyboard</string>
   <!-- How long handwriting waits after a stroke for the next one, in milliseconds. -->
   <string name="pref_handwriting_wait_key" translatable="false">pref_handwriting_wait</string>

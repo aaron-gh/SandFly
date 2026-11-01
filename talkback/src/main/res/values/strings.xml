@@ -1945,6 +1945,14 @@
     <string name="handwriting_no_app">No app starts with <xliff:g id="letters" example="WHA">%1$s</xliff:g></string>
     <!-- Spoken when the app chosen by handwriting couldn't be opened, such as when it was just uninstalled. [CHAR LIMIT=NONE] -->
     <string name="handwriting_app_not_opened"><xliff:g id="app" example="WhatsApp">%1$s</xliff:g> could not be opened</string>
+    <!-- Gesture action: the user types the start of an app's name in braille on the screen, as on the braille keyboard, and the app opens. [CHAR LIMIT=NONE] -->
+    <string name="shortcut_braille_app_name">Type an app\'s name in braille to open it</string>
+    <!-- Spoken when the screen is ready for braille typing that opens an app. [CHAR LIMIT=NONE] -->
+    <string name="braille_app_prompt">Type an app\'s name in braille</string>
+    <!-- Spoken when the braille surface for opening an app closes without opening one. [CHAR LIMIT=NONE] -->
+    <string name="braille_app_closed">Braille app search closed</string>
+    <!-- Spoken when typing an app's name in braille isn't possible, such as before Android 11 or on a watch. [CHAR LIMIT=NONE] -->
+    <string name="braille_app_not_available">Typing an app\'s name in braille is not available</string>
     <!-- Spoken when handwriting couldn't be recognized as a letter. [CHAR LIMIT=NONE] -->
     <string name="handwriting_not_recognized">Not recognized</string>
     <!-- Spoken the first time handwriting is used, while its model downloads. [CHAR LIMIT=NONE] -->

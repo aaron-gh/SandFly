@@ -36,7 +36,8 @@ import com.google.android.libraries.accessibility.utils.log.LogUtils
 
 /**
  * A writing surface on the whole screen, over everything. While it shows, touches on the screen go
- * straight to [onTouch] instead of through touch exploration, as the circle menu takes touches.
+ * straight to [onTouch], or to the view given to [show], instead of through touch exploration, as
+ * the circle menu takes touches.
  */
 class HandwritingOverlay(
   private val service: AccessibilityService,
@@ -44,7 +45,7 @@ class HandwritingOverlay(
   private val actorState: ActorState,
   /** The window's title. */
   private val title: String,
-  private val onTouch: (MotionEvent) -> Unit,
+  private val onTouch: (MotionEvent) -> Unit = {},
 ) {
   private val windowManager = service.getSystemService(WindowManager::class.java)
   private var view: View? = null
@@ -59,17 +60,18 @@ class HandwritingOverlay(
   val height: Float
     get() = view?.height?.toFloat() ?: 0f
 
-  /** Shows the surface, and returns false when it can't. */
+  /** Shows the surface, or [content] instead when given, and returns false when it can't. */
   @SuppressLint("ClickableViewAccessibility")
-  fun show(): Boolean {
+  fun show(content: View? = null): Boolean {
     if (isShowing) return true
     val surface =
-      object : View(service as Context) {
-        override fun onTouchEvent(event: MotionEvent): Boolean {
-          onTouch(event)
-          return true
+      content
+        ?: object : View(service as Context) {
+          override fun onTouchEvent(event: MotionEvent): Boolean {
+            onTouch(event)
+            return true
+          }
         }
-      }
     surface.importantForAccessibility = View.IMPORTANT_FOR_ACCESSIBILITY_NO
     val params =
       WindowManager.LayoutParams().apply {
