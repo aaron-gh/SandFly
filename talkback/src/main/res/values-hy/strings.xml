@@ -1811,4 +1811,28 @@
   <string name="keycombo_delete_keymap_title">Ջնջե՞լ <xliff:g id="keymap_name" example="Custom">%1$s</xliff:g></string>
   <string name="keycombo_delete_keymap_button">Ջնջել</string>
   <string name="keycombo_assign_dialog_custom_keymap_instruction">Սեղմեք նոր դյուրանցման ստեղները։</string>
+    <string name="title_pref_sandfly_wallpaper">Օգտագործել SandFly-ը որպես պաստառ</string>
+    <string name="summary_pref_sandfly_wallpaper_set">SandFly-ը պաստառն է</string>
+    <string name="title_pref_wallpaper_image">Պաստառի պատկեր</string>
+    <string name="sandfly_wallpaper_description">Ապահովում է SandFly-ի անընդհատ աշխատանքը այն հեռախոսներում, որոնց մարտկոցի տնտեսման ռեժիմը կանգնեցնում է ֆոնային հավելվածները։</string>
+    <string name="wallpaper_image_set">Պաստառի պատկերը սահմանվեց</string>
+    <string name="wallpaper_image_failed">Հնարավոր չէ օգտագործել այս պատկերը</string>
+    <string name="title_pref_swipe_hold_time">Պահելու ժամանակը սահեցումից հետո</string>
+    <string name="shortcut_touch_click_action">Ակտիվացնել հպումով</string>
+    <string name="title_pref_shortcut_up_and_hold">Վերև և պահել</string>
+    <string name="title_pref_shortcut_down_and_hold">Ներքև և պահել</string>
+    <string name="title_pref_shortcut_left_and_hold">Ձախ և պահել</string>
+    <string name="title_pref_shortcut_right_and_hold">Աջ և պահել</string>
+    <string name="title_pref_shortcut_up_and_down_and_hold">Վերև ու ներքև և պահել</string>
+    <string name="title_pref_shortcut_down_and_up_and_hold">Ներքև ու վերև և պահել</string>
+    <string name="title_pref_shortcut_left_and_right_and_hold">Ձախ և աջ և պահել</string>
+    <string name="title_pref_shortcut_right_and_left_and_hold">Սահեցնել աջ, ապա ձախ և պահել</string>
+    <string name="title_pref_shortcut_up_and_left_and_hold">Վերև և ձախ և պահել</string>
+    <string name="title_pref_shortcut_up_and_right_and_hold">Վերև և աջ և պահել</string>
+    <string name="title_pref_shortcut_down_and_left_and_hold">Ներքև և ձախ և պահել</string>
+    <string name="title_pref_shortcut_down_and_right_and_hold">Ներքև և աջ և պահել</string>
+    <string name="title_pref_shortcut_left_and_up_and_hold">Ձախ և վերև և պահել</string>
+    <string name="title_pref_shortcut_left_and_down_and_hold">Ձախ և ներքև և պահել</string>
+    <string name="title_pref_shortcut_right_and_up_and_hold">Աջ և վերև և պահել</string>
+    <string name="title_pref_shortcut_right_and_down_and_hold">Աջ և ներքև և պահել</string>
 </resources>
