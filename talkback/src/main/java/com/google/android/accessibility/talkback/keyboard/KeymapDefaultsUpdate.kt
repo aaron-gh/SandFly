@@ -27,7 +27,7 @@ import com.google.android.accessibility.utils.SharedPreferencesUtils
  */
 object KeymapDefaultsUpdate {
   /** The version of the defaults of the NVDA, JAWS and Orca keymaps. */
-  private const val VERSION = 2
+  private const val VERSION = 3
 
   private const val NONE = KeyComboModel.NO_MODIFIER
   private const val SHIFT = KeyEvent.META_SHIFT_ON
@@ -136,22 +136,44 @@ object KeymapDefaultsUpdate {
    * Forgets the shortcuts saved under [persisterPrefix] for [keymap] pressed with [sandFlyKey] that
    * are still an earlier version's defaults, so that this version's defaults take their place.
    */
+  /**
+   * The version 2 defaults of the commands whose defaults changed in version 3, when Escape became
+   * Back and the show desktop keys Home: none.
+   */
+  private val VERSION_2: Map<Keymap, Map<Int, KeyCombo>> by lazy {
+    val systemKeys =
+      mapOf(
+        R.string.keycombo_shortcut_global_back to KeyCombo(),
+        R.string.keycombo_shortcut_global_home to KeyCombo(),
+      )
+    mapOf(Keymap.NVDA to systemKeys, Keymap.JAWS to systemKeys, Keymap.ORCA to systemKeys)
+  }
+
+  /** Each version's earlier defaults of the commands it changed. */
+  private val CHANGES: List<Pair<Int, Map<Keymap, Map<Int, KeyCombo>>>> by lazy {
+    listOf(2 to VERSION_1, 3 to VERSION_2)
+  }
+
   @JvmStatic
   fun update(context: Context, keymap: Keymap, sandFlyKey: SandFlyKey, persisterPrefix: String) {
     val prefs = SharedPreferencesUtils.getSharedPreferences(context)
     val versionKey = persisterPrefix + "_defaults_version"
-    if (prefs.getInt(versionKey, 1) >= VERSION) return
+    val saved = prefs.getInt(versionKey, 1)
+    if (saved >= VERSION) return
     val persister = KeyComboPersister(context, persisterPrefix)
-    VERSION_1[keymap]?.forEach { (keyRes, oldDefault) ->
-      val key = context.getString(keyRes)
-      if (!persister.contains(key)) return@forEach
-      val saved = persister.getKeyCombo(key)
-      // A default unassigned because another took its keys is forgotten too.
-      if (
-        saved == SandFlyKey.adapt(oldDefault, keymap.nativeKey, sandFlyKey) ||
-          saved.keyComboCode == KeyComboModel.KEY_COMBO_CODE_UNASSIGNED.toLong()
-      ) {
-        persister.remove(key)
+    for ((version, earlier) in CHANGES) {
+      if (saved >= version) continue
+      earlier[keymap]?.forEach { (keyRes, oldDefault) ->
+        val key = context.getString(keyRes)
+        if (!persister.contains(key)) return@forEach
+        val keyCombo = persister.getKeyCombo(key)
+        // A default unassigned because another took its keys is forgotten too.
+        if (
+          keyCombo == SandFlyKey.adapt(oldDefault, keymap.nativeKey, sandFlyKey) ||
+            keyCombo.keyComboCode == KeyComboModel.KEY_COMBO_CODE_UNASSIGNED.toLong()
+        ) {
+          persister.remove(key)
+        }
       }
     }
     prefs.edit().putInt(versionKey, VERSION).apply()

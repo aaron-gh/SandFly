@@ -245,4 +245,46 @@ class KeymapTest {
     val command = Commands.find(context, Commands.KEYBOARD_PREFIX + urlKey)!!
     assertEquals(urlKey, CommandBindings.keyboardKey(context, model, command))
   }
+
+  @Test
+  fun computerKeymapsGoBackWithEscapeAndHomeWithShowDesktop() {
+    fun plain(modifiers: Int, keyCode: Int) = KeyCombo(modifiers, 0, keyCode, false)
+    val home = mapOf(
+      Keymap.NVDA to KeyEvent.META_META_ON,
+      Keymap.JAWS to KeyEvent.META_META_ON,
+      Keymap.ORCA to (KeyEvent.META_CTRL_ON or KeyEvent.META_ALT_ON),
+    )
+    for ((keymap, modifiers) in home) {
+      val model = NewKeyComboModel(context, keymap)
+      assertEquals(
+        plain(0, KeyEvent.KEYCODE_ESCAPE),
+        model.getKeyComboForKey(context.getString(R.string.keycombo_shortcut_global_back)),
+      )
+      assertEquals(
+        plain(modifiers, KeyEvent.KEYCODE_D),
+        model.getKeyComboForKey(context.getString(R.string.keycombo_shortcut_global_home)),
+      )
+    }
+  }
+
+  @Test
+  fun version2SavedSystemKeysGiveWayToNewOnes() {
+    val prefs = SharedPreferencesUtils.getSharedPreferences(context)
+    prefs.edit().putInt(Keymap.JAWS.persisterPrefix + "_defaults_version", 2).commit()
+    val persister = KeyComboPersister(context, Keymap.JAWS.persisterPrefix)
+    val back = context.getString(R.string.keycombo_shortcut_global_back)
+    persister.saveKeyCombo(back, KeyCombo())
+    val model = NewKeyComboModel(context, Keymap.JAWS)
+    assertEquals(KeyCombo(0, 0, KeyEvent.KEYCODE_ESCAPE, false), model.getKeyComboForKey(back))
+  }
+
+  @Test
+  fun showDesktopWithMetaAsSandFlyKeyIsSandFlyKeyPlusD() {
+    choose(Keymap.NVDA, SandFlyKey.META)
+    assertEquals(
+      KeyCombo(0, 0, KeyEvent.KEYCODE_D, true),
+      NewKeyComboModel(context, Keymap.NVDA)
+        .getKeyComboForKey(context.getString(R.string.keycombo_shortcut_global_home)),
+    )
+  }
 }

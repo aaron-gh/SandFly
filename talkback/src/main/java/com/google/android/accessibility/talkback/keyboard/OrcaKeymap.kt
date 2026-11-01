@@ -29,6 +29,8 @@ object OrcaKeymap : KeymapDefaults() {
   override val defaults: Map<Int, KeyCombo> =
     buildMap {
       putDesktopKeys()
+      // Ctrl + Alt + D shows the desktop in GNOME.
+      putSystemKeys(CTRL or ALT)
       put(R.string.keycombo_shortcut_other_custom_actions, sandFly(NONE, KeyEvent.KEYCODE_MENU))
       put(R.string.keycombo_shortcut_global_refocus_current_node, sandFly(NONE, KeyEvent.KEYCODE_ENTER))
 

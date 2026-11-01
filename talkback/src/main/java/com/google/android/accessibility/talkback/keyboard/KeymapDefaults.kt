@@ -131,6 +131,15 @@ abstract class KeymapDefaults {
       put(R.string.keycombo_shortcut_navigate_previous_focusable, plain(SHIFT, KeyEvent.KEYCODE_TAB))
     }
 
+    /**
+     * Puts Back on Escape and Home on [homeModifiers] + D, the computer's show desktop keys, without
+     * the SandFly key, as [putDesktopKeys] does.
+     */
+    fun MutableMap<Int, KeyCombo>.putSystemKeys(homeModifiers: Int) {
+      put(R.string.keycombo_shortcut_global_back, plain(NONE, KeyEvent.KEYCODE_ESCAPE))
+      put(R.string.keycombo_shortcut_global_home, plain(homeModifiers, KeyEvent.KEYCODE_D))
+    }
+
     /** Puts the number keys 1 to 6 for headings at those levels, in browse mode. */
     fun MutableMap<Int, KeyCombo>.headingLevels() {
       browsePair(R.string.keycombo_shortcut_navigate_next_heading_1, R.string.keycombo_shortcut_navigate_previous_heading_1, KeyEvent.KEYCODE_1)
