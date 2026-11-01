@@ -289,6 +289,14 @@ public class TextEventFilter {
                 TAG, "Drop TYPE_VIEW_TEXT_SELECTION_CHANGED event: Voice recognition is active.");
             return;
           }
+          // A keyboard that speaks its own typing also says where it moved the cursor.
+          if (event.getEventType() == AccessibilityEvent.TYPE_VIEW_TEXT_SELECTION_CHANGED
+              && textEventInterpreted != null
+              && isCursorMove(textEventInterpreted.getEvent())
+              && isTypingSpokenByKeyboard(event.getEventTime())) {
+            LogUtils.d(TAG, "Drop cursor move: the keyboard says what it does.");
+            return;
+          }
         }
       }
       default -> {
@@ -364,6 +372,19 @@ public class TextEventFilter {
     }
     Integer echo = keyboardEcho.get(getTypingInput(textEventTime));
     return echo == null ? PREF_ECHO_CHARACTERS_AND_WORDS : echo;
+  }
+
+  /** Cursor moves and selection changes the app reports, not SandFly's own edit actions. */
+  private static boolean isCursorMove(int interpretedEvent) {
+    return switch (interpretedEvent) {
+      case TextEventInterpretation.SELECTION_MOVE_CURSOR_NO_SELECTION,
+          TextEventInterpretation.SELECTION_MOVE_CURSOR_WITH_SELECTION,
+          TextEventInterpretation.SELECTION_MOVE_CURSOR_SELECTION_CLEARED,
+          TextEventInterpretation.SELECTION_MOVE_CURSOR_TO_BEGINNING,
+          TextEventInterpretation.SELECTION_MOVE_CURSOR_TO_END ->
+          true;
+      default -> false;
+    };
   }
 
   /** Whether a text change at this time was typed on an on-screen keyboard that speaks it. */

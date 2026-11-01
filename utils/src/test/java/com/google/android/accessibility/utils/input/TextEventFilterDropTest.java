@@ -17,8 +17,11 @@
 package com.google.android.accessibility.utils.input;
 
 import static org.junit.Assert.assertEquals;
+import static org.robolectric.Shadows.shadowOf;
 
 import android.view.accessibility.AccessibilityEvent;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.EditText;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.Before;
@@ -58,6 +61,60 @@ public class TextEventFilterDropTest {
     TextEventInterpretation interpretation = new TextEventInterpretation(kind);
     interpretation.setInitialWord(initialWord);
     filter.filterAndSendInterpretation(event, /* eventId= */ null, interpretation);
+  }
+
+  /** A selection change in a focused field, which SandFly speaks unless it drops it. */
+  private void selection(long time, int eventType, int kind) {
+    AccessibilityEvent event = AccessibilityEvent.obtain(eventType);
+    event.setEventTime(time);
+    event.setPackageName("app");
+    AccessibilityNodeInfo field =
+        new EditText(RuntimeEnvironment.getApplication()).createAccessibilityNodeInfo();
+    field.setFocused(true);
+    field.setEditable(true);
+    shadowOf(event).setSourceNode(field);
+    filter.filterAndSendInterpretation(
+        event, /* eventId= */ null, new TextEventInterpretation(kind));
+  }
+
+  @Test
+  public void cursorMoveIsDroppedWhileTheKeyboardSpeaksTyping() {
+    filter.setOnScreenKeyboardEchoSuppressor(() -> true);
+    selection(
+        START,
+        AccessibilityEvent.TYPE_VIEW_TEXT_SELECTION_CHANGED,
+        TextEventInterpretation.SELECTION_MOVE_CURSOR_NO_SELECTION);
+    assertEquals(0, sent.size());
+  }
+
+  @Test
+  public void cursorMoveIsSentWhileTheKeyboardDoesNotSpeakTyping() {
+    filter.setOnScreenKeyboardEchoSuppressor(() -> false);
+    selection(
+        START,
+        AccessibilityEvent.TYPE_VIEW_TEXT_SELECTION_CHANGED,
+        TextEventInterpretation.SELECTION_MOVE_CURSOR_NO_SELECTION);
+    assertEquals(1, sent.size());
+  }
+
+  @Test
+  public void traversalIsSentWhileTheKeyboardSpeaksTyping() {
+    filter.setOnScreenKeyboardEchoSuppressor(() -> true);
+    selection(
+        START,
+        AccessibilityEvent.TYPE_VIEW_TEXT_TRAVERSED_AT_MOVEMENT_GRANULARITY,
+        TextEventInterpretation.SELECTION_TEXT_TRAVERSAL);
+    assertEquals(1, sent.size());
+  }
+
+  @Test
+  public void selectAllBySandFlyIsSentWhileTheKeyboardSpeaksTyping() {
+    filter.setOnScreenKeyboardEchoSuppressor(() -> true);
+    selection(
+        START,
+        AccessibilityEvent.TYPE_VIEW_TEXT_SELECTION_CHANGED,
+        TextEventInterpretation.SELECTION_SELECT_ALL);
+    assertEquals(1, sent.size());
   }
 
   @Test
