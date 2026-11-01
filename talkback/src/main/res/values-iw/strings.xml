@@ -1837,4 +1837,27 @@
   <string name="shortcut_toggle_magnification">הפעלה או השבתה של ההגדלה</string>
   <string name="shortcut_submit_text">שליחת הטקסט</string>
   <string name="shortcut_title_accessibility_shortcuts">קיצורי דרך לנגישות</string>
+    <string name="title_pref_gesture_profiles">פרופילי תנועות</string>
+    <string name="title_gesture_profile">פרופיל תנועות</string>
+    <string name="gesture_profile_default">ברירת מחדל</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, בשימוש</string>
+    <string name="no_gesture_profiles">אין פרופילי תנועות</string>
+    <string name="shortcut_gesture_profiles">בחירת פרופיל תנועות</string>
+    <string name="shortcut_previous_gesture_profile">פרופיל התנועות הקודם</string>
+    <string name="shortcut_next_gesture_profile">פרופיל התנועות הבא</string>
+    <string name="shortcut_use_gesture_profile">שימוש בפרופיל התנועות <xliff:g id="name" example="Driving">%1$s</xliff:g></string>
+    <string name="title_pref_gesture_profile_in_use">פרופיל התנועות שבשימוש</string>
+    <string name="title_pref_add_gesture_profile">הוספת פרופיל תנועות</string>
+    <string name="gesture_profile_new_name">פרופיל תנועות <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken">כבר יש פרופיל תנועות בשם <xliff:g id="name" example="Driving">%1$s</xliff:g></string>
+    <string name="title_pref_delete_gesture_profile">מחיקת פרופיל תנועות</string>
+    <string name="title_pref_tap_nav_bar_buttons">הקשה להפעלת הלחצנים בסרגל הניווט</string>
+    <string name="title_pref_reset_accessibility_audio">איפוס אודיו הנגישות אחרי שיחות</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">נדרש Shizuku. בלי Shizuku, מריצים את הפקודה הזו עם adb כשהדיבור מושמע באפרכסת אחרי שיחה: %1$s</string>
+    <string name="arrow_key_nav_unavailable">אין ניווט במקשי החיצים במפת המקשים הזו</string>
+    <string name="shortcut_braille_app_name">הקלדת שם של אפליקציה בברייל כדי לפתוח אותה</string>
+    <string name="braille_app_prompt">יש להקליד שם של אפליקציה בברייל</string>
+    <string name="braille_app_closed">החיפוש של אפליקציות בברייל נסגר</string>
+    <string name="braille_app_not_available">אי אפשר להקליד שם של אפליקציה בברייל</string>
+    <string name="title_clipboard_history_other_apps">הוספת העתקות מאפליקציות אחרות</string>
 </resources>

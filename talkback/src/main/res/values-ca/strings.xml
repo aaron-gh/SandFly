@@ -1837,4 +1837,27 @@
   <string name="shortcut_toggle_magnification">Activa o desactiva l\'ampliació</string>
   <string name="shortcut_submit_text">Envia el text</string>
   <string name="shortcut_title_accessibility_shortcuts">Dreceres d\'accessibilitat</string>
+    <string name="title_pref_gesture_profiles">Perfils de gestos</string>
+    <string name="title_gesture_profile">Perfil de gestos</string>
+    <string name="gesture_profile_default">Predeterminat</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, en ús</string>
+    <string name="no_gesture_profiles">No hi ha cap perfil de gestos</string>
+    <string name="shortcut_gesture_profiles">Tria el perfil de gestos</string>
+    <string name="shortcut_previous_gesture_profile">Perfil de gestos anterior</string>
+    <string name="shortcut_next_gesture_profile">Perfil de gestos següent</string>
+    <string name="shortcut_use_gesture_profile">Utilitza el perfil de gestos <xliff:g id="name" example="Driving">%1$s</xliff:g></string>
+    <string name="title_pref_gesture_profile_in_use">Perfil de gestos en ús</string>
+    <string name="title_pref_add_gesture_profile">Afegeix un perfil de gestos</string>
+    <string name="gesture_profile_new_name">Perfil de gestos <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken">Ja hi ha un perfil de gestos que es diu <xliff:g id="name" example="Driving">%1$s</xliff:g></string>
+    <string name="title_pref_delete_gesture_profile">Suprimeix el perfil de gestos</string>
+    <string name="title_pref_tap_nav_bar_buttons">Toca per activar els botons de la barra de navegació</string>
+    <string name="title_pref_reset_accessibility_audio">Restableix l\'àudio d\'accessibilitat després de les trucades</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">Requereix Shizuku. Sense Shizuku, executa aquesta ordre amb adb quan la veu soni per l\'auricular del telèfon després d\'una trucada: %1$s</string>
+    <string name="arrow_key_nav_unavailable">No hi ha navegació amb les tecles de fletxa en aquest mapa de teclat</string>
+    <string name="shortcut_braille_app_name">Escriu el nom d\'una aplicació en braille per obrir-la</string>
+    <string name="braille_app_prompt">Escriu el nom d\'una aplicació en braille</string>
+    <string name="braille_app_closed">Cerca d\'aplicacions en braille tancada</string>
+    <string name="braille_app_not_available">No es pot escriure el nom d\'una aplicació en braille</string>
+    <string name="title_clipboard_history_other_apps">Afegeix les còpies d\'altres aplicacions</string>
 </resources>

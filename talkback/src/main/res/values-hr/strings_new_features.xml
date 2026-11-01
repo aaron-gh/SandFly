@@ -1,3 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="new_features_0_3_0_welcome">SandFly 0.3.0 donosi nove značajke opisane na sljedećim stranicama. Da biste ih kasnije ponovno pročitali, otvorite Nove značajke u SandFlyu pri vrhu postavki SandFlya.</string>
+    <string name="new_features_0_3_0_keymaps_title">Konfiguracije prečaca</string>
+    <string name="new_features_0_3_0_keymaps">Uz fizičku tipkovnicu odaberite konfiguraciju prečaca SandFly, VoiceOver, NVDA, JAWS ili Orca u odjeljku Postavke, Tipkovni prečaci, Odaberite konfiguraciju prečaca te tipku SandFlya koju ona koristi. U konfiguracijama NVDA, JAWS i Orca tipke sa strelicama i Tab pomiču fokus bez tipke SandFlya, a dostupni su navigacija objektima, pregledni kursor i naredba Prepoznaj tekst na zaslonu. Prečac za pregledavanje može se promijeniti, i na dvostruki pritisak tipke SandFlya.</string>
+    <string name="new_features_0_3_0_gestures_title">Profili pokreta</string>
+    <string name="new_features_0_3_0_gestures">Profili pokreta u odjeljku Postavke, Pokreti dodjeljuju pokretima druge naredbe, a Sljedeći profil pokreta prebacuje između njih. Pokreti u aplikacijama i Tipkovni prečaci u aplikacijama dodjeljuju pokretima i tipkama druge naredbe u odabranim aplikacijama. Svaki prelazak jednim prstom ima i inačicu s prelaskom i zadržavanjem: prijeđite prstom, zadržite ga na mjestu, a zatim ga podignite.</string>
+    <string name="new_features_0_3_0_speech_title">Rječnik govora i povijest međuspremnika</string>
+    <string name="new_features_0_3_0_speech">Rječnik govora u odjeljku Postavke, Govor izgovara odabrani tekst drukčije u cijelom govoru. Dopusti drugim aplikacijama izgovaranje omogućuje aplikacijama i trenutačnoj tipkovnici da govore putem SandFlya. Povijest međuspremnika čuva ono što kopirate, a uz Shizuku i ono što kopirate u drugim aplikacijama.</string>
+    <string name="new_features_0_3_0_braille_title">Brajica</string>
+    <string name="new_features_0_3_0_braille">Upiši naziv aplikacije brajicom da je otvoriš naredba je koja zaslon pretvara u brajičnu tipkovnicu za početak naziva aplikacije. Japanski je novi jezik brajice. Brajična tipkovnica skrivena je dok je povezana fizička tipkovnica.</string>
+    <string name="new_features_0_3_0_commands_title">Nove naredbe i postavke</string>
+    <string name="new_features_0_3_0_commands">Slanje teksta, Uključivanje ili isključivanje povećavanja, Premotaj unatrag, Premotaj naprijed i Prečaci pristupačnosti mogu se dodijeliti u odjeljku Postavke, Naredbe. Upotreba SandFlya kao pozadine, u odjeljku Postavke, Prikaz, održava SandFly pokrenutim na telefonima čije ga uštede baterije zaustavljaju. Vraćanje zvuka pristupačnosti nakon poziva, u odjeljku Postavke, Audio izlaz, nakon poziva premješta govor sa slušalice.</string>
+    <string name="new_features_0_3_0_scripts_title">Skripte</string>
+    <string name="new_features_0_3_0_scripts">Skripte sada mogu dodirivati zaslon, pritiskati tipke, pokretati naredbe SandFlya, otvarati prozore, prepoznavati tekst i govoriti tijekom poziva. Prije instaliranja skripte SandFly prikazuje odakle je skripta i je li je SandFly potpisao.</string>
+    <string name="new_features_0_3_0_pro_title">Prepoznavanje zaslona</string>
+    <string name="new_features_0_3_0_pro">SandFly Pro prepoznaje gumbe, tekst i druge elemente koje aplikacije i igre iscrtavaju, a da ih ne izlažu, te ih prikazuje kao stavke do kojih se možete pomaknuti prelaskom prsta i koje možete dvaput dodirnuti. Odaberite Prepoznavanje zaslona u izborniku SandFlya ili uključite prepoznavanje zaslona za aplikaciju u izborniku SandFlya ili u odjeljku Postavke, SandFly Pro, Automatsko prepoznavanje zaslona.</string>
 </resources>

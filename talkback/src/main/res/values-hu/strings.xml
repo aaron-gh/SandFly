@@ -1833,4 +1833,27 @@
   <string name="shortcut_toggle_magnification">A nagyítás be- vagy kikapcsolása</string>
   <string name="shortcut_submit_text">Szöveg beküldése</string>
   <string name="shortcut_title_accessibility_shortcuts">Kisegítő lehetőségek gyorsparancsai</string>
+    <string name="title_pref_gesture_profiles">Kézmozdulat-profilok</string>
+    <string name="title_gesture_profile">Kézmozdulat-profil</string>
+    <string name="gesture_profile_default">Alapértelmezett</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, használatban</string>
+    <string name="no_gesture_profiles">Nincsenek kézmozdulat-profilok</string>
+    <string name="shortcut_gesture_profiles">Kézmozdulat-profil kiválasztása</string>
+    <string name="shortcut_previous_gesture_profile">Előző kézmozdulat-profil</string>
+    <string name="shortcut_next_gesture_profile">Következő kézmozdulat-profil</string>
+    <string name="shortcut_use_gesture_profile"><xliff:g id="name" example="Driving">%1$s</xliff:g> kézmozdulat-profil használata</string>
+    <string name="title_pref_gesture_profile_in_use">Használt kézmozdulat-profil</string>
+    <string name="title_pref_add_gesture_profile">Kézmozdulat-profil hozzáadása</string>
+    <string name="gesture_profile_new_name"><xliff:g id="number" example="2">%1$d</xliff:g>. kézmozdulat-profil</string>
+    <string name="gesture_profile_name_taken">Már van <xliff:g id="name" example="Driving">%1$s</xliff:g> nevű kézmozdulat-profil</string>
+    <string name="title_pref_delete_gesture_profile">Kézmozdulat-profil törlése</string>
+    <string name="title_pref_tap_nav_bar_buttons">A navigációs sáv gombjainak aktiválása koppintással</string>
+    <string name="title_pref_reset_accessibility_audio">Kisegítő lehetőségek hangjának visszaállítása hívások után</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">Shizuku szükséges hozzá. Shizuku nélkül futtasd ezt a parancsot adb-vel, ha hívás után a beszéd a fülhangszórón szól: %1$s</string>
+    <string name="arrow_key_nav_unavailable">Ebben a billentyűzetkiosztásban nincs nyílbillentyűs navigálás</string>
+    <string name="shortcut_braille_app_name">Írd be egy alkalmazás nevét Braille-írással a megnyitásához</string>
+    <string name="braille_app_prompt">Írd be egy alkalmazás nevét Braille-írással</string>
+    <string name="braille_app_closed">Braille-alkalmazáskeresés bezárva</string>
+    <string name="braille_app_not_available">Alkalmazásnév beírása Braille-írással nem érhető el</string>
+    <string name="title_clipboard_history_other_apps">Más alkalmazásokból származó másolatok hozzáadása</string>
 </resources>

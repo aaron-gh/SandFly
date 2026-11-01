@@ -1838,4 +1838,27 @@
   <string name="shortcut_toggle_magnification">Ieslēgt vai izslēgt palielinājumu</string>
   <string name="shortcut_submit_text">Iesniegt tekstu</string>
   <string name="shortcut_title_accessibility_shortcuts">Pieejamības saīsnes</string>
+    <string name="title_pref_gesture_profiles">Žestu profili</string>
+    <string name="title_gesture_profile">Žestu profils</string>
+    <string name="gesture_profile_default">Noklusējums</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, tiek lietots</string>
+    <string name="no_gesture_profiles">Nav žestu profilu</string>
+    <string name="shortcut_gesture_profiles">Izvēlēties žestu profilu</string>
+    <string name="shortcut_previous_gesture_profile">Iepriekšējais žestu profils</string>
+    <string name="shortcut_next_gesture_profile">Nākamais žestu profils</string>
+    <string name="shortcut_use_gesture_profile">Izmantot žestu profilu <xliff:g id="name" example="Driving">%1$s</xliff:g></string>
+    <string name="title_pref_gesture_profile_in_use">Lietotais žestu profils</string>
+    <string name="title_pref_add_gesture_profile">Pievienot žestu profilu</string>
+    <string name="gesture_profile_new_name">Žestu profils <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken">Žestu profils ar nosaukumu <xliff:g id="name" example="Driving">%1$s</xliff:g> jau pastāv</string>
+    <string name="title_pref_delete_gesture_profile">Dzēst žestu profilu</string>
+    <string name="title_pref_tap_nav_bar_buttons">Aktivizēt navigācijas joslas pogas ar pieskārienu</string>
+    <string name="title_pref_reset_accessibility_audio">Atiestatīt pieejamības audio pēc zvaniem</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">Nepieciešams Shizuku. Bez Shizuku palaidiet šo komandu ar adb, ja runa pēc zvana skan klausulē: %1$s</string>
+    <string name="arrow_key_nav_unavailable">Šajā taustiņu piesaistē nav navigācijas ar bulttaustiņiem</string>
+    <string name="shortcut_braille_app_name">Ierakstiet lietotnes nosaukumu Braila rakstā, lai to atvērtu</string>
+    <string name="braille_app_prompt">Ierakstiet lietotnes nosaukumu Braila rakstā</string>
+    <string name="braille_app_closed">Lietotņu meklēšana Braila rakstā aizvērta</string>
+    <string name="braille_app_not_available">Lietotnes nosaukuma ievade Braila rakstā nav pieejama</string>
+    <string name="title_clipboard_history_other_apps">Pievienot kopijas no citām lietotnēm</string>
 </resources>

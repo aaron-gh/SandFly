@@ -1,3 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="new_features_0_3_0_welcome">SandFly 0.3.0 的新功能见以下几页。如需稍后再次阅读，请打开 SandFly 设置顶部的“SandFly 中的新功能”。</string>
+    <string name="new_features_0_3_0_keymaps_title">按键映射</string>
+    <string name="new_features_0_3_0_keymaps">使用实体键盘时，可在“设置，键盘快捷键，选择按键映射”中选择 SandFly、VoiceOver、NVDA、JAWS 或 Orca 按键映射，以及其使用的 SandFly 键。在 NVDA、JAWS 和 Orca 按键映射中，箭头键和 Tab 键无需 SandFly 键即可移动，并提供对象导航、浏览光标和“识别屏幕上的文字”。浏览模式快捷键可以更改，也可以改为按两次 SandFly 键。</string>
+    <string name="new_features_0_3_0_gestures_title">手势配置</string>
+    <string name="new_features_0_3_0_gestures">“设置，手势”中的手势配置可为手势分配其他命令，“下一个手势配置”可在这些配置之间切换。“应用中的手势”和“应用中的键盘快捷键”可在所选应用中为手势和按键分配其他命令。每个单指滑动还有对应的滑动后按住：滑动，手指停留不动，然后抬起。</string>
+    <string name="new_features_0_3_0_speech_title">朗读词典和剪贴板历史记录</string>
+    <string name="new_features_0_3_0_speech">“设置，语音”中的朗读词典可在所有语音中以不同方式朗读所选文本。“允许其他应用朗读”可让应用和当前键盘通过 SandFly 朗读。剪贴板历史记录会保存您复制的内容；使用 Shizuku 时，还会保存您在其他应用中复制的内容。</string>
+    <string name="new_features_0_3_0_braille_title">盲文</string>
+    <string name="new_features_0_3_0_braille">“用盲文输入应用名称以打开应用”是一个命令，可将屏幕变为盲文键盘，用于输入应用名称的开头部分。日语是新增的盲文语言。连接实体键盘时，盲文键盘会隐藏。</string>
+    <string name="new_features_0_3_0_commands_title">新命令和设置</string>
+    <string name="new_features_0_3_0_commands">可在“设置，命令”中分配“提交文本”“开启或关闭放大功能”“快退”“快进”和“无障碍快捷方式”。“设置，显示”中的“将 SandFly 用作壁纸”可在电池节省功能会停止 SandFly 的手机上让 SandFly 保持运行。“设置，音频输出”中的“通话后重置无障碍音频”会在通话后将语音从听筒移出。</string>
+    <string name="new_features_0_3_0_scripts_title">脚本</string>
+    <string name="new_features_0_3_0_scripts">脚本现在可以触摸屏幕、按键、运行 SandFly 命令、打开窗口、识别文字，以及在通话期间朗读。安装脚本前，SandFly 会显示脚本的来源以及是否由 SandFly 签名。</string>
+    <string name="new_features_0_3_0_pro_title">屏幕识别</string>
+    <string name="new_features_0_3_0_pro">SandFly Pro 可识别应用和游戏绘制但未公开的按钮、文本和其他元素，并将其显示为可滑动前往和点按两次的项目。在 SandFly 菜单中选择“识别屏幕”，或者在 SandFly 菜单中或“设置，SandFly Pro，自动屏幕识别”中为某个应用开启屏幕识别。</string>
 </resources>

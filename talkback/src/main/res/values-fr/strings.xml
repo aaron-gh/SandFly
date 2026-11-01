@@ -1837,4 +1837,27 @@
   <string name="shortcut_toggle_magnification">Activer ou désactiver l\'agrandissement</string>
   <string name="shortcut_submit_text">Envoyer le texte</string>
   <string name="shortcut_title_accessibility_shortcuts">Raccourcis d\'accessibilité</string>
+    <string name="title_pref_gesture_profiles">Profils de gestes</string>
+    <string name="title_gesture_profile">Profil de gestes</string>
+    <string name="gesture_profile_default">Par défaut</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, en cours d\'utilisation</string>
+    <string name="no_gesture_profiles">Aucun profil de gestes</string>
+    <string name="shortcut_gesture_profiles">Choisir un profil de gestes</string>
+    <string name="shortcut_previous_gesture_profile">Profil de gestes précédent</string>
+    <string name="shortcut_next_gesture_profile">Profil de gestes suivant</string>
+    <string name="shortcut_use_gesture_profile">Utiliser le profil de gestes <xliff:g id="name" example="Driving">%1$s</xliff:g></string>
+    <string name="title_pref_gesture_profile_in_use">Profil de gestes utilisé</string>
+    <string name="title_pref_add_gesture_profile">Ajouter un profil de gestes</string>
+    <string name="gesture_profile_new_name">Profil de gestes <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken">Un profil de gestes s\'appelle déjà <xliff:g id="name" example="Driving">%1$s</xliff:g></string>
+    <string name="title_pref_delete_gesture_profile">Supprimer le profil de gestes</string>
+    <string name="title_pref_tap_nav_bar_buttons">Appuyer pour activer les boutons de la barre de navigation</string>
+    <string name="title_pref_reset_accessibility_audio">Réinitialiser l\'audio d\'accessibilité après les appels</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">Nécessite Shizuku. Sans Shizuku, exécutez cette commande avec adb lorsque la voix est diffusée dans l\'écouteur après un appel : %1$s</string>
+    <string name="arrow_key_nav_unavailable">Pas de navigation avec les flèches dans ce jeu de raccourcis clavier</string>
+    <string name="shortcut_braille_app_name">Taper le nom d\'une application en braille pour l\'ouvrir</string>
+    <string name="braille_app_prompt">Tapez le nom d\'une application en braille</string>
+    <string name="braille_app_closed">Recherche d\'application en braille fermée</string>
+    <string name="braille_app_not_available">La saisie du nom d\'une application en braille n\'est pas disponible</string>
+    <string name="title_clipboard_history_other_apps">Ajouter les copies faites dans d\'autres applications</string>
 </resources>

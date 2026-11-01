@@ -1833,4 +1833,27 @@
   <string name="shortcut_toggle_magnification">મૅગ્નિફિકેશન ચાલુ અથવા બંધ કરો</string>
   <string name="shortcut_submit_text">ટેક્સ્ટ સબમિટ કરો</string>
   <string name="shortcut_title_accessibility_shortcuts">ઍક્સેસિબિલિટી શૉર્ટકટ</string>
+    <string name="title_pref_gesture_profiles">સંકેત પ્રોફાઇલ</string>
+    <string name="title_gesture_profile">સંકેત પ્રોફાઇલ</string>
+    <string name="gesture_profile_default">ડિફૉલ્ટ</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, ઉપયોગમાં છે</string>
+    <string name="no_gesture_profiles">કોઈ સંકેત પ્રોફાઇલ નથી</string>
+    <string name="shortcut_gesture_profiles">સંકેત પ્રોફાઇલ પસંદ કરો</string>
+    <string name="shortcut_previous_gesture_profile">પાછલી સંકેત પ્રોફાઇલ</string>
+    <string name="shortcut_next_gesture_profile">આગલી સંકેત પ્રોફાઇલ</string>
+    <string name="shortcut_use_gesture_profile">સંકેત પ્રોફાઇલ <xliff:g id="name" example="Driving">%1$s</xliff:g> વાપરો</string>
+    <string name="title_pref_gesture_profile_in_use">ઉપયોગમાં રહેલી સંકેત પ્રોફાઇલ</string>
+    <string name="title_pref_add_gesture_profile">સંકેત પ્રોફાઇલ ઉમેરો</string>
+    <string name="gesture_profile_new_name">સંકેત પ્રોફાઇલ <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken"><xliff:g id="name" example="Driving">%1$s</xliff:g> નામની સંકેત પ્રોફાઇલ પહેલેથી છે</string>
+    <string name="title_pref_delete_gesture_profile">સંકેત પ્રોફાઇલ ડિલીટ કરો</string>
+    <string name="title_pref_tap_nav_bar_buttons">નૅવિગેશન બારના બટન સક્રિય કરવા માટે ટૅપ કરો</string>
+    <string name="title_pref_reset_accessibility_audio">કૉલ પછી ઍક્સેસિબિલિટી ઑડિયો રીસેટ કરો</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">Shizuku જરૂરી છે. Shizuku વિના, કૉલ પછી સ્પીચ ઇયરપીસ પર વાગે ત્યારે આ આદેશ adb વડે ચલાવો: %1$s</string>
+    <string name="arrow_key_nav_unavailable">આ કીમૅપમાં ઍરો કી નૅવિગેશન નથી</string>
+    <string name="shortcut_braille_app_name">કોઈ ઍપ ખોલવા માટે તેનું નામ બ્રેઇલમાં ટાઇપ કરો</string>
+    <string name="braille_app_prompt">ઍપનું નામ બ્રેઇલમાં ટાઇપ કરો</string>
+    <string name="braille_app_closed">બ્રેઇલ ઍપ શોધ બંધ થઈ</string>
+    <string name="braille_app_not_available">ઍપનું નામ બ્રેઇલમાં ટાઇપ કરવું ઉપલબ્ધ નથી</string>
+    <string name="title_clipboard_history_other_apps">અન્ય ઍપમાંથી કૉપિ ઉમેરો</string>
 </resources>

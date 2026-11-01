@@ -1833,4 +1833,27 @@
   <string name="shortcut_toggle_magnification">\'বড় করে দেখা\' ফিচার চালু বা বন্ধ করুন</string>
   <string name="shortcut_submit_text">টেক্সট জমা দিন</string>
   <string name="shortcut_title_accessibility_shortcuts">অ্যাক্সেসিবিলিটি শর্টকাট</string>
+    <string name="title_pref_gesture_profiles">জেসচার প্রোফাইল</string>
+    <string name="title_gesture_profile">জেসচার প্রোফাইল</string>
+    <string name="gesture_profile_default">ডিফল্ট</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, ব্যবহার করা হচ্ছে</string>
+    <string name="no_gesture_profiles">কোনো জেসচার প্রোফাইল নেই</string>
+    <string name="shortcut_gesture_profiles">জেসচার প্রোফাইল বেছে নিন</string>
+    <string name="shortcut_previous_gesture_profile">আগের জেসচার প্রোফাইল</string>
+    <string name="shortcut_next_gesture_profile">পরবর্তী জেসচার প্রোফাইল</string>
+    <string name="shortcut_use_gesture_profile"><xliff:g id="name" example="Driving">%1$s</xliff:g> জেসচার প্রোফাইল ব্যবহার করুন</string>
+    <string name="title_pref_gesture_profile_in_use">ব্যবহৃত জেসচার প্রোফাইল</string>
+    <string name="title_pref_add_gesture_profile">জেসচার প্রোফাইল যোগ করুন</string>
+    <string name="gesture_profile_new_name">জেসচার প্রোফাইল <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken"><xliff:g id="name" example="Driving">%1$s</xliff:g> নামে একটি জেসচার প্রোফাইল আগে থেকেই আছে</string>
+    <string name="title_pref_delete_gesture_profile">জেসচার প্রোফাইল মুছে দিন</string>
+    <string name="title_pref_tap_nav_bar_buttons">নেভিগেশন বারের বোতাম চালু করতে ট্যাপ করুন</string>
+    <string name="title_pref_reset_accessibility_audio">কলের পরে অ্যাক্সেসিবিলিটি অডিও রিসেট করুন</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">Shizuku প্রয়োজন। Shizuku ছাড়া, কলের পরে ইয়ারপিসে স্পিচ চললে adb দিয়ে এই কমান্ড চালান: %1$s</string>
+    <string name="arrow_key_nav_unavailable">এই কীম্যাপে অ্যারো কী নেভিগেশন নেই</string>
+    <string name="shortcut_braille_app_name">কোনো অ্যাপ খুলতে ব্রেইলে তার নাম টাইপ করুন</string>
+    <string name="braille_app_prompt">ব্রেইলে অ্যাপের নাম টাইপ করুন</string>
+    <string name="braille_app_closed">ব্রেইলে অ্যাপ সার্চ বন্ধ হয়েছে</string>
+    <string name="braille_app_not_available">ব্রেইলে অ্যাপের নাম টাইপ করার সুবিধা উপলভ্য নয়</string>
+    <string name="title_clipboard_history_other_apps">অন্য অ্যাপ থেকে কপি যোগ করুন</string>
 </resources>

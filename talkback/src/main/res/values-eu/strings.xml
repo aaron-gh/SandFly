@@ -1833,4 +1833,27 @@
   <string name="shortcut_toggle_magnification">Aktibatu edo desaktibatu zooma</string>
   <string name="shortcut_submit_text">Bidali testua</string>
   <string name="shortcut_title_accessibility_shortcuts">Erabilerraztasun-lasterbideak</string>
+    <string name="title_pref_gesture_profiles">Keinu-profilak</string>
+    <string name="title_gesture_profile">Keinu-profila</string>
+    <string name="gesture_profile_default">Lehenetsia</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, erabiltzen</string>
+    <string name="no_gesture_profiles">Ez dago keinu-profilik</string>
+    <string name="shortcut_gesture_profiles">Aukeratu keinu-profila</string>
+    <string name="shortcut_previous_gesture_profile">Aurreko keinu-profila</string>
+    <string name="shortcut_next_gesture_profile">Hurrengo keinu-profila</string>
+    <string name="shortcut_use_gesture_profile">Erabili <xliff:g id="name" example="Driving">%1$s</xliff:g> keinu-profila</string>
+    <string name="title_pref_gesture_profile_in_use">Erabiltzen ari den keinu-profila</string>
+    <string name="title_pref_add_gesture_profile">Gehitu keinu-profila</string>
+    <string name="gesture_profile_new_name"><xliff:g id="number" example="2">%1$d</xliff:g>. keinu-profila</string>
+    <string name="gesture_profile_name_taken">Badago <xliff:g id="name" example="Driving">%1$s</xliff:g> izeneko keinu-profil bat</string>
+    <string name="title_pref_delete_gesture_profile">Ezabatu keinu-profila</string>
+    <string name="title_pref_tap_nav_bar_buttons">Sakatu nabigazio-barrako botoiak aktibatzeko</string>
+    <string name="title_pref_reset_accessibility_audio">Berrezarri erabilerraztasun-audioa deien ondoren</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">Shizuku behar da. Shizuku gabe, exekutatu agindu hau adb bidez hizketa telefonoaren entzungailutik entzuten denean dei baten ondoren: %1$s</string>
+    <string name="arrow_key_nav_unavailable">Teklen mapa honek ez du gezi-teklen bidezko nabigaziorik</string>
+    <string name="shortcut_braille_app_name">Idatzi aplikazio baten izena braillez hura irekitzeko</string>
+    <string name="braille_app_prompt">Idatzi aplikazio baten izena braillez</string>
+    <string name="braille_app_closed">Aplikazioen braille-bilaketa itxi da</string>
+    <string name="braille_app_not_available">Ezin da aplikazio baten izena braillez idatzi</string>
+    <string name="title_clipboard_history_other_apps">Gehitu beste aplikazioetako kopiak</string>
 </resources>

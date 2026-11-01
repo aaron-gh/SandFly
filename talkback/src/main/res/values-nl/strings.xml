@@ -1833,4 +1833,27 @@
   <string name="shortcut_toggle_magnification">Vergroting aan- of uitzetten</string>
   <string name="shortcut_submit_text">Tekst sturen</string>
   <string name="shortcut_title_accessibility_shortcuts">Snelkoppelingen voor toegankelijkheid</string>
+    <string name="title_pref_gesture_profiles">Gebarenprofielen</string>
+    <string name="title_gesture_profile">Gebarenprofiel</string>
+    <string name="gesture_profile_default">Standaard</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, in gebruik</string>
+    <string name="no_gesture_profiles">Geen gebarenprofielen</string>
+    <string name="shortcut_gesture_profiles">Gebarenprofiel kiezen</string>
+    <string name="shortcut_previous_gesture_profile">Vorig gebarenprofiel</string>
+    <string name="shortcut_next_gesture_profile">Volgend gebarenprofiel</string>
+    <string name="shortcut_use_gesture_profile">Gebarenprofiel <xliff:g id="name" example="Driving">%1$s</xliff:g> gebruiken</string>
+    <string name="title_pref_gesture_profile_in_use">Gebarenprofiel in gebruik</string>
+    <string name="title_pref_add_gesture_profile">Gebarenprofiel toevoegen</string>
+    <string name="gesture_profile_new_name">Gebarenprofiel <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken">Er is al een gebarenprofiel met de naam <xliff:g id="name" example="Driving">%1$s</xliff:g></string>
+    <string name="title_pref_delete_gesture_profile">Gebarenprofiel verwijderen</string>
+    <string name="title_pref_tap_nav_bar_buttons">Tikken om navigatiebalkknoppen te activeren</string>
+    <string name="title_pref_reset_accessibility_audio">Toegankelijkheidsaudio resetten na gesprekken</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">Vereist Shizuku. Voer zonder Shizuku deze opdracht uit met adb als spraak na een gesprek via de oorspeaker wordt afgespeeld: %1$s</string>
+    <string name="arrow_key_nav_unavailable">Geen navigatie met pijltoetsen in deze keymap</string>
+    <string name="shortcut_braille_app_name">Typ de naam van een app in braille om deze te openen</string>
+    <string name="braille_app_prompt">Typ de naam van een app in braille</string>
+    <string name="braille_app_closed">Zoeken naar app in braille gesloten</string>
+    <string name="braille_app_not_available">Typen van de naam van een app in braille is niet beschikbaar</string>
+    <string name="title_clipboard_history_other_apps">Kopieën uit andere apps toevoegen</string>
 </resources>

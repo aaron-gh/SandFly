@@ -1,3 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="new_features_0_3_0_welcome">SandFly 0.3.0 的新功能列於以下頁面。如要稍後再次閱讀，請開啟 SandFly 設定頂部的「SandFly 的新功能」。</string>
+    <string name="new_features_0_3_0_keymaps_title">按鍵配置</string>
+    <string name="new_features_0_3_0_keymaps">使用實體鍵盤時，可在「設定，鍵盤快速鍵，選擇按鍵配置」中選擇 SandFly、VoiceOver、NVDA、JAWS 或 Orca 按鍵配置，以及其使用的 SandFly 鍵。在 NVDA、JAWS 和 Orca 按鍵配置中，方向鍵和 Tab 鍵毋須 SandFly 鍵即可移動，並提供物件導覽、檢閱游標和「辨識畫面上的文字」。瀏覽模式的快速鍵可以更改，亦可改為按兩下 SandFly 鍵。</string>
+    <string name="new_features_0_3_0_gestures_title">手勢設定檔</string>
+    <string name="new_features_0_3_0_gestures">「設定，手勢」中的手勢設定檔可為手勢指定其他命令，「下一個手勢設定檔」可在設定檔之間切換。「應用程式中的手勢」和「應用程式中的鍵盤快速鍵」可在所選應用程式中為手勢和按鍵指定其他命令。每個單指滑動手勢亦有「滑動並按住」：滑動，手指停留不動，然後提起。</string>
+    <string name="new_features_0_3_0_speech_title">朗讀字典和剪貼簿記錄</string>
+    <string name="new_features_0_3_0_speech">「設定，語音」中的朗讀字典會在所有語音中以不同方式讀出所選文字。「允許其他應用程式朗讀」可讓應用程式和目前的鍵盤透過 SandFly 朗讀。剪貼簿記錄會保留您複製的內容；使用 Shizuku 時，亦會保留您在其他應用程式中複製的內容。</string>
+    <string name="new_features_0_3_0_braille_title">點字</string>
+    <string name="new_features_0_3_0_braille">「以點字輸入應用程式名稱以開啟」是一個命令，可將螢幕變成點字鍵盤，用來輸入應用程式名稱的開頭。日文是新的點字語言。連接實體鍵盤時，點字鍵盤會隱藏。</string>
+    <string name="new_features_0_3_0_commands_title">新命令和設定</string>
+    <string name="new_features_0_3_0_commands">「提交文字」、「開啟或關閉放大功能」、「倒帶」、「快轉」和「無障礙功能捷徑」可在「設定，命令」中指派。「設定，顯示」中的「使用 SandFly 作為桌布」可在省電功能會停止 SandFly 的手機上讓 SandFly 保持執行。「設定，音訊輸出」中的「通話後重設無障礙音訊」會在通話後將語音從聽筒移走。</string>
+    <string name="new_features_0_3_0_scripts_title">腳本</string>
+    <string name="new_features_0_3_0_scripts">腳本現在可以觸控螢幕、按鍵、執行 SandFly 命令、開啟視窗、辨識文字，以及在通話期間朗讀。安裝腳本前，SandFly 會顯示腳本的來源，以及是否由 SandFly 簽署。</string>
+    <string name="new_features_0_3_0_pro_title">畫面辨識</string>
+    <string name="new_features_0_3_0_pro">SandFly Pro 可辨識應用程式和遊戲繪製但未公開的按鈕、文字及其他元素，並將其顯示為可滑動前往及輕按兩下的項目。在 SandFly 選單中選擇「辨識畫面」，或在 SandFly 選單或「設定，SandFly Pro，自動畫面辨識」中為應用程式開啟畫面辨識。</string>
 </resources>

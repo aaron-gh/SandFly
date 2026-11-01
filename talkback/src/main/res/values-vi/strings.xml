@@ -1829,4 +1829,27 @@
   <string name="shortcut_toggle_magnification">Bật hoặc tắt tính năng phóng to</string>
   <string name="shortcut_submit_text">Gửi nội dung</string>
   <string name="shortcut_title_accessibility_shortcuts">Phím tắt hỗ trợ tiếp cận</string>
+    <string name="title_pref_gesture_profiles">Hồ sơ cử chỉ</string>
+    <string name="title_gesture_profile">Hồ sơ cử chỉ</string>
+    <string name="gesture_profile_default">Mặc định</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, đang dùng</string>
+    <string name="no_gesture_profiles">Không có hồ sơ cử chỉ nào</string>
+    <string name="shortcut_gesture_profiles">Chọn hồ sơ cử chỉ</string>
+    <string name="shortcut_previous_gesture_profile">Hồ sơ cử chỉ trước</string>
+    <string name="shortcut_next_gesture_profile">Hồ sơ cử chỉ tiếp theo</string>
+    <string name="shortcut_use_gesture_profile">Dùng hồ sơ cử chỉ <xliff:g id="name" example="Driving">%1$s</xliff:g></string>
+    <string name="title_pref_gesture_profile_in_use">Hồ sơ cử chỉ đang dùng</string>
+    <string name="title_pref_add_gesture_profile">Thêm hồ sơ cử chỉ</string>
+    <string name="gesture_profile_new_name">Hồ sơ cử chỉ <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken">Đã có hồ sơ cử chỉ tên là <xliff:g id="name" example="Driving">%1$s</xliff:g></string>
+    <string name="title_pref_delete_gesture_profile">Xoá hồ sơ cử chỉ</string>
+    <string name="title_pref_tap_nav_bar_buttons">Nhấn để kích hoạt các nút trên thanh điều hướng</string>
+    <string name="title_pref_reset_accessibility_audio">Đặt lại âm thanh hỗ trợ tiếp cận sau cuộc gọi</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">Cần có Shizuku. Nếu không có Shizuku, hãy chạy lệnh này bằng adb khi lời nói phát qua loa thoại sau cuộc gọi: %1$s</string>
+    <string name="arrow_key_nav_unavailable">Sơ đồ bàn phím này không có điều hướng bằng phím mũi tên</string>
+    <string name="shortcut_braille_app_name">Nhập tên ứng dụng bằng chữ nổi để mở ứng dụng đó</string>
+    <string name="braille_app_prompt">Nhập tên ứng dụng bằng chữ nổi</string>
+    <string name="braille_app_closed">Đã đóng tính năng tìm ứng dụng bằng chữ nổi</string>
+    <string name="braille_app_not_available">Không thể nhập tên ứng dụng bằng chữ nổi</string>
+    <string name="title_clipboard_history_other_apps">Thêm nội dung sao chép từ ứng dụng khác</string>
 </resources>

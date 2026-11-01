@@ -1,3 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="new_features_0_3_0_welcome">SandFly 0.3.0 の新機能を次のページで説明します。後でもう一度読むには、SandFly の設定の上部にある [SandFly の新機能] を開きます。</string>
+    <string name="new_features_0_3_0_keymaps_title">キーマップ</string>
+    <string name="new_features_0_3_0_keymaps">物理キーボードでは、[設定]、[キーボード ショートカット]、[キーマップを選択] で SandFly、VoiceOver、NVDA、JAWS、Orca のいずれかのキーマップと、そのキーマップで使う SandFly キーを選択します。NVDA、JAWS、Orca のキーマップでは、矢印キーと Tab キーで SandFly キーを使わずに移動でき、オブジェクト ナビゲーション、レビュー カーソル、[画面上のテキストを認識] を使用できます。ブラウズモードのショートカットは変更でき、SandFly キーの 2 回押しにもできます。</string>
+    <string name="new_features_0_3_0_gestures_title">ジェスチャー プロファイル</string>
+    <string name="new_features_0_3_0_gestures">[設定]、[ジェスチャー] のジェスチャー プロファイルでは、ジェスチャーに別のコマンドを割り当て、[次のジェスチャー プロファイル] でプロファイルを切り替えます。[アプリ内のジェスチャー] と [アプリ内のキーボード ショートカット] では、選択したアプリでジェスチャーとキーに別のコマンドを割り当てます。1 本指の各スワイプには、スワイプして押し続ける操作もあります。スワイプし、指を止めてから離します。</string>
+    <string name="new_features_0_3_0_speech_title">読み上げ辞書とクリップボードの履歴</string>
+    <string name="new_features_0_3_0_speech">[設定]、[読み上げ] の読み上げ辞書では、指定したテキストの読み方をすべての読み上げで変更します。[他のアプリの読み上げを許可] では、アプリと現在のキーボードが SandFly を通じて読み上げます。クリップボードの履歴にはコピーした内容が保存され、Shizuku を使うと他のアプリでコピーした内容も保存されます。</string>
+    <string name="new_features_0_3_0_braille_title">点字</string>
+    <string name="new_features_0_3_0_braille">[点字でアプリ名を入力してアプリを開く] は、画面を点字キーボードにしてアプリ名の先頭を入力するコマンドです。新しい点字の言語として日本語が追加されました。物理キーボードの接続中は点字キーボードが非表示になります。</string>
+    <string name="new_features_0_3_0_commands_title">新しいコマンドと設定</string>
+    <string name="new_features_0_3_0_commands">[テキストを送信]、[拡大の ON / OFF を切り替える]、[巻き戻し]、[早送り]、[ユーザー補助のショートカット] は [設定]、[コマンド] で割り当てられます。[設定]、[表示] の [SandFly を壁紙として使用] は、バッテリー セーバーが SandFly を停止するスマートフォンで SandFly の実行を維持します。[設定]、[音声出力] の [通話後にユーザー補助の音声をリセット] は、通話後に読み上げを受話口から切り替えます。</string>
+    <string name="new_features_0_3_0_scripts_title">スクリプト</string>
+    <string name="new_features_0_3_0_scripts">スクリプトで、画面のタップ、キー入力、SandFly コマンドの実行、ウィンドウの表示、テキスト認識、通話中の読み上げができるようになりました。スクリプトをインストールする前に、SandFly は入手元と SandFly による署名の有無を表示します。</string>
+    <string name="new_features_0_3_0_pro_title">画面認識</string>
+    <string name="new_features_0_3_0_pro">SandFly Pro は、アプリやゲームがユーザー補助に公開せずに描画するボタン、テキストなどの要素を認識し、スワイプで移動してダブルタップできる項目として表示します。SandFly メニューで [画面を認識] を選択するか、SandFly メニューまたは [設定]、[SandFly Pro]、[自動画面認識] でアプリの画面認識をオンにします。</string>
 </resources>

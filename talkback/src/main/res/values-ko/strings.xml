@@ -1833,4 +1833,27 @@
   <string name="shortcut_toggle_magnification">확대 사용 설정 또는 중지</string>
   <string name="shortcut_submit_text">텍스트 제출</string>
   <string name="shortcut_title_accessibility_shortcuts">접근성 바로가기</string>
+    <string name="title_pref_gesture_profiles">동작 프로필</string>
+    <string name="title_gesture_profile">동작 프로필</string>
+    <string name="gesture_profile_default">기본값</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, 사용 중</string>
+    <string name="no_gesture_profiles">동작 프로필 없음</string>
+    <string name="shortcut_gesture_profiles">동작 프로필 선택</string>
+    <string name="shortcut_previous_gesture_profile">이전 동작 프로필</string>
+    <string name="shortcut_next_gesture_profile">다음 동작 프로필</string>
+    <string name="shortcut_use_gesture_profile">동작 프로필 <xliff:g id="name" example="Driving">%1$s</xliff:g> 사용</string>
+    <string name="title_pref_gesture_profile_in_use">사용 중인 동작 프로필</string>
+    <string name="title_pref_add_gesture_profile">동작 프로필 추가</string>
+    <string name="gesture_profile_new_name">동작 프로필 <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken">이름이 <xliff:g id="name" example="Driving">%1$s</xliff:g>인 동작 프로필이 이미 있습니다</string>
+    <string name="title_pref_delete_gesture_profile">동작 프로필 삭제</string>
+    <string name="title_pref_tap_nav_bar_buttons">탭하여 탐색 메뉴 버튼 활성화</string>
+    <string name="title_pref_reset_accessibility_audio">통화 후 접근성 오디오 재설정</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">Shizuku가 필요합니다. Shizuku가 없으면 통화 후 음성이 수화부에서 재생될 때 adb로 다음 명령을 실행하세요. %1$s</string>
+    <string name="arrow_key_nav_unavailable">이 키맵에서는 화살표 키 탐색을 사용할 수 없음</string>
+    <string name="shortcut_braille_app_name">점자로 앱 이름을 입력하여 앱 열기</string>
+    <string name="braille_app_prompt">점자로 앱 이름 입력</string>
+    <string name="braille_app_closed">점자 앱 검색 닫힘</string>
+    <string name="braille_app_not_available">점자로 앱 이름을 입력할 수 없음</string>
+    <string name="title_clipboard_history_other_apps">다른 앱에서 복사한 내용 추가</string>
 </resources>

@@ -1834,4 +1834,27 @@
   <string name="shortcut_toggle_magnification">เปิดหรือปิดการขยาย</string>
   <string name="shortcut_submit_text">ส่งข้อความ</string>
   <string name="shortcut_title_accessibility_shortcuts">ทางลัดการช่วยเหลือพิเศษ</string>
+    <string name="title_pref_gesture_profiles">โปรไฟล์ท่าทางสัมผัส</string>
+    <string name="title_gesture_profile">โปรไฟล์ท่าทางสัมผัส</string>
+    <string name="gesture_profile_default">ค่าเริ่มต้น</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, ใช้อยู่</string>
+    <string name="no_gesture_profiles">ไม่มีโปรไฟล์ท่าทางสัมผัส</string>
+    <string name="shortcut_gesture_profiles">เลือกโปรไฟล์ท่าทางสัมผัส</string>
+    <string name="shortcut_previous_gesture_profile">โปรไฟล์ท่าทางสัมผัสก่อนหน้า</string>
+    <string name="shortcut_next_gesture_profile">โปรไฟล์ท่าทางสัมผัสถัดไป</string>
+    <string name="shortcut_use_gesture_profile">ใช้โปรไฟล์ท่าทางสัมผัส <xliff:g id="name" example="Driving">%1$s</xliff:g></string>
+    <string name="title_pref_gesture_profile_in_use">โปรไฟล์ท่าทางสัมผัสที่ใช้อยู่</string>
+    <string name="title_pref_add_gesture_profile">เพิ่มโปรไฟล์ท่าทางสัมผัส</string>
+    <string name="gesture_profile_new_name">โปรไฟล์ท่าทางสัมผัส <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken">มีโปรไฟล์ท่าทางสัมผัสชื่อ <xliff:g id="name" example="Driving">%1$s</xliff:g> อยู่แล้ว</string>
+    <string name="title_pref_delete_gesture_profile">ลบโปรไฟล์ท่าทางสัมผัส</string>
+    <string name="title_pref_tap_nav_bar_buttons">แตะเพื่อเปิดใช้งานปุ่มแถบนำทาง</string>
+    <string name="title_pref_reset_accessibility_audio">รีเซ็ตเสียงการช่วยเหลือพิเศษหลังการโทร</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">ต้องใช้ Shizuku หากไม่มี Shizuku ให้เรียกใช้คำสั่งนี้ด้วย adb เมื่อเสียงพูดเล่นผ่านลำโพงสนทนาหลังการโทร: %1$s</string>
+    <string name="arrow_key_nav_unavailable">ไม่มีการนำทางด้วยแป้นลูกศรในคีย์แมปนี้</string>
+    <string name="shortcut_braille_app_name">พิมพ์ชื่อแอปเป็นอักษรเบรลล์เพื่อเปิดแอป</string>
+    <string name="braille_app_prompt">พิมพ์ชื่อแอปเป็นอักษรเบรลล์</string>
+    <string name="braille_app_closed">ปิดการค้นหาแอปด้วยอักษรเบรลล์แล้ว</string>
+    <string name="braille_app_not_available">พิมพ์ชื่อแอปเป็นอักษรเบรลล์ไม่ได้</string>
+    <string name="title_clipboard_history_other_apps">เพิ่มสิ่งที่คัดลอกจากแอปอื่น</string>
 </resources>

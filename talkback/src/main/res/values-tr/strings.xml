@@ -1833,4 +1833,27 @@
   <string name="shortcut_toggle_magnification">Büyütmeyi etkinleştir veya devre dışı bırak</string>
   <string name="shortcut_submit_text">Metin gönder</string>
   <string name="shortcut_title_accessibility_shortcuts">Erişilebilirlik kısayolları</string>
+    <string name="title_pref_gesture_profiles">Hareket profilleri</string>
+    <string name="title_gesture_profile">Hareket profili</string>
+    <string name="gesture_profile_default">Varsayılan</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, kullanımda</string>
+    <string name="no_gesture_profiles">Hareket profili yok</string>
+    <string name="shortcut_gesture_profiles">Hareket profili seç</string>
+    <string name="shortcut_previous_gesture_profile">Önceki hareket profili</string>
+    <string name="shortcut_next_gesture_profile">Sonraki hareket profili</string>
+    <string name="shortcut_use_gesture_profile"><xliff:g id="name" example="Driving">%1$s</xliff:g> hareket profilini kullan</string>
+    <string name="title_pref_gesture_profile_in_use">Kullanımdaki hareket profili</string>
+    <string name="title_pref_add_gesture_profile">Hareket profili ekle</string>
+    <string name="gesture_profile_new_name">Hareket profili <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken"><xliff:g id="name" example="Driving">%1$s</xliff:g> adlı bir hareket profili zaten var</string>
+    <string name="title_pref_delete_gesture_profile">Hareket profilini sil</string>
+    <string name="title_pref_tap_nav_bar_buttons">Gezinme çubuğu düğmelerini etkinleştirmek için dokun</string>
+    <string name="title_pref_reset_accessibility_audio">Aramalardan sonra erişilebilirlik sesini sıfırla</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">Shizuku gerekir. Shizuku olmadan, aramadan sonra konuşma ahizeden geldiğinde bu komutu adb ile çalıştırın: %1$s</string>
+    <string name="arrow_key_nav_unavailable">Bu tuş eşlemesinde ok tuşlarıyla gezinme yok</string>
+    <string name="shortcut_braille_app_name">Açmak için bir uygulamanın adını braille ile yaz</string>
+    <string name="braille_app_prompt">Bir uygulamanın adını braille ile yazın</string>
+    <string name="braille_app_closed">Braille uygulama araması kapatıldı</string>
+    <string name="braille_app_not_available">Uygulama adını braille ile yazma kullanılamıyor</string>
+    <string name="title_clipboard_history_other_apps">Diğer uygulamalardaki kopyaları ekle</string>
 </resources>

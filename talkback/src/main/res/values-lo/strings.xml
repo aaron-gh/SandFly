@@ -1833,4 +1833,27 @@
   <string name="shortcut_toggle_magnification">ເປີດ ຫຼື ປິດການຂະຫຍາຍ</string>
   <string name="shortcut_submit_text">ສົ່ງຂໍ້ມູນ</string>
   <string name="shortcut_title_accessibility_shortcuts">ທາງລັດການຊ່ວຍເຂົ້າເຖິງ</string>
+    <string name="title_pref_gesture_profiles">ໂປຣໄຟລ໌ທ່າທາງ</string>
+    <string name="title_gesture_profile">ໂປຣໄຟລ໌ທ່າທາງ</string>
+    <string name="gesture_profile_default">ຄ່າເລີ່ມຕົ້ນ</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, ກຳລັງໃຊ້ຢູ່</string>
+    <string name="no_gesture_profiles">ບໍ່ມີໂປຣໄຟລ໌ທ່າທາງ</string>
+    <string name="shortcut_gesture_profiles">ເລືອກໂປຣໄຟລ໌ທ່າທາງ</string>
+    <string name="shortcut_previous_gesture_profile">ໂປຣໄຟລ໌ທ່າທາງກ່ອນໜ້າ</string>
+    <string name="shortcut_next_gesture_profile">ໂປຣໄຟລ໌ທ່າທາງຕໍ່ໄປ</string>
+    <string name="shortcut_use_gesture_profile">ໃຊ້ໂປຣໄຟລ໌ທ່າທາງ <xliff:g id="name" example="Driving">%1$s</xliff:g></string>
+    <string name="title_pref_gesture_profile_in_use">ໂປຣໄຟລ໌ທ່າທາງທີ່ກຳລັງໃຊ້</string>
+    <string name="title_pref_add_gesture_profile">ເພີ່ມໂປຣໄຟລ໌ທ່າທາງ</string>
+    <string name="gesture_profile_new_name">ໂປຣໄຟລ໌ທ່າທາງ <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken">ມີໂປຣໄຟລ໌ທ່າທາງຊື່ <xliff:g id="name" example="Driving">%1$s</xliff:g> ຢູ່ແລ້ວ</string>
+    <string name="title_pref_delete_gesture_profile">ລຶບໂປຣໄຟລ໌ທ່າທາງ</string>
+    <string name="title_pref_tap_nav_bar_buttons">ແຕະເພື່ອເປີດໃຊ້ປຸ່ມແຖບນຳທາງ</string>
+    <string name="title_pref_reset_accessibility_audio">ຣີເຊັດສຽງການຊ່ວຍເຂົ້າເຖິງຫຼັງຈາກການໂທ</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">ຕ້ອງໃຊ້ Shizuku. ຖ້າບໍ່ມີ Shizuku, ໃຫ້ເອີ້ນໃຊ້ຄຳສັ່ງນີ້ດ້ວຍ adb ເມື່ອສຽງເວົ້າຫຼິ້ນຢູ່ລຳໂພງຫູຫຼັງຈາກການໂທ: %1$s</string>
+    <string name="arrow_key_nav_unavailable">ບໍ່ມີການນຳທາງດ້ວຍປຸ່ມລູກສອນໃນຄີແມັບນີ້</string>
+    <string name="shortcut_braille_app_name">ພິມຊື່ແອັບເປັນອັກສອນນູນເພື່ອເປີດມັນ</string>
+    <string name="braille_app_prompt">ພິມຊື່ແອັບເປັນອັກສອນນູນ</string>
+    <string name="braille_app_closed">ປິດການຊອກຫາແອັບດ້ວຍອັກສອນນູນແລ້ວ</string>
+    <string name="braille_app_not_available">ບໍ່ສາມາດພິມຊື່ແອັບເປັນອັກສອນນູນໄດ້</string>
+    <string name="title_clipboard_history_other_apps">ເພີ່ມສິ່ງທີ່ສຳເນົາຈາກແອັບອື່ນ</string>
 </resources>

@@ -1836,4 +1836,27 @@ SandFly सेटिंग्जमध्ये SandFly मेनू आणि �
   <string name="shortcut_toggle_magnification">मॅग्निफिकेशन सुरू किंवा बंद करा</string>
   <string name="shortcut_submit_text">मजकूर सबमिट करा</string>
   <string name="shortcut_title_accessibility_shortcuts">ॲक्सेसिबिलिटी शॉर्टकट</string>
+    <string name="title_pref_gesture_profiles">जेश्चर प्रोफाइल</string>
+    <string name="title_gesture_profile">जेश्चर प्रोफाइल</string>
+    <string name="gesture_profile_default">डीफॉल्ट</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, वापरात आहे</string>
+    <string name="no_gesture_profiles">कोणतीही जेश्चर प्रोफाइल नाही</string>
+    <string name="shortcut_gesture_profiles">जेश्चर प्रोफाइल निवडा</string>
+    <string name="shortcut_previous_gesture_profile">मागील जेश्चर प्रोफाइल</string>
+    <string name="shortcut_next_gesture_profile">पुढील जेश्चर प्रोफाइल</string>
+    <string name="shortcut_use_gesture_profile"><xliff:g id="name" example="Driving">%1$s</xliff:g> जेश्चर प्रोफाइल वापरा</string>
+    <string name="title_pref_gesture_profile_in_use">वापरात असलेली जेश्चर प्रोफाइल</string>
+    <string name="title_pref_add_gesture_profile">जेश्चर प्रोफाइल जोडा</string>
+    <string name="gesture_profile_new_name">जेश्चर प्रोफाइल <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken"><xliff:g id="name" example="Driving">%1$s</xliff:g> नावाची जेश्चर प्रोफाइल आधीपासून आहे</string>
+    <string name="title_pref_delete_gesture_profile">जेश्चर प्रोफाइल हटवा</string>
+    <string name="title_pref_tap_nav_bar_buttons">नेव्हिगेशन बार बटणे ॲक्टिव्हेट करण्यासाठी टॅप करा</string>
+    <string name="title_pref_reset_accessibility_audio">कॉलनंतर ॲक्सेसिबिलिटी ऑडिओ रीसेट करा</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">Shizuku आवश्यक आहे. Shizuku शिवाय, कॉलनंतर स्पीच इअरपीसवर वाजत असल्यास ही कमांड adb सह रन करा: %1$s</string>
+    <string name="arrow_key_nav_unavailable">या कीमॅपमध्ये ॲरो की नेव्हिगेशन नाही</string>
+    <string name="shortcut_braille_app_name">ॲप उघडण्यासाठी त्याचे नाव ब्रेलमध्ये टाइप करा</string>
+    <string name="braille_app_prompt">ॲपचे नाव ब्रेलमध्ये टाइप करा</string>
+    <string name="braille_app_closed">ब्रेल ॲप शोध बंद केला</string>
+    <string name="braille_app_not_available">ॲपचे नाव ब्रेलमध्ये टाइप करणे उपलब्ध नाही</string>
+    <string name="title_clipboard_history_other_apps">इतर ॲप्समधील कॉपी जोडा</string>
 </resources>

@@ -1833,4 +1833,27 @@
   <string name="shortcut_toggle_magnification">გადიდების ჩართვა და გამორთვა</string>
   <string name="shortcut_submit_text">ტექსტის გაგზავნა</string>
   <string name="shortcut_title_accessibility_shortcuts">მარტივი წვდომის მალსახმობები</string>
+    <string name="title_pref_gesture_profiles">ჟესტების პროფილები</string>
+    <string name="title_gesture_profile">ჟესტების პროფილი</string>
+    <string name="gesture_profile_default">ნაგულისხმევი</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, გამოიყენება</string>
+    <string name="no_gesture_profiles">ჟესტების პროფილები არ არის</string>
+    <string name="shortcut_gesture_profiles">ჟესტების პროფილის არჩევა</string>
+    <string name="shortcut_previous_gesture_profile">ჟესტების წინა პროფილი</string>
+    <string name="shortcut_next_gesture_profile">ჟესტების შემდეგი პროფილი</string>
+    <string name="shortcut_use_gesture_profile">ჟესტების პროფილის გამოყენება: <xliff:g id="name" example="Driving">%1$s</xliff:g></string>
+    <string name="title_pref_gesture_profile_in_use">გამოყენებული ჟესტების პროფილი</string>
+    <string name="title_pref_add_gesture_profile">ჟესტების პროფილის დამატება</string>
+    <string name="gesture_profile_new_name">ჟესტების პროფილი <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken">ჟესტების პროფილი სახელით <xliff:g id="name" example="Driving">%1$s</xliff:g> უკვე არსებობს</string>
+    <string name="title_pref_delete_gesture_profile">ჟესტების პროფილის წაშლა</string>
+    <string name="title_pref_tap_nav_bar_buttons">ნავიგაციის ზოლის ღილაკების გააქტიურება შეხებით</string>
+    <string name="title_pref_reset_accessibility_audio">მარტივი წვდომის აუდიოს აღდგენა ზარების შემდეგ</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">საჭიროა Shizuku. Shizuku-ს გარეშე გაუშვით ეს ბრძანება adb-ით, როცა ზარის შემდეგ მეტყველება საყურე დინამიკიდან გამოდის: %1$s</string>
+    <string name="arrow_key_nav_unavailable">ამ განლაგებაში ისრებით ნავიგაცია არ არის</string>
+    <string name="shortcut_braille_app_name">ბრაილით ჩაწერეთ აპის სახელი მის გასახსნელად</string>
+    <string name="braille_app_prompt">ბრაილით ჩაწერეთ აპის სახელი</string>
+    <string name="braille_app_closed">აპის ბრაილით ძიება დაიხურა</string>
+    <string name="braille_app_not_available">აპის სახელის ბრაილით ჩაწერა მიუწვდომელია</string>
+    <string name="title_clipboard_history_other_apps">სხვა აპებიდან ასლების დამატება</string>
 </resources>

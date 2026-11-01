@@ -1833,4 +1833,27 @@
   <string name="shortcut_toggle_magnification">Vula noma vala ukukhuliswa</string>
   <string name="shortcut_submit_text">Thumela umyalezo</string>
   <string name="shortcut_title_accessibility_shortcuts">Izinqamuleli zokufinyelela</string>
+    <string name="title_pref_gesture_profiles">Amaphrofayili okunyakaza</string>
+    <string name="title_gesture_profile">Iphrofayili yokunyakaza</string>
+    <string name="gesture_profile_default">Okuzenzakalelayo</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, iyasetshenziswa</string>
+    <string name="no_gesture_profiles">Awekho amaphrofayili okunyakaza</string>
+    <string name="shortcut_gesture_profiles">Khetha iphrofayili yokunyakaza</string>
+    <string name="shortcut_previous_gesture_profile">Iphrofayili yokunyakaza yangaphambilini</string>
+    <string name="shortcut_next_gesture_profile">Iphrofayili yokunyakaza elandelayo</string>
+    <string name="shortcut_use_gesture_profile">Sebenzisa iphrofayili yokunyakaza <xliff:g id="name" example="Driving">%1$s</xliff:g></string>
+    <string name="title_pref_gesture_profile_in_use">Iphrofayili yokunyakaza esetshenziswayo</string>
+    <string name="title_pref_add_gesture_profile">Engeza iphrofayili yokunyakaza</string>
+    <string name="gesture_profile_new_name">Iphrofayili yokunyakaza <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken">Kukhona kakade iphrofayili yokunyakaza ebizwa ngokuthi <xliff:g id="name" example="Driving">%1$s</xliff:g></string>
+    <string name="title_pref_delete_gesture_profile">Susa iphrofayili yokunyakaza</string>
+    <string name="title_pref_tap_nav_bar_buttons">Thepha ukuze uvule izinkinobho zebha yokuzulazula</string>
+    <string name="title_pref_reset_accessibility_audio">Setha kabusha umsindo wokufinyelela ngemva kwamakholi</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">Kudinga i-Shizuku. Ngaphandle kwe-Shizuku, qalisa lo myalo nge-adb uma inkulumo idlala ku-earpiece ngemva kwekholi: %1$s</string>
+    <string name="arrow_key_nav_unavailable">Akukho ukuzulazula ngokhiye bemicibisholo kule mephu yokhiye</string>
+    <string name="shortcut_braille_app_name">Thayipha igama le-app nge-Braille ukuze uyivule</string>
+    <string name="braille_app_prompt">Thayipha igama le-app nge-Braille</string>
+    <string name="braille_app_closed">Ukusesha i-app nge-Braille kuvaliwe</string>
+    <string name="braille_app_not_available">Ukuthayipha igama le-app nge-Braille akutholakali</string>
+    <string name="title_clipboard_history_other_apps">Engeza amakhophi avela kwamanye ama-app</string>
 </resources>

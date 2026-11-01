@@ -1833,4 +1833,27 @@
   <string name="shortcut_toggle_magnification">Aktivera eller inaktivera förstoring</string>
   <string name="shortcut_submit_text">Skicka text</string>
   <string name="shortcut_title_accessibility_shortcuts">Genvägar för tillgänglighet</string>
+    <string name="title_pref_gesture_profiles">Rörelseprofiler</string>
+    <string name="title_gesture_profile">Rörelseprofil</string>
+    <string name="gesture_profile_default">Standard</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, används</string>
+    <string name="no_gesture_profiles">Inga rörelseprofiler</string>
+    <string name="shortcut_gesture_profiles">Välj rörelseprofil</string>
+    <string name="shortcut_previous_gesture_profile">Föregående rörelseprofil</string>
+    <string name="shortcut_next_gesture_profile">Nästa rörelseprofil</string>
+    <string name="shortcut_use_gesture_profile">Använd rörelseprofilen <xliff:g id="name" example="Driving">%1$s</xliff:g></string>
+    <string name="title_pref_gesture_profile_in_use">Rörelseprofil som används</string>
+    <string name="title_pref_add_gesture_profile">Lägg till rörelseprofil</string>
+    <string name="gesture_profile_new_name">Rörelseprofil <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken">En rörelseprofil heter redan <xliff:g id="name" example="Driving">%1$s</xliff:g></string>
+    <string name="title_pref_delete_gesture_profile">Ta bort rörelseprofil</string>
+    <string name="title_pref_tap_nav_bar_buttons">Tryck för att aktivera navigeringsfältets knappar</string>
+    <string name="title_pref_reset_accessibility_audio">Återställ tillgänglighetsljud efter samtal</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">Kräver Shizuku. Utan Shizuku kör du det här kommandot med adb när tal spelas upp i hörluren efter ett samtal: %1$s</string>
+    <string name="arrow_key_nav_unavailable">Ingen navigering med piltangenter i den här tangentbordslayouten</string>
+    <string name="shortcut_braille_app_name">Skriv namnet på en app med punktskrift för att öppna den</string>
+    <string name="braille_app_prompt">Skriv namnet på en app med punktskrift</string>
+    <string name="braille_app_closed">Appsökning med punktskrift stängd</string>
+    <string name="braille_app_not_available">Det går inte att skriva namnet på en app med punktskrift</string>
+    <string name="title_clipboard_history_other_apps">Lägg till kopior från andra appar</string>
 </resources>

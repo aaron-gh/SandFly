@@ -1833,4 +1833,27 @@
   <string name="shortcut_toggle_magnification">ချဲ့ခြင်း ဖွင့်ရန် (သို့) ပိတ်ရန်</string>
   <string name="shortcut_submit_text">စာပို့ရန်</string>
   <string name="shortcut_title_accessibility_shortcuts">အများသုံးစွဲနိုင်မှု ဖြတ်လမ်းများ</string>
+    <string name="title_pref_gesture_profiles">လက်ဟန် ပရိုဖိုင်များ</string>
+    <string name="title_gesture_profile">လက်ဟန် ပရိုဖိုင်</string>
+    <string name="gesture_profile_default">မူရင်း</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>၊ သုံးနေသည်</string>
+    <string name="no_gesture_profiles">လက်ဟန် ပရိုဖိုင် မရှိပါ</string>
+    <string name="shortcut_gesture_profiles">လက်ဟန် ပရိုဖိုင် ရွေးရန်</string>
+    <string name="shortcut_previous_gesture_profile">ယခင် လက်ဟန် ပရိုဖိုင်</string>
+    <string name="shortcut_next_gesture_profile">နောက် လက်ဟန် ပရိုဖိုင်</string>
+    <string name="shortcut_use_gesture_profile">လက်ဟန် ပရိုဖိုင် <xliff:g id="name" example="Driving">%1$s</xliff:g> ကို သုံးရန်</string>
+    <string name="title_pref_gesture_profile_in_use">သုံးနေသော လက်ဟန် ပရိုဖိုင်</string>
+    <string name="title_pref_add_gesture_profile">လက်ဟန် ပရိုဖိုင်ကို ထည့်ပါ</string>
+    <string name="gesture_profile_new_name">လက်ဟန် ပရိုဖိုင် <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken"><xliff:g id="name" example="Driving">%1$s</xliff:g> ဟု အမည်ရှိ လက်ဟန် ပရိုဖိုင် ရှိပြီးဖြစ်သည်</string>
+    <string name="title_pref_delete_gesture_profile">လက်ဟန် ပရိုဖိုင်ကို ဖျက်ပါ</string>
+    <string name="title_pref_tap_nav_bar_buttons">လမ်းကြောင်းပြဘား ခလုတ်များကို တို့၍ ဖွင့်ရန်</string>
+    <string name="title_pref_reset_accessibility_audio">ဖုန်းခေါ်ပြီးနောက် အများသုံးစွဲနိုင်မှု အသံကို ပြင်ဆင်သတ်မှတ်ရန်</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">Shizuku လိုအပ်သည်။ Shizuku မရှိလျှင် ဖုန်းခေါ်ပြီးနောက် စကားပြောသံ နားကပ်စပီကာတွင် ထွက်နေသည့်အခါ ဤကွန်မန်းကို adb ဖြင့် လုပ်ဆောင်ပါ- %1$s</string>
+    <string name="arrow_key_nav_unavailable">ဤကီးမြေပုံတွင် မြားကီး လမ်းညွှန်ခြင်း မရှိပါ</string>
+    <string name="shortcut_braille_app_name">အက်ပ်ဖွင့်ရန် ၎င်း၏အမည်ကို မျက်မမြင်စာဖြင့် ရိုက်ပါ</string>
+    <string name="braille_app_prompt">အက်ပ်အမည်ကို မျက်မမြင်စာဖြင့် ရိုက်ပါ</string>
+    <string name="braille_app_closed">မျက်မမြင်စာဖြင့် အက်ပ်ရှာခြင်း ပိတ်လိုက်သည်</string>
+    <string name="braille_app_not_available">အက်ပ်အမည်ကို မျက်မမြင်စာဖြင့် ရိုက်၍ မရပါ</string>
+    <string name="title_clipboard_history_other_apps">အခြားအက်ပ်များမှ မိတ္တူများ ထည့်ရန်</string>
 </resources>

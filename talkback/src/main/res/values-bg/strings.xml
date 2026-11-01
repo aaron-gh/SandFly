@@ -1833,4 +1833,27 @@
   <string name="shortcut_toggle_magnification">Включване или изключване на увеличението</string>
   <string name="shortcut_submit_text">Изпращане на текст</string>
   <string name="shortcut_title_accessibility_shortcuts">Преки пътища за достъпност</string>
+    <string name="title_pref_gesture_profiles">Профили на жестовете</string>
+    <string name="title_gesture_profile">Профил на жестовете</string>
+    <string name="gesture_profile_default">По подразбиране</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, използва се</string>
+    <string name="no_gesture_profiles">Няма профили на жестовете</string>
+    <string name="shortcut_gesture_profiles">Избиране на профил на жестовете</string>
+    <string name="shortcut_previous_gesture_profile">Предишен профил на жестовете</string>
+    <string name="shortcut_next_gesture_profile">Следващ профил на жестовете</string>
+    <string name="shortcut_use_gesture_profile">Използване на профила на жестовете <xliff:g id="name" example="Driving">%1$s</xliff:g></string>
+    <string name="title_pref_gesture_profile_in_use">Използван профил на жестовете</string>
+    <string name="title_pref_add_gesture_profile">Добавяне на профил на жестовете</string>
+    <string name="gesture_profile_new_name">Профил на жестовете <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken">Вече има профил на жестовете с името <xliff:g id="name" example="Driving">%1$s</xliff:g></string>
+    <string name="title_pref_delete_gesture_profile">Изтриване на профила на жестовете</string>
+    <string name="title_pref_tap_nav_bar_buttons">Активиране на бутоните в лентата за навигация с докосване</string>
+    <string name="title_pref_reset_accessibility_audio">Нулиране на аудиото за достъпност след обаждания</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">Изисква Shizuku. Без Shizuku изпълнете тази команда с adb, когато след обаждане говорът се възпроизвежда от слушалката за разговори: %1$s</string>
+    <string name="arrow_key_nav_unavailable">Няма навигация със стрелки в тази клавишна карта</string>
+    <string name="shortcut_braille_app_name">Въведете името на приложение на Брайл, за да го отворите</string>
+    <string name="braille_app_prompt">Въведете името на приложение на Брайл</string>
+    <string name="braille_app_closed">Търсенето на приложение на Брайл е затворено</string>
+    <string name="braille_app_not_available">Въвеждането на името на приложение на Брайл не е налице</string>
+    <string name="title_clipboard_history_other_apps">Добавяне на копираното в други приложения</string>
 </resources>

@@ -1833,4 +1833,27 @@
   <string name="shortcut_toggle_magnification">បើក ឬបិទ​ការពង្រីក</string>
   <string name="shortcut_submit_text">ដាក់បញ្ជូន​អត្ថបទ</string>
   <string name="shortcut_title_accessibility_shortcuts">ផ្លូវកាត់ភាពងាយស្រួល</string>
+    <string name="title_pref_gesture_profiles">កម្រងព័ត៌មានចលនា</string>
+    <string name="title_gesture_profile">កម្រងព័ត៌មានចលនា</string>
+    <string name="gesture_profile_default">លំនាំដើម</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, កំពុងប្រើ</string>
+    <string name="no_gesture_profiles">គ្មានកម្រងព័ត៌មានចលនាទេ</string>
+    <string name="shortcut_gesture_profiles">ជ្រើសរើសកម្រងព័ត៌មានចលនា</string>
+    <string name="shortcut_previous_gesture_profile">កម្រងព័ត៌មានចលនាពីមុន</string>
+    <string name="shortcut_next_gesture_profile">កម្រងព័ត៌មានចលនាបន្ទាប់</string>
+    <string name="shortcut_use_gesture_profile">ប្រើកម្រងព័ត៌មានចលនា <xliff:g id="name" example="Driving">%1$s</xliff:g></string>
+    <string name="title_pref_gesture_profile_in_use">កម្រងព័ត៌មានចលនាដែលកំពុងប្រើ</string>
+    <string name="title_pref_add_gesture_profile">បន្ថែមកម្រងព័ត៌មានចលនា</string>
+    <string name="gesture_profile_new_name">កម្រងព័ត៌មានចលនា <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken">មានកម្រងព័ត៌មានចលនាឈ្មោះ <xliff:g id="name" example="Driving">%1$s</xliff:g> រួចហើយ</string>
+    <string name="title_pref_delete_gesture_profile">លុបកម្រងព័ត៌មានចលនា</string>
+    <string name="title_pref_tap_nav_bar_buttons">ចុចដើម្បីបើកដំណើរការប៊ូតុងរបាររុករក</string>
+    <string name="title_pref_reset_accessibility_audio">កំណត់សំឡេងភាពងាយស្រួលឡើងវិញបន្ទាប់ពីការហៅទូរស័ព្ទ</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">ត្រូវការ Shizuku។ បើគ្មាន Shizuku សូមដំណើរការពាក្យបញ្ជានេះដោយប្រើ adb នៅពេលការនិយាយចាក់តាមឧបករណ៍ស្ដាប់ត្រចៀកបន្ទាប់ពីការហៅទូរស័ព្ទ៖ %1$s</string>
+    <string name="arrow_key_nav_unavailable">គ្មានការរុករកដោយគ្រាប់ចុចព្រួញនៅក្នុងផែនទីគ្រាប់ចុចនេះទេ</string>
+    <string name="shortcut_braille_app_name">វាយឈ្មោះកម្មវិធីជាអក្សរស្ទាប ដើម្បីបើកវា</string>
+    <string name="braille_app_prompt">វាយឈ្មោះកម្មវិធីជាអក្សរស្ទាប</string>
+    <string name="braille_app_closed">បានបិទការស្វែងរកកម្មវិធីជាអក្សរស្ទាប</string>
+    <string name="braille_app_not_available">មិនអាចវាយឈ្មោះកម្មវិធីជាអក្សរស្ទាបបានទេ</string>
+    <string name="title_clipboard_history_other_apps">បន្ថែមអ្វីដែលបានចម្លងពីកម្មវិធីផ្សេងទៀត</string>
 </resources>

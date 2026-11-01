@@ -1833,4 +1833,27 @@
   <string name="shortcut_toggle_magnification">Kattalashtirishni yoqish yoki oʻchirish</string>
   <string name="shortcut_submit_text">Matn kiritish</string>
   <string name="shortcut_title_accessibility_shortcuts">Maxsus imkoniyatlar yorliqlari</string>
+    <string name="title_pref_gesture_profiles">Imo-ishora profillari</string>
+    <string name="title_gesture_profile">Imo-ishora profili</string>
+    <string name="gesture_profile_default">Standart</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, ishlatilmoqda</string>
+    <string name="no_gesture_profiles">Imo-ishora profillari yoʻq</string>
+    <string name="shortcut_gesture_profiles">Imo-ishora profilini tanlash</string>
+    <string name="shortcut_previous_gesture_profile">Avvalgi imo-ishora profili</string>
+    <string name="shortcut_next_gesture_profile">Keyingi imo-ishora profili</string>
+    <string name="shortcut_use_gesture_profile"><xliff:g id="name" example="Driving">%1$s</xliff:g> imo-ishora profilini ishlatish</string>
+    <string name="title_pref_gesture_profile_in_use">Ishlatilayotgan imo-ishora profili</string>
+    <string name="title_pref_add_gesture_profile">Imo-ishora profili qoʻshish</string>
+    <string name="gesture_profile_new_name">Imo-ishora profili <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken"><xliff:g id="name" example="Driving">%1$s</xliff:g> nomli imo-ishora profili allaqachon bor</string>
+    <string name="title_pref_delete_gesture_profile">Imo-ishora profilini oʻchirish</string>
+    <string name="title_pref_tap_nav_bar_buttons">Navigatsiya paneli tugmalarini bosib faollashtirish</string>
+    <string name="title_pref_reset_accessibility_audio">Qoʻngʻiroqlardan keyin maxsus imkoniyatlar audiosini tiklash</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">Shizuku kerak. Shizukusiz, qoʻngʻiroqdan keyin nutq suhbat dinamigida ijro etilsa, bu buyruqni adb orqali ishga tushiring: %1$s</string>
+    <string name="arrow_key_nav_unavailable">Bu tugmalar sxemasida strelka tugmalari bilan navigatsiya yoʻq</string>
+    <string name="shortcut_braille_app_name">Ilovani ochish uchun nomini Brayl yozuvida yozing</string>
+    <string name="braille_app_prompt">Ilova nomini Brayl yozuvida yozing</string>
+    <string name="braille_app_closed">Brayl yozuvida ilova qidiruvi yopildi</string>
+    <string name="braille_app_not_available">Ilova nomini Brayl yozuvida yozish imkonsiz</string>
+    <string name="title_clipboard_history_other_apps">Boshqa ilovalardagi nusxalarni qoʻshish</string>
 </resources>

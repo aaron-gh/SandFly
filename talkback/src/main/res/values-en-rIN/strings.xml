@@ -1833,4 +1833,27 @@
   <string name="shortcut_toggle_magnification">Turn magnification on or off</string>
   <string name="shortcut_submit_text">Submit text</string>
   <string name="shortcut_title_accessibility_shortcuts">Accessibility shortcuts</string>
+    <string name="title_pref_gesture_profiles">Gesture profiles</string>
+    <string name="title_gesture_profile">Gesture profile</string>
+    <string name="gesture_profile_default">Default</string>
+    <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, in use</string>
+    <string name="no_gesture_profiles">No gesture profiles</string>
+    <string name="shortcut_gesture_profiles">Choose gesture profile</string>
+    <string name="shortcut_previous_gesture_profile">Previous gesture profile</string>
+    <string name="shortcut_next_gesture_profile">Next gesture profile</string>
+    <string name="shortcut_use_gesture_profile">Use gesture profile <xliff:g id="name" example="Driving">%1$s</xliff:g></string>
+    <string name="title_pref_gesture_profile_in_use">Gesture profile in use</string>
+    <string name="title_pref_add_gesture_profile">Add gesture profile</string>
+    <string name="gesture_profile_new_name">Gesture profile <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="gesture_profile_name_taken">A gesture profile is already called <xliff:g id="name" example="Driving">%1$s</xliff:g></string>
+    <string name="title_pref_delete_gesture_profile">Delete gesture profile</string>
+    <string name="title_pref_tap_nav_bar_buttons">Tap to activate navigation bar buttons</string>
+    <string name="title_pref_reset_accessibility_audio">Reset accessibility audio after calls</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">Needs Shizuku. Without Shizuku, run this command with adb when speech plays on the earpiece after a call: %1$s</string>
+    <string name="arrow_key_nav_unavailable">No arrow key navigation in this keymap</string>
+    <string name="shortcut_braille_app_name">Type an app\'s name in braille to open it</string>
+    <string name="braille_app_prompt">Type an app\'s name in braille</string>
+    <string name="braille_app_closed">Braille app search closed</string>
+    <string name="braille_app_not_available">Typing an app\'s name in braille is not available</string>
+    <string name="title_clipboard_history_other_apps">Add copies from other apps</string>
 </resources>
