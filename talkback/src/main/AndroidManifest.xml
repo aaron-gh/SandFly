@@ -102,6 +102,9 @@
         android:name="android.software.leanback"
         android:required="false" />
 
+    <!-- Lists SandFly under Do Not Disturb access, for Mute and Do Not Disturb. -->
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+
     <!-- Granted by the user with adb, for the speakerphone setting. -->
     <uses-permission android:name="android.permission.MANAGE_ONGOING_CALLS" />
 
