@@ -125,7 +125,6 @@ import com.google.android.accessibility.utils.input.TextEventFilter.TypingInput;
 import com.google.android.accessibility.utils.monitor.CollectionState;
 import com.google.android.accessibility.utils.output.FailoverTextToSpeech;
 import com.google.android.accessibility.utils.output.FeedbackItem;
-import com.google.android.accessibility.utils.output.SandFlyVolume;
 import com.google.android.accessibility.utils.output.SpeechController;
 import com.google.android.accessibility.utils.output.SpeechController.SpeakOptions;
 import com.google.android.accessibility.utils.output.VoiceProfiles;
@@ -2695,10 +2694,6 @@ public class SelectorController implements UserInputEventListener {
 
   /** Perform Accessibility volume change. */
   public void changeAccessibilityVolume(EventId eventId, boolean decreaseVolume) {
-    if (SandFlyVolume.isActive(prefs)) {
-      changeSandFlyVolume(eventId, decreaseVolume);
-      return;
-    }
     boolean result =
         pipeline.returnFeedback(
             eventId,
@@ -2721,24 +2716,6 @@ public class SelectorController implements UserInputEventListener {
               : Item.ITEM_ACCESSIBILITY_VOLUME_MAXIMUM;
       showQuickMenuActionOverlay(eventId, displayText, item);
     }
-  }
-
-  /** Changes SandFly's own volume, which takes the accessibility volume's place on Bluetooth. */
-  private void changeSandFlyVolume(EventId eventId, boolean decreaseVolume) {
-    @Nullable Integer stepped = SandFlyVolume.step(prefs, !decreaseVolume);
-    String percent =
-        context.getString(
-            R.string.tb_template_percent, String.valueOf(SandFlyVolume.percent(prefs)));
-    String displayText =
-        stepped != null
-            ? context.getString(R.string.template_sandfly_volume, percent)
-            : atLimit(
-                decreaseVolume
-                    ? R.string.template_volume_change_minimum
-                    : R.string.template_volume_change_maximum,
-                percent);
-    announceSetting(eventId, displayText, getAdjustSelectedSettingGestures());
-    showQuickMenuActionOverlay(eventId, displayText);
   }
 
   private void changeBrightness(EventId eventId, boolean increase) {
