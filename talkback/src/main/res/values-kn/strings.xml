@@ -1812,4 +1812,28 @@
   <string name="keycombo_delete_keymap_title"><xliff:g id="keymap_name" example="Custom">%1$s</xliff:g> ಅಳಿಸಬೇಕೆ?</string>
   <string name="keycombo_delete_keymap_button">ಅಳಿಸಿ</string>
   <string name="keycombo_assign_dialog_custom_keymap_instruction">ಹೊಸ ಶಾರ್ಟ್‌ಕಟ್‌ನ ಕೀಗಳನ್ನು ಒತ್ತಿರಿ.</string>
+    <string name="title_pref_sandfly_wallpaper">SandFly ಅನ್ನು ವಾಲ್‌ಪೇಪರ್ ಆಗಿ ಬಳಸಿ</string>
+    <string name="summary_pref_sandfly_wallpaper_set">SandFly ವಾಲ್‌ಪೇಪರ್ ಆಗಿದೆ</string>
+    <string name="title_pref_wallpaper_image">ವಾಲ್‌ಪೇಪರ್ ಚಿತ್ರ</string>
+    <string name="sandfly_wallpaper_description">ಬ್ಯಾಟರಿ ಸೇವರ್ ಹಿನ್ನೆಲೆ ಆ್ಯಪ್‌ಗಳನ್ನು ನಿಲ್ಲಿಸುವ ಫೋನ್‌ಗಳಲ್ಲಿ SandFly ಅನ್ನು ಚಾಲನೆಯಲ್ಲಿರಿಸುತ್ತದೆ.</string>
+    <string name="wallpaper_image_set">ವಾಲ್‌ಪೇಪರ್ ಚಿತ್ರವನ್ನು ಹೊಂದಿಸಲಾಗಿದೆ</string>
+    <string name="wallpaper_image_failed">ಈ ಚಿತ್ರವನ್ನು ಬಳಸಲು ಸಾಧ್ಯವಿಲ್ಲ</string>
+    <string name="title_pref_swipe_hold_time">ಸ್ವೈಪ್ ಮಾಡಿದ ನಂತರ ಹಿಡಿಯುವ ಸಮಯ</string>
+    <string name="shortcut_touch_click_action">ಟ್ಯಾಪ್ ಮೂಲಕ ಸಕ್ರಿಯಗೊಳಿಸಿ</string>
+    <string name="title_pref_shortcut_up_and_hold">ಮೇಲಕ್ಕೆ ಸ್ವೈಪ್ ಮಾಡಿ ಮತ್ತು ಹಿಡಿಯಿರಿ</string>
+    <string name="title_pref_shortcut_down_and_hold">ಕೆಳಗೆ ಸ್ವೈಪ್ ಮಾಡಿ ಮತ್ತು ಹಿಡಿಯಿರಿ</string>
+    <string name="title_pref_shortcut_left_and_hold">ಎಡಕ್ಕೆ ಸ್ವೈಪ್ ಮಾಡಿ ಮತ್ತು ಹಿಡಿಯಿರಿ</string>
+    <string name="title_pref_shortcut_right_and_hold">ಬಲಕ್ಕೆ ಸ್ವೈಪ್ ಮಾಡಿ ಮತ್ತು ಹಿಡಿಯಿರಿ</string>
+    <string name="title_pref_shortcut_up_and_down_and_hold">ಮೇಲಕ್ಕೆ ನಂತರ ಕೆಳಗೆ ಸ್ವೈಪ್ ಮಾಡಿ ಮತ್ತು ಹಿಡಿಯಿರಿ</string>
+    <string name="title_pref_shortcut_down_and_up_and_hold">ಕೆಳಕ್ಕೆ ನಂತರ ಮೇಲೆ ಸ್ವೈಪ್ ಮಾಡಿ ಮತ್ತು ಹಿಡಿಯಿರಿ</string>
+    <string name="title_pref_shortcut_left_and_right_and_hold">ಎಡಕ್ಕೆ ನಂತರ ಬಲಕ್ಕೆ ಸ್ವೈಪ್ ಮಾಡಿ ಮತ್ತು ಹಿಡಿಯಿರಿ</string>
+    <string name="title_pref_shortcut_right_and_left_and_hold">ಬಲಕ್ಕೆ ನಂತರ ಎಡಕ್ಕೆ ಸ್ವೈಪ್ ಮಾಡಿ ಮತ್ತು ಹಿಡಿಯಿರಿ</string>
+    <string name="title_pref_shortcut_up_and_left_and_hold">ಮೇಲಕ್ಕೆ ನಂತರ ಎಡಕ್ಕೆ ಸ್ವೈಪ್ ಮಾಡಿ ಮತ್ತು ಹಿಡಿಯಿರಿ</string>
+    <string name="title_pref_shortcut_up_and_right_and_hold">ಮೇಲಕ್ಕೆ ನಂತರ ಬಲಕ್ಕೆ ಸ್ವೈಪ್ ಮಾಡಿ ಮತ್ತು ಹಿಡಿಯಿರಿ</string>
+    <string name="title_pref_shortcut_down_and_left_and_hold">ಎಡದಿಂದ ಕೆಳಕ್ಕೆ ಸ್ವೈಪ್ ಮಾಡಿ ಮತ್ತು ಹಿಡಿಯಿರಿ</string>
+    <string name="title_pref_shortcut_down_and_right_and_hold">ಕೆಳಕ್ಕೆ ನಂತರ ಬಲಕ್ಕೆ ಸ್ವೈಪ್ ಮಾಡಿ ಮತ್ತು ಹಿಡಿಯಿರಿ</string>
+    <string name="title_pref_shortcut_left_and_up_and_hold">ಎಡಕ್ಕೆ ನಂತರ ಮೇಲಕ್ಕೆ ಸ್ವೈಪ್ ಮಾಡಿ ಮತ್ತು ಹಿಡಿಯಿರಿ</string>
+    <string name="title_pref_shortcut_left_and_down_and_hold">ಎಡಕ್ಕೆ ನಂತರ ಕೆಳಗೆ ಸ್ವೈಪ್ ಮಾಡಿ ಮತ್ತು ಹಿಡಿಯಿರಿ</string>
+    <string name="title_pref_shortcut_right_and_up_and_hold">ಬಲಕ್ಕೆ ನಂತರ ಮೇಲಕ್ಕೆ ಸ್ವೈಪ್ ಮಾಡಿ ಮತ್ತು ಹಿಡಿಯಿರಿ</string>
+    <string name="title_pref_shortcut_right_and_down_and_hold">ಬಲದ ನಂತರ ಕೆಳಕ್ಕೆ ಸ್ವೈಪ್ ಮಾಡಿ ಮತ್ತು ಹಿಡಿಯಿರಿ</string>
 </resources>
