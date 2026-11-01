@@ -58,6 +58,7 @@ import com.google.android.accessibility.talkback.TalkBackService
 import com.google.android.accessibility.talkback.commands.CommandBindings
 import com.google.android.accessibility.talkback.commands.Commands
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping
+import com.google.android.accessibility.talkback.gesture.AccessibilityShortcutActions
 import com.google.android.accessibility.talkback.gesture.OpenAppActions
 import com.google.android.accessibility.talkback.keyboard.ArrowKeyNav
 import com.google.android.accessibility.talkback.keyboard.KeyCombo
@@ -669,6 +670,7 @@ class TutorialActivity : AppCompatActivity() {
   /** Whether [action] leaves the tutorial. */
   private fun leavesLesson(action: String): Boolean =
     OpenAppActions.isAction(action) ||
+      AccessibilityShortcutActions.isAction(action) ||
       TutorialLessons.LEAVING_ACTIONS.any { commandValue(it) == action }
 
   /** Starts the wait before the instruction is said again, as the user has done something. */

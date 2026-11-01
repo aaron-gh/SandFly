@@ -420,6 +420,7 @@ Headings, links, and controls work in apps and on web pages. The other elements 
 SandFly adds these actions, which you can assign to gestures in gesture settings. None is assigned by default.
 
 *   **Open app**, at the end of the list of actions, lists the apps on the home screen. A gesture set to an app opens it, as its home screen icon does.
+*   **Accessibility shortcuts**, after **Open app**, lists the features that Android's accessibility shortcuts can run, such as Reading mode or Gemini's Guided Vision, without the feature taking one of those shortcuts. A feature that is an accessibility service needs Shizuku: SandFly runs its shortcut as the volume keys shortcut would, then sets the volume keys shortcut back as it was.
 *   **Lock screen** and **Power menu**, in **System actions**.
 *   **Turn magnification on or off**, in **System actions**, at the scale set in Android's magnification settings.
 *   **Submit text**, in **Text editing**, sends the text in the focused edit box: it presses the app's send button beside the box, as chat apps need, or else performs the keyboard's action. In a custom keymap it can be given keys without the SandFly key, such as Ctrl + Enter.

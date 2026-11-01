@@ -24,6 +24,7 @@ import com.google.android.accessibility.talkback.actor.ImageCaptioner
 import com.google.android.accessibility.talkback.actor.gemini.GeminiConfiguration
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader
 import com.google.android.accessibility.talkback.gesture.NavigationGestureActions
+import com.google.android.accessibility.talkback.gesture.AccessibilityShortcutActions
 import com.google.android.accessibility.talkback.gesture.OpenAppActions
 import com.google.android.accessibility.talkback.keyboard.TalkBackPhysicalKeyboardShortcut
 import com.google.android.accessibility.talkback.keyboard.TalkBackPhysicalKeyboardShortcut as Key
@@ -152,6 +153,9 @@ object Commands {
     OpenAppActions.label(context, value)?.let {
       return Command(value, it, keyboardAction = null)
     }
+    AccessibilityShortcutActions.label(context, value)?.let {
+      return Command(value, it, keyboardAction = null)
+    }
     categoriesWithoutApps(context).forEach { category ->
       category.commands.firstOrNull { it.value == value }?.let {
         return it
@@ -167,6 +171,9 @@ object Commands {
       return null
     }
     OpenAppActions.label(context, value)?.let {
+      return it
+    }
+    AccessibilityShortcutActions.label(context, value)?.let {
       return it
     }
     NavigationGestureActions.label(context, value)?.let {
@@ -223,6 +230,7 @@ object Commands {
       developer()
       if (withApps) {
         openApp()
+        accessibilityShortcuts()
       }
       return categories
     }
@@ -841,6 +849,13 @@ object Commands {
       category(R.string.shortcut_title_open_app) {
         for (app in OpenAppActions.apps(context)) {
           commands.add(Command(app.value, app.label, keyboardAction = null))
+        }
+      }
+
+    private fun accessibilityShortcuts() =
+      category(R.string.shortcut_title_accessibility_shortcuts) {
+        for (target in AccessibilityShortcutActions.targets(context)) {
+          commands.add(Command(target.value, target.label, keyboardAction = null))
         }
       }
   }

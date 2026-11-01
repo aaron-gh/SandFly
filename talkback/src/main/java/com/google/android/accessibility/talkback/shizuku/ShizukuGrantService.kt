@@ -62,6 +62,9 @@ class ShizukuGrantService(private val context: Context?) : IShizukuGrants.Stub()
 
   override fun run(command: Int, argument: String?): String? {
     val which = ShizukuCommand.entries.getOrNull(command) ?: return "Unknown command $command"
+    if (which == ShizukuCommand.ACCESSIBILITY_SHORTCUT) {
+      return argument?.let { performAccessibilityShortcut(it) } ?: "No accessibility service"
+    }
     if (which == ShizukuCommand.HOTSPOT) {
       return when (argument) {
         ShizukuCommand.ON -> setHotspot(true)
@@ -273,6 +276,99 @@ class ShizukuGrantService(private val context: Context?) : IShizukuGrants.Stub()
     }
   }
 
+  /**
+   * Runs the accessibility shortcut of the service in [argument], as the volume keys shortcut runs
+   * it: it turns the service on or off, or opens one that asks for the accessibility button, first
+   * turning it on if it's off. Android runs only a shortcut's own services, so the service is put in
+   * the volume keys shortcut for the moment it takes, and the shortcut set back as it was.
+   */
+  private fun performAccessibilityShortcut(argument: String): String? {
+    val button = argument.endsWith(ShizukuCommand.BUTTON)
+    val target = argument.removeSuffix(ShizukuCommand.BUTTON)
+    if (!ShizukuCommand.isComponent(target)) return "Bad accessibility service $target"
+    val manager =
+      try {
+        val binder =
+          Class.forName("android.os.ServiceManager")
+            .getMethod("getService", String::class.java)
+            .invoke(null, "accessibility")
+        Class.forName("android.view.accessibility.IAccessibilityManager\$Stub")
+          .getMethod("asInterface", IBinder::class.java)
+          .invoke(null, binder)
+      } catch (e: ReflectiveOperationException) {
+        return e.toString()
+      } ?: return "No accessibility manager"
+    val userId = android.os.Process.myUid() / PER_USER_RANGE
+    val methods = manager.javaClass.methods
+    // Android 15 and later name the display and the kind of shortcut.
+    val performNew = methods.firstOrNull { it.name == "performAccessibilityShortcut" && it.parameterCount == 3 }
+    val performOld = methods.firstOrNull { it.name == "performAccessibilityShortcut" && it.parameterCount == 1 }
+    if (performNew == null && performOld == null) return "No accessibility shortcut call"
+    val volumeKeys = if (performNew != null) HARDWARE_SHORTCUT else OLD_KEY_SHORTCUT
+    fun perform() {
+      if (performNew != null) performNew.invoke(manager, 0, HARDWARE_SHORTCUT, target)
+      else performOld?.invoke(manager, target)
+    }
+    fun shortcutTargets(): List<*>? =
+      try {
+        val get = methods.firstOrNull { it.name == "getAccessibilityShortcutTargets" }
+        when (get?.parameterCount) {
+          2 -> get.invoke(manager, volumeKeys, userId)
+          1 -> get.invoke(manager, volumeKeys)
+          else -> null
+        } as? List<*>
+      } catch (e: ReflectiveOperationException) {
+        null
+      }
+    fun isConnected(): Boolean =
+      try {
+        val get = methods.firstOrNull { it.name == "getEnabledAccessibilityServiceList" && it.parameterCount == 2 }
+        val result = get?.invoke(manager, ALL_FEEDBACK, userId)
+        val list = result as? List<*> ?: result?.javaClass?.getMethod("getList")?.invoke(result) as? List<*>
+        val component = android.content.ComponentName.unflattenFromString(target)
+        list.orEmpty().any {
+          val id = (it as? android.accessibilityservice.AccessibilityServiceInfo)?.id
+          id != null && android.content.ComponentName.unflattenFromString(id) == component
+        }
+      } catch (e: ReflectiveOperationException) {
+        false
+      }
+    fun waitFor(condition: () -> Boolean): Boolean {
+      repeat(WAIT_STEPS) {
+        if (condition()) return true
+        Thread.sleep(WAIT_STEP_MS)
+      }
+      return condition()
+    }
+
+    val old = shell(listOf("settings", "get", "secure", VOLUME_KEYS_SETTING), null).second.takeUnless { it == "null" }
+    val added = old?.split(':')?.contains(target) != true
+    try {
+      if (added) {
+        val value = if (old.isNullOrEmpty()) target else "$old:$target"
+        exec("settings", listOf("settings", "put", "secure", VOLUME_KEYS_SETTING, value))?.let { return it }
+      }
+      waitFor { shortcutTargets()?.any { it.toString() == target } == true }
+      val wasConnected = isConnected()
+      perform()
+      // The shortcut only turns on a service it opens, which then opens on the next one.
+      if (button && !wasConnected && waitFor { isConnected() }) {
+        perform()
+      }
+      return null
+    } catch (e: ReflectiveOperationException) {
+      return e.toString()
+    } finally {
+      if (added) {
+        if (old == null) {
+          exec("settings", listOf("settings", "delete", "secure", VOLUME_KEYS_SETTING))
+        } else {
+          exec("settings", listOf("settings", "put", "secure", VOLUME_KEYS_SETTING, old))
+        }
+      }
+    }
+  }
+
   private fun exec(name: String, command: List<String>): String? {
     val result = shell(command, null)
     return if (result.first == 0) null else result.second.ifEmpty { "$name failed" }
@@ -303,6 +399,16 @@ class ShizukuGrantService(private val context: Context?) : IShizukuGrants.Stub()
     /** Installing is slower than a setting change, so it gets longer than the other commands. */
     const val INSTALL_TIMEOUT_SECONDS = 120L
     const val SHELL_PACKAGE = "com.android.shell"
+    /** The setting with the volume keys shortcut's targets, separated by colons. */
+    const val VOLUME_KEYS_SETTING = "accessibility_shortcut_target_service"
+    /** UserShortcutType.HARDWARE, the volume keys shortcut, from Android 15. */
+    const val HARDWARE_SHORTCUT = 2
+    /** AccessibilityManager.ACCESSIBILITY_SHORTCUT_KEY, the volume keys shortcut, before Android 15. */
+    const val OLD_KEY_SHORTCUT = 1
+    /** AccessibilityServiceInfo.FEEDBACK_ALL_MASK. */
+    const val ALL_FEEDBACK = -1
+    const val WAIT_STEPS = 30
+    const val WAIT_STEP_MS = 100L
     /** ClipDescription.EXTRA_IS_SENSITIVE, from Android 13, set on clips such as passwords. */
     const val EXTRA_IS_SENSITIVE = "android.content.extra.IS_SENSITIVE"
     /** The clipboard history keeps no more of a text than this. */

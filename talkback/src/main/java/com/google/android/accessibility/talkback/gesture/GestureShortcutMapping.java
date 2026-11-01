@@ -1372,6 +1372,11 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
     if (openAppLabel != null) {
       return openAppLabel;
     }
+    @Nullable
+    String shortcutLabel = AccessibilityShortcutActions.label(context, actionKeyString);
+    if (shortcutLabel != null) {
+      return shortcutLabel;
+    }
     @Nullable String commandLabel = Commands.label(context, actionKeyString);
     if (commandLabel != null) {
       return commandLabel;

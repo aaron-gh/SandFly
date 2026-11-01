@@ -56,7 +56,15 @@ enum class ShizukuCommand {
   /** Types text as key events, into apps that have no text field to set text in. */
   INPUT_TEXT,
   /** Sends key events: up to 100 key code names, separated by spaces. */
-  INPUT_KEYEVENT;
+  INPUT_KEYEVENT,
+  /** Starts an accessibility shortcut's activity that other apps may not start. */
+  START_SHORTCUT_ACTIVITY,
+  /**
+   * Runs an accessibility service's accessibility shortcut, as Android's own shortcuts do, without
+   * the service being one of them. The argument is the service's component, with " button" after
+   * it for a service that the shortcut opens rather than turns on or off.
+   */
+  ACCESSIBILITY_SHORTCUT;
 
   /**
    * The command, as adb would run it after `adb shell`, or null if [argument] isn't one it takes.
@@ -90,6 +98,20 @@ enum class ShizukuCommand {
           .takeIf { it.isNotEmpty() && it.length <= MAX_TEXT && it.none { c -> c.isISOControl() } }
           ?.let { listOf("input", "text", it.replace(" ", "%s")) }
       INPUT_KEYEVENT -> KEY_CODES.matchEntire(argument)?.let { listOf("input", "keyevent") + argument.split(' ') }
+      START_SHORTCUT_ACTIVITY ->
+        component?.let {
+          listOf(
+            "am",
+            "start",
+            "-a",
+            "android.intent.action.MAIN",
+            "-c",
+            "android.intent.category.ACCESSIBILITY_SHORTCUT_TARGET",
+            "-n",
+            it,
+          )
+        }
+      ACCESSIBILITY_SHORTCUT -> null
     }
   }
 
@@ -112,6 +134,12 @@ enum class ShizukuCommand {
     const val MAX_TEXT = 1000
 
     private val KEY_CODES = Regex("""KEYCODE_[A-Z0-9_]{1,30}( KEYCODE_[A-Z0-9_]{1,30}){0,99}""")
+
+    /** The suffix of an [ACCESSIBILITY_SHORTCUT] argument for a service the shortcut opens. */
+    const val BUTTON = " button"
+
+    /** Returns whether [argument] is a flattened component name. */
+    fun isComponent(argument: String): Boolean = COMPONENT.matches(argument)
 
     private val COMPONENT =
       Regex(
