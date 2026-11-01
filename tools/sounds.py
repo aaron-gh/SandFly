@@ -187,10 +187,10 @@ def sounds():
                                                    partials=((1, 1.0), (4, 0.15)))], 0.1, -7)
     # Another reading control: two quick notes, rising for the next, falling for the previous.
     s["next_reading_control"] = ([TALKBACK], [note(A5, 0, 0.04, 0.015, partials=PURE),
-                                              note(D6, 0.035, 0.05, 0.018, partials=PURE)], 0.09, -7)
+                                              note(D6, 0.035, 0.05, 0.018, partials=PURE)], 0.09, -12)
     s["previous_reading_control"] = ([TALKBACK], [note(D6, 0, 0.04, 0.015, partials=PURE),
                                                   note(A5, 0.035, 0.05, 0.018, partials=PURE)],
-                                     0.09, -7)
+                                     0.09, -12)
     # The cursor moved in a text field: a very short soft tick.
     s["insertion_point_moved"] = ([TALKBACK], [note(1200, 0, 0.025, 0.006, partials=PURE,
                                                     detune_cents=0)], 0.03, -12)
