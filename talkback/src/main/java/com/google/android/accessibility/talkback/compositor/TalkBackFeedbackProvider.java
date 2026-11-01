@@ -100,6 +100,11 @@ public class TalkBackFeedbackProvider implements EventFeedbackProvider {
   }
 
   @Override
+  public boolean hasFeedbackRule(@Event int event) {
+    return feedbackRules.containsKey(event);
+  }
+
+  @Override
   public EventFeedback buildEventFeedback(@Event int event, HandleEventOptions eventOptions) {
     Function<HandleEventOptions, EventFeedback> eventFeedbackFunction = feedbackRules.get(event);
     if (eventFeedbackFunction == null) {

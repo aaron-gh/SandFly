@@ -25,4 +25,9 @@ public interface EventFeedbackProvider {
    * the source node of event options if needed for the feedback outputs.
    */
   EventFeedback buildEventFeedback(@Event int event, HandleEventOptions eventOptions);
+
+  /** Whether any feedback can be built for {@code event}, so that its source is worth reading. */
+  default boolean hasFeedbackRule(@Event int event) {
+    return true;
+  }
 }

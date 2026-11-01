@@ -303,6 +303,8 @@ public class GestureController {
   public void performAction(String action, EventId eventId) {
     RecentUserInput.mark();
     NotificationReader.onUserAction();
+    // Actions use the reading control, which may be waiting to match the item last touched.
+    selectorController.applyPendingSwitch();
     Performance.getInstance().onPerformAction(eventId, action);
     TalkbackAction actionEvent = gestureShortcutMapping.getActionEvent(action);
     if (actionEvent != null) {
