@@ -710,6 +710,11 @@ public class GestureController {
       }
     } else if (action.equals(service.getString(R.string.shortcut_value_toggle_voice_feedback))) {
       pipeline.returnFeedback(eventId, Feedback.speech(TOGGLE_VOICE_FEEDBACK));
+    } else if (action.equals(service.getString(R.string.shortcut_value_submit_text))) {
+      result = SubmitText.submit(service);
+      if (!result) {
+        pipeline.returnFeedback(eventId, Feedback.sound(R.raw.complete));
+      }
     } else if (action.equals(service.getString(R.string.shortcut_value_copy_last_spoken_phrase))) {
       pipeline.returnFeedback(
           eventId, Feedback.part().setSpeech(Feedback.Speech.create(COPY_LAST)));
