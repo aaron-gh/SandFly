@@ -80,6 +80,7 @@ public class NewKeyComboModel implements KeyComboModel {
       persister = new KeyComboPersister(context, keymap.persisterPrefix(sandFlyKey));
       originalPersister = null;
     }
+    moveBrowseModeToggle();
     // A default new to this version doesn't take keys the user or an earlier version gave a command.
     for (String key : persister.keysStartingWith("")) {
       KeyCombo keyCombo = persister.getKeyCombo(key);
@@ -181,12 +182,14 @@ public class NewKeyComboModel implements KeyComboModel {
     if (originalPersister != null) {
       return originalPersister.contains(key) ? originalPersister.getKeyCombo(key) : new KeyCombo();
     }
-    // Two keys held together, such as Ctrl + Alt, can't be pressed twice.
-    if (!sandFlyKey.getCanBePressedTwice()
-        && key.equals(context.getString(R.string.keycombo_shortcut_other_toggle_browse_mode))) {
-      return new KeyCombo();
+    KeyCombo keyCombo = getNativeDefaultKeyCombo(key);
+    // Two keys held together, such as Ctrl + Alt, can't be pressed twice: browse mode turns on and
+    // off with SandFly key + Q instead.
+    if (keyCombo.isSandFlyKeyPressedTwice() && !sandFlyKey.getCanBePressedTwice()) {
+      return new KeyCombo(
+          NO_MODIFIER, NO_PREFIX_KEY_CODE, KeyEvent.KEYCODE_Q, /* triggerModifierUsed= */ true);
     }
-    return SandFlyKey.adapt(getNativeDefaultKeyCombo(key), keymap.getNativeKey(), sandFlyKey);
+    return SandFlyKey.adapt(keyCombo, keymap.getNativeKey(), sandFlyKey);
   }
 
   /**
@@ -219,11 +222,9 @@ public class NewKeyComboModel implements KeyComboModel {
           NO_MODIFIER, NO_PREFIX_KEY_CODE, KeyEvent.KEYCODE_SPACE, /* triggerModifierUsed= */ true);
     }
 
-    // Browse mode also turns on and off with SandFly key + Q, for SandFly keys that can't be
-    // pressed twice, such as Ctrl + Alt.
+    // Browse mode turns on and off with the SandFly key pressed twice.
     if (key.equals(context.getString(R.string.keycombo_shortcut_other_toggle_browse_mode_extra))) {
-      return new KeyCombo(
-          NO_MODIFIER, NO_PREFIX_KEY_CODE, KeyEvent.KEYCODE_Q, /* triggerModifierUsed= */ true);
+      return KeyCombo.sandFlyKeyPressedTwice();
     }
 
     if (key.equals(context.getString(R.string.keycombo_shortcut_perform_long_click))) {
@@ -422,21 +423,6 @@ public class NewKeyComboModel implements KeyComboModel {
     ////////////////////////////////////////////////////////////////////////////////////////////////
     // Beginning of the Browse Mode only commands.
     if (FeatureFlagReader.enableBrowseMode(context)) {
-      // Note that the default key combo for the browse mode toggle is added only to display it in
-      // the keyboard shortcut settings page. `KeyComboManager.matchAndPerformKeyCombo()` should
-      // not handle this key combo as `KeyComboManager.onKeyDown()` handles it separately. Also,
-      // `KeyboardShortcutDialogPreference` does not use this `KeyCombo` to show its key shortcut;
-      // instead, it references the android:summary attribute defined in the xml directly.
-      // TODO: b/440094156 - Dynamically update the key combo for the browse mode toggle based on
-      // the chosen trigger modifier.
-      if (key.equals(context.getString(R.string.keycombo_shortcut_other_toggle_browse_mode))) {
-        return new KeyCombo(
-            NO_MODIFIER,
-            KeyEvent.KEYCODE_META_RIGHT,
-            KEY_COMBO_CODE_UNASSIGNED,
-            /* triggerModifierUsed= */ true);
-      }
-
       if (key.equals(context.getString(R.string.keycombo_shortcut_navigate_next_character))) {
         return new KeyCombo(
             KeyComboModel.NO_MODIFIER,
@@ -1478,10 +1464,6 @@ public class NewKeyComboModel implements KeyComboModel {
     addKeyCombo(context.getString(R.string.keycombo_shortcut_global_refresh));
     addKeyCombo(context.getString(R.string.keycombo_shortcut_other_toggle_browse_mode_extra));
 
-    if (FeatureFlagReader.enableBrowseMode(context)) {
-      addKeyCombo(context.getString(R.string.keycombo_shortcut_other_toggle_browse_mode));
-    }
-
     if (FeatureFlagReader.enableAnnounceCurrentTimeAndDate(context)) {
       addKeyCombo(
           context.getString(R.string.keycombo_shortcut_global_announce_current_time_and_date));
@@ -1629,6 +1611,40 @@ public class NewKeyComboModel implements KeyComboModel {
     addKeyCombo(context.getString(R.string.keycombo_shortcut_review_cursor_on));
     addKeyCombo(context.getString(R.string.keycombo_shortcut_review_cursor_off));
     addKeyCombo(context.getString(R.string.keycombo_shortcut_recognize_screen_text));
+  }
+
+  /**
+   * Browse mode had two shortcuts: the SandFly key pressed twice, which couldn't be changed, and
+   * SandFly key + Q. They are one now. Where the first was saved and the second is still SandFly key
+   * + Q or unassigned, the SandFly key pressed twice takes its place.
+   */
+  private void moveBrowseModeToggle() {
+    String oldKey = context.getString(R.string.keycombo_shortcut_other_toggle_browse_mode);
+    String key = context.getString(R.string.keycombo_shortcut_other_toggle_browse_mode_extra);
+    KeyCombo plusQ =
+        new KeyCombo(NO_MODIFIER, NO_PREFIX_KEY_CODE, KeyEvent.KEYCODE_Q, /* triggerModifierUsed= */ true);
+    for (KeyComboPersister saved :
+        originalPersister == null
+            ? java.util.List.of(persister)
+            : java.util.List.of(persister, originalPersister)) {
+      if (!saved.contains(oldKey)) {
+        continue;
+      }
+      boolean twice = saved.getKeyCombo(oldKey).isSandFlyKeyPressedTwice();
+      saved.remove(oldKey);
+      if (!twice) {
+        continue;
+      }
+      KeyCombo current = saved.contains(key) ? saved.getKeyCombo(key) : new KeyCombo();
+      if (current.equals(plusQ) || current.getKeyComboCode() == KEY_COMBO_CODE_UNASSIGNED) {
+        if (originalPersister == null) {
+          // The keymap's default, the SandFly key pressed twice where it can be, takes its place.
+          saved.remove(key);
+        } else {
+          saved.saveKeyCombo(key, KeyCombo.sandFlyKeyPressedTwice());
+        }
+      }
+    }
   }
 
   /** Adds the keyboard shortcuts set for commands that have no keyboard action of their own. */

@@ -215,11 +215,37 @@ class KeymapTest {
 
   @Test
   fun browseModeTogglesWithTheSandFlyKeyTwiceOnlyWhereAssigned() {
-    val key = context.getString(R.string.keycombo_shortcut_other_toggle_browse_mode)
-    val unassigned = KeyComboModel.KEY_COMBO_CODE_UNASSIGNED.toLong()
-    assertTrue(NewKeyComboModel(context, Keymap.SANDFLY).getKeyComboForKey(key).keyComboCode != unassigned)
-    assertEquals(unassigned, NewKeyComboModel(context, Keymap.NVDA).getKeyComboForKey(key).keyComboCode)
-    assertEquals(unassigned, NewKeyComboModel(context, Keymap.VOICEOVER).getKeyComboForKey(key).keyComboCode)
+    val key = context.getString(R.string.keycombo_shortcut_other_toggle_browse_mode_extra)
+    assertTrue(NewKeyComboModel(context, Keymap.SANDFLY).getKeyComboForKey(key).isSandFlyKeyPressedTwice)
+    assertEquals(
+      KeyCombo(0, 0, KeyEvent.KEYCODE_SPACE, true),
+      NewKeyComboModel(context, Keymap.NVDA).getKeyComboForKey(key),
+    )
+    assertFalse(NewKeyComboModel(context, Keymap.VOICEOVER).getKeyComboForKey(key).isSandFlyKeyPressedTwice)
+  }
+
+  @Test
+  fun bothOldBrowseModeShortcutsBecomeTheSandFlyKeyTwice() {
+    val persister = KeyComboPersister(context, Keymap.SANDFLY.persisterPrefix)
+    val oldKey = context.getString(R.string.keycombo_shortcut_other_toggle_browse_mode)
+    val key = context.getString(R.string.keycombo_shortcut_other_toggle_browse_mode_extra)
+    persister.saveKeyCombo(oldKey, KeyCombo.sandFlyKeyPressedTwice())
+    persister.saveKeyCombo(key, KeyCombo(0, 0, KeyEvent.KEYCODE_Q, true))
+    assertTrue(NewKeyComboModel(context, Keymap.SANDFLY).getKeyComboForKey(key).isSandFlyKeyPressedTwice)
+    assertFalse(persister.contains(oldKey))
+  }
+
+  @Test
+  fun aChangedBrowseModeShortcutStays() {
+    val persister = KeyComboPersister(context, Keymap.SANDFLY.persisterPrefix)
+    val oldKey = context.getString(R.string.keycombo_shortcut_other_toggle_browse_mode)
+    val key = context.getString(R.string.keycombo_shortcut_other_toggle_browse_mode_extra)
+    persister.saveKeyCombo(oldKey, KeyCombo.sandFlyKeyPressedTwice())
+    persister.saveKeyCombo(key, KeyCombo(0, 0, KeyEvent.KEYCODE_B, true))
+    assertEquals(
+      KeyCombo(0, 0, KeyEvent.KEYCODE_B, true),
+      NewKeyComboModel(context, Keymap.SANDFLY).getKeyComboForKey(key),
+    )
   }
 
   @Test

@@ -378,11 +378,6 @@ public class TalkBackKeyboardShortcutPreferenceFragment extends TalkbackBaseFrag
             new KeyboardShortcutDialogPreference(context, key, title);
         preference.setIconSpaceReserved(false);
         preference.setOnPreferenceChangeListener(preferenceChangeListener);
-        if (!CommandBindings.isCustomizable(context, key)) {
-          preference.setEnabled(false);
-          preference.setSummary(
-              getString(R.string.shortcut_not_customizable, preference.getSummary().toString()));
-        }
         group.addPreference(preference);
       }
     }
@@ -599,15 +594,6 @@ public class TalkBackKeyboardShortcutPreferenceFragment extends TalkbackBaseFrag
           if (root.getPreferenceCount() == 0) {
             getPreferenceScreen().removePreference(root);
           }
-        } else if (key.equals(getString(R.string.keycombo_shortcut_other_toggle_browse_mode))) {
-          // Disable the preference to make it not customizable.
-          KeyboardShortcutDialogPreference keyShortcutPreference =
-              (KeyboardShortcutDialogPreference) preference;
-          keyShortcutPreference.setEnabled(false);
-          keyShortcutPreference.setSummary(
-              getString(
-                  R.string.shortcut_not_customizable,
-                  keyShortcutPreference.getSummary().toString()));
         } else {
           // Set onPreferenceChangeListener.
           preference.setOnPreferenceChangeListener(preferenceChangeListener);
@@ -642,9 +628,7 @@ public class TalkBackKeyboardShortcutPreferenceFragment extends TalkbackBaseFrag
     resetKeymapPreference.setEnabled(isServiceActive());
     setUpDialogPreference(
         preference ->
-            preference.setEnabled(
-                isServiceActive()
-                    && CommandBindings.isCustomizable(getContext(), preference.getKey())));
+            preference.setEnabled(isServiceActive()));
   }
 
   private boolean isServiceActive() {
@@ -660,9 +644,7 @@ public class TalkBackKeyboardShortcutPreferenceFragment extends TalkbackBaseFrag
               resetKeymapPreference.setEnabled(isServiceActive);
               setUpDialogPreference(
                   preference -> {
-                    preference.setEnabled(
-                        isServiceActive
-                            && CommandBindings.isCustomizable(getContext(), preference.getKey()));
+                    preference.setEnabled(isServiceActive);
                     if (isServiceActive) {
                       preference.updateKeyComboManager();
                       preference.onTriggerModifierChanged();

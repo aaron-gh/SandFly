@@ -55,6 +55,9 @@ import java.util.function.Consumer;
  */
 public class KeyboardShortcutDialogPreference extends Preference
     implements DialogInterface.OnKeyListener, ServiceKeyEventListener {
+  /** The longest time between the SandFly key's two presses that records it pressed twice. */
+  private static final long SANDFLY_KEY_TWICE_MS = 500;
+
 
   private static final int KEY_EVENT_SOURCE_ACTIVITY = 0;
   private static final int KEY_EVENT_SOURCE_ACCESSIBILITY_SERVICE = 1;
@@ -77,6 +80,8 @@ public class KeyboardShortcutDialogPreference extends Preference
   private TextView instructionText;
   private boolean supportedSequenceKeyInfra;
   private boolean triggerModifierUp;
+  // When the SandFly key alone was last pressed in the dialog, to record it pressed twice.
+  private long sandFlyKeyDownTime;
   private String summary;
 
   /** Defines the state of the sequence key mode. */
@@ -352,6 +357,26 @@ public class KeyboardShortcutDialogPreference extends Preference
   private boolean onKeyEventInternal(KeyEvent event) {
     if (!processKeyEvent(event)) {
       return false;
+    }
+
+    // The SandFly key pressed twice, alone, turns browse mode on and off.
+    @Nullable SandFlyKey sandFlyKey = keyComboManager.getSandFlyKey();
+    if (canTakeSandFlyKeyPressedTwice()
+        && sandFlyKey != null
+        && sandFlyKey.isKey(event)
+        && event.getRepeatCount() == 0) {
+      if (event.getEventTime() - sandFlyKeyDownTime < SANDFLY_KEY_TWICE_MS) {
+        sandFlyKeyDownTime = 0;
+        this.tempKeyCombo = KeyCombo.sandFlyKeyPressedTwice();
+        if (supportedSequenceKeyInfra) {
+          currentSequenceKeyState = STATE_PREFIX_KEY_NOT_PRESSED;
+        }
+        updateKeyAssignmentText();
+        return true;
+      }
+      sandFlyKeyDownTime = event.getEventTime();
+    } else if (event.getAction() == KeyEvent.ACTION_DOWN) {
+      sandFlyKeyDownTime = 0;
     }
 
     if (event.getKeyCode() == KeyEvent.KEYCODE_DEL && hasNoModifiers(event)) {
@@ -862,6 +887,9 @@ public class KeyboardShortcutDialogPreference extends Preference
    */
   private boolean isValidKeyCombo(KeyCombo keyCombo) {
     String key = getKey();
+    if (keyCombo.isSandFlyKeyPressedTwice()) {
+      return canTakeSandFlyKeyPressedTwice();
+    }
     boolean eligible = keyComboManager.getKeyComboModel().isEligibleKeyCombo(keyCombo);
     if (!eligible) {
       // A command's default keys are eligible even without the SandFly key, such as browse mode's
@@ -880,6 +908,16 @@ public class KeyboardShortcutDialogPreference extends Preference
           && !INVALID_SEQUENCE_KEYCOMBO_FINAL_KEYS.contains(keyCombo.getKeyCode());
     }
     return validNonSequenceKeyCombo;
+  }
+
+  /** Returns whether this is browse mode's shortcut and its SandFly key can be pressed twice. */
+  private boolean canTakeSandFlyKeyPressedTwice() {
+    @Nullable SandFlyKey sandFlyKey = keyComboManager.getSandFlyKey();
+    return sandFlyKey != null
+        && sandFlyKey.getCanBePressedTwice()
+        && getContext()
+            .getString(R.string.keycombo_shortcut_other_toggle_browse_mode_extra)
+            .equals(getKey());
   }
 
   /** Handles duplicate shortcut if the shortcut is already assigned to another action. */

@@ -478,9 +478,8 @@ object Commands {
         gesture(
           R.string.shortcut_value_toggle_browse_mode,
           R.string.keycombo_menu_other_toggle_browse_mode,
-          Key.TOGGLE_BROWSE_MODE,
+          Key.TOGGLE_BROWSE_MODE_EXTRA,
         )
-        keyboard(Key.TOGGLE_BROWSE_MODE_EXTRA)
         keyboard(Key.SHOW_HEADING_LIST)
         keyboard(Key.SHOW_LANDMARK_LIST)
         keyboard(Key.SHOW_LINK_LIST)

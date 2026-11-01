@@ -110,7 +110,7 @@ class CommandFragment : TalkbackBaseFragment() {
       KeyboardShortcutDialogPreference(context, key, command.label).apply {
         isIconSpaceReserved = false
         // Recording a shortcut needs the screen reader's key events.
-        isEnabled = TalkBackService.isServiceActive() && CommandBindings.isCustomizable(context, key)
+        isEnabled = TalkBackService.isServiceActive()
       }
     )
   }
