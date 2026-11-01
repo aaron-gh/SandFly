@@ -439,8 +439,14 @@ public class BrailleIme extends InputMethodService {
 
   @Override
   public boolean onEvaluateInputViewShown() {
-    // Hidden while a physical keyboard is connected, like other keyboards, unless the system's
-    // Use on-screen keyboard setting is on.
+    // Shown while a braille display is connected: typing on the display goes into text fields
+    // through this keyboard, and Android counts a display connected over HID as a physical
+    // keyboard. Otherwise hidden while a physical keyboard is connected, like other keyboards,
+    // unless the system's Use on-screen keyboard setting is on.
+    if (brailleDisplayForBrailleIme != null
+        && brailleDisplayForBrailleIme.isBrailleDisplayConnectedAndNotSuspended()) {
+      return true;
+    }
     return super.onEvaluateInputViewShown();
   }
 
@@ -2167,6 +2173,8 @@ public class BrailleIme extends InputMethodService {
         public void onBrailleDisplayConnected() {
           BrailleImeLog.d(TAG, "onBrailleDisplayConnected");
           brailleDisplayConnectedAndNotSuspended = true;
+          // A display that is also a physical keyboard, over HID, shows this keyboard again.
+          updateInputViewShown();
           updateInputView();
         }
 
@@ -2179,6 +2187,8 @@ public class BrailleIme extends InputMethodService {
             switchToNextInputMethod();
             return;
           }
+          // With a physical keyboard still connected, this keyboard hides again.
+          updateInputViewShown();
           if (showKeyboardView()) {
             updateInputView();
           }
