@@ -30,7 +30,6 @@ import static com.google.android.accessibility.utils.input.CursorGranularity.LIN
 import static com.google.android.accessibility.utils.input.CursorGranularity.PARAGRAPH;
 import static com.google.android.accessibility.utils.input.CursorGranularity.WORD;
 
-import android.annotation.SuppressLint;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
@@ -439,11 +438,10 @@ public class BrailleIme extends InputMethodService {
   }
 
   @Override
-  @SuppressLint("MissingSuperCall")
   public boolean onEvaluateInputViewShown() {
-    // Always show the Braille IME. The super implementation only allows an InputMethodService
-    // when there is no hardware keyboard, or the hardware keyboard is hidden.
-    return true;
+    // Hidden while a physical keyboard is connected, like other keyboards, unless the system's
+    // Use on-screen keyboard setting is on.
+    return super.onEvaluateInputViewShown();
   }
 
   @Override
