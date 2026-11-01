@@ -135,8 +135,9 @@ object JapaneseDictionary {
               LogUtils.e(TAG, "Download failed for good: %s", e)
               failedForGood = true
               false
-            } catch (e: Exception) {
-              // Also what reading damaged files throws, such as IndexOutOfBoundsException.
+            } catch (e: Throwable) {
+              // Also what reading damaged files throws, such as IndexOutOfBoundsException, and
+              // OutOfMemoryError, which would otherwise stop SandFly.
               LogUtils.e(TAG, "Download failed: %s", e)
               false
             }

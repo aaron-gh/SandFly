@@ -393,7 +393,7 @@ public class FeedbackController {
     if (resId != 0) {
       playSoundHaptic(resId, eventId);
     }
-    playSound(resId, rate, volume, ignoreVolumeAdjustment, eventId);
+    playSound(resId, rate, volume, ignoreVolumeAdjustment, /* evenIfSoundsOff= */ false, eventId);
   }
 
   /**
@@ -407,7 +407,17 @@ public class FeedbackController {
   /** Plays a sound with the given rate and volume, without its vibration. */
   public void playAuditoryWithoutHaptic(
       int resId, float rate, float volume, @Nullable EventId eventId) {
-    playSound(resId, rate, volume, /* ignoreVolumeAdjustment= */ false, eventId);
+    playSound(
+        resId, rate, volume, /* ignoreVolumeAdjustment= */ false, /* evenIfSoundsOff= */ false, eventId);
+  }
+
+  /**
+   * Plays a sound that has a switch of its own, such as the braille keyboard's typing sounds, also
+   * while sound feedback is off. Without its vibration.
+   */
+  public void playOwnSwitchSound(int resId, @Nullable EventId eventId) {
+    playSound(
+        resId, 1.0f, 1.0f, /* ignoreVolumeAdjustment= */ false, /* evenIfSoundsOff= */ true, eventId);
   }
 
   private void playSound(
@@ -415,8 +425,9 @@ public class FeedbackController {
       final float rate,
       float volume,
       boolean ignoreVolumeAdjustment,
+      boolean evenIfSoundsOff,
       @Nullable EventId eventId) {
-    if (!mAuditoryEnabled
+    if ((!mAuditoryEnabled && !evenIfSoundsOff)
         || resId == 0
         || isMuted(mMutedAuditoryNames, resId)
         || !hasSound(resId)) {

@@ -453,10 +453,13 @@ public class BtConnectManager extends ConnectManager {
     private static final int MAXIMUM_RETRY_TIMES = 5;
     private final Handler handler = new Handler(Looper.getMainLooper());
     private int attemptedConnect = 0;
+    // Whether a connection attempt waits for its answer. The first starts with this callback.
+    private boolean attemptInFlight = true;
 
     @Override
     public void onConnectSuccess(D2dConnection connection) {
       BrailleDisplayLog.d(TAG, "HID onConnectSuccess");
+      attemptInFlight = false;
       deviceConnection = connection;
       attemptedConnect = 0;
       // BRLTTY connection will start after HID connected.
@@ -484,7 +487,16 @@ public class BtConnectManager extends ConnectManager {
     private void retryNow() {
       cancelRetries();
       attemptedConnect = 0;
+      // An attempt still waiting may be the one that succeeds; if it fails, the retries start
+      // afresh. Opening the display twice would replace this callback.
+      if (!attemptInFlight) {
+        connect();
+      }
+    }
+
+    private void connect() {
       if (btConnector != null) {
+        attemptInFlight = true;
         btConnector.connect();
       }
     }
@@ -492,6 +504,7 @@ public class BtConnectManager extends ConnectManager {
     @Override
     public void onConnectFailure(ConnectableDevice device, Exception exception) {
       BrailleDisplayLog.d(TAG, "HID onConnectFailure: " + exception.getMessage());
+      attemptInFlight = false;
       if (this != hidConnectorCallback) {
         // A failure from a connection attempt that was since disconnected.
         return;
@@ -499,12 +512,7 @@ public class BtConnectManager extends ConnectManager {
       if (attemptedConnect < MAXIMUM_RETRY_TIMES) {
         attemptedConnect++;
         handler.postDelayed(
-            () -> {
-              if (btConnector != null) {
-                btConnector.connect();
-              }
-            },
-            attemptedConnect * BRAILLE_DISPLAY_CONTROLLER_DELAY.toMillis());
+            this::connect, attemptedConnect * BRAILLE_DISPLAY_CONTROLLER_DELAY.toMillis());
       } else {
         disconnect();
         if (!mayOfferSerialPort(((ConnectableBluetoothDevice) device).bluetoothDevice())) {
