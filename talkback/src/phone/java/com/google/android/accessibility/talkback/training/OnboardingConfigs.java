@@ -40,12 +40,12 @@ import static com.google.android.accessibility.talkback.trainingcommon.PageConfi
 import static com.google.android.accessibility.talkback.trainingcommon.PageConfig.PageId.PAGE_ID_SHORTCUT_FOR_DICTATION_WITHOUT_GOOGLE_PLAY;
 import static com.google.android.accessibility.talkback.trainingcommon.PageConfig.PageId.PAGE_ID_SPLIT_TAP_EVERYWHERE;
 import static com.google.android.accessibility.talkback.trainingcommon.PageConfig.PageId.PAGE_ID_SANDFLY_WELCOME;
-import static com.google.android.accessibility.talkback.trainingcommon.PageConfig.PageId.PAGE_ID_SANDFLY_TUTORIAL;
-import static com.google.android.accessibility.talkback.trainingcommon.PageConfig.PageId.PAGE_ID_SANDFLY_SETTINGS;
-import static com.google.android.accessibility.talkback.trainingcommon.PageConfig.PageId.PAGE_ID_SANDFLY_TRANSLATION;
-import static com.google.android.accessibility.talkback.trainingcommon.PageConfig.PageId.PAGE_ID_SANDFLY_ARROW_KEYS;
+import static com.google.android.accessibility.talkback.trainingcommon.PageConfig.PageId.PAGE_ID_SANDFLY_KEYMAPS;
+import static com.google.android.accessibility.talkback.trainingcommon.PageConfig.PageId.PAGE_ID_SANDFLY_GESTURES;
+import static com.google.android.accessibility.talkback.trainingcommon.PageConfig.PageId.PAGE_ID_SANDFLY_SPEECH;
+import static com.google.android.accessibility.talkback.trainingcommon.PageConfig.PageId.PAGE_ID_SANDFLY_BRAILLE;
 import static com.google.android.accessibility.talkback.trainingcommon.PageConfig.PageId.PAGE_ID_SANDFLY_COMMANDS;
-import static com.google.android.accessibility.talkback.trainingcommon.PageConfig.PageId.PAGE_ID_SANDFLY_DICTATION;
+import static com.google.android.accessibility.talkback.trainingcommon.PageConfig.PageId.PAGE_ID_SANDFLY_SCRIPTS;
 import static com.google.android.accessibility.talkback.trainingcommon.PageConfig.PageId.PAGE_ID_SANDFLY_PRO;
 import static com.google.android.accessibility.talkback.trainingcommon.PageConfig.PageId.PAGE_ID_UPDATE_WELCOME;
 
@@ -106,41 +106,41 @@ final class OnboardingConfigs {
           .captureGesture(
               AccessibilityService.GESTURE_2_FINGER_DOUBLE_TAP_AND_HOLD,
               R.string.new_shortcut_gesture_selection_mode_on_announcement);
-  // SandFly 0.2.0. Each release replaces these pages and raises NEW_FEATURE_SHOWN_KEY in
+  // SandFly 0.3.0. Each release replaces these pages and raises NEW_FEATURE_SHOWN_KEY in
   // OnboardingInitiator, so that they show once after the update.
   static final PageConfig.Builder sandflyWelcome =
       PageConfig.builder(PAGE_ID_SANDFLY_WELCOME, R.string.welcome_to_updated_talkback_title)
-          .addText(R.string.new_features_0_2_0_welcome);
+          .addText(R.string.new_features_0_3_0_welcome);
 
-  static final PageConfig.Builder sandflyTutorial =
-      PageConfig.builder(PAGE_ID_SANDFLY_TUTORIAL, R.string.new_features_0_2_0_tutorial_title)
-          .addText(R.string.new_features_0_2_0_tutorial);
+  static final PageConfig.Builder sandflyKeymaps =
+      PageConfig.builder(PAGE_ID_SANDFLY_KEYMAPS, R.string.new_features_0_3_0_keymaps_title)
+          .addText(R.string.new_features_0_3_0_keymaps);
 
-  static final PageConfig.Builder sandflySettings =
-      PageConfig.builder(PAGE_ID_SANDFLY_SETTINGS, R.string.new_features_0_2_0_settings_title)
-          .addText(R.string.new_features_0_2_0_settings);
+  static final PageConfig.Builder sandflyGestures =
+      PageConfig.builder(PAGE_ID_SANDFLY_GESTURES, R.string.new_features_0_3_0_gestures_title)
+          .addText(R.string.new_features_0_3_0_gestures);
 
-  static final PageConfig.Builder sandflyTranslation =
+  static final PageConfig.Builder sandflySpeech =
       PageConfig.builder(
-              PAGE_ID_SANDFLY_TRANSLATION, R.string.new_features_0_2_0_translation_title)
-          .addText(R.string.new_features_0_2_0_translation);
+              PAGE_ID_SANDFLY_SPEECH, R.string.new_features_0_3_0_speech_title)
+          .addText(R.string.new_features_0_3_0_speech);
 
-  static final PageConfig.Builder sandflyArrowKeys =
-      PageConfig.builder(PAGE_ID_SANDFLY_ARROW_KEYS, R.string.new_features_0_2_0_arrow_keys_title)
-          .addText(R.string.new_features_0_2_0_arrow_keys);
+  static final PageConfig.Builder sandflyBraille =
+      PageConfig.builder(PAGE_ID_SANDFLY_BRAILLE, R.string.new_features_0_3_0_braille_title)
+          .addText(R.string.new_features_0_3_0_braille);
 
   static final PageConfig.Builder sandflyCommands =
-      PageConfig.builder(PAGE_ID_SANDFLY_COMMANDS, R.string.new_features_0_2_0_commands_title)
-          .addText(R.string.new_features_0_2_0_commands);
+      PageConfig.builder(PAGE_ID_SANDFLY_COMMANDS, R.string.new_features_0_3_0_commands_title)
+          .addText(R.string.new_features_0_3_0_commands);
 
-  static final PageConfig.Builder sandflyDictation =
-      PageConfig.builder(PAGE_ID_SANDFLY_DICTATION, R.string.new_features_0_2_0_dictation_title)
-          .addText(R.string.new_features_0_2_0_dictation);
+  static final PageConfig.Builder sandflyScripts =
+      PageConfig.builder(PAGE_ID_SANDFLY_SCRIPTS, R.string.new_features_0_3_0_scripts_title)
+          .addText(R.string.new_features_0_3_0_scripts);
 
   static final PageConfig.Builder sandflyPro =
-      PageConfig.builder(PAGE_ID_SANDFLY_PRO, R.string.new_features_0_2_0_pro_title)
+      PageConfig.builder(PAGE_ID_SANDFLY_PRO, R.string.new_features_0_3_0_pro_title)
           .setShowingPredicate(SANDFLY_PRO)
-          .addText(R.string.new_features_0_2_0_pro);
+          .addText(R.string.new_features_0_3_0_pro);
 
   // For TB 16.2
   static final PageConfig.Builder updateWelcome =
@@ -237,12 +237,12 @@ final class OnboardingConfigs {
         .setPages(
             ImmutableList.of(
                 sandflyWelcome,
-                sandflyTutorial,
-                sandflySettings,
-                sandflyTranslation,
-                sandflyArrowKeys,
+                sandflyKeymaps,
+                sandflyGestures,
+                sandflySpeech,
+                sandflyBraille,
                 sandflyCommands,
-                sandflyDictation))
+                sandflyScripts))
         .addPageEndOfSection(sandflyPro)
         .setButtons(DEFAULT_BUTTONS);
   }
