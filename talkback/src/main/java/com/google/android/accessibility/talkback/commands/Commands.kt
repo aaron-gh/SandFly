@@ -17,6 +17,7 @@
 package com.google.android.accessibility.talkback.commands
 
 import android.content.Context
+import android.os.Build
 import androidx.annotation.StringRes
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.actor.GestureReporter
@@ -211,6 +212,7 @@ object Commands {
 
     fun build(): List<Category> {
       navigation()
+      objectNavigation()
       activation()
       scrolling()
       textNavigation()
@@ -218,6 +220,7 @@ object Commands {
       tables()
       web()
       reading()
+      screenReview()
       speech()
       readingControls()
       textEditing()
@@ -320,6 +323,40 @@ object Commands {
           Key.NAVIGATE_PREVIOUS_WINDOW,
         )
         keyboard(Key.REFOCUS_CURRENT_NODE)
+        keyboard(Key.NAVIGATE_NEXT_FOCUSABLE)
+        keyboard(Key.NAVIGATE_PREVIOUS_FOCUSABLE)
+      }
+
+    private fun objectNavigation() =
+      category(R.string.commands_category_object_navigation) {
+        keyboard(Key.OBJECT_PARENT)
+        keyboard(Key.OBJECT_FIRST_CHILD)
+        keyboard(Key.OBJECT_NEXT)
+        keyboard(Key.OBJECT_PREVIOUS)
+      }
+
+    private fun screenReview() =
+      category(R.string.commands_category_screen_review) {
+        keyboard(Key.REVIEW_PREVIOUS_LINE)
+        keyboard(Key.REVIEW_CURRENT_LINE)
+        keyboard(Key.REVIEW_NEXT_LINE)
+        keyboard(Key.REVIEW_PREVIOUS_WORD)
+        keyboard(Key.REVIEW_CURRENT_WORD)
+        keyboard(Key.REVIEW_NEXT_WORD)
+        keyboard(Key.REVIEW_PREVIOUS_CHARACTER)
+        keyboard(Key.REVIEW_CURRENT_CHARACTER)
+        keyboard(Key.REVIEW_NEXT_CHARACTER)
+        keyboard(Key.REVIEW_TOP)
+        keyboard(Key.REVIEW_BOTTOM)
+        keyboard(Key.REVIEW_LINE_START)
+        keyboard(Key.REVIEW_LINE_END)
+        keyboard(Key.REVIEW_CLICK)
+        keyboard(Key.REVIEW_LONG_CLICK)
+        keyboard(Key.REVIEW_MOVE_TO_FOCUS)
+        keyboard(Key.FOCUS_REVIEW_CURSOR)
+        keyboard(Key.REVIEW_CURSOR_ON)
+        keyboard(Key.REVIEW_CURSOR_OFF)
+        keyboard(Key.RECOGNIZE_SCREEN_TEXT, available = Build.VERSION.SDK_INT >= Build.VERSION_CODES.R)
       }
 
     private fun activation() =

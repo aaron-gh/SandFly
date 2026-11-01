@@ -37,6 +37,11 @@ enum class Keymap(
   val defaults: KeymapDefaults?,
   /** Whether SandFly key + R or O starts a shortcut of two keys one after the other. */
   val usesSequences: Boolean,
+  /**
+   * Whether its shortcuts without the SandFly key, such as the arrow keys, work outside browse mode
+   * and text fields being edited, as a computer screen reader's do.
+   */
+  val arrowsNavigate: Boolean = false,
 ) {
   SANDFLY(
     R.string.new_keymap_entry_value,
@@ -65,6 +70,7 @@ enum class Keymap(
     listOf(SandFlyKey.INSERT, SandFlyKey.NUMPAD_INSERT, SandFlyKey.META),
     NvdaKeymap,
     usesSequences = false,
+    arrowsNavigate = true,
   ),
   JAWS(
     R.string.jaws_keymap_entry_value,
@@ -74,6 +80,7 @@ enum class Keymap(
     listOf(SandFlyKey.INSERT, SandFlyKey.NUMPAD_INSERT, SandFlyKey.META),
     JawsKeymap,
     usesSequences = false,
+    arrowsNavigate = true,
   ),
   ORCA(
     R.string.orca_keymap_entry_value,
@@ -83,6 +90,7 @@ enum class Keymap(
     listOf(SandFlyKey.INSERT, SandFlyKey.NUMPAD_INSERT, SandFlyKey.META, SandFlyKey.ALT),
     OrcaKeymap,
     usesSequences = false,
+    arrowsNavigate = true,
   );
 
   /** The SandFly key its defaults are written for. */

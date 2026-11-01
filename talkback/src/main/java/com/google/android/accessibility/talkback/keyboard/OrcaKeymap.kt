@@ -20,18 +20,32 @@ import com.google.android.accessibility.talkback.R
 
 /**
  * The default shortcuts of the Orca keymap: Orca's laptop layout with the SandFly key as the Orca
- * modifier (Insert), which needs no number pad. Flat review's previous and next line move by item.
- * In browse mode, single keys move as Orca's structural navigation does.
+ * modifier (Insert), which needs no number pad. The arrow keys move SandFly focus as on a computer,
+ * and Tab moves between items that take input focus. Flat review is the review cursor, which reads
+ * the screen as it is laid out and starts where SandFly focus is. In browse mode, single keys move
+ * as Orca's structural navigation does.
  */
 object OrcaKeymap : KeymapDefaults() {
   override val defaults: Map<Int, KeyCombo> =
     buildMap {
-      put(R.string.keycombo_shortcut_navigate_next_default, sandFly(NONE, KeyEvent.KEYCODE_O))
-      put(R.string.keycombo_shortcut_navigate_previous_default, sandFly(NONE, KeyEvent.KEYCODE_U))
-      put(R.string.keycombo_shortcut_perform_click, sandFly(NONE, KeyEvent.KEYCODE_7))
-      put(R.string.keycombo_shortcut_perform_long_click, sandFly(NONE, KeyEvent.KEYCODE_8))
+      putDesktopKeys()
       put(R.string.keycombo_shortcut_other_custom_actions, sandFly(NONE, KeyEvent.KEYCODE_MENU))
       put(R.string.keycombo_shortcut_global_refocus_current_node, sandFly(NONE, KeyEvent.KEYCODE_ENTER))
+
+      // Flat review.
+      put(R.string.keycombo_shortcut_review_previous_line, sandFly(NONE, KeyEvent.KEYCODE_U))
+      put(R.string.keycombo_shortcut_review_current_line, sandFly(NONE, KeyEvent.KEYCODE_I))
+      put(R.string.keycombo_shortcut_review_next_line, sandFly(NONE, KeyEvent.KEYCODE_O))
+      put(R.string.keycombo_shortcut_review_previous_word, sandFly(NONE, KeyEvent.KEYCODE_J))
+      put(R.string.keycombo_shortcut_review_current_word, sandFly(NONE, KeyEvent.KEYCODE_K))
+      put(R.string.keycombo_shortcut_review_next_word, sandFly(NONE, KeyEvent.KEYCODE_L))
+      put(R.string.keycombo_shortcut_review_previous_character, sandFly(NONE, KeyEvent.KEYCODE_M))
+      put(R.string.keycombo_shortcut_review_current_character, sandFly(NONE, KeyEvent.KEYCODE_COMMA))
+      put(R.string.keycombo_shortcut_review_next_character, sandFly(NONE, KeyEvent.KEYCODE_PERIOD))
+      put(R.string.keycombo_shortcut_review_top, sandFly(CTRL, KeyEvent.KEYCODE_U))
+      put(R.string.keycombo_shortcut_review_bottom, sandFly(CTRL, KeyEvent.KEYCODE_O))
+      put(R.string.keycombo_shortcut_review_click, sandFly(NONE, KeyEvent.KEYCODE_7))
+      put(R.string.keycombo_shortcut_review_long_click, sandFly(NONE, KeyEvent.KEYCODE_8))
 
       put(R.string.keycombo_shortcut_other_read_from_cursor_item, sandFly(NONE, KeyEvent.KEYCODE_SEMICOLON))
       put(
@@ -51,7 +65,6 @@ object OrcaKeymap : KeymapDefaults() {
       )
 
       put(R.string.keycombo_shortcut_other_toggle_browse_mode_extra, sandFly(NONE, KeyEvent.KEYCODE_A))
-      putCaretKeys()
       put(R.string.keycombo_shortcut_other_show_heading_list, browse(ALT or SHIFT, KeyEvent.KEYCODE_H))
       put(R.string.keycombo_shortcut_other_show_link_list, browse(ALT or SHIFT, KeyEvent.KEYCODE_K))
       put(R.string.keycombo_shortcut_other_show_control_list, browse(ALT or SHIFT, KeyEvent.KEYCODE_F))
@@ -64,7 +77,6 @@ object OrcaKeymap : KeymapDefaults() {
         R.string.keycombo_shortcut_navigate_previous_column,
         browse(ALT or SHIFT, KeyEvent.KEYCODE_DPAD_LEFT),
       )
-      browsePair(R.string.keycombo_shortcut_navigate_next_paragraph, R.string.keycombo_shortcut_navigate_previous_paragraph, KeyEvent.KEYCODE_P)
       browsePair(R.string.keycombo_shortcut_navigate_next_heading, R.string.keycombo_shortcut_navigate_previous_heading, KeyEvent.KEYCODE_H)
       browsePair(R.string.keycombo_shortcut_navigate_next_link, R.string.keycombo_shortcut_navigate_previous_link, KeyEvent.KEYCODE_K)
       browsePair(R.string.keycombo_shortcut_navigate_next_list, R.string.keycombo_shortcut_navigate_previous_list, KeyEvent.KEYCODE_L)

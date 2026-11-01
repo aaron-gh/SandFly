@@ -76,6 +76,7 @@ public class NewKeyComboModel implements KeyComboModel {
       originalPersister = new KeyComboPersister(context, customKeymap.getOriginalPersisterPrefix());
     } else {
       sandFlyKey = keymap.sandFlyKey(context);
+      KeymapDefaultsUpdate.update(context, keymap, sandFlyKey, keymap.persisterPrefix(sandFlyKey));
       persister = new KeyComboPersister(context, keymap.persisterPrefix(sandFlyKey));
       originalPersister = null;
     }
@@ -110,6 +111,11 @@ public class NewKeyComboModel implements KeyComboModel {
   @Nullable
   public CustomKeymap getCustomKeymap() {
     return customKeymap;
+  }
+
+  /** Returns whether shortcuts without the SandFly key work outside browse mode. */
+  public boolean arrowsNavigate() {
+    return customKeymap != null ? customKeymap.getArrowsNavigate() : keymap.getArrowsNavigate();
   }
 
   /** Returns whether SandFly key + R or O starts a shortcut of two keys one after the other. */
@@ -1595,6 +1601,34 @@ public class NewKeyComboModel implements KeyComboModel {
         && TalkbackFeatureSupport.supportSpeechRecognize()) {
       addKeyCombo(context.getString(R.string.keycombo_shortcut_other_open_voice_commands));
     }
+
+    // Tab between focusable items, object navigation and screen review.
+    addKeyCombo(context.getString(R.string.keycombo_shortcut_navigate_next_focusable));
+    addKeyCombo(context.getString(R.string.keycombo_shortcut_navigate_previous_focusable));
+    addKeyCombo(context.getString(R.string.keycombo_shortcut_object_parent));
+    addKeyCombo(context.getString(R.string.keycombo_shortcut_object_first_child));
+    addKeyCombo(context.getString(R.string.keycombo_shortcut_object_next));
+    addKeyCombo(context.getString(R.string.keycombo_shortcut_object_previous));
+    addKeyCombo(context.getString(R.string.keycombo_shortcut_review_previous_line));
+    addKeyCombo(context.getString(R.string.keycombo_shortcut_review_current_line));
+    addKeyCombo(context.getString(R.string.keycombo_shortcut_review_next_line));
+    addKeyCombo(context.getString(R.string.keycombo_shortcut_review_previous_word));
+    addKeyCombo(context.getString(R.string.keycombo_shortcut_review_current_word));
+    addKeyCombo(context.getString(R.string.keycombo_shortcut_review_next_word));
+    addKeyCombo(context.getString(R.string.keycombo_shortcut_review_previous_character));
+    addKeyCombo(context.getString(R.string.keycombo_shortcut_review_current_character));
+    addKeyCombo(context.getString(R.string.keycombo_shortcut_review_next_character));
+    addKeyCombo(context.getString(R.string.keycombo_shortcut_review_top));
+    addKeyCombo(context.getString(R.string.keycombo_shortcut_review_bottom));
+    addKeyCombo(context.getString(R.string.keycombo_shortcut_review_line_start));
+    addKeyCombo(context.getString(R.string.keycombo_shortcut_review_line_end));
+    addKeyCombo(context.getString(R.string.keycombo_shortcut_review_click));
+    addKeyCombo(context.getString(R.string.keycombo_shortcut_review_long_click));
+    addKeyCombo(context.getString(R.string.keycombo_shortcut_review_move_to_focus));
+    addKeyCombo(context.getString(R.string.keycombo_shortcut_focus_review_cursor));
+    addKeyCombo(context.getString(R.string.keycombo_shortcut_review_cursor_on));
+    addKeyCombo(context.getString(R.string.keycombo_shortcut_review_cursor_off));
+    addKeyCombo(context.getString(R.string.keycombo_shortcut_recognize_screen_text));
   }
 
   /** Adds the keyboard shortcuts set for commands that have no keyboard action of their own. */

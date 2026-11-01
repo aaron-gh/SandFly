@@ -20,19 +20,27 @@ import com.google.android.accessibility.talkback.R
 
 /**
  * The default shortcuts of the JAWS keymap: JAWS's desktop keystrokes, with the SandFly key as the
- * JAWS key (Insert), and its laptop clicks, which need no number pad. JAWS has no keys to move by
- * item, so Insert with the left and right arrows does. In browse mode, single keys move as JAWS's
- * quick navigation keys do; Tab moves by link, as it does in JAWS.
+ * JAWS key (Insert), and its laptop clicks and cursor keys, which need no number pad. The arrow keys
+ * move SandFly focus as on a computer, and Tab moves between items that take input focus. The
+ * review cursor works as the JAWS cursor: while it's on, the arrow keys move it over the screen as
+ * it is laid out and clicks go where it is. In browse mode, single keys move as JAWS's quick
+ * navigation keys do.
  */
 object JawsKeymap : KeymapDefaults() {
   override val defaults: Map<Int, KeyCombo> =
     buildMap {
-      put(R.string.keycombo_shortcut_navigate_next_default, sandFly(NONE, KeyEvent.KEYCODE_DPAD_RIGHT))
-      put(R.string.keycombo_shortcut_navigate_previous_default, sandFly(NONE, KeyEvent.KEYCODE_DPAD_LEFT))
+      putDesktopKeys()
       put(R.string.keycombo_shortcut_perform_click, sandFly(NONE, KeyEvent.KEYCODE_8))
       put(R.string.keycombo_shortcut_perform_long_click, sandFly(NONE, KeyEvent.KEYCODE_9))
       put(R.string.keycombo_shortcut_other_custom_actions, sandFly(NONE, KeyEvent.KEYCODE_MENU))
-      put(R.string.keycombo_shortcut_global_refocus_current_node, sandFly(NONE, KeyEvent.KEYCODE_TAB))
+      put(R.string.keycombo_shortcut_global_refocus_current_node, sandFly(NONE, KeyEvent.KEYCODE_DPAD_UP))
+
+      // The JAWS cursor is the review cursor.
+      put(R.string.keycombo_shortcut_review_cursor_on, sandFly(NONE, KeyEvent.KEYCODE_P))
+      put(R.string.keycombo_shortcut_review_cursor_off, sandFly(NONE, KeyEvent.KEYCODE_SEMICOLON))
+      put(R.string.keycombo_shortcut_review_move_to_focus, sandFly(NONE, KeyEvent.KEYCODE_LEFT_BRACKET))
+      put(R.string.keycombo_shortcut_focus_review_cursor, sandFly(NONE, KeyEvent.KEYCODE_RIGHT_BRACKET))
+      put(R.string.keycombo_shortcut_recognize_screen_text, sandFly(SHIFT, KeyEvent.KEYCODE_O))
 
       put(R.string.keycombo_shortcut_other_read_from_cursor_item, sandFly(NONE, KeyEvent.KEYCODE_DPAD_DOWN))
       put(R.string.keycombo_shortcut_other_read_from_top, sandFly(NONE, KeyEvent.KEYCODE_B))
@@ -59,9 +67,6 @@ object JawsKeymap : KeymapDefaults() {
       put(R.string.keycombo_shortcut_other_show_heading_list, sandFly(NONE, KeyEvent.KEYCODE_F6))
       put(R.string.keycombo_shortcut_other_show_link_list, sandFly(NONE, KeyEvent.KEYCODE_F7))
       put(R.string.keycombo_shortcut_other_toggle_search, sandFly(CTRL, KeyEvent.KEYCODE_F))
-      putCaretKeys()
-      put(R.string.keycombo_shortcut_navigate_next_paragraph, browse(CTRL, KeyEvent.KEYCODE_DPAD_DOWN))
-      put(R.string.keycombo_shortcut_navigate_previous_paragraph, browse(CTRL, KeyEvent.KEYCODE_DPAD_UP))
       put(R.string.keycombo_shortcut_navigate_next_row, browse(CTRL or ALT, KeyEvent.KEYCODE_DPAD_DOWN))
       put(R.string.keycombo_shortcut_navigate_previous_row, browse(CTRL or ALT, KeyEvent.KEYCODE_DPAD_UP))
       put(R.string.keycombo_shortcut_navigate_next_column, browse(CTRL or ALT, KeyEvent.KEYCODE_DPAD_RIGHT))
@@ -69,7 +74,6 @@ object JawsKeymap : KeymapDefaults() {
         R.string.keycombo_shortcut_navigate_previous_column,
         browse(CTRL or ALT, KeyEvent.KEYCODE_DPAD_LEFT),
       )
-      browsePair(R.string.keycombo_shortcut_navigate_next_link, R.string.keycombo_shortcut_navigate_previous_link, KeyEvent.KEYCODE_TAB)
       browsePair(R.string.keycombo_shortcut_navigate_next_heading, R.string.keycombo_shortcut_navigate_previous_heading, KeyEvent.KEYCODE_H)
       browsePair(R.string.keycombo_shortcut_navigate_next_list, R.string.keycombo_shortcut_navigate_previous_list, KeyEvent.KEYCODE_L)
       browsePair(R.string.keycombo_shortcut_navigate_next_list_item, R.string.keycombo_shortcut_navigate_previous_list_item, KeyEvent.KEYCODE_I)

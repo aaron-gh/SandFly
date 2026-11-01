@@ -529,7 +529,7 @@ public class TalkBackKeyboardShortcutPreferenceFragment extends TalkbackBaseFrag
   private void createKeymap(String name) {
     KeyComboModel model = getKeyComboManager().getKeyComboModel();
     boolean usesSequences =
-        model instanceof NewKeyComboModel newModel && newModel.usesSequences();
+        model instanceof NewKeyComboModel sequenceModel && sequenceModel.usesSequences();
     // The copy keeps the keymap's SandFly key, which its shortcuts are pressed with.
     @Nullable SandFlyKey sandFlyKey = getKeyComboManager().getSandFlyKey();
     CustomKeymap custom =
@@ -538,7 +538,8 @@ public class TalkBackKeyboardShortcutPreferenceFragment extends TalkbackBaseFrag
             name,
             usesSequences,
             sandFlyKey != null ? sandFlyKey : SandFlyKey.META,
-            model.getKeyComboMap());
+            model.getKeyComboMap(),
+            model instanceof NewKeyComboModel newModel && newModel.arrowsNavigate());
     prefs.edit().putString(getString(R.string.pref_select_keymap_key), custom.getValue()).apply();
     PreferencesActivityUtils.announceText(
         getString(R.string.keycombo_menu_announce_active_keymap, name), getActivity());

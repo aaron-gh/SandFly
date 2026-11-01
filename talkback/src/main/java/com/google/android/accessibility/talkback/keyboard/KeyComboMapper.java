@@ -88,6 +88,8 @@ import com.google.android.accessibility.talkback.focusmanagement.NavigationTarge
 import com.google.android.accessibility.talkback.focusmanagement.NavigationTarget.TargetType;
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.ScreenStateMonitor;
 import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionInfo;
+import com.google.android.accessibility.talkback.review.ObjectNavigation;
+import com.google.android.accessibility.talkback.review.ScreenReview;
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping;
 import com.google.android.accessibility.talkback.monitor.BatteryMonitor;
 import com.google.android.accessibility.talkback.preference.base.TalkBackKeyboardShortcutPreferenceFragment;
@@ -142,6 +144,8 @@ public class KeyComboMapper {
   private final AccessibilityService accessibilityService;
   private final GestureShortcutMapping gestureShortcutMapping;
   private final PullToRefresh pullToRefresh;
+  private final ScreenReview screenReview;
+  private final ObjectNavigation objectNavigation;
 
   public KeyComboMapper(
       AccessibilityService accessibilityService,
@@ -173,6 +177,14 @@ public class KeyComboMapper {
     this.collectionState = collectionState;
     this.accessibilityService = accessibilityService;
     this.gestureShortcutMapping = gestureShortcutMapping;
+    screenReview = new ScreenReview(accessibilityService, pipeline, accessibilityFocusMonitor);
+    objectNavigation =
+        new ObjectNavigation(accessibilityService, pipeline, accessibilityFocusMonitor);
+  }
+
+  /** Returns the screen review, whose review cursor can take arrow keys. */
+  ScreenReview getScreenReview() {
+    return screenReview;
   }
 
   /**
@@ -183,6 +195,20 @@ public class KeyComboMapper {
   @CanIgnoreReturnValue
   boolean performKeyComboAction(TalkBackPhysicalKeyboardShortcut action, EventId eventId) {
     boolean result = true;
+    if (objectNavigation.perform(action, eventId)) {
+      return true;
+    }
+    // Clicks go where the review cursor is while it's on, as a computer's clicks go to the mouse.
+    if (screenReview.isCursorOn()) {
+      if (action == TalkBackPhysicalKeyboardShortcut.PERFORM_CLICK) {
+        action = TalkBackPhysicalKeyboardShortcut.REVIEW_CLICK;
+      } else if (action == TalkBackPhysicalKeyboardShortcut.PERFORM_LONG_CLICK) {
+        action = TalkBackPhysicalKeyboardShortcut.REVIEW_LONG_CLICK;
+      }
+    }
+    if (screenReview.perform(action)) {
+      return true;
+    }
     switch (action) {
       case NAVIGATE_NEXT ->
           // Direction navigation actions.
