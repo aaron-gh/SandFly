@@ -1221,6 +1221,8 @@
     <string name="arrow_key_nav_on">Arrow key navigation on</string>
     <!-- Spoken when arrow key navigation is turned off. [CHAR LIMIT=NONE] -->
     <string name="arrow_key_nav_off">Arrow key navigation off</string>
+    <!-- Spoken when arrow key navigation is turned on in a keymap whose arrow keys move focus themselves, such as the NVDA keymap. [CHAR LIMIT=NONE] -->
+    <string name="arrow_key_nav_unavailable">No arrow key navigation in this keymap</string>
     <!-- Arrow key navigation shortcut that scrolls to show the content to the left, as Page up shows the content above. [CHAR LIMIT=40] -->
     <string name="arrow_key_nav_page_left">Page left</string>
     <!-- Arrow key navigation shortcut that scrolls to show the content to the right, as Page down shows the content below. [CHAR LIMIT=40] -->

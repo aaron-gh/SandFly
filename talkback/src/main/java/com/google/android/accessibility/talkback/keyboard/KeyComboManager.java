@@ -668,6 +668,13 @@ public class KeyComboManager
 
   /** Turns arrow key navigation on or off. */
   public void toggleArrowKeyNav() {
+    if (!ArrowKeyNav.isAvailable(context)) {
+      pipeline.returnFeedback(
+          EVENT_ID_UNTRACKED,
+          Feedback.speech(
+              context.getString(R.string.arrow_key_nav_unavailable), INTERRUPTIVE_SPEAK_OPTIONS));
+      return;
+    }
     boolean on = !ArrowKeyNav.isOn(context);
     ArrowKeyNav.setOn(context, on);
     pipeline.returnFeedback(

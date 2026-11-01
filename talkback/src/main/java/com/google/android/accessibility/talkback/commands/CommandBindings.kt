@@ -107,11 +107,14 @@ object CommandBindings {
   /** Returns the arrow keys of arrow key navigation, each of which runs a command. */
   @JvmStatic
   fun arrowKeys(context: Context): List<GestureSlot> {
-    ArrowKeyNav.migrate(SharedPreferencesUtils.getSharedPreferences(context))
+    ArrowKeyNav.migrate(context)
+    if (!ArrowKeyNav.isAvailable(context)) {
+      return emptyList()
+    }
     val manager = keyComboManager(context)
     return ArrowKeys.entries.map {
       GestureSlot(
-        ArrowKeyNav.prefKey(it),
+        ArrowKeyNav.prefKey(context, it),
         manager.getArrowKeysStringRepresentation(it.keys),
         it.defaultCommand,
       )

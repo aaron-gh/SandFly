@@ -23,6 +23,7 @@ import android.view.KeyEvent.KEYCODE_DPAD_LEFT
 import android.view.KeyEvent.KEYCODE_DPAD_RIGHT
 import android.view.KeyEvent.KEYCODE_DPAD_UP
 import android.view.KeyEvent.KEYCODE_N
+import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
@@ -46,6 +47,7 @@ class ArrowKeyNavKeyHandlerTest {
   @Before
   fun setUp() {
     context = RuntimeEnvironment.getApplication()
+    SharedPreferencesUtils.getSharedPreferences(context).edit().clear().commit()
     ArrowKeyNav.reset(context)
     ArrowKeyNav.setOn(context, false)
     handler =
@@ -168,7 +170,7 @@ class ArrowKeyNavKeyHandlerTest {
   @Test
   fun arrowKeysRunTheCommandAssignedToThem() {
     ArrowKeyNav.setOn(context, true)
-    prefs().edit().putString(ArrowKeyNav.prefKey(ArrowKeys.RIGHT), "READ_FROM_TOP").apply()
+    prefs().edit().putString(ArrowKeyNav.prefKey(context, ArrowKeys.RIGHT), "READ_FROM_TOP").apply()
     down(KEYCODE_DPAD_RIGHT)
     up(KEYCODE_DPAD_RIGHT)
     assertEquals(listOf("READ_FROM_TOP"), performed)
@@ -177,7 +179,7 @@ class ArrowKeyNavKeyHandlerTest {
   @Test
   fun unassignedArrowKeysPass() {
     ArrowKeyNav.setOn(context, true)
-    prefs().edit().putString(ArrowKeyNav.prefKey(ArrowKeys.RIGHT), ArrowKeyNav.UNASSIGNED).apply()
+    prefs().edit().putString(ArrowKeyNav.prefKey(context, ArrowKeys.RIGHT), ArrowKeyNav.UNASSIGNED).apply()
     assertFalse(down(KEYCODE_DPAD_RIGHT))
     assertFalse(up(KEYCODE_DPAD_RIGHT))
     assertTrue(performed.isEmpty())
@@ -203,11 +205,57 @@ class ArrowKeyNavKeyHandlerTest {
       .edit()
       .putLong("arrow_key_nav_keys_next_item", ArrowKeyNav.keys(KeyEvent.META_CTRL_ON, KEYCODE_DPAD_RIGHT))
       .apply()
-    ArrowKeyNav.migrate(prefs)
+    ArrowKeyNav.migrate(context)
     assertEquals("NEXT", ArrowKeyNav.commandFor(context, ArrowKeys.CTRL_RIGHT))
     assertEquals(ArrowKeyNav.UNASSIGNED, ArrowKeyNav.commandFor(context, ArrowKeys.RIGHT))
     assertEquals("PREVIOUS", ArrowKeyNav.commandFor(context, ArrowKeys.LEFT))
     assertFalse(prefs.contains("arrow_key_nav_keys_next_item"))
+  }
+
+  @Test
+  fun eachKeymapHasItsOwnArrowKeys() {
+    ArrowKeyNav.setOn(context, true)
+    prefs().edit().putString(ArrowKeyNav.prefKey(context, ArrowKeys.RIGHT), "READ_FROM_TOP").apply()
+    useKeymap(R.string.voiceover_keymap_entry_value)
+    assertFalse(ArrowKeyNav.isOn(context))
+    assertEquals("NEXT", ArrowKeyNav.commandFor(context, ArrowKeys.RIGHT))
+    useKeymap(R.string.new_keymap_entry_value)
+    assertTrue(ArrowKeyNav.isOn(context))
+    assertEquals("READ_FROM_TOP", ArrowKeyNav.commandFor(context, ArrowKeys.RIGHT))
+  }
+
+  @Test
+  fun keymapsWhoseArrowsMoveFocusHaveNoArrowKeyNavigation() {
+    useKeymap(R.string.nvda_keymap_entry_value)
+    ArrowKeyNav.setOn(context, true)
+    assertFalse(ArrowKeyNav.isAvailable(context))
+    assertFalse(ArrowKeyNav.isOn(context))
+    assertFalse(down(KEYCODE_DPAD_RIGHT))
+    assertFalse(up(KEYCODE_DPAD_RIGHT))
+    assertTrue(performed.isEmpty())
+  }
+
+  @Test
+  fun sharedArrowKeysMoveToEachKeymapThatHasThem() {
+    prefs()
+      .edit()
+      .putBoolean("pref_arrow_key_nav_on", true)
+      .putString("arrow_key_nav_slot_right", "READ_FROM_TOP")
+      .apply()
+    ArrowKeyNav.migrate(context)
+    useKeymap(R.string.voiceover_keymap_entry_value)
+    assertTrue(ArrowKeyNav.isOn(context))
+    assertEquals("READ_FROM_TOP", ArrowKeyNav.commandFor(context, ArrowKeys.RIGHT))
+    useKeymap(R.string.nvda_keymap_entry_value)
+    assertFalse(ArrowKeyNav.isOn(context))
+    assertFalse(prefs().contains("arrow_key_nav_slot_right"))
+  }
+
+  private fun useKeymap(valueRes: Int) {
+    prefs()
+      .edit()
+      .putString(context.getString(R.string.pref_select_keymap_key), context.getString(valueRes))
+      .commit()
   }
 
   private fun prefs() = SharedPreferencesUtils.getSharedPreferences(context)

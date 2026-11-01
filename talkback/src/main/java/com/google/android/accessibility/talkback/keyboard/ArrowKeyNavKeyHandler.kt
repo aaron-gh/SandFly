@@ -94,6 +94,10 @@ class ArrowKeyNavKeyHandler(private val context: Context, private val callbacks:
       return false
     }
 
+    // Keymaps whose arrow keys move SandFly focus, such as NVDA's, don't have it.
+    if (!ArrowKeyNav.isAvailable(context)) {
+      return false
+    }
     val on = ArrowKeyNav.isOn(context)
     val modifiers = event.modifiers and KeyCombo.KEY_EVENT_MODIFIER_MASK
     if (otherKey != null) {

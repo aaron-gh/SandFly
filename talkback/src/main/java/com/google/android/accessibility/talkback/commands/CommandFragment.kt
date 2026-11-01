@@ -22,6 +22,7 @@ import androidx.appcompat.app.AlertDialog
 import com.google.android.accessibility.material.preference.AccessibilitySuitePreference
 import com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.talkback.keyboard.ArrowKeyNav
 import com.google.android.accessibility.talkback.TalkBackService
 import com.google.android.accessibility.talkback.preference.PreferencesActivityUtils
 import com.google.android.accessibility.talkback.preference.base.KeyboardShortcutDialogPreference
@@ -58,7 +59,7 @@ class CommandFragment : TalkbackBaseFragment() {
     preferenceManager.setStorageDeviceProtected()
     val gestures = readGestures(this)
     sections =
-      listOf(
+      listOfNotNull(
         Section(
           "gestures",
           R.string.command_gestures,
@@ -68,6 +69,7 @@ class CommandFragment : TalkbackBaseFragment() {
           R.string.command_remove_gesture,
           gestures,
         ),
+        // Keymaps whose arrow keys move SandFly focus, such as NVDA's, have no arrow key navigation.
         Section(
           "arrow_keys",
           R.string.keycombo_menu_category_arrow_key_nav,
@@ -76,7 +78,8 @@ class CommandFragment : TalkbackBaseFragment() {
           R.string.command_choose_arrow_keys,
           R.string.command_remove_arrow_keys,
           CommandBindings.arrowKeys(requireContext()),
-        ),
+        )
+          .takeIf { ArrowKeyNav.isAvailable(requireContext()) },
       )
     preferenceScreen = preferenceManager.createPreferenceScreen(requireContext())
   }

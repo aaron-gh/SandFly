@@ -296,7 +296,11 @@ public class TalkBackKeyboardShortcutPreferenceFragment extends TalkbackBaseFrag
     if (context == null) {
       return;
     }
-    ArrowKeyNav.migrate(SharedPreferencesUtils.getSharedPreferences(context));
+    ArrowKeyNav.migrate(context);
+    // Keymaps whose arrow keys move SandFly focus, such as NVDA's, don't have it.
+    if (!ArrowKeyNav.isAvailable(context)) {
+      return;
+    }
     KeyComboManager keyComboManager = getKeyComboManager();
     PreferenceCategory category = new PreferenceCategory(context);
     category.setKey("pref_arrow_key_nav_category");
@@ -304,7 +308,7 @@ public class TalkBackKeyboardShortcutPreferenceFragment extends TalkbackBaseFrag
     category.setIconSpaceReserved(false);
     getPreferenceScreen().addPreference(category);
     AccessibilitySuiteSwitchPreference on = new AccessibilitySuiteSwitchPreference(context);
-    on.setKey(ArrowKeyNav.onKey());
+    on.setKey(ArrowKeyNav.onKey(context));
     on.setTitle(R.string.keycombo_menu_category_arrow_key_nav);
     on.setDefaultValue(false);
     on.setIconSpaceReserved(false);
@@ -313,7 +317,7 @@ public class TalkBackKeyboardShortcutPreferenceFragment extends TalkbackBaseFrag
       GestureListPreference preference =
           new GestureListPreference(
               context,
-              ArrowKeyNav.prefKey(arrowKeys),
+              ArrowKeyNav.prefKey(context, arrowKeys),
               keyComboManager.getArrowKeysStringRepresentation(arrowKeys.getKeys()),
               arrowKeys.getDefaultCommand());
       preference.setIconSpaceReserved(false);
@@ -324,7 +328,8 @@ public class TalkBackKeyboardShortcutPreferenceFragment extends TalkbackBaseFrag
   /** Shows the commands the arrow keys run now, such as after a reset or the list closes. */
   private void refreshArrowKeys() {
     for (ArrowKeys arrowKeys : ArrowKeys.values()) {
-      if (findPreference(ArrowKeyNav.prefKey(arrowKeys)) instanceof GestureListPreference preference) {
+      if (findPreference(ArrowKeyNav.prefKey(getContext(), arrowKeys))
+          instanceof GestureListPreference preference) {
         preference.refresh();
       }
     }

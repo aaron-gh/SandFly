@@ -25,7 +25,9 @@ import com.google.android.accessibility.utils.SharedPreferencesUtils
 /**
  * Arrow key navigation: while it is on, the arrow keys, alone, two pressed together, or with Control
  * or Alt, run commands without the Meta key. Each of these [ArrowKeys] runs a command, as a gesture
- * does, saved as the command's value; the defaults are VoiceOver's keys on iOS.
+ * does, saved as the command's value; the defaults are VoiceOver's keys on iOS. Each keymap has its
+ * own commands and its own switch. Keymaps whose arrow keys move SandFly focus, such as NVDA's,
+ * don't have it.
  */
 object ArrowKeyNav {
   private const val PREF_ON = "pref_arrow_key_nav_on"
@@ -47,34 +49,65 @@ object ArrowKeyNav {
     return KeyCombo.computeKeyComboCode(modifiers, minOf(first, second), maxOf(first, second))
   }
 
-  /** Whether arrow key navigation is on. */
+  /** Whether the keymap in use has arrow key navigation. */
   @JvmStatic
-  fun isOn(context: Context): Boolean = prefs(context).getBoolean(PREF_ON, false)
+  fun isAvailable(context: Context): Boolean {
+    val value = keymapValue(context)
+    val custom = CustomKeymaps.of(context, value)
+    return !(custom?.arrowsNavigate ?: Keymap.of(context, value).arrowsNavigate)
+  }
+
+  /** Whether arrow key navigation is on in the keymap in use. */
+  @JvmStatic
+  fun isOn(context: Context): Boolean =
+    isAvailable(context) && prefs(context).getBoolean(onKey(context), false)
 
   @JvmStatic
   fun setOn(context: Context, on: Boolean) {
-    prefs(context).edit { putBoolean(PREF_ON, on) }
+    prefs(context).edit { putBoolean(onKey(context), on) }
   }
 
-  /** The setting key of whether arrow key navigation is on. */
-  @JvmStatic fun onKey(): String = PREF_ON
+  /** The setting key of whether arrow key navigation is on in the keymap in use. */
+  @JvmStatic fun onKey(context: Context): String = onKey(scope(context))
 
-  /** The setting key of the command that [arrowKeys] run. */
-  @JvmStatic fun prefKey(arrowKeys: ArrowKeys): String = PREF_PREFIX + arrowKeys.name.lowercase()
+  private fun onKey(scope: String): String = PREF_ON + "_" + scope
+
+  /** The setting key of the command that [arrowKeys] run in the keymap in use. */
+  @JvmStatic
+  fun prefKey(context: Context, arrowKeys: ArrowKeys): String = prefKey(scope(context), arrowKeys)
+
+  private fun prefKey(scope: String, arrowKeys: ArrowKeys): String =
+    PREF_PREFIX + scope + "_" + arrowKeys.name.lowercase()
 
   /** The value of the command that [arrowKeys] run. */
   @JvmStatic
   fun commandFor(context: Context, arrowKeys: ArrowKeys): String =
-    prefs(context).getString(prefKey(arrowKeys), arrowKeys.defaultCommand) ?: UNASSIGNED
+    prefs(context).getString(prefKey(context, arrowKeys), arrowKeys.defaultCommand) ?: UNASSIGNED
+
+  /** The keymap preference's value for the keymap in use, as Keymap and CustomKeymaps read it. */
+  private fun keymapValue(context: Context): String? =
+    prefs(context)
+      .getString(
+        // R is a key code here, so the resource class is named in full.
+        context.getString(com.google.android.accessibility.talkback.R.string.pref_select_keymap_key),
+        null,
+      )
+
+  /** The part of the setting keys that names the keymap in use. */
+  private fun scope(context: Context): String {
+    val value = keymapValue(context)
+    val name = CustomKeymaps.of(context, value)?.value ?: context.getString(Keymap.of(context, value).valueRes)
+    return name.replace(':', '_')
+  }
 
   /** The arrow keys pressed as [keys], or null when they aren't arrow keys this lists. */
   @JvmStatic
   fun arrowKeysFor(keys: Long): ArrowKeys? = ArrowKeys.entries.firstOrNull { it.keys == keys }
 
-  /** Gives every arrow key its default command. */
+  /** Gives every arrow key of the keymap in use its default command. */
   @JvmStatic
   fun reset(context: Context) {
-    prefs(context).edit { ArrowKeys.entries.forEach { remove(prefKey(it)) } }
+    prefs(context).edit { ArrowKeys.entries.forEach { remove(prefKey(context, it)) } }
   }
 
   private fun prefs(context: Context): SharedPreferences =
@@ -82,10 +115,35 @@ object ArrowKeyNav {
 
   /**
    * Moves keys saved for the commands arrow key navigation had of its own to the arrow keys that run
-   * the matching commands. Keys other than these arrow keys are dropped.
+   * the matching commands, and the arrow keys' commands and switch, which all keymaps shared, to
+   * each keymap that has arrow key navigation.
    */
   @JvmStatic
-  fun migrate(prefs: SharedPreferences) {
+  fun migrate(context: Context) {
+    val prefs = prefs(context)
+    migrateOwnCommands(prefs)
+    val shared = ArrowKeys.entries.filter { prefs.contains(PREF_PREFIX + it.name.lowercase()) }
+    if (shared.isEmpty() && !prefs.contains(PREF_ON)) {
+      return
+    }
+    val scopes =
+      listOf(Keymap.SANDFLY, Keymap.VOICEOVER).map { context.getString(it.valueRes) } +
+        CustomKeymaps.all(context).filter { !it.arrowsNavigate }.map { it.value.replace(':', '_') }
+    prefs.edit {
+      for (scope in scopes) {
+        for (arrowKeys in shared) {
+          putString(prefKey(scope, arrowKeys), prefs.getString(PREF_PREFIX + arrowKeys.name.lowercase(), null))
+        }
+        if (prefs.contains(PREF_ON)) {
+          putBoolean(onKey(scope), prefs.getBoolean(PREF_ON, false))
+        }
+      }
+      shared.forEach { remove(PREF_PREFIX + it.name.lowercase()) }
+      remove(PREF_ON)
+    }
+  }
+
+  private fun migrateOwnCommands(prefs: SharedPreferences) {
     val saved = OLD_COMMANDS.keys.filter { prefs.contains(OLD_PREFIX + it) }
     if (saved.isEmpty()) {
       return
@@ -99,7 +157,7 @@ object ArrowKeyNav {
     }
     prefs.edit {
       for (arrowKeys in ArrowKeys.entries) {
-        putString(prefKey(arrowKeys), commandByKeys[arrowKeys.keys] ?: UNASSIGNED)
+        putString(PREF_PREFIX + arrowKeys.name.lowercase(), commandByKeys[arrowKeys.keys] ?: UNASSIGNED)
       }
       OLD_COMMANDS.keys.forEach { remove(OLD_PREFIX + it) }
     }
