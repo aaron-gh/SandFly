@@ -152,6 +152,38 @@ abstract class NotificationCodeFragment(@StringRes private val title: Int) : Tal
   }
 
   /**
+   * Asks for one of the installed apps, and calls [then] with its package name and name. The first
+   * choice, Search, lists the apps whose names contain a text. [first] names a choice listed before
+   * the apps, which calls [then] with empty texts.
+   */
+  protected fun chooseApp(first: CharSequence? = null, then: (String, String) -> Unit) {
+    val context = requireContext().applicationContext
+    APP_LOADER.execute {
+      val apps = installedApps(context)
+      activity?.runOnUiThread {
+        if (!isAdded) return@runOnUiThread
+        val choices = listOfNotNull(first?.let { Triple("", "", it.toString()) }) + apps
+        val search = getString(android.R.string.search_go)
+        choose(getString(R.string.notification_choose_app), listOf(search) + choices.map { it.third }) { index ->
+          if (index > 0) {
+            choices[index - 1].let { then(it.first, it.second) }
+            return@choose
+          }
+          askText(search) { text, _, _ ->
+            val found = apps.filter { it.third.contains(text, ignoreCase = true) || it.first.contains(text, ignoreCase = true) }
+            if (found.isEmpty()) {
+              getString(R.string.keyboard_shortcuts_no_results)
+            } else {
+              choose(getString(R.string.notification_choose_app), found.map { it.third }) { then(found[it].first, found[it].second) }
+              null
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /**
    * Asks for a text, with [text] filled in, and an optional switch such as "Regular expression".
    * [onDone] gets the text and the switch, and returns an error to show, or null to close.
    */
@@ -238,6 +270,24 @@ abstract class NotificationCodeFragment(@StringRes private val title: Int) : Tal
   }
 
   companion object {
+    private val APP_LOADER = Executors.newSingleThreadExecutor()
+
+    /**
+     * Returns every installed app as its package name, name and shown text, by name. The shown text
+     * adds the package name to a name that more than one app has.
+     */
+    fun installedApps(context: Context): List<Triple<String, String, String>> {
+      val apps =
+        context.packageManager
+          .getInstalledApplications(0)
+          .map { it.packageName to NotificationReader.appName(context, it.packageName) }
+          .sortedWith(compareBy({ it.second.lowercase() }, { it.first }))
+      val repeated = apps.groupingBy { it.second }.eachCount().filterValues { it > 1 }.keys
+      return apps.map { (packageName, name) ->
+        Triple(packageName, name, if (name in repeated && name != packageName) "$name ($packageName)" else name)
+      }
+    }
+
     const val ARG_PACKAGE = "package"
 
     fun modeText(context: Context, mode: AppMode): String =

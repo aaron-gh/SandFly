@@ -21,7 +21,6 @@ import android.annotation.SuppressLint
 import android.app.TimePickerDialog
 import android.bluetooth.BluetoothManager
 import android.content.Context
-import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.text.format.DateFormat
@@ -31,7 +30,6 @@ import androidx.preference.PreferenceGroup
 import com.google.android.accessibility.talkback.R
 import java.text.DateFormatSymbols
 import java.util.Calendar
-import java.util.concurrent.Executors
 
 /** Notifications > Rules: rules that change how notifications are read in some conditions. */
 class NotificationRulesFragment : NotificationCodeFragment(R.string.notification_rules_title) {
@@ -376,23 +374,6 @@ class NotificationRuleFragment : NotificationCodeFragment(R.string.notification_
       .show()
   }
 
-  private fun chooseApp(then: (String, String) -> Unit) {
-    val context = requireContext().applicationContext
-    EXECUTOR.execute {
-      val pm = context.packageManager
-      val apps =
-        pm.queryIntentActivities(Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_LAUNCHER), 0)
-          .map { it.activityInfo.packageName }
-          .distinct()
-          .map { it to NotificationReader.appName(context, it) }
-          .sortedBy { it.second.lowercase() }
-      activity?.runOnUiThread {
-        if (!isAdded) return@runOnUiThread
-        choose(getString(R.string.notification_choose_app), apps.map { it.second }) { then(apps[it].first, apps[it].second) }
-      }
-    }
-  }
-
   private fun addAction() {
     val context = requireContext()
     val types = RuleAction.Type.entries
@@ -439,6 +420,5 @@ class NotificationRuleFragment : NotificationCodeFragment(R.string.notification_
 
   companion object {
     const val ARG_RULE = "rule"
-    private val EXECUTOR = Executors.newSingleThreadExecutor()
   }
 }

@@ -16,14 +16,11 @@
 
 package com.google.android.accessibility.talkback.speechdictionary
 
-import android.content.Intent
 import androidx.preference.PreferenceGroup
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.notifications.NotificationCodeFragment
-import com.google.android.accessibility.talkback.notifications.NotificationReader
 import com.google.android.accessibility.talkback.notifications.Replacement
 import com.google.android.accessibility.talkback.notifications.TextMatch
-import java.util.concurrent.Executors
 
 /** Speech > Speech dictionary: the entries, each with the app it is used in. */
 class SpeechDictionaryFragment : NotificationCodeFragment(R.string.title_pref_speech_dictionary) {
@@ -93,25 +90,8 @@ class SpeechDictionaryFragment : NotificationCodeFragment(R.string.title_pref_sp
   }
 
   /** Asks for the app an entry is used in, with All apps first, and calls [then] with it. */
-  private fun chooseApp(then: (String, String) -> Unit) {
-    val context = requireContext().applicationContext
-    EXECUTOR.execute {
-      val apps =
-        context.packageManager
-          .queryIntentActivities(Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_LAUNCHER), 0)
-          .map { it.activityInfo.packageName }
-          .distinct()
-          .map { it to NotificationReader.appName(context, it) }
-          .sortedBy { it.second.lowercase() }
-      activity?.runOnUiThread {
-        if (!isAdded) return@runOnUiThread
-        val names = listOf(getString(R.string.speech_dictionary_all_apps)) + apps.map { it.second }
-        choose(getString(R.string.notification_choose_app), names) {
-          if (it == 0) then("", "") else then(apps[it - 1].first, apps[it - 1].second)
-        }
-      }
-    }
-  }
+  private fun chooseApp(then: (String, String) -> Unit) =
+    chooseApp(getString(R.string.speech_dictionary_all_apps), then)
 
   private fun save(entries: List<DictionaryEntry>) {
     SpeechDictionary.write(prefs, entries)
@@ -120,8 +100,4 @@ class SpeechDictionaryFragment : NotificationCodeFragment(R.string.title_pref_sp
 
   private fun <T> List<T>.replace(index: Int, item: T): List<T> =
     mapIndexed { i, old -> if (i == index) item else old }
-
-  private companion object {
-    val EXECUTOR = Executors.newSingleThreadExecutor()
-  }
 }

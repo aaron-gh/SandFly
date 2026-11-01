@@ -16,7 +16,6 @@
 
 package com.google.android.accessibility.talkback.commands
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.preference.PreferenceGroup
 import com.google.android.accessibility.talkback.R
@@ -27,7 +26,6 @@ import com.google.android.accessibility.talkback.keyboard.KeyComboModel
 import com.google.android.accessibility.talkback.notifications.NotificationCodeFragment
 import com.google.android.accessibility.talkback.notifications.NotificationReader
 import com.google.android.accessibility.talkback.preference.base.KeyboardShortcutDialogPreference
-import java.util.concurrent.Executors
 
 /**
  * Gestures > Gestures in apps, and Keyboard shortcuts > Keyboard shortcuts in apps: the apps in
@@ -57,26 +55,12 @@ class AppGesturesFragment : NotificationCodeFragment(R.string.title_pref_app_ges
   }
 
   private fun chooseApp() {
-    val context = requireContext().applicationContext
-    EXECUTOR.execute {
-      val apps =
-        context.packageManager
-          .queryIntentActivities(Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_LAUNCHER), 0)
-          .map { it.activityInfo.packageName }
-          .distinct()
-          .map { it to NotificationReader.appName(context, it) }
-          .sortedBy { it.second.lowercase() }
-      activity?.runOnUiThread {
-        if (!isAdded) return@runOnUiThread
-        choose(getString(R.string.notification_choose_app), apps.map { it.second }) {
-          val (packageName, name) = apps[it]
-          val all = AppGestures.read(prefs)
-          if (packageName !in all) {
-            AppGestures.write(prefs, all + (packageName to AppGestures.App(name, emptyMap())))
-          }
-          rebuild()
-        }
+    chooseApp { packageName, name ->
+      val all = AppGestures.read(prefs)
+      if (packageName !in all) {
+        AppGestures.write(prefs, all + (packageName to AppGestures.App(name, emptyMap())))
       }
+      rebuild()
     }
   }
 
@@ -84,8 +68,6 @@ class AppGesturesFragment : NotificationCodeFragment(R.string.title_pref_app_ges
     /** Which screen the list was opened from, which names it. */
     const val ARG_SHOWN_FROM = "shown_from"
     const val FROM_KEYBOARD_SHORTCUTS = "keyboard_shortcuts"
-
-    private val EXECUTOR = Executors.newSingleThreadExecutor()
   }
 }
 
