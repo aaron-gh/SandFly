@@ -40,7 +40,8 @@ object BrailleImeTypingSounds {
     if (!BrailleUserPreferences.readTypingSounds(context)) {
       return
     }
-    // The braille keyboard vibrates on its own.
-    BrailleIme.feedbackController()?.playAuditoryWithoutHaptic(key.resId, EVENT_ID_UNTRACKED)
+    // The braille keyboard vibrates on its own. Typing sounds have their own switch, so they play
+    // also while SandFly's sound feedback is off.
+    BrailleIme.feedbackController()?.playOwnSwitchSound(key.resId, EVENT_ID_UNTRACKED)
   }
 }
