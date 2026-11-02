@@ -325,6 +325,33 @@ public class WindowEventInterpreterTest {
   }
 
   @Test
+  public void paneInKeyboardIsNotReportedAsAnotherKeyboard() {
+    openSettings();
+    setWindows(
+        statusBar(),
+        navigationBar(),
+        app(SETTINGS, "Settings").active().build(),
+        window(KEYBOARD, AccessibilityWindowInfo.TYPE_INPUT_METHOD, "Gboard")
+            .layer(3)
+            .bounds(new Rect(0, 1500, 1080, 2280))
+            .build());
+    interpret(windowsChanged(KEYBOARD, WINDOWS_CHANGE_ADDED));
+    waitMs(600);
+    transcript.clear();
+
+    // Gboard's popup of alternative characters, which holding a key opens.
+    interpret(pane(KEYBOARD, CONTENT_CHANGE_TYPE_PANE_APPEARED, "Available alternatives"));
+    waitMs(600);
+    interpret(pane(KEYBOARD, CONTENT_CHANGE_TYPE_PANE_DISAPPEARED, "Available alternatives"));
+    waitMs(600);
+
+    assertFalse(transcript.isEmpty());
+    for (String line : transcript) {
+      assertFalse(line, line.contains("imeChanged"));
+    }
+  }
+
+  @Test
   public void pictureInPictureWindowIsReported() {
     openSettings();
 

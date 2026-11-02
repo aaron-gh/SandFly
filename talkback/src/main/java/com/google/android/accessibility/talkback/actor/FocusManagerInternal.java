@@ -43,6 +43,7 @@ import com.google.android.accessibility.talkback.focusmanagement.record.Accessib
 import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionInfo;
 import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionRecord;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
+import com.google.android.accessibility.utils.AccessibilityWindowInfoUtils;
 import com.google.android.accessibility.utils.Filter;
 import com.google.android.accessibility.utils.FocusFinder;
 import com.google.android.accessibility.utils.FormFactorUtils;
@@ -364,6 +365,11 @@ public class FocusManagerInternal {
     // Cell broadcast is an emergent announcement, so we don't mute it.
     boolean forceMuteFeedback =
         FocusActorHelper.shouldMuteFeedbackForFocusedNode(nodeToFocus, stableScreenState);
+    // A key that leaves the keyboard, such as the alternative character just typed from Gboard's
+    // popup, would otherwise have the keyboard's first item focused and spoken after the typing.
+    if (AccessibilityWindowInfoUtils.isImeWindow(AccessibilityNodeInfoUtils.getWindow(root))) {
+      forceMuteFeedback = true;
+    }
 
     FocusActionInfo focusActionInfo =
         FocusActionInfo.builder()
