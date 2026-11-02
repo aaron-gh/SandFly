@@ -476,6 +476,8 @@ class AiDictation(
       return LocalModelManager.get(service).llm()?.generate(prompt, null)
     }
     val provider = AiProvider.of(corrector) ?: return null
+    // SandFly Pro without a licence: the text stays as recognized.
+    if (provider == AiProvider.SANDFLY_PRO && provider.apiKey(prefs).isEmpty()) return null
     if (provider == AiProvider.GEMINI) {
       val key = GeminiApiKey.effectiveKey(prefs, BuildConfig.GEMINI_API_KEY)
       var failure: IOException? = null

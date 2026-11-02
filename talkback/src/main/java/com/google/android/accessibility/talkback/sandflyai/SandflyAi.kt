@@ -41,6 +41,15 @@ interface SandflyAiFeatures {
      * run after the menu closes. Null leaves it out of the menu.
      */
     fun menuItem(service: TalkBackService, value: String): Pair<CharSequence, Runnable>?
+
+    /**
+     * Why SandFly Pro can't be used as the AI service, to say instead of sending the request, or
+     * null when it has a licence to send.
+     */
+    fun aiServiceUnavailable(context: Context): String? = null
+
+    /** The Worker refused the licence of an AI service request: checks its state again. */
+    fun onAiServiceRefused(context: Context) {}
 }
 
 object SandflyAi {

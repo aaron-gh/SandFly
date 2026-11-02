@@ -54,6 +54,8 @@ class GeminiFailure(
     BUSY,
     /** Anything else. */
     OTHER,
+    /** A message written for the user, said as it is, such as why SandFly Pro can't be used. */
+    SPOKEN,
   }
 
   /** A full description for the log. */
@@ -89,6 +91,7 @@ class GeminiFailure(
         context.getString(
           if (aiService) R.string.ai_service_error_busy else R.string.gemini_error_busy
         )
+      Kind.SPOKEN -> message
       Kind.OTHER -> {
         val shortMessage = firstSentence(message)
         when {
@@ -108,6 +111,12 @@ class GeminiFailure(
     /** A failure on the phone, such as an answer that could not be read. */
     @JvmStatic
     fun other(message: String): GeminiFailure = GeminiFailure(Kind.OTHER, message = message)
+
+    /** A failure whose [message] is said to the user as it is. */
+    @JvmStatic
+    @JvmOverloads
+    fun spoken(message: String, statusCode: Int = 0): GeminiFailure =
+      GeminiFailure(Kind.SPOKEN, statusCode, message = message, aiService = true)
 
     /** Reads the failure from the error Volley reports for a request. */
     @JvmStatic

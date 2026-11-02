@@ -118,8 +118,9 @@ enum class AiProvider(
   fun missing(prefs: SharedPreferences): Missing? =
     when {
       this == NONE -> null
-      // Without SandFly Pro, or without an active code, there is no licence to send.
-      this == SANDFLY_PRO -> if (!isOffered || apiKey(prefs).isEmpty()) Missing.API_KEY else null
+      // Without a licence it stays the chosen service, so that requests say why it can't be used
+      // instead of going to another service.
+      this == SANDFLY_PRO -> if (!isOffered) Missing.API_KEY else null
       // A key built into the app, from local.properties, serves as the user's.
       this == GEMINI ->
         if (GeminiApiKey.effectiveKey(prefs, BuildConfig.GEMINI_API_KEY).isEmpty()) Missing.API_KEY else null

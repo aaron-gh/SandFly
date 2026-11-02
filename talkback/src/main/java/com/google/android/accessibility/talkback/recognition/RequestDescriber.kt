@@ -73,7 +73,13 @@ internal class RequestDescriber(
     failures++
     LogUtils.w(TAG, "No answer after %d ms: %s", age, failure ?: "cancelled")
     val kind = failure?.kind
-    if (kind == GeminiFailure.Kind.API_KEY || kind == GeminiFailure.Kind.QUOTA || failures >= MAX_FAILURES) {
+    // A missing licence or key, or a used-up limit, doesn't change between requests.
+    if (
+      kind == GeminiFailure.Kind.API_KEY ||
+        kind == GeminiFailure.Kind.QUOTA ||
+        kind == GeminiFailure.Kind.SPOKEN ||
+        failures >= MAX_FAILURES
+    ) {
       close()
       onFailure(failure)
     }

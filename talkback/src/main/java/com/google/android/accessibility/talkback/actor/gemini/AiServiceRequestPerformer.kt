@@ -20,13 +20,17 @@ import android.content.Context
 import com.android.volley.DefaultRetryPolicy
 import com.android.volley.Request
 import com.android.volley.RequestQueue
+import com.android.volley.VolleyError
 import com.android.volley.toolbox.JsonObjectRequest
 import com.google.android.accessibility.talkback.actor.gemini.GeminiRestRequestPerformer.GeminiRestResponseCallback
+import com.google.android.accessibility.talkback.sandflyai.SandflyAi
+import com.google.android.accessibility.utils.SharedPreferencesUtils
 import org.json.JSONException
 import org.json.JSONObject
 
 /** Sends Gemini requests to the [AiService] the user set up, as chat requests. */
 internal class AiServiceRequestPerformer(context: Context) {
+  private val appContext = context.applicationContext
   private val requestQueue: RequestQueue = GeminiRestRequestPerformer.sharedQueue(context)
 
   fun performRequest(
@@ -39,6 +43,14 @@ internal class AiServiceRequestPerformer(context: Context) {
     if (!AiService.isValidAddress(address)) {
       callback.onFailure(GeminiFailure.other("The AI service address must start with https"))
       return
+    }
+    val sandflyPro =
+      AiProvider.active(SharedPreferencesUtils.getSharedPreferences(appContext)) == AiProvider.SANDFLY_PRO
+    if (sandflyPro) {
+      SandflyAi.features?.aiServiceUnavailable(appContext)?.let {
+        callback.onFailure(GeminiFailure.spoken(it))
+        return
+      }
     }
     val chatRequest =
       try {
@@ -61,7 +73,7 @@ internal class AiServiceRequestPerformer(context: Context) {
               callback.onFailure(GeminiFailure.other("Could not read the answer: $e"))
             }
           },
-          { error -> callback.onFailure(GeminiFailure.fromVolleyError(error).fromAiService()) },
+          { error -> callback.onFailure(failure(error, sandflyPro)) },
         ) {
         override fun getHeaders(): MutableMap<String, String> {
           val headers = HashMap(super.getHeaders())
@@ -75,7 +87,21 @@ internal class AiServiceRequestPerformer(context: Context) {
     requestQueue.add(request)
   }
 
+  /**
+   * The failure of a request. SandFly Pro's refusals (HTTP 402) carry a message written for the user,
+   * such as that the code ended, and make the module check the licence again.
+   */
+  private fun failure(error: VolleyError, sandflyPro: Boolean): GeminiFailure {
+    val failure = GeminiFailure.fromVolleyError(error).fromAiService()
+    if (!sandflyPro || failure.statusCode != HTTP_PAYMENT_REQUIRED || failure.message.isEmpty()) {
+      return failure
+    }
+    SandflyAi.features?.onAiServiceRefused(appContext)
+    return GeminiFailure.spoken(failure.message, failure.statusCode)
+  }
+
   private companion object {
+    const val HTTP_PAYMENT_REQUIRED = 402
     // Services that run large models on demand can take longer than Gemini to answer.
     const val TIMEOUT_MS = 60_000
     // Retrying a request that timed out sends and pays for the same slow request again.

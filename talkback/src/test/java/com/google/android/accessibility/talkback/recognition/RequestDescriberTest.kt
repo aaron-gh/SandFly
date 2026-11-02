@@ -86,6 +86,15 @@ class RequestDescriberTest {
     assertFalse(describer.canRequest())
   }
 
+  @Test fun aSpokenFailureStopsAtOnce() {
+    val describer = describer()
+    describer.describe("a", setOf(RecognitionMode.SCENES), true)
+    val failure = GeminiFailure.spoken("SandFly Pro is not active.")
+    answers.last()(null, failure)
+    assertEquals(listOf(failure), failures)
+    assertFalse(describer.canRequest())
+  }
+
   @Test fun otherFailuresStopAfterThreeInARow() {
     val describer = describer()
     repeat(2) {
