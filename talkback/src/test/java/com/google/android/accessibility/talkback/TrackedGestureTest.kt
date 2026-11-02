@@ -48,6 +48,8 @@ import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_E
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_DOWN_FROM_TOP_LEFT
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_DOWN_FROM_TOP_RIGHT
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_LEFT_FROM_RIGHT_TOP
+import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_RIGHT_ALONG_BOTTOM
+import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_UP_ALONG_LEFT
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_UP_FROM_BOTTOM
 import java.time.Duration
 import kotlin.math.cos
@@ -366,6 +368,34 @@ class TrackedGestureTest {
       listOf(GESTURE_SWIPE_RIGHT, GESTURE_EDGE_LONG_SWIPE_RIGHT_FROM_LEFT_BOTTOM),
       service.gestures,
     )
+  }
+
+  @Test
+  fun swipeAlongAnEdgeIsAnEdgeGesture() {
+    assign(
+      R.string.shortcut_value_home,
+      R.string.pref_shortcut_edge_along_left_up_key,
+      R.string.pref_shortcut_edge_along_bottom_right_key,
+    )
+    slide(5f, 300f, 200f)
+    slideSideways(465f, 100f, 200f)
+    assertEquals(
+      listOf(GESTURE_EDGE_SWIPE_UP_ALONG_LEFT, GESTURE_EDGE_SWIPE_RIGHT_ALONG_BOTTOM),
+      service.gestures,
+    )
+  }
+
+  @Test
+  fun swipeAlongAnUnassignedEdgeIsAnOrdinarySwipe() {
+    slide(5f, 300f, 150f)
+    assertEquals(listOf(GESTURE_SWIPE_UP), service.gestures)
+  }
+
+  @Test
+  fun swipeUpFromTheBottomLeftCornerIsFromTheBottomEdge() {
+    assign(R.string.shortcut_value_home, R.string.pref_shortcut_edge_along_left_up_key)
+    slide(5f, 465f, 380f)
+    assertEquals(listOf(GESTURE_EDGE_SWIPE_UP_FROM_BOTTOM), service.gestures)
   }
 
   @Test

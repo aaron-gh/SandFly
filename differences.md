@@ -474,13 +474,15 @@ As in VoiceOver on iOS, you can slide one finger in from an edge of the screen. 
 - Down from the left half of the top edge for notifications, or from the right half for quick settings, after the same click. A long swipe down from either half, to a second click, does nothing by default.
 - Right from the left edge, or left from the right edge. The top half and bottom half of each side edge are separate gestures, each with a first and second click. They do nothing by default.
 
-Only gestures that have an action click. A swipe that does nothing has no first click, and the slide stays an ordinary swipe until the second click. A long swipe that does nothing has no second click, so sliding further is still the swipe. Lifting before the first click there is an ordinary swipe. In a corner, the top or bottom edge comes first, unless its gestures do nothing.
+You can also slide one finger along an edge: up or down the left or right edge, or left or right along the top or bottom edge. Start at the very edge and keep the finger near it. Each of these has one click, at the same distance as the first click of the edges above, and does nothing by default.
+
+Only gestures that have an action click. A swipe that does nothing has no first click, and the slide stays an ordinary swipe until the second click. A long swipe that does nothing has no second click, so sliding further is still the swipe. Lifting before the first click there is an ordinary swipe. In a corner, the direction of the slide picks the gesture; a slide that fits two gestures uses the top or bottom edge, and a slide in comes before a slide along an edge.
 
 Sliding back from the second click to the first plays one short tap; sliding back to the edge plays two, and lifting there cancels the gesture. Touching the edge, the first click and the second click each play a sound, which rises with each stage. To turn off the clicks, turn off **Edge gesture middle** and **Edge gesture top** under vibrations in **Individual sounds and vibrations**; to turn off the taps, turn off **Edge gesture slide back**. The sounds have switches of their own there, and a sound theme can replace them; see [Navigation sounds](#navigation-sounds). A slide that starts away from the edge, or that takes longer than about half a second to reach the first click, is an ordinary swipe or touch exploration. A finger resting at the edge for 0.2 seconds is touch exploration.
 
 To scrub, move two fingers quickly one way across the screen and back, each stroke about a centimeter long. By default, this goes back. Two fingers moved one way only still scroll.
 
-You can assign other actions to all of these in gesture settings, under **Edges** and **2 fingers**. Under **Edges**, **Distance to first click** sets how far you slide in from the edge to the first click, from 0.5 to 2 cm (1 cm by default), and **Distance from first to second click** how far you slide on to the second, from 1 to 5 cm (4 cm by default).
+You can assign other actions to all of these in gesture settings, under **Edges** and **2 fingers**. Under **Edges**, **Distance to first click** sets how far you slide in from the edge, or along it, to the first click, from 0.5 to 2 cm (1 cm by default), and **Distance from first to second click** how far you slide on to the second, from 1 to 5 cm (4 cm by default).
 
 ### Pinch and spread
 

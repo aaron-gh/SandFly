@@ -59,6 +59,14 @@ import static com.google.android.accessibility.utils.gestures.GestureManifold.GE
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_RIGHT_FROM_LEFT_BOTTOM;
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_RIGHT_FROM_LEFT_TOP;
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_UP_FROM_BOTTOM;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_UP_ALONG_LEFT;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_DOWN_ALONG_LEFT;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_UP_ALONG_RIGHT;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_DOWN_ALONG_RIGHT;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_LEFT_ALONG_TOP;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_RIGHT_ALONG_TOP;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_LEFT_ALONG_BOTTOM;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_RIGHT_ALONG_BOTTOM;
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_FAKED_SPLIT_TYPING;
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_FAKED_SPLIT_TYPING_AND_HOLD;
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_TAP_UP_TOUCH_EXPLORE;
@@ -1495,11 +1503,12 @@ public class TouchInteractionMonitor
 
   /**
    * Returns the stages a slide from {@code edge} has: 1 if its swipe has an action, and 2 if its
-   * long swipe has one.
+   * long swipe has one. A slide along an edge has no long swipe.
    */
   private List<Integer> edgeStages(Edge edge) {
     List<Integer> stages = new ArrayList<>(2);
-    for (int stage = 1; stage <= 2; stage++) {
+    int lastStage = edge.getAlong() ? 1 : 2;
+    for (int stage = 1; stage <= lastStage; stage++) {
       if (isGestureAssigned(edgeGestureId(edge, stage))) {
         stages.add(stage);
       }
@@ -1507,7 +1516,10 @@ public class TouchInteractionMonitor
     return stages;
   }
 
-  /** Returns the gesture of a slide from {@code edge} that ends at {@code stage}, 1 or 2. */
+  /**
+   * Returns the gesture of a slide from {@code edge} that ends at {@code stage}, 1 or 2. A slide
+   * along an edge has stage 1 only.
+   */
   private static int edgeGestureId(Edge edge, int stage) {
     boolean first = stage == 1;
     return switch (edge) {
@@ -1535,6 +1547,14 @@ public class TouchInteractionMonitor
           first
               ? GESTURE_EDGE_SWIPE_LEFT_FROM_RIGHT_BOTTOM
               : GESTURE_EDGE_LONG_SWIPE_LEFT_FROM_RIGHT_BOTTOM;
+      case ALONG_LEFT_UP -> GESTURE_EDGE_SWIPE_UP_ALONG_LEFT;
+      case ALONG_LEFT_DOWN -> GESTURE_EDGE_SWIPE_DOWN_ALONG_LEFT;
+      case ALONG_RIGHT_UP -> GESTURE_EDGE_SWIPE_UP_ALONG_RIGHT;
+      case ALONG_RIGHT_DOWN -> GESTURE_EDGE_SWIPE_DOWN_ALONG_RIGHT;
+      case ALONG_TOP_LEFT -> GESTURE_EDGE_SWIPE_LEFT_ALONG_TOP;
+      case ALONG_TOP_RIGHT -> GESTURE_EDGE_SWIPE_RIGHT_ALONG_TOP;
+      case ALONG_BOTTOM_LEFT -> GESTURE_EDGE_SWIPE_LEFT_ALONG_BOTTOM;
+      case ALONG_BOTTOM_RIGHT -> GESTURE_EDGE_SWIPE_RIGHT_ALONG_BOTTOM;
     };
   }
 
