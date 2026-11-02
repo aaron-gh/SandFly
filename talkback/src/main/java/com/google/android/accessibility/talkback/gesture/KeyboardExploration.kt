@@ -19,8 +19,10 @@ package com.google.android.accessibility.talkback.gesture
 import android.accessibilityservice.AccessibilityService
 import android.graphics.Rect
 import android.graphics.Region
+import android.os.Build
 import android.text.TextUtils
 import android.view.accessibility.AccessibilityWindowInfo
+import androidx.annotation.RequiresApi
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils
 import com.google.android.accessibility.utils.AccessibilityServiceCompatUtils.Constants.GBOARD_PACKAGE_NAME
@@ -50,9 +52,11 @@ object KeyboardExploration {
 
   /** Returns whether the topmost window at [x], [y] on [displayId] is Gboard's. */
   @JvmStatic
+  @RequiresApi(Build.VERSION_CODES.R)
   fun isGboardAt(service: AccessibilityService, displayId: Int, x: Float, y: Float): Boolean =
     gboardWindowAt(service, displayId, x, y) != null
 
+  @RequiresApi(Build.VERSION_CODES.R)
   private fun gboardWindowAt(
     service: AccessibilityService,
     displayId: Int,
@@ -85,6 +89,7 @@ object KeyboardExploration {
    * focus is passed over for the next.
    */
   @JvmStatic
+  @RequiresApi(Build.VERSION_CODES.R)
   fun nodeAt(
     service: AccessibilityService,
     displayId: Int,
