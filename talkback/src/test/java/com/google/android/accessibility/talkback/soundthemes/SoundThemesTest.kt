@@ -62,6 +62,13 @@ class SoundThemesTest {
   }
 
   @Test
+  fun eachCircleMenuSoundCanBeReplaced() {
+    val circleMenu = SoundThemes.SOUNDS.single { it.key == "radial_menu" }
+    for (i in 1..8) assertEquals(circleMenu, SoundThemes.PARTS["radial_menu_$i"])
+    assertFalse("focus" in SoundThemes.PARTS)
+  }
+
+  @Test
   fun storedFilesKeepTheirSound() {
     val name = SoundThemes.fileName("control_button", "ogg", 1234L)
     assertEquals("control_button", SoundThemes.keyOfFile(name))

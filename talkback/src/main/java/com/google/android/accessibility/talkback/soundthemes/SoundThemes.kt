@@ -160,6 +160,17 @@ object SoundThemes {
   val SOUND_KEYS: Set<String>
     get() = SOUNDS.map { it.key }.toSet()
 
+  /**
+   * The items with several sounds, like the eight notes of the circle menu, by the names of those
+   * sounds. A theme can replace one of them with a file of its own name, such as radial_menu_3.ogg,
+   * which plays instead of the item's file for that sound.
+   */
+  val PARTS: Map<String, FeedbackItem>
+    get() =
+      SOUNDS.filter { it.resourceNames.size > 1 }
+        .flatMap { item -> item.resourceNames.map { it to item } }
+        .toMap()
+
   /** The names of the vibrations a theme can replace. */
   val VIBRATION_NAMES: Set<String>
     get() = SoundVibrations.themeNames(IndividualFeedbackSettings.SOUNDS.map { it.key })
@@ -228,19 +239,28 @@ object SoundThemes {
 
   /** The sound files of [theme], by item key. */
   @JvmStatic
-  fun soundFiles(theme: SoundTheme): Map<String, File> {
-    val keys = SOUND_KEYS
-    return theme.directory
+  fun soundFiles(theme: SoundTheme): Map<String, File> = storedFiles(theme, SOUND_KEYS)
+
+  /** The files of [theme] for single sounds of an item with several, by the names in [PARTS]. */
+  fun partFiles(theme: SoundTheme): Map<String, File> = storedFiles(theme, PARTS.keys)
+
+  private fun storedFiles(theme: SoundTheme, keys: Set<String>): Map<String, File> =
+    theme.directory
       .listFiles()
       .orEmpty()
       .mapNotNull { file -> keyOfFile(file.name)?.takeIf { it in keys }?.let { it to file } }
       .toMap()
+
+  /** The files of [theme] for [item]: its own and those of its single sounds. */
+  private fun filesOf(theme: SoundTheme, item: FeedbackItem): List<File> {
+    val parts = partFiles(theme)
+    return listOfNotNull(soundFiles(theme)[item.key]) + item.resourceNames.mapNotNull { parts[it] }
   }
 
   /** The custom sound of [item] in the theme in use, or null if it plays Backtalk's sound. */
   @JvmStatic
   fun soundFile(context: Context, prefs: SharedPreferences, item: FeedbackItem): File? =
-    soundFiles(edited(context, prefs))[item.key]
+    filesOf(edited(context, prefs), item).firstOrNull()
 
   /** Whether [item] plays no sound in the theme in use. */
   @JvmStatic
@@ -264,6 +284,8 @@ object SoundThemes {
     for ((key, file) in soundFiles(theme)) {
       items[key]?.resourceNames?.forEach { paths[it] = file.path }
     }
+    // A single sound's own file comes before its item's.
+    for ((name, file) in partFiles(theme)) paths[name] = file.path
     for ((key, value) in theme.manifest.sounds) {
       if (value == SoundThemeManifest.NONE) {
         items[key]?.resourceNames?.forEach { paths[it] = SoundThemeManifest.NONE }
@@ -418,11 +440,11 @@ object SoundThemes {
   ): Result {
     val theme = edited(context, prefs)
     theme.directory.mkdirs()
-    val old = soundFiles(theme)[item.key]
+    val old = filesOf(theme, item)
     val file = File(theme.directory, fileName(item.key, extension, System.currentTimeMillis()))
     val result = copySound(input, file, MAX_SOUND_BYTES)
     if (result != Result.OK) return result
-    old?.delete()
+    old.forEach { it.delete() }
     if (item.key in theme.manifest.sounds) {
       write(theme.copy(manifest = theme.manifest.copy(sounds = theme.manifest.sounds - item.key)))
     }
@@ -434,7 +456,7 @@ object SoundThemes {
   fun setNone(context: Context, prefs: SharedPreferences, item: FeedbackItem) {
     val theme = edited(context, prefs)
     theme.directory.mkdirs()
-    soundFiles(theme)[item.key]?.delete()
+    filesOf(theme, item).forEach { it.delete() }
     val updated = theme.manifest.copy(sounds = theme.manifest.sounds + (item.key to SoundThemeManifest.NONE))
     write(theme.copy(manifest = updated))
     changed(prefs)
@@ -443,7 +465,7 @@ object SoundThemes {
   /** Makes [item] play Backtalk's sound again in the theme in use. */
   fun removeSound(context: Context, prefs: SharedPreferences, item: FeedbackItem) {
     val theme = edited(context, prefs)
-    soundFiles(theme)[item.key]?.delete()
+    filesOf(theme, item).forEach { it.delete() }
     if (item.key in theme.manifest.sounds) {
       write(theme.copy(manifest = theme.manifest.copy(sounds = theme.manifest.sounds - item.key)))
     }
@@ -453,7 +475,7 @@ object SoundThemes {
   /** Makes every item play Backtalk's sound again in the theme in use. */
   fun removeAllSounds(context: Context, prefs: SharedPreferences) {
     val theme = edited(context, prefs)
-    soundFiles(theme).values.forEach { it.delete() }
+    (soundFiles(theme).values + partFiles(theme).values).forEach { it.delete() }
     if (theme.manifest.sounds.isNotEmpty()) {
       write(theme.copy(manifest = theme.manifest.copy(sounds = emptyMap())))
     }
@@ -485,6 +507,11 @@ object SoundThemes {
         zip.closeEntry()
         count++
       }
+      for ((name, file) in partFiles(theme)) {
+        zip.putNextEntry(ZipEntry("$name.${file.extension}"))
+        file.inputStream().use { it.copyTo(zip) }
+        zip.closeEntry()
+      }
       theme.directory.listFiles().orEmpty().filter { isDocument(it.name) }.forEach { file ->
         zip.putNextEntry(ZipEntry(file.name))
         file.inputStream().use { it.copyTo(zip) }
@@ -501,6 +528,7 @@ object SoundThemes {
   @Throws(IOException::class, NotAThemeException::class)
   fun stage(context: Context, zip: File, fallbackName: String): StagedTheme {
     val items = SOUNDS.associateBy { it.key }
+    val parts = PARTS
     val staging = File(themesDirectory(context), STAGING_PREFIX + UUID.randomUUID())
     staging.mkdirs()
     try {
@@ -536,7 +564,7 @@ object SoundThemes {
           when (role) {
             ThemeLayout.Role.SOUND -> {
               val (key, extension) = parseSoundName(name)!!
-              if (key !in items) {
+              if (key !in items && key !in parts) {
                 skipped += "$name: there is no sound called $key"
                 continue
               }
@@ -554,7 +582,7 @@ object SoundThemes {
                       .filter { keyOfFile(it.name) == key && it != target }
                       .forEach { it.delete() }
                   }
-                  sounds += key
+                  sounds += parts[key]?.key ?: key
                 }
                 Result.TOO_LARGE -> skipped += "$name: larger than 5 MB"
                 else -> skipped += "$name: Android can't play it"

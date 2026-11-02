@@ -89,6 +89,9 @@ Files called `LICENSE`, `LICENCE`, `COPYING`, `README`, `NOTICE`, `AUTHORS` or `
 `.txt`, `.md` or no extension, are kept with the theme, and saved with it when someone shares it
 again. Put the license of your sounds there. SandFly leaves out any other files.
 
+The circle menu has eight sounds, `radial_menu_1` to `radial_menu_8`. A file called `radial_menu` replaces all eight. A file called after one of
+them, such as `radial_menu_3.ogg`, replaces that one, and comes before `radial_menu`.
+
 A ZIP file of sounds alone, without a `theme.json`, also installs, named after the file.
 
 ### theme.json
