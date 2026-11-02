@@ -75,9 +75,14 @@ public class PageController {
     this.metricStore = metricStore;
   }
 
-  /** Shows the first page. */
+  /** Shows the first page that isn't hidden by its showing predicate. */
   public void initialize() {
-    switchPage(0);
+    int firstPageNumber = 0;
+    while (firstPageNumber < getPageSize() - 1
+        && !training.getPages().get(firstPageNumber).showingPredicate().test(serviceData)) {
+      firstPageNumber++;
+    }
+    switchPage(firstPageNumber);
   }
 
   /** Goes to the specific page. */
