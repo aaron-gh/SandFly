@@ -76,6 +76,7 @@ import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.media.AudioManager;
+import android.graphics.Region;
 import android.os.Build;
 import android.os.Build.VERSION;
 import android.os.Bundle;
@@ -952,7 +953,9 @@ public class TalkBackService extends AccessibilityServiceCompat
   @Override
   public boolean onUnbind(Intent intent) {
     LogUtils.d(TAG, "onUnbind start");
-    TurnOffLog.record(this, lastWindowPackage);
+    // First, while Android may still be connected to SandFly.
+    boolean touchHandlingReleased = releaseTouchHandling();
+    TurnOffLog.record(this, lastWindowPackage, touchHandlingReleased);
     final long turningOffTime = System.currentTimeMillis();
     interruptAllFeedback(/* stopTtsSpeechCompletely= */ false);
     storeTalkBackUserUsage();
@@ -4408,11 +4411,43 @@ public class TalkBackService extends AccessibilityServiceCompat
   }
 
   public void showDisableTalkBackDialog() {
-    disableTalkbackDialog.setOnTalkBackDisableListener(
-        () -> {
-          disableSelf();
-        });
+    disableTalkbackDialog.setOnTalkBackDisableListener(this::turnOff);
     disableTalkbackDialog.showDialog();
+  }
+
+  /** Turns SandFly off, after giving touch handling back to Android. */
+  public void turnOff() {
+    releaseTouchHandling();
+    disableSelf();
+  }
+
+  /**
+   * Gives touch handling back to Android: ends SandFly's own gesture detection and clears its
+   * passthrough regions. Android keeps the gesture detection flag for the touch screen after SandFly
+   * is turned off while another accessibility service still uses touch input, so a screen reader
+   * turned on next would get no gestures. This works only while Android is still connected to
+   * SandFly, which it may no longer be by the time {@link #onUnbind} runs.
+   *
+   * @return whether Android was still connected
+   */
+  private boolean releaseTouchHandling() {
+    // Android returns no service info once it has disconnected the service.
+    boolean connected = getServiceInfo() != null;
+    if (shouldUseTalkbackGestureDetection()) {
+      unregisterGestureDetection();
+    }
+    if (connected && VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+      for (Display display : WindowUtils.getAllDisplays(getApplicationContext())) {
+        setTouchExplorationPassthroughRegion(display.getDisplayId(), new Region());
+        setGestureDetectionPassthroughRegion(display.getDisplayId(), new Region());
+      }
+    }
+    LogUtils.i(
+        TAG,
+        connected
+            ? "Touch handling given back to Android"
+            : "Android had already disconnected SandFly; touch handling not given back");
+    return connected;
   }
 
   /**
@@ -4425,7 +4460,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     ipcClientCallback.hasRequestDisableTalkBackFromMistrigger = true;
     analytics.sendMistriggerAndAliveTimeLog(type);
     setTrainingFinished(false);
-    disableSelf();
+    turnOff();
   }
 
   private boolean skipShowingTutorialInLaunching() {

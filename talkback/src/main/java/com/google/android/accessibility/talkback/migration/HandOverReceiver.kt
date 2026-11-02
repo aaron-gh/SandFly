@@ -44,7 +44,7 @@ class HandOverReceiver : BroadcastReceiver() {
       return
     }
     LogUtils.i(TAG, "SandFly is on, so Backtalk Aaron turns itself off")
-    service.disableSelf()
+    service.turnOff()
   }
 
   private fun isSandFlyOn(context: Context): Boolean {

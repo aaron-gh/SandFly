@@ -262,6 +262,13 @@
             android:summary="@string/summary_pause_backtalk"/>
         <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
             android:layout="@layout/listitem_2texts"
+            android:defaultValue="@bool/pref_show_context_menu_turn_off_default"
+            android:key="@string/pref_show_context_menu_turn_off_setting_key"
+            android:order="20"
+            android:title="@string/turn_off_talkback"
+            app:singleLineTitle="false"/>
+        <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
+            android:layout="@layout/listitem_2texts"
             android:defaultValue="@bool/pref_show_context_menu_inspect_item_default"
             android:key="@string/pref_show_context_menu_inspect_item_setting_key"
             android:order="26"

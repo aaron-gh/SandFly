@@ -804,6 +804,7 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
         R.string.shortcut_value_show_language_options, R.string.shortcut_show_language_options),
     VOICE_PROFILES(R.string.shortcut_value_voice_profiles, R.string.shortcut_voice_profiles),
     GESTURE_PROFILES(R.string.shortcut_value_gesture_profiles, R.string.shortcut_gesture_profiles),
+    TURN_OFF_SANDFLY(R.string.shortcut_value_turn_off_sandfly, R.string.turn_off_talkback),
     PREVIOUS_GESTURE_PROFILE(
         R.string.shortcut_value_previous_gesture_profile,
         R.string.shortcut_previous_gesture_profile),

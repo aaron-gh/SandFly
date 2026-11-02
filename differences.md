@@ -664,6 +664,12 @@ To resume, tap the **SandFly is paused** notification, press volume down three t
 
 The volume keys still change the volume while SandFly is paused. If SandFly restarts while it's paused, it starts unpaused.
 
+### Turn off SandFly
+
+To turn SandFly off before turning on another screen reader, such as TalkBack, choose **Turn off SandFly** in the SandFly menu or assign the **Turn off SandFly** action to a gesture, and then confirm. SandFly gives touch handling back to Android before it turns off.
+
+SandFly recognizes gestures itself, and Android keeps that setting for the touch screen after SandFly is turned off while another accessibility service still uses touch input. A screen reader turned on next then gets no gestures until every accessibility service is turned off. When SandFly is turned off with the accessibility shortcut, a Quick Settings tile or Settings, Android may disconnect SandFly before it can give touch handling back; **Turn off SandFly** avoids this.
+
 ## Calls
 
 ### Speaker when away from your ear

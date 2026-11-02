@@ -880,6 +880,7 @@ object Commands {
         )
         gesture(R.string.shortcut_value_toggle_arrow_key_nav, R.string.arrow_key_nav_toggle)
         gesture(R.string.shortcut_value_toggle_scripts, R.string.shortcut_toggle_scripts)
+        gesture(R.string.shortcut_value_turn_off_sandfly, R.string.turn_off_talkback)
         keyboard(Key.OPEN_TALKBACK_SETTINGS)
         gesture(R.string.shortcut_value_tutorial, R.string.shortcut_tutorial, Key.SHOW_TUTORIAL)
         gesture(
