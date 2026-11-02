@@ -661,6 +661,7 @@ public class TalkBackService extends AccessibilityServiceCompat
 
   /** Staged pipeline for separating interpreters, feedback-mappers, and actors. */
   private Pipeline pipeline;
+  private @Nullable TouchExplorationInterpreter touchExplorationInterpreter;
 
   /** Controller for audio and haptic feedback. */
   private FeedbackController feedbackController;
@@ -1259,6 +1260,16 @@ public class TalkBackService extends AccessibilityServiceCompat
     } else if (eventType == AccessibilityEvent.TYPE_TOUCH_INTERACTION_END) {
       isTouchInteracting = false;
       NotificationReader.onTouchEnded();
+    } else if (eventType == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED
+        && (event.getContentChangeTypes() & AccessibilityEvent.CONTENT_CHANGE_TYPE_PANE_APPEARED)
+            != 0
+        && FeatureSupport.supportGestureDetection()) {
+      TouchInteractionMonitor touchInteractionMonitor =
+          displayIdToTouchInteractionMonitors.get(event.getDisplayId());
+      @Nullable AccessibilityNodeInfoCompat pane = AccessibilityEventUtils.sourceCompat(event);
+      if (touchInteractionMonitor != null && pane != null) {
+        touchInteractionMonitor.onGboardPaneOpened(pane);
+      }
     } else if (eventType == AccessibilityEvent.TYPE_VIEW_HOVER_ENTER) {
       if (FeatureSupport.supportGestureDetection()) {
         TouchInteractionMonitor touchInteractionMonitor =
@@ -2619,8 +2630,7 @@ public class TalkBackService extends AccessibilityServiceCompat
 
     compositor.setSpeaker(pipeline.getSpeaker());
 
-    TouchExplorationInterpreter touchExplorationInterpreter =
-        new TouchExplorationInterpreter(inputModeTracker, this);
+    touchExplorationInterpreter = new TouchExplorationInterpreter(inputModeTracker, this);
 
     if (FeatureSupport.supportMagnificationController()) {
       processorMagnification =
@@ -3513,6 +3523,23 @@ public class TalkBackService extends AccessibilityServiceCompat
   }
 
   /** Called when a one-finger tap on the keyboard types the key under it. */
+  /**
+   * Handles {@code node}, found under a finger on Gboard without touch exploration, as touch
+   * exploration's hover enter event would be handled.
+   */
+  public void onKeyboardNodeTouched(AccessibilityNodeInfoCompat node) {
+    if (touchExplorationInterpreter != null) {
+      touchExplorationInterpreter.onNodeTouched(node, EVENT_ID_UNTRACKED);
+    }
+  }
+
+  /** Ends a touch on Gboard explored without touch exploration when its finger lifts. */
+  public void onKeyboardTouchEnded() {
+    if (touchExplorationInterpreter != null) {
+      touchExplorationInterpreter.onTouchEndedEarly(EVENT_ID_UNTRACKED);
+    }
+  }
+
   public void onTapToType() {
     if (accessibilityFocusInterpreter != null) {
       accessibilityFocusInterpreter.onTapToType();

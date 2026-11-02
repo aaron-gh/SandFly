@@ -73,6 +73,7 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.content.res.Configuration;
 import android.graphics.Point;
+import android.graphics.Rect;
 import android.graphics.Region;
 import android.os.Build;
 import android.os.Handler;
@@ -90,6 +91,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.annotation.VisibleForTesting;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
+import androidx.core.view.accessibility.AccessibilityWindowInfoCompat;
 import com.google.android.accessibility.talkback.PrimesController.TimerAction;
 import com.google.android.accessibility.talkback.contextmenu.ListMenuManager;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
@@ -98,6 +100,7 @@ import com.google.android.accessibility.talkback.gesture.EdgeSwipeTracker;
 import com.google.android.accessibility.talkback.gesture.EdgeSwipeTracker.Edge;
 import com.google.android.accessibility.talkback.gesture.GestureLog;
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping;
+import com.google.android.accessibility.talkback.gesture.KeyboardExploration;
 import com.google.android.accessibility.talkback.gesture.PinchTracker;
 import com.google.android.accessibility.talkback.gesture.TapToTypeTracker;
 import com.google.android.accessibility.talkback.gesture.TwoFingerRotationTracker;
@@ -107,6 +110,7 @@ import com.google.android.accessibility.utils.AccessibilityServiceCompatUtils;
 import com.google.android.accessibility.utils.AccessibilityWindowInfoUtils;
 import com.google.android.accessibility.utils.Performance;
 import com.google.android.accessibility.utils.Performance.EventId;
+import com.google.android.accessibility.utils.Role;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import com.google.android.accessibility.utils.gestures.GestureConfiguration;
 import com.google.android.accessibility.utils.gestures.GestureManifold;
@@ -145,6 +149,9 @@ public class TouchInteractionMonitor
         GestureManifold.Listener,
         ComponentCallbacks,
         UserInterface.UserInputEventListener {
+  /** How far, in pixels, a finger exploring Gboard moves before the node under it is found again. */
+  private static final int KEYBOARD_EXPLORE_STEP_PX = 6;
+
   private static final String LOG_TAG = "TouchInteractionMonitor";
   private static final String DEBUG_GESTURE_TAG = "BacktalkGesture";
   private static final float MAX_DRAGGING_ANGLE_COS = 0.525321989f; // cos(pi/4)
@@ -291,6 +298,18 @@ public class TouchInteractionMonitor
   // Whether the touch went down on the keyboard with the Tap to type typing method, which types
   // without focusing keys, so the typing focus delay applies whatever has focus.
   private boolean downOnKeyboard;
+  // Whether the touch went down on Gboard with a typing method other than Double-tap to type, so it
+  // is kept from touch exploration and explored here; see KeyboardExploration.
+  private boolean downOnGboard;
+  // Whether this touch is being explored here instead of by touch exploration.
+  private boolean exploringKeyboard;
+  // The popup that Gboard opened during this touch, such as its popup of alternative characters.
+  private @Nullable AccessibilityNodeInfoCompat gboardPopup;
+  private float lastFingerX;
+  private float lastFingerY;
+  private float lastExploredX;
+  private float lastExploredY;
+  private @Nullable AccessibilityNodeInfoCompat lastExploredNode;
   private final SharedPreferences sharedPreferences;
   @VisibleForTesting final TouchExplorationModeFailureReporter touchExplorationModeFailureReporter;
   private final boolean typingFocusTimeout;
@@ -630,6 +649,14 @@ public class TouchInteractionMonitor
       LogUtils.e(LOG_TAG, "Event is null.");
       return;
     }
+    if (event.getActionMasked() == ACTION_DOWN || event.getActionMasked() == ACTION_MOVE) {
+      lastFingerX = event.getX(0);
+      lastFingerY = event.getY(0);
+    }
+    if (exploringKeyboard) {
+      exploreKeyboard(event);
+      return;
+    }
     if (followingHeldTouch) {
       followHeldTouch(event);
       return;
@@ -646,6 +673,9 @@ public class TouchInteractionMonitor
       downOnKeyboard =
           typingMethod == FocusProcessorForTapAndTouchExploration.TAP_TO_TYPE
               && isOnKeyboard(event.getX(), event.getY());
+      downOnGboard =
+          typingMethod != FocusProcessorForTapAndTouchExploration.DOUBLE_TAP
+              && KeyboardExploration.isGboardAt(service, displayId, event.getX(), event.getY());
     }
     if (handleEdgeSwipe(event)) {
       return;
@@ -915,6 +945,10 @@ public class TouchInteractionMonitor
     pinchTracker.clear();
     tapToTypeTracker.clear();
     downOnKeyboard = false;
+    downOnGboard = false;
+    exploringKeyboard = false;
+    gboardPopup = null;
+    lastExploredNode = null;
     stateChangeRequested = false;
     gestureDetector.clear();
     receivedPointerTracker.clear();
@@ -1776,6 +1810,10 @@ public class TouchInteractionMonitor
     if (holdTouchExplorationForEdgeSwipe()) {
       return;
     }
+    if (downOnGboard && fingerDown && state == STATE_TOUCH_INTERACTING) {
+      startExploringKeyboard(caller);
+      return;
+    }
     try {
       if (isStateTransitionAllowed()) {
         trackStateChangeRequest(STATE_TOUCH_EXPLORING, caller);
@@ -1786,6 +1824,120 @@ public class TouchInteractionMonitor
       throw packExceptionWithCallerInfo(e);
     }
     stateChangeRequested = true;
+  }
+
+  /**
+   * Explores a touch on Gboard here, from its motion events, instead of requesting touch
+   * exploration, whose hover events don't find the characters of Gboard's popup on some phones.
+   */
+  private void startExploringKeyboard(String caller) {
+    LogUtils.v(LOG_TAG, "Exploring the keyboard, instead of %s", caller);
+    exploringKeyboard = true;
+    keepMonitorTouchExplore = false;
+    requestTouchExplorationDelayed.cancel();
+    gestureDetector.clear();
+    lastExploredNode = null;
+    exploreKeyboardAt(lastFingerX, lastFingerY);
+  }
+
+  private void exploreKeyboard(MotionEvent event) {
+    switch (event.getActionMasked()) {
+      case ACTION_MOVE -> {
+        if (Math.hypot(lastFingerX - lastExploredX, lastFingerY - lastExploredY)
+            >= KEYBOARD_EXPLORE_STEP_PX) {
+          exploreKeyboardAt(lastFingerX, lastFingerY);
+        }
+      }
+      case MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL -> {
+        if (event.getActionMasked() == MotionEvent.ACTION_UP) {
+          clickPopupKeyOnLift();
+          // The key is typed now: Android's touch-end event, which types it otherwise, comes later.
+          service.onKeyboardTouchEnded();
+        }
+        exploringKeyboard = false;
+        lastExploredNode = null;
+      }
+      default -> {}
+    }
+  }
+
+  private void exploreKeyboardAt(float x, float y) {
+    lastExploredX = x;
+    lastExploredY = y;
+    // While Gboard's popup is open, a finger anywhere selects one of its characters.
+    @Nullable AccessibilityNodeInfoCompat node =
+        gboardPopup != null
+            ? KeyboardExploration.popupKeyAt(gboardPopup, x, y)
+            : KeyboardExploration.nodeAt(service, displayId, x, y);
+    if (node == null || node.equals(lastExploredNode)) {
+      return;
+    }
+    if (lastExploredNode == null && node.isAccessibilityFocused()) {
+      // Touching the key that has focus again, such as the key just typed, focuses it again, with
+      // the sound of focusing it; touch exploration plays that sound for the app's hover event.
+      node.performAction(AccessibilityNodeInfoCompat.ACTION_CLEAR_ACCESSIBILITY_FOCUS);
+      node.refresh();
+    }
+    lastExploredNode = node;
+    service.onKeyboardNodeTouched(node);
+  }
+
+  /**
+   * Notes that Gboard opened {@code pane}. A pane narrower than Gboard's window, such as the popup
+   * of alternative characters, is a popup; the keyboard's own layouts are panes too, as wide as the
+   * window.
+   */
+  public void onGboardPaneOpened(AccessibilityNodeInfoCompat pane) {
+    if (!exploringKeyboard) {
+      return;
+    }
+    @Nullable AccessibilityWindowInfoCompat window = AccessibilityNodeInfoUtils.getWindow(pane);
+    if (window == null) {
+      return;
+    }
+    Rect paneBounds = new Rect();
+    Rect windowBounds = new Rect();
+    pane.getBoundsInScreen(paneBounds);
+    window.getBoundsInScreen(windowBounds);
+    if (paneBounds.width() < windowBounds.width()) {
+      gboardPopup = pane;
+      // The character the finger selects is said at once, before the finger moves.
+      exploreKeyboardAt(lastFingerX, lastFingerY);
+    }
+  }
+
+  /** Returns whether {@code node} is in the popup Gboard opened during this touch. */
+  private boolean isInGboardPopup(AccessibilityNodeInfoCompat node) {
+    @Nullable AccessibilityNodeInfoCompat popup = gboardPopup;
+    if (popup == null) {
+      return false;
+    }
+    @Nullable AccessibilityNodeInfoCompat ancestor = node;
+    for (int level = 0; ancestor != null && level < 6; level++) {
+      if (ancestor.equals(popup)) {
+        return true;
+      }
+      ancestor = ancestor.getParent();
+    }
+    return false;
+  }
+
+  /**
+   * Types the character of Gboard's popup that the finger lifts with, as Gboard does, which closes
+   * the popup. The Lift to type typing method types only text entry keys, which the popup's
+   * characters aren't; the other methods type them on lift themselves.
+   */
+  private void clickPopupKeyOnLift() {
+    @Nullable AccessibilityNodeInfoCompat node = lastExploredNode;
+    if (node == null
+        || !isInGboardPopup(node)
+        || typingMethod != FocusProcessorForTapAndTouchExploration.LIFT_TO_TYPE
+        || Role.getRole(node) == Role.ROLE_TEXT_ENTRY_KEY
+        || !node.isClickable()) {
+      return;
+    }
+    LogUtils.v(LOG_TAG, "Typing the popup character %s", node.getContentDescription());
+    node.performAction(AccessibilityNodeInfoCompat.ACTION_CLICK);
   }
 
   protected void requestDragging(int pointerId, String caller) {
