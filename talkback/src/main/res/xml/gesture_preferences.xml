@@ -359,8 +359,20 @@
         android:title="@string/title_pref_edge_second_click_mm" />
     <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
         android:defaultValue="@bool/pref_edge_scroll_default"
-        android:key="@string/pref_edge_scroll_key"
-        android:title="@string/title_pref_edge_scroll" />
+        android:key="@string/pref_edge_scroll_left_key"
+        android:title="@string/title_pref_edge_scroll_left" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="@bool/pref_edge_scroll_default"
+        android:key="@string/pref_edge_scroll_right_key"
+        android:title="@string/title_pref_edge_scroll_right" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="@bool/pref_edge_scroll_default"
+        android:key="@string/pref_edge_scroll_top_key"
+        android:title="@string/title_pref_edge_scroll_top" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="@bool/pref_edge_scroll_default"
+        android:key="@string/pref_edge_scroll_bottom_key"
+        android:title="@string/title_pref_edge_scroll_bottom" />
   </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
 
   <!-- Two finger gestures -->

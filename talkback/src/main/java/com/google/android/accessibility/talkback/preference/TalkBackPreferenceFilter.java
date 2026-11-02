@@ -398,7 +398,14 @@ public class TalkBackPreferenceFilter {
         R.string.pref_edge_first_click_mm_key, SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
     EDGE_SECOND_CLICK(
         R.string.pref_edge_second_click_mm_key, SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
-    EDGE_SCROLL(R.string.pref_edge_scroll_key, SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
+    EDGE_SCROLL_LEFT(
+        R.string.pref_edge_scroll_left_key, SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
+    EDGE_SCROLL_RIGHT(
+        R.string.pref_edge_scroll_right_key, SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
+    EDGE_SCROLL_TOP(
+        R.string.pref_edge_scroll_top_key, SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
+    EDGE_SCROLL_BOTTOM(
+        R.string.pref_edge_scroll_bottom_key, SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
     CUSTOMIZE_FOCUS_INDICATOR(
         R.string.pref_category_manage_focus_indicator_key, SHOW_FOCUS_INDICATOR),
     AUTOMATIC_DESCRIPTIONS(R.string.pref_auto_image_captioning_key, HIDDEN_ON_TV | HIDDEN_ON_XR),

@@ -51,6 +51,7 @@ import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_E
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_LEFT_FROM_RIGHT_TOP
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_RIGHT_ALONG_BOTTOM
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_UP_ALONG_LEFT
+import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_UP_ALONG_RIGHT
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_UP_FROM_BOTTOM
 import java.time.Duration
 import kotlin.math.cos
@@ -393,15 +394,27 @@ class TrackedGestureTest {
   }
 
   @Test
-  fun swipeUpTheLeftEdgeScrollsTheAppWhenSideEdgesScroll() {
+  fun swipeUpTheLeftEdgeScrollsTheAppWhenTheLeftEdgeScrolls() {
     assign(R.string.shortcut_value_home, R.string.pref_shortcut_edge_along_left_up_key)
     SharedPreferencesUtils.getSharedPreferences(service)
       .edit()
-      .putBoolean(service.getString(R.string.pref_edge_scroll_key), true)
+      .putBoolean(service.getString(R.string.pref_edge_scroll_left_key), true)
       .commit()
     slide(5f, 300f, 200f)
     assertEquals(true, requestedDelegating())
     assertEquals(listOf<Int>(), service.gestures)
+  }
+
+  @Test
+  fun swipeUpTheRightEdgeIsItsGestureWhenOnlyTheLeftEdgeScrolls() {
+    assign(R.string.shortcut_value_home, R.string.pref_shortcut_edge_along_right_up_key)
+    SharedPreferencesUtils.getSharedPreferences(service)
+      .edit()
+      .putBoolean(service.getString(R.string.pref_edge_scroll_left_key), true)
+      .commit()
+    slide(315f, 300f, 200f)
+    assertEquals(false, requestedDelegating())
+    assertEquals(listOf(GESTURE_EDGE_SWIPE_UP_ALONG_RIGHT), service.gestures)
   }
 
   @Test

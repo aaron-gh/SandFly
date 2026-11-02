@@ -32,7 +32,7 @@ class EdgeSwipeTrackerTest {
   private val ended = mutableListOf<Pair<Edge, Int>>()
   private val touched = mutableListOf<Edge>()
   private val scrolled = mutableListOf<Edge>()
-  private var sideEdgesScroll = false
+  private var scrollingSlides = emptySet<Edge>()
   private var owned = mutableListOf<Boolean>()
   private var edgesInUse = Edge.entries.filter { !it.along }.toSet()
   private var stagesInUse = listOf(1, 2)
@@ -42,7 +42,7 @@ class EdgeSwipeTrackerTest {
       stageDistancesPx = floatArrayOf(100f, 400f),
       slopPx = 15f,
       edgeStages = { if (it in edgesInUse) stagesInUse else emptyList() },
-      sideEdgesScroll = { sideEdgesScroll },
+      edgeScrolls = { it in scrollingSlides },
       listener =
         object : EdgeSwipeTracker.Listener {
           override fun onEdgeSwipeStarted(edge: Edge) {
@@ -190,30 +190,46 @@ class EdgeSwipeTrackerTest {
   }
 
   @Test
-  fun slideUpOrDownASideEdgeScrollsWhenSideEdgesScroll() {
-    sideEdgesScroll = true
-    edgesInUse = setOf(Edge.ALONG_LEFT_UP)
+  fun slideAlongAnEdgeThatScrollsScrollsTheApp() {
+    scrollingSlides = setOf(Edge.ALONG_LEFT_UP, Edge.ALONG_LEFT_DOWN)
+    edgesInUse = setOf(Edge.ALONG_LEFT_UP, Edge.ALONG_RIGHT_UP)
     slideThrough(5f, 500f, 7f, 490f, 8f, 470f, 9f, 300f)
     assertEquals(listOf("scroll"), events)
     // The touch belongs to the slide from the move that started the scroll, and to the app after.
     assertEquals(listOf(false, false, true, false, false), owned)
-    slideThrough(295f, 500f, 293f, 530f, 290f, 700f)
-    assertEquals(listOf(Edge.ALONG_LEFT_UP, Edge.ALONG_RIGHT_DOWN), scrolled)
-    assertEquals(listOf<Pair<Edge, Int>>(), ended)
+    slideThrough(5f, 500f, 7f, 530f, 9f, 700f)
+    // The right edge does not scroll, so its slide up is still its gesture.
+    slideThrough(295f, 500f, 293f, 450f, 290f, 380f)
+    assertEquals(listOf(Edge.ALONG_LEFT_UP, Edge.ALONG_LEFT_DOWN), scrolled)
+    assertEquals(listOf(Edge.ALONG_RIGHT_UP to 1), ended)
     assertEquals(listOf<Edge>(), touched)
   }
 
   @Test
-  fun slideInFromASideEdgeStillWorksWhenSideEdgesScroll() {
-    sideEdgesScroll = true
+  fun slideLeftOrRightAlongTheTopOrBottomScrollsTheApp() {
+    scrollingSlides =
+      setOf(Edge.ALONG_TOP_LEFT, Edge.ALONG_TOP_RIGHT, Edge.ALONG_BOTTOM_LEFT, Edge.ALONG_BOTTOM_RIGHT)
+    slideThrough(150f, 5f, 130f, 7f, 100f, 8f)
+    slideThrough(150f, 995f, 170f, 993f, 200f, 992f)
+    // From a corner too.
+    slideThrough(5f, 995f, 25f, 993f, 60f, 992f)
+    assertEquals(
+      listOf(Edge.ALONG_TOP_LEFT, Edge.ALONG_BOTTOM_RIGHT, Edge.ALONG_BOTTOM_RIGHT),
+      scrolled,
+    )
+  }
+
+  @Test
+  fun slideInFromASideEdgeStillWorksWhenTheEdgeScrolls() {
+    scrollingSlides = setOf(Edge.ALONG_LEFT_UP, Edge.ALONG_LEFT_DOWN)
     slideSideways(5f, 200f, 50f, 150f)
     assertEquals(listOf(Edge.LEFT_TOP to 1), ended)
     assertEquals(listOf<Edge>(), scrolled)
   }
 
   @Test
-  fun cornersDoNotScroll() {
-    sideEdgesScroll = true
+  fun cornersDoNotScrollAlongSideEdges() {
+    scrollingSlides = setOf(Edge.ALONG_LEFT_UP, Edge.ALONG_LEFT_DOWN)
     edgesInUse = setOf(Edge.BOTTOM)
     slideThrough(5f, 995f, 8f, 950f, 10f, 880f)
     assertEquals(listOf(Edge.BOTTOM to 1), ended)
