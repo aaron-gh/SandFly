@@ -357,6 +357,10 @@
         android:key="@string/pref_edge_second_click_mm_key"
         android:summary="%s"
         android:title="@string/title_pref_edge_second_click_mm" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="@bool/pref_edge_scroll_default"
+        android:key="@string/pref_edge_scroll_key"
+        android:title="@string/title_pref_edge_scroll" />
   </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
 
   <!-- Two finger gestures -->
