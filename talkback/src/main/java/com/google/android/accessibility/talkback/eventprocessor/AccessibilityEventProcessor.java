@@ -42,6 +42,7 @@ import com.google.android.accessibility.talkback.ActorState;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.VoiceActionMonitor;
+import com.google.android.accessibility.talkback.gesture.KeyboardExploration;
 import com.google.android.accessibility.talkback.monitor.RingerModeAndScreenMonitor;
 import com.google.android.accessibility.utils.AccessibilityEventListener;
 import com.google.android.accessibility.utils.AccessibilityEventUtils;
@@ -276,7 +277,8 @@ public class AccessibilityEventProcessor implements DisplayStateChangedListener 
       lastFocusedEvent = AccessibilityEvent.obtain(event);
     }
 
-    if (AccessibilityEventUtils.eventMatchesAnyType(event, MASK_DELAYED_EVENT_TYPES)) {
+    if (AccessibilityEventUtils.eventMatchesAnyType(event, MASK_DELAYED_EVENT_TYPES)
+        && !isGboardEvent(event)) {
       handler.postProcessEvent(event, eventId);
     } else {
       processEvent(event, eventId);
@@ -298,6 +300,14 @@ public class AccessibilityEventProcessor implements DisplayStateChangedListener 
       // If the display is off, we don't need to do it anymore.
       handler.removeIdleMessage();
     }
+  }
+
+  /**
+   * Returns whether {@code event} is Gboard's, or Pixelboard's. A key typed on Gboard has no state to catch up with,
+   * and its click feedback, which is the feedback of typing it, comes at once.
+   */
+  private static boolean isGboardEvent(AccessibilityEvent event) {
+    return KeyboardExploration.isGboardPackage(event.getPackageName());
   }
 
   /**

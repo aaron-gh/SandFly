@@ -104,6 +104,9 @@ public class TouchExplorationInterpreter implements AccessibilityEventListener {
 
   private final List<TouchExplorationActionListener> listeners = new ArrayList<>();
 
+  // Whether the current touch was ended when its finger lifted, before Android's touch-end event.
+  private boolean touchEndedEarly;
+
   public TouchExplorationInterpreter(InputModeTracker inputModeTracker, Context context) {
     this.context = context;
     this.inputModeTracker = inputModeTracker;
@@ -129,7 +132,11 @@ public class TouchExplorationInterpreter implements AccessibilityEventListener {
       case AccessibilityEvent.TYPE_TOUCH_INTERACTION_START ->
           result = handleTouchInteractionStartEvent(eventId);
       case AccessibilityEvent.TYPE_TOUCH_INTERACTION_END -> {
-        if (FeatureSupport.hoverEventOutOfOrder()) {
+        if (touchEndedEarly) {
+          // The touch already ended when its finger lifted; see onTouchEndedEarly.
+          touchEndedEarly = false;
+          result = false;
+        } else if (FeatureSupport.hoverEventOutOfOrder()) {
           // REFERTO. In some case, framework sends a Hover_Enter event enter after
           // User_Interaction_end event. Defer the action for workaround.
           result = false;
@@ -177,8 +184,23 @@ public class TouchExplorationInterpreter implements AccessibilityEventListener {
     }
   }
 
+  /**
+   * Ends the touch now, when its finger lifted, and passes over the touch-end event that follows.
+   * Android sends that event after a delay, and a key on Gboard explored without touch exploration
+   * is typed only when the touch ends. See {@link
+   * com.google.android.accessibility.talkback.gesture.KeyboardExploration}.
+   */
+  public void onTouchEndedEarly(EventId eventId) {
+    if (handleTouchInteractionEndEvent(eventId)) {
+      setInputTouchMode();
+    }
+    touchEndedEarly = true;
+  }
+
   /** @return {@code true} if any accessibility action is successfully performed. */
   private boolean handleTouchInteractionStartEvent(EventId eventId) {
+    // Android sends a touch's end before the next touch starts, so a passed-over end can't be due.
+    touchEndedEarly = false;
     pendingHover = null;
     postDelayHandler.executePendingTouchEndAction();
     setLastTouchedNode(/*touchedNode= */ null);
@@ -217,6 +239,22 @@ public class TouchExplorationInterpreter implements AccessibilityEventListener {
       // Invalid event.
       return false;
     }
+    return handleTouchedNode(touchedNode, eventId);
+  }
+
+  /**
+   * Handles {@code touchedNode}, found under the finger by SandFly itself, as the source of a hover
+   * enter event. See {@link
+   * com.google.android.accessibility.talkback.gesture.KeyboardExploration}.
+   */
+  public void onNodeTouched(AccessibilityNodeInfoCompat touchedNode, EventId eventId) {
+    pendingHover = null;
+    if (handleTouchedNode(touchedNode, eventId)) {
+      setInputTouchMode();
+    }
+  }
+
+  private boolean handleTouchedNode(AccessibilityNodeInfoCompat touchedNode, EventId eventId) {
     if (touchedNode.equals(lastTouchedNode)) {
       // If two consecutive Hover_Enter events have the same source node, we won't dispatch it
       // because it doesn't change anything.
