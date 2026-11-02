@@ -30,6 +30,14 @@ import static com.google.android.accessibility.utils.gestures.GestureManifold.GE
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_LONG_SWIPE_DOWN_FROM_TOP_LEFT;
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_LONG_SWIPE_DOWN_FROM_TOP_RIGHT;
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_LONG_SWIPE_LEFT_FROM_RIGHT_BOTTOM;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_UP_ALONG_LEFT;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_DOWN_ALONG_LEFT;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_UP_ALONG_RIGHT;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_DOWN_ALONG_RIGHT;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_LEFT_ALONG_TOP;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_RIGHT_ALONG_TOP;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_LEFT_ALONG_BOTTOM;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_RIGHT_ALONG_BOTTOM;
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_LONG_SWIPE_LEFT_FROM_RIGHT_TOP;
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_LONG_SWIPE_RIGHT_FROM_LEFT_BOTTOM;
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_LONG_SWIPE_RIGHT_FROM_LEFT_TOP;
@@ -623,6 +631,46 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
         SINGLE_FINGER,
         R.string.pref_shortcut_edge_right_bottom_long_left_key,
         R.string.pref_shortcut_edge_right_bottom_long_left_default),
+    EDGE_SWIPE_UP_ALONG_LEFT(
+        GESTURE_EDGE_SWIPE_UP_ALONG_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_edge_along_left_up_key,
+        R.string.pref_shortcut_edge_along_left_up_default),
+    EDGE_SWIPE_DOWN_ALONG_LEFT(
+        GESTURE_EDGE_SWIPE_DOWN_ALONG_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_edge_along_left_down_key,
+        R.string.pref_shortcut_edge_along_left_down_default),
+    EDGE_SWIPE_UP_ALONG_RIGHT(
+        GESTURE_EDGE_SWIPE_UP_ALONG_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_edge_along_right_up_key,
+        R.string.pref_shortcut_edge_along_right_up_default),
+    EDGE_SWIPE_DOWN_ALONG_RIGHT(
+        GESTURE_EDGE_SWIPE_DOWN_ALONG_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_edge_along_right_down_key,
+        R.string.pref_shortcut_edge_along_right_down_default),
+    EDGE_SWIPE_LEFT_ALONG_TOP(
+        GESTURE_EDGE_SWIPE_LEFT_ALONG_TOP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_edge_along_top_left_key,
+        R.string.pref_shortcut_edge_along_top_left_default),
+    EDGE_SWIPE_RIGHT_ALONG_TOP(
+        GESTURE_EDGE_SWIPE_RIGHT_ALONG_TOP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_edge_along_top_right_key,
+        R.string.pref_shortcut_edge_along_top_right_default),
+    EDGE_SWIPE_LEFT_ALONG_BOTTOM(
+        GESTURE_EDGE_SWIPE_LEFT_ALONG_BOTTOM,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_edge_along_bottom_left_key,
+        R.string.pref_shortcut_edge_along_bottom_left_default),
+    EDGE_SWIPE_RIGHT_ALONG_BOTTOM(
+        GESTURE_EDGE_SWIPE_RIGHT_ALONG_BOTTOM,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_edge_along_bottom_right_key,
+        R.string.pref_shortcut_edge_along_bottom_right_default),
 
     // Fingerprint.
     FINGERPRINT_SWIPE_UP(
@@ -1583,6 +1631,14 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
           context.getString(R.string.title_pref_shortcut_edge_right_bottom_left);
       case GESTURE_EDGE_LONG_SWIPE_LEFT_FROM_RIGHT_BOTTOM ->
           context.getString(R.string.title_pref_shortcut_edge_right_bottom_long_left);
+      case GESTURE_EDGE_SWIPE_UP_ALONG_LEFT -> context.getString(R.string.title_pref_shortcut_edge_along_left_up);
+      case GESTURE_EDGE_SWIPE_DOWN_ALONG_LEFT -> context.getString(R.string.title_pref_shortcut_edge_along_left_down);
+      case GESTURE_EDGE_SWIPE_UP_ALONG_RIGHT -> context.getString(R.string.title_pref_shortcut_edge_along_right_up);
+      case GESTURE_EDGE_SWIPE_DOWN_ALONG_RIGHT -> context.getString(R.string.title_pref_shortcut_edge_along_right_down);
+      case GESTURE_EDGE_SWIPE_LEFT_ALONG_TOP -> context.getString(R.string.title_pref_shortcut_edge_along_top_left);
+      case GESTURE_EDGE_SWIPE_RIGHT_ALONG_TOP -> context.getString(R.string.title_pref_shortcut_edge_along_top_right);
+      case GESTURE_EDGE_SWIPE_LEFT_ALONG_BOTTOM -> context.getString(R.string.title_pref_shortcut_edge_along_bottom_left);
+      case GESTURE_EDGE_SWIPE_RIGHT_ALONG_BOTTOM -> context.getString(R.string.title_pref_shortcut_edge_along_bottom_right);
       case GESTURE_SWIPE_UP_AND_HOLD ->
           context.getString(R.string.title_pref_shortcut_up_and_hold);
       case GESTURE_SWIPE_DOWN_AND_HOLD ->

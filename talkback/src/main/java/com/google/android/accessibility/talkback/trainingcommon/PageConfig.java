@@ -1235,6 +1235,22 @@ public abstract class PageConfig {
       this.captureGestureIdToAnnouncements.put(
           GestureManifold.GESTURE_EDGE_LONG_SWIPE_LEFT_FROM_RIGHT_BOTTOM, ANNOUNCE_REAL_ACTION);
       this.captureGestureIdToAnnouncements.put(
+          GestureManifold.GESTURE_EDGE_SWIPE_UP_ALONG_LEFT, ANNOUNCE_REAL_ACTION);
+      this.captureGestureIdToAnnouncements.put(
+          GestureManifold.GESTURE_EDGE_SWIPE_DOWN_ALONG_LEFT, ANNOUNCE_REAL_ACTION);
+      this.captureGestureIdToAnnouncements.put(
+          GestureManifold.GESTURE_EDGE_SWIPE_UP_ALONG_RIGHT, ANNOUNCE_REAL_ACTION);
+      this.captureGestureIdToAnnouncements.put(
+          GestureManifold.GESTURE_EDGE_SWIPE_DOWN_ALONG_RIGHT, ANNOUNCE_REAL_ACTION);
+      this.captureGestureIdToAnnouncements.put(
+          GestureManifold.GESTURE_EDGE_SWIPE_LEFT_ALONG_TOP, ANNOUNCE_REAL_ACTION);
+      this.captureGestureIdToAnnouncements.put(
+          GestureManifold.GESTURE_EDGE_SWIPE_RIGHT_ALONG_TOP, ANNOUNCE_REAL_ACTION);
+      this.captureGestureIdToAnnouncements.put(
+          GestureManifold.GESTURE_EDGE_SWIPE_LEFT_ALONG_BOTTOM, ANNOUNCE_REAL_ACTION);
+      this.captureGestureIdToAnnouncements.put(
+          GestureManifold.GESTURE_EDGE_SWIPE_RIGHT_ALONG_BOTTOM, ANNOUNCE_REAL_ACTION);
+      this.captureGestureIdToAnnouncements.put(
           GestureManifold.GESTURE_2_FINGER_ROTATE_CLOCKWISE, ANNOUNCE_REAL_ACTION);
       this.captureGestureIdToAnnouncements.put(
           GestureManifold.GESTURE_2_FINGER_ROTATE_COUNTERCLOCKWISE, ANNOUNCE_REAL_ACTION);

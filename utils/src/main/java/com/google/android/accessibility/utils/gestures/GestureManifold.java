@@ -101,6 +101,16 @@ public class GestureManifold implements GestureMatcher.StateChangeListener {
   public static final int GESTURE_SWIPE_LEFT_AND_DOWN_AND_HOLD = -53;
   public static final int GESTURE_SWIPE_RIGHT_AND_UP_AND_HOLD = -54;
   public static final int GESTURE_SWIPE_RIGHT_AND_DOWN_AND_HOLD = -55;
+  // One finger sliding along an edge of the screen. Reported by TalkBack's TouchInteractionMonitor
+  // rather than by a gesture matcher.
+  public static final int GESTURE_EDGE_SWIPE_UP_ALONG_LEFT = -56;
+  public static final int GESTURE_EDGE_SWIPE_DOWN_ALONG_LEFT = -57;
+  public static final int GESTURE_EDGE_SWIPE_UP_ALONG_RIGHT = -58;
+  public static final int GESTURE_EDGE_SWIPE_DOWN_ALONG_RIGHT = -59;
+  public static final int GESTURE_EDGE_SWIPE_LEFT_ALONG_TOP = -60;
+  public static final int GESTURE_EDGE_SWIPE_RIGHT_ALONG_TOP = -61;
+  public static final int GESTURE_EDGE_SWIPE_LEFT_ALONG_BOTTOM = -62;
+  public static final int GESTURE_EDGE_SWIPE_RIGHT_ALONG_BOTTOM = -63;
 
   // Match the value of GESTURE_ID_2FINGER_1TAP_HOLD in TalkBack.
   public static final int GESTURE_2_FINGER_SINGLE_TAP_AND_HOLD = 63;

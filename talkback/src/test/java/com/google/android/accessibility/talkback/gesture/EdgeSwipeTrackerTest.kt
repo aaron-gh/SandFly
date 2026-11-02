@@ -30,7 +30,7 @@ import org.robolectric.annotation.Config
 class EdgeSwipeTrackerTest {
   private val events = mutableListOf<String>()
   private val ended = mutableListOf<Pair<Edge, Int>>()
-  private var edgesInUse = Edge.entries.toSet()
+  private var edgesInUse = Edge.entries.filter { !it.along }.toSet()
   private var stagesInUse = listOf(1, 2)
   private val tracker =
     EdgeSwipeTracker(
@@ -130,6 +130,63 @@ class EdgeSwipeTrackerTest {
     edgesInUse = setOf(Edge.LEFT_BOTTOM)
     slideSideways(5f, 995f, 50f, 150f)
     assertEquals(listOf(Edge.LEFT_BOTTOM to 1), ended)
+  }
+
+  /** Slides from ([x], [y]) through each point in [points], as x and y pairs, and lifts. */
+  private fun slideThrough(x: Float, y: Float, vararg points: Float) {
+    touch(MotionEvent.ACTION_DOWN, y, x)
+    for (i in points.indices step 2) {
+      touch(MotionEvent.ACTION_MOVE, points[i + 1], points[i])
+    }
+    touch(MotionEvent.ACTION_UP, points[points.size - 1], points[points.size - 2])
+  }
+
+  @Test
+  fun slidesAlongEachEdge() {
+    edgesInUse = Edge.entries.filter { it.along }.toSet()
+    slideThrough(5f, 500f, 8f, 450f, 10f, 380f)
+    slideThrough(5f, 500f, 8f, 550f, 10f, 620f)
+    slideThrough(295f, 500f, 292f, 450f, 290f, 380f)
+    slideThrough(295f, 500f, 292f, 550f, 290f, 620f)
+    slideThrough(150f, 5f, 100f, 8f, 30f, 10f)
+    slideThrough(150f, 5f, 200f, 8f, 270f, 10f)
+    slideThrough(150f, 995f, 100f, 992f, 30f, 990f)
+    slideThrough(150f, 995f, 200f, 992f, 270f, 990f)
+    assertEquals(
+      listOf(
+        Edge.ALONG_LEFT_UP to 1,
+        Edge.ALONG_LEFT_DOWN to 1,
+        Edge.ALONG_RIGHT_UP to 1,
+        Edge.ALONG_RIGHT_DOWN to 1,
+        Edge.ALONG_TOP_LEFT to 1,
+        Edge.ALONG_TOP_RIGHT to 1,
+        Edge.ALONG_BOTTOM_LEFT to 1,
+        Edge.ALONG_BOTTOM_RIGHT to 1,
+      ),
+      ended,
+    )
+  }
+
+  @Test
+  fun slideAlongAnEdgeHasOneStage() {
+    edgesInUse = setOf(Edge.ALONG_LEFT_UP)
+    slideThrough(5f, 900f, 8f, 850f, 10f, 750f, 12f, 300f)
+    assertEquals(listOf("start", "0>1", "end 1"), events)
+  }
+
+  @Test
+  fun slideAlongAnEdgeThatLeavesTheEdgeIsNotAnEdgeSwipe() {
+    edgesInUse = setOf(Edge.ALONG_LEFT_UP)
+    slideThrough(5f, 500f, 60f, 450f, 120f, 380f)
+    assertEquals(listOf<Pair<Edge, Int>>(), ended)
+  }
+
+  @Test
+  fun cornerSlideTakesTheEdgeItsDirectionFits() {
+    edgesInUse = setOf(Edge.BOTTOM, Edge.ALONG_LEFT_UP, Edge.ALONG_BOTTOM_RIGHT)
+    slideThrough(5f, 995f, 8f, 950f, 10f, 880f)
+    slideThrough(5f, 995f, 50f, 993f, 150f, 990f)
+    assertEquals(listOf(Edge.BOTTOM to 1, Edge.ALONG_BOTTOM_RIGHT to 1), ended)
   }
 
   @Test
