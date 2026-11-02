@@ -555,6 +555,9 @@ public class GestureController {
       selectorController.changeVoiceProfile(eventId, /* isNext= */ false);
     } else if (action.equals(service.getString(R.string.shortcut_value_next_voice_profile))) {
       selectorController.changeVoiceProfile(eventId, /* isNext= */ true);
+    } else if (action.equals(service.getString(R.string.shortcut_value_turn_off_sandfly))) {
+      service.showDisableTalkBackDialog();
+      result = true;
     } else if (action.equals(service.getString(R.string.shortcut_value_gesture_profiles))) {
       result = menuManager.showMenu(GESTURE_PROFILE, eventId, R.string.no_gesture_profiles);
     } else if (action.equals(service.getString(R.string.shortcut_value_previous_gesture_profile))) {

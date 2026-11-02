@@ -104,6 +104,7 @@ public class ContextMenuItemClickProcessor {
         || (itemId == R.id.enable_dimming)
         || (itemId == R.id.disable_dimming)
         || (itemId == R.id.pause_backtalk)
+        || (itemId == R.id.turn_off_sandfly)
         || (itemId == R.id.enable_telling_time)
         || (itemId == R.id.disable_telling_time)
         || (itemId == R.id.screen_search)
@@ -174,6 +175,8 @@ public class ContextMenuItemClickProcessor {
       if (service.getPauseController() != null) {
         service.getPauseController().requestPause();
       }
+    } else if (itemId == R.id.turn_off_sandfly) {
+      service.showDisableTalkBackDialog();
     } else if (itemId == R.id.screen_search) {
       pipeline.returnFeedback(eventId, Feedback.universalSearch(TOGGLE_SEARCH));
     } else if (itemId == R.id.voice_commands) {

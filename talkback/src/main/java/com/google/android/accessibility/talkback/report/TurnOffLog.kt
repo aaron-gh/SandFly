@@ -42,11 +42,12 @@ object TurnOffLog {
 
   /**
    * Records the turn-off now: whether the service is still among Android's enabled accessibility
-   * services, [activeApp], the app in front, and the end of the log. The log is read on a thread of
+   * services, [activeApp], the app in front, whether touch handling was given back to Android
+   * ([touchHandlingReleased]), and the end of the log. The log is read on a thread of
    * its own.
    */
   @JvmStatic
-  fun record(context: Context, activeApp: CharSequence?) {
+  fun record(context: Context, activeApp: CharSequence?, touchHandlingReleased: Boolean) {
     val app = context.applicationContext
     val time = SimpleDateFormat("MM-dd HH:mm:ss.SSS", Locale.ROOT).format(Date())
     val enabled =
@@ -59,6 +60,7 @@ object TurnOffLog {
       "$time pid ${Process.myPid()}\n" +
         "Still an enabled accessibility service: ${if (stillOn) "yes" else "no"}\n" +
         "App in front: ${activeApp ?: "unknown"}\n" +
+        "Touch handling given back to Android: ${if (touchHandlingReleased) "yes" else "no, already disconnected"}\n" +
         "Enabled accessibility services: $enabled\n\n"
     val pid = Process.myPid()
     Thread(
