@@ -407,6 +407,21 @@ public class WindowEventInterpreter implements WindowsDelegate, DisplayStateChan
     return titleFromWindowInfo;
   }
 
+  /**
+   * Returns the keyboard window's title without the title of a pane in it, such as Gboard's
+   * "Available alternatives" popup, so that the popup isn't announced as another keyboard.
+   */
+  private @Nullable CharSequence getKeyboardWindowTitle(int windowId) {
+    @Nullable Window window = windowIdToData.get(windowId);
+    if (window == null || !window.hasAccessibilityPane()) {
+      return getWindowTitleInternal(windowId);
+    }
+    CharSequence titleFromWindowInfo = getWindowTitleFromWindowInfo(windowId);
+    return TextUtils.isEmpty(titleFromWindowInfo)
+        ? window.getTitleFromWindowChange()
+        : titleFromWindowInfo;
+  }
+
   private @Nullable CharSequence getWindowTitleFromWindowInfo(int windowId) {
     if (!FeatureSupport.supportGetTitleFromWindows()) {
       return null;
@@ -948,8 +963,12 @@ public class WindowEventInterpreter implements WindowsDelegate, DisplayStateChan
   }
 
   private void setNewWindowInterpretation(int windowId, WindowInterpretation interpretation) {
+    setNewWindowInterpretation(windowId, interpretation, getWindowTitleInternal(windowId));
+  }
+
+  private void setNewWindowInterpretation(
+      int windowId, WindowInterpretation interpretation, @Nullable CharSequence title) {
     interpretation.setId(windowId);
-    @Nullable CharSequence title = getWindowTitleInternal(windowId);
     interpretation.setTitle(title);
 
     @Nullable Window window = windowIdToData.get(windowId);
@@ -1364,7 +1383,7 @@ public class WindowEventInterpreter implements WindowsDelegate, DisplayStateChan
     windowRoles.windowTitleB = getWindowTitleInternal(windowRoles.windowIdB);
     windowRoles.otherActiveWindowTitle = getWindowTitleInternal(windowRoles.otherActiveWindowId);
     windowRoles.picInPicWindowTitle = getWindowTitleInternal(windowRoles.picInPicWindowId);
-    windowRoles.inputMethodWindowTitle = getWindowTitleInternal(windowRoles.inputMethodWindowId);
+    windowRoles.inputMethodWindowTitle = getKeyboardWindowTitle(windowRoles.inputMethodWindowId);
   }
 
   /** Detect window role changes, and turn on flags in interpretation. */
@@ -1396,7 +1415,10 @@ public class WindowEventInterpreter implements WindowsDelegate, DisplayStateChan
   // stable.
   private void detectInputMethodChanged(
       WindowRoles roles, EventInterpretation interpretation, boolean checkDuplicate, int depth) {
-    setNewWindowInterpretation(roles.inputMethodWindowId, interpretation.getInputMethod());
+    setNewWindowInterpretation(
+        roles.inputMethodWindowId,
+        interpretation.getInputMethod(),
+        getKeyboardWindowTitle(roles.inputMethodWindowId));
     boolean inputMethodChanged = interpretation.getInputMethod().idOrTitleChanged();
     interpretation.setInputMethodChanged(inputMethodChanged);
     interpretation.setShouldAnnounceInputMethodChange(inputMethodChanged);
