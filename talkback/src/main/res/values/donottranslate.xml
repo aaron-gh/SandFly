@@ -1139,8 +1139,11 @@
       <item>15</item>
       <item>20</item>
     </string-array>
-    <!-- Whether one finger sliding up or down the left or right edge scrolls the app. -->
-    <string name="pref_edge_scroll_key" translatable="false">pref_edge_scroll</string>
+    <!-- Whether one finger sliding along each edge scrolls the app. -->
+    <string name="pref_edge_scroll_left_key" translatable="false">pref_edge_scroll_left</string>
+    <string name="pref_edge_scroll_right_key" translatable="false">pref_edge_scroll_right</string>
+    <string name="pref_edge_scroll_top_key" translatable="false">pref_edge_scroll_top</string>
+    <string name="pref_edge_scroll_bottom_key" translatable="false">pref_edge_scroll_bottom</string>
     <bool name="pref_edge_scroll_default">false</bool>
     <!-- How far an edge gesture slides on from its first click to its second, in millimeters. -->
     <string name="pref_edge_second_click_mm_key" translatable="false">pref_edge_second_click_mm</string>

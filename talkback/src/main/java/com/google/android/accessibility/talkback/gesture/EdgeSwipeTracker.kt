@@ -43,9 +43,9 @@ import kotlin.math.hypot
  * [STILL_MILLIS]. Touch exploration waits while a slide may still start ([isPossible]), and
  * [rejectIfStalled] ends that wait when no further motion event comes.
  *
- * When [sideEdgesScroll] is true, a slide up or down the left or right edge, away from the corners,
- * scrolls the app instead: once it has moved a slop along the edge, the listener passes the rest of
- * the touch to the app.
+ * A slide along an edge for which [edgeScrolls] is true scrolls the app instead: once it has moved a
+ * slop along the edge, the listener passes the rest of the touch to the app. Slides up and down the
+ * left and right edges scroll only away from the corners, which belong to the top and bottom edges.
  *
  * A finger that lands partly off the screen is reported at the screen's edge until enough of it is
  * on the screen, so a slide can stay at the edge, drifting sideways, for its first 100 ms or so.
@@ -58,8 +58,9 @@ class EdgeSwipeTracker(
   // The stages, 1 and 2, that a slide from an edge has, in order. None leaves the edge to other
   // gestures.
   private val edgeStages: (Edge) -> List<Int>,
-  // Whether slides up and down the left and right edges scroll the app instead of being gestures.
-  private val sideEdgesScroll: () -> Boolean,
+  // Whether a slide along an edge, such as ALONG_LEFT_UP, scrolls the app instead of being a
+  // gesture.
+  private val edgeScrolls: (Edge) -> Boolean,
   private val listener: Listener,
 ) {
 
@@ -251,11 +252,14 @@ class EdgeSwipeTracker(
           right -> listOf(Edge.ALONG_RIGHT_UP, Edge.ALONG_RIGHT_DOWN)
           else -> emptyList()
         }
-    // Slides up and down a side edge scroll only away from the corners, which belong to the top
-    // and bottom edges.
-    val scroll = !top && !bottom && sideEdgesScroll()
     for (candidate in edges) {
-      if (scroll && candidate.scrollsWhenSideEdgesScroll()) {
+      // Slides up and down a side edge scroll only away from the corners, which belong to the top
+      // and bottom edges.
+      if (
+        candidate.along &&
+          (!candidate.alongSideEdge() || (!top && !bottom)) &&
+          edgeScrolls(candidate)
+      ) {
         candidates.add(Candidate(candidate, listOf(1), scroll = true))
         continue
       }
@@ -443,7 +447,7 @@ class EdgeSwipeTracker(
   companion object {
     private const val INVALID_ID = -1
 
-    private fun Edge.scrollsWhenSideEdgesScroll(): Boolean =
+    private fun Edge.alongSideEdge(): Boolean =
       this == Edge.ALONG_LEFT_UP ||
         this == Edge.ALONG_LEFT_DOWN ||
         this == Edge.ALONG_RIGHT_UP ||

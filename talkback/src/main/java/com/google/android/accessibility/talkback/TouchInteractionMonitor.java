@@ -240,8 +240,11 @@ public class TouchInteractionMonitor
   // Recognizes one finger sliding in from the top or bottom edge. A recognized slide owns the
   // whole touch.
   private final EdgeSwipeTracker edgeSwipeTracker;
-  // Whether slides up and down the left and right edges scroll the app.
-  private boolean sideEdgesScroll;
+  // Whether slides along the left, right, top and bottom edges scroll the app.
+  private boolean leftEdgeScrolls;
+  private boolean rightEdgeScrolls;
+  private boolean topEdgeScrolls;
+  private boolean bottomEdgeScrolls;
   private final float pixelsPerCm;
   // Why the current two-finger touch last waited before going to the app, for the gesture log.
   @Nullable private String twoFingerWait;
@@ -483,10 +486,10 @@ public class TouchInteractionMonitor
             new float[2],
             touchSlop,
             this::edgeStages,
-            () -> sideEdgesScroll,
+            this::edgeScrolls,
             edgeSwipeListener);
     readEdgeClickDistances(prefs);
-    readSideEdgesScroll(prefs);
+    readEdgeScrolls(prefs);
     scrubTracker = new TwoFingerScrubTracker(pixelsPerCm * SCRUB_STROKE_CM, this::onScrub);
     pinchTracker =
         new PinchTracker(pixelsPerCm * PINCH_CHANGE_CM, this::isPinchCountInUse, this::onPinch);
@@ -607,14 +610,35 @@ public class TouchInteractionMonitor
         pixelsPerCm * Math.max(first, 1) / 10f, pixelsPerCm * Math.max(second, 1) / 10f);
   }
 
-  /** Reads whether slides up and down the left and right edges scroll the app. */
-  private void readSideEdgesScroll(SharedPreferences prefs) {
-    sideEdgesScroll =
-        SharedPreferencesUtils.getBooleanPref(
-            prefs,
-            context.getResources(),
-            R.string.pref_edge_scroll_key,
-            R.bool.pref_edge_scroll_default);
+  /** Reads which edges scroll the app when a finger slides along them. */
+  private void readEdgeScrolls(SharedPreferences prefs) {
+    leftEdgeScrolls = readEdgeScroll(prefs, R.string.pref_edge_scroll_left_key);
+    rightEdgeScrolls = readEdgeScroll(prefs, R.string.pref_edge_scroll_right_key);
+    topEdgeScrolls = readEdgeScroll(prefs, R.string.pref_edge_scroll_top_key);
+    bottomEdgeScrolls = readEdgeScroll(prefs, R.string.pref_edge_scroll_bottom_key);
+  }
+
+  private boolean readEdgeScroll(SharedPreferences prefs, int keyId) {
+    return SharedPreferencesUtils.getBooleanPref(
+        prefs, context.getResources(), keyId, R.bool.pref_edge_scroll_default);
+  }
+
+  private boolean isEdgeScrollKey(String key) {
+    return context.getString(R.string.pref_edge_scroll_left_key).equals(key)
+        || context.getString(R.string.pref_edge_scroll_right_key).equals(key)
+        || context.getString(R.string.pref_edge_scroll_top_key).equals(key)
+        || context.getString(R.string.pref_edge_scroll_bottom_key).equals(key);
+  }
+
+  /** Returns whether a slide along an edge, such as {@code ALONG_LEFT_UP}, scrolls the app. */
+  private boolean edgeScrolls(Edge slide) {
+    return switch (slide) {
+      case ALONG_LEFT_UP, ALONG_LEFT_DOWN -> leftEdgeScrolls;
+      case ALONG_RIGHT_UP, ALONG_RIGHT_DOWN -> rightEdgeScrolls;
+      case ALONG_TOP_LEFT, ALONG_TOP_RIGHT -> topEdgeScrolls;
+      case ALONG_BOTTOM_LEFT, ALONG_BOTTOM_RIGHT -> bottomEdgeScrolls;
+      default -> false;
+    };
   }
 
   private final OnSharedPreferenceChangeListener sharedPreferenceChangeListener =
@@ -622,8 +646,8 @@ public class TouchInteractionMonitor
         if (context.getString(R.string.pref_edge_first_click_mm_key).equals(key)
             || context.getString(R.string.pref_edge_second_click_mm_key).equals(key)) {
           readEdgeClickDistances(prefs);
-        } else if (context.getString(R.string.pref_edge_scroll_key).equals(key)) {
-          readSideEdgesScroll(prefs);
+        } else if (isEdgeScrollKey(key)) {
+          readEdgeScrolls(prefs);
         } else if (context.getString(R.string.pref_typing_focus_time_out_key).equals(key)) {
           typingFocusUserIntentTimeout =
               SharedPreferencesUtils.getIntFromStringPref(
