@@ -1585,7 +1585,8 @@ public class TouchInteractionMonitor
         @Override
         public void onEdgeSwipeStage(Edge edge, int stage, int previousStage) {
           @Nullable FeedbackController feedbackController = feedbackController();
-          if (feedbackController == null) {
+          // A slide along an edge has one stage and plays no edge sounds or vibrations.
+          if (feedbackController == null || edge.getAlong()) {
             return;
           }
           // Sliding back plays the sound of the place it is back at, with the slide back's

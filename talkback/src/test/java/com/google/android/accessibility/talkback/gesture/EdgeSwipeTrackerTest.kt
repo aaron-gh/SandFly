@@ -30,6 +30,7 @@ import org.robolectric.annotation.Config
 class EdgeSwipeTrackerTest {
   private val events = mutableListOf<String>()
   private val ended = mutableListOf<Pair<Edge, Int>>()
+  private val touched = mutableListOf<Edge>()
   private var edgesInUse = Edge.entries.filter { !it.along }.toSet()
   private var stagesInUse = listOf(1, 2)
   private val tracker =
@@ -44,7 +45,9 @@ class EdgeSwipeTrackerTest {
             events.add("start")
           }
 
-          override fun onEdgeTouched(edge: Edge) {}
+          override fun onEdgeTouched(edge: Edge) {
+            touched.add(edge)
+          }
 
           override fun onEdgeSwipeStage(edge: Edge, stage: Int, previousStage: Int) {
             events.add("$previousStage>$stage")
@@ -165,6 +168,16 @@ class EdgeSwipeTrackerTest {
       ),
       ended,
     )
+  }
+
+  @Test
+  fun touchIsReportedOnlyWhereASlideInMayStart() {
+    edgesInUse = setOf(Edge.ALONG_LEFT_UP)
+    slideThrough(5f, 500f, 8f, 450f, 10f, 380f)
+    edgesInUse = setOf(Edge.ALONG_LEFT_UP, Edge.LEFT_TOP)
+    slideThrough(5f, 300f, 8f, 250f, 10f, 180f)
+    assertEquals(listOf(Edge.LEFT_TOP), touched)
+    assertEquals(listOf(Edge.ALONG_LEFT_UP to 1, Edge.ALONG_LEFT_UP to 1), ended)
   }
 
   @Test
