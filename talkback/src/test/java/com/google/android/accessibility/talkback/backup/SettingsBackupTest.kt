@@ -83,6 +83,28 @@ class SettingsBackupTest {
   }
 
   @Test
+  fun theProLicenceStaysOnThePhone() {
+    val pro =
+      context
+        .createDeviceProtectedStorageContext()
+        .getSharedPreferences(SettingsBackup.PRO_PREFS, Context.MODE_PRIVATE)
+    pro.edit().putString("device_id", "first").putString("licence", "first-licence").commit()
+    val json = SettingsBackup.export(context)
+    assertFalse(json.contains("first"))
+
+    pro.edit().putString("device_id", "second").putString("licence", "second-licence").commit()
+    val other =
+      """
+      {"format": "sandfly-settings", "version": 1, "files": {"device": {"sandfly_ai": {
+        "device_id": {"type": "string", "value": "first"}
+      }}}}
+      """
+    assertTrue(SettingsBackup.import(context, other))
+    assertEquals("second", pro.getString("device_id", null))
+    assertEquals("second-licence", pro.getString("licence", null))
+  }
+
+  @Test
   fun valuesOfAnotherTypeKeepThePhonesOwn() {
     prefs.edit().clear().putString("a_number", "3").putBoolean("a_switch", true).commit()
     val json =

@@ -44,7 +44,7 @@ import org.json.JSONObject
  * Exports SandFly's settings to a file and imports them from one, so that a phone can be set up
  * like another. The file holds every preference file, in device-protected and in
  * credential-protected storage, except the updater's state, the state of the move from Backtalk
- * Aaron, and API keys.
+ * Aaron, the SandFly Pro licence and API keys.
  *
  * Custom labels, installed scripts and sound themes are files of their own, and are not in it.
  *
@@ -68,7 +68,13 @@ object SettingsBackup {
    */
   private fun isSecret(key: String): Boolean = key.contains("api_key")
 
-  private val SKIPPED_FILES = setOf(MigrationFiles.STATE_PREFS)
+  /**
+   * The SandFly Pro module's file: the installation's device ID and its licence. Another phone
+   * activates the code as a device of its own.
+   */
+  @VisibleForTesting const val PRO_PREFS = "sandfly_ai"
+
+  private val SKIPPED_FILES = setOf(MigrationFiles.STATE_PREFS, PRO_PREFS)
 
   /** Files of libraries, such as Google Play services and WebView, which hold their own state. */
   private val LIBRARY_PREFIXES = listOf("com.google.", "androidx.", "WebView", "Firebase")
@@ -399,7 +405,7 @@ object SettingsBackup {
       .sorted()
   }
 
-  /** Whether [name] is a file that isn't exported: the move's state, or a library's. */
+  /** Whether [name] is a file that isn't exported: the move's state, SandFly Pro's, or a library's. */
   private fun isOtherFile(name: String) =
     name in SKIPPED_FILES || LIBRARY_PREFIXES.any { name.startsWith(it) }
 
