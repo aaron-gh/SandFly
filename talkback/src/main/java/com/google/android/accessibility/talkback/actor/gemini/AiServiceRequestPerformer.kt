@@ -17,6 +17,8 @@
 package com.google.android.accessibility.talkback.actor.gemini
 
 import android.content.Context
+import android.os.Handler
+import android.os.Looper
 import com.android.volley.DefaultRetryPolicy
 import com.android.volley.Request
 import com.android.volley.RequestQueue
@@ -31,7 +33,17 @@ import org.json.JSONObject
 /** Sends Gemini requests to the [AiService] the user set up, as chat requests. */
 internal class AiServiceRequestPerformer(context: Context) {
   private val appContext = context.applicationContext
-  private val requestQueue: RequestQueue = GeminiRestRequestPerformer.sharedQueue(context)
+  private val requestQueue: RequestQueue by lazy { GeminiRestRequestPerformer.sharedQueue(appContext) }
+  private val mainHandler = Handler(Looper.getMainLooper())
+
+  /**
+   * Reports a failure found before sending, after [performRequest] returns, as Volley reports its
+   * failures. The caller starts the progress tone after the request is made, so a failure reported
+   * during the call would stop the tone before it starts.
+   */
+  private fun failLater(callback: GeminiRestResponseCallback, failure: GeminiFailure) {
+    mainHandler.post { callback.onFailure(failure) }
+  }
 
   fun performRequest(
     address: String,
@@ -41,14 +53,14 @@ internal class AiServiceRequestPerformer(context: Context) {
     callback: GeminiRestResponseCallback,
   ) {
     if (!AiService.isValidAddress(address)) {
-      callback.onFailure(GeminiFailure.other("The AI service address must start with https"))
+      failLater(callback, GeminiFailure.other("The AI service address must start with https"))
       return
     }
     val sandflyPro =
       AiProvider.active(SharedPreferencesUtils.getSharedPreferences(appContext)) == AiProvider.SANDFLY_PRO
     if (sandflyPro) {
       SandflyAi.features?.aiServiceUnavailable(appContext)?.let {
-        callback.onFailure(GeminiFailure.spoken(it))
+        failLater(callback, GeminiFailure.spoken(it))
         return
       }
     }
@@ -56,7 +68,7 @@ internal class AiServiceRequestPerformer(context: Context) {
       try {
         AiService.toChatRequest(geminiRequest, model)
       } catch (e: JSONException) {
-        callback.onFailure(GeminiFailure.other("Could not make the request: $e"))
+        failLater(callback, GeminiFailure.other("Could not make the request: $e"))
         return
       }
     val wantsJson = AiService.wantsJson(geminiRequest)
