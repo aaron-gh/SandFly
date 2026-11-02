@@ -43,6 +43,10 @@ import kotlin.math.hypot
  * [STILL_MILLIS]. Touch exploration waits while a slide may still start ([isPossible]), and
  * [rejectIfStalled] ends that wait when no further motion event comes.
  *
+ * When [sideEdgesScroll] is true, a slide up or down the left or right edge, away from the corners,
+ * scrolls the app instead: once it has moved a slop along the edge, the listener passes the rest of
+ * the touch to the app.
+ *
  * A finger that lands partly off the screen is reported at the screen's edge until enough of it is
  * on the screen, so a slide can stay at the edge, drifting sideways, for its first 100 ms or so.
  */
@@ -54,6 +58,8 @@ class EdgeSwipeTracker(
   // The stages, 1 and 2, that a slide from an edge has, in order. None leaves the edge to other
   // gestures.
   private val edgeStages: (Edge) -> List<Int>,
+  // Whether slides up and down the left and right edges scroll the app instead of being gestures.
+  private val sideEdgesScroll: () -> Boolean,
   private val listener: Listener,
 ) {
 
@@ -80,7 +86,7 @@ class EdgeSwipeTracker(
   }
 
   /** A slide the touch may still become, with its stages. */
-  private class Candidate(val edge: Edge, val stages: List<Int>)
+  private class Candidate(val edge: Edge, val stages: List<Int>, val scroll: Boolean = false)
 
   /** Receives the stages and the end of a slide. */
   interface Listener {
@@ -99,6 +105,12 @@ class EdgeSwipeTracker(
      */
     fun onEdgeSwipeStage(edge: Edge, stage: Int, previousStage: Int)
 
+    /**
+     * The finger is sliding up or down the left or right edge, which scrolls the app: pass the rest
+     * of the touch to the app.
+     */
+    fun onEdgeScroll(edge: Edge)
+
     /** The finger lifted at [stage], or at 0 when it was slid back to the edge. */
     fun onEdgeSwipeEnded(edge: Edge, stage: Int)
   }
@@ -113,6 +125,8 @@ class EdgeSwipeTracker(
     CANCELLED,
     // Not an edge slide.
     REJECTED,
+    // The slide scrolls the app; the rest of the touch is the app's.
+    SCROLLING,
   }
 
   private var state = State.IDLE
@@ -174,7 +188,12 @@ class EdgeSwipeTracker(
         }
       MotionEvent.ACTION_MOVE ->
         when (state) {
-          State.POSSIBLE -> onPossibleMove(event)
+          State.POSSIBLE -> {
+            onPossibleMove(event)
+            if (state == State.SCROLLING) {
+              return true
+            }
+          }
           State.ACTIVE -> onActiveMove(event)
           else -> {}
         }
@@ -232,7 +251,14 @@ class EdgeSwipeTracker(
           right -> listOf(Edge.ALONG_RIGHT_UP, Edge.ALONG_RIGHT_DOWN)
           else -> emptyList()
         }
+    // Slides up and down a side edge scroll only away from the corners, which belong to the top
+    // and bottom edges.
+    val scroll = !top && !bottom && sideEdgesScroll()
     for (candidate in edges) {
+      if (scroll && candidate.scrollsWhenSideEdgesScroll()) {
+        candidates.add(Candidate(candidate, listOf(1), scroll = true))
+        continue
+      }
       val lastStage = if (candidate.along) 1 else stageDistancesPx.size
       val candidateStages = edgeStages(candidate).filter { it in 1..lastStage }
       if (candidateStages.isNotEmpty()) {
@@ -353,7 +379,9 @@ class EdgeSwipeTracker(
         iterator.remove()
         continue
       }
-      if (started == null && forward >= stageDistancesPx[candidate.stages.first() - 1]) {
+      val firstStage =
+        if (candidate.scroll) slopPx else stageDistancesPx[candidate.stages.first() - 1]
+      if (started == null && forward >= firstStage) {
         started = candidate
       }
     }
@@ -363,6 +391,13 @@ class EdgeSwipeTracker(
     }
     rejectIfStalled(event.eventTime)
     if (state != State.POSSIBLE || started == null) {
+      return
+    }
+    if (started.scroll) {
+      edge = started.edge
+      debugLog("scrolling the app")
+      state = State.SCROLLING
+      listener.onEdgeScroll(edge)
       return
     }
     edge = started.edge
@@ -407,6 +442,12 @@ class EdgeSwipeTracker(
 
   companion object {
     private const val INVALID_ID = -1
+
+    private fun Edge.scrollsWhenSideEdgesScroll(): Boolean =
+      this == Edge.ALONG_LEFT_UP ||
+        this == Edge.ALONG_LEFT_DOWN ||
+        this == Edge.ALONG_RIGHT_UP ||
+        this == Edge.ALONG_RIGHT_DOWN
 
     /**
      * Time from the touch to the first stage, in milliseconds. A slower slide is left to touch

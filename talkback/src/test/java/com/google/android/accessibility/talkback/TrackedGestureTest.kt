@@ -21,6 +21,7 @@ import android.accessibilityservice.AccessibilityService
 import android.accessibilityservice.AccessibilityService.GESTURE_SWIPE_RIGHT
 import android.accessibilityservice.AccessibilityService.GESTURE_SWIPE_UP
 import android.accessibilityservice.TouchInteractionController
+import android.accessibilityservice.TouchInteractionController.STATE_DELEGATING
 import android.accessibilityservice.TouchInteractionController.STATE_DRAGGING
 import android.accessibilityservice.TouchInteractionController.STATE_TOUCH_INTERACTING
 import android.hardware.display.DisplayManager
@@ -392,6 +393,18 @@ class TrackedGestureTest {
   }
 
   @Test
+  fun swipeUpTheLeftEdgeScrollsTheAppWhenSideEdgesScroll() {
+    assign(R.string.shortcut_value_home, R.string.pref_shortcut_edge_along_left_up_key)
+    SharedPreferencesUtils.getSharedPreferences(service)
+      .edit()
+      .putBoolean(service.getString(R.string.pref_edge_scroll_key), true)
+      .commit()
+    slide(5f, 300f, 200f)
+    assertEquals(true, requestedDelegating())
+    assertEquals(listOf<Int>(), service.gestures)
+  }
+
+  @Test
   fun swipeUpFromTheBottomLeftCornerIsFromTheBottomEdge() {
     assign(R.string.shortcut_value_home, R.string.pref_shortcut_edge_along_left_up_key)
     slide(5f, 465f, 380f)
@@ -469,8 +482,13 @@ class TrackedGestureTest {
     assertEquals(false, service.gestures.contains(GESTURE_2_FINGER_SCRUB))
   }
 
+  /** Whether Backtalk asked the system to pass the touch to the app as it is. */
+  private fun requestedDelegating(): Boolean = requestedState(STATE_DELEGATING)
+
   /** Whether Backtalk asked the system to pass the touch to the app as a drag. */
-  private fun requestedDragging(): Boolean {
+  private fun requestedDragging(): Boolean = requestedState(STATE_DRAGGING)
+
+  private fun requestedState(state: Int): Boolean {
     val requests =
       TouchInteractionMonitor::class
         .java
@@ -479,7 +497,7 @@ class TrackedGestureTest {
         .get(monitor) as Collection<*>
     return requests.any { request ->
       request!!.javaClass.getDeclaredField("state").apply { isAccessible = true }.getInt(request) ==
-        STATE_DRAGGING
+        state
     }
   }
 

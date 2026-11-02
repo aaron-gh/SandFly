@@ -240,6 +240,8 @@ public class TouchInteractionMonitor
   // Recognizes one finger sliding in from the top or bottom edge. A recognized slide owns the
   // whole touch.
   private final EdgeSwipeTracker edgeSwipeTracker;
+  // Whether slides up and down the left and right edges scroll the app.
+  private boolean sideEdgesScroll;
   private final float pixelsPerCm;
   // Why the current two-finger touch last waited before going to the app, for the gesture log.
   @Nullable private String twoFingerWait;
@@ -481,8 +483,10 @@ public class TouchInteractionMonitor
             new float[2],
             touchSlop,
             this::edgeStages,
+            () -> sideEdgesScroll,
             edgeSwipeListener);
     readEdgeClickDistances(prefs);
+    readSideEdgesScroll(prefs);
     scrubTracker = new TwoFingerScrubTracker(pixelsPerCm * SCRUB_STROKE_CM, this::onScrub);
     pinchTracker =
         new PinchTracker(pixelsPerCm * PINCH_CHANGE_CM, this::isPinchCountInUse, this::onPinch);
@@ -603,11 +607,23 @@ public class TouchInteractionMonitor
         pixelsPerCm * Math.max(first, 1) / 10f, pixelsPerCm * Math.max(second, 1) / 10f);
   }
 
+  /** Reads whether slides up and down the left and right edges scroll the app. */
+  private void readSideEdgesScroll(SharedPreferences prefs) {
+    sideEdgesScroll =
+        SharedPreferencesUtils.getBooleanPref(
+            prefs,
+            context.getResources(),
+            R.string.pref_edge_scroll_key,
+            R.bool.pref_edge_scroll_default);
+  }
+
   private final OnSharedPreferenceChangeListener sharedPreferenceChangeListener =
       (prefs, key) -> {
         if (context.getString(R.string.pref_edge_first_click_mm_key).equals(key)
             || context.getString(R.string.pref_edge_second_click_mm_key).equals(key)) {
           readEdgeClickDistances(prefs);
+        } else if (context.getString(R.string.pref_edge_scroll_key).equals(key)) {
+          readSideEdgesScroll(prefs);
         } else if (context.getString(R.string.pref_typing_focus_time_out_key).equals(key)) {
           typingFocusUserIntentTimeout =
               SharedPreferencesUtils.getIntFromStringPref(
@@ -1604,6 +1620,17 @@ public class TouchInteractionMonitor
           } else {
             feedbackController.playAuditory(R.raw.edge_gesture_top, /* eventId= */ null);
           }
+        }
+
+        @Override
+        public void onEdgeScroll(Edge edge) {
+          if (GestureLog.getEnabled()) {
+            Log.d(DEBUG_GESTURE_TAG, "Edge scroll " + edge.name() + ": passing the touch to the app");
+          }
+          stopHoldingTouchExplorationForEdgeSwipe();
+          keepMonitorTouchExplore = false;
+          requestTouchExplorationDelayed.cancel();
+          requestDelegating("edgeScroll");
         }
 
         @Override
