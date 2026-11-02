@@ -327,6 +327,10 @@ public class SpellChecker {
         SuggestionsInfo suggestionsInfo = sentenceSuggestionsInfo.getSuggestionsInfoAt(i);
         int start = sentenceSuggestionsInfo.getOffsetAt(i);
         int end = start + sentenceSuggestionsInfo.getLengthAt(i);
+        // The spell checker can return offsets for text that has since changed.
+        if (start < 0 || end < start || end > spanned.length()) {
+          continue;
+        }
         @Nullable
         SpellingSuggestion spellingSuggestion =
             createSpellingSuggestion(
