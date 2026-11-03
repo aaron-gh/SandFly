@@ -137,6 +137,14 @@ class MultitouchHandler {
      * @param pointersHeldCount how many pointers are currently being held
      */
     boolean isHoldRecognized(int pointersHeldCount);
+
+    /**
+     * Returns the number of fingers of the quick calibration gesture, half on each hand, or 0 if
+     * quick calibration isn't recognized now.
+     */
+    default int quickCalibrationPointerCount() {
+      return 0;
+    }
   }
 
   /** Listens multi-touch events. */
@@ -259,6 +267,24 @@ class MultitouchHandler {
         }
       };
 
+  private final Runnable quickCalibrationRunnable =
+      new Runnable() {
+        @Override
+        public void run() {
+          BrailleImeLog.d(TAG, "quick calibration task is running.");
+          Optional<MultitouchResult> result = createQuickCalibration();
+          if (result.isPresent()) {
+            isProcessed = multitouchResultListener.detect(result);
+            BrailleImeLog.d(TAG, "quick calibration result: " + isProcessed);
+            if (isProcessed) {
+              // The dots are calibrated; holding on must not calibrate them again.
+              handler.removeCallbacks(holdRunnable);
+              handler.removeCallbacks(longHoldRunnable);
+            }
+          }
+        }
+      };
+
   private final Runnable holdAndSwipeRunnable =
       new Runnable() {
         @Override
@@ -329,6 +355,9 @@ class MultitouchHandler {
       activePointers.put(actionPointerId, pointerWithHistory);
       handler.postDelayed(holdRunnable, ViewConfiguration.getLongPressTimeout());
       handler.postDelayed(longHoldRunnable, longHoldDurationMinMillis);
+      if (isQuickCalibrationTiming()) {
+        handler.postDelayed(quickCalibrationRunnable, QuickCalibration.SETTLE_MS);
+      }
     } else if (action == MotionEvent.ACTION_CANCEL) {
       clearPointerCollections();
       handler.removeCallbacksAndMessages(null);
@@ -351,6 +380,54 @@ class MultitouchHandler {
     }
     // Must be true so that next touch event would come.
     return true;
+  }
+
+  /**
+   * Whether the fingers down now were put down one hand and then the other, as quick calibration,
+   * with none lifted.
+   */
+  private boolean isQuickCalibrationTiming() {
+    if (holdRecognizer == null || !inactivePointers.isEmpty()) {
+      return false;
+    }
+    int pointerCount = holdRecognizer.quickCalibrationPointerCount();
+    return pointerCount > 0
+        && activePointers.size() == pointerCount
+        && QuickCalibration.isOneHandThenOther(getActiveDownTimes(), pointerCount);
+  }
+
+  /**
+   * Creates the quick calibration result from the fingers that are down, with the first hand's
+   * fingers in {@link MultitouchResult#firstHandPoints}, if they still match and haven't moved.
+   */
+  private Optional<MultitouchResult> createQuickCalibration() {
+    if (!isQuickCalibrationTiming()) {
+      return Optional.empty();
+    }
+    ImmutableList<PointerWithHistory> pointers = ImmutableList.copyOf(activePointers.values());
+    for (PointerWithHistory pointer : pointers) {
+      if (pointer.distanceMoved() > tapMaxDistancePixels) {
+        return Optional.empty();
+      }
+    }
+    long[] downTimes = new long[pointers.size()];
+    for (int i = 0; i < pointers.size(); i++) {
+      downTimes[i] = pointers.get(i).momentMadeInitial;
+    }
+    ImmutableList.Builder<PointF> firstHandPoints = ImmutableList.builder();
+    for (int index : QuickCalibration.firstHand(downTimes)) {
+      firstHandPoints.add(pointers.get(index).pointCurrent);
+    }
+    return Optional.of(
+        MultitouchResult.createQuickCalibration(
+            pointers.stream().map(pointer -> pointer.pointCurrent).collect(toImmutableList()),
+            firstHandPoints.build()));
+  }
+
+  private long[] getActiveDownTimes() {
+    return activePointers.values().stream()
+        .mapToLong(pointer -> pointer.momentMadeInitial)
+        .toArray();
   }
 
   private Optional<Swipe> createSwipe(

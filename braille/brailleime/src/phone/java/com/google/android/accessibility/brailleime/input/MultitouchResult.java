@@ -61,6 +61,12 @@ class MultitouchResult {
   @Nullable List<PointF> heldPoints;
   @Nullable List<PointF> releasedPoints;
 
+  /**
+   * For a {@link MultitouchResult#TYPE_CALIBRATION_HOLD} from quick calibration, the fingers of the
+   * hand that was put down first, which are also in {@code heldPoints}; otherwise null.
+   */
+  @Nullable List<PointF> firstHandPoints;
+
   private MultitouchResult() {}
 
   static MultitouchResult createInvalidGesture() {
@@ -88,6 +94,13 @@ class MultitouchResult {
     MultitouchResult result = new MultitouchResult();
     result.type = TYPE_CALIBRATION_HOLD;
     result.heldPoints = new ArrayList<>(holdContributors);
+    return result;
+  }
+
+  static MultitouchResult createQuickCalibration(
+      ImmutableList<PointF> holdContributors, ImmutableList<PointF> firstHandContributors) {
+    MultitouchResult result = createCalibrationHold(holdContributors);
+    result.firstHandPoints = new ArrayList<>(firstHandContributors);
     return result;
   }
 
