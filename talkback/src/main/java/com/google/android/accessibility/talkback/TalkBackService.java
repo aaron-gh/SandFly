@@ -176,6 +176,7 @@ import com.google.android.accessibility.talkback.eventprocessor.ProcessorMagnifi
 import com.google.android.accessibility.talkback.eventprocessor.ProcessorPhoneticLetters;
 import com.google.android.accessibility.talkback.eventprocessor.ProcessorVolumeStream;
 import com.google.android.accessibility.talkback.eventprocessor.ProcessorVolumeStream.TouchInteractingIndicator;
+import com.google.android.accessibility.talkback.eventprocessor.VolumeKeyCommands;
 import com.google.android.accessibility.talkback.feedbackpolicy.ScreenFeedbackManager;
 import com.google.android.accessibility.talkback.feedbackpolicy.WindowNamesSetting;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
@@ -870,6 +871,9 @@ public class TalkBackService extends AccessibilityServiceCompat
   /** "Volume keys move the cursor" setting. */
   private boolean volumeKeysMoveCursor = false;
 
+  /** Volume keys > double, triple and long presses of each volume key. */
+  @Nullable private VolumeKeyCommands volumeKeyCommands;
+
   private final @NonNull SparseArray<TouchInteractionMonitor> displayIdToTouchInteractionMonitors =
       new SparseArray<>();
 
@@ -1541,9 +1545,17 @@ public class TalkBackService extends AccessibilityServiceCompat
         FeatureFlagReader.enableSpeechVolumeKeyboard(this)
             && keyComboManager.isSandFlyKeyPressed(keyEvent);
     if (NotificationReader.onKeyEvent(keyEvent)) {
+      if (volumeKeyCommands != null) {
+        volumeKeyCommands.cancel();
+      }
       return true;
     }
     if (adjustSliderWithVolumeKey(keyEvent, triggerModifierPressed)) {
+      return true;
+    }
+    if (volumeKeyCommands != null
+        && volumeKeyCommands.onKeyEvent(
+            keyEvent, () -> canUseVolumeKeyPresses(triggerModifierPressed))) {
       return true;
     }
     if (keyAction == KeyEvent.ACTION_DOWN) {
@@ -1639,6 +1651,22 @@ public class TalkBackService extends AccessibilityServiceCompat
     }
 
     return keepCtrlFromApps(keyEvent);
+  }
+
+  /**
+   * Returns whether double, triple and long presses of the volume keys run their commands now:
+   * where the keys would otherwise change the volume through Android, with the screen on and no
+   * call.
+   */
+  private boolean canUseVolumeKeyPresses(boolean triggerModifierPressed) {
+    return isServiceActive()
+        && !isTouchInteracting
+        && !triggerModifierPressed
+        && !isBrailleImeTouchInteracting()
+        && !pipeline.getActorState().getContinuousRead().isActive()
+        && ringerModeAndScreenMonitor != null
+        && ringerModeAndScreenMonitor.isInteractive()
+        && !isPhoneCallActive();
   }
 
   /**
@@ -2710,6 +2738,22 @@ public class TalkBackService extends AccessibilityServiceCompat
     addEventListener(processorVolumeStream);
     keyEventListeners.add(processorVolumeStream);
 
+    volumeKeyCommands =
+        new VolumeKeyCommands(
+            this,
+            action -> {
+              if (gestureController != null) {
+                gestureController.performAction(action, EVENT_ID_UNTRACKED);
+              }
+              return Unit.INSTANCE;
+            },
+            () -> {
+              if (FeatureSupport.hasAccessibilityAudioStream(this)) {
+                volumeMonitor.onVolumeKeyPressed();
+              }
+              return Unit.INSTANCE;
+            });
+
     gestureController =
         new GestureController(
             this,
@@ -3352,6 +3396,10 @@ public class TalkBackService extends AccessibilityServiceCompat
 
     setServiceState(ServiceStateListener.SERVICE_STATE_SHUTTING_DOWN);
 
+    if (volumeKeyCommands != null) {
+      volumeKeyCommands.cancel();
+    }
+
     if (displayMonitor != null) {
       displayMonitor.stopMonitoring();
     }
@@ -3891,6 +3939,9 @@ public class TalkBackService extends AccessibilityServiceCompat
     volumeKeysMoveCursor =
         getBooleanPref(
             R.string.pref_volume_keys_move_cursor_key, R.bool.pref_volume_keys_move_cursor_default);
+    if (volumeKeyCommands != null) {
+      volumeKeyCommands.reload(prefs);
+    }
 
     boolean useAudioFocus =
         getBooleanPref(R.string.pref_use_audio_focus_key, R.bool.pref_use_audio_focus_default);
