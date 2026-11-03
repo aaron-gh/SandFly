@@ -21,6 +21,9 @@ import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.os.Process
 import android.os.Vibrator
 import androidx.annotation.XmlRes
 import androidx.preference.ListPreference
@@ -39,6 +42,7 @@ import com.google.android.accessibility.talkback.flags.FeatureFlagReader
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping
 import com.google.android.accessibility.talkback.preference.TalkBackPreferenceFilter
 import com.google.android.accessibility.talkback.preference.base.BrailleFragment
+import com.google.android.accessibility.talkback.preference.base.GestureListPreference
 import com.google.android.accessibility.talkback.preference.base.TalkBackPreferenceFragment
 import com.google.android.accessibility.talkback.preference.base.TalkbackBaseFragment
 import com.google.android.accessibility.talkback.recognition.LiveRecognition
@@ -51,6 +55,11 @@ import com.google.android.accessibility.utils.SettingsUtils
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.accessibility.utils.monitor.InputDeviceMonitor
 import com.google.android.libraries.accessibility.utils.log.LogUtils
+import java.util.concurrent.ExecutionException
+import java.util.concurrent.FutureTask
+import java.util.concurrent.LinkedBlockingQueue
+import java.util.concurrent.ThreadPoolExecutor
+import java.util.concurrent.TimeUnit
 
 /**
  * The settings that search finds: every preference of the settings screens made from XML, reached
@@ -60,6 +69,21 @@ import com.google.android.libraries.accessibility.utils.log.LogUtils
 object SettingsIndex {
   private const val TAG = "SettingsIndex"
   private val FORMAT = Regex("%(\\d+\\$)?[sd]")
+
+  private val mainHandler by lazy { Handler(Looper.getMainLooper()) }
+
+  /** Runs one build at a time, on a thread that ends when idle. */
+  private val executor by lazy {
+    ThreadPoolExecutor(0, 1, 10, TimeUnit.SECONDS, LinkedBlockingQueue()) { task ->
+      Thread(
+        {
+          Process.setThreadPriority(Process.THREAD_PRIORITY_BACKGROUND)
+          task.run()
+        },
+        TAG,
+      )
+    }
+  }
 
   /**
    * A setting: its [title] and [summary], the titles of the screens and categories that lead to it,
@@ -92,8 +116,42 @@ object SettingsIndex {
   }
 
   /**
+   * Runs [build] on a background thread and calls [onBuilt] with its result on the main thread,
+   * unless the returned [Runnable] runs first, which stops the build.
+   */
+  @JvmStatic
+  fun buildInBackground(context: Context, onBuilt: (List<Entry>) -> Unit): Runnable {
+    // Read and written on the main thread only.
+    var stopped = false
+    val future =
+      executor.submit(
+        Runnable {
+          val entries =
+            try {
+              build(context)
+            } catch (e: InterruptedException) {
+              return@Runnable
+            } catch (e: Throwable) {
+              LogUtils.e(TAG, e, "Can't read the settings screens")
+              emptyList()
+            }
+          mainHandler.post {
+            if (!stopped) {
+              onBuilt(entries)
+            }
+          }
+        }
+      )
+    return Runnable {
+      stopped = true
+      future.cancel(true)
+    }
+  }
+
+  /**
    * Returns the settings of every screen, in the order of the screens from the main one. [context]
-   * is a settings screen's, with its theme.
+   * is a settings screen's, with its theme. Off the main thread, the screens' fragments are created
+   * on the main thread, and an interrupt stops the build with [InterruptedException].
    */
   // The PreferenceManager constructor and inflateFromResource are what settings screens read their
   // XML with; they are restricted only to their library group.
@@ -110,6 +168,9 @@ object SettingsIndex {
     val queue = ArrayDeque<Screen>()
     queue += Screen(root, R.xml.preferences, emptyList(), Bundle())
     while (queue.isNotEmpty()) {
+      if (Thread.interrupted()) {
+        throw InterruptedException()
+      }
       val screen = queue.removeFirst()
       val preferences =
         try {
@@ -158,9 +219,20 @@ object SettingsIndex {
     return entries
   }
 
-  /** The summary that says what a preference is, not its value. */
+  /**
+   * The summary that says what a preference is, or null where it shows a value, such as the command
+   * a gesture runs.
+   */
   private fun summaryOf(preference: Preference): String? =
-    if (preference is ListPreference) null else textOf(preference.summary)
+    if (
+      preference is ListPreference ||
+        preference is GestureListPreference ||
+        preference.summaryProvider != null
+    ) {
+      null
+    } else {
+      textOf(preference.summary)
+    }
 
   /** Returns [text], or null if it is empty or a format that the screen fills in. */
   private fun textOf(text: CharSequence?): String? =
@@ -196,9 +268,27 @@ object SettingsIndex {
 
   /**
    * Returns the XML that the settings screen [fragment] is made from, or null for screens built in
-   * code. Creating a fragment doesn't attach or start it.
+   * code. The fragment is created on the main thread, as a fragment's fields can need its looper.
    */
-  private fun xmlOf(fragment: String): Int? =
+  private fun xmlOf(fragment: String): Int? {
+    if (Looper.myLooper() == Looper.getMainLooper()) {
+      return createdXmlOf(fragment)
+    }
+    val task = FutureTask { createdXmlOf(fragment) }
+    mainHandler.post(task)
+    return try {
+      task.get()
+    } catch (e: InterruptedException) {
+      task.cancel(false)
+      throw e
+    } catch (e: ExecutionException) {
+      LogUtils.w(TAG, "Can't create the screen %s: %s", fragment, e.cause)
+      null
+    }
+  }
+
+  /** Creating a fragment doesn't attach or start it. */
+  private fun createdXmlOf(fragment: String): Int? =
     try {
       val type = Class.forName(fragment, false, SettingsIndex::class.java.classLoader)
       if (TalkbackBaseFragment::class.java.isAssignableFrom(type)) {

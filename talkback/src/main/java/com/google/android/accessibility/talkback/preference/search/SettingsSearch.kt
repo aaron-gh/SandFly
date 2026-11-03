@@ -26,6 +26,8 @@ import android.view.inputmethod.EditorInfo
 import android.widget.FrameLayout
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleEventObserver
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.PreferenceGroup
@@ -164,10 +166,29 @@ object SettingsSearch {
 
   /**
    * Asks for a text, and lists the [candidates] that have its words, or says there are no results
-   * and keeps asking. [candidates] is read once, at the first search.
+   * and keeps asking. [candidates] is read once, when the dialog opens.
    */
   @JvmStatic
-  fun search(fragment: Fragment, candidates: () -> List<Candidate>, onChoose: OnChoose) {
+  fun search(fragment: Fragment, candidates: () -> List<Candidate>, onChoose: OnChoose) =
+    searchLoaded(
+      fragment,
+      { deliver ->
+        deliver(candidates())
+        null
+      },
+      onChoose,
+    )
+
+  /**
+   * Like [search], with candidates that [load] starts finding when the dialog opens, and passes to
+   * its argument on the main thread. [load] returns what stops it when the dialog closes first, or
+   * null. A search made before the candidates arrive runs when they do.
+   */
+  private fun searchLoaded(
+    fragment: Fragment,
+    load: (deliver: (List<Candidate>) -> Unit) -> Runnable?,
+    onChoose: OnChoose,
+  ) {
     val activity = fragment.requireActivity()
     val title = activity.getString(android.R.string.search_go)
     val padding = (20 * activity.resources.displayMetrics.density).toInt()
@@ -190,17 +211,23 @@ object SettingsSearch {
         .setPositiveButton(android.R.string.ok, null)
         .setNegativeButton(android.R.string.cancel, null)
         .create()
-    val all by lazy(LazyThreadSafetyMode.NONE) { candidates() }
-    val run = {
+    var all: List<Candidate>? = null
+    var pending = false
+    val run = search@{
       val query = edit.text?.toString()?.trim().orEmpty()
       val words = words(query)
+      val loaded = all
+      if (loaded == null) {
+        pending = true
+        return@search
+      }
       if (words.isNotEmpty()) {
-        val found = find(all, words)
+        val found = find(loaded, words)
         if (found.isEmpty()) {
           edit.error = activity.getString(R.string.keyboard_shortcuts_no_results)
         } else {
           dialog.dismiss()
-          val labels = found.map { label(all[it], words) }.toTypedArray()
+          val labels = found.map { label(loaded[it], words) }.toTypedArray()
           MaterialAlertDialogBuilder(activity)
             .setTitle(query)
             .setItems(labels) { _, which -> onChoose.choose(found[which]) }
@@ -220,8 +247,30 @@ object SettingsSearch {
         false
       }
     }
+    var stop: Runnable? = null
+    val closeWithScreen = LifecycleEventObserver { _, event ->
+      if (event == Lifecycle.Event.ON_DESTROY) {
+        dialog.dismiss()
+      }
+    }
+    dialog.setOnDismissListener {
+      stop?.run()
+      stop = null
+      fragment.lifecycle.removeObserver(closeWithScreen)
+    }
+    fragment.lifecycle.addObserver(closeWithScreen)
     dialog.show()
     edit.requestFocus()
+    stop =
+      load { candidates ->
+        if (dialog.isShowing && fragment.isAdded) {
+          all = candidates
+          if (pending) {
+            pending = false
+            run()
+          }
+        }
+      }
   }
 
   /**
@@ -272,12 +321,15 @@ object SettingsSearch {
   /** Searches every settings screen and command from [fragment], the main settings screen. */
   @JvmStatic
   fun searchSettings(fragment: PreferenceFragmentCompat) {
+    val context = fragment.requireContext()
     var entries: List<SettingsIndex.Entry> = emptyList()
-    search(
+    searchLoaded(
       fragment,
-      {
-        entries = SettingsIndex.build(fragment.requireContext())
-        entries.map { Candidate(it.title, listOfNotNull(it.summary), path(it.path)) }
+      { deliver ->
+        SettingsIndex.buildInBackground(context) { built ->
+          entries = built
+          deliver(built.map { Candidate(it.title, listOfNotNull(it.summary), path(it.path)) })
+        }
       },
     ) { index ->
       if (fragment.isAdded) {

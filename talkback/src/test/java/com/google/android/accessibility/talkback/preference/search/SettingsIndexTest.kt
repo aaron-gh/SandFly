@@ -17,6 +17,7 @@
 package com.google.android.accessibility.talkback.preference.search
 
 import android.content.Context
+import android.os.Looper
 import android.view.ContextThemeWrapper
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.commands.CommandFragment
@@ -29,12 +30,14 @@ import com.google.android.accessibility.utils.SharedPreferencesUtils
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNotNull
+import org.junit.Assert.assertSame
 import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.RuntimeEnvironment
+import org.robolectric.Shadows.shadowOf
 import org.robolectric.annotation.Config
 
 @RunWith(RobolectricTestRunner::class)
@@ -79,11 +82,43 @@ class SettingsIndexTest {
   }
 
   @Test
-  fun gesturesAreFoundWithTheirCommands() {
+  fun gesturesAreFoundWithoutTheCommandsTheyRun() {
     val gestures =
       entries.filter { it.screen == TalkBackGestureShortcutPreferenceFragment::class.java.name }
     assertTrue(gestures.size > 20)
-    assertTrue(gestures.any { it.summary != null })
+    val gestureKeys = context.resources.getStringArray(R.array.pref_shortcut_keys).toSet()
+    val found = gestures.filter { it.key in gestureKeys }
+    assertTrue(found.size > 20)
+    assertTrue(found.all { it.summary == null })
+  }
+
+  @Test
+  fun buildInBackgroundDeliversTheEntriesOnTheMainThread() {
+    var built: List<SettingsIndex.Entry>? = null
+    var thread: Thread? = null
+    SettingsIndex.buildInBackground(context) {
+      built = it
+      thread = Thread.currentThread()
+    }
+    val deadline = System.currentTimeMillis() + 60_000
+    while (built == null && System.currentTimeMillis() < deadline) {
+      shadowOf(Looper.getMainLooper()).idle()
+      Thread.sleep(5)
+    }
+    assertEquals(entries.map { it.screen to it.key }, built!!.map { it.screen to it.key })
+    assertSame(Looper.getMainLooper().thread, thread)
+  }
+
+  @Test
+  fun stoppedBuildDeliversNothing() {
+    var delivered = false
+    val stop = SettingsIndex.buildInBackground(context) { delivered = true }
+    stop.run()
+    repeat(20) {
+      Thread.sleep(10)
+      shadowOf(Looper.getMainLooper()).idle()
+    }
+    assertFalse(delivered)
   }
 
   @Test
