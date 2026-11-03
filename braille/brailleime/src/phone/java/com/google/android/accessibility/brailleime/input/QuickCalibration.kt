@@ -18,8 +18,9 @@ package com.google.android.accessibility.brailleime.input
 
 /**
  * Decides whether a touch is the quick calibration gesture: the fingers of one hand held on the
- * screen, then the fingers of the other hand added, as dots 4-5-6 then 1-2-3. A full cell typed
- * with all fingers at once lands too close together in time to match.
+ * screen, then the fingers of the other hand added, as dots 4-5-6 then 1-2-3, and all of them held
+ * still. A full cell typed with all fingers at once lands too close together in time to match, and
+ * one typed a hand at a time is lifted before the fingers have been held long enough.
  */
 object QuickCalibration {
   /** The first hand's fingers stay down this long, with no finger added, before the second's. */
@@ -28,8 +29,13 @@ object QuickCalibration {
   /** The fingers of each hand land within this span of each other. */
   const val HAND_SPREAD_MAX_MS = 400L
 
-  /** All fingers stay down this long, without moving, before the dots are calibrated. */
-  const val SETTLE_MS = 250L
+  /**
+   * All fingers stay down this long, without moving, before the dots are calibrated. A typed cell
+   * is held for well under the 400 ms that Android takes by default to tell a touch and hold from a
+   * tap, so a cell typed one hand at a time is lifted before this; it is a third of the 2 seconds
+   * of hold calibration.
+   */
+  const val SETTLE_MS = 650L
 
   /**
    * Whether fingers that landed at [downTimes], all still down, were put down one hand and then

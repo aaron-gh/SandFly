@@ -842,7 +842,7 @@ In braille keyboard settings, **Say "Submitting text"** can be turned off to sen
 
 ### Update dot positions with one hand, then the other
 
-To update the dot positions without holding six fingers on the screen for 2 seconds, hold three fingers of one hand on the screen for at least 0.4 seconds, then put down the three fingers of the other hand and keep all six still for a quarter of a second. Either hand can go first, so dots 4, 5, and 6 and then 1, 2, and 3 works, as does the reverse. With eight-dot braille, use four fingers of each hand. Six fingers that land together still type a full cell. In braille keyboard settings, **Update dot positions with one hand, then the other** turns this off. It's on by default.
+To update the dot positions without holding six fingers on the screen for 2 seconds, hold three fingers of one hand on the screen for at least 0.4 seconds, then put down the three fingers of the other hand and keep all six still for 0.65 seconds. Either hand can go first, so dots 4, 5, and 6 and then 1, 2, and 3 works, as does the reverse. With eight-dot braille, use four fingers of each hand. Six fingers that land together, or that are lifted sooner, still type a full cell. With **Include all pressed dots** on, this is off. In braille keyboard settings, **Update dot positions with one hand, then the other** turns this off. It's on by default.
 
 ### Swap top and bottom dots
 

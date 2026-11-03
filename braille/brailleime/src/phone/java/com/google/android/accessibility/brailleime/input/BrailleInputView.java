@@ -269,7 +269,10 @@ public class BrailleInputView extends View
 
           @Override
           public int quickCalibrationPointerCount() {
-            return !inputPlane.inTwoStepCalibration() && callback.isQuickCalibrationEnabled()
+            // With all pressed dots included, a cell is often typed one hand and then the other.
+            return !inputPlane.inTwoStepCalibration()
+                    && !inputPlane.isAccumulationMode()
+                    && callback.isQuickCalibrationEnabled()
                 ? options.brailleType().getDotCount()
                 : 0;
           }

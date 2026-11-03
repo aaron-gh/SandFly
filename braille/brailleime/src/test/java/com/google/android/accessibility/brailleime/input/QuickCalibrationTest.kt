@@ -86,6 +86,13 @@ class QuickCalibrationTest {
   }
 
   @Test
+  fun settle_outlastsATypedCellAndPrecedesHoldCalibration() {
+    // A typed cell, even one typed a hand at a time, is lifted well within 0.6 seconds.
+    assertTrue(QuickCalibration.SETTLE_MS >= 600)
+    assertTrue(QuickCalibration.SETTLE_MS * 3 <= MultitouchHandler.HOLD_MIN_DURATION_MS)
+  }
+
+  @Test
   fun firstHand_isTheFingersThatLandedFirst() {
     assertEquals(
       setOf(1, 3, 5),
