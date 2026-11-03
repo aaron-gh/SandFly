@@ -903,6 +903,8 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
         R.string.shortcut_value_toggle_braille_display, R.string.shortcut_toggle_braille_display),
     SCREEN_OVERVIEW(R.string.shortcut_value_screen_overview, R.string.title_summarize_view),
     DESCRIBE_IMAGE(R.string.shortcut_value_describe_image, R.string.title_image_caption),
+    REPORT_AI_RESPONSE(
+        R.string.shortcut_value_report_ai_response, R.string.shortcut_report_ai_response),
     ANNOUNCE_CURRENT_TIME_AND_DATE(
         R.string.shortcut_value_announce_current_time_and_date,
         R.string.shortcut_announce_current_time_and_date),

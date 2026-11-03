@@ -28,6 +28,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.accessibility.talkback.actor.gemini.DataFieldUtils.GeminiResponse;
+import com.google.android.accessibility.talkback.report.AiResponseReport;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import com.google.common.collect.ImmutableList;
 import java.util.HashMap;
@@ -271,12 +272,14 @@ public class GeminiRestRequestPerformer {
 
   /**
    * Wraps the callback so that each failure is logged at error level, which is logged at every log
-   * output level.
+   * output level, and each answer is kept for Report AI response. Every request to an AI model goes
+   * through it: Gemini, an AI service and the on-device model.
    */
   static GeminiRestResponseCallback loggingFailures(GeminiRestResponseCallback callback) {
     return new GeminiRestResponseCallback() {
       @Override
       public void onResponse(GeminiResponse response) {
+        AiResponseReport.record(response.text());
         callback.onResponse(response);
       }
 

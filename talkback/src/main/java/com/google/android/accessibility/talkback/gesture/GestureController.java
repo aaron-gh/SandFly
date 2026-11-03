@@ -89,6 +89,7 @@ import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
+import com.google.android.accessibility.talkback.report.AiResponseReport;
 import com.google.android.accessibility.talkback.ActorState;
 import com.google.android.accessibility.talkback.Feedback;
 import com.google.android.accessibility.talkback.Feedback.GeminiRequest;
@@ -781,6 +782,12 @@ public class GestureController {
       result =
           pipeline.returnFeedback(
               eventId, Feedback.performBrailleDisplayAction(TOGGLE_BRAILLE_DISPLAY_ON_OR_OFF));
+    } else if (action.equals(service.getString(R.string.shortcut_value_report_ai_response))) {
+      result = AiResponseReport.open(service);
+      if (!result) {
+        pipeline.returnFeedback(
+            eventId, Feedback.speech(service.getString(R.string.report_no_ai_response)));
+      }
     } else if (action.equals(service.getString(R.string.shortcut_value_screen_overview))) {
       result =
           pipeline.returnFeedback(

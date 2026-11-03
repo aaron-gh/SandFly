@@ -4218,6 +4218,14 @@
   <string name="detected_result">Detected: <xliff:g example="Text, this is an image.">%1$s</xliff:g></string>
   <!-- The title of menu item to provide captions for an image. [CHAR_LIMIT=60] -->
   <string name="title_image_caption">Describe image</string>
+  <!-- Command that opens a problem report about the last text an AI model gave, such as an image description. [CHAR LIMIT=NONE] -->
+  <string name="shortcut_report_ai_response">Report AI response</string>
+  <!-- Title of that problem report. [CHAR LIMIT=NONE] -->
+  <string name="report_ai_response_title">AI response</string>
+  <!-- Description of that problem report, before the person's own words. %1$s is the AI response. [CHAR LIMIT=NONE] -->
+  <string name="report_ai_response_description">AI response:\n%1$s\n\n</string>
+  <!-- Spoken when Report AI response is used before any AI response. [CHAR LIMIT=NONE] -->
+  <string name="report_no_ai_response">No AI response to report</string>
   <!-- The prefix of a Gemini request for image captioning. [CHAR_LIMIT=60] -->
   <string name="image_caption_with_gemini_prefix">Describe this image. Do not use any markup in the response.</string>
   <!-- The prompt of Image Q&A that contains the dialog history. [CHAR_LIMIT=NONE]-->

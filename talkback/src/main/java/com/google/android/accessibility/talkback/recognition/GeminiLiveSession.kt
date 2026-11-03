@@ -16,6 +16,7 @@
 
 package com.google.android.accessibility.talkback.recognition
 
+import com.google.android.accessibility.talkback.report.AiResponseReport
 import android.os.Handler
 import android.os.Looper
 import android.os.SystemClock
@@ -173,7 +174,10 @@ internal class GeminiLiveSession(
     val age = SystemClock.elapsedRealtime() - lastRequest
     LogUtils.d(TAG, "Answer, %d characters, %d ms after its frame", result.length, age)
     // A slow answer must not describe an old frame as the current surroundings.
-    if (age <= MAX_RESULT_AGE_MS) onResult(result)
+    if (age <= MAX_RESULT_AGE_MS) {
+      AiResponseReport.record(result)
+      onResult(result)
+    }
   }
 
   /** The Live API closes the session with a reason that names a rejected key or the quota. */

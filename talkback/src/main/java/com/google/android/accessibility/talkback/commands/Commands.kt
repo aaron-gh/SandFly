@@ -817,6 +817,8 @@ object Commands {
           Key.SCREEN_OVERVIEW,
           available = captions && GeminiConfiguration.screenOverviewEnabled(context),
         )
+        // Every AI response can be reported, whichever feature gave it.
+        gesture(R.string.shortcut_value_report_ai_response, R.string.shortcut_report_ai_response)
         // SandFly Pro's screen recognition commands, named by the module.
         SandflyAi.features?.let {
           for ((value, label) in it.commands(context)) {
