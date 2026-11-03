@@ -42,6 +42,12 @@ To find the next item in a list, TalkBack also built the reading order of the wh
 
 In a test on a Realme phone, three in four swipes reused the reading order, and the longest pause during swiping went from about 450 ms to about 150 ms.
 
+### Swiping on web pages
+
+On a web page, the page finds the next item itself. On every swipe, TalkBack still built the reading order of the whole screen before it asked the page, and after focus moved, it read the items beside each item that contains the new focus. In apps with web pages inside other web pages, such as a restaurant menu in Uber Eats, focus and speech stopped during fast swiping. SandFly asks the page first, and builds the reading order only when the swipe leaves the page. It reads the items beside the focus only when it needs them to put focus back after a screen change.
+
+TalkBack also spoke an item on a web page only after it had handled every change that the page reported before it, and during fast swiping it dropped all but the last two items. SandFly speaks each item as soon as the page moves focus. Window changes and announcements that came before it are still spoken first.
+
 ### Time between one-finger taps
 
 TalkBack always waits 0.25 seconds for another tap before it decides that a tap gesture is finished. In SandFly, you can set this wait for one-finger taps in **Controls** > **Touch and activation** > **Reduce delay** > **Time between one-finger taps**, down to 0.1 seconds. A shorter time makes one-finger multi-tap gestures respond faster, but a slow double tap can then count as two single taps.
