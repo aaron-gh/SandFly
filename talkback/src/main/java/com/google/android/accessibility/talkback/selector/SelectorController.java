@@ -2327,7 +2327,12 @@ public class SelectorController implements UserInputEventListener {
             .findFirst();
     if (item.isPresent()) {
       analytics.onSelectorActionEvent(getCurrentSetting(context, prefs));
-      return item.get().onClickPerformed();
+      // Telegram-based apps run some actions, such as Message options, and still return false, so
+      // an offered action counts as supported whatever the app returns.
+      if (!item.get().onClickPerformed()) {
+        LogUtils.w(TAG, "The app returned false for action %s", currentActionId);
+      }
+      return true;
     } else {
       return false;
     }
