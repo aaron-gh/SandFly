@@ -3238,6 +3238,11 @@ public class TalkBackService extends AccessibilityServiceCompat
       if (GestureReporter.ENABLED) {
         info.flags |= AccessibilityServiceInfo.FLAG_SEND_MOTION_EVENTS;
       }
+      if (usesAccessibilityVolume()) {
+        info.flags |= AccessibilityServiceInfo.FLAG_ENABLE_ACCESSIBILITY_VOLUME;
+      } else {
+        info.flags &= ~AccessibilityServiceInfo.FLAG_ENABLE_ACCESSIBILITY_VOLUME;
+      }
       info.notificationTimeout = 0;
       if (BuildVersionUtils.isAtLeastQ()) {
         info.setInteractiveUiTimeoutMillis(DEFAULT_INTERACTIVE_UI_TIMEOUT_MILLIS);
@@ -4016,6 +4021,8 @@ public class TalkBackService extends AccessibilityServiceCompat
     feedbackController.setAuditoryEnabled(auditoryEnabled);
     // Before the theme's sounds are loaded below, so that they load with the new volume.
     feedbackController.setSpeechUsage(FailoverTextToSpeech.speechUsage(this));
+    requestServiceFlag(
+        AccessibilityServiceInfo.FLAG_ENABLE_ACCESSIBILITY_VOLUME, usesAccessibilityVolume());
     feedbackController.setLowLatencyAudio(
         prefs.getBoolean(
             FailoverTextToSpeech.PREF_LOW_LATENCY_AUDIO_KEY,
@@ -4355,6 +4362,15 @@ public class TalkBackService extends AccessibilityServiceCompat
         brailleIme.onTalkBackResumed();
       }
     }
+  }
+
+  /**
+   * Whether the accessibility volume is separate from the media volume. Android keeps it separate
+   * only while a service asks for it, and other apps, such as keyboards playing voice typing
+   * sounds, play at it, so it is asked for only while speech plays at it.
+   */
+  private boolean usesAccessibilityVolume() {
+    return FailoverTextToSpeech.shouldUseAccessibilityStream(this);
   }
 
   /**
