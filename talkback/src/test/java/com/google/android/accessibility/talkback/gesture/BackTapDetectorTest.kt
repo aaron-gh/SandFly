@@ -119,14 +119,14 @@ class BackTapDetectorTest {
   @Test
   fun weakTaps_countOnlyAtHighSensitivity() {
     still(500)
-    tap(at = 500, strength = 8f)
-    tap(at = 700, strength = 8f)
+    tap(at = 500, strength = 14f)
+    tap(at = 700, strength = 14f)
     still(1500)
     assertEquals(emptyList<Int>(), runs.map { it.first })
 
     detector.threshold = BackTapDetector.Sensitivity.HIGH.threshold
-    tap(at = 2000, strength = 8f)
-    tap(at = 2200, strength = 8f)
+    tap(at = 2000, strength = 14f)
+    tap(at = 2200, strength = 14f)
     still(3500)
     assertEquals(listOf(2), runs.map { it.first })
   }
@@ -188,7 +188,7 @@ class BackTapDetectorTest {
   }
 
   /** Adds a tap's jolt at [at] ms along [axis] (2 is through the screen). */
-  private fun tap(at: Long, strength: Float = 14f, axis: Int = 2) {
+  private fun tap(at: Long, strength: Float = 28f, axis: Int = 2) {
     // A short ringing pulse: about 10 ms, then dying away.
     for (i in 0 until 40) {
       val t = i / 400f
