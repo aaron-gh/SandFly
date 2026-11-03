@@ -431,7 +431,8 @@ public class EventManager implements EventConsumer {
   private boolean handleGeneralCommands(BrailleInputEvent event) {
     boolean success;
     switch (event.getCommand()) {
-      case BrailleInputEvent.CMD_LONG_PRESS_CURRENT ->
+      case BrailleInputEvent.CMD_LONG_PRESS_CURRENT,
+          BrailleInputEvent.CMD_LONG_PRESS_ROUTE_CURRENT ->
           success = behaviorScreenReader.performAction(ScreenReaderAction.LONG_CLICK_CURRENT);
       case BrailleInputEvent.CMD_LONG_PRESS_ROUTE -> {
         AccessibilityNodeInfoCompat node =

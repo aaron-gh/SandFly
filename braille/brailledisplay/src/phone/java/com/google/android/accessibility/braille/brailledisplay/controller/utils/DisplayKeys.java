@@ -72,7 +72,8 @@ public final class DisplayKeys {
           BrailleInputEvent.CMD_NAV_PAN_DOWN,
           BrailleInputEvent.CMD_ROUTE,
           BrailleInputEvent.CMD_LONG_PRESS_ROUTE,
-          BrailleInputEvent.CMD_ACTIVATE_CURRENT ->
+          BrailleInputEvent.CMD_ACTIVATE_CURRENT,
+          BrailleInputEvent.CMD_LONG_PRESS_ROUTE_CURRENT ->
           true;
       default -> false;
     };
@@ -86,6 +87,7 @@ public final class DisplayKeys {
           BrailleInputEvent.CMD_ROUTE,
           BrailleInputEvent.CMD_LONG_PRESS_ROUTE,
           BrailleInputEvent.CMD_ACTIVATE_CURRENT,
+          BrailleInputEvent.CMD_LONG_PRESS_ROUTE_CURRENT,
           BrailleInputEvent.CMD_BRAILLE_KEY,
           BrailleInputEvent.CMD_SELECTION_START,
           BrailleInputEvent.CMD_SELECTION_END,

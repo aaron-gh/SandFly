@@ -100,7 +100,7 @@ static CommandMap* brlttyKeyMap = NULL;
 static CommandMap* unifiedCommandMap = NULL;
 // Commands that are special-cased when mapping.
 static jint cmdActivateCurrent = -1;
-static jint cmdLongPressCurrent = -1;
+static jint cmdLongPressRouteCurrent = -1;
 static jint cmdRoute = -1;
 static jint cmdLongPressRoute = -1;
 static jlong nativeData;
@@ -753,7 +753,8 @@ initCommandTables(JNIEnv* env) {
   if ((*env)->ExceptionCheck(env)) {
     goto cleanup;
   }
-  cmdLongPressCurrent = getStaticIntField(env, cls, "CMD_LONG_PRESS_CURRENT");
+  cmdLongPressRouteCurrent =
+      getStaticIntField(env, cls, "CMD_LONG_PRESS_ROUTE_CURRENT");
   if ((*env)->ExceptionCheck(env)) {
     goto cleanup;
   }
@@ -864,7 +865,7 @@ mapBrlttyCommand(int brlttyCommand,
     if (brlttyArg >= brltty_getTextCells()) {
       // Treat a routing command outside of the display as a distinct command.
       *outArg = 0;
-      *outCommand = longPress ? cmdLongPressCurrent : cmdActivateCurrent;
+      *outCommand = longPress ? cmdLongPressRouteCurrent : cmdActivateCurrent;
     } else {
       *outArg = brlttyArg;
       *outCommand = longPress ? cmdLongPressRoute : cmdRoute;
