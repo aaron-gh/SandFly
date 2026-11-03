@@ -37,6 +37,7 @@ import com.google.android.accessibility.utils.StringBuilderUtils;
 import com.google.android.accessibility.utils.compat.CompatUtils;
 import com.google.android.accessibility.utils.traversal.TraversalStrategy;
 import com.google.android.accessibility.utils.traversal.TraversalStrategyUtils;
+import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import com.google.auto.value.AutoValue;
 import com.google.errorprone.annotations.FormatMethod;
 import com.google.errorprone.annotations.FormatString;
@@ -89,10 +90,20 @@ public final class NodePathDescription {
   }
 
   /**
-   * Describes the path from {@code node} up to the root, like {@link #obtain}, but without each
-   * node's position among its siblings and their text. Reading those asks the app for every sibling
-   * of every node in the path, which in a page nested in several web views takes long enough to
-   * hold up the next swipe. {@link #withSiblingContext} adds them when they are needed.
+   * The most children of the focused node's parent that {@link #obtainWithoutSiblingContext} reads
+   * to find the node's position. The siblings beside the focused node have usually been read with
+   * it, so reading them asks the app for nothing.
+   */
+  static final int MAX_END_SIBLINGS_READ = 50;
+
+  /**
+   * Describes the path from {@code node} up to the root, like {@link #obtain}, but without the
+   * ancestors' positions among their siblings and the siblings' text. Reading those asks the app
+   * for every sibling of every node in the path, which in a page nested in several web views takes
+   * long enough to hold up the next swipe. {@link #withSiblingContext} adds them when they are
+   * needed. The position of {@code node} itself is read now, from at most {@link
+   * #MAX_END_SIBLINGS_READ} children of its parent: when the path is needed, {@code node} is mostly
+   * gone from the page, and could no longer be found among the children.
    */
   static @NonNull NodePathDescription obtainWithoutSiblingContext(
       AccessibilityNodeInfoCompat node) {
@@ -100,30 +111,48 @@ public final class NodePathDescription {
     HashSet<AccessibilityNodeInfoCompat> visited = new HashSet<>();
     AccessibilityNodeInfoCompat current = node;
     while (current != null && visited.add(current)) {
-      nodePath.nodeDescriptions.add(
-          NodeDescription.withoutSiblingContext(current, nodePath.nodeDescriptions.isEmpty()));
+      boolean isPathEnd = nodePath.nodeDescriptions.isEmpty();
+      NodeDescription description = NodeDescription.withoutSiblingContext(current, isPathEnd);
       // On Android 13 and later, one request reads all the ancestors, and nothing else: an ordinary
       // request also reads siblings and descendants, and can be cut short by the next request.
-      current =
+      AccessibilityNodeInfoCompat parent =
           current.getParent(
               AccessibilityNodeInfoCompat.FLAG_PREFETCH_ANCESTORS
                   | AccessibilityNodeInfoCompat.FLAG_PREFETCH_UNINTERRUPTIBLE);
+      if (isPathEnd && parent != null) {
+        try {
+          description =
+              description.withSiblingContext(
+                  AccessibilityNode.takeOwnership(parent),
+                  /* isPathEnd= */ true,
+                  MAX_END_SIBLINGS_READ);
+        } catch (RuntimeException e) {
+          LogUtils.w(LOG_TAG, "Cannot read the siblings of the focused node: %s", e);
+        }
+      }
+      nodePath.nodeDescriptions.add(description);
+      current = parent;
     }
     return nodePath;
   }
 
   /**
-   * Returns this path with each node's position among its siblings, found among the children that
-   * its parent in the path had when the path was made.
+   * Returns this path, made by {@link #obtainWithoutSiblingContext}, with each ancestor's position
+   * among its siblings, found among the children that its parent in the path had when the path was
+   * made. The path end keeps the position read with the path.
    */
   @NonNull NodePathDescription withSiblingContext() {
     final NodePathDescription nodePath = new NodePathDescription();
     int size = nodeDescriptions.size();
     for (int i = 0; i < size; i++) {
+      if (i == 0) {
+        nodePath.nodeDescriptions.add(nodeDescriptions.get(0));
+        continue;
+      }
       @Nullable AccessibilityNode parent =
           (i + 1 < size) ? nodeDescriptions.get(i + 1).savedNode : null;
       nodePath.nodeDescriptions.add(
-          nodeDescriptions.get(i).withSiblingContext(parent, /* isPathEnd= */ i == 0));
+          nodeDescriptions.get(i).withSiblingContext(parent, /* isPathEnd= */ false));
     }
     return nodePath;
   }

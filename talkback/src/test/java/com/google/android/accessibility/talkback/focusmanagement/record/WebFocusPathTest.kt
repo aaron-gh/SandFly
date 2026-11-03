@@ -31,7 +31,10 @@ import org.robolectric.RuntimeEnvironment
 import org.robolectric.annotation.Config
 import org.robolectric.util.ReflectionHelpers
 
-/** The focus path of an item of web content is read without its siblings until it is needed. */
+/**
+ * The focus path of an item of web content is read with the item's siblings, but without the
+ * siblings of its ancestors until they are needed.
+ */
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [35])
 class WebFocusPathTest {
@@ -117,7 +120,7 @@ class WebFocusPathTest {
     FocusActionRecord(node, FocusActionInfo.builder().build(), /* actionTime= */ 1000)
 
   @Test
-  fun recordingWebFocusReadsNoSiblings() {
+  fun recordingWebFocusReadsOnlyTheSiblingsOfTheFocusedItem() {
     val tree = Tree()
 
     val record = record(tree.leaf)
@@ -127,11 +130,56 @@ class WebFocusPathTest {
     assertTrue(record.ancestorIdentityPath.containsNodeByHashAndIdentity(tree.group))
     assertTrue(record.ancestorIdentityPath.containsNodeByHashAndIdentity(tree.root))
 
-    assertEquals(0, tree.childReads)
-    assertEquals(
-      listOf("leaf", "group", "root"),
-      descriptions(record.ancestorIdentityPath).map { it.text.toString() },
-    )
+    assertEquals(0, tree.root.childReads)
+    val path = descriptions(record.ancestorIdentityPath)
+    assertEquals(listOf("leaf", "group", "root"), path.map { it.text.toString() })
+    assertEquals(1, path[0].rawIndexInParent)
+    assertEquals("first", path[0].previousSiblingText.toString())
+    assertEquals("last", path[0].nextSiblingText.toString())
+    assertEquals(NodeDescription.UNDEFINED_INDEX, path[1].rawIndexInParent)
+  }
+
+  @Test
+  fun theFocusedItemKeepsItsPositionAfterItLeavesThePage() {
+    val tree = Tree()
+    val record = record(tree.leaf)
+    // The page removes the item before the path is needed to find what replaced it.
+    tree.group.children.remove(tree.leaf)
+
+    val leaf = descriptions(record.nodePathDescription)[0]
+    assertEquals(1, leaf.rawIndexInParent)
+    assertEquals("first", leaf.previousSiblingText.toString())
+    assertEquals("last", leaf.nextSiblingText.toString())
+  }
+
+  @Test
+  fun theFocusedItemsPositionIsSoughtAmongALimitedNumberOfSiblings() {
+    val root = Node("root", web = true)
+    val siblings =
+      List(NodePathDescription.MAX_END_SIBLINGS_READ + 10) { Node("item-$it", web = true) }
+    root.add(*siblings.toTypedArray())
+
+    val near = descriptions(record(siblings[2]).ancestorIdentityPath)[0]
+    assertEquals(2, near.rawIndexInParent)
+
+    root.childReads = 0
+    val far = descriptions(record(siblings.last()).ancestorIdentityPath)[0]
+    assertEquals(NodeDescription.UNDEFINED_INDEX, far.rawIndexInParent)
+    assertNull(far.previousSiblingText)
+    assertEquals(NodePathDescription.MAX_END_SIBLINGS_READ, root.childReads)
+  }
+
+  @Test
+  fun aFailedSiblingReadWhenFocusMovesLeavesThePositionUndefined() {
+    val tree = Tree()
+    tree.failChildReads()
+
+    val record = record(tree.leaf)
+
+    val leaf = descriptions(record.ancestorIdentityPath)[0]
+    assertEquals(NodeDescription.UNDEFINED_INDEX, leaf.rawIndexInParent)
+    assertNull(leaf.previousSiblingText)
+    assertEquals("leaf", leaf.text.toString())
   }
 
   @Test
@@ -157,7 +205,7 @@ class WebFocusPathTest {
     assertEquals(0, descriptions(path)[1].rawIndexInParent)
 
     val reads = tree.childReads
-    assertTrue(reads > 0)
+    assertTrue(tree.root.childReads > 0)
     assertSame(path, record.nodePathDescription)
     assertSame(path, copy.nodePathDescription)
     assertEquals(reads, tree.childReads)
@@ -172,16 +220,20 @@ class WebFocusPathTest {
   }
 
   @Test
-  fun theFocusedItemKeepsItsTextFromTheTimeOfFocus() {
+  fun theFocusedItemKeepsItsTextAndPositionFromTheTimeOfFocus() {
     val tree = Tree()
     val record = record(tree.leaf)
     // The page changes before the path is needed.
     tree.leaf.text = "changed"
     tree.group.children.add(0, Node("inserted"))
+    tree.root.children.add(0, Node("inserted"))
 
-    val leaf = descriptions(record.nodePathDescription)[0]
-    assertEquals("leaf", leaf.text.toString())
-    assertEquals(2, leaf.rawIndexInParent)
+    val path = descriptions(record.nodePathDescription)
+    assertEquals("leaf", path[0].text.toString())
+    assertEquals(1, path[0].rawIndexInParent)
+    assertEquals("first", path[0].previousSiblingText.toString())
+    // The ancestors' positions are read when the path is needed.
+    assertEquals(1, path[1].rawIndexInParent)
   }
 
   @Test
@@ -192,8 +244,9 @@ class WebFocusPathTest {
 
     val path = record.nodePathDescription
     assertSame(record.ancestorIdentityPath, path)
-    assertEquals(NodeDescription.UNDEFINED_INDEX, descriptions(path)[0].rawIndexInParent)
-    assertNull(descriptions(path)[0].previousSiblingText)
+    assertEquals(1, descriptions(path)[0].rawIndexInParent)
+    assertEquals(NodeDescription.UNDEFINED_INDEX, descriptions(path)[1].rawIndexInParent)
+    assertNull(descriptions(path)[1].previousSiblingText)
     val reads = tree.childReads
 
     assertSame(path, record.nodePathDescription)
@@ -206,7 +259,7 @@ class WebFocusPathTest {
     val record = record(tree.leaf)
     val later = FocusActionRecord(tree.leaf, FocusActionInfo.builder().build(), 2000)
     assertNotEquals(record, later)
-    assertEquals(0, tree.childReads)
+    assertEquals(0, tree.root.childReads)
   }
 
   @Test

@@ -23,6 +23,7 @@ import com.google.android.accessibility.utils.AccessibilityEventUtils;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.function.Predicate;
 
 /**
  * This class is a queue that tracks events that TalkBack will process. This queue self-prunes
@@ -96,15 +97,27 @@ class EventQueue {
   }
 
   /**
-   * Removes the events whose type is not in {@code keptTypes} from the queue, and returns them in
-   * queue order.
+   * Returns the last {@code max} or fewer events of type {@code eventType} in the queue, latest
+   * first, and leaves them queued.
    */
-  public List<AccessibilityEvent> removeAllExcept(int keptTypes) {
+  public List<AccessibilityEvent> latestOfType(int eventType, int max) {
+    List<AccessibilityEvent> latest = new ArrayList<>();
+    for (int i = eventQueue.size() - 1; i >= 0 && latest.size() < max; i--) {
+      AccessibilityEvent event = eventQueue.get(i);
+      if (event.getEventType() == eventType) {
+        latest.add(event);
+      }
+    }
+    return latest;
+  }
+
+  /** Removes the events that {@code filter} accepts from the queue, and returns them in order. */
+  public List<AccessibilityEvent> removeMatching(Predicate<AccessibilityEvent> filter) {
     List<AccessibilityEvent> removed = new ArrayList<>();
     final Iterator<AccessibilityEvent> iterator = eventQueue.iterator();
     while (iterator.hasNext()) {
       final AccessibilityEvent next = iterator.next();
-      if (AccessibilityEventUtils.eventMatchesAnyType(next, keptTypes)) {
+      if (!filter.test(next)) {
         continue;
       }
       iterator.remove();
