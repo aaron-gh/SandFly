@@ -93,4 +93,11 @@ public interface TalkBackForBrailleDisplay {
 
   /** Returns the collection state. */
   CollectionState getCollectionState();
+
+  /**
+   * Runs the screen reader command saved as {@code value}, as a gesture assigned to it would.
+   * Returns false when it can't run.
+   */
+  @CanIgnoreReturnValue
+  boolean performCommand(String value);
 }

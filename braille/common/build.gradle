@@ -13,4 +13,5 @@ dependencies {
     implementation project(':brailletranslate')
     implementation project(':proguard')
     implementation project(':utils')
+    testImplementation libs.junit
 }

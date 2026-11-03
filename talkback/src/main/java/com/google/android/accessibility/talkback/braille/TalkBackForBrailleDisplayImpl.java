@@ -218,4 +218,9 @@ public class TalkBackForBrailleDisplayImpl implements TalkBackForBrailleDisplay 
     }
     return nextKeyboard;
   }
+
+  @Override
+  public boolean performCommand(String value) {
+    return service.performCommand(value);
+  }
 }

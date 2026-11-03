@@ -57,6 +57,13 @@
     </activity>
 
     <activity
+        android:name="com.google.android.accessibility.braille.brailledisplay.settings.ScreenReaderCommandKeysActivity"
+        android:label="@string/bd_key_bindings_sandfly_commands"
+        android:configChanges="keyboard|keyboardHidden"
+        android:exported="false"
+        android:theme="@style/BrailleSettingsTheme" />
+
+    <activity
         android:name="com.google.android.accessibility.braille.brailledisplay.settings.BrailleElementsActivity"
         android:label="@string/bd_preference_key_braille_elements_title"
         android:configChanges="keyboard|keyboardHidden"

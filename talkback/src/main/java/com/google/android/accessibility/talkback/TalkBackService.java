@@ -4652,6 +4652,15 @@ public class TalkBackService extends AccessibilityServiceCompat
     }
   }
 
+  /** Runs the command saved as {@code value}, as a gesture assigned to it would. */
+  public boolean performCommand(String value) {
+    if (gestureController == null) {
+      return false;
+    }
+    gestureController.performAction(value, EVENT_ID_UNTRACKED);
+    return true;
+  }
+
   /** What scripts reach in SandFly beyond feedback. */
   private class ScriptServicesImpl implements ScriptServices {
     @Override

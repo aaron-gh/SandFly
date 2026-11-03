@@ -55,4 +55,14 @@
       app:icon="@drawable/gs_drag_indicator_vd_theme_24"
       app:layout="@layout/braille_common_category" />
 
+  <Preference
+      app:key="@string/pref_key_bd_keybindings_screen_reader_commands"
+      app:title="@string/bd_key_bindings_sandfly_commands"
+      app:icon="@drawable/gs_chat_bubble_vd_theme_24"
+      app:layout="@layout/braille_common_category" />
+
+  <Preference
+      app:key="@string/pref_key_bd_keybindings_reset_all"
+      app:title="@string/bd_key_bindings_reset_all" />
+
 </PreferenceScreen>

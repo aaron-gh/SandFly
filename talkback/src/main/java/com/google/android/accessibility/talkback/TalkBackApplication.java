@@ -18,6 +18,8 @@ package com.google.android.accessibility.talkback;
 
 import android.app.Application;
 import android.os.Build;
+import com.google.android.accessibility.braille.interfaces.ScreenReaderCommands;
+import com.google.android.accessibility.talkback.braille.BrailleDisplayCommands;
 import com.google.android.accessibility.talkback.report.CrashLog;
 import com.google.android.accessibility.talkback.migration.SettingsImporter;
 import com.google.android.accessibility.talkback.training.PageConfigMapperImpl;
@@ -52,5 +54,6 @@ public class TalkBackApplication extends Application {
         TrainingSectionLoggerImpl::new,
         TalkBackDisabledWarmingDialogImpl::new);
     TutorialContentInterfaceInjector.initialize(new TutorialContentSupplierImpl());
+    ScreenReaderCommands.Provider.set(BrailleDisplayCommands.INSTANCE);
   }
 }
