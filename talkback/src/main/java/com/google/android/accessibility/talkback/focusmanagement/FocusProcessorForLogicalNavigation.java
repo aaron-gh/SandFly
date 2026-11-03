@@ -405,8 +405,13 @@ public class FocusProcessorForLogicalNavigation {
 
     // The focus monitor can return Android's cached copy of a node that was just removed, so check
     // with the app that the pivot is still there. Skip that round trip when the saved reading order
-    // holds the pivot: nothing that could remove a node has happened since it was saved.
-    if (pivot != null && !TraversalTreeCache.holds(pivot) && !pivot.refresh()) {
+    // holds the pivot: nothing that could remove a node has happened since it was saved. The focus
+    // monitor has already checked an accessibility-focused node, so only the input focus it falls
+    // back to needs the check.
+    if (pivot != null
+        && !pivot.isAccessibilityFocused()
+        && !TraversalTreeCache.holds(pivot)
+        && !pivot.refresh()) {
       pivot = null;
     }
 
@@ -1408,6 +1413,21 @@ public class FocusProcessorForLogicalNavigation {
       boolean ignoreDescendantsOfPivot,
       NavigationAction navigationAction,
       EventId eventId) {
+    return navigateToDefaultOrMacroGranularityTarget(
+        pivot, ignoreDescendantsOfPivot, navigationAction, /* htmlActionFailed= */ false, eventId);
+  }
+
+  /**
+   * Same as {@link #navigateToDefaultOrMacroGranularityTarget(AccessibilityNodeInfoCompat, boolean,
+   * NavigationAction, EventId)}, except that {@code htmlActionFailed} says that the web page has
+   * already been asked to move from {@code pivot} for this navigation, and had nothing to move to.
+   */
+  private boolean navigateToDefaultOrMacroGranularityTarget(
+      @NonNull AccessibilityNodeInfoCompat pivot,
+      boolean ignoreDescendantsOfPivot,
+      NavigationAction navigationAction,
+      boolean htmlActionFailed,
+      EventId eventId) {
     int searchDirection = navigationAction.searchDirection;
     int logicalDirection =
         TraversalStrategyUtils.getLogicalDirection(
@@ -1422,6 +1442,24 @@ public class FocusProcessorForLogicalNavigation {
       if (handled != null) {
         return handled;
       }
+    }
+
+    // In web content, the page finds the next item itself, and the window's reading order, which
+    // leaves out the page's items, is only needed to leave the page. Building that order took up
+    // to a few hundred milliseconds on every swipe in a big app, so ask the page first.
+    if (!htmlActionFailed
+        && !ignoreDescendantsOfPivot
+        && navigationAction.actionType == NavigationAction.DIRECTIONAL_NAVIGATION
+        && TraversalStrategyUtils.isLogicalDirection(searchDirection)
+        && WebInterfaceUtils.supportsWebActions(pivot)
+        && Role.getRole(pivot) != Role.ROLE_WEB_VIEW) {
+      // A search of the saved order would remember where this swipe started.
+      TraversalTreeCache.rememberPivot(pivot);
+      if (navigateToHtmlTargetExpectingFocus(pivot, navigationAction, eventId)) {
+        reachEdge = false;
+        return true;
+      }
+      htmlActionFailed = true;
     }
 
     // Asking the window for its root waits for the app on every swipe, so take the root of the
@@ -1482,7 +1520,7 @@ public class FocusProcessorForLogicalNavigation {
         revealingOffscreen = true;
         try {
           return navigateToDefaultOrMacroGranularityTarget(
-              pivot, ignoreDescendantsOfPivot, navigationAction, eventId);
+              pivot, ignoreDescendantsOfPivot, navigationAction, htmlActionFailed, eventId);
         } finally {
           revealingOffscreen = false;
         }
@@ -1531,7 +1569,10 @@ public class FocusProcessorForLogicalNavigation {
     // case which is out of the scope.
     if (WebInterfaceUtils.supportsWebActions(pivot)) {
       navigationResult =
-          findTargetFromWebElement(pivot, navigationAction, nodeFilter, traversalStrategy, eventId);
+          htmlActionFailed
+              ? findTargetOutsideWebView(pivot, navigationAction, nodeFilter, traversalStrategy)
+              : findTargetFromWebElement(
+                  pivot, navigationAction, nodeFilter, traversalStrategy, eventId);
     } else if (navigationAction.targetType == TARGET_CONTAINER) {
       navigationResult = NavigationResult.create(findContainerTarget(pivot, navigationAction));
     } else {
@@ -1694,7 +1735,7 @@ public class FocusProcessorForLogicalNavigation {
           // again with a new tree.
           TraversalTreeCache.clear("focus failed");
           return navigateToDefaultOrMacroGranularityTarget(
-              pivot, ignoreDescendantsOfPivot, navigationAction, eventId);
+              pivot, ignoreDescendantsOfPivot, navigationAction, htmlActionFailed, eventId);
         }
         return focused;
       }
@@ -2001,22 +2042,45 @@ public class FocusProcessorForLogicalNavigation {
       Filter<AccessibilityNodeInfoCompat> nodeFilter,
       TraversalStrategy traversalStrategy,
       EventId eventId) {
-    if (navigateToHtmlTarget(webPivot, navigationAction, eventId)) {
-      if (isMoveToNextOrPreviousItem(navigationAction)) {
-        // The page moves the focus, so its focus event shows where it went.
-        boolean rtl = WindowUtils.isScreenLayoutRTL(service);
-        ColumnWrap.expectWebFocus(
-            webPivot,
-            TraversalStrategyUtils.getLogicalDirection(navigationAction.searchDirection, rtl)
-                == TraversalStrategy.SEARCH_FOCUS_FORWARD,
-            rtl);
-      }
+    if (navigateToHtmlTargetExpectingFocus(webPivot, navigationAction, eventId)) {
       return NavigationResult.create(NavigationResult.Type.WEB_ELEMENT);
     }
-    // Navigate out of WebView with normal navigation
+    return findTargetOutsideWebView(webPivot, navigationAction, nodeFilter, traversalStrategy);
+  }
+
+  /**
+   * Asks the web page to move focus from {@code webPivot}, as {@link #navigateToHtmlTarget} does,
+   * and when it moves to the next or previous item, has its focus event checked for leaving a row.
+   */
+  private boolean navigateToHtmlTargetExpectingFocus(
+      AccessibilityNodeInfoCompat webPivot, NavigationAction navigationAction, EventId eventId) {
+    if (!navigateToHtmlTarget(webPivot, navigationAction, eventId)) {
+      return false;
+    }
+    if (isMoveToNextOrPreviousItem(navigationAction)) {
+      // The page moves the focus, so its focus event shows where it went.
+      boolean rtl = WindowUtils.isScreenLayoutRTL(service);
+      ColumnWrap.expectWebFocus(
+          webPivot,
+          TraversalStrategyUtils.getLogicalDirection(navigationAction.searchDirection, rtl)
+              == TraversalStrategy.SEARCH_FOCUS_FORWARD,
+          rtl);
+    }
+    return true;
+  }
+
+  /** Finds the node next to the WebView that holds {@code webPivot}, in the window's order. */
+  private NavigationResult findTargetOutsideWebView(
+      AccessibilityNodeInfoCompat webPivot,
+      NavigationAction navigationAction,
+      Filter<AccessibilityNodeInfoCompat> nodeFilter,
+      TraversalStrategy traversalStrategy) {
     AccessibilityNodeInfoCompat webContainer = webPivot;
     if (Role.getRole(webPivot) != Role.ROLE_WEB_VIEW) {
       webContainer = WebInterfaceUtils.ascendToWebView(webPivot);
+    }
+    if (webContainer == null) {
+      return NavigationResult.create(NavigationResult.Type.EMPTY);
     }
     AccessibilityNodeInfoCompat target =
         TraversalStrategyUtils.searchFocus(

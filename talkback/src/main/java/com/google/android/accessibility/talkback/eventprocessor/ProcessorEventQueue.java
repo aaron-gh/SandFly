@@ -19,14 +19,19 @@ package com.google.android.accessibility.talkback.eventprocessor;
 import android.os.Message;
 import android.os.SystemClock;
 import android.view.accessibility.AccessibilityEvent;
+import androidx.annotation.VisibleForTesting;
 import com.google.android.accessibility.talkback.compositor.Compositor;
 import com.google.android.accessibility.talkback.compositor.EventFilter;
 import com.google.android.accessibility.utils.AccessibilityEventListener;
+import com.google.android.accessibility.utils.AccessibilityEventUtils;
 import com.google.android.accessibility.utils.Performance;
 import com.google.android.accessibility.utils.Performance.EventId;
 import com.google.android.accessibility.utils.WeakReferenceHandler;
+import com.google.android.accessibility.utils.WebInterfaceUtils;
 import com.google.android.accessibility.utils.input.TextEventInterpreter;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
+import java.util.List;
+import java.util.function.BiConsumer;
 
 /**
  * Manages the event feedback queue. Queued events are run through the {@link Compositor} to
@@ -51,13 +56,21 @@ public class ProcessorEventQueue implements AccessibilityEventListener {
    */
   private final EventQueue eventQueue = new EventQueue();
 
-  private EventFilter eventFilter;
-  private TextEventInterpreter textEventInterpreter;
+  /** Speaks an event through the {@link Compositor} and interprets its text changes. */
+  private final BiConsumer<AccessibilityEvent, EventId> eventProcessor;
 
   public ProcessorEventQueue(EventFilter eventFilter, TextEventInterpreter textEventInterpreter) {
-    this.eventFilter = eventFilter;
-    this.textEventInterpreter = textEventInterpreter;
+    this(
+        (event, eventId) -> {
+          eventFilter.sendEvent(event, eventId);
+          textEventInterpreter.interpret(event, eventId);
+        });
     textEventInterpreter.addListener(eventFilter::accept);
+  }
+
+  @VisibleForTesting
+  ProcessorEventQueue(BiConsumer<AccessibilityEvent, EventId> eventProcessor) {
+    this.eventProcessor = eventProcessor;
   }
 
   @Override
@@ -67,11 +80,46 @@ public class ProcessorEventQueue implements AccessibilityEventListener {
 
   @Override
   public void onAccessibilityEvent(AccessibilityEvent event, EventId eventId) {
+    if (isWebFocus(event)) {
+      processWebFocus(event, eventId);
+      return;
+    }
 
     synchronized (eventQueue) {
       eventQueue.enqueue(event);
       handler.postSpeak();
     }
+  }
+
+  /**
+   * Whether {@code event} is accessibility focus moving to an item of web content. Only a focus
+   * event asks for its source, which the focus listeners before this one have already read.
+   */
+  private static boolean isWebFocus(AccessibilityEvent event) {
+    return event.getEventType() == AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED
+        && WebInterfaceUtils.supportsWebActions(AccessibilityEventUtils.sourceCompat(event));
+  }
+
+  /**
+   * Speaks focus that a web page moved at once. Native focus is spoken before its event arrives,
+   * but a web page chooses the item itself, so only its event can say which item it is. While a
+   * page changes, it sends many content change events, each of which waits for the app when it is
+   * handled. Queued behind them, focus was spoken late, and in a fast run of swipes the queue's
+   * limit of two focus events dropped most of them. The events queued before it, other than content
+   * changes, are handled first, so that the speech of an earlier window change or announcement does
+   * not come after the focus and cut it off. Content changes stay queued, in their order.
+   */
+  private void processWebFocus(AccessibilityEvent event, EventId eventId) {
+    List<AccessibilityEvent> earlier;
+    synchronized (eventQueue) {
+      earlier = eventQueue.removeAllExcept(AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED);
+    }
+    for (AccessibilityEvent earlierEvent : earlier) {
+      processEvent(earlierEvent, Performance.getInstance().toEventId(earlierEvent));
+    }
+    // A copy, as a queued event is: on Android 12 and older the framework recycles the event after
+    // dispatch, and the feedback for it can outlast that.
+    processEvent(AccessibilityEvent.obtain(event), eventId);
   }
 
   public void clearQueue() {
@@ -90,8 +138,7 @@ public class ProcessorEventQueue implements AccessibilityEventListener {
     }
     LogUtils.d(TAG, "Processing event: %s", event);
 
-    eventFilter.sendEvent(event, eventId);
-    textEventInterpreter.interpret(event, eventId);
+    eventProcessor.accept(event, eventId);
   }
 
   private static final int WHAT_SPEAK = 1;
