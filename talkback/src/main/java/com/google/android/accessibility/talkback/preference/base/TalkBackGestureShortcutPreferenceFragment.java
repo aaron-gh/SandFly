@@ -52,7 +52,8 @@ import java.util.HashMap;
 import java.util.List;
 
 /** Panel holding a set of shortcut preferences. Recreated when preset value changes. */
-public class TalkBackGestureShortcutPreferenceFragment extends TalkbackBaseFragment {
+public class TalkBackGestureShortcutPreferenceFragment extends TalkbackBaseFragment
+    implements SettingsSearch.FoundKey {
   private static final String TAG = "TalkBackGestureShortcutPreferenceFragment";
 
   /** Preferences managed by this activity. */
@@ -324,6 +325,27 @@ public class TalkBackGestureShortcutPreferenceFragment extends TalkbackBaseFragm
                 getContext(), prefs.getString(key, gesture.getDefaultValue())));
       }
     }
+  }
+
+  /** With more than one gesture set, gestures' keys end with the set in use. */
+  @Override
+  public String foundKey(String key) {
+    if (prefs == null
+        || !GestureShortcutMapping.isGestureSetEnabled(
+            getContext(),
+            prefs,
+            R.string.pref_multiple_gesture_set_key,
+            R.bool.pref_multiple_gesture_set_default)) {
+      return key;
+    }
+    int gestureSet =
+        SharedPreferencesUtils.getIntFromStringPref(
+            prefs,
+            getResources(),
+            R.string.pref_gesture_set_key,
+            R.string.pref_gesture_set_value_default);
+    String setKey = GestureShortcutMapping.getPrefKeyWithGestureSet(key, gestureSet);
+    return findPreference(setKey) instanceof GestureListPreference ? setKey : key;
   }
 
   private void updatePreferenceKey(int gestureSet) {
