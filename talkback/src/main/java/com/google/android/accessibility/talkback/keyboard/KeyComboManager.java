@@ -1230,16 +1230,21 @@ public class KeyComboManager
                   || event.getKeyCode() == KeyEvent.KEYCODE_NUMPAD_ENTER)
               && otherModifiers == KeyComboModel.NO_MODIFIER
               && event.getRepeatCount() == 0;
-      // In a text field being edited, they are the text field's. Only keys that are shortcuts wait
-      // for the focus lookups, which ask the app, so typing doesn't.
+      // In a text field being edited, they are the text field's, except a custom keymap's
+      // shortcuts with Ctrl or Alt, such as Ctrl + Enter for Submit text, which aren't typing. Only
+      // keys that are shortcuts wait for the focus lookups, which ask the app, so typing doesn't.
+      boolean customShortcutKeys =
+          isCustomKeymap()
+              && (otherModifiers & (KeyEvent.META_CTRL_ON | KeyEvent.META_ALT_ON)) != 0;
       if ((enter
-              || isShortcutKey(
+              || (!customShortcutKeys
+                  && isShortcutKey(
                   new KeyCombo(
                       otherModifiers,
                       KeyComboModel.NO_PREFIX_KEY_CODE,
                       getConvertedKeyCode(event),
                       /* triggerModifierUsed= */ false),
-                  triggerModifier))
+                  triggerModifier)))
           && isEditingTextWithAccessibilityFocus()) {
         passedKeys.addAll(currentKeysDown);
         return false;
