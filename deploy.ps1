@@ -11,10 +11,10 @@ if (-not (Test-Path "$root\local.properties")) {
 	"sdk.dir=$($sdk -replace '\\', '/')" | Set-Content "$root\local.properties"
 }
 if (-not $SkipBuild) {
-	& "$root\gradlew.bat" assemblePhoneDebug --console=plain
+	& "$root\gradlew.bat" assemblePhoneFullDebug --console=plain
 	if ($LASTEXITCODE) { exit $LASTEXITCODE }
 }
-$apk = Get-ChildItem "$root\build\outputs\apk\phone\debug\*.apk" | Sort-Object LastWriteTime | Select-Object -Last 1
+$apk = Get-ChildItem "$root\build\outputs\apk\phoneFull\debug\*.apk" | Sort-Object LastWriteTime | Select-Object -Last 1
 if (-not $apk) { throw 'No APK found.' }
 $adbArgs = if ($Device) { @('-s', $Device) } else { @() }
 Write-Host "Installing $($apk.Name)"

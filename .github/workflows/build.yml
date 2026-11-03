@@ -84,7 +84,7 @@ jobs:
         if: github.event_name == 'push'
         run: |
           apksigner=$(ls -d "$ANDROID_HOME"/build-tools/*/apksigner | sort -V | tail -n 1)
-          for apk in build/outputs/apk/*/debug/*.apk; do
+          for apk in build/outputs/apk/*/debug/*.apk addon/build/outputs/apk/debug/*.apk; do
             certs=$("$apksigner" verify --print-certs "$apk" 2>&1) || {
               echo "$certs" >&2
               echo "apksigner could not check $apk." >&2
@@ -97,16 +97,16 @@ jobs:
             fi
           done
 
-      # Only the phone flavor: the watch's braille keyboard is a stub, so the braille keyboard's
+      # Only the full phone build: the watch's braille keyboard is a stub, so the braille keyboard's
       # tests don't compile for it, and the rest of the code is shared.
       - name: Run unit tests
-        run: ./gradlew testPhoneDebugUnitTest --console=plain
+        run: ./gradlew testPhoneFullDebugUnitTest :shizukuapi:testDebugUnitTest --console=plain
 
       # The app's lint also checks the library modules. Issues already in lint-baseline.xml are
       # allowed, so this fails only on new errors, such as a call that needs a newer Android than
       # minSdk without a version check.
       - name: Run lint
-        run: ./gradlew :lintPhoneDebug --console=plain
+        run: ./gradlew :lintPhoneFullDebug --console=plain
 
       - uses: actions/upload-artifact@v7
         if: failure()
@@ -114,12 +114,14 @@ jobs:
           name: test-reports
           path: |
             **/build/reports/tests/
-            build/reports/lint-results-phoneDebug.html
+            build/reports/lint-results-phoneFullDebug.html
 
       - uses: actions/upload-artifact@v7
         with:
           name: apks
-          path: build/outputs/apk/**/*.apk
+          path: |
+            build/outputs/apk/**/*.apk
+            addon/build/outputs/apk/**/*.apk
           if-no-files-found: error
 
   # Publishes the build. A push to master replaces the rolling "dev" pre-release, and a tag
@@ -153,16 +155,19 @@ jobs:
           count=$(git rev-list --count "$base..HEAD")
           hash=$(git rev-parse HEAD)
           short=${hash:0:7}
-          # The phone build is sandfly.apk, which the updater on phones looks for, and the watch
-          # build is sandfly-wear.apk, which the updater on watches looks for.
-          for build in phone:sandfly.apk wear:sandfly-wear.apk; do
-            apk=$(find apks -name "sandfly-${build%%:*}-debug.apk" | head -n 1)
+          # The full phone build is sandfly.apk, which the updater on phones looks for, and the
+          # watch build is sandfly-wear.apk, which the updater on watches looks for. The Google
+          # Play build and the SandFly add-on are published beside them.
+          for build in sandfly-phone-full-debug:sandfly.apk sandfly-wear-full-debug:sandfly-wear.apk \
+              sandfly-phone-play-debug:sandfly-play.apk addon-debug:sandfly-addon.apk; do
+            apk=$(find apks -name "${build%%:*}.apk" | head -n 1)
             if [ -z "$apk" ]; then
-              echo "The ${build%%:*} APK was not found." >&2
+              echo "${build%%:*}.apk was not found." >&2
               exit 1
             fi
             cp "$apk" "${build#*:}"
           done
+          assets="sandfly.apk sandfly-wear.apk sandfly-play.apk sandfly-addon.apk"
 
           # %H cut to 7 characters, since %h can be longer when a short hash is ambiguous.
           changes() {
@@ -184,7 +189,7 @@ jobs:
                 exit 1
               fi
             } > release-notes.md
-            gh release create "$tag" sandfly.apk sandfly-wear.apk --verify-tag --latest \
+            gh release create "$tag" $assets --verify-tag --latest \
               --title "SandFly ${tag#v}" --notes-file release-notes.md
             exit 0
           fi
@@ -201,8 +206,8 @@ jobs:
             # which notifies everyone watching the repository.
             git tag -f "$tag" "$GITHUB_SHA"
             git push -f origin "refs/tags/$tag"
-            gh release upload "$tag" sandfly.apk sandfly-wear.apk --clobber
+            gh release upload "$tag" $assets --clobber
             gh release edit "$tag" --title "$title" --notes-file release-notes.md --prerelease --latest=false
           else
-            gh release create "$tag" sandfly.apk sandfly-wear.apk --prerelease --latest=false --target "$GITHUB_SHA" --title "$title" --notes-file release-notes.md
+            gh release create "$tag" $assets --prerelease --latest=false --target "$GITHUB_SHA" --title "$title" --notes-file release-notes.md
           fi

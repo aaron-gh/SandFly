@@ -121,14 +121,14 @@ You need JDK 17 or newer, the Android SDK with platform 37, and NDK 27.3.1375072
 
 ### Linux or macOS
 
-Set `ANDROID_SDK` to your SDK path, then run `./build.sh`. This builds the phone and watch APKs, and keeps anything else that's in `local.properties`, such as a Gemini API key.
+Set `ANDROID_SDK` to your SDK path, then run `./build.sh`. This builds the phone and watch APKs, the Google Play build and the SandFly add-on, and keeps anything else that's in `local.properties`, such as a Gemini API key.
 
 ### Windows
 
 Set `ANDROID_HOME` to your SDK path, then run:
 
 ```
-.\gradlew.bat assemblePhoneDebug
+.\gradlew.bat assemblePhoneFullDebug
 ```
 
 `.\deploy.ps1` builds the APK and installs it with adb. This script needs PowerShell 7. To install the last build without building again, use `-SkipBuild`.

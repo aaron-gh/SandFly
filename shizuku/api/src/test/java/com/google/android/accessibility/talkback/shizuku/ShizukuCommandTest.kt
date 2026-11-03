@@ -84,4 +84,40 @@ class ShizukuCommandTest {
     assertNull(ShizukuCommand.INPUT_KEYEVENT.shellCommand("KEYCODE_ENTER; reboot"))
     assertNull(ShizukuCommand.INPUT_KEYEVENT.shellCommand("66"))
   }
+
+  /**
+   * The service gets commands and grants by ordinal, and the SandFly add-on's service can be older
+   * or newer than SandFly, so the order must not change. Add new ones at the end of this list.
+   */
+  @Test
+  fun ordinalsDoNotChange() {
+    assertEquals(
+      listOf(
+        "WIFI",
+        "BLUETOOTH",
+        "MOBILE_DATA",
+        "AIRPLANE_MODE",
+        "LOCATION",
+        "BATTERY_SAVER",
+        "DARK_THEME",
+        "NFC",
+        "DATA_SAVER",
+        "HOTSPOT",
+        "MICROPHONE_BLOCKED",
+        "CAMERA_BLOCKED",
+        "ADD_TILE",
+        "CLICK_TILE",
+        "INPUT_TEXT",
+        "INPUT_KEYEVENT",
+        "START_SHORTCUT_ACTIVITY",
+        "ACCESSIBILITY_SHORTCUT",
+        "RESET_ACCESSIBILITY_AUDIO",
+      ),
+      ShizukuCommand.entries.map { it.name },
+    )
+    assertEquals(
+      listOf("DUMP", "MANAGE_ONGOING_CALLS", "WRITE_SETTINGS", "USAGE_STATS", "WRITE_SECURE_SETTINGS"),
+      ShellGrant.entries.map { it.name },
+    )
+  }
 }

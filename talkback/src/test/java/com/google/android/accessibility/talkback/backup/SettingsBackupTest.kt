@@ -17,7 +17,6 @@
 package com.google.android.accessibility.talkback.backup
 
 import android.content.Context
-import com.google.android.accessibility.talkback.update.Updater
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
@@ -69,17 +68,17 @@ class SettingsBackupTest {
       .edit()
       .putString("pref_gemini_api_key", "secret")
       .putString("pref_ai_claude_api_key", "secret")
-      .putLong(Updater.PREF_LAST_CHECK_TIME, 5)
+      .putLong("update_last_check_time", 5)
       .commit()
     val json = SettingsBackup.export(context)
     assertFalse(json.contains("secret"))
-    assertFalse(json.contains(Updater.PREF_LAST_CHECK_TIME))
+    assertFalse(json.contains("update_last_check_time"))
 
     prefs.edit().putString("pref_gemini_api_key", "mine").putString("pref_ai_claude_api_key", "mine").commit()
     assertTrue(SettingsBackup.import(context, json))
     assertEquals("mine", prefs.getString("pref_gemini_api_key", null))
     assertEquals("mine", prefs.getString("pref_ai_claude_api_key", null))
-    assertEquals(5, prefs.getLong(Updater.PREF_LAST_CHECK_TIME, 0))
+    assertEquals(5, prefs.getLong("update_last_check_time", 0))
   }
 
   @Test

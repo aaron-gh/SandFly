@@ -252,6 +252,7 @@ import com.google.android.accessibility.talkback.selector.SelectorController;
 import com.google.android.accessibility.talkback.selector.SelectorController.SelectorEventNotifier;
 import com.google.android.accessibility.talkback.sandflyai.SandflyAi;
 import com.google.android.accessibility.talkback.screenelements.ScreenElements;
+import com.google.android.accessibility.talkback.distribution.Distribution;
 import com.google.android.accessibility.talkback.shizuku.ShizukuClipboard;
 import com.google.android.accessibility.talkback.shizuku.ShizukuGrants;
 import com.google.android.accessibility.talkback.soundthemes.SoundThemes;
@@ -274,7 +275,6 @@ import com.google.android.accessibility.talkback.report.ProblemReportSender;
 import com.google.android.accessibility.talkback.report.ReportInbox;
 import com.google.android.accessibility.talkback.report.TurnOffLog;
 import com.google.android.accessibility.talkback.translation.AutomaticTranslation;
-import com.google.android.accessibility.talkback.update.Updater;
 import com.google.android.accessibility.talkback.updatetasks.TalkBackUpdateHelper;
 import com.google.android.accessibility.talkback.utils.DiagnosticOverlayControllerImpl;
 import com.google.android.accessibility.talkback.utils.ExperimentalUtils;
@@ -1075,7 +1075,7 @@ public class TalkBackService extends AccessibilityServiceCompat
       suspendInfrastructure();
     }
 
-    Updater.stopAutomaticChecks();
+    Distribution.onServiceDestroyed();
     ReportInbox.stopFollowing();
     ExitAfterTurnOff.schedule(getApplication());
     ShizukuGrants.onServiceDestroyed();
@@ -2129,7 +2129,7 @@ public class TalkBackService extends AccessibilityServiceCompat
 
     // Handle any update actions.
     new TalkBackUpdateHelper(this).checkUpdate();
-    Updater.startAutomaticChecks(this);
+    Distribution.onServiceConnected(this);
     ReportInbox.startFollowing(this);
     ShizukuGrants.onServiceConnected(this);
     ScreenElements.attach(this, () -> pipeline == null ? null : pipeline.getFeedbackReturner());

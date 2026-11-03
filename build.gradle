@@ -33,6 +33,10 @@ if (sandflyKeyPassword.isEmpty() && sandflyKeystore.isFile() && new File("/usr/b
     }
 }
 def signWithSandflyKey = sandflyKeystore.isFile() && !sandflyKeyPassword.isEmpty()
+// The SandFly add-on is signed the same way.
+ext.sandflyKeystore = sandflyKeystore
+ext.sandflyKeyPassword = sandflyKeyPassword
+ext.signWithSandflyKey = signWithSandflyKey
 
 android {
     namespace = "com.android.talkback"
@@ -89,10 +93,11 @@ android {
         // Lint the library modules too, where most of the code is, in one report.
         checkDependencies = true
         // The issues that were already there when lint was added to CI. Only new ones fail the
-        // build. To accept new ones on purpose, run ./gradlew updateLintBaselinePhoneDebug.
+        // build. To accept new ones on purpose, run ./gradlew updateLintBaselinePhoneFullDebug.
         baseline = file("lint-baseline.xml")
         abortOnError = true
     }
+    flavorDimensions = ["target", "distribution"]
     productFlavors {
         phone {
             dimension = "target"
@@ -101,5 +106,21 @@ android {
             dimension = "target"
             versionNameSuffix = "-wear"
         }
+        // Published on GitHub: it updates itself and uses Shizuku itself.
+        full {
+            dimension = "distribution"
+        }
+        // Published on Google Play: it uses Shizuku through the SandFly add-on.
+        play {
+            dimension = "distribution"
+        }
+    }
+}
+
+// Watches have only the full build.
+androidComponents {
+    beforeVariants(selector().all()) { variant ->
+        def flavors = variant.productFlavors.collect { it.second }
+        if (flavors.contains('wear') && flavors.contains('play')) variant.enable = false
     }
 }

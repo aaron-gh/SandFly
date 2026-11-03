@@ -1,0 +1,54 @@
+plugins {
+    id 'com.android.application'
+}
+
+// The SandFly add-on: published outside Google Play, with the features that SandFly's Google Play
+// build leaves out. It runs Shizuku's shell service for SandFly. It must be signed with SandFly's
+// key, since only apps signed with that key may bind to it, and SandFly checks the add-on's key.
+android {
+    namespace = "io.github.aaron_gh.sandfly.addon"
+    compileSdk = 37
+    if (rootProject.signWithSandflyKey) {
+        signingConfigs {
+            sandfly {
+                storeFile = rootProject.sandflyKeystore
+                storePassword = rootProject.sandflyKeyPassword
+                keyAlias = "sandfly"
+                keyPassword = rootProject.sandflyKeyPassword
+            }
+        }
+    }
+    defaultConfig {
+        applicationId = "io.github.aaron_gh.sandfly.addon"
+        // Numbered as SandFly is, so that Shizuku starts the new shell service after an update.
+        versionCode = 100000000 + rootProject.gitCommitCount
+        versionName = rootProject.sandflyVersionName
+        minSdk = 26
+        targetSdk = 36
+    }
+    buildTypes {
+        // Published as a debug build, as SandFly is.
+        debug {
+            debuggable = false
+            if (rootProject.signWithSandflyKey) {
+                signingConfig = signingConfigs.sandfly
+            }
+        }
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+    buildFeatures {
+        buildConfig = true
+    }
+    lint {
+        checkReleaseBuilds = false
+    }
+}
+
+dependencies {
+    implementation project(':shizukuservice')
+    implementation libs.shizuku.api
+    implementation libs.shizuku.provider
+}

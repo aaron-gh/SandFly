@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The Google Play build: Google Play updates it, and it uses Shizuku through the SandFly add-on. -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Binding to the SandFly add-on. The add-on defines it too, so that it exists whichever app
+         is installed first. Only apps signed with SandFly's key get it. -->
+    <permission
+        android:name="io.github.aaron_gh.sandfly.permission.ADDON"
+        android:protectionLevel="signature" />
+    <uses-permission android:name="io.github.aaron_gh.sandfly.permission.ADDON" />
+</manifest>

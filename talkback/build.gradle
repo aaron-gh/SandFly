@@ -4,6 +4,21 @@ plugins {
 
 apply from: "../shared.gradle"
 
+// Declared before the dependencies, which use the flavors' configurations.
+android {
+    // full: published on GitHub; it updates itself and uses Shizuku itself. play: published on
+    // Google Play; it uses Shizuku through the SandFly add-on. See distribution/Distribution.kt.
+    flavorDimensions = ["target", "distribution"]
+    productFlavors {
+        full {
+            dimension = "distribution"
+        }
+        play {
+            dimension = "distribution"
+        }
+    }
+}
+
 dependencies {
     implementation project(':proguard')
     implementation project(':utils')
@@ -38,9 +53,13 @@ dependencies {
     phoneImplementation project(':whisper')
     // Whisper on Adreno GPUs, loaded only when used there.
     phoneRuntimeOnly project(':whisperopencl')
+    // The shell service's interface and commands, which scripts and SandFly AI use too.
+    api project(':shizukuapi')
     // Grants the permissions that settings need through Shizuku, when it is installed and running.
-    implementation libs.shizuku.api
-    implementation libs.shizuku.provider
+    // The Google Play build uses Shizuku through the SandFly add-on instead.
+    fullImplementation libs.shizuku.api
+    fullImplementation libs.shizuku.provider
+    fullImplementation project(':shizukuservice')
     testImplementation libs.junit
     testImplementation libs.json
     testImplementation libs.robolectric
@@ -70,5 +89,13 @@ android {
     testOptions.unitTests.includeAndroidResources = true
     buildFeatures {
         aidl = true
+    }
+}
+
+// Watches have only the full build.
+androidComponents {
+    beforeVariants(selector().all()) { variant ->
+        def flavors = variant.productFlavors.collect { it.second }
+        if (flavors.contains('wear') && flavors.contains('play')) variant.enable = false
     }
 }

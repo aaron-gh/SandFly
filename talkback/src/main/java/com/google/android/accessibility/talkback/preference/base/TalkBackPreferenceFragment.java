@@ -37,6 +37,7 @@ import com.google.android.accessibility.talkback.HatsSurveyRequester;
 import com.google.android.accessibility.talkback.HelpAndFeedbackUtils;
 import com.google.android.accessibility.talkback.NotificationActivity;
 import com.google.android.accessibility.talkback.R;
+import com.google.android.accessibility.talkback.distribution.Distribution;
 import com.google.android.accessibility.talkback.backup.SettingsBackup;
 import com.google.android.accessibility.talkback.TalkBackExitController;
 import com.google.android.accessibility.talkback.TalkBackService;
@@ -50,7 +51,6 @@ import com.google.android.accessibility.talkback.training.OnboardingInitiator;
 import com.google.android.accessibility.talkback.training.TutorialInitiator;
 import com.google.android.accessibility.talkback.trainingcommon.tv.TvTutorialInitiator;
 import com.google.android.accessibility.talkback.trainingcommon.tv.VendorConfigReader;
-import com.google.android.accessibility.talkback.update.Updater;
 import com.google.android.accessibility.material.preference.AccessibilitySuitePreference;
 import com.google.android.accessibility.utils.FeatureSupport;
 import com.google.android.accessibility.utils.FormFactorUtils;
@@ -108,6 +108,14 @@ public class TalkBackPreferenceFragment extends TalkbackBaseFragment {
       Preference braille = findPreference("pref_braille_screen");
       if (braille != null) {
         braille.setVisible(false);
+      }
+    }
+
+    // Google Play updates the Google Play build.
+    if (Distribution.IS_PLAY) {
+      Preference updates = findPreference("pref_updates_screen");
+      if (updates != null) {
+        updates.setVisible(false);
       }
     }
 

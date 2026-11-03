@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The full build, published on GitHub: it updates itself, and uses Shizuku itself. -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Lets a watch ask for Wi-Fi to download an update. -->
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+
+    <!-- Used by the updater to install new development builds. -->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
+    <application>
+        <receiver
+            android:name="com.google.android.accessibility.talkback.update.UpdateReceiver"
+            android:exported="false" />
+
+        <!-- Receives Shizuku's binder, for granting the permissions that settings need. Only the
+             system can use it, through INTERACT_ACROSS_USERS_FULL. -->
+        <provider
+            android:name="rikka.shizuku.ShizukuProvider"
+            android:authorities="${applicationId}.shizuku"
+            android:multiprocess="false"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="android.permission.INTERACT_ACROSS_USERS_FULL" />
+    </application>
+</manifest>
