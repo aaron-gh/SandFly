@@ -105,6 +105,8 @@ class VolumeKeyPresses(private val timer: Timer, private val callbacks: Callback
   /** Whether [key] is pressed now. */
   private var held = false
   private var repeats = 0
+  /** Whether presses may be counted now, as given with the press of [key]. */
+  private var canUse: () -> Boolean = { false }
 
   /** Whether each volume key is pressed now, whether or not its presses have commands. */
   private var volumeUpDown = false
@@ -159,16 +161,22 @@ class VolumeKeyPresses(private val timer: Timer, private val callbacks: Callback
           return false
         }
         held = true
+        this.canUse = canUse
         timer.schedule(timeouts.longPress) { onHeld() }
         return true
       }
-      if (held) {
+      if (held && (state != State.LONG_PRESS_DONE || isDown(key))) {
         // Both volume keys: the accessibility shortcut, or stopping a notification readout.
         timer.cancel()
         state = State.IGNORED
         return false
       }
-      finishPresses()
+      if (held) {
+        // The release of the long press went elsewhere, such as to Pause SandFly.
+        cancel()
+      } else {
+        finishPresses()
+      }
     }
     if (isDown(otherKey(keyCode))) {
       // Both volume keys, the first of which passed to Android.
@@ -178,6 +186,7 @@ class VolumeKeyPresses(private val timer: Timer, private val callbacks: Callback
       return false
     }
     key = keyCode
+    this.canUse = canUse
     state = State.PRESSES
     presses = 0
     repeats = 0
@@ -210,6 +219,13 @@ class VolumeKeyPresses(private val timer: Timer, private val callbacks: Callback
   fun cancel() {
     timer.cancel()
     reset()
+  }
+
+  /** Forgets the presses and which keys are pressed, as releases may not come with the screen off. */
+  fun onScreenOff() {
+    cancel()
+    volumeUpDown = false
+    volumeDownDown = false
   }
 
   /** Runs the command of the presses that ended, or changes the volume once for each press. */
@@ -254,6 +270,11 @@ class VolumeKeyPresses(private val timer: Timer, private val callbacks: Callback
     if (key == 0 || !held || state != State.REPEATING) {
       return
     }
+    if (!canUse()) {
+      // Such as a touch on the screen; the release stays kept from Android.
+      state = State.IGNORED
+      return
+    }
     callbacks.adjustVolume(key, /* repeated= */ true)
     repeats++
     if (repeats >= MAX_REPEATS) {
@@ -270,6 +291,7 @@ class VolumeKeyPresses(private val timer: Timer, private val callbacks: Callback
     presses = 0
     held = false
     repeats = 0
+    canUse = { false }
   }
 
   private fun isDown(keyCode: Int): Boolean =

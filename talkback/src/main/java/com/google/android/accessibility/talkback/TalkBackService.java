@@ -2756,6 +2756,12 @@ public class TalkBackService extends AccessibilityServiceCompat
               }
               return Unit.INSTANCE;
             });
+    ringerModeAndScreenMonitor.addScreenChangedListener(
+        (isInteractive, eventId) -> {
+          if (!isInteractive && volumeKeyCommands != null) {
+            volumeKeyCommands.onScreenOff();
+          }
+        });
 
     gestureController =
         new GestureController(
@@ -4284,6 +4290,10 @@ public class TalkBackService extends AccessibilityServiceCompat
   /** Turns off, or back on, what pausing Backtalk turns off besides events and feedback. */
   private void onPauseChanged(boolean paused) {
     if (paused) {
+      if (volumeKeyCommands != null) {
+        // The release of a key held now goes to the pause, not to the volume key presses.
+        volumeKeyCommands.cancel();
+      }
       if (supportsTouchScreen) {
         requestTouchExploration(false);
       }

@@ -140,6 +140,11 @@ class VolumeKeyCommands(
     presses.cancel()
   }
 
+  /** Forgets the presses and the keys held, whose releases may not come with the screen off. */
+  fun onScreenOff() {
+    presses.onScreenOff()
+  }
+
   /** Whether a phone or app call is ringing or going on, which the volume keys are left to. */
   private fun isInCall(): Boolean {
     val mode = audioManager?.mode ?: return false
