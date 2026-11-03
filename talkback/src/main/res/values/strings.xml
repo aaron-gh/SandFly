@@ -749,6 +749,8 @@
     <string name="title_pref_show_privacy_policy">Privacy policy</string>
     <!-- Category for assigning shortcuts to fingerprint sensor gestures. [CHAR LIMIT=40] -->
     <string name="title_pref_category_fingerprint_touch_shortcuts">Fingerprint gestures</string>
+    <!-- Category for assigning commands to taps on the back of the device, detected with the accelerometer. [CHAR LIMIT=40] -->
+    <string name="title_pref_category_back_tap">Back tap</string>
     <!-- Category for tutorial, the tutorial page contains help and feedback. [CHAR LIMIT=60] -->
     <string name="title_pref_category_tutorial">SandFly tutorial</string>
     <!-- Category for helping page or feedback. [CHAR LIMIT=60] -->
@@ -2769,6 +2771,12 @@
     <string name="title_pref_shortcut_fingerprint_left">Swipe left on fingerprint sensor</string>
     <!-- Label for the preference that assigns an action to the "swipe right" gesture on fingerprint sensor. [CHAR_LIMIT=99] -->
     <string name="title_pref_shortcut_fingerprint_right">Swipe right on fingerprint sensor</string>
+    <!-- Label for the preference that assigns a command to two quick taps on the back of the device. [CHAR_LIMIT=90] -->
+    <string name="title_pref_shortcut_back_tap_double">Double tap on back</string>
+    <!-- Label for the preference that assigns a command to three quick taps on the back of the device. [CHAR_LIMIT=90] -->
+    <string name="title_pref_shortcut_back_tap_triple">Triple tap on back</string>
+    <!-- Title of the list that sets how light a tap on the back of the device can be and still count. [CHAR_LIMIT=60] -->
+    <string name="title_pref_back_tap_sensitivity">Back tap sensitivity</string>
 
     <!-- Label for the prefernce that displays version code. [CHAR_LIMIT=99] -->
     <string name="title_pref_version_code">Version code</string>

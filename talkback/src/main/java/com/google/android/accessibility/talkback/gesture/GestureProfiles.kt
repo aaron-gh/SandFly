@@ -76,6 +76,10 @@ object GestureProfiles {
     return active?.get(gestureKey)
   }
 
+  /** Whether any profile gives the gesture of preference key [gestureKey] a command. */
+  @JvmStatic
+  fun usesGesture(gestureKey: String): Boolean = profiles.any { gestureKey in it.gestures }
+
   /** Whether there is a profile to change to besides Default. */
   @JvmStatic fun hasProfiles(): Boolean = profiles.isNotEmpty()
 

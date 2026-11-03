@@ -573,6 +573,22 @@
     <string name="pref_shortcut_fingerprint_down_key">pref_shortcut_fingerprint_down</string>
     <string name="pref_shortcut_fingerprint_left_key">pref_shortcut_fingerprint_left</string>
     <string name="pref_shortcut_fingerprint_right_key">pref_shortcut_fingerprint_right</string>
+    <!-- Back tap keys -->
+    <string name="pref_category_back_tap_key">pref_category_back_tap_key</string>
+    <string name="pref_shortcut_back_tap_double_key">pref_shortcut_back_tap_double</string>
+    <string name="pref_shortcut_back_tap_triple_key">pref_shortcut_back_tap_triple</string>
+    <string name="pref_back_tap_sensitivity_key">pref_back_tap_sensitivity</string>
+    <string name="pref_back_tap_sensitivity_default">medium</string>
+    <string-array name="pref_back_tap_sensitivity_entries" translatable="false">
+      <item>@string/pref_verbosity_preset_entry_low</item>
+      <item>@string/notification_shake_2</item>
+      <item>@string/pref_verbosity_preset_entry_high</item>
+    </string-array>
+    <string-array name="pref_back_tap_sensitivity_values" translatable="false">
+      <item>low</item>
+      <item>medium</item>
+      <item>high</item>
+    </string-array>
 
   <!-- Keyboard preferences -->
   <string name="pref_select_keymap_key">pref_select_keymap</string>
@@ -868,6 +884,10 @@
       <item>@string/pref_shortcut_fingerprint_down_key</item>
       <item>@string/pref_shortcut_fingerprint_left_key</item>
       <item>@string/pref_shortcut_fingerprint_right_key</item>
+
+      <!-- Back tap -->
+      <item>@string/pref_shortcut_back_tap_double_key</item>
+      <item>@string/pref_shortcut_back_tap_triple_key</item>
     </string-array>
 
     <!-- Array of 2-finger pass-through gesture shortcut keys -->

@@ -24,6 +24,9 @@
     <!-- Required for haptic feedback. -->
     <uses-permission android:name="android.permission.VIBRATE" />
 
+    <!-- Required for back tap: accelerometer readings faster than 200 Hz. -->
+    <uses-permission android:name="android.permission.HIGH_SAMPLING_RATE_SENSORS" />
+
     <!-- Required for keeping the screen awake during continuous reading and key filtering. -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 

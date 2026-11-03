@@ -94,6 +94,10 @@ object AppGestures {
     return apps[app]?.gestures?.get(gestureKey)
   }
 
+  /** Whether any app gives the gesture of preference key [gestureKey] a command of its own. */
+  @JvmStatic
+  fun usesGesture(gestureKey: String): Boolean = apps.values.any { gestureKey in it.gestures }
+
   fun read(prefs: SharedPreferences): Map<String, App> = fromJson(prefs.getString(KEY, null))
 
   fun write(prefs: SharedPreferences, apps: Map<String, App>) {

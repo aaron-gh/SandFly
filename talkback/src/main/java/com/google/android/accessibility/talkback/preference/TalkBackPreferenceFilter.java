@@ -351,6 +351,8 @@ public class TalkBackPreferenceFilter {
         R.string.pref_category_4finger_shortcuts_key, SHOW_IF_MULTI_FINGER),
     CUSTOMIZE_GESTURE_FINGERPRINT(
         R.string.pref_category_fingerprint_touch_shortcuts_key, SHOW_IF_FINGER_PRINT),
+    CUSTOMIZE_GESTURE_BACK_TAP(
+        R.string.pref_category_back_tap_key, HIDDEN_ON_WATCH | HIDDEN_ON_TV | HIDDEN_ON_XR),
     CUSTOMIZE_GESTURE_2FINGER_3TAP_HOLD(
         R.string.pref_shortcut_2finger_3tap_hold_key, SHOW_IF_MULTI_FINGER_TAP_AND_HOLD),
     CUSTOMIZE_GESTURE_3FINGER_1TAP_HOLD(
