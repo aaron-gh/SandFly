@@ -80,6 +80,10 @@ public class KeyboardShortcutDialogPreference extends Preference
   private TextView instructionText;
   private boolean supportedSequenceKeyInfra;
   private boolean triggerModifierUp;
+  // Whether onKeyEventInternal consumes the key event that processKeyEvent doesn't process.
+  private boolean consumeKeyEvent;
+  // Whether Enter's key down saved, so its key up is consumed too.
+  private boolean enterDownConsumed;
   // When the SandFly key alone was last pressed in the dialog, to record it pressed twice.
   private long sandFlyKeyDownTime;
   private String summary;
@@ -356,7 +360,9 @@ public class KeyboardShortcutDialogPreference extends Preference
 
   private boolean onKeyEventInternal(KeyEvent event) {
     if (!processKeyEvent(event)) {
-      return false;
+      boolean consume = consumeKeyEvent;
+      consumeKeyEvent = false;
+      return consume;
     }
 
     // The SandFly key pressed twice, alone, turns browse mode on and off.
@@ -531,22 +537,29 @@ public class KeyboardShortcutDialogPreference extends Preference
     // keyAlreadyInUseDialog will be null when this dialog dismisses. If the sequence key infra
     // is supported, it won't save invalid key combo and only save valid key combo when the dialog
     // view is accessibility focused and the event action is ACTION_DOWN.
-    if (hasNoModifiers(event)
-        && (event.getKeyCode() == KeyEvent.KEYCODE_ENTER)
-        && (keyAlreadyInUseDialog == null)) {
-      LinearLayout dialogView = setUpKeyComboDialog.findViewById(R.id.dialog_view);
-      boolean enterPressedInDialogView =
-          dialogView != null
-              && dialogView.isAccessibilityFocused()
-              && event.getAction() == KeyEvent.ACTION_DOWN;
-      if (supportedSequenceKeyInfra && !enterPressedInDialogView) {
+    // Enter that saves is consumed, down and up, so it doesn't also press the focused button,
+    // such as Clear shortcut under the "Key already in use" dialog.
+    if (hasNoModifiers(event) && event.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
+      if (event.getAction() == KeyEvent.ACTION_UP) {
+        consumeKeyEvent = enterDownConsumed;
+        enterDownConsumed = false;
         return false;
       }
-      if (shouldAnnounceInvalidShortcutMessage()) {
+      if (keyAlreadyInUseDialog == null) {
+        LinearLayout dialogView = setUpKeyComboDialog.findViewById(R.id.dialog_view);
+        boolean enterPressedInDialogView =
+            dialogView != null && dialogView.isAccessibilityFocused();
+        if (supportedSequenceKeyInfra && !enterPressedInDialogView) {
+          return false;
+        }
+        consumeKeyEvent = true;
+        enterDownConsumed = true;
+        if (shouldAnnounceInvalidShortcutMessage()) {
+          return false;
+        }
+        processSaveButtonClickListener();
         return false;
       }
-      processSaveButtonClickListener();
-      return false;
     }
 
     // Enter and Esc are used to accept/dismiss dialogs. However, the default shortcuts
