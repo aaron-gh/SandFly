@@ -89,6 +89,7 @@ import com.google.android.accessibility.braille.interfaces.TalkBackForBrailleIme
 import com.google.android.accessibility.braille.interfaces.TalkBackForBrailleIme.ServiceStatus;
 import com.google.android.accessibility.braille.translate.BrailleTranslator;
 import com.google.android.accessibility.braille.translate.TranslatorFactory;
+import com.google.android.accessibility.brailleime.BrailleImeVibrator.VibrationType;
 import com.google.android.accessibility.brailleime.LayoutOrientator.LayoutOrientatorCallback;
 import com.google.android.accessibility.brailleime.analytics.BrailleImeAnalytics;
 import com.google.android.accessibility.brailleime.dialog.ContextMenuDialog;
@@ -269,6 +270,7 @@ public class BrailleIme extends InputMethodService {
   private KeyboardView keyboardView;
   private BrailleImeGestureController brailleImeGestureController;
   private BrailleImeActor brailleImeActor;
+  private BrailleEmojiSearch emojiSearch;
   private Handler mainHandler;
   private Handler calibrationAnnouncementHandler;
   private boolean brailleDisplayConnectedAndNotSuspended;
@@ -334,6 +336,7 @@ public class BrailleIme extends InputMethodService {
       brailleDisplayConnectedAndNotSuspended =
           brailleDisplayForBrailleIme.isBrailleDisplayConnectedAndNotSuspended();
     }
+    emojiSearch = new BrailleEmojiSearch(this, this::insertEmoji);
     keyboardView = createKeyboardView();
     escapeReminder = new EscapeReminder(this, escapeReminderCallback);
     talkbackOffDialog = new TalkBackOffDialog(this, talkBackOffDialogCallback);
@@ -484,6 +487,7 @@ public class BrailleIme extends InputMethodService {
     getContentResolver().unregisterContentObserver(accessibilityServiceStatusChangeObserver);
     keyboardView.tearDown();
     keyboardView = null;
+    emojiSearch.stop(/* announce= */ false);
     brailleImeAnalytics.sendAllLogs();
   }
 
@@ -739,6 +743,7 @@ public class BrailleIme extends InputMethodService {
       telephonyManager.listen(phoneStateListener, PhoneStateListener.LISTEN_NONE);
     }
     escapeReminder.cancelTimer();
+    emojiSearch.stop(/* announce= */ false);
     layoutOrientator.stop();
     BrailleImeVibrator.getInstance(this).disable();
     if (editBuffer != null && isConnectionValid()) {
@@ -1286,6 +1291,13 @@ public class BrailleIme extends InputMethodService {
         }
 
         @Override
+        public void startEmojiSearch() {
+          if (!brailleDisplayConnectedAndNotSuspended) {
+            emojiSearch.start();
+          }
+        }
+
+        @Override
         public void hideBrailleKeyboard() {
           hideSelf();
           escapeReminder.increaseExitKeyboardCounter();
@@ -1324,6 +1336,50 @@ public class BrailleIme extends InputMethodService {
           return editBuffer;
         }
       };
+
+  /** Commits the text being typed, then inserts {@code emoji} at the cursor. */
+  private boolean insertEmoji(String emoji) {
+    if (!isConnectionValid()) {
+      return false;
+    }
+    ImeConnection imeConnection = getImeConnection();
+    if (editBuffer != null) {
+      editBuffer.commit(imeConnection);
+    }
+    return imeConnection.inputConnection.commitText(emoji, 1);
+  }
+
+  /**
+   * Performs a swipe in emoji search: one finger up or down for the previous or next emoji, right
+   * for a space between words and left to delete, two fingers right to insert the emoji. Any other
+   * swipe closes emoji search.
+   */
+  private void performEmojiSearchSwipe(Swipe swipe) {
+    BrailleImeVibrator vibrator = BrailleImeVibrator.getInstance(this);
+    int touchCount = swipe.getTouchCount();
+    Swipe.Direction direction = swipe.getDirection();
+    if (touchCount == 1 && (direction == Swipe.Direction.UP || direction == Swipe.Direction.DOWN)) {
+      vibrator.vibrate(VibrationType.SPACE_DELETE_OR_MOVE_CURSOR_OR_GRANULARITY);
+      emojiSearch.move(/* forward= */ direction == Swipe.Direction.DOWN);
+    } else if (touchCount == 1 && direction == Swipe.Direction.RIGHT) {
+      vibrator.vibrate(VibrationType.SPACE_DELETE_OR_MOVE_CURSOR_OR_GRANULARITY);
+      BrailleImeTypingSounds.play(this, BrailleImeTypingSounds.Key.SPACE);
+      emojiSearch.addSpace();
+    } else if (touchCount == 1 && direction == Swipe.Direction.LEFT) {
+      if (emojiSearch.deleteCell()) {
+        vibrator.vibrate(VibrationType.SPACE_DELETE_OR_MOVE_CURSOR_OR_GRANULARITY);
+        BrailleImeTypingSounds.play(this, BrailleImeTypingSounds.Key.DELETE);
+      } else {
+        vibrator.vibrate(VibrationType.NOTHING_TO_DELETE);
+      }
+    } else if (touchCount == 2 && direction == Swipe.Direction.RIGHT) {
+      vibrator.vibrate(VibrationType.NEWLINE_OR_DELETE_WORD);
+      emojiSearch.insert();
+    } else {
+      vibrator.vibrate(VibrationType.OTHER_GESTURES);
+      emojiSearch.stop(/* announce= */ true);
+    }
+  }
 
   /** Says screen-away mode, and where the charging port is when that is known. */
   private String getScreenAwayAnnouncement() {
@@ -1648,6 +1704,11 @@ public class BrailleIme extends InputMethodService {
         @Override
         public boolean onSwipeProduced(Swipe swipe) {
           RecentUserInput.mark();
+          if (emojiSearch.isActive()) {
+            performEmojiSearchSwipe(swipe);
+            escapeReminder.restartTimer();
+            return true;
+          }
           if (brailleImeGestureController.performSwipeAction(swipe)) {
             showOnBrailleDisplay();
             if (!brailleDisplayConnectedAndNotSuspended) {
@@ -1661,6 +1722,11 @@ public class BrailleIme extends InputMethodService {
         @Override
         public boolean onDotHoldAndDotSwipe(DotHoldSwipe dotHoldSwipe) {
           RecentUserInput.mark();
+          if (emojiSearch.isActive()) {
+            BrailleImeVibrator.getInstance(BrailleIme.this).vibrate(VibrationType.OTHER_GESTURES);
+            emojiSearch.stop(/* announce= */ true);
+            return true;
+          }
           if (brailleImeGestureController.performDotHoldAndSwipeAction(dotHoldSwipe)) {
             showOnBrailleDisplay();
             return true;
@@ -1691,6 +1757,14 @@ public class BrailleIme extends InputMethodService {
         @Override
         public String onBrailleProduced(BrailleCharacter brailleChar) {
           RecentUserInput.mark();
+          if (emojiSearch.isActive()) {
+            BrailleImeVibrator.getInstance(BrailleIme.this)
+                .vibrate(VibrationType.BRAILLE_COMMISSION);
+            BrailleImeTypingSounds.play(BrailleIme.this, BrailleImeTypingSounds.Key.CHARACTER);
+            emojiSearch.addCell(brailleChar);
+            escapeReminder.restartTimer();
+            return null;
+          }
           String result = brailleImeGestureController.performTyping(brailleChar);
           if (!TextUtils.isEmpty(result)) {
             escapeReminder.restartTimer();

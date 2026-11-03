@@ -106,7 +106,8 @@ public class BrailleImeGestureController {
           HELP_AND_OTHER_ACTIONS,
           SUBMIT_TEXT,
           TOGGLE_ORIENTATION_LOCK,
-          NEXT_BRAILLE_TABLE ->
+          NEXT_BRAILLE_TABLE,
+          EMOJI_SEARCH ->
           BrailleImeVibrator.getInstance(context).vibrate(VibrationType.OTHER_GESTURES);
       case NEXT_GRANULARITY,
           PREVIOUS_GRANULARITY,

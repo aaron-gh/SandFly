@@ -308,6 +308,8 @@
   <string name="bk_gesture_toggle_orientation_lock">Lock or unlock orientation</string>
   <!-- Braille keyboard gesture that switches to the next of the user's braille languages, with the contracted or uncontracted braille last used with it. [CHAR_LIMIT=50] -->
   <string name="bk_gesture_next_braille_table">Switch to next braille table</string>
+  <!-- Braille keyboard gesture that starts emoji search, in which the user types words of an emoji's name, moves through the emoji found and inserts one. [CHAR_LIMIT=50] -->
+  <string name="bk_gesture_emoji_search">Search emoji</string>
   <!-- Spell check -->
   <!-- Spell check gesture of previous misspelled word. [CHAR_LIMIT=NONE] -->
   <string name="bk_gesture_previous_misspelled_word">Move to previous typo</string>
