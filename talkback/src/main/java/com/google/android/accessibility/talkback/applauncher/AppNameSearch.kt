@@ -35,7 +35,7 @@ import java.util.concurrent.TimeUnit
 
 /**
  * Finds the apps on the home screen whose name starts with letters typed or written, says them,
- * and opens one. The surfaces that take the letters, such as handwriting and braille, use it.
+ * and opens the one chosen. The surfaces that take the letters, such as handwriting and braille, use it.
  */
 class AppNameSearch(
   private val service: AccessibilityService,
@@ -113,8 +113,9 @@ class AppNameSearch(
 
   /**
    * Takes the first of [candidates], whole letters from the start, that some app's name starts
-   * with. When only one app's does, opens it; otherwise says the first app, after [echo] when there
-   * is one. Returns false, and says so, when no app's name starts with any of them.
+   * with, and says the first app, after [echo] when there is one. Opening is left to the user, even
+   * when only one app matches. Returns false, and says "No apps", when no app's name starts with any
+   * of them.
    */
   fun find(candidates: List<String>, echo: String? = null): Boolean {
     for (candidate in candidates) {
@@ -123,15 +124,11 @@ class AppNameSearch(
       letters = candidate
       matches = found
       index = 0
-      if (found.size == 1) {
-        open()
-      } else {
-        if (echo != null) speak(echo)
-        sayApp(queue = echo != null)
-      }
+      if (echo != null) speak(echo)
+      sayApp(queue = echo != null)
       return true
     }
-    speak(service.getString(R.string.handwriting_no_app, candidates.firstOrNull().orEmpty().uppercase()))
+    speak(service.getString(R.string.app_search_no_apps))
     return false
   }
 
@@ -158,7 +155,7 @@ class AppNameSearch(
       when {
         app != null -> service.getString(R.string.handwriting_alternative, app.label, index + 1, matches.size)
         normalize(letters).isEmpty() -> service.getString(promptRes)
-        else -> service.getString(R.string.handwriting_no_app, letters.uppercase())
+        else -> service.getString(R.string.app_search_no_apps)
       }
     speak(text, queue)
   }

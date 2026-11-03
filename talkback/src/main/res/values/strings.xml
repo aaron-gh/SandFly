@@ -1945,8 +1945,8 @@
     <string name="shortcut_write_app_name">Write an app\'s name to open it</string>
     <!-- Spoken when the screen is ready for handwriting that opens an app. [CHAR LIMIT=NONE] -->
     <string name="handwriting_app_prompt">Write an app\'s name</string>
-    <!-- Spoken when no app's name starts with the letters written. [CHAR LIMIT=NONE] -->
-    <string name="handwriting_no_app">No app starts with <xliff:g id="letters" example="WHA">%1$s</xliff:g></string>
+    <!-- Spoken when no app's name starts with the letters written or typed to open an app. [CHAR LIMIT=NONE] -->
+    <string name="app_search_no_apps">No apps</string>
     <!-- Spoken when the app chosen by handwriting couldn't be opened, such as when it was just uninstalled. [CHAR LIMIT=NONE] -->
     <string name="handwriting_app_not_opened"><xliff:g id="app" example="WhatsApp">%1$s</xliff:g> could not be opened</string>
     <!-- Gesture action: the user types the start of an app's name in braille on the screen, as on the braille keyboard, and the app opens. [CHAR LIMIT=NONE] -->
