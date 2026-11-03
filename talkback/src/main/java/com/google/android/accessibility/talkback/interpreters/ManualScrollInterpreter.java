@@ -99,7 +99,7 @@ public class ManualScrollInterpreter implements ScrollEventHandler {
     }
 
     NodePathDescription lastFocusNodePathDescription =
-        actorState.getFocusHistory().getLastFocusNodePathDescription();
+        actorState.getFocusHistory().getLastFocusAncestorIdentityPath();
     if (lastFocusNodePathDescription == null) {
       return;
     }

@@ -110,21 +110,61 @@ public class NodeDescription {
     this.nextSiblingText = original.nextSiblingText;
   }
 
-  public NodeDescription(@NonNull AccessibilityNodeInfoCompat node, boolean isPathEnd) {
-    this.savedNode = AccessibilityNode.takeOwnership(node);
-    this.nodeInfoHashCode = node.hashCode();
-    this.text = getText(this.savedNode, isPathEnd);
-    this.className = node.getClassName();
-    this.viewIdResourceName = node.getViewIdResourceName();
+  /**
+   * Describes {@code node}, with its position among the children of {@code parent}, which is the
+   * parent of {@code node} or null.
+   */
+  NodeDescription(
+      @NonNull AccessibilityNodeInfoCompat node,
+      boolean isPathEnd,
+      @Nullable AccessibilityNode parent) {
+    this(withoutSiblingContext(node, isPathEnd), parent, isPathEnd);
+  }
 
+  /**
+   * Describes {@code node} without its position among its siblings and their text, which take a
+   * request to the app for each sibling read. {@link #withSiblingContext} adds them.
+   */
+  static NodeDescription withoutSiblingContext(
+      @NonNull AccessibilityNodeInfoCompat node, boolean isPathEnd) {
+    @NonNull AccessibilityNode savedNode = AccessibilityNode.takeOwnership(node);
     // Get position data from collection-data.
     CollectionItemInfoCompat itemInfo = node.getCollectionItemInfo();
-    this.rowIndex = itemInfo == null ? UNDEFINED_INDEX : itemInfo.getRowIndex();
-    this.columnIndex = itemInfo == null ? UNDEFINED_INDEX : itemInfo.getColumnIndex();
+    return new NodeDescription(
+        savedNode,
+        node.hashCode(),
+        getText(savedNode, isPathEnd),
+        node.getClassName(),
+        node.getViewIdResourceName(),
+        itemInfo == null ? UNDEFINED_INDEX : itemInfo.getRowIndex(),
+        itemInfo == null ? UNDEFINED_INDEX : itemInfo.getColumnIndex(),
+        UNDEFINED_INDEX,
+        /* previousSiblingText= */ null,
+        /* nextSiblingText= */ null);
+  }
+
+  /**
+   * Returns this description with the node's position among the children of {@code parent}, and
+   * the text of the siblings beside it. {@code parent} is the node's parent, as it was when this
+   * description was made, or null.
+   */
+  NodeDescription withSiblingContext(@Nullable AccessibilityNode parent, boolean isPathEnd) {
+    return new NodeDescription(this, parent, isPathEnd);
+  }
+
+  private NodeDescription(
+      @NonNull NodeDescription original, @Nullable AccessibilityNode parent, boolean isPathEnd) {
+    this.savedNode = original.savedNode;
+    this.nodeInfoHashCode = original.nodeInfoHashCode;
+    this.text = original.text;
+    this.className = original.className;
+    this.viewIdResourceName = original.viewIdResourceName;
+    this.rowIndex = original.rowIndex;
+    this.columnIndex = original.columnIndex;
 
     // Get data from node's position within parent-node.
-    @Nullable AccessibilityNode parent = this.savedNode.getParent();
-    this.rawIndexInParent = getRawIndexInParent(this.savedNode, parent);
+    this.rawIndexInParent =
+        (savedNode == null) ? UNDEFINED_INDEX : getRawIndexInParent(savedNode, parent);
     if (rawIndexInParent == UNDEFINED_INDEX) {
       this.previousSiblingText = null;
       this.nextSiblingText = null;
@@ -132,6 +172,29 @@ public class NodeDescription {
       this.previousSiblingText = getChildText(parent, rawIndexInParent - 1, isPathEnd);
       this.nextSiblingText = getChildText(parent, rawIndexInParent + 1, isPathEnd);
     }
+  }
+
+  private NodeDescription(
+      @Nullable AccessibilityNode savedNode,
+      int nodeInfoHashCode,
+      @Nullable CharSequence text,
+      CharSequence className,
+      String viewIdResourceName,
+      int rowIndex,
+      int columnIndex,
+      int rawIndexInParent,
+      @Nullable CharSequence previousSiblingText,
+      @Nullable CharSequence nextSiblingText) {
+    this.savedNode = savedNode;
+    this.nodeInfoHashCode = nodeInfoHashCode;
+    this.text = text;
+    this.className = className;
+    this.viewIdResourceName = viewIdResourceName;
+    this.rowIndex = rowIndex;
+    this.columnIndex = columnIndex;
+    this.rawIndexInParent = rawIndexInParent;
+    this.previousSiblingText = previousSiblingText;
+    this.nextSiblingText = nextSiblingText;
   }
 
   ////////////////////////////////////////////////////////////////////////////////////////////////

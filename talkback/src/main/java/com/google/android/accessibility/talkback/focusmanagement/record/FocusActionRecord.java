@@ -22,6 +22,7 @@ import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.Filter;
 import com.google.android.accessibility.utils.FocusFinder;
+import com.google.android.accessibility.utils.WebInterfaceUtils;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import java.util.Objects;
 import org.checkerframework.checker.nullness.qual.NonNull;
@@ -41,8 +42,13 @@ public class FocusActionRecord {
   private final long actionTime;
   /** Node being accessibility focused. */
   private final @NonNull AccessibilityNodeInfoCompat focusedNode;
-  /** Describes how to find focused node from root node. */
+  /**
+   * Describes how to find focused node from root node. In web content, it leaves out the positions
+   * among siblings, which {@link #siblingContext} adds when they are needed.
+   */
   private final @NonNull NodePathDescription nodePathDescription;
+  /** For a node in web content, the node path with positions among siblings. Shared by copies. */
+  private final @Nullable PathWithSiblingContext siblingContext;
   /** Extra information about source focus action. */
   private final @NonNull FocusActionInfo extraInfo;
   /** Unique id for the node */
@@ -72,7 +78,15 @@ public class FocusActionRecord {
       @NonNull FocusActionInfo extraInfo,
       long actionTime) {
     this.focusedNode = focusedNode;
-    nodePathDescription = NodePathDescription.obtain(focusedNode);
+    if (WebInterfaceUtils.supportsWebActions(focusedNode)) {
+      // Web content is where the path is deepest, and where swipes are answered by the page itself,
+      // without a reading order that would make the app's nodes ready for the path.
+      nodePathDescription = NodePathDescription.obtainWithoutSiblingContext(focusedNode);
+      siblingContext = new PathWithSiblingContext(nodePathDescription);
+    } else {
+      nodePathDescription = NodePathDescription.obtain(focusedNode);
+      siblingContext = null;
+    }
     this.extraInfo = extraInfo;
     this.actionTime = actionTime;
     this.uniqueId = compoundPackageNameAndUniqueId(focusedNode);
@@ -82,11 +96,13 @@ public class FocusActionRecord {
   private FocusActionRecord(
       @NonNull AccessibilityNodeInfoCompat focusedNode,
       @NonNull NodePathDescription nodePathDescription,
+      @Nullable PathWithSiblingContext siblingContext,
       @NonNull FocusActionInfo extraInfo,
       long actionTime,
       String uniqueId) {
     this.focusedNode = focusedNode;
     this.nodePathDescription = new NodePathDescription(nodePathDescription);
+    this.siblingContext = siblingContext;
     this.extraInfo = extraInfo;
     this.actionTime = actionTime;
     this.uniqueId = uniqueId;
@@ -97,8 +113,20 @@ public class FocusActionRecord {
     return focusedNode;
   }
 
-  /** Returns reference to node-path. */
+  /**
+   * Returns reference to node-path. In web content, the first call asks the app for the siblings of
+   * the nodes in the path.
+   */
   public @NonNull NodePathDescription getNodePathDescription() {
+    return (siblingContext == null) ? nodePathDescription : siblingContext.get();
+  }
+
+  /**
+   * Returns the focused node and its ancestors, which is enough to find whether a node is one of
+   * them with {@link NodePathDescription#containsNodeByHashAndIdentity}. Does not ask the app for
+   * anything.
+   */
+  public @NonNull NodePathDescription getAncestorIdentityPath() {
     return nodePathDescription;
   }
 
@@ -128,6 +156,7 @@ public class FocusActionRecord {
     return new FocusActionRecord(
         record.focusedNode,
         record.nodePathDescription,
+        record.siblingContext,
         record.extraInfo,
         record.actionTime,
         record.uniqueId);
@@ -207,6 +236,32 @@ public class FocusActionRecord {
     return null;
   }
 
+  /**
+   * A node path completed with positions among siblings the first time it is needed. If reading
+   * them fails, the path without them is kept, and is not read again.
+   */
+  private static final class PathWithSiblingContext {
+    private final @NonNull NodePathDescription withoutSiblingContext;
+    private @Nullable NodePathDescription completed;
+
+    PathWithSiblingContext(@NonNull NodePathDescription withoutSiblingContext) {
+      this.withoutSiblingContext = withoutSiblingContext;
+    }
+
+    synchronized @NonNull NodePathDescription get() {
+      if (completed == null) {
+        try {
+          completed = withoutSiblingContext.withSiblingContext();
+        } catch (RuntimeException e) {
+          LogUtils.w(TAG, "Cannot read the siblings of the focus path: %s", e);
+          completed = withoutSiblingContext;
+        }
+      }
+      return completed;
+    }
+  }
+
+  // Compare and hash the path as it was read when focus moved, which asks the app for nothing.
   @Override
   public int hashCode() {
     return Objects.hash(actionTime, focusedNode, nodePathDescription, extraInfo);
@@ -225,7 +280,7 @@ public class FocusActionRecord {
         && (nodePathDescription.equals(otherRecord.nodePathDescription))
         && (extraInfo.equals(otherRecord.extraInfo))
         && (actionTime == otherRecord.actionTime)
-        && Objects.equals(uniqueId, ((FocusActionRecord) other).uniqueId);
+        && Objects.equals(uniqueId, otherRecord.uniqueId);
   }
 
   public boolean focusedNodeEquals(AccessibilityNodeInfoCompat targetNode) {

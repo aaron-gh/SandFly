@@ -74,18 +74,57 @@ public final class NodePathDescription {
 
   public static @NonNull NodePathDescription obtain(AccessibilityNodeInfoCompat node) {
     final NodePathDescription nodePath = new NodePathDescription();
+    // Each node's position is found among the children of the parent read for the path, rather
+    // than reading the parent again.
+    HashSet<AccessibilityNodeInfoCompat> visited = new HashSet<>();
+    AccessibilityNodeInfoCompat current = node;
+    while (current != null && visited.add(current)) {
+      AccessibilityNodeInfoCompat parent = current.getParent();
+      boolean isPathEnd = nodePath.nodeDescriptions.isEmpty();
+      nodePath.nodeDescriptions.add(
+          new NodeDescription(current, isPathEnd, AccessibilityNode.takeOwnership(parent)));
+      current = parent;
+    }
+    return nodePath;
+  }
 
-    AccessibilityNodeInfoUtils.getSelfOrMatchingAncestor(
-        node,
-        new Filter<AccessibilityNodeInfoCompat>() {
-          @Override
-          public boolean accept(AccessibilityNodeInfoCompat node) {
-            boolean isPathEnd = (nodePath.nodeDescriptions.isEmpty());
-            nodePath.nodeDescriptions.add(new NodeDescription(node, isPathEnd));
-            // Always return false to iterate until the root node.
-            return false;
-          }
-        });
+  /**
+   * Describes the path from {@code node} up to the root, like {@link #obtain}, but without each
+   * node's position among its siblings and their text. Reading those asks the app for every sibling
+   * of every node in the path, which in a page nested in several web views takes long enough to
+   * hold up the next swipe. {@link #withSiblingContext} adds them when they are needed.
+   */
+  static @NonNull NodePathDescription obtainWithoutSiblingContext(
+      AccessibilityNodeInfoCompat node) {
+    final NodePathDescription nodePath = new NodePathDescription();
+    HashSet<AccessibilityNodeInfoCompat> visited = new HashSet<>();
+    AccessibilityNodeInfoCompat current = node;
+    while (current != null && visited.add(current)) {
+      nodePath.nodeDescriptions.add(
+          NodeDescription.withoutSiblingContext(current, nodePath.nodeDescriptions.isEmpty()));
+      // On Android 13 and later, one request reads all the ancestors, and nothing else: an ordinary
+      // request also reads siblings and descendants, and can be cut short by the next request.
+      current =
+          current.getParent(
+              AccessibilityNodeInfoCompat.FLAG_PREFETCH_ANCESTORS
+                  | AccessibilityNodeInfoCompat.FLAG_PREFETCH_UNINTERRUPTIBLE);
+    }
+    return nodePath;
+  }
+
+  /**
+   * Returns this path with each node's position among its siblings, found among the children that
+   * its parent in the path had when the path was made.
+   */
+  @NonNull NodePathDescription withSiblingContext() {
+    final NodePathDescription nodePath = new NodePathDescription();
+    int size = nodeDescriptions.size();
+    for (int i = 0; i < size; i++) {
+      @Nullable AccessibilityNode parent =
+          (i + 1 < size) ? nodeDescriptions.get(i + 1).savedNode : null;
+      nodePath.nodeDescriptions.add(
+          nodeDescriptions.get(i).withSiblingContext(parent, /* isPathEnd= */ i == 0));
+    }
     return nodePath;
   }
 

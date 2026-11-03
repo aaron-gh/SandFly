@@ -94,8 +94,8 @@ public final class AccessibilityFocusActionHistory {
       return AccessibilityFocusActionHistory.this.getLastFocusActionRecord();
     }
 
-    public @Nullable NodePathDescription getLastFocusNodePathDescription() {
-      return AccessibilityFocusActionHistory.this.getLastFocusNodePathDescription();
+    public @Nullable NodePathDescription getLastFocusAncestorIdentityPath() {
+      return AccessibilityFocusActionHistory.this.getLastFocusAncestorIdentityPath();
     }
 
     public boolean lastAccessibilityFocusedNodeEquals(AccessibilityNodeInfoCompat targetNode) {
@@ -269,9 +269,13 @@ public final class AccessibilityFocusActionHistory {
     return focusActionRecordList.peekLast();
   }
 
-  @Nullable NodePathDescription getLastFocusNodePathDescription() {
+  /**
+   * Returns the last focused node and its ancestors. See {@link
+   * FocusActionRecord#getAncestorIdentityPath}.
+   */
+  @Nullable NodePathDescription getLastFocusAncestorIdentityPath() {
     @Nullable FocusActionRecord record = getLastFocusActionRecord();
-    return (record == null) ? null : record.getNodePathDescription();
+    return (record == null) ? null : record.getAncestorIdentityPath();
   }
 
   /** Returns the last focus action on editable node. */
