@@ -3536,6 +3536,13 @@ public class TalkBackService extends AccessibilityServiceCompat
     }
   }
 
+  /** Types the key explored on Gboard when a second finger touches the screen: split tap. */
+  public void onKeyboardSplitTap() {
+    if (accessibilityFocusInterpreter != null) {
+      accessibilityFocusInterpreter.performSplitTap(EVENT_ID_UNTRACKED);
+    }
+  }
+
   /** Ends a touch on Gboard explored without touch exploration when its finger lifts. */
   public void onKeyboardTouchEnded() {
     if (touchExplorationInterpreter != null) {
