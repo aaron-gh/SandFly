@@ -23,7 +23,7 @@ import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
  * The quote of the message a Telegram message replies to. Telegram and its forks expose it as a
  * child of the message, "Reply, name, text", with no class name, which a swipe lands on after the
  * message, or not when the quote is scrolled off the screen. It is read at the end of the message
- * instead, and isn't focused on its own.
+ * instead, and isn't focused on its own; the Go to quoted message action clicks it.
  */
 object TelegramReplyQuote {
   /** The sender and text of a quote. */
@@ -64,6 +64,17 @@ object TelegramReplyQuote {
     for (i in 0 until minOf(message.childCount, MAX_CHILDREN)) {
       val child = message.getChild(i) ?: continue
       if (looksLikeQuote(child)) return parse(child.contentDescription)?.let { whole(message, it) }
+    }
+    return null
+  }
+
+  /** The reply quote among [message]'s children, which a click takes to the quoted message. */
+  @JvmStatic
+  fun quoteNodeOf(message: AccessibilityNodeInfoCompat): AccessibilityNodeInfoCompat? {
+    if (!isTelegram(message.packageName) || !isMessage(message)) return null
+    for (i in 0 until minOf(message.childCount, MAX_CHILDREN)) {
+      val child = message.getChild(i) ?: continue
+      if (looksLikeQuote(child)) return child
     }
     return null
   }
