@@ -114,6 +114,47 @@ class ProcessorEventQueueWebFocusTest {
     )
   }
 
+  /** A content change from a node in a live region, which Chrome marks only at its root. */
+  private fun liveRegionChange(label: String, liveRegion: Int): AccessibilityEvent {
+    val root =
+      AccessibilityNodeInfo.obtain(View(RuntimeEnvironment.getApplication())).apply {
+        this.liveRegion = liveRegion
+      }
+    val changed = AccessibilityNodeInfo.obtain(View(RuntimeEnvironment.getApplication()))
+    shadowOf(root).addChild(changed)
+    return event(TYPE_WINDOW_CONTENT_CHANGED, label).also { shadowOf(it).setSourceNode(changed) }
+  }
+
+  @Test
+  fun assertiveLiveRegionChangesQueuedBeforeWebFocusAreHandledFirst() {
+    send(event(TYPE_WINDOW_CONTENT_CHANGED, "content-1"))
+    send(liveRegionChange("alert", View.ACCESSIBILITY_LIVE_REGION_ASSERTIVE))
+    send(event(TYPE_ANNOUNCEMENT, "announcement"))
+    send(liveRegionChange("status", View.ACCESSIBILITY_LIVE_REGION_POLITE))
+    send(event(TYPE_WINDOW_CONTENT_CHANGED, "content-2"))
+
+    send(focus("field", web = true))
+
+    assertEquals(listOf("alert", "announcement", "field"), handled)
+    runQueue()
+    assertEquals(
+      listOf("alert", "announcement", "field", "content-1", "status", "content-2"),
+      handled,
+    )
+  }
+
+  @Test
+  fun onlyTheLatestContentChangesAreCheckedForLiveRegions() {
+    send(liveRegionChange("old alert", View.ACCESSIBILITY_LIVE_REGION_ASSERTIVE))
+    repeat(ProcessorEventQueue.MAX_CONTENT_CHANGES_CHECKED) {
+      send(event(TYPE_WINDOW_CONTENT_CHANGED, "content-$it"))
+    }
+
+    send(focus("field", web = true))
+
+    assertEquals(listOf("field"), handled)
+  }
+
   @Test
   fun eventsLeftQueuedAreHandledInTimeSlices() {
     // Each event takes 10 ms, so a time slice of 16 ms handles two of them.

@@ -18,8 +18,10 @@ package com.google.android.accessibility.talkback.eventprocessor;
 
 import android.os.Message;
 import android.os.SystemClock;
+import android.view.View;
 import android.view.accessibility.AccessibilityEvent;
 import androidx.annotation.VisibleForTesting;
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.talkback.compositor.Compositor;
 import com.google.android.accessibility.talkback.compositor.EventFilter;
 import com.google.android.accessibility.utils.AccessibilityEventListener;
@@ -30,7 +32,10 @@ import com.google.android.accessibility.utils.WeakReferenceHandler;
 import com.google.android.accessibility.utils.WebInterfaceUtils;
 import com.google.android.accessibility.utils.input.TextEventInterpreter;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
+import java.util.Collections;
+import java.util.IdentityHashMap;
 import java.util.List;
+import java.util.Set;
 import java.util.function.BiConsumer;
 
 /**
@@ -57,6 +62,15 @@ public class ProcessorEventQueue implements AccessibilityEventListener {
           | AccessibilityEvent.TYPE_ANNOUNCEMENT
           | AccessibilityEvent.TYPE_NOTIFICATION_STATE_CHANGED
           | AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED;
+
+  /**
+   * The most queued content changes checked for a live region change before a web focus event, the
+   * latest first. Each check reads the change's source, which handling the change reads anyway.
+   */
+  @VisibleForTesting static final int MAX_CONTENT_CHANGES_CHECKED = 8;
+
+  /** The most ancestors of a content change's source checked for a live region. */
+  private static final int MAX_LIVE_REGION_DEPTH = 8;
 
   /**
    * We keep the accessibility events to be processed. If a received event is the same type as the
@@ -116,18 +130,31 @@ public class ProcessorEventQueue implements AccessibilityEventListener {
    * page changes, it sends many content change events, each of which waits for the app when it is
    * handled. Queued behind them, focus was spoken late, and in a fast run of swipes the queue's
    * limit of two focus events dropped most of them. The queued events of {@link
-   * #MASK_SPOKEN_BEFORE_WEB_FOCUS} are handled first, so that the speech of an earlier window
-   * change or announcement does not come after the focus and cut it off. The other events stay
-   * queued, in their order, and are handled in time slices after the focus.
+   * #MASK_SPOKEN_BEFORE_WEB_FOCUS}, and changes to assertive live regions, are handled first, so
+   * that the speech of an earlier window change, announcement or alert does not come after the
+   * focus and cut it off. The other events stay queued, in their order, and are handled in time
+   * slices after the focus.
    */
   private void processWebFocus(AccessibilityEvent event, EventId eventId) {
+    List<AccessibilityEvent> latestContentChanges;
+    synchronized (eventQueue) {
+      latestContentChanges =
+          eventQueue.latestOfType(
+              AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED, MAX_CONTENT_CHANGES_CHECKED);
+    }
+    Set<AccessibilityEvent> assertiveChanges = Collections.newSetFromMap(new IdentityHashMap<>());
+    for (AccessibilityEvent contentChange : latestContentChanges) {
+      if (isAssertiveLiveRegionChange(contentChange)) {
+        assertiveChanges.add(contentChange);
+      }
+    }
     List<AccessibilityEvent> earlier;
     synchronized (eventQueue) {
       earlier =
           eventQueue.removeMatching(
               queued ->
-                  AccessibilityEventUtils.eventMatchesAnyType(
-                      queued, MASK_SPOKEN_BEFORE_WEB_FOCUS));
+                  AccessibilityEventUtils.eventMatchesAnyType(queued, MASK_SPOKEN_BEFORE_WEB_FOCUS)
+                      || assertiveChanges.contains(queued));
     }
     for (AccessibilityEvent earlierEvent : earlier) {
       processEvent(earlierEvent, Performance.getInstance().toEventId(earlierEvent));
@@ -135,6 +162,23 @@ public class ProcessorEventQueue implements AccessibilityEventListener {
     // A copy, as a queued event is: on Android 12 and older the framework recycles the event after
     // dispatch, and the feedback for it can outlast that.
     processEvent(AccessibilityEvent.obtain(event), eventId);
+  }
+
+  /**
+   * Whether {@code event} changes an assertive live region, whose speech interrupts other speech.
+   * Chrome marks only the root of a live region, and sends the change from the node in it that
+   * changed, so the nearest live region among the source and its ancestors decides.
+   */
+  private static boolean isAssertiveLiveRegionChange(AccessibilityEvent event) {
+    AccessibilityNodeInfoCompat node = AccessibilityEventUtils.sourceCompat(event);
+    for (int depth = 0; node != null && depth <= MAX_LIVE_REGION_DEPTH; depth++) {
+      int liveRegion = node.getLiveRegion();
+      if (liveRegion != View.ACCESSIBILITY_LIVE_REGION_NONE) {
+        return liveRegion == View.ACCESSIBILITY_LIVE_REGION_ASSERTIVE;
+      }
+      node = node.getParent();
+    }
+    return false;
   }
 
   public void clearQueue() {

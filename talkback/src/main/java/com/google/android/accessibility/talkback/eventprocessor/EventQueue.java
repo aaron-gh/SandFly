@@ -96,6 +96,21 @@ class EventQueue {
     return event;
   }
 
+  /**
+   * Returns the last {@code max} or fewer events of type {@code eventType} in the queue, latest
+   * first, and leaves them queued.
+   */
+  public List<AccessibilityEvent> latestOfType(int eventType, int max) {
+    List<AccessibilityEvent> latest = new ArrayList<>();
+    for (int i = eventQueue.size() - 1; i >= 0 && latest.size() < max; i--) {
+      AccessibilityEvent event = eventQueue.get(i);
+      if (event.getEventType() == eventType) {
+        latest.add(event);
+      }
+    }
+    return latest;
+  }
+
   /** Removes the events that {@code filter} accepts from the queue, and returns them in order. */
   public List<AccessibilityEvent> removeMatching(Predicate<AccessibilityEvent> filter) {
     List<AccessibilityEvent> removed = new ArrayList<>();
