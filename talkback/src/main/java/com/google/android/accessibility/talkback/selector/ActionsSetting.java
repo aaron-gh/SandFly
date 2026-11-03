@@ -24,7 +24,7 @@ import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.talkback.focusmanagement.AccessibilityFocusMonitor;
 import com.google.android.accessibility.talkback.menurules.NodeMenuRuleCreator;
 import com.google.android.accessibility.talkback.menurules.NodeMenuRuleCreator.MenuRules;
-import com.google.android.accessibility.utils.Role;
+import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
 
 /**
@@ -68,8 +68,9 @@ public class ActionsSetting implements SelectorController.ContextualSetting {
   @Override
   public boolean shouldActivateSetting(Context context, AccessibilityNodeInfoCompat node) {
     // For better editing experience, keeps the setting of Reading Controls when navigating to an
-    // edit text.
-    if (Role.getRole(node) == Role.ROLE_EDIT_TEXT) {
+    // edit text, or to selectable text such as text on web pages, whose actions are only editing
+    // options.
+    if (AccessibilityNodeInfoUtils.isTextSelectable(node)) {
       return false;
     }
 
