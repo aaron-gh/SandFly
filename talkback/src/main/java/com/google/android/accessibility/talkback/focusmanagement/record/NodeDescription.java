@@ -118,7 +118,7 @@ public class NodeDescription {
       @NonNull AccessibilityNodeInfoCompat node,
       boolean isPathEnd,
       @Nullable AccessibilityNode parent) {
-    this(withoutSiblingContext(node, isPathEnd), parent, isPathEnd);
+    this(withoutSiblingContext(node, isPathEnd), parent, isPathEnd, Integer.MAX_VALUE);
   }
 
   /**
@@ -149,11 +149,24 @@ public class NodeDescription {
    * description was made, or null.
    */
   NodeDescription withSiblingContext(@Nullable AccessibilityNode parent, boolean isPathEnd) {
-    return new NodeDescription(this, parent, isPathEnd);
+    return new NodeDescription(this, parent, isPathEnd, Integer.MAX_VALUE);
+  }
+
+  /**
+   * Like {@link #withSiblingContext(AccessibilityNode, boolean)}, but reads at most {@code
+   * maxChildrenRead} children of {@code parent} to find the node's position. Further on, the
+   * position and the text of the siblings stay undefined.
+   */
+  NodeDescription withSiblingContext(
+      @Nullable AccessibilityNode parent, boolean isPathEnd, int maxChildrenRead) {
+    return new NodeDescription(this, parent, isPathEnd, maxChildrenRead);
   }
 
   private NodeDescription(
-      @NonNull NodeDescription original, @Nullable AccessibilityNode parent, boolean isPathEnd) {
+      @NonNull NodeDescription original,
+      @Nullable AccessibilityNode parent,
+      boolean isPathEnd,
+      int maxChildrenRead) {
     this.savedNode = original.savedNode;
     this.nodeInfoHashCode = original.nodeInfoHashCode;
     this.text = original.text;
@@ -164,7 +177,9 @@ public class NodeDescription {
 
     // Get data from node's position within parent-node.
     this.rawIndexInParent =
-        (savedNode == null) ? UNDEFINED_INDEX : getRawIndexInParent(savedNode, parent);
+        (savedNode == null)
+            ? UNDEFINED_INDEX
+            : getRawIndexInParent(savedNode, parent, maxChildrenRead);
     if (rawIndexInParent == UNDEFINED_INDEX) {
       this.previousSiblingText = null;
       this.nextSiblingText = null;
@@ -342,6 +357,11 @@ public class NodeDescription {
 
   static int getRawIndexInParent(
       @NonNull AccessibilityNode node, @Nullable AccessibilityNode parent) {
+    return getRawIndexInParent(node, parent, Integer.MAX_VALUE);
+  }
+
+  private static int getRawIndexInParent(
+      @NonNull AccessibilityNode node, @Nullable AccessibilityNode parent, int maxChildrenRead) {
     if (parent == null) {
       return UNDEFINED_INDEX;
     }
@@ -355,7 +375,8 @@ public class NodeDescription {
       }
     }
 
-    for (int i = 0; i < parent.getChildCount(); i++) {
+    int childrenRead = Math.min(parent.getChildCount(), maxChildrenRead);
+    for (int i = 0; i < childrenRead; i++) {
       AccessibilityNode child = parent.getChild(i);
       if (node.equals(child)) {
         return i;

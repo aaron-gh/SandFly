@@ -44,7 +44,7 @@ In a test on a Realme phone, three in four swipes reused the reading order, and 
 
 ### Swiping on web pages
 
-On a web page, the page finds the next item itself. On every swipe, TalkBack still built the reading order of the whole screen before it asked the page, and after focus moved, it read the items beside each item that contains the new focus. In apps with web pages inside other web pages, such as a restaurant menu in Uber Eats, focus and speech stopped during fast swiping. SandFly asks the page first, and builds the reading order only when the swipe leaves the page. It reads the items beside the focus only when it needs them to put focus back after a screen change.
+On a web page, the page finds the next item itself. On every swipe, TalkBack still built the reading order of the whole screen before it asked the page, and after focus moved, it read the items beside each item that contains the new focus. In apps with web pages inside other web pages, such as a restaurant menu in Uber Eats, focus and speech stopped during fast swiping. SandFly asks the page first, and builds the reading order only when the swipe leaves the page. It reads the items beside the new focus when focus moves, and the items beside each item that contains it only when it needs them to put focus back after a screen change.
 
 TalkBack also spoke an item on a web page only after it had handled every change that the page reported before it, and during fast swiping it dropped all but the last two items. SandFly speaks each item as soon as the page moves focus. Window changes and announcements that came before it are still spoken first.
 

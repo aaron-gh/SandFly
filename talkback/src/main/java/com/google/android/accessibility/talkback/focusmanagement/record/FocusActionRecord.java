@@ -43,8 +43,8 @@ public class FocusActionRecord {
   /** Node being accessibility focused. */
   private final @NonNull AccessibilityNodeInfoCompat focusedNode;
   /**
-   * Describes how to find focused node from root node. In web content, it leaves out the positions
-   * among siblings, which {@link #siblingContext} adds when they are needed.
+   * Describes how to find focused node from root node. In web content, it leaves out the ancestors'
+   * positions among their siblings, which {@link #siblingContext} adds when they are needed.
    */
   private final @NonNull NodePathDescription nodePathDescription;
   /** For a node in web content, the node path with positions among siblings. Shared by copies. */
@@ -115,7 +115,7 @@ public class FocusActionRecord {
 
   /**
    * Returns reference to node-path. In web content, the first call asks the app for the siblings of
-   * the nodes in the path.
+   * the focused node's ancestors.
    */
   public @NonNull NodePathDescription getNodePathDescription() {
     return (siblingContext == null) ? nodePathDescription : siblingContext.get();
