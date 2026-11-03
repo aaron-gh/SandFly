@@ -984,6 +984,12 @@ The first time an app asks, SandFly posts a notification that asks whether to al
 
 SandFly groups its main settings under **Feedback**, **Notifications**, **Controls**, **Typing and braille**, **Apps**, and **More**, and puts **SandFly menu** and **Reading controls** in the main settings. Many settings have clearer names, such as **Speak item type** and **Order of item details**. SandFly removes the links to the Play Store, the privacy policy, the terms of service, Disability Support, and Google's TalkBack help, and the pages about new features in TalkBack. **Touch and activation** and **Navigation**, in **Controls**, and **Apps** hold settings that TalkBack keeps in **Advanced settings**. **Display speech output** is only in **Developer settings**. **Time format** is in **Verbosity**, **Turn off animations** is in **Reduce delay**, and **Cover proximity sensor to stop speech** is in **Sound and vibration**, instead of in **Advanced settings**.
 
+### Search
+
+**Search**, at the top of the main settings screen, finds settings and commands on every settings screen. Type one or more words; each result has every word in its title or description, also inside a word, ignoring case and accents. Each result shows its title and the screens and categories that lead to it, such as Speech > Stopping speech. Choosing a setting opens its screen with the setting focused, and its category expanded. Choosing a command opens it in **Commands**. Gestures are found by name and by the command they run. Screens made of lists, such as apps, profiles, rules, scripts, **Individual sounds and vibrations** and **Status readout**, are found by their entries only.
+
+**Search** is also at the top of **Gestures**, which finds a gesture by name or by the command it runs and opens its list of commands, and of **Keyboard shortcuts**, which finds a command or arrow key and opens its shortcut. On phones and tablets, the list of commands for a gesture starts with **Search**, which finds a command by name or category and assigns it.
+
 ### Dark mode
 
 On Android 12 and later, SandFly's settings follow the system dark mode.

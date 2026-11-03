@@ -41,9 +41,11 @@ import com.google.android.accessibility.material.preference.AccessibilitySuitePr
 import com.google.android.accessibility.material.preference.AccessibilitySuiteRadioButtonPreference;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.preference.base.GestureListPreference.ActionItem;
+import com.google.android.accessibility.talkback.preference.search.SettingsSearch;
 import com.google.android.accessibility.utils.PreferenceSettingsUtils;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
@@ -68,21 +70,52 @@ public class GesturePreferenceFragmentCompat extends TalkbackBaseFragment {
       new OnPreferenceClickListener() {
         @Override
         public boolean onPreferenceClick(Preference preference) {
-
-          ActionItem item = (ActionItem) items[preference.getOrder()];
-          boolean checked = TextUtils.equals(item.value, initialValue);
-          if (checked) {
-            // The selected action is clicked again and it is going to be unchecked. We should
-            // return false to ignore it and don't set the value to targetGestureListPreference.
-            popBackStack();
-            return false;
-          }
-
-          GestureListPreference.save(getContext(), preferenceKey, item.value);
-          popBackStack();
-          return true;
+          return choose((ActionItem) items[preference.getOrder()]);
         }
       };
+
+  /**
+   * Assigns the command of {@code item} to the gesture and closes the list. Returns false when it
+   * is already assigned.
+   */
+  private boolean choose(ActionItem item) {
+    boolean checked = TextUtils.equals(item.value, initialValue);
+    if (checked) {
+      // The selected action is clicked again and it is going to be unchecked. We should
+      // return false to ignore it and don't set the value to targetGestureListPreference.
+      popBackStack();
+      return false;
+    }
+
+    GestureListPreference.save(getContext(), preferenceKey, item.value);
+    popBackStack();
+    return true;
+  }
+
+  /** Finds commands by name or category, and assigns the one chosen. */
+  private void searchCommands() {
+    List<ActionItem> actions = new ArrayList<>();
+    List<SettingsSearch.Candidate> candidates = new ArrayList<>();
+    @Nullable String category = null;
+    for (Parcelable parcelable : items) {
+      ActionItem item = (ActionItem) parcelable;
+      if (item.viewType == TYPE_TITLE) {
+        category = item.text;
+      } else if (item.viewType == TYPE_ACTION_ITEM) {
+        actions.add(item);
+        candidates.add(
+            new SettingsSearch.Candidate(item.text, Collections.singletonList(category)));
+      }
+    }
+    SettingsSearch.search(
+        this,
+        () -> candidates,
+        index -> {
+          if (isAdded()) {
+            choose(actions.get(index));
+          }
+        });
+  }
 
   private int selectedPosition;
 
@@ -158,6 +191,7 @@ public class GesturePreferenceFragmentCompat extends TalkbackBaseFragment {
   private PreferenceScreen createPreferenceScreen() {
     PreferenceScreen preferenceScreen = getPreferenceManager().createPreferenceScreen(getContext());
     Context context = getContext();
+    SettingsSearch.addSearchItem(preferenceScreen, this::searchCommands);
 
     AccessibilitySuitePreferenceCategory category = null;
     @Nullable AccessibilitySuitePreferenceCategory selectedCategory = null;

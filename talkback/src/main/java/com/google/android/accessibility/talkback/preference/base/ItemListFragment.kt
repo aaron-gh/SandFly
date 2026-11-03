@@ -35,6 +35,7 @@ import androidx.preference.TwoStatePreference
 import com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.preference.ItemOrder
+import com.google.android.accessibility.talkback.preference.search.SettingsSearch
 import com.google.android.accessibility.utils.FormFactorUtils
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 
@@ -47,7 +48,8 @@ import com.google.android.accessibility.utils.SharedPreferencesUtils
  * Each item is a switch setting in [xmlResId]: the switch says whether the item is in the list, and
  * [orderKey] keeps the order. Other settings of the screen are listed under Options.
  */
-abstract class ItemListFragment(xmlResId: Int) : TalkbackBaseFragment(xmlResId) {
+abstract class ItemListFragment(xmlResId: Int) :
+  TalkbackBaseFragment(xmlResId), SettingsSearch.FoundKey {
 
   /** The setting that keeps the order of the items. */
   protected abstract val orderKey: String
@@ -314,6 +316,15 @@ abstract class ItemListFragment(xmlResId: Int) : TalkbackBaseFragment(xmlResId) 
 
   private fun rowKey(key: String) = "${orderKey}_row_$key"
 
+  private fun availableKey(key: String) = "${orderKey}_available_$key"
+
+  override fun foundKey(key: String): String =
+    when (key) {
+      in current -> rowKey(key)
+      in items -> availableKey(key)
+      else -> key
+    }
+
   /** An item in the list. */
   private inner class CurrentRow(context: Context, private val itemKey: String, index: Int) :
     Preference(context) {
@@ -350,7 +361,7 @@ abstract class ItemListFragment(xmlResId: Int) : TalkbackBaseFragment(xmlResId) 
   /** An item not in the list. */
   private inner class AvailableRow(context: Context, private val item: Item) : Preference(context) {
     init {
-      key = "${orderKey}_available_${item.key}"
+      key = availableKey(item.key)
       isPersistent = false
       isIconSpaceReserved = false
       order = item.groupOrder

@@ -51,6 +51,7 @@ import com.google.android.accessibility.talkback.keyboard.SandFlyKey;
 import com.google.android.accessibility.talkback.keyboard.TalkBackPhysicalKeyboardShortcut;
 import com.google.android.accessibility.talkback.preference.PreferencesActivityUtils;
 import com.google.android.accessibility.talkback.preference.TalkBackPreferenceFilter;
+import com.google.android.accessibility.talkback.preference.search.SettingsSearch;
 import com.google.android.accessibility.utils.PreferenceSettingsUtils;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import com.google.android.accessibility.utils.material.A11yAlertDialogWrapper;
@@ -285,6 +286,22 @@ public class TalkBackKeyboardShortcutPreferenceFragment extends TalkbackBaseFrag
     addArrowKeys();
     addCommandCategories();
     updateDialogAndResetKeymapPreference();
+    // Finds a command or arrow key by its name or keys, and opens its keyboard shortcut.
+    SettingsSearch.addSearchItem(
+        getPreferenceScreen(),
+        () ->
+            SettingsSearch.searchRows(
+                this,
+                preference ->
+                    preference instanceof KeyboardShortcutDialogPreference
+                        || preference instanceof GestureListPreference,
+                preference -> {
+                  if (preference instanceof KeyboardShortcutDialogPreference shortcut) {
+                    shortcut.showSetUpKeyComboDialog();
+                  } else {
+                    onDisplayPreferenceDialog(preference);
+                  }
+                }));
   }
 
   /**
