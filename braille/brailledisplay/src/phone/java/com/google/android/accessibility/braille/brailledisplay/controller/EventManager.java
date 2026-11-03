@@ -225,6 +225,18 @@ public class EventManager implements EventConsumer {
     return false;
   }
 
+  /**
+   * Stops auto scroll or dismisses the timed message, as any key does before its command runs.
+   * Returns whether that used up the key press, so its command doesn't run.
+   */
+  public boolean stopAutoScrollOrDismissTimedMessage() {
+    if (autoScrollManager.isActive()) {
+      autoScrollManager.stop();
+      return true;
+    }
+    return dismissTimedMessage();
+  }
+
   /** Called when the reading control settings is changed. */
   public void onReadingControlSettingsChanged(String readingControlDescription) {
     behaviorDisplayer.displayTimedMessage(readingControlDescription);
@@ -500,8 +512,7 @@ public class EventManager implements EventConsumer {
       return true;
     }
     if (cellsContentConsumer.isTimedMessageDisplaying()) {
-      cellsContentConsumer.dismissTimedMessage();
-      if (cellsContentConsumer.isTimedMessageDisplaying()) {
+      if (dismissTimedMessage()) {
         // Need to dismiss queued message. No action is taken on this event.
         return true;
       } else {
@@ -510,6 +521,15 @@ public class EventManager implements EventConsumer {
       }
     }
     return false;
+  }
+
+  /** Dismisses the timed message and returns whether another one is queued behind it. */
+  private boolean dismissTimedMessage() {
+    if (!cellsContentConsumer.isTimedMessageDisplaying()) {
+      return false;
+    }
+    cellsContentConsumer.dismissTimedMessage();
+    return cellsContentConsumer.isTimedMessageDisplaying();
   }
 
   private boolean handleOtherCommands(BrailleInputEvent event) {
