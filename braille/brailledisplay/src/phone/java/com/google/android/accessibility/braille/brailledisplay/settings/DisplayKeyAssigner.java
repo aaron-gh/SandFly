@@ -120,13 +120,23 @@ final class DisplayKeyAssigner {
             .create();
     DisplayKeyCapture.Listener listener =
         key -> {
-          captured[0] = key;
-          String message =
-              key == null
-                  ? context.getString(R.string.bd_key_bindings_keys_not_assignable)
-                  : describer.describe(key);
-          dialog.setMessage(message.isEmpty() ? key : message);
-          setOkEnabled(dialog, key != null);
+          @Nullable
+          String assignable =
+              key != null && DisplayKeys.isAssignableKey(context, key) ? key : null;
+          captured[0] = assignable;
+          String message;
+          if (assignable == null) {
+            message = context.getString(R.string.bd_key_bindings_keys_not_assignable);
+          } else {
+            message = describer.describe(assignable);
+            if (message.isEmpty()) {
+              message =
+                  DisplayKeys.targetLabel(
+                      context, DisplayKeyOverrides.defaultTarget(assignable));
+            }
+          }
+          dialog.setMessage(message);
+          setOkEnabled(dialog, assignable != null);
         };
     dialog.setOnShowListener(
         d -> {
