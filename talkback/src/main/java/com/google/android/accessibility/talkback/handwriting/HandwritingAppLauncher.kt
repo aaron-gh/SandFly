@@ -35,8 +35,8 @@ import kotlin.math.hypot
 
 /**
  * Opens an app by the start of its name, written on the screen. Each piece of writing adds to the
- * letters, and SandFly says the first app whose name, or a word of it, starts with them. When only
- * one app does, it opens. Two-finger gestures work as on the handwriting keyboard: swipe up for the
+ * letters, and SandFly says the first app whose name, or a word of it, starts with them, and how
+ * many apps do. Two-finger gestures work as on the handwriting keyboard: swipe up for the
  * next app, down to open it, left to delete the last letter, and tap to hear the app again. A tap
  * with one finger closes the surface.
  */
@@ -237,10 +237,7 @@ class HandwritingAppLauncher(
     }
   }
 
-  /**
-   * Adds the most likely of [candidates] that some app's name starts with to the letters. When only
-   * one app's does, opens it.
-   */
+  /** Adds the most likely of [candidates] that some app's name starts with to the letters. */
   private fun addLetters(candidates: List<String>) {
     if (!isShowing) return
     // Only letters and digits count, so a stray dot or space doesn't add to the letters.

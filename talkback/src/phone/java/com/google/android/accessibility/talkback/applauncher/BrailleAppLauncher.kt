@@ -50,8 +50,8 @@ import com.google.android.libraries.accessibility.utils.log.LogUtils
 /**
  * Opens an app by the start of its name, typed in braille on the whole screen, as on the braille
  * keyboard. The cells are read as uncontracted braille of the braille keyboard's current language,
- * and SandFly says the first app whose name, or a word of it, starts with them. When only one app
- * does, it opens. Swipes work as on the braille keyboard: up and down with one finger for the
+ * and SandFly says the first app whose name, or a word of it, starts with them, and how many apps
+ * do. Swipes work as on the braille keyboard: up and down with one finger for the
  * previous and next app, left to delete, up with two fingers to open the app and down with two
  * fingers to close.
  */
