@@ -26,4 +26,12 @@
       android:defaultValue="@bool/pref_browse_mode_per_app_default"
       android:key="@string/pref_browse_mode_per_app_key"
       android:title="@string/title_pref_browse_mode_per_app" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
+      android:key="pref_navigation_apps_category"
+      android:title="@string/title_pref_category_apps">
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="@bool/pref_telegram_reply_quotes_default"
+        android:key="@string/pref_telegram_reply_quotes_key"
+        android:title="@string/title_pref_telegram_reply_quotes" />
+  </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
 </PreferenceScreen>

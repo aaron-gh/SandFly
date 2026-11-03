@@ -4652,6 +4652,8 @@
   <string name="dictation_ai_same">Same as Image and screen descriptions</string>
   <!-- Switch that keeps browse mode on or off in each app as the user last left it there. [CHAR_LIMIT=NONE] -->
   <string name="title_pref_browse_mode_per_app">Remember browse mode in each app</string>
+  <!-- Switch on the Navigation screen, under Apps: when on, the quote of the message a Telegram message replies to is read with that message instead of being an item of its own. [CHAR_LIMIT=NONE] -->
+  <string name="title_pref_telegram_reply_quotes">Read Telegram reply quotes with the message</string>
   <!-- Smart Browse Mode toggle's summary in the settings. [CHAR_LIMIT=NONE] -->
   <string name="summary_smart_browse_mode">Automatically turns browse mode on or off based on the item you\'re on. This syncs input focus with SandFly focus.</string>
 

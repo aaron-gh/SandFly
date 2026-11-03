@@ -609,7 +609,7 @@ Next container and Previous container (Action + Control + Alt + Right or Left ar
 
 ### Telegram reply quotes
 
-In Telegram and its forks, such as Nekogram, the quote of the message that a message replies to was a separate item, often cut off. SandFly reads it with its message, after the time, as "replying to" the sender and text, with the whole quoted text when the quoted message is loaded. The quote isn't focused on its own; **Go to quoted message**, in the message's actions, shows the quoted message.
+In Telegram and its forks, such as Nekogram, the quote of the message that a message replies to was a separate item, often cut off. SandFly reads it with its message, after the time, as "replying to" the sender and text, with the whole quoted text when the quoted message is loaded. The quote isn't focused on its own; **Go to quoted message**, in the message's actions, shows the quoted message. To have the quote as an item of its own again, as Telegram has it, turn off **Read Telegram reply quotes with the message** in **Navigation**, under **Apps**; Go to quoted message isn't offered then.
 
 ### Web posts reached with a site's keyboard shortcuts
 

@@ -398,6 +398,7 @@
     <string name="pref_web_navigation_actions_category_key">pref_web_navigation_actions_category_key</string>
     <string name="pref_smart_browse_mode_key">pref_smart_browse_mode_key</string>
     <string name="pref_browse_mode_per_app_key" translatable="false">pref_browse_mode_per_app</string>
+    <string name="pref_telegram_reply_quotes_key" translatable="false">pref_telegram_reply_quotes</string>
 
   <!-- Verbosity preferences, preset -->
     <string name="pref_verbosity_preset_key">pref_verbosity_preset_key</string>
@@ -1782,6 +1783,7 @@
     <bool name="pref_formatting_inline_default">true</bool>
     <bool name="pref_smart_browse_mode_default">true</bool>
     <bool name="pref_browse_mode_per_app_default">false</bool>
+    <bool name="pref_telegram_reply_quotes_default">true</bool>
 
     <!-- Selector preferences default values -->
     <string name="pref_selector_setting_default">@string/selector_granularity_characters</string>

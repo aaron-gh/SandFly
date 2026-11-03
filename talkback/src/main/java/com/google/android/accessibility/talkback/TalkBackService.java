@@ -303,6 +303,7 @@ import com.google.android.accessibility.utils.ServiceKeyEventListener;
 import com.google.android.accessibility.utils.ServiceStateListener;
 import com.google.android.accessibility.utils.SettingsUtils;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
+import com.google.android.accessibility.utils.TelegramReplyQuote;
 import com.google.android.accessibility.utils.SpannableUtils;
 import com.google.android.accessibility.utils.SpellChecker;
 import com.google.android.accessibility.utils.Statistics;
@@ -3948,6 +3949,9 @@ public class TalkBackService extends AccessibilityServiceCompat
     volumeKeysMoveCursor =
         getBooleanPref(
             R.string.pref_volume_keys_move_cursor_key, R.bool.pref_volume_keys_move_cursor_default);
+    TelegramReplyQuote.setReadWithMessage(
+        getBooleanPref(
+            R.string.pref_telegram_reply_quotes_key, R.bool.pref_telegram_reply_quotes_default));
     if (volumeKeyCommands != null) {
       volumeKeyCommands.reload(prefs);
     }

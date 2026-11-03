@@ -23,9 +23,13 @@ import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
  * The quote of the message a Telegram message replies to. Telegram and its forks expose it as a
  * child of the message, "Reply, name, text", with no class name, which a swipe lands on after the
  * message, or not when the quote is scrolled off the screen. It is read at the end of the message
- * instead, and isn't focused on its own; the Go to quoted message action clicks it.
+ * instead, and isn't focused on its own; the Go to quoted message action clicks it. With
+ * [readWithMessage] off, the quote is an item of its own again, as the app has it.
  */
 object TelegramReplyQuote {
+  /** Navigation > Apps > Read Telegram reply quotes with the message. */
+  @JvmStatic @Volatile var readWithMessage = true
+
   /** The sender and text of a quote. */
   data class Quote(val name: CharSequence, val text: CharSequence)
 
@@ -51,7 +55,8 @@ object TelegramReplyQuote {
   /** Whether [node] is a message's reply quote. */
   @JvmStatic
   fun isReplyQuote(node: AccessibilityNodeInfoCompat): Boolean =
-    looksLikeQuote(node) && node.parent?.let { isMessage(it) } == true
+    readWithMessage &&
+      looksLikeQuote(node) && node.parent?.let { isMessage(it) } == true
 
   /**
    * The reply quote among [message]'s children, or null when it has none. Telegram cuts the
@@ -60,7 +65,7 @@ object TelegramReplyQuote {
    */
   @JvmStatic
   fun quoteOf(message: AccessibilityNodeInfoCompat): Quote? {
-    if (!isTelegram(message.packageName) || !isMessage(message)) return null
+    if (!readWithMessage || !isTelegram(message.packageName) || !isMessage(message)) return null
     for (i in 0 until minOf(message.childCount, MAX_CHILDREN)) {
       val child = message.getChild(i) ?: continue
       if (looksLikeQuote(child)) return parse(child.contentDescription)?.let { whole(message, it) }
@@ -71,7 +76,7 @@ object TelegramReplyQuote {
   /** The reply quote among [message]'s children, which a click takes to the quoted message. */
   @JvmStatic
   fun quoteNodeOf(message: AccessibilityNodeInfoCompat): AccessibilityNodeInfoCompat? {
-    if (!isTelegram(message.packageName) || !isMessage(message)) return null
+    if (!readWithMessage || !isTelegram(message.packageName) || !isMessage(message)) return null
     for (i in 0 until minOf(message.childCount, MAX_CHILDREN)) {
       val child = message.getChild(i) ?: continue
       if (looksLikeQuote(child)) return child
