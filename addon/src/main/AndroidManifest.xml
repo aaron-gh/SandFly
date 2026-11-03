@@ -12,6 +12,11 @@
         android:name="io.github.aaron_gh.sandfly.permission.ADDON"
         android:protectionLevel="signature" />
 
+    <!-- Update checks, and installing the add-on's updates from SandFly's GitHub releases. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
     <application
         android:allowBackup="false"
         android:label="@string/addon_name"
@@ -35,6 +40,10 @@
                 <action android:name="io.github.aaron_gh.sandfly.addon.BIND" />
             </intent-filter>
         </service>
+
+        <receiver
+            android:name=".InstallReceiver"
+            android:exported="false" />
 
         <!-- Receives Shizuku's binder. Only the system can use it, through
              INTERACT_ACROSS_USERS_FULL. -->

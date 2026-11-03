@@ -16,18 +16,22 @@
 
 package io.github.aaron_gh.sandfly.addon
 
+import android.Manifest
 import android.app.Activity
 import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import rikka.shizuku.Shizuku
 
-/** Shows the add-on's version, whether SandFly can use it, and Shizuku's state. */
+/** Shows the add-on's version, whether SandFly can use it, Shizuku's state, and updates. */
 class AddonActivity : Activity() {
+  private var update: AddonUpdater.Update? = null
+  private var busy = false
 
-  private val update = Shizuku.OnBinderReceivedListener { runOnUiThread { showState() } }
+  private val binderReceived = Shizuku.OnBinderReceivedListener { runOnUiThread { showState() } }
   private val dead = Shizuku.OnBinderDeadListener { runOnUiThread { showState() } }
   private val permissionResult =
     Shizuku.OnRequestPermissionResultListener { _, _ -> runOnUiThread { showState() } }
@@ -43,9 +47,57 @@ class AddonActivity : Activity() {
         showState()
       }
     }
-    Shizuku.addBinderReceivedListener(update)
+    Shizuku.addBinderReceivedListener(binderReceived)
     Shizuku.addBinderDeadListener(dead)
     Shizuku.addRequestPermissionResultListener(permissionResult)
+    findViewById<Button>(R.id.update).setOnClickListener { onUpdateClicked() }
+    // For the notification about updates.
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU &&
+      checkSelfPermission(Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED
+    ) {
+      requestPermissions(arrayOf(Manifest.permission.POST_NOTIFICATIONS), 1)
+    }
+    checkForUpdate()
+  }
+
+  private fun onUpdateClicked() {
+    val available = update
+    if (available == null) {
+      checkForUpdate()
+      return
+    }
+    busy = true
+    showUpdate(getString(R.string.addon_downloading))
+    AddonUpdater.install(this, available) { worked ->
+      busy = false
+      if (isDestroyed) return@install
+      showUpdate(if (worked) getString(R.string.addon_update_available, available.version) else getString(R.string.addon_update_failed))
+    }
+  }
+
+  private fun checkForUpdate() {
+    busy = true
+    showUpdate(getString(R.string.addon_checking))
+    AddonUpdater.checkNow(this) { result ->
+      busy = false
+      if (isDestroyed) return@checkNow
+      update = (result as? AddonUpdater.Result.Available)?.update
+      showUpdate(
+        when (result) {
+          is AddonUpdater.Result.Available -> getString(R.string.addon_update_available, result.update.version)
+          AddonUpdater.Result.Current -> getString(R.string.addon_up_to_date)
+          AddonUpdater.Result.Failed -> getString(R.string.addon_check_failed)
+        }
+      )
+    }
+  }
+
+  private fun showUpdate(status: String) {
+    findViewById<TextView>(R.id.update_status).text = status
+    findViewById<Button>(R.id.update).apply {
+      isEnabled = !busy
+      setText(if (update != null) R.string.addon_install_update else R.string.addon_check_updates)
+    }
   }
 
   override fun onResume() {
@@ -54,7 +106,7 @@ class AddonActivity : Activity() {
   }
 
   override fun onDestroy() {
-    Shizuku.removeBinderReceivedListener(update)
+    Shizuku.removeBinderReceivedListener(binderReceived)
     Shizuku.removeBinderDeadListener(dead)
     Shizuku.removeRequestPermissionResultListener(permissionResult)
     super.onDestroy()

@@ -100,7 +100,7 @@ jobs:
       # Only the full phone build: the watch's braille keyboard is a stub, so the braille keyboard's
       # tests don't compile for it, and the rest of the code is shared.
       - name: Run unit tests
-        run: ./gradlew testPhoneFullDebugUnitTest :shizukuapi:testDebugUnitTest --console=plain
+        run: ./gradlew testPhoneFullDebugUnitTest :shizukuapi:testDebugUnitTest :addon:testDebugUnitTest --console=plain
 
       # The app's lint also checks the library modules. Issues already in lint-baseline.xml are
       # allowed, so this fails only on new errors, such as a call that needs a newer Android than

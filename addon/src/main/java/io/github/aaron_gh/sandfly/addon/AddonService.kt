@@ -98,6 +98,7 @@ class AddonService : Service() {
     Shizuku.addBinderReceivedListener(binderReceived)
     Shizuku.addBinderDeadListener(binderDead)
     Shizuku.addRequestPermissionResultListener(permissionResult)
+    AddonUpdater.checkIfDue(this)
   }
 
   override fun onBind(intent: Intent?): IBinder = binder
