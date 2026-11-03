@@ -79,6 +79,26 @@ object TelegramReplyQuote {
     return null
   }
 
+  /**
+   * The message in [list] that [quote], a reply quote of [reply], quotes: the message whose text
+   * contains the quoted text, the quoted sender's own first. Null when it isn't on the screen.
+   */
+  @JvmStatic
+  fun quotedMessageIn(
+    list: AccessibilityNodeInfoCompat,
+    reply: AccessibilityNodeInfoCompat,
+    quote: Quote,
+  ): AccessibilityNodeInfoCompat? {
+    val start = normalize(quote.text.toString().trimEnd().removeSuffix(ELLIPSIS.toString())).trim()
+    if (start.isEmpty()) return null
+    val messages =
+      (0 until minOf(list.childCount, MAX_MESSAGES)).mapNotNull { i ->
+        list.getChild(i)?.takeIf { it != reply && isMessage(it) }
+      }
+    val matching = messages.filter { fullText(it.text.toString(), start) != null }
+    return matching.firstOrNull { it.text.toString().startsWith(quote.name) } ?: matching.firstOrNull()
+  }
+
   /** [quote] with the whole quoted text, when it was cut and the quoted message is loaded. */
   private fun whole(message: AccessibilityNodeInfoCompat, quote: Quote): Quote {
     val shown = quote.text.toString().trimEnd()

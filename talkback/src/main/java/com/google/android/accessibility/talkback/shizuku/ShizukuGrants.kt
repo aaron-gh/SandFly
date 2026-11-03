@@ -29,26 +29,25 @@ import android.os.IBinder
 import android.os.Looper
 import android.os.Process
 import android.provider.Settings
-import com.google.android.accessibility.talkback.BuildConfig
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.talkback.distribution.Distribution
 import com.google.android.accessibility.talkback.quicksettings.QuickSettingsItems
 import com.google.android.accessibility.talkback.quicksettings.SystemTiles
 import com.google.android.accessibility.talkback.speakerphone.SpeakerphoneSettings
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 import java.util.concurrent.Executors
-import rikka.shizuku.Shizuku
 
 /**
  * Grants the permissions that some settings need, which Android only gives through adb, with
  * Shizuku when it is installed and running. The first time, Shizuku asks the user to allow
- * SandFly. Without Shizuku, the settings keep their adb commands.
+ * SandFly, or in the Google Play build the SandFly add-on, through which that build uses Shizuku
+ * (see [ShellAccess]). Without Shizuku, the settings keep their adb commands.
  *
  * Everything here runs on the main thread, except the grant itself.
  */
 object ShizukuGrants {
   private const val TAG = "ShizukuGrants"
-  private const val REQUEST_CODE = 0x5F17
   private const val CONNECT_TIMEOUT_MS = 15_000L
   /** Whether SandFly has asked Shizuku for access by itself at start, which it does only once. */
   private const val PREF_ASKED_AT_START = "shizuku_asked_at_start"
@@ -66,17 +65,12 @@ object ShizukuGrants {
     /** Lets the quick settings panel change night light, extra dim and the color settings. */
     WRITE_SECURE_SETTINGS;
 
+    /** The shell service's grant. */
+    val shellGrant: ShellGrant
+      get() = ShellGrant.valueOf(name)
+
     /** The command that grants it, as adb would run it after `adb shell`. */
-    fun shellCommand(packageName: String): List<String> =
-      when (this) {
-        DUMP -> listOf("pm", "grant", packageName, Manifest.permission.DUMP)
-        MANAGE_ONGOING_CALLS ->
-          listOf("appops", "set", packageName, "MANAGE_ONGOING_CALLS", "allow")
-        WRITE_SETTINGS -> listOf("appops", "set", packageName, "WRITE_SETTINGS", "allow")
-        USAGE_STATS -> listOf("pm", "grant", packageName, Manifest.permission.PACKAGE_USAGE_STATS)
-        WRITE_SECURE_SETTINGS ->
-          listOf("pm", "grant", packageName, Manifest.permission.WRITE_SECURE_SETTINGS)
-      }
+    fun shellCommand(packageName: String): List<String> = shellGrant.shellCommand(packageName)
 
     fun isGranted(context: Context): Boolean =
       when (this) {
@@ -119,31 +113,24 @@ object ShizukuGrants {
   private var permissionCallbacks = mutableListOf<(Boolean) -> Unit>()
   private var serviceContext: Context? = null
 
-  private val permissionListener =
-    Shizuku.OnRequestPermissionResultListener { requestCode, grantResult ->
-      if (requestCode != REQUEST_CODE) return@OnRequestPermissionResultListener
-      val callbacks = permissionCallbacks
-      permissionCallbacks = mutableListOf()
-      callbacks.forEach { it(grantResult == PackageManager.PERMISSION_GRANTED) }
-      if (grantResult == PackageManager.PERMISSION_GRANTED) {
-        serviceContext?.let(ShizukuClipboard::start)
-      }
-    }
-
-  private val binderReceived = Shizuku.OnBinderReceivedListener {
+  private val binderReceived: () -> Unit = {
     failPendingRequests()
     onShizukuReady()
   }
 
-  private val binderDead =
-    Shizuku.OnBinderDeadListener {
+  init {
+    ShellAccess.permissionListener = { granted ->
+      val callbacks = permissionCallbacks
+      permissionCallbacks = mutableListOf()
+      callbacks.forEach { it(granted) }
+      if (granted) {
+        serviceContext?.let(ShizukuClipboard::start)
+      }
+    }
+    ShellAccess.deadListener = {
       failPendingRequests()
       ShizukuClipboard.stop()
     }
-
-  init {
-    Shizuku.addRequestPermissionResultListener(permissionListener)
-    Shizuku.addBinderDeadListener(binderDead)
   }
 
   /**
@@ -158,13 +145,8 @@ object ShizukuGrants {
     callbacks.forEach { it(false) }
   }
 
-  /** Whether Shizuku is running and new enough. */
-  fun isReady(): Boolean =
-    try {
-      Shizuku.pingBinder() && !Shizuku.isPreV11()
-    } catch (e: RuntimeException) {
-      false
-    }
+  /** Whether Shizuku is running and new enough, and in the Google Play build the add-on too. */
+  fun isReady(): Boolean = ShellAccess.isReady()
 
   /**
    * Grants [grant] through Shizuku, asking the user to allow SandFly in Shizuku first if needed.
@@ -204,7 +186,7 @@ object ShizukuGrants {
   fun onServiceConnected(context: Context) {
     serviceContext = context.applicationContext
     try {
-      Shizuku.addBinderReceivedListenerSticky(binderReceived)
+      ShellAccess.addReadyListener(context.applicationContext, binderReceived)
     } catch (e: RuntimeException) {
       LogUtils.w(TAG, "Cannot listen for Shizuku: %s", e)
     }
@@ -214,7 +196,7 @@ object ShizukuGrants {
   fun onServiceDestroyed() {
     serviceContext = null
     ShizukuClipboard.stop()
-    Shizuku.removeBinderReceivedListener(binderReceived)
+    ShellAccess.removeReadyListener(binderReceived)
   }
 
   private fun onShizukuReady() {
@@ -228,8 +210,7 @@ object ShizukuGrants {
         requestAll(context, wantedAtStart(context, prefs)) { granted ->
           LogUtils.i(TAG, "Granted at start through Shizuku: %s", granted)
         }
-        // Puts Google Play back as the installer if the user wants it and an update dropped it.
-        PlayInstaller.reapplyIfNeeded(context)
+        Distribution.onShizukuAllowed(context)
       }
     }
   }
@@ -278,12 +259,7 @@ object ShizukuGrants {
     return true
   }
 
-  fun hasShizukuPermission(): Boolean =
-    try {
-      Shizuku.checkSelfPermission() == PackageManager.PERMISSION_GRANTED
-    } catch (e: RuntimeException) {
-      false
-    }
+  fun hasShizukuPermission(): Boolean = ShellAccess.hasPermission()
 
   /** Calls [onResult] with whether Shizuku allows SandFly, asking the user first if needed. */
   fun withShizukuPermission(onResult: (Boolean) -> Unit) {
@@ -291,10 +267,10 @@ object ShizukuGrants {
       when {
         hasShizukuPermission() -> onResult(true)
         // The user chose "Deny and don't ask again" in Shizuku.
-        Shizuku.shouldShowRequestPermissionRationale() -> onResult(false)
+        ShellAccess.isPermissionDenied() -> onResult(false)
         else -> {
           permissionCallbacks += onResult
-          if (permissionCallbacks.size == 1) Shizuku.requestPermission(REQUEST_CODE)
+          if (permissionCallbacks.size == 1) ShellAccess.requestPermission()
         }
       }
     } catch (e: RuntimeException) {
@@ -305,19 +281,14 @@ object ShizukuGrants {
   }
 
   private fun runGrant(context: Context, grant: Grant) {
-    val args =
-      Shizuku.UserServiceArgs(ComponentName(context.packageName, ShizukuGrantService::class.java.name))
-        .daemon(false)
-        .processNameSuffix("grants")
-        .tag("grants")
-        .version(BuildConfig.COMMIT_COUNT)
+    var binding: Any? = null
     var done = false
     lateinit var connection: ServiceConnection
     val timeout = Runnable {
       if (!done) {
         done = true
         LogUtils.w(TAG, "Shizuku did not start the grant service")
-        unbind(args, connection)
+        unbind(binding)
         finish(context, grant)
       }
     }
@@ -326,7 +297,7 @@ object ShizukuGrants {
         override fun onServiceConnected(name: ComponentName?, binder: IBinder?) {
           if (done) {
             // It started after the timeout, so nothing waits for it.
-            unbind(args, this)
+            unbind(binding)
             return
           }
           done = true
@@ -337,13 +308,13 @@ object ShizukuGrants {
               try {
                 // The service gives null when the grant worked.
                 if (service == null) "No grant service"
-                else service.grant(grant.ordinal, context.packageName)
+                else service.grant(grant.shellGrant.ordinal, context.packageName)
               } catch (e: Exception) {
                 e.toString()
               }
             mainHandler.post {
               if (error != null) LogUtils.w(TAG, "Cannot grant %s: %s", grant, error)
-              unbind(args, this)
+              unbind(binding)
               finish(context, grant)
             }
           }
@@ -352,7 +323,7 @@ object ShizukuGrants {
         override fun onServiceDisconnected(name: ComponentName?) {}
       }
     try {
-      Shizuku.bindUserService(args, connection)
+      binding = ShellAccess.bind(context, "grants", connection)
       mainHandler.postDelayed(timeout, CONNECT_TIMEOUT_MS)
     } catch (e: RuntimeException) {
       LogUtils.w(TAG, "Cannot start the grant service: %s", e)
@@ -361,10 +332,11 @@ object ShizukuGrants {
     }
   }
 
-  private fun unbind(args: Shizuku.UserServiceArgs, connection: ServiceConnection) {
+  private fun unbind(binding: Any?) {
+    if (binding == null) return
     try {
       // Removing it also stops its process.
-      Shizuku.unbindUserService(args, connection, true)
+      ShellAccess.unbind(binding)
     } catch (e: RuntimeException) {
       LogUtils.w(TAG, "Cannot stop the grant service: %s", e)
     }

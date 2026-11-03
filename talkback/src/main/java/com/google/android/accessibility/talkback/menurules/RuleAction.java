@@ -38,7 +38,7 @@ public class RuleAction extends NodeMenuRule {
   private final EditingAndSelectingMenu editingAndSelectingMenu;
   private final TypoSuggestionMenu typoSuggestionMenu;
   private final LinkMenu linkMenu;
-  private final QuotedMessageMenu quotedMessageMenu = new QuotedMessageMenu();
+  private final QuotedMessageMenu quotedMessageMenu;
 
   public RuleAction(
       Pipeline.FeedbackReturner pipeline,
@@ -53,6 +53,7 @@ public class RuleAction extends NodeMenuRule {
         new EditingAndSelectingMenu(pipeline, actorState, accessibilityFocusMonitor, analytics);
     typoSuggestionMenu = new TypoSuggestionMenu(pipeline, actorState, accessibilityFocusMonitor);
     linkMenu = new LinkMenu(analytics);
+    quotedMessageMenu = new QuotedMessageMenu(pipeline);
   }
 
   @Override

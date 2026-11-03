@@ -26,7 +26,7 @@ import android.os.Handler
 import android.os.HandlerThread
 import android.os.IBinder
 import android.os.ParcelFileDescriptor
-import com.google.android.accessibility.talkback.audio.AccessibilityAudioReset
+import com.google.android.accessibility.talkback.audio.AccessibilityAudioOutput
 import java.io.File
 import java.io.IOException
 import java.io.InputStream
@@ -40,12 +40,13 @@ import kotlin.system.exitProcess
 
 /**
  * Shizuku's user service: it runs in a process of its own as the shell user, as adb would, and
- * runs only the commands in [ShizukuGrants.Grant], for a package name that it checks, and in
+ * runs only the commands in [ShellGrant], for a package name that it checks, and in
  * [ShizukuCommand], with an argument that it checks.
  *
- * Shizuku gives it a [Context] of SandFly's package, from which it makes one of the shell's, for
- * the calls to Android that have no shell command. Android's own shell commands use hidden APIs
- * in the same kind of process, so they are open to it too.
+ * Shizuku gives it a [Context] of the package that started it, SandFly or the SandFly add-on,
+ * from which it makes one of the shell's, for the calls to Android that have no shell command.
+ * Android's own shell commands use hidden APIs in the same kind of process, so they are open to it
+ * too.
  */
 class ShizukuGrantService(private val context: Context?) : IShizukuGrants.Stub() {
 
@@ -61,7 +62,7 @@ class ShizukuGrantService(private val context: Context?) : IShizukuGrants.Stub()
   }
 
   override fun grant(grant: Int, packageName: String?): String? {
-    val which = ShizukuGrants.Grant.entries.getOrNull(grant) ?: return "Unknown permission $grant"
+    val which = ShellGrant.entries.getOrNull(grant) ?: return "Unknown permission $grant"
     if (packageName == null || !PACKAGE_NAME.matches(packageName)) {
       return "Bad package name $packageName"
     }
@@ -74,7 +75,7 @@ class ShizukuGrantService(private val context: Context?) : IShizukuGrants.Stub()
       return if (argument == null) "No accessibility service" else performAccessibilityShortcut(argument)
     }
     if (which == ShizukuCommand.RESET_ACCESSIBILITY_AUDIO) {
-      return AccessibilityAudioReset.reset()
+      return AccessibilityAudioOutput.reset()
     }
     if (which == ShizukuCommand.HOTSPOT) {
       return when (argument) {

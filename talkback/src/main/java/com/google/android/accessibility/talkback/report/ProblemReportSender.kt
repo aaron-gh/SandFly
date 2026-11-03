@@ -24,11 +24,11 @@ import android.os.Process
 import androidx.annotation.MainThread
 import androidx.annotation.VisibleForTesting
 import androidx.annotation.WorkerThread
-import com.google.android.accessibility.talkback.update.UpdateChecker
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 import java.io.File
 import java.io.IOException
 import java.net.HttpURLConnection
+import java.net.URL
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
@@ -215,7 +215,7 @@ object ProblemReportSender {
   ): Pair<Result, JSONObject?> {
     val connection: HttpURLConnection =
       try {
-        UpdateChecker.openConnection(context, url)
+        openConnection(context, url)
       } catch (e: IOException) {
         return Result.NO_CONNECTION to null
       }
@@ -375,5 +375,22 @@ object ProblemReportSender {
     } finally {
       process.destroy()
     }
+  }
+
+  private const val CONNECTION_TIMEOUT_MS = 30_000
+
+  /** Opens a connection to [url] with SandFly's timeouts and user agent. */
+  private fun openConnection(context: Context, url: String): HttpURLConnection {
+    val connection = URL(url).openConnection() as HttpURLConnection
+    connection.connectTimeout = CONNECTION_TIMEOUT_MS
+    connection.readTimeout = CONNECTION_TIMEOUT_MS
+    val version =
+      try {
+        context.packageManager.getPackageInfo(context.packageName, 0).versionName ?: ""
+      } catch (e: Exception) {
+        ""
+      }
+    connection.setRequestProperty("User-Agent", "SandFly/$version")
+    return connection
   }
 }

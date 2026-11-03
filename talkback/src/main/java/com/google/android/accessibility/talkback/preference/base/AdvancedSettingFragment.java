@@ -16,16 +16,14 @@
 
 package com.google.android.accessibility.talkback.preference.base;
 
-import android.content.Context;
 import android.os.Bundle;
 import androidx.preference.Preference;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.backup.SettingsBackup;
-import com.google.android.accessibility.talkback.shizuku.PlayInstaller;
+import com.google.android.accessibility.talkback.distribution.Distribution;
 import com.google.android.accessibility.talkback.training.TutorialInitiator;
 import com.google.android.accessibility.talkback.trainingcommon.tv.TvTutorialInitiator;
 import com.google.android.accessibility.talkback.trainingcommon.tv.VendorConfigReader;
-import com.google.android.accessibility.talkback.update.Updater;
 import com.google.android.accessibility.talkback.utils.TalkbackFeatureSupport;
 import com.google.android.accessibility.utils.FormFactorUtils;
 import com.google.android.accessibility.utils.PreferenceSettingsUtils;
@@ -59,7 +57,7 @@ public class AdvancedSettingFragment extends TalkbackBaseFragment {
       PreferenceSettingsUtils.hidePreference(
           getContext(), getPreferenceScreen(), R.string.pref_show_exit_watermark_key);
     }
-    Updater.setUpPreferences(this);
+    Distribution.setUpPreferences(this);
     SettingsBackup.setUpPreferences(this);
     setUpHelp();
   }
@@ -91,40 +89,6 @@ public class AdvancedSettingFragment extends TalkbackBaseFragment {
   @Override
   public void onResume() {
     super.onResume();
-    updatePlayInstaller();
-  }
-
-  /**
-   * The "Appear installed from Google Play" switch shows whether the user has turned it on, runs
-   * the change through Shizuku when toggled, and offers the adb command for someone without
-   * Shizuku. When it is on but Android doesn't record Google Play yet, which it can't without
-   * Shizuku, the summary says so.
-   */
-  private void updatePlayInstaller() {
-    Context context = getContext();
-    Preference preference = findPreference(getString(R.string.pref_play_installer_key));
-    if (context == null || !(preference instanceof CommandSwitchPreference)) {
-      return;
-    }
-    CommandSwitchPreference commandPreference = (CommandSwitchPreference) preference;
-    boolean wanted = PlayInstaller.INSTANCE.isWanted(context);
-    boolean isPlay = PlayInstaller.INSTANCE.isPlay(context);
-    commandPreference.setChecked(wanted);
-    commandPreference.setSummary(
-        wanted && !isPlay
-            ? getString(R.string.summary_pref_play_installer_pending)
-            : getString(R.string.summary_pref_play_installer));
-    commandPreference.setCommand(PlayInstaller.INSTANCE.command(context, !isPlay));
-    commandPreference.setOnToggle(
-        (checked, done) ->
-            PlayInstaller.INSTANCE.set(
-                context,
-                checked,
-                worked -> {
-                  done.accept(worked);
-                  if (isAdded()) {
-                    updatePlayInstaller();
-                  }
-                }));
+    Distribution.onPreferencesResumed(this);
   }
 }

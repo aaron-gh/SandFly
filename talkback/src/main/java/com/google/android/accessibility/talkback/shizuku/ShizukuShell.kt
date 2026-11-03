@@ -22,137 +22,13 @@ import android.content.ServiceConnection
 import android.os.Handler
 import android.os.IBinder
 import android.os.Looper
-import com.google.android.accessibility.talkback.BuildConfig
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 import java.util.concurrent.LinkedBlockingQueue
 import java.util.concurrent.ThreadPoolExecutor
-import android.os.ParcelFileDescriptor
 import java.util.concurrent.TimeUnit
-import rikka.shizuku.Shizuku
-
-/** A command that SandFly runs as the shell user, through Shizuku. */
-enum class ShizukuCommand {
-  WIFI,
-  BLUETOOTH,
-  MOBILE_DATA,
-  AIRPLANE_MODE,
-  LOCATION,
-  BATTERY_SAVER,
-  DARK_THEME,
-  NFC,
-  DATA_SAVER,
-  /**
-   * Turns the Wi-Fi hotspot on or off. There is no shell command for it, so the service calls
-   * Android's TetheringManager as the shell user, which may tether.
-   */
-  HOTSPOT,
-  /** Blocks the microphone for a user, as the system's Microphone access switch does. */
-  MICROPHONE_BLOCKED,
-  CAMERA_BLOCKED,
-  /** Adds an app's tile to the system's quick settings, which SystemUI needs to run it. */
-  ADD_TILE,
-  /** Clicks an app's tile in the system's quick settings, without opening them. */
-  CLICK_TILE,
-  /** Types text as key events, into apps that have no text field to set text in. */
-  INPUT_TEXT,
-  /** Sends key events: up to 100 key code names, separated by spaces. */
-  INPUT_KEYEVENT,
-  /** Starts an accessibility shortcut's activity that other apps may not start. */
-  START_SHORTCUT_ACTIVITY,
-  /**
-   * Runs an accessibility service's accessibility shortcut, as Android's own shortcuts do, without
-   * the service being one of them. The argument is the service's component, with " button" after
-   * it for a service that the shortcut opens rather than turns on or off.
-   */
-  ACCESSIBILITY_SHORTCUT,
-  /** Clears the output that Android keeps for accessibility audio. It takes no argument. */
-  RESET_ACCESSIBILITY_AUDIO;
-
-  /**
-   * The command, as adb would run it after `adb shell`, or null if [argument] isn't one it takes.
-   * Switches take [ON] or [OFF], the sensor switches with `@` and a user ID after it, and tiles a
-   * flattened component name.
-   */
-  fun shellCommand(argument: String): List<String>? {
-    val match = SWITCH.matchEntire(argument)
-    val on = match?.let { it.groupValues[1] == ON }
-    val user = match?.groupValues?.get(2)?.ifEmpty { null }
-    val component = argument.takeIf { COMPONENT.matches(it) }
-    return when (this) {
-      WIFI -> on?.let { listOf("cmd", "wifi", "set-wifi-enabled", if (it) "enabled" else "disabled") }
-      BLUETOOTH -> on?.let { listOf("cmd", "bluetooth_manager", if (it) "enable" else "disable") }
-      MOBILE_DATA -> on?.let { listOf("svc", "data", if (it) "enable" else "disable") }
-      AIRPLANE_MODE ->
-        on?.let { listOf("cmd", "connectivity", "airplane-mode", if (it) "enable" else "disable") }
-      LOCATION -> on?.let { listOf("cmd", "location", "set-location-enabled", it.toString()) }
-      BATTERY_SAVER -> on?.let { listOf("cmd", "power", "set-mode", if (it) "1" else "0") }
-      DARK_THEME -> on?.let { listOf("cmd", "uimode", "night", if (it) "yes" else "no") }
-      NFC -> on?.let { listOf("svc", "nfc", if (it) "enable" else "disable") }
-      DATA_SAVER -> on?.let { listOf("cmd", "netpolicy", "set", "restrict-background", it.toString()) }
-      HOTSPOT -> null
-      MICROPHONE_BLOCKED -> sensorCommand(on, user, "microphone")
-      CAMERA_BLOCKED -> sensorCommand(on, user, "camera")
-      ADD_TILE -> component?.let { listOf("cmd", "statusbar", "add-tile", it) }
-      CLICK_TILE -> component?.let { listOf("cmd", "statusbar", "click-tile", it) }
-      // input text reads %s as a space.
-      INPUT_TEXT ->
-        argument
-          .takeIf { it.isNotEmpty() && it.length <= MAX_TEXT && it.none { c -> c.isISOControl() } }
-          ?.let { listOf("input", "text", it.replace(" ", "%s")) }
-      INPUT_KEYEVENT -> KEY_CODES.matchEntire(argument)?.let { listOf("input", "keyevent") + argument.split(' ') }
-      START_SHORTCUT_ACTIVITY ->
-        component?.let {
-          listOf(
-            "am",
-            "start",
-            "-a",
-            "android.intent.action.MAIN",
-            "-c",
-            "android.intent.category.ACCESSIBILITY_SHORTCUT_TARGET",
-            "-n",
-            it,
-          )
-        }
-      ACCESSIBILITY_SHORTCUT -> null
-      RESET_ACCESSIBILITY_AUDIO -> null
-    }
-  }
-
-  private fun sensorCommand(on: Boolean?, user: String?, sensor: String): List<String>? {
-    if (on == null || user == null) return null
-    return listOf("cmd", "sensor_privacy", if (on) "enable" else "disable", user, sensor)
-  }
-
-  companion object {
-    const val ON = "on"
-    const val OFF = "off"
-
-    fun argument(on: Boolean): String = if (on) ON else OFF
-
-    fun argument(on: Boolean, userId: Int): String = argument(on) + "@" + userId
-
-    private val SWITCH = Regex("""(on|off)(?:@(\d{1,6}))?""")
-
-    /** The most characters [INPUT_TEXT] types at once. */
-    const val MAX_TEXT = 1000
-
-    private val KEY_CODES = Regex("""KEYCODE_[A-Z0-9_]{1,30}( KEYCODE_[A-Z0-9_]{1,30}){0,99}""")
-
-    /** The suffix of an [ACCESSIBILITY_SHORTCUT] argument for a service the shortcut opens. */
-    const val BUTTON = " button"
-
-    /** Returns whether [argument] is a flattened component name. */
-    fun isComponent(argument: String): Boolean = COMPONENT.matches(argument)
-
-    private val COMPONENT =
-      Regex(
-        """[A-Za-z][A-Za-z0-9_]*(\.[A-Za-z][A-Za-z0-9_]*)+/\.?[A-Za-z_$][A-Za-z0-9_$]*(\.[A-Za-z_$][A-Za-z0-9_$]*)*"""
-      )
-  }
-}
 
 /**
- * Runs [ShizukuCommand]s through Shizuku's user service. The service stays bound while something
+ * Runs [ShizukuCommand]s through Shizuku's user service, which [ShellAccess] starts. The service stays bound while something
  * holds it, such as the open quick settings panel, so that commands after the first don't wait for
  * Shizuku to start a process.
  *
@@ -173,7 +49,7 @@ object ShizukuShell {
       .apply { allowCoreThreadTimeOut(true) }
   private val pending = ArrayList<Pending>()
   private var service: IShizukuGrants? = null
-  private var args: Shizuku.UserServiceArgs? = null
+  private var binding: Any? = null
   private var connection: ServiceConnection? = null
   private var holders = 0
   private val connectListeners = ArrayList<(IShizukuGrants) -> Unit>()
@@ -253,47 +129,6 @@ object ShizukuShell {
   }
 
   /**
-   * Installs [apks], of the given [sizes], as an update to [packageName], recording [installer] as
-   * the installer. [onDone] gets whether it worked, and false at once without Shizuku. Closes the
-   * file descriptors afterwards.
-   */
-  fun install(
-    context: Context,
-    apks: List<ParcelFileDescriptor>,
-    sizes: List<Long>,
-    packageName: String,
-    installer: String,
-    onDone: (Boolean) -> Unit,
-  ) {
-    if (!ShizukuGrants.isReady()) {
-      apks.forEach { runCatching { it.close() } }
-      onDone(false)
-      return
-    }
-    val appContext = context.applicationContext
-    ShizukuGrants.withShizukuPermission { allowed ->
-      if (!allowed) {
-        apks.forEach { runCatching { it.close() } }
-        onDone(false)
-        return@withShizukuPermission
-      }
-      call(
-        appContext,
-        { connected ->
-          val error = connected.install(apks.toTypedArray(), sizes.toLongArray(), packageName, installer)
-          if (error != null) {
-            LogUtils.w(TAG, "Install as %s failed: %s", installer, error)
-          }
-          error == null
-        },
-      ) { worked ->
-        apks.forEach { runCatching { it.close() } }
-        onDone(worked == true)
-      }
-    }
-  }
-
-  /**
    * Reads whether [command]'s switch is on, without asking the user anything: [onResult] gets
    * null at once unless Shizuku already allows SandFly, and when it can't be read.
    */
@@ -319,7 +154,7 @@ object ShizukuShell {
    * Calls [work] on the service on [executor], connecting first if needed, and gives its result to
    * [onResult] on the main thread: null if the call failed or the service didn't start.
    */
-  private fun <T> call(context: Context, work: (IShizukuGrants) -> T?, onResult: (T?) -> Unit) {
+  internal fun <T> call(context: Context, work: (IShizukuGrants) -> T?, onResult: (T?) -> Unit) {
     // The connection's state is the main thread's; scripts and the updater call from their own.
     if (Looper.myLooper() != Looper.getMainLooper()) {
       mainHandler.post { call(context, work, onResult) }
@@ -362,12 +197,6 @@ object ShizukuShell {
     if (connection != null) {
       return
     }
-    val serviceArgs =
-      Shizuku.UserServiceArgs(ComponentName(context.packageName, ShizukuGrantService::class.java.name))
-        .daemon(false)
-        .processNameSuffix("commands")
-        .tag("commands")
-        .version(BuildConfig.COMMIT_COUNT)
     val serviceConnection =
       object : ServiceConnection {
         override fun onServiceConnected(name: ComponentName?, binder: IBinder?) {
@@ -404,14 +233,13 @@ object ShizukuShell {
           }
         }
       }
-    args = serviceArgs
     connection = serviceConnection
     try {
-      Shizuku.bindUserService(serviceArgs, serviceConnection)
+      binding = ShellAccess.bind(context, "commands", serviceConnection)
       mainHandler.postDelayed(timeout, CONNECT_TIMEOUT_MS)
     } catch (e: RuntimeException) {
       LogUtils.w(TAG, "Cannot start the command service: %s", e)
-      args = null
+      binding = null
       connection = null
       failPending()
     }
@@ -425,15 +253,14 @@ object ShizukuShell {
 
   private fun unbind() {
     mainHandler.removeCallbacks(timeout)
-    val serviceArgs = args
-    val serviceConnection = connection
-    args = null
+    val serviceBinding = binding
+    binding = null
     connection = null
     service = null
-    if (serviceArgs != null && serviceConnection != null) {
+    if (serviceBinding != null) {
       try {
         // Removing it also stops its process.
-        Shizuku.unbindUserService(serviceArgs, serviceConnection, true)
+        ShellAccess.unbind(serviceBinding)
       } catch (e: RuntimeException) {
         LogUtils.w(TAG, "Cannot stop the command service: %s", e)
       }

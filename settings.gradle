@@ -23,6 +23,12 @@ include ':whisper'
 include ':whisperopencl'
 project(':whisperopencl').projectDir = new File('whisper-opencl')
 include ':luamemory'
+include ':shizukuapi'
+project(':shizukuapi').projectDir = new File('shizuku/api')
+include ':shizukuservice'
+project(':shizukuservice').projectDir = new File('shizuku/service')
+// The SandFly add-on, published outside Google Play, with the features that the Play build leaves out.
+include ':addon'
 
 // Those subroots which are not direct sub-folders root need to be specially declared.
 include ':braillecommon'

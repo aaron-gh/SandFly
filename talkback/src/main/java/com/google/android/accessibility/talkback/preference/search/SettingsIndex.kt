@@ -38,6 +38,7 @@ import com.google.android.accessibility.talkback.actor.ImageCaptioner
 import com.google.android.accessibility.talkback.commands.CommandFragment
 import com.google.android.accessibility.talkback.commands.Commands
 import com.google.android.accessibility.talkback.commands.CommandsFragment
+import com.google.android.accessibility.talkback.distribution.Distribution
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping
 import com.google.android.accessibility.talkback.notificationlist.NotificationList
@@ -330,6 +331,7 @@ object SettingsIndex {
     // TalkBackPreferenceFragment: the survey shows only while one is offered.
     hideIf(true, R.string.pref_survey_setting_entry_point_key)
     hideIf(!BrailleFragment.isSupported(context), "pref_braille_screen")
+    hideIf(Distribution.IS_PLAY, "pref_updates_screen")
     hideIf(!ImageCaptioner.supportsImageCaption(context), R.string.pref_auto_image_captioning_key)
     // During setup.
     hideIf(!SettingsUtils.allowLinksOutOfSettings(context), R.string.pref_manage_labels_key)
