@@ -316,6 +316,8 @@ public class TouchInteractionMonitor
   private boolean downOnGboard;
   // Whether this touch is being explored here instead of by touch exploration.
   private boolean exploringKeyboard;
+  // Whether a second finger typed the explored key during this touch on the keyboard.
+  private boolean splitTappedKeyboard;
   // The popup that Gboard opened during this touch, such as its popup of alternative characters.
   private @Nullable AccessibilityNodeInfoCompat gboardPopup;
   private float lastFingerX;
@@ -1909,6 +1911,7 @@ public class TouchInteractionMonitor
     requestTouchExplorationDelayed.cancel();
     gestureDetector.clear();
     lastExploredNode = null;
+    splitTappedKeyboard = false;
     exploreKeyboardAt(lastFingerX, lastFingerY);
   }
 
@@ -1920,9 +1923,18 @@ public class TouchInteractionMonitor
           exploreKeyboardAt(lastFingerX, lastFingerY);
         }
       }
+      // A second finger types the explored key as it touches the screen: split tap.
+      case MotionEvent.ACTION_POINTER_DOWN -> {
+        if (event.getPointerCount() == 2 && lastExploredNode != null) {
+          splitTappedKeyboard = true;
+          service.onKeyboardSplitTap();
+        }
+      }
       case MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL -> {
         if (event.getActionMasked() == MotionEvent.ACTION_UP) {
-          clickPopupKeyOnLift();
+          if (!splitTappedKeyboard) {
+            clickPopupKeyOnLift();
+          }
           // The key is typed now: Android's touch-end event, which types it otherwise, comes later.
           service.onKeyboardTouchEnded();
         }
