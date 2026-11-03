@@ -1677,6 +1677,11 @@ public class BrailleIme extends InputMethodService {
         }
 
         @Override
+        public boolean isQuickCalibrationEnabled() {
+          return BrailleUserPreferences.readQuickCalibration(BrailleIme.this);
+        }
+
+        @Override
         public boolean onHoldProduced(int pointersHeldCount) {
           RecentUserInput.mark();
           return brailleImeGestureController.performDotHoldAction(pointersHeldCount);

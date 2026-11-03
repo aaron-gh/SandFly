@@ -247,6 +247,19 @@ public class BrailleImePreferencesActivity extends PreferencesActivity {
       }
 
       {
+        // Update dot positions with one hand, then the other preference.
+        SwitchPreferenceCompat quickCalibrationPref =
+            findPreference(getString(R.string.pref_brailleime_quick_calibration));
+        quickCalibrationPref.setChecked(BrailleUserPreferences.readQuickCalibration(getContext()));
+        quickCalibrationPref.setOnPreferenceClickListener(
+            preference -> {
+              BrailleUserPreferences.writeQuickCalibration(
+                  getContext(), ((SwitchPreferenceCompat) preference).isChecked());
+              return true;
+            });
+      }
+
+      {
         // Say "Submitting text" preference.
         SwitchPreferenceCompat speakSubmittingPref =
             findPreference(getString(R.string.pref_brailleime_speak_submitting));

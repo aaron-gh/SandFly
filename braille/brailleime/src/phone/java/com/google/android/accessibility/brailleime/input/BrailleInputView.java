@@ -101,6 +101,13 @@ public class BrailleInputView extends View
     }
 
     /**
+     * Whether holding the fingers of one hand and then adding the other hand's calibrates the dots.
+     */
+    default boolean isQuickCalibrationEnabled() {
+      return false;
+    }
+
+    /**
      * Signals that the side of the charging port in tabletop mode was decided afresh, so turns of
      * the device on the table count from here.
      */
@@ -258,6 +265,13 @@ public class BrailleInputView extends View
           @Override
           public boolean isHoldRecognized(int pointersHeldCount) {
             return !inputPlane.inTwoStepCalibration() && pointersHeldCount <= 3;
+          }
+
+          @Override
+          public int quickCalibrationPointerCount() {
+            return !inputPlane.inTwoStepCalibration() && callback.isQuickCalibrationEnabled()
+                ? options.brailleType().getDotCount()
+                : 0;
           }
         };
     return BrailleUtils.isPhoneSizedDevice(context.getResources())

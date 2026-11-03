@@ -38,6 +38,10 @@
         android:title="@string/title_pref_accumulate_presses" />
 
     <SwitchPreferenceCompat
+        android:key="@string/pref_brailleime_quick_calibration"
+        android:title="@string/title_pref_quick_calibration" />
+
+    <SwitchPreferenceCompat
         android:key="@string/pref_brailleime_reverse_dots_mode"
         android:summary="@string/summary_pref_reverse_dots"
         android:title="@string/title_pref_reverse_dots" />

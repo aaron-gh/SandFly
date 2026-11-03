@@ -73,6 +73,7 @@ public class BrailleUserPreferences {
   private static final boolean TABLET_HELD_UP_FACES_AWAY_DEFAULT = true;
   private static final boolean TYPING_SOUNDS_DEFAULT = false;
   private static final boolean SPEAK_SUBMITTING_DEFAULT = true;
+  private static final boolean QUICK_CALIBRATION_DEFAULT = true;
   private static final boolean LAUNCH_TUTORIAL_DEFAULT = true;
   private static final int EXIT_KEYBOARD_DEFAULT = 0;
   private static final int SHOW_OPTION_DIALOG_DEFAULT = 0;
@@ -364,6 +365,28 @@ public class BrailleUserPreferences {
     getSharedPreferences(context, BRAILLE_SHARED_PREFS_FILENAME)
         .edit()
         .putBoolean(context.getString(R.string.pref_brailleime_speak_submitting), speakSubmitting)
+        .apply();
+  }
+
+  /**
+   * Reads whether holding the fingers of one hand and then adding the other hand's calibrates the
+   * braille keyboard dots.
+   */
+  public static boolean readQuickCalibration(Context context) {
+    return getSharedPreferences(context, BRAILLE_SHARED_PREFS_FILENAME)
+        .getBoolean(
+            context.getString(R.string.pref_brailleime_quick_calibration),
+            QUICK_CALIBRATION_DEFAULT);
+  }
+
+  /**
+   * Writes whether holding the fingers of one hand and then adding the other hand's calibrates the
+   * braille keyboard dots.
+   */
+  public static void writeQuickCalibration(Context context, boolean quickCalibration) {
+    getSharedPreferences(context, BRAILLE_SHARED_PREFS_FILENAME)
+        .edit()
+        .putBoolean(context.getString(R.string.pref_brailleime_quick_calibration), quickCalibration)
         .apply();
   }
 

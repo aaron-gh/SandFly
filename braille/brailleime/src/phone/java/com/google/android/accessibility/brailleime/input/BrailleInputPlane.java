@@ -442,6 +442,10 @@ public abstract class BrailleInputPlane {
           doTwoStepCalibration(touchResult.heldPoints);
           calibrationFailCount = 0;
           return customOnGestureListener.detect(result);
+        } else if (touchResult.firstHandPoints != null
+            && !isFirstHandOnOneSide(touchResult.heldPoints, touchResult.firstHandPoints)) {
+          // The fingers weren't put down one hand and then the other, so this is typing.
+          return false;
         } else if (5 <= touchResult.heldPoints.size() && touchResult.heldPoints.size() <= 8) {
           Optional<BrailleInputPlaneResult> result =
               Optional.of(
@@ -476,6 +480,33 @@ public abstract class BrailleInputPlane {
   void onDraw(Canvas canvas) {
     drawDots(canvas);
     drawTouchCircles(canvas, multitouchHandler.getActivePoints());
+  }
+
+  /**
+   * Whether the fingers of the hand put down first, among {@code points}, are the fingers on one
+   * side of the others, as the dots of one hand are.
+   */
+  private boolean isFirstHandOnOneSide(List<PointF> points, List<PointF> firstHandPoints) {
+    List<PointF> sorted = new ArrayList<>(points);
+    sortDotCentersFirstTime(sorted);
+    List<Integer> sideOrder = new ArrayList<>();
+    for (PointF point : sorted) {
+      sideOrder.add(indexOfSame(points, point));
+    }
+    Set<Integer> firstHand = new HashSet<>();
+    for (PointF point : firstHandPoints) {
+      firstHand.add(indexOfSame(points, point));
+    }
+    return QuickCalibration.isOneSide(sideOrder, firstHand);
+  }
+
+  private static int indexOfSame(List<PointF> points, PointF point) {
+    for (int i = 0; i < points.size(); i++) {
+      if (points.get(i) == point) {
+        return i;
+      }
+    }
+    return -1;
   }
 
   /** Calibrates dots positions by two steps. */
