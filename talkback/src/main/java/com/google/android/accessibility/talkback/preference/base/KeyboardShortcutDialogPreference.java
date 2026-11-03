@@ -57,6 +57,8 @@ public class KeyboardShortcutDialogPreference extends Preference
     implements DialogInterface.OnKeyListener, ServiceKeyEventListener {
   /** The longest time between the SandFly key's two presses that records it pressed twice. */
   private static final long SANDFLY_KEY_TWICE_MS = 500;
+  // No Enter press that saved is waiting for its key up.
+  private static final long NO_SAVING_ENTER = -1;
 
 
   private static final int KEY_EVENT_SOURCE_ACTIVITY = 0;
@@ -82,8 +84,9 @@ public class KeyboardShortcutDialogPreference extends Preference
   private boolean triggerModifierUp;
   // Whether onKeyEventInternal consumes the key event that processKeyEvent doesn't process.
   private boolean consumeKeyEvent;
-  // Whether Enter's key down saved, so its key up is consumed too.
-  private boolean enterDownConsumed;
+  // The down time of the Enter press that saved, so only that press's key up is consumed too. The
+  // key up may go elsewhere once the dialog closes or the "Key already in use" dialog opens.
+  private long savingEnterDownTime = NO_SAVING_ENTER;
   // When the SandFly key alone was last pressed in the dialog, to record it pressed twice.
   private long sandFlyKeyDownTime;
   private String summary;
@@ -541,8 +544,10 @@ public class KeyboardShortcutDialogPreference extends Preference
     // such as Clear shortcut under the "Key already in use" dialog.
     if (hasNoModifiers(event) && event.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
       if (event.getAction() == KeyEvent.ACTION_UP) {
-        consumeKeyEvent = enterDownConsumed;
-        enterDownConsumed = false;
+        consumeKeyEvent = event.getDownTime() == savingEnterDownTime;
+        if (consumeKeyEvent) {
+          savingEnterDownTime = NO_SAVING_ENTER;
+        }
         return false;
       }
       if (keyAlreadyInUseDialog == null) {
@@ -553,7 +558,7 @@ public class KeyboardShortcutDialogPreference extends Preference
           return false;
         }
         consumeKeyEvent = true;
-        enterDownConsumed = true;
+        savingEnterDownTime = event.getDownTime();
         if (shouldAnnounceInvalidShortcutMessage()) {
           return false;
         }
@@ -667,6 +672,7 @@ public class KeyboardShortcutDialogPreference extends Preference
 
   /** Shows the dialog that sets the shortcut, as a tap on the preference does. */
   void showSetUpKeyComboDialog() {
+    savingEnterDownTime = NO_SAVING_ENTER;
     if (supportedSequenceKeyInfra) {
       CharSequence title = getTitle();
       A11yAlertDialogWrapper wrapper =
