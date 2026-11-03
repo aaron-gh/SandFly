@@ -40,6 +40,8 @@ import com.google.android.accessibility.talkback.commands.Commands
 import com.google.android.accessibility.talkback.commands.CommandsFragment
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping
+import com.google.android.accessibility.talkback.notificationlist.NotificationList
+import com.google.android.accessibility.talkback.notifications.NotificationXmlFragment
 import com.google.android.accessibility.talkback.preference.TalkBackPreferenceFilter
 import com.google.android.accessibility.talkback.preference.base.BrailleFragment
 import com.google.android.accessibility.talkback.preference.base.GestureListPreference
@@ -47,6 +49,8 @@ import com.google.android.accessibility.talkback.preference.base.TalkBackPrefere
 import com.google.android.accessibility.talkback.preference.base.TalkbackBaseFragment
 import com.google.android.accessibility.talkback.recognition.LiveRecognition
 import com.google.android.accessibility.talkback.sandflyai.SandflyAi
+import com.google.android.accessibility.talkback.translation.TranslationFragment
+import com.google.android.accessibility.talkback.translation.TranslationSettings
 import com.google.android.accessibility.talkback.utils.TalkbackFeatureSupport
 import com.google.android.accessibility.utils.FeatureSupport
 import com.google.android.accessibility.utils.FormFactorUtils
@@ -321,11 +325,23 @@ object SettingsIndex {
     fun hideIf(hidden: Boolean, keyRes: Int) = hideIf(hidden, context.getString(keyRes))
     val wear = FormFactorUtils.isAndroidWear()
     val tv = FormFactorUtils.isAndroidTv()
+    val prefs = SharedPreferencesUtils.getSharedPreferences(context)
 
     // TalkBackPreferenceFragment: the survey shows only while one is offered.
     hideIf(true, R.string.pref_survey_setting_entry_point_key)
     hideIf(!BrailleFragment.isSupported(context), "pref_braille_screen")
     hideIf(!ImageCaptioner.supportsImageCaption(context), R.string.pref_auto_image_captioning_key)
+    // During setup.
+    hideIf(!SettingsUtils.allowLinksOutOfSettings(context), R.string.pref_manage_labels_key)
+
+    // NotificationXmlFragment: shown until access is granted.
+    hideIf(NotificationList.isAccessGranted(context), NotificationXmlFragment.KEY_ACCESS)
+
+    // TranslationFragment: a second language while the source language is detected, otherwise
+    // swapping the languages.
+    val translationSource = TranslationSettings.source(prefs)
+    hideIf(translationSource != null, TranslationFragment.KEY_SECOND_TARGET)
+    hideIf(translationSource == null, TranslationFragment.KEY_SWAP)
 
     // BrailleFragment.
     hideIf(!FeatureSupport.supportBrailleDisplay(context), R.string.pref_brailledisplay_key)
@@ -413,7 +429,7 @@ object SettingsIndex {
     hideIf(
       !GestureShortcutMapping.isGestureSetEnabled(
         context,
-        SharedPreferencesUtils.getSharedPreferences(context),
+        prefs,
         R.string.pref_multiple_gesture_set_key,
         R.bool.pref_multiple_gesture_set_default,
       ),

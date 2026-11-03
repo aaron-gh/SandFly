@@ -58,8 +58,8 @@ class TranslationFragment : TalkbackBaseFragment(R.xml.translation_preferences) 
     onClick("pref_translation_service_choice") { chooseService() }
     onClick("pref_translation_source_choice") { chooseSource() }
     onClick("pref_translation_target_choice") { chooseTarget() }
-    onClick("pref_translation_second_target_choice") { chooseSecondTarget() }
-    onClick("pref_translation_swap_action") { swap() }
+    onClick(KEY_SECOND_TARGET) { chooseSecondTarget() }
+    onClick(KEY_SWAP) { swap() }
     onClick("pref_translation_auto_service_choice") { chooseAutoService() }
     onClick("pref_translation_untranslated_choice") { chooseUntranslated() }
     for (key in listOf(TranslationSettings.PREF_AUTO, TranslationSettings.PREF_NOTIFICATIONS)) {
@@ -108,12 +108,12 @@ class TranslationFragment : TalkbackBaseFragment(R.xml.translation_preferences) 
     find("pref_translation_service_choice").summary = serviceSummary(service)
     find("pref_translation_source_choice").summary = source?.let { TranslationLanguages.name(it) } ?: getString(R.string.translation_detect)
     find("pref_translation_target_choice").summary = targetLabel()
-    find("pref_translation_second_target_choice").apply {
+    find(KEY_SECOND_TARGET).apply {
       isVisible = source == null
       summary = TranslationSettings.secondTarget(prefs)?.let { TranslationLanguages.name(it) }
         ?: getString(R.string.translation_second_none)
     }
-    find("pref_translation_swap_action").isVisible = source != null
+    find(KEY_SWAP).isVisible = source != null
 
     findPreference<Preference>("pref_translation_auto_service_choice")!!.apply {
       isEnabled = autoServiceUsed()
@@ -564,11 +564,15 @@ class TranslationFragment : TalkbackBaseFragment(R.xml.translation_preferences) 
 
   private fun find(key: String): Preference = findPreference(key)!!
 
-  private companion object {
+  companion object {
+    /** Second language, shown while the source language is detected. */
+    const val KEY_SECOND_TARGET = "pref_translation_second_target_choice"
+    /** Swap languages, shown while a source language is chosen. */
+    const val KEY_SWAP = "pref_translation_swap_action"
     /** After Automatic translation and before Speech. */
-    const val SERVICE_CATEGORY_ORDER = 60
+    private const val SERVICE_CATEGORY_ORDER = 60
     /** About the size of one language's model. */
-    const val LANGUAGE_BYTES = 30L * 1000 * 1000
+    private const val LANGUAGE_BYTES = 30L * 1000 * 1000
   }
 
   private fun onClick(key: String, action: () -> Unit) {
