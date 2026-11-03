@@ -1,0 +1,5 @@
+<!-- SandFly's icon on the add-on's green (tools/icon/make_icon.py). -->
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+  <background android:drawable="@color/addon_icon_background" />
+  <foreground android:drawable="@drawable/sandfly_icon_foreground" />
+</adaptive-icon>
