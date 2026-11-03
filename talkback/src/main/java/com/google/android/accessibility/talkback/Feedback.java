@@ -1503,6 +1503,7 @@ public abstract class Feedback {
       CUT,
       PASTE,
       DELETE,
+      CLEAR_TEXT,
       CURSOR_TO_BEGINNING, // Works with stopSelecting.
       CURSOR_TO_END, // Works with stopSelecting.
       INSERT, // Requires text.

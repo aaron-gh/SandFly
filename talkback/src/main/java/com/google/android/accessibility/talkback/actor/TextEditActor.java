@@ -627,6 +627,31 @@ public class TextEditActor implements VoiceDictationDelegate {
     return result;
   }
 
+  /**
+   * Removes all text from edit-text. The text change event announces it; an empty field or a field
+   * that can't be set plays the end sound.
+   */
+  public boolean clearText(AccessibilityNodeInfoCompat node, EventId eventId) {
+    if (node == null || Role.getRole(node) != Role.ROLE_EDIT_TEXT) {
+      return false;
+    }
+    boolean empty =
+        node.isShowingHintText()
+            || AccessibilityNodeInfoUtils.isEmptyEditTextRegardlessOfHint(node)
+            || TextUtils.isEmpty(AccessibilityNodeInfoUtils.getText(node));
+    boolean result = false;
+    if (!empty) {
+      turnOffSelectionMode(node, eventId, /* clearSelection= */ false);
+      Bundle arguments = new Bundle();
+      arguments.putCharSequence(ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE, "");
+      result = PerformActionUtils.performAction(node, ACTION_SET_TEXT, arguments, eventId);
+    }
+    if (!result) {
+      pipeline.returnFeedback(eventId, Feedback.sound(R.raw.complete));
+    }
+    return result;
+  }
+
   /** Executes and announces delete text in edit-text. Modifies edit history. */
   public boolean delete(AccessibilityNodeInfoCompat node, EventId eventId) {
     if (node == null || Role.getRole(node) != Role.ROLE_EDIT_TEXT) {

@@ -503,6 +503,7 @@ class Actors {
             case CUT -> editor.cut(edit.node(), eventId);
             case PASTE -> editor.paste(edit.node(), eventId);
             case DELETE -> editor.delete(edit.node(), eventId);
+            case CLEAR_TEXT -> editor.clearText(edit.node(), eventId);
             case CURSOR_TO_BEGINNING ->
                 editor.cursorToBeginning(edit.node(), edit.stopSelecting(), eventId);
             case CURSOR_TO_END -> editor.cursorToEnd(edit.node(), edit.stopSelecting(), eventId);

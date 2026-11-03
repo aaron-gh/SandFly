@@ -34,6 +34,7 @@ import static com.google.android.accessibility.talkback.Feedback.EditText.Action
 import static com.google.android.accessibility.talkback.Feedback.EditText.Action.CUT;
 import static com.google.android.accessibility.talkback.Feedback.EditText.Action.END_SELECT;
 import static com.google.android.accessibility.talkback.Feedback.EditText.Action.PASTE;
+import static com.google.android.accessibility.talkback.Feedback.EditText.Action.CLEAR_TEXT;
 import static com.google.android.accessibility.talkback.Feedback.EditText.Action.SELECT_ALL;
 import static com.google.android.accessibility.talkback.Feedback.EditText.Action.START_SELECT;
 import static com.google.android.accessibility.talkback.Feedback.EditText.Action.TOGGLE_VOICE_DICTATION;
@@ -728,6 +729,13 @@ public class GestureController {
       } else {
         // Edit text found.
         result = pipeline.returnFeedback(eventId, Feedback.edit(node, CUT));
+      }
+    } else if (action.equals(service.getString(R.string.shortcut_value_clear_text))) {
+      AccessibilityNodeInfoCompat node = getEditTextFocus();
+      if (node == null) {
+        result = false;
+      } else {
+        result = pipeline.returnFeedback(eventId, Feedback.edit(node, CLEAR_TEXT));
       }
     } else if (action.equals(service.getString(R.string.shortcut_value_paste))) {
       AccessibilityNodeInfoCompat node = getEditTextFocus();
