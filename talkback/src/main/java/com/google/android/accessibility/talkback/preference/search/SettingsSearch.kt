@@ -19,6 +19,7 @@ package com.google.android.accessibility.talkback.preference.search
 import android.content.Intent
 import android.os.Bundle
 import android.text.InputType
+import android.view.KeyEvent
 import android.view.View
 import android.view.ViewGroup
 import android.view.accessibility.AccessibilityNodeInfo
@@ -146,6 +147,35 @@ object SettingsSearch {
     return lines.joinToString("\n")
   }
 
+  /** What the search field does with an editor action. */
+  internal enum class EditorAction {
+    SEARCH,
+    /** Takes the action without searching. */
+    CONSUME,
+    /** Leaves the action to the field. */
+    IGNORE,
+  }
+
+  /**
+   * Returns what the search field does with the editor action [actionId], which comes with a key
+   * event of [keyAction] and [repeatCount] for Enter on a physical keyboard: such an Enter
+   * searches when pressed, and is consumed when released, so that it doesn't move focus.
+   */
+  internal fun editorAction(actionId: Int, keyAction: Int?, repeatCount: Int): EditorAction =
+    when (actionId) {
+      EditorInfo.IME_ACTION_SEARCH,
+      EditorInfo.IME_ACTION_DONE,
+      EditorInfo.IME_ACTION_GO -> EditorAction.SEARCH
+      EditorInfo.IME_NULL ->
+        when {
+          keyAction == KeyEvent.ACTION_DOWN && repeatCount == 0 -> EditorAction.SEARCH
+          keyAction == KeyEvent.ACTION_DOWN || keyAction == KeyEvent.ACTION_UP ->
+            EditorAction.CONSUME
+          else -> EditorAction.IGNORE
+        }
+      else -> EditorAction.IGNORE
+    }
+
   /** Returns [titles] as a path of screens and categories. */
   @JvmStatic fun path(titles: List<CharSequence>): String = titles.joinToString(PATH_SEPARATOR)
 
@@ -217,34 +247,36 @@ object SettingsSearch {
       val query = edit.text?.toString()?.trim().orEmpty()
       val words = words(query)
       val loaded = all
-      if (loaded == null) {
+      if (words.isNotEmpty() && loaded == null) {
         pending = true
         return@search
       }
-      if (words.isNotEmpty()) {
-        val found = find(loaded, words)
-        if (found.isEmpty()) {
-          edit.error = activity.getString(R.string.keyboard_shortcuts_no_results)
-        } else {
-          dialog.dismiss()
-          val labels = found.map { label(loaded[it], words) }.toTypedArray()
-          MaterialAlertDialogBuilder(activity)
-            .setTitle(query)
-            .setItems(labels) { _, which -> onChoose.choose(found[which]) }
-            .setNegativeButton(android.R.string.cancel, null)
-            .show()
-        }
+      val candidates = loaded.orEmpty()
+      // Nothing is found without words, which also says so.
+      val found = find(candidates, words)
+      if (found.isEmpty()) {
+        edit.error = activity.getString(R.string.keyboard_shortcuts_no_results)
+      } else {
+        dialog.dismiss()
+        val labels = found.map { label(candidates[it], words) }.toTypedArray()
+        MaterialAlertDialogBuilder(activity)
+          .setTitle(query)
+          .setItems(labels) { _, which -> onChoose.choose(found[which]) }
+          .setNegativeButton(android.R.string.cancel, null)
+          .show()
       }
     }
     dialog.setOnShowListener {
       dialog.getButton(AlertDialog.BUTTON_POSITIVE)?.setOnClickListener { run() }
     }
-    edit.setOnEditorActionListener { _, actionId, _ ->
-      if (actionId == EditorInfo.IME_ACTION_SEARCH) {
-        run()
-        true
-      } else {
-        false
+    edit.setOnEditorActionListener { _, actionId, event ->
+      when (editorAction(actionId, event?.action, event?.repeatCount ?: 0)) {
+        EditorAction.SEARCH -> {
+          run()
+          true
+        }
+        EditorAction.CONSUME -> true
+        EditorAction.IGNORE -> false
       }
     }
     var stop: Runnable? = null
