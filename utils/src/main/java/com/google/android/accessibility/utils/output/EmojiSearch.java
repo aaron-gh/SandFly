@@ -166,7 +166,9 @@ public final class EmojiSearch {
 
   /**
    * Returns {@code text} in lower case, without accents, with each run of other characters than
-   * letters and digits as one space, and no space at either end.
+   * letters, digits and marks as one space, and no space at either end. Accents are the combining
+   * diacritics of Latin, Greek and Cyrillic letters and the vowel points of Arabic and Hebrew; other
+   * marks, such as the vowel signs and viramas of Indic scripts, are part of the word.
    */
   static String normalize(String text, Locale language) {
     String decomposed = Normalizer.normalize(text, Normalizer.Form.NFD);
@@ -175,10 +177,11 @@ public final class EmojiSearch {
     for (int i = 0; i < decomposed.length(); ) {
       int codePoint = decomposed.codePointAt(i);
       i += Character.charCount(codePoint);
-      if (Character.getType(codePoint) == Character.NON_SPACING_MARK) {
+      boolean mark = isMark(codePoint);
+      if (mark && isAccent(codePoint)) {
         continue;
       }
-      if (Character.isLetterOrDigit(codePoint)) {
+      if (mark || Character.isLetterOrDigit(codePoint)) {
         if (space && result.length() > 0) {
           result.append(' ');
         }
@@ -189,5 +192,27 @@ public final class EmojiSearch {
       }
     }
     return result.toString().toLowerCase(language);
+  }
+
+  private static boolean isMark(int codePoint) {
+    int type = Character.getType(codePoint);
+    return type == Character.NON_SPACING_MARK
+        || type == Character.COMBINING_SPACING_MARK
+        || type == Character.ENCLOSING_MARK;
+  }
+
+  /** Whether a mark is an accent, which names are compared without. */
+  private static boolean isAccent(int codePoint) {
+    return (codePoint >= 0x0300 && codePoint <= 0x036F) // Combining Diacritical Marks
+        || (codePoint >= 0x0483 && codePoint <= 0x0489) // Cyrillic
+        || (codePoint >= 0x0591 && codePoint <= 0x05C7) // Hebrew points and cantillation
+        || (codePoint >= 0x0610 && codePoint <= 0x061A) // Arabic
+        || (codePoint >= 0x064B && codePoint <= 0x065F) // Arabic harakat
+        || codePoint == 0x0670 // Arabic superscript alef
+        || (codePoint >= 0x06D6 && codePoint <= 0x06ED) // Arabic Quranic marks
+        || (codePoint >= 0x1AB0 && codePoint <= 0x1AFF) // Combining Diacritical Marks Extended
+        || (codePoint >= 0x1DC0 && codePoint <= 0x1DFF) // Combining Diacritical Marks Supplement
+        || (codePoint >= 0x20D0 && codePoint <= 0x20FF) // Combining Diacritical Marks for Symbols
+        || (codePoint >= 0xFE20 && codePoint <= 0xFE2F); // Combining Half Marks
   }
 }

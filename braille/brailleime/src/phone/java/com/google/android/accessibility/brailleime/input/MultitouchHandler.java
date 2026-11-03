@@ -99,7 +99,7 @@ class MultitouchHandler {
    * Pointers held for this duration, without additional pointers added or removed, qualify as a
    * possible hold. Whether a hold is actually produced depends on the {@link HoldRecognizer}.
    */
-  private static final long HOLD_MIN_DURATION_MS = 2000;
+  static final long HOLD_MIN_DURATION_MS = 2000;
 
   /** Maps pointerId's to active PointerWithHistory objects. */
   @SuppressLint("UseSparseArrays")

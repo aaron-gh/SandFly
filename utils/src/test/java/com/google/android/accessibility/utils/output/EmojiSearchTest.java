@@ -83,6 +83,46 @@ public class EmojiSearchTest {
   }
 
   @Test
+  public void find_keepsIndicVowelSignsAndViramas() {
+    EmojiSearch hindi =
+        EmojiSearch.of(
+            List.of(
+                new Emoji("🏏", "बल्ला"),
+                new Emoji("🐈", "बिल्ली"),
+                new Emoji("🐱", "बिल्ली का चेहरा"),
+                new Emoji("🐕", "कुत्ता")),
+            new Locale("hi"));
+    List<String> found = new ArrayList<>();
+    for (Emoji each : hindi.find("बिल्ली", 10)) {
+      found.add(each.emoji());
+    }
+    assertEquals(List.of("🐈", "🐱"), found);
+    assertEquals("कुत्ता", hindi.find("कुत्ता", 10).get(0).name());
+    assertEquals(List.of(), hindi.find("कत", 10));
+  }
+
+  @Test
+  public void normalize_keepsMarksOfIndicScripts() {
+    Locale hindi = new Locale("hi");
+    assertEquals("बिल्ली", EmojiSearch.normalize("बिल्ली", hindi));
+    // A vowel sign changes the text, so a cell that adds one is searched for.
+    assertFalse(EmojiSearch.normalize("ब", hindi).equals(EmojiSearch.normalize("बि", hindi)));
+    assertEquals("பூனை", EmojiSearch.normalize("பூனை", new Locale("ta")));
+    Locale bengali = new Locale("bn");
+    // ড় matches whether it is one character or ড with a nukta.
+    assertEquals(
+        EmojiSearch.normalize("বি\u09DCাল", bengali),
+        EmojiSearch.normalize("বি\u09A1\u09BCাল", bengali));
+    assertTrue(EmojiSearch.normalize("বিড়াল", bengali).startsWith("বি"));
+  }
+
+  @Test
+  public void normalize_dropsAccentsAndVowelPoints() {
+    assertEquals("mate cafe", EmojiSearch.normalize("Maté Café", Locale.ENGLISH));
+    assertEquals("قط", EmojiSearch.normalize("قِطّ", new Locale("ar")));
+  }
+
+  @Test
   public void find_isBounded() {
     assertEquals(2, found("a", 2).size());
     assertEquals(List.of(), found("a", 0));
