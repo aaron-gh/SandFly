@@ -18,7 +18,10 @@ package com.google.android.accessibility.talkback.keyboard
 
 import android.content.Context
 import android.view.KeyEvent
+import android.view.accessibility.AccessibilityNodeInfo
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.talkback.focusmanagement.AccessibilityFocusMonitor
 import com.google.android.accessibility.talkback.tutorial.TutorialHooks
 import com.google.android.accessibility.utils.FormFactorUtils
 import com.google.android.accessibility.utils.ServiceStateListener
@@ -273,6 +276,68 @@ class SandFlyKeyTest {
 
     CustomKeymaps.delete(context, custom)
     assertTrue(CustomKeymaps.all(context).isEmpty())
+  }
+
+  /** Makes [manager] find SandFly focus and input focus on a text field being edited. */
+  private fun editTextField(manager: KeyComboManager) {
+    val field =
+      AccessibilityNodeInfoCompat.wrap(
+        AccessibilityNodeInfo.obtain().apply {
+          isFocused = true
+          isEditable = true
+        }
+      )
+    val monitor =
+      object : AccessibilityFocusMonitor(null, null, null) {
+        override fun getInputFocus() = field
+
+        override fun getAccessibilityFocus(useInputFocusIfEmpty: Boolean) = field
+      }
+    KeyComboManager::class.java.getDeclaredField("accessibilityFocusMonitor").apply {
+      isAccessible = true
+      set(manager, monitor)
+    }
+  }
+
+  private fun customKeymapWithCtrlHome(arrowsNavigate: Boolean): KeyComboManager {
+    val custom =
+      CustomKeymaps.create(
+        context,
+        "Mine",
+        usesSequences = false,
+        SandFlyKey.INSERT,
+        mapOf(
+          context.getString(R.string.keycombo_shortcut_navigate_first) to
+            KeyCombo(KeyEvent.META_CTRL_ON, 0, KeyEvent.KEYCODE_MOVE_HOME, false)
+        ),
+        arrowsNavigate,
+      )
+    SharedPreferencesUtils.getSharedPreferences(context)
+      .edit()
+      .putString(context.getString(R.string.pref_select_keymap_key), custom.value)
+      .commit()
+    return KeyComboManager.create(context).apply {
+      onServiceStateChanged(ServiceStateListener.SERVICE_STATE_ACTIVE)
+      editTextField(this)
+    }
+  }
+
+  @Test
+  fun customKeymapCtrlShortcutWorksInATextFieldBeingEdited() {
+    val manager = customKeymapWithCtrlHome(arrowsNavigate = false)
+    val ctrl = KeyEvent.META_CTRL_ON or KeyEvent.META_CTRL_LEFT_ON
+    manager.down(KeyEvent.KEYCODE_CTRL_LEFT, ctrl)
+    assertTrue(manager.down(KeyEvent.KEYCODE_MOVE_HOME, ctrl))
+    assertEquals(1, keys.size)
+  }
+
+  @Test
+  fun customKeymapWhoseArrowsNavigateLeavesCtrlHomeToATextFieldBeingEdited() {
+    val manager = customKeymapWithCtrlHome(arrowsNavigate = true)
+    val ctrl = KeyEvent.META_CTRL_ON or KeyEvent.META_CTRL_LEFT_ON
+    manager.down(KeyEvent.KEYCODE_CTRL_LEFT, ctrl)
+    assertFalse(manager.down(KeyEvent.KEYCODE_MOVE_HOME, ctrl))
+    assertTrue(keys.isEmpty())
   }
 
   @Test

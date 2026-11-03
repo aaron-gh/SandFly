@@ -1231,10 +1231,13 @@ public class KeyComboManager
               && otherModifiers == KeyComboModel.NO_MODIFIER
               && event.getRepeatCount() == 0;
       // In a text field being edited, they are the text field's, except a custom keymap's
-      // shortcuts with Ctrl or Alt, such as Ctrl + Enter for Submit text, which aren't typing. Only
-      // keys that are shortcuts wait for the focus lookups, which ask the app, so typing doesn't.
+      // shortcuts with Ctrl or Alt, such as Ctrl + Enter for Submit text, which aren't typing.
+      // Custom keymaps whose arrows navigate leave text fields being edited alone, like the
+      // NVDA, JAWS and Orca keymaps they come from (Ctrl + Home moves the cursor). Only keys that
+      // are shortcuts wait for the focus lookups, which ask the app, so typing doesn't.
       boolean customShortcutKeys =
           isCustomKeymap()
+              && !arrowsNavigate()
               && (otherModifiers & (KeyEvent.META_CTRL_ON | KeyEvent.META_ALT_ON)) != 0;
       if ((enter
               || (!customShortcutKeys
