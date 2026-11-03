@@ -636,15 +636,16 @@ public class TextEditActor implements VoiceDictationDelegate {
       return false;
     }
     boolean empty =
-        node.isShowingHintText()
-            || AccessibilityNodeInfoUtils.isEmptyEditTextRegardlessOfHint(node)
-            || TextUtils.isEmpty(AccessibilityNodeInfoUtils.getText(node));
+        node.isShowingHintText() || TextUtils.isEmpty(AccessibilityNodeInfoUtils.getText(node));
     boolean result = false;
     if (!empty) {
       turnOffSelectionMode(node, eventId, /* clearSelection= */ false);
       Bundle arguments = new Bundle();
       arguments.putCharSequence(ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE, "");
+      // The app's text change, if it sends one, isn't announced again.
+      editTextActionHistory.beforeClearText();
       result = PerformActionUtils.performAction(node, ACTION_SET_TEXT, arguments, eventId);
+      editTextActionHistory.afterClearText();
     }
     if (result) {
       pipeline.returnFeedback(

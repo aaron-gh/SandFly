@@ -95,6 +95,7 @@ public class TextEventInterpretation extends ReadOnly {
 
   private boolean mIsCutAction = false;
   private boolean mIsPasteAction = false;
+  private boolean isClearTextAction = false;
   private boolean isPassword = false;
 
   @Nullable private CharSequence textOrDescription;
@@ -157,6 +158,16 @@ public class TextEventInterpretation extends ReadOnly {
 
   public boolean getIsPasteAction() {
     return mIsPasteAction;
+  }
+
+  /** Sets whether SandFly's clear text action, which announces it, removed the text. */
+  public void setIsClearTextAction(boolean isClearText) {
+    checkIsWritable();
+    isClearTextAction = isClearText;
+  }
+
+  public boolean getIsClearTextAction() {
+    return isClearTextAction;
   }
 
   public void setIsPassword(boolean value) {
@@ -246,6 +257,7 @@ public class TextEventInterpretation extends ReadOnly {
         StringBuilderUtils.optionalText("Reason", mReason),
         StringBuilderUtils.optionalTag("isCut", mIsCutAction),
         StringBuilderUtils.optionalTag("isPaste", mIsPasteAction),
+        StringBuilderUtils.optionalTag("isClearText", isClearTextAction),
         StringBuilderUtils.optionalTag("isPassword", isPassword),
         StringBuilderUtils.optionalText("textOrDescription", textOrDescription),
         StringBuilderUtils.optionalText("removedText", mRemovedText),
