@@ -49,6 +49,16 @@ public class ProcessorEventQueue implements AccessibilityEventListener {
       AccessibilityEvent.TYPES_ALL_MASK;
 
   /**
+   * Types of queued events that are handled before a web focus event, as their speech, if it came
+   * after the focus, could interrupt it.
+   */
+  private static final int MASK_SPOKEN_BEFORE_WEB_FOCUS =
+      AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED
+          | AccessibilityEvent.TYPE_ANNOUNCEMENT
+          | AccessibilityEvent.TYPE_NOTIFICATION_STATE_CHANGED
+          | AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED;
+
+  /**
    * We keep the accessibility events to be processed. If a received event is the same type as the
    * previous one it replaces the latter, otherwise it is added to the queue. All events in this
    * queue are processed while we speak and this occurs after a certain timeout since the last
@@ -105,14 +115,19 @@ public class ProcessorEventQueue implements AccessibilityEventListener {
    * but a web page chooses the item itself, so only its event can say which item it is. While a
    * page changes, it sends many content change events, each of which waits for the app when it is
    * handled. Queued behind them, focus was spoken late, and in a fast run of swipes the queue's
-   * limit of two focus events dropped most of them. The events queued before it, other than content
-   * changes, are handled first, so that the speech of an earlier window change or announcement does
-   * not come after the focus and cut it off. Content changes stay queued, in their order.
+   * limit of two focus events dropped most of them. The queued events of {@link
+   * #MASK_SPOKEN_BEFORE_WEB_FOCUS} are handled first, so that the speech of an earlier window
+   * change or announcement does not come after the focus and cut it off. The other events stay
+   * queued, in their order, and are handled in time slices after the focus.
    */
   private void processWebFocus(AccessibilityEvent event, EventId eventId) {
     List<AccessibilityEvent> earlier;
     synchronized (eventQueue) {
-      earlier = eventQueue.removeAllExcept(AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED);
+      earlier =
+          eventQueue.removeMatching(
+              queued ->
+                  AccessibilityEventUtils.eventMatchesAnyType(
+                      queued, MASK_SPOKEN_BEFORE_WEB_FOCUS));
     }
     for (AccessibilityEvent earlierEvent : earlier) {
       processEvent(earlierEvent, Performance.getInstance().toEventId(earlierEvent));

@@ -20,11 +20,16 @@ import android.os.Looper
 import android.view.View
 import android.view.accessibility.AccessibilityEvent
 import android.view.accessibility.AccessibilityEvent.TYPE_ANNOUNCEMENT
+import android.view.accessibility.AccessibilityEvent.TYPE_NOTIFICATION_STATE_CHANGED
 import android.view.accessibility.AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED
+import android.view.accessibility.AccessibilityEvent.TYPE_VIEW_CLICKED
+import android.view.accessibility.AccessibilityEvent.TYPE_VIEW_SCROLLED
+import android.view.accessibility.AccessibilityEvent.TYPE_VIEW_TEXT_CHANGED
 import android.view.accessibility.AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED
 import android.view.accessibility.AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED
 import android.view.accessibility.AccessibilityNodeInfo
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
+import java.time.Duration
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test
@@ -34,6 +39,7 @@ import org.robolectric.RuntimeEnvironment
 import org.robolectric.Shadows.shadowOf
 import org.robolectric.annotation.Config
 import org.robolectric.annotation.LooperMode
+import org.robolectric.shadows.ShadowSystemClock
 
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [35])
@@ -78,21 +84,52 @@ class ProcessorEventQueueWebFocusTest {
   }
 
   @Test
-  fun eventsQueuedBeforeWebFocusOtherThanContentChangesAreHandledFirst() {
+  fun queuedEventsWhoseSpeechCouldInterruptWebFocusAreHandledFirst() {
     send(event(TYPE_WINDOW_CONTENT_CHANGED, "content-1"))
     send(event(TYPE_WINDOW_STATE_CHANGED, "window"))
+    send(event(TYPE_VIEW_SCROLLED, "scrolled"))
     send(event(TYPE_WINDOW_CONTENT_CHANGED, "content-2"))
     send(event(TYPE_ANNOUNCEMENT, "announcement"))
+    send(event(TYPE_NOTIFICATION_STATE_CHANGED, "notification"))
+    send(event(TYPE_VIEW_TEXT_CHANGED, "text"))
     send(focus("native", web = false))
 
     send(focus("web", web = true))
 
-    assertEquals(listOf("window", "announcement", "native", "web"), handled)
+    assertEquals(listOf("window", "announcement", "notification", "native", "web"), handled)
     runQueue()
     assertEquals(
-      listOf("window", "announcement", "native", "web", "content-1", "content-2"),
+      listOf(
+        "window",
+        "announcement",
+        "notification",
+        "native",
+        "web",
+        "content-1",
+        "scrolled",
+        "content-2",
+        "text",
+      ),
       handled,
     )
+  }
+
+  @Test
+  fun eventsLeftQueuedAreHandledInTimeSlices() {
+    // Each event takes 10 ms, so a time slice of 16 ms handles two of them.
+    val slowHandled = mutableListOf<String>()
+    val slowQueue =
+      ProcessorEventQueue { event, _ ->
+        slowHandled.add(event.contentDescription.toString())
+        ShadowSystemClock.advanceBy(Duration.ofMillis(10))
+      }
+    repeat(6) { slowQueue.onAccessibilityEvent(event(TYPE_VIEW_CLICKED, "clicked-$it"), null) }
+    slowQueue.onAccessibilityEvent(focus("web", web = true), null)
+    assertEquals(listOf("web"), slowHandled)
+
+    shadowOf(Looper.getMainLooper()).runOneTask()
+
+    assertEquals(listOf("web", "clicked-0", "clicked-1"), slowHandled)
   }
 
   @Test

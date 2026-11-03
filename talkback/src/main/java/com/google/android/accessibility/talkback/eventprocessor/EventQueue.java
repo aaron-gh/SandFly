@@ -23,6 +23,7 @@ import com.google.android.accessibility.utils.AccessibilityEventUtils;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.function.Predicate;
 
 /**
  * This class is a queue that tracks events that TalkBack will process. This queue self-prunes
@@ -95,16 +96,13 @@ class EventQueue {
     return event;
   }
 
-  /**
-   * Removes the events whose type is not in {@code keptTypes} from the queue, and returns them in
-   * queue order.
-   */
-  public List<AccessibilityEvent> removeAllExcept(int keptTypes) {
+  /** Removes the events that {@code filter} accepts from the queue, and returns them in order. */
+  public List<AccessibilityEvent> removeMatching(Predicate<AccessibilityEvent> filter) {
     List<AccessibilityEvent> removed = new ArrayList<>();
     final Iterator<AccessibilityEvent> iterator = eventQueue.iterator();
     while (iterator.hasNext()) {
       final AccessibilityEvent next = iterator.next();
-      if (AccessibilityEventUtils.eventMatchesAnyType(next, keptTypes)) {
+      if (!filter.test(next)) {
         continue;
       }
       iterator.remove();
