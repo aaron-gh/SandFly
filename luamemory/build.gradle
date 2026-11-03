@@ -8,6 +8,14 @@ apply from: "../shared.gradle"
 android {
     namespace = "com.google.android.accessibility.luamemory"
     ndkVersion = "27.3.13750724"
+    defaultConfig {
+        externalNativeBuild {
+            cmake {
+                // 16 KB page alignment, which Google Play requires of native libraries.
+                arguments "-DANDROID_SUPPORT_FLEXIBLE_PAGE_SIZES=ON"
+            }
+        }
+    }
     externalNativeBuild {
         cmake {
             path = file('src/main/cpp/CMakeLists.txt')
