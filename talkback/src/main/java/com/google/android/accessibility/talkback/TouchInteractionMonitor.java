@@ -1963,6 +1963,8 @@ public class TouchInteractionMonitor
       node.refresh();
     }
     lastExploredNode = node;
+    // A split tap typed the key explored before; this one is typed on lift.
+    splitTappedKeyboard = false;
     service.onKeyboardNodeTouched(node);
   }
 

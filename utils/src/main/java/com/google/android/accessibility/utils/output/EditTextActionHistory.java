@@ -34,6 +34,8 @@ public class EditTextActionHistory {
     public boolean hasSelectAllActionAtTime(long eventTime);
 
     public boolean hasSetTextActionAtTime(long eventTime);
+
+    public boolean hasClearTextActionAtTime(long eventTime);
   }
 
   /** Instance of read-only interface. */
@@ -58,6 +60,11 @@ public class EditTextActionHistory {
         public boolean hasSetTextActionAtTime(long eventTime) {
           return EditTextActionHistory.this.hasSetTextActionAtTime(eventTime);
         }
+
+        @Override
+        public boolean hasClearTextActionAtTime(long eventTime) {
+          return EditTextActionHistory.this.hasClearTextActionAtTime(eventTime);
+        }
       };
 
   /** Map of action identifiers to start times. */
@@ -65,12 +72,14 @@ public class EditTextActionHistory {
   private long mPasteStartTime = -1;
   private long mSelectAllStartTime = -1;
   private long setTextStartTime = -1;
+  private long clearTextStartTime = -1;
 
   /** Map of action identifiers to finish times. */
   private long mCutFinishTime = -1;
   private long mPasteFinishTime = -1;
   private long mSelectAllFinishTime = -1;
   private long setTextFinishTime = -1;
+  private long clearTextFinishTime = -1;
 
   /**
    * Stores the start time for a cut action. This should be called immediately before {@link
@@ -129,6 +138,22 @@ public class EditTextActionHistory {
   }
 
   /**
+   * Stores the start time for the clear text action, which announces the cleared text itself. This
+   * should be called immediately before {@link AccessibilityNodeInfoCompat#performAction}.
+   */
+  public void beforeClearText() {
+    clearTextStartTime = SystemClock.uptimeMillis();
+  }
+
+  /**
+   * Stores the finish time for the clear text action. This should be called immediately after
+   * {@link AccessibilityNodeInfoCompat#performAction}.
+   */
+  public void afterClearText() {
+    clearTextFinishTime = SystemClock.uptimeMillis();
+  }
+
+  /**
    * Returns whether the specified event time falls between the start and finish times of the last
    * cut action.
    *
@@ -162,5 +187,14 @@ public class EditTextActionHistory {
   public boolean hasSetTextActionAtTime(long eventTime) {
     return !((setTextFinishTime == -1) || (setTextStartTime > eventTime))
         && !((setTextFinishTime >= setTextStartTime) && (setTextFinishTime < eventTime));
+  }
+
+  /**
+   * Returns whether the specified event time falls between the start and finish times of the last
+   * clear text action.
+   */
+  public boolean hasClearTextActionAtTime(long eventTime) {
+    return !((clearTextStartTime == -1) || (clearTextStartTime > eventTime))
+        && !((clearTextFinishTime >= clearTextStartTime) && (clearTextFinishTime < eventTime));
   }
 }

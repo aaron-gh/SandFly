@@ -365,6 +365,8 @@ public class TextEventInterpreter {
         && event.getBeforeText().length() == event.getRemovedCount()) {
       interpretation.setEvent(TextEventInterpretation.TEXT_CLEAR);
       interpretation.setReason("Cleared number of characters equal to field content length.");
+      interpretation.setIsClearTextAction(
+          actionHistory.hasClearTextActionAtTime(event.getEventTime()));
       return interpretation;
     }
 

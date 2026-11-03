@@ -123,6 +123,11 @@ public final class InputTextFeedbackRules {
         AccessibilityInterpretationFeedbackUtils.safeTextInterpretation(
                 eventOptions.eventInterpretation)
             .getIsCutAction();
+    // The clear text action says "Cleared text" itself, also in apps that send no text change.
+    boolean isClearTextAction =
+        AccessibilityInterpretationFeedbackUtils.safeTextInterpretation(
+                eventOptions.eventInterpretation)
+            .getIsClearTextAction();
 
     CharSequence beforeText =
         refineInputText(context, event.getBeforeText(), globalVariables.getCountRepeatedSymbols());
@@ -134,7 +139,7 @@ public final class InputTextFeedbackRules {
                     SpannableUtils.getSpannedFormattedString(
                         context.getString(R.string.template_text_cut), beforeText),
                     context.getString(R.string.value_text_cleared))
-            : context.getString(R.string.value_text_cleared);
+            : isClearTextAction ? "" : context.getString(R.string.value_text_cleared);
     CharSequence notifyErrorState =
         updateAndGetErrorStateText(eventOptions, context, lastAnnouncedErrorInfo);
     CharSequence ttsOutput = joinCharSequences(changedText, notifyErrorState);
@@ -145,7 +150,8 @@ public final class InputTextFeedbackRules {
             " ttsOutputRule= ",
             optionalText("changedText", changedText),
             optionalText("notifyErrorState", notifyErrorState),
-            optionalTag("isCutAction", isCutAction)));
+            optionalTag("isCutAction", isCutAction),
+            optionalTag("isClearTextAction", isClearTextAction)));
 
     return EventFeedback.builder()
         .setTtsOutput(Optional.of(ttsOutput))
