@@ -89,6 +89,33 @@ class BackTapDetectorTest {
   }
 
   @Test
+  fun lighterSecondTap_counts() {
+    still(500)
+    tap(at = 500)
+    tap(at = 700, strength = 14f)
+    still(1500)
+    assertEquals(listOf(2), runs.map { it.first })
+  }
+
+  @Test
+  fun muchLighterSecondTap_runsNothing() {
+    still(500)
+    tap(at = 500)
+    tap(at = 700, strength = 10f)
+    still(1500)
+    assertEquals(emptyList<Int>(), runs.map { it.first })
+  }
+
+  @Test
+  fun lightFirstTap_runsNothing() {
+    still(500)
+    tap(at = 500, strength = 14f)
+    tap(at = 700)
+    still(1500)
+    assertEquals(emptyList<Int>(), runs.map { it.first })
+  }
+
+  @Test
   fun singleTap_runsNothing() {
     still(500)
     tap(at = 500)

@@ -42,7 +42,10 @@ class BackTapDetector(private val listener: Listener) {
     fun onJolt(description: String) {}
   }
 
-  /** How strong a jolt must be along the axis through the screen, in m/s², to count as a tap. */
+  /**
+   * How strong a jolt must be along the axis through the screen, in m/s², to count as the first tap.
+   * Later taps count from [FOLLOWING_TAP_RATIO] of it: a second tap is mostly weaker than the first.
+   */
   var threshold: Float = Sensitivity.MEDIUM.threshold
 
   /**
@@ -102,7 +105,7 @@ class BackTapDetector(private val listener: Listener) {
     slowZ += fastZ * slowAlpha
 
     if (joltStartNs == NONE) {
-      if (abs(fastZ) >= threshold && timeNs >= nextJoltNs) {
+      if (abs(fastZ) >= threshold * MEASURED_RATIO && timeNs >= nextJoltNs) {
         joltStartNs = timeNs
         joltZ = abs(fastZ)
         joltSideways = max(abs(fastX), abs(fastY))
@@ -149,6 +152,15 @@ class BackTapDetector(private val listener: Listener) {
   private fun onJoltMeasured(timeNs: Long) {
     val startNs = joltStartNs
     joltStartNs = NONE
+    val following = taps > 0 && startNs - lastTapNs <= MAX_TAP_INTERVAL_NS
+    val needed = if (following) threshold * FOLLOWING_TAP_RATIO else threshold
+    if (joltZ < needed) {
+      // Too light to be a tap: measured only for the debug log, and changes nothing.
+      listener.onJolt(
+        String.format(java.util.Locale.ROOT, "Back tap jolt %.1f: too light, %.1f needed", joltZ, needed)
+      )
+      return
+    }
     // The device rings for a moment after a jolt.
     nextJoltNs = startNs + RING_NS
     val stillnessRatio = if (taps == 0) STILL_BEFORE_FIRST_TAP else STILL_BEFORE_NEXT_TAP
@@ -221,6 +233,10 @@ class BackTapDetector(private val listener: Listener) {
     const val MAX_SAMPLE_GAP_NS = 100 * MS
     /** Time the filters take to settle after they start. */
     const val SETTLE_NS = 100 * MS
+    /** Part of the threshold from which jolts are measured, so that ones too light are logged. */
+    const val MEASURED_RATIO = 0.5f
+    /** Part of the threshold a second or third tap must reach. */
+    const val FOLLOWING_TAP_RATIO = 0.75f
     /** How long the strongest part of a jolt is looked for. */
     const val JOLT_NS = 25 * MS
     /** Time after the start of a jolt in which the device still rings. */
