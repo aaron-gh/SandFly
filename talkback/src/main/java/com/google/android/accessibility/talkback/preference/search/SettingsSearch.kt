@@ -19,6 +19,7 @@ package com.google.android.accessibility.talkback.preference.search
 import android.content.Intent
 import android.os.Bundle
 import android.text.InputType
+import android.view.KeyEvent
 import android.view.View
 import android.view.ViewGroup
 import android.view.accessibility.AccessibilityNodeInfo
@@ -26,6 +27,8 @@ import android.view.inputmethod.EditorInfo
 import android.widget.FrameLayout
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleEventObserver
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.PreferenceGroup
@@ -144,6 +147,35 @@ object SettingsSearch {
     return lines.joinToString("\n")
   }
 
+  /** What the search field does with an editor action. */
+  internal enum class EditorAction {
+    SEARCH,
+    /** Takes the action without searching. */
+    CONSUME,
+    /** Leaves the action to the field. */
+    IGNORE,
+  }
+
+  /**
+   * Returns what the search field does with the editor action [actionId], which comes with a key
+   * event of [keyAction] and [repeatCount] for Enter on a physical keyboard: such an Enter
+   * searches when pressed, and is consumed when released, so that it doesn't move focus.
+   */
+  internal fun editorAction(actionId: Int, keyAction: Int?, repeatCount: Int): EditorAction =
+    when (actionId) {
+      EditorInfo.IME_ACTION_SEARCH,
+      EditorInfo.IME_ACTION_DONE,
+      EditorInfo.IME_ACTION_GO -> EditorAction.SEARCH
+      EditorInfo.IME_NULL ->
+        when {
+          keyAction == KeyEvent.ACTION_DOWN && repeatCount == 0 -> EditorAction.SEARCH
+          keyAction == KeyEvent.ACTION_DOWN || keyAction == KeyEvent.ACTION_UP ->
+            EditorAction.CONSUME
+          else -> EditorAction.IGNORE
+        }
+      else -> EditorAction.IGNORE
+    }
+
   /** Returns [titles] as a path of screens and categories. */
   @JvmStatic fun path(titles: List<CharSequence>): String = titles.joinToString(PATH_SEPARATOR)
 
@@ -164,10 +196,29 @@ object SettingsSearch {
 
   /**
    * Asks for a text, and lists the [candidates] that have its words, or says there are no results
-   * and keeps asking. [candidates] is read once, at the first search.
+   * and keeps asking. [candidates] is read once, when the dialog opens.
    */
   @JvmStatic
-  fun search(fragment: Fragment, candidates: () -> List<Candidate>, onChoose: OnChoose) {
+  fun search(fragment: Fragment, candidates: () -> List<Candidate>, onChoose: OnChoose) =
+    searchLoaded(
+      fragment,
+      { deliver ->
+        deliver(candidates())
+        null
+      },
+      onChoose,
+    )
+
+  /**
+   * Like [search], with candidates that [load] starts finding when the dialog opens, and passes to
+   * its argument on the main thread. [load] returns what stops it when the dialog closes first, or
+   * null. A search made before the candidates arrive runs when they do.
+   */
+  private fun searchLoaded(
+    fragment: Fragment,
+    load: (deliver: (List<Candidate>) -> Unit) -> Runnable?,
+    onChoose: OnChoose,
+  ) {
     val activity = fragment.requireActivity()
     val title = activity.getString(android.R.string.search_go)
     val padding = (20 * activity.resources.displayMetrics.density).toInt()
@@ -190,38 +241,68 @@ object SettingsSearch {
         .setPositiveButton(android.R.string.ok, null)
         .setNegativeButton(android.R.string.cancel, null)
         .create()
-    val all by lazy(LazyThreadSafetyMode.NONE) { candidates() }
-    val run = {
+    var all: List<Candidate>? = null
+    var pending = false
+    val run = search@{
       val query = edit.text?.toString()?.trim().orEmpty()
       val words = words(query)
-      if (words.isNotEmpty()) {
-        val found = find(all, words)
-        if (found.isEmpty()) {
-          edit.error = activity.getString(R.string.keyboard_shortcuts_no_results)
-        } else {
-          dialog.dismiss()
-          val labels = found.map { label(all[it], words) }.toTypedArray()
-          MaterialAlertDialogBuilder(activity)
-            .setTitle(query)
-            .setItems(labels) { _, which -> onChoose.choose(found[which]) }
-            .setNegativeButton(android.R.string.cancel, null)
-            .show()
-        }
+      val loaded = all
+      if (words.isNotEmpty() && loaded == null) {
+        pending = true
+        return@search
+      }
+      val candidates = loaded.orEmpty()
+      // Nothing is found without words, which also says so.
+      val found = find(candidates, words)
+      if (found.isEmpty()) {
+        edit.error = activity.getString(R.string.keyboard_shortcuts_no_results)
+      } else {
+        dialog.dismiss()
+        val labels = found.map { label(candidates[it], words) }.toTypedArray()
+        MaterialAlertDialogBuilder(activity)
+          .setTitle(query)
+          .setItems(labels) { _, which -> onChoose.choose(found[which]) }
+          .setNegativeButton(android.R.string.cancel, null)
+          .show()
       }
     }
     dialog.setOnShowListener {
       dialog.getButton(AlertDialog.BUTTON_POSITIVE)?.setOnClickListener { run() }
     }
-    edit.setOnEditorActionListener { _, actionId, _ ->
-      if (actionId == EditorInfo.IME_ACTION_SEARCH) {
-        run()
-        true
-      } else {
-        false
+    edit.setOnEditorActionListener { _, actionId, event ->
+      when (editorAction(actionId, event?.action, event?.repeatCount ?: 0)) {
+        EditorAction.SEARCH -> {
+          run()
+          true
+        }
+        EditorAction.CONSUME -> true
+        EditorAction.IGNORE -> false
       }
     }
+    var stop: Runnable? = null
+    val closeWithScreen = LifecycleEventObserver { _, event ->
+      if (event == Lifecycle.Event.ON_DESTROY) {
+        dialog.dismiss()
+      }
+    }
+    dialog.setOnDismissListener {
+      stop?.run()
+      stop = null
+      fragment.lifecycle.removeObserver(closeWithScreen)
+    }
+    fragment.lifecycle.addObserver(closeWithScreen)
     dialog.show()
     edit.requestFocus()
+    stop =
+      load { candidates ->
+        if (dialog.isShowing && fragment.isAdded) {
+          all = candidates
+          if (pending) {
+            pending = false
+            run()
+          }
+        }
+      }
   }
 
   /**
@@ -272,12 +353,15 @@ object SettingsSearch {
   /** Searches every settings screen and command from [fragment], the main settings screen. */
   @JvmStatic
   fun searchSettings(fragment: PreferenceFragmentCompat) {
+    val context = fragment.requireContext()
     var entries: List<SettingsIndex.Entry> = emptyList()
-    search(
+    searchLoaded(
       fragment,
-      {
-        entries = SettingsIndex.build(fragment.requireContext())
-        entries.map { Candidate(it.title, listOfNotNull(it.summary), path(it.path)) }
+      { deliver ->
+        SettingsIndex.buildInBackground(context) { built ->
+          entries = built
+          deliver(built.map { Candidate(it.title, listOfNotNull(it.summary), path(it.path)) })
+        }
       },
     ) { index ->
       if (fragment.isAdded) {

@@ -16,25 +16,35 @@
 
 package com.google.android.accessibility.talkback.preference.search
 
+import android.app.NotificationManager
+import android.content.ComponentName
 import android.content.Context
+import android.os.Looper
+import android.provider.Settings
 import android.view.ContextThemeWrapper
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.commands.CommandFragment
 import com.google.android.accessibility.talkback.commands.Commands
+import com.google.android.accessibility.talkback.notificationlist.NotificationListService
+import com.google.android.accessibility.talkback.notifications.NotificationXmlFragment
 import com.google.android.accessibility.talkback.preference.base.TalkBackGestureShortcutPreferenceFragment
 import com.google.android.accessibility.talkback.preference.base.TalkBackPreferenceFragment
 import com.google.android.accessibility.talkback.preference.base.TextToSpeechSettingsFragment
+import com.google.android.accessibility.talkback.translation.TranslationFragment
+import com.google.android.accessibility.talkback.translation.TranslationSettings
 import com.google.android.accessibility.utils.FormFactorUtils
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNotNull
+import org.junit.Assert.assertSame
 import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.RuntimeEnvironment
+import org.robolectric.Shadows.shadowOf
 import org.robolectric.annotation.Config
 
 @RunWith(RobolectricTestRunner::class)
@@ -79,11 +89,43 @@ class SettingsIndexTest {
   }
 
   @Test
-  fun gesturesAreFoundWithTheirCommands() {
+  fun gesturesAreFoundWithoutTheCommandsTheyRun() {
     val gestures =
       entries.filter { it.screen == TalkBackGestureShortcutPreferenceFragment::class.java.name }
     assertTrue(gestures.size > 20)
-    assertTrue(gestures.any { it.summary != null })
+    val gestureKeys = context.resources.getStringArray(R.array.pref_shortcut_keys).toSet()
+    val found = gestures.filter { it.key in gestureKeys }
+    assertTrue(found.size > 20)
+    assertTrue(found.all { it.summary == null })
+  }
+
+  @Test
+  fun buildInBackgroundDeliversTheEntriesOnTheMainThread() {
+    var built: List<SettingsIndex.Entry>? = null
+    var thread: Thread? = null
+    SettingsIndex.buildInBackground(context) {
+      built = it
+      thread = Thread.currentThread()
+    }
+    val deadline = System.currentTimeMillis() + 60_000
+    while (built == null && System.currentTimeMillis() < deadline) {
+      shadowOf(Looper.getMainLooper()).idle()
+      Thread.sleep(5)
+    }
+    assertEquals(entries.map { it.screen to it.key }, built!!.map { it.screen to it.key })
+    assertSame(Looper.getMainLooper().thread, thread)
+  }
+
+  @Test
+  fun stoppedBuildDeliversNothing() {
+    var delivered = false
+    val stop = SettingsIndex.buildInBackground(context) { delivered = true }
+    stop.run()
+    repeat(20) {
+      Thread.sleep(10)
+      shadowOf(Looper.getMainLooper()).idle()
+    }
+    assertFalse(delivered)
   }
 
   @Test
@@ -101,6 +143,40 @@ class SettingsIndexTest {
     assertFalse(context.getString(R.string.pref_survey_setting_entry_point_key) in keys)
     assertFalse(SettingsSearch.SEARCH_KEY in keys)
   }
+
+  @Test
+  fun manageLabelsIsFoundOnlyAfterSetup() {
+    val labels = context.getString(R.string.pref_manage_labels_key)
+    Settings.Secure.putInt(context.contentResolver, "user_setup_complete", 0)
+    assertFalse(labels in keys())
+    Settings.Secure.putInt(context.contentResolver, "user_setup_complete", 1)
+    assertTrue(labels in keys())
+  }
+
+  @Test
+  fun notificationAccessIsFoundUntilGranted() {
+    val notifications = context.getSystemService(NotificationManager::class.java)
+    val listener = ComponentName(context, NotificationListService::class.java)
+    shadowOf(notifications).setNotificationListenerAccessGranted(listener, false)
+    assertTrue(NotificationXmlFragment.KEY_ACCESS in keys())
+    shadowOf(notifications).setNotificationListenerAccessGranted(listener, true)
+    assertFalse(NotificationXmlFragment.KEY_ACCESS in keys())
+  }
+
+  @Test
+  fun translationSecondLanguageOrSwapIsFoundByTheSourceLanguage() {
+    val prefs = SharedPreferencesUtils.getSharedPreferences(context)
+    prefs.edit().remove(TranslationSettings.PREF_SOURCE).commit()
+    var keys = keys()
+    assertTrue(TranslationFragment.KEY_SECOND_TARGET in keys)
+    assertFalse(TranslationFragment.KEY_SWAP in keys)
+    prefs.edit().putString(TranslationSettings.PREF_SOURCE, "fr").commit()
+    keys = keys()
+    assertFalse(TranslationFragment.KEY_SECOND_TARGET in keys)
+    assertTrue(TranslationFragment.KEY_SWAP in keys)
+  }
+
+  private fun keys(): Set<String> = SettingsIndex.build(context).mapNotNull { it.key }.toSet()
 
   @Test
   fun everyScreenIsReadOnce() {

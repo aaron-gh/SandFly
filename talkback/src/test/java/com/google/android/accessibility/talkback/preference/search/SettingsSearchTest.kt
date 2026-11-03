@@ -16,7 +16,10 @@
 
 package com.google.android.accessibility.talkback.preference.search
 
+import android.view.KeyEvent
+import android.view.inputmethod.EditorInfo
 import com.google.android.accessibility.talkback.preference.search.SettingsSearch.Candidate
+import com.google.android.accessibility.talkback.preference.search.SettingsSearch.EditorAction
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
@@ -88,5 +91,35 @@ class SettingsSearchTest {
   @Test
   fun pathJoinsTitles() {
     assertEquals("Speech > Stopping speech", SettingsSearch.path(listOf("Speech", "Stopping speech")))
+  }
+
+  @Test
+  fun keyboardSearchDoneAndGoActionsSearch() {
+    for (action in listOf(EditorInfo.IME_ACTION_SEARCH, EditorInfo.IME_ACTION_DONE, EditorInfo.IME_ACTION_GO)) {
+      assertEquals(EditorAction.SEARCH, SettingsSearch.editorAction(action, null, 0))
+    }
+    assertEquals(EditorAction.IGNORE, SettingsSearch.editorAction(EditorInfo.IME_ACTION_NEXT, null, 0))
+  }
+
+  @Test
+  fun physicalEnterSearchesOnPressAndIsConsumedOnRelease() {
+    assertEquals(
+      EditorAction.SEARCH,
+      SettingsSearch.editorAction(EditorInfo.IME_NULL, KeyEvent.ACTION_DOWN, 0),
+    )
+    assertEquals(
+      EditorAction.CONSUME,
+      SettingsSearch.editorAction(EditorInfo.IME_NULL, KeyEvent.ACTION_DOWN, 1),
+    )
+    assertEquals(
+      EditorAction.CONSUME,
+      SettingsSearch.editorAction(EditorInfo.IME_NULL, KeyEvent.ACTION_UP, 0),
+    )
+    assertEquals(EditorAction.IGNORE, SettingsSearch.editorAction(EditorInfo.IME_NULL, null, 0))
+  }
+
+  @Test
+  fun emptyQueryFindsNothing() {
+    assertEquals(emptyList<Int>(), SettingsSearch.find(listOf(Candidate("Speech")), SettingsSearch.words("  ")))
   }
 }
