@@ -665,7 +665,8 @@ public class KeyboardShortcutDialogPreference extends Preference
     }
   }
 
-  private void showSetUpKeyComboDialog() {
+  /** Shows the dialog that sets the shortcut, as a tap on the preference does. */
+  void showSetUpKeyComboDialog() {
     if (supportedSequenceKeyInfra) {
       CharSequence title = getTitle();
       A11yAlertDialogWrapper wrapper =

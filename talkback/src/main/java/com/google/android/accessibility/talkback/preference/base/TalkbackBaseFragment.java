@@ -17,12 +17,14 @@ package com.google.android.accessibility.talkback.preference.base;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.view.View;
 import androidx.annotation.StringRes;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceScreen;
 import com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.preference.TalkBackPreferenceFilter;
+import com.google.android.accessibility.talkback.preference.search.SettingsSearch;
 import com.google.android.accessibility.utils.preference.BasePreferencesFragment;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
@@ -70,6 +72,12 @@ public abstract class TalkbackBaseFragment extends BasePreferencesFragment {
       TalkBackPreferenceFilter talkBackPreferenceFilter = new TalkBackPreferenceFilter(context);
       talkBackPreferenceFilter.filterPreferences(getPreferenceScreen());
     }
+  }
+
+  @Override
+  public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+    super.onViewCreated(view, savedInstanceState);
+    SettingsSearch.showFound(this);
   }
 
   /**

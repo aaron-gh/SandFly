@@ -38,6 +38,7 @@ import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping;
 import com.google.android.accessibility.talkback.gesture.VibrationWatchGestureSettings;
 import com.google.android.accessibility.talkback.preference.PreferencesActivityUtils;
+import com.google.android.accessibility.talkback.preference.search.SettingsSearch;
 import com.google.android.accessibility.talkback.training.TutorialInitiator;
 import com.google.android.accessibility.utils.Consumer;
 import com.google.android.accessibility.utils.FeatureSupport;
@@ -184,6 +185,14 @@ public class TalkBackGestureShortcutPreferenceFragment extends TalkbackBaseFragm
     }
     getCustomizationMap().forEach(this::runPreferencesCustomization);
     collapseCategories();
+    // Finds a gesture by its name or the command it runs, and opens its list of commands.
+    SettingsSearch.addSearchItem(
+        getPreferenceScreen(),
+        () ->
+            SettingsSearch.searchRows(
+                this,
+                preference -> preference instanceof GestureListPreference,
+                this::onDisplayPreferenceDialog));
   }
 
   private HashMap<List<Integer>, Consumer<Preference>> getCustomizationMap() {

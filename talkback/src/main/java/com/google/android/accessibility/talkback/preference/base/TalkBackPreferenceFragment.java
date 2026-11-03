@@ -42,6 +42,7 @@ import com.google.android.accessibility.talkback.TalkBackExitController;
 import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.actor.ImageCaptioner;
 import com.google.android.accessibility.talkback.preference.base.PreferenceActionHelper.WebPage;
+import com.google.android.accessibility.talkback.preference.search.SettingsSearch;
 import com.google.android.accessibility.talkback.recognition.LiveRecognition;
 import com.google.android.accessibility.talkback.sandflyai.SandflyAi;
 import com.google.android.accessibility.talkback.sandflyai.SandflyAiFeatures;
@@ -120,6 +121,7 @@ public class TalkBackPreferenceFragment extends TalkbackBaseFragment {
     }
 
     addSandflyAi();
+    SettingsSearch.addSearchItem(getPreferenceScreen(), () -> SettingsSearch.searchSettings(this));
   }
 
   /** Adds SandFly AI's screen after Automatic descriptions, in builds that include it. */
