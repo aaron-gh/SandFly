@@ -102,6 +102,34 @@ class DisplayKeyOverridesTest {
   }
 
   @Test
+  fun resetTakesTheOwnKeyBackFromTheCommandItWasMovedTo() {
+    val overrides = DisplayKeyOverrides.parse(null)
+    overrides.assign(commandTarget(back), chordKey(3))
+    overrides.assign(commandTarget(home), commandKey(back))
+
+    assertEquals(commandTarget(home), overrides.targetLosingKeyOnReset(commandTarget(back)))
+    overrides.reset(commandTarget(back))
+
+    assertEquals(commandTarget(back), overrides.resolve(commandKey(back)))
+    assertEquals(NONE, overrides.resolve(chordKey(3)))
+    assertEquals(emptyList<String>(), overrides.keysFor(commandTarget(home)))
+  }
+
+  @Test
+  fun resetTakesNoKeyWhenTheOwnKeyRunsNothingOrItsCommand() {
+    val overrides = DisplayKeyOverrides.parse(null)
+    assertNull(overrides.targetLosingKeyOnReset(commandTarget(back)))
+
+    overrides.assign(commandTarget(back), chordKey(3))
+    assertNull(overrides.targetLosingKeyOnReset(commandTarget(back)))
+
+    val menu = screenReaderTarget("KEYCOMBO:open_menu")
+    overrides.assign(menu, commandKey(home))
+    assertNull(overrides.targetLosingKeyOnReset(menu))
+    assertEquals(menu, overrides.targetLosingKeyOnReset(commandTarget(home)))
+  }
+
+  @Test
   fun savedTextReadsBack() {
     val overrides = DisplayKeyOverrides.parse(null)
     overrides.assign(commandTarget(back), chordKey(0xFF))
