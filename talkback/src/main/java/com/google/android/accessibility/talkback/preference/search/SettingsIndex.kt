@@ -50,6 +50,7 @@ import com.google.android.accessibility.talkback.preference.base.TalkBackPrefere
 import com.google.android.accessibility.talkback.preference.base.TalkbackBaseFragment
 import com.google.android.accessibility.talkback.recognition.LiveRecognition
 import com.google.android.accessibility.talkback.sandflyai.SandflyAi
+import com.google.android.accessibility.talkback.shizuku.ShizukuShell
 import com.google.android.accessibility.talkback.translation.TranslationFragment
 import com.google.android.accessibility.talkback.translation.TranslationSettings
 import com.google.android.accessibility.talkback.utils.TalkbackFeatureSupport
@@ -376,7 +377,7 @@ object SettingsIndex {
     // SoundAndVibrationFragment.
     hideIf(Build.VERSION.SDK_INT < Build.VERSION_CODES.S, R.string.pref_speakerphone_away_from_ear_key)
     hideIf(
-      Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU,
+      Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU || !ShizukuShell.isAvailable(context),
       R.string.pref_reset_accessibility_audio_key,
     )
     val vibrator = context.getSystemService(Vibrator::class.java)

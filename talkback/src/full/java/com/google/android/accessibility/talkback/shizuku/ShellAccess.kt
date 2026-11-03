@@ -53,6 +53,9 @@ internal object ShellAccess {
     Shizuku.addBinderDeadListener { deadListener?.invoke() }
   }
 
+  /** Whether this build can use Shizuku, which the full build always can. */
+  fun isAvailable(context: Context): Boolean = true
+
   /** Whether Shizuku is running and new enough. */
   fun isReady(): Boolean =
     try {

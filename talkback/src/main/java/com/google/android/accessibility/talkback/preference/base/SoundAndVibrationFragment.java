@@ -159,7 +159,9 @@ public class SoundAndVibrationFragment extends TalkbackBaseFragment {
     if (pref == null) {
       return;
     }
-    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) {
+    // It works only through Shizuku.
+    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU
+        || !ShizukuShell.isAvailable(requireContext())) {
       PreferenceSettingsUtils.hidePreference(
           getContext(), getPreferenceScreen(), R.string.pref_reset_accessibility_audio_key);
       return;

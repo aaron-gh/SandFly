@@ -82,6 +82,9 @@ internal object ShellAccess {
       }
     }
 
+  /** Whether the add-on is installed and signed with SandFly's key. */
+  fun isAvailable(context: Context): Boolean = isSignedLikeSandFly(context)
+
   /** Whether the add-on is connected, and Shizuku is running and new enough. */
   fun isReady(): Boolean = ask(false) { it.isShizukuReady() }
 

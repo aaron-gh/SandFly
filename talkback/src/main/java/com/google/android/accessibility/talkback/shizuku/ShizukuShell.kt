@@ -61,6 +61,13 @@ object ShizukuShell {
     failPending()
   }
 
+  /**
+   * Whether this build can run commands through Shizuku at all: the full build always can, and the
+   * Google Play build only with the SandFly add-on installed. Features that work only through
+   * Shizuku are left out without it.
+   */
+  @JvmStatic fun isAvailable(context: Context): Boolean = ShellAccess.isAvailable(context)
+
   /** Whether Shizuku runs and allows SandFly, so that commands run without asking the user. */
   fun isAllowed(): Boolean = ShizukuGrants.isReady() && ShizukuGrants.hasShizukuPermission()
 

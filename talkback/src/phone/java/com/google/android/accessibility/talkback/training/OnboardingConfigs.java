@@ -51,6 +51,7 @@ import static com.google.android.accessibility.talkback.trainingcommon.PageConfi
 
 import android.accessibilityservice.AccessibilityService;
 import com.google.android.accessibility.talkback.R;
+import com.google.android.accessibility.talkback.distribution.Distribution;
 import com.google.android.accessibility.talkback.trainingcommon.PageConfig;
 import com.google.android.accessibility.talkback.trainingcommon.PageConfig.PageAndContentPredicate;
 import com.google.android.accessibility.talkback.trainingcommon.PageConfig.PageId;
@@ -159,16 +160,23 @@ final class OnboardingConfigs {
           .addHeading(R.string.new_features_0_3_0_nav_bar_tap_heading)
           .addText(R.string.new_features_0_3_0_nav_bar_tap);
 
-  static final PageConfig.Builder sandflySpeech =
-      PageConfig.builder(PAGE_ID_SANDFLY_SPEECH, R.string.new_features_0_3_0_speech_title)
-          .addHeading(R.string.new_features_0_3_0_speech_dictionary_heading)
-          .addText(R.string.new_features_0_3_0_speech_dictionary)
-          .addHeading(R.string.new_features_0_3_0_speech_control_heading)
-          .addText(R.string.new_features_0_3_0_speech_control)
-          .addHeading(R.string.new_features_0_3_0_audio_reset_heading)
-          .addText(R.string.new_features_0_3_0_audio_reset)
-          .addHeading(R.string.new_features_0_3_0_sounds_heading)
-          .addText(R.string.new_features_0_3_0_sounds);
+  static final PageConfig.Builder sandflySpeech = sandflySpeechPage();
+
+  /** Reset accessibility audio after calls works only through Shizuku, which the Play build lacks. */
+  private static PageConfig.Builder sandflySpeechPage() {
+    PageConfig.Builder page =
+        PageConfig.builder(PAGE_ID_SANDFLY_SPEECH, R.string.new_features_0_3_0_speech_title)
+            .addHeading(R.string.new_features_0_3_0_speech_dictionary_heading)
+            .addText(R.string.new_features_0_3_0_speech_dictionary)
+            .addHeading(R.string.new_features_0_3_0_speech_control_heading)
+            .addText(R.string.new_features_0_3_0_speech_control);
+    if (!Distribution.IS_PLAY) {
+      page.addHeading(R.string.new_features_0_3_0_audio_reset_heading)
+          .addText(R.string.new_features_0_3_0_audio_reset);
+    }
+    return page.addHeading(R.string.new_features_0_3_0_sounds_heading)
+        .addText(R.string.new_features_0_3_0_sounds);
+  }
 
   static final PageConfig.Builder sandflyBraille =
       PageConfig.builder(PAGE_ID_SANDFLY_BRAILLE, R.string.new_features_0_3_0_braille_title)
@@ -179,23 +187,30 @@ final class OnboardingConfigs {
           .addHeading(R.string.new_features_0_3_0_braille_keyboard_hidden_heading)
           .addText(R.string.new_features_0_3_0_braille_keyboard_hidden);
 
-  static final PageConfig.Builder sandflyCommands =
-      PageConfig.builder(PAGE_ID_SANDFLY_COMMANDS, R.string.new_features_0_3_0_commands_title)
-          .addText(R.string.new_features_0_3_0_commands)
-          .addHeading(R.string.new_features_0_3_0_submit_text_heading)
-          .addText(R.string.new_features_0_3_0_submit_text)
-          .addHeading(R.string.new_features_0_3_0_clipboard_history_heading)
-          .addText(R.string.new_features_0_3_0_clipboard_history)
-          .addHeading(R.string.new_features_0_3_0_magnification_heading)
-          .addText(R.string.new_features_0_3_0_magnification)
-          .addHeading(R.string.new_features_0_3_0_media_seek_heading)
-          .addText(R.string.new_features_0_3_0_media_seek)
-          .addHeading(R.string.new_features_0_3_0_accessibility_shortcuts_heading)
-          .addText(R.string.new_features_0_3_0_accessibility_shortcuts)
-          .addHeading(R.string.new_features_0_3_0_touch_click_heading)
-          .addText(R.string.new_features_0_3_0_touch_click)
-          .addHeading(R.string.new_features_0_3_0_stop_notification_heading)
-          .addText(R.string.new_features_0_3_0_stop_notification);
+  static final PageConfig.Builder sandflyCommands = sandflyCommandsPage();
+
+  /** Accessibility shortcut commands need Shizuku, which the Play build lacks. */
+  private static PageConfig.Builder sandflyCommandsPage() {
+    PageConfig.Builder page =
+        PageConfig.builder(PAGE_ID_SANDFLY_COMMANDS, R.string.new_features_0_3_0_commands_title)
+            .addText(R.string.new_features_0_3_0_commands)
+            .addHeading(R.string.new_features_0_3_0_submit_text_heading)
+            .addText(R.string.new_features_0_3_0_submit_text)
+            .addHeading(R.string.new_features_0_3_0_clipboard_history_heading)
+            .addText(R.string.new_features_0_3_0_clipboard_history)
+            .addHeading(R.string.new_features_0_3_0_magnification_heading)
+            .addText(R.string.new_features_0_3_0_magnification)
+            .addHeading(R.string.new_features_0_3_0_media_seek_heading)
+            .addText(R.string.new_features_0_3_0_media_seek);
+    if (!Distribution.IS_PLAY) {
+      page.addHeading(R.string.new_features_0_3_0_accessibility_shortcuts_heading)
+          .addText(R.string.new_features_0_3_0_accessibility_shortcuts);
+    }
+    return page.addHeading(R.string.new_features_0_3_0_touch_click_heading)
+        .addText(R.string.new_features_0_3_0_touch_click)
+        .addHeading(R.string.new_features_0_3_0_stop_notification_heading)
+        .addText(R.string.new_features_0_3_0_stop_notification);
+  }
 
   static final PageConfig.Builder sandflyOther =
       PageConfig.builder(PAGE_ID_SANDFLY_OTHER, R.string.new_features_0_3_0_other_title)

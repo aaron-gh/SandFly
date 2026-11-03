@@ -38,7 +38,10 @@ object AccessibilityShortcutActions {
 
   private fun valueOf(component: ComponentName): String = PREFIX + component.flattenToString()
 
-  /** Returns the features with an accessibility shortcut, other than SandFly, by name. */
+  /**
+   * Returns the features with an accessibility shortcut, other than SandFly, by name. Accessibility
+   * services are left out where this build can't use Shizuku, which runs their shortcuts.
+   */
   @JvmStatic
   fun targets(context: Context): List<Target> {
     val packageManager = context.packageManager
@@ -50,7 +53,7 @@ object AccessibilityShortcutActions {
         )
       }
     val services =
-      services(context).map {
+      services(context).takeIf { ShizukuShell.isAvailable(context) }.orEmpty().map {
         Target(
           it.resolveInfo.loadLabel(packageManager).toString(),
           valueOf(ComponentName.unflattenFromString(it.id) ?: return@map null),
