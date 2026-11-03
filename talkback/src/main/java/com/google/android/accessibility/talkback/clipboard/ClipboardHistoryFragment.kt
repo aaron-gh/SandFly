@@ -25,12 +25,15 @@ import android.view.ViewTreeObserver
 import android.view.accessibility.AccessibilityNodeInfo
 import androidx.preference.Preference
 import androidx.preference.PreferenceGroup
+import com.google.android.accessibility.talkback.Feedback
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.talkback.TalkBackService
 import com.google.android.accessibility.talkback.notifications.NotificationCodeFragment
 import com.google.android.accessibility.talkback.preference.TalkBackPreferencesActivity
 import com.google.android.accessibility.talkback.shizuku.ShizukuClipboard
 import com.google.android.accessibility.talkback.shizuku.ShizukuShell
 import com.google.android.accessibility.utils.ClipboardHistory
+import com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED
 import com.google.android.accessibility.utils.preference.PreferencesActivity.FRAGMENT_NAME
 
 /**
@@ -123,15 +126,31 @@ class ClipboardHistoryFragment : NotificationCodeFragment(R.string.title_clipboa
     // The app reads the clipboard only once its window has focus again.
     handler.postDelayed(
       {
-        if (!target.refresh() || !target.performAction(AccessibilityNodeInfo.ACTION_PASTE)) {
+        if (!pasteInto(target)) {
           handler.postDelayed(
-            { if (target.refresh()) target.performAction(AccessibilityNodeInfo.ACTION_PASTE) },
+            {
+              if (!pasteInto(target)) {
+                TalkBackService.getInstance()
+                  ?.feedbackReturner
+                  ?.returnFeedback(EVENT_ID_UNTRACKED, Feedback.sound(R.raw.complete))
+              }
+            },
             PASTE_DELAY_MS,
           )
         }
       },
       PASTE_DELAY_MS,
     )
+  }
+
+  /**
+   * Pastes into [target], giving it input focus first: an edit box pastes only with input focus,
+   * and it may have had only accessibility focus.
+   */
+  private fun pasteInto(target: AccessibilityNodeInfo): Boolean {
+    if (!target.refresh()) return false
+    if (!target.isFocused) target.performAction(AccessibilityNodeInfo.ACTION_FOCUS)
+    return target.performAction(AccessibilityNodeInfo.ACTION_PASTE)
   }
 
   companion object {
