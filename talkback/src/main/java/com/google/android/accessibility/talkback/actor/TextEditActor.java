@@ -628,8 +628,8 @@ public class TextEditActor implements VoiceDictationDelegate {
   }
 
   /**
-   * Removes all text from edit-text. The text change event announces it; an empty field or a field
-   * that can't be set plays the end sound.
+   * Removes all text from edit-text and says "Cleared text"; an empty field or a field that can't be
+   * set plays the end sound.
    */
   public boolean clearText(AccessibilityNodeInfoCompat node, EventId eventId) {
     if (node == null || Role.getRole(node) != Role.ROLE_EDIT_TEXT) {
@@ -646,7 +646,11 @@ public class TextEditActor implements VoiceDictationDelegate {
       arguments.putCharSequence(ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE, "");
       result = PerformActionUtils.performAction(node, ACTION_SET_TEXT, arguments, eventId);
     }
-    if (!result) {
+    if (result) {
+      pipeline.returnFeedback(
+          eventId,
+          Feedback.speech(service.getString(R.string.value_text_cleared), SPEAK_OPTIONS));
+    } else {
       pipeline.returnFeedback(eventId, Feedback.sound(R.raw.complete));
     }
     return result;
