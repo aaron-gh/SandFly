@@ -201,6 +201,9 @@ public class BdController implements Controller {
           new BrailleInputEvent(command, /* argument= */ 0, eventTime));
       return;
     }
+    if (eventManager.stopAutoScrollOrDismissTimedMessage()) {
+      return;
+    }
     String value = DisplayKeyOverrides.screenReaderValueOf(target);
     if (value == null || !talkBackForBrailleDisplay.performCommand(value)) {
       feedbackManager.emitFeedback(FeedbackManager.Type.COMMAND_FAILED);

@@ -236,6 +236,20 @@ public final class DisplayKeyOverrides {
     }
   }
 
+  /**
+   * Returns the target that {@link #reset} takes a key from: the target that the own key of {@code
+   * target} was assigned to, or null when resetting takes no key from another target.
+   */
+  @Nullable
+  public String targetLosingKeyOnReset(String target) {
+    int command = commandOf(target);
+    if (command < 0) {
+      return null;
+    }
+    String current = overrides.get(commandKey(command));
+    return current == null || NONE.equals(current) || current.equals(target) ? null : current;
+  }
+
   /** Removes every override. */
   public void clear() {
     overrides.clear();

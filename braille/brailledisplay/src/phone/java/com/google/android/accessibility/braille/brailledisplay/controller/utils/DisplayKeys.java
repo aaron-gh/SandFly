@@ -72,7 +72,8 @@ public final class DisplayKeys {
           BrailleInputEvent.CMD_NAV_PAN_DOWN,
           BrailleInputEvent.CMD_ROUTE,
           BrailleInputEvent.CMD_LONG_PRESS_ROUTE,
-          BrailleInputEvent.CMD_ACTIVATE_CURRENT ->
+          BrailleInputEvent.CMD_ACTIVATE_CURRENT,
+          BrailleInputEvent.CMD_LONG_PRESS_ROUTE_CURRENT ->
           true;
       default -> false;
     };
@@ -86,6 +87,7 @@ public final class DisplayKeys {
           BrailleInputEvent.CMD_ROUTE,
           BrailleInputEvent.CMD_LONG_PRESS_ROUTE,
           BrailleInputEvent.CMD_ACTIVATE_CURRENT,
+          BrailleInputEvent.CMD_LONG_PRESS_ROUTE_CURRENT,
           BrailleInputEvent.CMD_BRAILLE_KEY,
           BrailleInputEvent.CMD_SELECTION_START,
           BrailleInputEvent.CMD_SELECTION_END,
@@ -96,16 +98,28 @@ public final class DisplayKeys {
     };
   }
 
-  /** Returns the name of a {@link DisplayKeyOverrides} target. */
+  /**
+   * Returns whether {@code key} can be assigned to a command: Space with dots, or the keys of a
+   * display command listed in Braille display commands whose keys can change.
+   */
+  public static boolean isAssignableKey(Context context, String key) {
+    if (DisplayKeyOverrides.chordDotsOf(key) > 0) {
+      return true;
+    }
+    int command = DisplayKeyOverrides.commandOf(key);
+    return command >= 0
+        && isAssignable(command)
+        && find(SupportedCommand.getAvailableSupportedCommands(context), command) != null;
+  }
+
+  /** Returns the name of a {@link DisplayKeyOverrides} target, or an empty string if unknown. */
   public static String targetLabel(Context context, String target) {
     int command = DisplayKeyOverrides.commandOf(target);
     if (command >= 0) {
-      for (SupportedCommand supportedCommand : SupportedCommand.getAllCommands(context)) {
-        if (supportedCommand.getCommand() == command) {
-          return supportedCommand.getCommandDescription(context.getResources());
-        }
-      }
-      return target;
+      SupportedCommand supportedCommand = find(SupportedCommand.getAllCommands(context), command);
+      return supportedCommand == null
+          ? ""
+          : supportedCommand.getCommandDescription(context.getResources());
     }
     String value = DisplayKeyOverrides.screenReaderValueOf(target);
     if (value != null) {
@@ -114,6 +128,16 @@ public final class DisplayKeys {
       return label == null ? value : label;
     }
     return "";
+  }
+
+  @Nullable
+  private static SupportedCommand find(List<SupportedCommand> commands, int command) {
+    for (SupportedCommand supportedCommand : commands) {
+      if (supportedCommand.getCommand() == command) {
+        return supportedCommand;
+      }
+    }
+    return null;
   }
 
   /** Describes keys for the connected display, or for any display when none is connected. */
@@ -153,12 +177,8 @@ public final class DisplayKeys {
             : BrailleKeyBindingUtils.getFriendlyKeyNamesForCommand(
                 binding, props.getFriendlyKeyNames(), context);
       }
-      for (SupportedCommand supportedCommand : SupportedCommand.getAllCommands(context)) {
-        if (supportedCommand.getCommand() == command) {
-          return supportedCommand.getKeyDescription(resources);
-        }
-      }
-      return "";
+      SupportedCommand supportedCommand = find(SupportedCommand.getAllCommands(context), command);
+      return supportedCommand == null ? "" : supportedCommand.getKeyDescription(resources);
     }
 
     /** Returns how to press the keys that run {@code target}, or an empty string for none. */

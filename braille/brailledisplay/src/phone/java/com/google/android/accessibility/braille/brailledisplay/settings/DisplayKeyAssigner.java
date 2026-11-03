@@ -63,15 +63,40 @@ final class DisplayKeyAssigner {
               if (which == 0) {
                 showCapture(context, target, label, describer, onChanged);
               } else {
-                DisplayKeyOverrides overrides =
-                    BrailleUserPreferences.readDisplayKeyOverrides(context);
-                overrides.reset(target);
-                BrailleUserPreferences.writeDisplayKeyOverrides(context, overrides);
-                onChanged.run();
+                confirmAndReset(context, target, label, onChanged);
               }
             })
         .setNegativeButton(android.R.string.cancel, null)
         .show();
+  }
+
+  /** Resets the keys of {@code target}, first asking when its own key runs another command. */
+  private static void confirmAndReset(
+      Context context, String target, String label, Runnable onChanged) {
+    @Nullable
+    String loser =
+        BrailleUserPreferences.readDisplayKeyOverrides(context).targetLosingKeyOnReset(target);
+    if (loser == null) {
+      reset(context, target, onChanged);
+      return;
+    }
+    MaterialComponentUtils.alertDialogBuilder(context)
+        .setTitle(label)
+        .setMessage(
+            context.getString(
+                R.string.bd_key_bindings_move_keys,
+                DisplayKeys.targetLabel(context, loser),
+                label))
+        .setPositiveButton(android.R.string.ok, (dialog, which) -> reset(context, target, onChanged))
+        .setNegativeButton(android.R.string.cancel, null)
+        .show();
+  }
+
+  private static void reset(Context context, String target, Runnable onChanged) {
+    DisplayKeyOverrides overrides = BrailleUserPreferences.readDisplayKeyOverrides(context);
+    overrides.reset(target);
+    BrailleUserPreferences.writeDisplayKeyOverrides(context, overrides);
+    onChanged.run();
   }
 
   /** Asks to restore the default keys of every command. */
@@ -120,13 +145,23 @@ final class DisplayKeyAssigner {
             .create();
     DisplayKeyCapture.Listener listener =
         key -> {
-          captured[0] = key;
-          String message =
-              key == null
-                  ? context.getString(R.string.bd_key_bindings_keys_not_assignable)
-                  : describer.describe(key);
-          dialog.setMessage(message.isEmpty() ? key : message);
-          setOkEnabled(dialog, key != null);
+          @Nullable
+          String assignable =
+              key != null && DisplayKeys.isAssignableKey(context, key) ? key : null;
+          captured[0] = assignable;
+          String message;
+          if (assignable == null) {
+            message = context.getString(R.string.bd_key_bindings_keys_not_assignable);
+          } else {
+            message = describer.describe(assignable);
+            if (message.isEmpty()) {
+              message =
+                  DisplayKeys.targetLabel(
+                      context, DisplayKeyOverrides.defaultTarget(assignable));
+            }
+          }
+          dialog.setMessage(message);
+          setOkEnabled(dialog, assignable != null);
         };
     dialog.setOnShowListener(
         d -> {

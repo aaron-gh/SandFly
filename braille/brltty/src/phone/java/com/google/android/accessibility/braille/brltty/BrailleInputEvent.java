@@ -156,6 +156,12 @@ public class BrailleInputEvent implements Parcelable {
    */
   public static final int CMD_LONG_PRESS_ROUTE = 51;
 
+  /**
+   * Keyboard command: Routing key outside the text cells long pressed. Long presses the focused
+   * item, as {@link #CMD_LONG_PRESS_CURRENT} does, but can't be assigned to other commands.
+   */
+  public static final int CMD_LONG_PRESS_ROUTE_CURRENT = 52;
+
   // Braille keyboard input.
 
   /**
