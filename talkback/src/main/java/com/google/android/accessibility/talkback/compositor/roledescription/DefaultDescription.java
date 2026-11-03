@@ -47,8 +47,13 @@ public class DefaultDescription implements RoleDescription {
   @Override
   public CharSequence nodeName(
       AccessibilityNodeInfoCompat node, Context context, GlobalVariables globalVariables) {
-    return AccessibilityNodeFeedbackUtils.getNodeTextOrLabelDescription(
-        node, context, imageContents, globalVariables);
+    // An unlabelled item that needs a label is named by its element ID when Speak element IDs is
+    // on, as images are.
+    return imageContents != null && imageContents.needsLabel(node)
+        ? AccessibilityNodeFeedbackUtils.getNodeTextOrLabelOrIdDescription(
+            node, context, imageContents, globalVariables)
+        : AccessibilityNodeFeedbackUtils.getNodeTextOrLabelDescription(
+            node, context, imageContents, globalVariables);
   }
 
   @Override
