@@ -29,6 +29,10 @@ import android.view.KeyEvent
  *
  * Only one timer runs at a time, and only between the first press of a key and the end of its
  * presses.
+ *
+ * [onKeyState] is told of every volume key press and release, including ones that do not reach
+ * [onKeyDown] and [onKeyUp], so that a key pressed while the other volume key is held passes to
+ * Android.
  */
 class VolumeKeyPresses(private val timer: Timer, private val callbacks: Callbacks) {
 
@@ -101,6 +105,12 @@ class VolumeKeyPresses(private val timer: Timer, private val callbacks: Callback
   /** Whether [key] is pressed now. */
   private var held = false
   private var repeats = 0
+  /** Whether presses may be counted now, as given with the press of [key]. */
+  private var canUse: () -> Boolean = { false }
+
+  /** Whether each volume key is pressed now, whether or not its presses have commands. */
+  private var volumeUpDown = false
+  private var volumeDownDown = false
 
   /** Sets the commands of the volume keys' presses, and the times that tell presses apart. */
   fun setCommands(up: KeyCommands, down: KeyCommands, timeouts: Timeouts) {
@@ -115,6 +125,17 @@ class VolumeKeyPresses(private val timer: Timer, private val callbacks: Callback
   /** Whether any press of a volume key has a command. */
   val isUsed: Boolean
     get() = !upCommands.isEmpty || !downCommands.isEmpty
+
+  /**
+   * Notes that [keyCode] was pressed ([down]) or released. Called for every volume key event, before
+   * [onKeyDown] or [onKeyUp] and also when they are not called.
+   */
+  fun onKeyState(keyCode: Int, down: Boolean) {
+    when (keyCode) {
+      KeyEvent.KEYCODE_VOLUME_UP -> volumeUpDown = down
+      KeyEvent.KEYCODE_VOLUME_DOWN -> volumeDownDown = down
+    }
+  }
 
   /**
    * Handles a key press, or a [repeated] press while the key is held, and returns whether it is
@@ -140,21 +161,32 @@ class VolumeKeyPresses(private val timer: Timer, private val callbacks: Callback
           return false
         }
         held = true
+        this.canUse = canUse
         timer.schedule(timeouts.longPress) { onHeld() }
         return true
       }
-      if (held) {
+      if (held && (state != State.LONG_PRESS_DONE || isDown(key))) {
         // Both volume keys: the accessibility shortcut, or stopping a notification readout.
         timer.cancel()
         state = State.IGNORED
         return false
       }
-      finishPresses()
+      if (held) {
+        // The release of the long press went elsewhere, such as to Pause SandFly.
+        cancel()
+      } else {
+        finishPresses()
+      }
+    }
+    if (isDown(otherKey(keyCode))) {
+      // Both volume keys, the first of which passed to Android.
+      return false
     }
     if (commandsFor(keyCode).isEmpty || !canUse()) {
       return false
     }
     key = keyCode
+    this.canUse = canUse
     state = State.PRESSES
     presses = 0
     repeats = 0
@@ -187,6 +219,13 @@ class VolumeKeyPresses(private val timer: Timer, private val callbacks: Callback
   fun cancel() {
     timer.cancel()
     reset()
+  }
+
+  /** Forgets the presses and which keys are pressed, as releases may not come with the screen off. */
+  fun onScreenOff() {
+    cancel()
+    volumeUpDown = false
+    volumeDownDown = false
   }
 
   /** Runs the command of the presses that ended, or changes the volume once for each press. */
@@ -231,6 +270,11 @@ class VolumeKeyPresses(private val timer: Timer, private val callbacks: Callback
     if (key == 0 || !held || state != State.REPEATING) {
       return
     }
+    if (!canUse()) {
+      // Such as a touch on the screen; the release stays kept from Android.
+      state = State.IGNORED
+      return
+    }
     callbacks.adjustVolume(key, /* repeated= */ true)
     repeats++
     if (repeats >= MAX_REPEATS) {
@@ -247,7 +291,22 @@ class VolumeKeyPresses(private val timer: Timer, private val callbacks: Callback
     presses = 0
     held = false
     repeats = 0
+    canUse = { false }
   }
+
+  private fun isDown(keyCode: Int): Boolean =
+    when (keyCode) {
+      KeyEvent.KEYCODE_VOLUME_UP -> volumeUpDown
+      KeyEvent.KEYCODE_VOLUME_DOWN -> volumeDownDown
+      else -> false
+    }
+
+  private fun otherKey(keyCode: Int): Int =
+    if (keyCode == KeyEvent.KEYCODE_VOLUME_UP) {
+      KeyEvent.KEYCODE_VOLUME_DOWN
+    } else {
+      KeyEvent.KEYCODE_VOLUME_UP
+    }
 
   private fun commandsFor(keyCode: Int): KeyCommands =
     when (keyCode) {

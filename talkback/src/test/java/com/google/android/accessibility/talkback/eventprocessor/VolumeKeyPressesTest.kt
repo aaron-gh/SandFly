@@ -89,10 +89,15 @@ class VolumeKeyPressesTest {
     now = end
   }
 
-  private fun down(key: Int, repeated: Boolean = false): Boolean =
-    presses.onKeyDown(key, repeated) { canUse }
+  private fun down(key: Int, repeated: Boolean = false): Boolean {
+    presses.onKeyState(key, down = true)
+    return presses.onKeyDown(key, repeated) { canUse }
+  }
 
-  private fun up(key: Int): Boolean = presses.onKeyUp(key)
+  private fun up(key: Int): Boolean {
+    presses.onKeyState(key, down = false)
+    return presses.onKeyUp(key)
+  }
 
   /** Presses and releases [key] after [heldMs], and returns whether both were kept. */
   private fun press(key: Int, heldMs: Long = 80): Boolean {
@@ -266,6 +271,37 @@ class VolumeKeyPressesTest {
   }
 
   @Test
+  fun unassignedKeyHeldFirst_assignedKeyPassesThrough() {
+    assign(up = KeyCommands("A", null, "L"))
+    assertFalse(down(KEYCODE_VOLUME_DOWN))
+    advance(100)
+    assertFalse(down(KEYCODE_VOLUME_UP))
+    assertEquals(null, task)
+    assertFalse(down(KEYCODE_VOLUME_UP, repeated = true))
+    advance(3000)
+    assertFalse(up(KEYCODE_VOLUME_UP))
+    assertFalse(up(KEYCODE_VOLUME_DOWN))
+    assertTrue(log.isEmpty())
+    // The next press of the assigned key alone is counted again.
+    assertTrue(press(KEYCODE_VOLUME_UP))
+    advance(300)
+    assertEquals(listOf("up"), log)
+  }
+
+  @Test
+  fun unassignedKeyConsumedElsewhere_stillCountsAsHeld() {
+    assign(up = KeyCommands(null, null, "L"))
+    // Volume down taken before the presses, such as by a slider.
+    presses.onKeyState(KEYCODE_VOLUME_DOWN, down = true)
+    assertFalse(down(KEYCODE_VOLUME_UP))
+    advance(1000)
+    assertFalse(up(KEYCODE_VOLUME_UP))
+    presses.onKeyState(KEYCODE_VOLUME_DOWN, down = false)
+    assertTrue(log.isEmpty())
+    assertEquals(null, task)
+  }
+
+  @Test
   fun otherKeyDuringWait_finishesFirstKeyAndStartsOther() {
     assign(up = KeyCommands("A", null, null), down = KeyCommands("B", null, null))
     press(KEYCODE_VOLUME_UP)
@@ -330,6 +366,88 @@ class VolumeKeyPressesTest {
     assertFalse(down(KEYCODE_VOLUME_UP, repeated = true))
     assertFalse(up(KEYCODE_VOLUME_UP))
     assertEquals(null, task)
+  }
+
+  @Test
+  fun longPressHeld_otherKeyPassesAndReleaseKept() {
+    assign(up = KeyCommands(null, null, "L"), down = KeyCommands("B", null, null))
+    assertTrue(down(KEYCODE_VOLUME_UP))
+    advance(400)
+    assertFalse(down(KEYCODE_VOLUME_DOWN))
+    advance(1000)
+    assertFalse(up(KEYCODE_VOLUME_DOWN))
+    assertTrue(up(KEYCODE_VOLUME_UP))
+    assertEquals(listOf("run L"), log)
+    assertEquals(null, task)
+  }
+
+  @Test
+  fun longPressReleaseWentElsewhere_otherKeyCounts() {
+    assign(up = KeyCommands(null, null, "P"), down = KeyCommands("B", null, null))
+    down(KEYCODE_VOLUME_UP)
+    advance(400)
+    // The command paused SandFly, which took the release without cancelling.
+    presses.onKeyState(KEYCODE_VOLUME_UP, down = false)
+    advance(1000)
+    assertTrue(press(KEYCODE_VOLUME_DOWN))
+    advance(100)
+    assertTrue(press(KEYCODE_VOLUME_DOWN))
+    assertEquals(listOf("run P", "run B"), log)
+  }
+
+  @Test
+  fun cancelAtPause_otherKeyCountsAfterResume() {
+    assign(up = KeyCommands(null, null, "P"), down = KeyCommands("B", null, null))
+    down(KEYCODE_VOLUME_UP)
+    advance(400)
+    presses.cancel()
+    presses.onKeyState(KEYCODE_VOLUME_UP, down = false)
+    assertTrue(press(KEYCODE_VOLUME_DOWN))
+    advance(100)
+    assertTrue(press(KEYCODE_VOLUME_DOWN))
+    assertEquals(listOf("run P", "run B"), log)
+  }
+
+  @Test
+  fun screenOffWhileRepeating_stopsVolumeChanges() {
+    assign(up = KeyCommands("A", null, null), down = KeyCommands("B", null, null))
+    down(KEYCODE_VOLUME_UP)
+    advance(450)
+    assertEquals(listOf("up", "up repeated"), log)
+    // Power pressed; the release of volume up never comes.
+    presses.onScreenOff()
+    advance(5000)
+    assertEquals(listOf("up", "up repeated"), log)
+    assertEquals(null, task)
+    assertTrue(press(KEYCODE_VOLUME_DOWN))
+    advance(100)
+    assertTrue(press(KEYCODE_VOLUME_DOWN))
+    assertEquals(listOf("up", "up repeated", "run B"), log)
+  }
+
+  @Test
+  fun screenOffAfterLongPress_otherKeyCounts() {
+    assign(up = KeyCommands(null, null, "Lock"), down = KeyCommands("B", null, null))
+    down(KEYCODE_VOLUME_UP)
+    advance(400)
+    presses.onScreenOff()
+    assertTrue(press(KEYCODE_VOLUME_DOWN))
+    advance(100)
+    assertTrue(press(KEYCODE_VOLUME_DOWN))
+    assertEquals(listOf("run Lock", "run B"), log)
+  }
+
+  @Test
+  fun notUsableWhileRepeating_stopsAndKeepsRelease() {
+    assign(up = KeyCommands("A", null, null))
+    down(KEYCODE_VOLUME_UP)
+    advance(450)
+    assertEquals(listOf("up", "up repeated"), log)
+    canUse = false
+    advance(1000)
+    assertEquals(listOf("up", "up repeated"), log)
+    assertEquals(null, task)
+    assertTrue(up(KEYCODE_VOLUME_UP))
   }
 
   @Test
