@@ -24,6 +24,7 @@ import android.content.SharedPreferences;
 import android.graphics.PointF;
 import android.util.Pair;
 import android.util.Size;
+import androidx.annotation.Nullable;
 import androidx.annotation.VisibleForTesting;
 import com.google.android.accessibility.braille.common.Constants.BrailleType;
 import com.google.android.accessibility.braille.common.translate.BrailleLanguages;
@@ -114,6 +115,8 @@ public class BrailleUserPreferences {
   private static final String DEPRECATED_SINHALA_IN = "SINHALA_IN";
 
   private static final String CONTRACTED_MODE_FOR_CODE_PREFIX = "pref_braille_contracted_mode_";
+
+  private static final String PREF_BD_KEY_OVERRIDES = "pref_bd_key_overrides";
 
   private BrailleUserPreferences() {}
 
@@ -923,6 +926,30 @@ public class BrailleUserPreferences {
         .putBoolean(
             context.getString(R.string.pref_bd_reverse_panning_buttons), reversePanningButtons)
         .apply();
+  }
+
+  /** Reads the saved text of the braille display keys assigned to other commands, or null. */
+  @Nullable
+  public static String readDisplayKeyOverridesText(Context context) {
+    return getSharedPreferences(context, BRAILLE_SHARED_PREFS_FILENAME)
+        .getString(PREF_BD_KEY_OVERRIDES, null);
+  }
+
+  /** Reads the braille display keys assigned to other commands. */
+  public static DisplayKeyOverrides readDisplayKeyOverrides(Context context) {
+    return DisplayKeyOverrides.parse(readDisplayKeyOverridesText(context));
+  }
+
+  /** Writes the braille display keys assigned to other commands. */
+  public static void writeDisplayKeyOverrides(Context context, DisplayKeyOverrides overrides) {
+    SharedPreferences.Editor editor =
+        getSharedPreferences(context, BRAILLE_SHARED_PREFS_FILENAME).edit();
+    if (overrides.isEmpty()) {
+      editor.remove(PREF_BD_KEY_OVERRIDES);
+    } else {
+      editor.putString(PREF_BD_KEY_OVERRIDES, overrides.serialize());
+    }
+    editor.apply();
   }
 
   /** Reads the timed message duration fraction user preference. */

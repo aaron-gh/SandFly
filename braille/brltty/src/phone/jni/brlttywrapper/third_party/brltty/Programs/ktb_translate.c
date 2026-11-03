@@ -500,8 +500,13 @@ static int
 isRepeatableCommand (int command) {
   if (prefs.autorepeatEnabled) {
     switch (command & BRL_MSK_BLK) {
-      case BRL_CMD_BLK(PASSCHAR):
       case BRL_CMD_BLK(PASSDOTS):
+#ifdef __ANDROID__
+        /* SandFly: a Space + dots chord runs once, when released. */
+        if (command & BRL_DOTC) return 0;
+#endif
+        /* fall through */
+      case BRL_CMD_BLK(PASSCHAR):
         return 1;
 
       default:
@@ -662,6 +667,19 @@ processKeyEvent (
           }
         }
       }
+
+#ifdef __ANDROID__
+      if (command == EOF) {
+        /* SandFly: report an unbound Space + dots chord, with BRL_DOTC set, so that the
+         * user can assign a command to it. SandFly ignores chords that have no command. */
+        int cmd = makeKeyboardCommand(table, context, 1);
+
+        if ((cmd != EOF) && (cmd & BRL_DOTC) && (cmd & BRL_ALL_DOTS)) {
+          command = cmd;
+          isImmediate = 0;
+        }
+      }
+#endif
 
       if (prefs.brailleQuickSpace) {
         int cmd = makeKeyboardCommand(table, context, 1);

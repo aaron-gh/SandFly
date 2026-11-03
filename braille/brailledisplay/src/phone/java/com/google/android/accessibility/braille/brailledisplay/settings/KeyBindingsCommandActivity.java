@@ -25,6 +25,7 @@ import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.TextUtils;
 import android.text.style.ForegroundColorSpan;
+import androidx.annotation.Nullable;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceFragmentCompat;
@@ -35,10 +36,13 @@ import com.google.android.accessibility.braille.brailledisplay.SupportedCommand;
 import com.google.android.accessibility.braille.brailledisplay.SupportedCommand.Category;
 import com.google.android.accessibility.braille.brailledisplay.SupportedCommand.Subcategory;
 import com.google.android.accessibility.braille.brailledisplay.controller.utils.BrailleKeyBindingUtils;
+import com.google.android.accessibility.braille.brailledisplay.controller.utils.DisplayKeys;
 import com.google.android.accessibility.braille.brailledisplay.platform.Connectioneer;
 import com.google.android.accessibility.braille.brailledisplay.platform.Connectioneer.AspectDisplayer;
 import com.google.android.accessibility.braille.brltty.BrailleDisplayProperties;
 import com.google.android.accessibility.braille.brltty.BrailleKeyBinding;
+import com.google.android.accessibility.braille.common.BrailleUserPreferences;
+import com.google.android.accessibility.braille.common.DisplayKeyOverrides;
 import com.google.android.accessibility.utils.PreferenceSettingsUtils;
 import com.google.android.accessibility.utils.preference.PreferencesActivity;
 import java.util.ArrayList;
@@ -66,6 +70,7 @@ public class KeyBindingsCommandActivity extends PreferencesActivity {
     private Category supportedCommandCategory;
     private Connectioneer connectioneer;
     private Preference descriptionPreference;
+    @Nullable private BrailleDisplayProperties props;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -107,7 +112,8 @@ public class KeyBindingsCommandActivity extends PreferencesActivity {
       refresh(intent.getParcelableExtra(PROPERTY_KEY));
     }
 
-    private void refresh(BrailleDisplayProperties props) {
+    private void refresh(@Nullable BrailleDisplayProperties props) {
+      this.props = props;
       // Clear all preference except category description to avoid duplicate preferences.
       for (int i = getPreferenceScreen().getPreferenceCount() - 1; i >= 0; i--) {
         Preference preference = getPreferenceScreen().getPreference(i);
@@ -115,25 +121,49 @@ public class KeyBindingsCommandActivity extends PreferencesActivity {
           getPreferenceScreen().removePreference(preference);
         }
       }
+      DisplayKeys.Describer describer = new DisplayKeys.Describer(getContext(), props);
+      DisplayKeyOverrides overrides = BrailleUserPreferences.readDisplayKeyOverrides(getContext());
       for (SupportedCommand supportedCommand :
           SupportedCommand.getAvailableSupportedCommands(getContext())) {
         if (supportedCommand.getCategory().equals(supportedCommandCategory)) {
-          String keys = getKeyDescription(supportedCommand, props);
-          if (TextUtils.isEmpty(keys)) {
+          int command = supportedCommand.getCommand();
+          String commandDescription = supportedCommand.getCommandDescription(getResources());
+          if (!DisplayKeys.isAssignable(command)) {
+            String keys = getKeyDescription(supportedCommand, props);
+            if (TextUtils.isEmpty(keys)) {
+              continue;
+            }
+            addPreference(
+                getPreferenceScreen(),
+                supportedCommand.getSubcategory(),
+                createPreference(commandDescription, command, keys));
             continue;
           }
-          addPreference(
-              getPreferenceScreen(),
-              supportedCommand.getSubcategory(),
+          String target = DisplayKeyOverrides.commandTarget(command);
+          String keys = describer.describeKeysFor(overrides, target);
+          Preference preference =
               createPreference(
-                  supportedCommand.getCommandDescription(getResources()),
-                  supportedCommand.getCommand(),
-                  keys));
+                  commandDescription,
+                  command,
+                  keys.isEmpty() ? getString(R.string.bd_key_bindings_no_keys) : keys);
+          preference.setSelectable(true);
+          preference.setOnPreferenceClickListener(
+              p -> {
+                DisplayKeyAssigner.showOptions(
+                    requireActivity(),
+                    target,
+                    commandDescription,
+                    new DisplayKeys.Describer(getContext(), this.props),
+                    this::refreshIfAdded);
+                return true;
+              });
+          addPreference(getPreferenceScreen(), supportedCommand.getSubcategory(), preference);
         }
       }
     }
 
-    private String getKeyDescription(SupportedCommand command, BrailleDisplayProperties props) {
+    private String getKeyDescription(
+        SupportedCommand command, @Nullable BrailleDisplayProperties props) {
       if (props == null) {
         BrailleDisplayLog.v(TAG, "no property");
         // Use default KeyBindings when display properties is null.
@@ -194,6 +224,12 @@ public class KeyBindingsCommandActivity extends PreferencesActivity {
           text.length(),
           Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
       return spannableString;
+    }
+
+    private void refreshIfAdded() {
+      if (isAdded()) {
+        refresh(props);
+      }
     }
 
     private final AspectDisplayer.Callback displayerCallback =

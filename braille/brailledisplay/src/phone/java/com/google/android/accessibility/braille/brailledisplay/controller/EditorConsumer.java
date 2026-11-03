@@ -50,6 +50,58 @@ class EditorConsumer implements EventConsumer {
     this.behaviorIme = behaviorIme;
   }
 
+  /**
+   * Returns whether the display command, when a text field takes the display's input, types the
+   * dots of its keys instead of running.
+   */
+  static boolean typesDots(Context context, int command) {
+    if (command < 0 || handlesWhileEditing(command)) {
+      return false;
+    }
+    SupportedCommand supportedCommand =
+        BrailleKeyBindingUtils.convertToCommand(
+            context, new BrailleInputEvent(command, /* argument= */ 0, /* eventTime= */ 0));
+    return supportedCommand != null
+        && !supportedCommand.hasSpace()
+        && !supportedCommand.getPressDot().equals(BrailleCharacter.EMPTY_CELL);
+  }
+
+  /** Returns whether {@link #onMappedInputEvent} runs the command rather than typing its dots. */
+  private static boolean handlesWhileEditing(int command) {
+    return switch (command) {
+      case BrailleInputEvent.CMD_KEY_DEL,
+          BrailleInputEvent.CMD_DEL_WORD,
+          BrailleInputEvent.CMD_BRAILLE_KEY,
+          BrailleInputEvent.CMD_NAV_TOP_OR_KEY_ACTIVATE,
+          BrailleInputEvent.CMD_NAV_TOP,
+          BrailleInputEvent.CMD_NAV_BOTTOM_OR_KEY_ACTIVATE,
+          BrailleInputEvent.CMD_NAV_BOTTOM,
+          BrailleInputEvent.CMD_NAV_LINE_PREVIOUS,
+          BrailleInputEvent.CMD_NAV_LINE_NEXT,
+          BrailleInputEvent.CMD_NAV_CHARACTER_PREVIOUS,
+          BrailleInputEvent.CMD_NAV_CHARACTER_NEXT,
+          BrailleInputEvent.CMD_NAV_WORD_PREVIOUS,
+          BrailleInputEvent.CMD_NAV_WORD_NEXT,
+          BrailleInputEvent.CMD_KEY_ENTER,
+          BrailleInputEvent.CMD_ACTIVATE_CURRENT,
+          BrailleInputEvent.CMD_ROUTE,
+          BrailleInputEvent.CMD_SELECTION_CUT,
+          BrailleInputEvent.CMD_SELECTION_COPY,
+          BrailleInputEvent.CMD_SELECTION_PASTE,
+          BrailleInputEvent.CMD_SELECTION_SELECT_ALL,
+          BrailleInputEvent.CMD_SELECTION_SELECT_CURRENT_TO_START,
+          BrailleInputEvent.CMD_SELECTION_SELECT_CURRENT_TO_END,
+          BrailleInputEvent.CMD_SELECT_PREVIOUS_CHARACTER,
+          BrailleInputEvent.CMD_SELECT_NEXT_CHARACTER,
+          BrailleInputEvent.CMD_SELECT_PREVIOUS_WORD,
+          BrailleInputEvent.CMD_SELECT_NEXT_WORD,
+          BrailleInputEvent.CMD_SELECT_PREVIOUS_LINE,
+          BrailleInputEvent.CMD_SELECT_NEXT_LINE ->
+          true;
+      default -> false;
+    };
+  }
+
   @Override
   public void onActivate() {}
 
@@ -133,7 +185,7 @@ class EditorConsumer implements EventConsumer {
           success = behaviorIme.performImeAction(BrailleImeAction.SELECT_NEXT_LINE);
       default -> {
         // Forbid navigation commands while editing. Instead, we extract the dots and act as
-        // typing.
+        // typing. Keep handlesWhileEditing() in step with the cases above.
         SupportedCommand command = BrailleKeyBindingUtils.convertToCommand(context, event);
         if (command != null) {
           BrailleCharacter character = command.getPressDot();

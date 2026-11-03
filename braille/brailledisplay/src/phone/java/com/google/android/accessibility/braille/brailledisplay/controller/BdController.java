@@ -48,6 +48,7 @@ import com.google.android.accessibility.braille.common.BrailleCommonUtils;
 import com.google.android.accessibility.braille.common.BrailleImeAction;
 import com.google.android.accessibility.braille.common.BraillePreferenceUtils;
 import com.google.android.accessibility.braille.common.BrailleUserPreferences;
+import com.google.android.accessibility.braille.common.DisplayKeyOverrides;
 import com.google.android.accessibility.braille.common.FeedbackManager;
 import com.google.android.accessibility.braille.common.TalkBackSpeaker.AnnounceType;
 import com.google.android.accessibility.braille.common.translate.BrailleLanguages.Code;
@@ -76,6 +77,7 @@ public class BdController implements Controller {
   private final FeedbackManager feedbackManager;
   private final OverlayDisplay overlayDisplay;
   private final EventManager eventManager;
+  private final DisplayKeyRemapper keyRemapper;
   // While in 'suspended' mode, we ignore any input from the display and we render a static message
   // on the braille display; then when suspended mode gets exited, we return to normal operation.
   private final AtomicBoolean suspended = new AtomicBoolean();
@@ -120,6 +122,7 @@ public class BdController implements Controller {
             behaviorDisplayer,
             new BehaviorNavigation());
     overlayDisplay = new OverlayDisplay(context, new OverlayDisplayCallback());
+    keyRemapper = new DisplayKeyRemapper(context);
   }
 
   @Override
@@ -136,6 +139,7 @@ public class BdController implements Controller {
     overlayDisplay.start(displayer.getDeviceProperties().getNumTextCells());
     cellsContentManager.start(displayer.getDeviceProperties().getNumTextCells());
     eventManager.onActivate();
+    DisplayKeyCapture.setDisplayActive(true);
     if (isBrailleKeyboardActivated()) {
       getBrailleImeForBrailleDisplay().onBrailleDisplayConnected();
     }
@@ -161,6 +165,13 @@ public class BdController implements Controller {
     if (!isAvailable()) {
       return;
     }
+    if (DisplayKeyCapture.offer(brailleInputEvent)) {
+      return;
+    }
+    String target = keyRemapper.targetFor(brailleInputEvent, behaviorIme.acceptInput());
+    if (DisplayKeyOverrides.NONE.equals(target)) {
+      return;
+    }
     talkBackForBrailleDisplay.performAction(
         ScreenReaderAction.ACCESSIBILITY_FOCUS,
         talkBackForBrailleDisplay.getAccessibilityFocusNode(false));
@@ -175,14 +186,31 @@ public class BdController implements Controller {
       // The input is treated as resuming braille display.
       getBrailleImeForBrailleDisplay().onBrailleDisplayConnected();
       putAccessibilityFocusOnInputFocus();
-    } else {
+    } else if (target == null) {
       eventManager.onMappedInputEvent(brailleInputEvent);
+    } else {
+      performAssignedCommand(target, brailleInputEvent.getEventTime());
+    }
+  }
+
+  /** Runs the command that the user assigned to the keys pressed. */
+  private void performAssignedCommand(String target, long eventTime) {
+    int command = DisplayKeyOverrides.commandOf(target);
+    if (command >= 0) {
+      eventManager.onMappedInputEvent(
+          new BrailleInputEvent(command, /* argument= */ 0, eventTime));
+      return;
+    }
+    String value = DisplayKeyOverrides.screenReaderValueOf(target);
+    if (value == null || !talkBackForBrailleDisplay.performCommand(value)) {
+      feedbackManager.emitFeedback(FeedbackManager.Type.COMMAND_FAILED);
     }
   }
 
   @Override
   public void onStop() {
     BrailleDisplayLog.v(TAG, "onStop");
+    DisplayKeyCapture.setDisplayActive(false);
     if (isDisplayerReady()) {
       feedbackManager.emitFeedback(FeedbackManager.Type.DISPLAY_DISCONNECTED);
       if (isSomeBrailleCommandUnavailableDialogShowing()) {

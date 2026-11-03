@@ -188,6 +188,24 @@
   <string name="bd_commands_bindings_category_web_navigation_title">Web navigation</string>
   <!-- Braille display command preference: Summary of web navigation. [CHAR LIMIT=100] -->
   <string name="bd_commands_bindings_category_web_navigation_summary">Shortcuts for moving between web content such as headings</string>
+  <!-- Braille display commands: Title of the category that lists the SandFly commands that gestures run, to assign braille display keys to them. SandFly is the app name. [CHAR LIMIT=40] -->
+  <string name="bd_key_bindings_sandfly_commands">SandFly commands</string>
+  <!-- Braille display commands: Item that restores the default braille display keys of every command. [CHAR LIMIT=40] -->
+  <string name="bd_key_bindings_reset_all">Reset all keys</string>
+  <!-- Braille display commands: Shown after a command whose list item names its keys, when no braille display keys run it. [CHAR LIMIT=30] -->
+  <string name="bd_key_bindings_no_keys">No keys</string>
+  <!-- Braille display commands: Option of a command that assigns new braille display keys to it. [CHAR LIMIT=30] -->
+  <string name="bd_key_bindings_change_keys">Change keys</string>
+  <!-- Braille display commands: Option of a command that restores its default braille display keys. [CHAR LIMIT=30] -->
+  <string name="bd_key_bindings_reset">Reset</string>
+  <!-- Braille display commands: Dialog message while the next keys pressed on the braille display are taken as the new keys of a command. [CHAR LIMIT=100] -->
+  <string name="bd_key_bindings_press_keys">Press the new keys on the braille display.</string>
+  <!-- Braille display commands: Dialog message after keys were pressed that can't run a command, such as dots without Space. [CHAR LIMIT=100] -->
+  <string name="bd_key_bindings_keys_not_assignable">These keys can\'t be assigned.</string>
+  <!-- Braille display commands: Dialog message when the new keys of a command already run another command. %1$s is the command the keys run now, %2$s the command they would run. [CHAR LIMIT=150] -->
+  <string name="bd_key_bindings_move_keys">Move these keys from <xliff:g id="old_command" example="Back">%1$s</xliff:g> to <xliff:g id="new_command" example="Home">%2$s</xliff:g>?</string>
+  <!-- Braille display commands: Dialog message when Change keys is chosen and no braille display is connected. [CHAR LIMIT=100] -->
+  <string name="bd_key_bindings_connect_display">Connect a braille display to change keys.</string>
 
   <!-- Braille elements -->
   <!-- Braille elements preference title. Displays an activity that shows the user key bindings for their device. [CHAR_LIMIT=40] -->

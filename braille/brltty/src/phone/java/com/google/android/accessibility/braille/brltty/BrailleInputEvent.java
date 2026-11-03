@@ -164,6 +164,12 @@ public class BrailleInputEvent implements Parcelable {
    */
   public static final int CMD_BRAILLE_KEY = 60;
 
+  /**
+   * Bit set in the argument of {@link #CMD_BRAILLE_KEY} when Space was pressed with the dots and
+   * no command is bound to that chord.
+   */
+  public static final int DOTS_WITH_SPACE = 0x100;
+
   // Editing keys.
 
   /** Keyboard command: Enter key. */

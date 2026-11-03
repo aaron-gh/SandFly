@@ -33,12 +33,10 @@ import androidx.preference.PreferenceFragmentCompat;
 import com.google.android.accessibility.braille.brailledisplay.FeatureFlagReader;
 import com.google.android.accessibility.braille.brailledisplay.R;
 import com.google.android.accessibility.braille.brailledisplay.SupportedCommand;
-import com.google.android.accessibility.braille.brailledisplay.controller.utils.BrailleKeyBindingUtils;
 import com.google.android.accessibility.braille.brltty.BrailleDisplayProperties;
-import com.google.android.accessibility.braille.brltty.BrailleKeyBinding;
+import com.google.android.accessibility.braille.interfaces.ScreenReaderCommands;
 import com.google.android.accessibility.utils.PreferenceSettingsUtils;
 import com.google.android.accessibility.utils.preference.PreferencesActivity;
-import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.Map;
 
@@ -64,22 +62,30 @@ public class KeyBindingsActivity extends PreferencesActivity {
     public void onCreatePreferences(Bundle bundle, String rootKey) {
       getPreferenceManager().setSharedPreferencesName(BRAILLE_SHARED_PREFS_FILENAME);
       PreferenceSettingsUtils.addPreferencesFromResource(this, R.xml.key_bindings);
-      BrailleDisplayProperties props = getActivity().getIntent().getParcelableExtra(PROPERTY_KEY);
       for (Map.Entry<SupportedCommand.Category, Integer> entry : createCategoryMap().entrySet()) {
         if (!FeatureFlagReader.useBrowseMode(getContext()) && entry.getKey() == WEB_NAVIGATION) {
           getPreferenceScreen().removePreferenceRecursively(getString(entry.getValue()));
           continue;
         }
-        if (props == null) {
-          setPreferenceClickListener(entry.getKey(), entry.getValue());
-        } else {
-          if (isCategoryCommandSupported(props, entry.getKey())) {
-            setPreferenceClickListener(entry.getKey(), entry.getValue());
-          } else {
-            getPreferenceScreen().removePreferenceRecursively(getString(entry.getValue()));
-          }
-        }
+        // Every category is listed, since keys can be assigned to commands the display lacks.
+        setPreferenceClickListener(entry.getKey(), entry.getValue());
       }
+      Preference screenReaderCommands =
+          findPreference(getString(R.string.pref_key_bd_keybindings_screen_reader_commands));
+      if (ScreenReaderCommands.Provider.get() == null) {
+        getPreferenceScreen().removePreference(screenReaderCommands);
+      } else {
+        Intent intent = new Intent(getContext(), ScreenReaderCommandKeysActivity.class);
+        BrailleDisplayProperties props = getActivity().getIntent().getParcelableExtra(PROPERTY_KEY);
+        intent.putExtra(PROPERTY_KEY, props);
+        screenReaderCommands.setIntent(intent);
+      }
+      findPreference(getString(R.string.pref_key_bd_keybindings_reset_all))
+          .setOnPreferenceClickListener(
+              preference -> {
+                DisplayKeyAssigner.showResetAll(requireActivity(), () -> {});
+                return true;
+              });
     }
 
     @Override
@@ -106,19 +112,6 @@ public class KeyBindingsActivity extends PreferencesActivity {
       intent.putExtra(KeyBindingsCommandActivity.TYPE_KEY, category);
       intent.putExtra(PROPERTY_KEY, displayProperties);
       preference.setIntent(intent);
-    }
-
-    private boolean isCategoryCommandSupported(
-        BrailleDisplayProperties displayProperties, SupportedCommand.Category category) {
-      ArrayList<BrailleKeyBinding> sortedBindings =
-          BrailleKeyBindingUtils.getSortedBindingsForDisplay(displayProperties);
-      return SupportedCommand.getAvailableSupportedCommands(getContext()).stream()
-          .filter(supportedCommand -> supportedCommand.getCategory().equals(category))
-          .anyMatch(
-              supportedCommand ->
-                  BrailleKeyBindingUtils.getBrailleKeyBindingForCommand(
-                          supportedCommand.getCommand(), sortedBindings)
-                      != null);
     }
 
     private Map<SupportedCommand.Category, Integer> createCategoryMap() {

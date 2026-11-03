@@ -344,7 +344,10 @@ public final class ExternalBrailleDisplays {
     }
   }
 
-  /** Braille keys run the command they are bound to, as on any display, or else type. */
+  /**
+   * Braille keys run the command they are bound to, as on any display, or else type. Space with
+   * dots bound to nothing is reported for commands the user assigned to it.
+   */
   private BrailleInputEvent brailleKeysEvent(int dots, boolean space) {
     long time = SystemClock.uptimeMillis();
     if (dots == 0) {
@@ -354,7 +357,10 @@ public final class ExternalBrailleDisplays {
     if (command != null) {
       return new BrailleInputEvent(command.getCommand(), 0, time);
     }
-    return space ? null : new BrailleInputEvent(BrailleInputEvent.CMD_BRAILLE_KEY, dots, time);
+    return new BrailleInputEvent(
+        BrailleInputEvent.CMD_BRAILLE_KEY,
+        space ? dots | BrailleInputEvent.DOTS_WITH_SPACE : dots,
+        time);
   }
 
   private static BrailleInputEvent commandEvent(String name, int argument) {
