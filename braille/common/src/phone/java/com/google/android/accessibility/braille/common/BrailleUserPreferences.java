@@ -759,6 +759,8 @@ public class BrailleUserPreferences {
       brailleKeyboardSharedPreferencesEditor.putInt(
           SHARED_PREFS_VERSION, AAS16_2_SHARED_PREFS_VERSION);
       currentVersion = AAS16_2_SHARED_PREFS_VERSION;
+
+      brailleKeyboardSharedPreferencesEditor.apply();
     }
   }
 
