@@ -48,6 +48,12 @@ import io.github.aaron_gh.sandfly.addon.IShellConnection
 internal object ShellAccess {
   private const val TAG = "ShellAccess"
 
+  /**
+   * Whether SandFly has asked Shizuku for access for the add-on by itself at start, which it does
+   * only once. Asking for the full build's own access doesn't count.
+   */
+  const val PREF_ASKED_AT_START = "shizuku_addon_asked_at_start"
+
   /** Gets the user's answer to [requestPermission]. */
   var permissionListener: ((Boolean) -> Unit)? = null
 
@@ -200,8 +206,12 @@ internal object ShellAccess {
           if (connection !== this) return
           val connected = binder?.let { IAddon.Stub.asInterface(it) } ?: return
           try {
+            LogUtils.i(TAG, "Add-on connected, interface version %d", connected.interfaceVersion())
             connected.setListener(addonListener)
           } catch (e: RemoteException) {
+            return
+          } catch (e: RuntimeException) {
+            LogUtils.w(TAG, "The add-on can't be used: %s", e)
             return
           }
           addon = connected

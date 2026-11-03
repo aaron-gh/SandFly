@@ -33,6 +33,9 @@ import rikka.shizuku.Shizuku
 internal object ShellAccess {
   private const val REQUEST_CODE = 0x5F17
 
+  /** Whether SandFly has asked Shizuku for access by itself at start, which it does only once. */
+  const val PREF_ASKED_AT_START = "shizuku_asked_at_start"
+
   /** Gets the user's answer to [requestPermission]. */
   var permissionListener: ((Boolean) -> Unit)? = null
 

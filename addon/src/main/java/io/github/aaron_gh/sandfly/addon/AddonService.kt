@@ -144,6 +144,10 @@ class AddonService : Service() {
   private fun startShell(tag: String?, connection: IShellConnection) {
     val key = connection.asBinder()
     if (shells.containsKey(key)) return
+    if (shells.size >= MAX_SHELLS) {
+      fail(connection, "Too many shell services")
+      return
+    }
     if (tag == null || !TAG_PATTERN.matches(tag)) {
       fail(connection, "Bad tag $tag")
       return
@@ -225,5 +229,7 @@ class AddonService : Service() {
     const val TAG = "SandFlyAddon"
     /** Shizuku names the process after the tag. */
     val TAG_PATTERN = Regex("[a-z]{1,20}")
+    /** SandFly uses two: one for commands and one for grants. */
+    const val MAX_SHELLS = 8
   }
 }

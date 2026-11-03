@@ -49,8 +49,6 @@ import java.util.concurrent.Executors
 object ShizukuGrants {
   private const val TAG = "ShizukuGrants"
   private const val CONNECT_TIMEOUT_MS = 15_000L
-  /** Whether SandFly has asked Shizuku for access by itself at start, which it does only once. */
-  private const val PREF_ASKED_AT_START = "shizuku_asked_at_start"
 
   /** The permissions that SandFly can grant itself through Shizuku. */
   enum class Grant {
@@ -254,8 +252,8 @@ object ShizukuGrants {
   }
 
   private fun askAtStart(prefs: SharedPreferences): Boolean {
-    if (prefs.getBoolean(PREF_ASKED_AT_START, false)) return false
-    prefs.edit().putBoolean(PREF_ASKED_AT_START, true).apply()
+    if (prefs.getBoolean(ShellAccess.PREF_ASKED_AT_START, false)) return false
+    prefs.edit().putBoolean(ShellAccess.PREF_ASKED_AT_START, true).apply()
     return true
   }
 
