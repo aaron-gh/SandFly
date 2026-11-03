@@ -532,13 +532,7 @@ public final class EmojiSpeech {
     String file;
     synchronized (loaded) {
       available = availableFiles(assets);
-      file = "en";
-      for (String candidate : EmojiNames.filesFor(language)) {
-        if (available.contains(candidate)) {
-          file = candidate;
-          break;
-        }
-      }
+      file = fileFor(language, available);
       @Nullable EmojiNames names = loaded.get(file);
       if (names != null) {
         return names;
@@ -546,7 +540,7 @@ public final class EmojiSpeech {
       task = loading.get(file);
       if (task == null) {
         String toLoad = file;
-        task = new FutureTask<>(() -> load(assets, toLoad, available, emoji));
+        task = new FutureTask<>(() -> load(assets, toLoad, available, emoji.size()));
         loading.put(file, task);
         loadHere = true;
       }
@@ -576,6 +570,29 @@ public final class EmojiSpeech {
     return names;
   }
 
+  /** Returns the names file for {@code language}, among those {@code available}, or English. */
+  private static String fileFor(Locale language, Set<String> available) {
+    for (String candidate : EmojiNames.filesFor(language)) {
+      if (available.contains(candidate)) {
+        return candidate;
+      }
+    }
+    return "en";
+  }
+
+  /**
+   * Reads the names of {@code size} emoji in {@code language}, or English names if there are none
+   * for it, without keeping them for speech. Blocks while it reads.
+   */
+  static EmojiNames readNames(Context context, Locale language, int size) {
+    AssetManager assets = context.getAssets();
+    Set<String> available;
+    synchronized (loaded) {
+      available = availableFiles(assets);
+    }
+    return load(assets, fileFor(language, available), available, size);
+  }
+
   /** Returns the names files in the assets, by language. Called with {@link #loaded} held. */
   private static Set<String> availableFiles(AssetManager assets) {
     if (files == null) {
@@ -600,7 +617,7 @@ public final class EmojiSpeech {
    * can't be read gives no names, so its emoji are left as they are rather than tried again.
    */
   private static EmojiNames load(
-      AssetManager assets, String file, Set<String> available, EmojiNames.Index emoji) {
+      AssetManager assets, String file, Set<String> available, int size) {
     // Read the chain of parents, then apply the most general first.
     String[] chain = new String[MAX_PARENTS + 1];
     int length = 0;
@@ -609,7 +626,7 @@ public final class EmojiSpeech {
       chain[length++] = next;
       next = readParent(assets, next);
     }
-    EmojiNames names = new EmojiNames(emoji);
+    EmojiNames names = new EmojiNames(size);
     for (int i = length - 1; i >= 0; i--) {
       read(assets, chain[i], names);
     }
@@ -640,7 +657,7 @@ public final class EmojiSpeech {
   }
 
   /** Opens a file of the emoji or names, which the build has unzipped: see EmojiNames.EXTENSION. */
-  private static BufferedReader open(AssetManager assets, String file) throws IOException {
+  static BufferedReader open(AssetManager assets, String file) throws IOException {
     return new BufferedReader(
         new InputStreamReader(
             assets.open(EmojiNames.ASSET_FOLDER + "/" + file), StandardCharsets.UTF_8));

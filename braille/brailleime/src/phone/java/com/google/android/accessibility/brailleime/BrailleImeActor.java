@@ -77,6 +77,9 @@ public class BrailleImeActor {
 
     void switchToNextBrailleTable();
 
+    /** Starts searching for an emoji to insert by words of its name. */
+    void startEmojiSearch();
+
     boolean isConnectionValid();
 
     ImeConnection getImeConnection();
@@ -150,6 +153,7 @@ public class BrailleImeActor {
       case HELP_AND_OTHER_ACTIONS -> performTextAction(imeConnection, callback::showContextMenu);
       case TOGGLE_ORIENTATION_LOCK -> callback.toggleOrientationLock();
       case NEXT_BRAILLE_TABLE -> callback.switchToNextBrailleTable();
+      case EMOJI_SEARCH -> callback.startEmojiSearch();
       case NEXT_GRANULARITY ->
           performTextAction(imeConnection, ScreenReaderAction.NEXT_READING_CONTROL);
       case PREVIOUS_GRANULARITY ->

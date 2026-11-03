@@ -25,6 +25,7 @@ import static com.google.android.accessibility.braille.common.BrailleImeAction.C
 import static com.google.android.accessibility.braille.common.BrailleImeAction.CUT;
 import static com.google.android.accessibility.braille.common.BrailleImeAction.DELETE_CHARACTER_OR_PREVIOUS_ITEM;
 import static com.google.android.accessibility.braille.common.BrailleImeAction.DELETE_WORD;
+import static com.google.android.accessibility.braille.common.BrailleImeAction.EMOJI_SEARCH;
 import static com.google.android.accessibility.braille.common.BrailleImeAction.END_OF_PAGE;
 import static com.google.android.accessibility.braille.common.BrailleImeAction.HEAR_NEXT_SPELLING_SUGGESTION;
 import static com.google.android.accessibility.braille.common.BrailleImeAction.HEAR_PREVIOUS_SPELLING_SUGGESTION;
@@ -98,6 +99,7 @@ public class SupportedCommand {
           .add(new SupportedCommand(HELP_AND_OTHER_ACTIONS, BASIC, KEYBOARD, /* editable= */ false))
           .add(new SupportedCommand(TOGGLE_ORIENTATION_LOCK, BASIC, KEYBOARD))
           .add(new SupportedCommand(NEXT_BRAILLE_TABLE, BASIC, KEYBOARD))
+          .add(new SupportedCommand(EMOJI_SEARCH, BASIC, TYPING))
           .add(new SupportedCommand(PREVIOUS_CHARACTER, CURSOR_MOVEMENT, CHARACTER))
           .add(new SupportedCommand(NEXT_CHARACTER, CURSOR_MOVEMENT, CHARACTER))
           .add(new SupportedCommand(PREVIOUS_WORD, CURSOR_MOVEMENT, WORD))

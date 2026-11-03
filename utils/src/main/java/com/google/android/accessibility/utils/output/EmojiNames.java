@@ -219,7 +219,12 @@ final class EmojiNames {
   private boolean empty = true;
 
   EmojiNames(Index index) {
-    names = new String[index.size()];
+    this(index.size());
+  }
+
+  /** Names for {@code size} emoji, the lines of the {@link #INDEX_FILE}. */
+  EmojiNames(int size) {
+    names = new String[size];
   }
 
   /**

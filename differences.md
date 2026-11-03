@@ -816,6 +816,10 @@ In TalkBack, the braille keyboard follows the on-screen keyboard's echo setting.
 
 Hold dots 4, 5 and 6 and swipe down to switch to the next of the braille keyboard's languages. Contracted braille is turned on or off as it was when you last used that language, and SandFly says the language and whether it's contracted. Speech changes to your first voice profile in that language, if you have one, and back to **SandFly default** when the new language has none. You can change the gesture in the braille keyboard's gesture settings.
 
+### Emoji search
+
+Hold dots 4, 5, and 6 and swipe right to search for an emoji. Type words of its name in uncontracted braille of the keyboard's language, and SandFly says each character and the first emoji whose name holds every word, with how many there are. A character that leaves no emoji is dropped. Swipe down or up with one finger for the next or previous emoji, right with one finger for a space between words, and left to delete. Swipe right with two fingers to insert the emoji; the search stays open for another. Any other gesture closes the search. The names are Unicode CLDR's, the ones that SandFly speaks emoji with, in the language of the braille table, or in English where CLDR has none. Skin tone variants aren't offered, and a search finds at most 100 emoji. You can change the gesture in the braille keyboard's gesture settings.
+
 ### Mongolian braille
 
 The braille languages include Mongolian, uncontracted and contracted, from the liblouis tables.

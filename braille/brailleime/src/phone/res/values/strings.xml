@@ -100,6 +100,18 @@
   <string name="switch_to_language_contracted_announcement">Switched to %s, contracted</string>
   <!-- Audial announcement that the braille keyboard switched to a braille language, with uncontracted braille. %s is the user facing name of the language. [CHAR LIMIT=80] -->
   <string name="switch_to_language_uncontracted_announcement">Switched to %s, uncontracted</string>
+  <!-- Audial announcement when the braille keyboard starts emoji search, in which the user types words of an emoji's name to find it. Also spoken when nothing has been typed yet. [CHAR LIMIT=50] -->
+  <string name="emoji_search_announcement">Emoji search</string>
+  <!-- Audial announcement when the braille keyboard ends emoji search and returns to typing. [CHAR LIMIT=50] -->
+  <string name="emoji_search_closed_announcement">Emoji search closed</string>
+  <!-- Audial announcement in braille keyboard emoji search when no emoji name holds the words typed. [CHAR LIMIT=50] -->
+  <string name="emoji_search_no_emoji_announcement">No emoji</string>
+  <!-- Audial announcement of an emoji found in braille keyboard emoji search: %1$s is the emoji's name, such as "grinning face", %2$d its number and %3$d how many emoji were found. [CHAR LIMIT=NONE] -->
+  <string name="emoji_search_item_announcement">%1$s, %2$d of %3$d</string>
+  <!-- Audial announcement when braille keyboard emoji search inserts an emoji into the text field. %s is the emoji's name, such as "grinning face". [CHAR LIMIT=NONE] -->
+  <string name="emoji_search_inserted_announcement">%s inserted</string>
+  <!-- Audial announcement when braille keyboard emoji search can't start because the braille table can't be loaded. [CHAR LIMIT=NONE] -->
+  <string name="emoji_search_not_available_announcement">Emoji search is not available</string>
   <!-- Braille keyboard settings. -->
   <!-- Braille keyboard. [CHAR LIMIT=35] -->
   <string name="braille_keyboard">Braille keyboard</string>
