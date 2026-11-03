@@ -190,6 +190,7 @@ import com.google.android.accessibility.talkback.focusmanagement.TraversalTreeCa
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.ScreenStateMonitor;
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.TouchExplorationInterpreter;
 import com.google.android.accessibility.talkback.focusmanagement.record.AccessibilityFocusActionHistory;
+import com.google.android.accessibility.talkback.gesture.BackTapCommands;
 import com.google.android.accessibility.talkback.gesture.GestureController;
 import com.google.android.accessibility.talkback.gesture.GestureHistory;
 import com.google.android.accessibility.talkback.gesture.GestureProfiles;
@@ -874,6 +875,7 @@ public class TalkBackService extends AccessibilityServiceCompat
 
   /** Volume keys > double, triple and long presses of each volume key. */
   @Nullable private VolumeKeyCommands volumeKeyCommands;
+  @Nullable private BackTapCommands backTapCommands;
 
   private final @NonNull SparseArray<TouchInteractionMonitor> displayIdToTouchInteractionMonitors =
       new SparseArray<>();
@@ -2764,6 +2766,25 @@ public class TalkBackService extends AccessibilityServiceCompat
           }
         });
 
+    backTapCommands =
+        new BackTapCommands(
+            this,
+            key -> {
+              if (gestureController != null
+                  && isServiceActive()
+                  && !PauseController.isPaused()) {
+                gestureController.onBackTap(key, EVENT_ID_UNTRACKED);
+              }
+              return Unit.INSTANCE;
+            });
+    addEventListener(backTapCommands);
+    ringerModeAndScreenMonitor.addScreenChangedListener(
+        (isInteractive, eventId) -> {
+          if (backTapCommands != null) {
+            backTapCommands.onScreenChanged(isInteractive);
+          }
+        });
+
     gestureController =
         new GestureController(
             this,
@@ -3354,6 +3375,9 @@ public class TalkBackService extends AccessibilityServiceCompat
         getString(R.string.selector_switch_tts_engine),
         getString(R.string.selector_voice_profile));
     reloadPreferences();
+    if (backTapCommands != null) {
+      backTapCommands.setAllowed(!PauseController.isPaused());
+    }
 
     inputFocusInterpreter.initLastEditableFocusForGlobalVariables();
 
@@ -3408,6 +3432,9 @@ public class TalkBackService extends AccessibilityServiceCompat
 
     if (volumeKeyCommands != null) {
       volumeKeyCommands.cancel();
+    }
+    if (backTapCommands != null) {
+      backTapCommands.setAllowed(false);
     }
 
     if (displayMonitor != null) {
@@ -3537,6 +3564,9 @@ public class TalkBackService extends AccessibilityServiceCompat
 
     if (proximitySensorMonitor != null) {
       proximitySensorMonitor.shutdown();
+    }
+    if (backTapCommands != null) {
+      backTapCommands.shutdown();
     }
     if (feedbackController != null) {
       feedbackController.shutdown();
@@ -3955,6 +3985,9 @@ public class TalkBackService extends AccessibilityServiceCompat
     if (volumeKeyCommands != null) {
       volumeKeyCommands.reload(prefs);
     }
+    if (backTapCommands != null) {
+      backTapCommands.reload(prefs);
+    }
 
     boolean useAudioFocus =
         getBooleanPref(R.string.pref_use_audio_focus_key, R.bool.pref_use_audio_focus_default);
@@ -4306,6 +4339,9 @@ public class TalkBackService extends AccessibilityServiceCompat
     }
     if (directTouchController != null) {
       directTouchController.setPaused(paused);
+    }
+    if (backTapCommands != null) {
+      backTapCommands.setAllowed(!paused && isServiceActive());
     }
     if (scriptHost != null) {
       scriptHost.onPausedChanged(paused);

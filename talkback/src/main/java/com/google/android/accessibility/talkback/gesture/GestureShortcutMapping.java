@@ -1157,6 +1157,24 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
   }
 
   /**
+   * Returns the action of the gesture of preference key {@code key}, without a gesture set, for
+   * gestures that have no gesture ID such as back taps: the gesture profile in use first, then the
+   * app shown, then the gesture set in use.
+   */
+  public String getActionKeyFromPrefKey(String key, String defaultValue) {
+    @Nullable String profileAction = GestureProfiles.action(key);
+    if (profileAction != null) {
+      return profileAction;
+    }
+    @Nullable String appAction = AppGestures.action(key);
+    if (appAction != null) {
+      return appAction;
+    }
+    int gestureSet = gestureSetEnabled ? currentGestureSet : 0;
+    return prefs.getString(getPrefKeyWithGestureSet(key, gestureSet), defaultValue);
+  }
+
+  /**
    * Returns the action the gesture profile in use gives the gesture, which comes before every
    * other, or null when the profile leaves the gesture out or none is in use.
    */

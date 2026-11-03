@@ -612,4 +612,27 @@
         android:title="@string/title_pref_shortcut_fingerprint_right"/>
   </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
 
+  <!-- Taps on the back of the device, detected with the accelerometer -->
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
+      android:key="@string/pref_category_back_tap_key"
+      android:title="@string/title_pref_category_back_tap">
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/shortcut_value_unassigned"
+        android:key="@string/pref_shortcut_back_tap_double_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_back_tap_double"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/shortcut_value_unassigned"
+        android:key="@string/pref_shortcut_back_tap_triple_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_back_tap_triple"/>
+    <ListPreference
+        android:defaultValue="@string/pref_back_tap_sensitivity_default"
+        android:entries="@array/pref_back_tap_sensitivity_entries"
+        android:entryValues="@array/pref_back_tap_sensitivity_values"
+        android:key="@string/pref_back_tap_sensitivity_key"
+        android:summary="%s"
+        android:title="@string/title_pref_back_tap_sensitivity"/>
+  </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
+
 </PreferenceScreen>

@@ -1103,6 +1103,21 @@ public class GestureController {
   }
 
   /**
+   * Runs the command of a back tap, named by its preference key on the Gestures screen without a
+   * gesture set.
+   */
+  public void onBackTap(String key, EventId eventId) {
+    String unassigned = service.getString(R.string.shortcut_value_unassigned);
+    String action = gestureShortcutMapping.getActionKeyFromPrefKey(key, unassigned);
+    LogUtils.v(LOG_TAG, "Back tap [%s], action: [%s]", key, action);
+    if (TextUtils.isEmpty(action) || action.equals(unassigned)) {
+      return;
+    }
+    pipeline.returnFeedback(eventId, Feedback.part().setInterruptGentle(true));
+    performAction(action, eventId);
+  }
+
+  /**
    * The interruptAllFeedback inside performAction is effective only when CRM is active.. Here to
    * perform an equivalent logic(by interruptGentle) to interrupt feedback when CRM is inactive.
    */
