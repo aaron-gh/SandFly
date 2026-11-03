@@ -41,6 +41,10 @@ class ClipboardHistoryFragment : NotificationCodeFragment(R.string.title_clipboa
 
   private val onChange: () -> Unit = { if (isResumed) rebuild() }
 
+  // The edit box this history was opened for. An older history that opening again closes is
+  // destroyed after the new one is opened, and leaves the new edit box alone.
+  private val openedTarget = pasteTarget
+
   // The clipboard can be read once the screen has focus, which it doesn't have yet on resume.
   // While Shizuku adds each copy, the history has the clipboard's text already.
   private val onFocus =
@@ -65,7 +69,7 @@ class ClipboardHistoryFragment : NotificationCodeFragment(R.string.title_clipboa
 
   override fun onDestroy() {
     // Opened again from settings, the history has no edit box to paste into.
-    if (activity?.isFinishing == true) pasteTarget = null
+    if (activity?.isFinishing == true && pasteTarget === openedTarget) pasteTarget = null
     super.onDestroy()
   }
 
