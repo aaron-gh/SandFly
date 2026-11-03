@@ -38,6 +38,7 @@ public class RuleAction extends NodeMenuRule {
   private final EditingAndSelectingMenu editingAndSelectingMenu;
   private final TypoSuggestionMenu typoSuggestionMenu;
   private final LinkMenu linkMenu;
+  private final QuotedMessageMenu quotedMessageMenu = new QuotedMessageMenu();
 
   public RuleAction(
       Pipeline.FeedbackReturner pipeline,
@@ -59,7 +60,8 @@ public class RuleAction extends NodeMenuRule {
     return customActionMenu.accept(context, node)
         || editingAndSelectingMenu.accept(context, node)
         || typoSuggestionMenu.accept(context, node)
-        || linkMenu.accept(context, node);
+        || linkMenu.accept(context, node)
+        || quotedMessageMenu.accept(context, node);
   }
 
   @Override
@@ -82,6 +84,10 @@ public class RuleAction extends NodeMenuRule {
 
     if (linkMenu.accept(context, node)) {
       actionItems.addAll(linkMenu.getMenuItemsForNode(context, node, includeAncestors));
+    }
+
+    if (quotedMessageMenu.accept(context, node)) {
+      actionItems.addAll(quotedMessageMenu.getMenuItemsForNode(context, node, includeAncestors));
     }
 
     return actionItems;
