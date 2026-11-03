@@ -106,6 +106,20 @@ class VolumeKeyCommands(
   }
 
   /**
+   * Notes which volume keys are pressed. Called for every key event before anything else can
+   * consume it, whether or not any press has a command.
+   */
+  fun onKeyEventSeen(event: KeyEvent) {
+    if (!VolumeKeyPresses.isVolumeKey(event.keyCode)) {
+      return
+    }
+    when (event.action) {
+      KeyEvent.ACTION_DOWN -> presses.onKeyState(event.keyCode, /* down= */ true)
+      KeyEvent.ACTION_UP -> presses.onKeyState(event.keyCode, /* down= */ false)
+    }
+  }
+
+  /**
    * Handles a volume key event and returns whether it is kept from Android. [canUse] says whether
    * presses may be counted now, and is asked only when a volume key with a command is pressed.
    */

@@ -1513,6 +1513,9 @@ public class TalkBackService extends AccessibilityServiceCompat
 
   /** Handles a key event and returns whether it should be considered consumed. */
   protected boolean onKeyEventInternal(KeyEvent keyEvent) {
+    if (volumeKeyCommands != null) {
+      volumeKeyCommands.onKeyEventSeen(keyEvent);
+    }
     if (keyEvent.getAction() == KeyEvent.ACTION_DOWN) {
       RecentUserInput.mark();
       if (gestureController != null) {

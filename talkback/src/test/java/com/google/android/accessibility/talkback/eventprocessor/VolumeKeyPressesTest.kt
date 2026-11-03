@@ -89,10 +89,15 @@ class VolumeKeyPressesTest {
     now = end
   }
 
-  private fun down(key: Int, repeated: Boolean = false): Boolean =
-    presses.onKeyDown(key, repeated) { canUse }
+  private fun down(key: Int, repeated: Boolean = false): Boolean {
+    presses.onKeyState(key, down = true)
+    return presses.onKeyDown(key, repeated) { canUse }
+  }
 
-  private fun up(key: Int): Boolean = presses.onKeyUp(key)
+  private fun up(key: Int): Boolean {
+    presses.onKeyState(key, down = false)
+    return presses.onKeyUp(key)
+  }
 
   /** Presses and releases [key] after [heldMs], and returns whether both were kept. */
   private fun press(key: Int, heldMs: Long = 80): Boolean {
@@ -261,6 +266,37 @@ class VolumeKeyPressesTest {
     assertFalse(up(KEYCODE_VOLUME_DOWN))
     assertTrue(up(KEYCODE_VOLUME_UP))
     advance(1000)
+    assertTrue(log.isEmpty())
+    assertEquals(null, task)
+  }
+
+  @Test
+  fun unassignedKeyHeldFirst_assignedKeyPassesThrough() {
+    assign(up = KeyCommands("A", null, "L"))
+    assertFalse(down(KEYCODE_VOLUME_DOWN))
+    advance(100)
+    assertFalse(down(KEYCODE_VOLUME_UP))
+    assertEquals(null, task)
+    assertFalse(down(KEYCODE_VOLUME_UP, repeated = true))
+    advance(3000)
+    assertFalse(up(KEYCODE_VOLUME_UP))
+    assertFalse(up(KEYCODE_VOLUME_DOWN))
+    assertTrue(log.isEmpty())
+    // The next press of the assigned key alone is counted again.
+    assertTrue(press(KEYCODE_VOLUME_UP))
+    advance(300)
+    assertEquals(listOf("up"), log)
+  }
+
+  @Test
+  fun unassignedKeyConsumedElsewhere_stillCountsAsHeld() {
+    assign(up = KeyCommands(null, null, "L"))
+    // Volume down taken before the presses, such as by a slider.
+    presses.onKeyState(KEYCODE_VOLUME_DOWN, down = true)
+    assertFalse(down(KEYCODE_VOLUME_UP))
+    advance(1000)
+    assertFalse(up(KEYCODE_VOLUME_UP))
+    presses.onKeyState(KEYCODE_VOLUME_DOWN, down = false)
     assertTrue(log.isEmpty())
     assertEquals(null, task)
   }
