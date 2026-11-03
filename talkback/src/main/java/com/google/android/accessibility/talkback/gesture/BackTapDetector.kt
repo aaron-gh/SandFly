@@ -53,8 +53,8 @@ class BackTapDetector(private val listener: Listener) {
 
   /** How strong a jolt must be at each sensitivity, in m/s². */
   enum class Sensitivity(val threshold: Float) {
-    LOW(18f),
-    MEDIUM(12f),
+    LOW(14f),
+    MEDIUM(9f),
     HIGH(6f),
   }
 
