@@ -219,7 +219,7 @@ public class FocusActorForScreenStateChange {
     long startTime = primesController.getTime();
 
     AccessibilityNodeInfoCompat nodeToRestoreFocus =
-        FocusActionRecord.getFocusableNodeFromFocusRecord(root, focusFinder, lastFocusAction);
+        history.getFocusableNodeFromFocusRecord(root, focusFinder, lastFocusAction);
 
     boolean firstTime = screenState.isInterpretFirstTimeWhenWakeUp();
     boolean forceMuteFeedback =

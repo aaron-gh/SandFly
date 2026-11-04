@@ -240,6 +240,17 @@ public class FocusManagerInternal {
    * </ol>
    */
   boolean ensureAccessibilityFocusOnScreen(EventId eventId) {
+    // Restoring the last focus and its failover to INITIAL_FOCUS_RESTORE both seek the node of the
+    // last focus record. The search is not repeated while the change is handled.
+    history.startRefocus();
+    try {
+      return ensureFocusOnScreen(eventId);
+    } finally {
+      history.endRefocus();
+    }
+  }
+
+  private boolean ensureFocusOnScreen(EventId eventId) {
     final String subTag = "EnsureOnScreen";
     if (pipeline == null
         || !screenState.areMainWindowsStable()
@@ -422,7 +433,7 @@ public class FocusManagerInternal {
       if (windowIdentifierRecord != null) {
         initialFocusType.set(FocusActionInfo.RESTORED_LAST_FOCUS);
         nodeToFocus =
-            FocusActionRecord.getFocusableNodeFromFocusRecord(
+            history.getFocusableNodeFromFocusRecord(
                 windowRoot, focusFinder, windowIdentifierRecord);
       }
     }

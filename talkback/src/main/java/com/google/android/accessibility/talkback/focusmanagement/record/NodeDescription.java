@@ -20,6 +20,7 @@ import android.text.TextUtils;
 import androidx.annotation.VisibleForTesting;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat.CollectionItemInfoCompat;
+import com.google.android.accessibility.talkback.focusmanagement.record.NodePathDescription.Deadline;
 import com.google.android.accessibility.utils.AccessibilityNode;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.Filter;
@@ -118,7 +119,12 @@ public class NodeDescription {
       @NonNull AccessibilityNodeInfoCompat node,
       boolean isPathEnd,
       @Nullable AccessibilityNode parent) {
-    this(withoutSiblingContext(node, isPathEnd), parent, isPathEnd, Integer.MAX_VALUE);
+    this(
+        withoutSiblingContext(node, isPathEnd),
+        parent,
+        isPathEnd,
+        Integer.MAX_VALUE,
+        /* deadline= */ null);
   }
 
   /**
@@ -146,27 +152,30 @@ public class NodeDescription {
   /**
    * Returns this description with the node's position among the children of {@code parent}, and
    * the text of the siblings beside it. {@code parent} is the node's parent, as it was when this
-   * description was made, or null.
+   * description was made, or null. Once {@code deadline} has passed, no more children of {@code
+   * parent} are read, and the position and the text of the siblings stay undefined.
    */
-  NodeDescription withSiblingContext(@Nullable AccessibilityNode parent, boolean isPathEnd) {
-    return new NodeDescription(this, parent, isPathEnd, Integer.MAX_VALUE);
+  NodeDescription withSiblingContext(
+      @Nullable AccessibilityNode parent, boolean isPathEnd, @NonNull Deadline deadline) {
+    return new NodeDescription(this, parent, isPathEnd, Integer.MAX_VALUE, deadline);
   }
 
   /**
-   * Like {@link #withSiblingContext(AccessibilityNode, boolean)}, but reads at most {@code
-   * maxChildrenRead} children of {@code parent} to find the node's position. Further on, the
-   * position and the text of the siblings stay undefined.
+   * Like {@link #withSiblingContext(AccessibilityNode, boolean, Deadline)}, without a deadline, but
+   * reads at most {@code maxChildrenRead} children of {@code parent} to find the node's position.
+   * Further on, the position and the text of the siblings stay undefined.
    */
   NodeDescription withSiblingContext(
       @Nullable AccessibilityNode parent, boolean isPathEnd, int maxChildrenRead) {
-    return new NodeDescription(this, parent, isPathEnd, maxChildrenRead);
+    return new NodeDescription(this, parent, isPathEnd, maxChildrenRead, /* deadline= */ null);
   }
 
   private NodeDescription(
       @NonNull NodeDescription original,
       @Nullable AccessibilityNode parent,
       boolean isPathEnd,
-      int maxChildrenRead) {
+      int maxChildrenRead,
+      @Nullable Deadline deadline) {
     this.savedNode = original.savedNode;
     this.nodeInfoHashCode = original.nodeInfoHashCode;
     this.text = original.text;
@@ -179,7 +188,7 @@ public class NodeDescription {
     this.rawIndexInParent =
         (savedNode == null)
             ? UNDEFINED_INDEX
-            : getRawIndexInParent(savedNode, parent, maxChildrenRead);
+            : getRawIndexInParent(savedNode, parent, maxChildrenRead, deadline);
     if (rawIndexInParent == UNDEFINED_INDEX) {
       this.previousSiblingText = null;
       this.nextSiblingText = null;
@@ -355,13 +364,19 @@ public class NodeDescription {
     return (rowIndex != UNDEFINED_INDEX) || (columnIndex != UNDEFINED_INDEX);
   }
 
+  /** Returns the node's position among the children of {@code parent}, read until {@code deadline}. */
   static int getRawIndexInParent(
-      @NonNull AccessibilityNode node, @Nullable AccessibilityNode parent) {
-    return getRawIndexInParent(node, parent, Integer.MAX_VALUE);
+      @NonNull AccessibilityNode node,
+      @Nullable AccessibilityNode parent,
+      @NonNull Deadline deadline) {
+    return getRawIndexInParent(node, parent, Integer.MAX_VALUE, deadline);
   }
 
   private static int getRawIndexInParent(
-      @NonNull AccessibilityNode node, @Nullable AccessibilityNode parent, int maxChildrenRead) {
+      @NonNull AccessibilityNode node,
+      @Nullable AccessibilityNode parent,
+      int maxChildrenRead,
+      @Nullable Deadline deadline) {
     if (parent == null) {
       return UNDEFINED_INDEX;
     }
@@ -377,6 +392,9 @@ public class NodeDescription {
 
     int childrenRead = Math.min(parent.getChildCount(), maxChildrenRead);
     for (int i = 0; i < childrenRead; i++) {
+      if ((deadline != null) && deadline.shouldStop()) {
+        return UNDEFINED_INDEX;
+      }
       AccessibilityNode child = parent.getChild(i);
       if (node.equals(child)) {
         return i;

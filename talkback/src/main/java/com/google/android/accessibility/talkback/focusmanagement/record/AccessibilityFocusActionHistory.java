@@ -26,6 +26,7 @@ import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.ScreenState;
 import com.google.android.accessibility.utils.AccessibilityEventUtils;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
+import com.google.android.accessibility.utils.FocusFinder;
 import com.google.android.accessibility.utils.FormFactorUtils;
 import com.google.android.accessibility.utils.PackageManagerUtils;
 import com.google.android.accessibility.utils.Role;
@@ -88,6 +89,19 @@ public final class AccessibilityFocusActionHistory {
 
     public @Nullable FocusActionRecord getLastEditableFocusActionRecord() {
       return AccessibilityFocusActionHistory.this.getLastEditableFocusActionRecord();
+    }
+
+    /**
+     * Returns {@link FocusActionRecord#getFocusableNodeFromFocusRecord}, or null without a search
+     * if the record's node was not found in the window of {@code root} since {@link
+     * AccessibilityFocusActionHistory#startRefocus}.
+     */
+    public @Nullable AccessibilityNodeInfoCompat getFocusableNodeFromFocusRecord(
+        @Nullable AccessibilityNodeInfoCompat root,
+        @NonNull FocusFinder focusFinder,
+        @NonNull FocusActionRecord record) {
+      return AccessibilityFocusActionHistory.this.getFocusableNodeFromFocusRecord(
+          root, focusFinder, record);
     }
 
     public @Nullable FocusActionRecord getLastFocusActionRecord() {
@@ -174,6 +188,16 @@ public final class AccessibilityFocusActionHistory {
   private boolean focusOnTalkBackUiBeforeWindowTransition = false;
   private long pendingWebFocusActionTime = -1;
 
+  /** The number of {@link #startRefocus} calls not yet ended by {@link #endRefocus}. */
+  private int refocusDepth = 0;
+
+  /**
+   * During a refocus, the record whose node was last not found, and the window it was sought in.
+   */
+  private @Nullable FocusActionRecord recordNotFound;
+
+  private int windowIdNotFound;
+
   //////////////////////////////////////////////////////////////////////////////////////////
   // Construction
 
@@ -244,6 +268,45 @@ public final class AccessibilityFocusActionHistory {
   public @Nullable FocusActionRecord getLastFocusActionRecordInWindow(
       WindowIdentifier windowIdentifier) {
     return windowIdentifierToFocusActionRecordMap.get(windowIdentifier);
+  }
+
+  /**
+   * Starts a refocus after the screen changed. Until {@link #endRefocus}, a record whose node is not
+   * found in a window is not sought in that window again: restoring focus and its failover both
+   * seek the last record's node, and each search asks the app for many nodes.
+   */
+  public void startRefocus() {
+    refocusDepth++;
+  }
+
+  /** Ends a refocus started by {@link #startRefocus}. */
+  public void endRefocus() {
+    if (refocusDepth > 0) {
+      refocusDepth--;
+    }
+    if (refocusDepth == 0) {
+      recordNotFound = null;
+    }
+  }
+
+  private @Nullable AccessibilityNodeInfoCompat getFocusableNodeFromFocusRecord(
+      @Nullable AccessibilityNodeInfoCompat root,
+      @NonNull FocusFinder focusFinder,
+      @NonNull FocusActionRecord record) {
+    boolean refocusing = (refocusDepth > 0) && (root != null);
+    if (refocusing
+        && (root.getWindowId() == windowIdNotFound)
+        && record.equals(recordNotFound)) {
+      LogUtils.d(TAG, "Focus record not sought again in window %d", windowIdNotFound);
+      return null;
+    }
+    @Nullable AccessibilityNodeInfoCompat node =
+        FocusActionRecord.getFocusableNodeFromFocusRecord(root, focusFinder, record);
+    if (refocusing && (node == null)) {
+      recordNotFound = record;
+      windowIdNotFound = root.getWindowId();
+    }
+    return node;
   }
 
   public boolean focusOnTalkBackUiBeforeWindowTransition() {
@@ -372,6 +435,7 @@ public final class AccessibilityFocusActionHistory {
     // Clear editable node focus record.
     lastEditableFocusActionRecord = null;
     cachedNodeToRestoreFocus = null;
+    recordNotFound = null;
 
     clearPendingFocusAction();
   }
