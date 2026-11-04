@@ -31,14 +31,13 @@ VISIBILITY=
 # List of brltty drivers that are included.  If adding a new driver,
 # include the directory name of the driver in the below list.
 # ADD_DEVICE_SUPPORT
-#
-# TODO: Gets back EuroBraille.
 
 $(call build-braille-drivers,\
 	Voyager \
 	FreedomScientific \
 	HumanWare \
 	Baum \
+	EuroBraille \
 	BrailleMemo \
 	Papenmeier \
 	HIMS \

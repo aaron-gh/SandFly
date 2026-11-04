@@ -43,7 +43,13 @@ DRIVER_CODE := $$(empty)
 DRIVER_COMMENT := $$(empty)
 DRIVER_VERSION := $$(empty)
 DRIVER_DEVELOPERS := $$(empty)
+# A driver whose Makefile.in has rules that clash with ndk-build (such as
+# clean::) gets its variables from <driver>.mk in this directory instead.
+ifneq ($$(wildcard $$(SRC_TOP)$1.mk),)
+include $$(SRC_TOP)$1.mk
+else
 include $$(LOCAL_PATH)/$$(DRIVER_PATH)/Makefile.in
+endif
 ifeq ($$(SRC_FILES),$$(empty))
 LOCAL_SRC_FILES := $$(DRIVER_PATH)/braille.c
 else
