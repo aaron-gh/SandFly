@@ -559,6 +559,36 @@ public class AccessibilityFocusInterpreter
     focusProcessorForTapAndTouchExploration.setFingerAtScreenEdge(atEdge);
   }
 
+  /** Notes that the finger left the strip at the bottom of the screen at {@code timeMs}. */
+  public void onFingerLeftScreenEdge(long timeMs) {
+    focusProcessorForTapAndTouchExploration.onFingerLeftScreenEdge(timeMs);
+  }
+
+  /** Sets how long the finger stays on an item for lifting it to activate nothing; 0 for never. */
+  public void setHoldToCancelMs(long ms) {
+    focusProcessorForTapAndTouchExploration.setHoldToCancelMs(ms);
+  }
+
+  /** Sets whether a tap that lifts before the item under it is focused activates the item. */
+  public void setTapToActivateEnabled(boolean enabled) {
+    focusProcessorForTapAndTouchExploration.setTapToActivateEnabled(enabled);
+  }
+
+  /** Returns whether a quick tap now activates the item under it as the finger lifts. */
+  public boolean quickTapActivatesAtOnce() {
+    return focusProcessorForTapAndTouchExploration.quickTapActivatesAtOnce();
+  }
+
+  /** Called when touch exploration starts after the finger of the touch lifted: a tap. */
+  public void onTapExploration() {
+    focusProcessorForTapAndTouchExploration.onTapExploration();
+  }
+
+  /** Sets what plays when holding or the edge of the screen cancels an activation. */
+  public void setLiftCancelledFeedback(@Nullable Runnable feedback) {
+    focusProcessorForTapAndTouchExploration.setLiftCancelledFeedback(feedback);
+  }
+
   /** Returns whether lifting the finger now activates the item or types the key it last touched. */
   public boolean liftActivates() {
     return focusProcessorForTapAndTouchExploration.liftActivates();

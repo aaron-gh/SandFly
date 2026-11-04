@@ -47,6 +47,7 @@ import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics;
 import com.google.android.accessibility.talkback.directtouch.DirectTouchRegions;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.focusmanagement.action.TouchExplorationAction;
+import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionRecord;
 import com.google.android.accessibility.talkback.scripting.Scripts;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.AccessibilityWindowInfoUtils;
@@ -205,6 +206,25 @@ public class FocusProcessorForTapAndTouchExploration {
   // Whether the finger of the touch in progress was last at the edge of the screen, where lifting
   // it, such as by sliding it off the screen, activates nothing.
   private boolean fingerAtScreenEdge = false;
+  // When the finger last left the strip at the bottom of the screen. An app item touched from then
+  // on means the finger moved back up; a finger that lifted in the strip touches none.
+  private long leftScreenEdgeTimeMs = Long.MAX_VALUE;
+
+  // How long the finger stays on an item before lifting it activates nothing, with Lift to
+  // activate, or 0 for never. The setting is Hold to cancel.
+  private long holdToCancelMs = 0;
+  // Whether the finger stayed on the item it touches for holdToCancelMs.
+  private boolean heldToCancel = false;
+  // Plays the feedback of an activation cancelled by holding or by the edge of the screen.
+  @Nullable private Runnable liftCancelledFeedback;
+
+  // Whether a tap that lifts before the item under it is focused activates the item. The setting is
+  // Tap to activate.
+  private boolean tapToActivateEnabled = false;
+  // Whether touch exploration of the touch in progress started after its finger lifted: a tap.
+  private boolean isTapExploration = false;
+  // The item a tap activates when the touch ends, found by that touch exploration.
+  @Nullable private AccessibilityNodeInfoCompat tapToActivateNode;
   private final Context context;
   private final TalkBackAnalytics analytics;
   private final boolean splitTapEverywhere;
@@ -274,6 +294,9 @@ public class FocusProcessorForTapAndTouchExploration {
   private boolean handleTouchInteractionStart(EventId eventId) {
     // Reset cached information at the beginning of a new touch interaction cycle.
     reset();
+    fingerAtScreenEdge = false;
+    leftScreenEdgeTimeMs = Long.MAX_VALUE;
+    isTapExploration = false;
 
     touchInteractionStartTime = SystemClock.uptimeMillis();
 
@@ -294,12 +317,14 @@ public class FocusProcessorForTapAndTouchExploration {
 
     hasHoveredEnterNode = false;
     tapToTypeKey = null;
+    tapToActivateNode = null;
 
     // Everything is possible at the beginning.
     mayBeRefocusAction = true;
     mayBeSingleTap = true;
     mayBeLiftToType = true;
     isSplitTap = false;
+    heldToCancel = false;
   }
 
   /**
@@ -314,6 +339,10 @@ public class FocusProcessorForTapAndTouchExploration {
     }
     postDelayHandler.cancelLongPress();
     postDelayHandler.cancelRefocusTimeout();
+    if (fingerAtScreenEdge && eventId != null && eventId.getEventTimeMs() >= leftScreenEdgeTimeMs) {
+      // The finger has moved back up from the strip at the bottom of the screen to an app's item.
+      fingerAtScreenEdge = false;
+    }
     if (touchedFocusableNode != null && !touchedFocusableNode.isAccessibilityFocused()) {
       // TalkBack do not enter the focused view with Split-typing & Lift-to-type the same time. When
       // focused moved into a new node, by default, TalkBack assumes the lift-to-type until a
@@ -328,6 +357,19 @@ public class FocusProcessorForTapAndTouchExploration {
       interpretationReceiver.input(
           eventId, /* event= */ null, Interpretation.Touch.create(TOUCH_START));
     }
+    if (tapToActivateEnabled
+        && !hasHoveredEnterNode
+        && touchedFocusableNode != null
+        && isTapExploration
+        && !(isEnableLiftToType() && supportsLiftToType(touchedFocusableNode))) {
+      // Touch exploration started after the finger lifted, so the touch was a tap: the item is
+      // activated when the touch ends, which follows at once, without being focused first.
+      hasHoveredEnterNode = true;
+      tapToActivateNode = touchedFocusableNode;
+      lastFocusableNodeBeingTouched = touchedFocusableNode;
+      return false;
+    }
+    tapToActivateNode = null;
     boolean result;
     if (isTapToType
         && !hasHoveredEnterNode
@@ -352,6 +394,12 @@ public class FocusProcessorForTapAndTouchExploration {
     int scriptLongPressMs = Scripts.longPressAfterMs(touchedFocusableNode);
     if (scriptLongPressMs > 0 && AccessibilityNodeInfoUtils.isLongClickable(touchedFocusableNode)) {
       postDelayHandler.longPressAfterTimeout(scriptLongPressMs);
+    }
+    // Each item the finger moves to can be activated again, and held again to cancel.
+    heldToCancel = false;
+    postDelayHandler.cancelHoldToCancel();
+    if (holdToCancelMs > 0 && touchedFocusableNode != null && scriptLongPressMs <= 0) {
+      postDelayHandler.holdToCancelAfter(holdToCancelMs);
     }
     return result;
   }
@@ -483,6 +531,7 @@ public class FocusProcessorForTapAndTouchExploration {
     // TODO: Shall we also cancel empty touch feedback?
     postDelayHandler.cancelRefocusTimeout();
     postDelayHandler.cancelLongPress();
+    postDelayHandler.cancelHoldToCancel();
 
     long currentTime = SystemClock.uptimeMillis();
 
@@ -490,6 +539,13 @@ public class FocusProcessorForTapAndTouchExploration {
     boolean liftActivates = liftActivates();
     if (liftActivates && fingerAtScreenEdge) {
       LogUtils.v(TAG, "Not activating: the finger lifted at the edge of the screen");
+    } else if (liftActivates && heldToCancel) {
+      LogUtils.v(TAG, "Not activating: the finger was held on the item to cancel");
+    } else if (tapToActivateNode != null) {
+      // Tap to activate.
+      result =
+          interpretationReceiver.input(
+              eventId, /* event= */ null, Interpretation.Touch.create(LIFT, tapToActivateNode));
     } else if (liftActivates) {
       // Perform click action for lift-to-type mode.
       analytics.onGesture(GESTURE_LIFT_TO_TYPE);
@@ -513,7 +569,28 @@ public class FocusProcessorForTapAndTouchExploration {
 
     reset();
     isTapToType = false;
+    isTapExploration = false;
     return result;
+  }
+
+  /**
+   * Holding the finger on an item with Lift to activate makes lifting it activate nothing. Keys
+   * that lift to type are left to their own long press.
+   */
+  private void holdToCancel() {
+    AccessibilityNodeInfoCompat node = lastFocusableNodeBeingTouched;
+    if (node == null
+        || !mayBeLiftToType
+        || isSplitTap
+        || (isEnableLiftToType() && supportsLiftToType(node))
+        || !shouldLiftToActivate(node)) {
+      return;
+    }
+    heldToCancel = true;
+    LogUtils.v(TAG, "Held on the item: lifting activates nothing");
+    if (liftCancelledFeedback != null) {
+      liftCancelledFeedback.run();
+    }
   }
 
   /**
@@ -522,6 +599,59 @@ public class FocusProcessorForTapAndTouchExploration {
    */
   public void setFingerAtScreenEdge(boolean atEdge) {
     fingerAtScreenEdge = atEdge;
+    leftScreenEdgeTimeMs = Long.MAX_VALUE;
+  }
+
+  /**
+   * Notes that the finger left the strip at the bottom of the screen at {@code timeMs}, by moving
+   * back up or by lifting.
+   */
+  public void onFingerLeftScreenEdge(long timeMs) {
+    leftScreenEdgeTimeMs = timeMs;
+  }
+
+  /** Sets how long the finger stays on an item for lifting it to activate nothing; 0 for never. */
+  public void setHoldToCancelMs(long ms) {
+    holdToCancelMs = Math.max(0, ms);
+  }
+
+  /** Sets what plays when holding or the edge of the screen cancels an activation. */
+  public void setLiftCancelledFeedback(@Nullable Runnable feedback) {
+    liftCancelledFeedback = feedback;
+  }
+
+  /** Sets whether a tap that lifts before the item under it is focused activates the item. */
+  public void setTapToActivateEnabled(boolean enabled) {
+    tapToActivateEnabled = enabled;
+  }
+
+  /**
+   * How long after focus moved a quick tap may still be the first tap of a double tap on the item
+   * just focused. Later, with Tap to activate, a quick tap activates the item under it as the
+   * finger lifts.
+   */
+  private static final long DOUBLE_TAP_AFTER_FOCUS_MS = 3000;
+
+  /**
+   * Returns whether a quick tap now activates the item under it as the finger lifts, without
+   * waiting for a second tap: with Tap to activate, unless focus moved in the last {@link
+   * #DOUBLE_TAP_AFTER_FOCUS_MS}.
+   */
+  public boolean quickTapActivatesAtOnce() {
+    if (!tapToActivateEnabled || actorState == null) {
+      return false;
+    }
+    @Nullable FocusActionRecord lastFocus = actorState.getFocusHistory().getLastFocusActionRecord();
+    return lastFocus == null
+        || SystemClock.uptimeMillis() - lastFocus.getActionTime() > DOUBLE_TAP_AFTER_FOCUS_MS;
+  }
+
+  /**
+   * Called when touch exploration of the touch in progress starts after its finger lifted, so the
+   * touch was a tap, before touch exploration finds the item under it.
+   */
+  public void onTapExploration() {
+    isTapExploration = true;
   }
 
   /**
@@ -588,6 +718,7 @@ public class FocusProcessorForTapAndTouchExploration {
       extends WeakReferenceHandler<FocusProcessorForTapAndTouchExploration> {
     private static final int MSG_REFOCUS = 1;
     private static final int MSG_LONG_CLICK_LAST_NODE = 2;
+    private static final int MSG_HOLD_TO_CANCEL = 3;
 
     private long longPressDelayMs;
 
@@ -615,8 +746,18 @@ public class FocusProcessorForTapAndTouchExploration {
             parent.mayBeLiftToType = false;
           }
         }
+        case MSG_HOLD_TO_CANCEL -> parent.holdToCancel();
         default -> {}
       }
+    }
+
+    private void holdToCancelAfter(long delayMs) {
+      removeMessages(MSG_HOLD_TO_CANCEL);
+      sendEmptyMessageDelayed(MSG_HOLD_TO_CANCEL, delayMs);
+    }
+
+    private void cancelHoldToCancel() {
+      removeMessages(MSG_HOLD_TO_CANCEL);
     }
 
     private void longPressAfterTimeout() {

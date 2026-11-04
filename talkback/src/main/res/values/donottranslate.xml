@@ -290,6 +290,9 @@
     <string name="pref_selector_change_typing_focus_latency_key" translatable="false">pref_selector_change_typing_focus_latency_key</string>
     <string name="pref_selector_change_lift_to_activate_key" translatable="false">pref_selector_change_lift_to_activate_key</string>
     <string name="pref_lift_to_activate_key" translatable="false">pref_lift_to_activate_key</string>
+    <string name="pref_hold_to_cancel_key" translatable="false">pref_hold_to_cancel</string>
+    <string name="pref_tap_to_activate_key" translatable="false">pref_tap_to_activate</string>
+    <bool name="pref_tap_to_activate_default">false</bool>
     <string name="pref_selector_wrap_around_key" translatable="false">pref_selector_wrap_around_key</string>
     <string name="pref_selector_links_controls_web_only_key" translatable="false">pref_selector_links_controls_web_only_key</string>
     <string name="pref_selector_auto_switch_key" translatable="false">pref_selector_auto_switch</string>
@@ -330,6 +333,22 @@
     <string name="pref_selector_tablet_held_up_faces_away_key" translatable="false">pref_selector_tablet_held_up_faces_away_key</string>
     <string name="pref_selector_live_recognition_key" translatable="false">pref_selector_live_recognition_key</string>
     <string name="pref_lift_to_activate_default" translatable="false">0</string>
+    <string name="pref_hold_to_cancel_default" translatable="false">0</string>
+    <!-- How long the finger stays on an item for lifting it to activate nothing. -->
+    <string-array name="pref_hold_to_cancel_entries">
+      <item>@string/value_hold_to_cancel_off</item>
+      <item>@string/value_typing_long_press_1000ms</item>
+      <item>@string/value_typing_long_press_2000ms</item>
+      <item>@string/value_hold_to_cancel_3000</item>
+      <item>@string/value_typing_long_press_5000ms</item>
+    </string-array>
+    <string-array name="pref_hold_to_cancel_values" translatable="false">
+      <item>0</item>
+      <item>1000</item>
+      <item>2000</item>
+      <item>3000</item>
+      <item>5000</item>
+    </string-array>
     <string-array name="pref_lift_to_activate_entries">
       <item>@string/value_lift_to_activate_disabled</item>
       <item>@string/value_lift_to_activate_navigation_bar</item>

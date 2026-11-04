@@ -67,6 +67,14 @@ class TouchInteractionMonitorTest {
     val threads = mutableSetOf<Thread>()
     var tapsToType = 0
     val fingerAtScreenEdge = mutableListOf<Boolean>()
+    var tapActivatesAtOnce = false
+    var tapExplorations = 0
+
+    override fun quickTapActivatesAtOnce(): Boolean = tapActivatesAtOnce
+
+    override fun onTapExploration() {
+      tapExplorations++
+    }
 
     override fun setFingerAtScreenEdge(atEdge: Boolean) {
       fingerAtScreenEdge.add(atEdge)
@@ -344,6 +352,31 @@ class TouchInteractionMonitorTest {
     assertEquals(2, service.tapsToType)
     assertEquals(listOf(mainThread, mainThread), reporter.requests)
     assertEquals(listOf<Int>(), service.gestures)
+  }
+
+  @Test
+  fun quickTapsActivateAtOnceRatherThanMakingADoubleTapWhenTapToActivateAllows() {
+    service.tapActivatesAtOnce = true
+    tapAt(160f, 200f, 0)
+    stateChangeAt(STATE_TOUCH_EXPLORING, 60)
+    stateChangeAt(STATE_CLEAR, 70)
+    tapAt(160f, 200f, 120)
+    runUntil(600)
+
+    assertEquals(2, service.tapExplorations)
+    assertEquals(listOf(mainThread, mainThread), reporter.requests)
+    assertEquals(listOf<Int>(), service.gestures)
+  }
+
+  @Test
+  fun quickTapsStillMakeADoubleTapWhenFocusMovedRecently() {
+    service.tapActivatesAtOnce = false
+    tapAt(160f, 200f, 0)
+    tapAt(160f, 200f, 120)
+    runUntil(600)
+
+    assertEquals(0, service.tapExplorations)
+    assertEquals(listOf(GESTURE_DOUBLE_TAP), service.gestures)
   }
 
   @Test

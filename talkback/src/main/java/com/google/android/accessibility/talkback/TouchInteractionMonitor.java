@@ -278,6 +278,8 @@ public class TouchInteractionMonitor
   // touch.
   private final PinchTracker pinchTracker;
   private final TapToTypeTracker tapToTypeTracker;
+  // Recognizes a quick one-finger tap anywhere, which Tap to activate may activate at once.
+  private final TapToTypeTracker tapToActivateTracker;
   // Whether double tap and double tap and hold will be dispatched to the service or handled in
   // the framework.
   private boolean serviceHandlesDoubleTap = false;
@@ -527,6 +529,7 @@ public class TouchInteractionMonitor
     pinchTracker =
         new PinchTracker(pixelsPerCm * PINCH_CHANGE_CM, this::isPinchCountInUse, this::onPinch);
     tapToTypeTracker = new TapToTypeTracker(touchSlop);
+    tapToActivateTracker = new TapToTypeTracker(touchSlop);
     sharedPreferences = prefs;
     typingFocusTimeout = FeatureFlagReader.typingFocusTimeout(service);
     touchFocusTimeout = FeatureFlagReader.touchFocusTimeout(service);
@@ -798,6 +801,9 @@ public class TouchInteractionMonitor
     if (handleTapToType(event)) {
       return;
     }
+    if (handleTapToActivate(event)) {
+      return;
+    }
     if (shouldPerformGestureDetection()) {
       if (waitFirstMotionEvent && event.getActionMasked() == ACTION_POINTER_DOWN) {
         // The split-typing gesture expect no action-down when re-entering the touch exploration
@@ -1050,6 +1056,7 @@ public class TouchInteractionMonitor
     scrubTracker.clear();
     pinchTracker.clear();
     tapToTypeTracker.clear();
+    tapToActivateTracker.clear();
     downOnKeyboard = false;
     gboardRoot = null;
     exploringKeyboard = false;
@@ -1475,6 +1482,30 @@ public class TouchInteractionMonitor
     // Touch exploration of where the finger lifted finds the key.
     service.onTapToType();
     requestTouchExploration("handleTapToType");
+    return true;
+  }
+
+  /**
+   * Activates the item under a quick one-finger tap as the finger lifts, with Tap to activate, when
+   * focus has not moved recently, instead of waiting for a second tap. Returns true for the event
+   * that lifts the finger, which no gesture matcher may see, so that a tap right after it is
+   * another tap instead of a double tap.
+   */
+  private boolean handleTapToActivate(MotionEvent event) {
+    if (!tapToActivateTracker.onMotionEvent(event, (x, y) -> true)
+        || state != STATE_TOUCH_INTERACTING
+        || gestureStarted
+        || !service.quickTapActivatesAtOnce()) {
+      return false;
+    }
+    if (GestureLog.getEnabled()) {
+      Log.d(DEBUG_GESTURE_TAG, "Tap to activate");
+    }
+    keepMonitorTouchExplore = false;
+    requestTouchExplorationDelayed.cancel();
+    gestureDetector.clear();
+    // The finger is up, so touch exploration of where it lifted is reported as a tap.
+    requestTouchExploration("handleTapToActivate");
     return true;
   }
 
@@ -1998,6 +2029,10 @@ public class TouchInteractionMonitor
     }
     try {
       if (isStateTransitionAllowed()) {
+        if (!fingerDown && state == STATE_TOUCH_INTERACTING) {
+          // The finger lifted before touch exploration: the touch is a tap.
+          service.onTapExploration();
+        }
         trackStateChangeRequest(STATE_TOUCH_EXPLORING, caller);
         touchExplorationModeFailureReporter.onRequestTouchExploration();
         controller.requestTouchExploration();
@@ -2059,10 +2094,10 @@ public class TouchInteractionMonitor
   }
 
   /**
-   * Notes whether one finger is at the edge of the screen, where lifting it activates nothing, and
-   * plays the edge sound and vibration when it gets there if lifting it before would activate the
-   * item or type the key it touched. The lift's own position counts, but the last move's is used
-   * if Android ends the touch before the lift arrives.
+   * Notes whether one finger is at the edge of the screen, where lifting it activates nothing. The
+   * lift's own position counts, but the last move's is used if Android ends the touch before the
+   * lift arrives. Motion events come only until touch exploration starts, and while Gboard is
+   * explored without it; after that, the strip at the bottom of the screen reports the finger.
    */
   private void trackFingerAtScreenEdge(MotionEvent event) {
     int action = event.getActionMasked();
@@ -2085,17 +2120,6 @@ public class TouchInteractionMonitor
       return;
     }
     setFingerAtScreenEdge(atEdge);
-    if (atEdge
-        && action == ACTION_MOVE
-        && (state == STATE_TOUCH_EXPLORING || exploringKeyboard)
-        && service.liftActivates()) {
-      @Nullable FeedbackController feedbackController = feedbackController();
-      if (feedbackController != null) {
-        feedbackController.playAuditoryWithoutHaptic(
-            R.raw.edge_gesture_bottom, /* eventId= */ null);
-        feedbackController.playHaptic(R.array.edge_swipe_cancel_pattern, /* eventId= */ null);
-      }
-    }
   }
 
   private void setFingerAtScreenEdge(boolean atEdge) {
