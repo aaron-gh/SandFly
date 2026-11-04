@@ -403,6 +403,22 @@ public class FailoverTextToSpeech {
       new ConcurrentHashMap<>();
 
   /**
+   * Low-latency utterances that the engine makes without playing, by ID. Nothing of them is heard
+   * unless Backtalk plays the engine's audio, so one that gives none is said again the usual way.
+   */
+  private final Set<String> unplayedByEngine = ConcurrentHashMap.newKeySet();
+
+  /**
+   * The longest text the engine makes without playing it. It makes speech faster than it plays,
+   * all of which Backtalk keeps until it is played, so longer text is played by the engine at no
+   * volume, which keeps it to the pace of playback.
+   */
+  private static final int MAX_UNPLAYED_CHARS = 300;
+
+  /** Where the engine writes speech that it makes without playing. */
+  private static final File DISCARDED_AUDIO = new File("/dev/null");
+
+  /**
    * Low-latency utterances being said again the usual way, by ID. The engine can still report on
    * the silent first try, which must not reach Backtalk as the utterance's progress, or Backtalk
    * would take it as done before it is heard. So the second try has its own ID, {@link
@@ -1657,12 +1673,29 @@ public class FailoverTextToSpeech {
             return true;
           });
     }
-    // The engine speaks as usual but at no volume, and Backtalk plays the copy of its audio that
-    // Android gives it. As the engine is still playing audio, Android and phone makers' battery
-    // savers keep it running, which they do not do for an engine only making audio for an app.
-    Bundle silent = new Bundle(bundle);
-    silent.putFloat(SpeechParam.VOLUME, 0f);
-    int result = tts.speak(text, queueMode, silent, utteranceId);
+    int result;
+    if (text.length() <= MAX_UNPLAYED_CHARS) {
+      // The engine only makes the speech, and Backtalk plays the copy of its audio that Android
+      // gives it, so that the audio is played once rather than twice. Volume and pan are Backtalk's
+      // to apply.
+      Bundle unplayed = new Bundle(bundle);
+      unplayed.putFloat(SpeechParam.VOLUME, 1f);
+      unplayed.putFloat(Engine.KEY_PARAM_PAN, 0f);
+      if (queueMode != QUEUE_ADD) {
+        // Making speech has no queue mode: it always waits for the engine's earlier speech.
+        tts.stop();
+      }
+      unplayedByEngine.add(utteranceId);
+      result = tts.synthesizeToFile(text, unplayed, DISCARDED_AUDIO, utteranceId);
+      if (result != TextToSpeech.SUCCESS) {
+        unplayedByEngine.remove(utteranceId);
+      }
+    } else {
+      // The engine speaks as usual but at no volume, and Backtalk plays the copy of its audio.
+      Bundle silent = new Bundle(bundle);
+      silent.putFloat(SpeechParam.VOLUME, 0f);
+      result = tts.speak(text, queueMode, silent, utteranceId);
+    }
     if (result != TextToSpeech.SUCCESS) {
       stream.discard();
       lowLatencyStreams.remove(utteranceId);
@@ -1905,6 +1938,7 @@ public class FailoverTextToSpeech {
     heldPlayer = null;
     lowLatencyStreams.clear();
     lowLatencyRequests.clear();
+    unplayedByEngine.clear();
     respokenUtterances.clear();
     mHandler.removeCallbacks(checkEngineHang);
     engineQuietSince = 0;
@@ -1944,6 +1978,7 @@ public class FailoverTextToSpeech {
         @Override
         public void onFinished(String id, boolean completed) {
           lowLatencyRequests.remove(id);
+          unplayedByEngine.remove(id);
           if (completed) {
             utteranceProgressCallback.onDone(id);
           } else {
@@ -1994,11 +2029,19 @@ public class FailoverTextToSpeech {
           // already. But an utterance with nothing to say, such as a pause, has no audio either, so
           // only several in a row mean that the engine plays its own. Then speak the usual way
           // with this engine from now on.
-          lowLatencyRequests.remove(id);
           noAudioInARow++;
           if (noAudioInARow >= NO_AUDIO_IN_A_ROW_LIMIT) {
             stopUsingLowLatencyAudio("no audio " + noAudioInARow + " times in a row");
           }
+          if (unplayedByEngine.remove(id)) {
+            // The engine made it without playing it, so nothing was heard: say it the usual way.
+            mHandler.post(
+                () ->
+                    speakAgainWithoutLowLatency(
+                        id, /* stream= */ null, /* engineAtFault= */ false));
+            return;
+          }
+          lowLatencyRequests.remove(id);
           utteranceProgressCallback.onDone(id);
         }
       };
@@ -2081,6 +2124,7 @@ public class FailoverTextToSpeech {
     lowLatencyStreams.clear();
     LowLatencyAudio.stopAllStreams();
     lowLatencyRequests.clear();
+    unplayedByEngine.clear();
     respokenUtterances.clear();
     // Restarting the same engine does not help, since its process stays hung.
     ttsFailures = Math.max(ttsFailures, MAX_TTS_FAILURES - 1);
@@ -2478,6 +2522,7 @@ public class FailoverTextToSpeech {
     heldPlayer = null;
     lowLatencyStreams.clear();
     lowLatencyRequests.clear();
+    unplayedByEngine.clear();
     respokenUtterances.clear();
     LowLatencyAudio.stopAllStreams();
     mHandler.removeCallbacks(checkEngineHang);
