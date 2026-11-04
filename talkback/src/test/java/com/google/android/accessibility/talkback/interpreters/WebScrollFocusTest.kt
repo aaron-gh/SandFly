@@ -317,4 +317,71 @@ class WebScrollFocusTest {
     assertNull(WebScrollFocus.findItemInView(page, null, viewport, true))
     assertEquals(WebScrollFocus.MAX_NODES_READ, reads)
   }
+
+  private fun sideways(node: Node) =
+    node.apply {
+      isScrollable = true
+      addAction(AccessibilityNodeInfoCompat.AccessibilityActionCompat.ACTION_SCROLL_LEFT)
+      addAction(AccessibilityNodeInfoCompat.AccessibilityActionCompat.ACTION_SCROLL_RIGHT)
+    }
+
+  @Test
+  fun aStripWithOnlySidewaysScrollActionsScrollsOnlySideways() {
+    assertTrue(WebScrollFocus.scrollsOnlySideways(sideways(Node(Rect(0, 100, 1000, 200)))))
+  }
+
+  @Test
+  fun aNodeThatAlsoScrollsDownDoesNotScrollOnlySideways() {
+    val node = sideways(Node(Rect(0, 100, 1000, 2000)))
+    node.addAction(AccessibilityNodeInfoCompat.AccessibilityActionCompat.ACTION_SCROLL_DOWN)
+
+    assertFalse(WebScrollFocus.scrollsOnlySideways(node))
+  }
+
+  @Test
+  fun aNodeWithoutScrollActionsDoesNotScrollOnlySideways() {
+    assertFalse(WebScrollFocus.scrollsOnlySideways(Node(Rect(0, 100, 1000, 200))))
+  }
+
+  @Test
+  fun theOutermostSidewaysStripBelowTheScrolledNodeIsFound() {
+    val focus = Node(Rect(-300, 100, -100, 200), text = "Order again", clickable = true)
+    val inner = sideways(Node(Rect(0, 100, 1000, 200), null, false, false, focus))
+    val strip = sideways(Node(Rect(0, 100, 1000, 200), null, false, false, inner))
+    val page = sideways(Node(viewport, null, false, true, strip))
+    val path = listOf(focus, inner, strip, page)
+
+    assertEquals(2, WebScrollFocus.outermostSidewaysStrip(path, page))
+    assertEquals(-1, WebScrollFocus.outermostSidewaysStrip(path, inner))
+    assertEquals(-1, WebScrollFocus.outermostSidewaysStrip(path, item(300, 500, "Other")))
+  }
+
+  @Test
+  fun scrollingOnFromAStripOfCategoriesFindsTheContentAfterTheStrip() {
+    val focus = Node(Rect(-300, 100, -100, 200), text = "Order again", clickable = true)
+    val strip =
+      sideways(
+        Node(
+          Rect(0, 100, 1000, 200),
+          null,
+          false,
+          false,
+          focus,
+          Node(Rect(0, 100, 300, 200), text = "Extra Deals", clickable = true),
+        )
+      )
+    val firstInView = item(300, 500, "Big Mac")
+    val page = Node(viewport, null, false, true, strip, above("Fries"), firstInView)
+    val path = listOf(focus, strip, page)
+
+    val found =
+      WebScrollFocus.findItemInView(
+        page,
+        path.subList(WebScrollFocus.outermostSidewaysStrip(path, page), path.size),
+        viewport,
+        true,
+      )
+
+    assertSame(firstInView, found)
+  }
 }

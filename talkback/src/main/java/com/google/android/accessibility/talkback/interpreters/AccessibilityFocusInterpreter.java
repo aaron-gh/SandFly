@@ -101,13 +101,46 @@ public class AccessibilityFocusInterpreter
   private ActorState actorState;
 
   private final Handler handler = new Handler(Looper.getMainLooper());
+
+  /** When the touch interaction started whose first scroll of web content is kept below. */
+  private long webScrollTouchStart = -1;
+
+  /** The web content that scrolled first since the touch interaction started: the user's scroll. */
+  private @Nullable AccessibilityNodeInfoCompat webScrolled;
+
+  /** Whether {@link #webScrolled} scrolls only sideways. */
+  private boolean webScrolledSideways;
+
+  /** The last scroll of {@link #webScrolled}. */
+  private @Nullable ManualScrollInterpretation webScroll;
+
+  /**
+   * Whether the page scrolled a strip that holds the focus and scrolls only sideways, after the
+   * user scrolled other content.
+   */
+  private boolean pageScrolledFocusStrip;
+
   private @Nullable ManualScrollInterpretation pendingManualScroll;
   private final Runnable handlePendingManualScroll =
-      () -> {
-        ManualScrollInterpretation interpretation = pendingManualScroll;
-        pendingManualScroll = null;
-        if (interpretation != null) {
-          handleManualScroll(interpretation);
+      new Runnable() {
+        @Override
+        public void run() {
+          ManualScrollInterpretation interpretation = pendingManualScroll;
+          // A strip can still be moving from the page's last scroll when the user starts the next
+          // one, so wait for the user's scroll until the fingers leave the screen.
+          if (interpretation != null
+              && interpretation == webScroll
+              && webScrolledSideways
+              && touchMonitor.isUserTouchingScreen()) {
+            handler.postDelayed(this, MANUAL_SCROLL_SETTLE_MS);
+            return;
+          }
+          boolean stripScrolled = pageScrolledFocusStrip;
+          pendingManualScroll = null;
+          pageScrolledFocusStrip = false;
+          if (interpretation != null) {
+            handleManualScroll(interpretation, stripScrolled);
+          }
         }
       };
 
@@ -187,7 +220,10 @@ public class AccessibilityFocusInterpreter
   @Override
   public void onManualScroll(ManualScrollInterpretation interpretation) {
     if (FormFactorUtils.isAndroidWear()) {
-      handleManualScroll(interpretation);
+      handleManualScroll(interpretation, /* stripScrolled= */ false);
+      return;
+    }
+    if (onWebScroll(interpretation)) {
       return;
     }
     // A page can scroll a strip of tabs or a list of its own once the page itself stops, and that
@@ -207,7 +243,50 @@ public class AccessibilityFocusInterpreter
     handler.postDelayed(handlePendingManualScroll, MANUAL_SCROLL_SETTLE_MS);
   }
 
-  private void handleManualScroll(ManualScrollInterpretation interpretation) {
+  /**
+   * Keeps the scroll of web content that the user made with the fingers as the one to check, in
+   * place of scrolls that the page makes in response, such as a strip of category tabs that
+   * follows the menu. Returns whether {@code interpretation} was handled here.
+   */
+  private boolean onWebScroll(ManualScrollInterpretation interpretation) {
+    AccessibilityNodeInfoCompat scrolled =
+        AccessibilityEventUtils.sourceCompat(interpretation.event());
+    if (scrolled == null || !WebScrollFocus.isWebContent(scrolled)) {
+      return false;
+    }
+    long touchStart = touchMonitor.getTouchStartTime();
+    boolean sideways = WebScrollFocus.scrollsOnlySideways(scrolled);
+    if (touchStart != webScrollTouchStart
+        || webScrolled == null
+        || (webScrolledSideways && !sideways && !scrolled.equals(webScrolled))) {
+      webScrollTouchStart = touchStart;
+      webScrolled = scrolled;
+      webScrolledSideways = sideways;
+      webScroll = null;
+    }
+    if (scrolled.equals(webScrolled)) {
+      // Copy the event, because the framework may recycle it after dispatch.
+      webScroll =
+          ManualScrollInterpretation.create(
+              interpretation.eventId(),
+              AccessibilityEvent.obtain(interpretation.event()),
+              interpretation.direction(),
+              interpretation.scrolledHoldsFocus());
+    } else if (webScroll != null && interpretation.scrolledHoldsFocus() && sideways) {
+      // The page moved the strip that holds the focus. Check the user's scroll again.
+      pageScrolledFocusStrip = true;
+    } else {
+      // Another scroll that the page made, which leaves the focus where it was.
+      return true;
+    }
+    pendingManualScroll = webScroll;
+    handler.removeCallbacks(handlePendingManualScroll);
+    handler.postDelayed(handlePendingManualScroll, MANUAL_SCROLL_SETTLE_MS);
+    return true;
+  }
+
+  private void handleManualScroll(
+      ManualScrollInterpretation interpretation, boolean stripScrolled) {
     if (!screenState.areMainWindowsStable()) {
       LogUtils.w(
           TAG,
@@ -247,7 +326,7 @@ public class AccessibilityFocusInterpreter
       pipelineInterpretations.input(
           interpretation.eventId(), interpretation.event(), builder.build());
     } else if (!FormFactorUtils.isAndroidWear()) {
-      moveWebFocusIntoView(interpretation, currentA11yFocusedNode);
+      moveWebFocusIntoView(interpretation, currentA11yFocusedNode, stripScrolled);
     }
   }
 
@@ -258,9 +337,14 @@ public class AccessibilityFocusInterpreter
    * Moves accessibility focus that the user scrolled out of view in web content to an item in view.
    * Web content counts as focusable while its WebView is visible, so focus out of view is kept, and
    * the next swipe from it would scroll the page back.
+   *
+   * @param stripScrolled whether the page scrolled a strip that holds the focus and scrolls only
+   *     sideways, after the user scrolled other content
    */
   private void moveWebFocusIntoView(
-      ManualScrollInterpretation interpretation, @Nullable AccessibilityNodeInfoCompat focus) {
+      ManualScrollInterpretation interpretation,
+      @Nullable AccessibilityNodeInfoCompat focus,
+      boolean stripScrolled) {
     if (focus == null
         || !WebInterfaceUtils.supportsWebActions(focus)
         || !isUserScroll(interpretation)) {
@@ -275,8 +359,12 @@ public class AccessibilityFocusInterpreter
     focus.getBoundsInScreen(focusBounds);
     Rect scrolledBounds = new Rect();
     scrolled.getBoundsInScreen(scrolledBounds);
+    // Chrome reports an item out of view as not visible, also one that a strip in the page
+    // scrolled away sideways, whose bounds can still lie in the WebView. Focus left in a strip that
+    // the page scrolled to follow the content does not show where the user scrolled to either.
+    boolean leftBehind = stripScrolled || !focus.isVisibleToUser();
     // Focus in the scrolled view is in view. Most scrolls end here, without asking the app.
-    if (!WebScrollFocus.isOutside(focusBounds, scrolledBounds)) {
+    if (!leftBehind && !WebScrollFocus.isOutside(focusBounds, scrolledBounds)) {
       return;
     }
 
@@ -318,7 +406,7 @@ public class AccessibilityFocusInterpreter
       // The scroll is outside the WebView that holds the focus.
       return;
     }
-    if (!WebScrollFocus.isOutside(focusBounds, viewport)) {
+    if (!leftBehind && !WebScrollFocus.isOutside(focusBounds, viewport)) {
       return;
     }
 
@@ -332,12 +420,16 @@ public class AccessibilityFocusInterpreter
         && !viewport.intersect(scrolledBounds)) {
       return;
     }
+    boolean forward = interpretation.direction() != TraversalStrategy.SEARCH_FOCUS_BACKWARD;
+    // From a strip of category tabs, search on from the strip, or back from the end: the tabs next
+    // to the focus are not the content that scrolled into view.
+    @Nullable List<AccessibilityNodeInfoCompat> searchFrom = focusAndAncestors;
+    int strip = WebScrollFocus.outermostSidewaysStrip(focusAndAncestors, searchRoot);
+    if (strip >= 0) {
+      searchFrom = forward ? focusAndAncestors.subList(strip, focusAndAncestors.size()) : null;
+    }
     AccessibilityNodeInfoCompat item =
-        WebScrollFocus.findItemInView(
-            searchRoot,
-            focusAndAncestors,
-            viewport,
-            interpretation.direction() != TraversalStrategy.SEARCH_FOCUS_BACKWARD);
+        WebScrollFocus.findItemInView(searchRoot, searchFrom, viewport, forward);
     if (item == null) {
       LogUtils.d(TAG, "Web focus is out of view, and no item is in view");
       return;
