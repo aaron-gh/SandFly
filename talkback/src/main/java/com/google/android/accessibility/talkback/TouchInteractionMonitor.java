@@ -2059,16 +2059,16 @@ public class TouchInteractionMonitor
   }
 
   /**
-   * Notes whether one finger is at the edge of the screen, where lifting it activates nothing, and
-   * plays the edge sound and vibration when it gets there if lifting it before would activate the
-   * item or type the key it touched. The lift's own position counts, but the last move's is used
-   * if Android ends the touch before the lift arrives.
+   * Notes whether one finger is at the edge of the screen, where lifting it activates nothing. The
+   * lift's own position counts, but the last move's is used if Android ends the touch before the
+   * lift arrives. Motion events come only until touch exploration starts, and while Gboard is
+   * explored without it; after that, the strip at the bottom of the screen reports the finger.
    */
   private void trackFingerAtScreenEdge(MotionEvent event) {
     int action = event.getActionMasked();
     if (action == ACTION_DOWN) {
       display.getRealSize(screenSize);
-      setFingerAtScreenEdge(false);
+      setFingerAtScreenEdge(false, event.getEventTime());
     }
     if ((action != ACTION_DOWN && action != ACTION_MOVE && action != MotionEvent.ACTION_UP)
         || event.getPointerCount() != 1) {
@@ -2084,23 +2084,12 @@ public class TouchInteractionMonitor
     if (atEdge == fingerAtScreenEdge) {
       return;
     }
-    setFingerAtScreenEdge(atEdge);
-    if (atEdge
-        && action == ACTION_MOVE
-        && (state == STATE_TOUCH_EXPLORING || exploringKeyboard)
-        && service.liftActivates()) {
-      @Nullable FeedbackController feedbackController = feedbackController();
-      if (feedbackController != null) {
-        feedbackController.playAuditoryWithoutHaptic(
-            R.raw.edge_gesture_bottom, /* eventId= */ null);
-        feedbackController.playHaptic(R.array.edge_swipe_cancel_pattern, /* eventId= */ null);
-      }
-    }
+    setFingerAtScreenEdge(atEdge, event.getEventTime());
   }
 
-  private void setFingerAtScreenEdge(boolean atEdge) {
+  private void setFingerAtScreenEdge(boolean atEdge, long timeMs) {
     fingerAtScreenEdge = atEdge;
-    service.setFingerAtScreenEdge(atEdge);
+    service.setFingerAtScreenEdge(atEdge, timeMs);
   }
 
   private void exploreKeyboardAt(float x, float y) {

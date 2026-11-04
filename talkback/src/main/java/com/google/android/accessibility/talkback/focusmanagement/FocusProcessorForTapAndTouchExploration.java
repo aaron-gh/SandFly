@@ -203,8 +203,15 @@ public class FocusProcessorForTapAndTouchExploration {
   private long touchInteractionStartTime;
 
   // Whether the finger of the touch in progress was last at the edge of the screen, where lifting
-  // it, such as by sliding it off the screen, activates nothing.
+  // it, such as by sliding it off the screen, activates nothing, and since when.
   private boolean fingerAtScreenEdge = false;
+  private long fingerAtScreenEdgeTimeMs;
+
+  /**
+   * How long after the finger reached the edge an app's item touched must have been, for the finger
+   * to have moved back from the edge. An app reports a touched item a little after the touch.
+   */
+  private static final long EDGE_HOVER_LATENCY_MS = 100;
   private final Context context;
   private final TalkBackAnalytics analytics;
   private final boolean splitTapEverywhere;
@@ -274,6 +281,7 @@ public class FocusProcessorForTapAndTouchExploration {
   private boolean handleTouchInteractionStart(EventId eventId) {
     // Reset cached information at the beginning of a new touch interaction cycle.
     reset();
+    fingerAtScreenEdge = false;
 
     touchInteractionStartTime = SystemClock.uptimeMillis();
 
@@ -314,6 +322,12 @@ public class FocusProcessorForTapAndTouchExploration {
     }
     postDelayHandler.cancelLongPress();
     postDelayHandler.cancelRefocusTimeout();
+    if (fingerAtScreenEdge
+        && eventId != null
+        && eventId.getEventTimeMs() > fingerAtScreenEdgeTimeMs + EDGE_HOVER_LATENCY_MS) {
+      // The finger has moved back to an app's item.
+      fingerAtScreenEdge = false;
+    }
     if (touchedFocusableNode != null && !touchedFocusableNode.isAccessibilityFocused()) {
       // TalkBack do not enter the focused view with Split-typing & Lift-to-type the same time. When
       // focused moved into a new node, by default, TalkBack assumes the lift-to-type until a
@@ -520,8 +534,9 @@ public class FocusProcessorForTapAndTouchExploration {
    * Sets whether the finger of the touch in progress is at the edge of the screen, where lifting it
    * activates nothing.
    */
-  public void setFingerAtScreenEdge(boolean atEdge) {
+  public void setFingerAtScreenEdge(boolean atEdge, long timeMs) {
     fingerAtScreenEdge = atEdge;
+    fingerAtScreenEdgeTimeMs = timeMs;
   }
 
   /**

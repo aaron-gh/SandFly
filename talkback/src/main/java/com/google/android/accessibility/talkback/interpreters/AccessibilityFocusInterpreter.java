@@ -555,8 +555,8 @@ public class AccessibilityFocusInterpreter
   }
 
   /** Sets whether the finger is at the edge of the screen, where lifting it activates nothing. */
-  public void setFingerAtScreenEdge(boolean atEdge) {
-    focusProcessorForTapAndTouchExploration.setFingerAtScreenEdge(atEdge);
+  public void setFingerAtScreenEdge(boolean atEdge, long timeMs) {
+    focusProcessorForTapAndTouchExploration.setFingerAtScreenEdge(atEdge, timeMs);
   }
 
   /** Returns whether lifting the finger now activates the item or types the key it last touched. */

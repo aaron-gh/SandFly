@@ -186,6 +186,8 @@ import com.google.android.accessibility.talkback.focusmanagement.FocusFeedbackMa
 import com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForLogicalNavigation;
 import com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForScreenStateChange;
 import com.google.android.accessibility.talkback.focusmanagement.HomeScreenPages;
+import com.google.android.accessibility.talkback.focusmanagement.LiftCancelStrip;
+import com.google.android.accessibility.talkback.focusmanagement.LiftToActivateMode;
 import com.google.android.accessibility.talkback.focusmanagement.TraversalTreeCache;
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.ScreenStateMonitor;
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.TouchExplorationInterpreter;
@@ -876,6 +878,8 @@ public class TalkBackService extends AccessibilityServiceCompat
   /** Volume keys > double, triple and long presses of each volume key. */
   @Nullable private VolumeKeyCommands volumeKeyCommands;
   @Nullable private BackTapCommands backTapCommands;
+  // The strip at the bottom of the screen where lifting activates nothing with Lift to activate.
+  @Nullable private LiftCancelStrip liftCancelStrip;
 
   private final @NonNull SparseArray<TouchInteractionMonitor> displayIdToTouchInteractionMonitors =
       new SparseArray<>();
@@ -3447,6 +3451,9 @@ public class TalkBackService extends AccessibilityServiceCompat
     }
 
     setServiceState(ServiceStateListener.SERVICE_STATE_SHUTTING_DOWN);
+    if (liftCancelStrip != null) {
+      liftCancelStrip.setShown(false);
+    }
 
     if (volumeKeyCommands != null) {
       volumeKeyCommands.cancel();
@@ -3552,6 +3559,9 @@ public class TalkBackService extends AccessibilityServiceCompat
   /** Shuts down the infrastructure in case it has been initialized. */
   protected void shutdownInfrastructure() {
     setServiceState(ServiceStateListener.SERVICE_STATE_SHUTTING_DOWN);
+    if (liftCancelStrip != null) {
+      liftCancelStrip.setShown(false);
+    }
     // we put it first to be sure that screen dimming would be removed even if code below
     // will crash by any reason. Because leaving user with dimmed screen is super bad
     // We check the instance against null to prevent the premature service destroy (aka destroy
@@ -3656,10 +3666,35 @@ public class TalkBackService extends AccessibilityServiceCompat
     }
   }
 
-  /** Sets whether the finger is at the edge of the screen, where lifting it activates nothing. */
-  public void setFingerAtScreenEdge(boolean atEdge) {
-    if (accessibilityFocusInterpreter != null) {
-      accessibilityFocusInterpreter.setFingerAtScreenEdge(atEdge);
+  /**
+   * Sets whether the finger is at the edge of the screen, where lifting it activates nothing, since
+   * {@code timeMs}. Reaching the edge where lifting would have activated the item or typed the key
+   * the finger touched plays the edge sound with the vibration of a cancelled edge slide.
+   */
+  public void setFingerAtScreenEdge(boolean atEdge, long timeMs) {
+    if (accessibilityFocusInterpreter == null) {
+      return;
+    }
+    accessibilityFocusInterpreter.setFingerAtScreenEdge(atEdge, timeMs);
+    if (atEdge && feedbackController != null && accessibilityFocusInterpreter.liftActivates()) {
+      feedbackController.playAuditoryWithoutHaptic(R.raw.edge_gesture_bottom, EVENT_ID_UNTRACKED);
+      feedbackController.playHaptic(R.array.edge_swipe_cancel_pattern, EVENT_ID_UNTRACKED);
+    }
+  }
+
+  /** Shows the strip at the bottom of the screen where lifting activates nothing, while needed. */
+  private void updateLiftCancelStrip() {
+    boolean shown =
+        isServiceActive()
+            && !PauseController.isPaused()
+            && LiftToActivateMode.fromPrefValue(
+                    prefs.getString(getString(R.string.pref_lift_to_activate_key), null))
+                != LiftToActivateMode.DISABLED;
+    if (shown && liftCancelStrip == null) {
+      liftCancelStrip = new LiftCancelStrip(this, this::setFingerAtScreenEdge);
+    }
+    if (liftCancelStrip != null) {
+      liftCancelStrip.setShown(shown);
     }
   }
 
@@ -3787,6 +3822,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     FocusFeedbackMapper.setTouchStopsSpeech(
         getBooleanPref(
             R.string.pref_touch_stops_speech_key, R.bool.pref_touch_stops_speech_default));
+    updateLiftCancelStrip();
     // TV navigation relies on focus following input focus, so the switch is hidden there.
     FocusProcessorForScreenStateChange.setFocusNewWindows(
         FormFactorUtils.isAndroidTv()
@@ -4375,6 +4411,8 @@ public class TalkBackService extends AccessibilityServiceCompat
     if (backTapCommands != null) {
       backTapCommands.setAllowed(!paused && isServiceActive());
     }
+    // While paused, touches go to the apps, which the strip would take at the bottom of the screen.
+    updateLiftCancelStrip();
     if (scriptHost != null) {
       scriptHost.onPausedChanged(paused);
     }
