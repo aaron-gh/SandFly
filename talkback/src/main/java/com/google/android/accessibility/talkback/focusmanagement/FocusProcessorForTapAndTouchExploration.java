@@ -314,6 +314,12 @@ public class FocusProcessorForTapAndTouchExploration {
       isSplitTap = false;
       interpretationReceiver.input(
           eventId, /* event= */ null, Interpretation.Touch.create(TOUCH_ENTERED_UNFOCUSED_NODE));
+    } else if (!hasHoveredEnterNode && actorState.getSpeechState().isSpeaking()) {
+      // Speech that started after the finger went down, such as an app's announcement, isn't
+      // stopped at the start of the touch, and an item that is already focused is spoken after
+      // speech that new speech can't interrupt.
+      interpretationReceiver.input(
+          eventId, /* event= */ null, Interpretation.Touch.create(TOUCH_START));
     }
     boolean result;
     if (isTapToType

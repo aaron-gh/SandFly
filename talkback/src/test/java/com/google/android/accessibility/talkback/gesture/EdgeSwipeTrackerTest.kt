@@ -397,6 +397,33 @@ class EdgeSwipeTrackerTest {
   }
 
   @Test
+  fun stoppingShortOfTheFirstStageIsLeftToTouchExploration() {
+    // A finger that lands near the right edge and settles a little way in, as on a key there.
+    touch(MotionEvent.ACTION_DOWN, 800f, 290f)
+    touch(MotionEvent.ACTION_MOVE, 805f, 275f)
+    touch(MotionEvent.ACTION_MOVE, 806f, 265f)
+    assertEquals(true, tracker.isPossible)
+    assertEquals(220L, tracker.stallTime())
+    time = 220L
+    tracker.rejectIfStalled(time)
+    assertEquals(false, tracker.isPossible)
+    touch(MotionEvent.ACTION_MOVE, 806f, 150f)
+    touch(MotionEvent.ACTION_UP, 806f, 150f)
+    assertEquals(listOf<String>(), events)
+  }
+
+  @Test
+  fun slowSlideThatKeepsGoingStillStarts() {
+    touch(MotionEvent.ACTION_DOWN, 995f)
+    for (y in listOf(985f, 975f, 965f, 955f, 945f, 935f, 925f, 915f, 905f, 895f)) {
+      time += 30
+      tracker.rejectIfStalled(time)
+      touch(MotionEvent.ACTION_MOVE, y)
+    }
+    assertEquals(listOf("start", "0>1"), events)
+  }
+
+  @Test
   fun fingerReportedAtTheScreenEdgeCanStillUseTheMenu() {
     menus = mapOf(MenuEdge.LEFT to 4)
     // The finger is reported at x 0 until it jumps in, partway along the edge.
