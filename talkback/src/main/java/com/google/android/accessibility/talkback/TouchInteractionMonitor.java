@@ -311,9 +311,10 @@ public class TouchInteractionMonitor
   // Whether the touch went down on the keyboard with the Tap to type typing method, which types
   // without focusing keys, so the typing focus delay applies whatever has focus.
   private boolean downOnKeyboard;
-  // Whether the touch went down on Gboard with a typing method other than Double-tap to type, so it
-  // is kept from touch exploration and explored here; see KeyboardExploration.
-  private boolean downOnGboard;
+  // The root of Gboard's window, if the touch went down on Gboard with a typing method other than
+  // Double-tap to type, so it is kept from touch exploration and explored here; see
+  // KeyboardExploration. It is fetched once for the touch, since fetching it waits for Gboard.
+  private @Nullable AccessibilityNodeInfoCompat gboardRoot;
   // Whether this touch is being explored here instead of by touch exploration.
   private boolean exploringKeyboard;
   // Whether a second finger typed the explored key during this touch on the keyboard.
@@ -325,6 +326,9 @@ public class TouchInteractionMonitor
   private float lastExploredX;
   private float lastExploredY;
   private @Nullable AccessibilityNodeInfoCompat lastExploredNode;
+  // Whether lastExploredNode is a character of gboardPopup.
+  private boolean lastExploredInPopup;
+  private final Rect lastExploredBounds = new Rect();
   private final SharedPreferences sharedPreferences;
   @VisibleForTesting final TouchExplorationModeFailureReporter touchExplorationModeFailureReporter;
   private final boolean typingFocusTimeout;
@@ -723,9 +727,10 @@ public class TouchInteractionMonitor
       downOnKeyboard =
           typingMethod == FocusProcessorForTapAndTouchExploration.TAP_TO_TYPE
               && isOnKeyboard(event.getX(), event.getY());
-      downOnGboard =
+      gboardRoot =
           typingMethod != FocusProcessorForTapAndTouchExploration.DOUBLE_TAP
-              && KeyboardExploration.isGboardAt(service, displayId, event.getX(), event.getY());
+              ? KeyboardExploration.gboardRootAt(service, displayId, event.getX(), event.getY())
+              : null;
     }
     if (handleEdgeSwipe(event)) {
       return;
@@ -995,7 +1000,7 @@ public class TouchInteractionMonitor
     pinchTracker.clear();
     tapToTypeTracker.clear();
     downOnKeyboard = false;
-    downOnGboard = false;
+    gboardRoot = null;
     exploringKeyboard = false;
     gboardPopup = null;
     lastExploredNode = null;
@@ -1884,7 +1889,7 @@ public class TouchInteractionMonitor
     if (holdTouchExplorationForEdgeSwipe()) {
       return;
     }
-    if (downOnGboard && fingerDown && state == STATE_TOUCH_INTERACTING) {
+    if (gboardRoot != null && fingerDown && state == STATE_TOUCH_INTERACTING) {
       startExploringKeyboard(caller);
       return;
     }
@@ -1919,7 +1924,8 @@ public class TouchInteractionMonitor
     switch (event.getActionMasked()) {
       case ACTION_MOVE -> {
         if (Math.hypot(lastFingerX - lastExploredX, lastFingerY - lastExploredY)
-            >= KEYBOARD_EXPLORE_STEP_PX) {
+                >= KEYBOARD_EXPLORE_STEP_PX
+            && !isOnLastExploredNode(lastFingerX, lastFingerY)) {
           exploreKeyboardAt(lastFingerX, lastFingerY);
         }
       }
@@ -1949,10 +1955,15 @@ public class TouchInteractionMonitor
     lastExploredX = x;
     lastExploredY = y;
     // While Gboard's popup is open, a finger anywhere selects one of its characters.
-    @Nullable AccessibilityNodeInfoCompat node =
-        gboardPopup != null
-            ? KeyboardExploration.popupKeyAt(gboardPopup, x, y)
-            : KeyboardExploration.nodeAt(service, displayId, x, y);
+    @Nullable AccessibilityNodeInfoCompat root = gboardRoot;
+    @Nullable AccessibilityNodeInfoCompat node;
+    if (gboardPopup != null) {
+      node = KeyboardExploration.popupKeyAt(gboardPopup, x, y);
+    } else if (root != null) {
+      node = KeyboardExploration.nodeAt(service, displayId, root, x, y);
+    } else {
+      node = null;
+    }
     if (node == null || node.equals(lastExploredNode)) {
       return;
     }
@@ -1963,9 +1974,25 @@ public class TouchInteractionMonitor
       node.refresh();
     }
     lastExploredNode = node;
+    lastExploredInPopup = gboardPopup != null;
     // A split tap typed the key explored before; this one is typed on lift.
     splitTappedKeyboard = false;
     service.onKeyboardNodeTouched(node);
+  }
+
+  /**
+   * Returns whether {@code x}, {@code y} is on the node explored last, which the same lookup would
+   * find again. A finger moving within a key is not looked up again, since each lookup copies the
+   * nodes on the way to the key.
+   */
+  private boolean isOnLastExploredNode(float x, float y) {
+    @Nullable AccessibilityNodeInfoCompat node = lastExploredNode;
+    // A key of the keyboard found before Gboard's popup opened doesn't count once it is open.
+    if (node == null || lastExploredInPopup != (gboardPopup != null)) {
+      return false;
+    }
+    node.getBoundsInScreen(lastExploredBounds);
+    return lastExploredBounds.contains((int) x, (int) y);
   }
 
   /**
