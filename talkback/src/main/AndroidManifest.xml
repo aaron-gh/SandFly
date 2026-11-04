@@ -50,7 +50,7 @@
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <!-- Time announcements on the minute, when the user turns on exact times. -->
+    <!-- Time announcements and the daily notification summary on the minute. -->
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
 
     <!-- Used by the status readout for the Wi-Fi state, signal, and network name. Android shows

@@ -259,10 +259,6 @@
     <string name="notification_clock_format_message">Placeholders: {time}, {date} and {battery} (the battery percentage).</string>
     <!-- The default text said for the time. Leave {time} untranslated. -->
     <string name="notification_clock_format_default">It\'s {time}</string>
-    <!-- Switch: the time is said on the minute, which needs the Alarms and reminders permission. -->
-    <string name="notification_clock_exact_title">Exact times</string>
-    <!-- Summary of the exact times switch. -->
-    <string name="notification_clock_exact_summary">Needs Alarms and reminders. Otherwise the time can be said up to a minute late.</string>
     <!-- Setting: how notifications of apps without their own setting are read. -->
     <string name="notification_other_apps_title">Other apps</string>
     <!-- Heading of the list of apps. -->

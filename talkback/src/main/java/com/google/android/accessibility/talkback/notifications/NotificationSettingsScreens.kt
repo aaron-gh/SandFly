@@ -103,8 +103,10 @@ abstract class NotificationXmlFragment(@XmlRes xml: Int, @StringRes private val 
         SpokenSchedules.KEY_SUMMARY_DAILY -> {
           NotificationListService.rebind(requireContext())
           updateAccess()
+          if (prefs.getBoolean(key, false)) askForExactAlarms()
         }
-        SpokenSchedules.KEY_CLOCK_EXACT -> if (prefs.getBoolean(key, false)) askForExactAlarms()
+        SpokenSchedules.KEY_CLOCK_INTERVAL ->
+          if (NotificationSettings.int(prefs, key, 0) > 0) askForExactAlarms()
       }
     }
 
@@ -239,7 +241,7 @@ abstract class NotificationXmlFragment(@XmlRes xml: Int, @StringRes private val 
         Intent(Settings.ACTION_REQUEST_SCHEDULE_EXACT_ALARM, Uri.parse("package:" + requireContext().packageName))
       )
     } catch (e: ActivityNotFoundException) {
-      // The setting falls back to times within a minute.
+      // The alarms fall back to inexact times.
     }
   }
 

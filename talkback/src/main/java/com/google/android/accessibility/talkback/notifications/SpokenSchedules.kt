@@ -17,6 +17,8 @@
 package com.google.android.accessibility.talkback.notifications
 
 import android.app.AlarmManager
+import android.app.PendingIntent
+import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
@@ -25,9 +27,11 @@ import android.os.BatteryManager
 import android.os.Build
 import android.os.Handler
 import android.os.Looper
+import android.os.PowerManager
 import android.os.SystemClock
 import android.text.format.DateFormat
 import androidx.annotation.MainThread
+import androidx.core.content.ContextCompat
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.compositor.rule.EventTypeNotificationStateChangedFeedbackRule
 import com.google.android.accessibility.talkback.notificationlist.NotificationListService
@@ -39,19 +43,25 @@ import java.util.TimeZone
 
 /**
  * Speech at set times: the time, every so often, and a summary of the notifications once a day.
- * Alarms with listeners in SandFly's process wake the phone for them, so they need no extra
- * permission, and they are set again after each one and when the settings change.
+ * The alarms are allowed while the device is idle (Doze), exact when SandFly has Alarms and
+ * reminders, and set again after each one and when the settings, time or time zone change.
  */
 class SpokenSchedules(
   private val context: Context,
   /** Says a text, interrupting what notifications are saying when the second value is true. */
   private val say: (CharSequence, Boolean) -> Unit,
 ) {
-  private val handler = Handler(Looper.getMainLooper())
   private val alarms = context.getSystemService(AlarmManager::class.java)
   private val prefs = SharedPreferencesUtils.getSharedPreferences(context)
-  private val clockAlarm = AlarmManager.OnAlarmListener { onClock() }
-  private val summaryAlarm = AlarmManager.OnAlarmListener { onSummary() }
+  private val clockAction = context.packageName + ACTION_CLOCK_SUFFIX
+  private val summaryAction = context.packageName + ACTION_SUMMARY_SUFFIX
+  private val clockAlarm = alarmIntent(clockAction)
+  private val summaryAlarm = alarmIntent(summaryAction)
+  /** Keeps the CPU on until the speech starts, as the alarm's own wake lock ends on return. */
+  private val wakeLock =
+    context.getSystemService(PowerManager::class.java)
+      ?.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, WAKE_LOCK_TAG)
+      ?.apply { setReferenceCounted(false) }
   private var started = false
   private var lastClockAt = 0L
 
@@ -60,11 +70,40 @@ class SpokenSchedules(
       if (key == null || key.startsWith(CLOCK_PREFIX) || key.startsWith(SUMMARY_PREFIX)) schedule()
     }
 
+  private val receiver =
+    object : BroadcastReceiver() {
+      override fun onReceive(context: Context, intent: Intent) {
+        if (!started) return
+        when (intent.action) {
+          clockAction -> {
+            wakeLock?.acquire(CLOCK_WAKE_MS)
+            onClock()
+          }
+          summaryAction -> {
+            wakeLock?.acquire(SUMMARY_WAKE_MS)
+            onSummary()
+          }
+          else -> schedule()
+        }
+      }
+    }
+
   @MainThread
   fun start() {
     if (started) return
     started = true
     prefs.registerOnSharedPreferenceChangeListener(settingsListener)
+    val filter =
+      IntentFilter().apply {
+        addAction(clockAction)
+        addAction(summaryAction)
+        addAction(Intent.ACTION_TIME_CHANGED)
+        addAction(Intent.ACTION_TIMEZONE_CHANGED)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+          addAction(AlarmManager.ACTION_SCHEDULE_EXACT_ALARM_PERMISSION_STATE_CHANGED)
+        }
+      }
+    ContextCompat.registerReceiver(context, receiver, filter, ContextCompat.RECEIVER_NOT_EXPORTED)
     schedule()
   }
 
@@ -73,9 +112,19 @@ class SpokenSchedules(
     if (!started) return
     started = false
     prefs.unregisterOnSharedPreferenceChangeListener(settingsListener)
+    context.unregisterReceiver(receiver)
     alarms?.cancel(clockAlarm)
     alarms?.cancel(summaryAlarm)
+    if (wakeLock?.isHeld == true) wakeLock.release()
   }
+
+  private fun alarmIntent(action: String): PendingIntent =
+    PendingIntent.getBroadcast(
+      context,
+      0,
+      Intent(action).setPackage(context.packageName),
+      PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT,
+    )
 
   private fun schedule() {
     val alarms = alarms ?: return
@@ -83,25 +132,27 @@ class SpokenSchedules(
     alarms.cancel(summaryAlarm)
     val interval = NotificationSettings.int(prefs, KEY_CLOCK_INTERVAL, 0)
     val now = System.currentTimeMillis()
-    if (interval > 0) {
-      set(alarms, nextClockTime(now, interval), prefs.getBoolean(KEY_CLOCK_EXACT, false), clockAlarm)
-    }
+    if (interval > 0) set(alarms, nextClockTime(now, interval), clockAlarm)
     if (prefs.getBoolean(KEY_SUMMARY_DAILY, false)) {
       val minutes = NotificationSettings.int(prefs, KEY_SUMMARY_TIME, 8 * 60)
-      set(alarms, nextDailyTime(now, minutes), exact = true, summaryAlarm)
+      set(alarms, nextDailyTime(now, minutes), summaryAlarm)
     }
   }
 
-  private fun set(alarms: AlarmManager, at: Long, exact: Boolean, listener: AlarmManager.OnAlarmListener) {
-    try {
-      if (exact && canScheduleExact(alarms)) {
-        alarms.setExact(AlarmManager.RTC_WAKEUP, at, TAG, listener, handler)
-      } else {
-        alarms.setWindow(AlarmManager.RTC_WAKEUP, at, WINDOW_MS, TAG, listener, handler)
+  /**
+   * Sets an alarm that goes off in Doze too: exact with Alarms and reminders, otherwise when
+   * Android chooses, which can be several minutes late.
+   */
+  private fun set(alarms: AlarmManager, at: Long, operation: PendingIntent) {
+    if (canScheduleExact(alarms)) {
+      try {
+        alarms.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, at, operation)
+        return
+      } catch (e: SecurityException) {
+        // Alarms and reminders was turned off just now.
       }
-    } catch (e: SecurityException) {
-      alarms.setWindow(AlarmManager.RTC_WAKEUP, at, WINDOW_MS, TAG, listener, handler)
     }
+    alarms.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, at, operation)
   }
 
   private fun canScheduleExact(alarms: AlarmManager): Boolean =
@@ -127,7 +178,11 @@ class SpokenSchedules(
 
   companion object {
     private const val TAG = "SpokenSchedules"
-    private const val WINDOW_MS = 60_000L
+    private const val WAKE_LOCK_TAG = "SandFly:SpokenSchedules"
+    private const val ACTION_CLOCK_SUFFIX = ".SPOKEN_SCHEDULE_CLOCK"
+    private const val ACTION_SUMMARY_SUFFIX = ".SPOKEN_SCHEDULE_SUMMARY"
+    private const val CLOCK_WAKE_MS = 15_000L
+    private const val SUMMARY_WAKE_MS = 60_000L
     private const val MINUTE_MS = 60_000L
     private const val MINUTES_PER_DAY = 24 * 60
     /** The clock is never said twice within this time, whatever the alarms do. */
@@ -140,7 +195,6 @@ class SpokenSchedules(
     private val summaryHandler = Handler(Looper.getMainLooper())
     const val KEY_CLOCK_INTERVAL = "pref_notification_clock_interval"
     const val KEY_CLOCK_FORMAT = "pref_notification_clock_format"
-    const val KEY_CLOCK_EXACT = "pref_notification_clock_exact"
     const val KEY_SUMMARY_DAILY = "pref_notification_summary_daily"
     const val KEY_SUMMARY_TIME = "pref_notification_summary_time"
     const val KEY_SUMMARY_NEWEST_FIRST = "pref_notification_summary_newest_first"
