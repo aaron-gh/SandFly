@@ -1253,6 +1253,36 @@ public class FocusProcessorForLogicalNavigation {
     return target;
   }
 
+  /**
+   * Builds the order of {@code root} again after reading the active window with one request that
+   * also returns its descendants, when a node in the order of {@code root} lists children none of
+   * which could be read. Some apps, such as Xiaomi's on HyperOS, list containers among a window's
+   * children that Android does not return when asked for one node at a time, which left only the
+   * root in the order: both swipe directions then stopped at a false edge. The descendants of the
+   * window's root land in Android's node cache, from which the build then reads them. Done once
+   * until the window changes, and only when {@code root} is the active window's root. Returns null
+   * when nothing was read again.
+   */
+  private @Nullable OrderedTraversalStrategy rereadIncompleteOrder(
+      AccessibilityNodeInfoCompat root) {
+    if (!TraversalTreeCache.startReread(root.getWindowId())) {
+      return null;
+    }
+    @Nullable AccessibilityNodeInfoCompat activeRoot =
+        AccessibilityServiceCompatUtils.getRootInActiveWindow(service);
+    if (activeRoot == null || activeRoot.getWindowId() != root.getWindowId()) {
+      return null;
+    }
+    WindowNodePrefetcher.prefetch(root, service.getPackageName());
+    OrderedTraversalStrategy reread = new OrderedTraversalStrategy(root);
+    LogUtils.i(
+        TAG,
+        "Order of window %d missed children; read again, %s",
+        root.getWindowId(),
+        reread.missesChildren() ? "still incomplete" : "complete");
+    return reread;
+  }
+
   /** The app node whose recognised screen elements a swipe has just left, going forward. */
   private @Nullable AccessibilityNodeInfoCompat leavingScreenElementsOf;
 
@@ -1496,7 +1526,16 @@ public class FocusProcessorForLogicalNavigation {
             "BacktalkTreeCache",
             "Built order in " + (SystemClock.uptimeMillis() - buildStart) + " ms");
       }
-      if (traversalStrategy instanceof OrderedTraversalStrategy orderedStrategy) {
+      if (traversalStrategy instanceof OrderedTraversalStrategy orderedStrategy
+          && orderedStrategy.missesChildren()) {
+        @Nullable OrderedTraversalStrategy reread = rereadIncompleteOrder(rootNode);
+        if (reread != null) {
+          traversalStrategy = reread;
+        }
+      }
+      // An order that still misses nodes is not saved, so the next swipe reads the window again.
+      if (traversalStrategy instanceof OrderedTraversalStrategy orderedStrategy
+          && !orderedStrategy.missesChildren()) {
         TraversalTreeCache.put(rootNode, orderedStrategy);
       }
     }
