@@ -2888,6 +2888,8 @@
     <string name="title_pref_lift_to_activate">Lift to activate</string>
     <!-- Title of the setting for how long the finger stays on an item for lifting it to activate nothing, with Lift to activate. [CHAR LIMIT=40] -->
     <string name="title_pref_hold_to_cancel">Hold to cancel</string>
+    <!-- Summary of Hold to cancel. %1$s is the chosen time, such as "2 seconds", or "Off". [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_hold_to_cancel">%1$s. Lifting after holding the finger on an item this long activates nothing.</string>
     <!-- Value of Hold to cancel: holding the finger on an item doesn't cancel. [CHAR LIMIT=20] -->
     <string name="value_hold_to_cancel_off">Off</string>
     <!-- Value of Hold to cancel. [CHAR LIMIT=20] -->

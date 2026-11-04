@@ -15,7 +15,7 @@
       android:entries="@array/pref_hold_to_cancel_entries"
       android:entryValues="@array/pref_hold_to_cancel_values"
       android:key="@string/pref_hold_to_cancel_key"
-      android:summary="%s"
+      android:summary="@string/summary_pref_hold_to_cancel"
       android:title="@string/title_pref_hold_to_cancel" />
   <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
       android:defaultValue="false"
