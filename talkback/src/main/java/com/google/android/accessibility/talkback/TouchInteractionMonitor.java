@@ -115,6 +115,7 @@ import com.google.android.accessibility.talkback.gesture.PinchTracker;
 import com.google.android.accessibility.talkback.gesture.TapToTypeTracker;
 import com.google.android.accessibility.talkback.gesture.TwoFingerRotationTracker;
 import com.google.android.accessibility.talkback.gesture.TwoFingerScrubTracker;
+import com.google.android.accessibility.talkback.tutorial.TutorialHooks;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.AccessibilityServiceCompatUtils;
 import com.google.android.accessibility.utils.AccessibilityWindowInfoUtils;
@@ -1761,7 +1762,19 @@ public class TouchInteractionMonitor
           if (GestureLog.getEnabled()) {
             Log.d(DEBUG_GESTURE_TAG, "Edge menu " + edge.name() + ": " + command);
           }
-          mainHandler.post(() -> service.performCommand(command));
+          mainHandler.post(
+              () -> {
+                // As for gestures: an open circle menu closes and the tutorial may take the
+                // command, without running it.
+                ListMenuManager menuManager = service.getMenuManager();
+                if (menuManager != null && menuManager.consumeGestureForRadialMenu()) {
+                  return;
+                }
+                if (TutorialHooks.onKeys(/* keys= */ null, command)) {
+                  return;
+                }
+                service.performCommand(command);
+              });
         }
       };
 

@@ -181,22 +181,37 @@ object Commands {
     if (value == null) {
       return null
     }
-    OpenAppActions.label(context, value)?.let {
-      return it
+    return labelOutsideList(context, value) ?: find(context, value)?.label
+  }
+
+  /**
+   * Returns the names of the commands saved as [values], in order, as [label] gives them, building
+   * the list of commands at most once. A value that is no command has null.
+   */
+  @JvmStatic
+  fun labels(context: Context, values: List<String>): List<String?> {
+    var listed: Map<String, String>? = null
+    return values.map { value ->
+      labelOutsideList(context, value)
+        ?: (listed ?: listedLabels(context).also { listed = it })[value]
     }
-    AccessibilityShortcutActions.label(context, value)?.let {
-      return it
+  }
+
+  /** The name of a command that [label] finds without the list of commands, or null. */
+  private fun labelOutsideList(context: Context, value: String): String? =
+    OpenAppActions.label(context, value)
+      ?: AccessibilityShortcutActions.label(context, value)
+      ?: gestureProfileLabel(context, value)
+      ?: NavigationGestureActions.label(context, value)
+      ?: keyboardActionOf(context, value)?.getDescription(context.resources)
+
+  /** The names of the commands in [categoriesWithoutApps] by value, the first one for each. */
+  private fun listedLabels(context: Context): Map<String, String> {
+    val labels = HashMap<String, String>()
+    categoriesWithoutApps(context).forEach { category ->
+      category.commands.forEach { labels.getOrPut(it.value) { it.label } }
     }
-    gestureProfileLabel(context, value)?.let {
-      return it
-    }
-    NavigationGestureActions.label(context, value)?.let {
-      return it
-    }
-    keyboardActionOf(context, value)?.let {
-      return it.getDescription(context.resources)
-    }
-    return find(context, value)?.label
+    return labels
   }
 
   private fun gestureProfileLabel(context: Context, value: String): String? =
