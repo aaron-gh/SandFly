@@ -47,6 +47,13 @@ import kotlin.math.hypot
  * slop along the edge, the listener passes the rest of the touch to the app. Slides up and down the
  * left and right edges scroll only away from the corners, which belong to the top and bottom edges.
  *
+ * A left or right edge for which [menuItemCount] gives items is a menu instead: once a slide up or
+ * down it, away from the corners, has moved a slop, the slide owns the touch and goes through the
+ * menu. The items divide the edge's length equally, from the top, and the item is the one level with
+ * the finger. Moving more than [MENU_ZONE_FACTOR] edge zones away from the edge leaves the menu,
+ * where lifting does nothing, and coming back returns to the items. Slides along that edge, and
+ * scrolling along it, are not used, including from its corners.
+ *
  * A finger that lands partly off the screen is reported at the screen's edge until enough of it is
  * on the screen, so a slide can stay at the edge, drifting sideways, for its first 100 ms or so.
  */
@@ -62,7 +69,16 @@ class EdgeSwipeTracker(
   // gesture.
   private val edgeScrolls: (Edge) -> Boolean,
   private val listener: Listener,
+  // The number of items in the menu along the left or right edge, or 0 when that edge is no menu.
+  // Asked once for each touch that lands at the left or right edge.
+  private val menuItemCount: (MenuEdge) -> Int = { 0 },
 ) {
+
+  /** The side edges, which can be menus. */
+  enum class MenuEdge {
+    LEFT,
+    RIGHT,
+  }
 
   /**
    * The slides: in from an edge, or, when [along] is true, along an edge in the direction the name
@@ -87,7 +103,13 @@ class EdgeSwipeTracker(
   }
 
   /** A slide the touch may still become, with its stages. */
-  private class Candidate(val edge: Edge, val stages: List<Int>, val scroll: Boolean = false)
+  private class Candidate(
+    val edge: Edge,
+    val stages: List<Int>,
+    val scroll: Boolean = false,
+    // The menu that this slide along a side edge goes through.
+    val menu: MenuEdge? = null,
+  )
 
   /** Receives the stages and the end of a slide. */
   interface Listener {
@@ -114,6 +136,19 @@ class EdgeSwipeTracker(
 
     /** The finger lifted at [stage], or at 0 when it was slid back to the edge. */
     fun onEdgeSwipeEnded(edge: Edge, stage: Int)
+
+    /**
+     * The finger moved to [item] of the menu along [edge], from [previousItem], counting from 0 at
+     * the top. [NO_ITEM] is away from the edge, where lifting does nothing. The first report, when
+     * the menu takes over the touch, has [NO_ITEM] as [previousItem].
+     */
+    fun onEdgeMenuItem(edge: MenuEdge, item: Int, previousItem: Int)
+
+    /**
+     * The finger lifted on [item] of the menu along [edge], or the menu ended with [NO_ITEM] away
+     * from the edge or when a second finger landed.
+     */
+    fun onEdgeMenuEnded(edge: MenuEdge, item: Int)
   }
 
   private enum class State {
@@ -143,6 +178,13 @@ class EdgeSwipeTracker(
   // The slides the touch may still become, first the one that wins when two reach their first
   // stage together.
   private val candidates = mutableListOf<Candidate>()
+  // The menu the slide goes through, while it owns the touch, with its item count and the item the
+  // finger is on.
+  private var menuEdge: MenuEdge? = null
+  private var menuItems = 0
+  private var menuItem = NO_ITEM
+  private var screenWidth = 0f
+  private var screenHeight = 0f
 
   /** Whether a slide owns the current touch. */
   val isActive: Boolean
@@ -160,6 +202,9 @@ class EdgeSwipeTracker(
     stage = 0
     stages = emptyList()
     candidates.clear()
+    menuEdge = null
+    menuItems = 0
+    menuItem = NO_ITEM
   }
 
   /**
@@ -183,7 +228,7 @@ class EdgeSwipeTracker(
             // touch from becoming another gesture.
             debugLog("cancelled by a second finger")
             state = State.CANCELLED
-            listener.onEdgeSwipeEnded(edge, 0)
+            endSlide(lifted = false)
           }
           else -> {}
         }
@@ -202,8 +247,8 @@ class EdgeSwipeTracker(
         val wasActive = state == State.ACTIVE
         val owned = isActive
         if (wasActive) {
-          debugLog("ended at stage $stage")
-          listener.onEdgeSwipeEnded(edge, stage)
+          debugLog("ended at stage $stage, menu item $menuItem")
+          endSlide(lifted = true)
         }
         clear()
         return owned
@@ -211,7 +256,7 @@ class EdgeSwipeTracker(
       MotionEvent.ACTION_CANCEL -> {
         val owned = isActive
         if (state == State.ACTIVE) {
-          listener.onEdgeSwipeEnded(edge, 0)
+          endSlide(lifted = false)
         }
         clear()
         return owned
@@ -221,6 +266,16 @@ class EdgeSwipeTracker(
     return isActive
   }
 
+  /** Reports the end of the active slide: lifted where it is, or cancelled. */
+  private fun endSlide(lifted: Boolean) {
+    val menu = menuEdge
+    if (menu != null) {
+      listener.onEdgeMenuEnded(menu, if (lifted) menuItem else NO_ITEM)
+    } else {
+      listener.onEdgeSwipeEnded(edge, if (lifted) stage else 0)
+    }
+  }
+
   private fun startTracking(event: MotionEvent, screenWidth: Int, screenHeight: Int) {
     val x = event.x
     val y = event.y
@@ -228,6 +283,16 @@ class EdgeSwipeTracker(
     val top = !bottom && y <= edgeZonePx
     val left = x <= edgeZonePx
     val right = !left && x >= screenWidth - edgeZonePx
+    this.screenWidth = screenWidth.toFloat()
+    this.screenHeight = screenHeight.toFloat()
+    val sideEdge =
+      when {
+        left -> MenuEdge.LEFT
+        right -> MenuEdge.RIGHT
+        else -> null
+      }
+    // A side edge that is a menu has no slides along it, not even from its corners.
+    val sideMenuItems = sideEdge?.let(menuItemCount) ?: 0
     // In a corner, the top or bottom edge comes first, then slides in before slides along.
     val edges =
       listOfNotNull(
@@ -253,6 +318,14 @@ class EdgeSwipeTracker(
           else -> emptyList()
         }
     for (candidate in edges) {
+      if (candidate.along && candidate.alongSideEdge() && sideMenuItems > 0) {
+        // Like scrolling, the menu is only away from the corners, which belong to the top and
+        // bottom edges.
+        if (!top && !bottom) {
+          candidates.add(Candidate(candidate, listOf(1), menu = sideEdge))
+        }
+        continue
+      }
       // Slides up and down a side edge scroll only away from the corners, which belong to the top
       // and bottom edges.
       if (
@@ -274,6 +347,7 @@ class EdgeSwipeTracker(
       return
     }
     edge = candidates.first().edge
+    menuItems = sideMenuItems
     pointerId = event.getPointerId(0)
     startX = x
     startY = y
@@ -384,7 +458,11 @@ class EdgeSwipeTracker(
         continue
       }
       val firstStage =
-        if (candidate.scroll) slopPx else stageDistancesPx[candidate.stages.first() - 1]
+        if (candidate.scroll || candidate.menu != null) {
+          slopPx
+        } else {
+          stageDistancesPx[candidate.stages.first() - 1]
+        }
       if (started == null && forward >= firstStage) {
         started = candidate
       }
@@ -406,17 +484,51 @@ class EdgeSwipeTracker(
     }
     edge = started.edge
     stages = started.stages
-    debugLog("started")
+    menuEdge = started.menu
+    debugLog(if (menuEdge != null) "started the menu" else "started")
     state = State.ACTIVE
     listener.onEdgeSwipeStarted(edge)
-    updateStage(forward(edge, x, y))
+    if (menuEdge != null) {
+      updateMenuItem(x, y)
+    } else {
+      updateStage(forward(edge, x, y))
+    }
   }
 
   private fun onActiveMove(event: MotionEvent) {
     val index = event.findPointerIndex(pointerId)
-    if (index >= 0) {
+    if (index < 0) {
+      return
+    }
+    if (menuEdge != null) {
+      updateMenuItem(event.getX(index), event.getY(index))
+    } else {
       updateStage(forward(edge, event.getX(index), event.getY(index)))
     }
+  }
+
+  /**
+   * Returns the menu item level with ([x], [y]): the edge's length divided equally among the items,
+   * from the top. [NO_ITEM] once the finger is more than [MENU_ZONE_FACTOR] edge zones from the
+   * edge.
+   */
+  private fun menuItemAt(x: Float, y: Float): Int {
+    val fromEdge = if (menuEdge == MenuEdge.LEFT) x else screenWidth - x
+    if (fromEdge > edgeZonePx * MENU_ZONE_FACTOR || screenHeight <= 0f) {
+      return NO_ITEM
+    }
+    return (y * menuItems / screenHeight).toInt().coerceIn(0, menuItems - 1)
+  }
+
+  private fun updateMenuItem(x: Float, y: Float) {
+    val menu = menuEdge ?: return
+    val item = menuItemAt(x, y)
+    if (item == menuItem) {
+      return
+    }
+    val previous = menuItem
+    menuItem = item
+    listener.onEdgeMenuItem(menu, item, previous)
   }
 
   /** Sets how far a slide goes in to its [first] stage, and on from there to its [second]. */
@@ -446,6 +558,15 @@ class EdgeSwipeTracker(
 
   companion object {
     private const val INVALID_ID = -1
+
+    /** No menu item: the finger is away from the edge. */
+    const val NO_ITEM = -1
+
+    /**
+     * How many edge zones from its edge the finger may move and stay in a menu. Further in, lifting
+     * does nothing.
+     */
+    private const val MENU_ZONE_FACTOR = 3f
 
     private fun Edge.alongSideEdge(): Boolean =
       this == Edge.ALONG_LEFT_UP ||

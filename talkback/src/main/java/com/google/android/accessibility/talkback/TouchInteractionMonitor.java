@@ -104,8 +104,10 @@ import com.google.android.accessibility.talkback.PrimesController.TimerAction;
 import com.google.android.accessibility.talkback.contextmenu.ListMenuManager;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForTapAndTouchExploration;
+import com.google.android.accessibility.talkback.gesture.EdgeMenus;
 import com.google.android.accessibility.talkback.gesture.EdgeSwipeTracker;
 import com.google.android.accessibility.talkback.gesture.EdgeSwipeTracker.Edge;
+import com.google.android.accessibility.talkback.gesture.EdgeSwipeTracker.MenuEdge;
 import com.google.android.accessibility.talkback.gesture.GestureLog;
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping;
 import com.google.android.accessibility.talkback.gesture.KeyboardExploration;
@@ -126,6 +128,9 @@ import com.google.android.accessibility.utils.gestures.GestureManifold.GestureCo
 import com.google.android.accessibility.utils.gestures.GestureMatcher.AnalyticsEventLogger;
 import com.google.android.accessibility.utils.gestures.GestureUtils;
 import com.google.android.accessibility.utils.output.FeedbackController;
+import com.google.android.accessibility.utils.output.FeedbackItem;
+import com.google.android.accessibility.utils.output.SpeechController;
+import com.google.android.accessibility.utils.output.SpeechController.SpeakOptions;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import com.google.common.collect.EvictingQueue;
 import com.google.common.collect.ImmutableList;
@@ -245,6 +250,11 @@ public class TouchInteractionMonitor
   private boolean rightEdgeScrolls;
   private boolean topEdgeScrolls;
   private boolean bottomEdgeScrolls;
+  // The menus along the left and right edges, NONE while an edge is no menu, and the one the current
+  // touch landed on.
+  private EdgeMenus.Menu leftEdgeMenu = EdgeMenus.Menu.NONE;
+  private EdgeMenus.Menu rightEdgeMenu = EdgeMenus.Menu.NONE;
+  private EdgeMenus.Menu touchEdgeMenu = EdgeMenus.Menu.NONE;
   private final float pixelsPerCm;
   // Why the current two-finger touch last waited before going to the app, for the gesture log.
   @Nullable private String twoFingerWait;
@@ -366,6 +376,8 @@ public class TouchInteractionMonitor
       latestDensityDpi = newConfig.densityDpi;
       gestureDetector.onConfigurationChanged(context);
     }
+    // The names of the edge menus' commands may be in another language now.
+    readEdgeMenus(sharedPreferences);
   }
 
   @Override
@@ -489,9 +501,11 @@ public class TouchInteractionMonitor
             touchSlop,
             this::edgeStages,
             this::edgeScrolls,
-            edgeSwipeListener);
+            edgeSwipeListener,
+            this::edgeMenuItemCount);
     readEdgeClickDistances(prefs);
     readEdgeScrolls(prefs);
+    readEdgeMenus(prefs);
     scrubTracker = new TwoFingerScrubTracker(pixelsPerCm * SCRUB_STROKE_CM, this::onScrub);
     pinchTracker =
         new PinchTracker(pixelsPerCm * PINCH_CHANGE_CM, this::isPinchCountInUse, this::onPinch);
@@ -632,6 +646,27 @@ public class TouchInteractionMonitor
         || context.getString(R.string.pref_edge_scroll_bottom_key).equals(key);
   }
 
+  /** Reads the menus along the left and right edges. */
+  private void readEdgeMenus(SharedPreferences prefs) {
+    String unassigned = context.getString(R.string.shortcut_value_unassigned);
+    leftEdgeMenu = EdgeMenus.read(prefs, MenuEdge.LEFT, unassigned);
+    rightEdgeMenu = EdgeMenus.read(prefs, MenuEdge.RIGHT, unassigned);
+  }
+
+  /**
+   * Returns how many items the menu along {@code edge} has for the touch that just landed there: none
+   * when it lands on the keyboard, so that typing on the keys at the edge works as usual.
+   */
+  private int edgeMenuItemCount(MenuEdge edge) {
+    EdgeMenus.Menu menu = edge == MenuEdge.LEFT ? leftEdgeMenu : rightEdgeMenu;
+    if (menu.getSize() == 0 || isOnKeyboard(lastFingerX, lastFingerY)) {
+      touchEdgeMenu = EdgeMenus.Menu.NONE;
+      return 0;
+    }
+    touchEdgeMenu = menu;
+    return menu.getSize();
+  }
+
   /** Returns whether a slide along an edge, such as {@code ALONG_LEFT_UP}, scrolls the app. */
   private boolean edgeScrolls(Edge slide) {
     return switch (slide) {
@@ -650,6 +685,8 @@ public class TouchInteractionMonitor
           readEdgeClickDistances(prefs);
         } else if (isEdgeScrollKey(key)) {
           readEdgeScrolls(prefs);
+        } else if (EdgeMenus.isKey(key)) {
+          readEdgeMenus(prefs);
         } else if (context.getString(R.string.pref_typing_focus_time_out_key).equals(key)) {
           typingFocusUserIntentTimeout =
               SharedPreferencesUtils.getIntFromStringPref(
@@ -1673,6 +1710,43 @@ public class TouchInteractionMonitor
           }
           dispatchGestureToMainThread(
               new AccessibilityGestureEvent(gestureId, displayId, new ArrayList<MotionEvent>()));
+        }
+
+        @Override
+        public void onEdgeMenuItem(MenuEdge edge, int item, int previousItem) {
+          Pipeline.@Nullable FeedbackReturner feedback = service.getFeedbackReturner();
+          if (feedback == null) {
+            return;
+          }
+          boolean onItem = item != EdgeSwipeTracker.NO_ITEM;
+          CharSequence text =
+              onItem
+                  ? touchEdgeMenu.name(context, item)
+                  : context.getString(R.string.radial_menu_cancel);
+          feedback.returnFeedback(
+              Performance.EVENT_ID_UNTRACKED,
+              Feedback.speech(
+                      text,
+                      SpeakOptions.create()
+                          .setQueueMode(SpeechController.QUEUE_MODE_INTERRUPT)
+                          .setFlags(
+                              FeedbackItem.FLAG_NO_HISTORY | FeedbackItem.FLAG_FORCE_FEEDBACK_ALL))
+                  .sound(R.raw.tick)
+                  .vibration(
+                      onItem ? R.array.view_actionable_pattern : R.array.edge_swipe_cancel_pattern));
+        }
+
+        @Override
+        public void onEdgeMenuEnded(MenuEdge edge, int item) {
+          @Nullable String command = touchEdgeMenu.command(item);
+          touchEdgeMenu = EdgeMenus.Menu.NONE;
+          if (command == null) {
+            return;
+          }
+          if (GestureLog.getEnabled()) {
+            Log.d(DEBUG_GESTURE_TAG, "Edge menu " + edge.name() + ": " + command);
+          }
+          mainHandler.post(() -> service.performCommand(command));
         }
       };
 

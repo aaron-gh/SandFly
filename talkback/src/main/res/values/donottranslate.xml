@@ -1172,6 +1172,9 @@
     <string name="pref_edge_scroll_top_key" translatable="false">pref_edge_scroll_top</string>
     <string name="pref_edge_scroll_bottom_key" translatable="false">pref_edge_scroll_bottom</string>
     <bool name="pref_edge_scroll_default">false</bool>
+    <!-- The screens of the menus along the left and right edges. -->
+    <string name="pref_screen_edge_menu_left_key" translatable="false">pref_screen_edge_menu_left</string>
+    <string name="pref_screen_edge_menu_right_key" translatable="false">pref_screen_edge_menu_right</string>
     <!-- How far an edge gesture slides on from its first click to its second, in millimeters. -->
     <string name="pref_edge_second_click_mm_key" translatable="false">pref_edge_second_click_mm</string>
     <string name="pref_edge_second_click_mm_default" translatable="false">40</string>
