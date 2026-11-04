@@ -17,6 +17,9 @@
 package com.google.android.accessibility.brailleime;
 
 import android.content.Context;
+import android.hardware.display.DisplayManager;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.OrientationEventListener;
 import com.google.common.annotations.VisibleForTesting;
 
@@ -61,6 +64,23 @@ public class OrientationMonitor {
   private boolean enabled;
   private Orientation currentOrientation = Orientation.UNKNOWN;
   private OrientationEventListener orientationEventListener;
+  private Context context;
+  // Whether the device's natural orientation is portrait, read once and again when a display
+  // changes, as a foldable folds or unfolds, rather than at every reading.
+  private boolean defaultPortrait = true;
+  private final DisplayManager.DisplayListener displayListener =
+      new DisplayManager.DisplayListener() {
+        @Override
+        public void onDisplayAdded(int displayId) {}
+
+        @Override
+        public void onDisplayRemoved(int displayId) {}
+
+        @Override
+        public void onDisplayChanged(int displayId) {
+          defaultPortrait = Utils.isDeviceDefaultPortrait(context);
+        }
+      };
 
   public static OrientationMonitor getInstance() {
     if (singleton == null) {
@@ -77,11 +97,12 @@ public class OrientationMonitor {
   public static void init(Context context) {
     if (singleton == null) {
       singleton = new OrientationMonitor();
+      singleton.context = context.getApplicationContext();
       singleton.orientationEventListener =
           new OrientationEventListener(context.getApplicationContext()) {
             @Override
             public void onOrientationChanged(int degree) {
-              Orientation newOrientation = toOrientation(context, degree);
+              Orientation newOrientation = toOrientation(singleton.defaultPortrait, degree);
               if (newOrientation != singleton.currentOrientation) {
                 singleton.currentOrientation = newOrientation;
                 if (singleton.orientationMonitorCallback != null) {
@@ -93,9 +114,12 @@ public class OrientationMonitor {
     }
   }
 
-  /** Converts a reading from {@link OrientationEventListener} to the nearest orientation. */
-  static Orientation toOrientation(Context context, int degree) {
-    degree = Utils.isDeviceDefaultPortrait(context) ? degree : degree - 90;
+  /**
+   * Converts a reading from {@link OrientationEventListener} to the nearest orientation, on a device
+   * whose natural orientation is portrait or not.
+   */
+  static Orientation toOrientation(boolean defaultPortrait, int degree) {
+    degree = defaultPortrait ? degree : degree - 90;
     for (Orientation orientation : Orientation.values()) {
       if (orientation != Orientation.UNKNOWN
           && Math.abs(degree - orientation.getDegree()) <= 45) {
@@ -114,6 +138,12 @@ public class OrientationMonitor {
       return;
     }
     enabled = true;
+    if (context != null) {
+      defaultPortrait = Utils.isDeviceDefaultPortrait(context);
+      context
+          .getSystemService(DisplayManager.class)
+          .registerDisplayListener(displayListener, new Handler(Looper.getMainLooper()));
+    }
     orientationEventListener.enable();
   }
 
@@ -122,6 +152,9 @@ public class OrientationMonitor {
       return;
     }
     enabled = false;
+    if (context != null) {
+      context.getSystemService(DisplayManager.class).unregisterDisplayListener(displayListener);
+    }
     orientationEventListener.disable();
   }
 
