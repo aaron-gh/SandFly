@@ -66,6 +66,11 @@ class TouchInteractionMonitorTest {
     val gestures = mutableListOf<Int>()
     val threads = mutableSetOf<Thread>()
     var tapsToType = 0
+    val fingerAtScreenEdge = mutableListOf<Boolean>()
+
+    override fun setFingerAtScreenEdge(atEdge: Boolean) {
+      fingerAtScreenEdge.add(atEdge)
+    }
     var displayWindows = listOf<AccessibilityWindowInfo>()
 
     override fun onTapToType() {
@@ -191,6 +196,25 @@ class TouchInteractionMonitorTest {
   /** Lets time pass until [timeMs] after the start while the main thread is busy with other work. */
   private fun mainThreadBusyUntil(timeMs: Long) {
     ShadowSystemClock.advanceBy(Duration.ofMillis(start + timeMs - SystemClock.uptimeMillis()))
+  }
+
+  @Test
+  fun fingerSlidOffTheBottomOfTheScreenIsAtTheEdgeAndMovingBackInIsNot() {
+    val height =
+      service
+        .getSystemService(DisplayManager::class.java)
+        .getDisplay(Display.DEFAULT_DISPLAY)
+        .let { display -> android.graphics.Point().also { display.getRealSize(it) } }
+        .y
+    stateChangeAt(STATE_TOUCH_INTERACTING, 0)
+    touchAt(ACTION_DOWN, 160f, 200f, 0)
+    touchAt(ACTION_MOVE, 160f, height - 40f, 300)
+    touchAt(ACTION_MOVE, 160f, height - 1f, 320)
+    runUntil(330)
+    assertEquals(listOf(false, true), service.fingerAtScreenEdge)
+    touchAt(ACTION_MOVE, 160f, height - 40f, 340)
+    runUntil(350)
+    assertEquals(listOf(false, true, false), service.fingerAtScreenEdge)
   }
 
   @Test

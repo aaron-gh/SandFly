@@ -3656,6 +3656,18 @@ public class TalkBackService extends AccessibilityServiceCompat
     }
   }
 
+  /** Sets whether the finger is at the edge of the screen, where lifting it activates nothing. */
+  public void setFingerAtScreenEdge(boolean atEdge) {
+    if (accessibilityFocusInterpreter != null) {
+      accessibilityFocusInterpreter.setFingerAtScreenEdge(atEdge);
+    }
+  }
+
+  /** Returns whether lifting the finger now activates the item or types the key it last touched. */
+  public boolean liftActivates() {
+    return accessibilityFocusInterpreter != null && accessibilityFocusInterpreter.liftActivates();
+  }
+
   public void onTapToType() {
     if (accessibilityFocusInterpreter != null) {
       accessibilityFocusInterpreter.onTapToType();

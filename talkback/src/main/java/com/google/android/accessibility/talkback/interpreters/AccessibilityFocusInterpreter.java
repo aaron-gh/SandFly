@@ -553,4 +553,14 @@ public class AccessibilityFocusInterpreter
   public void onTapToType() {
     focusProcessorForTapAndTouchExploration.onTapToType();
   }
+
+  /** Sets whether the finger is at the edge of the screen, where lifting it activates nothing. */
+  public void setFingerAtScreenEdge(boolean atEdge) {
+    focusProcessorForTapAndTouchExploration.setFingerAtScreenEdge(atEdge);
+  }
+
+  /** Returns whether lifting the finger now activates the item or types the key it last touched. */
+  public boolean liftActivates() {
+    return focusProcessorForTapAndTouchExploration.liftActivates();
+  }
 }
