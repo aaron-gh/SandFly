@@ -67,9 +67,9 @@ object EdgeMenus {
   fun read(prefs: SharedPreferences, edge: MenuEdge, unassigned: String): Menu =
     if (prefs.getBoolean(switchKey(edge), false)) Menu(items(prefs, edge, unassigned)) else Menu.NONE
 
-  /** The commands of a menu, with their names, which are looked up when first needed. */
+  /** The commands of a menu, with their names, which are all looked up when one is first needed. */
   class Menu(private val commands: List<String>) {
-    private val names = arrayOfNulls<String>(commands.size)
+    private var names: List<String>? = null
 
     val size: Int
       get() = commands.size
@@ -79,8 +79,15 @@ object EdgeMenus {
 
     /** The name of the command at [index], as the command lists show it. */
     fun name(context: Context, index: Int): String {
-      val command = commands.getOrNull(index) ?: return ""
-      return names[index] ?: (Commands.label(context, command) ?: command).also { names[index] = it }
+      if (index !in commands.indices) {
+        return ""
+      }
+      val all =
+        names
+          ?: Commands.labels(context, commands)
+            .mapIndexed { i, label -> label ?: commands[i] }
+            .also { names = it }
+      return all[index]
     }
 
     companion object {

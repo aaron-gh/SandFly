@@ -288,7 +288,7 @@ class EdgeSwipeTrackerTest {
   fun slidingAlongAMenuEdgeGoesThroughItsItems() {
     // Four items of 250 pixels each.
     menus = mapOf(MenuEdge.LEFT to 4)
-    slideThrough(5f, 100f, 5f, 120f, 6f, 300f, 4f, 600f, 5f, 520f)
+    slideThrough(5f, 100f, 5f, 120f, 5f, 200f, 6f, 300f, 4f, 600f, 5f, 520f)
     assertEquals(
       listOf("start", "LEFT -1>0", "LEFT 0>1", "LEFT 1>2", "LEFT chose 2"),
       events,
@@ -298,14 +298,14 @@ class EdgeSwipeTrackerTest {
   @Test
   fun menuGoesUpTheEdgeToo() {
     menus = mapOf(MenuEdge.RIGHT to 2)
-    slideThrough(295f, 700f, 295f, 680f, 295f, 300f)
+    slideThrough(295f, 700f, 295f, 680f, 295f, 590f, 295f, 300f)
     assertEquals(listOf("start", "RIGHT -1>1", "RIGHT 1>0", "RIGHT chose 0"), events)
   }
 
   @Test
   fun leavingTheEdgeLeavesTheMenuAndComingBackReturns() {
     menus = mapOf(MenuEdge.LEFT to 4)
-    slideThrough(5f, 100f, 5f, 130f, 60f, 130f, 120f, 130f, 20f, 140f, 120f, 150f)
+    slideThrough(5f, 100f, 5f, 210f, 60f, 210f, 120f, 210f, 20f, 220f, 120f, 230f)
     assertEquals(
       listOf("start", "LEFT -1>0", "LEFT 0>-1", "LEFT -1>0", "LEFT 0>-1", "LEFT chose -1"),
       events,
@@ -316,7 +316,7 @@ class EdgeSwipeTrackerTest {
   fun secondFingerCancelsTheMenu() {
     menus = mapOf(MenuEdge.LEFT to 4)
     touch(MotionEvent.ACTION_DOWN, 100f, 5f)
-    touch(MotionEvent.ACTION_MOVE, 130f, 5f)
+    touch(MotionEvent.ACTION_MOVE, 210f, 5f)
     owned.add(tracker.onMotionEvent(twoFingers(MotionEvent.ACTION_POINTER_DOWN), 300, 1000))
     touch(MotionEvent.ACTION_UP, 400f, 5f)
     assertEquals(listOf("start", "LEFT -1>0", "LEFT chose -1"), events)
@@ -356,6 +356,52 @@ class EdgeSwipeTrackerTest {
     menus = mapOf(MenuEdge.LEFT to 2)
     slideSideways(5f, 200f, 50f, 150f)
     assertEquals(listOf(Edge.LEFT_TOP to 1), ended)
+  }
+
+  @Test
+  fun menuStartsAtTheFirstStage() {
+    menus = mapOf(MenuEdge.LEFT to 4)
+    touch(MotionEvent.ACTION_DOWN, 300f, 5f)
+    touch(MotionEvent.ACTION_MOVE, 360f, 5f)
+    assertEquals(listOf<String>(), events)
+    touch(MotionEvent.ACTION_MOVE, 400f, 5f)
+    touch(MotionEvent.ACTION_UP, 400f, 5f)
+    assertEquals(listOf("start", "LEFT -1>1", "LEFT chose 1"), events)
+  }
+
+  @Test
+  fun slideInAtAnAngleFromAMenuEdgeIsStillAnEdgeGesture() {
+    menus = mapOf(MenuEdge.LEFT to 4)
+    // About 35 degrees up from the horizontal.
+    slideThrough(5f, 300f, 25f, 286f, 45f, 272f, 65f, 258f, 85f, 244f, 105f, 230f)
+    // And down, from a finger reported at the screen's edge at first.
+    slideThrough(0f, 700f, 0f, 705f, 25f, 714f, 45f, 728f, 65f, 742f, 85f, 756f, 105f, 770f)
+    assertEquals(listOf(Edge.LEFT_TOP to 1, Edge.LEFT_BOTTOM to 1), ended)
+    assertEquals(listOf("start", "0>1", "end 1", "start", "0>1", "end 1"), events)
+  }
+
+  @Test
+  fun smallDriftAlongAMenuEdgeIsLeftToTouchExploration() {
+    menus = mapOf(MenuEdge.LEFT to 4)
+    touch(MotionEvent.ACTION_DOWN, 500f, 10f)
+    touch(MotionEvent.ACTION_MOVE, 505f, 10f)
+    touch(MotionEvent.ACTION_MOVE, 510f, 10f)
+    touch(MotionEvent.ACTION_MOVE, 515f, 11f)
+    touch(MotionEvent.ACTION_MOVE, 520f, 11f)
+    time += 500
+    tracker.rejectIfStalled(time)
+    touch(MotionEvent.ACTION_MOVE, 522f, 11f)
+    touch(MotionEvent.ACTION_UP, 522f, 11f)
+    assertEquals(listOf<String>(), events)
+    assertEquals(listOf(false, false, false, false, false, false, false), owned)
+  }
+
+  @Test
+  fun fingerReportedAtTheScreenEdgeCanStillUseTheMenu() {
+    menus = mapOf(MenuEdge.LEFT to 4)
+    // The finger is reported at x 0 until it jumps in, partway along the edge.
+    slideThrough(0f, 300f, 0f, 320f, 0f, 340f, 25f, 360f, 26f, 420f)
+    assertEquals(listOf("start", "LEFT -1>1", "LEFT chose 1"), events)
   }
 
   @Test

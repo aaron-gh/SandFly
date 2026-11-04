@@ -48,11 +48,13 @@ import kotlin.math.hypot
  * left and right edges scroll only away from the corners, which belong to the top and bottom edges.
  *
  * A left or right edge for which [menuItemCount] gives items is a menu instead: once a slide up or
- * down it, away from the corners, has moved a slop, the slide owns the touch and goes through the
- * menu. The items divide the edge's length equally, from the top, and the item is the one level with
- * the finger. Moving more than [MENU_ZONE_FACTOR] edge zones away from the edge leaves the menu,
- * where lifting does nothing, and coming back returns to the items. Slides along that edge, and
- * scrolling along it, are not used, including from its corners.
+ * down it, away from the corners, has reached the first stage, the slide owns the touch and goes
+ * through the menu. Before that, a slide that moves away from the edge more than a slop, and more
+ * than [MAX_ALONG_SIDEWAYS_RATIO] for each pixel along it, is not the menu. The items divide the
+ * edge's length equally, from the top, and the item is the one level with the finger. Moving more
+ * than [MENU_ZONE_FACTOR] edge zones away from the edge leaves the menu, where lifting does
+ * nothing, and coming back returns to the items. Slides along that edge, and scrolling along it,
+ * are not used, including from its corners.
  *
  * A finger that lands partly off the screen is reported at the screen's edge until enough of it is
  * on the screen, so a slide can stay at the edge, drifting sideways, for its first 100 ms or so.
@@ -171,6 +173,9 @@ class EdgeSwipeTracker(
   private var startX = 0f
   private var startY = 0f
   private var startTime = 0L
+  // Where the menu measures movement away from the edge from: where the finger landed, or, for a
+  // finger reported at the screen's edge, where it is first reported off it.
+  private var menuStartX = 0f
   // Whether the finger has moved since it landed.
   private var moved = false
   private var stage = 0
@@ -351,6 +356,7 @@ class EdgeSwipeTracker(
     pointerId = event.getPointerId(0)
     startX = x
     startY = y
+    menuStartX = x
     startTime = event.eventTime
     state = State.POSSIBLE
     debugLog("possible: start=(${x.toInt()},${y.toInt()}) screen=${screenWidth}x$screenHeight")
@@ -438,6 +444,11 @@ class EdgeSwipeTracker(
     if (hypot(x - startX, y - startY) >= slopPx / STILL_SLOP_DIVISOR) {
       moved = true
     }
+    // A finger partly off the screen jumps in from the screen's edge once enough of it is on the
+    // screen; that jump is not movement away from the edge.
+    if (menuStartX < 1f || menuStartX > screenWidth - 2f) {
+      menuStartX = x
+    }
     var started: Candidate? = null
     val iterator = candidates.iterator()
     while (iterator.hasNext()) {
@@ -445,10 +456,17 @@ class EdgeSwipeTracker(
       val forward = forward(candidate.edge, x, y)
       val sideways = sideways(candidate.edge, x, y)
       val maxRatio = if (candidate.edge.along) MAX_ALONG_SIDEWAYS_RATIO else MAX_SIDEWAYS_RATIO
-      if (
-        forward < -slopPx ||
-          (sideways > slopPx * SIDEWAYS_SLOP_FACTOR && sideways > forward * maxRatio)
-      ) {
+      val wrongWay =
+        if (candidate.menu != null) {
+          // Without the allowance for a finger still reported at the edge, so that a slide in at
+          // an angle is not the menu.
+          val away = abs(x - menuStartX)
+          forward < -slopPx || (away > slopPx && away > forward * maxRatio)
+        } else {
+          forward < -slopPx ||
+            (sideways > slopPx * SIDEWAYS_SLOP_FACTOR && sideways > forward * maxRatio)
+        }
+      if (wrongWay) {
         debugLog(
           "${candidate.edge.name} rejected, wrong direction:" +
             " start=(${startX.toInt()},${startY.toInt()})" +
@@ -458,7 +476,7 @@ class EdgeSwipeTracker(
         continue
       }
       val firstStage =
-        if (candidate.scroll || candidate.menu != null) {
+        if (candidate.scroll) {
           slopPx
         } else {
           stageDistancesPx[candidate.stages.first() - 1]

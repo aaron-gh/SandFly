@@ -67,8 +67,9 @@ class EdgeMenuFragment : NotificationCodeFragment(R.string.title_pref_edge_menu_
       prefs.edit { putBoolean(switchKey, it) }
     }
     val category = screen.category(R.string.item_list_current)
+    val names = Commands.labels(context, items)
     items.forEachIndexed { index, command ->
-      category.addPreference(ItemRow(context, items, index, Commands.label(context, command) ?: command))
+      category.addPreference(ItemRow(context, items, index, names[index] ?: command))
     }
     if (items.size < EdgeMenus.MAX_ITEMS) {
       screen.action(getString(R.string.edge_menu_add_command)) {
@@ -137,6 +138,15 @@ class EdgeMenuFragment : NotificationCodeFragment(R.string.title_pref_edge_menu_
       super.onBindViewHolder(holder)
       // Rows are reused for other preferences, so every bind replaces all the actions.
       val row = holder.itemView
+      val changeText = getString(R.string.edge_menu_change_command)
+      ViewCompat.replaceAccessibilityAction(
+        row,
+        AccessibilityActionCompat(R.id.accessibility_custom_action_3, changeText),
+        changeText,
+      ) { _, _ ->
+        pickCommand(index + 1, name)
+        true
+      }
       setMoveActions(row, index, items.size) { move(items, index, it) }
       val removeText = getString(R.string.quick_settings_remove)
       ViewCompat.replaceAccessibilityAction(
