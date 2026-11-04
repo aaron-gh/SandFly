@@ -958,7 +958,9 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
     private const val SLOW_BUFFER_MS = 40
     // How long the audio thread waits for the engine's speech at a time, well within WRITE_STUCK_MS.
     private const val REST_MS = 100L
-    private const val IDLE_MS = 2_000
+    // How long the fast track plays silence after the last sound or speech before it pauses. Each
+    // moment it plays keeps the audio thread waking every few milliseconds and counts as playback.
+    private const val IDLE_MS = 250
     // While an app records, long enough for the audio already queued to be heard.
     private const val MICROPHONE_IDLE_MS = 100
     // How long the callback thread is kept with nothing to do.
