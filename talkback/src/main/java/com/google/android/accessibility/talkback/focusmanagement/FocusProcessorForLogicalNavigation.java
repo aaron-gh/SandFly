@@ -1549,7 +1549,7 @@ public class FocusProcessorForLogicalNavigation {
       if (trace) {
         Trace.beginSection("BuildTraversalStrategy");
       }
-      WindowNodePrefetcher.prefetch(rootNode, service.getPackageName());
+      WindowNodePrefetcher.prefetchWindow(rootNode, service.getPackageName());
       traversalStrategy =
           TraversalStrategyUtils.getTraversalStrategy(rootNode, focusFinder, searchDirection);
       if (trace) {
