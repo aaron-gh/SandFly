@@ -103,4 +103,10 @@
     <string name="pass_keys_to_app_on">Passing keys to %1$s</string>
     <!-- Spoken when keys pressed without the SandFly key go to SandFly again in the app shown. %1$s is the app name. [CHAR LIMIT=NONE] -->
     <string name="pass_keys_to_app_off">Not passing keys to %1$s</string>
+    <!-- Name of a command that turns SandFly's handling of keyboard keys off, so that every key, SandFly key shortcuts included, goes to Android and the app shown, except the keys of this command; or turns it back on. SandFly is the app name. [CHAR LIMIT=60] -->
+    <string name="keycombo_menu_toggle_keyboard_input">Turn SandFly keyboard input on or off</string>
+    <!-- Spoken when every key from now on goes to Android and the app shown, except the keys that turn SandFly keyboard input on again. SandFly is the app name. [CHAR LIMIT=NONE] -->
+    <string name="keyboard_input_off">SandFly keyboard input off</string>
+    <!-- Spoken when SandFly handles keyboard keys again. SandFly is the app name. [CHAR LIMIT=NONE] -->
+    <string name="keyboard_input_on">SandFly keyboard input on</string>
 </resources>

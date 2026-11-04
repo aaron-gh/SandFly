@@ -125,6 +125,9 @@ object VoiceOverKeymap : KeymapDefaults() {
       put(R.string.keycombo_shortcut_global_show_learn_mode_page, vo(NONE, KeyEvent.KEYCODE_K))
       put(R.string.keycombo_shortcut_other_show_tutorial, vo(SHIFT, KeyEvent.KEYCODE_K))
 
+      // Every key to Android, or to SandFly again. VO + Shift + K is the tutorial.
+      put(R.string.keycombo_shortcut_toggle_keyboard_input, vo(SHIFT, KeyEvent.KEYCODE_SEMICOLON))
+
       // Two keys one after the other, as in the SandFly keymap.
       put(R.string.keycombo_shortcut_other_read_current_url, sequence(KeyEvent.KEYCODE_R, KeyEvent.KEYCODE_U))
       put(R.string.keycombo_shortcut_global_screen_overview, sequence(KeyEvent.KEYCODE_R, KeyEvent.KEYCODE_S))

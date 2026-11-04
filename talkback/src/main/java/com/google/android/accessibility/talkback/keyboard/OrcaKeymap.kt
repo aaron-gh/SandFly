@@ -72,6 +72,8 @@ object OrcaKeymap : KeymapDefaults() {
         sandFly(NONE, KeyEvent.KEYCODE_DEL),
       )
       put(R.string.keycombo_shortcut_toggle_pass_keys_to_app, sandFly(SHIFT, KeyEvent.KEYCODE_A))
+      // Every key to Android, or to SandFly again. Alt + Shift + K is the link list.
+      put(R.string.keycombo_shortcut_toggle_keyboard_input, sandFly(SHIFT, KeyEvent.KEYCODE_SEMICOLON))
 
       put(R.string.keycombo_shortcut_other_toggle_browse_mode_extra, sandFly(NONE, KeyEvent.KEYCODE_A))
       put(R.string.keycombo_shortcut_other_show_heading_list, browse(ALT or SHIFT, KeyEvent.KEYCODE_H))

@@ -349,4 +349,61 @@ class SandFlyKeyTest {
       )
     assertEquals("Meta twice", manager.getKeyComboStringRepresentation(combo))
   }
+
+  @Test
+  fun keyboardInputOffPassesEveryKeyExceptItsToggle() {
+    val manager = manager(Keymap.SANDFLY, SandFlyKey.INSERT)
+    manager.toggleKeyboardInput()
+    assertTrue(manager.isKeyboardInputOff)
+
+    // The SandFly key and its shortcuts go to the app.
+    assertFalse(manager.down(KeyEvent.KEYCODE_INSERT))
+    assertFalse(manager.down(KeyEvent.KEYCODE_DPAD_RIGHT))
+    assertFalse(manager.up(KeyEvent.KEYCODE_DPAD_RIGHT))
+    assertFalse(manager.up(KeyEvent.KEYCODE_INSERT))
+    assertEquals(emptyList<String?>(), keys)
+
+    // SandFly key + Shift + K turns keyboard input on; the keys pressed before it go to the app.
+    assertFalse(manager.down(KeyEvent.KEYCODE_INSERT))
+    assertFalse(manager.down(KeyEvent.KEYCODE_SHIFT_LEFT, KeyEvent.META_SHIFT_ON))
+    assertTrue(manager.down(KeyEvent.KEYCODE_K, KeyEvent.META_SHIFT_ON))
+    assertFalse(manager.isKeyboardInputOff)
+    assertTrue(manager.up(KeyEvent.KEYCODE_K, KeyEvent.META_SHIFT_ON))
+    assertFalse(manager.up(KeyEvent.KEYCODE_SHIFT_LEFT))
+    assertFalse(manager.up(KeyEvent.KEYCODE_INSERT))
+
+    assertTrue(manager.down(KeyEvent.KEYCODE_INSERT))
+    assertTrue(manager.down(KeyEvent.KEYCODE_DPAD_RIGHT))
+    manager.up(KeyEvent.KEYCODE_DPAD_RIGHT)
+    assertTrue(manager.up(KeyEvent.KEYCODE_INSERT))
+    assertEquals(listOf<String?>("Insert + Arrow Right"), keys)
+  }
+
+  @Test
+  fun keysHeldWhenKeyboardInputTurnsOffAreReleasedWhereTheyWerePressed() {
+    val manager = manager(Keymap.SANDFLY, SandFlyKey.INSERT)
+    assertTrue(manager.down(KeyEvent.KEYCODE_INSERT))
+    manager.toggleKeyboardInput()
+    assertTrue(manager.up(KeyEvent.KEYCODE_INSERT))
+    // The next press goes to the app.
+    assertFalse(manager.down(KeyEvent.KEYCODE_INSERT))
+    manager.toggleKeyboardInput()
+    assertFalse(manager.isKeyboardInputOff)
+    assertFalse(manager.up(KeyEvent.KEYCODE_INSERT))
+  }
+
+  @Test
+  fun keyboardInputOffWithMetaPassesMetaShortcuts() {
+    val manager = manager(Keymap.SANDFLY, SandFlyKey.META)
+    manager.toggleKeyboardInput()
+    assertFalse(manager.down(KeyEvent.KEYCODE_META_LEFT, KeyEvent.META_META_ON))
+    assertFalse(manager.down(KeyEvent.KEYCODE_DPAD_RIGHT, KeyEvent.META_META_ON))
+    assertFalse(manager.up(KeyEvent.KEYCODE_DPAD_RIGHT, KeyEvent.META_META_ON))
+    assertFalse(manager.up(KeyEvent.KEYCODE_META_LEFT))
+    assertTrue(
+      manager.down(KeyEvent.KEYCODE_K, KeyEvent.META_META_ON or KeyEvent.META_SHIFT_ON)
+    )
+    assertFalse(manager.isKeyboardInputOff)
+    assertEquals(emptyList<String?>(), keys)
+  }
 }

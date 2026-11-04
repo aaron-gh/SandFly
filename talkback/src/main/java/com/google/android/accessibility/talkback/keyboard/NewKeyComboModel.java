@@ -222,6 +222,15 @@ public class NewKeyComboModel implements KeyComboModel {
           NO_MODIFIER, NO_PREFIX_KEY_CODE, KeyEvent.KEYCODE_SPACE, /* triggerModifierUsed= */ true);
     }
 
+    // Every key goes to Android, or to SandFly again.
+    if (key.equals(context.getString(R.string.keycombo_shortcut_toggle_keyboard_input))) {
+      return new KeyCombo(
+          KeyEvent.META_SHIFT_ON,
+          NO_PREFIX_KEY_CODE,
+          KeyEvent.KEYCODE_K,
+          /* triggerModifierUsed= */ true);
+    }
+
     // Browse mode turns on and off with the SandFly key pressed twice.
     if (key.equals(context.getString(R.string.keycombo_shortcut_other_toggle_browse_mode_extra))) {
       return KeyCombo.sandFlyKeyPressedTwice();
@@ -1612,6 +1621,7 @@ public class NewKeyComboModel implements KeyComboModel {
     addKeyCombo(context.getString(R.string.keycombo_shortcut_review_cursor_off));
     addKeyCombo(context.getString(R.string.keycombo_shortcut_recognize_screen_text));
     addKeyCombo(context.getString(R.string.keycombo_shortcut_toggle_pass_keys_to_app));
+    addKeyCombo(context.getString(R.string.keycombo_shortcut_toggle_keyboard_input));
   }
 
   /**

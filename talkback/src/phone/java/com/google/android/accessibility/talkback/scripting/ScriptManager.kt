@@ -30,6 +30,7 @@ import com.google.android.accessibility.talkback.focusmanagement.TraversalTreeCa
 import com.google.android.accessibility.talkback.translation.Translator
 import com.google.android.accessibility.utils.Role
 import com.google.android.libraries.accessibility.utils.log.LogUtils
+import java.util.concurrent.ConcurrentHashMap
 import java.util.concurrent.CountDownLatch
 import java.util.concurrent.TimeUnit
 import java.util.concurrent.atomic.AtomicBoolean
@@ -74,6 +75,8 @@ class ScriptManager(
   private var layerTime = 0L
   private var lastApp: JSONObject? = null
   private var rulesSource: List<Pair<InstalledScript, List<ScriptRule>>> = emptyList()
+  /** The scripts that asked for every key to go to Android, with sf.keys.passAll. */
+  private val keyPassers: MutableSet<String> = ConcurrentHashMap.newKeySet()
 
   @Volatile private var closed = false
   // A priority hook must not jump ahead of an app change or pending script/permission update.
@@ -293,6 +296,15 @@ class ScriptManager(
         }
       }
 
+  override fun passesAllKeys(): Boolean = keyPassers.isNotEmpty() && !activation.inBacktalk
+
+  override fun stopPassingAllKeys() = keyPassers.clear()
+
+  /** Makes every key go to Android while script [id] is loaded, or stops it. */
+  fun setPassAllKeys(id: String, on: Boolean) {
+    if (on) keyPassers.add(id) else keyPassers.remove(id)
+  }
+
   override fun itemActions(node: AccessibilityNodeInfoCompat): List<ScriptItemAction> =
     if (activation.inBacktalk) emptyList() else actions.of(node, rules)
 
@@ -306,6 +318,7 @@ class ScriptManager(
 
   override fun shutdown() {
     closed = true
+    keyPassers.clear()
     // It holds a thread and, once used, the on-device translation models.
     if (translatorLazy.isInitialized()) translator.shutdown()
     store.removeListener(this)
@@ -454,6 +467,7 @@ class ScriptManager(
 
   private fun failLoading(runtime: ScriptRuntime, message: String, interrupted: Boolean) {
     runtime.close()
+    keyPassers.remove(runtime.id)
     onScriptError(runtime, "Loading: $message", interrupted)
   }
 
@@ -463,6 +477,7 @@ class ScriptManager(
     }
     runtime.close()
     loaded.remove(runtime.id)
+    keyPassers.remove(runtime.id)
   }
 
   fun onRulesChanged() = updateRules()

@@ -98,6 +98,7 @@ object NvdaKeymap : KeymapDefaults() {
         sandFly(NONE, KeyEvent.KEYCODE_F2),
       )
       put(R.string.keycombo_shortcut_toggle_pass_keys_to_app, sandFly(SHIFT, KeyEvent.KEYCODE_SPACE))
+      put(R.string.keycombo_shortcut_toggle_keyboard_input, sandFly(SHIFT, KeyEvent.KEYCODE_K))
 
       // Browse mode.
       put(R.string.keycombo_shortcut_other_toggle_browse_mode_extra, sandFly(NONE, KeyEvent.KEYCODE_SPACE))

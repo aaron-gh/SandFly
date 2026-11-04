@@ -109,6 +109,21 @@ class LuaEngineTest {
   }
 
   @Test
+  fun passAllAsksForEveryKeyOrStops() {
+    run(
+      """
+      sf.keys.passAll()
+      sf.keys.passAll(true)
+      sf.keys.passAll(false)
+      """
+    )
+    assertEquals(
+      listOf(true, true, false),
+      host.calls.filter { it.first == "keys.passAll" }.map { it.second!!.getBoolean("on") },
+    )
+  }
+
+  @Test
   fun compiledLuaIsRefused() {
     run(
       """
