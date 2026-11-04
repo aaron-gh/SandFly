@@ -93,6 +93,9 @@ object TraversalTreeCache {
   private var hits = 0
   private var misses = 0
 
+  /** The window whose incomplete order was last read again, until an event changes that window. */
+  private var rereadWindowId = NO_WINDOW_ID
+
   /** Where the last navigation started, so a removed node does not send the user to the top. */
   private var lastPivotTop = Int.MIN_VALUE
   private var lastPivotWindowId = NO_WINDOW_ID
@@ -212,9 +215,24 @@ object TraversalTreeCache {
     firstIgnoredChangeTime = 0L
   }
 
+  /**
+   * Whether an incomplete order of window [windowId] may be read from the app again with one bulk
+   * request now. Allowed once until an event or a node action can have changed that window, so that
+   * a window that stays incomplete is not read in bulk on every swipe.
+   */
+  @JvmStatic
+  fun startReread(windowId: Int): Boolean {
+    if (windowId == rereadWindowId) {
+      return false
+    }
+    rereadWindowId = windowId
+    return true
+  }
+
   /** Throws away the saved order. */
   @JvmStatic
   fun clear(reason: String) {
+    rereadWindowId = NO_WINDOW_ID
     if (strategy == null) {
       return
     }
@@ -243,24 +261,20 @@ object TraversalTreeCache {
   /** Throws away the saved order if [event] can change its window. */
   @JvmStatic
   fun onAccessibilityEvent(event: AccessibilityEvent) {
-    val savedRoot = root ?: return
     val type = event.eventType
     if (type and IGNORED_EVENT_TYPES != 0) {
       return
     }
-    val windowId = event.windowId
     if (
-      type == AccessibilityEvent.TYPE_WINDOWS_CHANGED ||
-        type == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED ||
-        windowId == NO_WINDOW_ID ||
-        windowId == savedRoot.windowId
+      rereadWindowId != NO_WINDOW_ID &&
+        affectsWindow(event, rereadWindowId) &&
+        !isNonStructural(event)
     ) {
-      val changes = event.contentChangeTypes
-      if (
-        type == AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED &&
-          changes != 0 &&
-          changes and NON_STRUCTURAL_CHANGES.inv() == 0
-      ) {
+      rereadWindowId = NO_WINDOW_ID
+    }
+    val savedRoot = root ?: return
+    if (affectsWindow(event, savedRoot.windowId)) {
+      if (isNonStructural(event)) {
         if (firstIgnoredChangeTime == 0L) {
           firstIgnoredChangeTime = SystemClock.uptimeMillis()
         }
@@ -268,11 +282,28 @@ object TraversalTreeCache {
       }
       clear(
         if (LogUtils.shouldLog(Log.DEBUG)) {
-          AccessibilityEvent.eventTypeToString(type) + " 0x" + Integer.toHexString(changes)
+          AccessibilityEvent.eventTypeToString(type) +
+            " 0x" +
+            Integer.toHexString(event.contentChangeTypes)
         } else {
           ""
         }
       )
     }
+  }
+
+  private fun affectsWindow(event: AccessibilityEvent, windowId: Int): Boolean {
+    val type = event.eventType
+    return type == AccessibilityEvent.TYPE_WINDOWS_CHANGED ||
+      type == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED ||
+      event.windowId == NO_WINDOW_ID ||
+      event.windowId == windowId
+  }
+
+  private fun isNonStructural(event: AccessibilityEvent): Boolean {
+    val changes = event.contentChangeTypes
+    return event.eventType == AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED &&
+      changes != 0 &&
+      changes and NON_STRUCTURAL_CHANGES.inv() == 0
   }
 }

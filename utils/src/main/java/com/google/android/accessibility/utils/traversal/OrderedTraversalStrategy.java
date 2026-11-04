@@ -102,6 +102,14 @@ public class OrderedTraversalStrategy implements TraversalStrategy {
     return controller.containsNode(node);
   }
 
+  /**
+   * Whether a node in the order lists children of which none could be read from the app, so that
+   * the order is incomplete.
+   */
+  public boolean missesChildren() {
+    return controller.missesChildren();
+  }
+
   /** Dumps the traversal order tree. */
   public List<AccessibilityNodeInfoCompat> dumpTree() {
     return controller.dumpTree();
