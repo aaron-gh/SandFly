@@ -1270,6 +1270,18 @@ public class TalkBackService extends AccessibilityServiceCompat
     } else if (eventType == AccessibilityEvent.TYPE_TOUCH_INTERACTION_END) {
       isTouchInteracting = false;
       NotificationReader.onTouchEnded();
+    } else if (eventType == AccessibilityEvent.TYPE_GESTURE_DETECTION_START
+        && shouldUseTalkbackGestureDetection()
+        && displayIdToTouchInteractionMonitors.get(event.getDisplayId()) != null) {
+      // Android sends this only while it detects gestures itself. Whether a service detects
+      // gestures is one value per display, and another screen reader that turns off after SandFly
+      // set up its own detection, as in a quick switch, clears it: edge gestures, rotation, swipe
+      // and hold and taps on the focus then stop working. The current touch stays with Android.
+      LogUtils.w(
+          TAG,
+          "Android detects gestures on display %d; setting up gesture detection again",
+          event.getDisplayId());
+      refreshGestureDetection();
     } else if (eventType == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED
         && (event.getContentChangeTypes() & AccessibilityEvent.CONTENT_CHANGE_TYPE_PANE_APPEARED)
             != 0
