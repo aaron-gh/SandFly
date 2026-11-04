@@ -20,6 +20,7 @@ import android.graphics.Rect;
 import android.text.TextUtils;
 import androidx.annotation.VisibleForTesting;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat.AccessibilityActionCompat;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.Role;
 import com.google.android.accessibility.utils.WebInterfaceUtils;
@@ -57,6 +58,44 @@ final class WebScrollFocus {
   /** Whether a scroll from {@code node} can concern focus in web content. Asks the app nothing. */
   static boolean isWebContent(@Nullable AccessibilityNodeInfoCompat node) {
     return WebInterfaceUtils.supportsWebActions(node) || Role.getRole(node) == Role.ROLE_WEB_VIEW;
+  }
+
+  /**
+   * Whether {@code node} scrolls only sideways, as a strip of category tabs does. Chrome gives a
+   * scrollable node the directions it can scroll in as actions. Asks the app nothing.
+   */
+  static boolean scrollsOnlySideways(@Nullable AccessibilityNodeInfoCompat node) {
+    if (node == null) {
+      return false;
+    }
+    boolean sideways = false;
+    for (AccessibilityActionCompat action : node.getActionList()) {
+      int id = action.getId();
+      if (id == AccessibilityActionCompat.ACTION_SCROLL_UP.getId()
+          || id == AccessibilityActionCompat.ACTION_SCROLL_DOWN.getId()) {
+        return false;
+      }
+      sideways |=
+          id == AccessibilityActionCompat.ACTION_SCROLL_LEFT.getId()
+              || id == AccessibilityActionCompat.ACTION_SCROLL_RIGHT.getId();
+    }
+    return sideways;
+  }
+
+  /**
+   * Returns the position in {@code focusAndAncestors} of the outermost node below {@code root}
+   * that scrolls only sideways, or -1. The page scrolls such a strip of category tabs itself to
+   * follow the content that the user scrolls, so the focus in it is no guide to where that content
+   * is.
+   */
+  static int outermostSidewaysStrip(
+      List<AccessibilityNodeInfoCompat> focusAndAncestors, AccessibilityNodeInfoCompat root) {
+    for (int i = focusAndAncestors.indexOf(root) - 1; i >= 0; i--) {
+      if (scrollsOnlySideways(focusAndAncestors.get(i))) {
+        return i;
+      }
+    }
+    return -1;
   }
 
   /**
