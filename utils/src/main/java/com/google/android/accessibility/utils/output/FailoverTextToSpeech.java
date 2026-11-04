@@ -1685,7 +1685,11 @@ public class FailoverTextToSpeech {
         // Making speech has no queue mode: it always waits for the engine's earlier speech.
         tts.stop();
       }
-      unplayedByEngine.add(utteranceId);
+      // Text with no letters or digits, such as a line break, may have no audio at all, which
+      // leaves nothing to say again.
+      if (hasLetterOrDigit(text)) {
+        unplayedByEngine.add(utteranceId);
+      }
       result = tts.synthesizeToFile(text, unplayed, DISCARDED_AUDIO, utteranceId);
       if (result != TextToSpeech.SUCCESS) {
         unplayedByEngine.remove(utteranceId);
@@ -1703,6 +1707,16 @@ public class FailoverTextToSpeech {
       return tts.speak(text, queueMode, bundle, utteranceId);
     }
     return result;
+  }
+
+  /** Whether {@code text} has a letter or a digit. */
+  private static boolean hasLetterOrDigit(CharSequence text) {
+    for (int i = 0; i < text.length(); i++) {
+      if (Character.isLetterOrDigit(text.charAt(i))) {
+        return true;
+      }
+    }
+    return false;
   }
 
   /** Whether a phone or voice call has the audio mode. */
