@@ -569,6 +569,16 @@ public class AccessibilityFocusInterpreter
     focusProcessorForTapAndTouchExploration.setHoldToCancelMs(ms);
   }
 
+  /** Sets whether a tap that lifts before the item under it is focused activates the item. */
+  public void setTapToActivateEnabled(boolean enabled) {
+    focusProcessorForTapAndTouchExploration.setTapToActivateEnabled(enabled);
+  }
+
+  /** Called when touch exploration starts after the finger of the touch lifted: a tap. */
+  public void onTapExploration() {
+    focusProcessorForTapAndTouchExploration.onTapExploration();
+  }
+
   /** Sets what plays when holding or the edge of the screen cancels an activation. */
   public void setLiftCancelledFeedback(@Nullable Runnable feedback) {
     focusProcessorForTapAndTouchExploration.setLiftCancelledFeedback(feedback);

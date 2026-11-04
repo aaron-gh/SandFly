@@ -216,6 +216,14 @@ public class FocusProcessorForTapAndTouchExploration {
   private boolean heldToCancel = false;
   // Plays the feedback of an activation cancelled by holding or by the edge of the screen.
   @Nullable private Runnable liftCancelledFeedback;
+
+  // Whether a tap that lifts before the item under it is focused activates the item. The setting is
+  // Tap to activate.
+  private boolean tapToActivateEnabled = false;
+  // Whether touch exploration of the touch in progress started after its finger lifted: a tap.
+  private boolean isTapExploration = false;
+  // The item a tap activates when the touch ends, found by that touch exploration.
+  @Nullable private AccessibilityNodeInfoCompat tapToActivateNode;
   private final Context context;
   private final TalkBackAnalytics analytics;
   private final boolean splitTapEverywhere;
@@ -287,6 +295,7 @@ public class FocusProcessorForTapAndTouchExploration {
     reset();
     fingerAtScreenEdge = false;
     leftScreenEdgeTimeMs = Long.MAX_VALUE;
+    isTapExploration = false;
 
     touchInteractionStartTime = SystemClock.uptimeMillis();
 
@@ -307,6 +316,7 @@ public class FocusProcessorForTapAndTouchExploration {
 
     hasHoveredEnterNode = false;
     tapToTypeKey = null;
+    tapToActivateNode = null;
 
     // Everything is possible at the beginning.
     mayBeRefocusAction = true;
@@ -346,6 +356,19 @@ public class FocusProcessorForTapAndTouchExploration {
       interpretationReceiver.input(
           eventId, /* event= */ null, Interpretation.Touch.create(TOUCH_START));
     }
+    if (tapToActivateEnabled
+        && !hasHoveredEnterNode
+        && touchedFocusableNode != null
+        && isTapExploration
+        && !(isEnableLiftToType() && supportsLiftToType(touchedFocusableNode))) {
+      // Touch exploration started after the finger lifted, so the touch was a tap: the item is
+      // activated when the touch ends, which follows at once, without being focused first.
+      hasHoveredEnterNode = true;
+      tapToActivateNode = touchedFocusableNode;
+      lastFocusableNodeBeingTouched = touchedFocusableNode;
+      return false;
+    }
+    tapToActivateNode = null;
     boolean result;
     if (isTapToType
         && !hasHoveredEnterNode
@@ -517,6 +540,11 @@ public class FocusProcessorForTapAndTouchExploration {
       LogUtils.v(TAG, "Not activating: the finger lifted at the edge of the screen");
     } else if (liftActivates && heldToCancel) {
       LogUtils.v(TAG, "Not activating: the finger was held on the item to cancel");
+    } else if (tapToActivateNode != null) {
+      // Tap to activate.
+      result =
+          interpretationReceiver.input(
+              eventId, /* event= */ null, Interpretation.Touch.create(LIFT, tapToActivateNode));
     } else if (liftActivates) {
       // Perform click action for lift-to-type mode.
       analytics.onGesture(GESTURE_LIFT_TO_TYPE);
@@ -540,6 +568,7 @@ public class FocusProcessorForTapAndTouchExploration {
 
     reset();
     isTapToType = false;
+    isTapExploration = false;
     return result;
   }
 
@@ -588,6 +617,19 @@ public class FocusProcessorForTapAndTouchExploration {
   /** Sets what plays when holding or the edge of the screen cancels an activation. */
   public void setLiftCancelledFeedback(@Nullable Runnable feedback) {
     liftCancelledFeedback = feedback;
+  }
+
+  /** Sets whether a tap that lifts before the item under it is focused activates the item. */
+  public void setTapToActivateEnabled(boolean enabled) {
+    tapToActivateEnabled = enabled;
+  }
+
+  /**
+   * Called when touch exploration of the touch in progress starts after its finger lifted, so the
+   * touch was a tap, before touch exploration finds the item under it.
+   */
+  public void onTapExploration() {
+    isTapExploration = true;
   }
 
   /**

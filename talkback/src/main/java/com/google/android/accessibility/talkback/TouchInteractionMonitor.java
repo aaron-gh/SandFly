@@ -1998,6 +1998,10 @@ public class TouchInteractionMonitor
     }
     try {
       if (isStateTransitionAllowed()) {
+        if (!fingerDown && state == STATE_TOUCH_INTERACTING) {
+          // The finger lifted before touch exploration: the touch is a tap.
+          service.onTapExploration();
+        }
         trackStateChangeRequest(STATE_TOUCH_EXPLORING, caller);
         touchExplorationModeFailureReporter.onRequestTouchExploration();
         controller.requestTouchExploration();

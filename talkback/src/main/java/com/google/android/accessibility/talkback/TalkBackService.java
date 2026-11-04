@@ -3710,6 +3710,13 @@ public class TalkBackService extends AccessibilityServiceCompat
         }
       };
 
+  /** Called when touch exploration starts after the finger of the touch lifted: a tap. */
+  public void onTapExploration() {
+    if (accessibilityFocusInterpreter != null) {
+      accessibilityFocusInterpreter.onTapExploration();
+    }
+  }
+
   /** Shows the strip at the bottom of the screen where lifting activates nothing, while needed. */
   private void updateLiftCancelStrip() {
     boolean shown =
@@ -3847,6 +3854,8 @@ public class TalkBackService extends AccessibilityServiceCompat
             R.string.pref_touch_stops_speech_key, R.bool.pref_touch_stops_speech_default));
     updateLiftCancelStrip();
     if (accessibilityFocusInterpreter != null) {
+      accessibilityFocusInterpreter.setTapToActivateEnabled(
+          getBooleanPref(R.string.pref_tap_to_activate_key, R.bool.pref_tap_to_activate_default));
       accessibilityFocusInterpreter.setHoldToCancelMs(
           SharedPreferencesUtils.getIntFromStringPref(
               prefs, res, R.string.pref_hold_to_cancel_key, R.string.pref_hold_to_cancel_default));
