@@ -26,6 +26,7 @@ import com.google.android.accessibility.utils.FocusFinder;
 import com.google.android.accessibility.utils.WebInterfaceUtils;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import java.util.Objects;
+import java.util.concurrent.atomic.AtomicBoolean;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
@@ -119,12 +120,12 @@ public class FocusActionRecord {
    * the focused node's ancestors.
    */
   public @NonNull NodePathDescription getNodePathDescription() {
-    return getNodePathDescription(Deadline.afterSearchTimeLimit());
+    return getNodePathDescription(Deadline.none());
   }
 
   /**
    * Like {@link #getNodePathDescription()}, but stops asking the app for siblings at {@code
-   * deadline}.
+   * deadline}. The positions not read by then are read by the next call.
    */
   private @NonNull NodePathDescription getNodePathDescription(@NonNull Deadline deadline) {
     return (siblingContext == null) ? nodePathDescription : siblingContext.get(deadline);
@@ -180,15 +181,24 @@ public class FocusActionRecord {
    *   <li>Node path score match
    * </ol>
    *
+   * <p>With {@code timeLimited}, reading the positions of the path's ancestors among their siblings
+   * and the node path search each stop after {@link NodePathDescription#SEARCH_TIME_LIMIT_MS}.
+   *
    * @param root The root node of the current tree.
    * @param focusFinder The focus finder to find the focusable node.
    * @param focusActionRecord The focus action record to get the focusable node from.
+   * @param timeLimited Whether reading the siblings and the node path search have a time limit.
+   * @param stopped Set to whether the node path search, or the reading of the siblings for it,
+   *     stopped at its time limit.
    * @return The focusable node from the focus record.
    */
-  public static @Nullable AccessibilityNodeInfoCompat getFocusableNodeFromFocusRecord(
+  static @Nullable AccessibilityNodeInfoCompat getFocusableNodeFromFocusRecord(
       @Nullable AccessibilityNodeInfoCompat root,
       @NonNull FocusFinder focusFinder,
-      @NonNull FocusActionRecord focusActionRecord) {
+      @NonNull FocusActionRecord focusActionRecord,
+      boolean timeLimited,
+      @NonNull AtomicBoolean stopped) {
+    stopped.set(false);
     AccessibilityNodeInfoCompat lastFocusedNode = focusActionRecord.getFocusedNode();
 
     // 1. Unique id match
@@ -229,15 +239,18 @@ public class FocusActionRecord {
     if (root == null) {
       return null;
     }
-    // Reading the siblings of the path and searching for it share one time limit.
-    Deadline deadline = Deadline.afterSearchTimeLimit();
+    // Reading the siblings of the path, done once per record, and searching for it each have their
+    // own time limit.
+    Deadline siblingDeadline = timeLimited ? Deadline.afterSearchTimeLimit() : Deadline.none();
     @Nullable NodePathDescription nodePath =
-        focusActionRecord.getNodePathDescription(deadline); // Not owner
+        focusActionRecord.getNodePathDescription(siblingDeadline); // Not owner
     if (nodePath == null) {
       return null;
     }
+    Deadline searchDeadline = timeLimited ? Deadline.afterSearchTimeLimit() : Deadline.none();
     @Nullable AccessibilityNodeInfoCompat nodeAtSamePosition =
-        nodePath.findNodeToRefocus(root, focusFinder, deadline);
+        nodePath.findNodeToRefocus(root, focusFinder, searchDeadline);
+    stopped.set(siblingDeadline.stopped() || searchDeadline.stopped());
     if ((nodeAtSamePosition != null)
         && AccessibilityNodeInfoUtils.shouldFocusNode(nodeAtSamePosition)) {
       LogUtils.d(
@@ -249,27 +262,36 @@ public class FocusActionRecord {
 
   /**
    * A node path completed with positions among siblings the first time it is needed. If reading
-   * them fails, the path without them is kept, and is not read again. If reading them reaches the
-   * deadline, the ancestors not yet read are kept without them, and are not read again.
+   * them fails, the path as read so far is kept, and is not read again. If reading them reaches the
+   * deadline, the next call reads the ancestors not yet read.
    */
   private static final class PathWithSiblingContext {
-    private final @NonNull NodePathDescription withoutSiblingContext;
-    private @Nullable NodePathDescription completed;
+    /** The path, with the positions read so far. Copied for callers until all are read. */
+    private final @NonNull NodePathDescription path;
+
+    /** The index in {@link #path} of the first ancestor whose position is not read yet. */
+    private int nextToRead = 1;
+
+    private boolean completed = false;
 
     PathWithSiblingContext(@NonNull NodePathDescription withoutSiblingContext) {
-      this.withoutSiblingContext = withoutSiblingContext;
+      this.path = new NodePathDescription(withoutSiblingContext);
     }
 
     synchronized @NonNull NodePathDescription get(@NonNull Deadline deadline) {
-      if (completed == null) {
+      if (!completed) {
         try {
-          completed = withoutSiblingContext.withSiblingContext(deadline);
+          nextToRead = path.addSiblingContext(nextToRead, deadline);
+          completed = (nextToRead >= path.size());
         } catch (RuntimeException e) {
           LogUtils.w(TAG, "Cannot read the siblings of the focus path: %s", e);
-          completed = withoutSiblingContext;
+          completed = true;
+        }
+        if (!completed) {
+          return new NodePathDescription(path);
         }
       }
-      return completed;
+      return path;
     }
   }
 

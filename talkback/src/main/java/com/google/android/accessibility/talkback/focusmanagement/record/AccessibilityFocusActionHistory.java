@@ -40,6 +40,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.concurrent.atomic.AtomicBoolean;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
@@ -94,7 +95,9 @@ public final class AccessibilityFocusActionHistory {
     /**
      * Returns {@link FocusActionRecord#getFocusableNodeFromFocusRecord}, or null without a search
      * if the record's node was not found in the window of {@code root} since {@link
-     * AccessibilityFocusActionHistory#startRefocus}.
+     * AccessibilityFocusActionHistory#startRefocus}. The search has a time limit only between
+     * {@link AccessibilityFocusActionHistory#startRefocus} and {@link
+     * AccessibilityFocusActionHistory#endRefocus}.
      */
     public @Nullable AccessibilityNodeInfoCompat getFocusableNodeFromFocusRecord(
         @Nullable AccessibilityNodeInfoCompat root,
@@ -271,9 +274,11 @@ public final class AccessibilityFocusActionHistory {
   }
 
   /**
-   * Starts a refocus after the screen changed. Until {@link #endRefocus}, a record whose node is not
-   * found in a window is not sought in that window again: restoring focus and its failover both
-   * seek the last record's node, and each search asks the app for many nodes.
+   * Starts a refocus after the screen changed. Until {@link #endRefocus}, the search for a record's
+   * node has a time limit, and a record whose node is not found in a window is not sought in that
+   * window again: restoring focus and its failover both seek the last record's node, and each
+   * search asks the app for many nodes. A search stopped at its time limit is not counted as not
+   * found.
    */
   public void startRefocus() {
     refocusDepth++;
@@ -300,9 +305,11 @@ public final class AccessibilityFocusActionHistory {
       LogUtils.d(TAG, "Focus record not sought again in window %d", windowIdNotFound);
       return null;
     }
+    AtomicBoolean stopped = new AtomicBoolean(false);
     @Nullable AccessibilityNodeInfoCompat node =
-        FocusActionRecord.getFocusableNodeFromFocusRecord(root, focusFinder, record);
-    if (refocusing && (node == null)) {
+        FocusActionRecord.getFocusableNodeFromFocusRecord(
+            root, focusFinder, record, /* timeLimited= */ refocusing, stopped);
+    if (refocusing && (node == null) && !stopped.get()) {
       recordNotFound = record;
       windowIdNotFound = root.getWindowId();
     }

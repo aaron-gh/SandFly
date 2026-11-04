@@ -35,7 +35,8 @@ import org.robolectric.util.ReflectionHelpers
 
 /**
  * Finding the node to refocus after the screen changed asks the app for nodes on the main thread,
- * so it is done once per change, each ancestor is asked for once, and the search has a time limit.
+ * so it is done once per change, each ancestor is asked for once, and the search after a content
+ * change has a time limit.
  */
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [35])
@@ -99,6 +100,29 @@ class RefocusSearchTest {
   }
 
   private val focusFinder = FocusFinder(null)
+
+  private fun newHistory() = AccessibilityFocusActionHistory(RuntimeEnvironment.getApplication())
+
+  /** Seeks [record] in [root] between startRefocus and endRefocus, as after a content change. */
+  private fun seekDuringRefocus(
+    history: AccessibilityFocusActionHistory,
+    root: AccessibilityNodeInfoCompat,
+    record: FocusActionRecord,
+  ): AccessibilityNodeInfoCompat? {
+    history.startRefocus()
+    try {
+      return history.reader.getFocusableNodeFromFocusRecord(root, focusFinder, record)
+    } finally {
+      history.endRefocus()
+    }
+  }
+
+  /** Returns [path] with the ancestors' positions read until [deadline]. */
+  private fun withSiblingContext(
+    path: NodePathDescription,
+    deadline: NodePathDescription.Deadline,
+  ): List<NodeDescription> =
+    descriptions(NodePathDescription(path).apply { addSiblingContext(1, deadline) })
 
   private fun record(node: AccessibilityNodeInfoCompat) =
     FocusActionRecord(node, FocusActionInfo.builder().build(), /* actionTime= */ 1000)
@@ -164,27 +188,30 @@ class RefocusSearchTest {
     val record = record(nodes.last())
     nodes.forEach { it.alive = false }
 
-    FocusActionRecord.getFocusableNodeFromFocusRecord(newRoot(), focusFinder, record)
+    newHistory().reader.getFocusableNodeFromFocusRecord(newRoot(), focusFinder, record)
 
     for (ancestor in nodes.dropLast(1)) {
       assertEquals(ancestor.text.toString(), 1, ancestor.refreshes)
     }
   }
 
-  @Test
-  fun theSearchStopsAtItsTimeLimit() {
-    val nodes = chain(depth = 30)
-    val record = record(nodes.last())
+  /** Removes [nodes] from the app, makes each of them answer in 100 ms, and resets the counts. */
+  private fun removeAndSlowDown(nodes: List<Node>) =
     nodes.forEach {
       it.alive = false
       it.answerMs = 100
+      it.refreshes = 0
       it.childReads = 0
     }
+
+  @Test
+  fun theSearchStopsAtItsTimeLimitDuringARefocus() {
+    val nodes = chain(depth = 30)
+    val record = record(nodes.last())
+    removeAndSlowDown(nodes)
     val start = SystemClock.uptimeMillis()
 
-    assertNull(
-      FocusActionRecord.getFocusableNodeFromFocusRecord(newRoot(), focusFinder, record)
-    )
+    assertNull(seekDuringRefocus(newHistory(), newRoot(), record))
 
     // One refresh of the focused node before the search, then the requests that fit in the limit.
     val requests = nodes.sumOf { it.refreshes + it.childReads }
@@ -193,6 +220,37 @@ class RefocusSearchTest {
       requests <= 1 + NodePathDescription.SEARCH_TIME_LIMIT_MS / 100 + 1,
     )
     assertTrue(SystemClock.uptimeMillis() - start <= NodePathDescription.SEARCH_TIME_LIMIT_MS + 200)
+  }
+
+  @Test
+  fun aSearchOutsideARefocusHasNoTimeLimit() {
+    val nodes = chain(depth = 30)
+    val record = record(nodes.last())
+    removeAndSlowDown(nodes)
+
+    newHistory().reader.getFocusableNodeFromFocusRecord(newRoot(), focusFinder, record)
+
+    // The upward search reaches the root.
+    for (ancestor in nodes.dropLast(1)) {
+      assertEquals(ancestor.text.toString(), 1, ancestor.refreshes)
+    }
+  }
+
+  @Test
+  fun aSearchStoppedAtItsTimeLimitIsSoughtAgainDuringTheSameRefocus() {
+    val nodes = chain(depth = 30)
+    val record = record(nodes.last())
+    removeAndSlowDown(nodes)
+    val root = newRoot()
+    val history = newHistory()
+
+    history.startRefocus()
+    assertNull(history.reader.getFocusableNodeFromFocusRecord(root, focusFinder, record))
+    val requests = nodes.sumOf { it.refreshes + it.childReads }
+    assertNull(history.reader.getFocusableNodeFromFocusRecord(root, focusFinder, record))
+    history.endRefocus()
+
+    assertTrue(nodes.sumOf { it.refreshes + it.childReads } > requests)
   }
 
   @Test
@@ -212,10 +270,9 @@ class RefocusSearchTest {
     outer.answerMs = NodePathDescription.SEARCH_TIME_LIMIT_MS
 
     val path =
-      descriptions(
-        record.ancestorIdentityPath.withSiblingContext(
-          NodePathDescription.Deadline.afterSearchTimeLimit()
-        )
+      withSiblingContext(
+        record.ancestorIdentityPath,
+        NodePathDescription.Deadline.afterSearchTimeLimit(),
       )
 
     assertEquals(1, path[0].rawIndexInParent)
@@ -231,14 +288,47 @@ class RefocusSearchTest {
     nodes.forEach { it.childReads = 0 }
 
     val path =
-      descriptions(
-        record.ancestorIdentityPath.withSiblingContext(
-          NodePathDescription.Deadline(SystemClock.uptimeMillis())
-        )
+      withSiblingContext(
+        record.ancestorIdentityPath,
+        NodePathDescription.Deadline(SystemClock.uptimeMillis()),
       )
 
     assertEquals(0, nodes.sumOf { it.childReads })
     assertTrue(path.drop(1).all { it.rawIndexInParent == NodeDescription.UNDEFINED_INDEX })
+  }
+
+  @Test
+  fun siblingsNotReadByTheTimeLimitAreReadByTheNextSearch() {
+    // root > outer > group > (first, leaf, last), in web content.
+    val root = Node("root", web = true)
+    val outer = Node("outer", web = true)
+    val group = Node("group", web = true)
+    val first = Node("first", web = true)
+    val leaf = Node("leaf", web = true)
+    val last = Node("last", web = true)
+    root.add(outer)
+    outer.add(group)
+    group.add(first, leaf, last)
+    val record = record(leaf)
+    leaf.alive = false
+    // Finding the group among the children of outer takes the whole time limit.
+    outer.answerMs = NodePathDescription.SEARCH_TIME_LIMIT_MS
+    val history = newHistory()
+
+    seekDuringRefocus(history, newRoot(), record)
+
+    // The search had its own time limit after the sibling reading reached its own.
+    assertTrue(group.refreshes > 0)
+    // The position of outer was not read, and is read the next time, without reading the group's
+    // position again.
+    assertEquals(0, root.childReads)
+    outer.answerMs = 0
+    val outerChildReads = outer.childReads
+    val path = descriptions(record.nodePathDescription)
+    assertTrue(root.childReads > 0)
+    assertEquals(0, path[2].rawIndexInParent)
+    assertEquals(0, path[1].rawIndexInParent)
+    assertEquals(outerChildReads, outer.childReads)
   }
 
   @Test

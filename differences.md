@@ -50,7 +50,7 @@ TalkBack also spoke an item on a web page only after it had handled every change
 
 ### Putting focus back after a page changes
 
-When the focused item disappears, such as when a page is opened or reloaded, TalkBack searches the new page for the item, or for the item now at its place. Each step of the search waits for the app. In Uber Eats, opening a restaurant menu stopped gestures and speech for over 2 seconds, as TalkBack searched twice in a row for the same item: once to put focus back, and again when that failed. SandFly searches once per change, asks the app for each item that contained the focus only once, and stops a search after 0.3 seconds. A stopped search places focus as when the item isn't found.
+When the focused item disappears, such as when a page is opened or reloaded, TalkBack searches the new page for the item, or for the item now at its place. Each step of the search waits for the app. In Uber Eats, opening a restaurant menu stopped gestures and speech for over 2 seconds, as TalkBack searched twice in a row for the same item: once to put focus back, and again when that failed. SandFly doesn't repeat a search that found nothing during the same change, asks the app for each item that contained the focus only once, and, after a content change, stops a search at 0.3 seconds. A stopped search places focus as when the item isn't found. Searches after a window change or window navigation have no time limit, as in TalkBack.
 
 ### Time between one-finger taps
 

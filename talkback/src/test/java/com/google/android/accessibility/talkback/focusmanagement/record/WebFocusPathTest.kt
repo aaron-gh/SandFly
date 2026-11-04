@@ -243,7 +243,6 @@ class WebFocusPathTest {
     tree.failChildReads()
 
     val path = record.nodePathDescription
-    assertSame(record.ancestorIdentityPath, path)
     assertEquals(1, descriptions(path)[0].rawIndexInParent)
     assertEquals(NodeDescription.UNDEFINED_INDEX, descriptions(path)[1].rawIndexInParent)
     assertNull(descriptions(path)[1].previousSiblingText)
