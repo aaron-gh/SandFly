@@ -17,7 +17,10 @@
 package com.google.android.accessibility.talkback.focusmanagement
 
 import android.view.accessibility.AccessibilityEvent
+import android.view.accessibility.AccessibilityNodeInfo
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
+import com.google.android.accessibility.utils.traversal.OrderedTraversalStrategy
+import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Before
@@ -25,6 +28,7 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
+import org.robolectric.util.ReflectionHelpers
 
 /** An incomplete order is read again in bulk at most once until its window changes. */
 @RunWith(RobolectricTestRunner::class)
@@ -76,4 +80,29 @@ class TraversalTreeCacheRereadTest {
     TraversalTreeCache.onNodeAction(AccessibilityNodeInfoCompat.ACTION_SCROLL_FORWARD)
     assertTrue(TraversalTreeCache.startReread(window))
   }
+
+  /** A root that lists children none of which can be read. */
+  private class IncompleteRoot : AccessibilityNodeInfoCompat(rootInfo()) {
+    override fun getChildCount(): Int = 2
+
+    override fun getChild(index: Int): AccessibilityNodeInfoCompat? = null
+  }
+
+  @Test
+  fun anIncompleteOrderIsSavedWithoutAllowingAnotherRead() {
+    val root = IncompleteRoot()
+    val order = OrderedTraversalStrategy(root)
+    assertTrue(order.missesChildren())
+    assertTrue(TraversalTreeCache.startReread(window))
+    TraversalTreeCache.put(root, order)
+    assertEquals(root, TraversalTreeCache.rootFor(root))
+    assertFalse(TraversalTreeCache.startReread(window))
+  }
+}
+
+private fun rootInfo(): AccessibilityNodeInfo {
+  val info = AccessibilityNodeInfo.obtain()
+  ReflectionHelpers.setField(info, "mSourceNodeId", 1L)
+  info.isVisibleToUser = true
+  return info
 }

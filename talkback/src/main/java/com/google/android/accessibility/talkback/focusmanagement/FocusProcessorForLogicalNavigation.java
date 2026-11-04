@@ -71,6 +71,7 @@ import com.google.android.accessibility.talkback.ActorState;
 import com.google.android.accessibility.talkback.Feedback;
 import com.google.android.accessibility.talkback.Pipeline;
 import com.google.android.accessibility.talkback.R;
+import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.actor.FocusManagerInternal;
 import com.google.android.accessibility.talkback.actor.search.StringMatcher;
 import com.google.android.accessibility.talkback.actor.search.UniversalSearchActor;
@@ -1265,11 +1266,14 @@ public class FocusProcessorForLogicalNavigation {
    */
   private @Nullable OrderedTraversalStrategy rereadIncompleteOrder(
       AccessibilityNodeInfoCompat root) {
-    if (!TraversalTreeCache.startReread(root.getWindowId())) {
+    // Android usually answers this from its window cache, filled by the window list.
+    @Nullable AccessibilityWindowInfoCompat window = AccessibilityNodeInfoUtils.getWindow(root);
+    if (window == null
+        || !window.isActive()
+        || !TraversalTreeCache.startReread(root.getWindowId())) {
       return null;
     }
-    @Nullable AccessibilityNodeInfoCompat activeRoot =
-        AccessibilityServiceCompatUtils.getRootInActiveWindow(service);
+    @Nullable AccessibilityNodeInfo activeRoot = readActiveWindowRoot();
     if (activeRoot == null || activeRoot.getWindowId() != root.getWindowId()) {
       return null;
     }
@@ -1281,6 +1285,21 @@ public class FocusProcessorForLogicalNavigation {
         root.getWindowId(),
         reread.missesChildren() ? "still incomplete" : "complete");
     return reread;
+  }
+
+  /**
+   * Reads the root of the active window from the app with its descendants. The root that
+   * TalkBackService returns is a copy saved until the next window event, so it is marked out of
+   * date first on versions without the prefetching overload.
+   */
+  private @Nullable AccessibilityNodeInfo readActiveWindowRoot() {
+    if (BuildVersionUtils.isAtLeastT()) {
+      return service.getRootInActiveWindow(AccessibilityNodeInfo.FLAG_PREFETCH_DESCENDANTS_HYBRID);
+    }
+    if (service instanceof TalkBackService talkBackService) {
+      talkBackService.setRootDirty(true);
+    }
+    return service.getRootInActiveWindow();
   }
 
   /** The app node whose recognised screen elements a swipe has just left, going forward. */
@@ -1533,9 +1552,7 @@ public class FocusProcessorForLogicalNavigation {
           traversalStrategy = reread;
         }
       }
-      // An order that still misses nodes is not saved, so the next swipe reads the window again.
-      if (traversalStrategy instanceof OrderedTraversalStrategy orderedStrategy
-          && !orderedStrategy.missesChildren()) {
+      if (traversalStrategy instanceof OrderedTraversalStrategy orderedStrategy) {
         TraversalTreeCache.put(rootNode, orderedStrategy);
       }
     }
