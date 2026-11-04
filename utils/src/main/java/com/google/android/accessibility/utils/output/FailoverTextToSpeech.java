@@ -21,9 +21,11 @@ import static android.speech.tts.TextToSpeech.LANG_COUNTRY_AVAILABLE;
 import static android.speech.tts.TextToSpeech.LANG_COUNTRY_VAR_AVAILABLE;
 import static android.speech.tts.TextToSpeech.QUEUE_ADD;
 import static androidx.core.content.ContextCompat.RECEIVER_EXPORTED;
+import static androidx.core.content.ContextCompat.RECEIVER_NOT_EXPORTED;
 import static com.google.android.accessibility.utils.output.SpeechCacheManager.CACHE_UTTERANCE_ID_PREFIX;
 import static java.util.Locale.forLanguageTag;
 
+import android.content.BroadcastReceiver;
 import android.content.ComponentCallbacks;
 import android.content.ContentResolver;
 import android.content.Context;
@@ -265,6 +267,9 @@ public class FailoverTextToSpeech {
   /** Plays speech through {@link LowLatencyAudio}, which reaches the speaker sooner. */
   public static final String PREF_LOW_LATENCY_AUDIO_KEY = "pref_low_latency_audio";
 
+  /** Whether the engine of the voice profile used before the current one is kept started. */
+  public static final String PREF_KEEP_PREVIOUS_ENGINE_KEY = "pref_keep_previous_voice_engine";
+
   private volatile boolean lowLatencyAudio = false;
 
   /**
@@ -462,6 +467,9 @@ public class FailoverTextToSpeech {
         } else if (VoiceProfiles.isProfileKey(key)) {
           readVoiceProfile(sharedPrefs);
           updateWarmEngines();
+        } else if (PREF_KEEP_PREVIOUS_ENGINE_KEY.equals(key)) {
+          keepPreviousEngine = sharedPrefs.getBoolean(key, false);
+          updateWarmEngines();
         }
       };
 
@@ -498,10 +506,29 @@ public class FailoverTextToSpeech {
   private long voiceProfileEngineWaitEnd;
 
   /**
-   * Engines of the voice profiles and of SandFly default other than the one in use, kept started so
-   * that changing voice profile doesn't wait for an engine to start.
+   * The engine of the voice profile used before the one in use, kept started while the screen is
+   * on and {@link #PREF_KEEP_PREVIOUS_ENGINE_KEY} is on, so that changing back doesn't wait for it
+   * to start. Each engine kept started is a process of its own, and some keep audio output open.
    */
   private final Map<String, TextToSpeech> warmEngines = new HashMap<>();
+
+  /** Whether {@link #PREF_KEEP_PREVIOUS_ENGINE_KEY} is on. */
+  private boolean keepPreviousEngine;
+
+  /** The engine used before the one in use, or null. */
+  private @Nullable String previousEngine;
+
+  /** Whether the screen is on. Engines are only kept started while it is. */
+  private boolean screenOn = true;
+
+  private final BroadcastReceiver screenReceiver =
+      new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+          screenOn = Intent.ACTION_SCREEN_ON.equals(intent.getAction());
+          updateWarmEngines();
+        }
+      };
 
   /** The engines in {@link #warmEngines} that have started. */
   private final Set<String> warmEnginesReady = new HashSet<>();
@@ -577,8 +604,14 @@ public class FailoverTextToSpeech {
     speakInPhrases = prefs.getBoolean(PREF_SPEAK_IN_PHRASES_KEY, SPEAK_IN_PHRASES_DEFAULT);
     lowLatencyAudio = prefs.getBoolean(PREF_LOW_LATENCY_AUDIO_KEY, lowLatencyAudioDefault(context));
     readLanguageSwitches(prefs);
+    keepPreviousEngine = prefs.getBoolean(PREF_KEEP_PREVIOUS_ENGINE_KEY, false);
     VoiceProfiles.setActive(VoiceProfiles.readActive(prefs));
     prefs.registerOnSharedPreferenceChangeListener(preferenceChangeListener);
+    PowerManager power = context.getSystemService(PowerManager.class);
+    screenOn = power == null || power.isInteractive();
+    IntentFilter screenFilter = new IntentFilter(Intent.ACTION_SCREEN_ON);
+    screenFilter.addAction(Intent.ACTION_SCREEN_OFF);
+    ContextCompat.registerReceiver(context, screenReceiver, screenFilter, RECEIVER_NOT_EXPORTED);
 
     // Updating the default engine reloads the list of installed engines and
     // the system engine. This also loads the default engine.
@@ -1036,6 +1069,7 @@ public class FailoverTextToSpeech {
     releaseLowLatencyAudio();
     allowDeviceSleep();
     context.unregisterReceiver(mediaStateMonitor);
+    context.unregisterReceiver(screenReceiver);
     unregisterGoogleTtsFixCallbacks();
     mHandler.removeCallbacksAndMessages(null);
 
@@ -2528,6 +2562,9 @@ public class FailoverTextToSpeech {
     final boolean isSwitchingEngines = (tts != null);
 
     if (isSwitchingEngines) {
+      if (ttsEngine != null && !ttsEngine.equals(engine)) {
+        previousEngine = ttsEngine;
+      }
       retireEngine(tts, ttsEngine, oldVoices, engine);
     }
     // Speech from an engine that is gone never finishes, so it must not hold up the new engine's.
@@ -2721,24 +2758,32 @@ public class FailoverTextToSpeech {
         : defaultTtsEngine;
   }
 
-  /** Returns the engines of the voice profiles and of SandFly default, if there are profiles. */
+  /**
+   * Returns the engines to keep started: the engine used before the one in use, if keeping it is on,
+   * the screen is on, and a voice profile or SandFly default uses it.
+   */
   private Set<String> voiceProfileEngines() {
     Set<String> targets = new HashSet<>();
+    if (!keepPreviousEngine || !screenOn || previousEngine == null) {
+      return targets;
+    }
     SharedPreferences prefs = SharedPreferencesUtils.getSharedPreferences(context);
     List<String> ids = VoiceProfiles.ids(prefs);
     if (ids.isEmpty()) {
       return targets;
     }
+    boolean used = previousEngine.equals(engineToUse(preferredTtsEngine));
     for (String id : ids) {
-      targets.add(engineToUse(VoiceProfiles.read(prefs, id).engine()));
+      used |= previousEngine.equals(engineToUse(VoiceProfiles.read(prefs, id).engine()));
     }
-    targets.add(engineToUse(preferredTtsEngine));
-    targets.remove(null);
+    if (used) {
+      targets.add(previousEngine);
+    }
     return targets;
   }
 
   /**
-   * Starts the engines of {@link #voiceProfileEngines} other than the one in use, and shuts down
+   * Starts the engine of {@link #voiceProfileEngines} unless it is the one in use, and shuts down
    * the others kept started.
    */
   private void updateWarmEngines() {

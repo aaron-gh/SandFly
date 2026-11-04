@@ -140,6 +140,8 @@
     <string name="title_pref_delete_gesture_profile">Delete gesture profile</string>
     <!-- Title for the setting that chooses the voice profile in use. [CHAR LIMIT=NONE] -->
     <string name="title_pref_voice_profile_in_use">Voice profile in use</string>
+    <!-- Switch on the Voice profiles screen. When on, the text-to-speech engine of the voice profile used before the current one stays connected while the screen is on, so that changing back to it is immediate. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_keep_previous_voice_engine">Keep the engine of the previous voice profile started</string>
     <!-- Title for the button that adds a voice profile. [CHAR LIMIT=NONE] -->
     <string name="title_pref_add_voice_profile">Add voice profile</string>
     <!-- Name given to a new voice profile, with a number to tell it apart. [CHAR LIMIT=NONE] -->

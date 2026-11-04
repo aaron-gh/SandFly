@@ -46,6 +46,7 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference;
 import com.google.android.accessibility.material.preference.AccessibilitySuitePreference;
+import com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.speech.VoiceProfileNames;
 import com.google.android.accessibility.utils.FormFactorUtils;
@@ -74,6 +75,7 @@ public class VoiceProfilesFragment extends TalkbackBaseFragment {
   /** Each profile's name by ID, read again whenever the rows are. */
   private Map<String, String> names = Map.of();
   private AccessibilitySuiteListPreference inUse;
+  private AccessibilitySuiteSwitchPreference keepPreviousEngine;
 
   /** Shows the profile in use when a gesture, keyboard shortcut or the Backtalk menu switches it. */
   private final SharedPreferences.OnSharedPreferenceChangeListener activeListener =
@@ -107,6 +109,12 @@ public class VoiceProfilesFragment extends TalkbackBaseFragment {
     inUse.setSummary("%s");
     inUse.setIconSpaceReserved(false);
     screen.addPreference(inUse);
+    keepPreviousEngine = new AccessibilitySuiteSwitchPreference(context);
+    keepPreviousEngine.setKey(FailoverTextToSpeech.PREF_KEEP_PREVIOUS_ENGINE_KEY);
+    keepPreviousEngine.setTitle(R.string.title_pref_keep_previous_voice_engine);
+    keepPreviousEngine.setDefaultValue(false);
+    keepPreviousEngine.setIconSpaceReserved(false);
+    screen.addPreference(keepPreviousEngine);
     setPreferenceScreen(screen);
     names = VoiceProfileNames.names(context, prefs);
     updateInUse();
@@ -167,7 +175,7 @@ public class VoiceProfilesFragment extends TalkbackBaseFragment {
     PreferenceScreen screen = getPreferenceScreen();
     for (int i = screen.getPreferenceCount() - 1; i >= 0; i--) {
       Preference preference = screen.getPreference(i);
-      if (preference != inUse) {
+      if (preference != inUse && preference != keepPreviousEngine) {
         screen.removePreference(preference);
       }
     }
