@@ -21,9 +21,11 @@ import static android.speech.tts.TextToSpeech.LANG_COUNTRY_AVAILABLE;
 import static android.speech.tts.TextToSpeech.LANG_COUNTRY_VAR_AVAILABLE;
 import static android.speech.tts.TextToSpeech.QUEUE_ADD;
 import static androidx.core.content.ContextCompat.RECEIVER_EXPORTED;
+import static androidx.core.content.ContextCompat.RECEIVER_NOT_EXPORTED;
 import static com.google.android.accessibility.utils.output.SpeechCacheManager.CACHE_UTTERANCE_ID_PREFIX;
 import static java.util.Locale.forLanguageTag;
 
+import android.content.BroadcastReceiver;
 import android.content.ComponentCallbacks;
 import android.content.ContentResolver;
 import android.content.Context;
@@ -265,6 +267,9 @@ public class FailoverTextToSpeech {
   /** Plays speech through {@link LowLatencyAudio}, which reaches the speaker sooner. */
   public static final String PREF_LOW_LATENCY_AUDIO_KEY = "pref_low_latency_audio";
 
+  /** Whether the engine of the voice profile used before the current one is kept started. */
+  public static final String PREF_KEEP_PREVIOUS_ENGINE_KEY = "pref_keep_previous_voice_engine";
+
   private volatile boolean lowLatencyAudio = false;
 
   /**
@@ -403,6 +408,22 @@ public class FailoverTextToSpeech {
       new ConcurrentHashMap<>();
 
   /**
+   * Low-latency utterances that the engine makes without playing, by ID. Nothing of them is heard
+   * unless Backtalk plays the engine's audio, so one that gives none is said again the usual way.
+   */
+  private final Set<String> unplayedByEngine = ConcurrentHashMap.newKeySet();
+
+  /**
+   * The longest text the engine makes without playing it. It makes speech faster than it plays,
+   * all of which Backtalk keeps until it is played, so longer text is played by the engine at no
+   * volume, which keeps it to the pace of playback.
+   */
+  private static final int MAX_UNPLAYED_CHARS = 300;
+
+  /** Where the engine writes speech that it makes without playing. */
+  private static final File DISCARDED_AUDIO = new File("/dev/null");
+
+  /**
    * Low-latency utterances being said again the usual way, by ID. The engine can still report on
    * the silent first try, which must not reach Backtalk as the utterance's progress, or Backtalk
    * would take it as done before it is heard. So the second try has its own ID, {@link
@@ -446,6 +467,9 @@ public class FailoverTextToSpeech {
         } else if (VoiceProfiles.isProfileKey(key)) {
           readVoiceProfile(sharedPrefs);
           updateWarmEngines();
+        } else if (PREF_KEEP_PREVIOUS_ENGINE_KEY.equals(key)) {
+          keepPreviousEngine = sharedPrefs.getBoolean(key, false);
+          updateWarmEngines();
         }
       };
 
@@ -482,10 +506,29 @@ public class FailoverTextToSpeech {
   private long voiceProfileEngineWaitEnd;
 
   /**
-   * Engines of the voice profiles and of SandFly default other than the one in use, kept started so
-   * that changing voice profile doesn't wait for an engine to start.
+   * The engine of the voice profile used before the one in use, kept started while the screen is
+   * on and {@link #PREF_KEEP_PREVIOUS_ENGINE_KEY} is on, so that changing back doesn't wait for it
+   * to start. Each engine kept started is a process of its own, and some keep audio output open.
    */
   private final Map<String, TextToSpeech> warmEngines = new HashMap<>();
+
+  /** Whether {@link #PREF_KEEP_PREVIOUS_ENGINE_KEY} is on. */
+  private boolean keepPreviousEngine;
+
+  /** The engine used before the one in use, or null. */
+  private @Nullable String previousEngine;
+
+  /** Whether the screen is on. Engines are only kept started while it is. */
+  private boolean screenOn = true;
+
+  private final BroadcastReceiver screenReceiver =
+      new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+          screenOn = Intent.ACTION_SCREEN_ON.equals(intent.getAction());
+          updateWarmEngines();
+        }
+      };
 
   /** The engines in {@link #warmEngines} that have started. */
   private final Set<String> warmEnginesReady = new HashSet<>();
@@ -561,8 +604,14 @@ public class FailoverTextToSpeech {
     speakInPhrases = prefs.getBoolean(PREF_SPEAK_IN_PHRASES_KEY, SPEAK_IN_PHRASES_DEFAULT);
     lowLatencyAudio = prefs.getBoolean(PREF_LOW_LATENCY_AUDIO_KEY, lowLatencyAudioDefault(context));
     readLanguageSwitches(prefs);
+    keepPreviousEngine = prefs.getBoolean(PREF_KEEP_PREVIOUS_ENGINE_KEY, false);
     VoiceProfiles.setActive(VoiceProfiles.readActive(prefs));
     prefs.registerOnSharedPreferenceChangeListener(preferenceChangeListener);
+    PowerManager power = context.getSystemService(PowerManager.class);
+    screenOn = power == null || power.isInteractive();
+    IntentFilter screenFilter = new IntentFilter(Intent.ACTION_SCREEN_ON);
+    screenFilter.addAction(Intent.ACTION_SCREEN_OFF);
+    ContextCompat.registerReceiver(context, screenReceiver, screenFilter, RECEIVER_NOT_EXPORTED);
 
     // Updating the default engine reloads the list of installed engines and
     // the system engine. This also loads the default engine.
@@ -1020,6 +1069,7 @@ public class FailoverTextToSpeech {
     releaseLowLatencyAudio();
     allowDeviceSleep();
     context.unregisterReceiver(mediaStateMonitor);
+    context.unregisterReceiver(screenReceiver);
     unregisterGoogleTtsFixCallbacks();
     mHandler.removeCallbacksAndMessages(null);
 
@@ -1657,12 +1707,33 @@ public class FailoverTextToSpeech {
             return true;
           });
     }
-    // The engine speaks as usual but at no volume, and Backtalk plays the copy of its audio that
-    // Android gives it. As the engine is still playing audio, Android and phone makers' battery
-    // savers keep it running, which they do not do for an engine only making audio for an app.
-    Bundle silent = new Bundle(bundle);
-    silent.putFloat(SpeechParam.VOLUME, 0f);
-    int result = tts.speak(text, queueMode, silent, utteranceId);
+    int result;
+    if (text.length() <= MAX_UNPLAYED_CHARS) {
+      // The engine only makes the speech, and Backtalk plays the copy of its audio that Android
+      // gives it, so that the audio is played once rather than twice. Volume and pan are Backtalk's
+      // to apply.
+      Bundle unplayed = new Bundle(bundle);
+      unplayed.putFloat(SpeechParam.VOLUME, 1f);
+      unplayed.putFloat(Engine.KEY_PARAM_PAN, 0f);
+      if (queueMode != QUEUE_ADD) {
+        // Making speech has no queue mode: it always waits for the engine's earlier speech.
+        tts.stop();
+      }
+      // Text with no letters or digits, such as a line break, may have no audio at all, which
+      // leaves nothing to say again.
+      if (hasLetterOrDigit(text)) {
+        unplayedByEngine.add(utteranceId);
+      }
+      result = tts.synthesizeToFile(text, unplayed, DISCARDED_AUDIO, utteranceId);
+      if (result != TextToSpeech.SUCCESS) {
+        unplayedByEngine.remove(utteranceId);
+      }
+    } else {
+      // The engine speaks as usual but at no volume, and Backtalk plays the copy of its audio.
+      Bundle silent = new Bundle(bundle);
+      silent.putFloat(SpeechParam.VOLUME, 0f);
+      result = tts.speak(text, queueMode, silent, utteranceId);
+    }
     if (result != TextToSpeech.SUCCESS) {
       stream.discard();
       lowLatencyStreams.remove(utteranceId);
@@ -1670,6 +1741,16 @@ public class FailoverTextToSpeech {
       return tts.speak(text, queueMode, bundle, utteranceId);
     }
     return result;
+  }
+
+  /** Whether {@code text} has a letter or a digit. */
+  private static boolean hasLetterOrDigit(CharSequence text) {
+    for (int i = 0; i < text.length(); i++) {
+      if (Character.isLetterOrDigit(text.charAt(i))) {
+        return true;
+      }
+    }
+    return false;
   }
 
   /** Whether a phone or voice call has the audio mode. */
@@ -1905,6 +1986,7 @@ public class FailoverTextToSpeech {
     heldPlayer = null;
     lowLatencyStreams.clear();
     lowLatencyRequests.clear();
+    unplayedByEngine.clear();
     respokenUtterances.clear();
     mHandler.removeCallbacks(checkEngineHang);
     engineQuietSince = 0;
@@ -1944,6 +2026,7 @@ public class FailoverTextToSpeech {
         @Override
         public void onFinished(String id, boolean completed) {
           lowLatencyRequests.remove(id);
+          unplayedByEngine.remove(id);
           if (completed) {
             utteranceProgressCallback.onDone(id);
           } else {
@@ -1994,11 +2077,19 @@ public class FailoverTextToSpeech {
           // already. But an utterance with nothing to say, such as a pause, has no audio either, so
           // only several in a row mean that the engine plays its own. Then speak the usual way
           // with this engine from now on.
-          lowLatencyRequests.remove(id);
           noAudioInARow++;
           if (noAudioInARow >= NO_AUDIO_IN_A_ROW_LIMIT) {
             stopUsingLowLatencyAudio("no audio " + noAudioInARow + " times in a row");
           }
+          if (unplayedByEngine.remove(id)) {
+            // The engine made it without playing it, so nothing was heard: say it the usual way.
+            mHandler.post(
+                () ->
+                    speakAgainWithoutLowLatency(
+                        id, /* stream= */ null, /* engineAtFault= */ false));
+            return;
+          }
+          lowLatencyRequests.remove(id);
           utteranceProgressCallback.onDone(id);
         }
       };
@@ -2081,6 +2172,7 @@ public class FailoverTextToSpeech {
     lowLatencyStreams.clear();
     LowLatencyAudio.stopAllStreams();
     lowLatencyRequests.clear();
+    unplayedByEngine.clear();
     respokenUtterances.clear();
     // Restarting the same engine does not help, since its process stays hung.
     ttsFailures = Math.max(ttsFailures, MAX_TTS_FAILURES - 1);
@@ -2470,6 +2562,9 @@ public class FailoverTextToSpeech {
     final boolean isSwitchingEngines = (tts != null);
 
     if (isSwitchingEngines) {
+      if (ttsEngine != null && !ttsEngine.equals(engine)) {
+        previousEngine = ttsEngine;
+      }
       retireEngine(tts, ttsEngine, oldVoices, engine);
     }
     // Speech from an engine that is gone never finishes, so it must not hold up the new engine's.
@@ -2478,6 +2573,7 @@ public class FailoverTextToSpeech {
     heldPlayer = null;
     lowLatencyStreams.clear();
     lowLatencyRequests.clear();
+    unplayedByEngine.clear();
     respokenUtterances.clear();
     LowLatencyAudio.stopAllStreams();
     mHandler.removeCallbacks(checkEngineHang);
@@ -2662,24 +2758,32 @@ public class FailoverTextToSpeech {
         : defaultTtsEngine;
   }
 
-  /** Returns the engines of the voice profiles and of SandFly default, if there are profiles. */
+  /**
+   * Returns the engines to keep started: the engine used before the one in use, if keeping it is on,
+   * the screen is on, and a voice profile or SandFly default uses it.
+   */
   private Set<String> voiceProfileEngines() {
     Set<String> targets = new HashSet<>();
+    if (!keepPreviousEngine || !screenOn || previousEngine == null) {
+      return targets;
+    }
     SharedPreferences prefs = SharedPreferencesUtils.getSharedPreferences(context);
     List<String> ids = VoiceProfiles.ids(prefs);
     if (ids.isEmpty()) {
       return targets;
     }
+    boolean used = previousEngine.equals(engineToUse(preferredTtsEngine));
     for (String id : ids) {
-      targets.add(engineToUse(VoiceProfiles.read(prefs, id).engine()));
+      used |= previousEngine.equals(engineToUse(VoiceProfiles.read(prefs, id).engine()));
     }
-    targets.add(engineToUse(preferredTtsEngine));
-    targets.remove(null);
+    if (used) {
+      targets.add(previousEngine);
+    }
     return targets;
   }
 
   /**
-   * Starts the engines of {@link #voiceProfileEngines} other than the one in use, and shuts down
+   * Starts the engine of {@link #voiceProfileEngines} unless it is the one in use, and shuts down
    * the others kept started.
    */
   private void updateWarmEngines() {

@@ -59,6 +59,17 @@ object WindowNodePrefetcher {
   /** Stops a window with a very large or looped tree. */
   private const val MAX_NODES = 5000
 
+  /**
+   * How long after reading a window its order is built again without reading it first. Its nodes
+   * are mostly still in Android's node cache, which a second walk would only copy again, and the
+   * order reads the few that changed itself.
+   */
+  private const val WINDOW_AGAIN_MS = 2_000L
+
+  // The window read last for its order, and when, on the main thread.
+  private var lastWindowId = -1
+  private var lastWindowReadMs = 0L
+
   private const val FLAGS =
     AccessibilityNodeInfo.FLAG_PREFETCH_SIBLINGS or
       AccessibilityNodeInfo.FLAG_PREFETCH_DESCENDANTS_HYBRID or
@@ -81,6 +92,21 @@ object WindowNodePrefetcher {
    * waiting here. Does nothing either while every thread is still waiting for an earlier window,
    * since none of them could start on this one.
    */
+  /**
+   * Reads the nodes of the window of [root] before its traversal order is built, as [prefetch]
+   * does, unless that window was read within [WINDOW_AGAIN_MS]. Called on the main thread.
+   */
+  @JvmStatic
+  fun prefetchWindow(root: AccessibilityNodeInfoCompat, ownPackage: String) {
+    val now = SystemClock.uptimeMillis()
+    if (root.windowId == lastWindowId && now - lastWindowReadMs < WINDOW_AGAIN_MS) {
+      return
+    }
+    lastWindowId = root.windowId
+    lastWindowReadMs = now
+    prefetch(root, ownPackage)
+  }
+
   @JvmStatic
   fun prefetch(root: AccessibilityNodeInfoCompat, ownPackage: String) {
     if (
