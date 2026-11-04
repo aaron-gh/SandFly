@@ -19,6 +19,7 @@ package com.google.android.accessibility.talkback.focusmanagement.record;
 import static com.google.android.accessibility.utils.AccessibilityNodeInfoUtils.toStringShort;
 
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
+import com.google.android.accessibility.talkback.focusmanagement.record.NodePathDescription.Deadline;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.Filter;
 import com.google.android.accessibility.utils.FocusFinder;
@@ -118,7 +119,15 @@ public class FocusActionRecord {
    * the focused node's ancestors.
    */
   public @NonNull NodePathDescription getNodePathDescription() {
-    return (siblingContext == null) ? nodePathDescription : siblingContext.get();
+    return getNodePathDescription(Deadline.afterSearchTimeLimit());
+  }
+
+  /**
+   * Like {@link #getNodePathDescription()}, but stops asking the app for siblings at {@code
+   * deadline}.
+   */
+  private @NonNull NodePathDescription getNodePathDescription(@NonNull Deadline deadline) {
+    return (siblingContext == null) ? nodePathDescription : siblingContext.get(deadline);
   }
 
   /**
@@ -220,13 +229,15 @@ public class FocusActionRecord {
     if (root == null) {
       return null;
     }
+    // Reading the siblings of the path and searching for it share one time limit.
+    Deadline deadline = Deadline.afterSearchTimeLimit();
     @Nullable NodePathDescription nodePath =
-        focusActionRecord.getNodePathDescription(); // Not owner
+        focusActionRecord.getNodePathDescription(deadline); // Not owner
     if (nodePath == null) {
       return null;
     }
     @Nullable AccessibilityNodeInfoCompat nodeAtSamePosition =
-        nodePath.findNodeToRefocus(root, focusFinder);
+        nodePath.findNodeToRefocus(root, focusFinder, deadline);
     if ((nodeAtSamePosition != null)
         && AccessibilityNodeInfoUtils.shouldFocusNode(nodeAtSamePosition)) {
       LogUtils.d(
@@ -238,7 +249,8 @@ public class FocusActionRecord {
 
   /**
    * A node path completed with positions among siblings the first time it is needed. If reading
-   * them fails, the path without them is kept, and is not read again.
+   * them fails, the path without them is kept, and is not read again. If reading them reaches the
+   * deadline, the ancestors not yet read are kept without them, and are not read again.
    */
   private static final class PathWithSiblingContext {
     private final @NonNull NodePathDescription withoutSiblingContext;
@@ -248,10 +260,10 @@ public class FocusActionRecord {
       this.withoutSiblingContext = withoutSiblingContext;
     }
 
-    synchronized @NonNull NodePathDescription get() {
+    synchronized @NonNull NodePathDescription get(@NonNull Deadline deadline) {
       if (completed == null) {
         try {
-          completed = withoutSiblingContext.withSiblingContext();
+          completed = withoutSiblingContext.withSiblingContext(deadline);
         } catch (RuntimeException e) {
           LogUtils.w(TAG, "Cannot read the siblings of the focus path: %s", e);
           completed = withoutSiblingContext;

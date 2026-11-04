@@ -48,6 +48,10 @@ On a web page, the page finds the next item itself. On every swipe, TalkBack sti
 
 TalkBack also spoke an item on a web page only after it had handled every change that the page reported before it, and during fast swiping it dropped all but the last two items. SandFly speaks each item as soon as the page moves focus. Window changes, announcements and changes to assertive live regions, such as form errors, that came before it are still spoken first.
 
+### Putting focus back after a page changes
+
+When the focused item disappears, such as when a page is opened or reloaded, TalkBack searches the new page for the item, or for the item now at its place. Each step of the search waits for the app. In Uber Eats, opening a restaurant menu stopped gestures and speech for over 2 seconds, as TalkBack searched twice in a row for the same item: once to put focus back, and again when that failed. SandFly searches once per change, asks the app for each item that contained the focus only once, and stops a search after 0.3 seconds. A stopped search places focus as when the item isn't found.
+
 ### Time between one-finger taps
 
 TalkBack always waits 0.25 seconds for another tap before it decides that a tap gesture is finished. In SandFly, you can set this wait for one-finger taps in **Controls** > **Touch and activation** > **Reduce delay** > **Time between one-finger taps**, down to 0.1 seconds. A shorter time makes one-finger multi-tap gestures respond faster, but a slow double tap can then count as two single taps.
