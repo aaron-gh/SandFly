@@ -26,8 +26,10 @@ import android.os.Handler
 import android.os.HandlerThread
 import android.os.Looper
 import android.os.PowerManager
+import android.os.SystemClock
 import android.view.accessibility.AccessibilityEvent
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.utils.AccelerometerShare
 import com.google.android.accessibility.utils.AccessibilityEventListener
 import com.google.android.accessibility.utils.Performance.EventId
 import com.google.android.accessibility.utils.SharedPreferencesUtils
@@ -38,7 +40,8 @@ import com.google.android.libraries.accessibility.utils.log.LogUtils
  *
  * The accelerometer is read only while the screen is on, the screen reader is running and not
  * paused, and a back tap runs a command on the Gestures screen, in a gesture profile or in an app.
- * Readings are taken on a thread of their own.
+ * Readings are taken on a thread of their own, in batches, and passed on through
+ * [AccelerometerShare].
  */
 class BackTapCommands(
   private val context: Context,
@@ -103,7 +106,10 @@ class BackTapCommands(
     val handler = handler ?: return
     val detector = detector ?: return
     val start = event.eventType == AccessibilityEvent.TYPE_TOUCH_INTERACTION_START
-    handler.post { if (start) detector.onTouchStart() else detector.onTouchEnd() }
+    // The touch's time in the clock of sensor timestamps, as readings come in batches after it.
+    val ageMs = (SystemClock.uptimeMillis() - event.eventTime).coerceAtLeast(0)
+    val timeNs = SystemClock.elapsedRealtimeNanos() - ageMs * 1_000_000L
+    handler.post { if (start) detector.onTouchStart(timeNs) else detector.onTouchEnd(timeNs) }
   }
 
   private fun update() {
@@ -144,13 +150,16 @@ class BackTapCommands(
           val values = event.values
           if (values.size >= 3) {
             detector.onSample(event.timestamp, values[0], values[1], values[2])
+            AccelerometerShare.publish(event.timestamp, values[0], values[1], values[2])
           }
         }
 
         override fun onAccuracyChanged(sensor: Sensor, accuracy: Int) {}
       }
     configure(detector)
-    if (!sensors.registerListener(listener, sensor, SAMPLING_PERIOD_US, handler)) {
+    if (
+      !sensors.registerListener(listener, sensor, SAMPLING_PERIOD_US, MAX_REPORT_LATENCY_US, handler)
+    ) {
       LogUtils.w(TAG, "The accelerometer can't be read for back taps")
       thread.quitSafely()
       return
@@ -159,6 +168,7 @@ class BackTapCommands(
     this.handler = handler
     this.detector = detector
     sensorListener = listener
+    AccelerometerShare.setActive(true)
   }
 
   private fun configure(detector: BackTapDetector) {
@@ -173,6 +183,9 @@ class BackTapCommands(
   }
 
   private fun stop() {
+    if (sensorListener != null) {
+      AccelerometerShare.setActive(false)
+    }
     sensorListener?.let { sensors?.unregisterListener(it) }
     sensorListener = null
     thread?.quitSafely()
@@ -219,5 +232,11 @@ class BackTapCommands(
      * without the HIGH_SAMPLING_RATE_SENSORS permission.
      */
     const val SAMPLING_PERIOD_US = 2_500
+
+    /**
+     * Readings come in batches up to 100 ms apart where the sensor can hold them, so the device
+     * wakes 10 times a second instead of 400. Taps are judged by the readings' timestamps.
+     */
+    const val MAX_REPORT_LATENCY_US = 100_000
   }
 }

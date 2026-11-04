@@ -164,9 +164,9 @@ class BackTapDetectorTest {
     tap(at = 500)
     tap(at = 700)
     still(750)
-    detector.onTouchStart()
+    detector.onTouchStart(nowMs * 1_000_000L)
     still(800)
-    detector.onTouchEnd()
+    detector.onTouchEnd(nowMs * 1_000_000L)
     still(2000)
     assertEquals(emptyList<Int>(), runs.map { it.first })
   }
@@ -174,13 +174,36 @@ class BackTapDetectorTest {
   @Test
   fun tapsWhileTheScreenIsTouched_runNothing() {
     still(500)
-    detector.onTouchStart()
+    detector.onTouchStart(nowMs * 1_000_000L)
     tap(at = 500)
     tap(at = 700)
     still(1000)
-    detector.onTouchEnd()
+    detector.onTouchEnd(nowMs * 1_000_000L)
     still(2000)
     assertEquals(emptyList<Int>(), runs.map { it.first })
+  }
+
+  @Test
+  fun touchReportedBeforeItsBatchOfReadings_dropsTheTaps() {
+    still(500)
+    tap(at = 500)
+    tap(at = 700)
+    // The touch from 750 to 800 ms is reported before the readings around it arrive.
+    detector.onTouchStart(750 * MS)
+    detector.onTouchEnd(800 * MS)
+    still(2000)
+    assertEquals(emptyList<Int>(), runs.map { it.first })
+  }
+
+  @Test
+  fun touchReportedBeforeItsBatchOfReadings_leavesLaterTapsAlone() {
+    still(200)
+    detector.onTouchStart(250 * MS)
+    detector.onTouchEnd(300 * MS)
+    tap(at = 700)
+    tap(at = 900)
+    still(2000)
+    assertEquals(listOf(2), runs.map { it.first })
   }
 
   @Test
@@ -252,6 +275,10 @@ class BackTapDetectorTest {
       sampleIndex++
     }
     nowMs = untilMs
+  }
+
+  private companion object {
+    const val MS = 1_000_000L
   }
 
   private fun noise(): Float = (random.nextFloat() - 0.5f) * 0.1f

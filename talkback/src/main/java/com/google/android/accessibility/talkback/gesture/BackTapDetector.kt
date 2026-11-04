@@ -30,7 +30,8 @@ import kotlin.math.sqrt
  * dropped.
  *
  * Not thread-safe: every call must come from the same thread. All times are in the clock of the
- * readings' timestamps.
+ * readings' timestamps. Readings may come in batches, after the touches on the screen around them:
+ * a touch is applied when the readings reach its time.
  */
 class BackTapDetector(private val listener: Listener) {
 
@@ -83,11 +84,17 @@ class BackTapDetector(private val listener: Listener) {
 
   private var touching = false
   private var touchEndNs = NONE
+  // Touches on the screen that the readings haven't reached yet, in time order.
+  private val pendingTouchNs = ArrayDeque<Long>()
+  private val pendingTouchStarts = ArrayDeque<Boolean>()
 
   /** Takes in a reading of the accelerometer: [timeNs] and acceleration in m/s². */
   fun onSample(timeNs: Long, x: Float, y: Float, z: Float) {
     if (!x.isFinite() || !y.isFinite() || !z.isFinite()) {
       return
+    }
+    while (pendingTouchNs.isNotEmpty() && pendingTouchNs.first() <= timeNs) {
+      applyTouch(pendingTouchNs.removeFirst(), pendingTouchStarts.removeFirst())
     }
     if (!started || timeNs <= lastNs || timeNs - lastNs > MAX_SAMPLE_GAP_NS) {
       // The first reading, or readings stopped for a while: start again from this one.
@@ -125,16 +132,35 @@ class BackTapDetector(private val listener: Listener) {
     finishTaps(timeNs)
   }
 
-  /** The screen is touched: drops the taps so far and any until the touch ends. */
-  fun onTouchStart() {
-    touching = true
-    taps = 0
+  /** The screen is touched at [timeNs]: drops the taps so far and any until the touch ends. */
+  fun onTouchStart(timeNs: Long) {
+    onTouch(timeNs, start = true)
   }
 
-  /** The touch on the screen ended. */
-  fun onTouchEnd() {
-    touching = false
-    touchEndNs = lastNs
+  /** The touch on the screen ended at [timeNs]. */
+  fun onTouchEnd(timeNs: Long) {
+    onTouch(timeNs, start = false)
+  }
+
+  private fun onTouch(timeNs: Long, start: Boolean) {
+    when {
+      // A time far from the readings' is in another clock: the touch counts from the last reading.
+      !started || abs(timeNs - lastNs) > MAX_TOUCH_OFFSET_NS -> applyTouch(lastNs, start)
+      timeNs <= lastNs && pendingTouchNs.isEmpty() -> applyTouch(timeNs, start)
+      else -> {
+        pendingTouchNs.addLast(maxOf(timeNs, pendingTouchNs.lastOrNull() ?: timeNs))
+        pendingTouchStarts.addLast(start)
+      }
+    }
+  }
+
+  private fun applyTouch(timeNs: Long, start: Boolean) {
+    touching = start
+    if (start) {
+      taps = 0
+    } else {
+      touchEndNs = timeNs
+    }
   }
 
   private fun restart(timeNs: Long, x: Float, y: Float, z: Float) {
@@ -245,6 +271,11 @@ class BackTapDetector(private val listener: Listener) {
     const val MAX_TAP_INTERVAL_NS = 450 * MS
     /** Time before and after a touch on the screen in which jolts are dropped. */
     const val TOUCH_GUARD_NS = 150 * MS
+    /**
+     * How far a touch's time may be from the last reading's and still be in the same clock. Batched
+     * readings come up to [BackTapCommands]' report latency late.
+     */
+    const val MAX_TOUCH_OFFSET_NS = 2_000 * MS
     /** How much stronger a tap is along the axis through the screen than along the others. */
     const val SCREEN_AXIS_RATIO = 1.2f
     /** Most movement before the first tap, as a part of the tap's strength. */
