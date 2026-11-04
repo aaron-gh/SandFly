@@ -19,7 +19,6 @@ package com.google.android.accessibility.talkback.gesture
 import android.util.Log
 import android.view.MotionEvent
 import kotlin.math.abs
-import kotlin.math.hypot
 
 /**
  * Recognizes one finger sliding in from an edge of the screen, as on iOS: up from the bottom edge,
@@ -39,8 +38,8 @@ import kotlin.math.hypot
  * A touch at an edge may become any of the slides from there that have stages; each is dropped once
  * the finger goes the wrong way for it. A touch whose slides are all dropped, or that takes too
  * long to reach a first stage, is left to the other gestures and touch exploration, and so is a
- * touch at an edge whose slides have no stages, and one that has not moved at all by
- * [STILL_MILLIS]. Touch exploration waits while a slide may still start ([isPossible]), and
+ * touch at an edge whose slides have no stages, and one that has not gone on toward a first stage
+ * for [STILL_MILLIS]. Touch exploration waits while a slide may still start ([isPossible]), and
  * [rejectIfStalled] ends that wait when no further motion event comes.
  *
  * A slide along an edge for which [edgeScrolls] is true scrolls the app instead: once it has moved a
@@ -176,8 +175,11 @@ class EdgeSwipeTracker(
   // Where the menu measures movement away from the edge from: where the finger landed, or, for a
   // finger reported at the screen's edge, where it is first reported off it.
   private var menuStartX = 0f
-  // Whether the finger has moved since it landed.
-  private var moved = false
+  // The farthest the finger has gone toward a slide's first stage, and when it last went
+  // [STILL_SLOP_DIVISOR] of a slop farther. A finger that stops short of the first stage is left
+  // to touch exploration.
+  private var progress = 0f
+  private var progressTime = 0L
   private var stage = 0
   private var stages = emptyList<Int>()
   // The slides the touch may still become, first the one that wins when two reach their first
@@ -203,7 +205,7 @@ class EdgeSwipeTracker(
   fun clear() {
     state = State.IDLE
     pointerId = INVALID_ID
-    moved = false
+    progress = 0f
     stage = 0
     stages = emptyList()
     candidates.clear()
@@ -358,6 +360,7 @@ class EdgeSwipeTracker(
     startY = y
     menuStartX = x
     startTime = event.eventTime
+    progressTime = startTime
     state = State.POSSIBLE
     debugLog("possible: start=(${x.toInt()},${y.toInt()}) screen=${screenWidth}x$screenHeight")
     candidates.firstOrNull { !it.edge.along }?.let { listener.onEdgeTouched(it.edge) }
@@ -367,15 +370,15 @@ class EdgeSwipeTracker(
    * The time, in [MotionEvent.getEventTime] terms, at which [rejectIfStalled] rejects the touch if
    * it is still possible and has not moved on.
    */
-  fun stallTime(): Long = startTime + if (moved) maxStartMillis() else STILL_MILLIS
+  fun stallTime(): Long = minOf(progressTime + STILL_MILLIS, startTime + maxStartMillis())
 
   /** The time from the touch by which the slide must reach its first stage. */
   private fun maxStartMillis(): Long =
     if (candidates.any { it.stages.first() != 1 }) MAX_LONG_START_MILLIS else MAX_START_MILLIS
 
   /**
-   * Rejects a possible slide that has not moved by [STILL_MILLIS], or not reached the edge's first
-   * stage in time, at [now].
+   * Rejects a possible slide that has not gone on toward a first stage for [STILL_MILLIS], or not
+   * reached the edge's first stage in time, at [now].
    */
   fun rejectIfStalled(now: Long) {
     if (state != State.POSSIBLE) {
@@ -384,8 +387,8 @@ class EdgeSwipeTracker(
     if (now - startTime > maxStartMillis()) {
       debugLog("rejected, too slow")
       state = State.REJECTED
-    } else if (now - startTime >= STILL_MILLIS && !moved) {
-      debugLog("rejected, not moving after ${now - startTime} ms")
+    } else if (now - progressTime >= STILL_MILLIS) {
+      debugLog("rejected, stopped ${now - progressTime} ms at ${progress.toInt()} px")
       state = State.REJECTED
     }
   }
@@ -441,15 +444,13 @@ class EdgeSwipeTracker(
     }
     val x = event.getX(index)
     val y = event.getY(index)
-    if (hypot(x - startX, y - startY) >= slopPx / STILL_SLOP_DIVISOR) {
-      moved = true
-    }
     // A finger partly off the screen jumps in from the screen's edge once enough of it is on the
     // screen; that jump is not movement away from the edge.
     if (menuStartX < 1f || menuStartX > screenWidth - 2f) {
       menuStartX = x
     }
     var started: Candidate? = null
+    var farthest = 0f
     val iterator = candidates.iterator()
     while (iterator.hasNext()) {
       val candidate = iterator.next()
@@ -475,6 +476,7 @@ class EdgeSwipeTracker(
         iterator.remove()
         continue
       }
+      farthest = maxOf(farthest, forward)
       val firstStage =
         if (candidate.scroll) {
           slopPx
@@ -488,6 +490,10 @@ class EdgeSwipeTracker(
     if (candidates.isEmpty()) {
       state = State.REJECTED
       return
+    }
+    if (farthest >= progress + slopPx / STILL_SLOP_DIVISOR) {
+      progress = farthest
+      progressTime = event.eventTime
     }
     rejectIfStalled(event.eventTime)
     if (state != State.POSSIBLE || started == null) {
@@ -602,12 +608,12 @@ class EdgeSwipeTracker(
     private const val MAX_LONG_START_MILLIS = 1000L
 
     /**
-     * Time, in milliseconds, by which a touch at an edge must have moved. A touch that stays put
-     * longer is touch exploration.
+     * Time, in milliseconds, in which a touch at an edge must go on toward a first stage. A touch
+     * that stays put, or stops short of the first stage, longer is touch exploration.
      */
     private const val STILL_MILLIS = 200L
 
-    /** A finger has moved once it is a third of the slop from where it landed. */
+    /** A finger has gone on toward a first stage once it is a third of the slop farther. */
     private const val STILL_SLOP_DIVISOR = 3f
 
     /**
