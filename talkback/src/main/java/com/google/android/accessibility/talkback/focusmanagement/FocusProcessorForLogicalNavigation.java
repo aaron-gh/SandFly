@@ -135,6 +135,10 @@ import org.checkerframework.checker.nullness.qual.Nullable;
 
 /** Handles the use case of logical navigation actions. */
 public class FocusProcessorForLogicalNavigation {
+  // The direction of the last move to the next or previous item, which the next move most likely
+  // takes too.
+  private @SearchDirection int lastLogicalDirection = TraversalStrategy.SEARCH_FOCUS_FORWARD;
+
 
   ///////////////////////////////////////////////////////////////////////////////////////////////
   // Constants
@@ -1219,6 +1223,11 @@ public class FocusProcessorForLogicalNavigation {
    * nodes through the same saved order and node checks as a swipe, so that a swipe that follows
    * finds them already fetched from the app.
    */
+  /** The direction of the last move to the next or previous item: forward or backward. */
+  public @SearchDirection int lastLogicalDirection() {
+    return lastLogicalDirection;
+  }
+
   public @Nullable AccessibilityNodeInfoCompat predictTarget(
       @NonNull AccessibilityNodeInfoCompat pivot, @SearchDirection int searchDirection) {
     if (!TraversalStrategyUtils.isLogicalDirection(searchDirection)
@@ -1481,6 +1490,10 @@ public class FocusProcessorForLogicalNavigation {
     int logicalDirection =
         TraversalStrategyUtils.getLogicalDirection(
             searchDirection, WindowUtils.isScreenLayoutRTL(service));
+    if (logicalDirection == TraversalStrategy.SEARCH_FOCUS_FORWARD
+        || logicalDirection == TraversalStrategy.SEARCH_FOCUS_BACKWARD) {
+      lastLogicalDirection = logicalDirection;
+    }
 
     if (ScreenElements.isShowing()
         && navigationAction.targetType == NavigationTarget.TARGET_DEFAULT

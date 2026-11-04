@@ -164,6 +164,11 @@ public class DirectionNavigationActor implements UserInputEventListener {
    * likely focus, without changing anything. See {@link
    * FocusProcessorForLogicalNavigation#predictTarget}.
    */
+  /** The direction of the last move to the next or previous item: forward or backward. */
+  public @SearchDirection int lastLogicalDirection() {
+    return focusProcessorForLogicalNavigation.lastLogicalDirection();
+  }
+
   public @Nullable AccessibilityNodeInfoCompat predictTarget(
       AccessibilityNodeInfoCompat pivot, @SearchDirection int searchDirection) {
     return focusProcessorForLogicalNavigation.predictTarget(pivot, searchDirection);

@@ -50,6 +50,7 @@ import com.google.android.accessibility.utils.traversal.TraversalStrategy.Search
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import java.util.Objects;
 import java.util.function.BooleanSupplier;
+import java.util.function.IntSupplier;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
@@ -81,6 +82,9 @@ public class EventFilter {
   }
 
   private @Nullable TargetPredictor targetPredictor;
+  // The direction of the last move to the next or previous item, which the next swipe most likely
+  // takes too.
+  private IntSupplier lastDirection = () -> TraversalStrategy.SEARCH_FOCUS_FORWARD;
   // Whether a finger is on the screen now.
   private BooleanSupplier fingerDown = () -> false;
   // The node that accessibility focus last moved to, as far as this filter knows.
@@ -100,10 +104,6 @@ public class EventFilter {
    */
   private static volatile boolean speakItemsBeforeScroll = false;
 
-  /** The directions of the swipes whose targets are prepared: to the next and previous node. */
-  private static final int[] SWIPE_DIRECTIONS = {
-    TraversalStrategy.SEARCH_FOCUS_FORWARD, TraversalStrategy.SEARCH_FOCUS_BACKWARD
-  };
 
   // /////////////////////////////////////////////////////////////////////////////////
   // Construction
@@ -130,6 +130,11 @@ public class EventFilter {
 
   public void setTargetPredictor(@Nullable TargetPredictor predictor) {
     targetPredictor = predictor;
+  }
+
+  /** Sets how to get the direction of the last move to the next or previous item. */
+  public void setLastDirection(IntSupplier lastDirection) {
+    this.lastDirection = lastDirection;
   }
 
   /** Sets how to tell whether a finger is on the screen, so that a swipe never waits for this. */
@@ -488,7 +493,7 @@ public class EventFilter {
     return false;
   }
 
-  /** Prepares the announcements of the nodes next to {@code node}, which focus just moved to. */
+  /** Prepares the announcement of the node after {@code node}, which focus just moved to. */
   private void onFocusMoved(AccessibilityNodeInfoCompat node) {
     lastFocusedNode = node;
     handler.removeCallbacks(prepareSwipeTargets);
@@ -498,8 +503,8 @@ public class EventFilter {
   }
 
   /**
-   * Works out the announcements of the nodes that a swipe forward or back from the focused node
-   * would most likely reach, while the user listens to the focused node, so that the swipe can
+   * Works out the announcement of the node that a swipe from the focused node, in the direction of
+   * the last one, would most likely reach, while the user listens to the focused node, so that the swipe can
    * speak one at once. Finding them also fetches them from the app, so that the swipe's own search
    * finds them already fetched.
    */
@@ -509,17 +514,17 @@ public class EventFilter {
       // A swipe may be starting, and must not wait for this.
       return;
     }
-    for (int direction : SWIPE_DIRECTIONS) {
-      @Nullable AccessibilityNodeInfoCompat target;
-      try {
-        target = targetPredictor.predictTarget(pivot, direction);
-      } catch (RuntimeException e) {
-        LogUtils.e(TAG, "Cannot predict swipe target: %s", e);
-        return;
-      }
-      if (target != null && !PreparedFocusSpeech.has(target)) {
-        prepareFocusSpeech(target);
-      }
+    // Only in the direction of the last move: each target is read from the app again and its
+    // announcement worked out, and the next swipe mostly goes the same way.
+    @Nullable AccessibilityNodeInfoCompat target;
+    try {
+      target = targetPredictor.predictTarget(pivot, lastDirection.getAsInt());
+    } catch (RuntimeException e) {
+      LogUtils.e(TAG, "Cannot predict swipe target: %s", e);
+      return;
+    }
+    if (target != null && !PreparedFocusSpeech.has(target)) {
+      prepareFocusSpeech(target);
     }
   }
 

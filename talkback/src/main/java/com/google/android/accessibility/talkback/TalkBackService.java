@@ -2863,6 +2863,7 @@ public class TalkBackService extends AccessibilityServiceCompat
                 /* continuousReading= */ fullScreenReadActor != null
                     && fullScreenReadActor.isActive()));
     eventFilter.setTargetPredictor(directionNavigationActor::predictTarget);
+    eventFilter.setLastDirection(directionNavigationActor::lastLogicalDirection);
     eventFilter.setFingerDownSupplier(
         () ->
             FeatureSupport.supportGestureDetection()
