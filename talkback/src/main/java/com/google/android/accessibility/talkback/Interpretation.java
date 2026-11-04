@@ -453,6 +453,9 @@ public abstract class Interpretation {
 
     public abstract @Nullable ScreenState screenState();
 
+    /** An item of web content in view, to focus in place of focus that scrolled out of view. */
+    public abstract @Nullable AccessibilityNodeInfoCompat webItemInView();
+
     /**
      * @return Builder for {@code ManualScroll}
      */
@@ -468,6 +471,7 @@ public abstract class Interpretation {
           StringBuilderUtils.optionalField(
               "direction", TraversalStrategyUtils.directionToString(direction())),
           StringBuilderUtils.optionalSubObj("screenState", screenState()),
+          StringBuilderUtils.optionalSubObj("webItemInView", webItemInView()),
           "}");
     }
 
@@ -479,6 +483,8 @@ public abstract class Interpretation {
       public abstract Builder setDirection(int direction);
 
       public abstract Builder setScreenState(ScreenState screenState);
+
+      public abstract Builder setWebItemInView(AccessibilityNodeInfoCompat webItemInView);
 
       public abstract ManualScroll build();
     }

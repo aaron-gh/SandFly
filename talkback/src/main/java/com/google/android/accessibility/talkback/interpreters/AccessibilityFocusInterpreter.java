@@ -59,10 +59,14 @@ import com.google.android.accessibility.utils.FeatureSupport;
 import com.google.android.accessibility.utils.FormFactorUtils;
 import com.google.android.accessibility.utils.Performance;
 import com.google.android.accessibility.utils.Performance.EventId;
+import com.google.android.accessibility.utils.Role;
+import com.google.android.accessibility.utils.WebInterfaceUtils;
 import com.google.android.accessibility.utils.labeling.Label;
 import com.google.android.accessibility.utils.traversal.TraversalStrategy;
 import com.google.android.accessibility.utils.traversal.TraversalStrategy.SearchDirection;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
+import java.util.ArrayList;
+import java.util.List;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 /**
@@ -230,7 +234,108 @@ public class AccessibilityFocusInterpreter
 
       pipelineInterpretations.input(
           interpretation.eventId(), interpretation.event(), builder.build());
+    } else if (!FormFactorUtils.isAndroidWear()) {
+      moveWebFocusIntoView(interpretation, currentA11yFocusedNode);
     }
+  }
+
+  /** Most ancestors of the focused node read to find its WebView. */
+  private static final int MAX_ANCESTORS_READ = 128;
+
+  /**
+   * Moves accessibility focus that the user scrolled out of view in web content to an item in view.
+   * Web content counts as focusable while its WebView is visible, so focus out of view is kept, and
+   * the next swipe from it would scroll the page back.
+   */
+  private void moveWebFocusIntoView(
+      ManualScrollInterpretation interpretation, @Nullable AccessibilityNodeInfoCompat focus) {
+    if (focus == null || !WebInterfaceUtils.supportsWebActions(focus)) {
+      return;
+    }
+    AccessibilityNodeInfoCompat scrolled =
+        AccessibilityEventUtils.sourceCompat(interpretation.event());
+    if (scrolled == null) {
+      return;
+    }
+    Rect focusBounds = new Rect();
+    focus.getBoundsInScreen(focusBounds);
+    Rect scrolledBounds = new Rect();
+    scrolled.getBoundsInScreen(scrolledBounds);
+    // Focus in the scrolled view is in view. Most scrolls end here, without asking the app.
+    if (!WebScrollFocus.isOutside(focusBounds, scrolledBounds)) {
+      return;
+    }
+
+    // The focused node and its ancestors, the WebView that holds it, and whether the scrolled view
+    // is one of them.
+    List<AccessibilityNodeInfoCompat> focusAndAncestors = new ArrayList<>();
+    AccessibilityNodeInfoCompat webView = null;
+    boolean scrolledHoldsFocus = false;
+    AccessibilityNodeInfoCompat node = focus;
+    while (node != null
+        && focusAndAncestors.size() < MAX_ANCESTORS_READ
+        && !focusAndAncestors.contains(node)) {
+      focusAndAncestors.add(node);
+      scrolledHoldsFocus |= node.equals(scrolled);
+      AccessibilityNodeInfoCompat parent = node.getParent();
+      if (webView == null
+          && Role.getRole(node) == Role.ROLE_WEB_VIEW
+          && Role.getRole(parent) != Role.ROLE_WEB_VIEW) {
+        webView = node;
+      }
+      node = parent;
+    }
+    if (webView == null) {
+      return;
+    }
+    Rect viewport = new Rect();
+    webView.getBoundsInScreen(viewport);
+    if (viewport.isEmpty()) {
+      return;
+    }
+    if (scrolledHoldsFocus) {
+      // Focus can also scroll out of a list or frame in the page.
+      if (!scrolledBounds.isEmpty() && !viewport.intersect(scrolledBounds)) {
+        return;
+      }
+    } else if (!WebScrollFocus.isWebContent(scrolled)
+        || !(scrolled.equals(webView)
+            || AccessibilityNodeInfoUtils.hasAncestor(scrolled, webView))) {
+      // The scroll is outside the WebView that holds the focus.
+      return;
+    }
+    if (!WebScrollFocus.isOutside(focusBounds, viewport)) {
+      return;
+    }
+
+    // Search the part of the page that scrolled, or the whole page when a view around the WebView
+    // scrolled.
+    AccessibilityNodeInfoCompat searchRoot = scrolled;
+    if (!WebScrollFocus.isWebContent(scrolled)) {
+      searchRoot = webView;
+    } else if (!scrolledHoldsFocus
+        && !scrolledBounds.isEmpty()
+        && !viewport.intersect(scrolledBounds)) {
+      return;
+    }
+    AccessibilityNodeInfoCompat item =
+        WebScrollFocus.findItemInView(
+            searchRoot,
+            focusAndAncestors,
+            viewport,
+            interpretation.direction() != TraversalStrategy.SEARCH_FOCUS_BACKWARD);
+    if (item == null) {
+      LogUtils.d(TAG, "Web focus is out of view, and no item is in view");
+      return;
+    }
+    pipelineInterpretations.input(
+        interpretation.eventId(),
+        interpretation.event(),
+        ManualScroll.builder()
+            .setDirection(interpretation.direction())
+            .setScreenState(screenState.getStableScreenState())
+            .setWebItemInView(item)
+            .build());
   }
 
   private boolean shouldMoveFocus(
