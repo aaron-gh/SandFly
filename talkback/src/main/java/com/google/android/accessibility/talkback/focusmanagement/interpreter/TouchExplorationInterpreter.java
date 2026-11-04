@@ -254,6 +254,14 @@ public class TouchExplorationInterpreter implements AccessibilityEventListener {
     }
   }
 
+  /**
+   * Forgets the node touched last, so that touching it again is reported, as when the finger moves
+   * back to it from SandFly's strip at the bottom of the screen, which reports no nodes.
+   */
+  public void forgetTouchedNode() {
+    setLastTouchedNode(/* touchedNode= */ null);
+  }
+
   private boolean handleTouchedNode(AccessibilityNodeInfoCompat touchedNode, EventId eventId) {
     if (touchedNode.equals(lastTouchedNode)) {
       // If two consecutive Hover_Enter events have the same source node, we won't dispatch it

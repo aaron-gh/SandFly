@@ -35,30 +35,27 @@ import com.google.android.libraries.accessibility.utils.log.LogUtils
  *
  * Once touch exploration starts, SandFly gets no motion events, only the items the finger touches,
  * and an item can reach the bottom of the screen. Hovers over SandFly's own window still reach it,
- * so the strip reports when the finger is in it. The strip sends no accessibility events, so the
- * item the finger touched before stays the touched item.
+ * so the strip reports when the finger moves in and out of it. The strip sends no accessibility
+ * events, so the item the finger touched before stays the touched item.
  */
 class LiftCancelStrip(private val context: Context, private val listener: Listener) {
   /** Receives where the finger is. */
-  fun interface Listener {
+  interface Listener {
+    /** Called when the finger moves into the strip, with the time of the hover. */
+    fun onFingerEnteredStrip(timeMs: Long)
+
     /**
-     * Called with true and the time of the hover when the finger moves into the strip, and with
-     * false [EXIT_DELAY_MS] after it leaves the strip. Lifting the finger also leaves the strip, but
-     * the touch has ended by the time false is reported.
+     * Called when the finger leaves the strip, with the time of the hover. Moving back up and
+     * lifting the finger in the strip send the same exit; only moving up is followed by an app
+     * reporting the item under the finger, from this time on.
      */
-    fun onFingerInStrip(inStrip: Boolean, timeMs: Long)
+    fun onFingerLeftStrip(timeMs: Long)
   }
 
   private val windowManager = context.getSystemService(WindowManager::class.java)
   private var view: View? = null
   // Whether the hovers of the touch in progress are in the strip.
   private var hovering = false
-  private val reportExit = Runnable {
-    if (hovering) {
-      hovering = false
-      listener.onFingerInStrip(false, SystemClock.uptimeMillis())
-    }
-  }
 
   /** Shows the strip, or removes it. */
   fun setShown(shown: Boolean) {
@@ -74,18 +71,14 @@ class LiftCancelStrip(private val context: Context, private val listener: Listen
         override fun onHoverEvent(event: MotionEvent): Boolean {
           when (event.actionMasked) {
             MotionEvent.ACTION_HOVER_ENTER,
-            MotionEvent.ACTION_HOVER_MOVE -> {
-              removeCallbacks(reportExit)
+            MotionEvent.ACTION_HOVER_MOVE ->
               if (!hovering) {
                 hovering = true
-                listener.onFingerInStrip(true, event.eventTime)
+                listener.onFingerEnteredStrip(event.eventTime)
               }
-            }
             MotionEvent.ACTION_HOVER_EXIT -> {
-              LogUtils.v(TAG, "Finger left the strip at y=%f", event.y)
-              // The same exit comes when the finger lifts in the strip and when it moves back up.
-              // A lift ends the touch within milliseconds, before the exit is reported.
-              postDelayed(reportExit, EXIT_DELAY_MS)
+              hovering = false
+              listener.onFingerLeftStrip(event.eventTime)
             }
             else -> {}
           }
@@ -140,7 +133,6 @@ class LiftCancelStrip(private val context: Context, private val listener: Listen
   private fun hide() {
     val strip = view ?: return
     view = null
-    strip.removeCallbacks(reportExit)
     try {
       windowManager.removeView(strip)
     } catch (e: IllegalArgumentException) {
@@ -148,7 +140,7 @@ class LiftCancelStrip(private val context: Context, private val listener: Listen
     }
     if (hovering) {
       hovering = false
-      listener.onFingerInStrip(false, SystemClock.uptimeMillis())
+      listener.onFingerLeftStrip(SystemClock.uptimeMillis())
     }
   }
 
@@ -157,8 +149,5 @@ class LiftCancelStrip(private val context: Context, private val listener: Listen
 
     /** The height of the strip. A finger sliding off the screen is last reported within it. */
     const val STRIP_HEIGHT_MM = 2f
-
-    /** How long after the finger leaves the strip it is reported out of it. */
-    const val EXIT_DELAY_MS = 150L
   }
 }

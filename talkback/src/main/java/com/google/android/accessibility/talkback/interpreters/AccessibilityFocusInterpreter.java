@@ -555,8 +555,23 @@ public class AccessibilityFocusInterpreter
   }
 
   /** Sets whether the finger is at the edge of the screen, where lifting it activates nothing. */
-  public void setFingerAtScreenEdge(boolean atEdge, long timeMs) {
-    focusProcessorForTapAndTouchExploration.setFingerAtScreenEdge(atEdge, timeMs);
+  public void setFingerAtScreenEdge(boolean atEdge) {
+    focusProcessorForTapAndTouchExploration.setFingerAtScreenEdge(atEdge);
+  }
+
+  /** Notes that the finger left the strip at the bottom of the screen at {@code timeMs}. */
+  public void onFingerLeftScreenEdge(long timeMs) {
+    focusProcessorForTapAndTouchExploration.onFingerLeftScreenEdge(timeMs);
+  }
+
+  /** Sets how long the finger stays on an item for lifting it to activate nothing; 0 for never. */
+  public void setHoldToCancelMs(long ms) {
+    focusProcessorForTapAndTouchExploration.setHoldToCancelMs(ms);
+  }
+
+  /** Sets what plays when holding or the edge of the screen cancels an activation. */
+  public void setLiftCancelledFeedback(@Nullable Runnable feedback) {
+    focusProcessorForTapAndTouchExploration.setLiftCancelledFeedback(feedback);
   }
 
   /** Returns whether lifting the finger now activates the item or types the key it last touched. */

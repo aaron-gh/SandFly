@@ -2068,7 +2068,7 @@ public class TouchInteractionMonitor
     int action = event.getActionMasked();
     if (action == ACTION_DOWN) {
       display.getRealSize(screenSize);
-      setFingerAtScreenEdge(false, event.getEventTime());
+      setFingerAtScreenEdge(false);
     }
     if ((action != ACTION_DOWN && action != ACTION_MOVE && action != MotionEvent.ACTION_UP)
         || event.getPointerCount() != 1) {
@@ -2084,12 +2084,12 @@ public class TouchInteractionMonitor
     if (atEdge == fingerAtScreenEdge) {
       return;
     }
-    setFingerAtScreenEdge(atEdge, event.getEventTime());
+    setFingerAtScreenEdge(atEdge);
   }
 
-  private void setFingerAtScreenEdge(boolean atEdge, long timeMs) {
+  private void setFingerAtScreenEdge(boolean atEdge) {
     fingerAtScreenEdge = atEdge;
-    service.setFingerAtScreenEdge(atEdge, timeMs);
+    service.setFingerAtScreenEdge(atEdge);
   }
 
   private void exploreKeyboardAt(float x, float y) {

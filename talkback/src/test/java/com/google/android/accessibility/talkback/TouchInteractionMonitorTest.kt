@@ -68,7 +68,7 @@ class TouchInteractionMonitorTest {
     var tapsToType = 0
     val fingerAtScreenEdge = mutableListOf<Boolean>()
 
-    override fun setFingerAtScreenEdge(atEdge: Boolean, timeMs: Long) {
+    override fun setFingerAtScreenEdge(atEdge: Boolean) {
       fingerAtScreenEdge.add(atEdge)
     }
     var displayWindows = listOf<AccessibilityWindowInfo>()

@@ -2489,6 +2489,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     accessibilityFocusInterpreter =
         new AccessibilityFocusInterpreter(
             this, accessibilityFocusMonitor, screenStateMonitor.state, touchMonitor, analytics);
+    accessibilityFocusInterpreter.setLiftCancelledFeedback(this::playLiftCancelledFeedback);
 
     inputFocusInterpreter =
         new InputFocusInterpreter(accessibilityFocusInterpreter, focusFinder, globalVariables);
@@ -3667,20 +3668,47 @@ public class TalkBackService extends AccessibilityServiceCompat
   }
 
   /**
-   * Sets whether the finger is at the edge of the screen, where lifting it activates nothing, since
-   * {@code timeMs}. Reaching the edge where lifting would have activated the item or typed the key
-   * the finger touched plays the edge sound with the vibration of a cancelled edge slide.
+   * Sets whether the finger is at the edge of the screen, where lifting it activates nothing.
+   * Reaching the edge where lifting would have activated the item or typed the key the finger
+   * touched plays the feedback of a cancelled activation.
    */
-  public void setFingerAtScreenEdge(boolean atEdge, long timeMs) {
+  public void setFingerAtScreenEdge(boolean atEdge) {
     if (accessibilityFocusInterpreter == null) {
       return;
     }
-    accessibilityFocusInterpreter.setFingerAtScreenEdge(atEdge, timeMs);
-    if (atEdge && feedbackController != null && accessibilityFocusInterpreter.liftActivates()) {
+    accessibilityFocusInterpreter.setFingerAtScreenEdge(atEdge);
+    if (atEdge && accessibilityFocusInterpreter.liftActivates()) {
+      playLiftCancelledFeedback();
+    }
+  }
+
+  /** The edge sound, with the vibration of a cancelled edge slide. */
+  private void playLiftCancelledFeedback() {
+    if (feedbackController != null) {
       feedbackController.playAuditoryWithoutHaptic(R.raw.edge_gesture_bottom, EVENT_ID_UNTRACKED);
       feedbackController.playHaptic(R.array.edge_swipe_cancel_pattern, EVENT_ID_UNTRACKED);
     }
   }
+
+  /** Where the finger is, from the strip at the bottom of the screen. */
+  private final LiftCancelStrip.Listener liftCancelStripListener =
+      new LiftCancelStrip.Listener() {
+        @Override
+        public void onFingerEnteredStrip(long timeMs) {
+          setFingerAtScreenEdge(true);
+          // Moving back up to the item touched before reports it again.
+          if (touchExplorationInterpreter != null) {
+            touchExplorationInterpreter.forgetTouchedNode();
+          }
+        }
+
+        @Override
+        public void onFingerLeftStrip(long timeMs) {
+          if (accessibilityFocusInterpreter != null) {
+            accessibilityFocusInterpreter.onFingerLeftScreenEdge(timeMs);
+          }
+        }
+      };
 
   /** Shows the strip at the bottom of the screen where lifting activates nothing, while needed. */
   private void updateLiftCancelStrip() {
@@ -3691,16 +3719,11 @@ public class TalkBackService extends AccessibilityServiceCompat
                     prefs.getString(getString(R.string.pref_lift_to_activate_key), null))
                 != LiftToActivateMode.DISABLED;
     if (shown && liftCancelStrip == null) {
-      liftCancelStrip = new LiftCancelStrip(this, this::setFingerAtScreenEdge);
+      liftCancelStrip = new LiftCancelStrip(this, liftCancelStripListener);
     }
     if (liftCancelStrip != null) {
       liftCancelStrip.setShown(shown);
     }
-  }
-
-  /** Returns whether lifting the finger now activates the item or types the key it last touched. */
-  public boolean liftActivates() {
-    return accessibilityFocusInterpreter != null && accessibilityFocusInterpreter.liftActivates();
   }
 
   public void onTapToType() {
@@ -3823,6 +3846,11 @@ public class TalkBackService extends AccessibilityServiceCompat
         getBooleanPref(
             R.string.pref_touch_stops_speech_key, R.bool.pref_touch_stops_speech_default));
     updateLiftCancelStrip();
+    if (accessibilityFocusInterpreter != null) {
+      accessibilityFocusInterpreter.setHoldToCancelMs(
+          SharedPreferencesUtils.getIntFromStringPref(
+              prefs, res, R.string.pref_hold_to_cancel_key, R.string.pref_hold_to_cancel_default));
+    }
     // TV navigation relies on focus following input focus, so the switch is hidden there.
     FocusProcessorForScreenStateChange.setFocusNewWindows(
         FormFactorUtils.isAndroidTv()

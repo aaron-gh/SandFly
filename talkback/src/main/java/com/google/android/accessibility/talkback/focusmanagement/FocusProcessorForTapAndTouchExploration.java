@@ -203,15 +203,19 @@ public class FocusProcessorForTapAndTouchExploration {
   private long touchInteractionStartTime;
 
   // Whether the finger of the touch in progress was last at the edge of the screen, where lifting
-  // it, such as by sliding it off the screen, activates nothing, and since when.
+  // it, such as by sliding it off the screen, activates nothing.
   private boolean fingerAtScreenEdge = false;
-  private long fingerAtScreenEdgeTimeMs;
+  // When the finger last left the strip at the bottom of the screen. An app item touched from then
+  // on means the finger moved back up; a finger that lifted in the strip touches none.
+  private long leftScreenEdgeTimeMs = Long.MAX_VALUE;
 
-  /**
-   * How long after the finger reached the edge an app's item touched must have been, for the finger
-   * to have moved back from the edge. An app reports a touched item a little after the touch.
-   */
-  private static final long EDGE_HOVER_LATENCY_MS = 100;
+  // How long the finger stays on an item before lifting it activates nothing, with Lift to
+  // activate, or 0 for never. The setting is Hold to cancel.
+  private long holdToCancelMs = 0;
+  // Whether the finger stayed on the item it touches for holdToCancelMs.
+  private boolean heldToCancel = false;
+  // Plays the feedback of an activation cancelled by holding or by the edge of the screen.
+  @Nullable private Runnable liftCancelledFeedback;
   private final Context context;
   private final TalkBackAnalytics analytics;
   private final boolean splitTapEverywhere;
@@ -282,6 +286,7 @@ public class FocusProcessorForTapAndTouchExploration {
     // Reset cached information at the beginning of a new touch interaction cycle.
     reset();
     fingerAtScreenEdge = false;
+    leftScreenEdgeTimeMs = Long.MAX_VALUE;
 
     touchInteractionStartTime = SystemClock.uptimeMillis();
 
@@ -308,6 +313,7 @@ public class FocusProcessorForTapAndTouchExploration {
     mayBeSingleTap = true;
     mayBeLiftToType = true;
     isSplitTap = false;
+    heldToCancel = false;
   }
 
   /**
@@ -322,10 +328,8 @@ public class FocusProcessorForTapAndTouchExploration {
     }
     postDelayHandler.cancelLongPress();
     postDelayHandler.cancelRefocusTimeout();
-    if (fingerAtScreenEdge
-        && eventId != null
-        && eventId.getEventTimeMs() > fingerAtScreenEdgeTimeMs + EDGE_HOVER_LATENCY_MS) {
-      // The finger has moved back to an app's item.
+    if (fingerAtScreenEdge && eventId != null && eventId.getEventTimeMs() >= leftScreenEdgeTimeMs) {
+      // The finger has moved back up from the strip at the bottom of the screen to an app's item.
       fingerAtScreenEdge = false;
     }
     if (touchedFocusableNode != null && !touchedFocusableNode.isAccessibilityFocused()) {
@@ -366,6 +370,12 @@ public class FocusProcessorForTapAndTouchExploration {
     int scriptLongPressMs = Scripts.longPressAfterMs(touchedFocusableNode);
     if (scriptLongPressMs > 0 && AccessibilityNodeInfoUtils.isLongClickable(touchedFocusableNode)) {
       postDelayHandler.longPressAfterTimeout(scriptLongPressMs);
+    }
+    // Each item the finger moves to can be activated again, and held again to cancel.
+    heldToCancel = false;
+    postDelayHandler.cancelHoldToCancel();
+    if (holdToCancelMs > 0 && touchedFocusableNode != null && scriptLongPressMs <= 0) {
+      postDelayHandler.holdToCancelAfter(holdToCancelMs);
     }
     return result;
   }
@@ -497,6 +507,7 @@ public class FocusProcessorForTapAndTouchExploration {
     // TODO: Shall we also cancel empty touch feedback?
     postDelayHandler.cancelRefocusTimeout();
     postDelayHandler.cancelLongPress();
+    postDelayHandler.cancelHoldToCancel();
 
     long currentTime = SystemClock.uptimeMillis();
 
@@ -504,6 +515,8 @@ public class FocusProcessorForTapAndTouchExploration {
     boolean liftActivates = liftActivates();
     if (liftActivates && fingerAtScreenEdge) {
       LogUtils.v(TAG, "Not activating: the finger lifted at the edge of the screen");
+    } else if (liftActivates && heldToCancel) {
+      LogUtils.v(TAG, "Not activating: the finger was held on the item to cancel");
     } else if (liftActivates) {
       // Perform click action for lift-to-type mode.
       analytics.onGesture(GESTURE_LIFT_TO_TYPE);
@@ -531,12 +544,50 @@ public class FocusProcessorForTapAndTouchExploration {
   }
 
   /**
+   * Holding the finger on an item with Lift to activate makes lifting it activate nothing. Keys
+   * that lift to type are left to their own long press.
+   */
+  private void holdToCancel() {
+    AccessibilityNodeInfoCompat node = lastFocusableNodeBeingTouched;
+    if (node == null
+        || !mayBeLiftToType
+        || isSplitTap
+        || (isEnableLiftToType() && supportsLiftToType(node))
+        || !shouldLiftToActivate(node)) {
+      return;
+    }
+    heldToCancel = true;
+    LogUtils.v(TAG, "Held on the item: lifting activates nothing");
+    if (liftCancelledFeedback != null) {
+      liftCancelledFeedback.run();
+    }
+  }
+
+  /**
    * Sets whether the finger of the touch in progress is at the edge of the screen, where lifting it
    * activates nothing.
    */
-  public void setFingerAtScreenEdge(boolean atEdge, long timeMs) {
+  public void setFingerAtScreenEdge(boolean atEdge) {
     fingerAtScreenEdge = atEdge;
-    fingerAtScreenEdgeTimeMs = timeMs;
+    leftScreenEdgeTimeMs = Long.MAX_VALUE;
+  }
+
+  /**
+   * Notes that the finger left the strip at the bottom of the screen at {@code timeMs}, by moving
+   * back up or by lifting.
+   */
+  public void onFingerLeftScreenEdge(long timeMs) {
+    leftScreenEdgeTimeMs = timeMs;
+  }
+
+  /** Sets how long the finger stays on an item for lifting it to activate nothing; 0 for never. */
+  public void setHoldToCancelMs(long ms) {
+    holdToCancelMs = Math.max(0, ms);
+  }
+
+  /** Sets what plays when holding or the edge of the screen cancels an activation. */
+  public void setLiftCancelledFeedback(@Nullable Runnable feedback) {
+    liftCancelledFeedback = feedback;
   }
 
   /**
@@ -603,6 +654,7 @@ public class FocusProcessorForTapAndTouchExploration {
       extends WeakReferenceHandler<FocusProcessorForTapAndTouchExploration> {
     private static final int MSG_REFOCUS = 1;
     private static final int MSG_LONG_CLICK_LAST_NODE = 2;
+    private static final int MSG_HOLD_TO_CANCEL = 3;
 
     private long longPressDelayMs;
 
@@ -630,8 +682,18 @@ public class FocusProcessorForTapAndTouchExploration {
             parent.mayBeLiftToType = false;
           }
         }
+        case MSG_HOLD_TO_CANCEL -> parent.holdToCancel();
         default -> {}
       }
+    }
+
+    private void holdToCancelAfter(long delayMs) {
+      removeMessages(MSG_HOLD_TO_CANCEL);
+      sendEmptyMessageDelayed(MSG_HOLD_TO_CANCEL, delayMs);
+    }
+
+    private void cancelHoldToCancel() {
+      removeMessages(MSG_HOLD_TO_CANCEL);
     }
 
     private void longPressAfterTimeout() {

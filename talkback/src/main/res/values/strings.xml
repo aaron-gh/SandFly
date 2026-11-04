@@ -2886,6 +2886,12 @@
 
     <!-- Title of the setting that activates the item under the finger when the finger is lifted. [CHAR LIMIT=NONE]-->
     <string name="title_pref_lift_to_activate">Lift to activate</string>
+    <!-- Title of the setting for how long the finger stays on an item for lifting it to activate nothing, with Lift to activate. [CHAR LIMIT=40] -->
+    <string name="title_pref_hold_to_cancel">Hold to cancel</string>
+    <!-- Value of Hold to cancel: holding the finger on an item doesn't cancel. [CHAR LIMIT=20] -->
+    <string name="value_hold_to_cancel_off">Off</string>
+    <!-- Value of Hold to cancel. [CHAR LIMIT=20] -->
+    <string name="value_hold_to_cancel_3000">3 seconds</string>
     <!-- Summary of the lift to activate setting in the reading controls list. [CHAR LIMIT=NONE]-->
     <string name="summary_support_change_lift_to_activate">Change where lifting your finger activates an item</string>
     <!-- Lift to activate is off. [CHAR LIMIT=NONE]-->
