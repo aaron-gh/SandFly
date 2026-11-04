@@ -1877,4 +1877,10 @@
   <string name="report_ai_response_title">Ответ ИИ</string>
   <string name="report_ai_response_description">Ответ ИИ:\n%1$s\n\n</string>
   <string name="report_no_ai_response">Нет ответа ИИ, о котором можно сообщить</string>
+  <string name="title_pref_hold_to_cancel">Отмена удержанием</string>
+  <string name="summary_pref_hold_to_cancel">%1$s. Если удерживать палец на элементе это время, при отпускании ничего не активируется.</string>
+  <string name="value_hold_to_cancel_off">Отключено</string>
+  <string name="value_hold_to_cancel_3000">3 сек.</string>
+  <string name="title_pref_tap_to_activate">Активация нажатием</string>
+  <string name="summary_pref_tap_to_activate">Нажатие, при котором палец отпускается до выбора элемента под ним, активирует этот элемент.</string>
 </resources>
