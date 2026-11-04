@@ -178,6 +178,9 @@ public class TouchInteractionMonitor
   // How close to the top or bottom edge a one-finger edge gesture must start, about the height of
   // the gesture navigation bar.
   private static final float EDGE_GESTURE_ZONE_CM = 0.5f;
+  // How close to an edge of the screen a finger lifts for lifting it, such as by sliding it off the
+  // screen, to activate nothing with Lift to activate or lift to type.
+  private static final float LIFT_CANCEL_ZONE_CM = 0.15f;
   // The length of each stroke of a two-finger scrub.
   private static final float SCRUB_STROKE_CM = 1f;
   // How far the fingers of a pinch or spread move toward or away from their middle, on average.
@@ -340,6 +343,8 @@ public class TouchInteractionMonitor
   private int gboardPopupFetches;
   private float lastFingerX;
   private float lastFingerY;
+  // Whether the finger was last within LIFT_CANCEL_ZONE_CM of an edge of the screen.
+  private boolean fingerAtScreenEdge;
   private float lastExploredX;
   private float lastExploredY;
   private @Nullable AccessibilityNodeInfoCompat lastExploredNode;
@@ -752,6 +757,7 @@ public class TouchInteractionMonitor
       lastFingerX = event.getX(0);
       lastFingerY = event.getY(0);
     }
+    trackFingerAtScreenEdge(event);
     if (exploringKeyboard) {
       exploreKeyboard(event);
       return;
@@ -2052,6 +2058,51 @@ public class TouchInteractionMonitor
     }
   }
 
+  /**
+   * Notes whether one finger is at the edge of the screen, where lifting it activates nothing, and
+   * plays the edge sound and vibration when it gets there if lifting it before would activate the
+   * item or type the key it touched. The lift's own position counts, but the last move's is used
+   * if Android ends the touch before the lift arrives.
+   */
+  private void trackFingerAtScreenEdge(MotionEvent event) {
+    int action = event.getActionMasked();
+    if (action == ACTION_DOWN) {
+      display.getRealSize(screenSize);
+      setFingerAtScreenEdge(false);
+    }
+    if ((action != ACTION_DOWN && action != ACTION_MOVE && action != MotionEvent.ACTION_UP)
+        || event.getPointerCount() != 1) {
+      return;
+    }
+    float zone = pixelsPerCm * LIFT_CANCEL_ZONE_CM;
+    float x = event.getX();
+    float y = event.getY();
+    boolean atEdge =
+        screenSize.x > 0
+            && screenSize.y > 0
+            && (x < zone || y < zone || x > screenSize.x - zone || y > screenSize.y - zone);
+    if (atEdge == fingerAtScreenEdge) {
+      return;
+    }
+    setFingerAtScreenEdge(atEdge);
+    if (atEdge
+        && action == ACTION_MOVE
+        && (state == STATE_TOUCH_EXPLORING || exploringKeyboard)
+        && service.liftActivates()) {
+      @Nullable FeedbackController feedbackController = feedbackController();
+      if (feedbackController != null) {
+        feedbackController.playAuditoryWithoutHaptic(
+            R.raw.edge_gesture_bottom, /* eventId= */ null);
+        feedbackController.playHaptic(R.array.edge_swipe_cancel_pattern, /* eventId= */ null);
+      }
+    }
+  }
+
+  private void setFingerAtScreenEdge(boolean atEdge) {
+    fingerAtScreenEdge = atEdge;
+    service.setFingerAtScreenEdge(atEdge);
+  }
+
   private void exploreKeyboardAt(float x, float y) {
     lastExploredX = x;
     lastExploredY = y;
@@ -2159,6 +2210,7 @@ public class TouchInteractionMonitor
   private void clickPopupKeyOnLift() {
     @Nullable AccessibilityNodeInfoCompat node = lastExploredNode;
     if (node == null
+        || fingerAtScreenEdge
         || !isInGboardPopup(node)
         || typingMethod != FocusProcessorForTapAndTouchExploration.LIFT_TO_TYPE
         || Role.getRole(node) == Role.ROLE_TEXT_ENTRY_KEY

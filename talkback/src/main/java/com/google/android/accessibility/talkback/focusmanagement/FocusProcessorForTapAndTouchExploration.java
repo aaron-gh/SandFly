@@ -56,9 +56,12 @@ import com.google.android.accessibility.utils.Role;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import com.google.android.accessibility.utils.WeakReferenceHandler;
 import com.google.android.libraries.accessibility.utils.device.ScreenUtils;
+import com.google.android.libraries.accessibility.utils.log.LogUtils;
 
 /** Event interpreter to handle accessibility focus during touch interaction. */
 public class FocusProcessorForTapAndTouchExploration {
+  private static final String TAG = "FocusProcessorForTap";
+
   /** This specifies TalkBack supported type confirmation */
   public static final int DOUBLE_TAP = 0;
   public static final int LIFT_TO_TYPE = 1;
@@ -198,6 +201,10 @@ public class FocusProcessorForTapAndTouchExploration {
   @Nullable private AccessibilityNodeInfoCompat tapToTypeKey;
 
   private long touchInteractionStartTime;
+
+  // Whether the finger of the touch in progress was last at the edge of the screen, where lifting
+  // it, such as by sliding it off the screen, activates nothing.
+  private boolean fingerAtScreenEdge = false;
   private final Context context;
   private final TalkBackAnalytics analytics;
   private final boolean splitTapEverywhere;
@@ -480,10 +487,10 @@ public class FocusProcessorForTapAndTouchExploration {
     long currentTime = SystemClock.uptimeMillis();
 
     boolean result = false;
-    if (mayBeLiftToType
-        && !isSplitTap
-        && ((isEnableLiftToType() && supportsLiftToType(lastFocusableNodeBeingTouched))
-            || shouldLiftToActivate(lastFocusableNodeBeingTouched))) {
+    boolean liftActivates = liftActivates();
+    if (liftActivates && fingerAtScreenEdge) {
+      LogUtils.v(TAG, "Not activating: the finger lifted at the edge of the screen");
+    } else if (liftActivates) {
       // Perform click action for lift-to-type mode.
       analytics.onGesture(GESTURE_LIFT_TO_TYPE);
       result =
@@ -507,6 +514,25 @@ public class FocusProcessorForTapAndTouchExploration {
     reset();
     isTapToType = false;
     return result;
+  }
+
+  /**
+   * Sets whether the finger of the touch in progress is at the edge of the screen, where lifting it
+   * activates nothing.
+   */
+  public void setFingerAtScreenEdge(boolean atEdge) {
+    fingerAtScreenEdge = atEdge;
+  }
+
+  /**
+   * Returns whether lifting the finger now activates the item it last touched, with Lift to
+   * activate, or types the key, with lift to type.
+   */
+  public boolean liftActivates() {
+    return mayBeLiftToType
+        && !isSplitTap
+        && ((isEnableLiftToType() && supportsLiftToType(lastFocusableNodeBeingTouched))
+            || shouldLiftToActivate(lastFocusableNodeBeingTouched));
   }
 
   /**
