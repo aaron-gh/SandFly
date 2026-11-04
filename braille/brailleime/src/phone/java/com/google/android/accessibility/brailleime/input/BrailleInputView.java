@@ -733,6 +733,10 @@ public class BrailleInputView extends View
     if (!isPortrait()) {
       return layoutExpectsPortOnRight();
     }
+    // Only the braille keyboard and the braille app launcher set the monitor up.
+    if (!OrientationMonitor.isInitialized()) {
+      return null;
+    }
     return DotsOrientation.heldPortOnRight(OrientationMonitor.getInstance().getCurrentOrientation());
   }
 

@@ -32,6 +32,7 @@ import com.google.android.accessibility.brailleime.BrailleImeTypingSounds
 import com.google.android.accessibility.brailleime.BrailleInputOptions
 import com.google.android.accessibility.brailleime.HeldOrientationTracker
 import com.google.android.accessibility.brailleime.LayoutOrientator
+import com.google.android.accessibility.brailleime.OrientationMonitor
 import com.google.android.accessibility.brailleime.Utils
 import com.google.android.accessibility.brailleime.input.BrailleInputView
 import com.google.android.accessibility.brailleime.input.DotHoldSwipe
@@ -70,6 +71,8 @@ class BrailleAppLauncher(
   private var translator: BrailleTranslator? = null
   private var orientation = Configuration.ORIENTATION_UNDEFINED
   private var screenSize: Size? = null
+  /** Whether this turned the orientation monitor on, which the dots read when touched. */
+  private var enabledOrientationMonitor = false
 
   /** Lays the dots out again when the screen turns, or a foldable folds or unfolds. */
   private val configurationCallbacks =
@@ -137,6 +140,13 @@ class BrailleAppLauncher(
       return
     }
     inputView = view
+    OrientationMonitor.init(service)
+    OrientationMonitor.getInstance().let {
+      if (!it.isEnabled) {
+        it.enable()
+        enabledOrientationMonitor = true
+      }
+    }
     orientation = service.resources.configuration.orientation
     screenSize = size
     service.registerComponentCallbacks(configurationCallbacks)
@@ -172,6 +182,11 @@ class BrailleAppLauncher(
     handler.removeCallbacks(closeIdle)
     orientator?.stop()
     orientator = null
+    if (enabledOrientationMonitor) {
+      enabledOrientationMonitor = false
+      // The braille keyboard registers a callback while it is shown, and keeps the monitor on.
+      OrientationMonitor.getInstance().let { if (!it.hasCallback()) it.disable() }
+    }
     if (inputView != null) service.unregisterComponentCallbacks(configurationCallbacks)
     inputView = null
     translator = null

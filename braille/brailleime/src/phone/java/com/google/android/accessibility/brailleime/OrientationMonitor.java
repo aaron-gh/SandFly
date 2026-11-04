@@ -69,6 +69,11 @@ public class OrientationMonitor {
     return singleton;
   }
 
+  /** Whether {@link #init} has been called. */
+  public static boolean isInitialized() {
+    return singleton != null;
+  }
+
   public static void init(Context context) {
     if (singleton == null) {
       singleton = new OrientationMonitor();
@@ -120,6 +125,10 @@ public class OrientationMonitor {
     orientationEventListener.disable();
   }
 
+  public boolean isEnabled() {
+    return enabled;
+  }
+
   public Orientation getCurrentOrientation() {
     return currentOrientation;
   }
@@ -130,6 +139,11 @@ public class OrientationMonitor {
 
   public void unregisterCallback() {
     orientationMonitorCallback = null;
+  }
+
+  /** Whether a callback is registered, as while the braille keyboard is shown. */
+  public boolean hasCallback() {
+    return orientationMonitorCallback != null;
   }
 
   @VisibleForTesting
