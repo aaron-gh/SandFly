@@ -121,15 +121,28 @@ object KeyboardExploration {
   private const val POPUP_DEPTH = 4
 
   /**
-   * Returns the character of Gboard's [popup] that a finger at [x], [y] selects: the one under it,
-   * or else the nearest, as Gboard selects one for a finger anywhere on the screen while the popup
-   * is open. Returns null if the popup has no characters.
+   * Returns the characters of Gboard's [popup], fetched again from Gboard, which waits for Gboard: a
+   * touch fetches them once and selects among them with [popupKeyAt].
    */
   @JvmStatic
-  fun popupKeyAt(popup: AccessibilityNodeInfoCompat, x: Float, y: Float): AccessibilityNodeInfoCompat? {
+  fun popupKeys(popup: AccessibilityNodeInfoCompat): List<AccessibilityNodeInfoCompat> {
     popup.refresh()
     val keys = ArrayList<AccessibilityNodeInfoCompat>()
     collectFocusable(popup, POPUP_DEPTH, keys)
+    return keys
+  }
+
+  /**
+   * Returns the character of Gboard's popup, among its [keys] from [popupKeys], that a finger at
+   * [x], [y] selects: the one under it, or else the nearest, as Gboard selects one for a finger
+   * anywhere on the screen while the popup is open. Returns null if there are no characters.
+   */
+  @JvmStatic
+  fun popupKeyAt(
+    keys: List<AccessibilityNodeInfoCompat>,
+    x: Float,
+    y: Float,
+  ): AccessibilityNodeInfoCompat? {
     val bounds = Rect()
     var nearest: AccessibilityNodeInfoCompat? = null
     var nearestDistance = Float.MAX_VALUE

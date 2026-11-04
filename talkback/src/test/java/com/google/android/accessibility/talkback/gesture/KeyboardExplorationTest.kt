@@ -23,6 +23,7 @@ import android.view.Display
 import android.view.accessibility.AccessibilityEvent
 import android.view.accessibility.AccessibilityNodeInfo
 import android.view.accessibility.AccessibilityWindowInfo
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotNull
 import org.junit.Assert.assertNull
@@ -36,6 +37,7 @@ import org.robolectric.annotation.Config
 import org.robolectric.annotation.Implementation
 import org.robolectric.annotation.Implements
 import org.robolectric.shadow.api.Shadow
+import org.robolectric.shadows.ShadowAccessibilityNodeInfo
 import org.robolectric.shadows.ShadowAccessibilityService
 import org.robolectric.shadows.ShadowAccessibilityWindowInfo
 import org.robolectric.util.ReflectionHelpers
@@ -47,7 +49,12 @@ import org.robolectric.util.ReflectionHelpers
 @RunWith(RobolectricTestRunner::class)
 @Config(
   sdk = [34],
-  shadows = [KeyboardExplorationTest.WindowsShadow::class, KeyboardExplorationTest.RootsShadow::class],
+  shadows =
+    [
+      KeyboardExplorationTest.WindowsShadow::class,
+      KeyboardExplorationTest.RootsShadow::class,
+      KeyboardExplorationTest.NodesShadow::class,
+    ],
 )
 class KeyboardExplorationTest {
 
@@ -83,6 +90,20 @@ class KeyboardExplorationTest {
     }
   }
 
+  /** Counts how often a node is fetched again with refresh, which waits for Gboard. */
+  @Implements(AccessibilityNodeInfo::class)
+  class NodesShadow : ShadowAccessibilityNodeInfo() {
+    @Implementation
+    override fun refresh(): Boolean {
+      refreshes++
+      return super.refresh()
+    }
+
+    companion object {
+      var refreshes = 0
+    }
+  }
+
   private lateinit var service: TestService
 
   @Before
@@ -95,6 +116,7 @@ class KeyboardExplorationTest {
     val app = window(APP_ID, AccessibilityWindowInfo.TYPE_APPLICATION, SCREEN_BOUNDS, "com.example")
     Shadow.extract<WindowsShadow>(service).onScreen = listOf(keyboard.window, app.window)
     RootsShadow.rootRequests = 0
+    NodesShadow.refreshes = 0
   }
 
   @Test
@@ -130,6 +152,29 @@ class KeyboardExplorationTest {
     val root = KeyboardExploration.gboardRootAt(service, Display.DEFAULT_DISPLAY, 50f, 1650f)!!
 
     assertNull(KeyboardExploration.nodeAt(service, Display.DEFAULT_DISPLAY, root, 50f, 500f))
+  }
+
+  @Test
+  fun popupCharactersAlongAMovingFingerAreSelectedFromOneFetchOfThePopup() {
+    val popup =
+      AccessibilityNodeInfo().apply {
+        packageName = GBOARD
+        setBoundsInScreen(Rect(0, 1400, 324, 1550))
+        isVisibleToUser = true
+      }
+    popup.addKey("e", Rect(0, 1400, 108, 1550))
+    popup.addKey("é", Rect(108, 1400, 216, 1550))
+    popup.addKey("è", Rect(216, 1400, 324, 1550))
+
+    val keys = KeyboardExploration.popupKeys(AccessibilityNodeInfoCompat.wrap(popup))
+    // The finger stays on the long-pressed key below the popup, and selects the nearest character.
+    val selected = mutableListOf<CharSequence?>()
+    for (x in 10..320 step 6) {
+      selected += KeyboardExploration.popupKeyAt(keys, x.toFloat(), 1650f)?.contentDescription
+    }
+
+    assertEquals(listOf<CharSequence>("e", "é", "è"), selected.distinct())
+    assertEquals(1, NodesShadow.refreshes)
   }
 
   private class TestWindow(val window: AccessibilityWindowInfo, val root: AccessibilityNodeInfo)

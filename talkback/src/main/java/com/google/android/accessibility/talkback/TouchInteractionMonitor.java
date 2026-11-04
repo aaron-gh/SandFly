@@ -164,6 +164,9 @@ public class TouchInteractionMonitor
         UserInterface.UserInputEventListener {
   /** How far, in pixels, a finger exploring Gboard moves before the node under it is found again. */
   private static final int KEYBOARD_EXPLORE_STEP_PX = 6;
+  // How often the characters of Gboard's popup are fetched while it has none, since they can come
+  // after the event of the popup opening.
+  private static final int MAX_GBOARD_POPUP_FETCHES = 5;
 
   private static final String LOG_TAG = "TouchInteractionMonitor";
   private static final String DEBUG_GESTURE_TAG = "BacktalkGesture";
@@ -331,14 +334,18 @@ public class TouchInteractionMonitor
   private boolean splitTappedKeyboard;
   // The popup that Gboard opened during this touch, such as its popup of alternative characters.
   private @Nullable AccessibilityNodeInfoCompat gboardPopup;
+  // The characters of gboardPopup, fetched once, since fetching them waits for Gboard.
+  private List<AccessibilityNodeInfoCompat> gboardPopupKeys = ImmutableList.of();
+  private int gboardPopupFetches;
   private float lastFingerX;
   private float lastFingerY;
   private float lastExploredX;
   private float lastExploredY;
   private @Nullable AccessibilityNodeInfoCompat lastExploredNode;
-  // Whether lastExploredNode is a character of gboardPopup.
-  private boolean lastExploredInPopup;
+  // The bounds of lastExploredNode, within which the finger moves without lookups, if it has no
+  // children and the keyboard hasn't changed since it was found.
   private final Rect lastExploredBounds = new Rect();
+  private boolean skipLookupsInLastExploredBounds;
   private final SharedPreferences sharedPreferences;
   @VisibleForTesting final TouchExplorationModeFailureReporter touchExplorationModeFailureReporter;
   private final boolean typingFocusTimeout;
@@ -1040,7 +1047,10 @@ public class TouchInteractionMonitor
     gboardRoot = null;
     exploringKeyboard = false;
     gboardPopup = null;
+    gboardPopupKeys = ImmutableList.of();
+    gboardPopupFetches = 0;
     lastExploredNode = null;
+    skipLookupsInLastExploredBounds = false;
     stateChangeRequested = false;
     gestureDetector.clear();
     receivedPointerTracker.clear();
@@ -1990,6 +2000,7 @@ public class TouchInteractionMonitor
     requestTouchExplorationDelayed.cancel();
     gestureDetector.clear();
     lastExploredNode = null;
+    skipLookupsInLastExploredBounds = false;
     splitTappedKeyboard = false;
     exploreKeyboardAt(lastFingerX, lastFingerY);
   }
@@ -2007,6 +2018,8 @@ public class TouchInteractionMonitor
       case MotionEvent.ACTION_POINTER_DOWN -> {
         if (event.getPointerCount() == 2 && lastExploredNode != null) {
           splitTappedKeyboard = true;
+          // Typing the key can change the keyboard's layout under the finger, as ?123 does.
+          skipLookupsInLastExploredBounds = false;
           service.onKeyboardSplitTap();
         }
       }
@@ -2020,6 +2033,7 @@ public class TouchInteractionMonitor
         }
         exploringKeyboard = false;
         lastExploredNode = null;
+        skipLookupsInLastExploredBounds = false;
       }
       default -> {}
     }
@@ -2032,7 +2046,7 @@ public class TouchInteractionMonitor
     @Nullable AccessibilityNodeInfoCompat root = gboardRoot;
     @Nullable AccessibilityNodeInfoCompat node;
     if (gboardPopup != null) {
-      node = KeyboardExploration.popupKeyAt(gboardPopup, x, y);
+      node = KeyboardExploration.popupKeyAt(gboardPopupKeys(gboardPopup), x, y);
     } else if (root != null) {
       node = KeyboardExploration.nodeAt(service, displayId, root, x, y);
     } else {
@@ -2048,7 +2062,10 @@ public class TouchInteractionMonitor
       node.refresh();
     }
     lastExploredNode = node;
-    lastExploredInPopup = gboardPopup != null;
+    // A node with children, such as a row found in a gap between its keys, can have a key under
+    // the finger as it moves.
+    skipLookupsInLastExploredBounds = node.getChildCount() == 0;
+    node.getBoundsInScreen(lastExploredBounds);
     // A split tap typed the key explored before; this one is typed on lift.
     splitTappedKeyboard = false;
     service.onKeyboardNodeTouched(node);
@@ -2060,13 +2077,21 @@ public class TouchInteractionMonitor
    * nodes on the way to the key.
    */
   private boolean isOnLastExploredNode(float x, float y) {
-    @Nullable AccessibilityNodeInfoCompat node = lastExploredNode;
-    // A key of the keyboard found before Gboard's popup opened doesn't count once it is open.
-    if (node == null || lastExploredInPopup != (gboardPopup != null)) {
-      return false;
+    return skipLookupsInLastExploredBounds
+        && lastExploredNode != null
+        && lastExploredBounds.contains((int) x, (int) y);
+  }
+
+  /**
+   * Returns the characters of {@code popup}, fetched on the first lookup after it opened, and again
+   * on later lookups while it has none, up to {@link #MAX_GBOARD_POPUP_FETCHES} times.
+   */
+  private List<AccessibilityNodeInfoCompat> gboardPopupKeys(AccessibilityNodeInfoCompat popup) {
+    if (gboardPopupKeys.isEmpty() && gboardPopupFetches < MAX_GBOARD_POPUP_FETCHES) {
+      gboardPopupFetches++;
+      gboardPopupKeys = KeyboardExploration.popupKeys(popup);
     }
-    node.getBoundsInScreen(lastExploredBounds);
-    return lastExploredBounds.contains((int) x, (int) y);
+    return gboardPopupKeys;
   }
 
   /**
@@ -2078,6 +2103,8 @@ public class TouchInteractionMonitor
     if (!exploringKeyboard) {
       return;
     }
+    // A pane over the keyboard, or a new layout, can be under the finger now.
+    skipLookupsInLastExploredBounds = false;
     @Nullable AccessibilityWindowInfoCompat window = AccessibilityNodeInfoUtils.getWindow(pane);
     if (window == null) {
       return;
@@ -2088,6 +2115,8 @@ public class TouchInteractionMonitor
     window.getBoundsInScreen(windowBounds);
     if (paneBounds.width() < windowBounds.width()) {
       gboardPopup = pane;
+      gboardPopupKeys = ImmutableList.of();
+      gboardPopupFetches = 0;
       // The character the finger selects is said at once, before the finger moves.
       exploreKeyboardAt(lastFingerX, lastFingerY);
     }
