@@ -50,14 +50,30 @@ object KeyboardExploration {
       TextUtils.equals(packageName, GBOARD_PACKAGE_NAME_DEV) ||
       TextUtils.equals(packageName, PIXELBOARD_PACKAGE_NAME)
 
-  /** Returns whether the topmost window at [x], [y] on [displayId] is Gboard's. */
+  /**
+   * Returns the root of Gboard's window if it is the topmost window at [x], [y] on [displayId], or
+   * null. Android doesn't cache a window's root, so this waits for the keyboard's app to send it: a
+   * touch fetches it once and finds the nodes under the finger with [nodeAt].
+   */
   @JvmStatic
   @RequiresApi(Build.VERSION_CODES.R)
-  fun isGboardAt(service: AccessibilityService, displayId: Int, x: Float, y: Float): Boolean =
-    gboardWindowAt(service, displayId, x, y) != null
+  fun gboardRootAt(
+    service: AccessibilityService,
+    displayId: Int,
+    x: Float,
+    y: Float,
+  ): AccessibilityNodeInfoCompat? {
+    val window = topmostWindowAt(service, displayId, x, y) ?: return null
+    if (window.type != AccessibilityWindowInfo.TYPE_INPUT_METHOD) {
+      return null
+    }
+    val root = window.root ?: return null
+    return if (isGboardPackage(root.packageName)) AccessibilityNodeInfoCompat.wrap(root) else null
+  }
 
+  /** Returns the topmost window at [x], [y] on [displayId], from the cached window list. */
   @RequiresApi(Build.VERSION_CODES.R)
-  private fun gboardWindowAt(
+  private fun topmostWindowAt(
     service: AccessibilityService,
     displayId: Int,
     x: Float,
@@ -70,20 +86,16 @@ object KeyboardExploration {
         continue
       }
       window.getRegionInScreen(region)
-      if (!region.contains(x.toInt(), y.toInt())) {
-        continue
+      if (region.contains(x.toInt(), y.toInt())) {
+        return window
       }
-      if (window.type != AccessibilityWindowInfo.TYPE_INPUT_METHOD) {
-        return null
-      }
-      return if (isGboardPackage(window.root?.packageName)) window else null
     }
     return null
   }
 
   /**
-   * Returns the node at [x], [y] in Gboard's window that touch exploration would focus, or null if
-   * there is none, or the point isn't on Gboard.
+   * Returns the node at [x], [y] under [root], the root of Gboard's window from [gboardRootAt], that
+   * touch exploration would focus, or null if there is none, or the point isn't on that window.
    *
    * Of overlapping children the later one, drawn on top, is tried first. A child with nothing to
    * focus is passed over for the next.
@@ -93,13 +105,14 @@ object KeyboardExploration {
   fun nodeAt(
     service: AccessibilityService,
     displayId: Int,
+    root: AccessibilityNodeInfoCompat,
     x: Float,
     y: Float,
   ): AccessibilityNodeInfoCompat? {
-    val window = gboardWindowAt(service, displayId, x, y) ?: return null
-    val root = window.root ?: return null
-    val rootCompat = AccessibilityNodeInfoCompat.wrap(root)
-    return focusableAt(rootCompat, x.toInt(), y.toInt(), Rect(), depth = 0)
+    if (topmostWindowAt(service, displayId, x, y)?.id != root.windowId) {
+      return null
+    }
+    return focusableAt(root, x.toInt(), y.toInt(), Rect(), depth = 0)
   }
 
   private const val MAX_DEPTH = 30
