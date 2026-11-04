@@ -209,6 +209,9 @@ public class FocusProcessorForTapAndTouchExploration {
   // When the finger last left the strip at the bottom of the screen. An app item touched from then
   // on means the finger moved back up; a finger that lifted in the strip touches none.
   private long leftScreenEdgeTimeMs = Long.MAX_VALUE;
+  // The item the finger touched when it reached the edge. A finger lifting off the screen is
+  // reported rolling back onto it, so only another item ends the cancel.
+  @Nullable private AccessibilityNodeInfoCompat nodeAtScreenEdge;
 
   // How long the finger stays on an item before lifting it activates nothing, with Lift to
   // activate, or 0 for never. The setting is Hold to cancel.
@@ -296,6 +299,7 @@ public class FocusProcessorForTapAndTouchExploration {
     reset();
     fingerAtScreenEdge = false;
     leftScreenEdgeTimeMs = Long.MAX_VALUE;
+    nodeAtScreenEdge = null;
     isTapExploration = false;
 
     touchInteractionStartTime = SystemClock.uptimeMillis();
@@ -339,8 +343,13 @@ public class FocusProcessorForTapAndTouchExploration {
     }
     postDelayHandler.cancelLongPress();
     postDelayHandler.cancelRefocusTimeout();
-    if (fingerAtScreenEdge && eventId != null && eventId.getEventTimeMs() >= leftScreenEdgeTimeMs) {
-      // The finger has moved back up from the strip at the bottom of the screen to an app's item.
+    if (fingerAtScreenEdge
+        && eventId != null
+        && eventId.getEventTimeMs() >= leftScreenEdgeTimeMs
+        && touchedFocusableNode != null
+        && !touchedFocusableNode.equals(nodeAtScreenEdge)) {
+      // The finger has moved back up from the strip at the bottom of the screen to another item.
+      // Back on the item it touched at the edge, it may only be rolling as it lifts.
       fingerAtScreenEdge = false;
     }
     if (touchedFocusableNode != null && !touchedFocusableNode.isAccessibilityFocused()) {
@@ -600,6 +609,7 @@ public class FocusProcessorForTapAndTouchExploration {
   public void setFingerAtScreenEdge(boolean atEdge) {
     fingerAtScreenEdge = atEdge;
     leftScreenEdgeTimeMs = Long.MAX_VALUE;
+    nodeAtScreenEdge = atEdge ? lastFocusableNodeBeingTouched : null;
   }
 
   /**

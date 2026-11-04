@@ -147,7 +147,10 @@ class LiftCancelStrip(private val context: Context, private val listener: Listen
   private companion object {
     const val TAG = "LiftCancelStrip"
 
-    /** The height of the strip. A finger sliding off the screen is last reported within it. */
-    const val STRIP_HEIGHT_MM = 2f
+    /**
+     * The height of the strip. On the Fold's inner screen, a finger sliding off the bottom was
+     * reported at most 1.4 to 3.2 mm from the edge.
+     */
+    const val STRIP_HEIGHT_MM = 3.5f
   }
 }
