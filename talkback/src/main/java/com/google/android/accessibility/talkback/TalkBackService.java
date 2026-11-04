@@ -2484,7 +2484,7 @@ public class TalkBackService extends AccessibilityServiceCompat
 
     accessibilityFocusInterpreter =
         new AccessibilityFocusInterpreter(
-            this, accessibilityFocusMonitor, screenStateMonitor.state, analytics);
+            this, accessibilityFocusMonitor, screenStateMonitor.state, touchMonitor, analytics);
 
     inputFocusInterpreter =
         new InputFocusInterpreter(accessibilityFocusInterpreter, focusFinder, globalVariables);

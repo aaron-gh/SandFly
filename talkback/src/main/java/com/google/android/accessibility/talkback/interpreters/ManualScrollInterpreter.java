@@ -59,10 +59,16 @@ public class ManualScrollInterpreter implements ScrollEventHandler {
     @TraversalStrategy.SearchDirection
     public abstract int direction();
 
+    /** Whether the scrolled view is the last focused node or one of its ancestors. */
+    public abstract boolean scrolledHoldsFocus();
+
     public static ManualScrollInterpretation create(
-        @Nullable EventId eventId, AccessibilityEvent event, int direction) {
+        @Nullable EventId eventId,
+        AccessibilityEvent event,
+        int direction,
+        boolean scrolledHoldsFocus) {
       return new AutoValue_ManualScrollInterpreter_ManualScrollInterpretation(
-          eventId, event, direction);
+          eventId, event, direction, scrolledHoldsFocus);
     }
   }
 
@@ -111,13 +117,15 @@ public class ManualScrollInterpreter implements ScrollEventHandler {
     if (!BuildVersionUtils.isAtLeastOMR1()) {
       scrolledNode.refresh();
     }
-    if (!lastFocusNodePathDescription.containsNodeByHashAndIdentity(scrolledNode)
-        && !isScrollAroundWebFocus(scrolledNode)) {
+    boolean scrolledHoldsFocus =
+        lastFocusNodePathDescription.containsNodeByHashAndIdentity(scrolledNode);
+    if (!scrolledHoldsFocus && !isScrollAroundWebFocus(scrolledNode)) {
       return;
     }
 
     listener.onManualScroll(
-        ManualScrollInterpretation.create(eventId, event, interpretation.scrollDirection));
+        ManualScrollInterpretation.create(
+            eventId, event, interpretation.scrollDirection, scrolledHoldsFocus));
   }
 
   /**
