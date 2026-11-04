@@ -1271,6 +1271,7 @@ public class TalkBackService extends AccessibilityServiceCompat
       isTouchInteracting = false;
       NotificationReader.onTouchEnded();
     } else if (eventType == AccessibilityEvent.TYPE_GESTURE_DETECTION_START
+        && FeatureSupport.supportGestureDetection()
         && shouldUseTalkbackGestureDetection()
         && displayIdToTouchInteractionMonitors.get(event.getDisplayId()) != null) {
       // Android sends this only while it detects gestures itself. Whether a service detects
