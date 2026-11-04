@@ -25,6 +25,8 @@ import android.accessibilityservice.TouchInteractionController.STATE_DELEGATING
 import android.accessibilityservice.TouchInteractionController.STATE_DRAGGING
 import android.accessibilityservice.TouchInteractionController.STATE_TOUCH_INTERACTING
 import android.hardware.display.DisplayManager
+import android.graphics.Rect
+import android.graphics.Region
 import android.os.Handler
 import android.os.Looper
 import android.os.SystemClock
@@ -35,7 +37,10 @@ import android.view.MotionEvent.ACTION_MOVE
 import android.view.MotionEvent.ACTION_POINTER_DOWN
 import android.view.MotionEvent.ACTION_POINTER_UP
 import android.view.MotionEvent.ACTION_UP
+import android.view.accessibility.AccessibilityWindowInfo
 import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics
+import com.google.android.accessibility.talkback.gesture.EdgeMenus
+import com.google.android.accessibility.talkback.gesture.EdgeSwipeTracker.MenuEdge
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_PINCH
@@ -80,7 +85,16 @@ class TrackedGestureTest {
   /** Records the gestures that reach the service. */
   class RecordingService : TalkBackService() {
     val gestures = mutableListOf<Int>()
+    val commands = mutableListOf<String>()
     var mapping: GestureShortcutMapping? = null
+    var displayWindows = listOf<AccessibilityWindowInfo>()
+
+    override fun performCommand(value: String): Boolean {
+      commands.add(value)
+      return true
+    }
+
+    override fun getWindowsOnDisplay(displayId: Int): List<AccessibilityWindowInfo> = displayWindows
 
     override fun onGesture(accessibilityGestureEvent: AccessibilityGestureEvent): Boolean {
       gestures.add(accessibilityGestureEvent.gestureId)
@@ -453,6 +467,77 @@ class TrackedGestureTest {
     service.mapping = GestureShortcutMapping(service)
     slide(160f, 465f, 380f)
     assertEquals(listOf(GESTURE_SWIPE_UP), service.gestures)
+  }
+
+  /** Makes the left edge a menu of [commands], or only gives it them while [on] is false. */
+  private fun leftEdgeMenu(vararg commands: Int, on: Boolean = true) {
+    val prefs = SharedPreferencesUtils.getSharedPreferences(service)
+    EdgeMenus.setItems(prefs, MenuEdge.LEFT, commands.map { service.getString(it) })
+    prefs.edit().putBoolean(EdgeMenus.switchKey(MenuEdge.LEFT), on).commit()
+  }
+
+  @Test
+  fun slidingAlongAMenuEdgeRunsTheItemTheFingerLiftsOn() {
+    // Home is the top half of the edge and Back the bottom half.
+    leftEdgeMenu(R.string.shortcut_value_home, R.string.shortcut_value_back)
+    slide(5f, 100f, 300f)
+    slide(5f, 400f, 150f)
+    assertEquals(
+      listOf(service.getString(R.string.shortcut_value_back), service.getString(R.string.shortcut_value_home)),
+      service.commands,
+    )
+    assertEquals(listOf<Int>(), service.gestures)
+  }
+
+  @Test
+  fun menuEdgeWhoseSwitchIsOffIsAnOrdinarySwipe() {
+    leftEdgeMenu(R.string.shortcut_value_home, on = false)
+    slide(5f, 300f, 150f)
+    assertEquals(listOf(GESTURE_SWIPE_UP), service.gestures)
+    assertEquals(listOf<String>(), service.commands)
+  }
+
+  @Test
+  fun menuEdgeOnTheKeyboardIsAnOrdinarySwipe() {
+    service.displayWindows =
+      listOf(
+        window(AccessibilityWindowInfo.TYPE_INPUT_METHOD, Rect(0, 200, 320, 470)),
+        window(AccessibilityWindowInfo.TYPE_APPLICATION, Rect(0, 0, 320, 470)),
+      )
+    leftEdgeMenu(R.string.shortcut_value_home)
+    slide(5f, 430f, 280f)
+    assertEquals(listOf(GESTURE_SWIPE_UP), service.gestures)
+    assertEquals(listOf<String>(), service.commands)
+  }
+
+  @Test
+  fun leavingAMenuEdgeAndLiftingRunsNothing() {
+    leftEdgeMenu(R.string.shortcut_value_home)
+    stateChangeAt(STATE_TOUCH_INTERACTING, 0)
+    touchAt(ACTION_DOWN, 0, 5f, 100f)
+    touchAt(ACTION_MOVE, 10, 5f, 130f)
+    touchAt(ACTION_MOVE, 20, 5f, 160f)
+    touchAt(ACTION_MOVE, 30, 60f, 160f)
+    touchAt(ACTION_MOVE, 40, 120f, 160f)
+    touchAt(ACTION_MOVE, 50, 160f, 160f)
+    touchAt(ACTION_UP, 60, 160f, 160f)
+    runUntil(560)
+    assertEquals(listOf<String>(), service.commands)
+    assertEquals(listOf<Int>(), service.gestures)
+  }
+
+  /** A window of [type] at [bounds], as Android describes it. */
+  private fun window(type: Int, bounds: Rect): AccessibilityWindowInfo {
+    val window = AccessibilityWindowInfo.obtain()
+    AccessibilityWindowInfo::class
+      .java
+      .getDeclaredMethod("setType", Int::class.javaPrimitiveType)
+      .invoke(window, type)
+    AccessibilityWindowInfo::class
+      .java
+      .getDeclaredMethod("setRegionInScreen", Region::class.java)
+      .invoke(window, Region(bounds))
+    return window
   }
 
   /**

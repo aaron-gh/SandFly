@@ -18,6 +18,7 @@ package com.google.android.accessibility.talkback.gesture
 
 import android.view.MotionEvent
 import com.google.android.accessibility.talkback.gesture.EdgeSwipeTracker.Edge
+import com.google.android.accessibility.talkback.gesture.EdgeSwipeTracker.MenuEdge
 import org.junit.Assert.assertEquals
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -36,6 +37,7 @@ class EdgeSwipeTrackerTest {
   private var owned = mutableListOf<Boolean>()
   private var edgesInUse = Edge.entries.filter { !it.along }.toSet()
   private var stagesInUse = listOf(1, 2)
+  private var menus = emptyMap<MenuEdge, Int>()
   private val tracker =
     EdgeSwipeTracker(
       edgeZonePx = 30f,
@@ -66,7 +68,16 @@ class EdgeSwipeTrackerTest {
             events.add("end $stage")
             ended.add(edge to stage)
           }
+
+          override fun onEdgeMenuItem(edge: MenuEdge, item: Int, previousItem: Int) {
+            events.add("$edge $previousItem>$item")
+          }
+
+          override fun onEdgeMenuEnded(edge: MenuEdge, item: Int) {
+            events.add("$edge chose $item")
+          }
         },
+      menuItemCount = { menus[it] ?: 0 },
     )
   private var time = 0L
 
@@ -272,5 +283,126 @@ class EdgeSwipeTrackerTest {
     slide(950f, 880f, 500f)
     slide(950f, 880f, 500f, 800f)
     assertEquals(listOf("start", "0>2", "end 2", "start", "0>2", "2>0", "end 0"), events)
+  }
+  @Test
+  fun slidingAlongAMenuEdgeGoesThroughItsItems() {
+    // Four items of 250 pixels each.
+    menus = mapOf(MenuEdge.LEFT to 4)
+    slideThrough(5f, 100f, 5f, 120f, 6f, 300f, 4f, 600f, 5f, 520f)
+    assertEquals(
+      listOf("start", "LEFT -1>0", "LEFT 0>1", "LEFT 1>2", "LEFT chose 2"),
+      events,
+    )
+  }
+
+  @Test
+  fun menuGoesUpTheEdgeToo() {
+    menus = mapOf(MenuEdge.RIGHT to 2)
+    slideThrough(295f, 700f, 295f, 680f, 295f, 300f)
+    assertEquals(listOf("start", "RIGHT -1>1", "RIGHT 1>0", "RIGHT chose 0"), events)
+  }
+
+  @Test
+  fun leavingTheEdgeLeavesTheMenuAndComingBackReturns() {
+    menus = mapOf(MenuEdge.LEFT to 4)
+    slideThrough(5f, 100f, 5f, 130f, 60f, 130f, 120f, 130f, 20f, 140f, 120f, 150f)
+    assertEquals(
+      listOf("start", "LEFT -1>0", "LEFT 0>-1", "LEFT -1>0", "LEFT 0>-1", "LEFT chose -1"),
+      events,
+    )
+  }
+
+  @Test
+  fun secondFingerCancelsTheMenu() {
+    menus = mapOf(MenuEdge.LEFT to 4)
+    touch(MotionEvent.ACTION_DOWN, 100f, 5f)
+    touch(MotionEvent.ACTION_MOVE, 130f, 5f)
+    owned.add(tracker.onMotionEvent(twoFingers(MotionEvent.ACTION_POINTER_DOWN), 300, 1000))
+    touch(MotionEvent.ACTION_UP, 400f, 5f)
+    assertEquals(listOf("start", "LEFT -1>0", "LEFT chose -1"), events)
+    assertEquals(true, owned.last())
+  }
+
+  @Test
+  fun menuEdgeReplacesSlidesAlongItAndScrolling() {
+    edgesInUse = setOf(Edge.ALONG_LEFT_UP, Edge.ALONG_RIGHT_UP)
+    scrollingSlides = setOf(Edge.ALONG_LEFT_DOWN)
+    menus = mapOf(MenuEdge.LEFT to 2)
+    slideThrough(5f, 300f, 5f, 200f)
+    slideThrough(5f, 300f, 5f, 400f)
+    slideThrough(295f, 600f, 295f, 400f)
+    assertEquals(listOf<Edge>(), scrolled)
+    assertEquals(listOf(Edge.ALONG_RIGHT_UP to 1), ended)
+    assertEquals(
+      listOf(
+        "start", "LEFT -1>0", "LEFT chose 0",
+        "start", "LEFT -1>0", "LEFT chose 0",
+        "start", "0>1", "end 1",
+      ),
+      events,
+    )
+  }
+
+  @Test
+  fun cornerOfAMenuEdgeHasNoSlidesAlongIt() {
+    edgesInUse = setOf(Edge.ALONG_LEFT_DOWN)
+    menus = mapOf(MenuEdge.LEFT to 2)
+    slideThrough(5f, 10f, 5f, 200f)
+    assertEquals(listOf<String>(), events)
+  }
+
+  @Test
+  fun slideInFromAMenuEdgeIsStillAnEdgeGesture() {
+    menus = mapOf(MenuEdge.LEFT to 2)
+    slideSideways(5f, 200f, 50f, 150f)
+    assertEquals(listOf(Edge.LEFT_TOP to 1), ended)
+  }
+
+  @Test
+  fun restingOnAMenuEdgeIsLeftToTouchExploration() {
+    menus = mapOf(MenuEdge.LEFT to 2)
+    touch(MotionEvent.ACTION_DOWN, 300f, 5f)
+    time += 250
+    tracker.rejectIfStalled(time)
+    touch(MotionEvent.ACTION_MOVE, 400f, 5f)
+    touch(MotionEvent.ACTION_UP, 400f, 5f)
+    assertEquals(listOf<String>(), events)
+    assertEquals(false, tracker.isActive)
+  }
+
+  private fun twoFingers(action: Int): MotionEvent {
+    val properties =
+      Array(2) { i ->
+        MotionEvent.PointerProperties().apply {
+          id = i
+          toolType = MotionEvent.TOOL_TYPE_FINGER
+        }
+      }
+    val coords =
+      Array(2) { i ->
+        MotionEvent.PointerCoords().apply {
+          x = 5f + i * 100f
+          y = 130f
+        }
+      }
+    val event =
+      MotionEvent.obtain(
+        0,
+        time,
+        action or (1 shl MotionEvent.ACTION_POINTER_INDEX_SHIFT),
+        2,
+        properties,
+        coords,
+        0,
+        0,
+        1f,
+        1f,
+        0,
+        0,
+        0,
+        0,
+      )
+    time += 10
+    return event
   }
 }
