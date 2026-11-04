@@ -22,6 +22,7 @@ import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNull
+import org.junit.Assert.assertNotNull
 import org.junit.Assert.assertSame
 import org.junit.Assert.assertTrue
 import org.junit.Test
@@ -159,6 +160,153 @@ class WebScrollFocusTest {
     val page = Node(viewport, null, false, true, Node(Rect(), null, false, false, text))
 
     assertSame(text, WebScrollFocus.findItemInView(page, null, viewport, true))
+  }
+
+  @Test
+  fun anItemAcrossAnEdgeIsPassedOverForOneWhollyInView() {
+    val focus = above("Burger")
+    val acrossTop = Node(Rect(0, 100, 1000, 300), text = "Salad")
+    val whollyInView = item(300, 500, "Fries")
+    val page = Node(viewport, null, false, true, focus, acrossTop, whollyInView)
+
+    assertSame(
+      whollyInView,
+      WebScrollFocus.findItemInView(page, listOf(focus, page), viewport, true),
+    )
+  }
+
+  @Test
+  fun scrollingBackPassesOverAnItemAcrossTheBottomEdge() {
+    val whollyInView = item(1500, 1900, "Fries")
+    val acrossBottom = Node(Rect(0, 1900, 1000, 2000), text = "Salad")
+    val focus = below("Burger")
+    val page = Node(viewport, null, false, true, whollyInView, acrossBottom, focus)
+
+    assertSame(
+      whollyInView,
+      WebScrollFocus.findItemInView(page, listOf(focus, page), viewport, false),
+    )
+  }
+
+  @Test
+  fun aClickableSectionAcrossAnEdgeIsLookedIntoForAnItemWhollyInView() {
+    val focus = above("Burger")
+    val link = Node(Rect(0, 400, 1000, 500), text = "Order", clickable = true)
+    val section =
+      Node(Rect(0, 100, 1000, 600), "Fries", true, false, Node(Rect(0, 100, 1000, 300)), link)
+    val page = Node(viewport, null, false, true, focus, section)
+
+    assertSame(link, WebScrollFocus.findItemInView(page, listOf(focus, page), viewport, true))
+  }
+
+  @Test
+  fun anItemAcrossAnEdgeIsTakenWhenNothingIsWhollyInView() {
+    val tabs = Node(Rect(0, 150, 1000, 250), text = "Menu", clickable = true)
+    val focus = above("Burger")
+    val acrossBoth = Node(Rect(0, 100, 1000, 2000), text = "Long article")
+    val section = Node(Rect(0, 100, 1000, 2000), null, false, false, focus, acrossBoth)
+    val page = Node(viewport, null, false, true, tabs, section)
+
+    assertSame(
+      acrossBoth,
+      WebScrollFocus.findItemInView(page, listOf(focus, section, page), viewport, true),
+    )
+  }
+
+  @Test
+  fun aContainerThatFillsMostOfTheViewportIsLookedInto() {
+    val text = item(300, 400, "Menu")
+    val section = Node(Rect(0, 200, 1000, 1900), null, true, false, text)
+    val page = Node(viewport, null, false, true, section)
+
+    assertSame(text, WebScrollFocus.findItemInView(page, null, viewport, true))
+  }
+
+  @Test
+  fun boundsThatEndAtTheTopOrBottomEdgeAreNotWhollyInside() {
+    assertTrue(WebScrollFocus.isWhollyInside(Rect(0, 101, 1000, 1999), viewport))
+    assertFalse(WebScrollFocus.isWhollyInside(Rect(0, 100, 1000, 300), viewport))
+    assertFalse(WebScrollFocus.isWhollyInside(Rect(0, 1800, 1000, 2000), viewport))
+    assertFalse(WebScrollFocus.isWhollyInside(Rect(-300, 600, 300, 900), viewport))
+  }
+
+  @Test
+  fun focusFarDownALongListIsFoundWithoutReadingTheListFromItsStart() {
+    val focusIndex = 2 * WebScrollFocus.MAX_NODES_READ
+    val items =
+      Array(4 * WebScrollFocus.MAX_NODES_READ) {
+        when {
+          it <= focusIndex -> above("Item $it")
+          it == focusIndex + 1 -> item(300, 500, "Item $it")
+          else -> below("Item $it")
+        }
+      }
+    val page = Node(viewport, null, false, true, *items)
+
+    val found =
+      WebScrollFocus.findItemInView(page, listOf(items[focusIndex], page), viewport, true)
+
+    assertSame(items[focusIndex + 1], found)
+    assertTrue(reads <= WebScrollFocus.MAX_INDEX_READS + WebScrollFocus.MAX_NODES_READ)
+  }
+
+  @Test
+  fun scrollingBackInALongListFindsTheLastItemInView() {
+    val focusIndex = 2 * WebScrollFocus.MAX_NODES_READ
+    val items =
+      Array(4 * WebScrollFocus.MAX_NODES_READ) {
+        when {
+          it < focusIndex - 1 -> above("Item $it")
+          it == focusIndex - 1 -> item(1500, 1900, "Item $it")
+          else -> below("Item $it")
+        }
+      }
+    val page = Node(viewport, null, false, true, *items)
+
+    val found =
+      WebScrollFocus.findItemInView(page, listOf(items[focusIndex], page), viewport, false)
+
+    assertSame(items[focusIndex - 1], found)
+    assertTrue(reads <= WebScrollFocus.MAX_INDEX_READS + WebScrollFocus.MAX_NODES_READ)
+  }
+
+  @Test
+  fun findingTheFocusPositionDoesNotUseTheSearchBudget() {
+    val focusIndex = WebScrollFocus.MAX_INDEX_READS - 1
+    val items =
+      Array(focusIndex + WebScrollFocus.MAX_NODES_READ) {
+        if (it == focusIndex + WebScrollFocus.MAX_NODES_READ - 1) item(300, 500, "Item $it")
+        else above("Item $it")
+      }
+    val page = Node(viewport, null, false, true, *items)
+
+    assertNotNull(
+      WebScrollFocus.findItemInView(page, listOf(items[focusIndex], page), viewport, true)
+    )
+  }
+
+  @Test
+  fun aScrollWhileTouchingIsTheUsers() {
+    assertTrue(WebScrollFocus.isUserScroll(1500, 1000, 900, true, 500))
+  }
+
+  @Test
+  fun aScrollShortlyAfterTheTouchEndedIsTheUsersFling() {
+    val end = 1200L
+    assertTrue(WebScrollFocus.isUserScroll(end + WebScrollFocus.FLING_MS - 1, 1000, end, false, 500))
+    assertFalse(WebScrollFocus.isUserScroll(end + WebScrollFocus.FLING_MS, 1000, end, false, 500))
+  }
+
+  @Test
+  fun aScrollAfterFocusMovedSinceTheTouchStartedIsThePagesOwn() {
+    // A swipe: the touch starts, focus moves, the page scrolls to the focused item.
+    assertFalse(WebScrollFocus.isUserScroll(1300, 1000, 1100, false, 1150))
+  }
+
+  @Test
+  fun aScrollWithoutATouchIsNotTheUsers() {
+    assertFalse(WebScrollFocus.isUserScroll(1300, -1, -1, false, 500))
+    assertFalse(WebScrollFocus.isUserScroll(900, 1000, 1100, false, 500))
   }
 
   @Test

@@ -35,18 +35,43 @@ import org.checkerframework.checker.nullness.qual.Nullable;
  * scrolling back.
  *
  * <p>Chrome clips the bounds of web nodes at the top and bottom of its viewport. A node above or
- * below the viewport has an inverted or zero-height rectangle at that edge.
+ * below the viewport has an inverted or zero-height rectangle at that edge, and a node that lies
+ * across an edge ends at that edge.
  */
 final class WebScrollFocus {
 
   /** Most nodes that one search reads from the app. The search runs on the main thread. */
   @VisibleForTesting static final int MAX_NODES_READ = 400;
 
+  /**
+   * Most children that one search reads to find the positions of the focus and its ancestors among
+   * their siblings, apart from {@link #MAX_NODES_READ}.
+   */
+  @VisibleForTesting static final int MAX_INDEX_READS = 100;
+
+  /** How long after the fingers leave the screen the page can still be moving from a fling. */
+  @VisibleForTesting static final long FLING_MS = 3000;
+
   private WebScrollFocus() {}
 
   /** Whether a scroll from {@code node} can concern focus in web content. Asks the app nothing. */
   static boolean isWebContent(@Nullable AccessibilityNodeInfoCompat node) {
     return WebInterfaceUtils.supportsWebActions(node) || Role.getRole(node) == Role.ROLE_WEB_VIEW;
+  }
+
+  /**
+   * Whether a scroll at {@code scrollTime} came from the user's fingers: a touch interaction that
+   * started before it was still going on, or ended less than {@link #FLING_MS} before it. A swipe
+   * is a touch interaction too, so the scroll does not count if focus moved after the touch
+   * started: the page then scrolls to show the item that a swipe or continuous reading focused.
+   * All times are {@link android.os.SystemClock#uptimeMillis} times, or -1 when not known.
+   */
+  static boolean isUserScroll(
+      long scrollTime, long touchStartTime, long touchEndTime, boolean touching, long focusTime) {
+    if (touchStartTime < 0 || scrollTime < touchStartTime || focusTime >= touchStartTime) {
+      return false;
+    }
+    return touching || (touchEndTime >= touchStartTime && scrollTime - touchEndTime < FLING_MS);
   }
 
   /**
@@ -65,7 +90,8 @@ final class WebScrollFocus {
 
   /**
    * Returns the first item of web content in {@code root} that lies in {@code viewport}, or the
-   * last one if not {@code forward}.
+   * last one if not {@code forward}. An item that lies wholly in the viewport is preferred, because
+   * focusing an item across an edge makes the page scroll to show all of it.
    *
    * <p>The search starts next to the item that has focus, so that a heading or tab bar that stays
    * at the top of the page is not taken in place of the content that scrolled into view. It falls
@@ -79,65 +105,149 @@ final class WebScrollFocus {
       @Nullable List<AccessibilityNodeInfoCompat> focusAndAncestors,
       Rect viewport,
       boolean forward) {
-    int[] budget = {MAX_NODES_READ};
+    Search search = new Search(viewport, forward);
     int rootIndex = (focusAndAncestors == null) ? -1 : focusAndAncestors.indexOf(root);
     for (int i = 0; i < rootIndex; i++) {
       AccessibilityNodeInfoCompat node = focusAndAncestors.get(i);
       AccessibilityNodeInfoCompat parent = focusAndAncestors.get(i + 1);
-      int index = indexInParent(parent, node, budget);
-      if (index < 0) {
+      int count = parent.getChildCount();
+      int indexReadsLeft = search.indexReadsLeft;
+      int index = search.indexInParent(parent, node, count);
+      int read = indexReadsLeft - search.indexReadsLeft;
+      int start;
+      if (index >= 0) {
+        start = forward ? index + 1 : index - 1;
+      } else if (read >= count) {
+        // The node is no longer among the children.
         break;
+      } else {
+        // Too many children to find its position by reading them. Items in view after it lie past
+        // the children read, and before it, before the first child below the viewport.
+        start = search.firstPastViewport(parent, forward ? read : 0, count);
       }
-      AccessibilityNodeInfoCompat item =
-          searchChildren(parent, forward ? index + 1 : index - 1, viewport, forward, budget);
-      if (item != null || budget[0] <= 0) {
+      AccessibilityNodeInfoCompat item = search.children(parent, start);
+      if (item != null) {
         return item;
       }
+      if (search.nodesLeft <= 0) {
+        return search.partial;
+      }
     }
-    return searchChildren(
-        root, forward ? 0 : root.getChildCount() - 1, viewport, forward, budget);
+    // An item next to the focus, even across an edge, before one at the start of the page.
+    if (search.partial != null) {
+      return search.partial;
+    }
+    AccessibilityNodeInfoCompat item =
+        search.children(root, forward ? 0 : root.getChildCount() - 1);
+    return (item != null) ? item : search.partial;
   }
 
-  private static int indexInParent(
-      AccessibilityNodeInfoCompat parent, AccessibilityNodeInfoCompat node, int[] budget) {
-    int count = parent.getChildCount();
-    for (int i = 0; i < count && budget[0]-- > 0; i++) {
-      if (node.equals(parent.getChild(i))) {
-        return i;
-      }
+  /** One search, with the nodes it may still read. */
+  private static final class Search {
+    final Rect viewport;
+    final boolean forward;
+    int nodesLeft = MAX_NODES_READ;
+    int indexReadsLeft = MAX_INDEX_READS;
+    /** The first item found that lies across an edge of the viewport. */
+    @Nullable AccessibilityNodeInfoCompat partial;
+    private final Rect bounds = new Rect();
+
+    Search(Rect viewport, boolean forward) {
+      this.viewport = viewport;
+      this.forward = forward;
     }
-    return -1;
+
+    int indexInParent(
+        AccessibilityNodeInfoCompat parent, AccessibilityNodeInfoCompat node, int count) {
+      for (int i = 0; i < count && indexReadsLeft > 0; i++) {
+        indexReadsLeft--;
+        if (node.equals(parent.getChild(i))) {
+          return i;
+        }
+      }
+      return -1;
+    }
+
+    /**
+     * Returns where to search the children of {@code parent} in {@code [from, count)}, which lie in
+     * document order: forward, the first child that is not above the viewport; backward, the last
+     * child that is not below it. A binary search.
+     */
+    int firstPastViewport(AccessibilityNodeInfoCompat parent, int from, int count) {
+      int low = from;
+      int high = count;
+      while (low < high && nodesLeft > 0) {
+        int middle = (low + high) >>> 1;
+        nodesLeft--;
+        AccessibilityNodeInfoCompat child = parent.getChild(middle);
+        boolean before = false;
+        if (child != null) {
+          child.getBoundsInScreen(bounds);
+          before = forward ? isAbove(bounds, viewport) : !isBelow(bounds, viewport);
+        }
+        if (before) {
+          low = middle + 1;
+        } else {
+          high = middle;
+        }
+      }
+      return forward ? low : high - 1;
+    }
+
+    /** Searches the children of {@code node} from {@code start} onwards, or backwards. */
+    @Nullable AccessibilityNodeInfoCompat children(AccessibilityNodeInfoCompat node, int start) {
+      int count = node.getChildCount();
+      for (int i = start; i >= 0 && i < count; i += forward ? 1 : -1) {
+        if (nodesLeft-- <= 0) {
+          return null;
+        }
+        AccessibilityNodeInfoCompat child = node.getChild(i);
+        if (child == null) {
+          continue;
+        }
+        child.getBoundsInScreen(bounds);
+        // Items outside a container are usually outside the viewport too.
+        if (isOutside(bounds, viewport)) {
+          continue;
+        }
+        if (isItem(child, bounds, viewport)) {
+          if (isWhollyInside(bounds, viewport)) {
+            return child;
+          }
+          if (partial == null) {
+            partial = child;
+          }
+        }
+        // An item across an edge can hold one that is wholly in view.
+        AccessibilityNodeInfoCompat item = children(child, forward ? 0 : child.getChildCount() - 1);
+        if (item != null || nodesLeft <= 0) {
+          return item;
+        }
+      }
+      return null;
+    }
   }
 
-  /** Searches the children of {@code node} from {@code start} onwards, or backwards. */
-  private static @Nullable AccessibilityNodeInfoCompat searchChildren(
-      AccessibilityNodeInfoCompat node, int start, Rect viewport, boolean forward, int[] budget) {
-    int count = node.getChildCount();
-    Rect bounds = new Rect();
-    for (int i = start; i >= 0 && i < count; i += forward ? 1 : -1) {
-      if (budget[0]-- <= 0) {
-        return null;
-      }
-      AccessibilityNodeInfoCompat child = node.getChild(i);
-      if (child == null) {
-        continue;
-      }
-      child.getBoundsInScreen(bounds);
-      // Items outside a container are usually outside the viewport too.
-      if (isOutside(bounds, viewport)) {
-        continue;
-      }
-      if (isItem(child, bounds, viewport)) {
-        return child;
-      }
-      AccessibilityNodeInfoCompat item =
-          searchChildren(
-              child, forward ? 0 : child.getChildCount() - 1, viewport, forward, budget);
-      if (item != null || budget[0] <= 0) {
-        return item;
-      }
-    }
-    return null;
+  /** Whether {@code bounds} lie above {@code viewport}. Bounds that are all zero are unknown. */
+  private static boolean isAbove(Rect bounds, Rect viewport) {
+    return isOutside(bounds, viewport) && Math.max(bounds.top, bounds.bottom) <= viewport.top;
+  }
+
+  /** Whether {@code bounds} lie below {@code viewport}. Bounds that are all zero are unknown. */
+  private static boolean isBelow(Rect bounds, Rect viewport) {
+    return isOutside(bounds, viewport) && Math.min(bounds.top, bounds.bottom) >= viewport.bottom;
+  }
+
+  /**
+   * Whether {@code bounds} lie wholly inside {@code viewport}. A node that ends exactly at the top
+   * or bottom edge may be clipped there.
+   */
+  @VisibleForTesting
+  static boolean isWhollyInside(Rect bounds, Rect viewport) {
+    return bounds.top > viewport.top
+        && bounds.bottom < viewport.bottom
+        && bounds.left >= viewport.left
+        && bounds.right <= viewport.right;
   }
 
   private static boolean isItem(AccessibilityNodeInfoCompat node, Rect bounds, Rect viewport) {
@@ -150,8 +260,8 @@ final class WebScrollFocus {
     if (!visible.intersect(viewport)) {
       return false;
     }
-    // A container that fills the whole viewport, such as a clickable page wrapper.
-    if (node.getChildCount() > 0 && visible.equals(viewport)) {
+    // A container that fills most of the viewport, such as a clickable page wrapper or section.
+    if (node.getChildCount() > 0 && visible.height() * 4 > viewport.height() * 3) {
       return false;
     }
     return node.isScreenReaderFocusable()

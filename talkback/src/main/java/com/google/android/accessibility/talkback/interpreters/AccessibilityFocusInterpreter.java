@@ -47,6 +47,7 @@ import com.google.android.accessibility.talkback.focusmanagement.interpreter.Scr
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.ScreenStateMonitor.ScreenStateChangeListener;
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.TouchExplorationInterpreter.TouchExplorationActionListener;
 import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionInfo;
+import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionRecord;
 import com.google.android.accessibility.talkback.focusmanagement.record.NodePathDescription;
 import com.google.android.accessibility.talkback.interpreters.InputFocusInterpreter.TargetViewChangeListener;
 import com.google.android.accessibility.talkback.interpreters.ManualScrollInterpreter.ManualScrollInterpretation;
@@ -62,6 +63,7 @@ import com.google.android.accessibility.utils.Performance.EventId;
 import com.google.android.accessibility.utils.Role;
 import com.google.android.accessibility.utils.WebInterfaceUtils;
 import com.google.android.accessibility.utils.labeling.Label;
+import com.google.android.accessibility.utils.monitor.TouchMonitor;
 import com.google.android.accessibility.utils.traversal.TraversalStrategy;
 import com.google.android.accessibility.utils.traversal.TraversalStrategy.SearchDirection;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
@@ -92,6 +94,7 @@ public class AccessibilityFocusInterpreter
   private final FocusProcessorForScreenStateChange focusProcessorForScreenStateChange;
   private final AccessibilityFocusMonitor accessibilityFocusMonitor;
   private final ScreenStateMonitor.State screenState;
+  private final TouchMonitor touchMonitor;
   private final Context context;
 
   private Pipeline.InterpretationReceiver pipelineInterpretations;
@@ -115,10 +118,12 @@ public class AccessibilityFocusInterpreter
       Context context,
       AccessibilityFocusMonitor accessibilityFocusMonitor,
       ScreenStateMonitor.State screenState,
+      TouchMonitor touchMonitor,
       TalkBackAnalytics analytics) {
     this.context = context;
     this.accessibilityFocusMonitor = accessibilityFocusMonitor;
     this.screenState = screenState;
+    this.touchMonitor = touchMonitor;
     focusProcessorForTapAndTouchExploration =
         new FocusProcessorForTapAndTouchExploration(context, analytics);
     focusProcessorForScreenStateChange =
@@ -185,12 +190,19 @@ public class AccessibilityFocusInterpreter
       handleManualScroll(interpretation);
       return;
     }
-    // Copy the event, because the framework may recycle it after dispatch.
-    pendingManualScroll =
-        ManualScrollInterpretation.create(
-            interpretation.eventId(),
-            AccessibilityEvent.obtain(interpretation.event()),
-            interpretation.direction());
+    // A page can scroll a strip of tabs or a list of its own once the page itself stops, and that
+    // scroll must not take the place of the scroll that moved the focus.
+    if (pendingManualScroll == null
+        || interpretation.scrolledHoldsFocus()
+        || !pendingManualScroll.scrolledHoldsFocus()) {
+      // Copy the event, because the framework may recycle it after dispatch.
+      pendingManualScroll =
+          ManualScrollInterpretation.create(
+              interpretation.eventId(),
+              AccessibilityEvent.obtain(interpretation.event()),
+              interpretation.direction(),
+              interpretation.scrolledHoldsFocus());
+    }
     handler.removeCallbacks(handlePendingManualScroll);
     handler.postDelayed(handlePendingManualScroll, MANUAL_SCROLL_SETTLE_MS);
   }
@@ -249,7 +261,9 @@ public class AccessibilityFocusInterpreter
    */
   private void moveWebFocusIntoView(
       ManualScrollInterpretation interpretation, @Nullable AccessibilityNodeInfoCompat focus) {
-    if (focus == null || !WebInterfaceUtils.supportsWebActions(focus)) {
+    if (focus == null
+        || !WebInterfaceUtils.supportsWebActions(focus)
+        || !isUserScroll(interpretation)) {
       return;
     }
     AccessibilityNodeInfoCompat scrolled =
@@ -336,6 +350,20 @@ public class AccessibilityFocusInterpreter
             .setScreenState(screenState.getStableScreenState())
             .setWebItemInView(item)
             .build());
+  }
+
+  /**
+   * Whether the user's fingers scrolled the page. The page also scrolls itself to show an item that
+   * a swipe or continuous reading focused, and that scroll is not one of SandFly's scroll actions.
+   */
+  private boolean isUserScroll(ManualScrollInterpretation interpretation) {
+    FocusActionRecord record = actorState.getFocusHistory().getLastFocusActionRecord();
+    return WebScrollFocus.isUserScroll(
+        interpretation.event().getEventTime(),
+        touchMonitor.getTouchStartTime(),
+        touchMonitor.getTouchEndTime(),
+        touchMonitor.isUserTouchingScreen(),
+        (record == null) ? -1 : record.getActionTime());
   }
 
   private boolean shouldMoveFocus(
