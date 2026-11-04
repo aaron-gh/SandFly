@@ -19,11 +19,14 @@ package com.google.android.accessibility.talkback.interpreters;
 import android.view.accessibility.AccessibilityEvent;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.talkback.ActorState;
+import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionRecord;
 import com.google.android.accessibility.talkback.focusmanagement.record.NodePathDescription;
 import com.google.android.accessibility.talkback.gesture.ListEdgeScroller;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.BuildVersionUtils;
+import com.google.android.accessibility.utils.FormFactorUtils;
 import com.google.android.accessibility.utils.Performance.EventId;
+import com.google.android.accessibility.utils.WebInterfaceUtils;
 import com.google.android.accessibility.utils.input.ScrollEventInterpreter.ScrollEventHandler;
 import com.google.android.accessibility.utils.input.ScrollEventInterpreter.ScrollEventInterpretation;
 import com.google.android.accessibility.utils.output.ScrollActionRecord;
@@ -108,11 +111,24 @@ public class ManualScrollInterpreter implements ScrollEventHandler {
     if (!BuildVersionUtils.isAtLeastOMR1()) {
       scrolledNode.refresh();
     }
-    if (!lastFocusNodePathDescription.containsNodeByHashAndIdentity(scrolledNode)) {
+    if (!lastFocusNodePathDescription.containsNodeByHashAndIdentity(scrolledNode)
+        && !isScrollAroundWebFocus(scrolledNode)) {
       return;
     }
 
     listener.onManualScroll(
         ManualScrollInterpretation.create(eventId, event, interpretation.scrollDirection));
+  }
+
+  /**
+   * Whether web content scrolled while focus was in web content. In a page, a list or the page
+   * itself can scroll without holding the focus, and leave it out of view. Asks the app nothing.
+   */
+  private boolean isScrollAroundWebFocus(AccessibilityNodeInfoCompat scrolledNode) {
+    if (FormFactorUtils.isAndroidWear() || !WebScrollFocus.isWebContent(scrolledNode)) {
+      return false;
+    }
+    FocusActionRecord record = actorState.getFocusHistory().getLastFocusActionRecord();
+    return record != null && WebInterfaceUtils.supportsWebActions(record.getFocusedNode());
   }
 }
