@@ -278,6 +278,8 @@ public class TouchInteractionMonitor
   // touch.
   private final PinchTracker pinchTracker;
   private final TapToTypeTracker tapToTypeTracker;
+  // Recognizes a quick one-finger tap anywhere, which Tap to activate may activate at once.
+  private final TapToTypeTracker tapToActivateTracker;
   // Whether double tap and double tap and hold will be dispatched to the service or handled in
   // the framework.
   private boolean serviceHandlesDoubleTap = false;
@@ -527,6 +529,7 @@ public class TouchInteractionMonitor
     pinchTracker =
         new PinchTracker(pixelsPerCm * PINCH_CHANGE_CM, this::isPinchCountInUse, this::onPinch);
     tapToTypeTracker = new TapToTypeTracker(touchSlop);
+    tapToActivateTracker = new TapToTypeTracker(touchSlop);
     sharedPreferences = prefs;
     typingFocusTimeout = FeatureFlagReader.typingFocusTimeout(service);
     touchFocusTimeout = FeatureFlagReader.touchFocusTimeout(service);
@@ -798,6 +801,9 @@ public class TouchInteractionMonitor
     if (handleTapToType(event)) {
       return;
     }
+    if (handleTapToActivate(event)) {
+      return;
+    }
     if (shouldPerformGestureDetection()) {
       if (waitFirstMotionEvent && event.getActionMasked() == ACTION_POINTER_DOWN) {
         // The split-typing gesture expect no action-down when re-entering the touch exploration
@@ -1050,6 +1056,7 @@ public class TouchInteractionMonitor
     scrubTracker.clear();
     pinchTracker.clear();
     tapToTypeTracker.clear();
+    tapToActivateTracker.clear();
     downOnKeyboard = false;
     gboardRoot = null;
     exploringKeyboard = false;
@@ -1475,6 +1482,30 @@ public class TouchInteractionMonitor
     // Touch exploration of where the finger lifted finds the key.
     service.onTapToType();
     requestTouchExploration("handleTapToType");
+    return true;
+  }
+
+  /**
+   * Activates the item under a quick one-finger tap as the finger lifts, with Tap to activate, when
+   * focus has not moved recently, instead of waiting for a second tap. Returns true for the event
+   * that lifts the finger, which no gesture matcher may see, so that a tap right after it is
+   * another tap instead of a double tap.
+   */
+  private boolean handleTapToActivate(MotionEvent event) {
+    if (!tapToActivateTracker.onMotionEvent(event, (x, y) -> true)
+        || state != STATE_TOUCH_INTERACTING
+        || gestureStarted
+        || !service.quickTapActivatesAtOnce()) {
+      return false;
+    }
+    if (GestureLog.getEnabled()) {
+      Log.d(DEBUG_GESTURE_TAG, "Tap to activate");
+    }
+    keepMonitorTouchExplore = false;
+    requestTouchExplorationDelayed.cancel();
+    gestureDetector.clear();
+    // The finger is up, so touch exploration of where it lifted is reported as a tap.
+    requestTouchExploration("handleTapToActivate");
     return true;
   }
 

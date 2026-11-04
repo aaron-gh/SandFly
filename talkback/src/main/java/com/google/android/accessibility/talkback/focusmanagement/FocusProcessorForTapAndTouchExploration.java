@@ -47,6 +47,7 @@ import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics;
 import com.google.android.accessibility.talkback.directtouch.DirectTouchRegions;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.focusmanagement.action.TouchExplorationAction;
+import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionRecord;
 import com.google.android.accessibility.talkback.scripting.Scripts;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.AccessibilityWindowInfoUtils;
@@ -622,6 +623,27 @@ public class FocusProcessorForTapAndTouchExploration {
   /** Sets whether a tap that lifts before the item under it is focused activates the item. */
   public void setTapToActivateEnabled(boolean enabled) {
     tapToActivateEnabled = enabled;
+  }
+
+  /**
+   * How long after focus moved a quick tap may still be the first tap of a double tap on the item
+   * just focused. Later, with Tap to activate, a quick tap activates the item under it as the
+   * finger lifts.
+   */
+  private static final long DOUBLE_TAP_AFTER_FOCUS_MS = 3000;
+
+  /**
+   * Returns whether a quick tap now activates the item under it as the finger lifts, without
+   * waiting for a second tap: with Tap to activate, unless focus moved in the last {@link
+   * #DOUBLE_TAP_AFTER_FOCUS_MS}.
+   */
+  public boolean quickTapActivatesAtOnce() {
+    if (!tapToActivateEnabled || actorState == null) {
+      return false;
+    }
+    @Nullable FocusActionRecord lastFocus = actorState.getFocusHistory().getLastFocusActionRecord();
+    return lastFocus == null
+        || SystemClock.uptimeMillis() - lastFocus.getActionTime() > DOUBLE_TAP_AFTER_FOCUS_MS;
   }
 
   /**

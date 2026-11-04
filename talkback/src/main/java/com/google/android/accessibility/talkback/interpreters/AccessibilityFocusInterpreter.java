@@ -574,6 +574,11 @@ public class AccessibilityFocusInterpreter
     focusProcessorForTapAndTouchExploration.setTapToActivateEnabled(enabled);
   }
 
+  /** Returns whether a quick tap now activates the item under it as the finger lifts. */
+  public boolean quickTapActivatesAtOnce() {
+    return focusProcessorForTapAndTouchExploration.quickTapActivatesAtOnce();
+  }
+
   /** Called when touch exploration starts after the finger of the touch lifted: a tap. */
   public void onTapExploration() {
     focusProcessorForTapAndTouchExploration.onTapExploration();

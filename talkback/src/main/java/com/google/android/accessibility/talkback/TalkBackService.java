@@ -3710,6 +3710,15 @@ public class TalkBackService extends AccessibilityServiceCompat
         }
       };
 
+  /**
+   * Returns whether a quick tap now activates the item under it as the finger lifts, without
+   * waiting for a second tap. See Tap to activate.
+   */
+  public boolean quickTapActivatesAtOnce() {
+    return accessibilityFocusInterpreter != null
+        && accessibilityFocusInterpreter.quickTapActivatesAtOnce();
+  }
+
   /** Called when touch exploration starts after the finger of the touch lifted: a tap. */
   public void onTapExploration() {
     if (accessibilityFocusInterpreter != null) {
