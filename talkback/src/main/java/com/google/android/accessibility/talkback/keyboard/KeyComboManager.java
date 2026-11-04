@@ -193,6 +193,18 @@ public class KeyComboManager
   private final Set<Integer> scriptKeys = new HashSet<>();
   private final Set<Integer> keyComboPassThroughPressedKeys = new HashSet<>();
 
+  /**
+   * Whether the user turned SandFly keyboard input off: every key goes to Android, except the keys
+   * of Turn SandFly keyboard input on or off. Not kept when SandFly restarts.
+   */
+  private boolean keyboardInputOff;
+
+  /** Keys whose key down went to Android while SandFly keyboard input was off. */
+  private final Set<Integer> keysPassedWhileInputOff = new HashSet<>();
+
+  /** Keys whose key down turned SandFly keyboard input on or off while it was off. */
+  private final Set<Integer> keysTakenWhileInputOff = new HashSet<>();
+
   /** Commands only work in Browse Mode. Built during initialization. */
   private final ImmutableSet<String> browseModeOnlyCommands;
 
@@ -394,6 +406,8 @@ public class KeyComboManager
     }
     // The up event of a held SandFly key may be lost the same way.
     sandFlyKeyHeld = false;
+    keysPassedWhileInputOff.clear();
+    keysTakenWhileInputOff.clear();
     serviceState = newState;
   }
 
@@ -406,11 +420,21 @@ public class KeyComboManager
   @Override
   public boolean onKeyEvent(KeyEvent event, EventId eventId) {
     trackSandFlyKey(event);
+    // A key pressed while SandFly keyboard input was off is released where it was pressed, even
+    // after keyboard input is turned on again, so that the app doesn't see a key held forever.
+    @Nullable Boolean whileInputOff = finishKeyPressedWhileInputOff(event);
+    if (whileInputOff != null) {
+      return whileInputOff;
+    }
     if (keyEventDelegate != null) {
       if (keyEventDelegate.onKeyEvent(event, eventId)) {
         arrowKeyNavKeyHandler.onKeyEventConsumedElsewhere(event);
         return true;
       }
+    }
+
+    if (isKeyboardInputOff()) {
+      return onKeyEventWhileInputOff(event);
     }
 
     // While the review cursor is on, arrow keys and the like move it.
@@ -666,6 +690,128 @@ public class KeyComboManager
       recordBrowseModeStateWhenOff(BROWSE_MODE_TURNED_OFF_BY_USER);
     }
     return true;
+  }
+
+  /**
+   * Returns whether SandFly keyboard input is off, turned off by the user or by a script for the
+   * app shown: every key goes to Android except the keys of Turn SandFly keyboard input on or off.
+   */
+  public boolean isKeyboardInputOff() {
+    return keyboardInputOff || Scripts.passesAllKeys();
+  }
+
+  /**
+   * Turns SandFly keyboard input off, or back on, and says which. Turning it on also ends a script's
+   * request to pass all keys to the app shown, until the script asks again.
+   */
+  public void toggleKeyboardInput() {
+    boolean off = !isKeyboardInputOff();
+    keyboardInputOff = off;
+    if (!off) {
+      Scripts.stopPassingAllKeys();
+    }
+    LogUtils.i(TAG, "SandFly keyboard input %s", off ? "off" : "on");
+    if (pipeline == null) {
+      return;
+    }
+    pipeline.returnFeedback(
+        EVENT_ID_UNTRACKED,
+        Feedback.speech(
+            context.getString(off ? R.string.keyboard_input_off : R.string.keyboard_input_on),
+            INTERRUPTIVE_SPEAK_OPTIONS));
+  }
+
+  /**
+   * Handles a key event while SandFly keyboard input is off. Only the keys of Turn SandFly keyboard
+   * input on or off are taken; every other key, the SandFly key and its shortcuts too, goes to
+   * Android. Keys pressed before keyboard input was turned off are released the way they were
+   * pressed.
+   */
+  private boolean onKeyEventWhileInputOff(KeyEvent event) {
+    int keyCode = event.getKeyCode();
+    if (event.getAction() == KeyEvent.ACTION_UP) {
+      // The review cursor and arrow key navigation release the keys they took.
+      @Nullable ScreenReview screenReview =
+          keyComboMapper == null ? null : keyComboMapper.getScreenReview();
+      if (screenReview != null && screenReview.onKeyEvent(event)) {
+        arrowKeyNavKeyHandler.onKeyEventConsumedElsewhere(event);
+        return true;
+      }
+      if (arrowKeyNavKeyHandler.onKeyEvent(event, /* canAct= */ false)) {
+        return true;
+      }
+      if (currentKeysDown.contains(keyCode)
+          || passedKeys.contains(keyCode)
+          || scriptKeys.contains(keyCode)) {
+        return onKeyUp(event);
+      }
+      return false;
+    }
+    if (event.getAction() != KeyEvent.ACTION_DOWN) {
+      return false;
+    }
+    // Held down before keyboard input was turned off: its repeats go where its key down went.
+    if (currentKeysDown.contains(keyCode)) {
+      return !passedKeys.contains(keyCode);
+    }
+    if (event.getRepeatCount() == 0
+        && serviceState == SERVICE_STATE_ACTIVE
+        && isKeyboardInputToggle(event)) {
+      keysTakenWhileInputOff.add(keyCode);
+      toggleKeyboardInput();
+      return true;
+    }
+    keysPassedWhileInputOff.add(keyCode);
+    return false;
+  }
+
+  /**
+   * Returns where the key repeat or key up of a key pressed while SandFly keyboard input was off
+   * goes: true when SandFly takes it, false when Android gets it, or null for other keys.
+   */
+  private @Nullable Boolean finishKeyPressedWhileInputOff(KeyEvent event) {
+    int keyCode = event.getKeyCode();
+    boolean up = event.getAction() == KeyEvent.ACTION_UP;
+    boolean repeat = event.getAction() == KeyEvent.ACTION_DOWN && event.getRepeatCount() > 0;
+    if (!up && !repeat) {
+      return null;
+    }
+    if (up ? keysTakenWhileInputOff.remove(keyCode) : keysTakenWhileInputOff.contains(keyCode)) {
+      return true;
+    }
+    if (up ? keysPassedWhileInputOff.remove(keyCode) : keysPassedWhileInputOff.contains(keyCode)) {
+      return false;
+    }
+    return null;
+  }
+
+  /** Whether the key down [event] completes the keys of Turn SandFly keyboard input on or off. */
+  private boolean isKeyboardInputToggle(KeyEvent event) {
+    if (keyComboModel == null || KeyEvent.isModifierKey(event.getKeyCode())) {
+      return false;
+    }
+    KeyCombo target =
+        keyComboModel.getKeyComboForKey(
+            context.getString(R.string.keycombo_shortcut_toggle_keyboard_input));
+    if (target == null || target.getKeyComboCode() == KeyComboModel.KEY_COMBO_CODE_UNASSIGNED) {
+      return false;
+    }
+    @Nullable SandFlyKey sandFlyKey = getSandFlyKey();
+    if (sandFlyKey != null && sandFlyKey.isKey(event)) {
+      return false;
+    }
+    int triggerModifier = keyComboModel.getTriggerModifier();
+    int modifiers = modifiersOf(event);
+    boolean pressedTriggerModifier =
+        triggerModifier != KeyComboModel.NO_MODIFIER
+            && (modifiers & triggerModifier) == triggerModifier;
+    KeyCombo pressed =
+        new KeyCombo(
+            modifiers & ~(pressedTriggerModifier ? triggerModifier : 0),
+            KeyComboModel.NO_PREFIX_KEY_CODE,
+            getConvertedKeyCode(event),
+            pressedTriggerModifier);
+    return pressed.matchWith(triggerModifier, target) == EXACT_MATCH;
   }
 
   /** Returns whether the app shown gets the keys pressed without the SandFly key. */

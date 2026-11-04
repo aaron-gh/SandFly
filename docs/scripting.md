@@ -1,6 +1,6 @@
 # Writing SandFly scripts
 
-A script is a Lua file that changes how SandFly works in one app, or in every app. This document describes the whole script API, version 2.
+A script is a Lua file that changes how SandFly works in one app, or in every app. This document describes the whole script API, version 3.
 
 Scripts run on phones and tablets. Watches and TVs can't run them.
 
@@ -61,8 +61,8 @@ A table with only listed values, such as `{ 'speech', 'screen' }`, is a list. A 
 | `id` | Required. Lowercase letters, digits, dots, dashes and underscores, starting with a letter or digit, up to 64 characters. A script with the same id replaces the installed one. |
 | `name` | Required. Shown in the Scripts list, and at the start of the title of every dialog the script shows. |
 | `author` | Required. |
-| `minApiVersion` | Required. The lowest script API version the script works with. This document describes version 2. Use 2 for a script that uses anything marked *Version 2*. |
-| `testedApiVersion` | Required. The highest script API version you tested with. SandFly warns before installing a script tested only with a version older than the last one that changed existing calls. Version 2 only adds to version 1, so scripts tested with 1 get no warning. |
+| `minApiVersion` | Required. The lowest script API version the script works with. This document describes version 3. Use 2 for a script that uses anything marked *Version 2*, and 3 for one that uses anything marked *Version 3*. |
+| `testedApiVersion` | Required. The highest script API version you tested with. SandFly warns before installing a script tested only with a version older than the last one that changed existing calls. Versions 2 and 3 only add to version 1, so scripts tested with 1 get no warning. |
 | `version` | The script's own version, as text, such as `'1.2'`. The default is `'1'`. SandFly updates installed scripts from their source when this is higher, compared number by number, so raise it with each change. |
 | `description` | Shown on the script's page and before it's installed. |
 | `homepage` | An `http` or `https` address. The script's page has a button that opens it. |
@@ -103,10 +103,10 @@ A script can only use what its manifest asks for. The user sees the list before 
 | Permission | What it allows |
 |---|---|
 | `screen` | Reading the screen: `sf.screen`, the items given to hooks, commands and actions, `sf.speech.last()`, recognizing text, and the `onFocus`, `onAnnouncement`, `onTextChange`, `onContentChange`, `onScroll`, `onSelectionChange`, `onClick`, `onLongClick` and `onInputFocus` hooks. A script for all apps also needs it to learn which app is in front: `sf.app()`, `onAppEnter`, `onAppLeave` and `onWindowChange`. |
-| `actions` | Clicking, scrolling, typing and moving focus: `item:click()`, `item:perform()`, `item:focus()`, `item:setText()` and the other item actions, `sf.touch`, `sf.keys`, and rule actions other than `speak`. |
+| `actions` | Clicking, scrolling, typing and moving focus: `item:click()`, `item:perform()`, `item:focus()`, `item:setText()` and the other item actions, `sf.touch`, `sf.keys.type`, `sf.keys.press`, and rule actions other than `speak`. |
 | `speech` | Speaking with `sf.speak` and `sf.message`, `sf.speech.stop()`, `sf.braille`, rules that change an item, `sf.rules`, changing what a hook was given to say, and the `onSpeech` hook. |
 | `passwords` | The text of password fields. Without it, that text is left out. |
-| `input` | Commands, `sf.bind`, `navigation`, `sf.commands.run`, the `onActions` hook, and actions in rules. |
+| `input` | Commands, `sf.bind`, `navigation`, `sf.commands.run`, `sf.keys.passAll`, the `onActions` hook, and actions in rules. |
 | `network` | `sf.fetch` and `sf.translate`. |
 | `clipboard` | `sf.clipboard`. |
 | `system` | `sf.system`, `sf.resume`, `sf.device.setVolume` and `sf.device.setRingerMode`. |
@@ -382,6 +382,23 @@ Sounds and vibration follow the user's **Sound feedback** and **Vibration feedba
 
 Keys and typing through Shizuku need Shizuku running, with SandFly allowed in it. Otherwise they raise an error.
 
+*Version 3.* `sf.keys.passAll(on)` sends every key to Android and the app in front, as **Turn SandFly keyboard input on or off** does: the SandFly key, its shortcuts, browse mode keys, arrow key navigation, the review cursor and the keys of scripts, this one's too. Only the keys of **Turn SandFly keyboard input on or off** still work. `sf.keys.passAll()` or `sf.keys.passAll(true)` starts it, and `sf.keys.passAll(false)` stops it. It needs the `input` permission.
+
+It lasts while the script is loaded: a script with `apps` stops passing keys when its app leaves the front, and a script for all apps passes them in every app until it stops. Keys are never passed on SandFly's own screens. The keys of **Turn SandFly keyboard input on or off** stop it until the script calls `sf.keys.passAll` again. SandFly says nothing when a script starts or stops passing keys, so a script that does it should tell the user.
+
+```lua
+-- A game that uses every key.
+local manifest = {
+  id = 'example.game-keys', name = 'Game keys', author = 'Example',
+  minApiVersion = 3, testedApiVersion = 3,
+  apps = 'com.example.game',
+  permissions = { 'input', 'speech' },
+}
+
+sf.keys.passAll()
+sf.message('Keys go to the game')
+```
+
 ### SandFly's commands
 
 *Version 2.* A script can run any command that a gesture or keys can be assigned to in SandFly, such as moving to the next heading, reading from the top or changing the reading control.
@@ -394,7 +411,7 @@ sf.commands.run('NEXT')          -- Next item
 sf.commands.run('READ_FROM_TOP') -- Read from top
 ```
 
-**Turn all scripts on or off** and **Open app** commands are not in the list.
+**Turn all scripts on or off**, **Turn SandFly keyboard input on or off** and **Open app** commands are not in the list.
 
 ### Rules from code
 

@@ -259,6 +259,7 @@ class ScriptRuntime(
       val keys = args.optJSONArray("keys").strings()
       promise { settle -> manager.touch.pressKeys(keys) { settle(true, it) } }
     }
+    on("keys.passAll", INPUT) { args -> manager.setPassAllKeys(id, args.optBoolean("on")) }
     on("keys.type", ACTIONS) { args ->
       val text = args.optString("text")
       val focused = manager.inputFocusedNode()
@@ -663,7 +664,9 @@ class ScriptRuntime(
     private const val MAX_BRAILLE_CHARS = 1000
     private const val MAX_RECOGNITIONS = 2
     private const val MAX_FILE_BYTES = 1024L * 1024
-    private val REFUSED_COMMANDS = setOf("TOGGLE_SCRIPTS")
+    // A script passes keys with sf.keys.passAll, which ends when the script unloads.
+    private val REFUSED_COMMANDS =
+      setOf("TOGGLE_SCRIPTS", "KEYCOMBO:keycombo_shortcut_toggle_keyboard_input")
 
     /** SandFly Pro's commands, which use the person's monthly allowance. */
     private const val SANDFLY_PRO_COMMAND_PREFIX = "SFPRO_"

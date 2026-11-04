@@ -196,6 +196,12 @@ class LazyScriptHost(
   override fun itemActions(node: AccessibilityNodeInfoCompat): List<ScriptItemAction> =
     manager?.itemActions(node).orEmpty()
 
+  override fun passesAllKeys(): Boolean = manager?.passesAllKeys() == true
+
+  override fun stopPassingAllKeys() {
+    manager?.stopPassingAllKeys()
+  }
+
   private companion object {
     const val TAG = "LazyScriptHost"
   }

@@ -1585,6 +1585,9 @@ local sf = {
     type = function(text)
       return await(call('keys.type', { text = tostring(text) }), true)
     end,
+    passAll = function(on)
+      call('keys.passAll', { on = on ~= false })
+    end,
   },
   commands = {
     list = function() return call('commands.list') end,

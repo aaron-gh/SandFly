@@ -438,6 +438,7 @@ object Commands {
         )
         keyboard(Key.TOGGLE_KEY_COMBO_PASS_THROUGH_ONCE)
         keyboard(Key.TOGGLE_PASS_KEYS_TO_APP)
+        keyboard(Key.TOGGLE_KEYBOARD_INPUT)
       }
 
     private fun scrolling() =

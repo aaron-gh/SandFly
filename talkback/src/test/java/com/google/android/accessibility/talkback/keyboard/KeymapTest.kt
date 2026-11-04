@@ -347,4 +347,31 @@ class KeymapTest {
     assertFalse(PassKeysApps.toggle(context, "com.example.game"))
     assertFalse(PassKeysApps.isOn(context, "com.example.game"))
   }
+
+  @Test
+  fun keyboardInputTurnsOnAndOffInEveryKeymapWithEveryOfferedKey() {
+    val key = context.getString(R.string.keycombo_shortcut_toggle_keyboard_input)
+    for (keymap in Keymap.entries) {
+      for (sandFlyKey in keymap.sandFlyKeys) {
+        SharedPreferencesUtils.getSharedPreferences(context).edit().clear().commit()
+        choose(keymap, sandFlyKey)
+        val combo = NewKeyComboModel(context, keymap).getKeyComboForKey(key)
+        assertTrue("$keymap with $sandFlyKey", combo.isTriggerModifierUsed)
+        assertTrue("$keymap with $sandFlyKey", combo.keyCode != 0)
+      }
+    }
+    SharedPreferencesUtils.getSharedPreferences(context).edit().clear().commit()
+    assertEquals(
+      KeyCombo(KeyEvent.META_SHIFT_ON, 0, KeyEvent.KEYCODE_K, true),
+      NewKeyComboModel(context, Keymap.NVDA).getKeyComboForKey(key),
+    )
+    assertEquals(
+      KeyCombo(KeyEvent.META_SHIFT_ON, 0, KeyEvent.KEYCODE_SEMICOLON, true),
+      NewKeyComboModel(context, Keymap.VOICEOVER).getKeyComboForKey(key),
+    )
+    assertEquals(
+      KeyCombo(KeyEvent.META_SHIFT_ON, 0, KeyEvent.KEYCODE_SEMICOLON, true),
+      NewKeyComboModel(context, Keymap.ORCA).getKeyComboForKey(key),
+    )
+  }
 }

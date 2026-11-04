@@ -725,7 +725,11 @@ public enum TalkBackPhysicalKeyboardShortcut {
   TOGGLE_PASS_KEYS_TO_APP(
       /* KEYBOARD_SHORTCUT_TOGGLE_PASS_KEYS_TO_APP */ 1033,
       R.string.keycombo_shortcut_toggle_pass_keys_to_app,
-      R.string.keycombo_menu_toggle_pass_keys_to_app);
+      R.string.keycombo_menu_toggle_pass_keys_to_app),
+  TOGGLE_KEYBOARD_INPUT(
+      /* KEYBOARD_SHORTCUT_TOGGLE_KEYBOARD_INPUT */ 1034,
+      R.string.keycombo_shortcut_toggle_keyboard_input,
+      R.string.keycombo_menu_toggle_keyboard_input);
 
   private static Map<String, TalkBackPhysicalKeyboardShortcut> keyShortcutMap;
   private static Map<Integer, TalkBackPhysicalKeyboardShortcut> ordinalShortcutMap;

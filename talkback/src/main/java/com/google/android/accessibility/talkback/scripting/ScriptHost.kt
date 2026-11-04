@@ -72,6 +72,15 @@ interface ScriptHost {
    */
   fun toggleAll(): Boolean?
 
+  /**
+   * Whether a script running in the app shown asked for every key to go to Android, as with SandFly
+   * keyboard input off. Called for every key event, so it must be fast.
+   */
+  fun passesAllKeys(): Boolean = false
+
+  /** Ends every script's request to pass all keys, until a script asks again. */
+  fun stopPassingAllKeys() {}
+
   fun shutdown()
 }
 
@@ -276,6 +285,15 @@ object Scripts {
     host?.itemActions(node).orEmpty()
 
   @JvmStatic fun toggleAll(): Boolean? = host?.toggleAll()
+
+  /** Whether a script running in the app shown passes every key to Android. */
+  @JvmStatic fun passesAllKeys(): Boolean = host?.passesAllKeys() == true
+
+  /** Ends every script's request to pass all keys, until a script asks again. */
+  @JvmStatic
+  fun stopPassingAllKeys() {
+    host?.stopPassingAllKeys()
+  }
 
   private fun group(node: AccessibilityNodeInfoCompat): NodeRule? =
     rule(node, RuleAspect.GROUP)?.takeIf { it.group }

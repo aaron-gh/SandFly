@@ -678,6 +678,16 @@ public class KeyComboMapper {
                 : TalkBackService.getInstance().getKeyComboManager();
         result = keyComboManager != null && keyComboManager.togglePassKeysToApp();
       }
+      case TOGGLE_KEYBOARD_INPUT -> {
+        KeyComboManager keyComboManager =
+            TalkBackService.getInstance() == null
+                ? null
+                : TalkBackService.getInstance().getKeyComboManager();
+        result = keyComboManager != null;
+        if (keyComboManager != null) {
+          keyComboManager.toggleKeyboardInput();
+        }
+      }
       case TOGGLE_BROWSE_MODE_EXTRA -> {
         KeyComboManager keyComboManager =
             TalkBackService.getInstance() == null
