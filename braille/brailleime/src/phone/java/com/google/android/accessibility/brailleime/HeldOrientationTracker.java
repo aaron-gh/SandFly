@@ -20,15 +20,10 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.database.ContentObserver;
-import android.os.Handler;
-import android.os.Looper;
 import android.os.PowerManager;
 import android.os.SystemClock;
-import android.provider.Settings;
 import android.view.OrientationEventListener;
 import androidx.annotation.Nullable;
-import com.google.android.accessibility.braille.common.BrailleCommonUtils;
 import com.google.android.accessibility.brailleime.OrientationMonitor.Orientation;
 import com.google.android.accessibility.brailleime.input.DotsOrientation;
 
@@ -36,8 +31,8 @@ import com.google.android.accessibility.brailleime.input.DotsOrientation;
  * Remembers how the phone was last held up, the whole time the screen is on, like auto-rotate
  * does. With auto-rotate on, a phone laid flat keeps the screen rotation it was last held in, and
  * the braille keyboard follows it. With auto-rotate off, this gives the keyboard the same memory,
- * even of how the phone was held before the keyboard opened. It only listens while the braille
- * keyboard is an enabled input method, so nobody who does not use it pays for the sensor.
+ * even of how the phone was held before the keyboard opened. The braille app launcher reads it
+ * too, so it listens whether or not the braille keyboard is an enabled input method.
  */
 public final class HeldOrientationTracker {
   private static HeldOrientationTracker instance;
@@ -57,20 +52,9 @@ public final class HeldOrientationTracker {
         }
       };
 
-  private final ContentObserver enabledImesObserver =
-      new ContentObserver(new Handler(Looper.getMainLooper())) {
-        @Override
-        public void onChange(boolean selfChange) {
-          updateListening();
-        }
-      };
-
   private boolean listening;
 
-  /**
-   * Starts tracking while the screen is on and the braille keyboard is enabled. Calling it again
-   * does nothing.
-   */
+  /** Starts tracking while the screen is on. Calling it again does nothing. */
   public static void start(Context context) {
     if (instance != null) {
       return;
@@ -79,13 +63,6 @@ public final class HeldOrientationTracker {
     IntentFilter filter = new IntentFilter(Intent.ACTION_SCREEN_ON);
     filter.addAction(Intent.ACTION_SCREEN_OFF);
     instance.context.registerReceiver(instance.screenReceiver, filter);
-    instance
-        .context
-        .getContentResolver()
-        .registerContentObserver(
-            Settings.Secure.getUriFor(Settings.Secure.ENABLED_INPUT_METHODS),
-            /* notifyForDescendants= */ false,
-            instance.enabledImesObserver);
     instance.updateListening();
   }
 
@@ -95,16 +72,13 @@ public final class HeldOrientationTracker {
       return;
     }
     instance.context.unregisterReceiver(instance.screenReceiver);
-    instance.context.getContentResolver().unregisterContentObserver(instance.enabledImesObserver);
     instance.listener.disable();
     instance = null;
   }
 
-  /** Listens to the sensor only while the screen is on and the braille keyboard is enabled. */
+  /** Listens to the sensor only while the screen is on. */
   private void updateListening() {
-    boolean shouldListen =
-        context.getSystemService(PowerManager.class).isInteractive()
-            && BrailleCommonUtils.isBrailleKeyboardEnabled(context);
+    boolean shouldListen = context.getSystemService(PowerManager.class).isInteractive();
     if (shouldListen == listening) {
       return;
     }
