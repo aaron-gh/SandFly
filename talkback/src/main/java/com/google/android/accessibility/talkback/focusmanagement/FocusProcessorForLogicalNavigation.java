@@ -2900,7 +2900,43 @@ public class FocusProcessorForLogicalNavigation {
     if (pageAction == 0 || scrollAction == 0) {
       return null;
     }
+    if (navigationAction.actionType == NavigationAction.SCROLL_LEFT
+        || navigationAction.actionType == NavigationAction.SCROLL_RIGHT) {
+      // Scrolling forward or back moves a vertical list up or down, so for left and right only
+      // something that scrolls sideways counts, such as a pager around a vertical list.
+      int directionalAction =
+          navigationAction.actionType == NavigationAction.SCROLL_LEFT
+              ? ACTION_SCROLL_RIGHT.getId()
+              : ACTION_SCROLL_LEFT.getId();
+      return new NodeActionFilter(pageAction)
+          .or(new NodeActionFilter(directionalAction))
+          .or(
+              new NodeActionFilter(scrollAction)
+                  .and(Filter.node(FocusProcessorForLogicalNavigation::scrollsSideways)));
+    }
     return new NodeActionFilter(pageAction).or(new NodeActionFilter(scrollAction));
+  }
+
+  /**
+   * Returns whether {@code node} scrolls left and right: a pager, a horizontal scroll view, a node
+   * with left or right scroll or page actions, or a collection of one row.
+   */
+  @VisibleForTesting
+  static boolean scrollsSideways(AccessibilityNodeInfoCompat node) {
+    int role = Role.getRole(node);
+    if (role == Role.ROLE_PAGER || role == Role.ROLE_HORIZONTAL_SCROLL_VIEW) {
+      return true;
+    }
+    if (AccessibilityNodeInfoUtils.supportsAction(node, ACTION_SCROLL_LEFT.getId())
+        || AccessibilityNodeInfoUtils.supportsAction(node, ACTION_SCROLL_RIGHT.getId())
+        || AccessibilityNodeInfoUtils.supportsAction(
+            node, AccessibilityActionCompat.ACTION_PAGE_LEFT.getId())
+        || AccessibilityNodeInfoUtils.supportsAction(
+            node, AccessibilityActionCompat.ACTION_PAGE_RIGHT.getId())) {
+      return true;
+    }
+    CollectionInfoCompat collection = node.getCollectionInfo();
+    return collection != null && collection.getRowCount() == 1 && collection.getColumnCount() != 1;
   }
 
   /**
