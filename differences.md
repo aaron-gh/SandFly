@@ -958,7 +958,7 @@ Google's source release doesn't include working Gemini support, so **Describe im
 
 ### Spoken descriptions and questions
 
-**Speak screen description** and **Speak image description** describe the screen or the focused image as **Describe screen** and **Describe image** do, and speak the description instead of showing it in a window. **Ask about screen** and **Ask about image** take a screenshot of the screen or the focused image, then show a text field for a question about it; **Ask** sends the question and the answer is spoken. Before you have agreed to send screenshots to the AI service, they describe the screen or image instead, which asks for that agreement. You can assign the four commands to gestures in **Commands**.
+**Speak screen description** and **Speak image description** describe the screen or the focused image as **Describe screen** and **Describe image** do, and speak the description instead of showing it in a window. **Ask about screen** and **Ask about image** take a screenshot of the screen or the focused image, then record a question about it with the engine chosen in **Dictation**. Recording stops after a pause in speech, or when you repeat the command; the question is sent and the answer is spoken. When recording can't start, a text field for the question opens instead. Before you have agreed to send screenshots to the AI service, they describe the screen or image instead, which asks for that agreement. You can assign the four commands to gestures in **Commands**.
 
 With Gemini, SandFly asks the model to think as little as it can, and asks Gemini Flash-Lite when the chosen model is busy or takes more than 15 seconds.
 
