@@ -96,6 +96,8 @@ class AiDictation(
   @Volatile private var lastSpeechAt = 0L
   /** Whether speech was heard since recording started. */
   @Volatile private var speechHeard = false
+  /** Tenths of a second that sounded like speech since the start chime, counted while recording. */
+  @Volatile private var speechTenths = 0
   private val autoStop =
     object : Runnable {
       override fun run() {
@@ -224,6 +226,7 @@ class AiDictation(
     recordingStartedAt = SystemClock.elapsedRealtime()
     lastSpeechAt = recordingStartedAt
     speechHeard = false
+    speechTenths = 0
     handler.removeCallbacks(autoStop)
     if (silenceLimitMs(onText != null, false, DictationSettings.autoStopMs(prefs)) > 0) {
       handler.postDelayed(autoStop, AUTO_STOP_CHECK_MS)
@@ -268,11 +271,16 @@ class AiDictation(
     val now = SystemClock.elapsedRealtime()
     lastSpeechAt = now
     // The start chime isn't speech.
-    if (now - recordingStartedAt >= CHIME_MS) speechHeard = true
+    if (now - recordingStartedAt >= CHIME_MS) {
+      speechHeard = true
+      speechTenths++
+    }
   }
 
   private fun stopRecording() {
     handler.removeCallbacks(autoStop)
+    // Counted before the stop chime, which the recording can pick up.
+    val spoken = speechTenths >= MIN_SPEECH_TENTHS
     phase = Phase.WORKING
     pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.speech(UNSILENCE))
     pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.sound(R.raw.chime_down))
@@ -302,20 +310,28 @@ class AiDictation(
         } else {
           // The session failed: the whole recording goes the usual way.
           LogUtils.w(TAG, "Live transcription failed, sending the recording")
-          transcribeRecording(request, used, pcm)
+          transcribeRecording(request, used, pcm, spoken)
         }
       }
       return
     }
-    transcribeRecording(request, used, pcm)
+    transcribeRecording(request, used, pcm, spoken)
   }
 
-  /** Recognizes [pcm] on the worker thread, then types it, unless a newer dictation started. */
-  private fun transcribeRecording(request: Int, used: Recognition, pcm: ByteArray) {
+  /**
+   * Recognizes [pcm] on the worker thread, then types it, unless a newer dictation started.
+   * [spoken] is whether the recording had any speech in it.
+   */
+  private fun transcribeRecording(
+    request: Int,
+    used: Recognition,
+    pcm: ByteArray,
+    spoken: Boolean,
+  ) {
     worker.execute {
       val result =
         try {
-          transcribe(used, pcm)
+          transcribe(used, pcm, spoken)
         } catch (e: Exception) {
           LogUtils.e(TAG, "Transcription failed: %s", e)
           null
@@ -339,9 +355,10 @@ class AiDictation(
 
   /**
    * Recognizes the speech in [pcm] with [used], or with Whisper when Rambler fails. Returns the
-   * text and whether it is already cleaned up, or null when it couldn't be recognized.
+   * text and whether it is already cleaned up, or null when it couldn't be recognized. Whisper
+   * isn't run when [spoken] is false: it makes up text for silence.
    */
-  private fun transcribe(used: Recognition, pcm: ByteArray): Pair<String, Boolean>? {
+  private fun transcribe(used: Recognition, pcm: ByteArray, spoken: Boolean): Pair<String, Boolean>? {
     if (used == Recognition.RAMBLER) {
       try {
         return DictationRequests.transcribe(DictationSettings.ramblerKey(prefs), AudioCapture.toWav(pcm)) to
@@ -349,6 +366,10 @@ class AiDictation(
       } catch (e: IOException) {
         LogUtils.w(TAG, "Rambler failed: %s", e)
       }
+    }
+    if (!spoken) {
+      LogUtils.i(TAG, "No speech recorded, so Whisper isn't run")
+      return "" to false
     }
     val model = WhisperModels.get(service).activeModel() ?: return null
     val whisper =
@@ -608,6 +629,8 @@ class AiDictation(
     const val LISTEN_NOTHING_SAID_MS = 8_000L
     /** Sound this soon after recording starts is the start chime, not speech. */
     private const val CHIME_MS = 600L
+    /** Tenths of a second of speech a recording needs before Whisper transcribes it. */
+    private const val MIN_SPEECH_TENTHS = 2
     /** How long progress tones play while speech is recognized or corrected. */
     private const val WORK_TONES_MS = 10 * 60_000L
     private const val HTTP_TOO_MANY_REQUESTS = 429
