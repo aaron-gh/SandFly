@@ -177,8 +177,11 @@ object VoiceOverGestures {
       // Sliding from an edge: Home, App Switcher, Notification Center and Control Center.
       R.string.pref_shortcut_edge_bottom_up_key to R.string.shortcut_value_home,
       R.string.pref_shortcut_edge_bottom_long_up_key to R.string.shortcut_value_overview,
-      R.string.pref_shortcut_edge_top_left_down_key to R.string.shortcut_value_notifications,
+      // From the top, a short slide opens quick settings and a long one notifications.
+      R.string.pref_shortcut_edge_top_left_down_key to R.string.shortcut_value_quick_settings,
       R.string.pref_shortcut_edge_top_right_down_key to R.string.shortcut_value_quick_settings,
+      R.string.pref_shortcut_edge_top_left_long_down_key to R.string.shortcut_value_notifications,
+      R.string.pref_shortcut_edge_top_right_long_down_key to R.string.shortcut_value_notifications,
     )
 
   @Volatile private var byKey: Map<String, String>? = null
