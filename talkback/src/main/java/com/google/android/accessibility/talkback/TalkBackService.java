@@ -154,6 +154,7 @@ import com.google.android.accessibility.talkback.braille.TalkBackForBrailleCommo
 import com.google.android.accessibility.talkback.braille.TalkBackForBrailleDisplayImpl;
 import com.google.android.accessibility.talkback.braille.TalkBackForBrailleImeImpl;
 import com.google.android.accessibility.talkback.braille.TalkBackForBrailleImeImpl.TalkBackPrivateMethodProvider;
+import com.google.android.accessibility.talkback.commands.RemovedCommands;
 import com.google.android.accessibility.talkback.compositor.ClickFeedback;
 import com.google.android.accessibility.talkback.compositor.Compositor;
 import com.google.android.accessibility.talkback.compositor.CompositorUtils;
@@ -2478,8 +2479,7 @@ public class TalkBackService extends AccessibilityServiceCompat
             textCursorTracker,
             directionNavigationActorStateReader,
             getSystemService(ClipboardManager.class),
-            focusFinder,
-            inputMethodMonitor);
+            focusFinder);
     fullScreenReadActor =
         new FullScreenReadActor(
             accessibilityFocusMonitor, this, speechController, screenStateMonitor.state);
@@ -2711,7 +2711,6 @@ public class TalkBackService extends AccessibilityServiceCompat
     screenStateMonitor.addScreenStateChangeListener(inputFocusInterpreter);
 
     voiceActionMonitor = new VoiceActionMonitor(this, callStateMonitor, speechStateMonitor);
-    editor.setVoiceActionDelegate(voiceActionMonitor);
     accessibilityEventProcessor.setVoiceActionMonitor(voiceActionMonitor);
 
     keyEventListeners.add(inputModeTracker);
@@ -2920,7 +2919,7 @@ public class TalkBackService extends AccessibilityServiceCompat
             textEventHistory,
             actorStateProvider,
             voiceActionMonitor,
-            editor,
+            /* voiceDictationDelegate= */ null,
             textEventFilter,
             FeatureFlagReader.cacheAndDropFrequentEvents(this),
             FeatureFlagReader.readLineWhenMoveToAdjacentLineByUpDownKey(this));
@@ -3390,6 +3389,8 @@ public class TalkBackService extends AccessibilityServiceCompat
     VerbosityPreferences.removePresets(prefs, getResources());
     // Arrow key navigation's own commands became arrow keys that run any command.
     ArrowKeyNav.migrate(this);
+    // Bindings of removed commands move to the commands that replaced them.
+    RemovedCommands.migrate(prefs);
     VoiceProfiles.moveReadingControl(
         prefs,
         getString(R.string.pref_selector_voice_profile_moved_key),

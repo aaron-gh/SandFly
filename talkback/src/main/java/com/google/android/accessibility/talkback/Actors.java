@@ -511,7 +511,6 @@ class Actors {
             case TYPO_CORRECTION ->
                 editor.correctTypo(edit.node(), edit.text(), edit.spellingSuggestion(), eventId);
             case MOVE_CURSOR -> editor.moveCursor(edit.node(), edit.cursorIndex(), eventId);
-            case TOGGLE_VOICE_DICTATION -> editor.toggleVoiceDictation(eventId);
           };
     }
 

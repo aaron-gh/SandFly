@@ -202,6 +202,10 @@ class AiDictation(
     return true
   }
 
+  /** Whether a dictation or [listen] is recording, or recognizing what it recorded. */
+  val isActive: Boolean
+    get() = phase != Phase.IDLE
+
   /** Whether [listen] is recording, or recognizing what it recorded. */
   val isListening: Boolean
     get() = phase != Phase.IDLE && onText != null

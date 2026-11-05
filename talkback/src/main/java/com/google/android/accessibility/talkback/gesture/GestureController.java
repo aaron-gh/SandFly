@@ -37,7 +37,6 @@ import static com.google.android.accessibility.talkback.Feedback.EditText.Action
 import static com.google.android.accessibility.talkback.Feedback.EditText.Action.CLEAR_TEXT;
 import static com.google.android.accessibility.talkback.Feedback.EditText.Action.SELECT_ALL;
 import static com.google.android.accessibility.talkback.Feedback.EditText.Action.START_SELECT;
-import static com.google.android.accessibility.talkback.Feedback.EditText.Action.TOGGLE_VOICE_DICTATION;
 import static com.google.android.accessibility.talkback.Feedback.Focus.Action.CLICK_CURRENT;
 import static com.google.android.accessibility.talkback.Feedback.Focus.Action.DOUBLE_CLICK_CURRENT;
 import static com.google.android.accessibility.talkback.Feedback.Focus.Action.LONG_CLICK_CURRENT;
@@ -428,26 +427,19 @@ public class GestureController {
       result =
           pipeline.returnFeedback(
               eventId, Feedback.systemAction(GLOBAL_ACTION_KEYCODE_HEADSETHOOK));
-    } else if (action.equals(service.getString(R.string.shortcut_value_voice_input))) {
-      result = false;
-      AccessibilityNodeInfoCompat editor = getEditTextInputFocus();
-      if (FeatureFlagReader.enableVoiceDictationShortcut(service) && editor != null) {
-        result = pipeline.returnFeedback(eventId, Feedback.edit(editor, TOGGLE_VOICE_DICTATION));
+    } else if (action.equals(service.getString(R.string.shortcut_value_dictate_or_media_control))) {
+      // Stops a dictation that is on; starts one in a text field, unless a call is on, when play
+      // or pause answers or ends it.
+      AccessibilityNodeInfoCompat field = null;
+      if (!dictation.isActive() && !service.isPhoneCallActive()) {
+        field = dictationTarget();
+        if (Role.getRole(field) != Role.ROLE_EDIT_TEXT) {
+          field = getEditTextInputFocus();
+        }
       }
-      if (!result) {
-        speak(service.getString(R.string.announcement_voice_input_when_gboard_not_onscreen));
-      }
-    } else if (action.equals(
-        service.getString(R.string.shortcut_value_media_control_or_voice_input))) {
-      result = false;
-      AccessibilityNodeInfoCompat editor = getEditTextInputFocus();
-      if (FeatureFlagReader.enableVoiceDictationShortcut(service)
-          && !service.isPhoneCallActive()
-          && editor != null) {
-        result = pipeline.returnFeedback(eventId, Feedback.edit(editor, TOGGLE_VOICE_DICTATION));
-      }
-      if (!result) {
-        LogUtils.d(LOG_TAG, "Voice input failed, try media control instead.");
+      if (dictation.isActive() || field != null) {
+        result = dictation.start(field);
+      } else {
         result =
             pipeline.returnFeedback(
                 eventId, Feedback.systemAction(GLOBAL_ACTION_KEYCODE_HEADSETHOOK));
@@ -704,11 +696,7 @@ public class GestureController {
           accessibilityFocusMonitor.getEditingNodeFromFocusedKeyboard(focus);
       result = GranularEditing.open(service, editing != null ? editing : focus);
     } else if (action.equals(service.getString(R.string.shortcut_value_dictate))) {
-      AccessibilityNodeInfoCompat focus =
-          accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ true);
-      AccessibilityNodeInfoCompat editing =
-          accessibilityFocusMonitor.getEditingNodeFromFocusedKeyboard(focus);
-      result = dictation.start(editing != null ? editing : focus);
+      result = dictation.start(dictationTarget());
     } else if (action.equals(service.getString(R.string.shortcut_value_clear_selection))) {
       AccessibilityNodeInfoCompat node =
           accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ true);
@@ -1208,6 +1196,15 @@ public class GestureController {
       speak(service.getString(R.string.not_editable));
       return null;
     }
+  }
+
+  /** Returns the field that the keyboard in focus types into, or else the focused node. */
+  private @Nullable AccessibilityNodeInfoCompat dictationTarget() {
+    AccessibilityNodeInfoCompat focus =
+        accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ true);
+    AccessibilityNodeInfoCompat editing =
+        accessibilityFocusMonitor.getEditingNodeFromFocusedKeyboard(focus);
+    return editing != null ? editing : focus;
   }
 
   private @Nullable AccessibilityNodeInfoCompat getEditTextInputFocus() {

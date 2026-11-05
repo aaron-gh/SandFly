@@ -52,7 +52,7 @@ public class TextEditActorInsertTest {
       String original, boolean showingHint, boolean selectable, boolean cursorSucceeds,
       int start, int end, String expected, int cursor) {
     TestService service = Robolectric.buildService(TestService.class).get();
-    TextEditActor actor = new TextEditActor(service, null, null, null, null, null, null) {
+    TextEditActor actor = new TextEditActor(service, null, null, null, null, null) {
       @Override
       public boolean moveCursor(AccessibilityNodeInfoCompat node, int position, EventId eventId) {
         assertEquals(cursor, position);

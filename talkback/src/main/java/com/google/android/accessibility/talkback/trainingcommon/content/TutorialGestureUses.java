@@ -91,7 +91,7 @@ public final class TutorialGestureUses {
   private static final GestureUse MENU_PRE_R =
       use(GESTURE_SWIPE_DOWN_AND_RIGHT, R.string.shortcut_value_talkback_breakout);
   private static final GestureUse MEDIA =
-      use(GESTURE_2_FINGER_DOUBLE_TAP, R.string.shortcut_value_media_control_or_voice_input);
+      use(GESTURE_2_FINGER_DOUBLE_TAP, R.string.shortcut_value_dictate_or_media_control);
   private static final GestureUse PAUSE_SPEECH =
       use(GESTURE_2_FINGER_SINGLE_TAP, R.string.shortcut_value_pause_or_resume_feedback);
   private static final GestureUse COPY = use(GESTURE_3_FINGER_DOUBLE_TAP, R.string.shortcut_value_copy);

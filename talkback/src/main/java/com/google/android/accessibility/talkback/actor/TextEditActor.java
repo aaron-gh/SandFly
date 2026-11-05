@@ -16,7 +16,6 @@
 
 package com.google.android.accessibility.talkback.actor;
 
-import static android.view.accessibility.AccessibilityNodeInfo.ACTION_CLICK;
 import static androidx.core.view.accessibility.AccessibilityNodeInfoCompat.ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE;
 import static androidx.core.view.accessibility.AccessibilityNodeInfoCompat.ACTION_SET_TEXT;
 import static androidx.core.view.accessibility.AccessibilityNodeInfoCompat.FOCUS_INPUT;
@@ -35,8 +34,6 @@ import android.os.Bundle;
 import android.text.Spanned;
 import android.text.TextUtils;
 import android.util.Pair;
-import android.view.accessibility.AccessibilityEvent;
-import android.view.accessibility.AccessibilityNodeInfo;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.talkback.Feedback;
 import com.google.android.accessibility.talkback.Pipeline.FeedbackReturner;
@@ -44,21 +41,16 @@ import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.actor.DirectionNavigationActor.StateReader;
 import com.google.android.accessibility.talkback.compositor.CompositorUtils;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
-import com.google.android.accessibility.talkback.monitor.InputMethodMonitor;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.ClipboardHistory;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils.SpellingSuggestion;
 import com.google.android.accessibility.utils.FeatureSupport;
 import com.google.android.accessibility.utils.FocusFinder;
-import com.google.android.accessibility.utils.PackageManagerUtils;
 import com.google.android.accessibility.utils.PerformActionUtils;
 import com.google.android.accessibility.utils.Performance.EventId;
 import com.google.android.accessibility.utils.Role;
 import com.google.android.accessibility.utils.SpannableUtils;
 import com.google.android.accessibility.utils.input.TextCursorTracker;
-import com.google.android.accessibility.utils.input.TextEventInterpretation;
-import com.google.android.accessibility.utils.input.VoiceDictationDelegate;
-import com.google.android.accessibility.utils.monitor.VoiceActionDelegate;
 import com.google.android.accessibility.utils.output.CopySelection;
 import com.google.android.accessibility.utils.output.EditTextActionHistory;
 import com.google.android.accessibility.utils.output.SpeechCleanupUtils;
@@ -72,7 +64,7 @@ import java.util.regex.Pattern;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 /** Executes text-manipulation actions on editable or non-editable selectable text views. */
-public class TextEditActor implements VoiceDictationDelegate {
+public class TextEditActor {
 
   /////////////////////////////////////////////////////////////////////////////////////////////
   // Constants
@@ -113,10 +105,6 @@ public class TextEditActor implements VoiceDictationDelegate {
   private final ClipboardManager clipboard;
   private final FocusFinder focusFinder;
   private final DirectionNavigationActor.StateReader stateReader;
-  private final VoiceDictatedText voiceDictatedText = new VoiceDictatedText();
-  private final InputMethodMonitor inputMethodMonitor;
-  private final VoiceInputDownloadDialog voiceInputDownloadDialog;
-  private @Nullable VoiceActionDelegate voiceActionDelegate;
   private FeedbackReturner pipeline;
 
   /////////////////////////////////////////////////////////////////////////////////////////////
@@ -128,35 +116,21 @@ public class TextEditActor implements VoiceDictationDelegate {
       TextCursorTracker textCursorTracker,
       StateReader stateReader,
       ClipboardManager clipboard,
-      FocusFinder focusFinder,
-      InputMethodMonitor inputMethodMonitor) {
+      FocusFinder focusFinder) {
     this.service = service;
     this.editTextActionHistory = editTextActionHistory;
     this.textCursorTracker = textCursorTracker;
     this.stateReader = stateReader;
     this.clipboard = clipboard;
     this.focusFinder = focusFinder;
-    this.inputMethodMonitor = inputMethodMonitor;
-    this.voiceInputDownloadDialog =
-        new VoiceInputDownloadDialog(service, PackageManagerUtils.hasGmsCorePackage(service));
   }
 
   public void setPipeline(FeedbackReturner pipeline) {
     this.pipeline = pipeline;
   }
 
-  public void setVoiceActionDelegate(@Nullable VoiceActionDelegate delegate) {
-    voiceActionDelegate = delegate;
-  }
-
   /////////////////////////////////////////////////////////////////////////////////////////////
   // Methods
-
-  @Override
-  public void onTextEventAndInterpretation(
-      AccessibilityEvent event, TextEventInterpretation textEventInterpretation) {
-    voiceDictatedText.push(textEventInterpretation);
-  }
 
   /** Gets the current position of the text cursor from the tracker. */
   public int getCurrentCursorPosition() {
@@ -895,50 +869,6 @@ public class TextEditActor implements VoiceDictationDelegate {
     return result;
   }
 
-  /**
-   * Checks the voice dictation role and toggles the voice dictation mode.
-   *
-   * @param eventId event ID to perform editing actions
-   * @return {@code true} if the voice dictation is toggled successfully.
-   */
-  public boolean toggleVoiceDictation(EventId eventId) {
-    if (!inputMethodMonitor.supportVoiceDictationRoles()) {
-      // Show hint dialog once.
-      LogUtils.w(TAG, "Voice dictation role is not supported in this IME version.");
-      if (voiceInputDownloadDialog.getShouldShowDialogPref()) {
-        voiceInputDownloadDialog.showDialog();
-      }
-      return false;
-    }
-    AccessibilityNodeInfo root = inputMethodMonitor.getRootInActiveInputWindow();
-    if (root == null) {
-      LogUtils.w(TAG, "Can't find voice dictation root on IME window.");
-      return false;
-    }
-    AccessibilityNodeInfoCompat voiceDictation =
-        AccessibilityNodeInfoUtils.getVoiceDictationNode(AccessibilityNodeInfoCompat.wrap(root));
-    if (voiceDictation == null) {
-      LogUtils.w(TAG, "Can't find voice dictation role on IME window.");
-      return false;
-    }
-    return toggleVoiceDictationInternal(voiceDictation, eventId);
-  }
-
-  /** Perform click on the voice dictation button and speak the input if exist. */
-  private boolean toggleVoiceDictationInternal(AccessibilityNodeInfoCompat node, EventId eventId) {
-    if (voiceActionDelegate != null) {
-      if (voiceActionDelegate.isVoiceRecognitionActive()) {
-        String addedTexts = voiceDictatedText.getText();
-        voiceDictatedText.stop();
-        pipeline.returnFeedback(eventId, Feedback.speech(addedTexts, SPEAK_OPTIONS));
-      } else {
-        voiceDictatedText.start();
-      }
-      voiceDictatedText.clear();
-    }
-    return node.performAction(ACTION_CLICK);
-  }
-
   private boolean performSelectText(int start, int end) {
     if (!FeatureSupport.supportInputConnectionByA11yService()) {
       return false;
@@ -1003,47 +933,5 @@ public class TextEditActor implements VoiceDictationDelegate {
     }
 
     return -1;
-  }
-
-  /** Analyze and cache the dictated text from giving {@link TextEventInterpretation}. */
-  private static class VoiceDictatedText {
-    private final StringBuilder dictatedTextBuffer;
-    private boolean started;
-
-    private VoiceDictatedText() {
-      dictatedTextBuffer = new StringBuilder();
-    }
-
-    private void start() {
-      started = true;
-    }
-
-    private void stop() {
-      started = false;
-    }
-
-    private void push(TextEventInterpretation textEventInterpretation) {
-      if (!started) {
-        return;
-      }
-      if (!TextUtils.isEmpty(textEventInterpretation.getRemovedText())) {
-        String removedText = textEventInterpretation.getRemovedText().toString();
-        if (removedText.length() <= dictatedTextBuffer.length()) {
-          dictatedTextBuffer.delete(
-              dictatedTextBuffer.length() - removedText.length(), dictatedTextBuffer.length());
-        }
-      }
-      if (!TextUtils.isEmpty(textEventInterpretation.getAddedText())) {
-        dictatedTextBuffer.append(textEventInterpretation.getAddedText());
-      }
-    }
-
-    private String getText() {
-      return dictatedTextBuffer.toString();
-    }
-
-    private void clear() {
-      dictatedTextBuffer.setLength(0);
-    }
   }
 }
