@@ -817,10 +817,31 @@ object Commands {
           available = captions,
         )
         gesture(
+          R.string.shortcut_value_speak_image_description,
+          R.string.title_speak_image_description,
+          available = captions,
+        )
+        gesture(
+          R.string.shortcut_value_ask_about_image,
+          R.string.title_ask_about_image,
+          available = captions && GeminiConfiguration.imageQnaEnabled(context),
+        )
+        val screen = captions && GeminiConfiguration.screenOverviewEnabled(context)
+        gesture(
           R.string.shortcut_value_screen_overview,
           R.string.title_summarize_view,
           Key.SCREEN_OVERVIEW,
-          available = captions && GeminiConfiguration.screenOverviewEnabled(context),
+          available = screen,
+        )
+        gesture(
+          R.string.shortcut_value_speak_screen_description,
+          R.string.title_speak_screen_description,
+          available = screen,
+        )
+        gesture(
+          R.string.shortcut_value_ask_about_screen,
+          R.string.title_ask_about_screen,
+          available = screen,
         )
         // Every AI response can be reported, whichever feature gave it.
         gesture(R.string.shortcut_value_report_ai_response, R.string.shortcut_report_ai_response)

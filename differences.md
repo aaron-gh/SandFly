@@ -396,7 +396,8 @@ Limitations:
 
 ### AI actions reading control
 
-The **AI actions** reading control (Android 11 and later) runs **Describe screen**, **Describe image** or **Start or stop AI agent task**. Swipe up or down to choose an action, then double-tap to run it. Double-tap runs the action that the reading control says until focus moves. Actions that aren't available, such as **Describe screen** in a phone language that it doesn't support, are left out, and the reading control is hidden when none is available.
+The **AI actions** reading control (Android 11 and later) runs **Describe screen**, **Speak screen description**, **Ask about screen**, **Describe image**, **Speak image description**, **Ask about image** or **Start or stop AI agent task**. Swipe up or down to choose an action, then double-tap to run it. Double-tap runs the action that the reading control says until focus moves. **AI actions to include**, under Options in **Reading controls**, chooses which actions the reading control offers; all are included by default. Actions that aren't available, such as **Describe screen** in a phone language that it doesn't support, are left out, and the reading control is hidden when none is available.
+
 ### Default gestures
 
 SandFly changes these default gestures:
@@ -954,6 +955,10 @@ The sounds and vibrations of an utterance play at once; its words come when the 
 ### AI services
 
 Google's source release doesn't include working Gemini support, so **Describe image** only reads text in images and **Describe screen** doesn't work. SandFly adds its own Describe screen with follow-up questions, and sends both to an AI service with your own API key. The services are Gemini, Claude, OpenAI (ChatGPT), Mistral, Groq, OpenRouter, Ollama Cloud and any other service with an OpenAI-compatible API. Each has its own settings screen in **Automatic descriptions**, with its API key and model. **AI service** chooses among the services that are set up, or **None**. A service that has just been set up is used when no other is, and when the service in use loses its key or model, the next one that is set up takes over. Questions about an image or screen, spoken or typed, go to the same service. For more information, see [AI services](README.md#ai-services).
+
+### Spoken descriptions and questions
+
+**Speak screen description** and **Speak image description** describe the screen or the focused image as **Describe screen** and **Describe image** do, and speak the description instead of showing it in a window. **Ask about screen** and **Ask about image** take a screenshot of the screen or the focused image, then show a text field for a question about it; **Ask** sends the question and the answer is spoken. Before you have agreed to send screenshots to the AI service, they describe the screen or image instead, which asks for that agreement. You can assign the four commands to gestures in **Commands**.
 
 With Gemini, SandFly asks the model to think as little as it can, and asks Gemini Flash-Lite when the chosen model is busy or takes more than 15 seconds.
 

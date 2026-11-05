@@ -50,6 +50,24 @@ class AiActionsTest {
   }
 
   @Test
+  fun included_withNoChoice_includesAll() {
+    assertEquals(actions, AiActions.included(actions, null))
+  }
+
+  @Test
+  fun included_keepsTheReadingControlOrder() {
+    assertEquals(
+      listOf(screen, agent),
+      AiActions.included(actions, setOf(agent.value, screen.value, "REMOVED_COMMAND")),
+    )
+  }
+
+  @Test
+  fun included_withNoneChosen_isEmpty() {
+    assertEquals(emptyList<Action>(), AiActions.included(actions, emptySet()))
+  }
+
+  @Test
   fun step_withNoActions_returnsNull() {
     assertNull(AiActions.step(emptyList(), null, forward = true))
   }

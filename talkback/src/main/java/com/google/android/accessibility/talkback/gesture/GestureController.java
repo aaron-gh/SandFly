@@ -803,6 +803,37 @@ public class GestureController {
                   accessibilityFocusMonitor.getAccessibilityFocus(
                       /* useInputFocusIfEmpty= */ false),
                   actorState));
+    } else if (action.equals(service.getString(R.string.shortcut_value_speak_screen_description))) {
+      result =
+          pipeline.returnFeedback(
+              EVENT_ID_UNTRACKED,
+              GeminiCommandUtils.feedbackForScreenOverview(
+                  service,
+                  accessibilityFocusMonitor.getAccessibilityFocus(
+                      /* useInputFocusIfEmpty= */ false),
+                  /* speak= */ true));
+    } else if (action.equals(service.getString(R.string.shortcut_value_speak_image_description))) {
+      result =
+          pipeline.returnFeedback(
+              EVENT_ID_UNTRACKED,
+              GeminiCommandUtils.feedbackForDescribeImage(
+                  service,
+                  accessibilityFocusMonitor.getAccessibilityFocus(
+                      /* useInputFocusIfEmpty= */ false),
+                  actorState,
+                  /* speak= */ true));
+    } else if (action.equals(service.getString(R.string.shortcut_value_ask_about_screen))
+        || action.equals(service.getString(R.string.shortcut_value_ask_about_image))) {
+      result =
+          pipeline.returnFeedback(
+              EVENT_ID_UNTRACKED,
+              GeminiCommandUtils.feedbackForAskAbout(
+                  service,
+                  accessibilityFocusMonitor.getAccessibilityFocus(
+                      /* useInputFocusIfEmpty= */ false),
+                  actorState,
+                  /* wholeScreen= */ action.equals(
+                      service.getString(R.string.shortcut_value_ask_about_screen))));
     } else if (action.equals(service.getString(R.string.shortcut_value_row_up))) {
       result =
           pipeline.returnFeedback(

@@ -17,14 +17,17 @@
 package com.google.android.accessibility.talkback.selector
 
 import android.content.Context
+import android.content.SharedPreferences
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.actor.ImageCaptioner
 import com.google.android.accessibility.talkback.actor.gemini.GeminiConfiguration
 import com.google.android.accessibility.talkback.sandflyai.SandflyAi
+import com.google.android.accessibility.utils.SharedPreferencesUtils
 
 /**
- * The commands of the AI actions reading control: Describe screen, Describe image, and SandFly
- * Pro's AI agent command in builds that include it.
+ * The commands of the AI actions reading control: Describe screen, Describe image, their spoken and
+ * question versions, and SandFly Pro's AI agent command in builds that include it. The user chooses
+ * which of them the reading control offers.
  */
 object AiActions {
   /** A command value and the label spoken for it. */
@@ -33,26 +36,25 @@ object AiActions {
   // The command value last chosen, kept while the app runs.
   private var selected: String? = null
 
-  /** Returns the actions available now, in reading control order. */
+  /** Returns the actions this device supports, in reading control order, chosen or not. */
   @JvmStatic
-  fun available(context: Context): List<Action> {
+  fun all(context: Context): List<Action> {
     val actions = mutableListOf<Action>()
     val captions = ImageCaptioner.supportsImageCaption(context)
+    fun add(value: Int, label: Int) {
+      actions.add(Action(context.getString(value), context.getString(label)))
+    }
     if (captions && GeminiConfiguration.screenOverviewEnabled(context)) {
-      actions.add(
-        Action(
-          context.getString(R.string.shortcut_value_screen_overview),
-          context.getString(R.string.title_summarize_view),
-        )
-      )
+      add(R.string.shortcut_value_screen_overview, R.string.title_summarize_view)
+      add(R.string.shortcut_value_speak_screen_description, R.string.title_speak_screen_description)
+      add(R.string.shortcut_value_ask_about_screen, R.string.title_ask_about_screen)
     }
     if (captions) {
-      actions.add(
-        Action(
-          context.getString(R.string.shortcut_value_describe_image),
-          context.getString(R.string.title_image_caption),
-        )
-      )
+      add(R.string.shortcut_value_describe_image, R.string.title_image_caption)
+      add(R.string.shortcut_value_speak_image_description, R.string.title_speak_image_description)
+      if (GeminiConfiguration.imageQnaEnabled(context)) {
+        add(R.string.shortcut_value_ask_about_image, R.string.title_ask_about_image)
+      }
     }
     SandflyAi.features?.let {
       actions.add(
@@ -61,6 +63,25 @@ object AiActions {
     }
     return actions
   }
+
+  /** Returns the actions the reading control offers now: the supported ones the user included. */
+  @JvmStatic
+  fun available(context: Context): List<Action> {
+    val prefs = SharedPreferencesUtils.getSharedPreferences(context)
+    return included(all(context), includedValues(prefs, context))
+  }
+
+  /**
+   * Returns the values of the actions the user included, or null when the user hasn't chosen, in
+   * which case all are included.
+   */
+  @JvmStatic
+  fun includedValues(prefs: SharedPreferences, context: Context): Set<String>? =
+    prefs.getStringSet(context.getString(R.string.pref_ai_actions_included_key), null)
+
+  /** Returns [actions] whose values are in [values], or all of them when [values] is null. */
+  internal fun included(actions: List<Action>, values: Set<String>?): List<Action> =
+    if (values == null) actions else actions.filter { it.value in values }
 
   /** Returns the chosen action, or the first available one, or null when none is available. */
   @JvmStatic

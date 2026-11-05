@@ -324,6 +324,10 @@
             android:defaultValue="@bool/pref_selector_ai_actions_default"
             android:key="@string/pref_selector_ai_actions_key"
             android:title="@string/title_selector_ai_actions"/>
+        <MultiSelectListPreference
+            android:dialogTitle="@string/title_pref_ai_actions_included"
+            android:key="@string/pref_ai_actions_included_key"
+            android:title="@string/title_pref_ai_actions_included"/>
         <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
             android:layout="@layout/listitem_2texts"
             android:defaultValue="@bool/pref_selector_hide_screen_default"

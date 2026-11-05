@@ -333,6 +333,7 @@
     <string name="pref_selector_tablet_held_up_faces_away_key" translatable="false">pref_selector_tablet_held_up_faces_away_key</string>
     <string name="pref_selector_live_recognition_key" translatable="false">pref_selector_live_recognition_key</string>
     <string name="pref_selector_ai_actions_key" translatable="false">pref_selector_ai_actions_key</string>
+    <string name="pref_ai_actions_included_key" translatable="false">pref_ai_actions_included_key</string>
     <string name="pref_lift_to_activate_default" translatable="false">0</string>
     <string name="pref_hold_to_cancel_default" translatable="false">0</string>
     <!-- How long the finger stays on an item for lifting it to activate nothing. -->
@@ -1544,6 +1545,10 @@
   <string name="shortcut_value_toggle_braille_display" translatable="false">TOGGLE_BRAILLE_DISPLAY</string>
   <string name="shortcut_value_screen_overview" translatable="false">SCREEN_OVERVIEW</string>
   <string name="shortcut_value_describe_image" translatable="false">DESCRIBE_IMAGE</string>
+  <string name="shortcut_value_speak_screen_description" translatable="false">SPEAK_SCREEN_DESCRIPTION</string>
+  <string name="shortcut_value_speak_image_description" translatable="false">SPEAK_IMAGE_DESCRIPTION</string>
+  <string name="shortcut_value_ask_about_screen" translatable="false">ASK_ABOUT_SCREEN</string>
+  <string name="shortcut_value_ask_about_image" translatable="false">ASK_ABOUT_IMAGE</string>
   <string name="shortcut_value_report_ai_response" translatable="false">REPORT_AI_RESPONSE</string>
   <string name="shortcut_value_announce_current_time_and_date" translatable="false">ANNOUNCE_CURRENT_TIME_AND_DATE</string>
   <string name="shortcut_value_announce_battery_state" translatable="false">ANNOUNCE_BATTERY_STATE</string>

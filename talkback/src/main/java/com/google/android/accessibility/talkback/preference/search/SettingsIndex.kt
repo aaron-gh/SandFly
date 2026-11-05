@@ -397,10 +397,9 @@ object SettingsIndex {
       !LiveRecognition.isSupported(context) || !FeatureSupport.doesServiceHandleDoubleTap(),
       R.string.pref_selector_live_recognition_key,
     )
-    hideIf(
-      !FeatureSupport.doesServiceHandleDoubleTap() || AiActions.available(context).isEmpty(),
-      R.string.pref_selector_ai_actions_key,
-    )
+    val noAiActions = !FeatureSupport.doesServiceHandleDoubleTap() || AiActions.all(context).isEmpty()
+    hideIf(noAiActions, R.string.pref_selector_ai_actions_key)
+    hideIf(noAiActions, R.string.pref_ai_actions_included_key)
 
     // ContextMenuFragment.
     hideIf(
