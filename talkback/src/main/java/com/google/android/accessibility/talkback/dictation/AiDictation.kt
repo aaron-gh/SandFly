@@ -257,6 +257,7 @@ class AiDictation(
         onLimit = { handler.post { if (phase == Phase.RECORDING) stopRecording() } },
         onChunk = session?.let { live -> { pcm -> live.send(pcm) } },
         onSpeech = ::heardSpeech,
+        ignoreSpeechMs = CHIME_MS,
       )
     if (!recorder.start()) {
       session?.cancel()
@@ -281,6 +282,7 @@ class AiDictation(
     handler.removeCallbacks(autoStop)
     // Counted before the stop chime, which the recording can pick up.
     val spoken = speechTenths >= MIN_SPEECH_TENTHS
+    val speech = capture?.speechRange()
     phase = Phase.WORKING
     pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.speech(UNSILENCE))
     pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.sound(R.raw.chime_down))
@@ -310,28 +312,29 @@ class AiDictation(
         } else {
           // The session failed: the whole recording goes the usual way.
           LogUtils.w(TAG, "Live transcription failed, sending the recording")
-          transcribeRecording(request, used, pcm, spoken)
+          transcribeRecording(request, used, pcm, spoken, speech)
         }
       }
       return
     }
-    transcribeRecording(request, used, pcm, spoken)
+    transcribeRecording(request, used, pcm, spoken, speech)
   }
 
   /**
    * Recognizes [pcm] on the worker thread, then types it, unless a newer dictation started.
-   * [spoken] is whether the recording had any speech in it.
+   * [spoken] is whether the recording had any speech in it, and [speech] the bytes it was in.
    */
   private fun transcribeRecording(
     request: Int,
     used: Recognition,
     pcm: ByteArray,
     spoken: Boolean,
+    speech: IntRange?,
   ) {
     worker.execute {
       val result =
         try {
-          transcribe(used, pcm, spoken)
+          transcribe(used, pcm, spoken, speech)
         } catch (e: Exception) {
           LogUtils.e(TAG, "Transcription failed: %s", e)
           null
@@ -356,9 +359,15 @@ class AiDictation(
   /**
    * Recognizes the speech in [pcm] with [used], or with Whisper when Rambler fails. Returns the
    * text and whether it is already cleaned up, or null when it couldn't be recognized. Whisper
-   * isn't run when [spoken] is false: it makes up text for silence.
+   * isn't run when [spoken] is false, and is given only the audio around [speech]: it makes up text
+   * for silence.
    */
-  private fun transcribe(used: Recognition, pcm: ByteArray, spoken: Boolean): Pair<String, Boolean>? {
+  private fun transcribe(
+    used: Recognition,
+    pcm: ByteArray,
+    spoken: Boolean,
+    speech: IntRange?,
+  ): Pair<String, Boolean>? {
     if (used == Recognition.RAMBLER) {
       try {
         return DictationRequests.transcribe(DictationSettings.ramblerKey(prefs), AudioCapture.toWav(pcm)) to
@@ -381,7 +390,8 @@ class AiDictation(
       ) ?: return null
     transcriber = whisper
     try {
-      return whisper.transcribe(AudioCapture.toFloats(pcm), whisperLanguage())?.let { it to false }
+      val audio = AudioCapture.trim(pcm, speech, WHISPER_LEAD_MS, WHISPER_TAIL_MS)
+      return whisper.transcribe(AudioCapture.toFloats(audio), whisperLanguage())?.let { it to false }
     } finally {
       transcriber = null
     }
@@ -631,6 +641,12 @@ class AiDictation(
     private const val CHIME_MS = 600L
     /** Tenths of a second of speech a recording needs before Whisper transcribes it. */
     private const val MIN_SPEECH_TENTHS = 2
+    /**
+     * Audio kept before the first and after the last sound like speech for Whisper, for the quiet
+     * start and end of words that aren't loud enough to count as speech.
+     */
+    private const val WHISPER_LEAD_MS = 400L
+    private const val WHISPER_TAIL_MS = 600L
     /** How long progress tones play while speech is recognized or corrected. */
     private const val WORK_TONES_MS = 10 * 60_000L
     private const val HTTP_TOO_MANY_REQUESTS = 429

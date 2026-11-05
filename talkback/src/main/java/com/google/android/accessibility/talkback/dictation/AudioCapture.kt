@@ -36,9 +36,15 @@ class AudioCapture(
   private val onChunk: ((ByteArray) -> Unit)? = null,
   /** Runs on the recording thread for each tenth of a second that sounds like speech. */
   private val onSpeech: (() -> Unit)? = null,
+  /** How long after recording starts sound isn't counted as speech in [speechRange]. */
+  ignoreSpeechMs: Long = 0,
 ) {
   /** The level of the room's background noise, which speech must be well above. */
   private var noiseFloor = 0.0
+  private val ignoreSpeechBytes = ignoreSpeechMs * SAMPLE_RATE * 2 / 1000
+  /** Where the first tenth that sounded like speech starts, and the last ends, in bytes. */
+  @Volatile private var speechStart = -1
+  @Volatile private var speechEnd = -1
   private val audio = ByteArrayOutputStream()
   @Volatile private var recording = false
   private var thread: Thread? = null
@@ -98,9 +104,15 @@ class AudioCapture(
           onLimit()
           break
         }
-        synchronized(audio) { audio.write(buffer, 0, read) }
+        val at = synchronized(audio) { audio.size().also { audio.write(buffer, 0, read) } }
         onChunk?.invoke(buffer.copyOf(read))
-        if (onSpeech != null && isSpeech(buffer, read)) onSpeech.invoke()
+        if (isSpeech(buffer, read)) {
+          if (at >= ignoreSpeechBytes) {
+            if (speechStart < 0) speechStart = at
+            speechEnd = at + read
+          }
+          onSpeech?.invoke()
+        }
         if (audio.size() >= MAX_BYTES) {
           recording = false
           onLimit()
@@ -112,7 +124,6 @@ class AudioCapture(
     }
   }
 
-  /** Stops recording and returns the 16-bit samples recorded, little-endian. */
   /**
    * Whether [read] bytes of 16-bit audio are loud enough to be speech: well above the background
    * noise, which follows quiet stretches quickly and loud ones slowly.
@@ -138,6 +149,14 @@ class AudioCapture(
     return level > maxOf(noiseFloor * SPEECH_OVER_NOISE, MIN_SPEECH_LEVEL)
   }
 
+  /** The bytes from the first sound like speech to the end of the last, or null if none yet. */
+  fun speechRange(): IntRange? {
+    val start = speechStart
+    val end = speechEnd
+    return if (start < 0 || end <= start) null else start until end
+  }
+
+  /** Stops recording and returns the 16-bit samples recorded, little-endian. */
   fun stop(): ByteArray {
     recording = false
     thread?.join(STOP_WAIT_MS)
@@ -159,6 +178,19 @@ class AudioCapture(
 
     /** Whether [pcm] is long enough to hold a word: a quarter of a second. */
     fun hasSpeechLength(pcm: ByteArray) = pcm.size >= SAMPLE_RATE / 2
+
+    /**
+     * [pcm] cut to [speech], a byte range of it, with [beforeMs] and [afterMs] kept around it, or
+     * all of [pcm] when [speech] is null.
+     */
+    fun trim(pcm: ByteArray, speech: IntRange?, beforeMs: Long, afterMs: Long): ByteArray {
+      if (speech == null) return pcm
+      val start = (speech.first - bytes(beforeMs)).coerceAtLeast(0) and 1.inv()
+      val end = (speech.last + 1 + bytes(afterMs)).coerceAtMost(pcm.size) and 1.inv()
+      return if (start == 0 && end == pcm.size || end <= start) pcm else pcm.copyOfRange(start, end)
+    }
+
+    private fun bytes(ms: Long): Int = (ms * SAMPLE_RATE * 2 / 1000).toInt()
 
     /** [pcm] as samples from -1 to 1, as Whisper takes them. */
     fun toFloats(pcm: ByteArray): FloatArray {

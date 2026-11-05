@@ -69,6 +69,20 @@ class DictationTest {
   }
 
   @Test
+  fun trimKeepsSpeechAndMarginsOnly() {
+    // Three seconds; speech from 1 s to 1.5 s.
+    val pcm = ByteArray(AudioCapture.SAMPLE_RATE * 2 * 3) { (it / 2).toByte() }
+    val speech = AudioCapture.SAMPLE_RATE * 2 until AudioCapture.SAMPLE_RATE * 3
+    val trimmed = AudioCapture.trim(pcm, speech, beforeMs = 500, afterMs = 250)
+    val start = AudioCapture.SAMPLE_RATE
+    val end = AudioCapture.SAMPLE_RATE * 3 + AudioCapture.SAMPLE_RATE / 2
+    assertArrayEquals(pcm.copyOfRange(start, end), trimmed)
+    // Margins past either end stop at the recording's ends.
+    assertArrayEquals(pcm, AudioCapture.trim(pcm, speech, beforeMs = 5_000, afterMs = 5_000))
+    assertArrayEquals(pcm, AudioCapture.trim(pcm, null, beforeMs = 0, afterMs = 0))
+  }
+
+  @Test
   fun ramblerLanguages() {
     assertTrue(DictationSettings.ramblerSupports(Locale.US))
     assertTrue(DictationSettings.ramblerSupports(Locale.forLanguageTag("vi-VN")))
