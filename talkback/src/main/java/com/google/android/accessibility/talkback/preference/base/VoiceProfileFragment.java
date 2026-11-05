@@ -22,6 +22,7 @@ import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.os.SystemClock;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.Voice;
 import androidx.appcompat.app.AlertDialog;
@@ -70,6 +71,14 @@ public class VoiceProfileFragment extends TalkbackBaseFragment {
   private @Nullable TextToSpeech tts;
   private int ttsGeneration;
   private final Handler mainHandler = new Handler(Looper.getMainLooper());
+
+  /** How long the engine's voices are listed again for, after it starts. */
+  private static final long VOICE_LISTING_MS = 15_000;
+
+  private static final long VOICE_LISTING_INTERVAL_MS = 500;
+
+  /** When the engine whose voices are listed started. */
+  private long listingSince;
 
   /** The engine's voices, by language and then name, or null while they load. */
   private @Nullable List<Voice> voices;
@@ -404,34 +413,71 @@ public class VoiceProfileFragment extends TalkbackBaseFragment {
     if (generation != ttsGeneration || tts == null || !isAdded()) {
       return;
     }
+    if (status != TextToSpeech.SUCCESS) {
+      shutDownTts();
+      voices = new ArrayList<>();
+      updateVoiceLists(profile().language());
+      return;
+    }
+    listingSince = SystemClock.uptimeMillis();
+    listVoices(generation);
+  }
+
+  /**
+   * Lists the engine's voices into the language and voice lists, and lists them again for {@link
+   * #VOICE_LISTING_MS}, as an engine that has just started can list some or all of its voices
+   * seconds later. The lists show as loading until the engine lists a voice.
+   */
+  private void listVoices(int generation) {
+    TextToSpeech tts = this.tts;
+    if (generation != ttsGeneration || tts == null || !isAdded()) {
+      return;
+    }
     List<Voice> loaded = new ArrayList<>();
-    if (status == TextToSpeech.SUCCESS) {
-      try {
-        Set<Voice> engineVoices = tts.getVoices();
-        if (engineVoices != null) {
-          for (Voice voice : engineVoices) {
-            // An engine may leave out a voice's language, which every list here needs.
-            if (voice.getName() == null || voice.getLocale() == null) {
-              continue;
-            }
-            Set<String> features = voice.getFeatures();
-            if (features == null
-                || !features.contains(TextToSpeech.Engine.KEY_FEATURE_NOT_INSTALLED)) {
-              loaded.add(voice);
-            }
+    try {
+      Set<Voice> engineVoices = tts.getVoices();
+      if (engineVoices != null) {
+        for (Voice voice : engineVoices) {
+          // An engine may leave out a voice's language, which every list here needs.
+          if (voice == null || voice.getName() == null || voice.getLocale() == null) {
+            continue;
+          }
+          Set<String> features = voice.getFeatures();
+          if (features == null
+              || !features.contains(TextToSpeech.Engine.KEY_FEATURE_NOT_INSTALLED)) {
+            loaded.add(voice);
           }
         }
-      } catch (RuntimeException e) {
-        // The engine may have stopped.
-        LogUtils.e(TAG, "Failed to list voices: %s", e.toString());
       }
+    } catch (RuntimeException e) {
+      // The engine may have stopped.
+      LogUtils.e(TAG, "Failed to list voices: %s", e.toString());
     }
-    shutDownTts();
     loaded.sort(
         Comparator.comparing((Voice voice) -> voice.getLocale().getDisplayName())
             .thenComparing(Voice::getName));
-    voices = loaded;
-    updateVoiceLists(profile().language());
+    boolean done = SystemClock.uptimeMillis() - listingSince >= VOICE_LISTING_MS;
+    if ((!loaded.isEmpty() || done) && !sameVoices(loaded, voices)) {
+      voices = loaded;
+      updateVoiceLists(profile().language());
+    }
+    if (done) {
+      shutDownTts();
+    } else {
+      mainHandler.postDelayed(() -> listVoices(generation), VOICE_LISTING_INTERVAL_MS);
+    }
+  }
+
+  private static boolean sameVoices(List<Voice> listed, @Nullable List<Voice> shown) {
+    if (shown == null || listed.size() != shown.size()) {
+      return false;
+    }
+    for (int i = 0; i < listed.size(); i++) {
+      if (!listed.get(i).getName().equals(shown.get(i).getName())) {
+        return false;
+      }
+    }
+    return true;
   }
 
   private void shutDownTts() {
