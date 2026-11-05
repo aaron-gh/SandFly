@@ -21,6 +21,7 @@ import androidx.preference.PreferenceScreen;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.preference.ItemOrder;
 import com.google.android.accessibility.talkback.recognition.LiveRecognition;
+import com.google.android.accessibility.talkback.selector.AiActions;
 import com.google.android.accessibility.talkback.selector.SelectorController;
 import com.google.android.accessibility.utils.FeatureSupport;
 import java.util.List;
@@ -57,6 +58,13 @@ public class SelectorMenuFragment extends ItemListFragment {
           screen.findPreference(getString(R.string.pref_selector_live_recognition_key));
       if (liveRecognition != null) {
         liveRecognition.setVisible(false);
+      }
+    }
+    if (!FeatureSupport.doesServiceHandleDoubleTap()
+        || AiActions.available(requireContext()).isEmpty()) {
+      Preference aiActions = screen.findPreference(getString(R.string.pref_selector_ai_actions_key));
+      if (aiActions != null) {
+        aiActions.setVisible(false);
       }
     }
   }

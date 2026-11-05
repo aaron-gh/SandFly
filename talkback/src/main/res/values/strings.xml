@@ -71,6 +71,10 @@
     <string name="summary_selector_switch_tts_engine">Switch between installed speech engines</string>
     <!-- Title for the reading control that switches between voice profiles. [CHAR LIMIT=NONE] -->
     <string name="title_selector_voice_profile">Voice profile</string>
+    <!-- Reading control that runs Describe screen, Describe image or the AI agent command. -->
+    <string name="title_selector_ai_actions">AI actions</string>
+    <!-- Hint for the AI actions reading control. -->
+    <string name="ai_actions_hint">Swipe up or down to choose an action, then double-tap to run it</string>
     <!--
       Title for the screen of voice profiles: sets of speech settings, each with its own speech
       engine, language, voice, volume, rate and pitch, that the user can switch between. [CHAR LIMIT=NONE]
