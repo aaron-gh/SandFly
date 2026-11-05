@@ -102,6 +102,22 @@ class GestureLayoutTest {
   }
 
   @Test
+  fun threeFingerSwipesScrollWithTheFingers() {
+    GestureLayout.select(prefs, GestureLayout.VOICEOVER)
+    for ((keyRes, valueRes) in
+      listOf(
+        R.string.pref_shortcut_3finger_swipe_up_key to R.string.shortcut_value_scroll_forward,
+        R.string.pref_shortcut_3finger_swipe_down_key to R.string.shortcut_value_scroll_back,
+        // Scroll left moves the content left, to the next page.
+        R.string.pref_shortcut_3finger_swipe_left_key to R.string.shortcut_value_scroll_left,
+        R.string.pref_shortcut_3finger_swipe_right_key to R.string.shortcut_value_scroll_right,
+      )) {
+      val key = context.getString(keyRes)
+      assertEquals(key, context.getString(valueRes), GestureLayout.read(context, prefs, key, "HOME"))
+    }
+  }
+
+  @Test
   fun gesturesVoiceOverLacksAreUnassigned() {
     GestureLayout.select(prefs, GestureLayout.VOICEOVER)
     for (keyRes in
