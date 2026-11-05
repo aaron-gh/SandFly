@@ -1849,6 +1849,10 @@ public class TalkBackService extends AccessibilityServiceCompat
       default -> analytics.onGesture(gestureId);
     }
 
+    if (accessibilityFocusInterpreter != null) {
+      // A swipe right after a scroll of web content moves on from the content in view.
+      accessibilityFocusInterpreter.finishWebScrollFocus();
+    }
     gestureController.onGesture(gestureId, eventId);
     if (FeatureSupport.supportGestureDetection()) {
       TouchInteractionMonitor touchInteractionMonitor =

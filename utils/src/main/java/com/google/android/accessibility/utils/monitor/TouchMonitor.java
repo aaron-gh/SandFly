@@ -34,6 +34,9 @@ public class TouchMonitor {
   /** Event times of the last touch interaction start and end, or -1 before the first. */
   private long touchStartTime = -1;
   private long touchEndTime = -1;
+  /** Event times of the start and end of the touch interaction before the last, or -1. */
+  private long previousTouchStartTime = -1;
+  private long previousTouchEndTime = -1;
   private final @NonNull ArrayList<@NonNull Consumer<Boolean>> listeners = new ArrayList<>();
 
   ///////////////////////////////////////////////////////////////////////////////////
@@ -59,6 +62,8 @@ public class TouchMonitor {
       // be sent in reversed order. We might need a more reliable way to detect touch start/end
       // actions.
       isUserTouchingScreen = true;
+      previousTouchStartTime = touchStartTime;
+      previousTouchEndTime = touchEndTime;
       touchStartTime = event.getEventTime();
     } else if (eventType == TYPE_TOUCH_INTERACTION_END) {
       isUserTouchingScreen = false;
@@ -91,5 +96,21 @@ public class TouchMonitor {
    */
   public long getTouchEndTime() {
     return touchEndTime;
+  }
+
+  /**
+   * Returns the {@link android.os.SystemClock#uptimeMillis} time at which the touch interaction
+   * before the last started, or -1.
+   */
+  public long getPreviousTouchStartTime() {
+    return previousTouchStartTime;
+  }
+
+  /**
+   * Returns the {@link android.os.SystemClock#uptimeMillis} time at which the touch interaction
+   * before the last ended, or -1.
+   */
+  public long getPreviousTouchEndTime() {
+    return previousTouchEndTime;
   }
 }
