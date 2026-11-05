@@ -36,6 +36,7 @@ import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.TwoStatePreference;
 import com.google.android.accessibility.talkback.R;
+import com.google.android.accessibility.talkback.gesture.GestureLayout;
 import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.preference.PreferencesActivityUtils;
@@ -145,11 +146,13 @@ public class DeveloperPrefFragment extends TalkbackBaseFragment {
               .setPositiveButton(
                   android.R.string.ok,
                   (DialogInterface dialog, int which) -> {
-                    SharedPreferencesUtils.putStringPref(
-                        prefs,
-                        getResources(),
-                        R.string.pref_shortcut_4finger_3tap_key,
-                        getString(R.string.shortcut_value_print_node_tree));
+                    prefs
+                        .edit()
+                        .putString(
+                            GestureLayout.key(
+                                prefs, getString(R.string.pref_shortcut_4finger_3tap_key)),
+                            getString(R.string.shortcut_value_print_node_tree))
+                        .apply();
                   })
               .create();
     }
@@ -605,11 +608,14 @@ public class DeveloperPrefFragment extends TalkbackBaseFragment {
     // debugging and performance tracking.
     final String[] gesturePrefKeys = getResources().getStringArray(R.array.pref_shortcut_keys);
 
-    // For each gesture that matches shortcut... unassign gesture.
-    for (String prefKey : gesturePrefKeys) {
-      final String currentValue = prefs.getString(prefKey, null);
-      if (getString(shortcutRes).equals(currentValue)) {
-        prefEditor.putString(prefKey, getString(R.string.shortcut_value_unassigned));
+    // For each gesture that matches shortcut, in either gesture layout... unassign gesture.
+    for (String baseKey : gesturePrefKeys) {
+      for (String layout : new String[] {GestureLayout.SANDFLY, GestureLayout.VOICEOVER}) {
+        String prefKey = GestureLayout.key(layout, baseKey);
+        final String currentValue = prefs.getString(prefKey, null);
+        if (getString(shortcutRes).equals(currentValue)) {
+          prefEditor.putString(prefKey, getString(R.string.shortcut_value_unassigned));
+        }
       }
     }
     prefEditor.apply();

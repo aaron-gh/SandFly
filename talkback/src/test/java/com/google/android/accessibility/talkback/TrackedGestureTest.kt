@@ -44,9 +44,13 @@ import com.google.android.accessibility.talkback.gesture.EdgeSwipeTracker.MenuEd
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_PINCH
+import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_ROTATE_CLOCKWISE
+import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_ROTATE_COUNTERCLOCKWISE
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_SCRUB
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_SPREAD
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_3_FINGER_SPREAD
+import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_4_FINGER_SINGLE_TAP_BOTTOM
+import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_4_FINGER_SINGLE_TAP_TOP
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_4_FINGER_PINCH
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_LONG_SWIPE_DOWN_FROM_TOP_RIGHT
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_LONG_SWIPE_UP_FROM_BOTTOM
@@ -578,6 +582,95 @@ class TrackedGestureTest {
     twoFingerMove(100f, 220f)
     assertEquals(true, requestedDragging())
     assertEquals(false, service.gestures.contains(GESTURE_2_FINGER_SCRUB))
+  }
+
+  @Test
+  fun twoFingerSwipeIsAGestureWhileSandFlyHandlesThem() {
+    monitor.setTwoFingerPassthroughEnabled(false)
+    twoFingerMove(100f, 300f)
+    assertEquals(false, requestedDragging())
+    assertEquals(listOf(AccessibilityService.GESTURE_2_FINGER_SWIPE_RIGHT), service.gestures)
+  }
+
+  /** Two fingers 200 px apart turn clockwise by [degrees] around their middle. */
+  private fun twoFingerTurn(degrees: Double) {
+    stateChangeAt(STATE_TOUCH_INTERACTING, 0)
+    val cx = 160f
+    val cy = 300f
+    val r = 100.0
+    fun points(angle: Double): FloatArray {
+      val a = Math.toRadians(angle)
+      return floatArrayOf(
+        (cx - r * Math.sin(a)).toFloat(),
+        (cy - r * Math.cos(a)).toFloat(),
+        (cx + r * Math.sin(a)).toFloat(),
+        (cy + r * Math.cos(a)).toFloat(),
+      )
+    }
+    val start = points(0.0)
+    touchAt(ACTION_DOWN, 0, start[0], start[1])
+    touchAt(ACTION_POINTER_DOWN, 5, *start, actionIndex = 1)
+    var time = 5L
+    val steps = 20
+    for (step in 1..steps) {
+      time += 15
+      touchAt(ACTION_MOVE, time, *points(-degrees * step / steps))
+    }
+    val end = points(-degrees)
+    time += 10
+    touchAt(ACTION_POINTER_UP, time, *end, actionIndex = 1)
+    touchAt(ACTION_UP, time + 5, end[0], end[1])
+    runUntil(time + 500)
+  }
+
+  @Test
+  fun rotationWorksWhileSandFlyHandlesTwoFingerSwipes() {
+    monitor.setTwoFingerPassthroughEnabled(false)
+    twoFingerTurn(60.0)
+    assertEquals(true, service.gestures.isNotEmpty())
+    assertEquals(
+      true,
+      service.gestures.all {
+        it == GESTURE_2_FINGER_ROTATE_CLOCKWISE || it == GESTURE_2_FINGER_ROTATE_COUNTERCLOCKWISE
+      },
+    )
+  }
+
+  /** Four fingers tap together at [y]. */
+  private fun fourFingerTap(y: Float) {
+    stateChangeAt(STATE_TOUCH_INTERACTING, 0)
+    val xs = floatArrayOf(60f, 100f, 140f, 180f)
+    fun points(count: Int) = (0 until count).flatMap { listOf(xs[it], y) }.toFloatArray()
+    touchAt(ACTION_DOWN, 0, *points(1))
+    for (i in 1..3) {
+      touchAt(ACTION_POINTER_DOWN, i * 5L, *points(i + 1), actionIndex = i)
+    }
+    for (i in 3 downTo 1) {
+      touchAt(ACTION_POINTER_UP, 60L + (3 - i) * 5L, *points(i + 1), actionIndex = i)
+    }
+    touchAt(ACTION_UP, 80, *points(1))
+    runUntil(600)
+  }
+
+  @Test
+  fun fourFingerTapOnTopHalfIsItsOwnGestureWhenAssigned() {
+    assign(R.string.shortcut_value_first_in_screen, R.string.pref_shortcut_4finger_1tap_top_key)
+    fourFingerTap(40f)
+    assertEquals(listOf(GESTURE_4_FINGER_SINGLE_TAP_TOP), service.gestures)
+  }
+
+  @Test
+  fun fourFingerTapOnBottomHalfIsItsOwnGestureWhenAssigned() {
+    assign(R.string.shortcut_value_last_in_screen, R.string.pref_shortcut_4finger_1tap_bottom_key)
+    fourFingerTap(service.resources.displayMetrics.heightPixels - 40f)
+    assertEquals(listOf(GESTURE_4_FINGER_SINGLE_TAP_BOTTOM), service.gestures)
+  }
+
+  @Test
+  fun fourFingerTapStaysOneGestureWhenItsHalfIsUnassigned() {
+    assign(R.string.shortcut_value_first_in_screen, R.string.pref_shortcut_4finger_1tap_top_key)
+    fourFingerTap(service.resources.displayMetrics.heightPixels - 40f)
+    assertEquals(listOf(AccessibilityService.GESTURE_4_FINGER_SINGLE_TAP), service.gestures)
   }
 
   /** Whether Backtalk asked the system to pass the touch to the app as it is. */

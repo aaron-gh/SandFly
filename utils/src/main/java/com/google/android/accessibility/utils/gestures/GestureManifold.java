@@ -111,6 +111,10 @@ public class GestureManifold implements GestureMatcher.StateChangeListener {
   public static final int GESTURE_EDGE_SWIPE_RIGHT_ALONG_TOP = -61;
   public static final int GESTURE_EDGE_SWIPE_LEFT_ALONG_BOTTOM = -62;
   public static final int GESTURE_EDGE_SWIPE_RIGHT_ALONG_BOTTOM = -63;
+  // A four-finger tap on the top or bottom half of the screen. Reported by TalkBack's
+  // TouchInteractionMonitor in place of the four-finger tap when one of them has an action.
+  public static final int GESTURE_4_FINGER_SINGLE_TAP_TOP = -64;
+  public static final int GESTURE_4_FINGER_SINGLE_TAP_BOTTOM = -65;
 
   // Match the value of GESTURE_ID_2FINGER_1TAP_HOLD in TalkBack.
   public static final int GESTURE_2_FINGER_SINGLE_TAP_AND_HOLD = 63;

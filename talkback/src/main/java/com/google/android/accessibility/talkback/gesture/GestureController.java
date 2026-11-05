@@ -287,19 +287,27 @@ public class GestureController {
     SharedPreferences prefs = SharedPreferencesUtils.getSharedPreferences(service);
     return switch (gesture) {
       case FingerprintGestureController.FINGERPRINT_GESTURE_SWIPE_UP ->
-          prefs.getString(
+          GestureLayout.read(
+              service,
+              prefs,
               service.getString(R.string.pref_shortcut_fingerprint_up_key),
               service.getString(R.string.pref_shortcut_fingerprint_up_default));
       case FingerprintGestureController.FINGERPRINT_GESTURE_SWIPE_DOWN ->
-          prefs.getString(
+          GestureLayout.read(
+              service,
+              prefs,
               service.getString(R.string.pref_shortcut_fingerprint_down_key),
               service.getString(R.string.pref_shortcut_fingerprint_down_default));
       case FingerprintGestureController.FINGERPRINT_GESTURE_SWIPE_LEFT ->
-          prefs.getString(
+          GestureLayout.read(
+              service,
+              prefs,
               service.getString(R.string.pref_shortcut_fingerprint_left_key),
               service.getString(R.string.pref_shortcut_fingerprint_left_default));
       case FingerprintGestureController.FINGERPRINT_GESTURE_SWIPE_RIGHT ->
-          prefs.getString(
+          GestureLayout.read(
+              service,
+              prefs,
               service.getString(R.string.pref_shortcut_fingerprint_right_key),
               service.getString(R.string.pref_shortcut_fingerprint_right_default));
       default -> service.getString(R.string.shortcut_value_unassigned);
@@ -871,6 +879,13 @@ public class GestureController {
     } else if (action.equals(service.getString(R.string.shortcut_value_announce_status))) {
       result =
           pipeline.returnFeedback(eventId, Feedback.requestedSpeech(statusReader.describe()));
+    } else if (action.equals(service.getString(R.string.shortcut_value_speak_position))) {
+      result =
+          pipeline.returnFeedback(
+              eventId,
+              Feedback.requestedSpeech(
+                  ItemPosition.describe(
+                      service, accessibilityFocusMonitor.getAccessibilityFocus(false))));
     } else if (action.equals(service.getString(R.string.shortcut_value_inspect_item))) {
       AccessibilityNodeInfoCompat focused =
           accessibilityFocusMonitor.getAccessibilityFocus(false);

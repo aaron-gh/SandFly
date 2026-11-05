@@ -228,6 +228,9 @@ public class TouchInteractionMonitor
   private final Handler mainHandler;
   private final GestureManifold gestureDetector;
   private boolean gestureStarted = false;
+  // Whether a gesture other than a two-finger swipe started. A two-finger swipe starts as soon as
+  // one finger moves, which must not stop a rotation, which starts later.
+  private boolean nonSwipeGestureStarted = false;
   // Whether a gesture was performed while fingers were still down, such as a double tap and hold,
   // so that the rest of the touch follows the circle menu instead of being a gesture. The offset
   // keeps the followed point from jumping when one of the fingers lifts.
@@ -853,6 +856,11 @@ public class TouchInteractionMonitor
             // Do nothing. Touch exploration will fire on a delay.
             break;
           case 2:
+            if (!gestureDetector.isTwoFingerPassthroughEnabled()) {
+              // SandFly handles two-finger swipes, so a two-finger touch never goes to the app.
+              logTwoFingerWait("two-finger swipes handled");
+              return;
+            }
             if (gestureDetector.isTwoFingerPassthroughEnabled()) {
               // Each finger must move passthroughTotalSlop (3x touchSlop) before the touch goes
               // to the app. MultiFingerSwipe lets the first fingers of a 3-finger swipe move up to
@@ -1049,6 +1057,7 @@ public class TouchInteractionMonitor
 
   private void clear() {
     gestureStarted = false;
+    nonSwipeGestureStarted = false;
     clearGestureDetectorOnNextDown = false;
     rotationTracker.clear();
     edgeSwipeTracker.clear();
@@ -1392,9 +1401,37 @@ public class TouchInteractionMonitor
               GESTURE_FAKED_SPLIT_TYPING_AND_HOLD, displayId, new ArrayList<MotionEvent>()));
       // log firstDownTime with display id
       eventId = Performance.getInstance().onGestureEventReceived(displayId, null);
+    } else if (gestureId == AccessibilityService.GESTURE_4_FINGER_SINGLE_TAP) {
+      dispatchGestureToMainThreadAndClear(fourFingerTapByHalf(gestureEvent));
     } else {
       dispatchGestureToMainThreadAndClear(gestureEvent);
     }
+  }
+
+  /**
+   * Returns a four-finger tap on the top or bottom half of the screen in place of {@code tap} when
+   * that gesture runs a command, otherwise {@code tap}.
+   */
+  private AccessibilityGestureEvent fourFingerTapByHalf(AccessibilityGestureEvent tap) {
+    List<MotionEvent> events = tap.getMotionEvents();
+    if (events.isEmpty()) {
+      return tap;
+    }
+    MotionEvent last = events.get(events.size() - 1);
+    float y = 0;
+    for (int i = 0; i < last.getPointerCount(); i++) {
+      y += last.getY(i);
+    }
+    y /= last.getPointerCount();
+    int height = context.getResources().getDisplayMetrics().heightPixels;
+    int half =
+        y < height / 2f
+            ? GestureManifold.GESTURE_4_FINGER_SINGLE_TAP_TOP
+            : GestureManifold.GESTURE_4_FINGER_SINGLE_TAP_BOTTOM;
+    if (!isGestureAssigned(half)) {
+      return tap;
+    }
+    return new AccessibilityGestureEvent(half, tap.getDisplayId(), events);
   }
 
   /** Dispatch a gesture event to the main thread of the service. */
@@ -1534,7 +1571,7 @@ public class TouchInteractionMonitor
     // that turn a little would stop passing through, such as on a map.
     if (!wasRotating
         && (state != STATE_TOUCH_INTERACTING
-            || gestureStarted
+            || nonSwipeGestureStarted
             || !gestureDetector.isMultiFingerGesturesEnabled()
             || !(isGestureAssigned(GESTURE_2_FINGER_ROTATE_CLOCKWISE)
                 || isGestureAssigned(GESTURE_2_FINGER_ROTATE_COUNTERCLOCKWISE)))) {
@@ -1544,7 +1581,7 @@ public class TouchInteractionMonitor
             "Rotation not possible: state="
                 + TouchInteractionController.stateToString(state)
                 + " gestureStarted="
-                + gestureStarted);
+                + nonSwipeGestureStarted);
       }
       rotationTracker.clear();
       return false;
@@ -1977,6 +2014,12 @@ public class TouchInteractionMonitor
   @Override
   public void onGestureStarted(int gestureId) {
     gestureStarted = true;
+    if (gestureId != AccessibilityService.GESTURE_2_FINGER_SWIPE_UP
+        && gestureId != AccessibilityService.GESTURE_2_FINGER_SWIPE_DOWN
+        && gestureId != AccessibilityService.GESTURE_2_FINGER_SWIPE_LEFT
+        && gestureId != AccessibilityService.GESTURE_2_FINGER_SWIPE_RIGHT) {
+      nonSwipeGestureStarted = true;
+    }
     requestTouchExplorationDelayed.cancel();
     // The system will NOT send AccessibilityEvent TYPE_GESTURE_DETECTION_START and
     // TYPE_GESTURE_DETECTION_END when using TalkBack gesture detection. So the module has to

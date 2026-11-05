@@ -9,6 +9,16 @@
       android:title="@string/reset_gesture_settings_title"
       android:key="@string/pref_reset_gesture_settings_key"
       app:allowDividerBelow="true"/>
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
+      android:dialogTitle="@string/title_pref_gesture_layout"
+      android:entries="@array/pref_gesture_layout_entries"
+      android:entryValues="@array/pref_gesture_layout_values"
+      android:key="pref_gesture_layout"
+      android:summary="%s"
+      android:title="@string/title_pref_gesture_layout" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+      android:key="pref_handle_two_finger_swipes"
+      android:title="@string/title_pref_handle_two_finger_swipes" />
   <ListPreference
       android:key="@string/pref_gesture_set_key"
       android:title="@string/pref_gesture_set_key_title"
@@ -553,6 +563,16 @@
         android:key="@string/pref_shortcut_4finger_1tap_key"
         android:summary="%s"
         android:title="@string/title_pref_shortcut_4finger_1tap"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_4finger_1tap_top_default"
+        android:key="@string/pref_shortcut_4finger_1tap_top_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_4finger_1tap_top"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_4finger_1tap_bottom_default"
+        android:key="@string/pref_shortcut_4finger_1tap_bottom_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_4finger_1tap_bottom"/>
     <com.google.android.accessibility.talkback.preference.base.GestureListPreference
         android:defaultValue="@string/pref_shortcut_4finger_2tap_default"
         android:key="@string/pref_shortcut_4finger_2tap_key"
