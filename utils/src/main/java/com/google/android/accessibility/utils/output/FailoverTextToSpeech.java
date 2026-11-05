@@ -506,9 +506,11 @@ public class FailoverTextToSpeech {
   private long voiceProfileEngineWaitEnd;
 
   /**
-   * The engine of the voice profile used before the one in use, kept started while the screen is
-   * on and {@link #PREF_KEEP_PREVIOUS_ENGINE_KEY} is on, so that changing back doesn't wait for it
-   * to start. Each engine kept started is a process of its own, and some keep audio output open.
+   * Engines other than the one in use kept started, so that changing to them doesn't wait for them
+   * to start and load their voices: those of the voice profiles with {@link
+   * VoiceProfiles#KEEP_STARTED} on, and the engine of the voice profile used before the one in use
+   * while the screen is on and {@link #PREF_KEEP_PREVIOUS_ENGINE_KEY} is on. Each engine kept
+   * started is a process of its own, and some keep audio output open.
    */
   private final Map<String, TextToSpeech> warmEngines = new HashMap<>();
 
@@ -1372,13 +1374,13 @@ public class FailoverTextToSpeech {
         clearUnsetProfileVoice();
         return;
       }
-      profileVoiceRetries++;
+      int retries = ++profileVoiceRetries;
       // The engine may have listed its voices before it loaded them all.
       engineVoices = null;
       missingVoice = null;
       localeInUse = attemptSetProfileVoice(profile);
       if (unsetProfileVoice == null) {
-        LogUtils.i(TAG, "Voice profile voice set after %d retries", profileVoiceRetries);
+        LogUtils.i(TAG, "Voice profile voice set after %d retries", retries);
       } else if (profileVoiceRetries >= PROFILE_VOICE_MAX_RETRIES) {
         // Kept, so that it isn't tried again until the engine or voice profile changes.
         LogUtils.w(TAG, "Gave up setting voice profile voice %s", unsetProfileVoice);
@@ -2825,17 +2827,23 @@ public class FailoverTextToSpeech {
   }
 
   /**
-   * Returns the engines to keep started: the engine used before the one in use, if keeping it is on,
+   * Returns the engines to keep started: those of the voice profiles with {@link
+   * VoiceProfiles#KEEP_STARTED} on, and the engine used before the one in use, if keeping it is on,
    * the screen is on, and a voice profile or SandFly default uses it.
    */
   private Set<String> voiceProfileEngines() {
     Set<String> targets = new HashSet<>();
-    if (!keepPreviousEngine || !screenOn || previousEngine == null) {
-      return targets;
-    }
     SharedPreferences prefs = SharedPreferencesUtils.getSharedPreferences(context);
     List<String> ids = VoiceProfiles.ids(prefs);
-    if (ids.isEmpty()) {
+    for (String id : ids) {
+      if (VoiceProfiles.keepsEngineStarted(prefs, id)) {
+        String engine = engineToUse(VoiceProfiles.read(prefs, id).engine());
+        if (engine != null) {
+          targets.add(engine);
+        }
+      }
+    }
+    if (!keepPreviousEngine || !screenOn || previousEngine == null || ids.isEmpty()) {
       return targets;
     }
     boolean used = previousEngine.equals(engineToUse(preferredTtsEngine));
@@ -3014,7 +3022,14 @@ public class FailoverTextToSpeech {
     // This may be null if the user hasn't specified an engine.
     defaultTtsEngine = Secure.getString(resolver, Secure.TTS_DEFAULT_SYNTH);
 
-    // Switch engines when the target engine changes and it's not the current engine.
+    switchToTargetEngine();
+    // Engines installed by other apps aren't listed until the user unlocks the device after it
+    // starts, so the engines kept started can only be started once they are.
+    updateWarmEngines();
+  }
+
+  /** Switches engines when the target engine changes and it's not the current engine. */
+  private void switchToTargetEngine() {
     final String targetEngine = getTargetEngine();
     if (targetEngine != null && targetEngine.equals(tempTtsEngine)) {
       return;

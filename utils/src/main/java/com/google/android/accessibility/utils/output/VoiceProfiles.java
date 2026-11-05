@@ -64,6 +64,9 @@ public final class VoiceProfiles {
   public static final String PITCH = "pitch";
   public static final String PHRASES = "phrases";
 
+  /** Whether the profile's engine is kept started while another engine is in use. */
+  public static final String KEEP_STARTED = "keepstarted";
+
   public static final String DEFAULT_RATE = "1.0";
   public static final String DEFAULT_PITCH = "1.0";
   public static final String DEFAULT_VOLUME = "100";
@@ -377,6 +380,11 @@ public final class VoiceProfiles {
     return true;
   }
 
+  /** Whether profile {@code id} has {@link #KEEP_STARTED} on. */
+  public static boolean keepsEngineStarted(SharedPreferences prefs, String id) {
+    return getBoolean(prefs, key(id, KEEP_STARTED), false);
+  }
+
   /**
    * Removes profile {@code id}, going back to Backtalk's default if it is in use. The list of
    * profiles is saved without any duplicates a damaged setting left in it.
@@ -386,7 +394,7 @@ public final class VoiceProfiles {
     ids.remove(id);
     SharedPreferences.Editor editor = prefs.edit();
     for (String field :
-        new String[] {NAME, ENGINE, LANGUAGE, VOICE, VOLUME, RATE, PITCH, PHRASES}) {
+        new String[] {NAME, ENGINE, LANGUAGE, VOICE, VOLUME, RATE, PITCH, PHRASES, KEEP_STARTED}) {
       editor.remove(key(id, field));
     }
     if (id.equals(getString(prefs, PREF_ACTIVE, ""))) {

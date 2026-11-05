@@ -162,6 +162,13 @@ public class VoiceProfileFragment extends TalkbackBaseFragment {
     phrases.setIconSpaceReserved(false);
     screen.addPreference(phrases);
 
+    AccessibilitySuiteSwitchPreference keepStarted = new AccessibilitySuiteSwitchPreference(context);
+    keepStarted.setKey(VoiceProfiles.key(id, VoiceProfiles.KEEP_STARTED));
+    keepStarted.setDefaultValue(false);
+    keepStarted.setTitle(R.string.title_pref_voice_profile_keep_engine_started);
+    keepStarted.setIconSpaceReserved(false);
+    screen.addPreference(keepStarted);
+
     if (FormFactorUtils.isAndroidWear()) {
       // Phones move profiles in the list, by dragging or with actions; watches move them here.
       moveUp = addMove(context, screen, R.string.voice_profile_move_up, -1);
