@@ -30,6 +30,7 @@ import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import com.google.android.accessibility.talkback.ActorState
 import com.google.android.accessibility.talkback.ActorStateWritable
 import com.google.android.accessibility.talkback.Feedback
+import com.google.android.accessibility.talkback.Interpretation
 import com.google.android.accessibility.talkback.Pipeline
 import com.google.android.accessibility.talkback.PrimesController
 import com.google.android.accessibility.talkback.R
@@ -50,8 +51,12 @@ import com.google.android.accessibility.talkback.imagedescription.ImageDescripti
 import com.google.android.accessibility.utils.FormFactorUtils
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import java.time.Duration
+import java.util.concurrent.CountDownLatch
 import java.util.concurrent.Executor
+import java.util.concurrent.Executors
+import java.util.concurrent.TimeUnit
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.After
 import org.junit.Before
@@ -117,6 +122,9 @@ class ImageCaptionerRequestsTest {
   private lateinit var focusMonitor: FocusMonitor
   private lateinit var captioner: ImageCaptioner
   private lateinit var node: AccessibilityNodeInfoCompat
+  // Screenshot preparations, which the tests run when they choose.
+  private val preparations = ArrayDeque<Runnable>()
+  private var runPreparationsAtOnce = true
 
   @Before
   fun setUp() {
@@ -144,6 +152,9 @@ class ImageCaptionerRequestsTest {
       )
     captioner.setPipeline(pipeline)
     captioner.setActorState(actorStateWithoutAiCore())
+    captioner.setPreparationExecutorForTesting { preparation ->
+      if (runPreparationsAtOnce) preparation.run() else preparations.addLast(preparation)
+    }
 
     // Robolectric compares nodes by their view.
     val info = AccessibilityNodeInfo(View(context))
@@ -196,8 +207,9 @@ class ImageCaptionerRequestsTest {
     shadowOf(Looper.getMainLooper()).idleFor(duration)
   }
 
-  /** Ends a screenshot request with a picture, as the system callback would. */
-  private fun takeScreenshot(callback: TakeScreenshotCallback) {
+  /** Ends a screenshot request with a picture, as the system callback would, and returns it. */
+  private fun takeScreenshot(callback: TakeScreenshotCallback): Bitmap {
+    val screenshot = Bitmap.createBitmap(100, 100, Bitmap.Config.ARGB_8888)
     val requestField =
       callback.javaClass.declaredFields.first {
         ScreenshotCaptureRequest::class.java.isAssignableFrom(it.type)
@@ -208,8 +220,46 @@ class ImageCaptionerRequestsTest {
       .java
       .getDeclaredMethod("onFinished", Bitmap::class.java, Boolean::class.javaPrimitiveType)
       .apply { isAccessible = true }
-      .invoke(request, Bitmap.createBitmap(100, 100, Bitmap.Config.ARGB_8888), false)
+      .invoke(request, screenshot, false)
     idle()
+    return screenshot
+  }
+
+  private fun runPreparations() {
+    while (preparations.isNotEmpty()) {
+      preparations.removeFirst().run()
+    }
+    idle()
+  }
+
+  private fun setPref(key: Int, value: Boolean) {
+    SharedPreferencesUtils.getSharedPreferences(context)
+      .edit()
+      .putBoolean(context.getString(key), value)
+      .commit()
+  }
+
+  /** The inner WebView of a web page, which reports an image and has no name. */
+  private fun webView(): AccessibilityNodeInfoCompat {
+    val info = AccessibilityNodeInfo(View(context))
+    info.setBoundsInScreen(Rect(0, 0, 100, 100))
+    info.className = "android.webkit.WebView"
+    info.isVisibleToUser = true
+    info.extras.putString("AccessibilityNodeInfo.hasImage", "true")
+    return AccessibilityNodeInfoCompat.wrap(info)
+  }
+
+  /** Tells the captioner that [node] has focus now, as a focus event does. */
+  private fun focusOn(node: AccessibilityNodeInfoCompat) {
+    focusMonitor.focus = node
+    captioner.newItemFocused(node.unwrap(), Interpretation.AccessibilityFocused.create(null, false))
+  }
+
+  private fun otherNode(): AccessibilityNodeInfoCompat {
+    val info = AccessibilityNodeInfo(View(context))
+    info.setBoundsInScreen(Rect(0, 0, 50, 50))
+    info.className = "android.widget.ImageView"
+    return AccessibilityNodeInfoCompat.wrap(info)
   }
 
   private fun failScreenshot(callback: TakeScreenshotCallback) {
@@ -325,20 +375,136 @@ class ImageCaptionerRequestsTest {
   }
 
   @Test
-  fun anAutomaticCaptionWithNothingToDo_leavesNoTimeoutForDescribeImage() {
+  fun anAutomaticCaptionWithNothingToDo_takesNoScreenshot_andLeavesNoTimeoutForDescribeImage() {
     // Automatic text recognition is off, and there is no icon detector, so the caption has nothing
     // to do.
-    SharedPreferencesUtils.getSharedPreferences(context)
-      .edit()
-      .putBoolean(context.getString(R.string.pref_auto_text_recognition_key), false)
-      .commit()
+    setPref(R.string.pref_auto_text_recognition_key, false)
     captioner.caption(node, /* isUserRequested= */ false)
     idle()
-    takeScreenshot(service.callbacks[0])
+    assertEquals(0, service.callbacks.size)
 
     val request = describeImageWithGemini()
     advance(Duration.ofSeconds(30))
     answer(request, "A cat on a sofa.")
     assertEquals(spoken.toString(), listOf<CharSequence?>("A cat on a sofa."), resultDialogs)
+  }
+
+  @Test
+  fun anAutomaticCaption_withOnlyIconDetectionOnAndNoDetector_takesNoScreenshot() {
+    setPref(R.string.pref_auto_text_recognition_key, false)
+    setPref(R.string.pref_auto_icon_detection_key, true)
+
+    captioner.caption(node, /* isUserRequested= */ false)
+    idle()
+
+    assertEquals(0, service.callbacks.size)
+  }
+
+  @Test
+  fun anAutomaticCaption_ofAWholeWebView_takesNoScreenshot() {
+    setPref(R.string.pref_auto_text_recognition_key, true)
+
+    captioner.caption(webView(), /* isUserRequested= */ false)
+    idle()
+
+    assertEquals(0, service.callbacks.size)
+  }
+
+  @Test
+  fun aCaptionTheUserAskedFor_ofAWholeWebView_takesAScreenshot() {
+    captioner.caption(webView(), /* isUserRequested= */ true)
+    idle()
+
+    assertEquals(1, service.callbacks.size)
+  }
+
+  @Test
+  fun anAutomaticPreparation_forANodeThatLostFocus_isDroppedAndRecycled() {
+    setPref(R.string.pref_auto_text_recognition_key, true)
+    focusMonitor.focus = node
+    runPreparationsAtOnce = false
+    captioner.caption(node, /* isUserRequested= */ false)
+    idle()
+    val screenshot = takeScreenshot(service.callbacks[0])
+    assertEquals(1, preparations.size)
+
+    val other = otherNode()
+    focusOn(other)
+    runPreparations()
+
+    assertTrue(screenshot.isRecycled)
+    assertEquals(0, captioner.waitingCharacterCaptionRequestSize)
+    // The screenshot request has ended, so the next one starts at once.
+    captioner.caption(other, /* isUserRequested= */ false)
+    idle()
+    assertEquals(2, service.callbacks.size)
+  }
+
+  @Test
+  fun anAutomaticPreparation_isDroppedWhenANewerScreenshotWaits() {
+    setPref(R.string.pref_auto_text_recognition_key, true)
+    focusMonitor.focus = node
+    runPreparationsAtOnce = false
+    captioner.caption(node, /* isUserRequested= */ false)
+    idle()
+    val screenshot = takeScreenshot(service.callbacks[0])
+    captioner.caption(node, /* isUserRequested= */ false)
+    idle()
+    assertEquals(1, service.callbacks.size)
+
+    runPreparations()
+
+    assertTrue(screenshot.isRecycled)
+    assertEquals(2, service.callbacks.size)
+  }
+
+  @Test
+  fun aPreparationTheUserAskedFor_staysWhenFocusMoves() {
+    focusMonitor.focus = node
+    // Its image description never answers, so the caption keeps the screenshot.
+    captioner.imageDescriptionProcessor =
+      ImageDescriptionProcessor(context, TalkBackAnalyticsImpl(context))
+    runPreparationsAtOnce = false
+    captioner.caption(node, /* isUserRequested= */ true)
+    idle()
+    val screenshot = takeScreenshot(service.callbacks[0])
+
+    val other = otherNode()
+    focusOn(other)
+    runPreparations()
+
+    // The caption has the screenshot until its results come.
+    assertFalse(screenshot.isRecycled)
+  }
+
+  @Test
+  fun aPreparationThatEndsAfterShutdown_recyclesItsScreenshot() {
+    runPreparationsAtOnce = false
+    captioner.caption(node, /* isUserRequested= */ true)
+    idle()
+    val screenshot = takeScreenshot(service.callbacks[0])
+
+    captioner.shutdown()
+    runPreparations()
+
+    assertTrue(screenshot.isRecycled)
+  }
+
+  @Test
+  fun shutdown_recyclesTheScreenshotOfAPreparationThatHasNotStarted() {
+    val executor = Executors.newSingleThreadExecutor()
+    val release = CountDownLatch(1)
+    // The thread is busy, so the preparation waits in the queue.
+    executor.execute { runCatching { release.await(5, TimeUnit.SECONDS) } }
+    captioner.setPreparationExecutorForTesting(executor)
+    captioner.caption(node, /* isUserRequested= */ true)
+    idle()
+    val screenshot = takeScreenshot(service.callbacks[0])
+
+    captioner.shutdown()
+    release.countDown()
+
+    assertTrue(screenshot.isRecycled)
+    assertTrue(executor.awaitTermination(5, TimeUnit.SECONDS))
   }
 }
