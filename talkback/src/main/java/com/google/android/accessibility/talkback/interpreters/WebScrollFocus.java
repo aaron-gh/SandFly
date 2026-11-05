@@ -327,8 +327,9 @@ final class WebScrollFocus {
       findingIndex = false;
       int read = indexReadsAtLevelStart - indexReadsLeft;
       if (read >= count) {
-        // The node is no longer among the children. Search the root from its start.
-        level = rootIndex;
+        // The node is no longer among the children, such as an item that the page replaced or
+        // removed as it scrolled. Search the children from the first, or the last.
+        pushStart(parent);
         return;
       }
       // Too many children to find its position by reading them. Items in view after it lie past

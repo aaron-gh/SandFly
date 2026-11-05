@@ -107,7 +107,7 @@ class WebFocusRecoveryTest {
     val firstInView = item(300, 500, "Fries")
     val document = Node(viewport, null, true, true, above("Salad"), focus, firstInView)
     inApp(document)
-    val recovery = WebFocusRecovery(focus, document, false, true)
+    val recovery = WebFocusRecovery(focus, null, document, false, true)
 
     run(recovery)
 
@@ -121,7 +121,7 @@ class WebFocusRecoveryTest {
     val firstInView = item(600, 800, "Fries")
     val document = Node(viewport, null, true, true, focus, firstInView)
     inApp(document)
-    val recovery = WebFocusRecovery(focus, document, true, true)
+    val recovery = WebFocusRecovery(focus, null, document, true, true)
 
     run(recovery)
 
@@ -136,7 +136,7 @@ class WebFocusRecoveryTest {
     // A scroll of a list in the page beside the focus.
     val list = Node(Rect(0, 900, 1000, 1200), null, false, true, item(950, 1100, "Drink"))
     list.parentNode = document
-    val recovery = WebFocusRecovery(focus, list, false, true)
+    val recovery = WebFocusRecovery(focus, null, list, false, true)
 
     run(recovery)
 
@@ -150,7 +150,98 @@ class WebFocusRecoveryTest {
     inApp(document)
     val otherDocument = Node(viewport, null, true, true, item(300, 500, "Ad"))
     inApp(otherDocument)
-    val recovery = WebFocusRecovery(focus, otherDocument, false, true)
+    val recovery = WebFocusRecovery(focus, null, otherDocument, false, true)
+
+    run(recovery)
+
+    assertEquals(WebFocusRecovery.NOT_WEB_SCROLL, recovery.outcome())
+  }
+
+  @Test
+  fun lostFocusMovesToTheFirstItemInViewOfTheScrolledDocument() {
+    val firstInView = item(300, 500, "Fries")
+    val document =
+      Node(viewport, null, true, true, above("Header"), above("Burger"), firstInView)
+    inApp(document)
+    val recovery = WebFocusRecovery(null, null, document, true, true)
+
+    run(recovery)
+
+    assertEquals(WebFocusRecovery.FOUND, recovery.outcome())
+    assertSame(firstInView, recovery.item())
+  }
+
+  @Test
+  fun lostFocusMovesToTheLastItemInViewAfterScrollingBack() {
+    val lastInView = item(1500, 1900, "Fries")
+    val document =
+      Node(
+        viewport,
+        null,
+        true,
+        true,
+        item(300, 500, "Salad"),
+        lastInView,
+        Node(Rect(0, 2300, 1000, 2000), text = "Burger"),
+      )
+    inApp(document)
+    val recovery = WebFocusRecovery(null, null, document, true, false)
+
+    run(recovery)
+
+    assertSame(lastInView, recovery.item())
+  }
+
+  @Test
+  fun lostFocusInAListOfThePageIsSoughtInThatList() {
+    val card = item(950, 1100, "Drink")
+    val list =
+      Node(Rect(0, 900, 1000, 1200), null, false, true, Node(Rect(-300, 950, 0, 1100)), card)
+    val document = Node(viewport, null, true, true, item(300, 500, "Burger"), list)
+    inApp(document)
+    val recovery = WebFocusRecovery(null, null, list, true, true)
+
+    run(recovery)
+
+    assertSame(card, recovery.item())
+  }
+
+  @Test
+  fun lostFocusIsSoughtNextToWhereTheItemThatHadItWasNotAtTheStartOfThePage() {
+    // A header that stays at the top of the page, then the section that held the focus.
+    val header = item(150, 250, "McDonald's")
+    val firstInView = item(600, 800, "Fries")
+    val section =
+      Node(Rect(0, 100, 1000, 2000), null, false, true, above("Salad"), firstInView)
+    val document = Node(viewport, null, true, true, header, section)
+    inApp(document)
+    // The page removed the item that had focus, but it still names its parent.
+    val removed = above("Burger").apply { parentNode = section }
+    val recovery = WebFocusRecovery(null, removed, document, true, true)
+
+    run(recovery)
+
+    assertSame(firstInView, recovery.item())
+  }
+
+  @Test
+  fun lostFocusOutsideTheScrolledContentIsSoughtFromItsStart() {
+    val firstInView = item(300, 500, "Fries")
+    val document = Node(viewport, null, true, true, above("Salad"), firstInView)
+    inApp(document)
+    val elsewhere = item(300, 500, "Other page")
+    inApp(Node(viewport, null, true, true, elsewhere))
+    val recovery = WebFocusRecovery(null, elsewhere, document, true, true)
+
+    run(recovery)
+
+    assertSame(firstInView, recovery.item())
+  }
+
+  @Test
+  fun lostFocusWithoutAWebViewAboveTheScrolledNodeIsNotAWebScroll() {
+    val list = Node(viewport, null, false, true, item(300, 500, "Fries"))
+    val recovery = WebFocusRecovery(null, null, list, true, true)
 
     run(recovery)
 
@@ -162,7 +253,7 @@ class WebFocusRecoveryTest {
     val focus = above("Burger")
     val document = Node(viewport, null, true, true, focus, item(300, 500, "Fries"))
     inApp(document)
-    val recovery = WebFocusRecovery(focus, document, false, true)
+    val recovery = WebFocusRecovery(focus, null, document, false, true)
 
     recovery.step()
     recovery.stop()

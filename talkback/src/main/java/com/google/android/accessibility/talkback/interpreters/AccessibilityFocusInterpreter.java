@@ -61,6 +61,7 @@ import com.google.android.accessibility.utils.FeatureSupport;
 import com.google.android.accessibility.utils.FormFactorUtils;
 import com.google.android.accessibility.utils.Performance;
 import com.google.android.accessibility.utils.Performance.EventId;
+import com.google.android.accessibility.utils.Role;
 import com.google.android.accessibility.utils.WebInterfaceUtils;
 import com.google.android.accessibility.utils.labeling.Label;
 import com.google.android.accessibility.utils.monitor.TouchMonitor;
@@ -379,9 +380,33 @@ public class AccessibilityFocusInterpreter
       ManualScrollInterpretation interpretation,
       @Nullable AccessibilityNodeInfoCompat focus,
       boolean stripScrolled) {
-    if (focus == null
-        || !WebInterfaceUtils.supportsWebActions(focus)
-        || !isUserScroll(interpretation)) {
+    boolean forward = interpretation.direction() != TraversalStrategy.SEARCH_FOCUS_BACKWARD;
+    // Chrome clears the focus of an item that leaves the page's node tree as the page scrolls. A
+    // WebView or document node in focus fills the view, so it counts as in view, but the next
+    // swipe from it goes to the start of the page.
+    boolean focusLost = focus == null || Role.getRole(focus) == Role.ROLE_WEB_VIEW;
+    if (focusLost) {
+      if (!isUserScroll(interpretation)) {
+        return false;
+      }
+      AccessibilityNodeInfoCompat scrolled =
+          AccessibilityEventUtils.sourceCompat(interpretation.event());
+      if (scrolled == null || !WebScrollFocus.isWebContent(scrolled)) {
+        return false;
+      }
+      // The item that had focus may have left the tree, but its parent can still be there to
+      // search from.
+      FocusActionRecord record = actorState.getFocusHistory().getLastFocusActionRecord();
+      AccessibilityNodeInfoCompat lastFocused =
+          (record != null && WebInterfaceUtils.supportsWebActions(record.getFocusedNode()))
+              ? record.getFocusedNode()
+              : null;
+      startWebFocusRecovery(
+          interpretation,
+          new WebFocusRecovery(null, lastFocused, scrolled, /* leftBehind= */ true, forward));
+      return true;
+    }
+    if (!WebInterfaceUtils.supportsWebActions(focus) || !isUserScroll(interpretation)) {
       return false;
     }
     AccessibilityNodeInfoCompat scrolled =
@@ -401,18 +426,19 @@ public class AccessibilityFocusInterpreter
     if (!leftBehind && !WebScrollFocus.isOutside(focusBounds, scrolledBounds)) {
       return true;
     }
+    startWebFocusRecovery(
+        interpretation, new WebFocusRecovery(focus, null, scrolled, leftBehind, forward));
+    return true;
+  }
+
+  private void startWebFocusRecovery(
+      ManualScrollInterpretation interpretation, WebFocusRecovery recovery) {
     cancelWebFocusRecovery();
-    webFocusRecovery =
-        new WebFocusRecovery(
-            focus,
-            scrolled,
-            leftBehind,
-            interpretation.direction() != TraversalStrategy.SEARCH_FOCUS_BACKWARD);
+    webFocusRecovery = recovery;
     webFocusRecoveryScroll = interpretation;
     webFocusRecoveryStartTime = SystemClock.uptimeMillis();
     webFocusRecoveryFocusTime = lastFocusActionTime();
     runWebFocusRecovery(/* yieldToInput= */ true);
-    return true;
   }
 
   /**
@@ -464,9 +490,12 @@ public class AccessibilityFocusInterpreter
                   .build());
       case WebFocusRecovery.NOTHING_IN_VIEW -> {
         LogUtils.d(TAG, "Web focus is out of view, and no item is in view");
-        moveFocusFromScrolledOutNode(
-            interpretation,
-            accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ false));
+        AccessibilityNodeInfoCompat focus =
+            accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ false);
+        // TalkBack's handling would focus the whole WebView in place of lost focus.
+        if (focus != null) {
+          moveFocusFromScrolledOutNode(interpretation, focus);
+        }
       }
       case WebFocusRecovery.NOT_WEB_SCROLL ->
           moveFocusFromScrolledOutNode(

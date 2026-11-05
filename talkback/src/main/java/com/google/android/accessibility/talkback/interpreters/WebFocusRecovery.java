@@ -62,21 +62,31 @@ final class WebFocusRecovery {
    */
   static final int NOT_WEB_SCROLL = 4;
 
-  private final AccessibilityNodeInfoCompat focus;
+  private final @Nullable AccessibilityNodeInfoCompat focus;
+  private final @Nullable AccessibilityNodeInfoCompat lastFocused;
   private final AccessibilityNodeInfoCompat scrolled;
   private final boolean leftBehind;
   private final boolean forward;
   private final Rect scrolledBounds = new Rect();
   private final Rect focusBounds = new Rect();
 
-  /** The focused node and its ancestors, nearest first. */
+  /** The focused node, or the node that had focus last, and its ancestors, nearest first. */
   private final List<AccessibilityNodeInfoCompat> focusAndAncestors = new ArrayList<>();
+
+  /** No walk up the ancestors has run. */
+  private static final int WALK_NONE = 0;
+
+  /** The walk up from the focus, or from the node that had focus last. */
+  private static final int WALK_FROM_FOCUS = 1;
+
+  /** The walk up from the scrolled node. */
+  private static final int WALK_FROM_SCROLLED = 2;
+
+  /** The last walk up the ancestors that started. */
+  private int walk = WALK_NONE;
 
   /** The node whose parent the next step reads, or null when the walk up has ended. */
   private @Nullable AccessibilityNodeInfoCompat walking;
-
-  /** Whether the walk up is from the scrolled node, not from the focus. */
-  private boolean walkingFromScrolled;
 
   private int ancestorsRead;
   private @Nullable AccessibilityNodeInfoCompat webView;
@@ -90,7 +100,11 @@ final class WebFocusRecovery {
   private @Nullable AccessibilityNodeInfoCompat item;
 
   /**
-   * @param focus the focused node
+   * @param focus the focused node, or null when focus was lost or is on a whole document, so that
+   *     the item is sought in the scrolled content next to {@code lastFocused}, or from its start,
+   *     or its end
+   * @param lastFocused when {@code focus} is null, the node that had focus last, as it was then, or
+   *     null
    * @param scrolled the node that the user scrolled
    * @param leftBehind whether the focus is known to be out of view, even if its bounds lie in the
    *     WebView
@@ -98,17 +112,25 @@ final class WebFocusRecovery {
    *     the last
    */
   WebFocusRecovery(
-      AccessibilityNodeInfoCompat focus,
+      @Nullable AccessibilityNodeInfoCompat focus,
+      @Nullable AccessibilityNodeInfoCompat lastFocused,
       AccessibilityNodeInfoCompat scrolled,
       boolean leftBehind,
       boolean forward) {
     this.focus = focus;
+    this.lastFocused = (focus == null) ? lastFocused : null;
     this.scrolled = scrolled;
     this.leftBehind = leftBehind;
     this.forward = forward;
     scrolled.getBoundsInScreen(scrolledBounds);
-    focus.getBoundsInScreen(focusBounds);
-    walking = focus;
+    if (focus != null) {
+      focus.getBoundsInScreen(focusBounds);
+      startWalk(WALK_FROM_FOCUS, focus);
+    } else if (this.lastFocused != null) {
+      startWalk(WALK_FROM_FOCUS, this.lastFocused);
+    } else {
+      startWalk(WALK_FROM_SCROLLED, scrolled);
+    }
   }
 
   /** Returns what the recovery found, or {@link #RUNNING}. */
@@ -144,13 +166,11 @@ final class WebFocusRecovery {
       if (search.step()) {
         end(search.result());
       }
-      return outcome != RUNNING;
-    }
-    if (walking != null) {
+    } else if (walking != null) {
       stepWalk();
-      return outcome != RUNNING;
+    } else {
+      decide();
     }
-    decide();
     return outcome != RUNNING;
   }
 
@@ -159,10 +179,16 @@ final class WebFocusRecovery {
     outcome = (found != null) ? FOUND : NOTHING_IN_VIEW;
   }
 
+  private void startWalk(int walk, AccessibilityNodeInfoCompat from) {
+    this.walk = walk;
+    walking = from;
+    ancestorsRead = 0;
+  }
+
   /** Reads the parent of {@link #walking}. */
   private void stepWalk() {
     AccessibilityNodeInfoCompat node = walking;
-    if (walkingFromScrolled) {
+    if (walk == WALK_FROM_SCROLLED) {
       if (node.equals(webView)) {
         scrolledInWebView = true;
         walking = null;
@@ -185,16 +211,28 @@ final class WebFocusRecovery {
     // The outermost of the nested documents that a WebView reports: a document inside a page is a
     // web element's child, not a WebView's.
     if (webView == null
-        && !walkingFromScrolled
         && Role.getRole(node) == Role.ROLE_WEB_VIEW
         && Role.getRole(parent) != Role.ROLE_WEB_VIEW) {
       webView = node;
+      if (walk == WALK_FROM_SCROLLED) {
+        scrolledInWebView = true;
+        walking = null;
+        return;
+      }
     }
     walking = parent;
   }
 
   /** Decides from the ancestors read whether to search, and where. */
   private void decide() {
+    if (focus == null && walk == WALK_FROM_FOCUS && !(scrolledHoldsFocus && webView != null)) {
+      // The node that had focus last is no longer in the scrolled content. Search that content
+      // from its start, or its end.
+      focusAndAncestors.clear();
+      webView = null;
+      startWalk(WALK_FROM_SCROLLED, scrolled);
+      return;
+    }
     if (webView == null) {
       outcome = NOT_WEB_SCROLL;
       return;
@@ -203,6 +241,16 @@ final class WebFocusRecovery {
     webView.getBoundsInScreen(viewport);
     if (viewport.isEmpty()) {
       outcome = NOT_WEB_SCROLL;
+      return;
+    }
+    if (focus == null) {
+      // Search the scrolled content next to the node that had focus last, or from its start, or
+      // its end.
+      if (!scrolledBounds.isEmpty() && !viewport.intersect(scrolledBounds)) {
+        outcome = NOT_WEB_SCROLL;
+        return;
+      }
+      startSearch(scrolled, viewport);
       return;
     }
     if (scrolledHoldsFocus) {
@@ -216,11 +264,9 @@ final class WebFocusRecovery {
       outcome = NOT_WEB_SCROLL;
       return;
     } else if (!scrolled.equals(webView) && !scrolledInWebView) {
-      if (!walkingFromScrolled) {
+      if (walk != WALK_FROM_SCROLLED) {
         // Find whether the scrolled node lies in the WebView that holds the focus.
-        walkingFromScrolled = true;
-        ancestorsRead = 0;
-        walking = scrolled;
+        startWalk(WALK_FROM_SCROLLED, scrolled);
         return;
       }
       outcome = NOT_WEB_SCROLL;
@@ -242,9 +288,14 @@ final class WebFocusRecovery {
       outcome = NOT_WEB_SCROLL;
       return;
     }
+    startSearch(searchRoot, viewport);
+  }
+
+  private void startSearch(AccessibilityNodeInfoCompat searchRoot, Rect viewport) {
     // From a strip of category tabs, search on from the strip, or back from the end: the tabs next
     // to the focus are not the content that scrolled into view.
-    @Nullable List<AccessibilityNodeInfoCompat> searchFrom = focusAndAncestors;
+    @Nullable List<AccessibilityNodeInfoCompat> searchFrom =
+        focusAndAncestors.isEmpty() ? null : focusAndAncestors;
     int strip = WebScrollFocus.outermostSidewaysStrip(focusAndAncestors, searchRoot);
     if (strip >= 0) {
       searchFrom = forward ? focusAndAncestors.subList(strip, focusAndAncestors.size()) : null;
