@@ -88,6 +88,8 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
   // Set when the track starts, until its first write completes. Running short before that is only
   // the track starting, not a buffer too small.
   @Volatile private var starting = false
+  // When the track last started playing, for the log.
+  @Volatile private var trackStartedAt = 0L
   // Writes left before running short counts again after the buffer grew: the underruns of the same
   // starvation can be counted after it grew, and would grow it again.
   private var settleWrites = 0
@@ -250,6 +252,10 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
     private var lastActivity = SystemClock.uptimeMillis()
     // When this stream reached the front of the queue, or 0 before.
     private var headSince = 0L
+    // When the stream was opened, and when the engine's first audio for it came, or 0 before, for
+    // the log.
+    private val openedAt = SystemClock.uptimeMillis()
+    private var firstAudioAt = 0L
     // Word ranges by the output frame they start at.
     private val ranges = ArrayDeque<LongArray>()
 
@@ -301,6 +307,7 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
           if (streams.remove(this)) abandon(playerFailed = false)
           return
         }
+        if (firstAudioAt == 0L) firstAudioAt = SystemClock.uptimeMillis()
         inFrames += floats.size / inChannels
         if (!heardSound && floats.any { it != 0f }) heardSound = true
         if (!heardSound && inRate > 0 && inFrames * 1000 / inRate >= SILENT_MS) reportSilent()
@@ -390,7 +397,21 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
       }
       if (written > 0 && !started) {
         started = true
-        callbacks.execute { listener.onStarted(id) }
+        val now = SystemClock.uptimeMillis()
+        val firstAudio = firstAudioAt
+        val trackStart = trackStartedAt
+        callbacks.execute {
+          LogUtils.d(
+            TAG,
+            "Speech %s plays %d ms after it was asked for: engine audio after %d ms, " +
+              "track started %d ms before",
+            id,
+            now - openedAt,
+            if (firstAudio == 0L) -1L else firstAudio - openedAt,
+            now - trackStart,
+          )
+          listener.onStarted(id)
+        }
       }
       framesPlayed += written
       while (ranges.isNotEmpty() && ranges.peekFirst()!![0] <= framesPlayed) {
@@ -732,6 +753,7 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
     try {
       if (output.playState != AudioTrack.PLAYSTATE_PLAYING) {
         output.play()
+        trackStartedAt = SystemClock.uptimeMillis()
         starting = true
         if (!fastPath) waking = true
       }
