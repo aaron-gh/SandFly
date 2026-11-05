@@ -160,6 +160,8 @@
     <string name="title_pref_voice_profile_in_use">Voice profile in use</string>
     <!-- Switch on the Voice profiles screen. When on, the text-to-speech engine of the voice profile used before the current one stays connected while the screen is on, so that changing back to it is immediate. [CHAR LIMIT=NONE] -->
     <string name="title_pref_keep_previous_voice_engine">Keep the engine of the previous voice profile started</string>
+    <!-- Switch on a voice profile's screen. When on, the profile's text-to-speech engine stays connected while another engine is in use, so that changing to the profile, and notifications read with it, don't wait for the engine to start. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_voice_profile_keep_engine_started">Keep the engine started</string>
     <!-- Title for the button that adds a voice profile. [CHAR LIMIT=NONE] -->
     <string name="title_pref_add_voice_profile">Add voice profile</string>
     <!-- Name given to a new voice profile, with a number to tell it apart. [CHAR LIMIT=NONE] -->
