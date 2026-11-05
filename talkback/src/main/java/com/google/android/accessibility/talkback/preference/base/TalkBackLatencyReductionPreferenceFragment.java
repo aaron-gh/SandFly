@@ -130,18 +130,13 @@ public class TalkBackLatencyReductionPreferenceFragment extends TalkbackBaseFrag
                     context.getResources(),
                     R.string.pref_touch_focus_time_out_key,
                     R.string.pref_touch_focus_time_out_default);
-
-            String[] delayValues =
-                context.getResources().getStringArray(R.array.pref_touch_focus_time_out_values);
-            int position = Integer.parseInt(delayValues[delayValues.length - 1]);
-            for (int index = 0; index < delayValues.length; index++) {
-              if (delay == Integer.parseInt(delayValues[index])) {
-                position = index;
-                break;
+            for (FocusDelayPrefFragment.FocusDelayPref source :
+                FocusDelayPrefFragment.FocusDelayPref.values()) {
+              if (delay == source.getDelay()) {
+                return getString(source.getTitleId());
               }
             }
-            return context.getResources()
-                .getStringArray(R.array.pref_touch_focus_time_out_entries)[position];
+            return null;
           });
     }
 

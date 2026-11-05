@@ -80,9 +80,9 @@ In busy apps, a backlog of accessibility events could block gestures for almost 
 
 ### Shorter focus delay
 
-When you touch the screen, SandFly waits to see whether you're starting a gesture before it focuses the item under your finger. **Controls** > **Touch and activation** > **Reduce delay** > **Focus delay** sets this wait. TalkBack waits 300 ms by default, which is most of the time between touching an item and hearing it. SandFly waits 200 ms.
+When you touch the screen, SandFly waits to see whether you're starting a gesture before it focuses the item under your finger. **Controls** > **Touch and activation** > **Reduce delay** > **Focus delay** sets this wait. TalkBack waits 300 ms by default, which is most of the time between touching an item and hearing it. SandFly waits 150 ms.
 
-If you used an earlier version of SandFly with the delay at 300 ms, SandFly changes it to 200 ms once when you update. If you chose another delay, SandFly keeps it. If SandFly focuses items when you meant to swipe, choose a longer delay.
+A delay you chose earlier stays as it is. If SandFly focuses items when you meant to swipe, choose a longer delay.
 
 ### Faster response on empty space
 

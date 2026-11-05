@@ -10,9 +10,9 @@
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
       android:key="@string/pref_touch_focus_time_out_key">
     <com.google.android.accessibility.material.preference.AccessibilitySuiteRadioButtonPreference
-        android:title="@string/value_touch_explore_time_out_150ms" />
+        android:title="@string/value_focus_delay_150ms_default" />
     <com.google.android.accessibility.material.preference.AccessibilitySuiteRadioButtonPreference
-        android:title="@string/value_focus_delay_200ms_default" />
+        android:title="@string/value_touch_explore_time_out_200ms" />
     <com.google.android.accessibility.material.preference.AccessibilitySuiteRadioButtonPreference
         android:title="@string/value_touch_explore_time_out_250ms" />
     <com.google.android.accessibility.material.preference.AccessibilitySuiteRadioButtonPreference
