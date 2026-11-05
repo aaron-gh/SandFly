@@ -98,8 +98,8 @@ When you activated an item, or pressed a key, while the item was being spoken or
 
 TalkBack speaks the window name only after the speech before it, and the first item in the new window only after the window name. **Verbosity** > **Window names** chooses when window names are spoken:
 
-*   **Always**, the default, as TalkBack does.
-*   **Always, cut off by the first item**: the window name interrupts the speech before it, and the first item interrupts the window name as soon as it is focused, so usually only the window sound is heard before the first item.
+*   **Always**, as TalkBack does.
+*   **Always, cut off by the first item**, the default: the window name interrupts the speech before it, and the first item interrupts the window name as soon as it is focused, so usually only the window sound is heard before the first item.
 *   **Only when a window opens**: no window name when focus moves into another window, such as the keyboard.
 *   **Never**: a screen change plays only the window sound.
 
