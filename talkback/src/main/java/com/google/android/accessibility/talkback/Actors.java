@@ -848,6 +848,12 @@ class Actors {
                 imageCaptioner.geminiConfigDetailedImageDescriptionTrigger(imageCaption.target());
             case PERFORM_SCREEN_OVERVIEW ->
                 imageCaptioner.geminiScreenOverview(imageCaption.target());
+            case ASK_ABOUT_SCREEN ->
+                imageCaptioner.askAboutScreenshot(
+                    imageCaption.target(), /* wholeScreen= */ true);
+            case ASK_ABOUT_IMAGE ->
+                imageCaptioner.askAboutScreenshot(
+                    imageCaption.target(), /* wholeScreen= */ false);
           };
     }
 

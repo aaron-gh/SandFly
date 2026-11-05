@@ -28,6 +28,7 @@ import com.google.android.accessibility.talkback.Feedback;
 import com.google.android.accessibility.talkback.Pipeline;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.actor.ImageCaptioner;
+import com.google.android.accessibility.talkback.actor.gemini.AiResultOutput;
 import com.google.android.accessibility.talkback.actor.gemini.GeminiFunctionUtils;
 import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics;
 import com.google.android.accessibility.talkback.contextmenu.AbstractOnContextMenuItemClickListener;
@@ -117,6 +118,7 @@ public class RuleImageCaption extends NodeMenuRule {
 
     @Override
     public boolean onMenuItemClick(MenuItem item) {
+      AiResultOutput.request(/* speak= */ false);
       Feedback.Part.Builder feedback =
           GeminiFunctionUtils.getPreferredImageDescriptionFeedback(context, actorState, node);
       return feedback != null && pipeline.returnFeedback(EVENT_ID_UNTRACKED, feedback);

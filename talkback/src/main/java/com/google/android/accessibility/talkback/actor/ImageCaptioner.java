@@ -99,10 +99,12 @@ import com.google.android.accessibility.talkback.PrimesController;
 import com.google.android.accessibility.talkback.PrimesController.TimerAction;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.UserInterface.UserInputEventListener;
+import com.google.android.accessibility.talkback.actor.gemini.AiResultOutput;
 import com.google.android.accessibility.talkback.actor.gemini.DataFieldUtils;
 import com.google.android.accessibility.talkback.actor.gemini.GeminiActor.ErrorReason;
 import com.google.android.accessibility.talkback.actor.gemini.GeminiActor.FinishReason;
 import com.google.android.accessibility.talkback.actor.gemini.GeminiOptInDialog;
+import com.google.android.accessibility.talkback.actor.gemini.ui.AiQuestionDialog;
 import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics;
 import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics.ImageCaptionLogKeys;
 import com.google.android.accessibility.talkback.dynamicfeature.DownloaderFactory;
@@ -235,6 +237,8 @@ public class ImageCaptioner extends Handler
    * same.
    */
   private int requestId = 0;
+  // The open Ask about screen or Ask about image window, so that a new one replaces it.
+  private @Nullable AiQuestionDialog questionDialog;
 
   private final RequestList<ScreenshotCaptureRequest> screenshotRequests;
   private final RequestList<CharacterCaptionRequest> characterCaptionRequests =
@@ -691,6 +695,7 @@ public class ImageCaptioner extends Handler
   public void shutdown() {
     // Ends all requests, so that results that come later are ignored.
     clearRequests();
+    dismissQuestionDialog();
     shutdownIconDetector();
     shutdownImageDescription();
     moduleStateManager.shutdown();
@@ -889,6 +894,8 @@ public class ImageCaptioner extends Handler
     }
 
     if (isUserRequested) {
+      // Spoken anyway, so the next description doesn't take a spoken output meant for this one.
+      AiResultOutput.request(false);
       analytics.onImageCaptionEvent(IMAGE_CAPTION_EVENT_CAPTION_REQUEST_MANUAL);
       // If the caption request is triggered by users from TalkBack menu, TalkBack always performs
       // it even if the result has existed in the cache.
@@ -999,6 +1006,9 @@ public class ImageCaptioner extends Handler
     }
 
     requestId++;
+    if (isUserRequested) {
+      AiResultOutput.claim(requestId);
+    }
     ProcessedScreens screens =
         processImageForNodeCaption(
             focusedNode,
@@ -1092,6 +1102,7 @@ public class ImageCaptioner extends Handler
     }
 
     requestId++;
+    AiResultOutput.claim(requestId);
     pipeline.returnFeedback(
         EVENT_ID_UNTRACKED, Feedback.geminiScreenOverview(requestId, focusedNode, imageBytes));
 
@@ -1100,6 +1111,79 @@ public class ImageCaptioner extends Handler
     }
 
     screenshotRequests.performNextRequest(request);
+  }
+
+  /**
+   * Takes a screenshot of the screen, or of {@code node} when {@code wholeScreen} is false, and
+   * shows a text field for a question about it. The answer is spoken.
+   */
+  public boolean askAboutScreenshot(AccessibilityNodeInfoCompat node, boolean wholeScreen) {
+    if (!canTakeScreenshot()) {
+      returnFeedback(R.string.image_caption_with_hide_screen);
+      return false;
+    }
+
+    screenshotRequests.addRequest(
+        new ScreenshotCaptureRequest(
+            service,
+            node,
+            this::onScreenshotCapturePending,
+            (request, focusedNode, screenCapture, isUserRequested, captureByWindow) ->
+                processQuestionScreenshot(
+                    request, focusedNode, screenCapture, captureByWindow, wholeScreen),
+            /* isUserRequested= */ true));
+    return true;
+  }
+
+  private void processQuestionScreenshot(
+      ScreenshotCaptureRequest request,
+      AccessibilityNodeInfoCompat focusedNode,
+      Bitmap screenCapture,
+      boolean captureByWindow,
+      boolean wholeScreen) {
+    if (screenCapture == null) {
+      handleScreenshotCaptureFailure(request, /* isUserRequested= */ true);
+      return;
+    }
+    byte[] imageBytes;
+    if (wholeScreen) {
+      imageBytes = DataFieldUtils.encodeImageToByteArray(screenCapture);
+      if (!screenCapture.isRecycled()) {
+        screenCapture.recycle();
+      }
+    } else {
+      ProcessedScreens screens =
+          processImageForNodeCaption(
+              focusedNode,
+              screenCapture,
+              getTalkBackFocusStrokeWidth(prefs, service.getResources()),
+              captureByWindow);
+      Bitmap cropped = screens.croppedScreenCapture();
+      Bitmap blocked = screens.blockedScreenCapture();
+      imageBytes = DataFieldUtils.encodeImageToByteArray(cropped);
+      if (!cropped.isRecycled()) {
+        cropped.recycle();
+      }
+      if (blocked != cropped && !blocked.isRecycled()) {
+        blocked.recycle();
+      }
+    }
+    screenshotRequests.performNextRequest(request);
+
+    if (imageBytes == null) {
+      returnFeedback(R.string.gemini_screenshot_unavailable);
+      return;
+    }
+    dismissQuestionDialog();
+    questionDialog = new AiQuestionDialog(service, pipeline, wholeScreen, imageBytes);
+    questionDialog.show();
+  }
+
+  private void dismissQuestionDialog() {
+    if (questionDialog != null) {
+      questionDialog.dismissDialog();
+      questionDialog = null;
+    }
   }
 
   /**

@@ -71,6 +71,7 @@ import com.google.android.accessibility.talkback.actor.gemini.ui.ImageQnaChatAda
 import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics;
 import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics.GeminiChatEntry;
 import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics.GeminiDescription;
+import com.google.android.accessibility.talkback.imagecaption.ImageCaptionUtils;
 import com.google.android.accessibility.talkback.imagecaption.ImageCaptionUtils.CaptionType;
 import com.google.android.accessibility.talkback.imagecaption.Result;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
@@ -574,6 +575,14 @@ public class GeminiActor {
       return;
     }
 
+    if (AiResultOutput.takeSpoken(requestId)) {
+      speak(
+          ImageCaptionUtils.constructCaptionTextForManually(
+              context, imageDescriptionResult, iconLabelResult, ocrTextResult));
+      requestIdMap.remove(requestId);
+      return;
+    }
+
     if (isSupportImageQna(requestId)) {
       mainHandler.post(
           () ->
@@ -603,10 +612,15 @@ public class GeminiActor {
             result.response().getClass().getSimpleName(),
             GeminiConfiguration.screenOverviewEnabled(context),
             isSupportImageQna(result.requestId())));
+    boolean spoken = AiResultOutput.takeSpoken(result.requestId());
     if (GeminiConfiguration.screenOverviewEnabled(context)) {
       if (result.response() instanceof OverviewResponse.Error error) {
         // Spoken, not a toast: Android hides toasts from an app whose notifications are off.
         speak(getErrorMessage(context, error));
+      } else if (spoken) {
+        if (result.response() instanceof OverviewResponse.Success overview) {
+          speak(overview.getOverview().getSummary());
+        }
       } else if (isSupportImageQna(result.requestId())) {
         mainHandler.post(
             () -> bottomSheetResultOverlay.showScreenOverviewResultBottomSheet(result));
@@ -641,6 +655,7 @@ public class GeminiActor {
       aiCoreEndpoint.onUnbind();
     }
     cachedImageMap.clear();
+    AiResultOutput.clear();
   }
 
   private boolean isServerSideRequest(int requestId) {

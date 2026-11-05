@@ -678,6 +678,23 @@ public abstract class Feedback {
                 .build());
   }
 
+  /**
+   * Takes a screenshot of the screen, or of {@code node} when {@code wholeScreen} is false, and
+   * opens a window for a question about it.
+   */
+  public static Part.Builder askAboutScreenshot(
+      AccessibilityNodeInfoCompat node, boolean wholeScreen) {
+    return Part.builder()
+        .setImageCaption(
+            ImageCaption.builder()
+                .setAction(
+                    wholeScreen
+                        ? ImageCaption.Action.ASK_ABOUT_SCREEN
+                        : ImageCaption.Action.ASK_ABOUT_IMAGE)
+                .setTarget(node)
+                .build());
+  }
+
   public static Part.Builder responseImageCaptionResult(
       int requestId,
       String text,
@@ -2259,6 +2276,10 @@ public abstract class Feedback {
       ON_DEVICE_DETAILED_DESCRIPTION_OPT_IN,
       CONFIG_DETAILED_IMAGE_DESCRIPTIONS_SETTINGS,
       PERFORM_SCREEN_OVERVIEW,
+      /** Takes a screenshot and opens the Ask about screen window. */
+      ASK_ABOUT_SCREEN,
+      /** Takes a screenshot of the target and opens the Ask about image window. */
+      ASK_ABOUT_IMAGE,
     }
 
     public abstract ImageCaption.Action action();
