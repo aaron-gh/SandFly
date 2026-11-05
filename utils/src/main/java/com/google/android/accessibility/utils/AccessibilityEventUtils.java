@@ -314,6 +314,14 @@ public class AccessibilityEventUtils {
       return (scrollY / (float) maxScrollY);
     }
 
+    // Next, for a view that scrolls only sideways, such as a strip of tabs, attempt to use
+    // (scrollX / maxScrollX).
+    final int scrollX = event.getScrollX();
+    final int maxScrollX = event.getMaxScrollX();
+    if ((maxScrollY <= 0) && (scrollX >= 0) && (maxScrollX > 0)) {
+      return (scrollX / (float) maxScrollX);
+    }
+
     // Finally, attempt to use (scrollY / itemCount).
     // TODO: Investigate if it is still needed.
     if ((scrollY >= 0) && (itemCount > 0) && (scrollY <= itemCount)) {

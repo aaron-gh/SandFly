@@ -21,7 +21,10 @@ import android.os.Handler
 import android.os.Looper
 import android.os.SystemClock
 import android.view.accessibility.AccessibilityEvent
+import android.view.accessibility.AccessibilityNodeInfo
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import com.google.android.accessibility.talkback.ScrollTickCounter.Companion.UNKNOWN
+import com.google.android.accessibility.talkback.interpreters.WebScrollSource
 import com.google.android.accessibility.utils.AccessibilityEventUtils
 import com.google.android.accessibility.utils.Performance.EventId
 import com.google.android.accessibility.utils.input.ScrollEventInterpreter.ScrollEventHandler
@@ -46,14 +49,19 @@ import kotlin.math.pow
  * A tick is also felt as soon as a two-finger drag is passed to the app, before the app reports
  * that it scrolled.
  */
-class ScrollTicks(private val feedbackController: FeedbackController, density: Float) :
-  ScrollEventHandler {
+class ScrollTicks(
+  private val feedbackController: FeedbackController,
+  density: Float,
+  /** When the last touch interaction started, or -1. */
+  private val touchStartTime: () -> Long,
+) : ScrollEventHandler {
 
   private val counter = ScrollTickCounter(ITEM_DP * density)
   private val handler = Handler(Looper.getMainLooper())
   private var dragStartTime = -1L
   private val soundLimiter = FeedbackRateLimiter(MIN_SOUND_INTERVAL_MS)
   private val hapticLimiter = FeedbackRateLimiter(MIN_HAPTIC_INTERVAL_MS)
+  private val webScrollSource = WebScrollSource()
 
   /** Called on any thread when a two-finger drag is passed to the app. */
   fun onDragStarted() {
@@ -78,6 +86,10 @@ class ScrollTicks(private val feedbackController: FeedbackController, density: F
     ) {
       return
     }
+    val source = event.source
+    if (isPagesStripScroll(source)) {
+      return
+    }
     var deltaX = UNKNOWN
     var deltaY = UNKNOWN
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
@@ -92,7 +104,7 @@ class ScrollTicks(private val feedbackController: FeedbackController, density: F
         event.className,
         // Tells apart two lists of the same class in one window, such as the panes of a two-pane
         // layout. AccessibilityNodeInfo equality compares the window and the view.
-        event.source,
+        source,
         if (event.itemCount > 0) event.fromIndex else UNKNOWN,
         event.scrollX,
         event.scrollY,
@@ -122,6 +134,20 @@ class ScrollTicks(private val feedbackController: FeedbackController, density: F
       }
       handler.postDelayed({ vibrate(eventId) }, i * spacing)
     }
+  }
+
+  /**
+   * Whether the scroll is of a strip that scrolls only sideways, such as a strip of category tabs,
+   * that a web page scrolled to follow the content that the user scrolls down. Its position is not
+   * where the user scrolled to, so it plays no sound or ticks of its own.
+   */
+  private fun isPagesStripScroll(source: AccessibilityNodeInfo?): Boolean {
+    val scrolled = source?.let { AccessibilityNodeInfoCompat.wrap(it) } ?: return false
+    if (!WebScrollSource.isWebContent(scrolled)) {
+      return false
+    }
+    return webScrollSource.onScroll(scrolled, touchStartTime()) == WebScrollSource.PAGE_SIDEWAYS &&
+      !webScrollSource.userScrollIsSideways()
   }
 
   private fun vibrate(eventId: EventId?) {
