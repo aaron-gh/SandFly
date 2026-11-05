@@ -438,14 +438,11 @@ public class GestureController {
           pipeline.returnFeedback(
               eventId, Feedback.systemAction(GLOBAL_ACTION_KEYCODE_HEADSETHOOK));
     } else if (action.equals(service.getString(R.string.shortcut_value_dictate_or_media_control))) {
-      // Stops a dictation that is on; starts one in a text field, unless a call is on, when play
-      // or pause answers or ends it.
+      // Stops a dictation that is on; starts one in a text field being edited, unless a call is
+      // on, when play or pause answers or ends it.
       AccessibilityNodeInfoCompat field = null;
       if (!dictation.isActive() && !service.isPhoneCallActive()) {
-        field = dictationTarget();
-        if (Role.getRole(field) != Role.ROLE_EDIT_TEXT) {
-          field = getEditTextInputFocus();
-        }
+        field = editingTextField();
       }
       if (dictation.isActive() || field != null) {
         result = dictation.start(field);
@@ -1253,6 +1250,21 @@ public class GestureController {
     AccessibilityNodeInfoCompat editing =
         accessibilityFocusMonitor.getEditingNodeFromFocusedKeyboard(focus);
     return editing != null ? editing : focus;
+  }
+
+  /**
+   * Returns the text field that has input focus while a keyboard is active, or null when no field
+   * is in its editing state.
+   */
+  private @Nullable AccessibilityNodeInfoCompat editingTextField() {
+    if (!KeyboardUtils.isKeyboardActive(service)) {
+      return null;
+    }
+    AccessibilityNodeInfoCompat field = dictationTarget();
+    if (Role.getRole(field) != Role.ROLE_EDIT_TEXT || !field.isFocused()) {
+      field = getEditTextInputFocus();
+    }
+    return field != null && field.isFocused() && field.isVisibleToUser() ? field : null;
   }
 
   private @Nullable AccessibilityNodeInfoCompat getEditTextInputFocus() {

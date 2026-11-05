@@ -774,7 +774,7 @@ Text that isn't in a text field, such as a message, can be edited and copied but
 
 **Dictate**, a gesture action under **Text editing**, types what you say into the focused text field, at the cursor. A chime plays when recording starts; recording goes on, through pauses, until the gesture is performed again, which plays a second chime. Speech is silenced while recording, so that it isn't recorded. Recording stops by itself after 15 minutes.
 
-**Dictate, play or pause media**, under **Media and volume** and the default for two-finger double tap, starts Dictate when a text field has focus and no call is active, stops a dictation that is recording, and otherwise plays or pauses media. It replaced **Play or pause media, start or end voice input**, which pressed Gboard's voice typing key. **Start or end voice input** was removed; gestures and keys assigned to it now run Dictate.
+**Dictate, play or pause media**, under **Media and volume** and the default for two-finger double tap, starts Dictate when a text field is being edited (input focus and a keyboard shown or connected) and no call is active, stops a dictation that is recording, and otherwise plays or pauses media. It replaced **Play or pause media, start or end voice input**, which pressed Gboard's voice typing key. **Start or end voice input** was removed; gestures and keys assigned to it now run Dictate.
 
 **Settings > Dictation** has:
 
