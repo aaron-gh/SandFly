@@ -66,11 +66,13 @@ import static com.google.android.accessibility.utils.output.FeedbackItem.FLAG_FO
 import static com.google.android.accessibility.utils.output.FeedbackItem.FLAG_NO_DEVICE_SLEEP;
 import static com.google.android.accessibility.utils.output.SpeechController.QUEUE_MODE_UNINTERRUPTIBLE_BY_NEW_SPEECH_CAN_IGNORE_INTERRUPTS;
 
+import android.Manifest;
 import android.accessibilityservice.AccessibilityService;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
 import android.graphics.Color;
@@ -87,6 +89,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 import androidx.annotation.VisibleForTesting;
+import androidx.core.content.ContextCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import androidx.core.view.accessibility.AccessibilityWindowInfoCompat;
 import com.google.android.accessibility.talkback.ActorState;
@@ -105,6 +108,7 @@ import com.google.android.accessibility.talkback.actor.gemini.GeminiActor.ErrorR
 import com.google.android.accessibility.talkback.actor.gemini.GeminiActor.FinishReason;
 import com.google.android.accessibility.talkback.actor.gemini.GeminiOptInDialog;
 import com.google.android.accessibility.talkback.actor.gemini.ui.AiQuestionDialog;
+import com.google.android.accessibility.talkback.dictation.SandflyDictation;
 import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics;
 import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics.ImageCaptionLogKeys;
 import com.google.android.accessibility.talkback.dynamicfeature.DownloaderFactory;
@@ -166,6 +170,7 @@ import java.util.Set;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+import kotlin.Unit;
 
 /** Performs image caption and manages related state. */
 public class ImageCaptioner extends Handler
@@ -1115,9 +1120,14 @@ public class ImageCaptioner extends Handler
 
   /**
    * Takes a screenshot of the screen, or of {@code node} when {@code wholeScreen} is false, and
-   * shows a text field for a question about it. The answer is spoken.
+   * records a question about it with SandFly's dictation. The answer is spoken. While a question is
+   * recorded, this stops recording instead.
    */
   public boolean askAboutScreenshot(AccessibilityNodeInfoCompat node, boolean wholeScreen) {
+    if (SandflyDictation.isListening()) {
+      SandflyDictation.stop();
+      return true;
+    }
     if (!canTakeScreenshot()) {
       returnFeedback(R.string.image_caption_with_hide_screen);
       return false;
@@ -1174,7 +1184,42 @@ public class ImageCaptioner extends Handler
       returnFeedback(R.string.gemini_screenshot_unavailable);
       return;
     }
+    askByVoice(wholeScreen, imageBytes);
+  }
+
+  /**
+   * Records the question with SandFly's dictation, which stops after a pause in speech, and sends it
+   * with {@code imageBytes}. When recording can't start, other than for the microphone permission
+   * or a dictation in progress, a text field for the question opens instead.
+   */
+  private void askByVoice(boolean wholeScreen, byte[] imageBytes) {
     dismissQuestionDialog();
+    // The callback is called at once, with null, when recording can't start.
+    boolean[] starting = {true};
+    boolean started =
+        SandflyDictation.listen(
+            text -> {
+              if (starting[0]) {
+                return Unit.INSTANCE;
+              }
+              // Dictation says when nothing was recognized.
+              String question = text == null ? "" : text.trim();
+              if (!question.isEmpty()) {
+                pipeline.returnFeedback(
+                    EVENT_ID_UNTRACKED,
+                    wholeScreen
+                        ? Feedback.geminiRequestScreenQna(question, imageBytes)
+                        : Feedback.geminiRequestImageQna(question, imageBytes));
+              }
+              return Unit.INSTANCE;
+            });
+    starting[0] = false;
+    if (started
+        || SandflyDictation.isActive()
+        || ContextCompat.checkSelfPermission(service, Manifest.permission.RECORD_AUDIO)
+            != PackageManager.PERMISSION_GRANTED) {
+      return;
+    }
     questionDialog = new AiQuestionDialog(service, pipeline, wholeScreen, imageBytes);
     questionDialog.show();
   }

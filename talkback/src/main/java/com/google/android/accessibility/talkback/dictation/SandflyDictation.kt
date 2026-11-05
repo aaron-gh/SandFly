@@ -31,6 +31,11 @@ object SandflyDictation {
   val isAvailable: Boolean
     get() = instance != null
 
+  /** Whether a dictation into a field or a [listen] is recording or recognizing. */
+  @JvmStatic
+  val isActive: Boolean
+    get() = instance?.isActive == true
+
   /** Whether it is recording or recognizing for [listen]. */
   @JvmStatic
   val isListening: Boolean

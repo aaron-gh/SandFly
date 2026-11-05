@@ -38,9 +38,9 @@ import com.google.android.accessibility.talkback.dialog.BaseDialog;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 /**
- * The window of Ask about screen and Ask about image: a text field for a question about a
- * screenshot taken before it opened. Ask sends the question with the screenshot, and the answer is
- * spoken.
+ * The window of Ask about screen and Ask about image when the question can't be dictated: a text
+ * field for a question about a screenshot taken before it opened. Ask sends the question with the
+ * screenshot, and the answer is spoken.
  */
 public class AiQuestionDialog extends BaseDialog {
   private final Pipeline.FeedbackReturner pipeline;
