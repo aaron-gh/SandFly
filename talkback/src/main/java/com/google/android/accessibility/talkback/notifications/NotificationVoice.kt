@@ -107,6 +107,9 @@ class NotificationVoice(private val context: Context) {
     unavailable()
   }
   private val startTimeout = Runnable { checkStarted() }
+  private val voiceRetry = Runnable { waitForVoice() }
+  /** Since when the engine has been started without taking the profile's voice. */
+  private var voiceWaitSince = 0L
   private val speakingCheck = Runnable { checkSpeaking() }
 
   /** The profile the voice is set up from. */
@@ -149,6 +152,7 @@ class NotificationVoice(private val context: Context) {
     handler.removeCallbacks(initTimeout)
     handler.removeCallbacks(startTimeout)
     handler.removeCallbacks(speakingCheck)
+    handler.removeCallbacks(voiceRetry)
     val sent = listeners.values.toList()
     listeners.clear()
     pieces.clear()
@@ -185,7 +189,6 @@ class NotificationVoice(private val context: Context) {
       unavailable()
       return
     }
-    ready = true
     tts.setAudioAttributes(
       AudioAttributes.Builder()
         .setUsage(FailoverTextToSpeech.speechUsage(context))
@@ -232,7 +235,28 @@ class NotificationVoice(private val context: Context) {
         }
       }
     )
-    applyVoice()
+    voiceWaitSince = SystemClock.uptimeMillis()
+    waitForVoice()
+  }
+
+  /**
+   * Sets the profile's voice, then says the text waiting for the engine. An engine that has just
+   * started may not have loaded its voices yet, so it lists none or refuses the voice; the voice is
+   * tried again for [VOICE_WAIT_MS] before the text is said in the voice that could be set.
+   */
+  private fun waitForVoice() {
+    if (tts == null) return
+    val waited = SystemClock.uptimeMillis() - voiceWaitSince
+    if (!applyVoice()) {
+      if (waited < VOICE_WAIT_MS) {
+        handler.postDelayed(voiceRetry, VOICE_RETRY_MS)
+        return
+      }
+      LogUtils.e(TAG, "%s didn't take voice %s within %d ms", profile?.engine, profile?.voice, waited)
+    } else if (waited > 0) {
+      LogUtils.d(TAG, "%s took voice %s after %d ms", profile?.engine, profile?.voice, waited)
+    }
+    ready = true
     val waiting = pending.toList()
     pending.clear()
     waiting.forEach { speakNow(it) }
@@ -343,27 +367,34 @@ class NotificationVoice(private val context: Context) {
   /**
    * Sets the profile's voice as SandFly's own speech does: its voice, else its language, else the
    * engine's default voice. Each is tried in turn, since a listed voice can still fail to be set.
+   *
+   * @return whether the profile's voice was set, or it names none
    */
-  private fun applyVoice() {
-    val tts = tts ?: return
-    val profile = profile ?: return
-    runCatching {
-      val voice = findVoice(tts, profile.voice)
-      if (voice != null && tts.setVoice(voice) == TextToSpeech.SUCCESS) return
-      if (
-        profile.language.isNotEmpty() &&
-          tts.setLanguage(Locale.forLanguageTag(profile.language)) >= TextToSpeech.LANG_AVAILABLE
-      ) {
-        return
+  private fun applyVoice(): Boolean {
+    val tts = tts ?: return true
+    val profile = profile ?: return true
+    return runCatching {
+        val voice = findVoice(tts, profile.voice)
+        if (voice != null && tts.setVoice(voice) == TextToSpeech.SUCCESS) return@runCatching true
+        if (
+          profile.language.isNotEmpty() &&
+            tts.setLanguage(Locale.forLanguageTag(profile.language)) >= TextToSpeech.LANG_AVAILABLE
+        ) {
+          return@runCatching profile.voice.isEmpty()
+        }
+        tts.defaultVoice?.let { tts.setVoice(it) }
+        profile.voice.isEmpty()
       }
-      tts.defaultVoice?.let { tts.setVoice(it) }
-    }
+      .getOrDefault(false)
   }
 
-  /** Returns the engine's voice called [name], unless it needs downloading. */
+  /**
+   * Returns the engine's voice called [name], unless it needs downloading. The voices are listed
+   * again while it isn't found, as an engine that has just started may not have listed it yet.
+   */
   private fun findVoice(tts: TextToSpeech, name: String): Voice? {
     if (name.isEmpty()) return null
-    if (foundVoiceName != name) {
+    if (foundVoiceName != name || foundVoice == null) {
       foundVoiceName = name
       foundVoice = runCatching { tts.voices }.getOrNull()?.firstOrNull { it?.name == name }
     }
@@ -413,8 +444,14 @@ class NotificationVoice(private val context: Context) {
       releaseWhenIdle()
       return
     }
-    // A detected language replaces the profile's for this text only.
-    if (request.locale != null && tts.isLanguageAvailable(request.locale) >= TextToSpeech.LANG_AVAILABLE) {
+    // A detected language replaces the profile's for this text only, unless the profile's voice
+    // speaks it: setting a language sets that language's default voice.
+    val voiceLanguage = foundVoice?.locale?.language
+    if (request.locale != null && request.locale.language == voiceLanguage) {
+      applyVoice()
+    } else if (
+      request.locale != null && tts.isLanguageAvailable(request.locale) >= TextToSpeech.LANG_AVAILABLE
+    ) {
       tts.setLanguage(request.locale)
     } else if (request.locale != null) {
       applyVoice()
@@ -528,6 +565,10 @@ class NotificationVoice(private val context: Context) {
     const val IDLE_MS = 10_000L
     /** How long the engine has to start before the text is said in SandFly's voice. */
     const val INIT_TIMEOUT_MS = 10_000L
+    /** How long text waits for a started engine to take the profile's voice. */
+    const val VOICE_WAIT_MS = 8_000L
+    /** How often the profile's voice is tried while the text waits. */
+    const val VOICE_RETRY_MS = 100L
     /** How long the engine has to start saying text it took, once it says nothing else. */
     const val START_TIMEOUT_MS = 5_000L
     /** How long the engine has to start saying text while it says another app's. */
