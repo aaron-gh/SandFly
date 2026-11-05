@@ -160,16 +160,17 @@ object VoiceOverGestures {
       R.string.pref_shortcut_2finger_rotate_clockwise_key to R.string.shortcut_value_select_next_setting,
       R.string.pref_shortcut_2finger_rotate_counterclockwise_key to
         R.string.shortcut_value_select_previous_setting,
-      // Three fingers. A swipe moves the content with the fingers, a page at a time.
+      // Three fingers. A swipe moves the content with the fingers, a page at a time; up and down
+      // scroll forward and back, which every list supports. Scroll left moves the content left.
       R.string.pref_shortcut_3finger_1tap_key to R.string.shortcut_value_speak_position,
       R.string.pref_shortcut_3finger_2tap_key to R.string.shortcut_value_toggle_voice_feedback,
       // Screen Curtain.
       R.string.pref_shortcut_3finger_3tap_key to R.string.shortcut_value_show_hide_screen,
       R.string.pref_shortcut_3finger_4tap_key to R.string.shortcut_value_copy_last_spoken_phrase,
-      R.string.pref_shortcut_3finger_swipe_up_key to R.string.shortcut_value_scroll_down,
-      R.string.pref_shortcut_3finger_swipe_down_key to R.string.shortcut_value_scroll_up,
-      R.string.pref_shortcut_3finger_swipe_left_key to R.string.shortcut_value_scroll_right,
-      R.string.pref_shortcut_3finger_swipe_right_key to R.string.shortcut_value_scroll_left,
+      R.string.pref_shortcut_3finger_swipe_up_key to R.string.shortcut_value_scroll_forward,
+      R.string.pref_shortcut_3finger_swipe_down_key to R.string.shortcut_value_scroll_back,
+      R.string.pref_shortcut_3finger_swipe_left_key to R.string.shortcut_value_scroll_left,
+      R.string.pref_shortcut_3finger_swipe_right_key to R.string.shortcut_value_scroll_right,
       // Four fingers. A double tap opens VoiceOver help, where gestures are named, not performed.
       R.string.pref_shortcut_4finger_1tap_top_key to R.string.shortcut_value_first_in_screen,
       R.string.pref_shortcut_4finger_1tap_bottom_key to R.string.shortcut_value_last_in_screen,

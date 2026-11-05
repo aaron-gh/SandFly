@@ -2002,12 +2002,11 @@
     <string name="pref_shortcut_3finger_2tap_default">@string/shortcut_value_toggle_voice_feedback</string>
     <string name="pref_shortcut_3finger_4tap_default">@string/shortcut_value_show_hide_screen</string>
     <string name="pref_shortcut_3finger_3tap_default">@string/shortcut_value_copy_last_spoken_phrase</string>
-    <!-- Run only while SandFly handles two-finger swipes; the content moves with the fingers, as
-         when the swipe scrolls in the app. -->
-    <string name="pref_shortcut_2finger_swipe_up_default">@string/shortcut_value_scroll_down</string>
-    <string name="pref_shortcut_2finger_swipe_down_default">@string/shortcut_value_scroll_up</string>
-    <string name="pref_shortcut_2finger_swipe_left_default">@string/shortcut_value_scroll_right</string>
-    <string name="pref_shortcut_2finger_swipe_right_default">@string/shortcut_value_scroll_left</string>
+    <!-- Scroll up moves the content up, with the fingers, as when the swipe scrolls in the app. -->
+    <string name="pref_shortcut_2finger_swipe_up_default">@string/shortcut_value_scroll_up</string>
+    <string name="pref_shortcut_2finger_swipe_down_default">@string/shortcut_value_scroll_down</string>
+    <string name="pref_shortcut_2finger_swipe_left_default">@string/shortcut_value_scroll_left</string>
+    <string name="pref_shortcut_2finger_swipe_right_default">@string/shortcut_value_scroll_right</string>
     <string name="pref_shortcut_3finger_swipe_up_default">@string/shortcut_value_select_previous_setting</string>
     <string name="pref_shortcut_3finger_swipe_down_default">@string/shortcut_value_select_next_setting</string>
     <string name="pref_shortcut_3finger_swipe_left_default">@string/shortcut_value_select_previous_setting</string>

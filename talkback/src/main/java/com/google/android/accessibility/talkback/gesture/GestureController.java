@@ -394,11 +394,13 @@ public class GestureController {
     } else if (action.equals(service.getString(R.string.shortcut_value_scroll_forward))) {
       result = pipeline.returnFeedback(eventId, Feedback.focusDirection(NEXT_PAGE));
     } else if (action.equals(service.getString(R.string.shortcut_value_scroll_up))) {
+      // Scroll up moves the content up, toward the end of the list.
+      result = pipeline.returnFeedback(eventId, Feedback.focusDirection(SCROLL_UP));
+    } else if (action.equals(service.getString(R.string.shortcut_value_scroll_down))) {
+      // Scroll down moves the content down, toward the top, where it pulls the list to refresh.
       result =
           pullToRefresh.pullIfAtTop(eventId)
-              || pipeline.returnFeedback(eventId, Feedback.focusDirection(SCROLL_UP));
-    } else if (action.equals(service.getString(R.string.shortcut_value_scroll_down))) {
-      result = pipeline.returnFeedback(eventId, Feedback.focusDirection(SCROLL_DOWN));
+              || pipeline.returnFeedback(eventId, Feedback.focusDirection(SCROLL_DOWN));
     } else if (action.equals(service.getString(R.string.shortcut_value_scroll_left))) {
       result = pipeline.returnFeedback(eventId, Feedback.focusDirection(SCROLL_LEFT));
     } else if (action.equals(service.getString(R.string.shortcut_value_scroll_right))) {
