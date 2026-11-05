@@ -207,6 +207,10 @@ With **Text-to-speech** > **Quiet while recording** on, SandFly stays quiet whil
 
 To stop SandFly from saying the new volume after you press the volume keys, turn off **Verbosity** > **Speak volume changes**. It's on by default.
 
+### Text formatting
+
+TalkBack speaks text formatting, such as bold, underline and text color, by default. In SandFly, **Verbosity** > **Speak text formatting** is off by default.
+
 ### Keyboard echo
 
 **Keyboard echo**, first under **Typing and braille**, sets the echo for each way of typing: **On-screen keyboard**, **Physical keyboard**, **Braille keyboard** and **Braille display**, each with **None**, **Characters**, **Words**, or **Characters and words**. In TalkBack, keyboard echo is in **Verbosity**, and the braille keyboard follows the on-screen keyboard's setting. Each echo setting is also a reading control and a SandFly menu item, which you can turn on in **Reading controls** and **SandFly menu**. Keyboard echo isn't part of the verbosity presets. When you update, SandFly copies your earlier echo settings once.
