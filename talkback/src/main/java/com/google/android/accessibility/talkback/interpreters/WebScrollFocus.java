@@ -24,6 +24,7 @@ import androidx.core.view.accessibility.AccessibilityNodeInfoCompat.Accessibilit
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.Role;
 import com.google.android.accessibility.utils.WebInterfaceUtils;
+import java.util.ArrayDeque;
 import java.util.List;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
@@ -49,6 +50,12 @@ final class WebScrollFocus {
    * their siblings, apart from {@link #MAX_NODES_READ}.
    */
   @VisibleForTesting static final int MAX_INDEX_READS = 100;
+
+  /**
+   * Children of one node above which a search finds where the items in view start by a binary
+   * search over their bounds, instead of reading them from the first.
+   */
+  @VisibleForTesting static final int MIN_CHILDREN_FOR_BINARY_SEARCH = 32;
 
   /** How long after the fingers leave the screen the page can still be moving from a fling. */
   @VisibleForTesting static final long FLING_MS = 3000;
@@ -106,6 +113,23 @@ final class WebScrollFocus {
    * All times are {@link android.os.SystemClock#uptimeMillis} times, or -1 when not known.
    */
   static boolean isUserScroll(
+      long scrollTime,
+      long touchStartTime,
+      long touchEndTime,
+      boolean touching,
+      long previousTouchStartTime,
+      long previousTouchEndTime,
+      long focusTime) {
+    if (touchStartTime > scrollTime) {
+      // A new touch started after the scroll, such as a swipe before the scroll was handled.
+      return isUserScroll(
+          scrollTime, previousTouchStartTime, previousTouchEndTime, /* touching= */ false, focusTime);
+    }
+    return isUserScroll(scrollTime, touchStartTime, touchEndTime, touching, focusTime);
+  }
+
+  /** {@link #isUserScroll} for a scroll during or after the touch interaction given. */
+  static boolean isUserScroll(
       long scrollTime, long touchStartTime, long touchEndTime, boolean touching, long focusTime) {
     if (touchStartTime < 0 || scrollTime < touchStartTime || focusTime >= touchStartTime) {
       return false;
@@ -128,13 +152,52 @@ final class WebScrollFocus {
   }
 
   /**
+   * Returns the part of {@code viewport} below {@code strip}, when the strip lies across the top of
+   * the viewport and the page keeps it there, such as a strip of category tabs fixed below a page
+   * header. Items that scroll under the strip and the header above it are hidden. Returns {@code
+   * viewport} for a strip elsewhere.
+   */
+  static Rect belowFixedStrip(Rect viewport, Rect strip) {
+    Rect result = new Rect(viewport);
+    Rect bounds = new Rect(strip);
+    bounds.sort();
+    int height = viewport.height();
+    if (bounds.isEmpty()
+        || height <= 0
+        || bounds.top >= viewport.top + height / 3
+        || bounds.bottom <= viewport.top
+        || bounds.bottom > viewport.top + height / 2
+        || bounds.left >= viewport.right
+        || bounds.right <= viewport.left
+        || bounds.width() * 2 < viewport.width()) {
+      return result;
+    }
+    result.top = bounds.bottom;
+    return result;
+  }
+
+  /**
+   * Whether {@code bounds} lie under a strip fixed across the top of {@code viewport}, or the
+   * header above it: outside the part of the viewport below the strip, and not in the strip.
+   */
+  static boolean isUnderFixedStrip(Rect bounds, Rect viewport, Rect strip) {
+    Rect below = belowFixedStrip(viewport, strip);
+    if (below.top <= viewport.top) {
+      return false;
+    }
+    Rect sortedStrip = new Rect(strip);
+    sortedStrip.sort();
+    if (Math.min(bounds.top, bounds.bottom) >= sortedStrip.top
+        && Math.max(bounds.top, bounds.bottom) <= sortedStrip.bottom) {
+      // In the strip.
+      return false;
+    }
+    return isOutside(bounds, below);
+  }
+
+  /**
    * Returns the first item of web content in {@code root} that lies in {@code viewport}, or the
-   * last one if not {@code forward}. An item that lies wholly in the viewport is preferred, because
-   * focusing an item across an edge makes the page scroll to show all of it.
-   *
-   * <p>The search starts next to the item that has focus, so that a heading or tab bar that stays
-   * at the top of the page is not taken in place of the content that scrolled into view. It falls
-   * back to the start of {@code root}.
+   * last one if not {@code forward}. Runs a {@link Search} to its end.
    *
    * @param focusAndAncestors the focused node followed by its ancestors, nearest first, or {@code
    *     null} when {@code root} does not hold the focus
@@ -144,126 +207,264 @@ final class WebScrollFocus {
       @Nullable List<AccessibilityNodeInfoCompat> focusAndAncestors,
       Rect viewport,
       boolean forward) {
-    Search search = new Search(viewport, forward);
-    int rootIndex = (focusAndAncestors == null) ? -1 : focusAndAncestors.indexOf(root);
-    for (int i = 0; i < rootIndex; i++) {
-      AccessibilityNodeInfoCompat node = focusAndAncestors.get(i);
-      AccessibilityNodeInfoCompat parent = focusAndAncestors.get(i + 1);
-      int count = parent.getChildCount();
-      int indexReadsLeft = search.indexReadsLeft;
-      int index = search.indexInParent(parent, node, count);
-      int read = indexReadsLeft - search.indexReadsLeft;
-      int start;
-      if (index >= 0) {
-        start = forward ? index + 1 : index - 1;
-      } else if (read >= count) {
-        // The node is no longer among the children.
-        break;
-      } else {
-        // Too many children to find its position by reading them. Items in view after it lie past
-        // the children read, and before it, before the first child below the viewport.
-        start = search.firstPastViewport(parent, forward ? read : 0, count);
-      }
-      AccessibilityNodeInfoCompat item = search.children(parent, start);
-      if (item != null) {
-        return item;
-      }
-      if (search.nodesLeft <= 0) {
-        return search.partial;
-      }
-    }
-    // An item next to the focus, even across an edge, before one at the start of the page.
-    if (search.partial != null) {
-      return search.partial;
-    }
-    AccessibilityNodeInfoCompat item =
-        search.children(root, forward ? 0 : root.getChildCount() - 1);
-    return (item != null) ? item : search.partial;
+    Search search = new Search(root, focusAndAncestors, viewport, forward);
+    while (!search.step()) {}
+    return search.result();
   }
 
-  /** One search, with the nodes it may still read. */
-  private static final class Search {
-    final Rect viewport;
-    final boolean forward;
-    int nodesLeft = MAX_NODES_READ;
-    int indexReadsLeft = MAX_INDEX_READS;
-    /** The first item found that lies across an edge of the viewport. */
-    @Nullable AccessibilityNodeInfoCompat partial;
+  /**
+   * A search for the first item of web content in a root that lies in a viewport, or the last one
+   * when searching backward. An item that lies wholly in the viewport is preferred, because
+   * focusing an item across an edge makes the page scroll to show all of it.
+   *
+   * <p>The search starts next to the item that has focus, so that a heading or tab bar that stays
+   * at the top of the page is not taken in place of the content that scrolled into view. It falls
+   * back to the start of the root, or its end when searching backward.
+   *
+   * <p>Each {@link #step} reads at most one node from the app, so that the caller can let the main
+   * thread handle touch input between steps, and stop the search at a time limit.
+   */
+  static final class Search {
+    private final AccessibilityNodeInfoCompat root;
+    private final @Nullable List<AccessibilityNodeInfoCompat> focusAndAncestors;
+    private final Rect viewport;
+    private final boolean forward;
     private final Rect bounds = new Rect();
 
-    Search(Rect viewport, boolean forward) {
-      this.viewport = viewport;
-      this.forward = forward;
+    private int nodesLeft = MAX_NODES_READ;
+    private int indexReadsLeft = MAX_INDEX_READS;
+
+    /** The first item found that lies across an edge of the viewport. */
+    private @Nullable AccessibilityNodeInfoCompat partial;
+
+    private @Nullable AccessibilityNodeInfoCompat result;
+    private boolean done;
+
+    /**
+     * Position in {@link #focusAndAncestors} of the node whose siblings are searched, or past the
+     * ancestors, when the root is searched from its start.
+     */
+    private int level = 0;
+
+    private final int rootIndex;
+
+    /** Whether the position of the node at {@link #level} among its siblings is being read. */
+    private boolean findingIndex;
+
+    private int indexScan;
+    private int indexReadsAtLevelStart;
+
+    /** Whether the root has been searched from its start. */
+    private boolean rootSearched;
+
+    /** The nodes whose children are being searched, innermost last. */
+    private final ArrayDeque<Frame> frames = new ArrayDeque<>();
+
+    /** The children of one node that are still to be searched. */
+    private static final class Frame {
+      final AccessibilityNodeInfoCompat node;
+      final int count;
+
+      /** The next child to read, once the binary search for where to start has ended. */
+      int next;
+
+      /** The range of a binary search for the first child to read, while {@code low < high}. */
+      int low;
+
+      int high;
+
+      Frame(AccessibilityNodeInfoCompat node, int count, int next) {
+        this.node = node;
+        this.count = count;
+        this.next = next;
+      }
     }
 
-    int indexInParent(
-        AccessibilityNodeInfoCompat parent, AccessibilityNodeInfoCompat node, int count) {
-      for (int i = 0; i < count && indexReadsLeft > 0; i++) {
-        indexReadsLeft--;
-        if (node.equals(parent.getChild(i))) {
-          return i;
+    Search(
+        AccessibilityNodeInfoCompat root,
+        @Nullable List<AccessibilityNodeInfoCompat> focusAndAncestors,
+        Rect viewport,
+        boolean forward) {
+      this.root = root;
+      this.focusAndAncestors = focusAndAncestors;
+      this.viewport = new Rect(viewport);
+      this.forward = forward;
+      rootIndex = (focusAndAncestors == null) ? -1 : focusAndAncestors.indexOf(root);
+      startLevel();
+    }
+
+    /** Returns the item found once the search has ended, or null. */
+    @Nullable AccessibilityNodeInfoCompat result() {
+      return result;
+    }
+
+    /** Ends the search, with an item across an edge of the viewport if one was found. */
+    void stop() {
+      finish(partial);
+    }
+
+    /** Does one step of the search, reading at most one node. Returns whether the search ended. */
+    boolean step() {
+      while (!done) {
+        if (findingIndex) {
+          stepIndex();
+          return done;
+        }
+        if (!frames.isEmpty()) {
+          if (stepFrames()) {
+            return done;
+          }
+          continue;
+        }
+        // The children searched from the current level held nothing.
+        if (nodesLeft <= 0) {
+          finish(partial);
+        } else if (level < rootIndex) {
+          level++;
+          startLevel();
+        } else if (!rootSearched) {
+          // An item next to the focus, even across an edge, before one at the start of the page.
+          if (partial != null) {
+            finish(partial);
+          } else {
+            rootSearched = true;
+            pushStart(root);
+          }
+        } else {
+          finish(partial);
         }
       }
-      return -1;
+      return true;
+    }
+
+    private void finish(@Nullable AccessibilityNodeInfoCompat item) {
+      result = item;
+      done = true;
+      frames.clear();
+      findingIndex = false;
+    }
+
+    private void startLevel() {
+      if (level < rootIndex) {
+        findingIndex = true;
+        indexScan = 0;
+        indexReadsAtLevelStart = indexReadsLeft;
+      } else {
+        level = Math.max(level, rootIndex);
+      }
+    }
+
+    /** Reads the next sibling of the node at {@link #level} to find its position among them. */
+    private void stepIndex() {
+      AccessibilityNodeInfoCompat node = focusAndAncestors.get(level);
+      AccessibilityNodeInfoCompat parent = focusAndAncestors.get(level + 1);
+      int count = parent.getChildCount();
+      if (indexScan < count && indexReadsLeft > 0) {
+        indexReadsLeft--;
+        int i = indexScan++;
+        if (node.equals(parent.getChild(i))) {
+          findingIndex = false;
+          frames.push(new Frame(parent, count, forward ? i + 1 : i - 1));
+        }
+        return;
+      }
+      findingIndex = false;
+      int read = indexReadsAtLevelStart - indexReadsLeft;
+      if (read >= count) {
+        // The node is no longer among the children, such as an item that the page replaced or
+        // removed as it scrolled. Search the children from the first, or the last.
+        pushStart(parent);
+        return;
+      }
+      // Too many children to find its position by reading them. Items in view after it lie past
+      // the children read, and before it, before the first child below the viewport.
+      Frame frame = new Frame(parent, count, 0);
+      frame.low = forward ? read : 0;
+      frame.high = count;
+      frames.push(frame);
+    }
+
+    /** Pushes {@code node} to be searched from its first child, or its last one. */
+    private void pushStart(AccessibilityNodeInfoCompat node) {
+      int count = node.getChildCount();
+      Frame frame = new Frame(node, count, forward ? 0 : count - 1);
+      if (count > MIN_CHILDREN_FOR_BINARY_SEARCH) {
+        // A long list: find where the items in view start without reading those before them.
+        frame.low = 0;
+        frame.high = count;
+      }
+      frames.push(frame);
     }
 
     /**
-     * Returns where to search the children of {@code parent} in {@code [from, count)}, which lie in
-     * document order: forward, the first child that is not above the viewport; backward, the last
-     * child that is not below it. A binary search.
+     * Reads one node from the innermost frame. Returns whether a node was read, or the search
+     * ended; false when a frame ended without reading one.
      */
-    int firstPastViewport(AccessibilityNodeInfoCompat parent, int from, int count) {
-      int low = from;
-      int high = count;
-      while (low < high && nodesLeft > 0) {
-        int middle = (low + high) >>> 1;
-        nodesLeft--;
-        AccessibilityNodeInfoCompat child = parent.getChild(middle);
-        boolean before = false;
-        if (child != null) {
-          child.getBoundsInScreen(bounds);
-          before = forward ? isAbove(bounds, viewport) : !isBelow(bounds, viewport);
+    private boolean stepFrames() {
+      Frame frame = frames.peek();
+      if (frame.low < frame.high) {
+        stepBinarySearch(frame);
+        return true;
+      }
+      int i = frame.next;
+      if (i < 0 || i >= frame.count) {
+        frames.pop();
+        return false;
+      }
+      if (nodesLeft-- <= 0) {
+        finish(partial);
+        return true;
+      }
+      frame.next += forward ? 1 : -1;
+      AccessibilityNodeInfoCompat child = frame.node.getChild(i);
+      if (child == null) {
+        return true;
+      }
+      child.getBoundsInScreen(bounds);
+      // Items outside a container are usually outside the viewport too.
+      if (isOutside(bounds, viewport)) {
+        return true;
+      }
+      if (isItem(child, bounds, viewport)) {
+        if (isWhollyInside(bounds, viewport)) {
+          finish(child);
+          return true;
         }
-        if (before) {
-          low = middle + 1;
-        } else {
-          high = middle;
+        if (partial == null) {
+          partial = child;
         }
       }
-      return forward ? low : high - 1;
+      // An item across an edge can hold one that is wholly in view.
+      pushStart(child);
+      return true;
     }
 
-    /** Searches the children of {@code node} from {@code start} onwards, or backwards. */
-    @Nullable AccessibilityNodeInfoCompat children(AccessibilityNodeInfoCompat node, int start) {
-      int count = node.getChildCount();
-      for (int i = start; i >= 0 && i < count; i += forward ? 1 : -1) {
-        if (nodesLeft-- <= 0) {
-          return null;
-        }
-        AccessibilityNodeInfoCompat child = node.getChild(i);
-        if (child == null) {
-          continue;
-        }
-        child.getBoundsInScreen(bounds);
-        // Items outside a container are usually outside the viewport too.
-        if (isOutside(bounds, viewport)) {
-          continue;
-        }
-        if (isItem(child, bounds, viewport)) {
-          if (isWhollyInside(bounds, viewport)) {
-            return child;
-          }
-          if (partial == null) {
-            partial = child;
-          }
-        }
-        // An item across an edge can hold one that is wholly in view.
-        AccessibilityNodeInfoCompat item = children(child, forward ? 0 : child.getChildCount() - 1);
-        if (item != null || nodesLeft <= 0) {
-          return item;
-        }
+    /**
+     * One step of a binary search over the children of the frame's node, which lie in document
+     * order, for where to start: forward, the first child that is not above the viewport;
+     * backward, the last child that is not below it.
+     */
+    private void stepBinarySearch(Frame frame) {
+      if (nodesLeft <= 0) {
+        finish(partial);
+        return;
       }
-      return null;
+      int middle = (frame.low + frame.high) >>> 1;
+      nodesLeft--;
+      AccessibilityNodeInfoCompat child = frame.node.getChild(middle);
+      boolean before = false;
+      if (child != null) {
+        child.getBoundsInScreen(bounds);
+        before = forward ? isAbove(bounds, viewport) : !isBelow(bounds, viewport);
+      }
+      if (before) {
+        frame.low = middle + 1;
+      } else {
+        frame.high = middle;
+      }
+      if (frame.low >= frame.high) {
+        frame.next = forward ? frame.low : frame.high - 1;
+      }
     }
   }
 

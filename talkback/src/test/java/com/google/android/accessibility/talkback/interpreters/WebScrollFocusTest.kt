@@ -286,6 +286,29 @@ class WebScrollFocusTest {
   }
 
   @Test
+  fun aStripAcrossTheTopOfTheViewHidesTheItemsAboveItsBottom() {
+    val view = Rect(0, 150, 1220, 2600)
+    // The bounds recorded in an Uber Eats restaurant menu.
+    val strip = Rect(179, 550, 1220, 740)
+
+    assertEquals(Rect(0, 740, 1220, 2600), WebScrollFocus.belowFixedStrip(view, strip))
+    assertTrue(WebScrollFocus.isUnderFixedStrip(Rect(57, 150, 598, 592), view, strip))
+    assertFalse(WebScrollFocus.isUnderFixedStrip(Rect(57, 600, 598, 900), view, strip))
+    // A tab in the strip.
+    assertFalse(WebScrollFocus.isUnderFixedStrip(Rect(400, 560, 600, 730), view, strip))
+  }
+
+  @Test
+  fun aStripLowInTheViewOrNarrowHidesNothing() {
+    val view = Rect(0, 150, 1220, 2600)
+
+    assertEquals(view, WebScrollFocus.belowFixedStrip(view, Rect(0, 1200, 1220, 1400)))
+    assertEquals(view, WebScrollFocus.belowFixedStrip(view, Rect(0, 550, 400, 740)))
+    assertEquals(view, WebScrollFocus.belowFixedStrip(view, Rect()))
+    assertFalse(WebScrollFocus.isUnderFixedStrip(Rect(0, 150, 1220, 500), view, Rect()))
+  }
+
+  @Test
   fun aScrollWhileTouchingIsTheUsers() {
     assertTrue(WebScrollFocus.isUserScroll(1500, 1000, 900, true, 500))
   }
@@ -311,11 +334,86 @@ class WebScrollFocusTest {
 
   @Test
   fun aSearchReadsALimitedNumberOfNodes() {
-    val items = Array(2 * WebScrollFocus.MAX_NODES_READ) { above("Item $it") }
+    // Bounds that are all zero are unknown, so no binary search can pass over them.
+    val items = Array(2 * WebScrollFocus.MAX_NODES_READ) { Node(Rect(), text = "Item $it") }
     val page = Node(viewport, null, false, true, *items)
 
     assertNull(WebScrollFocus.findItemInView(page, null, viewport, true))
     assertEquals(WebScrollFocus.MAX_NODES_READ, reads)
+  }
+
+  @Test
+  fun aLongListWithoutTheFocusIsSearchedFromTheItemsInView() {
+    val firstInView = 3 * WebScrollFocus.MAX_NODES_READ
+    val items =
+      Array(4 * WebScrollFocus.MAX_NODES_READ) {
+        when {
+          it < firstInView -> above("Item $it")
+          it == firstInView -> item(300, 500, "Item $it")
+          else -> below("Item $it")
+        }
+      }
+    val page = Node(viewport, null, false, true, *items)
+
+    assertSame(items[firstInView], WebScrollFocus.findItemInView(page, null, viewport, true))
+    assertTrue(reads < 20)
+  }
+
+  @Test
+  fun scrollingBackInALongListWithoutTheFocusFindsTheLastItemInView() {
+    val lastInView = WebScrollFocus.MAX_NODES_READ
+    val items =
+      Array(4 * WebScrollFocus.MAX_NODES_READ) {
+        when {
+          it < lastInView -> above("Item $it")
+          it == lastInView -> item(1500, 1900, "Item $it")
+          else -> below("Item $it")
+        }
+      }
+    val page = Node(viewport, null, false, true, *items)
+
+    assertSame(items[lastInView], WebScrollFocus.findItemInView(page, null, viewport, false))
+    assertTrue(reads < 20)
+  }
+
+  @Test
+  fun eachStepOfASearchReadsAtMostOneNode() {
+    val focus = above("Burger")
+    val firstInView = item(300, 500, "Fries")
+    val section =
+      Node(Rect(0, 100, 1000, 2000), null, false, false, above("Salad"), focus, firstInView)
+    val page = Node(viewport, null, false, true, Node(Rect(0, 100, 1000, 200)), section)
+    val search = WebScrollFocus.Search(page, listOf(focus, section, page), viewport, true)
+
+    var done = false
+    while (!done) {
+      val before = reads
+      done = search.step()
+      assertTrue(reads - before <= 1)
+    }
+    assertSame(firstInView, search.result())
+  }
+
+  @Test
+  fun aStoppedSearchReturnsAnItemAcrossAnEdgeFoundSoFar() {
+    val acrossTop = Node(Rect(0, 100, 1000, 300), text = "Salad")
+    val page =
+      Node(viewport, null, false, true, acrossTop, *Array(20) { Node(Rect(), text = "Item $it") })
+    val search = WebScrollFocus.Search(page, null, viewport, true)
+
+    repeat(5) { assertFalse(search.step()) }
+    search.stop()
+
+    assertSame(acrossTop, search.result())
+  }
+
+  @Test
+  fun aScrollBeforeANewTouchIsCheckedAgainstTheTouchBefore() {
+    // Scrolled at 1500 with the touch of 1000 to 1400; a swipe started at 1600.
+    assertTrue(WebScrollFocus.isUserScroll(1500, 1600, 1400, true, 1000, 1400, 500))
+    // Focus moved during the touch before.
+    assertFalse(WebScrollFocus.isUserScroll(1500, 1600, 1400, true, 1000, 1400, 1100))
+    assertFalse(WebScrollFocus.isUserScroll(1500, 1600, 1400, true, -1, -1, 500))
   }
 
   private fun sideways(node: Node) =

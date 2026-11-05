@@ -256,6 +256,66 @@ class TouchInteractionMonitorTest {
   }
 
   @Test
+  fun swipeThatEndedWhileTheMainThreadWasBusyIsAGestureAfterTheTouchStateClears() {
+    stateChangeAt(STATE_TOUCH_INTERACTING, 0)
+    touchAt(ACTION_DOWN, 40f, 200f, 0)
+    runUntil(10)
+    // A search of the app's nodes holds the main thread for about 800 ms, as one did after a
+    // two-finger scroll of a web page. Android ends the touch interaction while it runs.
+    for (step in 1..6) {
+      touchAt(ACTION_MOVE, 40f + 40f * step, 200f, 10L + 15 * step)
+    }
+    touchAt(ACTION_UP, 280f, 200f, 110)
+    stateChangeAt(STATE_CLEAR, 410)
+    mainThreadBusyUntil(830)
+    runUntil(900)
+
+    assertEquals(listOf<Thread>(), reporter.requests)
+    assertEquals(listOf(GESTURE_SWIPE_RIGHT), service.gestures)
+  }
+
+  @Test
+  fun swipeMadeWhileTheMainThreadWasBusyIsAGestureAfterTheTouchStateClears() {
+    // The main thread is busy before the finger goes down, and until the touch has ended.
+    stateChangeAt(STATE_TOUCH_INTERACTING, 0)
+    touchAt(ACTION_DOWN, 40f, 200f, 0)
+    for (step in 1..6) {
+      touchAt(ACTION_MOVE, 40f + 40f * step, 200f, 10L + 15 * step)
+    }
+    touchAt(ACTION_UP, 280f, 200f, 110)
+    stateChangeAt(STATE_CLEAR, 410)
+    mainThreadBusyUntil(830)
+    runUntil(900)
+
+    assertEquals(listOf<Thread>(), reporter.requests)
+    assertEquals(listOf(GESTURE_SWIPE_RIGHT), service.gestures)
+  }
+
+  @Test
+  fun quickSwipesWhileTheMainThreadIsBusyAreAllGestures() {
+    // Swipes 300 ms apart: Android keeps the touch interaction going between them.
+    stateChangeAt(STATE_TOUCH_INTERACTING, 0)
+    for (swipe in 0..2) {
+      val at = 300L * swipe
+      touchAt(ACTION_DOWN, 40f, 200f, at)
+      for (step in 1..6) {
+        touchAt(ACTION_MOVE, 40f + 40f * step, 200f, at + 10 + 15 * step)
+      }
+      touchAt(ACTION_UP, 280f, 200f, at + 110)
+    }
+    stateChangeAt(STATE_CLEAR, 1010)
+    runUntil(120)
+    mainThreadBusyUntil(940)
+    runUntil(1100)
+
+    assertEquals(listOf<Thread>(), reporter.requests)
+    assertEquals(
+      listOf(GESTURE_SWIPE_RIGHT, GESTURE_SWIPE_RIGHT, GESTURE_SWIPE_RIGHT),
+      service.gestures,
+    )
+  }
+
+  @Test
   fun doubleTapThatWaitedOnTheBusyMainThreadIsNotTakenForAHold() {
     stateChangeAt(STATE_TOUCH_INTERACTING, 0)
     touchAt(ACTION_DOWN, 160f, 200f, 0)
