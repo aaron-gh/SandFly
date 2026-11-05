@@ -40,9 +40,12 @@ import android.view.accessibility.AccessibilityWindowInfo
 import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics
 import com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForTapAndTouchExploration.TAP_TO_TYPE
 import com.google.android.accessibility.utils.SharedPreferencesUtils
+import com.google.android.accessibility.utils.output.LowLatencyAudio
 import java.time.Duration
 import org.junit.After
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
+import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -168,6 +171,7 @@ class TouchInteractionMonitorTest {
   fun tearDown() {
     monitor.stop()
     controller.unregisterCallback(monitor)
+    LowLatencyAudio.setTyping(false)
   }
 
   private fun callController(name: String, type: Class<*>, argument: Any) {
@@ -446,5 +450,18 @@ class TouchInteractionMonitorTest {
     runUntil(600)
 
     assertEquals(0, service.tapsToType)
+  }
+
+  @Test
+  fun touchOnTheKeyboardKeepsTheLowLatencyTrackRunningBetweenKeysUntilATouchElsewhere() {
+    showKeyboardAndTapToType()
+    tapAt(160f, 1200f, 0)
+    runUntil(20)
+    assertTrue(LowLatencyAudio.isTyping())
+
+    stateChangeAt(STATE_CLEAR, 100)
+    tapAt(160f, 200f, 200)
+    runUntil(220)
+    assertFalse(LowLatencyAudio.isTyping())
   }
 }
