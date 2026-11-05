@@ -853,6 +853,11 @@ public class TouchInteractionMonitor
             // Do nothing. Touch exploration will fire on a delay.
             break;
           case 2:
+            if (!gestureDetector.isTwoFingerPassthroughEnabled()) {
+              // SandFly handles two-finger swipes, so a two-finger touch never goes to the app.
+              logTwoFingerWait("two-finger swipes handled");
+              return;
+            }
             if (gestureDetector.isTwoFingerPassthroughEnabled()) {
               // Each finger must move passthroughTotalSlop (3x touchSlop) before the touch goes
               // to the app. MultiFingerSwipe lets the first fingers of a 3-finger swipe move up to
@@ -1392,9 +1397,37 @@ public class TouchInteractionMonitor
               GESTURE_FAKED_SPLIT_TYPING_AND_HOLD, displayId, new ArrayList<MotionEvent>()));
       // log firstDownTime with display id
       eventId = Performance.getInstance().onGestureEventReceived(displayId, null);
+    } else if (gestureId == AccessibilityService.GESTURE_4_FINGER_SINGLE_TAP) {
+      dispatchGestureToMainThreadAndClear(fourFingerTapByHalf(gestureEvent));
     } else {
       dispatchGestureToMainThreadAndClear(gestureEvent);
     }
+  }
+
+  /**
+   * Returns a four-finger tap on the top or bottom half of the screen in place of {@code tap} when
+   * that gesture runs a command, otherwise {@code tap}.
+   */
+  private AccessibilityGestureEvent fourFingerTapByHalf(AccessibilityGestureEvent tap) {
+    List<MotionEvent> events = tap.getMotionEvents();
+    if (events.isEmpty()) {
+      return tap;
+    }
+    MotionEvent last = events.get(events.size() - 1);
+    float y = 0;
+    for (int i = 0; i < last.getPointerCount(); i++) {
+      y += last.getY(i);
+    }
+    y /= last.getPointerCount();
+    int height = context.getResources().getDisplayMetrics().heightPixels;
+    int half =
+        y < height / 2f
+            ? GestureManifold.GESTURE_4_FINGER_SINGLE_TAP_TOP
+            : GestureManifold.GESTURE_4_FINGER_SINGLE_TAP_BOTTOM;
+    if (!isGestureAssigned(half)) {
+      return tap;
+    }
+    return new AccessibilityGestureEvent(half, tap.getDisplayId(), events);
   }
 
   /** Dispatch a gesture event to the main thread of the service. */

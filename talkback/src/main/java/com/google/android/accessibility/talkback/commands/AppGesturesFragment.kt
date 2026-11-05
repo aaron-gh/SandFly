@@ -21,7 +21,6 @@ import androidx.preference.PreferenceGroup
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.TalkBackService
 import com.google.android.accessibility.talkback.gesture.AppGestures
-import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping
 import com.google.android.accessibility.talkback.keyboard.KeyComboModel
 import com.google.android.accessibility.talkback.notifications.NotificationCodeFragment
 import com.google.android.accessibility.talkback.notifications.NotificationReader
@@ -150,8 +149,7 @@ class AppGestureFragment : NotificationCodeFragment(R.string.title_pref_app_gest
     else Commands.label(requireContext(), value) ?: value
 
   /** The gesture's key on the Gestures screen, without the gesture set. */
-  private fun baseKey(slot: CommandBindings.GestureSlot): String =
-    GestureShortcutMapping.getPrefKeyWithGestureSet(slot.key, 0)
+  private fun baseKey(slot: CommandBindings.GestureSlot): String = slot.baseKey
 
   private fun chooseGesture() {
     val context = requireContext()

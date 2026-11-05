@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/tutorial_chooser_dialog_padding">
+
+    <TextView
+        android:id="@+id/gesture_layout_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:accessibilityHeading="true"
+        android:text="@string/gesture_layout_dialog_title"
+        android:textAppearance="?attr/textAppearanceHeadline5"
+        android:layout_marginBottom="@dimen/tutorial_chooser_dialog_title_margin_bottom"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/sandfly_gestures_button"
+        style="@style/TutorialChooserButton"
+        android:text="@string/gesture_layout_sandfly" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/voiceover_gestures_button"
+        style="@style/TutorialChooserButton"
+        android:text="@string/gesture_layout_voiceover" />
+
+</LinearLayout>

@@ -356,6 +356,14 @@
             </intent-filter>
         </activity>
 
+        <!-- To choose SandFly's or VoiceOver's gestures the first time SandFly starts. -->
+        <activity
+            android:name="com.google.android.accessibility.talkback.gesture.GestureLayoutActivity"
+            android:theme="@style/Theme.TutorialChooserDialog"
+            android:excludeFromRecents="true"
+            android:exported="false">
+        </activity>
+
         <!-- To choose between touch and keyboard tutorial. -->
         <activity
             android:name="com.google.android.accessibility.talkback.trainingcommon.TutorialChooserActivity"

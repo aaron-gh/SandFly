@@ -36,6 +36,7 @@ import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.TwoStatePreference;
 import com.google.android.accessibility.talkback.R;
+import com.google.android.accessibility.talkback.gesture.GestureLayout;
 import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.preference.PreferencesActivityUtils;
@@ -145,11 +146,13 @@ public class DeveloperPrefFragment extends TalkbackBaseFragment {
               .setPositiveButton(
                   android.R.string.ok,
                   (DialogInterface dialog, int which) -> {
-                    SharedPreferencesUtils.putStringPref(
-                        prefs,
-                        getResources(),
-                        R.string.pref_shortcut_4finger_3tap_key,
-                        getString(R.string.shortcut_value_print_node_tree));
+                    prefs
+                        .edit()
+                        .putString(
+                            GestureLayout.key(
+                                prefs, getString(R.string.pref_shortcut_4finger_3tap_key)),
+                            getString(R.string.shortcut_value_print_node_tree))
+                        .apply();
                   })
               .create();
     }

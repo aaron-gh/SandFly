@@ -32,9 +32,10 @@ import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceDialogFragmentCompat;
 import androidx.preference.PreferenceGroup;
+import androidx.preference.TwoStatePreference;
 import com.google.android.accessibility.talkback.preference.TalkBackPreferencesActivity.TalkBackSubSettings;
-import com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory;
 import com.google.android.accessibility.talkback.R;
+import com.google.android.accessibility.talkback.gesture.GestureLayout;
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping;
 import com.google.android.accessibility.talkback.gesture.VibrationWatchGestureSettings;
 import com.google.android.accessibility.talkback.preference.PreferencesActivityUtils;
@@ -141,42 +142,17 @@ public class TalkBackGestureShortcutPreferenceFragment extends TalkbackBaseFragm
 
     @Nullable
     Preference gestureSetPreference = findPreference(getString(R.string.pref_gesture_set_key));
-    if (gestureSetEnabled) {
-      if (gestureSetPreference != null) {
-        int gestureSet =
-            SharedPreferencesUtils.getIntFromStringPref(
-                prefs,
-                getResources(),
-                R.string.pref_gesture_set_key,
-                R.string.pref_gesture_set_value_default);
-        updatePreferenceKey(gestureSet);
-      }
-    } else if (gestureSetPreference != null) {
+    if (!gestureSetEnabled && gestureSetPreference != null) {
       getPreferenceScreen().removePreference(gestureSetPreference);
     }
+    setUpGestureLayout();
+    updatePreferenceKeys();
 
     Preference resetGesturePreferenceScreen =
         (Preference) findPreference(getString(R.string.pref_reset_gesture_settings_key));
     resetGesturePreferenceScreen.setOnPreferenceClickListener(resetGesturePreferenceClickListener);
 
-    // Disable 2-finger swipe gestures which are reserved as 2-finger pass-through.
-    if (FeatureSupport.isMultiFingerGestureSupported()) {
-      String[] twoFingerPassThroughGestureSet =
-          context.getResources().getStringArray(R.array.pref_2finger_pass_through_shortcut_keys);
-      String[] summaries =
-          context.getResources().getStringArray(R.array.pref_2finger_pass_through_shortcut_summary);
-      if (twoFingerPassThroughGestureSet.length == summaries.length) {
-        for (int i = 0; i < twoFingerPassThroughGestureSet.length; i++) {
-          GestureListPreference twoFingerGesturePreference =
-              findPreference(twoFingerPassThroughGestureSet[i]);
-          if (twoFingerGesturePreference != null) {
-            twoFingerGesturePreference.setEnabled(false);
-            twoFingerGesturePreference.setSummaryWhenDisabled(
-                context.getResources().getString(R.string.shortcut_not_customizable, summaries[i]));
-          }
-        }
-      }
-    }
+    updateTwoFingerSwipeRows();
     if (!FormFactorUtils.isAndroidWear()) {
       Preference vibrationWatch =
           findPreference(getString(R.string.pref_reserve_vibration_watch_gestures_key));
@@ -216,7 +192,10 @@ public class TalkBackGestureShortcutPreferenceFragment extends TalkbackBaseFragm
   private void runPreferencesCustomization(
       List<Integer> keys, Consumer<Preference> preferenceModifier) {
     for (int keyId : keys) {
-      Preference preference = findPreferenceByResId(keyId);
+      Preference preference = findGestureRow(getString(keyId));
+      if (preference == null) {
+        preference = findPreferenceByResId(keyId);
+      }
       if (preference != null) {
         preferenceModifier.accept(preference);
       }
@@ -235,13 +214,7 @@ public class TalkBackGestureShortcutPreferenceFragment extends TalkbackBaseFragm
     if (!shouldUpdatePreferenceOnResume) {
       return;
     }
-    int gestureSet =
-        SharedPreferencesUtils.getIntFromStringPref(
-            prefs,
-            getResources(),
-            R.string.pref_gesture_set_key,
-            R.string.pref_gesture_set_value_default);
-    updatePreferenceKey(gestureSet);
+    updatePreferenceKeys();
     shouldUpdatePreferenceOnResume = false;
   }
 
@@ -254,17 +227,9 @@ public class TalkBackGestureShortcutPreferenceFragment extends TalkbackBaseFragm
     boolean manuallyReserved = VibrationWatchGestureSettings.isEnabled(prefs);
     boolean unavailable =
         manuallyReserved || SettingsUtils.isVibrationWatchEnabled(requireContext());
-    int gestureSet =
-        SharedPreferencesUtils.getIntFromStringPref(
-            prefs,
-            getResources(),
-            R.string.pref_gesture_set_key,
-            R.string.pref_gesture_set_value_default);
     for (int keyId :
         new int[] {R.string.pref_shortcut_2finger_1tap_key, R.string.pref_shortcut_2finger_2tap_key}) {
-      GestureListPreference preference =
-          findPreference(
-              GestureShortcutMapping.getPrefKeyWithGestureSet(getString(keyId), gestureSet));
+      GestureListPreference preference = findGestureRow(getString(keyId));
       if (preference != null) {
         preference.setSummaryWhenDisabled(
             getString(
@@ -302,89 +267,148 @@ public class TalkBackGestureShortcutPreferenceFragment extends TalkbackBaseFragm
             preference.setValue(newValueString);
           }
 
-          updatePreferenceKey(Integer.parseInt(newValueString));
+          updatePreferenceKeys();
           updatePreferencesForVibrationWatchIfNeeded();
+        } else if (TextUtils.equals(key, GestureLayout.KEY)) {
+          ListPreference layout = findPreference(GestureLayout.KEY);
+          if (layout != null) {
+            layout.setValue(GestureLayout.current(prefs));
+          }
+          updatePreferenceKeys();
+        } else if (TextUtils.equals(key, GestureLayout.TWO_FINGER_SWIPES_KEY)) {
+          TwoStatePreference twoFingerSwipes = findPreference(GestureLayout.TWO_FINGER_SWIPES_KEY);
+          if (twoFingerSwipes != null) {
+            twoFingerSwipes.setChecked(GestureLayout.handlesTwoFingerSwipes(prefs));
+          }
+          updateTwoFingerSwipeRows();
         } else if (TextUtils.equals(key, VibrationWatchGestureSettings.PREF_RESERVED)) {
           updatePreferencesForVibrationWatchIfNeeded();
         }
       };
 
-  private void updatePreferenceKeyForGesture(
-      AccessibilitySuitePreferenceCategory category, int gestureSet) {
-    int count = category.getPreferenceCount();
+  /** Returns the gesture set in use, 0 with only one. */
+  private int gestureSet() {
+    if (!GestureShortcutMapping.isGestureSetEnabled(
+        getContext(),
+        prefs,
+        R.string.pref_multiple_gesture_set_key,
+        R.bool.pref_multiple_gesture_set_default)) {
+      return 0;
+    }
+    return SharedPreferencesUtils.getIntFromStringPref(
+        prefs, getResources(), R.string.pref_gesture_set_key, R.string.pref_gesture_set_value_default);
+  }
 
-    for (int i = 0; i < count; i++) {
-      Preference preference = category.getPreference(i);
-      if (preference instanceof GestureListPreference) {
-        GestureListPreference gesture = (GestureListPreference) preference;
-        String key =
-            GestureShortcutMapping.getPrefKeyWithGestureSet(preference.getKey(), gestureSet);
-        gesture.setKey(key);
-        gesture.setSummary(
-            GestureShortcutMapping.getActionString(
-                getContext(), prefs.getString(key, gesture.getDefaultValue())));
+  /** Returns every gesture row of the screen. */
+  private List<GestureListPreference> gestureRows() {
+    List<GestureListPreference> rows = new ArrayList<>();
+    collectGestureRows(getPreferenceScreen(), rows);
+    return rows;
+  }
+
+  private static void collectGestureRows(PreferenceGroup group, List<GestureListPreference> rows) {
+    for (int i = 0; i < group.getPreferenceCount(); i++) {
+      Preference preference = group.getPreference(i);
+      if (preference instanceof GestureListPreference gesture) {
+        rows.add(gesture);
+      } else if (preference instanceof PreferenceGroup child) {
+        collectGestureRows(child, rows);
       }
     }
   }
 
-  /** With more than one gesture set, gestures' keys end with the set in use. */
+  /** Returns the row of the gesture whose key without a layout or set is {@code baseKey}. */
+  @Nullable
+  private GestureListPreference findGestureRow(String baseKey) {
+    for (GestureListPreference row : gestureRows()) {
+      if (TextUtils.equals(row.getBaseKey(), baseKey)) {
+        return row;
+      }
+    }
+    return null;
+  }
+
+  /** Points each gesture row at its key and default command in the layout and set in use. */
+  private void updatePreferenceKeys() {
+    int gestureSet = gestureSet();
+    for (GestureListPreference row : gestureRows()) {
+      String baseKey = row.getBaseKey();
+      row.useKey(
+          GestureShortcutMapping.getPrefKeyWithGestureSet(
+              GestureLayout.key(prefs, baseKey), gestureSet),
+          GestureLayout.defaultValue(getContext(), prefs, baseKey, row.getSandFlyDefault()));
+    }
+  }
+
+  /** Gesture layout list and two-finger swipe switch at the top of the screen. */
+  private void setUpGestureLayout() {
+    ListPreference layout = findPreference(GestureLayout.KEY);
+    if (layout != null) {
+      layout.setValue(GestureLayout.current(prefs));
+      layout.setOnPreferenceChangeListener(
+          (preference, newValue) -> {
+            GestureLayout.select(prefs, String.valueOf(newValue));
+            return true;
+          });
+    }
+    TwoStatePreference twoFingerSwipes = findPreference(GestureLayout.TWO_FINGER_SWIPES_KEY);
+    if (twoFingerSwipes != null) {
+      if (FeatureSupport.isMultiFingerGestureSupported()) {
+        twoFingerSwipes.setChecked(GestureLayout.handlesTwoFingerSwipes(prefs));
+      } else {
+        twoFingerSwipes.setVisible(false);
+      }
+    }
+  }
+
+  /**
+   * Two-finger swipes scroll in the app unless SandFly handles them, and can't be assigned while
+   * they do.
+   */
+  private void updateTwoFingerSwipeRows() {
+    if (!FeatureSupport.isMultiFingerGestureSupported()) {
+      return;
+    }
+    boolean reserved = !GestureLayout.handlesTwoFingerSwipes(prefs);
+    String[] keys = getResources().getStringArray(R.array.pref_2finger_pass_through_shortcut_keys);
+    String[] summaries =
+        getResources().getStringArray(R.array.pref_2finger_pass_through_shortcut_summary);
+    if (keys.length != summaries.length) {
+      return;
+    }
+    for (int i = 0; i < keys.length; i++) {
+      GestureListPreference row = findGestureRow(keys[i]);
+      if (row != null) {
+        row.setSummaryWhenDisabled(
+            reserved ? getString(R.string.shortcut_not_customizable, summaries[i]) : null);
+        row.setEnabled(!reserved);
+      }
+    }
+  }
+
+  /** Gestures' keys end with the layout and set in use. */
   @Override
   public String foundKey(String key) {
-    if (prefs == null
-        || !GestureShortcutMapping.isGestureSetEnabled(
-            getContext(),
-            prefs,
-            R.string.pref_multiple_gesture_set_key,
-            R.bool.pref_multiple_gesture_set_default)) {
+    if (prefs == null) {
       return key;
     }
-    int gestureSet =
-        SharedPreferencesUtils.getIntFromStringPref(
-            prefs,
-            getResources(),
-            R.string.pref_gesture_set_key,
-            R.string.pref_gesture_set_value_default);
-    String setKey = GestureShortcutMapping.getPrefKeyWithGestureSet(key, gestureSet);
-    return findPreference(setKey) instanceof GestureListPreference ? setKey : key;
-  }
-
-  private void updatePreferenceKey(int gestureSet) {
-    PreferenceGroup root = getPreferenceScreen();
-    int count = root.getPreferenceCount();
-    for (int i = 0; i < count; i++) {
-      Preference preference = root.getPreference(i);
-      if (preference instanceof AccessibilitySuitePreferenceCategory) {
-        updatePreferenceKeyForGesture(
-            (AccessibilitySuitePreferenceCategory) preference, gestureSet);
-      }
-    }
+    @Nullable GestureListPreference row = findGestureRow(key);
+    return row != null ? row.getKey() : key;
   }
 
   private void resetGestureShortcut() {
     // Reset preference to default
     final SharedPreferences.Editor prefEditor = prefs.edit();
     final String[] gesturePrefKeys = getResources().getStringArray(R.array.pref_shortcut_keys);
-    int gestureSet =
-        SharedPreferencesUtils.getIntFromStringPref(
-            prefs,
-            getResources(),
-            R.string.pref_gesture_set_key,
-            R.string.pref_gesture_set_value_default);
-
-    PreferenceGroup root = getPreferenceScreen();
-
+    int gestureSet = gestureSet();
     for (String defaultKey : gesturePrefKeys) {
-      String prefKey = GestureShortcutMapping.getPrefKeyWithGestureSet(defaultKey, gestureSet);
-      if (prefs.contains(prefKey)) {
-        GestureListPreference preference = (GestureListPreference) root.findPreference(prefKey);
-        if (preference != null) {
-          // for multi-finger gestures which are not supported before R, the preference may not be
-          // found. We don't need to reset the relative preferences.
-          preference.updateSummaryToDefaultValue();
-        }
-        prefEditor.remove(prefKey);
-      }
+      prefEditor.remove(
+          GestureShortcutMapping.getPrefKeyWithGestureSet(
+              GestureLayout.key(prefs, defaultKey), gestureSet));
     }
     prefEditor.apply();
+    for (GestureListPreference row : gestureRows()) {
+      row.refresh();
+    }
   }
 }

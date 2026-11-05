@@ -71,6 +71,10 @@ public final class GestureListPreference extends AccessibilitySuiteDialogPrefere
   private String initialValue;
   // A customized summary which is used when the preference is in disable state
   @Nullable private String summaryWhenDisabled;
+  // The gesture's key and command as the Gestures screen defines them, before useKey() points the
+  // row at the gesture layout and set in use.
+  @Nullable private String baseKey;
+  @Nullable private String sandFlyDefault;
 
   public GestureListPreference(Context context, AttributeSet attributeSet) {
     super(context, attributeSet);
@@ -199,6 +203,30 @@ public final class GestureListPreference extends AccessibilitySuiteDialogPrefere
 
   public String getDefaultValue() {
     return initialValue;
+  }
+
+  /** Returns the gesture's preference key without a gesture layout or set. */
+  public String getBaseKey() {
+    return baseKey != null ? baseKey : getKey();
+  }
+
+  /** Returns the command the gesture runs until changed with SandFly's gestures. */
+  public String getSandFlyDefault() {
+    return sandFlyDefault != null ? sandFlyDefault : initialValue;
+  }
+
+  /**
+   * Points the row at {@code key}, the gesture's key in the gesture layout and set in use, where it
+   * runs {@code defaultValue} until changed.
+   */
+  public void useKey(String key, String defaultValue) {
+    if (baseKey == null) {
+      baseKey = getKey();
+      sandFlyDefault = initialValue;
+    }
+    setKey(key);
+    initialValue = defaultValue;
+    notifyChanged();
   }
 
   /** Returns the text of the action for the current preference value. */

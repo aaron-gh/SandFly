@@ -25,6 +25,8 @@ import static com.google.android.accessibility.utils.gestures.GestureManifold.GE
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_3_FINGER_PINCH;
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_3_FINGER_QUADRUPLE_TAP;
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_3_FINGER_SPREAD;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_4_FINGER_SINGLE_TAP_BOTTOM;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_4_FINGER_SINGLE_TAP_TOP;
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_4_FINGER_PINCH;
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_4_FINGER_SPREAD;
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_LONG_SWIPE_DOWN_FROM_TOP_LEFT;
@@ -418,6 +420,17 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
         MULTI_FINGER,
         R.string.pref_shortcut_4finger_1tap_key,
         R.string.pref_shortcut_4finger_1tap_default),
+    // Only recognized when SandFly detects gestures itself.
+    FOUR_FINGER_SINGLE_TAP_TOP(
+        GESTURE_4_FINGER_SINGLE_TAP_TOP,
+        MULTI_FINGER,
+        R.string.pref_shortcut_4finger_1tap_top_key,
+        R.string.pref_shortcut_4finger_1tap_top_default),
+    FOUR_FINGER_SINGLE_TAP_BOTTOM(
+        GESTURE_4_FINGER_SINGLE_TAP_BOTTOM,
+        MULTI_FINGER,
+        R.string.pref_shortcut_4finger_1tap_bottom_key,
+        R.string.pref_shortcut_4finger_1tap_bottom_default),
     FOUR_FINGER_DOUBLE_TAP(
         AccessibilityService.GESTURE_4_FINGER_DOUBLE_TAP,
         MULTI_FINGER,
@@ -912,6 +925,7 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
     ANNOUNCE_BATTERY_STATE(
         R.string.shortcut_value_announce_battery_state, R.string.shortcut_announce_battery_state),
     ANNOUNCE_STATUS(R.string.shortcut_value_announce_status, R.string.shortcut_announce_status),
+    SPEAK_POSITION(R.string.shortcut_value_speak_position, R.string.shortcut_speak_position),
     INSPECT_ITEM(R.string.shortcut_value_inspect_item, R.string.shortcut_inspect_item),
     COPY_SCREEN_TREE(R.string.shortcut_value_copy_screen_tree, R.string.shortcut_copy_screen_tree),
     TOGGLE_SCRIPTS(R.string.shortcut_value_toggle_scripts, R.string.shortcut_toggle_scripts),
@@ -1170,7 +1184,9 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
       return appAction;
     }
     int gestureSet = gestureSetEnabled ? currentGestureSet : 0;
-    return prefs.getString(getPrefKeyWithGestureSet(key, gestureSet), defaultValue);
+    return prefs.getString(
+        getPrefKeyWithGestureSet(GestureLayout.key(prefs, key), gestureSet),
+        GestureLayout.defaultValue(context, prefs, key, defaultValue));
   }
 
   /**
@@ -1350,11 +1366,22 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
           if (FeatureSupport.doesServiceHandleDoubleTap()
               && (gesture == TalkBackGesture.ONE_FINGER_DOUBLE_TAP
                   || gesture == TalkBackGesture.ONE_FINGER_DOUBLE_TAP_AND_HOLD)) {
-            String keyId = getPrefKeyWithGestureSet(context.getString(gesture.keyId), index);
+            String baseKey = context.getString(gesture.keyId);
+            String keyId = getPrefKeyWithGestureSet(GestureLayout.key(prefs, baseKey), index);
             gestureIdToActionKeyMap.put(
                 gesture.gestureId,
-                prefs.getString(keyId, context.getString(gesture.defaultActionId)));
+                prefs.getString(
+                    keyId,
+                    GestureLayout.defaultValue(
+                        context, prefs, baseKey, context.getString(gesture.defaultActionId))));
           }
+          continue;
+        }
+
+        // With VoiceOver's gestures, two-finger swipes that scroll in the app run nothing here.
+        if (isTwoFingerSwipe(gesture)
+            && GestureLayout.isVoiceOver(prefs)
+            && !GestureLayout.handlesTwoFingerSwipes(prefs)) {
           continue;
         }
 
@@ -1363,8 +1390,12 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
           continue;
         }
 
-        String keyId = getPrefKeyWithGestureSet(context.getString(gesture.keyId), index);
-        String action = prefs.getString(keyId, context.getString(gesture.defaultActionId));
+        String baseKey = context.getString(gesture.keyId);
+        String defaultAction =
+            GestureLayout.defaultValue(
+                context, prefs, baseKey, context.getString(gesture.defaultActionId));
+        String keyId = getPrefKeyWithGestureSet(GestureLayout.key(prefs, baseKey), index);
+        String action = prefs.getString(keyId, defaultAction);
         // When diagnosis-mode is on, override a gesture to dump node-tree to logs.
         if ((gesture == TalkBackGesture.FOUR_FINGER_SINGLE_TAP)
             && PreferencesActivityUtils.isDiagnosisModeOn(prefs, context.getResources())) {
@@ -1379,7 +1410,7 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
         }
 
         // Check the action is default or customized action.
-        if (TextUtils.equals(action, context.getString(gesture.defaultActionId))) {
+        if (TextUtils.equals(action, defaultAction)) {
           gestureCollector.addDefaultGesture(gesture);
         } else {
           gestureCollector.addCustomizedGesture(gesture);
@@ -1391,9 +1422,7 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
         if (gesture.gestureType == FINGERPRINT) {
           // Fingerprint gestures use another gesture id system.
           newFingerPrintGestureIdToActionKey.put(
-              gesture.gestureId,
-              prefs.getString(
-                  context.getString(gesture.keyId), context.getString(gesture.defaultActionId)));
+              gesture.gestureId, prefs.getString(GestureLayout.key(prefs, baseKey), defaultAction));
         } else {
           gestureIdToActionKeyMap.put(gesture.gestureId, action);
         }
@@ -1414,6 +1443,13 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
       }
     }
     fingerprintGestureIdToActionKey = newFingerPrintGestureIdToActionKey;
+  }
+
+  private static boolean isTwoFingerSwipe(TalkBackGesture gesture) {
+    return gesture == TalkBackGesture.TWO_FINGER_SWIPE_UP
+        || gesture == TalkBackGesture.TWO_FINGER_SWIPE_DOWN
+        || gesture == TalkBackGesture.TWO_FINGER_SWIPE_LEFT
+        || gesture == TalkBackGesture.TWO_FINGER_SWIPE_RIGHT;
   }
 
   private boolean skipGestureForRTL(TalkBackGesture gesture) {
@@ -1597,6 +1633,10 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
           context.getString(R.string.title_pref_shortcut_4finger_swipe_right);
       case AccessibilityService.GESTURE_4_FINGER_SINGLE_TAP ->
           context.getString(R.string.title_pref_shortcut_4finger_1tap);
+      case GESTURE_4_FINGER_SINGLE_TAP_TOP ->
+          context.getString(R.string.title_pref_shortcut_4finger_1tap_top);
+      case GESTURE_4_FINGER_SINGLE_TAP_BOTTOM ->
+          context.getString(R.string.title_pref_shortcut_4finger_1tap_bottom);
       case AccessibilityService.GESTURE_4_FINGER_DOUBLE_TAP ->
           context.getString(R.string.title_pref_shortcut_4finger_2tap);
       case AccessibilityService.GESTURE_4_FINGER_TRIPLE_TAP ->

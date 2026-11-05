@@ -201,7 +201,10 @@ class BackTapCommands(
     }
     val unassigned = context.getString(R.string.shortcut_value_unassigned)
     val value =
-      prefs.getString(GestureShortcutMapping.getPrefKeyWithGestureSet(key, gestureSet), unassigned)
+      prefs.getString(
+        GestureShortcutMapping.getPrefKeyWithGestureSet(GestureLayout.key(prefs, key), gestureSet),
+        GestureLayout.defaultValue(context, prefs, key, unassigned),
+      )
     return !value.isNullOrEmpty() && value != unassigned
   }
 

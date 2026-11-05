@@ -455,7 +455,11 @@ internal object TutorialLessons {
             TutorialStep(
               R.string.sandfly_tutorial_scrolling_page,
               actions = listOf(R.string.shortcut_value_scroll_forward),
-              check = command(R.string.shortcut_value_scroll_forward),
+              // VoiceOver's gestures scroll down instead.
+              altText = R.string.sandfly_tutorial_scrolling_page_down,
+              altActions = listOf(R.string.shortcut_value_scroll_down),
+              check =
+                command(R.string.shortcut_value_scroll_forward, R.string.shortcut_value_scroll_down),
             ),
           ),
       ),

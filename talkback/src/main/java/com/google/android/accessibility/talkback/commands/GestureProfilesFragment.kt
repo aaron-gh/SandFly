@@ -22,7 +22,6 @@ import androidx.preference.PreferenceGroup
 import com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.gesture.GestureProfiles
-import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping
 import com.google.android.accessibility.talkback.notifications.NotificationCodeFragment
 import com.google.android.accessibility.talkback.preference.base.GestureListPreference
 
@@ -129,7 +128,7 @@ class GestureProfileFragment : NotificationCodeFragment(R.string.title_pref_gest
       group.title = category.title
       screen.addPreference(group)
       for (slot in category.gestures) {
-        val key = GestureProfiles.rowKey(id, GestureShortcutMapping.getPrefKeyWithGestureSet(slot.key, 0))
+        val key = GestureProfiles.rowKey(id, slot.baseKey)
         GestureListPreference(context, key, slot.name, GestureProfiles.DEFAULT_VALUE).also {
           it.isPersistent = false
           it.isIconSpaceReserved = false

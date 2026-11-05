@@ -22,6 +22,7 @@ import androidx.preference.Preference
 import androidx.preference.PreferenceGroup
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.TalkBackService
+import com.google.android.accessibility.talkback.gesture.GestureLayout
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping
 import com.google.android.accessibility.talkback.keyboard.ArrowKeyNav
 import com.google.android.accessibility.talkback.keyboard.ArrowKeys
@@ -35,8 +36,16 @@ import com.google.android.accessibility.utils.SharedPreferencesUtils
 /** Which gestures and keyboard shortcuts run each command, for the settings screens. */
 object CommandBindings {
 
-  /** A gesture that can run a command: its preference key in the current gesture set. */
-  class GestureSlot(val key: String, val name: CharSequence, private val defaultValue: String) {
+  /**
+   * A gesture that can run a command: its preference key in the current gesture layout and set, and
+   * [baseKey], its key without either, which names it in gesture profiles and the gestures of apps.
+   */
+  class GestureSlot(
+    val key: String,
+    val name: CharSequence,
+    private val defaultValue: String,
+    val baseKey: String = key,
+  ) {
     /** Returns the value of the command this gesture runs. */
     fun value(context: Context, prefs: SharedPreferences): String {
       val value = prefs.getString(key, defaultValue) ?: defaultValue
@@ -97,20 +106,28 @@ object CommandBindings {
       } else {
         0
       }
-    // Two-finger swipes scroll on their own while multi-finger gestures work.
+    // Two-finger swipes scroll on their own while multi-finger gestures work, unless SandFly
+    // handles them.
     val reserved =
-      if (FeatureSupport.isMultiFingerGestureSupported()) {
+      if (
+        FeatureSupport.isMultiFingerGestureSupported() &&
+          !GestureLayout.handlesTwoFingerSwipes(prefs)
+      ) {
         context.resources.getStringArray(R.array.pref_2finger_pass_through_shortcut_keys).toSet()
       } else {
         emptySet()
       }
     return preferences
-      .filter { it.key !in reserved }
+      .filter { it.baseKey !in reserved }
       .map {
         GestureSlot(
-          GestureShortcutMapping.getPrefKeyWithGestureSet(it.key, gestureSet),
-          it.title ?: it.key,
-          it.defaultValue,
+          GestureShortcutMapping.getPrefKeyWithGestureSet(
+            GestureLayout.key(prefs, it.baseKey),
+            gestureSet,
+          ),
+          it.title ?: it.baseKey,
+          GestureLayout.defaultValue(context, prefs, it.baseKey, it.sandFlyDefault),
+          it.baseKey,
         )
       }
   }

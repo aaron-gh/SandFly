@@ -195,6 +195,8 @@ import com.google.android.accessibility.talkback.focusmanagement.interpreter.Tou
 import com.google.android.accessibility.talkback.focusmanagement.record.AccessibilityFocusActionHistory;
 import com.google.android.accessibility.talkback.gesture.BackTapCommands;
 import com.google.android.accessibility.talkback.gesture.GestureController;
+import com.google.android.accessibility.talkback.gesture.GestureLayout;
+import com.google.android.accessibility.talkback.gesture.GestureLayoutActivity;
 import com.google.android.accessibility.talkback.gesture.GestureHistory;
 import com.google.android.accessibility.talkback.gesture.GestureProfiles;
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping;
@@ -2195,8 +2197,17 @@ public class TalkBackService extends AccessibilityServiceCompat
         // The method of requestPhonePermissionIfNeeded, which is triggered after the tutorial is
         // finished, is dependent on hasOnboardingForNewFeaturesBeenShown, so we move it at the rear
         // of markAllOnboardingAsShown.
-        showTutorial();
+        if (shouldAskGestureLayout()) {
+          // The tutorial teaches the gestures chosen, so it opens after the choice.
+          startActivity(
+              GestureLayoutActivity.intent(
+                  this, TutorialInitiator.createFirstRunTutorialIntent(getApplicationContext())));
+        } else {
+          showTutorial();
+        }
       }
+    } else if (shouldAskGestureLayout()) {
+      startActivity(GestureLayoutActivity.intent(this, /* next= */ null));
     } else {
       if (Settings.Secure.getInt(getContentResolver(), Settings.Global.DEVICE_PROVISIONED, 1)
           != 0) {
@@ -3244,9 +3255,12 @@ public class TalkBackService extends AccessibilityServiceCompat
     } else {
       info.flags |= ExperimentalUtils.getAdditionalTalkBackServiceFlags();
       if (FeatureSupport.isMultiFingerGestureSupported()) {
-        info.flags |=
-            AccessibilityServiceInfo.FLAG_REQUEST_MULTI_FINGER_GESTURES
-                | AccessibilityServiceInfo.FLAG_REQUEST_2_FINGER_PASSTHROUGH;
+        info.flags |= AccessibilityServiceInfo.FLAG_REQUEST_MULTI_FINGER_GESTURES;
+        if (GestureLayout.handlesTwoFingerSwipes(prefs)) {
+          info.flags &= ~AccessibilityServiceInfo.FLAG_REQUEST_2_FINGER_PASSTHROUGH;
+        } else {
+          info.flags |= AccessibilityServiceInfo.FLAG_REQUEST_2_FINGER_PASSTHROUGH;
+        }
         resetTouchExplorePassThrough();
       } else {
         info.flags &=
@@ -3936,10 +3950,19 @@ public class TalkBackService extends AccessibilityServiceCompat
     applyTouchExplorationPreference();
 
     if (FeatureSupport.isMultiFingerGestureSupported()) {
+      boolean handlesTwoFingerSwipes = GestureLayout.handlesTwoFingerSwipes(prefs);
       requestServiceFlag(
-          AccessibilityServiceInfo.FLAG_REQUEST_MULTI_FINGER_GESTURES
-              | AccessibilityServiceInfo.FLAG_REQUEST_2_FINGER_PASSTHROUGH,
-          /* newValue= */ true);
+          AccessibilityServiceInfo.FLAG_REQUEST_MULTI_FINGER_GESTURES, /* newValue= */ true);
+      requestServiceFlag(
+          AccessibilityServiceInfo.FLAG_REQUEST_2_FINGER_PASSTHROUGH,
+          /* newValue= */ !handlesTwoFingerSwipes);
+      if (FeatureSupport.supportGestureDetection()) {
+        for (int i = 0; i < displayIdToTouchInteractionMonitors.size(); i++) {
+          displayIdToTouchInteractionMonitors
+              .valueAt(i)
+              .setTwoFingerPassthroughEnabled(!handlesTwoFingerSwipes);
+        }
+      }
       resetTouchExplorePassThrough();
     }
 
@@ -4567,6 +4590,20 @@ public class TalkBackService extends AccessibilityServiceCompat
     startActivity(TutorialInitiator.createFirstRunTutorialIntent(getApplicationContext()));
   }
 
+  /**
+   * Whether to ask, the first time SandFly starts on a touch screen, for SandFly's gestures or
+   * VoiceOver's.
+   */
+  private boolean shouldAskGestureLayout() {
+    return isFirstTimeUser()
+        && !GestureLayout.isChosen(prefs)
+        && supportsTouchScreen
+        && getResources().getConfiguration().touchscreen != Configuration.TOUCHSCREEN_NOTOUCH
+        && !FormFactorUtils.isAndroidTv()
+        && !FormFactorUtils.isAndroidWear()
+        && !FormFactorUtils.isAndroidXr();
+  }
+
   private void setFirstTimeUser(boolean newValue) {
     prefs.edit().putBoolean(PREF_FIRST_TIME_USER, newValue).apply();
   }
@@ -5070,7 +5107,8 @@ public class TalkBackService extends AccessibilityServiceCompat
               this::provisionTouchExplore,
               this::onGestureDebug);
       touchInteractionMonitor.setMultiFingerGesturesEnabled(true);
-      touchInteractionMonitor.setTwoFingerPassthroughEnabled(true);
+      touchInteractionMonitor.setTwoFingerPassthroughEnabled(
+          !GestureLayout.handlesTwoFingerSwipes(prefs));
       touchInteractionMonitor.setServiceHandlesDoubleTap(true);
       // No executor: the controller calls the monitor on the main thread as each event comes in, in
       // order with the timeouts that gesture detection counts there.

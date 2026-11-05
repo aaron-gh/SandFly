@@ -84,6 +84,7 @@ import com.google.android.accessibility.talkback.Feedback.TalkBackUI.Item;
 import com.google.android.accessibility.talkback.Interpretation;
 import com.google.android.accessibility.talkback.Pipeline;
 import com.google.android.accessibility.talkback.R;
+import com.google.android.accessibility.talkback.gesture.GestureLayout;
 import com.google.android.accessibility.talkback.preference.ItemOrder;
 import com.google.android.accessibility.talkback.UserInterface.UserInputEventListener;
 import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics;
@@ -3232,13 +3233,11 @@ public class SelectorController implements UserInputEventListener {
               SELECTOR_MENU_ITEM_OVERLAY_SINGLE_FINGER, message, /* showIcon= */ false));
     } else if (FeatureSupport.isMultiFingerGestureSupported()
         && selectPreviousSetting.equals(
-            prefs.getString(
-                context.getString(R.string.pref_shortcut_3finger_swipe_left_key),
-                context.getString(R.string.pref_shortcut_3finger_swipe_left_default)))
+            GestureLayout.read(
+                context, prefs, context.getString(R.string.pref_shortcut_3finger_swipe_left_key), context.getString(R.string.pref_shortcut_3finger_swipe_left_default)))
         && selectNextSetting.equals(
-            prefs.getString(
-                context.getString(R.string.pref_shortcut_3finger_swipe_right_key),
-                context.getString(R.string.pref_shortcut_3finger_swipe_right_default)))) {
+            GestureLayout.read(
+                context, prefs, context.getString(R.string.pref_shortcut_3finger_swipe_right_key), context.getString(R.string.pref_shortcut_3finger_swipe_right_default)))) {
       // Shows a selector overlay with 3-finger swipe left/right gesture icons.
       pipeline.returnFeedback(
           eventId,
@@ -3247,13 +3246,11 @@ public class SelectorController implements UserInputEventListener {
     } else {
       boolean isSwipeUpDownAndDownUpForSelector =
           selectPreviousSetting.equals(
-                  prefs.getString(
-                      context.getString(R.string.pref_shortcut_up_and_down_key),
-                      context.getString(R.string.pref_shortcut_up_and_down_default)))
+                  GestureLayout.read(
+                context, prefs, context.getString(R.string.pref_shortcut_up_and_down_key), context.getString(R.string.pref_shortcut_up_and_down_default)))
               && selectNextSetting.equals(
-                  prefs.getString(
-                      context.getString(R.string.pref_shortcut_down_and_up_key),
-                      context.getString(R.string.pref_shortcut_down_and_up_default)));
+                  GestureLayout.read(
+                context, prefs, context.getString(R.string.pref_shortcut_down_and_up_key), context.getString(R.string.pref_shortcut_down_and_up_default)));
       // Shows a selector overlay with swipe up-down/down-up gesture icons if swiping
       // up-down/down-up gestures are for selecting selector items. Otherwise, shows a selector
       // overlay without gesture icons.
@@ -3284,13 +3281,11 @@ public class SelectorController implements UserInputEventListener {
     boolean isSwipeUpDownForSelector =
         !FormFactorUtils.isAndroidWear()
             && selectedSettingPreviousAction.equals(
-                prefs.getString(
-                    context.getString(R.string.pref_shortcut_up_key),
-                    context.getString(R.string.pref_shortcut_up_default)))
+                GestureLayout.read(
+                context, prefs, context.getString(R.string.pref_shortcut_up_key), context.getString(R.string.pref_shortcut_up_default)))
             && selectedSettingNextAction.equals(
-                prefs.getString(
-                    context.getString(R.string.pref_shortcut_down_key),
-                    context.getString(R.string.pref_shortcut_down_default)));
+                GestureLayout.read(
+                context, prefs, context.getString(R.string.pref_shortcut_down_key), context.getString(R.string.pref_shortcut_down_default)));
     // Shows a selector overlay with swipe up/down gesture icons if swiping up/down gestures are
     // for adjusting selected settings. Otherwise, shows a selector overlay without gesture icons.
     pipeline.returnFeedback(
