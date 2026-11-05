@@ -28,7 +28,7 @@ import com.google.android.accessibility.utils.SharedPreferencesUtils
 
 /**
  * Turns speech from other apps on or off, and lists the apps that have asked, each of which can be
- * allowed or not.
+ * allowed or not, and, for an app that declares it can, allowed while the device is locked.
  */
 class SpeechControlFragment : TalkbackBaseFragment() {
   private lateinit var prefs: SharedPreferences
@@ -88,16 +88,29 @@ class SpeechControlFragment : TalkbackBaseFragment() {
       )
     }
     for ((app, label) in apps) {
+      val allowed = SpeechControlApps.state(prefs, app) == SpeechControlApps.State.ALLOWED
+      val whileLocked =
+        if (SpeechControl.declaresSpeakWhenLocked(context, app)) {
+          checkBox(
+            context,
+            title = getString(R.string.speech_control_locked_app, label),
+            summary = null,
+            checked = SpeechControlApps.lockedState(prefs, app) == SpeechControlApps.State.ALLOWED,
+          ) { checked ->
+            SpeechControlApps.setAllowedWhileLocked(prefs, app, checked)
+          }
+            .apply { isEnabled = allowed }
+        } else {
+          null
+        }
       category.addPreference(
-        checkBox(
-          context,
-          title = label,
-          summary = null,
-          checked = SpeechControlApps.state(prefs, app) == SpeechControlApps.State.ALLOWED,
-        ) { checked ->
+        checkBox(context, title = label, summary = null, checked = allowed) { checked ->
           SpeechControlApps.setAllowed(prefs, app, checked)
+          // Speaking while locked only applies to an app that may speak at all.
+          whileLocked?.isEnabled = checked
         }
       )
+      whileLocked?.let { category.addPreference(it) }
     }
     preferenceScreen = screen
   }

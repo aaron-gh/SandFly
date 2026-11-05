@@ -22,6 +22,7 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import androidx.core.app.NotificationCompat
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.utils.NotificationUtils
 import com.google.android.accessibility.utils.SharedPreferencesUtils
@@ -37,11 +38,15 @@ object SpeechControlApproval {
   private const val ACTION_ALLOW = "fyi.quin.backtalk.action.ALLOW_APP_SPEECH"
   private const val ACTION_DENY = "fyi.quin.backtalk.action.DENY_APP_SPEECH"
   private const val ACTION_DISMISSED = "fyi.quin.backtalk.action.DISMISS_APP_SPEECH"
+  private const val ACTION_ALLOW_LOCKED = "fyi.quin.backtalk.action.ALLOW_APP_SPEECH_LOCKED"
+  private const val ACTION_DENY_LOCKED = "fyi.quin.backtalk.action.DENY_APP_SPEECH_LOCKED"
+  private const val ACTION_DISMISSED_LOCKED = "fyi.quin.backtalk.action.DISMISS_APP_SPEECH_LOCKED"
   private const val EXTRA_APP = "app"
   private const val NOTIFICATION_ID_BASE = 0x5ec0
 
   // Apps already asked about since Backtalk started, so that each is asked once at a time.
   private val asked = HashSet<String>()
+  private val askedLocked = HashSet<String>()
 
   /** Asks whether [app] may speak, unless it was asked already. Called on the main thread. */
   fun ask(context: Context, app: String) {
@@ -65,6 +70,47 @@ object SpeechControlApproval {
         .setWhen(0)
         .build()
     context.getSystemService(NotificationManager::class.java)?.notify(notificationId(app), notification)
+  }
+
+  /**
+   * Asks whether [app], which the user already allowed and which declares
+   * [SpeechControl.permissionWhenLocked], may also speak while the device is locked. Asked while
+   * locked, since that is when the app tries, so Allow needs the device unlocked first: someone
+   * holding a locked phone can't give an app that. Called on the main thread.
+   */
+  fun askWhileLocked(context: Context, app: String) {
+    if (!NotificationUtils.hasPostNotificationPermission(context)) {
+      LogUtils.w(TAG, "Can't ask about %s while locked, since Backtalk can't post notifications", app)
+      return
+    }
+    if (!askedLocked.add(app)) return
+    val label = label(context, app)
+    val allow =
+      NotificationCompat.Action.Builder(
+          0,
+          context.getString(R.string.speech_control_allow),
+          answer(context, app, ACTION_ALLOW_LOCKED, 3),
+        )
+        .setAuthenticationRequired(true)
+        .build()
+    val notification =
+      NotificationUtils.createDefaultNotificationBuilder(context)
+        .setContentTitle(context.getString(R.string.speech_control_ask_locked_title, label))
+        .setContentText(context.getString(R.string.speech_control_ask_locked_text))
+        .setTicker(context.getString(R.string.speech_control_ask_locked_title, label))
+        .addAction(allow)
+        .addAction(
+          0,
+          context.getString(R.string.speech_control_deny),
+          answer(context, app, ACTION_DENY_LOCKED, 2),
+        )
+        .setDeleteIntent(answer(context, app, ACTION_DISMISSED_LOCKED, 4))
+        .setAutoCancel(true)
+        .setWhen(0)
+        .build()
+    context
+      .getSystemService(NotificationManager::class.java)
+      ?.notify(lockedNotificationId(app), notification)
   }
 
   /** The name the user knows the app by, or its package name if it has none. */
@@ -96,12 +142,37 @@ object SpeechControlApproval {
       PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT,
     )
 
+  /** The answer from the while-locked question; [slot] keeps each button's intent apart. */
+  private fun answer(context: Context, app: String, action: String, slot: Int): PendingIntent =
+    PendingIntent.getBroadcast(
+      context,
+      lockedNotificationId(app) * 8 + slot,
+      Intent(context, AnswerReceiver::class.java).setAction(action).putExtra(EXTRA_APP, app),
+      PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT,
+    )
+
   private fun notificationId(app: String): Int = NOTIFICATION_ID_BASE + (app.hashCode() and 0xfff)
+
+  private fun lockedNotificationId(app: String): Int = notificationId(app) + 0x1000
 
   /** Saves the user's answer from the notification. Not exported, so only it can call this. */
   class AnswerReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
       val app = intent.getStringExtra(EXTRA_APP) ?: return
+      val prefs = SharedPreferencesUtils.getSharedPreferences(context)
+      when (intent.action) {
+        ACTION_ALLOW_LOCKED,
+        ACTION_DENY_LOCKED -> {
+          SpeechControlApps.setAllowedWhileLocked(prefs, app, intent.action == ACTION_ALLOW_LOCKED)
+          askedLocked.remove(app)
+          context.getSystemService(NotificationManager::class.java)?.cancel(lockedNotificationId(app))
+          return
+        }
+        ACTION_DISMISSED_LOCKED -> {
+          askedLocked.remove(app)
+          return
+        }
+      }
       val allow =
         when (intent.action) {
           ACTION_ALLOW -> true
@@ -112,7 +183,7 @@ object SpeechControlApproval {
           }
           else -> return
         }
-      SpeechControlApps.setAllowed(SharedPreferencesUtils.getSharedPreferences(context), app, allow)
+      SpeechControlApps.setAllowed(prefs, app, allow)
       asked.remove(app)
       context.getSystemService(NotificationManager::class.java)?.cancel(notificationId(app))
     }

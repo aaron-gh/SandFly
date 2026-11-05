@@ -990,7 +990,7 @@ Scripts run on phones and tablets only. [Writing SandFly scripts](docs/scripting
 
 Apps can ask SandFly to say text in your own SandFly voice, for example a game, an automation app such as Tasker, or a remote-access tool. To allow this, turn on **Apps** > **Let other apps speak**. It's off by default.
 
-The first time an app asks, SandFly posts a notification that asks whether to allow it, and nothing the app sends is said until you choose **Allow**. You can allow or block each app later in **Let other apps speak**. To hear a short sound before each thing another app says, so that you can tell it apart from SandFly, turn on **Play a sound before other apps speak**. Nothing is said while the device is locked, an app can speak only a few times in a row, and apps can never stop or cut off SandFly's own speech. [Speaking through SandFly from another app](docs/speech-api.md) describes the API for app developers.
+The first time an app asks, SandFly posts a notification that asks whether to allow it, and nothing the app sends is said until you choose **Allow**. You can allow or block each app later in **Let other apps speak**. To hear a short sound before each thing another app says, so that you can tell it apart from SandFly, turn on **Play a sound before other apps speak**. Nothing is said while the device is locked unless the app declares that it speaks while locked and you allow that separately, with the app's **while the device is locked** switch or the notification SandFly posts the first time; an app can speak only a few times in a row, and apps can never stop or cut off SandFly's own speech. [Speaking through SandFly from another app](docs/speech-api.md) describes the API for app developers.
 
 ### Inspect focused item and Copy screen tree
 

@@ -115,6 +115,15 @@
         android:description="@string/permission_speak_description"
         android:protectionLevel="normal" />
 
+    <!-- Declared by an app that asks to speak while the device is locked. Declaring it grants
+         nothing: the user allows each app separately. See docs/speech-api.md. Named after the app
+         ID, as SPEAK is. -->
+    <permission
+        android:name="${applicationId}.permission.SPEAK_WHEN_LOCKED"
+        android:label="@string/permission_speak_when_locked_label"
+        android:description="@string/permission_speak_when_locked_description"
+        android:protectionLevel="normal" />
+
     <!-- Held by an app that can provide a braille display, so that it can ask to be one. Backtalk
          uses it only once the user allows it in Backtalk. See docs/braille-display-api.md. Named
          after the app ID, as SPEAK is. -->
