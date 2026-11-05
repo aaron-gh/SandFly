@@ -50,6 +50,7 @@ import com.google.android.accessibility.talkback.preference.base.TalkBackPrefere
 import com.google.android.accessibility.talkback.preference.base.TalkbackBaseFragment
 import com.google.android.accessibility.talkback.recognition.LiveRecognition
 import com.google.android.accessibility.talkback.sandflyai.SandflyAi
+import com.google.android.accessibility.talkback.selector.AiActions
 import com.google.android.accessibility.talkback.shizuku.ShizukuShell
 import com.google.android.accessibility.talkback.translation.TranslationFragment
 import com.google.android.accessibility.talkback.translation.TranslationSettings
@@ -395,6 +396,10 @@ object SettingsIndex {
     hideIf(
       !LiveRecognition.isSupported(context) || !FeatureSupport.doesServiceHandleDoubleTap(),
       R.string.pref_selector_live_recognition_key,
+    )
+    hideIf(
+      !FeatureSupport.doesServiceHandleDoubleTap() || AiActions.available(context).isEmpty(),
+      R.string.pref_selector_ai_actions_key,
     )
 
     // ContextMenuFragment.

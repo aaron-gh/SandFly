@@ -332,6 +332,7 @@
     </string-array>
     <string name="pref_selector_tablet_held_up_faces_away_key" translatable="false">pref_selector_tablet_held_up_faces_away_key</string>
     <string name="pref_selector_live_recognition_key" translatable="false">pref_selector_live_recognition_key</string>
+    <string name="pref_selector_ai_actions_key" translatable="false">pref_selector_ai_actions_key</string>
     <string name="pref_lift_to_activate_default" translatable="false">0</string>
     <string name="pref_hold_to_cancel_default" translatable="false">0</string>
     <!-- How long the finger stays on an item for lifting it to activate nothing. -->
@@ -1864,6 +1865,7 @@
     <bool name="pref_selector_auto_switch_default">true</bool>
     <bool name="pref_selector_tablet_held_up_faces_away_default">false</bool>
     <bool name="pref_selector_live_recognition_default">true</bool>
+    <bool name="pref_selector_ai_actions_default">true</bool>
     <bool name="pref_selector_switch_tts_engine_default">false</bool>
     <bool name="pref_selector_speech_stream_default">false</bool>
     <bool name="pref_selector_sound_mode_default">false</bool>
@@ -2235,6 +2237,7 @@
     <string name="selector_wrap_around" translatable="false">SELECTOR_WRAP_AROUND</string>
     <string name="selector_tablet_held_up_faces_away" translatable="false">SELECTOR_TABLET_HELD_UP_FACES_AWAY</string>
     <string name="selector_live_recognition" translatable="false">SELECTOR_LIVE_RECOGNITION</string>
+    <string name="selector_ai_actions" translatable="false">SELECTOR_AI_ACTIONS</string>
     <string name="selector_switch_tts_engine" translatable="false">SELECTOR_SWITCH_TTS_ENGINE</string>
     <string name="selector_speech_stream" translatable="false">SELECTOR_SPEECH_STREAM</string>
     <string name="selector_sound_mode" translatable="false">SELECTOR_SOUND_MODE</string>

@@ -263,7 +263,7 @@ public class KeyComboMapper {
           result = pipeline.returnFeedback(eventId, Feedback.prevContainer(INPUT_MODE_KEYBOARD));
       // Tap
       case PERFORM_CLICK -> {
-        if (selectorController.activateLiveRecognition()) {
+        if (selectorController.activateDoubleTapSetting()) {
           break;
         }
         if (SelectorController.getCurrentSetting(accessibilityService).equals(ACTIONS)) {
