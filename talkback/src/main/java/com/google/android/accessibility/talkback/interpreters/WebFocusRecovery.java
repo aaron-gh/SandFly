@@ -67,6 +67,15 @@ final class WebFocusRecovery {
   private final AccessibilityNodeInfoCompat scrolled;
   private final boolean leftBehind;
   private final boolean forward;
+
+  /** A strip that the page scrolled sideways, which may be fixed across the top of the view. */
+  private @Nullable AccessibilityNodeInfoCompat strip;
+
+  private boolean stripRead;
+  private final Rect stripBounds = new Rect();
+
+  /** Whether the focused item moved since it was focused, so the page did not fix it in place. */
+  private final boolean focusMoved;
   private final Rect scrolledBounds = new Rect();
   private final Rect focusBounds = new Rect();
 
@@ -110,13 +119,22 @@ final class WebFocusRecovery {
    *     WebView
    * @param forward whether the content scrolled on, so that the first item in view is sought, not
    *     the last
+   * @param strip a strip in the scrolled window that the page scrolled sideways while the user
+   *     scrolled other content, or null. When it lies across the top of the view, items under it
+   *     count as out of view.
+   * @param focusMoved whether the focused item moved since it was focused. Focus on an item that
+   *     the page keeps in place, such as in a header above the strip, stays.
    */
   WebFocusRecovery(
       @Nullable AccessibilityNodeInfoCompat focus,
       @Nullable AccessibilityNodeInfoCompat lastFocused,
       AccessibilityNodeInfoCompat scrolled,
       boolean leftBehind,
-      boolean forward) {
+      boolean forward,
+      @Nullable AccessibilityNodeInfoCompat strip,
+      boolean focusMoved) {
+    this.strip = strip;
+    this.focusMoved = focusMoved;
     this.focus = focus;
     this.lastFocused = (focus == null) ? lastFocused : null;
     this.scrolled = scrolled;
@@ -165,6 +183,14 @@ final class WebFocusRecovery {
     if (search != null) {
       if (search.step()) {
         end(search.result());
+      }
+    } else if (strip != null && !stripRead) {
+      // Where the strip is now: one read.
+      stripRead = true;
+      if (strip.refresh() && strip.isVisibleToUser()) {
+        strip.getBoundsInScreen(stripBounds);
+      } else {
+        strip = null;
       }
     } else if (walking != null) {
       stepWalk();
@@ -250,7 +276,7 @@ final class WebFocusRecovery {
         outcome = NOT_WEB_SCROLL;
         return;
       }
-      startSearch(scrolled, viewport);
+      startSearch(scrolled, belowStrip(viewport));
       return;
     }
     if (scrolledHoldsFocus) {
@@ -272,7 +298,14 @@ final class WebFocusRecovery {
       outcome = NOT_WEB_SCROLL;
       return;
     }
-    if (!leftBehind && !WebScrollFocus.isOutside(focusBounds, viewport)) {
+    // Focus in a header or strip that the page fixes at the top stays, and so does focus that
+    // only part of the strip covers.
+    boolean underStrip =
+        strip != null
+            && focusMoved
+            && !focusAndAncestors.contains(strip)
+            && WebScrollFocus.isUnderFixedStrip(focusBounds, viewport, stripBounds);
+    if (!leftBehind && !underStrip && !WebScrollFocus.isOutside(focusBounds, viewport)) {
       outcome = IN_VIEW;
       return;
     }
@@ -288,7 +321,12 @@ final class WebFocusRecovery {
       outcome = NOT_WEB_SCROLL;
       return;
     }
-    startSearch(searchRoot, viewport);
+    startSearch(searchRoot, belowStrip(viewport));
+  }
+
+  /** Returns the part of {@code viewport} below {@link #strip} when it is fixed across its top. */
+  private Rect belowStrip(Rect viewport) {
+    return (strip == null) ? viewport : WebScrollFocus.belowFixedStrip(viewport, stripBounds);
   }
 
   private void startSearch(AccessibilityNodeInfoCompat searchRoot, Rect viewport) {

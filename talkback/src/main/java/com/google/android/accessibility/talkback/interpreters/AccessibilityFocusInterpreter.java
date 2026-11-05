@@ -119,6 +119,12 @@ public class AccessibilityFocusInterpreter
    */
   private boolean pageScrolledFocusStrip;
 
+  /**
+   * The last strip of web content, scrolling only sideways, that the page scrolled while the user
+   * scrolled other content, such as category tabs fixed below a page header.
+   */
+  private @Nullable AccessibilityNodeInfoCompat webStrip;
+
   private @Nullable ManualScrollInterpretation pendingManualScroll;
   private final Runnable handlePendingManualScroll =
       new Runnable() {
@@ -269,6 +275,9 @@ public class AccessibilityFocusInterpreter
       webScrolledSideways = sideways;
       webScroll = null;
     }
+    if (sideways && !webScrolledSideways && !scrolled.equals(webScrolled)) {
+      webStrip = scrolled;
+    }
     if (scrolled.equals(webScrolled)) {
       // Copy the event, because the framework may recycle it after dispatch.
       webScroll =
@@ -403,7 +412,14 @@ public class AccessibilityFocusInterpreter
               : null;
       startWebFocusRecovery(
           interpretation,
-          new WebFocusRecovery(null, lastFocused, scrolled, /* leftBehind= */ true, forward));
+          new WebFocusRecovery(
+              null,
+              lastFocused,
+              scrolled,
+              /* leftBehind= */ true,
+              forward,
+              stripIn(scrolled),
+              /* focusMoved= */ true));
       return true;
     }
     if (!WebInterfaceUtils.supportsWebActions(focus) || !isUserScroll(interpretation)) {
@@ -422,13 +438,45 @@ public class AccessibilityFocusInterpreter
     // scrolled away sideways, whose bounds can still lie in the WebView. Focus left in a strip that
     // the page scrolled to follow the content does not show where the user scrolled to either.
     boolean leftBehind = stripScrolled || !focus.isVisibleToUser();
+    // An item that scrolled under a strip fixed across the top of the page, or the header above
+    // it, is hidden. Where the strip was at its last scroll, without asking the app.
+    AccessibilityNodeInfoCompat strip = stripIn(scrolled);
+    boolean focusMoved = focusMovedSinceFocused(focus, focusBounds);
+    boolean underStrip = false;
+    if (strip != null && focusMoved) {
+      Rect stripBounds = new Rect();
+      strip.getBoundsInScreen(stripBounds);
+      underStrip = WebScrollFocus.isUnderFixedStrip(focusBounds, scrolledBounds, stripBounds);
+    }
     // Focus in the scrolled view is in view. Most scrolls end here, without asking the app.
-    if (!leftBehind && !WebScrollFocus.isOutside(focusBounds, scrolledBounds)) {
+    if (!leftBehind && !underStrip && !WebScrollFocus.isOutside(focusBounds, scrolledBounds)) {
       return true;
     }
     startWebFocusRecovery(
-        interpretation, new WebFocusRecovery(focus, null, scrolled, leftBehind, forward));
+        interpretation,
+        new WebFocusRecovery(focus, null, scrolled, leftBehind, forward, strip, focusMoved));
     return true;
+  }
+
+  /** Returns {@link #webStrip} if it is in the window of {@code scrolled}. */
+  private @Nullable AccessibilityNodeInfoCompat stripIn(AccessibilityNodeInfoCompat scrolled) {
+    return (webStrip != null && webStrip.getWindowId() == scrolled.getWindowId())
+        ? webStrip
+        : null;
+  }
+
+  /**
+   * Whether {@code focus} lies elsewhere than when it was focused, as the focus record's copy of
+   * it shows. An item that the page fixes in place, such as in a header, does not move.
+   */
+  private boolean focusMovedSinceFocused(AccessibilityNodeInfoCompat focus, Rect focusBounds) {
+    FocusActionRecord record = actorState.getFocusHistory().getLastFocusActionRecord();
+    if (record == null || !record.getFocusedNode().equals(focus)) {
+      return false;
+    }
+    Rect then = new Rect();
+    record.getFocusedNode().getBoundsInScreen(then);
+    return !then.equals(focusBounds);
   }
 
   private void startWebFocusRecovery(

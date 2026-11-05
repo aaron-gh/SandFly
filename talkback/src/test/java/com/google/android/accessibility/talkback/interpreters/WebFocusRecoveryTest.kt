@@ -66,6 +66,8 @@ class WebFocusRecoveryTest {
       return nodes[index]
     }
 
+    override fun refresh() = true
+
     override fun getParent(): AccessibilityNodeInfoCompat? {
       reads++
       return parentNode
@@ -107,7 +109,7 @@ class WebFocusRecoveryTest {
     val firstInView = item(300, 500, "Fries")
     val document = Node(viewport, null, true, true, above("Salad"), focus, firstInView)
     inApp(document)
-    val recovery = WebFocusRecovery(focus, null, document, false, true)
+    val recovery = WebFocusRecovery(focus, null, document, false, true, null, false)
 
     run(recovery)
 
@@ -121,7 +123,7 @@ class WebFocusRecoveryTest {
     val firstInView = item(600, 800, "Fries")
     val document = Node(viewport, null, true, true, focus, firstInView)
     inApp(document)
-    val recovery = WebFocusRecovery(focus, null, document, true, true)
+    val recovery = WebFocusRecovery(focus, null, document, true, true, null, false)
 
     run(recovery)
 
@@ -136,7 +138,7 @@ class WebFocusRecoveryTest {
     // A scroll of a list in the page beside the focus.
     val list = Node(Rect(0, 900, 1000, 1200), null, false, true, item(950, 1100, "Drink"))
     list.parentNode = document
-    val recovery = WebFocusRecovery(focus, null, list, false, true)
+    val recovery = WebFocusRecovery(focus, null, list, false, true, null, false)
 
     run(recovery)
 
@@ -150,7 +152,7 @@ class WebFocusRecoveryTest {
     inApp(document)
     val otherDocument = Node(viewport, null, true, true, item(300, 500, "Ad"))
     inApp(otherDocument)
-    val recovery = WebFocusRecovery(focus, null, otherDocument, false, true)
+    val recovery = WebFocusRecovery(focus, null, otherDocument, false, true, null, false)
 
     run(recovery)
 
@@ -163,7 +165,7 @@ class WebFocusRecoveryTest {
     val document =
       Node(viewport, null, true, true, above("Header"), above("Burger"), firstInView)
     inApp(document)
-    val recovery = WebFocusRecovery(null, null, document, true, true)
+    val recovery = WebFocusRecovery(null, null, document, true, true, null, false)
 
     run(recovery)
 
@@ -185,7 +187,7 @@ class WebFocusRecoveryTest {
         Node(Rect(0, 2300, 1000, 2000), text = "Burger"),
       )
     inApp(document)
-    val recovery = WebFocusRecovery(null, null, document, true, false)
+    val recovery = WebFocusRecovery(null, null, document, true, false, null, false)
 
     run(recovery)
 
@@ -199,7 +201,7 @@ class WebFocusRecoveryTest {
       Node(Rect(0, 900, 1000, 1200), null, false, true, Node(Rect(-300, 950, 0, 1100)), card)
     val document = Node(viewport, null, true, true, item(300, 500, "Burger"), list)
     inApp(document)
-    val recovery = WebFocusRecovery(null, null, list, true, true)
+    val recovery = WebFocusRecovery(null, null, list, true, true, null, false)
 
     run(recovery)
 
@@ -217,7 +219,7 @@ class WebFocusRecoveryTest {
     inApp(document)
     // The page removed the item that had focus, but it still names its parent.
     val removed = above("Burger").apply { parentNode = section }
-    val recovery = WebFocusRecovery(null, removed, document, true, true)
+    val recovery = WebFocusRecovery(null, removed, document, true, true, null, false)
 
     run(recovery)
 
@@ -231,7 +233,7 @@ class WebFocusRecoveryTest {
     inApp(document)
     val elsewhere = item(300, 500, "Other page")
     inApp(Node(viewport, null, true, true, elsewhere))
-    val recovery = WebFocusRecovery(null, elsewhere, document, true, true)
+    val recovery = WebFocusRecovery(null, elsewhere, document, true, true, null, false)
 
     run(recovery)
 
@@ -241,11 +243,87 @@ class WebFocusRecoveryTest {
   @Test
   fun lostFocusWithoutAWebViewAboveTheScrolledNodeIsNotAWebScroll() {
     val list = Node(viewport, null, false, true, item(300, 500, "Fries"))
-    val recovery = WebFocusRecovery(null, null, list, true, true)
+    val recovery = WebFocusRecovery(null, null, list, true, true, null, false)
 
     run(recovery)
 
     assertEquals(WebFocusRecovery.NOT_WEB_SCROLL, recovery.outcome())
+  }
+
+  /** A strip of category tabs fixed below a header, as in an Uber Eats restaurant menu. */
+  private fun strip() =
+    Node(Rect(179, 550, 1000, 740), null, false, true, Node(Rect(179, 550, 400, 740), "Deals"))
+
+  @Test
+  fun focusThatScrolledUnderAStripFixedAcrossTheTopMovesBelowTheStrip() {
+    val header = item(150, 540, "McDonald's")
+    val strip = strip()
+    // The card is clipped at the top of the view, and lies above the bottom of the strip.
+    val focus = Node(Rect(57, 150, 598, 592), text = "Big Mac")
+    val acrossStrip = item(600, 900, "Fries")
+    val firstBelow = item(950, 1200, "McFlurry")
+    val document =
+      Node(viewport, null, true, true, header, strip, focus, acrossStrip, firstBelow)
+    inApp(document)
+    val recovery = WebFocusRecovery(focus, null, document, false, true, strip, true)
+
+    run(recovery)
+
+    assertEquals(WebFocusRecovery.FOUND, recovery.outcome())
+    assertSame(firstBelow, recovery.item())
+  }
+
+  @Test
+  fun focusInAHeaderAboveAFixedStripStays() {
+    val header = item(150, 540, "McDonald's")
+    val strip = strip()
+    val document = Node(viewport, null, true, true, header, strip, item(950, 1200, "Fries"))
+    inApp(document)
+    val recovery = WebFocusRecovery(header, null, document, false, true, strip, false)
+
+    run(recovery)
+
+    assertEquals(WebFocusRecovery.IN_VIEW, recovery.outcome())
+  }
+
+  @Test
+  fun focusThatTheStripCoversOnlyInPartStays() {
+    val strip = strip()
+    val focus = item(600, 900, "Big Mac")
+    val document = Node(viewport, null, true, true, strip, focus, item(950, 1200, "Fries"))
+    inApp(document)
+    val recovery = WebFocusRecovery(focus, null, document, false, true, strip, true)
+
+    run(recovery)
+
+    assertEquals(WebFocusRecovery.IN_VIEW, recovery.outcome())
+  }
+
+  @Test
+  fun lostFocusMovesBelowAStripFixedAcrossTheTop() {
+    val header = item(150, 540, "McDonald's")
+    val strip = strip()
+    val firstBelow = item(950, 1200, "Fries")
+    val document = Node(viewport, null, true, true, header, strip, firstBelow)
+    inApp(document)
+    val recovery = WebFocusRecovery(null, null, document, true, true, strip, true)
+
+    run(recovery)
+
+    assertSame(firstBelow, recovery.item())
+  }
+
+  @Test
+  fun aStripInTheMiddleOfTheViewHidesNothing() {
+    val strip = Node(Rect(0, 1000, 1000, 1200), null, false, true)
+    val focus = item(300, 500, "Big Mac")
+    val document = Node(viewport, null, true, true, focus, strip)
+    inApp(document)
+    val recovery = WebFocusRecovery(focus, null, document, false, true, strip, true)
+
+    run(recovery)
+
+    assertEquals(WebFocusRecovery.IN_VIEW, recovery.outcome())
   }
 
   @Test
@@ -253,7 +331,7 @@ class WebFocusRecoveryTest {
     val focus = above("Burger")
     val document = Node(viewport, null, true, true, focus, item(300, 500, "Fries"))
     inApp(document)
-    val recovery = WebFocusRecovery(focus, null, document, false, true)
+    val recovery = WebFocusRecovery(focus, null, document, false, true, null, false)
 
     recovery.step()
     recovery.stop()

@@ -152,6 +152,50 @@ final class WebScrollFocus {
   }
 
   /**
+   * Returns the part of {@code viewport} below {@code strip}, when the strip lies across the top of
+   * the viewport and the page keeps it there, such as a strip of category tabs fixed below a page
+   * header. Items that scroll under the strip and the header above it are hidden. Returns {@code
+   * viewport} for a strip elsewhere.
+   */
+  static Rect belowFixedStrip(Rect viewport, Rect strip) {
+    Rect result = new Rect(viewport);
+    Rect bounds = new Rect(strip);
+    bounds.sort();
+    int height = viewport.height();
+    if (bounds.isEmpty()
+        || height <= 0
+        || bounds.top >= viewport.top + height / 3
+        || bounds.bottom <= viewport.top
+        || bounds.bottom > viewport.top + height / 2
+        || bounds.left >= viewport.right
+        || bounds.right <= viewport.left
+        || bounds.width() * 2 < viewport.width()) {
+      return result;
+    }
+    result.top = bounds.bottom;
+    return result;
+  }
+
+  /**
+   * Whether {@code bounds} lie under a strip fixed across the top of {@code viewport}, or the
+   * header above it: outside the part of the viewport below the strip, and not in the strip.
+   */
+  static boolean isUnderFixedStrip(Rect bounds, Rect viewport, Rect strip) {
+    Rect below = belowFixedStrip(viewport, strip);
+    if (below.top <= viewport.top) {
+      return false;
+    }
+    Rect sortedStrip = new Rect(strip);
+    sortedStrip.sort();
+    if (Math.min(bounds.top, bounds.bottom) >= sortedStrip.top
+        && Math.max(bounds.top, bounds.bottom) <= sortedStrip.bottom) {
+      // In the strip.
+      return false;
+    }
+    return isOutside(bounds, below);
+  }
+
+  /**
    * Returns the first item of web content in {@code root} that lies in {@code viewport}, or the
    * last one if not {@code forward}. Runs a {@link Search} to its end.
    *

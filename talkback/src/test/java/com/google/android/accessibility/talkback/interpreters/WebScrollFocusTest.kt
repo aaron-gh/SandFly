@@ -286,6 +286,29 @@ class WebScrollFocusTest {
   }
 
   @Test
+  fun aStripAcrossTheTopOfTheViewHidesTheItemsAboveItsBottom() {
+    val view = Rect(0, 150, 1220, 2600)
+    // The bounds recorded in an Uber Eats restaurant menu.
+    val strip = Rect(179, 550, 1220, 740)
+
+    assertEquals(Rect(0, 740, 1220, 2600), WebScrollFocus.belowFixedStrip(view, strip))
+    assertTrue(WebScrollFocus.isUnderFixedStrip(Rect(57, 150, 598, 592), view, strip))
+    assertFalse(WebScrollFocus.isUnderFixedStrip(Rect(57, 600, 598, 900), view, strip))
+    // A tab in the strip.
+    assertFalse(WebScrollFocus.isUnderFixedStrip(Rect(400, 560, 600, 730), view, strip))
+  }
+
+  @Test
+  fun aStripLowInTheViewOrNarrowHidesNothing() {
+    val view = Rect(0, 150, 1220, 2600)
+
+    assertEquals(view, WebScrollFocus.belowFixedStrip(view, Rect(0, 1200, 1220, 1400)))
+    assertEquals(view, WebScrollFocus.belowFixedStrip(view, Rect(0, 550, 400, 740)))
+    assertEquals(view, WebScrollFocus.belowFixedStrip(view, Rect()))
+    assertFalse(WebScrollFocus.isUnderFixedStrip(Rect(0, 150, 1220, 500), view, Rect()))
+  }
+
+  @Test
   fun aScrollWhileTouchingIsTheUsers() {
     assertTrue(WebScrollFocus.isUserScroll(1500, 1000, 900, true, 500))
   }
