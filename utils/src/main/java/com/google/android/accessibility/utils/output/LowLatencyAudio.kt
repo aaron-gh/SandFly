@@ -785,7 +785,8 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
     return true
   }
 
-  private fun idleLimit(): Int = sampleRate * idleMs(microphoneInUse, typing) / 1000
+  private fun idleLimit(): Int =
+    sampleRate * (if (microphoneInUse) MICROPHONE_IDLE_MS else IDLE_MS) / 1000
 
   /** Mixes the next burst of every sound and the speech stream at the head of the queue. */
   private fun mix(out: FloatArray) {
@@ -979,12 +980,7 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
     private const val SLOW_BUFFER_MS = 40
     // How long the audio thread waits for the engine's speech at a time, well within WRITE_STUCK_MS.
     private const val REST_MS = 100L
-    // How long the fast track plays silence after the last sound or speech before it pauses. Each
-    // moment it plays keeps the audio thread waking every few milliseconds and counts as playback.
-    private const val IDLE_MS = 250
-    // While the user types, longer than the usual time between keys, so that each key's sound and
-    // speech start on a running track instead of starting it again.
-    private const val TYPING_IDLE_MS = 2_000
+    private const val IDLE_MS = 2_000
     // While an app records, long enough for the audio already queued to be heard.
     private const val MICROPHONE_IDLE_MS = 100
     // How long the callback thread is kept with nothing to do.
@@ -1084,37 +1080,7 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
         }
         .apply { allowCoreThreadTimeOut(true) }
 
-    /**
-     * How long, in milliseconds, a track with the fast path plays silence after the last sound
-     * or speech before it pauses: briefly while an app records from the microphone ([microphone]),
-     * longer while the user types ([typing]).
-     */
-    @VisibleForTesting
-    @JvmStatic
-    fun idleMs(microphone: Boolean, typing: Boolean): Int =
-      when {
-        microphone -> MICROPHONE_IDLE_MS
-        typing -> TYPING_IDLE_MS
-        else -> IDLE_MS
-      }
-
-    // Whether the user is typing, set by [setTyping].
-    @Volatile private var typing = false
-
-    /**
-     * Tells the players whether the user is typing on the keyboard: whether the touch in progress,
-     * or the last one, went down on it or while a key had focus. While the user types, their tracks
-     * keep running for [TYPING_IDLE_MS] after each sound instead of [IDLE_MS], so that the next
-     * key's sound and speech don't wait for the track to start again.
-     */
-    @JvmStatic
-    fun setTyping(typing: Boolean) {
-      this.typing = typing
-    }
-
-    /** Whether the user is typing, as last set by [setTyping]. */
-    @VisibleForTesting @JvmStatic fun isTyping(): Boolean = typing
-
+    /** The players made so far, without making new ones. */
     /** Whether an app is recording from the microphone, set by [setMicrophoneInUse]. */
     @Volatile private var microphoneInUse = false
 
@@ -1143,7 +1109,6 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
     fun startedRecordingWithin(ms: Long): Boolean =
       microphoneInUse && SystemClock.uptimeMillis() - microphoneSince < ms
 
-    /** The players made so far, without making new ones. */
     @JvmStatic
     fun players(): List<LowLatencyAudio> = synchronized(instances) { instances.values.toList() }
 

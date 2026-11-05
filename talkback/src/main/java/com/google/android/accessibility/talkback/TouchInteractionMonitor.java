@@ -130,7 +130,6 @@ import com.google.android.accessibility.utils.gestures.GestureMatcher.AnalyticsE
 import com.google.android.accessibility.utils.gestures.GestureUtils;
 import com.google.android.accessibility.utils.output.FeedbackController;
 import com.google.android.accessibility.utils.output.FeedbackItem;
-import com.google.android.accessibility.utils.output.LowLatencyAudio;
 import com.google.android.accessibility.utils.output.SpeechController;
 import com.google.android.accessibility.utils.output.SpeechController.SpeakOptions;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
@@ -789,9 +788,6 @@ public class TouchInteractionMonitor
           typingMethod != FocusProcessorForTapAndTouchExploration.DOUBLE_TAP
               ? KeyboardExploration.gboardRootAt(service, displayId, event.getX(), event.getY())
               : null;
-      // A touch on the keyboard, or one while a key has focus, keeps the low-latency track running
-      // between keys, so that each key's sound and speech start without restarting it.
-      LowLatencyAudio.setTyping(gboardRoot != null || downOnKeyboard || isLiftToType);
     }
     if (handleEdgeSwipe(event)) {
       return;
