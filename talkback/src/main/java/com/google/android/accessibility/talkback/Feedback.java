@@ -1508,8 +1508,7 @@ public abstract class Feedback {
       CURSOR_TO_END, // Works with stopSelecting.
       INSERT, // Requires text.
       TYPO_CORRECTION, // Requires text and suggestion.
-      MOVE_CURSOR, // Requires cursor index.
-      TOGGLE_VOICE_DICTATION;
+      MOVE_CURSOR; // Requires cursor index.
     }
 
     /** The node edited. Null for actions that work without one, such as copying kept text. */

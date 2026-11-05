@@ -2172,10 +2172,8 @@
   <string name="title_screen_search" translatable="false">@string/title_show_screen_search</string>
     <!-- Label for the shortcut that plays/pauses media [CHAR_LIMIT=61]-->
     <string name="shortcut_media_control">Play or pause media</string>
-    <!-- Label for the shortcut that start/stop voice input [CHAR_LIMIT=60]-->
-    <string name="shortcut_voice_input">Start or end voice input</string>
-    <!-- Label for the shortcut that plays/pauses or start/stop voice input [CHAR_LIMIT=90]-->
-    <string name="shortcut_media_control_or_voice_input">Play or pause media, start or end voice input</string>
+    <!-- Gesture action: Dictate in a focused text field, otherwise play or pause media. [CHAR_LIMIT=NONE] -->
+    <string name="shortcut_dictate_or_media_control">Dictate, play or pause media</string>
     <!-- Label for the shortcut that turns up the volume. [CHAR_LIMIT=60]-->
     <string name="shortcut_increase_volume">Increase volume</string>
     <!-- Label for the shortcut that turns down the volume. [CHAR_LIMIT=60]-->
@@ -3466,15 +3464,6 @@
   <string name="dialog_title_pass_through_mode">Skip SandFly gestures to use system gestures</string>
   <!-- Message for pass-through mode tutorial. [CHAR_LIMIT=NONE] [BACKUP_MESSAGE_ID: 2757739143933456348]-->
   <string name="dialog_message_pass_through_mode">When you hear a chime, you can use a system gesture that isn\'t supported by SandFly. This is known as a pass-through gesture.</string>
-
-  <!-- Title for voice input download dialog. [CHAR_LIMIT=NONE] -->
-  <string name="dialog_title_voice_input_download">Update Gboard to use voice input</string>
-  <!-- Message for voice input download dialog. [CHAR_LIMIT=NONE] -->
-  <string name="dialog_message_voice_input_download">2-finger double tap can now turn on voice input whenever Gboard is active. To use this gesture, update Gboard to the latest version.</string>
-  <!-- Label for update Gboard button in voice input download dialog. [CHAR_LIMIT=NONE] -->
-  <string name="label_update_gboard">Update in Google Play</string>
-  <!-- Announcement for notifying user the gboard is not onscreen when triggered the voice input. [CHAR_LIMIT=NONE] -->
-  <string name="announcement_voice_input_when_gboard_not_onscreen">Show Gboard to use voice dictation</string>
 
  <!-- Used to hint user that pass through mode is on for keyboard shortcuts. [CHAR_LIMIT=NONE] -->
  <string name="hint_pass_through_mode_on_for_keyboard_shortcuts">Ignoring next key press</string>

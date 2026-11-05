@@ -717,11 +717,6 @@ object Commands {
         )
         gesture(R.string.shortcut_value_granular_editing, R.string.granular_editing_title)
         gesture(R.string.shortcut_value_dictate, R.string.shortcut_dictate)
-        gesture(
-          R.string.shortcut_value_voice_input,
-          R.string.shortcut_voice_input,
-          available = FeatureFlagReader.enableVoiceDictationShortcut(context),
-        )
       }
 
     private fun device() =
@@ -770,22 +765,15 @@ object Commands {
 
     private fun media() =
       category(R.string.commands_category_media) {
-        val dictation = FeatureFlagReader.enableVoiceDictationShortcut(context)
         if (FeatureSupport.supportMediaControls()) {
           gesture(
-            R.string.shortcut_value_media_control_or_voice_input,
-            if (dictation) {
-              R.string.shortcut_media_control_or_voice_input
-            } else {
-              R.string.shortcut_media_control
-            },
-            if (dictation) null else Key.PLAY_PAUSE_MEDIA,
+            R.string.shortcut_value_dictate_or_media_control,
+            R.string.shortcut_dictate_or_media_control,
           )
           gesture(
             R.string.shortcut_value_media_control,
             R.string.shortcut_media_control,
             Key.PLAY_PAUSE_MEDIA,
-            available = dictation,
           )
         }
         gesture(R.string.shortcut_value_next_track, R.string.shortcut_next_track)

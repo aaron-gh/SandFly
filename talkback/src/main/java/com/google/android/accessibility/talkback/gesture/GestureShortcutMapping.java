@@ -856,10 +856,9 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
 
     // Special features.
     MEDIA_CONTROL(R.string.shortcut_value_media_control, R.string.shortcut_media_control),
-    VOICE_INPUT(R.string.shortcut_value_voice_input, R.string.shortcut_voice_input),
-    MEDIA_CONTROL_OR_VOICE_INPUT(
-        R.string.shortcut_value_media_control_or_voice_input,
-        R.string.shortcut_media_control_or_voice_input),
+    DICTATE_OR_MEDIA_CONTROL(
+        R.string.shortcut_value_dictate_or_media_control,
+        R.string.shortcut_dictate_or_media_control),
     INCREASE_VOLUME(R.string.shortcut_value_increase_volume, R.string.shortcut_increase_volume),
     DECREASE_VOLUME(R.string.shortcut_value_decrease_volume, R.string.shortcut_decrease_volume),
     READ_NOTIFICATIONS(
@@ -1026,7 +1025,7 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
     actionReadingMenuDown = context.getString(R.string.shortcut_value_selected_setting_next_action);
     actionShortcut = context.getString(R.string.shortcut_value_show_custom_actions);
     nextWindowShortcut = context.getString(R.string.shortcut_value_next_window);
-    mediaControlShortcut = context.getString(R.string.shortcut_value_media_control_or_voice_input);
+    mediaControlShortcut = context.getString(R.string.shortcut_value_dictate_or_media_control);
     legacyMediaControlShortcut = context.getString(R.string.shortcut_value_media_control);
     prefs = SharedPreferencesUtils.getSharedPreferences(context);
     prefs.registerOnSharedPreferenceChangeListener(sharedPreferenceChangeListener);

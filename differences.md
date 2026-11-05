@@ -765,6 +765,8 @@ Text that isn't in a text field, such as a message, can be edited and copied but
 
 **Dictate**, a gesture action under **Text editing**, types what you say into the focused text field, at the cursor. A chime plays when recording starts; recording goes on, through pauses, until the gesture is performed again, which plays a second chime. Speech is silenced while recording, so that it isn't recorded. Recording stops by itself after 15 minutes.
 
+**Dictate, play or pause media**, under **Media and volume** and the default for two-finger double tap, starts Dictate when a text field has focus and no call is active, stops a dictation that is recording, and otherwise plays or pauses media. It replaced **Play or pause media, start or end voice input**, which pressed Gboard's voice typing key. **Start or end voice input** was removed; gestures and keys assigned to it now run Dictate.
+
 **Settings > Dictation** has:
 
 - **Speech recognition**: Automatic, Google on-device speech recognition, Rambler (Gemini API), Whisper or Android speech recognition.
@@ -1080,7 +1082,7 @@ Watch screens track only two fingers, so gestures with three or four fingers don
 | Triple-tap and hold with two fingers | Turn speech on or off |
 | Swipe left then up | Repeat last spoken phrase |
 
-On Samsung watches, turn on **Controls** > **Touch and activation** > **Reserve gestures for Vibration Watch** to let Samsung's Vibration Watch use two-finger single and double taps. The switch is off by default, and Vibration Watch must also be enabled in the watch's accessibility settings. While the switch is on, these gestures no longer perform their SandFly actions: by default, a two-finger tap pauses or resumes speech, and a two-finger double tap controls media or starts voice input. Saved gesture assignments are kept and become available again when you turn the switch off.
+On Samsung watches, turn on **Controls** > **Touch and activation** > **Reserve gestures for Vibration Watch** to let Samsung's Vibration Watch use two-finger single and double taps. The switch is off by default, and Vibration Watch must also be enabled in the watch's accessibility settings. While the switch is on, these gestures no longer perform their SandFly actions: by default, a two-finger tap pauses or resumes speech, and a two-finger double tap starts Dictate in a text field or plays or pauses media. Saved gesture assignments are kept and become available again when you turn the switch off.
 
 ### SandFly menu on watches
 
