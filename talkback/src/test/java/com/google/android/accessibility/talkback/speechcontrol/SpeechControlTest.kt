@@ -19,6 +19,8 @@ package com.google.android.accessibility.talkback.speechcontrol
 import android.app.KeyguardManager
 import android.content.Context
 import android.content.SharedPreferences
+import android.content.pm.ApplicationInfo
+import android.content.pm.PackageInfo
 import android.provider.Settings
 import com.google.android.accessibility.talkback.Feedback
 import com.google.android.accessibility.talkback.Pipeline
@@ -56,6 +58,24 @@ class SpeechControlTest {
   fun tearDown() {
     SpeechControl.detach()
     KeyboardSpeech.clear()
+  }
+
+  /** Installs [APP], declaring the permission to speak while the device is locked if [declares]. */
+  private fun installApp(declares: Boolean) {
+    val info =
+      PackageInfo().apply {
+        packageName = APP
+        applicationInfo = ApplicationInfo().apply { packageName = APP }
+        requestedPermissions =
+          if (declares) arrayOf(SpeechControl.permissionWhenLocked(context)) else arrayOf()
+      }
+    shadowOf(context.packageManager).installPackage(info)
+  }
+
+  private fun allowAndLock() {
+    prefs.edit().putBoolean(SpeechControl.PREF_ENABLED, true).apply()
+    SpeechControlApps.setAllowed(prefs, APP, true)
+    shadowOf(context.getSystemService(KeyguardManager::class.java)).setKeyguardLocked(true)
   }
 
   private fun useKeyboard(packageName: String) {
@@ -183,6 +203,84 @@ class SpeechControlTest {
     shadowOf(context.getSystemService(KeyguardManager::class.java)).setKeyguardLocked(true)
     assertFalse(SpeechControl.speak(listOf(APP), "Hello", interrupt = false))
     assertEquals(0, given.size)
+  }
+
+  @Test
+  fun speak_saysNothingWhileLockedForAnAppThatDoesNotDeclareIt() {
+    installApp(declares = false)
+    allowAndLock()
+    SpeechControlApps.setAllowedWhileLocked(prefs, APP, true)
+    assertFalse(SpeechControl.speak(listOf(APP), "Hello", interrupt = false))
+    assertEquals(0, given.size)
+  }
+
+  @Test
+  fun speak_saysNothingWhileLockedUntilTheUserAllowsItWhileLocked() {
+    installApp(declares = true)
+    allowAndLock()
+    assertFalse(SpeechControl.speak(listOf(APP), "Hello", interrupt = false))
+    assertEquals(0, given.size)
+    assertEquals(SpeechControlApps.State.UNKNOWN, SpeechControlApps.lockedState(prefs, APP))
+  }
+
+  @Test
+  fun speak_saysTextWhileLockedForAnAppAllowedWhileLocked() {
+    installApp(declares = true)
+    allowAndLock()
+    SpeechControlApps.setAllowedWhileLocked(prefs, APP, true)
+    assertTrue(SpeechControl.speak(listOf(APP), "Hello", interrupt = false))
+    assertEquals(1, given.size)
+  }
+
+  @Test
+  fun speak_saysNothingWhileLockedForAnAppBlockedWhileLocked() {
+    installApp(declares = true)
+    allowAndLock()
+    SpeechControlApps.setAllowedWhileLocked(prefs, APP, false)
+    assertFalse(SpeechControl.speak(listOf(APP), "Hello", interrupt = false))
+    assertEquals(0, given.size)
+  }
+
+  @Test
+  fun speak_whileLockedStillNeedsTheAppAllowed() {
+    installApp(declares = true)
+    allowAndLock()
+    SpeechControlApps.setAllowed(prefs, APP, false)
+    SpeechControlApps.setAllowedWhileLocked(prefs, APP, true)
+    assertFalse(SpeechControl.speak(listOf(APP), "Hello", interrupt = false))
+    assertEquals(0, given.size)
+  }
+
+  @Test
+  fun speak_unlockedNeedsNoAnswerForWhileLocked() {
+    installApp(declares = true)
+    prefs.edit().putBoolean(SpeechControl.PREF_ENABLED, true).apply()
+    SpeechControlApps.setAllowed(prefs, APP, true)
+    assertTrue(SpeechControl.speak(listOf(APP), "Hello", interrupt = false))
+    assertEquals(1, given.size)
+  }
+
+  @Test
+  fun setAllowed_doesNotAllowAnAppWhileLocked() {
+    SpeechControlApps.setAllowed(prefs, APP, true)
+    assertEquals(SpeechControlApps.State.UNKNOWN, SpeechControlApps.lockedState(prefs, APP))
+  }
+
+  @Test
+  fun forget_forgetsTheAnswerForWhileLocked() {
+    SpeechControlApps.setAllowed(prefs, APP, true)
+    SpeechControlApps.setAllowedWhileLocked(prefs, APP, true)
+    SpeechControlApps.forget(prefs, APP)
+    assertEquals(SpeechControlApps.State.UNKNOWN, SpeechControlApps.lockedState(prefs, APP))
+  }
+
+  @Test
+  fun declaresSpeakWhenLocked_readsTheAppsManifest() {
+    installApp(declares = true)
+    assertTrue(SpeechControl.declaresSpeakWhenLocked(context, APP))
+    installApp(declares = false)
+    assertFalse(SpeechControl.declaresSpeakWhenLocked(context, APP))
+    assertFalse(SpeechControl.declaresSpeakWhenLocked(context, "com.example.missing"))
   }
 
   @Test

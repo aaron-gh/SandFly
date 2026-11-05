@@ -18,6 +18,7 @@ package com.google.android.accessibility.talkback.speechcontrol
 
 import android.app.KeyguardManager
 import android.content.Context
+import android.content.pm.PackageManager
 import android.os.SystemClock
 import androidx.annotation.MainThread
 import androidx.annotation.VisibleForTesting
@@ -43,7 +44,9 @@ import com.google.android.libraries.accessibility.utils.log.LogUtils
  * - Nothing is said unless Let other apps speak is on and the user allowed that app, which
  *   Backtalk asks about the first time the app tries.
  * - A sound can play before each thing an app says, so it can't pass for Backtalk.
- * - Nothing is said while the device is locked, or while Backtalk is off or paused.
+ * - Nothing is said while Backtalk is off or paused. While the device is locked, nothing is said
+ *   unless the app declares [permissionWhenLocked] in its manifest and the user separately allowed
+ *   it to speak while locked, which Backtalk asks about the first time it tries.
  * - Each app can speak a few times at once, then about once a second.
  * - Apps can replace or stop only speech from other apps, never Backtalk's own.
  *
@@ -55,6 +58,7 @@ object SpeechControl {
   private const val TAG = "SpeechControl"
 
   const val PERMISSION = "fyi.quin.backtalk.permission.SPEAK"
+  private const val PERMISSION_WHEN_LOCKED_SUFFIX = ".permission.SPEAK_WHEN_LOCKED"
 
   const val ACTION_SPEAK = "fyi.quin.backtalk.action.SPEAK"
   const val ACTION_STOP = "fyi.quin.backtalk.action.STOP_SPEECH"
@@ -103,6 +107,28 @@ object SpeechControl {
     rateLimiter.clear()
   }
 
+  /**
+   * The permission an app declares to ask to speak while the device is locked. Named after the app
+   * ID, as SPEAK is: under fyi.quin.backtalk it is fyi.quin.backtalk.permission.SPEAK_WHEN_LOCKED.
+   */
+  fun permissionWhenLocked(context: Context): String =
+    context.packageName + PERMISSION_WHEN_LOCKED_SUFFIX
+
+  /**
+   * Whether [app] declares [permissionWhenLocked] in its manifest. Read from what the app asks
+   * for, not what Android granted, since declaring it grants nothing here: the user decides.
+   */
+  fun declaresSpeakWhenLocked(context: Context, app: String): Boolean =
+    try {
+      @Suppress("DEPRECATION")
+      context.packageManager
+        .getPackageInfo(app, PackageManager.GET_PERMISSIONS)
+        .requestedPermissions
+        ?.contains(permissionWhenLocked(context)) == true
+    } catch (e: PackageManager.NameNotFoundException) {
+      false
+    }
+
   fun isEnabled(context: Context): Boolean =
     SharedPreferencesUtils.getSharedPreferences(context).getBoolean(PREF_ENABLED, false)
 
@@ -133,7 +159,10 @@ object SpeechControl {
     val app = allowedApp(apps) ?: return false
     val feedback = feedback ?: return false
     val context = context ?: return false
-    if (context.getSystemService(KeyguardManager::class.java)?.isKeyguardLocked == true) {
+    if (
+      context.getSystemService(KeyguardManager::class.java)?.isKeyguardLocked == true &&
+        !maySpeakWhileLocked(context, app)
+    ) {
       LogUtils.i(TAG, "Ignored speech from %s, since the device is locked", app)
       return false
     }
@@ -189,6 +218,23 @@ object SpeechControl {
         ),
       )
     return feedback.returnFeedback(EVENT_ID_UNTRACKED, Feedback.speech(say, options))
+  }
+
+  /**
+   * Whether [app], already allowed, may also speak while the device is locked: it declares
+   * [permissionWhenLocked] and the user allowed it to. Asks the user the first time.
+   */
+  private fun maySpeakWhileLocked(context: Context, app: String): Boolean {
+    if (!declaresSpeakWhenLocked(context, app)) return false
+    val prefs = SharedPreferencesUtils.getSharedPreferences(context)
+    return when (SpeechControlApps.lockedState(prefs, app)) {
+      SpeechControlApps.State.ALLOWED -> true
+      SpeechControlApps.State.DENIED -> false
+      SpeechControlApps.State.UNKNOWN -> {
+        SpeechControlApproval.askWhileLocked(context, app)
+        false
+      }
+    }
   }
 
   /**

@@ -18,7 +18,10 @@ package com.google.android.accessibility.talkback.speechcontrol
 
 import android.content.SharedPreferences
 
-/** Which apps the user let speak through Backtalk, and which they didn't. */
+/**
+ * Which apps the user let speak through Backtalk, and which they didn't, and apart from that,
+ * which they let speak while the device is locked.
+ */
 object SpeechControlApps {
   enum class State {
     ALLOWED,
@@ -29,6 +32,8 @@ object SpeechControlApps {
 
   private const val PREF_ALLOWED = "pref_speech_control_allowed_apps"
   private const val PREF_DENIED = "pref_speech_control_denied_apps"
+  private const val PREF_LOCKED_ALLOWED = "pref_speech_control_locked_allowed_apps"
+  private const val PREF_LOCKED_DENIED = "pref_speech_control_locked_denied_apps"
 
   fun state(prefs: SharedPreferences, app: String): State =
     when (app) {
@@ -47,13 +52,36 @@ object SpeechControlApps {
       .apply()
   }
 
-  /** Forgets the user's answer for [app], so it isn't listed. */
+  /**
+   * Whether the user let [app] speak while the device is locked, a separate answer from [state]:
+   * allowing an app doesn't allow it while locked.
+   */
+  fun lockedState(prefs: SharedPreferences, app: String): State =
+    when (app) {
+      in set(prefs, PREF_LOCKED_ALLOWED) -> State.ALLOWED
+      in set(prefs, PREF_LOCKED_DENIED) -> State.DENIED
+      else -> State.UNKNOWN
+    }
+
+  fun setAllowedWhileLocked(prefs: SharedPreferences, app: String, allowed: Boolean) {
+    val allowedApps = set(prefs, PREF_LOCKED_ALLOWED)
+    val deniedApps = set(prefs, PREF_LOCKED_DENIED)
+    prefs
+      .edit()
+      .putStringSet(PREF_LOCKED_ALLOWED, if (allowed) allowedApps + app else allowedApps - app)
+      .putStringSet(PREF_LOCKED_DENIED, if (allowed) deniedApps - app else deniedApps + app)
+      .apply()
+  }
+
+  /** Forgets the user's answers for [app], so it isn't listed. */
   fun forget(prefs: SharedPreferences, app: String) {
-    if (state(prefs, app) == State.UNKNOWN) return
+    if (state(prefs, app) == State.UNKNOWN && lockedState(prefs, app) == State.UNKNOWN) return
     prefs
       .edit()
       .putStringSet(PREF_ALLOWED, set(prefs, PREF_ALLOWED) - app)
       .putStringSet(PREF_DENIED, set(prefs, PREF_DENIED) - app)
+      .putStringSet(PREF_LOCKED_ALLOWED, set(prefs, PREF_LOCKED_ALLOWED) - app)
+      .putStringSet(PREF_LOCKED_DENIED, set(prefs, PREF_LOCKED_DENIED) - app)
       .apply()
   }
 

@@ -13,7 +13,8 @@ Nothing your app sends is said until the user allows it:
 Even for an allowed app:
 
 *   If the user turns on **Play a sound before other apps speak**, SandFly plays a short sound before each thing your app says, so they can tell it apart from SandFly's own speech.
-*   Nothing is said while the device is locked, or while SandFly is off or paused.
+*   Nothing is said while SandFly is off or paused.
+*   Nothing is said while the device is locked, unless your app declares that it speaks while locked and the user allows that too. See [Speaking while the device is locked](#speaking-while-the-device-is-locked).
 *   Each app can speak a few times at once, then about once a second. Requests beyond that are dropped.
 *   Text is said as plain text, without styling.
 *   Interrupting and stopping only affect speech from other apps. Your app can never cut off SandFly's own speech.
@@ -35,6 +36,22 @@ On Android 11 and later, also make SandFly visible to your app:
     <package android:name="io.github.aaron_gh.sandfly" />
 </queries>
 ```
+
+## Speaking while the device is locked
+
+An app that needs to speak while the device is locked, such as one that reads new messages aloud with the screen off, declares a second permission:
+
+```xml
+<uses-permission android:name="io.github.aaron_gh.sandfly.permission.SPEAK_WHEN_LOCKED" />
+```
+
+Declaring it allows nothing by itself. It's a separate choice from **Allow**:
+
+1.  Allowing your app to speak doesn't allow it while the device is locked.
+2.  The first time your app asks to speak while the device is locked, SandFly posts a second notification that asks whether to allow that. **Allow** needs the device unlocked first, so that someone holding a locked phone can't choose it. Until the user allows it, nothing your app sends while the device is locked is said.
+3.  The user can turn it on or off at any time with the app's **while the device is locked** switch in **Apps** > **Let other apps speak**. The switch is listed only for apps that declare the permission.
+
+Apps that don't declare the permission never speak while the device is locked. The rate limit and sound apply as at any other time. A device whose SandFly is older than this feature has no such permission, and says nothing from other apps while it's locked.
 
 ## Binding to the service
 
