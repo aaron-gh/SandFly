@@ -389,6 +389,10 @@ Limitations:
 
 ## Gestures
 
+
+### AI actions reading control
+
+The **AI actions** reading control (Android 11 and later) runs **Describe screen**, **Describe image** or **Start or stop AI agent task**. Swipe up or down to choose an action, then double-tap to run it. Double-tap runs the action that the reading control says until focus moves. Actions that aren't available, such as **Describe screen** in a phone language that it doesn't support, are left out, and the reading control is hidden when none is available.
 ### Default gestures
 
 SandFly changes these default gestures:

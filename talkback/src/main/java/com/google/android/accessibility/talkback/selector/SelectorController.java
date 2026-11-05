@@ -84,6 +84,7 @@ import com.google.android.accessibility.talkback.Feedback.TalkBackUI.Item;
 import com.google.android.accessibility.talkback.Interpretation;
 import com.google.android.accessibility.talkback.Pipeline;
 import com.google.android.accessibility.talkback.R;
+import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.preference.ItemOrder;
 import com.google.android.accessibility.talkback.UserInterface.UserInputEventListener;
 import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics;
@@ -274,6 +275,10 @@ public class SelectorController implements UserInputEventListener {
         R.string.pref_selector_live_recognition_key,
         R.string.selector_live_recognition,
         R.bool.pref_selector_live_recognition_default),
+    AI_ACTIONS(
+        R.string.pref_selector_ai_actions_key,
+        R.string.selector_ai_actions,
+        R.bool.pref_selector_ai_actions_default),
     ACTIONS(
         R.string.pref_selector_actions_key,
         R.string.selector_actions,
@@ -701,6 +706,7 @@ public class SelectorController implements UserInputEventListener {
           Setting.LANGUAGE,
           // TODO Supports sound feedback and vibration feedback.
           Setting.LIVE_RECOGNITION,
+          Setting.AI_ACTIONS,
           Setting.HIDE_SCREEN,
           Setting.AUDIO_FOCUS,
           Setting.SCROLLING_SEQUENTIAL,
@@ -739,8 +745,8 @@ public class SelectorController implements UserInputEventListener {
   private Setting settingToRestore;
 
   private @Nullable String scriptControlKey;
-  // Whether double-tap toggles the chosen live recognition mode.
-  private boolean liveRecognitionArmed;
+  // Whether double-tap toggles the chosen live recognition mode or runs the chosen AI action.
+  private boolean doubleTapArmed;
 
   private final VolumeMonitor volumeMonitor;
 
@@ -809,6 +815,7 @@ public class SelectorController implements UserInputEventListener {
     } else if (!FeatureSupport.doesServiceHandleDoubleTap()) {
       hiddenSettingsBuilder.add(ACTIONS);
       hiddenSettingsBuilder.add(Setting.LIVE_RECOGNITION);
+      hiddenSettingsBuilder.add(Setting.AI_ACTIONS);
     }
     // Hide SEARCH in selector.
     if (!FeatureFlagReader.enableScreenSearchNavigation(context)
@@ -1098,6 +1105,14 @@ public class SelectorController implements UserInputEventListener {
             + LiveRecognition.selection(context);
         hint = context.getString(R.string.live_recognition_hint);
       }
+      case AI_ACTIONS -> {
+        AiActions.Action action = AiActions.current(context);
+        actionDescription = context.getString(R.string.title_selector_ai_actions);
+        if (action != null) {
+          actionDescription += ", " + action.getLabel();
+        }
+        hint = context.getString(R.string.ai_actions_hint);
+      }
       case ACTIONS -> {
         // Reset currentActionId to the default action.
         resetActionMenuToDefault();
@@ -1192,12 +1207,14 @@ public class SelectorController implements UserInputEventListener {
     DescriptionAndHint descriptionAndHint = getSettingActionDescriptionAndHint(newSetting, eventId);
 
     // There's no setting needed to handle double-tap by default, reset it once setting changed.
-    // Live recognition takes double-tap to turn the mode it says on or off, when the user chose
-    // it. Not when it comes back silently after focus moved, or double-tap on the focused item,
-    // such as the Live recognition checkbox in settings, would turn a mode on instead.
-    liveRecognitionArmed =
-        newSetting == Setting.LIVE_RECOGNITION && announceType != AnnounceType.SILENCE;
-    requestServiceHandlesDoubleTap(EVENT_ID_UNTRACKED, liveRecognitionArmed);
+    // Live recognition takes double-tap to turn the mode it says on or off, and AI actions to run
+    // the action it says, when the user chose it. Not when it comes back silently after focus
+    // moved, or double-tap on the focused item, such as the Live recognition checkbox in
+    // settings, would turn a mode on instead.
+    doubleTapArmed =
+        (newSetting == Setting.LIVE_RECOGNITION || newSetting == Setting.AI_ACTIONS)
+            && announceType != AnnounceType.SILENCE;
+    requestServiceHandlesDoubleTap(EVENT_ID_UNTRACKED, doubleTapArmed);
 
     if (TextUtils.isEmpty(descriptionAndHint.description)) {
       return;
@@ -1313,8 +1330,8 @@ public class SelectorController implements UserInputEventListener {
   public void newItemFocused(
       AccessibilityNodeInfo nodeInfo, @NonNull Interpretation.AccessibilityFocused axFocused) {
     // Double-tap activates the newly focused item again, such as a permission dialog button.
-    if (liveRecognitionArmed) {
-      liveRecognitionArmed = false;
+    if (doubleTapArmed) {
+      doubleTapArmed = false;
       requestServiceHandlesDoubleTap(EVENT_ID_UNTRACKED, false);
     }
     // Reset currentActionId to the default action.
@@ -1735,6 +1752,10 @@ public class SelectorController implements UserInputEventListener {
       case LIVE_RECOGNITION -> {
         return LiveRecognition.isSupported(context) && FeatureSupport.doesServiceHandleDoubleTap();
       }
+      case AI_ACTIONS -> {
+        return FeatureSupport.doesServiceHandleDoubleTap()
+            && !AiActions.available(context).isEmpty();
+      }
       case ACTIONS -> {
         Optional<ContextualSetting> actions = findContextualSetting(ACTIONS);
         if (actions.isEmpty()) {
@@ -2038,10 +2059,20 @@ public class SelectorController implements UserInputEventListener {
 
     switch (currentSetting) {
       case LIVE_RECOGNITION -> {
-        liveRecognitionArmed = true;
+        doubleTapArmed = true;
         requestServiceHandlesDoubleTap(eventId, true);
         announceSetting(eventId, LiveRecognition.step(context, isNext),
             context.getString(R.string.live_recognition_hint));
+        return;
+      }
+      case AI_ACTIONS -> {
+        AiActions.Action action = AiActions.step(context, isNext);
+        if (action == null) {
+          return;
+        }
+        doubleTapArmed = true;
+        requestServiceHandlesDoubleTap(eventId, true);
+        announceSetting(eventId, action.getLabel(), context.getString(R.string.ai_actions_hint));
         return;
       }
       case SPEECH_RATE -> {
@@ -2242,16 +2273,27 @@ public class SelectorController implements UserInputEventListener {
   }
 
   /**
-   * Toggles the chosen live recognition mode, if the reading control was chosen or adjusted since
-   * focus last moved.
+   * Toggles the chosen live recognition mode or runs the chosen AI action, if its reading control
+   * was chosen or adjusted since focus last moved.
    */
-  public boolean activateLiveRecognition() {
-    if (!liveRecognitionArmed || scriptControlKey != null
-        || getCurrentSetting(context) != Setting.LIVE_RECOGNITION) {
+  public boolean activateDoubleTapSetting() {
+    if (!doubleTapArmed || scriptControlKey != null) {
       return false;
     }
-    LiveRecognition.toggle(context);
-    return true;
+    Setting setting = getCurrentSetting(context);
+    if (setting == Setting.LIVE_RECOGNITION) {
+      LiveRecognition.toggle(context);
+      return true;
+    }
+    if (setting == Setting.AI_ACTIONS) {
+      AiActions.Action action = AiActions.current(context);
+      TalkBackService service = TalkBackService.getInstance();
+      if (action == null || service == null) {
+        return false;
+      }
+      return service.performCommand(action.getValue());
+    }
+    return false;
   }
 
   /** Activate the currently selected action in the actions setting. */
