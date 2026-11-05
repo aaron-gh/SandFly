@@ -2199,6 +2199,7 @@ public class TalkBackService extends AccessibilityServiceCompat
         // of markAllOnboardingAsShown.
         if (shouldAskGestureLayout()) {
           // The tutorial teaches the gestures chosen, so it opens after the choice.
+          GestureLayout.markAskPending(prefs);
           startActivity(
               GestureLayoutActivity.intent(
                   this, TutorialInitiator.createFirstRunTutorialIntent(getApplicationContext())));
@@ -2206,8 +2207,6 @@ public class TalkBackService extends AccessibilityServiceCompat
           showTutorial();
         }
       }
-    } else if (shouldAskGestureLayout()) {
-      startActivity(GestureLayoutActivity.intent(this, /* next= */ null));
     } else {
       if (Settings.Secure.getInt(getContentResolver(), Settings.Global.DEVICE_PROVISIONED, 1)
           != 0) {
@@ -4591,11 +4590,11 @@ public class TalkBackService extends AccessibilityServiceCompat
   }
 
   /**
-   * Whether to ask, the first time SandFly starts on a touch screen, for SandFly's gestures or
-   * VoiceOver's.
+   * Whether to ask, before the tutorial the first time SandFly starts on a touch screen, for
+   * SandFly's gestures or VoiceOver's, or again when the dialog was left without a choice.
    */
   private boolean shouldAskGestureLayout() {
-    return isFirstTimeUser()
+    return (isFirstTimeUser() || GestureLayout.isAskPending(prefs))
         && !GestureLayout.isChosen(prefs)
         && supportsTouchScreen
         && getResources().getConfiguration().touchscreen != Configuration.TOUCHSCREEN_NOTOUCH

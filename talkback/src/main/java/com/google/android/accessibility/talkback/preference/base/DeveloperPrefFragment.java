@@ -608,11 +608,14 @@ public class DeveloperPrefFragment extends TalkbackBaseFragment {
     // debugging and performance tracking.
     final String[] gesturePrefKeys = getResources().getStringArray(R.array.pref_shortcut_keys);
 
-    // For each gesture that matches shortcut... unassign gesture.
-    for (String prefKey : gesturePrefKeys) {
-      final String currentValue = prefs.getString(prefKey, null);
-      if (getString(shortcutRes).equals(currentValue)) {
-        prefEditor.putString(prefKey, getString(R.string.shortcut_value_unassigned));
+    // For each gesture that matches shortcut, in either gesture layout... unassign gesture.
+    for (String baseKey : gesturePrefKeys) {
+      for (String layout : new String[] {GestureLayout.SANDFLY, GestureLayout.VOICEOVER}) {
+        String prefKey = GestureLayout.key(layout, baseKey);
+        final String currentValue = prefs.getString(prefKey, null);
+        if (getString(shortcutRes).equals(currentValue)) {
+          prefEditor.putString(prefKey, getString(R.string.shortcut_value_unassigned));
+        }
       }
     }
     prefEditor.apply();

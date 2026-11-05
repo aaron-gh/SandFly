@@ -43,8 +43,25 @@ object GestureLayout {
 
   private const val VOICEOVER_SUFFIX = "_voiceover"
 
+  // Set once a layout is chosen in the first-run dialog or on the Gestures screen. KEY alone isn't
+  // enough: the Gestures screen's list saves it when the screen opens.
+  private const val CHOSEN_KEY = "pref_gesture_layout_chosen"
+
+  // Set while the first-run dialog waits for a choice, so that it opens again if left with Home.
+  private const val ASK_PENDING_KEY = "pref_gesture_layout_ask_pending"
+
   /** Whether a layout has been chosen, in the first-run dialog or on the Gestures screen. */
-  @JvmStatic fun isChosen(prefs: SharedPreferences): Boolean = prefs.contains(KEY)
+  @JvmStatic fun isChosen(prefs: SharedPreferences): Boolean = prefs.getBoolean(CHOSEN_KEY, false)
+
+  /** Whether the first-run dialog opened and was left without a choice. */
+  @JvmStatic
+  fun isAskPending(prefs: SharedPreferences): Boolean = prefs.getBoolean(ASK_PENDING_KEY, false)
+
+  /** Notes that the first-run dialog opens, until a layout is chosen. */
+  @JvmStatic
+  fun markAskPending(prefs: SharedPreferences) {
+    prefs.edit().putBoolean(ASK_PENDING_KEY, true).apply()
+  }
 
   /** The layout in use. */
   @JvmStatic
@@ -64,6 +81,8 @@ object GestureLayout {
       .edit()
       .putString(KEY, chosen)
       .putBoolean(TWO_FINGER_SWIPES_KEY, chosen == VOICEOVER)
+      .putBoolean(CHOSEN_KEY, true)
+      .remove(ASK_PENDING_KEY)
       .apply()
   }
 

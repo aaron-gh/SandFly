@@ -57,6 +57,18 @@ class GestureLayoutTest {
   }
 
   @Test
+  fun savingTheListValueAloneIsNoChoice() {
+    // The Gestures screen's list saves its value when the screen opens.
+    prefs.edit().putString(GestureLayout.KEY, GestureLayout.SANDFLY).commit()
+    assertFalse(GestureLayout.isChosen(prefs))
+    GestureLayout.markAskPending(prefs)
+    assertTrue(GestureLayout.isAskPending(prefs))
+    GestureLayout.select(prefs, GestureLayout.SANDFLY)
+    assertTrue(GestureLayout.isChosen(prefs))
+    assertFalse(GestureLayout.isAskPending(prefs))
+  }
+
+  @Test
   fun voiceOverGesturesHaveVoiceOverDefaults() {
     GestureLayout.select(prefs, GestureLayout.VOICEOVER)
     assertTrue(GestureLayout.isChosen(prefs))
