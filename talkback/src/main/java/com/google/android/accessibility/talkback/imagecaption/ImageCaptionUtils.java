@@ -210,9 +210,11 @@ public class ImageCaptionUtils {
   }
 
   /**
-   * Checks if the node can be captioned.
+   * Checks if the node can be captioned automatically.
    *
-   * <p>Both images and small leaf views can be captioned.
+   * <p>Both images and small leaf views can be captioned. A WebView, which is also the class of a
+   * web document, and a scrolling web container are not, even when they report that they contain
+   * an image.
    */
   public static boolean isCaptionable(Context context, @Nullable AccessibilityNodeInfoCompat node) {
     if (node == null || !FeatureSupport.canTakeScreenShotByAccessibilityService()) {
@@ -220,6 +222,9 @@ public class ImageCaptionUtils {
     }
 
     @RoleName int role = Role.getRole(node);
+    if (isWebContainer(node, role)) {
+      return false;
+    }
     // Checks if a view in WebView is an image by the AccessibilityNodeInfo.hasImage attribute
     // instead of a11y class name.
     if (isImageOrImageButton(role) || WebInterfaceUtils.containsImage(node)) {
@@ -240,6 +245,22 @@ public class ImageCaptionUtils {
   public static CaptionType getPreferredModuleOnNode(
       Context context, AccessibilityNodeInfoCompat node) {
     return isSmallSizeNode(context, node) ? ICON_LABEL : IMAGE_DESCRIPTION;
+  }
+
+  /**
+   * Returns whether the node is a WebView or web document, or web content that scrolls. The
+   * AccessibilityNodeInfo.hasImage extra of web content is also set when only a descendant is an
+   * image, so it makes such a container look like an image.
+   */
+  @VisibleForTesting
+  static boolean isWebContainer(AccessibilityNodeInfoCompat node, @RoleName int role) {
+    if (role == Role.ROLE_WEB_VIEW) {
+      return true;
+    }
+    return !isImageOrImageButton(role)
+        && node.getChildCount() > 0
+        && node.isScrollable()
+        && WebInterfaceUtils.containsImage(node);
   }
 
   private static boolean isImageOrImageButton(@RoleName int role) {
