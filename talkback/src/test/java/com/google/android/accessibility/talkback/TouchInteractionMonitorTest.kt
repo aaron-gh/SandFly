@@ -230,9 +230,9 @@ class TouchInteractionMonitorTest {
     stateChangeAt(STATE_TOUCH_INTERACTING, 0)
     touchAt(ACTION_DOWN, 160f, 200f, 0)
 
-    runUntil(140)
+    runUntil(90)
     assertEquals(listOf<Thread>(), reporter.requests)
-    runUntil(200)
+    runUntil(150)
     assertEquals(listOf(mainThread), reporter.requests)
   }
 

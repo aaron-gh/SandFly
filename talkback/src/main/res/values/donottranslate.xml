@@ -1231,23 +1231,7 @@
 
   <string name="touch_explore_time_out_default" translatable="false">300</string>
 
-  <!-- Touch focus focus entries -->
-  <string-array name="pref_touch_focus_time_out_entries">
-    <item>@string/value_touch_explore_time_out_150ms</item>
-    <item>@string/value_touch_explore_time_out_200ms</item>
-    <item>@string/value_touch_explore_time_out_250ms</item>
-    <item>@string/value_touch_explore_time_out_300ms</item>
-  </string-array>
-
-  <!-- Touch focus time out values -->
-  <string-array name="pref_touch_focus_time_out_values">
-    <item>150</item>
-    <item>200</item>
-    <item>250</item>
-    <item>300</item>
-  </string-array>
-
-  <string name="touch_focus_time_out_default" translatable="false">200</string>
+  <string name="touch_focus_time_out_default" translatable="false">150</string>
 
   <!-- Shortcut preference of basic navigation -->
     <string-array name="shortcut_basic_navigation">
