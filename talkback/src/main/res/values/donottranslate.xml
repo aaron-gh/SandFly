@@ -316,7 +316,7 @@
     <!-- Window names. Replaces the speak system window titles and first item interrupts window name
          switches, which only the migration in WindowNamesSetting reads now. -->
     <string name="pref_window_names_key" translatable="false">pref_window_names</string>
-    <string name="pref_window_names_default" translatable="false">always</string>
+    <string name="pref_window_names_default" translatable="false">until_first_item</string>
     <string-array name="pref_window_names_entries">
         <item>@string/window_names_always</item>
         <item>@string/window_names_until_first_item</item>
