@@ -85,6 +85,23 @@ class GestureLayoutTest {
   }
 
   @Test
+  fun topEdgeShortSlideOpensQuickSettingsAndLongNotifications() {
+    GestureLayout.select(prefs, GestureLayout.VOICEOVER)
+    val quickSettings = context.getString(R.string.shortcut_value_quick_settings)
+    val notifications = context.getString(R.string.shortcut_value_notifications)
+    for ((keyRes, value) in
+      listOf(
+        R.string.pref_shortcut_edge_top_left_down_key to quickSettings,
+        R.string.pref_shortcut_edge_top_right_down_key to quickSettings,
+        R.string.pref_shortcut_edge_top_left_long_down_key to notifications,
+        R.string.pref_shortcut_edge_top_right_long_down_key to notifications,
+      )) {
+      val key = context.getString(keyRes)
+      assertEquals(key, value, GestureLayout.read(context, prefs, key, "HOME"))
+    }
+  }
+
+  @Test
   fun gesturesVoiceOverLacksAreUnassigned() {
     GestureLayout.select(prefs, GestureLayout.VOICEOVER)
     for (keyRes in
