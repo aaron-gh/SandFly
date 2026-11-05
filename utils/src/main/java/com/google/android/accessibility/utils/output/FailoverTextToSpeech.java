@@ -1332,6 +1332,62 @@ public class FailoverTextToSpeech {
    */
   private @Nullable String missingVoice;
 
+  /**
+   * The voice profile's voice that couldn't be set on the engine in use, or null. An engine that has
+   * just started may not have loaded its voices yet, so it lists none or refuses the voice, and its
+   * default voice is used instead; {@link #retryProfileVoice} sets the voice again until it works.
+   */
+  private @Nullable String unsetProfileVoice;
+
+  /** How many times {@link #unsetProfileVoice} has been set again. */
+  private int profileVoiceRetries;
+
+  /** Times {@link #unsetProfileVoice} is set again: every 250 ms for 2 s, then every second. */
+  private static final int PROFILE_VOICE_FAST_RETRIES = 8;
+
+  private static final int PROFILE_VOICE_MAX_RETRIES = 21;
+
+  private final Runnable retryProfileVoice = this::retryProfileVoice;
+
+  /** Stops setting {@link #unsetProfileVoice} again. Call with {@link #ttsLock}. */
+  private void clearUnsetProfileVoice() {
+    unsetProfileVoice = null;
+    profileVoiceRetries = 0;
+    mHandler.removeCallbacks(retryProfileVoice);
+  }
+
+  private void scheduleProfileVoiceRetry() {
+    mHandler.postDelayed(
+        retryProfileVoice, profileVoiceRetries < PROFILE_VOICE_FAST_RETRIES ? 250 : 1000);
+  }
+
+  /** Sets the voice profile's voice again, if it couldn't be set when its engine started. */
+  private void retryProfileVoice() {
+    VoiceProfile profile = VoiceProfiles.active();
+    synchronized (ttsLock) {
+      if (unsetProfileVoice == null) {
+        return;
+      }
+      if (tts == null || profile == null || !unsetProfileVoice.equals(profile.voice())) {
+        clearUnsetProfileVoice();
+        return;
+      }
+      profileVoiceRetries++;
+      // The engine may have listed its voices before it loaded them all.
+      engineVoices = null;
+      missingVoice = null;
+      localeInUse = attemptSetProfileVoice(profile);
+      if (unsetProfileVoice == null) {
+        LogUtils.i(TAG, "Voice profile voice set after %d retries", profileVoiceRetries);
+      } else if (profileVoiceRetries >= PROFILE_VOICE_MAX_RETRIES) {
+        // Kept, so that it isn't tried again until the engine or voice profile changes.
+        LogUtils.w(TAG, "Gave up setting voice profile voice %s", unsetProfileVoice);
+      } else {
+        scheduleProfileVoiceRetry();
+      }
+    }
+  }
+
   /** Whether long text is sent a sentence at a time, by the voice profile in use if any. */
   private boolean speaksInPhrases() {
     VoiceProfile profile = VoiceProfiles.active();
@@ -1358,6 +1414,9 @@ public class FailoverTextToSpeech {
       return;
     }
     LogUtils.i(TAG, "Voice profile: %s", profile == null ? "default" : profile.name());
+    synchronized (ttsLock) {
+      clearUnsetProfileVoice();
+    }
     if (profile != null && speechCacheManager != null) {
       // Speech from the cache was made in the voice in use until now, and speech queued behind it
       // would set its language over the profile's voice.
@@ -1418,8 +1477,14 @@ public class FailoverTextToSpeech {
         Voice voice = findVoice(profile.voice());
         if (voice != null && tts.setVoice(voice) == TextToSpeech.SUCCESS) {
           LogUtils.i(TAG, "Voice profile voice: %s", voice.getName());
+          clearUnsetProfileVoice();
           cachedTtsLocale = voice.getLocale();
           return cachedTtsLocale;
+        }
+        if (!profile.voice().isEmpty() && !profile.voice().equals(unsetProfileVoice)) {
+          clearUnsetProfileVoice();
+          unsetProfileVoice = profile.voice();
+          scheduleProfileVoiceRetry();
         }
         if (!profile.language().isEmpty()) {
           Locale language = Locale.forLanguageTag(profile.language());
@@ -2557,6 +2622,7 @@ public class FailoverTextToSpeech {
       mLastUtteranceLocale = null;
       engineVoices = voices;
       missingVoice = null;
+      clearUnsetProfileVoice();
     }
 
     final boolean isSwitchingEngines = (tts != null);
