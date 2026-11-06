@@ -109,11 +109,33 @@ object KeyboardExploration {
     x: Float,
     y: Float,
   ): AccessibilityNodeInfoCompat? {
-    if (topmostWindowAt(service, displayId, x, y)?.id != root.windowId) {
+    if (!isOnWindow(service, displayId, root, x, y)) {
       return null
     }
-    return focusableAt(root, x.toInt(), y.toInt(), Rect(), depth = 0)
+    return nodeUnder(root, x, y)
   }
+
+  /**
+   * Returns whether the window of [root], the root of Gboard's window from [gboardRootAt], is the
+   * topmost window at [x], [y] on [displayId].
+   */
+  @JvmStatic
+  @RequiresApi(Build.VERSION_CODES.R)
+  fun isOnWindow(
+    service: AccessibilityService,
+    displayId: Int,
+    root: AccessibilityNodeInfoCompat,
+    x: Float,
+    y: Float,
+  ): Boolean = topmostWindowAt(service, displayId, x, y)?.id == root.windowId
+
+  /**
+   * Returns the node at [x], [y] under [root] that touch exploration would focus, or null, without
+   * checking that [root]'s window is the topmost one there; see [isOnWindow].
+   */
+  @JvmStatic
+  fun nodeUnder(root: AccessibilityNodeInfoCompat, x: Float, y: Float): AccessibilityNodeInfoCompat? =
+    focusableAt(root, x.toInt(), y.toInt(), Rect(), depth = 0)
 
   private const val MAX_DEPTH = 30
 

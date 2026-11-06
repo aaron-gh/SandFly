@@ -781,6 +781,11 @@ public class AccessibilityFocusInterpreter
     focusProcessorForTapAndTouchExploration.setFingerAtScreenEdge(atEdge);
   }
 
+  /** Forgets the item touched last, so that lifting the finger now activates nothing. */
+  public void forgetTouchedNode() {
+    focusProcessorForTapAndTouchExploration.forgetTouchedNode();
+  }
+
   /** Notes that the finger left the strip at the bottom of the screen at {@code timeMs}. */
   public void onFingerLeftScreenEdge(long timeMs) {
     focusProcessorForTapAndTouchExploration.onFingerLeftScreenEdge(timeMs);

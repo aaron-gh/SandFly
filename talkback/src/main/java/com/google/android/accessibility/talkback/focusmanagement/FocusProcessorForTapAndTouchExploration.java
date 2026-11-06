@@ -613,6 +613,17 @@ public class FocusProcessorForTapAndTouchExploration {
   }
 
   /**
+   * Forgets the item the touch in progress touched last, so that lifting the finger now activates
+   * nothing, as when it leaves Gboard for a part of the screen with nothing to focus.
+   */
+  public void forgetTouchedNode() {
+    postDelayHandler.cancelLongPress();
+    postDelayHandler.cancelRefocusTimeout();
+    postDelayHandler.cancelHoldToCancel();
+    lastFocusableNodeBeingTouched = null;
+  }
+
+  /**
    * Notes that the finger left the strip at the bottom of the screen at {@code timeMs}, by moving
    * back up or by lifting.
    */

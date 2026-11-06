@@ -3683,6 +3683,19 @@ public class TalkBackService extends AccessibilityServiceCompat
     }
   }
 
+  /**
+   * Forgets the key touched on Gboard when the finger of a touch explored without touch exploration
+   * leaves the keyboard, so that lifting it there types nothing.
+   */
+  public void onKeyboardTouchLeft() {
+    if (touchExplorationInterpreter != null) {
+      touchExplorationInterpreter.forgetTouchedNode();
+    }
+    if (accessibilityFocusInterpreter != null) {
+      accessibilityFocusInterpreter.forgetTouchedNode();
+    }
+  }
+
   /** Ends a touch on Gboard explored without touch exploration when its finger lifts. */
   public void onKeyboardTouchEnded() {
     if (touchExplorationInterpreter != null) {
