@@ -352,6 +352,8 @@ public class TouchInteractionMonitor
   private boolean fingerAtScreenEdge;
   private float lastExploredX;
   private float lastExploredY;
+  // When the finger of the touch went down, for the Debug log of keys explored on Gboard.
+  private long touchDownTimeMs;
   private @Nullable AccessibilityNodeInfoCompat lastExploredNode;
   // The bounds of lastExploredNode, within which the finger moves without lookups, if it has no
   // children and the keyboard hasn't changed since it was found.
@@ -759,6 +761,9 @@ public class TouchInteractionMonitor
       LogUtils.e(LOG_TAG, "Event is null.");
       return;
     }
+    if (event.getActionMasked() == ACTION_DOWN) {
+      touchDownTimeMs = event.getDownTime();
+    }
     if (event.getActionMasked() == ACTION_DOWN || event.getActionMasked() == ACTION_MOVE) {
       lastFingerX = event.getX(0);
       lastFingerY = event.getY(0);
@@ -784,10 +789,18 @@ public class TouchInteractionMonitor
       downOnKeyboard =
           typingMethod == FocusProcessorForTapAndTouchExploration.TAP_TO_TYPE
               && isOnKeyboard(event.getX(), event.getY());
+      long rootStartMs = SystemClock.uptimeMillis();
       gboardRoot =
           typingMethod != FocusProcessorForTapAndTouchExploration.DOUBLE_TAP
               ? KeyboardExploration.gboardRootAt(service, displayId, event.getX(), event.getY())
               : null;
+      if (gboardRoot != null) {
+        LogUtils.d(
+            LOG_TAG,
+            "Gboard's window fetched in %d ms, %d ms after the finger went down",
+            SystemClock.uptimeMillis() - rootStartMs,
+            rootStartMs - touchDownTimeMs);
+      }
     }
     if (handleEdgeSwipe(event)) {
       return;
@@ -2126,6 +2139,10 @@ public class TouchInteractionMonitor
             clickPopupKeyOnLift();
           }
           // The key is typed now: Android's touch-end event, which types it otherwise, comes later.
+          LogUtils.d(
+              LOG_TAG,
+              "Gboard touch lifted at %d ms",
+              SystemClock.uptimeMillis() - touchDownTimeMs);
           service.onKeyboardTouchEnded();
         }
         exploringKeyboard = false;
@@ -2173,13 +2190,18 @@ public class TouchInteractionMonitor
   private void exploreKeyboardAt(float x, float y) {
     lastExploredX = x;
     lastExploredY = y;
+    long lookupStartMs = SystemClock.uptimeMillis();
     // While Gboard's popup is open, a finger anywhere selects one of its characters.
     @Nullable AccessibilityNodeInfoCompat root = gboardRoot;
     @Nullable AccessibilityNodeInfoCompat node;
     if (gboardPopup != null) {
       node = KeyboardExploration.popupKeyAt(gboardPopupKeys(gboardPopup), x, y);
     } else if (root != null) {
-      node = KeyboardExploration.nodeAt(service, displayId, root, x, y);
+      if (!KeyboardExploration.isOnWindow(service, displayId, root, x, y)) {
+        stopExploringKeyboard();
+        return;
+      }
+      node = KeyboardExploration.nodeUnder(root, x, y);
     } else {
       node = null;
     }
@@ -2193,6 +2215,12 @@ public class TouchInteractionMonitor
       node.refresh();
     }
     lastExploredNode = node;
+    LogUtils.d(
+        LOG_TAG,
+        "Gboard key %s at %d ms of the touch, found in %d ms",
+        node.getContentDescription(),
+        lookupStartMs - touchDownTimeMs,
+        SystemClock.uptimeMillis() - lookupStartMs);
     // A node with children, such as a row found in a gap between its keys, can have a key under
     // the finger as it moves.
     skipLookupsInLastExploredBounds = node.getChildCount() == 0;
@@ -2200,6 +2228,21 @@ public class TouchInteractionMonitor
     // A split tap typed the key explored before; this one is typed on lift.
     splitTappedKeyboard = false;
     service.onKeyboardNodeTouched(node);
+  }
+
+  /**
+   * Hands a touch explored on Gboard to touch exploration once the finger leaves the keyboard, with
+   * no popup open, so that it explores the app and the rest of the screen. The key touched last is
+   * forgotten, so lifting the finger off the keyboard types nothing.
+   */
+  private void stopExploringKeyboard() {
+    LogUtils.v(LOG_TAG, "The finger left the keyboard: touch exploration");
+    exploringKeyboard = false;
+    gboardRoot = null;
+    lastExploredNode = null;
+    skipLookupsInLastExploredBounds = false;
+    service.onKeyboardTouchLeft();
+    requestTouchExploration("stopExploringKeyboard");
   }
 
   /**

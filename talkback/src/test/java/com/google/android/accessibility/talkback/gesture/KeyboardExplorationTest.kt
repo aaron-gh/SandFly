@@ -25,8 +25,10 @@ import android.view.accessibility.AccessibilityNodeInfo
 import android.view.accessibility.AccessibilityWindowInfo
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNotNull
 import org.junit.Assert.assertNull
+import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -152,6 +154,15 @@ class KeyboardExplorationTest {
     val root = KeyboardExploration.gboardRootAt(service, Display.DEFAULT_DISPLAY, 50f, 1650f)!!
 
     assertNull(KeyboardExploration.nodeAt(service, Display.DEFAULT_DISPLAY, root, 50f, 500f))
+  }
+
+  @Test
+  fun fingerMovingUpOffGboardLeavesItsWindow() {
+    val root = KeyboardExploration.gboardRootAt(service, Display.DEFAULT_DISPLAY, 50f, 1650f)!!
+
+    assertTrue(KeyboardExploration.isOnWindow(service, Display.DEFAULT_DISPLAY, root, 50f, 1650f))
+    assertFalse(KeyboardExploration.isOnWindow(service, Display.DEFAULT_DISPLAY, root, 50f, 1400f))
+    assertEquals(1, RootsShadow.rootRequests)
   }
 
   @Test
