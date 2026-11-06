@@ -1558,6 +1558,8 @@
       Description: Title of the audio output device setting. [CHAR LIMIT=35]
     -->
     <string name="title_pref_audio_output_device">Audio output device</string>
+    <!-- Switch: SandFly's speech and sounds stay on the phone, and screen casting, mirroring and screen recording can't take them. -->
+    <string name="title_pref_keep_speech_off_casts">Keep speech on the phone while casting</string>
     <!--
       Source: Dialog title when choosing the audio output device.
       Description: Dialog title for selecting audio output target. [CHAR LIMIT=45]

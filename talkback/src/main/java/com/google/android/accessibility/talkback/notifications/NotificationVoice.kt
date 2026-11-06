@@ -28,6 +28,8 @@ import android.speech.tts.UtteranceProgressListener
 import android.speech.tts.Voice
 import androidx.annotation.MainThread
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.utils.SharedPreferencesUtils
+import com.google.android.accessibility.utils.output.CapturePolicy
 import com.google.android.accessibility.utils.output.FailoverTextToSpeech
 import com.google.android.accessibility.utils.output.SpeechChunker
 import com.google.android.accessibility.utils.output.VoiceProfiles.VoiceProfile
@@ -190,9 +192,12 @@ class NotificationVoice(private val context: Context) {
       return
     }
     tts.setAudioAttributes(
-      AudioAttributes.Builder()
-        .setUsage(FailoverTextToSpeech.speechUsage(context))
-        .setContentType(AudioAttributes.CONTENT_TYPE_SPEECH)
+      CapturePolicy.applyTo(
+          AudioAttributes.Builder()
+            .setUsage(FailoverTextToSpeech.speechUsage(context))
+            .setContentType(AudioAttributes.CONTENT_TYPE_SPEECH),
+          SharedPreferencesUtils.getSharedPreferences(context),
+        )
         .build()
     )
     tts.setOnUtteranceProgressListener(

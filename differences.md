@@ -316,6 +316,8 @@ Android only lets the system and the shell change some settings, and only lets t
 
 **Sound and vibration** > **Audio output device** chooses where SandFly's speech and sounds play. **System default** follows Android. **Phone speaker** plays on the phone's speaker even when Bluetooth is connected, and you can also choose a connected Bluetooth, wired, USB, or hearing aid device by name.
 
+**Keep speech on the phone while casting**, next to **Audio output device**, stops screen casting and mirroring from taking SandFly's speech and sounds to the TV or speaker. Screen recordings then have no SandFly audio either. It's off by default.
+
 SandFly keeps your choice when devices connect or disconnect, or when other apps start playing. If the device that you chose isn't connected, SandFly uses another external device, and the setting shows "(disconnected)" next to the device name. During phone calls, Android decides where audio plays.
 
 **Sound and vibration** > **Phone speaker with these devices** lists the Bluetooth, wired and USB outputs that have been connected while SandFly runs. While one that you check is connected, SandFly plays on the phone speaker, whatever **Audio output device** is set to: for example, on the speaker while music plays on a Bluetooth speaker, and in your ears with earbuds. Outputs are known by name, so two devices with the same name are one choice.
