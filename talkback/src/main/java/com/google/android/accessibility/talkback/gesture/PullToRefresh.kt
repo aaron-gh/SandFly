@@ -20,8 +20,6 @@ import android.accessibilityservice.AccessibilityService
 import android.accessibilityservice.GestureDescription
 import android.graphics.Path
 import android.graphics.Rect
-import android.graphics.Region
-import android.os.Build
 import android.os.Handler
 import android.os.Looper
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
@@ -32,8 +30,6 @@ import com.google.android.accessibility.talkback.focusmanagement.AccessibilityFo
 import com.google.android.accessibility.talkback.selector.VerticalNavigation
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils
 import com.google.android.accessibility.utils.Filter
-import com.google.android.accessibility.talkback.Feedback.PassThroughMode.Action.LOCK_PASS_THROUGH
-import com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED
 import com.google.android.accessibility.utils.Performance.EventId
 import com.google.android.accessibility.utils.input.ScrollEventInterpreter.ScrollTimeout
 import com.google.android.accessibility.utils.output.ScrollActionRecord
@@ -52,8 +48,6 @@ class PullToRefresh(
   private var scrolls = 0
   private var eventId: EventId? = null
   private var pendingPull: Runnable? = null
-  /** Whether a pull has locked touch pass-through and not ended. */
-  private var passingThrough = false
 
   private val step = Runnable { scrollOnce() }
 
@@ -63,8 +57,8 @@ class PullToRefresh(
    */
   fun refresh(eventId: EventId?): Boolean {
     cancel()
-    // Before Android 11 there is no pull, and the list would only be scrolled to its top.
-    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) return false
+    // Before Android 13 there is no pull, and the list would only be scrolled to its top.
+    if (!SyntheticTouches.isAvailable()) return false
     val found = findList() ?: return false
     this.eventId = eventId
     list = found
@@ -86,11 +80,9 @@ class PullToRefresh(
 
   /** Stops scrolling to the top, such as when the user touches the screen or presses a key. */
   fun cancel() {
-    // Also drops the swipe's end, which would unlock pass-through.
     handler.removeCallbacksAndMessages(null)
     list = null
     pendingPull = null
-    if (passingThrough) endPassThrough()
   }
 
   private fun scrollOnce() {
@@ -121,8 +113,8 @@ class PullToRefresh(
   }
 
   private fun pull(eventId: EventId?, list: AccessibilityNodeInfoCompat): Boolean {
-    // Before Android 11, there is no way to pass the swipe through touch exploration.
-    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) return false
+    // SandFly can send the swipe to the app as it is only where it recognizes gestures itself.
+    if (!SyntheticTouches.isAvailable()) return false
     val bounds = Rect()
     list.refresh()
     list.getBoundsInScreen(bounds)
@@ -140,43 +132,16 @@ class PullToRefresh(
       GestureDescription.Builder()
         .addStroke(GestureDescription.StrokeDescription(path, 0, PULL_DURATION_MS))
         .build()
-    // Touch exploration would take the swipe as a SandFly gesture, so touch passes through to the
-    // app where the swipe starts, which decides, until it ends. Elsewhere the user's touches are
-    // still explored.
-    val x = bounds.exactCenterX().toInt()
-    val y = startY.toInt()
-    passingThrough = true
-    pipeline.returnFeedback(
-      eventId,
-      Feedback.passThroughMode(
-        LOCK_PASS_THROUGH,
-        Region(x - PASS_THROUGH_RADIUS, y - PASS_THROUGH_RADIUS, x + PASS_THROUGH_RADIUS, y + PASS_THROUGH_RADIUS),
-      ),
-    )
-    val ended =
-      object : AccessibilityService.GestureResultCallback() {
-        override fun onCompleted(description: GestureDescription) = endPassThrough()
-
-        override fun onCancelled(description: GestureDescription) = endPassThrough()
-      }
-    // Android applies the region a moment later, and a gesture that started this may still be
-    // ending.
+    // The swipe goes to the app as it is; see SyntheticTouches. A gesture that started this may
+    // still be ending.
     val send = Runnable {
       pendingPull = null
-      if (!service.dispatchGesture(gesture, ended, handler)) endPassThrough()
+      SyntheticTouches.dispatch(service, gesture, PULL_DURATION_MS)
     }
     pendingPull = send
-    handler.postDelayed(send, PASS_THROUGH_WAIT_MS)
+    handler.postDelayed(send, GESTURE_END_WAIT_MS)
     pipeline.returnFeedback(eventId, Feedback.sound(R.raw.scroll_tone))
     return true
-  }
-
-  private fun endPassThrough() {
-    passingThrough = false
-    pipeline.returnFeedback(
-      EVENT_ID_UNTRACKED,
-      Feedback.passThroughMode(LOCK_PASS_THROUGH, /* region= */ null),
-    )
   }
 
   /**
@@ -216,8 +181,7 @@ class PullToRefresh(
 
     const val PULL_DURATION_MS = 400L
 
-    const val PASS_THROUGH_WAIT_MS = 350L
-    /** Around where the swipe starts; touch exploration checks where a touch goes down. */
-    const val PASS_THROUGH_RADIUS = 24
+    /** How long the gesture that asked for the pull has to end before the swipe is sent. */
+    const val GESTURE_END_WAIT_MS = 150L
   }
 }

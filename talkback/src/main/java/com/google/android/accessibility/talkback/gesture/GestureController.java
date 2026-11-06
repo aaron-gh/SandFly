@@ -193,6 +193,7 @@ public class GestureController {
   private final ProcessorPhoneticLetters processorPhoneticLetters;
   private final ListEdgeScroller listEdgeScroller;
   private final PullToRefresh pullToRefresh;
+  private final LockScreenSwipe lockScreenSwipe;
   private final HandwritingCommand handwritingCommand;
   private final TranslateCommand translateCommand;
   private final HandwritingAppLauncher handwritingAppLauncher;
@@ -251,6 +252,7 @@ public class GestureController {
     this.processorPhoneticLetters = processorPhoneticLetters;
     listEdgeScroller = new ListEdgeScroller(service, pipeline, accessibilityFocusMonitor);
     pullToRefresh = new PullToRefresh(service, pipeline, accessibilityFocusMonitor);
+    lockScreenSwipe = new LockScreenSwipe(service);
     handwritingCommand = new HandwritingCommand(service, pipeline, actorState, selectorController);
     handwritingAppLauncher = new HandwritingAppLauncher(service, pipeline, actorState);
     brailleAppLauncher = new BrailleAppLauncher(service, pipeline, actorState);
@@ -262,6 +264,7 @@ public class GestureController {
   public void shutdown() {
     listEdgeScroller.cancel();
     pullToRefresh.cancel();
+    lockScreenSwipe.cancel();
     handwritingCommand.shutdown();
     handwritingAppLauncher.shutdown();
     brailleAppLauncher.shutdown();
@@ -273,6 +276,7 @@ public class GestureController {
   public void onUserInputStarted() {
     listEdgeScroller.cancel();
     pullToRefresh.cancel();
+    lockScreenSwipe.cancel();
   }
 
   ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -485,6 +489,12 @@ public class GestureController {
       result =
           pipeline.returnFeedback(
               eventId, Feedback.systemAction(AccessibilityService.GLOBAL_ACTION_BACK));
+    } else if (action.equals(service.getString(R.string.shortcut_value_home))
+        && GestureLayout.isVoiceOver(SharedPreferencesUtils.getSharedPreferences(service))
+        && lockScreenSwipe.isLockScreenShown()) {
+      // As on an iPhone, Home on the lock screen unlocks it, or shows the PIN, pattern or
+      // password: Android's lock screen does that for a two-finger swipe up.
+      result = lockScreenSwipe.swipeUp();
     } else if (action.equals(service.getString(R.string.shortcut_value_home))) {
       // Dismiss overlays such as TalkBack menu, Gemini bottom sheet dialog and screen search.
       menuManager.dismissAll();

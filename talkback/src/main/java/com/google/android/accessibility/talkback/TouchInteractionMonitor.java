@@ -114,6 +114,7 @@ import com.google.android.accessibility.talkback.gesture.GestureLog;
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping;
 import com.google.android.accessibility.talkback.gesture.KeyboardExploration;
 import com.google.android.accessibility.talkback.gesture.PinchTracker;
+import com.google.android.accessibility.talkback.gesture.SyntheticTouches;
 import com.google.android.accessibility.talkback.gesture.TapToTypeTracker;
 import com.google.android.accessibility.talkback.gesture.TwoFingerRotationTracker;
 import com.google.android.accessibility.talkback.gesture.TwoFingerScrubTracker;
@@ -365,6 +366,8 @@ public class TouchInteractionMonitor
   private final SharedPreferences sharedPreferences;
   // Whether two-finger touches go to the app, as Handle two-finger swipes in SandFly sets it.
   private boolean twoFingerPassthrough = true;
+  // Whether the touch in progress is one SandFly sent, which goes to the app as it is.
+  private boolean passingSyntheticTouch;
   @VisibleForTesting final TouchExplorationModeFailureReporter touchExplorationModeFailureReporter;
   private final boolean typingFocusTimeout;
   private final boolean touchFocusTimeout;
@@ -781,6 +784,15 @@ public class TouchInteractionMonitor
       lastFingerX = event.getX(0);
       lastFingerY = event.getY(0);
     }
+    if (event.getActionMasked() == ACTION_DOWN && SyntheticTouches.takeIfExpected()) {
+      // SandFly's own touch, such as the swipe of pull to refresh: the app gets it as it is.
+      passingSyntheticTouch = true;
+      requestDelegating("syntheticTouch");
+      return;
+    }
+    if (passingSyntheticTouch) {
+      return;
+    }
     trackFingerAtScreenEdge(event);
     if (exploringKeyboard) {
       exploreKeyboard(event);
@@ -1083,6 +1095,7 @@ public class TouchInteractionMonitor
   }
 
   private void clear() {
+    passingSyntheticTouch = false;
     gestureStarted = false;
     nonSwipeGestureStarted = false;
     clearGestureDetectorOnNextDown = false;
