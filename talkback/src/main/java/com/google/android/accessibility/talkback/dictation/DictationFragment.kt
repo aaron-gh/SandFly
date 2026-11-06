@@ -21,8 +21,10 @@ import android.content.SharedPreferences
 import android.net.ConnectivityManager
 import android.os.Build
 import android.os.Bundle
+import android.provider.OpenableColumns
 import android.text.InputType
 import android.text.format.Formatter
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.preference.EditTextPreference
 import androidx.preference.Preference
@@ -55,6 +57,9 @@ class DictationFragment : TalkbackBaseFragment(R.xml.dictation_preferences) {
   private var downloading: Model? = null
 
   private val listener: () -> Unit = { if (isAdded) refresh() }
+  private var customModelPref: Preference? = null
+  // Whether the user's model file is being copied in.
+  private var copyingCustom = false
 
   public override fun getTitle(): CharSequence = getText(R.string.title_pref_dictation)
 
@@ -93,6 +98,17 @@ class DictationFragment : TalkbackBaseFragment(R.xml.dictation_preferences) {
       category.addPreference(row)
       modelPrefs[model] = row
     }
+    customModelPref =
+      AccessibilitySuitePreference(context).apply {
+        key = "pref_dictation_whisper_custom"
+        isPersistent = false
+        setTitle(R.string.title_pref_whisper_custom_model)
+        setOnPreferenceClickListener {
+          onCustomModelClicked()
+          true
+        }
+      }
+    category.addPreference(customModelPref!!)
     // Only phones whose GPU Whisper can use have a choice.
     if (WhisperEngines.gpuAvailable()) {
       whisperProcessorPref =
@@ -134,6 +150,82 @@ class DictationFragment : TalkbackBaseFragment(R.xml.dictation_preferences) {
         true
       }
     }
+  }
+
+  /** Chooses a model file of the user's own, or offers to use, replace or delete it. */
+  private fun onCustomModelClicked() {
+    if (copyingCustom) return
+    val name = models.customName()
+    if (name == null) {
+      chooseCustomModel()
+      return
+    }
+    val use = getString(R.string.dictation_whisper_use)
+    val replace = getString(R.string.whisper_custom_model_replace)
+    val delete = getString(R.string.manage_models_delete)
+    val actions =
+      if (models.isCustomActive()) arrayOf(replace, delete) else arrayOf(use, replace, delete)
+    AlertDialog.Builder(requireContext())
+      .setTitle(name)
+      .setItems(actions) { _, which ->
+        when (actions[which]) {
+          use -> models.useCustom()
+          replace -> chooseCustomModel()
+          else -> models.deleteCustom()
+        }
+      }
+      .setNegativeButton(R.string.on_device_ai_cancel, null)
+      .show()
+  }
+
+  private fun chooseCustomModel() {
+    try {
+      pickCustomModel.launch(arrayOf("*/*"))
+    } catch (e: android.content.ActivityNotFoundException) {
+      toast(getString(R.string.on_device_ai_error_storage))
+    }
+  }
+
+  private val pickCustomModel =
+    registerForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
+      if (uri == null || !isAdded) return@registerForActivityResult
+      val context = requireContext()
+      var name = uri.lastPathSegment.orEmpty()
+      var size = -1L
+      try {
+        context.contentResolver
+          .query(uri, arrayOf(OpenableColumns.DISPLAY_NAME, OpenableColumns.SIZE), null, null, null)
+          ?.use { cursor ->
+            if (cursor.moveToFirst()) {
+              cursor.getString(0)?.let { name = it }
+              if (!cursor.isNull(1)) size = cursor.getLong(1)
+            }
+          }
+      } catch (e: RuntimeException) {
+        // The name and size are only for the list and the space check.
+      }
+      copyingCustom = true
+      refresh()
+      models.importCustom(context, uri, name, size) { failure ->
+        copyingCustom = false
+        if (!isAdded) return@importCustom
+        refresh()
+        failure?.let {
+          toast(
+            getString(
+              when (it) {
+                WhisperModels.ImportFailure.NOT_A_MODEL -> R.string.whisper_custom_model_not_whisper
+                WhisperModels.ImportFailure.LOW_SPACE -> R.string.on_device_ai_error_low_space
+                WhisperModels.ImportFailure.STORAGE -> R.string.on_device_ai_error_storage
+              }
+            )
+          )
+        }
+      }
+    }
+
+  private fun toast(text: String) {
+    android.widget.Toast.makeText(requireContext(), text, android.widget.Toast.LENGTH_LONG).show()
   }
 
   private fun chooseWhisperProcessor() {
@@ -187,6 +279,16 @@ class DictationFragment : TalkbackBaseFragment(R.xml.dictation_preferences) {
           else -> size(model)
         }
     }
+    customModelPref?.summary =
+      when {
+        copyingCustom -> getString(R.string.whisper_custom_model_copying)
+        models.customName() == null -> getString(R.string.whisper_custom_model_choose)
+        models.isCustomActive() ->
+          "${models.customName()}, ${getString(R.string.ai_provider_in_use)}"
+        else ->
+          "${models.customName()}, " +
+            Formatter.formatShortFileSize(context, models.customFile().length())
+      }
     aiServicePref.summary = aiServiceSummary(context)
     whisperProcessorPref?.summary =
       getString(if (DictationSettings.whisperOnGpu(prefs)) R.string.processor_gpu else R.string.processor_cpu)

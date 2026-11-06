@@ -114,7 +114,7 @@ object DictationSettings {
           Recognition.GOOGLE ->
             googleInstalled(context) && GoogleSpeechLanguages.hasPhoneLanguage() != false
           Recognition.RAMBLER -> ramblerKey(prefs).isNotEmpty()
-          Recognition.WHISPER -> WhisperModels.get(context).activeModel() != null
+          Recognition.WHISPER -> WhisperModels.get(context).activeWhisper() != null
           Recognition.ANDROID -> true
           Recognition.AUTOMATIC -> false
         }

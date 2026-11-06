@@ -4722,6 +4722,16 @@
   <!-- Summary of Speech recognition when Whisper is chosen but no Whisper model is downloaded. Whisper is a product name. [CHAR_LIMIT=NONE] -->
   <string name="dictation_whisper_needs_model">Whisper, needs a downloaded model</string>
   <!-- Dictation settings category listing the Whisper speech recognition models that can be downloaded. Whisper is a product name. [CHAR_LIMIT=NONE] -->
+  <!-- Setting: a Whisper model file in whisper.cpp's format that the user chooses on the phone, for dictation. -->
+  <string name="title_pref_whisper_custom_model">Model file</string>
+  <!-- Summary of the model file setting while there is none. -->
+  <string name="whisper_custom_model_choose">Choose a whisper.cpp model file</string>
+  <!-- Action: choose another model file in place of the user's model file. -->
+  <string name="whisper_custom_model_replace">Choose another file</string>
+  <!-- Error: the chosen file isn't a Whisper model in whisper.cpp's format. -->
+  <string name="whisper_custom_model_not_whisper">Not a whisper.cpp model file</string>
+  <!-- Summary of the model file setting while the chosen file is copied. -->
+  <string name="whisper_custom_model_copying">Copying</string>
   <string name="title_pref_whisper_models">Whisper models</string>
   <!-- Action on a downloaded Whisper model: dictation uses this model. [CHAR_LIMIT=30] -->
   <string name="dictation_whisper_use">Use</string>
