@@ -145,6 +145,8 @@
     <!-- Gesture and keyboard shortcut command that changes to the next gesture profile. [CHAR LIMIT=NONE] -->
     <string name="shortcut_next_gesture_profile">Next gesture profile</string>
     <!-- Gesture and keyboard shortcut command that changes to one gesture profile. %1$s is the profile's name, or Default. [CHAR LIMIT=NONE] -->
+    <!-- Command: changes to the voice profile with this name. -->
+    <string name="shortcut_use_voice_profile">Use voice profile <xliff:g id="name" example="English">%1$s</xliff:g></string>
     <string name="shortcut_use_gesture_profile">Use gesture profile <xliff:g id="name" example="Driving">%1$s</xliff:g></string>
     <!-- Title for the setting that chooses the gesture profile in use. [CHAR LIMIT=NONE] -->
     <string name="title_pref_gesture_profile_in_use">Gesture profile in use</string>

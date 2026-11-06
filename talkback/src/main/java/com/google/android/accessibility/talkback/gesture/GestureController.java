@@ -127,6 +127,7 @@ import com.google.android.accessibility.talkback.handwriting.HandwritingCommand;
 import com.google.android.accessibility.talkback.sandflyai.SandflyAi;
 import com.google.android.accessibility.talkback.translation.TranslateCommand;
 import com.google.android.accessibility.talkback.selector.SelectorController;
+import com.google.android.accessibility.talkback.speech.VoiceProfileNames;
 import com.google.android.accessibility.talkback.selector.SelectorController.AnnounceType;
 import com.google.android.accessibility.talkback.selector.SelectorController.Setting;
 import com.google.android.accessibility.talkback.status.StatusReader;
@@ -567,6 +568,8 @@ public class GestureController {
       selectorController.changeGestureProfile(eventId, /* isNext= */ true);
     } else if (GestureProfiles.isAction(action)) {
       result = selectorController.selectGestureProfile(eventId, GestureProfiles.idOf(action));
+    } else if (VoiceProfileNames.isCommand(action)) {
+      result = selectorController.selectVoiceProfile(eventId, VoiceProfileNames.idOfCommand(action));
     } else if (action.equals(service.getString(R.string.shortcut_value_previous_granularity))) {
       result = pipeline.returnFeedback(eventId, Feedback.focusDirection(PREVIOUS_GRANULARITY));
     } else if (action.equals(service.getString(R.string.shortcut_value_next_granularity))) {

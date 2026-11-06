@@ -24,18 +24,20 @@ import com.google.android.accessibility.talkback.actor.GestureReporter
 import com.google.android.accessibility.talkback.actor.ImageCaptioner
 import com.google.android.accessibility.talkback.actor.gemini.GeminiConfiguration
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader
+import com.google.android.accessibility.talkback.gesture.AccessibilityShortcutActions
 import com.google.android.accessibility.talkback.gesture.GestureProfiles
 import com.google.android.accessibility.talkback.gesture.NavigationGestureActions
-import com.google.android.accessibility.talkback.gesture.AccessibilityShortcutActions
 import com.google.android.accessibility.talkback.gesture.OpenAppActions
 import com.google.android.accessibility.talkback.keyboard.TalkBackPhysicalKeyboardShortcut
 import com.google.android.accessibility.talkback.keyboard.TalkBackPhysicalKeyboardShortcut as Key
 import com.google.android.accessibility.talkback.sandflyai.SandflyAi
+import com.google.android.accessibility.talkback.speech.VoiceProfileNames
 import com.google.android.accessibility.talkback.utils.TalkbackFeatureSupport
 import com.google.android.accessibility.utils.FeatureSupport
 import com.google.android.accessibility.utils.FormFactorUtils
 import com.google.android.accessibility.utils.SettingsUtils
 import com.google.android.accessibility.utils.SharedPreferencesUtils
+import com.google.android.accessibility.utils.output.VoiceProfiles
 
 /**
  * Every command that a gesture or a keyboard shortcut can run, in one list.
@@ -167,6 +169,9 @@ object Commands {
     gestureProfileLabel(context, value)?.let {
       return Command(value, it, keyboardAction = null)
     }
+    voiceProfileLabel(context, value)?.let {
+      return Command(value, it, keyboardAction = null)
+    }
     categoriesWithoutApps(context).forEach { category ->
       category.commands.firstOrNull { it.value == value }?.let {
         return it
@@ -202,6 +207,7 @@ object Commands {
     OpenAppActions.label(context, value)
       ?: AccessibilityShortcutActions.label(context, value)
       ?: gestureProfileLabel(context, value)
+      ?: voiceProfileLabel(context, value)
       ?: NavigationGestureActions.label(context, value)
       ?: keyboardActionOf(context, value)?.getDescription(context.resources)
 
@@ -220,6 +226,9 @@ object Commands {
     } else {
       null
     }
+
+  private fun voiceProfileLabel(context: Context, value: String): String? =
+    VoiceProfileNames.commandLabel(context, SharedPreferencesUtils.getSharedPreferences(context), value)
 
   /**
    * Returns the name of the command whose keyboard shortcut is kept under the key combo model
@@ -269,6 +278,7 @@ object Commands {
       developer()
       if (withApps) {
         gestureProfiles()
+        voiceProfiles()
         openApp()
         accessibilityShortcuts()
       }
@@ -965,6 +975,20 @@ object Commands {
               keyboardAction = null,
             )
           )
+        }
+      }
+
+    private fun voiceProfiles() =
+      category(R.string.title_pref_voice_profiles) {
+        val prefs = SharedPreferencesUtils.getSharedPreferences(context)
+        // Without a profile, the default is the only choice and changes nothing.
+        if (VoiceProfiles.ids(prefs).isEmpty()) return@category
+        val ids = listOf("") + VoiceProfiles.ids(prefs)
+        for (id in ids) {
+          val label = VoiceProfileNames.commandLabel(context, prefs, VoiceProfileNames.commandOf(id))
+          if (label != null) {
+            commands.add(Command(VoiceProfileNames.commandOf(id), label, keyboardAction = null))
+          }
         }
       }
 

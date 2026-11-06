@@ -18,6 +18,7 @@ package com.google.android.accessibility.talkback.speech;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import androidx.annotation.Nullable;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.utils.output.VoiceProfiles;
 import java.util.Map;
@@ -58,6 +59,40 @@ public final class VoiceProfileNames {
   /** Returns the first numbered name, such as "Voice profile 1", that no profile has. */
   public static String unusedName(Context context, SharedPreferences prefs) {
     return VoiceProfiles.unusedName(prefs, defaultName(context), numberedName(context));
+  }
+
+  /** How a command that changes to a voice profile starts, before the profile's ID. */
+  private static final String COMMAND_PREFIX = "VOICE_PROFILE:";
+
+  /** Returns the command that changes to profile {@code id}, or to Backtalk default's for "". */
+  public static String commandOf(String id) {
+    return COMMAND_PREFIX + id;
+  }
+
+  /** Returns whether {@code value} is a command that changes to a voice profile. */
+  public static boolean isCommand(@Nullable String value) {
+    return value != null && value.startsWith(COMMAND_PREFIX);
+  }
+
+  /** Returns the ID of the profile that the command {@code value} changes to. */
+  public static String idOfCommand(String value) {
+    return value.substring(COMMAND_PREFIX.length());
+  }
+
+  /**
+   * Returns the name of the command {@code value}, or null when it isn't one of these commands or
+   * its profile was deleted.
+   */
+  public static @Nullable String commandLabel(
+      Context context, SharedPreferences prefs, @Nullable String value) {
+    if (!isCommand(value)) {
+      return null;
+    }
+    String id = idOfCommand(value);
+    if (!id.isEmpty() && !VoiceProfiles.ids(prefs).contains(id)) {
+      return null;
+    }
+    return context.getString(R.string.shortcut_use_voice_profile, nameOf(context, prefs, id));
   }
 
   /** Gives "Voice profile 1", "Voice profile 2" and so on. */
