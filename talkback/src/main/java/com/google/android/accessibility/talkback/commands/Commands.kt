@@ -754,6 +754,10 @@ object Commands {
           available = systemActions,
         )
         gesture(R.string.shortcut_value_toggle_magnification, R.string.shortcut_toggle_magnification)
+        gesture(
+          R.string.shortcut_value_toggle_color_inversion,
+          R.string.shortcut_toggle_color_inversion,
+        )
         gesture(R.string.shortcut_value_write_app_name, R.string.shortcut_write_app_name)
         gesture(R.string.shortcut_value_braille_app_name, R.string.shortcut_braille_app_name)
         gesture(

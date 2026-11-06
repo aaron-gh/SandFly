@@ -795,6 +795,8 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
         R.string.shortcut_value_a11y_button_long_press, R.string.shortcut_a11y_button_long_press),
     TOGGLE_MAGNIFICATION(
         R.string.shortcut_value_toggle_magnification, R.string.shortcut_toggle_magnification),
+    TOGGLE_COLOR_INVERSION(
+        R.string.shortcut_value_toggle_color_inversion, R.string.shortcut_toggle_color_inversion),
 
     // Reading control.
     READ_FROM_TOP(R.string.shortcut_value_read_from_top, R.string.shortcut_read_from_top),
