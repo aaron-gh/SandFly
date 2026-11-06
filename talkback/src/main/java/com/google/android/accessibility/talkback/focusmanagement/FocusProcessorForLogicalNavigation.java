@@ -3711,8 +3711,12 @@ public class FocusProcessorForLogicalNavigation {
       if (nodeToFocus == null) {
         Rect newRect = getBoundsAfterScroll(focusBeforeScroll);
         // The pivot moved since the scroll or the last look, so the list may still be moving and
-        // its next item not on screen yet. Navigating again now would scroll a second page.
-        if (!previousRect.equals(newRect) && settleChecksLeft > 0 && sourceAction.shouldScroll) {
+        // its next item not on screen yet. Navigating again now would scroll a second page. A pivot
+        // that fills the list, such as a post taller than the screen, is cut to the list's bounds
+        // and doesn't seem to move, so the list is given the same time to stop.
+        if ((!previousRect.equals(newRect) || fillsList(newRect, scrolledNode))
+            && settleChecksLeft > 0
+            && sourceAction.shouldScroll) {
           LogUtils.d(TAG, "List still moving; searching again on the next frame.");
           searchAgainWhenListMoves(
               scrolledNode, focusBeforeScroll, sourceAction, eventId, settleChecksLeft - 1);
@@ -3777,6 +3781,15 @@ public class FocusProcessorForLogicalNavigation {
     }
 
     setAccessibilityFocusInternal(nodeToFocus, navigationAction, eventId);
+  }
+
+  /** Returns whether {@code pivotBounds} cover all of {@code list} that is on screen. */
+  private static boolean fillsList(Rect pivotBounds, AccessibilityNodeInfoCompat list) {
+    Rect listBounds = new Rect();
+    list.getBoundsInScreen(listBounds);
+    return !listBounds.isEmpty()
+        && pivotBounds.top <= listBounds.top
+        && pivotBounds.bottom >= listBounds.bottom;
   }
 
   @VisibleForTesting
