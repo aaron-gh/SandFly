@@ -101,4 +101,31 @@ class HapticPatternParserTest {
     parser.parse(intArrayOf(0, 25, 50, 25))
     assertArrayEquals(longArrayOf(0, 25, 50, 25), fallback)
   }
+
+  @Test
+  fun aStrongerStrengthRaisesAmplitudesToFullAndLengthensPulses() {
+    val parser = parser(canVaryStrength = true)
+    parser.setStrength(2f)
+    parser.parse(intArrayOf(0, 20, -9998, 8, 110, 10, 0, 8, 150))
+    assertArrayEquals(longArrayOf(16, 10, 16), timings)
+    assertArrayEquals(intArrayOf(220, 0, 255), amplitudes)
+  }
+
+  @Test
+  fun aStrongerStrengthLeavesOnAndOffTimesAlone() {
+    val parser = parser(canVaryStrength = true)
+    parser.setStrength(1.5f)
+    parser.parse(intArrayOf(0, 25, 50, 25))
+    assertArrayEquals(longArrayOf(0, 25, 50, 25), fallback)
+    assertNull(timings)
+  }
+
+  @Test
+  fun strengthStopsAtTwice() {
+    val parser = parser(canVaryStrength = true)
+    parser.setStrength(5f)
+    parser.parse(intArrayOf(0, 20, -9998, 10, 50))
+    assertArrayEquals(longArrayOf(20), timings)
+    assertArrayEquals(intArrayOf(100), amplitudes)
+  }
 }

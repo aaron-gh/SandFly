@@ -86,12 +86,17 @@ public class HapticPatternParser {
     this.isPrimitiveSupported = isPrimitiveSupported;
   }
 
+  /** The strongest strength {@link #setStrength} takes, twice the strength in the pattern. */
+  public static final float MAX_STRENGTH = 2f;
+
   /**
-   * Sets how strong vibrations are, from 0 to 1 of their strength in the pattern. Below 1, plain
-   * on and off patterns play at that share of full strength on vibrators that can vary it.
+   * Sets how strong vibrations are, from 0 to {@link #MAX_STRENGTH} of their strength in the
+   * pattern. Below 1, plain on and off patterns play at that share of full strength on vibrators
+   * that can vary it. Above 1, amplitudes rise to at most full strength and the pulses of the
+   * amplitude form last that much longer.
    */
   public void setStrength(float strength) {
-    this.strength = Math.max(0f, Math.min(1f, strength));
+    this.strength = Math.max(0f, Math.min(MAX_STRENGTH, strength));
   }
 
   /**
@@ -138,7 +143,7 @@ public class HapticPatternParser {
       }
 
       effect.addPrimitive(
-          primitive, (float) pattern[i + 1] / SCALE_MAX * strength, pattern[i + 2]);
+          primitive, Math.min(1f, (float) pattern[i + 1] / SCALE_MAX * strength), pattern[i + 2]);
     }
 
     return effect.compose();
@@ -149,15 +154,24 @@ public class HapticPatternParser {
     long[] timings = new long[count];
     int[] amplitudes = new int[count];
     for (int i = 0; i < count; i++) {
-      timings[i] = pattern[start + 2 * i];
-      amplitudes[i] = scaled(pattern[start + 2 * i + 1]);
+      int amplitude = pattern[start + 2 * i + 1];
+      timings[i] =
+          strength > 1f && amplitude > 0
+              ? Math.round(pattern[start + 2 * i] * strength)
+              : pattern[start + 2 * i];
+      amplitudes[i] = scaled(amplitude);
     }
     return amplitudeWaveformCreator.apply(timings, amplitudes);
   }
 
-  /** An amplitude at the strength set, which stays on, however weak, if it was on. */
+  /**
+   * An amplitude at the strength set, which stays on, however weak, if it was on, and is at most
+   * full strength.
+   */
   private int scaled(int amplitude) {
-    return amplitude <= 0 ? amplitude : Math.max(1, Math.round(amplitude * strength));
+    return amplitude <= 0
+        ? amplitude
+        : Math.max(1, Math.min((int) SCALE_MAX, Math.round(amplitude * strength)));
   }
 
   private VibrationEffect parseFallback(int[] patternDefinition, int patternLength) {
