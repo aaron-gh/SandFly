@@ -867,6 +867,12 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
     CLEAR_TEXT(R.string.shortcut_value_clear_text, R.string.shortcut_clear_text),
     COPY_LAST_SPOKEN_UTTERANCE(
         R.string.shortcut_value_copy_last_spoken_phrase, R.string.title_copy_last_spoken_phrase),
+    SELECT_LAST_SPOKEN_PHRASE_WORD_BY_WORD(
+        R.string.shortcut_value_select_last_spoken_phrase_word_by_word,
+        R.string.title_select_last_spoken_phrase_word_by_word),
+    COPY_TEXT_FROM_SCREEN(
+        R.string.shortcut_value_copy_text_from_screen,
+        R.string.title_copy_text_from_screen),
     BRAILLE_KEYBOARD(R.string.shortcut_value_braille_keyboard, R.string.shortcut_braille_keyboard),
 
     // Special features.

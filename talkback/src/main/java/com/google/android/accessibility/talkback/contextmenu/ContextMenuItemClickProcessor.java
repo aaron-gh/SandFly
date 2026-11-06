@@ -45,6 +45,7 @@ import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics;
 import com.google.android.accessibility.talkback.menurules.CustomActionMenu;
 import com.google.android.accessibility.talkback.preference.base.TextToSpeechSettingsFragment;
+import com.google.android.accessibility.talkback.dialog.WordSelectionDialog;
 import com.google.android.accessibility.talkback.report.ReportsFragment;
 import com.google.android.accessibility.talkback.preference.base.VerbosityPrefFragment;
 import com.google.android.accessibility.utils.Performance.EventId;
@@ -92,6 +93,8 @@ public class ContextMenuItemClickProcessor {
         || (itemId == R.id.repeat_last_utterance)
         || (itemId == R.id.spell_last_utterance)
         || (itemId == R.id.copy_last_utterance_to_clipboard)
+        || (itemId == R.id.select_last_spoken_phrase_word_by_word)
+        || (itemId == R.id.copy_text_from_screen)
         || (itemId == R.id.verbosity)
         || (itemId == R.id.audio_ducking)
         || (itemId == R.id.sound_feedback)
@@ -133,6 +136,10 @@ public class ContextMenuItemClickProcessor {
     } else if (itemId == R.id.copy_last_utterance_to_clipboard) {
       pipeline.returnFeedback(
           eventId, Feedback.part().setSpeech(Feedback.Speech.create(COPY_SAVED)));
+    } else if (itemId == R.id.select_last_spoken_phrase_word_by_word) {
+      WordSelectionDialog.showForLastUtterance(service, pipeline, /* fromMenu= */ true);
+    } else if (itemId == R.id.copy_text_from_screen) {
+      WordSelectionDialog.showForScreen(service, pipeline, /* fromMenu= */ true);
     } else if (itemId == R.id.verbosity) {
       Intent intent = createSettingsIntent();
       intent.putExtra(FRAGMENT_NAME, VerbosityPrefFragment.class.getName());

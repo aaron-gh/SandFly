@@ -287,6 +287,10 @@ public class TalkbackMenuProcessor {
     setSkipRefocusAndWindowAnnounce(menu, R.id.spell_last_utterance, true);
     setSkipRefocusAndWindowAnnounce(menu, R.id.repeat_last_utterance, true);
     setSkipRefocusAndWindowAnnounce(menu, R.id.copy_last_utterance_to_clipboard, true);
+    setMenuItemShowsDialog(menu, R.id.select_last_spoken_phrase_word_by_word, true);
+    setSkipRefocusAndWindowAnnounce(menu, R.id.select_last_spoken_phrase_word_by_word, true);
+    setMenuItemShowsDialog(menu, R.id.copy_text_from_screen, true);
+    setSkipRefocusAndWindowAnnounce(menu, R.id.copy_text_from_screen, true);
     setSkipRefocusAndWindowAnnounce(menu, R.id.audio_ducking, true);
     setSkipRefocusAndWindowAnnounce(menu, R.id.sound_feedback, true);
     setSkipRefocusAndWindowAnnounce(menu, R.id.vibration_feedback, true);
@@ -320,6 +324,14 @@ public class TalkbackMenuProcessor {
     {
       R.string.pref_show_context_menu_copy_last_spoken_phrase_setting_key,
       R.id.copy_last_utterance_to_clipboard
+    },
+    {
+      R.string.pref_show_context_menu_select_last_spoken_phrase_word_by_word_setting_key,
+      R.id.select_last_spoken_phrase_word_by_word
+    },
+    {
+      R.string.pref_show_context_menu_copy_text_from_screen_setting_key,
+      R.id.copy_text_from_screen
     },
     {
       R.string.pref_show_context_menu_spell_last_spoken_phrase_setting_key,
@@ -470,6 +482,18 @@ public class TalkbackMenuProcessor {
         R.string.pref_show_context_menu_copy_last_spoken_phrase_setting_key,
         R.bool.pref_show_context_menu_copy_last_spoken_phrase_default)) {
       menu.removeItem(R.id.copy_last_utterance_to_clipboard);
+    }
+
+    if (!showMenuItem(
+        R.string.pref_show_context_menu_select_last_spoken_phrase_word_by_word_setting_key,
+        R.bool.pref_show_context_menu_select_last_spoken_phrase_word_by_word_default)) {
+      menu.removeItem(R.id.select_last_spoken_phrase_word_by_word);
+    }
+
+    if (!showMenuItem(
+        R.string.pref_show_context_menu_copy_text_from_screen_setting_key,
+        R.bool.pref_show_context_menu_copy_text_from_screen_default)) {
+      menu.removeItem(R.id.copy_text_from_screen);
     }
 
     if (!showMenuItem(

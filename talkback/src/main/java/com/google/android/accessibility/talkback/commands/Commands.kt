@@ -732,6 +732,14 @@ object Commands {
           R.string.title_copy_last_spoken_phrase,
           Key.COPY_LAST_SPOKEN_PHRASE,
         )
+        gesture(
+          R.string.shortcut_value_select_last_spoken_phrase_word_by_word,
+          R.string.title_select_last_spoken_phrase_word_by_word,
+        )
+        gesture(
+          R.string.shortcut_value_copy_text_from_screen,
+          R.string.title_copy_text_from_screen,
+        )
         gesture(R.string.shortcut_value_granular_editing, R.string.granular_editing_title)
         gesture(R.string.shortcut_value_dictate, R.string.shortcut_dictate)
       }
