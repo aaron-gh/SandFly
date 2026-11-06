@@ -3452,6 +3452,10 @@
     Source: An utterance template for announcing copy of text (during edit).
     Description: This is spoken to the user. [CHAR LIMIT=NONE]
   -->
+  <!-- Actions menu item: opens the phone app with this phone number, found in the item's text. -->
+  <string name="menu_item_call_number">Call <xliff:g id="number" example="020 7946 0018">%1$s</xliff:g></string>
+  <!-- Actions menu item: copies this code, such as a one-time code in a text message. -->
+  <string name="menu_item_copy_code">Copy <xliff:g id="code" example="482916">%1$s</xliff:g></string>
   <string name="template_text_copied">copied, <xliff:g id="text">%1$s</xliff:g></string>
   <!-- Spoken after the text was added to the end of the text on the clipboard. [CHAR_LIMIT=NONE] -->
   <string name="template_text_added_to_clipboard">added to clipboard, <xliff:g id="text">%1$s</xliff:g></string>
