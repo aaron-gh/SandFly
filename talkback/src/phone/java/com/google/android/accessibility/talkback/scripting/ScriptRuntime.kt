@@ -333,6 +333,14 @@ class ScriptRuntime(
       }
       store.setSettingOptions(id, declared.key, options)
     }
+    on("settings.setTitle") { args ->
+      val declared = setting(key(args)) { true }
+      store.setSettingTitle(id, declared.key, settingText(args))
+    }
+    on("settings.setSummary") { args ->
+      val declared = setting(key(args)) { true }
+      store.setSettingSummary(id, declared.key, settingText(args))
+    }
     on("rules.add", SPEECH) { args ->
       apiCheck(addedRules.size < MAX_ADDED_RULES) {
         "A script can add at most $MAX_ADDED_RULES rules"
@@ -537,6 +545,16 @@ class ScriptRuntime(
     )
   }
 
+  /** The text of a setting's title or summary, or null to go back to the manifest's. */
+  private fun settingText(args: JSONObject): String? {
+    if (!args.has("text") || args.isNull("text")) return null
+    val text = args.optString("text")
+    apiCheck(text.length <= MAX_SETTING_TEXT_CHARS) {
+      "A setting's title or summary is at most $MAX_SETTING_TEXT_CHARS characters"
+    }
+    return text
+  }
+
   private fun setting(key: String, accepts: (ScriptSetting) -> Boolean): ScriptSetting =
     script.manifest.settings.firstOrNull { it.key == key && accepts(it) }
       ?: apiError("The manifest declares no such setting $key")
@@ -652,6 +670,7 @@ class ScriptRuntime(
     private const val MAX_FETCHES = 8
     private const val MAX_TIMERS = 100
     private const val MAX_SETTING_CHARS = 16 * 1024
+    private const val MAX_SETTING_TEXT_CHARS = 500
     private const val MAX_ADDED_RULES = 200
     private const val MAX_OPTIONS = 500
     private const val MAX_DIALOG_ITEMS = 50

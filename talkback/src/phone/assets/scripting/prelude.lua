@@ -1657,6 +1657,12 @@ local sf = {
     all = function() return call('settings.all') end,
     set = function(key, value) send('settings.set', keyed(key, { value = value })) end,
     setOptions = function(key, options) send('settings.setOptions', keyed(key, { options = options })) end,
+    setTitle = function(key, text)
+      send('settings.setTitle', keyed(key, { text = text ~= nil and tostring(text) or nil }))
+    end,
+    setSummary = function(key, text)
+      send('settings.setSummary', keyed(key, { text = text ~= nil and tostring(text) or nil }))
+    end,
   },
   clipboard = {
     get = function() return call('clipboard.get') end,
