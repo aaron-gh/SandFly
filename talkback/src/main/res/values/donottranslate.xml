@@ -1397,6 +1397,7 @@
         <item>@android:string/cut</item>
         <item>@android:string/paste</item>
         <item>@string/title_copy_last_spoken_phrase</item>
+        <item>@string/title_select_last_spoken_phrase_word_by_word</item>
         <item>@string/granular_editing_title</item>
         <item>@string/shortcut_dictate</item>
     </string-array>
@@ -1414,6 +1415,7 @@
         <item>@string/shortcut_value_cut</item>
         <item>@string/shortcut_value_paste</item>
         <item>@string/shortcut_value_copy_last_spoken_phrase</item>
+        <item>@string/shortcut_value_select_last_spoken_phrase_word_by_word</item>
         <item>@string/shortcut_value_granular_editing</item>
         <item>@string/shortcut_value_dictate</item>
     </string-array>
@@ -1545,6 +1547,7 @@
   <string name="shortcut_value_cut" translatable="false">CUT</string>
   <string name="shortcut_value_paste" translatable="false">PASTE</string>
   <string name="shortcut_value_copy_last_spoken_phrase" translatable="false">COPY_LAST_SPOKEN_UTTERANCE</string>
+  <string name="shortcut_value_select_last_spoken_phrase_word_by_word" translatable="false">SELECT_LAST_SPOKEN_PHRASE_WORD_BY_WORD</string>
   <string name="shortcut_value_submit_text" translatable="false">SUBMIT_TEXT</string>
   <string name="shortcut_value_clear_text" translatable="false">CLEAR_TEXT</string>
   <string name="shortcut_value_pause_or_resume_feedback">PAUSE_FEEDBACK</string>
@@ -1929,6 +1932,7 @@
     <bool name="pref_show_context_menu_read_from_top_default">false</bool>
     <bool name="pref_show_context_menu_read_from_current_default">true</bool>
     <bool name="pref_show_context_menu_copy_last_spoken_phrase_default">false</bool>
+    <bool name="pref_show_context_menu_select_last_spoken_phrase_word_by_word_default">true</bool>
     <bool name="pref_show_context_menu_spell_last_spoken_phrase_default">false</bool>
     <bool name="pref_show_context_menu_repeat_last_spoken_phrase_default">false</bool>
     <bool name="pref_show_context_menu_find_on_screen_default">false</bool>
@@ -2167,6 +2171,7 @@
     <string name="pref_show_context_menu_read_from_top_setting_key" translatable="false">pref_read_from_top_menu_setting_key</string>
     <string name="pref_show_context_menu_read_from_current_setting_key" translatable="false">pref_read_from_current_menu_setting_key</string>
     <string name="pref_show_context_menu_copy_last_spoken_phrase_setting_key" translatable="false">pref_copy_last_spoken_phrase_menu_setting_key</string>
+    <string name="pref_show_context_menu_select_last_spoken_phrase_word_by_word_setting_key" translatable="false">pref_select_last_spoken_phrase_word_by_word_menu_setting_key</string>
     <string name="pref_show_context_menu_spell_last_spoken_phrase_setting_key" translatable="false">pref_spell_last_spoken_phrase_menu_setting_key</string>
     <string name="pref_show_context_menu_repeat_last_spoken_phrase_setting_key" translatable="false">pref_repeat_last_spoken_phrase_menu_setting_key</string>
     <string name="pref_show_context_menu_find_on_screen_setting_key" translatable="false">pref_find_on_screen_menu_setting_key</string>

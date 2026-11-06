@@ -2342,6 +2342,8 @@
     <string name="title_read_from_top">Read from top</string>
     <!-- Label for the menu item that lets the user copies the last spoken phrase. [CHAR_LIMIT=130] -->
     <string name="title_copy_last_spoken_phrase">Copy last spoken phrase</string>
+    <!-- Title for selecting words individually from the last spoken phrase -->
+    <string name="title_select_last_spoken_phrase_word_by_word" tools:ignore="MissingTranslation">Select last spoken phrase word by word</string>
     <!-- Label for the command that sends the text in the focused edit box, with the app's send button or the keyboard's action. [CHAR_LIMIT=NONE] -->
     <string name="shortcut_submit_text">Submit text</string>
     <!-- Label for the command that removes all text from the focused edit box. [CHAR_LIMIT=NONE] -->
@@ -2431,6 +2433,14 @@
     <string name="summary_read_from_current">Starting from the focused item, read all items on the screen</string>
     <!-- Summary for the menu item that lets the user copies the last spoken phrase. [CHAR_LIMIT=NONE] -->
     <string name="summary_copy_last_spoken_phrase">Copy the last phrase SandFly said to the clipboard so you can paste the text</string>
+    <!-- Summary for selecting words individually from the last spoken phrase -->
+    <string name="summary_select_last_spoken_phrase_word_by_word" tools:ignore="MissingTranslation">Select and copy individual words from the last phrase that SandFly said</string>
+    <!-- Button to select all words in word selection dialog -->
+    <string name="button_select_all_words" tools:ignore="MissingTranslation">Select all</string>
+    <!-- Spoken feedback when no words are selected in word selection dialog -->
+    <string name="no_words_selected" tools:ignore="MissingTranslation">No words selected</string>
+    <!-- Spoken feedback when there is no phrase to select words from -->
+    <string name="no_phrase_to_select" tools:ignore="MissingTranslation">No phrase to select</string>
     <!-- Summary for the menu item that lets the user spells the last spoken phrase. [CHAR_LIMIT=NONE] -->
     <string name="summary_spell_last_spoken_phrase">Spell each letter of the last phrase that SandFly said</string>
     <!-- Summary for the menu item that lets the user repeats the last spoken phrase. [CHAR_LIMIT=NONE] -->
