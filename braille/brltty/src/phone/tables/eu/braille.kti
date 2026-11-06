@@ -33,12 +33,14 @@ map Space SPACE
 bind Backspace KEY_BACKSPACE
 bind Backspace+Space KEY_ENTER
 
-bind Space+Dot7 SHIFT
+#SandFly drops these PC keys and SHIFT, so these chords did nothing and couldn't be given
+#commands. Without the bindings, they reach SandFly as Space with dots.
+#bind Space+Dot7 SHIFT
 bind Space+Dot8 META
 bind Space+Dot7+Dot8 CONTROL
 
-bind Space+Dot2+Dot5+Dot6 KEY_TAB
-bind Space+Dot2+Dot3+Dot6 KEY_TAB+shift
+#bind Space+Dot2+Dot5+Dot6 KEY_TAB
+#bind Space+Dot2+Dot3+Dot6 KEY_TAB+shift
 
 #Overridden by SandFly, which handles these chords itself.
 #bind Space+Dot4 KEY_CURSOR_UP
@@ -46,15 +48,15 @@ bind Space+Dot2+Dot3+Dot6 KEY_TAB+shift
 #bind Space+Dot2 KEY_CURSOR_LEFT
 #bind Space+Dot5 KEY_CURSOR_RIGHT
 
-bind Space+Dot1+Dot3 KEY_PAGE_UP
-bind Space+Dot4+Dot6 KEY_PAGE_DOWN
+#bind Space+Dot1+Dot3 KEY_PAGE_UP
+#bind Space+Dot4+Dot6 KEY_PAGE_DOWN
 
 #bind Space+Dot1+Dot2+Dot3 KEY_HOME
 #bind Space+Dot4+Dot5+Dot6 KEY_END
 
-bind Space+Dot3+Dot6 KEY_DELETE
+#bind Space+Dot3+Dot6 KEY_DELETE
 bind Space+Dot1+Dot2+Dot4+Dot5 KEY_ESCAPE
-bind Space+Dot1+Dot3+Dot5 KEY_INSERT
+#bind Space+Dot1+Dot3+Dot5 KEY_INSERT
 
 #bind Space+Dot1+Dot2+Dot5 HELP
 #bind Space+Dot2+Dot3+Dot4 INFO
