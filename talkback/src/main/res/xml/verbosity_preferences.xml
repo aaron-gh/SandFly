@@ -118,6 +118,10 @@
         android:key="@string/pref_allow_frequent_content_change_announcement_key"
         android:title="@string/pref_allow_frequent_content_change_announcement_title"
         android:summary="@string/summary_pref_allow_frequent_content_change_announcement" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="@bool/pref_announce_full_charge_default"
+        android:key="@string/pref_announce_full_charge_key"
+        android:title="@string/title_pref_announce_full_charge" />
     <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
         android:key="pref_screen_announcements"
         android:summary="@string/summary_pref_screen_announcements"

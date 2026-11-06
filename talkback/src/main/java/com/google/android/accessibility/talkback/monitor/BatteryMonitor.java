@@ -28,6 +28,7 @@ import com.google.android.accessibility.talkback.Interpretation;
 import com.google.android.accessibility.talkback.Pipeline;
 import com.google.android.accessibility.talkback.Pipeline.InterpretationReceiver;
 import com.google.android.accessibility.talkback.R;
+import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import com.google.android.accessibility.utils.broadcast.SameThreadBroadcastReceiver;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
@@ -41,6 +42,10 @@ public class BatteryMonitor extends SameThreadBroadcastReceiver {
   private int batteryLevel = UNKNOWN_LEVEL;
   private boolean powerConnected;
   private boolean powerSaveMode;
+  // Whether this charge has been announced as full, or was full before SandFly started.
+  private boolean fullAnnounced;
+  // Whether a battery change has been received: the first is the state SandFly started in.
+  private boolean batteryStateKnown;
 
   public BatteryMonitor(Context context) {
     this.context = context;
@@ -78,6 +83,10 @@ public class BatteryMonitor extends SameThreadBroadcastReceiver {
         int level = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, 0);
         int scale = intent.getIntExtra(BatteryManager.EXTRA_SCALE, 100);
         batteryLevel = getBatteryLevel(scale, level);
+        boolean plugged = intent.getIntExtra(BatteryManager.EXTRA_PLUGGED, 0) != 0;
+        int status =
+            intent.getIntExtra(BatteryManager.EXTRA_STATUS, BatteryManager.BATTERY_STATUS_UNKNOWN);
+        onBatteryState(plugged, status == BatteryManager.BATTERY_STATUS_FULL || batteryLevel >= 100);
       }
       case Intent.ACTION_POWER_DISCONNECTED -> {
         powerConnected = false;
@@ -98,6 +107,36 @@ public class BatteryMonitor extends SameThreadBroadcastReceiver {
         // Do nothing.
       }
     }
+  }
+
+  /**
+   * Says once per charge that the battery is full, with Announce full charge, while the charger is
+   * connected. A battery already full when SandFly starts isn't announced.
+   */
+  private void onBatteryState(boolean plugged, boolean full) {
+    boolean wasKnown = batteryStateKnown;
+    batteryStateKnown = true;
+    if (!plugged || !full) {
+      fullAnnounced = false;
+      return;
+    }
+    if (fullAnnounced) {
+      return;
+    }
+    fullAnnounced = true;
+    if (!wasKnown
+        || pipeline == null
+        || !SharedPreferencesUtils.getBooleanPref(
+            SharedPreferencesUtils.getSharedPreferences(context),
+            context.getResources(),
+            R.string.pref_announce_full_charge_key,
+            R.bool.pref_announce_full_charge_default)) {
+      return;
+    }
+    pipeline.input(
+        EVENT_ID_UNTRACKED,
+        new Interpretation.Power(
+            /* connected= */ true, batteryLevel, powerSaveMode, /* fullyCharged= */ true));
   }
 
   @VisibleForTesting
