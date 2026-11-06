@@ -42,6 +42,15 @@ class AiDictationTest {
   }
 
   @Test
+  fun ownCorrectionPromptReplacesTheInstructionsButKeepsTheSpeech() {
+    val prompt = AiDictation.prompt("Hi,", "see you tomorrow", "Translate it into Polish.")
+    assertTrue(prompt.startsWith("Translate it into Polish."))
+    assertTrue(!prompt.contains("filler words"))
+    assertTrue(prompt.contains("\"\"\"see you tomorrow\"\"\""))
+    assertTrue(prompt.contains("Hi,\"\"\""))
+  }
+
+  @Test
   fun speechInputStopsAfterSilenceWhateverTheSetting() {
     assertEquals(AiDictation.LISTEN_NOTHING_SAID_MS, AiDictation.silenceLimitMs(true, false, 0))
     assertEquals(AiDictation.LISTEN_PAUSE_MS, AiDictation.silenceLimitMs(true, true, 0))
