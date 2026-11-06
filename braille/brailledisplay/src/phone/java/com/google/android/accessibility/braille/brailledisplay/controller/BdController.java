@@ -22,9 +22,12 @@ import static com.google.android.accessibility.braille.brltty.BrailleInputEvent.
 import android.accessibilityservice.AccessibilityService;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.database.ContentObserver;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
 import android.os.Handler;
+import android.os.Looper;
+import android.provider.Settings;
 import androidx.appcompat.app.AlertDialog;
 import android.view.WindowManager;
 import android.view.accessibility.AccessibilityEvent;
@@ -145,6 +148,15 @@ public class BdController implements Controller {
       getBrailleImeForBrailleDisplay().onBrailleDisplayConnected();
     }
     brailleSharedPrefs().registerOnSharedPreferenceChangeListener(hideScreenKeyboardListener);
+    if (!inputMethodObserverRegistered) {
+      context
+          .getContentResolver()
+          .registerContentObserver(
+              Settings.Secure.getUriFor(Settings.Secure.DEFAULT_INPUT_METHOD),
+              /* notifyForDescendants= */ false,
+              inputMethodObserver);
+      inputMethodObserverRegistered = true;
+    }
     updateScreenKeyboardShowMode();
     BrailleDisplayAnalytics.getInstance(context).startDailyLogging();
   }
@@ -218,6 +230,10 @@ public class BdController implements Controller {
     BrailleDisplayLog.v(TAG, "onStop");
     DisplayKeyCapture.setDisplayActive(false);
     brailleSharedPrefs().unregisterOnSharedPreferenceChangeListener(hideScreenKeyboardListener);
+    if (inputMethodObserverRegistered) {
+      context.getContentResolver().unregisterContentObserver(inputMethodObserver);
+      inputMethodObserverRegistered = false;
+    }
     setScreenKeyboardHidden(false);
     if (isDisplayerReady()) {
       feedbackManager.emitFeedback(FeedbackManager.Type.DISPLAY_DISCONNECTED);
@@ -245,6 +261,16 @@ public class BdController implements Controller {
   private final SharedPreferences.OnSharedPreferenceChangeListener hideScreenKeyboardListener =
       this::onBraillePreferenceChanged;
 
+  private boolean inputMethodObserverRegistered;
+
+  private final ContentObserver inputMethodObserver =
+      new ContentObserver(new Handler(Looper.getMainLooper())) {
+        @Override
+        public void onChange(boolean selfChange) {
+          updateScreenKeyboardShowMode();
+        }
+      };
+
   private void onBraillePreferenceChanged(SharedPreferences prefs, String key) {
     if (context.getString(R.string.pref_key_bd_hide_screen_keyboard).equals(key)) {
       updateScreenKeyboardShowMode();
@@ -258,13 +284,15 @@ public class BdController implements Controller {
 
   /**
    * Hides the on-screen keyboard while a display is connected, if Hide the on-screen keyboard is
-   * on.
+   * on. The braille keyboard stays shown: typing on the display reaches text fields through it,
+   * and Android starts no input view while keyboards are hidden.
    */
   private void updateScreenKeyboardShowMode() {
     setScreenKeyboardHidden(
         displayer != null
             && brailleSharedPrefs()
-                .getBoolean(context.getString(R.string.pref_key_bd_hide_screen_keyboard), false));
+                .getBoolean(context.getString(R.string.pref_key_bd_hide_screen_keyboard), false)
+            && !BrailleCommonUtils.isBrailleKeyboardDefault(context));
   }
 
   private void setScreenKeyboardHidden(boolean hidden) {

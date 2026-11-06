@@ -920,7 +920,7 @@ A phone that's opened flat, and that hasn't been held up since the screen came o
 
 SandFly's EuroBraille driver is from a newer brltty than TalkBack's, so it also supports the b.note, b.note 2, b.book and b.book 2, with their keypads and navigation keys. Over USB they are found by their USB IDs.
 
-On EuroBraille displays, Space chords and Dot 8 run the same commands as on other displays, and can be assigned in **Braille display commands**. The cursor routing keys move the cursor and activate items. On the right joystick, pressing it activates, like Dot 8; on the left joystick, left and right move by character and up and down by word.
+On EuroBraille displays, Space chords and Dot 8 run the same commands as on other displays, and can be assigned in **Braille display commands**. This includes the chords that EuroBraille uses for Tab, Shift+Tab, Page Up, Page Down, Insert, Delete and Shift (Space with dots 2 5 6, 2 3 6, 1 3, 4 6, 1 3 5, 3 6 and 7), which run nothing until assigned. The cursor routing keys move the cursor and activate items. On the right joystick, pressing it activates, like Dot 8; on the left joystick, left and right move by character and up and down by word.
 
 ### Any braille display that uses HID
 
@@ -938,7 +938,7 @@ SandFly only uses a display from an app once you allow it, after a warning that 
 
 ### Hide the on-screen keyboard
 
-In the braille display settings, **Hide the on-screen keyboard** keeps the on-screen keyboard hidden while a braille display is connected, so it doesn't cover the screen while you type on the display. It shows again when the display disconnects or the switch is turned off.
+In the braille display settings, **Hide the on-screen keyboard** keeps other on-screen keyboards hidden while a braille display is connected. SandFly's braille keyboard still shows its strip, since typing on the display goes into text fields through it. Keyboards show again when the display disconnects or the switch is turned off.
 
 ### Braille display keys you choose
 
