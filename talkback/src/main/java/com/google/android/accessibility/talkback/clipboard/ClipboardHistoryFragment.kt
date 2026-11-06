@@ -17,6 +17,7 @@
 package com.google.android.accessibility.talkback.clipboard
 
 import android.accessibilityservice.AccessibilityService
+import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
 import android.os.Handler
@@ -117,30 +118,61 @@ class ClipboardHistoryFragment : NotificationCodeFragment(R.string.title_clipboa
     screen.action(getString(R.string.clipboard_history_clear)) { ClipboardHistory.clear(context) }
   }
 
-  /** Copies [text], closes the history and pastes it into [target] once its app is in front. */
+  /**
+   * Copies [text], closes the history and pastes it into [target] once its app is in front. When
+   * closing the history shows another window, such as the home screen, opens the edit box's app
+   * again first.
+   */
   private fun paste(context: Context, text: String, target: AccessibilityNodeInfo) {
     if (!ClipboardHistory.copy(context, text)) return
     pasteTarget = null
+    val targetPackage = target.packageName?.toString()
     activity?.finish()
     val handler = Handler(Looper.getMainLooper())
     // The app reads the clipboard only once its window has focus again.
     handler.postDelayed(
       {
-        if (!pasteInto(target)) {
-          handler.postDelayed(
-            {
-              if (!pasteInto(target)) {
-                TalkBackService.getInstance()
-                  ?.feedbackReturner
-                  ?.returnFeedback(EVENT_ID_UNTRACKED, Feedback.sound(R.raw.complete))
-              }
-            },
-            PASTE_DELAY_MS,
-          )
+        if (!isShown(targetPackage) && bringToFront(targetPackage)) {
+          handler.postDelayed({ pasteOrFail(target) }, REOPEN_DELAY_MS)
+        } else if (!pasteInto(target)) {
+          handler.postDelayed({ pasteOrFail(target) }, PASTE_DELAY_MS)
         }
       },
       PASTE_DELAY_MS,
     )
+  }
+
+  private fun pasteOrFail(target: AccessibilityNodeInfo) {
+    if (!pasteInto(target)) {
+      TalkBackService.getInstance()
+        ?.feedbackReturner
+        ?.returnFeedback(EVENT_ID_UNTRACKED, Feedback.sound(R.raw.complete))
+    }
+  }
+
+  /** Whether the active window is [packageName]'s, or it can't be told. */
+  private fun isShown(packageName: String?): Boolean {
+    val service = TalkBackService.getInstance() ?: return true
+    val shown = service.rootInActiveWindow?.packageName?.toString() ?: return true
+    return packageName == null || shown == packageName
+  }
+
+  /** Brings [packageName]'s task to the front, as it was, with the app's launch intent. */
+  private fun bringToFront(packageName: String?): Boolean {
+    val service = TalkBackService.getInstance() ?: return false
+    if (packageName == null || packageName == service.packageName) return false
+    val intent =
+      service.packageManager.getLaunchIntentForPackage(packageName)?.apply {
+        addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+      } ?: return false
+    return try {
+      service.startActivity(intent)
+      true
+    } catch (e: ActivityNotFoundException) {
+      false
+    } catch (e: SecurityException) {
+      false
+    }
   }
 
   /**
@@ -156,6 +188,7 @@ class ClipboardHistoryFragment : NotificationCodeFragment(R.string.title_clipboa
   companion object {
     private const val TITLE_LENGTH = 500
     private const val PASTE_DELAY_MS = 500L
+    private const val REOPEN_DELAY_MS = 1000L
 
     /** The edit box the history was opened from, which Paste pastes into. */
     private var pasteTarget: AccessibilityNodeInfo? = null
