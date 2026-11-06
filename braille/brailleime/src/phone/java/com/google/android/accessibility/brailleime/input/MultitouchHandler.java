@@ -79,9 +79,11 @@ class MultitouchHandler {
    * displacement vector (between final and initial points) is less than the following threshold.
    * For example, a value of 1.0f means that a perfectly diagonal swipe is recognizable. A value of
    * 2.0f means that the distance travelled in the dominant direction must be twice as long as the
-   * distance travelled in the non-dominant direction. This value must exceed 1.0f.
+   * distance travelled in the non-dominant direction. This value must exceed 1.0f. At 1.4f a swipe
+   * may go up to about 35 degrees off the horizontal or vertical; TalkBack's 2.0f, about 27
+   * degrees, missed many swipes that went a little diagonally.
    */
-  private static final float SWIPE_MIN_RATIO = 2.0f;
+  private static final float SWIPE_MIN_RATIO = 1.4f;
 
   /**
    * A Swipe is not recognizable if the speed in the dominant direction does not exceed the
