@@ -182,6 +182,9 @@ class ScriptManager(
     feedback.paused = paused
   }
 
+  override fun bindsGesture(name: String): Boolean =
+    !activation.inBacktalk && bindings.gestures.containsKey(name)
+
   override fun onGesture(name: String, fallback: Runnable): Boolean =
     !activation.inBacktalk &&
       bindings.gestures[name]?.also { runCommand(it, "gesture", fallback = fallback) } != null

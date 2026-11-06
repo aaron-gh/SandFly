@@ -46,6 +46,9 @@ interface ScriptHost {
 
   fun onGesture(name: String, fallback: Runnable): Boolean
 
+  /** Returns whether a running script binds the gesture [name]. */
+  fun bindsGesture(name: String): Boolean = false
+
   /**
    * Offers a key press to scripts, and returns whether a script took it. [fallback] runs SandFly's
    * own command for keys pressed with the SandFly modifier when the script's command hands them
@@ -248,6 +251,17 @@ object Scripts {
       }
     }
     return if (group(node) != null) ScriptGroups.actionTarget(node, longClick) else node
+  }
+
+  /**
+   * Returns whether a running script binds the gesture [gestureId], or a script command's gesture
+   * is being chosen by performing it, so that SandFly recognizes gestures it otherwise recognizes
+   * only when a command is assigned to them, such as edge gestures and pinches.
+   */
+  @JvmStatic
+  fun bindsGesture(gestureId: Int): Boolean {
+    val name = ScriptInput.gestureName(gestureId) ?: return false
+    return capture != null || host?.bindsGesture(name) == true
   }
 
   @JvmStatic

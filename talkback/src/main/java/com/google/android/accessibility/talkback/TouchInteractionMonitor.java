@@ -115,6 +115,7 @@ import com.google.android.accessibility.talkback.gesture.PinchTracker;
 import com.google.android.accessibility.talkback.gesture.TapToTypeTracker;
 import com.google.android.accessibility.talkback.gesture.TwoFingerRotationTracker;
 import com.google.android.accessibility.talkback.gesture.TwoFingerScrubTracker;
+import com.google.android.accessibility.talkback.scripting.Scripts;
 import com.google.android.accessibility.talkback.tutorial.TutorialHooks;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.AccessibilityServiceCompatUtils;
@@ -1748,12 +1749,14 @@ public class TouchInteractionMonitor
     };
   }
 
+  /** Returns whether the gesture runs a command, or a running script binds it. */
   private boolean isGestureAssigned(int gestureId) {
     GestureShortcutMapping mapping = service.getGestureShortcutMapping();
-    return mapping != null
-        && !TextUtils.equals(
-            mapping.getActionKeyFromGestureId(gestureId),
-            context.getString(R.string.shortcut_value_unassigned));
+    return (mapping != null
+            && !TextUtils.equals(
+                mapping.getActionKeyFromGestureId(gestureId),
+                context.getString(R.string.shortcut_value_unassigned)))
+        || Scripts.bindsGesture(gestureId);
   }
 
   private final EdgeSwipeTracker.Listener edgeSwipeListener =
