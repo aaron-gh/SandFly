@@ -932,6 +932,10 @@ Apps can give SandFly a braille display that it can't connect to on its own, suc
 
 SandFly only uses a display from an app once you allow it, after a warning that the app will be able to read the screen and control the device. SandFly asks when it finds such an app, and **Displays from other apps** in braille display settings lists them, to allow or stop allowing each one. A notification says which app is in use. A display connected through Bluetooth or USB comes first, and one from an app waits while it's connected. [Providing a braille display from another app](docs/braille-display-api.md) describes the API for app developers.
 
+### Braille dictionary
+
+**Braille** > **Braille dictionary** changes text on a braille display, such as a symbol into a word, or text left off the display. Its entries are separate from the speech dictionary's, which are for how text sounds. Entries apply in order, to all apps or one app, with whole words and regular expressions as in the speech dictionary. Text being typed and SandFly's own screens are shown as they are.
+
 ### Hide the on-screen keyboard
 
 In the braille display settings, **Hide the on-screen keyboard** keeps the on-screen keyboard hidden while a braille display is connected, so it doesn't cover the screen while you type on the display. It shows again when the display disconnects or the switch is turned off.

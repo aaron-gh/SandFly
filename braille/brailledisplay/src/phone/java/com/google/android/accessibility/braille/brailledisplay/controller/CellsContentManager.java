@@ -161,6 +161,7 @@ public class CellsContentManager implements CellsContentConsumer {
   public void setContent(CellsContent content, Reason reason) {
     Preconditions.checkNotNull(content, "content can't be null");
     Preconditions.checkNotNull(content.getText(), "content text is null");
+    content.setText(BrailleTextFilter.apply(content.getText()));
     commonDisplayInfoWrapper.renewDisplayInfo(
         content.getText(), content.getPanStrategy(), content.isSplitParagraphs());
     BrailleDisplayAnalytics.getInstance(context)
@@ -219,6 +220,7 @@ public class CellsContentManager implements CellsContentConsumer {
       TimedMessager.Type type, CellsContent content, int durationInMilliseconds) {
     Preconditions.checkNotNull(content, "content can't be null");
     Preconditions.checkNotNull(content.getText(), "content text is null");
+    content.setText(BrailleTextFilter.apply(content.getText()));
     // Replace end indicator with new coming caption.
     if (isStartOrEndIndicatorShowing()) {
       timedMessagePopupWrapper.clear();
