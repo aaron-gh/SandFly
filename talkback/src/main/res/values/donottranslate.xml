@@ -225,6 +225,7 @@
     <string name="pref_category_reduce_latency_summary_key" translatable="false">pref_category_reduce_latency_summary_key</string>
     <string name="pref_typing_method_prefix_key" translatable="false">pref_typing_method_prefix_key</string>
     <string name="pref_typing_method_postfix_key" translatable="false">pref_typing_method_postfix_key</string>
+    <string name="pref_show_focus_indicator_key" translatable="false">pref_show_focus_indicator_key</string>
     <string name="pref_thick_border_key" translatable="false">pref_thick_border_key</string>
     <string name="pref_border_color_category_key" translatable="false">pref_border_color_category_key</string>
     <string name="pref_border_color_key" translatable="false">pref_border_color_key</string>
@@ -1987,6 +1988,7 @@
      <bool name="pref_show_navigation_menu_row_column_default">true</bool>
      <bool name="pref_show_navigation_menu_row_default">false</bool>
     <bool name="pref_show_navigation_menu_column_default">false</bool>
+    <bool name="pref_show_focus_indicator_default">true</bool>
     <bool name="pref_thick_border_key_default">false</bool>
     <bool name="pref_icon_detection_installed_default">false</bool>
 
