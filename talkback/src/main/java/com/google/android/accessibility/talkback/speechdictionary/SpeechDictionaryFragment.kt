@@ -16,6 +16,7 @@
 
 package com.google.android.accessibility.talkback.speechdictionary
 
+import androidx.annotation.StringRes
 import androidx.preference.PreferenceGroup
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.notifications.NotificationCodeFragment
@@ -23,10 +24,31 @@ import com.google.android.accessibility.talkback.notifications.Replacement
 import com.google.android.accessibility.talkback.notifications.TextMatch
 
 /** Speech > Speech dictionary: the entries, each with the app it is used in. */
-class SpeechDictionaryFragment : NotificationCodeFragment(R.string.title_pref_speech_dictionary) {
+class SpeechDictionaryFragment :
+  DictionaryFragment(R.string.title_pref_speech_dictionary, R.string.speech_dictionary_not_said) {
+  override fun read(): List<DictionaryEntry> = SpeechDictionary.read(prefs)
+
+  override fun write(entries: List<DictionaryEntry>) = SpeechDictionary.write(prefs, entries)
+}
+
+/** Braille > Braille dictionary: the entries, each with the app it is used in. */
+class BrailleDictionaryFragment :
+  DictionaryFragment(R.string.title_pref_braille_dictionary, R.string.braille_dictionary_not_shown) {
+  override fun read(): List<DictionaryEntry> = BrailleDictionary.read(prefs)
+
+  override fun write(entries: List<DictionaryEntry>) = BrailleDictionary.write(prefs, entries)
+}
+
+/** A dictionary's entries, each with the app it is used in. */
+abstract class DictionaryFragment(@StringRes title: Int, @StringRes private val removedText: Int) :
+  NotificationCodeFragment(title) {
+
+  protected abstract fun read(): List<DictionaryEntry>
+
+  protected abstract fun write(entries: List<DictionaryEntry>)
 
   override fun build(screen: PreferenceGroup) {
-    val entries = SpeechDictionary.read(prefs)
+    val entries = read()
     screen.action(getString(R.string.notification_add_replacement)) { edit(entries, -1) }
     entries.forEachIndexed { index, entry ->
       val title = describe(entry.replacement)
@@ -58,7 +80,7 @@ class SpeechDictionaryFragment : NotificationCodeFragment(R.string.title_pref_sp
 
   private fun describe(replacement: Replacement): String =
     when {
-      replacement.replace.isEmpty() -> getString(R.string.speech_dictionary_not_said, replacement.find)
+      replacement.replace.isEmpty() -> getString(removedText, replacement.find)
       else ->
         getString(
           R.string.notification_replacement_item,
@@ -94,7 +116,7 @@ class SpeechDictionaryFragment : NotificationCodeFragment(R.string.title_pref_sp
     chooseApp(getString(R.string.speech_dictionary_all_apps), then)
 
   private fun save(entries: List<DictionaryEntry>) {
-    SpeechDictionary.write(prefs, entries)
+    write(entries)
     rebuild()
   }
 

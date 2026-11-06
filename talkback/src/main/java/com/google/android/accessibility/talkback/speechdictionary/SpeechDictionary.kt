@@ -89,6 +89,15 @@ object SpeechDictionary {
     return if (app == ownPackage) null else apply(text, entries, app)
   }
 
+  /**
+   * Returns [text] with [entries], such as the braille dictionary's, applied for the app shown
+   * last, or null when none changed it. Text in SandFly's own windows is left as it is.
+   */
+  fun applyInCurrentApp(text: CharSequence, entries: List<DictionaryEntry>): CharSequence? {
+    val app = app
+    return if (app == ownPackage) null else apply(text, entries, app)
+  }
+
   internal fun apply(text: CharSequence, entries: List<DictionaryEntry>, app: String): CharSequence? {
     var builder: SpannableStringBuilder? = null
     for (entry in entries) {

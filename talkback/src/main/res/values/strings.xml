@@ -246,6 +246,10 @@
     <!-- First choice when choosing the app a speech dictionary entry is used in: it is used in every app. [CHAR LIMIT=40] -->
     <string name="speech_dictionary_all_apps">All apps</string>
     <!-- A speech dictionary entry that leaves a text out of speech. [CHAR LIMIT=NONE] -->
+    <!-- Setting: text that a braille display shows differently, such as a symbol as a word. -->
+    <string name="title_pref_braille_dictionary">Braille dictionary</string>
+    <!-- Braille dictionary entry that leaves this text off the braille display. -->
+    <string name="braille_dictionary_not_shown"><xliff:g id="text" example="#">%1$s</xliff:g> not shown</string>
     <string name="speech_dictionary_not_said"><xliff:g id="text" example="#">%1$s</xliff:g> not said</string>
     <!--
       Source: Summary for the "speak long text in phrases" toggle.
