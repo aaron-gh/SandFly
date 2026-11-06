@@ -2177,6 +2177,12 @@
   <string name="shortcut_a11y_button_long_press">Hold accessibility shortcut</string>
   <!--Label for the command that turns Android's screen magnification on or off [CHAR_LIMIT=NONE] -->
   <string name="shortcut_toggle_magnification">Turn magnification on or off</string>
+  <!-- Command: turns Android's color inversion on or off. -->
+  <string name="shortcut_toggle_color_inversion">Turn color inversion on or off</string>
+  <!-- Said after the color inversion command turns it on. -->
+  <string name="color_inversion_turned_on">Color inversion on</string>
+  <!-- Said after the color inversion command turns it off. -->
+  <string name="color_inversion_turned_off">Color inversion off</string>
   <!-- TODO: add selector shortcuts to perform next and previous actions specific to the selected setting. -->
   <!--Label for the shortcut that performs the selected setting's next action [CHAR_LIMIT=70]-->
   <string name="shortcut_selected_setting_next_action">Move reading control down or forward</string>
