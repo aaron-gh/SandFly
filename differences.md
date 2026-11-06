@@ -207,6 +207,10 @@ With **Text-to-speech** > **Quiet while recording** on, SandFly stays quiet whil
 
 To stop SandFly from saying the new volume after you press the volume keys, turn off **Verbosity** > **Speak volume changes**. It's on by default.
 
+### Full charge
+
+With **Verbosity** > **Announce full charge** on, SandFly says "Battery fully charged" once when the battery is full while the charger is connected, also with notification reading off. It's off by default.
+
 ### Text formatting
 
 TalkBack speaks text formatting, such as bold, underline and text color, by default. In SandFly, **Verbosity** > **Speak text formatting** is off by default.

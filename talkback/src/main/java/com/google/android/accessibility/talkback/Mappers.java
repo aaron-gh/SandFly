@@ -224,7 +224,9 @@ public final class Mappers {
       boolean powerConnected = variables.powerConnected(depth);
       int batteryPercent = variables.batteryPercent(depth);
       @Nullable String announcement = null;
-      if (powerConnected) {
+      if (((Interpretation.Power) interpretation).fullyCharged) {
+        announcement = context.getString(R.string.battery_fully_charged);
+      } else if (powerConnected) {
         if (batteryPercent == BatteryMonitor.UNKNOWN_LEVEL) {
           announcement =
               context.getString(

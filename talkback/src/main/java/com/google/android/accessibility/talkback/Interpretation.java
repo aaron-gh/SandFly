@@ -91,11 +91,18 @@ public abstract class Interpretation {
     public final boolean connected;
     public final int percent;
     public final boolean powerSaveMode;
+    // Whether the battery has just become fully charged, rather than the charger connected or not.
+    public final boolean fullyCharged;
 
     public Power(boolean connected, int percent, boolean powerSaveMode) {
+      this(connected, percent, powerSaveMode, /* fullyCharged= */ false);
+    }
+
+    public Power(boolean connected, int percent, boolean powerSaveMode, boolean fullyCharged) {
       this.connected = connected;
       this.percent = percent;
       this.powerSaveMode = powerSaveMode;
+      this.fullyCharged = fullyCharged;
     }
 
     @Override
@@ -104,12 +111,13 @@ public abstract class Interpretation {
       return (other != null)
           && (this.connected == other.connected)
           && (this.percent == other.percent)
-          && (this.powerSaveMode == other.powerSaveMode);
+          && (this.powerSaveMode == other.powerSaveMode)
+          && (this.fullyCharged == other.fullyCharged);
     }
 
     @Override
     public int hashCode() {
-      return Objects.hash(connected, percent, powerSaveMode);
+      return Objects.hash(connected, percent, powerSaveMode, fullyCharged);
     }
 
     @Override
@@ -119,6 +127,7 @@ public abstract class Interpretation {
           StringBuilderUtils.optionalTag("connected", connected),
           StringBuilderUtils.optionalInt("percent", percent, BatteryMonitor.UNKNOWN_LEVEL),
           StringBuilderUtils.optionalTag("Battery Saver on", powerSaveMode),
+          StringBuilderUtils.optionalTag("fully charged", fullyCharged),
           "}");
     }
   }

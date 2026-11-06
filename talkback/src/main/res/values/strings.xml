@@ -348,6 +348,10 @@
       Description: This is spoken to the user. [CHAR LIMIT=NONE]
     -->
     <string name="template_charging_lite">Charging <xliff:g id="changing_status" example="Started">%1$s</xliff:g></string>
+    <!-- Switch: SandFly says when the battery is fully charged while the charger is connected. -->
+    <string name="title_pref_announce_full_charge">Announce full charge</string>
+    <!-- Said when the battery becomes fully charged while the charger is connected. -->
+    <string name="battery_fully_charged">Battery fully charged</string>
     <!--
       Source: An utterance template for announcing battery/power state.
       Description: This is spoken to the user. [CHAR LIMIT=NONE]

@@ -201,6 +201,7 @@
     <string name="pref_speak_system_window_titles_key">pref_speak_system_window_titles_key</string>
     <string name="pref_allow_frequent_content_change_announcement_key">pref_allow_frequent_content_change_announcement_key</string>
     <string name="pref_verbose_scroll_announcement_key">pref_verbose_scroll_announcement_key</string>
+    <string name="pref_announce_full_charge_key">pref_announce_full_charge</string>
     <string name="pref_explore_by_touch_key">pref_explore_by_touch</string>
     <string name="pref_explore_by_touch_reflect_key">pref_explore_by_touch_reflect</string>
     <string name="pref_single_tap_key">pref_single_tap</string>
@@ -1772,6 +1773,7 @@
     <integer name="pref_speech_volume_min">25</integer>
     <bool name="pref_screenoff_default">false</bool>
     <bool name="pref_verbose_scroll_announcement_default">false</bool>
+    <bool name="pref_announce_full_charge_default">false</bool>
     <bool name="pref_proximity_default">false</bool>
     <bool name="pref_auto_update_check_default">true</bool>
     <bool name="pref_dev_builds_default">false</bool>
