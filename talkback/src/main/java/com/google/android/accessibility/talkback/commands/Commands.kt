@@ -25,6 +25,7 @@ import com.google.android.accessibility.talkback.actor.ImageCaptioner
 import com.google.android.accessibility.talkback.actor.gemini.GeminiConfiguration
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader
 import com.google.android.accessibility.talkback.gesture.AccessibilityShortcutActions
+import com.google.android.accessibility.talkback.gesture.AppShortcutActions
 import com.google.android.accessibility.talkback.gesture.GestureProfiles
 import com.google.android.accessibility.talkback.gesture.NavigationGestureActions
 import com.google.android.accessibility.talkback.gesture.OpenAppActions
@@ -141,15 +142,15 @@ object Commands {
   }
 
   /**
-   * Returns the commands available on this device, by category, ending with Gesture profiles, Open
-   * app and Accessibility shortcuts.
+   * Returns the commands available on this device, by category, ending with Gesture profiles, Voice
+   * profiles, Open app, App shortcuts and Accessibility shortcuts.
    */
   @JvmStatic
   fun categories(context: Context): List<Category> = Builder(context, withApps = true).build()
 
   /**
-   * Returns the commands available on this device, by category, without Gesture profiles, Open app
-   * and Accessibility shortcuts.
+   * Returns the commands available on this device, by category, without Gesture profiles, Voice
+   * profiles, Open app, App shortcuts and Accessibility shortcuts.
    */
   private fun categoriesWithoutApps(context: Context): List<Category> =
     Builder(context, withApps = false).build()
@@ -161,6 +162,9 @@ object Commands {
       return null
     }
     OpenAppActions.label(context, value)?.let {
+      return Command(value, it, keyboardAction = null)
+    }
+    AppShortcutActions.label(context, value)?.let {
       return Command(value, it, keyboardAction = null)
     }
     AccessibilityShortcutActions.label(context, value)?.let {
@@ -205,6 +209,7 @@ object Commands {
   /** The name of a command that [label] finds without the list of commands, or null. */
   private fun labelOutsideList(context: Context, value: String): String? =
     OpenAppActions.label(context, value)
+      ?: AppShortcutActions.label(context, value)
       ?: AccessibilityShortcutActions.label(context, value)
       ?: gestureProfileLabel(context, value)
       ?: voiceProfileLabel(context, value)
@@ -280,6 +285,7 @@ object Commands {
         gestureProfiles()
         voiceProfiles()
         openApp()
+        appShortcuts()
         accessibilityShortcuts()
       }
       return categories
@@ -996,6 +1002,13 @@ object Commands {
       category(R.string.shortcut_title_open_app) {
         for (app in OpenAppActions.apps(context)) {
           commands.add(Command(app.value, app.label, keyboardAction = null))
+        }
+      }
+
+    private fun appShortcuts() =
+      category(R.string.title_pref_app_shortcuts) {
+        for (shortcut in AppShortcutActions.shortcuts(context)) {
+          commands.add(Command(shortcut.value, shortcut.label, keyboardAction = null))
         }
       }
 

@@ -1954,6 +1954,20 @@
     <string name="shortcut_title_accessibility_shortcuts">Accessibility shortcuts</string>
     <!-- Name of a shortcut that opens an app, such as "Open Gmail". [CHAR_LIMIT=NONE] -->
     <string name="shortcut_open_app">Open <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
+    <!-- Title of the list of commands that open app shortcuts, as a long press on an app's icon on the home screen offers, and of the screen that adds them. [CHAR_LIMIT=NONE] -->
+    <string name="title_pref_app_shortcuts">App shortcuts</string>
+    <!-- Name of a command that opens an app shortcut: the app's name and the shortcut's name. [CHAR_LIMIT=NONE] -->
+    <string name="app_shortcut_label"><xliff:g id="app_name" example="Amazon">%1$s</xliff:g>: <xliff:g id="shortcut" example="Cart">%2$s</xliff:g></string>
+    <!-- Button on the App shortcuts screen that lists the apps' create shortcut activities, to add a shortcut from one. [CHAR_LIMIT=NONE] -->
+    <string name="title_pref_add_app_shortcut">Add app shortcut</string>
+    <!-- Shown when no installed app has a create shortcut activity. [CHAR_LIMIT=NONE] -->
+    <string name="app_shortcut_no_apps">No apps have shortcuts to add</string>
+    <!-- Shown when an app's create shortcut activity can't start, or returns no shortcut intent that SandFly can open. [CHAR_LIMIT=NONE] -->
+    <string name="app_shortcut_not_added">No shortcut added</string>
+    <!-- Said after a shortcut is added on the App shortcuts screen, with the command's name. [CHAR_LIMIT=NONE] -->
+    <string name="app_shortcut_added">Added <xliff:g id="name" example="MacroDroid: Morning">%1$s</xliff:g></string>
+    <!-- Said when a command that opens an app shortcut fails, because the app or shortcut is gone or its activity can't start. [CHAR_LIMIT=NONE] -->
+    <string name="app_shortcut_not_opened">Could not open app shortcut</string>
 
     <!-- Label for a shortcut that is not assigned and does nothing. [CHAR_LIMIT=40] -->
     <string name="shortcut_unassigned">Tap to assign</string>

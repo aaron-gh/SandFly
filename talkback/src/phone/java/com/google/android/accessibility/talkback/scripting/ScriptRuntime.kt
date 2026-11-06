@@ -25,6 +25,7 @@ import android.os.SystemClock
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.commands.Commands
+import com.google.android.accessibility.talkback.gesture.AppShortcutActions
 import com.google.android.accessibility.talkback.gesture.OpenAppActions
 import com.google.android.accessibility.talkback.translation.Translator
 import com.google.android.accessibility.talkback.scripting.ScriptPermission.ACTIONS
@@ -477,14 +478,18 @@ class ScriptRuntime(
 
   private var commandListCache: JSONArray? = null
 
-  /** SandFly's commands that a script may run: all but Open app and turning scripts off. */
+  /** SandFly's commands that a script may run: all but Open app, App shortcuts and turning scripts off. */
   private fun commandList(): JSONArray =
     commandListCache
       ?: JSONArray(
           Commands.categories(manager.service).flatMap { category ->
             val title = manager.service.getString(category.titleRes)
             category.commands
-              .filter { !OpenAppActions.isAction(it.value) && it.value !in REFUSED_COMMANDS }
+              .filter {
+                !OpenAppActions.isAction(it.value) &&
+                  !AppShortcutActions.isAction(it.value) &&
+                  it.value !in REFUSED_COMMANDS
+              }
               .map { jsonObject("id" to it.value, "title" to it.label, "category" to title) }
           }
         )
