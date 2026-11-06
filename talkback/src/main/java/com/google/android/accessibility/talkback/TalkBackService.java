@@ -383,6 +383,9 @@ import org.checkerframework.checker.nullness.qual.Nullable;
 /** An {@link AccessibilityService} that provides spoken, haptic, and audible feedback. */
 public class TalkBackService extends AccessibilityServiceCompat
     implements Thread.UncaughtExceptionHandler, SpeechController.Delegate {
+  /** Shortcut Menu, which turns accessibility services on and off from the shortcut. */
+  private static final String SHORTCUT_MENU_PACKAGE = "io.github.aaron_gh.shortcutmenu";
+
 
   private static class IpcClientCallbackImpl
       implements IpcService.IpcClientCallback, TrainingState {
@@ -1687,6 +1690,9 @@ public class TalkBackService extends AccessibilityServiceCompat
    */
   private boolean canUseVolumeKeyPresses(boolean triggerModifierPressed) {
     return isServiceActive()
+        // Shortcut Menu starts its safe mode, for a screen reader that stopped working, with three
+        // presses of volume up, so its keys go to it as they are.
+        && !SHORTCUT_MENU_PACKAGE.contentEquals(AppGestures.appShown())
         && !isTouchInteracting
         && !triggerModifierPressed
         && !isBrailleImeTouchInteracting()
