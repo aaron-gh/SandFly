@@ -120,17 +120,25 @@ public class FocusFeedbackMapper {
             Feedback.sound(R.raw.view_entered).vibration(R.array.view_hovered_pattern).build());
       }
       case TOUCH_START, TOUCH_ENTERED_UNFOCUSED_NODE -> {
-        // Speech of an item that touch focuses still interrupts what was being said.
+        // Without this, speech stops when touch focuses an item instead, below.
         return touchStopsSpeech
             ? Feedback.create(eventId, Feedback.part().setInterruptGentle(true).build())
             : null;
       }
       case TOUCH_FOCUSED_NODE -> {
-        return toFeedback(
-            eventId, Feedback.focus(FOCUS_FOR_TOUCH).setTarget(touchTarget).setForceRefocus(true));
+        // Focus is moved again, so the item is spoken again.
+        return toTouchFocusFeedback(
+            eventId,
+            Feedback.focus(FOCUS_FOR_TOUCH).setTarget(touchTarget).setForceRefocus(true),
+            /* speaks= */ true);
       }
       case TOUCH_UNFOCUSED_NODE -> {
-        return toFeedback(eventId, Feedback.focus(FOCUS_FOR_TOUCH).setTarget(touchTarget));
+        // A finger that moves onto another part of the focused item, such as its label, leaves
+        // focus where it is, and the item's speech plays on.
+        return toTouchFocusFeedback(
+            eventId,
+            Feedback.focus(FOCUS_FOR_TOUCH).setTarget(touchTarget),
+            /* speaks= */ touchTarget != null && !touchTarget.isAccessibilityFocused());
       }
       case LIFT -> {
         return toFeedback(eventId, Feedback.focus(CLICK_NODE).setTarget(touchTarget));
@@ -152,6 +160,22 @@ public class FocusFeedbackMapper {
 
   private static Feedback toFeedback(@Nullable EventId eventId, Focus.Builder focus) {
     return Feedback.create(eventId, Feedback.part().setFocus(focus.build()).build());
+  }
+
+  /**
+   * Focuses an item by touch. With Stop speech when touching the screen off, focusing an item that
+   * is then spoken ({@code speaks}) stops all speech first. The item's own speech only interrupts
+   * speech that new speech can interrupt, so notifications, window titles, live regions and other
+   * such speech would otherwise play on, and the item would be spoken only after them.
+   */
+  private static Feedback toTouchFocusFeedback(
+      @Nullable EventId eventId, Focus.Builder focus, boolean speaks) {
+    return Feedback.create(
+        eventId,
+        Feedback.part()
+            .setInterruptGentle(speaks && !touchStopsSpeech)
+            .setFocus(focus.build())
+            .build());
   }
 
   /** Feedback-mapping function. */
