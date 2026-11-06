@@ -2512,6 +2512,21 @@ public class SelectorController implements UserInputEventListener {
     showQuickMenuActionOverlay(eventId, displayText);
   }
 
+  /**
+   * Changes to the voice profile {@code id}, or Backtalk default's for "", and says its name.
+   * Returns false when the profile was deleted.
+   */
+  public boolean selectVoiceProfile(EventId eventId, String id) {
+    if (!id.isEmpty() && !VoiceProfiles.ids(prefs).contains(id)) {
+      return false;
+    }
+    prefs.edit().putString(VoiceProfiles.PREF_ACTIVE, id).apply();
+    String displayText = VoiceProfileNames.nameOf(context, prefs, id);
+    announceSetting(eventId, displayText, /* hint= */ null);
+    showQuickMenuActionOverlay(eventId, displayText);
+    return true;
+  }
+
   /** Changes to the previous or next gesture profile from a gesture, with Default first. */
   public void changeGestureProfile(EventId eventId, boolean isNext) {
     changeGestureProfile(eventId, isNext, /* hint= */ null);
