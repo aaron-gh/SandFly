@@ -489,12 +489,6 @@ public class GestureController {
       result =
           pipeline.returnFeedback(
               eventId, Feedback.systemAction(AccessibilityService.GLOBAL_ACTION_BACK));
-    } else if (action.equals(service.getString(R.string.shortcut_value_home))
-        && GestureLayout.isVoiceOver(SharedPreferencesUtils.getSharedPreferences(service))
-        && lockScreenSwipe.isLockScreenShown()) {
-      // As on an iPhone, Home on the lock screen unlocks it, or shows the PIN, pattern or
-      // password: Android's lock screen does that for a two-finger swipe up.
-      result = lockScreenSwipe.swipeUp();
     } else if (action.equals(service.getString(R.string.shortcut_value_home))) {
       // Dismiss overlays such as TalkBack menu, Gemini bottom sheet dialog and screen search.
       menuManager.dismissAll();
