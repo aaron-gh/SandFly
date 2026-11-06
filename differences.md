@@ -914,6 +914,10 @@ Apps can give SandFly a braille display that it can't connect to on its own, suc
 
 SandFly only uses a display from an app once you allow it, after a warning that the app will be able to read the screen and control the device. SandFly asks when it finds such an app, and **Displays from other apps** in braille display settings lists them, to allow or stop allowing each one. A notification says which app is in use. A display connected through Bluetooth or USB comes first, and one from an app waits while it's connected. [Providing a braille display from another app](docs/braille-display-api.md) describes the API for app developers.
 
+### Hide the on-screen keyboard
+
+In the braille display settings, **Hide the on-screen keyboard** keeps the on-screen keyboard hidden while a braille display is connected, so it doesn't cover the screen while you type on the display. It shows again when the display disconnects or the switch is turned off.
+
 ### Braille display keys you choose
 
 In TalkBack, **Braille display commands** only lists the keys of each command. In SandFly, choose a command under **Braille** > **Braille display** > **Braille display commands**, then **Change keys**, and press the new keys on the display: one of its keys, or Space with dots. Keys that already run another command move to the new one after you confirm, and the command's old keys then run nothing. **Reset** gives a command its default keys back, after you confirm when one of them now runs another command, and **Reset all keys** does so for every command. **SandFly commands** lists the commands that gestures run, such as **Open SandFly menu**, **Notifications** or **Read from top**, by category, to give each one display keys. Commands without keys on the connected display are listed with "No keys", so they can get keys too. Panning and routing keys can't be changed, and keys without Space still type their dots in text fields.

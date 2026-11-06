@@ -21,6 +21,7 @@ import static com.google.android.accessibility.braille.brltty.BrailleInputEvent.
 
 import android.accessibilityservice.AccessibilityService;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
 import android.os.Handler;
@@ -143,6 +144,8 @@ public class BdController implements Controller {
     if (isBrailleKeyboardActivated()) {
       getBrailleImeForBrailleDisplay().onBrailleDisplayConnected();
     }
+    brailleSharedPrefs().registerOnSharedPreferenceChangeListener(hideScreenKeyboardListener);
+    updateScreenKeyboardShowMode();
     BrailleDisplayAnalytics.getInstance(context).startDailyLogging();
   }
 
@@ -214,6 +217,8 @@ public class BdController implements Controller {
   public void onStop() {
     BrailleDisplayLog.v(TAG, "onStop");
     DisplayKeyCapture.setDisplayActive(false);
+    brailleSharedPrefs().unregisterOnSharedPreferenceChangeListener(hideScreenKeyboardListener);
+    setScreenKeyboardHidden(false);
     if (isDisplayerReady()) {
       feedbackManager.emitFeedback(FeedbackManager.Type.DISPLAY_DISCONNECTED);
       if (isSomeBrailleCommandUnavailableDialogShowing()) {
@@ -232,6 +237,58 @@ public class BdController implements Controller {
       translatorManager.shutdown();
     }
     BrailleDisplayAnalytics.getInstance(context).stopDailyLogging();
+  }
+
+  // Whether this controller hid the on-screen keyboard, so that it shows it again only then.
+  private boolean screenKeyboardHidden;
+
+  private final SharedPreferences.OnSharedPreferenceChangeListener hideScreenKeyboardListener =
+      this::onBraillePreferenceChanged;
+
+  private void onBraillePreferenceChanged(SharedPreferences prefs, String key) {
+    if (context.getString(R.string.pref_key_bd_hide_screen_keyboard).equals(key)) {
+      updateScreenKeyboardShowMode();
+    }
+  }
+
+  private SharedPreferences brailleSharedPrefs() {
+    return BrailleUserPreferences.getSharedPreferences(
+        context, BrailleUserPreferences.BRAILLE_SHARED_PREFS_FILENAME);
+  }
+
+  /**
+   * Hides the on-screen keyboard while a display is connected, if Hide the on-screen keyboard is
+   * on.
+   */
+  private void updateScreenKeyboardShowMode() {
+    setScreenKeyboardHidden(
+        displayer != null
+            && brailleSharedPrefs()
+                .getBoolean(context.getString(R.string.pref_key_bd_hide_screen_keyboard), false));
+  }
+
+  private void setScreenKeyboardHidden(boolean hidden) {
+    if (hidden == screenKeyboardHidden) {
+      return;
+    }
+    AccessibilityService service = talkBackForBrailleDisplay.getAccessibilityService();
+    if (service == null) {
+      return;
+    }
+    try {
+      boolean changed =
+          service
+              .getSoftKeyboardController()
+              .setShowMode(
+                  hidden
+                      ? AccessibilityService.SHOW_MODE_HIDDEN
+                      : AccessibilityService.SHOW_MODE_AUTO);
+      if (changed) {
+        screenKeyboardHidden = hidden;
+      }
+    } catch (RuntimeException e) {
+      BrailleDisplayLog.w(TAG, "Cannot change the on-screen keyboard show mode: " + e);
+    }
   }
 
   @Override

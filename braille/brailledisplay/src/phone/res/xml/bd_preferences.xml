@@ -72,6 +72,11 @@
         app:summary="@string/bd_preference_auto_connect_summary"
         app:title="@string/bd_preference_auto_connect_title" />
 
+    <SwitchPreference
+        android:defaultValue="false"
+        app:key="@string/pref_key_bd_hide_screen_keyboard"
+        app:title="@string/bd_preference_hide_screen_keyboard_title" />
+
     <Preference
         android:key="@string/pref_key_bd_auto_scroll"
         android:title="@string/bd_preference_key_auto_scroll_title"
