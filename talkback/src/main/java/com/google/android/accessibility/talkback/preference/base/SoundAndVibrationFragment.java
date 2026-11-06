@@ -43,6 +43,7 @@ import com.google.android.accessibility.talkback.speakerphone.SpeakerphoneSettin
 import com.google.android.accessibility.utils.FeatureSupport;
 import com.google.android.accessibility.utils.PreferenceSettingsUtils;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
+import com.google.android.accessibility.utils.output.HapticPatternParser;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -266,6 +267,10 @@ public class SoundAndVibrationFragment extends TalkbackBaseFragment {
           });
     }
     setUpPercentSlider(R.string.pref_vibration_strength_key);
+    if (findPreference(getString(R.string.pref_vibration_strength_key))
+        instanceof SeekBarPreference strength) {
+      strength.setMax(Math.round(HapticPatternParser.MAX_STRENGTH * 100));
+    }
     // Only vibrators that vary their strength can play a weaker vibration.
     Vibrator vibrator = getContext().getSystemService(Vibrator.class);
     if (vibrator == null || !vibrator.hasVibrator() || !vibrator.hasAmplitudeControl()) {
