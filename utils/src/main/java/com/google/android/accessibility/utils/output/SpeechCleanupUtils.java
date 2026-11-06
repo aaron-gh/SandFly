@@ -22,6 +22,7 @@ import android.content.Context;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.TextUtils;
+import android.text.style.LocaleSpan;
 import android.text.style.TtsSpan;
 import androidx.annotation.IntDef;
 import androidx.annotation.VisibleForTesting;
@@ -32,6 +33,7 @@ import com.google.android.accessibility.utils.SpannableUtils;
 import com.google.common.collect.ImmutableMap;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
+import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.checkerframework.checker.nullness.qual.Nullable;
@@ -265,27 +267,40 @@ public final class SpeechCleanupUtils {
           return textAfterTrim;
         }
         // Retaining Spans that might have got stripped during cleanUp
-        return retainSpans(text, textAfterCleanUp);
+        return retainSpans(context, text, textAfterCleanUp);
       } else if (trimmedLength == 0 && text.length() > 0) {
         // For example, just spaces.
         String textAfterCleanUp = getCleanValueFor(context, text.toString().charAt(0));
         // Retaining Spans that might have got stripped during cleanUp
-        return retainSpans(text, textAfterCleanUp);
+        return retainSpans(context, text, textAfterCleanUp);
       }
     }
     return text;
   }
 
-  // Tries to detect spans in the original text
-  // and wraps the cleaned up text with those spans.
-  private static CharSequence retainSpans(CharSequence text, CharSequence textAfterCleanUp) {
+  /**
+   * Returns {@code textAfterCleanUp}, the name of the character {@code text} is, with the spans of
+   * {@code text}. The name is in the language of {@code context}, so a language mark of the
+   * character, such as a keyboard key's, is replaced by a mark in that language.
+   */
+  private static CharSequence retainSpans(
+      Context context, CharSequence text, CharSequence textAfterCleanUp) {
     if (text instanceof Spannable) {
       Spannable spannable = (Spannable) text;
       Object[] spans = spannable.getSpans(0, text.length(), Object.class);
       if (spans.length != 0) {
         SpannableString ss = new SpannableString(textAfterCleanUp);
+        boolean marked = false;
         for (Object span : spans) {
-          ss.setSpan(span, 0, ss.length(), 0);
+          if (span instanceof LocaleSpan) {
+            marked = true;
+          } else {
+            ss.setSpan(span, 0, ss.length(), 0);
+          }
+        }
+        if (marked) {
+          Locale language = context.getResources().getConfiguration().getLocales().get(0);
+          ss.setSpan(new LocaleSpan(language), 0, ss.length(), 0);
         }
         return ss;
       }
