@@ -352,6 +352,14 @@
         android:summary="%s"
         android:title="@string/title_pref_shortcut_edge_along_bottom_right"/>
     <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
+        android:defaultValue="@string/pref_edge_zone_mm_default"
+        android:dialogTitle="@string/title_pref_edge_zone_mm"
+        android:entries="@array/pref_edge_zone_mm_entries"
+        android:entryValues="@array/pref_edge_zone_mm_values"
+        android:key="@string/pref_edge_zone_mm_key"
+        android:summary="%s"
+        android:title="@string/title_pref_edge_zone_mm" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
         android:defaultValue="@string/pref_edge_first_click_mm_default"
         android:dialogTitle="@string/title_pref_edge_first_click_mm"
         android:entries="@array/pref_edge_first_click_mm_entries"

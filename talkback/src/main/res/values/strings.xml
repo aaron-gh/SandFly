@@ -2845,6 +2845,8 @@
     <string name="value_multi_tap_timeout_250ms">0.25 seconds (default)</string>
     <!-- Title for how far 2 fingers must turn on the screen to move the rotor by one reading control. [CHAR LIMIT=NONE]-->
     <string name="title_pref_rotor_step_degrees">Rotor turn per step</string>
+    <!-- Title for how far from an edge of the screen a touch starts to be an edge gesture or an edge menu. [CHAR LIMIT=NONE]-->
+    <string name="title_pref_edge_zone_mm">Edge width</string>
     <!-- Title for how far a finger slides in from the edge of the screen to the first click of an edge gesture. [CHAR LIMIT=NONE]-->
     <string name="title_pref_edge_first_click_mm">Distance to first click</string>
     <!-- Title for how far a finger slides on from the first click of an edge gesture to its second click. [CHAR LIMIT=NONE]-->

@@ -403,6 +403,7 @@ public class TalkBackPreferenceFilter {
         R.string.pref_category_edge_shortcuts_key,
         SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
     ROTOR_STEP_DEGREES(R.string.pref_rotor_step_degrees_key, SHOW_IF_SERVICE_GESTURE_DETECTION),
+    EDGE_ZONE(R.string.pref_edge_zone_mm_key, SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
     EDGE_FIRST_CLICK(
         R.string.pref_edge_first_click_mm_key, SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
     EDGE_SECOND_CLICK(

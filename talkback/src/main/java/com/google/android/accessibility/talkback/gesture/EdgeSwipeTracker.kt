@@ -59,7 +59,7 @@ import kotlin.math.abs
  * on the screen, so a slide can stay at the edge, drifting sideways, for its first 100 ms or so.
  */
 class EdgeSwipeTracker(
-  private val edgeZonePx: Float,
+  private var edgeZonePx: Float,
   private val stageDistancesPx: FloatArray,
   // Movement, in pixels, after which a slide that is not going inward is rejected.
   private val slopPx: Float,
@@ -556,6 +556,11 @@ class EdgeSwipeTracker(
   }
 
   /** Sets how far a slide goes in to its [first] stage, and on from there to its [second]. */
+  /** Sets how far from an edge of the screen a touch starts to be an edge gesture. */
+  fun setEdgeZone(px: Float) {
+    edgeZonePx = px
+  }
+
   fun setStageDistances(first: Float, second: Float) {
     stageDistancesPx[0] = first
     stageDistancesPx[1] = first + second

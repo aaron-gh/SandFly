@@ -191,6 +191,22 @@ class EdgeSwipeTrackerTest {
   }
 
   @Test
+  fun widerEdgeStartsAnEdgeSwipeFurtherFromTheEdge() {
+    val slideFrom955 = {
+      touch(MotionEvent.ACTION_DOWN, 955f)
+      touch(MotionEvent.ACTION_MOVE, 840f)
+      touch(MotionEvent.ACTION_UP, 840f)
+    }
+    slideFrom955()
+    assertEquals(emptyList<Pair<Edge, Int>>(), ended)
+
+    tracker.setEdgeZone(60f)
+    slideFrom955()
+    assertEquals(1, ended.size)
+    assertEquals(1, ended[0].second)
+  }
+
+  @Test
   fun touchIsReportedOnlyWhereASlideInMayStart() {
     edgesInUse = setOf(Edge.ALONG_LEFT_UP)
     slideThrough(5f, 500f, 8f, 450f, 10f, 380f)
