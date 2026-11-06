@@ -30,6 +30,7 @@ import com.google.android.accessibility.utils.FeatureSupport
 import com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED
 import com.google.android.accessibility.utils.output.SpeechController
 import com.google.android.libraries.accessibility.utils.log.LogUtils
+import java.util.Locale
 import kotlin.math.abs
 import kotlin.math.hypot
 
@@ -37,8 +38,9 @@ import kotlin.math.hypot
  * Opens an app by the start of its name, written on the screen. Each piece of writing adds to the
  * letters, and SandFly says the first app whose name, or a word of it, starts with them, and how
  * many apps do. Two-finger gestures work as on the handwriting keyboard: swipe up for the
- * next app, down to open it, left to delete the last letter, and tap to hear the app again. A tap
- * with one finger closes the surface.
+ * next app, down to open it, left to delete the last letter, and tap to hear the app again. A
+ * two-finger swipe right switches between the device's language and English, for app names
+ * written in Latin letters. A tap with one finger closes the surface.
  */
 class HandwritingAppLauncher(
   private val service: AccessibilityService,
@@ -208,7 +210,7 @@ class HandwritingAppLauncher(
       return
     }
     when {
-      abs(dx) > abs(dy) -> if (dx < 0) deleteLetter()
+      abs(dx) > abs(dy) -> if (dx < 0) deleteLetter() else switchLanguage()
       dy > 0 -> search.open()
       else -> search.nextApp()
     }
@@ -248,6 +250,25 @@ class HandwritingAppLauncher(
     }
     LogUtils.d(TAG, "Wrote candidates %s", candidates)
     search.find(readings.map { search.letters + it })
+  }
+
+  /**
+   * Switches between the device's language and English, says the language, and checks that its
+   * model is on the device.
+   */
+  private fun switchLanguage() {
+    val recognizer = recognizer ?: return
+    val device = Locale.getDefault()
+    if (device.language == Locale.ENGLISH.language) {
+      speak(device.getDisplayLanguage(device))
+      return
+    }
+    recognizer.language = if (recognizer.language == null) Locale.ENGLISH else null
+    val now = recognizer.language ?: device
+    speak(now.getDisplayLanguage(device))
+    recognizer.prepare { result ->
+      if (isShowing && result != null) notReady(result)
+    }
   }
 
   private fun deleteLetter() {
