@@ -22,6 +22,7 @@ import android.content.ComponentName
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.content.pm.ApplicationInfo
+import android.content.pm.PackageInfo
 import android.net.Uri
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import org.junit.Assert.assertEquals
@@ -51,6 +52,15 @@ class AppShortcutActionsTest {
         this.exported = exported
         applicationInfo = ApplicationInfo().apply { packageName = component.packageName }
       }
+    if (component.packageName != context.packageName) {
+      shadowOf(context.packageManager)
+        .installPackage(
+          PackageInfo().apply {
+            packageName = component.packageName
+            applicationInfo = activity.applicationInfo
+          }
+        )
+    }
     shadowOf(context.packageManager).addOrUpdateActivity(activity)
   }
 

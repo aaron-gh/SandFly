@@ -238,9 +238,19 @@ object AppShortcutActions {
    */
   private fun startable(context: Context, intent: Intent, sourcePackage: String): Boolean {
     val packageManager = context.packageManager
-    // Android starts implicit intents only with activities in the default category.
-    val flags = if (intent.component == null) PackageManager.MATCH_DEFAULT_ONLY else 0
-    val activity = packageManager.resolveActivity(intent, flags)?.activityInfo ?: return false
+    val component = intent.component
+    val activity =
+      if (component != null) {
+        try {
+          packageManager.getActivityInfo(component, /* flags= */ 0)
+        } catch (e: PackageManager.NameNotFoundException) {
+          return false
+        }
+      } else {
+        // Android starts implicit intents only with activities in the default category.
+        packageManager.resolveActivity(intent, PackageManager.MATCH_DEFAULT_ONLY)?.activityInfo
+          ?: return false
+      }
     if (activity.packageName == context.packageName || !activity.exported) {
       return false
     }
