@@ -448,6 +448,9 @@ public class FailoverTextToSpeech {
             || PREF_SPEECH_STREAM_KEY.equals(key)
             || PREF_ROUTE_FORCED_KEY.equals(key)) {
           applyAudioAttributes();
+        } else if (CapturePolicy.PREF_KEEP_OFF_CASTS.equals(key)) {
+          CapturePolicy.applyToProcess(FailoverTextToSpeech.this.context, sharedPrefs);
+          applyAudioAttributes();
         } else if (PREF_SPEAK_IN_PHRASES_KEY.equals(key)) {
           speakInPhrases = sharedPrefs.getBoolean(key, SPEAK_IN_PHRASES_DEFAULT);
         } else if (PREF_LOW_LATENCY_AUDIO_KEY.equals(key)) {
@@ -609,6 +612,7 @@ public class FailoverTextToSpeech {
     keepPreviousEngine = prefs.getBoolean(PREF_KEEP_PREVIOUS_ENGINE_KEY, false);
     VoiceProfiles.setActive(VoiceProfiles.readActive(prefs));
     prefs.registerOnSharedPreferenceChangeListener(preferenceChangeListener);
+    CapturePolicy.applyToProcess(context, prefs);
     PowerManager power = context.getSystemService(PowerManager.class);
     screenOn = power == null || power.isInteractive();
     IntentFilter screenFilter = new IntentFilter(Intent.ACTION_SCREEN_ON);
@@ -2807,10 +2811,12 @@ public class FailoverTextToSpeech {
     }
     int usage = speechUsage(context);
     tts.setAudioAttributes(
-        new AudioAttributes.Builder()
-            .setUsage(usage)
-            .setContentType(AudioAttributes.CONTENT_TYPE_SPEECH)
-            .setFlags(AudioAttributes.FLAG_LOW_LATENCY)
+        CapturePolicy.applyTo(
+                new AudioAttributes.Builder()
+                    .setUsage(usage)
+                    .setContentType(AudioAttributes.CONTENT_TYPE_SPEECH)
+                    .setFlags(AudioAttributes.FLAG_LOW_LATENCY),
+                SharedPreferencesUtils.getSharedPreferences(context))
             .build());
   }
 
