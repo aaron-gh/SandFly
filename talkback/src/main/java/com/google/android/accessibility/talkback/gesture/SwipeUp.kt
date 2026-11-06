@@ -21,14 +21,16 @@ import android.accessibilityservice.GestureDescription
 import android.graphics.Path
 import android.os.Handler
 import android.os.Looper
+import com.google.android.accessibility.talkback.focusmanagement.HomeScreenPages
 import com.google.android.accessibility.utils.monitor.ScreenMonitor
 
 /**
- * Swipes up with two fingers on the lock screen, which unlocks it or shows the PIN, pattern or
- * password, for the Home gesture of the VoiceOver layout, as Home does on an iPhone. Android's lock
- * screen takes that from a two-finger swipe up while a screen reader explores touch.
+ * SandFly's own swipe up, sent to what is in front as it is; see [SyntheticTouches]. On the lock
+ * screen, two fingers unlock it or show the PIN, pattern or password, for the Home gesture of the
+ * VoiceOver layout, as Home does on an iPhone. On the home screen, one finger opens the apps list,
+ * as a two-finger swipe passed to the launcher does, for when SandFly takes two-finger swipes.
  */
-class LockScreenSwipe(private val service: AccessibilityService) {
+class SwipeUp(private val service: AccessibilityService) {
   private val handler = Handler(Looper.getMainLooper())
   private var pending: Runnable? = null
 
@@ -39,8 +41,15 @@ class LockScreenSwipe(private val service: AccessibilityService) {
     return root.packageName?.toString() == SYSTEM_UI
   }
 
-  /** Swipes up with two fingers in the middle of the screen. Returns whether it was sent. */
-  fun swipeUp(): Boolean {
+  /** Returns whether the home screen is the app in front. */
+  fun isHomeScreenShown(): Boolean =
+    HomeScreenPages.isHomePackage(service, AppGestures.appShown())
+
+  /**
+   * Swipes up with [fingers] fingers, one or two, in the middle of the screen. Returns whether it
+   * was sent.
+   */
+  fun swipeUp(fingers: Int): Boolean {
     if (!SyntheticTouches.isAvailable() || pending != null) return false
     val metrics = service.resources.displayMetrics
     val width = metrics.widthPixels.toFloat()
@@ -49,7 +58,10 @@ class LockScreenSwipe(private val service: AccessibilityService) {
     val startY = height * START_FRACTION
     val endY = height * END_FRACTION
     val builder = GestureDescription.Builder()
-    for (x in listOf(width * LEFT_FINGER_FRACTION, width * RIGHT_FINGER_FRACTION)) {
+    val xs =
+      if (fingers >= 2) listOf(width * LEFT_FINGER_FRACTION, width * RIGHT_FINGER_FRACTION)
+      else listOf(width / 2)
+    for (x in xs) {
       val path =
         Path().apply {
           moveTo(x, startY)
@@ -58,8 +70,7 @@ class LockScreenSwipe(private val service: AccessibilityService) {
       builder.addStroke(GestureDescription.StrokeDescription(path, 0, SWIPE_DURATION_MS))
     }
     val gesture = builder.build()
-    // The swipe goes to the lock screen as it is; see SyntheticTouches. The Home gesture may still
-    // be ending.
+    // The gesture that asked for the swipe may still be ending.
     val send = Runnable {
       pending = null
       SyntheticTouches.dispatch(service, gesture, SWIPE_DURATION_MS)
