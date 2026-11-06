@@ -59,5 +59,8 @@ interface HandwritingRecognizer {
   /** Downloads the model for the language. The recognizer's creator is told when it is done. */
   fun download()
 
+  /** The language written in, or null for the device's language. */
+  var language: java.util.Locale?
+
   fun close()
 }

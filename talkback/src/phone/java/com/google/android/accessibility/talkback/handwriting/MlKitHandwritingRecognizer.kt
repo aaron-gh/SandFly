@@ -113,12 +113,14 @@ class MlKitHandwritingRecognizer(private val onDownloadDone: (Boolean) -> Unit) 
   }
 
   /**
-   * Finds the model for the device's language on another thread, since ML Kit reads its list of
+   * Finds the model for [language], or the device's language, on another thread, since ML Kit reads its list of
    * languages the first time, and calls [then] with it, or null if there is none, on the main
    * thread.
    */
+  override var language: Locale? = null
+
   private fun withModel(then: (DigitalInkRecognitionModel?) -> Unit) {
-    val locale = Locale.getDefault()
+    val locale = language ?: Locale.getDefault()
     if (locale == modelLocale) return then(model)
     EXECUTOR.execute {
       val found = modelFor(locale)
