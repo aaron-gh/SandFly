@@ -577,6 +577,10 @@ When an app removed the item that had focus, such as an ad that collapses, TalkB
 
 Some apps draw their text themselves and give it to screen readers without letting them move through it, as Telegram does for messages. In such text, TalkBack could move by character, word, or paragraph only through a content description, so it couldn't move through these messages, only through reply previews. SandFly moves through the text itself when the app doesn't.
 
+### Links, phone numbers and codes in text
+
+The **Actions** menu lists the web addresses, email addresses, phone numbers and codes of 4 to 8 digits written in the focused item's text, also when the app doesn't make them links, such as in a chat message or the notification of a text message with a one-time code. Choosing a web or email address opens it, a phone number opens in the phone app, and a code is copied. The hint that actions are available doesn't count them.
+
 ### Double tap with the actions reading control on Android 11
 
 On Android 11, when you picked an action with the **Actions** reading control, a double tap only played a sound. In SandFly, a double tap performs the action, and a double-tap and hold performs a long press.
