@@ -3232,12 +3232,29 @@ public class FocusProcessorForLogicalNavigation {
         return;
       }
     }
-    int deltaX = pivotPresent ? pivotBefore.left - pivotAfter.left : DELTA_UNDEFINED;
-    int deltaY = pivotPresent ? pivotBefore.top - pivotAfter.top : DELTA_UNDEFINED;
+    int deltaX =
+        pivotPresent
+            ? edgeShift(pivotBefore.left, pivotAfter.left, pivotBefore.right, pivotAfter.right)
+            : DELTA_UNDEFINED;
+    int deltaY =
+        pivotPresent
+            ? edgeShift(pivotBefore.top, pivotAfter.top, pivotBefore.bottom, pivotAfter.bottom)
+            : DELTA_UNDEFINED;
     LogUtils.d(TAG, "checkScrollEarly: scrolled, deltaX=%s deltaY=%s", deltaX, deltaY);
     scrollable.refresh();
     readListAgain(scrollable);
     onAutoScrolled(scrollable, eventId, deltaX, deltaY);
+  }
+
+  /**
+   * Returns how far a node moved between two bounds along one axis, as a scroll delta: positive
+   * when it moved up or left. A node cut off at the list's start edge keeps that edge at the list's
+   * edge while it moves, so the end edge gives the distance then.
+   */
+  @VisibleForTesting
+  static int edgeShift(int startBefore, int startAfter, int endBefore, int endAfter) {
+    int shift = startBefore - startAfter;
+    return shift != 0 ? shift : endBefore - endAfter;
   }
 
   /**
