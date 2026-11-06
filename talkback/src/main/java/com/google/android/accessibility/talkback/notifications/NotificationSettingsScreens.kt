@@ -140,6 +140,8 @@ abstract class NotificationXmlFragment(@XmlRes xml: Int, @StringRes private val 
     when {
       key == NotificationSettings.Companion.Keys.VOICE_PROFILE && preference is ListPreference ->
         setUpVoices(preference)
+      key == NotificationSettings.Companion.Keys.CLOCK_VOICE_PROFILE && preference is ListPreference ->
+        setUpVoices(preference)
       preference is ListPreference && preference.entries == null -> {
         val choices = NotificationChoices.of(context, key) ?: return
         preference.entries = choices.map { it.second }.toTypedArray()
@@ -173,16 +175,25 @@ abstract class NotificationXmlFragment(@XmlRes xml: Int, @StringRes private val 
       VoiceProfiles.names(prefs, getString(R.string.voice_profile_default)) {
         getString(R.string.voice_profile_new_name, it)
       }
-    preference.entries =
-      (listOf(getString(R.string.notification_voice_sandfly)) + names.values).toTypedArray()
-    preference.entryValues = (listOf("") + names.keys).toTypedArray()
-    if (preference.findIndexOfValue(preference.value.orEmpty()) < 0) preference.value = ""
+    // The time's voice can also be the voice of notifications, its default.
+    val clock = preference.key == NotificationSettings.Companion.Keys.CLOCK_VOICE_PROFILE
+    val firstNames =
+      if (clock) {
+        listOf(getString(R.string.notification_clock_voice_notifications), getString(R.string.notification_voice_sandfly))
+      } else {
+        listOf(getString(R.string.notification_voice_sandfly))
+      }
+    val firstValues = if (clock) listOf(NotificationSettings.CLOCK_VOICE_NOTIFICATIONS, "") else listOf("")
+    preference.entries = (firstNames + names.values).toTypedArray()
+    preference.entryValues = (firstValues + names.keys).toTypedArray()
+    if (preference.findIndexOfValue(preference.value.orEmpty()) < 0) preference.value = firstValues.first()
   }
 
   override fun onStart() {
     super.onStart()
     // Profiles may have been added or renamed on their own screen.
     findPreference<ListPreference>(NotificationSettings.Companion.Keys.VOICE_PROFILE)?.let { setUpVoices(it) }
+    findPreference<ListPreference>(NotificationSettings.Companion.Keys.CLOCK_VOICE_PROFILE)?.let { setUpVoices(it) }
   }
 
   private fun setUpText(preference: EditTextPreference, key: String) {

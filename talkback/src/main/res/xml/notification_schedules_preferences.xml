@@ -41,5 +41,10 @@
         android:dialogMessage="@string/notification_clock_format_message"
         android:key="pref_notification_clock_format"
         android:title="@string/notification_clock_format_title" />
+    <ListPreference
+        android:defaultValue="notifications"
+        android:key="pref_notification_clock_voice_profile"
+        android:summary="%s"
+        android:title="@string/notification_voice_title" />
   </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
 </PreferenceScreen>
