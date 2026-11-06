@@ -270,7 +270,7 @@ TalkBack reads each new notification with a fixed format and has no settings for
 *   **Rules**: conditions, such as a Bluetooth device or Wi-Fi network being connected, the battery, charging, the time, the app in front, the app or text of the notification, and actions, such as not reading it, reading only the app name, another speech format, reading it with a voice profile, or reading it first. A rule's voice takes the place of the app's. **Add a rule from a template** starts from rules such as **Silent at night**.
 *   **Repeats**: skip the same notification for a while, a minimum time between an app's notifications, and leave out a start that repeats, such as a group name in a chat.
 *   **Stop reading**: shake, wave over the proximity sensor, press both volume keys, dismiss the notification, or the app removes it.
-*   **Summary and time**: read the notifications in the shade now or every day at a set time, and say the time at a set interval.
+*   **Summary and time**: read the notifications in the shade now or every day at a set time, and say the time at a set interval, in the notification voice, SandFly's voice or a voice profile of its own.
 *   **History**: the last 100 notifications, each with whether it was read and why not, and actions such as **Don't read notifications like this**.
 *   **Send a test notification**, **Allow automation apps** and **Automation**, which let apps such as Tasker turn notification speech on or off, stop it, or read the notifications.
 

@@ -245,6 +245,11 @@ data class NotificationSettings(
   val detectLanguage: Boolean = false,
   /** The voice profile notifications are read with, or empty for SandFly's own voice. */
   val voiceProfile: String = "",
+  /**
+   * The voice profile the time is said with, empty for SandFly's own voice, or
+   * [CLOCK_VOICE_NOTIFICATIONS] for the voice of notifications.
+   */
+  val clockVoiceProfile: String = CLOCK_VOICE_NOTIFICATIONS,
   val soundBefore: Boolean = false,
   val delaySeconds: Int = 0,
   val queueBehavior: QueueBehavior = QueueBehavior.QUEUE,
@@ -327,6 +332,9 @@ data class NotificationSettings(
     const val DEFAULT_FORMAT = "{category}, {title}, {text}"
     const val DEFAULT_PRIVATE_FORMAT = "{app}"
 
+    /** The value of the time's voice setting that says the time in the voice of notifications. */
+    const val CLOCK_VOICE_NOTIFICATIONS = "notifications"
+
     /** The keys of the settings, all in SandFly's default preferences. */
     object Keys {
       const val ENABLED = "pref_speak_notifications"
@@ -334,6 +342,7 @@ data class NotificationSettings(
       const val PRIVATE_FORMAT = "pref_notification_private_format"
       const val DETECT_LANGUAGE = "pref_notification_detect_language"
       const val VOICE_PROFILE = "pref_notification_voice_profile"
+      const val CLOCK_VOICE_PROFILE = "pref_notification_clock_voice_profile"
       const val SOUND_BEFORE = "pref_notification_sound_before"
       const val DELAY = "pref_notification_delay"
       const val QUEUE = "pref_notification_queue"
@@ -407,6 +416,7 @@ data class NotificationSettings(
         privateFormat = s(Keys.PRIVATE_FORMAT, d.privateFormat).ifBlank { d.privateFormat },
         detectLanguage = b(Keys.DETECT_LANGUAGE, d.detectLanguage),
         voiceProfile = s(Keys.VOICE_PROFILE, ""),
+        clockVoiceProfile = s(Keys.CLOCK_VOICE_PROFILE, d.clockVoiceProfile),
         soundBefore = b(Keys.SOUND_BEFORE, d.soundBefore),
         delaySeconds = i(Keys.DELAY, d.delaySeconds).coerceIn(0, 60),
         queueBehavior = QueueBehavior.of(prefs.getString(Keys.QUEUE, null)),

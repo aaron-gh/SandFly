@@ -222,6 +222,7 @@ object NotificationReader {
       if (key != null && key.startsWith("pref_notification")) decider.forget()
       if (
         key == NotificationSettings.Companion.Keys.VOICE_PROFILE ||
+          key == NotificationSettings.Companion.Keys.CLOCK_VOICE_PROFILE ||
           key == NotificationSettings.Companion.Keys.APPS ||
           key == NotificationSettings.Companion.Keys.RULES ||
           key == VoiceProfiles.PREF_IDS ||
@@ -272,7 +273,13 @@ object NotificationReader {
       ContextCompat.RECEIVER_NOT_EXPORTED,
     )
     SharedPreferencesUtils.getSharedPreferences(app).registerOnSharedPreferenceChangeListener(settingsListener)
-    schedules = SpokenSchedules(app) { text, interrupt -> announce(text, interrupt) }.also { it.start() }
+    schedules =
+      SpokenSchedules(
+          app,
+          say = { text, interrupt -> announce(text, interrupt) },
+          sayTime = { text -> announce(text, interrupt = false, clockVoice(settings(app))) },
+        )
+        .also { it.start() }
     updateVoices(SharedPreferencesUtils.getSharedPreferences(app))
   }
 
@@ -1036,12 +1043,16 @@ object NotificationReader {
    * Says [text] in the notification voice, or SandFly's when there is none: summaries and time
    * announcements.
    */
-  private fun announce(text: CharSequence, interrupt: Boolean) {
+  private fun announce(
+    text: CharSequence,
+    interrupt: Boolean,
+    profile: String? = null,
+  ) {
     val context = context ?: return
     val settings = settings(context)
     val overMedia = settings.media != MediaBehavior.SKIP
     val duringCalls = settings.duringCalls
-    val voice = voiceFor(settings.voiceProfile)
+    val voice = voiceFor(profile ?: settings.voiceProfile)
     if (voice != null && !isSilenced(overMedia, duringCalls)) {
       whenSandFlyIsQuiet(SystemClock.uptimeMillis()) {
         if (isSilenced(overMedia, duringCalls)) return@whenSandFlyIsQuiet
@@ -1059,6 +1070,14 @@ object NotificationReader {
         )
     feedback?.returnFeedback(EVENT_ID_UNTRACKED, Feedback.speech(text, options))
   }
+
+  /** The voice profile the time is said with, empty for SandFly's own voice. */
+  private fun clockVoice(settings: NotificationSettings): String =
+    if (settings.clockVoiceProfile == NotificationSettings.CLOCK_VOICE_NOTIFICATIONS) {
+      settings.voiceProfile
+    } else {
+      settings.clockVoiceProfile
+    }
 
   /**
    * The voice of the voice profile [id], or null for SandFly's: when [id] is empty or the profile is
@@ -1078,7 +1097,7 @@ object NotificationReader {
     val settings = NotificationSettings.read(prefs)
     val ids = VoiceProfiles.ids(prefs)
     val wanted =
-      (listOf(settings.voiceProfile) +
+      (listOf(settings.voiceProfile, clockVoice(settings)) +
           settings.apps.values.mapNotNull { it.voiceProfile } +
           settings.rules.flatMap { rule ->
             rule.actions.filter { it.type == RuleAction.Type.VOICE }.map { it.value }

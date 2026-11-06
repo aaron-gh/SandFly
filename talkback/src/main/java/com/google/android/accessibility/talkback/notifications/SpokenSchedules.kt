@@ -50,6 +50,8 @@ class SpokenSchedules(
   private val context: Context,
   /** Says a text, interrupting what notifications are saying when the second value is true. */
   private val say: (CharSequence, Boolean) -> Unit,
+  /** Says the time, in the voice its setting chooses. */
+  private val sayTime: (CharSequence) -> Unit,
 ) {
   private val alarms = context.getSystemService(AlarmManager::class.java)
   private val prefs = SharedPreferencesUtils.getSharedPreferences(context)
@@ -164,16 +166,12 @@ class SpokenSchedules(
     if (lastClockAt != 0L && elapsed - lastClockAt < MIN_CLOCK_GAP_MS) return
     lastClockAt = elapsed
     val text = clockText(context, prefs.getString(KEY_CLOCK_FORMAT, null).orEmpty())
-    speak(text)
+    if (text.isNotBlank()) sayTime(text)
   }
 
   private fun onSummary() {
     schedule()
     readSummary(context, say)
-  }
-
-  private fun speak(text: CharSequence) {
-    if (text.isNotBlank()) say(text, false)
   }
 
   companion object {

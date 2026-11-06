@@ -16,6 +16,8 @@
 
 package com.google.android.accessibility.talkback.notifications
 
+import android.content.Context
+import org.robolectric.RuntimeEnvironment
 import java.time.Instant
 import java.util.TimeZone
 import org.junit.Assert.assertEquals
@@ -31,6 +33,20 @@ class SpokenSchedulesTest {
   private val chicago = TimeZone.getTimeZone("America/Chicago")
 
   private fun utc(text: String) = Instant.parse(text).toEpochMilli()
+
+  @Test
+  fun timeIsSaidInTheNotificationVoiceUntilAVoiceIsChosenForIt() {
+    val prefs =
+      RuntimeEnvironment.getApplication()
+        .getSharedPreferences("clock-voice", Context.MODE_PRIVATE)
+    assertEquals(
+      NotificationSettings.CLOCK_VOICE_NOTIFICATIONS,
+      NotificationSettings.read(prefs).clockVoiceProfile,
+    )
+
+    prefs.edit().putString(NotificationSettings.Companion.Keys.CLOCK_VOICE_PROFILE, "").commit()
+    assertEquals("", NotificationSettings.read(prefs).clockVoiceProfile)
+  }
 
   @Test
   fun repeatedHourAfterFallBackGoesToTheNextHour() {
