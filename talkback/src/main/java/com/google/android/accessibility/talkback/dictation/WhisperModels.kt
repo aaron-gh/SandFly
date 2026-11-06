@@ -17,6 +17,7 @@
 package com.google.android.accessibility.talkback.dictation
 
 import android.content.Context
+import android.net.Uri
 import android.os.Handler
 import android.os.Looper
 import android.os.StatFs
@@ -177,11 +178,132 @@ class WhisperModels private constructor(context: Context) {
 
   fun isInstalled(model: Model) = file(model).isFile
 
-  /** The model Dictate uses: the chosen one if it is downloaded, else the first downloaded one. */
+  /**
+   * The listed model Dictate uses: the chosen one if it is downloaded, else the first downloaded
+   * one. Null while the user's own model file is in use; see [activeWhisper].
+   */
   fun activeModel(): Model? {
     if (!WhisperEngines.isAvailable()) return null
-    val chosen = Model.of(prefs.getString(DictationSettings.PREF_WHISPER_MODEL, null))
+    val chosenId = prefs.getString(DictationSettings.PREF_WHISPER_MODEL, null)
+    if (chosenId == CUSTOM_ID && hasCustom()) return null
+    val chosen = Model.of(chosenId)
     return chosen?.takeIf { isInstalled(it) } ?: Model.entries.firstOrNull { isInstalled(it) }
+  }
+
+  /** A model file that Dictate can use, and whether it encodes only the spoken audio. */
+  data class Active(val file: File, val shortContext: Boolean)
+
+  /** The model file Dictate uses: a listed model, or the user's own file, or null for none. */
+  fun activeWhisper(): Active? {
+    if (!WhisperEngines.isAvailable()) return null
+    activeModel()?.let {
+      return Active(file(it), it.shortContext)
+    }
+    return if (hasCustom()) Active(customFile(), shortContext = false) else null
+  }
+
+  /** The user's own model file, in whisper.cpp's format. */
+  fun customFile() = File(directory, CUSTOM_FILE)
+
+  fun hasCustom() = customFile().isFile
+
+  /** The name of the user's own model file as they chose it, or null for none. */
+  fun customName(): String? =
+    if (hasCustom()) prefs.getString(PREF_CUSTOM_NAME, null) ?: CUSTOM_FILE else null
+
+  fun isCustomActive() = hasCustom() && activeModel() == null
+
+  fun useCustom() {
+    prefs.edit { putString(DictationSettings.PREF_WHISPER_MODEL, CUSTOM_ID) }
+    notifyListeners()
+  }
+
+  /** Why the user's model file couldn't be added. */
+  enum class ImportFailure {
+    NOT_A_MODEL,
+    LOW_SPACE,
+    STORAGE,
+  }
+
+  /**
+   * Copies the model file at [uri], named [name], into SandFly and uses it, and calls [onDone] on
+   * the main thread with null, or why it failed. A file that doesn't start as whisper.cpp's models
+   * do is refused, and so is one larger than [MAX_CUSTOM_BYTES].
+   */
+  fun importCustom(context: Context, uri: Uri, name: String, size: Long, onDone: (ImportFailure?) -> Unit) {
+    val resolver = context.applicationContext.contentResolver
+    worker.execute {
+      val failure = copyCustom(resolver, uri, size)
+      if (failure == null) {
+        prefs.edit {
+          putString(PREF_CUSTOM_NAME, name)
+          putString(DictationSettings.PREF_WHISPER_MODEL, CUSTOM_ID)
+        }
+      }
+      main.post { onDone(failure) }
+      notifyListeners()
+    }
+  }
+
+  @androidx.annotation.VisibleForTesting
+  internal fun copyCustom(
+    resolver: android.content.ContentResolver,
+    uri: Uri,
+    size: Long,
+  ): ImportFailure? {
+    directory.mkdirs()
+    if (size > MAX_CUSTOM_BYTES) return ImportFailure.NOT_A_MODEL
+    if (size > 0 && StatFs(directory.path).availableBytes < size + size / 10) {
+      return ImportFailure.LOW_SPACE
+    }
+    val part = File(directory, "$CUSTOM_FILE.part")
+    try {
+      val input = resolver.openInputStream(uri) ?: return ImportFailure.STORAGE
+      input.use { stream ->
+        val magic = ByteArray(GGML_MAGIC.size)
+        if (stream.readNBytesCompat(magic) != magic.size || !magic.contentEquals(GGML_MAGIC)) {
+          return ImportFailure.NOT_A_MODEL
+        }
+        part.outputStream().use { out ->
+          out.write(magic)
+          val buffer = ByteArray(1 shl 16)
+          var total = magic.size.toLong()
+          while (true) {
+            val read = stream.read(buffer)
+            if (read < 0) break
+            total += read
+            if (total > MAX_CUSTOM_BYTES) return ImportFailure.NOT_A_MODEL
+            out.write(buffer, 0, read)
+          }
+        }
+      }
+      if (!part.renameTo(customFile())) return ImportFailure.STORAGE
+      return null
+    } catch (e: java.io.IOException) {
+      return ImportFailure.STORAGE
+    } catch (e: SecurityException) {
+      return ImportFailure.STORAGE
+    } finally {
+      part.delete()
+    }
+  }
+
+  private fun java.io.InputStream.readNBytesCompat(buffer: ByteArray): Int {
+    var read = 0
+    while (read < buffer.size) {
+      val count = read(buffer, read, buffer.size - read)
+      if (count < 0) break
+      read += count
+    }
+    return read
+  }
+
+  fun deleteCustom() {
+    worker.execute {
+      customFile().delete()
+      prefs.edit { remove(PREF_CUSTOM_NAME) }
+      setState(State.Idle)
+    }
   }
 
   fun setActive(model: Model) {
@@ -259,6 +381,14 @@ class WhisperModels private constructor(context: Context) {
 
   companion object {
     private const val PROGRESS_INTERVAL_MS = 500L
+    /** The value of the chosen model while it is the user's own file. */
+    private const val CUSTOM_ID = "custom"
+    private const val CUSTOM_FILE = "custom-model.bin"
+    private const val PREF_CUSTOM_NAME = "pref_whisper_custom_model_name"
+    /** Larger than Whisper Large v3 unquantized, about 3.1 GB. */
+    const val MAX_CUSTOM_BYTES = 4L * 1024 * 1024 * 1024
+    /** How whisper.cpp's model files start: "ggml" as a little-endian number. */
+    private val GGML_MAGIC = byteArrayOf(0x6c, 0x6d, 0x67, 0x67)
 
     @Volatile private var instance: WhisperModels? = null
 

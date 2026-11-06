@@ -380,10 +380,10 @@ class AiDictation(
       LogUtils.i(TAG, "No speech recorded, so Whisper isn't run")
       return "" to false
     }
-    val model = WhisperModels.get(service).activeModel() ?: return null
+    val model = WhisperModels.get(service).activeWhisper() ?: return null
     val whisper =
       WhisperEngines.transcriber(
-        WhisperModels.get(service).file(model),
+        model.file,
         DictationSettings.whisperOnGpu(prefs),
         installKey(),
         model.shortContext,
