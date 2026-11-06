@@ -834,6 +834,10 @@ Handwriting is recognized on the phone by Google's ML Kit, in the phone's langua
 
 ## Braille keyboard
 
+### Diagonal swipes
+
+A swipe on the braille keyboard counts when it goes up to about 35 degrees off the horizontal or vertical. TalkBack allows about 27 degrees, and ignores swipes that go a little diagonally.
+
 ### Keyboard echo for the braille keyboard
 
 In TalkBack, the braille keyboard follows the on-screen keyboard's echo setting. In SandFly, the braille keyboard has its own setting in **Keyboard echo**; see [Keyboard echo](#keyboard-echo). The capital and number signs follow it too.
