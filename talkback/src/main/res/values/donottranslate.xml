@@ -1187,6 +1187,21 @@
     <string name="pref_rotor_step_degrees_default" translatable="false">30</string>
 
     <!-- How far an edge gesture slides in to its first click, in millimeters. -->
+    <!-- How far from an edge of the screen, in millimetres, a touch starts to be an edge gesture. -->
+    <string name="pref_edge_zone_mm_key" translatable="false">pref_edge_zone_mm</string>
+    <string name="pref_edge_zone_mm_default" translatable="false">5</string>
+    <string-array name="pref_edge_zone_mm_entries">
+      <item>@string/value_distance_5mm</item>
+      <item>@string/value_distance_10mm</item>
+      <item>@string/value_distance_15mm</item>
+      <item>@string/value_distance_20mm</item>
+    </string-array>
+    <string-array name="pref_edge_zone_mm_values">
+      <item>5</item>
+      <item>10</item>
+      <item>15</item>
+      <item>20</item>
+    </string-array>
     <string name="pref_edge_first_click_mm_key" translatable="false">pref_edge_first_click_mm</string>
     <string name="pref_edge_first_click_mm_default" translatable="false">10</string>
     <string-array name="pref_edge_first_click_mm_entries">

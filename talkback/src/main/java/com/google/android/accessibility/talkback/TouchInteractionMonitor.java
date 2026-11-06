@@ -175,8 +175,8 @@ public class TouchInteractionMonitor
   // The height of the top and bottom edges for  edge-swipes.
   // For now this is only used to allow three-finger edge-swipes from the bottom.
   private static final float EDGE_SWIPE_HEIGHT_CM = 0.25f;
-  // How close to the top or bottom edge a one-finger edge gesture must start, about the height of
-  // the gesture navigation bar.
+  // How close to an edge a one-finger edge gesture must start, about the height of the gesture
+  // navigation bar, until the Edge width setting is read.
   private static final float EDGE_GESTURE_ZONE_CM = 0.5f;
   // How close to an edge of the screen a finger lifts for lifting it, such as by sliding it off the
   // screen, to activate nothing with Lift to activate or lift to type.
@@ -649,6 +649,13 @@ public class TouchInteractionMonitor
             R.string.pref_edge_second_click_mm_default);
     edgeSwipeTracker.setStageDistances(
         pixelsPerCm * Math.max(first, 1) / 10f, pixelsPerCm * Math.max(second, 1) / 10f);
+    int zone =
+        SharedPreferencesUtils.getIntFromStringPref(
+            prefs,
+            context.getResources(),
+            R.string.pref_edge_zone_mm_key,
+            R.string.pref_edge_zone_mm_default);
+    edgeSwipeTracker.setEdgeZone(pixelsPerCm * Math.max(zone, 1) / 10f);
   }
 
   /** Reads which edges scroll the app when a finger slides along them. */
@@ -706,7 +713,8 @@ public class TouchInteractionMonitor
   private final OnSharedPreferenceChangeListener sharedPreferenceChangeListener =
       (prefs, key) -> {
         if (context.getString(R.string.pref_edge_first_click_mm_key).equals(key)
-            || context.getString(R.string.pref_edge_second_click_mm_key).equals(key)) {
+            || context.getString(R.string.pref_edge_second_click_mm_key).equals(key)
+            || context.getString(R.string.pref_edge_zone_mm_key).equals(key)) {
           readEdgeClickDistances(prefs);
         } else if (isEdgeScrollKey(key)) {
           readEdgeScrolls(prefs);
