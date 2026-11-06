@@ -16,10 +16,37 @@ env:
   SANDFLY_CERT_SHA256: bd5fd3c56cabfb69fdbc851aae7ba1e955c9e971caab1a8115c61243d46f576a
 
 jobs:
+  # Each APK, the unit tests and lint run in parallel jobs of their own.
   build:
+    name: ${{ matrix.name }}
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: phone-full
+            tasks: ":assemblePhoneFullDebug"
+            apks: true
+          # The Google Play build uses the SandFly add-on.
+          - name: phone-play
+            tasks: ":assemblePhonePlayDebug :addon:assembleDebug"
+            apks: true
+          - name: wear-full
+            tasks: ":assembleWearFullDebug"
+            apks: true
+          # Only the full phone build: the watch's braille keyboard is a stub, so the braille
+          # keyboard's tests don't compile for it, and the rest of the code is shared.
+          - name: unit-tests
+            tasks: "testPhoneFullDebugUnitTest :shizukuapi:testDebugUnitTest :addon:testDebugUnitTest"
+          # The app's lint also checks the library modules. Issues already in lint-baseline.xml
+          # are allowed, so this fails only on new errors, such as a call that needs a newer
+          # Android than minSdk without a version check.
+          - name: lint
+            tasks: ":lintPhoneFullDebug"
     env:
       HAS_SANDFLY_AI: ${{ secrets.SANDFLY_AI_DEPLOY_KEY != '' }}
+      CCACHE_DIR: /home/runner/.cache/ccache
+      CCACHE_MAXSIZE: 500M
     steps:
       # The full history gives the build number (commits since buildNumberBase in version.gradle) and the release notes.
       - uses: actions/checkout@v7
@@ -46,9 +73,23 @@ jobs:
       # Caches Gradle and validates the wrapper jar checksum.
       - uses: gradle/actions/setup-gradle@v6
 
+      # ccache for the native libraries, which Gradle's build cache does not cover. shared.gradle
+      # uses it when it is installed. The cache is saved again only when native code changes.
+      - name: Install ccache
+        if: matrix.apks
+        run: command -v ccache || { sudo apt-get update -qq && sudo apt-get install -y -qq ccache; }
+
+      - uses: actions/cache@v6
+        if: matrix.apks
+        with:
+          path: /home/runner/.cache/ccache
+          key: ccache-${{ matrix.name }}-${{ hashFiles('**/*.c', '**/*.cc', '**/*.cpp', '**/*.h', '**/*.hpp', '**/CMakeLists.txt', '**/*.cmake', '**/*.mk', 'shared.gradle') }}
+          restore-keys: ccache-${{ matrix.name }}-
+
       # Signs builds with SandFly's key, so that installed builds update in place. Pull requests
       # from forks do not get the secrets, so they are signed with a new debug key.
       - name: Install SandFly's signing key
+        if: matrix.apks
         env:
           KEYSTORE: ${{ secrets.SANDFLY_KEYSTORE_BASE64 }}
         run: |
@@ -75,16 +116,26 @@ jobs:
           echo "GRADLE_RELEASE_FLAG=-Psandfly.release=true" >> "$GITHUB_ENV"
 
       # AGP downloads the SDK platform and NDK it needs if the runner lacks them.
-      - name: Build debug APKs
+      - name: Run ${{ matrix.tasks }}
         env:
           SANDFLY_KEY_PASSWORD: ${{ secrets.SANDFLY_KEY_PASSWORD }}
-        run: ./gradlew assembleDebug $GRADLE_RELEASE_FLAG --console=plain
+        run: ./gradlew ${{ matrix.tasks }} $GRADLE_RELEASE_FLAG --console=plain
+
+      - name: Show ccache statistics
+        if: matrix.apks
+        run: ccache --show-stats
 
       - name: Check the signing key
-        if: github.event_name == 'push'
+        if: matrix.apks && github.event_name == 'push'
         run: |
+          shopt -s nullglob
+          apks=(build/outputs/apk/*/debug/*.apk addon/build/outputs/apk/debug/*.apk)
+          if [ ${#apks[@]} -eq 0 ]; then
+            echo "No APKs were built." >&2
+            exit 1
+          fi
           apksigner=$(ls -d "$ANDROID_HOME"/build-tools/*/apksigner | sort -V | tail -n 1)
-          for apk in build/outputs/apk/*/debug/*.apk addon/build/outputs/apk/debug/*.apk; do
+          for apk in "${apks[@]}"; do
             certs=$("$apksigner" verify --print-certs "$apk" 2>&1) || {
               echo "$certs" >&2
               echo "apksigner could not check $apk." >&2
@@ -97,28 +148,18 @@ jobs:
             fi
           done
 
-      # Only the full phone build: the watch's braille keyboard is a stub, so the braille keyboard's
-      # tests don't compile for it, and the rest of the code is shared.
-      - name: Run unit tests
-        run: ./gradlew testPhoneFullDebugUnitTest :shizukuapi:testDebugUnitTest :addon:testDebugUnitTest --console=plain
-
-      # The app's lint also checks the library modules. Issues already in lint-baseline.xml are
-      # allowed, so this fails only on new errors, such as a call that needs a newer Android than
-      # minSdk without a version check.
-      - name: Run lint
-        run: ./gradlew :lintPhoneFullDebug --console=plain
-
       - uses: actions/upload-artifact@v7
         if: failure()
         with:
-          name: test-reports
+          name: reports-${{ matrix.name }}
           path: |
             **/build/reports/tests/
             build/reports/lint-results-phoneFullDebug.html
 
       - uses: actions/upload-artifact@v7
+        if: matrix.apks
         with:
-          name: apks
+          name: apks-${{ matrix.name }}
           path: |
             build/outputs/apk/**/*.apk
             addon/build/outputs/apk/**/*.apk
@@ -143,7 +184,8 @@ jobs:
 
       - uses: actions/download-artifact@v8
         with:
-          name: apks
+          pattern: apks-*
+          merge-multiple: true
           path: apks
 
       - name: Publish
