@@ -18,16 +18,18 @@
 
 note The five-way joysticks (Left, Right, Up, Down, Press) are to the left and right of the cursor routing keys.
 
-bind RightJoystickPress HOME
+#SandFly: HOME, PRPROMPT, NXPROMPT, TOP_LEFT and BOT_LEFT do nothing on Android, so these keys
+#run SandFly commands, as NVDA binds them: Enter, and previous and next character and word.
+bind RightJoystickPress KEY_FUNCTION+130
 bind RightJoystickLeft FWINLT
 bind RightJoystickRight FWINRT
 bind RightJoystickUp LNUP
 bind RightJoystickDown LNDN
 
-bind LeftJoystickLeft PRPROMPT
-bind LeftJoystickRight NXPROMPT
-bind LeftJoystickUp TOP_LEFT
-bind LeftJoystickDown BOT_LEFT
+bind LeftJoystickLeft KEY_FUNCTION+132
+bind LeftJoystickRight KEY_FUNCTION+133
+bind LeftJoystickUp KEY_FUNCTION+134
+bind LeftJoystickDown KEY_FUNCTION+135
 
 bind LeftJoystickDown+RightJoystickLeft CONTEXT+CLIP_NEW
 bind LeftJoystickDown+RightJoystickUp CONTEXT+CLIP_ADD
@@ -46,11 +48,11 @@ bind LeftJoystickRight+RightJoystickDown HELP
 
 
 context CLIP_NEW
-bind \{routingKey1} CLIP_NEW:COPY_SMART_NEW
+bind \{routingKey1} CLIP_NEW
 
 
 context CLIP_ADD
-bind \{routingKey1} CLIP_ADD:COPY_SMART_ADD
+bind \{routingKey1} CLIP_ADD
 
 
 context COPY_RECT
