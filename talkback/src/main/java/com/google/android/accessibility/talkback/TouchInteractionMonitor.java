@@ -104,6 +104,8 @@ import com.google.android.accessibility.talkback.PrimesController.TimerAction;
 import com.google.android.accessibility.talkback.contextmenu.ListMenuManager;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForTapAndTouchExploration;
+import com.google.android.accessibility.talkback.focusmanagement.HomeScreenPages;
+import com.google.android.accessibility.talkback.gesture.AppGestures;
 import com.google.android.accessibility.talkback.gesture.EdgeMenus;
 import com.google.android.accessibility.talkback.gesture.EdgeSwipeTracker;
 import com.google.android.accessibility.talkback.gesture.EdgeSwipeTracker.Edge;
@@ -361,6 +363,8 @@ public class TouchInteractionMonitor
   private final Rect lastExploredBounds = new Rect();
   private boolean skipLookupsInLastExploredBounds;
   private final SharedPreferences sharedPreferences;
+  // Whether two-finger touches go to the app, as Handle two-finger swipes in SandFly sets it.
+  private boolean twoFingerPassthrough = true;
   @VisibleForTesting final TouchExplorationModeFailureReporter touchExplorationModeFailureReporter;
   private final boolean typingFocusTimeout;
   private final boolean touchFocusTimeout;
@@ -795,6 +799,7 @@ public class TouchInteractionMonitor
     }
     receivedPointerTracker.onMotionEvent(event);
     if (event.getActionMasked() == ACTION_DOWN) {
+      passTwoFingersOnHomeScreen();
       downOnKeyboard =
           typingMethod == FocusProcessorForTapAndTouchExploration.TAP_TO_TYPE
               && isOnKeyboard(event.getX(), event.getY());
@@ -2056,7 +2061,19 @@ public class TouchInteractionMonitor
   }
 
   public void setTwoFingerPassthroughEnabled(boolean mode) {
+    twoFingerPassthrough = mode;
     gestureDetector.setTwoFingerPassthroughEnabled(mode);
+  }
+
+  /**
+   * Passes two-finger touches on to the home screen even while SandFly handles two-finger swipes,
+   * as with the VoiceOver layout: launchers open the apps list or the notifications from the
+   * two-finger drag itself, which no command can do in their place.
+   */
+  private void passTwoFingersOnHomeScreen() {
+    boolean pass =
+        twoFingerPassthrough || HomeScreenPages.isHomePackage(context, AppGestures.appShown());
+    gestureDetector.setTwoFingerPassthroughEnabled(pass);
   }
 
   public void setServiceHandlesDoubleTap(boolean mode) {

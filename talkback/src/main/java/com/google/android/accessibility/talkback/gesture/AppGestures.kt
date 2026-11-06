@@ -82,6 +82,9 @@ object AppGestures {
     app = packageName?.toString().orEmpty()
   }
 
+  /** The package of the app whose window was shown last. */
+  @JvmStatic fun appShown(): String = app
+
   /**
    * Returns the command that the gesture of preference key [gestureKey] runs in the app shown, or
    * null when it runs what it runs everywhere.
