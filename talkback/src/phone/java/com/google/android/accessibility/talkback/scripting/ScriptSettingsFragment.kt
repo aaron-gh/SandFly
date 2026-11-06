@@ -35,6 +35,8 @@ class ScriptSettingsFragment : ScriptScreenFragment() {
         script.manifest,
         script.enabled,
         script.manifest.settings.map { store.settingOptions(script, it) },
+        script.manifest.settings.map { store.settingTitle(script, it) },
+        script.manifest.settings.map { store.settingSummary(script, it) },
       )
     }
 
@@ -46,32 +48,35 @@ class ScriptSettingsFragment : ScriptScreenFragment() {
   private fun PreferenceGroup.addSetting(script: InstalledScript, setting: ScriptSetting) {
     val current = parseJson(store.settingJson(script, setting.key))
     val save = { json: String -> store.setSetting(scriptId, setting.key, json) }
+    val title = store.settingTitle(script, setting)
+    val summary = store.settingSummary(script, setting)
     val preference =
       when (setting.type) {
         ScriptSetting.Type.SWITCH ->
-          switch(setting.title, setting.summary, current == true) { save(it.toString()) }
+          switch(title, summary, current == true) { save(it.toString()) }
         ScriptSetting.Type.BUTTON ->
-          action(setting.title, setting.summary) {
+          action(title, summary) {
             if (script.enabled) store.pressButton(scriptId, setting.key)
             else toast(R.string.script_button_off)
           }
         ScriptSetting.Type.LIST ->
-          listSetting(setting, store.settingOptions(script, setting), current.toString(), save)
+          listSetting(title, store.settingOptions(script, setting), current.toString(), save)
         ScriptSetting.Type.TEXT,
-        ScriptSetting.Type.NUMBER -> textSetting(setting, current, save)
+        ScriptSetting.Type.NUMBER -> textSetting(setting, title, current, save)
       }
     preference.key = "$KEY_PREFIX${setting.key}"
   }
 
   private fun PreferenceGroup.textSetting(
     setting: ScriptSetting,
+    title: String,
     current: Any,
     save: (String) -> Unit,
   ): Preference {
     val number = setting.type == ScriptSetting.Type.NUMBER
-    return item(EditTextPreference(context), setting.title) {
+    return item(EditTextPreference(context), title) {
       text = if (current == JSONObject.NULL) "" else current.toString()
-      dialogTitle = setting.title
+      dialogTitle = title
       summaryProvider = EditTextPreference.SimpleSummaryProvider.getInstance()
       if (number) setOnBindEditTextListener { it.inputType = NUMBER_INPUT }
       setOnPreferenceChangeListener { _, value ->
@@ -86,7 +91,7 @@ class ScriptSettingsFragment : ScriptScreenFragment() {
   }
 
   private fun PreferenceGroup.listSetting(
-    setting: ScriptSetting,
+    title: String,
     options: List<Pair<String, String>>,
     current: String,
     save: (String) -> Unit,
@@ -94,8 +99,8 @@ class ScriptSettingsFragment : ScriptScreenFragment() {
     val labelOf = { value: String -> options.firstOrNull { it.first == value }?.second ?: value }
     lateinit var preference: Preference
     preference =
-      action(setting.title, labelOf(current)) {
-        chooseOption(setting.title, options, current) { value ->
+      action(title, labelOf(current)) {
+        chooseOption(title, options, current) { value ->
           save(jsonOf(value))
           preference.summary = labelOf(value)
         }

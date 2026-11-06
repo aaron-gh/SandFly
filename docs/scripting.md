@@ -435,6 +435,8 @@ settings = {
 
 Settings appear on their own screen on the script's page. `sf.settings.get(key)` reads one, `sf.settings.all()` reads them all, and `sf.settings.set(key, value)` changes one. `sf.settings.setOptions(key, options)` replaces the options of a list. A setting's value can be up to 16,384 characters.
 
+*Version 3.* `sf.settings.setTitle(key, text)` and `sf.settings.setSummary(key, text)` change the title or summary that a setting shows, such as "Slot 1: Rewind, YouTube" on a button, up to 500 characters. `nil` goes back to the manifest's. A list shows its chosen option instead of a summary.
+
 ### Dialogs and windows
 
 All of these need the `dialogs` permission, and all but `dialog` and `window` [wait](#waiting). Every dialog's and window's title starts with the script's name, so that it can't be taken for the app's own or the system's.

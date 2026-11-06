@@ -225,6 +225,28 @@ class ScriptStore private constructor(private val context: Context) {
     dataPrefs(script.id).getString(OPTIONS + setting.key, null)?.let { JSONArray(it).options() }
       ?: setting.options
 
+  /** The title of [setting], as the script last set it, or the manifest's. */
+  fun settingTitle(script: InstalledScript, setting: ScriptSetting): String =
+    dataPrefs(script.id).getString(TITLE + setting.key, null) ?: setting.title
+
+  /** The summary of [setting], as the script last set it, or the manifest's. */
+  fun settingSummary(script: InstalledScript, setting: ScriptSetting): String? =
+    if (dataPrefs(script.id).contains(SUMMARY + setting.key)) {
+      dataPrefs(script.id).getString(SUMMARY + setting.key, null)
+    } else {
+      setting.summary
+    }
+
+  /** Sets the title of setting [key], or goes back to the manifest's for null. */
+  fun setSettingTitle(id: String, key: String, title: String?) =
+    changeData(id) { if (title == null) remove(TITLE + key) else putString(TITLE + key, title) }
+
+  /** Sets the summary of setting [key], or goes back to the manifest's for null. */
+  fun setSettingSummary(id: String, key: String, summary: String?) =
+    changeData(id) {
+      if (summary == null) remove(SUMMARY + key) else putString(SUMMARY + key, summary)
+    }
+
   fun setSettingOptions(id: String, key: String, options: List<Pair<String, String>>) {
     val json =
       JSONArray(options.map { (value, label) -> jsonObject("value" to value, "label" to label) })
@@ -366,6 +388,8 @@ class ScriptStore private constructor(private val context: Context) {
     private const val BINDINGS = "bindings/"
     private const val REMOVED = "removed/"
     private const val OPTIONS = "options/"
+    private const val TITLE = "title/"
+    private const val SUMMARY = "summary/"
     private const val MAX_STORAGE_CHARS = 512 * 1024
 
     @Volatile private var instance: ScriptStore? = null
