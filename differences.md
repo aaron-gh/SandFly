@@ -938,7 +938,7 @@ SandFly only uses a display from an app once you allow it, after a warning that 
 
 ### Hide the on-screen keyboard
 
-In the braille display settings, **Hide the on-screen keyboard** keeps the on-screen keyboard hidden while a braille display is connected, so it doesn't cover the screen while you type on the display. It shows again when the display disconnects or the switch is turned off.
+In the braille display settings, **Hide the on-screen keyboard** keeps other on-screen keyboards hidden while a braille display is connected. SandFly's braille keyboard still shows its strip, since typing on the display goes into text fields through it. Keyboards show again when the display disconnects or the switch is turned off.
 
 ### Braille display keys you choose
 
