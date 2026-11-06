@@ -21,8 +21,10 @@ import android.content.SharedPreferences
 import android.net.ConnectivityManager
 import android.os.Build
 import android.os.Bundle
+import android.text.InputType
 import android.text.format.Formatter
 import androidx.appcompat.app.AlertDialog
+import androidx.preference.EditTextPreference
 import androidx.preference.Preference
 import com.google.android.accessibility.material.preference.AccessibilitySuitePreference
 import com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
@@ -63,6 +65,7 @@ class DictationFragment : TalkbackBaseFragment(R.xml.dictation_preferences) {
     models = WhisperModels.get(context)
     recognitionPref = onClick("pref_dictation_recognition_choice") { chooseRecognition() }
     aiServicePref = onClick("pref_dictation_ai_service_choice") { chooseAiService() }
+    setUpCorrectionPrompt()
     googleDownloadPref =
       onClick("pref_dictation_google_download") {
         GoogleSpeechLanguages.download(requireContext())
@@ -103,6 +106,33 @@ class DictationFragment : TalkbackBaseFragment(R.xml.dictation_preferences) {
           }
         }
       category.addPreference(whisperProcessorPref!!)
+    }
+  }
+
+  /**
+   * Shows the correction prompt, or the built-in one while the setting is empty, which the text
+   * field starts with. Saving the built-in prompt unchanged, or nothing, keeps the built-in one.
+   */
+  private fun setUpCorrectionPrompt() {
+    val preference =
+      findPreference<EditTextPreference>(getString(R.string.pref_dictation_correction_prompt_key))
+        ?: return
+    preference.setSummaryProvider {
+      (it as EditTextPreference).text?.takeIf { text -> text.isNotBlank() }
+        ?: AiDictation.DEFAULT_INSTRUCTIONS
+    }
+    preference.setOnBindEditTextListener { edit ->
+      edit.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_FLAG_MULTI_LINE
+      if (edit.text.isNullOrBlank()) edit.setText(AiDictation.DEFAULT_INSTRUCTIONS)
+    }
+    preference.setOnPreferenceChangeListener { pref, value ->
+      val text = (value as String).trim()
+      if (text == AiDictation.DEFAULT_INSTRUCTIONS || text.isEmpty()) {
+        (pref as EditTextPreference).text = ""
+        false
+      } else {
+        true
+      }
     }
   }
 

@@ -4673,6 +4673,8 @@
   <string name="shortcut_dictate">Dictate</string>
   <!-- Switch in Dictation settings: an AI service corrects dictated text before it is typed. [CHAR_LIMIT=NONE] -->
   <string name="title_pref_ai_dictation">Correct dictation with AI</string>
+  <!-- Setting: the instructions the AI service gets for correcting dictated text. -->
+  <string name="title_pref_dictation_correction_prompt">Correction prompt</string>
   <!-- Spoken when the AI service didn't correct dictated text, which is typed as recognized. [CHAR_LIMIT=NONE] -->
   <string name="dictation_not_corrected">Not corrected. Typed as recognized.</string>
   <!-- Spoken when speech recognition recognized nothing for dictation. [CHAR_LIMIT=NONE] -->

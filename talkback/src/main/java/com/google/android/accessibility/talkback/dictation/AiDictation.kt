@@ -473,7 +473,12 @@ class AiDictation(
     giveUp = fallback
     handler.postDelayed(fallback, correctionTimeoutMs(corrector))
     tones.play(/* playTone= */ true, /* delayPlayTone= */ false)
-    val prompt = prompt(target?.let { textBeforeCursor(it) }.orEmpty(), heard)
+    val instructions =
+      prefs.getString(service.getString(R.string.pref_dictation_correction_prompt_key), null)
+        ?.takeIf { it.isNotBlank() }
+        ?.take(MAX_INSTRUCTIONS)
+        ?: DEFAULT_INSTRUCTIONS
+    val prompt = prompt(target?.let { textBeforeCursor(it) }.orEmpty(), heard, instructions)
     correctors.execute {
       val start = SystemClock.elapsedRealtime()
       val answer =
@@ -710,7 +715,19 @@ class AiDictation(
      * Asks for the cleanup that Gboard's Rambler does on Google's servers: filler words and false
      * starts removed, self-corrections resolved, and punctuation, numbers and lists formatted.
      */
-    fun prompt(before: String, heard: String): String =
+    /**
+     * Asks a model to correct [heard], typed after [before], following [instructions]: the
+     * Correction prompt setting, or [DEFAULT_INSTRUCTIONS].
+     */
+    fun prompt(before: String, heard: String, instructions: String = DEFAULT_INSTRUCTIONS): String =
+      instructions.trim() +
+        "\n\n" +
+        "Text already in the field before the cursor, for context only:\n" +
+        "\"\"\"${quoted(before.takeLast(CONTEXT_CHARACTERS))}\"\"\"\n\n" +
+        "Recognized speech:\n\"\"\"${quoted(heard)}\"\"\""
+
+    /** What the model is asked to do with recognized speech, unless the user wrote their own. */
+    const val DEFAULT_INSTRUCTIONS =
       "The text below came from speech recognition and will be typed into a text field. " +
         "Clean it up as a careful typist would:\n" +
         "- Remove filler words (such as \"um\", \"uh\", \"like\", \"you know\"), stutters, " +
@@ -723,10 +740,10 @@ class AiDictation(
         "- Write numbers, times, dates and amounts as digits where that is usual, and a spoken " +
         "list as a list.\n" +
         "Keep the speaker's meaning, wording and language otherwise. Don't answer, add to or " +
-        "explain it. Reply with the cleaned-up text only.\n\n" +
-        "Text already in the field before the cursor, for context only:\n" +
-        "\"\"\"${quoted(before.takeLast(CONTEXT_CHARACTERS))}\"\"\"\n\n" +
-        "Recognized speech:\n\"\"\"${quoted(heard)}\"\"\""
+        "explain it. Reply with the cleaned-up text only."
+
+    /** The most of the Correction prompt setting that is sent. */
+    private const val MAX_INSTRUCTIONS = 4_000
 
     /** Text that can't end the triple quotes around it. */
     private fun quoted(text: String): String = text.replace("\"\"\"", "'''")

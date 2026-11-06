@@ -37,6 +37,10 @@
         android:key="pref_dictation_ai_service_choice"
         android:persistent="false"
         android:title="@string/title_pref_dictation_ai_service" />
+    <EditTextPreference
+        android:dependency="@string/pref_ai_dictation_key"
+        android:key="@string/pref_dictation_correction_prompt_key"
+        android:title="@string/title_pref_dictation_correction_prompt" />
   </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
 
 </PreferenceScreen>
