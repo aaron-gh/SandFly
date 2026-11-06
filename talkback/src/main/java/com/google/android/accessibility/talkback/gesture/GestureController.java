@@ -193,7 +193,7 @@ public class GestureController {
   private final ProcessorPhoneticLetters processorPhoneticLetters;
   private final ListEdgeScroller listEdgeScroller;
   private final PullToRefresh pullToRefresh;
-  private final LockScreenSwipe lockScreenSwipe;
+  private final SwipeUp swipeUp;
   private final HandwritingCommand handwritingCommand;
   private final TranslateCommand translateCommand;
   private final HandwritingAppLauncher handwritingAppLauncher;
@@ -252,7 +252,7 @@ public class GestureController {
     this.processorPhoneticLetters = processorPhoneticLetters;
     listEdgeScroller = new ListEdgeScroller(service, pipeline, accessibilityFocusMonitor);
     pullToRefresh = new PullToRefresh(service, pipeline, accessibilityFocusMonitor);
-    lockScreenSwipe = new LockScreenSwipe(service);
+    swipeUp = new SwipeUp(service);
     handwritingCommand = new HandwritingCommand(service, pipeline, actorState, selectorController);
     handwritingAppLauncher = new HandwritingAppLauncher(service, pipeline, actorState);
     brailleAppLauncher = new BrailleAppLauncher(service, pipeline, actorState);
@@ -264,7 +264,7 @@ public class GestureController {
   public void shutdown() {
     listEdgeScroller.cancel();
     pullToRefresh.cancel();
-    lockScreenSwipe.cancel();
+    swipeUp.cancel();
     handwritingCommand.shutdown();
     handwritingAppLauncher.shutdown();
     brailleAppLauncher.shutdown();
@@ -276,7 +276,7 @@ public class GestureController {
   public void onUserInputStarted() {
     listEdgeScroller.cancel();
     pullToRefresh.cancel();
-    lockScreenSwipe.cancel();
+    swipeUp.cancel();
   }
 
   ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -489,6 +489,12 @@ public class GestureController {
       result =
           pipeline.returnFeedback(
               eventId, Feedback.systemAction(AccessibilityService.GLOBAL_ACTION_BACK));
+    } else if (action.equals(service.getString(R.string.shortcut_value_home))
+        && GestureLayout.isVoiceOver(SharedPreferencesUtils.getSharedPreferences(service))
+        && swipeUp.isLockScreenShown()) {
+      // As on an iPhone, Home on the lock screen unlocks it, or shows the PIN, pattern or
+      // password: Android's lock screen does that for a two-finger swipe up.
+      result = swipeUp.swipeUp(/* fingers= */ 2);
     } else if (action.equals(service.getString(R.string.shortcut_value_home))) {
       // Dismiss overlays such as TalkBack menu, Gemini bottom sheet dialog and screen search.
       menuManager.dismissAll();
@@ -1033,6 +1039,14 @@ public class GestureController {
     }
 
     if (LiveRecognition.onGesture(gestureId)) {
+      return;
+    }
+    // While SandFly takes two-finger swipes, the launcher, which opens its apps list from a
+    // two-finger swipe up, gets SandFly's own swipe up instead.
+    if (gestureId == AccessibilityService.GESTURE_2_FINGER_SWIPE_UP
+        && GestureLayout.handlesTwoFingerSwipes(SharedPreferencesUtils.getSharedPreferences(service))
+        && swipeUp.isHomeScreenShown()
+        && swipeUp.swipeUp(/* fingers= */ 1)) {
       return;
     }
     // A gesture profile's own gestures come before row and column navigation and scripts.
