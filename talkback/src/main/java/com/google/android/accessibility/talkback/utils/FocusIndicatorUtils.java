@@ -46,9 +46,19 @@ public class FocusIndicatorUtils {
       return;
     }
 
-      int borderWidth = getTalkBackFocusStrokeWidth(prefs, res);
-      int borderColor = getTalkBackFocusColor(service, prefs, res);
-      setAccessibilityFocusAppearance(service, borderWidth, borderColor);
+    if (!isFocusIndicatorShown(prefs, res)) {
+      setAccessibilityFocusAppearance(service, 0, Color.TRANSPARENT);
+      return;
+    }
+    int borderWidth = getTalkBackFocusStrokeWidth(prefs, res);
+    int borderColor = getTalkBackFocusColor(service, prefs, res);
+    setAccessibilityFocusAppearance(service, borderWidth, borderColor);
+  }
+
+  /** Whether Show the focus indicator is on. */
+  public static boolean isFocusIndicatorShown(SharedPreferences prefs, Resources res) {
+    return SharedPreferencesUtils.getBooleanPref(
+        prefs, res, R.string.pref_show_focus_indicator_key, R.bool.pref_show_focus_indicator_default);
   }
 
   /**

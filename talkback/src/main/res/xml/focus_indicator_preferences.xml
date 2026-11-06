@@ -3,13 +3,21 @@
     android:key="@string/pref_category_manage_focus_indicator_key">
 
   <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+      android:key="@string/pref_show_focus_indicator_key"
+      android:title="@string/title_pref_show_focus_indicator"
+      android:defaultValue="@bool/pref_show_focus_indicator_default"
+      android:persistent="true" />
+
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
       android:key="@string/pref_thick_border_key"
       android:title="@string/title_pref_thick_border"
+      android:dependency="@string/pref_show_focus_indicator_key"
       android:persistent="true" />
 
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
       android:key="@string/pref_border_color_category_key"
-      android:title="@string/title_pref_category_border_color">
+      android:title="@string/title_pref_category_border_color"
+      android:dependency="@string/pref_show_focus_indicator_key">
     <com.google.android.accessibility.material.preference.AccessibilitySuiteRadioButtonPreference
       android:title="@string/title_pref_default_color" />
     <com.google.android.accessibility.material.preference.AccessibilitySuiteRadioButtonPreference
