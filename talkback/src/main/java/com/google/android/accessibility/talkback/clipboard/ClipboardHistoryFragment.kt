@@ -20,8 +20,7 @@ import android.accessibilityservice.AccessibilityService
 import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
-import android.os.Handler
-import android.os.Looper
+import android.os.Bundle
 import android.view.ViewTreeObserver
 import android.view.accessibility.AccessibilityNodeInfo
 import androidx.preference.Preference
@@ -55,6 +54,12 @@ class ClipboardHistoryFragment : NotificationCodeFragment(R.string.title_clipboa
     ViewTreeObserver.OnWindowFocusChangeListener { hasFocus ->
       if (hasFocus && !ShizukuClipboard.isWatching()) context?.let(ClipboardHistory::recordClipboard)
     }
+
+  override fun onCreate(savedInstanceState: Bundle?) {
+    // A paste from a history closed before stops once the history opens again.
+    PasteAttempts.cancel()
+    super.onCreate(savedInstanceState)
+  }
 
   override fun onResume() {
     super.onResume()
@@ -118,71 +123,12 @@ class ClipboardHistoryFragment : NotificationCodeFragment(R.string.title_clipboa
     screen.action(getString(R.string.clipboard_history_clear)) { ClipboardHistory.clear(context) }
   }
 
-  /**
-   * Copies [text], closes the history and pastes it into [target] once its app is in front. When
-   * closing the history shows another window, such as the home screen, opens the edit box's app
-   * again first.
-   */
+  /** Copies [text], closes the history and pastes it into [target] once its app is in front. */
   private fun paste(context: Context, text: String, target: AccessibilityNodeInfo) {
     if (!ClipboardHistory.copy(context, text)) return
     pasteTarget = null
-    val targetPackage = target.packageName?.toString()
     activity?.finish()
-    val handler = Handler(Looper.getMainLooper())
-    // The app reads the clipboard only once its window has focus again.
-    handler.postDelayed(
-      {
-        if (!isShown(targetPackage) && bringToFront(targetPackage)) {
-          handler.postDelayed({ pasteOrFail(target) }, REOPEN_DELAY_MS)
-        } else if (!pasteInto(target)) {
-          handler.postDelayed({ pasteOrFail(target) }, PASTE_DELAY_MS)
-        }
-      },
-      PASTE_DELAY_MS,
-    )
-  }
-
-  private fun pasteOrFail(target: AccessibilityNodeInfo) {
-    if (!pasteInto(target)) {
-      TalkBackService.getInstance()
-        ?.feedbackReturner
-        ?.returnFeedback(EVENT_ID_UNTRACKED, Feedback.sound(R.raw.complete))
-    }
-  }
-
-  /** Whether the active window is [packageName]'s, or it can't be told. */
-  private fun isShown(packageName: String?): Boolean {
-    val service = TalkBackService.getInstance() ?: return true
-    val shown = service.rootInActiveWindow?.packageName?.toString() ?: return true
-    return packageName == null || shown == packageName
-  }
-
-  /** Brings [packageName]'s task to the front, as it was, with the app's launch intent. */
-  private fun bringToFront(packageName: String?): Boolean {
-    val service = TalkBackService.getInstance() ?: return false
-    if (packageName == null || packageName == service.packageName) return false
-    val intent =
-      service.packageManager.getLaunchIntentForPackage(packageName)?.apply {
-        addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-      } ?: return false
-    return try {
-      service.startActivity(intent)
-      true
-    } catch (e: ActivityNotFoundException) {
-      false
-    } catch (e: SecurityException) {
-      false
-    }
-  }
-
-  /**
-   * Pastes into [target], giving it input focus first: an edit box pastes only with input focus,
-   * and it may have had only accessibility focus.
-   */
-  private fun pasteInto(target: AccessibilityNodeInfo): Boolean {
-    if (!target.refresh()) return false
-    if (!target.isFocused) target.performAction(AccessibilityNodeInfo.ACTION_FOCUS)
-    return target.performAction(AccessibilityNodeInfo.ACTION_PASTE)
+    pasteWhenShown(target)
   }
 
   companion object {
@@ -204,6 +150,7 @@ class ClipboardHistoryFragment : NotificationCodeFragment(R.string.title_clipboa
      */
     @JvmStatic
     fun open(context: Context, editBox: AccessibilityNodeInfo?): Boolean {
+      PasteAttempts.cancel()
       pasteTarget = editBox?.takeIf { it.isEditable }
       context.startActivity(
         Intent(context, TalkBackPreferencesActivity::class.java)
@@ -211,6 +158,64 @@ class ClipboardHistoryFragment : NotificationCodeFragment(R.string.title_clipboa
           .putExtra(FRAGMENT_NAME, ClipboardHistoryFragment::class.java.name)
       )
       return true
+    }
+
+    /**
+     * Pastes into [target] once its app is in front. When closing the history shows another window,
+     * such as the home screen, opens the edit box's app again first. Stops when SandFly stops.
+     */
+    private fun pasteWhenShown(target: AccessibilityNodeInfo) {
+      val service = TalkBackService.getInstance() ?: return
+      val packageName = target.packageName?.toString()
+      val active = { TalkBackService.getInstance() === service }
+      PasteAttempts.after(PASTE_DELAY_MS) {
+        if (!active()) return@after
+        val reopened = !isShown(service, packageName) && bringToFront(service, packageName)
+        PasteAttempts.start(
+          if (reopened) REOPEN_DELAY_MS else 0L,
+          active,
+          { pasteInto(target) },
+          {
+            service.feedbackReturner?.returnFeedback(
+              EVENT_ID_UNTRACKED,
+              Feedback.sound(R.raw.complete),
+            )
+          },
+        )
+      }
+    }
+
+    /** Whether the active window is [packageName]'s, or it can't be told. */
+    private fun isShown(service: AccessibilityService, packageName: String?): Boolean {
+      val shown = service.rootInActiveWindow?.packageName?.toString() ?: return true
+      return packageName == null || shown == packageName
+    }
+
+    /** Brings [packageName]'s task to the front, as it was, with the app's launch intent. */
+    private fun bringToFront(service: AccessibilityService, packageName: String?): Boolean {
+      if (packageName == null || packageName == service.packageName) return false
+      val intent =
+        service.packageManager.getLaunchIntentForPackage(packageName)?.apply {
+          addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        } ?: return false
+      return try {
+        service.startActivity(intent)
+        true
+      } catch (e: ActivityNotFoundException) {
+        false
+      } catch (e: SecurityException) {
+        false
+      }
+    }
+
+    /**
+     * Pastes into [target], giving it input focus first: an edit box pastes only with input focus,
+     * and it may have had only accessibility focus.
+     */
+    private fun pasteInto(target: AccessibilityNodeInfo): Boolean {
+      if (!target.refresh()) return false
+      if (!target.isFocused) target.performAction(AccessibilityNodeInfo.ACTION_FOCUS)
+      return target.performAction(AccessibilityNodeInfo.ACTION_PASTE)
     }
 
     /** The edit box with accessibility focus, or else with input focus. */
