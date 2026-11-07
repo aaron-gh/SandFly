@@ -272,6 +272,9 @@ public class FailoverTextToSpeech {
 
   private volatile boolean lowLatencyAudio = false;
 
+  /** The equalizer gains of the voice in use, or null if flat. See {@link SpeechEqualizer}. */
+  private volatile int @Nullable [] equalizerGains;
+
   /**
    * Returns whether low-latency audio is on when the user hasn't chosen. It's off on watches,
    * whose settings don't have the switch.
@@ -467,9 +470,13 @@ public class FailoverTextToSpeech {
         } else if (PREF_SWITCH_LANGUAGES_KEY.equals(key)
             || PREF_SWITCH_DIALECTS_KEY.equals(key)) {
           readLanguageSwitches(sharedPrefs);
+        } else if (SpeechEqualizer.isKey(key)) {
+          // Before profile settings, as each profile's equalizer is one of them.
+          equalizerGains = SpeechEqualizer.inUse(sharedPrefs);
         } else if (VoiceProfiles.isProfileKey(key)) {
           readVoiceProfile(sharedPrefs);
           updateWarmEngines();
+          equalizerGains = SpeechEqualizer.inUse(sharedPrefs);
         } else if (PREF_KEEP_PREVIOUS_ENGINE_KEY.equals(key)) {
           keepPreviousEngine = sharedPrefs.getBoolean(key, false);
           updateWarmEngines();
@@ -611,6 +618,7 @@ public class FailoverTextToSpeech {
     readLanguageSwitches(prefs);
     keepPreviousEngine = prefs.getBoolean(PREF_KEEP_PREVIOUS_ENGINE_KEY, false);
     VoiceProfiles.setActive(VoiceProfiles.readActive(prefs));
+    equalizerGains = SpeechEqualizer.inUse(prefs);
     prefs.registerOnSharedPreferenceChangeListener(preferenceChangeListener);
     CapturePolicy.applyToProcess(context, prefs);
     PowerManager power = context.getSystemService(PowerManager.class);
@@ -1401,11 +1409,12 @@ public class FailoverTextToSpeech {
   }
 
   /**
-   * Returns the speech cache, or null if there is none or a voice profile is in use. The cache keeps
-   * speech by language, not by voice, so it could play speech made in another voice.
+   * Returns the speech cache, or null if there is none, a voice profile is in use or the equalizer
+   * is set. The cache keeps speech by language, not by voice, so it could play speech made in
+   * another voice, and plays it on its own track, which the equalizer doesn't filter.
    */
   private @Nullable SpeechCacheManager usableSpeechCache() {
-    return VoiceProfiles.isProfileActive() ? null : speechCacheManager;
+    return VoiceProfiles.isProfileActive() || equalizerGains != null ? null : speechCacheManager;
   }
 
   /**
@@ -1763,6 +1772,7 @@ public class FailoverTextToSpeech {
             utteranceId,
             floatParam(bundle, SpeechParam.VOLUME, 1f),
             floatParam(bundle, Engine.KEY_PARAM_PAN, 0f),
+            equalizerGains,
             lowLatencyListener);
     lowLatencyStreams.put(utteranceId, stream);
     lowLatencyRequests.put(utteranceId, Pair.create(text, bundle));
@@ -2699,8 +2709,8 @@ public class FailoverTextToSpeech {
       return;
     }
     if (usableSpeechCache() == null) {
-      // Nothing is cached while a voice profile is in use. Reported as a failure, as when the
-      // engine isn't ready, so that it's cached again once Backtalk default is back.
+      // Nothing is cached while a voice profile is in use or the equalizer is set. Reported as a
+      // failure, as when the engine isn't ready, so that it's cached again once the cache is used.
       resultNotifier.onFinished(
           new SpeechInfo(text, /* utteranceId= */ null, /* locale= */ null, pitch, rate), false);
       return;

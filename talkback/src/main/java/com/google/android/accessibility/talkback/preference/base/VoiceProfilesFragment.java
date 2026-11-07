@@ -52,6 +52,7 @@ import com.google.android.accessibility.talkback.speech.VoiceProfileNames;
 import com.google.android.accessibility.utils.FormFactorUtils;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import com.google.android.accessibility.utils.output.FailoverTextToSpeech;
+import com.google.android.accessibility.utils.output.SpeechEqualizer;
 import com.google.android.accessibility.utils.output.VoiceProfiles;
 import java.util.ArrayList;
 import java.util.List;
@@ -381,7 +382,8 @@ public class VoiceProfilesFragment extends TalkbackBaseFragment {
                 getString(R.string.pref_speech_pitch_default)),
             prefs.getBoolean(
                 getString(R.string.pref_speak_in_phrases_key),
-                getResources().getBoolean(R.bool.pref_speak_in_phrases_default)));
+                getResources().getBoolean(R.bool.pref_speak_in_phrases_default)),
+            SpeechEqualizer.format(SpeechEqualizer.read(prefs, "")));
     reloadRows();
     updateInUse();
     open(id);

@@ -331,7 +331,7 @@ public class VoiceProfilesTest {
   }
 
   private String create(String name, String engine) {
-    return VoiceProfiles.create(prefs, name, engine, "80", "1.5", "0.9", true);
+    return VoiceProfiles.create(prefs, name, engine, "80", "1.5", "0.9", true, "");
   }
 
   /** Settings in memory, saved at once. */

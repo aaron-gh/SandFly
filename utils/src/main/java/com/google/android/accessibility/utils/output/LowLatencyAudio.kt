@@ -231,9 +231,11 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
     val id: String,
     private val volume: Float,
     private val pan: Float,
+    private val equalizer: IntArray?,
     private val listener: StreamListener,
   ) {
     private var resampler: SincResampler? = null
+    private var filter: SpeechEqualizer.Filter? = null
     private var inChannels = 1
     private var inRate = 0
     private var inFrames = 0L
@@ -266,6 +268,10 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
           SpatialSoundPlayer.isSupportedFormat(rate, channels)
       // Its filter takes a while to work out, so not while the audio thread waits for the lock.
       val built = if (supported) SincResampler(rate, sampleRate, channels) else null
+      // Filtered after resampling, so that every engine's speech is filtered at the same rate.
+      val builtFilter =
+        if (built != null && equalizer != null) SpeechEqualizer.Filter(equalizer, sampleRate, channels)
+        else null
       synchronized(lock) {
         lastActivity = SystemClock.uptimeMillis()
         if (built == null) {
@@ -278,6 +284,7 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
         inRate = rate
         inEncoding = encoding
         resampler = built
+        filter = builtFilter
       }
     }
 
@@ -311,7 +318,7 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
         inFrames += floats.size / inChannels
         if (!heardSound && floats.any { it != 0f }) heardSound = true
         if (!heardSound && inRate > 0 && inFrames * 1000 / inRate >= SILENT_MS) reportSilent()
-        add(toStereo(resampler.process(floats), inChannels))
+        add(toStereo(filtered(resampler.process(floats)), inChannels))
       }
     }
 
@@ -340,11 +347,13 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
         if (finished) return
         // A short utterance that is all silence, such as a pause or punctuation, says nothing
         // about whether the engine silenced its audio. Only SILENT_MS of silence does.
-        resampler?.let { add(toStereo(it.flush(), inChannels)) }
+        resampler?.let { add(toStereo(filtered(it.flush()), inChannels)) }
         ended = true
         wake()
       }
     }
+
+    private fun filtered(frames: FloatArray): FloatArray = filter?.process(frames) ?: frames
 
     private fun add(frames: FloatArray) {
       if (frames.isEmpty()) return
@@ -475,12 +484,20 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
   }
 
   /**
-   * Opens a speech stream at [volume] from 0 to 1 and [pan] from -1, left, to 1, right. It plays
-   * once the streams before it have finished.
+   * Opens a speech stream at [volume] from 0 to 1 and [pan] from -1, left, to 1, right, filtered by
+   * [equalizer] gains (see [SpeechEqualizer]) unless null. It plays once the streams before it have
+   * finished.
    */
-  fun openStream(id: String, volume: Float, pan: Float, listener: StreamListener): SpeechStream {
+  fun openStream(
+    id: String,
+    volume: Float,
+    pan: Float,
+    equalizer: IntArray?,
+    listener: StreamListener,
+  ): SpeechStream {
     synchronized(lock) {
-      val stream = SpeechStream(id, volume.coerceIn(0f, 1f), pan.coerceIn(-1f, 1f), listener)
+      val stream =
+        SpeechStream(id, volume.coerceIn(0f, 1f), pan.coerceIn(-1f, 1f), equalizer, listener)
       if (released || broken) {
         // Shut down or given up on since it was got: said the usual way instead.
         stream.abandon(playerFailed = true)
