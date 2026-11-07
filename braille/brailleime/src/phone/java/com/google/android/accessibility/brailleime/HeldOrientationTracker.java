@@ -21,6 +21,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.database.ContentObserver;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -31,8 +32,10 @@ import android.os.HandlerThread;
 import android.os.Looper;
 import android.os.PowerManager;
 import android.os.SystemClock;
+import android.provider.Settings;
 import androidx.annotation.Nullable;
 import androidx.annotation.VisibleForTesting;
+import com.google.android.accessibility.braille.common.BrailleCommonUtils;
 import com.google.android.accessibility.brailleime.OrientationMonitor.Orientation;
 import com.google.android.accessibility.brailleime.input.DotsOrientation;
 import com.google.android.accessibility.utils.AccelerometerShare;
@@ -42,7 +45,8 @@ import com.google.android.accessibility.utils.AccelerometerShare;
  * does. With auto-rotate on, a phone laid flat keeps the screen rotation it was last held in, and
  * the braille keyboard follows it. With auto-rotate off, this gives the keyboard the same memory,
  * even of how the phone was held before the keyboard opened. The braille app launcher reads it
- * too, so it listens whether or not the braille keyboard is an enabled input method.
+ * too. It listens only while the braille keyboard is an enabled input method or the braille app
+ * launcher's command is assigned, which {@link #setLauncherAssigned} tells.
  *
  * <p>It reads the accelerometer 10 times a second in batches, on a thread of its own. While back
  * tap reads the accelerometer, it takes back tap's readings through {@link AccelerometerShare}
@@ -68,6 +72,9 @@ public final class HeldOrientationTracker {
   /** Told on the main thread when how the device is held settles on something new. */
   @Nullable private static volatile Runnable lastHeldListener;
 
+  /** Whether the braille app launcher's command is assigned. On the main thread. */
+  private static boolean launcherAssigned;
+
   private final Context context;
   private final Handler mainHandler = new Handler(Looper.getMainLooper());
   private final HandlerThread thread = new HandlerThread("HeldOrientation");
@@ -87,7 +94,7 @@ public final class HeldOrientationTracker {
 
   // On the main thread.
   private boolean stopped;
-  private boolean interactive;
+  private boolean tracking;
   private boolean readingOwn;
   private boolean readingShared;
 
@@ -114,6 +121,14 @@ public final class HeldOrientationTracker {
       };
 
   private final Runnable shareChanged = () -> mainHandler.post(this::updateListening);
+
+  private final ContentObserver enabledImesObserver =
+      new ContentObserver(mainHandler) {
+        @Override
+        public void onChange(boolean selfChange) {
+          updateListening();
+        }
+      };
 
   private final SensorEventListener sensorListener =
       new SensorEventListener() {
@@ -155,6 +170,21 @@ public final class HeldOrientationTracker {
     }
     instance.stopListening();
     instance = null;
+  }
+
+  /**
+   * Sets whether the braille app launcher's command is assigned, which keeps tracking on while the
+   * braille keyboard is not an enabled input method. Called on the main thread.
+   */
+  public static void setLauncherAssigned(boolean assigned) {
+    if (launcherAssigned == assigned) {
+      return;
+    }
+    launcherAssigned = assigned;
+    HeldOrientationTracker tracker = instance;
+    if (tracker != null) {
+      tracker.updateListening();
+    }
   }
 
   /**
@@ -246,6 +276,12 @@ public final class HeldOrientationTracker {
     filter.addAction(Intent.ACTION_SCREEN_OFF);
     context.registerReceiver(screenReceiver, filter);
     context.getSystemService(DisplayManager.class).registerDisplayListener(displayListener, mainHandler);
+    context
+        .getContentResolver()
+        .registerContentObserver(
+            Settings.Secure.getUriFor(Settings.Secure.ENABLED_INPUT_METHODS),
+            /* notifyForDescendants= */ false,
+            enabledImesObserver);
     AccelerometerShare.addActiveListener(shareChanged);
     updateListening();
   }
@@ -254,6 +290,7 @@ public final class HeldOrientationTracker {
     stopped = true;
     context.unregisterReceiver(screenReceiver);
     context.getSystemService(DisplayManager.class).unregisterDisplayListener(displayListener);
+    context.getContentResolver().unregisterContentObserver(enabledImesObserver);
     AccelerometerShare.removeActiveListener(shareChanged);
     AccelerometerShare.removeReader(sharedReader);
     if (readingOwn && sensors != null) {
@@ -265,25 +302,28 @@ public final class HeldOrientationTracker {
   }
 
   /**
-   * Reads the accelerometer only while the screen is on: through back tap's readings while it reads
-   * them, otherwise with a listener of its own. Runs on the main thread.
+   * Reads the accelerometer only while the screen is on and the braille keyboard is enabled or the
+   * braille app launcher's command is assigned: through back tap's readings while it reads them,
+   * otherwise with a listener of its own. Runs on the main thread.
    */
   private void updateListening() {
     if (stopped) {
       return;
     }
-    boolean nowInteractive = context.getSystemService(PowerManager.class).isInteractive();
-    if (nowInteractive && !interactive) {
+    boolean nowTracking =
+        context.getSystemService(PowerManager.class).isInteractive()
+            && (launcherAssigned || BrailleCommonUtils.isBrailleKeyboardEnabled(context));
+    if (nowTracking && !tracking) {
       defaultPortrait = Utils.isDeviceDefaultPortrait(context);
-    } else if (!nowInteractive && interactive) {
+    } else if (!nowTracking && tracking) {
       synchronized (settler) {
         settler.interrupt();
       }
     }
-    interactive = nowInteractive;
+    tracking = nowTracking;
 
-    boolean shared = nowInteractive && AccelerometerShare.isActive();
-    boolean own = nowInteractive && !shared && accelerometer != null;
+    boolean shared = nowTracking && AccelerometerShare.isActive();
+    boolean own = nowTracking && !shared && accelerometer != null;
     if (own != readingOwn && sensors != null) {
       readingOwn = own;
       if (own) {
