@@ -89,11 +89,12 @@ public class VoiceProfileFragment extends TalkbackBaseFragment {
   private @Nullable Preference moveDown;
   private @Nullable Preference equalizer;
 
-  // The rate and pitch also change from gestures and the reading controls.
+  // The rate, pitch and equalizer also change from gestures and the reading controls.
   private final OnSharedPreferenceChangeListener prefsListener =
       (sharedPrefs, key) -> {
         if (key != null && key.startsWith(VoiceProfiles.key(id, ""))) {
           updateSeekBars();
+          updateEqualizerSummary();
         }
       };
 
@@ -215,6 +216,10 @@ public class VoiceProfileFragment extends TalkbackBaseFragment {
     super.onResume();
     prefs.registerOnSharedPreferenceChangeListener(prefsListener);
     updateSeekBars();
+    updateEqualizerSummary();
+  }
+
+  private void updateEqualizerSummary() {
     if (equalizer != null) {
       equalizer.setSummary(SpeechEqualizerFragment.summary(requireContext(), prefs, id));
     }

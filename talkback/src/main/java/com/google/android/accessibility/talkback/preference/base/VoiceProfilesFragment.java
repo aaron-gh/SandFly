@@ -383,7 +383,8 @@ public class VoiceProfilesFragment extends TalkbackBaseFragment {
             prefs.getBoolean(
                 getString(R.string.pref_speak_in_phrases_key),
                 getResources().getBoolean(R.bool.pref_speak_in_phrases_default)),
-            SpeechEqualizer.format(SpeechEqualizer.read(prefs, "")));
+            SpeechEqualizer.format(SpeechEqualizer.read(prefs, "")),
+            SpeechEqualizer.isOn(prefs, ""));
     reloadRows();
     updateInUse();
     open(id);

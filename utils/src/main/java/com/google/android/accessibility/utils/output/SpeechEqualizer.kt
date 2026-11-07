@@ -17,6 +17,7 @@
 package com.google.android.accessibility.utils.output
 
 import android.content.SharedPreferences
+import androidx.core.content.edit
 import kotlin.math.PI
 import kotlin.math.abs
 import kotlin.math.cos
@@ -37,6 +38,9 @@ object SpeechEqualizer {
 
   /** SandFly default's equalizer. */
   const val PREF_DEFAULT = "pref_speech_equalizer"
+
+  /** Whether SandFly default's equalizer is on. Off keeps its gains. */
+  const val PREF_DEFAULT_ON = "pref_speech_equalizer_on"
 
   /** The centre frequency of each band, in Hz. */
   @JvmField
@@ -73,14 +77,49 @@ object SpeechEqualizer {
   fun key(profileId: String): String =
     if (profileId.isEmpty()) PREF_DEFAULT else VoiceProfiles.key(profileId, VoiceProfiles.EQUALIZER)
 
-  /** Whether [key] is the equalizer setting of SandFly default or of a profile. */
+  /** The setting that says whether the equalizer of [profileId], or SandFly default's, is on. */
+  @JvmStatic
+  fun onKey(profileId: String): String =
+    if (profileId.isEmpty()) PREF_DEFAULT_ON
+    else VoiceProfiles.key(profileId, VoiceProfiles.EQUALIZER_ON)
+
+  /** Whether [key] is an equalizer's gains or switch, of SandFly default or of a profile. */
   @JvmStatic
   fun isKey(key: String?): Boolean =
     key != null &&
       (key == PREF_DEFAULT ||
+        key == PREF_DEFAULT_ON ||
         (key.startsWith(VoiceProfiles.PREF_PREFIX + "_") &&
-          key.endsWith("_" + VoiceProfiles.EQUALIZER) &&
+          (key.endsWith("_" + VoiceProfiles.EQUALIZER) ||
+            key.endsWith("_" + VoiceProfiles.EQUALIZER_ON)) &&
           VoiceProfiles.isProfileKey(key)))
+
+  /** Whether the equalizer of [profileId], or SandFly default's if empty, is on. */
+  @JvmStatic
+  fun isOn(prefs: SharedPreferences, profileId: String): Boolean =
+    try {
+      prefs.getBoolean(onKey(profileId), true)
+    } catch (e: ClassCastException) {
+      true
+    }
+
+  /** Turns the equalizer of [profileId], or SandFly default's if empty, on or off. */
+  @JvmStatic
+  fun setOn(prefs: SharedPreferences, profileId: String, on: Boolean) {
+    prefs.edit { putBoolean(onKey(profileId), on) }
+  }
+
+  /**
+   * Changes band [band] of the equalizer of [profileId], or SandFly default's if empty, by [step] dB
+   * within [MAX_GAIN_DB], and returns its new gain.
+   */
+  @JvmStatic
+  fun changeGain(prefs: SharedPreferences, profileId: String, band: Int, step: Int): Int {
+    val gains = read(prefs, profileId)
+    gains[band] = (gains[band] + step).coerceIn(-MAX_GAIN_DB, MAX_GAIN_DB)
+    save(prefs, profileId, gains)
+    return gains[band]
+  }
 
   /** The gains of profile [profileId], or of SandFly default if empty. */
   @JvmStatic
@@ -96,16 +135,18 @@ object SpeechEqualizer {
   /** Saves [gains] for profile [profileId], or for SandFly default if empty. */
   @JvmStatic
   fun save(prefs: SharedPreferences, profileId: String, gains: IntArray) {
-    prefs.edit().putString(key(profileId), format(gains)).apply()
+    prefs.edit { putString(key(profileId), format(gains)) }
   }
 
   /**
-   * The gains of the voice in use, the active profile's or SandFly default's, or null if they are
-   * flat and speech needs no filtering.
+   * The gains of the voice in use, the active profile's or SandFly default's, or null if its
+   * equalizer is off or flat and speech needs no filtering.
    */
   @JvmStatic
   fun inUse(prefs: SharedPreferences): IntArray? {
-    val gains = read(prefs, VoiceProfiles.activeId(prefs))
+    val id = VoiceProfiles.activeId(prefs)
+    if (!isOn(prefs, id)) return null
+    val gains = read(prefs, id)
     return if (isFlat(gains)) null else gains
   }
 

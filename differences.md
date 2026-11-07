@@ -151,7 +151,9 @@ The reading control goes through the profiles in the order of the **Voice profil
 
 ### Speech equalizer
 
-**Speech** > **Equalizer** sets a 12-band equalizer for **SandFly default**, and **Equalizer** on a voice profile's screen sets one for that profile. **Preset** chooses Flat, Clarity, Bass boost, Bass cut, Treble boost, Treble cut, Warm, Reduce harshness, Reduce sibilance or Small speaker. Each band, from 32 Hz to 16 kHz, has a slider from -12 to +12 dB. Changing a slider sets **Preset** to Custom. When any band boosts, a limiter keeps speech from clipping. A new voice profile starts with SandFly default's equalizer.
+**Speech** > **Equalizer** sets a 12-band equalizer for **SandFly default**, and **Equalizer** on a voice profile's screen sets one for that profile. **Preset** chooses Flat, Clarity, Bass boost, Bass cut, Treble boost, Treble cut, Warm, Reduce harshness, Reduce sibilance or Small speaker. Each band, from 32 Hz to 16 kHz, has a slider from -12 to +12 dB. Changing a slider sets **Preset** to Custom. **Use equalizer** turns the equalizer off without changing the bands. When any band boosts, a limiter keeps speech from clipping. A new voice profile starts with SandFly default's equalizer.
+
+The **Equalizer** reading control turns the equalizer of the voice in use on or off, and each band has a reading control, such as **Equalizer 1 kHz**: swipe up or down to change its gain by 1 dB, which SandFly speaks with the new setting. They aren't in the reading controls by default. To add them, go to **Reading controls**.
 
 The equalizer applies to speech that SandFly plays, so it needs **Audio output** > **Low-latency audio**. It doesn't apply during calls or while the microphone records, when the engine plays speech itself.
 

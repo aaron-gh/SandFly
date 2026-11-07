@@ -130,11 +130,13 @@ import com.google.android.accessibility.utils.output.FailoverTextToSpeech;
 import com.google.android.accessibility.utils.output.FeedbackItem;
 import com.google.android.accessibility.utils.output.SpeechController;
 import com.google.android.accessibility.utils.output.SpeechController.SpeakOptions;
+import com.google.android.accessibility.utils.output.SpeechEqualizer;
 import com.google.android.accessibility.utils.output.VoiceProfiles;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import com.google.common.base.Ascii;
 import com.google.common.collect.ImmutableList;
 import java.text.Normalizer;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -454,6 +456,58 @@ public class SelectorController implements UserInputEventListener {
         R.string.pref_selector_voice_profile_key,
         R.string.selector_voice_profile,
         R.bool.pref_selector_voice_profile_default),
+    EQUALIZER(
+        R.string.pref_selector_equalizer_key,
+        R.string.selector_equalizer,
+        R.bool.pref_selector_equalizer_default),
+    EQUALIZER_32(
+        R.string.pref_selector_equalizer_32_key,
+        R.string.selector_equalizer_32,
+        R.bool.pref_selector_equalizer_default),
+    EQUALIZER_64(
+        R.string.pref_selector_equalizer_64_key,
+        R.string.selector_equalizer_64,
+        R.bool.pref_selector_equalizer_default),
+    EQUALIZER_125(
+        R.string.pref_selector_equalizer_125_key,
+        R.string.selector_equalizer_125,
+        R.bool.pref_selector_equalizer_default),
+    EQUALIZER_250(
+        R.string.pref_selector_equalizer_250_key,
+        R.string.selector_equalizer_250,
+        R.bool.pref_selector_equalizer_default),
+    EQUALIZER_500(
+        R.string.pref_selector_equalizer_500_key,
+        R.string.selector_equalizer_500,
+        R.bool.pref_selector_equalizer_default),
+    EQUALIZER_1K(
+        R.string.pref_selector_equalizer_1k_key,
+        R.string.selector_equalizer_1k,
+        R.bool.pref_selector_equalizer_default),
+    EQUALIZER_2K(
+        R.string.pref_selector_equalizer_2k_key,
+        R.string.selector_equalizer_2k,
+        R.bool.pref_selector_equalizer_default),
+    EQUALIZER_3K(
+        R.string.pref_selector_equalizer_3k_key,
+        R.string.selector_equalizer_3k,
+        R.bool.pref_selector_equalizer_default),
+    EQUALIZER_4K(
+        R.string.pref_selector_equalizer_4k_key,
+        R.string.selector_equalizer_4k,
+        R.bool.pref_selector_equalizer_default),
+    EQUALIZER_6K(
+        R.string.pref_selector_equalizer_6k_key,
+        R.string.selector_equalizer_6k,
+        R.bool.pref_selector_equalizer_default),
+    EQUALIZER_8K(
+        R.string.pref_selector_equalizer_8k_key,
+        R.string.selector_equalizer_8k,
+        R.bool.pref_selector_equalizer_default),
+    EQUALIZER_16K(
+        R.string.pref_selector_equalizer_16k_key,
+        R.string.selector_equalizer_16k,
+        R.bool.pref_selector_equalizer_default),
     GESTURE_PROFILE(
         R.string.pref_selector_gesture_profile_key,
         R.string.selector_gesture_profile,
@@ -731,6 +785,19 @@ public class SelectorController implements UserInputEventListener {
           Setting.SWITCH_TTS_ENGINE,
           Setting.SPEECH_STREAM,
           Setting.SWITCH_VOICE_PROFILE,
+          Setting.EQUALIZER,
+          Setting.EQUALIZER_32,
+          Setting.EQUALIZER_64,
+          Setting.EQUALIZER_125,
+          Setting.EQUALIZER_250,
+          Setting.EQUALIZER_500,
+          Setting.EQUALIZER_1K,
+          Setting.EQUALIZER_2K,
+          Setting.EQUALIZER_3K,
+          Setting.EQUALIZER_4K,
+          Setting.EQUALIZER_6K,
+          Setting.EQUALIZER_8K,
+          Setting.EQUALIZER_16K,
           Setting.GESTURE_PROFILE);
 
   /** Lists all {@link Setting} that should be hidden for users. */
@@ -819,6 +886,9 @@ public class SelectorController implements UserInputEventListener {
       hiddenSettingsBuilder.add(Setting.KEYBOARD_ECHO_BRAILLE_KEYBOARD);
       hiddenSettingsBuilder.add(Setting.KEYBOARD_ECHO_BRAILLE_DISPLAY);
       hiddenSettingsBuilder.add(Setting.KEYBOARD_ECHO_HANDWRITING_KEYBOARD);
+      // Watches have no low-latency audio, which the equalizer needs.
+      hiddenSettingsBuilder.add(Setting.EQUALIZER);
+      hiddenSettingsBuilder.addAll(EQUALIZER_BANDS);
     } else if (!FeatureSupport.doesServiceHandleDoubleTap()) {
       hiddenSettingsBuilder.add(ACTIONS);
       hiddenSettingsBuilder.add(Setting.LIVE_RECOGNITION);
@@ -1102,6 +1172,30 @@ public class SelectorController implements UserInputEventListener {
       }
       case SWITCH_VOICE_PROFILE -> {
         actionDescription = context.getString(R.string.title_selector_voice_profile);
+        hint = getAdjustSelectedSettingGestures();
+      }
+      case EQUALIZER -> {
+        actionDescription = context.getString(R.string.title_pref_speech_equalizer);
+        hint = getAdjustSelectedSettingGestures();
+      }
+      case EQUALIZER_32,
+          EQUALIZER_64,
+          EQUALIZER_125,
+          EQUALIZER_250,
+          EQUALIZER_500,
+          EQUALIZER_1K,
+          EQUALIZER_2K,
+          EQUALIZER_3K,
+          EQUALIZER_4K,
+          EQUALIZER_6K,
+          EQUALIZER_8K,
+          EQUALIZER_16K -> {
+        int band = EQUALIZER_BANDS.indexOf(setting);
+        actionDescription =
+            context.getString(EQUALIZER_BAND_TITLES[band])
+                + ", "
+                + equalizerGainText(
+                    SpeechEqualizer.read(prefs, VoiceProfiles.activeId(prefs))[band]);
         hint = getAdjustSelectedSettingGestures();
       }
       case GESTURE_PROFILE -> {
@@ -2215,6 +2309,25 @@ public class SelectorController implements UserInputEventListener {
         changeVoiceProfile(eventId, isNext, getAdjustSelectedSettingGestures());
         return;
       }
+      case EQUALIZER -> {
+        switchEqualizerOnOrOff(eventId);
+        return;
+      }
+      case EQUALIZER_32,
+          EQUALIZER_64,
+          EQUALIZER_125,
+          EQUALIZER_250,
+          EQUALIZER_500,
+          EQUALIZER_1K,
+          EQUALIZER_2K,
+          EQUALIZER_3K,
+          EQUALIZER_4K,
+          EQUALIZER_6K,
+          EQUALIZER_8K,
+          EQUALIZER_16K -> {
+        changeEqualizerGain(eventId, EQUALIZER_BANDS.indexOf(currentSetting), !isNext);
+        return;
+      }
       case GESTURE_PROFILE -> {
         changeGestureProfile(eventId, isNext, getAdjustSelectedSettingGestures());
         return;
@@ -2477,6 +2590,88 @@ public class SelectorController implements UserInputEventListener {
   }
 
   /** Changes the volume speech and sounds play at to the next or previous of the four. */
+  /** The reading controls of the equalizer bands, in the order of {@link SpeechEqualizer}. */
+  private static final ImmutableList<Setting> EQUALIZER_BANDS =
+      ImmutableList.of(
+          Setting.EQUALIZER_32,
+          Setting.EQUALIZER_64,
+          Setting.EQUALIZER_125,
+          Setting.EQUALIZER_250,
+          Setting.EQUALIZER_500,
+          Setting.EQUALIZER_1K,
+          Setting.EQUALIZER_2K,
+          Setting.EQUALIZER_3K,
+          Setting.EQUALIZER_4K,
+          Setting.EQUALIZER_6K,
+          Setting.EQUALIZER_8K,
+          Setting.EQUALIZER_16K);
+
+  private static final int[] EQUALIZER_BAND_TITLES = {
+    R.string.title_selector_equalizer_32,
+    R.string.title_selector_equalizer_64,
+    R.string.title_selector_equalizer_125,
+    R.string.title_selector_equalizer_250,
+    R.string.title_selector_equalizer_500,
+    R.string.title_selector_equalizer_1k,
+    R.string.title_selector_equalizer_2k,
+    R.string.title_selector_equalizer_3k,
+    R.string.title_selector_equalizer_4k,
+    R.string.title_selector_equalizer_6k,
+    R.string.title_selector_equalizer_8k,
+    R.string.title_selector_equalizer_16k
+  };
+
+  /** A band's gain as spoken, such as "+3 dB". */
+  private String equalizerGainText(int gain) {
+    String number = (gain > 0 ? "+" : "") + NumberFormat.getIntegerInstance().format(gain);
+    return context.getString(R.string.speech_equalizer_gain_db, number);
+  }
+
+  /**
+   * Turns the equalizer of the voice in use on or off. Its gains are kept. Without low-latency
+   * audio, the equalizer has no effect, which is said too.
+   */
+  private void switchEqualizerOnOrOff(EventId eventId) {
+    String id = VoiceProfiles.activeId(prefs);
+    boolean on = !SpeechEqualizer.isOn(prefs, id);
+    SpeechEqualizer.setOn(prefs, id, on);
+    String displayText =
+        context.getString(
+            on ? R.string.speech_equalizer_turned_on : R.string.speech_equalizer_turned_off);
+    announceSetting(
+        eventId, withLowLatencyNeeded(displayText), getAdjustSelectedSettingGestures());
+    showQuickMenuActionOverlay(
+        eventId, context.getString(on ? R.string.value_on : R.string.value_off));
+  }
+
+  /**
+   * Changes band {@code band} of the equalizer of the voice in use by 1 dB, and says its gain,
+   * which is spoken with the new gain.
+   */
+  private void changeEqualizerGain(EventId eventId, int band, boolean increase) {
+    String id = VoiceProfiles.activeId(prefs);
+    int gain = SpeechEqualizer.changeGain(prefs, id, band, increase ? 1 : -1);
+    String displayText = equalizerGainText(gain);
+    String announcement =
+        SpeechEqualizer.isOn(prefs, id)
+            ? displayText
+            : displayText + ", " + context.getString(R.string.speech_equalizer_turned_off);
+    announceSetting(
+        eventId, withLowLatencyNeeded(announcement), getAdjustSelectedSettingGestures());
+    showQuickMenuActionOverlay(eventId, displayText);
+  }
+
+  /** {@code text}, and that the equalizer needs low-latency audio while that is off. */
+  private String withLowLatencyNeeded(String text) {
+    boolean lowLatency =
+        prefs.getBoolean(
+            FailoverTextToSpeech.PREF_LOW_LATENCY_AUDIO_KEY,
+            FailoverTextToSpeech.lowLatencyAudioDefault(context));
+    return lowLatency
+        ? text
+        : text + ", " + context.getString(R.string.summary_speech_equalizer_needs_low_latency);
+  }
+
   private void changeSpeechStream(EventId eventId, boolean isNext) {
     List<String> streams = FailoverTextToSpeech.STREAM_VALUES;
     int index = streams.indexOf(FailoverTextToSpeech.chosenSpeechStream(prefs));

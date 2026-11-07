@@ -67,6 +67,9 @@ public final class VoiceProfiles {
   /** The profile's equalizer gains; see {@link SpeechEqualizer}. */
   public static final String EQUALIZER = "equalizer";
 
+  /** Whether the profile's equalizer is on. */
+  public static final String EQUALIZER_ON = "equalizeron";
+
   /** Whether the profile's engine is kept started while another engine is in use. */
   public static final String KEEP_STARTED = "keepstarted";
 
@@ -209,7 +212,8 @@ public final class VoiceProfiles {
   /**
    * Adds a profile called {@code name}, which must not be blank or another profile's (see {@link
    * #isNameTaken}), speaking with {@code engine} and otherwise like Backtalk's default, and returns
-   * its ID. {@code equalizer} is saved as {@link SpeechEqualizer} saves gains.
+   * its ID. {@code equalizer} is saved as {@link SpeechEqualizer} saves gains, and {@code
+   * equalizerOn} says whether it is on.
    */
   public static String create(
       SharedPreferences prefs,
@@ -219,7 +223,8 @@ public final class VoiceProfiles {
       String rate,
       String pitch,
       boolean phrases,
-      String equalizer) {
+      String equalizer,
+      boolean equalizerOn) {
     List<String> ids = ids(prefs);
     int next = Math.max(1, parseInt(getString(prefs, PREF_NEXT_ID, "1"), 1));
     for (String id : ids) {
@@ -239,6 +244,7 @@ public final class VoiceProfiles {
         .putString(key(id, PITCH), pitch)
         .putBoolean(key(id, PHRASES), phrases)
         .putString(key(id, EQUALIZER), equalizer)
+        .putBoolean(key(id, EQUALIZER_ON), equalizerOn)
         .putString(PREF_IDS, String.join(",", ids))
         .apply();
     return id;
@@ -400,7 +406,7 @@ public final class VoiceProfiles {
     SharedPreferences.Editor editor = prefs.edit();
     for (String field :
         new String[] {
-          NAME, ENGINE, LANGUAGE, VOICE, VOLUME, RATE, PITCH, PHRASES, KEEP_STARTED, EQUALIZER
+          NAME, ENGINE, LANGUAGE, VOICE, VOLUME, RATE, PITCH, PHRASES, KEEP_STARTED, EQUALIZER, EQUALIZER_ON
         }) {
       editor.remove(key(id, field));
     }
