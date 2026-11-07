@@ -582,7 +582,7 @@ Some apps draw their text themselves and give it to screen readers without letti
 
 The **Actions** menu lists the web addresses, email addresses, phone numbers and codes of 4 to 8 digits written in the focused item's text, also when the app doesn't make them links, such as in a chat message or the notification of a text message with a one-time code. Choosing a web or email address opens it, a phone number opens in the phone app, and a code is copied. The hint that actions are available doesn't count them.
 
-Phone numbers come from Android's text classifier, which also finds dates, times, addresses and flight numbers. Digits in any of these, and digits joined to a word, a user name, a time or an amount, aren't listed as codes. The **Actions** reading control lists them too. On Android 8, and when the text classifier doesn't answer within a second, only web and email addresses are listed.
+Phone numbers come from Android's text classifier, which also finds dates, times, addresses and flight numbers. Digits in any of these, and digits joined to a word, a user name, a time or an amount, aren't listed as codes. The **Actions** reading control lists them too. **Actions found in text**, in **Reading controls** and in **SandFly menu**, turns each kind on or off. On Android 8, and when the text classifier doesn't answer within a second, only web and email addresses are listed.
 
 ### Double tap with the actions reading control on Android 11
 

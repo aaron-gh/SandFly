@@ -3470,6 +3470,22 @@
     Source: An utterance template for announcing copy of text (during edit).
     Description: This is spoken to the user. [CHAR LIMIT=NONE]
   -->
+  <!-- Title of the setting that chooses which of the web addresses, email addresses, phone numbers and codes written in an item's text the Actions menu and the Actions reading control list. [CHAR LIMIT=60] -->
+  <string name="title_pref_text_entities">Actions found in text</string>
+  <!-- Choice of Actions found in text: web addresses, such as example.org. [CHAR LIMIT=40] -->
+  <string name="text_entity_web">Web addresses</string>
+  <!-- Choice of Actions found in text. [CHAR LIMIT=40] -->
+  <string name="text_entity_email">Email addresses</string>
+  <!-- Choice of Actions found in text. [CHAR LIMIT=40] -->
+  <string name="text_entity_phone">Phone numbers</string>
+  <!-- Choice of Actions found in text: numbers of 4 to 8 digits, such as one-time codes, which are copied. [CHAR LIMIT=40] -->
+  <string name="text_entity_code">Codes</string>
+  <string-array name="pref_text_entities_entries">
+    <item>@string/text_entity_web</item>
+    <item>@string/text_entity_email</item>
+    <item>@string/text_entity_phone</item>
+    <item>@string/text_entity_code</item>
+  </string-array>
   <!-- Actions menu item: opens the phone app with this phone number, found in the item's text. -->
   <string name="menu_item_call_number">Call <xliff:g id="number" example="020 7946 0018">%1$s</xliff:g></string>
   <!-- Actions menu item: copies this code, such as a one-time code in a text message. -->
