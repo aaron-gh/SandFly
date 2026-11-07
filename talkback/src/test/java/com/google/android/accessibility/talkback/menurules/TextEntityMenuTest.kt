@@ -16,7 +16,9 @@
 
 package com.google.android.accessibility.talkback.menurules
 
+import android.os.LocaleList
 import com.google.android.accessibility.talkback.menurules.TextEntityMenu.Entity
+import java.util.Locale
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test
@@ -88,14 +90,38 @@ class TextEntityMenuTest {
         "Sat, 7 Nov 2026",
         "7 November 2026, 10:45",
         "Updated 2026-11-07 10:45",
-        "07 11 2026 10 45",
         "Due 07.11.2026",
         "Due 11/07/2026",
         "2020-2026",
-        "Copyright 1999 2026",
+        "© 2026",
+        "©1999–2026",
+        "Nov 7, 2026",
+        "November 7th, 2026 at 10:45",
+        "7. November 2026",
+        "2026 Nov 7",
       )) {
       assertEquals(text, emptyList<Entity>(), TextEntityMenu.find(text))
     }
+  }
+
+  @Test
+  fun monthNamesOfTheDeviceLanguagesMarkDates() {
+    val previous = LocaleList.getDefault()
+    try {
+      LocaleList.setDefault(LocaleList(Locale.UK, Locale.forLanguageTag("es")))
+      assertEquals(emptyList<Entity>(), TextEntityMenu.find("7 de noviembre de 2026"))
+    } finally {
+      LocaleList.setDefault(previous)
+    }
+  }
+
+  @Test
+  fun aCodeThatLooksLikeAYearIsOfferedOutsideADate() {
+    assertEquals(
+      listOf<Entity>(Entity.Code("2026")),
+      TextEntityMenu.find("Your code is 2026. It expires on 7 November."),
+    )
+    assertEquals(listOf<Entity>(Entity.Code("1984")), TextEntityMenu.find("PIN: 1984"))
   }
 
   @Test
