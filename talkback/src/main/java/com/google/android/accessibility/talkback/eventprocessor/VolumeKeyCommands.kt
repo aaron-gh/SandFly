@@ -18,12 +18,14 @@ package com.google.android.accessibility.talkback.eventprocessor
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.media.AudioAttributes
 import android.media.AudioManager
 import android.os.Handler
 import android.os.Looper
 import android.view.KeyEvent
 import android.view.ViewConfiguration
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.utils.output.FailoverTextToSpeech
 
 /**
  * Volume keys > Volume up/down double press, triple press and long press: runs their commands, and
@@ -145,9 +147,32 @@ class VolumeKeyCommands(
     presses.onScreenOff()
   }
 
-  /** Whether a phone or app call is ringing or going on, which the volume keys are left to. */
+  /**
+   * Whether an app call is going on, which the volume keys are left to. Phone calls are left to
+   * them by the [canUse] of [onKeyEvent]. A call audio mode that stays after a call, as on some
+   * phones, or that an app keeps with no call, doesn't count.
+   */
   private fun isInCall(): Boolean {
-    val mode = audioManager?.mode ?: return false
-    return mode != AudioManager.MODE_NORMAL
+    val audioManager = audioManager ?: return false
+    return isAppCall(
+      audioManager.activePlaybackConfigurations.map { it.audioAttributes.usage },
+      FailoverTextToSpeech.speechUsage(context),
+      audioManager.mode,
+    )
+  }
+
+  companion object {
+    /**
+     * Whether the audio [usages] playing and the audio [mode] make up an app call: audio with the
+     * voice communication usage plays. When SandFly's own speech and sounds have that usage, its
+     * players can't be told apart from an app's, and the audio mode of an app call counts instead.
+     */
+    @JvmStatic
+    internal fun isAppCall(usages: List<Int>, ownUsage: Int, mode: Int): Boolean =
+      if (ownUsage == AudioAttributes.USAGE_VOICE_COMMUNICATION) {
+        mode == AudioManager.MODE_IN_COMMUNICATION
+      } else {
+        AudioAttributes.USAGE_VOICE_COMMUNICATION in usages
+      }
   }
 }
