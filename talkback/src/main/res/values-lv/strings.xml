@@ -311,19 +311,19 @@
   <string name="title_pref_auto_image_captioning">Automātiskie apraksti</string>
   <string name="title_pref_gemini_settings">Gemini iestatījumi</string>
   <string name="title_pref_gemini_enabled">Gemini balss komandas</string>
-  <string name="title_pref_category_automatic_description_summary">Saņemiet detalizētus MI attēlu aprakstus, SandFly izvēlnē atlasot vienumu “Aprakstīt attēlu”.\n\nVarat arī saņemt automātiskus aprakstus, izceļot attēlu vai ikonu. Automātiskie apraksti darbojas bez interneta savienojuma.</string>
+  <string name="title_pref_category_automatic_description_summary">Saņemiet detalizētus AI attēlu aprakstus, SandFly izvēlnē atlasot vienumu “Aprakstīt attēlu”.\n\nVarat arī saņemt automātiskus aprakstus, izceļot attēlu vai ikonu. Automātiskie apraksti darbojas bez interneta savienojuma.</string>
   <string name="title_pref_icon_detection">Automātiski ikonu apraksti</string>
   <string name="title_pref_image_description">Automātiski attēlu apraksti</string>
   <string name="title_pref_text_recognition">Automātiski apraksti tekstam attēlos</string>
   <string name="dialog_title_turn_on_image_description">Attēlu aprakstu ieslēgšana iestatījumos</string>
   <string name="dialog_message_turn_on_image_description">Varat mēģināt vēlreiz pēc automātisko vai detalizēto attēlu aprakstu ieslēgšanas.</string>
   <string name="title_pref_detailed_image_description">Detalizēti attēlu apraksti</string>
-  <string name="dialog_message_on_device_ai_description">Izceļot attēlu atbalstītajās lietotnēs, tiks atskaņots īss apraksts.\n\nAttēli tiek apstrādāti jūsu ierīcē un nekad netiek sūtīti uzņēmumam Google. \n\nĢeneratīvais MI ir eksperimentāls rīks un pieļauj kļūdas. Turpinot jūs piekrītat <a href="https://policies.google.com/terms/generative-ai">Google pakalpojumu sniegšanas noteikumiem</a>.</string>
+  <string name="dialog_message_on_device_ai_description">Izceļot attēlu atbalstītajās lietotnēs, tiks atskaņots īss apraksts.\n\nAttēli tiek apstrādāti jūsu ierīcē un nekad netiek sūtīti uzņēmumam Google. \n\nĢeneratīvais AI ir eksperimentāls rīks un pieļauj kļūdas. Turpinot jūs piekrītat <a href="https://policies.google.com/terms/generative-ai">Google pakalpojumu sniegšanas noteikumiem</a>.</string>
   <string name="enable_gemini">Ieslēgt</string>
-  <string name="powered_by_gemini">Darbību nodrošina ģeneratīvais MI</string>
-  <string name="dialog_message_on_device_detailed_ai_promotion">Attēli tiek apstrādāti jūsu ierīcē un nekad netiek sūtīti uzņēmumam Google.\n\nĢeneratīvais MI ir eksperimentāls rīks un pieļauj kļūdas. Turpinot jūs piekrītat šiem noteikumiem: %1$s.</string>
+  <string name="powered_by_gemini">Darbību nodrošina ģeneratīvais AI</string>
+  <string name="dialog_message_on_device_detailed_ai_promotion">Attēli tiek apstrādāti jūsu ierīcē un nekad netiek sūtīti uzņēmumam Google.\n\nĢeneratīvais AI ir eksperimentāls rīks un pieļauj kļūdas. Turpinot jūs piekrītat šiem noteikumiem: <xliff:g id="Gen AI Terms of Service" example="Google\'s Terms of Service">%1$s</xliff:g>.</string>
   <string name="dialog_message_gen_ai_tos_link">Google pakalpojumu sniegšanas noteikumi</string>
-  <string name="message_aifeature_downloading">Notiek MI modeļa lejupielāde. Tā var ilgt kādu brīdi. Kad lejupielāde būs pabeigta, jūs saņemsiet paziņojumu.</string>
+  <string name="message_aifeature_downloading">Notiek AI modeļa lejupielāde. Tā var ilgt kādu brīdi. Kad lejupielāde būs pabeigta, jūs saņemsiet paziņojumu.</string>
   <string name="message_aifeature_downloading_with_progress">Joprojām notiek lejupielāde. Lejupielādētais apjoms: %1$d no %2$d MB.</string>
   <string name="summary_pref_auto_image_captioning">Ikonām, attēliem un attēlos ietvertajam tekstam</string>
   <string name="summary_pref_module_downloading">Notiek lejupielāde…</string>
@@ -1728,14 +1728,14 @@
     <string name="image_qna_stop_listening">Pārtraukt klausīšanos</string>
     <string name="image_qna_type_question">Ierakstiet jautājumu</string>
     <string name="shortcut_dictate">Diktēt</string>
-    <string name="title_pref_ai_dictation">Labot diktēšanu ar MI</string>
+    <string name="title_pref_ai_dictation">Labot diktēšanu ar AI</string>
     <string name="dictation_not_corrected">Nav labots. Ierakstīts tā, kā atpazīts.</string>
     <string name="dictation_nothing_recognized">Nekas netika atpazīts</string>
     <string name="dictation_unavailable">Runas atpazīšana nav pieejama</string>
     <string name="dictation_field_gone">Teksta lauks aizvērts. Nekas nav ierakstīts.</string>
     <string name="dictation_transcription_failed">Runa netika transkribēta. Nekas nav ierakstīts.</string>
     <string name="title_pref_dictation">Diktēšana</string>
-    <string name="title_pref_dictation_rambler_live">Rambler tiešsaistes transkripcija</string>
+    <string name="title_pref_dictation_rambler_live">Rambler tiešraides transkripcija</string>
     <string name="title_pref_dictation_recognition">Runas atpazīšana</string>
     <string name="dictation_recognition_automatic">Automātiski</string>
     <string name="dictation_recognition_google">Google runas atpazīšana ierīcē</string>
@@ -1863,10 +1863,10 @@
     <string name="braille_app_closed">Lietotņu meklēšana Braila rakstā aizvērta</string>
     <string name="braille_app_not_available">Lietotnes nosaukuma ievade Braila rakstā nav pieejama</string>
     <string name="title_clipboard_history_other_apps">Pievienot kopijas no citām lietotnēm</string>
-  <string name="shortcut_report_ai_response">Ziņot par MI atbildi</string>
-  <string name="report_ai_response_title">MI atbilde</string>
-  <string name="report_ai_response_description">MI atbilde:\n%1$s\n\n</string>
-  <string name="report_no_ai_response">Nav MI atbildes, par ko ziņot</string>
+  <string name="shortcut_report_ai_response">Ziņot par AI atbildi</string>
+  <string name="report_ai_response_title">AI atbilde</string>
+  <string name="report_ai_response_description">AI atbilde:\n%1$s\n\n</string>
+  <string name="report_no_ai_response">Nav AI atbildes, par ko ziņot</string>
   <string name="title_pref_hold_to_cancel">Turiet, lai atceltu</string>
   <string name="summary_pref_hold_to_cancel">%1$s. Ja pirkstu paceļ pēc tam, kad tas tik ilgi turēts uz vienuma, nekas netiek aktivizēts.</string>
   <string name="value_hold_to_cancel_off">Izslēgts</string>

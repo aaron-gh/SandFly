@@ -178,10 +178,10 @@
   <string name="keycombo_menu_other_custom_actions">Mostrar acciones</string>
   <string name="keycombo_menu_other_language_options">Mostrar idiomas instalados</string>
   <string name="keycombo_menu_other_copy_last_spoken_phrase">Copiar la última frase leída</string>
-  <string name="keycombo_menu_other_open_tts_settings">Abre la configuración de texto a voz</string>
+  <string name="keycombo_menu_other_open_tts_settings">Abrir la configuración de texto a voz</string>
   <string name="keycombo_menu_other_open_talkback_settings">Abrir la configuración de SandFly</string>
   <string name="keycombo_menu_other_report_issue">Enviar comentarios</string>
-  <string name="keycombo_menu_other_cycle_typing_echo">Repetición del eco de teclado</string>
+  <string name="keycombo_menu_other_cycle_typing_echo">Cambiar el eco de teclado</string>
   <string name="keycombo_menu_other_show_keyboard_shortcuts_dialog">Mostrar la lista de combinaciones de teclas</string>
   <string name="keycombo_menu_category_web">Acciones de navegación web</string>
   <string name="keycombo_menu_other_read_current_url">URL de la página de lectura</string>
@@ -428,7 +428,7 @@
   <string name="shortcut_show_tutorial">Abrir instructivo</string>
   <string name="shortcut_toggle_braille_contracted_mode">Cambiar entre contraído (grado 2) y no contraído (grado 1)</string>
   <string name="shortcut_toggle_braille_on_screen_overlay">Ocultar o mostrar braille en pantalla para pantallas braille</string>
-  <string name="shortcut_toggle_sound_feedback">Activa o desactiva las respuestas de sonido (íconos sonoros)</string>
+  <string name="shortcut_toggle_sound_feedback">Activar o desactivar las respuestas de sonido (íconos sonoros)</string>
   <string name="shortcut_show_learn_mode_page">Practicar combinaciones de teclas</string>
   <string name="shortcut_announce_phonetic_pronunciation">Leer las letras con pronunciación fonética para el elemento destacado</string>
   <string name="shortcut_cycle_punctuation_verbosity">Nivel de puntuación del ciclo</string>
@@ -575,7 +575,7 @@
   <string name="title_pref_shortcut_left_and_down">Deslizar hacia la izquierda y luego hacia abajo</string>
   <string name="title_pref_shortcut_left_and_up">Deslizar hacia la izquierda y luego hacia arriba</string>
   <string name="title_pref_shortcut_2finger_1tap">Presionar con 2 dedos</string>
-  <string name="title_pref_shortcut_2finger_1tap_xr">Toca el panel táctil con 1 dedo</string>
+  <string name="title_pref_shortcut_2finger_1tap_xr">Presionar el panel táctil con 1 dedo</string>
   <string name="title_pref_shortcut_2finger_2tap">Presionar 2 veces con 2 dedos</string>
   <string name="title_pref_shortcut_2finger_3tap">Presionar 3 veces con 2 dedos</string>
   <string name="title_pref_shortcut_3finger_1tap">Presionar con 3 dedos</string>
@@ -592,9 +592,9 @@
   <string name="title_pref_shortcut_3finger_swipe_up">Deslizar 3 dedos hacia arriba</string>
   <string name="title_pref_shortcut_3finger_swipe_down">Deslizar 3 dedos hacia abajo</string>
   <string name="title_pref_shortcut_3finger_swipe_left">Deslizar 3 dedos hacia la izquierda</string>
-  <string name="title_pref_shortcut_3finger_swipe_left_xr">Desliza a la izquierda con la mano no dominante hacia arriba</string>
+  <string name="title_pref_shortcut_3finger_swipe_left_xr">Deslizar a la izquierda con la mano no dominante hacia arriba</string>
   <string name="title_pref_shortcut_3finger_swipe_right">Deslizar 3 dedos hacia la derecha</string>
-  <string name="title_pref_shortcut_3finger_swipe_right_xr">Desliza a la derecha con la mano no dominante hacia arriba</string>
+  <string name="title_pref_shortcut_3finger_swipe_right_xr">Deslizar a la derecha con la mano no dominante hacia arriba</string>
   <string name="title_pref_shortcut_4finger_swipe_up">Deslizar 4 dedos hacia arriba</string>
   <string name="title_pref_shortcut_4finger_swipe_down">Deslizar 4 dedos hacia abajo</string>
   <string name="title_pref_shortcut_4finger_swipe_left">Deslizar 4 dedos hacia la izquierda</string>
@@ -1644,7 +1644,7 @@
     <string name="handwriting_prompt">Escribe una letra</string>
     <string name="handwriting_closed">Escritura a mano cerrada</string>
     <string name="handwriting_no_match">Ningún control de lectura comienza con <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
-    <string name="shortcut_write_app_name">Escribe el nombre de una app para abrirla</string>
+    <string name="shortcut_write_app_name">Escribir el nombre de una app para abrirla</string>
     <string name="handwriting_app_prompt">Escribe el nombre de una app</string>
     <string name="handwriting_app_not_opened">No se pudo abrir <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
     <string name="handwriting_not_recognized">No reconocido</string>

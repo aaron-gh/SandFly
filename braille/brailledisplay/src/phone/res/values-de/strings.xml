@@ -54,8 +54,8 @@
   <string name="bd_bt_connect_fail_dialog_title_without_name">Keine Verbindung mit dem Gerät möglich</string>
   <string name="bd_bt_connect_fail_dialog_message">Die Braillezeile muss eingeschaltet sein und sich in der Nähe befinden.\n\nWenn die Verbindung trotzdem nicht hergestellt wird, doppeltippe auf „Weitere Informationen“, um weitere Vorschläge zur Fehlerbehebung zu erhalten.</string>
   <string name="bd_bt_connect_fail_positive_button">Weitere Informationen</string>
-  <string name="bd_enhanced_keymap_dialog_title">Für Suchmodus erweiterte Tastaturbelegung nutzen</string>
-  <string name="bd_enhanced_keymap_dialog_message">Wenn du den Suchmodus verwenden möchtest, musst du von der Standardtastaturbelegung zur erweiterten Tastaturbelegung wechseln. Durch diese Änderung werden einige Braillezeilenbefehle aktualisiert.</string>
+  <string name="bd_enhanced_keymap_dialog_title">Für Browsemodus erweiterte Tastaturbelegung nutzen</string>
+  <string name="bd_enhanced_keymap_dialog_message">Wenn du den Browsemodus verwenden möchtest, musst du von der Standardtastaturbelegung zur erweiterten Tastaturbelegung wechseln. Durch diese Änderung werden einige Braillezeilenbefehle aktualisiert.</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">Einstellungen</string>
   <string name="bd_command_change_dialog_title">Einige Befehle wurden aktualisiert</string>
   <string name="bd_command_change_dialog_message">Folgende Befehle für die Braillezeile wurden in dieser Version von SandFly aktualisiert:\n\n• Vorheriges Element: Punkte 1 und 7 drücken\n\n• Nächstes Element: Punkte 4 und 8 drücken\n\n• Vorherige Vorleseoption: Punkte 2, 3, 7 und 8 drücken\n\n• Nächste Vorleseoption: Punkte 5, 6, 7 und 8 drücken</string>
@@ -134,8 +134,8 @@
   <string name="bd_auto_scroll_duration_minimum">Minimum</string>
   <string name="bd_auto_scroll_duration_maximum">Maximum</string>
   <string name="bd_auto_scroll_duration_prefix">%1$s, %2$s</string>
-  <string name="bd_browse_mode_on">Suchmodus aktiviert</string>
-  <string name="bd_browse_mode_off">Suchmodus deaktiviert</string>
+  <string name="bd_browse_mode_on">Browsemodus aktiviert</string>
+  <string name="bd_browse_mode_off">Browsemodus deaktiviert</string>
   <string name="bd_new_device_found_announcement">1 Gerät gefunden</string>
   <string name="bd_no_devices_found">Keine Geräte gefunden. Versuche es noch einmal.</string>
   <string name="bd_preference_device_item_button_disconnect">Trennen</string>
@@ -257,7 +257,7 @@
   <string name="bd_cmd_key_del">Löschen</string>
   <string name="bd_cmd_del_word">Wort löschen</string>
   <string name="bd_cmd_key_enter">Eingabetaste beim Bearbeiten von Text aktivieren</string>
-  <string name="bd_cmd_browse_mode">Suchmodus starten oder beenden</string>
+  <string name="bd_cmd_browse_mode">Browsemodus starten oder beenden</string>
   <string name="bd_cmd_next_landmark">Nächste ARIA-Markierung</string>
   <string name="bd_cmd_previous_landmark">Vorherige ARIA-Markierung</string>
   <string name="bd_cmd_next_graphic">Nächste Grafik</string>
@@ -303,7 +303,7 @@
   <string name="bd_cmd_subcategory_title_content">Inhalte</string>
   <string name="bd_cmd_subcategory_title_headings">Überschriften</string>
   <string name="bd_cmd_subcategory_title_controls">Steuerelemente</string>
-  <string name="bd_cmd_subcategory_web_navigation_description">Du kannst Webseiten schnell bedienen, indem du den Befehl zum Starten des Suchmodus verwendest und dann die folgenden Buchstaben- oder Zahlenkürzel eingibst\n\nDiese Kürzel können auch außerhalb des Suchmodus verwendet werden, aber du musst den „Weiter“-Befehlen Punkt 8 hinzufügen</string>
+  <string name="bd_cmd_subcategory_web_navigation_description">Du kannst Webseiten schnell bedienen, indem du den Befehl zum Starten des Browsemodus verwendest und dann die folgenden Buchstaben- oder Zahlenkürzel eingibst\n\nDiese Kürzel können auch außerhalb des Browsemodus verwendet werden, aber du musst den „Weiter“-Befehlen Punkt 8 hinzufügen</string>
   <string name="bd_cmd_subcategory_title_web_navigation">Navigation in Tabellen</string>
   <string name="bd_turn_off_bd_confirm_dialog_title">Einstellung für die Braillezeile ausschalten?</string>
   <string name="bd_turn_off_bd_confirm_dialog_message">Du kannst die Funktion in den SandFly-Einstellungen jederzeit wieder einschalten</string>

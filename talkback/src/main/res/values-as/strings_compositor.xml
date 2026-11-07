@@ -4,8 +4,8 @@
   <string name="talkback_disabled">SandFly অফ কৰা হ’ল</string>
   <string name="notification_type_beginning_of_field">ক্ষেত্ৰৰ আৰম্ভণি</string>
   <string name="notification_type_end_of_field">ক্ষেত্ৰৰ সমাপ্তি</string>
-  <string name="notification_type_selection_mode_on">বাছনি ম\'ড অন হৈ আছে</string>
-  <string name="notification_type_selection_mode_off">বাছনি ম\'ড অফ হৈ আছে</string>
+  <string name="notification_type_selection_mode_on">বাছনি ম’ড অন হৈ আছে</string>
+  <string name="notification_type_selection_mode_off">বাছনি ম’ড অফ হৈ আছে</string>
   <string name="notification_type_selection_cleared">বাছনি মচা হ’ল</string>
   <string name="notification_category_call">কল</string>
   <string name="notification_category_msg">বাৰ্তা</string>
@@ -28,7 +28,7 @@
   <string name="template_announce_selected_text">বাছনি কৰা পাঠ: %1$s</string>
   <string name="template_text_unselected">%1$sক বাছনি কৰা হোৱা নাই</string>
   <string name="template_text_error">অমান্য ইনপুট: %1$s</string>
-  <string name="template_replaced_characters">%2$sটা বর্ণৰ স্থানত %1$sটা বর্ণ লিখা হ’ল</string>
+  <string name="template_replaced_characters"><xliff:g id="old_text_length">%1$s</xliff:g>টা বৰ্ণৰ স্থানত <xliff:g id="new_text_length">%2$s</xliff:g>টা বৰ্ণ লিখা হ’ল</string>
   <string name="template_labeled_item">%2$sৰ বাবে %1$s</string>
   <string name="tb_template_percent">%1$s শতাংশ</string>
   <string name="template_value">%1$s</string>
@@ -42,7 +42,7 @@
   <string name="value_tabwidget">টেবৰ দণ্ড</string>
   <string name="value_spinner">ড্ৰপ ডাউন সূচী</string>
   <string name="value_checkbox">চ্চেক বাকচ</string>
-  <string name="value_radio_button">ৰেডিঅ\' বুটাম</string>
+  <string name="value_radio_button">ৰেডিঅ’ বুটাম</string>
   <string name="value_button">বুটাম</string>
   <string name="value_seek_bar">শ্লাইডাৰ</string>
   <string name="value_switch">ছুইচ</string>
@@ -50,15 +50,15 @@
   <string name="value_edit_box_editing">সম্পাদনা কৰি আছে</string>
   <string name="value_image">চিত্ৰ</string>
   <string name="value_unlabelled">লেবেল যোগ নকৰা বস্তু</string>
-  <string name="value_pager">বহু পৃষ্ঠাৰ দর্শন</string>
+  <string name="value_pager">বহু পৃষ্ঠাৰ দৰ্শন</string>
   <string name="value_pager_page">পৃষ্ঠা</string>
-  <string name="value_progress_bar">প্ৰগতিৰ হাৰ নির্দেশ কৰা দণ্ড</string>
+  <string name="value_progress_bar">প্ৰগতিৰ হাৰ নিৰ্দেশ কৰা দণ্ড</string>
   <string name="value_webview">ৱেবভিউ</string>
   <string name="value_password">পাছৱৰ্ড</string>
   <string name="value_sliding_drawer_opened">শ্লাইড কৰা ড্ৰৱাৰ খোলা হ’ল</string>
   <string name="value_options_menu_open">বিকল্প</string>
   <string name="value_text_cleared">মচা পাঠ</string>
-  <string name="value_text_max_length">পাঠ লিখাৰ সর্বাধিক দৈর্ঘ্য ব্যৱহাৰ কৰা হৈছে</string>
+  <string name="value_text_max_length">পাঠ লিখাৰ সৰ্বাধিক দৈৰ্ঘ্য ব্যৱহাৰ কৰা হৈছে</string>
   <string name="value_selected">বাছনি কৰা হ’ল</string>
   <string name="value_not_selected">বাছনি কৰা হোৱা নাই</string>
   <string name="value_checked">পৰীক্ষা কৰা হ’ল</string>
@@ -103,7 +103,7 @@
   <string name="value_num_lock_off">Num Lock অফ আছে</string>
   <string name="value_scroll_lock_on">Scroll Lock অন আছে</string>
   <string name="value_scroll_lock_off">Scroll Lock অফ আছে</string>
-  <string name="orientation_portrait">প\'ৰ্ট্ৰেইট</string>
+  <string name="orientation_portrait">প’ৰ্ট্ৰেইট</string>
   <string name="orientation_landscape">লেণ্ডস্কে’প</string>
   <string name="title_action_drag_start">টানি অনাটো আৰম্ভ কৰক</string>
   <string name="title_action_drag_drop">টানি অনা বস্তুটো এৰক</string>
@@ -162,12 +162,12 @@
     <item quantity="one">%1$dটা বৰ্ণ</item>
     <item quantity="other">%1$dটা বৰ্ণ</item>
   </plurals>
-  <string name="template_magnification_on">%1$d%%ত বিবৰ্ধন</string>
-  <string name="template_fullscreen_magnification_on">%1$d%%ত সম্পূৰ্ণ স্ক্ৰীনৰ বিবৰ্ধন</string>
-  <string name="template_partial_magnification_on">%1$d%%ত আংশিক বিবৰ্ধন</string>
+  <string name="template_magnification_on"><xliff:g id="scaleInPercent" example="200">%1$d</xliff:g>%%ত বিৱৰ্ধন</string>
+  <string name="template_fullscreen_magnification_on"><xliff:g example="200" id="scaleInPercent">%1$d</xliff:g>%%ত সম্পূৰ্ণ স্ক্ৰীনৰ বিৱৰ্ধন</string>
+  <string name="template_partial_magnification_on"><xliff:g example="200" id="scaleInPercent">%1$d</xliff:g>%%ত আংশিক বিৱৰ্ধন</string>
   <string name="template_magnification_scale_changed">বিৱৰ্ধন %1$d%%</string>
-  <string name="template_fullscreen_magnification_scale_changed">সম্পূৰ্ণ স্ক্ৰীনৰ বিবৰ্ধন %1$d%%</string>
-  <string name="template_partial_magnification_scale_changed">আংশিক বিবৰ্ধন %1$d%%</string>
+  <string name="template_fullscreen_magnification_scale_changed">সম্পূৰ্ণ স্ক্ৰীনৰ বিৱৰ্ধন <xliff:g id="scaleInPercent" example="200">%1$d</xliff:g>%%</string>
+  <string name="template_partial_magnification_scale_changed">আংশিক বিৱৰ্ধন <xliff:g id="scaleInPercent" example="200">%1$d</xliff:g>%%</string>
   <string name="magnification_off">বিৱৰ্ধন অফ আছে</string>
   <string name="template_speech_rate_change">কথা কোৱাৰ হাৰ %1$d%%</string>
   <string name="template_accessibility_volume_change_increase">সাধ্য সুবিধাৰ ভলিউম %1$d শতাংশলৈ বৃদ্ধি কৰক।</string>

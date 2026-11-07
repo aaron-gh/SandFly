@@ -130,7 +130,7 @@
   <string name="value_new_keymap">Mapa de teclas de SandFly</string>
   <string name="keycombo_menu_category_navigation">Accións de navegación</string>
   <string name="keycombo_menu_navigate_up">Ir á categoría anterior (segundo os controis de lectura)</string>
-  <string name="keycombo_menu_navigate_down">Ir á categoría anterior (segundo os controis de lectura)</string>
+  <string name="keycombo_menu_navigate_down">Ir á categoría seguinte (segundo os controis de lectura)</string>
   <string name="keycombo_menu_navigate_first">Navegar ata o primeiro elemento</string>
   <string name="keycombo_menu_navigate_last">Navegar ata o último elemento</string>
   <string name="keycombo_menu_navigate_next_window">Ir ao elemento do sistema ou ventá seguinte</string>
@@ -174,11 +174,11 @@
   <string name="keycombo_menu_other_show_link_list">Mostrar a lista de ligazóns</string>
   <string name="keycombo_menu_other_show_control_list">Mostrar a lista de controis</string>
   <string name="keycombo_menu_other_show_table_list">Mostrar a lista de táboas</string>
-  <string name="keycombo_menu_other_talkback_context_menu">Mostra o menú de SandFly</string>
+  <string name="keycombo_menu_other_talkback_context_menu">Mostrar o menú de SandFly</string>
   <string name="keycombo_menu_other_custom_actions">Mostrar accións</string>
   <string name="keycombo_menu_other_language_options">Mostrar idiomas instalados</string>
   <string name="keycombo_menu_other_copy_last_spoken_phrase">Copiar última frase pronunciada</string>
-  <string name="keycombo_menu_other_open_tts_settings">Abre a configuración da conversión de texto a voz</string>
+  <string name="keycombo_menu_other_open_tts_settings">Abrir a configuración da conversión de texto a voz</string>
   <string name="keycombo_menu_other_open_talkback_settings">Abrir configuración de SandFly</string>
   <string name="keycombo_menu_other_report_issue">Enviar comentarios</string>
   <string name="keycombo_menu_other_cycle_typing_echo">Rotar o eco de escritura</string>
@@ -427,7 +427,7 @@
   <string name="shortcut_toggle_selection">Iniciar ou finalizar modo de selección</string>
   <string name="shortcut_show_tutorial">Abrir titorial</string>
   <string name="shortcut_toggle_braille_contracted_mode">Cambiar entre contraído (grao 2) e sen contraer (grao 1)</string>
-  <string name="shortcut_toggle_braille_on_screen_overlay">Mostra ou oculta braille na pantalla para as liñas conectadas</string>
+  <string name="shortcut_toggle_braille_on_screen_overlay">Mostrar ou ocultar braille na pantalla para as liñas conectadas</string>
   <string name="shortcut_toggle_sound_feedback">Activar ou desactivar comentarios de son (iconas auditivas)</string>
   <string name="shortcut_show_learn_mode_page">Practicar os atallos de teclado</string>
   <string name="shortcut_announce_phonetic_pronunciation">Ler coa pronuncia as letras do elemento enfocado</string>
@@ -439,8 +439,8 @@
   <string name="title_web_breakout_prev_section">Sección anterior</string>
   <string name="title_web_breakout_prev_list">Lista anterior</string>
   <string name="title_web_breakout_prev_control">Control anterior</string>
-  <string name="title_edittext_breakout_move_to_beginning">Move o cursor ao inicio</string>
-  <string name="title_edittext_breakout_move_to_end">Move o cursor ao final</string>
+  <string name="title_edittext_breakout_move_to_beginning">Mover o cursor ao inicio</string>
+  <string name="title_edittext_breakout_move_to_end">Mover o cursor ao final</string>
   <string name="title_edittext_breakout_start_selection_mode">Iniciar ou finalizar o modo de selección</string>
   <string name="title_edittext_breakout_end_selection_mode">Finalizar modo de selección</string>
   <string name="title_edittext_typo_suggestions">Suxestións ortográficas e gramaticais</string>
@@ -1640,7 +1640,7 @@
     <string name="handwriting_prompt">Escribe unha letra do alfabeto</string>
     <string name="handwriting_closed">Escritura a man pechada</string>
     <string name="handwriting_no_match">Ningún control de lectura comeza por <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
-    <string name="shortcut_write_app_name">Escribe o nome dunha aplicación para abrila</string>
+    <string name="shortcut_write_app_name">Escribir o nome dunha aplicación para abrila</string>
     <string name="handwriting_app_prompt">Escribe o nome dunha aplicación</string>
     <string name="handwriting_app_not_opened">Non se puido abrir <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
     <string name="handwriting_not_recognized">Non se recoñeceu a escritura</string>
@@ -1690,13 +1690,13 @@
     <string name="shortcut_decrease_media_volume">Baixar o volume multimedia</string>
     <string name="title_pref_shortcut_edge_top_left_long_down">Pasar o dedo longamente cara abaixo desde a parte superior esquerda</string>
     <string name="title_pref_shortcut_edge_top_right_long_down">Pasar o dedo longamente cara abaixo desde a parte superior dereita</string>
-    <string name="title_pref_shortcut_edge_left_top_right">Pasa o dedo cara á dereita desde o bordo esquerdo, a metade superior</string>
+    <string name="title_pref_shortcut_edge_left_top_right">Pasar o dedo cara á dereita desde o bordo esquerdo, metade superior</string>
     <string name="title_pref_shortcut_edge_left_top_long_right">Pasar o dedo longamente cara á dereita desde o bordo esquerdo, metade superior</string>
-    <string name="title_pref_shortcut_edge_left_bottom_right">Pasa o dedo cara á dereita desde o bordo esquerdo, a metade inferior</string>
+    <string name="title_pref_shortcut_edge_left_bottom_right">Pasar o dedo cara á dereita desde o bordo esquerdo, metade inferior</string>
     <string name="title_pref_shortcut_edge_left_bottom_long_right">Pasar o dedo longamente cara á dereita desde o bordo esquerdo, metade inferior</string>
-    <string name="title_pref_shortcut_edge_right_top_left">Pasa o dedo cara á esquerda desde o bordo dereito, a metade superior</string>
+    <string name="title_pref_shortcut_edge_right_top_left">Pasar o dedo cara á esquerda desde o bordo dereito, metade superior</string>
     <string name="title_pref_shortcut_edge_right_top_long_left">Pasar o dedo longamente cara á esquerda desde o bordo dereito, metade superior</string>
-    <string name="title_pref_shortcut_edge_right_bottom_left">Pasa o dedo cara á esquerda desde o bordo dereito, a metade inferior</string>
+    <string name="title_pref_shortcut_edge_right_bottom_left">Pasar o dedo cara á esquerda desde o bordo dereito, metade inferior</string>
     <string name="title_pref_shortcut_edge_right_bottom_long_left">Pasar o dedo longamente cara á esquerda desde o bordo dereito, metade inferior</string>
     <string name="title_pref_edge_first_click_mm">Distancia ao primeiro clic</string>
     <string name="title_pref_edge_second_click_mm">Distancia do primeiro ao segundo clic</string>
@@ -1722,7 +1722,7 @@
     <string name="image_qna_ask_by_voice">Pregunta por voz</string>
     <string name="image_qna_stop_listening">Deixa de escoitar</string>
     <string name="image_qna_type_question">Escribe unha pregunta</string>
-    <string name="shortcut_dictate">Dita</string>
+    <string name="shortcut_dictate">Ditar</string>
     <string name="title_pref_ai_dictation">Corrixir o ditado con IA</string>
     <string name="dictation_not_corrected">Non se corrixiu. Escribiuse tal como se recoñeceu.</string>
     <string name="dictation_nothing_recognized">Non se recoñeceu nada</string>
@@ -1853,7 +1853,7 @@
     <string name="title_pref_reset_accessibility_audio">Restablecer o audio de accesibilidade despois das chamadas</string>
     <string name="summary_pref_reset_accessibility_audio_needs_shizuku">Require Shizuku. Sen Shizuku, executa este comando con adb cando a fala soe polo auricular despois dunha chamada: %1$s</string>
     <string name="arrow_key_nav_unavailable">Non hai navegación coas frechas neste mapa de teclas</string>
-    <string name="shortcut_braille_app_name">Escribe o nome dunha aplicación en braille para abrila</string>
+    <string name="shortcut_braille_app_name">Escribir o nome dunha aplicación en braille para abrila</string>
     <string name="braille_app_prompt">Escribe o nome dunha aplicación en braille</string>
     <string name="braille_app_closed">Busca de aplicacións en braille pechada</string>
     <string name="braille_app_not_available">Non se pode escribir o nome dunha aplicación en braille</string>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="talkback_service_description">SandFly yoniqligida ekranga qaramasdan qurilmangizdan uni oʻqib eshittirib foydalanish mumkin. Bu koʻr va koʻrish qobiliyati past foydalanuvchilar uchun foydali.\n\nSandFly yordamida harakatlantirish uchun:\n• Elementlar orasida harakatlanish uchun o‘ngga yoki chapga suring\n• Elementni faollashtirish uchun ikki marta bosing\n• Aylantirish uchun ikkita barmoq bilan torting\n\nSandFly funksiyasini faolsizlantirish uchun:\n•  Kalit tugmani bosing. Hoshiya chiqadi. Kalit tugmani ikki marta bosing.\n• Tasdiqlash xabarida OK tugmasini bosing. Keyin OK tugmasini ikki marta bosing.</string>
+  <string name="talkback_service_description">SandFly yoniqligida ekranga qaramasdan qurilmangizdan uni oʻqib eshittirib foydalanish mumkin. Bu koʻr va koʻrish qobiliyati past foydalanuvchilar uchun foydali.\n\nSandFly yordamida harakatlantirish uchun:\n• Elementlar orasida harakatlanish uchun oʻngga yoki chapga suring\n• Elementni faollashtirish uchun ikki marta bosing\n• Aylantirish uchun ikkita barmoq bilan torting\n\nSandFly funksiyasini faolsizlantirish uchun:\n•  Kalit tugmani bosing. Hoshiya chiqadi. Kalit tugmani ikki marta bosing.\n• Tasdiqlash xabarida OK tugmasini bosing. Keyin OK tugmasini ikki marta bosing.</string>
   <string name="talkback_service_html_description"><![CDATA[SandFly yoqilganda qurilmani ekranga qaramay boshqarishingiz uchun elementlarni oʻqib eshittiradi. SandFly ekranni xira koʻruvchilar uchun moʻljallangan.<br><br><b>SandFly bilan qanday ishlanadi</b><br>• Elementlarga oʻtish uchun oʻng yoki chapga suring<br>• Elementni faollashtirish uchun ikki marta bosing<br>• Varaqlash uchun 2 ta barmoq bilan suring<br><b>SandFly qanday oʻchiriladi</b><br>1. Sozlamalarida <b>SandFly ishlatish</b> ustiga bosing. Hoshiya paydo boʻladi. Uning ustiga ikki marta bosing.<br>2. Tasdiqlash xabaridagi <b>Toʻxtatish</b> ustiga bosing. Hoshiya paydo boʻladi. Uning ustiga bosing.]]></string>
   <string name="talkback_service_summary">Elementlarni skrin-rider yordamida ovoz chiqarib eshitish</string>
   <string name="talkback_preferences_title">SandFly sozlamalari</string>
@@ -14,19 +14,19 @@
   <string name="label_manager_package_title">%1$s yorliqlarini boshqarish</string>
   <string name="manage_label">Yorliqni boshqarish</string>
   <string name="label_manager_no_packages_message">Hozir hech qanday maxsus yorliq yaratilmagan\n\n<b>Maxsus yorliq qanday yaratiladi</b>\nYorliq yaratish uchun keraklil rasmni oching va SandFly menyusidan mos bandni tanlang</string>
-  <string name="label_manager_timestamp_text">So‘nggi o‘zgarish: %1$s</string>
+  <string name="label_manager_timestamp_text">Soʻnggi oʻzgarish: <xliff:g id="timestamp" example="1/1/11 11:11 AM">%1$s</xliff:g></string>
   <string name="search_mode_cancel">Qidiruv bekor qilindi.</string>
   <string name="notification_type_status_started">Boshlandi</string>
-  <string name="notification_type_status_stopped">To‘xtatildi</string>
+  <string name="notification_type_status_stopped">Toʻxtatildi</string>
   <string name="notification_battery_saver_mode">Quvvat tejash yoniq</string>
   <string name="template_no_text_selected">Hech qanday matn belgilanmagan</string>
   <string name="template_charging">Quvvatlash: %1$s. Batareya darajasi %2$s foiz.</string>
   <string name="template_charging_lite">Quvvatlash %1$s</string>
   <string name="template_language_options_menu_item">%1$s (%2$s)</string>
-  <string name="value_ringer_vibrate">Tebranishli qo‘ng‘iroq.</string>
+  <string name="value_ringer_vibrate">Tebranishli qoʻngʻiroq.</string>
   <string name="value_ringer_silent">Ovozsiz rejim.</string>
   <string name="value_screen_on">Ekran yoqildi.</string>
-  <string name="value_screen_off">Ekran o‘chirildi.</string>
+  <string name="value_screen_off">Ekran oʻchirildi.</string>
   <string name="value_device_unlocked">Qurilma qulfdan chiqarildi.</string>
   <string name="title_pref_speech_volume">Nutqning balandligi</string>
   <string name="title_pref_verbose_scroll_announcement">Doimo elementlar roʻyxatining raqami aytilsin</string>
@@ -67,7 +67,7 @@
   <string name="summary_pref_speak_element_ids">Yorliqsiz tugmalar identifikatorini aytadi</string>
   <string name="pref_allow_frequent_content_change_announcement_title">Barcha jarayon haqida gapirtirish</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">Bunga yuklab olish va navigatsiya paytidagi bildirishnomalar kiradi. Sozlama oʻchiq boʻlsa, kamroq bildirishnoma chiqadi.</string>
-  <string name="title_pref_explore_by_touch">Teginib o‘rganish</string>
+  <string name="title_pref_explore_by_touch">Teginib oʻrganish</string>
   <string name="title_pref_category_controls">Boshqaruv</string>
   <string name="title_pref_category_reduce_latency_summary">Bu sozlamalar ekranga tegingandan keyin SandFly tezroq javob berishini taʼminlaydi</string>
   <string name="reset_latency_settings_title">Barcha kechikish sozlamalarini asliga qaytarish</string>
@@ -75,7 +75,7 @@
   <string name="summary_pref_single_tap">Fokusdagi elementni faollashtirish uchun ustiga bir marta bosing. Ikki marta teginishdan koʻra tezroq navigatsiya.</string>
   <string name="pref_verbosity_title">Tafsilotlar</string>
   <string name="pref_punctuation_title">Tinish belgilari va maxsus belgilarni aytish</string>
-  <string name="title_pref_category_manage_focus_indicator">Fokus ko\'rsatkichi</string>
+  <string name="title_pref_category_manage_focus_indicator">Fokus koʻrsatkichi</string>
   <string name="title_pref_category_manage_gestures">Imo-ishoralar</string>
   <string name="title_pref_manage_labels">Maxsus yorliqlar</string>
   <string name="title_pref_category_context_menu">SandFly menyusi</string>
@@ -126,19 +126,19 @@
   <string name="keycombo_menu_announce_new_trigger_modifier">SandFly tugmasi %1$s etib oʻzgartirildi.</string>
   <string name="keycombo_menu_announce_active_keymap">%1$s faollashtirildi.</string>
   <string name="keycombo_menu_announce_reset_keymap">Tugmalar sxemasi qayta yuklandi.</string>
-  <string name="keycombo_announce_shortcut_not_supported">Tezkor tugmalar qo‘llab-quvvatlanmaydi</string>
+  <string name="keycombo_announce_shortcut_not_supported">Tezkor tugmalar qoʻllab-quvvatlanmaydi</string>
   <string name="value_new_keymap">SandFly tugmalar sxemasi</string>
   <string name="keycombo_menu_category_navigation">Navigatsiya amallari</string>
   <string name="keycombo_menu_navigate_up">Avvalgi turkumga oʻtish (oʻqish boshqaruvi asosida)</string>
   <string name="keycombo_menu_navigate_down">Keyingi turkumga oʻtish (oʻqish boshqaruvi asosida)</string>
-  <string name="keycombo_menu_navigate_first">Birinchi elementga o‘tish</string>
-  <string name="keycombo_menu_navigate_last">Oxirgi elementga o‘tish</string>
+  <string name="keycombo_menu_navigate_first">Birinchi elementga oʻtish</string>
+  <string name="keycombo_menu_navigate_last">Oxirgi elementga oʻtish</string>
   <string name="keycombo_menu_navigate_next_window">Keyingi oyna yoki tizim elementiga oʻtish</string>
   <string name="keycombo_menu_navigate_previous_window">Avvalgi oyna yoki tizim elementiga oʻtish</string>
-  <string name="keycombo_menu_navigate_next_word">Keyingi so‘zga o‘tish</string>
-  <string name="keycombo_menu_navigate_previous_word">Avvalgi so‘zga o‘tish</string>
-  <string name="keycombo_menu_navigate_next_character">Keyingi belgiga o‘tish</string>
-  <string name="keycombo_menu_navigate_previous_character">Avvalgi belgiga o‘tish</string>
+  <string name="keycombo_menu_navigate_next_word">Keyingi soʻzga oʻtish</string>
+  <string name="keycombo_menu_navigate_previous_word">Avvalgi soʻzga oʻtish</string>
+  <string name="keycombo_menu_navigate_next_character">Keyingi belgiga oʻtish</string>
+  <string name="keycombo_menu_navigate_previous_character">Avvalgi belgiga oʻtish</string>
   <string name="keycombo_menu_navigate_next_line">Keyingi qatorga oʻtish</string>
   <string name="keycombo_menu_navigate_previous_line">Avvalgi qatorga oʻtish</string>
   <string name="keycombo_menu_navigate_next_container">Keyingi konteynerga oʻtish</string>
@@ -164,7 +164,7 @@
   <string name="keycombo_menu_granularity_increase">Keyingi navigatsiya sozlamasi</string>
   <string name="keycombo_menu_granularity_decrease">Avvalgi navigatsiya sozlamasi</string>
   <string name="keycombo_menu_category_other">Boshqa amallar</string>
-  <string name="keycombo_menu_other_read_from_top">Boshidan boshlab o‘qish</string>
+  <string name="keycombo_menu_other_read_from_top">Boshidan boshlab oʻqish</string>
   <string name="keycombo_menu_other_read_from_cursor_item">Fokusga olingan elementdan oʻqish</string>
   <string name="keycombo_menu_other_announce_column_header">Ustun sarlavhasini aytish</string>
   <string name="keycombo_menu_other_announce_row_header">Qator sarlavhasini aytish</string>
@@ -174,9 +174,9 @@
   <string name="keycombo_menu_other_show_link_list">Havolalar roʻyxatini chiqarish</string>
   <string name="keycombo_menu_other_show_control_list">Tugmalar roʻyxatini chiqarish</string>
   <string name="keycombo_menu_other_show_table_list">Jadvallar roʻyxatini chiqarish</string>
-  <string name="keycombo_menu_other_talkback_context_menu">SandFly menyusini ko\'rsatish</string>
-  <string name="keycombo_menu_other_custom_actions">Amallarni ko‘rsatish</string>
-  <string name="keycombo_menu_other_language_options">O‘rnatilgan tillarni ko‘rsatish</string>
+  <string name="keycombo_menu_other_talkback_context_menu">SandFly menyusini koʻrsatish</string>
+  <string name="keycombo_menu_other_custom_actions">Amallarni koʻrsatish</string>
+  <string name="keycombo_menu_other_language_options">Oʻrnatilgan tillarni koʻrsatish</string>
   <string name="keycombo_menu_other_copy_last_spoken_phrase">Oxirgi iborani nusxalash</string>
   <string name="keycombo_menu_other_open_tts_settings">Nutq sintezatori sozlamalarini ochish</string>
   <string name="keycombo_menu_other_open_talkback_settings">SandFly sozlamalarini ochish</string>
@@ -188,44 +188,44 @@
   <string name="keycombo_menu_other_read_link_url">Gapirish URL</string>
   <string name="keycombo_menu_other_open_voice_commands">Ovozli buyruqlarni ochish</string>
   <string name="keycombo_menu_other_toggle_browse_mode">Kezish rejimini yoqish yoki faolsizlantirish</string>
-  <string name="keycombo_menu_web_navigate_to_next_button">Keyingi tugmaga o‘tish</string>
-  <string name="keycombo_menu_web_navigate_to_previous_button">Avvalgi tugmaga o‘tish</string>
-  <string name="keycombo_menu_web_navigate_to_next_control">Keyingi boshqaruv elementiga o‘tish</string>
-  <string name="keycombo_menu_web_navigate_to_previous_control">Avvalgi boshqaruv elementiga o‘tish</string>
-  <string name="keycombo_menu_web_navigate_to_next_checkbox">Keyingi belgilash katakchasiga o‘tish</string>
-  <string name="keycombo_menu_web_navigate_to_previous_checkbox">Avvalgi belgilash katakchasiga o‘tish</string>
-  <string name="keycombo_menu_web_navigate_to_next_aria_landmark">Keyingi ARIA mo‘ljaliga o‘tish</string>
-  <string name="keycombo_menu_web_navigate_to_previous_aria_landmark">Avvalgi ARIA mo‘ljaliga o‘tish</string>
-  <string name="keycombo_menu_web_navigate_to_next_edit_field">Keyingi tahrirlash maydonchasiga o‘tish</string>
-  <string name="keycombo_menu_web_navigate_to_previous_edit_field">Avvalgi tahrirlash maydonchasiga o‘tish</string>
+  <string name="keycombo_menu_web_navigate_to_next_button">Keyingi tugmaga oʻtish</string>
+  <string name="keycombo_menu_web_navigate_to_previous_button">Avvalgi tugmaga oʻtish</string>
+  <string name="keycombo_menu_web_navigate_to_next_control">Keyingi boshqaruv elementiga oʻtish</string>
+  <string name="keycombo_menu_web_navigate_to_previous_control">Avvalgi boshqaruv elementiga oʻtish</string>
+  <string name="keycombo_menu_web_navigate_to_next_checkbox">Keyingi belgilash katakchasiga oʻtish</string>
+  <string name="keycombo_menu_web_navigate_to_previous_checkbox">Avvalgi belgilash katakchasiga oʻtish</string>
+  <string name="keycombo_menu_web_navigate_to_next_aria_landmark">Keyingi ARIA moʻljaliga oʻtish</string>
+  <string name="keycombo_menu_web_navigate_to_previous_aria_landmark">Avvalgi ARIA moʻljaliga oʻtish</string>
+  <string name="keycombo_menu_web_navigate_to_next_edit_field">Keyingi tahrirlash maydonchasiga oʻtish</string>
+  <string name="keycombo_menu_web_navigate_to_previous_edit_field">Avvalgi tahrirlash maydonchasiga oʻtish</string>
   <string name="keycombo_menu_web_navigate_to_next_focusable_item">Keyingi faollashtiriladigan element</string>
   <string name="keycombo_menu_web_navigate_to_previous_focusable_item">Avvalgi faollashtiriladigan element</string>
-  <string name="keycombo_menu_web_navigate_to_next_graphic">Keyingi tasvirga o‘tish</string>
-  <string name="keycombo_menu_web_navigate_to_previous_graphic">Avvalgi tasvirga o‘tish</string>
-  <string name="keycombo_menu_web_navigate_to_next_heading">Keyingi sarlavhaga o‘tish</string>
-  <string name="keycombo_menu_web_navigate_to_previous_heading">Avvalgi sarlavhaga o‘tish</string>
-  <string name="keycombo_menu_web_navigate_to_next_heading_1">Keyingi 1-darajali sarlavhaga o‘tish</string>
-  <string name="keycombo_menu_web_navigate_to_previous_heading_1">Avvalgi 1-darajali sarlavhaga o‘tish</string>
-  <string name="keycombo_menu_web_navigate_to_next_heading_2">Keyingi 2-darajali sarlavhaga o‘tish</string>
-  <string name="keycombo_menu_web_navigate_to_previous_heading_2">Avvalgi 2-darajali sarlavhaga o‘tish</string>
-  <string name="keycombo_menu_web_navigate_to_next_heading_3">Keyingi 3-darajali sarlavhaga o‘tish</string>
-  <string name="keycombo_menu_web_navigate_to_previous_heading_3">Avvalgi 3-darajali sarlavhaga o‘tish</string>
-  <string name="keycombo_menu_web_navigate_to_next_heading_4">Keyingi 4-darajali sarlavhaga o‘tish</string>
-  <string name="keycombo_menu_web_navigate_to_previous_heading_4">Avvalgi 4-darajali sarlavhaga o‘tish</string>
-  <string name="keycombo_menu_web_navigate_to_next_heading_5">Keyingi 5-darajali sarlavhaga o‘tish</string>
-  <string name="keycombo_menu_web_navigate_to_previous_heading_5">Avvalgi 5-darajali sarlavhaga o‘tish</string>
-  <string name="keycombo_menu_web_navigate_to_next_heading_6">Keyingi 6-darajali sarlavhaga o‘tish</string>
-  <string name="keycombo_menu_web_navigate_to_previous_heading_6">Avvalgi 6-darajali sarlavhaga o‘tish</string>
-  <string name="keycombo_menu_web_navigate_to_next_list_item">Keyingi ro‘yxat bandiga o‘tish</string>
-  <string name="keycombo_menu_web_navigate_to_previous_list_item">Avvalgi ro‘yxat bandiga o‘tish</string>
-  <string name="keycombo_menu_web_navigate_to_next_link">Keyingi havolaga o‘tish</string>
-  <string name="keycombo_menu_web_navigate_to_previous_link">Avvalgi havolaga o‘tish</string>
-  <string name="keycombo_menu_web_navigate_to_next_list">Keyingi ro‘yxatga o‘tish</string>
-  <string name="keycombo_menu_web_navigate_to_previous_list">Avvalgi ro‘yxatga o‘tish</string>
-  <string name="keycombo_menu_web_navigate_to_next_table">Keyingi jadvalga o‘tish</string>
-  <string name="keycombo_menu_web_navigate_to_previous_table">Avvalgi jadvalga o‘tish</string>
-  <string name="keycombo_menu_web_navigate_to_next_combobox">Keyingi ro‘yxatli maydonga o‘tish</string>
-  <string name="keycombo_menu_web_navigate_to_previous_combobox">Avvalgi ro‘yxatli maydonga o‘tish</string>
+  <string name="keycombo_menu_web_navigate_to_next_graphic">Keyingi tasvirga oʻtish</string>
+  <string name="keycombo_menu_web_navigate_to_previous_graphic">Avvalgi tasvirga oʻtish</string>
+  <string name="keycombo_menu_web_navigate_to_next_heading">Keyingi sarlavhaga oʻtish</string>
+  <string name="keycombo_menu_web_navigate_to_previous_heading">Avvalgi sarlavhaga oʻtish</string>
+  <string name="keycombo_menu_web_navigate_to_next_heading_1">Keyingi 1-darajali sarlavhaga oʻtish</string>
+  <string name="keycombo_menu_web_navigate_to_previous_heading_1">Avvalgi 1-darajali sarlavhaga oʻtish</string>
+  <string name="keycombo_menu_web_navigate_to_next_heading_2">Keyingi 2-darajali sarlavhaga oʻtish</string>
+  <string name="keycombo_menu_web_navigate_to_previous_heading_2">Avvalgi 2-darajali sarlavhaga oʻtish</string>
+  <string name="keycombo_menu_web_navigate_to_next_heading_3">Keyingi 3-darajali sarlavhaga oʻtish</string>
+  <string name="keycombo_menu_web_navigate_to_previous_heading_3">Avvalgi 3-darajali sarlavhaga oʻtish</string>
+  <string name="keycombo_menu_web_navigate_to_next_heading_4">Keyingi 4-darajali sarlavhaga oʻtish</string>
+  <string name="keycombo_menu_web_navigate_to_previous_heading_4">Avvalgi 4-darajali sarlavhaga oʻtish</string>
+  <string name="keycombo_menu_web_navigate_to_next_heading_5">Keyingi 5-darajali sarlavhaga oʻtish</string>
+  <string name="keycombo_menu_web_navigate_to_previous_heading_5">Avvalgi 5-darajali sarlavhaga oʻtish</string>
+  <string name="keycombo_menu_web_navigate_to_next_heading_6">Keyingi 6-darajali sarlavhaga oʻtish</string>
+  <string name="keycombo_menu_web_navigate_to_previous_heading_6">Avvalgi 6-darajali sarlavhaga oʻtish</string>
+  <string name="keycombo_menu_web_navigate_to_next_list_item">Keyingi roʻyxat bandiga oʻtish</string>
+  <string name="keycombo_menu_web_navigate_to_previous_list_item">Avvalgi roʻyxat bandiga oʻtish</string>
+  <string name="keycombo_menu_web_navigate_to_next_link">Keyingi havolaga oʻtish</string>
+  <string name="keycombo_menu_web_navigate_to_previous_link">Avvalgi havolaga oʻtish</string>
+  <string name="keycombo_menu_web_navigate_to_next_list">Keyingi roʻyxatga oʻtish</string>
+  <string name="keycombo_menu_web_navigate_to_previous_list">Avvalgi roʻyxatga oʻtish</string>
+  <string name="keycombo_menu_web_navigate_to_next_table">Keyingi jadvalga oʻtish</string>
+  <string name="keycombo_menu_web_navigate_to_previous_table">Avvalgi jadvalga oʻtish</string>
+  <string name="keycombo_menu_web_navigate_to_next_combobox">Keyingi roʻyxatli maydonga oʻtish</string>
+  <string name="keycombo_menu_web_navigate_to_previous_combobox">Avvalgi roʻyxatli maydonga oʻtish</string>
   <string name="keycombo_menu_web_navigate_to_next_visited_link">Keyingi ochilgan havolaga oʻtish</string>
   <string name="keycombo_menu_web_navigate_to_previous_visited_link">Avvalgi ochilgan havolaga oʻtish</string>
   <string name="keycombo_menu_web_navigate_to_next_unvisited_link">Keyingi kirilmagan havolaga oʻtish</string>
@@ -243,13 +243,13 @@
   <string name="keycombo_menu_web_navigate_to_next_table_bounds">Jadval oxiriga oʻtish</string>
   <string name="keycombo_menu_web_navigate_to_previous_table_bounds">Jadval boshiga oʻtish</string>
   <string name="keycombo_assign_dialog_message">Tugmalar birikmasi:</string>
-  <string name="keycombo_assign_dialog_navigation_reminder">Tezkor tugmalarni o‘chirish uchun BACKSPACE tugmasini bosing, saqlash uchun – ENTER, bekor qilish uchun esa –  ESC.</string>
-  <string name="keycombo_assign_dialog_clear">Yorliqni o‘chirish</string>
+  <string name="keycombo_assign_dialog_navigation_reminder">Tezkor tugmalarni oʻchirish uchun BACKSPACE tugmasini bosing, saqlash uchun – ENTER, bekor qilish uchun esa –  ESC.</string>
+  <string name="keycombo_assign_dialog_clear">Yorliqni oʻchirish</string>
   <string name="cannot_copy_feedback">Nusxa olish uchun avval matnni belgilang.</string>
   <string name="cannot_paste_feedback">Joylash uchun avval matndan nusxa oling.</string>
   <string name="cannot_cut_feedback">Qirqish uchun avval matnni belgilang.</string>
   <string name="cannot_delete_feedback">Oʻchirish uchun avval matnni belgilang.</string>
-  <string name="message_in_reset_keymap_confirm_dialog">Bu tugmalar sxemasi uchun tezkor tugmalarni birlamchi qiymatlariga qayta tiklamoqchimisiz? Yodda tuting, bu amalni ortga qaytarib bo‘lmaydi.</string>
+  <string name="message_in_reset_keymap_confirm_dialog">Bu tugmalar sxemasi uchun tezkor tugmalarni birlamchi qiymatlariga qayta tiklamoqchimisiz? Yodda tuting, bu amalni ortga qaytarib boʻlmaydi.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">Asliga qaytarish</string>
   <string name="template_keycombo_menu_browse_mode_command">Kezish rejimida %1$s</string>
   <string name="keycombo_assign_dialog_default_keymap_instruction">Yangi tezkor tugmani belgilash uchun %1$s SandFly tugmasi bilan tugmalar birikmasini bosing.</string>
@@ -266,14 +266,14 @@
   <string name="keycombo_key_modifier_alt">Alt</string>
   <string name="keycombo_key_modifier_ctrl">Ctrl</string>
   <string name="keycombo_key_modifier_meta">Meta</string>
-  <string name="keycombo_key_arrow_right">O‘ng mil</string>
+  <string name="keycombo_key_arrow_right">Oʻng mil</string>
   <string name="keycombo_key_arrow_left">Chap mil</string>
   <string name="keycombo_key_arrow_up">Tepaga mil</string>
   <string name="keycombo_key_arrow_down">Pastga mil</string>
   <string name="keycombo_key_backspace">Backspace</string>
   <string name="override_keycombo">Ushbu tugma allaqachon tayinlangan</string>
-  <string name="override_keycombo_message_two_params">Ushbu tugmalar birikmasi allaqachon “%1$s” amali uchun tayinlangan. Bu birikma o‘chirilib, “%2$s” amali uchun qaytadan tayinlansinmi?</string>
-  <string name="title_pref_intonation">Talaffuzda ohangni o‘zgartirish</string>
+  <string name="override_keycombo_message_two_params">Ushbu tugmalar birikmasi allaqachon “<xliff:g>%1$s</xliff:g>” amali uchun tayinlangan. Bu birikma oʻchirilib, “<xliff:g>%2$s</xliff:g>” amali uchun qaytadan tayinlansinmi?</string>
+  <string name="title_pref_intonation">Talaffuzda ohangni oʻzgartirish</string>
   <string name="title_pref_keyboard_echo">Klaviatura aks sadosi</string>
   <string name="pref_node_desc_order_title">Element tafsilotlari tartibi</string>
   <string name="pref_time_feedback_format_title">Vaqt formati</string>
@@ -289,8 +289,8 @@
   <string name="title_pref_use_audio_focus">Tovushni izolyatsiyalash</string>
   <string name="title_pref_soundback_volume">Ovozli signal tovushi</string>
   <string name="title_pref_category_developer_settings">Dasturchi sozlamalari</string>
-  <string name="title_activity_dump_a11y_event">Jurnalga qo‘shish kerak bo‘lgan tadbirni tanlang</string>
-  <string name="title_pref_dump_a11y_event">Jurnalga qo‘shish uchun maxsus imkoniyatlardan foydalanib tadbirlarni filtrlash</string>
+  <string name="title_activity_dump_a11y_event">Jurnalga qoʻshish kerak boʻlgan tadbirni tanlang</string>
+  <string name="title_pref_dump_a11y_event">Jurnalga qoʻshish uchun maxsus imkoniyatlardan foydalanib tadbirlarni filtrlash</string>
   <string name="pref_reduce_window_delay_title">Animatsiyalarni oʻchirish</string>
   <string name="title_pref_log_level">Jurnalni chiqarish darajasi</string>
   <string name="title_pref_diagnosis_mode">Diagnostika rejimi</string>
@@ -298,8 +298,8 @@
   <string name="title_pref_multiple_gesture_set">Bir nechta ishoralar toʻplamini dastaklaydi</string>
   <string name="title_pref_echo_recognized_text_speech">Tanilgan nutq aks-sadosi</string>
   <string name="title_pref_tree_debug">Tugunlar daraxtini tuzatishni yoqish</string>
-  <string name="summary_pref_tree_debug_tv">Qidirish o‘rniga tugunlar daraxtini chop etish uchun ovozli qidiruv tugmasidan foydalanish</string>
-  <string name="title_pref_performance_stats">Unumdorlik bo‘yicha statistikani yoqish</string>
+  <string name="summary_pref_tree_debug_tv">Qidirish oʻrniga tugunlar daraxtini chop etish uchun ovozli qidiruv tugmasidan foydalanish</string>
+  <string name="title_pref_performance_stats">Unumdorlik boʻyicha statistikani yoqish</string>
   <string name="title_pref_log_overlay">Ustki tuzatmalar jurnalini yoqish</string>
   <string name="title_pref_typing_confirmation">Yozish usuli</string>
   <string name="title_pref_typing_long_tap_duration">Yozayotganda kechikish tugmasini bosib turing</string>
@@ -307,7 +307,7 @@
   <string name="message_pref_touch_explore_latency">Kechikish qanchalik qisqa boʻlsa, klaviaturaga tekkaningizdan keyin SandFly shunchalik tez gapiradi.\n\nKechikishni tanlang</string>
   <string name="title_pref_touch_focus_timeout">Fokus kechikishi</string>
   <string name="title_pref_talkback_gesture_detection">SandFly| funksiyasida imo-ishoralarni aniqlashni yoqish</string>
-  <string name="toast_pref_talkback_gesture_detection">O\'zgarishlar kuchga kirishi uchun SandFly funksiyasini qayta ishga tushiring.</string>
+  <string name="toast_pref_talkback_gesture_detection">Oʻzgarishlar kuchga kirishi uchun SandFly funksiyasini qayta ishga tushiring.</string>
   <string name="title_pref_auto_image_captioning">Avtomatik tavsiflar</string>
   <string name="title_pref_gemini_settings">Gemini sozlamalari</string>
   <string name="title_pref_gemini_enabled">Gemini ovozli buyruqlari</string>
@@ -318,10 +318,10 @@
   <string name="dialog_title_turn_on_image_description">Sozlamalar orqali rasm tavsiflarini yoqing</string>
   <string name="dialog_message_turn_on_image_description">Avtomatik yoki rasmning batafsil tavsiflarini yoqib, keyin qaytadan urinish mumkin</string>
   <string name="title_pref_detailed_image_description">Rasmning batafsil tavsifi</string>
-  <string name="dialog_message_on_device_ai_description">Mos ilovalarda rasmga fokus qaratsangiz, qisqacha tavsifini eshitasiz.\n\nRasmlar qurilmangizda qayta ishlanadi va hech qachon Google\'ga yuborilmaydi. \n\nGenerativ AI hozir tajriba bosqichida, shu sababli u xato qilishi mumkin. Davom etish orqali siz <a href="https://policies.google.com/terms/generative-ai">Google Xizmat shartlariga</a> rozilik bildirasiz.</string>
+  <string name="dialog_message_on_device_ai_description">Mos ilovalarda rasmga fokus qaratsangiz, qisqacha tavsifini eshitasiz.\n\nRasmlar qurilmangizda qayta ishlanadi va hech qachon Google’ga yuborilmaydi. \n\nGenerativ AI hozir tajriba bosqichida, shu sababli u xato qilishi mumkin. Davom etish orqali siz <a href="https://policies.google.com/terms/generative-ai">Google Xizmat shartlariga</a> rozilik bildirasiz.</string>
   <string name="enable_gemini">Yoqish</string>
   <string name="powered_by_gemini">Generativ AI asosida ishlaydi</string>
-  <string name="dialog_message_on_device_detailed_ai_promotion">Rasmlar qurilmangizda qayta ishlanadi va hech qachon Google\'ga yuborilmaydi.\n\nGenerativ AI hozir tajriba bosqichida, shu sababli u xato qilishi mumkin. Davom etish orqali siz %1$sga rozilik bildirasiz.</string>
+  <string name="dialog_message_on_device_detailed_ai_promotion">Rasmlar qurilmangizda qayta ishlanadi va hech qachon Google’ga yuborilmaydi.\n\nGenerativ AI hozir tajriba bosqichida, shu sababli u xato qilishi mumkin. Davom etish orqali siz <xliff:g id="Gen AI Terms of Service" example="Google\'s Terms of Service">%1$s</xliff:g>ga rozilik bildirasiz.</string>
   <string name="dialog_message_gen_ai_tos_link">Google xizmat shartlari</string>
   <string name="message_aifeature_downloading">AI modeli yuklab olinmoqda. Iltimos, kutib turing. Tayyor boʻlsa, sizga xabar beramiz.</string>
   <string name="message_aifeature_downloading_with_progress">Hali ham yuklab olinmoqda. %1$d/%2$dMB yuklab olindi.</string>
@@ -378,7 +378,7 @@
   <string name="shortcut_read_from_top">Boshidan boshlab oʻqish</string>
   <string name="shortcut_read_from_current">Fokusga olingan elementdan oʻqish</string>
   <string name="shortcut_print_node_tree">Tugunli daraxtni chop qilish</string>
-  <string name="shortcut_print_performance_stats">Unumdorlik bo‘yicha statistikani chop etish</string>
+  <string name="shortcut_print_performance_stats">Unumdorlik boʻyicha statistikani chop etish</string>
   <string name="shortcut_first_in_screen">Ekrandagi birinchi elementga fokus qaratish</string>
   <string name="shortcut_voice_commands">Ovozli buyruqni boshlash</string>
   <string name="shortcut_last_in_screen">Ekrandagi oxirgi elementga fokus qaratish</string>
@@ -432,17 +432,17 @@
   <string name="shortcut_show_learn_mode_page">Tezkor tugmalarni mashq qilish</string>
   <string name="shortcut_announce_phonetic_pronunciation">Fokusdagi obyekt uchun harflarni fonetik talaffuz bilan aytish</string>
   <string name="shortcut_cycle_punctuation_verbosity">Punktuatsiya darajasini oʻzgartirish</string>
-  <string name="title_local_breakout_no_items">Bo‘m-bo‘sh.</string>
-  <string name="title_web_breakout_next_section">Keyingi bo‘lim</string>
-  <string name="title_web_breakout_next_list">Keyingi ro‘yxat</string>
+  <string name="title_local_breakout_no_items">Boʻm-boʻsh.</string>
+  <string name="title_web_breakout_next_section">Keyingi boʻlim</string>
+  <string name="title_web_breakout_next_list">Keyingi roʻyxat</string>
   <string name="title_web_breakout_next_control">Keyingi boshqaruv elementi</string>
-  <string name="title_web_breakout_prev_section">Avvalgi bo‘lim</string>
-  <string name="title_web_breakout_prev_list">Avvalgi ro‘yxat</string>
+  <string name="title_web_breakout_prev_section">Avvalgi boʻlim</string>
+  <string name="title_web_breakout_prev_list">Avvalgi roʻyxat</string>
   <string name="title_web_breakout_prev_control">Avvalgi boshqaruv elementi</string>
-  <string name="title_edittext_breakout_move_to_beginning">Kursorni matn boshiga o‘tkazish</string>
-  <string name="title_edittext_breakout_move_to_end">Kursorni matn oxiriga o‘tkazish</string>
+  <string name="title_edittext_breakout_move_to_beginning">Kursorni matn boshiga oʻtkazish</string>
+  <string name="title_edittext_breakout_move_to_end">Kursorni matn oxiriga oʻtkazish</string>
   <string name="title_edittext_breakout_start_selection_mode">Tanlash rejimini boshlash yoki yakunlash</string>
-  <string name="title_edittext_breakout_end_selection_mode">Matn tanlash rejimini o‘chirish</string>
+  <string name="title_edittext_breakout_end_selection_mode">Matn tanlash rejimini oʻchirish</string>
   <string name="title_edittext_typo_suggestions">Grammatik va imlo xatolarini tuzatish</string>
   <string name="title_edittext_typo_suggestion">%1$s. Imloga oid taklif.</string>
   <string name="title_edittext_grammar_suggestion">%1$s. Grammatikaga oid taklif.</string>
@@ -473,7 +473,7 @@
   <string name="title_granularity_default">Standart navigatsiya</string>
   <string name="title_action_dismiss">Yopish</string>
   <string name="title_action_expand">Yoyish</string>
-  <string name="title_action_collapse">Yig‘ish</string>
+  <string name="title_action_collapse">Yigʻish</string>
   <string name="title_action_copy">Nusxa olish</string>
   <string name="context_menu_category_contextual_actions">Joriy element uchun amallar</string>
   <string name="menu_category_reading_controls">Oʻqish</string>
@@ -560,24 +560,24 @@
   <string name="title_pref_shortcut_down_xr">Ikkinchi qoʻlni oʻzingizga qaratib, chimdish va pastga surish</string>
   <string name="title_pref_shortcut_left">Chapga surish</string>
   <string name="title_pref_shortcut_left_xr">Chap qoʻlni oʻzingizga qaratib, chimdish</string>
-  <string name="title_pref_shortcut_right">O‘ngga surish</string>
+  <string name="title_pref_shortcut_right">Oʻngga surish</string>
   <string name="title_pref_shortcut_right_xr">Oʻng qoʻlni oʻzingizga qaratib, chimdish</string>
   <string name="title_pref_shortcut_up_and_down">Tepaga, keyin pastga surish</string>
   <string name="title_pref_shortcut_down_and_up">Pastga, keyin tepaga surish</string>
-  <string name="title_pref_shortcut_left_and_right">Chapga, keyin o‘ngga surish</string>
-  <string name="title_pref_shortcut_right_and_left">O‘ngga, keyin chapga surish</string>
+  <string name="title_pref_shortcut_left_and_right">Chapga, keyin oʻngga surish</string>
+  <string name="title_pref_shortcut_right_and_left">Oʻngga, keyin chapga surish</string>
   <string name="title_pref_shortcut_down_and_left">Pastga, keyin chapga surish</string>
-  <string name="title_pref_shortcut_down_and_right">Pastga, keyin o‘ngga surish</string>
+  <string name="title_pref_shortcut_down_and_right">Pastga, keyin oʻngga surish</string>
   <string name="title_pref_shortcut_up_and_left">Tepaga, keyin chapga surish</string>
-  <string name="title_pref_shortcut_up_and_right">Tepaga, keyin o‘ngga surish</string>
-  <string name="title_pref_shortcut_right_and_down">O‘ngga, keyin pastga surish</string>
-  <string name="title_pref_shortcut_right_and_up">O‘ngga, keyin tepaga surish</string>
+  <string name="title_pref_shortcut_up_and_right">Tepaga, keyin oʻngga surish</string>
+  <string name="title_pref_shortcut_right_and_down">Oʻngga, keyin pastga surish</string>
+  <string name="title_pref_shortcut_right_and_up">Oʻngga, keyin tepaga surish</string>
   <string name="title_pref_shortcut_left_and_down">Chapga, keyin pastga surish</string>
   <string name="title_pref_shortcut_left_and_up">Chapga, keyin tepaga surish</string>
   <string name="title_pref_shortcut_2finger_1tap">2 ta barmoq bilan teginish</string>
   <string name="title_pref_shortcut_2finger_1tap_xr">Sensorli panelni bir barmoq bilan bosing</string>
   <string name="title_pref_shortcut_2finger_2tap">2 ta barmoq bilan ikki marta teginish</string>
-  <string name="title_pref_shortcut_2finger_3tap">2 barmoq bilan uch marta bosish</string>
+  <string name="title_pref_shortcut_2finger_3tap">2 barmoq bilan uch marta teginish</string>
   <string name="title_pref_shortcut_3finger_1tap">3 ta barmoq bilan teginish</string>
   <string name="title_pref_shortcut_3finger_1tap_xr">Ikkinchi qoʻlni oʻzingizga qaratib, chimdish</string>
   <string name="title_pref_shortcut_3finger_2tap">3 ta barmoq bilan ikki marta teginish</string>
@@ -602,9 +602,9 @@
   <string name="title_pref_shortcut_2finger_2tap_hold">2 ta barmoq bilan ikki marta teginish va ushlab turish</string>
   <string name="title_pref_shortcut_3finger_2tap_hold">3 ta barmoq bilan ikki marta teginish va ushlab turish</string>
   <string name="title_pref_shortcut_4finger_2tap_hold">4 ta barmoq bilan ikki marta teginish va ushlab turish</string>
-  <string name="title_pref_shortcut_3finger_1tap_hold">3 barmoq bilan bosish va barmoqni uzmay turish</string>
-  <string name="title_pref_shortcut_2finger_3tap_hold">2 barmoq bilan uch marta bosish va barmoqni uzmay turish</string>
-  <string name="title_pref_shortcut_3finger_3tap_hold">3 barmoq bilan 3 marta bosish va barmoqni uzmay turish</string>
+  <string name="title_pref_shortcut_3finger_1tap_hold">3 barmoq bilan teginish va barmoqni uzmay turish</string>
+  <string name="title_pref_shortcut_2finger_3tap_hold">2 barmoq bilan uch marta teginish va barmoqni uzmay turish</string>
+  <string name="title_pref_shortcut_3finger_3tap_hold">3 barmoq bilan 3 marta teginish va barmoqni uzmay turish</string>
   <string name="gesture_name_unknown">Notanish ishora</string>
   <string name="gesture_name_pass_through">Tizim ishorasiga oʻtish</string>
   <string name="gesture_name_touch_explore">Sensorli tanishuv</string>
@@ -619,7 +619,7 @@
   <string name="title_pref_shortcut_fingerprint_up">Barmoq izi skanerida tepaga surish</string>
   <string name="title_pref_shortcut_fingerprint_down">Barmoq izi skanerida pastga surish</string>
   <string name="title_pref_shortcut_fingerprint_left">Barmoq izi skanerida chapga surish</string>
-  <string name="title_pref_shortcut_fingerprint_right">Barmoq izi skanerida o‘ngga surish</string>
+  <string name="title_pref_shortcut_fingerprint_right">Barmoq izi skanerida oʻngga surish</string>
   <string name="title_pref_version_code">Versiya kodi</string>
   <string name="value_type_confirmation_double_tap">Birorta tugmani tanlash uchun barmoq bilan bosib turing, keyin ikki marta bosing</string>
   <string name="value_type_confirmation_lift_to_type">Harf tugmasini tanlash uchun barmoq bilan bosib turing va qoʻyib yuboring Boshqa tugmalar uchun ikki marta bosing.</string>
@@ -645,21 +645,21 @@
   <string name="pref_time_feedback_format_entries_default">Qurilma vaqt formatidan foydalanish</string>
   <string name="pref_time_feedback_format_entries_12_hour">12 soatlik</string>
   <string name="pref_time_feedback_format_entries_24_hour">24 soatlik</string>
-  <string name="always_show_warning_checkbox">Ushbu ogohlantirish har doim ko‘rsatilsin</string>
+  <string name="always_show_warning_checkbox">Ushbu ogohlantirish har doim koʻrsatilsin</string>
   <string name="label_dialog_title_add">Yorliq bilan nomlash</string>
   <string name="label_dialog_title_edit">Yorliqni tahrirlash</string>
-  <string name="label_dialog_title_remove">Yorliqni o‘chirish</string>
+  <string name="label_dialog_title_remove">Yorliqni oʻchirish</string>
   <string name="label_dialog_confirm_label_remove">Yorliq olib tashlandi</string>
   <string name="label_dialog_text">Yorliq sifatida ishlatiladigan matnni kiriting\nElementning ichki nomi: %1$s</string>
   <string name="label_dialog_edit_hint">Yorliq matni</string>
   <string name="label_import">Maxsus yorliqlarni import qilish</string>
   <string name="label_import_dialog_title">SandFly xizmatiga maxsus yorliqlarni import qilish</string>
-  <string name="label_import_dialog_message">Ziddiyat yuz berganda takroriy yorliqlarni almashtirishni yoki o‘tkazib yuborishni tanlang</string>
+  <string name="label_import_dialog_message">Ziddiyat yuz berganda takroriy yorliqlarni almashtirishni yoki oʻtkazib yuborishni tanlang</string>
   <string name="label_import_dialog_skip">Tashlab ketish</string>
   <string name="label_import_dialog_override">Almashtirish</string>
-  <string name="label_export_empty">Eksport qilishga hech narsa yo‘q. Hech qanday yorliq qo‘shilmagan</string>
-  <string name="label_export_failed">Yorliqni eksport qilib bo‘lmadi</string>
-  <string name="label_import_failed">Yorliqni import qilib bo‘lmadi</string>
+  <string name="label_export_empty">Eksport qilishga hech narsa yoʻq. Hech qanday yorliq qoʻshilmagan</string>
+  <string name="label_export_failed">Yorliqni eksport qilib boʻlmadi</string>
+  <string name="label_import_failed">Yorliqni import qilib boʻlmadi</string>
   <string name="label_import_succeeded">{count,plural, =0{Yangi yorliqlar yoʻq}=1{# ta yorliq yangilandi}other{# ta yorliq yangilandi}}</string>
   <string name="no_apps_to_import_labels">Yorliqlarni import qilish uchun ilova topilmadi</string>
   <string name="no_apps_to_export_labels">Yorliqlarni eksport qilish uchun ilova topilmadi.</string>
@@ -667,16 +667,16 @@
   <string name="label_choose_app_to_export">Yorliqlarni eksport qilish uchun ilovani tanlang:</string>
   <string name="dialog_title_dim_screen">Ekran xiralashtirilsinmi?</string>
   <string name="dialog_message_dim_screen">Yanada ishonchli maxfiylikni taʼminlash uchun ekran oʻchiriladi. Ammo ekranning yoqilishi, SandFly va boshqa qulayliklar menyusi haqidagi xabarlar chiqishda davom etadi.</string>
-  <string name="button_disable_all_events">Hammasini o‘chirish</string>
+  <string name="button_disable_all_events">Hammasini oʻchirish</string>
   <string name="button_enable_all_events">Hammasini yoqish</string>
-  <string name="dialog_title_disable_exploration">“Teginib o‘rganish” funksiyasi o‘chirib qo‘yilsinmi?</string>
-  <string name="dialog_message_disable_exploration">“Teginib o‘rganish” funksiyasini o‘chirib qo‘ymoqchimisiz?\n\nQurilmangiz imo-ishoralarga javob qaytarmaydi va ekranga bosilganda elementlar nomini aytmaydi.</string>
+  <string name="dialog_title_disable_exploration">“Teginib oʻrganish” funksiyasi oʻchirib qoʻyilsinmi?</string>
+  <string name="dialog_message_disable_exploration">“Teginib oʻrganish” funksiyasini oʻchirib qoʻymoqchimisiz?\n\nQurilmangiz imo-ishoralarga javob qaytarmaydi va ekranga bosilganda elementlar nomini aytmaydi.</string>
   <string name="dialog_title_enable_tree_debug">“Tugunlar daraxtini tuzatish” funksiyasi yoqilsinmi?</string>
-  <string name="dialog_message_enable_tree_debug">“Tugunlar daraxtini tuzatish” funksiyasini yoqmoqchimisiz?\n\n“Tugunlar daraxtini tuzatish” funksiyasi ekrandagi kontentni qurilma jurnaliga taqdim etib, keyin uni boshqa ilovalar ham o‘qishi mumkin bo‘ladi.</string>
+  <string name="dialog_message_enable_tree_debug">“Tugunlar daraxtini tuzatish” funksiyasini yoqmoqchimisiz?\n\n“Tugunlar daraxtini tuzatish” funksiyasi ekrandagi kontentni qurilma jurnaliga taqdim etib, keyin uni boshqa ilovalar ham oʻqishi mumkin boʻladi.</string>
   <string name="dialog_title_enable_tree_debug_gesture">4 ta barmoq bilan uch marta bosish ishorasi qayta tayinlansinmi?</string>
   <string name="dialog_message_enable_tree_debug_gesture">4 ta barmoq bilan uch marta bosish ishorasi tugun daraxtini chop etish uchun tayinlanishini tasdiqlang.\n\nAmal bekor qilinsa, tugun daraxtini debaglash yoqiladi, ammo ishorasi tayinlanmaydi. Uni ishora sozlamalarida tayinlash kerak boʻladi.\n\nTugun daraxtini debaglash faolsizlantirilsa, ishora uchun avval tayinlangan amal tiklanmaydi.</string>
-  <string name="dialog_title_enable_performance_stats">Unumdorlik bo‘yicha statistika yoqilsinmi?</string>
-  <string name="dialog_message_enable_performance_stats">Haqiqatan ham unumdorlik bo‘yicha statistikani yoqmoqchimisiz?\n\nUnumdorlik bo‘yicha statistika ko‘proq xotira va quvvat iste’mol qiladi.</string>
+  <string name="dialog_title_enable_performance_stats">Unumdorlik boʻyicha statistika yoqilsinmi?</string>
+  <string name="dialog_message_enable_performance_stats">Haqiqatan ham unumdorlik boʻyicha statistikani yoqmoqchimisiz?\n\nUnumdorlik boʻyicha statistika koʻproq xotira va quvvat isteʼmol qiladi.</string>
   <string name="dialog_title_extend_log_level">Batafsil jurnal yoqilsinmi?</string>
   <string name="dialog_message_extend_log_level">Batafsil jurnal nosozliklarni aniqlashda yordami tegishi mumkin, lekin tizim jurnali buferida shaxsiy axborot ham chiqib qolishi mumkin.\n\n  Batafsil jurnal yoqilsinmi?</string>
   <string name="dialog_ok_buggon_extend_log_level">Ha, batafsil jurnal yoqilsin</string>
@@ -697,8 +697,8 @@
   <string name="display_name_search">qidiruv</string>
   <string name="display_name_heading">sarlavha</string>
   <string name="display_name_button">tugma</string>
-  <string name="display_name_combobox">ro‘yxatli maydon</string>
-  <string name="display_name_aria_landmark">ARIA mo‘ljali</string>
+  <string name="display_name_combobox">roʻyxatli maydon</string>
+  <string name="display_name_aria_landmark">ARIA moʻljali</string>
   <string name="display_name_edit_field">tahrirlash maydonchasi</string>
   <string name="display_name_focusable_item">faollashtiriladigan element</string>
   <string name="display_name_heading_1">1-darajali sarlavha</string>
@@ -710,8 +710,8 @@
   <string name="display_name_link">havola</string>
   <string name="display_name_control">boshqaruv elementi</string>
   <string name="display_name_graphic">rasm yoki video</string>
-  <string name="display_name_list_item">ro‘yxat bandi</string>
-  <string name="display_name_list">ro‘yxat</string>
+  <string name="display_name_list_item">roʻyxat bandi</string>
+  <string name="display_name_list">roʻyxat</string>
   <string name="display_name_table">jadval</string>
   <string name="display_name_checkbox">belgilash katakchasi</string>
   <string name="display_name_visited_link">ochilgan havola</string>
@@ -728,9 +728,9 @@
   <string name="imported_labels_reverted">Import qilingan yorliqlar qaytarildi</string>
   <string name="template_dump_event_count">{count,plural, =1{# ta tadbir tanlandi}other{# ta tadbir tanlandi}}</string>
   <string name="template_tv_remote_mode_started">%1$s boshlandi</string>
-  <string name="template_tv_remote_mode_ended">%1$s o‘chirib qo‘yildi</string>
+  <string name="template_tv_remote_mode_ended"><xliff:g id="remote_mode" example="Slider mode">%1$s</xliff:g> oʻchirib qoʻyildi</string>
   <string name="value_tv_remote_mode_seek_control">Slayder rejimi</string>
-  <string name="value_hint_tv_remote_mode_seek_control">Qiymatini o‘zgartirish uchun ko‘rsatkichli chiziq tugmalarini yoki yakunlash uchun “Tanlash” tugmasini bosing.</string>
+  <string name="value_hint_tv_remote_mode_seek_control">Qiymatini oʻzgartirish uchun koʻrsatkichli chiziq tugmalarini yoki yakunlash uchun “Tanlash” tugmasini bosing.</string>
   <string name="reset_user_language_preference">Standart</string>
   <string name="title_pref_selector_speech_rate">Nutq tezligi</string>
   <string name="title_pref_selector_verbosity">Tafsilotlar</string>
@@ -756,7 +756,7 @@
   <string name="title_pref_cache_keyboard_keys">Klaviatura tugmalarini tezroq eʼlon qilish</string>
   <string name="title_pref_sound_and_vibration">Ovoz va tebranish</string>
   <string name="title_pref_sound">Tovush</string>
-  <string name="template_text_copied">nusxa ko‘chirildi: %1$s</string>
+  <string name="template_text_copied">nusxa koʻchirildi: <xliff:g id="text">%1$s</xliff:g></string>
   <string name="title_cancel_screen_search">Qidiruvni yopish</string>
   <string name="title_clear_keyword">Tozalash</string>
   <string name="title_previous_screen">Avvalgi ekran</string>
@@ -853,8 +853,8 @@
   <string name="new_gesture_notification_content">Yangi ishoralar bilan SandFlyni tezroq ishlatish haqida batafsil axborot olish uchun bosing.</string>
   <string name="dump_node_tree_description">Tugunlar daraxti jurnalga chop etildi.</string>
   <string name="report_gesture_description">Quyida oxirgi bajarilgan ishoralar keltirilgan, qaysi biri xato va yaxshi ishlamagani haqida xabar qiling.</string>
-  <string name="update_welcome_talkback_16.1">Bu SandFly yangilanishida qoʻshimcha tillarda “Ekran sarhisobi” funksiyasi, shuningdek, SandFly funksiyasidan foydalanishni oson qiladigan boshqa tuzatishlar kiritildi.\n\nBu oʻzgarishlar haqida keyingi ekranlarda batafsil bilib olasiz.\n\nBu axborotni keyinroq SandFly sozlamalari &gt; SandFlydagi yangi xususiyatlar ruknida tekshirish mumkin.</string>
-  <string name="update_welcome_talkback_16.1_tts">Bu SandFly yangilanishida qoʻshimcha tillarda “Ekran sarhisobi” funksiyasi, shuningdek, SandFly funksiyasidan foydalanishni oson qiladigan boshqa tuzatishlar kiritildi.\n\nBu oʻzgarishlar haqida keyingi ekranlarda batafsil bilib olasiz.\n\nBu axborotni keyinroq SandFly sozlamalari, keyin SandFlydagi yangi xususiyatlar ruknida tekshirish mumkin.</string>
+  <string name="update_welcome_talkback_16.1">Bu SandFly yangilanishida qoʻshimcha tillarda “Ekranni tavsiflash” funksiyasi, shuningdek, SandFly funksiyasidan foydalanishni oson qiladigan boshqa tuzatishlar kiritildi.\n\nBu oʻzgarishlar haqida keyingi ekranlarda batafsil bilib olasiz.\n\nBu axborotni keyinroq SandFly sozlamalari &gt; SandFlydagi yangi xususiyatlar ruknida tekshirish mumkin.</string>
+  <string name="update_welcome_talkback_16.1_tts">Bu SandFly yangilanishida qoʻshimcha tillarda “Ekranni tavsiflash” funksiyasi, shuningdek, SandFly funksiyasidan foydalanishni oson qiladigan boshqa tuzatishlar kiritildi.\n\nBu oʻzgarishlar haqida keyingi ekranlarda batafsil bilib olasiz.\n\nBu axborotni keyinroq SandFly sozlamalari, keyin SandFlydagi yangi xususiyatlar ruknida tekshirish mumkin.</string>
   <string name="shortcut_for_dictation_title">Ovoz bilan yozish uchun yorliq</string>
   <string name="shortcut_for_dictation_content">Gboard ishlatishda ovozli buyruq yozishni boshlash yoki toʻxtatish uchun ikki barmoq bilan ikki marta bosishingiz mumkin.
 &lt;br&gt;
@@ -1109,7 +1109,7 @@
   <string name="title_pref_blue">Koʻk</string>
   <string name="title_pref_grey">Kulrang</string>
   <string name="survey_setting_title">Fikr-mulohaza bildiring</string>
-  <string name="title_summarize_view">Ekran sarhisobi</string>
+  <string name="title_summarize_view">Ekranni tavsiflash</string>
   <string name="detected_result">Aniqlandi: %1$s</string>
   <string name="title_image_caption">Rasmga tavsif berish</string>
   <string name="image_caption_with_gemini_prefix">Bu rasmni tavsiflash. Javobda hech qanday ishoralardan foydalanmang.</string>
@@ -1231,7 +1231,7 @@
   <string name="shortcut_column_left">Avvalgi ustun</string>
   <string name="shortcut_column_right">Keyingi ustun</string>
   <string name="table_navigation_not_supported">Jadvalda kezish ishlamaydi</string>
-  <string name="pref_auto_enter_table_navigation_title">Jadvallarda jadval navigatsiyasiga o\'tish</string>
+  <string name="pref_auto_enter_table_navigation_title">Jadvallarda jadval navigatsiyasiga oʻtish</string>
   <string name="title_text_formatting_menu">Matnni formatlashni tavsiflash</string>
   <string name="summary_text_formatting_menu">Qalin, qiya, tagchiziq va boshqalar kabi oʻzgarishlar uchun</string>
   <string name="title_text_formatting_inline">Matn formatini aytish</string>
@@ -1278,15 +1278,15 @@
     <string name="title_selector_vertical_navigation">Vertikal navigatsiya</string>
     <string name="summary_selector_vertical_navigation">Qatordagi boshqa elementlarni oʻtkazib, pastdagi yoki yuqoridagi elementga oʻtish</string>
     <string name="title_selector_switch_tts_engine">Nutq mexanizmi</string>
-    <string name="summary_selector_switch_tts_engine">O\'rnatilgan nutq mexanizmlari o\'rtasida almashish</string>
+    <string name="summary_selector_switch_tts_engine">Oʻrnatilgan nutq mexanizmlari oʻrtasida almashish</string>
     <string name="title_selector_voice_profile">Ovozli profil</string>
     <string name="title_pref_voice_profiles">Ovozli profillar</string>
     <string name="voice_profile_default">SandFly birlamchi</string>
     <string name="voice_profile_in_use">Foydalanishda: <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
-    <string name="spoken_language_unavailable_with_profile">Ovozli profildan foydalanishda og‘zaki til mavjud emas</string>
+    <string name="spoken_language_unavailable_with_profile">Ovozli profildan foydalanishda ogʻzaki til mavjud emas</string>
     <string name="speech_engine_unavailable_with_profile">Ovozli profildan foydalanilganda nutq mexanizmi ishlamaydi</string>
     <string name="voice_profile_menu_item_in_use"><xliff:g id="name" example="Reading">%1$s</xliff:g>, foydalanilmoqda</string>
-    <string name="no_voice_profiles">Ovozli profil yo\'q</string>
+    <string name="no_voice_profiles">Ovozli profil yoʻq</string>
     <string name="shortcut_voice_profiles">Ovozli profilni tanlash</string>
     <string name="shortcut_previous_voice_profile">Oldingi ovozli profil</string>
     <string name="shortcut_next_voice_profile">Keyingi ovozli profil</string>
@@ -1303,11 +1303,11 @@
     <string name="voice_profile_voice_in_language"><xliff:g id="voice" example="en-us-x-tpf-local">%1$s</xliff:g>, <xliff:g id="language" example="English (United States)">%2$s</xliff:g></string>
     <string name="voice_profile_move_up">Yuqoriga surish</string>
     <string name="voice_profile_move_down">Pastga surish</string>
-    <string name="voice_profile_rename">Nomini o\'zgartirish</string>
+    <string name="voice_profile_rename">Nomini oʻzgartirish</string>
     <string name="voice_profile_moved_above"><xliff:g id="name" example="Reading">%1$s</xliff:g>dan yuqoriga koʻchirildi</string>
     <string name="voice_profile_moved_below"><xliff:g id="name" example="Reading">%1$s</xliff:g> ostiga koʻchirildi</string>
     <string name="voice_profile_deleted"><xliff:g id="name" example="Reading">%1$s</xliff:g> oʻchirildi</string>
-    <string name="title_pref_delete_voice_profile">Ovozli profilni o\'chirish</string>
+    <string name="title_pref_delete_voice_profile">Ovozli profilni oʻchirish</string>
     <string name="voice_profile_delete_confirm"><xliff:g id="name" example="Reading">%1$s</xliff:g> oʻchirilsinmi?</string>
     <string name="voice_profile_delete">Oʻchirish</string>
     <string name="summary_pref_tts_engine_default">Tizim standarti</string>
@@ -1316,7 +1316,7 @@
     <string name="summary_selector_speech_stream">Maxsus imkoniyatlar, media, rington va suhbat ovoz balandliklari orasida almashish</string>
     <string name="speech_stream_accessibility">Maxsus imkoniyatlarda tovush balandligi</string>
     <string name="speech_stream_media">Media ovozi</string>
-    <string name="speech_stream_ring">Qo\'ng\'iroq tovushi</string>
+    <string name="speech_stream_ring">Qoʻngʻiroq tovushi</string>
     <string name="speech_stream_call">Qoʻngʻiroq ovozi, quloq karnayi</string>
     <string-array name="pref_speech_stream_entries">
         <item>@string/speech_stream_accessibility</item>
@@ -1333,21 +1333,21 @@
     <string name="title_pref_switch_languages">Tilni avtomatik almashtirish</string>
     <string name="title_pref_switch_dialects">Dialektni avtomatik almashtirish</string>
     <string name="category_collapsed">Yigʻilgan boʻlim</string>
-    <string name="category_expanded">Kengaytirilgan bo\'lim</string>
+    <string name="category_expanded">Kengaytirilgan boʻlim</string>
     <string name="title_pref_speak_nav_bar_buttons">Navigatsiya paneli tugmalarini aytish</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">Batareya quvvati <xliff:g id="battery_level" example="73">%1$s</xliff:g> foiz</string>
-    <string name="template_battery_level_unknown">Batareya darajasi noma\'lum</string>
+    <string name="template_battery_level_unknown">Batareya darajasi nomaʼlum</string>
     <string name="value_charger_connected">Zaryadlovchi ulangan</string>
-    <string name="title_pref_screen_announcements">Ekranni yoqish va o\'chirish</string>
+    <string name="title_pref_screen_announcements">Ekranni yoqish va oʻchirish</string>
     <string name="summary_pref_screen_announcements">Ekran oʻchgan yoki yoqilganda va telefon qulfdan chiqarilganda SandFly nima deyishini tanlang</string>
-    <string name="title_screen_announcements_screen_off">Ekran o\'chganda</string>
+    <string name="title_screen_announcements_screen_off">Ekran oʻchganda</string>
     <string name="title_screen_announcements_screen_on">Ekran yoqilganda</string>
     <string name="title_screen_announcements_unlock">Telefon qulfdan chiqarilganda</string>
     <string name="title_pref_say_screen_off">“Ekran oʻchirildi” deb aytish</string>
     <string name="title_pref_say_device_unlocked">“Qurilma qulfdan chiqarildi” deb aytish</string>
     <string name="title_pref_announce_time">Vaqt</string>
-    <string name="title_pref_announce_ringer_mode">Qo\'ng\'iroq rejimi</string>
+    <string name="title_pref_announce_ringer_mode">Qoʻngʻiroq rejimi</string>
     <string name="summary_pref_announce_ringer_mode">Qoʻngʻiroq tebranish yoki ovozsiz rejimga qoʻyilganda aytish</string>
     <string name="title_pref_category_feedback">Javob signallari</string>
     <string name="title_pref_category_typing_and_braille">Matn yozish va brayl</string>
@@ -1388,11 +1388,11 @@
     <string name="title_pref_emoji_repeat_count">Takrorlangan kulgichlarni sanash</string>
     <string name="emoji_repeat_count_off">Oʻchiq</string>
     <string name="emoji_repeat_count_2">2 yoki undan ortiq</string>
-    <string name="emoji_repeat_count_3">3 yoki undan ko\'p</string>
-    <string name="emoji_repeat_count_4">4 yoki undan ko\'p</string>
-    <string name="emoji_repeat_count_5">5 yoki undan ko\'p</string>
-    <string name="emoji_repeat_count_6">6 yoki undan ko\'p</string>
-    <string name="pref_table_headers_category_title">Jadvalni o\'qish</string>
+    <string name="emoji_repeat_count_3">3 yoki undan koʻp</string>
+    <string name="emoji_repeat_count_4">4 yoki undan koʻp</string>
+    <string name="emoji_repeat_count_5">5 yoki undan koʻp</string>
+    <string name="emoji_repeat_count_6">6 yoki undan koʻp</string>
+    <string name="pref_table_headers_category_title">Jadvalni oʻqish</string>
     <string name="pref_table_column_headers_title">Ustun sarlavhalarini oʻqish</string>
     <string name="pref_table_column_headers_entry_after">Katak maʼlumotlaridan keyin</string>
     <string name="pref_table_column_headers_entry_before">Katak maʼlumotlaridan oldin</string>
@@ -1414,12 +1414,12 @@
     <string name="notification_part_time">Vaqt</string>
     <string name="notification_part_playback">Ijro etilmoqda yoki pauza qilingan</string>
     <string name="notification_list_title">Bildirishnomalar</string>
-    <string name="notification_list_empty">Bildirishnomalar yo‘q</string>
-    <string name="notification_list_no_access">Bildirishnomaga kirish o‘chirilgan</string>
+    <string name="notification_list_empty">Bildirishnomalar yoʻq</string>
+    <string name="notification_list_no_access">Bildirishnomaga kirish oʻchirilgan</string>
     <string name="notification_list_grant_access">Bildirishnomalarga ruxsatni yoqish</string>
     <string name="notification_list_quick_settings">Tez sozlamalar</string>
     <string name="notification_list_dismiss">Yopish</string>
-    <string name="notification_list_show_all">Hammasini ko\'rsatish</string>
+    <string name="notification_list_show_all">Hammasini koʻrsatish</string>
     <string name="notification_list_show_less">Kamroq koʻrsatish</string>
     <string name="notification_list_clear_all">Hammasini tozalash</string>
     <string name="notification_list_send">Yuborish</string>
@@ -1438,7 +1438,7 @@
     <string name="quick_settings_title">Tezkor sozlamalar</string>
     <string name="quick_settings_wifi">Wi-Fi</string>
     <string name="quick_settings_bluetooth">Bluetooth</string>
-    <string name="quick_settings_mobile_data">Mobil ma\'lumotlar</string>
+    <string name="quick_settings_mobile_data">Mobil maʼlumotlar</string>
     <string name="quick_settings_hotspot">Hotspot</string>
     <string name="quick_settings_airplane_mode">Samolyot rejimi</string>
     <string name="quick_settings_do_not_disturb">Bezovta qilinmasin</string>
@@ -1453,15 +1453,15 @@
     <string name="quick_settings_brightness">Yorqinlik</string>
     <string name="quick_settings_adaptive_brightness">Moslashuvchan yorqinlik</string>
     <string name="quick_settings_media_volume">Media ovozi</string>
-    <string name="quick_settings_call_volume">Qo\'ng\'iroq balandligi</string>
-    <string name="quick_settings_ring_volume">Qo\'ng\'iroq tovushi</string>
+    <string name="quick_settings_call_volume">Qoʻngʻiroq balandligi</string>
+    <string name="quick_settings_ring_volume">Qoʻngʻiroq tovushi</string>
     <string name="quick_settings_notification_volume">Bildirishnoma ovozi</string>
     <string name="quick_settings_alarm_volume">Budilnik ovozi</string>
     <string name="quick_settings_accessibility_volume">Maxsus imkoniyatlarda tovush balandligi</string>
     <string name="quick_settings_system_volume">Tizim ovoz balandligi</string>
     <string name="quick_settings_data_saver">Ma\'lumotni tejash</string>
-    <string name="quick_settings_night_light">Tungi yorug\'lik</string>
-    <string name="quick_settings_extra_dim">Qo\'shimcha xira</string>
+    <string name="quick_settings_night_light">Tungi yorugʻlik</string>
+    <string name="quick_settings_extra_dim">Qoʻshimcha xira</string>
     <string name="quick_settings_color_inversion">Rangning inversiyasi</string>
     <string name="quick_settings_color_correction">Rangni tuzatish</string>
     <string name="quick_settings_microphone_access">Mikrofonga kirish</string>
@@ -1476,7 +1476,7 @@
     <string name="quick_settings_settings">Sozlamalar</string>
     <string name="quick_settings_power_menu">Quvvat menyusi</string>
     <string name="quick_settings_add_system_tile">Tizim tugmasini qoʻshish</string>
-    <string name="quick_settings_no_system_tiles">Qo\'shish uchun tizim plitalari yo\'q</string>
+    <string name="quick_settings_no_system_tiles">Qoʻshish uchun tizim plitalari yoʻq</string>
     <string name="quick_settings_tile_not_found">%1$s tizimning tezkor sozlamalarida emas</string>
     <string name="quick_settings_never">Hech qachon</string>
     <plurals name="quick_settings_seconds">
@@ -1504,7 +1504,7 @@
     <string name="quick_settings_add_tile">Ilova tugmasini qoʻshish</string>
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
     <string name="quick_settings_columns">Ustunlar soni</string>
-    <string name="quick_settings_move">Ko\'chirish</string>
+    <string name="quick_settings_move">Koʻchirish</string>
     <string name="quick_settings_move_title">%1$s ni koʻchirish</string>
     <string name="quick_settings_cell">Qator %1$d, ustun %2$d</string>
     <string name="quick_settings_cell_with_item">%1$s, %2$s</string>
@@ -1513,8 +1513,8 @@
         <item quantity="one">%d boshqa element koʻchirildi</item>
         <item quantity="other">%d boshqa elementlar koʻchirildi</item>
     </plurals>
-    <string name="quick_settings_remove">O\'chirish</string>
-    <string name="quick_settings_added">%1$s qo\'shildi</string>
+    <string name="quick_settings_remove">Oʻchirish</string>
+    <string name="quick_settings_added">%1$s qoʻshildi</string>
     <string name="quick_settings_removed">%1$s olib tashlandi</string>
     <string name="edge_gestures_title">Chetlar</string>
     <string name="title_pref_vibration_strength">Tebranish kuchi</string>
@@ -1540,7 +1540,7 @@
     <string name="shortcut_open_app"><xliff:g id="app_name" example="Gmail">%1$s</xliff:g> ilovasini ochish</string>
     <string name="shortcut_scroll_to_top">Yuqoriga aylantirish</string>
     <string name="shortcut_write_reading_control">Oʻqish boshqaruvi harfini yozish</string>
-    <string name="title_pref_reading_control_letters">Qo\'lda yozilgan alifbo harflari</string>
+    <string name="title_pref_reading_control_letters">Qoʻlda yozilgan alifbo harflari</string>
     <string name="reading_control_letter_none">Hech qanday</string>
     <string name="handwriting_prompt">Alfavit harfini yozing</string>
     <string name="handwriting_closed">Qoʻlda yozish yopildi</string>
@@ -1549,14 +1549,14 @@
     <string name="handwriting_app_prompt">Ilova nomini yozing</string>
     <string name="handwriting_app_not_opened"><xliff:g id="app" example="WhatsApp">%1$s</xliff:g> ochilmadi</string>
     <string name="handwriting_not_recognized">Qoʻl yozuvi aniqlanmadi</string>
-    <string name="handwriting_downloading">Qo‘l yozuvini tanish yuklab olinmoqda</string>
-    <string name="handwriting_download_title">Qo‘l yozuvini tanish yuklab olinsinmi?</string>
+    <string name="handwriting_downloading">Qoʻl yozuvini tanish yuklab olinmoqda</string>
+    <string name="handwriting_download_title">Qoʻl yozuvini tanish yuklab olinsinmi?</string>
     <string name="handwriting_download_message">Qoʻl yozuvi shu telefonning oʻzida aniqlanadi. Bu til uchun taxminan 20 MB hajmli model Google’dan bir marta yuklab olinadi. Yuklab olingach, xabar chiqadi.</string>
     <string name="handwriting_download_button">Yuklab olish</string>
-    <string name="handwriting_downloaded">Qo‘l yozuvini tanish yuklab olindi</string>
+    <string name="handwriting_downloaded">Qoʻl yozuvini tanish yuklab olindi</string>
     <string name="handwriting_download_failed">Qoʻl yozuvini tanish funksiyasini yuklab boʻlmadi. Internetga ulanishni tekshiring.</string>
-    <string name="handwriting_unsupported_language">Bu tilda qo‘l yozuvini tanib bo‘lmaydi</string>
-    <string name="title_pref_handwriting_keyboard">Qo\'lda yozish klaviaturasi</string>
+    <string name="handwriting_unsupported_language">Bu tilda qoʻl yozuvini tanib boʻlmaydi</string>
+    <string name="title_pref_handwriting_keyboard">Qoʻlda yozish klaviaturasi</string>
     <string name="summary_pref_handwriting_keyboard">Android klaviatura sozlamalarida SandFly qoʻl yozuvini yoqing</string>
     <string name="title_pref_handwriting_wait">Yozgandan keyin kuting</string>
     <string name="value_handwriting_wait_200">0.2 soniya</string>
@@ -1566,12 +1566,12 @@
     <string name="value_handwriting_wait_600">0,6 soniya</string>
     <string name="value_handwriting_wait_800">0,8 soniya</string>
     <string name="value_handwriting_wait_1000">1 soniya</string>
-    <string name="handwriting_keyboard_name">SandFly qo\'l yozuvi</string>
+    <string name="handwriting_keyboard_name">SandFly qoʻl yozuvi</string>
     <string name="handwriting_space">Probel</string>
     <string name="handwriting_new_line">Yangi qator</string>
     <string name="handwriting_tutorial_intro">Qoʻlda yozish klaviaturasi boʻyicha qoʻllanma. Ekranning istalgan joyiga bitta barmoq bilan yozing. Bir zum toʻxtaganingizda yozganingiz kiritiladi. Qoʻllanmani tugatish uchun uch barmoq bilan pastga suring.</string>
     <string name="handwriting_tutorial_write_letter">a harfini yozing.</string>
-    <string name="handwriting_tutorial_write_word">Endi hi so\'zini yozing (h keyin i).</string>
+    <string name="handwriting_tutorial_write_word">Endi hi soʻzini yozing (h keyin i).</string>
     <string name="handwriting_tutorial_typed"><xliff:g id="text" example="a">%1$s</xliff:g> yozildi.</string>
     <string name="handwriting_tutorial_space">Boʻsh joy kiritish uchun ikki barmoq bilan oʻngga suring.</string>
     <string name="handwriting_tutorial_delete">Kursor oldidagi belgini oʻchirish uchun ikki barmoq bilan chapga suring.</string>
@@ -1582,10 +1582,10 @@
     <string name="handwriting_tutorial_not_that">Bu boshqa ishora edi.</string>
     <string name="handwriting_tutorial_done">Yangi qator. Qoʻllanma tugadi. Klaviaturani yashirish uchun uch barmoq bilan pastga, klaviaturani almashtirish uchun uch barmoq bilan oʻngga yoki chapga suring. Qoʻllanmani yana ochish uchun uch barmoq bilan bosing.</string>
     <string name="handwriting_tutorial_finished">Qoʻllanma tugadi. Uni qayta ochish uchun uch barmoq bilan bosing.</string>
-    <string name="handwriting_no_alternatives">Boshqa takliflar yo\'q</string>
+    <string name="handwriting_no_alternatives">Boshqa takliflar yoʻq</string>
     <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> / <xliff:g id="count" example="5">%3$d</xliff:g></string>
-    <string name="handwriting_empty">Bo\'sh matn</string>
-    <string name="handwriting_not_available">Bu qurilmada qo‘l yozuvini tanib bo‘lmaydi</string>
+    <string name="handwriting_empty">Boʻsh matn</string>
+    <string name="handwriting_not_available">Bu qurilmada qoʻl yozuvini tanib boʻlmaydi</string>
     <string name="shortcut_scroll_to_bottom">Pastga aylantirish</string>
     <string name="shortcut_refresh">Yangilash</string>
     <string name="shortcut_system_notifications">Tizim bildirishnomalar paneli</string>
@@ -1596,9 +1596,9 @@
     <string name="shortcut_decrease_media_volume">Media ovozini pasaytirish</string>
     <string name="title_clear_selection">Tanlovni tozalash</string>
     <string name="title_pref_brightness">Yorqinlik</string>
-    <string name="summary_support_change_brightness">Ekran yashirin bo\'lsa ham, ekran yorqinligini oshiring yoki kamaytiring</string>
+    <string name="summary_support_change_brightness">Ekran yashirin boʻlsa ham, ekran yorqinligini oshiring yoki kamaytiring</string>
     <string name="title_pref_shortcut_3finger_4tap">3 ta barmoq bilan toʻrt marta bosing</string>
-    <string name="title_pref_shortcut_2finger_rotate_clockwise">2 barmoq bilan soat yo\'nalishi bo\'yicha aylantiring</string>
+    <string name="title_pref_shortcut_2finger_rotate_clockwise">2 barmoq bilan soat yoʻnalishi boʻyicha aylantiring</string>
     <string name="title_pref_shortcut_2finger_rotate_counterclockwise">2 barmoq bilan soat miliga teskari aylantiring</string>
     <string name="title_pref_shortcut_2finger_scrub">2 barmoq bilan ishqalang</string>
     <string name="title_pref_shortcut_2finger_pinch">2 barmoq bilan chimchilash</string>
@@ -1613,24 +1613,24 @@
     <string name="title_pref_shortcut_edge_top_right_down">Yuqori oʻngdan pastga suring</string>
     <string name="title_pref_shortcut_edge_top_left_long_down">Yuqori chapdan pastga uzun suring</string>
     <string name="title_pref_shortcut_edge_top_right_long_down">Yuqori oʻngdan pastga uzun suring</string>
-    <string name="title_pref_shortcut_edge_left_top_right">Chap chetidan, yuqori yarmidan o\'ngga suring</string>
+    <string name="title_pref_shortcut_edge_left_top_right">Chap chetidan, yuqori yarmidan oʻngga suring</string>
     <string name="title_pref_shortcut_edge_left_top_long_right">Chap chetning yuqori yarmidan oʻngga uzun suring</string>
-    <string name="title_pref_shortcut_edge_left_bottom_right">Chap chetidan, pastki yarmidan o\'ngga suring</string>
+    <string name="title_pref_shortcut_edge_left_bottom_right">Chap chetidan, pastki yarmidan oʻngga suring</string>
     <string name="title_pref_shortcut_edge_left_bottom_long_right">Chap chetning pastki yarmidan oʻngga uzun suring</string>
-    <string name="title_pref_shortcut_edge_right_top_left">O\'ng chetidan, yuqori yarmidan chapga suring</string>
+    <string name="title_pref_shortcut_edge_right_top_left">Oʻng chetidan, yuqori yarmidan chapga suring</string>
     <string name="title_pref_shortcut_edge_right_top_long_left">Oʻng chetning yuqori yarmidan chapga uzun suring</string>
-    <string name="title_pref_shortcut_edge_right_bottom_left">O\'ng chetidan, pastki yarmidan chapga suring</string>
+    <string name="title_pref_shortcut_edge_right_bottom_left">Oʻng chetidan, pastki yarmidan chapga suring</string>
     <string name="title_pref_shortcut_edge_right_bottom_long_left">Oʻng chetning pastki yarmidan chapga uzun suring</string>
-    <string name="value_type_confirmation_lift_to_type_except_action_key">Istalgan tugmani tanlash uchun barmog\'ingizni ushlab turing, so\'ng ko\'taring. Kirish, Bajarildi yoki Yuborish uchun ikki marta bosing.</string>
-    <string name="value_type_confirmation_tap_to_type">Uni kiritish uchun istalgan tugmani bosing yoki istalgan tugmani tanlash uchun barmog‘ingizni ushlab turing, so‘ng ko‘taring</string>
+    <string name="value_type_confirmation_lift_to_type_except_action_key">Istalgan tugmani tanlash uchun barmogʻingizni ushlab turing, soʻng koʻtaring. Kirish, Bajarildi yoki Yuborish uchun ikki marta bosing.</string>
+    <string name="value_type_confirmation_tap_to_type">Uni kiritish uchun istalgan tugmani bosing yoki istalgan tugmani tanlash uchun barmogʻingizni ushlab turing, soʻng koʻtaring</string>
     <string name="title_pref_multi_tap_timeout">Bir barmoq bilan bosish orasidagi vaqt</string>
     <string name="value_multi_tap_timeout_100ms">0,1 soniya</string>
     <string name="value_multi_tap_timeout_150ms">0.15 soniya</string>
     <string name="value_multi_tap_timeout_200ms">0.2 soniya</string>
     <string name="value_multi_tap_timeout_250ms">0,25 soniya (standart)</string>
     <string name="title_pref_rotor_step_degrees">Har bir qadamda rotorning aylanishi</string>
-    <string name="title_pref_edge_first_click_mm">Birinchi bosishgacha bo\'lgan masofa</string>
-    <string name="title_pref_edge_second_click_mm">Birinchi bosishdan ikkinchi marta bosishgacha bo\'lgan masofa</string>
+    <string name="title_pref_edge_first_click_mm">Birinchi bosishgacha boʻlgan masofa</string>
+    <string name="title_pref_edge_second_click_mm">Birinchi bosishdan ikkinchi marta bosishgacha boʻlgan masofa</string>
     <string name="value_distance_5mm">0,5 sm</string>
     <string name="value_distance_10mm">1 sm</string>
     <string name="value_distance_15mm">1,5 sm</string>
@@ -1647,12 +1647,12 @@
     <string name="summary_pref_low_latency_audio">SandFly tovushlari va nutqini telefonning eng tez audio yoʻli orqali ijro etadi, shunda ularni tezroq eshitasiz. Nutq yoki tovushlar uzilib qolsa yoki notoʻgʻri eshitilsa, uni oʻchiring.</string>
     <string name="value_focus_delay_150ms_default">0,15 soniya (standart)</string>
     <string name="value_focus_delay_300ms">0,3 soniya</string>
-    <string name="title_pref_lift_to_activate">Faollashtirish uchun ko\'taring</string>
+    <string name="title_pref_lift_to_activate">Faollashtirish uchun koʻtaring</string>
     <string name="summary_support_change_lift_to_activate">Barmoqni koʻtarganda element qayerda faollashishini oʻzgartirish</string>
     <string name="value_lift_to_activate_disabled">Oʻchirilgan</string>
     <string name="value_lift_to_activate_navigation_bar">Faqat navigatsiya panelida</string>
     <string name="value_lift_to_activate_entire_screen">Butun ekran</string>
-    <string name="template_lift_to_activate_changed">Faollashtirish uchun ko\'taring: <xliff:g id="mode">%1$s</xliff:g></string>
+    <string name="template_lift_to_activate_changed">Faollashtirish uchun koʻtaring: <xliff:g id="mode">%1$s</xliff:g></string>
     <string name="title_pref_wrap_around">Boshiga qaytish</string>
     <string name="summary_pref_wrap_around">Oxirgi elementdan oʻtib surilsa birinchisiga, birinchisidan oʻtib surilsa oxirgisiga oʻtadi. Oʻchiq boʻlsa, buning oʻrniga oxirida tovush ijro etiladi.</string>
     <string name="title_pref_fix_stuck_touch_exploration">Qotib qolgan teginib oʻrganishni tuzatish</string>
@@ -1691,7 +1691,7 @@
     <string name="title_keyboard_echo_on_screen">Ekrandagi klaviatura aks-sadosi</string>
     <string name="title_keyboard_echo_physical">Jismoniy klaviatura aks-sadosi</string>
     <string name="title_keyboard_echo_braille_keyboard">Brayl klaviaturasi aks sadosi</string>
-    <string name="title_keyboard_echo_handwriting_keyboard">Qo\'l yozuvi klaviaturasi aks-sadosi</string>
+    <string name="title_keyboard_echo_handwriting_keyboard">Qoʻl yozuvi klaviaturasi aks-sadosi</string>
     <string name="title_keyboard_echo_braille_display">Brayl ekrani aks-sadosi</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
     <string name="title_pref_interrupt_typing">Yozish paytida nutqni toʻxtatish</string>
@@ -1719,7 +1719,7 @@
     <string name="gemini_error_with_code">Gemini javob bera olmadi, xato <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
     <string name="gemini_error_with_details">Gemini javob bera olmadi, xato <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
     <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. Batafsilroq rasm tavsifini olib boʻlmadi: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>
-    <string name="image_qna_ask_by_voice">Ovoz bilan so\'rang</string>
+    <string name="image_qna_ask_by_voice">Ovoz bilan soʻrang</string>
     <string name="image_qna_stop_listening">Tinglashni toʻxtatish</string>
     <string name="image_qna_type_question">Savol yozing</string>
     <string name="shortcut_dictate">Ovoz bilan yozish</string>
@@ -1748,7 +1748,7 @@
     <string name="title_pref_export_settings">Sozlamalarni eksport qilish</string>
     <string name="title_pref_import_settings">Sozlamalarni import qilish</string>
     <string name="settings_export_done">Sozlamalar eksport qilindi. API kalitlari kiritilmagan</string>
-    <string name="settings_export_failed">Sozlamalarni eksport qilib bo‘lmadi</string>
+    <string name="settings_export_failed">Sozlamalarni eksport qilib boʻlmadi</string>
     <string name="settings_import_done">Sozlamalar import qilindi</string>
     <string name="settings_import_failed">Bu fayl SandFly yoki Backtalk sozlamalar fayli emas yoki uni oʻqib boʻlmadi</string>
     <string name="arrow_key_nav_assign_instruction">Bitta tugmani yoki ikki tugmani birga bosing, modifikator tugmalar bilan yoki ularsiz. Tozalash uchun Backspace, standartga qaytarish uchun Ctrl + Backspace, saqlash uchun Enter, bekor qilish uchun Escape tugmasini bosing.</string>
@@ -1808,29 +1808,29 @@
   <string name="keycombo_delete_keymap_button">Oʻchirish</string>
   <string name="keycombo_assign_dialog_custom_keymap_instruction">Yangi tezkor tugmaning tugmalarini bosing.</string>
     <string name="title_pref_sandfly_wallpaper">SandFly ilovasini fon rasmi sifatida ishlatish</string>
-    <string name="summary_pref_sandfly_wallpaper_set">SandFly fon rasmi sifatida o‘rnatilgan</string>
+    <string name="summary_pref_sandfly_wallpaper_set">SandFly fon rasmi sifatida oʻrnatilgan</string>
     <string name="title_pref_wallpaper_image">Fon uchun rasm</string>
-    <string name="sandfly_wallpaper_description">Batareya tejagichi fondagi ilovalarni to‘xtatadigan telefonlarda SandFly ishlashini davom ettiradi.</string>
-    <string name="wallpaper_image_set">Fon uchun rasm o‘rnatildi</string>
-    <string name="wallpaper_image_failed">Bu rasmdan foydalanib bo‘lmaydi</string>
+    <string name="sandfly_wallpaper_description">Batareya tejagichi fondagi ilovalarni toʻxtatadigan telefonlarda SandFly ishlashini davom ettiradi.</string>
+    <string name="wallpaper_image_set">Fon uchun rasm oʻrnatildi</string>
+    <string name="wallpaper_image_failed">Bu rasmdan foydalanib boʻlmaydi</string>
     <string name="title_pref_swipe_hold_time">Surishdan keyin ushlab turish vaqti</string>
     <string name="shortcut_touch_click_action">Bosish orqali faollashtirish</string>
     <string name="title_pref_shortcut_up_and_hold">Tepaga surish va ushlab turish</string>
     <string name="title_pref_shortcut_down_and_hold">Pastga surish va ushlab turish</string>
     <string name="title_pref_shortcut_left_and_hold">Chapga surish va ushlab turish</string>
-    <string name="title_pref_shortcut_right_and_hold">O‘ngga surish va ushlab turish</string>
+    <string name="title_pref_shortcut_right_and_hold">Oʻngga surish va ushlab turish</string>
     <string name="title_pref_shortcut_up_and_down_and_hold">Tepaga, keyin pastga surish va ushlab turish</string>
     <string name="title_pref_shortcut_down_and_up_and_hold">Pastga, keyin tepaga surish va ushlab turish</string>
-    <string name="title_pref_shortcut_left_and_right_and_hold">Chapga, keyin o‘ngga surish va ushlab turish</string>
-    <string name="title_pref_shortcut_right_and_left_and_hold">O‘ngga, keyin chapga surish va ushlab turish</string>
+    <string name="title_pref_shortcut_left_and_right_and_hold">Chapga, keyin oʻngga surish va ushlab turish</string>
+    <string name="title_pref_shortcut_right_and_left_and_hold">Oʻngga, keyin chapga surish va ushlab turish</string>
     <string name="title_pref_shortcut_up_and_left_and_hold">Tepaga, keyin chapga surish va ushlab turish</string>
-    <string name="title_pref_shortcut_up_and_right_and_hold">Tepaga, keyin o‘ngga surish va ushlab turish</string>
+    <string name="title_pref_shortcut_up_and_right_and_hold">Tepaga, keyin oʻngga surish va ushlab turish</string>
     <string name="title_pref_shortcut_down_and_left_and_hold">Pastga, keyin chapga surish va ushlab turish</string>
-    <string name="title_pref_shortcut_down_and_right_and_hold">Pastga, keyin o‘ngga surish va ushlab turish</string>
+    <string name="title_pref_shortcut_down_and_right_and_hold">Pastga, keyin oʻngga surish va ushlab turish</string>
     <string name="title_pref_shortcut_left_and_up_and_hold">Chapga, keyin tepaga surish va ushlab turish</string>
     <string name="title_pref_shortcut_left_and_down_and_hold">Chapga, keyin pastga surish va ushlab turish</string>
-    <string name="title_pref_shortcut_right_and_up_and_hold">O‘ngga, keyin tepaga surish va ushlab turish</string>
-    <string name="title_pref_shortcut_right_and_down_and_hold">O‘ngga, keyin pastga surish va ushlab turish</string>
+    <string name="title_pref_shortcut_right_and_up_and_hold">Oʻngga, keyin tepaga surish va ushlab turish</string>
+    <string name="title_pref_shortcut_right_and_down_and_hold">Oʻngga, keyin pastga surish va ushlab turish</string>
   <string name="shortcut_toggle_magnification">Kattalashtirishni yoqish yoki oʻchirish</string>
   <string name="shortcut_submit_text">Matn kiritish</string>
   <string name="shortcut_clear_text">Matnni tozalash</string>

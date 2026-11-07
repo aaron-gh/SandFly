@@ -187,7 +187,7 @@
   <string name="keycombo_menu_other_read_current_url">URL der Seite vorlesen lassen</string>
   <string name="keycombo_menu_other_read_link_url">URL vorlesen lassen</string>
   <string name="keycombo_menu_other_open_voice_commands">Sprachbefehle öffnen</string>
-  <string name="keycombo_menu_other_toggle_browse_mode">Suchmodus aktivieren oder deaktivieren</string>
+  <string name="keycombo_menu_other_toggle_browse_mode">Browsemodus aktivieren oder deaktivieren</string>
   <string name="keycombo_menu_web_navigate_to_next_button">Zur nächsten Taste gehen</string>
   <string name="keycombo_menu_web_navigate_to_previous_button">Zur vorherigen Taste gehen</string>
   <string name="keycombo_menu_web_navigate_to_next_control">Zum nächsten Steuerelement gehen</string>
@@ -251,7 +251,7 @@
   <string name="cannot_delete_feedback">Kein Text zum Löschen – wähle zuerst Text aus.</string>
   <string name="message_in_reset_keymap_confirm_dialog">Möchtest du die Tastenkombinationen für diese Tastaturbelegung wirklich auf die Standardwerte zurücksetzen? Diese Aktion kann nicht rückgängig gemacht werden.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">Zurücksetzen</string>
-  <string name="template_keycombo_menu_browse_mode_command">Im Suchmodus: %1$s</string>
+  <string name="template_keycombo_menu_browse_mode_command">Im Browsemodus: <xliff:g id="key_combo_name">%1$s</xliff:g></string>
   <string name="keycombo_assign_dialog_default_keymap_instruction">Drücke die Tastenkombination mit der SandFly-Taste „%1$s“, um eine neue Tastenkombination festzulegen.</string>
   <string name="keycombo_unassigned">Nicht zugewiesen</string>
   <string name="save_button_in_keycombo_assign_dialog">Speichern</string>
@@ -885,12 +885,12 @@
   <string name="split_tap_everywhere_title">Geteiltes Tippen ist jetzt überall möglich</string>
   <string name="split_tap_everywhere_text">Du kannst jetzt überall „Geteiltes Tippen“ verwenden, um Elemente zu aktivieren, auch außerhalb der Tastatur. Wenn du diese Funktion verwenden möchtest, lege einen Finger auf das Display. Tippe dann, ohne den ersten Finger anzuheben, mit einem anderen Finger auf das Display, um das aktuell hervorgehobene Element zu aktivieren.</string>
   <string name="keyboard_enhanced_keymap_title">Tastatur: Erweiterte Tastaturbelegung</string>
-  <string name="keyboard_enhanced_keymap_text">SandFly bietet jetzt eine erweiterte Tastaturbelegung für physische Tastaturen mit vielen neuen Befehlen und Tastenkombinationen. Diese Erweiterung enthält einen Suchmodus für effizientere Webnavigation und optimiert die Bedienung und Interaktion für SandFly-Nutzer, die auf physische Tastaturen angewiesen sind. Du kannst über die <xliff:g id="settings_path">%1$s</xliff:g> zur erweiterten Tastaturbelegung wechseln.\n\nWenn du eine Braillezeile verwendest, kannst du auch neue Tastenkombinationen für den Suchmodus verwenden, um dich direkt über die Braillezeile durch Inhalte zu bewegen. Einige Tastenkombinationen für die Braillezeile wurden angepasst, um dieser Änderung Rechnung zu tragen. Eine Liste aller Tastenkombinationen für die Braillezeile findest du in den <xliff:g id="braille_display_settings_path">%2$s</xliff:g>.</string>
+  <string name="keyboard_enhanced_keymap_text">SandFly bietet jetzt eine erweiterte Tastaturbelegung für physische Tastaturen mit vielen neuen Befehlen und Tastenkombinationen. Diese Erweiterung enthält einen Browsemodus für effizientere Webnavigation und optimiert die Bedienung und Interaktion für SandFly-Nutzer, die auf physische Tastaturen angewiesen sind. Du kannst über die <xliff:g id="settings_path">%1$s</xliff:g> zur erweiterten Tastaturbelegung wechseln.\n\nWenn du eine Braillezeile verwendest, kannst du auch neue Tastenkombinationen für den Browsemodus verwenden, um dich direkt über die Braillezeile durch Inhalte zu bewegen. Einige Tastenkombinationen für die Braillezeile wurden angepasst, um dieser Änderung Rechnung zu tragen. Eine Liste aller Tastenkombinationen für die Braillezeile findest du in den <xliff:g id="braille_display_settings_path">%2$s</xliff:g>.</string>
   <string name="keyboard_shortcuts_link">SandFly-Einstellungen &gt; „Tastenkombinationen“</string>
   <string name="keyboard_shortcuts_link_tts">SandFly-Einstellungen unter „Tastenkombinationen“</string>
   <string name="braille_display_settings_link">Braillezeile-Einstellungen</string>
-  <string name="keyboard_smart_browse_mode_title">Tastatur: Intelligenter Suchmodus</string>
-  <string name="keyboard_smart_browse_mode_text">Der intelligente SandFly-Suchmodus deaktiviert den Suchmodus in einem Bearbeitungsfeld, damit du beim Surfen im Web mit einer physischen Tastatur tippen kannst. Wenn du dann zu einem nicht bearbeitbaren Feld im Web wechselst, wird er wieder aktiviert, damit du problemlos weitersurfen kannst. Du kannst „Intelligenter Suchmodus“ in den <xliff:g id="settings_path">%1$s</xliff:g> aktivieren oder deaktivieren.</string>
+  <string name="keyboard_smart_browse_mode_title">Tastatur: Intelligenter Browsemodus</string>
+  <string name="keyboard_smart_browse_mode_text">Der intelligente SandFly-Browsemodus deaktiviert den Browsemodus in einem Bearbeitungsfeld, damit du beim Surfen im Web mit einer physischen Tastatur tippen kannst. Wenn du dann zu einem nicht bearbeitbaren Feld im Web wechselst, wird er wieder aktiviert, damit du problemlos weitersurfen kannst. Du kannst „Intelligenter Browsemodus“ in den <xliff:g id="settings_path">%1$s</xliff:g> aktivieren oder deaktivieren.</string>
   <string name="keyboard_tutorial_title">Anleitung zur Tastaturnutzung</string>
   <string name="keyboard_tutorial_text">SandFly enthält jetzt eine Anleitung zur Tastaturnutzung, mit der du die Tastenkombinationen und Befehle für die erweiterte Tastaturbelegung bei Verwendung einer physischen Tastatur lernen kannst. Du findest die Anleitung in den <xliff:g id="settings_path">%1$s</xliff:g>.</string>
   <string name="tutorial_entry_point_title">Anleitung</string>
@@ -1261,11 +1261,11 @@
   <string name="required_state_appended">%1$s erforderlich</string>
   <string name="keyboard_shortcuts_no_results">Keine Ergebnisse</string>
   <string name="keyboard_shortcuts_dialog_search_hint">Suchen</string>
-  <string name="browse_mode_on_hint">Suchmodus aktiviert</string>
-  <string name="browse_mode_off_hint">Suchmodus deaktiviert</string>
+  <string name="browse_mode_on_hint">Browsemodus aktiviert</string>
+  <string name="browse_mode_off_hint">Browsemodus deaktiviert</string>
   <string name="browse_mode_double_trigger_modifier">%1$s %1$s</string>
-  <string name="title_smart_browse_mode">Intelligenter Suchmodus</string>
-  <string name="summary_smart_browse_mode">Der Suchmodus wird automatisch ein- oder ausgeschaltet, je nachdem, welches Element gerade im Fokus steht. Dadurch wird der Eingabefokus mit dem SandFly-Fokus synchronisiert.</string>
+  <string name="title_smart_browse_mode">Intelligenter Browsemodus</string>
+  <string name="summary_smart_browse_mode">Der Browsemodus wird automatisch ein- oder ausgeschaltet, je nachdem, welches Element gerade im Fokus steht. Dadurch wird der Eingabefokus mit dem SandFly-Fokus synchronisiert.</string>
   <string name="typing_echo_change_visual_feedback">Echo der physischen Tastatur: %1$s</string>
   <string name="talkback_turn_off_title">SandFly deaktivieren?</string>
   <string name="talkback_turn_off_button">Deaktivieren</string>
@@ -1743,7 +1743,7 @@
     <string name="title_pref_whisper_models">Whisper-Modelle</string>
     <string name="dictation_whisper_use">Verwenden</string>
     <string name="title_pref_dictation_ai_service">KI-Dienst für das Diktieren</string>
-    <string name="title_pref_browse_mode_per_app">Suchmodus für jede App merken</string>
+    <string name="title_pref_browse_mode_per_app">Browsemodus für jede App merken</string>
     <string name="title_pref_telegram_reply_quotes">Antwortzitate in Telegram mit der Nachricht vorlesen</string>
     <string name="title_pref_export_settings">Einstellungen exportieren</string>
     <string name="title_pref_import_settings">Einstellungen importieren</string>
@@ -1851,7 +1851,7 @@
     <string name="title_pref_delete_gesture_profile">Gestenprofil löschen</string>
     <string name="title_pref_tap_nav_bar_buttons">Schaltflächen der Navigationsleiste durch Tippen aktivieren</string>
     <string name="title_pref_reset_accessibility_audio">Bedienungshilfen-Audio nach Anrufen zurücksetzen</string>
-    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">Erfordert Shizuku. Ohne Shizuku führen Sie diesen Befehl mit adb aus, wenn die Sprachausgabe nach einem Anruf über die Hörmuschel läuft: %1$s</string>
+    <string name="summary_pref_reset_accessibility_audio_needs_shizuku">Erfordert Shizuku. Ohne Shizuku führe diesen Befehl mit adb aus, wenn die Sprachausgabe nach einem Anruf über die Hörmuschel läuft: %1$s</string>
     <string name="arrow_key_nav_unavailable">Keine Pfeiltastennavigation in dieser Tastaturbelegung</string>
     <string name="shortcut_braille_app_name">Namen einer App in Braille eingeben, um sie zu öffnen</string>
     <string name="braille_app_prompt">Namen einer App in Braille eingeben</string>

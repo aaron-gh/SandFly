@@ -2,13 +2,13 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="untitled_window">sarlavhasiz</string>
   <string name="template_shorten_text">%1$d belgi: %2$s – %3$s</string>
-  <string name="template_text_copied">nusxa ko‘chirildi: %1$s</string>
+  <string name="template_text_copied">nusxa koʻchirildi: <xliff:g id="text">%1$s</xliff:g></string>
   <string name="template_capital_letter">bosh harf: %1$s</string>
   <string name="character_collapse_template"> %1$d ta %2$s﻿</string>
   <string name="template_current_tts_engine">Foydalanilmoqda: %1$s</string>
   <string name="granularity_default">Standart</string>
   <string name="granularity_character">Belgilar</string>
-  <string name="granularity_word">So‘zlar</string>
+  <string name="granularity_word">Soʻzlar</string>
   <string name="granularity_line">Qatorlar</string>
   <string name="granularity_paragraph">Xatboshilar</string>
   <string name="granularity_container">Konteynerlar</string>
@@ -33,7 +33,7 @@
   <string name="granularity_web_h6">Sarlavha 6</string>
   <string name="granularity_web_graphic">Rasm va videolar</string>
   <string name="granularity_web_listitem">Roʻyxat bandlari</string>
-  <string name="granularity_web_list">Ro‘yxatlar</string>
+  <string name="granularity_web_list">Roʻyxatlar</string>
   <string name="granularity_web_table">Jadvallar</string>
   <string name="granularity_web_combobox">Kombo roʻyxatlar</string>
   <string name="granularity_native_heading">Sarlavhalar</string>
@@ -44,10 +44,10 @@
   <string name="granularity_column">Ustun</string>
   <string name="template_overlay_window">%1$s: tasvir ustida tasvir rejimi</string>
   <string name="template_split_screen_mode_portrait">Tepada %1$s, pastda %2$s</string>
-  <string name="template_split_screen_mode_landscape_ltr">Chapda %1$s, o‘ngda %2$s</string>
-  <string name="template_split_screen_mode_landscape_rtl">O‘ngda %1$s, chapda %2$s</string>
-  <string name="template_scroll_from_to_count">Jami %1$d ta elementdan %2$d dan %3$d gacha elementlar ko‘rsatilmoqda.</string>
-  <string name="template_scroll_from_count">Jami %1$d ta elementdan %2$d tasi ko‘rsatilmoqda.</string>
+  <string name="template_split_screen_mode_landscape_ltr">Chapda <xliff:g name="window_title_a" example="Application A">%1$s</xliff:g>, oʻngda <xliff:g name="window_title_b" example="Application B">%2$s</xliff:g></string>
+  <string name="template_split_screen_mode_landscape_rtl">Oʻngda <xliff:g name="window_title_a" example="Application A">%1$s</xliff:g>, chapda <xliff:g name="window_title_b" example="Application B">%2$s</xliff:g></string>
+  <string name="template_scroll_from_to_count">Jami <xliff:g id="total_count">%3$d</xliff:g> ta elementdan <xliff:g id="from_index">%1$d</xliff:g> dan <xliff:g id="to_index">%2$d</xliff:g> gacha elementlar koʻrsatilmoqda.</string>
+  <string name="template_scroll_from_count">Jami <xliff:g id="total_count">%2$d</xliff:g> ta elementdan <xliff:g id="from_index">%1$d</xliff:g>-element koʻrsatilmoqda.</string>
   <string name="template_viewpager_index_count">Jami %2$d tadan %1$d ta sahifa</string>
   <string name="template_viewpager_index_count_short">Jami %2$d tadan %1$d ta</string>
   <string name="url_dialog_table">%1$s (%2$s)</string>

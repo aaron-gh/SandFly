@@ -13,14 +13,14 @@
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, dan Flash-Lite wanneer dit besig is</string>
     <string name="gemini_model_loading">Kry tans die modelle…</string>
     <string name="gemini_model_list_failed">Kon nie die modelle kry nie: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
-    <string name="gemini_model_needs_key">Stel eers \'n Gemini API-sleutel in</string>
+    <string name="gemini_model_needs_key">Stel eers ’n Gemini API-sleutel in</string>
     <string name="ai_service_address_hint">Adres, soos https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">Model</string>
     <string name="ai_service_address_invalid">Die adres moet begin met https://. Niks is gestoor nie.</string>
     <string name="dialog_message_ai_service_consent">Prente en skermkiekies word na <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> gestuur om beskryf te word, wat etlike sekondes neem. Sy eie bepalings en privaatheidsbeleid is van toepassing. Generatiewe KI is eksperimenteel, so dit sal foute maak.</string>
     <string name="ai_service_error_api_key">Die KI-diens het nie die API-sleutel aanvaar nie. Gaan sy instellings na in Prent- en skermbeskrywings.</string>
     <string name="ai_service_error_quota">Die gebruikslimiet van die KI-diens is bereik. Probeer later weer.</string>
-    <string name="ai_service_error_busy">Die KI-diens is tans besig. Probeer oor \'n oomblik weer.</string>
+    <string name="ai_service_error_busy">Die KI-diens is tans besig. Probeer oor ’n oomblik weer.</string>
     <string name="ai_service_error_timeout">Die KI-diens het te lank geneem om te antwoord. Probeer weer.</string>
     <string name="ai_provider_gemini">Gemini</string>
     <string name="ai_provider_claude">Claude</string>
@@ -39,9 +39,9 @@
     <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, nie opgestel nie</string>
     <string name="ai_provider_in_use">In gebruik</string>
     <string name="ai_provider_not_set_up">Nie opgestel nie</string>
-    <string name="ai_provider_not_ready">Kies eers \'n model</string>
+    <string name="ai_provider_not_ready">Kies eers ’n model</string>
     <string name="ai_provider_address">Adres</string>
-    <string name="ai_provider_address_message">Die adres van \'n diens met \'n OpenAI-versoenbare klets-API en beeldinvoer, soos https://example.com/v1.</string>
+    <string name="ai_provider_address_message">Die adres van ’n diens met ’n OpenAI-versoenbare klets-API en beeldinvoer, soos https://example.com/v1.</string>
     <string name="ai_provider_not_set">Nie gestel nie</string>
     <string name="ai_provider_set">Gekonfigureer</string>
     <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API-sleutel</string>
@@ -50,5 +50,5 @@
     <string name="ai_provider_key_message">Plak jou <xliff:g id="service" example="Claude">%1$s</xliff:g>-API-sleutel. Maak die veld leeg en stoor om dit te verwyder. Prente en skerms wat jy laat beskryf, word na <xliff:g id="service" example="Claude">%1$s</xliff:g> gestuur.</string>
     <string name="ai_provider_needs_key">Stel eers die <xliff:g id="service" example="Claude">%1$s</xliff:g>-API-sleutel in</string>
     <string name="ai_provider_needs_address">Stel eers die adres in</string>
-    <string name="ai_provider_enter_model">Voer \'n modelnaam in</string>
+    <string name="ai_provider_enter_model">Voer ’n modelnaam in</string>
 </resources>

@@ -20,7 +20,7 @@
   <string name="notification_type_status_stopped">បានបញ្ឈប់</string>
   <string name="notification_battery_saver_mode">មុខងារសន្សំថ្ម​ត្រូវបានបើក</string>
   <string name="template_no_text_selected">គ្មានអត្ថបទដែលបានជ្រើសទេ</string>
-  <string name="template_charging">ភាគរយ %1$s កម្រិតថ្ម %2$s កំពុងសាក។</string>
+  <string name="template_charging">កំពុងសាកថ្ម <xliff:g id="changing_status">%1$s</xliff:g> កម្រិតថ្ម <xliff:g id="battery_level">%2$s</xliff:g> ភាគរយ។</string>
   <string name="template_charging_lite">កំពុងសាកថ្ម %1$s</string>
   <string name="template_language_options_menu_item">%1$s (%2$s)</string>
   <string name="value_ringer_vibrate">កម្មវិធី​រោទ៍​ញ័រ។</string>
@@ -673,7 +673,7 @@
   <string name="dialog_message_disable_exploration">តើ​អ្នក​ប្រាកដ​ជា​ចង់​បិទ «រកមើលដោយការប៉ះ»?\n\nឧបករណ៍​របស់​អ្នក​នឹង​លែង​ឆ្លើយតប​ចលនា​ផ្លូវកាត់ ឬ​និយាយ​​ធាតុ​ណាមួយ​ពេល​អ្នក​ប៉ះ​អេក្រង់។</string>
   <string name="dialog_title_enable_tree_debug">បើក​ការ​​បំបាត់​កំហុស​ដើម​ថ្នាំង​?</string>
   <string name="dialog_message_enable_tree_debug">តើ​អ្នក​ប្រាកដ​ជា​ចង់​បើក​ការ​បំបាត់​កំហុស​ដើម​ថ្នាំង​?\n\nបំបាត់​កំហុស​ដើម​ថ្នាំង​បង្ហាញ​មាតិកា​នៃ​អេក្រង់​របស់​អ្នក​ទៅ​កាន់​កំណត់​ហេតុ​ឧបករណ៍​របស់​អ្នក​ ដែល​អ្នក​​អាច​អាន​តាម​​កម្មវិធី​ផ្សេង​ទៀត​។</string>
-  <string name="dialog_title_enable_tree_debug_gesture">កំណត់ការចុចបីដងឡើងវិញដោយប្រើចលនាម្រាមដៃបួន 4 ឬ?</string>
+  <string name="dialog_title_enable_tree_debug_gesture">កំណត់ចលនាចុចបីដងដោយប្រើម្រាមដៃ 4 ឡើងវិញឬ?</string>
   <string name="dialog_message_enable_tree_debug_gesture">ការបញ្ជាក់សកម្មភាពនេះនឹងកំណត់ការចុចបីដងដោយប្រើចលនាម្រាមដៃ 4 ដើម្បីបោះពុម្ពមែកធាងណត។\n\nប្រសិនបើអ្នកបោះបង់ ការជួសជុលមែកធាងណតនឹងត្រូវបានបើក ប៉ុន្តែចលនានឹងមិនត្រូវបានកំណត់ទេ ហើយអ្នកនឹងត្រូវកំណត់ចលនានេះនៅក្នុងការកំណត់ចលនា។\n\nនៅលើការជួសជុលមែកធាងណតដែលបិទ សកម្មភាពមុនរបស់ចលនា (ប្រសិនបើមាន) នឹងមិនត្រូវបានស្ដារទេ។</string>
   <string name="dialog_title_enable_performance_stats">បើកដំណើរការស្ថិតិប្រតិបត្តិការដែរទេ?</string>
   <string name="dialog_message_enable_performance_stats">តើអ្នកប្រាកដថាចង់បើកស្ថិតិប្រតិបត្តិការដែរទេ?\n\nស្ថិតិប្រតិបត្តិការអាចនឹងប្រើអង្គចងចាំ និងថ្មច្រើនជាងមុន។</string>

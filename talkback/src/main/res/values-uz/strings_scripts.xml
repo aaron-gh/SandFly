@@ -4,17 +4,17 @@
     <string name="summary_pref_scripts">SandFly ilovalarda qanday ishlashini oʻzgartiring</string>
     <string name="script_import">Skriptni import qilish</string>
     <string name="script_install_label">SandFly skriptini oʻrnatish</string>
-    <string name="script_import_nothing">O\'rnatish uchun skript fayli yo\'q.</string>
+    <string name="script_import_nothing">Oʻrnatish uchun skript fayli yoʻq.</string>
     <string name="script_import_cannot_open">Faylni ochib boʻlmadi.</string>
     <string name="script_import_repository">Bu havola butun repozitoriyga olib boradi. Kerakli skriptni oching, soʻng uning havolasini ulashing.</string>
     <string name="script_import_summary">.lua fayli yoki main.lua bor .zip</string>
     <string name="scripts_category_app">Ilova skriptlari</string>
     <string name="scripts_category_global">Global plaginlar</string>
-    <string name="scripts_none">Hech qanday skript o\'rnatilmagan</string>
+    <string name="scripts_none">Hech qanday skript oʻrnatilmagan</string>
     <string name="scripts_all_off">Barcha skriptlarni oʻchirish</string>
     <string name="scripts_all_off_summary">Skriptlar oʻrnatilgan holda qoladi va oʻz kalitlarini saqlaydi. “Barcha skriptlarni yoqish yoki oʻchirish” ishorasi ham shuni qiladi.</string>
     <string name="shortcut_toggle_scripts">Barcha skriptlarni yoqish yoki oʻchirish</string>
-    <string name="scripts_now_off">Skriptlar o\'chirilgan</string>
+    <string name="scripts_now_off">Skriptlar oʻchirilgan</string>
     <string name="scripts_now_on">Skriptlar yoqilgan</string>
     <string name="scripts_unavailable">Ushbu qurilmada skriptlar mavjud emas</string>
     <string name="script_add_example">Namunaviy skriptni qoʻshish</string>
@@ -35,7 +35,7 @@
     <string name="script_from_source"><xliff:g id="source">%1$s</xliff:g> skript manbasidan.</string>
     <string name="script_from_sandfly">SandFly bilan birga keladi.</string>
     <string name="script_install_no_permissions">Ruxsat kerak emas.</string>
-    <string name="script_install_button">O\'rnatish</string>
+    <string name="script_install_button">Oʻrnatish</string>
     <string name="script_update_title"><xliff:g id="name">%1$s</xliff:g> <xliff:g id="version">%2$s</xliff:g> ga yangilansinmi?</string>
     <string name="script_update_new_permissions">Yangi ruxsatlar:</string>
     <string name="script_update_button">Yangilash</string>
@@ -72,15 +72,15 @@
     <string name="script_order_summary">Bir xil nutqni oʻzgartiradigan skriptlar tartibi. Avval ilova skriptlari ishlaydi.</string>
     <string name="script_log">Jurnal</string>
     <string name="script_log_summary">SandFly boshlanganidan beri chiqish va xatolar</string>
-    <string name="script_clear_storage">Saqlangan ma\'lumotlarni o\'chirish</string>
+    <string name="script_clear_storage">Saqlangan maʼlumotlarni oʻchirish</string>
     <string name="script_storage_cleared">Saqlangan maʼlumotlar tozalandi</string>
-    <string name="script_remove">O\'chirish</string>
+    <string name="script_remove">Oʻchirish</string>
     <string name="script_remove_title"><xliff:g id="name">%1$s</xliff:g> olib tashlansinmi?</string>
-    <string name="script_remove_message">Uning kodini, ma\'lumotlarini va sozlamalarini o\'chiradi.</string>
+    <string name="script_remove_message">Uning kodini, maʼlumotlarini va sozlamalarini oʻchiradi.</string>
     <string name="script_removed"><xliff:g id="name">%1$s</xliff:g> olib tashlandi</string>
-    <string name="script_log_empty">Jurnal bo\'sh</string>
+    <string name="script_log_empty">Jurnal boʻsh</string>
     <string name="script_log_clear">Jurnalni tozalash</string>
-    <string name="script_log_copy">Jurnaldan nusxa ko\'chirish</string>
+    <string name="script_log_copy">Jurnaldan nusxa koʻchirish</string>
     <string name="script_log_copied">Jurnal nusxalandi</string>
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
     <string name="script_api_too_old">Skript API <xliff:g id="needed">%1$d</xliff:g> yoki undan yangisi kerak. Bu SandFly’da <xliff:g id="current">%2$d</xliff:g> bor, shuning uchun ayrim qismlari ishlamasligi mumkin.</string>
@@ -97,11 +97,11 @@
     <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> takroriy xatolardan keyin oʻchirildi. Uning jurnalini “Skriptlar” boʻlimida koʻring.</string>
     <string name="shortcut_inspect_item">Fokusdagi elementni tekshirish</string>
     <string name="script_inspect_no_item">Hech bir elementda fokus yoʻq</string>
-    <string name="script_inspect_copied">Ko‘chirildi. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_copied">Koʻchirildi. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="script_inspect_no_id">id yoʻq, shuning uchun qoidalar unga murojaat qila olmaydi. Nusxalandi. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">Ekran daraxtini nusxalash</string>
     <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> ta element nusxalandi</string>
-    <string name="script_tree_none">Nusxa olish uchun oyna yo‘q</string>
+    <string name="script_tree_none">Nusxa olish uchun oyna yoʻq</string>
     <string name="script_tree_clip_label">Ekran daraxti</string>
     <string name="summary_copy_screen_tree_menu">Skript yozish uchun ekrandagi barcha elementlarni JSON sifatida nusxalash</string>
     <string name="script_inspect_clip_label">Element tafsilotlari</string>
@@ -131,15 +131,15 @@
     <string name="script_install_adds">Qoʻshadi:</string>
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
     <string name="script_sources">Skript manbalari</string>
-    <string name="script_sources_none">Hech qanday manba qo\'shilmagan</string>
+    <string name="script_sources_none">Hech qanday manba qoʻshilmagan</string>
     <string name="script_source_add">Manba qoʻshish</string>
-    <string name="script_source_add_button">Qo\'shish</string>
+    <string name="script_source_add_button">Qoʻshish</string>
     <string name="script_source_hint">github.com/owner/repository</string>
     <string name="script_source_invalid">GitHub, GitLab, Codeberg, Gitea yoki Bitbucketdagi ombor manzili emas.</string>
     <string name="script_source_exists">Bu manba allaqachon qoʻshilgan.</string>
     <string name="script_source_loading">Yuklanmoqda</string>
     <string name="script_source_empty">Ushbu manbada skriptlar yoʻq</string>
-    <string name="script_source_failed">Skriptlarni yuklab bo‘lmadi. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_source_failed">Skriptlarni yuklab boʻlmadi. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_source_retry">Qayta urinish</string>
     <string name="script_source_downloading"><xliff:g id="name">%1$s</xliff:g> yuklab olinmoqda</string>
     <string name="script_source_remove">Manbani olib tashlash</string>

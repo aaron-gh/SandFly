@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_on_device_ai">Qurilmadagi AI</string>
-    <string name="summary_pref_on_device_ai">API kalitisiz, shu telefondagi model bilan “Rasmga tavsif berish” va “Ekran sarhisobi”</string>
+    <string name="summary_pref_on_device_ai">API kalitisiz, shu telefondagi model bilan “Rasmga tavsif berish” va “Ekranni tavsiflash”</string>
     <string name="pref_on_device_ai_enable">Qurilmadagi AIdan foydalanish</string>
     <string name="pref_on_device_ai_enable_summary">Rasmlar va skrinshotlar shu telefonning oʻzida tavsiflanadi va hech qachon Google’ga yuborilmaydi. Bu bulutga qaraganda sekinroq va batareyani koʻproq sarflaydi.</string>
     <string name="pref_on_device_ai_enable_needs_model">Avval modelni yuklab oling yoki import qiling.</string>
@@ -49,7 +49,7 @@
     <string name="on_device_ai_import_done">Model oʻrnatildi</string>
     <string name="on_device_ai_import_failed">Bu fayl qoʻllab-quvvatlanadigan Gemma 4 modeli fayli emas.</string>
     <string name="pref_on_device_ai_timeout">Javoblar uchun vaqt chegarasi</string>
-    <string name="pref_on_device_ai_timeout_summary">%1$s. Shuncha vaqtdan keyin SandFly kutishni toʻxtatadi. “Ekran sarhisobi” “Rasmga tavsif berish”dan koʻproq vaqt oladi.</string>
+    <string name="pref_on_device_ai_timeout_summary">%1$s. Shuncha vaqtdan keyin SandFly kutishni toʻxtatadi. “Ekranni tavsiflash” “Rasmga tavsif berish”dan koʻproq vaqt oladi.</string>
     <string name="on_device_ai_choose_timeout">Javoblar uchun vaqt chegarasi</string>
     <plurals name="on_device_ai_timeout_minutes">
         <item quantity="one">%1$d daqiqa</item>
@@ -57,10 +57,10 @@
     </plurals>
     <string name="pref_on_device_ai_processor">Protsessor</string>
     <string name="pref_on_device_ai_short_prompts">Qisqaroq ekran tavsiflari</string>
-    <string name="pref_on_device_ai_short_prompts_summary">“Ekran sarhisobi” kamroq tafsilot soʻraydi, shuning uchun tezroq javob beradi. Toʻliqroq tavsiflar uchun buni oʻchiring.</string>
-    <string name="on_device_ai_error_network">Yuklab olish toʻxtatildi. Ulanishingizni tekshiring va qaytadan urining. U to\'xtagan joyida davom etadi.</string>
-    <string name="on_device_ai_error_http">Yuklab olish serveri so‘rovni qabul qilmadi. Keyinroq qayta urinib ko‘ring yoki uning o‘rniga faylni import qiling.</string>
-    <string name="on_device_ai_error_corrupt">Fayl kutilgan modelga mos kelmadi va oʻchirildi. Qayta urinib ko\'ring.</string>
+    <string name="pref_on_device_ai_short_prompts_summary">“Ekranni tavsiflash” kamroq tafsilot soʻraydi, shuning uchun tezroq javob beradi. Toʻliqroq tavsiflar uchun buni oʻchiring.</string>
+    <string name="on_device_ai_error_network">Yuklab olish toʻxtatildi. Ulanishingizni tekshiring va qaytadan urining. U toʻxtagan joyida davom etadi.</string>
+    <string name="on_device_ai_error_http">Yuklab olish serveri soʻrovni qabul qilmadi. Keyinroq qayta urinib koʻring yoki uning oʻrniga faylni import qiling.</string>
+    <string name="on_device_ai_error_corrupt">Fayl kutilgan modelga mos kelmadi va oʻchirildi. Qayta urinib koʻring.</string>
     <string name="on_device_ai_error_storage">Faylni saqlab boʻlmadi.</string>
     <string name="on_device_ai_error_low_space">Bu model uchun boʻsh joy yetarli emas.</string>
     <string name="on_device_ai_error_time_limit">Fon rejimida bir necha soatdan keyin Android yuklab olishni pauza qildi. Toʻxtagan joydan davom ettirish uchun bosing.</string>

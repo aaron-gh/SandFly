@@ -2,12 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="braille_ime_name">Braillearen hardware-teklatua</string>
   <string name="bd_application_name">Android-en Erabilerraztasuna</string>
-  <string name="bd_ime_unavailable_activity_name">SandFly-ren braille-teklatua ez dago erabilgarri</string>
-  <string name="bd_ime_disabled_dialog_title">Aktibatu SandFly-ren braille-teklatua</string>
+  <string name="bd_ime_unavailable_activity_name">SandFly-en braille-teklatua ez dago erabilgarri</string>
+  <string name="bd_ime_disabled_dialog_title">Aktibatu SandFly-en braille-teklatua</string>
   <string name="bd_ime_disabled_dialog_message">Braille-pantaila idazteko erabili nahi baduzu, joan idazketa-metodoaren ezarpenetara eta aktibatu pantaila</string>
   <string name="bd_ime_disabled_dialog_title_positive">Idazketa-metodoaren ezarpenak</string>
   <string name="bd_ime_not_default_dialog_title">Aldatu idazketa-metodoa</string>
-  <string name="bd_ime_not_default_dialog_message">Idazten jarraitzeko, ezarri SandFly-ren braille-teklatua idazketa-metodo gisa</string>
+  <string name="bd_ime_not_default_dialog_message">Idazten jarraitzeko, ezarri SandFly-en braille-teklatua idazketa-metodo gisa</string>
   <string name="bd_ime_not_default_dialog_positive">Aldatu idazketa-metodoa</string>
   <string name="type_unlabeled">Etiketatu gabea</string>
   <string name="type_unlabeled_edittext">Etiketatu gabeko editatzeko koadroa</string>
@@ -26,7 +26,7 @@
   <string name="overlay_pan_right_button">Mugitu eskuinera</string>
   <string name="bd_preferences_title">Braille-pantaila</string>
   <string name="bd_preferences_banner_talkback_off_subtitle">Braille-pantaila erabili nahi baduzu, lehendabizi aktibatu SandFly</string>
-  <string name="bd_preferences_banner_talkback_off_button">Joan SandFly-ra</string>
+  <string name="bd_preferences_banner_talkback_off_button">Joan SandFly-era</string>
   <string name="bd_preferences_banner_bluetooth_off_subtitle">Braille-pantaila erabili nahi baduzu, lehendabizi aktibatu Bluetootha</string>
   <string name="bd_preferences_banner_bluetooth_off_button">Aktibatu Bluetootha</string>
   <string name="bd_preferences_banner_nearby_devices_permission_not_granted_subtitle">Braille-pantaila erabiltzeko, %s aplikazioak inguruko gailuak erabiltzeko baimena behar du</string>
@@ -58,7 +58,7 @@
   <string name="bd_enhanced_keymap_dialog_message">Arakatze modua erabiltzeko, teklen mapa lehenetsitik teklen mapa hobetura aldatu beharko zara. Braille-pantailetarako agindu batzuk eguneratuko dira aldaketa honen ondorioz.</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">Ezarpenak</string>
   <string name="bd_command_change_dialog_title">Agindu batzuk eguneratu dira</string>
-  <string name="bd_command_change_dialog_message">Braille-pantailetarako agindu hauek eguneratu dira SandFly-ren bertsio honetan:\n\n• Aurreko elementua: sakatu 1. eta 7. puntuak.\n\n• Hurrengo elementua: sakatu 4. eta 8. puntuak.\n\n• Irakurketa kontrolatzeko aurreko aukera: sakatu 2., 3., 7. eta 8. puntuak.\n\n• Irakurketa kontrolatzeko hurrengo aukera: sakatu 5., 6., 7. eta 8. puntuak.</string>
+  <string name="bd_command_change_dialog_message">Braille-pantailetarako agindu hauek eguneratu dira SandFly-en bertsio honetan:\n\n• Aurreko elementua: sakatu 1. eta 7. puntuak.\n\n• Hurrengo elementua: sakatu 4. eta 8. puntuak.\n\n• Irakurketa kontrolatzeko aurreko aukera: sakatu 2., 3., 7. eta 8. puntuak.\n\n• Irakurketa kontrolatzeko hurrengo aukera: sakatu 5., 6., 7. eta 8. puntuak.</string>
   <string name="bd_preference_braille_contracted">Braille laburtua</string>
   <string name="bd_preference_braille_uncontracted">Oinarrizko braillea</string>
   <string name="bd_braille_grade_tips">Braille laburtutik laburtu gabeko braillera (eta alderantziz) aldatzeko braille-pantaila bat erabilita, sakatu zuriune-tekla eta 1, 2, 4 eta 5 puntuak.\n\nBi braille-mailekin funtzionatzen duen hizkuntza bat badarabilzu funtzionatzen du agindu horrek.</string>
@@ -71,7 +71,7 @@
   <string name="bd_commands_bindings_category_navigation_summary">Elementu batetik bestera mugitzea</string>
   <string name="bd_commands_bindings_category_system_actions_title">Sistemaren ekintzak</string>
   <string name="bd_commands_bindings_category_system_actions_summary">Atzera egitea, hasierako pantaila, jakinarazpenak eta abar</string>
-  <string name="bd_commands_bindings_category_talkback_features_title">SandFly-ren eginbideak</string>
+  <string name="bd_commands_bindings_category_talkback_features_title">SandFly-en eginbideak</string>
   <string name="bd_commands_bindings_category_talkback_features_summary">SandFly-en menuak eta ezarpenak</string>
   <string name="bd_commands_bindings_category_braille_settings_title">Braille-ezarpenak</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">Braillearekin erabili beharreko hizkuntza eta ezarpenak</string>
@@ -79,7 +79,7 @@
   <string name="bd_commands_bindings_category_text_editing_summary">Mugitu kurtsorea eta ezabatu testua</string>
   <string name="bd_commands_bindings_category_web_navigation_title">Web-nabigazioa</string>
   <string name="bd_commands_bindings_category_web_navigation_summary">Sareko eduki batetik bestera (hala nola goiburuak) mugitzeko lasterbideak</string>
-  <string name="bd_key_bindings_sandfly_commands">SandFly-ren aginduak</string>
+  <string name="bd_key_bindings_sandfly_commands">SandFly-en aginduak</string>
   <string name="bd_key_bindings_reset_all">Berrezarri tekla guztiak</string>
   <string name="bd_key_bindings_no_keys">Ez dago teklarik</string>
   <string name="bd_key_bindings_change_keys">Aldatu teklak</string>
@@ -231,7 +231,7 @@
   <string name="bd_cmd_toggle_screen_search">Ireki bilaketa zuzena</string>
   <string name="bd_cmd_edit_custom_label">Editatu etiketa pertsonalizatua</string>
   <string name="bd_cmd_open_talkback_menu">Ireki SandFly-en menua</string>
-  <string name="bd_cmd_toggle_voice_feedback">Aktibatu edo desaktibatu SandFly-ren hizketa</string>
+  <string name="bd_cmd_toggle_voice_feedback">Aktibatu edo desaktibatu SandFly-en hizketa</string>
   <string name="bd_cmd_read_stop">Utzi irakurtzeari</string>
   <string name="bd_cmd_talkback_settings">Ireki SandFly-en ezarpenak</string>
   <string name="bd_cmd_switch_to_next_input_language">Aldatu idazteko hurrengo hizkuntzara</string>
@@ -309,7 +309,7 @@
   <string name="bd_turn_off_bd_confirm_dialog_message">Berriro aktibatzeko, joan SandFly-en ezarpenetara</string>
   <string name="bd_turn_off_bd_confirm_dialog_positive_button">Desaktibatu</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">Agindu batzuk ez daude erabilgarri</string>
-  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Nabigatzeko aginduak, braille-ezarpenak eta SandFly-ren ezarpen batzuk ez daude erabilgarri idatzi edo editatu bitartean.\n\nAgindu horiek erabiltzeko, lehenik itxi teklatua.</string>
+  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Nabigatzeko aginduak, braille-ezarpenak eta SandFly-en ezarpen batzuk ez daude erabilgarri idatzi edo editatu bitartean.\n\nAgindu horiek erabiltzeko, lehenik itxi teklatua.</string>
   <string name="bd_caption_tutorial_dialog_title">Azpitituluak braille-pantailan</string>
   <string name="bd_caption_tutorial_dialog_message">Bideo honen azpitituluak erakutsi edo ezkutatzeko, sakatu zuriune-barra eta 1, 4, 7 eta 8 puntuak.\n\nOnartzen diren multimedia-edukien azpitituluak automatikoki erakusteko, aktibatu \"Erakutsi azpitituluak braille-pantailan\" ezarpenetan.</string>
   <string name="bd_caption_tutorial_dialog_checkbox">Erakutsi mezu hau beti azpitituluak erabilgarri daudenean</string>
@@ -326,17 +326,17 @@
   <string name="popup_message_history_clear">Garbitu guztiak</string>
   <string name="popup_message_history_empty">Hutsik</string>
   <string name="popup_message_history_consent_dialog_title">Gailuko mezuen historia aktibatu nahi duzu?</string>
-  <string name="popup_message_history_consent_dialog_msg">Mezu batzuk gordeko dira SandFly-ren, hala nola jakinarazpenak eta alarmak. Nahi duzunean alda dezakezu ezarpena.</string>
+  <string name="popup_message_history_consent_dialog_msg">Mezu batzuk gordeko dira SandFly-en, hala nola jakinarazpenak eta alarmak. Nahi duzunean alda dezakezu ezarpena.</string>
   <string name="popup_message_history_consent_dialog_positive_btn">Aktibatu</string>
   <string name="popup_message_history_consent_dialog_negative_btn">Ez, eskerrik asko</string>
     <string name="external_display_channel">Beste aplikazio batzuen braille-pantailak</string>
     <string name="external_display_ask_title">Baimendu <xliff:g id="app" example="Notetaker">%1$s</xliff:g> SandFly-en braille-pantaila izatea?</string>
-    <string name="external_display_ask_text">SandFly-k ez du erabiliko baimena eman arte.</string>
-    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> aplikazioak SandFly-k braillez erakusten duen guztia irakurri ahal izango du: pantailako edozein eduki, mezuak eta idazten duzuna barne. Gailua ere kontrolatu ahal izango du, braille-pantaila batekin bezala: testua idatzi, aplikazioak ireki eta SandFly-ren edozein komando exekutatu. Baimendu konfiantzazko aplikazioak soilik.</string>
+    <string name="external_display_ask_text">SandFly-ek ez du erabiliko baimena eman arte.</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> aplikazioak SandFly-ek braillez erakusten duen guztia irakurri ahal izango du: pantailako edozein eduki, mezuak eta idazten duzuna barne. Gailua ere kontrolatu ahal izango du, braille-pantaila batekin bezala: testua idatzi, aplikazioak ireki eta SandFly-en edozein komando exekutatu. Baimendu konfiantzazko aplikazioak soilik.</string>
     <string name="external_display_allow">Baimendu</string>
     <string name="external_display_deny">Ez baimendu</string>
     <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> zure braille-pantaila da</string>
-    <string name="external_display_in_use_text">SandFly-k erabiltzen duen bitartean, <xliff:g id="app" example="Notetaker">%1$s</xliff:g> aplikazioak pantaila irakurri eta gailua kontrolatu ahal izango du.</string>
+    <string name="external_display_in_use_text">SandFly-ek erabiltzen duen bitartean, <xliff:g id="app" example="Notetaker">%1$s</xliff:g> aplikazioak pantaila irakurri eta gailua kontrolatu ahal izango du.</string>
     <string name="external_displays_title">Beste aplikazio batzuen pantailak</string>
     <string name="external_displays_summary">Baimendutako aplikazioak SandFly-en braille-pantailak izan daitezke. Braille-pantaila den aplikazio batek pantaila irakurri eta gailua kontrolatu dezake.</string>
     <string name="external_displays_none">Ez dago braille-pantaila izan daitekeen aplikaziorik.</string>
