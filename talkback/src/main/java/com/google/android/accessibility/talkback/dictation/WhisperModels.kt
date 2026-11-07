@@ -184,11 +184,15 @@ class WhisperModels private constructor(context: Context) {
    */
   fun activeModel(): Model? {
     if (!WhisperEngines.isAvailable()) return null
-    val chosenId = prefs.getString(DictationSettings.PREF_WHISPER_MODEL, null)
+    val chosenId = chosenId()
     if (chosenId == CUSTOM_ID && hasCustom()) return null
     val chosen = Model.of(chosenId)
     return chosen?.takeIf { isInstalled(it) } ?: Model.entries.firstOrNull { isInstalled(it) }
   }
+
+  /** The ID of the chosen model, or of the user's own model file. */
+  @androidx.annotation.VisibleForTesting
+  internal fun chosenId(): String? = prefs.getString(DictationSettings.PREF_WHISPER_MODEL, null)
 
   /** A model file that Dictate can use, and whether it encodes only the spoken audio. */
   data class Active(val file: File, val shortContext: Boolean)
@@ -339,19 +343,27 @@ class WhisperModels private constructor(context: Context) {
             },
             isCancelled = { cancelled.get() },
           )
-      if (result == ModelDownloader.Result.Done) {
-        // A downloaded model is used unless another chosen one is downloaded.
-        val chosen = Model.of(prefs.getString(DictationSettings.PREF_WHISPER_MODEL, null))
-        if (chosen == null || !isInstalled(chosen)) {
-          prefs.edit { putString(DictationSettings.PREF_WHISPER_MODEL, model.id) }
-        }
-      }
+      if (result == ModelDownloader.Result.Done) chooseDownloaded(model)
       setState(
         when (result) {
           is ModelDownloader.Result.Failed -> State.Failed(model, result.failure)
           else -> State.Idle
         }
       )
+    }
+  }
+
+  /**
+   * A downloaded model is used unless another chosen one is downloaded, or the user's own model
+   * file is chosen.
+   */
+  @androidx.annotation.VisibleForTesting
+  internal fun chooseDownloaded(model: Model) {
+    val chosenId = chosenId()
+    if (chosenId == CUSTOM_ID && hasCustom()) return
+    val chosen = Model.of(chosenId)
+    if (chosen == null || !isInstalled(chosen)) {
+      prefs.edit { putString(DictationSettings.PREF_WHISPER_MODEL, model.id) }
     }
   }
 
