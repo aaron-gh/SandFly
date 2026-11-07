@@ -26,6 +26,14 @@
             android:title="@string/title_custom_action"
             app:singleLineTitle="false"
             android:summary="@string/summary_custom_action"/>
+        <MultiSelectListPreference
+            android:defaultValue="@array/pref_text_entities_values"
+            android:dialogTitle="@string/title_pref_text_entities"
+            android:entries="@array/pref_text_entities_entries"
+            android:entryValues="@array/pref_text_entities_values"
+            android:key="@string/pref_text_entities_key"
+            android:order="2"
+            android:title="@string/title_pref_text_entities"/>
         <com.google.android.accessibility.utils.preference.AccessibilitySuiteCheckBoxPreference
             android:layout="@layout/listitem_2texts"
             android:defaultValue="@bool/pref_show_context_menu_text_formatting_default"

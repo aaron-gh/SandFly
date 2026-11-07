@@ -18,6 +18,13 @@
             android:key="@string/pref_selector_actions_key"
             android:title="@string/actions"
             android:summary="@string/summary_actions"/>
+        <MultiSelectListPreference
+            android:defaultValue="@array/pref_text_entities_values"
+            android:dialogTitle="@string/title_pref_text_entities"
+            android:entries="@array/pref_text_entities_entries"
+            android:entryValues="@array/pref_text_entities_values"
+            android:key="@string/pref_text_entities_key"
+            android:title="@string/title_pref_text_entities"/>
         <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
             android:layout="@layout/listitem_2texts"
             android:defaultValue="@bool/pref_selector_granularity_typo_default"

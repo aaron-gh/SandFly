@@ -336,6 +336,14 @@
     <string name="pref_selector_live_recognition_key" translatable="false">pref_selector_live_recognition_key</string>
     <string name="pref_selector_ai_actions_key" translatable="false">pref_selector_ai_actions_key</string>
     <string name="pref_ai_actions_included_key" translatable="false">pref_ai_actions_included_key</string>
+    <string name="pref_text_entities_key" translatable="false">pref_text_entities</string>
+    <!-- Must match pref_text_entities_entries and TextEntityMenu's types. -->
+    <string-array name="pref_text_entities_values" translatable="false">
+        <item>web</item>
+        <item>email</item>
+        <item>phone</item>
+        <item>code</item>
+    </string-array>
     <string name="pref_lift_to_activate_default" translatable="false">0</string>
     <string name="pref_hold_to_cancel_default" translatable="false">0</string>
     <!-- How long the finger stays on an item for lifting it to activate nothing. -->

@@ -44,6 +44,7 @@ import com.google.android.accessibility.talkback.contextmenu.ContextMenu
 import com.google.android.accessibility.talkback.contextmenu.ContextMenuItem
 import com.google.android.accessibility.talkback.contextmenu.OnContextMenuItemClickListener
 import com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED
+import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 import java.util.concurrent.ArrayBlockingQueue
 import java.util.concurrent.Future
@@ -84,6 +85,7 @@ class TextEntityMenu(private val pipeline: Pipeline.FeedbackReturner) : NodeMenu
    * of an address.
    */
   override fun accept(context: Context, node: AccessibilityNodeInfoCompat): Boolean {
+    if (included(context).isEmpty()) return false
     if (mayHold(node.text) || mayHold(node.contentDescription)) return true
     for (i in 0 until minOf(node.childCount, MAX_CHILDREN_CHECKED)) {
       val child = node.getChild(i) ?: continue
@@ -103,9 +105,16 @@ class TextEntityMenu(private val pipeline: Pipeline.FeedbackReturner) : NodeMenu
     includeAncestors: Boolean,
   ): List<ContextMenuItem> {
     if (!includeAncestors) return emptyList()
+    val included = included(context)
+    if (included.isEmpty()) return emptyList()
     val text = textOf(node)
-    val classified = classify(context, text, wait = noWait.get() != true)
-    return find(text, linkedUrls(node), classified).mapIndexed { index, entity ->
+    val classified =
+      if (TYPE_PHONE in included || TYPE_CODE in included) {
+        classify(context, text, wait = noWait.get() != true)
+      } else {
+        null
+      }
+    return find(text, linkedUrls(node), classified, included).mapIndexed { index, entity ->
       val label =
         when (entity) {
           is Entity.Web,
@@ -152,6 +161,12 @@ class TextEntityMenu(private val pipeline: Pipeline.FeedbackReturner) : NodeMenu
 
   companion object {
     private const val TAG = "TextEntityMenu"
+    // The values of the Actions found in text setting, pref_text_entities_values.
+    const val TYPE_WEB = "web"
+    const val TYPE_EMAIL = "email"
+    const val TYPE_PHONE = "phone"
+    const val TYPE_CODE = "code"
+    @JvmField val ALL_TYPES: Set<String> = setOf(TYPE_WEB, TYPE_EMAIL, TYPE_PHONE, TYPE_CODE)
     // After the link menu's items, which are numbered from 0 in the same group.
     private const val FIRST_ITEM_ID = 1000
     private const val MAX_NODES = 40
@@ -162,6 +177,20 @@ class TextEntityMenu(private val pipeline: Pipeline.FeedbackReturner) : NodeMenu
     // Actions reading control's swipes wait for it.
     private const val CLASSIFY_TIMEOUT_MS = 1_000L
     private val MAY_HOLD = Regex("\\p{Nd}{4}|@|://|[a-zA-Z0-9]\\.[a-zA-Z]{2,}")
+
+    /** The types that the Actions found in text setting includes. */
+    @JvmStatic
+    fun included(context: Context): Set<String> =
+      SharedPreferencesUtils.getSharedPreferences(context)
+        .getStringSet(context.getString(R.string.pref_text_entities_key), null) ?: ALL_TYPES
+
+    private fun typeOf(entity: Entity): String =
+      when (entity) {
+        is Entity.Web -> TYPE_WEB
+        is Entity.Email -> TYPE_EMAIL
+        is Entity.Phone -> TYPE_PHONE
+        is Entity.Code -> TYPE_CODE
+      }
 
     private fun mayHold(text: CharSequence?): Boolean =
       text != null && text.length >= 4 && MAY_HOLD.containsMatchIn(text)
@@ -383,15 +412,22 @@ class TextEntityMenu(private val pipeline: Pipeline.FeedbackReturner) : NodeMenu
     }
 
     /**
-     * Finds the entities in [text], leaving out links in [linked]. [classified] is what the text
-     * classifier found; when it is null, only web and email addresses are listed, since nothing
-     * then tells a code from a date.
+     * Finds the entities of the types in [included] in [text], leaving out links in [linked].
+     * [classified] is what the text classifier found; when it is null, only web and email addresses
+     * are listed, since nothing then tells a code from a date.
      */
     @JvmStatic
     fun find(
       text: String,
       linked: Set<String> = emptySet(),
       classified: List<Classified>? = null,
+      included: Set<String> = ALL_TYPES,
+    ): List<Entity> = findAll(text, linked, classified).filter { typeOf(it) in included }.take(MAX_ENTITIES)
+
+    private fun findAll(
+      text: String,
+      linked: Set<String>,
+      classified: List<Classified>?,
     ): List<Entity> {
       if (text.isBlank()) return emptyList()
       val spannable = SpannableString(text)
@@ -416,7 +452,7 @@ class TextEntityMenu(private val pipeline: Pipeline.FeedbackReturner) : NodeMenu
           }
         if (entity != null) found.putIfAbsent(entity.text, entity)
       }
-      if (classified == null) return found.values.take(MAX_ENTITIES)
+      if (classified == null) return found.values.toList()
       for (item in classified.sortedBy { it.start }) {
         if (item.start < 0 || item.end > text.length || item.start >= item.end) continue
         taken += item.start until item.end
@@ -431,7 +467,7 @@ class TextEntityMenu(private val pipeline: Pipeline.FeedbackReturner) : NodeMenu
         if (joinedBefore(text, range.first) || joinedAfter(text, range.last + 1)) continue
         found.putIfAbsent(match.value, Entity.Code(match.value))
       }
-      return found.values.take(MAX_ENTITIES)
+      return found.values.toList()
     }
   }
 }

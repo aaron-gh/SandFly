@@ -91,6 +91,21 @@ class TextEntityMenuTest {
   }
 
   @Test
+  fun onlyIncludedTypesAreOffered() {
+    val text = "Call 020 7946 0018 or write to help@example.org, code 482916"
+    val classified = classified(text, "020 7946 0018" to TextClassifier.TYPE_PHONE)
+    assertEquals(
+      listOf<Entity>(Entity.Code("482916")),
+      TextEntityMenu.find(text, classified = classified, included = setOf(TextEntityMenu.TYPE_CODE)),
+    )
+    assertEquals(
+      listOf<Entity>(Entity.Email("help@example.org", "help@example.org")),
+      TextEntityMenu.find(text, classified = classified, included = setOf(TextEntityMenu.TYPE_EMAIL)),
+    )
+    assertTrue(TextEntityMenu.find(text, classified = classified, included = emptySet()).isEmpty())
+  }
+
+  @Test
   fun linksAndAddressesAreOfferedOnce() {
     val found =
       TextEntityMenu.find("See https://example.org/a and write to help@example.org or https://example.org/a")
