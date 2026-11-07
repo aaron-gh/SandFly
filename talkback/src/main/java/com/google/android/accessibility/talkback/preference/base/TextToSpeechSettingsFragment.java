@@ -21,6 +21,7 @@ import com.google.android.accessibility.utils.ServiceStateListener;
 import com.google.android.accessibility.utils.SettingsUtils;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import com.google.android.accessibility.utils.output.FailoverTextToSpeech;
+import com.google.android.accessibility.utils.output.SpeechEqualizer;
 import com.google.android.accessibility.utils.output.VoiceProfiles;
 import com.google.android.accessibility.utils.output.VoiceProfiles.VoiceProfile;
 import java.util.List;
@@ -46,6 +47,10 @@ public class TextToSpeechSettingsFragment extends TalkbackBaseFragment {
         } else if (TextUtils.equals(key, VoiceProfiles.PREF_ACTIVE)) {
           // Switched by a gesture, keyboard shortcut or the Backtalk menu.
           updateVoiceProfileSummary();
+        } else if (SpeechEqualizer.isKey(key)
+            || TextUtils.equals(key, FailoverTextToSpeech.PREF_LOW_LATENCY_AUDIO_KEY)) {
+          // Changed by the Equalizer reading controls.
+          updateEqualizerSummary();
         } else if (TextUtils.equals(key, FailoverTextToSpeech.PREF_SPEECH_STREAM_KEY)) {
           // Switched by the reading control.
           updateSpeechStreamValue();

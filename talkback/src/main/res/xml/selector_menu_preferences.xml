@@ -205,6 +205,58 @@
             android:defaultValue="@bool/pref_selector_voice_profile_default"
             android:key="@string/pref_selector_voice_profile_key"
             android:title="@string/title_selector_voice_profile"/>
+        <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
+            android:defaultValue="@bool/pref_selector_equalizer_default"
+            android:key="@string/pref_selector_equalizer_key"
+            android:title="@string/title_pref_speech_equalizer"/>
+        <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
+            android:defaultValue="@bool/pref_selector_equalizer_default"
+            android:key="@string/pref_selector_equalizer_32_key"
+            android:title="@string/title_selector_equalizer_32"/>
+        <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
+            android:defaultValue="@bool/pref_selector_equalizer_default"
+            android:key="@string/pref_selector_equalizer_64_key"
+            android:title="@string/title_selector_equalizer_64"/>
+        <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
+            android:defaultValue="@bool/pref_selector_equalizer_default"
+            android:key="@string/pref_selector_equalizer_125_key"
+            android:title="@string/title_selector_equalizer_125"/>
+        <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
+            android:defaultValue="@bool/pref_selector_equalizer_default"
+            android:key="@string/pref_selector_equalizer_250_key"
+            android:title="@string/title_selector_equalizer_250"/>
+        <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
+            android:defaultValue="@bool/pref_selector_equalizer_default"
+            android:key="@string/pref_selector_equalizer_500_key"
+            android:title="@string/title_selector_equalizer_500"/>
+        <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
+            android:defaultValue="@bool/pref_selector_equalizer_default"
+            android:key="@string/pref_selector_equalizer_1k_key"
+            android:title="@string/title_selector_equalizer_1k"/>
+        <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
+            android:defaultValue="@bool/pref_selector_equalizer_default"
+            android:key="@string/pref_selector_equalizer_2k_key"
+            android:title="@string/title_selector_equalizer_2k"/>
+        <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
+            android:defaultValue="@bool/pref_selector_equalizer_default"
+            android:key="@string/pref_selector_equalizer_3k_key"
+            android:title="@string/title_selector_equalizer_3k"/>
+        <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
+            android:defaultValue="@bool/pref_selector_equalizer_default"
+            android:key="@string/pref_selector_equalizer_4k_key"
+            android:title="@string/title_selector_equalizer_4k"/>
+        <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
+            android:defaultValue="@bool/pref_selector_equalizer_default"
+            android:key="@string/pref_selector_equalizer_6k_key"
+            android:title="@string/title_selector_equalizer_6k"/>
+        <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
+            android:defaultValue="@bool/pref_selector_equalizer_default"
+            android:key="@string/pref_selector_equalizer_8k_key"
+            android:title="@string/title_selector_equalizer_8k"/>
+        <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
+            android:defaultValue="@bool/pref_selector_equalizer_default"
+            android:key="@string/pref_selector_equalizer_16k_key"
+            android:title="@string/title_selector_equalizer_16k"/>
     </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
     <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
         android:key="@string/pref_show_selector_menu_web_navigation_category_key"

@@ -18,7 +18,9 @@ package com.google.android.accessibility.talkback.preference.base;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.widget.SeekBar;
 import androidx.annotation.NonNull;
 import androidx.core.view.ViewCompat;
@@ -28,6 +30,7 @@ import androidx.preference.PreferenceScreen;
 import androidx.preference.PreferenceViewHolder;
 import com.google.android.accessibility.material.preference.AccessibilitySeekBarPreference;
 import com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference;
+import com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import com.google.android.accessibility.utils.output.FailoverTextToSpeech;
@@ -39,7 +42,10 @@ import java.util.ArrayList;
 import java.util.List;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
-/** The equalizer of SandFly default or of one voice profile: a preset list and a slider per band. */
+/**
+ * The equalizer of SandFly default or of one voice profile: a switch, a preset list and a slider
+ * per band.
+ */
 public class SpeechEqualizerFragment extends TalkbackBaseFragment {
 
   /** The ID of the profile whose equalizer to show, or empty for SandFly default. */
@@ -50,7 +56,10 @@ public class SpeechEqualizerFragment extends TalkbackBaseFragment {
   private SharedPreferences prefs;
   private String id = "";
   private @Nullable ListPreference presetPref;
+  private @Nullable AccessibilitySuiteSwitchPreference onPref;
   private final List<BandPreference> bands = new ArrayList<>();
+  // Set while this screen saves the gains, whose sliders already show them.
+  private boolean saving;
 
   @Override
   public CharSequence getTitle() {
@@ -70,6 +79,14 @@ public class SpeechEqualizerFragment extends TalkbackBaseFragment {
     if (!id.isEmpty() && !VoiceProfiles.ids(prefs).contains(id)) {
       return;
     }
+
+    // Bound to the setting itself, so the service sees each change.
+    onPref = new AccessibilitySuiteSwitchPreference(context);
+    onPref.setKey(SpeechEqualizer.onKey(id));
+    onPref.setDefaultValue(true);
+    onPref.setTitle(R.string.title_pref_speech_equalizer_on);
+    onPref.setIconSpaceReserved(false);
+    screen.addPreference(onPref);
 
     presetPref = new AccessibilitySuiteListPreference(context);
     presetPref.setKey("speech_equalizer_preset");
@@ -102,7 +119,12 @@ public class SpeechEqualizerFragment extends TalkbackBaseFragment {
           (preference, newValue) -> {
             int[] gains = SpeechEqualizer.read(prefs, id);
             gains[band] = (Integer) newValue;
-            SpeechEqualizer.save(prefs, id, gains);
+            saving = true;
+            try {
+              SpeechEqualizer.save(prefs, id, gains);
+            } finally {
+              saving = false;
+            }
             bar.describe((Integer) newValue);
             updatePreset(gains);
             return true;
@@ -112,13 +134,33 @@ public class SpeechEqualizerFragment extends TalkbackBaseFragment {
     }
   }
 
+  // The Equalizer reading controls change the gains and the switch while the screen is open.
+  private final OnSharedPreferenceChangeListener prefsListener =
+      (sharedPrefs, key) -> {
+        if (!saving
+            && (TextUtils.equals(key, SpeechEqualizer.key(id))
+                || TextUtils.equals(key, SpeechEqualizer.onKey(id)))) {
+          update();
+        }
+      };
+
   @Override
   public void onResume() {
     super.onResume();
+    prefs.registerOnSharedPreferenceChangeListener(prefsListener);
     update();
   }
 
+  @Override
+  public void onPause() {
+    super.onPause();
+    prefs.unregisterOnSharedPreferenceChangeListener(prefsListener);
+  }
+
   private void update() {
+    if (onPref != null) {
+      onPref.setChecked(SpeechEqualizer.isOn(prefs, id));
+    }
     int[] gains = SpeechEqualizer.read(prefs, id);
     for (int i = 0; i < bands.size(); i++) {
       bands.get(i).setValue(gains[i]);
@@ -159,6 +201,9 @@ public class SpeechEqualizerFragment extends TalkbackBaseFragment {
         FailoverTextToSpeech.PREF_LOW_LATENCY_AUDIO_KEY,
         FailoverTextToSpeech.lowLatencyAudioDefault(context))) {
       return context.getString(R.string.summary_speech_equalizer_needs_low_latency);
+    }
+    if (!SpeechEqualizer.isOn(prefs, profileId)) {
+      return context.getString(R.string.speech_equalizer_off);
     }
     Preset preset = SpeechEqualizer.presetOf(SpeechEqualizer.read(prefs, profileId));
     return (preset == null)

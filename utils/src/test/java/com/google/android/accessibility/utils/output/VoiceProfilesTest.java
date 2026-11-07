@@ -330,8 +330,54 @@ public class VoiceProfilesTest {
     assertFalse(profile.sameVoiceAs(null));
   }
 
+  @Test
+  public void equalizerOffKeepsGainsAndFiltersNothing() {
+    int[] gains = SpeechEqualizer.Preset.CLARITY.gains();
+    SpeechEqualizer.save(prefs, "", gains);
+    assertTrue(Arrays.equals(gains, SpeechEqualizer.inUse(prefs)));
+
+    SpeechEqualizer.setOn(prefs, "", false);
+
+    assertNull(SpeechEqualizer.inUse(prefs));
+    assertTrue(Arrays.equals(gains, SpeechEqualizer.read(prefs, "")));
+  }
+
+  @Test
+  public void equalizerInUseIsTheActiveProfiles() {
+    String id = create("Reading", "com.example.eloquence");
+    SpeechEqualizer.save(prefs, id, SpeechEqualizer.Preset.BASS_CUT.gains());
+    assertNull(SpeechEqualizer.inUse(prefs));
+
+    prefs.edit().putString(VoiceProfiles.PREF_ACTIVE, id).apply();
+
+    assertTrue(
+        Arrays.equals(SpeechEqualizer.Preset.BASS_CUT.gains(), SpeechEqualizer.inUse(prefs)));
+    assertTrue(SpeechEqualizer.isKey(SpeechEqualizer.onKey(id)));
+    assertTrue(SpeechEqualizer.isKey(SpeechEqualizer.PREF_DEFAULT_ON));
+  }
+
+  @Test
+  public void equalizerGainStepsStopAtTheLimit() {
+    for (int i = 0; i < 20; i++) {
+      SpeechEqualizer.changeGain(prefs, "", 5, 1);
+    }
+    assertEquals(SpeechEqualizer.MAX_GAIN_DB, SpeechEqualizer.read(prefs, "")[5]);
+    assertEquals(SpeechEqualizer.MAX_GAIN_DB - 1, SpeechEqualizer.changeGain(prefs, "", 5, -1));
+  }
+
+  @Test
+  public void deletingAProfileRemovesItsEqualizer() {
+    String id = create("Reading", "com.example.eloquence");
+    SpeechEqualizer.setOn(prefs, id, false);
+
+    VoiceProfiles.delete(prefs, id);
+
+    assertFalse(prefs.values.containsKey(SpeechEqualizer.key(id)));
+    assertFalse(prefs.values.containsKey(SpeechEqualizer.onKey(id)));
+  }
+
   private String create(String name, String engine) {
-    return VoiceProfiles.create(prefs, name, engine, "80", "1.5", "0.9", true, "");
+    return VoiceProfiles.create(prefs, name, engine, "80", "1.5", "0.9", true, "", true);
   }
 
   /** Settings in memory, saved at once. */
