@@ -21,15 +21,20 @@ import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
-import android.icu.text.DateFormatSymbols
 import android.net.Uri
+import android.os.Build
 import android.os.LocaleList
+import android.telephony.PhoneNumberUtils
 import android.text.SpannableString
 import android.text.Spanned
 import android.text.style.URLSpan
 import android.text.util.Linkify
 import android.view.Menu
 import android.view.MenuItem
+import android.view.textclassifier.TextClassificationManager
+import android.view.textclassifier.TextClassifier
+import android.view.textclassifier.TextLinks
+import androidx.annotation.RequiresApi
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import com.google.android.accessibility.talkback.Feedback
 import com.google.android.accessibility.talkback.Pipeline
@@ -39,12 +44,19 @@ import com.google.android.accessibility.talkback.contextmenu.ContextMenuItem
 import com.google.android.accessibility.talkback.contextmenu.OnContextMenuItemClickListener
 import com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED
 import com.google.android.libraries.accessibility.utils.log.LogUtils
-import java.util.Locale
+import java.util.concurrent.Future
+import java.util.concurrent.LinkedBlockingQueue
+import java.util.concurrent.ThreadPoolExecutor
+import java.util.concurrent.TimeUnit
 
 /**
  * Links, email addresses, phone numbers and codes, such as one-time codes in a text message, that
  * are written in an item's text without being links, offered with the item's links in the
  * Actions menu: links and addresses open, numbers open in the phone app, and codes are copied.
+ *
+ * Phone numbers, dates, times, addresses and flight numbers come from Android's text
+ * classifier, the one behind Smart Linkify. Codes are runs of 4 to 8 digits that stand on their
+ * own and aren't part of anything the classifier found.
  */
 class TextEntityMenu(private val pipeline: Pipeline.FeedbackReturner) : NodeMenu {
   /** Something found in the text, and what choosing it does. */
@@ -59,6 +71,9 @@ class TextEntityMenu(private val pipeline: Pipeline.FeedbackReturner) : NodeMenu
 
     data class Code(override val text: String) : Entity
   }
+
+  /** Text the classifier found, from [start] to [end], of the classifier's entity [type]. */
+  data class Classified(val start: Int, val end: Int, val type: String)
 
   /**
    * Whether the text of [node] or its children may hold something to offer. It runs as each item
@@ -76,8 +91,8 @@ class TextEntityMenu(private val pipeline: Pipeline.FeedbackReturner) : NodeMenu
 
   /**
    * The items for the Actions menu. None for the hint that actions are available
-   * ([includeAncestors] false), which a date or an amount in the text would otherwise give to many
-   * items.
+   * ([includeAncestors] false), which runs on each focus and would otherwise classify the text of
+   * many items.
    */
   override fun getMenuItemsForNode(
     context: Context,
@@ -85,7 +100,8 @@ class TextEntityMenu(private val pipeline: Pipeline.FeedbackReturner) : NodeMenu
     includeAncestors: Boolean,
   ): List<ContextMenuItem> {
     if (!includeAncestors) return emptyList()
-    return find(textOf(node), linkedUrls(node)).mapIndexed { index, entity ->
+    val text = textOf(node)
+    return find(text, linkedUrls(node), classify(context, text)).mapIndexed { index, entity ->
       val label =
         when (entity) {
           is Entity.Web,
@@ -138,8 +154,8 @@ class TextEntityMenu(private val pipeline: Pipeline.FeedbackReturner) : NodeMenu
     private const val MAX_CHARACTERS = 4_000
     private const val MAX_ENTITIES = 20
     private const val MAX_CHILDREN_CHECKED = 10
-    private const val MONTH_WORDS_BEFORE = 3
-    private const val MONTH_WORDS_AFTER = 2
+    // The classifier answers in 20 to 250 ms on a Galaxy Z Fold7, and the menu waits for it.
+    private const val CLASSIFY_TIMEOUT_MS = 1_000L
     private val MAY_HOLD = Regex("\\p{Nd}{4}|@|://|[a-zA-Z0-9]\\.[a-zA-Z]{2,}")
 
     private fun mayHold(text: CharSequence?): Boolean =
@@ -147,139 +163,84 @@ class TextEntityMenu(private val pipeline: Pipeline.FeedbackReturner) : NodeMenu
 
     private val CODE = Regex("(?<!\\p{Nd})\\p{Nd}{4,8}(?!\\p{Nd})")
 
-    // Digit groups with at most one space, dot or hyphen between them, and a group in parentheses
-    // such as an area code. Possessive, so that text without a number takes linear time.
-    private val PHONE =
-      Regex("\\+?+(?:\\(\\d{1,5}\\)|\\d++)(?:[ .\\-]?+(?:\\(\\d{1,5}\\)|\\d++))*+")
-    private val PHONE_GROUP = Regex("\\d+|\\(\\d+\\)")
+    // Types whose digits are no code.
+    private val CLASSIFIED_TYPES =
+      listOf(
+        TextClassifier.TYPE_PHONE,
+        TextClassifier.TYPE_DATE,
+        TextClassifier.TYPE_DATE_TIME,
+        TextClassifier.TYPE_ADDRESS,
+        TextClassifier.TYPE_FLIGHT_NUMBER,
+        TextClassifier.TYPE_URL,
+        TextClassifier.TYPE_EMAIL,
+      )
 
-    private fun isCurrency(c: Char?): Boolean =
-      c != null && Character.getType(c) == Character.CURRENCY_SYMBOL.toInt()
+    // One thread, ended when idle, so that a classifier that doesn't answer holds one request.
+    private val classifierThread =
+      ThreadPoolExecutor(1, 1, 30, TimeUnit.SECONDS, LinkedBlockingQueue()).apply {
+        allowCoreThreadTimeOut(true)
+      }
+    private var pending: Future<List<Classified>?>? = null
+    private var lastText: String? = null
+    private var lastClassified: List<Classified>? = null
 
     /**
-     * Whether the number starting at [start] is part of something else: a word, a user name, a
-     * link, a date, an amount, a copyright year or a larger number. A hyphen after a single letter, as in G-482916,
-     * leaves the number on its own.
+     * What Android's text classifier finds in [text], or null when there is no classifier
+     * (Android 8), it fails, or it takes longer than [CLASSIFY_TIMEOUT_MS].
      */
-    private fun joinedBefore(text: String, start: Int): Boolean {
-      val c = text.getOrNull(start - 1) ?: return false
-      if (c.isLetterOrDigit() || c in "_@/\\#&=%+.,'–—" || isCurrency(c)) return true
-      // Part of a time, such as 10:45, but not after a word, as in Code:482916.
-      if (c == ':') return text.getOrNull(start - 2)?.isDigit() == true
-      if (c == '-') {
-        val p = text.getOrNull(start - 2) ?: return false
-        if (!p.isLetterOrDigit()) return false
-        return p.isDigit() || text.getOrNull(start - 3)?.isLetterOrDigit() == true
-      }
-      val p = if (c.isWhitespace()) text.getOrNull(start - 2) else c
-      return isCurrency(p) || p == '©'
-    }
-
-    /** Whether the number ending before [end] continues into something else. */
-    private fun joinedAfter(text: String, end: Int): Boolean {
-      val c = text.getOrNull(end) ?: return false
-      if (c.isLetterOrDigit() || c in "_@/\\%" || isCurrency(c)) return true
-      if (c in ".,:-–—'") return text.getOrNull(end + 1)?.isLetterOrDigit() == true
-      return c.isWhitespace() && isCurrency(text.getOrNull(end + 1))
-    }
-
-    private fun isYear(digits: String): Boolean =
-      digits.length == 4 && digits.toIntOrNull()?.let { it in 1900..2099 } == true
-
-    private var monthLocales: LocaleList? = null
-    private var monthNames: Set<String> = emptySet()
-
-    /** The month names and abbreviations of the device's languages and English, in lower case. */
+    @JvmStatic
     @Synchronized
-    private fun monthNames(): Set<String> {
-      val locales = LocaleList.getDefault()
-      if (locales == monthLocales) return monthNames
-      val names = HashSet<String>()
-      val all = (0 until locales.size()).map { locales[it] } + Locale.ENGLISH
-      for (locale in all) {
-        val symbols = DateFormatSymbols.getInstance(locale)
-        for (context in intArrayOf(DateFormatSymbols.FORMAT, DateFormatSymbols.STANDALONE)) {
-          for (width in intArrayOf(DateFormatSymbols.WIDE, DateFormatSymbols.ABBREVIATED)) {
-            for (name in symbols.getMonths(context, width)) {
-              val word = name.trimEnd('.').lowercase(locale)
-              if (word.isNotEmpty()) names += word
-            }
+    fun classify(context: Context, text: String): List<Classified>? {
+      if (Build.VERSION.SDK_INT < Build.VERSION_CODES.P || text.isBlank()) return null
+      if (text == lastText) return lastClassified
+      // A request that timed out still holds the thread.
+      if (pending?.isDone == false) return null
+      val future =
+        classifierThread.submit<List<Classified>?> {
+          try {
+            generateLinks(context, text)
+          } catch (e: Throwable) {
+            LogUtils.w(TAG, "Text classification failed: %s", e)
+            null
           }
         }
+      pending = future
+      val result =
+        try {
+          future.get(CLASSIFY_TIMEOUT_MS, TimeUnit.MILLISECONDS)
+        } catch (e: InterruptedException) {
+          Thread.currentThread().interrupt()
+          null
+        } catch (e: Exception) {
+          // Left running: a request that times out keeps later ones from queueing behind it.
+          LogUtils.w(TAG, "No text classification: %s", e)
+          null
+        }
+      if (result != null) {
+        lastText = text
+        lastClassified = result
       }
-      monthLocales = locales
-      monthNames = names
-      return names
+      return result
     }
 
-    /**
-     * Whether a month name is within [MONTH_WORDS_BEFORE] words before [range] or
-     * [MONTH_WORDS_AFTER] after it, as in 7 November 2026, Nov 7, 2026 or 7 de noviembre de 2026.
-     */
-    private fun nearMonth(text: String, range: IntRange): Boolean {
-      val months = monthNames()
-      fun isMonth(word: String) = word.lowercase() in months
-      var i = range.first
-      repeat(MONTH_WORDS_BEFORE) {
-        while (i > 0 && !text[i - 1].isLetterOrDigit()) i--
-        val end = i
-        while (i > 0 && text[i - 1].isLetterOrDigit()) i--
-        if (i == end) return@repeat
-        if (isMonth(text.substring(i, end))) return true
+    @RequiresApi(Build.VERSION_CODES.P)
+    private fun generateLinks(context: Context, text: String): List<Classified>? {
+      val classifier =
+        context.getSystemService(TextClassificationManager::class.java)?.textClassifier
+          ?: return null
+      if (classifier === TextClassifier.NO_OP) return null
+      val request =
+        TextLinks.Request.Builder(text)
+          .setEntityConfig(TextClassifier.EntityConfig.createWithExplicitEntityList(CLASSIFIED_TYPES))
+          .setDefaultLocales(LocaleList.getDefault())
+          .build()
+      return classifier.generateLinks(request).links.mapNotNull { link ->
+        if (link.entityCount == 0) return@mapNotNull null
+        // Samsung's classifier lists phone_e164 before phone for the same number.
+        val types = (0 until link.entityCount).map(link::getEntity)
+        val type = if (TextClassifier.TYPE_PHONE in types) TextClassifier.TYPE_PHONE else types[0]
+        Classified(link.start, link.end, type)
       }
-      i = range.last + 1
-      repeat(MONTH_WORDS_AFTER) {
-        while (i < text.length && !text[i].isLetterOrDigit()) i++
-        val start = i
-        while (i < text.length && text[i].isLetterOrDigit()) i++
-        if (i == start) return@repeat
-        if (isMonth(text.substring(start, i))) return true
-      }
-      return false
-    }
-
-    /**
-     * The number to dial for [shown], a match of [PHONE], or null when it reads as a date, a time
-     * span, an amount, an address or a plain number rather than a phone number.
-     */
-    private fun phoneNumber(shown: String): String? {
-      val digits = shown.filter { it in '0'..'9' }
-      if (digits.length !in 7..15) return null
-      val international = shown.startsWith('+')
-      val groups = PHONE_GROUP.findAll(shown).map { it.value }.toList()
-      val plain = groups.filter { !it.startsWith('(') }
-      val hasParentheses = plain.size < groups.size
-      val dots = '.' in shown
-      if (groups.size == 1) {
-        // Without separators, only a full national number.
-        if (!international && digits.length !in 10..12) return null
-      } else {
-        // After the country code, a single digit may start the national number, as in +33 1.
-        if (plain.drop(if (international) 2 else 1).any { it.length < 2 }) return null
-        if (dots && '-' in shown) return null
-        // A decimal, or two numbers in a row, such as a code and a number of minutes.
-        if (groups.size == 2 && !international && !hasParentheses) {
-          if (dots || plain.any { it.length < 3 }) return null
-          if (plain.all(::isYear)) return null
-        }
-        if (dots && !international) {
-          // An IP address or an amount with dots between thousands.
-          if (groups.size == 4 && groups.all { it.length <= 3 }) return null
-          if (plain.drop(1).all { it.length == 3 }) return null
-        }
-        // A date, such as 2026-11-07 or 07.11.2026, also followed by a time.
-        if (groups.size == 3 && digits.length <= 8 && plain.count { it.length <= 2 } >= 2) {
-          return null
-        }
-        if (!international && groups.size > 3) {
-          val (a, b, c) = groups
-          if (isYear(a) && b.length <= 2 && c.length <= 2) return null
-          if (a.length <= 2 && b.length <= 2 && isYear(c)) return null
-        }
-      }
-      // +44 (0)20 is dialled as +4420.
-      val dialled = if (international) shown.replace("(0)", "") else shown
-      return dialled.filter { it in '0'..'9' || it == '+' }
     }
 
     /** The text of [node] and its descendants, as much as is looked through. */
@@ -307,16 +268,61 @@ class TextEntityMenu(private val pipeline: Pipeline.FeedbackReturner) : NodeMenu
       return text.getSpans(0, text.length, URLSpan::class.java).mapNotNull { it.url }.toSet()
     }
 
-    /** Finds the entities in [text], leaving out links in [linked]. */
+    /**
+     * Whether the digits starting at [start] are part of a word, a user name, a link, a time, an
+     * amount or a copyright year. A hyphen after a single letter, as in G-482916, leaves them on
+     * their own.
+     */
+    private fun joinedBefore(text: String, start: Int): Boolean {
+      val c = text.getOrNull(start - 1) ?: return false
+      if (c.isLetterOrDigit() || c in "_@/\\#&=%+.,'–—" || isCurrency(c)) return true
+      // Part of a time, such as 10:45, but not after a word, as in Code:482916.
+      if (c == ':') return text.getOrNull(start - 2)?.isDigit() == true
+      if (c == '-') {
+        val p = text.getOrNull(start - 2) ?: return false
+        if (!p.isLetterOrDigit()) return false
+        return p.isDigit() || text.getOrNull(start - 3)?.isLetterOrDigit() == true
+      }
+      val p = if (c.isWhitespace()) text.getOrNull(start - 2) else c
+      return isCurrency(p) || p == '©'
+    }
+
+    /** Whether the digits ending before [end] continue into something else. */
+    private fun joinedAfter(text: String, end: Int): Boolean {
+      val c = text.getOrNull(end) ?: return false
+      if (c.isLetterOrDigit() || c in "_@/\\%" || isCurrency(c)) return true
+      if (c in ".,:-–—'") return text.getOrNull(end + 1)?.isLetterOrDigit() == true
+      return c.isWhitespace() && isCurrency(text.getOrNull(end + 1))
+    }
+
+    private fun isCurrency(c: Char?): Boolean =
+      c != null && Character.getType(c) == Character.CURRENCY_SYMBOL.toInt()
+
+    /**
+     * The number to dial for [shown], a phone number the classifier found. +44 (0)20 is dialled
+     * as +4420.
+     */
+    private fun dialledNumber(shown: String): String {
+      val number = if (shown.trimStart().startsWith('+')) shown.replace("(0)", "") else shown
+      return PhoneNumberUtils.normalizeNumber(number)
+    }
+
+    /**
+     * Finds the entities in [text], leaving out links in [linked]. [classified] is what the text
+     * classifier found; when it is null, only web and email addresses are listed, since nothing
+     * then tells a code from a date.
+     */
     @JvmStatic
-    fun find(text: String, linked: Set<String> = emptySet()): List<Entity> {
+    fun find(
+      text: String,
+      linked: Set<String> = emptySet(),
+      classified: List<Classified>? = null,
+    ): List<Entity> {
       if (text.isBlank()) return emptyList()
       val spannable = SpannableString(text)
-      // Not Linkify.PHONE_NUMBERS, which takes years, parts of user names and other short digit
-      // runs for numbers.
       Linkify.addLinks(spannable, Linkify.WEB_URLS or Linkify.EMAIL_ADDRESSES)
       val found = LinkedHashMap<String, Entity>()
-      val linkRanges = mutableListOf<IntRange>()
+      val taken = mutableListOf<IntRange>()
       val spans =
         spannable.getSpans(0, spannable.length, URLSpan::class.java).sortedBy {
           spannable.getSpanStart(it)
@@ -326,7 +332,7 @@ class TextEntityMenu(private val pipeline: Pipeline.FeedbackReturner) : NodeMenu
         val end = spannable.getSpanEnd(span)
         val shown = text.substring(start, end)
         val url = span.url ?: continue
-        linkRanges += start until end
+        taken += start until end
         val entity =
           when {
             url.startsWith("mailto:") -> Entity.Email(shown, url.removePrefix("mailto:"))
@@ -335,21 +341,19 @@ class TextEntityMenu(private val pipeline: Pipeline.FeedbackReturner) : NodeMenu
           }
         if (entity != null) found.putIfAbsent(entity.text, entity)
       }
-      fun inLink(range: IntRange) = linkRanges.any { range.first in it || range.last in it }
-      val phoneRanges = mutableListOf<IntRange>()
-      for (match in PHONE.findAll(text)) {
-        val range = match.range
-        if (inLink(range)) continue
-        if (joinedBefore(text, range.first) || joinedAfter(text, range.last + 1)) continue
-        val number = phoneNumber(match.value) ?: continue
-        phoneRanges += range
-        found.putIfAbsent(match.value, Entity.Phone(match.value, number))
+      if (classified == null) return found.values.take(MAX_ENTITIES)
+      for (item in classified.sortedBy { it.start }) {
+        if (item.start < 0 || item.end > text.length || item.start >= item.end) continue
+        taken += item.start until item.end
+        if (item.type != TextClassifier.TYPE_PHONE) continue
+        val shown = text.substring(item.start, item.end)
+        val number = dialledNumber(shown)
+        if (number.isNotEmpty()) found.putIfAbsent(shown, Entity.Phone(shown, number))
       }
       for (match in CODE.findAll(text)) {
         val range = match.range
-        if (inLink(range) || phoneRanges.any { range.first in it }) continue
+        if (taken.any { range.first in it || range.last in it }) continue
         if (joinedBefore(text, range.first) || joinedAfter(text, range.last + 1)) continue
-        if (isYear(match.value) && nearMonth(text, range)) continue
         found.putIfAbsent(match.value, Entity.Code(match.value))
       }
       return found.values.take(MAX_ENTITIES)
