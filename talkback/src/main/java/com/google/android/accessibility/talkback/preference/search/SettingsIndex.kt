@@ -42,6 +42,7 @@ import com.google.android.accessibility.talkback.commands.Commands
 import com.google.android.accessibility.talkback.commands.CommandsFragment
 import com.google.android.accessibility.talkback.distribution.Distribution
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader
+import com.google.android.accessibility.talkback.gesture.GestureLayout
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping
 import com.google.android.accessibility.talkback.notificationlist.NotificationList
 import com.google.android.accessibility.talkback.notifications.NotificationXmlFragment
@@ -64,6 +65,7 @@ import com.google.android.accessibility.utils.PreferenceSettingsUtils
 import com.google.android.accessibility.utils.SettingsUtils
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.accessibility.utils.monitor.InputDeviceMonitor
+import com.google.android.accessibility.utils.output.CapturePolicy
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 import java.util.concurrent.ExecutionException
 import java.util.concurrent.FutureTask
@@ -407,6 +409,7 @@ object SettingsIndex {
 
     // SoundAndVibrationFragment.
     hideIf(Build.VERSION.SDK_INT < Build.VERSION_CODES.S, R.string.pref_speakerphone_away_from_ear_key)
+    hideIf(Build.VERSION.SDK_INT < Build.VERSION_CODES.Q, CapturePolicy.PREF_KEEP_OFF_CASTS)
     hideIf(
       Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU || !ShizukuShell.isAvailable(context),
       R.string.pref_reset_accessibility_audio_key,
@@ -473,6 +476,7 @@ object SettingsIndex {
       R.string.pref_gesture_set_key,
     )
     hideIf(!wear, R.string.pref_reserve_vibration_watch_gestures_key)
+    hideIf(!FeatureSupport.isMultiFingerGestureSupported(), GestureLayout.TWO_FINGER_SWIPES_KEY)
     return keys
   }
 }

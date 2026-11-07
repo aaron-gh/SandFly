@@ -29,6 +29,7 @@
         android:defaultValue="@integer/pref_vibration_strength_default"
         android:dependency="@string/pref_vibration_key"
         android:key="@string/pref_vibration_strength_key"
+        android:max="200"
         android:title="@string/title_pref_vibration_strength" />
   </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
