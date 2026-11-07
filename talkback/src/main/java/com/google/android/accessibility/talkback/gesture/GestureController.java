@@ -497,6 +497,7 @@ public class GestureController {
               eventId, Feedback.systemAction(AccessibilityService.GLOBAL_ACTION_BACK));
     } else if (action.equals(service.getString(R.string.shortcut_value_home))
         && GestureLayout.isVoiceOver(SharedPreferencesUtils.getSharedPreferences(service))
+        && SyntheticTouches.isAvailable()
         && swipeUp.isLockScreenShown()) {
       // As on an iPhone, Home on the lock screen unlocks it, or shows the PIN, pattern or
       // password: Android's lock screen does that for a two-finger swipe up.

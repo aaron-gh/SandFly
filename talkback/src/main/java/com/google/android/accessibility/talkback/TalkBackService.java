@@ -200,6 +200,7 @@ import com.google.android.accessibility.talkback.gesture.GestureLayoutActivity;
 import com.google.android.accessibility.talkback.gesture.GestureHistory;
 import com.google.android.accessibility.talkback.gesture.GestureProfiles;
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping;
+import com.google.android.accessibility.talkback.gesture.SyntheticTouches;
 import com.google.android.accessibility.talkback.gesture.TwoFingerRotationTracker;
 import com.google.android.accessibility.talkback.gesture.VibrationWatchGestureSettings;
 import com.google.android.accessibility.talkback.handwriting.HandwritingKeyboardHost;
@@ -5148,6 +5149,7 @@ public class TalkBackService extends AccessibilityServiceCompat
       userInterface.registerListener(touchInteractionMonitor);
       LogUtils.i(TAG, "Enabling service gesture detection on display %d", display.getDisplayId());
     }
+    SyntheticTouches.setDetectionRegistered(displayIdToTouchInteractionMonitors.size() != 0);
   }
 
   /**
@@ -5177,6 +5179,7 @@ public class TalkBackService extends AccessibilityServiceCompat
       touchInteractionController.unregisterCallback(touchInteractionMonitor);
     }
     displayIdToTouchInteractionMonitors.clear();
+    SyntheticTouches.setDetectionRegistered(false);
   }
 
   /** Public for the SandFly AI module, which runs outside this package. */
