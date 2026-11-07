@@ -34,10 +34,12 @@ jobs:
           - name: wear-full
             tasks: ":assembleWearFullDebug"
             apks: true
-          # Only the full phone build: the watch's braille keyboard is a stub, so the braille
-          # keyboard's tests don't compile for it, and the rest of the code is shared.
+          # Only the phone build, and in the app and :talkback only the full one: the watch's
+          # braille keyboard is a stub, so the braille keyboard's tests don't compile for it, and
+          # the rest of the code is shared. testPhoneFullDebugUnitTest exists only in the modules
+          # with the full/play flavors, and testPhoneDebugUnitTest runs utils and braille.
           - name: unit-tests
-            tasks: "testPhoneFullDebugUnitTest :shizukuapi:testDebugUnitTest :addon:testDebugUnitTest"
+            tasks: "testPhoneFullDebugUnitTest testPhoneDebugUnitTest :shizukuapi:testDebugUnitTest :addon:testDebugUnitTest"
           # The app's lint also checks the library modules. Issues already in lint-baseline.xml
           # are allowed, so this fails only on new errors, such as a call that needs a newer
           # Android than minSdk without a version check.
