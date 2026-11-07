@@ -21,7 +21,9 @@ import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
+import android.icu.text.DateFormatSymbols
 import android.net.Uri
+import android.os.LocaleList
 import android.text.SpannableString
 import android.text.Spanned
 import android.text.style.URLSpan
@@ -37,6 +39,7 @@ import com.google.android.accessibility.talkback.contextmenu.ContextMenuItem
 import com.google.android.accessibility.talkback.contextmenu.OnContextMenuItemClickListener
 import com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED
 import com.google.android.libraries.accessibility.utils.log.LogUtils
+import java.util.Locale
 
 /**
  * Links, email addresses, phone numbers and codes, such as one-time codes in a text message, that
@@ -135,6 +138,8 @@ class TextEntityMenu(private val pipeline: Pipeline.FeedbackReturner) : NodeMenu
     private const val MAX_CHARACTERS = 4_000
     private const val MAX_ENTITIES = 20
     private const val MAX_CHILDREN_CHECKED = 10
+    private const val MONTH_WORDS_BEFORE = 3
+    private const val MONTH_WORDS_AFTER = 2
     private val MAY_HOLD = Regex("\\p{Nd}{4}|@|://|[a-zA-Z0-9]\\.[a-zA-Z]{2,}")
 
     private fun mayHold(text: CharSequence?): Boolean =
@@ -153,12 +158,12 @@ class TextEntityMenu(private val pipeline: Pipeline.FeedbackReturner) : NodeMenu
 
     /**
      * Whether the number starting at [start] is part of something else: a word, a user name, a
-     * link, a date, an amount or a larger number. A hyphen after a single letter, as in G-482916,
+     * link, a date, an amount, a copyright year or a larger number. A hyphen after a single letter, as in G-482916,
      * leaves the number on its own.
      */
     private fun joinedBefore(text: String, start: Int): Boolean {
       val c = text.getOrNull(start - 1) ?: return false
-      if (c.isLetterOrDigit() || c in "_@/\\#&=%+.,'" || isCurrency(c)) return true
+      if (c.isLetterOrDigit() || c in "_@/\\#&=%+.,'–—" || isCurrency(c)) return true
       // Part of a time, such as 10:45, but not after a word, as in Code:482916.
       if (c == ':') return text.getOrNull(start - 2)?.isDigit() == true
       if (c == '-') {
@@ -166,19 +171,72 @@ class TextEntityMenu(private val pipeline: Pipeline.FeedbackReturner) : NodeMenu
         if (!p.isLetterOrDigit()) return false
         return p.isDigit() || text.getOrNull(start - 3)?.isLetterOrDigit() == true
       }
-      return c.isWhitespace() && isCurrency(text.getOrNull(start - 2))
+      val p = if (c.isWhitespace()) text.getOrNull(start - 2) else c
+      return isCurrency(p) || p == '©'
     }
 
     /** Whether the number ending before [end] continues into something else. */
     private fun joinedAfter(text: String, end: Int): Boolean {
       val c = text.getOrNull(end) ?: return false
       if (c.isLetterOrDigit() || c in "_@/\\%" || isCurrency(c)) return true
-      if (c in ".,:-'") return text.getOrNull(end + 1)?.isLetterOrDigit() == true
+      if (c in ".,:-–—'") return text.getOrNull(end + 1)?.isLetterOrDigit() == true
       return c.isWhitespace() && isCurrency(text.getOrNull(end + 1))
     }
 
     private fun isYear(digits: String): Boolean =
       digits.length == 4 && digits.toIntOrNull()?.let { it in 1900..2099 } == true
+
+    private var monthLocales: LocaleList? = null
+    private var monthNames: Set<String> = emptySet()
+
+    /** The month names and abbreviations of the device's languages and English, in lower case. */
+    @Synchronized
+    private fun monthNames(): Set<String> {
+      val locales = LocaleList.getDefault()
+      if (locales == monthLocales) return monthNames
+      val names = HashSet<String>()
+      val all = (0 until locales.size()).map { locales[it] } + Locale.ENGLISH
+      for (locale in all) {
+        val symbols = DateFormatSymbols.getInstance(locale)
+        for (context in intArrayOf(DateFormatSymbols.FORMAT, DateFormatSymbols.STANDALONE)) {
+          for (width in intArrayOf(DateFormatSymbols.WIDE, DateFormatSymbols.ABBREVIATED)) {
+            for (name in symbols.getMonths(context, width)) {
+              val word = name.trimEnd('.').lowercase(locale)
+              if (word.isNotEmpty()) names += word
+            }
+          }
+        }
+      }
+      monthLocales = locales
+      monthNames = names
+      return names
+    }
+
+    /**
+     * Whether a month name is within [MONTH_WORDS_BEFORE] words before [range] or
+     * [MONTH_WORDS_AFTER] after it, as in 7 November 2026, Nov 7, 2026 or 7 de noviembre de 2026.
+     */
+    private fun nearMonth(text: String, range: IntRange): Boolean {
+      val months = monthNames()
+      fun isMonth(word: String) = word.lowercase() in months
+      var i = range.first
+      repeat(MONTH_WORDS_BEFORE) {
+        while (i > 0 && !text[i - 1].isLetterOrDigit()) i--
+        val end = i
+        while (i > 0 && text[i - 1].isLetterOrDigit()) i--
+        if (i == end) return@repeat
+        if (isMonth(text.substring(i, end))) return true
+      }
+      i = range.last + 1
+      repeat(MONTH_WORDS_AFTER) {
+        while (i < text.length && !text[i].isLetterOrDigit()) i++
+        val start = i
+        while (i < text.length && text[i].isLetterOrDigit()) i++
+        if (i == start) return@repeat
+        if (isMonth(text.substring(start, i))) return true
+      }
+      return false
+    }
 
     /**
      * The number to dial for [shown], a match of [PHONE], or null when it reads as a date, a time
@@ -291,7 +349,7 @@ class TextEntityMenu(private val pipeline: Pipeline.FeedbackReturner) : NodeMenu
         val range = match.range
         if (inLink(range) || phoneRanges.any { range.first in it }) continue
         if (joinedBefore(text, range.first) || joinedAfter(text, range.last + 1)) continue
-        if (isYear(match.value)) continue
+        if (isYear(match.value) && nearMonth(text, range)) continue
         found.putIfAbsent(match.value, Entity.Code(match.value))
       }
       return found.values.take(MAX_ENTITIES)
