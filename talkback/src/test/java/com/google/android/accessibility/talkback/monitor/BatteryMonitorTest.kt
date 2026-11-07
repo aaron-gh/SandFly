@@ -77,6 +77,17 @@ class BatteryMonitorTest {
   }
 
   @Test
+  fun topUpOnTheChargerIsNotSaidAgain() {
+    battery(99, plugged = true)
+    battery(100, plugged = true, full = true)
+    battery(99, plugged = true)
+    battery(100, plugged = true, full = true)
+    battery(99, plugged = true)
+    battery(100, plugged = true)
+    assertEquals(1, announced.count { it.fullyCharged })
+  }
+
+  @Test
   fun batteryFullWhenSandFlyStartsIsNotSaid() {
     battery(100, plugged = true, full = true)
     battery(100, plugged = true, full = true)

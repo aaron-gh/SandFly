@@ -16,12 +16,14 @@
 
 package com.google.android.accessibility.talkback.speechcontrol
 
+import android.app.KeyguardManager
 import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.os.Build
 import androidx.core.app.NotificationCompat
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.utils.NotificationUtils
@@ -38,10 +40,10 @@ object SpeechControlApproval {
   private const val ACTION_ALLOW = "fyi.quin.backtalk.action.ALLOW_APP_SPEECH"
   private const val ACTION_DENY = "fyi.quin.backtalk.action.DENY_APP_SPEECH"
   private const val ACTION_DISMISSED = "fyi.quin.backtalk.action.DISMISS_APP_SPEECH"
-  private const val ACTION_ALLOW_LOCKED = "fyi.quin.backtalk.action.ALLOW_APP_SPEECH_LOCKED"
+  internal const val ACTION_ALLOW_LOCKED = "fyi.quin.backtalk.action.ALLOW_APP_SPEECH_LOCKED"
   private const val ACTION_DENY_LOCKED = "fyi.quin.backtalk.action.DENY_APP_SPEECH_LOCKED"
   private const val ACTION_DISMISSED_LOCKED = "fyi.quin.backtalk.action.DISMISS_APP_SPEECH_LOCKED"
-  private const val EXTRA_APP = "app"
+  internal const val EXTRA_APP = "app"
   private const val NOTIFICATION_ID_BASE = 0x5ec0
 
   // Apps already asked about since Backtalk started, so that each is asked once at a time.
@@ -163,6 +165,16 @@ object SpeechControlApproval {
       when (intent.action) {
         ACTION_ALLOW_LOCKED,
         ACTION_DENY_LOCKED -> {
+          // Before Android 12 the action's authentication requirement has no effect, so Allow
+          // reaches here from the lock screen. Ignored while locked; the question stays posted.
+          if (
+            intent.action == ACTION_ALLOW_LOCKED &&
+              Build.VERSION.SDK_INT < Build.VERSION_CODES.S &&
+              context.getSystemService(KeyguardManager::class.java)?.isDeviceLocked == true
+          ) {
+            LogUtils.w(TAG, "Not allowing %s while locked until the device is unlocked", app)
+            return
+          }
           SpeechControlApps.setAllowedWhileLocked(prefs, app, intent.action == ACTION_ALLOW_LOCKED)
           askedLocked.remove(app)
           context.getSystemService(NotificationManager::class.java)?.cancel(lockedNotificationId(app))

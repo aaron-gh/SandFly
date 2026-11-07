@@ -111,16 +111,18 @@ public class BatteryMonitor extends SameThreadBroadcastReceiver {
 
   /**
    * Says once per charge that the battery is full, with Announce full charge, while the charger is
-   * connected. A battery already full when SandFly starts isn't announced.
+   * connected. A charge ends when the charger is disconnected. A battery already full when SandFly
+   * starts isn't announced.
    */
   private void onBatteryState(boolean plugged, boolean full) {
     boolean wasKnown = batteryStateKnown;
     batteryStateKnown = true;
-    if (!plugged || !full) {
+    // Only unplugging re-arms it, so a top-up from 99% on the charger isn't announced again.
+    if (!plugged) {
       fullAnnounced = false;
       return;
     }
-    if (fullAnnounced) {
+    if (!full || fullAnnounced) {
       return;
     }
     fullAnnounced = true;
