@@ -33,7 +33,9 @@
             android:entryValues="@array/pref_text_entities_values"
             android:key="@string/pref_text_entities_key"
             android:order="2"
-            android:title="@string/title_pref_text_entities"/>
+            android:title="@string/title_pref_text_entities">
+            <extra android:name="items" android:value="@string/pref_show_context_menu_custom_action_setting_key" />
+        </MultiSelectListPreference>
         <com.google.android.accessibility.utils.preference.AccessibilitySuiteCheckBoxPreference
             android:layout="@layout/listitem_2texts"
             android:defaultValue="@bool/pref_show_context_menu_text_formatting_default"
@@ -103,7 +105,9 @@
             android:key="@string/pref_show_context_menu_granularity_detail_setting_key"
             android:order="7"
             android:title="@string/title_pref_category_navigation_menu"
-            android:fragment="com.google.android.accessibility.talkback.preference.base.NavigationMenuFragment" />
+            android:fragment="com.google.android.accessibility.talkback.preference.base.NavigationMenuFragment">
+            <extra android:name="items" android:value="@string/pref_show_context_menu_granularity_setting_key" />
+        </com.google.android.accessibility.material.preference.AccessibilitySuitePreference>
     </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
     <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
         android:key="@string/pref_show_context_menu_reading_control_category_key"

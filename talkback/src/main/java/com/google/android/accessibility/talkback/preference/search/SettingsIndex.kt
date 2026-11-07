@@ -19,6 +19,7 @@ package com.google.android.accessibility.talkback.preference.search
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
@@ -32,6 +33,7 @@ import androidx.preference.PreferenceCategory
 import androidx.preference.PreferenceDataStore
 import androidx.preference.PreferenceGroup
 import androidx.preference.PreferenceManager
+import androidx.preference.TwoStatePreference
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.TalkBackService
 import com.google.android.accessibility.talkback.actor.ImageCaptioner
@@ -46,6 +48,7 @@ import com.google.android.accessibility.talkback.notifications.NotificationXmlFr
 import com.google.android.accessibility.talkback.preference.TalkBackPreferenceFilter
 import com.google.android.accessibility.talkback.preference.base.BrailleFragment
 import com.google.android.accessibility.talkback.preference.base.GestureListPreference
+import com.google.android.accessibility.talkback.preference.base.ItemListFragment
 import com.google.android.accessibility.talkback.preference.base.TalkBackPreferenceFragment
 import com.google.android.accessibility.talkback.preference.base.TalkbackBaseFragment
 import com.google.android.accessibility.talkback.recognition.LiveRecognition
@@ -107,8 +110,25 @@ object SettingsIndex {
 
   private class Screen(val name: String, @XmlRes val xml: Int, val path: List<String>, val args: Bundle)
 
-  /** Keeps nothing, so that reading a screen doesn't save its defaults as settings. */
-  private object NoStorage : PreferenceDataStore() {
+  /**
+   * Reads the settings and keeps nothing, so that reading a screen shows what is set, such as which
+   * items are in a list, and doesn't save its defaults as settings.
+   */
+  private class NoStorage(private val prefs: SharedPreferences) : PreferenceDataStore() {
+    override fun getString(key: String, defValue: String?): String? = prefs.getString(key, defValue)
+
+    // A multi-select setting without a value or a default would get null, which it can't take.
+    override fun getStringSet(key: String, defValues: Set<String>?): Set<String> =
+      prefs.getStringSet(key, defValues) ?: emptySet()
+
+    override fun getInt(key: String, defValue: Int): Int = prefs.getInt(key, defValue)
+
+    override fun getLong(key: String, defValue: Long): Long = prefs.getLong(key, defValue)
+
+    override fun getFloat(key: String, defValue: Float): Float = prefs.getFloat(key, defValue)
+
+    override fun getBoolean(key: String, defValue: Boolean): Boolean = prefs.getBoolean(key, defValue)
+
     override fun putString(key: String, value: String?) {}
 
     override fun putStringSet(key: String, values: Set<String>?) {}
@@ -166,7 +186,7 @@ object SettingsIndex {
   @JvmStatic
   fun build(context: Context): List<Entry> {
     val manager = PreferenceManager(context)
-    manager.preferenceDataStore = NoStorage
+    manager.preferenceDataStore = NoStorage(SharedPreferencesUtils.getSharedPreferences(context))
     val entries = mutableListOf<Entry>()
     val unavailable = unavailableKeys(context)
     val filter = TalkBackPreferenceFilter(context)
@@ -187,10 +207,19 @@ object SettingsIndex {
           continue
         }
       filter.filterPreferences(preferences)
+      // An option of items in a list, such as AI actions to include, shows only while one of its
+      // items is in the list. Watches show the items' switches and every option.
+      fun hiddenOption(preference: Preference): Boolean {
+        val items = ItemListFragment.optionItems(preference) ?: return false
+        if (FormFactorUtils.isAndroidWear()) return false
+        return items.none { key ->
+          preferences.findPreference<TwoStatePreference>(key)?.isChecked == true
+        }
+      }
       fun add(group: PreferenceGroup, path: List<String>) {
         for (i in 0 until group.preferenceCount) {
           val preference = group.getPreference(i)
-          if (!preference.isVisible || preference.key in unavailable) {
+          if (!preference.isVisible || preference.key in unavailable || hiddenOption(preference)) {
             continue
           }
           val title = textOf(preference.title)

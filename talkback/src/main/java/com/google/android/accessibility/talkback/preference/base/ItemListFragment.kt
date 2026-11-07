@@ -46,7 +46,9 @@ import com.google.android.accessibility.utils.SharedPreferencesUtils
  * double tap adds one at the end of Current.
  *
  * Each item is a switch setting in [xmlResId]: the switch says whether the item is in the list, and
- * [orderKey] keeps the order. Other settings of the screen are listed under Options.
+ * [orderKey] keeps the order. A setting of the screen with an [OPTION_ITEMS] extra, the keys of
+ * items separated by commas, is an option of those items: it follows the first of them in Current,
+ * and is hidden while none of them is in the list. The other settings are listed under Options.
  */
 abstract class ItemListFragment(xmlResId: Int) :
   TalkbackBaseFragment(xmlResId), SettingsSearch.FoundKey {
@@ -80,6 +82,8 @@ abstract class ItemListFragment(xmlResId: Int) :
   private var fullOrder: List<String> = emptyList()
   private lateinit var currentCategory: AccessibilitySuitePreferenceCategory
   private val groups = ArrayList<AccessibilitySuitePreferenceCategory>()
+  // The options of items, each with the keys of its items.
+  private val itemOptions = LinkedHashMap<Preference, List<String>>()
 
   override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
     super.onCreatePreferences(savedInstanceState, rootKey)
@@ -115,12 +119,16 @@ abstract class ItemListFragment(xmlResId: Int) :
               enabled += preference.key
             }
           }
+          optionItems(preference) != null -> itemOptions[preference] = optionItems(preference)!!
           else -> options += preference
         }
       }
     }
     read(xmlScreen, -1)
     options.forEach { it.parent?.removePreference(it) }
+    itemOptions.keys.forEach { it.parent?.removePreference(it) }
+    // Options of items that this device hides go with them.
+    itemOptions.entries.removeAll { (_, keys) -> keys.none { it in items } }
 
     fullOrder = ItemOrder.ordered(prefs, orderKey, defaults)
     current.clear()
@@ -136,6 +144,7 @@ abstract class ItemListFragment(xmlResId: Int) :
       }
     screen.addPreference(currentCategory)
     current.forEachIndexed { index, key -> currentCategory.addPreference(CurrentRow(context, key, index)) }
+    placeOptions()
 
     if (options.isNotEmpty()) {
       val optionsCategory =
@@ -197,6 +206,7 @@ abstract class ItemListFragment(xmlResId: Int) :
     prefs.edit { putBoolean(item.key, true) }
     onMembershipChanged(item.key, true)
     addRow(currentCategory, CurrentRow(requireContext(), item.key, current.size - 1))
+    placeOptions()
     val announcement = getString(R.string.quick_settings_added, item.title)
     // Focus stays in the group, on the item that took the added one's place.
     val next = group?.takeIf { it.preferenceCount > 0 }?.getPreference(minOf(index, group.preferenceCount - 1))
@@ -257,7 +267,26 @@ abstract class ItemListFragment(xmlResId: Int) :
 
   private fun renumber() {
     current.forEachIndexed { index, key ->
-      currentCategory.findPreference<Preference>(rowKey(key))?.order = index
+      currentCategory.findPreference<Preference>(rowKey(key))?.order = index * ORDER_STEP
+    }
+    placeOptions()
+  }
+
+  /** Puts each option after the first of its items in Current, or hides it when none is there. */
+  private fun placeOptions() {
+    itemOptions.entries.forEachIndexed { optionIndex, (option, keys) ->
+      val index = current.indexOfFirst { it in keys }
+      val shown = option.parent == currentCategory
+      if (index < 0) {
+        if (shown) {
+          currentCategory.removePreference(option)
+        }
+        return@forEachIndexed
+      }
+      option.order = index * ORDER_STEP + 1 + optionIndex
+      if (!shown) {
+        addRow(currentCategory, option)
+      }
     }
   }
 
@@ -332,7 +361,7 @@ abstract class ItemListFragment(xmlResId: Int) :
       key = rowKey(itemKey)
       isPersistent = false
       isIconSpaceReserved = false
-      order = index
+      order = index * ORDER_STEP
       title = title(itemKey)
       summary = items[itemKey]?.summary
       setOnPreferenceClickListener {
@@ -380,8 +409,25 @@ abstract class ItemListFragment(xmlResId: Int) :
     }
   }
 
-  private companion object {
-    val ITEM_ACTIONS =
+  companion object {
+    /** The extra of an option of items: the keys of its items, separated by commas. */
+    const val OPTION_ITEMS = "items"
+
+    // Leaves room after each row for its options.
+    private const val ORDER_STEP = 100
+
+    /** The keys of the items that [preference] is an option of, or null for other settings. */
+    @JvmStatic
+    fun optionItems(preference: Preference): List<String>? =
+      preference
+        .peekExtras()
+        ?.getCharSequence(OPTION_ITEMS)
+        ?.split(',')
+        ?.map { it.trim() }
+        ?.filter { it.isNotEmpty() }
+        ?.takeIf { it.isNotEmpty() }
+
+    private val ITEM_ACTIONS =
       listOf(
         R.id.accessibility_custom_action_0,
         R.id.accessibility_custom_action_1,

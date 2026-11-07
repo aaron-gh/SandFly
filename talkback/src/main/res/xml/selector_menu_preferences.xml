@@ -24,7 +24,9 @@
             android:entries="@array/pref_text_entities_entries"
             android:entryValues="@array/pref_text_entities_values"
             android:key="@string/pref_text_entities_key"
-            android:title="@string/title_pref_text_entities"/>
+            android:title="@string/title_pref_text_entities">
+            <extra android:name="items" android:value="@string/pref_selector_actions_key" />
+        </MultiSelectListPreference>
         <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
             android:layout="@layout/listitem_2texts"
             android:defaultValue="@bool/pref_selector_granularity_typo_default"
@@ -76,7 +78,9 @@
         <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
             android:defaultValue="@bool/pref_selector_links_controls_web_only_default"
             android:key="@string/pref_selector_links_controls_web_only_key"
-            android:title="@string/title_pref_selector_links_controls_web_only"/>
+            android:title="@string/title_pref_selector_links_controls_web_only">
+            <extra android:name="items" android:value="pref_selector_granularity_links_key,pref_selector_granularity_controls_key" />
+        </com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference>
         <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
             android:layout="@layout/listitem_2texts"
             android:defaultValue="@bool/pref_selector_granularity_windows_default"
@@ -334,7 +338,9 @@
         <MultiSelectListPreference
             android:dialogTitle="@string/title_pref_ai_actions_included"
             android:key="@string/pref_ai_actions_included_key"
-            android:title="@string/title_pref_ai_actions_included"/>
+            android:title="@string/title_pref_ai_actions_included">
+            <extra android:name="items" android:value="@string/pref_selector_ai_actions_key" />
+        </MultiSelectListPreference>
         <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
             android:layout="@layout/listitem_2texts"
             android:defaultValue="@bool/pref_selector_hide_screen_default"
