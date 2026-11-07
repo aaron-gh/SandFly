@@ -34,9 +34,14 @@ object RemovedCommands {
 
   private const val PREF_DONE = "removed_commands_moved_1"
 
+  /**
+   * Moves the bindings in [prefs] once, or again with [force], as after settings are imported from a
+   * file that can hold removed commands.
+   */
   @JvmStatic
-  fun migrate(prefs: SharedPreferences) {
-    if (prefs.getBoolean(PREF_DONE, false)) {
+  @JvmOverloads
+  fun migrate(prefs: SharedPreferences, force: Boolean = false) {
+    if (!force && prefs.getBoolean(PREF_DONE, false)) {
       return
     }
     val all = prefs.all
