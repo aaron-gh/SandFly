@@ -557,6 +557,8 @@ object SoundThemes {
           } ?: SoundThemeManifest(name = fallbackName)
 
         val sounds = LinkedHashSet<String>()
+        // The names of the sound files staged, items' and single sounds' alike.
+        val staged = HashSet<String>()
         val skipped = ArrayList<String>()
         var total = 0L
         for ((path, role) in layout.files) {
@@ -577,7 +579,7 @@ object SoundThemes {
               when (result) {
                 Result.OK -> {
                   // A theme with two files for one sound keeps the last.
-                  if (key in sounds) {
+                  if (!staged.add(key)) {
                     staging.listFiles().orEmpty()
                       .filter { keyOfFile(it.name) == key && it != target }
                       .forEach { it.delete() }
