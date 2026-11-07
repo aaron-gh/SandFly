@@ -175,6 +175,29 @@ class SettingsBackupTest {
   }
 
   @Test
+  fun removedCommandsInAnImportedFileMoveToTheirReplacements() {
+    prefs.edit().clear().putBoolean("removed_commands_moved_1", true).commit()
+    val backtalk =
+      """{"format":1,"stores":{"main":{"a_gesture":{"t":"string","v":"VOICE_INPUT"},""" +
+        """"km|command_shortcut_VOICE_INPUT|key_combo_code":{"t":"long","v":42}}}}"""
+
+    assertTrue(SettingsBackup.import(context, backtalk))
+    assertEquals("DICTATE", prefs.getString("a_gesture", null))
+    assertEquals(42L, prefs.getLong("km|command_shortcut_DICTATE|key_combo_code", 0L))
+    assertFalse(prefs.contains("km|command_shortcut_VOICE_INPUT|key_combo_code"))
+
+    val sandFly =
+      """
+      {"format": "sandfly-settings", "version": 1, "files": {"device": {"default": {
+        "removed_commands_moved_1": {"type": "boolean", "value": true},
+        "a_gesture": {"type": "string", "value": "MEDIA_CONTROL_OR_VOICE_INPUT"}
+      }}}}
+      """
+    assertTrue(SettingsBackup.import(context, sandFly))
+    assertEquals("DICTATE_OR_MEDIA_CONTROL", prefs.getString("a_gesture", null))
+  }
+
+  @Test
   fun aDamagedBacktalkFileChangesNothing() {
     prefs.edit().clear().putBoolean("a_switch", false).commit()
     val damaged =

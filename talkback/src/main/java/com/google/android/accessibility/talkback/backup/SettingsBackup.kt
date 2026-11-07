@@ -28,6 +28,8 @@ import androidx.annotation.VisibleForTesting
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.talkback.TalkBackService
+import com.google.android.accessibility.talkback.commands.RemovedCommands
 import com.google.android.accessibility.talkback.migration.MigrationFiles
 import com.google.android.accessibility.utils.FormFactorUtils
 import com.google.android.accessibility.utils.SharedPreferencesUtils
@@ -173,6 +175,12 @@ object SettingsBackup {
       } catch (e: SecurityException) {
         false
       }
+    if (imported) {
+      // The keyboard shortcuts are read once, when the key combo model is built.
+      Handler(Looper.getMainLooper()).post {
+        TalkBackService.getInstance()?.keyComboManager?.refreshKeyComboModel()
+      }
+    }
     toast(context, if (imported) R.string.settings_import_done else R.string.settings_import_failed)
   }
 
@@ -253,6 +261,8 @@ object SettingsBackup {
       }
       editor.commit()
     }
+    // A file from an earlier version can hold bindings of removed commands.
+    RemovedCommands.migrate(SharedPreferencesUtils.getSharedPreferences(context), force = true)
     return true
   }
 
@@ -332,6 +342,8 @@ object SettingsBackup {
       }
       editor.commit()
     }
+    // Backtalk's file can hold bindings of commands that SandFly replaced.
+    stores["main"]?.let { RemovedCommands.migrate(it, force = true) }
     return true
   }
 

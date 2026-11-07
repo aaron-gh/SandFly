@@ -1396,10 +1396,16 @@ public class TalkBackService extends AccessibilityServiceCompat
   /** Whether the press of Ctrl now held was kept from apps, so its release is kept from them too. */
   private boolean ctrlKeptFromApps = false;
 
+  /** Returns whether SandFly keyboard input is off, so that every key goes to Android. */
+  private boolean isKeyboardInputOff() {
+    return keyComboManager != null && keyComboManager.isKeyboardInputOff();
+  }
+
   /**
    * Returns whether a press or release of Ctrl on a physical keyboard is kept from apps, so that an
    * app such as YouTube doesn't act on Ctrl alone, which pauses speech. Ctrl shortcuts still reach
-   * apps, since the other key's event says that Ctrl is held.
+   * apps, since the other key's event says that Ctrl is held. While SandFly keyboard input is off,
+   * Ctrl reaches apps.
    */
   private boolean keepCtrlFromApps(KeyEvent keyEvent) {
     int keyCode = keyEvent.getKeyCode();
@@ -1408,7 +1414,8 @@ public class TalkBackService extends AccessibilityServiceCompat
     }
     if (keyEvent.getAction() == KeyEvent.ACTION_DOWN) {
       if (keyEvent.getRepeatCount() == 0) {
-        ctrlKeptFromApps = isServiceActive() && isFromPhysicalKeyboard(keyEvent);
+        ctrlKeptFromApps =
+            isServiceActive() && isFromPhysicalKeyboard(keyEvent) && !isKeyboardInputOff();
       }
       return ctrlKeptFromApps;
     }
@@ -1419,7 +1426,8 @@ public class TalkBackService extends AccessibilityServiceCompat
 
   /**
    * Pauses or resumes speech when Ctrl on a physical keyboard is pressed and released with no other
-   * key, as a two-finger tap does. A shortcut with Ctrl doesn't.
+   * key, as a two-finger tap does. A shortcut with Ctrl doesn't, nor does Ctrl while SandFly
+   * keyboard input is off.
    */
   private void handleCtrlTap(KeyEvent keyEvent, EventId eventId) {
     int keyCode = keyEvent.getKeyCode();
@@ -1429,7 +1437,7 @@ public class TalkBackService extends AccessibilityServiceCompat
       if (!isCtrl) {
         ctrlTapPending = false;
       } else if (keyEvent.getRepeatCount() == 0) {
-        ctrlTapPending = isFromPhysicalKeyboard(keyEvent);
+        ctrlTapPending = isFromPhysicalKeyboard(keyEvent) && !isKeyboardInputOff();
       }
       return;
     }
@@ -2132,6 +2140,9 @@ public class TalkBackService extends AccessibilityServiceCompat
 
     SharedPreferencesUtils.migrateSharedPreferences(this);
     prefs = SharedPreferencesUtils.getSharedPreferences(this);
+    // Bindings of removed commands move to the commands that replaced them, before the keyboard
+    // shortcuts are loaded.
+    RemovedCommands.migrate(prefs);
 
     if (FeatureFlagReader.usePeriodAsSeparator(getBaseContext())) {
       CompositorUtils.usePeriodAsSeparator();
@@ -3419,8 +3430,6 @@ public class TalkBackService extends AccessibilityServiceCompat
     VerbosityPreferences.removePresets(prefs, getResources());
     // Arrow key navigation's own commands became arrow keys that run any command.
     ArrowKeyNav.migrate(this);
-    // Bindings of removed commands move to the commands that replaced them.
-    RemovedCommands.migrate(prefs);
     VoiceProfiles.moveReadingControl(
         prefs,
         getString(R.string.pref_selector_voice_profile_moved_key),

@@ -77,6 +77,14 @@ class RemovedCommandsTest {
   }
 
   @Test
+  fun runsAgainWhenForced() {
+    RemovedCommands.migrate(prefs)
+    prefs.edit { putString("pref_shortcut_2finger_2tap", "VOICE_INPUT") }
+    RemovedCommands.migrate(prefs, force = true)
+    assertEquals("DICTATE", prefs.getString("pref_shortcut_2finger_2tap", null))
+  }
+
+  @Test
   fun leavesOtherShortcutKeys() {
     assertNull(RemovedCommands.replaceShortcutKey("km|command_shortcut_VOICE_INPUTS|key_combo_code"))
     assertNull(RemovedCommands.replaceShortcutKey("km|command_shortcut_DICTATE|key_combo_code"))
