@@ -23,6 +23,7 @@ import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.accessibility.AccessibilityNodeInfo;
 import androidx.annotation.BoolRes;
 import androidx.annotation.IdRes;
 import androidx.annotation.StringRes;
@@ -35,6 +36,7 @@ import com.google.android.accessibility.talkback.preference.ItemOrder;
 import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.actor.DimScreenActor;
 import com.google.android.accessibility.talkback.actor.gemini.GeminiConfiguration;
+import com.google.android.accessibility.talkback.clipboard.ClipboardHistoryFragment;
 import com.google.android.accessibility.talkback.contextmenu.ContextMenuItem.DeferredType;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.keyboardecho.KeyboardEchoSettings;
@@ -514,6 +516,14 @@ public class TalkbackMenuProcessor {
             R.string.pref_show_context_menu_clipboard_history_setting_key,
             R.bool.pref_show_context_menu_clipboard_history_default)) {
       menu.removeItem(R.id.clipboard_history);
+    } else {
+      @Nullable ContextMenuItem clipboardHistory = menu.findItem(R.id.clipboard_history);
+      if (clipboardHistory != null) {
+        // Found before the menu opens: the open menu has both focuses.
+        @Nullable AccessibilityNodeInfo editBox = ClipboardHistoryFragment.editBoxWithFocus(service);
+        clipboardHistory.setOnMenuItemClickListener(
+            clicked -> ClipboardHistoryFragment.open(service, editBox));
+      }
     }
 
     if (ScreenMonitor.isDeviceLocked(service)
