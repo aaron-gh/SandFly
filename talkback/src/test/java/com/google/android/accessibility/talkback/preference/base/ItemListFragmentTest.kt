@@ -30,6 +30,7 @@ import com.google.android.accessibility.utils.preference.BasePreferencesActivity
 import org.junit.After
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
+import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -46,7 +47,7 @@ import org.robolectric.shadows.ShadowDialog
 class ItemListFragmentTest {
   private val context = RuntimeEnvironment.getApplication()
   private lateinit var controller: ActivityController<TalkBackPreferencesActivity.TalkBackSubSettings>
-  private lateinit var fragment: SelectorMenuFragment
+  private lateinit var fragment: ItemListFragment
   private val order = ItemOrder.READING_CONTROLS_KEY
   private val actions by lazy { context.getString(R.string.pref_selector_actions_key) }
   private val option by lazy { context.getString(R.string.pref_text_entities_key) }
@@ -55,12 +56,15 @@ class ItemListFragmentTest {
   fun setUp() {
     FormFactorUtils.initialize(context)
     SharedPreferencesUtils.getSharedPreferences(context).edit().clear().commit()
+    open(SelectorMenuFragment::class.java)
+  }
+
+  private fun open(fragmentClass: Class<out ItemListFragment>) {
     val intent =
       Intent(context, TalkBackPreferencesActivity.TalkBackSubSettings::class.java)
-        .putExtra(BasePreferencesActivity.FRAGMENT_NAME, SelectorMenuFragment::class.java.name)
+        .putExtra(BasePreferencesActivity.FRAGMENT_NAME, fragmentClass.name)
     controller = Robolectric.buildActivity(TalkBackPreferencesActivity.TalkBackSubSettings::class.java, intent).setup()
-    fragment =
-      controller.get().supportFragmentManager.findFragmentById(android.R.id.content) as SelectorMenuFragment
+    fragment = controller.get().supportFragmentManager.findFragmentById(android.R.id.content) as ItemListFragment
   }
 
   @After
@@ -96,5 +100,18 @@ class ItemListFragmentTest {
     val added = currentRows()
     assertEquals(added.indexOf(row) + 1, added.indexOf(option))
     assertEquals(row, added[added.size - 2])
+  }
+
+  @Test
+  fun anAddedItemsOptionIsEnabled() {
+    controller.pause().stop().destroy()
+    open(ContextMenuFragment::class.java)
+    val navigation = context.getString(R.string.pref_show_context_menu_granularity_setting_key)
+    val navigationOptions = context.getString(R.string.pref_show_context_menu_granularity_detail_setting_key)
+    assertNull(find(navigationOptions))
+
+    find("${ItemOrder.SANDFLY_MENU_KEY}_available_$navigation")!!.performClick()
+    shadowOf(Looper.getMainLooper()).idle()
+    assertTrue(find(navigationOptions)!!.isEnabled)
   }
 }

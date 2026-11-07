@@ -65,7 +65,10 @@ abstract class ItemListFragment(xmlResId: Int) :
   /** Hides the items and options of [screen], the XML screen, that this device can't use. */
   protected open fun hideUnavailable(screen: PreferenceScreen) {}
 
-  /** Runs after an item is added or removed, with whether [key] is now in the list. */
+  /**
+   * Runs after an item is added or removed and the screen shows the change, with whether [key] is
+   * now in the list.
+   */
   protected open fun onMembershipChanged(key: String, inList: Boolean) {}
 
   private class Item(
@@ -204,9 +207,9 @@ abstract class ItemListFragment(xmlResId: Int) :
     current += item.key
     save()
     prefs.edit { putBoolean(item.key, true) }
-    onMembershipChanged(item.key, true)
     addRow(currentCategory, CurrentRow(requireContext(), item.key, current.size - 1))
     placeOptions()
+    onMembershipChanged(item.key, true)
     val announcement = getString(R.string.quick_settings_added, item.title)
     // Focus stays in the group, on the item that took the added one's place.
     val next = group?.takeIf { it.preferenceCount > 0 }?.getPreference(minOf(index, group.preferenceCount - 1))
@@ -221,9 +224,9 @@ abstract class ItemListFragment(xmlResId: Int) :
     current.removeAt(index)
     save()
     prefs.edit { putBoolean(key, false) }
-    onMembershipChanged(key, false)
     currentCategory.findPreference<Preference>(rowKey(key))?.let { currentCategory.removePreference(it) }
     renumber()
+    onMembershipChanged(key, false)
     items[key]?.let { item ->
       if (item.group >= 0) {
         addRow(groups[item.group], AvailableRow(requireContext(), item))
