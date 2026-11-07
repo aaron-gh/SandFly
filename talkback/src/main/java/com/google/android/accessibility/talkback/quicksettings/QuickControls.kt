@@ -389,10 +389,16 @@ class QuickControls(private val context: Context) {
     }
 
   /**
-   * Turns a switch on or off. [onFailed] runs if a command that was started fails, after the
-   * system's settings for the switch have opened instead.
+   * Turns a switch on or off. When the change is [Change.STARTED], [onDone] runs once it has been
+   * made, and [onFailed] if it fails, after the system's settings for the switch have opened
+   * instead.
    */
-  fun setSwitch(control: QuickControl, on: Boolean, onFailed: () -> Unit): Change {
+  fun setSwitch(
+    control: QuickControl,
+    on: Boolean,
+    onDone: () -> Unit = {},
+    onFailed: () -> Unit,
+  ): Change {
     when (control) {
       QuickControl.FLASHLIGHT -> {
         val id = torchCamera ?: return Change.FAILED
@@ -415,18 +421,24 @@ class QuickControls(private val context: Context) {
         return Change.DONE
       }
       QuickControl.AUTO_ROTATE ->
-        return writeSystem(Settings.System.ACCELEROMETER_ROTATION, if (on) 1 else 0, onFailed)
+        return writeSystem(
+          Settings.System.ACCELEROMETER_ROTATION,
+          if (on) 1 else 0,
+          onFailed,
+          onDone,
+        )
       QuickControl.ADAPTIVE_BRIGHTNESS ->
         return writeSystem(
           Settings.System.SCREEN_BRIGHTNESS_MODE,
           if (on) Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC
           else Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL,
           onFailed,
+          onDone,
         )
       else -> {}
     }
     SECURE_SWITCHES[control]?.let { name ->
-      return writeSecure(name, if (on) 1 else 0, control, onFailed)
+      return writeSecure(name, if (on) 1 else 0, control, onDone, onFailed)
     }
     val command = COMMANDS[control] ?: return Change.FAILED
     if (!ShizukuGrants.isReady()) {
@@ -440,7 +452,9 @@ class QuickControls(private val context: Context) {
         ShizukuCommand.argument(on)
       }
     ShizukuShell.run(context, command, argument) { worked ->
-      if (!worked) {
+      if (worked) {
+        onDone()
+      } else {
         openSettings(control)
         onFailed()
       }
@@ -843,7 +857,12 @@ class QuickControls(private val context: Context) {
    * Writes a system setting, which needs the user to let SandFly modify system settings. SandFly
    * gives itself that through Shizuku when it can, and otherwise opens the system's screen for it.
    */
-  private fun writeSystem(name: String, value: Int, onFailed: () -> Unit): Change {
+  private fun writeSystem(
+    name: String,
+    value: Int,
+    onFailed: () -> Unit,
+    onDone: () -> Unit = {},
+  ): Change {
     if (Settings.System.canWrite(context)) {
       return if (putSystem(name, value)) Change.DONE else Change.FAILED
     }
@@ -853,7 +872,9 @@ class QuickControls(private val context: Context) {
       )
     }
     ShizukuGrants.request(context, ShizukuGrants.Grant.WRITE_SETTINGS) { granted ->
-      if (!granted || !putSystem(name, value)) {
+      if (granted && putSystem(name, value)) {
+        onDone()
+      } else {
         onFailed()
       }
     }
@@ -897,7 +918,13 @@ class QuickControls(private val context: Context) {
    * Writes a secure setting, which needs WRITE_SECURE_SETTINGS. SandFly grants itself that
    * through Shizuku when it can, and otherwise opens the system's settings for [control].
    */
-  private fun writeSecure(name: String, value: Int, control: QuickControl, onFailed: () -> Unit): Change {
+  private fun writeSecure(
+    name: String,
+    value: Int,
+    control: QuickControl,
+    onDone: () -> Unit,
+    onFailed: () -> Unit,
+  ): Change {
     if (ShizukuGrants.Grant.WRITE_SECURE_SETTINGS.isGranted(context)) {
       return if (putSecure(name, value)) Change.DONE else Change.FAILED
     }
@@ -905,7 +932,10 @@ class QuickControls(private val context: Context) {
       return openSettings(control)
     }
     ShizukuGrants.request(context, ShizukuGrants.Grant.WRITE_SECURE_SETTINGS) { granted ->
-      if (!granted || !putSecure(name, value)) {
+      if (granted && putSecure(name, value)) {
+        onDone()
+      } else {
+        openSettings(control)
         onFailed()
       }
     }

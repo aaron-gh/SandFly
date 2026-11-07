@@ -26,18 +26,37 @@ import com.google.android.accessibility.talkback.quicksettings.QuickControls
  * SandFly grants itself through Shizuku; without Shizuku, Android's accessibility settings open.
  */
 object ColorInversionToggle {
-  /** Returns what to say about the change, or null when settings opened or nothing changed. */
+  /** Receives what to say once color inversion has changed. */
+  fun interface Announcer {
+    fun announce(text: CharSequence)
+  }
+
+  /**
+   * Returns whether color inversion changed or a change started, and false when settings opened
+   * or nothing changed. [announcer] gets what to say once the setting has changed, which is later
+   * when SandFly first grants itself the permission through Shizuku.
+   */
   @JvmStatic
-  fun toggle(context: Context): CharSequence? {
+  fun toggle(context: Context, announcer: Announcer): Boolean {
     val controls = QuickControls(context)
     val on = controls.isOn(QuickControl.COLOR_INVERSION) != true
-    val change = controls.setSwitch(QuickControl.COLOR_INVERSION, on) {}
+    val text =
+      context.getString(if (on) R.string.color_inversion_turned_on else R.string.color_inversion_turned_off)
+    val change =
+      controls.setSwitch(
+        QuickControl.COLOR_INVERSION,
+        on,
+        onDone = { announcer.announce(text) },
+        onFailed = {},
+      )
     return when (change) {
-      QuickControls.Change.DONE,
-      QuickControls.Change.STARTED ->
-        context.getString(if (on) R.string.color_inversion_turned_on else R.string.color_inversion_turned_off)
+      QuickControls.Change.DONE -> {
+        announcer.announce(text)
+        true
+      }
+      QuickControls.Change.STARTED -> true
       QuickControls.Change.OPENED,
-      QuickControls.Change.FAILED -> null
+      QuickControls.Change.FAILED -> false
     }
   }
 }
