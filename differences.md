@@ -580,7 +580,7 @@ Some apps draw their text themselves and give it to screen readers without letti
 
 ### Links, phone numbers and codes in text
 
-The **Actions** menu lists the web addresses, email addresses, phone numbers and codes of 4 to 8 digits written in the focused item's text, also when the app doesn't make them links, such as in a chat message or the notification of a text message with a one-time code. Choosing a web or email address opens it, a phone number opens in the phone app, and a code is copied. The hint that actions are available doesn't count them.
+The **Actions** menu lists the web addresses, email addresses, phone numbers and codes of 4 to 8 digits written in the focused item's text, also when the app doesn't make them links, such as in a chat message or the notification of a text message with a one-time code. Choosing a web or email address opens it, a phone number opens in the phone app, and a code is copied. Digits that are part of a word, a user name, a link, a date, a time, a year or an amount aren't listed. The hint that actions are available doesn't count them.
 
 ### Double tap with the actions reading control on Android 11
 
