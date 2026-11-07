@@ -42,6 +42,7 @@ import com.google.android.accessibility.talkback.commands.Commands
 import com.google.android.accessibility.talkback.commands.CommandsFragment
 import com.google.android.accessibility.talkback.distribution.Distribution
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader
+import com.google.android.accessibility.talkback.gesture.GestureLayout
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping
 import com.google.android.accessibility.talkback.notificationlist.NotificationList
 import com.google.android.accessibility.talkback.notifications.NotificationXmlFragment
@@ -473,6 +474,7 @@ object SettingsIndex {
       R.string.pref_gesture_set_key,
     )
     hideIf(!wear, R.string.pref_reserve_vibration_watch_gestures_key)
+    hideIf(!FeatureSupport.isMultiFingerGestureSupported(), GestureLayout.TWO_FINGER_SWIPES_KEY)
     return keys
   }
 }

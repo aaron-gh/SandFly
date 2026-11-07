@@ -19,12 +19,14 @@ package com.google.android.accessibility.talkback.preference.search
 import android.app.NotificationManager
 import android.content.ComponentName
 import android.content.Context
+import android.os.Build
 import android.os.Looper
 import android.provider.Settings
 import android.view.ContextThemeWrapper
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.commands.CommandFragment
 import com.google.android.accessibility.talkback.commands.Commands
+import com.google.android.accessibility.talkback.gesture.GestureLayout
 import com.google.android.accessibility.talkback.notificationlist.NotificationListService
 import com.google.android.accessibility.talkback.notifications.NotificationXmlFragment
 import com.google.android.accessibility.talkback.preference.base.TalkBackGestureShortcutPreferenceFragment
@@ -46,6 +48,7 @@ import org.robolectric.RobolectricTestRunner
 import org.robolectric.RuntimeEnvironment
 import org.robolectric.Shadows.shadowOf
 import org.robolectric.annotation.Config
+import org.robolectric.util.ReflectionHelpers
 
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [34])
@@ -207,6 +210,23 @@ class SettingsIndexTest {
   }
 
   private fun keys(): Set<String> = SettingsIndex.build(context).mapNotNull { it.key }.toSet()
+
+  /** Returns [keys] as found while the device reports Android 9. */
+  private fun keysOnAndroid9(): Set<String> {
+    val sdk = Build.VERSION.SDK_INT
+    ReflectionHelpers.setStaticField(Build.VERSION::class.java, "SDK_INT", Build.VERSION_CODES.P)
+    try {
+      return keys()
+    } finally {
+      ReflectionHelpers.setStaticField(Build.VERSION::class.java, "SDK_INT", sdk)
+    }
+  }
+
+  @Test
+  fun twoFingerSwipesSwitchIsFoundOnlyWithMultiFingerGestures() {
+    assertTrue(GestureLayout.TWO_FINGER_SWIPES_KEY in keys())
+    assertFalse(GestureLayout.TWO_FINGER_SWIPES_KEY in keysOnAndroid9())
+  }
 
   @Test
   fun everyScreenIsReadOnce() {
