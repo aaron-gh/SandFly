@@ -112,12 +112,6 @@ public final class PageConfigMapperImpl implements PageConfigMapper {
         return VoiceCommandAndHelpConfigs.VoiceCommandDeviceNavigation.build();
       case PAGE_ID_VOICE_COMMAND_OTHER_COMMANDS:
         return VoiceCommandAndHelpConfigs.VoiceCommandOtherCommands.build();
-      case PAGE_ID_SANDFLY_SCREEN_RECOGNITION:
-        return OnboardingConfigs.sandflyScreenRecognition.build();
-      case PAGE_ID_SANDFLY_KEYBOARD:
-        return OnboardingConfigs.sandflyKeyboard.build();
-      case PAGE_ID_SANDFLY_DESKTOP:
-        return OnboardingConfigs.sandflyDesktop.build();
       case PAGE_ID_SANDFLY_GESTURES:
         return OnboardingConfigs.sandflyGestures.build();
       case PAGE_ID_SANDFLY_SPEECH:
@@ -126,6 +120,8 @@ public final class PageConfigMapperImpl implements PageConfigMapper {
         return OnboardingConfigs.sandflyBraille.build();
       case PAGE_ID_SANDFLY_COMMANDS:
         return OnboardingConfigs.sandflyCommands.build();
+      case PAGE_ID_SANDFLY_AI:
+        return OnboardingConfigs.sandflyAi.build();
       case PAGE_ID_SANDFLY_OTHER:
         return OnboardingConfigs.sandflyOther.build();
       case PAGE_ID_UPDATE_WELCOME:
