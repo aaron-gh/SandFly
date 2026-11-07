@@ -65,6 +65,7 @@ import com.google.android.accessibility.utils.PreferenceSettingsUtils
 import com.google.android.accessibility.utils.SettingsUtils
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.accessibility.utils.monitor.InputDeviceMonitor
+import com.google.android.accessibility.utils.output.CapturePolicy
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 import java.util.concurrent.ExecutionException
 import java.util.concurrent.FutureTask
@@ -408,6 +409,7 @@ object SettingsIndex {
 
     // SoundAndVibrationFragment.
     hideIf(Build.VERSION.SDK_INT < Build.VERSION_CODES.S, R.string.pref_speakerphone_away_from_ear_key)
+    hideIf(Build.VERSION.SDK_INT < Build.VERSION_CODES.Q, CapturePolicy.PREF_KEEP_OFF_CASTS)
     hideIf(
       Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU || !ShizukuShell.isAvailable(context),
       R.string.pref_reset_accessibility_audio_key,

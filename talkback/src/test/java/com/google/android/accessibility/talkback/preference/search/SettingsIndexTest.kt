@@ -36,6 +36,7 @@ import com.google.android.accessibility.talkback.translation.TranslationFragment
 import com.google.android.accessibility.talkback.translation.TranslationSettings
 import com.google.android.accessibility.utils.FormFactorUtils
 import com.google.android.accessibility.utils.SharedPreferencesUtils
+import com.google.android.accessibility.utils.output.CapturePolicy
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNotNull
@@ -226,6 +227,12 @@ class SettingsIndexTest {
   fun twoFingerSwipesSwitchIsFoundOnlyWithMultiFingerGestures() {
     assertTrue(GestureLayout.TWO_FINGER_SWIPES_KEY in keys())
     assertFalse(GestureLayout.TWO_FINGER_SWIPES_KEY in keysOnAndroid9())
+  }
+
+  @Test
+  fun keepSpeechOffCastsIsFoundFromAndroid10() {
+    assertTrue(CapturePolicy.PREF_KEEP_OFF_CASTS in keys())
+    assertFalse(CapturePolicy.PREF_KEEP_OFF_CASTS in keysOnAndroid9())
   }
 
   @Test

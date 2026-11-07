@@ -43,6 +43,7 @@ import com.google.android.accessibility.talkback.speakerphone.SpeakerphoneSettin
 import com.google.android.accessibility.utils.FeatureSupport;
 import com.google.android.accessibility.utils.PreferenceSettingsUtils;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
+import com.google.android.accessibility.utils.output.CapturePolicy;
 import com.google.android.accessibility.utils.output.HapticPatternParser;
 import java.util.ArrayList;
 import java.util.List;
@@ -270,6 +271,11 @@ public class SoundAndVibrationFragment extends TalkbackBaseFragment {
     if (findPreference(getString(R.string.pref_vibration_strength_key))
         instanceof SeekBarPreference strength) {
       strength.setMax(Math.round(HapticPatternParser.MAX_STRENGTH * 100));
+    }
+    // Apps can set an audio capture policy only from Android 10.
+    Preference keepOffCasts = findPreference(CapturePolicy.PREF_KEEP_OFF_CASTS);
+    if (keepOffCasts != null && Build.VERSION.SDK_INT < Build.VERSION_CODES.Q) {
+      keepOffCasts.setVisible(false);
     }
     // Only vibrators that vary their strength can play a weaker vibration.
     Vibrator vibrator = getContext().getSystemService(Vibrator.class);
