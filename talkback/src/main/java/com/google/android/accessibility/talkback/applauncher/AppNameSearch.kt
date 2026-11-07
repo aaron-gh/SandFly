@@ -67,6 +67,10 @@ class AppNameSearch(
   private var matches: List<OpenAppActions.App> = emptyList()
   private var index = 0
 
+  /** Whether an app is said, which opening would open. */
+  val hasApp: Boolean
+    get() = matches.getOrNull(index) != null
+
   /** Forgets the letters and reads the apps again, when the surface shows. */
   fun start() {
     letters = ""

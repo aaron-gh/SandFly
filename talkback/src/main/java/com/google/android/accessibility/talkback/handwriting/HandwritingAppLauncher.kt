@@ -40,7 +40,8 @@ import kotlin.math.hypot
  * many apps do. Two-finger gestures work as on the handwriting keyboard: swipe up for the
  * next app, down to open it, left to delete the last letter, and tap to hear the app again. A
  * two-finger swipe right switches between the device's language and English, for app names
- * written in Latin letters. A tap with one finger closes the surface.
+ * written in Latin letters. A double tap with one finger opens the app said; a tap with one finger
+ * closes the surface.
  */
 class HandwritingAppLauncher(
   private val service: AccessibilityService,
@@ -62,6 +63,10 @@ class HandwritingAppLauncher(
   private val strokes = mutableListOf<MutableList<InkPoint>>()
   private val recognizeNow = Runnable { recognize() }
   private val closeIdle = Runnable { cancel() }
+  private val closeAfterTap = Runnable {
+    tapPending = false
+    cancel()
+  }
 
   // The touch now: how many fingers it had at most, and where and when its first finger went down.
   private var maxPointers = 0
@@ -70,6 +75,16 @@ class HandwritingAppLauncher(
   private var downTime = 0L
   private var lastX = 0f
   private var lastY = 0f
+  /**
+   * The first finger, which [lastX] and [lastY] follow until it lifts, or INVALID_POINTER_ID after.
+   * Its index changes when another finger lifts before it.
+   */
+  private var firstPointerId = MotionEvent.INVALID_POINTER_ID
+
+  /** Whether a tap waits for a second one to open the app, or else closes the surface. */
+  private var tapPending = false
+  /** Whether the touch now started while [tapPending], so that a tap opens the app. */
+  private var secondTap = false
 
   private val search = AppNameSearch(service, pipeline, R.string.handwriting_app_prompt, ::dismiss)
 
@@ -126,6 +141,9 @@ class HandwritingAppLauncher(
   fun dismiss() {
     handler.removeCallbacks(recognizeNow)
     handler.removeCallbacks(closeIdle)
+    handler.removeCallbacks(closeAfterTap)
+    tapPending = false
+    secondTap = false
     strokes.clear()
     search.stop()
     overlay.remove()
@@ -143,11 +161,15 @@ class HandwritingAppLauncher(
       MotionEvent.ACTION_DOWN -> {
         handler.removeCallbacks(recognizeNow)
         handler.removeCallbacks(closeIdle)
+        handler.removeCallbacks(closeAfterTap)
+        secondTap = tapPending
+        tapPending = false
         maxPointers = 1
         downX = event.x
         downY = event.y
         lastX = event.x
         lastY = event.y
+        firstPointerId = event.getPointerId(0)
         downTime = event.eventTime
         if (strokes.size >= MAX_STROKES) strokes.clear()
         strokes += mutableListOf(InkPoint(event.x, event.y, event.eventTime))
@@ -159,9 +181,23 @@ class HandwritingAppLauncher(
         }
         maxPointers = maxOf(maxPointers, event.pointerCount)
       }
+      MotionEvent.ACTION_POINTER_UP -> {
+        // The fingers left move on, so the gesture ends where the first finger lifted.
+        val index = event.actionIndex
+        if (event.getPointerId(index) == firstPointerId) {
+          lastX = event.getX(index)
+          lastY = event.getY(index)
+          firstPointerId = MotionEvent.INVALID_POINTER_ID
+        }
+      }
       MotionEvent.ACTION_MOVE -> {
-        lastX = event.getX(0)
-        lastY = event.getY(0)
+        val first =
+          if (firstPointerId == MotionEvent.INVALID_POINTER_ID) -1
+          else event.findPointerIndex(firstPointerId)
+        if (first >= 0) {
+          lastX = event.getX(first)
+          lastY = event.getY(first)
+        }
         if (maxPointers > 1) return
         val stroke = strokes.lastOrNull() ?: return
         for (i in 0 until event.historySize) {
@@ -175,17 +211,32 @@ class HandwritingAppLauncher(
           onGesture(maxPointers, lastX - downX, lastY - downY, event.eventTime - downTime)
           return
         }
-        // A tap closes the surface, unless it is a dot of writing that waits, such as on an i.
+        // A tap closes the surface, unless it is a dot of writing that waits, such as on an i. While
+        // an app is said, it waits for a second tap, and a double tap opens the app.
         if (strokes.size == 1 && hypot(lastX - downX, lastY - downY) <= touchSlop) {
-          cancel()
+          strokes.clear()
+          when {
+            secondTap -> {
+              secondTap = false
+              search.open()
+            }
+            search.hasApp -> {
+              tapPending = true
+              handler.postDelayed(closeAfterTap, ViewConfiguration.getDoubleTapTimeout().toLong())
+            }
+            else -> cancel()
+          }
           return
         }
+        secondTap = false
         // A letter can have more strokes, so wait a moment for the next one.
         handler.postDelayed(recognizeNow, HandwritingSettings.waitMs(service))
       }
       MotionEvent.ACTION_CANCEL -> {
         strokes.clear()
         maxPointers = 0
+        firstPointerId = MotionEvent.INVALID_POINTER_ID
+        secondTap = false
       }
     }
   }
