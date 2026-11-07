@@ -24,6 +24,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Build
 import android.os.LocaleList
+import android.os.SystemClock
 import android.telephony.PhoneNumberUtils
 import android.text.SpannableString
 import android.text.Spanned
@@ -44,10 +45,12 @@ import com.google.android.accessibility.talkback.contextmenu.ContextMenuItem
 import com.google.android.accessibility.talkback.contextmenu.OnContextMenuItemClickListener
 import com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED
 import com.google.android.libraries.accessibility.utils.log.LogUtils
+import java.util.concurrent.ArrayBlockingQueue
 import java.util.concurrent.Future
-import java.util.concurrent.LinkedBlockingQueue
+import java.util.concurrent.RejectedExecutionHandler
 import java.util.concurrent.ThreadPoolExecutor
 import java.util.concurrent.TimeUnit
+import java.util.function.Supplier
 
 /**
  * Links, email addresses, phone numbers and codes, such as one-time codes in a text message, that
@@ -90,9 +93,9 @@ class TextEntityMenu(private val pipeline: Pipeline.FeedbackReturner) : NodeMenu
   }
 
   /**
-   * The items for the Actions menu. None for the hint that actions are available
-   * ([includeAncestors] false), which runs on each focus and would otherwise classify the text of
-   * many items.
+   * The items for the Actions menu and the Actions reading control. None for the hint that actions
+   * are available ([includeAncestors] false). Inside [withoutWaiting], phone numbers and codes
+   * only when the text was classified before.
    */
   override fun getMenuItemsForNode(
     context: Context,
@@ -101,7 +104,8 @@ class TextEntityMenu(private val pipeline: Pipeline.FeedbackReturner) : NodeMenu
   ): List<ContextMenuItem> {
     if (!includeAncestors) return emptyList()
     val text = textOf(node)
-    return find(text, linkedUrls(node), classify(context, text)).mapIndexed { index, entity ->
+    val classified = classify(context, text, wait = noWait.get() != true)
+    return find(text, linkedUrls(node), classified).mapIndexed { index, entity ->
       val label =
         when (entity) {
           is Entity.Web,
@@ -154,7 +158,8 @@ class TextEntityMenu(private val pipeline: Pipeline.FeedbackReturner) : NodeMenu
     private const val MAX_CHARACTERS = 4_000
     private const val MAX_ENTITIES = 20
     private const val MAX_CHILDREN_CHECKED = 10
-    // The classifier answers in 20 to 250 ms on a Galaxy Z Fold7, and the menu waits for it.
+    // The classifier answers in 20 to 250 ms on a Galaxy Z Fold7, and the Actions menu and the
+    // Actions reading control's swipes wait for it.
     private const val CLASSIFY_TIMEOUT_MS = 1_000L
     private val MAY_HOLD = Regex("\\p{Nd}{4}|@|://|[a-zA-Z0-9]\\.[a-zA-Z]{2,}")
 
@@ -175,51 +180,121 @@ class TextEntityMenu(private val pipeline: Pipeline.FeedbackReturner) : NodeMenu
         TextClassifier.TYPE_EMAIL,
       )
 
-    // One thread, ended when idle, so that a classifier that doesn't answer holds one request.
+    // One thread, ended when idle, with room for one waiting request: a newer one replaces it,
+    // so that a classifier that doesn't answer holds two requests at most.
     private val classifierThread =
-      ThreadPoolExecutor(1, 1, 30, TimeUnit.SECONDS, LinkedBlockingQueue()).apply {
-        allowCoreThreadTimeOut(true)
-      }
+      ThreadPoolExecutor(
+          1,
+          1,
+          30,
+          TimeUnit.SECONDS,
+          ArrayBlockingQueue(1),
+          RejectedExecutionHandler { task, executor ->
+            if (executor.isShutdown) return@RejectedExecutionHandler
+            (executor.queue.poll() as? Future<*>)?.cancel(false)
+            executor.queue.offer(task)
+          },
+        )
+        .apply { allowCoreThreadTimeOut(true) }
+    private val lock = Any()
+    private var pendingText: String? = null
     private var pending: Future<List<Classified>?>? = null
+    private var pendingSince = 0L
     private var lastText: String? = null
     private var lastClassified: List<Classified>? = null
+    private val noWait = ThreadLocal<Boolean>()
+    @Volatile private var classifiedListener: Runnable? = null
+
+    /**
+     * Sets [listener] to run, on the classifier's thread, when a classification ends, so that
+     * checks made [withoutWaiting] can be made again. Null removes it.
+     */
+    @JvmStatic
+    fun setClassifiedListener(listener: Runnable?) {
+      classifiedListener = listener
+    }
+
+    /**
+     * Whether the latest classification still runs, for at most [CLASSIFY_TIMEOUT_MS], so that a
+     * classifier that doesn't answer holds nothing up.
+     */
+    @JvmStatic
+    fun isClassifying(): Boolean =
+      synchronized(lock) {
+        pending?.isDone == false &&
+          SystemClock.uptimeMillis() - pendingSince < CLASSIFY_TIMEOUT_MS
+      }
+
+    /**
+     * Runs [block] with the text classifier's result taken only when it is already there. A
+     * classification that isn't starts in the background, for a later call. For checks that run
+     * as items are focused, such as whether the Actions reading control is available.
+     */
+    @JvmStatic
+    fun <T> withoutWaiting(block: Supplier<T>): T {
+      val previous = noWait.get()
+      noWait.set(true)
+      try {
+        return block.get()
+      } finally {
+        noWait.set(previous)
+      }
+    }
 
     /**
      * What Android's text classifier finds in [text], or null when there is no classifier
-     * (Android 8), it fails, or it takes longer than [CLASSIFY_TIMEOUT_MS].
+     * (Android 8), it failed, or it takes longer than [CLASSIFY_TIMEOUT_MS]. Without [wait], null
+     * also while the classification runs.
      */
     @JvmStatic
-    @Synchronized
-    fun classify(context: Context, text: String): List<Classified>? {
+    fun classify(context: Context, text: String, wait: Boolean): List<Classified>? {
       if (Build.VERSION.SDK_INT < Build.VERSION_CODES.P || text.isBlank()) return null
-      if (text == lastText) return lastClassified
-      // A request that timed out still holds the thread.
-      if (pending?.isDone == false) return null
       val future =
-        classifierThread.submit<List<Classified>?> {
-          try {
-            generateLinks(context, text)
-          } catch (e: Throwable) {
-            LogUtils.w(TAG, "Text classification failed: %s", e)
-            null
+        synchronized(lock) {
+          // A failure is asked again only by calls that wait, so that checks made again on
+          // focus don't keep asking.
+          if (text == lastText && (lastClassified != null || !wait)) return lastClassified
+          val current = pending
+          if (text == pendingText && current != null && !current.isDone) {
+            current
+          } else {
+            classifierThread
+              .submit<List<Classified>?> { classifyNow(context, text) }
+              .also {
+                pending = it
+                pendingText = text
+                pendingSince = SystemClock.uptimeMillis()
+              }
           }
         }
-      pending = future
+      if (!wait) return null
+      return try {
+        future.get(CLASSIFY_TIMEOUT_MS, TimeUnit.MILLISECONDS)
+      } catch (e: InterruptedException) {
+        Thread.currentThread().interrupt()
+        null
+      } catch (e: Exception) {
+        // Left running, so that its result is there for the next call.
+        LogUtils.w(TAG, "No text classification: %s", e)
+        null
+      }
+    }
+
+    @RequiresApi(Build.VERSION_CODES.P)
+    private fun classifyNow(context: Context, text: String): List<Classified>? {
       val result =
         try {
-          future.get(CLASSIFY_TIMEOUT_MS, TimeUnit.MILLISECONDS)
-        } catch (e: InterruptedException) {
-          Thread.currentThread().interrupt()
-          null
-        } catch (e: Exception) {
-          // Left running: a request that times out keeps later ones from queueing behind it.
-          LogUtils.w(TAG, "No text classification: %s", e)
+          generateLinks(context, text)
+        } catch (e: Throwable) {
+          LogUtils.w(TAG, "Text classification failed: %s", e)
           null
         }
-      if (result != null) {
+      // A failure is kept too: see classify.
+      synchronized(lock) {
         lastText = text
         lastClassified = result
       }
+      classifiedListener?.run()
       return result
     }
 

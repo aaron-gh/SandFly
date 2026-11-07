@@ -105,6 +105,7 @@ import com.google.android.accessibility.talkback.gesture.GestureProfiles;
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping;
 import com.google.android.accessibility.talkback.keyboardecho.KeyboardEchoSettings;
 import com.google.android.accessibility.talkback.menurules.NodeMenuRuleCreator;
+import com.google.android.accessibility.talkback.menurules.TextEntityMenu;
 import com.google.android.accessibility.talkback.monitor.VolumeMonitor;
 import com.google.android.accessibility.talkback.monitor.VolumeMonitor.VolumeChangedListener;
 import com.google.android.accessibility.talkback.preference.base.FocusDelayPrefFragment;
@@ -170,6 +171,11 @@ public class SelectorController implements UserInputEventListener {
   // match waits until touches have paused, or until something uses the reading control.
   private static final long SWITCH_AFTER_TOUCH_MS = 200;
   private final Runnable switchAfterTouch = this::applyPendingSwitch;
+  // The focused item whose reading control waits for the text classifier, which finds the phone
+  // numbers and codes that Actions lists. Focus doesn't wait for it, so the match is made again
+  // when it ends.
+  private AccessibilityNodeInfo classifyingNode = null;
+  private final Runnable switchAfterClassifying = this::switchAfterClassifying;
 
   /** Audial feedback announce types. */
   public enum AnnounceType {
@@ -847,6 +853,7 @@ public class SelectorController implements UserInputEventListener {
 
     prefs = SharedPreferencesUtils.getSharedPreferences(context);
     prefs.registerOnSharedPreferenceChangeListener(sharedPreferenceChangeListener);
+    TextEntityMenu.setClassifiedListener(() -> handler.post(switchAfterClassifying));
   }
 
   /** Gets the Setting for by granularity resources ID. */
@@ -1399,6 +1406,7 @@ public class SelectorController implements UserInputEventListener {
       return;
     }
     lastFocusedNode = null;
+    classifyingNode = null;
     boolean autoSwitch =
         prefs.getBoolean(
             context.getString(R.string.pref_selector_auto_switch_key),
@@ -1423,11 +1431,35 @@ public class SelectorController implements UserInputEventListener {
     }
     if (isContextualSettingNotSupported(
         currentSetting, AccessibilityNodeInfoCompat.wrap(nodeInfo))) {
+      if (currentSetting == ACTIONS && TextEntityMenu.isClassifying()) {
+        // Actions may still list a phone number or code of the item.
+        classifyingNode = nodeInfo;
+        return;
+      }
       // If the current setting is a contextual setting and no longer allowed by the new focused
       // node, then restore to the cached setting or move the setting to the first available
       // item if the cached setting is also unavailable.
       restoreSetting();
     }
+    if (autoSwitch && TextEntityMenu.isClassifying()) {
+      classifyingNode = nodeInfo;
+    }
+  }
+
+  /** Matches the reading control again to the focused item once its text is classified. */
+  private void switchAfterClassifying() {
+    AccessibilityNodeInfo node = classifyingNode;
+    // After a touch, applyPendingSwitch makes the match.
+    if (node == null || touchActive) {
+      return;
+    }
+    AccessibilityNodeInfoCompat focus =
+        accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ false);
+    if (focus == null || !node.equals(focus.unwrap())) {
+      classifyingNode = null;
+      return;
+    }
+    switchCurrentSetting(node);
   }
 
   @Override
@@ -1456,7 +1488,10 @@ public class SelectorController implements UserInputEventListener {
   /** Forgets the item waiting for its reading control, such as when SandFly turns off. */
   public void shutdown() {
     handler.removeCallbacks(switchAfterTouch);
+    handler.removeCallbacks(switchAfterClassifying);
+    TextEntityMenu.setClassifiedListener(null);
     lastFocusedNode = null;
+    classifyingNode = null;
   }
 
   /** Selects the previous or next setting. For selecting setting via gesture. */
