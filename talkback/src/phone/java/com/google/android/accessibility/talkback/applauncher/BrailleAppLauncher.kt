@@ -17,12 +17,14 @@ package com.google.android.accessibility.talkback.applauncher
 
 import android.accessibilityservice.AccessibilityService
 import android.content.ComponentCallbacks
+import android.content.SharedPreferences
 import android.content.res.Configuration
 import android.os.Handler
 import android.os.Looper
 import android.util.Size
 import com.google.android.accessibility.braille.common.BrailleUserPreferences
 import com.google.android.accessibility.braille.common.BrailleUtils
+import com.google.android.accessibility.braille.common.DisplayKeyOverrides
 import com.google.android.accessibility.braille.common.TouchDots
 import com.google.android.accessibility.braille.common.translate.BrailleTranslateUtils
 import com.google.android.accessibility.braille.interfaces.BrailleCharacter
@@ -42,9 +44,11 @@ import com.google.android.accessibility.talkback.ActorState
 import com.google.android.accessibility.talkback.Feedback
 import com.google.android.accessibility.talkback.Pipeline
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.talkback.commands.CommandAssignments
 import com.google.android.accessibility.talkback.handwriting.HandwritingOverlay
 import com.google.android.accessibility.utils.FeatureSupport
 import com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED
+import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.accessibility.utils.output.SpeechController
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 
@@ -91,6 +95,28 @@ class BrailleAppLauncher(
 
   /** The cells typed so far. */
   private val cells = BrailleWord()
+
+  private val prefs = SharedPreferencesUtils.getSharedPreferences(service)
+  /** Where the braille display keys assigned to commands are saved. */
+  private val braillePrefs =
+    BrailleUserPreferences.getSharedPreferences(
+      service,
+      BrailleUserPreferences.BRAILLE_SHARED_PREFS_FILENAME,
+    )
+  private val assignedCheck = Runnable { updateAssigned() }
+  /** Kept in a field: SharedPreferences holds its listeners weakly. */
+  private val assignmentListener =
+    SharedPreferences.OnSharedPreferenceChangeListener { _, _ ->
+      // A change of several settings at once is read once.
+      handler.removeCallbacks(assignedCheck)
+      handler.post(assignedCheck)
+    }
+
+  init {
+    prefs.registerOnSharedPreferenceChangeListener(assignmentListener)
+    braillePrefs.registerOnSharedPreferenceChangeListener(assignmentListener)
+    updateAssigned()
+  }
 
   val isShowing: Boolean
     get() = overlay.isShowing
@@ -198,6 +224,10 @@ class BrailleAppLauncher(
   fun shutdown() {
     dismiss()
     search.shutdown()
+    prefs.unregisterOnSharedPreferenceChangeListener(assignmentListener)
+    braillePrefs.unregisterOnSharedPreferenceChangeListener(assignmentListener)
+    handler.removeCallbacks(assignedCheck)
+    HeldOrientationTracker.setLauncherAssigned(false)
   }
 
   /**
@@ -322,6 +352,20 @@ class BrailleAppLauncher(
     speak(
       if (text.isBlank()) service.getString(R.string.handwriting_empty)
       else service.getString(R.string.template_text_removed, text)
+    )
+  }
+
+  /**
+   * Tells the held orientation tracker whether this command is assigned to a gesture, key, menu or
+   * braille display key, so the dots are laid out for how the phone was held before they opened.
+   */
+  private fun updateAssigned() {
+    val value = service.getString(R.string.shortcut_value_braille_app_name)
+    HeldOrientationTracker.setLauncherAssigned(
+      CommandAssignments.isAssigned(prefs.all, value) ||
+        BrailleUserPreferences.readDisplayKeyOverrides(service)
+          .keysFor(DisplayKeyOverrides.screenReaderTarget(value))
+          .isNotEmpty()
     )
   }
 
