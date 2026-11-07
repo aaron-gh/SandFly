@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="addon_name">SandFly Add-on</string>
+    <string name="addon_description">Runs the SandFly features that need Shizuku, for SandFly from Google Play.</string>
+    <string name="addon_version">Version %1$s</string>
+    <string name="addon_shizuku_not_running">Shizuku: not running</string>
+    <string name="addon_shizuku_not_allowed">Shizuku: running, add-on not allowed</string>
+    <string name="addon_shizuku_denied">Shizuku: add-on denied. Allow it in the Shizuku app.</string>
+    <string name="addon_shizuku_allowed">Shizuku: add-on allowed</string>
+    <string name="addon_allow">Allow in Shizuku</string>
+    <string name="addon_sandfly_missing">SandFly: not installed</string>
+    <string name="addon_sandfly_other_key">SandFly: signed with a different key. The add-on doesn\'t work with this SandFly.</string>
+    <string name="addon_sandfly_ready">SandFly: installed</string>
+    <string name="addon_check_updates">Check for updates</string>
+    <string name="addon_checking">Checking for updates</string>
+    <string name="addon_up_to_date">Up to date</string>
+    <string name="addon_check_failed">Can\'t check for updates. Check the internet connection.</string>
+    <string name="addon_update_available">SandFly Add-on %1$s is available</string>
+    <string name="addon_install_update">Install update</string>
+    <string name="addon_downloading">Downloading the update</string>
+    <string name="addon_update_failed">The update couldn\'t be installed.</string>
+    <string name="addon_updates_channel">Updates</string>
+</resources>

@@ -1364,7 +1364,7 @@
     <string name="action_copy_command">คัดลอกคำสั่ง</string>
     <string name="command_copied">คัดลอกคำสั่งแล้ว</string>
     <string name="title_pref_speech_control">อนุญาตให้แอปอื่นพูด</string>
-    <string name="summary_pref_speech_control">แอปที่คุณอนุญาตสามารถพูดข้อความด้วยเสียงของ SandFly ได้ ไม่มีการพูดใดๆ ขณะที่อุปกรณ์ล็อกอยู่</string>
+    <string name="summary_pref_speech_control">แอปที่คุณอนุญาตสามารถพูดข้อความด้วยเสียง SandFly ของคุณได้ ขณะที่อุปกรณ์ล็อกอยู่ จะมีเพียงแอปที่คุณอนุญาตให้พูดขณะล็อกด้วยเท่านั้นที่พูดได้</string>
     <string name="title_pref_speech_control_sound">เล่นเสียงก่อนที่แอปอื่นจะพูด</string>
     <string name="speech_control_apps_category">แอป</string>
     <string name="speech_control_no_apps">ยังไม่มีแอปใดขอให้พูด</string>
@@ -1869,4 +1869,108 @@
   <string name="value_hold_to_cancel_3000">3 วินาที</string>
   <string name="title_pref_tap_to_activate">แตะเพื่อเปิดใช้งาน</string>
   <string name="summary_pref_tap_to_activate">การแตะที่ยกนิ้วขึ้นก่อนที่รายการใต้นิ้วจะได้รับโฟกัสจะเปิดใช้งานรายการนั้น</string>
+    <string name="title_selector_ai_actions">การดำเนินการ AI</string>
+    <string name="ai_actions_hint">ปัดขึ้นหรือลงเพื่อเลือกการดำเนินการ แล้วแตะสองครั้งเพื่อเรียกใช้</string>
+    <string name="title_pref_ai_actions_included">การดำเนินการ AI ที่จะรวม</string>
+    <string name="title_speak_screen_description">พูดคำอธิบายหน้าจอ</string>
+    <string name="title_speak_image_description">พูดคำอธิบายรูปภาพ</string>
+    <string name="title_ask_about_screen">ถามเกี่ยวกับหน้าจอ</string>
+    <string name="title_ask_about_image">ถามเกี่ยวกับรูปภาพ</string>
+    <string name="ai_question_hint">คำถาม</string>
+    <string name="ai_question_ask">ถาม</string>
+    <string name="shortcut_use_voice_profile">ใช้โปรไฟล์เสียง <xliff:g id="name" example="English">%1$s</xliff:g></string>
+    <string name="title_pref_keep_previous_voice_engine">ให้เครื่องมือของโปรไฟล์เสียงก่อนหน้าทำงานอยู่เสมอ</string>
+    <string name="title_pref_voice_profile_keep_engine_started">ให้เครื่องมือทำงานอยู่เสมอ</string>
+    <string name="title_pref_speech_equalizer">อีควอไลเซอร์</string>
+    <string name="title_pref_speech_equalizer_preset">ค่าที่กำหนดล่วงหน้า</string>
+    <string name="title_pref_speech_equalizer_on">ใช้อีควอไลเซอร์</string>
+    <string name="speech_equalizer_off">ปิด</string>
+    <string name="speech_equalizer_turned_on">เปิดอีควอไลเซอร์แล้ว</string>
+    <string name="speech_equalizer_turned_off">ปิดอีควอไลเซอร์แล้ว</string>
+    <string name="title_selector_equalizer_32">อีควอไลเซอร์ 32 Hz</string>
+    <string name="title_selector_equalizer_64">อีควอไลเซอร์ 64 Hz</string>
+    <string name="title_selector_equalizer_125">อีควอไลเซอร์ 125 Hz</string>
+    <string name="title_selector_equalizer_250">อีควอไลเซอร์ 250 Hz</string>
+    <string name="title_selector_equalizer_500">อีควอไลเซอร์ 500 Hz</string>
+    <string name="title_selector_equalizer_1k">อีควอไลเซอร์ 1 kHz</string>
+    <string name="title_selector_equalizer_2k">อีควอไลเซอร์ 2 kHz</string>
+    <string name="title_selector_equalizer_3k">อีควอไลเซอร์ 3 kHz</string>
+    <string name="title_selector_equalizer_4k">อีควอไลเซอร์ 4 kHz</string>
+    <string name="title_selector_equalizer_6k">อีควอไลเซอร์ 6 kHz</string>
+    <string name="title_selector_equalizer_8k">อีควอไลเซอร์ 8 kHz</string>
+    <string name="title_selector_equalizer_16k">อีควอไลเซอร์ 16 kHz</string>
+    <string name="summary_speech_equalizer_needs_low_latency">ต้องเปิด เอาต์พุตเสียง &gt; เสียงที่มีความหน่วงต่ำ</string>
+    <string name="speech_equalizer_flat">ราบเรียบ</string>
+    <string name="speech_equalizer_clarity">ชัดเจน</string>
+    <string name="speech_equalizer_bass_boost">เพิ่มเสียงเบส</string>
+    <string name="speech_equalizer_bass_cut">ลดเสียงเบส</string>
+    <string name="speech_equalizer_treble_boost">เพิ่มเสียงแหลม</string>
+    <string name="speech_equalizer_treble_cut">ลดเสียงแหลม</string>
+    <string name="speech_equalizer_warm">อบอุ่น</string>
+    <string name="speech_equalizer_reduce_harshness">ลดความกระด้าง</string>
+    <string name="speech_equalizer_reduce_sibilance">ลดเสียงซ่าของตัว ส</string>
+    <string name="speech_equalizer_small_speaker">ลำโพงขนาดเล็ก</string>
+    <string name="speech_equalizer_custom">กำหนดเอง</string>
+    <string name="speech_equalizer_band_hz"><xliff:g id="frequency">%1$s</xliff:g> Hz</string>
+    <string name="speech_equalizer_band_khz"><xliff:g id="frequency">%1$s</xliff:g> kHz</string>
+    <string name="speech_equalizer_gain_db"><xliff:g id="gain">%1$s</xliff:g> dB</string>
+    <string name="title_pref_braille_dictionary">พจนานุกรมอักษรเบรลล์</string>
+    <string name="braille_dictionary_not_shown">ไม่แสดง <xliff:g id="text" example="#">%1$s</xliff:g></string>
+    <string name="title_pref_announce_full_charge">ประกาศเมื่อชาร์จเต็ม</string>
+    <string name="battery_fully_charged">ชาร์จแบตเตอรี่เต็มแล้ว</string>
+    <string name="speech_control_locked_app"><xliff:g id="app" example="Tasker">%1$s</xliff:g> ขณะที่อุปกรณ์ล็อกอยู่</string>
+    <string name="speech_control_ask_locked_title">อนุญาตให้ <xliff:g id="app" example="Tasker">%1$s</xliff:g> พูดผ่าน SandFly ขณะที่อุปกรณ์ล็อกอยู่หรือไม่</string>
+    <string name="speech_control_ask_locked_text">แอปนี้พูดข้อความด้วยเสียง SandFly ของคุณได้ขณะที่อุปกรณ์ล็อกอยู่ ต้องปลดล็อกอุปกรณ์ก่อนจึงจะเลือก อนุญาต ได้ เปลี่ยนการตั้งค่านี้ได้ที่ การตั้งค่า &gt; การพูด &gt; อนุญาตให้แอปอื่นพูด</string>
+    <string name="permission_speak_when_locked_label">พูดผ่าน SandFly ขณะที่อุปกรณ์ล็อกอยู่</string>
+    <string name="permission_speak_when_locked_description">อนุญาตให้แอปขอพูดข้อความด้วยเสียง SandFly ของคุณขณะที่อุปกรณ์ล็อกอยู่ SandFly จะถามคุณแยกต่างหากก่อนอนุญาต</string>
+    <string name="title_pref_category_back_tap">แตะด้านหลัง</string>
+    <string name="title_pref_keep_speech_off_casts">เก็บเสียงพูดไว้ในโทรศัพท์ขณะแคสต์</string>
+    <string name="title_pref_app_shortcuts">ทางลัดของแอป</string>
+    <string name="app_shortcut_label"><xliff:g id="app_name" example="Amazon">%1$s</xliff:g>: <xliff:g id="shortcut" example="Cart">%2$s</xliff:g></string>
+    <string name="title_pref_add_app_shortcut">เพิ่มทางลัดของแอป</string>
+    <string name="app_shortcut_no_apps">ไม่มีแอปที่มีทางลัดให้เพิ่ม</string>
+    <string name="app_shortcut_not_added">ไม่ได้เพิ่มทางลัด</string>
+    <string name="app_shortcut_added">เพิ่ม <xliff:g id="name" example="MacroDroid: Morning">%1$s</xliff:g> แล้ว</string>
+    <string name="app_shortcut_not_opened">เปิดทางลัดของแอปไม่ได้</string>
+    <string name="app_search_no_apps">ไม่มีแอป</string>
+    <string name="shortcut_toggle_color_inversion">เปิดหรือปิดการกลับสี</string>
+    <string name="color_inversion_turned_on">เปิดการกลับสีแล้ว</string>
+    <string name="color_inversion_turned_off">ปิดการกลับสีแล้ว</string>
+    <string name="shortcut_dictate_or_media_control">พิมพ์ตามเสียงอ่าน เล่นหรือหยุดสื่อชั่วคราว</string>
+    <string name="title_pref_shortcut_edge_along_left_up">ปัดขึ้นตามขอบซ้าย</string>
+    <string name="title_pref_shortcut_edge_along_left_down">ปัดลงตามขอบซ้าย</string>
+    <string name="title_pref_shortcut_edge_along_right_up">ปัดขึ้นตามขอบขวา</string>
+    <string name="title_pref_shortcut_edge_along_right_down">ปัดลงตามขอบขวา</string>
+    <string name="title_pref_shortcut_edge_along_top_left">ปัดไปทางซ้ายตามขอบด้านบน</string>
+    <string name="title_pref_shortcut_edge_along_top_right">ปัดไปทางขวาตามขอบด้านบน</string>
+    <string name="title_pref_shortcut_edge_along_bottom_left">ปัดไปทางซ้ายตามขอบด้านล่าง</string>
+    <string name="title_pref_shortcut_edge_along_bottom_right">ปัดไปทางขวาตามขอบด้านล่าง</string>
+    <string name="title_pref_shortcut_back_tap_double">แตะด้านหลังสองครั้ง</string>
+    <string name="title_pref_shortcut_back_tap_triple">แตะด้านหลัง 3 ครั้ง</string>
+    <string name="title_pref_back_tap_sensitivity">ความไวในการแตะด้านหลัง</string>
+    <string name="title_pref_edge_zone_mm">ความกว้างของขอบ</string>
+    <string name="title_pref_edge_scroll_left">เลื่อนด้วยนิ้วเดียวตามขอบซ้าย</string>
+    <string name="title_pref_edge_scroll_right">เลื่อนด้วยนิ้วเดียวตามขอบขวา</string>
+    <string name="title_pref_edge_scroll_top">เลื่อนด้วยนิ้วเดียวตามขอบด้านบน</string>
+    <string name="title_pref_edge_scroll_bottom">เลื่อนด้วยนิ้วเดียวตามขอบด้านล่าง</string>
+    <string name="title_pref_edge_menu_left">เมนูขอบซ้าย</string>
+    <string name="title_pref_edge_menu_right">เมนูขอบขวา</string>
+    <string name="title_pref_edge_menu_left_switch">ใช้ขอบซ้ายเป็นเมนู</string>
+    <string name="title_pref_edge_menu_right_switch">ใช้ขอบขวาเป็นเมนู</string>
+    <string name="edge_menu_add_command">เพิ่มคำสั่ง</string>
+    <string name="edge_menu_change_command">เปลี่ยนคำสั่ง</string>
+    <string name="title_pref_text_entities">การดำเนินการที่พบในข้อความ</string>
+    <string name="text_entity_web">ที่อยู่เว็บ</string>
+    <string name="text_entity_email">ที่อยู่อีเมล</string>
+    <string name="text_entity_phone">หมายเลขโทรศัพท์</string>
+    <string name="text_entity_code">รหัสยืนยัน</string>
+    <string name="menu_item_call_number">โทรหา <xliff:g id="number" example="020 7946 0018">%1$s</xliff:g></string>
+    <string name="menu_item_copy_code">คัดลอก <xliff:g id="code" example="482916">%1$s</xliff:g></string>
+    <string name="title_pref_show_focus_indicator">แสดงสัญลักษณ์แสดงโฟกัส</string>
+    <string name="title_pref_dictation_correction_prompt">พรอมต์การแก้ไข</string>
+    <string name="title_pref_whisper_custom_model">ไฟล์โมเดล</string>
+    <string name="whisper_custom_model_choose">เลือกไฟล์โมเดล whisper.cpp</string>
+    <string name="whisper_custom_model_replace">เลือกไฟล์อื่น</string>
+    <string name="whisper_custom_model_not_whisper">ไม่ใช่ไฟล์โมเดล whisper.cpp</string>
+    <string name="whisper_custom_model_copying">กำลังคัดลอก</string>
 </resources>

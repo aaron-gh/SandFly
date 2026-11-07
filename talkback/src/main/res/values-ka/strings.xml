@@ -1363,7 +1363,7 @@
     <string name="action_copy_command">დააკოპირეთ ბრძანება</string>
     <string name="command_copied">ბრძანება დაკოპირებულია</string>
     <string name="title_pref_speech_control">სხვა აპებისთვის საუბრის დაშვება</string>
-    <string name="summary_pref_speech_control">დაშვებულ აპებს შეუძლიათ ტექსტის წარმოთქმა SandFly-ის ხმით. სანამ მოწყობილობა დაბლოკილია, არაფერი წარმოითქმება.</string>
+    <string name="summary_pref_speech_control">დაშვებულ აპებს შეუძლიათ ტექსტის წარმოთქმა თქვენი SandFly-ის ხმით. სანამ მოწყობილობა დაბლოკილია, საუბარი შეუძლიათ მხოლოდ იმ აპებს, რომლებიც დაბლოკვის დროსაც დაუშვით.</string>
     <string name="title_pref_speech_control_sound">ხმის დაკვრა სხვა აპების საუბრამდე</string>
     <string name="speech_control_apps_category">აპები</string>
     <string name="speech_control_no_apps">ჯერ არცერთ აპს არ მოუთხოვია საუბარი.</string>
@@ -1868,4 +1868,108 @@
   <string name="value_hold_to_cancel_3000">3 წამი</string>
   <string name="title_pref_tap_to_activate">შეეხეთ გასააქტიურებლად</string>
   <string name="summary_pref_tap_to_activate">შეხება, რომლის დროსაც თითი აიწევა მის ქვეშ მყოფი ერთეულის ფოკუსირებამდე, ააქტიურებს ამ ერთეულს.</string>
+    <string name="title_selector_ai_actions">AI მოქმედებები</string>
+    <string name="ai_actions_hint">მოქმედების ასარჩევად გადაფურცლეთ ზემოთ ან ქვემოთ, შემდეგ გასაშვებად ორმაგად შეეხეთ</string>
+    <string name="title_pref_ai_actions_included">ჩასართავი AI მოქმედებები</string>
+    <string name="title_speak_screen_description">ეკრანის აღწერის წარმოთქმა</string>
+    <string name="title_speak_image_description">სურათის აღწერის წარმოთქმა</string>
+    <string name="title_ask_about_screen">ეკრანზე შეკითხვა</string>
+    <string name="title_ask_about_image">სურათზე შეკითხვა</string>
+    <string name="ai_question_hint">შეკითხვა</string>
+    <string name="ai_question_ask">კითხვა</string>
+    <string name="shortcut_use_voice_profile">ხმის პროფილის გამოყენება: <xliff:g id="name" example="English">%1$s</xliff:g></string>
+    <string name="title_pref_keep_previous_voice_engine">წინა ხმის პროფილის მექანიზმის გაშვებულად დატოვება</string>
+    <string name="title_pref_voice_profile_keep_engine_started">მექანიზმის გაშვებულად დატოვება</string>
+    <string name="title_pref_speech_equalizer">ეკვალაიზერი</string>
+    <string name="title_pref_speech_equalizer_preset">წინასწარი პარამეტრი</string>
+    <string name="title_pref_speech_equalizer_on">ეკვალაიზერის გამოყენება</string>
+    <string name="speech_equalizer_off">გამორთული</string>
+    <string name="speech_equalizer_turned_on">ეკვალაიზერი ჩართულია</string>
+    <string name="speech_equalizer_turned_off">ეკვალაიზერი გამორთულია</string>
+    <string name="title_selector_equalizer_32">ეკვალაიზერი 32 Hz</string>
+    <string name="title_selector_equalizer_64">ეკვალაიზერი 64 Hz</string>
+    <string name="title_selector_equalizer_125">ეკვალაიზერი 125 Hz</string>
+    <string name="title_selector_equalizer_250">ეკვალაიზერი 250 Hz</string>
+    <string name="title_selector_equalizer_500">ეკვალაიზერი 500 Hz</string>
+    <string name="title_selector_equalizer_1k">ეკვალაიზერი 1 kHz</string>
+    <string name="title_selector_equalizer_2k">ეკვალაიზერი 2 kHz</string>
+    <string name="title_selector_equalizer_3k">ეკვალაიზერი 3 kHz</string>
+    <string name="title_selector_equalizer_4k">ეკვალაიზერი 4 kHz</string>
+    <string name="title_selector_equalizer_6k">ეკვალაიზერი 6 kHz</string>
+    <string name="title_selector_equalizer_8k">ეკვალაიზერი 8 kHz</string>
+    <string name="title_selector_equalizer_16k">ეკვალაიზერი 16 kHz</string>
+    <string name="summary_speech_equalizer_needs_low_latency">საჭიროა „აუდიო გამოსავალი“ &gt; „დაბალი შეყოვნების აუდიო“</string>
+    <string name="speech_equalizer_flat">თანაბარი</string>
+    <string name="speech_equalizer_clarity">სიცხადე</string>
+    <string name="speech_equalizer_bass_boost">ბასის გაძლიერება</string>
+    <string name="speech_equalizer_bass_cut">ბასის შემცირება</string>
+    <string name="speech_equalizer_treble_boost">მაღალი სიხშირეების გაძლიერება</string>
+    <string name="speech_equalizer_treble_cut">მაღალი სიხშირეების შემცირება</string>
+    <string name="speech_equalizer_warm">თბილი</string>
+    <string name="speech_equalizer_reduce_harshness">სიმკვახის შემცირება</string>
+    <string name="speech_equalizer_reduce_sibilance">სისინის შემცირება</string>
+    <string name="speech_equalizer_small_speaker">პატარა დინამიკი</string>
+    <string name="speech_equalizer_custom">მორგებული</string>
+    <string name="speech_equalizer_band_hz"><xliff:g id="frequency">%1$s</xliff:g> Hz</string>
+    <string name="speech_equalizer_band_khz"><xliff:g id="frequency">%1$s</xliff:g> kHz</string>
+    <string name="speech_equalizer_gain_db"><xliff:g id="gain">%1$s</xliff:g> dB</string>
+    <string name="title_pref_braille_dictionary">ბრაილის ლექსიკონი</string>
+    <string name="braille_dictionary_not_shown"><xliff:g id="text" example="#">%1$s</xliff:g> არ გამოჩნდება</string>
+    <string name="title_pref_announce_full_charge">სრული დამუხტვის გამოცხადება</string>
+    <string name="battery_fully_charged">ბატარეა სრულად დამუხტულია</string>
+    <string name="speech_control_locked_app"><xliff:g id="app" example="Tasker">%1$s</xliff:g>, როცა მოწყობილობა დაბლოკილია</string>
+    <string name="speech_control_ask_locked_title">დავუშვათ, რომ <xliff:g id="app" example="Tasker">%1$s</xliff:g> ისაუბროს SandFly-ით, როცა მოწყობილობა დაბლოკილია?</string>
+    <string name="speech_control_ask_locked_text">მას შეუძლია ტექსტის წარმოთქმა თქვენი SandFly-ის ხმით, როცა მოწყობილობა დაბლოკილია. „დაშვებას“ განბლოკილი მოწყობილობა სჭირდება. ამის შეცვლა შეგიძლიათ აქ: „პარამეტრები“, „მეტყველება“, „სხვა აპებისთვის საუბრის დაშვება“.</string>
+    <string name="permission_speak_when_locked_label">SandFly-ის მეშვეობით საუბარი, როცა მოწყობილობა დაბლოკილია</string>
+    <string name="permission_speak_when_locked_description">აპს აძლევს უფლებას, ითხოვოს ტექსტის თქმა თქვენი SandFly ხმით, როცა მოწყობილობა დაბლოკილია. სანამ ამას შეძლებს, SandFly ცალკე გკითხავთ.</string>
+    <string name="title_pref_category_back_tap">უკანა მხარეზე შეხება</string>
+    <string name="title_pref_keep_speech_off_casts">ტრანსლირებისას მეტყველების ტელეფონზე დატოვება</string>
+    <string name="title_pref_app_shortcuts">აპების მალსახმობები</string>
+    <string name="app_shortcut_label"><xliff:g id="app_name" example="Amazon">%1$s</xliff:g>: <xliff:g id="shortcut" example="Cart">%2$s</xliff:g></string>
+    <string name="title_pref_add_app_shortcut">აპის მალსახმობის დამატება</string>
+    <string name="app_shortcut_no_apps">არცერთ აპს არ აქვს დასამატებელი მალსახმობები</string>
+    <string name="app_shortcut_not_added">მალსახმობი არ დაემატა</string>
+    <string name="app_shortcut_added">დაემატა <xliff:g id="name" example="MacroDroid: Morning">%1$s</xliff:g></string>
+    <string name="app_shortcut_not_opened">აპის მალსახმობის გახსნა ვერ მოხერხდა</string>
+    <string name="app_search_no_apps">აპები არ არის</string>
+    <string name="shortcut_toggle_color_inversion">ფერის ინვერსიის ჩართვა და გამორთვა</string>
+    <string name="color_inversion_turned_on">ფერის ინვერსია ჩართულია</string>
+    <string name="color_inversion_turned_off">ფერის ინვერსია გამორთულია</string>
+    <string name="shortcut_dictate_or_media_control">კარნახი, მედიის დაკვრა ან დაპაუზება</string>
+    <string name="title_pref_shortcut_edge_along_left_up">გადაფურცლეთ ზემოთ მარცხენა კიდის გასწვრივ</string>
+    <string name="title_pref_shortcut_edge_along_left_down">გადაფურცლეთ ქვემოთ მარცხენა კიდის გასწვრივ</string>
+    <string name="title_pref_shortcut_edge_along_right_up">გადაფურცლეთ ზემოთ მარჯვენა კიდის გასწვრივ</string>
+    <string name="title_pref_shortcut_edge_along_right_down">გადაფურცლეთ ქვემოთ მარჯვენა კიდის გასწვრივ</string>
+    <string name="title_pref_shortcut_edge_along_top_left">გადაფურცლეთ მარცხნივ ზედა კიდის გასწვრივ</string>
+    <string name="title_pref_shortcut_edge_along_top_right">გადაფურცლეთ მარჯვნივ ზედა კიდის გასწვრივ</string>
+    <string name="title_pref_shortcut_edge_along_bottom_left">გადაფურცლეთ მარცხნივ ქვედა კიდის გასწვრივ</string>
+    <string name="title_pref_shortcut_edge_along_bottom_right">გადაფურცლეთ მარჯვნივ ქვედა კიდის გასწვრივ</string>
+    <string name="title_pref_shortcut_back_tap_double">ორმაგად შეეხეთ უკანა მხარეს</string>
+    <string name="title_pref_shortcut_back_tap_triple">სამმაგად შეეხეთ უკანა მხარეს</string>
+    <string name="title_pref_back_tap_sensitivity">უკანა მხარეზე შეხების მგრძნობელობა</string>
+    <string name="title_pref_edge_zone_mm">კიდის სიგანე</string>
+    <string name="title_pref_edge_scroll_left">ერთი თითით გადახვევა მარცხენა კიდის გასწვრივ</string>
+    <string name="title_pref_edge_scroll_right">ერთი თითით გადახვევა მარჯვენა კიდის გასწვრივ</string>
+    <string name="title_pref_edge_scroll_top">ერთი თითით გადახვევა ზედა კიდის გასწვრივ</string>
+    <string name="title_pref_edge_scroll_bottom">ერთი თითით გადახვევა ქვედა კიდის გასწვრივ</string>
+    <string name="title_pref_edge_menu_left">მარცხენა კიდის მენიუ</string>
+    <string name="title_pref_edge_menu_right">მარჯვენა კიდის მენიუ</string>
+    <string name="title_pref_edge_menu_left_switch">მარცხენა კიდის მენიუდ გამოყენება</string>
+    <string name="title_pref_edge_menu_right_switch">მარჯვენა კიდის მენიუდ გამოყენება</string>
+    <string name="edge_menu_add_command">ბრძანების დამატება</string>
+    <string name="edge_menu_change_command">ბრძანების შეცვლა</string>
+    <string name="title_pref_text_entities">ტექსტში ნაპოვნი მოქმედებები</string>
+    <string name="text_entity_web">ვებმისამართები</string>
+    <string name="text_entity_email">ელფოსტის მისამართები</string>
+    <string name="text_entity_phone">ტელეფონის ნომრები</string>
+    <string name="text_entity_code">კოდები</string>
+    <string name="menu_item_call_number">დარეკვა: <xliff:g id="number" example="020 7946 0018">%1$s</xliff:g></string>
+    <string name="menu_item_copy_code">კოპირება: <xliff:g id="code" example="482916">%1$s</xliff:g></string>
+    <string name="title_pref_show_focus_indicator">ფოკუსის მაჩვენებლის ჩვენება</string>
+    <string name="title_pref_dictation_correction_prompt">გასწორების მოთხოვნა</string>
+    <string name="title_pref_whisper_custom_model">მოდელის ფაილი</string>
+    <string name="whisper_custom_model_choose">აირჩიეთ whisper.cpp-ის მოდელის ფაილი</string>
+    <string name="whisper_custom_model_replace">სხვა ფაილის არჩევა</string>
+    <string name="whisper_custom_model_not_whisper">არ არის whisper.cpp-ის მოდელის ფაილი</string>
+    <string name="whisper_custom_model_copying">მიმდინარეობს კოპირება</string>
 </resources>

@@ -1363,7 +1363,7 @@
     <string name="action_copy_command">명령어 복사</string>
     <string name="command_copied">명령이 복사되었습니다.</string>
     <string name="title_pref_speech_control">다른 앱의 음성 출력 허용</string>
-    <string name="summary_pref_speech_control">허용한 앱은 SandFly 음성으로 텍스트를 읽을 수 있습니다. 기기가 잠겨 있는 동안에는 아무것도 읽지 않습니다.</string>
+    <string name="summary_pref_speech_control">허용한 앱은 SandFly 음성으로 텍스트를 읽을 수 있습니다. 기기가 잠겨 있는 동안에는 잠금 상태에서도 허용한 앱만 말할 수 있습니다.</string>
     <string name="title_pref_speech_control_sound">다른 앱이 말하기 전에 소리 재생</string>
     <string name="speech_control_apps_category">앱</string>
     <string name="speech_control_no_apps">아직 말하기를 요청한 앱이 없습니다.</string>
@@ -1868,4 +1868,108 @@
   <string name="value_hold_to_cancel_3000">3초</string>
   <string name="title_pref_tap_to_activate">탭하여 활성화</string>
   <string name="summary_pref_tap_to_activate">손가락 아래 항목에 포커스가 설정되기 전에 손가락을 떼는 탭은 해당 항목을 활성화합니다.</string>
+    <string name="title_selector_ai_actions">AI 작업</string>
+    <string name="ai_actions_hint">위나 아래로 스와이프하여 작업을 선택한 다음 두 번 탭하여 실행합니다</string>
+    <string name="title_pref_ai_actions_included">포함할 AI 작업</string>
+    <string name="title_speak_screen_description">화면 설명 말하기</string>
+    <string name="title_speak_image_description">이미지 설명 말하기</string>
+    <string name="title_ask_about_screen">화면에 대해 질문</string>
+    <string name="title_ask_about_image">이미지에 대해 질문</string>
+    <string name="ai_question_hint">질문</string>
+    <string name="ai_question_ask">질문하기</string>
+    <string name="shortcut_use_voice_profile">음성 프로필 <xliff:g id="name" example="English">%1$s</xliff:g> 사용</string>
+    <string name="title_pref_keep_previous_voice_engine">이전 음성 프로필의 엔진을 시작된 상태로 유지</string>
+    <string name="title_pref_voice_profile_keep_engine_started">엔진을 시작된 상태로 유지</string>
+    <string name="title_pref_speech_equalizer">이퀄라이저</string>
+    <string name="title_pref_speech_equalizer_preset">사전 설정</string>
+    <string name="title_pref_speech_equalizer_on">이퀄라이저 사용</string>
+    <string name="speech_equalizer_off">사용 안함</string>
+    <string name="speech_equalizer_turned_on">이퀄라이저 사용 중</string>
+    <string name="speech_equalizer_turned_off">이퀄라이저 사용 안함</string>
+    <string name="title_selector_equalizer_32">이퀄라이저 32 Hz</string>
+    <string name="title_selector_equalizer_64">이퀄라이저 64 Hz</string>
+    <string name="title_selector_equalizer_125">이퀄라이저 125 Hz</string>
+    <string name="title_selector_equalizer_250">이퀄라이저 250 Hz</string>
+    <string name="title_selector_equalizer_500">이퀄라이저 500 Hz</string>
+    <string name="title_selector_equalizer_1k">이퀄라이저 1 kHz</string>
+    <string name="title_selector_equalizer_2k">이퀄라이저 2 kHz</string>
+    <string name="title_selector_equalizer_3k">이퀄라이저 3 kHz</string>
+    <string name="title_selector_equalizer_4k">이퀄라이저 4 kHz</string>
+    <string name="title_selector_equalizer_6k">이퀄라이저 6 kHz</string>
+    <string name="title_selector_equalizer_8k">이퀄라이저 8 kHz</string>
+    <string name="title_selector_equalizer_16k">이퀄라이저 16 kHz</string>
+    <string name="summary_speech_equalizer_needs_low_latency">오디오 출력 &gt; 지연 시간이 짧은 오디오 필요</string>
+    <string name="speech_equalizer_flat">플랫</string>
+    <string name="speech_equalizer_clarity">명료함</string>
+    <string name="speech_equalizer_bass_boost">저음 강화</string>
+    <string name="speech_equalizer_bass_cut">저음 감소</string>
+    <string name="speech_equalizer_treble_boost">고음 강화</string>
+    <string name="speech_equalizer_treble_cut">고음 감소</string>
+    <string name="speech_equalizer_warm">따뜻한 소리</string>
+    <string name="speech_equalizer_reduce_harshness">거친 소리 줄이기</string>
+    <string name="speech_equalizer_reduce_sibilance">치찰음 줄이기</string>
+    <string name="speech_equalizer_small_speaker">소형 스피커</string>
+    <string name="speech_equalizer_custom">맞춤</string>
+    <string name="speech_equalizer_band_hz"><xliff:g id="frequency">%1$s</xliff:g> Hz</string>
+    <string name="speech_equalizer_band_khz"><xliff:g id="frequency">%1$s</xliff:g> kHz</string>
+    <string name="speech_equalizer_gain_db"><xliff:g id="gain">%1$s</xliff:g> dB</string>
+    <string name="title_pref_braille_dictionary">점자 사전</string>
+    <string name="braille_dictionary_not_shown"><xliff:g id="text" example="#">%1$s</xliff:g> 표시 안 함</string>
+    <string name="title_pref_announce_full_charge">완전 충전 알리기</string>
+    <string name="battery_fully_charged">배터리 완전 충전됨</string>
+    <string name="speech_control_locked_app"><xliff:g id="app" example="Tasker">%1$s</xliff:g>(기기가 잠겨 있을 때)</string>
+    <string name="speech_control_ask_locked_title">기기가 잠겨 있을 때도 <xliff:g id="app" example="Tasker">%1$s</xliff:g>이(가) SandFly를 통해 말하도록 허용할까요?</string>
+    <string name="speech_control_ask_locked_text">기기가 잠겨 있을 때도 SandFly 음성으로 텍스트를 말할 수 있습니다. 허용하려면 기기 잠금을 해제해야 합니다. 설정, 음성, 다른 앱의 음성 출력 허용에서 변경할 수 있습니다.</string>
+    <string name="permission_speak_when_locked_label">기기가 잠겨 있을 때 SandFly를 통해 말하기</string>
+    <string name="permission_speak_when_locked_description">기기가 잠겨 있을 때 SandFly 음성으로 텍스트를 말하도록 앱이 요청할 수 있게 합니다. SandFly가 허용 전에 별도로 확인합니다.</string>
+    <string name="title_pref_category_back_tap">뒷면 탭</string>
+    <string name="title_pref_keep_speech_off_casts">전송 중에 음성을 휴대전화에 유지</string>
+    <string name="title_pref_app_shortcuts">앱 바로가기</string>
+    <string name="app_shortcut_label"><xliff:g id="app_name" example="Amazon">%1$s</xliff:g>: <xliff:g id="shortcut" example="Cart">%2$s</xliff:g></string>
+    <string name="title_pref_add_app_shortcut">앱 바로가기 추가</string>
+    <string name="app_shortcut_no_apps">추가할 바로가기가 있는 앱이 없습니다</string>
+    <string name="app_shortcut_not_added">추가된 바로가기 없음</string>
+    <string name="app_shortcut_added"><xliff:g id="name" example="MacroDroid: Morning">%1$s</xliff:g> 추가됨</string>
+    <string name="app_shortcut_not_opened">앱 바로가기를 열 수 없습니다</string>
+    <string name="app_search_no_apps">앱 없음</string>
+    <string name="shortcut_toggle_color_inversion">색상 반전 사용 설정 또는 중지</string>
+    <string name="color_inversion_turned_on">색상 반전 사용 중</string>
+    <string name="color_inversion_turned_off">색상 반전 사용 안함</string>
+    <string name="shortcut_dictate_or_media_control">받아쓰기, 미디어 재생 또는 일시중지</string>
+    <string name="title_pref_shortcut_edge_along_left_up">왼쪽 가장자리를 따라 위로 스와이프</string>
+    <string name="title_pref_shortcut_edge_along_left_down">왼쪽 가장자리를 따라 아래로 스와이프</string>
+    <string name="title_pref_shortcut_edge_along_right_up">오른쪽 가장자리를 따라 위로 스와이프</string>
+    <string name="title_pref_shortcut_edge_along_right_down">오른쪽 가장자리를 따라 아래로 스와이프</string>
+    <string name="title_pref_shortcut_edge_along_top_left">상단 가장자리를 따라 왼쪽으로 스와이프</string>
+    <string name="title_pref_shortcut_edge_along_top_right">상단 가장자리를 따라 오른쪽으로 스와이프</string>
+    <string name="title_pref_shortcut_edge_along_bottom_left">하단 가장자리를 따라 왼쪽으로 스와이프</string>
+    <string name="title_pref_shortcut_edge_along_bottom_right">하단 가장자리를 따라 오른쪽으로 스와이프</string>
+    <string name="title_pref_shortcut_back_tap_double">뒷면 두 번 탭</string>
+    <string name="title_pref_shortcut_back_tap_triple">뒷면 세 번 탭</string>
+    <string name="title_pref_back_tap_sensitivity">뒷면 탭 민감도</string>
+    <string name="title_pref_edge_zone_mm">가장자리 너비</string>
+    <string name="title_pref_edge_scroll_left">왼쪽 가장자리를 따라 한 손가락으로 스크롤</string>
+    <string name="title_pref_edge_scroll_right">오른쪽 가장자리를 따라 한 손가락으로 스크롤</string>
+    <string name="title_pref_edge_scroll_top">상단 가장자리를 따라 한 손가락으로 스크롤</string>
+    <string name="title_pref_edge_scroll_bottom">하단 가장자리를 따라 한 손가락으로 스크롤</string>
+    <string name="title_pref_edge_menu_left">왼쪽 가장자리 메뉴</string>
+    <string name="title_pref_edge_menu_right">오른쪽 가장자리 메뉴</string>
+    <string name="title_pref_edge_menu_left_switch">왼쪽 가장자리를 메뉴로 사용</string>
+    <string name="title_pref_edge_menu_right_switch">오른쪽 가장자리를 메뉴로 사용</string>
+    <string name="edge_menu_add_command">명령 추가</string>
+    <string name="edge_menu_change_command">명령 변경</string>
+    <string name="title_pref_text_entities">텍스트에서 찾은 작업</string>
+    <string name="text_entity_web">웹 주소</string>
+    <string name="text_entity_email">이메일 주소</string>
+    <string name="text_entity_phone">전화번호</string>
+    <string name="text_entity_code">인증 코드</string>
+    <string name="menu_item_call_number"><xliff:g id="number" example="020 7946 0018">%1$s</xliff:g>에 전화 걸기</string>
+    <string name="menu_item_copy_code"><xliff:g id="code" example="482916">%1$s</xliff:g> 복사</string>
+    <string name="title_pref_show_focus_indicator">초점 표시 보기</string>
+    <string name="title_pref_dictation_correction_prompt">수정 프롬프트</string>
+    <string name="title_pref_whisper_custom_model">모델 파일</string>
+    <string name="whisper_custom_model_choose">whisper.cpp 모델 파일 선택</string>
+    <string name="whisper_custom_model_replace">다른 파일 선택</string>
+    <string name="whisper_custom_model_not_whisper">whisper.cpp 모델 파일이 아닙니다</string>
+    <string name="whisper_custom_model_copying">복사 중</string>
 </resources>

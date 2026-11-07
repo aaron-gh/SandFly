@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_gesture_layout">Kézmozdulat-elrendezés</string>
+    <string name="gesture_layout_sandfly">SandFly-kézmozdulatok</string>
+    <string name="gesture_layout_voiceover">VoiceOver-kézmozdulatok</string>
+    <string name="gesture_layout_dialog_title">Kézmozdulatok kiválasztása</string>
+    <string name="title_pref_handle_two_finger_swipes">Kétujjas csúsztatások kezelése a SandFlyban</string>
+    <string name="title_pref_shortcut_4finger_1tap_top">Koppintás négy ujjal a képernyő felső felén</string>
+    <string name="title_pref_shortcut_4finger_1tap_bottom">Koppintás négy ujjal a képernyő alsó felén</string>
+    <string name="shortcut_speak_position">Pozíció kimondása</string>
+    <string name="speak_position_item"><xliff:g id="index">%1$d</xliff:g>/<xliff:g id="count">%2$d</xliff:g>. elem</string>
+    <string name="speak_position_row_column"><xliff:g id="row">%1$d</xliff:g>/<xliff:g id="row_count">%2$d</xliff:g>. sor, <xliff:g id="column">%3$d</xliff:g>/<xliff:g id="column_count">%4$d</xliff:g>. oszlop</string>
+    <string name="speak_position_none">Nincs pozíció</string>
+</resources>

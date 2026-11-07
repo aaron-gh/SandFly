@@ -1337,7 +1337,7 @@
   <string name="summary_pref_speakerphone_away_from_ear">Во время звонка включает громкую связь, когда вы отводите телефон от уха, и возвращает звук в разговорный динамик, когда снова подносите телефон к уху.</string>
   <string name="summary_pref_speakerphone_needs_permission">Требуется разрешение, которое Android не выдаёт программам чтения с экрана. Чтобы предоставить его, выполните эту команду через adb или Shizuku, затем вернитесь на этот экран: %1$s</string>
   <string name="title_pref_speech_control">Разрешить другим приложениям озвучивать текст</string>
-  <string name="summary_pref_speech_control">Разрешённые приложения могут озвучивать текст голосом SandFly. Пока устройство заблокировано, текст не озвучивается.</string>
+    <string name="summary_pref_speech_control">Разрешённые приложения могут озвучивать текст голосом SandFly. Пока устройство заблокировано, текст озвучивают только приложения, которым это разрешено и при блокировке.</string>
   <string name="title_pref_speech_control_sound">Воспроизводить звук перед озвучиванием из других приложений</string>
   <string name="speech_control_apps_category">Приложения</string>
   <string name="speech_control_no_apps">Ни одно приложение пока не запрашивало озвучивание текста.</string>
@@ -1877,4 +1877,108 @@
   <string name="value_hold_to_cancel_3000">3 сек.</string>
   <string name="title_pref_tap_to_activate">Активация нажатием</string>
   <string name="summary_pref_tap_to_activate">Нажатие, при котором палец отпускается до выбора элемента под ним, активирует этот элемент.</string>
+    <string name="title_selector_ai_actions">Действия ИИ</string>
+    <string name="ai_actions_hint">Проведите вверх или вниз, чтобы выбрать действие, затем дважды нажмите, чтобы выполнить его</string>
+    <string name="title_pref_ai_actions_included">Доступные действия ИИ</string>
+    <string name="title_speak_screen_description">Озвучить описание экрана</string>
+    <string name="title_speak_image_description">Озвучить описание изображения</string>
+    <string name="title_ask_about_screen">Задать вопрос об экране</string>
+    <string name="title_ask_about_image">Задать вопрос об изображении</string>
+    <string name="ai_question_hint">Вопрос</string>
+    <string name="ai_question_ask">Спросить</string>
+    <string name="shortcut_use_voice_profile">Использовать голосовой профиль <xliff:g id="name" example="English">%1$s</xliff:g></string>
+    <string name="title_pref_keep_previous_voice_engine">Оставлять запущенным синтезатор речи предыдущего голосового профиля</string>
+    <string name="title_pref_voice_profile_keep_engine_started">Оставлять синтезатор речи запущенным</string>
+    <string name="title_pref_speech_equalizer">Эквалайзер</string>
+    <string name="title_pref_speech_equalizer_preset">Предустановка</string>
+    <string name="title_pref_speech_equalizer_on">Использовать эквалайзер</string>
+    <string name="speech_equalizer_off">Выключен</string>
+    <string name="speech_equalizer_turned_on">Эквалайзер включён</string>
+    <string name="speech_equalizer_turned_off">Эквалайзер выключен</string>
+    <string name="title_selector_equalizer_32">Эквалайзер 32 Гц</string>
+    <string name="title_selector_equalizer_64">Эквалайзер 64 Гц</string>
+    <string name="title_selector_equalizer_125">Эквалайзер 125 Гц</string>
+    <string name="title_selector_equalizer_250">Эквалайзер 250 Гц</string>
+    <string name="title_selector_equalizer_500">Эквалайзер 500 Гц</string>
+    <string name="title_selector_equalizer_1k">Эквалайзер 1 кГц</string>
+    <string name="title_selector_equalizer_2k">Эквалайзер 2 кГц</string>
+    <string name="title_selector_equalizer_3k">Эквалайзер 3 кГц</string>
+    <string name="title_selector_equalizer_4k">Эквалайзер 4 кГц</string>
+    <string name="title_selector_equalizer_6k">Эквалайзер 6 кГц</string>
+    <string name="title_selector_equalizer_8k">Эквалайзер 8 кГц</string>
+    <string name="title_selector_equalizer_16k">Эквалайзер 16 кГц</string>
+    <string name="summary_speech_equalizer_needs_low_latency">Требуется: Вывод звука &gt; Звук с низкой задержкой</string>
+    <string name="speech_equalizer_flat">Ровный</string>
+    <string name="speech_equalizer_clarity">Чёткость</string>
+    <string name="speech_equalizer_bass_boost">Усиление басов</string>
+    <string name="speech_equalizer_bass_cut">Ослабление басов</string>
+    <string name="speech_equalizer_treble_boost">Усиление высоких частот</string>
+    <string name="speech_equalizer_treble_cut">Ослабление высоких частот</string>
+    <string name="speech_equalizer_warm">Тёплый</string>
+    <string name="speech_equalizer_reduce_harshness">Снижение резкости</string>
+    <string name="speech_equalizer_reduce_sibilance">Ослабление свистящих</string>
+    <string name="speech_equalizer_small_speaker">Маленький динамик</string>
+    <string name="speech_equalizer_custom">Пользовательская</string>
+    <string name="speech_equalizer_band_hz"><xliff:g id="frequency">%1$s</xliff:g> Гц</string>
+    <string name="speech_equalizer_band_khz"><xliff:g id="frequency">%1$s</xliff:g> кГц</string>
+    <string name="speech_equalizer_gain_db"><xliff:g id="gain">%1$s</xliff:g> дБ</string>
+    <string name="title_pref_braille_dictionary">Словарь Брайля</string>
+    <string name="braille_dictionary_not_shown"><xliff:g id="text" example="#">%1$s</xliff:g> не отображается</string>
+    <string name="title_pref_announce_full_charge">Сообщать о полной зарядке</string>
+    <string name="battery_fully_charged">Батарея полностью заряжена</string>
+    <string name="speech_control_locked_app"><xliff:g id="app" example="Tasker">%1$s</xliff:g> при заблокированном устройстве</string>
+    <string name="speech_control_ask_locked_title">Разрешить приложению <xliff:g id="app" example="Tasker">%1$s</xliff:g> озвучивать текст через SandFly, когда устройство заблокировано?</string>
+    <string name="speech_control_ask_locked_text">Приложение сможет озвучивать текст голосом SandFly, когда устройство заблокировано. Кнопка «Разрешить» работает только на разблокированном устройстве. Изменить это можно в разделе «Настройки», «Речь», «Разрешить другим приложениям озвучивать текст».</string>
+    <string name="permission_speak_when_locked_label">озвучивать текст через SandFly при заблокированном устройстве</string>
+    <string name="permission_speak_when_locked_description">Позволяет приложению запрашивать озвучивание текста голосом SandFly, когда устройство заблокировано. SandFly отдельно запросит ваше разрешение.</string>
+    <string name="title_pref_category_back_tap">Касание задней панели</string>
+    <string name="title_pref_keep_speech_off_casts">Оставлять речь на телефоне при трансляции</string>
+    <string name="title_pref_app_shortcuts">Ярлыки приложений</string>
+    <string name="app_shortcut_label"><xliff:g id="app_name" example="Amazon">%1$s</xliff:g>: <xliff:g id="shortcut" example="Cart">%2$s</xliff:g></string>
+    <string name="title_pref_add_app_shortcut">Добавить ярлык приложения</string>
+    <string name="app_shortcut_no_apps">Нет приложений с ярлыками для добавления</string>
+    <string name="app_shortcut_not_added">Ярлык не добавлен</string>
+    <string name="app_shortcut_added">Добавлено: <xliff:g id="name" example="MacroDroid: Morning">%1$s</xliff:g></string>
+    <string name="app_shortcut_not_opened">Не удалось открыть ярлык приложения</string>
+    <string name="app_search_no_apps">Нет приложений</string>
+    <string name="shortcut_toggle_color_inversion">Включить или выключить инверсию цвета</string>
+    <string name="color_inversion_turned_on">Инверсия цвета включена</string>
+    <string name="color_inversion_turned_off">Инверсия цвета выключена</string>
+    <string name="shortcut_dictate_or_media_control">Начать диктовку, начать или приостановить воспроизведение</string>
+    <string name="title_pref_shortcut_edge_along_left_up">Проведите пальцем вверх вдоль левого края</string>
+    <string name="title_pref_shortcut_edge_along_left_down">Проведите пальцем вниз вдоль левого края</string>
+    <string name="title_pref_shortcut_edge_along_right_up">Проведите пальцем вверх вдоль правого края</string>
+    <string name="title_pref_shortcut_edge_along_right_down">Проведите пальцем вниз вдоль правого края</string>
+    <string name="title_pref_shortcut_edge_along_top_left">Проведите пальцем влево вдоль верхнего края</string>
+    <string name="title_pref_shortcut_edge_along_top_right">Проведите пальцем вправо вдоль верхнего края</string>
+    <string name="title_pref_shortcut_edge_along_bottom_left">Проведите пальцем влево вдоль нижнего края</string>
+    <string name="title_pref_shortcut_edge_along_bottom_right">Проведите пальцем вправо вдоль нижнего края</string>
+    <string name="title_pref_shortcut_back_tap_double">Двойное касание задней панели</string>
+    <string name="title_pref_shortcut_back_tap_triple">Тройное касание задней панели</string>
+    <string name="title_pref_back_tap_sensitivity">Чувствительность касания задней панели</string>
+    <string name="title_pref_edge_zone_mm">Ширина края</string>
+    <string name="title_pref_edge_scroll_left">Прокручивать одним пальцем вдоль левого края</string>
+    <string name="title_pref_edge_scroll_right">Прокручивать одним пальцем вдоль правого края</string>
+    <string name="title_pref_edge_scroll_top">Прокручивать одним пальцем вдоль верхнего края</string>
+    <string name="title_pref_edge_scroll_bottom">Прокручивать одним пальцем вдоль нижнего края</string>
+    <string name="title_pref_edge_menu_left">Меню левого края</string>
+    <string name="title_pref_edge_menu_right">Меню правого края</string>
+    <string name="title_pref_edge_menu_left_switch">Использовать левый край как меню</string>
+    <string name="title_pref_edge_menu_right_switch">Использовать правый край как меню</string>
+    <string name="edge_menu_add_command">Добавить команду</string>
+    <string name="edge_menu_change_command">Изменить команду</string>
+    <string name="title_pref_text_entities">Действия, найденные в тексте</string>
+    <string name="text_entity_web">Веб-адреса</string>
+    <string name="text_entity_email">Адреса электронной почты</string>
+    <string name="text_entity_phone">Номера телефонов</string>
+    <string name="text_entity_code">Коды</string>
+    <string name="menu_item_call_number">Позвонить по номеру <xliff:g id="number" example="020 7946 0018">%1$s</xliff:g></string>
+    <string name="menu_item_copy_code">Скопировать <xliff:g id="code" example="482916">%1$s</xliff:g></string>
+    <string name="title_pref_show_focus_indicator">Показывать индикатор фокуса</string>
+    <string name="title_pref_dictation_correction_prompt">Инструкция для исправления</string>
+    <string name="title_pref_whisper_custom_model">Файл модели</string>
+    <string name="whisper_custom_model_choose">Выберите файл модели whisper.cpp</string>
+    <string name="whisper_custom_model_replace">Выбрать другой файл</string>
+    <string name="whisper_custom_model_not_whisper">Это не файл модели whisper.cpp</string>
+    <string name="whisper_custom_model_copying">Копирование</string>
 </resources>

@@ -1363,7 +1363,7 @@
     <string name="action_copy_command">கட்டளையை நகலெடுக்கவும்</string>
     <string name="command_copied">கட்டளை நகலெடுக்கப்பட்டது</string>
     <string name="title_pref_speech_control">பிற ஆப்ஸைப் பேச அனுமதி</string>
-    <string name="summary_pref_speech_control">நீங்கள் அனுமதிக்கும் ஆப்ஸ் SandFly குரலில் உரையைச் சொல்லலாம். சாதனம் பூட்டப்பட்டிருக்கும்போது எதுவும் சொல்லப்படாது.</string>
+    <string name="summary_pref_speech_control">நீங்கள் அனுமதிக்கும் ஆப்ஸ் உங்கள் SandFly குரலில் உரையைச் சொல்லலாம். சாதனம் பூட்டப்பட்டிருக்கும்போது, பூட்டிய நிலையிலும் நீங்கள் அனுமதித்த ஆப்ஸ் மட்டுமே பேச முடியும்.</string>
     <string name="title_pref_speech_control_sound">பிற பயன்பாடுகள் பேசுவதற்கு முன் ஒலியை இயக்கவும்</string>
     <string name="speech_control_apps_category">ஆப்ஸ்</string>
     <string name="speech_control_no_apps">இதுவரை எந்த ஆப்ஸும் பேசும்படி கேட்கவில்லை.</string>
@@ -1868,4 +1868,108 @@
   <string name="value_hold_to_cancel_3000">3 வினாடிகள்</string>
   <string name="title_pref_tap_to_activate">தட்டி இயக்கு</string>
   <string name="summary_pref_tap_to_activate">விரலுக்குக் கீழுள்ள உருப்படி ஃபோகஸ் செய்யப்படுவதற்கு முன் விரல் உயர்த்தப்படும் தட்டல் அந்த உருப்படியை இயக்கும்.</string>
+    <string name="title_selector_ai_actions">AI செயல்கள்</string>
+    <string name="ai_actions_hint">செயலைத் தேர்ந்தெடுக்க மேலே அல்லது கீழே ஸ்வைப் செய்து, இயக்க இருமுறை தட்டவும்</string>
+    <string name="title_pref_ai_actions_included">சேர்க்க வேண்டிய AI செயல்கள்</string>
+    <string name="title_speak_screen_description">திரை விளக்கத்தைச் சொல்</string>
+    <string name="title_speak_image_description">பட விளக்கத்தைச் சொல்</string>
+    <string name="title_ask_about_screen">திரையைப் பற்றிக் கேள்</string>
+    <string name="title_ask_about_image">படத்தைப் பற்றிக் கேள்</string>
+    <string name="ai_question_hint">கேள்வி</string>
+    <string name="ai_question_ask">கேள்</string>
+    <string name="shortcut_use_voice_profile"><xliff:g id="name" example="English">%1$s</xliff:g> குரல் சுயவிவரத்தைப் பயன்படுத்து</string>
+    <string name="title_pref_keep_previous_voice_engine">முந்தைய குரல் சுயவிவரத்தின் இயந்திரத்தைத் தொடங்கிய நிலையில் வைத்திரு</string>
+    <string name="title_pref_voice_profile_keep_engine_started">இயந்திரத்தைத் தொடங்கிய நிலையில் வைத்திரு</string>
+    <string name="title_pref_speech_equalizer">ஈக்வலைசர்</string>
+    <string name="title_pref_speech_equalizer_preset">முன்னமைவு</string>
+    <string name="title_pref_speech_equalizer_on">ஈக்வலைசரைப் பயன்படுத்து</string>
+    <string name="speech_equalizer_off">முடக்கப்பட்டுள்ளது</string>
+    <string name="speech_equalizer_turned_on">ஈக்வலைசர் இயக்கப்பட்டது</string>
+    <string name="speech_equalizer_turned_off">ஈக்வலைசர் முடக்கப்பட்டது</string>
+    <string name="title_selector_equalizer_32">ஈக்வலைசர் 32 Hz</string>
+    <string name="title_selector_equalizer_64">ஈக்வலைசர் 64 Hz</string>
+    <string name="title_selector_equalizer_125">ஈக்வலைசர் 125 Hz</string>
+    <string name="title_selector_equalizer_250">ஈக்வலைசர் 250 Hz</string>
+    <string name="title_selector_equalizer_500">ஈக்வலைசர் 500 Hz</string>
+    <string name="title_selector_equalizer_1k">ஈக்வலைசர் 1 kHz</string>
+    <string name="title_selector_equalizer_2k">ஈக்வலைசர் 2 kHz</string>
+    <string name="title_selector_equalizer_3k">ஈக்வலைசர் 3 kHz</string>
+    <string name="title_selector_equalizer_4k">ஈக்வலைசர் 4 kHz</string>
+    <string name="title_selector_equalizer_6k">ஈக்வலைசர் 6 kHz</string>
+    <string name="title_selector_equalizer_8k">ஈக்வலைசர் 8 kHz</string>
+    <string name="title_selector_equalizer_16k">ஈக்வலைசர் 16 kHz</string>
+    <string name="summary_speech_equalizer_needs_low_latency">ஆடியோ வெளியீடு &gt; குறைந்த தாமத ஆடியோ தேவை</string>
+    <string name="speech_equalizer_flat">சமநிலை</string>
+    <string name="speech_equalizer_clarity">தெளிவு</string>
+    <string name="speech_equalizer_bass_boost">பேஸ் அதிகரிப்பு</string>
+    <string name="speech_equalizer_bass_cut">பேஸ் குறைப்பு</string>
+    <string name="speech_equalizer_treble_boost">ட்ரெபிள் அதிகரிப்பு</string>
+    <string name="speech_equalizer_treble_cut">ட்ரெபிள் குறைப்பு</string>
+    <string name="speech_equalizer_warm">கதகதப்பான ஒலி</string>
+    <string name="speech_equalizer_reduce_harshness">கடுமையைக் குறை</string>
+    <string name="speech_equalizer_reduce_sibilance">ஸ ஒலிகளைக் குறை</string>
+    <string name="speech_equalizer_small_speaker">சிறிய ஸ்பீக்கர்</string>
+    <string name="speech_equalizer_custom">தனிப்பயன்</string>
+    <string name="speech_equalizer_band_hz"><xliff:g id="frequency">%1$s</xliff:g> Hz</string>
+    <string name="speech_equalizer_band_khz"><xliff:g id="frequency">%1$s</xliff:g> kHz</string>
+    <string name="speech_equalizer_gain_db"><xliff:g id="gain">%1$s</xliff:g> dB</string>
+    <string name="title_pref_braille_dictionary">பிரெய்ல் அகராதி</string>
+    <string name="braille_dictionary_not_shown"><xliff:g id="text" example="#">%1$s</xliff:g> காட்டப்படாது</string>
+    <string name="title_pref_announce_full_charge">முழு சார்ஜை அறிவி</string>
+    <string name="battery_fully_charged">பேட்டரி முழுமையாக சார்ஜ் ஆனது</string>
+    <string name="speech_control_locked_app">சாதனம் பூட்டப்பட்டிருக்கும்போது <xliff:g id="app" example="Tasker">%1$s</xliff:g></string>
+    <string name="speech_control_ask_locked_title">சாதனம் பூட்டப்பட்டிருக்கும்போது <xliff:g id="app" example="Tasker">%1$s</xliff:g> ஐ SandFly மூலம் பேச அனுமதிக்கவா?</string>
+    <string name="speech_control_ask_locked_text">சாதனம் பூட்டப்பட்டிருக்கும்போது இது உங்கள் SandFly குரலில் உரையைப் பேசலாம். “அனுமதி” என்பதற்குச் சாதனம் திறக்கப்பட்டிருக்க வேண்டும். இதை அமைப்புகள், “பேச்சு”, “பிற ஆப்ஸைப் பேச அனுமதி” என்பதில் மாற்றலாம்.</string>
+    <string name="permission_speak_when_locked_label">சாதனம் பூட்டப்பட்டிருக்கும்போது SandFly மூலம் பேசுதல்</string>
+    <string name="permission_speak_when_locked_description">சாதனம் பூட்டப்பட்டிருக்கும்போது உங்கள் SandFly குரலில் உரையைச் சொல்லக் கோர ஆப்ஸை அனுமதிக்கும். அதற்கு முன் SandFly உங்களிடம் தனியாகக் கேட்கும்.</string>
+    <string name="title_pref_category_back_tap">பின்புறத் தட்டல்</string>
+    <string name="title_pref_keep_speech_off_casts">காஸ்ட் செய்யும்போது பேச்சை ஃபோனிலேயே வைத்திரு</string>
+    <string name="title_pref_app_shortcuts">ஆப்ஸ் ஷார்ட்கட்கள்</string>
+    <string name="app_shortcut_label"><xliff:g id="app_name" example="Amazon">%1$s</xliff:g>: <xliff:g id="shortcut" example="Cart">%2$s</xliff:g></string>
+    <string name="title_pref_add_app_shortcut">ஆப்ஸ் ஷார்ட்கட்டைச் சேர்</string>
+    <string name="app_shortcut_no_apps">சேர்க்கக்கூடிய ஷார்ட்கட்கள் உள்ள ஆப்ஸ் எதுவும் இல்லை</string>
+    <string name="app_shortcut_not_added">ஷார்ட்கட் எதுவும் சேர்க்கப்படவில்லை</string>
+    <string name="app_shortcut_added"><xliff:g id="name" example="MacroDroid: Morning">%1$s</xliff:g> சேர்க்கப்பட்டது</string>
+    <string name="app_shortcut_not_opened">ஆப்ஸ் ஷார்ட்கட்டைத் திறக்க முடியவில்லை</string>
+    <string name="app_search_no_apps">ஆப்ஸ் இல்லை</string>
+    <string name="shortcut_toggle_color_inversion">வண்ண தலைகீழை ஆன்/ஆஃப் செய்</string>
+    <string name="color_inversion_turned_on">வண்ண தலைகீழ் இயக்கப்பட்டது</string>
+    <string name="color_inversion_turned_off">வண்ண தலைகீழ் முடக்கப்பட்டது</string>
+    <string name="shortcut_dictate_or_media_control">சொல்லி எழுதவும் அல்லது மீடியாவை இயக்கு/இடைநிறுத்து</string>
+    <string name="title_pref_shortcut_edge_along_left_up">இடது விளிம்பின் வழியே மேலே ஸ்வைப் செய்யவும்</string>
+    <string name="title_pref_shortcut_edge_along_left_down">இடது விளிம்பின் வழியே கீழே ஸ்வைப் செய்யவும்</string>
+    <string name="title_pref_shortcut_edge_along_right_up">வலது விளிம்பின் வழியே மேலே ஸ்வைப் செய்யவும்</string>
+    <string name="title_pref_shortcut_edge_along_right_down">வலது விளிம்பின் வழியே கீழே ஸ்வைப் செய்யவும்</string>
+    <string name="title_pref_shortcut_edge_along_top_left">மேல் விளிம்பின் வழியே இடதுபுறம் ஸ்வைப் செய்யவும்</string>
+    <string name="title_pref_shortcut_edge_along_top_right">மேல் விளிம்பின் வழியே வலதுபுறம் ஸ்வைப் செய்யவும்</string>
+    <string name="title_pref_shortcut_edge_along_bottom_left">கீழ் விளிம்பின் வழியே இடதுபுறம் ஸ்வைப் செய்யவும்</string>
+    <string name="title_pref_shortcut_edge_along_bottom_right">கீழ் விளிம்பின் வழியே வலதுபுறம் ஸ்வைப் செய்யவும்</string>
+    <string name="title_pref_shortcut_back_tap_double">பின்புறத்தில் இருமுறை தட்டுதல்</string>
+    <string name="title_pref_shortcut_back_tap_triple">பின்புறத்தில் மும்முறை தட்டுதல்</string>
+    <string name="title_pref_back_tap_sensitivity">பின்புறத் தட்டல் உணர்திறன்</string>
+    <string name="title_pref_edge_zone_mm">விளிம்பு அகலம்</string>
+    <string name="title_pref_edge_scroll_left">இடது விளிம்பின் வழியே ஒரு விரலால் ஸ்க்ரோல் செய்</string>
+    <string name="title_pref_edge_scroll_right">வலது விளிம்பின் வழியே ஒரு விரலால் ஸ்க்ரோல் செய்</string>
+    <string name="title_pref_edge_scroll_top">மேல் விளிம்பின் வழியே ஒரு விரலால் ஸ்க்ரோல் செய்</string>
+    <string name="title_pref_edge_scroll_bottom">கீழ் விளிம்பின் வழியே ஒரு விரலால் ஸ்க்ரோல் செய்</string>
+    <string name="title_pref_edge_menu_left">இடது விளிம்பு மெனு</string>
+    <string name="title_pref_edge_menu_right">வலது விளிம்பு மெனு</string>
+    <string name="title_pref_edge_menu_left_switch">இடது விளிம்பை மெனுவாகப் பயன்படுத்து</string>
+    <string name="title_pref_edge_menu_right_switch">வலது விளிம்பை மெனுவாகப் பயன்படுத்து</string>
+    <string name="edge_menu_add_command">கட்டளையைச் சேர்</string>
+    <string name="edge_menu_change_command">கட்டளையை மாற்று</string>
+    <string name="title_pref_text_entities">உரையில் கண்டறியப்பட்ட செயல்கள்</string>
+    <string name="text_entity_web">இணைய முகவரிகள்</string>
+    <string name="text_entity_email">மின்னஞ்சல் முகவரிகள்</string>
+    <string name="text_entity_phone">தொலைபேசி எண்கள்</string>
+    <string name="text_entity_code">குறியீடுகள்</string>
+    <string name="menu_item_call_number"><xliff:g id="number" example="020 7946 0018">%1$s</xliff:g> ஐ அழை</string>
+    <string name="menu_item_copy_code"><xliff:g id="code" example="482916">%1$s</xliff:g> ஐ நகலெடு</string>
+    <string name="title_pref_show_focus_indicator">ஃபோகஸ் குறிகாட்டியைக் காட்டு</string>
+    <string name="title_pref_dictation_correction_prompt">திருத்தத்துக்கான அறிவுறுத்தல்</string>
+    <string name="title_pref_whisper_custom_model">மாடல் கோப்பு</string>
+    <string name="whisper_custom_model_choose">whisper.cpp மாடல் கோப்பைத் தேர்ந்தெடுக்கவும்</string>
+    <string name="whisper_custom_model_replace">வேறு கோப்பைத் தேர்ந்தெடு</string>
+    <string name="whisper_custom_model_not_whisper">whisper.cpp மாடல் கோப்பு அல்ல</string>
+    <string name="whisper_custom_model_copying">நகலெடுக்கிறது</string>
 </resources>

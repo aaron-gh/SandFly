@@ -1363,7 +1363,7 @@
     <string name="action_copy_command">ຄັດລອກຄໍາສັ່ງ</string>
     <string name="command_copied">ສຳເນົາຄຳສັ່ງແລ້ວ</string>
     <string name="title_pref_speech_control">ໃຫ້ແອັບຯອື່ນເວົ້າ</string>
-    <string name="summary_pref_speech_control">ແອັບທີ່ທ່ານອະນຸຍາດສາມາດເວົ້າຂໍ້ຄວາມດ້ວຍສຽງຂອງ SandFly. ບໍ່ມີການເວົ້າຫຍັງໃນຂະນະທີ່ອຸປະກອນລັອກຢູ່.</string>
+    <string name="summary_pref_speech_control">ແອັບທີ່ທ່ານອະນຸຍາດສາມາດເວົ້າຂໍ້ຄວາມດ້ວຍສຽງ SandFly ຂອງທ່ານໄດ້. ໃນຂະນະທີ່ອຸປະກອນລັອກຢູ່, ມີແຕ່ແອັບທີ່ທ່ານອະນຸຍາດໃຫ້ເວົ້າໃນຂະນະລັອກນຳເທົ່ານັ້ນທີ່ເວົ້າໄດ້.</string>
     <string name="title_pref_speech_control_sound">ຫຼິ້ນສຽງກ່ອນທີ່ແອັບອື່ນຈະເວົ້າ</string>
     <string name="speech_control_apps_category">ແອັບ</string>
     <string name="speech_control_no_apps">ບໍ່ມີແອັບໃດທີ່ຂໍໃຫ້ເວົ້າເທື່ອ.</string>
@@ -1868,4 +1868,108 @@
   <string name="value_hold_to_cancel_3000">3 ວິນາທີ</string>
   <string name="title_pref_tap_to_activate">ແຕະເພື່ອເປີດໃຊ້</string>
   <string name="summary_pref_tap_to_activate">ການແຕະທີ່ຍົກນິ້ວກ່ອນລາຍການທີ່ຢູ່ລຸ່ມນິ້ວຈະຖືກໂຟກັສ ຈະເປີດໃຊ້ລາຍການນັ້ນ.</string>
+    <string name="title_selector_ai_actions">ການດຳເນີນການ AI</string>
+    <string name="ai_actions_hint">ປັດຂຶ້ນ ຫຼື ລົງເພື່ອເລືອກການດຳເນີນການ, ຈາກນັ້ນແຕະສອງເທື່ອເພື່ອເອີ້ນໃຊ້</string>
+    <string name="title_pref_ai_actions_included">ການດຳເນີນການ AI ທີ່ຈະລວມ</string>
+    <string name="title_speak_screen_description">ເວົ້າຄຳອະທິບາຍໜ້າຈໍ</string>
+    <string name="title_speak_image_description">ເວົ້າຄຳອະທິບາຍຮູບ</string>
+    <string name="title_ask_about_screen">ຖາມກ່ຽວກັບໜ້າຈໍ</string>
+    <string name="title_ask_about_image">ຖາມກ່ຽວກັບຮູບ</string>
+    <string name="ai_question_hint">ຄຳຖາມ</string>
+    <string name="ai_question_ask">ຖາມ</string>
+    <string name="shortcut_use_voice_profile">ໃຊ້ໂປຣໄຟລ໌ສຽງ <xliff:g id="name" example="English">%1$s</xliff:g></string>
+    <string name="title_pref_keep_previous_voice_engine">ໃຫ້ເຄື່ອງຈັກຂອງໂປຣໄຟລ໌ສຽງກ່ອນໜ້າເຮັດວຽກຢູ່ສະເໝີ</string>
+    <string name="title_pref_voice_profile_keep_engine_started">ໃຫ້ເຄື່ອງຈັກເຮັດວຽກຢູ່ສະເໝີ</string>
+    <string name="title_pref_speech_equalizer">ອີຄວໄລເຊີ</string>
+    <string name="title_pref_speech_equalizer_preset">ຄ່າທີ່ຕັ້ງໄວ້ລ່ວງໜ້າ</string>
+    <string name="title_pref_speech_equalizer_on">ໃຊ້ອີຄວໄລເຊີ</string>
+    <string name="speech_equalizer_off">ປິດ</string>
+    <string name="speech_equalizer_turned_on">ເປີດອີຄວໄລເຊີແລ້ວ</string>
+    <string name="speech_equalizer_turned_off">ປິດອີຄວໄລເຊີແລ້ວ</string>
+    <string name="title_selector_equalizer_32">ອີຄວໄລເຊີ 32 Hz</string>
+    <string name="title_selector_equalizer_64">ອີຄວໄລເຊີ 64 Hz</string>
+    <string name="title_selector_equalizer_125">ອີຄວໄລເຊີ 125 Hz</string>
+    <string name="title_selector_equalizer_250">ອີຄວໄລເຊີ 250 Hz</string>
+    <string name="title_selector_equalizer_500">ອີຄວໄລເຊີ 500 Hz</string>
+    <string name="title_selector_equalizer_1k">ອີຄວໄລເຊີ 1 kHz</string>
+    <string name="title_selector_equalizer_2k">ອີຄວໄລເຊີ 2 kHz</string>
+    <string name="title_selector_equalizer_3k">ອີຄວໄລເຊີ 3 kHz</string>
+    <string name="title_selector_equalizer_4k">ອີຄວໄລເຊີ 4 kHz</string>
+    <string name="title_selector_equalizer_6k">ອີຄວໄລເຊີ 6 kHz</string>
+    <string name="title_selector_equalizer_8k">ອີຄວໄລເຊີ 8 kHz</string>
+    <string name="title_selector_equalizer_16k">ອີຄວໄລເຊີ 16 kHz</string>
+    <string name="summary_speech_equalizer_needs_low_latency">ຕ້ອງເປີດ ເອົາພຸດສຽງ &gt; ສຽງທີ່ມີເວລາຕອບສະໜອງຕໍ່າ</string>
+    <string name="speech_equalizer_flat">ຮາບພຽງ</string>
+    <string name="speech_equalizer_clarity">ຊັດເຈນ</string>
+    <string name="speech_equalizer_bass_boost">ເພີ່ມສຽງເບສ</string>
+    <string name="speech_equalizer_bass_cut">ຫຼຸດສຽງເບສ</string>
+    <string name="speech_equalizer_treble_boost">ເພີ່ມສຽງແຫຼມ</string>
+    <string name="speech_equalizer_treble_cut">ຫຼຸດສຽງແຫຼມ</string>
+    <string name="speech_equalizer_warm">ອົບອຸ່ນ</string>
+    <string name="speech_equalizer_reduce_harshness">ຫຼຸດຄວາມກະດ້າງ</string>
+    <string name="speech_equalizer_reduce_sibilance">ຫຼຸດສຽງຊ່າຂອງຕົວ ສ</string>
+    <string name="speech_equalizer_small_speaker">ລຳໂພງຂະໜາດນ້ອຍ</string>
+    <string name="speech_equalizer_custom">ກຳນົດເອງ</string>
+    <string name="speech_equalizer_band_hz"><xliff:g id="frequency">%1$s</xliff:g> Hz</string>
+    <string name="speech_equalizer_band_khz"><xliff:g id="frequency">%1$s</xliff:g> kHz</string>
+    <string name="speech_equalizer_gain_db"><xliff:g id="gain">%1$s</xliff:g> dB</string>
+    <string name="title_pref_braille_dictionary">ວັດຈະນານຸກົມຕົວອັກສອນນູນ</string>
+    <string name="braille_dictionary_not_shown">ບໍ່ສະແດງ <xliff:g id="text" example="#">%1$s</xliff:g></string>
+    <string name="title_pref_announce_full_charge">ປະກາດເມື່ອສາກເຕັມ</string>
+    <string name="battery_fully_charged">ສາກແບັດເຕີຣີເຕັມແລ້ວ</string>
+    <string name="speech_control_locked_app"><xliff:g id="app" example="Tasker">%1$s</xliff:g> ໃນຂະນະທີ່ອຸປະກອນລັອກຢູ່</string>
+    <string name="speech_control_ask_locked_title">ອະນຸຍາດໃຫ້ <xliff:g id="app" example="Tasker">%1$s</xliff:g> ເວົ້າຜ່ານ SandFly ໃນຂະນະທີ່ອຸປະກອນລັອກຢູ່ບໍ?</string>
+    <string name="speech_control_ask_locked_text">ແອັບນີ້ສາມາດເວົ້າຂໍ້ຄວາມດ້ວຍສຽງ SandFly ຂອງທ່ານໄດ້ໃນຂະນະທີ່ອຸປະກອນລັອກຢູ່. ຕ້ອງປົດລັອກອຸປະກອນກ່ອນຈຶ່ງຈະເລືອກ “ອະນຸຍາດ” ໄດ້. ທ່ານສາມາດປ່ຽນສິ່ງນີ້ໄດ້ທີ່ “ການຕັ້ງຄ່າ” &gt; “ການເວົ້າ” &gt; “ໃຫ້ແອັບຯອື່ນເວົ້າ”.</string>
+    <string name="permission_speak_when_locked_label">ເວົ້າຜ່ານ SandFly ໃນຂະນະທີ່ອຸປະກອນລັອກຢູ່</string>
+    <string name="permission_speak_when_locked_description">ອະນຸຍາດໃຫ້ແອັບຂໍເວົ້າຂໍ້ຄວາມດ້ວຍສຽງ SandFly ຂອງທ່ານໃນຂະນະທີ່ອຸປະກອນລັອກຢູ່. SandFly ຈະຖາມທ່ານແຍກຕ່າງຫາກກ່ອນອະນຸຍາດ.</string>
+    <string name="title_pref_category_back_tap">ແຕະດ້ານຫຼັງ</string>
+    <string name="title_pref_keep_speech_off_casts">ເກັບສຽງເວົ້າໄວ້ໃນໂທລະສັບໃນຂະນະແຄສ</string>
+    <string name="title_pref_app_shortcuts">ທາງລັດແອັບ</string>
+    <string name="app_shortcut_label"><xliff:g id="app_name" example="Amazon">%1$s</xliff:g>: <xliff:g id="shortcut" example="Cart">%2$s</xliff:g></string>
+    <string name="title_pref_add_app_shortcut">ເພີ່ມທາງລັດແອັບ</string>
+    <string name="app_shortcut_no_apps">ບໍ່ມີແອັບທີ່ມີທາງລັດໃຫ້ເພີ່ມ</string>
+    <string name="app_shortcut_not_added">ບໍ່ໄດ້ເພີ່ມທາງລັດ</string>
+    <string name="app_shortcut_added">ເພີ່ມ <xliff:g id="name" example="MacroDroid: Morning">%1$s</xliff:g> ແລ້ວ</string>
+    <string name="app_shortcut_not_opened">ເປີດທາງລັດແອັບບໍ່ໄດ້</string>
+    <string name="app_search_no_apps">ບໍ່ມີແອັບ</string>
+    <string name="shortcut_toggle_color_inversion">ເປີດ ຫຼື ປິດການປີ້ນສີ</string>
+    <string name="color_inversion_turned_on">ເປີດການປີ້ນສີແລ້ວ</string>
+    <string name="color_inversion_turned_off">ປິດການປີ້ນສີແລ້ວ</string>
+    <string name="shortcut_dictate_or_media_control">ພິມດ້ວຍສຽງ, ຫຼິ້ນ ຫຼື ຢຸດສື່ຊົ່ວຄາວ</string>
+    <string name="title_pref_shortcut_edge_along_left_up">ປັດຂຶ້ນຕາມຂອບຊ້າຍ</string>
+    <string name="title_pref_shortcut_edge_along_left_down">ປັດລົງຕາມຂອບຊ້າຍ</string>
+    <string name="title_pref_shortcut_edge_along_right_up">ປັດຂຶ້ນຕາມຂອບຂວາ</string>
+    <string name="title_pref_shortcut_edge_along_right_down">ປັດລົງຕາມຂອບຂວາ</string>
+    <string name="title_pref_shortcut_edge_along_top_left">ປັດຊ້າຍຕາມຂອບເທິງ</string>
+    <string name="title_pref_shortcut_edge_along_top_right">ປັດຂວາຕາມຂອບເທິງ</string>
+    <string name="title_pref_shortcut_edge_along_bottom_left">ປັດຊ້າຍຕາມຂອບລຸ່ມ</string>
+    <string name="title_pref_shortcut_edge_along_bottom_right">ປັດຂວາຕາມຂອບລຸ່ມ</string>
+    <string name="title_pref_shortcut_back_tap_double">ແຕະດ້ານຫຼັງສອງເທື່ອ</string>
+    <string name="title_pref_shortcut_back_tap_triple">ແຕະດ້ານຫຼັງສາມເທື່ອ</string>
+    <string name="title_pref_back_tap_sensitivity">ຄວາມໄວໃນການແຕະດ້ານຫຼັງ</string>
+    <string name="title_pref_edge_zone_mm">ຄວາມກວ້າງຂອງຂອບ</string>
+    <string name="title_pref_edge_scroll_left">ເລື່ອນດ້ວຍນິ້ວດຽວຕາມຂອບຊ້າຍ</string>
+    <string name="title_pref_edge_scroll_right">ເລື່ອນດ້ວຍນິ້ວດຽວຕາມຂອບຂວາ</string>
+    <string name="title_pref_edge_scroll_top">ເລື່ອນດ້ວຍນິ້ວດຽວຕາມຂອບເທິງ</string>
+    <string name="title_pref_edge_scroll_bottom">ເລື່ອນດ້ວຍນິ້ວດຽວຕາມຂອບລຸ່ມ</string>
+    <string name="title_pref_edge_menu_left">ເມນູຂອບຊ້າຍ</string>
+    <string name="title_pref_edge_menu_right">ເມນູຂອບຂວາ</string>
+    <string name="title_pref_edge_menu_left_switch">ໃຊ້ຂອບຊ້າຍເປັນເມນູ</string>
+    <string name="title_pref_edge_menu_right_switch">ໃຊ້ຂອບຂວາເປັນເມນູ</string>
+    <string name="edge_menu_add_command">ເພີ່ມຄຳສັ່ງ</string>
+    <string name="edge_menu_change_command">ປ່ຽນຄຳສັ່ງ</string>
+    <string name="title_pref_text_entities">ການດຳເນີນການທີ່ພົບໃນຂໍ້ຄວາມ</string>
+    <string name="text_entity_web">ທີ່ຢູ່ເວັບ</string>
+    <string name="text_entity_email">ທີ່ຢູ່ອີເມວ</string>
+    <string name="text_entity_phone">ເບີໂທລະສັບ</string>
+    <string name="text_entity_code">ລະຫັດຢືນຢັນ</string>
+    <string name="menu_item_call_number">ໂທຫາ <xliff:g id="number" example="020 7946 0018">%1$s</xliff:g></string>
+    <string name="menu_item_copy_code">ສຳເນົາ <xliff:g id="code" example="482916">%1$s</xliff:g></string>
+    <string name="title_pref_show_focus_indicator">ສະແດງຕົວຊີ້ວັດຈຸດສຸມ</string>
+    <string name="title_pref_dictation_correction_prompt">ຄຳສັ່ງສຳລັບການແກ້ໄຂ</string>
+    <string name="title_pref_whisper_custom_model">ໄຟລ໌ໂມເດວ</string>
+    <string name="whisper_custom_model_choose">ເລືອກໄຟລ໌ໂມເດວ whisper.cpp</string>
+    <string name="whisper_custom_model_replace">ເລືອກໄຟລ໌ອື່ນ</string>
+    <string name="whisper_custom_model_not_whisper">ບໍ່ແມ່ນໄຟລ໌ໂມເດວ whisper.cpp</string>
+    <string name="whisper_custom_model_copying">ກຳລັງສຳເນົາ</string>
 </resources>

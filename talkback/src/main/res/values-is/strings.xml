@@ -1363,7 +1363,7 @@
     <string name="action_copy_command">Afrita skipun</string>
     <string name="command_copied">Skipun afrituð</string>
     <string name="title_pref_speech_control">Leyfa öðrum forritum að tala</string>
-    <string name="summary_pref_speech_control">Forrit sem þú leyfir geta lesið upp texta með SandFly-röddinni. Ekkert er lesið upp meðan tækið er læst.</string>
+    <string name="summary_pref_speech_control">Forrit sem þú leyfir geta lesið upp texta með SandFly-röddinni. Meðan tækið er læst geta aðeins þau forrit lesið upp sem þú leyfir líka meðan tækið er læst.</string>
     <string name="title_pref_speech_control_sound">Spila hljóð áður en önnur forrit tala</string>
     <string name="speech_control_apps_category">Forrit</string>
     <string name="speech_control_no_apps">Engin forrit hafa beðið um að tala ennþá.</string>
@@ -1868,4 +1868,108 @@
   <string name="value_hold_to_cancel_3000">3 sekúndur</string>
   <string name="title_pref_tap_to_activate">Ýta til að virkja</string>
   <string name="summary_pref_tap_to_activate">Ýting sem lýkur áður en atriðið undir fingrinum fer í fókus virkjar atriðið.</string>
+    <string name="title_selector_ai_actions">Gervigreindaraðgerðir</string>
+    <string name="ai_actions_hint">Strjúktu upp eða niður til að velja aðgerð og ýttu svo tvisvar til að keyra hana</string>
+    <string name="title_pref_ai_actions_included">Gervigreindaraðgerðir sem á að hafa með</string>
+    <string name="title_speak_screen_description">Lesa upp skjálýsingu</string>
+    <string name="title_speak_image_description">Lesa upp myndlýsingu</string>
+    <string name="title_ask_about_screen">Spyrja um skjáinn</string>
+    <string name="title_ask_about_image">Spyrja um myndina</string>
+    <string name="ai_question_hint">Spurning</string>
+    <string name="ai_question_ask">Spyrja</string>
+    <string name="shortcut_use_voice_profile">Nota raddsniðið <xliff:g id="name" example="English">%1$s</xliff:g></string>
+    <string name="title_pref_keep_previous_voice_engine">Halda talvél fyrra raddsniðs ræstri</string>
+    <string name="title_pref_voice_profile_keep_engine_started">Halda talvélinni ræstri</string>
+    <string name="title_pref_speech_equalizer">Tónjafnari</string>
+    <string name="title_pref_speech_equalizer_preset">Forstilling</string>
+    <string name="title_pref_speech_equalizer_on">Nota tónjafnara</string>
+    <string name="speech_equalizer_off">Slökkt</string>
+    <string name="speech_equalizer_turned_on">Kveikt á tónjafnara</string>
+    <string name="speech_equalizer_turned_off">Slökkt á tónjafnara</string>
+    <string name="title_selector_equalizer_32">Tónjafnari 32 Hz</string>
+    <string name="title_selector_equalizer_64">Tónjafnari 64 Hz</string>
+    <string name="title_selector_equalizer_125">Tónjafnari 125 Hz</string>
+    <string name="title_selector_equalizer_250">Tónjafnari 250 Hz</string>
+    <string name="title_selector_equalizer_500">Tónjafnari 500 Hz</string>
+    <string name="title_selector_equalizer_1k">Tónjafnari 1 kHz</string>
+    <string name="title_selector_equalizer_2k">Tónjafnari 2 kHz</string>
+    <string name="title_selector_equalizer_3k">Tónjafnari 3 kHz</string>
+    <string name="title_selector_equalizer_4k">Tónjafnari 4 kHz</string>
+    <string name="title_selector_equalizer_6k">Tónjafnari 6 kHz</string>
+    <string name="title_selector_equalizer_8k">Tónjafnari 8 kHz</string>
+    <string name="title_selector_equalizer_16k">Tónjafnari 16 kHz</string>
+    <string name="summary_speech_equalizer_needs_low_latency">Krefst Hljóðúttak &gt; Hljóð með litlum biðtíma</string>
+    <string name="speech_equalizer_flat">Flatt</string>
+    <string name="speech_equalizer_clarity">Skýrleiki</string>
+    <string name="speech_equalizer_bass_boost">Meiri bassi</string>
+    <string name="speech_equalizer_bass_cut">Minni bassi</string>
+    <string name="speech_equalizer_treble_boost">Meiri diskant</string>
+    <string name="speech_equalizer_treble_cut">Minni diskant</string>
+    <string name="speech_equalizer_warm">Hlýr hljómur</string>
+    <string name="speech_equalizer_reduce_harshness">Minni skerpa</string>
+    <string name="speech_equalizer_reduce_sibilance">Minni s-hljóð</string>
+    <string name="speech_equalizer_small_speaker">Lítill hátalari</string>
+    <string name="speech_equalizer_custom">Sérsniðin</string>
+    <string name="speech_equalizer_band_hz"><xliff:g id="frequency">%1$s</xliff:g> Hz</string>
+    <string name="speech_equalizer_band_khz"><xliff:g id="frequency">%1$s</xliff:g> kHz</string>
+    <string name="speech_equalizer_gain_db"><xliff:g id="gain">%1$s</xliff:g> dB</string>
+    <string name="title_pref_braille_dictionary">Blindraletursorðabók</string>
+    <string name="braille_dictionary_not_shown"><xliff:g id="text" example="#">%1$s</xliff:g> ekki sýnt</string>
+    <string name="title_pref_announce_full_charge">Tilkynna fulla hleðslu</string>
+    <string name="battery_fully_charged">Rafhlaðan er fullhlaðin</string>
+    <string name="speech_control_locked_app"><xliff:g id="app" example="Tasker">%1$s</xliff:g> meðan tækið er læst</string>
+    <string name="speech_control_ask_locked_title">Leyfa <xliff:g id="app" example="Tasker">%1$s</xliff:g> að tala í gegnum SandFly meðan tækið er læst?</string>
+    <string name="speech_control_ask_locked_text">Forritið getur lesið upp texta með SandFly-röddinni þinni meðan tækið er læst. Til að leyfa þarf tækið að vera ólæst. Þú getur breytt þessu undir Stillingar, Tal, Leyfa öðrum forritum að tala.</string>
+    <string name="permission_speak_when_locked_label">tala í gegnum SandFly meðan tækið er læst</string>
+    <string name="permission_speak_when_locked_description">Leyfir forritinu að biðja um að segja texta með SandFly-röddinni þinni meðan tækið er læst. SandFly spyr þig sérstaklega áður en það er hægt.</string>
+    <string name="title_pref_category_back_tap">Bank á bakhlið</string>
+    <string name="title_pref_keep_speech_off_casts">Halda tali í símanum við varpun</string>
+    <string name="title_pref_app_shortcuts">Flýtileiðir forrita</string>
+    <string name="app_shortcut_label"><xliff:g id="app_name" example="Amazon">%1$s</xliff:g>: <xliff:g id="shortcut" example="Cart">%2$s</xliff:g></string>
+    <string name="title_pref_add_app_shortcut">Bæta við flýtileið forrits</string>
+    <string name="app_shortcut_no_apps">Engin forrit hafa flýtileiðir til að bæta við</string>
+    <string name="app_shortcut_not_added">Engri flýtileið bætt við</string>
+    <string name="app_shortcut_added"><xliff:g id="name" example="MacroDroid: Morning">%1$s</xliff:g> bætt við</string>
+    <string name="app_shortcut_not_opened">Ekki tókst að opna flýtileið forrits</string>
+    <string name="app_search_no_apps">Engin forrit</string>
+    <string name="shortcut_toggle_color_inversion">Kveikja eða slökkva á umsnúningi lita</string>
+    <string name="color_inversion_turned_on">Kveikt á umsnúningi lita</string>
+    <string name="color_inversion_turned_off">Slökkt á umsnúningi lita</string>
+    <string name="shortcut_dictate_or_media_control">Lesa fyrir, spila eða gera hlé á efni</string>
+    <string name="title_pref_shortcut_edge_along_left_up">Strjúktu upp meðfram vinstri brún</string>
+    <string name="title_pref_shortcut_edge_along_left_down">Strjúktu niður meðfram vinstri brún</string>
+    <string name="title_pref_shortcut_edge_along_right_up">Strjúktu upp meðfram hægri brún</string>
+    <string name="title_pref_shortcut_edge_along_right_down">Strjúktu niður meðfram hægri brún</string>
+    <string name="title_pref_shortcut_edge_along_top_left">Strjúktu til vinstri meðfram efri brún</string>
+    <string name="title_pref_shortcut_edge_along_top_right">Strjúktu til hægri meðfram efri brún</string>
+    <string name="title_pref_shortcut_edge_along_bottom_left">Strjúktu til vinstri meðfram neðri brún</string>
+    <string name="title_pref_shortcut_edge_along_bottom_right">Strjúktu til hægri meðfram neðri brún</string>
+    <string name="title_pref_shortcut_back_tap_double">Banka tvisvar á bakhliðina</string>
+    <string name="title_pref_shortcut_back_tap_triple">Banka þrisvar á bakhliðina</string>
+    <string name="title_pref_back_tap_sensitivity">Næmi banks á bakhlið</string>
+    <string name="title_pref_edge_zone_mm">Breidd brúnar</string>
+    <string name="title_pref_edge_scroll_left">Fletta með einum fingri meðfram vinstri brún</string>
+    <string name="title_pref_edge_scroll_right">Fletta með einum fingri meðfram hægri brún</string>
+    <string name="title_pref_edge_scroll_top">Fletta með einum fingri meðfram efri brún</string>
+    <string name="title_pref_edge_scroll_bottom">Fletta með einum fingri meðfram neðri brún</string>
+    <string name="title_pref_edge_menu_left">Valmynd vinstri brúnar</string>
+    <string name="title_pref_edge_menu_right">Valmynd hægri brúnar</string>
+    <string name="title_pref_edge_menu_left_switch">Nota vinstri brún sem valmynd</string>
+    <string name="title_pref_edge_menu_right_switch">Nota hægri brún sem valmynd</string>
+    <string name="edge_menu_add_command">Bæta við skipun</string>
+    <string name="edge_menu_change_command">Breyta skipun</string>
+    <string name="title_pref_text_entities">Aðgerðir sem finnast í texta</string>
+    <string name="text_entity_web">Vefföng</string>
+    <string name="text_entity_email">Netföng</string>
+    <string name="text_entity_phone">Símanúmer</string>
+    <string name="text_entity_code">Kóðar</string>
+    <string name="menu_item_call_number">Hringja í <xliff:g id="number" example="020 7946 0018">%1$s</xliff:g></string>
+    <string name="menu_item_copy_code">Afrita <xliff:g id="code" example="482916">%1$s</xliff:g></string>
+    <string name="title_pref_show_focus_indicator">Sýna fókusvísi</string>
+    <string name="title_pref_dictation_correction_prompt">Leiðréttingarfyrirmæli</string>
+    <string name="title_pref_whisper_custom_model">Líkanskrá</string>
+    <string name="whisper_custom_model_choose">Velja whisper.cpp-líkanskrá</string>
+    <string name="whisper_custom_model_replace">Velja aðra skrá</string>
+    <string name="whisper_custom_model_not_whisper">Ekki whisper.cpp-líkanskrá</string>
+    <string name="whisper_custom_model_copying">Afritar</string>
 </resources>

@@ -1363,7 +1363,7 @@
     <string name="action_copy_command">ចម្លងពាក្យបញ្ជា</string>
     <string name="command_copied">បានចម្លងពាក្យបញ្ជា</string>
     <string name="title_pref_speech_control">អនុញ្ញាតឱ្យកម្មវិធីផ្សេងទៀតនិយាយ</string>
-    <string name="summary_pref_speech_control">កម្មវិធីដែលអ្នកអនុញ្ញាតអាចនិយាយអត្ថបទដោយប្រើសំឡេង SandFly។ ពេលឧបករណ៍ចាក់សោ គ្មានអ្វីត្រូវបាននិយាយទេ។</string>
+    <string name="summary_pref_speech_control">កម្មវិធីដែលអ្នកអនុញ្ញាតអាចនិយាយអត្ថបទដោយប្រើសំឡេង SandFly។ ពេលឧបករណ៍ចាក់សោ មានតែកម្មវិធីដែលអ្នកក៏អនុញ្ញាតពេលចាក់សោប៉ុណ្ណោះ ដែលអាចនិយាយបាន។</string>
     <string name="title_pref_speech_control_sound">ចាក់សំឡេងមុនពេលកម្មវិធីផ្សេងទៀតនិយាយ</string>
     <string name="speech_control_apps_category">កម្មវិធី</string>
     <string name="speech_control_no_apps">មិនទាន់មានកម្មវិធីណាមួយសុំនិយាយនៅឡើយទេ</string>
@@ -1868,4 +1868,108 @@
   <string name="value_hold_to_cancel_3000">3 វិនាទី</string>
   <string name="title_pref_tap_to_activate">ចុចដើម្បីបើកដំណើរការ</string>
   <string name="summary_pref_tap_to_activate">ការចុចដែលលើកម្រាមដៃមុនពេលធាតុនៅខាងក្រោមត្រូវបានផ្ដោត បើកដំណើរការធាតុនោះ។</string>
+    <string name="title_selector_ai_actions">សកម្មភាព AI</string>
+    <string name="ai_actions_hint">អូសឡើងលើ ឬចុះក្រោម ដើម្បីជ្រើសរើសសកម្មភាព រួចចុចពីរដង ដើម្បីដំណើរការវា</string>
+    <string name="title_pref_ai_actions_included">សកម្មភាព AI ដែលត្រូវរួមបញ្ចូល</string>
+    <string name="title_speak_screen_description">និយាយការពណ៌នាអេក្រង់</string>
+    <string name="title_speak_image_description">និយាយការពណ៌នារូបភាព</string>
+    <string name="title_ask_about_screen">សួរអំពីអេក្រង់</string>
+    <string name="title_ask_about_image">សួរអំពីរូបភាព</string>
+    <string name="ai_question_hint">សំណួរ</string>
+    <string name="ai_question_ask">សួរ</string>
+    <string name="shortcut_use_voice_profile">ប្រើកម្រងព័ត៌មានសំឡេង <xliff:g id="name" example="English">%1$s</xliff:g></string>
+    <string name="title_pref_keep_previous_voice_engine">រក្សាម៉ាស៊ីននិយាយនៃកម្រងព័ត៌មានសំឡេងពីមុនឱ្យនៅដំណើរការ</string>
+    <string name="title_pref_voice_profile_keep_engine_started">រក្សាម៉ាស៊ីននិយាយឱ្យនៅដំណើរការ</string>
+    <string name="title_pref_speech_equalizer">អេក្វាឡាយហ្ស័រ</string>
+    <string name="title_pref_speech_equalizer_preset">ការកំណត់ជាមុន</string>
+    <string name="title_pref_speech_equalizer_on">ប្រើអេក្វាឡាយហ្ស័រ</string>
+    <string name="speech_equalizer_off">បិទ</string>
+    <string name="speech_equalizer_turned_on">បានបើកអេក្វាឡាយហ្ស័រ</string>
+    <string name="speech_equalizer_turned_off">បានបិទអេក្វាឡាយហ្ស័រ</string>
+    <string name="title_selector_equalizer_32">អេក្វាឡាយហ្ស័រ 32 Hz</string>
+    <string name="title_selector_equalizer_64">អេក្វាឡាយហ្ស័រ 64 Hz</string>
+    <string name="title_selector_equalizer_125">អេក្វាឡាយហ្ស័រ 125 Hz</string>
+    <string name="title_selector_equalizer_250">អេក្វាឡាយហ្ស័រ 250 Hz</string>
+    <string name="title_selector_equalizer_500">អេក្វាឡាយហ្ស័រ 500 Hz</string>
+    <string name="title_selector_equalizer_1k">អេក្វាឡាយហ្ស័រ 1 kHz</string>
+    <string name="title_selector_equalizer_2k">អេក្វាឡាយហ្ស័រ 2 kHz</string>
+    <string name="title_selector_equalizer_3k">អេក្វាឡាយហ្ស័រ 3 kHz</string>
+    <string name="title_selector_equalizer_4k">អេក្វាឡាយហ្ស័រ 4 kHz</string>
+    <string name="title_selector_equalizer_6k">អេក្វាឡាយហ្ស័រ 6 kHz</string>
+    <string name="title_selector_equalizer_8k">អេក្វាឡាយហ្ស័រ 8 kHz</string>
+    <string name="title_selector_equalizer_16k">អេក្វាឡាយហ្ស័រ 16 kHz</string>
+    <string name="summary_speech_equalizer_needs_low_latency">ត្រូវការ ឧបករណ៍បញ្ចេញសំឡេង &gt; អូឌីយ៉ូដែលមានភាពយឺតយ៉ាវទាប</string>
+    <string name="speech_equalizer_flat">រាបស្មើ</string>
+    <string name="speech_equalizer_clarity">ភាពច្បាស់</string>
+    <string name="speech_equalizer_bass_boost">បង្កើនបាស</string>
+    <string name="speech_equalizer_bass_cut">កាត់បាស</string>
+    <string name="speech_equalizer_treble_boost">បង្កើនសំឡេងខ្ពស់</string>
+    <string name="speech_equalizer_treble_cut">កាត់សំឡេងខ្ពស់</string>
+    <string name="speech_equalizer_warm">កក់ក្ដៅ</string>
+    <string name="speech_equalizer_reduce_harshness">កាត់បន្ថយភាពគ្រើម</string>
+    <string name="speech_equalizer_reduce_sibilance">កាត់បន្ថយសំឡេងស៊ីស</string>
+    <string name="speech_equalizer_small_speaker">ឧបករណ៍បំពងសំឡេងតូច</string>
+    <string name="speech_equalizer_custom">តាម​បំណង</string>
+    <string name="speech_equalizer_band_hz"><xliff:g id="frequency">%1$s</xliff:g> Hz</string>
+    <string name="speech_equalizer_band_khz"><xliff:g id="frequency">%1$s</xliff:g> kHz</string>
+    <string name="speech_equalizer_gain_db"><xliff:g id="gain">%1$s</xliff:g> dB</string>
+    <string name="title_pref_braille_dictionary">វចនានុក្រមអក្សរស្ទាប</string>
+    <string name="braille_dictionary_not_shown"><xliff:g id="text" example="#">%1$s</xliff:g> មិនបង្ហាញ</string>
+    <string name="title_pref_announce_full_charge">ប្រកាសពេលសាកថ្មពេញ</string>
+    <string name="battery_fully_charged">សាកថ្មពេញហើយ</string>
+    <string name="speech_control_locked_app"><xliff:g id="app" example="Tasker">%1$s</xliff:g> ពេលឧបករណ៍ចាក់សោ</string>
+    <string name="speech_control_ask_locked_title">អនុញ្ញាតឱ្យ <xliff:g id="app" example="Tasker">%1$s</xliff:g> និយាយតាមរយៈ SandFly ពេលឧបករណ៍ចាក់សោឬ?</string>
+    <string name="speech_control_ask_locked_text">វាអាចនិយាយអត្ថបទដោយប្រើសំឡេង SandFly របស់អ្នក ពេលឧបករណ៍ចាក់សោ។ ដើម្បីចុច «អនុញ្ញាត» ត្រូវដោះសោឧបករណ៍។ អ្នកអាចប្ដូរការកំណត់នេះនៅក្នុង ការកំណត់, ការនិយាយ, អនុញ្ញាតឱ្យកម្មវិធីផ្សេងទៀតនិយាយ។</string>
+    <string name="permission_speak_when_locked_label">និយាយតាមរយៈ SandFly ពេលឧបករណ៍ចាក់សោ</string>
+    <string name="permission_speak_when_locked_description">អនុញ្ញាតឱ្យកម្មវិធីសុំនិយាយអត្ថបទជាសំឡេង SandFly របស់អ្នក ពេលឧបករណ៍ចាក់សោ។ SandFly សួរអ្នកដាច់ដោយឡែក មុនពេលកម្មវិធីអាចនិយាយបាន។</string>
+    <string name="title_pref_category_back_tap">ការចុចលើខ្នងឧបករណ៍</string>
+    <string name="title_pref_keep_speech_off_casts">រក្សាការនិយាយនៅលើទូរសព្ទ ពេលកំពុងបញ្ចាំងអេក្រង់</string>
+    <string name="title_pref_app_shortcuts">ផ្លូវកាត់កម្មវិធី</string>
+    <string name="app_shortcut_label"><xliff:g id="app_name" example="Amazon">%1$s</xliff:g>៖ <xliff:g id="shortcut" example="Cart">%2$s</xliff:g></string>
+    <string name="title_pref_add_app_shortcut">បន្ថែមផ្លូវកាត់កម្មវិធី</string>
+    <string name="app_shortcut_no_apps">គ្មានកម្មវិធីណាមានផ្លូវកាត់សម្រាប់បន្ថែមទេ</string>
+    <string name="app_shortcut_not_added">មិនបានបន្ថែមផ្លូវកាត់ទេ</string>
+    <string name="app_shortcut_added">បានបន្ថែម <xliff:g id="name" example="MacroDroid: Morning">%1$s</xliff:g></string>
+    <string name="app_shortcut_not_opened">មិនអាចបើកផ្លូវកាត់កម្មវិធីបានទេ</string>
+    <string name="app_search_no_apps">គ្មានកម្មវិធី</string>
+    <string name="shortcut_toggle_color_inversion">បើក ឬបិទ​ការបញ្ច្រាសពណ៌</string>
+    <string name="color_inversion_turned_on">បានបើកការបញ្ច្រាសពណ៌</string>
+    <string name="color_inversion_turned_off">បានបិទការបញ្ច្រាសពណ៌</string>
+    <string name="shortcut_dictate_or_media_control">សរសេរតាមការប្រាប់ ចាក់ ឬផ្អាកមេឌៀ</string>
+    <string name="title_pref_shortcut_edge_along_left_up">អូសឡើងលើតាមបណ្ដោយគែមខាងឆ្វេង</string>
+    <string name="title_pref_shortcut_edge_along_left_down">អូសចុះក្រោមតាមបណ្ដោយគែមខាងឆ្វេង</string>
+    <string name="title_pref_shortcut_edge_along_right_up">អូសឡើងលើតាមបណ្ដោយគែមខាងស្ដាំ</string>
+    <string name="title_pref_shortcut_edge_along_right_down">អូសចុះក្រោមតាមបណ្ដោយគែមខាងស្ដាំ</string>
+    <string name="title_pref_shortcut_edge_along_top_left">អូសទៅឆ្វេងតាមបណ្ដោយគែមខាងលើ</string>
+    <string name="title_pref_shortcut_edge_along_top_right">អូសទៅស្ដាំតាមបណ្ដោយគែមខាងលើ</string>
+    <string name="title_pref_shortcut_edge_along_bottom_left">អូសទៅឆ្វេងតាមបណ្ដោយគែមខាងក្រោម</string>
+    <string name="title_pref_shortcut_edge_along_bottom_right">អូសទៅស្ដាំតាមបណ្ដោយគែមខាងក្រោម</string>
+    <string name="title_pref_shortcut_back_tap_double">ចុចពីរដងលើខ្នងឧបករណ៍</string>
+    <string name="title_pref_shortcut_back_tap_triple">ចុចបីដងលើខ្នងឧបករណ៍</string>
+    <string name="title_pref_back_tap_sensitivity">ភាពរសើបនៃការចុចលើខ្នងឧបករណ៍</string>
+    <string name="title_pref_edge_zone_mm">ទទឹងគែម</string>
+    <string name="title_pref_edge_scroll_left">រំកិលដោយប្រើម្រាមដៃ 1 តាមបណ្ដោយគែមខាងឆ្វេង</string>
+    <string name="title_pref_edge_scroll_right">រំកិលដោយប្រើម្រាមដៃ 1 តាមបណ្ដោយគែមខាងស្ដាំ</string>
+    <string name="title_pref_edge_scroll_top">រំកិលដោយប្រើម្រាមដៃ 1 តាមបណ្ដោយគែមខាងលើ</string>
+    <string name="title_pref_edge_scroll_bottom">រំកិលដោយប្រើម្រាមដៃ 1 តាមបណ្ដោយគែមខាងក្រោម</string>
+    <string name="title_pref_edge_menu_left">ម៉ឺនុយគែមខាងឆ្វេង</string>
+    <string name="title_pref_edge_menu_right">ម៉ឺនុយគែមខាងស្ដាំ</string>
+    <string name="title_pref_edge_menu_left_switch">ប្រើគែមខាងឆ្វេងជាម៉ឺនុយ</string>
+    <string name="title_pref_edge_menu_right_switch">ប្រើគែមខាងស្ដាំជាម៉ឺនុយ</string>
+    <string name="edge_menu_add_command">បន្ថែមពាក្យបញ្ជា</string>
+    <string name="edge_menu_change_command">ប្ដូរពាក្យបញ្ជា</string>
+    <string name="title_pref_text_entities">សកម្មភាពដែលរកឃើញក្នុងអត្ថបទ</string>
+    <string name="text_entity_web">អាសយដ្ឋានវេប</string>
+    <string name="text_entity_email">អាសយដ្ឋានអ៊ីមែល</string>
+    <string name="text_entity_phone">លេខទូរស័ព្ទ</string>
+    <string name="text_entity_code">លេខកូដ</string>
+    <string name="menu_item_call_number">ហៅទៅ <xliff:g id="number" example="020 7946 0018">%1$s</xliff:g></string>
+    <string name="menu_item_copy_code">ចម្លង <xliff:g id="code" example="482916">%1$s</xliff:g></string>
+    <string name="title_pref_show_focus_indicator">បង្ហាញសូចនាករការផ្ដោត</string>
+    <string name="title_pref_dictation_correction_prompt">សេចក្ដីណែនាំសម្រាប់ការកែ</string>
+    <string name="title_pref_whisper_custom_model">ឯកសារម៉ូដែល</string>
+    <string name="whisper_custom_model_choose">ជ្រើសរើសឯកសារម៉ូដែល whisper.cpp</string>
+    <string name="whisper_custom_model_replace">ជ្រើសរើសឯកសារផ្សេង</string>
+    <string name="whisper_custom_model_not_whisper">មិនមែនជាឯកសារម៉ូដែល whisper.cpp ទេ</string>
+    <string name="whisper_custom_model_copying">កំពុងចម្លង</string>
 </resources>

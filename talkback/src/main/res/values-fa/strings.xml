@@ -1350,7 +1350,7 @@
     <string name="action_copy_command">کپی کردن فرمان</string>
     <string name="command_copied">فرمان کپی شد</string>
     <string name="title_pref_speech_control">اجازه گفتار به برنامه‌های دیگر</string>
-    <string name="summary_pref_speech_control">‏برنامه‌هایی که اجازه می‌دهید می‌توانند نوشتار را با صدای SandFly شما بگویند. وقتی دستگاه قفل است، چیزی گفته نمی‌شود.</string>
+    <string name="summary_pref_speech_control">‏برنامه‌هایی که اجازه می‌دهید می‌توانند نوشتار را با صدای SandFly شما بگویند. وقتی دستگاه قفل است، فقط برنامه‌هایی صحبت می‌کنند که برای حالت قفل هم به آن‌ها اجازه داده‌اید.</string>
     <string name="title_pref_speech_control_sound">پخش صدا پیش‌از گفتار برنامه‌های دیگر</string>
     <string name="speech_control_apps_category">برنامه‌ها</string>
     <string name="speech_control_no_apps">هنوز هیچ برنامه‌ای درخواست گفتار نکرده است.</string>
@@ -1869,4 +1869,108 @@
   <string name="value_hold_to_cancel_3000">۳ ثانیه</string>
   <string name="title_pref_tap_to_activate">فعال کردن با ضربه</string>
   <string name="summary_pref_tap_to_activate">اگر انگشت پیش از متمرکز شدن مورد زیر آن بلند شود، ضربه آن مورد را فعال می‌کند.</string>
+    <string name="title_selector_ai_actions">کنش‌های هوش مصنوعی</string>
+    <string name="ai_actions_hint">برای انتخاب کنش، تند به‌بالا یا به‌پایین بکشید، سپس برای اجرای آن دو تک‌ضرب بزنید</string>
+    <string name="title_pref_ai_actions_included">کنش‌های هوش مصنوعی برای گنجاندن</string>
+    <string name="title_speak_screen_description">گفتن شرح صفحه‌نمایش</string>
+    <string name="title_speak_image_description">گفتن شرح تصویر</string>
+    <string name="title_ask_about_screen">پرسیدن درباره صفحه‌نمایش</string>
+    <string name="title_ask_about_image">پرسیدن درباره تصویر</string>
+    <string name="ai_question_hint">پرسش</string>
+    <string name="ai_question_ask">پرسیدن</string>
+    <string name="shortcut_use_voice_profile">استفاده از نمایه صدای <xliff:g id="name" example="English">%1$s</xliff:g></string>
+    <string name="title_pref_keep_previous_voice_engine">فعال نگه داشتن موتور نمایه صدای قبلی</string>
+    <string name="title_pref_voice_profile_keep_engine_started">فعال نگه داشتن موتور</string>
+    <string name="title_pref_speech_equalizer">اکولایزر</string>
+    <string name="title_pref_speech_equalizer_preset">پیش‌تنظیم</string>
+    <string name="title_pref_speech_equalizer_on">استفاده از اکولایزر</string>
+    <string name="speech_equalizer_off">خاموش</string>
+    <string name="speech_equalizer_turned_on">اکولایزر روشن</string>
+    <string name="speech_equalizer_turned_off">اکولایزر خاموش</string>
+    <string name="title_selector_equalizer_32">اکولایزر 32 هرتز</string>
+    <string name="title_selector_equalizer_64">اکولایزر 64 هرتز</string>
+    <string name="title_selector_equalizer_125">اکولایزر 125 هرتز</string>
+    <string name="title_selector_equalizer_250">اکولایزر 250 هرتز</string>
+    <string name="title_selector_equalizer_500">اکولایزر 500 هرتز</string>
+    <string name="title_selector_equalizer_1k">اکولایزر 1 کیلوهرتز</string>
+    <string name="title_selector_equalizer_2k">اکولایزر 2 کیلوهرتز</string>
+    <string name="title_selector_equalizer_3k">اکولایزر 3 کیلوهرتز</string>
+    <string name="title_selector_equalizer_4k">اکولایزر 4 کیلوهرتز</string>
+    <string name="title_selector_equalizer_6k">اکولایزر 6 کیلوهرتز</string>
+    <string name="title_selector_equalizer_8k">اکولایزر 8 کیلوهرتز</string>
+    <string name="title_selector_equalizer_16k">اکولایزر 16 کیلوهرتز</string>
+    <string name="summary_speech_equalizer_needs_low_latency">به «خروجی صدا» &gt; «صدای کم‌تأخیر» نیاز دارد</string>
+    <string name="speech_equalizer_flat">مسطح</string>
+    <string name="speech_equalizer_clarity">وضوح</string>
+    <string name="speech_equalizer_bass_boost">تقویت بم</string>
+    <string name="speech_equalizer_bass_cut">کاهش بم</string>
+    <string name="speech_equalizer_treble_boost">تقویت زیر</string>
+    <string name="speech_equalizer_treble_cut">کاهش زیر</string>
+    <string name="speech_equalizer_warm">گرم</string>
+    <string name="speech_equalizer_reduce_harshness">کاهش زبری</string>
+    <string name="speech_equalizer_reduce_sibilance">کاهش صداهای سایشی</string>
+    <string name="speech_equalizer_small_speaker">بلندگوی کوچک</string>
+    <string name="speech_equalizer_custom">سفارشی</string>
+    <string name="speech_equalizer_band_hz"><xliff:g id="frequency">%1$s</xliff:g> هرتز</string>
+    <string name="speech_equalizer_band_khz"><xliff:g id="frequency">%1$s</xliff:g> کیلوهرتز</string>
+    <string name="speech_equalizer_gain_db"><xliff:g id="gain">%1$s</xliff:g> دسی‌بل</string>
+    <string name="title_pref_braille_dictionary">واژه‌نامه بریل</string>
+    <string name="braille_dictionary_not_shown"><xliff:g id="text" example="#">%1$s</xliff:g> نشان داده نمی‌شود</string>
+    <string name="title_pref_announce_full_charge">اعلام شارژ کامل</string>
+    <string name="battery_fully_charged">باتری کامل شارژ شد</string>
+    <string name="speech_control_locked_app"><xliff:g id="app" example="Tasker">%1$s</xliff:g> وقتی دستگاه قفل است</string>
+    <string name="speech_control_ask_locked_title">به <xliff:g id="app" example="Tasker">%1$s</xliff:g> اجازه داده شود وقتی دستگاه قفل است ازطریق SandFly صحبت کند؟</string>
+    <string name="speech_control_ask_locked_text">این برنامه می‌تواند وقتی دستگاه قفل است نوشتار را با صدای SandFly شما بگوید. برای «اجازه دادن» باید قفل دستگاه باز باشد. می‌توانید این را در «تنظیمات، گفتار، اجازه گفتار به برنامه‌های دیگر» تغییر دهید.</string>
+    <string name="permission_speak_when_locked_label">صحبت کردن ازطریق SandFly وقتی دستگاه قفل است</string>
+    <string name="permission_speak_when_locked_description">به برنامه اجازه می‌دهد درخواست کند وقتی دستگاه قفل است نوشتار را با صدای SandFly شما بگوید. SandFly پیش از آن جداگانه از شما می‌پرسد.</string>
+    <string name="title_pref_category_back_tap">ضربه به پشت دستگاه</string>
+    <string name="title_pref_keep_speech_off_casts">نگه داشتن گفتار روی تلفن هنگام ارسال محتوا</string>
+    <string name="title_pref_app_shortcuts">میان‌برهای برنامه</string>
+    <string name="app_shortcut_label"><xliff:g id="app_name" example="Amazon">%1$s</xliff:g>: <xliff:g id="shortcut" example="Cart">%2$s</xliff:g></string>
+    <string name="title_pref_add_app_shortcut">افزودن میان‌بر برنامه</string>
+    <string name="app_shortcut_no_apps">هیچ برنامه‌ای میان‌بری برای افزودن ندارد</string>
+    <string name="app_shortcut_not_added">میان‌بری افزوده نشد</string>
+    <string name="app_shortcut_added"><xliff:g id="name" example="MacroDroid: Morning">%1$s</xliff:g> افزوده شد</string>
+    <string name="app_shortcut_not_opened">میان‌بر برنامه باز نشد</string>
+    <string name="app_search_no_apps">برنامه‌ای نیست</string>
+    <string name="shortcut_toggle_color_inversion">روشن یا خاموش کردن وارونگی رنگ</string>
+    <string name="color_inversion_turned_on">وارونگی رنگ روشن</string>
+    <string name="color_inversion_turned_off">وارونگی رنگ خاموش</string>
+    <string name="shortcut_dictate_or_media_control">دیکته کردن، پخش یا توقف موقت رسانه</string>
+    <string name="title_pref_shortcut_edge_along_left_up">تند کشیدن به‌بالا در امتداد لبه چپ</string>
+    <string name="title_pref_shortcut_edge_along_left_down">تند کشیدن به‌پایین در امتداد لبه چپ</string>
+    <string name="title_pref_shortcut_edge_along_right_up">تند کشیدن به‌بالا در امتداد لبه راست</string>
+    <string name="title_pref_shortcut_edge_along_right_down">تند کشیدن به‌پایین در امتداد لبه راست</string>
+    <string name="title_pref_shortcut_edge_along_top_left">تند کشیدن به چپ در امتداد لبه بالا</string>
+    <string name="title_pref_shortcut_edge_along_top_right">تند کشیدن به راست در امتداد لبه بالا</string>
+    <string name="title_pref_shortcut_edge_along_bottom_left">تند کشیدن به چپ در امتداد لبه پایین</string>
+    <string name="title_pref_shortcut_edge_along_bottom_right">تند کشیدن به راست در امتداد لبه پایین</string>
+    <string name="title_pref_shortcut_back_tap_double">دو تک‌ضرب زدن روی پشت دستگاه</string>
+    <string name="title_pref_shortcut_back_tap_triple">سه تک‌ضرب زدن روی پشت دستگاه</string>
+    <string name="title_pref_back_tap_sensitivity">حساسیت ضربه به پشت دستگاه</string>
+    <string name="title_pref_edge_zone_mm">پهنای لبه</string>
+    <string name="title_pref_edge_scroll_left">پیمایش با یک انگشت در امتداد لبه چپ</string>
+    <string name="title_pref_edge_scroll_right">پیمایش با یک انگشت در امتداد لبه راست</string>
+    <string name="title_pref_edge_scroll_top">پیمایش با یک انگشت در امتداد لبه بالا</string>
+    <string name="title_pref_edge_scroll_bottom">پیمایش با یک انگشت در امتداد لبه پایین</string>
+    <string name="title_pref_edge_menu_left">منوی لبه چپ</string>
+    <string name="title_pref_edge_menu_right">منوی لبه راست</string>
+    <string name="title_pref_edge_menu_left_switch">استفاده از لبه چپ به‌عنوان منو</string>
+    <string name="title_pref_edge_menu_right_switch">استفاده از لبه راست به‌عنوان منو</string>
+    <string name="edge_menu_add_command">افزودن فرمان</string>
+    <string name="edge_menu_change_command">تغییر فرمان</string>
+    <string name="title_pref_text_entities">کنش‌های یافت‌شده در نوشتار</string>
+    <string name="text_entity_web">نشانی‌های وب</string>
+    <string name="text_entity_email">نشانی‌های ایمیل</string>
+    <string name="text_entity_phone">شماره‌های تلفن</string>
+    <string name="text_entity_code">کدها</string>
+    <string name="menu_item_call_number">تماس با <xliff:g id="number" example="020 7946 0018">%1$s</xliff:g></string>
+    <string name="menu_item_copy_code">کپی <xliff:g id="code" example="482916">%1$s</xliff:g></string>
+    <string name="title_pref_show_focus_indicator">نمایش نشانگر کانونی کردن</string>
+    <string name="title_pref_dictation_correction_prompt">دستورالعمل تصحیح</string>
+    <string name="title_pref_whisper_custom_model">فایل مدل</string>
+    <string name="whisper_custom_model_choose">انتخاب فایل مدل whisper.cpp</string>
+    <string name="whisper_custom_model_replace">انتخاب فایلی دیگر</string>
+    <string name="whisper_custom_model_not_whisper">فایل مدل whisper.cpp نیست</string>
+    <string name="whisper_custom_model_copying">درحال کپی کردن</string>
 </resources>

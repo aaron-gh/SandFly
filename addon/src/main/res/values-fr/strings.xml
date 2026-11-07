@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="addon_name">Module complémentaire SandFly</string>
+    <string name="addon_description">Exécute les fonctionnalités de SandFly qui nécessitent Shizuku, pour SandFly installé depuis Google Play.</string>
+    <string name="addon_version">Version %1$s</string>
+    <string name="addon_shizuku_not_running">Shizuku : non démarré</string>
+    <string name="addon_shizuku_not_allowed">Shizuku : démarré, module non autorisé</string>
+    <string name="addon_shizuku_denied">Shizuku : module refusé. Autorisez-le dans l\'application Shizuku.</string>
+    <string name="addon_shizuku_allowed">Shizuku : module autorisé</string>
+    <string name="addon_allow">Autoriser dans Shizuku</string>
+    <string name="addon_sandfly_missing">SandFly : non installé</string>
+    <string name="addon_sandfly_other_key">SandFly : signé avec une autre clé. Le module ne fonctionne pas avec cette version de SandFly.</string>
+    <string name="addon_sandfly_ready">SandFly : installé</string>
+    <string name="addon_check_updates">Rechercher des mises à jour</string>
+    <string name="addon_checking">Recherche de mises à jour</string>
+    <string name="addon_up_to_date">À jour</string>
+    <string name="addon_check_failed">Impossible de rechercher des mises à jour. Vérifiez la connexion Internet.</string>
+    <string name="addon_update_available">Module complémentaire SandFly %1$s disponible</string>
+    <string name="addon_install_update">Installer la mise à jour</string>
+    <string name="addon_downloading">Téléchargement de la mise à jour</string>
+    <string name="addon_update_failed">Impossible d\'installer la mise à jour.</string>
+    <string name="addon_updates_channel">Mises à jour</string>
+</resources>

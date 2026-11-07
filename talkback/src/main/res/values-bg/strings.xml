@@ -1349,7 +1349,7 @@
     <string name="action_copy_command">Копиране на командата</string>
     <string name="command_copied">Командата е копирана</string>
     <string name="title_pref_speech_control">Изговаряне от други приложения</string>
-    <string name="summary_pref_speech_control">Приложенията, на които разрешите, могат да изговарят текст с гласа на SandFly. Докато устройството е заключено, нищо не се изговаря.</string>
+    <string name="summary_pref_speech_control">Приложенията, на които разрешите, могат да изговарят текст с гласа на SandFly. Докато устройството е заключено, могат да изговарят само приложенията, на които сте разрешили това и при заключено устройство.</string>
     <string name="title_pref_speech_control_sound">Звук преди изговаряне от други приложения</string>
     <string name="speech_control_apps_category">Приложения</string>
     <string name="speech_control_no_apps">Още няма приложения, поискали изговаряне.</string>
@@ -1868,4 +1868,108 @@
   <string name="value_hold_to_cancel_3000">3 секунди</string>
   <string name="title_pref_tap_to_activate">Активиране с докосване</string>
   <string name="summary_pref_tap_to_activate">Докосване, при което пръстът се вдига, преди фокусът да е поставен върху елемента под него, активира елемента.</string>
+    <string name="title_selector_ai_actions">Действия с AI</string>
+    <string name="ai_actions_hint">Прекарайте пръст нагоре или надолу, за да изберете действие, след което докоснете двукратно, за да го изпълните</string>
+    <string name="title_pref_ai_actions_included">Включени действия с AI</string>
+    <string name="title_speak_screen_description">Изговаряне на описанието на екрана</string>
+    <string name="title_speak_image_description">Изговаряне на описанието на изображението</string>
+    <string name="title_ask_about_screen">Въпрос за екрана</string>
+    <string name="title_ask_about_image">Въпрос за изображението</string>
+    <string name="ai_question_hint">Въпрос</string>
+    <string name="ai_question_ask">Питане</string>
+    <string name="shortcut_use_voice_profile">Използване на гласов профил <xliff:g id="name" example="English">%1$s</xliff:g></string>
+    <string name="title_pref_keep_previous_voice_engine">Поддържане на машината за говор на предишния гласов профил стартирана</string>
+    <string name="title_pref_voice_profile_keep_engine_started">Поддържане на машината за говор стартирана</string>
+    <string name="title_pref_speech_equalizer">Еквалайзер</string>
+    <string name="title_pref_speech_equalizer_preset">Предварителна настройка</string>
+    <string name="title_pref_speech_equalizer_on">Използване на еквалайзера</string>
+    <string name="speech_equalizer_off">Изключен</string>
+    <string name="speech_equalizer_turned_on">Еквалайзерът е включен</string>
+    <string name="speech_equalizer_turned_off">Еквалайзерът е изключен</string>
+    <string name="title_selector_equalizer_32">Еквалайзер 32 Hz</string>
+    <string name="title_selector_equalizer_64">Еквалайзер 64 Hz</string>
+    <string name="title_selector_equalizer_125">Еквалайзер 125 Hz</string>
+    <string name="title_selector_equalizer_250">Еквалайзер 250 Hz</string>
+    <string name="title_selector_equalizer_500">Еквалайзер 500 Hz</string>
+    <string name="title_selector_equalizer_1k">Еквалайзер 1 kHz</string>
+    <string name="title_selector_equalizer_2k">Еквалайзер 2 kHz</string>
+    <string name="title_selector_equalizer_3k">Еквалайзер 3 kHz</string>
+    <string name="title_selector_equalizer_4k">Еквалайзер 4 kHz</string>
+    <string name="title_selector_equalizer_6k">Еквалайзер 6 kHz</string>
+    <string name="title_selector_equalizer_8k">Еквалайзер 8 kHz</string>
+    <string name="title_selector_equalizer_16k">Еквалайзер 16 kHz</string>
+    <string name="summary_speech_equalizer_needs_low_latency">Изисква Аудиоизход &gt; Аудио с ниско забавяне</string>
+    <string name="speech_equalizer_flat">Плосък</string>
+    <string name="speech_equalizer_clarity">Яснота</string>
+    <string name="speech_equalizer_bass_boost">Усилване на басите</string>
+    <string name="speech_equalizer_bass_cut">Намаляване на басите</string>
+    <string name="speech_equalizer_treble_boost">Усилване на високите честоти</string>
+    <string name="speech_equalizer_treble_cut">Намаляване на високите честоти</string>
+    <string name="speech_equalizer_warm">Топъл</string>
+    <string name="speech_equalizer_reduce_harshness">Намаляване на рязкостта</string>
+    <string name="speech_equalizer_reduce_sibilance">Намаляване на съскащите</string>
+    <string name="speech_equalizer_small_speaker">Малък високоговорител</string>
+    <string name="speech_equalizer_custom">Персонализиран</string>
+    <string name="speech_equalizer_band_hz"><xliff:g id="frequency">%1$s</xliff:g> Hz</string>
+    <string name="speech_equalizer_band_khz"><xliff:g id="frequency">%1$s</xliff:g> kHz</string>
+    <string name="speech_equalizer_gain_db"><xliff:g id="gain">%1$s</xliff:g> dB</string>
+    <string name="title_pref_braille_dictionary">Речник за брайлово писмо</string>
+    <string name="braille_dictionary_not_shown"><xliff:g id="text" example="#">%1$s</xliff:g> не се показва</string>
+    <string name="title_pref_announce_full_charge">Съобщаване при пълно зареждане</string>
+    <string name="battery_fully_charged">Батерията е напълно заредена</string>
+    <string name="speech_control_locked_app"><xliff:g id="app" example="Tasker">%1$s</xliff:g>, докато устройството е заключено</string>
+    <string name="speech_control_ask_locked_title">Да се разреши ли на <xliff:g id="app" example="Tasker">%1$s</xliff:g> да изговаря чрез SandFly, докато устройството е заключено?</string>
+    <string name="speech_control_ask_locked_text">Приложението ще може да изговаря текст с гласа на SandFly, докато устройството е заключено. „Разрешаване“ изисква устройството да е отключено. Можете да промените това в „Настройки“, „Говор“, „Изговаряне от други приложения“.</string>
+    <string name="permission_speak_when_locked_label">изговаряне чрез SandFly, докато устройството е заключено</string>
+    <string name="permission_speak_when_locked_description">Позволява на приложението да иска да изговаря текст с гласа на SandFly, докато устройството е заключено. SandFly иска отделно потвърждение от вас, преди приложението да може да го прави.</string>
+    <string name="title_pref_category_back_tap">Докосване на гърба</string>
+    <string name="title_pref_keep_speech_off_casts">Запазване на говора на телефона при предаване</string>
+    <string name="title_pref_app_shortcuts">Преки пътища към приложения</string>
+    <string name="app_shortcut_label"><xliff:g id="app_name" example="Amazon">%1$s</xliff:g>: <xliff:g id="shortcut" example="Cart">%2$s</xliff:g></string>
+    <string name="title_pref_add_app_shortcut">Добавяне на пряк път към приложение</string>
+    <string name="app_shortcut_no_apps">Няма приложения с преки пътища за добавяне</string>
+    <string name="app_shortcut_not_added">Не е добавен пряк път</string>
+    <string name="app_shortcut_added">Добавено: <xliff:g id="name" example="MacroDroid: Morning">%1$s</xliff:g></string>
+    <string name="app_shortcut_not_opened">Прекият път към приложението не можа да се отвори</string>
+    <string name="app_search_no_apps">Няма приложения</string>
+    <string name="shortcut_toggle_color_inversion">Включване или изключване на цветната инверсия</string>
+    <string name="color_inversion_turned_on">Цветната инверсия е включена</string>
+    <string name="color_inversion_turned_off">Цветната инверсия е изключена</string>
+    <string name="shortcut_dictate_or_media_control">Диктуване, пускане или поставяне на пауза на мултимедия</string>
+    <string name="title_pref_shortcut_edge_along_left_up">Прекарване нагоре по левия ръб</string>
+    <string name="title_pref_shortcut_edge_along_left_down">Прекарване надолу по левия ръб</string>
+    <string name="title_pref_shortcut_edge_along_right_up">Прекарване нагоре по десния ръб</string>
+    <string name="title_pref_shortcut_edge_along_right_down">Прекарване надолу по десния ръб</string>
+    <string name="title_pref_shortcut_edge_along_top_left">Прекарване наляво по горния ръб</string>
+    <string name="title_pref_shortcut_edge_along_top_right">Прекарване надясно по горния ръб</string>
+    <string name="title_pref_shortcut_edge_along_bottom_left">Прекарване наляво по долния ръб</string>
+    <string name="title_pref_shortcut_edge_along_bottom_right">Прекарване надясно по долния ръб</string>
+    <string name="title_pref_shortcut_back_tap_double">Двукратно докосване на гърба</string>
+    <string name="title_pref_shortcut_back_tap_triple">Трикратно докосване на гърба</string>
+    <string name="title_pref_back_tap_sensitivity">Чувствителност на докосването на гърба</string>
+    <string name="title_pref_edge_zone_mm">Ширина на ръба</string>
+    <string name="title_pref_edge_scroll_left">Превъртане с един пръст по левия ръб</string>
+    <string name="title_pref_edge_scroll_right">Превъртане с един пръст по десния ръб</string>
+    <string name="title_pref_edge_scroll_top">Превъртане с един пръст по горния ръб</string>
+    <string name="title_pref_edge_scroll_bottom">Превъртане с един пръст по долния ръб</string>
+    <string name="title_pref_edge_menu_left">Меню на левия ръб</string>
+    <string name="title_pref_edge_menu_right">Меню на десния ръб</string>
+    <string name="title_pref_edge_menu_left_switch">Използване на левия ръб като меню</string>
+    <string name="title_pref_edge_menu_right_switch">Използване на десния ръб като меню</string>
+    <string name="edge_menu_add_command">Добавяне на команда</string>
+    <string name="edge_menu_change_command">Промяна на командата</string>
+    <string name="title_pref_text_entities">Действия, открити в текста</string>
+    <string name="text_entity_web">Уеб адреси</string>
+    <string name="text_entity_email">Имейл адреси</string>
+    <string name="text_entity_phone">Телефонни номера</string>
+    <string name="text_entity_code">Кодове</string>
+    <string name="menu_item_call_number">Обаждане на <xliff:g id="number" example="020 7946 0018">%1$s</xliff:g></string>
+    <string name="menu_item_copy_code">Копиране на <xliff:g id="code" example="482916">%1$s</xliff:g></string>
+    <string name="title_pref_show_focus_indicator">Показване на индикатора за фокус</string>
+    <string name="title_pref_dictation_correction_prompt">Подкана за корекция</string>
+    <string name="title_pref_whisper_custom_model">Файл на модела</string>
+    <string name="whisper_custom_model_choose">Изберете файл на модел за whisper.cpp</string>
+    <string name="whisper_custom_model_replace">Избиране на друг файл</string>
+    <string name="whisper_custom_model_not_whisper">Не е файл на модел за whisper.cpp</string>
+    <string name="whisper_custom_model_copying">Копира се</string>
 </resources>

@@ -1261,8 +1261,8 @@
   <string name="required_state_appended">%1$s (обов’язково)</string>
   <string name="keyboard_shortcuts_no_results">Немає результатів</string>
   <string name="keyboard_shortcuts_dialog_search_hint">Пошук</string>
-  <string name="browse_mode_on_hint">Увімкнути режим перегляду</string>
-  <string name="browse_mode_off_hint">Вимкнути режим перегляду</string>
+  <string name="browse_mode_on_hint">Режим перегляду увімкнено</string>
+  <string name="browse_mode_off_hint">Режим перегляду вимкнено</string>
   <string name="browse_mode_double_trigger_modifier">%1$s %1$s</string>
   <string name="title_smart_browse_mode">Розумний режим перегляду</string>
   <string name="summary_smart_browse_mode">Режим перегляду автоматично вмикається або вимикається залежно від вибраного об’єкта. При цьому фокус введення синхронізується з фокусом SandFly.</string>
@@ -1363,7 +1363,7 @@
     <string name="action_copy_command">Копіювати команду</string>
     <string name="command_copied">Команду скопійовано</string>
     <string name="title_pref_speech_control">Дозволити іншим програмам озвучувати текст</string>
-    <string name="summary_pref_speech_control">Дозволені додатки можуть промовляти текст голосом SandFly. Поки пристрій заблоковано, нічого не промовляється.</string>
+    <string name="summary_pref_speech_control">Дозволені додатки можуть промовляти текст голосом SandFly. Поки пристрій заблоковано, текст промовляють лише додатки, яким це також дозволено на заблокованому пристрої.</string>
     <string name="title_pref_speech_control_sound">Відтворювати звук перед мовленням інших програм</string>
     <string name="speech_control_apps_category">Додатки</string>
     <string name="speech_control_no_apps">Жодна програма ще не попросила говорити.</string>
@@ -1598,7 +1598,7 @@
     <string name="shortcut_refresh">Оновити</string>
     <string name="shortcut_system_notifications">Панель сповіщень системи</string>
     <string name="shortcut_system_quick_settings">Швидкі налаштування системи</string>
-    <string name="shortcut_lock_screen">Заблокуйте екран пристрою</string>
+    <string name="shortcut_lock_screen">Заблокувати екран пристрою</string>
     <string name="shortcut_power_menu">Меню живлення</string>
     <string name="shortcut_increase_media_volume">Збільшити гучність медіа</string>
     <string name="shortcut_decrease_media_volume">Зменшити гучність медіа</string>
@@ -1683,12 +1683,12 @@
     <string name="summary_pref_volume_keys_adjust_sliders">Коли повзунок має фокус, збільшення та зменшення гучності змінюють його значення замість гучності</string>
     <string name="title_pref_volume_keys_move_cursor">Клавіші гучності переміщують курсор</string>
     <string name="summary_pref_volume_keys_move_cursor">Коли текстове поле має фокус, збільшення гучності пересуває курсор на символ назад, а зменшення гучності переміщує його далі</string>
-    <string name="title_pref_volume_up_double_press">Подвійне натискання кнопки збільшення гучності</string>
-    <string name="title_pref_volume_up_triple_press">Потрійне натискання кнопки збільшення гучності</string>
-    <string name="title_pref_volume_up_long_press">Довге натискання кнопки збільшення гучності</string>
-    <string name="title_pref_volume_down_double_press">Подвійне натискання кнопки зменшення гучності</string>
-    <string name="title_pref_volume_down_triple_press">Потрійне натискання кнопки зменшення гучності</string>
-    <string name="title_pref_volume_down_long_press">Довге натискання кнопки зменшення гучності</string>
+    <string name="title_pref_volume_up_double_press">Подвійне натискання клавіші збільшення гучності</string>
+    <string name="title_pref_volume_up_triple_press">Потрійне натискання клавіші збільшення гучності</string>
+    <string name="title_pref_volume_up_long_press">Довге натискання клавіші збільшення гучності</string>
+    <string name="title_pref_volume_down_double_press">Подвійне натискання клавіші зменшення гучності</string>
+    <string name="title_pref_volume_down_triple_press">Потрійне натискання клавіші зменшення гучності</string>
+    <string name="title_pref_volume_down_long_press">Довге натискання клавіші зменшення гучності</string>
     <string name="summary_support_wrap_around">Увімкнення або вимкнення переходу від останнього елемента до першого</string>
     <string name="wrap_around_on">Циклічна навігація: увімкнено</string>
     <string name="wrap_around_off">Циклічна навігація: вимкнено</string>
@@ -1876,4 +1876,108 @@
   <string name="value_hold_to_cancel_3000">3 секунди</string>
   <string name="title_pref_tap_to_activate">Активація дотиком</string>
   <string name="summary_pref_tap_to_activate">Дотик, під час якого палець піднято до того, як об’єкт під ним виділено, активує цей об’єкт.</string>
+    <string name="title_selector_ai_actions">Дії ШІ</string>
+    <string name="ai_actions_hint">Проведіть угору або вниз, щоб вибрати дію, потім двічі торкніться, щоб виконати її</string>
+    <string name="title_pref_ai_actions_included">Доступні дії ШІ</string>
+    <string name="title_speak_screen_description">Озвучити опис екрана</string>
+    <string name="title_speak_image_description">Озвучити опис зображення</string>
+    <string name="title_ask_about_screen">Запитати про екран</string>
+    <string name="title_ask_about_image">Запитати про зображення</string>
+    <string name="ai_question_hint">Запитання</string>
+    <string name="ai_question_ask">Запитати</string>
+    <string name="shortcut_use_voice_profile">Використати голосовий профіль <xliff:g id="name" example="English">%1$s</xliff:g></string>
+    <string name="title_pref_keep_previous_voice_engine">Тримати запущеним синтезатор мовлення попереднього голосового профілю</string>
+    <string name="title_pref_voice_profile_keep_engine_started">Тримати синтезатор мовлення запущеним</string>
+    <string name="title_pref_speech_equalizer">Еквалайзер</string>
+    <string name="title_pref_speech_equalizer_preset">Набір налаштувань</string>
+    <string name="title_pref_speech_equalizer_on">Використовувати еквалайзер</string>
+    <string name="speech_equalizer_off">Вимкнено</string>
+    <string name="speech_equalizer_turned_on">Еквалайзер увімкнено</string>
+    <string name="speech_equalizer_turned_off">Еквалайзер вимкнено</string>
+    <string name="title_selector_equalizer_32">Еквалайзер 32 Гц</string>
+    <string name="title_selector_equalizer_64">Еквалайзер 64 Гц</string>
+    <string name="title_selector_equalizer_125">Еквалайзер 125 Гц</string>
+    <string name="title_selector_equalizer_250">Еквалайзер 250 Гц</string>
+    <string name="title_selector_equalizer_500">Еквалайзер 500 Гц</string>
+    <string name="title_selector_equalizer_1k">Еквалайзер 1 кГц</string>
+    <string name="title_selector_equalizer_2k">Еквалайзер 2 кГц</string>
+    <string name="title_selector_equalizer_3k">Еквалайзер 3 кГц</string>
+    <string name="title_selector_equalizer_4k">Еквалайзер 4 кГц</string>
+    <string name="title_selector_equalizer_6k">Еквалайзер 6 кГц</string>
+    <string name="title_selector_equalizer_8k">Еквалайзер 8 кГц</string>
+    <string name="title_selector_equalizer_16k">Еквалайзер 16 кГц</string>
+    <string name="summary_speech_equalizer_needs_low_latency">Потрібно: Виведення звуку &gt; Аудіо з низькою затримкою</string>
+    <string name="speech_equalizer_flat">Рівний</string>
+    <string name="speech_equalizer_clarity">Чіткість</string>
+    <string name="speech_equalizer_bass_boost">Підсилення басів</string>
+    <string name="speech_equalizer_bass_cut">Послаблення басів</string>
+    <string name="speech_equalizer_treble_boost">Підсилення високих частот</string>
+    <string name="speech_equalizer_treble_cut">Послаблення високих частот</string>
+    <string name="speech_equalizer_warm">Теплий</string>
+    <string name="speech_equalizer_reduce_harshness">Зменшення різкості</string>
+    <string name="speech_equalizer_reduce_sibilance">Зменшення свистячих</string>
+    <string name="speech_equalizer_small_speaker">Малий динамік</string>
+    <string name="speech_equalizer_custom">Власний</string>
+    <string name="speech_equalizer_band_hz"><xliff:g id="frequency">%1$s</xliff:g> Гц</string>
+    <string name="speech_equalizer_band_khz"><xliff:g id="frequency">%1$s</xliff:g> кГц</string>
+    <string name="speech_equalizer_gain_db"><xliff:g id="gain">%1$s</xliff:g> дБ</string>
+    <string name="title_pref_braille_dictionary">Брайлівський словник</string>
+    <string name="braille_dictionary_not_shown"><xliff:g id="text" example="#">%1$s</xliff:g> не показується</string>
+    <string name="title_pref_announce_full_charge">Повідомляти про повне заряджання</string>
+    <string name="battery_fully_charged">Акумулятор повністю заряджено</string>
+    <string name="speech_control_locked_app"><xliff:g id="app" example="Tasker">%1$s</xliff:g>, коли пристрій заблоковано</string>
+    <string name="speech_control_ask_locked_title">Дозволити <xliff:g id="app" example="Tasker">%1$s</xliff:g> говорити через SandFly, коли пристрій заблоковано?</string>
+    <string name="speech_control_ask_locked_text">Додаток зможе озвучувати текст голосом SandFly, коли пристрій заблоковано. Кнопка «Дозволити» працює лише на розблокованому пристрої. Змінити це можна в розділі «Налаштування», «Мовлення», «Дозволити іншим програмам озвучувати текст».</string>
+    <string name="permission_speak_when_locked_label">говорити через SandFly, коли пристрій заблоковано</string>
+    <string name="permission_speak_when_locked_description">Дозволяє додатку просити озвучити текст вашим голосом SandFly, коли пристрій заблоковано. SandFly окремо запитує вас, перш ніж додаток зможе це робити.</string>
+    <string name="title_pref_category_back_tap">Дотик до задньої панелі</string>
+    <string name="title_pref_keep_speech_off_casts">Залишати мовлення на телефоні під час трансляції</string>
+    <string name="title_pref_app_shortcuts">Ярлики додатків</string>
+    <string name="app_shortcut_label"><xliff:g id="app_name" example="Amazon">%1$s</xliff:g>: <xliff:g id="shortcut" example="Cart">%2$s</xliff:g></string>
+    <string name="title_pref_add_app_shortcut">Додати ярлик додатка</string>
+    <string name="app_shortcut_no_apps">Немає додатків із ярликами для додавання</string>
+    <string name="app_shortcut_not_added">Ярлик не додано</string>
+    <string name="app_shortcut_added">Додано: <xliff:g id="name" example="MacroDroid: Morning">%1$s</xliff:g></string>
+    <string name="app_shortcut_not_opened">Не вдалося відкрити ярлик додатка</string>
+    <string name="app_search_no_apps">Немає додатків</string>
+    <string name="shortcut_toggle_color_inversion">Увімкнути або вимкнути колірну інверсію</string>
+    <string name="color_inversion_turned_on">Колірну інверсію ввімкнено</string>
+    <string name="color_inversion_turned_off">Колірну інверсію вимкнено</string>
+    <string name="shortcut_dictate_or_media_control">Диктувати, відтворити або зупинити медіа</string>
+    <string name="title_pref_shortcut_edge_along_left_up">Проведіть пальцем угору вздовж лівого краю</string>
+    <string name="title_pref_shortcut_edge_along_left_down">Проведіть пальцем вниз уздовж лівого краю</string>
+    <string name="title_pref_shortcut_edge_along_right_up">Проведіть пальцем угору вздовж правого краю</string>
+    <string name="title_pref_shortcut_edge_along_right_down">Проведіть пальцем вниз уздовж правого краю</string>
+    <string name="title_pref_shortcut_edge_along_top_left">Проведіть пальцем ліворуч уздовж верхнього краю</string>
+    <string name="title_pref_shortcut_edge_along_top_right">Проведіть пальцем праворуч уздовж верхнього краю</string>
+    <string name="title_pref_shortcut_edge_along_bottom_left">Проведіть пальцем ліворуч уздовж нижнього краю</string>
+    <string name="title_pref_shortcut_edge_along_bottom_right">Проведіть пальцем праворуч уздовж нижнього краю</string>
+    <string name="title_pref_shortcut_back_tap_double">Подвійний дотик до задньої панелі</string>
+    <string name="title_pref_shortcut_back_tap_triple">Потрійний дотик до задньої панелі</string>
+    <string name="title_pref_back_tap_sensitivity">Чутливість дотику до задньої панелі</string>
+    <string name="title_pref_edge_zone_mm">Ширина краю</string>
+    <string name="title_pref_edge_scroll_left">Прокручувати одним пальцем уздовж лівого краю</string>
+    <string name="title_pref_edge_scroll_right">Прокручувати одним пальцем уздовж правого краю</string>
+    <string name="title_pref_edge_scroll_top">Прокручувати одним пальцем уздовж верхнього краю</string>
+    <string name="title_pref_edge_scroll_bottom">Прокручувати одним пальцем уздовж нижнього краю</string>
+    <string name="title_pref_edge_menu_left">Меню лівого краю</string>
+    <string name="title_pref_edge_menu_right">Меню правого краю</string>
+    <string name="title_pref_edge_menu_left_switch">Використовувати лівий край як меню</string>
+    <string name="title_pref_edge_menu_right_switch">Використовувати правий край як меню</string>
+    <string name="edge_menu_add_command">Додати команду</string>
+    <string name="edge_menu_change_command">Змінити команду</string>
+    <string name="title_pref_text_entities">Дії, знайдені в тексті</string>
+    <string name="text_entity_web">Веб-адреси</string>
+    <string name="text_entity_email">Адреси електронної пошти</string>
+    <string name="text_entity_phone">Номери телефонів</string>
+    <string name="text_entity_code">Коди</string>
+    <string name="menu_item_call_number">Зателефонувати на номер <xliff:g id="number" example="020 7946 0018">%1$s</xliff:g></string>
+    <string name="menu_item_copy_code">Копіювати <xliff:g id="code" example="482916">%1$s</xliff:g></string>
+    <string name="title_pref_show_focus_indicator">Показувати індикатор фокусування</string>
+    <string name="title_pref_dictation_correction_prompt">Інструкція для виправлення</string>
+    <string name="title_pref_whisper_custom_model">Файл моделі</string>
+    <string name="whisper_custom_model_choose">Виберіть файл моделі whisper.cpp</string>
+    <string name="whisper_custom_model_replace">Вибрати інший файл</string>
+    <string name="whisper_custom_model_not_whisper">Це не файл моделі whisper.cpp</string>
+    <string name="whisper_custom_model_copying">Копіювання</string>
 </resources>

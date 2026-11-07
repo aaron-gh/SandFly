@@ -1349,7 +1349,7 @@
     <string name="action_copy_command">Sao chép lệnh</string>
     <string name="command_copied">Đã sao chép lệnh</string>
     <string name="title_pref_speech_control">Cho phép ứng dụng khác đọc</string>
-    <string name="summary_pref_speech_control">Các ứng dụng mà bạn cho phép có thể đọc văn bản bằng giọng nói SandFly của bạn. Không có nội dung nào được đọc khi thiết bị đang khoá.</string>
+    <string name="summary_pref_speech_control">Các ứng dụng mà bạn cho phép có thể đọc văn bản bằng giọng nói SandFly của bạn. Khi thiết bị đang khoá, chỉ những ứng dụng mà bạn cũng cho phép khi khoá mới có thể đọc.</string>
     <string name="title_pref_speech_control_sound">Phát âm thanh trước khi ứng dụng khác đọc</string>
     <string name="speech_control_apps_category">Ứng dụng</string>
     <string name="speech_control_no_apps">Chưa có ứng dụng nào yêu cầu đọc.</string>
@@ -1864,4 +1864,108 @@
   <string name="value_hold_to_cancel_3000">3 giây</string>
   <string name="title_pref_tap_to_activate">Nhấn để kích hoạt</string>
   <string name="summary_pref_tap_to_activate">Một lần nhấn mà ngón tay nhấc lên trước khi mục bên dưới được lấy tiêu điểm sẽ kích hoạt mục đó.</string>
+    <string name="title_selector_ai_actions">Thao tác AI</string>
+    <string name="ai_actions_hint">Vuốt lên hoặc xuống để chọn thao tác, sau đó nhấn đúp để chạy thao tác đó</string>
+    <string name="title_pref_ai_actions_included">Các thao tác AI cần đưa vào</string>
+    <string name="title_speak_screen_description">Đọc nội dung mô tả màn hình</string>
+    <string name="title_speak_image_description">Đọc nội dung mô tả hình ảnh</string>
+    <string name="title_ask_about_screen">Hỏi về màn hình</string>
+    <string name="title_ask_about_image">Hỏi về hình ảnh</string>
+    <string name="ai_question_hint">Câu hỏi</string>
+    <string name="ai_question_ask">Hỏi</string>
+    <string name="shortcut_use_voice_profile">Dùng hồ sơ giọng nói <xliff:g id="name" example="English">%1$s</xliff:g></string>
+    <string name="title_pref_keep_previous_voice_engine">Giữ cho công cụ của hồ sơ giọng nói trước đó luôn chạy</string>
+    <string name="title_pref_voice_profile_keep_engine_started">Giữ cho công cụ luôn chạy</string>
+    <string name="title_pref_speech_equalizer">Bộ cân bằng</string>
+    <string name="title_pref_speech_equalizer_preset">Giá trị đặt trước</string>
+    <string name="title_pref_speech_equalizer_on">Dùng bộ cân bằng</string>
+    <string name="speech_equalizer_off">Tắt</string>
+    <string name="speech_equalizer_turned_on">Bộ cân bằng đang bật</string>
+    <string name="speech_equalizer_turned_off">Bộ cân bằng đang tắt</string>
+    <string name="title_selector_equalizer_32">Bộ cân bằng 32 Hz</string>
+    <string name="title_selector_equalizer_64">Bộ cân bằng 64 Hz</string>
+    <string name="title_selector_equalizer_125">Bộ cân bằng 125 Hz</string>
+    <string name="title_selector_equalizer_250">Bộ cân bằng 250 Hz</string>
+    <string name="title_selector_equalizer_500">Bộ cân bằng 500 Hz</string>
+    <string name="title_selector_equalizer_1k">Bộ cân bằng 1 kHz</string>
+    <string name="title_selector_equalizer_2k">Bộ cân bằng 2 kHz</string>
+    <string name="title_selector_equalizer_3k">Bộ cân bằng 3 kHz</string>
+    <string name="title_selector_equalizer_4k">Bộ cân bằng 4 kHz</string>
+    <string name="title_selector_equalizer_6k">Bộ cân bằng 6 kHz</string>
+    <string name="title_selector_equalizer_8k">Bộ cân bằng 8 kHz</string>
+    <string name="title_selector_equalizer_16k">Bộ cân bằng 16 kHz</string>
+    <string name="summary_speech_equalizer_needs_low_latency">Cần bật Đầu ra âm thanh &gt; Âm thanh có độ trễ thấp</string>
+    <string name="speech_equalizer_flat">Phẳng</string>
+    <string name="speech_equalizer_clarity">Rõ ràng</string>
+    <string name="speech_equalizer_bass_boost">Tăng âm trầm</string>
+    <string name="speech_equalizer_bass_cut">Giảm âm trầm</string>
+    <string name="speech_equalizer_treble_boost">Tăng âm bổng</string>
+    <string name="speech_equalizer_treble_cut">Giảm âm bổng</string>
+    <string name="speech_equalizer_warm">Ấm</string>
+    <string name="speech_equalizer_reduce_harshness">Giảm độ chói</string>
+    <string name="speech_equalizer_reduce_sibilance">Giảm âm xuýt</string>
+    <string name="speech_equalizer_small_speaker">Loa nhỏ</string>
+    <string name="speech_equalizer_custom">Tuỳ chỉnh</string>
+    <string name="speech_equalizer_band_hz"><xliff:g id="frequency">%1$s</xliff:g> Hz</string>
+    <string name="speech_equalizer_band_khz"><xliff:g id="frequency">%1$s</xliff:g> kHz</string>
+    <string name="speech_equalizer_gain_db"><xliff:g id="gain">%1$s</xliff:g> dB</string>
+    <string name="title_pref_braille_dictionary">Từ điển chữ nổi</string>
+    <string name="braille_dictionary_not_shown">Không hiển thị <xliff:g id="text" example="#">%1$s</xliff:g></string>
+    <string name="title_pref_announce_full_charge">Thông báo khi sạc đầy</string>
+    <string name="battery_fully_charged">Pin đã sạc đầy</string>
+    <string name="speech_control_locked_app"><xliff:g id="app" example="Tasker">%1$s</xliff:g> khi thiết bị đang khoá</string>
+    <string name="speech_control_ask_locked_title">Cho phép <xliff:g id="app" example="Tasker">%1$s</xliff:g> đọc thông qua SandFly khi thiết bị đang khoá?</string>
+    <string name="speech_control_ask_locked_text">Ứng dụng này có thể đọc văn bản bằng giọng nói SandFly của bạn khi thiết bị đang khoá. Cần mở khoá thiết bị để chọn Cho phép. Bạn có thể thay đổi tùy chọn này trong phần Cài đặt, Lời nói, Cho phép ứng dụng khác đọc.</string>
+    <string name="permission_speak_when_locked_label">đọc thông qua SandFly khi thiết bị đang khoá</string>
+    <string name="permission_speak_when_locked_description">Cho phép ứng dụng yêu cầu đọc văn bản bằng giọng nói SandFly của bạn khi thiết bị đang khoá. SandFly sẽ hỏi riêng bạn trước khi cho phép.</string>
+    <string name="title_pref_category_back_tap">Nhấn vào mặt sau</string>
+    <string name="title_pref_keep_speech_off_casts">Giữ lời nói trên điện thoại khi truyền</string>
+    <string name="title_pref_app_shortcuts">Lối tắt ứng dụng</string>
+    <string name="app_shortcut_label"><xliff:g id="app_name" example="Amazon">%1$s</xliff:g>: <xliff:g id="shortcut" example="Cart">%2$s</xliff:g></string>
+    <string name="title_pref_add_app_shortcut">Thêm lối tắt ứng dụng</string>
+    <string name="app_shortcut_no_apps">Không có ứng dụng nào có lối tắt để thêm</string>
+    <string name="app_shortcut_not_added">Chưa thêm lối tắt nào</string>
+    <string name="app_shortcut_added">Đã thêm <xliff:g id="name" example="MacroDroid: Morning">%1$s</xliff:g></string>
+    <string name="app_shortcut_not_opened">Không mở được lối tắt ứng dụng</string>
+    <string name="app_search_no_apps">Không có ứng dụng nào</string>
+    <string name="shortcut_toggle_color_inversion">Bật hoặc tắt tính năng đảo màu</string>
+    <string name="color_inversion_turned_on">Tính năng đảo màu đang bật</string>
+    <string name="color_inversion_turned_off">Tính năng đảo màu đang tắt</string>
+    <string name="shortcut_dictate_or_media_control">Nhập bằng giọng nói, phát hoặc tạm dừng nội dung nghe nhìn</string>
+    <string name="title_pref_shortcut_edge_along_left_up">Vuốt lên dọc theo cạnh trái</string>
+    <string name="title_pref_shortcut_edge_along_left_down">Vuốt xuống dọc theo cạnh trái</string>
+    <string name="title_pref_shortcut_edge_along_right_up">Vuốt lên dọc theo cạnh phải</string>
+    <string name="title_pref_shortcut_edge_along_right_down">Vuốt xuống dọc theo cạnh phải</string>
+    <string name="title_pref_shortcut_edge_along_top_left">Vuốt sang trái dọc theo cạnh trên</string>
+    <string name="title_pref_shortcut_edge_along_top_right">Vuốt sang phải dọc theo cạnh trên</string>
+    <string name="title_pref_shortcut_edge_along_bottom_left">Vuốt sang trái dọc theo cạnh dưới</string>
+    <string name="title_pref_shortcut_edge_along_bottom_right">Vuốt sang phải dọc theo cạnh dưới</string>
+    <string name="title_pref_shortcut_back_tap_double">Nhấn đúp vào mặt sau</string>
+    <string name="title_pref_shortcut_back_tap_triple">Nhấn 3 lần vào mặt sau</string>
+    <string name="title_pref_back_tap_sensitivity">Độ nhạy khi nhấn vào mặt sau</string>
+    <string name="title_pref_edge_zone_mm">Độ rộng cạnh</string>
+    <string name="title_pref_edge_scroll_left">Cuộn bằng một ngón tay dọc theo cạnh trái</string>
+    <string name="title_pref_edge_scroll_right">Cuộn bằng một ngón tay dọc theo cạnh phải</string>
+    <string name="title_pref_edge_scroll_top">Cuộn bằng một ngón tay dọc theo cạnh trên</string>
+    <string name="title_pref_edge_scroll_bottom">Cuộn bằng một ngón tay dọc theo cạnh dưới</string>
+    <string name="title_pref_edge_menu_left">Trình đơn cạnh trái</string>
+    <string name="title_pref_edge_menu_right">Trình đơn cạnh phải</string>
+    <string name="title_pref_edge_menu_left_switch">Dùng cạnh trái làm trình đơn</string>
+    <string name="title_pref_edge_menu_right_switch">Dùng cạnh phải làm trình đơn</string>
+    <string name="edge_menu_add_command">Thêm lệnh</string>
+    <string name="edge_menu_change_command">Thay đổi lệnh</string>
+    <string name="title_pref_text_entities">Thao tác tìm thấy trong văn bản</string>
+    <string name="text_entity_web">Địa chỉ web</string>
+    <string name="text_entity_email">Địa chỉ email</string>
+    <string name="text_entity_phone">Số điện thoại</string>
+    <string name="text_entity_code">Mã xác minh</string>
+    <string name="menu_item_call_number">Gọi <xliff:g id="number" example="020 7946 0018">%1$s</xliff:g></string>
+    <string name="menu_item_copy_code">Sao chép <xliff:g id="code" example="482916">%1$s</xliff:g></string>
+    <string name="title_pref_show_focus_indicator">Hiện chỉ báo lấy tiêu điểm</string>
+    <string name="title_pref_dictation_correction_prompt">Câu lệnh sửa lỗi</string>
+    <string name="title_pref_whisper_custom_model">Tệp mô hình</string>
+    <string name="whisper_custom_model_choose">Chọn tệp mô hình whisper.cpp</string>
+    <string name="whisper_custom_model_replace">Chọn tệp khác</string>
+    <string name="whisper_custom_model_not_whisper">Không phải tệp mô hình whisper.cpp</string>
+    <string name="whisper_custom_model_copying">Đang sao chép</string>
 </resources>

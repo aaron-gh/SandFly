@@ -1363,7 +1363,7 @@
     <string name="action_copy_command">കമാൻഡ് പകർത്തുക</string>
     <string name="command_copied">കമാൻഡ് പകർത്തി</string>
     <string name="title_pref_speech_control">മറ്റ് ആപ്പുകളെ സംസാരിക്കാൻ അനുവദിക്കുക</string>
-    <string name="summary_pref_speech_control">നിങ്ങൾ അനുവദിക്കുന്ന ആപ്പുകൾക്ക് നിങ്ങളുടെ SandFly വോയ്‌സിൽ വാചകം പറയാൻ കഴിയും. ഉപകരണം ലോക്കായിരിക്കുമ്പോൾ ഒന്നും പറയുന്നില്ല.</string>
+    <string name="summary_pref_speech_control">നിങ്ങൾ അനുവദിക്കുന്ന ആപ്പുകൾക്ക് നിങ്ങളുടെ SandFly വോയ്‌സിൽ വാചകം പറയാൻ കഴിയും. ഉപകരണം ലോക്കായിരിക്കുമ്പോൾ, ലോക്കായിരിക്കുമ്പോഴും നിങ്ങൾ അനുവദിച്ച ആപ്പുകൾക്ക് മാത്രമേ സംസാരിക്കാനാകൂ.</string>
     <string name="title_pref_speech_control_sound">മറ്റ് ആപ്പുകൾ സംസാരിക്കുന്നതിന് മുമ്പ് ഒരു ശബ്ദം പ്ലേ ചെയ്യുക</string>
     <string name="speech_control_apps_category">ആപ്പുകൾ</string>
     <string name="speech_control_no_apps">ആപ്പുകളൊന്നും ഇതുവരെ സംസാരിക്കാൻ ആവശ്യപ്പെട്ടിട്ടില്ല.</string>
@@ -1868,4 +1868,108 @@
   <string name="value_hold_to_cancel_3000">3 സെക്കൻഡ്</string>
   <string name="title_pref_tap_to_activate">സജീവമാക്കാൻ ടാപ്പ് ചെയ്യുക</string>
   <string name="summary_pref_tap_to_activate">വിരലിന് താഴെയുള്ള ഇനം ഫോക്കസ് ചെയ്യപ്പെടുന്നതിന് മുമ്പ് വിരൽ ഉയർത്തുന്ന ടാപ്പ് ആ ഇനം സജീവമാക്കുന്നു.</string>
+    <string name="title_selector_ai_actions">AI പ്രവർത്തനങ്ങൾ</string>
+    <string name="ai_actions_hint">ഒരു പ്രവർത്തനം തിരഞ്ഞെടുക്കാൻ മുകളിലേക്കോ താഴേക്കോ സ്വൈപ്പ് ചെയ്യുക, തുടർന്ന് അത് റൺ ചെയ്യാൻ ഡബിൾ ടാപ്പ് ചെയ്യുക</string>
+    <string name="title_pref_ai_actions_included">ഉൾപ്പെടുത്തേണ്ട AI പ്രവർത്തനങ്ങൾ</string>
+    <string name="title_speak_screen_description">സ്‌ക്രീൻ വിവരണം പറയുക</string>
+    <string name="title_speak_image_description">ചിത്ര വിവരണം പറയുക</string>
+    <string name="title_ask_about_screen">സ്‌ക്രീനിനെക്കുറിച്ച് ചോദിക്കുക</string>
+    <string name="title_ask_about_image">ചിത്രത്തെക്കുറിച്ച് ചോദിക്കുക</string>
+    <string name="ai_question_hint">ചോദ്യം</string>
+    <string name="ai_question_ask">ചോദിക്കുക</string>
+    <string name="shortcut_use_voice_profile"><xliff:g id="name" example="English">%1$s</xliff:g> വോയ്സ് പ്രൊഫൈൽ ഉപയോഗിക്കുക</string>
+    <string name="title_pref_keep_previous_voice_engine">മുമ്പത്തെ വോയ്സ് പ്രൊഫൈലിന്റെ എഞ്ചിൻ ആരംഭിച്ച നിലയിൽ നിലനിർത്തുക</string>
+    <string name="title_pref_voice_profile_keep_engine_started">എഞ്ചിൻ ആരംഭിച്ച നിലയിൽ നിലനിർത്തുക</string>
+    <string name="title_pref_speech_equalizer">ഇക്വലൈസർ</string>
+    <string name="title_pref_speech_equalizer_preset">പ്രിസെറ്റ്</string>
+    <string name="title_pref_speech_equalizer_on">ഇക്വലൈസർ ഉപയോഗിക്കുക</string>
+    <string name="speech_equalizer_off">ഓഫാണ്</string>
+    <string name="speech_equalizer_turned_on">ഇക്വലൈസർ ഓണാക്കി</string>
+    <string name="speech_equalizer_turned_off">ഇക്വലൈസർ ഓഫാക്കി</string>
+    <string name="title_selector_equalizer_32">ഇക്വലൈസർ 32 Hz</string>
+    <string name="title_selector_equalizer_64">ഇക്വലൈസർ 64 Hz</string>
+    <string name="title_selector_equalizer_125">ഇക്വലൈസർ 125 Hz</string>
+    <string name="title_selector_equalizer_250">ഇക്വലൈസർ 250 Hz</string>
+    <string name="title_selector_equalizer_500">ഇക്വലൈസർ 500 Hz</string>
+    <string name="title_selector_equalizer_1k">ഇക്വലൈസർ 1 kHz</string>
+    <string name="title_selector_equalizer_2k">ഇക്വലൈസർ 2 kHz</string>
+    <string name="title_selector_equalizer_3k">ഇക്വലൈസർ 3 kHz</string>
+    <string name="title_selector_equalizer_4k">ഇക്വലൈസർ 4 kHz</string>
+    <string name="title_selector_equalizer_6k">ഇക്വലൈസർ 6 kHz</string>
+    <string name="title_selector_equalizer_8k">ഇക്വലൈസർ 8 kHz</string>
+    <string name="title_selector_equalizer_16k">ഇക്വലൈസർ 16 kHz</string>
+    <string name="summary_speech_equalizer_needs_low_latency">ഓഡിയോ ഔട്ട്പുട്ട് &gt; ലോ-ലേറ്റൻസി ഓഡിയോ ആവശ്യമാണ്</string>
+    <string name="speech_equalizer_flat">ഫ്ലാറ്റ്</string>
+    <string name="speech_equalizer_clarity">വ്യക്തത</string>
+    <string name="speech_equalizer_bass_boost">ബാസ് ബൂസ്റ്റ്</string>
+    <string name="speech_equalizer_bass_cut">ബാസ് കുറയ്ക്കൽ</string>
+    <string name="speech_equalizer_treble_boost">ട്രെബിൾ ബൂസ്റ്റ്</string>
+    <string name="speech_equalizer_treble_cut">ട്രെബിൾ കുറയ്ക്കൽ</string>
+    <string name="speech_equalizer_warm">വാം</string>
+    <string name="speech_equalizer_reduce_harshness">പരുഷത കുറയ്ക്കുക</string>
+    <string name="speech_equalizer_reduce_sibilance">സ-ശബ്ദങ്ങൾ കുറയ്ക്കുക</string>
+    <string name="speech_equalizer_small_speaker">ചെറിയ സ്പീക്കർ</string>
+    <string name="speech_equalizer_custom">ഇഷ്‌ടാനുസൃതം</string>
+    <string name="speech_equalizer_band_hz"><xliff:g id="frequency">%1$s</xliff:g> Hz</string>
+    <string name="speech_equalizer_band_khz"><xliff:g id="frequency">%1$s</xliff:g> kHz</string>
+    <string name="speech_equalizer_gain_db"><xliff:g id="gain">%1$s</xliff:g> dB</string>
+    <string name="title_pref_braille_dictionary">ബ്രെയ്‌ലി നിഘണ്ടു</string>
+    <string name="braille_dictionary_not_shown"><xliff:g id="text" example="#">%1$s</xliff:g> കാണിക്കില്ല</string>
+    <string name="title_pref_announce_full_charge">പൂർണ്ണ ചാർജ് അറിയിക്കുക</string>
+    <string name="battery_fully_charged">ബാറ്ററി പൂർണ്ണമായി ചാർജ് ചെയ്തു</string>
+    <string name="speech_control_locked_app">ഉപകരണം ലോക്കായിരിക്കുമ്പോൾ <xliff:g id="app" example="Tasker">%1$s</xliff:g></string>
+    <string name="speech_control_ask_locked_title">ഉപകരണം ലോക്കായിരിക്കുമ്പോൾ <xliff:g id="app" example="Tasker">%1$s</xliff:g>-നെ SandFly-ലൂടെ സംസാരിക്കാൻ അനുവദിക്കണോ?</string>
+    <string name="speech_control_ask_locked_text">ഉപകരണം ലോക്കായിരിക്കുമ്പോൾ ഇതിന് നിങ്ങളുടെ SandFly ശബ്‌ദത്തിൽ ടെക്സ്റ്റ് പറയാനാകും. “അനുവദിക്കുക” എന്നതിന് ഉപകരണം അൺലോക്ക് ചെയ്തിരിക്കണം. ക്രമീകരണം, “സംഭാഷണം”, “മറ്റ് ആപ്പുകളെ സംസാരിക്കാൻ അനുവദിക്കുക” എന്നതിൽ ഇത് മാറ്റാം.</string>
+    <string name="permission_speak_when_locked_label">ഉപകരണം ലോക്കായിരിക്കുമ്പോൾ SandFly വഴി സംസാരിക്കൽ</string>
+    <string name="permission_speak_when_locked_description">ഉപകരണം ലോക്കായിരിക്കുമ്പോൾ നിങ്ങളുടെ SandFly ശബ്ദത്തിൽ ടെക്സ്റ്റ് പറയാൻ അഭ്യർത്ഥിക്കാൻ ആപ്പിനെ അനുവദിക്കുന്നു. അതിന് മുമ്പ് SandFly നിങ്ങളോട് പ്രത്യേകം ചോദിക്കും.</string>
+    <string name="title_pref_category_back_tap">പിൻഭാഗത്തെ ടാപ്പ്</string>
+    <string name="title_pref_keep_speech_off_casts">കാസ്റ്റ് ചെയ്യുമ്പോൾ സംഭാഷണം ഫോണിൽ തന്നെ നിലനിർത്തുക</string>
+    <string name="title_pref_app_shortcuts">ആപ്പ് കുറുക്കുവഴികൾ</string>
+    <string name="app_shortcut_label"><xliff:g id="app_name" example="Amazon">%1$s</xliff:g>: <xliff:g id="shortcut" example="Cart">%2$s</xliff:g></string>
+    <string name="title_pref_add_app_shortcut">ആപ്പ് കുറുക്കുവഴി ചേർക്കുക</string>
+    <string name="app_shortcut_no_apps">ചേർക്കാൻ കുറുക്കുവഴികളുള്ള ആപ്പുകളൊന്നുമില്ല</string>
+    <string name="app_shortcut_not_added">കുറുക്കുവഴിയൊന്നും ചേർത്തിട്ടില്ല</string>
+    <string name="app_shortcut_added"><xliff:g id="name" example="MacroDroid: Morning">%1$s</xliff:g> ചേർത്തു</string>
+    <string name="app_shortcut_not_opened">ആപ്പ് കുറുക്കുവഴി തുറക്കാനായില്ല</string>
+    <string name="app_search_no_apps">ആപ്പുകളൊന്നുമില്ല</string>
+    <string name="shortcut_toggle_color_inversion">വർണ്ണ വിപരീതം ഓണാക്കുകയോ ഓഫാക്കുകയോ ചെയ്യുക</string>
+    <string name="color_inversion_turned_on">വർണ്ണ വിപരീതം ഓണാക്കി</string>
+    <string name="color_inversion_turned_off">വർണ്ണ വിപരീതം ഓഫാക്കി</string>
+    <string name="shortcut_dictate_or_media_control">പറഞ്ഞ് എഴുതിക്കുക, മീഡിയ പ്ലേ ചെയ്യുകയോ തൽക്കാലം നിർത്തുകയോ ചെയ്യുക</string>
+    <string name="title_pref_shortcut_edge_along_left_up">ഇടത് അരികിലൂടെ മുകളിലേക്ക് സ്വൈപ്പ് ചെയ്യുക</string>
+    <string name="title_pref_shortcut_edge_along_left_down">ഇടത് അരികിലൂടെ താഴേക്ക് സ്വൈപ്പ് ചെയ്യുക</string>
+    <string name="title_pref_shortcut_edge_along_right_up">വലത് അരികിലൂടെ മുകളിലേക്ക് സ്വൈപ്പ് ചെയ്യുക</string>
+    <string name="title_pref_shortcut_edge_along_right_down">വലത് അരികിലൂടെ താഴേക്ക് സ്വൈപ്പ് ചെയ്യുക</string>
+    <string name="title_pref_shortcut_edge_along_top_left">മുകളിലെ അരികിലൂടെ ഇടത്തേക്ക് സ്വൈപ്പ് ചെയ്യുക</string>
+    <string name="title_pref_shortcut_edge_along_top_right">മുകളിലെ അരികിലൂടെ വലത്തേക്ക് സ്വൈപ്പ് ചെയ്യുക</string>
+    <string name="title_pref_shortcut_edge_along_bottom_left">താഴത്തെ അരികിലൂടെ ഇടത്തേക്ക് സ്വൈപ്പ് ചെയ്യുക</string>
+    <string name="title_pref_shortcut_edge_along_bottom_right">താഴത്തെ അരികിലൂടെ വലത്തേക്ക് സ്വൈപ്പ് ചെയ്യുക</string>
+    <string name="title_pref_shortcut_back_tap_double">പിൻഭാഗത്ത് ഡബിൾ ടാപ്പ് ചെയ്യുക</string>
+    <string name="title_pref_shortcut_back_tap_triple">പിൻഭാഗത്ത് മൂന്ന് തവണ ടാപ്പ് ചെയ്യുക</string>
+    <string name="title_pref_back_tap_sensitivity">പിൻഭാഗത്തെ ടാപ്പിന്റെ സെൻസിറ്റിവിറ്റി</string>
+    <string name="title_pref_edge_zone_mm">അരികിന്റെ വീതി</string>
+    <string name="title_pref_edge_scroll_left">ഇടത് അരികിലൂടെ ഒരു വിരൽ കൊണ്ട് സ്ക്രോൾ ചെയ്യുക</string>
+    <string name="title_pref_edge_scroll_right">വലത് അരികിലൂടെ ഒരു വിരൽ കൊണ്ട് സ്ക്രോൾ ചെയ്യുക</string>
+    <string name="title_pref_edge_scroll_top">മുകളിലെ അരികിലൂടെ ഒരു വിരൽ കൊണ്ട് സ്ക്രോൾ ചെയ്യുക</string>
+    <string name="title_pref_edge_scroll_bottom">താഴത്തെ അരികിലൂടെ ഒരു വിരൽ കൊണ്ട് സ്ക്രോൾ ചെയ്യുക</string>
+    <string name="title_pref_edge_menu_left">ഇടത് അരികിലെ മെനു</string>
+    <string name="title_pref_edge_menu_right">വലത് അരികിലെ മെനു</string>
+    <string name="title_pref_edge_menu_left_switch">ഇടത് അരിക് മെനുവായി ഉപയോഗിക്കുക</string>
+    <string name="title_pref_edge_menu_right_switch">വലത് അരിക് മെനുവായി ഉപയോഗിക്കുക</string>
+    <string name="edge_menu_add_command">കമാൻഡ് ചേർക്കുക</string>
+    <string name="edge_menu_change_command">കമാൻഡ് മാറ്റുക</string>
+    <string name="title_pref_text_entities">ടെക്സ്റ്റിൽ കണ്ടെത്തിയ പ്രവർത്തനങ്ങൾ</string>
+    <string name="text_entity_web">വെബ് വിലാസങ്ങൾ</string>
+    <string name="text_entity_email">ഇമെയിൽ വിലാസങ്ങൾ</string>
+    <string name="text_entity_phone">ഫോൺ നമ്പറുകൾ</string>
+    <string name="text_entity_code">കോഡുകൾ</string>
+    <string name="menu_item_call_number"><xliff:g id="number" example="020 7946 0018">%1$s</xliff:g> എന്നതിലേക്ക് വിളിക്കുക</string>
+    <string name="menu_item_copy_code"><xliff:g id="code" example="482916">%1$s</xliff:g> പകർത്തുക</string>
+    <string name="title_pref_show_focus_indicator">ഫോക്കസ് ഇൻഡിക്കേറ്റർ കാണിക്കുക</string>
+    <string name="title_pref_dictation_correction_prompt">തിരുത്തൽ പ്രോംപ്റ്റ്</string>
+    <string name="title_pref_whisper_custom_model">മോഡൽ ഫയൽ</string>
+    <string name="whisper_custom_model_choose">ഒരു whisper.cpp മോഡൽ ഫയൽ തിരഞ്ഞെടുക്കുക</string>
+    <string name="whisper_custom_model_replace">മറ്റൊരു ഫയൽ തിരഞ്ഞെടുക്കുക</string>
+    <string name="whisper_custom_model_not_whisper">whisper.cpp മോഡൽ ഫയലല്ല</string>
+    <string name="whisper_custom_model_copying">പകർത്തുന്നു</string>
 </resources>

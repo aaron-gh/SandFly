@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_gesture_layout">Liigutuste paigutus</string>
+    <string name="gesture_layout_sandfly">SandFly liigutused</string>
+    <string name="gesture_layout_voiceover">VoiceOver liigutused</string>
+    <string name="gesture_layout_dialog_title">Liigutuste valimine</string>
+    <string name="title_pref_handle_two_finger_swipes">Kahe sõrmega pühkimiste käsitlemine SandFlys</string>
+    <string name="title_pref_shortcut_4finger_1tap_top">4 sõrmega puudutamine ülemisel poolel</string>
+    <string name="title_pref_shortcut_4finger_1tap_bottom">4 sõrmega puudutamine alumisel poolel</string>
+    <string name="shortcut_speak_position">Asukoha ettelugemine</string>
+    <string name="speak_position_item">Üksus <xliff:g id="index">%1$d</xliff:g>/<xliff:g id="count">%2$d</xliff:g></string>
+    <string name="speak_position_row_column">Rida <xliff:g id="row">%1$d</xliff:g>/<xliff:g id="row_count">%2$d</xliff:g>, veerg <xliff:g id="column">%3$d</xliff:g>/<xliff:g id="column_count">%4$d</xliff:g></string>
+    <string name="speak_position_none">Asukoht puudub</string>
+</resources>

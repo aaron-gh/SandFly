@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_gesture_layout">동작 레이아웃</string>
+    <string name="gesture_layout_sandfly">SandFly 동작</string>
+    <string name="gesture_layout_voiceover">VoiceOver 동작</string>
+    <string name="gesture_layout_dialog_title">동작 선택</string>
+    <string name="title_pref_handle_two_finger_swipes">SandFly에서 두 손가락 스와이프 처리</string>
+    <string name="title_pref_shortcut_4finger_1tap_top">네 손가락으로 위쪽 절반 탭</string>
+    <string name="title_pref_shortcut_4finger_1tap_bottom">네 손가락으로 아래쪽 절반 탭</string>
+    <string name="shortcut_speak_position">위치 말하기</string>
+    <string name="speak_position_item"><xliff:g id="count">%2$d</xliff:g>개 중 <xliff:g id="index">%1$d</xliff:g>번째 항목</string>
+    <string name="speak_position_row_column"><xliff:g id="row_count">%2$d</xliff:g>개 행 중 <xliff:g id="row">%1$d</xliff:g>행, <xliff:g id="column_count">%4$d</xliff:g>개 열 중 <xliff:g id="column">%3$d</xliff:g>열</string>
+    <string name="speak_position_none">위치 없음</string>
+</resources>

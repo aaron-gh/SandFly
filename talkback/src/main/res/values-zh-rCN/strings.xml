@@ -1556,7 +1556,7 @@
     <string name="title_pref_speech_control">允许其他应用朗读</string>
 
     <!-- Summary of that setting. [CHAR LIMIT=NONE] -->
-    <string name="summary_pref_speech_control">你允许的应用可以用你的 SandFly 声音朗读文本。设备锁定时不朗读任何内容。</string>
+    <string name="summary_pref_speech_control">你允许的应用可以用你的 SandFly 声音朗读文本。设备锁定时，只有你同时允许在锁定时朗读的应用才能朗读。</string>
 
     <!-- Title of the setting that plays a sound before each thing another app says through SandFly. [CHAR LIMIT=NONE] -->
     <string name="title_pref_speech_control_sound">其他应用说话前播放提示音</string>
@@ -2430,4 +2430,108 @@
   <string name="value_hold_to_cancel_3000">3 秒</string>
   <string name="title_pref_tap_to_activate">点按即激活</string>
   <string name="summary_pref_tap_to_activate">如果在手指下方的项目获得焦点之前抬起手指，点按即会激活该项目。</string>
+    <string name="title_selector_ai_actions">AI 操作</string>
+    <string name="ai_actions_hint">向上或向下滑动可选择操作，然后点按两次可运行该操作</string>
+    <string name="title_pref_ai_actions_included">要包含的 AI 操作</string>
+    <string name="title_speak_screen_description">朗读屏幕描述</string>
+    <string name="title_speak_image_description">朗读图片描述</string>
+    <string name="title_ask_about_screen">询问屏幕内容</string>
+    <string name="title_ask_about_image">询问图片内容</string>
+    <string name="ai_question_hint">问题</string>
+    <string name="ai_question_ask">提问</string>
+    <string name="shortcut_use_voice_profile">使用语音配置 <xliff:g id="name" example="English">%1$s</xliff:g></string>
+    <string name="title_pref_keep_previous_voice_engine">保持上一个语音配置的引擎处于启动状态</string>
+    <string name="title_pref_voice_profile_keep_engine_started">保持引擎处于启动状态</string>
+    <string name="title_pref_speech_equalizer">均衡器</string>
+    <string name="title_pref_speech_equalizer_preset">预设</string>
+    <string name="title_pref_speech_equalizer_on">使用均衡器</string>
+    <string name="speech_equalizer_off">已关闭</string>
+    <string name="speech_equalizer_turned_on">均衡器已开启</string>
+    <string name="speech_equalizer_turned_off">均衡器已关闭</string>
+    <string name="title_selector_equalizer_32">均衡器 32 Hz</string>
+    <string name="title_selector_equalizer_64">均衡器 64 Hz</string>
+    <string name="title_selector_equalizer_125">均衡器 125 Hz</string>
+    <string name="title_selector_equalizer_250">均衡器 250 Hz</string>
+    <string name="title_selector_equalizer_500">均衡器 500 Hz</string>
+    <string name="title_selector_equalizer_1k">均衡器 1 kHz</string>
+    <string name="title_selector_equalizer_2k">均衡器 2 kHz</string>
+    <string name="title_selector_equalizer_3k">均衡器 3 kHz</string>
+    <string name="title_selector_equalizer_4k">均衡器 4 kHz</string>
+    <string name="title_selector_equalizer_6k">均衡器 6 kHz</string>
+    <string name="title_selector_equalizer_8k">均衡器 8 kHz</string>
+    <string name="title_selector_equalizer_16k">均衡器 16 kHz</string>
+    <string name="summary_speech_equalizer_needs_low_latency">需要开启“音频输出”&gt;“低延迟音频”</string>
+    <string name="speech_equalizer_flat">平直</string>
+    <string name="speech_equalizer_clarity">清晰</string>
+    <string name="speech_equalizer_bass_boost">低音增强</string>
+    <string name="speech_equalizer_bass_cut">低音削减</string>
+    <string name="speech_equalizer_treble_boost">高音增强</string>
+    <string name="speech_equalizer_treble_cut">高音削减</string>
+    <string name="speech_equalizer_warm">温暖</string>
+    <string name="speech_equalizer_reduce_harshness">减少刺耳感</string>
+    <string name="speech_equalizer_reduce_sibilance">减少齿音</string>
+    <string name="speech_equalizer_small_speaker">小扬声器</string>
+    <string name="speech_equalizer_custom">自定义</string>
+    <string name="speech_equalizer_band_hz"><xliff:g id="frequency">%1$s</xliff:g> Hz</string>
+    <string name="speech_equalizer_band_khz"><xliff:g id="frequency">%1$s</xliff:g> kHz</string>
+    <string name="speech_equalizer_gain_db"><xliff:g id="gain">%1$s</xliff:g> dB</string>
+    <string name="title_pref_braille_dictionary">盲文词典</string>
+    <string name="braille_dictionary_not_shown">不显示 <xliff:g id="text" example="#">%1$s</xliff:g></string>
+    <string name="title_pref_announce_full_charge">播报电池已充满</string>
+    <string name="battery_fully_charged">电池已充满</string>
+    <string name="speech_control_locked_app"><xliff:g id="app" example="Tasker">%1$s</xliff:g>（设备锁定时）</string>
+    <string name="speech_control_ask_locked_title">允许 <xliff:g id="app" example="Tasker">%1$s</xliff:g> 在设备锁定时通过 SandFly 朗读吗？</string>
+    <string name="speech_control_ask_locked_text">它可以在设备锁定时用你的 SandFly 语音朗读文本。“允许”需要设备处于解锁状态。你可以依次前往“设置”、“语音”和“允许其他应用朗读”更改此项。</string>
+    <string name="permission_speak_when_locked_label">在设备锁定时通过 SandFly 朗读</string>
+    <string name="permission_speak_when_locked_description">允许应用请求在设备锁定时用你的 SandFly 语音朗读文本。SandFly 会另行征得你的同意后才允许。</string>
+    <string name="title_pref_category_back_tap">背面点按</string>
+    <string name="title_pref_keep_speech_off_casts">投屏时将语音保留在手机上</string>
+    <string name="title_pref_app_shortcuts">应用快捷方式</string>
+    <string name="app_shortcut_label"><xliff:g id="app_name" example="Amazon">%1$s</xliff:g>：<xliff:g id="shortcut" example="Cart">%2$s</xliff:g></string>
+    <string name="title_pref_add_app_shortcut">添加应用快捷方式</string>
+    <string name="app_shortcut_no_apps">没有可添加快捷方式的应用</string>
+    <string name="app_shortcut_not_added">未添加快捷方式</string>
+    <string name="app_shortcut_added">已添加 <xliff:g id="name" example="MacroDroid: Morning">%1$s</xliff:g></string>
+    <string name="app_shortcut_not_opened">无法打开应用快捷方式</string>
+    <string name="app_search_no_apps">没有应用</string>
+    <string name="shortcut_toggle_color_inversion">开启或关闭颜色反转</string>
+    <string name="color_inversion_turned_on">颜色反转已开启</string>
+    <string name="color_inversion_turned_off">颜色反转已关闭</string>
+    <string name="shortcut_dictate_or_media_control">听写、播放或暂停媒体</string>
+    <string name="title_pref_shortcut_edge_along_left_up">沿左边缘向上滑动</string>
+    <string name="title_pref_shortcut_edge_along_left_down">沿左边缘向下滑动</string>
+    <string name="title_pref_shortcut_edge_along_right_up">沿右边缘向上滑动</string>
+    <string name="title_pref_shortcut_edge_along_right_down">沿右边缘向下滑动</string>
+    <string name="title_pref_shortcut_edge_along_top_left">沿顶部边缘向左滑动</string>
+    <string name="title_pref_shortcut_edge_along_top_right">沿顶部边缘向右滑动</string>
+    <string name="title_pref_shortcut_edge_along_bottom_left">沿底部边缘向左滑动</string>
+    <string name="title_pref_shortcut_edge_along_bottom_right">沿底部边缘向右滑动</string>
+    <string name="title_pref_shortcut_back_tap_double">在背面点按两次</string>
+    <string name="title_pref_shortcut_back_tap_triple">在背面点按三次</string>
+    <string name="title_pref_back_tap_sensitivity">背面点按灵敏度</string>
+    <string name="title_pref_edge_zone_mm">边缘宽度</string>
+    <string name="title_pref_edge_scroll_left">沿左边缘单指滚动</string>
+    <string name="title_pref_edge_scroll_right">沿右边缘单指滚动</string>
+    <string name="title_pref_edge_scroll_top">沿顶部边缘单指滚动</string>
+    <string name="title_pref_edge_scroll_bottom">沿底部边缘单指滚动</string>
+    <string name="title_pref_edge_menu_left">左边缘菜单</string>
+    <string name="title_pref_edge_menu_right">右边缘菜单</string>
+    <string name="title_pref_edge_menu_left_switch">将左边缘用作菜单</string>
+    <string name="title_pref_edge_menu_right_switch">将右边缘用作菜单</string>
+    <string name="edge_menu_add_command">添加命令</string>
+    <string name="edge_menu_change_command">更改命令</string>
+    <string name="title_pref_text_entities">文本中的操作</string>
+    <string name="text_entity_web">网址</string>
+    <string name="text_entity_email">电子邮件地址</string>
+    <string name="text_entity_phone">电话号码</string>
+    <string name="text_entity_code">验证码</string>
+    <string name="menu_item_call_number">拨打 <xliff:g id="number" example="020 7946 0018">%1$s</xliff:g></string>
+    <string name="menu_item_copy_code">复制 <xliff:g id="code" example="482916">%1$s</xliff:g></string>
+    <string name="title_pref_show_focus_indicator">显示焦点指示器</string>
+    <string name="title_pref_dictation_correction_prompt">校正提示词</string>
+    <string name="title_pref_whisper_custom_model">模型文件</string>
+    <string name="whisper_custom_model_choose">选择 whisper.cpp 模型文件</string>
+    <string name="whisper_custom_model_replace">选择其他文件</string>
+    <string name="whisper_custom_model_not_whisper">不是 whisper.cpp 模型文件</string>
+    <string name="whisper_custom_model_copying">正在复制</string>
 </resources>

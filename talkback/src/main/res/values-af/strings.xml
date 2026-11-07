@@ -1349,7 +1349,7 @@
     <string name="action_copy_command">Kopieer opdrag</string>
     <string name="command_copied">Opdrag gekopieer</string>
     <string name="title_pref_speech_control">Laat ander apps praat</string>
-    <string name="summary_pref_speech_control">Apps wat jy toelaat, kan teks in jou SandFly-stem sê. Niks word gesê terwyl die toestel gesluit is nie.</string>
+    <string name="summary_pref_speech_control">Apps wat jy toelaat, kan teks in jou SandFly-stem sê. Terwyl die toestel gesluit is, kan net apps praat wat jy ook toelaat terwyl dit gesluit is.</string>
     <string name="title_pref_speech_control_sound">Speel ’n klank voordat ander apps praat</string>
     <string name="speech_control_apps_category">Apps</string>
     <string name="speech_control_no_apps">Geen apps het nog gevra om te praat nie.</string>
@@ -1868,4 +1868,108 @@
   <string name="value_hold_to_cancel_3000">3 sekondes</string>
   <string name="title_pref_tap_to_activate">Tik om te aktiveer</string>
   <string name="summary_pref_tap_to_activate">’n Tik wat oplig voordat die item daaronder gefokus is, aktiveer die item.</string>
+    <string name="title_selector_ai_actions">KI-handelinge</string>
+    <string name="ai_actions_hint">Swiep op of af om \'n handeling te kies, en dubbeltik dan om dit uit te voer</string>
+    <string name="title_pref_ai_actions_included">KI-handelinge om in te sluit</string>
+    <string name="title_speak_screen_description">Sê skermbeskrywing</string>
+    <string name="title_speak_image_description">Sê prentbeskrywing</string>
+    <string name="title_ask_about_screen">Vra oor skerm</string>
+    <string name="title_ask_about_image">Vra oor prent</string>
+    <string name="ai_question_hint">Vraag</string>
+    <string name="ai_question_ask">Vra</string>
+    <string name="shortcut_use_voice_profile">Gebruik stemprofiel <xliff:g id="name" example="English">%1$s</xliff:g></string>
+    <string name="title_pref_keep_previous_voice_engine">Hou die enjin van die vorige stemprofiel aan die gang</string>
+    <string name="title_pref_voice_profile_keep_engine_started">Hou die enjin aan die gang</string>
+    <string name="title_pref_speech_equalizer">Gelykmaker</string>
+    <string name="title_pref_speech_equalizer_preset">Voorafstelling</string>
+    <string name="title_pref_speech_equalizer_on">Gebruik gelykmaker</string>
+    <string name="speech_equalizer_off">Af</string>
+    <string name="speech_equalizer_turned_on">Gelykmaker aan</string>
+    <string name="speech_equalizer_turned_off">Gelykmaker af</string>
+    <string name="title_selector_equalizer_32">Gelykmaker 32 Hz</string>
+    <string name="title_selector_equalizer_64">Gelykmaker 64 Hz</string>
+    <string name="title_selector_equalizer_125">Gelykmaker 125 Hz</string>
+    <string name="title_selector_equalizer_250">Gelykmaker 250 Hz</string>
+    <string name="title_selector_equalizer_500">Gelykmaker 500 Hz</string>
+    <string name="title_selector_equalizer_1k">Gelykmaker 1 kHz</string>
+    <string name="title_selector_equalizer_2k">Gelykmaker 2 kHz</string>
+    <string name="title_selector_equalizer_3k">Gelykmaker 3 kHz</string>
+    <string name="title_selector_equalizer_4k">Gelykmaker 4 kHz</string>
+    <string name="title_selector_equalizer_6k">Gelykmaker 6 kHz</string>
+    <string name="title_selector_equalizer_8k">Gelykmaker 8 kHz</string>
+    <string name="title_selector_equalizer_16k">Gelykmaker 16 kHz</string>
+    <string name="summary_speech_equalizer_needs_low_latency">Benodig Oudio-uitvoer &gt; Lae-latensie-oudio</string>
+    <string name="speech_equalizer_flat">Plat</string>
+    <string name="speech_equalizer_clarity">Helderheid</string>
+    <string name="speech_equalizer_bass_boost">Basversterking</string>
+    <string name="speech_equalizer_bass_cut">Basverlaging</string>
+    <string name="speech_equalizer_treble_boost">Diskantversterking</string>
+    <string name="speech_equalizer_treble_cut">Diskantverlaging</string>
+    <string name="speech_equalizer_warm">Warm</string>
+    <string name="speech_equalizer_reduce_harshness">Verminder hardheid</string>
+    <string name="speech_equalizer_reduce_sibilance">Verminder sisklanke</string>
+    <string name="speech_equalizer_small_speaker">Klein luidspreker</string>
+    <string name="speech_equalizer_custom">Gepasmaak</string>
+    <string name="speech_equalizer_band_hz"><xliff:g id="frequency">%1$s</xliff:g> Hz</string>
+    <string name="speech_equalizer_band_khz"><xliff:g id="frequency">%1$s</xliff:g> kHz</string>
+    <string name="speech_equalizer_gain_db"><xliff:g id="gain">%1$s</xliff:g> dB</string>
+    <string name="title_pref_braille_dictionary">Braillewoordeboek</string>
+    <string name="braille_dictionary_not_shown"><xliff:g id="text" example="#">%1$s</xliff:g> word nie gewys nie</string>
+    <string name="title_pref_announce_full_charge">Kondig volle lading aan</string>
+    <string name="battery_fully_charged">Battery volgelaai</string>
+    <string name="speech_control_locked_app"><xliff:g id="app" example="Tasker">%1$s</xliff:g> terwyl die toestel gesluit is</string>
+    <string name="speech_control_ask_locked_title">Laat <xliff:g id="app" example="Tasker">%1$s</xliff:g> toe om deur SandFly te praat terwyl die toestel gesluit is?</string>
+    <string name="speech_control_ask_locked_text">Dit kan teks in jou SandFly-stem sê terwyl die toestel gesluit is. Laat toe vereis dat die toestel ontsluit is. Jy kan dit verander onder Instellings, Spraak, Laat ander apps praat.</string>
+    <string name="permission_speak_when_locked_label">praat deur SandFly terwyl die toestel gesluit is</string>
+    <string name="permission_speak_when_locked_description">Laat die app toe om te vra om teks in jou SandFly-stem te sê terwyl die toestel gesluit is. SandFly vra jou apart voordat dit kan.</string>
+    <string name="title_pref_category_back_tap">Tik op agterkant</string>
+    <string name="title_pref_keep_speech_off_casts">Hou spraak op die foon tydens uitsending</string>
+    <string name="title_pref_app_shortcuts">Appkortpaaie</string>
+    <string name="app_shortcut_label"><xliff:g id="app_name" example="Amazon">%1$s</xliff:g>: <xliff:g id="shortcut" example="Cart">%2$s</xliff:g></string>
+    <string name="title_pref_add_app_shortcut">Voeg appkortpad by</string>
+    <string name="app_shortcut_no_apps">Geen apps het kortpaaie om by te voeg nie</string>
+    <string name="app_shortcut_not_added">Geen kortpad bygevoeg nie</string>
+    <string name="app_shortcut_added"><xliff:g id="name" example="MacroDroid: Morning">%1$s</xliff:g> bygevoeg</string>
+    <string name="app_shortcut_not_opened">Kon nie appkortpad oopmaak nie</string>
+    <string name="app_search_no_apps">Geen apps nie</string>
+    <string name="shortcut_toggle_color_inversion">Skakel kleuromkering aan of af</string>
+    <string name="color_inversion_turned_on">Kleuromkering aan</string>
+    <string name="color_inversion_turned_off">Kleuromkering af</string>
+    <string name="shortcut_dictate_or_media_control">Dikteer, speel of onderbreek media</string>
+    <string name="title_pref_shortcut_edge_along_left_up">Swiep op langs die linkerrand</string>
+    <string name="title_pref_shortcut_edge_along_left_down">Swiep af langs die linkerrand</string>
+    <string name="title_pref_shortcut_edge_along_right_up">Swiep op langs die regterrand</string>
+    <string name="title_pref_shortcut_edge_along_right_down">Swiep af langs die regterrand</string>
+    <string name="title_pref_shortcut_edge_along_top_left">Swiep links langs die boonste rand</string>
+    <string name="title_pref_shortcut_edge_along_top_right">Swiep regs langs die boonste rand</string>
+    <string name="title_pref_shortcut_edge_along_bottom_left">Swiep links langs die onderste rand</string>
+    <string name="title_pref_shortcut_edge_along_bottom_right">Swiep regs langs die onderste rand</string>
+    <string name="title_pref_shortcut_back_tap_double">Dubbeltik op agterkant</string>
+    <string name="title_pref_shortcut_back_tap_triple">Tripeltik op agterkant</string>
+    <string name="title_pref_back_tap_sensitivity">Sensitiwiteit van tik op agterkant</string>
+    <string name="title_pref_edge_zone_mm">Randwydte</string>
+    <string name="title_pref_edge_scroll_left">Rollees met een vinger langs die linkerrand</string>
+    <string name="title_pref_edge_scroll_right">Rollees met een vinger langs die regterrand</string>
+    <string name="title_pref_edge_scroll_top">Rollees met een vinger langs die boonste rand</string>
+    <string name="title_pref_edge_scroll_bottom">Rollees met een vinger langs die onderste rand</string>
+    <string name="title_pref_edge_menu_left">Linkerrandkieslys</string>
+    <string name="title_pref_edge_menu_right">Regterrandkieslys</string>
+    <string name="title_pref_edge_menu_left_switch">Gebruik die linkerrand as ’n kieslys</string>
+    <string name="title_pref_edge_menu_right_switch">Gebruik die regterrand as ’n kieslys</string>
+    <string name="edge_menu_add_command">Voeg opdrag by</string>
+    <string name="edge_menu_change_command">Verander opdrag</string>
+    <string name="title_pref_text_entities">Handelinge in teks gevind</string>
+    <string name="text_entity_web">Webadresse</string>
+    <string name="text_entity_email">E-posadresse</string>
+    <string name="text_entity_phone">Foonnommers</string>
+    <string name="text_entity_code">Verifikasiekodes</string>
+    <string name="menu_item_call_number">Bel <xliff:g id="number" example="020 7946 0018">%1$s</xliff:g></string>
+    <string name="menu_item_copy_code">Kopieer <xliff:g id="code" example="482916">%1$s</xliff:g></string>
+    <string name="title_pref_show_focus_indicator">Wys die fokusaanduier</string>
+    <string name="title_pref_dictation_correction_prompt">Korreksie-opdrag</string>
+    <string name="title_pref_whisper_custom_model">Modellêer</string>
+    <string name="whisper_custom_model_choose">Kies ’n whisper.cpp-modellêer</string>
+    <string name="whisper_custom_model_replace">Kies ’n ander lêer</string>
+    <string name="whisper_custom_model_not_whisper">Nie ’n whisper.cpp-modellêer nie</string>
+    <string name="whisper_custom_model_copying">Kopieer tans</string>
 </resources>

@@ -1363,7 +1363,7 @@
     <string name="action_copy_command">Kopjo komandën</string>
     <string name="command_copied">Komanda u kopjua</string>
     <string name="title_pref_speech_control">Lejo aplikacionet e tjera të flasin</string>
-    <string name="summary_pref_speech_control">Aplikacionet që lejoni mund të thonë tekst me zërin e SandFly. Kur pajisja është e kyçur, nuk thuhet asgjë.</string>
+    <string name="summary_pref_speech_control">Aplikacionet që lejon mund të thonë tekst me zërin e SandFly. Kur pajisja është e kyçur, mund të flasin vetëm aplikacionet që i lejon edhe kur është e kyçur.</string>
     <string name="title_pref_speech_control_sound">Luaj një tingull përpara se të flasin aplikacionet e tjera</string>
     <string name="speech_control_apps_category">Aplikacionet</string>
     <string name="speech_control_no_apps">Asnjë aplikacion nuk ka kërkuar ende të flasë.</string>
@@ -1868,4 +1868,108 @@
   <string name="value_hold_to_cancel_3000">3 sekonda</string>
   <string name="title_pref_tap_to_activate">Trokit për ta aktivizuar</string>
   <string name="summary_pref_tap_to_activate">Një trokitje ku gishti ngrihet para se të fokusohet artikulli poshtë tij e aktivizon artikullin.</string>
+    <string name="title_selector_ai_actions">Veprimet e AI</string>
+    <string name="ai_actions_hint">Rrëshqit lart ose poshtë për të zgjedhur një veprim, pastaj trokit dy herë për ta ekzekutuar</string>
+    <string name="title_pref_ai_actions_included">Veprimet e AI që përfshihen</string>
+    <string name="title_speak_screen_description">Thuaj përshkrimin e ekranit</string>
+    <string name="title_speak_image_description">Thuaj përshkrimin e imazhit</string>
+    <string name="title_ask_about_screen">Pyet për ekranin</string>
+    <string name="title_ask_about_image">Pyet për imazhin</string>
+    <string name="ai_question_hint">Pyetja</string>
+    <string name="ai_question_ask">Pyet</string>
+    <string name="shortcut_use_voice_profile">Përdor profilin e zërit <xliff:g id="name" example="English">%1$s</xliff:g></string>
+    <string name="title_pref_keep_previous_voice_engine">Mbaje të nisur motorin e profilit të mëparshëm të zërit</string>
+    <string name="title_pref_voice_profile_keep_engine_started">Mbaje motorin të nisur</string>
+    <string name="title_pref_speech_equalizer">Ekualizuesi</string>
+    <string name="title_pref_speech_equalizer_preset">Paracaktimi</string>
+    <string name="title_pref_speech_equalizer_on">Përdor ekualizuesin</string>
+    <string name="speech_equalizer_off">Joaktiv</string>
+    <string name="speech_equalizer_turned_on">Ekualizuesi aktiv</string>
+    <string name="speech_equalizer_turned_off">Ekualizuesi joaktiv</string>
+    <string name="title_selector_equalizer_32">Ekualizuesi 32 Hz</string>
+    <string name="title_selector_equalizer_64">Ekualizuesi 64 Hz</string>
+    <string name="title_selector_equalizer_125">Ekualizuesi 125 Hz</string>
+    <string name="title_selector_equalizer_250">Ekualizuesi 250 Hz</string>
+    <string name="title_selector_equalizer_500">Ekualizuesi 500 Hz</string>
+    <string name="title_selector_equalizer_1k">Ekualizuesi 1 kHz</string>
+    <string name="title_selector_equalizer_2k">Ekualizuesi 2 kHz</string>
+    <string name="title_selector_equalizer_3k">Ekualizuesi 3 kHz</string>
+    <string name="title_selector_equalizer_4k">Ekualizuesi 4 kHz</string>
+    <string name="title_selector_equalizer_6k">Ekualizuesi 6 kHz</string>
+    <string name="title_selector_equalizer_8k">Ekualizuesi 8 kHz</string>
+    <string name="title_selector_equalizer_16k">Ekualizuesi 16 kHz</string>
+    <string name="summary_speech_equalizer_needs_low_latency">Kërkon Dalja e audios &gt; Audio me vonesë të ulët</string>
+    <string name="speech_equalizer_flat">I sheshtë</string>
+    <string name="speech_equalizer_clarity">Qartësi</string>
+    <string name="speech_equalizer_bass_boost">Përforcim i basit</string>
+    <string name="speech_equalizer_bass_cut">Ulje e basit</string>
+    <string name="speech_equalizer_treble_boost">Përforcim i tingujve të lartë</string>
+    <string name="speech_equalizer_treble_cut">Ulje e tingujve të lartë</string>
+    <string name="speech_equalizer_warm">I ngrohtë</string>
+    <string name="speech_equalizer_reduce_harshness">Zbut ashpërsinë</string>
+    <string name="speech_equalizer_reduce_sibilance">Zbut fërshëllimat</string>
+    <string name="speech_equalizer_small_speaker">Altoparlant i vogël</string>
+    <string name="speech_equalizer_custom">I personalizuar</string>
+    <string name="speech_equalizer_band_hz"><xliff:g id="frequency">%1$s</xliff:g> Hz</string>
+    <string name="speech_equalizer_band_khz"><xliff:g id="frequency">%1$s</xliff:g> kHz</string>
+    <string name="speech_equalizer_gain_db"><xliff:g id="gain">%1$s</xliff:g> dB</string>
+    <string name="title_pref_braille_dictionary">Fjalori i breilit</string>
+    <string name="braille_dictionary_not_shown"><xliff:g id="text" example="#">%1$s</xliff:g> nuk shfaqet</string>
+    <string name="title_pref_announce_full_charge">Njofto karikimin e plotë</string>
+    <string name="battery_fully_charged">Bateria u karikua plotësisht</string>
+    <string name="speech_control_locked_app"><xliff:g id="app" example="Tasker">%1$s</xliff:g> kur pajisja është e kyçur</string>
+    <string name="speech_control_ask_locked_title">Të lejohet <xliff:g id="app" example="Tasker">%1$s</xliff:g> të flasë përmes SandFly kur pajisja është e kyçur?</string>
+    <string name="speech_control_ask_locked_text">Mund të thotë tekst me zërin e SandFly kur pajisja është e kyçur. Për Lejo, pajisja duhet të jetë e shkyçur. Mund ta ndryshosh këtë te Cilësimet, Ligjërimi, Lejo aplikacionet e tjera të flasin.</string>
+    <string name="permission_speak_when_locked_label">të folurit përmes SandFly kur pajisja është e kyçur</string>
+    <string name="permission_speak_when_locked_description">Lejon aplikacionin të kërkojë të thotë tekst me zërin tënd SandFly kur pajisja është e kyçur. SandFly të pyet veçmas përpara se aplikacioni ta bëjë këtë.</string>
+    <string name="title_pref_category_back_tap">Trokitje në pjesën e pasme</string>
+    <string name="title_pref_keep_speech_off_casts">Mbaj ligjërimin në telefon gjatë transmetimit</string>
+    <string name="title_pref_app_shortcuts">Shkurtoret e aplikacioneve</string>
+    <string name="app_shortcut_label"><xliff:g id="app_name" example="Amazon">%1$s</xliff:g>: <xliff:g id="shortcut" example="Cart">%2$s</xliff:g></string>
+    <string name="title_pref_add_app_shortcut">Shto shkurtore aplikacioni</string>
+    <string name="app_shortcut_no_apps">Asnjë aplikacion nuk ka shkurtore për të shtuar</string>
+    <string name="app_shortcut_not_added">Nuk u shtua asnjë shkurtore</string>
+    <string name="app_shortcut_added">U shtua <xliff:g id="name" example="MacroDroid: Morning">%1$s</xliff:g></string>
+    <string name="app_shortcut_not_opened">Shkurtorja e aplikacionit nuk mund të hapej</string>
+    <string name="app_search_no_apps">Asnjë aplikacion</string>
+    <string name="shortcut_toggle_color_inversion">Aktivizo ose çaktivizo përmbysjen e ngjyrave</string>
+    <string name="color_inversion_turned_on">Përmbysja e ngjyrave aktive</string>
+    <string name="color_inversion_turned_off">Përmbysja e ngjyrave joaktive</string>
+    <string name="shortcut_dictate_or_media_control">Dikto, luaj ose ndalo përkohësisht median</string>
+    <string name="title_pref_shortcut_edge_along_left_up">Rrëshqitni lart përgjatë buzës së majtë</string>
+    <string name="title_pref_shortcut_edge_along_left_down">Rrëshqitni poshtë përgjatë buzës së majtë</string>
+    <string name="title_pref_shortcut_edge_along_right_up">Rrëshqitni lart përgjatë buzës së djathtë</string>
+    <string name="title_pref_shortcut_edge_along_right_down">Rrëshqitni poshtë përgjatë buzës së djathtë</string>
+    <string name="title_pref_shortcut_edge_along_top_left">Rrëshqitni majtas përgjatë buzës së sipërme</string>
+    <string name="title_pref_shortcut_edge_along_top_right">Rrëshqitni djathtas përgjatë buzës së sipërme</string>
+    <string name="title_pref_shortcut_edge_along_bottom_left">Rrëshqitni majtas përgjatë buzës së poshtme</string>
+    <string name="title_pref_shortcut_edge_along_bottom_right">Rrëshqitni djathtas përgjatë buzës së poshtme</string>
+    <string name="title_pref_shortcut_back_tap_double">Trokit dy herë në pjesën e pasme</string>
+    <string name="title_pref_shortcut_back_tap_triple">Trokit tri herë në pjesën e pasme</string>
+    <string name="title_pref_back_tap_sensitivity">Ndjeshmëria e trokitjes në pjesën e pasme</string>
+    <string name="title_pref_edge_zone_mm">Gjerësia e skajit</string>
+    <string name="title_pref_edge_scroll_left">Lëviz me një gisht përgjatë buzës së majtë</string>
+    <string name="title_pref_edge_scroll_right">Lëviz me një gisht përgjatë buzës së djathtë</string>
+    <string name="title_pref_edge_scroll_top">Lëviz me një gisht përgjatë buzës së sipërme</string>
+    <string name="title_pref_edge_scroll_bottom">Lëviz me një gisht përgjatë buzës së poshtme</string>
+    <string name="title_pref_edge_menu_left">Menyja e buzës së majtë</string>
+    <string name="title_pref_edge_menu_right">Menyja e buzës së djathtë</string>
+    <string name="title_pref_edge_menu_left_switch">Përdor buzën e majtë si meny</string>
+    <string name="title_pref_edge_menu_right_switch">Përdor buzën e djathtë si meny</string>
+    <string name="edge_menu_add_command">Shto komandë</string>
+    <string name="edge_menu_change_command">Ndrysho komandën</string>
+    <string name="title_pref_text_entities">Veprimet e gjetura në tekst</string>
+    <string name="text_entity_web">Adresat e uebit</string>
+    <string name="text_entity_email">Adresat e emailit</string>
+    <string name="text_entity_phone">Numrat e telefonit</string>
+    <string name="text_entity_code">Kodet e verifikimit</string>
+    <string name="menu_item_call_number">Telefono <xliff:g id="number" example="020 7946 0018">%1$s</xliff:g></string>
+    <string name="menu_item_copy_code">Kopjo <xliff:g id="code" example="482916">%1$s</xliff:g></string>
+    <string name="title_pref_show_focus_indicator">Shfaq treguesin e fokusit</string>
+    <string name="title_pref_dictation_correction_prompt">Udhëzimet e korrigjimit</string>
+    <string name="title_pref_whisper_custom_model">Skedari i modelit</string>
+    <string name="whisper_custom_model_choose">Zgjidh një skedar modeli whisper.cpp</string>
+    <string name="whisper_custom_model_replace">Zgjidh një skedar tjetër</string>
+    <string name="whisper_custom_model_not_whisper">Nuk është skedar modeli whisper.cpp</string>
+    <string name="whisper_custom_model_copying">Po kopjohet</string>
 </resources>

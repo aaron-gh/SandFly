@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="addon_name">SandFly 附加组件</string>
+    <string name="addon_description">为 Google Play 版 SandFly 运行需要 Shizuku 的 SandFly 功能。</string>
+    <string name="addon_version">版本 %1$s</string>
+    <string name="addon_shizuku_not_running">Shizuku：未运行</string>
+    <string name="addon_shizuku_not_allowed">Shizuku：正在运行，附加组件未获允许</string>
+    <string name="addon_shizuku_denied">Shizuku：附加组件被拒绝。请在 Shizuku 应用中允许它。</string>
+    <string name="addon_shizuku_allowed">Shizuku：附加组件已获允许</string>
+    <string name="addon_allow">在 Shizuku 中允许</string>
+    <string name="addon_sandfly_missing">SandFly：未安装</string>
+    <string name="addon_sandfly_other_key">SandFly：使用不同的密钥签名。附加组件无法与此 SandFly 配合使用。</string>
+    <string name="addon_sandfly_ready">SandFly：已安装</string>
+    <string name="addon_check_updates">检查更新</string>
+    <string name="addon_checking">正在检查更新</string>
+    <string name="addon_up_to_date">已是最新版本</string>
+    <string name="addon_check_failed">无法检查更新。请检查互联网连接。</string>
+    <string name="addon_update_available">SandFly 附加组件 %1$s 现已可用</string>
+    <string name="addon_install_update">安装更新</string>
+    <string name="addon_downloading">正在下载更新</string>
+    <string name="addon_update_failed">无法安装更新。</string>
+    <string name="addon_updates_channel">更新</string>
+</resources>

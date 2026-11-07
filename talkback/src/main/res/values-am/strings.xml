@@ -1349,7 +1349,7 @@
     <string name="action_copy_command">ትዕዛዝ ቅዳ</string>
     <string name="command_copied">ትዕዛዝ ተቀድቷል</string>
     <string name="title_pref_speech_control">ሌሎች መተግበሪያዎች እንዲናገሩ ፍቀድ</string>
-    <string name="summary_pref_speech_control">የፈቀዷቸው መተግበሪያዎች ጽሑፍን በSandFly ድምፅዎ መናገር ይችላሉ። መሣሪያው ተቆልፎ ሳለ ምንም አይነገርም።</string>
+    <string name="summary_pref_speech_control">የፈቀዷቸው መተግበሪያዎች ጽሑፍን በSandFly ድምፅዎ መናገር ይችላሉ። መሣሪያው ተቆልፎ ሳለ መናገር የሚችሉት ተቆልፎ ሳለም የፈቀዷቸው መተግበሪያዎች ብቻ ናቸው።</string>
     <string name="title_pref_speech_control_sound">ሌሎች መተግበሪያዎች ከመናገራቸው በፊት ድምፅ አጫውት</string>
     <string name="speech_control_apps_category">መተግበሪያዎች</string>
     <string name="speech_control_no_apps">እስካሁን ምንም መተግበሪያዎች ለመናገር አልጠየቁም።</string>
@@ -1868,4 +1868,108 @@
   <string name="value_hold_to_cancel_3000">3 ሰከንዶች</string>
   <string name="title_pref_tap_to_activate">ለማግበር መታ ያድርጉ</string>
   <string name="summary_pref_tap_to_activate">ከጣቱ ስር ያለው ንጥል ከመተኮሩ በፊት ጣቱ የሚነሳበት መታ ማድረግ ንጥሉን ያገብራል።</string>
+    <string name="title_selector_ai_actions">የAI እርምጃዎች</string>
+    <string name="ai_actions_hint">እርምጃ ለመምረጥ ወደ ላይ ወይም ወደ ታች ያንሸራትቱ፣ ከዚያ ለማሄድ ሁለቴ መታ ያድርጉ</string>
+    <string name="title_pref_ai_actions_included">የሚካተቱ የAI እርምጃዎች</string>
+    <string name="title_speak_screen_description">የማያ ገፅ መግለጫን ተናገር</string>
+    <string name="title_speak_image_description">የምስል መግለጫን ተናገር</string>
+    <string name="title_ask_about_screen">ስለ ማያ ገፅ ጠይቅ</string>
+    <string name="title_ask_about_image">ስለ ምስል ጠይቅ</string>
+    <string name="ai_question_hint">ጥያቄ</string>
+    <string name="ai_question_ask">ጠይቅ</string>
+    <string name="shortcut_use_voice_profile">የድምፅ መገለጫ <xliff:g id="name" example="English">%1$s</xliff:g>ን ተጠቀም</string>
+    <string name="title_pref_keep_previous_voice_engine">የቀዳሚውን የድምፅ መገለጫ ሞተር እንደተጀመረ አቆይ</string>
+    <string name="title_pref_voice_profile_keep_engine_started">ሞተሩን እንደተጀመረ አቆይ</string>
+    <string name="title_pref_speech_equalizer">ኢኳላይዘር</string>
+    <string name="title_pref_speech_equalizer_preset">ቅድመ-ቅምጥ</string>
+    <string name="title_pref_speech_equalizer_on">ኢኳላይዘርን ተጠቀም</string>
+    <string name="speech_equalizer_off">ጠፍቷል</string>
+    <string name="speech_equalizer_turned_on">ኢኳላይዘር በርቷል</string>
+    <string name="speech_equalizer_turned_off">ኢኳላይዘር ጠፍቷል</string>
+    <string name="title_selector_equalizer_32">ኢኳላይዘር 32 Hz</string>
+    <string name="title_selector_equalizer_64">ኢኳላይዘር 64 Hz</string>
+    <string name="title_selector_equalizer_125">ኢኳላይዘር 125 Hz</string>
+    <string name="title_selector_equalizer_250">ኢኳላይዘር 250 Hz</string>
+    <string name="title_selector_equalizer_500">ኢኳላይዘር 500 Hz</string>
+    <string name="title_selector_equalizer_1k">ኢኳላይዘር 1 kHz</string>
+    <string name="title_selector_equalizer_2k">ኢኳላይዘር 2 kHz</string>
+    <string name="title_selector_equalizer_3k">ኢኳላይዘር 3 kHz</string>
+    <string name="title_selector_equalizer_4k">ኢኳላይዘር 4 kHz</string>
+    <string name="title_selector_equalizer_6k">ኢኳላይዘር 6 kHz</string>
+    <string name="title_selector_equalizer_8k">ኢኳላይዘር 8 kHz</string>
+    <string name="title_selector_equalizer_16k">ኢኳላይዘር 16 kHz</string>
+    <string name="summary_speech_equalizer_needs_low_latency">የኦዲዮ ውጽዓት &gt; ዝቅተኛ መዘግየት ያለው ኦዲዮ ያስፈልጋል</string>
+    <string name="speech_equalizer_flat">ጠፍጣፋ</string>
+    <string name="speech_equalizer_clarity">ግልጽነት</string>
+    <string name="speech_equalizer_bass_boost">ባስ ማጉያ</string>
+    <string name="speech_equalizer_bass_cut">ባስ ቅነሳ</string>
+    <string name="speech_equalizer_treble_boost">ትሬብል ማጉያ</string>
+    <string name="speech_equalizer_treble_cut">ትሬብል ቅነሳ</string>
+    <string name="speech_equalizer_warm">ሞቃት</string>
+    <string name="speech_equalizer_reduce_harshness">ሻካራነትን ቀንስ</string>
+    <string name="speech_equalizer_reduce_sibilance">የሰ ድምፆችን ቀንስ</string>
+    <string name="speech_equalizer_small_speaker">ትንሽ ድምጽ ማጉያ</string>
+    <string name="speech_equalizer_custom">ብጁ</string>
+    <string name="speech_equalizer_band_hz"><xliff:g id="frequency">%1$s</xliff:g> Hz</string>
+    <string name="speech_equalizer_band_khz"><xliff:g id="frequency">%1$s</xliff:g> kHz</string>
+    <string name="speech_equalizer_gain_db"><xliff:g id="gain">%1$s</xliff:g> dB</string>
+    <string name="title_pref_braille_dictionary">የብሬይል መዝገበ ቃላት</string>
+    <string name="braille_dictionary_not_shown"><xliff:g id="text" example="#">%1$s</xliff:g> አይታይም</string>
+    <string name="title_pref_announce_full_charge">ሙሉ ኃይል መሙላትን አሳውቅ</string>
+    <string name="battery_fully_charged">ባትሪው ሙሉ በሙሉ ተሞልቷል</string>
+    <string name="speech_control_locked_app">መሣሪያው ተቆልፎ ሳለ <xliff:g id="app" example="Tasker">%1$s</xliff:g></string>
+    <string name="speech_control_ask_locked_title">መሣሪያው ተቆልፎ ሳለ <xliff:g id="app" example="Tasker">%1$s</xliff:g> በSandFly በኩል እንዲናገር ይፈቀድለት?</string>
+    <string name="speech_control_ask_locked_text">መሣሪያው ተቆልፎ ሳለ ጽሑፍን በSandFly ድምፅዎ መናገር ይችላል። «ፍቀድ» እንዲሠራ መሣሪያው መከፈት አለበት። ይህን በቅንብሮች፣ ንግግር፣ ሌሎች መተግበሪያዎች እንዲናገሩ ፍቀድ ስር መለወጥ ይችላሉ።</string>
+    <string name="permission_speak_when_locked_label">መሣሪያው ተቆልፎ ሳለ በSandFly በኩል መናገር</string>
+    <string name="permission_speak_when_locked_description">መሣሪያው ተቆልፎ ሳለ መተግበሪያው ጽሑፍን በSandFly ድምፅዎ ለመናገር እንዲጠይቅ ያስችለዋል። ከዚያ በፊት SandFly ለብቻው ይጠይቅዎታል።</string>
+    <string name="title_pref_category_back_tap">የጀርባ መታ ማድረግ</string>
+    <string name="title_pref_keep_speech_off_casts">በመውሰድ ላይ ሳለ ንግግርን በስልኩ ላይ አቆይ</string>
+    <string name="title_pref_app_shortcuts">የመተግበሪያ አቋራጮች</string>
+    <string name="app_shortcut_label"><xliff:g id="app_name" example="Amazon">%1$s</xliff:g>፦ <xliff:g id="shortcut" example="Cart">%2$s</xliff:g></string>
+    <string name="title_pref_add_app_shortcut">የመተግበሪያ አቋራጭ አክል</string>
+    <string name="app_shortcut_no_apps">የሚታከሉ አቋራጮች ያሉት ምንም መተግበሪያ የለም</string>
+    <string name="app_shortcut_not_added">ምንም አቋራጭ አልታከለም</string>
+    <string name="app_shortcut_added"><xliff:g id="name" example="MacroDroid: Morning">%1$s</xliff:g> ታክሏል</string>
+    <string name="app_shortcut_not_opened">የመተግበሪያ አቋራጩን መክፈት አልተቻለም</string>
+    <string name="app_search_no_apps">ምንም መተግበሪያዎች የሉም</string>
+    <string name="shortcut_toggle_color_inversion">የቀለም ተገላቢጦሽን አብራ ወይም አጥፋ</string>
+    <string name="color_inversion_turned_on">የቀለም ተገላቢጦሽ በርቷል</string>
+    <string name="color_inversion_turned_off">የቀለም ተገላቢጦሽ ጠፍቷል</string>
+    <string name="shortcut_dictate_or_media_control">በቃል አስጽፍ፣ ሚዲያን አጫውት ወይም ባለበት አቁም</string>
+    <string name="title_pref_shortcut_edge_along_left_up">በግራ ጠርዝ በኩል ወደ ላይ ያንሸራትቱ</string>
+    <string name="title_pref_shortcut_edge_along_left_down">በግራ ጠርዝ በኩል ወደ ታች ያንሸራትቱ</string>
+    <string name="title_pref_shortcut_edge_along_right_up">በቀኝ ጠርዝ በኩል ወደ ላይ ያንሸራትቱ</string>
+    <string name="title_pref_shortcut_edge_along_right_down">በቀኝ ጠርዝ በኩል ወደ ታች ያንሸራትቱ</string>
+    <string name="title_pref_shortcut_edge_along_top_left">በላይኛው ጠርዝ በኩል ወደ ግራ ያንሸራትቱ</string>
+    <string name="title_pref_shortcut_edge_along_top_right">በላይኛው ጠርዝ በኩል ወደ ቀኝ ያንሸራትቱ</string>
+    <string name="title_pref_shortcut_edge_along_bottom_left">በታችኛው ጠርዝ በኩል ወደ ግራ ያንሸራትቱ</string>
+    <string name="title_pref_shortcut_edge_along_bottom_right">በታችኛው ጠርዝ በኩል ወደ ቀኝ ያንሸራትቱ</string>
+    <string name="title_pref_shortcut_back_tap_double">ጀርባ ላይ ሁለቴ መታ ያድርጉ</string>
+    <string name="title_pref_shortcut_back_tap_triple">ጀርባ ላይ ሶስቴ መታ ያድርጉ</string>
+    <string name="title_pref_back_tap_sensitivity">የጀርባ መታ ማድረግ ትብነት</string>
+    <string name="title_pref_edge_zone_mm">የጠርዝ ስፋት</string>
+    <string name="title_pref_edge_scroll_left">በግራ ጠርዝ በኩል በአንድ ጣት አሸብልል</string>
+    <string name="title_pref_edge_scroll_right">በቀኝ ጠርዝ በኩል በአንድ ጣት አሸብልል</string>
+    <string name="title_pref_edge_scroll_top">በላይኛው ጠርዝ በኩል በአንድ ጣት አሸብልል</string>
+    <string name="title_pref_edge_scroll_bottom">በታችኛው ጠርዝ በኩል በአንድ ጣት አሸብልል</string>
+    <string name="title_pref_edge_menu_left">የግራ ጠርዝ ምናሌ</string>
+    <string name="title_pref_edge_menu_right">የቀኝ ጠርዝ ምናሌ</string>
+    <string name="title_pref_edge_menu_left_switch">የግራ ጠርዝን እንደ ምናሌ ተጠቀም</string>
+    <string name="title_pref_edge_menu_right_switch">የቀኝ ጠርዝን እንደ ምናሌ ተጠቀም</string>
+    <string name="edge_menu_add_command">ትዕዛዝ አክል</string>
+    <string name="edge_menu_change_command">ትዕዛዝ ቀይር</string>
+    <string name="title_pref_text_entities">በጽሑፍ ውስጥ የተገኙ እርምጃዎች</string>
+    <string name="text_entity_web">የድር አድራሻዎች</string>
+    <string name="text_entity_email">የኢሜይል አድራሻዎች</string>
+    <string name="text_entity_phone">ስልክ ቁጥሮች</string>
+    <string name="text_entity_code">ኮዶች</string>
+    <string name="menu_item_call_number"><xliff:g id="number" example="020 7946 0018">%1$s</xliff:g> ደውል</string>
+    <string name="menu_item_copy_code"><xliff:g id="code" example="482916">%1$s</xliff:g> ቅዳ</string>
+    <string name="title_pref_show_focus_indicator">የትኩረት አመልካቹን አሳይ</string>
+    <string name="title_pref_dictation_correction_prompt">የእርማት ጥያቄ</string>
+    <string name="title_pref_whisper_custom_model">የሞዴል ፋይል</string>
+    <string name="whisper_custom_model_choose">የwhisper.cpp ሞዴል ፋይል ይምረጡ</string>
+    <string name="whisper_custom_model_replace">ሌላ ፋይል ምረጥ</string>
+    <string name="whisper_custom_model_not_whisper">የwhisper.cpp ሞዴል ፋይል አይደለም</string>
+    <string name="whisper_custom_model_copying">በመቅዳት ላይ</string>
 </resources>

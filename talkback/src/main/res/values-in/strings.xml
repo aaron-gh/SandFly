@@ -1363,7 +1363,7 @@
     <string name="action_copy_command">Salin perintah</string>
     <string name="command_copied">Perintah disalin</string>
     <string name="title_pref_speech_control">Izinkan aplikasi lain berbicara</string>
-    <string name="summary_pref_speech_control">Aplikasi yang Anda izinkan dapat mengucapkan teks dengan suara SandFly Anda. Tidak ada yang diucapkan saat perangkat terkunci.</string>
+    <string name="summary_pref_speech_control">Aplikasi yang Anda izinkan dapat mengucapkan teks dengan suara SandFly Anda. Saat perangkat terkunci, hanya aplikasi yang juga Anda izinkan saat terkunci yang dapat berbicara.</string>
     <string name="title_pref_speech_control_sound">Putar suara sebelum aplikasi lain berbicara</string>
     <string name="speech_control_apps_category">Aplikasi</string>
     <string name="speech_control_no_apps">Belum ada aplikasi yang meminta izin untuk berbicara.</string>
@@ -1868,4 +1868,108 @@
   <string name="value_hold_to_cancel_3000">3 detik</string>
   <string name="title_pref_tap_to_activate">Ketuk untuk mengaktifkan</string>
   <string name="summary_pref_tap_to_activate">Ketukan yang diangkat sebelum item di bawahnya difokuskan mengaktifkan item tersebut.</string>
+    <string name="title_selector_ai_actions">Tindakan AI</string>
+    <string name="ai_actions_hint">Gesek ke atas atau ke bawah untuk memilih tindakan, lalu ketuk dua kali untuk menjalankannya</string>
+    <string name="title_pref_ai_actions_included">Tindakan AI yang disertakan</string>
+    <string name="title_speak_screen_description">Ucapkan deskripsi layar</string>
+    <string name="title_speak_image_description">Ucapkan deskripsi gambar</string>
+    <string name="title_ask_about_screen">Tanyakan tentang layar</string>
+    <string name="title_ask_about_image">Tanyakan tentang gambar</string>
+    <string name="ai_question_hint">Pertanyaan</string>
+    <string name="ai_question_ask">Tanyakan</string>
+    <string name="shortcut_use_voice_profile">Gunakan profil suara <xliff:g id="name" example="English">%1$s</xliff:g></string>
+    <string name="title_pref_keep_previous_voice_engine">Biarkan mesin ucapan profil suara sebelumnya tetap berjalan</string>
+    <string name="title_pref_voice_profile_keep_engine_started">Biarkan mesin ucapan tetap berjalan</string>
+    <string name="title_pref_speech_equalizer">Equalizer</string>
+    <string name="title_pref_speech_equalizer_preset">Preset</string>
+    <string name="title_pref_speech_equalizer_on">Gunakan equalizer</string>
+    <string name="speech_equalizer_off">Nonaktif</string>
+    <string name="speech_equalizer_turned_on">Equalizer aktif</string>
+    <string name="speech_equalizer_turned_off">Equalizer nonaktif</string>
+    <string name="title_selector_equalizer_32">Equalizer 32 Hz</string>
+    <string name="title_selector_equalizer_64">Equalizer 64 Hz</string>
+    <string name="title_selector_equalizer_125">Equalizer 125 Hz</string>
+    <string name="title_selector_equalizer_250">Equalizer 250 Hz</string>
+    <string name="title_selector_equalizer_500">Equalizer 500 Hz</string>
+    <string name="title_selector_equalizer_1k">Equalizer 1 kHz</string>
+    <string name="title_selector_equalizer_2k">Equalizer 2 kHz</string>
+    <string name="title_selector_equalizer_3k">Equalizer 3 kHz</string>
+    <string name="title_selector_equalizer_4k">Equalizer 4 kHz</string>
+    <string name="title_selector_equalizer_6k">Equalizer 6 kHz</string>
+    <string name="title_selector_equalizer_8k">Equalizer 8 kHz</string>
+    <string name="title_selector_equalizer_16k">Equalizer 16 kHz</string>
+    <string name="summary_speech_equalizer_needs_low_latency">Memerlukan Output audio &gt; Audio latensi rendah</string>
+    <string name="speech_equalizer_flat">Datar</string>
+    <string name="speech_equalizer_clarity">Kejernihan</string>
+    <string name="speech_equalizer_bass_boost">Penguat bass</string>
+    <string name="speech_equalizer_bass_cut">Kurangi bass</string>
+    <string name="speech_equalizer_treble_boost">Penguat treble</string>
+    <string name="speech_equalizer_treble_cut">Kurangi treble</string>
+    <string name="speech_equalizer_warm">Hangat</string>
+    <string name="speech_equalizer_reduce_harshness">Kurangi kekasaran</string>
+    <string name="speech_equalizer_reduce_sibilance">Kurangi desis</string>
+    <string name="speech_equalizer_small_speaker">Speaker kecil</string>
+    <string name="speech_equalizer_custom">Kustom</string>
+    <string name="speech_equalizer_band_hz"><xliff:g id="frequency">%1$s</xliff:g> Hz</string>
+    <string name="speech_equalizer_band_khz"><xliff:g id="frequency">%1$s</xliff:g> kHz</string>
+    <string name="speech_equalizer_gain_db"><xliff:g id="gain">%1$s</xliff:g> dB</string>
+    <string name="title_pref_braille_dictionary">Kamus braille</string>
+    <string name="braille_dictionary_not_shown"><xliff:g id="text" example="#">%1$s</xliff:g> tidak ditampilkan</string>
+    <string name="title_pref_announce_full_charge">Umumkan saat baterai penuh</string>
+    <string name="battery_fully_charged">Baterai terisi penuh</string>
+    <string name="speech_control_locked_app"><xliff:g id="app" example="Tasker">%1$s</xliff:g> saat perangkat terkunci</string>
+    <string name="speech_control_ask_locked_title">Izinkan <xliff:g id="app" example="Tasker">%1$s</xliff:g> berbicara melalui SandFly saat perangkat terkunci?</string>
+    <string name="speech_control_ask_locked_text">Aplikasi ini dapat mengucapkan teks dengan suara SandFly Anda saat perangkat terkunci. Untuk memilih Izinkan, perangkat harus dibuka kuncinya. Anda dapat mengubahnya di Setelan, Ucapan, Izinkan aplikasi lain berbicara.</string>
+    <string name="permission_speak_when_locked_label">berbicara melalui SandFly saat perangkat terkunci</string>
+    <string name="permission_speak_when_locked_description">Mengizinkan aplikasi meminta untuk mengucapkan teks dengan suara SandFly Anda saat perangkat terkunci. SandFly menanyakannya kepada Anda secara terpisah sebelum aplikasi dapat melakukannya.</string>
+    <string name="title_pref_category_back_tap">Ketuk belakang</string>
+    <string name="title_pref_keep_speech_off_casts">Pertahankan ucapan di ponsel saat mentransmisikan layar</string>
+    <string name="title_pref_app_shortcuts">Pintasan aplikasi</string>
+    <string name="app_shortcut_label"><xliff:g id="app_name" example="Amazon">%1$s</xliff:g>: <xliff:g id="shortcut" example="Cart">%2$s</xliff:g></string>
+    <string name="title_pref_add_app_shortcut">Tambahkan pintasan aplikasi</string>
+    <string name="app_shortcut_no_apps">Tidak ada aplikasi yang memiliki pintasan untuk ditambahkan</string>
+    <string name="app_shortcut_not_added">Tidak ada pintasan yang ditambahkan</string>
+    <string name="app_shortcut_added"><xliff:g id="name" example="MacroDroid: Morning">%1$s</xliff:g> ditambahkan</string>
+    <string name="app_shortcut_not_opened">Tidak dapat membuka pintasan aplikasi</string>
+    <string name="app_search_no_apps">Tidak ada aplikasi</string>
+    <string name="shortcut_toggle_color_inversion">Aktifkan atau nonaktifkan inversi warna</string>
+    <string name="color_inversion_turned_on">Inversi warna aktif</string>
+    <string name="color_inversion_turned_off">Inversi warna nonaktif</string>
+    <string name="shortcut_dictate_or_media_control">Dikte, putar, atau jeda media</string>
+    <string name="title_pref_shortcut_edge_along_left_up">Gesek ke atas di sepanjang tepi kiri</string>
+    <string name="title_pref_shortcut_edge_along_left_down">Gesek ke bawah di sepanjang tepi kiri</string>
+    <string name="title_pref_shortcut_edge_along_right_up">Gesek ke atas di sepanjang tepi kanan</string>
+    <string name="title_pref_shortcut_edge_along_right_down">Gesek ke bawah di sepanjang tepi kanan</string>
+    <string name="title_pref_shortcut_edge_along_top_left">Gesek ke kiri di sepanjang tepi atas</string>
+    <string name="title_pref_shortcut_edge_along_top_right">Gesek ke kanan di sepanjang tepi atas</string>
+    <string name="title_pref_shortcut_edge_along_bottom_left">Gesek ke kiri di sepanjang tepi bawah</string>
+    <string name="title_pref_shortcut_edge_along_bottom_right">Gesek ke kanan di sepanjang tepi bawah</string>
+    <string name="title_pref_shortcut_back_tap_double">Ketuk dua kali di bagian belakang</string>
+    <string name="title_pref_shortcut_back_tap_triple">Ketuk tiga kali di bagian belakang</string>
+    <string name="title_pref_back_tap_sensitivity">Sensitivitas ketuk belakang</string>
+    <string name="title_pref_edge_zone_mm">Lebar tepi</string>
+    <string name="title_pref_edge_scroll_left">Scroll dengan satu jari di sepanjang tepi kiri</string>
+    <string name="title_pref_edge_scroll_right">Scroll dengan satu jari di sepanjang tepi kanan</string>
+    <string name="title_pref_edge_scroll_top">Scroll dengan satu jari di sepanjang tepi atas</string>
+    <string name="title_pref_edge_scroll_bottom">Scroll dengan satu jari di sepanjang tepi bawah</string>
+    <string name="title_pref_edge_menu_left">Menu tepi kiri</string>
+    <string name="title_pref_edge_menu_right">Menu tepi kanan</string>
+    <string name="title_pref_edge_menu_left_switch">Gunakan tepi kiri sebagai menu</string>
+    <string name="title_pref_edge_menu_right_switch">Gunakan tepi kanan sebagai menu</string>
+    <string name="edge_menu_add_command">Tambahkan perintah</string>
+    <string name="edge_menu_change_command">Ubah perintah</string>
+    <string name="title_pref_text_entities">Tindakan yang ditemukan dalam teks</string>
+    <string name="text_entity_web">Alamat web</string>
+    <string name="text_entity_email">Alamat email</string>
+    <string name="text_entity_phone">Nomor telepon</string>
+    <string name="text_entity_code">Kode</string>
+    <string name="menu_item_call_number">Telepon <xliff:g id="number" example="020 7946 0018">%1$s</xliff:g></string>
+    <string name="menu_item_copy_code">Salin <xliff:g id="code" example="482916">%1$s</xliff:g></string>
+    <string name="title_pref_show_focus_indicator">Tampilkan indikator fokus</string>
+    <string name="title_pref_dictation_correction_prompt">Perintah koreksi</string>
+    <string name="title_pref_whisper_custom_model">File model</string>
+    <string name="whisper_custom_model_choose">Pilih file model whisper.cpp</string>
+    <string name="whisper_custom_model_replace">Pilih file lain</string>
+    <string name="whisper_custom_model_not_whisper">Bukan file model whisper.cpp</string>
+    <string name="whisper_custom_model_copying">Menyalin</string>
 </resources>

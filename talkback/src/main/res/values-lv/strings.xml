@@ -1364,7 +1364,7 @@
     <string name="action_copy_command">Kopēt komandu</string>
     <string name="command_copied">Komanda ir nokopēta</string>
     <string name="title_pref_speech_control">Ļaut citām lietotnēm runāt</string>
-    <string name="summary_pref_speech_control">Atļautās lietotnes var izrunāt tekstu ar SandFly balsi. Kamēr ierīce ir bloķēta, nekas netiek izrunāts.</string>
+    <string name="summary_pref_speech_control">Atļautās lietotnes var izrunāt tekstu ar SandFly balsi. Kamēr ierīce ir bloķēta, runāt var tikai lietotnes, kuras esat atļāvis arī bloķētai ierīcei.</string>
     <string name="title_pref_speech_control_sound">Atskaņot skaņu, pirms runā citas lietotnes</string>
     <string name="speech_control_apps_category">Lietotnes</string>
     <string name="speech_control_no_apps">Neviena lietotne vēl nav lūgusi runāt.</string>
@@ -1873,4 +1873,108 @@
   <string name="value_hold_to_cancel_3000">3 sekundes</string>
   <string name="title_pref_tap_to_activate">Aktivizēt ar pieskārienu</string>
   <string name="summary_pref_tap_to_activate">Pieskāriens, kurā pirksts tiek pacelts, pirms vienums zem tā ir fokusēts, aktivizē šo vienumu.</string>
+    <string name="title_selector_ai_actions">AI darbības</string>
+    <string name="ai_actions_hint">Velciet uz augšu vai uz leju, lai izvēlētos darbību, pēc tam veiciet dubultskārienu, lai to izpildītu</string>
+    <string name="title_pref_ai_actions_included">Iekļautās AI darbības</string>
+    <string name="title_speak_screen_description">Izrunāt ekrāna aprakstu</string>
+    <string name="title_speak_image_description">Izrunāt attēla aprakstu</string>
+    <string name="title_ask_about_screen">Jautāt par ekrānu</string>
+    <string name="title_ask_about_image">Jautāt par attēlu</string>
+    <string name="ai_question_hint">Jautājums</string>
+    <string name="ai_question_ask">Jautāt</string>
+    <string name="shortcut_use_voice_profile">Izmantot balss profilu <xliff:g id="name" example="English">%1$s</xliff:g></string>
+    <string name="title_pref_keep_previous_voice_engine">Paturēt palaistu iepriekšējā balss profila runas programmu</string>
+    <string name="title_pref_voice_profile_keep_engine_started">Paturēt runas programmu palaistu</string>
+    <string name="title_pref_speech_equalizer">Ekvalaizers</string>
+    <string name="title_pref_speech_equalizer_preset">Priekšiestatījums</string>
+    <string name="title_pref_speech_equalizer_on">Izmantot ekvalaizeru</string>
+    <string name="speech_equalizer_off">Izslēgts</string>
+    <string name="speech_equalizer_turned_on">Ekvalaizers ir ieslēgts</string>
+    <string name="speech_equalizer_turned_off">Ekvalaizers ir izslēgts</string>
+    <string name="title_selector_equalizer_32">Ekvalaizers 32 Hz</string>
+    <string name="title_selector_equalizer_64">Ekvalaizers 64 Hz</string>
+    <string name="title_selector_equalizer_125">Ekvalaizers 125 Hz</string>
+    <string name="title_selector_equalizer_250">Ekvalaizers 250 Hz</string>
+    <string name="title_selector_equalizer_500">Ekvalaizers 500 Hz</string>
+    <string name="title_selector_equalizer_1k">Ekvalaizers 1 kHz</string>
+    <string name="title_selector_equalizer_2k">Ekvalaizers 2 kHz</string>
+    <string name="title_selector_equalizer_3k">Ekvalaizers 3 kHz</string>
+    <string name="title_selector_equalizer_4k">Ekvalaizers 4 kHz</string>
+    <string name="title_selector_equalizer_6k">Ekvalaizers 6 kHz</string>
+    <string name="title_selector_equalizer_8k">Ekvalaizers 8 kHz</string>
+    <string name="title_selector_equalizer_16k">Ekvalaizers 16 kHz</string>
+    <string name="summary_speech_equalizer_needs_low_latency">Nepieciešams iestatījums Audio izvade &gt; Zema latentuma audio</string>
+    <string name="speech_equalizer_flat">Līdzens</string>
+    <string name="speech_equalizer_clarity">Skaidrība</string>
+    <string name="speech_equalizer_bass_boost">Basu pastiprināšana</string>
+    <string name="speech_equalizer_bass_cut">Basu samazināšana</string>
+    <string name="speech_equalizer_treble_boost">Augsto frekvenču pastiprināšana</string>
+    <string name="speech_equalizer_treble_cut">Augsto frekvenču samazināšana</string>
+    <string name="speech_equalizer_warm">Silts</string>
+    <string name="speech_equalizer_reduce_harshness">Mazināt asumu</string>
+    <string name="speech_equalizer_reduce_sibilance">Mazināt šņāceņus</string>
+    <string name="speech_equalizer_small_speaker">Mazs skaļrunis</string>
+    <string name="speech_equalizer_custom">Pielāgots</string>
+    <string name="speech_equalizer_band_hz"><xliff:g id="frequency">%1$s</xliff:g> Hz</string>
+    <string name="speech_equalizer_band_khz"><xliff:g id="frequency">%1$s</xliff:g> kHz</string>
+    <string name="speech_equalizer_gain_db"><xliff:g id="gain">%1$s</xliff:g> dB</string>
+    <string name="title_pref_braille_dictionary">Braila raksta vārdnīca</string>
+    <string name="braille_dictionary_not_shown"><xliff:g id="text" example="#">%1$s</xliff:g> netiek rādīts</string>
+    <string name="title_pref_announce_full_charge">Paziņot par pilnu uzlādi</string>
+    <string name="battery_fully_charged">Akumulators ir pilnībā uzlādēts</string>
+    <string name="speech_control_locked_app"><xliff:g id="app" example="Tasker">%1$s</xliff:g>, kamēr ierīce ir bloķēta</string>
+    <string name="speech_control_ask_locked_title">Vai atļaut <xliff:g id="app" example="Tasker">%1$s</xliff:g> runāt caur SandFly, kamēr ierīce ir bloķēta?</string>
+    <string name="speech_control_ask_locked_text">Tā var izrunāt tekstu ar jūsu SandFly balsi, kamēr ierīce ir bloķēta. Lai atļautu, ierīcei jābūt atbloķētai. To var mainīt sadaļā Iestatījumi &gt; Runa &gt; Ļaut citām lietotnēm runāt.</string>
+    <string name="permission_speak_when_locked_label">runāt caur SandFly, kamēr ierīce ir bloķēta</string>
+    <string name="permission_speak_when_locked_description">Ļauj lietotnei lūgt pateikt tekstu jūsu SandFly balsī, kamēr ierīce ir bloķēta. SandFly pirms tam jautā atsevišķi.</string>
+    <string name="title_pref_category_back_tap">Pieskāriens aizmugurei</string>
+    <string name="title_pref_keep_speech_off_casts">Apraides laikā paturēt runu tālrunī</string>
+    <string name="title_pref_app_shortcuts">Lietotņu saīsnes</string>
+    <string name="app_shortcut_label"><xliff:g id="app_name" example="Amazon">%1$s</xliff:g>: <xliff:g id="shortcut" example="Cart">%2$s</xliff:g></string>
+    <string name="title_pref_add_app_shortcut">Pievienot lietotnes saīsni</string>
+    <string name="app_shortcut_no_apps">Nevienai lietotnei nav pievienojamu saīšņu</string>
+    <string name="app_shortcut_not_added">Neviena saīsne netika pievienota</string>
+    <string name="app_shortcut_added">Pievienota: <xliff:g id="name" example="MacroDroid: Morning">%1$s</xliff:g></string>
+    <string name="app_shortcut_not_opened">Nevarēja atvērt lietotnes saīsni</string>
+    <string name="app_search_no_apps">Nav lietotņu</string>
+    <string name="shortcut_toggle_color_inversion">Ieslēgt vai izslēgt krāsu inversiju</string>
+    <string name="color_inversion_turned_on">Krāsu inversija ir ieslēgta</string>
+    <string name="color_inversion_turned_off">Krāsu inversija ir izslēgta</string>
+    <string name="shortcut_dictate_or_media_control">Diktēt, atskaņot multividi / apturēt atskaņošanu</string>
+    <string name="title_pref_shortcut_edge_along_left_up">Velciet uz augšu gar kreiso malu</string>
+    <string name="title_pref_shortcut_edge_along_left_down">Velciet uz leju gar kreiso malu</string>
+    <string name="title_pref_shortcut_edge_along_right_up">Velciet uz augšu gar labo malu</string>
+    <string name="title_pref_shortcut_edge_along_right_down">Velciet uz leju gar labo malu</string>
+    <string name="title_pref_shortcut_edge_along_top_left">Velciet pa kreisi gar augšējo malu</string>
+    <string name="title_pref_shortcut_edge_along_top_right">Velciet pa labi gar augšējo malu</string>
+    <string name="title_pref_shortcut_edge_along_bottom_left">Velciet pa kreisi gar apakšējo malu</string>
+    <string name="title_pref_shortcut_edge_along_bottom_right">Velciet pa labi gar apakšējo malu</string>
+    <string name="title_pref_shortcut_back_tap_double">Divreiz pieskarties aizmugurei</string>
+    <string name="title_pref_shortcut_back_tap_triple">Trīsreiz pieskarties aizmugurei</string>
+    <string name="title_pref_back_tap_sensitivity">Pieskāriena aizmugurei jutīgums</string>
+    <string name="title_pref_edge_zone_mm">Malas platums</string>
+    <string name="title_pref_edge_scroll_left">Ritināt ar vienu pirkstu gar kreiso malu</string>
+    <string name="title_pref_edge_scroll_right">Ritināt ar vienu pirkstu gar labo malu</string>
+    <string name="title_pref_edge_scroll_top">Ritināt ar vienu pirkstu gar augšējo malu</string>
+    <string name="title_pref_edge_scroll_bottom">Ritināt ar vienu pirkstu gar apakšējo malu</string>
+    <string name="title_pref_edge_menu_left">Kreisās malas izvēlne</string>
+    <string name="title_pref_edge_menu_right">Labās malas izvēlne</string>
+    <string name="title_pref_edge_menu_left_switch">Izmantot kreiso malu kā izvēlni</string>
+    <string name="title_pref_edge_menu_right_switch">Izmantot labo malu kā izvēlni</string>
+    <string name="edge_menu_add_command">Pievienot komandu</string>
+    <string name="edge_menu_change_command">Mainīt komandu</string>
+    <string name="title_pref_text_entities">Tekstā atrastās darbības</string>
+    <string name="text_entity_web">Tīmekļa adreses</string>
+    <string name="text_entity_email">E-pasta adreses</string>
+    <string name="text_entity_phone">Tālruņu numuri</string>
+    <string name="text_entity_code">Kodi</string>
+    <string name="menu_item_call_number">Zvanīt uz <xliff:g id="number" example="020 7946 0018">%1$s</xliff:g></string>
+    <string name="menu_item_copy_code">Kopēt <xliff:g id="code" example="482916">%1$s</xliff:g></string>
+    <string name="title_pref_show_focus_indicator">Rādīt fokusa indikatoru</string>
+    <string name="title_pref_dictation_correction_prompt">Labošanas norādījumi</string>
+    <string name="title_pref_whisper_custom_model">Modeļa fails</string>
+    <string name="whisper_custom_model_choose">Izvēlieties whisper.cpp modeļa failu</string>
+    <string name="whisper_custom_model_replace">Izvēlēties citu failu</string>
+    <string name="whisper_custom_model_not_whisper">Tas nav whisper.cpp modeļa fails</string>
+    <string name="whisper_custom_model_copying">Notiek kopēšana</string>
 </resources>

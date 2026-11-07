@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_gesture_layout">ジェスチャーのレイアウト</string>
+    <string name="gesture_layout_sandfly">SandFly のジェスチャー</string>
+    <string name="gesture_layout_voiceover">VoiceOver のジェスチャー</string>
+    <string name="gesture_layout_dialog_title">ジェスチャーの選択</string>
+    <string name="title_pref_handle_two_finger_swipes">2 本の指のスワイプを SandFly で処理する</string>
+    <string name="title_pref_shortcut_4finger_1tap_top">4 本の指で上半分をタップ</string>
+    <string name="title_pref_shortcut_4finger_1tap_bottom">4 本の指で下半分をタップ</string>
+    <string name="shortcut_speak_position">位置を読み上げる</string>
+    <string name="speak_position_item"><xliff:g id="count">%2$d</xliff:g> 中 <xliff:g id="index">%1$d</xliff:g> 番目</string>
+    <string name="speak_position_row_column"><xliff:g id="row_count">%2$d</xliff:g> 行中 <xliff:g id="row">%1$d</xliff:g> 行目、<xliff:g id="column_count">%4$d</xliff:g> 列中 <xliff:g id="column">%3$d</xliff:g> 列目</string>
+    <string name="speak_position_none">位置なし</string>
+</resources>

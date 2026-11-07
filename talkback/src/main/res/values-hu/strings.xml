@@ -1363,7 +1363,7 @@
     <string name="action_copy_command">Parancs másolása</string>
     <string name="command_copied">Parancs másolva</string>
     <string name="title_pref_speech_control">Más alkalmazások beszédének engedélyezése</string>
-    <string name="summary_pref_speech_control">Az engedélyezett alkalmazások szöveget mondhatnak ki az Ön SandFly-hangján. Az eszköz zárolt állapotában nincs beszéd.</string>
+    <string name="summary_pref_speech_control">Az engedélyezett alkalmazások szöveget mondhatnak ki az Ön SandFly-hangján. Az eszköz zárolt állapotában csak azok az alkalmazások beszélhetnek, amelyeket zárolt állapotra is engedélyez.</string>
     <string name="title_pref_speech_control_sound">Hang lejátszása más alkalmazások beszéde előtt</string>
     <string name="speech_control_apps_category">Alkalmazások</string>
     <string name="speech_control_no_apps">Még egyetlen alkalmazás sem kért engedélyt a beszédre.</string>
@@ -1868,4 +1868,108 @@
   <string name="value_hold_to_cancel_3000">3 másodperc</string>
   <string name="title_pref_tap_to_activate">Aktiválás koppintással</string>
   <string name="summary_pref_tap_to_activate">Az a koppintás, amelynél az ujj azelőtt felemelkedik, hogy az alatta lévő elem fókuszba kerülne, aktiválja az elemet.</string>
+    <string name="title_selector_ai_actions">AI-műveletek</string>
+    <string name="ai_actions_hint">Csúsztassa felfelé vagy lefelé az ujját egy művelet kiválasztásához, majd koppintson duplán a futtatásához</string>
+    <string name="title_pref_ai_actions_included">Felkínált AI-műveletek</string>
+    <string name="title_speak_screen_description">Képernyő leírásának kimondása</string>
+    <string name="title_speak_image_description">Képleírás kimondása</string>
+    <string name="title_ask_about_screen">Kérdés a képernyőről</string>
+    <string name="title_ask_about_image">Kérdés a képről</string>
+    <string name="ai_question_hint">Kérdés</string>
+    <string name="ai_question_ask">Kérdezés</string>
+    <string name="shortcut_use_voice_profile">A(z) <xliff:g id="name" example="English">%1$s</xliff:g> hangprofil használata</string>
+    <string name="title_pref_keep_previous_voice_engine">Az előző hangprofil beszédmotorjának futva tartása</string>
+    <string name="title_pref_voice_profile_keep_engine_started">A beszédmotor futva tartása</string>
+    <string name="title_pref_speech_equalizer">Hangszínszabályzó</string>
+    <string name="title_pref_speech_equalizer_preset">Beállításkészlet</string>
+    <string name="title_pref_speech_equalizer_on">Hangszínszabályzó használata</string>
+    <string name="speech_equalizer_off">Ki</string>
+    <string name="speech_equalizer_turned_on">Hangszínszabályzó bekapcsolva</string>
+    <string name="speech_equalizer_turned_off">Hangszínszabályzó kikapcsolva</string>
+    <string name="title_selector_equalizer_32">Hangszínszabályzó 32 Hz</string>
+    <string name="title_selector_equalizer_64">Hangszínszabályzó 64 Hz</string>
+    <string name="title_selector_equalizer_125">Hangszínszabályzó 125 Hz</string>
+    <string name="title_selector_equalizer_250">Hangszínszabályzó 250 Hz</string>
+    <string name="title_selector_equalizer_500">Hangszínszabályzó 500 Hz</string>
+    <string name="title_selector_equalizer_1k">Hangszínszabályzó 1 kHz</string>
+    <string name="title_selector_equalizer_2k">Hangszínszabályzó 2 kHz</string>
+    <string name="title_selector_equalizer_3k">Hangszínszabályzó 3 kHz</string>
+    <string name="title_selector_equalizer_4k">Hangszínszabályzó 4 kHz</string>
+    <string name="title_selector_equalizer_6k">Hangszínszabályzó 6 kHz</string>
+    <string name="title_selector_equalizer_8k">Hangszínszabályzó 8 kHz</string>
+    <string name="title_selector_equalizer_16k">Hangszínszabályzó 16 kHz</string>
+    <string name="summary_speech_equalizer_needs_low_latency">Szükséges: Hangkimenet &gt; Alacsony késleltetésű hang</string>
+    <string name="speech_equalizer_flat">Lineáris</string>
+    <string name="speech_equalizer_clarity">Érthetőség</string>
+    <string name="speech_equalizer_bass_boost">Mélykiemelés</string>
+    <string name="speech_equalizer_bass_cut">Mélyvágás</string>
+    <string name="speech_equalizer_treble_boost">Magaskiemelés</string>
+    <string name="speech_equalizer_treble_cut">Magasvágás</string>
+    <string name="speech_equalizer_warm">Meleg</string>
+    <string name="speech_equalizer_reduce_harshness">Élesség csökkentése</string>
+    <string name="speech_equalizer_reduce_sibilance">Sziszegés csökkentése</string>
+    <string name="speech_equalizer_small_speaker">Kis hangszóró</string>
+    <string name="speech_equalizer_custom">Egyéni</string>
+    <string name="speech_equalizer_band_hz"><xliff:g id="frequency">%1$s</xliff:g> Hz</string>
+    <string name="speech_equalizer_band_khz"><xliff:g id="frequency">%1$s</xliff:g> kHz</string>
+    <string name="speech_equalizer_gain_db"><xliff:g id="gain">%1$s</xliff:g> dB</string>
+    <string name="title_pref_braille_dictionary">Braille-szótár</string>
+    <string name="braille_dictionary_not_shown"><xliff:g id="text" example="#">%1$s</xliff:g> nem jelenik meg</string>
+    <string name="title_pref_announce_full_charge">Teljes töltöttség bejelentése</string>
+    <string name="battery_fully_charged">Az akkumulátor teljesen feltöltve</string>
+    <string name="speech_control_locked_app"><xliff:g id="app" example="Tasker">%1$s</xliff:g>, amíg az eszköz zárolva van</string>
+    <string name="speech_control_ask_locked_title">Engedélyezi a(z) <xliff:g id="app" example="Tasker">%1$s</xliff:g> számára, hogy a SandFlyon keresztül beszéljen, amíg az eszköz zárolva van?</string>
+    <string name="speech_control_ask_locked_text">Szöveget mondhat ki a SandFly hangján, amíg az eszköz zárolva van. Az engedélyezéshez fel kell oldani az eszközt. Ezt itt módosíthatja: Beállítások, „Beszéd”, „Más alkalmazások beszédének engedélyezése”.</string>
+    <string name="permission_speak_when_locked_label">beszéd a SandFly segítségével, amíg az eszköz zárolva van</string>
+    <string name="permission_speak_when_locked_description">Lehetővé teszi, hogy az alkalmazás kérje, hogy szöveget mondhasson el az Ön SandFly-hangján, amíg az eszköz zárolva van. A SandFly ezt előtte külön megkérdezi Öntől.</string>
+    <string name="title_pref_category_back_tap">Koppintás a hátlapra</string>
+    <string name="title_pref_keep_speech_off_casts">A beszéd megtartása a telefonon átküldés közben</string>
+    <string name="title_pref_app_shortcuts">Alkalmazás-parancsikonok</string>
+    <string name="app_shortcut_label"><xliff:g id="app_name" example="Amazon">%1$s</xliff:g>: <xliff:g id="shortcut" example="Cart">%2$s</xliff:g></string>
+    <string name="title_pref_add_app_shortcut">Alkalmazás-parancsikon hozzáadása</string>
+    <string name="app_shortcut_no_apps">Egyik alkalmazásnak sincs hozzáadható parancsikonja</string>
+    <string name="app_shortcut_not_added">Nem lett parancsikon hozzáadva</string>
+    <string name="app_shortcut_added">Hozzáadva: <xliff:g id="name" example="MacroDroid: Morning">%1$s</xliff:g></string>
+    <string name="app_shortcut_not_opened">Nem sikerült megnyitni az alkalmazás-parancsikont</string>
+    <string name="app_search_no_apps">Nincs alkalmazás</string>
+    <string name="shortcut_toggle_color_inversion">A színek invertálásának be- vagy kikapcsolása</string>
+    <string name="color_inversion_turned_on">Színek invertálása bekapcsolva</string>
+    <string name="color_inversion_turned_off">Színek invertálása kikapcsolva</string>
+    <string name="shortcut_dictate_or_media_control">Diktálás vagy médiatartalom lejátszása/szüneteltetése</string>
+    <string name="title_pref_shortcut_edge_along_left_up">Csúsztassa felfelé az ujját a bal szél mentén</string>
+    <string name="title_pref_shortcut_edge_along_left_down">Csúsztassa lefelé az ujját a bal szél mentén</string>
+    <string name="title_pref_shortcut_edge_along_right_up">Csúsztassa felfelé az ujját a jobb szél mentén</string>
+    <string name="title_pref_shortcut_edge_along_right_down">Csúsztassa lefelé az ujját a jobb szél mentén</string>
+    <string name="title_pref_shortcut_edge_along_top_left">Csúsztassa balra az ujját a felső szél mentén</string>
+    <string name="title_pref_shortcut_edge_along_top_right">Csúsztassa jobbra az ujját a felső szél mentén</string>
+    <string name="title_pref_shortcut_edge_along_bottom_left">Csúsztassa balra az ujját az alsó szél mentén</string>
+    <string name="title_pref_shortcut_edge_along_bottom_right">Csúsztassa jobbra az ujját az alsó szél mentén</string>
+    <string name="title_pref_shortcut_back_tap_double">Dupla koppintás a hátlapra</string>
+    <string name="title_pref_shortcut_back_tap_triple">Három koppintás a hátlapra</string>
+    <string name="title_pref_back_tap_sensitivity">Hátlapra koppintás érzékenysége</string>
+    <string name="title_pref_edge_zone_mm">Szél szélessége</string>
+    <string name="title_pref_edge_scroll_left">Görgetés egy ujjal a bal szél mentén</string>
+    <string name="title_pref_edge_scroll_right">Görgetés egy ujjal a jobb szél mentén</string>
+    <string name="title_pref_edge_scroll_top">Görgetés egy ujjal a felső szél mentén</string>
+    <string name="title_pref_edge_scroll_bottom">Görgetés egy ujjal az alsó szél mentén</string>
+    <string name="title_pref_edge_menu_left">Bal szél menüje</string>
+    <string name="title_pref_edge_menu_right">Jobb szél menüje</string>
+    <string name="title_pref_edge_menu_left_switch">A bal szél használata menüként</string>
+    <string name="title_pref_edge_menu_right_switch">A jobb szél használata menüként</string>
+    <string name="edge_menu_add_command">Parancs hozzáadása</string>
+    <string name="edge_menu_change_command">Parancs módosítása</string>
+    <string name="title_pref_text_entities">A szövegben talált műveletek</string>
+    <string name="text_entity_web">Webcímek</string>
+    <string name="text_entity_email">E-mail-címek</string>
+    <string name="text_entity_phone">Telefonszámok</string>
+    <string name="text_entity_code">Kódok</string>
+    <string name="menu_item_call_number"><xliff:g id="number" example="020 7946 0018">%1$s</xliff:g> hívása</string>
+    <string name="menu_item_copy_code"><xliff:g id="code" example="482916">%1$s</xliff:g> másolása</string>
+    <string name="title_pref_show_focus_indicator">Fókuszjelző megjelenítése</string>
+    <string name="title_pref_dictation_correction_prompt">Javítási utasítások</string>
+    <string name="title_pref_whisper_custom_model">Modellfájl</string>
+    <string name="whisper_custom_model_choose">Válasszon whisper.cpp-modellfájlt</string>
+    <string name="whisper_custom_model_replace">Másik fájl kiválasztása</string>
+    <string name="whisper_custom_model_not_whisper">Nem whisper.cpp-modellfájl</string>
+    <string name="whisper_custom_model_copying">Másolás</string>
 </resources>

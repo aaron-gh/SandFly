@@ -1363,7 +1363,7 @@
     <string name="action_copy_command">Nakili amri</string>
     <string name="command_copied">Amri imenakiliwa</string>
     <string name="title_pref_speech_control">Ruhusu programu zingine zizungumze</string>
-    <string name="summary_pref_speech_control">Programu unazoruhusu zinaweza kutamka maandishi kwa sauti ya SandFly. Hakuna kinachotamkwa kifaa kikiwa kimefungwa.</string>
+    <string name="summary_pref_speech_control">Programu unazoruhusu zinaweza kutamka maandishi kwa sauti ya SandFly. Kifaa kikiwa kimefungwa, ni programu tu unazoruhusu pia wakati kimefungwa zinazoweza kuzungumza.</string>
     <string name="title_pref_speech_control_sound">Cheza sauti kabla programu nyingine hazijazungumza</string>
     <string name="speech_control_apps_category">Programu</string>
     <string name="speech_control_no_apps">Bado hakuna programu ambazo zimeomba kuzungumza.</string>
@@ -1868,4 +1868,108 @@
   <string name="value_hold_to_cancel_3000">Sekunde 3</string>
   <string name="title_pref_tap_to_activate">Gusa ili kuamilisha</string>
   <string name="summary_pref_tap_to_activate">Mguso ambao kidole kinainuliwa kabla ya kipengee kilicho chini yake kulengwa huamilisha kipengee hicho.</string>
+    <string name="title_selector_ai_actions">Vitendo vya AI</string>
+    <string name="ai_actions_hint">Telezesha kidole juu au chini ili uchague kitendo, kisha gusa mara mbili ili ukitekeleze</string>
+    <string name="title_pref_ai_actions_included">Vitendo vya AI vya kujumuisha</string>
+    <string name="title_speak_screen_description">Tamka maelezo ya skrini</string>
+    <string name="title_speak_image_description">Tamka maelezo ya picha</string>
+    <string name="title_ask_about_screen">Uliza kuhusu skrini</string>
+    <string name="title_ask_about_image">Uliza kuhusu picha</string>
+    <string name="ai_question_hint">Swali</string>
+    <string name="ai_question_ask">Uliza</string>
+    <string name="shortcut_use_voice_profile">Tumia wasifu wa sauti <xliff:g id="name" example="English">%1$s</xliff:g></string>
+    <string name="title_pref_keep_previous_voice_engine">Acha injini ya wasifu wa sauti uliotangulia ikiendelea kufanya kazi</string>
+    <string name="title_pref_voice_profile_keep_engine_started">Acha injini ikiendelea kufanya kazi</string>
+    <string name="title_pref_speech_equalizer">Kisawazishaji</string>
+    <string name="title_pref_speech_equalizer_preset">Mipangilio iliyowekwa mapema</string>
+    <string name="title_pref_speech_equalizer_on">Tumia kisawazishaji</string>
+    <string name="speech_equalizer_off">Kimezimwa</string>
+    <string name="speech_equalizer_turned_on">Kisawazishaji kimewashwa</string>
+    <string name="speech_equalizer_turned_off">Kisawazishaji kimezimwa</string>
+    <string name="title_selector_equalizer_32">Kisawazishaji 32 Hz</string>
+    <string name="title_selector_equalizer_64">Kisawazishaji 64 Hz</string>
+    <string name="title_selector_equalizer_125">Kisawazishaji 125 Hz</string>
+    <string name="title_selector_equalizer_250">Kisawazishaji 250 Hz</string>
+    <string name="title_selector_equalizer_500">Kisawazishaji 500 Hz</string>
+    <string name="title_selector_equalizer_1k">Kisawazishaji 1 kHz</string>
+    <string name="title_selector_equalizer_2k">Kisawazishaji 2 kHz</string>
+    <string name="title_selector_equalizer_3k">Kisawazishaji 3 kHz</string>
+    <string name="title_selector_equalizer_4k">Kisawazishaji 4 kHz</string>
+    <string name="title_selector_equalizer_6k">Kisawazishaji 6 kHz</string>
+    <string name="title_selector_equalizer_8k">Kisawazishaji 8 kHz</string>
+    <string name="title_selector_equalizer_16k">Kisawazishaji 16 kHz</string>
+    <string name="summary_speech_equalizer_needs_low_latency">Inahitaji Kutoa sauti &gt; Sauti yenye muda mfupi wa kusubiri</string>
+    <string name="speech_equalizer_flat">Bapa</string>
+    <string name="speech_equalizer_clarity">Uwazi</string>
+    <string name="speech_equalizer_bass_boost">Kuongeza besi</string>
+    <string name="speech_equalizer_bass_cut">Kupunguza besi</string>
+    <string name="speech_equalizer_treble_boost">Kuongeza sauti za juu</string>
+    <string name="speech_equalizer_treble_cut">Kupunguza sauti za juu</string>
+    <string name="speech_equalizer_warm">Joto</string>
+    <string name="speech_equalizer_reduce_harshness">Punguza ukali</string>
+    <string name="speech_equalizer_reduce_sibilance">Punguza sauti za mzomeo</string>
+    <string name="speech_equalizer_small_speaker">Spika ndogo</string>
+    <string name="speech_equalizer_custom">Maalum</string>
+    <string name="speech_equalizer_band_hz"><xliff:g id="frequency">%1$s</xliff:g> Hz</string>
+    <string name="speech_equalizer_band_khz"><xliff:g id="frequency">%1$s</xliff:g> kHz</string>
+    <string name="speech_equalizer_gain_db"><xliff:g id="gain">%1$s</xliff:g> dB</string>
+    <string name="title_pref_braille_dictionary">Kamusi ya nukta nundu</string>
+    <string name="braille_dictionary_not_shown"><xliff:g id="text" example="#">%1$s</xliff:g> haionyeshwi</string>
+    <string name="title_pref_announce_full_charge">Tangaza chaji ikijaa</string>
+    <string name="battery_fully_charged">Betri imejaa chaji</string>
+    <string name="speech_control_locked_app"><xliff:g id="app" example="Tasker">%1$s</xliff:g> kifaa kikiwa kimefungwa</string>
+    <string name="speech_control_ask_locked_title">Ungependa kuruhusu <xliff:g id="app" example="Tasker">%1$s</xliff:g> izungumze kupitia SandFly kifaa kikiwa kimefungwa?</string>
+    <string name="speech_control_ask_locked_text">Inaweza kutamka maandishi kwa sauti yako ya SandFly kifaa kikiwa kimefungwa. Ruhusu inahitaji kifaa kifunguliwe. Unaweza kubadilisha hali hii katika Mipangilio, Matamshi, Ruhusu programu zingine zizungumze.</string>
+    <string name="permission_speak_when_locked_label">zungumza kupitia SandFly kifaa kikiwa kimefungwa</string>
+    <string name="permission_speak_when_locked_description">Huruhusu programu iombe kusema maandishi kwa sauti yako ya SandFly kifaa kikiwa kimefungwa. SandFly hukuuliza kando kabla programu haijaweza kufanya hivyo.</string>
+    <string name="title_pref_category_back_tap">Kugusa nyuma</string>
+    <string name="title_pref_keep_speech_off_casts">Acha matamshi kwenye simu wakati wa kutuma skrini</string>
+    <string name="title_pref_app_shortcuts">Njia za mkato za programu</string>
+    <string name="app_shortcut_label"><xliff:g id="app_name" example="Amazon">%1$s</xliff:g>: <xliff:g id="shortcut" example="Cart">%2$s</xliff:g></string>
+    <string name="title_pref_add_app_shortcut">Ongeza njia ya mkato ya programu</string>
+    <string name="app_shortcut_no_apps">Hakuna programu zenye njia za mkato za kuongeza</string>
+    <string name="app_shortcut_not_added">Hakuna njia ya mkato iliyoongezwa</string>
+    <string name="app_shortcut_added">Imeongeza <xliff:g id="name" example="MacroDroid: Morning">%1$s</xliff:g></string>
+    <string name="app_shortcut_not_opened">Imeshindwa kufungua njia ya mkato ya programu</string>
+    <string name="app_search_no_apps">Hakuna programu</string>
+    <string name="shortcut_toggle_color_inversion">Washa au uzime ugeuzaji wa rangi</string>
+    <string name="color_inversion_turned_on">Ugeuzaji wa rangi umewashwa</string>
+    <string name="color_inversion_turned_off">Ugeuzaji wa rangi umezimwa</string>
+    <string name="shortcut_dictate_or_media_control">Toa imla, cheza au usitishe maudhui</string>
+    <string name="title_pref_shortcut_edge_along_left_up">Telezesha kidole juu kwenye ukingo wa kushoto</string>
+    <string name="title_pref_shortcut_edge_along_left_down">Telezesha kidole chini kwenye ukingo wa kushoto</string>
+    <string name="title_pref_shortcut_edge_along_right_up">Telezesha kidole juu kwenye ukingo wa kulia</string>
+    <string name="title_pref_shortcut_edge_along_right_down">Telezesha kidole chini kwenye ukingo wa kulia</string>
+    <string name="title_pref_shortcut_edge_along_top_left">Telezesha kidole kushoto kwenye ukingo wa juu</string>
+    <string name="title_pref_shortcut_edge_along_top_right">Telezesha kidole kulia kwenye ukingo wa juu</string>
+    <string name="title_pref_shortcut_edge_along_bottom_left">Telezesha kidole kushoto kwenye ukingo wa chini</string>
+    <string name="title_pref_shortcut_edge_along_bottom_right">Telezesha kidole kulia kwenye ukingo wa chini</string>
+    <string name="title_pref_shortcut_back_tap_double">Gusa mara mbili nyuma ya kifaa</string>
+    <string name="title_pref_shortcut_back_tap_triple">Gusa mara tatu nyuma ya kifaa</string>
+    <string name="title_pref_back_tap_sensitivity">Unyeti wa kugusa nyuma</string>
+    <string name="title_pref_edge_zone_mm">Upana wa ukingo</string>
+    <string name="title_pref_edge_scroll_left">Sogeza kwa kidole kimoja kwenye ukingo wa kushoto</string>
+    <string name="title_pref_edge_scroll_right">Sogeza kwa kidole kimoja kwenye ukingo wa kulia</string>
+    <string name="title_pref_edge_scroll_top">Sogeza kwa kidole kimoja kwenye ukingo wa juu</string>
+    <string name="title_pref_edge_scroll_bottom">Sogeza kwa kidole kimoja kwenye ukingo wa chini</string>
+    <string name="title_pref_edge_menu_left">Menyu ya ukingo wa kushoto</string>
+    <string name="title_pref_edge_menu_right">Menyu ya ukingo wa kulia</string>
+    <string name="title_pref_edge_menu_left_switch">Tumia ukingo wa kushoto kama menyu</string>
+    <string name="title_pref_edge_menu_right_switch">Tumia ukingo wa kulia kama menyu</string>
+    <string name="edge_menu_add_command">Ongeza amri</string>
+    <string name="edge_menu_change_command">Badilisha amri</string>
+    <string name="title_pref_text_entities">Vitendo vilivyopatikana katika maandishi</string>
+    <string name="text_entity_web">Anwani za wavuti</string>
+    <string name="text_entity_email">Anwani za barua pepe</string>
+    <string name="text_entity_phone">Nambari za simu</string>
+    <string name="text_entity_code">Misimbo ya uthibitishaji</string>
+    <string name="menu_item_call_number">Piga <xliff:g id="number" example="020 7946 0018">%1$s</xliff:g></string>
+    <string name="menu_item_copy_code">Nakili <xliff:g id="code" example="482916">%1$s</xliff:g></string>
+    <string name="title_pref_show_focus_indicator">Onyesha kiashiria cha umakini</string>
+    <string name="title_pref_dictation_correction_prompt">Maagizo ya kusahihisha</string>
+    <string name="title_pref_whisper_custom_model">Faili ya muundo</string>
+    <string name="whisper_custom_model_choose">Chagua faili ya muundo ya whisper.cpp</string>
+    <string name="whisper_custom_model_replace">Chagua faili nyingine</string>
+    <string name="whisper_custom_model_not_whisper">Si faili ya muundo ya whisper.cpp</string>
+    <string name="whisper_custom_model_copying">Inanakili</string>
 </resources>
