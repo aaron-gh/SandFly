@@ -75,6 +75,11 @@ class HandwritingAppLauncher(
   private var downTime = 0L
   private var lastX = 0f
   private var lastY = 0f
+  /**
+   * The first finger, which [lastX] and [lastY] follow until it lifts, or INVALID_POINTER_ID after.
+   * Its index changes when another finger lifts before it.
+   */
+  private var firstPointerId = MotionEvent.INVALID_POINTER_ID
 
   /** Whether a tap waits for a second one to open the app, or else closes the surface. */
   private var tapPending = false
@@ -164,6 +169,7 @@ class HandwritingAppLauncher(
         downY = event.y
         lastX = event.x
         lastY = event.y
+        firstPointerId = event.getPointerId(0)
         downTime = event.eventTime
         if (strokes.size >= MAX_STROKES) strokes.clear()
         strokes += mutableListOf(InkPoint(event.x, event.y, event.eventTime))
@@ -175,9 +181,23 @@ class HandwritingAppLauncher(
         }
         maxPointers = maxOf(maxPointers, event.pointerCount)
       }
+      MotionEvent.ACTION_POINTER_UP -> {
+        // The fingers left move on, so the gesture ends where the first finger lifted.
+        val index = event.actionIndex
+        if (event.getPointerId(index) == firstPointerId) {
+          lastX = event.getX(index)
+          lastY = event.getY(index)
+          firstPointerId = MotionEvent.INVALID_POINTER_ID
+        }
+      }
       MotionEvent.ACTION_MOVE -> {
-        lastX = event.getX(0)
-        lastY = event.getY(0)
+        val first =
+          if (firstPointerId == MotionEvent.INVALID_POINTER_ID) -1
+          else event.findPointerIndex(firstPointerId)
+        if (first >= 0) {
+          lastX = event.getX(first)
+          lastY = event.getY(first)
+        }
         if (maxPointers > 1) return
         val stroke = strokes.lastOrNull() ?: return
         for (i in 0 until event.historySize) {
@@ -215,6 +235,7 @@ class HandwritingAppLauncher(
       MotionEvent.ACTION_CANCEL -> {
         strokes.clear()
         maxPointers = 0
+        firstPointerId = MotionEvent.INVALID_POINTER_ID
         secondTap = false
       }
     }
