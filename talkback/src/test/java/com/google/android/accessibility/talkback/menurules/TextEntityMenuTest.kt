@@ -52,4 +52,87 @@ class TextEntityMenuTest {
   fun digitsInsideWordsOrLongNumbersAreNoCodes() {
     assertTrue(TextEntityMenu.find("Order A12345B, card 1234567890123").none { it is Entity.Code })
   }
+
+  @Test
+  fun phoneNumbersAreOffered() {
+    assertEquals(
+      listOf<Entity>(Entity.Phone("020 7946 0018", "02079460018")),
+      TextEntityMenu.find("Call 020 7946 0018 today"),
+    )
+    assertEquals(
+      listOf<Entity>(Entity.Phone("+44 (0)20 7946 0018", "+442079460018")),
+      TextEntityMenu.find("Ring +44 (0)20 7946 0018."),
+    )
+    assertEquals(
+      listOf<Entity>(Entity.Phone("(555) 123-4567", "5551234567")),
+      TextEntityMenu.find("Office: (555) 123-4567"),
+    )
+    assertEquals(
+      listOf<Entity>(Entity.Phone("+33 1 23 45 67 89", "+33123456789")),
+      TextEntityMenu.find("Tél +33 1 23 45 67 89"),
+    )
+    assertEquals(
+      listOf<Entity>(Entity.Phone("07700 900123", "07700900123")),
+      TextEntityMenu.find("Mobile 07700 900123"),
+    )
+    assertEquals(
+      listOf<Entity>(Entity.Phone("5551234567", "5551234567")),
+      TextEntityMenu.find("Text 5551234567"),
+    )
+  }
+
+  @Test
+  fun datesTimesAndYearsAreNoNumbersOrCodes() {
+    for (text in
+      listOf(
+        "Sat, 7 Nov 2026",
+        "7 November 2026, 10:45",
+        "Updated 2026-11-07 10:45",
+        "07 11 2026 10 45",
+        "Due 07.11.2026",
+        "Due 11/07/2026",
+        "2020-2026",
+        "Copyright 1999 2026",
+      )) {
+      assertEquals(text, emptyList<Entity>(), TextEntityMenu.find(text))
+    }
+  }
+
+  @Test
+  fun digitsInUserNamesAreNoNumbersOrCodes() {
+    for (text in
+      listOf(
+        "u/Ok_Fact_2026 replied",
+        "u/Some-Name-5551234 replied",
+        "u/name5551234567 replied",
+        "@friend1234 posted",
+        "r/2026 is trending",
+        "#1234",
+      )) {
+      assertEquals(text, emptyList<Entity>(), TextEntityMenu.find(text))
+    }
+  }
+
+  @Test
+  fun amountsAddressesAndDecimalsAreNoNumbers() {
+    for (text in
+      listOf(
+        "Paid \$1234.56",
+        "Total 12.345.678",
+        "Server 192.168.10.20",
+        "1234.567 km",
+        "Order A12345B, card 1234567890123",
+      )) {
+      assertTrue(text, TextEntityMenu.find(text).none { it is Entity.Phone })
+    }
+  }
+
+  @Test
+  fun aCodeNextToOtherNumbersOrAfterAPrefixIsOffered() {
+    assertEquals(
+      listOf<Entity>(Entity.Code("482916")),
+      TextEntityMenu.find("G-482916 is your code. It expires in 10 minutes."),
+    )
+    assertEquals(listOf<Entity>(Entity.Code("482916")), TextEntityMenu.find("Code:482916 10 min"))
+  }
 }
