@@ -194,6 +194,20 @@ class DirectTouchControllerTest {
   }
 
   @Test
+  fun reportsWhenTouchesStartAndStopGoingDirectly() {
+    val reported = mutableListOf<Boolean>()
+    controller.onTouchesDirectChanged = Runnable { reported += controller.takesTouchesDirectly() }
+    DirectTouchSettings.setAppEnabled(prefs, GAME_PACKAGE, true)
+
+    windowsChange(GAME, WINDOWS_CHANGE_ADDED, statusBar(), navigationBar(), game())
+    val underShade = game(inactive = true)
+    windowsChange(SHADE, WINDOWS_CHANGE_ADDED, statusBar(), navigationBar(), underShade, shade())
+    windowsChange(SHADE, WINDOWS_CHANGE_REMOVED, statusBar(), navigationBar(), game())
+
+    assertEquals(listOf(true, false, true), reported)
+  }
+
+  @Test
   fun gameThatAsksForDirectTouchGetsItTheFirstTimeItIsSeen() {
     windowsChange(GAME2, WINDOWS_CHANGE_ADDED, statusBar(), navigationBar(), game2())
     windowsChange(TOAST, WINDOWS_CHANGE_ADDED, statusBar(), navigationBar(), game2(), toast())

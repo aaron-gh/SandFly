@@ -87,6 +87,11 @@ class DirectTouchController(
   // while direct touch is off.
   private var partRegionSent = false
   private var paused = false
+  // The value of takesTouchesDirectly() last reported to onTouchesDirectChanged.
+  private var reportedTouchesDirect = false
+
+  /** Runs on the main thread when [takesTouchesDirectly] changes. */
+  var onTouchesDirectChanged: Runnable? = null
 
   // The system holds preference listeners weakly, so this must stay a field.
   private val prefsListener =
@@ -184,6 +189,7 @@ class DirectTouchController(
         partRegionSent = false
         announce(false)
       }
+      reportTouchesDirect()
       return
     }
     if (isNavBarDirect() || DirectTouchSettings.hasEnabledApps(prefs)) {
@@ -204,7 +210,22 @@ class DirectTouchController(
     }
   }
 
+  /**
+   * Whether a passthrough region is sent, for an app, the navigation bar or a keyboard, so that
+   * touches starting in it go to the windows under them without touch exploration.
+   */
+  fun takesTouchesDirectly(): Boolean = active || partRegionSent
+
+  private fun reportTouchesDirect() {
+    val now = takesTouchesDirectly()
+    if (now != reportedTouchesDirect) {
+      reportedTouchesDirect = now
+      onTouchesDirectChanged?.run()
+    }
+  }
+
   fun shutdown() {
+    onTouchesDirectChanged = null
     prefs.unregisterOnSharedPreferenceChangeListener(prefsListener)
     handler.removeCallbacks(reevaluate)
     handler.removeCallbacks(recheck)
@@ -255,6 +276,7 @@ class DirectTouchController(
     if (!active) {
       updatePartRegion(windows, navBarDirect, keyboards)
     }
+    reportTouchesDirect()
   }
 
   /**

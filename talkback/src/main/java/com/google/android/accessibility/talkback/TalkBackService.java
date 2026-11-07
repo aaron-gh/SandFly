@@ -2980,6 +2980,7 @@ public class TalkBackService extends AccessibilityServiceCompat
       directTouchController =
           new DirectTouchController(
               this, prefs, pipeline.getFeedbackReturner(), windowEventInterpreter);
+      directTouchController.setOnTouchesDirectChanged(this::updateLiftCancelStrip);
       windowEventInterpreter.addListener(directTouchController);
       ringerModeAndScreenMonitor.addScreenChangedListener(directTouchController);
       displayMonitor.addDisplayStateChangedListener(directTouchController);
@@ -3770,14 +3771,20 @@ public class TalkBackService extends AccessibilityServiceCompat
     }
   }
 
-  /** Shows the strip at the bottom of the screen where lifting activates nothing, while needed. */
+  /**
+   * Shows the strip at the bottom of the screen where lifting activates nothing, while needed. The
+   * strip takes the touches that reach it, so it is shown only while touch exploration is on and no
+   * direct touch region passes touches to the windows under it.
+   */
   private void updateLiftCancelStrip() {
     boolean shown =
         isServiceActive()
             && !PauseController.isPaused()
             && LiftToActivateMode.fromPrefValue(
                     prefs.getString(getString(R.string.pref_lift_to_activate_key), null))
-                != LiftToActivateMode.DISABLED;
+                != LiftToActivateMode.DISABLED
+            && Boolean.TRUE.equals(isTouchExplorationEnabled())
+            && (directTouchController == null || !directTouchController.takesTouchesDirectly());
     if (shown && liftCancelStrip == null) {
       liftCancelStrip = new LiftCancelStrip(this, liftCancelStripListener);
     }
@@ -4477,6 +4484,8 @@ public class TalkBackService extends AccessibilityServiceCompat
     }
     requestServiceFlag(
         AccessibilityServiceInfo.FLAG_REQUEST_TOUCH_EXPLORATION_MODE, requestedState);
+    // Touches that are not explored would go to the strip.
+    updateLiftCancelStrip();
     return isTouchExplorationEnabled();
   }
 
