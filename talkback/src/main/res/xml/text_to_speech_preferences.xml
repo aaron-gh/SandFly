@@ -25,6 +25,11 @@
         android:persistent="false"
         android:title="@string/title_pref_speech_volume" />
     <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+        android:fragment="com.google.android.accessibility.talkback.preference.base.SpeechEqualizerFragment"
+        android:key="pref_speech_equalizer_screen"
+        android:persistent="false"
+        android:title="@string/title_pref_speech_equalizer" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
         android:key="@string/pref_system_tts_settings_key"
         android:title="@string/title_pref_system_tts_settings"
         android:summary="@string/summary_tts_settings" />

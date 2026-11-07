@@ -34,6 +34,8 @@ public class TextToSpeechSettingsFragment extends TalkbackBaseFragment {
     R.string.pref_speech_pitch_seekbar_key_int,
   };
 
+  private static final String EQUALIZER_SCREEN_KEY = "pref_speech_equalizer_screen";
+
   private SharedPreferences prefs;
 
   private final OnSharedPreferenceChangeListener sharedPreferenceChangeListener =
@@ -94,6 +96,7 @@ public class TextToSpeechSettingsFragment extends TalkbackBaseFragment {
     prefs.registerOnSharedPreferenceChangeListener(sharedPreferenceChangeListener);
     updateSeekBarValues();
     updateVoiceProfileSummary();
+    updateEqualizerSummary();
 
     boolean serviceActive =
         TalkBackService.getServiceState() == ServiceStateListener.SERVICE_STATE_ACTIVE;
@@ -159,6 +162,22 @@ public class TextToSpeechSettingsFragment extends TalkbackBaseFragment {
             : getString(
                 R.string.voice_profile_in_use,
                 VoiceProfileNames.nameOf(requireContext(), prefs, profile.id())));
+  }
+
+  /**
+   * Shows SandFly default's equalizer preset. Watches have no low-latency audio, which the equalizer
+   * needs, so they don't show it.
+   */
+  private void updateEqualizerSummary() {
+    Preference preference = findPreference(EQUALIZER_SCREEN_KEY);
+    if (preference == null) {
+      return;
+    }
+    if (FormFactorUtils.isAndroidWear()) {
+      getPreferenceScreen().removePreferenceRecursively(EQUALIZER_SCREEN_KEY);
+      return;
+    }
+    preference.setSummary(SpeechEqualizerFragment.summary(requireContext(), prefs, ""));
   }
 
   private void setUpSystemTtsSettingsPreference() {

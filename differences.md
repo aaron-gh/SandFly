@@ -141,13 +141,19 @@ The **Speech engine** reading control switches between your installed speech eng
 
 ### Voice profiles
 
-A voice profile is a set of speech settings that you can switch to at once: a speech engine, language, voice, volume, rate, pitch, and **Send long text a sentence at a time**. For example, one profile can use a slower rate for long text while **SandFly default** stays fast. To add one, go to **Text-to-speech** > **Voice profiles** and choose **Add voice profile**. When you choose a language, the voice list shows only the engine's voices in that language.
+A voice profile is a set of speech settings that you can switch to at once: a speech engine, language, voice, volume, rate, pitch, equalizer, and **Send long text a sentence at a time**. For example, one profile can use a slower rate for long text while **SandFly default** stays fast. To add one, go to **Text-to-speech** > **Voice profiles** and choose **Add voice profile**. When you choose a language, the voice list shows only the engine's voices in that language.
 
 To switch profiles, swipe up or down with the **Voice profile** reading control, or choose **Voice profile in use** on the **Voice profiles** screen. The **Voice profile** reading control is separate from the **Speech engine** reading control. It isn't in the reading controls by default. To add it, go to **Reading controls**. You can also add a **Voice profile** item to the SandFly menu in **SandFly menu** settings, which lists the profiles and says which is in use. The **Choose voice profile**, **Previous voice profile** and **Next voice profile** actions can be assigned to gestures and keyboard shortcuts. Once there is a profile, the **Voice profiles** group of commands has **Use voice profile** for the default and each profile, for gestures, edge menus and keyboard shortcuts.
 
 The reading control goes through the profiles in the order of the **Voice profiles** screen, after **SandFly default**. To change the order, hold a profile and drag it, or use the **Move up** and **Move down** actions. SandFly says which profile it moved above or below. Profiles also have **Rename** and **Delete** actions, which a long press shows too.
 
 **SandFly default** is always there, and uses the rest of the text-to-speech settings. While a profile is in use, changing the speech rate or pitch with gestures or the reading controls changes that profile only. All speech uses the profile's engine and voice, so SandFly doesn't switch language or dialect, and the **Spoken language** reading control and menu item are hidden.
+
+### Speech equalizer
+
+**Speech** > **Equalizer** sets a 12-band equalizer for **SandFly default**, and **Equalizer** on a voice profile's screen sets one for that profile. **Preset** chooses Flat, Clarity, Bass boost, Bass cut, Treble boost, Treble cut, Warm, Reduce harshness, Reduce sibilance or Small speaker. Each band, from 32 Hz to 16 kHz, has a slider from -12 to +12 dB. Changing a slider sets **Preset** to Custom. When any band boosts, a limiter keeps speech from clipping. A new voice profile starts with SandFly default's equalizer.
+
+The equalizer applies to speech that SandFly plays, so it needs **Audio output** > **Low-latency audio**. It doesn't apply during calls or while the microphone records, when the engine plays speech itself.
 
 ### Speech volume
 

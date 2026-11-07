@@ -400,6 +400,7 @@ object SettingsIndex {
         !PreferenceSettingsUtils.canHandleIntent(context, Intent(TalkBackService.INTENT_TTS_SETTINGS)),
       R.string.pref_system_tts_settings_key,
     )
+    hideIf(wear, "pref_speech_equalizer_screen")
 
     // TypingFragment: shown while a physical keyboard is connected.
     hideIf(!InputDeviceMonitor(context).hasPhysicalKeyboard(), R.string.pref_physical_keyboard_key)

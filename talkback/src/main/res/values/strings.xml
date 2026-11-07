@@ -164,6 +164,40 @@
     <string name="title_pref_keep_previous_voice_engine">Keep the engine of the previous voice profile started</string>
     <!-- Switch on a voice profile's screen. When on, the profile's text-to-speech engine stays connected while another engine is in use, so that changing to the profile, and notifications read with it, don't wait for the engine to start. [CHAR LIMIT=NONE] -->
     <string name="title_pref_voice_profile_keep_engine_started">Keep the engine started</string>
+    <!-- Title of the settings screen with the speech equalizer. [CHAR LIMIT=40] -->
+    <string name="title_pref_speech_equalizer">Equalizer</string>
+    <!-- Title of the list of equalizer presets. [CHAR LIMIT=40] -->
+    <string name="title_pref_speech_equalizer_preset">Preset</string>
+    <!-- Summary of Equalizer while Low-latency audio, on the Audio output screen, is off. "Audio output" and "Low-latency audio" are the titles of those settings. [CHAR LIMIT=80] -->
+    <string name="summary_speech_equalizer_needs_low_latency">Needs Audio output &gt; Low-latency audio</string>
+    <!-- Equalizer preset with every band at 0 dB. [CHAR LIMIT=40] -->
+    <string name="speech_equalizer_flat">Flat</string>
+    <!-- Equalizer preset boosting the presence range, 2 to 6 kHz, and cutting low frequencies. [CHAR LIMIT=40] -->
+    <string name="speech_equalizer_clarity">Clarity</string>
+    <!-- Equalizer preset boosting low frequencies. [CHAR LIMIT=40] -->
+    <string name="speech_equalizer_bass_boost">Bass boost</string>
+    <!-- Equalizer preset cutting low frequencies. [CHAR LIMIT=40] -->
+    <string name="speech_equalizer_bass_cut">Bass cut</string>
+    <!-- Equalizer preset boosting high frequencies. [CHAR LIMIT=40] -->
+    <string name="speech_equalizer_treble_boost">Treble boost</string>
+    <!-- Equalizer preset cutting high frequencies. [CHAR LIMIT=40] -->
+    <string name="speech_equalizer_treble_cut">Treble cut</string>
+    <!-- Equalizer preset boosting low frequencies slightly and cutting high frequencies slightly. Audio term. [CHAR LIMIT=40] -->
+    <string name="speech_equalizer_warm">Warm</string>
+    <!-- Equalizer preset cutting 2 to 8 kHz. [CHAR LIMIT=40] -->
+    <string name="speech_equalizer_reduce_harshness">Reduce harshness</string>
+    <!-- Equalizer preset cutting 6 to 8 kHz, where "s" sounds are. [CHAR LIMIT=40] -->
+    <string name="speech_equalizer_reduce_sibilance">Reduce sibilance</string>
+    <!-- Equalizer preset cutting the low frequencies a phone speaker can't play. [CHAR LIMIT=40] -->
+    <string name="speech_equalizer_small_speaker">Small speaker</string>
+    <!-- Equalizer preset list item shown when the bands match no preset. [CHAR LIMIT=40] -->
+    <string name="speech_equalizer_custom">Custom</string>
+    <!-- Title of an equalizer band slider, its frequency in hertz, such as "500 Hz". [CHAR LIMIT=20] -->
+    <string name="speech_equalizer_band_hz"><xliff:g id="frequency">%1$s</xliff:g> Hz</string>
+    <!-- Title of an equalizer band slider, its frequency in kilohertz, such as "2 kHz". [CHAR LIMIT=20] -->
+    <string name="speech_equalizer_band_khz"><xliff:g id="frequency">%1$s</xliff:g> kHz</string>
+    <!-- Spoken value of an equalizer band slider, its gain in decibels, such as "+3 dB" or "-6 dB". [CHAR LIMIT=20] -->
+    <string name="speech_equalizer_gain_db"><xliff:g id="gain">%1$s</xliff:g> dB</string>
     <!-- Title for the button that adds a voice profile. [CHAR LIMIT=NONE] -->
     <string name="title_pref_add_voice_profile">Add voice profile</string>
     <!-- Name given to a new voice profile, with a number to tell it apart. [CHAR LIMIT=NONE] -->
