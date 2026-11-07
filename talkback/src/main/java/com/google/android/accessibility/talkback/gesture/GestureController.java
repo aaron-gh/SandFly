@@ -1264,15 +1264,19 @@ public class GestureController {
     return null;
   }
 
+  /**
+   * Returns the focused text field, or the text field that the keyboard in focus types into, or
+   * says that there is none and returns null.
+   */
   private @Nullable AccessibilityNodeInfoCompat getEditTextFocus() {
     @Nullable AccessibilityNodeInfoCompat node =
-        accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ true);
-    if (Role.getRole(node) == Role.ROLE_EDIT_TEXT) {
+        accessibilityFocusMonitor.getNodeForEditingActions(
+            accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ true));
+    if (node != null) {
       return node;
-    } else {
-      speak(service.getString(R.string.not_editable));
-      return null;
     }
+    speak(service.getString(R.string.not_editable));
+    return null;
   }
 
   /** Returns the field that the keyboard in focus types into, or else the focused node. */
