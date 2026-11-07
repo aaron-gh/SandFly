@@ -28,4 +28,7 @@ public interface AccessibilityFocusEventInterpreter {
   /** Extract an accessibility focused event interpretation data from event. May return null. */
   @Nullable
   AccessibilityFocusEventInterpretation interpret(AccessibilityEvent event);
+
+  /** Called just before the focus that {@code interpretation} describes is spoken. */
+  default void beforeFocusSpoken(AccessibilityFocusEventInterpretation interpretation) {}
 }

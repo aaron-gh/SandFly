@@ -208,6 +208,9 @@ public class EventFilter {
             && a11yFocusEventInterpreted.getShouldMuteFeedback()) {
           return;
         }
+        if (a11yFocusEventInterpreted != null) {
+          accessibilityFocusEventInterpreter.beforeFocusSpoken(a11yFocusEventInterpreted);
+        }
       }
     } else if (eventType == AccessibilityEvent.TYPE_VIEW_HOVER_ENTER) {
       if (globalVariables.isTapToType()

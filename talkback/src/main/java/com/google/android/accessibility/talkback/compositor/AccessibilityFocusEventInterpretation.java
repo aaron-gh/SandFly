@@ -34,6 +34,7 @@ public class AccessibilityFocusEventInterpretation extends ReadOnly {
   private boolean isInitialFocusAfterScreenStateChange = false;
   private boolean shouldMuteFeedback = false;
   private boolean isNavigateByUser = false;
+  private boolean isTouchExploration = false;
   private boolean isEqualsToLastHoverEnterKeyboardEventNode = false;
   private int columnWrap = ColumnWrap.NONE;
 
@@ -104,6 +105,16 @@ public class AccessibilityFocusEventInterpretation extends ReadOnly {
 
   public boolean getIsNavigateByUser() {
     return isNavigateByUser;
+  }
+
+  /** Sets whether touch exploration moved the focus. */
+  public void setIsTouchExploration(boolean isTouchExploration) {
+    checkIsWritable();
+    this.isTouchExploration = isTouchExploration;
+  }
+
+  public boolean getIsTouchExploration() {
+    return isTouchExploration;
   }
 
   /** Sets whether the focus moved to another row of a grid, one of the {@link ColumnWrap} values. */

@@ -18,6 +18,7 @@ package com.google.android.accessibility.talkback.interpreters;
 
 import static android.view.accessibility.AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED;
 import static com.google.android.accessibility.talkback.Interpretation.Touch.Action.LIFT;
+import static com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED;
 
 import android.content.Context;
 import android.graphics.Point;
@@ -722,7 +723,27 @@ public class AccessibilityFocusInterpreter
     interpretation.setIsNavigateByUser(
         info.sourceAction == FocusActionInfo.TOUCH_EXPLORATION
             || info.sourceAction == FocusActionInfo.LOGICAL_NAVIGATION);
+    interpretation.setIsTouchExploration(info.sourceAction == FocusActionInfo.TOUCH_EXPLORATION);
     return interpretation;
+  }
+
+  /**
+   * Stops speech before an item that touch exploration focused is spoken, as touching the screen
+   * does, under the same setting. An app's announcement that arrives between the touch reaching the
+   * item and its focus event, such as a live region updated by the previous touch, starts after the
+   * touch stopped speech. It is spoken so that new speech can't interrupt it, and the item would
+   * wait for it.
+   */
+  @Override
+  public void beforeFocusSpoken(AccessibilityFocusEventInterpretation interpretation) {
+    if (interpretation.getIsTouchExploration()
+        && actorState != null
+        && actorState.getSpeechState().isSpeaking()) {
+      pipelineInterpretations.input(
+          EVENT_ID_UNTRACKED,
+          /* event= */ null,
+          Interpretation.Touch.create(Interpretation.Touch.Action.TOUCH_START));
+    }
   }
 
   /**
