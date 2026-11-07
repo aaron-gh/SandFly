@@ -193,10 +193,18 @@ class ClipboardHistoryFragment : NotificationCodeFragment(R.string.title_clipboa
     /** The edit box the history was opened from, which Paste pastes into. */
     private var pasteTarget: AccessibilityNodeInfo? = null
 
-    /** Opens the clipboard history from the service. */
+    /** Opens the clipboard history from the service, for the edit box with focus. */
     @JvmStatic
-    fun open(context: Context): Boolean {
-      pasteTarget = (context as? AccessibilityService)?.let(::editBoxWithFocus)
+    fun open(context: Context): Boolean =
+      open(context, (context as? AccessibilityService)?.let(::editBoxWithFocus))
+
+    /**
+     * Opens the clipboard history from the service, for [editBox], found before a SandFly window
+     * took the focus.
+     */
+    @JvmStatic
+    fun open(context: Context, editBox: AccessibilityNodeInfo?): Boolean {
+      pasteTarget = editBox?.takeIf { it.isEditable }
       context.startActivity(
         Intent(context, TalkBackPreferencesActivity::class.java)
           .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
@@ -206,7 +214,8 @@ class ClipboardHistoryFragment : NotificationCodeFragment(R.string.title_clipboa
     }
 
     /** The edit box with accessibility focus, or else with input focus. */
-    private fun editBoxWithFocus(service: AccessibilityService): AccessibilityNodeInfo? =
+    @JvmStatic
+    fun editBoxWithFocus(service: AccessibilityService): AccessibilityNodeInfo? =
       listOf(AccessibilityNodeInfo.FOCUS_ACCESSIBILITY, AccessibilityNodeInfo.FOCUS_INPUT)
         .firstNotNullOfOrNull { focus -> service.findFocus(focus)?.takeIf { it.isEditable } }
   }
