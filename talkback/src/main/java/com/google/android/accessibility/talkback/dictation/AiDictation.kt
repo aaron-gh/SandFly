@@ -41,6 +41,7 @@ import com.google.android.accessibility.talkback.actor.gemini.progress.DefaultPr
 import com.google.android.accessibility.talkback.actor.gemini.progress.ProgressTonePlayer
 import com.google.android.accessibility.talkback.dictation.DictationSettings.Recognition
 import com.google.android.accessibility.talkback.permission.PermissionUtils
+import com.google.android.accessibility.talkback.report.AiResponseReport
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils
 import com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED
 import com.google.android.accessibility.utils.Role
@@ -499,6 +500,7 @@ class AiDictation(
         generation++
         handler.removeCallbacks(fallback)
         finish()
+        AiResponseReport.record(answer)
         val corrected = answer?.let(::cleanUp)
         if (corrected != null && isCorrection(heard, corrected)) {
           type(target, corrected)
