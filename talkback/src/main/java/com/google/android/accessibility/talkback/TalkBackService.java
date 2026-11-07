@@ -5138,9 +5138,12 @@ public class TalkBackService extends AccessibilityServiceCompat
       touchInteractionMonitor.setTwoFingerPassthroughEnabled(
           !GestureLayout.handlesTwoFingerSwipes(prefs));
       touchInteractionMonitor.setServiceHandlesDoubleTap(true);
-      // No executor: the controller calls the monitor on the main thread as each event comes in, in
-      // order with the timeouts that gesture detection counts there.
-      touchInteractionController.registerCallback(/* executor= */ null, touchInteractionMonitor);
+      // The controller calls the monitor on the main thread as each event comes in, in order with
+      // the timeouts that gesture detection counts there. The executor runs it there at once. It
+      // must not be null: Android's unregisterCallback reports a callback with a null executor as
+      // not registered and then leaves the touch screen's gesture detection flag set, so the next
+      // screen reader gets no touches.
+      touchInteractionController.registerCallback(Runnable::run, touchInteractionMonitor);
       displayIdToTouchInteractionMonitors.put(display.getDisplayId(), touchInteractionMonitor);
       userInterface.registerListener(touchInteractionMonitor);
       LogUtils.i(TAG, "Enabling service gesture detection on display %d", display.getDisplayId());
