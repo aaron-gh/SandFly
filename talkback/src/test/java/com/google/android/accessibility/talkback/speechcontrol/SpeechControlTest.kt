@@ -18,6 +18,7 @@ package com.google.android.accessibility.talkback.speechcontrol
 
 import android.app.KeyguardManager
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageInfo
@@ -258,6 +259,27 @@ class SpeechControlTest {
     SpeechControlApps.setAllowed(prefs, APP, true)
     assertTrue(SpeechControl.speak(listOf(APP), "Hello", interrupt = false))
     assertEquals(1, given.size)
+  }
+
+  private fun answerAllowWhileLocked() {
+    SpeechControlApproval.AnswerReceiver()
+      .onReceive(
+        context,
+        Intent(SpeechControlApproval.ACTION_ALLOW_LOCKED)
+          .putExtra(SpeechControlApproval.EXTRA_APP, APP),
+      )
+  }
+
+  @Test
+  @Config(sdk = [30])
+  fun allowWhileLocked_isIgnoredWhileTheDeviceIsLockedBeforeAndroid12() {
+    shadowOf(context.getSystemService(KeyguardManager::class.java)).setIsDeviceLocked(true)
+    answerAllowWhileLocked()
+    assertEquals(SpeechControlApps.State.UNKNOWN, SpeechControlApps.lockedState(prefs, APP))
+
+    shadowOf(context.getSystemService(KeyguardManager::class.java)).setIsDeviceLocked(false)
+    answerAllowWhileLocked()
+    assertEquals(SpeechControlApps.State.ALLOWED, SpeechControlApps.lockedState(prefs, APP))
   }
 
   @Test
