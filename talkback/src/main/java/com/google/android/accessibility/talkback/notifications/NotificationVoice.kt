@@ -112,6 +112,11 @@ class NotificationVoice(private val context: Context) {
   private val voiceRetry = Runnable { waitForVoice() }
   /** Since when the engine has been started without taking the profile's voice. */
   private var voiceWaitSince = 0L
+  /**
+   * The engine and voice that weren't taken within [VOICE_WAIT_MS], or listed as not installed.
+   * Kept across connections, so that text for a missing voice isn't held on each one.
+   */
+  private var missingVoice: Pair<String, String>? = null
   private val speakingCheck = Runnable { checkSpeaking() }
 
   /** The profile the voice is set up from. */
@@ -247,19 +252,31 @@ class NotificationVoice(private val context: Context) {
   /**
    * Sets the profile's voice, then says the text waiting for the engine. An engine that has just
    * started may not have loaded its voices yet, so it lists none or refuses the voice; the voice is
-   * tried again for [VOICE_WAIT_MS] before the text is said in the voice that could be set.
+   * tried again for [VOICE_WAIT_MS] before the text is said in the voice that could be set. A voice
+   * listed as not installed, or one that wasn't taken within that time before, isn't waited for.
    */
   private fun waitForVoice() {
     if (tts == null) return
     val waited = SystemClock.uptimeMillis() - voiceWaitSince
+    val voice = profile?.let { it.engine to it.voice }
     if (!applyVoice()) {
-      if (waited < VOICE_WAIT_MS) {
+      // A voice listed as not installed stays so, and one missing before isn't waited for again.
+      val notInstalled =
+        foundVoiceName == profile?.voice &&
+          foundVoice?.features?.contains(TextToSpeech.Engine.KEY_FEATURE_NOT_INSTALLED) == true
+      if (waited < VOICE_WAIT_MS && !notInstalled && missingVoice != voice) {
         handler.postDelayed(voiceRetry, VOICE_RETRY_MS)
         return
       }
-      LogUtils.e(TAG, "%s didn't take voice %s within %d ms", profile?.engine, profile?.voice, waited)
-    } else if (waited > 0) {
-      LogUtils.d(TAG, "%s took voice %s after %d ms", profile?.engine, profile?.voice, waited)
+      if (missingVoice != voice) {
+        LogUtils.e(TAG, "%s didn't take voice %s within %d ms", profile?.engine, profile?.voice, waited)
+      }
+      missingVoice = voice
+    } else {
+      missingVoice = null
+      if (waited > 0) {
+        LogUtils.d(TAG, "%s took voice %s after %d ms", profile?.engine, profile?.voice, waited)
+      }
     }
     ready = true
     val waiting = pending.toList()
