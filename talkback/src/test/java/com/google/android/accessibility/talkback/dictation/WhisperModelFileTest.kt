@@ -61,4 +61,21 @@ class WhisperModelFileTest {
     assertEquals(WhisperModels.ImportFailure.NOT_A_MODEL, failure)
     assertFalse(models.hasCustom())
   }
+
+  @Test
+  fun aDownloadedModelDoesNotReplaceTheChosenModelFile() {
+    val bytes = byteArrayOf(0x6c, 0x6d, 0x67, 0x67) + ByteArray(1000)
+    assertNull(models.copyCustom(context.contentResolver, file(bytes), bytes.size.toLong()))
+    models.useCustom()
+    models.chooseDownloaded(WhisperModels.Model.TINY)
+    assertEquals("custom", models.chosenId())
+  }
+
+  @Test
+  fun aDownloadedModelIsUsedWhenTheChosenModelFileIsGone() {
+    models.useCustom()
+    models.customFile().delete()
+    models.chooseDownloaded(WhisperModels.Model.TINY)
+    assertEquals(WhisperModels.Model.TINY.id, models.chosenId())
+  }
 }
