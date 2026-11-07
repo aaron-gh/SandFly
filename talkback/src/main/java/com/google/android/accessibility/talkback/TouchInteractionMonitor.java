@@ -116,6 +116,7 @@ import com.google.android.accessibility.talkback.gesture.SyntheticTouches;
 import com.google.android.accessibility.talkback.gesture.TapToTypeTracker;
 import com.google.android.accessibility.talkback.gesture.TwoFingerRotationTracker;
 import com.google.android.accessibility.talkback.gesture.TwoFingerScrubTracker;
+import com.google.android.accessibility.talkback.preference.PreferencesActivityUtils;
 import com.google.android.accessibility.talkback.scripting.Scripts;
 import com.google.android.accessibility.talkback.tutorial.TutorialHooks;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
@@ -1445,11 +1446,13 @@ public class TouchInteractionMonitor
 
   /**
    * Returns a four-finger tap on the top or bottom half of the screen in place of {@code tap} when
-   * that gesture runs a command, otherwise {@code tap}.
+   * that gesture runs a command, otherwise {@code tap}. In diagnosis mode it stays {@code tap},
+   * which prints the node tree.
    */
   private AccessibilityGestureEvent fourFingerTapByHalf(AccessibilityGestureEvent tap) {
     List<MotionEvent> events = tap.getMotionEvents();
-    if (events.isEmpty()) {
+    if (events.isEmpty()
+        || PreferencesActivityUtils.isDiagnosisModeOn(sharedPreferences, context.getResources())) {
       return tap;
     }
     MotionEvent last = events.get(events.size() - 1);
