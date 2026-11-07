@@ -70,6 +70,36 @@ class SettingsIndexTest {
   }
 
   @Test
+  fun screensWithMultiSelectSettingsAreRead() {
+    val keys = entries.map { it.key }.toSet()
+    assertTrue(context.getString(R.string.pref_speaker_devices_key) in keys)
+    assertTrue(context.getString(R.string.pref_selector_actions_key) in keys)
+  }
+
+  @Test
+  fun anOptionOfAnItemIsFoundOnlyWhileTheItemIsInTheList() {
+    val prefs = SharedPreferencesUtils.getSharedPreferences(context)
+    val option = context.getString(R.string.pref_text_entities_key)
+    val readingControls = context.getString(R.string.title_pref_category_selector_menu)
+    val sandflyMenu = context.getString(R.string.title_pref_category_context_menu)
+    fun screensWithOption() =
+      SettingsIndex.build(context).filter { it.key == option }.map { it.path.first() }.toSet()
+
+    // Actions is in the reading controls and not in the SandFly menu by default.
+    assertEquals(setOf(readingControls), screensWithOption())
+    try {
+      prefs
+        .edit()
+        .putBoolean(context.getString(R.string.pref_selector_actions_key), false)
+        .putBoolean(context.getString(R.string.pref_show_context_menu_custom_action_setting_key), true)
+        .commit()
+      assertEquals(setOf(sandflyMenu), screensWithOption())
+    } finally {
+      prefs.edit().clear().commit()
+    }
+  }
+
+  @Test
   fun settingIsFoundWithItsScreenAndCategory() {
     val entry = entries.firstOrNull { it.key == context.getString(R.string.pref_touch_stops_speech_key) }
     assertNotNull(entry)
