@@ -69,7 +69,7 @@
   <string name="summary_pref_allow_frequent_content_change_announcement">Hõlmab värskendusi allalaadimise, sõidujuhiste järgimise jm ajal. Kui see on välja lülitatud, esitatakse siiski värskendusi, kuid harvem.</string>
   <string name="title_pref_explore_by_touch">Puudutusega uurimine</string>
   <string name="title_pref_category_controls">Juhtelemendid</string>
-  <string name="title_pref_category_reduce_latency_summary">Need seaded muudavad SandFly reageerimise pärast ekraani puudutamist kiiremaks</string>
+  <string name="title_pref_category_reduce_latency_summary">Need seaded muudavad SandFlyi reageerimise pärast ekraani puudutamist kiiremaks</string>
   <string name="reset_latency_settings_title">Lähtesta kõik viivituse seaded</string>
   <string name="title_pref_single_tap">Üks puudutus aktiveerimiseks</string>
   <string name="summary_pref_single_tap">Aktiveerimiseks puudutage esile tõstetud üksust ühe korra. Kiirem navigeerimine võrreldes topeltpuudutusega.</string>
@@ -278,7 +278,7 @@
   <string name="pref_node_desc_order_title">Üksuse üksikasjade järjestus</string>
   <string name="pref_time_feedback_format_title">Ajavorming</string>
   <string name="title_pref_latency_reduction">Viivituse vähendamine</string>
-  <string name="talkback_latency_reduction_summary">SandFly reageerimise kiirendamine pärast ekraani puudutamist</string>
+  <string name="talkback_latency_reduction_summary">SandFlyi reageerimise kiirendamine pärast ekraani puudutamist</string>
   <string name="summary_pref_intonation">Kustutatud tähed loetakse ette kõrgema tooniga</string>
   <string name="title_pref_brailledisplay">Braille ekraan</string>
   <string name="title_pref_brailleime">Braille klaviatuur</string>
@@ -536,7 +536,7 @@
   <string name="summary_row">Liikumine tabeli ridade vahel</string>
   <string name="summary_column">Liikumine tabeli veergude vahel</string>
   <string name="summary_granularity_default">Korraga ühe üksuse lugemine</string>
-  <string name="summary_speech_rate">SandFly kõnelemiskiiruse muutmine</string>
+  <string name="summary_speech_rate">SandFlyi kõnelemiskiiruse muutmine</string>
   <string name="summary_selector_menu_verbosity">Võtmete, kasutusvihjete ja muu ettelugemise lubamine või keelamine</string>
   <string name="summary_selector_menu_punctuation">Muutke seda, kas kirjavahemärgid ja sümbolid loetakse ette</string>
   <string name="summary_language">Kõnesünteesi jaoks saadaolevate keelte hulgast muu keele valimine</string>
@@ -1353,10 +1353,10 @@
     <string name="title_pref_speech_control_sound">Esita heli enne teiste rakenduste kõnet</string>
     <string name="speech_control_apps_category">Rakendused</string>
     <string name="speech_control_no_apps">Ükski rakendus pole veel kõne esitamiseks luba küsinud.</string>
-    <string name="speech_control_ask_title">Kas lubada rakendusel <xliff:g id="app" example="Tasker">%1$s</xliff:g> SandFly kaudu kõnet esitada?</string>
+    <string name="speech_control_ask_title">Kas lubada rakendusel <xliff:g id="app" example="Tasker">%1$s</xliff:g> SandFlyi kaudu kõnet esitada?</string>
     <string name="speech_control_allow">Luba</string>
     <string name="speech_control_deny">Ära luba</string>
-    <string name="permission_speak_label">kõne esitamine SandFly kaudu</string>
+    <string name="permission_speak_label">kõne esitamine SandFlyi kaudu</string>
     <string name="permission_speak_description">Lubab rakendusel küsida luba teksti esitamiseks teie SandFlyi häälega. SandFly küsib teie kinnitust, enne kui rakendus saab kõnet esitada.</string>
     <string name="permission_braille_display_label">SandFlyi Braille ekraaniks olemise taotlemine</string>
     <string name="permission_braille_display_description">Lubab rakendusel taotleda SandFlyi Braille ekraaniks olemist. Kui lubate selle SandFlyis, saab rakendus lugeda kõike ekraanil olevat ja juhtida teie seadet. SandFly küsib esmalt teie kinnitust.</string>
@@ -1545,11 +1545,11 @@
         <item>@string/speech_stream_call</item>
     </string-array>
     <string name="title_pref_play_installer">Paista Google Playst installituna</string>
-    <string name="summary_pref_play_installer">Teatab teistele rakendustele, et SandFly installiti Google Playst. Mõned rakendused, näiteks mõned pangarakendused, lülitavad välja mujalt installitud juurdepääsetavusteenused. Vajab Shizukut ja muudab ainult seda, mida rakendustele SandFly päritolu kohta öeldakse.</string>
+    <string name="summary_pref_play_installer">Teatab teistele rakendustele, et SandFly installiti Google Playst. Mõned rakendused, näiteks mõned pangarakendused, lülitavad välja mujalt installitud juurdepääsetavusteenused. Vajab Shizukut ja muudab ainult seda, mida rakendustele SandFlyi päritolu kohta öeldakse.</string>
     <string name="summary_pref_play_installer_pending">Sees, kuid Google Playd pole veel installijana registreeritud. SandFly määrab selle, kui Shizuku on saadaval.</string>
     <string name="notification_list_show_all">Näita kõiki</string>
     <string name="notification_list_show_less">Näita vähem</string>
-    <string name="title_pref_quick_settings">Kasuta SandFly kiirseadeid</string>
+    <string name="title_pref_quick_settings">Kasuta SandFlyi kiirseadeid</string>
     <string name="title_pref_quick_settings_items">Kiirseadete paneel</string>
     <string name="quick_settings_title">Kiirseaded</string>
     <string name="quick_settings_wifi">WiFi</string>
@@ -1661,7 +1661,7 @@
     <string name="value_handwriting_wait_600">0,6 sekundit</string>
     <string name="value_handwriting_wait_800">0,8 sekundit</string>
     <string name="value_handwriting_wait_1000">1 sekund</string>
-    <string name="handwriting_keyboard_name">SandFly käekiri</string>
+    <string name="handwriting_keyboard_name">SandFlyi käekiri</string>
     <string name="handwriting_space">Tühik</string>
     <string name="handwriting_new_line">Uus rida</string>
     <string name="handwriting_tutorial_intro">Käekirjaklaviatuuri õpetus. Kirjutage ühe sõrmega ükskõik kuhu ekraanil. Kirjutatu sisestatakse, kui hetkeks peatute. Õpetuse lõpetamiseks pühkige kolme sõrmega alla.</string>
@@ -1688,16 +1688,16 @@
     <string name="shortcut_power_menu">Toitemenüü</string>
     <string name="shortcut_increase_media_volume">Meedia helitugevuse suurendamine</string>
     <string name="shortcut_decrease_media_volume">Meedia helitugevuse vähendamine</string>
-    <string name="title_pref_shortcut_edge_top_left_long_down">Pühkige pikalt vasakult ülaosast alla</string>
-    <string name="title_pref_shortcut_edge_top_right_long_down">Pühkige pikalt paremalt ülaosast alla</string>
-    <string name="title_pref_shortcut_edge_left_top_right">Pühkige vasakult servast paremale, ülemine pool</string>
-    <string name="title_pref_shortcut_edge_left_top_long_right">Pikk pühkimine paremale vasakust servast, ülemine pool</string>
-    <string name="title_pref_shortcut_edge_left_bottom_right">Pühkige vasakult servast paremale, alumisest poolest</string>
-    <string name="title_pref_shortcut_edge_left_bottom_long_right">Pikk pühkimine paremale vasakust servast, alumine pool</string>
-    <string name="title_pref_shortcut_edge_right_top_left">Pühkige vasakule paremast servast, ülemisest poolest</string>
-    <string name="title_pref_shortcut_edge_right_top_long_left">Pikk pühkimine vasakule paremast servast, ülemine pool</string>
-    <string name="title_pref_shortcut_edge_right_bottom_left">Pühkige vasakule paremast servast, alumisest poolest</string>
-    <string name="title_pref_shortcut_edge_right_bottom_long_left">Pikk pühkimine vasakule paremast servast, alumine pool</string>
+    <string name="title_pref_shortcut_edge_top_left_long_down">Ülevalt vasakult pikk alla pühkimine</string>
+    <string name="title_pref_shortcut_edge_top_right_long_down">Ülevalt paremalt pikk alla pühkimine</string>
+    <string name="title_pref_shortcut_edge_left_top_right">Vasakust servast paremale pühkimine, ülemine pool</string>
+    <string name="title_pref_shortcut_edge_left_top_long_right">Vasakust servast pikk paremale pühkimine, ülemine pool</string>
+    <string name="title_pref_shortcut_edge_left_bottom_right">Vasakust servast paremale pühkimine, alumine pool</string>
+    <string name="title_pref_shortcut_edge_left_bottom_long_right">Vasakust servast pikk paremale pühkimine, alumine pool</string>
+    <string name="title_pref_shortcut_edge_right_top_left">Paremast servast vasakule pühkimine, ülemine pool</string>
+    <string name="title_pref_shortcut_edge_right_top_long_left">Paremast servast pikk vasakule pühkimine, ülemine pool</string>
+    <string name="title_pref_shortcut_edge_right_bottom_left">Paremast servast vasakule pühkimine, alumine pool</string>
+    <string name="title_pref_shortcut_edge_right_bottom_long_left">Paremast servast pikk vasakule pühkimine, alumine pool</string>
     <string name="title_pref_edge_first_click_mm">Kaugus esimese klõpsuni</string>
     <string name="title_pref_edge_second_click_mm">Kaugus esimesest teise klõpsuni</string>
     <string name="value_distance_5mm">0,5 cm</string>
@@ -1810,7 +1810,7 @@
     <string name="title_pref_sandfly_wallpaper">Kasuta SandFlyd taustapildina</string>
     <string name="summary_pref_sandfly_wallpaper_set">SandFly on taustapilt</string>
     <string name="title_pref_wallpaper_image">Taustapildi pilt</string>
-    <string name="sandfly_wallpaper_description">Hoiab SandFly töös telefonides, mille akusäästja peatab taustarakendused.</string>
+    <string name="sandfly_wallpaper_description">Hoiab SandFlyi töös telefonides, mille akusäästja peatab taustarakendused.</string>
     <string name="wallpaper_image_set">Taustapildi pilt on määratud</string>
     <string name="wallpaper_image_failed">Seda pilti ei saa kasutada</string>
     <string name="title_pref_swipe_hold_time">Hoidmisaeg pärast pühkimist</string>
@@ -1858,10 +1858,10 @@
     <string name="braille_app_closed">Rakenduse otsing brailles suleti</string>
     <string name="braille_app_not_available">Rakenduse nime sisestamine brailles pole saadaval</string>
     <string name="title_clipboard_history_other_apps">Lisa koopiad teistest rakendustest</string>
-  <string name="shortcut_report_ai_response">AI vastusest teavitamine</string>
-  <string name="report_ai_response_title">AI vastus</string>
-  <string name="report_ai_response_description">AI vastus:\n%1$s\n\n</string>
-  <string name="report_no_ai_response">Pole AI vastust, millest teavitada</string>
+  <string name="shortcut_report_ai_response">AI-vastusest teavitamine</string>
+  <string name="report_ai_response_title">AI-vastus</string>
+  <string name="report_ai_response_description">AI-vastus:\n%1$s\n\n</string>
+  <string name="report_no_ai_response">Pole AI-vastust, millest teavitada</string>
   <string name="title_pref_hold_to_cancel">Tühistamine hoidmisega</string>
   <string name="summary_pref_hold_to_cancel">%1$s. Kui sõrme hoitakse üksusel nii kaua, ei aktiveeri tõstmine midagi.</string>
   <string name="value_hold_to_cancel_off">Väljas</string>
@@ -1918,9 +1918,9 @@
     <string name="title_pref_announce_full_charge">Täislaadimisest teatamine</string>
     <string name="battery_fully_charged">Aku on täis laetud</string>
     <string name="speech_control_locked_app"><xliff:g id="app" example="Tasker">%1$s</xliff:g>, kui seade on lukus</string>
-    <string name="speech_control_ask_locked_title">Kas lubada rakendusel <xliff:g id="app" example="Tasker">%1$s</xliff:g> SandFly kaudu kõnet esitada, kui seade on lukus?</string>
+    <string name="speech_control_ask_locked_title">Kas lubada rakendusel <xliff:g id="app" example="Tasker">%1$s</xliff:g> SandFlyi kaudu kõnet esitada, kui seade on lukus?</string>
     <string name="speech_control_ask_locked_text">See saab teksti öelda teie SandFlyi häälega, kui seade on lukus. Lubamiseks peab seade olema avatud. Seda saate muuta jaotises Seaded &gt; Kõne &gt; Luba teistel rakendustel kõnet esitada.</string>
-    <string name="permission_speak_when_locked_label">kõne esitamine SandFly kaudu, kui seade on lukus</string>
+    <string name="permission_speak_when_locked_label">kõne esitamine SandFlyi kaudu, kui seade on lukus</string>
     <string name="permission_speak_when_locked_description">Lubab rakendusel küsida luba teksti esitamiseks teie SandFlyi häälega, kui seade on lukus. SandFly küsib enne seda eraldi teie kinnitust.</string>
     <string name="title_pref_category_back_tap">Tagakülje puudutus</string>
     <string name="title_pref_keep_speech_off_casts">Kõne hoidmine telefonis ülekandmise ajal</string>

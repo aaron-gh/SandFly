@@ -37,7 +37,7 @@
     <string name="notification_private_format_message">Öeldakse privaatse märguande sisu asemel. Kohatäitjad: {app}, {category} ja {time}.</string>
     <string name="notification_category_voice">Hääl</string>
     <string name="notification_voice_title">Hääl</string>
-    <string name="notification_voice_sandfly">SandFly hääl</string>
+    <string name="notification_voice_sandfly">SandFlyi hääl</string>
     <string name="notification_detect_language_title">Keele tuvastamine</string>
     <string name="notification_detect_language_summary">Loeb iga märguande ette keeles, milles see on kirjutatud. Vajab valikut „Vaheta keelt automaatselt“ jaotises Kõne.</string>
     <string name="notification_sound_before_title">Heli enne märguandeid</string>
@@ -199,7 +199,7 @@
     <string name="notification_outcome_busy">Lugemata: loeti teine märguanne</string>
     <string name="notification_outcome_call">Teatatud kõnena</string>
     <string name="notification_outcome_waiting">Ootab lugemist</string>
-    <string name="notification_outcome_sandfly_voice">Loetud SandFly häälega: hääleprofiil nurjus</string>
+    <string name="notification_outcome_sandfly_voice">Loetud SandFlyi häälega: hääleprofiil nurjus</string>
     <string name="notification_outcome_silenced">Lugemata: kõne vaigistatud</string>
     <string name="notification_outcome_cancelled">Lugemata: peatatud enne algust</string>
     <string name="notification_outcome_too_many">Lugemata: liiga palju märguandeid ootel</string>
@@ -296,7 +296,7 @@
     <string name="notification_action_always_read">loe ka vaiksetel tundidel ja muul ajal, kui märguandeid ei loeta</string>
     <string name="notification_action_voice">loe hääleprofiiliga</string>
     <string name="notification_action_voice_value">loe profiiliga <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
-    <string name="notification_action_voice_sandfly">loe SandFly häälega</string>
+    <string name="notification_action_voice_sandfly">loe SandFlyi häälega</string>
     <string name="notification_voice_removed">Eemaldatud hääleprofiil</string>
     <string name="notification_action_format_value">kasuta kõnevormingut <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
     <string name="notification_action_max_words_value">loe kuni <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
@@ -314,7 +314,7 @@
     <string name="shortcut_stop_notification">Peata märguande lugemine</string>
     <string name="notification_test_posting">5 sekundi pärast tuleb testmärguanne</string>
     <string name="notification_test_not_allowed">Luba esmalt SandFlyl märguandeid kuvada</string>
-    <string name="notification_test_content_title">SandFly test</string>
+    <string name="notification_test_content_title">SandFlyi test</string>
     <string name="notification_test_content_text">See on testmärguanne, mis loetakse ette teie märguandeseadete järgi. 123456</string>
     <string name="notification_automation_on">Lülita märguannete ettelugemine sisse</string>
     <string name="notification_automation_off">Lülita märguannete ettelugemine välja</string>

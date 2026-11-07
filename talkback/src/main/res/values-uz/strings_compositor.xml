@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="talkback_on">SandFly yoniq</string>
-  <string name="talkback_disabled">SandFly o‘chiq</string>
+  <string name="talkback_disabled">SandFly oʻchiq</string>
   <string name="notification_type_beginning_of_field">Maydonning boshi</string>
   <string name="notification_type_end_of_field">Maydonning oxiri</string>
   <string name="notification_type_selection_mode_on">Tanlash rejimi yoniq</string>
-  <string name="notification_type_selection_mode_off">Tanlash rejimi o‘chiq</string>
+  <string name="notification_type_selection_mode_off">Tanlash rejimi oʻchiq</string>
   <string name="notification_type_selection_cleared">Matn tanlash tozalandi</string>
   <string name="notification_category_call">Chaqiruv</string>
   <string name="notification_category_msg">Xabar</string>
@@ -21,7 +21,7 @@
   <string name="notification_category_service">Xizmat</string>
   <string name="template_drawer_opened">%1$s menyusi</string>
   <string name="template_text_replaced">“%1$s” matni “%2$s” bilan almashtirildi</string>
-  <string name="template_text_removed">%1$s o‘chirib tashlandi</string>
+  <string name="template_text_removed"><xliff:g id="text">%1$s</xliff:g> oʻchirib tashlandi</string>
   <string name="template_text_cut">qirqib olindi: %1$s</string>
   <string name="template_text_pasted">joylandi, %1$s</string>
   <string name="template_text_selected">belgilandi: %1$s</string>
@@ -38,9 +38,9 @@
   </plurals>
   <string name="template_node_error_with_error_message">Xatolik: %1$s</string>
   <string name="value_gridview">Jadval</string>
-  <string name="value_listview">Ro‘yxat</string>
+  <string name="value_listview">Roʻyxat</string>
   <string name="value_tabwidget">Darchalar paneli</string>
-  <string name="value_spinner">Pastga ochiladigan ro‘yxat</string>
+  <string name="value_spinner">Pastga ochiladigan roʻyxat</string>
   <string name="value_checkbox">Belgilash katakchasi</string>
   <string name="value_radio_button">Tanlash tugmasi</string>
   <string name="value_button">Tugma</string>
@@ -50,14 +50,14 @@
   <string name="value_edit_box_editing">Tahrirlanmoqda</string>
   <string name="value_image">Rasm</string>
   <string name="value_unlabelled">Yorliqsiz</string>
-  <string name="value_pager">Bir nechta sahifali ko‘rinish</string>
+  <string name="value_pager">Bir nechta sahifali koʻrinish</string>
   <string name="value_pager_page">Sahifa</string>
   <string name="value_progress_bar">Jarayon indikatori</string>
-  <string name="value_webview">Vebdagi ko‘rinishi</string>
+  <string name="value_webview">Vebdagi koʻrinishi</string>
   <string name="value_password">parol</string>
   <string name="value_sliding_drawer_opened">Tortma panel ochildi</string>
   <string name="value_options_menu_open">Parametrlar</string>
-  <string name="value_text_cleared">Matn o‘chirib tashlandi</string>
+  <string name="value_text_cleared">Matn oʻchirib tashlandi</string>
   <string name="value_text_max_length">Belgilar soni maksimal miqdorga yetdi</string>
   <string name="value_selected">tanlandi</string>
   <string name="value_not_selected">tanlanmagan</string>
@@ -65,11 +65,11 @@
   <string name="value_not_checked">belgilanmadi</string>
   <string name="value_on">yoniq</string>
   <string name="value_off">yoqilmagan</string>
-  <string name="value_disabled">o‘chirib qo‘yildi</string>
+  <string name="value_disabled">oʻchirib qoʻyildi</string>
   <string name="value_enabled">yoqilgan</string>
   <string name="value_read_only">faqat oʻqish</string>
   <string name="value_expanded">yoyildi</string>
-  <string name="value_collapsed">yig‘ildi</string>
+  <string name="value_collapsed">yigʻildi</string>
   <string name="value_double_tap">Ikki marta bosish</string>
   <string name="value_single_tap">Bosish</string>
   <string name="value_double_tap_xr">Juftlab, chimdish</string>
@@ -191,7 +191,7 @@
   <string name="drag_dropped">Tortilgan element tashlandi</string>
   <string name="drag_cancelled">Tortish bekor qilindi</string>
     <string name="template_brightness_changed">Yorqinlik <xliff:g id="percent">%1$d</xliff:g> foiz.</string>
-    <string name="brightness_needs_permission">Yorqinlikni o\'zgartirish uchun tizim sozlamalarini o\'zgartirishga ruxsat bering.</string>
-    <string name="brightness_adaptive_on">Yorqinlikni o\'zgartirish uchun moslashtirilgan yorqinlikni o\'chiring.</string>
+    <string name="brightness_needs_permission">Yorqinlikni oʻzgartirish uchun tizim sozlamalarini oʻzgartirishga ruxsat bering.</string>
+    <string name="brightness_adaptive_on">Yorqinlikni oʻzgartirish uchun moslashtirilgan yorqinlikni oʻchiring.</string>
     <string name="telegram_replying_to"><xliff:g id="name" example="Ronan">%1$s</xliff:g> ga javob: <xliff:g id="text" example="What other features do you like?">%2$s</xliff:g></string>
 </resources>

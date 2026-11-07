@@ -15,19 +15,19 @@
   <string name="manage_label">Կառավարել պիտակը</string>
   <string name="label_manager_no_packages_message">Այս պահին հատուկ պիտակներ չկան։\n\n<b>Ինչպես ստեղծել հատուկ պիտակ</b>\nԲացեք պատկերը և SandFly-ի ընտրացանկից ավելացրեք պիտակ։</string>
   <string name="label_manager_timestamp_text">Վերջին անգամ փոփոխվել է %1$s-ին</string>
-  <string name="search_mode_cancel">Որոնումը չեղարկվեց:</string>
+  <string name="search_mode_cancel">Որոնումը չեղարկվեց։</string>
   <string name="notification_type_status_started">Մեկնարկ</string>
   <string name="notification_type_status_stopped">Դադարեցված է</string>
   <string name="notification_battery_saver_mode">Մարտկոցի տնտեսումը միացված է</string>
   <string name="template_no_text_selected">Տեքստ չի ընտրվել</string>
-  <string name="template_charging">Լիցքավորումը՝ %1$s Մարտկոցի լիցքավորման աստիճանը՝ %2$s տոկոս:</string>
+  <string name="template_charging">Լիցքավորումը՝ <xliff:g id="changing_status">%1$s</xliff:g> Մարտկոցի լիցքավորման աստիճանը՝ <xliff:g id="battery_level">%2$s</xliff:g> տոկոս։</string>
   <string name="template_charging_lite">Լիցքավորումը %1$s</string>
   <string name="template_language_options_menu_item">%1$s (%2$s)</string>
-  <string name="value_ringer_vibrate">Զանգակի թրթռոց:</string>
-  <string name="value_ringer_silent">Զանգակը լռեցված է:</string>
-  <string name="value_screen_on">Էկրանը միացվում է:</string>
-  <string name="value_screen_off">Էկրանն անջատված է:</string>
-  <string name="value_device_unlocked">Սարքն ապակողպված է:</string>
+  <string name="value_ringer_vibrate">Զանգակի թրթռոց։</string>
+  <string name="value_ringer_silent">Զանգակը լռեցված է։</string>
+  <string name="value_screen_on">Էկրանը միացվում է։</string>
+  <string name="value_screen_off">Էկրանն անջատված է։</string>
+  <string name="value_device_unlocked">Սարքն ապակողպված է։</string>
   <string name="title_pref_speech_volume">Արտասանության բարձրություն</string>
   <string name="title_pref_verbose_scroll_announcement">Միշտ հնչեցնել ցանկի կետերի թիվը</string>
   <string name="summary_pref_verbose_scroll_announcement">Յուրաքանչյուր ոլորումից հետո ասում է, թե որ տարրերն են ցուցադրվում</string>
@@ -124,8 +124,8 @@
   <string name="keycombo_menu_view_system_keyboard_shortcuts">Դիտել համակարգի ստեղնային դյուրանցումները</string>
   <string name="keycombo_menu_choose_trigger_modifier">Ընտրեք SandFly-ի ստեղնը</string>
   <string name="keycombo_menu_announce_new_trigger_modifier">SandFly-ի ստեղն այժմ %1$s-ն է։</string>
-  <string name="keycombo_menu_announce_active_keymap">%1$s ստեղների դասավորությունն այժմ ակտիվ է:</string>
-  <string name="keycombo_menu_announce_reset_keymap">Ստեղների դասավորությունը վերակայվել է:</string>
+  <string name="keycombo_menu_announce_active_keymap"><xliff:g id="keymap_name" example="Default keymap">%1$s</xliff:g> ստեղների դասավորությունն այժմ ակտիվ է։</string>
+  <string name="keycombo_menu_announce_reset_keymap">Ստեղների դասավորությունը վերակայվել է։</string>
   <string name="keycombo_announce_shortcut_not_supported">Դյուրանցումը չի աջակցվում</string>
   <string name="value_new_keymap">SandFly-ի ստեղների դասավորություն</string>
   <string name="keycombo_menu_category_navigation">Նավիգացիայի գործողություններ</string>
@@ -243,7 +243,7 @@
   <string name="keycombo_menu_web_navigate_to_next_table_bounds">Անցնել աղյուսակի վերջ</string>
   <string name="keycombo_menu_web_navigate_to_previous_table_bounds">Անցնել աղյուսակի սկիզբ</string>
   <string name="keycombo_assign_dialog_message">Ստեղնային դյուրանցում՝</string>
-  <string name="keycombo_assign_dialog_navigation_reminder">Դյուրանցումը մաքրելու համար սեղմեք Backspace ստեղնը, պահելու համար՝ Մուտք (Enter), իսկ չեղարկելու համար՝ Escape ստեղնը:</string>
+  <string name="keycombo_assign_dialog_navigation_reminder">Դյուրանցումը մաքրելու համար սեղմեք Backspace ստեղնը, պահելու համար՝ Մուտք (Enter), իսկ չեղարկելու համար՝ Escape ստեղնը։</string>
   <string name="keycombo_assign_dialog_clear">Մաքրել դյուրանցումը</string>
   <string name="cannot_copy_feedback">Տեքստ ընտրված չէ։</string>
   <string name="cannot_paste_feedback">Տեքստ պատճենված չէ։</string>
@@ -272,7 +272,7 @@
   <string name="keycombo_key_arrow_down">Սլաքը ներքև</string>
   <string name="keycombo_key_backspace">Backspace</string>
   <string name="override_keycombo">Այս ստեղնն արդեն օգտագործվում է</string>
-  <string name="override_keycombo_message_two_params">Ստեղների այս համակցությունն օգտագործվում է «%1$s» գործողության համար: Ջնջե՞լ այն ու սահմանել այս դյուրանցումը «%2$s» գործողության համար:</string>
+  <string name="override_keycombo_message_two_params">Ստեղների այս համակցությունն օգտագործվում է «<xliff:g>%1$s</xliff:g>» գործողության համար։ Ջնջե՞լ այն ու սահմանել այս դյուրանցումը «<xliff:g>%2$s</xliff:g>» գործողության համար։</string>
   <string name="title_pref_intonation">Օգտագործել բարձրության փոփոխություններ</string>
   <string name="title_pref_keyboard_echo">Ստեղնաշարի արձագանք</string>
   <string name="pref_node_desc_order_title">Տարրի մանրամասների կարգը</string>
@@ -283,7 +283,7 @@
   <string name="title_pref_brailledisplay">Բրայլյան էկրան</string>
   <string name="title_pref_brailleime">Բրայլյան ստեղնաշար</string>
   <string name="summary_pref_brailleime_disabled">Բրայլյան ստեղնաշարը չի աջակցվում</string>
-  <string name="title_pref_speech_footer">Մատչելիության ձայնը ցանկացած էկրանից փոխելու համար 1 մատը պահեք էկրանին և սեղմեք ձայնի բարձրացման կամ ձայնի իջեցման կոճակը:</string>
+  <string name="title_pref_speech_footer">Մատչելիության ձայնը ցանկացած էկրանից փոխելու համար 1 մատը պահեք էկրանին և սեղմեք ձայնի բարձրացման կամ ձայնի իջեցման կոճակը։</string>
   <string name="title_pref_vibration">Թրթռոցով արձագանք</string>
   <string name="title_pref_soundback">Ձայնային արձագանք</string>
   <string name="title_pref_use_audio_focus">Այլ հավելվածների ձայնի իջեցում</string>
@@ -432,7 +432,7 @@
   <string name="shortcut_show_learn_mode_page">Սովորել ստեղնային դյուրանցումները</string>
   <string name="shortcut_announce_phonetic_pronunciation">Ընտրված տարրի համար հնչեցնել տառերը հնչյունային արտասանությամբ</string>
   <string name="shortcut_cycle_punctuation_verbosity">Կետադրական նշանների հնչեցման մակարդակը</string>
-  <string name="title_local_breakout_no_items">Ցանկի տարրեր չկան:</string>
+  <string name="title_local_breakout_no_items">Ցանկի տարրեր չկան։</string>
   <string name="title_web_breakout_next_section">Հաջորդ բաժինը</string>
   <string name="title_web_breakout_next_list">Հաջորդ ցուցակը</string>
   <string name="title_web_breakout_next_control">Հաջորդ կարգավորիչը</string>
@@ -657,7 +657,7 @@
   <string name="label_import_dialog_message">Ընտրեք՝ հակասության դեպքում փոխարինել, թե պահպանել առկա պիտակները</string>
   <string name="label_import_dialog_skip">Պահպանել</string>
   <string name="label_import_dialog_override">Վրագրել</string>
-  <string name="label_export_empty">Արտահանելու ոչինչ չկա: Դուք պիտակներ չեք ավելացրել</string>
+  <string name="label_export_empty">Արտահանելու ոչինչ չկա։ Դուք պիտակներ չեք ավելացրել</string>
   <string name="label_export_failed">Չհաջողվեց արտահանել պիտակը</string>
   <string name="label_import_failed">Չհաջողվեց ներմուծել պիտակը</string>
   <string name="label_import_succeeded">{count,plural, =0{Նոր պիտակներ չկան}=1{Թարմացվել է # պիտակ}one{Թարմացվել է # պիտակ}other{Թարմացվել է # պիտակ}}</string>
@@ -670,13 +670,13 @@
   <string name="button_disable_all_events">Անջատել բոլորը</string>
   <string name="button_enable_all_events">Միացնել բոլորը</string>
   <string name="dialog_title_disable_exploration">Անջատե՞լ Հպումով ուսումնասիրումը</string>
-  <string name="dialog_message_disable_exploration">Իսկապե՞ս ուզում եք անջատել «Հպումով ուսումնասիրում» գործիքը:\n\nՁեր սարքն այլևս չի արձագանքի կարճուղի ժեստերին կամ ձայնային տարրերին՝ էկրանին հպվելու ժամանակ:</string>
-  <string name="dialog_title_enable_tree_debug">Միացնե՞լ Հանգույցի ծառի կարգաբերումը:</string>
-  <string name="dialog_message_enable_tree_debug">Իսկապե՞ս ուզում եք միացնել հանգույցի ծառի կարգաբերումը:\n\nՀանգույցի ծառի կարգաբերումը ձեր էկրանի բովանդակությունը կարտապատկերի սարքի գրանցամատյաններում, որոնք կարող են ընթերցվել այլ ծրագրերի կողմից:</string>
+  <string name="dialog_message_disable_exploration">Իսկապե՞ս ուզում եք անջատել «Հպումով ուսումնասիրում» գործիքը։\n\nՁեր սարքն այլևս չի արձագանքի կարճուղի ժեստերին կամ ձայնային տարրերին՝ էկրանին հպվելու ժամանակ։</string>
+  <string name="dialog_title_enable_tree_debug">Միացնե՞լ Հանգույցի ծառի կարգաբերումը։</string>
+  <string name="dialog_message_enable_tree_debug">Իսկապե՞ս ուզում եք միացնել հանգույցի ծառի կարգաբերումը։\n\nՀանգույցի ծառի կարգաբերումը ձեր էկրանի բովանդակությունը կարտապատկերի սարքի գրանցամատյաններում, որոնք կարող են ընթերցվել այլ ծրագրերի կողմից։</string>
   <string name="dialog_title_enable_tree_debug_gesture">Վերանշանակե՞լ 4 մատով եռակի հպման ժեստը</string>
   <string name="dialog_message_enable_tree_debug_gesture">Եթե սա հաստատեք, 4 մատով եռակի հպման ժեստը կնշանակվի հանգույցի ծառի տպմանը։\n\nԵթե չեղարկեք այս գործողությունը, հանգույցի ծառի վրիպազերծումը կմիացվի, սակայն ժեստ չի նշանակվի։ Դուք պետք է այն կարգավորեք ժեստերի կարգավորումներում։\n\nՀանգույցի ծառի վրիպազերծումն անջատելու դեպքում ժեստի համար նշանակված նախորդ գործողությունը, եթե այդպիսին առկա է, չի վերականգնվի։</string>
-  <string name="dialog_title_enable_performance_stats">Միացնե՞լ գործունեության վերաբերյալ վիճակագրությունը:</string>
-  <string name="dialog_message_enable_performance_stats">Միացնե՞լ գործունեության վերաբերյալ վիճակագրությունը:\n\nՎիճակագրությունը միացնելու դեպքում կարող է ավելանալ հիշողության և մարտկոցի լիցքի օգտագործումը:</string>
+  <string name="dialog_title_enable_performance_stats">Միացնե՞լ գործունեության վերաբերյալ վիճակագրությունը։</string>
+  <string name="dialog_message_enable_performance_stats">Միացնե՞լ գործունեության վերաբերյալ վիճակագրությունը։\n\nՎիճակագրությունը միացնելու դեպքում կարող է ավելանալ հիշողության և մարտկոցի լիցքի օգտագործումը։</string>
   <string name="dialog_title_extend_log_level">Միացնե՞լ մատյանների մանրամասն վարումը</string>
   <string name="dialog_message_extend_log_level">Մատյանների մանրամասն վարումն օգնում է վրիպազերծման ժամանակ, սակայն դրա արդյունքում անձնական տեղեկությունները կարող են հայտնվել համակարգային մատյանի բուֆերում։\n\n  Իսկապե՞ս ուզում եք միացնել գործառույթը։</string>
   <string name="dialog_ok_buggon_extend_log_level">Այո, միացնել</string>
@@ -730,7 +730,7 @@
   <string name="template_tv_remote_mode_started">%1$s ռեժիմնը գործարկվել է</string>
   <string name="template_tv_remote_mode_ended">%1$s ռեժիմն ավարտվել է</string>
   <string name="value_tv_remote_mode_seek_control">Սահիչի ռեժիմ</string>
-  <string name="value_hint_tv_remote_mode_seek_control">Սեղմեք սլաքի ստեղները՝ արժեքը փոխելու համար կամ սեղմեք ընտրել՝ ավարտելու համար:</string>
+  <string name="value_hint_tv_remote_mode_seek_control">Սեղմեք սլաքի ստեղները՝ արժեքը փոխելու համար կամ սեղմեք ընտրել՝ ավարտելու համար։</string>
   <string name="reset_user_language_preference">Կանխադրված</string>
   <string name="title_pref_selector_speech_rate">Խոսքի արագությունը</string>
   <string name="title_pref_selector_verbosity">Մանրամասնում</string>
@@ -820,7 +820,7 @@
   <string name="training_navigate_up">Անցնել վերև</string>
   <string name="training_tip">Խորհուրդ</string>
   <string name="tv_training_overview_step_title">Ինչպես է աշխատում SandFly-ը</string>
-  <string name="tv_training_overview_step_summary">SandFly-ը էկրանի ընթերցող է, որը հիմնված է Google-ի TalkBack-ի վրա: Այն բարձրաձայն կարդում է էկրանի տեքստը և տալիս է խոսակցական կարծիք, որպեսզի կարողանաք օգտագործել ձեր սարքը՝ առանց էկրանին նայելու:\n\nՄիացված SandFly-ի դեպքում էկրանին ընտրված տարրը բարձրաձայն արտասանվում է, երբեմն ավելացվում է լրացուցիչ տեղեկատվություն կամ համատեքստ:\n\nՇարունակելու համար սեղմեք Ընտրել: Ընտրել կոճակը գտնվում է ուղղորդման վահանակի կենտրոնում, որը մեծ, շրջանաձև կոճակն է ձեր հեռակառավարման վահանակի վերևում:</string>
+  <string name="tv_training_overview_step_summary">SandFly-ը էկրանի ընթերցող է, որը հիմնված է Google-ի TalkBack-ի վրա։ Այն բարձրաձայն կարդում է էկրանի տեքստը և տալիս է խոսակցական կարծիք, որպեսզի կարողանաք օգտագործել ձեր սարքը՝ առանց էկրանին նայելու։\n\nՄիացված SandFly-ի դեպքում էկրանին ընտրված տարրը բարձրաձայն արտասանվում է, երբեմն ավելացվում է լրացուցիչ տեղեկատվություն կամ համատեքստ։\n\nՇարունակելու համար սեղմեք Ընտրել։ Ընտրել կոճակը գտնվում է ուղղորդման վահանակի կենտրոնում, որը մեծ, շրջանաձև կոճակն է ձեր հեռակառավարման վահանակի վերևում։</string>
   <string name="tv_training_remote_step_title">Ինչպես օգտվել հեռակառավարման վահանակից</string>
   <string name="tv_training_remote_step_summary">Էկրանով շարժվելու համար օգտագործեք հեռակառավարման վահանակի վերևում գտնվող նավիգացիայի կլոր կոճակը։ Ընտրելու համար սեղմեք նավիգացիայի կոճակի կենտրոնի վրա։\n\nՁախ կողմից երկրորդ շարքում գտնվում է «Հետ» կոճակը։ Աջ կողմում՝ ձայնային Օգնականի կոճակը։\n\nՁախ կողմից երրորդ շարքում գլխավոր էկրանի կոճակն է։ Աջ կողմում ձայնի անջատման կոճակն է։\n\nՁախ կողմից չորրորդ շարքում YouTube-ի դյուրանցումն է։ Աջ կողմում գտնվում է Netflix-ի դյուրանցումը։\n\nՆերքևի շարքում կան երկու փոքր կոճակներ։ Ձախը սնուցման կոճակն է։ Աջը բացում է հեռուստացույցի ներածման ընտրացանկը։\n\nՁայնի ուժգնության կոճակները գտնվում են հեռակառավարման վահանակի աջ կողմում։\n\nՇարունակելու համար սեղմեք «Ընտրել»։</string>
   <string name="tv_training_shortcut_step_title">SandFly-ի դյուրանցում</string>
@@ -885,7 +885,7 @@
   <string name="split_tap_everywhere_title">Կրկնակի հպում ամենուր</string>
   <string name="split_tap_everywhere_text">Այժմ դուք կարող եք օգտագործել տրոհված հպումն ամենուր՝ տարրեր ակտիվացնելու համար, նույնիսկ ստեղնաշարից դուրս։ Այն օգտագործելու համար մեկ մատով ուսումնասիրեք էկրանին, ապա՝ առանց առաջին մատը բարձրացնելու, մյուս մատով հպեք՝ ընթացիկ նշված տարրն ակտիվացնելու համար։</string>
   <string name="keyboard_enhanced_keymap_title">Ստեղնաշար․ ստեղների բարելավված շարվածք</string>
-  <string name="keyboard_enhanced_keymap_text">SandFly-ն այժմ ունի «Ընդլայնված ստեղնաշարի քարտեզ» ֆիզիկական ստեղնաշարերի համար, որը պարունակում է մի շարք նոր հրամաններ և դյուրանցումներ: Այս բարելավումը ներառում է «զննման ռեժիմ»՝ ավելի արդյունավետ վեբ նավարկության, SandFly օգտատերերի համար, որոնք հիմնված են ֆիզիկական ստեղնաշարի վրա, նավիգացիան և փոխազդեցությունը: Դուք կարող եք անցնել «Ընդլայնված ստեղնաշարի» <xliff:g id="settings_path">%1$s</xliff:g>:\n\nԵթե օգտագործում եք Բրայլյան էկրան, կարող եք նաև օգտագործել զննարկման ռեժիմի նոր դյուրանցումներ՝ բովանդակությունը անմիջապես ձեր Բրայլի էկրանից անցնելու համար: Բրայլի էկրանի որոշ դյուրանցումներ փոխվել են այս փոփոխությանը համապատասխանելու համար: Դուք կարող եք տեսնել Բրայլի էկրանի բոլոր դյուրանցումների ցանկը <xliff:g id="braille_display_settings_path">%2$s</xliff:g>-ում:</string>
+  <string name="keyboard_enhanced_keymap_text">SandFly-ն այժմ ունի «Ընդլայնված ստեղնաշարի քարտեզ» ֆիզիկական ստեղնաշարերի համար, որը պարունակում է մի շարք նոր հրամաններ և դյուրանցումներ։ Այս բարելավումը ներառում է «զննման ռեժիմ»՝ ավելի արդյունավետ վեբ նավարկության, SandFly օգտատերերի համար, որոնք հիմնված են ֆիզիկական ստեղնաշարի վրա, նավիգացիան և փոխազդեցությունը։ Դուք կարող եք անցնել «Ընդլայնված ստեղնաշարի» <xliff:g id="settings_path">%1$s</xliff:g>:\n\nԵթե օգտագործում եք Բրայլյան էկրան, կարող եք նաև օգտագործել զննարկման ռեժիմի նոր դյուրանցումներ՝ բովանդակությունը անմիջապես ձեր Բրայլի էկրանից անցնելու համար։ Բրայլի էկրանի որոշ դյուրանցումներ փոխվել են այս փոփոխությանը համապատասխանելու համար։ Դուք կարող եք տեսնել Բրայլի էկրանի բոլոր դյուրանցումների ցանկը <xliff:g id="braille_display_settings_path">%2$s</xliff:g>-ում։</string>
   <string name="keyboard_shortcuts_link">SandFly-ի կարգավորումներ &gt; Ստեղնային դյուրանցումներ</string>
   <string name="keyboard_shortcuts_link_tts">SandFly-ի կարգավորումներ, ապա Ստեղնային դյուրանցումներ</string>
   <string name="braille_display_settings_link">Բրայլյան էկրանի կարգավորումներ</string>
@@ -1047,7 +1047,7 @@
   <string name="image_description_playground_title">Ստացեք պատկերների նկարագրությունները</string>
   <string name="image_description_playground_content_one">Երբ կենտրոնացած եք որևէ պատկերի վրա, բացեք SandFly-ի ընտրացանկը և ընտրեք «Նկարագրել պատկերը»։\n\nՆերքևում մեկ լուսանկար է։ Փորձեք ստանալ դրա նկարագրությունը։</string>
   <string name="image_description_playground_content_two">Պատկերների նկարագրության կարգավորումները կարող եք ցանկացած պահի փոխել՝ SandFly-ի կարգավորումներ &gt; Պատկերների և էկրանի նկարագրություններ։</string>
-  <string name="image_description_playground_content_two_tts">Դուք ցանկացած ժամանակ կարող եք փոխել պատկերի նկարագրության կարգավորումները «SandFly-ի կարգավորումներ» › «Պատկերների և էկրանի նկարագրություններ» բաժնում:</string>
+  <string name="image_description_playground_content_two_tts">Դուք ցանկացած ժամանակ կարող եք փոխել պատկերի նկարագրության կարգավորումները «SandFly-ի կարգավորումներ» › «Պատկերների և էկրանի նկարագրություններ» բաժնում։</string>
   <string name="image_description_sample_image_content_description">Պատկերի նմուշ․ երեք մատով հպեք՝ SandFly-ի ընտրացանկը բացելու համար, և ընտրեք «Նկարագրել պատկերը»։</string>
   <string name="practice_gestures_title">Ժեստերի օգտագործման վարժություններ</string>
   <string name="practice_keyboard_gestures_title">Սովորեք ստեղնային դյուրանցումները</string>
@@ -1366,12 +1366,12 @@
     <string name="summary_pref_speech_control">Ձեր թույլատրած հավելվածները կարող են տեքստ հնչեցնել SandFly-ի ձայնով։ Երբ սարքը կողպված է, կարող են խոսել միայն այն հավելվածները, որոնց թույլատրել եք նաև կողպված սարքի համար։</string>
     <string name="title_pref_speech_control_sound">Ձայն նվագարկել այլ հավելվածների հնչեցումից առաջ</string>
     <string name="speech_control_apps_category">Հավելվածներ</string>
-    <string name="speech_control_no_apps">Ոչ մի հավելված դեռ չի խնդրել խոսել:</string>
-    <string name="speech_control_ask_title">Թույլատրե՞լ <xliff:g id="app" example="Tasker">%1$s</xliff:g>-ին խոսել SandFly-ի միջոցով:</string>
+    <string name="speech_control_no_apps">Ոչ մի հավելված դեռ չի խնդրել խոսել։</string>
+    <string name="speech_control_ask_title">Թույլատրե՞լ <xliff:g id="app" example="Tasker">%1$s</xliff:g>-ին խոսել SandFly-ի միջոցով։</string>
     <string name="speech_control_allow">Թույլատրել</string>
     <string name="speech_control_deny">Չթույլատրել</string>
     <string name="permission_speak_label">խոսել SandFly-ի միջոցով</string>
-    <string name="permission_speak_description">Թույլ է տալիս հավելվածին խնդրել տեքստ ասել ձեր SandFly ձայնով: SandFly հարցնում է ձեզ, նախքան հավելվածը կարող է խոսել:</string>
+    <string name="permission_speak_description">Թույլ է տալիս հավելվածին խնդրել տեքստ ասել ձեր SandFly ձայնով։ SandFly հարցնում է ձեզ, նախքան հավելվածը կարող է խոսել։</string>
     <string name="permission_braille_display_label">SandFly-ի համար բրայլյան էկրան լինելու հարցում</string>
     <string name="permission_braille_display_description">Թույլ է տալիս հավելվածին խնդրել դառնալ SandFly-ի բրայլյան էկրան։ Եթե թույլ տաք SandFly-ում, այն կկարողանա կարդալ էկրանի ամբողջ բովանդակությունը և կառավարել ձեր սարքը։ SandFly-ը նախ հարցնում է ձեզ։</string>
     <string name="title_pref_phonetic_letters_mode">Տառերի հնչյունական արտասանություն</string>
@@ -1407,7 +1407,7 @@
     <string name="title_pref_notification_parts">Ծանուցման մանրամասները</string>
     <string name="title_pref_play_installer">Ցույց տալ որպես Google Play-ից տեղադրված</string>
     <string name="summary_pref_play_installer">Այլ հավելվածներին հայտնում է, որ SandFly-ը տեղադրվել է Google Play-ից։ Որոշ հավելվածներ, օրինակ՝ որոշ բանկային հավելվածներ, անջատում են այլ աղբյուրներից տեղադրված հատուկ գործառույթների ծառայությունները։ Պահանջում է Shizuku և փոխում է միայն այն, ինչ հավելվածներին հայտնվում է SandFly-ի աղբյուրի մասին։</string>
-    <string name="summary_pref_play_installer_pending">Միացված է, բայց Google Play-ը դեռ գրանցված չէ որպես տեղադրող: SandFly սահմանում է այն, երբ հասանելի է Shizuku:</string>
+    <string name="summary_pref_play_installer_pending">Միացված է, բայց Google Play-ը դեռ գրանցված չէ որպես տեղադրող։ SandFly սահմանում է այն, երբ հասանելի է Shizuku:</string>
     <string name="notification_part_title">Վերնագիր</string>
     <string name="notification_part_text">Տեքստ</string>
     <string name="notification_part_app">Հավելվածի անունը</string>
@@ -1532,7 +1532,7 @@
     <string name="title_pref_speaker_devices">Հեռախոսի բարձրախոս այս սարքերով</string>
     <string name="summary_pref_speaker_devices_none">Ոչ մեկը</string>
     <string name="summary_pref_speaker_devices_no_devices">Bluetooth կամ լարային սարքեր դեռ միացված չեն</string>
-    <string name="pref_reduce_window_delay_summary">SandFly ավելի արագ է կարդում նոր էկրանները, երբ անիմացիաներն անջատված են: Սա անջատում է անիմացիաները ամբողջ հեռախոսի համար:</string>
+    <string name="pref_reduce_window_delay_summary">SandFly ավելի արագ է կարդում նոր էկրանները, երբ անիմացիաներն անջատված են։ Սա անջատում է անիմացիաները ամբողջ հեռախոսի համար։</string>
     <string name="dialog_message_detailed_ai_description">Ընտրված պատկերներն ուղարկվում են Google-ի Gemini API՝ նկարագրելու համար։ Երբ «Սարքում աշխատող ԱԲ»-ն միացված է, դրանք նկարագրվում են այս հեռախոսում և չեն ուղարկվում։\n\nԱնվճար API բանալու դեպքում Google-ը կարող է պահել ստացածը, օգտագործել այն իր արտադրանքը բարելավելու համար և տալ մարդկանց այն վերանայելու։ Գեներատիվ ԱԲ-ն փորձնական է, ուստի սխալներ կանի։ Գործում են <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>։</string>
     <string name="dialog_message_detailed_ai_promotion">Պատկերների մանրամասն նկարագրությունները ստեղծվում են գեներատիվ ԱԲ-ի միջոցով։ Ընտրված պատկերներն ուղարկվում են Google-ի Gemini API՝ նկարագրելու համար։ Երբ «Սարքում աշխատող ԱԲ»-ն միացված է, դրանք նկարագրվում են այս հեռախոսում և չեն ուղարկվում։\n\nԱնվճար API բանալու դեպքում Google-ը կարող է պահել ստացածը, օգտագործել այն իր արտադրանքը բարելավելու համար և տալ մարդկանց այն վերանայելու։ Գեներատիվ ԱԲ-ն փորձնական է, ուստի սխալներ կանի։ Պատկերների մանրամասն նկարագրությունները ցանկացած պահի կարող եք անջատել SandFly-ի կարգավորումներում։\n\nԳործում են <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>։</string>
     <string name="dialog_message_screen_overview_promotion">Էկրանի սքրինշոթն ուղարկվում է Google-ի Gemini API՝ նկարագրելու համար, ինչը մի քանի վայրկյան է տևում։ Երբ «Սարքում աշխատող ԱԲ»-ն միացված է, այն նկարագրվում է այս հեռախոսում և չի ուղարկվում։\n\nԱնվճար API բանալու դեպքում Google-ը կարող է պահել ստացածը, օգտագործել այն իր արտադրանքը բարելավելու համար և տալ մարդկանց այն վերանայելու։ Գեներատիվ ԱԲ-ն փորձնական է, ուստի սխալներ կանի։ Գործում են <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>։</string>
@@ -1550,11 +1550,11 @@
     <string name="handwriting_app_not_opened">Չհաջողվեց բացել <xliff:g id="app" example="WhatsApp">%1$s</xliff:g>-ը</string>
     <string name="handwriting_not_recognized">Ձեռագիրը չի ճանաչվել</string>
     <string name="handwriting_downloading">Ձեռագրի ճանաչումը ներբեռնվում է</string>
-    <string name="handwriting_download_title">Ներբեռնե՞լ ձեռագրի ճանաչումը:</string>
+    <string name="handwriting_download_title">Ներբեռնե՞լ ձեռագրի ճանաչումը։</string>
     <string name="handwriting_download_message">Ձեռագիրը ճանաչվում է այս հեռախոսում։ Այս լեզվի մոդելը՝ մոտ 20 ՄԲ, մեկ անգամ ներբեռնվում է Google-ից։ Ներբեռնելուց հետո հաղորդագրություն է ցուցադրվում։</string>
     <string name="handwriting_download_button">Ներբեռնել</string>
     <string name="handwriting_downloaded">Ձեռագրի ճանաչումը ներբեռնվել է</string>
-    <string name="handwriting_download_failed">Չհաջողվեց ներբեռնել ձեռագրի ճանաչումը: Ստուգեք ինտերնետ կապը:</string>
+    <string name="handwriting_download_failed">Չհաջողվեց ներբեռնել ձեռագրի ճանաչումը։ Ստուգեք ինտերնետ կապը։</string>
     <string name="handwriting_unsupported_language">Ձեռագրի ճանաչումն այս լեզվով հասանելի չէ</string>
     <string name="title_pref_handwriting_keyboard">Ձեռագրի ստեղնաշար</string>
     <string name="summary_pref_handwriting_keyboard">Միացրեք SandFly ձեռագիրը Android ստեղնաշարի կարգավորումներում</string>
@@ -1713,7 +1713,7 @@
     <string name="item_details_order_footer">SandFly-ը տարրի մանրամասները կարդում է այս հերթականությամբ։ Այն փոխելու համար հպեք մանրամասնին և պահեք, ապա քաշեք վեր կամ վար։ Երբ SandFly-ը միացված է, կրկնակի հպեք և պահեք, ապա քաշեք։ Կարող եք նաև օգտագործել «Տեղափոխել վերև» և «Տեղափոխել ներքև» գործողությունները։</string>
     <string name="title_pref_speak_items_before_scroll">Հնչեցնել տարրերը մինչև դրանց ոլորվելը տեսադաշտ</string>
     <string name="gemini_error_api_key">Gemini-ը չընդունեց API բանալին։ Ստուգեք բանալին «Պատկերների և էկրանի նկարագրություններ» բաժնի կարգավորումներում։</string>
-    <string name="gemini_error_quota">Ձեր Gemini API-ի բանալու օգտագործման սահմանաչափը հասել է: Փորձեք ավելի ուշ:</string>
+    <string name="gemini_error_quota">Ձեր Gemini API-ի բանալու օգտագործման սահմանաչափը հասել է։ Փորձեք ավելի ուշ։</string>
     <string name="gemini_error_busy">Gemini-ը այս պահին զբաղված է։ Մի փոքր անց նորից փորձեք։</string>
     <string name="gemini_error_timeout">Gemini-ն շատ երկար պատասխանեց։ Նորից փորձեք։</string>
     <string name="gemini_error_with_code">Gemini-ն չկարողացավ պատասխանել, սխալ <xliff:g id="http_status" example="400">%1$d</xliff:g>։</string>
@@ -1727,7 +1727,7 @@
     <string name="dictation_not_corrected">Չի ուղղվել։ Մուտքագրվել է այնպես, ինչպես ճանաչվել է։</string>
     <string name="dictation_nothing_recognized">Ոչինչ չի ճանաչվել</string>
     <string name="dictation_unavailable">Խոսքի ճանաչումն անհասանելի է</string>
-    <string name="dictation_field_gone">Տեքստի դաշտը փակ է: Ոչինչ մուտքագրված չէ:</string>
+    <string name="dictation_field_gone">Տեքստի դաշտը փակ է։ Ոչինչ մուտքագրված չէ։</string>
     <string name="dictation_transcription_failed">Խոսքը տեքստի չի վերածվել։ Ոչինչ մուտքագրված չէ։</string>
     <string name="title_pref_dictation">Թելադրություն</string>
     <string name="title_pref_dictation_rambler_live">Rambler-ի ուղիղ տառադարձում</string>
@@ -1747,7 +1747,7 @@
     <string name="title_pref_telegram_reply_quotes">Կարդալ Telegram-ի պատասխանների մեջբերումները հաղորդագրության հետ</string>
     <string name="title_pref_export_settings">Արտահանել կարգավորումները</string>
     <string name="title_pref_import_settings">Ներմուծել կարգավորումները</string>
-    <string name="settings_export_done">Կարգավորումները արտահանվեցին: API ստեղները ներառված չեն</string>
+    <string name="settings_export_done">Կարգավորումները արտահանվեցին։ API ստեղները ներառված չեն</string>
     <string name="settings_export_failed">Կարգավորումները չհաջողվեց արտահանել</string>
     <string name="settings_import_done">Կարգավորումները ներմուծված են</string>
     <string name="settings_import_failed">Այս ֆայլը SandFly կամ Backtalk կարգավորումների ֆայլ չէ կամ հնարավոր չէ կարդալ</string>

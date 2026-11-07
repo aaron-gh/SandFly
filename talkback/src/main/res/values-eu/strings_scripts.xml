@@ -27,13 +27,13 @@
     <string name="script_author">Egilea: <xliff:g id="author">%1$s</xliff:g></string>
     <string name="script_install_title"><xliff:g id="name">%1$s</xliff:g> instalatu nahi duzu?</string>
     <string name="script_install_can">Hauek egin ditzake:</string>
-    <string name="script_signed">SandFly-k sinatua.</string>
-    <string name="script_signature_changed">SandFly-ren sinadura ez dator bat: sinatu ondoren aldatu da, edo ez du SandFly-k sinatu.</string>
-    <string name="script_unsigned">Ez du SandFly-k sinatu.</string>
+    <string name="script_signed">SandFly-ek sinatua.</string>
+    <string name="script_signature_changed">SandFly-en sinadura ez dator bat: sinatu ondoren aldatu da, edo ez du SandFly-ek sinatu.</string>
+    <string name="script_unsigned">Ez du SandFly-ek sinatu.</string>
     <string name="script_from_file">Fitxategi batetik.</string>
     <string name="script_from_link">Esteka honetatik: <xliff:g id="link">%1$s</xliff:g>.</string>
     <string name="script_from_source">Scripten iturburu honetatik: <xliff:g id="source">%1$s</xliff:g>.</string>
-    <string name="script_from_sandfly">SandFly-rekin dator.</string>
+    <string name="script_from_sandfly">SandFly-ekin dator.</string>
     <string name="script_install_no_permissions">Ez du baimenik behar.</string>
     <string name="script_install_button">Instalatu</string>
     <string name="script_update_title"><xliff:g id="name">%1$s</xliff:g> eguneratu nahi duzu <xliff:g id="version">%2$s</xliff:g> bertsiora?</string>
@@ -49,7 +49,7 @@
     <string name="script_permission_actions">Sakatzea, korritzea, idaztea eta fokua mugitzea</string>
     <string name="script_permission_speech">Atzitu eta aldatu SandFly-en hizketa</string>
     <string name="script_permission_passwords">Irakurri pasahitz-eremuak</string>
-    <string name="script_permission_input">Keinuak, teklak, menuko elementuak eta irakurketa kontrolatzeko aukerak gehitzea, eta SandFly-ren aginduak exekutatzea</string>
+    <string name="script_permission_input">Keinuak, teklak, menuko elementuak eta irakurketa kontrolatzeko aukerak gehitzea, eta SandFly-en aginduak exekutatzea</string>
     <string name="script_permission_network">Internet erabili</string>
     <string name="script_permission_clipboard">Irakurri eta aldatu arbela</string>
     <string name="script_permission_system">Egin atzera edo joan hasierako pantailara, ireki jakinarazpenak, ikusi aplikazioen zerrenda, ireki aplikazioak, ezarpenak eta estekak, bidali intent-ak aplikazioei, eta aldatu bolumena eta tonu-jotzailearen modua</string>
@@ -148,13 +148,13 @@
     <string name="scripts_auto_update">Eguneratu scriptak automatikoki</string>
     <string name="scripts_check_updates">Bilatu eguneratzeak</string>
     <string name="scripts_checking_updates">Eguneratzeak bilatzen…</string>
-    <string name="scripts_updates_category">Eguneraketak</string>
+    <string name="scripts_updates_category">Eguneratzeak</string>
     <string name="script_update_available"><xliff:g id="name" example="WhatsApp messages">%1$s</xliff:g> <xliff:g id="version" example="3.4">%2$s</xliff:g></string>
     <plurals name="scripts_updated">
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> script eguneratu da: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> script eguneratu dira: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
     </plurals>
-    <string name="scripts_updates_to_approve">Eguneraketak «Eguneraketak» atalean agertzen dira</string>
+    <string name="scripts_updates_to_approve">Eguneratzeak «Eguneratzeak» atalean agertzen dira</string>
     <string name="scripts_update_check_failed">Ezin izan dira iturri batzuk egiaztatu</string>
     <string name="scripts_up_to_date">Script guztiak eguneratuta daude</string>
 </resources>

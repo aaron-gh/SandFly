@@ -407,7 +407,7 @@
   <string name="shortcut_decrease_volume">Stišavanje</string>
   <string name="shortcut_all_apps">Sve aplikacije</string>
   <string name="shortcut_braille_keyboard">Prebacivanje na tastaturu s Braillevim pismom</string>
-  <string name="shortcut_braille_display_settings">Idite na postavke za Brailleov ekran</string>
+  <string name="shortcut_braille_display_settings">Otvaranje postavki Brailleovog ekrana</string>
   <string name="shortcut_tutorial">Otvaranje vodiča</string>
   <string name="shortcut_control_speak_time">Izgovaranje vremena ili izostanak izgovaranja vremena</string>
   <string name="shortcut_enable_speak_time">Izgovaranje vremena</string>
@@ -415,7 +415,7 @@
   <string name="shortcut_disable_speak_time">Bez izgovaranja vremena</string>
   <string name="speak_time_off">Izgovaranje vremena je isključeno</string>
   <string name="shortcut_practice_gestures">Vježbanje pokreta</string>
-  <string name="shortcut_report_gesture">Prijavite problem s pokretom</string>
+  <string name="shortcut_report_gesture">Prijava problema s pokretom</string>
   <string name="shortcut_toggle_braille_display">Uključivanje ili isključivanje Brailleovog ekrana</string>
   <string name="shortcut_announce_current_time_and_date">Reci trenutni datum i vrijeme</string>
   <string name="shortcut_announce_battery_state">Izgovor postotka baterije</string>
@@ -913,7 +913,7 @@
   <string name="system_gestures_text">Ovo znači da prilikom korištenja SandFlya možete otići na početni ekran prevlačenjem s dna ekrana nagore s 2 prsta umjesto jednim.\n\nAko sada isprobate ove pokrete, vodič će se zatvoriti. Preporučujemo da pričekate da dovršite vodič.</string>
   <string name="system_gestures_home_text">Da odete na početni ekran, prevucite s dna ekrana nagore s 2 prsta.</string>
   <string name="system_gestures_overview_screen_text">Da se vratite u nedavne aplikacije, prevucite s dna ekrana nagore s 2 prsta i zadržite. Nakon toga pustite. Na taj način ćete pristupiti ekranu pregleda.</string>
-  <string name="system_gestures_back_text">Da se vratite, počnite na lijevoj ili desnoj ivici i prevucite prema sredini ekrana s 2 prsta.</string>
+  <string name="system_gestures_back_text">Da se vratite, počnite na lijevom ili desnom rubu i prevucite prema sredini ekrana s 2 prsta.</string>
   <string name="system_gestures_open_notifications_text_for_gesture_navigation">Da otvorite obavještenja, prevucite s vrha ekrana nadolje s 2 prsta.</string>
   <string name="system_gestures_open_notifications_text_for_3_button_navigation">Da otvorite obavještenja, prevucite s vrha ekrana nadolje s 2 prsta. Tada možete zatvoriti obavještenja ponovnim prevlačenjem s 2 prsta nagore.\n\nIsprobajte to sada.</string>
   <string name="system_gestures_accessibility_shortcut_text">Da otvorite prečicu za pristupačnost, prevucite s dna ekrana nagore s 3 prsta.</string>
@@ -1074,7 +1074,7 @@
   <string name="wear_training_welcome_paragraph">Kada je SandFly uključen, fokusirana stavka na ekranu se čita naglas.\n\nPrevlačenjem udesno prelazite na sljedeću stavku. Prevlačenjem ulijevo prelazite na prethodnu stavku.\n\nPrevucite udesno sada da pronađete sljedeće dugme.</string>
   <string name="wear_training_scroll_text" tools:ignore="PluralsCandidate">Prevucite nagore ili nadolje s %1$d prsta.</string>
   <string name="wear_training_go_back_title">Vratite se</string>
-  <string name="wear_training_go_back_text" tools:ignore="PluralsCandidate">Kada se želite vratiti, s %1$d prsta prevucite udesno od ivice ekrana.</string>
+  <string name="wear_training_go_back_text" tools:ignore="PluralsCandidate">Kada se želite vratiti, s <xliff:g id="two" example="2">%1$d</xliff:g> prsta prevucite udesno od ruba ekrana.</string>
   <string name="wear_training_go_back_success_confirmation_curved_text">Uspješno</string>
   <string name="wear_training_go_back_success_confirmation_overlay_message">Izvršili ste pokret unazad</string>
   <string name="wear_training_volume_up_title">Povećajte jačinu zvuka</string>
@@ -1688,20 +1688,20 @@
     <string name="shortcut_scroll_to_bottom">Skrolaj do dna</string>
     <string name="shortcut_refresh">Osvježi</string>
     <string name="shortcut_system_quick_settings">Brza podešavanja sistema</string>
-    <string name="shortcut_lock_screen">Zaključajte ekran uređaja</string>
+    <string name="shortcut_lock_screen">Zaključavanje ekrana uređaja</string>
     <string name="shortcut_power_menu">Meni napajanja</string>
     <string name="shortcut_increase_media_volume">Povećaj jačinu zvuka medija</string>
     <string name="shortcut_decrease_media_volume">Smanji jačinu zvuka medija</string>
-    <string name="title_pref_shortcut_edge_top_left_long_down">Dugi prelazak prstom prema dolje od gornjeg lijevog dijela</string>
-    <string name="title_pref_shortcut_edge_top_right_long_down">Dugi prelazak prstom prema dolje od gornjeg desnog dijela</string>
-    <string name="title_pref_shortcut_edge_left_top_right">Prevucite udesno od lijeve ivice, gornje polovine</string>
-    <string name="title_pref_shortcut_edge_left_top_long_right">Dugi potez udesno s lijeve ivice, gornja polovina</string>
-    <string name="title_pref_shortcut_edge_left_bottom_right">Prevucite desno od lijeve ivice, donje polovine</string>
-    <string name="title_pref_shortcut_edge_left_bottom_long_right">Dugi potez udesno s lijeve ivice, donja polovina</string>
-    <string name="title_pref_shortcut_edge_right_top_left">Prevucite lijevo od desne ivice, gornje polovine</string>
-    <string name="title_pref_shortcut_edge_right_top_long_left">Dugi potez ulijevo s desne ivice, gornja polovina</string>
-    <string name="title_pref_shortcut_edge_right_bottom_left">Prevucite lijevo od desne ivice, donje polovine</string>
-    <string name="title_pref_shortcut_edge_right_bottom_long_left">Dugi potez ulijevo s desne ivice, donja polovina</string>
+    <string name="title_pref_shortcut_edge_top_left_long_down">Dugi potez nadolje s gornjeg lijevog ruba</string>
+    <string name="title_pref_shortcut_edge_top_right_long_down">Dugi potez nadolje s gornjeg desnog ruba</string>
+    <string name="title_pref_shortcut_edge_left_top_right">Prevlačenje udesno s lijevog ruba, gornja polovina</string>
+    <string name="title_pref_shortcut_edge_left_top_long_right">Dugi potez udesno s lijevog ruba, gornja polovina</string>
+    <string name="title_pref_shortcut_edge_left_bottom_right">Prevlačenje udesno s lijevog ruba, donja polovina</string>
+    <string name="title_pref_shortcut_edge_left_bottom_long_right">Dugi potez udesno s lijevog ruba, donja polovina</string>
+    <string name="title_pref_shortcut_edge_right_top_left">Prevlačenje ulijevo s desnog ruba, gornja polovina</string>
+    <string name="title_pref_shortcut_edge_right_top_long_left">Dugi potez ulijevo s desnog ruba, gornja polovina</string>
+    <string name="title_pref_shortcut_edge_right_bottom_left">Prevlačenje ulijevo s desnog ruba, donja polovina</string>
+    <string name="title_pref_shortcut_edge_right_bottom_long_left">Dugi potez ulijevo s desnog ruba, donja polovina</string>
     <string name="title_pref_edge_first_click_mm">Udaljenost do prvog klika</string>
     <string name="title_pref_edge_second_click_mm">Udaljenost od prvog do drugog klika</string>
     <string name="value_distance_5mm">0,5 cm</string>

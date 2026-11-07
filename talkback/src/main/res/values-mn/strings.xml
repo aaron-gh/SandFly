@@ -67,7 +67,7 @@
   <string name="summary_pref_speak_element_ids">Шошгогүй товчлууруудын ID-г хэлнэ</string>
   <string name="pref_allow_frequent_content_change_announcement_title">Явцын бүх шинэчлэлтийг чангаар унших</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">Татах, машинаар явах чиглэлийг дагах болон бусад үеийн шинэчлэлт багтана. Унтраалттай үед та цөөн тооны тогтмол шинэчлэлт авсан хэвээр байх болно.</string>
-  <string name="title_pref_explore_by_touch">Хүрэлтээр сонсох</string>
+  <string name="title_pref_explore_by_touch">Хүрэлтээр судлах</string>
   <string name="title_pref_category_controls">Хяналт</string>
   <string name="title_pref_category_reduce_latency_summary">Эдгээр тохиргоо нь таныг дэлгэцэнд хүрсний дараа SandFly илүү хурдан хариу үйлдэл үзүүлэх болно</string>
   <string name="reset_latency_settings_title">Саатлын бүх тохиргоог шинэчлэх</string>
@@ -305,7 +305,7 @@
   <string name="title_pref_typing_long_tap_duration">Бичиж байхдаа хүрээд удаан дарах саатал</string>
   <string name="title_pref_touch_explore_timeout">Шивэх сонголтын саатал</string>
   <string name="message_pref_touch_explore_latency">Саатал богино байх тусам гарт хүрсний дараа SandFly эрт ярина.\n\nСаатал сонгоно уу</string>
-  <string name="title_pref_touch_focus_timeout">Сонголтын саатал</string>
+  <string name="title_pref_touch_focus_timeout">Фокусын саатал</string>
   <string name="title_pref_talkback_gesture_detection">SandFly-д зангаануудыг зохицуулах</string>
   <string name="toast_pref_talkback_gesture_detection">Уг тохиргоог идэвхжүүлэх бол SandFly-г унтраагаад, дараа нь дахин асаана уу.</string>
   <string name="title_pref_auto_image_captioning">Автомат тайлбарууд</string>
@@ -595,7 +595,7 @@
   <string name="title_pref_shortcut_3finger_swipe_left_xr">Нөгөө гарынхаа алгыг өөр лүүгээ харуулж, зүүн тийш шудрах</string>
   <string name="title_pref_shortcut_3finger_swipe_right">3 хуруугаар баруун тийш шудрах</string>
   <string name="title_pref_shortcut_3finger_swipe_right_xr">Нөгөө гарынхаа алгыг өөр лүүгээ харуулж, баруун тийш шудрах</string>
-  <string name="title_pref_shortcut_4finger_swipe_up">3 хуруугаар дээш шудрах</string>
+  <string name="title_pref_shortcut_4finger_swipe_up">4 хуруугаар дээш шудрах</string>
   <string name="title_pref_shortcut_4finger_swipe_down">4 хуруугаар доош шудрах</string>
   <string name="title_pref_shortcut_4finger_swipe_left">4 хуруугаар зүүн тийш шудрах</string>
   <string name="title_pref_shortcut_4finger_swipe_right">4 хуруугаар баруун тийш шудрах</string>
@@ -669,8 +669,8 @@
   <string name="dialog_message_dim_screen">Энэ нь нууцлалыг сайжруулахын тулд дэлгэцийг унтраана. Дэлгэцийг дахин асаахад зориулсан мессеж, SandFly гэх мэт хандалтын онцлогуудын цэс зэрэг зарим контент харагдсан хэвээр байж болно.</string>
   <string name="button_disable_all_events">Бүгдийг цуцлах</string>
   <string name="button_enable_all_events">Бүгдийг идэвхжүүлэх</string>
-  <string name="dialog_title_disable_exploration">Хүрэлтээр сонсохыг идэвхгүй болгох уу?</string>
-  <string name="dialog_message_disable_exploration">Хүрэлтээр сонсохыг унтраах уу?\n\nТаны төхөөрөмж товчлолын зангаанд хариу өгөхгүй бөгөөд дэлгэцэд хүрэхэд зүйлсийг уншихгүй.</string>
+  <string name="dialog_title_disable_exploration">Хүрэлтээр судлахыг идэвхгүй болгох уу?</string>
+  <string name="dialog_message_disable_exploration">Хүрэлтээр судлахыг унтраах уу?\n\nТаны төхөөрөмж товчлолын зангаанд хариу өгөхгүй бөгөөд дэлгэцэд хүрэхэд зүйлсийг уншихгүй.</string>
   <string name="dialog_title_enable_tree_debug">Зангилаа модон дебаг-г идэвхжүүлэх үү?</string>
   <string name="dialog_message_enable_tree_debug">Та зангилаа модон дебаг-г идэвхжүүлэхдээ итгэлтэй байна уу?\n\nЗангилаа модон дебаг нь таны дэлгэцийн агуулгыг таны төхөөрөмжийн лог-т нээлттэй болгосноор өөр аппликейшнүүдэд унших боломж олгоно.</string>
   <string name="dialog_title_enable_tree_debug_gesture">4 хуруугаар гурав товших зангааг дахин оноох уу?</string>
@@ -739,7 +739,7 @@
   <string name="title_pref_support_scroll_seq">Гүйлгэх</string>
   <string name="title_pref_a11y_volume">Хандалтын дууны түвшин</string>
   <string name="title_pref_touch_explore_latency">Шивэх сонголтын саатал</string>
-  <string name="title_pref_touch_focus_latency">Сонголтын саатал</string>
+  <string name="title_pref_touch_focus_latency">Фокусын саатал</string>
   <string name="message_pref_touch_focus_latency">Саатал богино байх тусам дэлгэцэнд хүрсний дараа SandFly эрт ярина</string>
   <string name="message_pref_typing_method_prefix">Шивэх үеийн саатлыг багасгахын тулд \"Дурын товчийг сонгохын тулд хуруугаараа дараад, авах\"-ыг сонгоно уу</string>
   <string name="message_pref_typing_method_postfix">Та мөн хүссэн үедээ шивэхийн тулд тусдаа товшилтыг ашиглах боломжтой. Үүнийг хийхийн тулд нэг хуруугаараа удаан дарж дурын товчийг сонгоод, нөгөө хуруугаараа дэлгэц дээр товшино уу.</string>
@@ -1607,10 +1607,10 @@
     <string name="title_pref_shortcut_3finger_spread">3 хуруугаа дэлгэх</string>
     <string name="title_pref_shortcut_4finger_pinch">4 хуруугаар чимхэх</string>
     <string name="title_pref_shortcut_4finger_spread">4 хуруугаа дэлгэх</string>
-    <string name="title_pref_shortcut_edge_bottom_up">Доод ирмэгээс дээш шударна уу</string>
+    <string name="title_pref_shortcut_edge_bottom_up">Доод ирмэгээс дээш шудрах</string>
     <string name="title_pref_shortcut_edge_bottom_long_up">Доод ирмэгээс дээш урт шудрах</string>
-    <string name="title_pref_shortcut_edge_top_left_down">Зүүн дээд хэсгээс доош шударна уу</string>
-    <string name="title_pref_shortcut_edge_top_right_down">Баруун дээд хэсгээс доош шударна уу</string>
+    <string name="title_pref_shortcut_edge_top_left_down">Зүүн дээд хэсгээс доош шудрах</string>
+    <string name="title_pref_shortcut_edge_top_right_down">Баруун дээд хэсгээс доош шудрах</string>
     <string name="title_pref_shortcut_edge_top_left_long_down">Зүүн дээд хэсгээс доош урт шудрах</string>
     <string name="title_pref_shortcut_edge_top_right_long_down">Баруун дээд хэсгээс доош урт шудрах</string>
     <string name="title_pref_shortcut_edge_left_top_right">Зүүн ирмэгийн дээд хагасаас баруун тийш шудрах</string>
@@ -1659,9 +1659,9 @@
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP зөвшөөрөлгүй бол SandFly нь мэдрэгчтэй хайлт гацаж магадгүй гэж л хэлж чадна. Үүнийг засахын тулд дараахыг ажиллуулна уу: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">Мэдрэгчтэй хайгуулыг засаж байна</string>
     <string name="stuck_touch_exploration_fixed">Мэдрэгчийн хайгуулыг зассан</string>
-    <string name="stuck_touch_exploration_not_fixed">«Хүрэлтээр сонсох» гацсан хэвээр байна. Засахын тулд утсаа дахин асаана уу.</string>
-    <string name="stuck_touch_exploration_restart">«Хүрэлтээр сонсох» гацсан байж магадгүй. Засахын тулд утсаа дахин асаана уу.</string>
-    <string name="stuck_touch_exploration_grant_dump">«Хүрэлтээр сонсох» гацсан байж магадгүй. Засахын тулд утсаа дахин асаах, эсвэл SandFly засаж чадахаар ADB-ээр түүнд DUMP зөвшөөрөл олгоно уу.</string>
+    <string name="stuck_touch_exploration_not_fixed">«Хүрэлтээр судлах» гацсан хэвээр байна. Засахын тулд утсаа дахин асаана уу.</string>
+    <string name="stuck_touch_exploration_restart">«Хүрэлтээр судлах» гацсан байж магадгүй. Засахын тулд утсаа дахин асаана уу.</string>
+    <string name="stuck_touch_exploration_grant_dump">«Хүрэлтээр судлах» гацсан байж магадгүй. Засахын тулд утсаа дахин асаах, эсвэл SandFly засаж чадахаар ADB-ээр түүнд DUMP зөвшөөрөл олгоно уу.</string>
     <string name="title_pref_window_names">Цонхны нэрс</string>
     <string name="window_names_always">Үргэлж</string>
     <string name="window_names_until_first_item">Үргэлж, эхний зүйлээр тасардаг</string>
@@ -1722,7 +1722,7 @@
     <string name="image_qna_ask_by_voice">Дуу хоолойгоор асуу</string>
     <string name="image_qna_stop_listening">Сонсохыг зогсоох</string>
     <string name="image_qna_type_question">Асуулт бичнэ үү</string>
-    <string name="shortcut_dictate">Хэлж бичүүлэхийг эхлүүлэх</string>
+    <string name="shortcut_dictate">Хэлж бичүүлэх</string>
     <string name="title_pref_ai_dictation">AI-аар хэлж бичихийг засах</string>
     <string name="dictation_not_corrected">Засаагүй. Танигдсан хэвээр нь бичсэн.</string>
     <string name="dictation_nothing_recognized">Юу ч танигдаагүй</string>

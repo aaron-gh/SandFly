@@ -63,7 +63,7 @@
   <string name="gestures_announce_reset_gesture_settings">Đã đặt lại chế độ cài đặt cử chỉ.</string>
   <string name="pref_speak_roles_title">Đọc loại mục</string>
   <string name="pref_speak_roles_summary">Chẳng hạn như nút hoặc hộp đánh dấu</string>
-  <string name="title_pref_speak_element_ids">Đọc tên thành phần</string>
+  <string name="title_pref_speak_element_ids">Đọc mã nhận dạng phần tử</string>
   <string name="summary_pref_speak_element_ids">Đọc mã nhận dạng của các nút không có nhãn</string>
   <string name="pref_allow_frequent_content_change_announcement_title">Đọc mọi nội dung cập nhật tiến trình</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">Bao gồm nội dung cập nhật trong khi tải xuống, lái xe theo chỉ dẫn và nhiều hoạt động khác. Khi tắt tính năng này, bạn vẫn sẽ nhận được các nội dung cập nhật, nhưng ít thường xuyên hơn.</string>
@@ -1542,8 +1542,8 @@
     <string name="title_pref_shortcut_4finger_spread">Tách bằng 4 ngón tay</string>
     <string name="title_pref_shortcut_edge_bottom_up">Vuốt lên từ cạnh dưới</string>
     <string name="title_pref_shortcut_edge_bottom_long_up">Vuốt dài lên từ cạnh dưới</string>
-    <string name="title_pref_shortcut_edge_top_left_down">Vuốt xuống từ phía trên bên trái</string>
-    <string name="title_pref_shortcut_edge_top_right_down">Vuốt xuống từ phía trên bên phải</string>
+    <string name="title_pref_shortcut_edge_top_left_down">Vuốt xuống từ góc trên bên trái</string>
+    <string name="title_pref_shortcut_edge_top_right_down">Vuốt xuống từ góc trên bên phải</string>
     <string name="value_type_confirmation_lift_to_type_except_action_key">Giữ ngón tay để chọn phím bất kỳ, sau đó nhấc ngón tay. Nhấn đúp để nhập Enter, Xong hoặc Gửi.</string>
     <string name="value_type_confirmation_tap_to_type">Nhấn vào phím bất kỳ để nhập, hoặc giữ ngón tay để chọn phím bất kỳ rồi nhấc ngón tay</string>
     <string name="title_pref_multi_tap_timeout">Thời gian giữa các lần nhấn bằng một ngón tay</string>

@@ -377,7 +377,7 @@
   <string name="shortcut_toggle_voice_feedback">Вклучи го или исклучи го говорот</string>
   <string name="shortcut_read_from_top">Читај од врвот</string>
   <string name="shortcut_read_from_current">Читај од нагласената ставка</string>
-  <string name="shortcut_print_node_tree">Отпечатете го дрвото со јазли</string>
+  <string name="shortcut_print_node_tree">Отпечати го дрвото со јазли</string>
   <string name="shortcut_print_performance_stats">Испечати ја статистиката за изведбата</string>
   <string name="shortcut_first_in_screen">Нагласи ја првата ставка на екранот</string>
   <string name="shortcut_voice_commands">Започни ја гласовната наредба</string>
@@ -391,7 +391,7 @@
   <string name="talkback_menu_close_button_text">@string/close_string</string>
   <string name="talkback_menu_more_options_text">Ќе бидат достапни повеќе опции во менито откако ќе го довршите поставувањето или ќе го отклучите уредот</string>
   <string name="talkback_menu_title_content_description">Мени на SandFly. Повлечете надесно за да ги истражите опциите во менито на SandFly.\n\nЗа да се вратите на упатството, повлечете налево или надесно од работ на екранот со 2 прста.</string>
-  <string name="shortcut_show_language_options">Променете го говорниот јазик</string>
+  <string name="shortcut_show_language_options">Промени го говорниот јазик</string>
   <string name="shortcut_select_next_setting">Следна контрола за читање</string>
   <string name="shortcut_select_previous_setting">Претходна контрола за читање</string>
   <string name="shortcut_pass_through_next">Преминување на системско движење</string>
@@ -414,9 +414,9 @@
   <string name="speak_time_on">„Изговарај го точното време“ е вклучено</string>
   <string name="shortcut_disable_speak_time">Не изговарај го точното време</string>
   <string name="speak_time_off">„Не изговарај го точното време“ е исклучено</string>
-  <string name="shortcut_practice_gestures">Вежбајте ги движењата</string>
-  <string name="shortcut_report_gesture">Пријавете проблем со движењето</string>
-  <string name="shortcut_toggle_braille_display">Вклучете или исклучете го уредот за приказ на брајово писмо</string>
+  <string name="shortcut_practice_gestures">Вежбај ги движењата</string>
+  <string name="shortcut_report_gesture">Пријави проблем со движењето</string>
+  <string name="shortcut_toggle_braille_display">Вклучи го или исклучи го уредот за приказ на брајово писмо</string>
   <string name="shortcut_announce_current_time_and_date">Изговори ги тековниот датум и време</string>
   <string name="shortcut_announce_battery_state">Изговори го процентот на батеријата</string>
   <string name="shortcut_announce_current_title">Изговарање на насловот на прозорецот</string>
@@ -429,7 +429,7 @@
   <string name="shortcut_toggle_braille_contracted_mode">Префрлај меѓу скратено (2. ниво) и нескратено (1. ниво)</string>
   <string name="shortcut_toggle_braille_on_screen_overlay">Прикажи или скриј брајово писмо на екран за поврзаните уреди за приказ на брајово писмо</string>
   <string name="shortcut_toggle_sound_feedback">Вклуч./исклуч. звучни повратни информации (звучни сигнали)</string>
-  <string name="shortcut_show_learn_mode_page">Вежбајте кратенки од тастатурата</string>
+  <string name="shortcut_show_learn_mode_page">Вежбај кратенки од тастатурата</string>
   <string name="shortcut_announce_phonetic_pronunciation">Изговарај букви со фонетски изговор за фокусирана ставка</string>
   <string name="shortcut_cycle_punctuation_verbosity">Менување нивоа на интерпункција</string>
   <string name="title_local_breakout_no_items">Нема ставки на мени.</string>
@@ -1590,7 +1590,7 @@
     <string name="shortcut_refresh">Освежи</string>
     <string name="shortcut_system_notifications">Панел за известувања на системот</string>
     <string name="shortcut_system_quick_settings">Системски брзи поставки</string>
-    <string name="shortcut_lock_screen">Заклучете го екранот на уредот</string>
+    <string name="shortcut_lock_screen">Заклучи го екранот на уредот</string>
     <string name="shortcut_power_menu">Мени за напојување</string>
     <string name="shortcut_increase_media_volume">Зголеми ја јачината на звукот на медиумите</string>
     <string name="shortcut_decrease_media_volume">Намали ја јачината на звукот на медиумите</string>
@@ -1607,19 +1607,19 @@
     <string name="title_pref_shortcut_3finger_spread">Раширување со 3 прста</string>
     <string name="title_pref_shortcut_4finger_pinch">Стискање со 4 прста</string>
     <string name="title_pref_shortcut_4finger_spread">Раширување со 4 прста</string>
-    <string name="title_pref_shortcut_edge_bottom_up">Повлечете нагоре од долниот раб</string>
+    <string name="title_pref_shortcut_edge_bottom_up">Повлекување нагоре од долниот раб</string>
     <string name="title_pref_shortcut_edge_bottom_long_up">Долго повлекување нагоре од долниот раб</string>
-    <string name="title_pref_shortcut_edge_top_left_down">Повлечете надолу од горе лево</string>
-    <string name="title_pref_shortcut_edge_top_right_down">Повлечете надолу од горниот десен агол</string>
+    <string name="title_pref_shortcut_edge_top_left_down">Повлекување надолу од горе лево</string>
+    <string name="title_pref_shortcut_edge_top_right_down">Повлекување надолу од горе десно</string>
     <string name="title_pref_shortcut_edge_top_left_long_down">Долго повлекување надолу од горе лево</string>
     <string name="title_pref_shortcut_edge_top_right_long_down">Долго повлекување надолу од горе десно</string>
-    <string name="title_pref_shortcut_edge_left_top_right">Повлечете надесно од левиот раб, горната половина</string>
+    <string name="title_pref_shortcut_edge_left_top_right">Повлекување надесно од левиот раб, горната половина</string>
     <string name="title_pref_shortcut_edge_left_top_long_right">Долго повлекување надесно од левиот раб, горната половина</string>
-    <string name="title_pref_shortcut_edge_left_bottom_right">Повлечете надесно од левиот раб, долната половина</string>
+    <string name="title_pref_shortcut_edge_left_bottom_right">Повлекување надесно од левиот раб, долната половина</string>
     <string name="title_pref_shortcut_edge_left_bottom_long_right">Долго повлекување надесно од левиот раб, долната половина</string>
-    <string name="title_pref_shortcut_edge_right_top_left">Повлечете налево од десниот раб, горната половина</string>
+    <string name="title_pref_shortcut_edge_right_top_left">Повлекување налево од десниот раб, горната половина</string>
     <string name="title_pref_shortcut_edge_right_top_long_left">Долго повлекување налево од десниот раб, горната половина</string>
-    <string name="title_pref_shortcut_edge_right_bottom_left">Повлечете налево од десниот раб, долната половина</string>
+    <string name="title_pref_shortcut_edge_right_bottom_left">Повлекување налево од десниот раб, долната половина</string>
     <string name="title_pref_shortcut_edge_right_bottom_long_left">Долго повлекување налево од десниот раб, долната половина</string>
     <string name="value_type_confirmation_lift_to_type_except_action_key">Држете го прстот за да изберете кое било копче, а потоа подигнете го. Допрете двапати за Enter, Done или Send.</string>
     <string name="value_type_confirmation_tap_to_type">Допрете кое било копче за да го напишете или држете го прстот за да изберете кое било копче, а потоа подигнете</string>
@@ -1840,7 +1840,7 @@
     <string name="gesture_profile_default">Стандарден</string>
     <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, во употреба</string>
     <string name="no_gesture_profiles">Нема профили на движења</string>
-    <string name="shortcut_gesture_profiles">Изберете профил на движења</string>
+    <string name="shortcut_gesture_profiles">Избери профил на движења</string>
     <string name="shortcut_previous_gesture_profile">Претходен профил на движења</string>
     <string name="shortcut_next_gesture_profile">Следен профил на движења</string>
     <string name="shortcut_use_gesture_profile">Користи го профилот на движења <xliff:g id="name" example="Driving">%1$s</xliff:g></string>
@@ -1936,14 +1936,14 @@
     <string name="color_inversion_turned_on">Инверзијата на боја е вклучена</string>
     <string name="color_inversion_turned_off">Инверзијата на боја е исклучена</string>
     <string name="shortcut_dictate_or_media_control">Диктирај, пушти или паузирај аудио/видео</string>
-    <string name="title_pref_shortcut_edge_along_left_up">Повлечете нагоре по левиот раб</string>
-    <string name="title_pref_shortcut_edge_along_left_down">Повлечете надолу по левиот раб</string>
-    <string name="title_pref_shortcut_edge_along_right_up">Повлечете нагоре по десниот раб</string>
-    <string name="title_pref_shortcut_edge_along_right_down">Повлечете надолу по десниот раб</string>
-    <string name="title_pref_shortcut_edge_along_top_left">Повлечете налево по горниот раб</string>
-    <string name="title_pref_shortcut_edge_along_top_right">Повлечете надесно по горниот раб</string>
-    <string name="title_pref_shortcut_edge_along_bottom_left">Повлечете налево по долниот раб</string>
-    <string name="title_pref_shortcut_edge_along_bottom_right">Повлечете надесно по долниот раб</string>
+    <string name="title_pref_shortcut_edge_along_left_up">Повлекување нагоре по левиот раб</string>
+    <string name="title_pref_shortcut_edge_along_left_down">Повлекување надолу по левиот раб</string>
+    <string name="title_pref_shortcut_edge_along_right_up">Повлекување нагоре по десниот раб</string>
+    <string name="title_pref_shortcut_edge_along_right_down">Повлекување надолу по десниот раб</string>
+    <string name="title_pref_shortcut_edge_along_top_left">Повлекување налево по горниот раб</string>
+    <string name="title_pref_shortcut_edge_along_top_right">Повлекување надесно по горниот раб</string>
+    <string name="title_pref_shortcut_edge_along_bottom_left">Повлекување налево по долниот раб</string>
+    <string name="title_pref_shortcut_edge_along_bottom_right">Повлекување надесно по долниот раб</string>
     <string name="title_pref_shortcut_back_tap_double">Двоен допир на задната страна</string>
     <string name="title_pref_shortcut_back_tap_triple">Троен допир на задната страна</string>
     <string name="title_pref_back_tap_sensitivity">Чувствителност на допирот на задната страна</string>

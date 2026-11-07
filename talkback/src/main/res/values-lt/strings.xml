@@ -311,19 +311,19 @@
   <string name="title_pref_auto_image_captioning">Automatiniai aprašai</string>
   <string name="title_pref_gemini_settings">„Gemini“ nustatymai</string>
   <string name="title_pref_gemini_enabled">Gemini balso komandos</string>
-  <string name="title_pref_category_automatic_description_summary">Gaukite išsamius DI vaizdų apibūdinimus „SandFly“ meniu pasirinkę „Vaizdo apibūdinimas“.\n\nTaip pat galite gauti automatinius apibūdinimus paryškinę vaizdą ar piktogramą. Automatiniai apibūdinimai veikia be interneto ryšio.</string>
+  <string name="title_pref_category_automatic_description_summary">Gaukite išsamius AI vaizdų apibūdinimus „SandFly“ meniu pasirinkę „Aprašyti vaizdą“.\n\nTaip pat galite gauti automatinius apibūdinimus paryškinę vaizdą ar piktogramą. Automatiniai apibūdinimai veikia be interneto ryšio.</string>
   <string name="title_pref_icon_detection">Automatiniai piktogramų aprašymai</string>
   <string name="title_pref_image_description">Automatiniai vaizdų aprašymai</string>
   <string name="title_pref_text_recognition">Automatiniai teksto vaizduose aprašymai</string>
   <string name="dialog_title_turn_on_image_description">Skiltyje „Nustatymai“ įjunkite vaizdų aprašymus</string>
   <string name="dialog_message_turn_on_image_description">Galite pabandyti dar kartą, kai įjungsite automatinius arba išsamius vaizdų aprašymus</string>
   <string name="title_pref_detailed_image_description">Išsamūs vaizdų aprašai</string>
-  <string name="dialog_message_on_device_ai_description">Paryškinę vaizdą palaikomose programose išgirsite trumpą apibūdinimą.\n\nVaizdai apdorojami jūsų įrenginyje ir niekada nesiunčiami „Google“. \n\nGeneratyvinis DI yra eksperimentinis, todėl gali daryti klaidų. Tęsdami sutinkate su <a href="https://policies.google.com/terms/generative-ai">„Google“ paslaugų teikimo sąlygomis</a></string>
+  <string name="dialog_message_on_device_ai_description">Paryškinę vaizdą palaikomose programose išgirsite trumpą apibūdinimą.\n\nVaizdai apdorojami jūsų įrenginyje ir niekada nesiunčiami „Google“. \n\nGeneratyvinis AI yra eksperimentinis, todėl gali daryti klaidų. Tęsdami sutinkate su <a href="https://policies.google.com/terms/generative-ai">„Google“ paslaugų teikimo sąlygomis</a></string>
   <string name="enable_gemini">Įjungti</string>
-  <string name="powered_by_gemini">Teikia generatyvinis DI</string>
-  <string name="dialog_message_on_device_detailed_ai_promotion">Vaizdai apdorojami jūsų įrenginyje ir niekada nesiunčiami „Google“.\n\nGeneratyvinis DI yra eksperimentinis, todėl gali daryti klaidų. Tęsdami sutinkate su %1$s.</string>
+  <string name="powered_by_gemini">Teikia generatyvinis AI</string>
+  <string name="dialog_message_on_device_detailed_ai_promotion">Vaizdai apdorojami jūsų įrenginyje ir niekada nesiunčiami „Google“.\n\nGeneratyvinis AI yra eksperimentinis, todėl gali daryti klaidų. Tęsdami sutinkate su <xliff:g id="Gen AI Terms of Service" example="Google\'s Terms of Service">%1$s</xliff:g>.</string>
   <string name="dialog_message_gen_ai_tos_link">„Google“ paslaugų teikimo sąlygos</string>
-  <string name="message_aifeature_downloading">Atsisiunčiamas DI modelis. Tai gali šiek tiek užtrukti. Baigus gausite pranešimą.</string>
+  <string name="message_aifeature_downloading">Atsisiunčiamas AI modelis. Tai gali šiek tiek užtrukti. Baigus gausite pranešimą.</string>
   <string name="message_aifeature_downloading_with_progress">Vis dar vyksta atsisiuntimas. Atsisiųsta %1$d MB iš %2$d MB.</string>
   <string name="summary_pref_auto_image_captioning">Piktogramoms, vaizdams ir tekstui vaizduose</string>
   <string name="summary_pref_module_downloading">Atsisiunčiama…</string>
@@ -853,8 +853,8 @@
   <string name="new_gesture_notification_content">Palieskite, kad sužinotumėte, kaip sparčiau naudoti „SandFly“ naudojant naujus gestus.</string>
   <string name="dump_node_tree_description">Mazgų medis pateiktas žurnaluose.</string>
   <string name="report_gesture_description">Čia pateikti neseniai atlikti gestai. Praneškite, kuris gestas netinkamas ir koks buvo numatytas.</string>
-  <string name="update_welcome_talkback_16.1">Šiame „SandFly“ atnaujinime pristatomas funkcijos „Aprašykite ekraną“ palaikymas daugiau kalbų ir kiti kokybės patobulinimai, palengvinantys „SandFly“ naudojimą.\n\nDaugiau apie šiuos pakeitimus sužinosite keliuose kituose ekranuose.\n\nVėliau šią informaciją galėsite peržiūrėti skiltyje „SandFly“ nustatymai“ &gt; „Naujos „SandFly“ funkcijos“.</string>
-  <string name="update_welcome_talkback_16.1_tts">Šiame „SandFly“ atnaujinime pristatomas funkcijos „Aprašykite ekraną“ palaikymas daugiau kalbų ir kiti kokybės patobulinimai, palengvinantys „SandFly“ naudojimą.\n\nDaugiau apie šiuos pakeitimus sužinosite keliuose kituose ekranuose.\n\nVėliau šią informaciją galėsite peržiūrėti skiltyje „SandFly“ nustatymai“, tada – „Naujos „SandFly“ funkcijos“.</string>
+  <string name="update_welcome_talkback_16.1">Šiame „SandFly“ atnaujinime pristatomas funkcijos „Aprašyti ekraną“ palaikymas daugiau kalbų ir kiti kokybės patobulinimai, palengvinantys „SandFly“ naudojimą.\n\nDaugiau apie šiuos pakeitimus sužinosite keliuose kituose ekranuose.\n\nVėliau šią informaciją galėsite peržiūrėti skiltyje „SandFly nustatymai“ &gt; „Naujos SandFly funkcijos“.</string>
+  <string name="update_welcome_talkback_16.1_tts">Šiame „SandFly“ atnaujinime pristatomas funkcijos „Aprašyti ekraną“ palaikymas daugiau kalbų ir kiti kokybės patobulinimai, palengvinantys „SandFly“ naudojimą.\n\nDaugiau apie šiuos pakeitimus sužinosite keliuose kituose ekranuose.\n\nVėliau šią informaciją galėsite peržiūrėti skiltyje „SandFly nustatymai“, tada – „Naujos SandFly funkcijos“.</string>
   <string name="shortcut_for_dictation_title">Spartusis rašymo balsu klavišas</string>
   <string name="shortcut_for_dictation_content">Naudodami „Gboard“ dabar galite dukart palietę ekraną dviem pirštais pradėti arba sustabdyti rašymą balsu.
 &lt;br&gt;
@@ -1045,10 +1045,10 @@
   <string name="checking_notifications_text_tail_tts">Patikrinti, kuriose programose pranešimai yra įjungti, galite skiltyje „Nustatymai“, „Pranešimai“.</string>
   <string name="checking_notifications_tips">Jei norite patikrinti pranešimų istoriją, perbraukite žemyn dviem pirštais nuo ekrano viršaus</string>
   <string name="image_description_playground_title">Pabandykite gauti vaizdų aprašus</string>
-  <string name="image_description_playground_content_one">Suaktyvinę vaizdą, atidarykite „SandFly“ meniu ir pasirinkite „Vaizdo apibūdinimas“.\n\nToliau pateikta viena nuotrauka. Pabandykite gauti jos aprašą.</string>
+  <string name="image_description_playground_content_one">Suaktyvinę vaizdą, atidarykite „SandFly“ meniu ir pasirinkite „Aprašyti vaizdą“.\n\nToliau pateikta viena nuotrauka. Pabandykite gauti jos aprašą.</string>
     <string name="image_description_playground_content_two">Vaizdo aprašymo nustatymus galite bet kada pakeisti skiltyje SandFly nustatymai &gt; Vaizdų ir ekrano aprašai.</string>
     <string name="image_description_playground_content_two_tts">Vaizdų aprašų nustatymus galite bet kada pakeisti skiltyje „SandFly“ nustatymai, tada – Vaizdų ir ekrano aprašai.</string>
-  <string name="image_description_sample_image_content_description">Bandomasis vaizdas; palieskite trimis pirštais, kad atidarytumėte „SandFly“ meniu, ir pasirinkite „Vaizdo apibūdinimas“, kad išgirstumėte aprašą.</string>
+  <string name="image_description_sample_image_content_description">Bandomasis vaizdas; palieskite trimis pirštais, kad atidarytumėte „SandFly“ meniu, ir pasirinkite „Aprašyti vaizdą“, kad išgirstumėte aprašą.</string>
   <string name="practice_gestures_title">Gestų mokymasis</string>
   <string name="practice_keyboard_gestures_title">Sparčiųjų klavišų naudojimo praktika</string>
   <string name="pref_gesture_set_key_title">Gestų rinkinys</string>
@@ -1109,9 +1109,9 @@
   <string name="title_pref_blue">Mėlyna</string>
   <string name="title_pref_grey">Pilka</string>
   <string name="survey_setting_title">Bendrinti atsiliepimus</string>
-  <string name="title_summarize_view">Aprašykite ekraną</string>
+  <string name="title_summarize_view">Aprašyti ekraną</string>
   <string name="detected_result">Aptikta: %1$s</string>
-  <string name="title_image_caption">Vaizdo apibūdinimas</string>
+  <string name="title_image_caption">Aprašyti vaizdą</string>
   <string name="image_caption_with_gemini_prefix">Apibūdink šį vaizdą. Atsakyme nenaudok žymėjimo.</string>
   <string name="image_qna_with_history">Tai yra pokalbis apie vaizdą tarp naudotojo ir DI padėjėjo. Tęsk pokalbį pagal toliau pateiktą istoriją, atsakydamas į paskutinį NAUDOTOJO pranešimą. Vadovaukis toliau pateiktomis instrukcijomis.
 **Instrukcijos**
@@ -1731,7 +1731,7 @@
     <string name="image_qna_stop_listening">Nebeklausyti</string>
     <string name="image_qna_type_question">Įveskite klausimą</string>
     <string name="shortcut_dictate">Diktuoti</string>
-    <string name="title_pref_ai_dictation">Taisyti diktavimą naudojant DI</string>
+    <string name="title_pref_ai_dictation">Taisyti diktavimą naudojant AI</string>
     <string name="dictation_not_corrected">Neištaisyta. Įrašyta taip, kaip atpažinta.</string>
     <string name="dictation_nothing_recognized">Nieko neatpažinta</string>
     <string name="dictation_unavailable">Kalbos atpažinimas nepasiekiamas</string>
@@ -1866,10 +1866,10 @@
     <string name="braille_app_closed">Programų paieška Brailio raštu uždaryta</string>
     <string name="braille_app_not_available">Programos pavadinimo įvedimas Brailio raštu nepasiekiamas</string>
     <string name="title_clipboard_history_other_apps">Pridėti kopijas iš kitų programų</string>
-  <string name="shortcut_report_ai_response">Pranešti apie DI atsakymą</string>
-  <string name="report_ai_response_title">DI atsakymas</string>
-  <string name="report_ai_response_description">DI atsakymas:\n%1$s\n\n</string>
-  <string name="report_no_ai_response">Nėra DI atsakymo, apie kurį būtų galima pranešti</string>
+  <string name="shortcut_report_ai_response">Pranešti apie AI atsakymą</string>
+  <string name="report_ai_response_title">AI atsakymas</string>
+  <string name="report_ai_response_description">AI atsakymas:\n%1$s\n\n</string>
+  <string name="report_no_ai_response">Nėra AI atsakymo, apie kurį būtų galima pranešti</string>
   <string name="title_pref_hold_to_cancel">Laikykite, kad atšauktumėte</string>
   <string name="summary_pref_hold_to_cancel">%1$s. Pakėlus pirštą, kai jis tiek laiko buvo laikomas ant elemento, niekas nesuaktyvinama.</string>
   <string name="value_hold_to_cancel_off">Išjungta</string>

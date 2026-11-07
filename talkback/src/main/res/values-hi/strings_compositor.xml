@@ -92,9 +92,9 @@
   <string name="template_hint_single_selection_item_keyboard">चुनने के लिए %1$s दबाएं</string>
   <string name="template_hint_pager_single_page">और पेज नहीं हैं</string>
   <string name="template_hint_seek_control_tv">बदलाव करने के लिए %1$s</string>
-  <string name="template_custom_hint_for_actions">%1$s से %2$s तक</string>
+  <string name="template_custom_hint_for_actions"><xliff:g id="hint" example="Expand">%2$s</xliff:g> के लिए <xliff:g id="action" example="Double-tap">%1$s</xliff:g></string>
   <string name="template_custom_hint_for_actions_keyboard">%2$s के लिए %1$s दबाएं</string>
-  <string name="template_custom_hint_for_long_clickable_actions">%1$s और %2$s को होल्ड करके रखें</string>
+  <string name="template_custom_hint_for_long_clickable_actions"><xliff:g id="hint" example="Expand">%2$s</xliff:g> के लिए <xliff:g id="action" example="Double-tap">%1$s</xliff:g> और दबाकर रखें</string>
   <string name="template_hint_clickable_link">खोलने के लिए, %1$s करें</string>
   <string name="template_hint_clickable_link_keyboard">लिंक खोलने के लिए, %1$s को दबाएं</string>
   <string name="value_caps_lock_on">Caps Lock चालू है</string>
