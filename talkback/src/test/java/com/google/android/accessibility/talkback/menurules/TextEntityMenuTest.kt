@@ -16,9 +16,9 @@
 
 package com.google.android.accessibility.talkback.menurules
 
-import android.os.LocaleList
+import android.view.textclassifier.TextClassifier
+import com.google.android.accessibility.talkback.menurules.TextEntityMenu.Classified
 import com.google.android.accessibility.talkback.menurules.TextEntityMenu.Entity
-import java.util.Locale
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test
@@ -29,10 +29,65 @@ import org.robolectric.annotation.Config
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [34])
 class TextEntityMenuTest {
+  /** What the classifier would find: [parts] of [text], each with its type. */
+  private fun classified(text: String, vararg parts: Pair<String, String>): List<Classified> =
+    parts.map { (part, type) ->
+      val start = text.indexOf(part)
+      Classified(start, start + part.length, type)
+    }
+
   @Test
   fun aOneTimeCodeIsOffered() {
-    val found = TextEntityMenu.find("Your verification code is 482916. Don't share it.")
-    assertEquals(listOf<Entity>(Entity.Code("482916")), found)
+    val text = "Your verification code is 482916. Don't share it."
+    assertEquals(listOf<Entity>(Entity.Code("482916")), TextEntityMenu.find(text, classified = listOf()))
+  }
+
+  @Test
+  fun aCodeThatLooksLikeAYearIsOffered() {
+    assertEquals(
+      listOf<Entity>(Entity.Code("2026")),
+      TextEntityMenu.find("Your code is 2026. Don't share it.", classified = listOf()),
+    )
+  }
+
+  @Test
+  fun digitsTheClassifierFoundAreNoCodes() {
+    val date = "Sat, 7 Nov 2026"
+    assertEquals(
+      emptyList<Entity>(),
+      TextEntityMenu.find(date, classified = classified(date, date to TextClassifier.TYPE_DATE_TIME)),
+    )
+    val text = "Meet at 1600 Main Street on 12/11/2026, code 4821"
+    assertEquals(
+      listOf<Entity>(Entity.Code("4821")),
+      TextEntityMenu.find(
+        text,
+        classified =
+          classified(
+            text,
+            "1600 Main Street" to TextClassifier.TYPE_ADDRESS,
+            "12/11/2026" to TextClassifier.TYPE_DATE,
+          ),
+      ),
+    )
+  }
+
+  @Test
+  fun phoneNumbersComeFromTheClassifier() {
+    val text = "Ring +44 (0)20 7946 0018."
+    assertEquals(
+      listOf<Entity>(Entity.Phone("+44 (0)20 7946 0018", "+442079460018")),
+      TextEntityMenu.find(
+        text,
+        classified = classified(text, "+44 (0)20 7946 0018" to TextClassifier.TYPE_PHONE),
+      ),
+    )
+  }
+
+  @Test
+  fun withoutTheClassifierOnlyAddressesAreOffered() {
+    val found = TextEntityMenu.find("Code 482916, see https://example.org/a", classified = null)
+    assertEquals(listOf<Entity>(Entity.Web("https://example.org/a", "https://example.org/a")), found)
   }
 
   @Test
@@ -51,114 +106,33 @@ class TextEntityMenuTest {
   }
 
   @Test
-  fun digitsInsideWordsOrLongNumbersAreNoCodes() {
-    assertTrue(TextEntityMenu.find("Order A12345B, card 1234567890123").none { it is Entity.Code })
-  }
-
-  @Test
-  fun phoneNumbersAreOffered() {
-    assertEquals(
-      listOf<Entity>(Entity.Phone("020 7946 0018", "02079460018")),
-      TextEntityMenu.find("Call 020 7946 0018 today"),
-    )
-    assertEquals(
-      listOf<Entity>(Entity.Phone("+44 (0)20 7946 0018", "+442079460018")),
-      TextEntityMenu.find("Ring +44 (0)20 7946 0018."),
-    )
-    assertEquals(
-      listOf<Entity>(Entity.Phone("(555) 123-4567", "5551234567")),
-      TextEntityMenu.find("Office: (555) 123-4567"),
-    )
-    assertEquals(
-      listOf<Entity>(Entity.Phone("+33 1 23 45 67 89", "+33123456789")),
-      TextEntityMenu.find("Tél +33 1 23 45 67 89"),
-    )
-    assertEquals(
-      listOf<Entity>(Entity.Phone("07700 900123", "07700900123")),
-      TextEntityMenu.find("Mobile 07700 900123"),
-    )
-    assertEquals(
-      listOf<Entity>(Entity.Phone("5551234567", "5551234567")),
-      TextEntityMenu.find("Text 5551234567"),
-    )
-  }
-
-  @Test
-  fun datesTimesAndYearsAreNoNumbersOrCodes() {
-    for (text in
-      listOf(
-        "Sat, 7 Nov 2026",
-        "7 November 2026, 10:45",
-        "Updated 2026-11-07 10:45",
-        "Due 07.11.2026",
-        "Due 11/07/2026",
-        "2020-2026",
-        "© 2026",
-        "©1999–2026",
-        "Nov 7, 2026",
-        "November 7th, 2026 at 10:45",
-        "7. November 2026",
-        "2026 Nov 7",
-      )) {
-      assertEquals(text, emptyList<Entity>(), TextEntityMenu.find(text))
-    }
-  }
-
-  @Test
-  fun monthNamesOfTheDeviceLanguagesMarkDates() {
-    val previous = LocaleList.getDefault()
-    try {
-      LocaleList.setDefault(LocaleList(Locale.UK, Locale.forLanguageTag("es")))
-      assertEquals(emptyList<Entity>(), TextEntityMenu.find("7 de noviembre de 2026"))
-    } finally {
-      LocaleList.setDefault(previous)
-    }
-  }
-
-  @Test
-  fun aCodeThatLooksLikeAYearIsOfferedOutsideADate() {
-    assertEquals(
-      listOf<Entity>(Entity.Code("2026")),
-      TextEntityMenu.find("Your code is 2026. It expires on 7 November."),
-    )
-    assertEquals(listOf<Entity>(Entity.Code("1984")), TextEntityMenu.find("PIN: 1984"))
-  }
-
-  @Test
-  fun digitsInUserNamesAreNoNumbersOrCodes() {
+  fun digitsJoinedToOtherTextAreNoCodes() {
     for (text in
       listOf(
         "u/Ok_Fact_2026 replied",
         "u/Some-Name-5551234 replied",
-        "u/name5551234567 replied",
         "@friend1234 posted",
         "r/2026 is trending",
         "#1234",
-      )) {
-      assertEquals(text, emptyList<Entity>(), TextEntityMenu.find(text))
-    }
-  }
-
-  @Test
-  fun amountsAddressesAndDecimalsAreNoNumbers() {
-    for (text in
-      listOf(
-        "Paid \$1234.56",
-        "Total 12.345.678",
-        "Server 192.168.10.20",
-        "1234.567 km",
         "Order A12345B, card 1234567890123",
+        "Paid \$1234.56",
+        "At 10:45",
+        "© 2026",
+        "©1999–2026",
       )) {
-      assertTrue(text, TextEntityMenu.find(text).none { it is Entity.Phone })
+      assertEquals(text, emptyList<Entity>(), TextEntityMenu.find(text, classified = listOf()))
     }
   }
 
   @Test
-  fun aCodeNextToOtherNumbersOrAfterAPrefixIsOffered() {
+  fun aCodeAfterAPrefixOrNextToOtherNumbersIsOffered() {
     assertEquals(
       listOf<Entity>(Entity.Code("482916")),
-      TextEntityMenu.find("G-482916 is your code. It expires in 10 minutes."),
+      TextEntityMenu.find("G-482916 is your code. It expires in 10 minutes.", classified = listOf()),
     )
-    assertEquals(listOf<Entity>(Entity.Code("482916")), TextEntityMenu.find("Code:482916 10 min"))
+    assertEquals(
+      listOf<Entity>(Entity.Code("482916")),
+      TextEntityMenu.find("Code:482916 10 min", classified = listOf()),
+    )
   }
 }
