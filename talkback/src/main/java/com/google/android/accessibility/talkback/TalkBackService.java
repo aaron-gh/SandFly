@@ -2139,6 +2139,9 @@ public class TalkBackService extends AccessibilityServiceCompat
 
     SharedPreferencesUtils.migrateSharedPreferences(this);
     prefs = SharedPreferencesUtils.getSharedPreferences(this);
+    // Bindings of removed commands move to the commands that replaced them, before the keyboard
+    // shortcuts are loaded.
+    RemovedCommands.migrate(prefs);
 
     if (FeatureFlagReader.usePeriodAsSeparator(getBaseContext())) {
       CompositorUtils.usePeriodAsSeparator();
@@ -3425,8 +3428,6 @@ public class TalkBackService extends AccessibilityServiceCompat
     VerbosityPreferences.removePresets(prefs, getResources());
     // Arrow key navigation's own commands became arrow keys that run any command.
     ArrowKeyNav.migrate(this);
-    // Bindings of removed commands move to the commands that replaced them.
-    RemovedCommands.migrate(prefs);
     VoiceProfiles.moveReadingControl(
         prefs,
         getString(R.string.pref_selector_voice_profile_moved_key),
