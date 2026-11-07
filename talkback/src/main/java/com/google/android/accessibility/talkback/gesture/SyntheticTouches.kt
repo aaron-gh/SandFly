@@ -33,13 +33,23 @@ object SyntheticTouches {
   /** Until when, in uptime, the next touch to go down is SandFly's own. */
   @Volatile private var expectedUntil = 0L
 
+  /** Whether SandFly's own gesture detection is registered, which hands the touches on. */
+  @Volatile private var detectionRegistered = false
+
   private val handler = Handler(Looper.getMainLooper())
 
   /**
    * Returns whether SandFly can send touches that reach the app as they are: only where it
    * recognizes gestures itself, and so sees the touches and can hand them on.
    */
-  @JvmStatic fun isAvailable(): Boolean = FeatureSupport.supportGestureDetection()
+  @JvmStatic
+  fun isAvailable(): Boolean = FeatureSupport.supportGestureDetection() && detectionRegistered
+
+  /** Sets whether SandFly's own gesture detection is registered on any display. */
+  @JvmStatic
+  fun setDetectionRegistered(registered: Boolean) {
+    detectionRegistered = registered
+  }
 
   /**
    * Sends [gesture], which lasts [durationMs], to the app under it, and runs [onEnd] when it ends

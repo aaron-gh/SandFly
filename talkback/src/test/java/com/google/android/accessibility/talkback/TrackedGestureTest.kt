@@ -667,6 +667,17 @@ class TrackedGestureTest {
   }
 
   @Test
+  fun fourFingerTapStaysOneGestureInDiagnosisMode() {
+    SharedPreferencesUtils.getSharedPreferences(service)
+      .edit()
+      .putBoolean(service.getString(R.string.pref_diagnosis_mode_key), true)
+      .commit()
+    assign(R.string.shortcut_value_first_in_screen, R.string.pref_shortcut_4finger_1tap_top_key)
+    fourFingerTap(40f)
+    assertEquals(listOf(AccessibilityService.GESTURE_4_FINGER_SINGLE_TAP), service.gestures)
+  }
+
+  @Test
   fun fourFingerTapStaysOneGestureWhenItsHalfIsUnassigned() {
     assign(R.string.shortcut_value_first_in_screen, R.string.pref_shortcut_4finger_1tap_top_key)
     fourFingerTap(service.resources.displayMetrics.heightPixels - 40f)

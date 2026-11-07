@@ -200,6 +200,7 @@ import com.google.android.accessibility.talkback.gesture.GestureLayoutActivity;
 import com.google.android.accessibility.talkback.gesture.GestureHistory;
 import com.google.android.accessibility.talkback.gesture.GestureProfiles;
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping;
+import com.google.android.accessibility.talkback.gesture.SyntheticTouches;
 import com.google.android.accessibility.talkback.gesture.TwoFingerRotationTracker;
 import com.google.android.accessibility.talkback.gesture.VibrationWatchGestureSettings;
 import com.google.android.accessibility.talkback.handwriting.HandwritingKeyboardHost;
@@ -2979,6 +2980,7 @@ public class TalkBackService extends AccessibilityServiceCompat
       directTouchController =
           new DirectTouchController(
               this, prefs, pipeline.getFeedbackReturner(), windowEventInterpreter);
+      directTouchController.setOnTouchesDirectChanged(this::updateLiftCancelStrip);
       windowEventInterpreter.addListener(directTouchController);
       ringerModeAndScreenMonitor.addScreenChangedListener(directTouchController);
       displayMonitor.addDisplayStateChangedListener(directTouchController);
@@ -3769,14 +3771,20 @@ public class TalkBackService extends AccessibilityServiceCompat
     }
   }
 
-  /** Shows the strip at the bottom of the screen where lifting activates nothing, while needed. */
+  /**
+   * Shows the strip at the bottom of the screen where lifting activates nothing, while needed. The
+   * strip takes the touches that reach it, so it is shown only while touch exploration is on and no
+   * direct touch region passes touches to the windows under it.
+   */
   private void updateLiftCancelStrip() {
     boolean shown =
         isServiceActive()
             && !PauseController.isPaused()
             && LiftToActivateMode.fromPrefValue(
                     prefs.getString(getString(R.string.pref_lift_to_activate_key), null))
-                != LiftToActivateMode.DISABLED;
+                != LiftToActivateMode.DISABLED
+            && Boolean.TRUE.equals(isTouchExplorationEnabled())
+            && (directTouchController == null || !directTouchController.takesTouchesDirectly());
     if (shown && liftCancelStrip == null) {
       liftCancelStrip = new LiftCancelStrip(this, liftCancelStripListener);
     }
@@ -4476,6 +4484,8 @@ public class TalkBackService extends AccessibilityServiceCompat
     }
     requestServiceFlag(
         AccessibilityServiceInfo.FLAG_REQUEST_TOUCH_EXPLORATION_MODE, requestedState);
+    // Touches that are not explored would go to the strip.
+    updateLiftCancelStrip();
     return isTouchExplorationEnabled();
   }
 
@@ -5148,6 +5158,7 @@ public class TalkBackService extends AccessibilityServiceCompat
       userInterface.registerListener(touchInteractionMonitor);
       LogUtils.i(TAG, "Enabling service gesture detection on display %d", display.getDisplayId());
     }
+    SyntheticTouches.setDetectionRegistered(displayIdToTouchInteractionMonitors.size() != 0);
   }
 
   /**
@@ -5177,6 +5188,7 @@ public class TalkBackService extends AccessibilityServiceCompat
       touchInteractionController.unregisterCallback(touchInteractionMonitor);
     }
     displayIdToTouchInteractionMonitors.clear();
+    SyntheticTouches.setDetectionRegistered(false);
   }
 
   /** Public for the SandFly AI module, which runs outside this package. */
