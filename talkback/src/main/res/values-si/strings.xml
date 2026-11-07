@@ -1363,7 +1363,7 @@
     <string name="action_copy_command">විධානය පිටපත් කරන්න</string>
     <string name="command_copied">විධානය පිටපත් කර ඇත</string>
     <string name="title_pref_speech_control">වෙනත් යෙදුම්වලට කතා කිරීමට ඉඩ දෙන්න</string>
-    <string name="summary_pref_speech_control">ඔබ ඉඩ දෙන යෙදුම්වලට SandFly හඬින් පෙළ කිව හැක. උපාංගය අගුළු දමා ඇති විට කිසිවක් නොකියයි.</string>
+    <string name="summary_pref_speech_control">ඔබ ඉඩ දෙන යෙදුම්වලට ඔබේ SandFly හඬින් පෙළ කිව හැක. උපාංගය අගුළු දමා ඇති විට, අගුළු දමා ඇති විටද ඔබ ඉඩ දුන් යෙදුම්වලට පමණක් කතා කළ හැක.</string>
     <string name="title_pref_speech_control_sound">වෙනත් යෙදුම් කතා කිරීමට පෙර ශබ්දයක් වාදනය කරන්න</string>
     <string name="speech_control_apps_category">යෙදුම්</string>
     <string name="speech_control_no_apps">යෙදුම් කිසිවක් තවම කතා කිරීමට ඉල්ලා නැත.</string>
@@ -1868,4 +1868,108 @@
   <string name="value_hold_to_cancel_3000">තත්පර 3</string>
   <string name="title_pref_tap_to_activate">සක්‍රිය කිරීමට තට්ටු කරන්න</string>
   <string name="summary_pref_tap_to_activate">ඇඟිල්ල යට ඇති අයිතමය නාභිගත වීමට පෙර ඇඟිල්ල ඔසවන තට්ටුවක් එම අයිතමය සක්‍රිය කරයි.</string>
+    <string name="title_selector_ai_actions">AI ක්‍රියා</string>
+    <string name="ai_actions_hint">ක්‍රියාවක් තෝරා ගැනීමට ඉහළට හෝ පහළට ස්වයිප් කරන්න, පසුව එය ධාවනය කිරීමට දෙවරක් තට්ටු කරන්න</string>
+    <string name="title_pref_ai_actions_included">ඇතුළත් කළ යුතු AI ක්‍රියා</string>
+    <string name="title_speak_screen_description">තිර විස්තරය කියන්න</string>
+    <string name="title_speak_image_description">රූප විස්තරය කියන්න</string>
+    <string name="title_ask_about_screen">තිරය ගැන අසන්න</string>
+    <string name="title_ask_about_image">රූපය ගැන අසන්න</string>
+    <string name="ai_question_hint">ප්‍රශ්නය</string>
+    <string name="ai_question_ask">අසන්න</string>
+    <string name="shortcut_use_voice_profile"><xliff:g id="name" example="English">%1$s</xliff:g> හඬ පැතිකඩ භාවිතා කරන්න</string>
+    <string name="title_pref_keep_previous_voice_engine">පෙර හඬ පැතිකඩේ එන්ජිම ආරම්භ කළ තත්ත්වයේ තබන්න</string>
+    <string name="title_pref_voice_profile_keep_engine_started">එන්ජිම ආරම්භ කළ තත්ත්වයේ තබන්න</string>
+    <string name="title_pref_speech_equalizer">සමකාරකය</string>
+    <string name="title_pref_speech_equalizer_preset">පෙර සැකසීම</string>
+    <string name="title_pref_speech_equalizer_on">සමකාරකය භාවිතා කරන්න</string>
+    <string name="speech_equalizer_off">ක්‍රියාවිරහිතයි</string>
+    <string name="speech_equalizer_turned_on">සමකාරකය ක්‍රියාත්මකයි</string>
+    <string name="speech_equalizer_turned_off">සමකාරකය ක්‍රියාවිරහිතයි</string>
+    <string name="title_selector_equalizer_32">සමකාරකය 32 Hz</string>
+    <string name="title_selector_equalizer_64">සමකාරකය 64 Hz</string>
+    <string name="title_selector_equalizer_125">සමකාරකය 125 Hz</string>
+    <string name="title_selector_equalizer_250">සමකාරකය 250 Hz</string>
+    <string name="title_selector_equalizer_500">සමකාරකය 500 Hz</string>
+    <string name="title_selector_equalizer_1k">සමකාරකය 1 kHz</string>
+    <string name="title_selector_equalizer_2k">සමකාරකය 2 kHz</string>
+    <string name="title_selector_equalizer_3k">සමකාරකය 3 kHz</string>
+    <string name="title_selector_equalizer_4k">සමකාරකය 4 kHz</string>
+    <string name="title_selector_equalizer_6k">සමකාරකය 6 kHz</string>
+    <string name="title_selector_equalizer_8k">සමකාරකය 8 kHz</string>
+    <string name="title_selector_equalizer_16k">සමකාරකය 16 kHz</string>
+    <string name="summary_speech_equalizer_needs_low_latency">ශ්‍රව්‍ය ප්‍රතිදානය &gt; අඩු ප්‍රමාද ශ්‍රව්‍ය අවශ්‍යයි</string>
+    <string name="speech_equalizer_flat">සමතලා</string>
+    <string name="speech_equalizer_clarity">පැහැදිලිකම</string>
+    <string name="speech_equalizer_bass_boost">බේස් වැඩි කිරීම</string>
+    <string name="speech_equalizer_bass_cut">බේස් අඩු කිරීම</string>
+    <string name="speech_equalizer_treble_boost">ට්‍රෙබල් වැඩි කිරීම</string>
+    <string name="speech_equalizer_treble_cut">ට්‍රෙබල් අඩු කිරීම</string>
+    <string name="speech_equalizer_warm">උණුසුම්</string>
+    <string name="speech_equalizer_reduce_harshness">රළු බව අඩු කරන්න</string>
+    <string name="speech_equalizer_reduce_sibilance">ස-ශබ්ද අඩු කරන්න</string>
+    <string name="speech_equalizer_small_speaker">කුඩා ස්පීකරය</string>
+    <string name="speech_equalizer_custom">අභිරුචි</string>
+    <string name="speech_equalizer_band_hz"><xliff:g id="frequency">%1$s</xliff:g> Hz</string>
+    <string name="speech_equalizer_band_khz"><xliff:g id="frequency">%1$s</xliff:g> kHz</string>
+    <string name="speech_equalizer_gain_db"><xliff:g id="gain">%1$s</xliff:g> dB</string>
+    <string name="title_pref_braille_dictionary">බ්‍රේල් ශබ්දකෝෂය</string>
+    <string name="braille_dictionary_not_shown"><xliff:g id="text" example="#">%1$s</xliff:g> පෙන්වන්නේ නැත</string>
+    <string name="title_pref_announce_full_charge">සම්පූර්ණ ආරෝපණය නිවේදනය කරන්න</string>
+    <string name="battery_fully_charged">බැටරිය සම්පූර්ණයෙන් ආරෝපණය විය</string>
+    <string name="speech_control_locked_app">උපාංගය අගුළු දමා ඇති විට <xliff:g id="app" example="Tasker">%1$s</xliff:g></string>
+    <string name="speech_control_ask_locked_title">උපාංගය අගුළු දමා ඇති විට <xliff:g id="app" example="Tasker">%1$s</xliff:g> හට SandFly හරහා කතා කිරීමට ඉඩ දෙන්නද?</string>
+    <string name="speech_control_ask_locked_text">උපාංගය අගුළු දමා ඇති විට එයට ඔබේ SandFly හඬින් පෙළ කිව හැක. “ඉඩ දෙන්න” සඳහා උපාංගය අගුළු හැර තිබිය යුතුය. ඔබට මෙය “සැකසීම්” > “කථනය” > “වෙනත් යෙදුම්වලට කතා කිරීමට ඉඩ දෙන්න” යටතේ වෙනස් කළ හැක.</string>
+    <string name="permission_speak_when_locked_label">උපාංගය අගුළු දමා ඇති විට SandFly හරහා කතා කිරීම</string>
+    <string name="permission_speak_when_locked_description">උපාංගය අගුළු දමා ඇති විට ඔබේ SandFly කටහඬින් පෙළ කීමට ඉල්ලීමට යෙදුමට ඉඩ දෙයි. එයට පෙර SandFly ඔබෙන් වෙනම අසයි.</string>
+    <string name="title_pref_category_back_tap">පිටුපස තට්ටු කිරීම</string>
+    <string name="title_pref_keep_speech_off_casts">විකාශය කරන අතරතුර කථනය දුරකථනයේම තබන්න</string>
+    <string name="title_pref_app_shortcuts">යෙදුම් කෙටිමං</string>
+    <string name="app_shortcut_label"><xliff:g id="app_name" example="Amazon">%1$s</xliff:g>: <xliff:g id="shortcut" example="Cart">%2$s</xliff:g></string>
+    <string name="title_pref_add_app_shortcut">යෙදුම් කෙටිමඟක් එක් කරන්න</string>
+    <string name="app_shortcut_no_apps">එක් කිරීමට කෙටිමං ඇති යෙදුම් නැත</string>
+    <string name="app_shortcut_not_added">කෙටිමඟක් එක් නොකළේය</string>
+    <string name="app_shortcut_added"><xliff:g id="name" example="MacroDroid: Morning">%1$s</xliff:g> එක් කළා</string>
+    <string name="app_shortcut_not_opened">යෙදුම් කෙටිමඟ විවෘත කළ නොහැකි විය</string>
+    <string name="app_search_no_apps">යෙදුම් නැත</string>
+    <string name="shortcut_toggle_color_inversion">වර්ණ ප්‍රතිලෝමය ක්‍රියාත්මක හෝ ක්‍රියාවිරහිත කරන්න</string>
+    <string name="color_inversion_turned_on">වර්ණ ප්‍රතිලෝමය ක්‍රියාත්මකයි</string>
+    <string name="color_inversion_turned_off">වර්ණ ප්‍රතිලෝමය ක්‍රියාවිරහිතයි</string>
+    <string name="shortcut_dictate_or_media_control">කියමින් ලියවන්න, මාධ්‍ය ධාවනය කරන්න හෝ විරාම කරන්න</string>
+    <string name="title_pref_shortcut_edge_along_left_up">වම් කෙළවර දිගේ ඉහළට ස්වයිප් කරන්න</string>
+    <string name="title_pref_shortcut_edge_along_left_down">වම් කෙළවර දිගේ පහළට ස්වයිප් කරන්න</string>
+    <string name="title_pref_shortcut_edge_along_right_up">දකුණු කෙළවර දිගේ ඉහළට ස්වයිප් කරන්න</string>
+    <string name="title_pref_shortcut_edge_along_right_down">දකුණු කෙළවර දිගේ පහළට ස්වයිප් කරන්න</string>
+    <string name="title_pref_shortcut_edge_along_top_left">ඉහළ කෙළවර දිගේ වමට ස්වයිප් කරන්න</string>
+    <string name="title_pref_shortcut_edge_along_top_right">ඉහළ කෙළවර දිගේ දකුණට ස්වයිප් කරන්න</string>
+    <string name="title_pref_shortcut_edge_along_bottom_left">පහළ කෙළවර දිගේ වමට ස්වයිප් කරන්න</string>
+    <string name="title_pref_shortcut_edge_along_bottom_right">පහළ කෙළවර දිගේ දකුණට ස්වයිප් කරන්න</string>
+    <string name="title_pref_shortcut_back_tap_double">පිටුපස දෙවරක් තට්ටු කරන්න</string>
+    <string name="title_pref_shortcut_back_tap_triple">පිටුපස තෙවරක් තට්ටු කරන්න</string>
+    <string name="title_pref_back_tap_sensitivity">පිටුපස තට්ටු කිරීමේ සංවේදීතාව</string>
+    <string name="title_pref_edge_zone_mm">කෙළවරේ පළල</string>
+    <string name="title_pref_edge_scroll_left">වම් කෙළවර දිගේ එක් ඇඟිල්ලකින් අනුචලනය කරන්න</string>
+    <string name="title_pref_edge_scroll_right">දකුණු කෙළවර දිගේ එක් ඇඟිල්ලකින් අනුචලනය කරන්න</string>
+    <string name="title_pref_edge_scroll_top">ඉහළ කෙළවර දිගේ එක් ඇඟිල්ලකින් අනුචලනය කරන්න</string>
+    <string name="title_pref_edge_scroll_bottom">පහළ කෙළවර දිගේ එක් ඇඟිල්ලකින් අනුචලනය කරන්න</string>
+    <string name="title_pref_edge_menu_left">වම් කෙළවරේ මෙනුව</string>
+    <string name="title_pref_edge_menu_right">දකුණු කෙළවරේ මෙනුව</string>
+    <string name="title_pref_edge_menu_left_switch">වම් කෙළවර මෙනුවක් ලෙස භාවිතා කරන්න</string>
+    <string name="title_pref_edge_menu_right_switch">දකුණු කෙළවර මෙනුවක් ලෙස භාවිතා කරන්න</string>
+    <string name="edge_menu_add_command">විධානයක් එක් කරන්න</string>
+    <string name="edge_menu_change_command">විධානය වෙනස් කරන්න</string>
+    <string name="title_pref_text_entities">පෙළෙහි හමු වූ ක්‍රියා</string>
+    <string name="text_entity_web">වෙබ් ලිපින</string>
+    <string name="text_entity_email">විද්‍යුත් තැපැල් ලිපින</string>
+    <string name="text_entity_phone">දුරකථන අංක</string>
+    <string name="text_entity_code">කේත</string>
+    <string name="menu_item_call_number"><xliff:g id="number" example="020 7946 0018">%1$s</xliff:g> අමතන්න</string>
+    <string name="menu_item_copy_code"><xliff:g id="code" example="482916">%1$s</xliff:g> පිටපත් කරන්න</string>
+    <string name="title_pref_show_focus_indicator">නාභිගත දර්ශකය පෙන්වන්න</string>
+    <string name="title_pref_dictation_correction_prompt">නිවැරදි කිරීමේ උපදෙස්</string>
+    <string name="title_pref_whisper_custom_model">මාදිලි ගොනුව</string>
+    <string name="whisper_custom_model_choose">whisper.cpp මාදිලි ගොනුවක් තෝරන්න</string>
+    <string name="whisper_custom_model_replace">වෙනත් ගොනුවක් තෝරන්න</string>
+    <string name="whisper_custom_model_not_whisper">whisper.cpp මාදිලි ගොනුවක් නොවේ</string>
+    <string name="whisper_custom_model_copying">පිටපත් කරමින්</string>
 </resources>

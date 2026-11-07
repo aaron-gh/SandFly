@@ -1347,7 +1347,7 @@
     <string name="action_copy_command">Скапіраваць каманду</string>
     <string name="command_copied">Каманда скапіравана</string>
     <string name="title_pref_speech_control">Маўленне іншых праграм</string>
-    <string name="summary_pref_speech_control">Праграмы, якім вы дазволіце, могуць агучваць тэкст голасам SandFly. Калі прылада заблакіравана, нічога не агучваецца.</string>
+    <string name="summary_pref_speech_control">Праграмы, якім вы дазволіце, могуць агучваць тэкст голасам SandFly. Калі прылада заблакіравана, тэкст агучваюць толькі праграмы, якім вы дазволілі гэта і на заблакіраванай прыладзе.</string>
     <string name="title_pref_speech_control_sound">Прайграваць гук перад маўленнем іншых праграм</string>
     <string name="speech_control_apps_category">Праграмы</string>
     <string name="speech_control_no_apps">Пакуль ніводная праграма не запытвала дазвол на маўленне.</string>
@@ -1874,4 +1874,108 @@
   <string name="value_hold_to_cancel_3000">3 секунды</string>
   <string name="title_pref_tap_to_activate">Актывацыя дотыкам</string>
   <string name="summary_pref_tap_to_activate">Дотык, пры якім палец адрываецца да таго, як элемент пад ім атрымае фокус, актывуе гэты элемент.</string>
+    <string name="title_selector_ai_actions">Дзеянні ШІ</string>
+    <string name="ai_actions_hint">Правядзіце ўверх або ўніз, каб выбраць дзеянне, потым двойчы націсніце, каб выканаць яго</string>
+    <string name="title_pref_ai_actions_included">Даступныя дзеянні ШІ</string>
+    <string name="title_speak_screen_description">Агучыць апісанне экрана</string>
+    <string name="title_speak_image_description">Агучыць апісанне відарыса</string>
+    <string name="title_ask_about_screen">Спытаць пра экран</string>
+    <string name="title_ask_about_image">Спытаць пра відарыс</string>
+    <string name="ai_question_hint">Пытанне</string>
+    <string name="ai_question_ask">Спытаць</string>
+    <string name="shortcut_use_voice_profile">Выкарыстаць галасавы профіль <xliff:g id="name" example="English">%1$s</xliff:g></string>
+    <string name="title_pref_keep_previous_voice_engine">Трымаць запушчанай сістэму сінтэзу маўлення папярэдняга галасавога профілю</string>
+    <string name="title_pref_voice_profile_keep_engine_started">Трымаць сістэму сінтэзу маўлення запушчанай</string>
+    <string name="title_pref_speech_equalizer">Эквалайзер</string>
+    <string name="title_pref_speech_equalizer_preset">Набор налад</string>
+    <string name="title_pref_speech_equalizer_on">Выкарыстоўваць эквалайзер</string>
+    <string name="speech_equalizer_off">Выключаны</string>
+    <string name="speech_equalizer_turned_on">Эквалайзер уключаны</string>
+    <string name="speech_equalizer_turned_off">Эквалайзер выключаны</string>
+    <string name="title_selector_equalizer_32">Эквалайзер 32 Гц</string>
+    <string name="title_selector_equalizer_64">Эквалайзер 64 Гц</string>
+    <string name="title_selector_equalizer_125">Эквалайзер 125 Гц</string>
+    <string name="title_selector_equalizer_250">Эквалайзер 250 Гц</string>
+    <string name="title_selector_equalizer_500">Эквалайзер 500 Гц</string>
+    <string name="title_selector_equalizer_1k">Эквалайзер 1 кГц</string>
+    <string name="title_selector_equalizer_2k">Эквалайзер 2 кГц</string>
+    <string name="title_selector_equalizer_3k">Эквалайзер 3 кГц</string>
+    <string name="title_selector_equalizer_4k">Эквалайзер 4 кГц</string>
+    <string name="title_selector_equalizer_6k">Эквалайзер 6 кГц</string>
+    <string name="title_selector_equalizer_8k">Эквалайзер 8 кГц</string>
+    <string name="title_selector_equalizer_16k">Эквалайзер 16 кГц</string>
+    <string name="summary_speech_equalizer_needs_low_latency">Патрабуецца: Вывад аўдыя &gt; Аўдыя з нізкай затрымкай</string>
+    <string name="speech_equalizer_flat">Роўны</string>
+    <string name="speech_equalizer_clarity">Выразнасць</string>
+    <string name="speech_equalizer_bass_boost">Узмацненне басоў</string>
+    <string name="speech_equalizer_bass_cut">Аслабленне басоў</string>
+    <string name="speech_equalizer_treble_boost">Узмацненне высокіх частот</string>
+    <string name="speech_equalizer_treble_cut">Аслабленне высокіх частот</string>
+    <string name="speech_equalizer_warm">Цёплы</string>
+    <string name="speech_equalizer_reduce_harshness">Памяншэнне рэзкасці</string>
+    <string name="speech_equalizer_reduce_sibilance">Памяншэнне свісцячых</string>
+    <string name="speech_equalizer_small_speaker">Малы дынамік</string>
+    <string name="speech_equalizer_custom">Уласны</string>
+    <string name="speech_equalizer_band_hz"><xliff:g id="frequency">%1$s</xliff:g> Гц</string>
+    <string name="speech_equalizer_band_khz"><xliff:g id="frequency">%1$s</xliff:g> кГц</string>
+    <string name="speech_equalizer_gain_db"><xliff:g id="gain">%1$s</xliff:g> дБ</string>
+    <string name="title_pref_braille_dictionary">Брайлеўскі слоўнік</string>
+    <string name="braille_dictionary_not_shown"><xliff:g id="text" example="#">%1$s</xliff:g> не паказваецца</string>
+    <string name="title_pref_announce_full_charge">Паведамляць пра поўную зарадку</string>
+    <string name="battery_fully_charged">Акумулятар цалкам зараджаны</string>
+    <string name="speech_control_locked_app"><xliff:g id="app" example="Tasker">%1$s</xliff:g>, калі прылада заблакіравана</string>
+    <string name="speech_control_ask_locked_title">Дазволіць праграме <xliff:g id="app" example="Tasker">%1$s</xliff:g> агучваць тэкст праз SandFly, калі прылада заблакіравана?</string>
+    <string name="speech_control_ask_locked_text">Праграма зможа агучваць тэкст голасам SandFly, калі прылада заблакіравана. Кнопка «Дазволіць» працуе толькі на разблакіраванай прыладзе. Змяніць гэта можна ў раздзеле «Налады», «Маўленне», «Маўленне іншых праграм».</string>
+    <string name="permission_speak_when_locked_label">агучванне тэксту праз SandFly, калі прылада заблакіравана</string>
+    <string name="permission_speak_when_locked_description">Дазваляе праграме запытваць агучванне тэксту голасам SandFly, калі прылада заблакіравана. SandFly асобна запытвае ваш дазвол.</string>
+    <string name="title_pref_category_back_tap">Націсканне на заднюю панэль</string>
+    <string name="title_pref_keep_speech_off_casts">Пакідаць маўленне на тэлефоне падчас трансляцыі</string>
+    <string name="title_pref_app_shortcuts">Ярлыкі праграм</string>
+    <string name="app_shortcut_label"><xliff:g id="app_name" example="Amazon">%1$s</xliff:g>: <xliff:g id="shortcut" example="Cart">%2$s</xliff:g></string>
+    <string name="title_pref_add_app_shortcut">Дадаць ярлык праграмы</string>
+    <string name="app_shortcut_no_apps">Няма праграм з ярлыкамі для дадавання</string>
+    <string name="app_shortcut_not_added">Ярлык не дададзены</string>
+    <string name="app_shortcut_added">Дададзена: <xliff:g id="name" example="MacroDroid: Morning">%1$s</xliff:g></string>
+    <string name="app_shortcut_not_opened">Не ўдалося адкрыць ярлык праграмы</string>
+    <string name="app_search_no_apps">Няма праграм</string>
+    <string name="shortcut_toggle_color_inversion">Уключыць або выключыць колеравую інверсію</string>
+    <string name="color_inversion_turned_on">Колеравая інверсія ўключана</string>
+    <string name="color_inversion_turned_off">Колеравая інверсія выключана</string>
+    <string name="shortcut_dictate_or_media_control">Дыктаваць, прайграць або прыпыніць мультымедыя</string>
+    <string name="title_pref_shortcut_edge_along_left_up">Правесці ўверх уздоўж левага краю</string>
+    <string name="title_pref_shortcut_edge_along_left_down">Правесці ўніз уздоўж левага краю</string>
+    <string name="title_pref_shortcut_edge_along_right_up">Правесці ўверх уздоўж правага краю</string>
+    <string name="title_pref_shortcut_edge_along_right_down">Правесці ўніз уздоўж правага краю</string>
+    <string name="title_pref_shortcut_edge_along_top_left">Правесці ўлева ўздоўж верхняга краю</string>
+    <string name="title_pref_shortcut_edge_along_top_right">Правесці ўправа ўздоўж верхняга краю</string>
+    <string name="title_pref_shortcut_edge_along_bottom_left">Правесці ўлева ўздоўж ніжняга краю</string>
+    <string name="title_pref_shortcut_edge_along_bottom_right">Правесці ўправа ўздоўж ніжняга краю</string>
+    <string name="title_pref_shortcut_back_tap_double">Двойчы націснуць на заднюю панэль</string>
+    <string name="title_pref_shortcut_back_tap_triple">Тройчы націснуць на заднюю панэль</string>
+    <string name="title_pref_back_tap_sensitivity">Адчувальнасць націскання на заднюю панэль</string>
+    <string name="title_pref_edge_zone_mm">Шырыня краю</string>
+    <string name="title_pref_edge_scroll_left">Пракручваць адным пальцам уздоўж левага краю</string>
+    <string name="title_pref_edge_scroll_right">Пракручваць адным пальцам уздоўж правага краю</string>
+    <string name="title_pref_edge_scroll_top">Пракручваць адным пальцам уздоўж верхняга краю</string>
+    <string name="title_pref_edge_scroll_bottom">Пракручваць адным пальцам уздоўж ніжняга краю</string>
+    <string name="title_pref_edge_menu_left">Меню левага краю</string>
+    <string name="title_pref_edge_menu_right">Меню правага краю</string>
+    <string name="title_pref_edge_menu_left_switch">Выкарыстоўваць левы край як меню</string>
+    <string name="title_pref_edge_menu_right_switch">Выкарыстоўваць правы край як меню</string>
+    <string name="edge_menu_add_command">Дадаць каманду</string>
+    <string name="edge_menu_change_command">Змяніць каманду</string>
+    <string name="title_pref_text_entities">Дзеянні, знойдзеныя ў тэксце</string>
+    <string name="text_entity_web">Вэб-адрасы</string>
+    <string name="text_entity_email">Адрасы электроннай пошты</string>
+    <string name="text_entity_phone">Нумары тэлефонаў</string>
+    <string name="text_entity_code">Коды</string>
+    <string name="menu_item_call_number">Патэлефанаваць на нумар <xliff:g id="number" example="020 7946 0018">%1$s</xliff:g></string>
+    <string name="menu_item_copy_code">Скапіраваць <xliff:g id="code" example="482916">%1$s</xliff:g></string>
+    <string name="title_pref_show_focus_indicator">Паказваць індыкатар фокуса</string>
+    <string name="title_pref_dictation_correction_prompt">Інструкцыя для выпраўлення</string>
+    <string name="title_pref_whisper_custom_model">Файл мадэлі</string>
+    <string name="whisper_custom_model_choose">Выберыце файл мадэлі whisper.cpp</string>
+    <string name="whisper_custom_model_replace">Выбраць іншы файл</string>
+    <string name="whisper_custom_model_not_whisper">Гэта не файл мадэлі whisper.cpp</string>
+    <string name="whisper_custom_model_copying">Капіраванне</string>
 </resources>

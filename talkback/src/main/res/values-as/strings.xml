@@ -1349,7 +1349,7 @@
     <string name="action_copy_command">কামাণ্ড প্ৰতিলিপি কৰক</string>
     <string name="command_copied">কামাণ্ড প্ৰতিলিপি কৰা হ’ল</string>
     <string name="title_pref_speech_control">অন্য এপক কথা ক’বলৈ দিয়ক</string>
-    <string name="summary_pref_speech_control">আপুনি অনুমতি দিয়া এপে আপোনাৰ SandFly কণ্ঠত পাঠ ক’ব পাৰে। ডিভাইচ লক হৈ থাকোঁতে একো কোৱা নহয়।</string>
+    <string name="summary_pref_speech_control">আপুনি অনুমতি দিয়া এপে আপোনাৰ SandFly কণ্ঠত পাঠ ক’ব পাৰে। ডিভাইচ লক হৈ থাকোঁতে কেৱল সেই এপেহে ক’ব পাৰে যিবোৰক আপুনি লক হৈ থাকোঁতেও অনুমতি দিছে।</string>
     <string name="title_pref_speech_control_sound">অন্য এপে কথা কোৱাৰ আগতে এটা ধ্বনি বজাওক</string>
     <string name="speech_control_apps_category">এপ</string>
     <string name="speech_control_no_apps">এতিয়ালৈকে কোনো এপে কথা ক’বলৈ অনুৰোধ কৰা নাই।</string>
@@ -1868,4 +1868,108 @@
   <string name="value_hold_to_cancel_3000">৩ ছেকেণ্ড</string>
   <string name="title_pref_tap_to_activate">সক্ৰিয় কৰিবলৈ টিপক</string>
   <string name="summary_pref_tap_to_activate">আঙুলিৰ তলৰ বস্তুটো ফ’কাছ হোৱাৰ আগতে আঙুলি উঠালে, সেই টিপাই বস্তুটো সক্ৰিয় কৰে।</string>
+    <string name="title_selector_ai_actions">এআই কাৰ্য</string>
+    <string name="ai_actions_hint">কোনো কাৰ্য বাছনি কৰিবলৈ ওপৰলৈ বা তললৈ ছোৱাইপ কৰক, তাৰ পিছত চলাবলৈ দুবাৰ টিপক</string>
+    <string name="title_pref_ai_actions_included">অন্তৰ্ভুক্ত কৰিবলগীয়া এআই কাৰ্য</string>
+    <string name="title_speak_screen_description">স্ক্ৰীনৰ বৰ্ণনা কওক</string>
+    <string name="title_speak_image_description">প্ৰতিচ্ছবিৰ বিৱৰণ কওক</string>
+    <string name="title_ask_about_screen">স্ক্ৰীনৰ বিষয়ে সোধক</string>
+    <string name="title_ask_about_image">প্ৰতিচ্ছবিৰ বিষয়ে সোধক</string>
+    <string name="ai_question_hint">প্ৰশ্ন</string>
+    <string name="ai_question_ask">সোধক</string>
+    <string name="shortcut_use_voice_profile">কণ্ঠৰ প্ৰ’ফাইল <xliff:g id="name" example="English">%1$s</xliff:g> ব্যৱহাৰ কৰক</string>
+    <string name="title_pref_keep_previous_voice_engine">পূৰ্বৱৰ্তী কণ্ঠৰ প্ৰ’ফাইলৰ ইঞ্জিন চালু ৰাখক</string>
+    <string name="title_pref_voice_profile_keep_engine_started">ইঞ্জিন চালু ৰাখক</string>
+    <string name="title_pref_speech_equalizer">ইকুৱেলাইজাৰ</string>
+    <string name="title_pref_speech_equalizer_preset">প্ৰিছেট</string>
+    <string name="title_pref_speech_equalizer_on">ইকুৱেলাইজাৰ ব্যৱহাৰ কৰক</string>
+    <string name="speech_equalizer_off">অফ</string>
+    <string name="speech_equalizer_turned_on">ইকুৱেলাইজাৰ অন আছে</string>
+    <string name="speech_equalizer_turned_off">ইকুৱেলাইজাৰ অফ আছে</string>
+    <string name="title_selector_equalizer_32">ইকুৱেলাইজাৰ 32 Hz</string>
+    <string name="title_selector_equalizer_64">ইকুৱেলাইজাৰ 64 Hz</string>
+    <string name="title_selector_equalizer_125">ইকুৱেলাইজাৰ 125 Hz</string>
+    <string name="title_selector_equalizer_250">ইকুৱেলাইজাৰ 250 Hz</string>
+    <string name="title_selector_equalizer_500">ইকুৱেলাইজাৰ 500 Hz</string>
+    <string name="title_selector_equalizer_1k">ইকুৱেলাইজাৰ 1 kHz</string>
+    <string name="title_selector_equalizer_2k">ইকুৱেলাইজাৰ 2 kHz</string>
+    <string name="title_selector_equalizer_3k">ইকুৱেলাইজাৰ 3 kHz</string>
+    <string name="title_selector_equalizer_4k">ইকুৱেলাইজাৰ 4 kHz</string>
+    <string name="title_selector_equalizer_6k">ইকুৱেলাইজাৰ 6 kHz</string>
+    <string name="title_selector_equalizer_8k">ইকুৱেলাইজাৰ 8 kHz</string>
+    <string name="title_selector_equalizer_16k">ইকুৱেলাইজাৰ 16 kHz</string>
+    <string name="summary_speech_equalizer_needs_low_latency">অডিঅ’ আউটপুট &gt; কম বিলম্বতাৰ অডিঅ’ লাগে</string>
+    <string name="speech_equalizer_flat">ফ্লেট</string>
+    <string name="speech_equalizer_clarity">স্পষ্টতা</string>
+    <string name="speech_equalizer_bass_boost">বেছ বুষ্ট</string>
+    <string name="speech_equalizer_bass_cut">বেছ কাট</string>
+    <string name="speech_equalizer_treble_boost">ট্ৰেবল বুষ্ট</string>
+    <string name="speech_equalizer_treble_cut">ট্ৰেবল কাট</string>
+    <string name="speech_equalizer_warm">ৱাৰ্ম</string>
+    <string name="speech_equalizer_reduce_harshness">কৰ্কশতা কমাওক</string>
+    <string name="speech_equalizer_reduce_sibilance">চিবিলেন্স কমাওক</string>
+    <string name="speech_equalizer_small_speaker">সৰু স্পীকাৰ</string>
+    <string name="speech_equalizer_custom">কাষ্টম</string>
+    <string name="speech_equalizer_band_hz"><xliff:g id="frequency">%1$s</xliff:g> Hz</string>
+    <string name="speech_equalizer_band_khz"><xliff:g id="frequency">%1$s</xliff:g> kHz</string>
+    <string name="speech_equalizer_gain_db"><xliff:g id="gain">%1$s</xliff:g> dB</string>
+    <string name="title_pref_braille_dictionary">ব্ৰেইল অভিধান</string>
+    <string name="braille_dictionary_not_shown"><xliff:g id="text" example="#">%1$s</xliff:g> দেখুওৱা নহয়</string>
+    <string name="title_pref_announce_full_charge">সম্পূৰ্ণ চাৰ্জ হ’লে কওক</string>
+    <string name="battery_fully_charged">বেটাৰী সম্পূৰ্ণ চাৰ্জ হ’ল</string>
+    <string name="speech_control_locked_app">ডিভাইচ লক হৈ থাকোঁতে <xliff:g id="app" example="Tasker">%1$s</xliff:g></string>
+    <string name="speech_control_ask_locked_title">ডিভাইচ লক হৈ থাকোঁতে <xliff:g id="app" example="Tasker">%1$s</xliff:g>ক SandFlyৰ জৰিয়তে কথা ক’বলৈ অনুমতি দিবনে?</string>
+    <string name="speech_control_ask_locked_text">ই ডিভাইচ লক হৈ থাকোঁতে আপোনাৰ SandFly কণ্ঠত পাঠ ক’ব পাৰে। অনুমতি দিবলৈ ডিভাইচ আনলক হৈ থাকিব লাগিব। আপুনি ইয়াক “ছেটিং”, “কথন”, “অন্য এপক কথা ক’বলৈ দিয়ক”ত সলনি কৰিব পাৰে।</string>
+    <string name="permission_speak_when_locked_label">ডিভাইচ লক হৈ থাকোঁতে SandFlyৰ জৰিয়তে কথা কোৱা</string>
+    <string name="permission_speak_when_locked_description">এপটোক ডিভাইচ লক হৈ থাকোঁতে আপোনাৰ SandFly কণ্ঠত পাঠ ক’বলৈ অনুৰোধ কৰিবলৈ দিয়ে। ই ক’ব পৰাৰ আগতে SandFlyয়ে আপোনাক পৃথকে সোধে।</string>
+    <string name="title_pref_category_back_tap">ডিভাইচৰ পিছফালে টিপা</string>
+    <string name="title_pref_keep_speech_off_casts">কাষ্ট কৰোঁতে কথন ফোনতে ৰাখক</string>
+    <string name="title_pref_app_shortcuts">এপৰ শ্বৰ্টকাট</string>
+    <string name="app_shortcut_label"><xliff:g id="app_name" example="Amazon">%1$s</xliff:g>: <xliff:g id="shortcut" example="Cart">%2$s</xliff:g></string>
+    <string name="title_pref_add_app_shortcut">এপৰ শ্বৰ্টকাট যোগ দিয়ক</string>
+    <string name="app_shortcut_no_apps">কোনো এপত যোগ দিব পৰা শ্বৰ্টকাট নাই</string>
+    <string name="app_shortcut_not_added">কোনো শ্বৰ্টকাট যোগ দিয়া হোৱা নাই</string>
+    <string name="app_shortcut_added"><xliff:g id="name" example="MacroDroid: Morning">%1$s</xliff:g> যোগ দিয়া হ’ল</string>
+    <string name="app_shortcut_not_opened">এপৰ শ্বৰ্টকাট খুলিব পৰা নগ’ল</string>
+    <string name="app_search_no_apps">কোনো এপ নাই</string>
+    <string name="shortcut_toggle_color_inversion">ৰঙৰ ওলোটা অন অথবা অফ কৰক</string>
+    <string name="color_inversion_turned_on">ৰঙৰ ওলোটা অন আছে</string>
+    <string name="color_inversion_turned_off">ৰঙৰ ওলোটা অফ আছে</string>
+    <string name="shortcut_dictate_or_media_control">শ্ৰুতিলিখন, মিডিয়া প্লে’ অথবা পজ কৰক</string>
+    <string name="title_pref_shortcut_edge_along_left_up">বাওঁফালৰ কাষেদি ওপৰলৈ ছোৱাইপ কৰক</string>
+    <string name="title_pref_shortcut_edge_along_left_down">বাওঁফালৰ কাষেদি তললৈ ছোৱাইপ কৰক</string>
+    <string name="title_pref_shortcut_edge_along_right_up">সোঁফালৰ কাষেদি ওপৰলৈ ছোৱাইপ কৰক</string>
+    <string name="title_pref_shortcut_edge_along_right_down">সোঁফালৰ কাষেদি তললৈ ছোৱাইপ কৰক</string>
+    <string name="title_pref_shortcut_edge_along_top_left">ওপৰৰ কাষেদি বাওঁফালে ছোৱাইপ কৰক</string>
+    <string name="title_pref_shortcut_edge_along_top_right">ওপৰৰ কাষেদি সোঁফালে ছোৱাইপ কৰক</string>
+    <string name="title_pref_shortcut_edge_along_bottom_left">তলৰ কাষেদি বাওঁফালে ছোৱাইপ কৰক</string>
+    <string name="title_pref_shortcut_edge_along_bottom_right">তলৰ কাষেদি সোঁফালে ছোৱাইপ কৰক</string>
+    <string name="title_pref_shortcut_back_tap_double">ডিভাইচৰ পিছফালে দুবাৰ টিপক</string>
+    <string name="title_pref_shortcut_back_tap_triple">ডিভাইচৰ পিছফালে তিনিবাৰ টিপক</string>
+    <string name="title_pref_back_tap_sensitivity">পিছফালে টিপাৰ সংবেদনশীলতা</string>
+    <string name="title_pref_edge_zone_mm">কাষৰ প্ৰস্থ</string>
+    <string name="title_pref_edge_scroll_left">বাওঁফালৰ কাষেদি এটা আঙুলিৰে স্ক্ৰ’ল কৰক</string>
+    <string name="title_pref_edge_scroll_right">সোঁফালৰ কাষেদি এটা আঙুলিৰে স্ক্ৰ’ল কৰক</string>
+    <string name="title_pref_edge_scroll_top">ওপৰৰ কাষেদি এটা আঙুলিৰে স্ক্ৰ’ল কৰক</string>
+    <string name="title_pref_edge_scroll_bottom">তলৰ কাষেদি এটা আঙুলিৰে স্ক্ৰ’ল কৰক</string>
+    <string name="title_pref_edge_menu_left">বাওঁফালৰ কাষৰ মেনু</string>
+    <string name="title_pref_edge_menu_right">সোঁফালৰ কাষৰ মেনু</string>
+    <string name="title_pref_edge_menu_left_switch">বাওঁফালৰ কাষটো মেনু হিচাপে ব্যৱহাৰ কৰক</string>
+    <string name="title_pref_edge_menu_right_switch">সোঁফালৰ কাষটো মেনু হিচাপে ব্যৱহাৰ কৰক</string>
+    <string name="edge_menu_add_command">কামাণ্ড যোগ দিয়ক</string>
+    <string name="edge_menu_change_command">কামাণ্ড সলনি কৰক</string>
+    <string name="title_pref_text_entities">পাঠত পোৱা কাৰ্য</string>
+    <string name="text_entity_web">ৱেব ঠিকনা</string>
+    <string name="text_entity_email">ইমেইল ঠিকনা</string>
+    <string name="text_entity_phone">ফোন নম্বৰ</string>
+    <string name="text_entity_code">ক’ড</string>
+    <string name="menu_item_call_number"><xliff:g id="number" example="020 7946 0018">%1$s</xliff:g>ত কল কৰক</string>
+    <string name="menu_item_copy_code"><xliff:g id="code" example="482916">%1$s</xliff:g> প্ৰতিলিপি কৰক</string>
+    <string name="title_pref_show_focus_indicator">ফ’কাছৰ সূচক দেখুৱাওক</string>
+    <string name="title_pref_dictation_correction_prompt">শুধৰণিৰ প্ৰম্পট</string>
+    <string name="title_pref_whisper_custom_model">মডেল ফাইল</string>
+    <string name="whisper_custom_model_choose">এটা whisper.cpp মডেল ফাইল বাছনি কৰক</string>
+    <string name="whisper_custom_model_replace">অন্য ফাইল বাছনি কৰক</string>
+    <string name="whisper_custom_model_not_whisper">whisper.cpp মডেল ফাইল নহয়</string>
+    <string name="whisper_custom_model_copying">প্ৰতিলিপি কৰি আছে</string>
 </resources>

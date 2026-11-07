@@ -1363,7 +1363,7 @@
     <string name="action_copy_command">Buyruqni nusxalash</string>
     <string name="command_copied">Buyruq nusxalandi</string>
     <string name="title_pref_speech_control">Boshqa ilovalarga gapirishga ruxsat berish</string>
-    <string name="summary_pref_speech_control">Siz ruxsat bergan ilovalar SandFly ovozingiz bilan matn aytishi mumkin. Qurilma qulflanganda hech narsa aytilmaydi.</string>
+    <string name="summary_pref_speech_control">Siz ruxsat bergan ilovalar SandFly ovozingiz bilan matn aytishi mumkin. Qurilma qulflanganda faqat qulflangan holat uchun ham ruxsat bergan ilovalaringiz gapira oladi.</string>
     <string name="title_pref_speech_control_sound">Boshqa ilovalar gapirishidan oldin ovoz ijro etish</string>
     <string name="speech_control_apps_category">Ilovalar</string>
     <string name="speech_control_no_apps">Hech qanday ilova hali gapirishni soʻramagan.</string>
@@ -1868,4 +1868,108 @@
   <string name="value_hold_to_cancel_3000">3 soniya</string>
   <string name="title_pref_tap_to_activate">Faollashtirish uchun bosing</string>
   <string name="summary_pref_tap_to_activate">Barmoq ostidagi element fokuslanmasdan oldin barmoq koʻtarilgan bosish shu elementni faollashtiradi.</string>
+    <string name="title_selector_ai_actions">AI amallari</string>
+    <string name="ai_actions_hint">Amalni tanlash uchun tepaga yoki pastga suring, keyin uni bajarish uchun ikki marta teging</string>
+    <string name="title_pref_ai_actions_included">Kiritiladigan AI amallari</string>
+    <string name="title_speak_screen_description">Ekran tavsifini aytish</string>
+    <string name="title_speak_image_description">Rasm tavsifini aytish</string>
+    <string name="title_ask_about_screen">Ekran haqida soʻrash</string>
+    <string name="title_ask_about_image">Rasm haqida soʻrash</string>
+    <string name="ai_question_hint">Savol</string>
+    <string name="ai_question_ask">Soʻrash</string>
+    <string name="shortcut_use_voice_profile"><xliff:g id="name" example="English">%1$s</xliff:g> ovozli profilidan foydalanish</string>
+    <string name="title_pref_keep_previous_voice_engine">Oldingi ovozli profil mexanizmini ishga tushgan holda saqlash</string>
+    <string name="title_pref_voice_profile_keep_engine_started">Mexanizmni ishga tushgan holda saqlash</string>
+    <string name="title_pref_speech_equalizer">Ekvalayzer</string>
+    <string name="title_pref_speech_equalizer_preset">Andoza</string>
+    <string name="title_pref_speech_equalizer_on">Ekvalayzerdan foydalanish</string>
+    <string name="speech_equalizer_off">Oʻchiq</string>
+    <string name="speech_equalizer_turned_on">Ekvalayzer yoniq</string>
+    <string name="speech_equalizer_turned_off">Ekvalayzer oʻchiq</string>
+    <string name="title_selector_equalizer_32">Ekvalayzer 32 Hz</string>
+    <string name="title_selector_equalizer_64">Ekvalayzer 64 Hz</string>
+    <string name="title_selector_equalizer_125">Ekvalayzer 125 Hz</string>
+    <string name="title_selector_equalizer_250">Ekvalayzer 250 Hz</string>
+    <string name="title_selector_equalizer_500">Ekvalayzer 500 Hz</string>
+    <string name="title_selector_equalizer_1k">Ekvalayzer 1 kHz</string>
+    <string name="title_selector_equalizer_2k">Ekvalayzer 2 kHz</string>
+    <string name="title_selector_equalizer_3k">Ekvalayzer 3 kHz</string>
+    <string name="title_selector_equalizer_4k">Ekvalayzer 4 kHz</string>
+    <string name="title_selector_equalizer_6k">Ekvalayzer 6 kHz</string>
+    <string name="title_selector_equalizer_8k">Ekvalayzer 8 kHz</string>
+    <string name="title_selector_equalizer_16k">Ekvalayzer 16 kHz</string>
+    <string name="summary_speech_equalizer_needs_low_latency">Audio chiqishi &gt; Kam kechikishli audio kerak</string>
+    <string name="speech_equalizer_flat">Tekis</string>
+    <string name="speech_equalizer_clarity">Tiniqlik</string>
+    <string name="speech_equalizer_bass_boost">Past chastotalarni kuchaytirish</string>
+    <string name="speech_equalizer_bass_cut">Past chastotalarni kamaytirish</string>
+    <string name="speech_equalizer_treble_boost">Yuqori chastotalarni kuchaytirish</string>
+    <string name="speech_equalizer_treble_cut">Yuqori chastotalarni kamaytirish</string>
+    <string name="speech_equalizer_warm">Iliq</string>
+    <string name="speech_equalizer_reduce_harshness">Dagʻallikni kamaytirish</string>
+    <string name="speech_equalizer_reduce_sibilance">Shivillashni kamaytirish</string>
+    <string name="speech_equalizer_small_speaker">Kichik karnay</string>
+    <string name="speech_equalizer_custom">Maxsus</string>
+    <string name="speech_equalizer_band_hz"><xliff:g id="frequency">%1$s</xliff:g> Hz</string>
+    <string name="speech_equalizer_band_khz"><xliff:g id="frequency">%1$s</xliff:g> kHz</string>
+    <string name="speech_equalizer_gain_db"><xliff:g id="gain">%1$s</xliff:g> dB</string>
+    <string name="title_pref_braille_dictionary">Brayl lugʻati</string>
+    <string name="braille_dictionary_not_shown"><xliff:g id="text" example="#">%1$s</xliff:g> koʻrsatilmaydi</string>
+    <string name="title_pref_announce_full_charge">Toʻliq quvvatlanganini eʼlon qilish</string>
+    <string name="battery_fully_charged">Batareya toʻliq quvvatlandi</string>
+    <string name="speech_control_locked_app"><xliff:g id="app" example="Tasker">%1$s</xliff:g>, qurilma qulflanganda</string>
+    <string name="speech_control_ask_locked_title"><xliff:g id="app" example="Tasker">%1$s</xliff:g> ilovasiga qurilma qulflanganda SandFly orqali gapirishga ruxsat berilsinmi?</string>
+    <string name="speech_control_ask_locked_text">U qurilma qulflanganda matnni SandFly ovozingiz bilan aytishi mumkin. Ruxsat berish uchun qurilma qulfdan chiqarilgan boʻlishi kerak. Buni Sozlamalar, Nutq, Boshqa ilovalarga gapirishga ruxsat berish boʻlimida oʻzgartirishingiz mumkin.</string>
+    <string name="permission_speak_when_locked_label">qurilma qulflanganda SandFly orqali gapirish</string>
+    <string name="permission_speak_when_locked_description">Ilovaga qurilma qulflanganda matnni SandFly ovozingiz bilan aytish uchun soʻrov yuborish imkonini beradi. SandFly bunga ruxsat berishdan oldin sizdan alohida soʻraydi.</string>
+    <string name="title_pref_category_back_tap">Orqa tomonga teginish</string>
+    <string name="title_pref_keep_speech_off_casts">Translatsiya vaqtida nutqni telefonda qoldirish</string>
+    <string name="title_pref_app_shortcuts">Ilova yorliqlari</string>
+    <string name="app_shortcut_label"><xliff:g id="app_name" example="Amazon">%1$s</xliff:g>: <xliff:g id="shortcut" example="Cart">%2$s</xliff:g></string>
+    <string name="title_pref_add_app_shortcut">Ilova yorligʻini qoʻshish</string>
+    <string name="app_shortcut_no_apps">Qoʻshish uchun yorligʻi bor ilova yoʻq</string>
+    <string name="app_shortcut_not_added">Yorliq qoʻshilmadi</string>
+    <string name="app_shortcut_added"><xliff:g id="name" example="MacroDroid: Morning">%1$s</xliff:g> qoʻshildi</string>
+    <string name="app_shortcut_not_opened">Ilova yorligʻi ochilmadi</string>
+    <string name="app_search_no_apps">Ilova yoʻq</string>
+    <string name="shortcut_toggle_color_inversion">Rang inversiyasini yoqish yoki oʻchirish</string>
+    <string name="color_inversion_turned_on">Rang inversiyasi yoniq</string>
+    <string name="color_inversion_turned_off">Rang inversiyasi oʻchiq</string>
+    <string name="shortcut_dictate_or_media_control">Ovoz bilan yozish, media ijrosi yoki pauza</string>
+    <string name="title_pref_shortcut_edge_along_left_up">Chap chet boʻylab yuqoriga suring</string>
+    <string name="title_pref_shortcut_edge_along_left_down">Chap chet boʻylab pastga suring</string>
+    <string name="title_pref_shortcut_edge_along_right_up">Oʻng chet boʻylab yuqoriga suring</string>
+    <string name="title_pref_shortcut_edge_along_right_down">Oʻng chet boʻylab pastga suring</string>
+    <string name="title_pref_shortcut_edge_along_top_left">Yuqori chet boʻylab chapga suring</string>
+    <string name="title_pref_shortcut_edge_along_top_right">Yuqori chet boʻylab oʻngga suring</string>
+    <string name="title_pref_shortcut_edge_along_bottom_left">Pastki chet boʻylab chapga suring</string>
+    <string name="title_pref_shortcut_edge_along_bottom_right">Pastki chet boʻylab oʻngga suring</string>
+    <string name="title_pref_shortcut_back_tap_double">Orqa tomonga ikki marta teginish</string>
+    <string name="title_pref_shortcut_back_tap_triple">Orqa tomonga uch marta teginish</string>
+    <string name="title_pref_back_tap_sensitivity">Orqa tomonga teginish sezgirligi</string>
+    <string name="title_pref_edge_zone_mm">Chet kengligi</string>
+    <string name="title_pref_edge_scroll_left">Chap chet boʻylab bir barmoq bilan aylantirish</string>
+    <string name="title_pref_edge_scroll_right">Oʻng chet boʻylab bir barmoq bilan aylantirish</string>
+    <string name="title_pref_edge_scroll_top">Yuqori chet boʻylab bir barmoq bilan aylantirish</string>
+    <string name="title_pref_edge_scroll_bottom">Pastki chet boʻylab bir barmoq bilan aylantirish</string>
+    <string name="title_pref_edge_menu_left">Chap chet menyusi</string>
+    <string name="title_pref_edge_menu_right">Oʻng chet menyusi</string>
+    <string name="title_pref_edge_menu_left_switch">Chap chetdan menyu sifatida foydalanish</string>
+    <string name="title_pref_edge_menu_right_switch">Oʻng chetdan menyu sifatida foydalanish</string>
+    <string name="edge_menu_add_command">Buyruq qoʻshish</string>
+    <string name="edge_menu_change_command">Buyruqni oʻzgartirish</string>
+    <string name="title_pref_text_entities">Matnda topilgan amallar</string>
+    <string name="text_entity_web">Veb-manzillar</string>
+    <string name="text_entity_email">E-pochta manzillari</string>
+    <string name="text_entity_phone">Telefon raqamlari</string>
+    <string name="text_entity_code">Kodlar</string>
+    <string name="menu_item_call_number"><xliff:g id="number" example="020 7946 0018">%1$s</xliff:g> raqamiga qoʻngʻiroq qilish</string>
+    <string name="menu_item_copy_code"><xliff:g id="code" example="482916">%1$s</xliff:g> kodidan nusxa olish</string>
+    <string name="title_pref_show_focus_indicator">Fokus koʻrsatkichini koʻrsatish</string>
+    <string name="title_pref_dictation_correction_prompt">Tuzatish koʻrsatmasi</string>
+    <string name="title_pref_whisper_custom_model">Model fayli</string>
+    <string name="whisper_custom_model_choose">whisper.cpp model faylini tanlash</string>
+    <string name="whisper_custom_model_replace">Boshqa fayl tanlash</string>
+    <string name="whisper_custom_model_not_whisper">whisper.cpp model fayli emas</string>
+    <string name="whisper_custom_model_copying">Nusxalanmoqda</string>
 </resources>

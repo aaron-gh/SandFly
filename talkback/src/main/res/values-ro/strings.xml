@@ -1363,7 +1363,7 @@
     <string name="action_copy_command">Copiază comanda</string>
     <string name="command_copied">Comanda a fost copiată</string>
     <string name="title_pref_speech_control">Lasă alte aplicații să vorbească</string>
-    <string name="summary_pref_speech_control">Aplicațiile permise pot rosti text cu vocea SandFly. Cât timp dispozitivul este blocat, nu se rostește nimic.</string>
+    <string name="summary_pref_speech_control">Aplicațiile permise pot rosti text cu vocea SandFly. Cât timp dispozitivul este blocat, pot vorbi doar aplicațiile pe care le permiți și când este blocat.</string>
     <string name="title_pref_speech_control_sound">Redă un sunet înainte ca alte aplicații să vorbească</string>
     <string name="speech_control_apps_category">Aplicații</string>
     <string name="speech_control_no_apps">Nicio aplicație nu a cerut încă să vorbească.</string>
@@ -1872,4 +1872,108 @@
   <string name="value_hold_to_cancel_3000">3 secunde</string>
   <string name="title_pref_tap_to_activate">Atinge pentru a activa</string>
   <string name="summary_pref_tap_to_activate">O atingere în care degetul se ridică înainte ca elementul de sub el să fie focalizat activează elementul.</string>
+    <string name="title_selector_ai_actions">Acțiuni AI</string>
+    <string name="ai_actions_hint">Glisează în sus sau în jos pentru a alege o acțiune, apoi atinge de două ori pentru a o rula</string>
+    <string name="title_pref_ai_actions_included">Acțiuni AI incluse</string>
+    <string name="title_speak_screen_description">Rostește descrierea ecranului</string>
+    <string name="title_speak_image_description">Rostește descrierea imaginii</string>
+    <string name="title_ask_about_screen">Întreabă despre ecran</string>
+    <string name="title_ask_about_image">Întreabă despre imagine</string>
+    <string name="ai_question_hint">Întrebare</string>
+    <string name="ai_question_ask">Întreabă</string>
+    <string name="shortcut_use_voice_profile">Folosește profilul vocal <xliff:g id="name" example="English">%1$s</xliff:g></string>
+    <string name="title_pref_keep_previous_voice_engine">Păstrează pornit motorul profilului vocal anterior</string>
+    <string name="title_pref_voice_profile_keep_engine_started">Păstrează motorul pornit</string>
+    <string name="title_pref_speech_equalizer">Egalizator</string>
+    <string name="title_pref_speech_equalizer_preset">Presetare</string>
+    <string name="title_pref_speech_equalizer_on">Folosește egalizatorul</string>
+    <string name="speech_equalizer_off">Dezactivat</string>
+    <string name="speech_equalizer_turned_on">Egalizator activat</string>
+    <string name="speech_equalizer_turned_off">Egalizator dezactivat</string>
+    <string name="title_selector_equalizer_32">Egalizator 32 Hz</string>
+    <string name="title_selector_equalizer_64">Egalizator 64 Hz</string>
+    <string name="title_selector_equalizer_125">Egalizator 125 Hz</string>
+    <string name="title_selector_equalizer_250">Egalizator 250 Hz</string>
+    <string name="title_selector_equalizer_500">Egalizator 500 Hz</string>
+    <string name="title_selector_equalizer_1k">Egalizator 1 kHz</string>
+    <string name="title_selector_equalizer_2k">Egalizator 2 kHz</string>
+    <string name="title_selector_equalizer_3k">Egalizator 3 kHz</string>
+    <string name="title_selector_equalizer_4k">Egalizator 4 kHz</string>
+    <string name="title_selector_equalizer_6k">Egalizator 6 kHz</string>
+    <string name="title_selector_equalizer_8k">Egalizator 8 kHz</string>
+    <string name="title_selector_equalizer_16k">Egalizator 16 kHz</string>
+    <string name="summary_speech_equalizer_needs_low_latency">Necesită Ieșire audio &gt; Audio cu latență scăzută</string>
+    <string name="speech_equalizer_flat">Plat</string>
+    <string name="speech_equalizer_clarity">Claritate</string>
+    <string name="speech_equalizer_bass_boost">Amplificare bas</string>
+    <string name="speech_equalizer_bass_cut">Reducere bas</string>
+    <string name="speech_equalizer_treble_boost">Amplificare înalte</string>
+    <string name="speech_equalizer_treble_cut">Reducere înalte</string>
+    <string name="speech_equalizer_warm">Cald</string>
+    <string name="speech_equalizer_reduce_harshness">Reducere asprime</string>
+    <string name="speech_equalizer_reduce_sibilance">Reducere sibilante</string>
+    <string name="speech_equalizer_small_speaker">Difuzor mic</string>
+    <string name="speech_equalizer_custom">Personalizat</string>
+    <string name="speech_equalizer_band_hz"><xliff:g id="frequency">%1$s</xliff:g> Hz</string>
+    <string name="speech_equalizer_band_khz"><xliff:g id="frequency">%1$s</xliff:g> kHz</string>
+    <string name="speech_equalizer_gain_db"><xliff:g id="gain">%1$s</xliff:g> dB</string>
+    <string name="title_pref_braille_dictionary">Dicționar Braille</string>
+    <string name="braille_dictionary_not_shown"><xliff:g id="text" example="#">%1$s</xliff:g> nu se afișează</string>
+    <string name="title_pref_announce_full_charge">Anunță încărcarea completă</string>
+    <string name="battery_fully_charged">Baterie încărcată complet</string>
+    <string name="speech_control_locked_app"><xliff:g id="app" example="Tasker">%1$s</xliff:g> cât timp dispozitivul este blocat</string>
+    <string name="speech_control_ask_locked_title">Permiți aplicației <xliff:g id="app" example="Tasker">%1$s</xliff:g> să vorbească prin SandFly cât timp dispozitivul este blocat?</string>
+    <string name="speech_control_ask_locked_text">Poate rosti text cu vocea SandFly cât timp dispozitivul este blocat. Pentru Permite, dispozitivul trebuie să fie deblocat. Poți schimba acest lucru în Setări, Vorbire, Lasă alte aplicații să vorbească.</string>
+    <string name="permission_speak_when_locked_label">vorbire prin SandFly cât timp dispozitivul este blocat</string>
+    <string name="permission_speak_when_locked_description">Permite aplicației să solicite rostirea textului cu vocea SandFly cât timp dispozitivul este blocat. SandFly te întreabă separat înainte ca aplicația să poată face asta.</string>
+    <string name="title_pref_category_back_tap">Atingere pe spate</string>
+    <string name="title_pref_keep_speech_off_casts">Păstrează vorbirea pe telefon în timpul proiectării</string>
+    <string name="title_pref_app_shortcuts">Comenzi rapide pentru aplicații</string>
+    <string name="app_shortcut_label"><xliff:g id="app_name" example="Amazon">%1$s</xliff:g>: <xliff:g id="shortcut" example="Cart">%2$s</xliff:g></string>
+    <string name="title_pref_add_app_shortcut">Adaugă o comandă rapidă pentru aplicație</string>
+    <string name="app_shortcut_no_apps">Nicio aplicație nu are comenzi rapide de adăugat</string>
+    <string name="app_shortcut_not_added">Nu s-a adăugat nicio comandă rapidă</string>
+    <string name="app_shortcut_added">S-a adăugat <xliff:g id="name" example="MacroDroid: Morning">%1$s</xliff:g></string>
+    <string name="app_shortcut_not_opened">Comanda rapidă pentru aplicație nu a putut fi deschisă</string>
+    <string name="app_search_no_apps">Nicio aplicație</string>
+    <string name="shortcut_toggle_color_inversion">Activează sau dezactivează inversarea culorii</string>
+    <string name="color_inversion_turned_on">Inversarea culorii activată</string>
+    <string name="color_inversion_turned_off">Inversarea culorii dezactivată</string>
+    <string name="shortcut_dictate_or_media_control">Dictează, redă sau întrerupe conținutul media</string>
+    <string name="title_pref_shortcut_edge_along_left_up">Glisați în sus de-a lungul marginii din stânga</string>
+    <string name="title_pref_shortcut_edge_along_left_down">Glisați în jos de-a lungul marginii din stânga</string>
+    <string name="title_pref_shortcut_edge_along_right_up">Glisați în sus de-a lungul marginii din dreapta</string>
+    <string name="title_pref_shortcut_edge_along_right_down">Glisați în jos de-a lungul marginii din dreapta</string>
+    <string name="title_pref_shortcut_edge_along_top_left">Glisați la stânga de-a lungul marginii de sus</string>
+    <string name="title_pref_shortcut_edge_along_top_right">Glisați la dreapta de-a lungul marginii de sus</string>
+    <string name="title_pref_shortcut_edge_along_bottom_left">Glisați la stânga de-a lungul marginii de jos</string>
+    <string name="title_pref_shortcut_edge_along_bottom_right">Glisați la dreapta de-a lungul marginii de jos</string>
+    <string name="title_pref_shortcut_back_tap_double">Atinge de două ori pe spate</string>
+    <string name="title_pref_shortcut_back_tap_triple">Atinge de trei ori pe spate</string>
+    <string name="title_pref_back_tap_sensitivity">Sensibilitatea atingerii pe spate</string>
+    <string name="title_pref_edge_zone_mm">Lățimea marginii</string>
+    <string name="title_pref_edge_scroll_left">Derulează cu un deget de-a lungul marginii din stânga</string>
+    <string name="title_pref_edge_scroll_right">Derulează cu un deget de-a lungul marginii din dreapta</string>
+    <string name="title_pref_edge_scroll_top">Derulează cu un deget de-a lungul marginii de sus</string>
+    <string name="title_pref_edge_scroll_bottom">Derulează cu un deget de-a lungul marginii de jos</string>
+    <string name="title_pref_edge_menu_left">Meniul marginii din stânga</string>
+    <string name="title_pref_edge_menu_right">Meniul marginii din dreapta</string>
+    <string name="title_pref_edge_menu_left_switch">Folosește marginea din stânga ca meniu</string>
+    <string name="title_pref_edge_menu_right_switch">Folosește marginea din dreapta ca meniu</string>
+    <string name="edge_menu_add_command">Adaugă o comandă</string>
+    <string name="edge_menu_change_command">Schimbă comanda</string>
+    <string name="title_pref_text_entities">Acțiuni găsite în text</string>
+    <string name="text_entity_web">Adrese web</string>
+    <string name="text_entity_email">Adrese de e-mail</string>
+    <string name="text_entity_phone">Numere de telefon</string>
+    <string name="text_entity_code">Coduri de verificare</string>
+    <string name="menu_item_call_number">Sună la <xliff:g id="number" example="020 7946 0018">%1$s</xliff:g></string>
+    <string name="menu_item_copy_code">Copiază <xliff:g id="code" example="482916">%1$s</xliff:g></string>
+    <string name="title_pref_show_focus_indicator">Afișează indicatorul de focalizare</string>
+    <string name="title_pref_dictation_correction_prompt">Instrucțiuni de corectare</string>
+    <string name="title_pref_whisper_custom_model">Fișier model</string>
+    <string name="whisper_custom_model_choose">Alege un fișier model whisper.cpp</string>
+    <string name="whisper_custom_model_replace">Alege alt fișier</string>
+    <string name="whisper_custom_model_not_whisper">Nu este un fișier model whisper.cpp</string>
+    <string name="whisper_custom_model_copying">Se copiază</string>
 </resources>

@@ -1363,7 +1363,7 @@
     <string name="action_copy_command">Kopiraj komandu</string>
     <string name="command_copied">Komanda je kopirana</string>
     <string name="title_pref_speech_control">Dozvoli drugim aplikacijama da govore</string>
-    <string name="summary_pref_speech_control">Aplikacije kojima dozvolite mogu da izgovaraju tekst glasom koji SandFly koristi. Dok je uređaj zaključan, ništa se ne izgovara.</string>
+    <string name="summary_pref_speech_control">Aplikacije kojima dozvolite mogu da izgovaraju tekst glasom koji SandFly koristi. Dok je uređaj zaključan, govore samo aplikacije kojima ste to dozvolili i za zaključan uređaj.</string>
     <string name="title_pref_speech_control_sound">Pusti zvuk pre nego što druge aplikacije progovore</string>
     <string name="speech_control_apps_category">Aplikacije</string>
     <string name="speech_control_no_apps">Još nijedna aplikacija nije tražila da govori.</string>
@@ -1872,4 +1872,108 @@
   <string name="value_hold_to_cancel_3000">3 sekunde</string>
   <string name="title_pref_tap_to_activate">Aktiviranje dodirom</string>
   <string name="summary_pref_tap_to_activate">Dodir kod kog se prst podigne pre nego što se stavka ispod njega fokusira aktivira tu stavku.</string>
+    <string name="title_selector_ai_actions">AI radnje</string>
+    <string name="ai_actions_hint">Prevucite nagore ili nadole da biste izabrali radnju, pa dvaput dodirnite da biste je pokrenuli</string>
+    <string name="title_pref_ai_actions_included">Uključene AI radnje</string>
+    <string name="title_speak_screen_description">Izgovori opis ekrana</string>
+    <string name="title_speak_image_description">Izgovori opis slike</string>
+    <string name="title_ask_about_screen">Pitaj o ekranu</string>
+    <string name="title_ask_about_image">Pitaj o slici</string>
+    <string name="ai_question_hint">Pitanje</string>
+    <string name="ai_question_ask">Pitaj</string>
+    <string name="shortcut_use_voice_profile">Koristi glasovni profil <xliff:g id="name" example="English">%1$s</xliff:g></string>
+    <string name="title_pref_keep_previous_voice_engine">Zadrži pokrenut mehanizam za govor prethodnog glasovnog profila</string>
+    <string name="title_pref_voice_profile_keep_engine_started">Zadrži pokrenut mehanizam za govor</string>
+    <string name="title_pref_speech_equalizer">Ekvilajzer</string>
+    <string name="title_pref_speech_equalizer_preset">Unapred podešeno</string>
+    <string name="title_pref_speech_equalizer_on">Koristi ekvilajzer</string>
+    <string name="speech_equalizer_off">Isključeno</string>
+    <string name="speech_equalizer_turned_on">Ekvilajzer je uključen</string>
+    <string name="speech_equalizer_turned_off">Ekvilajzer je isključen</string>
+    <string name="title_selector_equalizer_32">Ekvilajzer 32 Hz</string>
+    <string name="title_selector_equalizer_64">Ekvilajzer 64 Hz</string>
+    <string name="title_selector_equalizer_125">Ekvilajzer 125 Hz</string>
+    <string name="title_selector_equalizer_250">Ekvilajzer 250 Hz</string>
+    <string name="title_selector_equalizer_500">Ekvilajzer 500 Hz</string>
+    <string name="title_selector_equalizer_1k">Ekvilajzer 1 kHz</string>
+    <string name="title_selector_equalizer_2k">Ekvilajzer 2 kHz</string>
+    <string name="title_selector_equalizer_3k">Ekvilajzer 3 kHz</string>
+    <string name="title_selector_equalizer_4k">Ekvilajzer 4 kHz</string>
+    <string name="title_selector_equalizer_6k">Ekvilajzer 6 kHz</string>
+    <string name="title_selector_equalizer_8k">Ekvilajzer 8 kHz</string>
+    <string name="title_selector_equalizer_16k">Ekvilajzer 16 kHz</string>
+    <string name="summary_speech_equalizer_needs_low_latency">Potrebno: Audio izlaz &gt; Zvuk sa malim kašnjenjem</string>
+    <string name="speech_equalizer_flat">Ravno</string>
+    <string name="speech_equalizer_clarity">Jasnoća</string>
+    <string name="speech_equalizer_bass_boost">Pojačanje basa</string>
+    <string name="speech_equalizer_bass_cut">Smanjenje basa</string>
+    <string name="speech_equalizer_treble_boost">Pojačanje visokih tonova</string>
+    <string name="speech_equalizer_treble_cut">Smanjenje visokih tonova</string>
+    <string name="speech_equalizer_warm">Toplo</string>
+    <string name="speech_equalizer_reduce_harshness">Smanjenje oštrine</string>
+    <string name="speech_equalizer_reduce_sibilance">Smanjenje šištanja</string>
+    <string name="speech_equalizer_small_speaker">Mali zvučnik</string>
+    <string name="speech_equalizer_custom">Prilagođeno</string>
+    <string name="speech_equalizer_band_hz"><xliff:g id="frequency">%1$s</xliff:g> Hz</string>
+    <string name="speech_equalizer_band_khz"><xliff:g id="frequency">%1$s</xliff:g> kHz</string>
+    <string name="speech_equalizer_gain_db"><xliff:g id="gain">%1$s</xliff:g> dB</string>
+    <string name="title_pref_braille_dictionary">Brajev rečnik</string>
+    <string name="braille_dictionary_not_shown"><xliff:g id="text" example="#">%1$s</xliff:g> se ne prikazuje</string>
+    <string name="title_pref_announce_full_charge">Najavi kada je baterija puna</string>
+    <string name="battery_fully_charged">Baterija je potpuno napunjena</string>
+    <string name="speech_control_locked_app"><xliff:g id="app" example="Tasker">%1$s</xliff:g> dok je uređaj zaključan</string>
+    <string name="speech_control_ask_locked_title">Dozvoliti <xliff:g id="app" example="Tasker">%1$s</xliff:g> da govori kroz SandFly dok je uređaj zaključan?</string>
+    <string name="speech_control_ask_locked_text">Može da izgovara tekst glasom koji SandFly koristi dok je uređaj zaključan. Za „Dozvoli” uređaj mora da bude otključan. To možete da promenite u odeljku „Podešavanja”, „Govor”, „Dozvoli drugim aplikacijama da govore”.</string>
+    <string name="permission_speak_when_locked_label">govor preko SandFly-a dok je uređaj zaključan</string>
+    <string name="permission_speak_when_locked_description">Dozvoljava aplikaciji da traži da izgovara tekst vašim glasom SandFly-a dok je uređaj zaključan. SandFly vas posebno pita pre nego što aplikacija to može.</string>
+    <string name="title_pref_category_back_tap">Dodir na poleđini</string>
+    <string name="title_pref_keep_speech_off_casts">Zadrži govor na telefonu tokom prebacivanja ekrana</string>
+    <string name="title_pref_app_shortcuts">Prečice aplikacija</string>
+    <string name="app_shortcut_label"><xliff:g id="app_name" example="Amazon">%1$s</xliff:g>: <xliff:g id="shortcut" example="Cart">%2$s</xliff:g></string>
+    <string name="title_pref_add_app_shortcut">Dodaj prečicu aplikacije</string>
+    <string name="app_shortcut_no_apps">Nijedna aplikacija nema prečice za dodavanje</string>
+    <string name="app_shortcut_not_added">Prečica nije dodata</string>
+    <string name="app_shortcut_added">Dodato: <xliff:g id="name" example="MacroDroid: Morning">%1$s</xliff:g></string>
+    <string name="app_shortcut_not_opened">Otvaranje prečice aplikacije nije uspelo</string>
+    <string name="app_search_no_apps">Nema aplikacija</string>
+    <string name="shortcut_toggle_color_inversion">Uključi ili isključi inverziju boja</string>
+    <string name="color_inversion_turned_on">Inverzija boja je uključena</string>
+    <string name="color_inversion_turned_off">Inverzija boja je isključena</string>
+    <string name="shortcut_dictate_or_media_control">Diktiraj, pusti ili pauziraj medijski sadržaj</string>
+    <string name="title_pref_shortcut_edge_along_left_up">Prevucite nagore duž leve ivice</string>
+    <string name="title_pref_shortcut_edge_along_left_down">Prevucite nadole duž leve ivice</string>
+    <string name="title_pref_shortcut_edge_along_right_up">Prevucite nagore duž desne ivice</string>
+    <string name="title_pref_shortcut_edge_along_right_down">Prevucite nadole duž desne ivice</string>
+    <string name="title_pref_shortcut_edge_along_top_left">Prevucite ulevo duž gornje ivice</string>
+    <string name="title_pref_shortcut_edge_along_top_right">Prevucite udesno duž gornje ivice</string>
+    <string name="title_pref_shortcut_edge_along_bottom_left">Prevucite ulevo duž donje ivice</string>
+    <string name="title_pref_shortcut_edge_along_bottom_right">Prevucite udesno duž donje ivice</string>
+    <string name="title_pref_shortcut_back_tap_double">Dvostruki dodir na poleđini</string>
+    <string name="title_pref_shortcut_back_tap_triple">Trostruki dodir na poleđini</string>
+    <string name="title_pref_back_tap_sensitivity">Osetljivost dodira na poleđini</string>
+    <string name="title_pref_edge_zone_mm">Širina ivice</string>
+    <string name="title_pref_edge_scroll_left">Pomeraj jednim prstom duž leve ivice</string>
+    <string name="title_pref_edge_scroll_right">Pomeraj jednim prstom duž desne ivice</string>
+    <string name="title_pref_edge_scroll_top">Pomeraj jednim prstom duž gornje ivice</string>
+    <string name="title_pref_edge_scroll_bottom">Pomeraj jednim prstom duž donje ivice</string>
+    <string name="title_pref_edge_menu_left">Meni leve ivice</string>
+    <string name="title_pref_edge_menu_right">Meni desne ivice</string>
+    <string name="title_pref_edge_menu_left_switch">Koristi levu ivicu kao meni</string>
+    <string name="title_pref_edge_menu_right_switch">Koristi desnu ivicu kao meni</string>
+    <string name="edge_menu_add_command">Dodaj komandu</string>
+    <string name="edge_menu_change_command">Promeni komandu</string>
+    <string name="title_pref_text_entities">Radnje pronađene u tekstu</string>
+    <string name="text_entity_web">Veb-adrese</string>
+    <string name="text_entity_email">Imejl adrese</string>
+    <string name="text_entity_phone">Brojevi telefona</string>
+    <string name="text_entity_code">Kodovi</string>
+    <string name="menu_item_call_number">Pozovi <xliff:g id="number" example="020 7946 0018">%1$s</xliff:g></string>
+    <string name="menu_item_copy_code">Kopiraj <xliff:g id="code" example="482916">%1$s</xliff:g></string>
+    <string name="title_pref_show_focus_indicator">Prikaži indikator fokusa</string>
+    <string name="title_pref_dictation_correction_prompt">Uputstvo za ispravku</string>
+    <string name="title_pref_whisper_custom_model">Datoteka modela</string>
+    <string name="whisper_custom_model_choose">Izaberite whisper.cpp datoteku modela</string>
+    <string name="whisper_custom_model_replace">Izaberi drugu datoteku</string>
+    <string name="whisper_custom_model_not_whisper">Nije whisper.cpp datoteka modela</string>
+    <string name="whisper_custom_model_copying">Kopiranje</string>
 </resources>

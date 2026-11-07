@@ -1363,7 +1363,7 @@
     <string name="action_copy_command">Kopier kommando</string>
     <string name="command_copied">Kommandoen er kopiert</string>
     <string name="title_pref_speech_control">La andre apper snakke</string>
-    <string name="summary_pref_speech_control">Apper du tillater, kan si tekst med SandFly-stemmen din. Ingenting blir sagt mens enheten er låst.</string>
+    <string name="summary_pref_speech_control">Apper du tillater, kan si tekst med SandFly-stemmen din. Mens enheten er låst, kan bare apper du også tillater når enheten er låst, snakke.</string>
     <string name="title_pref_speech_control_sound">Spill av en lyd før andre apper snakker</string>
     <string name="speech_control_apps_category">Apper</string>
     <string name="speech_control_no_apps">Ingen apper har bedt om å få snakke ennå.</string>
@@ -1868,4 +1868,108 @@
   <string name="value_hold_to_cancel_3000">3 sekunder</string>
   <string name="title_pref_tap_to_activate">Trykk for å aktivere</string>
   <string name="summary_pref_tap_to_activate">Et trykk der fingeren løftes før elementet under den har fått fokus, aktiverer elementet.</string>
+    <string name="title_selector_ai_actions">AI-handlinger</string>
+    <string name="ai_actions_hint">Sveip opp eller ned for å velge en handling, og dobbelttrykk for å kjøre den</string>
+    <string name="title_pref_ai_actions_included">AI-handlinger som skal tas med</string>
+    <string name="title_speak_screen_description">Les opp skjermbeskrivelse</string>
+    <string name="title_speak_image_description">Les opp bildebeskrivelse</string>
+    <string name="title_ask_about_screen">Spør om skjermen</string>
+    <string name="title_ask_about_image">Spør om bildet</string>
+    <string name="ai_question_hint">Spørsmål</string>
+    <string name="ai_question_ask">Spør</string>
+    <string name="shortcut_use_voice_profile">Bruk stemmeprofilen <xliff:g id="name" example="English">%1$s</xliff:g></string>
+    <string name="title_pref_keep_previous_voice_engine">Hold talemotoren for forrige stemmeprofil startet</string>
+    <string name="title_pref_voice_profile_keep_engine_started">Hold talemotoren startet</string>
+    <string name="title_pref_speech_equalizer">Equalizer</string>
+    <string name="title_pref_speech_equalizer_preset">Forhåndsinnstilling</string>
+    <string name="title_pref_speech_equalizer_on">Bruk equalizer</string>
+    <string name="speech_equalizer_off">Av</string>
+    <string name="speech_equalizer_turned_on">Equalizer på</string>
+    <string name="speech_equalizer_turned_off">Equalizer av</string>
+    <string name="title_selector_equalizer_32">Equalizer 32 Hz</string>
+    <string name="title_selector_equalizer_64">Equalizer 64 Hz</string>
+    <string name="title_selector_equalizer_125">Equalizer 125 Hz</string>
+    <string name="title_selector_equalizer_250">Equalizer 250 Hz</string>
+    <string name="title_selector_equalizer_500">Equalizer 500 Hz</string>
+    <string name="title_selector_equalizer_1k">Equalizer 1 kHz</string>
+    <string name="title_selector_equalizer_2k">Equalizer 2 kHz</string>
+    <string name="title_selector_equalizer_3k">Equalizer 3 kHz</string>
+    <string name="title_selector_equalizer_4k">Equalizer 4 kHz</string>
+    <string name="title_selector_equalizer_6k">Equalizer 6 kHz</string>
+    <string name="title_selector_equalizer_8k">Equalizer 8 kHz</string>
+    <string name="title_selector_equalizer_16k">Equalizer 16 kHz</string>
+    <string name="summary_speech_equalizer_needs_low_latency">Krever Lydutgang &gt; Lyd med lav latens</string>
+    <string name="speech_equalizer_flat">Flat</string>
+    <string name="speech_equalizer_clarity">Klarhet</string>
+    <string name="speech_equalizer_bass_boost">Mer bass</string>
+    <string name="speech_equalizer_bass_cut">Mindre bass</string>
+    <string name="speech_equalizer_treble_boost">Mer diskant</string>
+    <string name="speech_equalizer_treble_cut">Mindre diskant</string>
+    <string name="speech_equalizer_warm">Varm klang</string>
+    <string name="speech_equalizer_reduce_harshness">Mindre skarphet</string>
+    <string name="speech_equalizer_reduce_sibilance">Færre s-lyder</string>
+    <string name="speech_equalizer_small_speaker">Liten høyttaler</string>
+    <string name="speech_equalizer_custom">Tilpasset</string>
+    <string name="speech_equalizer_band_hz"><xliff:g id="frequency">%1$s</xliff:g> Hz</string>
+    <string name="speech_equalizer_band_khz"><xliff:g id="frequency">%1$s</xliff:g> kHz</string>
+    <string name="speech_equalizer_gain_db"><xliff:g id="gain">%1$s</xliff:g> dB</string>
+    <string name="title_pref_braille_dictionary">Punktskriftordbok</string>
+    <string name="braille_dictionary_not_shown"><xliff:g id="text" example="#">%1$s</xliff:g> vises ikke</string>
+    <string name="title_pref_announce_full_charge">Kunngjør fullt batteri</string>
+    <string name="battery_fully_charged">Batteriet er fulladet</string>
+    <string name="speech_control_locked_app"><xliff:g id="app" example="Tasker">%1$s</xliff:g> mens enheten er låst</string>
+    <string name="speech_control_ask_locked_title">Vil du la <xliff:g id="app" example="Tasker">%1$s</xliff:g> snakke gjennom SandFly mens enheten er låst?</string>
+    <string name="speech_control_ask_locked_text">Appen kan lese opp tekst med SandFly-stemmen din mens enheten er låst. Tillat krever at enheten er låst opp. Du kan endre dette under Innstillinger, Tale, La andre apper snakke.</string>
+    <string name="permission_speak_when_locked_label">snakke gjennom SandFly mens enheten er låst</string>
+    <string name="permission_speak_when_locked_description">Lar appen be om å si tekst med SandFly-stemmen din mens enheten er låst. SandFly spør deg separat før appen kan det.</string>
+    <string name="title_pref_category_back_tap">Trykk på baksiden</string>
+    <string name="title_pref_keep_speech_off_casts">Behold talen på telefonen under casting</string>
+    <string name="title_pref_app_shortcuts">Appsnarveier</string>
+    <string name="app_shortcut_label"><xliff:g id="app_name" example="Amazon">%1$s</xliff:g>: <xliff:g id="shortcut" example="Cart">%2$s</xliff:g></string>
+    <string name="title_pref_add_app_shortcut">Legg til appsnarvei</string>
+    <string name="app_shortcut_no_apps">Ingen apper har snarveier å legge til</string>
+    <string name="app_shortcut_not_added">Ingen snarvei lagt til</string>
+    <string name="app_shortcut_added">La til <xliff:g id="name" example="MacroDroid: Morning">%1$s</xliff:g></string>
+    <string name="app_shortcut_not_opened">Kunne ikke åpne appsnarveien</string>
+    <string name="app_search_no_apps">Ingen apper</string>
+    <string name="shortcut_toggle_color_inversion">Slå fargeinversjon på eller av</string>
+    <string name="color_inversion_turned_on">Fargeinversjon på</string>
+    <string name="color_inversion_turned_off">Fargeinversjon av</string>
+    <string name="shortcut_dictate_or_media_control">Diktér, spill av eller sett medier på pause</string>
+    <string name="title_pref_shortcut_edge_along_left_up">Sveip opp langs venstre kant</string>
+    <string name="title_pref_shortcut_edge_along_left_down">Sveip ned langs venstre kant</string>
+    <string name="title_pref_shortcut_edge_along_right_up">Sveip opp langs høyre kant</string>
+    <string name="title_pref_shortcut_edge_along_right_down">Sveip ned langs høyre kant</string>
+    <string name="title_pref_shortcut_edge_along_top_left">Sveip til venstre langs den øverste kanten</string>
+    <string name="title_pref_shortcut_edge_along_top_right">Sveip til høyre langs den øverste kanten</string>
+    <string name="title_pref_shortcut_edge_along_bottom_left">Sveip til venstre langs den nederste kanten</string>
+    <string name="title_pref_shortcut_edge_along_bottom_right">Sveip til høyre langs den nederste kanten</string>
+    <string name="title_pref_shortcut_back_tap_double">Dobbelttrykk på baksiden</string>
+    <string name="title_pref_shortcut_back_tap_triple">Trippeltrykk på baksiden</string>
+    <string name="title_pref_back_tap_sensitivity">Følsomhet for trykk på baksiden</string>
+    <string name="title_pref_edge_zone_mm">Kantbredde</string>
+    <string name="title_pref_edge_scroll_left">Rull med én finger langs venstre kant</string>
+    <string name="title_pref_edge_scroll_right">Rull med én finger langs høyre kant</string>
+    <string name="title_pref_edge_scroll_top">Rull med én finger langs den øverste kanten</string>
+    <string name="title_pref_edge_scroll_bottom">Rull med én finger langs den nederste kanten</string>
+    <string name="title_pref_edge_menu_left">Meny i venstre kant</string>
+    <string name="title_pref_edge_menu_right">Meny i høyre kant</string>
+    <string name="title_pref_edge_menu_left_switch">Bruk venstre kant som meny</string>
+    <string name="title_pref_edge_menu_right_switch">Bruk høyre kant som meny</string>
+    <string name="edge_menu_add_command">Legg til kommando</string>
+    <string name="edge_menu_change_command">Bytt kommando</string>
+    <string name="title_pref_text_entities">Handlinger funnet i tekst</string>
+    <string name="text_entity_web">Nettadresser</string>
+    <string name="text_entity_email">E-postadresser</string>
+    <string name="text_entity_phone">Telefonnumre</string>
+    <string name="text_entity_code">Koder</string>
+    <string name="menu_item_call_number">Ring <xliff:g id="number" example="020 7946 0018">%1$s</xliff:g></string>
+    <string name="menu_item_copy_code">Kopier <xliff:g id="code" example="482916">%1$s</xliff:g></string>
+    <string name="title_pref_show_focus_indicator">Vis fokusindikatoren</string>
+    <string name="title_pref_dictation_correction_prompt">Prompt for retting</string>
+    <string name="title_pref_whisper_custom_model">Modellfil</string>
+    <string name="whisper_custom_model_choose">Velg en whisper.cpp-modellfil</string>
+    <string name="whisper_custom_model_replace">Velg en annen fil</string>
+    <string name="whisper_custom_model_not_whisper">Ikke en whisper.cpp-modellfil</string>
+    <string name="whisper_custom_model_copying">Kopierer</string>
 </resources>

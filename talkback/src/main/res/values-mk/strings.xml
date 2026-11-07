@@ -1363,7 +1363,7 @@
     <string name="action_copy_command">Копирај команда</string>
     <string name="command_copied">Командата е копирана</string>
     <string name="title_pref_speech_control">Дозволи другите апликации да зборуваат</string>
-    <string name="summary_pref_speech_control">Дозволените апликации може да изговараат текст со гласот на SandFly. Додека уредот е заклучен, ништо не се изговара.</string>
+    <string name="summary_pref_speech_control">Дозволените апликации може да изговараат текст со гласот на SandFly. Додека уредот е заклучен, може да зборуваат само апликациите што ги дозволивте и за заклучен уред.</string>
     <string name="title_pref_speech_control_sound">Пушти звук пред да зборуваат другите апликации</string>
     <string name="speech_control_apps_category">Апликации</string>
     <string name="speech_control_no_apps">Сè уште ниту една апликација не побарала да зборува.</string>
@@ -1868,4 +1868,108 @@
   <string name="value_hold_to_cancel_3000">3 секунди</string>
   <string name="title_pref_tap_to_activate">Допрете за активирање</string>
   <string name="summary_pref_tap_to_activate">Допир при кој прстот се подига пред да се фокусира ставката под него ја активира ставката.</string>
+    <string name="title_selector_ai_actions">Дејства со AI</string>
+    <string name="ai_actions_hint">Повлечете нагоре или надолу за да изберете дејство, па допрете двапати за да го извршите</string>
+    <string name="title_pref_ai_actions_included">Вклучени дејства со AI</string>
+    <string name="title_speak_screen_description">Изговори го описот на екранот</string>
+    <string name="title_speak_image_description">Изговори го описот на сликата</string>
+    <string name="title_ask_about_screen">Прашај за екранот</string>
+    <string name="title_ask_about_image">Прашај за сликата</string>
+    <string name="ai_question_hint">Прашање</string>
+    <string name="ai_question_ask">Прашај</string>
+    <string name="shortcut_use_voice_profile">Користи гласовен профил <xliff:g id="name" example="English">%1$s</xliff:g></string>
+    <string name="title_pref_keep_previous_voice_engine">Држи го стартуван моторот за говор на претходниот гласовен профил</string>
+    <string name="title_pref_voice_profile_keep_engine_started">Држи го моторот за говор стартуван</string>
+    <string name="title_pref_speech_equalizer">Еквалајзер</string>
+    <string name="title_pref_speech_equalizer_preset">Однапред зададена поставка</string>
+    <string name="title_pref_speech_equalizer_on">Користи еквалајзер</string>
+    <string name="speech_equalizer_off">Исклучен</string>
+    <string name="speech_equalizer_turned_on">Еквалајзерот е вклучен</string>
+    <string name="speech_equalizer_turned_off">Еквалајзерот е исклучен</string>
+    <string name="title_selector_equalizer_32">Еквалајзер 32 Hz</string>
+    <string name="title_selector_equalizer_64">Еквалајзер 64 Hz</string>
+    <string name="title_selector_equalizer_125">Еквалајзер 125 Hz</string>
+    <string name="title_selector_equalizer_250">Еквалајзер 250 Hz</string>
+    <string name="title_selector_equalizer_500">Еквалајзер 500 Hz</string>
+    <string name="title_selector_equalizer_1k">Еквалајзер 1 kHz</string>
+    <string name="title_selector_equalizer_2k">Еквалајзер 2 kHz</string>
+    <string name="title_selector_equalizer_3k">Еквалајзер 3 kHz</string>
+    <string name="title_selector_equalizer_4k">Еквалајзер 4 kHz</string>
+    <string name="title_selector_equalizer_6k">Еквалајзер 6 kHz</string>
+    <string name="title_selector_equalizer_8k">Еквалајзер 8 kHz</string>
+    <string name="title_selector_equalizer_16k">Еквалајзер 16 kHz</string>
+    <string name="summary_speech_equalizer_needs_low_latency">Потребно: Аудио излез &gt; Аудио со ниска латентност</string>
+    <string name="speech_equalizer_flat">Рамен</string>
+    <string name="speech_equalizer_clarity">Јасност</string>
+    <string name="speech_equalizer_bass_boost">Засилување на басот</string>
+    <string name="speech_equalizer_bass_cut">Намалување на басот</string>
+    <string name="speech_equalizer_treble_boost">Засилување на високите тонови</string>
+    <string name="speech_equalizer_treble_cut">Намалување на високите тонови</string>
+    <string name="speech_equalizer_warm">Топол</string>
+    <string name="speech_equalizer_reduce_harshness">Намалување на острината</string>
+    <string name="speech_equalizer_reduce_sibilance">Намалување на свирливите звуци</string>
+    <string name="speech_equalizer_small_speaker">Мал звучник</string>
+    <string name="speech_equalizer_custom">Приспособен</string>
+    <string name="speech_equalizer_band_hz"><xliff:g id="frequency">%1$s</xliff:g> Hz</string>
+    <string name="speech_equalizer_band_khz"><xliff:g id="frequency">%1$s</xliff:g> kHz</string>
+    <string name="speech_equalizer_gain_db"><xliff:g id="gain">%1$s</xliff:g> dB</string>
+    <string name="title_pref_braille_dictionary">Речник за брајово писмо</string>
+    <string name="braille_dictionary_not_shown"><xliff:g id="text" example="#">%1$s</xliff:g> не се прикажува</string>
+    <string name="title_pref_announce_full_charge">Известувај кога батеријата е полна</string>
+    <string name="battery_fully_charged">Батеријата е целосно полна</string>
+    <string name="speech_control_locked_app"><xliff:g id="app" example="Tasker">%1$s</xliff:g> додека уредот е заклучен</string>
+    <string name="speech_control_ask_locked_title">Да се дозволи <xliff:g id="app" example="Tasker">%1$s</xliff:g> да зборува преку SandFly додека уредот е заклучен?</string>
+    <string name="speech_control_ask_locked_text">Апликацијата ќе може да изговара текст со гласот на SandFly додека уредот е заклучен. „Дозволи“ бара отклучен уред. Ова може да го промените во „Поставки“, „Говор“, „Дозволи другите апликации да зборуваат“.</string>
+    <string name="permission_speak_when_locked_label">зборување преку SandFly додека уредот е заклучен</string>
+    <string name="permission_speak_when_locked_description">Дозволува апликацијата да побара да изговара текст со гласот на SandFly додека уредот е заклучен. SandFly ве прашува посебно пред апликацијата да може да го прави тоа.</string>
+    <string name="title_pref_category_back_tap">Допир на задната страна</string>
+    <string name="title_pref_keep_speech_off_casts">Задржи го говорот на телефонот при емитување</string>
+    <string name="title_pref_app_shortcuts">Кратенки за апликации</string>
+    <string name="app_shortcut_label"><xliff:g id="app_name" example="Amazon">%1$s</xliff:g>: <xliff:g id="shortcut" example="Cart">%2$s</xliff:g></string>
+    <string name="title_pref_add_app_shortcut">Додај кратенка за апликација</string>
+    <string name="app_shortcut_no_apps">Нема апликации со кратенки за додавање</string>
+    <string name="app_shortcut_not_added">Не е додадена кратенка</string>
+    <string name="app_shortcut_added">Додадено: <xliff:g id="name" example="MacroDroid: Morning">%1$s</xliff:g></string>
+    <string name="app_shortcut_not_opened">Не може да се отвори кратенката за апликација</string>
+    <string name="app_search_no_apps">Нема апликации</string>
+    <string name="shortcut_toggle_color_inversion">Вклучи ја или исклучи ја инверзијата на боја</string>
+    <string name="color_inversion_turned_on">Инверзијата на боја е вклучена</string>
+    <string name="color_inversion_turned_off">Инверзијата на боја е исклучена</string>
+    <string name="shortcut_dictate_or_media_control">Диктирај, пушти или паузирај аудио/видео</string>
+    <string name="title_pref_shortcut_edge_along_left_up">Повлечете нагоре по левиот раб</string>
+    <string name="title_pref_shortcut_edge_along_left_down">Повлечете надолу по левиот раб</string>
+    <string name="title_pref_shortcut_edge_along_right_up">Повлечете нагоре по десниот раб</string>
+    <string name="title_pref_shortcut_edge_along_right_down">Повлечете надолу по десниот раб</string>
+    <string name="title_pref_shortcut_edge_along_top_left">Повлечете налево по горниот раб</string>
+    <string name="title_pref_shortcut_edge_along_top_right">Повлечете надесно по горниот раб</string>
+    <string name="title_pref_shortcut_edge_along_bottom_left">Повлечете налево по долниот раб</string>
+    <string name="title_pref_shortcut_edge_along_bottom_right">Повлечете надесно по долниот раб</string>
+    <string name="title_pref_shortcut_back_tap_double">Двоен допир на задната страна</string>
+    <string name="title_pref_shortcut_back_tap_triple">Троен допир на задната страна</string>
+    <string name="title_pref_back_tap_sensitivity">Чувствителност на допирот на задната страна</string>
+    <string name="title_pref_edge_zone_mm">Ширина на работ</string>
+    <string name="title_pref_edge_scroll_left">Лизгај со еден прст по левиот раб</string>
+    <string name="title_pref_edge_scroll_right">Лизгај со еден прст по десниот раб</string>
+    <string name="title_pref_edge_scroll_top">Лизгај со еден прст по горниот раб</string>
+    <string name="title_pref_edge_scroll_bottom">Лизгај со еден прст по долниот раб</string>
+    <string name="title_pref_edge_menu_left">Мени на левиот раб</string>
+    <string name="title_pref_edge_menu_right">Мени на десниот раб</string>
+    <string name="title_pref_edge_menu_left_switch">Користи го левиот раб како мени</string>
+    <string name="title_pref_edge_menu_right_switch">Користи го десниот раб како мени</string>
+    <string name="edge_menu_add_command">Додај команда</string>
+    <string name="edge_menu_change_command">Промени команда</string>
+    <string name="title_pref_text_entities">Дејства пронајдени во текстот</string>
+    <string name="text_entity_web">Веб-адреси</string>
+    <string name="text_entity_email">Е-адреси</string>
+    <string name="text_entity_phone">Телефонски броеви</string>
+    <string name="text_entity_code">Кодови</string>
+    <string name="menu_item_call_number">Повикај <xliff:g id="number" example="020 7946 0018">%1$s</xliff:g></string>
+    <string name="menu_item_copy_code">Копирај <xliff:g id="code" example="482916">%1$s</xliff:g></string>
+    <string name="title_pref_show_focus_indicator">Прикажи го индикаторот за фокусирање</string>
+    <string name="title_pref_dictation_correction_prompt">Упатство за поправање</string>
+    <string name="title_pref_whisper_custom_model">Датотека со модел</string>
+    <string name="whisper_custom_model_choose">Изберете датотека со модел за whisper.cpp</string>
+    <string name="whisper_custom_model_replace">Избери друга датотека</string>
+    <string name="whisper_custom_model_not_whisper">Не е датотека со модел за whisper.cpp</string>
+    <string name="whisper_custom_model_copying">Се копира</string>
 </resources>

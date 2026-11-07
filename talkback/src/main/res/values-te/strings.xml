@@ -1354,7 +1354,7 @@
     <string name="action_copy_command">ఆదేశాన్ని కాపీ చేయండి</string>
     <string name="command_copied">కమాండ్ కాపీ చేయబడింది</string>
     <string name="title_pref_speech_control">ఇతర యాప్‌లను మాట్లాడనివ్వు</string>
-    <string name="summary_pref_speech_control">మీరు అనుమతించిన యాప్‌లు SandFly వాయిస్‌లో టెక్స్ట్‌ను చెప్పగలవు. పరికరం లాక్ అయి ఉన్నప్పుడు ఏమీ చెప్పబడదు.</string>
+    <string name="summary_pref_speech_control">మీరు అనుమతించిన యాప్‌లు మీ SandFly వాయిస్‌లో టెక్స్ట్‌ను చెప్పగలవు. పరికరం లాక్ అయి ఉన్నప్పుడు, లాక్ అయి ఉన్నప్పుడు కూడా మీరు అనుమతించిన యాప్‌లు మాత్రమే మాట్లాడగలవు.</string>
     <string name="title_pref_speech_control_sound">ఇతర యాప్‌లు మాట్లాడే ముందు సౌండ్ ప్లే చేయండి</string>
     <string name="speech_control_apps_category">యాప్‌లు</string>
     <string name="speech_control_no_apps">ఇంకా ఏ యాప్ మాట్లాడేందుకు అడగలేదు.</string>
@@ -1859,4 +1859,108 @@
   <string name="value_hold_to_cancel_3000">3 సెకన్లు</string>
   <string name="title_pref_tap_to_activate">యాక్టివేట్ చేయడానికి ట్యాప్ చేయండి</string>
   <string name="summary_pref_tap_to_activate">వేలి కింద ఉన్న ఐటెమ్ ఫోకస్ కాకముందే వేలిని ఎత్తితే, ఆ ట్యాప్ ఐటెమ్‌ను యాక్టివేట్ చేస్తుంది.</string>
+    <string name="title_selector_ai_actions">AI చర్యలు</string>
+    <string name="ai_actions_hint">చర్యను ఎంచుకోవడానికి పైకి లేదా క్రిందికి స్వైప్ చేసి, దాన్ని రన్ చేయడానికి రెండుసార్లు ట్యాప్ చేయండి</string>
+    <string name="title_pref_ai_actions_included">చేర్చాల్సిన AI చర్యలు</string>
+    <string name="title_speak_screen_description">స్క్రీన్ వివరణను చదివి వినిపించండి</string>
+    <string name="title_speak_image_description">ఇమేజ్ వివరణను చదివి వినిపించండి</string>
+    <string name="title_ask_about_screen">స్క్రీన్ గురించి అడగండి</string>
+    <string name="title_ask_about_image">ఇమేజ్ గురించి అడగండి</string>
+    <string name="ai_question_hint">ప్రశ్న</string>
+    <string name="ai_question_ask">అడగండి</string>
+    <string name="shortcut_use_voice_profile"><xliff:g id="name" example="English">%1$s</xliff:g> వాయిస్ ప్రొఫైల్‌ను ఉపయోగించండి</string>
+    <string name="title_pref_keep_previous_voice_engine">మునుపటి వాయిస్ ప్రొఫైల్ ఇంజిన్‌ను ప్రారంభించి ఉంచు</string>
+    <string name="title_pref_voice_profile_keep_engine_started">ఇంజిన్‌ను ప్రారంభించి ఉంచు</string>
+    <string name="title_pref_speech_equalizer">ఈక్వలైజర్</string>
+    <string name="title_pref_speech_equalizer_preset">ప్రీసెట్</string>
+    <string name="title_pref_speech_equalizer_on">ఈక్వలైజర్‌ను ఉపయోగించు</string>
+    <string name="speech_equalizer_off">ఆఫ్‌లో ఉంది</string>
+    <string name="speech_equalizer_turned_on">ఈక్వలైజర్ ఆన్ చేయబడింది</string>
+    <string name="speech_equalizer_turned_off">ఈక్వలైజర్ ఆఫ్ చేయబడింది</string>
+    <string name="title_selector_equalizer_32">ఈక్వలైజర్ 32 Hz</string>
+    <string name="title_selector_equalizer_64">ఈక్వలైజర్ 64 Hz</string>
+    <string name="title_selector_equalizer_125">ఈక్వలైజర్ 125 Hz</string>
+    <string name="title_selector_equalizer_250">ఈక్వలైజర్ 250 Hz</string>
+    <string name="title_selector_equalizer_500">ఈక్వలైజర్ 500 Hz</string>
+    <string name="title_selector_equalizer_1k">ఈక్వలైజర్ 1 kHz</string>
+    <string name="title_selector_equalizer_2k">ఈక్వలైజర్ 2 kHz</string>
+    <string name="title_selector_equalizer_3k">ఈక్వలైజర్ 3 kHz</string>
+    <string name="title_selector_equalizer_4k">ఈక్వలైజర్ 4 kHz</string>
+    <string name="title_selector_equalizer_6k">ఈక్వలైజర్ 6 kHz</string>
+    <string name="title_selector_equalizer_8k">ఈక్వలైజర్ 8 kHz</string>
+    <string name="title_selector_equalizer_16k">ఈక్వలైజర్ 16 kHz</string>
+    <string name="summary_speech_equalizer_needs_low_latency">ఆడియో అవుట్‌పుట్ &gt; తక్కువ జాప్యం ఆడియో అవసరం</string>
+    <string name="speech_equalizer_flat">ఫ్లాట్</string>
+    <string name="speech_equalizer_clarity">స్పష్టత</string>
+    <string name="speech_equalizer_bass_boost">బేస్ బూస్ట్</string>
+    <string name="speech_equalizer_bass_cut">బేస్ తగ్గింపు</string>
+    <string name="speech_equalizer_treble_boost">ట్రెబుల్ బూస్ట్</string>
+    <string name="speech_equalizer_treble_cut">ట్రెబుల్ తగ్గింపు</string>
+    <string name="speech_equalizer_warm">వార్మ్</string>
+    <string name="speech_equalizer_reduce_harshness">కటుత్వాన్ని తగ్గించు</string>
+    <string name="speech_equalizer_reduce_sibilance">స-ధ్వనులను తగ్గించు</string>
+    <string name="speech_equalizer_small_speaker">చిన్న స్పీకర్</string>
+    <string name="speech_equalizer_custom">అనుకూలం</string>
+    <string name="speech_equalizer_band_hz"><xliff:g id="frequency">%1$s</xliff:g> Hz</string>
+    <string name="speech_equalizer_band_khz"><xliff:g id="frequency">%1$s</xliff:g> kHz</string>
+    <string name="speech_equalizer_gain_db"><xliff:g id="gain">%1$s</xliff:g> dB</string>
+    <string name="title_pref_braille_dictionary">బ్రెయిలీ నిఘంటువు</string>
+    <string name="braille_dictionary_not_shown"><xliff:g id="text" example="#">%1$s</xliff:g> చూపబడదు</string>
+    <string name="title_pref_announce_full_charge">పూర్తి ఛార్జ్‌ను ప్రకటించు</string>
+    <string name="battery_fully_charged">బ్యాటరీ పూర్తిగా ఛార్జ్ అయింది</string>
+    <string name="speech_control_locked_app">పరికరం లాక్ అయి ఉన్నప్పుడు <xliff:g id="app" example="Tasker">%1$s</xliff:g></string>
+    <string name="speech_control_ask_locked_title">పరికరం లాక్ అయి ఉన్నప్పుడు <xliff:g id="app" example="Tasker">%1$s</xliff:g>ని SandFly ద్వారా మాట్లాడేందుకు అనుమతించాలా?</string>
+    <string name="speech_control_ask_locked_text">పరికరం లాక్ అయి ఉన్నప్పుడు ఇది మీ SandFly వాయిస్‌లో టెక్స్ట్‌ను చదివి వినిపించగలదు. “అనుమతించు” కోసం పరికరం అన్‌లాక్ అయి ఉండాలి. దీన్ని సెట్టింగ్‌లు, “స్పీచ్”, “ఇతర యాప్‌లను మాట్లాడనివ్వు”లో మార్చవచ్చు.</string>
+    <string name="permission_speak_when_locked_label">పరికరం లాక్ అయి ఉన్నప్పుడు SandFly ద్వారా మాట్లాడటం</string>
+    <string name="permission_speak_when_locked_description">పరికరం లాక్ అయి ఉన్నప్పుడు మీ SandFly వాయిస్‌లో టెక్స్ట్‌ను చెప్పమని అభ్యర్థించడానికి యాప్‌ను అనుమతిస్తుంది. అలా చేసే ముందు SandFly మిమ్మల్ని విడిగా అడుగుతుంది.</string>
+    <string name="title_pref_category_back_tap">బ్యాక్ ట్యాప్</string>
+    <string name="title_pref_keep_speech_off_casts">క్యాస్ట్ చేస్తున్నప్పుడు స్పీచ్‌ను ఫోన్‌లోనే ఉంచు</string>
+    <string name="title_pref_app_shortcuts">యాప్ షార్ట్‌కట్‌లు</string>
+    <string name="app_shortcut_label"><xliff:g id="app_name" example="Amazon">%1$s</xliff:g>: <xliff:g id="shortcut" example="Cart">%2$s</xliff:g></string>
+    <string name="title_pref_add_app_shortcut">యాప్ షార్ట్‌కట్‌ను జోడించండి</string>
+    <string name="app_shortcut_no_apps">జోడించడానికి షార్ట్‌కట్‌లు ఉన్న యాప్‌లు ఏవీ లేవు</string>
+    <string name="app_shortcut_not_added">షార్ట్‌కట్ ఏదీ జోడించబడలేదు</string>
+    <string name="app_shortcut_added"><xliff:g id="name" example="MacroDroid: Morning">%1$s</xliff:g> జోడించబడింది</string>
+    <string name="app_shortcut_not_opened">యాప్ షార్ట్‌కట్‌ను తెరవడం సాధ్యం కాలేదు</string>
+    <string name="app_search_no_apps">యాప్‌లు లేవు</string>
+    <string name="shortcut_toggle_color_inversion">రంగు విలోమాన్ని ఆన్ లేదా ఆఫ్ చేయండి</string>
+    <string name="color_inversion_turned_on">రంగు విలోమం ఆన్ చేయబడింది</string>
+    <string name="color_inversion_turned_off">రంగు విలోమం ఆఫ్ చేయబడింది</string>
+    <string name="shortcut_dictate_or_media_control">మాట్లాడి టైప్ చేయండి, మీడియాను ప్లే లేదా పాజ్ చేయండి</string>
+    <string name="title_pref_shortcut_edge_along_left_up">ఎడమ అంచు వెంబడి పైకి స్వైప్ చేయండి</string>
+    <string name="title_pref_shortcut_edge_along_left_down">ఎడమ అంచు వెంబడి క్రిందికి స్వైప్ చేయండి</string>
+    <string name="title_pref_shortcut_edge_along_right_up">కుడి అంచు వెంబడి పైకి స్వైప్ చేయండి</string>
+    <string name="title_pref_shortcut_edge_along_right_down">కుడి అంచు వెంబడి క్రిందికి స్వైప్ చేయండి</string>
+    <string name="title_pref_shortcut_edge_along_top_left">ఎగువ అంచు వెంబడి ఎడమకు స్వైప్ చేయండి</string>
+    <string name="title_pref_shortcut_edge_along_top_right">ఎగువ అంచు వెంబడి కుడికి స్వైప్ చేయండి</string>
+    <string name="title_pref_shortcut_edge_along_bottom_left">దిగువ అంచు వెంబడి ఎడమకు స్వైప్ చేయండి</string>
+    <string name="title_pref_shortcut_edge_along_bottom_right">దిగువ అంచు వెంబడి కుడికి స్వైప్ చేయండి</string>
+    <string name="title_pref_shortcut_back_tap_double">వెనుక భాగంలో రెండుసార్లు ట్యాప్ చేయండి</string>
+    <string name="title_pref_shortcut_back_tap_triple">వెనుక భాగంలో మూడుసార్లు ట్యాప్ చేయండి</string>
+    <string name="title_pref_back_tap_sensitivity">బ్యాక్ ట్యాప్ సున్నితత్వం</string>
+    <string name="title_pref_edge_zone_mm">అంచు వెడల్పు</string>
+    <string name="title_pref_edge_scroll_left">ఎడమ అంచు వెంబడి ఒక వేలితో స్క్రోల్ చేయి</string>
+    <string name="title_pref_edge_scroll_right">కుడి అంచు వెంబడి ఒక వేలితో స్క్రోల్ చేయి</string>
+    <string name="title_pref_edge_scroll_top">ఎగువ అంచు వెంబడి ఒక వేలితో స్క్రోల్ చేయి</string>
+    <string name="title_pref_edge_scroll_bottom">దిగువ అంచు వెంబడి ఒక వేలితో స్క్రోల్ చేయి</string>
+    <string name="title_pref_edge_menu_left">ఎడమ అంచు మెనూ</string>
+    <string name="title_pref_edge_menu_right">కుడి అంచు మెనూ</string>
+    <string name="title_pref_edge_menu_left_switch">ఎడమ అంచును మెనూగా ఉపయోగించు</string>
+    <string name="title_pref_edge_menu_right_switch">కుడి అంచును మెనూగా ఉపయోగించు</string>
+    <string name="edge_menu_add_command">ఆదేశాన్ని జోడించండి</string>
+    <string name="edge_menu_change_command">ఆదేశాన్ని మార్చండి</string>
+    <string name="title_pref_text_entities">టెక్స్ట్‌లో కనుగొన్న చర్యలు</string>
+    <string name="text_entity_web">వెబ్ అడ్రస్‌లు</string>
+    <string name="text_entity_email">ఇమెయిల్ అడ్రస్‌లు</string>
+    <string name="text_entity_phone">ఫోన్ నంబర్‌లు</string>
+    <string name="text_entity_code">కోడ్‌లు</string>
+    <string name="menu_item_call_number"><xliff:g id="number" example="020 7946 0018">%1$s</xliff:g>కు కాల్ చేయండి</string>
+    <string name="menu_item_copy_code"><xliff:g id="code" example="482916">%1$s</xliff:g>ను కాపీ చేయండి</string>
+    <string name="title_pref_show_focus_indicator">ఫోకస్ సూచికను చూపు</string>
+    <string name="title_pref_dictation_correction_prompt">సవరణ ప్రాంప్ట్</string>
+    <string name="title_pref_whisper_custom_model">మోడల్ ఫైల్</string>
+    <string name="whisper_custom_model_choose">whisper.cpp మోడల్ ఫైల్‌ను ఎంచుకోండి</string>
+    <string name="whisper_custom_model_replace">వేరే ఫైల్‌ను ఎంచుకోండి</string>
+    <string name="whisper_custom_model_not_whisper">whisper.cpp మోడల్ ఫైల్ కాదు</string>
+    <string name="whisper_custom_model_copying">కాపీ చేస్తోంది</string>
 </resources>

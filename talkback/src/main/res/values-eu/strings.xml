@@ -1349,7 +1349,7 @@
     <string name="action_copy_command">Kopiatu agindua</string>
     <string name="command_copied">Kopiatu da agindua</string>
     <string name="title_pref_speech_control">Eman beste aplikazioei hitz egiteko baimena</string>
-    <string name="summary_pref_speech_control">Baimena ematen diezun aplikazioek testua esan dezakete SandFly-en ahotsarekin. Gailua blokeatuta dagoen bitartean, ez da ezer esaten.</string>
+    <string name="summary_pref_speech_control">Baimena ematen diezun aplikazioek testua esan dezakete SandFly-en ahotsarekin. Gailua blokeatuta dagoen bitartean, blokeatuta dagoenerako ere baimena ematen diezun aplikazioek soilik hitz egin dezakete.</string>
     <string name="title_pref_speech_control_sound">Erreproduzitu soinu bat beste aplikazioek hitz egin aurretik</string>
     <string name="speech_control_apps_category">Aplikazioak</string>
     <string name="speech_control_no_apps">Aplikaziorik ez da hitz egiteko baimena eskatu oraindik.</string>
@@ -1868,4 +1868,108 @@
   <string name="value_hold_to_cancel_3000">3 segundo</string>
   <string name="title_pref_tap_to_activate">Aktibatzeko, sakatu</string>
   <string name="summary_pref_tap_to_activate">Azpiko elementua fokuratu aurretik hatza altxatzen den sakatze batek elementua aktibatzen du.</string>
+    <string name="title_selector_ai_actions">Adimen artifizialeko ekintzak</string>
+    <string name="ai_actions_hint">Pasatu hatza gora edo behera ekintza bat aukeratzeko eta sakatu birritan exekutatzeko</string>
+    <string name="title_pref_ai_actions_included">Sartu beharreko adimen artifizialeko ekintzak</string>
+    <string name="title_speak_screen_description">Esan ozen pantailaren azalpena</string>
+    <string name="title_speak_image_description">Esan ozen irudiaren azalpena</string>
+    <string name="title_ask_about_screen">Egin galdera pantailari buruz</string>
+    <string name="title_ask_about_image">Egin galdera irudiari buruz</string>
+    <string name="ai_question_hint">Galdera</string>
+    <string name="ai_question_ask">Galdetu</string>
+    <string name="shortcut_use_voice_profile">Erabili ahots-profil hau: <xliff:g id="name" example="English">%1$s</xliff:g></string>
+    <string name="title_pref_keep_previous_voice_engine">Mantendu abian aurreko ahots-profilaren motorra</string>
+    <string name="title_pref_voice_profile_keep_engine_started">Mantendu motorra abian</string>
+    <string name="title_pref_speech_equalizer">Ekualizadorea</string>
+    <string name="title_pref_speech_equalizer_preset">Aurrezarpena</string>
+    <string name="title_pref_speech_equalizer_on">Erabili ekualizadorea</string>
+    <string name="speech_equalizer_off">Desaktibatuta</string>
+    <string name="speech_equalizer_turned_on">Aktibatu da ekualizadorea</string>
+    <string name="speech_equalizer_turned_off">Desaktibatu da ekualizadorea</string>
+    <string name="title_selector_equalizer_32">Ekualizadorea 32 Hz</string>
+    <string name="title_selector_equalizer_64">Ekualizadorea 64 Hz</string>
+    <string name="title_selector_equalizer_125">Ekualizadorea 125 Hz</string>
+    <string name="title_selector_equalizer_250">Ekualizadorea 250 Hz</string>
+    <string name="title_selector_equalizer_500">Ekualizadorea 500 Hz</string>
+    <string name="title_selector_equalizer_1k">Ekualizadorea 1 kHz</string>
+    <string name="title_selector_equalizer_2k">Ekualizadorea 2 kHz</string>
+    <string name="title_selector_equalizer_3k">Ekualizadorea 3 kHz</string>
+    <string name="title_selector_equalizer_4k">Ekualizadorea 4 kHz</string>
+    <string name="title_selector_equalizer_6k">Ekualizadorea 6 kHz</string>
+    <string name="title_selector_equalizer_8k">Ekualizadorea 8 kHz</string>
+    <string name="title_selector_equalizer_16k">Ekualizadorea 16 kHz</string>
+    <string name="summary_speech_equalizer_needs_low_latency">Audio-irteera &gt; Latentzia txikiko audioa behar du</string>
+    <string name="speech_equalizer_flat">Laua</string>
+    <string name="speech_equalizer_clarity">Argitasuna</string>
+    <string name="speech_equalizer_bass_boost">Baxuen indartzea</string>
+    <string name="speech_equalizer_bass_cut">Baxuen murrizketa</string>
+    <string name="speech_equalizer_treble_boost">Altuen indartzea</string>
+    <string name="speech_equalizer_treble_cut">Altuen murrizketa</string>
+    <string name="speech_equalizer_warm">Epela</string>
+    <string name="speech_equalizer_reduce_harshness">Murriztu zakartasuna</string>
+    <string name="speech_equalizer_reduce_sibilance">Murriztu txistu-hotsak</string>
+    <string name="speech_equalizer_small_speaker">Bozgorailu txikia</string>
+    <string name="speech_equalizer_custom">Pertsonalizatua</string>
+    <string name="speech_equalizer_band_hz"><xliff:g id="frequency">%1$s</xliff:g> Hz</string>
+    <string name="speech_equalizer_band_khz"><xliff:g id="frequency">%1$s</xliff:g> kHz</string>
+    <string name="speech_equalizer_gain_db"><xliff:g id="gain">%1$s</xliff:g> dB</string>
+    <string name="title_pref_braille_dictionary">Braille-hiztegia</string>
+    <string name="braille_dictionary_not_shown"><xliff:g id="text" example="#">%1$s</xliff:g> ez da erakusten</string>
+    <string name="title_pref_announce_full_charge">Iragarri karga osatu dela</string>
+    <string name="battery_fully_charged">Bateria guztiz kargatuta dago</string>
+    <string name="speech_control_locked_app"><xliff:g id="app" example="Tasker">%1$s</xliff:g> gailua blokeatuta dagoenean</string>
+    <string name="speech_control_ask_locked_title"><xliff:g id="app" example="Tasker">%1$s</xliff:g> aplikazioari SandFly-en bidez hitz egiteko baimena eman nahi diozu gailua blokeatuta dagoenean?</string>
+    <string name="speech_control_ask_locked_text">Testua SandFly-en ahotsarekin esan dezake gailua blokeatuta dagoen bitartean. Baimena emateko, gailuak desblokeatuta egon behar du. Ezarpenak, Hizketa, Eman beste aplikazioei hitz egiteko baimena atalean alda dezakezu.</string>
+    <string name="permission_speak_when_locked_label">hitz egin SandFly-en bidez gailua blokeatuta dagoenean</string>
+    <string name="permission_speak_when_locked_description">Gailua blokeatuta dagoen bitartean testua SandFly-en ahotsarekin esateko baimena eskatzea ahalbidetzen dio aplikazioari. SandFly-k aparte galdetuko dizu baimena eman aurretik.</string>
+    <string name="title_pref_category_back_tap">Atzeko aldea sakatzea</string>
+    <string name="title_pref_keep_speech_off_casts">Mantendu hizketa telefonoan edukia igortzean</string>
+    <string name="title_pref_app_shortcuts">Aplikazioen lasterbideak</string>
+    <string name="app_shortcut_label"><xliff:g id="app_name" example="Amazon">%1$s</xliff:g>: <xliff:g id="shortcut" example="Cart">%2$s</xliff:g></string>
+    <string name="title_pref_add_app_shortcut">Gehitu aplikazio-lasterbidea</string>
+    <string name="app_shortcut_no_apps">Ez dago gehitzeko lasterbiderik duen aplikaziorik</string>
+    <string name="app_shortcut_not_added">Ez da gehitu lasterbiderik</string>
+    <string name="app_shortcut_added">Gehitu da: <xliff:g id="name" example="MacroDroid: Morning">%1$s</xliff:g></string>
+    <string name="app_shortcut_not_opened">Ezin izan da ireki aplikazio-lasterbidea</string>
+    <string name="app_search_no_apps">Ez dago aplikaziorik</string>
+    <string name="shortcut_toggle_color_inversion">Aktibatu edo desaktibatu kolore-inbertsioa</string>
+    <string name="color_inversion_turned_on">Aktibatu da kolore-inbertsioa</string>
+    <string name="color_inversion_turned_off">Desaktibatu da kolore-inbertsioa</string>
+    <string name="shortcut_dictate_or_media_control">Diktatu, erreproduzitu edo pausatu multimedia-edukia</string>
+    <string name="title_pref_shortcut_edge_along_left_up">Pasatu hatza gora ezkerreko ertzean zehar</string>
+    <string name="title_pref_shortcut_edge_along_left_down">Pasatu hatza behera ezkerreko ertzean zehar</string>
+    <string name="title_pref_shortcut_edge_along_right_up">Pasatu hatza gora eskuineko ertzean zehar</string>
+    <string name="title_pref_shortcut_edge_along_right_down">Pasatu hatza behera eskuineko ertzean zehar</string>
+    <string name="title_pref_shortcut_edge_along_top_left">Pasatu hatza ezkerrera goiko ertzean zehar</string>
+    <string name="title_pref_shortcut_edge_along_top_right">Pasatu hatza eskuinera goiko ertzean zehar</string>
+    <string name="title_pref_shortcut_edge_along_bottom_left">Pasatu hatza ezkerrera beheko ertzean zehar</string>
+    <string name="title_pref_shortcut_edge_along_bottom_right">Pasatu hatza eskuinera beheko ertzean zehar</string>
+    <string name="title_pref_shortcut_back_tap_double">Sakatu birritan atzeko aldea</string>
+    <string name="title_pref_shortcut_back_tap_triple">Sakatu hirutan atzeko aldea</string>
+    <string name="title_pref_back_tap_sensitivity">Atzeko aldea sakatzearen sentikortasuna</string>
+    <string name="title_pref_edge_zone_mm">Ertzaren zabalera</string>
+    <string name="title_pref_edge_scroll_left">Korritu hatz batekin ezkerreko ertzean zehar</string>
+    <string name="title_pref_edge_scroll_right">Korritu hatz batekin eskuineko ertzean zehar</string>
+    <string name="title_pref_edge_scroll_top">Korritu hatz batekin goiko ertzean zehar</string>
+    <string name="title_pref_edge_scroll_bottom">Korritu hatz batekin beheko ertzean zehar</string>
+    <string name="title_pref_edge_menu_left">Ezkerreko ertzeko menua</string>
+    <string name="title_pref_edge_menu_right">Eskuineko ertzeko menua</string>
+    <string name="title_pref_edge_menu_left_switch">Erabili ezkerreko ertza menu gisa</string>
+    <string name="title_pref_edge_menu_right_switch">Erabili eskuineko ertza menu gisa</string>
+    <string name="edge_menu_add_command">Gehitu agindua</string>
+    <string name="edge_menu_change_command">Aldatu agindua</string>
+    <string name="title_pref_text_entities">Testuan aurkitutako ekintzak</string>
+    <string name="text_entity_web">Web-helbideak</string>
+    <string name="text_entity_email">Helbide elektronikoak</string>
+    <string name="text_entity_phone">Telefono-zenbakiak</string>
+    <string name="text_entity_code">Kodeak</string>
+    <string name="menu_item_call_number">Deitu zenbaki honetara: <xliff:g id="number" example="020 7946 0018">%1$s</xliff:g></string>
+    <string name="menu_item_copy_code">Kopiatu <xliff:g id="code" example="482916">%1$s</xliff:g></string>
+    <string name="title_pref_show_focus_indicator">Erakutsi fokuaren adierazlea</string>
+    <string name="title_pref_dictation_correction_prompt">Zuzenketa-jarraibideak</string>
+    <string name="title_pref_whisper_custom_model">Eredu-fitxategia</string>
+    <string name="whisper_custom_model_choose">Aukeratu whisper.cpp eredu-fitxategi bat</string>
+    <string name="whisper_custom_model_replace">Aukeratu beste fitxategi bat</string>
+    <string name="whisper_custom_model_not_whisper">Ez da whisper.cpp eredu-fitxategia</string>
+    <string name="whisper_custom_model_copying">Kopiatzen</string>
 </resources>

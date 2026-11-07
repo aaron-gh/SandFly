@@ -1363,7 +1363,7 @@
     <string name="action_copy_command">کمانڈ کاپی کریں</string>
     <string name="command_copied">کمانڈ کاپی ہو گیا</string>
     <string name="title_pref_speech_control">دوسری ایپس کو بولنے دیں</string>
-    <string name="summary_pref_speech_control">جن ایپس کو آپ اجازت دیں وہ SandFly کی آواز میں متن بول سکتی ہیں۔ آلہ لاک ہونے پر کچھ نہیں بولا جاتا۔</string>
+    <string name="summary_pref_speech_control">جن ایپس کو آپ اجازت دیں وہ SandFly کی آواز میں متن بول سکتی ہیں۔ آلہ مقفل ہونے پر صرف وہ ایپس بول سکتی ہیں جنہیں آپ نے مقفل ہونے کے دوران بھی اجازت دی ہو۔</string>
     <string name="title_pref_speech_control_sound">دیگر ایپس کے بولنے سے پہلے آواز چلائیں</string>
     <string name="speech_control_apps_category">ایپس</string>
     <string name="speech_control_no_apps">ابھی تک کسی ایپ نے بولنے کی اجازت نہیں مانگی۔</string>
@@ -1868,4 +1868,108 @@
   <string name="value_hold_to_cancel_3000">3 سیکنڈ</string>
   <string name="title_pref_tap_to_activate">فعال کرنے کے لیے تھپتھپائیں</string>
   <string name="summary_pref_tap_to_activate">ایسا تھپتھپانا جس میں انگلی نیچے والے آئٹم پر فوکس ہونے سے پہلے اٹھ جائے، اس آئٹم کو فعال کرتا ہے۔</string>
+    <string name="title_selector_ai_actions">AI کارروائیاں</string>
+    <string name="ai_actions_hint">کارروائی منتخب کرنے کے لیے اوپر یا نیچے سوائپ کریں، پھر اسے چلانے کے لیے دو بار تھپتھپائیں</string>
+    <string name="title_pref_ai_actions_included">شامل کرنے کے لیے AI کارروائیاں</string>
+    <string name="title_speak_screen_description">اسکرین کی وضاحت بولیں</string>
+    <string name="title_speak_image_description">تصویر کی وضاحت بولیں</string>
+    <string name="title_ask_about_screen">اسکرین کے بارے میں پوچھیں</string>
+    <string name="title_ask_about_image">تصویر کے بارے میں پوچھیں</string>
+    <string name="ai_question_hint">سوال</string>
+    <string name="ai_question_ask">پوچھیں</string>
+    <string name="shortcut_use_voice_profile">صوتی پروفائل <xliff:g id="name" example="English">%1$s</xliff:g> استعمال کریں</string>
+    <string name="title_pref_keep_previous_voice_engine">پچھلے صوتی پروفائل کا انجن چلتا رکھیں</string>
+    <string name="title_pref_voice_profile_keep_engine_started">انجن چلتا رکھیں</string>
+    <string name="title_pref_speech_equalizer">ایکولائزر</string>
+    <string name="title_pref_speech_equalizer_preset">پری سیٹ</string>
+    <string name="title_pref_speech_equalizer_on">ایکولائزر استعمال کریں</string>
+    <string name="speech_equalizer_off">آف</string>
+    <string name="speech_equalizer_turned_on">ایکولائزر آن ہے</string>
+    <string name="speech_equalizer_turned_off">ایکولائزر آف ہے</string>
+    <string name="title_selector_equalizer_32">ایکولائزر 32 ہرٹز</string>
+    <string name="title_selector_equalizer_64">ایکولائزر 64 ہرٹز</string>
+    <string name="title_selector_equalizer_125">ایکولائزر 125 ہرٹز</string>
+    <string name="title_selector_equalizer_250">ایکولائزر 250 ہرٹز</string>
+    <string name="title_selector_equalizer_500">ایکولائزر 500 ہرٹز</string>
+    <string name="title_selector_equalizer_1k">ایکولائزر 1 کلو ہرٹز</string>
+    <string name="title_selector_equalizer_2k">ایکولائزر 2 کلو ہرٹز</string>
+    <string name="title_selector_equalizer_3k">ایکولائزر 3 کلو ہرٹز</string>
+    <string name="title_selector_equalizer_4k">ایکولائزر 4 کلو ہرٹز</string>
+    <string name="title_selector_equalizer_6k">ایکولائزر 6 کلو ہرٹز</string>
+    <string name="title_selector_equalizer_8k">ایکولائزر 8 کلو ہرٹز</string>
+    <string name="title_selector_equalizer_16k">ایکولائزر 16 کلو ہرٹز</string>
+    <string name="summary_speech_equalizer_needs_low_latency">آڈیو آؤٹ پٹ &gt; کم تاخیر والی آڈیو درکار ہے</string>
+    <string name="speech_equalizer_flat">ہموار</string>
+    <string name="speech_equalizer_clarity">واضح آواز</string>
+    <string name="speech_equalizer_bass_boost">باس میں اضافہ</string>
+    <string name="speech_equalizer_bass_cut">باس میں کمی</string>
+    <string name="speech_equalizer_treble_boost">ٹریبل میں اضافہ</string>
+    <string name="speech_equalizer_treble_cut">ٹریبل میں کمی</string>
+    <string name="speech_equalizer_warm">گرم</string>
+    <string name="speech_equalizer_reduce_harshness">کرختگی میں کمی</string>
+    <string name="speech_equalizer_reduce_sibilance">سیٹی جیسی آوازوں میں کمی</string>
+    <string name="speech_equalizer_small_speaker">چھوٹا اسپیکر</string>
+    <string name="speech_equalizer_custom">حسب ضرورت</string>
+    <string name="speech_equalizer_band_hz"><xliff:g id="frequency">%1$s</xliff:g> ہرٹز</string>
+    <string name="speech_equalizer_band_khz"><xliff:g id="frequency">%1$s</xliff:g> کلو ہرٹز</string>
+    <string name="speech_equalizer_gain_db"><xliff:g id="gain">%1$s</xliff:g> ڈیسی بل</string>
+    <string name="title_pref_braille_dictionary">بریل لغت</string>
+    <string name="braille_dictionary_not_shown"><xliff:g id="text" example="#">%1$s</xliff:g> نہیں دکھایا جاتا</string>
+    <string name="title_pref_announce_full_charge">مکمل چارج کا اعلان کریں</string>
+    <string name="battery_fully_charged">بیٹری پوری طرح چارج ہو گئی</string>
+    <string name="speech_control_locked_app"><xliff:g id="app" example="Tasker">%1$s</xliff:g> جب آلہ مقفل ہو</string>
+    <string name="speech_control_ask_locked_title">کیا <xliff:g id="app" example="Tasker">%1$s</xliff:g> کو آلہ مقفل ہونے پر SandFly کے ذریعے بولنے کی اجازت دیں؟</string>
+    <string name="speech_control_ask_locked_text">یہ ایپ آلہ مقفل ہونے پر آپ کی SandFly آواز میں متن بول سکتی ہے۔ اجازت دینے کے لیے آلہ غیر مقفل ہونا ضروری ہے۔ آپ اسے ترتیبات، اسپیچ، دوسری ایپس کو بولنے دیں میں تبدیل کر سکتے ہیں۔</string>
+    <string name="permission_speak_when_locked_label">آلہ مقفل ہونے پر SandFly کے ذریعے بولیں</string>
+    <string name="permission_speak_when_locked_description">ایپ کو آلہ مقفل ہونے پر آپ کی SandFly آواز میں متن بولنے کی درخواست کرنے دیتی ہے۔ ایسا ہونے سے پہلے SandFly آپ سے الگ سے پوچھتا ہے۔</string>
+    <string name="title_pref_category_back_tap">پشت پر تھپتھپانا</string>
+    <string name="title_pref_keep_speech_off_casts">کاسٹ کرتے وقت اسپیچ فون پر رکھیں</string>
+    <string name="title_pref_app_shortcuts">ایپ شارٹ کٹس</string>
+    <string name="app_shortcut_label"><xliff:g id="app_name" example="Amazon">%1$s</xliff:g>: <xliff:g id="shortcut" example="Cart">%2$s</xliff:g></string>
+    <string name="title_pref_add_app_shortcut">ایپ شارٹ کٹ شامل کریں</string>
+    <string name="app_shortcut_no_apps">کسی ایپ میں شامل کرنے کے لیے شارٹ کٹس نہیں ہیں</string>
+    <string name="app_shortcut_not_added">کوئی شارٹ کٹ شامل نہیں کیا گیا</string>
+    <string name="app_shortcut_added"><xliff:g id="name" example="MacroDroid: Morning">%1$s</xliff:g> شامل کر دیا گیا</string>
+    <string name="app_shortcut_not_opened">ایپ شارٹ کٹ نہیں کھل سکا</string>
+    <string name="app_search_no_apps">کوئی ایپ نہیں</string>
+    <string name="shortcut_toggle_color_inversion">رنگوں کی تقلیب آن یا آف کریں</string>
+    <string name="color_inversion_turned_on">رنگوں کی تقلیب آن ہے</string>
+    <string name="color_inversion_turned_off">رنگوں کی تقلیب آف ہے</string>
+    <string name="shortcut_dictate_or_media_control">لکھوائیں، میڈیا چلائیں یا موقوف کریں</string>
+    <string name="title_pref_shortcut_edge_along_left_up">بائیں کنارے کے ساتھ ساتھ اوپر سوائپ کریں</string>
+    <string name="title_pref_shortcut_edge_along_left_down">بائیں کنارے کے ساتھ ساتھ نیچے سوائپ کریں</string>
+    <string name="title_pref_shortcut_edge_along_right_up">دائیں کنارے کے ساتھ ساتھ اوپر سوائپ کریں</string>
+    <string name="title_pref_shortcut_edge_along_right_down">دائیں کنارے کے ساتھ ساتھ نیچے سوائپ کریں</string>
+    <string name="title_pref_shortcut_edge_along_top_left">اوپر کے کنارے کے ساتھ ساتھ بائیں سوائپ کریں</string>
+    <string name="title_pref_shortcut_edge_along_top_right">اوپر کے کنارے کے ساتھ ساتھ دائیں سوائپ کریں</string>
+    <string name="title_pref_shortcut_edge_along_bottom_left">نیچے کے کنارے کے ساتھ ساتھ بائیں سوائپ کریں</string>
+    <string name="title_pref_shortcut_edge_along_bottom_right">نیچے کے کنارے کے ساتھ ساتھ دائیں سوائپ کریں</string>
+    <string name="title_pref_shortcut_back_tap_double">پشت پر دو بار تھپتھپائیں</string>
+    <string name="title_pref_shortcut_back_tap_triple">پشت پر تین بار تھپتھپائیں</string>
+    <string name="title_pref_back_tap_sensitivity">پشت پر تھپتھپانے کی حساسیت</string>
+    <string name="title_pref_edge_zone_mm">کنارے کی چوڑائی</string>
+    <string name="title_pref_edge_scroll_left">بائیں کنارے کے ساتھ ساتھ ایک انگلی سے اسکرول کریں</string>
+    <string name="title_pref_edge_scroll_right">دائیں کنارے کے ساتھ ساتھ ایک انگلی سے اسکرول کریں</string>
+    <string name="title_pref_edge_scroll_top">اوپر کے کنارے کے ساتھ ساتھ ایک انگلی سے اسکرول کریں</string>
+    <string name="title_pref_edge_scroll_bottom">نیچے کے کنارے کے ساتھ ساتھ ایک انگلی سے اسکرول کریں</string>
+    <string name="title_pref_edge_menu_left">بائیں کنارے کا مینو</string>
+    <string name="title_pref_edge_menu_right">دائیں کنارے کا مینو</string>
+    <string name="title_pref_edge_menu_left_switch">بائیں کنارے کو مینو کے طور پر استعمال کریں</string>
+    <string name="title_pref_edge_menu_right_switch">دائیں کنارے کو مینو کے طور پر استعمال کریں</string>
+    <string name="edge_menu_add_command">کمانڈ شامل کریں</string>
+    <string name="edge_menu_change_command">کمانڈ تبدیل کریں</string>
+    <string name="title_pref_text_entities">متن میں ملنے والی کارروائیاں</string>
+    <string name="text_entity_web">ویب پتے</string>
+    <string name="text_entity_email">ای میل پتے</string>
+    <string name="text_entity_phone">فون نمبرز</string>
+    <string name="text_entity_code">کوڈز</string>
+    <string name="menu_item_call_number"><xliff:g id="number" example="020 7946 0018">%1$s</xliff:g> پر کال کریں</string>
+    <string name="menu_item_copy_code"><xliff:g id="code" example="482916">%1$s</xliff:g> کاپی کریں</string>
+    <string name="title_pref_show_focus_indicator">فوکس اشارہ دکھائیں</string>
+    <string name="title_pref_dictation_correction_prompt">تصحیح کا پرامپٹ</string>
+    <string name="title_pref_whisper_custom_model">ماڈل فائل</string>
+    <string name="whisper_custom_model_choose">whisper.cpp ماڈل فائل منتخب کریں</string>
+    <string name="whisper_custom_model_replace">دوسری فائل منتخب کریں</string>
+    <string name="whisper_custom_model_not_whisper">whisper.cpp ماڈل فائل نہیں ہے</string>
+    <string name="whisper_custom_model_copying">کاپی ہو رہی ہے</string>
 </resources>

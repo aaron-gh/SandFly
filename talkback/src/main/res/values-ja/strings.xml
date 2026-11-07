@@ -1360,7 +1360,7 @@
     <string name="action_copy_command">コマンドをコピー</string>
     <string name="command_copied">コマンドがコピーされました</string>
     <string name="title_pref_speech_control">他のアプリの読み上げを許可</string>
-    <string name="summary_pref_speech_control">許可したアプリは SandFly の音声でテキストを読み上げられます。デバイスのロック中は何も読み上げられません。</string>
+    <string name="summary_pref_speech_control">許可したアプリは SandFly の音声でテキストを読み上げられます。デバイスのロック中は、ロック中も許可したアプリのみが読み上げられます。</string>
     <string name="title_pref_speech_control_sound">他のアプリが話す前にサウンドを再生する</string>
     <string name="speech_control_apps_category">アプリ</string>
     <string name="speech_control_no_apps">まだ読み上げをリクエストしたアプリはありません。</string>
@@ -1865,4 +1865,108 @@
   <string name="value_hold_to_cancel_3000">3 秒</string>
   <string name="title_pref_tap_to_activate">タップで有効化</string>
   <string name="summary_pref_tap_to_activate">指の下のアイテムにフォーカスが移る前に指を離したタップで、そのアイテムが有効化されます。</string>
+    <string name="title_selector_ai_actions">AI 操作</string>
+    <string name="ai_actions_hint">上下にスワイプして操作を選択し、ダブルタップして実行します</string>
+    <string name="title_pref_ai_actions_included">含める AI 操作</string>
+    <string name="title_speak_screen_description">画面の説明を読み上げる</string>
+    <string name="title_speak_image_description">画像の説明を読み上げる</string>
+    <string name="title_ask_about_screen">画面について質問</string>
+    <string name="title_ask_about_image">画像について質問</string>
+    <string name="ai_question_hint">質問</string>
+    <string name="ai_question_ask">質問する</string>
+    <string name="shortcut_use_voice_profile">音声プロファイル <xliff:g id="name" example="English">%1$s</xliff:g> を使用</string>
+    <string name="title_pref_keep_previous_voice_engine">前の音声プロファイルのエンジンを起動したままにする</string>
+    <string name="title_pref_voice_profile_keep_engine_started">エンジンを起動したままにする</string>
+    <string name="title_pref_speech_equalizer">イコライザー</string>
+    <string name="title_pref_speech_equalizer_preset">プリセット</string>
+    <string name="title_pref_speech_equalizer_on">イコライザーを使用</string>
+    <string name="speech_equalizer_off">オフ</string>
+    <string name="speech_equalizer_turned_on">イコライザーは ON です</string>
+    <string name="speech_equalizer_turned_off">イコライザーは OFF です</string>
+    <string name="title_selector_equalizer_32">イコライザー 32 Hz</string>
+    <string name="title_selector_equalizer_64">イコライザー 64 Hz</string>
+    <string name="title_selector_equalizer_125">イコライザー 125 Hz</string>
+    <string name="title_selector_equalizer_250">イコライザー 250 Hz</string>
+    <string name="title_selector_equalizer_500">イコライザー 500 Hz</string>
+    <string name="title_selector_equalizer_1k">イコライザー 1 kHz</string>
+    <string name="title_selector_equalizer_2k">イコライザー 2 kHz</string>
+    <string name="title_selector_equalizer_3k">イコライザー 3 kHz</string>
+    <string name="title_selector_equalizer_4k">イコライザー 4 kHz</string>
+    <string name="title_selector_equalizer_6k">イコライザー 6 kHz</string>
+    <string name="title_selector_equalizer_8k">イコライザー 8 kHz</string>
+    <string name="title_selector_equalizer_16k">イコライザー 16 kHz</string>
+    <string name="summary_speech_equalizer_needs_low_latency">[音声出力] &gt; [低遅延オーディオ] が必要です</string>
+    <string name="speech_equalizer_flat">フラット</string>
+    <string name="speech_equalizer_clarity">クリア</string>
+    <string name="speech_equalizer_bass_boost">低音ブースト</string>
+    <string name="speech_equalizer_bass_cut">低音カット</string>
+    <string name="speech_equalizer_treble_boost">高音ブースト</string>
+    <string name="speech_equalizer_treble_cut">高音カット</string>
+    <string name="speech_equalizer_warm">ウォーム</string>
+    <string name="speech_equalizer_reduce_harshness">耳障りな音を軽減</string>
+    <string name="speech_equalizer_reduce_sibilance">歯擦音を軽減</string>
+    <string name="speech_equalizer_small_speaker">小型スピーカー</string>
+    <string name="speech_equalizer_custom">カスタム</string>
+    <string name="speech_equalizer_band_hz"><xliff:g id="frequency">%1$s</xliff:g> Hz</string>
+    <string name="speech_equalizer_band_khz"><xliff:g id="frequency">%1$s</xliff:g> kHz</string>
+    <string name="speech_equalizer_gain_db"><xliff:g id="gain">%1$s</xliff:g> dB</string>
+    <string name="title_pref_braille_dictionary">点字辞書</string>
+    <string name="braille_dictionary_not_shown"><xliff:g id="text" example="#">%1$s</xliff:g> を表示しない</string>
+    <string name="title_pref_announce_full_charge">フル充電を読み上げる</string>
+    <string name="battery_fully_charged">電池はフル充電されました</string>
+    <string name="speech_control_locked_app"><xliff:g id="app" example="Tasker">%1$s</xliff:g>（デバイスのロック中）</string>
+    <string name="speech_control_ask_locked_title">デバイスのロック中も <xliff:g id="app" example="Tasker">%1$s</xliff:g> が SandFly を通して話すことを許可しますか?</string>
+    <string name="speech_control_ask_locked_text">デバイスのロック中も SandFly の音声でテキストを読み上げることができます。[許可] を選択するには、デバイスのロックを解除する必要があります。これは [設定]、[読み上げ]、[他のアプリの読み上げを許可] で変更できます。</string>
+    <string name="permission_speak_when_locked_label">デバイスのロック中に SandFly を通して話す</string>
+    <string name="permission_speak_when_locked_description">デバイスのロック中に SandFly の音声でテキストを読み上げるリクエストをアプリに許可します。実際に読み上げる前に、SandFly が別途確認します。</string>
+    <string name="title_pref_category_back_tap">背面タップ</string>
+    <string name="title_pref_keep_speech_off_casts">キャスト中も読み上げをスマートフォンに残す</string>
+    <string name="title_pref_app_shortcuts">アプリのショートカット</string>
+    <string name="app_shortcut_label"><xliff:g id="app_name" example="Amazon">%1$s</xliff:g>: <xliff:g id="shortcut" example="Cart">%2$s</xliff:g></string>
+    <string name="title_pref_add_app_shortcut">アプリのショートカットを追加</string>
+    <string name="app_shortcut_no_apps">追加できるショートカットのあるアプリはありません</string>
+    <string name="app_shortcut_not_added">ショートカットは追加されませんでした</string>
+    <string name="app_shortcut_added"><xliff:g id="name" example="MacroDroid: Morning">%1$s</xliff:g> を追加しました</string>
+    <string name="app_shortcut_not_opened">アプリのショートカットを開けませんでした</string>
+    <string name="app_search_no_apps">アプリがありません</string>
+    <string name="shortcut_toggle_color_inversion">色の反転の ON / OFF を切り替える</string>
+    <string name="color_inversion_turned_on">色の反転は ON です</string>
+    <string name="color_inversion_turned_off">色の反転は OFF です</string>
+    <string name="shortcut_dictate_or_media_control">音声入力、メディアの再生 / 一時停止</string>
+    <string name="title_pref_shortcut_edge_along_left_up">左端に沿って上にスワイプ</string>
+    <string name="title_pref_shortcut_edge_along_left_down">左端に沿って下にスワイプ</string>
+    <string name="title_pref_shortcut_edge_along_right_up">右端に沿って上にスワイプ</string>
+    <string name="title_pref_shortcut_edge_along_right_down">右端に沿って下にスワイプ</string>
+    <string name="title_pref_shortcut_edge_along_top_left">上端に沿って左にスワイプ</string>
+    <string name="title_pref_shortcut_edge_along_top_right">上端に沿って右にスワイプ</string>
+    <string name="title_pref_shortcut_edge_along_bottom_left">下端に沿って左にスワイプ</string>
+    <string name="title_pref_shortcut_edge_along_bottom_right">下端に沿って右にスワイプ</string>
+    <string name="title_pref_shortcut_back_tap_double">背面をダブルタップ</string>
+    <string name="title_pref_shortcut_back_tap_triple">背面をトリプルタップ</string>
+    <string name="title_pref_back_tap_sensitivity">背面タップの感度</string>
+    <string name="title_pref_edge_zone_mm">エッジの幅</string>
+    <string name="title_pref_edge_scroll_left">左端に沿って 1 本の指でスクロール</string>
+    <string name="title_pref_edge_scroll_right">右端に沿って 1 本の指でスクロール</string>
+    <string name="title_pref_edge_scroll_top">上端に沿って 1 本の指でスクロール</string>
+    <string name="title_pref_edge_scroll_bottom">下端に沿って 1 本の指でスクロール</string>
+    <string name="title_pref_edge_menu_left">左端メニュー</string>
+    <string name="title_pref_edge_menu_right">右端メニュー</string>
+    <string name="title_pref_edge_menu_left_switch">左端をメニューとして使用</string>
+    <string name="title_pref_edge_menu_right_switch">右端をメニューとして使用</string>
+    <string name="edge_menu_add_command">コマンドを追加</string>
+    <string name="edge_menu_change_command">コマンドを変更</string>
+    <string name="title_pref_text_entities">テキスト内の操作</string>
+    <string name="text_entity_web">ウェブアドレス</string>
+    <string name="text_entity_email">メールアドレス</string>
+    <string name="text_entity_phone">電話番号</string>
+    <string name="text_entity_code">確認コード</string>
+    <string name="menu_item_call_number"><xliff:g id="number" example="020 7946 0018">%1$s</xliff:g> に発信</string>
+    <string name="menu_item_copy_code"><xliff:g id="code" example="482916">%1$s</xliff:g> をコピー</string>
+    <string name="title_pref_show_focus_indicator">フォーカスインジケーターを表示する</string>
+    <string name="title_pref_dictation_correction_prompt">修正用プロンプト</string>
+    <string name="title_pref_whisper_custom_model">モデルファイル</string>
+    <string name="whisper_custom_model_choose">whisper.cpp のモデルファイルを選択</string>
+    <string name="whisper_custom_model_replace">別のファイルを選択</string>
+    <string name="whisper_custom_model_not_whisper">whisper.cpp のモデルファイルではありません</string>
+    <string name="whisper_custom_model_copying">コピー中</string>
 </resources>

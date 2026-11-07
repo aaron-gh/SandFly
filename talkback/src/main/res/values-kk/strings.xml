@@ -1363,7 +1363,7 @@
     <string name="action_copy_command">Пәрменді көшіру</string>
     <string name="command_copied">Пәрмен көшірілді</string>
     <string name="title_pref_speech_control">Басқа қолданбаларға сөйлеуге рұқсат беру</string>
-    <string name="summary_pref_speech_control">Рұқсат берілген қолданбалар мәтінді SandFly дауысымен айта алады. Құрылғы құлыптаулы кезде ештеңе айтылмайды.</string>
+    <string name="summary_pref_speech_control">Рұқсат берілген қолданбалар мәтінді SandFly дауысымен айта алады. Құрылғы құлыптаулы кезде құлыптаулы кезге де рұқсат берілген қолданбалар ғана сөйлей алады.</string>
     <string name="title_pref_speech_control_sound">Басқа қолданбалар сөйлемес бұрын дыбыс ойнату</string>
     <string name="speech_control_apps_category">Қолданбалар</string>
     <string name="speech_control_no_apps">Әзірге ешбір қолданба сөйлеуді сұраған жоқ.</string>
@@ -1868,4 +1868,108 @@
   <string name="value_hold_to_cancel_3000">3 секунд</string>
   <string name="title_pref_tap_to_activate">Түртіп іске қосу</string>
   <string name="summary_pref_tap_to_activate">Саусақ астындағы элемент ерекшеленгенге дейін көтерілген түрту сол элементті іске қосады.</string>
+    <string name="title_selector_ai_actions">AI әрекеттері</string>
+    <string name="ai_actions_hint">Әрекетті таңдау үшін жоғары не төмен сырғытыңыз, содан кейін оны іске қосу үшін екі рет түртіңіз</string>
+    <string name="title_pref_ai_actions_included">Қосылатын AI әрекеттері</string>
+    <string name="title_speak_screen_description">Экран сипаттамасын айту</string>
+    <string name="title_speak_image_description">Сурет сипаттамасын айту</string>
+    <string name="title_ask_about_screen">Экран туралы сұрау</string>
+    <string name="title_ask_about_image">Сурет туралы сұрау</string>
+    <string name="ai_question_hint">Сұрақ</string>
+    <string name="ai_question_ask">Сұрау</string>
+    <string name="shortcut_use_voice_profile"><xliff:g id="name" example="English">%1$s</xliff:g> дауыс профилін пайдалану</string>
+    <string name="title_pref_keep_previous_voice_engine">Алдыңғы дауыс профилінің механизмін қосулы ұстау</string>
+    <string name="title_pref_voice_profile_keep_engine_started">Механизмді қосулы ұстау</string>
+    <string name="title_pref_speech_equalizer">Эквалайзер</string>
+    <string name="title_pref_speech_equalizer_preset">Дайын параметр</string>
+    <string name="title_pref_speech_equalizer_on">Эквалайзерді пайдалану</string>
+    <string name="speech_equalizer_off">Өшірулі</string>
+    <string name="speech_equalizer_turned_on">Эквалайзер қосулы</string>
+    <string name="speech_equalizer_turned_off">Эквалайзер өшірулі</string>
+    <string name="title_selector_equalizer_32">Эквалайзер 32 Гц</string>
+    <string name="title_selector_equalizer_64">Эквалайзер 64 Гц</string>
+    <string name="title_selector_equalizer_125">Эквалайзер 125 Гц</string>
+    <string name="title_selector_equalizer_250">Эквалайзер 250 Гц</string>
+    <string name="title_selector_equalizer_500">Эквалайзер 500 Гц</string>
+    <string name="title_selector_equalizer_1k">Эквалайзер 1 кГц</string>
+    <string name="title_selector_equalizer_2k">Эквалайзер 2 кГц</string>
+    <string name="title_selector_equalizer_3k">Эквалайзер 3 кГц</string>
+    <string name="title_selector_equalizer_4k">Эквалайзер 4 кГц</string>
+    <string name="title_selector_equalizer_6k">Эквалайзер 6 кГц</string>
+    <string name="title_selector_equalizer_8k">Эквалайзер 8 кГц</string>
+    <string name="title_selector_equalizer_16k">Эквалайзер 16 кГц</string>
+    <string name="summary_speech_equalizer_needs_low_latency">Аудио шығысы &gt; Төмен кідіріс аудио қажет</string>
+    <string name="speech_equalizer_flat">Тегіс</string>
+    <string name="speech_equalizer_clarity">Анықтық</string>
+    <string name="speech_equalizer_bass_boost">Төмен жиіліктерді күшейту</string>
+    <string name="speech_equalizer_bass_cut">Төмен жиіліктерді азайту</string>
+    <string name="speech_equalizer_treble_boost">Жоғары жиіліктерді күшейту</string>
+    <string name="speech_equalizer_treble_cut">Жоғары жиіліктерді азайту</string>
+    <string name="speech_equalizer_warm">Жылы</string>
+    <string name="speech_equalizer_reduce_harshness">Қатқылдықты азайту</string>
+    <string name="speech_equalizer_reduce_sibilance">Ысылдауды азайту</string>
+    <string name="speech_equalizer_small_speaker">Шағын динамик</string>
+    <string name="speech_equalizer_custom">Арнаулы</string>
+    <string name="speech_equalizer_band_hz"><xliff:g id="frequency">%1$s</xliff:g> Гц</string>
+    <string name="speech_equalizer_band_khz"><xliff:g id="frequency">%1$s</xliff:g> кГц</string>
+    <string name="speech_equalizer_gain_db"><xliff:g id="gain">%1$s</xliff:g> дБ</string>
+    <string name="title_pref_braille_dictionary">Брайль сөздігі</string>
+    <string name="braille_dictionary_not_shown"><xliff:g id="text" example="#">%1$s</xliff:g> көрсетілмейді</string>
+    <string name="title_pref_announce_full_charge">Толық зарядталғанын хабарлау</string>
+    <string name="battery_fully_charged">Батарея толық зарядталды</string>
+    <string name="speech_control_locked_app"><xliff:g id="app" example="Tasker">%1$s</xliff:g>, құрылғы құлыптаулы кезде</string>
+    <string name="speech_control_ask_locked_title"><xliff:g id="app" example="Tasker">%1$s</xliff:g> қолданбасына құрылғы құлыптаулы кезде SandFly арқылы сөйлеуге рұқсат беру керек пе?</string>
+    <string name="speech_control_ask_locked_text">Ол құрылғы құлыптаулы кезде мәтінді SandFly дауысыңызбен айта алады. Рұқсат беру үшін құрылғының құлпы ашық болуы керек. Мұны Параметрлер, Сөйлеу, Басқа қолданбаларға сөйлеуге рұқсат беру бөлімінде өзгертуге болады.</string>
+    <string name="permission_speak_when_locked_label">құрылғы құлыптаулы кезде SandFly арқылы сөйлеу</string>
+    <string name="permission_speak_when_locked_description">Қолданбаға құрылғы құлыптаулы кезде мәтінді SandFly дауысыңызбен айтуды сұрауға мүмкіндік береді. SandFly бұған дейін сізден бөлек сұрайды.</string>
+    <string name="title_pref_category_back_tap">Артқы жағын түрту</string>
+    <string name="title_pref_keep_speech_off_casts">Трансляция кезінде сөйлеуді телефонда қалдыру</string>
+    <string name="title_pref_app_shortcuts">Қолданба таңбашалары</string>
+    <string name="app_shortcut_label"><xliff:g id="app_name" example="Amazon">%1$s</xliff:g>: <xliff:g id="shortcut" example="Cart">%2$s</xliff:g></string>
+    <string name="title_pref_add_app_shortcut">Қолданба таңбашасын қосу</string>
+    <string name="app_shortcut_no_apps">Қосатын таңбашасы бар қолданба жоқ</string>
+    <string name="app_shortcut_not_added">Таңбаша қосылмады</string>
+    <string name="app_shortcut_added"><xliff:g id="name" example="MacroDroid: Morning">%1$s</xliff:g> қосылды</string>
+    <string name="app_shortcut_not_opened">Қолданба таңбашасын ашу мүмкін болмады</string>
+    <string name="app_search_no_apps">Қолданба жоқ</string>
+    <string name="shortcut_toggle_color_inversion">Түс инверсиясын қосу не өшіру</string>
+    <string name="color_inversion_turned_on">Түс инверсиясы қосулы</string>
+    <string name="color_inversion_turned_off">Түс инверсиясы өшірулі</string>
+    <string name="shortcut_dictate_or_media_control">Ауызша айту, мультимедианы ойнату немесе кідірту</string>
+    <string name="title_pref_shortcut_edge_along_left_up">Сол жақ жиек бойымен жоғары сырғыту</string>
+    <string name="title_pref_shortcut_edge_along_left_down">Сол жақ жиек бойымен төмен сырғыту</string>
+    <string name="title_pref_shortcut_edge_along_right_up">Оң жақ жиек бойымен жоғары сырғыту</string>
+    <string name="title_pref_shortcut_edge_along_right_down">Оң жақ жиек бойымен төмен сырғыту</string>
+    <string name="title_pref_shortcut_edge_along_top_left">Жоғарғы жиек бойымен солға сырғыту</string>
+    <string name="title_pref_shortcut_edge_along_top_right">Жоғарғы жиек бойымен оңға сырғыту</string>
+    <string name="title_pref_shortcut_edge_along_bottom_left">Төменгі жиек бойымен солға сырғыту</string>
+    <string name="title_pref_shortcut_edge_along_bottom_right">Төменгі жиек бойымен оңға сырғыту</string>
+    <string name="title_pref_shortcut_back_tap_double">Артқы жағын екі рет түрту</string>
+    <string name="title_pref_shortcut_back_tap_triple">Артқы жағын үш рет түрту</string>
+    <string name="title_pref_back_tap_sensitivity">Артқы жағын түрту сезімталдығы</string>
+    <string name="title_pref_edge_zone_mm">Жиек ені</string>
+    <string name="title_pref_edge_scroll_left">Сол жақ жиек бойымен бір саусақпен айналдыру</string>
+    <string name="title_pref_edge_scroll_right">Оң жақ жиек бойымен бір саусақпен айналдыру</string>
+    <string name="title_pref_edge_scroll_top">Жоғарғы жиек бойымен бір саусақпен айналдыру</string>
+    <string name="title_pref_edge_scroll_bottom">Төменгі жиек бойымен бір саусақпен айналдыру</string>
+    <string name="title_pref_edge_menu_left">Сол жақ жиек мәзірі</string>
+    <string name="title_pref_edge_menu_right">Оң жақ жиек мәзірі</string>
+    <string name="title_pref_edge_menu_left_switch">Сол жақ жиекті мәзір ретінде пайдалану</string>
+    <string name="title_pref_edge_menu_right_switch">Оң жақ жиекті мәзір ретінде пайдалану</string>
+    <string name="edge_menu_add_command">Пәрмен қосу</string>
+    <string name="edge_menu_change_command">Пәрменді өзгерту</string>
+    <string name="title_pref_text_entities">Мәтіннен табылған әрекеттер</string>
+    <string name="text_entity_web">Веб-мекенжайлар</string>
+    <string name="text_entity_email">Электрондық пошта мекенжайлары</string>
+    <string name="text_entity_phone">Телефон нөмірлері</string>
+    <string name="text_entity_code">Кодтар</string>
+    <string name="menu_item_call_number"><xliff:g id="number" example="020 7946 0018">%1$s</xliff:g> нөміріне қоңырау шалу</string>
+    <string name="menu_item_copy_code"><xliff:g id="code" example="482916">%1$s</xliff:g> кодын көшіру</string>
+    <string name="title_pref_show_focus_indicator">Фокус көрсеткішін көрсету</string>
+    <string name="title_pref_dictation_correction_prompt">Түзету нұсқауы</string>
+    <string name="title_pref_whisper_custom_model">Модель файлы</string>
+    <string name="whisper_custom_model_choose">whisper.cpp модель файлын таңдау</string>
+    <string name="whisper_custom_model_replace">Басқа файл таңдау</string>
+    <string name="whisper_custom_model_not_whisper">whisper.cpp модель файлы емес</string>
+    <string name="whisper_custom_model_copying">Көшірілуде</string>
 </resources>

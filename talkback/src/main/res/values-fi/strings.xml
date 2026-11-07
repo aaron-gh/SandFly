@@ -1349,7 +1349,7 @@
     <string name="action_copy_command">Kopioi komento</string>
     <string name="command_copied">Komento kopioitu</string>
     <string name="title_pref_speech_control">Salli muiden sovellusten puhua</string>
-    <string name="summary_pref_speech_control">Sallimasi sovellukset voivat sanoa tekstiä SandFlyn äänellä. Mitään ei sanota, kun laite on lukittu.</string>
+    <string name="summary_pref_speech_control">Sallimasi sovellukset voivat sanoa tekstiä SandFlyn äänellä. Kun laite on lukittu, vain sovellukset, jotka olet sallinut myös lukittuna, voivat puhua.</string>
     <string name="title_pref_speech_control_sound">Toista ääni ennen muiden sovellusten puhetta</string>
     <string name="speech_control_apps_category">Sovellukset</string>
     <string name="speech_control_no_apps">Mikään sovellus ei ole vielä pyytänyt lupaa puhua.</string>
@@ -1868,4 +1868,108 @@
   <string name="value_hold_to_cancel_3000">3 sekuntia</string>
   <string name="title_pref_tap_to_activate">Aktivoi napauttamalla</string>
   <string name="summary_pref_tap_to_activate">Napautus, jossa sormi nousee ennen kuin sen alla oleva kohde on valittu, aktivoi kohteen.</string>
+    <string name="title_selector_ai_actions">Tekoälytoiminnot</string>
+    <string name="ai_actions_hint">Valitse toiminto pyyhkäisemällä ylös tai alas ja suorita se kaksoisnapautuksella</string>
+    <string name="title_pref_ai_actions_included">Mukaan otettavat tekoälytoiminnot</string>
+    <string name="title_speak_screen_description">Sano näytön kuvaus</string>
+    <string name="title_speak_image_description">Sano kuvan kuvaus</string>
+    <string name="title_ask_about_screen">Kysy näytöstä</string>
+    <string name="title_ask_about_image">Kysy kuvasta</string>
+    <string name="ai_question_hint">Kysymys</string>
+    <string name="ai_question_ask">Kysy</string>
+    <string name="shortcut_use_voice_profile">Käytä ääniprofiilia <xliff:g id="name" example="English">%1$s</xliff:g></string>
+    <string name="title_pref_keep_previous_voice_engine">Pidä edellisen ääniprofiilin puhemoottori käynnissä</string>
+    <string name="title_pref_voice_profile_keep_engine_started">Pidä puhemoottori käynnissä</string>
+    <string name="title_pref_speech_equalizer">Taajuuskorjain</string>
+    <string name="title_pref_speech_equalizer_preset">Esiasetus</string>
+    <string name="title_pref_speech_equalizer_on">Käytä taajuuskorjainta</string>
+    <string name="speech_equalizer_off">Pois päältä</string>
+    <string name="speech_equalizer_turned_on">Taajuuskorjain päällä</string>
+    <string name="speech_equalizer_turned_off">Taajuuskorjain pois päältä</string>
+    <string name="title_selector_equalizer_32">Taajuuskorjain 32 Hz</string>
+    <string name="title_selector_equalizer_64">Taajuuskorjain 64 Hz</string>
+    <string name="title_selector_equalizer_125">Taajuuskorjain 125 Hz</string>
+    <string name="title_selector_equalizer_250">Taajuuskorjain 250 Hz</string>
+    <string name="title_selector_equalizer_500">Taajuuskorjain 500 Hz</string>
+    <string name="title_selector_equalizer_1k">Taajuuskorjain 1 kHz</string>
+    <string name="title_selector_equalizer_2k">Taajuuskorjain 2 kHz</string>
+    <string name="title_selector_equalizer_3k">Taajuuskorjain 3 kHz</string>
+    <string name="title_selector_equalizer_4k">Taajuuskorjain 4 kHz</string>
+    <string name="title_selector_equalizer_6k">Taajuuskorjain 6 kHz</string>
+    <string name="title_selector_equalizer_8k">Taajuuskorjain 8 kHz</string>
+    <string name="title_selector_equalizer_16k">Taajuuskorjain 16 kHz</string>
+    <string name="summary_speech_equalizer_needs_low_latency">Edellyttää: Äänen ulostulo &gt; Pienen viiveen ääni</string>
+    <string name="speech_equalizer_flat">Tasainen</string>
+    <string name="speech_equalizer_clarity">Selkeys</string>
+    <string name="speech_equalizer_bass_boost">Bassokorostus</string>
+    <string name="speech_equalizer_bass_cut">Bassovaimennus</string>
+    <string name="speech_equalizer_treble_boost">Diskanttikorostus</string>
+    <string name="speech_equalizer_treble_cut">Diskanttivaimennus</string>
+    <string name="speech_equalizer_warm">Lämmin</string>
+    <string name="speech_equalizer_reduce_harshness">Terävyyden vähennys</string>
+    <string name="speech_equalizer_reduce_sibilance">Sihinän vähennys</string>
+    <string name="speech_equalizer_small_speaker">Pieni kaiutin</string>
+    <string name="speech_equalizer_custom">Muokattu</string>
+    <string name="speech_equalizer_band_hz"><xliff:g id="frequency">%1$s</xliff:g> Hz</string>
+    <string name="speech_equalizer_band_khz"><xliff:g id="frequency">%1$s</xliff:g> kHz</string>
+    <string name="speech_equalizer_gain_db"><xliff:g id="gain">%1$s</xliff:g> dB</string>
+    <string name="title_pref_braille_dictionary">Pistekirjoitussanakirja</string>
+    <string name="braille_dictionary_not_shown"><xliff:g id="text" example="#">%1$s</xliff:g> ei näkyvissä</string>
+    <string name="title_pref_announce_full_charge">Ilmoita täysi lataus</string>
+    <string name="battery_fully_charged">Akku täynnä</string>
+    <string name="speech_control_locked_app"><xliff:g id="app" example="Tasker">%1$s</xliff:g>, kun laite on lukittu</string>
+    <string name="speech_control_ask_locked_title">Sallitaanko sovelluksen <xliff:g id="app" example="Tasker">%1$s</xliff:g> puhua SandFlyn kautta, kun laite on lukittu?</string>
+    <string name="speech_control_ask_locked_text">Se voi sanoa tekstiä SandFlyn äänellä, kun laite on lukittu. Salliminen edellyttää, että laitteen lukitus on avattu. Voit muuttaa tätä kohdassa Asetukset &gt; Puhe &gt; Salli muiden sovellusten puhua.</string>
+    <string name="permission_speak_when_locked_label">puhua SandFlyn kautta, kun laite on lukittu</string>
+    <string name="permission_speak_when_locked_description">Sallii sovelluksen pyytää lupaa sanoa tekstiä SandFlyn äänellä, kun laite on lukittu. SandFly kysyy sinulta tätä erikseen.</string>
+    <string name="title_pref_category_back_tap">Takaosan napautus</string>
+    <string name="title_pref_keep_speech_off_casts">Pidä puhe puhelimessa striimauksen aikana</string>
+    <string name="title_pref_app_shortcuts">Sovellusten pikakuvakkeet</string>
+    <string name="app_shortcut_label"><xliff:g id="app_name" example="Amazon">%1$s</xliff:g>: <xliff:g id="shortcut" example="Cart">%2$s</xliff:g></string>
+    <string name="title_pref_add_app_shortcut">Lisää sovelluksen pikakuvake</string>
+    <string name="app_shortcut_no_apps">Millään sovelluksella ei ole lisättäviä pikakuvakkeita</string>
+    <string name="app_shortcut_not_added">Pikakuvaketta ei lisätty</string>
+    <string name="app_shortcut_added">Lisätty: <xliff:g id="name" example="MacroDroid: Morning">%1$s</xliff:g></string>
+    <string name="app_shortcut_not_opened">Sovelluksen pikakuvaketta ei voitu avata</string>
+    <string name="app_search_no_apps">Ei sovelluksia</string>
+    <string name="shortcut_toggle_color_inversion">Laita värien käänteistys päälle tai pois päältä</string>
+    <string name="color_inversion_turned_on">Värien käänteistys päällä</string>
+    <string name="color_inversion_turned_off">Värien käänteistys pois päältä</string>
+    <string name="shortcut_dictate_or_media_control">Sanele, toista mediaa tai keskeytä se</string>
+    <string name="title_pref_shortcut_edge_along_left_up">Pyyhkäise ylös vasenta reunaa pitkin</string>
+    <string name="title_pref_shortcut_edge_along_left_down">Pyyhkäise alas vasenta reunaa pitkin</string>
+    <string name="title_pref_shortcut_edge_along_right_up">Pyyhkäise ylös oikeaa reunaa pitkin</string>
+    <string name="title_pref_shortcut_edge_along_right_down">Pyyhkäise alas oikeaa reunaa pitkin</string>
+    <string name="title_pref_shortcut_edge_along_top_left">Pyyhkäise vasemmalle yläreunaa pitkin</string>
+    <string name="title_pref_shortcut_edge_along_top_right">Pyyhkäise oikealle yläreunaa pitkin</string>
+    <string name="title_pref_shortcut_edge_along_bottom_left">Pyyhkäise vasemmalle alareunaa pitkin</string>
+    <string name="title_pref_shortcut_edge_along_bottom_right">Pyyhkäise oikealle alareunaa pitkin</string>
+    <string name="title_pref_shortcut_back_tap_double">Kaksoisnapauta laitteen takaosaa</string>
+    <string name="title_pref_shortcut_back_tap_triple">Kolmoisnapauta laitteen takaosaa</string>
+    <string name="title_pref_back_tap_sensitivity">Takaosan napautuksen herkkyys</string>
+    <string name="title_pref_edge_zone_mm">Reunan leveys</string>
+    <string name="title_pref_edge_scroll_left">Vieritä yhdellä sormella vasenta reunaa pitkin</string>
+    <string name="title_pref_edge_scroll_right">Vieritä yhdellä sormella oikeaa reunaa pitkin</string>
+    <string name="title_pref_edge_scroll_top">Vieritä yhdellä sormella yläreunaa pitkin</string>
+    <string name="title_pref_edge_scroll_bottom">Vieritä yhdellä sormella alareunaa pitkin</string>
+    <string name="title_pref_edge_menu_left">Vasemman reunan valikko</string>
+    <string name="title_pref_edge_menu_right">Oikean reunan valikko</string>
+    <string name="title_pref_edge_menu_left_switch">Käytä vasenta reunaa valikkona</string>
+    <string name="title_pref_edge_menu_right_switch">Käytä oikeaa reunaa valikkona</string>
+    <string name="edge_menu_add_command">Lisää komento</string>
+    <string name="edge_menu_change_command">Vaihda komento</string>
+    <string name="title_pref_text_entities">Tekstistä löytyvät toiminnot</string>
+    <string name="text_entity_web">Verkko-osoitteet</string>
+    <string name="text_entity_email">Sähköpostiosoitteet</string>
+    <string name="text_entity_phone">Puhelinnumerot</string>
+    <string name="text_entity_code">Koodit</string>
+    <string name="menu_item_call_number">Soita numeroon <xliff:g id="number" example="020 7946 0018">%1$s</xliff:g></string>
+    <string name="menu_item_copy_code">Kopioi <xliff:g id="code" example="482916">%1$s</xliff:g></string>
+    <string name="title_pref_show_focus_indicator">Näytä valitun kohdan osoitin</string>
+    <string name="title_pref_dictation_correction_prompt">Korjauskehote</string>
+    <string name="title_pref_whisper_custom_model">Mallitiedosto</string>
+    <string name="whisper_custom_model_choose">Valitse whisper.cpp-mallitiedosto</string>
+    <string name="whisper_custom_model_replace">Valitse toinen tiedosto</string>
+    <string name="whisper_custom_model_not_whisper">Ei whisper.cpp-mallitiedosto</string>
+    <string name="whisper_custom_model_copying">Kopioidaan</string>
 </resources>

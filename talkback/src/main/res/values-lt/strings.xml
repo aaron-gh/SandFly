@@ -1363,7 +1363,7 @@
     <string name="action_copy_command">Kopijuoti komandą</string>
     <string name="command_copied">Komanda nukopijuota</string>
     <string name="title_pref_speech_control">Leisti kitoms programoms kalbėti</string>
-    <string name="summary_pref_speech_control">Leistos programos gali sakyti tekstą SandFly balsu. Kol įrenginys užrakintas, nieko nesakoma.</string>
+    <string name="summary_pref_speech_control">Leistos programos gali sakyti tekstą SandFly balsu. Kol įrenginys užrakintas, kalbėti gali tik programos, kurias leidžiate ir užrakintame įrenginyje.</string>
     <string name="title_pref_speech_control_sound">Leisti garsą prieš kalbant kitoms programoms</string>
     <string name="speech_control_apps_category">Programos</string>
     <string name="speech_control_no_apps">Jokia programa dar neprašė kalbėti.</string>
@@ -1876,4 +1876,108 @@
   <string name="value_hold_to_cancel_3000">3 sek.</string>
   <string name="title_pref_tap_to_activate">Palieskite, kad suaktyvintumėte</string>
   <string name="summary_pref_tap_to_activate">Palietimas, kai pirštas pakeliamas prieš sufokusuojant po juo esantį elementą, suaktyvina elementą.</string>
+    <string name="title_selector_ai_actions">AI veiksmai</string>
+    <string name="ai_actions_hint">Braukite aukštyn arba žemyn, kad pasirinktumėte veiksmą, tada dukart palieskite, kad jį vykdytumėte</string>
+    <string name="title_pref_ai_actions_included">Įtraukiami AI veiksmai</string>
+    <string name="title_speak_screen_description">Pasakyti ekrano aprašą</string>
+    <string name="title_speak_image_description">Pasakyti vaizdo aprašą</string>
+    <string name="title_ask_about_screen">Klausti apie ekraną</string>
+    <string name="title_ask_about_image">Klausti apie vaizdą</string>
+    <string name="ai_question_hint">Klausimas</string>
+    <string name="ai_question_ask">Klausti</string>
+    <string name="shortcut_use_voice_profile">Naudoti balso profilį <xliff:g id="name" example="English">%1$s</xliff:g></string>
+    <string name="title_pref_keep_previous_voice_engine">Palikti paleistą ankstesnio balso profilio kalbos variklį</string>
+    <string name="title_pref_voice_profile_keep_engine_started">Palikti variklį paleistą</string>
+    <string name="title_pref_speech_equalizer">Ekvalaizeris</string>
+    <string name="title_pref_speech_equalizer_preset">Išankstinis nustatymas</string>
+    <string name="title_pref_speech_equalizer_on">Naudoti ekvalaizerį</string>
+    <string name="speech_equalizer_off">Išjungta</string>
+    <string name="speech_equalizer_turned_on">Ekvalaizeris įjungtas</string>
+    <string name="speech_equalizer_turned_off">Ekvalaizeris išjungtas</string>
+    <string name="title_selector_equalizer_32">Ekvalaizeris 32 Hz</string>
+    <string name="title_selector_equalizer_64">Ekvalaizeris 64 Hz</string>
+    <string name="title_selector_equalizer_125">Ekvalaizeris 125 Hz</string>
+    <string name="title_selector_equalizer_250">Ekvalaizeris 250 Hz</string>
+    <string name="title_selector_equalizer_500">Ekvalaizeris 500 Hz</string>
+    <string name="title_selector_equalizer_1k">Ekvalaizeris 1 kHz</string>
+    <string name="title_selector_equalizer_2k">Ekvalaizeris 2 kHz</string>
+    <string name="title_selector_equalizer_3k">Ekvalaizeris 3 kHz</string>
+    <string name="title_selector_equalizer_4k">Ekvalaizeris 4 kHz</string>
+    <string name="title_selector_equalizer_6k">Ekvalaizeris 6 kHz</string>
+    <string name="title_selector_equalizer_8k">Ekvalaizeris 8 kHz</string>
+    <string name="title_selector_equalizer_16k">Ekvalaizeris 16 kHz</string>
+    <string name="summary_speech_equalizer_needs_low_latency">Reikia nustatymo „Garso išvestis“ &gt; „Mažos delsos garsas“</string>
+    <string name="speech_equalizer_flat">Lygus</string>
+    <string name="speech_equalizer_clarity">Aiškumas</string>
+    <string name="speech_equalizer_bass_boost">Žemųjų dažnių stiprinimas</string>
+    <string name="speech_equalizer_bass_cut">Žemųjų dažnių slopinimas</string>
+    <string name="speech_equalizer_treble_boost">Aukštųjų dažnių stiprinimas</string>
+    <string name="speech_equalizer_treble_cut">Aukštųjų dažnių slopinimas</string>
+    <string name="speech_equalizer_warm">Šiltas</string>
+    <string name="speech_equalizer_reduce_harshness">Mažinti aštrumą</string>
+    <string name="speech_equalizer_reduce_sibilance">Mažinti šnypštimą</string>
+    <string name="speech_equalizer_small_speaker">Mažas garsiakalbis</string>
+    <string name="speech_equalizer_custom">Tinkintas</string>
+    <string name="speech_equalizer_band_hz"><xliff:g id="frequency">%1$s</xliff:g> Hz</string>
+    <string name="speech_equalizer_band_khz"><xliff:g id="frequency">%1$s</xliff:g> kHz</string>
+    <string name="speech_equalizer_gain_db"><xliff:g id="gain">%1$s</xliff:g> dB</string>
+    <string name="title_pref_braille_dictionary">Brailio rašto žodynas</string>
+    <string name="braille_dictionary_not_shown"><xliff:g id="text" example="#">%1$s</xliff:g> nerodoma</string>
+    <string name="title_pref_announce_full_charge">Pranešti apie visišką įkrovimą</string>
+    <string name="battery_fully_charged">Akumuliatorius visiškai įkrautas</string>
+    <string name="speech_control_locked_app"><xliff:g id="app" example="Tasker">%1$s</xliff:g>, kai įrenginys užrakintas</string>
+    <string name="speech_control_ask_locked_title">Leisti <xliff:g id="app" example="Tasker">%1$s</xliff:g> kalbėti per SandFly, kai įrenginys užrakintas?</string>
+    <string name="speech_control_ask_locked_text">Ji gali sakyti tekstą jūsų SandFly balsu, kai įrenginys užrakintas. Kad galėtumėte leisti, įrenginys turi būti atrakintas. Tai galite pakeisti skiltyje „Nustatymai“ &gt; „Kalba“ &gt; „Leisti kitoms programoms kalbėti“.</string>
+    <string name="permission_speak_when_locked_label">kalbėti per SandFly, kai įrenginys užrakintas</string>
+    <string name="permission_speak_when_locked_description">Leidžia programai paprašyti sakyti tekstą jūsų SandFly balsu, kai įrenginys užrakintas. SandFly prieš tai atskirai jūsų paklausia.</string>
+    <string name="title_pref_category_back_tap">Bakstelėjimas į galinę pusę</string>
+    <string name="title_pref_keep_speech_off_casts">Perduodant ekraną palikti kalbą telefone</string>
+    <string name="title_pref_app_shortcuts">Programų spartieji klavišai</string>
+    <string name="app_shortcut_label"><xliff:g id="app_name" example="Amazon">%1$s</xliff:g>: <xliff:g id="shortcut" example="Cart">%2$s</xliff:g></string>
+    <string name="title_pref_add_app_shortcut">Pridėti programos spartųjį klavišą</string>
+    <string name="app_shortcut_no_apps">Jokia programa neturi sparčiųjų klavišų, kuriuos būtų galima pridėti</string>
+    <string name="app_shortcut_not_added">Spartusis klavišas nepridėtas</string>
+    <string name="app_shortcut_added">Pridėta: <xliff:g id="name" example="MacroDroid: Morning">%1$s</xliff:g></string>
+    <string name="app_shortcut_not_opened">Nepavyko atidaryti programos sparčiojo klavišo</string>
+    <string name="app_search_no_apps">Nėra programų</string>
+    <string name="shortcut_toggle_color_inversion">Įjungti arba išjungti spalvų inversiją</string>
+    <string name="color_inversion_turned_on">Spalvų inversija įjungta</string>
+    <string name="color_inversion_turned_off">Spalvų inversija išjungta</string>
+    <string name="shortcut_dictate_or_media_control">Diktuoti, paleisti arba pristabdyti mediją</string>
+    <string name="title_pref_shortcut_edge_along_left_up">Braukite aukštyn palei kairįjį kraštą</string>
+    <string name="title_pref_shortcut_edge_along_left_down">Braukite žemyn palei kairįjį kraštą</string>
+    <string name="title_pref_shortcut_edge_along_right_up">Braukite aukštyn palei dešinįjį kraštą</string>
+    <string name="title_pref_shortcut_edge_along_right_down">Braukite žemyn palei dešinįjį kraštą</string>
+    <string name="title_pref_shortcut_edge_along_top_left">Braukite kairėn palei viršutinį kraštą</string>
+    <string name="title_pref_shortcut_edge_along_top_right">Braukite dešinėn palei viršutinį kraštą</string>
+    <string name="title_pref_shortcut_edge_along_bottom_left">Braukite kairėn palei apatinį kraštą</string>
+    <string name="title_pref_shortcut_edge_along_bottom_right">Braukite dešinėn palei apatinį kraštą</string>
+    <string name="title_pref_shortcut_back_tap_double">Bakstelėjimas du kartus į galinę pusę</string>
+    <string name="title_pref_shortcut_back_tap_triple">Bakstelėjimas tris kartus į galinę pusę</string>
+    <string name="title_pref_back_tap_sensitivity">Bakstelėjimo į galinę pusę jautrumas</string>
+    <string name="title_pref_edge_zone_mm">Krašto plotis</string>
+    <string name="title_pref_edge_scroll_left">Slinkti vienu pirštu palei kairįjį kraštą</string>
+    <string name="title_pref_edge_scroll_right">Slinkti vienu pirštu palei dešinįjį kraštą</string>
+    <string name="title_pref_edge_scroll_top">Slinkti vienu pirštu palei viršutinį kraštą</string>
+    <string name="title_pref_edge_scroll_bottom">Slinkti vienu pirštu palei apatinį kraštą</string>
+    <string name="title_pref_edge_menu_left">Kairiojo krašto meniu</string>
+    <string name="title_pref_edge_menu_right">Dešiniojo krašto meniu</string>
+    <string name="title_pref_edge_menu_left_switch">Naudoti kairįjį kraštą kaip meniu</string>
+    <string name="title_pref_edge_menu_right_switch">Naudoti dešinįjį kraštą kaip meniu</string>
+    <string name="edge_menu_add_command">Pridėti komandą</string>
+    <string name="edge_menu_change_command">Keisti komandą</string>
+    <string name="title_pref_text_entities">Tekste rasti veiksmai</string>
+    <string name="text_entity_web">Žiniatinklio adresai</string>
+    <string name="text_entity_email">El. pašto adresai</string>
+    <string name="text_entity_phone">Telefonų numeriai</string>
+    <string name="text_entity_code">Kodai</string>
+    <string name="menu_item_call_number">Skambinti <xliff:g id="number" example="020 7946 0018">%1$s</xliff:g></string>
+    <string name="menu_item_copy_code">Kopijuoti <xliff:g id="code" example="482916">%1$s</xliff:g></string>
+    <string name="title_pref_show_focus_indicator">Rodyti fokusavimo indikatorių</string>
+    <string name="title_pref_dictation_correction_prompt">Taisymo instrukcijos</string>
+    <string name="title_pref_whisper_custom_model">Modelio failas</string>
+    <string name="whisper_custom_model_choose">Pasirinkite whisper.cpp modelio failą</string>
+    <string name="whisper_custom_model_replace">Pasirinkti kitą failą</string>
+    <string name="whisper_custom_model_not_whisper">Tai ne whisper.cpp modelio failas</string>
+    <string name="whisper_custom_model_copying">Kopijuojama</string>
 </resources>

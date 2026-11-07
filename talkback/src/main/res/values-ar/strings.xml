@@ -94,7 +94,7 @@
   <string name="summary_pref_speakerphone_away_from_ear">أثناء المكالمة، يتم التبديل إلى مكبّر الصوت عند إبعاد الهاتف عن أذنك، والعودة إلى سمّاعة الأذن عند رفعه إليها مرة أخرى.</string>
   <string name="summary_pref_speakerphone_needs_permission">‏يتطلّب إذنًا لا يمنحه Android لقارئات الشاشة. لمنحه، نفِّذ هذا الأمر باستخدام adb أو Shizuku، ثم عُد إلى هذه الشاشة: %1$s</string>
   <string name="title_pref_speech_control">السماح للتطبيقات الأخرى بالنطق</string>
-  <string name="summary_pref_speech_control">‏يمكن للتطبيقات التي تسمح لها نطق نص بصوت SandFly. تسمع صوتًا قبل كل مرة، ولا يتم نطق أي شيء أثناء قفل الجهاز.</string>
+    <string name="summary_pref_speech_control">‏يمكن للتطبيقات التي تسمح لها نطق نص بصوت SandFly. أثناء قفل الجهاز، يمكن النطق فقط للتطبيقات التي تسمح لها أيضًا أثناء القفل.</string>
   <string name="speech_control_apps_category">التطبيقات</string>
   <string name="speech_control_no_apps">لم يطلب أي تطبيق النطق حتى الآن.</string>
   <string name="speech_control_ask_title">‏هل تريد السماح لتطبيق %1$s بالنطق عبر SandFly؟</string>
@@ -1884,4 +1884,108 @@
   <string name="value_hold_to_cancel_3000">3 ثوانٍ</string>
   <string name="title_pref_tap_to_activate">النقر للتفعيل</string>
   <string name="summary_pref_tap_to_activate">تؤدي النقرة التي يُرفع فيها الإصبع قبل التركيز على العنصر الموجود أسفله إلى تفعيل هذا العنصر.</string>
+    <string name="title_selector_ai_actions">إجراءات الذكاء الاصطناعي</string>
+    <string name="ai_actions_hint">مرِّر سريعًا للأعلى أو للأسفل لاختيار إجراء، ثم انقر مرتين لتشغيله</string>
+    <string name="title_pref_ai_actions_included">إجراءات الذكاء الاصطناعي المضمَّنة</string>
+    <string name="title_speak_screen_description">نطق وصف الشاشة</string>
+    <string name="title_speak_image_description">نطق وصف الصورة</string>
+    <string name="title_ask_about_screen">السؤال عن الشاشة</string>
+    <string name="title_ask_about_image">السؤال عن الصورة</string>
+    <string name="ai_question_hint">السؤال</string>
+    <string name="ai_question_ask">اسأل</string>
+    <string name="shortcut_use_voice_profile">استخدام الملف الصوتي <xliff:g id="name" example="English">%1$s</xliff:g></string>
+    <string name="title_pref_keep_previous_voice_engine">إبقاء محرّك الملف الصوتي السابق قيد التشغيل</string>
+    <string name="title_pref_voice_profile_keep_engine_started">إبقاء المحرّك قيد التشغيل</string>
+    <string name="title_pref_speech_equalizer">معادل الصوت</string>
+    <string name="title_pref_speech_equalizer_preset">الإعداد المسبق</string>
+    <string name="title_pref_speech_equalizer_on">استخدام معادل الصوت</string>
+    <string name="speech_equalizer_off">غير مفعَّل</string>
+    <string name="speech_equalizer_turned_on">تم تفعيل معادل الصوت</string>
+    <string name="speech_equalizer_turned_off">تم إيقاف معادل الصوت</string>
+    <string name="title_selector_equalizer_32">معادل الصوت 32 هرتز</string>
+    <string name="title_selector_equalizer_64">معادل الصوت 64 هرتز</string>
+    <string name="title_selector_equalizer_125">معادل الصوت 125 هرتز</string>
+    <string name="title_selector_equalizer_250">معادل الصوت 250 هرتز</string>
+    <string name="title_selector_equalizer_500">معادل الصوت 500 هرتز</string>
+    <string name="title_selector_equalizer_1k">معادل الصوت 1 كيلوهرتز</string>
+    <string name="title_selector_equalizer_2k">معادل الصوت 2 كيلوهرتز</string>
+    <string name="title_selector_equalizer_3k">معادل الصوت 3 كيلوهرتز</string>
+    <string name="title_selector_equalizer_4k">معادل الصوت 4 كيلوهرتز</string>
+    <string name="title_selector_equalizer_6k">معادل الصوت 6 كيلوهرتز</string>
+    <string name="title_selector_equalizer_8k">معادل الصوت 8 كيلوهرتز</string>
+    <string name="title_selector_equalizer_16k">معادل الصوت 16 كيلوهرتز</string>
+    <string name="summary_speech_equalizer_needs_low_latency">يتطلّب «إخراج الصوت» &gt; «صوت منخفض زمن الاستجابة»</string>
+    <string name="speech_equalizer_flat">مستوٍ</string>
+    <string name="speech_equalizer_clarity">الوضوح</string>
+    <string name="speech_equalizer_bass_boost">تعزيز الجهير</string>
+    <string name="speech_equalizer_bass_cut">خفض الجهير</string>
+    <string name="speech_equalizer_treble_boost">تعزيز الطبقات العليا</string>
+    <string name="speech_equalizer_treble_cut">خفض الطبقات العليا</string>
+    <string name="speech_equalizer_warm">دافئ</string>
+    <string name="speech_equalizer_reduce_harshness">تقليل الخشونة</string>
+    <string name="speech_equalizer_reduce_sibilance">تقليل الصفير</string>
+    <string name="speech_equalizer_small_speaker">مكبّر صوت صغير</string>
+    <string name="speech_equalizer_custom">مخصص</string>
+    <string name="speech_equalizer_band_hz"><xliff:g id="frequency">%1$s</xliff:g> هرتز</string>
+    <string name="speech_equalizer_band_khz"><xliff:g id="frequency">%1$s</xliff:g> كيلوهرتز</string>
+    <string name="speech_equalizer_gain_db"><xliff:g id="gain">%1$s</xliff:g> ديسيبل</string>
+    <string name="title_pref_braille_dictionary">قاموس برايل</string>
+    <string name="braille_dictionary_not_shown"><xliff:g id="text" example="#">%1$s</xliff:g> غير معروض</string>
+    <string name="title_pref_announce_full_charge">الإعلان عن اكتمال الشحن</string>
+    <string name="battery_fully_charged">البطارية مشحونة بالكامل</string>
+    <string name="speech_control_locked_app"><xliff:g id="app" example="Tasker">%1$s</xliff:g> أثناء قفل الجهاز</string>
+    <string name="speech_control_ask_locked_title">هل تريد السماح لتطبيق <xliff:g id="app" example="Tasker">%1$s</xliff:g> بالنطق من خلال SandFly أثناء قفل الجهاز؟</string>
+    <string name="speech_control_ask_locked_text">يمكن للتطبيق نطق النص بصوت SandFly أثناء قفل الجهاز. يتطلّب «السماح» أن يكون قفل الجهاز مفتوحًا. يمكنك تغيير ذلك في «الإعدادات، الكلام، السماح للتطبيقات الأخرى بالنطق».</string>
+    <string name="permission_speak_when_locked_label">النطق من خلال SandFly أثناء قفل الجهاز</string>
+    <string name="permission_speak_when_locked_description">يتيح للتطبيق طلب نطق النص بصوت SandFly أثناء قفل الجهاز. يطلب SandFly موافقتك بشكل منفصل قبل أن يتمكّن التطبيق من ذلك.</string>
+    <string name="title_pref_category_back_tap">النقر على ظهر الجهاز</string>
+    <string name="title_pref_keep_speech_off_casts">إبقاء الكلام على الهاتف أثناء البث</string>
+    <string name="title_pref_app_shortcuts">اختصارات التطبيقات</string>
+    <string name="app_shortcut_label"><xliff:g id="app_name" example="Amazon">%1$s</xliff:g>: <xliff:g id="shortcut" example="Cart">%2$s</xliff:g></string>
+    <string name="title_pref_add_app_shortcut">إضافة اختصار تطبيق</string>
+    <string name="app_shortcut_no_apps">لا توجد تطبيقات لها اختصارات يمكن إضافتها</string>
+    <string name="app_shortcut_not_added">لم تتم إضافة أي اختصار</string>
+    <string name="app_shortcut_added">تمت إضافة <xliff:g id="name" example="MacroDroid: Morning">%1$s</xliff:g></string>
+    <string name="app_shortcut_not_opened">تعذّر فتح اختصار التطبيق</string>
+    <string name="app_search_no_apps">لا توجد تطبيقات</string>
+    <string name="shortcut_toggle_color_inversion">تفعيل انعكاس اللون أو إيقافه</string>
+    <string name="color_inversion_turned_on">تم تفعيل انعكاس اللون</string>
+    <string name="color_inversion_turned_off">تم إيقاف انعكاس اللون</string>
+    <string name="shortcut_dictate_or_media_control">الإملاء الصوتي، أو تشغيل الوسائط أو إيقافها مؤقتًا</string>
+    <string name="title_pref_shortcut_edge_along_left_up">التمرير سريعًا للأعلى على طول الحافة اليسرى</string>
+    <string name="title_pref_shortcut_edge_along_left_down">التمرير سريعًا للأسفل على طول الحافة اليسرى</string>
+    <string name="title_pref_shortcut_edge_along_right_up">التمرير سريعًا للأعلى على طول الحافة اليمنى</string>
+    <string name="title_pref_shortcut_edge_along_right_down">التمرير سريعًا للأسفل على طول الحافة اليمنى</string>
+    <string name="title_pref_shortcut_edge_along_top_left">التمرير سريعًا إلى اليسار على طول الحافة العلوية</string>
+    <string name="title_pref_shortcut_edge_along_top_right">التمرير سريعًا إلى اليمين على طول الحافة العلوية</string>
+    <string name="title_pref_shortcut_edge_along_bottom_left">التمرير سريعًا إلى اليسار على طول الحافة السفلية</string>
+    <string name="title_pref_shortcut_edge_along_bottom_right">التمرير سريعًا إلى اليمين على طول الحافة السفلية</string>
+    <string name="title_pref_shortcut_back_tap_double">النقر مرتين على ظهر الجهاز</string>
+    <string name="title_pref_shortcut_back_tap_triple">النقر ثلاث مرات على ظهر الجهاز</string>
+    <string name="title_pref_back_tap_sensitivity">حساسية النقر على ظهر الجهاز</string>
+    <string name="title_pref_edge_zone_mm">عرض الحافة</string>
+    <string name="title_pref_edge_scroll_left">التمرير في المحتوى بإصبع واحد على طول الحافة اليسرى</string>
+    <string name="title_pref_edge_scroll_right">التمرير في المحتوى بإصبع واحد على طول الحافة اليمنى</string>
+    <string name="title_pref_edge_scroll_top">التمرير في المحتوى بإصبع واحد على طول الحافة العلوية</string>
+    <string name="title_pref_edge_scroll_bottom">التمرير في المحتوى بإصبع واحد على طول الحافة السفلية</string>
+    <string name="title_pref_edge_menu_left">قائمة الحافة اليسرى</string>
+    <string name="title_pref_edge_menu_right">قائمة الحافة اليمنى</string>
+    <string name="title_pref_edge_menu_left_switch">استخدام الحافة اليسرى كقائمة</string>
+    <string name="title_pref_edge_menu_right_switch">استخدام الحافة اليمنى كقائمة</string>
+    <string name="edge_menu_add_command">إضافة أمر</string>
+    <string name="edge_menu_change_command">تغيير الأمر</string>
+    <string name="title_pref_text_entities">الإجراءات الموجودة في النص</string>
+    <string name="text_entity_web">عناوين الويب</string>
+    <string name="text_entity_email">عناوين البريد الإلكتروني</string>
+    <string name="text_entity_phone">أرقام الهواتف</string>
+    <string name="text_entity_code">الرموز</string>
+    <string name="menu_item_call_number">الاتصال بالرقم <xliff:g id="number" example="020 7946 0018">%1$s</xliff:g></string>
+    <string name="menu_item_copy_code">نسخ <xliff:g id="code" example="482916">%1$s</xliff:g></string>
+    <string name="title_pref_show_focus_indicator">إظهار مؤشر التركيز</string>
+    <string name="title_pref_dictation_correction_prompt">تعليمات التصحيح</string>
+    <string name="title_pref_whisper_custom_model">ملف النموذج</string>
+    <string name="whisper_custom_model_choose">اختيار ملف نموذج whisper.cpp</string>
+    <string name="whisper_custom_model_replace">اختيار ملف آخر</string>
+    <string name="whisper_custom_model_not_whisper">ليس ملف نموذج whisper.cpp</string>
+    <string name="whisper_custom_model_copying">جارٍ النسخ</string>
 </resources>

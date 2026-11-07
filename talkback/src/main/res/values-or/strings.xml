@@ -1362,7 +1362,7 @@
     <string name="action_copy_command">କମାଣ୍ଡ୍ କପି କରନ୍ତୁ</string>
     <string name="command_copied">ନିର୍ଦ୍ଦେଶ କପି ହୋଇଛି</string>
     <string name="title_pref_speech_control">ଅନ୍ୟ ଆପ୍ସକୁ କହିବାକୁ ଦିଅ</string>
-    <string name="summary_pref_speech_control">ଆପଣ ଅନୁମତି ଦେଇଥିବା ଆପଗୁଡ଼ିକ ଆପଣଙ୍କ SandFly ସ୍ୱରରେ ପାଠ କହିପାରେ | ଡିଭାଇସ୍ ଲକ୍ ହୋଇଥିବାବେଳେ କିଛି କୁହାଯାଏ ନାହିଁ |</string>
+    <string name="summary_pref_speech_control">ଆପଣ ଅନୁମତି ଦେଇଥିବା ଆପଗୁଡ଼ିକ ଆପଣଙ୍କ SandFly ଭଏସରେ ଟେକ୍ସଟ କହିପାରିବେ। ଡିଭାଇସ୍ ଲକ୍ ଥିବାବେଳେ, କେବଳ ସେହି ଆପଗୁଡ଼ିକ କହିପାରିବେ ଯାହାକୁ ଆପଣ ଲକ୍ ଥିବାବେଳେ ମଧ୍ୟ ଅନୁମତି ଦେଇଛନ୍ତି।</string>
     <string name="title_pref_speech_control_sound">ଅନ୍ୟ ଆପ୍ସ କହିବା ପୂର୍ବରୁ ଏକ ଧ୍ୱନି ବଜାନ୍ତୁ</string>
     <string name="speech_control_apps_category">ଆପଗୁଡ଼ିକ</string>
     <string name="speech_control_no_apps">କୌଣସି ଆପ୍ ଏପର୍ଯ୍ୟନ୍ତ କହିବାକୁ ଅନୁରୋଧ କରିନାହିଁ।</string>
@@ -1867,4 +1867,108 @@
   <string name="value_hold_to_cancel_3000">3 ସେକେଣ୍ଡ</string>
   <string name="title_pref_tap_to_activate">ସକ୍ରିୟ କରିବାକୁ ଟାପ କରନ୍ତୁ</string>
   <string name="summary_pref_tap_to_activate">ଆଙ୍ଗୁଠି ତଳେ ଥିବା ଆଇଟମ ଫୋକସ ହେବା ପୂର୍ବରୁ ଆଙ୍ଗୁଠି ଉଠାଇଲେ, ଟାପ ସେହି ଆଇଟମକୁ ସକ୍ରିୟ କରେ।</string>
+    <string name="title_selector_ai_actions">AI କାର୍ଯ୍ୟଗୁଡ଼ିକ</string>
+    <string name="ai_actions_hint">ଏକ କାର୍ଯ୍ୟ ବାଛିବାକୁ ଉପରକୁ କିମ୍ବା ତଳକୁ ସ୍ୱାଇପ୍ କରନ୍ତୁ, ତାପରେ ଏହାକୁ ଚଲାଇବାକୁ ଡବଲ-ଟାପ୍ କରନ୍ତୁ</string>
+    <string name="title_pref_ai_actions_included">ଅନ୍ତର୍ଭୁକ୍ତ କରିବାକୁ ଥିବା AI କାର୍ଯ୍ୟଗୁଡ଼ିକ</string>
+    <string name="title_speak_screen_description">ସ୍କ୍ରିନର ବର୍ଣ୍ଣନା କୁହନ୍ତୁ</string>
+    <string name="title_speak_image_description">ଇମେଜର ବର୍ଣ୍ଣନା କୁହନ୍ତୁ</string>
+    <string name="title_ask_about_screen">ସ୍କ୍ରିନ ବିଷୟରେ ପଚାରନ୍ତୁ</string>
+    <string name="title_ask_about_image">ଇମେଜ ବିଷୟରେ ପଚାରନ୍ତୁ</string>
+    <string name="ai_question_hint">ପ୍ରଶ୍ନ</string>
+    <string name="ai_question_ask">ପଚାରନ୍ତୁ</string>
+    <string name="shortcut_use_voice_profile">ଭଏସ୍ ପ୍ରୋଫାଇଲ୍ <xliff:g id="name" example="English">%1$s</xliff:g> ବ୍ୟବହାର କରନ୍ତୁ</string>
+    <string name="title_pref_keep_previous_voice_engine">ପୂର୍ବ ଭଏସ୍ ପ୍ରୋଫାଇଲର ଇଞ୍ଜିନ୍ ଚାଲୁ ରଖନ୍ତୁ</string>
+    <string name="title_pref_voice_profile_keep_engine_started">ଇଞ୍ଜିନ୍ ଚାଲୁ ରଖନ୍ତୁ</string>
+    <string name="title_pref_speech_equalizer">ଇକ୍ୱାଲାଇଜର</string>
+    <string name="title_pref_speech_equalizer_preset">ପ୍ରିସେଟ</string>
+    <string name="title_pref_speech_equalizer_on">ଇକ୍ୱାଲାଇଜର ବ୍ୟବହାର କରନ୍ତୁ</string>
+    <string name="speech_equalizer_off">ବନ୍ଦ</string>
+    <string name="speech_equalizer_turned_on">ଇକ୍ୱାଲାଇଜର ଚାଲୁ ଅଛି</string>
+    <string name="speech_equalizer_turned_off">ଇକ୍ୱାଲାଇଜର ବନ୍ଦ ଅଛି</string>
+    <string name="title_selector_equalizer_32">ଇକ୍ୱାଲାଇଜର 32 Hz</string>
+    <string name="title_selector_equalizer_64">ଇକ୍ୱାଲାଇଜର 64 Hz</string>
+    <string name="title_selector_equalizer_125">ଇକ୍ୱାଲାଇଜର 125 Hz</string>
+    <string name="title_selector_equalizer_250">ଇକ୍ୱାଲାଇଜର 250 Hz</string>
+    <string name="title_selector_equalizer_500">ଇକ୍ୱାଲାଇଜର 500 Hz</string>
+    <string name="title_selector_equalizer_1k">ଇକ୍ୱାଲାଇଜର 1 kHz</string>
+    <string name="title_selector_equalizer_2k">ଇକ୍ୱାଲାଇଜର 2 kHz</string>
+    <string name="title_selector_equalizer_3k">ଇକ୍ୱାଲାଇଜର 3 kHz</string>
+    <string name="title_selector_equalizer_4k">ଇକ୍ୱାଲାଇଜର 4 kHz</string>
+    <string name="title_selector_equalizer_6k">ଇକ୍ୱାଲାଇଜର 6 kHz</string>
+    <string name="title_selector_equalizer_8k">ଇକ୍ୱାଲାଇଜର 8 kHz</string>
+    <string name="title_selector_equalizer_16k">ଇକ୍ୱାଲାଇଜର 16 kHz</string>
+    <string name="summary_speech_equalizer_needs_low_latency">ଅଡିଓ ଆଉଟପୁଟ &gt; ନିମ୍ନ-ବିଳମ୍ବ ଅଡିଓ ଆବଶ୍ୟକ</string>
+    <string name="speech_equalizer_flat">ଫ୍ଲାଟ</string>
+    <string name="speech_equalizer_clarity">ସ୍ପଷ୍ଟତା</string>
+    <string name="speech_equalizer_bass_boost">ବେସ ବୁଷ୍ଟ</string>
+    <string name="speech_equalizer_bass_cut">ବେସ କଟ</string>
+    <string name="speech_equalizer_treble_boost">ଟ୍ରେବଲ ବୁଷ୍ଟ</string>
+    <string name="speech_equalizer_treble_cut">ଟ୍ରେବଲ କଟ</string>
+    <string name="speech_equalizer_warm">ୱାର୍ମ</string>
+    <string name="speech_equalizer_reduce_harshness">କର୍କଶତା କମାନ୍ତୁ</string>
+    <string name="speech_equalizer_reduce_sibilance">ସିବିଲାନ୍ସ କମାନ୍ତୁ</string>
+    <string name="speech_equalizer_small_speaker">ଛୋଟ ସ୍ପିକର</string>
+    <string name="speech_equalizer_custom">କଷ୍ଟମ</string>
+    <string name="speech_equalizer_band_hz"><xliff:g id="frequency">%1$s</xliff:g> Hz</string>
+    <string name="speech_equalizer_band_khz"><xliff:g id="frequency">%1$s</xliff:g> kHz</string>
+    <string name="speech_equalizer_gain_db"><xliff:g id="gain">%1$s</xliff:g> dB</string>
+    <string name="title_pref_braille_dictionary">ବ୍ରେଲି ଅଭିଧାନ</string>
+    <string name="braille_dictionary_not_shown"><xliff:g id="text" example="#">%1$s</xliff:g> ଦେଖାଯାଏ ନାହିଁ</string>
+    <string name="title_pref_announce_full_charge">ସମ୍ପୂର୍ଣ୍ଣ ଚାର୍ଜ ହେଲେ କୁହନ୍ତୁ</string>
+    <string name="battery_fully_charged">ବ୍ୟାଟେରୀ ସମ୍ପୂର୍ଣ୍ଣ ଚାର୍ଜ ହୋଇଗଲା</string>
+    <string name="speech_control_locked_app">ଡିଭାଇସ୍ ଲକ୍ ଥିବାବେଳେ <xliff:g id="app" example="Tasker">%1$s</xliff:g></string>
+    <string name="speech_control_ask_locked_title">ଡିଭାଇସ୍ ଲକ୍ ଥିବାବେଳେ <xliff:g id="app" example="Tasker">%1$s</xliff:g>କୁ SandFly ମାଧ୍ୟମରେ କହିବାକୁ ଅନୁମତି ଦେବେ?</string>
+    <string name="speech_control_ask_locked_text">ଏହା ଡିଭାଇସ୍ ଲକ୍ ଥିବାବେଳେ ଆପଣଙ୍କ SandFly ଭଏସରେ ଟେକ୍ସଟ କହିପାରିବ। ଅନୁମତି ଦେବା ପାଇଁ ଡିଭାଇସ୍ ଅନଲକ୍ ହୋଇଥିବା ଆବଶ୍ୟକ। ଆପଣ ଏହାକୁ “ସେଟିଂସ”, “ସ୍ପିଚ”, “ଅନ୍ୟ ଆପ୍ସକୁ କହିବାକୁ ଦିଅ”ରେ ବଦଳାଇପାରିବେ।</string>
+    <string name="permission_speak_when_locked_label">ଡିଭାଇସ୍ ଲକ୍ ଥିବାବେଳେ SandFly ମାଧ୍ୟମରେ କହିବା</string>
+    <string name="permission_speak_when_locked_description">ଡିଭାଇସ୍ ଲକ୍ ଥିବାବେଳେ ଆପଣଙ୍କ SandFly ଭଏସରେ ଟେକ୍ସଟ କହିବା ପାଇଁ ଆପକୁ ଅନୁରୋଧ କରିବାକୁ ଦିଏ। ଏହା କହିବା ପୂର୍ବରୁ SandFly ଆପଣଙ୍କୁ ଅଲଗାଭାବେ ପଚାରେ।</string>
+    <string name="title_pref_category_back_tap">ଡିଭାଇସର ପଛପଟେ ଟାପ୍</string>
+    <string name="title_pref_keep_speech_off_casts">କାଷ୍ଟ କରିବାବେଳେ ସ୍ପିଚ ଫୋନରେ ହିଁ ରଖନ୍ତୁ</string>
+    <string name="title_pref_app_shortcuts">ଆପ ସର୍ଟକଟ</string>
+    <string name="app_shortcut_label"><xliff:g id="app_name" example="Amazon">%1$s</xliff:g>: <xliff:g id="shortcut" example="Cart">%2$s</xliff:g></string>
+    <string name="title_pref_add_app_shortcut">ଆପ ସର୍ଟକଟ ଯୋଡନ୍ତୁ</string>
+    <string name="app_shortcut_no_apps">କୌଣସି ଆପରେ ଯୋଡିବା ପାଇଁ ସର୍ଟକଟ ନାହିଁ</string>
+    <string name="app_shortcut_not_added">କୌଣସି ସର୍ଟକଟ ଯୋଡାଯାଇନାହିଁ</string>
+    <string name="app_shortcut_added"><xliff:g id="name" example="MacroDroid: Morning">%1$s</xliff:g> ଯୋଡାଗଲା</string>
+    <string name="app_shortcut_not_opened">ଆପ ସର୍ଟକଟ ଖୋଲାଯାଇପାରିଲା ନାହିଁ</string>
+    <string name="app_search_no_apps">କୌଣସି ଆପ ନାହିଁ</string>
+    <string name="shortcut_toggle_color_inversion">ରଙ୍ଗ ଓଲଟା ଚାଲୁ କିମ୍ବା ବନ୍ଦ କରନ୍ତୁ</string>
+    <string name="color_inversion_turned_on">ରଙ୍ଗ ଓଲଟା ଚାଲୁ ଅଛି</string>
+    <string name="color_inversion_turned_off">ରଙ୍ଗ ଓଲଟା ବନ୍ଦ ଅଛି</string>
+    <string name="shortcut_dictate_or_media_control">କହି ଲେଖାନ୍ତୁ, ମିଡିଆ ଚଲାନ୍ତୁ ବା ବିରତ କରନ୍ତୁ</string>
+    <string name="title_pref_shortcut_edge_along_left_up">ବାମ ଧାର ଦେଇ ଉପରକୁ ସ୍ୱାଇପ୍ କରନ୍ତୁ</string>
+    <string name="title_pref_shortcut_edge_along_left_down">ବାମ ଧାର ଦେଇ ତଳକୁ ସ୍ୱାଇପ୍ କରନ୍ତୁ</string>
+    <string name="title_pref_shortcut_edge_along_right_up">ଡାହାଣ ଧାର ଦେଇ ଉପରକୁ ସ୍ୱାଇପ୍ କରନ୍ତୁ</string>
+    <string name="title_pref_shortcut_edge_along_right_down">ଡାହାଣ ଧାର ଦେଇ ତଳକୁ ସ୍ୱାଇପ୍ କରନ୍ତୁ</string>
+    <string name="title_pref_shortcut_edge_along_top_left">ଉପର ଧାର ଦେଇ ବାମକୁ ସ୍ୱାଇପ୍ କରନ୍ତୁ</string>
+    <string name="title_pref_shortcut_edge_along_top_right">ଉପର ଧାର ଦେଇ ଡାହାଣକୁ ସ୍ୱାଇପ୍ କରନ୍ତୁ</string>
+    <string name="title_pref_shortcut_edge_along_bottom_left">ତଳ ଧାର ଦେଇ ବାମକୁ ସ୍ୱାଇପ୍ କରନ୍ତୁ</string>
+    <string name="title_pref_shortcut_edge_along_bottom_right">ତଳ ଧାର ଦେଇ ଡାହାଣକୁ ସ୍ୱାଇପ୍ କରନ୍ତୁ</string>
+    <string name="title_pref_shortcut_back_tap_double">ଡିଭାଇସର ପଛପଟେ ଦୁଇଥର ଟାପ୍ କରନ୍ତୁ</string>
+    <string name="title_pref_shortcut_back_tap_triple">ଡିଭାଇସର ପଛପଟେ ତିନିଥର ଟାପ୍ କରନ୍ତୁ</string>
+    <string name="title_pref_back_tap_sensitivity">ପଛପଟ ଟାପର ସମ୍ବେଦନଶୀଳତା</string>
+    <string name="title_pref_edge_zone_mm">ଧାରର ପ୍ରସ୍ଥ</string>
+    <string name="title_pref_edge_scroll_left">ବାମ ଧାର ଦେଇ ଗୋଟିଏ ଆଙ୍ଗୁଠିରେ ସ୍କ୍ରୋଲ୍ କରନ୍ତୁ</string>
+    <string name="title_pref_edge_scroll_right">ଡାହାଣ ଧାର ଦେଇ ଗୋଟିଏ ଆଙ୍ଗୁଠିରେ ସ୍କ୍ରୋଲ୍ କରନ୍ତୁ</string>
+    <string name="title_pref_edge_scroll_top">ଉପର ଧାର ଦେଇ ଗୋଟିଏ ଆଙ୍ଗୁଠିରେ ସ୍କ୍ରୋଲ୍ କରନ୍ତୁ</string>
+    <string name="title_pref_edge_scroll_bottom">ତଳ ଧାର ଦେଇ ଗୋଟିଏ ଆଙ୍ଗୁଠିରେ ସ୍କ୍ରୋଲ୍ କରନ୍ତୁ</string>
+    <string name="title_pref_edge_menu_left">ବାମ ଧାରର ମେନୁ</string>
+    <string name="title_pref_edge_menu_right">ଡାହାଣ ଧାରର ମେନୁ</string>
+    <string name="title_pref_edge_menu_left_switch">ବାମ ଧାରକୁ ମେନୁ ଭାବେ ବ୍ୟବହାର କରନ୍ତୁ</string>
+    <string name="title_pref_edge_menu_right_switch">ଡାହାଣ ଧାରକୁ ମେନୁ ଭାବେ ବ୍ୟବହାର କରନ୍ତୁ</string>
+    <string name="edge_menu_add_command">ନିର୍ଦ୍ଦେଶ ଯୋଡନ୍ତୁ</string>
+    <string name="edge_menu_change_command">ନିର୍ଦ୍ଦେଶ ବଦଳାନ୍ତୁ</string>
+    <string name="title_pref_text_entities">ଟେକ୍ସଟରେ ମିଳିଥିବା କାର୍ଯ୍ୟଗୁଡ଼ିକ</string>
+    <string name="text_entity_web">ୱେବ ଠିକଣା</string>
+    <string name="text_entity_email">ଇମେଲ ଠିକଣା</string>
+    <string name="text_entity_phone">ଫୋନ ନମ୍ବର</string>
+    <string name="text_entity_code">କୋଡ୍</string>
+    <string name="menu_item_call_number"><xliff:g id="number" example="020 7946 0018">%1$s</xliff:g>କୁ କଲ୍ କରନ୍ତୁ</string>
+    <string name="menu_item_copy_code"><xliff:g id="code" example="482916">%1$s</xliff:g> କପି କରନ୍ତୁ</string>
+    <string name="title_pref_show_focus_indicator">ଫୋକସ୍ ସୂଚକ ଦେଖାନ୍ତୁ</string>
+    <string name="title_pref_dictation_correction_prompt">ସଂଶୋଧନ ପ୍ରମ୍ପ୍ଟ</string>
+    <string name="title_pref_whisper_custom_model">ମଡେଲ୍ ଫାଇଲ</string>
+    <string name="whisper_custom_model_choose">ଏକ whisper.cpp ମଡେଲ୍ ଫାଇଲ ବାଛନ୍ତୁ</string>
+    <string name="whisper_custom_model_replace">ଅନ୍ୟ ଏକ ଫାଇଲ ବାଛନ୍ତୁ</string>
+    <string name="whisper_custom_model_not_whisper">ଏହା whisper.cpp ମଡେଲ୍ ଫାଇଲ ନୁହେଁ</string>
+    <string name="whisper_custom_model_copying">କପି କରାଯାଉଛି</string>
 </resources>

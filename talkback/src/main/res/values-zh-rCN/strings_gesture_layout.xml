@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_gesture_layout">手势布局</string>
+    <string name="gesture_layout_sandfly">SandFly 手势</string>
+    <string name="gesture_layout_voiceover">VoiceOver 手势</string>
+    <string name="gesture_layout_dialog_title">选择手势</string>
+    <string name="title_pref_handle_two_finger_swipes">由 SandFly 处理双指滑动</string>
+    <string name="title_pref_shortcut_4finger_1tap_top">在上半部分四指点按</string>
+    <string name="title_pref_shortcut_4finger_1tap_bottom">在下半部分四指点按</string>
+    <string name="shortcut_speak_position">朗读位置</string>
+    <string name="speak_position_item">第 <xliff:g id="index">%1$d</xliff:g> 项，共 <xliff:g id="count">%2$d</xliff:g> 项</string>
+    <string name="speak_position_row_column">第 <xliff:g id="row">%1$d</xliff:g> 行，共 <xliff:g id="row_count">%2$d</xliff:g> 行，第 <xliff:g id="column">%3$d</xliff:g> 列，共 <xliff:g id="column_count">%4$d</xliff:g> 列</string>
+    <string name="speak_position_none">无位置</string>
+</resources>

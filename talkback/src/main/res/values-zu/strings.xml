@@ -1363,7 +1363,7 @@
     <string name="action_copy_command">Kopisha umyalo</string>
     <string name="command_copied">Umyalo ukopishiwe</string>
     <string name="title_pref_speech_control">Vumela ezinye izinhlelo zokusebenza zikhulume</string>
-    <string name="summary_pref_speech_control">Izinhlelo zokusebenza ozivumelayo zingasho umbhalo ngezwi le-SandFly. Akukho okushiwoyo ngesikhathi idivayisi ikhiyiwe.</string>
+    <string name="summary_pref_speech_control">Izinhlelo zokusebenza ozivumelayo zingasho umbhalo ngezwi le-SandFly. Ngenkathi idivayisi ikhiyiwe, izinhlelo zokusebenza ozivumele nangenkathi ikhiyiwe kuphela ezingakhuluma.</string>
     <string name="title_pref_speech_control_sound">Dlala umsindo ngaphambi kokuthi ezinye izinhlelo zokusebenza zikhulume</string>
     <string name="speech_control_apps_category">Izinhlelo zokusebenza</string>
     <string name="speech_control_no_apps">Azikho izinhlelo zokusebenza ezicele ukukhuluma okwamanje.</string>
@@ -1868,4 +1868,108 @@
   <string name="value_hold_to_cancel_3000">Imizuzwana emi-3</string>
   <string name="title_pref_tap_to_activate">Thepha ukuze uvule</string>
   <string name="summary_pref_tap_to_activate">Ukuthepha lapho umunwe uphakanyiswa ngaphambi kokuba kugxilwe entweni engaphansi kwawo kuvula leyo nto.</string>
+    <string name="title_selector_ai_actions">Izenzo ze-AI</string>
+    <string name="ai_actions_hint">Swayiphela phezulu noma phansi ukuze ukhethe isenzo, bese uthepha kabili ukuze usisebenzise</string>
+    <string name="title_pref_ai_actions_included">Izenzo ze-AI ezifakiwe</string>
+    <string name="title_speak_screen_description">Isho incazelo yesikrini</string>
+    <string name="title_speak_image_description">Isho incazelo yesithombe</string>
+    <string name="title_ask_about_screen">Buza ngesikrini</string>
+    <string name="title_ask_about_image">Buza ngesithombe</string>
+    <string name="ai_question_hint">Umbuzo</string>
+    <string name="ai_question_ask">Buza</string>
+    <string name="shortcut_use_voice_profile">Sebenzisa iphrofayili yezwi ethi <xliff:g id="name" example="English">%1$s</xliff:g></string>
+    <string name="title_pref_keep_previous_voice_engine">Gcina injini yokukhuluma yephrofayili yezwi yangaphambilini iqalisiwe</string>
+    <string name="title_pref_voice_profile_keep_engine_started">Gcina injini yokukhuluma iqalisiwe</string>
+    <string name="title_pref_speech_equalizer">Isilinganisi somsindo</string>
+    <string name="title_pref_speech_equalizer_preset">Ukusetha ngaphambilini</string>
+    <string name="title_pref_speech_equalizer_on">Sebenzisa isilinganisi somsindo</string>
+    <string name="speech_equalizer_off">Kuvaliwe</string>
+    <string name="speech_equalizer_turned_on">Isilinganisi somsindo sivuliwe</string>
+    <string name="speech_equalizer_turned_off">Isilinganisi somsindo sivaliwe</string>
+    <string name="title_selector_equalizer_32">Isilinganisi somsindo 32 Hz</string>
+    <string name="title_selector_equalizer_64">Isilinganisi somsindo 64 Hz</string>
+    <string name="title_selector_equalizer_125">Isilinganisi somsindo 125 Hz</string>
+    <string name="title_selector_equalizer_250">Isilinganisi somsindo 250 Hz</string>
+    <string name="title_selector_equalizer_500">Isilinganisi somsindo 500 Hz</string>
+    <string name="title_selector_equalizer_1k">Isilinganisi somsindo 1 kHz</string>
+    <string name="title_selector_equalizer_2k">Isilinganisi somsindo 2 kHz</string>
+    <string name="title_selector_equalizer_3k">Isilinganisi somsindo 3 kHz</string>
+    <string name="title_selector_equalizer_4k">Isilinganisi somsindo 4 kHz</string>
+    <string name="title_selector_equalizer_6k">Isilinganisi somsindo 6 kHz</string>
+    <string name="title_selector_equalizer_8k">Isilinganisi somsindo 8 kHz</string>
+    <string name="title_selector_equalizer_16k">Isilinganisi somsindo 16 kHz</string>
+    <string name="summary_speech_equalizer_needs_low_latency">Kudinga Ukukhipha umsindo &gt; Umsindo wokubambezeleka okuphansi</string>
+    <string name="speech_equalizer_flat">Kulinganile</string>
+    <string name="speech_equalizer_clarity">Ukucaca</string>
+    <string name="speech_equalizer_bass_boost">Khulisa i-bass</string>
+    <string name="speech_equalizer_bass_cut">Nciphisa i-bass</string>
+    <string name="speech_equalizer_treble_boost">Khulisa i-treble</string>
+    <string name="speech_equalizer_treble_cut">Nciphisa i-treble</string>
+    <string name="speech_equalizer_warm">Okufudumele</string>
+    <string name="speech_equalizer_reduce_harshness">Nciphisa ubulukhuni</string>
+    <string name="speech_equalizer_reduce_sibilance">Nciphisa imisindo ka-s</string>
+    <string name="speech_equalizer_small_speaker">Isipikha esincane</string>
+    <string name="speech_equalizer_custom">Ngokwezifiso</string>
+    <string name="speech_equalizer_band_hz"><xliff:g id="frequency">%1$s</xliff:g> Hz</string>
+    <string name="speech_equalizer_band_khz"><xliff:g id="frequency">%1$s</xliff:g> kHz</string>
+    <string name="speech_equalizer_gain_db"><xliff:g id="gain">%1$s</xliff:g> dB</string>
+    <string name="title_pref_braille_dictionary">Isichazamazwi se-braille</string>
+    <string name="braille_dictionary_not_shown"><xliff:g id="text" example="#">%1$s</xliff:g> akuboniswa</string>
+    <string name="title_pref_announce_full_charge">Memezela uma ibhethri ligcwele</string>
+    <string name="battery_fully_charged">Ibhethri ligcwele</string>
+    <string name="speech_control_locked_app"><xliff:g id="app" example="Tasker">%1$s</xliff:g> ngenkathi idivayisi ikhiyiwe</string>
+    <string name="speech_control_ask_locked_title">Vumela u-<xliff:g id="app" example="Tasker">%1$s</xliff:g> ukuthi akhulume nge-SandFly ngenkathi idivayisi ikhiyiwe?</string>
+    <string name="speech_control_ask_locked_text">Ingasho umbhalo ngezwi lakho le-SandFly ngenkathi idivayisi ikhiyiwe. Ukuze ukhethe Vumela, idivayisi kufanele ivulwe. Ungashintsha lokhu ngaphansi kokuthi Amasethingi, Inkulumo, Vumela ezinye izinhlelo zokusebenza zikhulume.</string>
+    <string name="permission_speak_when_locked_label">ukukhuluma nge-SandFly ngenkathi idivayisi ikhiyiwe</string>
+    <string name="permission_speak_when_locked_description">Ivumela uhlelo lokusebenza ukuthi licele ukusho umbhalo ngezwi lakho le-SandFly ngenkathi idivayisi ikhiyiwe. I-SandFly ikubuza ngokwehlukile ngaphambi kokuthi lukwazi ukwenza lokho.</string>
+    <string name="title_pref_category_back_tap">Ukuthepha ngemuva</string>
+    <string name="title_pref_keep_speech_off_casts">Gcina inkulumo efonini ngenkathi kusakazwa isikrini</string>
+    <string name="title_pref_app_shortcuts">Izinqamuleli zezinhlelo zokusebenza</string>
+    <string name="app_shortcut_label"><xliff:g id="app_name" example="Amazon">%1$s</xliff:g>: <xliff:g id="shortcut" example="Cart">%2$s</xliff:g></string>
+    <string name="title_pref_add_app_shortcut">Engeza isinqamuleli sohlelo lokusebenza</string>
+    <string name="app_shortcut_no_apps">Azikho izinhlelo zokusebenza ezinezinqamuleli ongazengeza</string>
+    <string name="app_shortcut_not_added">Asikho isinqamuleli esengeziwe</string>
+    <string name="app_shortcut_added">Kwengeziwe <xliff:g id="name" example="MacroDroid: Morning">%1$s</xliff:g></string>
+    <string name="app_shortcut_not_opened">Ayikwazanga ukuvula isinqamuleli sohlelo lokusebenza</string>
+    <string name="app_search_no_apps">Azikho izinhlelo zokusebenza</string>
+    <string name="shortcut_toggle_color_inversion">Vula noma vala ukuguqulwa kombala</string>
+    <string name="color_inversion_turned_on">Ukuguqulwa kombala kuvuliwe</string>
+    <string name="color_inversion_turned_off">Ukuguqulwa kombala kuvaliwe</string>
+    <string name="shortcut_dictate_or_media_control">Bhala ngezwi, dlala noma umise okwesikhashana imidiya</string>
+    <string name="title_pref_shortcut_edge_along_left_up">Swayiphela phezulu ngasonqenqemeni lwesokunxele</string>
+    <string name="title_pref_shortcut_edge_along_left_down">Swayiphela phansi ngasonqenqemeni lwesokunxele</string>
+    <string name="title_pref_shortcut_edge_along_right_up">Swayiphela phezulu ngasonqenqemeni lwesokudla</string>
+    <string name="title_pref_shortcut_edge_along_right_down">Swayiphela phansi ngasonqenqemeni lwesokudla</string>
+    <string name="title_pref_shortcut_edge_along_top_left">Swayiphela kwesokunxele ngasonqenqemeni oluphezulu</string>
+    <string name="title_pref_shortcut_edge_along_top_right">Swayiphela kwesokudla ngasonqenqemeni oluphezulu</string>
+    <string name="title_pref_shortcut_edge_along_bottom_left">Swayiphela kwesokunxele ngasonqenqemeni olungezansi</string>
+    <string name="title_pref_shortcut_edge_along_bottom_right">Swayiphela kwesokudla ngasonqenqemeni olungezansi</string>
+    <string name="title_pref_shortcut_back_tap_double">Thepha kabili ngemuva</string>
+    <string name="title_pref_shortcut_back_tap_triple">Thepha kathathu ngemuva</string>
+    <string name="title_pref_back_tap_sensitivity">Ukuzwela kokuthepha ngemuva</string>
+    <string name="title_pref_edge_zone_mm">Ububanzi bonqenqema</string>
+    <string name="title_pref_edge_scroll_left">Skrola ngomunwe owodwa ngasonqenqemeni lwesokunxele</string>
+    <string name="title_pref_edge_scroll_right">Skrola ngomunwe owodwa ngasonqenqemeni lwesokudla</string>
+    <string name="title_pref_edge_scroll_top">Skrola ngomunwe owodwa ngasonqenqemeni oluphezulu</string>
+    <string name="title_pref_edge_scroll_bottom">Skrola ngomunwe owodwa ngasonqenqemeni olungezansi</string>
+    <string name="title_pref_edge_menu_left">Imenyu yonqenqema lwesokunxele</string>
+    <string name="title_pref_edge_menu_right">Imenyu yonqenqema lwesokudla</string>
+    <string name="title_pref_edge_menu_left_switch">Sebenzisa unqenqema lwesokunxele njengemenyu</string>
+    <string name="title_pref_edge_menu_right_switch">Sebenzisa unqenqema lwesokudla njengemenyu</string>
+    <string name="edge_menu_add_command">Engeza umyalo</string>
+    <string name="edge_menu_change_command">Shintsha umyalo</string>
+    <string name="title_pref_text_entities">Izenzo ezitholakale embhalweni</string>
+    <string name="text_entity_web">Amakheli ewebhu</string>
+    <string name="text_entity_email">Amakheli e-imeyili</string>
+    <string name="text_entity_phone">Izinombolo zocingo</string>
+    <string name="text_entity_code">Amakhodi</string>
+    <string name="menu_item_call_number">Shayela <xliff:g id="number" example="020 7946 0018">%1$s</xliff:g></string>
+    <string name="menu_item_copy_code">Kopisha <xliff:g id="code" example="482916">%1$s</xliff:g></string>
+    <string name="title_pref_show_focus_indicator">Bonisa inkomba yokugxila</string>
+    <string name="title_pref_dictation_correction_prompt">Imiyalelo yokulungisa</string>
+    <string name="title_pref_whisper_custom_model">Ifayela lemodeli</string>
+    <string name="whisper_custom_model_choose">Khetha ifayela lemodeli ye-whisper.cpp</string>
+    <string name="whisper_custom_model_replace">Khetha elinye ifayela</string>
+    <string name="whisper_custom_model_not_whisper">Akulona ifayela lemodeli ye-whisper.cpp</string>
+    <string name="whisper_custom_model_copying">Kuyakopishwa</string>
 </resources>

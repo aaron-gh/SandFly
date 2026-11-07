@@ -62,7 +62,7 @@
   <string name="summary_pref_speakerphone_away_from_ear">Podczas rozmowy włącza tryb głośnomówiący po odsunięciu telefonu od ucha i wyłącza go po ponownym przyłożeniu.</string>
   <string name="summary_pref_speakerphone_needs_permission">Wymaga uprawnienia, którego Android nie przyznaje czytnikom ekranu. Aby je przyznać, wykonaj poniższe polecenie za pomocą adb lub Shizuku, a następnie wróć do tego ekranu: %1$s</string>
   <string name="title_pref_speech_control">Zezwalaj innym aplikacjom na odczytywanie tekstu przez SandFly</string>
-  <string name="summary_pref_speech_control">Aplikacje, którym zezwolisz, mogą odczytywać tekst głosem używanym w SandFly. Gdy urządzenie jest zablokowane, ich tekst nie jest odczytywany.</string>
+    <string name="summary_pref_speech_control">Aplikacje, którym zezwolisz, mogą odczytywać tekst głosem używanym w SandFly. Gdy urządzenie jest zablokowane, mogą to robić tylko aplikacje, którym zezwolisz także na czas blokady.</string>
   <string name="title_pref_speech_control_sound">Odtwarzaj dźwięk przed odczytaniem tekstu przekazanego przez inną aplikację</string>
   <string name="speech_control_apps_category">Aplikacje</string>
   <string name="speech_control_no_apps">Żadna aplikacja nie poprosiła jeszcze o odczytywanie tekstu przez SandFly.</string>

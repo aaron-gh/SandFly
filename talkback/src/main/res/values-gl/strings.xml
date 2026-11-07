@@ -1349,7 +1349,7 @@
     <string name="action_copy_command">Copiar comando</string>
     <string name="command_copied">Copiouse o comando</string>
     <string name="title_pref_speech_control">Permitir que outras aplicacións falen</string>
-    <string name="summary_pref_speech_control">As aplicacións que permitas poden ler texto coa voz de SandFly. Non se le nada mentres o dispositivo está bloqueado.</string>
+    <string name="summary_pref_speech_control">As aplicacións que permitas poden ler texto coa voz de SandFly. Mentres o dispositivo está bloqueado, só poden falar as aplicacións que tamén permitas co dispositivo bloqueado.</string>
     <string name="title_pref_speech_control_sound">Reproducir un son antes de que falen outras aplicacións</string>
     <string name="speech_control_apps_category">Aplicacións</string>
     <string name="speech_control_no_apps">Aínda non hai aplicacións que solicitasen falar.</string>
@@ -1868,4 +1868,108 @@
   <string name="value_hold_to_cancel_3000">3 segundos</string>
   <string name="title_pref_tap_to_activate">Tocar para activar</string>
   <string name="summary_pref_tap_to_activate">Un toque no que o dedo se levanta antes de que o elemento de debaixo estea enfocado activa o elemento.</string>
+    <string name="title_selector_ai_actions">Accións de IA</string>
+    <string name="ai_actions_hint">Pasa o dedo cara arriba ou cara abaixo para escoller unha acción e toca dúas veces para executala</string>
+    <string name="title_pref_ai_actions_included">Accións de IA incluídas</string>
+    <string name="title_speak_screen_description">Dicir a descrición da pantalla</string>
+    <string name="title_speak_image_description">Dicir a descrición da imaxe</string>
+    <string name="title_ask_about_screen">Preguntar sobre a pantalla</string>
+    <string name="title_ask_about_image">Preguntar sobre a imaxe</string>
+    <string name="ai_question_hint">Pregunta</string>
+    <string name="ai_question_ask">Preguntar</string>
+    <string name="shortcut_use_voice_profile">Usar o perfil de voz <xliff:g id="name" example="English">%1$s</xliff:g></string>
+    <string name="title_pref_keep_previous_voice_engine">Manter iniciado o motor do perfil de voz anterior</string>
+    <string name="title_pref_voice_profile_keep_engine_started">Manter o motor iniciado</string>
+    <string name="title_pref_speech_equalizer">Ecualizador</string>
+    <string name="title_pref_speech_equalizer_preset">Axuste predefinido</string>
+    <string name="title_pref_speech_equalizer_on">Usar ecualizador</string>
+    <string name="speech_equalizer_off">Desactivado</string>
+    <string name="speech_equalizer_turned_on">Activouse o ecualizador</string>
+    <string name="speech_equalizer_turned_off">Desactivouse o ecualizador</string>
+    <string name="title_selector_equalizer_32">Ecualizador 32 Hz</string>
+    <string name="title_selector_equalizer_64">Ecualizador 64 Hz</string>
+    <string name="title_selector_equalizer_125">Ecualizador 125 Hz</string>
+    <string name="title_selector_equalizer_250">Ecualizador 250 Hz</string>
+    <string name="title_selector_equalizer_500">Ecualizador 500 Hz</string>
+    <string name="title_selector_equalizer_1k">Ecualizador 1 kHz</string>
+    <string name="title_selector_equalizer_2k">Ecualizador 2 kHz</string>
+    <string name="title_selector_equalizer_3k">Ecualizador 3 kHz</string>
+    <string name="title_selector_equalizer_4k">Ecualizador 4 kHz</string>
+    <string name="title_selector_equalizer_6k">Ecualizador 6 kHz</string>
+    <string name="title_selector_equalizer_8k">Ecualizador 8 kHz</string>
+    <string name="title_selector_equalizer_16k">Ecualizador 16 kHz</string>
+    <string name="summary_speech_equalizer_needs_low_latency">Require Saída de audio &gt; Audio de baixa latencia</string>
+    <string name="speech_equalizer_flat">Plano</string>
+    <string name="speech_equalizer_clarity">Claridade</string>
+    <string name="speech_equalizer_bass_boost">Reforzo de graves</string>
+    <string name="speech_equalizer_bass_cut">Redución de graves</string>
+    <string name="speech_equalizer_treble_boost">Reforzo de agudos</string>
+    <string name="speech_equalizer_treble_cut">Redución de agudos</string>
+    <string name="speech_equalizer_warm">Cálido</string>
+    <string name="speech_equalizer_reduce_harshness">Reducir aspereza</string>
+    <string name="speech_equalizer_reduce_sibilance">Reducir sibilancia</string>
+    <string name="speech_equalizer_small_speaker">Altofalante pequeno</string>
+    <string name="speech_equalizer_custom">Personalizado</string>
+    <string name="speech_equalizer_band_hz"><xliff:g id="frequency">%1$s</xliff:g> Hz</string>
+    <string name="speech_equalizer_band_khz"><xliff:g id="frequency">%1$s</xliff:g> kHz</string>
+    <string name="speech_equalizer_gain_db"><xliff:g id="gain">%1$s</xliff:g> dB</string>
+    <string name="title_pref_braille_dictionary">Dicionario braille</string>
+    <string name="braille_dictionary_not_shown">Non se mostra <xliff:g id="text" example="#">%1$s</xliff:g></string>
+    <string name="title_pref_announce_full_charge">Anunciar a carga completa</string>
+    <string name="battery_fully_charged">Batería cargada por completo</string>
+    <string name="speech_control_locked_app"><xliff:g id="app" example="Tasker">%1$s</xliff:g> co dispositivo bloqueado</string>
+    <string name="speech_control_ask_locked_title">Queres permitir que <xliff:g id="app" example="Tasker">%1$s</xliff:g> fale a través de SandFly co dispositivo bloqueado?</string>
+    <string name="speech_control_ask_locked_text">A aplicación pode dicir texto coa voz de SandFly mentres o dispositivo está bloqueado. Para permitilo, o dispositivo debe estar desbloqueado. Podes cambialo en Configuración, Fala, Permitir que outras aplicacións falen.</string>
+    <string name="permission_speak_when_locked_label">falar a través de SandFly co dispositivo bloqueado</string>
+    <string name="permission_speak_when_locked_description">Permite que a aplicación solicite dicir texto coa voz de SandFly mentres o dispositivo está bloqueado. SandFly pregúntache por separado antes de permitilo.</string>
+    <string name="title_pref_category_back_tap">Toque na parte traseira</string>
+    <string name="title_pref_keep_speech_off_casts">Manter a voz no teléfono durante a emisión</string>
+    <string name="title_pref_app_shortcuts">Atallos de aplicacións</string>
+    <string name="app_shortcut_label"><xliff:g id="app_name" example="Amazon">%1$s</xliff:g>: <xliff:g id="shortcut" example="Cart">%2$s</xliff:g></string>
+    <string name="title_pref_add_app_shortcut">Engadir atallo de aplicación</string>
+    <string name="app_shortcut_no_apps">Ningunha aplicación ten atallos para engadir</string>
+    <string name="app_shortcut_not_added">Non se engadiu ningún atallo</string>
+    <string name="app_shortcut_added">Engadiuse <xliff:g id="name" example="MacroDroid: Morning">%1$s</xliff:g></string>
+    <string name="app_shortcut_not_opened">Non se puido abrir o atallo de aplicación</string>
+    <string name="app_search_no_apps">Non hai aplicacións</string>
+    <string name="shortcut_toggle_color_inversion">Activar ou desactivar a inversión de cor</string>
+    <string name="color_inversion_turned_on">Activouse a inversión de cor</string>
+    <string name="color_inversion_turned_off">Desactivouse a inversión de cor</string>
+    <string name="shortcut_dictate_or_media_control">Ditar, reproducir ou pausar contido multimedia</string>
+    <string name="title_pref_shortcut_edge_along_left_up">Pasar o dedo cara arriba ao longo do bordo esquerdo</string>
+    <string name="title_pref_shortcut_edge_along_left_down">Pasar o dedo cara abaixo ao longo do bordo esquerdo</string>
+    <string name="title_pref_shortcut_edge_along_right_up">Pasar o dedo cara arriba ao longo do bordo dereito</string>
+    <string name="title_pref_shortcut_edge_along_right_down">Pasar o dedo cara abaixo ao longo do bordo dereito</string>
+    <string name="title_pref_shortcut_edge_along_top_left">Pasar o dedo cara á esquerda ao longo do bordo superior</string>
+    <string name="title_pref_shortcut_edge_along_top_right">Pasar o dedo cara á dereita ao longo do bordo superior</string>
+    <string name="title_pref_shortcut_edge_along_bottom_left">Pasar o dedo cara á esquerda ao longo do bordo inferior</string>
+    <string name="title_pref_shortcut_edge_along_bottom_right">Pasar o dedo cara á dereita ao longo do bordo inferior</string>
+    <string name="title_pref_shortcut_back_tap_double">Tocar dúas veces na parte traseira</string>
+    <string name="title_pref_shortcut_back_tap_triple">Tocar tres veces na parte traseira</string>
+    <string name="title_pref_back_tap_sensitivity">Sensibilidade do toque na parte traseira</string>
+    <string name="title_pref_edge_zone_mm">Largura do bordo</string>
+    <string name="title_pref_edge_scroll_left">Desprazar cun dedo ao longo do bordo esquerdo</string>
+    <string name="title_pref_edge_scroll_right">Desprazar cun dedo ao longo do bordo dereito</string>
+    <string name="title_pref_edge_scroll_top">Desprazar cun dedo ao longo do bordo superior</string>
+    <string name="title_pref_edge_scroll_bottom">Desprazar cun dedo ao longo do bordo inferior</string>
+    <string name="title_pref_edge_menu_left">Menú do bordo esquerdo</string>
+    <string name="title_pref_edge_menu_right">Menú do bordo dereito</string>
+    <string name="title_pref_edge_menu_left_switch">Usar o bordo esquerdo como menú</string>
+    <string name="title_pref_edge_menu_right_switch">Usar o bordo dereito como menú</string>
+    <string name="edge_menu_add_command">Engadir comando</string>
+    <string name="edge_menu_change_command">Cambiar comando</string>
+    <string name="title_pref_text_entities">Accións atopadas no texto</string>
+    <string name="text_entity_web">Enderezos web</string>
+    <string name="text_entity_email">Enderezos de correo electrónico</string>
+    <string name="text_entity_phone">Números de teléfono</string>
+    <string name="text_entity_code">Códigos</string>
+    <string name="menu_item_call_number">Chamar ao <xliff:g id="number" example="020 7946 0018">%1$s</xliff:g></string>
+    <string name="menu_item_copy_code">Copiar <xliff:g id="code" example="482916">%1$s</xliff:g></string>
+    <string name="title_pref_show_focus_indicator">Mostrar o indicador de enfoque</string>
+    <string name="title_pref_dictation_correction_prompt">Instrucións de corrección</string>
+    <string name="title_pref_whisper_custom_model">Ficheiro de modelo</string>
+    <string name="whisper_custom_model_choose">Escoller un ficheiro de modelo de whisper.cpp</string>
+    <string name="whisper_custom_model_replace">Escoller outro ficheiro</string>
+    <string name="whisper_custom_model_not_whisper">Non é un ficheiro de modelo de whisper.cpp</string>
+    <string name="whisper_custom_model_copying">Copiando</string>
 </resources>

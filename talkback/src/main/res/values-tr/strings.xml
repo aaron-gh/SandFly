@@ -1363,7 +1363,7 @@
     <string name="action_copy_command">Komutu kopyala</string>
     <string name="command_copied">Komut kopyalandı</string>
     <string name="title_pref_speech_control">Diğer uygulamaların konuşmasına izin ver</string>
-    <string name="summary_pref_speech_control">İzin verdiğiniz uygulamalar metni SandFly sesinizle söyleyebilir. Cihaz kilitliyken hiçbir şey söylenmez.</string>
+    <string name="summary_pref_speech_control">İzin verdiğiniz uygulamalar metni SandFly sesinizle söyleyebilir. Cihaz kilitliyken yalnızca kilitliyken de izin verdiğiniz uygulamalar konuşabilir.</string>
     <string name="title_pref_speech_control_sound">Diğer uygulamalar konuşmadan önce ses çal</string>
     <string name="speech_control_apps_category">Uygulamalar</string>
     <string name="speech_control_no_apps">Henüz hiçbir uygulama konuşmak istemedi.</string>
@@ -1868,4 +1868,108 @@
   <string name="value_hold_to_cancel_3000">3 saniye</string>
   <string name="title_pref_tap_to_activate">Etkinleştirmek için dokun</string>
   <string name="summary_pref_tap_to_activate">Parmağın, altındaki öğeye odaklanılmadan önce kaldırıldığı bir dokunma öğeyi etkinleştirir.</string>
+    <string name="title_selector_ai_actions">Yapay zeka işlemleri</string>
+    <string name="ai_actions_hint">Bir işlem seçmek için yukarı veya aşağı kaydırın, ardından çalıştırmak için iki kez dokunun</string>
+    <string name="title_pref_ai_actions_included">Dahil edilecek yapay zeka işlemleri</string>
+    <string name="title_speak_screen_description">Ekran açıklamasını seslendir</string>
+    <string name="title_speak_image_description">Resim açıklamasını seslendir</string>
+    <string name="title_ask_about_screen">Ekran hakkında sor</string>
+    <string name="title_ask_about_image">Resim hakkında sor</string>
+    <string name="ai_question_hint">Soru</string>
+    <string name="ai_question_ask">Sor</string>
+    <string name="shortcut_use_voice_profile"><xliff:g id="name" example="English">%1$s</xliff:g> ses profilini kullan</string>
+    <string name="title_pref_keep_previous_voice_engine">Önceki ses profilinin motorunu çalışır durumda tut</string>
+    <string name="title_pref_voice_profile_keep_engine_started">Motoru çalışır durumda tut</string>
+    <string name="title_pref_speech_equalizer">Ekolayzır</string>
+    <string name="title_pref_speech_equalizer_preset">Hazır ayar</string>
+    <string name="title_pref_speech_equalizer_on">Ekolayzırı kullan</string>
+    <string name="speech_equalizer_off">Kapalı</string>
+    <string name="speech_equalizer_turned_on">Ekolayzır açık</string>
+    <string name="speech_equalizer_turned_off">Ekolayzır kapalı</string>
+    <string name="title_selector_equalizer_32">Ekolayzır 32 Hz</string>
+    <string name="title_selector_equalizer_64">Ekolayzır 64 Hz</string>
+    <string name="title_selector_equalizer_125">Ekolayzır 125 Hz</string>
+    <string name="title_selector_equalizer_250">Ekolayzır 250 Hz</string>
+    <string name="title_selector_equalizer_500">Ekolayzır 500 Hz</string>
+    <string name="title_selector_equalizer_1k">Ekolayzır 1 kHz</string>
+    <string name="title_selector_equalizer_2k">Ekolayzır 2 kHz</string>
+    <string name="title_selector_equalizer_3k">Ekolayzır 3 kHz</string>
+    <string name="title_selector_equalizer_4k">Ekolayzır 4 kHz</string>
+    <string name="title_selector_equalizer_6k">Ekolayzır 6 kHz</string>
+    <string name="title_selector_equalizer_8k">Ekolayzır 8 kHz</string>
+    <string name="title_selector_equalizer_16k">Ekolayzır 16 kHz</string>
+    <string name="summary_speech_equalizer_needs_low_latency">Ses çıkışı &gt; Düşük gecikmeli ses gerekir</string>
+    <string name="speech_equalizer_flat">Düz</string>
+    <string name="speech_equalizer_clarity">Netlik</string>
+    <string name="speech_equalizer_bass_boost">Bas artırma</string>
+    <string name="speech_equalizer_bass_cut">Bas azaltma</string>
+    <string name="speech_equalizer_treble_boost">Tiz artırma</string>
+    <string name="speech_equalizer_treble_cut">Tiz azaltma</string>
+    <string name="speech_equalizer_warm">Sıcak</string>
+    <string name="speech_equalizer_reduce_harshness">Sertlik azaltma</string>
+    <string name="speech_equalizer_reduce_sibilance">Tıslama azaltma</string>
+    <string name="speech_equalizer_small_speaker">Küçük hoparlör</string>
+    <string name="speech_equalizer_custom">Özel</string>
+    <string name="speech_equalizer_band_hz"><xliff:g id="frequency">%1$s</xliff:g> Hz</string>
+    <string name="speech_equalizer_band_khz"><xliff:g id="frequency">%1$s</xliff:g> kHz</string>
+    <string name="speech_equalizer_gain_db"><xliff:g id="gain">%1$s</xliff:g> dB</string>
+    <string name="title_pref_braille_dictionary">Braille sözlüğü</string>
+    <string name="braille_dictionary_not_shown"><xliff:g id="text" example="#">%1$s</xliff:g> gösterilmez</string>
+    <string name="title_pref_announce_full_charge">Tam şarjı bildir</string>
+    <string name="battery_fully_charged">Pil tamamen şarj oldu</string>
+    <string name="speech_control_locked_app"><xliff:g id="app" example="Tasker">%1$s</xliff:g>, cihaz kilitliyken</string>
+    <string name="speech_control_ask_locked_title"><xliff:g id="app" example="Tasker">%1$s</xliff:g> uygulamasının cihaz kilitliyken SandFly üzerinden konuşmasına izin verilsin mi?</string>
+    <string name="speech_control_ask_locked_text">Uygulama, cihaz kilitliyken metni SandFly sesinizle söyleyebilir. İzin vermek için cihazın kilidinin açık olması gerekir. Bunu Ayarlar, Konuşma, Diğer uygulamaların konuşmasına izin ver bölümünden değiştirebilirsiniz.</string>
+    <string name="permission_speak_when_locked_label">cihaz kilitliyken SandFly üzerinden konuşma</string>
+    <string name="permission_speak_when_locked_description">Uygulamanın, cihaz kilitliyken metni SandFly sesinizle söylemek için izin istemesine olanak tanır. SandFly buna izin vermeden önce size ayrıca sorar.</string>
+    <string name="title_pref_category_back_tap">Arkaya dokunma</string>
+    <string name="title_pref_keep_speech_off_casts">Yayın sırasında konuşmayı telefonda tut</string>
+    <string name="title_pref_app_shortcuts">Uygulama kısayolları</string>
+    <string name="app_shortcut_label"><xliff:g id="app_name" example="Amazon">%1$s</xliff:g>: <xliff:g id="shortcut" example="Cart">%2$s</xliff:g></string>
+    <string name="title_pref_add_app_shortcut">Uygulama kısayolu ekle</string>
+    <string name="app_shortcut_no_apps">Eklenecek kısayolu olan uygulama yok</string>
+    <string name="app_shortcut_not_added">Kısayol eklenmedi</string>
+    <string name="app_shortcut_added"><xliff:g id="name" example="MacroDroid: Morning">%1$s</xliff:g> eklendi</string>
+    <string name="app_shortcut_not_opened">Uygulama kısayolu açılamadı</string>
+    <string name="app_search_no_apps">Uygulama yok</string>
+    <string name="shortcut_toggle_color_inversion">Rengi ters çevirmeyi aç veya kapat</string>
+    <string name="color_inversion_turned_on">Rengi ters çevirme açık</string>
+    <string name="color_inversion_turned_off">Rengi ters çevirme kapalı</string>
+    <string name="shortcut_dictate_or_media_control">Sesle yaz, medyayı oynat veya duraklat</string>
+    <string name="title_pref_shortcut_edge_along_left_up">Sol kenar boyunca yukarı kaydırın</string>
+    <string name="title_pref_shortcut_edge_along_left_down">Sol kenar boyunca aşağı kaydırın</string>
+    <string name="title_pref_shortcut_edge_along_right_up">Sağ kenar boyunca yukarı kaydırın</string>
+    <string name="title_pref_shortcut_edge_along_right_down">Sağ kenar boyunca aşağı kaydırın</string>
+    <string name="title_pref_shortcut_edge_along_top_left">Üst kenar boyunca sola kaydırın</string>
+    <string name="title_pref_shortcut_edge_along_top_right">Üst kenar boyunca sağa kaydırın</string>
+    <string name="title_pref_shortcut_edge_along_bottom_left">Alt kenar boyunca sola kaydırın</string>
+    <string name="title_pref_shortcut_edge_along_bottom_right">Alt kenar boyunca sağa kaydırın</string>
+    <string name="title_pref_shortcut_back_tap_double">Arkaya iki kez dokunma</string>
+    <string name="title_pref_shortcut_back_tap_triple">Arkaya üç kez dokunma</string>
+    <string name="title_pref_back_tap_sensitivity">Arkaya dokunma hassasiyeti</string>
+    <string name="title_pref_edge_zone_mm">Kenar genişliği</string>
+    <string name="title_pref_edge_scroll_left">Sol kenar boyunca tek parmakla kaydırma</string>
+    <string name="title_pref_edge_scroll_right">Sağ kenar boyunca tek parmakla kaydırma</string>
+    <string name="title_pref_edge_scroll_top">Üst kenar boyunca tek parmakla kaydırma</string>
+    <string name="title_pref_edge_scroll_bottom">Alt kenar boyunca tek parmakla kaydırma</string>
+    <string name="title_pref_edge_menu_left">Sol kenar menüsü</string>
+    <string name="title_pref_edge_menu_right">Sağ kenar menüsü</string>
+    <string name="title_pref_edge_menu_left_switch">Sol kenarı menü olarak kullan</string>
+    <string name="title_pref_edge_menu_right_switch">Sağ kenarı menü olarak kullan</string>
+    <string name="edge_menu_add_command">Komut ekle</string>
+    <string name="edge_menu_change_command">Komutu değiştir</string>
+    <string name="title_pref_text_entities">Metinde bulunan işlemler</string>
+    <string name="text_entity_web">Web adresleri</string>
+    <string name="text_entity_email">E-posta adresleri</string>
+    <string name="text_entity_phone">Telefon numaraları</string>
+    <string name="text_entity_code">Kodlar</string>
+    <string name="menu_item_call_number"><xliff:g id="number" example="020 7946 0018">%1$s</xliff:g> numarasını ara</string>
+    <string name="menu_item_copy_code"><xliff:g id="code" example="482916">%1$s</xliff:g> kodunu kopyala</string>
+    <string name="title_pref_show_focus_indicator">Odak göstergesini göster</string>
+    <string name="title_pref_dictation_correction_prompt">Düzeltme istemi</string>
+    <string name="title_pref_whisper_custom_model">Model dosyası</string>
+    <string name="whisper_custom_model_choose">whisper.cpp model dosyası seç</string>
+    <string name="whisper_custom_model_replace">Başka bir dosya seç</string>
+    <string name="whisper_custom_model_not_whisper">whisper.cpp model dosyası değil</string>
+    <string name="whisper_custom_model_copying">Kopyalanıyor</string>
 </resources>

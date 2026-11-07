@@ -1349,7 +1349,7 @@
     <string name="action_copy_command">Copia l\'ordre</string>
     <string name="command_copied">S\'ha copiat l\'ordre</string>
     <string name="title_pref_speech_control">Permet que altres aplicacions parlin</string>
-    <string name="summary_pref_speech_control">Les aplicacions que permetis poden enunciar text amb la veu de SandFly. No s\'enuncia res mentre el dispositiu està bloquejat.</string>
+    <string name="summary_pref_speech_control">Les aplicacions que permetis poden enunciar text amb la veu de SandFly. Mentre el dispositiu està bloquejat, només poden parlar les aplicacions que també permetis amb el dispositiu bloquejat.</string>
     <string name="title_pref_speech_control_sound">Reprodueix un so abans que parlin altres aplicacions</string>
     <string name="speech_control_apps_category">Aplicacions</string>
     <string name="speech_control_no_apps">Encara no hi ha cap aplicació que hagi sol·licitat parlar.</string>
@@ -1872,4 +1872,108 @@
   <string name="value_hold_to_cancel_3000">3 segons</string>
   <string name="title_pref_tap_to_activate">Toca per activar</string>
   <string name="summary_pref_tap_to_activate">Un toc en què el dit s\'aixeca abans que l\'element de sota estigui enfocat activa l\'element.</string>
+    <string name="title_selector_ai_actions">Accions d\'IA</string>
+    <string name="ai_actions_hint">Llisca cap amunt o cap avall per triar una acció i fes doble toc per executar-la</string>
+    <string name="title_pref_ai_actions_included">Accions d\'IA incloses</string>
+    <string name="title_speak_screen_description">Enuncia la descripció de la pantalla</string>
+    <string name="title_speak_image_description">Enuncia la descripció de la imatge</string>
+    <string name="title_ask_about_screen">Pregunta sobre la pantalla</string>
+    <string name="title_ask_about_image">Pregunta sobre la imatge</string>
+    <string name="ai_question_hint">Pregunta</string>
+    <string name="ai_question_ask">Pregunta</string>
+    <string name="shortcut_use_voice_profile">Utilitza el perfil de veu <xliff:g id="name" example="English">%1$s</xliff:g></string>
+    <string name="title_pref_keep_previous_voice_engine">Mantén iniciat el motor del perfil de veu anterior</string>
+    <string name="title_pref_voice_profile_keep_engine_started">Mantén el motor iniciat</string>
+    <string name="title_pref_speech_equalizer">Equalitzador</string>
+    <string name="title_pref_speech_equalizer_preset">Valor predefinit</string>
+    <string name="title_pref_speech_equalizer_on">Utilitza l\'equalitzador</string>
+    <string name="speech_equalizer_off">Desactivat</string>
+    <string name="speech_equalizer_turned_on">S\'ha activat l\'equalitzador</string>
+    <string name="speech_equalizer_turned_off">S\'ha desactivat l\'equalitzador</string>
+    <string name="title_selector_equalizer_32">Equalitzador 32 Hz</string>
+    <string name="title_selector_equalizer_64">Equalitzador 64 Hz</string>
+    <string name="title_selector_equalizer_125">Equalitzador 125 Hz</string>
+    <string name="title_selector_equalizer_250">Equalitzador 250 Hz</string>
+    <string name="title_selector_equalizer_500">Equalitzador 500 Hz</string>
+    <string name="title_selector_equalizer_1k">Equalitzador 1 kHz</string>
+    <string name="title_selector_equalizer_2k">Equalitzador 2 kHz</string>
+    <string name="title_selector_equalizer_3k">Equalitzador 3 kHz</string>
+    <string name="title_selector_equalizer_4k">Equalitzador 4 kHz</string>
+    <string name="title_selector_equalizer_6k">Equalitzador 6 kHz</string>
+    <string name="title_selector_equalizer_8k">Equalitzador 8 kHz</string>
+    <string name="title_selector_equalizer_16k">Equalitzador 16 kHz</string>
+    <string name="summary_speech_equalizer_needs_low_latency">Requereix Sortida d\'àudio &gt; Àudio de baixa latència</string>
+    <string name="speech_equalizer_flat">Pla</string>
+    <string name="speech_equalizer_clarity">Claredat</string>
+    <string name="speech_equalizer_bass_boost">Realç de greus</string>
+    <string name="speech_equalizer_bass_cut">Reducció de greus</string>
+    <string name="speech_equalizer_treble_boost">Realç d\'aguts</string>
+    <string name="speech_equalizer_treble_cut">Reducció d\'aguts</string>
+    <string name="speech_equalizer_warm">Càlid</string>
+    <string name="speech_equalizer_reduce_harshness">Redueix l\'aspror</string>
+    <string name="speech_equalizer_reduce_sibilance">Redueix la sibilància</string>
+    <string name="speech_equalizer_small_speaker">Altaveu petit</string>
+    <string name="speech_equalizer_custom">Personalitzat</string>
+    <string name="speech_equalizer_band_hz"><xliff:g id="frequency">%1$s</xliff:g> Hz</string>
+    <string name="speech_equalizer_band_khz"><xliff:g id="frequency">%1$s</xliff:g> kHz</string>
+    <string name="speech_equalizer_gain_db"><xliff:g id="gain">%1$s</xliff:g> dB</string>
+    <string name="title_pref_braille_dictionary">Diccionari braille</string>
+    <string name="braille_dictionary_not_shown"><xliff:g id="text" example="#">%1$s</xliff:g> no es mostra</string>
+    <string name="title_pref_announce_full_charge">Anuncia la càrrega completa</string>
+    <string name="battery_fully_charged">Bateria carregada del tot</string>
+    <string name="speech_control_locked_app"><xliff:g id="app" example="Tasker">%1$s</xliff:g> amb el dispositiu bloquejat</string>
+    <string name="speech_control_ask_locked_title">Vols permetre que <xliff:g id="app" example="Tasker">%1$s</xliff:g> parli mitjançant SandFly amb el dispositiu bloquejat?</string>
+    <string name="speech_control_ask_locked_text">Pot dir text amb la teva veu de SandFly mentre el dispositiu està bloquejat. Per permetre-ho, el dispositiu ha d\'estar desbloquejat. Pots canviar-ho a Configuració, Veu, Permet que altres aplicacions parlin.</string>
+    <string name="permission_speak_when_locked_label">parlar mitjançant SandFly amb el dispositiu bloquejat</string>
+    <string name="permission_speak_when_locked_description">Permet que l\'aplicació demani dir text amb la teva veu de SandFly mentre el dispositiu està bloquejat. SandFly t\'ho pregunta per separat abans de permetre-ho.</string>
+    <string name="title_pref_category_back_tap">Toc a la part posterior</string>
+    <string name="title_pref_keep_speech_off_casts">Mantén la veu al telèfon durant l\'emissió</string>
+    <string name="title_pref_app_shortcuts">Dreceres d\'aplicacions</string>
+    <string name="app_shortcut_label"><xliff:g id="app_name" example="Amazon">%1$s</xliff:g>: <xliff:g id="shortcut" example="Cart">%2$s</xliff:g></string>
+    <string name="title_pref_add_app_shortcut">Afegeix una drecera d\'aplicació</string>
+    <string name="app_shortcut_no_apps">Cap aplicació no té dreceres per afegir</string>
+    <string name="app_shortcut_not_added">No s\'ha afegit cap drecera</string>
+    <string name="app_shortcut_added">S\'ha afegit <xliff:g id="name" example="MacroDroid: Morning">%1$s</xliff:g></string>
+    <string name="app_shortcut_not_opened">No s\'ha pogut obrir la drecera d\'aplicació</string>
+    <string name="app_search_no_apps">Cap aplicació</string>
+    <string name="shortcut_toggle_color_inversion">Activa o desactiva la inversió de color</string>
+    <string name="color_inversion_turned_on">S\'ha activat la inversió de color</string>
+    <string name="color_inversion_turned_off">S\'ha desactivat la inversió de color</string>
+    <string name="shortcut_dictate_or_media_control">Dicta, reprodueix o posa en pausa el contingut multimèdia</string>
+    <string name="title_pref_shortcut_edge_along_left_up">Llisca cap amunt al llarg de la vora esquerra</string>
+    <string name="title_pref_shortcut_edge_along_left_down">Llisca cap avall al llarg de la vora esquerra</string>
+    <string name="title_pref_shortcut_edge_along_right_up">Llisca cap amunt al llarg de la vora dreta</string>
+    <string name="title_pref_shortcut_edge_along_right_down">Llisca cap avall al llarg de la vora dreta</string>
+    <string name="title_pref_shortcut_edge_along_top_left">Llisca cap a l\'esquerra al llarg de la vora superior</string>
+    <string name="title_pref_shortcut_edge_along_top_right">Llisca cap a la dreta al llarg de la vora superior</string>
+    <string name="title_pref_shortcut_edge_along_bottom_left">Llisca cap a l\'esquerra al llarg de la vora inferior</string>
+    <string name="title_pref_shortcut_edge_along_bottom_right">Llisca cap a la dreta al llarg de la vora inferior</string>
+    <string name="title_pref_shortcut_back_tap_double">Fes doble toc a la part posterior</string>
+    <string name="title_pref_shortcut_back_tap_triple">Fes triple toc a la part posterior</string>
+    <string name="title_pref_back_tap_sensitivity">Sensibilitat del toc a la part posterior</string>
+    <string name="title_pref_edge_zone_mm">Amplada de la vora</string>
+    <string name="title_pref_edge_scroll_left">Desplaça amb un dit al llarg de la vora esquerra</string>
+    <string name="title_pref_edge_scroll_right">Desplaça amb un dit al llarg de la vora dreta</string>
+    <string name="title_pref_edge_scroll_top">Desplaça amb un dit al llarg de la vora superior</string>
+    <string name="title_pref_edge_scroll_bottom">Desplaça amb un dit al llarg de la vora inferior</string>
+    <string name="title_pref_edge_menu_left">Menú de la vora esquerra</string>
+    <string name="title_pref_edge_menu_right">Menú de la vora dreta</string>
+    <string name="title_pref_edge_menu_left_switch">Utilitza la vora esquerra com a menú</string>
+    <string name="title_pref_edge_menu_right_switch">Utilitza la vora dreta com a menú</string>
+    <string name="edge_menu_add_command">Afegeix una ordre</string>
+    <string name="edge_menu_change_command">Canvia l\'ordre</string>
+    <string name="title_pref_text_entities">Accions trobades al text</string>
+    <string name="text_entity_web">Adreces web</string>
+    <string name="text_entity_email">Adreces electròniques</string>
+    <string name="text_entity_phone">Números de telèfon</string>
+    <string name="text_entity_code">Codis</string>
+    <string name="menu_item_call_number">Truca al <xliff:g id="number" example="020 7946 0018">%1$s</xliff:g></string>
+    <string name="menu_item_copy_code">Copia <xliff:g id="code" example="482916">%1$s</xliff:g></string>
+    <string name="title_pref_show_focus_indicator">Mostra l\'indicador de focus</string>
+    <string name="title_pref_dictation_correction_prompt">Instruccions de correcció</string>
+    <string name="title_pref_whisper_custom_model">Fitxer de model</string>
+    <string name="whisper_custom_model_choose">Tria un fitxer de model de whisper.cpp</string>
+    <string name="whisper_custom_model_replace">Tria un altre fitxer</string>
+    <string name="whisper_custom_model_not_whisper">No és un fitxer de model de whisper.cpp</string>
+    <string name="whisper_custom_model_copying">S\'està copiant</string>
 </resources>

@@ -1349,7 +1349,7 @@
     <string name="action_copy_command">Copy command</string>
     <string name="command_copied">Command copied</string>
     <string name="title_pref_speech_control">Let other apps speak</string>
-    <string name="summary_pref_speech_control">Apps that you allow can say text in your SandFly voice. Nothing is said while the device is locked.</string>
+    <string name="summary_pref_speech_control">Apps that you allow can say text in your SandFly voice. While the device is locked, only apps that you also allow while locked can speak.</string>
     <string name="title_pref_speech_control_sound">Play a sound before other apps speak</string>
     <string name="speech_control_apps_category">Apps</string>
     <string name="speech_control_no_apps">No apps have asked to speak yet.</string>
@@ -1868,4 +1868,108 @@
   <string name="value_hold_to_cancel_3000">3 seconds</string>
   <string name="title_pref_tap_to_activate">Tap to activate</string>
   <string name="summary_pref_tap_to_activate">A tap that lifts before the item under it is focused activates the item.</string>
+    <string name="title_selector_ai_actions">AI actions</string>
+    <string name="ai_actions_hint">Swipe up or down to choose an action, then double-tap to run it</string>
+    <string name="title_pref_ai_actions_included">AI actions to include</string>
+    <string name="title_speak_screen_description">Speak screen description</string>
+    <string name="title_speak_image_description">Speak image description</string>
+    <string name="title_ask_about_screen">Ask about screen</string>
+    <string name="title_ask_about_image">Ask about image</string>
+    <string name="ai_question_hint">Question</string>
+    <string name="ai_question_ask">Ask</string>
+    <string name="shortcut_use_voice_profile">Use voice profile <xliff:g id="name" example="English">%1$s</xliff:g></string>
+    <string name="title_pref_keep_previous_voice_engine">Keep the engine of the previous voice profile started</string>
+    <string name="title_pref_voice_profile_keep_engine_started">Keep the engine started</string>
+    <string name="title_pref_speech_equalizer">Equaliser</string>
+    <string name="title_pref_speech_equalizer_preset">Preset</string>
+    <string name="title_pref_speech_equalizer_on">Use equaliser</string>
+    <string name="speech_equalizer_off">Off</string>
+    <string name="speech_equalizer_turned_on">Equaliser on</string>
+    <string name="speech_equalizer_turned_off">Equaliser off</string>
+    <string name="title_selector_equalizer_32">Equaliser 32 Hz</string>
+    <string name="title_selector_equalizer_64">Equaliser 64 Hz</string>
+    <string name="title_selector_equalizer_125">Equaliser 125 Hz</string>
+    <string name="title_selector_equalizer_250">Equaliser 250 Hz</string>
+    <string name="title_selector_equalizer_500">Equaliser 500 Hz</string>
+    <string name="title_selector_equalizer_1k">Equaliser 1 kHz</string>
+    <string name="title_selector_equalizer_2k">Equaliser 2 kHz</string>
+    <string name="title_selector_equalizer_3k">Equaliser 3 kHz</string>
+    <string name="title_selector_equalizer_4k">Equaliser 4 kHz</string>
+    <string name="title_selector_equalizer_6k">Equaliser 6 kHz</string>
+    <string name="title_selector_equalizer_8k">Equaliser 8 kHz</string>
+    <string name="title_selector_equalizer_16k">Equaliser 16 kHz</string>
+    <string name="summary_speech_equalizer_needs_low_latency">Needs Audio output &gt; Low-latency audio</string>
+    <string name="speech_equalizer_flat">Flat</string>
+    <string name="speech_equalizer_clarity">Clarity</string>
+    <string name="speech_equalizer_bass_boost">Bass boost</string>
+    <string name="speech_equalizer_bass_cut">Bass cut</string>
+    <string name="speech_equalizer_treble_boost">Treble boost</string>
+    <string name="speech_equalizer_treble_cut">Treble cut</string>
+    <string name="speech_equalizer_warm">Warm</string>
+    <string name="speech_equalizer_reduce_harshness">Reduce harshness</string>
+    <string name="speech_equalizer_reduce_sibilance">Reduce sibilance</string>
+    <string name="speech_equalizer_small_speaker">Small speaker</string>
+    <string name="speech_equalizer_custom">Custom</string>
+    <string name="speech_equalizer_band_hz"><xliff:g id="frequency">%1$s</xliff:g> Hz</string>
+    <string name="speech_equalizer_band_khz"><xliff:g id="frequency">%1$s</xliff:g> kHz</string>
+    <string name="speech_equalizer_gain_db"><xliff:g id="gain">%1$s</xliff:g> dB</string>
+    <string name="title_pref_braille_dictionary">Braille dictionary</string>
+    <string name="braille_dictionary_not_shown"><xliff:g id="text" example="#">%1$s</xliff:g> not shown</string>
+    <string name="title_pref_announce_full_charge">Announce full charge</string>
+    <string name="battery_fully_charged">Battery fully charged</string>
+    <string name="speech_control_locked_app"><xliff:g id="app" example="Tasker">%1$s</xliff:g> while the device is locked</string>
+    <string name="speech_control_ask_locked_title">Allow <xliff:g id="app" example="Tasker">%1$s</xliff:g> to speak through SandFly while the device is locked?</string>
+    <string name="speech_control_ask_locked_text">It can say text in your SandFly voice while the device is locked. Allow needs the device unlocked. You can change this under Settings, Speech, Let other apps speak.</string>
+    <string name="permission_speak_when_locked_label">speak through SandFly while the device is locked</string>
+    <string name="permission_speak_when_locked_description">Lets the app ask to say text in your SandFly voice while the device is locked. SandFly asks you separately before it can.</string>
+    <string name="title_pref_category_back_tap">Back tap</string>
+    <string name="title_pref_keep_speech_off_casts">Keep speech on the phone while casting</string>
+    <string name="title_pref_app_shortcuts">App shortcuts</string>
+    <string name="app_shortcut_label"><xliff:g id="app_name" example="Amazon">%1$s</xliff:g>: <xliff:g id="shortcut" example="Cart">%2$s</xliff:g></string>
+    <string name="title_pref_add_app_shortcut">Add app shortcut</string>
+    <string name="app_shortcut_no_apps">No apps have shortcuts to add</string>
+    <string name="app_shortcut_not_added">No shortcut added</string>
+    <string name="app_shortcut_added">Added <xliff:g id="name" example="MacroDroid: Morning">%1$s</xliff:g></string>
+    <string name="app_shortcut_not_opened">Could not open app shortcut</string>
+    <string name="app_search_no_apps">No apps</string>
+    <string name="shortcut_toggle_color_inversion">Turn colour inversion on or off</string>
+    <string name="color_inversion_turned_on">Colour inversion on</string>
+    <string name="color_inversion_turned_off">Colour inversion off</string>
+    <string name="shortcut_dictate_or_media_control">Dictate, play or pause media</string>
+    <string name="title_pref_shortcut_edge_along_left_up">Swipe up along the left edge</string>
+    <string name="title_pref_shortcut_edge_along_left_down">Swipe down along the left edge</string>
+    <string name="title_pref_shortcut_edge_along_right_up">Swipe up along the right edge</string>
+    <string name="title_pref_shortcut_edge_along_right_down">Swipe down along the right edge</string>
+    <string name="title_pref_shortcut_edge_along_top_left">Swipe left along the top edge</string>
+    <string name="title_pref_shortcut_edge_along_top_right">Swipe right along the top edge</string>
+    <string name="title_pref_shortcut_edge_along_bottom_left">Swipe left along the bottom edge</string>
+    <string name="title_pref_shortcut_edge_along_bottom_right">Swipe right along the bottom edge</string>
+    <string name="title_pref_shortcut_back_tap_double">Double tap on back</string>
+    <string name="title_pref_shortcut_back_tap_triple">Triple tap on back</string>
+    <string name="title_pref_back_tap_sensitivity">Back tap sensitivity</string>
+    <string name="title_pref_edge_zone_mm">Edge width</string>
+    <string name="title_pref_edge_scroll_left">Scroll with one finger along the left edge</string>
+    <string name="title_pref_edge_scroll_right">Scroll with one finger along the right edge</string>
+    <string name="title_pref_edge_scroll_top">Scroll with one finger along the top edge</string>
+    <string name="title_pref_edge_scroll_bottom">Scroll with one finger along the bottom edge</string>
+    <string name="title_pref_edge_menu_left">Left edge menu</string>
+    <string name="title_pref_edge_menu_right">Right edge menu</string>
+    <string name="title_pref_edge_menu_left_switch">Use the left edge as a menu</string>
+    <string name="title_pref_edge_menu_right_switch">Use the right edge as a menu</string>
+    <string name="edge_menu_add_command">Add command</string>
+    <string name="edge_menu_change_command">Change command</string>
+    <string name="title_pref_text_entities">Actions found in text</string>
+    <string name="text_entity_web">Web addresses</string>
+    <string name="text_entity_email">Email addresses</string>
+    <string name="text_entity_phone">Phone numbers</string>
+    <string name="text_entity_code">Codes</string>
+    <string name="menu_item_call_number">Call <xliff:g id="number" example="020 7946 0018">%1$s</xliff:g></string>
+    <string name="menu_item_copy_code">Copy <xliff:g id="code" example="482916">%1$s</xliff:g></string>
+    <string name="title_pref_show_focus_indicator">Show the focus indicator</string>
+    <string name="title_pref_dictation_correction_prompt">Correction prompt</string>
+    <string name="title_pref_whisper_custom_model">Model file</string>
+    <string name="whisper_custom_model_choose">Choose a whisper.cpp model file</string>
+    <string name="whisper_custom_model_replace">Choose another file</string>
+    <string name="whisper_custom_model_not_whisper">Not a whisper.cpp model file</string>
+    <string name="whisper_custom_model_copying">Copying</string>
 </resources>

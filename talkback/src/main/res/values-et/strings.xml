@@ -1349,7 +1349,7 @@
     <string name="action_copy_command">Kopeeri käsk</string>
     <string name="command_copied">Käsk on kopeeritud</string>
     <string name="title_pref_speech_control">Luba teistel rakendustel kõnet esitada</string>
-    <string name="summary_pref_speech_control">Teie lubatud rakendused saavad teksti esitada teie SandFlyi häälega. Kui seade on lukus, ei esitata midagi.</string>
+    <string name="summary_pref_speech_control">Teie lubatud rakendused saavad teksti esitada teie SandFlyi häälega. Kui seade on lukus, saavad kõnet esitada ainult rakendused, mille olete lubanud ka lukus seadmes.</string>
     <string name="title_pref_speech_control_sound">Esita heli enne teiste rakenduste kõnet</string>
     <string name="speech_control_apps_category">Rakendused</string>
     <string name="speech_control_no_apps">Ükski rakendus pole veel kõne esitamiseks luba küsinud.</string>
@@ -1868,4 +1868,108 @@
   <string name="value_hold_to_cancel_3000">3 sekundit</string>
   <string name="title_pref_tap_to_activate">Aktiveerimine puudutusega</string>
   <string name="summary_pref_tap_to_activate">Kui sõrm tõstetakse enne, kui selle all olev üksus on esile tõstetud, aktiveerib puudutus üksuse.</string>
+    <string name="title_selector_ai_actions">AI-toimingud</string>
+    <string name="ai_actions_hint">Toimingu valimiseks pühkige üles või alla, seejärel topeltpuudutage selle käitamiseks</string>
+    <string name="title_pref_ai_actions_included">Kaasatavad AI-toimingud</string>
+    <string name="title_speak_screen_description">Ekraani kirjelduse ettelugemine</string>
+    <string name="title_speak_image_description">Pildi kirjelduse ettelugemine</string>
+    <string name="title_ask_about_screen">Ekraani kohta küsimine</string>
+    <string name="title_ask_about_image">Pildi kohta küsimine</string>
+    <string name="ai_question_hint">Küsimus</string>
+    <string name="ai_question_ask">Küsi</string>
+    <string name="shortcut_use_voice_profile">Hääleprofiili <xliff:g id="name" example="English">%1$s</xliff:g> kasutamine</string>
+    <string name="title_pref_keep_previous_voice_engine">Eelmise hääleprofiili kõnemootori käivitatuna hoidmine</string>
+    <string name="title_pref_voice_profile_keep_engine_started">Kõnemootori käivitatuna hoidmine</string>
+    <string name="title_pref_speech_equalizer">Ekvalaiser</string>
+    <string name="title_pref_speech_equalizer_preset">Eelseadistus</string>
+    <string name="title_pref_speech_equalizer_on">Kasuta ekvalaiserit</string>
+    <string name="speech_equalizer_off">Väljas</string>
+    <string name="speech_equalizer_turned_on">Ekvalaiser sees</string>
+    <string name="speech_equalizer_turned_off">Ekvalaiser väljas</string>
+    <string name="title_selector_equalizer_32">Ekvalaiser 32 Hz</string>
+    <string name="title_selector_equalizer_64">Ekvalaiser 64 Hz</string>
+    <string name="title_selector_equalizer_125">Ekvalaiser 125 Hz</string>
+    <string name="title_selector_equalizer_250">Ekvalaiser 250 Hz</string>
+    <string name="title_selector_equalizer_500">Ekvalaiser 500 Hz</string>
+    <string name="title_selector_equalizer_1k">Ekvalaiser 1 kHz</string>
+    <string name="title_selector_equalizer_2k">Ekvalaiser 2 kHz</string>
+    <string name="title_selector_equalizer_3k">Ekvalaiser 3 kHz</string>
+    <string name="title_selector_equalizer_4k">Ekvalaiser 4 kHz</string>
+    <string name="title_selector_equalizer_6k">Ekvalaiser 6 kHz</string>
+    <string name="title_selector_equalizer_8k">Ekvalaiser 8 kHz</string>
+    <string name="title_selector_equalizer_16k">Ekvalaiser 16 kHz</string>
+    <string name="summary_speech_equalizer_needs_low_latency">Vajab valikut Heliväljund &gt; Madala latentsusega heli</string>
+    <string name="speech_equalizer_flat">Tasane</string>
+    <string name="speech_equalizer_clarity">Selgus</string>
+    <string name="speech_equalizer_bass_boost">Bassivõimendus</string>
+    <string name="speech_equalizer_bass_cut">Bassi vähendamine</string>
+    <string name="speech_equalizer_treble_boost">Kõrgete võimendus</string>
+    <string name="speech_equalizer_treble_cut">Kõrgete vähendamine</string>
+    <string name="speech_equalizer_warm">Soe</string>
+    <string name="speech_equalizer_reduce_harshness">Teravuse vähendamine</string>
+    <string name="speech_equalizer_reduce_sibilance">S-häälikute vähendamine</string>
+    <string name="speech_equalizer_small_speaker">Väike kõlar</string>
+    <string name="speech_equalizer_custom">Kohandatud</string>
+    <string name="speech_equalizer_band_hz"><xliff:g id="frequency">%1$s</xliff:g> Hz</string>
+    <string name="speech_equalizer_band_khz"><xliff:g id="frequency">%1$s</xliff:g> kHz</string>
+    <string name="speech_equalizer_gain_db"><xliff:g id="gain">%1$s</xliff:g> dB</string>
+    <string name="title_pref_braille_dictionary">Punktkirja sõnastik</string>
+    <string name="braille_dictionary_not_shown"><xliff:g id="text" example="#">%1$s</xliff:g> jäetakse kuvamata</string>
+    <string name="title_pref_announce_full_charge">Täislaadimisest teatamine</string>
+    <string name="battery_fully_charged">Aku on täis laetud</string>
+    <string name="speech_control_locked_app"><xliff:g id="app" example="Tasker">%1$s</xliff:g>, kui seade on lukus</string>
+    <string name="speech_control_ask_locked_title">Kas lubada rakendusel <xliff:g id="app" example="Tasker">%1$s</xliff:g> SandFly kaudu kõnet esitada, kui seade on lukus?</string>
+    <string name="speech_control_ask_locked_text">See saab teksti öelda teie SandFlyi häälega, kui seade on lukus. Lubamiseks peab seade olema avatud. Seda saate muuta jaotises Seaded &gt; Kõne &gt; Luba teistel rakendustel kõnet esitada.</string>
+    <string name="permission_speak_when_locked_label">kõne esitamine SandFly kaudu, kui seade on lukus</string>
+    <string name="permission_speak_when_locked_description">Lubab rakendusel küsida luba teksti esitamiseks teie SandFlyi häälega, kui seade on lukus. SandFly küsib enne seda eraldi teie kinnitust.</string>
+    <string name="title_pref_category_back_tap">Tagakülje puudutus</string>
+    <string name="title_pref_keep_speech_off_casts">Kõne hoidmine telefonis ülekandmise ajal</string>
+    <string name="title_pref_app_shortcuts">Rakenduste otseteed</string>
+    <string name="app_shortcut_label"><xliff:g id="app_name" example="Amazon">%1$s</xliff:g>: <xliff:g id="shortcut" example="Cart">%2$s</xliff:g></string>
+    <string name="title_pref_add_app_shortcut">Rakenduse otsetee lisamine</string>
+    <string name="app_shortcut_no_apps">Ühelgi rakendusel pole lisatavaid otseteid</string>
+    <string name="app_shortcut_not_added">Otseteed ei lisatud</string>
+    <string name="app_shortcut_added">Lisati <xliff:g id="name" example="MacroDroid: Morning">%1$s</xliff:g></string>
+    <string name="app_shortcut_not_opened">Rakenduse otseteed ei saanud avada</string>
+    <string name="app_search_no_apps">Rakendusi pole</string>
+    <string name="shortcut_toggle_color_inversion">Värvi inversiooni sisse- või väljalülitamine</string>
+    <string name="color_inversion_turned_on">Värvi inversioon sees</string>
+    <string name="color_inversion_turned_off">Värvi inversioon väljas</string>
+    <string name="shortcut_dictate_or_media_control">Dikteerimine, meedia esitamine või peatamine</string>
+    <string name="title_pref_shortcut_edge_along_left_up">Vasakut serva mööda üles pühkimine</string>
+    <string name="title_pref_shortcut_edge_along_left_down">Vasakut serva mööda alla pühkimine</string>
+    <string name="title_pref_shortcut_edge_along_right_up">Paremat serva mööda üles pühkimine</string>
+    <string name="title_pref_shortcut_edge_along_right_down">Paremat serva mööda alla pühkimine</string>
+    <string name="title_pref_shortcut_edge_along_top_left">Ülemist serva mööda vasakule pühkimine</string>
+    <string name="title_pref_shortcut_edge_along_top_right">Ülemist serva mööda paremale pühkimine</string>
+    <string name="title_pref_shortcut_edge_along_bottom_left">Alumist serva mööda vasakule pühkimine</string>
+    <string name="title_pref_shortcut_edge_along_bottom_right">Alumist serva mööda paremale pühkimine</string>
+    <string name="title_pref_shortcut_back_tap_double">Tagakülje topeltpuudutamine</string>
+    <string name="title_pref_shortcut_back_tap_triple">Tagakülje kolmikpuudutamine</string>
+    <string name="title_pref_back_tap_sensitivity">Tagakülje puudutuse tundlikkus</string>
+    <string name="title_pref_edge_zone_mm">Serva laius</string>
+    <string name="title_pref_edge_scroll_left">Ühe sõrmega kerimine vasakut serva mööda</string>
+    <string name="title_pref_edge_scroll_right">Ühe sõrmega kerimine paremat serva mööda</string>
+    <string name="title_pref_edge_scroll_top">Ühe sõrmega kerimine ülemist serva mööda</string>
+    <string name="title_pref_edge_scroll_bottom">Ühe sõrmega kerimine alumist serva mööda</string>
+    <string name="title_pref_edge_menu_left">Vasaku serva menüü</string>
+    <string name="title_pref_edge_menu_right">Parema serva menüü</string>
+    <string name="title_pref_edge_menu_left_switch">Vasaku serva kasutamine menüüna</string>
+    <string name="title_pref_edge_menu_right_switch">Parema serva kasutamine menüüna</string>
+    <string name="edge_menu_add_command">Lisa käsk</string>
+    <string name="edge_menu_change_command">Muuda käsku</string>
+    <string name="title_pref_text_entities">Tekstist leitud toimingud</string>
+    <string name="text_entity_web">Veebiaadressid</string>
+    <string name="text_entity_email">E-posti aadressid</string>
+    <string name="text_entity_phone">Telefoninumbrid</string>
+    <string name="text_entity_code">Koodid</string>
+    <string name="menu_item_call_number">Helista numbrile <xliff:g id="number" example="020 7946 0018">%1$s</xliff:g></string>
+    <string name="menu_item_copy_code">Kopeeri <xliff:g id="code" example="482916">%1$s</xliff:g></string>
+    <string name="title_pref_show_focus_indicator">Fookusenäidiku kuvamine</string>
+    <string name="title_pref_dictation_correction_prompt">Parandusviip</string>
+    <string name="title_pref_whisper_custom_model">Mudelifail</string>
+    <string name="whisper_custom_model_choose">Valige whisper.cpp mudelifail</string>
+    <string name="whisper_custom_model_replace">Valige teine fail</string>
+    <string name="whisper_custom_model_not_whisper">Pole whisper.cpp mudelifail</string>
+    <string name="whisper_custom_model_copying">Kopeerimine</string>
 </resources>

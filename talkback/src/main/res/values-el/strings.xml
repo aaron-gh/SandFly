@@ -1349,7 +1349,7 @@
     <string name="action_copy_command">Αντιγραφή εντολής</string>
     <string name="command_copied">Η εντολή αντιγράφηκε</string>
     <string name="title_pref_speech_control">Εκφώνηση από άλλες εφαρμογές</string>
-    <string name="summary_pref_speech_control">Οι εφαρμογές που επιτρέπετε μπορούν να εκφωνούν κείμενο με τη φωνή του SandFly. Όταν η συσκευή είναι κλειδωμένη, δεν εκφωνείται τίποτα.</string>
+    <string name="summary_pref_speech_control">Οι εφαρμογές που επιτρέπετε μπορούν να εκφωνούν κείμενο με τη φωνή του SandFly. Όταν η συσκευή είναι κλειδωμένη, εκφωνούν μόνο οι εφαρμογές που επιτρέπετε και όταν είναι κλειδωμένη.</string>
     <string name="title_pref_speech_control_sound">Αναπαραγωγή ήχου πριν από την εκφώνηση άλλων εφαρμογών</string>
     <string name="speech_control_apps_category">Εφαρμογές</string>
     <string name="speech_control_no_apps">Καμία εφαρμογή δεν έχει ζητήσει ακόμη εκφώνηση.</string>
@@ -1868,4 +1868,108 @@
   <string name="value_hold_to_cancel_3000">3 δευτερόλεπτα</string>
   <string name="title_pref_tap_to_activate">Πάτημα για ενεργοποίηση</string>
   <string name="summary_pref_tap_to_activate">Ένα πάτημα όπου το δάχτυλο σηκώνεται πριν εστιαστεί το στοιχείο κάτω από αυτό ενεργοποιεί το στοιχείο.</string>
+    <string name="title_selector_ai_actions">Ενέργειες AI</string>
+    <string name="ai_actions_hint">Σύρετε προς τα πάνω ή προς τα κάτω για να επιλέξετε ενέργεια και, στη συνέχεια, πατήστε δύο φορές για να την εκτελέσετε</string>
+    <string name="title_pref_ai_actions_included">Ενέργειες AI που περιλαμβάνονται</string>
+    <string name="title_speak_screen_description">Εκφώνηση περιγραφής οθόνης</string>
+    <string name="title_speak_image_description">Εκφώνηση περιγραφής εικόνας</string>
+    <string name="title_ask_about_screen">Ερώτηση για την οθόνη</string>
+    <string name="title_ask_about_image">Ερώτηση για την εικόνα</string>
+    <string name="ai_question_hint">Ερώτηση</string>
+    <string name="ai_question_ask">Υποβολή</string>
+    <string name="shortcut_use_voice_profile">Χρήση προφίλ φωνής <xliff:g id="name" example="English">%1$s</xliff:g></string>
+    <string name="title_pref_keep_previous_voice_engine">Διατήρηση σε λειτουργία της μηχανής του προηγούμενου προφίλ φωνής</string>
+    <string name="title_pref_voice_profile_keep_engine_started">Διατήρηση της μηχανής σε λειτουργία</string>
+    <string name="title_pref_speech_equalizer">Ισοσταθμιστής</string>
+    <string name="title_pref_speech_equalizer_preset">Προεπιλογή</string>
+    <string name="title_pref_speech_equalizer_on">Χρήση ισοσταθμιστή</string>
+    <string name="speech_equalizer_off">Ανενεργός</string>
+    <string name="speech_equalizer_turned_on">Ισοσταθμιστής ενεργός</string>
+    <string name="speech_equalizer_turned_off">Ισοσταθμιστής ανενεργός</string>
+    <string name="title_selector_equalizer_32">Ισοσταθμιστής 32 Hz</string>
+    <string name="title_selector_equalizer_64">Ισοσταθμιστής 64 Hz</string>
+    <string name="title_selector_equalizer_125">Ισοσταθμιστής 125 Hz</string>
+    <string name="title_selector_equalizer_250">Ισοσταθμιστής 250 Hz</string>
+    <string name="title_selector_equalizer_500">Ισοσταθμιστής 500 Hz</string>
+    <string name="title_selector_equalizer_1k">Ισοσταθμιστής 1 kHz</string>
+    <string name="title_selector_equalizer_2k">Ισοσταθμιστής 2 kHz</string>
+    <string name="title_selector_equalizer_3k">Ισοσταθμιστής 3 kHz</string>
+    <string name="title_selector_equalizer_4k">Ισοσταθμιστής 4 kHz</string>
+    <string name="title_selector_equalizer_6k">Ισοσταθμιστής 6 kHz</string>
+    <string name="title_selector_equalizer_8k">Ισοσταθμιστής 8 kHz</string>
+    <string name="title_selector_equalizer_16k">Ισοσταθμιστής 16 kHz</string>
+    <string name="summary_speech_equalizer_needs_low_latency">Απαιτεί Έξοδος ήχου &gt; Ήχος χαμηλής καθυστέρησης</string>
+    <string name="speech_equalizer_flat">Επίπεδο</string>
+    <string name="speech_equalizer_clarity">Καθαρότητα</string>
+    <string name="speech_equalizer_bass_boost">Ενίσχυση μπάσων</string>
+    <string name="speech_equalizer_bass_cut">Μείωση μπάσων</string>
+    <string name="speech_equalizer_treble_boost">Ενίσχυση πρίμων</string>
+    <string name="speech_equalizer_treble_cut">Μείωση πρίμων</string>
+    <string name="speech_equalizer_warm">Ζεστός</string>
+    <string name="speech_equalizer_reduce_harshness">Μείωση σκληρότητας</string>
+    <string name="speech_equalizer_reduce_sibilance">Μείωση συριστικών</string>
+    <string name="speech_equalizer_small_speaker">Μικρό ηχείο</string>
+    <string name="speech_equalizer_custom">Προσαρμοσμένη</string>
+    <string name="speech_equalizer_band_hz"><xliff:g id="frequency">%1$s</xliff:g> Hz</string>
+    <string name="speech_equalizer_band_khz"><xliff:g id="frequency">%1$s</xliff:g> kHz</string>
+    <string name="speech_equalizer_gain_db"><xliff:g id="gain">%1$s</xliff:g> dB</string>
+    <string name="title_pref_braille_dictionary">Λεξικό μπράιγ</string>
+    <string name="braille_dictionary_not_shown">Το <xliff:g id="text" example="#">%1$s</xliff:g> δεν εμφανίζεται</string>
+    <string name="title_pref_announce_full_charge">Ανακοίνωση πλήρους φόρτισης</string>
+    <string name="battery_fully_charged">Η μπαταρία φορτίστηκε πλήρως</string>
+    <string name="speech_control_locked_app"><xliff:g id="app" example="Tasker">%1$s</xliff:g> όταν η συσκευή είναι κλειδωμένη</string>
+    <string name="speech_control_ask_locked_title">Να επιτρέπεται στην εφαρμογή <xliff:g id="app" example="Tasker">%1$s</xliff:g> η εκφώνηση μέσω του SandFly όταν η συσκευή είναι κλειδωμένη;</string>
+    <string name="speech_control_ask_locked_text">Μπορεί να εκφωνεί κείμενο με τη φωνή του SandFly όταν η συσκευή είναι κλειδωμένη. Για την επιλογή Να επιτρέπεται, η συσκευή πρέπει να είναι ξεκλείδωτη. Μπορείτε να το αλλάξετε στις Ρυθμίσεις, Ομιλία, Εκφώνηση από άλλες εφαρμογές.</string>
+    <string name="permission_speak_when_locked_label">εκφώνηση μέσω του SandFly όταν η συσκευή είναι κλειδωμένη</string>
+    <string name="permission_speak_when_locked_description">Επιτρέπει στην εφαρμογή να ζητά να εκφωνεί κείμενο με τη φωνή του SandFly όταν η συσκευή είναι κλειδωμένη. Το SandFly ζητά ξεχωριστά την έγκρισή σας πριν από αυτό.</string>
+    <string name="title_pref_category_back_tap">Πάτημα στο πίσω μέρος</string>
+    <string name="title_pref_keep_speech_off_casts">Διατήρηση της ομιλίας στο τηλέφωνο κατά τη μετάδοση</string>
+    <string name="title_pref_app_shortcuts">Συντομεύσεις εφαρμογών</string>
+    <string name="app_shortcut_label"><xliff:g id="app_name" example="Amazon">%1$s</xliff:g>: <xliff:g id="shortcut" example="Cart">%2$s</xliff:g></string>
+    <string name="title_pref_add_app_shortcut">Προσθήκη συντόμευσης εφαρμογής</string>
+    <string name="app_shortcut_no_apps">Καμία εφαρμογή δεν έχει συντομεύσεις για προσθήκη</string>
+    <string name="app_shortcut_not_added">Δεν προστέθηκε συντόμευση</string>
+    <string name="app_shortcut_added">Προστέθηκε: <xliff:g id="name" example="MacroDroid: Morning">%1$s</xliff:g></string>
+    <string name="app_shortcut_not_opened">Δεν ήταν δυνατό το άνοιγμα της συντόμευσης εφαρμογής</string>
+    <string name="app_search_no_apps">Καμία εφαρμογή</string>
+    <string name="shortcut_toggle_color_inversion">Ενεργοποίηση ή απενεργοποίηση αντιστροφής χρώματος</string>
+    <string name="color_inversion_turned_on">Αντιστροφή χρώματος ενεργή</string>
+    <string name="color_inversion_turned_off">Αντιστροφή χρώματος ανενεργή</string>
+    <string name="shortcut_dictate_or_media_control">Υπαγόρευση, αναπαραγωγή ή παύση πολυμέσων</string>
+    <string name="title_pref_shortcut_edge_along_left_up">Σύρετε προς τα επάνω κατά μήκος της αριστερής άκρης</string>
+    <string name="title_pref_shortcut_edge_along_left_down">Σύρετε προς τα κάτω κατά μήκος της αριστερής άκρης</string>
+    <string name="title_pref_shortcut_edge_along_right_up">Σύρετε προς τα επάνω κατά μήκος της δεξιάς άκρης</string>
+    <string name="title_pref_shortcut_edge_along_right_down">Σύρετε προς τα κάτω κατά μήκος της δεξιάς άκρης</string>
+    <string name="title_pref_shortcut_edge_along_top_left">Σύρετε προς τα αριστερά κατά μήκος της επάνω άκρης</string>
+    <string name="title_pref_shortcut_edge_along_top_right">Σύρετε προς τα δεξιά κατά μήκος της επάνω άκρης</string>
+    <string name="title_pref_shortcut_edge_along_bottom_left">Σύρετε προς τα αριστερά κατά μήκος της κάτω άκρης</string>
+    <string name="title_pref_shortcut_edge_along_bottom_right">Σύρετε προς τα δεξιά κατά μήκος της κάτω άκρης</string>
+    <string name="title_pref_shortcut_back_tap_double">Διπλό πάτημα στο πίσω μέρος</string>
+    <string name="title_pref_shortcut_back_tap_triple">Τριπλό πάτημα στο πίσω μέρος</string>
+    <string name="title_pref_back_tap_sensitivity">Ευαισθησία πατήματος στο πίσω μέρος</string>
+    <string name="title_pref_edge_zone_mm">Πλάτος άκρης</string>
+    <string name="title_pref_edge_scroll_left">Κύλιση με ένα δάχτυλο κατά μήκος της αριστερής άκρης</string>
+    <string name="title_pref_edge_scroll_right">Κύλιση με ένα δάχτυλο κατά μήκος της δεξιάς άκρης</string>
+    <string name="title_pref_edge_scroll_top">Κύλιση με ένα δάχτυλο κατά μήκος της επάνω άκρης</string>
+    <string name="title_pref_edge_scroll_bottom">Κύλιση με ένα δάχτυλο κατά μήκος της κάτω άκρης</string>
+    <string name="title_pref_edge_menu_left">Μενού αριστερής άκρης</string>
+    <string name="title_pref_edge_menu_right">Μενού δεξιάς άκρης</string>
+    <string name="title_pref_edge_menu_left_switch">Χρήση της αριστερής άκρης ως μενού</string>
+    <string name="title_pref_edge_menu_right_switch">Χρήση της δεξιάς άκρης ως μενού</string>
+    <string name="edge_menu_add_command">Προσθήκη εντολής</string>
+    <string name="edge_menu_change_command">Αλλαγή εντολής</string>
+    <string name="title_pref_text_entities">Ενέργειες που βρέθηκαν στο κείμενο</string>
+    <string name="text_entity_web">Διευθύνσεις ιστού</string>
+    <string name="text_entity_email">Διευθύνσεις email</string>
+    <string name="text_entity_phone">Αριθμοί τηλεφώνου</string>
+    <string name="text_entity_code">Κωδικοί επαλήθευσης</string>
+    <string name="menu_item_call_number">Κλήση <xliff:g id="number" example="020 7946 0018">%1$s</xliff:g></string>
+    <string name="menu_item_copy_code">Αντιγραφή <xliff:g id="code" example="482916">%1$s</xliff:g></string>
+    <string name="title_pref_show_focus_indicator">Εμφάνιση ένδειξης εστίασης</string>
+    <string name="title_pref_dictation_correction_prompt">Οδηγίες διόρθωσης</string>
+    <string name="title_pref_whisper_custom_model">Αρχείο μοντέλου</string>
+    <string name="whisper_custom_model_choose">Επιλέξτε ένα αρχείο μοντέλου whisper.cpp</string>
+    <string name="whisper_custom_model_replace">Επιλογή άλλου αρχείου</string>
+    <string name="whisper_custom_model_not_whisper">Δεν είναι αρχείο μοντέλου whisper.cpp</string>
+    <string name="whisper_custom_model_copying">Αντιγραφή</string>
 </resources>

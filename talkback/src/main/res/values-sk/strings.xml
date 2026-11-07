@@ -1363,7 +1363,7 @@
     <string name="action_copy_command">Kopírovať príkaz</string>
     <string name="command_copied">Príkaz bol skopírovaný</string>
     <string name="title_pref_speech_control">Povoliť ostatným aplikáciám hovoriť</string>
-    <string name="summary_pref_speech_control">Povolené aplikácie môžu vyslovovať text hlasom SandFly. Kým je zariadenie uzamknuté, nič sa nevysloví.</string>
+    <string name="summary_pref_speech_control">Povolené aplikácie môžu vyslovovať text hlasom SandFly. Keď je zariadenie uzamknuté, môžu hovoriť iba aplikácie, ktoré povolíte aj pre uzamknuté zariadenie.</string>
     <string name="title_pref_speech_control_sound">Prehrať zvuk pred hovorením iných aplikácií</string>
     <string name="speech_control_apps_category">Aplikácie</string>
     <string name="speech_control_no_apps">Žiadna aplikácia zatiaľ nepožiadala o hovorenie.</string>
@@ -1876,4 +1876,108 @@
   <string name="value_hold_to_cancel_3000">3 sekundy</string>
   <string name="title_pref_tap_to_activate">Aktivovať klepnutím</string>
   <string name="summary_pref_tap_to_activate">Klepnutie, pri ktorom sa prst zdvihne pred označením položky pod ním, položku aktivuje.</string>
+    <string name="title_selector_ai_actions">Akcie AI</string>
+    <string name="ai_actions_hint">Potiahnutím nahor alebo nadol vyberte akciu a dvojitým klepnutím ju spustite</string>
+    <string name="title_pref_ai_actions_included">Zahrnuté akcie AI</string>
+    <string name="title_speak_screen_description">Vysloviť popis obrazovky</string>
+    <string name="title_speak_image_description">Vysloviť popis obrázka</string>
+    <string name="title_ask_about_screen">Opýtať sa na obrazovku</string>
+    <string name="title_ask_about_image">Opýtať sa na obrázok</string>
+    <string name="ai_question_hint">Otázka</string>
+    <string name="ai_question_ask">Opýtať sa</string>
+    <string name="shortcut_use_voice_profile">Použiť hlasový profil <xliff:g id="name" example="English">%1$s</xliff:g></string>
+    <string name="title_pref_keep_previous_voice_engine">Ponechať hlasový modul predchádzajúceho hlasového profilu spustený</string>
+    <string name="title_pref_voice_profile_keep_engine_started">Ponechať hlasový modul spustený</string>
+    <string name="title_pref_speech_equalizer">Ekvalizér</string>
+    <string name="title_pref_speech_equalizer_preset">Predvoľba</string>
+    <string name="title_pref_speech_equalizer_on">Používať ekvalizér</string>
+    <string name="speech_equalizer_off">Vypnuté</string>
+    <string name="speech_equalizer_turned_on">Ekvalizér je zapnutý</string>
+    <string name="speech_equalizer_turned_off">Ekvalizér je vypnutý</string>
+    <string name="title_selector_equalizer_32">Ekvalizér 32 Hz</string>
+    <string name="title_selector_equalizer_64">Ekvalizér 64 Hz</string>
+    <string name="title_selector_equalizer_125">Ekvalizér 125 Hz</string>
+    <string name="title_selector_equalizer_250">Ekvalizér 250 Hz</string>
+    <string name="title_selector_equalizer_500">Ekvalizér 500 Hz</string>
+    <string name="title_selector_equalizer_1k">Ekvalizér 1 kHz</string>
+    <string name="title_selector_equalizer_2k">Ekvalizér 2 kHz</string>
+    <string name="title_selector_equalizer_3k">Ekvalizér 3 kHz</string>
+    <string name="title_selector_equalizer_4k">Ekvalizér 4 kHz</string>
+    <string name="title_selector_equalizer_6k">Ekvalizér 6 kHz</string>
+    <string name="title_selector_equalizer_8k">Ekvalizér 8 kHz</string>
+    <string name="title_selector_equalizer_16k">Ekvalizér 16 kHz</string>
+    <string name="summary_speech_equalizer_needs_low_latency">Vyžaduje Zvukový výstup &gt; Zvuk s nízkou latenciou</string>
+    <string name="speech_equalizer_flat">Lineárny</string>
+    <string name="speech_equalizer_clarity">Zrozumiteľnosť</string>
+    <string name="speech_equalizer_bass_boost">Zosilnenie basov</string>
+    <string name="speech_equalizer_bass_cut">Potlačenie basov</string>
+    <string name="speech_equalizer_treble_boost">Zosilnenie výšok</string>
+    <string name="speech_equalizer_treble_cut">Potlačenie výšok</string>
+    <string name="speech_equalizer_warm">Teplý</string>
+    <string name="speech_equalizer_reduce_harshness">Zmiernenie ostrosti</string>
+    <string name="speech_equalizer_reduce_sibilance">Potlačenie sykaviek</string>
+    <string name="speech_equalizer_small_speaker">Malý reproduktor</string>
+    <string name="speech_equalizer_custom">Vlastné</string>
+    <string name="speech_equalizer_band_hz"><xliff:g id="frequency">%1$s</xliff:g> Hz</string>
+    <string name="speech_equalizer_band_khz"><xliff:g id="frequency">%1$s</xliff:g> kHz</string>
+    <string name="speech_equalizer_gain_db"><xliff:g id="gain">%1$s</xliff:g> dB</string>
+    <string name="title_pref_braille_dictionary">Braillov slovník</string>
+    <string name="braille_dictionary_not_shown"><xliff:g id="text" example="#">%1$s</xliff:g> sa nezobrazuje</string>
+    <string name="title_pref_announce_full_charge">Oznamovať úplné nabitie</string>
+    <string name="battery_fully_charged">Batéria je úplne nabitá</string>
+    <string name="speech_control_locked_app"><xliff:g id="app" example="Tasker">%1$s</xliff:g>, keď je zariadenie uzamknuté</string>
+    <string name="speech_control_ask_locked_title">Povoliť <xliff:g id="app" example="Tasker">%1$s</xliff:g> hovoriť cez SandFly, keď je zariadenie uzamknuté?</string>
+    <string name="speech_control_ask_locked_text">Môže vyslovovať text hlasom SandFly, keď je zariadenie uzamknuté. Povolenie vyžaduje odomknuté zariadenie. Môžete to zmeniť v sekcii Nastavenia, Reč, Povoliť ostatným aplikáciám hovoriť.</string>
+    <string name="permission_speak_when_locked_label">hovorenie cez SandFly, keď je zariadenie uzamknuté</string>
+    <string name="permission_speak_when_locked_description">Umožňuje aplikácii požiadať o vyslovovanie textu vaším hlasom SandFly, keď je zariadenie uzamknuté. SandFly sa vás na to najprv opýta samostatne.</string>
+    <string name="title_pref_category_back_tap">Klepnutie na zadnú stranu</string>
+    <string name="title_pref_keep_speech_off_casts">Pri prenose obrazovky ponechať reč v telefóne</string>
+    <string name="title_pref_app_shortcuts">Skratky aplikácií</string>
+    <string name="app_shortcut_label"><xliff:g id="app_name" example="Amazon">%1$s</xliff:g>: <xliff:g id="shortcut" example="Cart">%2$s</xliff:g></string>
+    <string name="title_pref_add_app_shortcut">Pridať skratku aplikácie</string>
+    <string name="app_shortcut_no_apps">Žiadna aplikácia nemá skratky na pridanie</string>
+    <string name="app_shortcut_not_added">Nebola pridaná žiadna skratka</string>
+    <string name="app_shortcut_added">Pridané: <xliff:g id="name" example="MacroDroid: Morning">%1$s</xliff:g></string>
+    <string name="app_shortcut_not_opened">Skratku aplikácie sa nepodarilo otvoriť</string>
+    <string name="app_search_no_apps">Žiadne aplikácie</string>
+    <string name="shortcut_toggle_color_inversion">Zapnúť alebo vypnúť inverziu farieb</string>
+    <string name="color_inversion_turned_on">Inverzia farieb je zapnutá</string>
+    <string name="color_inversion_turned_off">Inverzia farieb je vypnutá</string>
+    <string name="shortcut_dictate_or_media_control">Diktovať, prehrať alebo pozastaviť médiá</string>
+    <string name="title_pref_shortcut_edge_along_left_up">Potiahnite prstom nahor pozdĺž ľavého okraja</string>
+    <string name="title_pref_shortcut_edge_along_left_down">Potiahnite prstom nadol pozdĺž ľavého okraja</string>
+    <string name="title_pref_shortcut_edge_along_right_up">Potiahnite prstom nahor pozdĺž pravého okraja</string>
+    <string name="title_pref_shortcut_edge_along_right_down">Potiahnite prstom nadol pozdĺž pravého okraja</string>
+    <string name="title_pref_shortcut_edge_along_top_left">Potiahnite prstom doľava pozdĺž horného okraja</string>
+    <string name="title_pref_shortcut_edge_along_top_right">Potiahnite prstom doprava pozdĺž horného okraja</string>
+    <string name="title_pref_shortcut_edge_along_bottom_left">Potiahnite prstom doľava pozdĺž spodného okraja</string>
+    <string name="title_pref_shortcut_edge_along_bottom_right">Potiahnite prstom doprava pozdĺž spodného okraja</string>
+    <string name="title_pref_shortcut_back_tap_double">Dvojité klepnutie na zadnú stranu</string>
+    <string name="title_pref_shortcut_back_tap_triple">Trojité klepnutie na zadnú stranu</string>
+    <string name="title_pref_back_tap_sensitivity">Citlivosť klepnutia na zadnú stranu</string>
+    <string name="title_pref_edge_zone_mm">Šírka okraja</string>
+    <string name="title_pref_edge_scroll_left">Posúvať jedným prstom pozdĺž ľavého okraja</string>
+    <string name="title_pref_edge_scroll_right">Posúvať jedným prstom pozdĺž pravého okraja</string>
+    <string name="title_pref_edge_scroll_top">Posúvať jedným prstom pozdĺž horného okraja</string>
+    <string name="title_pref_edge_scroll_bottom">Posúvať jedným prstom pozdĺž spodného okraja</string>
+    <string name="title_pref_edge_menu_left">Ponuka ľavého okraja</string>
+    <string name="title_pref_edge_menu_right">Ponuka pravého okraja</string>
+    <string name="title_pref_edge_menu_left_switch">Používať ľavý okraj ako ponuku</string>
+    <string name="title_pref_edge_menu_right_switch">Používať pravý okraj ako ponuku</string>
+    <string name="edge_menu_add_command">Pridať príkaz</string>
+    <string name="edge_menu_change_command">Zmeniť príkaz</string>
+    <string name="title_pref_text_entities">Akcie nájdené v texte</string>
+    <string name="text_entity_web">Webové adresy</string>
+    <string name="text_entity_email">E-mailové adresy</string>
+    <string name="text_entity_phone">Telefónne čísla</string>
+    <string name="text_entity_code">Kódy</string>
+    <string name="menu_item_call_number">Volať <xliff:g id="number" example="020 7946 0018">%1$s</xliff:g></string>
+    <string name="menu_item_copy_code">Skopírovať <xliff:g id="code" example="482916">%1$s</xliff:g></string>
+    <string name="title_pref_show_focus_indicator">Zobrazovať indikátor výberu</string>
+    <string name="title_pref_dictation_correction_prompt">Pokyny na opravu</string>
+    <string name="title_pref_whisper_custom_model">Súbor modelu</string>
+    <string name="whisper_custom_model_choose">Vyberte súbor modelu whisper.cpp</string>
+    <string name="whisper_custom_model_replace">Vybrať iný súbor</string>
+    <string name="whisper_custom_model_not_whisper">Toto nie je súbor modelu whisper.cpp</string>
+    <string name="whisper_custom_model_copying">Kopíruje sa</string>
 </resources>

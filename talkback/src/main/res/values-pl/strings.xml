@@ -1703,4 +1703,108 @@
   <string name="value_hold_to_cancel_3000">3 sekundy</string>
   <string name="title_pref_tap_to_activate">Kliknij, aby uaktywnić</string>
   <string name="summary_pref_tap_to_activate">Kliknięcie, przy którym palec zostaje podniesiony, zanim element pod nim zostanie zaznaczony, uaktywnia ten element.</string>
+    <string name="title_selector_ai_actions">Czynności AI</string>
+    <string name="ai_actions_hint">Przesuń palcem w górę lub w dół, aby wybrać czynność, a następnie kliknij dwukrotnie, aby ją wykonać</string>
+    <string name="title_pref_ai_actions_included">Uwzględniane czynności AI</string>
+    <string name="title_speak_screen_description">Odczytaj opis ekranu</string>
+    <string name="title_speak_image_description">Odczytaj opis obrazu</string>
+    <string name="title_ask_about_screen">Zapytaj o ekran</string>
+    <string name="title_ask_about_image">Zapytaj o obraz</string>
+    <string name="ai_question_hint">Pytanie</string>
+    <string name="ai_question_ask">Zapytaj</string>
+    <string name="shortcut_use_voice_profile">Użyj profilu głosowego <xliff:g id="name" example="English">%1$s</xliff:g></string>
+    <string name="title_pref_keep_previous_voice_engine">Utrzymuj uruchomiony syntezator mowy poprzedniego profilu głosowego</string>
+    <string name="title_pref_voice_profile_keep_engine_started">Utrzymuj uruchomiony syntezator mowy</string>
+    <string name="title_pref_speech_equalizer">Korektor</string>
+    <string name="title_pref_speech_equalizer_preset">Ustawienie wstępne</string>
+    <string name="title_pref_speech_equalizer_on">Używaj korektora</string>
+    <string name="speech_equalizer_off">Wyłączony</string>
+    <string name="speech_equalizer_turned_on">Korektor włączony</string>
+    <string name="speech_equalizer_turned_off">Korektor wyłączony</string>
+    <string name="title_selector_equalizer_32">Korektor 32 Hz</string>
+    <string name="title_selector_equalizer_64">Korektor 64 Hz</string>
+    <string name="title_selector_equalizer_125">Korektor 125 Hz</string>
+    <string name="title_selector_equalizer_250">Korektor 250 Hz</string>
+    <string name="title_selector_equalizer_500">Korektor 500 Hz</string>
+    <string name="title_selector_equalizer_1k">Korektor 1 kHz</string>
+    <string name="title_selector_equalizer_2k">Korektor 2 kHz</string>
+    <string name="title_selector_equalizer_3k">Korektor 3 kHz</string>
+    <string name="title_selector_equalizer_4k">Korektor 4 kHz</string>
+    <string name="title_selector_equalizer_6k">Korektor 6 kHz</string>
+    <string name="title_selector_equalizer_8k">Korektor 8 kHz</string>
+    <string name="title_selector_equalizer_16k">Korektor 16 kHz</string>
+    <string name="summary_speech_equalizer_needs_low_latency">Wymaga opcji Wyjście audio &gt; Dźwięk o niskim opóźnieniu</string>
+    <string name="speech_equalizer_flat">Płaski</string>
+    <string name="speech_equalizer_clarity">Wyrazistość</string>
+    <string name="speech_equalizer_bass_boost">Wzmocnienie basów</string>
+    <string name="speech_equalizer_bass_cut">Redukcja basów</string>
+    <string name="speech_equalizer_treble_boost">Wzmocnienie tonów wysokich</string>
+    <string name="speech_equalizer_treble_cut">Redukcja tonów wysokich</string>
+    <string name="speech_equalizer_warm">Ciepły</string>
+    <string name="speech_equalizer_reduce_harshness">Redukcja ostrości</string>
+    <string name="speech_equalizer_reduce_sibilance">Redukcja sybilantów</string>
+    <string name="speech_equalizer_small_speaker">Mały głośnik</string>
+    <string name="speech_equalizer_custom">Niestandardowy</string>
+    <string name="speech_equalizer_band_hz"><xliff:g id="frequency">%1$s</xliff:g> Hz</string>
+    <string name="speech_equalizer_band_khz"><xliff:g id="frequency">%1$s</xliff:g> kHz</string>
+    <string name="speech_equalizer_gain_db"><xliff:g id="gain">%1$s</xliff:g> dB</string>
+    <string name="title_pref_braille_dictionary">Słownik brajlowski</string>
+    <string name="braille_dictionary_not_shown"><xliff:g id="text" example="#">%1$s</xliff:g> nie jest wyświetlane</string>
+    <string name="title_pref_announce_full_charge">Informuj o pełnym naładowaniu</string>
+    <string name="battery_fully_charged">Bateria w pełni naładowana</string>
+    <string name="speech_control_locked_app"><xliff:g id="app" example="Tasker">%1$s</xliff:g>, gdy urządzenie jest zablokowane</string>
+    <string name="speech_control_ask_locked_title">Zezwolić aplikacji <xliff:g id="app" example="Tasker">%1$s</xliff:g> na odczytywanie tekstu przez SandFly, gdy urządzenie jest zablokowane?</string>
+    <string name="speech_control_ask_locked_text">Może odczytywać tekst głosem używanym w SandFly, gdy urządzenie jest zablokowane. Opcja Zezwól wymaga odblokowania urządzenia. Możesz to zmienić w sekcji Ustawienia, Mowa, Zezwalaj innym aplikacjom na odczytywanie tekstu przez SandFly.</string>
+    <string name="permission_speak_when_locked_label">odczytywanie tekstu przez SandFly, gdy urządzenie jest zablokowane</string>
+    <string name="permission_speak_when_locked_description">Umożliwia aplikacji zgłoszenie prośby o odczytywanie tekstu głosem używanym w SandFly, gdy urządzenie jest zablokowane. SandFly osobno poprosi Cię o zgodę, zanim aplikacja będzie mogła to robić.</string>
+    <string name="title_pref_category_back_tap">Stuknięcie w tył urządzenia</string>
+    <string name="title_pref_keep_speech_off_casts">Odtwarzaj mowę tylko na telefonie podczas przesyłania ekranu</string>
+    <string name="title_pref_app_shortcuts">Skróty aplikacji</string>
+    <string name="app_shortcut_label"><xliff:g id="app_name" example="Amazon">%1$s</xliff:g>: <xliff:g id="shortcut" example="Cart">%2$s</xliff:g></string>
+    <string name="title_pref_add_app_shortcut">Dodaj skrót aplikacji</string>
+    <string name="app_shortcut_no_apps">Żadna aplikacja nie ma skrótów do dodania</string>
+    <string name="app_shortcut_not_added">Nie dodano skrótu</string>
+    <string name="app_shortcut_added">Dodano <xliff:g id="name" example="MacroDroid: Morning">%1$s</xliff:g></string>
+    <string name="app_shortcut_not_opened">Nie udało się otworzyć skrótu aplikacji</string>
+    <string name="app_search_no_apps">Brak aplikacji</string>
+    <string name="shortcut_toggle_color_inversion">Włącz lub wyłącz inwersję kolorów</string>
+    <string name="color_inversion_turned_on">Inwersja kolorów włączona</string>
+    <string name="color_inversion_turned_off">Inwersja kolorów wyłączona</string>
+    <string name="shortcut_dictate_or_media_control">Dyktuj, odtwórz lub wstrzymaj multimedia</string>
+    <string name="title_pref_shortcut_edge_along_left_up">Przesuń palcem w górę wzdłuż lewej krawędzi</string>
+    <string name="title_pref_shortcut_edge_along_left_down">Przesuń palcem w dół wzdłuż lewej krawędzi</string>
+    <string name="title_pref_shortcut_edge_along_right_up">Przesuń palcem w górę wzdłuż prawej krawędzi</string>
+    <string name="title_pref_shortcut_edge_along_right_down">Przesuń palcem w dół wzdłuż prawej krawędzi</string>
+    <string name="title_pref_shortcut_edge_along_top_left">Przesuń palcem w lewo wzdłuż górnej krawędzi</string>
+    <string name="title_pref_shortcut_edge_along_top_right">Przesuń palcem w prawo wzdłuż górnej krawędzi</string>
+    <string name="title_pref_shortcut_edge_along_bottom_left">Przesuń palcem w lewo wzdłuż dolnej krawędzi</string>
+    <string name="title_pref_shortcut_edge_along_bottom_right">Przesuń palcem w prawo wzdłuż dolnej krawędzi</string>
+    <string name="title_pref_shortcut_back_tap_double">Stuknij dwukrotnie w tył urządzenia</string>
+    <string name="title_pref_shortcut_back_tap_triple">Stuknij trzykrotnie w tył urządzenia</string>
+    <string name="title_pref_back_tap_sensitivity">Czułość stuknięcia w tył urządzenia</string>
+    <string name="title_pref_edge_zone_mm">Szerokość krawędzi</string>
+    <string name="title_pref_edge_scroll_left">Przewijaj jednym palcem wzdłuż lewej krawędzi</string>
+    <string name="title_pref_edge_scroll_right">Przewijaj jednym palcem wzdłuż prawej krawędzi</string>
+    <string name="title_pref_edge_scroll_top">Przewijaj jednym palcem wzdłuż górnej krawędzi</string>
+    <string name="title_pref_edge_scroll_bottom">Przewijaj jednym palcem wzdłuż dolnej krawędzi</string>
+    <string name="title_pref_edge_menu_left">Menu lewej krawędzi</string>
+    <string name="title_pref_edge_menu_right">Menu prawej krawędzi</string>
+    <string name="title_pref_edge_menu_left_switch">Używaj lewej krawędzi jako menu</string>
+    <string name="title_pref_edge_menu_right_switch">Używaj prawej krawędzi jako menu</string>
+    <string name="edge_menu_add_command">Dodaj polecenie</string>
+    <string name="edge_menu_change_command">Zmień polecenie</string>
+    <string name="title_pref_text_entities">Czynności znalezione w tekście</string>
+    <string name="text_entity_web">Adresy internetowe</string>
+    <string name="text_entity_email">Adresy e-mail</string>
+    <string name="text_entity_phone">Numery telefonów</string>
+    <string name="text_entity_code">Kody</string>
+    <string name="menu_item_call_number">Zadzwoń pod <xliff:g id="number" example="020 7946 0018">%1$s</xliff:g></string>
+    <string name="menu_item_copy_code">Kopiuj <xliff:g id="code" example="482916">%1$s</xliff:g></string>
+    <string name="title_pref_show_focus_indicator">Pokazuj wskaźnik zaznaczenia</string>
+    <string name="title_pref_dictation_correction_prompt">Instrukcje poprawiania</string>
+    <string name="title_pref_whisper_custom_model">Plik modelu</string>
+    <string name="whisper_custom_model_choose">Wybierz plik modelu whisper.cpp</string>
+    <string name="whisper_custom_model_replace">Wybierz inny plik</string>
+    <string name="whisper_custom_model_not_whisper">To nie jest plik modelu whisper.cpp</string>
+    <string name="whisper_custom_model_copying">Kopiowanie</string>
 </resources>

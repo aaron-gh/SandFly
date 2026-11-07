@@ -1349,7 +1349,7 @@
     <string name="action_copy_command">Kopyahin ang command</string>
     <string name="command_copied">Nakopya ang command</string>
     <string name="title_pref_speech_control">Payagang magsalita ang ibang app</string>
-    <string name="summary_pref_speech_control">Puwedeng magsabi ng text gamit ang iyong boses ng SandFly ang mga app na pinapayagan mo. Walang sinasabi habang naka-lock ang device.</string>
+    <string name="summary_pref_speech_control">Puwedeng magsabi ng text gamit ang iyong boses ng SandFly ang mga app na pinapayagan mo. Habang naka-lock ang device, ang mga app lang na pinapayagan mo rin habang naka-lock ang puwedeng magsalita.</string>
     <string name="title_pref_speech_control_sound">Mag-play ng tunog bago magsalita ang ibang app</string>
     <string name="speech_control_apps_category">Mga app</string>
     <string name="speech_control_no_apps">Wala pang app na humiling na magsalita.</string>
@@ -1868,4 +1868,108 @@
   <string name="value_hold_to_cancel_3000">3 segundo</string>
   <string name="title_pref_tap_to_activate">I-tap para i-activate</string>
   <string name="summary_pref_tap_to_activate">Ina-activate ang item kapag iniangat ang daliri sa pag-tap bago ma-focus ang item sa ilalim nito.</string>
+    <string name="title_selector_ai_actions">Mga pagkilos ng AI</string>
+    <string name="ai_actions_hint">Mag-swipe pataas o pababa para pumili ng pagkilos, pagkatapos ay mag-double tap para patakbuhin ito</string>
+    <string name="title_pref_ai_actions_included">Mga pagkilos ng AI na isasama</string>
+    <string name="title_speak_screen_description">Sabihin ang paglalarawan ng screen</string>
+    <string name="title_speak_image_description">Sabihin ang paglalarawan ng larawan</string>
+    <string name="title_ask_about_screen">Magtanong tungkol sa screen</string>
+    <string name="title_ask_about_image">Magtanong tungkol sa larawan</string>
+    <string name="ai_question_hint">Tanong</string>
+    <string name="ai_question_ask">Itanong</string>
+    <string name="shortcut_use_voice_profile">Gamitin ang profile ng boses na <xliff:g id="name" example="English">%1$s</xliff:g></string>
+    <string name="title_pref_keep_previous_voice_engine">Panatilihing naka-start ang engine ng nakaraang profile ng boses</string>
+    <string name="title_pref_voice_profile_keep_engine_started">Panatilihing naka-start ang engine</string>
+    <string name="title_pref_speech_equalizer">Equalizer</string>
+    <string name="title_pref_speech_equalizer_preset">Preset</string>
+    <string name="title_pref_speech_equalizer_on">Gamitin ang equalizer</string>
+    <string name="speech_equalizer_off">Naka-off</string>
+    <string name="speech_equalizer_turned_on">Naka-on ang equalizer</string>
+    <string name="speech_equalizer_turned_off">Naka-off ang equalizer</string>
+    <string name="title_selector_equalizer_32">Equalizer 32 Hz</string>
+    <string name="title_selector_equalizer_64">Equalizer 64 Hz</string>
+    <string name="title_selector_equalizer_125">Equalizer 125 Hz</string>
+    <string name="title_selector_equalizer_250">Equalizer 250 Hz</string>
+    <string name="title_selector_equalizer_500">Equalizer 500 Hz</string>
+    <string name="title_selector_equalizer_1k">Equalizer 1 kHz</string>
+    <string name="title_selector_equalizer_2k">Equalizer 2 kHz</string>
+    <string name="title_selector_equalizer_3k">Equalizer 3 kHz</string>
+    <string name="title_selector_equalizer_4k">Equalizer 4 kHz</string>
+    <string name="title_selector_equalizer_6k">Equalizer 6 kHz</string>
+    <string name="title_selector_equalizer_8k">Equalizer 8 kHz</string>
+    <string name="title_selector_equalizer_16k">Equalizer 16 kHz</string>
+    <string name="summary_speech_equalizer_needs_low_latency">Kailangan ang Audio output &gt; Low-latency na audio</string>
+    <string name="speech_equalizer_flat">Patag</string>
+    <string name="speech_equalizer_clarity">Linaw</string>
+    <string name="speech_equalizer_bass_boost">Pinalakas na bass</string>
+    <string name="speech_equalizer_bass_cut">Binawasang bass</string>
+    <string name="speech_equalizer_treble_boost">Pinalakas na treble</string>
+    <string name="speech_equalizer_treble_cut">Binawasang treble</string>
+    <string name="speech_equalizer_warm">Mainit</string>
+    <string name="speech_equalizer_reduce_harshness">Bawasan ang talas</string>
+    <string name="speech_equalizer_reduce_sibilance">Bawasan ang sibilance</string>
+    <string name="speech_equalizer_small_speaker">Maliit na speaker</string>
+    <string name="speech_equalizer_custom">Custom</string>
+    <string name="speech_equalizer_band_hz"><xliff:g id="frequency">%1$s</xliff:g> Hz</string>
+    <string name="speech_equalizer_band_khz"><xliff:g id="frequency">%1$s</xliff:g> kHz</string>
+    <string name="speech_equalizer_gain_db"><xliff:g id="gain">%1$s</xliff:g> dB</string>
+    <string name="title_pref_braille_dictionary">Diksiyonaryo ng braille</string>
+    <string name="braille_dictionary_not_shown">Hindi ipinapakita ang <xliff:g id="text" example="#">%1$s</xliff:g></string>
+    <string name="title_pref_announce_full_charge">I-anunsyo kapag puno na ang charge</string>
+    <string name="battery_fully_charged">Puno na ang charge ng baterya</string>
+    <string name="speech_control_locked_app"><xliff:g id="app" example="Tasker">%1$s</xliff:g> habang naka-lock ang device</string>
+    <string name="speech_control_ask_locked_title">Payagan ang <xliff:g id="app" example="Tasker">%1$s</xliff:g> na magsalita sa pamamagitan ng SandFly habang naka-lock ang device?</string>
+    <string name="speech_control_ask_locked_text">Puwede itong magsabi ng text gamit ang iyong boses sa SandFly habang naka-lock ang device. Kailangang naka-unlock ang device para sa Payagan. Puwede mo itong baguhin sa Mga Setting, Pagsasalita, Payagang magsalita ang ibang app.</string>
+    <string name="permission_speak_when_locked_label">magsalita sa pamamagitan ng SandFly habang naka-lock ang device</string>
+    <string name="permission_speak_when_locked_description">Pinapayagan ang app na humiling na magsabi ng text gamit ang iyong boses sa SandFly habang naka-lock ang device. Hiwalay kang tatanungin ng SandFly bago ito magawa ng app.</string>
+    <string name="title_pref_category_back_tap">Pag-tap sa likod</string>
+    <string name="title_pref_keep_speech_off_casts">Panatilihin ang pagsasalita sa telepono habang nagka-cast</string>
+    <string name="title_pref_app_shortcuts">Mga shortcut ng app</string>
+    <string name="app_shortcut_label"><xliff:g id="app_name" example="Amazon">%1$s</xliff:g>: <xliff:g id="shortcut" example="Cart">%2$s</xliff:g></string>
+    <string name="title_pref_add_app_shortcut">Magdagdag ng shortcut ng app</string>
+    <string name="app_shortcut_no_apps">Walang app na may shortcut na maidaragdag</string>
+    <string name="app_shortcut_not_added">Walang naidagdag na shortcut</string>
+    <string name="app_shortcut_added">Naidagdag ang <xliff:g id="name" example="MacroDroid: Morning">%1$s</xliff:g></string>
+    <string name="app_shortcut_not_opened">Hindi mabuksan ang shortcut ng app</string>
+    <string name="app_search_no_apps">Walang app</string>
+    <string name="shortcut_toggle_color_inversion">I-on o i-off ang pagbabaligtad ng kulay</string>
+    <string name="color_inversion_turned_on">Naka-on ang pagbabaligtad ng kulay</string>
+    <string name="color_inversion_turned_off">Naka-off ang pagbabaligtad ng kulay</string>
+    <string name="shortcut_dictate_or_media_control">Mag-dictate, i-play o i-pause ang media</string>
+    <string name="title_pref_shortcut_edge_along_left_up">Mag-swipe pataas sa kahabaan ng kaliwang gilid</string>
+    <string name="title_pref_shortcut_edge_along_left_down">Mag-swipe pababa sa kahabaan ng kaliwang gilid</string>
+    <string name="title_pref_shortcut_edge_along_right_up">Mag-swipe pataas sa kahabaan ng kanang gilid</string>
+    <string name="title_pref_shortcut_edge_along_right_down">Mag-swipe pababa sa kahabaan ng kanang gilid</string>
+    <string name="title_pref_shortcut_edge_along_top_left">Mag-swipe pakaliwa sa kahabaan ng itaas na gilid</string>
+    <string name="title_pref_shortcut_edge_along_top_right">Mag-swipe pakanan sa kahabaan ng itaas na gilid</string>
+    <string name="title_pref_shortcut_edge_along_bottom_left">Mag-swipe pakaliwa sa kahabaan ng ibabang gilid</string>
+    <string name="title_pref_shortcut_edge_along_bottom_right">Mag-swipe pakanan sa kahabaan ng ibabang gilid</string>
+    <string name="title_pref_shortcut_back_tap_double">Mag-double tap sa likod</string>
+    <string name="title_pref_shortcut_back_tap_triple">Mag-triple tap sa likod</string>
+    <string name="title_pref_back_tap_sensitivity">Sensitivity ng pag-tap sa likod</string>
+    <string name="title_pref_edge_zone_mm">Lapad ng gilid</string>
+    <string name="title_pref_edge_scroll_left">Mag-scroll gamit ang isang daliri sa kahabaan ng kaliwang gilid</string>
+    <string name="title_pref_edge_scroll_right">Mag-scroll gamit ang isang daliri sa kahabaan ng kanang gilid</string>
+    <string name="title_pref_edge_scroll_top">Mag-scroll gamit ang isang daliri sa kahabaan ng itaas na gilid</string>
+    <string name="title_pref_edge_scroll_bottom">Mag-scroll gamit ang isang daliri sa kahabaan ng ibabang gilid</string>
+    <string name="title_pref_edge_menu_left">Menu sa kaliwang gilid</string>
+    <string name="title_pref_edge_menu_right">Menu sa kanang gilid</string>
+    <string name="title_pref_edge_menu_left_switch">Gamitin ang kaliwang gilid bilang menu</string>
+    <string name="title_pref_edge_menu_right_switch">Gamitin ang kanang gilid bilang menu</string>
+    <string name="edge_menu_add_command">Magdagdag ng command</string>
+    <string name="edge_menu_change_command">Palitan ang command</string>
+    <string name="title_pref_text_entities">Mga pagkilos na nakita sa text</string>
+    <string name="text_entity_web">Mga web address</string>
+    <string name="text_entity_email">Mga email address</string>
+    <string name="text_entity_phone">Mga numero ng telepono</string>
+    <string name="text_entity_code">Mga code</string>
+    <string name="menu_item_call_number">Tawagan ang <xliff:g id="number" example="020 7946 0018">%1$s</xliff:g></string>
+    <string name="menu_item_copy_code">Kopyahin ang <xliff:g id="code" example="482916">%1$s</xliff:g></string>
+    <string name="title_pref_show_focus_indicator">Ipakita ang indicator ng focus</string>
+    <string name="title_pref_dictation_correction_prompt">Prompt sa pagwawasto</string>
+    <string name="title_pref_whisper_custom_model">File ng model</string>
+    <string name="whisper_custom_model_choose">Pumili ng file ng model ng whisper.cpp</string>
+    <string name="whisper_custom_model_replace">Pumili ng ibang file</string>
+    <string name="whisper_custom_model_not_whisper">Hindi file ng model ng whisper.cpp</string>
+    <string name="whisper_custom_model_copying">Kinokopya</string>
 </resources>

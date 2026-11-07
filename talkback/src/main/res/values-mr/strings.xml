@@ -1366,7 +1366,7 @@ SandFly सेटिंग्जमध्ये SandFly मेनू आणि �
     <string name="action_copy_command">कमांड कॉपी करा</string>
     <string name="command_copied">कमांड कॉपी केली</string>
     <string name="title_pref_speech_control">इतर ॲप्सना बोलू द्या</string>
-    <string name="summary_pref_speech_control">तुम्ही अनुमती देत असलेले ॲप्स तुमच्या SandFly आवाजात मजकूर बोलू शकतात. डिव्हाइस लॉक असताना काहीही सांगितले जात नाही.</string>
+    <string name="summary_pref_speech_control">तुम्ही अनुमती देत असलेले ॲप्स तुमच्या SandFly आवाजात मजकूर बोलू शकतात. डिव्हाइस लॉक असताना, फक्त तुम्ही लॉक असतानाही अनुमती दिलेले ॲप्स बोलू शकतात.</string>
     <string name="title_pref_speech_control_sound">इतर ॲप्स बोलण्यापूर्वी आवाज प्ले करा</string>
     <string name="speech_control_apps_category">ॲप्स</string>
     <string name="speech_control_no_apps">अद्याप कोणत्याही ॲप्सने बोलण्यास सांगितले नाही.</string>
@@ -1871,4 +1871,108 @@ SandFly सेटिंग्जमध्ये SandFly मेनू आणि �
   <string name="value_hold_to_cancel_3000">तीन सेकंद</string>
   <string name="title_pref_tap_to_activate">अ‍ॅक्टिव्हेट करण्यासाठी टॅप करा</string>
   <string name="summary_pref_tap_to_activate">बोटाखालील आयटम फोकस होण्यापूर्वी बोट उचलल्यास, टॅप केल्याने तो आयटम अ‍ॅक्टिव्हेट होतो.</string>
+    <string name="title_selector_ai_actions">एआय कृती</string>
+    <string name="ai_actions_hint">कृती निवडण्यासाठी वर किंवा खाली स्वाइप करा, नंतर ती चालवण्यासाठी दोनदा टॅप करा</string>
+    <string name="title_pref_ai_actions_included">समाविष्ट करायच्या एआय कृती</string>
+    <string name="title_speak_screen_description">स्क्रीनचे वर्णन बोला</string>
+    <string name="title_speak_image_description">इमेजचे वर्णन बोला</string>
+    <string name="title_ask_about_screen">स्क्रीनबद्दल विचारा</string>
+    <string name="title_ask_about_image">इमेजबद्दल विचारा</string>
+    <string name="ai_question_hint">प्रश्न</string>
+    <string name="ai_question_ask">विचारा</string>
+    <string name="shortcut_use_voice_profile">व्हॉइस प्रोफाइल <xliff:g id="name" example="English">%1$s</xliff:g> वापरा</string>
+    <string name="title_pref_keep_previous_voice_engine">मागील व्हॉइस प्रोफाइलचे इंजिन सुरू ठेवा</string>
+    <string name="title_pref_voice_profile_keep_engine_started">इंजिन सुरू ठेवा</string>
+    <string name="title_pref_speech_equalizer">इक्वलायझर</string>
+    <string name="title_pref_speech_equalizer_preset">प्रीसेट</string>
+    <string name="title_pref_speech_equalizer_on">इक्वलायझर वापरा</string>
+    <string name="speech_equalizer_off">बंद</string>
+    <string name="speech_equalizer_turned_on">इक्वलायझर सुरू केले</string>
+    <string name="speech_equalizer_turned_off">इक्वलायझर बंद केले</string>
+    <string name="title_selector_equalizer_32">इक्वलायझर 32 Hz</string>
+    <string name="title_selector_equalizer_64">इक्वलायझर 64 Hz</string>
+    <string name="title_selector_equalizer_125">इक्वलायझर 125 Hz</string>
+    <string name="title_selector_equalizer_250">इक्वलायझर 250 Hz</string>
+    <string name="title_selector_equalizer_500">इक्वलायझर 500 Hz</string>
+    <string name="title_selector_equalizer_1k">इक्वलायझर 1 kHz</string>
+    <string name="title_selector_equalizer_2k">इक्वलायझर 2 kHz</string>
+    <string name="title_selector_equalizer_3k">इक्वलायझर 3 kHz</string>
+    <string name="title_selector_equalizer_4k">इक्वलायझर 4 kHz</string>
+    <string name="title_selector_equalizer_6k">इक्वलायझर 6 kHz</string>
+    <string name="title_selector_equalizer_8k">इक्वलायझर 8 kHz</string>
+    <string name="title_selector_equalizer_16k">इक्वलायझर 16 kHz</string>
+    <string name="summary_speech_equalizer_needs_low_latency">ऑडिओ आउटपुट &gt; कमी विलंब ऑडिओ आवश्यक आहे</string>
+    <string name="speech_equalizer_flat">फ्लॅट</string>
+    <string name="speech_equalizer_clarity">स्पष्टता</string>
+    <string name="speech_equalizer_bass_boost">बेस बूस्ट</string>
+    <string name="speech_equalizer_bass_cut">बेस कट</string>
+    <string name="speech_equalizer_treble_boost">ट्रेबल बूस्ट</string>
+    <string name="speech_equalizer_treble_cut">ट्रेबल कट</string>
+    <string name="speech_equalizer_warm">वॉर्म</string>
+    <string name="speech_equalizer_reduce_harshness">कर्कशपणा कमी करा</string>
+    <string name="speech_equalizer_reduce_sibilance">सिबिलन्स कमी करा</string>
+    <string name="speech_equalizer_small_speaker">लहान स्पीकर</string>
+    <string name="speech_equalizer_custom">कस्टम</string>
+    <string name="speech_equalizer_band_hz"><xliff:g id="frequency">%1$s</xliff:g> Hz</string>
+    <string name="speech_equalizer_band_khz"><xliff:g id="frequency">%1$s</xliff:g> kHz</string>
+    <string name="speech_equalizer_gain_db"><xliff:g id="gain">%1$s</xliff:g> dB</string>
+    <string name="title_pref_braille_dictionary">ब्रेल शब्दकोश</string>
+    <string name="braille_dictionary_not_shown"><xliff:g id="text" example="#">%1$s</xliff:g> दाखवले जात नाही</string>
+    <string name="title_pref_announce_full_charge">पूर्ण चार्ज झाल्यावर सांगा</string>
+    <string name="battery_fully_charged">बॅटरी पूर्ण चार्ज झाली</string>
+    <string name="speech_control_locked_app">डिव्हाइस लॉक असताना <xliff:g id="app" example="Tasker">%1$s</xliff:g></string>
+    <string name="speech_control_ask_locked_title">डिव्हाइस लॉक असताना <xliff:g id="app" example="Tasker">%1$s</xliff:g> ला SandFly द्वारे बोलण्याची अनुमती द्यायची आहे का?</string>
+    <string name="speech_control_ask_locked_text">हे डिव्हाइस लॉक असताना तुमच्या SandFly आवाजात मजकूर बोलू शकते. अनुमती देण्यासाठी डिव्हाइस अनलॉक असणे आवश्यक आहे. तुम्ही हे “सेटिंग्ज”, “स्पीच”, “इतर ॲप्सना बोलू द्या” मध्ये बदलू शकता.</string>
+    <string name="permission_speak_when_locked_label">डिव्हाइस लॉक असताना SandFly द्वारे बोलणे</string>
+    <string name="permission_speak_when_locked_description">डिव्हाइस लॉक असताना तुमच्या SandFly आवाजात मजकूर बोलण्यासाठी ॲपला विचारू देते. ते बोलण्यापूर्वी SandFly तुम्हाला स्वतंत्रपणे विचारते.</string>
+    <string name="title_pref_category_back_tap">डिव्हाइसच्या मागे टॅप</string>
+    <string name="title_pref_keep_speech_off_casts">कास्ट करताना स्पीच फोनवरच ठेवा</string>
+    <string name="title_pref_app_shortcuts">ॲप शॉर्टकट</string>
+    <string name="app_shortcut_label"><xliff:g id="app_name" example="Amazon">%1$s</xliff:g>: <xliff:g id="shortcut" example="Cart">%2$s</xliff:g></string>
+    <string name="title_pref_add_app_shortcut">ॲप शॉर्टकट जोडा</string>
+    <string name="app_shortcut_no_apps">कोणत्याही ॲपमध्ये जोडण्यासाठी शॉर्टकट नाहीत</string>
+    <string name="app_shortcut_not_added">कोणताही शॉर्टकट जोडला नाही</string>
+    <string name="app_shortcut_added"><xliff:g id="name" example="MacroDroid: Morning">%1$s</xliff:g> जोडले</string>
+    <string name="app_shortcut_not_opened">ॲप शॉर्टकट उघडता आला नाही</string>
+    <string name="app_search_no_apps">कोणतीही ॲप्स नाहीत</string>
+    <string name="shortcut_toggle_color_inversion">रंग उलटा सुरू किंवा बंद करा</string>
+    <string name="color_inversion_turned_on">रंग उलटा सुरू केले</string>
+    <string name="color_inversion_turned_off">रंग उलटा बंद केले</string>
+    <string name="shortcut_dictate_or_media_control">बोलून लिहा, मीडिया प्ले करा किंवा थांबवा</string>
+    <string name="title_pref_shortcut_edge_along_left_up">डाव्या काठाने वर स्वाइप करा</string>
+    <string name="title_pref_shortcut_edge_along_left_down">डाव्या काठाने खाली स्वाइप करा</string>
+    <string name="title_pref_shortcut_edge_along_right_up">उजव्या काठाने वर स्वाइप करा</string>
+    <string name="title_pref_shortcut_edge_along_right_down">उजव्या काठाने खाली स्वाइप करा</string>
+    <string name="title_pref_shortcut_edge_along_top_left">वरच्या काठाने डावीकडे स्वाइप करा</string>
+    <string name="title_pref_shortcut_edge_along_top_right">वरच्या काठाने उजवीकडे स्वाइप करा</string>
+    <string name="title_pref_shortcut_edge_along_bottom_left">खालच्या काठाने डावीकडे स्वाइप करा</string>
+    <string name="title_pref_shortcut_edge_along_bottom_right">खालच्या काठाने उजवीकडे स्वाइप करा</string>
+    <string name="title_pref_shortcut_back_tap_double">डिव्हाइसच्या मागे दोनदा टॅप करा</string>
+    <string name="title_pref_shortcut_back_tap_triple">डिव्हाइसच्या मागे तीनदा टॅप करा</string>
+    <string name="title_pref_back_tap_sensitivity">मागे टॅपची संवेदनशीलता</string>
+    <string name="title_pref_edge_zone_mm">काठाची रुंदी</string>
+    <string name="title_pref_edge_scroll_left">डाव्या काठाने एका बोटाने स्क्रोल करा</string>
+    <string name="title_pref_edge_scroll_right">उजव्या काठाने एका बोटाने स्क्रोल करा</string>
+    <string name="title_pref_edge_scroll_top">वरच्या काठाने एका बोटाने स्क्रोल करा</string>
+    <string name="title_pref_edge_scroll_bottom">खालच्या काठाने एका बोटाने स्क्रोल करा</string>
+    <string name="title_pref_edge_menu_left">डाव्या काठाचा मेनू</string>
+    <string name="title_pref_edge_menu_right">उजव्या काठाचा मेनू</string>
+    <string name="title_pref_edge_menu_left_switch">डावा काठ मेनू म्हणून वापरा</string>
+    <string name="title_pref_edge_menu_right_switch">उजवा काठ मेनू म्हणून वापरा</string>
+    <string name="edge_menu_add_command">कमांड जोडा</string>
+    <string name="edge_menu_change_command">कमांड बदला</string>
+    <string name="title_pref_text_entities">मजकुरात सापडलेल्या कृती</string>
+    <string name="text_entity_web">वेब पत्ते</string>
+    <string name="text_entity_email">ईमेल पत्ते</string>
+    <string name="text_entity_phone">फोन नंबर</string>
+    <string name="text_entity_code">कोड</string>
+    <string name="menu_item_call_number"><xliff:g id="number" example="020 7946 0018">%1$s</xliff:g> ला कॉल करा</string>
+    <string name="menu_item_copy_code"><xliff:g id="code" example="482916">%1$s</xliff:g> कॉपी करा</string>
+    <string name="title_pref_show_focus_indicator">फोकस इंडिकेटर दाखवा</string>
+    <string name="title_pref_dictation_correction_prompt">दुरुस्ती प्रॉम्प्ट</string>
+    <string name="title_pref_whisper_custom_model">मॉडेल फाइल</string>
+    <string name="whisper_custom_model_choose">whisper.cpp मॉडेल फाइल निवडा</string>
+    <string name="whisper_custom_model_replace">दुसरी फाइल निवडा</string>
+    <string name="whisper_custom_model_not_whisper">whisper.cpp मॉडेल फाइल नाही</string>
+    <string name="whisper_custom_model_copying">कॉपी करत आहे</string>
 </resources>

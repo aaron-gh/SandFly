@@ -1363,7 +1363,7 @@
     <string name="action_copy_command">העתק פקודה</string>
     <string name="command_copied">הפקודה הועתקה</string>
     <string name="title_pref_speech_control">מתן אפשרות לאפליקציות אחרות לדבר</string>
-    <string name="summary_pref_speech_control">אפליקציות שקיבלו הרשאה יכולות להקריא טקסט בקול של SandFly. כשהמכשיר נעול, שום דבר לא מוקרא.</string>
+    <string name="summary_pref_speech_control">אפליקציות שקיבלו הרשאה יכולות להקריא טקסט בקול של SandFly. כשהמכשיר נעול, רק אפליקציות שקיבלו הרשאה גם במצב נעילה יכולות לדבר.</string>
     <string name="title_pref_speech_control_sound">השמעת צליל לפני שאפליקציות אחרות מדברות</string>
     <string name="speech_control_apps_category">אפליקציות</string>
     <string name="speech_control_no_apps">אף אפליקציה לא ביקשה לדבר עדיין.</string>
@@ -1872,4 +1872,108 @@
   <string name="value_hold_to_cancel_3000">3 שניות</string>
   <string name="title_pref_tap_to_activate">הפעלה בהקשה</string>
   <string name="summary_pref_tap_to_activate">הקשה שבה האצבע מורמת לפני שהפריט שמתחתיה נכנס למיקוד מפעילה את הפריט.</string>
+    <string name="title_selector_ai_actions">פעולות AI</string>
+    <string name="ai_actions_hint">מחליקים למעלה או למטה כדי לבחור פעולה, ואז לוחצים לחיצה כפולה כדי להפעיל אותה</string>
+    <string name="title_pref_ai_actions_included">פעולות AI שייכללו</string>
+    <string name="title_speak_screen_description">הקראת תיאור המסך</string>
+    <string name="title_speak_image_description">הקראת תיאור התמונה</string>
+    <string name="title_ask_about_screen">שאלה על המסך</string>
+    <string name="title_ask_about_image">שאלה על התמונה</string>
+    <string name="ai_question_hint">שאלה</string>
+    <string name="ai_question_ask">שליחה</string>
+    <string name="shortcut_use_voice_profile">שימוש בפרופיל הקול <xliff:g id="name" example="English">%1$s</xliff:g></string>
+    <string name="title_pref_keep_previous_voice_engine">השארת המנוע של פרופיל הקול הקודם פועל</string>
+    <string name="title_pref_voice_profile_keep_engine_started">השארת המנוע פועל</string>
+    <string name="title_pref_speech_equalizer">אקולייזר</string>
+    <string name="title_pref_speech_equalizer_preset">הגדרה קבועה מראש</string>
+    <string name="title_pref_speech_equalizer_on">שימוש באקולייזר</string>
+    <string name="speech_equalizer_off">מושבת</string>
+    <string name="speech_equalizer_turned_on">האקולייזר מופעל</string>
+    <string name="speech_equalizer_turned_off">האקולייזר מושבת</string>
+    <string name="title_selector_equalizer_32">אקולייזר 32 הרץ</string>
+    <string name="title_selector_equalizer_64">אקולייזר 64 הרץ</string>
+    <string name="title_selector_equalizer_125">אקולייזר 125 הרץ</string>
+    <string name="title_selector_equalizer_250">אקולייזר 250 הרץ</string>
+    <string name="title_selector_equalizer_500">אקולייזר 500 הרץ</string>
+    <string name="title_selector_equalizer_1k">אקולייזר 1 קילוהרץ</string>
+    <string name="title_selector_equalizer_2k">אקולייזר 2 קילוהרץ</string>
+    <string name="title_selector_equalizer_3k">אקולייזר 3 קילוהרץ</string>
+    <string name="title_selector_equalizer_4k">אקולייזר 4 קילוהרץ</string>
+    <string name="title_selector_equalizer_6k">אקולייזר 6 קילוהרץ</string>
+    <string name="title_selector_equalizer_8k">אקולייזר 8 קילוהרץ</string>
+    <string name="title_selector_equalizer_16k">אקולייזר 16 קילוהרץ</string>
+    <string name="summary_speech_equalizer_needs_low_latency">נדרש: פלט אודיו &gt; אודיו עם אחזור נמוך</string>
+    <string name="speech_equalizer_flat">שטוח</string>
+    <string name="speech_equalizer_clarity">בהירות</string>
+    <string name="speech_equalizer_bass_boost">הגברת בסים</string>
+    <string name="speech_equalizer_bass_cut">הפחתת בסים</string>
+    <string name="speech_equalizer_treble_boost">הגברת טרבל</string>
+    <string name="speech_equalizer_treble_cut">הפחתת טרבל</string>
+    <string name="speech_equalizer_warm">חם</string>
+    <string name="speech_equalizer_reduce_harshness">הפחתת צרימה</string>
+    <string name="speech_equalizer_reduce_sibilance">הפחתת שריקות</string>
+    <string name="speech_equalizer_small_speaker">רמקול קטן</string>
+    <string name="speech_equalizer_custom">מותאם אישית</string>
+    <string name="speech_equalizer_band_hz"><xliff:g id="frequency">%1$s</xliff:g> הרץ</string>
+    <string name="speech_equalizer_band_khz"><xliff:g id="frequency">%1$s</xliff:g> קילוהרץ</string>
+    <string name="speech_equalizer_gain_db"><xliff:g id="gain">%1$s</xliff:g> דציבל</string>
+    <string name="title_pref_braille_dictionary">מילון ברייל</string>
+    <string name="braille_dictionary_not_shown"><xliff:g id="text" example="#">%1$s</xliff:g> לא מוצג</string>
+    <string name="title_pref_announce_full_charge">הכרזה על טעינה מלאה</string>
+    <string name="battery_fully_charged">הסוללה טעונה במלואה</string>
+    <string name="speech_control_locked_app"><xliff:g id="app" example="Tasker">%1$s</xliff:g> בזמן שהמכשיר נעול</string>
+    <string name="speech_control_ask_locked_title">לאשר ל-<xliff:g id="app" example="Tasker">%1$s</xliff:g> לדבר דרך SandFly בזמן שהמכשיר נעול?</string>
+    <string name="speech_control_ask_locked_text">האפליקציה תוכל להקריא טקסט בקול של SandFly בזמן שהמכשיר נעול. כדי לאשר, צריך לבטל את נעילת המכשיר. אפשר לשנות את זה בהגדרות, דיבור, מתן אפשרות לאפליקציות אחרות לדבר.</string>
+    <string name="permission_speak_when_locked_label">דיבור דרך SandFly בזמן שהמכשיר נעול</string>
+    <string name="permission_speak_when_locked_description">מאפשרת לאפליקציה לבקש להקריא טקסט בקול של SandFly בזמן שהמכשיר נעול. לפני כן מוצגת בקשת אישור נפרדת מ-SandFly.</string>
+    <string name="title_pref_category_back_tap">לחיצה על גב המכשיר</string>
+    <string name="title_pref_keep_speech_off_casts">השארת הדיבור בטלפון בזמן העברת תוכן</string>
+    <string name="title_pref_app_shortcuts">קיצורי דרך של אפליקציות</string>
+    <string name="app_shortcut_label"><xliff:g id="app_name" example="Amazon">%1$s</xliff:g>: <xliff:g id="shortcut" example="Cart">%2$s</xliff:g></string>
+    <string name="title_pref_add_app_shortcut">הוספת קיצור דרך של אפליקציה</string>
+    <string name="app_shortcut_no_apps">אין אפליקציות עם קיצורי דרך להוספה</string>
+    <string name="app_shortcut_not_added">לא נוסף קיצור דרך</string>
+    <string name="app_shortcut_added">נוסף <xliff:g id="name" example="MacroDroid: Morning">%1$s</xliff:g></string>
+    <string name="app_shortcut_not_opened">לא ניתן היה לפתוח את קיצור הדרך של האפליקציה</string>
+    <string name="app_search_no_apps">אין אפליקציות</string>
+    <string name="shortcut_toggle_color_inversion">הפעלה או השבתה של היפוך הצבע</string>
+    <string name="color_inversion_turned_on">היפוך הצבע מופעל</string>
+    <string name="color_inversion_turned_off">היפוך הצבע מושבת</string>
+    <string name="shortcut_dictate_or_media_control">הכתבה, הפעלה או השהיה של מדיה</string>
+    <string name="title_pref_shortcut_edge_along_left_up">החלקה למעלה לאורך הקצה השמאלי</string>
+    <string name="title_pref_shortcut_edge_along_left_down">החלקה למטה לאורך הקצה השמאלי</string>
+    <string name="title_pref_shortcut_edge_along_right_up">החלקה למעלה לאורך הקצה הימני</string>
+    <string name="title_pref_shortcut_edge_along_right_down">החלקה למטה לאורך הקצה הימני</string>
+    <string name="title_pref_shortcut_edge_along_top_left">החלקה שמאלה לאורך הקצה העליון</string>
+    <string name="title_pref_shortcut_edge_along_top_right">החלקה ימינה לאורך הקצה העליון</string>
+    <string name="title_pref_shortcut_edge_along_bottom_left">החלקה שמאלה לאורך הקצה התחתון</string>
+    <string name="title_pref_shortcut_edge_along_bottom_right">החלקה ימינה לאורך הקצה התחתון</string>
+    <string name="title_pref_shortcut_back_tap_double">לחיצה כפולה על גב המכשיר</string>
+    <string name="title_pref_shortcut_back_tap_triple">לחיצה שלוש פעמים על גב המכשיר</string>
+    <string name="title_pref_back_tap_sensitivity">רגישות הלחיצה על גב המכשיר</string>
+    <string name="title_pref_edge_zone_mm">רוחב הקצה</string>
+    <string name="title_pref_edge_scroll_left">גלילה באצבע אחת לאורך הקצה השמאלי</string>
+    <string name="title_pref_edge_scroll_right">גלילה באצבע אחת לאורך הקצה הימני</string>
+    <string name="title_pref_edge_scroll_top">גלילה באצבע אחת לאורך הקצה העליון</string>
+    <string name="title_pref_edge_scroll_bottom">גלילה באצבע אחת לאורך הקצה התחתון</string>
+    <string name="title_pref_edge_menu_left">תפריט הקצה השמאלי</string>
+    <string name="title_pref_edge_menu_right">תפריט הקצה הימני</string>
+    <string name="title_pref_edge_menu_left_switch">שימוש בקצה השמאלי כתפריט</string>
+    <string name="title_pref_edge_menu_right_switch">שימוש בקצה הימני כתפריט</string>
+    <string name="edge_menu_add_command">הוספת פקודה</string>
+    <string name="edge_menu_change_command">החלפת הפקודה</string>
+    <string name="title_pref_text_entities">פעולות שנמצאו בטקסט</string>
+    <string name="text_entity_web">כתובות אינטרנט</string>
+    <string name="text_entity_email">כתובות אימייל</string>
+    <string name="text_entity_phone">מספרי טלפון</string>
+    <string name="text_entity_code">קודים</string>
+    <string name="menu_item_call_number">התקשרות אל <xliff:g id="number" example="020 7946 0018">%1$s</xliff:g></string>
+    <string name="menu_item_copy_code">העתקת <xliff:g id="code" example="482916">%1$s</xliff:g></string>
+    <string name="title_pref_show_focus_indicator">הצגת מחוון המיקוד</string>
+    <string name="title_pref_dictation_correction_prompt">הנחיית התיקון</string>
+    <string name="title_pref_whisper_custom_model">קובץ מודל</string>
+    <string name="whisper_custom_model_choose">בחירת קובץ מודל של whisper.cpp</string>
+    <string name="whisper_custom_model_replace">בחירת קובץ אחר</string>
+    <string name="whisper_custom_model_not_whisper">זה לא קובץ מודל של whisper.cpp</string>
+    <string name="whisper_custom_model_copying">מתבצעת העתקה</string>
 </resources>
