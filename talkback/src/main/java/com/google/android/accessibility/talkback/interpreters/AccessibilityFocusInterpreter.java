@@ -732,11 +732,13 @@ public class AccessibilityFocusInterpreter
    * does, under the same setting. An app's announcement that arrives between the touch reaching the
    * item and its focus event, such as a live region updated by the previous touch, starts after the
    * touch stopped speech. It is spoken so that new speech can't interrupt it, and the item would
-   * wait for it.
+   * wait for it. A keyboard key is spoken from its hover event, just before its focus event, and
+   * that speech is left playing.
    */
   @Override
   public void beforeFocusSpoken(AccessibilityFocusEventInterpretation interpretation) {
     if (interpretation.getIsTouchExploration()
+        && !interpretation.isEqualsToLastHoverEnterKeyboardEventNode()
         && actorState != null
         && actorState.getSpeechState().isSpeaking()) {
       pipelineInterpretations.input(
