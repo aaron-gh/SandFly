@@ -768,6 +768,8 @@
     Description: The user can check or not check this. [CHAR LIMIT=40]
   -->
     <string name="pref_speak_roles_title">Speak item type</string>
+    <!-- Switch: the item's name and type, such as Back button, are spoken without a comma between them. [CHAR_LIMIT=NONE] -->
+    <string name="pref_speak_role_without_pause_title">Speak item type without a pause</string>
     <!--
       Source: Summary subtext for preference to speak roles of elements.
       Description: Explains that TalkBack will speak the element type of a focused item. [CHAR LIMIT=NONE]

@@ -67,6 +67,28 @@ public class RoleDescriptionExtractor {
       CharSequence name,
       CharSequence role,
       CharSequence state) {
+    if (CompositorUtils.isRoleWithoutPause()
+        && !TextUtils.isEmpty(name)
+        && !TextUtils.isEmpty(role)
+        && !TextUtils.equals(name, role)) {
+      CharSequence nameRole = TextUtils.concat(name, " ", role);
+      CharSequence roleName = TextUtils.concat(role, " ", name);
+      switch (descriptionOrder) {
+        case DESC_ORDER_NAME_ROLE_STATE_POSITION -> {
+          return CompositorUtils.dedupJoin(nameRole, state, "");
+        }
+        case DESC_ORDER_ROLE_NAME_STATE_POSITION -> {
+          return CompositorUtils.dedupJoin(roleName, state, "");
+        }
+        case DESC_ORDER_STATE_NAME_ROLE_POSITION -> {
+          return CompositorUtils.dedupJoin(state, nameRole, "");
+        }
+        case DESC_ORDER_STATE_ROLE_NAME_POSITION -> {
+          return CompositorUtils.dedupJoin(state, roleName, "");
+        }
+        default -> {}
+      }
+    }
     return switch (descriptionOrder) {
       case DESC_ORDER_NAME_ROLE_STATE_POSITION -> CompositorUtils.dedupJoin(name, role, state);
       case DESC_ORDER_ROLE_NAME_STATE_POSITION -> CompositorUtils.dedupJoin(role, name, state);

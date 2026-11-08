@@ -4351,6 +4351,12 @@ public class TalkBackService extends AccessibilityServiceCompat
               res.getString(R.string.pref_speak_roles_key),
               res.getBoolean(R.bool.pref_speak_roles_default));
       globalVariables.setSpeakRoles(speakRoles);
+      CompositorUtils.setRoleWithoutPause(
+          SharedPreferencesUtils.getBooleanPref(
+              prefs,
+              res,
+              R.string.pref_speak_role_without_pause_key,
+              R.bool.pref_speak_role_without_pause_default));
 
       // Update preference: speak the window's name when focus moves into another window.
       globalVariables.setSpeakWindowNamesOnFocusMove(
