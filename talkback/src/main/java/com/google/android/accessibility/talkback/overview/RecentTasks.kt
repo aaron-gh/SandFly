@@ -69,6 +69,8 @@ object RecentTasks {
   private const val DIVIDER_WAIT_MS = 2_500L
   /** Split commands sent during a window transition can leave a task out of the split. */
   private const val TRANSITION_SETTLE_MS = 700L
+  /** The most columns the overview's setting offers. */
+  private const val MAX_COLUMNS = 4
   /** UIDs of one user, as in UserHandle.PER_USER_RANGE. */
   private const val PER_USER_RANGE = 100_000
 
@@ -90,6 +92,16 @@ object RecentTasks {
       R.string.pref_overview_newest_last_key,
       R.bool.pref_overview_newest_last_default,
     )
+
+  /** The number of columns of the overview: 1 is a list, more is a grid. */
+  fun columns(context: Context): Int =
+    SharedPreferencesUtils.getIntFromStringPref(
+        SharedPreferencesUtils.getSharedPreferences(context),
+        context.resources,
+        R.string.pref_overview_columns_key,
+        R.string.pref_overview_columns_default,
+      )
+      .coerceIn(1, MAX_COLUMNS)
 
   /** Whether the tasks can be read now: Shizuku runs and allows SandFly. */
   @JvmStatic fun isAvailable(context: Context): Boolean = ShizukuShell.isAvailable(context) && ShizukuShell.isAllowed()

@@ -70,6 +70,15 @@
     <string name="pref_quick_settings_key">pref_quick_settings</string>
     <string name="pref_overview_key">pref_overview</string>
     <string name="pref_overview_newest_last_key">pref_overview_newest_last</string>
+    <string name="pref_overview_columns_key">pref_overview_columns</string>
+    <string name="pref_overview_columns_default">1</string>
+    <!-- Column counts for SandFly's overview: the entries are the numbers themselves. -->
+    <string-array name="pref_overview_columns_values" translatable="false">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
     <string name="pref_quick_settings_items_key">pref_quick_settings_items_screen</string>
     <string name="pref_speech_rate_key">pref_rate_volume</string>
     <string name="pref_speech_rate_seekbar_key_int">pref_speech_rate_seekbar_key_int</string>
