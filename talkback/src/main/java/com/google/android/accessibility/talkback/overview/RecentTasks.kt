@@ -82,6 +82,15 @@ object RecentTasks {
       R.bool.pref_overview_default,
     )
 
+  /** Whether the overview lists the most recent task last. */
+  fun isNewestLast(context: Context): Boolean =
+    SharedPreferencesUtils.getBooleanPref(
+      SharedPreferencesUtils.getSharedPreferences(context),
+      context.resources,
+      R.string.pref_overview_newest_last_key,
+      R.bool.pref_overview_newest_last_default,
+    )
+
   /** Whether the tasks can be read now: Shizuku runs and allows SandFly. */
   @JvmStatic fun isAvailable(context: Context): Boolean = ShizukuShell.isAvailable(context) && ShizukuShell.isAllowed()
 
