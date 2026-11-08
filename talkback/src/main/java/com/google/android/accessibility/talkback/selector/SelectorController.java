@@ -817,6 +817,8 @@ public class SelectorController implements UserInputEventListener {
       };
 
   private Setting settingToRestore;
+  // Whether focus switched the reading control to Actions, rather than the user choosing it.
+  private boolean actionsSwitchedAutomatically;
 
   private @Nullable String scriptControlKey;
   // Whether double-tap toggles the chosen live recognition mode or runs the chosen AI action.
@@ -1304,6 +1306,7 @@ public class SelectorController implements UserInputEventListener {
   private void setCurrentSetting(
       EventId eventId, Setting newSetting, AnnounceType announceType, boolean showOverlay) {
     scriptControlKey = null;
+    actionsSwitchedAutomatically = false;
     Setting previousSetting = getCurrentSetting(context, prefs);
     updateSettingPref(context, newSetting);
     DescriptionAndHint descriptionAndHint = getSettingActionDescriptionAndHint(newSetting, eventId);
@@ -1520,8 +1523,13 @@ public class SelectorController implements UserInputEventListener {
             newSetting,
             /* announceType= */ AnnounceType.SILENCE,
             /* showOverlay= */ false);
+        actionsSwitchedAutomatically = newSetting == ACTIONS;
         return;
       }
+    }
+    if (leavesActionsOnWebPage(currentSetting, AccessibilityNodeInfoCompat.wrap(nodeInfo))) {
+      restoreSetting();
+      return;
     }
     if (isContextualSettingNotSupported(
         currentSetting, AccessibilityNodeInfoCompat.wrap(nodeInfo))) {
@@ -1538,6 +1546,21 @@ public class SelectorController implements UserInputEventListener {
     if (autoSwitch && TextEntityMenu.isClassifying()) {
       classifyingNode = nodeInfo;
     }
+  }
+
+  /**
+   * Whether focus moved from the item that switched the reading control to Actions to an item on a
+   * web page that wouldn't switch to it, such as text with links. On web pages, Actions is then
+   * left even where it lists something.
+   */
+  private boolean leavesActionsOnWebPage(Setting currentSetting, AccessibilityNodeInfoCompat node) {
+    if (currentSetting != ACTIONS
+        || !actionsSwitchedAutomatically
+        || !WebInterfaceUtils.isWebContainer(node)) {
+      return false;
+    }
+    Optional<ContextualSetting> actions = findContextualSetting(ACTIONS);
+    return actions.isPresent() && !actions.get().shouldActivateSetting(context, node);
   }
 
   /** Matches the reading control again to the focused item once its text is classified. */
@@ -3264,9 +3287,18 @@ public class SelectorController implements UserInputEventListener {
     if (node != null) {
       List<ContextMenuItem> menuItems = new ArrayList<>();
       int currentActionIndex = populateActionItemsForNode(node, menuItems);
-      // This could happen when the accessibility focused node changed.
       int actionSize = menuItems.size();
       if (actionSize == 0) {
+        // Actions stayed on an item without actions, such as while the text classifier ran or
+        // after focus moved without the reading control being matched. The swipe uses the reading
+        // control that Actions replaced automatically.
+        if (settingToRestore != null
+            && settingToRestore != ACTIONS
+            && allowedSetting(settingToRestore)) {
+          restoreSetting();
+          adjustSelectedSetting(eventId, isNext);
+          return;
+        }
         announceSetting(
             eventId, context.getString(R.string.no_action_available), getSelectSettingGestures());
         return;

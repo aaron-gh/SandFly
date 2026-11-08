@@ -31,6 +31,7 @@ import com.google.android.accessibility.talkback.menurules.TextEntityMenu;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.Role;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
+import com.google.android.accessibility.utils.WebInterfaceUtils;
 import java.util.List;
 
 /**
@@ -71,18 +72,31 @@ public class ActionsSetting implements SelectorController.ContextualSetting {
       return false;
     }
 
+    boolean selectableText = AccessibilityNodeInfoUtils.isNonEditableSelectableText(node);
+    if (WebInterfaceUtils.isWebContainer(node)) {
+      // Text on web pages keeps it, as in TalkBack. Other web items switch for their own actions
+      // only: not for addresses or codes found in their text, or for actions of the page or of
+      // the browser's views around it.
+      return !selectableText
+          && hasOtherThanEditingOptions(
+              nodeMenuCreator.getNodeMenuByRule(
+                  MenuRules.RULE_CUSTOM_ACTION, context, node, /* includeAncestors= */ false));
+    }
     List<ContextMenuItem> actions = actionsOf(context, node);
-    // Selectable text, such as text on web pages, keeps it too where its only actions are editing
-    // options.
-    if (AccessibilityNodeInfoUtils.isNonEditableSelectableText(node)) {
-      for (ContextMenuItem action : actions) {
-        if (!isEditingOption(action)) {
-          return true;
-        }
-      }
-      return false;
+    // Other selectable text keeps it where its only actions are editing options.
+    if (selectableText) {
+      return hasOtherThanEditingOptions(actions);
     }
     return !actions.isEmpty();
+  }
+
+  private static boolean hasOtherThanEditingOptions(List<ContextMenuItem> actions) {
+    for (ContextMenuItem action : actions) {
+      if (!isEditingOption(action)) {
+        return true;
+      }
+    }
+    return false;
   }
 
   private static boolean isSettingEnabled(Context context) {
