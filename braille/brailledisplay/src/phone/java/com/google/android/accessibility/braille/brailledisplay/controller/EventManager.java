@@ -353,7 +353,9 @@ public class EventManager implements EventConsumer {
   private boolean isAnnouncement(AccessibilityEvent event) {
     if ((event.getEventType() & ANNOUNCEMENT_EVENT_MASK) != 0) {
       if ((event.getEventType() & TYPE_WINDOW_CONTENT_CHANGED) != 0) {
-        return SnackbarParser.isAlert(AccessibilityEventUtils.sourceCompat(event));
+        AccessibilityNodeInfoCompat source = AccessibilityEventUtils.sourceCompat(event);
+        return SnackbarParser.isAlert(source)
+            || SystemEventConsumer.liveRegionOf(event, source) != null;
       }
       return true;
     }
