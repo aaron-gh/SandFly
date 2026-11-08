@@ -87,6 +87,16 @@ internal class ContinuousRecognition(
         )
       }
     }
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+      // One listening session with results for each part, so that a recognizer that supports it
+      // doesn't play its start sound again after each pause. Others end after a pause as before.
+      intent
+        .putExtra(
+          RecognizerIntent.EXTRA_SEGMENTED_SESSION,
+          RecognizerIntent.EXTRA_SPEECH_INPUT_MINIMUM_LENGTH_MILLIS,
+        )
+        .putExtra(RecognizerIntent.EXTRA_SPEECH_INPUT_MINIMUM_LENGTH_MILLIS, SESSION_MS)
+    }
     recognizer?.startListening(intent)
   }
 
@@ -134,6 +144,25 @@ internal class ContinuousRecognition(
       parts.add(text)
       onSpeech()
     }
+    if (stopping) finish() else listen()
+  }
+
+  override fun onSegmentResults(segmentResults: Bundle) {
+    val text =
+      segmentResults.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION)?.firstOrNull()?.trim()
+        ?: partial.trim()
+    partial = ""
+    errors = 0
+    if (text.isNotEmpty()) {
+      parts.add(text)
+      onSpeech()
+    }
+  }
+
+  override fun onEndOfSegmentedSession() {
+    if (finished) return
+    if (partial.isNotBlank()) parts.add(partial.trim())
+    partial = ""
     if (stopping) finish() else listen()
   }
 
@@ -193,6 +222,8 @@ internal class ContinuousRecognition(
   private companion object {
     const val TAG = "ContinuousRecognition"
     const val PAUSE_MS = 10_000L
+    // Longer than AudioCapture records, so that only stop() ends the session.
+    const val SESSION_MS = 60 * 60 * 1000L
     const val STOP_WAIT_MS = 5_000L
     const val RETRY_DELAY_MS = 300L
     const val MAX_ERRORS = 5
