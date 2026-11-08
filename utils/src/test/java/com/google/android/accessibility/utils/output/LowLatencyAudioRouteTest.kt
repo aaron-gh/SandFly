@@ -16,6 +16,7 @@
 
 package com.google.android.accessibility.utils.output
 
+import android.media.AudioDeviceInfo
 import android.media.AudioDeviceInfo.TYPE_BLUETOOTH_A2DP
 import android.media.AudioDeviceInfo.TYPE_BLUETOOTH_SCO
 import android.media.AudioDeviceInfo.TYPE_BUILTIN_EARPIECE
@@ -84,5 +85,22 @@ class LowLatencyAudioRouteTest {
   fun mediaOnEarpieceOrUnknown_leftAlone() {
     assertFalse(sendToMedia(MODE_NORMAL, TYPE_BUILTIN_EARPIECE, null, TYPE_BUILTIN_EARPIECE, false))
     assertFalse(sendToMedia(MODE_NORMAL, TYPE_BUILTIN_EARPIECE, null, null, true))
+  }
+
+  @Test
+  fun playsOnCast_whenAccessibilityAudioOrTheTrackIsOnAWifiDisplay() {
+    assertTrue(LowLatencyAudio.playsOnCast(AudioDeviceInfo.TYPE_REMOTE_SUBMIX, null))
+    assertTrue(
+      LowLatencyAudio.playsOnCast(
+        AudioDeviceInfo.TYPE_BUILTIN_SPEAKER,
+        AudioDeviceInfo.TYPE_REMOTE_SUBMIX,
+      )
+    )
+    assertFalse(
+      LowLatencyAudio.playsOnCast(
+        AudioDeviceInfo.TYPE_BUILTIN_SPEAKER,
+        AudioDeviceInfo.TYPE_BUILTIN_SPEAKER,
+      )
+    )
   }
 }
