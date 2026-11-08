@@ -29,6 +29,7 @@ import android.os.Messenger
 import android.os.RemoteException
 import android.util.Log
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.talkback.dictation.ModelRetention
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import java.io.File
 import java.io.IOException
@@ -113,6 +114,7 @@ class RemoteLocalLlm(
       request.replyTo = replies
       request.data.apply {
         putString(LocalModelService.KEY_MODEL_PATH, modelFile.path)
+        putLong(LocalModelService.KEY_IDLE_UNLOAD_MS, ModelRetention.onDeviceIdleMs(prefs))
         putString(LocalModelService.KEY_PROCESSOR, processor.id)
         putInt(
           LocalModelService.KEY_MAX_TOKENS,
@@ -144,7 +146,7 @@ class RemoteLocalLlm(
       pending.remove(id)
       currentId = 0
       imageFile?.delete()
-      main.postDelayed(unbindIdle, IDLE_UNBIND_MS)
+      main.postDelayed(unbindIdle, ModelRetention.onDeviceIdleMs(prefs) + IDLE_UNBIND_MARGIN_MS)
     }
   }
 
@@ -246,7 +248,7 @@ class RemoteLocalLlm(
     private const val MSG_STOPPED = -1
 
     /** A little longer than the service keeps an idle model loaded. */
-    private const val IDLE_UNBIND_MS = LiteRtLmLocalLlm.DEFAULT_IDLE_UNLOAD_MS + 10_000L
+    private const val IDLE_UNBIND_MARGIN_MS = 10_000L
 
     private val NEXT_ID = AtomicInteger(0)
   }

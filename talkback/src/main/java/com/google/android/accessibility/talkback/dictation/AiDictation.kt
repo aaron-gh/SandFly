@@ -384,10 +384,12 @@ class AiDictation(
     val model = WhisperModels.get(service).activeWhisper() ?: return null
     val whisper =
       WhisperEngines.transcriber(
+        service,
         model.file,
         DictationSettings.whisperOnGpu(prefs),
         installKey(),
         model.shortContext,
+        ModelRetention.keepLoadedMs(prefs),
       ) ?: return null
     transcriber = whisper
     try {

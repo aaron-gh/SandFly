@@ -143,8 +143,12 @@ class LocalModelService : Service() {
       OnDeviceAiSettings.Processor.entries.firstOrNull { it.id == data.getString(KEY_PROCESSOR) }
         ?: OnDeviceAiSettings.Processor.CPU
     val config = Config(file.path, file.lastModified(), processor, maxTokens)
+    val idleUnloadMs = data.getLong(KEY_IDLE_UNLOAD_MS, LiteRtLmLocalLlm.DEFAULT_IDLE_UNLOAD_MS)
     llm?.let {
-      if (config == llmConfig) return it
+      if (config == llmConfig) {
+        it.idleUnloadMs = idleUnloadMs
+        return it
+      }
       // Forget it before closing it, so that a cancel meanwhile does not go to it.
       llm = null
       llmConfig = null
@@ -163,6 +167,7 @@ class LocalModelService : Service() {
           null
         },
         maxTokens,
+        idleUnloadMs,
         beforeLoad = { if (checkMemory) checkFreeMemory(appContext, file.length()) },
       )
       .also {
@@ -214,6 +219,7 @@ class LocalModelService : Service() {
     const val MSG_FAILED = 6
 
     const val KEY_MODEL_PATH = "model_path"
+    const val KEY_IDLE_UNLOAD_MS = "idle_unload_ms"
     const val KEY_PROCESSOR = "processor"
     const val KEY_MAX_TOKENS = "max_tokens"
     const val KEY_PROMPT = "prompt"
