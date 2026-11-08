@@ -33,6 +33,7 @@ import com.google.android.accessibility.talkback.keyboard.TalkBackPhysicalKeyboa
 import com.google.android.accessibility.talkback.keyboard.TalkBackPhysicalKeyboardShortcut as Key
 import com.google.android.accessibility.talkback.recognition.LiveRecognition
 import com.google.android.accessibility.talkback.sandflyai.SandflyAi
+import com.google.android.accessibility.talkback.selector.ReadingControlLists
 import com.google.android.accessibility.talkback.speech.VoiceProfileNames
 import com.google.android.accessibility.talkback.utils.TalkbackFeatureSupport
 import com.google.android.accessibility.utils.FeatureSupport
@@ -174,6 +175,9 @@ object Commands {
     gestureProfileLabel(context, value)?.let {
       return Command(value, it, keyboardAction = null)
     }
+    readingControlListLabel(context, value)?.let {
+      return Command(value, it, keyboardAction = null)
+    }
     voiceProfileLabel(context, value)?.let {
       return Command(value, it, keyboardAction = null)
     }
@@ -213,6 +217,7 @@ object Commands {
       ?: AppShortcutActions.label(context, value)
       ?: AccessibilityShortcutActions.label(context, value)
       ?: gestureProfileLabel(context, value)
+      ?: readingControlListLabel(context, value)
       ?: voiceProfileLabel(context, value)
       ?: NavigationGestureActions.label(context, value)
       ?: keyboardActionOf(context, value)?.getDescription(context.resources)
@@ -232,6 +237,9 @@ object Commands {
     } else {
       null
     }
+
+  private fun readingControlListLabel(context: Context, value: String): String? =
+    ReadingControlLists.label(context, SharedPreferencesUtils.getSharedPreferences(context), value)
 
   private fun voiceProfileLabel(context: Context, value: String): String? =
     VoiceProfileNames.commandLabel(context, SharedPreferencesUtils.getSharedPreferences(context), value)
@@ -284,6 +292,7 @@ object Commands {
       developer()
       if (withApps) {
         gestureProfiles()
+        readingControlLists()
         voiceProfiles()
         openApp()
         appShortcuts()
@@ -990,6 +999,22 @@ object Commands {
               keyboardAction = null,
             )
           )
+        }
+      }
+
+    private fun readingControlLists() =
+      category(R.string.title_pref_reading_control_lists) {
+        val prefs = SharedPreferencesUtils.getSharedPreferences(context)
+        for (list in ReadingControlLists.read(prefs)) {
+          for (next in listOf(true, false)) {
+            commands.add(
+              Command(
+                ReadingControlLists.valueOf(list.id, next),
+                ReadingControlLists.commandLabel(context, list.name, next),
+                keyboardAction = null,
+              )
+            )
+          }
         }
       }
 

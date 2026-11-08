@@ -129,6 +129,7 @@ import com.google.android.accessibility.talkback.applauncher.BrailleAppLauncher;
 import com.google.android.accessibility.talkback.handwriting.HandwritingAppLauncher;
 import com.google.android.accessibility.talkback.handwriting.HandwritingCommand;
 import com.google.android.accessibility.talkback.sandflyai.SandflyAi;
+import com.google.android.accessibility.talkback.selector.ReadingControlLists;
 import com.google.android.accessibility.talkback.translation.TranslateCommand;
 import com.google.android.accessibility.talkback.selector.SelectorController;
 import com.google.android.accessibility.talkback.speech.VoiceProfileNames;
@@ -164,6 +165,7 @@ import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import com.google.common.collect.ImmutableMap;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
@@ -595,6 +597,14 @@ public class GestureController {
       selectorController.changeGestureProfile(eventId, /* isNext= */ false);
     } else if (action.equals(service.getString(R.string.shortcut_value_next_gesture_profile))) {
       selectorController.changeGestureProfile(eventId, /* isNext= */ true);
+    } else if (ReadingControlLists.isCommand(action)) {
+      List<String> controls =
+          ReadingControlLists.controls(
+              SharedPreferencesUtils.getSharedPreferences(service), ReadingControlLists.idOf(action));
+      result =
+          controls != null
+              && selectorController.selectInReadingControlList(
+                  eventId, controls, ReadingControlLists.isNext(action));
     } else if (GestureProfiles.isAction(action)) {
       result = selectorController.selectGestureProfile(eventId, GestureProfiles.idOf(action));
     } else if (VoiceProfileNames.isCommand(action)) {
