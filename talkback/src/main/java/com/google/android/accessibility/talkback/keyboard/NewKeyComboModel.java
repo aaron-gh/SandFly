@@ -1622,6 +1622,7 @@ public class NewKeyComboModel implements KeyComboModel {
     addKeyCombo(context.getString(R.string.keycombo_shortcut_recognize_screen_text));
     addKeyCombo(context.getString(R.string.keycombo_shortcut_toggle_pass_keys_to_app));
     addKeyCombo(context.getString(R.string.keycombo_shortcut_toggle_keyboard_input));
+    addKeyCombo(context.getString(R.string.keycombo_shortcut_split_screen));
   }
 
   /**

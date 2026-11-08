@@ -245,6 +245,7 @@ import com.google.android.accessibility.talkback.monitor.RingerModeAndScreenMoni
 import com.google.android.accessibility.talkback.monitor.VolumeMonitor;
 import com.google.android.accessibility.talkback.notificationlist.NotificationListService;
 import com.google.android.accessibility.talkback.overview.AppSwitcherKeys;
+import com.google.android.accessibility.talkback.overview.SplitScreen;
 import com.google.android.accessibility.talkback.notifications.NotificationReader;
 import com.google.android.accessibility.talkback.notifications.NotificationSettings;
 import com.google.android.accessibility.talkback.speechdictionary.BrailleDictionary;
@@ -890,6 +891,7 @@ public class TalkBackService extends AccessibilityServiceCompat
 
   /** Alt+Tab through SandFly's overview. */
   @Nullable private AppSwitcherKeys appSwitcherKeys;
+  @Nullable private SplitScreen splitScreen;
   @Nullable private BackTapCommands backTapCommands;
   // The strip at the bottom of the screen where lifting activates nothing with Lift to activate.
   @Nullable private LiftCancelStrip liftCancelStrip;
@@ -1046,6 +1048,11 @@ public class TalkBackService extends AccessibilityServiceCompat
     if (directTouchController != null) {
       directTouchController.shutdown();
       directTouchController = null;
+    }
+
+    if (splitScreen != null) {
+      splitScreen.shutdown();
+      splitScreen = null;
     }
 
     if (stuckTouchController != null) {
@@ -1258,6 +1265,9 @@ public class TalkBackService extends AccessibilityServiceCompat
     if (directTouchController != null) {
       directTouchController.onAccessibilityEvent(event);
     }
+    if (splitScreen != null) {
+      splitScreen.onAccessibilityEvent(event);
+    }
     if (stuckTouchController != null) {
       stuckTouchController.onAccessibilityEvent(event);
     }
@@ -1365,6 +1375,10 @@ public class TalkBackService extends AccessibilityServiceCompat
     for (ServiceStateListener listener : serviceStateListeners) {
       listener.onServiceStateChanged(newState);
     }
+  }
+
+  public @Nullable SplitScreen getSplitScreen() {
+    return splitScreen;
   }
 
   public ListMenuManager getListMenuManager() {
@@ -2831,6 +2845,7 @@ public class TalkBackService extends AccessibilityServiceCompat
             appSwitcherKeys.reset();
           }
         });
+    splitScreen = new SplitScreen(this);
     appSwitcherKeys =
         new AppSwitcherKeys(
             this,

@@ -729,7 +729,11 @@ public enum TalkBackPhysicalKeyboardShortcut {
   TOGGLE_KEYBOARD_INPUT(
       /* KEYBOARD_SHORTCUT_TOGGLE_KEYBOARD_INPUT */ 1034,
       R.string.keycombo_shortcut_toggle_keyboard_input,
-      R.string.keycombo_menu_toggle_keyboard_input);
+      R.string.keycombo_menu_toggle_keyboard_input),
+  SHOW_SPLIT_SCREEN(
+      /* KEYBOARD_SHORTCUT_SHOW_SPLIT_SCREEN */ 1035,
+      R.string.keycombo_shortcut_split_screen,
+      R.string.title_split_screen);
 
   private static Map<String, TalkBackPhysicalKeyboardShortcut> keyShortcutMap;
   private static Map<Integer, TalkBackPhysicalKeyboardShortcut> ordinalShortcutMap;

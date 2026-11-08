@@ -65,6 +65,7 @@ import static com.google.android.accessibility.talkback.contextmenu.ListMenuMana
 import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.CUSTOM_ACTION;
 import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.GESTURE_PROFILE;
 import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.LANGUAGE;
+import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.SPLIT_SCREEN;
 import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.VOICE_PROFILE;
 import static com.google.android.accessibility.talkback.trainingcommon.PageConfig.ANNOUNCE_REAL_ACTION;
 import static com.google.android.accessibility.talkback.trainingcommon.PageConfig.UNKNOWN_ANNOUNCEMENT;
@@ -574,6 +575,8 @@ public class GestureController {
       result = menuManager.showMenu(LANGUAGE, eventId);
     } else if (action.equals(service.getString(R.string.shortcut_value_voice_profiles))) {
       result = menuManager.showMenu(VOICE_PROFILE, eventId, R.string.no_voice_profiles);
+    } else if (action.equals(service.getString(R.string.shortcut_value_split_screen))) {
+      result = menuManager.showMenu(SPLIT_SCREEN, eventId, R.string.split_screen_not_active);
     } else if (action.equals(service.getString(R.string.shortcut_value_previous_voice_profile))) {
       selectorController.changeVoiceProfile(eventId, /* isNext= */ false);
     } else if (action.equals(service.getString(R.string.shortcut_value_next_voice_profile))) {

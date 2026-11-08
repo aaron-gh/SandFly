@@ -44,6 +44,7 @@ import static com.google.android.accessibility.talkback.actor.TalkBackUIActor.Ty
 import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.CONTEXT;
 import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.CUSTOM_ACTION;
 import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.LANGUAGE;
+import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.SPLIT_SCREEN;
 import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.VOICE_PROFILE;
 import static com.google.android.accessibility.talkback.selector.SelectorController.Setting.ACTIONS;
 import static com.google.android.accessibility.utils.input.CursorGranularity.CHARACTER;
@@ -665,6 +666,8 @@ public class KeyComboMapper {
       case SHOW_GLOBAL_CONTEXT_MENU -> result = menuManager.showMenu(CONTEXT, eventId);
       case SHOW_ACTIONS -> result = menuManager.showMenu(CUSTOM_ACTION, eventId);
       case SHOW_LANGUAGES_AVAILABLE -> result = menuManager.showMenu(LANGUAGE, eventId);
+      case SHOW_SPLIT_SCREEN ->
+          result = menuManager.showMenu(SPLIT_SCREEN, eventId, R.string.split_screen_not_active);
       case SHOW_VOICE_PROFILES ->
           result = menuManager.showMenu(VOICE_PROFILE, eventId, R.string.no_voice_profiles);
       case PREVIOUS_VOICE_PROFILE ->

@@ -5,8 +5,10 @@ import static android.accessibilityservice.AccessibilityService.GLOBAL_ACTION_AC
 import android.accessibilityservice.AccessibilityService;
 import android.view.accessibility.AccessibilityNodeInfo.AccessibilityAction;
 import com.google.android.accessibility.talkback.ActorStateWritable;
+import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.notificationlist.NotificationListActivity;
 import com.google.android.accessibility.talkback.overview.OverviewActivity;
+import com.google.android.accessibility.talkback.overview.SplitScreen;
 import com.google.android.accessibility.talkback.quicksettings.QuickSettingsActivity;
 import com.google.android.accessibility.utils.FeatureSupport;
 import com.google.common.collect.ImmutableList;
@@ -79,6 +81,13 @@ public final class SystemActionPerformer {
   public boolean performAction(int id) {
     if (actorState != null) {
       actorState.setLastSystemAction(id);
+    }
+    if (id == AccessibilityService.GLOBAL_ACTION_BACK && service instanceof TalkBackService) {
+      SplitScreen splitScreen = ((TalkBackService) service).getSplitScreen();
+      if (splitScreen != null
+          && splitScreen.runInLastFocusedApp(() -> service.performGlobalAction(id))) {
+        return true;
+      }
     }
     if (id == GLOBAL_ACTION_SYSTEM_NOTIFICATIONS) {
       return service.performGlobalAction(AccessibilityService.GLOBAL_ACTION_NOTIFICATIONS);
