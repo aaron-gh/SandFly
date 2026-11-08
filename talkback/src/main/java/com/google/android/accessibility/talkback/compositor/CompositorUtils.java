@@ -47,11 +47,21 @@ public final class CompositorUtils {
   private static final String SEPARATOR_COMMA = ", ";
   private static final String SEPARATOR_PERIOD = ". ";
   private static String separator = SEPARATOR_COMMA;
+  private static boolean roleWithoutPause = false;
 
   private CompositorUtils() {}
 
   public static String getSeparator() {
     return separator;
+  }
+
+  /** Sets whether an item's name and role are joined by a space instead of the separator. */
+  public static void setRoleWithoutPause(boolean value) {
+    roleWithoutPause = value;
+  }
+
+  public static boolean isRoleWithoutPause() {
+    return roleWithoutPause;
   }
 
   public static void usePeriodAsSeparator() {
