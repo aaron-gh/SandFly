@@ -16,6 +16,14 @@
     <string name="live_recognition_doors">Door detection</string>
     <!-- Live recognition mode that speaks the light level from the light sensor. [CHAR_LIMIT=NONE] -->
     <string name="live_recognition_light">Light level</string>
+    <!-- Command that takes a picture with the camera and describes it, and the title of its screen. [CHAR_LIMIT=NONE] -->
+    <string name="title_take_picture_and_describe">Take picture and describe</string>
+    <!-- Description of the picture on the Take picture and describe screen. [CHAR_LIMIT=NONE] -->
+    <string name="picture_description_image">Picture</string>
+    <!-- Button on the Take picture and describe screen. [CHAR_LIMIT=NONE] -->
+    <string name="picture_description_retake">Take another picture</string>
+    <!-- Spoken before the camera takes the picture. [CHAR_LIMIT=NONE] -->
+    <string name="picture_description_hold_steady">Hold the phone steady</string>
     <!-- Light level spoken by Live recognition. [CHAR_LIMIT=NONE] -->
     <string name="live_recognition_light_dark">Dark</string>
     <!-- Light level spoken by Live recognition. [CHAR_LIMIT=NONE] -->
