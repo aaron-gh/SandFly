@@ -257,6 +257,7 @@ public class TalkBackPreferenceFilter {
     // A TV's launcher has its own recent apps.
     OVERVIEW(R.string.pref_overview_key, HIDDEN_ON_TV),
     OVERVIEW_NEWEST_LAST(R.string.pref_overview_newest_last_key, HIDDEN_ON_TV),
+    OVERVIEW_COLUMNS(R.string.pref_overview_columns_key, HIDDEN_ON_TV),
     SPEECH_VOLUME(R.string.pref_speech_volume_key, HIDE_HAS_VOLUME_KEY),
     BRAILLE_KEYBOARD(
         R.string.pref_brailleime_key,

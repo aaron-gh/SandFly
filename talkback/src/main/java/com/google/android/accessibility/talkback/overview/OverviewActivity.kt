@@ -34,6 +34,7 @@ import android.view.accessibility.AccessibilityEvent
 import android.view.accessibility.AccessibilityNodeInfo
 import android.view.accessibility.AccessibilityNodeInfo.AccessibilityAction
 import android.widget.FrameLayout
+import android.widget.GridLayout
 import android.widget.LinearLayout
 import android.widget.ScrollView
 import android.widget.TextView
@@ -54,17 +55,24 @@ import com.google.android.material.floatingactionbutton.ExtendedFloatingActionBu
  * recent tasks as a column of rows that the screen reader moves through in order, most recent first,
  * or last with Most recent app at the bottom: the most recent is the app the overview was opened
  * from. A double tap switches to a task; Close, Split screen and App info are actions of its row.
- * Close all and System overview are floating buttons at the bottom left and bottom right.
+ * Close all and System overview are floating buttons at the bottom left and bottom right. With
+ * Columns above 1, the rows are a grid, filled a row at a time.
  */
 class OverviewActivity : AppCompatActivity() {
   private lateinit var scroll: ScrollView
-  private lateinit var column: LinearLayout
+  /** Holds [column], at the top of the window or at the bottom with [newestLast]. */
+  private lateinit var content: LinearLayout
+  /** The message and the tasks' rows, in [columns] columns. */
+  private lateinit var column: GridLayout
   private lateinit var message: TextView
   private lateinit var closeAll: ExtendedFloatingActionButton
   private lateinit var systemOverview: ExtendedFloatingActionButton
 
   /** Whether the most recent task is listed last, with the list opening scrolled to its end. */
   private var newestLast = false
+
+  /** The number of columns: 1 is a list. */
+  private var columns = 1
 
   /** A row per task, kept so that a focused row stays focused when the list changes. */
   private val rows = HashMap<Int, TextView>()
@@ -93,10 +101,17 @@ class OverviewActivity : AppCompatActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setTitle(R.string.overview_title)
-    column =
+    column = GridLayout(this).apply { accessibilityDelegate = ColumnDelegate() }
+    content =
       LinearLayout(this).apply {
         orientation = LinearLayout.VERTICAL
-        accessibilityDelegate = ColumnDelegate()
+        addView(
+          column,
+          LinearLayout.LayoutParams(
+            LinearLayout.LayoutParams.MATCH_PARENT,
+            LinearLayout.LayoutParams.WRAP_CONTENT,
+          ),
+        )
       }
     message = textRow()
     closeAll =
@@ -112,7 +127,7 @@ class OverviewActivity : AppCompatActivity() {
       ScrollView(this).apply {
         isFillViewport = true
         clipToPadding = false
-        addView(column)
+        addView(content)
       }
     // The list scrolls clear of the buttons, which cover its end.
     systemOverview.addOnLayoutChangeListener { view, _, _, _, _, _, _, _, _ ->
@@ -142,7 +157,11 @@ class OverviewActivity : AppCompatActivity() {
     super.onStart()
     newestLast = RecentTasks.isNewestLast(this)
     // A short list sits at the bottom, beside the buttons.
-    column.gravity = if (newestLast) Gravity.BOTTOM else Gravity.TOP
+    content.gravity = if (newestLast) Gravity.BOTTOM else Gravity.TOP
+    columns = RecentTasks.columns(this)
+    column.columnCount = columns
+    // The message spans the whole width.
+    message.layoutParams = cellParams(span = columns)
     opening = true
     loaded = false
     ShizukuShell.hold(this)
@@ -218,7 +237,7 @@ class OverviewActivity : AppCompatActivity() {
       }
     setChildren(views)
     if (scrollToEnd) {
-      scroll.doOnPreDraw { scroll.scrollTo(0, column.height) }
+      scroll.doOnPreDraw { scroll.scrollTo(0, content.height) }
     }
     focusAfter?.let { focus(it) }
   }
@@ -369,7 +388,12 @@ class OverviewActivity : AppCompatActivity() {
     override fun onInitializeAccessibilityNodeInfo(host: View, info: AccessibilityNodeInfo) {
       super.onInitializeAccessibilityNodeInfo(host, info)
       if (tasks.isNotEmpty()) {
-        info.collectionInfo = AccessibilityNodeInfo.CollectionInfo.obtain(tasks.size, 1, false)
+        info.collectionInfo =
+          AccessibilityNodeInfo.CollectionInfo.obtain(
+            (tasks.size + columns - 1) / columns,
+            columns,
+            false,
+          )
       }
     }
 
@@ -406,7 +430,13 @@ class OverviewActivity : AppCompatActivity() {
       super.onInitializeAccessibilityNodeInfo(host, info)
       val task = task ?: return
       info.collectionItemInfo =
-        AccessibilityNodeInfo.CollectionItemInfo.obtain(position, 1, 0, 1, false)
+        AccessibilityNodeInfo.CollectionItemInfo.obtain(
+          position / columns,
+          1,
+          position % columns,
+          1,
+          false,
+        )
       info.addAction(AccessibilityAction(R.id.overview_close_action, getString(R.string.overview_close)))
       // The most recent task is the one a split goes beside.
       if (task.id != tasks.firstOrNull()?.id) {
@@ -453,12 +483,19 @@ class OverviewActivity : AppCompatActivity() {
       minHeight = dp(48)
       setTextSize(TypedValue.COMPLEX_UNIT_SP, 16f)
       isFocusable = true
-      layoutParams =
-        LinearLayout.LayoutParams(
-          LinearLayout.LayoutParams.MATCH_PARENT,
-          LinearLayout.LayoutParams.WRAP_CONTENT,
-        )
+      layoutParams = cellParams()
     }
+
+  /** A cell of the grid [span] columns wide, the columns sharing the width equally. */
+  private fun cellParams(span: Int = 1): GridLayout.LayoutParams =
+    GridLayout.LayoutParams(
+        GridLayout.spec(GridLayout.UNDEFINED),
+        GridLayout.spec(GridLayout.UNDEFINED, span, 1f),
+      )
+      .apply {
+        width = 0
+        setGravity(Gravity.FILL)
+      }
 
   /** A floating button at [gravity] in the window. */
   private fun button(

@@ -9,4 +9,13 @@
       android:dependency="@string/pref_overview_key"
       android:key="@string/pref_overview_newest_last_key"
       android:title="@string/title_pref_overview_newest_last"/>
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
+      android:defaultValue="@string/pref_overview_columns_default"
+      android:dependency="@string/pref_overview_key"
+      android:dialogTitle="@string/title_pref_overview_columns"
+      android:entries="@array/pref_overview_columns_values"
+      android:entryValues="@array/pref_overview_columns_values"
+      android:key="@string/pref_overview_columns_key"
+      android:summary="%s"
+      android:title="@string/title_pref_overview_columns"/>
 </PreferenceScreen>
