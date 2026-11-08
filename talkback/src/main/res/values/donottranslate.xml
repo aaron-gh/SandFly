@@ -69,6 +69,7 @@
     <string name="pref_play_installer_key">pref_play_installer</string>
     <string name="pref_quick_settings_key">pref_quick_settings</string>
     <string name="pref_overview_key">pref_overview</string>
+    <string name="pref_overview_newest_last_key">pref_overview_newest_last</string>
     <string name="pref_quick_settings_items_key">pref_quick_settings_items_screen</string>
     <string name="pref_speech_rate_key">pref_rate_volume</string>
     <string name="pref_speech_rate_seekbar_key_int">pref_speech_rate_seekbar_key_int</string>
@@ -1813,6 +1814,7 @@
     <bool name="pref_notification_list_default">false</bool>
     <bool name="pref_quick_settings_default">false</bool>
     <bool name="pref_overview_default">false</bool>
+    <bool name="pref_overview_newest_last_default">false</bool>
     <bool name="pref_cache_keyboard_keys_default">false</bool>
     <bool name="pref_vibration_default">true</bool>
     <bool name="pref_soundback_default">true</bool>

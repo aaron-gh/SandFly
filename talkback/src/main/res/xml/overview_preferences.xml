@@ -4,4 +4,9 @@
       android:defaultValue="@bool/pref_overview_default"
       android:key="@string/pref_overview_key"
       android:title="@string/title_pref_overview"/>
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+      android:defaultValue="@bool/pref_overview_newest_last_default"
+      android:dependency="@string/pref_overview_key"
+      android:key="@string/pref_overview_newest_last_key"
+      android:title="@string/title_pref_overview_newest_last"/>
 </PreferenceScreen>

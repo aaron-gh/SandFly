@@ -26,13 +26,14 @@ import android.net.Uri
 import android.os.Bundle
 import android.provider.Settings
 import android.util.TypedValue
+import android.view.Gravity
 import android.view.KeyEvent
 import android.view.View
 import android.view.ViewGroup
 import android.view.accessibility.AccessibilityEvent
 import android.view.accessibility.AccessibilityNodeInfo
 import android.view.accessibility.AccessibilityNodeInfo.AccessibilityAction
-import android.widget.Button
+import android.widget.FrameLayout
 import android.widget.LinearLayout
 import android.widget.ScrollView
 import android.widget.TextView
@@ -40,23 +41,30 @@ import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.doOnPreDraw
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.TalkBackService
 import com.google.android.accessibility.talkback.preference.base.announce
 import com.google.android.accessibility.talkback.shizuku.ShizukuGrants
 import com.google.android.accessibility.talkback.shizuku.ShizukuShell
+import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 
 /**
  * SandFly's own overview, opened by the Overview action instead of the launcher's. It lists the
- * recent tasks, most recent first, as a column of rows that the screen reader moves through in
- * order: the first is the app the overview was opened from. A double tap switches to a task; Close,
- * Split screen and App info are actions of its row.
+ * recent tasks as a column of rows that the screen reader moves through in order, most recent first,
+ * or last with Most recent app at the bottom: the most recent is the app the overview was opened
+ * from. A double tap switches to a task; Close, Split screen and App info are actions of its row.
+ * Close all and System overview are floating buttons at the bottom left and bottom right.
  */
 class OverviewActivity : AppCompatActivity() {
+  private lateinit var scroll: ScrollView
   private lateinit var column: LinearLayout
   private lateinit var message: TextView
-  private lateinit var closeAll: Button
-  private lateinit var systemOverview: Button
+  private lateinit var closeAll: ExtendedFloatingActionButton
+  private lateinit var systemOverview: ExtendedFloatingActionButton
+
+  /** Whether the most recent task is listed last, with the list opening scrolled to its end. */
+  private var newestLast = false
 
   /** A row per task, kept so that a focused row stays focused when the list changes. */
   private val rows = HashMap<Int, TextView>()
@@ -65,7 +73,7 @@ class OverviewActivity : AppCompatActivity() {
   /** The view in the list that has accessibility focus, if one has. */
   private var focusedView: View? = null
 
-  /** Whether the list has just opened, so focus goes to its first item. */
+  /** Whether the list has just opened, so focus goes to the most recent task. */
   private var opening = false
 
   /**
@@ -91,14 +99,35 @@ class OverviewActivity : AppCompatActivity() {
         accessibilityDelegate = ColumnDelegate()
       }
     message = textRow()
-    closeAll = button(R.string.overview_close_all) { closeAll() }
+    closeAll =
+      button(R.string.overview_close_all, Gravity.BOTTOM or Gravity.START) { closeAll() }.apply {
+        visibility = View.GONE
+      }
     systemOverview =
-      button(R.string.overview_system) {
+      button(R.string.overview_system, Gravity.BOTTOM or Gravity.END) {
         TalkBackService.getInstance()?.performGlobalAction(AccessibilityService.GLOBAL_ACTION_RECENTS)
         finish()
       }
-    val scroll = ScrollView(this).apply { addView(column) }
-    ViewCompat.setOnApplyWindowInsetsListener(scroll) { view, insets ->
+    scroll =
+      ScrollView(this).apply {
+        isFillViewport = true
+        clipToPadding = false
+        addView(column)
+      }
+    // The list scrolls clear of the buttons, which cover its end.
+    systemOverview.addOnLayoutChangeListener { view, _, _, _, _, _, _, _, _ ->
+      val bottom = view.height + 2 * dp(BUTTON_MARGIN_DP)
+      if (scroll.paddingBottom != bottom) {
+        scroll.setPadding(0, 0, 0, bottom)
+      }
+    }
+    val root =
+      FrameLayout(this).apply {
+        addView(scroll, FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT)
+        addView(closeAll)
+        addView(systemOverview)
+      }
+    ViewCompat.setOnApplyWindowInsetsListener(root) { view, insets ->
       val bars =
         insets.getInsets(
           WindowInsetsCompat.Type.systemBars() or WindowInsetsCompat.Type.displayCutout()
@@ -106,11 +135,14 @@ class OverviewActivity : AppCompatActivity() {
       view.setPadding(bars.left, bars.top, bars.right, bars.bottom)
       insets
     }
-    setContentView(scroll)
+    setContentView(root)
   }
 
   override fun onStart() {
     super.onStart()
+    newestLast = RecentTasks.isNewestLast(this)
+    // A short list sits at the bottom, beside the buttons.
+    column.gravity = if (newestLast) Gravity.BOTTOM else Gravity.TOP
     opening = true
     loaded = false
     ShizukuShell.hold(this)
@@ -159,16 +191,17 @@ class OverviewActivity : AppCompatActivity() {
       views += message
     }
     rows.keys.retainAll(tasks.map { it.id }.toSet())
-    tasks.forEachIndexed { index, task -> views += row(task).also { bind(it, task, index) } }
-    if (tasks.isNotEmpty()) {
-      views += closeAll
+    shownTasks().forEachIndexed { position, task ->
+      views += row(task).also { bind(it, task, position) }
     }
-    views += systemOverview
+    closeAll.visibility = if (tasks.isNotEmpty()) View.VISIBLE else View.GONE
     var focusAfter: View? = null
+    var scrollToEnd = false
     if (opening && loaded) {
       // Otherwise focus can start on whatever the screen reader focused last in this window.
       opening = false
-      focusAfter = views.first()
+      focusAfter = if (newestLast) views.last() else views.first()
+      scrollToEnd = newestLast
     }
     focusIndex?.let { index ->
       focusIndex = null
@@ -184,8 +217,14 @@ class OverviewActivity : AppCompatActivity() {
         focusAfter = views[minOf(index, views.size - 1)]
       }
     setChildren(views)
+    if (scrollToEnd) {
+      scroll.doOnPreDraw { scroll.scrollTo(0, column.height) }
+    }
     focusAfter?.let { focus(it) }
   }
+
+  /** The tasks in the order they are listed. */
+  private fun shownTasks(): List<RecentTask> = if (newestLast) tasks.asReversed() else tasks
 
   /**
    * Moves accessibility focus to [view] once the overview's window has input focus. While SandFly's
@@ -240,12 +279,12 @@ class OverviewActivity : AppCompatActivity() {
     return super.dispatchKeyEvent(event)
   }
 
-  private fun bind(row: TextView, task: RecentTask, index: Int) {
+  private fun bind(row: TextView, task: RecentTask, position: Int) {
     val name = task.name(this)
     row.text = name
     row.contentDescription = name
     row.setOnClickListener { switchTo(task) }
-    (row.getTag(R.id.overview_row_delegate) as RowDelegate).set(task, index)
+    (row.getTag(R.id.overview_row_delegate) as RowDelegate).set(task, position)
   }
 
   private fun switchTo(task: RecentTask) {
@@ -264,7 +303,7 @@ class OverviewActivity : AppCompatActivity() {
         return@close
       }
       announce(column, getString(R.string.overview_closed, task.appLabel))
-      tasks.indexOfFirst { it.id == task.id }.takeIf { it >= 0 }?.let { focusIndex = it }
+      shownTasks().indexOfFirst { it.id == task.id }.takeIf { it >= 0 }?.let { focusIndex = it }
       tasks = tasks.filter { it.id != task.id }
       show()
       load()
@@ -354,21 +393,23 @@ class OverviewActivity : AppCompatActivity() {
   private inner class RowDelegate : View.AccessibilityDelegate() {
     var task: RecentTask? = null
       private set
-    private var index = 0
+    /** The row's place in the list. */
+    private var position = 0
 
-    fun set(task: RecentTask, index: Int) {
+    fun set(task: RecentTask, position: Int) {
       this.task = task
-      this.index = index
+      this.position = position
     }
 
     @Suppress("DEPRECATION") // CollectionItemInfo's constructor needs Android 13.
     override fun onInitializeAccessibilityNodeInfo(host: View, info: AccessibilityNodeInfo) {
       super.onInitializeAccessibilityNodeInfo(host, info)
-      task ?: return
-      info.collectionItemInfo = AccessibilityNodeInfo.CollectionItemInfo.obtain(index, 1, 0, 1, false)
+      val task = task ?: return
+      info.collectionItemInfo =
+        AccessibilityNodeInfo.CollectionItemInfo.obtain(position, 1, 0, 1, false)
       info.addAction(AccessibilityAction(R.id.overview_close_action, getString(R.string.overview_close)))
-      // The first task is the one a split goes beside.
-      if (index > 0) {
+      // The most recent task is the one a split goes beside.
+      if (task.id != tasks.firstOrNull()?.id) {
         info.addAction(AccessibilityAction(R.id.overview_split_action, getString(R.string.overview_split)))
       }
       info.addAction(AccessibilityAction(R.id.overview_app_info_action, getString(R.string.overview_app_info)))
@@ -419,11 +460,23 @@ class OverviewActivity : AppCompatActivity() {
         )
     }
 
-  private fun button(@StringRes text: Int, onClick: () -> Unit): Button =
-    Button(this).apply {
+  /** A floating button at [gravity] in the window. */
+  private fun button(
+    @StringRes text: Int,
+    gravity: Int,
+    onClick: () -> Unit,
+  ): ExtendedFloatingActionButton =
+    ExtendedFloatingActionButton(this).apply {
       setText(text)
       isAllCaps = false
       setOnClickListener { onClick() }
+      layoutParams =
+        FrameLayout.LayoutParams(
+            FrameLayout.LayoutParams.WRAP_CONTENT,
+            FrameLayout.LayoutParams.WRAP_CONTENT,
+            gravity,
+          )
+          .apply { dp(BUTTON_MARGIN_DP).let { setMargins(it, it, it, it) } }
     }
 
   private fun dp(value: Int): Int =
@@ -433,6 +486,9 @@ class OverviewActivity : AppCompatActivity() {
   companion object {
     /** Longer than the screen reader takes to say the window's title when its menu closes. */
     private const val REFOCUS_DELAY_MS = 300L
+
+    /** Space around the floating buttons. */
+    private const val BUTTON_MARGIN_DP = 16
 
     /**
      * Opens the overview in place of the system's, if the user has chosen it and Shizuku runs,
