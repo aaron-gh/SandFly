@@ -25,6 +25,7 @@ import android.service.notification.NotificationListenerService.RankingMap
 import android.service.notification.StatusBarNotification
 import androidx.core.app.NotificationManagerCompat
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.talkback.notifications.NotificationInfo
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 
 /**
@@ -174,10 +175,12 @@ object NotificationList {
 
   /**
    * One UI's "N more notifications", which stands in the shade for silent notifications that the
-   * list shows one by one.
+   * list shows one by one, and its Now Bar media notification, which has no text or actions and
+   * repeats the media app's own notification.
    */
   private fun isPlaceholder(notification: StatusBarNotification): Boolean =
-    notification.packageName == "com.android.systemui" && notification.tag == "INSIGNIFICANT"
+    (notification.packageName == "com.android.systemui" && notification.tag == "INSIGNIFICANT") ||
+      NotificationInfo.isSamsungMediaActivity(notification.packageName, notification.notification)
 
   private fun entry(context: Context, notification: StatusBarNotification): NotificationEntry =
     NotificationEntry.from(notification, appName(context, notification.packageName))
