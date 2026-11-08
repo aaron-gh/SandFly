@@ -38,15 +38,23 @@ internal object DownloadRetry {
   }
 
   /**
-   * Returns the result of [attempt], and repeats it after an [IOException] other than a
-   * [PermanentDownloadException]. Throws the exception of the last attempt.
+   * Returns the address for attempt number [attempt], counted from 0: [directUrl], then [apiUrl]
+   * when there is one, then [directUrl] again.
+   */
+  fun urlFor(attempt: Int, directUrl: String, apiUrl: String?): String =
+    if (apiUrl != null && attempt % 2 == 1) apiUrl else directUrl
+
+  /**
+   * Returns the result of [attempt], which gets the attempt number, and repeats it after an
+   * [IOException] other than a [PermanentDownloadException]. Throws the exception of the last
+   * attempt.
    */
   @Throws(IOException::class)
-  fun <T> run(sleep: (Long) -> Unit = { Thread.sleep(it) }, attempt: () -> T): T {
+  fun <T> run(sleep: (Long) -> Unit = { Thread.sleep(it) }, attempt: (Int) -> T): T {
     var retries = 0
     while (true) {
       try {
-        return attempt()
+        return attempt(retries)
       } catch (e: PermanentDownloadException) {
         throw e
       } catch (e: IOException) {

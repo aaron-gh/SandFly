@@ -25,7 +25,9 @@ class UpdateReceiver : BroadcastReceiver() {
   override fun onReceive(context: Context, intent: Intent) {
     when (intent.action) {
       ACTION_INSTALL ->
-        intent.getStringExtra(EXTRA_DOWNLOAD_URL)?.let { Updater.install(context, it) }
+        intent.getStringExtra(EXTRA_DOWNLOAD_URL)?.let {
+          Updater.install(context, it, intent.getStringExtra(EXTRA_API_DOWNLOAD_URL))
+        }
       ACTION_INSTALL_STATUS -> Updater.onInstallStatus(context, intent)
     }
   }
@@ -35,6 +37,7 @@ class UpdateReceiver : BroadcastReceiver() {
     const val ACTION_INSTALL_STATUS =
       "com.google.android.accessibility.talkback.update.INSTALL_STATUS"
     const val EXTRA_DOWNLOAD_URL = "download_url"
+    const val EXTRA_API_DOWNLOAD_URL = "api_download_url"
     /** The app ID of the APK that the install session installs. */
     const val EXTRA_INSTALLED_PACKAGE = "installed_package"
   }
