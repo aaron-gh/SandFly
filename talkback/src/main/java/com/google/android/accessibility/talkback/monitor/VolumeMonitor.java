@@ -58,7 +58,7 @@ public class VolumeMonitor extends SameThreadBroadcastReceiver {
   private static final String TAG = "VolumeMonitor";
 
   @VisibleForTesting
-  static final Duration RELEASE_CONTROL_TIMEOUT_MS_DEFAULT = Duration.ofMillis(2000);
+  static final Duration RELEASE_CONTROL_TIMEOUT_MS_DEFAULT = Duration.ofMillis(600);
 
   @VisibleForTesting static final Duration RELEASE_CONTROL_TIMEOUT_MS_WEAR = Duration.ofMillis(600);
 
@@ -576,7 +576,7 @@ public class VolumeMonitor extends SameThreadBroadcastReceiver {
     private final Duration releaseControlTimeoutMs;
 
     /** Timeout in milliseconds before the audio channel is available. */
-    private static final Duration ACQUIRED_CONTROL_TIMEOUT_MS = Duration.ofMillis(2000);
+    private static final Duration ACQUIRED_CONTROL_TIMEOUT_MS = Duration.ofMillis(200);
 
     private static final int MSG_VOLUME_CHANGED = 1;
     private static final int MSG_CONTROL = 2;
