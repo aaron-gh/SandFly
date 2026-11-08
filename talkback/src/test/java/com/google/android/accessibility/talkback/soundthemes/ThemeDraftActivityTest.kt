@@ -47,7 +47,7 @@ class ThemeDraftActivityTest {
     val discard = ShadowDialog.getLatestDialog() as AlertDialog
     discard.getButton(android.content.DialogInterface.BUTTON_POSITIVE).performClick()
     shadowOf(Looper.getMainLooper()).idle()
-    val fragment = activity.supportFragmentManager.findFragmentById(android.R.id.content) as ThemeSoundsFragment
+    val fragment = activity.supportFragmentManager.findFragmentById(com.google.android.accessibility.utils.R.id.preference_root) as ThemeSoundsFragment
     assertFalse(fragment.findPreference<androidx.preference.Preference>(ControlSoundsSettings.PREF_ON)!!.callChangeListener(true))
     fragment.executor.submit {}.get()
     shadowOf(Looper.getMainLooper()).idle()

@@ -64,7 +64,7 @@ class ItemListFragmentTest {
       Intent(context, TalkBackPreferencesActivity.TalkBackSubSettings::class.java)
         .putExtra(BasePreferencesActivity.FRAGMENT_NAME, fragmentClass.name)
     controller = Robolectric.buildActivity(TalkBackPreferencesActivity.TalkBackSubSettings::class.java, intent).setup()
-    fragment = controller.get().supportFragmentManager.findFragmentById(android.R.id.content) as ItemListFragment
+    fragment = controller.get().supportFragmentManager.findFragmentById(com.google.android.accessibility.utils.R.id.preference_root) as ItemListFragment
   }
 
   @After
