@@ -4324,6 +4324,12 @@ public class TalkBackService extends AccessibilityServiceCompat
               res.getString(R.string.pref_speak_container_element_positions_key),
               res.getBoolean(R.bool.pref_speak_container_element_positions_default));
       globalVariables.setSpeakCollectionInfo(speakCollectionInfo);
+      // The switch once covered grids too, so a new one starts as that switch was.
+      String speakGridInfoKey = res.getString(R.string.pref_speak_grid_positions_key);
+      if (!prefs.contains(speakGridInfoKey)) {
+        prefs.edit().putBoolean(speakGridInfoKey, speakCollectionInfo).apply();
+      }
+      globalVariables.setSpeakGridInfo(prefs.getBoolean(speakGridInfoKey, speakCollectionInfo));
 
       // Update preference: table column headers order/visibility.
       String tableColumnHeaders =

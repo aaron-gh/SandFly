@@ -31,6 +31,7 @@ import android.text.TextUtils;
 import android.view.Display;
 import android.view.accessibility.AccessibilityEvent;
 import androidx.annotation.StringRes;
+import androidx.annotation.VisibleForTesting;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.screenelements.ScreenElements;
@@ -56,6 +57,7 @@ import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.FormFactorUtils;
 import com.google.android.accessibility.utils.KeyboardUtils;
 import com.google.android.accessibility.utils.Logger;
+import com.google.android.accessibility.utils.Role;
 import com.google.android.accessibility.utils.TimedFlags;
 import com.google.android.accessibility.utils.input.WindowsDelegate;
 import com.google.android.accessibility.utils.monitor.CollectionState;
@@ -197,6 +199,7 @@ public class GlobalVariables extends TimedFlags implements ParseTree.VariableDel
   // Verbosity settings
   private boolean speakRoles = true;
   private boolean speakCollectionInfo = true;
+  private boolean speakGridInfo = true;
 
   public static final String TABLE_HEADERS_BEFORE = "before";
   public static final String TABLE_HEADERS_AFTER = "after";
@@ -698,14 +701,25 @@ public class GlobalVariables extends TimedFlags implements ParseTree.VariableDel
     return isDescribingSwipeTarget;
   }
 
-  /** Returns if TalkBack speaks collection info. */
+  /** Returns if TalkBack speaks collection info for the collection focus is in. */
   public boolean getSpeakCollectionInfo() {
-    return speakCollectionInfo;
+    return speaksCollectionInfo(getCollectionRole(), speakCollectionInfo, speakGridInfo);
   }
 
-  /** Sets if TalkBack speaks collection info. */
+  /** Whether collection info is spoken for a collection of {@code role}. */
+  @VisibleForTesting
+  static boolean speaksCollectionInfo(int role, boolean lists, boolean grids) {
+    return role == Role.ROLE_GRID ? grids : lists;
+  }
+
+  /** Sets if TalkBack speaks collection info for lists and other collections that aren't grids. */
   public void setSpeakCollectionInfo(boolean value) {
     speakCollectionInfo = value;
+  }
+
+  /** Sets if TalkBack speaks collection info for grids and tables. */
+  public void setSpeakGridInfo(boolean value) {
+    speakGridInfo = value;
   }
 
   public String getTableColumnHeaders() {
