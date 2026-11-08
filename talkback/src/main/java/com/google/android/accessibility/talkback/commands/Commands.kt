@@ -723,6 +723,7 @@ object Commands {
         gesture(R.string.shortcut_value_copy, android.R.string.copy)
         gesture(R.string.shortcut_value_add_to_clipboard, R.string.shortcut_add_to_clipboard)
         gesture(R.string.shortcut_value_clipboard_history, R.string.title_clipboard_history)
+        gesture(R.string.shortcut_value_editing_menu, R.string.title_editing_menu)
         gesture(R.string.shortcut_value_cut, android.R.string.cut)
         gesture(R.string.shortcut_value_paste, android.R.string.paste)
         gesture(R.string.shortcut_value_submit_text, R.string.shortcut_submit_text)
