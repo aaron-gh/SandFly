@@ -201,8 +201,6 @@ final class OnboardingConfigs {
       PageConfig.builder(PAGE_ID_SANDFLY_OTHER, R.string.new_features_0_4_0_other_title)
           .addHeading(R.string.new_features_0_4_0_search_heading)
           .addText(R.string.new_features_0_4_0_search)
-          .addHeading(R.string.new_features_0_4_0_actions_in_text_heading)
-          .addText(R.string.new_features_0_4_0_actions_in_text)
           .addHeading(R.string.new_features_0_4_0_telegram_quote_heading)
           .addText(R.string.new_features_0_4_0_telegram_quote)
           .addHeading(R.string.new_features_0_4_0_focus_indicator_heading)
