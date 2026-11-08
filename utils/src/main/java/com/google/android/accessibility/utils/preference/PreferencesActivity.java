@@ -41,9 +41,9 @@ public abstract class PreferencesActivity extends BasePreferencesActivity {
 
     prepareActionBar(/* icon= */ null);
 
-    if (supportHatsSurvey()) {
-      setContentView(R.layout.preference_with_survey);
-    }
+    // Also without Google Play services: this layout keeps the list below the action bar, and
+    // without it Android 15 and later draw the first item under the action bar.
+    setContentView(R.layout.preference_with_survey);
 
     // Creates UI for the preferenceFragment created by the child class of BasePreferencesActivity.
     if (!isDefaultFragmentTransactionHandled()) {
@@ -74,7 +74,7 @@ public abstract class PreferencesActivity extends BasePreferencesActivity {
 
   @Override
   protected final int getContainerId() {
-    return supportHatsSurvey() ? R.id.preference_root : super.getContainerId();
+    return R.id.preference_root;
   }
 
   /**
