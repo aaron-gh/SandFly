@@ -16,10 +16,13 @@
 
 package com.google.android.accessibility.talkback.translation
 
+import android.app.DownloadManager
+import android.os.SystemClock
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 import com.google.mlkit.common.MlKitException
 import com.google.mlkit.common.model.DownloadConditions
 import com.google.mlkit.common.model.RemoteModelManager
+import com.google.mlkit.common.sdkinternal.MlKitContext
 import com.google.mlkit.nl.languageid.LanguageIdentification
 import com.google.mlkit.nl.languageid.LanguageIdentificationOptions
 import com.google.mlkit.nl.languageid.LanguageIdentifier
@@ -40,7 +43,8 @@ class MlKitTranslation : OnDeviceTranslation {
     TranslateLanguage.getAllLanguages()
       .mapNotNull { code -> TranslationLanguages.normalize(code)?.let { it to code } }
       .toMap()
-  private val downloading = mutableSetOf<String>()
+  // When each language's download started.
+  private val downloading = mutableMapOf<String, Long>()
   private var identifier: LanguageIdentifier? = null
   /** A client for each language pair in use, the least recently used closed beyond [MAX_CLIENTS]. */
   private val translators =
@@ -89,18 +93,58 @@ class MlKitTranslation : OnDeviceTranslation {
 
   override fun download(language: String, wifiOnly: Boolean, done: (Boolean) -> Unit) {
     val code = codes[language] ?: return done(false)
-    if (!downloading.add(language)) return done(false)
+    val now = SystemClock.elapsedRealtime()
+    val previous = downloading[language]
+    if (previous != null) {
+      if (now - previous < STALLED_AFTER_MS) return done(false)
+      removeUnfinishedDownloads()
+    }
+    downloading[language] = now
     val conditions = DownloadConditions.Builder().apply { if (wifiOnly) requireWifi() }.build()
     models
       .download(TranslateRemoteModel.Builder(code).build(), conditions)
       .addOnCompleteListener { task ->
+        // A stalled download whose entry was removed for a retry finishes here too.
+        if (downloading[language] != now) return@addOnCompleteListener
         downloading.remove(language)
         if (!task.isSuccessful) LogUtils.w(TAG, "%s not downloaded: %s", language, task.exception)
         done(task.isSuccessful)
       }
   }
 
-  override fun isDownloading(language: String): Boolean = language in downloading
+  override fun isDownloading(language: String): Boolean =
+    downloading[language]?.let { SystemClock.elapsedRealtime() - it < STALLED_AFTER_MS } == true
+
+  /**
+   * Removes SandFly's unfinished entries from Android's download manager, which only ML Kit uses.
+   * ML Kit waits on an existing entry for a model instead of adding a new one, so a stalled entry
+   * would stall every retry.
+   */
+  private fun removeUnfinishedDownloads() {
+    try {
+      val manager =
+        MlKitContext.getInstance().applicationContext.getSystemService(DownloadManager::class.java)
+          ?: return
+      val query =
+        DownloadManager.Query()
+          .setFilterByStatus(
+            DownloadManager.STATUS_PENDING or
+              DownloadManager.STATUS_RUNNING or
+              DownloadManager.STATUS_PAUSED
+          )
+      val ids =
+        manager.query(query)?.use { cursor ->
+          val column = cursor.getColumnIndexOrThrow(DownloadManager.COLUMN_ID)
+          buildList { while (cursor.moveToNext()) add(cursor.getLong(column)) }
+        }
+      if (!ids.isNullOrEmpty()) {
+        LogUtils.w(TAG, "Removing %d stalled downloads", ids.size)
+        manager.remove(*ids.toLongArray())
+      }
+    } catch (e: RuntimeException) {
+      LogUtils.w(TAG, "Stalled downloads not removed: %s", e)
+    }
+  }
 
   override fun delete(language: String, done: (Boolean) -> Unit) {
     val code = codes[language] ?: return done(false)
@@ -142,5 +186,7 @@ class MlKitTranslation : OnDeviceTranslation {
     const val TAG = "MlKitTranslation"
     const val MIN_CONFIDENCE = 0.5f
     const val MAX_CLIENTS = 3
+    // A model is about 30 MB. After this long, the language can be chosen for download again.
+    const val STALLED_AFTER_MS = 10 * 60 * 1000L
   }
 }
