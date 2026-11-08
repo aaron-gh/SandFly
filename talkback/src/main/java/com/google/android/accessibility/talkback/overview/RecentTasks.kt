@@ -16,6 +16,7 @@
 
 package com.google.android.accessibility.talkback.overview
 
+import android.content.ComponentName
 import android.content.Context
 import android.os.Bundle
 import android.os.Process
@@ -32,6 +33,10 @@ import com.google.android.libraries.accessibility.utils.log.LogUtils
 data class RecentTask(
   val id: Int,
   val packageName: String,
+  /** The task's first activity, if known. */
+  val component: ComponentName?,
+  /** The profile the task runs in, such as the work profile. */
+  val user: UserHandle,
   /** The app's name, with the work profile's badge for a work app. */
   val appLabel: String,
   /** The label the app gave the task, if it gave one that isn't the app's name. */
@@ -170,6 +175,8 @@ object RecentTasks {
         RecentTask(
           id = ids[index],
           packageName = packageName,
+          component = bases?.getOrNull(index)?.let { ComponentName.unflattenFromString(it) },
+          user = UserHandle.getUserHandleForUid(user * PER_USER_RANGE),
           appLabel = label.toString(),
           title = title,
         )

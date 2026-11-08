@@ -18,7 +18,9 @@ package com.google.android.accessibility.talkback.overview
 
 import android.accessibilityservice.AccessibilityService
 import android.app.KeyguardManager
+import android.content.ComponentName
 import android.content.Context
+import android.content.pm.LauncherApps
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -300,13 +302,26 @@ class OverviewActivity : AppCompatActivity() {
     }
   }
 
+  /**
+   * Opens the app's App info page in Settings, in the task's profile: the work profile's page for a
+   * work app, which Settings' own intent can't open from the personal profile.
+   */
   private fun openAppInfo(task: RecentTask) {
     runCatching {
-      startActivity(
-        Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS, Uri.fromParts("package", task.packageName, null))
-          .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-      )
+      getSystemService(LauncherApps::class.java)
+        .startAppDetailsActivity(
+          task.component ?: ComponentName(task.packageName, ""),
+          task.user,
+          null,
+          null,
+        )
     }
+      .recoverCatching {
+        startActivity(
+          Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS, Uri.fromParts("package", task.packageName, null))
+            .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        )
+      }
   }
 
   /** Tells the screen reader the list's size, and notes which of its views has focus. */
