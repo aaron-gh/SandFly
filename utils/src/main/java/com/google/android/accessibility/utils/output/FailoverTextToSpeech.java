@@ -454,6 +454,7 @@ public class FailoverTextToSpeech {
         } else if (CapturePolicy.PREF_KEEP_OFF_CASTS.equals(key)) {
           CapturePolicy.applyToProcess(FailoverTextToSpeech.this.context, sharedPrefs);
           applyAudioAttributes();
+          LowLatencyAudio.followMediaAll();
         } else if (PREF_SPEAK_IN_PHRASES_KEY.equals(key)) {
           speakInPhrases = sharedPrefs.getBoolean(key, SPEAK_IN_PHRASES_DEFAULT);
         } else if (PREF_LOW_LATENCY_AUDIO_KEY.equals(key)) {
