@@ -593,6 +593,8 @@ The **Actions** menu lists the web addresses, email addresses, phone numbers and
 
 Phone numbers come from Android's text classifier, which also finds dates, times, addresses and flight numbers. Digits in any of these, and digits joined to a word, a user name, a time or an amount, aren't listed as codes. The **Actions** reading control lists them too. **Actions found in text**, in **Reading controls** and in **SandFly menu**, turns each kind on or off. On Android 8, and when the text classifier doesn't answer within a second, only web and email addresses are listed.
 
+On web pages, the reading control switches to **Actions** automatically only on items that have actions of their own, not on text or for links, addresses and codes in it, and switches back on the next item that has none. When **Actions** was chosen automatically and has nothing for the focused item, swiping up or down uses the reading control that it replaced.
+
 ### Double tap with the actions reading control on Android 11
 
 On Android 11, when you picked an action with the **Actions** reading control, a double tap only played a sound. In SandFly, a double tap performs the action, and a double-tap and hold performs a long press.
