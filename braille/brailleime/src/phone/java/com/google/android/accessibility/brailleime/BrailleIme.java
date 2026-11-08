@@ -114,6 +114,7 @@ import com.google.android.accessibility.brailleime.settings.BrailleImePreference
 import com.google.android.accessibility.brailleime.tutorial.TutorialView.TutorialCallback;
 import com.google.android.accessibility.brailleime.tutorial.TutorialView.TutorialState.State;
 import com.google.android.accessibility.utils.OwnKeyboards;
+import com.google.android.accessibility.utils.Performance;
 import com.google.android.accessibility.utils.output.FeedbackController;
 import com.google.android.accessibility.utils.AccessibilityServiceCompatUtils.Constants;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
@@ -278,6 +279,7 @@ public class BrailleIme extends InputMethodService {
   private boolean switchingBrailleTable;
   private int orientation;
   private boolean isVisible;
+  private boolean activeSoundPlayed;
   private FeedbackManager feedbackManager;
 
   /** An interface to notify orientation change. */
@@ -624,6 +626,7 @@ public class BrailleIme extends InputMethodService {
           Utils.useImeSuppliedInputWindow(),
           // Region might be null for short time before onTalkBackResumed() is called.
           keyboardView.obtainImeViewRegion().orElse(null));
+      playActiveSound(true);
       if (brailleDisplayForBrailleIme != null
           && brailleDisplayConnectedAndNotSuspended
           && !isVisible) {
@@ -635,6 +638,7 @@ public class BrailleIme extends InputMethodService {
 
   private void deactivateBrailleIme() {
     BrailleImeLog.d(TAG, "deactivateBrailleIme");
+    playActiveSound(false);
     if (talkBackForBrailleIme != null) {
       talkBackForBrailleIme.onBrailleImeInactivated(Utils.useImeSuppliedInputWindow());
     }
@@ -643,6 +647,22 @@ public class BrailleIme extends InputMethodService {
         && isVisible) {
       isVisible = false;
       brailleDisplayForBrailleIme.onImeVisibilityChanged(false);
+    }
+  }
+
+  /** Plays the sound for the keyboard opening or closing, once for each change. */
+  private void playActiveSound(boolean active) {
+    if (activeSoundPlayed == active) {
+      return;
+    }
+    activeSoundPlayed = active;
+    FeedbackController feedback = feedbackController();
+    if (feedback != null) {
+      feedback.playAuditory(
+          active
+              ? com.google.android.accessibility.braille.common.R.raw.chime_up
+              : com.google.android.accessibility.braille.common.R.raw.chime_down,
+          Performance.EVENT_ID_UNTRACKED);
     }
   }
 
