@@ -142,10 +142,13 @@ object RecentTasks {
     val tops = bundle.getStringArray(RecentTaskKeys.TOP_ACTIVITIES)
     val appLabels = bundle.getStringArray(RecentTaskKeys.APP_LABELS)
     val titles = bundle.getStringArray(RecentTaskKeys.TITLES)
+    val activityLabels = bundle.getStringArray(RecentTaskKeys.ACTIVITY_LABELS)
     val overview = OverviewActivity::class.java.name
     val myUser = Process.myUid() / PER_USER_RANGE
     val packageManager = context.packageManager
     val tasks = ArrayList<RecentTask>()
+    /** Each task's activity name, for telling apart tasks of one app that have no label. */
+    val activityNames = ArrayList<String?>()
     for (index in ids.indices) {
       val packageName = packages?.getOrNull(index).orEmpty()
       if (packageName.isEmpty()) continue
@@ -170,7 +173,21 @@ object RecentTasks {
           appLabel = label.toString(),
           title = title,
         )
+      activityNames += activityLabels?.getOrNull(index)?.trim()?.takeIf { it.isNotEmpty() }
     }
-    return tasks
+    val counts = tasks.groupingBy { it.appLabel }.eachCount()
+    return tasks.mapIndexed { index, task ->
+      val activity = activityNames[index]
+      if (
+        task.title == null &&
+          counts.getValue(task.appLabel) > 1 &&
+          activity != null &&
+          !activity.equals(task.appLabel, ignoreCase = true)
+      ) {
+        task.copy(title = activity)
+      } else {
+        task
+      }
+    }
   }
 }

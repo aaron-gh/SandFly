@@ -35,4 +35,6 @@ object RecentTaskKeys {
   const val APP_LABELS = "appLabels"
   /** Array of String: the label an app gave its task, or "". */
   const val TITLES = "titles"
+  /** Array of String: the name of each task's top activity, or "". */
+  const val ACTIVITY_LABELS = "activityLabels"
 }

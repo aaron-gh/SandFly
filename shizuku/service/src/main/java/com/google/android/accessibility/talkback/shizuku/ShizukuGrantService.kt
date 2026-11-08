@@ -232,6 +232,7 @@ class ShizukuGrantService(private val context: Context?) : IShizukuGrants.Stub()
       val tops = arrayOfNulls<String>(tasks.size)
       val appLabels = arrayOfNulls<String>(tasks.size)
       val titles = arrayOfNulls<String>(tasks.size)
+      val activityLabels = arrayOfNulls<String>(tasks.size)
       tasks.forEachIndexed { index, task ->
         val base = task.baseActivity ?: task.baseIntent?.component ?: task.origActivity
         val packageName = base?.packageName ?: task.baseIntent?.`package` ?: ""
@@ -244,6 +245,14 @@ class ShizukuGrantService(private val context: Context?) : IShizukuGrants.Stub()
         tops[index] = task.topActivity?.flattenToString() ?: ""
         appLabels[index] = if (packageName.isEmpty()) "" else appLabel(packageName)
         titles[index] = task.taskDescription?.label?.take(MAX_TITLE_LENGTH) ?: ""
+        activityLabels[index] =
+          (task.topActivity ?: base)?.let { activity ->
+            try {
+              packageManager?.let { pm -> pm.getActivityInfo(activity, 0).loadLabel(pm).toString() }
+            } catch (e: Exception) {
+              null
+            }
+          } ?: ""
       }
       Bundle().apply {
         putIntArray(RecentTaskKeys.IDS, ids)
@@ -253,6 +262,7 @@ class ShizukuGrantService(private val context: Context?) : IShizukuGrants.Stub()
         putStringArray(RecentTaskKeys.TOP_ACTIVITIES, tops)
         putStringArray(RecentTaskKeys.APP_LABELS, appLabels)
         putStringArray(RecentTaskKeys.TITLES, titles)
+        putStringArray(RecentTaskKeys.ACTIVITY_LABELS, activityLabels)
       }
     } catch (e: Throwable) {
       null

@@ -65,6 +65,15 @@ class OverviewActivity : AppCompatActivity() {
 
   /** Whether the list has just opened, so focus goes to its first item. */
   private var opening = false
+
+  /**
+   * The place in the list of an app that was just closed, where focus goes next. SandFly's actions
+   * menu took focus from its row, so the row being read can't be followed.
+   */
+  private var focusIndex: Int? = null
+
+  /** The view that gets accessibility focus when the overview's window has input focus. */
+  private var pendingFocus: View? = null
   private var loaded = false
   /** Whether the tasks couldn't be read. */
   private var failed = false
@@ -159,6 +168,10 @@ class OverviewActivity : AppCompatActivity() {
       opening = false
       focusAfter = views.first()
     }
+    focusIndex?.let { index ->
+      focusIndex = null
+      focusAfter = views[minOf(index, views.size - 1)]
+    }
     // The view being read was removed: focus moves to the one that takes its place.
     focusedView
       ?.takeIf { it !in views }
@@ -169,8 +182,33 @@ class OverviewActivity : AppCompatActivity() {
         focusAfter = views[minOf(index, views.size - 1)]
       }
     setChildren(views)
-    focusAfter?.let { view ->
-      view.post { view.performAccessibilityAction(AccessibilityNodeInfo.ACTION_ACCESSIBILITY_FOCUS, null) }
+    focusAfter?.let { focus(it) }
+  }
+
+  /**
+   * Moves accessibility focus to [view] once the overview's window has input focus. While SandFly's
+   * actions menu is open, it has the focus, and the screen reader says the overview's title when it
+   * closes: focus moved before then isn't said.
+   */
+  private fun focus(view: View) {
+    pendingFocus = view
+    if (hasWindowFocus()) {
+      view.post { focusPending() }
+    }
+  }
+
+  private fun focusPending() {
+    val view = pendingFocus ?: return
+    pendingFocus = null
+    if (view.parent === column) {
+      view.performAccessibilityAction(AccessibilityNodeInfo.ACTION_ACCESSIBILITY_FOCUS, null)
+    }
+  }
+
+  override fun onWindowFocusChanged(hasFocus: Boolean) {
+    super.onWindowFocusChanged(hasFocus)
+    if (hasFocus && pendingFocus != null) {
+      column.postDelayed({ focusPending() }, REFOCUS_DELAY_MS)
     }
   }
 
@@ -180,15 +218,25 @@ class OverviewActivity : AppCompatActivity() {
         val delegate = RowDelegate()
         accessibilityDelegate = delegate
         setTag(R.id.overview_row_delegate, delegate)
-        setOnKeyListener { _, keyCode, event ->
-          val close = keyCode == KeyEvent.KEYCODE_DEL || keyCode == KeyEvent.KEYCODE_FORWARD_DEL
-          if (close && event.action == KeyEvent.ACTION_UP) {
-            (getTag(R.id.overview_row_delegate) as RowDelegate).task?.let { close(it) }
-          }
-          close
-        }
       }
     }
+
+  /**
+   * Delete closes the app whose row the screen reader is on. Input focus can be on another row,
+   * since the screen reader moves only its own focus.
+   */
+  override fun dispatchKeyEvent(event: KeyEvent): Boolean {
+    if (event.keyCode == KeyEvent.KEYCODE_DEL || event.keyCode == KeyEvent.KEYCODE_FORWARD_DEL) {
+      val task = (focusedView?.getTag(R.id.overview_row_delegate) as? RowDelegate)?.task
+      if (task != null) {
+        if (event.action == KeyEvent.ACTION_UP) {
+          close(task)
+        }
+        return true
+      }
+    }
+    return super.dispatchKeyEvent(event)
+  }
 
   private fun bind(row: TextView, task: RecentTask, index: Int) {
     val name = task.name(this)
@@ -214,6 +262,7 @@ class OverviewActivity : AppCompatActivity() {
         return@close
       }
       announce(column, getString(R.string.overview_closed, task.appLabel))
+      tasks.indexOfFirst { it.id == task.id }.takeIf { it >= 0 }?.let { focusIndex = it }
       tasks = tasks.filter { it.id != task.id }
       show()
       load()
@@ -367,6 +416,9 @@ class OverviewActivity : AppCompatActivity() {
       .toInt()
 
   companion object {
+    /** Longer than the screen reader takes to say the window's title when its menu closes. */
+    private const val REFOCUS_DELAY_MS = 300L
+
     /**
      * Opens the overview in place of the system's, if the user has chosen it and Shizuku runs,
      * asking Shizuku to allow SandFly first if it doesn't. The system's overview is kept on the
