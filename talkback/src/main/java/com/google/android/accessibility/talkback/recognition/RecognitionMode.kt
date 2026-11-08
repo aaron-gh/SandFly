@@ -19,15 +19,45 @@ package com.google.android.accessibility.talkback.recognition
 import com.google.android.accessibility.talkback.R
 
 /** Live recognition modes, in reading control order. Each turns on and off by itself. */
-enum class RecognitionMode(val label: Int, val usesAi: Boolean) {
+enum class RecognitionMode(
+  val label: Int,
+  val usesAi: Boolean,
+  val usesCamera: Boolean = true,
+) {
   SCENES(R.string.live_recognition_scenes, true),
   TEXT(R.string.live_recognition_text, false),
   POINT_AND_SPEAK(R.string.live_recognition_point, true),
   PEOPLE(R.string.live_recognition_people, true),
-  DOORS(R.string.live_recognition_doors, true);
+  DOORS(R.string.live_recognition_doors, true),
+  LIGHT(R.string.live_recognition_light, false, usesCamera = false);
 
   fun step(forward: Boolean): RecognitionMode =
     entries[Math.floorMod(ordinal + if (forward) 1 else -1, entries.size)]
+}
+
+/** Turns light sensor readings into the levels Live recognition speaks. */
+internal object LightLevels {
+  val LABELS =
+    intArrayOf(
+      R.string.live_recognition_light_dark,
+      R.string.live_recognition_light_dim,
+      R.string.live_recognition_light_normal,
+      R.string.live_recognition_light_bright,
+      R.string.live_recognition_light_very_bright,
+    )
+  // Lux at the top of each level but the last.
+  private val LIMITS = floatArrayOf(5f, 50f, 500f, 5000f)
+  private const val MARGIN = 0.2f
+
+  /** The level of [lux]. To leave [current], the reading must pass its limit by [MARGIN]. */
+  fun level(lux: Float, current: Int?): Int {
+    if (current != null) {
+      val low = if (current == 0) 0f else LIMITS[current - 1] * (1 - MARGIN)
+      val high = if (current == LIMITS.size) Float.MAX_VALUE else LIMITS[current] * (1 + MARGIN)
+      if (lux >= low && lux < high) return current
+    }
+    return LIMITS.indexOfFirst { lux < it }.let { if (it < 0) LIMITS.size else it }
+  }
 }
 
 /** Suppresses repeated results without preventing a changed scene from being announced. */

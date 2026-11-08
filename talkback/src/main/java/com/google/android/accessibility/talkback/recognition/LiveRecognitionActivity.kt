@@ -22,6 +22,10 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.Matrix
+import android.hardware.Sensor
+import android.hardware.SensorEvent
+import android.hardware.SensorEventListener
+import android.hardware.SensorManager
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -93,6 +97,17 @@ class LiveRecognitionActivity : ComponentActivity() {
   private var initialMode: RecognitionMode? = null
   private var pointAbove = true
   @Volatile private var generation = 0
+  private val sensors by lazy { getSystemService(SensorManager::class.java) }
+  private var lightListener: SensorEventListener? = null
+  private var spokenLight: Int? = null
+  private var pendingLight: Int? = null
+  private val speakLight = Runnable {
+    pendingLight?.let {
+      spokenLight = it
+      pendingLight = null
+      speak(getString(LightLevels.LABELS[it]), false)
+    }
+  }
   private val cameraPermission = registerForActivityResult(ActivityResultContracts.RequestPermission()) { granted ->
     val mode = pendingPermission
     pendingPermission = null
@@ -202,7 +217,13 @@ class LiveRecognitionActivity : ComponentActivity() {
       speakMode(mode)
       return
     }
-    if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+    if (mode == RecognitionMode.LIGHT && sensors?.getDefaultSensor(Sensor.TYPE_LIGHT) == null) {
+      updateSwitches()
+      report(R.string.live_recognition_no_light_sensor)
+      return
+    }
+    if (mode.usesCamera &&
+        checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
       pendingPermission = mode
       updateSwitches()
       cameraPermission.launch(Manifest.permission.CAMERA)
@@ -271,6 +292,7 @@ class LiveRecognitionActivity : ComponentActivity() {
   private fun reconcile() {
     val token = ++generation
     LogUtils.i(TAG, "Modes: %s", enabled)
+    stopLight()
     TalkBackService.getInstance()?.speechController?.stopUtteranceGroup(SpeechController.UTTERANCE_GROUP_LIVE_RECOGNITION)
     describer?.close()
     describer = null
@@ -292,9 +314,51 @@ class LiveRecognitionActivity : ComponentActivity() {
     }
     window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
     handler.post(runningCheck)
+    if (RecognitionMode.LIGHT in enabled) startLight()
+    if (enabled.none { it.usesCamera }) {
+      status.setText(R.string.live_recognition_camera_off)
+      return
+    }
     status.setText(R.string.live_recognition_camera_on)
     if (enabled.any { it.usesAi }) describer = createDescriber(token)
     startCamera(token)
+  }
+
+  /** Speaks the light level, and each new level once it has held for [LIGHT_SETTLE_MS]. */
+  private fun startLight() {
+    val manager = sensors ?: return
+    val sensor = manager.getDefaultSensor(Sensor.TYPE_LIGHT) ?: return
+    val listener =
+      object : SensorEventListener {
+        override fun onSensorChanged(event: SensorEvent) {
+          val spoken = spokenLight
+          val level = LightLevels.level(event.values[0], spoken)
+          if (spoken == null) {
+            spokenLight = level
+            speak(getString(LightLevels.LABELS[level]), false)
+          } else if (level == spoken) {
+            pendingLight = null
+            handler.removeCallbacks(speakLight)
+          } else if (level != pendingLight) {
+            pendingLight = level
+            handler.removeCallbacks(speakLight)
+            handler.postDelayed(speakLight, LIGHT_SETTLE_MS)
+          }
+        }
+
+        override fun onAccuracyChanged(sensor: Sensor, accuracy: Int) {}
+      }
+    if (manager.registerListener(listener, sensor, SensorManager.SENSOR_DELAY_NORMAL, handler)) {
+      lightListener = listener
+    }
+  }
+
+  private fun stopLight() {
+    lightListener?.let { sensors?.unregisterListener(it) }
+    lightListener = null
+    handler.removeCallbacks(speakLight)
+    spokenLight = null
+    pendingLight = null
   }
 
   /** Describes frames with what Describe image uses: see [AiBackend]. */
@@ -485,6 +549,7 @@ class LiveRecognitionActivity : ComponentActivity() {
     private const val REQUEST_MAX_RESULT_AGE_MS = 30_000L
     private const val FRAME_INTERVAL_MS = 1_000L
     private const val CHECK_INTERVAL_MS = 500L
+    private const val LIGHT_SETTLE_MS = 1000L
     private const val JPEG_QUALITY = 70
     private const val MAX_TEXT_LENGTH = 1_200
     private const val TAG = "LiveRecognition"

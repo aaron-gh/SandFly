@@ -14,6 +14,20 @@
     <string name="live_recognition_people">People detection</string>
     <!-- Live recognition mode that describes the doors the camera sees. [CHAR LIMIT=30] -->
     <string name="live_recognition_doors">Door detection</string>
+    <!-- Live recognition mode that speaks the light level from the light sensor. [CHAR_LIMIT=NONE] -->
+    <string name="live_recognition_light">Light level</string>
+    <!-- Light level spoken by Live recognition. [CHAR_LIMIT=NONE] -->
+    <string name="live_recognition_light_dark">Dark</string>
+    <!-- Light level spoken by Live recognition. [CHAR_LIMIT=NONE] -->
+    <string name="live_recognition_light_dim">Dim light</string>
+    <!-- Light level spoken by Live recognition. [CHAR_LIMIT=NONE] -->
+    <string name="live_recognition_light_normal">Normal light</string>
+    <!-- Light level spoken by Live recognition. [CHAR_LIMIT=NONE] -->
+    <string name="live_recognition_light_bright">Bright light</string>
+    <!-- Light level spoken by Live recognition. [CHAR_LIMIT=NONE] -->
+    <string name="live_recognition_light_very_bright">Very bright light</string>
+    <!-- Shown and spoken when the phone has no light sensor. [CHAR_LIMIT=NONE] -->
+    <string name="live_recognition_no_light_sensor">No light sensor</string>
     <!-- A Live recognition mode and whether it is on, such as "Scenes, on". [CHAR LIMIT=NONE] -->
     <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>, <xliff:g id="state" example="on">%2$s</xliff:g></string>
     <!-- Text at the top of the Live recognition screen. [CHAR LIMIT=NONE] -->
