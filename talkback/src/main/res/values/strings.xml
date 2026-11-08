@@ -713,6 +713,10 @@
       Description: The user can check or not check this. [CHAR LIMIT=40]
     -->
     <string name="pref_speak_container_element_positions_title">Speak container info</string>
+    <!-- Switch: say when focus enters or leaves a list, and positions in lists. [CHAR_LIMIT=NONE] -->
+    <string name="pref_speak_list_positions_title">Speak list information</string>
+    <!-- Switch: say when focus enters or leaves a grid or table, and row and column positions. [CHAR_LIMIT=NONE] -->
+    <string name="pref_speak_grid_positions_title">Speak grid and table information</string>
 
     <!-- Table reading preferences in Verbosity settings -->
     <string name="pref_table_headers_category_title" tools:ignore="MissingTranslation">Table reading</string>

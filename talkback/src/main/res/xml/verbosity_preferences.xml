@@ -21,8 +21,11 @@
     <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
         android:defaultValue="@bool/pref_speak_container_element_positions_default"
         android:key="@string/pref_speak_container_element_positions_key"
-        android:summary="@string/summary_speak_container_element_positions"
-        android:title="@string/pref_speak_container_element_positions_title" />
+        android:title="@string/pref_speak_list_positions_title" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="@bool/pref_speak_grid_positions_default"
+        android:key="@string/pref_speak_grid_positions_key"
+        android:title="@string/pref_speak_grid_positions_title" />
     <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
         android:fragment="com.google.android.accessibility.talkback.preference.base.ItemDetailsOrderFragment"
         android:key="@string/pref_node_desc_order_key"
