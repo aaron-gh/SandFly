@@ -40,6 +40,8 @@ import com.google.android.accessibility.utils.input.TextEventInterpretation;
 import com.google.android.accessibility.utils.input.TextEventInterpretation.TextEvent;
 import com.google.android.accessibility.utils.input.TextEventInterpreter;
 import com.google.android.accessibility.utils.input.TextEventInterpreter.InterpretationConsumer;
+import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils.SpellingSuggestion;
+import com.google.common.collect.ImmutableList;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 /** Filters events that cause hints. */
@@ -61,6 +63,8 @@ public class HintEventInterpreter implements AccessibilityEventListener, Interpr
   private final Context context;
   private ActorState actorState;
   private Pipeline.InterpretationReceiver pipelineInterpretationReceiver;
+  // The misspelled word the last spelling hint was for, while the cursor stays on it.
+  private @Nullable String lastHintedTypo;
 
   ///////////////////////////////////////////////////////////////////////////////////////
   // Construction
@@ -181,16 +185,24 @@ public class HintEventInterpreter implements AccessibilityEventListener, Interpr
       AccessibilityNodeInfoCompat node,
       int cursorPosition,
       boolean activeSpellCheck) {
-    boolean noSpellingSuggestion =
+    ImmutableList<SpellingSuggestion> suggestions =
         cursorPosition == NO_POSITION
             ? AccessibilityNodeInfoUtils.getSpellingSuggestions(context, node, activeSpellCheck)
-                .isEmpty()
             : AccessibilityNodeInfoUtils.getSpellingSuggestions(
-                    context, node, cursorPosition, activeSpellCheck)
-                .isEmpty();
-    if (noSpellingSuggestion) {
+                context, node, cursorPosition, activeSpellCheck);
+    if (suggestions.isEmpty()) {
+      lastHintedTypo = null;
       return;
     }
+
+    // A field can report the same cursor position many times a second, such as SandFly's report
+    // form. The hint and its sound are for reaching a misspelled word, once.
+    SpellingSuggestion suggestion = suggestions.get(0);
+    String typo = suggestion.start() + ":" + suggestion.end() + ":" + node.getText();
+    if (typo.equals(lastHintedTypo)) {
+      return;
+    }
+    lastHintedTypo = typo;
 
     // Sends a hint for spelling suggestion.
     pipelineInterpretationReceiver.input(
