@@ -920,6 +920,9 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
         R.string.shortcut_value_toggle_braille_display, R.string.shortcut_toggle_braille_display),
     SCREEN_OVERVIEW(R.string.shortcut_value_screen_overview, R.string.title_summarize_view),
     DESCRIBE_IMAGE(R.string.shortcut_value_describe_image, R.string.title_image_caption),
+    TAKE_PICTURE_AND_DESCRIBE(
+        R.string.shortcut_value_take_picture_and_describe,
+        R.string.title_take_picture_and_describe),
     SPEAK_SCREEN_DESCRIPTION(
         R.string.shortcut_value_speak_screen_description, R.string.title_speak_screen_description),
     SPEAK_IMAGE_DESCRIPTION(

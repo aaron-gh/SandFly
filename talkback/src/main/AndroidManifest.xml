@@ -163,6 +163,12 @@
             android:launchMode="singleTop"
             android:theme="@style/TalkBackSettings" />
 
+        <activity
+            android:name="com.google.android.accessibility.talkback.recognition.PictureDescriptionActivity"
+            android:exported="false"
+            android:label="@string/title_take_picture_and_describe"
+            android:theme="@style/TalkBackSettings" />
+
         <!-- Keeps the on-device model download running and shows its progress. -->
         <service
             android:name="com.google.android.accessibility.talkback.actor.gemini.local.ModelDownloadService"

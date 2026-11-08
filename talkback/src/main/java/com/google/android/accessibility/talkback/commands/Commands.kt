@@ -31,6 +31,7 @@ import com.google.android.accessibility.talkback.gesture.NavigationGestureAction
 import com.google.android.accessibility.talkback.gesture.OpenAppActions
 import com.google.android.accessibility.talkback.keyboard.TalkBackPhysicalKeyboardShortcut
 import com.google.android.accessibility.talkback.keyboard.TalkBackPhysicalKeyboardShortcut as Key
+import com.google.android.accessibility.talkback.recognition.LiveRecognition
 import com.google.android.accessibility.talkback.sandflyai.SandflyAi
 import com.google.android.accessibility.talkback.speech.VoiceProfileNames
 import com.google.android.accessibility.talkback.utils.TalkbackFeatureSupport
@@ -833,6 +834,11 @@ object Commands {
     private fun descriptions() =
       category(R.string.title_pref_image_and_screen_descriptions) {
         val captions = ImageCaptioner.supportsImageCaption(context)
+        gesture(
+          R.string.shortcut_value_take_picture_and_describe,
+          R.string.title_take_picture_and_describe,
+          available = captions && LiveRecognition.isSupported(context),
+        )
         gesture(
           R.string.shortcut_value_describe_image,
           R.string.title_image_caption,

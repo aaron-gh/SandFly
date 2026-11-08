@@ -81,6 +81,7 @@ import static com.google.android.accessibility.utils.traversal.TraversalStrategy
 import android.accessibilityservice.AccessibilityService;
 import android.accessibilityservice.FingerprintGestureController;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.AudioManager;
 import android.os.Build;
@@ -90,6 +91,7 @@ import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
+import com.google.android.accessibility.talkback.recognition.PictureDescriptionActivity;
 import com.google.android.accessibility.talkback.report.AiResponseReport;
 import com.google.android.accessibility.talkback.ActorState;
 import com.google.android.accessibility.talkback.Feedback;
@@ -825,6 +827,11 @@ public class GestureController {
                   service,
                   accessibilityFocusMonitor.getAccessibilityFocus(
                       /* useInputFocusIfEmpty= */ false)));
+    } else if (action.equals(service.getString(R.string.shortcut_value_take_picture_and_describe))) {
+      service.startActivity(
+          new Intent(service, PictureDescriptionActivity.class)
+              .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+      result = true;
     } else if (action.equals(service.getString(R.string.shortcut_value_describe_image))) {
       result =
           pipeline.returnFeedback(
