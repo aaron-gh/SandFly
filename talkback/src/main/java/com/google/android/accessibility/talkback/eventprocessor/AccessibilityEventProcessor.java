@@ -58,6 +58,7 @@ import com.google.android.accessibility.utils.TelegramReplyQuote;
 import com.google.android.accessibility.utils.WeakReferenceHandler;
 import com.google.android.accessibility.utils.monitor.DisplayMonitor;
 import com.google.android.accessibility.utils.monitor.DisplayMonitor.DisplayStateChangedListener;
+import com.google.android.accessibility.utils.monitor.ScreenMonitor;
 import com.google.android.accessibility.utils.output.Utterance;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import java.lang.reflect.Method;
@@ -133,7 +134,12 @@ public class AccessibilityEventProcessor implements DisplayStateChangedListener 
   private ActorState actorState;
   private final AccessibilityManager accessibilityManager;
   private VoiceActionMonitor voiceActionMonitor;
+  private static final String SYSTEM_UI_PACKAGE = "com.android.systemui";
+  private static final long LOCK_SCREEN_SPEECH_MS = 3000;
+
   private RingerModeAndScreenMonitor ringerModeAndScreenMonitor;
+  // When the user last touched the screen.
+  private long lastTouchUptime = -1;
   private final DelayedEventHandler handler;
 
   private static Method getSourceNodeIdMethod;
@@ -233,6 +239,22 @@ public class AccessibilityEventProcessor implements DisplayStateChangedListener 
   /* Used to cache instance of VoiceActionMonitor. */
   public void setVoiceActionMonitor(VoiceActionMonitor voiceActionMonitor) {
     this.voiceActionMonitor = voiceActionMonitor;
+  }
+
+  /**
+   * Whether an event is the lock screen speaking by itself just after the screen turned on, before
+   * the user touched the screen.
+   */
+  @VisibleForTesting
+  static boolean isLockScreenSpeechAfterScreenOn(
+      int eventType, @Nullable CharSequence packageName, long sinceScreenOn, boolean touched) {
+    return !touched
+        && sinceScreenOn >= 0
+        && sinceScreenOn < LOCK_SCREEN_SPEECH_MS
+        && (eventType == AccessibilityEvent.TYPE_ANNOUNCEMENT
+            || eventType == AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED)
+        && packageName != null
+        && SYSTEM_UI_PACKAGE.contentEquals(packageName);
   }
 
   public void setRingerModeAndScreenMonitor(RingerModeAndScreenMonitor ringerModeAndScreenMonitor) {
@@ -460,6 +482,10 @@ public class AccessibilityEventProcessor implements DisplayStateChangedListener 
       return true;
     }
 
+    if (event.getEventType() == AccessibilityEvent.TYPE_TOUCH_INTERACTION_START) {
+      lastTouchUptime = SystemClock.uptimeMillis();
+    }
+
     boolean isPhoneRinging =
         voiceActionMonitor != null
             && voiceActionMonitor.getCurrentCallState() == TelephonyManager.CALL_STATE_RINGING;
@@ -467,6 +493,21 @@ public class AccessibilityEventProcessor implements DisplayStateChangedListener 
     // Sometimes the dialer's window-state-changed event gets sent right before the
     // TelephonyManager transitions to CALL_STATE_RINGING, so we need to check isDialerEvent().
     isPhoneRinging |= isDialerEvent(event);
+
+    // The screen-on announcement speaks what is chosen in Verbosity. What the lock screen posts by
+    // itself, and the first item focused on it, would add to that.
+    if (!isPhoneRinging && ringerModeAndScreenMonitor != null) {
+      long screenOn = ringerModeAndScreenMonitor.getScreenOnUptime();
+      if (isLockScreenSpeechAfterScreenOn(
+              event.getEventType(),
+              event.getPackageName(),
+              SystemClock.uptimeMillis() - screenOn,
+              lastTouchUptime >= screenOn)
+          && ScreenMonitor.isDeviceLocked(service)) {
+        LogUtils.v(TAG, "Drop lock screen event after the screen turned on");
+        return true;
+      }
+    }
 
     // In most of the cases, Android system will drop all touch event when the screen is off (not
     // interactive). So, TalkBack also drops accessibility events because the phone is unusable to

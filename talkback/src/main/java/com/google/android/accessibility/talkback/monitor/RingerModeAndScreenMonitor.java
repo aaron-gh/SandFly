@@ -31,6 +31,7 @@ import android.media.AudioManager;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.PowerManager;
+import android.os.SystemClock;
 import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.text.SpannableStringBuilder;
@@ -97,6 +98,9 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
   private final Set<DialogInterface> openDialogs = new HashSet<>();
   private final boolean isWatch;
   @Nullable private final StatusReader statusReader;
+
+  // When the screen last turned on.
+  private long screenOnUptime = 0;
 
   /** The current ringer mode. */
   private int ringerMode = AudioManager.RINGER_MODE_NORMAL;
@@ -208,6 +212,7 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
               intent.getIntExtra(AudioManager.EXTRA_RINGER_MODE, AudioManager.RINGER_MODE_NORMAL));
       case Intent.ACTION_SCREEN_ON -> {
         isInteractive = true;
+        screenOnUptime = SystemClock.uptimeMillis();
         AudioDeviceRouter router = AudioDeviceRouter.getInstance();
         if (router != null) {
           router.ensureRouting();
@@ -239,6 +244,11 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
     // noinspection deprecation
     isInteractive =
         ((PowerManager) service.getSystemService(Context.POWER_SERVICE)).isInteractive();
+  }
+
+  /** When the screen last turned on, in {@link SystemClock#uptimeMillis()}, or 0. */
+  public long getScreenOnUptime() {
+    return screenOnUptime;
   }
 
   public boolean isInteractive() {
