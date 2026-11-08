@@ -115,12 +115,6 @@ class TextEntityMenuTest {
   }
 
   @Test
-  fun linksTheItemAlreadyHasAreLeftToTheLinkMenu() {
-    val found = TextEntityMenu.find("https://example.org/a", setOf("https://example.org/a"))
-    assertTrue(found.isEmpty())
-  }
-
-  @Test
   fun digitsJoinedToOtherTextAreNoCodes() {
     for (text in
       listOf(

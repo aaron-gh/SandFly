@@ -68,6 +68,13 @@ public class SelectorMenuFragment extends ItemListFragment {
         liveRecognition.setVisible(false);
       }
     }
+    if (!FeatureSupport.doesServiceHandleDoubleTap()) {
+      Preference textEntities =
+          screen.findPreference(getString(R.string.pref_selector_text_entities_key));
+      if (textEntities != null) {
+        textEntities.setVisible(false);
+      }
+    }
     List<AiActions.Action> aiActions =
         FeatureSupport.doesServiceHandleDoubleTap()
             ? AiActions.all(requireContext())

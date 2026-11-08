@@ -18,14 +18,18 @@
             android:key="@string/pref_selector_actions_key"
             android:title="@string/actions"
             android:summary="@string/summary_actions"/>
+        <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
+            android:defaultValue="@bool/pref_selector_text_entities_default"
+            android:key="@string/pref_selector_text_entities_key"
+            android:title="@string/title_text_entities"/>
         <MultiSelectListPreference
             android:defaultValue="@array/pref_text_entities_values"
-            android:dialogTitle="@string/title_pref_text_entities"
+            android:dialogTitle="@string/title_pref_text_entities_included"
             android:entries="@array/pref_text_entities_entries"
             android:entryValues="@array/pref_text_entities_values"
             android:key="@string/pref_text_entities_key"
-            android:title="@string/title_pref_text_entities">
-            <extra android:name="items" android:value="@string/pref_selector_actions_key" />
+            android:title="@string/title_pref_text_entities_included">
+            <extra android:name="items" android:value="@string/pref_selector_text_entities_key" />
         </MultiSelectListPreference>
         <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
             android:layout="@layout/listitem_2texts"
