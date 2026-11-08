@@ -114,6 +114,12 @@ data class NotificationInfo(
       extras.containsKey(SAMSUNG_ONGOING_ACTIVITY_STYLE) &&
         channelId?.contains("media", ignoreCase = true) == true
 
+    /** Whether [notification], posted by [packageName], is One UI's Now Bar media notification. */
+    @JvmStatic
+    fun isSamsungMediaActivity(packageName: String, notification: Notification): Boolean =
+      packageName == "com.android.systemui" &&
+        isSamsungMediaActivity(notification.extras ?: Bundle.EMPTY, notification.channelId)
+
     /** The extra One UI puts on its ongoing activity notifications, shown in the Now Bar. */
     private const val SAMSUNG_ONGOING_ACTIVITY_STYLE = "android.ongoingActivityNoti.style"
 

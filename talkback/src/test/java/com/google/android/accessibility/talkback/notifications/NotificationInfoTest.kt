@@ -62,6 +62,36 @@ class NotificationInfoTest {
   }
 
   @Test
+  fun systemUiMediaActivityIsMatched() {
+    assertTrue(
+      NotificationInfo.isSamsungMediaActivity(
+        "com.android.systemui",
+        notification("MediaOngoingActivity", ongoingActivity = true),
+      )
+    )
+  }
+
+  @Test
+  fun otherAppsMediaActivityIsNotMatched() {
+    assertFalse(
+      NotificationInfo.isSamsungMediaActivity(
+        "com.example.player",
+        notification("MediaOngoingActivity", ongoingActivity = true),
+      )
+    )
+  }
+
+  @Test
+  fun systemUiNotificationWithoutActivityExtraIsNotMatched() {
+    assertFalse(
+      NotificationInfo.isSamsungMediaActivity(
+        "com.android.systemui",
+        notification("MediaOngoingActivity", ongoingActivity = false),
+      )
+    )
+  }
+
+  @Test
   fun aMediaChannelAloneIsNotMedia() {
     val info =
       NotificationInfo.from(
