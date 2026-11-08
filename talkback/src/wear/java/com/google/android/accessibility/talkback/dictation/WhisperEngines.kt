@@ -16,6 +16,7 @@
 
 package com.google.android.accessibility.talkback.dictation
 
+import android.content.Context
 import java.io.File
 
 /** Watches have no Whisper. */
@@ -25,9 +26,11 @@ object WhisperEngines {
   fun gpuAvailable(): Boolean = false
 
   fun transcriber(
+    context: Context,
     file: File,
     gpu: Boolean,
     build: String,
     shortContext: Boolean,
+    keepLoadedMs: Long,
   ): SpeechTranscriber? = null
 }

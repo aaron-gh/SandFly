@@ -43,7 +43,7 @@ class LiteRtLmLocalLlm(
   private val npuLibraryDir: String? = null,
   /** The most tokens for a prompt plus its answer, or null to use what the model file says. */
   private val maxTokens: Int? = null,
-  private val idleUnloadMs: Long = DEFAULT_IDLE_UNLOAD_MS,
+  @Volatile var idleUnloadMs: Long = DEFAULT_IDLE_UNLOAD_MS,
   /** Runs before each load, and throws [LocalLlmMemoryException] to stop it. */
   private val beforeLoad: () -> Unit = {},
 ) : LocalLlm {

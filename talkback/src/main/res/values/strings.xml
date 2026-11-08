@@ -4868,6 +4868,16 @@
   <string name="title_pref_dictation_rambler_live">Rambler live transcription</string>
   <!-- Dictation setting: how long after the last speech recording stops by itself. [CHAR_LIMIT=40] -->
   <string name="title_pref_dictation_auto_stop">Auto stop after silence</string>
+  <!-- List: how long recognition models stay in memory after use. [CHAR_LIMIT=NONE] -->
+  <string name="title_pref_keep_models_loaded">Keep recognition models loaded</string>
+  <!-- Choice: recognition models are unloaded after each use. [CHAR_LIMIT=NONE] -->
+  <string name="value_keep_models_unload">Unload after use</string>
+  <!-- Choice for how long models stay loaded. [CHAR_LIMIT=NONE] -->
+  <string name="value_keep_models_5">5 minutes</string>
+  <!-- Choice for how long models stay loaded. [CHAR_LIMIT=NONE] -->
+  <string name="value_keep_models_15">15 minutes</string>
+  <!-- Choice for how long models stay loaded. [CHAR_LIMIT=NONE] -->
+  <string name="value_keep_models_30">30 minutes</string>
   <!-- Choices of Auto stop after silence. [CHAR_LIMIT=30] -->
   <string-array name="pref_dictation_auto_stop_entries">
     <item>Off</item>

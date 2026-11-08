@@ -24,6 +24,13 @@
       android:order="3"
       android:summary="%s"
       android:title="@string/title_pref_dictation_auto_stop" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
+      android:defaultValue="0"
+      android:entries="@array/pref_keep_models_loaded_entries"
+      android:entryValues="@array/pref_keep_models_loaded_values"
+      android:key="pref_keep_models_loaded_minutes"
+      android:summary="%s"
+      android:title="@string/title_pref_keep_models_loaded" />
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
       android:key="pref_dictation_ai"
       android:order="4"

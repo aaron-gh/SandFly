@@ -31,6 +31,13 @@
       android:key="@string/pref_on_device_ai_key"
       android:summary="@string/summary_pref_on_device_ai"
       android:title="@string/title_pref_on_device_ai" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
+      android:defaultValue="0"
+      android:entries="@array/pref_keep_models_loaded_entries"
+      android:entryValues="@array/pref_keep_models_loaded_values"
+      android:key="pref_keep_models_loaded_minutes"
+      android:summary="%s"
+      android:title="@string/title_pref_keep_models_loaded" />
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
       android:key="pref_live_recognition_screen"
       android:title="@string/live_recognition_title">

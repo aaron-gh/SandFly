@@ -16,6 +16,9 @@
 
 package com.google.android.accessibility.talkback.dictation
 
+import android.content.ComponentCallbacks2
+import android.content.Context
+import android.content.res.Configuration
 import android.os.SystemClock
 import android.system.ErrnoException
 import android.system.Os
@@ -24,6 +27,9 @@ import com.google.android.accessibility.whisper.WhisperModel
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 import java.io.File
 import java.io.IOException
+import java.util.concurrent.ScheduledFuture
+import java.util.concurrent.ScheduledThreadPoolExecutor
+import java.util.concurrent.TimeUnit
 
 /** Whisper through whisper.cpp. */
 object WhisperEngines {
@@ -38,16 +44,18 @@ object WhisperEngines {
   fun gpuAvailable(): Boolean = Accelerators.hasAdrenoOpenCl
 
   /**
-   * Transcribes with the model in [file], on the GPU when [gpu] is true and it can. The model is
-   * loaded for each transcription and closed after it, so that it takes no memory between
-   * dictations. [build] tells this install of SandFly from others, as [load] says. With
-   * [shortContext], for models fine-tuned for it, only the spoken audio is encoded.
+   * Transcribes with the model in [file], on the GPU when [gpu] is true and it can. The model stays
+   * loaded for [keepLoadedMs] after a transcription, or is closed at once for 0. [build] tells this
+   * install of SandFly from others, as [load] says. With [shortContext], for models fine-tuned for
+   * it, only the spoken audio is encoded.
    */
   fun transcriber(
+    context: Context,
     file: File,
     gpu: Boolean,
     build: String,
     shortContext: Boolean,
+    keepLoadedMs: Long,
   ): SpeechTranscriber? =
     object : SpeechTranscriber {
       @Volatile private var model: WhisperModel? = null
@@ -56,9 +64,10 @@ object WhisperEngines {
       override fun transcribe(samples: FloatArray, language: String): String? {
         if (cancelled) return null
         val loadStart = SystemClock.elapsedRealtime()
+        val onGpu = gpu && gpuAvailable()
         val loaded =
           try {
-            load(file, gpu && gpuAvailable(), build)
+            LoadedModel.take(file, onGpu) ?: load(file, onGpu, build)
           } catch (e: IOException) {
             LogUtils.e(TAG, "Could not load %s: %s", file.name, e)
             return null
@@ -82,7 +91,7 @@ object WhisperEngines {
           return text
         } finally {
           model = null
-          loaded.close()
+          LoadedModel.keep(context, file, onGpu, loaded, keepLoadedMs)
         }
       }
 
@@ -91,6 +100,78 @@ object WhisperEngines {
         model?.cancel()
       }
     }
+
+  /** The model kept in memory after a transcription, until it is used, replaced or times out. */
+  private object LoadedModel {
+    private val closer =
+      ScheduledThreadPoolExecutor(1) { Thread(it, "WhisperModel closer").apply { isDaemon = true } }
+        .apply {
+          setKeepAliveTime(30, TimeUnit.SECONDS)
+          allowCoreThreadTimeOut(true)
+          removeOnCancelPolicy = true
+        }
+    private var model: WhisperModel? = null
+    private var path: String? = null
+    private var modified = 0L
+    private var onGpu = false
+    private var closing: ScheduledFuture<*>? = null
+    private var listening = false
+
+    /** The model loaded for [file], which then belongs to the caller, or null. */
+    @Synchronized
+    fun take(file: File, gpu: Boolean): WhisperModel? {
+      if (model == null || path != file.path || modified != file.lastModified() || onGpu != gpu) {
+        return null
+      }
+      closing?.cancel(false)
+      closing = null
+      return model.also { model = null }
+    }
+
+    /** Keeps [loaded] for [keepMs], or closes it for 0. */
+    fun keep(context: Context, file: File, gpu: Boolean, loaded: WhisperModel, keepMs: Long) {
+      if (keepMs <= 0) {
+        loaded.close()
+        return
+      }
+      val previous: WhisperModel?
+      synchronized(this) {
+        previous = model
+        closing?.cancel(false)
+        model = loaded
+        path = file.path
+        modified = file.lastModified()
+        onGpu = gpu
+        closing = closer.schedule({ closeNow() }, keepMs, TimeUnit.MILLISECONDS)
+        if (!listening) {
+          listening = true
+          context.applicationContext.registerComponentCallbacks(
+            object : ComponentCallbacks2 {
+              override fun onTrimMemory(level: Int) {
+                if (level >= ComponentCallbacks2.TRIM_MEMORY_RUNNING_LOW) closeNow()
+              }
+
+              override fun onConfigurationChanged(newConfig: Configuration) {}
+
+              override fun onLowMemory() = closeNow()
+            }
+          )
+        }
+      }
+      previous?.close()
+    }
+
+    fun closeNow() {
+      val kept: WhisperModel?
+      synchronized(this) {
+        kept = model
+        model = null
+        closing?.cancel(false)
+        closing = null
+      }
+      kept?.close()
+    }
+  }
 
   /**
    * Loads the model in [file], on the GPU if [gpu]. A crash in the GPU driver or the GPU build
