@@ -78,6 +78,7 @@ object Updater {
   internal const val PREF_LAST_CHECK_TIME = "update_last_check_time"
   internal const val PREF_LAST_NOTIFIED_BUILD = "update_last_notified_build"
   private const val APK_FILE_NAME = "sandfly.apk"
+  private const val DOWNLOAD_DIRECTORY = "update"
   /** How long to wait for the shell install before falling back; SandFly usually restarts first. */
   private const val INSTALL_TIMEOUT_SECONDS = 150L
   private val CHECK_INTERVAL_MS = TimeUnit.DAYS.toMillis(1)
@@ -121,6 +122,10 @@ object Updater {
   @JvmStatic
   fun startAutomaticChecks(context: Context) {
     serviceContext = context.applicationContext
+    // A download interrupted by the process ending leaves its APK behind.
+    if (!isBusy) {
+      File(context.filesDir, DOWNLOAD_DIRECTORY).deleteRecursively()
+    }
     mainHandler.removeCallbacks(startupCheck)
     mainHandler.removeCallbacks(periodicCheck)
     mainHandler.postDelayed(startupCheck, STARTUP_DELAY_MS)
@@ -367,7 +372,9 @@ object Updater {
    * another unmetered network when one comes up, not through the phone.
    */
   private fun download(context: Context, url: String, apiUrl: String?): File {
-    val directory = File(context.cacheDir, "update")
+    // Not the cache directory: with little free storage, Android deletes cache files to make room
+    // for the install session, which would delete this APK before it is copied there.
+    val directory = File(context.filesDir, DOWNLOAD_DIRECTORY)
     directory.mkdirs()
     val file = File(directory, APK_FILE_NAME)
     val fast = if (FormFactorUtils.isAndroidWear()) FastNetwork.request(context) else null
