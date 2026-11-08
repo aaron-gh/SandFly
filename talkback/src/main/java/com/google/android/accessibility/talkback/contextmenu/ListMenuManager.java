@@ -26,6 +26,7 @@ import static com.google.android.accessibility.talkback.Feedback.Focus.Action.RE
 import static com.google.android.accessibility.talkback.Feedback.Speech.Action.SAVE_LAST;
 import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.CONTEXT;
 import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.CUSTOM_ACTION;
+import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.EDITING;
 import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.GESTURE_PROFILE;
 import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.LANGUAGE;
 import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.SPLIT_SCREEN;
@@ -137,6 +138,7 @@ public class ListMenuManager implements WindowEventHandler, AccessibilityEventLi
     VOICE_PROFILE,
     GESTURE_PROFILE,
     SPLIT_SCREEN,
+    EDITING,
   }
 
   public ListMenuManager(
@@ -320,6 +322,9 @@ public class ListMenuManager implements WindowEventHandler, AccessibilityEventLi
     } else if (menuId == SPLIT_SCREEN) {
       SplitScreenMenuProcessor.prepareSplitScreenMenu(service, pipeline, menu);
       menu.setTitle(service.getString(R.string.title_split_screen));
+    } else if (menuId == EDITING) {
+      EditingMenuProcessor.prepareEditingMenu(service, menu);
+      menu.setTitle(service.getString(R.string.title_editing_menu));
     }
   }
 
