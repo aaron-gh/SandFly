@@ -6,8 +6,13 @@ import static android.view.accessibility.AccessibilityEvent.TYPE_WINDOW_CONTENT_
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.os.Handler;
+import android.os.Looper;
 import android.text.TextUtils;
 import android.view.accessibility.AccessibilityEvent;
+import androidx.annotation.Nullable;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.braille.brailledisplay.BrailleDisplayLog;
 import com.google.android.accessibility.braille.brailledisplay.controller.BdController.BehaviorDisplayer;
 import com.google.android.accessibility.braille.brailledisplay.controller.popupmessage.DefaultParser;
@@ -32,6 +37,10 @@ import com.google.android.accessibility.utils.Role;
 public class SystemEventConsumer implements EventConsumer {
   private static final String TAG = "SystemEventConsumer";
   private static final int SKIP_EVENT_MS = 200;
+  private static final long LIVE_REGION_SETTLE_MS = 600;
+  private static final int MAX_LIVE_REGION_NODES = 100;
+  private static final int MAX_LIVE_REGION_CHARS = 2000;
+  private static final int MAX_LIVE_REGION_DEPTH = 5;
   private final Context context;
   private final BehaviorDisplayer behaviorDisplayer;
   private final CellsContentConsumer cellsContentConsumer;
@@ -41,6 +50,9 @@ public class SystemEventConsumer implements EventConsumer {
   private final SnackbarParser snackbarParser;
   private final PopUpHistory popUpHistory;
   private PopUpMessageInfo cachePopupMessageInfo;
+  private final Handler handler = new Handler(Looper.getMainLooper());
+  private @Nullable String liveRegionText;
+  private @Nullable String lastLiveRegionText;
 
   public SystemEventConsumer(
       Context context,
@@ -76,9 +88,11 @@ public class SystemEventConsumer implements EventConsumer {
     Parser parser;
     switch (event.getEventType()) {
       case TYPE_WINDOW_CONTENT_CHANGED -> {
-        if (SnackbarParser.isAlert(AccessibilityEventUtils.sourceCompat(event))) {
+        AccessibilityNodeInfoCompat source = AccessibilityEventUtils.sourceCompat(event);
+        if (SnackbarParser.isAlert(source)) {
           parser = snackbarParser;
         } else {
+          showLiveRegionWhenSettled(liveRegionOf(event, source));
           return;
         }
       }
@@ -100,6 +114,85 @@ public class SystemEventConsumer implements EventConsumer {
         popUpHistory.addMessage(info);
       }
     }
+  }
+
+  /**
+   * Shows the text of a live region once it stops changing, since a streamed reply changes many
+   * times a second.
+   */
+  private void showLiveRegionWhenSettled(@Nullable AccessibilityNodeInfoCompat region) {
+    if (region == null) {
+      return;
+    }
+    StringBuilder text = new StringBuilder();
+    appendText(region, text, new int[] {MAX_LIVE_REGION_NODES});
+    if (text.length() == 0) {
+      return;
+    }
+    String output = text.toString();
+    handler.removeCallbacks(showLiveRegion);
+    liveRegionText = output;
+    handler.postDelayed(showLiveRegion, LIVE_REGION_SETTLE_MS);
+  }
+
+  private final Runnable showLiveRegion =
+      () -> {
+        String text = liveRegionText;
+        liveRegionText = null;
+        if (text != null && !text.equals(lastLiveRegionText)) {
+          lastLiveRegionText = text;
+          displayPopMessage(text);
+        }
+      };
+
+  /** Appends the text of {@code node}, or else of its descendants, visiting at most some nodes. */
+  private static void appendText(
+      AccessibilityNodeInfoCompat node, StringBuilder text, int[] nodesLeft) {
+    if (nodesLeft[0]-- <= 0 || text.length() >= MAX_LIVE_REGION_CHARS) {
+      return;
+    }
+    CharSequence own = node.getContentDescription();
+    if (TextUtils.isEmpty(own)) {
+      own = node.getText();
+    }
+    if (!TextUtils.isEmpty(own)) {
+      if (text.length() > 0) {
+        text.append(' ');
+      }
+      text.append(own);
+      return;
+    }
+    for (int index = 0; index < node.getChildCount(); index++) {
+      AccessibilityNodeInfoCompat child = node.getChild(index);
+      if (child != null) {
+        appendText(child, text, nodesLeft);
+      }
+    }
+  }
+
+  /**
+   * The live region that a content change came from, or null. Only a text change looks at ancestors,
+   * since content changes are frequent and each ancestor is a call to the app.
+   */
+  static @Nullable AccessibilityNodeInfoCompat liveRegionOf(
+      AccessibilityEvent event, @Nullable AccessibilityNodeInfoCompat source) {
+    if (source == null) {
+      return null;
+    }
+    if (source.getLiveRegion() != ViewCompat.ACCESSIBILITY_LIVE_REGION_NONE) {
+      return source;
+    }
+    if ((event.getContentChangeTypes() & AccessibilityEvent.CONTENT_CHANGE_TYPE_TEXT) == 0) {
+      return null;
+    }
+    AccessibilityNodeInfoCompat node = source.getParent();
+    for (int depth = 0; node != null && depth < MAX_LIVE_REGION_DEPTH; depth++) {
+      if (node.getLiveRegion() != ViewCompat.ACCESSIBILITY_LIVE_REGION_NONE) {
+        return node;
+      }
+      node = node.getParent();
+    }
+    return null;
   }
 
   private boolean skip(PopUpMessageInfo info) {
