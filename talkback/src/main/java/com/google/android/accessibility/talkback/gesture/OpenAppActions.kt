@@ -40,6 +40,9 @@ object OpenAppActions {
   /** Returns the action that opens [component]. */
   @JvmStatic fun valueOf(component: ComponentName): String = PREFIX + component.flattenToString()
 
+  /** Returns the package of the app [value] opens, or null when it isn't one of these actions. */
+  @JvmStatic fun packageName(value: String?): String? = component(value)?.packageName
+
   /** Returns whether [value] is an action that opens an app. */
   @JvmStatic fun isAction(value: String?): Boolean = component(value) != null
 

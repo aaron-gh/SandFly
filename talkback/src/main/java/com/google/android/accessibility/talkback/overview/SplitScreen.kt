@@ -146,6 +146,11 @@ class SplitScreen(private val service: AccessibilityService) {
     private const val INPUT_FOCUS_SETTLE_MS = 60L
     private const val MAX_DIVIDER_DEPTH = 6
 
+    /** Whether the split screen divider is on screen. */
+    @JvmStatic
+    fun isShown(service: AccessibilityService): Boolean =
+      AccessibilityServiceCompatUtils.getWindows(service).orEmpty().any { it.type == TYPE_DIVIDER }
+
     /**
      * Whether [node] is in the split screen app without window focus. Pressing a key takes every
      * window out of touch mode, which gives a view in that app input focus too.
