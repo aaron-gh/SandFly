@@ -26,6 +26,7 @@ import android.content.Intent
 import android.content.pm.PackageInfo
 import android.content.pm.PackageInstaller
 import android.content.pm.PackageManager
+import android.net.Network
 import android.net.Uri
 import android.os.Build
 import android.os.Handler
@@ -348,6 +349,9 @@ object Updater {
       } catch (e: WrongPackageException) {
         LogUtils.e(TAG, "Refused the update: %s", e.message)
         mainHandler.post { toast(appContext, R.string.update_wrong_package, Toast.LENGTH_LONG) }
+      } catch (e: DownloadFailedException) {
+        LogUtils.e(TAG, "Cannot download the update: %s", e)
+        mainHandler.post { toast(appContext, R.string.update_download_failed) }
       } catch (e: Exception) {
         LogUtils.e(TAG, "Cannot install the update: %s", e)
         mainHandler.post { toast(appContext, R.string.update_install_failed) }
@@ -366,39 +370,54 @@ object Updater {
     directory.mkdirs()
     val file = File(directory, APK_FILE_NAME)
     val fast = if (FormFactorUtils.isAndroidWear()) FastNetwork.request(context) else null
+    var complete = false
     try {
-      val connection = UpdateChecker.openConnection(context, url, fast?.network)
-      try {
-        val code = connection.responseCode
-        if (code != HttpURLConnection.HTTP_OK) {
-          throw IOException("Download returned HTTP $code")
+      DownloadRetry.run { downloadOnce(context, url, file, fast?.network) }
+      complete = true
+      return file
+    } catch (e: IOException) {
+      throw DownloadFailedException(e)
+    } finally {
+      if (!complete) file.delete()
+      fast?.release()
+    }
+  }
+
+  private fun downloadOnce(context: Context, url: String, file: File, network: Network?) {
+    val connection = UpdateChecker.openConnection(context, url, network)
+    try {
+      val code = connection.responseCode
+      if (code != HttpURLConnection.HTTP_OK) {
+        val message = "Download returned HTTP $code"
+        throw if (DownloadRetry.isRetryableStatus(code)) {
+          IOException(message)
+        } else {
+          PermanentDownloadException(message)
         }
-        val total = connection.contentLengthLong
-        connection.inputStream.use { input ->
-          file.outputStream().use { output ->
-            val buffer = ByteArray(64 * 1024)
-            var done = 0L
-            var shownPercent = -1
-            while (true) {
-              val count = input.read(buffer)
-              if (count < 0) break
-              output.write(buffer, 0, count)
-              done += count
-              val percent = if (total > 0) (done * 100 / total).toInt() else -1
-              if (percent != shownPercent && (percent < 0 || percent % 5 == 0)) {
-                shownPercent = percent
-                showProgress(context, percent)
-              }
+      }
+      val total = connection.contentLengthLong
+      var done = 0L
+      connection.inputStream.use { input ->
+        file.outputStream().use { output ->
+          val buffer = ByteArray(64 * 1024)
+          var shownPercent = -1
+          while (true) {
+            val count = input.read(buffer)
+            if (count < 0) break
+            output.write(buffer, 0, count)
+            done += count
+            val percent = if (total > 0) (done * 100 / total).toInt() else -1
+            if (percent != shownPercent && (percent < 0 || percent % 5 == 0)) {
+              shownPercent = percent
+              showProgress(context, percent)
             }
           }
         }
-      } finally {
-        connection.disconnect()
       }
+      DownloadRetry.checkSize(total, done)
     } finally {
-      fast?.release()
+      connection.disconnect()
     }
-    return file
   }
 
   private fun showProgress(context: Context, percent: Int) {
@@ -448,9 +467,17 @@ object Updater {
 
   private class WrongPackageException(message: String) : Exception(message)
 
+  /** The update could not be downloaded, or what was downloaded is not a readable APK. */
+  private class DownloadFailedException : Exception {
+    constructor(cause: Throwable) : super(cause)
+
+    constructor(message: String) : super(message)
+  }
+
   private fun installApk(context: Context, apk: File) {
-    val info = readArchive(context, apk)
-    val apkPackage = info?.packageName
+    val info =
+      readArchive(context, apk) ?: throw DownloadFailedException("The download is not an APK")
+    val apkPackage = info.packageName
     val kind =
       AppIdMove.installKind(
         apkPackage,
