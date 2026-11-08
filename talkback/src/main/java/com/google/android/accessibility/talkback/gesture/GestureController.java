@@ -526,6 +526,10 @@ public class GestureController {
       result =
           pipeline.returnFeedback(
               eventId, Feedback.systemAction(AccessibilityService.GLOBAL_ACTION_RECENTS));
+    } else if (action.equals(service.getString(R.string.shortcut_value_system_overview))) {
+      result =
+          pipeline.returnFeedback(
+              eventId, Feedback.systemAction(SystemActionPerformer.GLOBAL_ACTION_SYSTEM_OVERVIEW));
     } else if (action.equals(service.getString(R.string.shortcut_value_notifications))) {
       result =
           pipeline.returnFeedback(

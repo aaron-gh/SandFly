@@ -478,6 +478,17 @@
             android:taskAffinity="com.google.android.accessibility.talkback.QuickSettingsAffinity"
             android:theme="@style/NotificationListTheme" />
 
+        <!-- SandFly's own overview of recent apps, opened instead of the system's overview. -->
+        <activity
+            android:name="com.google.android.accessibility.talkback.overview.OverviewActivity"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize|keyboardHidden|uiMode|fontScale"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:label="@string/overview_title"
+            android:launchMode="singleTask"
+            android:taskAffinity="com.google.android.accessibility.talkback.OverviewAffinity"
+            android:theme="@style/NotificationListTheme" />
+
         <!-- Receives notifications for that list while the user has given notification access. -->
         <service
             android:name="com.google.android.accessibility.talkback.notificationlist.NotificationListService"

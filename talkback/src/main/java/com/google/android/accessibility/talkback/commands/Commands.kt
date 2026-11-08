@@ -741,6 +741,7 @@ object Commands {
         gesture(R.string.shortcut_value_home, R.string.shortcut_home, Key.HOME)
         gesture(R.string.shortcut_value_back, R.string.shortcut_back, Key.BACK)
         gesture(R.string.shortcut_value_overview, R.string.shortcut_overview, Key.RECENT_APPS)
+        gesture(R.string.shortcut_value_system_overview, R.string.shortcut_system_overview)
         gesture(
           R.string.shortcut_value_notifications,
           R.string.shortcut_notifications,

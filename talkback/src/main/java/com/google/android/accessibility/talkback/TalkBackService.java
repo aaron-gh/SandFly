@@ -227,6 +227,7 @@ import com.google.android.accessibility.talkback.ipc.IpcService.IpcClientCallbac
 import com.google.android.accessibility.talkback.ipc.IpcService.ServerOnDestroyListener;
 import com.google.android.accessibility.talkback.keyboard.ArrowKeyNav;
 import com.google.android.accessibility.talkback.keyboard.KeyComboManager;
+import com.google.android.accessibility.talkback.keyboard.SandFlyKey;
 import com.google.android.accessibility.talkback.keyboardecho.KeyboardEchoSettings;
 import com.google.android.accessibility.talkback.labeling.CustomLabelManager;
 import com.google.android.accessibility.talkback.labeling.StoragelessLabelManager;
@@ -243,6 +244,7 @@ import com.google.android.accessibility.talkback.monitor.ProximitySensorMonitor;
 import com.google.android.accessibility.talkback.monitor.RingerModeAndScreenMonitor;
 import com.google.android.accessibility.talkback.monitor.VolumeMonitor;
 import com.google.android.accessibility.talkback.notificationlist.NotificationListService;
+import com.google.android.accessibility.talkback.overview.AppSwitcherKeys;
 import com.google.android.accessibility.talkback.notifications.NotificationReader;
 import com.google.android.accessibility.talkback.notifications.NotificationSettings;
 import com.google.android.accessibility.talkback.speechdictionary.BrailleDictionary;
@@ -885,6 +887,9 @@ public class TalkBackService extends AccessibilityServiceCompat
 
   /** Volume keys > double, triple and long presses of each volume key. */
   @Nullable private VolumeKeyCommands volumeKeyCommands;
+
+  /** Alt+Tab through SandFly's overview. */
+  @Nullable private AppSwitcherKeys appSwitcherKeys;
   @Nullable private BackTapCommands backTapCommands;
   // The strip at the bottom of the screen where lifting activates nothing with Lift to activate.
   @Nullable private LiftCancelStrip liftCancelStrip;
@@ -1567,6 +1572,10 @@ public class TalkBackService extends AccessibilityServiceCompat
     }
 
     if (brailleDisplay.onKeyEvent(keyEvent)) {
+      return true;
+    }
+
+    if (appSwitcherKeys != null && isServiceActive() && appSwitcherKeys.onKeyEvent(keyEvent)) {
       return true;
     }
 
@@ -2818,7 +2827,17 @@ public class TalkBackService extends AccessibilityServiceCompat
           if (!isInteractive && volumeKeyCommands != null) {
             volumeKeyCommands.onScreenOff();
           }
+          if (!isInteractive && appSwitcherKeys != null) {
+            appSwitcherKeys.reset();
+          }
         });
+    appSwitcherKeys =
+        new AppSwitcherKeys(
+            this,
+            pipeline.getFeedbackReturner(),
+            () ->
+                keyComboManager != null
+                    && keyComboManager.getSandFlyKey() == SandFlyKey.ALT);
 
     backTapCommands =
         new BackTapCommands(

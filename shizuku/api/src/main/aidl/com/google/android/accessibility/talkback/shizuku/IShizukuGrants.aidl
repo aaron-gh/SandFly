@@ -16,6 +16,7 @@
 
 package com.google.android.accessibility.talkback.shizuku;
 
+import android.os.Bundle;
 import com.google.android.accessibility.talkback.shizuku.IClipboardWatcher;
 
 /**
@@ -60,4 +61,25 @@ interface IShizukuGrants {
      * sensitive, such as passwords. Null stops telling the watcher told before.
      */
     void watchClipboard(IClipboardWatcher watcher) = 5;
+
+    /**
+     * The user's recent tasks, as in the system's overview, most recent first, at most [max]: a
+     * Bundle of arrays of the same length, keyed as in RecentTask. Null if they can't be read.
+     */
+    Bundle recentTasks(int max) = 6;
+
+    /**
+     * Brings the recent task [taskId] to the front, as the system's overview does. Returns null if
+     * it worked, or what went wrong.
+     */
+    String openTask(int taskId) = 7;
+
+    /** Removes the recent task [taskId]. Returns null if it worked, or what went wrong. */
+    String closeTask(int taskId) = 8;
+
+    /**
+     * Puts the recent task [taskId] in split screen beside the task in front. Returns null if it
+     * worked, or what went wrong.
+     */
+    String splitTask(int taskId) = 9;
 }
