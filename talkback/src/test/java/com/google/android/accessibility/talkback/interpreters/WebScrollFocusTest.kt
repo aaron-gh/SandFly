@@ -19,6 +19,7 @@ package com.google.android.accessibility.talkback.interpreters
 import android.graphics.Rect
 import android.view.accessibility.AccessibilityNodeInfo
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
+import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionInfo
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNull
@@ -481,5 +482,22 @@ class WebScrollFocusTest {
       )
 
     assertSame(firstInView, found)
+  }
+
+  @Test
+  fun recoveryFocus_keepsTheFlingAUserScroll() {
+    // Times from the capture in SandFly#37: the recovery focused an item during the fling.
+    val touchStart = 83851810L
+    val touchEnd = 83851991L
+    val focus = 83852158L
+    val scroll = 83852665L
+    val recovery = WebScrollFocus.focusTimeForUserScroll(FocusActionInfo.MANUAL_SCROLL, focus)
+    assertTrue(WebScrollFocus.isUserScroll(scroll, touchStart, touchEnd, false, recovery))
+  }
+
+  @Test
+  fun navigationFocus_endsTheFling() {
+    val focus = WebScrollFocus.focusTimeForUserScroll(FocusActionInfo.LOGICAL_NAVIGATION, 1150L)
+    assertFalse(WebScrollFocus.isUserScroll(1300, 1000, 1100, false, focus))
   }
 }

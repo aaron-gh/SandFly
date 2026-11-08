@@ -569,6 +569,15 @@ public class AccessibilityFocusInterpreter
     }
   }
 
+  /** {@link #lastFocusActionTime} for telling whether the user scrolled the page. */
+  private long focusTimeForUserScroll() {
+    FocusActionRecord record = actorState.getFocusHistory().getLastFocusActionRecord();
+    return (record == null)
+        ? -1
+        : WebScrollFocus.focusTimeForUserScroll(
+            record.getExtraInfo().sourceAction, record.getActionTime());
+  }
+
   private long lastFocusActionTime() {
     FocusActionRecord record = actorState.getFocusHistory().getLastFocusActionRecord();
     return (record == null) ? -1 : record.getActionTime();
@@ -586,7 +595,7 @@ public class AccessibilityFocusInterpreter
         touchMonitor.isUserTouchingScreen(),
         touchMonitor.getPreviousTouchStartTime(),
         touchMonitor.getPreviousTouchEndTime(),
-        lastFocusActionTime());
+        focusTimeForUserScroll());
   }
 
   private boolean shouldMoveFocus(

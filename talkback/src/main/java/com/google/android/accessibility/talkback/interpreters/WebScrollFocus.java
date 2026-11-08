@@ -21,6 +21,7 @@ import android.text.TextUtils;
 import androidx.annotation.VisibleForTesting;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat.AccessibilityActionCompat;
+import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionInfo;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.Role;
 import com.google.android.accessibility.utils.WebInterfaceUtils;
@@ -126,6 +127,14 @@ final class WebScrollFocus {
           scrollTime, previousTouchStartTime, previousTouchEndTime, /* touching= */ false, focusTime);
     }
     return isUserScroll(scrollTime, touchStartTime, touchEndTime, touching, focusTime);
+  }
+
+  /**
+   * The time of the last focus action for {@link #isUserScroll}. Focus placed by manual scroll
+   * recovery doesn't end the fling that caused it, which can move that item out of view again.
+   */
+  static long focusTimeForUserScroll(int sourceAction, long focusTime) {
+    return sourceAction == FocusActionInfo.MANUAL_SCROLL ? -1 : focusTime;
   }
 
   /** {@link #isUserScroll} for a scroll during or after the touch interaction given. */
