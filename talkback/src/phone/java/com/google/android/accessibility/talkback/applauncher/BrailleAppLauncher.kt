@@ -286,6 +286,7 @@ class BrailleAppLauncher(
             1 to Swipe.Direction.DOWN -> { -> search.nextApp() }
             1 to Swipe.Direction.LEFT -> ::deleteCell
             2 to Swipe.Direction.UP -> search::open
+            3 to Swipe.Direction.UP -> search::openInSplit
             2 to Swipe.Direction.DOWN -> ::cancel
             2 to Swipe.Direction.LEFT -> ::clear
             else -> return false

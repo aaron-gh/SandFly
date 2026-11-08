@@ -301,15 +301,14 @@ class ShizukuGrantService(private val context: Context?) : IShizukuGrants.Stub()
    * Has SystemUI's window manager shell put the task in split screen, in the bottom or right half,
    * beside the task in front, which takes the other half.
    */
-  override fun splitTask(taskId: Int): String? {
+  override fun splitTask(taskId: Int): String? =
+    wmShellSplit("moveToSideStage", taskId.toString(), SPLIT_POSITION_BOTTOM_OR_RIGHT.toString())
+
+  override fun exitSplit(taskId: Int): String? = wmShellSplit("exitSplitScreen", taskId.toString())
+
+  private fun wmShellSplit(vararg arguments: String): String? {
     val result =
-      shell(
-        listOf(
-          "dumpsys", "activity", "service", SYSTEM_UI_SERVICE, "WMShell", "splitscreen",
-          "moveToSideStage", taskId.toString(), SPLIT_POSITION_BOTTOM_OR_RIGHT.toString(),
-        ),
-        null,
-      )
+      shell(listOf("dumpsys", "activity", "service", SYSTEM_UI_SERVICE, "WMShell", "splitscreen") + arguments, null)
     // The shell prints its help when it doesn't know a command or its arguments.
     return when {
       result.first != 0 -> result.second.ifEmpty { "Split screen failed" }

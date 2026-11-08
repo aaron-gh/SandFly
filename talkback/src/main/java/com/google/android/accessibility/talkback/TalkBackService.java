@@ -244,6 +244,7 @@ import com.google.android.accessibility.talkback.monitor.ProximitySensorMonitor;
 import com.google.android.accessibility.talkback.monitor.RingerModeAndScreenMonitor;
 import com.google.android.accessibility.talkback.monitor.VolumeMonitor;
 import com.google.android.accessibility.talkback.notificationlist.NotificationListService;
+import com.google.android.accessibility.talkback.applauncher.HomeScreenApps;
 import com.google.android.accessibility.talkback.overview.AppSwitcherKeys;
 import com.google.android.accessibility.talkback.overview.SplitScreen;
 import com.google.android.accessibility.talkback.notifications.NotificationReader;
@@ -1254,6 +1255,10 @@ public class TalkBackService extends AccessibilityServiceCompat
         SpeechDictionary.onWindowShown(frontApp);
         AppGestures.onWindowShown(frontApp);
       }
+    }
+    if (eventType == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED
+        && HomeScreenPages.isHomePackage(this, event.getPackageName())) {
+      HomeScreenApps.refresh(this);
     }
     if (eventType == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED
         && Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU

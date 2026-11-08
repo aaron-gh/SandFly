@@ -37,6 +37,12 @@ import com.google.android.accessibility.talkback.contextmenu.AbstractOnContextMe
 import com.google.android.accessibility.talkback.contextmenu.ContextMenu;
 import com.google.android.accessibility.talkback.contextmenu.ContextMenuItem;
 import com.google.android.accessibility.talkback.contextmenu.ContextMenuItem.DeferredType;
+import com.google.android.accessibility.talkback.TalkBackService;
+import com.google.android.accessibility.talkback.applauncher.AppNameSearch;
+import com.google.android.accessibility.talkback.applauncher.HomeScreenApps;
+import com.google.android.accessibility.talkback.focusmanagement.HomeScreenPages;
+import com.google.android.accessibility.talkback.gesture.OpenAppActions;
+import com.google.android.accessibility.talkback.overview.RecentTasks;
 import com.google.android.accessibility.talkback.scripting.ScriptItemAction;
 import com.google.android.accessibility.talkback.scripting.Scripts;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
@@ -52,6 +58,7 @@ import java.util.Set;
 public class CustomActionMenu implements NodeMenu {
   public static final int CUSTOM_ACTION_GROUP_ID = 1;
   private static final int SCRIPT_ACTION_ID = 0x5c000000;
+  private static final int OPEN_IN_SPLIT_ACTION_ID = 0x5bffffff;
   private static final String TAG = "CustomActionMenu";
   private final Pipeline.FeedbackReturner pipeline;
   TalkBackAnalytics analytics;
@@ -79,8 +86,40 @@ public class CustomActionMenu implements NodeMenu {
     if (acceptCustomActionMenu(node)) {
       populateCustomMenuItemsForNode(context, node, customItems, includeAncestors, visitedNodes);
     }
+    addOpenInSplitItem(context, node, customItems);
     addScriptItems(context, node, customItems);
     return customItems;
+  }
+
+  /** Adds Open in split screen to an app's icon in the launcher. */
+  private void addOpenInSplitItem(
+      Context context, AccessibilityNodeInfoCompat node, List<ContextMenuItem> menu) {
+    TalkBackService service = TalkBackService.getInstance();
+    if (service == null
+        || !HomeScreenPages.isHomePackage(context, node.getPackageName())
+        || !RecentTasks.isAvailable(context)) {
+      return;
+    }
+    OpenAppActions.App app = HomeScreenApps.find(node.getText(), node.getContentDescription());
+    if (app == null) {
+      return;
+    }
+    ContextMenuItem item =
+        ContextMenu.createMenuItem(
+            context,
+            CUSTOM_ACTION_GROUP_ID,
+            OPEN_IN_SPLIT_ACTION_ID,
+            Menu.NONE,
+            context.getString(R.string.split_screen_open));
+    item.setOnMenuItemClickListener(
+        clicked -> {
+          AppNameSearch.openInSplit(service, pipeline, app);
+          return true;
+        });
+    item.setDeferredType(DeferredType.WINDOWS_STABLE);
+    item.setSkipRefocusEvents(true);
+    item.setCheckable(false);
+    menu.add(item);
   }
 
   private static void addScriptItems(

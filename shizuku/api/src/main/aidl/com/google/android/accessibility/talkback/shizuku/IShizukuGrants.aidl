@@ -82,4 +82,10 @@ interface IShizukuGrants {
      * worked, or what went wrong.
      */
     String splitTask(int taskId) = 9;
+
+    /**
+     * Ends split screen and leaves the task [taskId] on top. Does nothing outside split screen.
+     * Returns null if it worked, or what went wrong.
+     */
+    String exitSplit(int taskId) = 10;
 }

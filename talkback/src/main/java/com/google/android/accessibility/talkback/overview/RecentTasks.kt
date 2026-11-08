@@ -16,16 +16,20 @@
 
 package com.google.android.accessibility.talkback.overview
 
+import android.accessibilityservice.AccessibilityService
 import android.content.ComponentName
 import android.content.Context
 import android.os.Bundle
 import android.os.Process
 import android.os.SystemClock
 import android.os.UserHandle
+import android.view.accessibility.AccessibilityWindowInfo
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.talkback.gesture.OpenAppActions
 import com.google.android.accessibility.talkback.shizuku.IShizukuGrants
 import com.google.android.accessibility.talkback.shizuku.RecentTaskKeys
 import com.google.android.accessibility.talkback.shizuku.ShizukuShell
+import com.google.android.accessibility.utils.AccessibilityServiceCompatUtils
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 
@@ -60,6 +64,11 @@ object RecentTasks {
   /** How long a split waits for the app it splits beside to come to the front. */
   private const val FRONT_WAIT_MS = 1_500L
   private const val FRONT_POLL_MS = 50L
+  /** How long a new split waits for the app to start, and then for the split to show. */
+  private const val OPEN_WAIT_MS = 6_000L
+  private const val DIVIDER_WAIT_MS = 2_500L
+  /** Split commands sent during a window transition can leave a task out of the split. */
+  private const val TRANSITION_SETTLE_MS = 700L
   /** UIDs of one user, as in UserHandle.PER_USER_RANGE. */
   private const val PER_USER_RANGE = 100_000
 
@@ -99,14 +108,81 @@ object RecentTasks {
   fun split(context: Context, front: RecentTask, task: RecentTask, onDone: (Boolean) -> Unit = {}) {
     val appContext = context.applicationContext
     run(context, "split ${task.id} beside ${front.id}", onDone) { service ->
-      service.openTask(front.id)?.let { return@run it }
-      val deadline = SystemClock.uptimeMillis() + FRONT_WAIT_MS
-      while (SystemClock.uptimeMillis() < deadline) {
-        val tasks = read(appContext, service, includeOverview = true)
-        if (tasks?.firstOrNull()?.id == front.id) break
-        Thread.sleep(FRONT_POLL_MS)
-      }
-      service.splitTask(task.id)
+      splitBeside(appContext, service, front, task)
+    }
+  }
+
+  private fun hasWindow(service: AccessibilityService, packageName: String): Boolean =
+    AccessibilityServiceCompatUtils.getWindows(service).orEmpty().any {
+      it.type == AccessibilityWindowInfo.TYPE_APPLICATION &&
+        it.root?.packageName?.toString() == packageName
+    }
+
+  private fun splitBeside(
+    context: Context,
+    service: IShizukuGrants,
+    front: RecentTask,
+    task: RecentTask,
+  ): String? {
+    service.openTask(front.id)?.let { return it }
+    val deadline = SystemClock.uptimeMillis() + FRONT_WAIT_MS
+    while (SystemClock.uptimeMillis() < deadline) {
+      val tasks = read(context, service, includeOverview = true)
+      if (tasks?.firstOrNull()?.id == front.id) break
+      Thread.sleep(FRONT_POLL_MS)
+    }
+    Thread.sleep(TRANSITION_SETTLE_MS)
+    return service.splitTask(task.id)
+  }
+
+  /**
+   * Opens [app], then brings the most recent other app back to the front and puts [app] in split
+   * screen beside it. Moving the other app instead can lose its task if [app] starts another
+   * activity as the split forms. [onDone] gets whether the split screen divider showed.
+   */
+  fun openBeside(
+    service: AccessibilityService,
+    app: OpenAppActions.App,
+    onDone: (Boolean) -> Unit,
+  ) {
+    val packageName = OpenAppActions.packageName(app.value)
+    if (packageName == null) {
+      onDone(false)
+      return
+    }
+    ShizukuShell.call(
+      service.applicationContext,
+      { shell ->
+        val other = read(service, shell)?.firstOrNull { it.packageName != packageName }
+        if (other == null) return@call false
+        // A split left in the background would take the new app into its own pair.
+        shell.exitSplit(other.id)?.let { LogUtils.d(TAG, "exit split: %s", it) }
+        Thread.sleep(TRANSITION_SETTLE_MS)
+        if (!OpenAppActions.open(service, app.value)) return@call false
+        // A task whose app hasn't drawn a window yet can't join the split.
+        val openDeadline = SystemClock.uptimeMillis() + OPEN_WAIT_MS
+        while (!hasWindow(service, packageName)) {
+          if (SystemClock.uptimeMillis() >= openDeadline) return@call false
+          Thread.sleep(FRONT_POLL_MS)
+        }
+        Thread.sleep(TRANSITION_SETTLE_MS)
+        val opened =
+          read(service, shell, includeOverview = true)?.firstOrNull { it.packageName == packageName }
+            ?: return@call false
+        val error = splitBeside(service, shell, other, opened)
+        if (error != null) {
+          LogUtils.w(TAG, "split of %s failed: %s", app.label, error)
+          return@call false
+        }
+        val dividerDeadline = SystemClock.uptimeMillis() + DIVIDER_WAIT_MS
+        while (!SplitScreen.isShown(service)) {
+          if (SystemClock.uptimeMillis() >= dividerDeadline) return@call false
+          Thread.sleep(FRONT_POLL_MS)
+        }
+        true
+      },
+    ) { worked ->
+      onDone(worked == true)
     }
   }
 

@@ -23,6 +23,7 @@ import com.google.android.accessibility.talkback.Feedback
 import com.google.android.accessibility.talkback.Pipeline
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.gesture.OpenAppActions
+import com.google.android.accessibility.talkback.overview.RecentTasks
 import com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED
 import com.google.android.accessibility.utils.output.FeedbackItem
 import com.google.android.accessibility.utils.output.SpeechController
@@ -177,6 +178,17 @@ class AppNameSearch(
     }
   }
 
+  /** Opens the app said in split screen beside the most recent other app. */
+  fun openInSplit() {
+    val app = matches.getOrNull(index)
+    if (app == null) {
+      sayApp()
+      return
+    }
+    onOpen()
+    openInSplit(service, pipeline, app)
+  }
+
   private fun speak(text: String, queue: Boolean = false) {
     pipeline.returnFeedback(
       EVENT_ID_UNTRACKED,
@@ -190,6 +202,28 @@ class AppNameSearch(
   companion object {
     private const val TAG = "AppNameSearch"
     private const val MAX_WAITING = 100
+
+    /** Opens [app] in split screen beside the most recent other app, or says why it can't. */
+    @JvmStatic
+    fun openInSplit(
+      service: AccessibilityService,
+      pipeline: Pipeline.FeedbackReturner,
+      app: OpenAppActions.App,
+    ) {
+      val say = { text: String ->
+        pipeline.returnFeedback(
+          EVENT_ID_UNTRACKED,
+          Feedback.speech(text, speakOptions(SpeechController.QUEUE_MODE_INTERRUPT)),
+        )
+      }
+      if (!RecentTasks.isAvailable(service)) {
+        say(service.getString(R.string.split_screen_needs_shizuku))
+        return
+      }
+      RecentTasks.openBeside(service, app) { worked ->
+        if (!worked) say(service.getString(R.string.overview_split_failed))
+      }
+    }
 
     fun speakOptions(queueMode: Int): SpeakOptions =
       SpeakOptions.create()

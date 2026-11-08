@@ -40,8 +40,8 @@ import kotlin.math.hypot
  * many apps do. Two-finger gestures work as on the handwriting keyboard: swipe up for the
  * next app, down to open it, left to delete the last letter, and tap to hear the app again. A
  * two-finger swipe right switches between the device's language and English, for app names
- * written in Latin letters. A double tap with one finger opens the app said; a tap with one finger
- * closes the surface.
+ * written in Latin letters. A three-finger swipe down opens the app in split screen. A double tap
+ * with one finger opens the app said; a tap with one finger closes the surface.
  */
 class HandwritingAppLauncher(
   private val service: AccessibilityService,
@@ -253,6 +253,10 @@ class HandwritingAppLauncher(
     if (strokes.isNotEmpty()) {
       handler.removeCallbacks(recognizeNow)
       recognize(then = { onGesture(fingers, dx, dy, duration) })
+      return
+    }
+    if (fingers == 3 && isShowing && !isTap(dx, dy) && dy > abs(dx)) {
+      search.openInSplit()
       return
     }
     if (fingers != 2 || !isShowing) return
