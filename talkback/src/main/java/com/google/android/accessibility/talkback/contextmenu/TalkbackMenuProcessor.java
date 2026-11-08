@@ -153,6 +153,9 @@ public class TalkbackMenuProcessor {
     // Custom Action
     addItemOrSubMenuForCurrentNode(
         menu, R.id.custom_action_menu, R.string.title_custom_action, ORDER_ACTIONS);
+    // Addresses and numbers, after Actions, whose order it shares.
+    addItemOrSubMenuForCurrentNode(
+        menu, R.id.text_entities_menu, R.string.title_text_entities, ORDER_ACTIONS);
     // Page Navigation
     addItemOrSubMenuForCurrentNode(
         menu, R.id.viewpager_menu, R.string.title_viewpager_controls, ORDER_PAGE_NAVIGATION);
@@ -301,6 +304,7 @@ public class TalkbackMenuProcessor {
   private static final int[][] MENU_ITEMS = {
     {R.string.pref_show_context_menu_typo_suggestions_setting_key, R.id.typo_suggestions_menu},
     {R.string.pref_show_context_menu_custom_action_setting_key, R.id.custom_action_menu},
+    {R.string.pref_show_context_menu_text_entities_setting_key, R.id.text_entities_menu},
     {R.string.pref_show_context_menu_page_navigation_setting_key, R.id.viewpager_menu},
     {R.string.pref_show_context_menu_labeling_setting_key, R.id.labeling_breakout_add_label},
     {R.string.pref_show_context_menu_image_caption_setting_key, R.id.image_caption_menu},

@@ -27,7 +27,6 @@ import com.google.android.accessibility.talkback.focusmanagement.AccessibilityFo
 import com.google.android.accessibility.talkback.menurules.CustomActionMenu;
 import com.google.android.accessibility.talkback.menurules.NodeMenuRuleCreator;
 import com.google.android.accessibility.talkback.menurules.NodeMenuRuleCreator.MenuRules;
-import com.google.android.accessibility.talkback.menurules.TextEntityMenu;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.Role;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
@@ -75,8 +74,7 @@ public class ActionsSetting implements SelectorController.ContextualSetting {
     boolean selectableText = AccessibilityNodeInfoUtils.isNonEditableSelectableText(node);
     if (WebInterfaceUtils.isWebContainer(node)) {
       // Text on web pages keeps it, as in TalkBack. Other web items switch for their own actions
-      // only: not for addresses or codes found in their text, or for actions of the page or of
-      // the browser's views around it.
+      // only: not for actions of the page or of the browser's views around it.
       return !selectableText
           && hasOtherThanEditingOptions(
               nodeMenuCreator.getNodeMenuByRule(
@@ -106,14 +104,8 @@ public class ActionsSetting implements SelectorController.ContextualSetting {
         context.getResources().getBoolean(ACTIONS.defaultValueResId));
   }
 
-  /**
-   * The actions of {@code node}. These checks run as items are focused, so they don't wait for the
-   * text classifier, which finds phone numbers and codes in the text.
-   */
   private List<ContextMenuItem> actionsOf(Context context, AccessibilityNodeInfoCompat node) {
-    return TextEntityMenu.withoutWaiting(
-        () ->
-            nodeMenuCreator.getNodeMenuByRule(MenuRules.RULE_CUSTOM_ACTION, context, node, true));
+    return nodeMenuCreator.getNodeMenuByRule(MenuRules.RULE_CUSTOM_ACTION, context, node, true);
   }
 
   /**

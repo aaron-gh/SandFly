@@ -24,10 +24,8 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Build
 import android.os.LocaleList
-import android.os.SystemClock
 import android.telephony.PhoneNumberUtils
 import android.text.SpannableString
-import android.text.Spanned
 import android.text.style.URLSpan
 import android.text.util.Linkify
 import android.view.Menu
@@ -51,12 +49,11 @@ import java.util.concurrent.Future
 import java.util.concurrent.RejectedExecutionHandler
 import java.util.concurrent.ThreadPoolExecutor
 import java.util.concurrent.TimeUnit
-import java.util.function.Supplier
 
 /**
- * Links, email addresses, phone numbers and codes, such as one-time codes in a text message, that
- * are written in an item's text without being links, offered with the item's links in the
- * Actions menu: links and addresses open, numbers open in the phone app, and codes are copied.
+ * Web and email addresses, phone numbers and codes, such as one-time codes in a text message,
+ * written in an item's text, offered by the Addresses and numbers item of the SandFly menu and
+ * reading control: addresses open, numbers open in the phone app, and codes are copied.
  *
  * Phone numbers, dates, times, addresses and flight numbers come from Android's text
  * classifier, the one behind Smart Linkify. Codes are runs of 4 to 8 digits that stand on their
@@ -80,24 +77,15 @@ class TextEntityMenu(private val pipeline: Pipeline.FeedbackReturner) : NodeMenu
   data class Classified(val start: Int, val end: Int, val type: String)
 
   /**
-   * Whether the text of [node] or its children may hold something to offer. It runs as each item
-   * is focused, for the hint that actions are available, so it only looks for digits or the marks
-   * of an address.
+   * Whether any type is included. The text, which may be deep in [node]'s descendants as in a
+   * notification, is looked through only by [getMenuItemsForNode].
    */
-  override fun accept(context: Context, node: AccessibilityNodeInfoCompat): Boolean {
-    if (included(context).isEmpty()) return false
-    if (mayHold(node.text) || mayHold(node.contentDescription)) return true
-    for (i in 0 until minOf(node.childCount, MAX_CHILDREN_CHECKED)) {
-      val child = node.getChild(i) ?: continue
-      if (mayHold(child.text) || mayHold(child.contentDescription)) return true
-    }
-    return false
-  }
+  override fun accept(context: Context, node: AccessibilityNodeInfoCompat): Boolean =
+    included(context).isNotEmpty()
 
   /**
-   * The items for the Actions menu and the Actions reading control. None for the hint that actions
-   * are available ([includeAncestors] false). Inside [withoutWaiting], phone numbers and codes
-   * only when the text was classified before.
+   * The items for the SandFly menu. None for the hint that actions are available
+   * ([includeAncestors] false), which would otherwise wait for the text classifier on focus.
    */
   override fun getMenuItemsForNode(
     context: Context,
@@ -105,24 +93,14 @@ class TextEntityMenu(private val pipeline: Pipeline.FeedbackReturner) : NodeMenu
     includeAncestors: Boolean,
   ): List<ContextMenuItem> {
     if (!includeAncestors) return emptyList()
-    val included = included(context)
-    if (included.isEmpty()) return emptyList()
-    val text = textOf(node)
-    val classified =
-      if (TYPE_PHONE in included || TYPE_CODE in included) {
-        classify(context, text, wait = noWait.get() != true)
-      } else {
-        null
-      }
-    return find(text, linkedUrls(node), classified, included).mapIndexed { index, entity ->
-      val label =
-        when (entity) {
-          is Entity.Web,
-          is Entity.Email -> entity.text
-          is Entity.Phone -> context.getString(R.string.menu_item_call_number, entity.text)
-          is Entity.Code -> context.getString(R.string.menu_item_copy_code, entity.text)
-        }
-      ContextMenu.createMenuItem(context, R.id.group_links, FIRST_ITEM_ID + index, Menu.NONE, label)
+    return entitiesOf(context, node).mapIndexed { index, entity ->
+      ContextMenu.createMenuItem(
+          context,
+          R.id.group_text_entities,
+          FIRST_ITEM_ID + index,
+          Menu.NONE,
+          labelOf(context, entity),
+        )
         .apply {
           setOnMenuItemClickListener(
             object : OnContextMenuItemClickListener {
@@ -133,7 +111,26 @@ class TextEntityMenu(private val pipeline: Pipeline.FeedbackReturner) : NodeMenu
     }
   }
 
-  private fun choose(context: Context, entity: Entity): Boolean {
+  /**
+   * What [node]'s text holds of the types the user included, waiting for the text classifier for
+   * at most [CLASSIFY_TIMEOUT_MS].
+   */
+  fun entitiesOf(context: Context, node: AccessibilityNodeInfoCompat): List<Entity> {
+    val included = included(context)
+    if (included.isEmpty()) return emptyList()
+    val text = textOf(node)
+    if (!mayHold(text)) return emptyList()
+    val classified =
+      if (TYPE_PHONE in included || TYPE_CODE in included) {
+        classify(context, text)
+      } else {
+        null
+      }
+    return find(text, classified, included)
+  }
+
+  /** Opens, dials or copies [entity]. */
+  fun choose(context: Context, entity: Entity): Boolean {
     val intent =
       when (entity) {
         is Entity.Web -> Intent(Intent.ACTION_VIEW, Uri.parse(entity.url))
@@ -161,24 +158,22 @@ class TextEntityMenu(private val pipeline: Pipeline.FeedbackReturner) : NodeMenu
 
   companion object {
     private const val TAG = "TextEntityMenu"
-    // The values of the Actions found in text setting, pref_text_entities_values.
+    // The values of the Addresses and numbers to include setting, pref_text_entities_values.
     const val TYPE_WEB = "web"
     const val TYPE_EMAIL = "email"
     const val TYPE_PHONE = "phone"
     const val TYPE_CODE = "code"
     @JvmField val ALL_TYPES: Set<String> = setOf(TYPE_WEB, TYPE_EMAIL, TYPE_PHONE, TYPE_CODE)
-    // After the link menu's items, which are numbered from 0 in the same group.
     private const val FIRST_ITEM_ID = 1000
     private const val MAX_NODES = 40
     private const val MAX_CHARACTERS = 4_000
     private const val MAX_ENTITIES = 20
-    private const val MAX_CHILDREN_CHECKED = 10
-    // The classifier answers in 20 to 250 ms on a Galaxy Z Fold7, and the Actions menu and the
-    // Actions reading control's swipes wait for it.
+    // The classifier answers in 20 to 250 ms on a Galaxy Z Fold7, and the SandFly menu and the
+    // reading control's swipes wait for it.
     private const val CLASSIFY_TIMEOUT_MS = 1_000L
     private val MAY_HOLD = Regex("\\p{Nd}{4}|@|://|[a-zA-Z0-9]\\.[a-zA-Z]{2,}")
 
-    /** The types that the Actions found in text setting includes. */
+    /** The types that the Addresses and numbers to include setting includes. */
     @JvmStatic
     fun included(context: Context): Set<String> =
       SharedPreferencesUtils.getSharedPreferences(context)
@@ -228,61 +223,30 @@ class TextEntityMenu(private val pipeline: Pipeline.FeedbackReturner) : NodeMenu
     private val lock = Any()
     private var pendingText: String? = null
     private var pending: Future<List<Classified>?>? = null
-    private var pendingSince = 0L
     private var lastText: String? = null
     private var lastClassified: List<Classified>? = null
-    private val noWait = ThreadLocal<Boolean>()
-    @Volatile private var classifiedListener: Runnable? = null
 
-    /**
-     * Sets [listener] to run, on the classifier's thread, when a classification ends, so that
-     * checks made [withoutWaiting] can be made again. Null removes it.
-     */
+    /** The label of [entity] in the SandFly menu and the reading control. */
     @JvmStatic
-    fun setClassifiedListener(listener: Runnable?) {
-      classifiedListener = listener
-    }
-
-    /**
-     * Whether the latest classification still runs, for at most [CLASSIFY_TIMEOUT_MS], so that a
-     * classifier that doesn't answer holds nothing up.
-     */
-    @JvmStatic
-    fun isClassifying(): Boolean =
-      synchronized(lock) {
-        pending?.isDone == false &&
-          SystemClock.uptimeMillis() - pendingSince < CLASSIFY_TIMEOUT_MS
+    fun labelOf(context: Context, entity: Entity): String =
+      when (entity) {
+        is Entity.Web,
+        is Entity.Email -> entity.text
+        is Entity.Phone -> context.getString(R.string.menu_item_call_number, entity.text)
+        is Entity.Code -> context.getString(R.string.menu_item_copy_code, entity.text)
       }
-
-    /**
-     * Runs [block] with the text classifier's result taken only when it is already there. A
-     * classification that isn't starts in the background, for a later call. For checks that run
-     * as items are focused, such as whether the Actions reading control is available.
-     */
-    @JvmStatic
-    fun <T> withoutWaiting(block: Supplier<T>): T {
-      val previous = noWait.get()
-      noWait.set(true)
-      try {
-        return block.get()
-      } finally {
-        noWait.set(previous)
-      }
-    }
 
     /**
      * What Android's text classifier finds in [text], or null when there is no classifier
-     * (Android 8), it failed, or it takes longer than [CLASSIFY_TIMEOUT_MS]. Without [wait], null
-     * also while the classification runs.
+     * (Android 8), it failed, or it takes longer than [CLASSIFY_TIMEOUT_MS]. The last result is
+     * kept for the next swipe on the same text.
      */
     @JvmStatic
-    fun classify(context: Context, text: String, wait: Boolean): List<Classified>? {
+    fun classify(context: Context, text: String): List<Classified>? {
       if (Build.VERSION.SDK_INT < Build.VERSION_CODES.P || text.isBlank()) return null
       val future =
         synchronized(lock) {
-          // A failure is asked again only by calls that wait, so that checks made again on
-          // focus don't keep asking.
-          if (text == lastText && (lastClassified != null || !wait)) return lastClassified
+          if (text == lastText && lastClassified != null) return lastClassified
           val current = pending
           if (text == pendingText && current != null && !current.isDone) {
             current
@@ -292,11 +256,9 @@ class TextEntityMenu(private val pipeline: Pipeline.FeedbackReturner) : NodeMenu
               .also {
                 pending = it
                 pendingText = text
-                pendingSince = SystemClock.uptimeMillis()
               }
           }
         }
-      if (!wait) return null
       return try {
         future.get(CLASSIFY_TIMEOUT_MS, TimeUnit.MILLISECONDS)
       } catch (e: InterruptedException) {
@@ -318,12 +280,10 @@ class TextEntityMenu(private val pipeline: Pipeline.FeedbackReturner) : NodeMenu
           LogUtils.w(TAG, "Text classification failed: %s", e)
           null
         }
-      // A failure is kept too: see classify.
       synchronized(lock) {
         lastText = text
         lastClassified = result
       }
-      classifiedListener?.run()
       return result
     }
 
@@ -366,12 +326,6 @@ class TextEntityMenu(private val pipeline: Pipeline.FeedbackReturner) : NodeMenu
       return text.take(MAX_CHARACTERS).toString()
     }
 
-    /** The URLs that [node]'s own text already links, which the link menu offers. */
-    private fun linkedUrls(node: AccessibilityNodeInfoCompat): Set<String> {
-      val text = node.text as? Spanned ?: return emptySet()
-      return text.getSpans(0, text.length, URLSpan::class.java).mapNotNull { it.url }.toSet()
-    }
-
     /**
      * Whether the digits starting at [start] are part of a word, a user name, a link, a time, an
      * amount or a copyright year. A hyphen after a single letter, as in G-482916, leaves them on
@@ -412,23 +366,18 @@ class TextEntityMenu(private val pipeline: Pipeline.FeedbackReturner) : NodeMenu
     }
 
     /**
-     * Finds the entities of the types in [included] in [text], leaving out links in [linked].
-     * [classified] is what the text classifier found; when it is null, only web and email addresses
-     * are listed, since nothing then tells a code from a date.
+     * Finds the entities of the types in [included] in [text]. [classified] is what the text
+     * classifier found; when it is null, only web and email addresses are listed, since nothing
+     * then tells a code from a date.
      */
     @JvmStatic
     fun find(
       text: String,
-      linked: Set<String> = emptySet(),
       classified: List<Classified>? = null,
       included: Set<String> = ALL_TYPES,
-    ): List<Entity> = findAll(text, linked, classified).filter { typeOf(it) in included }.take(MAX_ENTITIES)
+    ): List<Entity> = findAll(text, classified).filter { typeOf(it) in included }.take(MAX_ENTITIES)
 
-    private fun findAll(
-      text: String,
-      linked: Set<String>,
-      classified: List<Classified>?,
-    ): List<Entity> {
+    private fun findAll(text: String, classified: List<Classified>?): List<Entity> {
       if (text.isBlank()) return emptyList()
       val spannable = SpannableString(text)
       Linkify.addLinks(spannable, Linkify.WEB_URLS or Linkify.EMAIL_ADDRESSES)
@@ -445,12 +394,12 @@ class TextEntityMenu(private val pipeline: Pipeline.FeedbackReturner) : NodeMenu
         val url = span.url ?: continue
         taken += start until end
         val entity =
-          when {
-            url.startsWith("mailto:") -> Entity.Email(shown, url.removePrefix("mailto:"))
-            url in linked || shown in linked -> null
-            else -> Entity.Web(shown, url)
+          if (url.startsWith("mailto:")) {
+            Entity.Email(shown, url.removePrefix("mailto:"))
+          } else {
+            Entity.Web(shown, url)
           }
-        if (entity != null) found.putIfAbsent(entity.text, entity)
+        found.putIfAbsent(entity.text, entity)
       }
       if (classified == null) return found.values.toList()
       for (item in classified.sortedBy { it.start }) {

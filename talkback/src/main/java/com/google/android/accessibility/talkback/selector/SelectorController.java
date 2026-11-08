@@ -173,11 +173,11 @@ public class SelectorController implements UserInputEventListener {
   // match waits until touches have paused, or until something uses the reading control.
   private static final long SWITCH_AFTER_TOUCH_MS = 200;
   private final Runnable switchAfterTouch = this::applyPendingSwitch;
-  // The focused item whose reading control waits for the text classifier, which finds the phone
-  // numbers and codes that Actions lists. Focus doesn't wait for it, so the match is made again
-  // when it ends.
-  private AccessibilityNodeInfo classifyingNode = null;
-  private final Runnable switchAfterClassifying = this::switchAfterClassifying;
+  // Finds the addresses and numbers in the focused item's text for their reading control.
+  private final TextEntityMenu textEntityMenu;
+  // The address or number that the reading control last said, which double-tap opens, calls or
+  // copies until focus moves.
+  private TextEntityMenu.@Nullable Entity chosenTextEntity;
 
   /** Audial feedback announce types. */
   public enum AnnounceType {
@@ -288,6 +288,10 @@ public class SelectorController implements UserInputEventListener {
         R.string.pref_selector_ai_actions_key,
         R.string.selector_ai_actions,
         R.bool.pref_selector_ai_actions_default),
+    TEXT_ENTITIES(
+        R.string.pref_selector_text_entities_key,
+        R.string.selector_text_entities,
+        R.bool.pref_selector_text_entities_default),
     ACTIONS(
         R.string.pref_selector_actions_key,
         R.string.selector_actions,
@@ -719,6 +723,7 @@ public class SelectorController implements UserInputEventListener {
       ImmutableList.of(
           Setting.GRANULARITY_TYPO,
           Setting.ACTIONS,
+          Setting.TEXT_ENTITIES,
           // Puts table navigation granularities on top of the selector.
           Setting.GRANULARITY_ROW_COLUMN,
           Setting.GRANULARITY_ROW,
@@ -895,6 +900,7 @@ public class SelectorController implements UserInputEventListener {
       hiddenSettingsBuilder.add(ACTIONS);
       hiddenSettingsBuilder.add(Setting.LIVE_RECOGNITION);
       hiddenSettingsBuilder.add(Setting.AI_ACTIONS);
+      hiddenSettingsBuilder.add(Setting.TEXT_ENTITIES);
     }
     // Hide SEARCH in selector.
     if (!FeatureFlagReader.enableScreenSearchNavigation(context)
@@ -922,10 +928,10 @@ public class SelectorController implements UserInputEventListener {
     contextualSettings = contextualSettingsBuilder.build();
 
     resetActionMenuToDefault();
+    textEntityMenu = new TextEntityMenu(pipeline);
 
     prefs = SharedPreferencesUtils.getSharedPreferences(context);
     prefs.registerOnSharedPreferenceChangeListener(sharedPreferenceChangeListener);
-    TextEntityMenu.setClassifiedListener(() -> handler.post(switchAfterClassifying));
   }
 
   /** Gets the Setting for by granularity resources ID. */
@@ -1217,6 +1223,11 @@ public class SelectorController implements UserInputEventListener {
         }
         hint = context.getString(R.string.ai_actions_hint);
       }
+      case TEXT_ENTITIES -> {
+        chosenTextEntity = null;
+        actionDescription = context.getString(R.string.title_text_entities);
+        hint = context.getString(R.string.text_entities_hint);
+      }
       case ACTIONS -> {
         // Reset currentActionId to the default action.
         resetActionMenuToDefault();
@@ -1439,6 +1450,7 @@ public class SelectorController implements UserInputEventListener {
       doubleTapArmed = false;
       requestServiceHandlesDoubleTap(EVENT_ID_UNTRACKED, false);
     }
+    chosenTextEntity = null;
     // Reset currentActionId to the default action.
     resetActionMenuToDefault();
 
@@ -1503,7 +1515,6 @@ public class SelectorController implements UserInputEventListener {
       return;
     }
     lastFocusedNode = null;
-    classifyingNode = null;
     boolean autoSwitch =
         prefs.getBoolean(
             context.getString(R.string.pref_selector_auto_switch_key),
@@ -1533,18 +1544,10 @@ public class SelectorController implements UserInputEventListener {
     }
     if (isContextualSettingNotSupported(
         currentSetting, AccessibilityNodeInfoCompat.wrap(nodeInfo))) {
-      if (currentSetting == ACTIONS && TextEntityMenu.isClassifying()) {
-        // Actions may still list a phone number or code of the item.
-        classifyingNode = nodeInfo;
-        return;
-      }
       // If the current setting is a contextual setting and no longer allowed by the new focused
       // node, then restore to the cached setting or move the setting to the first available
       // item if the cached setting is also unavailable.
       restoreSetting();
-    }
-    if (autoSwitch && TextEntityMenu.isClassifying()) {
-      classifyingNode = nodeInfo;
     }
   }
 
@@ -1561,22 +1564,6 @@ public class SelectorController implements UserInputEventListener {
     }
     Optional<ContextualSetting> actions = findContextualSetting(ACTIONS);
     return actions.isPresent() && !actions.get().shouldActivateSetting(context, node);
-  }
-
-  /** Matches the reading control again to the focused item once its text is classified. */
-  private void switchAfterClassifying() {
-    AccessibilityNodeInfo node = classifyingNode;
-    // After a touch, applyPendingSwitch makes the match.
-    if (node == null || touchActive) {
-      return;
-    }
-    AccessibilityNodeInfoCompat focus =
-        accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ false);
-    if (focus == null || !node.equals(focus.unwrap())) {
-      classifyingNode = null;
-      return;
-    }
-    switchCurrentSetting(node);
   }
 
   @Override
@@ -1605,10 +1592,8 @@ public class SelectorController implements UserInputEventListener {
   /** Forgets the item waiting for its reading control, such as when SandFly turns off. */
   public void shutdown() {
     handler.removeCallbacks(switchAfterTouch);
-    handler.removeCallbacks(switchAfterClassifying);
-    TextEntityMenu.setClassifiedListener(null);
     lastFocusedNode = null;
-    classifyingNode = null;
+    chosenTextEntity = null;
   }
 
   /** Selects the previous or next setting. For selecting setting via gesture. */
@@ -1908,6 +1893,10 @@ public class SelectorController implements UserInputEventListener {
       case AI_ACTIONS -> {
         return FeatureSupport.doesServiceHandleDoubleTap()
             && !AiActions.available(context).isEmpty();
+      }
+      case TEXT_ENTITIES -> {
+        return FeatureSupport.doesServiceHandleDoubleTap()
+            && !TextEntityMenu.included(context).isEmpty();
       }
       case ACTIONS -> {
         Optional<ContextualSetting> actions = findContextualSetting(ACTIONS);
@@ -2228,6 +2217,10 @@ public class SelectorController implements UserInputEventListener {
         announceSetting(eventId, action.getLabel(), context.getString(R.string.ai_actions_hint));
         return;
       }
+      case TEXT_ENTITIES -> {
+        changeTextEntity(eventId, isNext);
+        return;
+      }
       case SPEECH_RATE -> {
         // TODO: Increase speech rate when swipe-up is assigned to the selected setting's
         // previous action, which will be the default assignment.
@@ -2445,8 +2438,9 @@ public class SelectorController implements UserInputEventListener {
   }
 
   /**
-   * Toggles the chosen live recognition mode or runs the chosen AI action, if its reading control
-   * was chosen or adjusted since focus last moved.
+   * Toggles the chosen live recognition mode, runs the chosen AI action or opens, calls or copies
+   * the chosen address or number, if its reading control was chosen or adjusted since focus last
+   * moved.
    */
   public boolean activateDoubleTapSetting() {
     if (!doubleTapArmed || scriptControlKey != null) {
@@ -2465,7 +2459,43 @@ public class SelectorController implements UserInputEventListener {
       }
       return service.performCommand(action.getValue());
     }
+    if (setting == Setting.TEXT_ENTITIES) {
+      TextEntityMenu.Entity entity = chosenTextEntity;
+      return entity != null && textEntityMenu.choose(context, entity);
+    }
     return false;
+  }
+
+  /**
+   * Says the next or previous address or number in the focused item's text, which double-tap then
+   * opens, calls or copies.
+   */
+  private void changeTextEntity(EventId eventId, boolean isNext) {
+    AccessibilityNodeInfoCompat node =
+        accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ false);
+    List<TextEntityMenu.Entity> entities =
+        node == null ? List.of() : textEntityMenu.entitiesOf(context, node);
+    if (entities.isEmpty()) {
+      chosenTextEntity = null;
+      doubleTapArmed = false;
+      requestServiceHandlesDoubleTap(eventId, false);
+      announceSetting(eventId, context.getString(R.string.no_text_entities), null);
+      return;
+    }
+    int index = chosenTextEntity == null ? -1 : entities.indexOf(chosenTextEntity);
+    int size = entities.size();
+    if (index == -1) {
+      index = isNext ? 0 : size - 1;
+    } else {
+      index = (index + (isNext ? 1 : size - 1)) % size;
+    }
+    chosenTextEntity = entities.get(index);
+    doubleTapArmed = true;
+    requestServiceHandlesDoubleTap(eventId, true);
+    announceSetting(
+        eventId,
+        TextEntityMenu.labelOf(context, chosenTextEntity),
+        context.getString(R.string.text_entities_hint));
   }
 
   /** Activate the currently selected action in the actions setting. */
@@ -3289,9 +3319,9 @@ public class SelectorController implements UserInputEventListener {
       int currentActionIndex = populateActionItemsForNode(node, menuItems);
       int actionSize = menuItems.size();
       if (actionSize == 0) {
-        // Actions stayed on an item without actions, such as while the text classifier ran or
-        // after focus moved without the reading control being matched. The swipe uses the reading
-        // control that Actions replaced automatically.
+        // Actions stayed on an item without actions, such as after focus moved without the
+        // reading control being matched. The swipe uses the reading control that Actions replaced
+        // automatically.
         if (settingToRestore != null
             && settingToRestore != ACTIONS
             && allowedSetting(settingToRestore)) {

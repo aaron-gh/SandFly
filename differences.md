@@ -587,13 +587,13 @@ When an app removed the item that had focus, such as an ad that collapses, TalkB
 
 Some apps draw their text themselves and give it to screen readers without letting them move through it, as Telegram does for messages. In such text, TalkBack could move by character, word, or paragraph only through a content description, so it couldn't move through these messages, only through reply previews. SandFly moves through the text itself when the app doesn't.
 
-### Links, phone numbers and codes in text
+### Addresses and numbers in text
 
-The **Actions** menu lists the web addresses, email addresses, phone numbers and codes of 4 to 8 digits written in the focused item's text, also when the app doesn't make them links, such as in a chat message or the notification of a text message with a one-time code. Choosing a web or email address opens it, a phone number opens in the phone app, and a code is copied. The hint that actions are available doesn't count them.
+The **Addresses and numbers** reading control and SandFly menu item list the web addresses, email addresses, phone numbers and codes of 4 to 8 digits written in the focused item's text, also when the app doesn't make them links, such as in a chat message or the notification of a text message with a one-time code. Choosing a web or email address opens it, a phone number opens in the phone app, and a code is copied. In the reading control, swipe up or down to choose one, then double-tap. Both are off by default; add them in **Reading controls** or **SandFly menu**. **Addresses and numbers to include** turns each kind on or off.
 
-Phone numbers come from Android's text classifier, which also finds dates, times, addresses and flight numbers. Digits in any of these, and digits joined to a word, a user name, a time or an amount, aren't listed as codes. The **Actions** reading control lists them too. **Actions found in text**, in **Reading controls** and in **SandFly menu**, turns each kind on or off. On Android 8, and when the text classifier doesn't answer within a second, only web and email addresses are listed.
+Phone numbers come from Android's text classifier, which also finds dates, times, addresses and flight numbers. Digits in any of these, and digits joined to a word, a user name, a time or an amount, aren't listed as codes. Other numbers of 4 to 8 digits, such as a year in a headline, are listed as codes, since the text classifier doesn't tell them apart. Nothing is looked up as focus moves: the text is classified when the reading control is swiped or the SandFly menu opens, waiting at most a second. On Android 8, and when the text classifier doesn't answer within a second, only web and email addresses are listed.
 
-On web pages, the reading control switches to **Actions** automatically only on items that have actions of their own, not on text or for links, addresses and codes in it, and switches back on the next item that has none. When **Actions** was chosen automatically and has nothing for the focused item, swiping up or down uses the reading control that it replaced.
+On web pages, the reading control switches to **Actions** automatically only on items that have actions of their own, not on text or for links in it, and switches back on the next item that has none. When **Actions** was chosen automatically and has nothing for the focused item, swiping up or down uses the reading control that it replaced.
 
 ### Double tap with the actions reading control on Android 11
 

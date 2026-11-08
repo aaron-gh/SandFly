@@ -336,6 +336,7 @@
     <string name="pref_selector_live_recognition_key" translatable="false">pref_selector_live_recognition_key</string>
     <string name="pref_selector_ai_actions_key" translatable="false">pref_selector_ai_actions_key</string>
     <string name="pref_ai_actions_included_key" translatable="false">pref_ai_actions_included_key</string>
+    <string name="pref_selector_text_entities_key" translatable="false">pref_selector_text_entities_key</string>
     <string name="pref_text_entities_key" translatable="false">pref_text_entities</string>
     <!-- Must match pref_text_entities_entries and TextEntityMenu's types. -->
     <string-array name="pref_text_entities_values" translatable="false">
@@ -1896,6 +1897,7 @@
     <bool name="pref_selector_tablet_held_up_faces_away_default">false</bool>
     <bool name="pref_selector_live_recognition_default">true</bool>
     <bool name="pref_selector_ai_actions_default">true</bool>
+    <bool name="pref_selector_text_entities_default">false</bool>
     <bool name="pref_selector_switch_tts_engine_default">false</bool>
     <bool name="pref_selector_speech_stream_default">false</bool>
     <bool name="pref_selector_sound_mode_default">false</bool>
@@ -1945,6 +1947,7 @@
     <bool name="pref_selector_text_formatting_inline_default">false</bool>
 
     <bool name="pref_show_context_menu_custom_action_default">false</bool>
+    <bool name="pref_show_context_menu_text_entities_default">false</bool>
     <bool name="pref_show_context_menu_editing_default">true</bool>
     <bool name="pref_show_context_menu_page_navigation_default">false</bool>
     <bool name="pref_show_context_menu_labeling_default">false</bool>
@@ -2183,6 +2186,7 @@
 
     <!-- Talkback Context Menu preferences -->
     <string name="pref_show_context_menu_custom_action_setting_key" translatable="false">pref_custom_action_menu_setting_key</string>
+    <string name="pref_show_context_menu_text_entities_setting_key" translatable="false">pref_text_entities_menu_setting_key</string>
     <string name="pref_show_context_menu_editing_setting_key" translatable="false">pref_editing_menu_setting_key</string>
     <string name="pref_show_context_menu_page_navigation_setting_key" translatable="false">pref_page_navigation_menu_setting_key</string>
     <string name="pref_show_context_menu_labeling_setting_key" translatable="false">pref_labeling_menu_setting_key</string>
@@ -2269,6 +2273,7 @@
     <string name="selector_tablet_held_up_faces_away" translatable="false">SELECTOR_TABLET_HELD_UP_FACES_AWAY</string>
     <string name="selector_live_recognition" translatable="false">SELECTOR_LIVE_RECOGNITION</string>
     <string name="selector_ai_actions" translatable="false">SELECTOR_AI_ACTIONS</string>
+    <string name="selector_text_entities" translatable="false">SELECTOR_TEXT_ENTITIES</string>
     <string name="selector_switch_tts_engine" translatable="false">SELECTOR_SWITCH_TTS_ENGINE</string>
     <string name="selector_speech_stream" translatable="false">SELECTOR_SPEECH_STREAM</string>
     <string name="selector_sound_mode" translatable="false">SELECTOR_SOUND_MODE</string>

@@ -433,6 +433,7 @@ object SettingsIndex {
     val noAiActions = !FeatureSupport.doesServiceHandleDoubleTap() || AiActions.all(context).isEmpty()
     hideIf(noAiActions, R.string.pref_selector_ai_actions_key)
     hideIf(noAiActions, R.string.pref_ai_actions_included_key)
+    hideIf(!FeatureSupport.doesServiceHandleDoubleTap(), R.string.pref_selector_text_entities_key)
 
     // ContextMenuFragment.
     hideIf(

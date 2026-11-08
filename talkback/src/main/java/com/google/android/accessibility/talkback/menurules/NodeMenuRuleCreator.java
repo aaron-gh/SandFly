@@ -38,6 +38,7 @@ public class NodeMenuRuleCreator {
     // accepts will be able to modify the menu.
     RULE_UNLABELLED(R.id.labeling_breakout_add_label),
     RULE_CUSTOM_ACTION(R.id.custom_action_menu),
+    RULE_TEXT_ENTITIES(R.id.text_entities_menu),
     RULE_VIEWPAGER(R.id.viewpager_menu),
     RULE_GRANULARITY(R.id.granularity_menu),
     RULE_IMAGE_CAPTION(R.id.image_caption_menu),
@@ -60,6 +61,7 @@ public class NodeMenuRuleCreator {
 
   private final NodeMenuRule ruleUnlabeledNode;
   private final NodeMenuRule ruleAction;
+  private final NodeMenuRule ruleTextEntities;
   private final NodeMenuRule ruleViewPager;
   private final NodeMenuRule ruleGranularity;
   private final NodeMenuRule ruleImageCaption;
@@ -73,6 +75,7 @@ public class NodeMenuRuleCreator {
       TalkBackAnalytics analytics) {
     ruleUnlabeledNode = new RuleUnlabeledNode(pipeline, actorState, analytics);
     ruleAction = new RuleAction(pipeline, actorState, accessibilityFocusMonitor, analytics);
+    ruleTextEntities = new RuleTextEntities(pipeline);
     ruleViewPager = new RuleViewPager(pipeline, analytics);
     ruleGranularity = new RuleGranularity(pipeline, actorState, analytics);
     ruleImageCaption = new RuleImageCaption(pipeline, actorState, analytics);
@@ -109,6 +112,7 @@ public class NodeMenuRuleCreator {
     return switch (rule) {
       case RULE_UNLABELLED -> ruleUnlabeledNode;
       case RULE_CUSTOM_ACTION -> ruleAction;
+      case RULE_TEXT_ENTITIES -> ruleTextEntities;
       case RULE_VIEWPAGER -> ruleViewPager;
       case RULE_GRANULARITY -> ruleGranularity;
       case RULE_IMAGE_CAPTION -> ruleImageCaption;

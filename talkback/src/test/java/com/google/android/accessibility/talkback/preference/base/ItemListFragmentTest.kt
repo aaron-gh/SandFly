@@ -49,7 +49,7 @@ class ItemListFragmentTest {
   private lateinit var controller: ActivityController<TalkBackPreferencesActivity.TalkBackSubSettings>
   private lateinit var fragment: ItemListFragment
   private val order = ItemOrder.READING_CONTROLS_KEY
-  private val actions by lazy { context.getString(R.string.pref_selector_actions_key) }
+  private val textEntities by lazy { context.getString(R.string.pref_selector_text_entities_key) }
   private val option by lazy { context.getString(R.string.pref_text_entities_key) }
 
   @Before
@@ -83,8 +83,12 @@ class ItemListFragmentTest {
 
   @Test
   fun anOptionFollowsItsItemAndGoesWithIt() {
+    // Addresses and numbers isn't in the list by default.
+    assertNull(find(option))
+    find("${order}_available_$textEntities")!!.performClick()
+    shadowOf(Looper.getMainLooper()).idle()
     val rows = currentRows()
-    val row = "${order}_row_$actions"
+    val row = "${order}_row_$textEntities"
     assertEquals(rows.indexOf(row) + 1, rows.indexOf(option))
 
     find(row)!!.performClick()
@@ -95,7 +99,7 @@ class ItemListFragmentTest {
     shadowOf(Looper.getMainLooper()).idle()
     assertNull(find(option))
 
-    find("${order}_available_$actions")!!.performClick()
+    find("${order}_available_$textEntities")!!.performClick()
     shadowOf(Looper.getMainLooper()).idle()
     val added = currentRows()
     assertEquals(added.indexOf(row) + 1, added.indexOf(option))

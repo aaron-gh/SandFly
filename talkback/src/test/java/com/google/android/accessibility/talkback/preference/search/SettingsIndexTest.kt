@@ -89,13 +89,18 @@ class SettingsIndexTest {
     fun screensWithOption() =
       SettingsIndex.build(context).filter { it.key == option }.map { it.path.first() }.toSet()
 
-    // Actions is in the reading controls and not in the SandFly menu by default.
-    assertEquals(setOf(readingControls), screensWithOption())
+    // Addresses and numbers is in neither list by default.
+    assertEquals(emptySet<String>(), screensWithOption())
     try {
       prefs
         .edit()
-        .putBoolean(context.getString(R.string.pref_selector_actions_key), false)
-        .putBoolean(context.getString(R.string.pref_show_context_menu_custom_action_setting_key), true)
+        .putBoolean(context.getString(R.string.pref_selector_text_entities_key), true)
+        .commit()
+      assertEquals(setOf(readingControls), screensWithOption())
+      prefs
+        .edit()
+        .putBoolean(context.getString(R.string.pref_selector_text_entities_key), false)
+        .putBoolean(context.getString(R.string.pref_show_context_menu_text_entities_setting_key), true)
         .commit()
       assertEquals(setOf(sandflyMenu), screensWithOption())
     } finally {
