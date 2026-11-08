@@ -47,6 +47,29 @@ class DownloadRetryTest {
   }
 
   @Test
+  fun attemptsAreNumberedFromZero() {
+    val seen = mutableListOf<Int>()
+    DownloadRetry.run(sleep) { attempt ->
+      seen += attempt
+      if (attempt < 2) throw IOException("HTTP 504")
+      "apk"
+    }
+    assertEquals(listOf(0, 1, 2), seen)
+  }
+
+  @Test
+  fun urlFor_triesDirectThenApiThenDirect() {
+    val urls = (0..2).map { DownloadRetry.urlFor(it, "direct", "api") }
+    assertEquals(listOf("direct", "api", "direct"), urls)
+  }
+
+  @Test
+  fun urlFor_withoutApiAddress_alwaysDirect() {
+    val urls = (0..2).map { DownloadRetry.urlFor(it, "direct", null) }
+    assertEquals(listOf("direct", "direct", "direct"), urls)
+  }
+
+  @Test
   fun everyAttemptFails_throwsTheLastFailure() {
     var attempts = 0
     val thrown =

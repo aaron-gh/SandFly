@@ -43,6 +43,8 @@ data class UpdateInfo(
   val changes: List<String>,
   /** True if the build is SandFly, which installs as a new app. */
   val move: Boolean = false,
+  /** The GitHub API address of the APK, tried when [downloadUrl] fails. */
+  val apiDownloadUrl: String? = null,
 )
 
 /**
@@ -197,12 +199,13 @@ object UpdateChecker {
     }
 
     val assets = release.getJSONArray("assets")
-    val downloadUrl =
+    val asset =
       (0 until assets.length())
         .map { assets.getJSONObject(it) }
         .firstOrNull { it.optString("name") == apkName }
-        ?.getString("browser_download_url")
         ?: throw JSONException("The release has no $apkName")
+    val downloadUrl = asset.getString("browser_download_url")
+    val apiDownloadUrl = asset.optString("url").takeIf { it.isNotEmpty() }
 
     val commits = lines.filter { it.startsWith("- ") }.map { it.removePrefix("- ") }
     val shortHash = currentHash.take(SHORT_HASH_LENGTH)
@@ -223,6 +226,7 @@ object UpdateChecker {
       build,
       downloadUrl,
       notes.ifEmpty { newCommits.map { it.substringAfter(' ') } },
+      apiDownloadUrl = apiDownloadUrl,
     )
   }
 

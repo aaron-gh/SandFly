@@ -260,7 +260,7 @@ object Updater {
       .setTitle(title)
       .setMessage(message)
       .setPositiveButton(R.string.update_dialog_install) { _, _ ->
-        install(activity, update.downloadUrl)
+        install(activity, update.downloadUrl, update.apiDownloadUrl)
       }
       .setNegativeButton(android.R.string.cancel) { dialog, _ -> dialog.dismiss() }
       .setCancelable(true)
@@ -273,6 +273,7 @@ object Updater {
       Intent(context, UpdateReceiver::class.java)
         .setAction(UpdateReceiver.ACTION_INSTALL)
         .putExtra(UpdateReceiver.EXTRA_DOWNLOAD_URL, update.downloadUrl)
+        .putExtra(UpdateReceiver.EXTRA_API_DOWNLOAD_URL, update.apiDownloadUrl)
     val pendingIntent =
       PendingIntent.getBroadcast(
         context,
@@ -302,7 +303,7 @@ object Updater {
    * SandFly installs as a new app. Anything else is refused.
    */
   @JvmStatic
-  fun install(context: Context, downloadUrl: String) {
+  fun install(context: Context, downloadUrl: String, apiDownloadUrl: String? = null) {
     val appContext = context.applicationContext
     // With the Play-installer setting on and Shizuku, the shell installs the update, so SandFly
     // doesn't need permission to install apps itself.
@@ -334,7 +335,7 @@ object Updater {
       try {
         val apk =
           try {
-            download(appContext, downloadUrl)
+            download(appContext, downloadUrl, apiDownloadUrl)
           } finally {
             // Set before downloading ends, so that the update counts as busy throughout.
             installing.set(true)
@@ -365,14 +366,17 @@ object Updater {
    * Downloads the APK, showing its progress in a notification. A watch downloads over Wi-Fi or
    * another unmetered network when one comes up, not through the phone.
    */
-  private fun download(context: Context, url: String): File {
+  private fun download(context: Context, url: String, apiUrl: String?): File {
     val directory = File(context.cacheDir, "update")
     directory.mkdirs()
     val file = File(directory, APK_FILE_NAME)
     val fast = if (FormFactorUtils.isAndroidWear()) FastNetwork.request(context) else null
     var complete = false
     try {
-      DownloadRetry.run { downloadOnce(context, url, file, fast?.network) }
+      DownloadRetry.run { attempt ->
+        val attemptUrl = DownloadRetry.urlFor(attempt, url, apiUrl)
+        downloadOnce(context, attemptUrl, attemptUrl == apiUrl, file, fast?.network)
+      }
       complete = true
       return file
     } catch (e: IOException) {
@@ -383,13 +387,22 @@ object Updater {
     }
   }
 
-  private fun downloadOnce(context: Context, url: String, file: File, network: Network?) {
+  private fun downloadOnce(
+    context: Context,
+    url: String,
+    isApi: Boolean,
+    file: File,
+    network: Network?,
+  ) {
     val connection = UpdateChecker.openConnection(context, url, network)
     try {
+      // Without this type, the API returns the asset's JSON description instead of the APK.
+      if (isApi) connection.setRequestProperty("Accept", "application/octet-stream")
       val code = connection.responseCode
       if (code != HttpURLConnection.HTTP_OK) {
         val message = "Download returned HTTP $code"
-        throw if (DownloadRetry.isRetryableStatus(code)) {
+        // An API failure such as the rate limit leaves the direct address to try.
+        throw if (isApi || DownloadRetry.isRetryableStatus(code)) {
           IOException(message)
         } else {
           PermanentDownloadException(message)

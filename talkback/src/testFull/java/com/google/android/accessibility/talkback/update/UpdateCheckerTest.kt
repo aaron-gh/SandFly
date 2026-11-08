@@ -39,6 +39,23 @@ class UpdateCheckerTest {
       .toString()
 
   @Test
+  fun apiDownloadAddressIsReadFromTheAsset() {
+    val json = JSONObject(release(11))
+    json
+      .getJSONArray("assets")
+      .getJSONObject(0)
+      .put("url", "https://api.github.com/repos/a/b/releases/assets/1")
+    val update = UpdateChecker.parseRelease(json.toString(), 10, "")
+    assertEquals("https://api.github.com/repos/a/b/releases/assets/1", update!!.apiDownloadUrl)
+    assertEquals("https://example.com/sandfly.apk", update.downloadUrl)
+  }
+
+  @Test
+  fun apiDownloadAddressIsOptional() {
+    assertNull(UpdateChecker.parseRelease(release(11), 10, "")!!.apiDownloadUrl)
+  }
+
+  @Test
   fun olderOrSameBuildIsNotAnUpdate() {
     assertNull(UpdateChecker.parseRelease(release(10), 10, ""))
     assertNull(UpdateChecker.parseRelease(release(9), 10, ""))
