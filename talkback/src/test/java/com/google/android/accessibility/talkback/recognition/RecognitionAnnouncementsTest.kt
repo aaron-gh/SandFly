@@ -20,12 +20,12 @@ import org.junit.Assert.*
 import org.junit.Test
 
 class RecognitionAnnouncementsTest {
-  @Test fun rotorWrapsInBothDirectionsAcrossAllFiveModes() {
-    assertEquals(RecognitionMode.DOORS, RecognitionMode.SCENES.step(false))
-    assertEquals(RecognitionMode.SCENES, RecognitionMode.DOORS.step(true))
+  @Test fun rotorWrapsInBothDirectionsAcrossAllModes() {
+    assertEquals(RecognitionMode.LIGHT, RecognitionMode.SCENES.step(false))
+    assertEquals(RecognitionMode.SCENES, RecognitionMode.LIGHT.step(true))
     var mode = RecognitionMode.SCENES
     val seen = mutableSetOf<RecognitionMode>()
-    repeat(5) { seen.add(mode); mode = mode.step(true) }
+    repeat(RecognitionMode.entries.size) { seen.add(mode); mode = mode.step(true) }
     assertEquals(RecognitionMode.entries.toSet(), seen)
     assertEquals(RecognitionMode.SCENES, mode)
   }
