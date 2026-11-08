@@ -1613,6 +1613,41 @@ public class SelectorController implements UserInputEventListener {
     selectPreviousOrNext(eventId, announceType, isNext, false);
   }
 
+  /**
+   * Selects the next or previous reading control of the list with the preference keys {@code
+   * controls}, as the current reading control. A list's controls need not be in the main list.
+   *
+   * @return {@code false} if the list has no control that can be used now.
+   */
+  public boolean selectInReadingControlList(
+      EventId eventId, List<String> controls, boolean isNext) {
+    applyPendingSwitch();
+    @Nullable AccessibilityNodeInfoCompat node =
+        accessibilityFocusMonitor.getAccessibilityFocus(false);
+    List<Setting> settings = new ArrayList<>();
+    for (Setting setting : orderedSettings()) {
+      if (controls.contains(context.getString(setting.prefKeyResId))
+          && !hiddenSettings.contains(setting)
+          && availableHere(setting, node)) {
+        settings.add(setting);
+      }
+    }
+    if (settings.isEmpty()) {
+      return false;
+    }
+    int index = settings.indexOf(getCurrentSetting(context, prefs));
+    int newIndex =
+        index < 0
+            ? (isNext ? 0 : settings.size() - 1)
+            : Math.floorMod(index + (isNext ? 1 : -1), settings.size());
+    pipeline.returnFeedback(
+        eventId,
+        Feedback.sound(isNext ? R.raw.next_reading_control : R.raw.previous_reading_control));
+    setCurrentSetting(
+        eventId, settings.get(newIndex), AnnounceType.DESCRIPTION_AND_HINT, /* showOverlay= */ false);
+    return true;
+  }
+
   private boolean selectPreviousOrNext(
       EventId eventId, AnnounceType announceType, boolean isNext, boolean showOverlay) {
     applyPendingSwitch();
@@ -1843,7 +1878,11 @@ public class SelectorController implements UserInputEventListener {
         preferenceKey, context.getResources().getBoolean(setting.defaultValueResId))) {
       return false;
     }
+    return availableHere(setting, node);
+  }
 
+  /** Returns whether {@code setting} can be used now, whether or not the main list includes it. */
+  private boolean availableHere(Setting setting, @Nullable AccessibilityNodeInfoCompat node) {
     switch (setting) {
       case LANGUAGE -> {
         return actorState.getLanguageState().allowSelectLanguage();
