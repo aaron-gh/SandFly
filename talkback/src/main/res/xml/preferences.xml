@@ -95,6 +95,10 @@
       android:key="pref_quick_settings_screen"
       android:title="@string/title_pref_quick_settings_screen" />
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+      android:fragment="com.google.android.accessibility.talkback.preference.base.OverviewFragment"
+      android:key="pref_overview_screen"
+      android:title="@string/title_pref_overview_screen" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
       android:fragment="com.google.android.accessibility.talkback.preference.base.PauseFragment"
       android:key="pref_pause_screen"
       android:title="@string/title_pref_pause" />

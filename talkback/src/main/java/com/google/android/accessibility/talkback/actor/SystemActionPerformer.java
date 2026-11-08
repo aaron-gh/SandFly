@@ -5,7 +5,10 @@ import static android.accessibilityservice.AccessibilityService.GLOBAL_ACTION_AC
 import android.accessibilityservice.AccessibilityService;
 import android.view.accessibility.AccessibilityNodeInfo.AccessibilityAction;
 import com.google.android.accessibility.talkback.ActorStateWritable;
+import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.notificationlist.NotificationListActivity;
+import com.google.android.accessibility.talkback.overview.OverviewActivity;
+import com.google.android.accessibility.talkback.overview.SplitScreen;
 import com.google.android.accessibility.talkback.quicksettings.QuickSettingsActivity;
 import com.google.android.accessibility.utils.FeatureSupport;
 import com.google.common.collect.ImmutableList;
@@ -37,6 +40,12 @@ public final class SystemActionPerformer {
    * {@link AccessibilityService#GLOBAL_ACTION_QUICK_SETTINGS}. Not an Android action.
    */
   public static final int GLOBAL_ACTION_SYSTEM_QUICK_SETTINGS = -5;
+
+  /**
+   * Opens the system's overview even when SandFly's overview takes the place of {@link
+   * AccessibilityService#GLOBAL_ACTION_RECENTS}. Not an Android action.
+   */
+  public static final int GLOBAL_ACTION_SYSTEM_OVERVIEW = -6;
 
   public static final ImmutableList<Integer> EXCLUDED_ACTIONS =
       ImmutableList.copyOf(
@@ -73,11 +82,25 @@ public final class SystemActionPerformer {
     if (actorState != null) {
       actorState.setLastSystemAction(id);
     }
+    if (id == AccessibilityService.GLOBAL_ACTION_BACK && service instanceof TalkBackService) {
+      SplitScreen splitScreen = ((TalkBackService) service).getSplitScreen();
+      if (splitScreen != null
+          && splitScreen.runInLastFocusedApp(() -> service.performGlobalAction(id))) {
+        return true;
+      }
+    }
     if (id == GLOBAL_ACTION_SYSTEM_NOTIFICATIONS) {
       return service.performGlobalAction(AccessibilityService.GLOBAL_ACTION_NOTIFICATIONS);
     }
     if (id == AccessibilityService.GLOBAL_ACTION_NOTIFICATIONS
         && NotificationListActivity.openInsteadOfShade(service)) {
+      return true;
+    }
+    if (id == GLOBAL_ACTION_SYSTEM_OVERVIEW) {
+      return service.performGlobalAction(AccessibilityService.GLOBAL_ACTION_RECENTS);
+    }
+    if (id == AccessibilityService.GLOBAL_ACTION_RECENTS
+        && OverviewActivity.openInsteadOfSystem(service)) {
       return true;
     }
     if (id == GLOBAL_ACTION_SYSTEM_QUICK_SETTINGS) {

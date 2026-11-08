@@ -224,6 +224,7 @@ public class TalkbackMenuProcessor {
     // Gesture profile and voice profile
     addGestureProfileMenuIfValid(menu);
     addVoiceProfileMenuIfValid(menu);
+    addSplitScreenMenuIfValid(menu);
     // System Action
     addWindowActionMenu(menu);
     addScriptCommands(menu);
@@ -375,6 +376,7 @@ public class TalkbackMenuProcessor {
     {R.string.pref_show_context_menu_clipboard_history_setting_key, R.id.clipboard_history},
     {R.string.pref_show_context_menu_send_feedback_setting_key, R.id.send_feedback},
     {R.string.pref_show_context_menu_tts_settings_setting_key, R.id.tts_settings},
+    {R.string.pref_show_context_menu_split_screen_setting_key, R.id.split_screen_menu},
     {R.string.pref_show_context_menu_system_action_setting_key, R.id.window_menu},
     {
       R.string.pref_show_context_menu_braille_display_settings_setting_key,
@@ -683,6 +685,24 @@ public class TalkbackMenuProcessor {
             service.getString(R.string.spoken_language));
     if (!LanguageMenuProcessor.prepareLanguageSubMenu(service, pipeline, actorState, subMenu)) {
       menu.removeItem(R.id.language_menu);
+    }
+  }
+
+  private void addSplitScreenMenuIfValid(ContextMenu menu) {
+    menu.removeItem(R.id.split_screen_menu);
+    if (!showMenuItem(
+        R.string.pref_show_context_menu_split_screen_setting_key,
+        R.bool.pref_show_context_menu_split_screen_default)) {
+      return;
+    }
+    ListSubMenu subMenu =
+        menu.addSubMenu(
+            /* groupId= */ 0,
+            /* itemId= */ R.id.split_screen_menu,
+            ORDER_SYSTEM_ACTIONS,
+            service.getString(R.string.title_split_screen));
+    if (!SplitScreenMenuProcessor.prepareSplitScreenSubMenu(service, pipeline, subMenu)) {
+      menu.removeItem(R.id.split_screen_menu);
     }
   }
 

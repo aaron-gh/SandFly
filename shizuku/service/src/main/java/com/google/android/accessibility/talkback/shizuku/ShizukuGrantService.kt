@@ -21,7 +21,11 @@ import android.content.ComponentName
 import android.content.Context
 import android.content.ContextWrapper
 import android.net.wifi.WifiManager
+import android.app.ActivityManager
+import android.content.pm.PackageManager
 import android.os.Binder
+import android.os.Build
+import android.os.Bundle
 import android.os.Handler
 import android.os.HandlerThread
 import android.os.IBinder
@@ -173,6 +177,153 @@ class ShizukuGrantService(private val context: Context?) : IShizukuGrants.Stub()
       e.targetException.toString()
     } catch (e: Exception) {
       e.toString()
+    }
+
+  /** IActivityTaskManager, which runs the system's tasks: hidden, so called by reflection. */
+  private var taskManagerCache: Any? = null
+
+  private fun taskManager(): Any {
+    taskManagerCache?.let { return it }
+    val binder =
+      Class.forName("android.os.ServiceManager")
+        .getMethod("getService", String::class.java)
+        .invoke(null, ACTIVITY_TASK_SERVICE) as? IBinder ?: error("No activity task service")
+    return Class.forName("android.app.IActivityTaskManager\$Stub")
+      .getMethod("asInterface", IBinder::class.java)
+      .invoke(null, binder)
+      .also { taskManagerCache = it }
+  }
+
+  override fun recentTasks(max: Int): Bundle? =
+    try {
+      val manager = taskManager()
+      // The tasks of the caller's user and its profiles, as the launcher's overview shows them.
+      val userId = Binder.getCallingUid() / PER_USER_RANGE
+      val slice =
+        manager.javaClass
+          .getMethod(
+            "getRecentTasks",
+            Int::class.javaPrimitiveType,
+            Int::class.javaPrimitiveType,
+            Int::class.javaPrimitiveType,
+          )
+          .invoke(manager, max.coerceIn(1, MAX_TASKS), RECENT_IGNORE_UNAVAILABLE, userId)
+      val tasks =
+        (slice?.javaClass?.getMethod("getList")?.invoke(slice) as? List<*>).orEmpty()
+          .filterIsInstance<ActivityManager.RecentTaskInfo>()
+      val packageManager = shellContext()?.packageManager
+      val labels = HashMap<String, String>()
+      fun appLabel(packageName: String): String =
+        labels.getOrPut(packageName) {
+          try {
+            packageManager?.let { pm ->
+              pm.getApplicationInfo(packageName, PackageManager.MATCH_UNINSTALLED_PACKAGES)
+                .loadLabel(pm)
+                .toString()
+            } ?: packageName
+          } catch (e: Exception) {
+            packageName
+          }
+        }
+      val ids = IntArray(tasks.size)
+      val users = IntArray(tasks.size)
+      val packages = arrayOfNulls<String>(tasks.size)
+      val bases = arrayOfNulls<String>(tasks.size)
+      val tops = arrayOfNulls<String>(tasks.size)
+      val appLabels = arrayOfNulls<String>(tasks.size)
+      val titles = arrayOfNulls<String>(tasks.size)
+      val activityLabels = arrayOfNulls<String>(tasks.size)
+      tasks.forEachIndexed { index, task ->
+        val base = task.baseActivity ?: task.baseIntent?.component ?: task.origActivity
+        val packageName = base?.packageName ?: task.baseIntent?.`package` ?: ""
+        ids[index] =
+          if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) task.taskId
+          else @Suppress("DEPRECATION") task.persistentId
+        users[index] = hiddenInt(task, "userId", userId)
+        packages[index] = packageName
+        bases[index] = base?.flattenToString() ?: ""
+        tops[index] = task.topActivity?.flattenToString() ?: ""
+        appLabels[index] = if (packageName.isEmpty()) "" else appLabel(packageName)
+        titles[index] = task.taskDescription?.label?.take(MAX_TITLE_LENGTH) ?: ""
+        activityLabels[index] =
+          (task.topActivity ?: base)?.let { activity ->
+            try {
+              packageManager?.let { pm -> pm.getActivityInfo(activity, 0).loadLabel(pm).toString() }
+            } catch (e: Exception) {
+              null
+            }
+          } ?: ""
+      }
+      Bundle().apply {
+        putIntArray(RecentTaskKeys.IDS, ids)
+        putIntArray(RecentTaskKeys.USERS, users)
+        putStringArray(RecentTaskKeys.PACKAGES, packages)
+        putStringArray(RecentTaskKeys.BASE_ACTIVITIES, bases)
+        putStringArray(RecentTaskKeys.TOP_ACTIVITIES, tops)
+        putStringArray(RecentTaskKeys.APP_LABELS, appLabels)
+        putStringArray(RecentTaskKeys.TITLES, titles)
+        putStringArray(RecentTaskKeys.ACTIVITY_LABELS, activityLabels)
+      }
+    } catch (e: Throwable) {
+      null
+    }
+
+  override fun openTask(taskId: Int): String? =
+    try {
+      val manager = taskManager()
+      val result =
+        manager.javaClass
+          .getMethod("startActivityFromRecents", Int::class.javaPrimitiveType, Bundle::class.java)
+          .invoke(manager, taskId, null) as? Int
+      // ActivityManager's START_ codes: errors are negative.
+      if (result != null && result < 0) "Start from recents failed with $result" else null
+    } catch (e: InvocationTargetException) {
+      e.targetException.toString()
+    } catch (e: Throwable) {
+      e.toString()
+    }
+
+  override fun closeTask(taskId: Int): String? =
+    try {
+      val manager = taskManager()
+      val removed =
+        manager.javaClass
+          .getMethod("removeTask", Int::class.javaPrimitiveType)
+          .invoke(manager, taskId) as? Boolean
+      if (removed == false) "No task $taskId" else null
+    } catch (e: InvocationTargetException) {
+      e.targetException.toString()
+    } catch (e: Throwable) {
+      e.toString()
+    }
+
+  /**
+   * Has SystemUI's window manager shell put the task in split screen, in the bottom or right half,
+   * beside the task in front, which takes the other half.
+   */
+  override fun splitTask(taskId: Int): String? {
+    val result =
+      shell(
+        listOf(
+          "dumpsys", "activity", "service", SYSTEM_UI_SERVICE, "WMShell", "splitscreen",
+          "moveToSideStage", taskId.toString(), SPLIT_POSITION_BOTTOM_OR_RIGHT.toString(),
+        ),
+        null,
+      )
+    // The shell prints its help when it doesn't know a command or its arguments.
+    return when {
+      result.first != 0 -> result.second.ifEmpty { "Split screen failed" }
+      result.second.contains("Error", ignoreCase = true) ||
+        result.second.contains("help", ignoreCase = true) -> result.second
+      else -> null
+    }
+  }
+
+  private fun hiddenInt(target: Any, field: String, default: Int): Int =
+    try {
+      target.javaClass.getField(field).getInt(target)
+    } catch (e: Exception) {
+      default
     }
 
   private var clipboard: ClipboardManager? = null
@@ -512,5 +663,15 @@ class ShizukuGrantService(private val context: Context?) : IShizukuGrants.Stub()
     const val TETHERING_SERVICE = "tethering"
     /** TetheringManager.TETHERING_WIFI. */
     const val TETHERING_WIFI = 0
+    /** Context.ACTIVITY_TASK_SERVICE, which isn't public. */
+    const val ACTIVITY_TASK_SERVICE = "activity_task"
+    /** ActivityManager.RECENT_IGNORE_UNAVAILABLE. */
+    const val RECENT_IGNORE_UNAVAILABLE = 2
+    /** More than the system keeps. */
+    const val MAX_TASKS = 100
+    const val MAX_TITLE_LENGTH = 200
+    const val SYSTEM_UI_SERVICE = "com.android.systemui/.SystemUIService"
+    /** SplitScreenConstants.SPLIT_POSITION_BOTTOM_OR_RIGHT. */
+    const val SPLIT_POSITION_BOTTOM_OR_RIGHT = 1
   }
 }

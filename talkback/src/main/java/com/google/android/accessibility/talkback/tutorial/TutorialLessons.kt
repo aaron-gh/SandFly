@@ -1046,6 +1046,7 @@ internal object TutorialLessons {
     listOf(
       R.string.shortcut_value_home,
       R.string.shortcut_value_overview,
+      R.string.shortcut_value_system_overview,
       R.string.shortcut_value_notifications,
       R.string.shortcut_value_system_notifications,
       R.string.shortcut_value_quick_settings,

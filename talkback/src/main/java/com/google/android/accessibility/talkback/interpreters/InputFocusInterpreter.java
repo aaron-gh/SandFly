@@ -26,6 +26,7 @@ import com.google.android.accessibility.talkback.compositor.GlobalVariables;
 import com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForScreenStateChange;
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.ScreenState;
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.ScreenStateMonitor.ScreenStateChangeListener;
+import com.google.android.accessibility.talkback.overview.SplitScreen;
 import com.google.android.accessibility.utils.AccessibilityEventListener;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.AccessibilityWindowInfoUtils;
@@ -212,7 +213,9 @@ public class InputFocusInterpreter
 
       AccessibilityNodeInfoCompat a11yFocusableNode =
           getA11yFocusableNodeFromInputFocusedNode(sourceNode);
-      if (a11yFocusableNode != null && followsInputFocus(event)) {
+      if (a11yFocusableNode != null
+          && followsInputFocus(event)
+          && !SplitScreen.isInUnfocusedApp(sourceNode)) {
         targetViewChangeListener.onViewTargeted(eventId, event, a11yFocusableNode);
       }
     }

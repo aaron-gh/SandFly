@@ -352,6 +352,13 @@
             android:summary="@string/summary_tts_settings"/>
         <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
             android:layout="@layout/listitem_2texts"
+            android:defaultValue="@bool/pref_show_context_menu_split_screen_default"
+            android:key="@string/pref_show_context_menu_split_screen_setting_key"
+            android:order="25"
+            android:title="@string/title_split_screen"
+            app:singleLineTitle="false"/>
+        <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
+            android:layout="@layout/listitem_2texts"
             android:defaultValue="@bool/pref_show_context_menu_system_action_default"
             android:key="@string/pref_show_context_menu_system_action_setting_key"
             android:order="25"

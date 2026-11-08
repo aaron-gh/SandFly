@@ -68,6 +68,7 @@
     <string name="pref_notification_parts_key">pref_notification_parts</string>
     <string name="pref_play_installer_key">pref_play_installer</string>
     <string name="pref_quick_settings_key">pref_quick_settings</string>
+    <string name="pref_overview_key">pref_overview</string>
     <string name="pref_quick_settings_items_key">pref_quick_settings_items_screen</string>
     <string name="pref_speech_rate_key">pref_rate_volume</string>
     <string name="pref_speech_rate_seekbar_key_int">pref_speech_rate_seekbar_key_int</string>
@@ -729,6 +730,7 @@
   <string name="keycombo_shortcut_review_cursor_off">keycombo_shortcut_review_cursor_off</string>
   <string name="keycombo_shortcut_toggle_pass_keys_to_app">keycombo_shortcut_toggle_pass_keys_to_app</string>
   <string name="keycombo_shortcut_toggle_keyboard_input">keycombo_shortcut_toggle_keyboard_input</string>
+  <string name="keycombo_shortcut_split_screen">keycombo_shortcut_split_screen</string>
   <string name="keycombo_shortcut_recognize_screen_text">keycombo_shortcut_recognize_screen_text</string>
   <string name="keycombo_shortcut_navigate_next_paragraph">keycombo_shortcut_navigate_next_paragraph</string>
   <string name="keycombo_shortcut_navigate_previous_paragraph">keycombo_shortcut_navigate_previous_paragraph</string>
@@ -1330,6 +1332,8 @@
         <item>@string/shortcut_home</item>
         <item>@string/shortcut_back</item>
         <item>@string/shortcut_overview</item>
+        <item>@string/shortcut_system_overview</item>
+        <item>@string/title_split_screen</item>
         <item>@string/shortcut_notifications</item>
         <item>@string/shortcut_system_notifications</item>
         <item>@string/shortcut_quick_settings</item>
@@ -1345,6 +1349,8 @@
         <item>@string/shortcut_value_home</item>
         <item>@string/shortcut_value_back</item>
         <item>@string/shortcut_value_overview</item>
+        <item>@string/shortcut_value_system_overview</item>
+        <item>@string/shortcut_value_split_screen</item>
         <item>@string/shortcut_value_notifications</item>
         <item>@string/shortcut_value_system_notifications</item>
         <item>@string/shortcut_value_quick_settings</item>
@@ -1488,6 +1494,8 @@
   <string name="shortcut_value_system_notifications">SYSTEM_NOTIFICATIONS</string>
   <string name="shortcut_value_quick_settings">QUICK_SETTINGS</string>
   <string name="shortcut_value_system_quick_settings">SYSTEM_QUICK_SETTINGS</string>
+  <string name="shortcut_value_system_overview">SYSTEM_OVERVIEW</string>
+  <string name="shortcut_value_split_screen" translatable="false">SPLIT_SCREEN</string>
   <string name="shortcut_value_lock_screen">LOCK_SCREEN</string>
   <string name="shortcut_value_power_menu">POWER_MENU</string>
   <string name="shortcut_value_show_custom_actions">SHOW_CUSTOM_ACTIONS</string>
@@ -1804,6 +1812,7 @@
     <bool name="pref_show_exit_watermark_default">true</bool>
     <bool name="pref_notification_list_default">false</bool>
     <bool name="pref_quick_settings_default">false</bool>
+    <bool name="pref_overview_default">false</bool>
     <bool name="pref_cache_keyboard_keys_default">false</bool>
     <bool name="pref_vibration_default">true</bool>
     <bool name="pref_soundback_default">true</bool>
@@ -2448,6 +2457,9 @@
   <bool name="pref_show_context_menu_voice_profile_default">false</bool>
   <item type="id" name="group_voice_profile" />
   <item type="id" name="voice_profile_menu" />
+  <item type="id" name="split_screen_menu" />
+  <string name="pref_show_context_menu_split_screen_setting_key" translatable="false">pref_split_screen_menu_setting_key</string>
+  <bool name="pref_show_context_menu_split_screen_default">true</bool>
   <string name="shortcut_value_gesture_profiles" translatable="false">GESTURE_PROFILES</string>
   <string name="shortcut_value_previous_gesture_profile" translatable="false">PREVIOUS_GESTURE_PROFILE</string>
   <string name="shortcut_value_next_gesture_profile" translatable="false">NEXT_GESTURE_PROFILE</string>
