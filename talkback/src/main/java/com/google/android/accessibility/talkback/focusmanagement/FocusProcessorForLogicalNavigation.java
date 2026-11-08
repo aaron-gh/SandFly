@@ -215,6 +215,9 @@ public class FocusProcessorForLogicalNavigation {
       TraversalStrategy.SEARCH_FOCUS_UNKNOWN;
 
   // Object-wrapper around static-method getAccessibilityFocus(), for test-mocking.
+  // Where the first item of the list was at the last check, while the pivot has left the list.
+  private @Nullable Rect firstItemBoundsAfterPivotLeft;
+
   private final AccessibilityFocusMonitor accessibilityFocusMonitor;
 
   @NonNull private final TextComposer compositor;
@@ -3760,22 +3763,30 @@ public class FocusProcessorForLogicalNavigation {
         return;
       }
     } else {
-      // Try to find the next focusable node based on current focus.
+      // RecyclerView may recycle focusBeforeScroll after it leaves the viewport. Do not search
+      // from that stale node: searching from it can skip the first newly visible item.
       nodeToFocus =
-          TraversalStrategyUtils.searchFocus(
-              localTraversalStrategy, focusBeforeScroll, sourceAction.searchDirection, nodeFilter);
-      // Fallback solution: Use the first/last item under scrollable node as the target.
-      if (nodeToFocus == null) {
-        nodeToFocus =
-            TraversalStrategyUtils.findFirstFocusInNodeTree(
-                localTraversalStrategy, scrolledNode, sourceAction.searchDirection, nodeFilter);
-      }
+          findFocusAfterInvalidPivot(
+              localTraversalStrategy, scrolledNode, sourceAction.searchDirection, nodeFilter);
 
       if (nodeToFocus == null) {
         // Since there is no visible/valid accessibility focus on screen, we play safe and don't
         // repeat navigation action without a valid pivot node.
         return;
       }
+
+      // The pivot left the list while it still moves, so the first item may scroll away too and
+      // focus would be lost. Wait until that item stops moving.
+      Rect firstItemBounds = new Rect();
+      nodeToFocus.getBoundsInScreen(firstItemBounds);
+      if (settleChecksLeft > 0 && !firstItemBounds.equals(firstItemBoundsAfterPivotLeft)) {
+        firstItemBoundsAfterPivotLeft = firstItemBounds;
+        LogUtils.d(TAG, "Pivot left the list; searching again when the list stops.");
+        searchAgainWhenListMoves(
+            scrolledNode, focusBeforeScroll, sourceAction, eventId, settleChecksLeft - 1);
+        return;
+      }
+      firstItemBoundsAfterPivotLeft = null;
     }
 
     // If we're moving backward with default target from native views to WebView container node,
@@ -3798,6 +3809,17 @@ public class FocusProcessorForLogicalNavigation {
     }
 
     setAccessibilityFocusInternal(nodeToFocus, navigationAction, eventId);
+  }
+
+  /** Finds the first valid target after the previous focus node was recycled during scrolling. */
+  @VisibleForTesting
+  static @Nullable AccessibilityNodeInfoCompat findFocusAfterInvalidPivot(
+      TraversalStrategy traversalStrategy,
+      AccessibilityNodeInfoCompat scrolledNode,
+      @SearchDirection int searchDirection,
+      Filter<AccessibilityNodeInfoCompat> nodeFilter) {
+    return TraversalStrategyUtils.findFirstFocusInNodeTree(
+        traversalStrategy, scrolledNode, searchDirection, nodeFilter);
   }
 
   /** Returns whether {@code pivotBounds} cover all of {@code list} that is on screen. */
