@@ -422,6 +422,7 @@ public class BrailleIme extends InputMethodService {
     PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
     if (pm.isInteractive()) {
       if (showKeyboardView() && !restarting) {
+        playActiveSound(true);
         if (isBrailleDisplayStateChanged()) {
           updateInputView();
         } else {
@@ -460,6 +461,7 @@ public class BrailleIme extends InputMethodService {
     super.onFinishInputView(finishingInput);
     // Of the teardown methods, this is the most reliable, so we use it to deactivate.
     BrailleImeLog.d(TAG, "onFinishInputView");
+    playActiveSound(false);
     dismissDialogs();
     if (!keyboardView.isViewContainerCreated()) {
       BrailleImeLog.d(TAG, "already deactivated");
@@ -626,7 +628,6 @@ public class BrailleIme extends InputMethodService {
           Utils.useImeSuppliedInputWindow(),
           // Region might be null for short time before onTalkBackResumed() is called.
           keyboardView.obtainImeViewRegion().orElse(null));
-      playActiveSound(true);
       if (brailleDisplayForBrailleIme != null
           && brailleDisplayConnectedAndNotSuspended
           && !isVisible) {
@@ -638,7 +639,6 @@ public class BrailleIme extends InputMethodService {
 
   private void deactivateBrailleIme() {
     BrailleImeLog.d(TAG, "deactivateBrailleIme");
-    playActiveSound(false);
     if (talkBackForBrailleIme != null) {
       talkBackForBrailleIme.onBrailleImeInactivated(Utils.useImeSuppliedInputWindow());
     }

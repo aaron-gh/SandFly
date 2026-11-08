@@ -19,6 +19,7 @@ package com.google.android.accessibility.talkback.eventprocessor
 import android.view.accessibility.AccessibilityEvent.TYPE_ANNOUNCEMENT
 import android.view.accessibility.AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED
 import android.view.accessibility.AccessibilityEvent.TYPE_VIEW_CLICKED
+import android.view.accessibility.AccessibilityEvent.TYPE_VIEW_SELECTED
 import com.google.android.accessibility.talkback.eventprocessor.AccessibilityEventProcessor.isLockScreenSpeechAfterScreenOn
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
@@ -31,6 +32,7 @@ class LockScreenSpeechTest {
   fun systemUiAnnouncementAndFocus_justAfterScreenOn_areLockScreenSpeech() {
     assertTrue(isLockScreenSpeechAfterScreenOn(TYPE_ANNOUNCEMENT, systemUi, 200, false))
     assertTrue(isLockScreenSpeechAfterScreenOn(TYPE_VIEW_ACCESSIBILITY_FOCUSED, systemUi, 1200, false))
+    assertTrue(isLockScreenSpeechAfterScreenOn(TYPE_VIEW_SELECTED, systemUi, 40, false))
   }
 
   @Test

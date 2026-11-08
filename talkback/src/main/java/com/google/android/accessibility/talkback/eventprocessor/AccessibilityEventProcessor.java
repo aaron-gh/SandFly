@@ -252,7 +252,8 @@ public class AccessibilityEventProcessor implements DisplayStateChangedListener 
         && sinceScreenOn >= 0
         && sinceScreenOn < LOCK_SCREEN_SPEECH_MS
         && (eventType == AccessibilityEvent.TYPE_ANNOUNCEMENT
-            || eventType == AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED)
+            || eventType == AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED
+            || eventType == AccessibilityEvent.TYPE_VIEW_SELECTED)
         && packageName != null
         && SYSTEM_UI_PACKAGE.contentEquals(packageName);
   }
