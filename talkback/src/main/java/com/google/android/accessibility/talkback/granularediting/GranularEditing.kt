@@ -129,7 +129,7 @@ object GranularEditing {
    * text is as long as the furthest the cursor can go, which this finds by moving the cursor, then
    * puts it back.
    */
-  private fun fieldText(field: AccessibilityNodeInfoCompat): String {
+  internal fun fieldText(field: AccessibilityNodeInfoCompat): String {
     val reported = field.text?.toString().orEmpty()
     val mayHaveLabel =
       reported.contains(", ") && field.contentDescription?.toString() == reported

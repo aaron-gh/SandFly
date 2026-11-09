@@ -1015,7 +1015,11 @@ public class GestureController {
               eventId, Feedback.part().setSpeech(Feedback.Speech.create(SPELL_LAST)));
     } else if (action.equals(
         service.getString(R.string.shortcut_value_translate_last_spoken_phrase))) {
-      translateCommand.translateLast();
+      AccessibilityNodeInfoCompat focus =
+          accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ true);
+      AccessibilityNodeInfoCompat editing =
+          accessibilityFocusMonitor.getEditingNodeFromFocusedKeyboard(focus);
+      translateCommand.translateLast(editing != null ? editing : focus);
       result = true;
     } else if (SandflyAi.getFeatures() != null
         && action.equals(service.getString(R.string.shortcut_value_ai_agent))) {

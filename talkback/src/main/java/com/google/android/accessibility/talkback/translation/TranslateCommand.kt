@@ -21,11 +21,15 @@ import android.text.SpannableString
 import android.text.SpannableStringBuilder
 import android.text.Spanned
 import android.text.style.LocaleSpan
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils
 import com.google.android.accessibility.utils.ClipboardHistory
 import com.google.android.accessibility.talkback.TalkBackService
+import com.google.android.accessibility.talkback.granularediting.GranularEditing
 import com.google.android.accessibility.talkback.translation.TranslationFailure.Kind
 import com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED
+import com.google.android.accessibility.utils.Role
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.accessibility.utils.SpannableUtils
 import com.google.android.accessibility.utils.output.EmojiSpeech
@@ -34,9 +38,10 @@ import com.google.android.accessibility.utils.output.SpeechController
 import java.util.Locale
 
 /**
- * The Translate last spoken phrase gesture action: translates what SandFly said last, as Translation
- * settings say, and speaks the translation. Done again right after, it translates the same text
- * again rather than the translation, so that a change of language in between takes effect.
+ * The Translate last spoken phrase gesture action: translates the text of the focused text field,
+ * or otherwise what SandFly said last, as Translation settings say, and speaks the translation.
+ * Done again right after, it translates the same text again rather than the translation, so that a
+ * change of language in between takes effect.
  */
 class TranslateCommand(private val service: TalkBackService) {
   private val prefs = SharedPreferencesUtils.getSharedPreferences(service)
@@ -49,15 +54,18 @@ class TranslateCommand(private val service: TalkBackService) {
   private var cached: Translation? = null
   private var cachedFor: String? = null
 
-  fun translateLast() {
+  /** Translates the text of the text field [focus], or the last spoken phrase if there is none. */
+  fun translateLast(focus: AccessibilityNodeInfoCompat?) {
+    val field = fieldTextToTranslate(focus)
     val last = service.speechController.lastUtterance
     // What was on screen, such as emoji, not the words speech used for it, as Copy does.
     val text =
-      last?.let { EmojiSpeech.restoreOriginalText(SpannableUtils.getCopyableText(it.aggregateText)) }
-        ?.toString()
-        ?.trim()
-        .orEmpty()
-    val again = text.isNotEmpty() && (text == spoken || text == cached?.text)
+      field
+        ?: last?.let { EmojiSpeech.restoreOriginalText(SpannableUtils.getCopyableText(it.aggregateText)) }
+          ?.toString()
+          ?.trim()
+          .orEmpty()
+    val again = field == null && text.isNotEmpty() && (text == spoken || text == cached?.text)
     val source = if (again) original ?: text else text
     if (source.isEmpty()) return status(service.getString(R.string.translation_nothing))
     val translator = translator ?: Translator(service).also { translator = it }
@@ -158,6 +166,19 @@ class TranslateCommand(private val service: TalkBackService) {
           failure.detail.isEmpty() -> service.getString(R.string.translation_error, name)
           else -> service.getString(R.string.translation_error_details, name, failure.detail)
         }
+    }
+  }
+
+  internal companion object {
+    /**
+     * The text typed in [node], or null when [node] isn't a text field, is a password field, or
+     * shows only its hint or nothing.
+     */
+    fun fieldTextToTranslate(node: AccessibilityNodeInfoCompat?): String? {
+      if (node == null || node.isPassword) return null
+      if (!node.isEditable && Role.getRole(node) != Role.ROLE_EDIT_TEXT) return null
+      if (node.isShowingHintText || AccessibilityNodeInfoUtils.isEmptyEditTextRegardlessOfHint(node)) return null
+      return GranularEditing.fieldText(node).trim().ifEmpty { null }
     }
   }
 }
