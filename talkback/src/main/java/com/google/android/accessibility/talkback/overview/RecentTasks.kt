@@ -19,6 +19,8 @@ package com.google.android.accessibility.talkback.overview
 import android.accessibilityservice.AccessibilityService
 import android.content.ComponentName
 import android.content.Context
+import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.os.Process
 import android.os.SystemClock
@@ -45,6 +47,8 @@ data class RecentTask(
   val appLabel: String,
   /** The label the app gave the task, if it gave one that isn't the app's name. */
   val title: String?,
+  /** The package of the task's top activity, if known. */
+  val topPackage: String? = null,
 ) {
   /** The app and the task's own label, as the overview and Alt+Tab say it. */
   fun name(context: Context): String =
@@ -131,6 +135,46 @@ object RecentTasks {
     run(context, "split ${task.id} beside ${front.id}", onDone) { service ->
       splitBeside(appContext, service, front, task)
     }
+  }
+
+  /** The packages of the app windows on screen, one entry per window: split screen has two. */
+  fun frontPackages(service: AccessibilityService): List<String> =
+    AccessibilityServiceCompatUtils.getWindows(service)
+      .orEmpty()
+      .filter { it.type == AccessibilityWindowInfo.TYPE_APPLICATION }
+      .mapNotNull { it.root?.packageName?.toString() }
+
+  /** The package of the default launcher, if one is set. */
+  fun homePackage(context: Context): String? =
+    context.packageManager
+      .resolveActivity(
+        Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_HOME),
+        PackageManager.MATCH_DEFAULT_ONLY,
+      )
+      ?.activityInfo
+      ?.packageName
+
+  /**
+   * The task after those on screen, leaving out [excludedPackages]: the task that the system's
+   * overview switches to when Recents is performed twice. [front] has an entry per app window on
+   * screen, as [frontPackages] returns: a task matches a window of its first or top activity's
+   * package, once. Empty [front] means the windows are unknown, so the first task is taken to be
+   * on screen.
+   */
+  internal fun previousTask(
+    tasks: List<RecentTask>,
+    front: List<String>,
+    excludedPackages: Set<String>,
+  ): RecentTask? {
+    val candidates = tasks.filter { it.packageName !in excludedPackages }
+    if (front.isEmpty()) return candidates.getOrNull(1)
+    val windows = front.toMutableList()
+    for (task in candidates) {
+      val onScreen =
+        windows.remove(task.packageName) || (task.topPackage != null && windows.remove(task.topPackage))
+      if (!onScreen) return task
+    }
+    return null
   }
 
   private fun hasWindow(service: AccessibilityService, packageName: String): Boolean =
@@ -276,6 +320,7 @@ object RecentTasks {
           user = UserHandle.getUserHandleForUid(user * PER_USER_RANGE),
           appLabel = label.toString(),
           title = title,
+          topPackage = tops?.getOrNull(index)?.substringBefore('/')?.takeIf { it.isNotEmpty() },
         )
       activityNames += activityLabels?.getOrNull(index)?.trim()?.takeIf { it.isNotEmpty() }
     }

@@ -782,6 +782,7 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
     BACK(R.string.shortcut_value_back, R.string.shortcut_back),
     OVERVIEW(R.string.shortcut_value_overview, R.string.shortcut_overview),
     SYSTEM_OVERVIEW(R.string.shortcut_value_system_overview, R.string.shortcut_system_overview),
+    PREVIOUS_APP(R.string.shortcut_value_previous_app, R.string.shortcut_previous_app),
     SPLIT_SCREEN(R.string.shortcut_value_split_screen, R.string.title_split_screen),
     NOTIFICATIONS(R.string.shortcut_value_notifications, R.string.shortcut_notifications),
     SYSTEM_NOTIFICATIONS(

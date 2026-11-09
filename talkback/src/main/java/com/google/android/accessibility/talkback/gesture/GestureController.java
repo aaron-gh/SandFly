@@ -144,6 +144,7 @@ import com.google.android.accessibility.talkback.utils.DebugProperties;
 import com.google.android.accessibility.talkback.utils.FocusIndicatorUtils;
 import com.google.android.accessibility.talkback.utils.GeminiCommandUtils;
 import com.google.android.accessibility.talkback.keyboard.KeyComboManager;
+import com.google.android.accessibility.talkback.overview.PreviousApp;
 import com.google.android.accessibility.utils.AccessibilityServiceCompatUtils;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.monitor.RecentUserInput;
@@ -535,6 +536,8 @@ public class GestureController {
       result =
           pipeline.returnFeedback(
               eventId, Feedback.systemAction(SystemActionPerformer.GLOBAL_ACTION_SYSTEM_OVERVIEW));
+    } else if (action.equals(service.getString(R.string.shortcut_value_previous_app))) {
+      result = PreviousApp.switchTo(service);
     } else if (action.equals(service.getString(R.string.shortcut_value_notifications))) {
       result =
           pipeline.returnFeedback(
