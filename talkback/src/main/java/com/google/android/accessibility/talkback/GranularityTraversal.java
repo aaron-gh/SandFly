@@ -60,8 +60,7 @@ public final class GranularityTraversal {
   static final int TALKBACK_SUPPORTED_GRANULARITIES =
       AccessibilityNodeInfo.MOVEMENT_GRANULARITY_CHARACTER
           | AccessibilityNodeInfo.MOVEMENT_GRANULARITY_WORD
-          | AccessibilityNodeInfo.MOVEMENT_GRANULARITY_PARAGRAPH
-          | CursorGranularity.SENTENCE.value;
+          | AccessibilityNodeInfo.MOVEMENT_GRANULARITY_PARAGRAPH;
 
   private static final int ACCESSIBILITY_CURSOR_POSITION_UNDEFINED = -1;
   private static final String TAG = "GranularityTraversal";
@@ -293,6 +292,25 @@ public final class GranularityTraversal {
     return true;
   }
 
+  /** Returns whether {@code node} is a focused editor whose caret the cursor action can't move. */
+  private static boolean isFocusedEditorOtherThanEditText(AccessibilityNodeInfoCompat node) {
+    return node.isEditable() && node.isFocused() && Role.getRole(node) != Role.ROLE_EDIT_TEXT;
+  }
+
+  /** Returns whether {@code node} can be moved through by sentence. */
+  static boolean supportsSentenceTraversal(AccessibilityNodeInfoCompat node) {
+    return !isFocusedEditorOtherThanEditText(node) && !TextUtils.isEmpty(getTraversedText(node));
+  }
+
+  /**
+   * Keeps {@code position} as the sentence position of {@code node}, whose text has changed, or the
+   * end of the text if the text is now shorter.
+   */
+  void restoreSentencePosition(AccessibilityNodeInfoCompat node, int position) {
+    CharSequence text = getTraversedText(node);
+    setCursorPosition(node, Math.min(position, text == null ? 0 : text.length()));
+  }
+
   /**
    * Moves over the next or previous sentence of {@code node}. Android has no sentence movement
    * granularity, so the text is split here when the item is first moved through by sentence. In a
@@ -304,6 +322,9 @@ public final class GranularityTraversal {
    */
   boolean traverseAtSentenceGranularity(
       AccessibilityNodeInfoCompat node, boolean forward, EventId eventId) {
+    if (isFocusedEditorOtherThanEditText(node)) {
+      return false;
+    }
     boolean editing = Role.getRole(node) == Role.ROLE_EDIT_TEXT && node.isFocused();
     if (editing && (!node.refresh() || node.isShowingHintText())) {
       return false;
@@ -459,7 +480,7 @@ public final class GranularityTraversal {
     return contentDescription;
   }
 
-  private int getCursorPosition(AccessibilityNodeInfoCompat node) {
+  int getCursorPosition(AccessibilityNodeInfoCompat node) {
     if (cache.containsKey(node)) {
       return cache.get(node);
     }

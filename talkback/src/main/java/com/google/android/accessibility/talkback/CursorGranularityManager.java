@@ -24,6 +24,7 @@ import static com.google.android.accessibility.utils.traversal.TraversalStrategy
 import android.content.Context;
 import android.os.Bundle;
 import android.text.TextUtils;
+import androidx.annotation.VisibleForTesting;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.talkback.compositor.GlobalVariables;
 import com.google.android.accessibility.talkback.eventprocessor.ProcessorPhoneticLetters;
@@ -32,6 +33,7 @@ import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.Filter;
 import com.google.android.accessibility.utils.Performance.EventId;
 import com.google.android.accessibility.utils.Role;
+import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import com.google.android.accessibility.utils.WebInterfaceUtils;
 import com.google.android.accessibility.utils.input.CursorGranularity;
 import com.google.android.accessibility.utils.output.CopySelection;
@@ -110,6 +112,7 @@ public class CursorGranularityManager {
 
   private final GlobalVariables globalVariables;
   private final AccessibilityFocusMonitor accessibilityFocusMonitor;
+  private final Context context;
 
   // Cursor cache associated with GranularityTraversal object must be cleared regularly using
   // GranularityTraversal#clearAllCursors().
@@ -125,6 +128,7 @@ public class CursorGranularityManager {
       Context context) {
     this.globalVariables = globalVariables;
     this.accessibilityFocusMonitor = accessibilityFocusMonitor;
+    this.context = context;
     granularityTraversal =
         new GranularityTraversal(processorPhoneticLetters, copySelection, context);
   }
@@ -339,19 +343,46 @@ public class CursorGranularityManager {
       populateMacroGranularities();
     }
 
-    final int count = supportedGranularities.size();
     int currentIndex = supportedGranularities.indexOf(currentGranularity);
-    int nextIndex;
-
-    // Granularity adjustments always wrap around.
-    nextIndex = (currentIndex + direction) % count;
-    if (nextIndex < 0) {
-      nextIndex = count - 1;
-    }
+    int nextIndex =
+        nextGranularityIndex(supportedGranularities, currentIndex, direction, sentencesOffered());
 
     currentGranularity = supportedGranularities.get(nextIndex);
     savedGranularity = currentGranularity;
     return nextIndex != currentIndex;
+  }
+
+  /** Whether Sentences is turned on in Reading controls and usable in the current mode. */
+  private boolean sentencesOffered() {
+    return !isSelectionModeActive()
+        && SharedPreferencesUtils.getBooleanPref(
+            SharedPreferencesUtils.getSharedPreferences(context),
+            context.getResources(),
+            R.string.pref_selector_granularity_sentences_key,
+            R.bool.pref_selector_granularity_sentences_default);
+  }
+
+  /**
+   * Returns the index in {@code granularities} after {@code currentIndex} in {@code direction},
+   * wrapping around and leaving out {@link CursorGranularity#SENTENCE} unless {@code
+   * sentencesOffered}. The list always has {@link CursorGranularity#DEFAULT}, so the search ends.
+   */
+  @VisibleForTesting
+  static int nextGranularityIndex(
+      List<CursorGranularity> granularities,
+      int currentIndex,
+      int direction,
+      boolean sentencesOffered) {
+    final int count = granularities.size();
+    int nextIndex = currentIndex;
+    do {
+      // Granularity adjustments always wrap around.
+      nextIndex = (nextIndex + direction) % count;
+      if (nextIndex < 0) {
+        nextIndex = count - 1;
+      }
+    } while (granularities.get(nextIndex) == CursorGranularity.SENTENCE && !sentencesOffered);
+    return nextIndex;
   }
 
   /**
@@ -665,7 +696,15 @@ public class CursorGranularityManager {
             || !TextUtils.equals(
                 AccessibilityNodeInfoUtils.getText(lockedNode),
                 AccessibilityNodeInfoUtils.getText(node)))) {
+      // On text the framework moves through, nothing else holds the place of a sentence move.
+      int sentencePosition =
+          currentGranularity == CursorGranularity.SENTENCE && lockedNode.equals(node)
+              ? granularityTraversal.getCursorPosition(lockedNode)
+              : -1;
       clear();
+      if (sentencePosition >= 0) {
+        granularityTraversal.restoreSentencePosition(node, sentencePosition);
+      }
     }
 
     if (lockedNode == null && node != null) {
@@ -771,7 +810,8 @@ public class CursorGranularityManager {
     }
     if (GranularityTraversal.shouldHandleGranularityTraversalInTalkback(root)) {
       LogUtils.d(TAG, "Adding granularities supported by Talkback managed granularity navigation");
-      supportedGranularities |= GranularityTraversal.TALKBACK_SUPPORTED_GRANULARITIES;
+      supportedGranularities |=
+          GranularityTraversal.TALKBACK_SUPPORTED_GRANULARITIES | sentenceMask(root);
       if (nodes != null) {
         nodes.add(root);
       }
@@ -780,10 +820,7 @@ public class CursorGranularityManager {
       if (nodes != null) {
         nodes.add(root);
       }
-      supportedGranularities |= root.getMovementGranularities();
-      if (!TextUtils.isEmpty(GranularityTraversal.getTraversedText(root))) {
-        supportedGranularities |= CursorGranularity.SENTENCE.value;
-      }
+      supportedGranularities |= root.getMovementGranularities() | sentenceMask(root);
     }
 
     if (!TextUtils.isEmpty(root.getContentDescription())) {
@@ -802,6 +839,12 @@ public class CursorGranularityManager {
     }
 
     return supportedGranularities;
+  }
+
+  private static int sentenceMask(AccessibilityNodeInfoCompat node) {
+    return GranularityTraversal.supportsSentenceTraversal(node)
+        ? CursorGranularity.SENTENCE.value
+        : 0;
   }
 
   /**
