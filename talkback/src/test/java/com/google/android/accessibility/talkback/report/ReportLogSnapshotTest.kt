@@ -9,15 +9,26 @@ import org.junit.Assert.assertTrue
 import org.junit.Test
 
 class ReportLogSnapshotTest {
-  private val reads = mutableListOf<FutureTask<String?>>()
+  private val reads = mutableListOf<FutureTask<LogcatSnapshot?>>()
+  private val posted = mutableListOf<Runnable>()
+  private var postedDelay = 0L
   private var now = 0L
-  private val snapshots =
+
+  private fun newSnapshots(waitMs: Long) =
     ReportLogSnapshot(
       submit = { task -> FutureTask(task).also { reads += it } },
       elapsedMs = { now },
-      waitMs = 1,
+      postDelayed = { task, delayMs ->
+        posted += task
+        postedDelay = delayMs
+      },
+      removeCallbacks = { task -> posted -= task },
+      waitMs = waitMs,
     )
-  private val read = Callable<String?> { "log" }
+
+  private val snapshots = newSnapshots(waitMs = 1)
+  private val logcat = LogcatSnapshot("log", "others")
+  private val read = Callable<LogcatSnapshot?> { logcat }
 
   private fun finishedVisit(activity: Int = 1) {
     snapshots.screenShown(activity, read)
@@ -34,17 +45,12 @@ class ReportLogSnapshotTest {
   @Test
   fun aFinishedSnapshotIsUsed() {
     finishedVisit()
-    assertEquals("log", snapshots.await(snapshots.current()))
+    assertEquals(logcat, snapshots.await(snapshots.current()))
   }
 
   @Test
   fun aSendWaitsForARunningRead() {
-    val slow =
-      ReportLogSnapshot(
-        submit = { task -> FutureTask(task).also { reads += it } },
-        elapsedMs = { now },
-        waitMs = 5_000,
-      )
+    val slow = newSnapshots(waitMs = 5_000)
     slow.screenShown(1, read)
     val waiting = slow.current()
     val task = reads.last()
@@ -53,7 +59,7 @@ class ReportLogSnapshotTest {
         task.run()
       }
       .start()
-    assertEquals("log", slow.await(waiting))
+    assertEquals(logcat, slow.await(waiting))
   }
 
   @Test
@@ -75,8 +81,8 @@ class ReportLogSnapshotTest {
   }
 
   @Test
-  fun anEmptyReadFallsBackToSend() {
-    snapshots.screenShown(1, Callable { "" })
+  fun aReadWithoutAMainLogFallsBackToSend() {
+    snapshots.screenShown(1, Callable { LogcatSnapshot("", "others") })
     reads.last().run()
     assertNull(snapshots.await(snapshots.current()))
   }
@@ -134,6 +140,102 @@ class ReportLogSnapshotTest {
     snapshots.activityStarted(1)
     assertNull(snapshots.current())
     snapshots.screenShown(1, read)
+    assertEquals(2, reads.size)
+  }
+
+  @Test
+  fun aNewInstancePastTheLimitReplacesTheSnapshot() {
+    finishedVisit(activity = 1)
+    val stale = snapshots.current()
+    snapshots.activityStopped(1, screenOn = false)
+    now += ReportLogSnapshot.SCREEN_OFF_LIMIT_MS + 1
+    snapshots.screenShown(2, read)
+    assertEquals(2, reads.size)
+    assertTrue(stale !== snapshots.current())
+  }
+
+  @Test
+  fun aNewInstanceWithinTheLimitKeepsTheSnapshot() {
+    finishedVisit(activity = 1)
+    val before = snapshots.current()
+    snapshots.activityStopped(1, screenOn = false)
+    now += ReportLogSnapshot.SCREEN_OFF_LIMIT_MS
+    snapshots.screenShown(2, read)
+    assertEquals(1, reads.size)
+    assertTrue(before === snapshots.current())
+    assertTrue(posted.isEmpty())
+  }
+
+  @Test
+  fun theScreenOffLimitDropsTheSnapshotWithoutARestart() {
+    finishedVisit()
+    snapshots.activityStopped(1, screenOn = false)
+    assertEquals(ReportLogSnapshot.SCREEN_OFF_LIMIT_MS, postedDelay)
+    posted.single().run()
+    assertNull(snapshots.current())
+    snapshots.screenShown(1, read)
+    assertEquals(2, reads.size)
+  }
+
+  @Test
+  fun startingAgainWithinTheLimitRemovesTheDelayedDrop() {
+    finishedVisit()
+    snapshots.activityStopped(1, screenOn = false)
+    snapshots.activityStarted(1)
+    assertTrue(posted.isEmpty())
+  }
+
+  @Test
+  fun endingTheVisitRemovesTheDelayedDrop() {
+    finishedVisit()
+    snapshots.activityStopped(1, screenOn = false)
+    snapshots.endVisit(1)
+    assertTrue(posted.isEmpty())
+  }
+
+  @Test
+  fun aVisitInMultiWindowModeReadsNothing() {
+    snapshots.screenShown(1, null)
+    snapshots.readIfMissing(null)
+    snapshots.logTurnedOn(null)
+    assertTrue(reads.isEmpty())
+    assertNull(snapshots.current())
+  }
+
+  @Test
+  fun afterTheLogIsTurnedOffALaterFormDoesNotRead() {
+    finishedVisit()
+    snapshots.logTurnedOff()
+    assertNull(snapshots.current())
+    snapshots.readIfMissing(read)
+    assertEquals(1, reads.size)
+  }
+
+  @Test
+  fun turningTheLogOnAgainReads() {
+    finishedVisit()
+    snapshots.logTurnedOff()
+    snapshots.logTurnedOn(read)
+    assertEquals(2, reads.size)
+  }
+
+  @Test
+  fun aNewVisitReadsAfterTheLogWasTurnedOff() {
+    finishedVisit()
+    snapshots.logTurnedOff()
+    snapshots.activityStopped(1, screenOn = true)
+    snapshots.screenShown(1, read)
+    assertEquals(2, reads.size)
+    snapshots.clearSent(snapshots.current())
+    snapshots.readIfMissing(read)
+    assertEquals(3, reads.size)
+  }
+
+  @Test
+  fun aReportWithTheLogOffDoesNotStopALaterFormReading() {
+    finishedVisit()
+    snapshots.discard()
+    snapshots.readIfMissing(read)
     assertEquals(2, reads.size)
   }
 

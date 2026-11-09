@@ -83,10 +83,10 @@ class ProblemReportFragment : TalkbackBaseFragment(R.xml.problem_report_preferen
     log = required(R.string.pref_problem_report_log_key)
     send = required(R.string.pref_problem_report_send_key)
     log.setOnPreferenceChangeListener { _, value ->
-      ProblemReportSender.includeLogChanged(requireContext(), value == true)
+      ProblemReportSender.includeLogChanged(requireActivity(), value == true)
       true
     }
-    if (savedInstanceState == null) ProblemReportSender.reportFormOpened(requireContext())
+    if (savedInstanceState == null) ProblemReportSender.reportFormOpened(requireActivity())
 
     steps.isVisible = type.value != ProblemReport.SUGGESTION
     type.setOnPreferenceChangeListener { _, value ->
@@ -169,7 +169,8 @@ class ProblemReportFragment : TalkbackBaseFragment(R.xml.problem_report_preferen
     }
     val appContext = context.applicationContext
     val id = draftId
-    ProblemReportSender.send(appContext, report, log.isChecked) { result, token ->
+    val inMultiWindow = requireActivity().isInMultiWindowMode
+    ProblemReportSender.send(appContext, report, log.isChecked, inMultiWindow) { result, token ->
       toast(appContext, messageFor(result))
       if (result == Result.SENT) {
         val sentStore = ReportStore.get(appContext)
