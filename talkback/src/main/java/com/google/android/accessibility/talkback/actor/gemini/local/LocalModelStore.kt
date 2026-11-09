@@ -26,7 +26,9 @@ class LocalModelStore(private val dir: File) {
   fun file(model: LocalModel) = File(dir, model.localFileName)
 
   fun isInstalled(model: LocalModel): Boolean =
-    file(model).let { it.isFile && it.length() == model.sizeBytes }
+    file(model).let {
+      it.isFile && (it.length() == model.sizeBytes || it.length() == model.previousSizeBytes)
+    }
 
   /** The model to run: [preferred] if it is installed, otherwise any installed model. */
   fun installed(preferred: LocalModel?): LocalModel? =
