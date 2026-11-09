@@ -75,6 +75,8 @@ public final class GestureListPreference extends AccessibilitySuiteDialogPrefere
   // row at the gesture layout and set in use.
   @Nullable private String baseKey;
   @Nullable private String sandFlyDefault;
+  // In a gesture profile: the command that the gesture runs without the profile.
+  @Nullable private String commandWithoutProfile;
 
   public GestureListPreference(Context context, AttributeSet attributeSet) {
     super(context, attributeSet);
@@ -229,6 +231,24 @@ public final class GestureListPreference extends AccessibilitySuiteDialogPrefere
     notifyChanged();
   }
 
+  /** In a gesture profile: sets the command that the gesture runs without the profile. */
+  public void setCommandWithoutProfile(String command) {
+    commandWithoutProfile = command;
+    notifyChanged();
+  }
+
+  /** Returns Default, with the command that the gesture runs without the profile. */
+  private String defaultText() {
+    Context context = getContext();
+    if (commandWithoutProfile == null) {
+      return context.getString(R.string.gesture_profile_default);
+    }
+    @Nullable String label = Commands.label(context, commandWithoutProfile);
+    return context.getString(
+        R.string.gesture_profile_default_command,
+        (label != null) ? label : context.getString(R.string.shortcut_unassigned));
+  }
+
   /** Returns the text of the action for the current preference value. */
   private String getCurrentActionText() {
     if (!isEnabled() && summaryWhenDisabled != null) {
@@ -236,7 +256,7 @@ public final class GestureListPreference extends AccessibilitySuiteDialogPrefere
     }
     String value = getCurrentValue();
     if (TextUtils.equals(value, GestureProfiles.DEFAULT_VALUE)) {
-      return getContext().getString(R.string.gesture_profile_default);
+      return defaultText();
     }
     if (TextUtils.equals(value, getContext().getString(R.string.shortcut_value_unassigned))) {
       return getContext().getResources().getString(R.string.shortcut_unassigned);
@@ -254,7 +274,7 @@ public final class GestureListPreference extends AccessibilitySuiteDialogPrefere
     if (GestureProfiles.isRowKey(getKey())) {
       builder.add(
           new ActionItem(
-              getContext().getString(R.string.gesture_profile_default),
+              defaultText(),
               GestureProfiles.DEFAULT_VALUE,
               TYPE_ACTION_ITEM));
     }

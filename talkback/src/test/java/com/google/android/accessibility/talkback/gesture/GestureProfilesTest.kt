@@ -18,6 +18,10 @@ package com.google.android.accessibility.talkback.gesture
 
 import android.content.Context
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.talkback.commands.Commands
+import com.google.android.accessibility.talkback.preference.base.GestureListPreference
+import com.google.android.accessibility.utils.FormFactorUtils
+import com.google.android.accessibility.utils.SharedPreferencesUtils
 import org.junit.After
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
@@ -49,6 +53,28 @@ class GestureProfilesTest {
   fun forget() {
     prefs.edit().clear().apply()
     GestureProfiles.load(prefs)
+  }
+
+  @Test
+  fun rowLeftAtDefaultNamesTheCommandWithoutTheProfile() {
+    FormFactorUtils.initialize(context)
+    val shared = SharedPreferencesUtils.getSharedPreferences(context)
+    GestureProfiles.write(shared, listOf(reading))
+    val command = Commands.categories(context).first().commands.first()
+    val row =
+      GestureListPreference(
+        context,
+        GestureProfiles.rowKey("b", "pref_shortcut_up"),
+        "Swipe up",
+        GestureProfiles.DEFAULT_VALUE,
+      )
+    assertEquals(context.getString(R.string.gesture_profile_default), row.summary.toString())
+    row.setCommandWithoutProfile(command.value)
+    assertEquals(
+      context.getString(R.string.gesture_profile_default_command, command.label),
+      row.summary.toString(),
+    )
+    shared.edit().remove(GestureProfiles.KEY).apply()
   }
 
   @Test

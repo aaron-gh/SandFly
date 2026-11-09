@@ -132,6 +132,7 @@ class GestureProfileFragment : NotificationCodeFragment(R.string.title_pref_gest
         GestureListPreference(context, key, slot.name, GestureProfiles.DEFAULT_VALUE).also {
           it.isPersistent = false
           it.isIconSpaceReserved = false
+          it.setCommandWithoutProfile(slot.value(context, prefs))
           group.addPreference(it)
         }
       }
