@@ -82,6 +82,11 @@ class ProblemReportFragment : TalkbackBaseFragment(R.xml.problem_report_preferen
     device = required(R.string.pref_problem_report_device_key)
     log = required(R.string.pref_problem_report_log_key)
     send = required(R.string.pref_problem_report_send_key)
+    log.setOnPreferenceChangeListener { _, value ->
+      ProblemReportSender.includeLogChanged(requireContext(), value == true)
+      true
+    }
+    if (savedInstanceState == null) ProblemReportSender.reportFormOpened(requireContext())
 
     steps.isVisible = type.value != ProblemReport.SUGGESTION
     type.setOnPreferenceChangeListener { _, value ->
@@ -101,6 +106,7 @@ class ProblemReportFragment : TalkbackBaseFragment(R.xml.problem_report_preferen
 
   override fun onResume() {
     super.onResume()
+    ProblemReportSender.reportScreenShown(requireActivity())
     shown = this
     showSending()
   }
