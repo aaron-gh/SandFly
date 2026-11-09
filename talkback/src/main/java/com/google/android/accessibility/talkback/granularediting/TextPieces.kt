@@ -28,7 +28,12 @@ enum class Granularity(
   WORDS(" "),
   SENTENCES(" "),
   LINES("\n"),
-  PARAGRAPHS("\n\n"),
+  PARAGRAPHS("\n\n");
+
+  companion object {
+    /** The granularity called [name], or [WORDS] when there is none. */
+    fun fromName(name: String?): Granularity = values().firstOrNull { it.name == name } ?: WORDS
+  }
 }
 
 /**

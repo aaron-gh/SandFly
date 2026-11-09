@@ -38,6 +38,7 @@ import androidx.core.view.accessibility.AccessibilityNodeInfoCompat.Accessibilit
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.accessibility.utils.widget.KeyboardSafeEditText
 
 /**
@@ -54,6 +55,7 @@ class GranularEditingActivity : AppCompatActivity() {
   private val undo = ArrayList<String>()
   private val redo = ArrayList<String>()
   private var lastFind = ""
+  private val prefs by lazy { SharedPreferencesUtils.getSharedPreferences(this) }
 
   private lateinit var list: RecyclerView
   private lateinit var splitBy: Button
@@ -64,7 +66,10 @@ class GranularEditingActivity : AppCompatActivity() {
     super.onCreate(savedInstanceState)
     setTitle(R.string.granular_editing_title)
     text = savedInstanceState?.getString(STATE_TEXT) ?: GranularEditing.text
-    savedInstanceState?.getString(STATE_GRANULARITY)?.let { granularity = Granularity.valueOf(it) }
+    granularity =
+      Granularity.fromName(
+        savedInstanceState?.getString(STATE_GRANULARITY) ?: prefs.getString(PREF_GRANULARITY, null)
+      )
 
     val title =
       TextView(this).apply {
@@ -168,6 +173,7 @@ class GranularEditingActivity : AppCompatActivity() {
         values.indexOf(granularity),
       ) { dialog, which ->
         granularity = values[which]
+        prefs.edit().putString(PREF_GRANULARITY, granularity.name).apply()
         refresh()
         dialog.dismiss()
         focus(0)
@@ -498,6 +504,7 @@ class GranularEditingActivity : AppCompatActivity() {
   companion object {
     private const val STATE_TEXT = "text"
     private const val STATE_GRANULARITY = "granularity"
+    private const val PREF_GRANULARITY = "pref_granular_editing_granularity"
     private const val MAX_UNDO = 100
 
     @StringRes

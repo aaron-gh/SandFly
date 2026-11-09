@@ -39,6 +39,16 @@ class TextPiecesTest {
   }
 
   @Test
+  fun fromNameFindsEveryGranularityAndFallsBackToWords() {
+    for (granularity in Granularity.values()) {
+      assertEquals(granularity, Granularity.fromName(granularity.name))
+    }
+    assertEquals(Granularity.WORDS, Granularity.fromName(null))
+    assertEquals(Granularity.WORDS, Granularity.fromName(""))
+    assertEquals(Granularity.WORDS, Granularity.fromName("NOT_A_GRANULARITY"))
+  }
+
+  @Test
   fun wordsLeaveOutWhiteSpaceAndKeepPunctuation() {
     assertEquals(
       listOf("Hello", ",", "big", "world", ".", "How", "are", "you", "?", "Second", "line", "New", "paragraph", "."),
