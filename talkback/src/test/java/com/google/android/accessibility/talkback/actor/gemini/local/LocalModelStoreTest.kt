@@ -43,6 +43,24 @@ class LocalModelStoreTest {
   }
 
   @Test
+  fun everyModelIsPinnedToACommit() {
+    val commit = Regex("[0-9a-f]{40}")
+    LocalModel.entries.forEach {
+      assertTrue(it.id, commit.matches(it.revision))
+      assertTrue(it.id, it.url.contains("/resolve/${it.revision}/"))
+    }
+  }
+
+  @Test
+  fun aFileOfThePreviousSizeStaysInstalled() {
+    val model = LocalModel.entries.first { it.previousSizeBytes != null }
+    RandomAccessFile(store.file(model), "rw").use { it.setLength(model.previousSizeBytes!!) }
+    assertTrue(store.isInstalled(model))
+    RandomAccessFile(store.file(model), "rw").use { it.setLength(model.previousSizeBytes!! - 1) }
+    assertFalse(store.isInstalled(model))
+  }
+
+  @Test
   fun nothingIsInstalledAtFirst() {
     assertFalse(store.isInstalled(LocalModel.E2B))
     assertNull(store.installed(LocalModel.E2B))
