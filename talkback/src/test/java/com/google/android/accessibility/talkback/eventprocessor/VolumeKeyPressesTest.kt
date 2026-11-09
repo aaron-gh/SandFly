@@ -125,6 +125,29 @@ class VolumeKeyPressesTest {
   }
 
   @Test
+  fun longPressDuration_appliesToLongPressCommandOnly() {
+    val longer = VolumeKeyPresses.Timeouts(300, longPress = 1000, repeat = 50, repeatStart = 400)
+    presses.setCommands(
+      KeyCommands(null, null, "L"),
+      KeyCommands("B", null, null),
+      longer,
+    )
+    down(KEYCODE_VOLUME_UP)
+    advance(999)
+    assertTrue(log.isEmpty())
+    advance(1)
+    assertEquals(listOf("run L"), log)
+    up(KEYCODE_VOLUME_UP)
+    log.clear()
+    down(KEYCODE_VOLUME_DOWN)
+    advance(399)
+    assertTrue(log.isEmpty())
+    advance(1)
+    assertEquals(listOf("down"), log)
+    up(KEYCODE_VOLUME_DOWN)
+  }
+
+  @Test
   fun notUsable_keyPassesThrough() {
     assign(up = KeyCommands("A", null, null))
     canUse = false
@@ -447,6 +470,42 @@ class VolumeKeyPressesTest {
     advance(1000)
     assertEquals(listOf("up", "up repeated"), log)
     assertEquals(null, task)
+    assertTrue(up(KEYCODE_VOLUME_UP))
+  }
+
+  @Test
+  fun notUsableAtHoldTime_longPressDoesNotRunAndKeepsRelease() {
+    assign(up = KeyCommands(null, null, "L"))
+    assertTrue(down(KEYCODE_VOLUME_UP))
+    canUse = false
+    advance(400)
+    assertTrue(log.isEmpty())
+    assertEquals(null, task)
+    assertTrue(up(KEYCODE_VOLUME_UP))
+  }
+
+  @Test
+  fun notUsableAtHoldTime_volumeDoesNotChange() {
+    assign(up = KeyCommands("A", null, null))
+    assertTrue(down(KEYCODE_VOLUME_UP))
+    canUse = false
+    advance(1000)
+    assertTrue(log.isEmpty())
+    assertEquals(null, task)
+    assertTrue(up(KEYCODE_VOLUME_UP))
+  }
+
+  @Test
+  fun notUsableAtHoldTime_nextPressStartsAgain() {
+    assign(up = KeyCommands(null, null, "L"))
+    down(KEYCODE_VOLUME_UP)
+    canUse = false
+    advance(400)
+    // The display turned off and the release never came.
+    canUse = true
+    assertTrue(down(KEYCODE_VOLUME_UP))
+    advance(400)
+    assertEquals(listOf("run L"), log)
     assertTrue(up(KEYCODE_VOLUME_UP))
   }
 

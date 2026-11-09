@@ -350,6 +350,7 @@
     <string name="pref_volume_down_double_press_key" translatable="false">pref_volume_down_double_press</string>
     <string name="pref_volume_down_triple_press_key" translatable="false">pref_volume_down_triple_press</string>
     <string name="pref_volume_down_long_press_key" translatable="false">pref_volume_down_long_press</string>
+    <string name="pref_volume_key_long_press_duration_key" translatable="false">pref_volume_key_long_press_duration</string>
     <string name="pref_speak_items_before_scroll_key" translatable="false">pref_speak_items_before_scroll_key</string>
     <string name="pref_first_item_interrupts_window_name_key" translatable="false">pref_first_item_interrupts_window_name_key</string>
     <!-- Window names. Replaces the speak system window titles and first item interrupts window name
@@ -1204,6 +1205,27 @@
 
     <string name="typing_long_press_default" translatable="false">3000</string>
 
+  <!-- Volume key long press duration entries -->
+    <string-array name="pref_volume_key_long_press_duration_entries">
+      <item>@string/value_audio_output_device_default</item>
+      <item>@string/value_handwriting_wait_300</item>
+      <item>@string/value_handwriting_wait_400</item>
+      <item>@string/value_handwriting_wait_500</item>
+      <item>@string/value_handwriting_wait_600</item>
+      <item>@string/value_handwriting_wait_800</item>
+      <item>@string/value_handwriting_wait_1000</item>
+    </string-array>
+  <!-- Volume key long press duration values, in milliseconds. 0 is System default. -->
+    <string-array name="pref_volume_key_long_press_duration_values">
+      <item>0</item>
+      <item>300</item>
+      <item>400</item>
+      <item>500</item>
+      <item>600</item>
+      <item>800</item>
+      <item>1000</item>
+    </string-array>
+
   <!-- Multi-tap timeout entries -->
     <string-array name="pref_multi_tap_timeout_entries">
       <item>@string/value_multi_tap_timeout_100ms</item>
@@ -1897,6 +1919,7 @@
     <bool name="pref_web_scripts_default">true</bool>
     <string name="pref_typing_confirmation_default">@string/typing_type_lift_to_type</string>
     <string name="pref_typing_long_press_duration_default">@string/typing_long_press_default</string>
+    <string name="pref_volume_key_long_press_duration_default" translatable="false">0</string>
     <string name="pref_touch_explore_time_out_default">@string/touch_explore_time_out_default</string>
     <string name="pref_touch_focus_time_out_default">@string/touch_focus_time_out_default</string>
     <bool name="pref_phonetic_letters_default">true</bool>

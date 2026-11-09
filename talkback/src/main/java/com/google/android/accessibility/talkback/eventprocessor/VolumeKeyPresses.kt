@@ -76,10 +76,12 @@ class VolumeKeyPresses(private val timer: Timer, private val callbacks: Callback
   data class Timeouts(
     /** Longest gap between the end of a press and the next press of the same key. */
     val multiPress: Long,
-    /** How long a key is held to make a long press, or to start changing the volume repeatedly. */
+    /** How long a key is held to make a long press. */
     val longPress: Long,
     /** Time between volume changes while a key is held. */
     val repeat: Long,
+    /** How long a key with no long press command is held to start changing the volume. */
+    val repeatStart: Long = longPress,
   )
 
   private enum class State {
@@ -162,7 +164,7 @@ class VolumeKeyPresses(private val timer: Timer, private val callbacks: Callback
         }
         held = true
         this.canUse = canUse
-        timer.schedule(timeouts.longPress) { onHeld() }
+        timer.schedule(holdDelay()) { onHeld() }
         return true
       }
       if (held && (state != State.LONG_PRESS_DONE || isDown(key))) {
@@ -191,7 +193,7 @@ class VolumeKeyPresses(private val timer: Timer, private val callbacks: Callback
     presses = 0
     repeats = 0
     held = true
-    timer.schedule(timeouts.longPress) { onHeld() }
+    timer.schedule(holdDelay()) { onHeld() }
     return true
   }
 
@@ -248,9 +250,18 @@ class VolumeKeyPresses(private val timer: Timer, private val callbacks: Callback
     repeat(count) { callbacks.adjustVolume(keyCode, /* repeated= */ false) }
   }
 
-  /** The key is held long enough for a long press. */
+  /** How long [key], pressed now, is held before [onHeld]. */
+  private fun holdDelay(): Long =
+    if (presses == 0 && commandsFor(key).long != null) timeouts.longPress else timeouts.repeatStart
+
+  /** The key is held long enough for a long press, or to change the volume repeatedly. */
   private fun onHeld() {
     if (key == 0 || !held || state != State.PRESSES) {
+      return
+    }
+    if (!canUse()) {
+      // Such as a touch on the screen, or a display that turned off with the key's release lost.
+      state = State.IGNORED
       return
     }
     val long = commandsFor(key).long

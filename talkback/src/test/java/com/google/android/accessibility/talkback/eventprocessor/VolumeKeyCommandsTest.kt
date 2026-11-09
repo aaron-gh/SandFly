@@ -23,6 +23,8 @@ import android.media.AudioManager.MODE_IN_CALL
 import android.media.AudioManager.MODE_IN_COMMUNICATION
 import android.media.AudioManager.MODE_NORMAL
 import com.google.android.accessibility.talkback.eventprocessor.VolumeKeyCommands.Companion.isAppCall
+import com.google.android.accessibility.talkback.eventprocessor.VolumeKeyCommands.Companion.longPressDuration
+import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test
@@ -31,6 +33,24 @@ import org.junit.runners.JUnit4
 
 @RunWith(JUnit4::class)
 class VolumeKeyCommandsTest {
+  @Test
+  fun longPressDuration_fixedValueUsed() {
+    assertEquals(700L, longPressDuration("700", 400L))
+    assertEquals(1000L, longPressDuration("1000", 400L))
+  }
+
+  @Test
+  fun longPressDuration_systemDefaultOrInvalid_usesSystemDefault() {
+    assertEquals(400L, longPressDuration("0", 400L))
+    assertEquals(400L, longPressDuration(null, 400L))
+    assertEquals(400L, longPressDuration("", 400L))
+    assertEquals(400L, longPressDuration("abc", 400L))
+    assertEquals(400L, longPressDuration("-5", 400L))
+    assertEquals(400L, longPressDuration("99", 400L))
+    assertEquals(400L, longPressDuration("2001", 400L))
+    assertEquals(400L, longPressDuration("99999999999999999999", 400L))
+  }
+
   @Test
   fun voiceCommunicationPlaying_isAppCall() {
     assertTrue(

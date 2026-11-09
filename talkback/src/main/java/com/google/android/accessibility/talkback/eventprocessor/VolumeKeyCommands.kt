@@ -18,13 +18,16 @@ package com.google.android.accessibility.talkback.eventprocessor
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.hardware.display.DisplayManager
 import android.media.AudioAttributes
 import android.media.AudioManager
 import android.os.Handler
 import android.os.Looper
+import android.view.Display
 import android.view.KeyEvent
 import android.view.ViewConfiguration
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.utils.monitor.ScreenMonitor
 import com.google.android.accessibility.utils.output.FailoverTextToSpeech
 
 /**
@@ -75,6 +78,7 @@ class VolumeKeyCommands(
       prefs.getString(context.getString(keyRes), unassigned)?.takeIf {
         it.isNotEmpty() && it != unassigned
       }
+    val systemLongPress = ViewConfiguration.getLongPressTimeout().toLong()
     presses.setCommands(
       VolumeKeyPresses.KeyCommands(
         double = command(R.string.pref_volume_up_double_press_key),
@@ -88,8 +92,16 @@ class VolumeKeyCommands(
       ),
       VolumeKeyPresses.Timeouts(
         multiPress = ViewConfiguration.getDoubleTapTimeout().toLong(),
-        longPress = ViewConfiguration.getLongPressTimeout().toLong(),
+        longPress =
+          longPressDuration(
+            prefs.getString(
+              context.getString(R.string.pref_volume_key_long_press_duration_key),
+              null,
+            ),
+            systemLongPress,
+          ),
         repeat = ViewConfiguration.getKeyRepeatDelay().toLong(),
+        repeatStart = systemLongPress,
       ),
     )
   }
@@ -149,6 +161,33 @@ class VolumeKeyCommands(
   }
 
   companion object {
+    /** Shortest and longest stored long press times accepted, in milliseconds. */
+    private const val MIN_LONG_PRESS_MS = 100L
+    private const val MAX_LONG_PRESS_MS = 2000L
+
+    /**
+     * The long press time for the [stored] setting value, or [systemDefault] for the System default
+     * value and for a value outside the accepted range.
+     */
+    @JvmStatic
+    internal fun longPressDuration(stored: String?, systemDefault: Long): Long =
+      stored?.toLongOrNull()?.takeIf { it in MIN_LONG_PRESS_MS..MAX_LONG_PRESS_MS } ?: systemDefault
+
+    /**
+     * Whether presses may be counted while the device is not interactive. Android passes the volume
+     * keys to accessibility services in that state only while the lock screen shows on a display
+     * that is not off, as with an always-on display.
+     */
+    @JvmStatic
+    fun canCountWhileNotInteractive(context: Context): Boolean {
+      if (!ScreenMonitor.isDeviceLocked(context)) {
+        return false
+      }
+      val display =
+        context.getSystemService(DisplayManager::class.java)?.getDisplay(Display.DEFAULT_DISPLAY)
+      return display != null && display.state != Display.STATE_OFF
+    }
+
     /** Changes the volume as Android does for the key, starting from [stream]. */
     fun adjustSuggestedVolume(
       audioManager: AudioManager?,

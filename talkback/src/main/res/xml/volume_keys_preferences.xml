@@ -47,6 +47,14 @@
       android:key="@string/pref_volume_down_long_press_key"
       android:summary="%s"
       android:title="@string/title_pref_volume_down_long_press" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
+      android:defaultValue="@string/pref_volume_key_long_press_duration_default"
+      android:dialogTitle="@string/title_pref_volume_key_long_press_duration"
+      android:entries="@array/pref_volume_key_long_press_duration_entries"
+      android:entryValues="@array/pref_volume_key_long_press_duration_values"
+      android:key="@string/pref_volume_key_long_press_duration_key"
+      android:summary="%s"
+      android:title="@string/title_pref_volume_key_long_press_duration" />
   <com.google.android.accessibility.talkback.preference.base.AccessibilityFooterPreference
       android:key="@string/pref_speech_footer_key"
       android:title="@string/title_pref_speech_footer"

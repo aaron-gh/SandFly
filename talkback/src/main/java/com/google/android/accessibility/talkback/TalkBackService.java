@@ -1648,7 +1648,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     }
     if (volumeKeyCommands != null
         && volumeKeyCommands.onKeyEvent(
-            keyEvent, () -> canUseVolumeKeyPresses(triggerModifierPressed))) {
+            keyEvent, () -> canUseVolumeKeyCommands(triggerModifierPressed))) {
       return true;
     }
     if (oneUiVolumeKeys != null
@@ -1752,11 +1752,27 @@ public class TalkBackService extends AccessibilityServiceCompat
   }
 
   /**
-   * Returns whether double, triple and long presses of the volume keys run their commands now:
-   * where the keys would otherwise change the volume through Android, with the screen on and no
-   * call.
+   * Returns whether SandFly may keep a volume key press from Android now: where the key would
+   * otherwise change the volume through Android, with the screen on and no call.
    */
   private boolean canUseVolumeKeyPresses(boolean triggerModifierPressed) {
+    return canTakeVolumeKeys(triggerModifierPressed)
+        && ringerModeAndScreenMonitor != null
+        && ringerModeAndScreenMonitor.isInteractive();
+  }
+
+  /**
+   * Returns whether double, triple and long presses of the volume keys run their commands now: as
+   * for {@link #canUseVolumeKeyPresses}, and also while an always-on display shows the lock screen.
+   */
+  private boolean canUseVolumeKeyCommands(boolean triggerModifierPressed) {
+    return canTakeVolumeKeys(triggerModifierPressed)
+        && ringerModeAndScreenMonitor != null
+        && (ringerModeAndScreenMonitor.isInteractive()
+            || VolumeKeyCommands.canCountWhileNotInteractive(this));
+  }
+
+  private boolean canTakeVolumeKeys(boolean triggerModifierPressed) {
     return isServiceActive()
         // Shortcut Menu starts its safe mode, for a screen reader that stopped working, with three
         // presses of volume up, so its keys go to it as they are.
@@ -1765,8 +1781,6 @@ public class TalkBackService extends AccessibilityServiceCompat
         && !triggerModifierPressed
         && !isBrailleImeTouchInteracting()
         && !pipeline.getActorState().getContinuousRead().isActive()
-        && ringerModeAndScreenMonitor != null
-        && ringerModeAndScreenMonitor.isInteractive()
         && !isPhoneCallActive();
   }
 
