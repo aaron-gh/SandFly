@@ -50,6 +50,7 @@ import android.accessibilityservice.AccessibilityService;
 import android.content.Context;
 import android.graphics.Point;
 import android.graphics.Rect;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -3381,6 +3382,9 @@ public class FocusProcessorForLogicalNavigation {
    * list showing one item can't show it, so the last list that did is remembered.
    */
   private @Nullable Boolean indexesRunUpward(AccessibilityNodeInfoCompat list) {
+    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.P) {
+      return null;
+    }
     Boolean onScreen = AutoScrollSuccessCheckerImpl.indexesRunUpwardIfKnown(list);
     if (onScreen != null) {
       listWithKnownOrder = list;
