@@ -811,6 +811,8 @@ public class SelectorController implements UserInputEventListener {
   /** Lists all {@link ContextualSetting} that should be supported. */
   private final ImmutableList<ContextualSetting> contextualSettings;
 
+  private final RowColumnGranularity rowColumnGranularity;
+
   /** Selector event notifier. */
   private final SelectorEventNotifier selectorEventNotifier;
 
@@ -921,7 +923,8 @@ public class SelectorController implements UserInputEventListener {
     // Initialize contextual Setting List by priority. The earlier the setting is added, the higher
     // the priority is.
     ImmutableList.Builder<ContextualSetting> contextualSettingsBuilder = ImmutableList.builder();
-    contextualSettingsBuilder.add(new RowColumnGranularity(collectionState, actorState));
+    rowColumnGranularity = new RowColumnGranularity(collectionState, actorState);
+    contextualSettingsBuilder.add(rowColumnGranularity);
     contextualSettingsBuilder.add(new AdjustableWidgetSetting());
     contextualSettingsBuilder.add(new ActionsSetting(nodeMenuCreator, accessibilityFocusMonitor));
     contextualSettingsBuilder.add(new TypoGranularity(accessibilityFocusMonitor));
@@ -1538,6 +1541,12 @@ public class SelectorController implements UserInputEventListener {
         return;
       }
     }
+    // Table navigation chosen elsewhere doesn't carry over into a table that focus enters.
+    if (isTableNavigation(currentSetting)
+        && rowColumnGranularity.enteredTableWithoutAutoEnter(context)) {
+      restoreSetting();
+      return;
+    }
     if (leavesActionsOnWebPage(currentSetting, AccessibilityNodeInfoCompat.wrap(nodeInfo))) {
       restoreSetting();
       return;
@@ -1803,11 +1812,32 @@ public class SelectorController implements UserInputEventListener {
   private void selectFirstAvailableSetting() {
     List<Setting> settings = getFilteredSettings();
     if (!settings.isEmpty()) {
-      selectSetting(settings.get(0), AnnounceType.SILENCE, false);
+      selectSetting(firstAutomaticSetting(settings), AnnounceType.SILENCE, false);
     } else {
       requestServiceHandlesDoubleTap(EVENT_ID_UNTRACKED, false);
       resetSelectedSetting(context);
     }
+  }
+
+  /**
+   * Returns the first of {@code settings} to select automatically. Table navigation is at the top
+   * of the list, and is selected automatically only with Switch to table navigation in tables on.
+   */
+  private Setting firstAutomaticSetting(List<Setting> settings) {
+    if (!RowColumnGranularity.autoEnterEnabled(context)) {
+      for (Setting setting : settings) {
+        if (!isTableNavigation(setting)) {
+          return setting;
+        }
+      }
+    }
+    return settings.get(0);
+  }
+
+  private static boolean isTableNavigation(Setting setting) {
+    return setting == Setting.GRANULARITY_ROW_COLUMN
+        || setting == Setting.GRANULARITY_ROW
+        || setting == Setting.GRANULARITY_COLUMN;
   }
 
   /**

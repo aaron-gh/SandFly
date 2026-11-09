@@ -56,11 +56,22 @@ public class RowColumnGranularity implements ContextualSetting {
   @Override
   public boolean shouldActivateSetting(Context context, AccessibilityNodeInfoCompat node) {
     // This is controlled by the preference.
-    SharedPreferences prefs = SharedPreferencesUtils.getSharedPreferences(context);
     return FeatureFlagReader.enableRowAndColumnOneGranularity(context)
         && collectionState.getCollectionTransition() == CollectionState.NAVIGATE_ENTER
-        && prefs.getBoolean(
-            context.getString(R.string.pref_auto_enter_table_navigation_key),
-            context.getResources().getBoolean(R.bool.pref_auto_enter_table_navigation_default));
+        && autoEnterEnabled(context);
+  }
+
+  /** Returns whether focus just entered a table while table navigation isn't entered there. */
+  boolean enteredTableWithoutAutoEnter(Context context) {
+    return collectionState.getCollectionTransition() == CollectionState.NAVIGATE_ENTER
+        && !autoEnterEnabled(context);
+  }
+
+  /** Returns whether Switch to table navigation in tables is on. */
+  static boolean autoEnterEnabled(Context context) {
+    SharedPreferences prefs = SharedPreferencesUtils.getSharedPreferences(context);
+    return prefs.getBoolean(
+        context.getString(R.string.pref_auto_enter_table_navigation_key),
+        context.getResources().getBoolean(R.bool.pref_auto_enter_table_navigation_default));
   }
 }
