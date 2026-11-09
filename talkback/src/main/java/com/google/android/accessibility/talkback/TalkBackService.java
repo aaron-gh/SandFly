@@ -286,6 +286,7 @@ import com.google.android.accessibility.talkback.trainingcommon.TutorialShortcut
 import com.google.android.accessibility.talkback.tutorial.TutorialHooks;
 import com.google.android.accessibility.talkback.report.ProblemReportSender;
 import com.google.android.accessibility.talkback.report.ReportInbox;
+import com.google.android.accessibility.talkback.report.StallLog;
 import com.google.android.accessibility.talkback.report.TurnOffLog;
 import com.google.android.accessibility.talkback.translation.AutomaticTranslation;
 import com.google.android.accessibility.talkback.updatetasks.TalkBackUpdateHelper;
@@ -982,6 +983,7 @@ public class TalkBackService extends AccessibilityServiceCompat
   @Override
   public boolean onUnbind(Intent intent) {
     LogUtils.d(TAG, "onUnbind start");
+    StallLog.stop();
     // First, while Android may still be connected to SandFly.
     boolean touchHandlingReleased = releaseTouchHandling();
     TurnOffLog.record(this, lastWindowPackage, touchHandlingReleased);
@@ -2165,6 +2167,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     super.onServiceConnected();
     // A report sent after the screen reader is turned off, from a new process, includes its log.
     ProblemReportSender.rememberProcess(this, "screen reader");
+    StallLog.start(this);
     EventId talkbackOnEventId =
         Performance.getInstance().onHintEventReceived(Performance.HINT_SUB_TYPE_TALKBACK_ON);
 
