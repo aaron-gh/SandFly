@@ -319,6 +319,14 @@
     <!-- Braille dictionary entry that leaves this text off the braille display. -->
     <string name="braille_dictionary_not_shown"><xliff:g id="text" example="#">%1$s</xliff:g> not shown</string>
     <string name="speech_dictionary_not_said"><xliff:g id="text" example="#">%1$s</xliff:g> not said</string>
+    <!-- Title of the settings screen of symbols and symbol sequences replaced in speech and on a braille display. [CHAR LIMIT=40] -->
+    <string name="title_pref_symbol_dictionary">Symbol dictionary</string>
+    <!-- Hint of the text field for the symbol or symbol sequence that a symbol dictionary entry replaces. [CHAR LIMIT=40] -->
+    <string name="symbol_dictionary_find">Symbol</string>
+    <!-- Hint of the text field for the text that a symbol dictionary entry replaces the symbol with. [CHAR LIMIT=40] -->
+    <string name="symbol_dictionary_replace_with">Replace with</string>
+    <!-- A symbol dictionary entry that removes a symbol from speech and braille. [CHAR LIMIT=NONE] -->
+    <string name="symbol_dictionary_removed"><xliff:g id="text" example="#">%1$s</xliff:g> removed</string>
     <!--
       Source: Summary for the "speak long text in phrases" toggle.
       Description: Explains what sending long text as phrases does, and why to turn it off. [CHAR LIMIT=NONE]

@@ -956,6 +956,10 @@ SandFly only uses a display from an app once you allow it, after a warning that 
 
 **Braille** > **Braille dictionary** changes text on a braille display, such as a symbol into a word, or text left off the display. Its entries are separate from the speech dictionary's, which are for how text sounds. Entries apply in order, to all apps or one app, with whole words and regular expressions as in the speech dictionary. Text being typed and SandFly's own screens are shown as they are.
 
+### Symbol dictionary
+
+**Speech** > **Symbol dictionary** and **Braille** > **Symbol dictionary** open the same list of symbols or symbol sequences to replace in speech and on a braille display, such as a period replaced by a space. An entry matches its exact text anywhere, including directly after a word. An empty replacement removes the symbol. Entries apply in order, to all apps or one app, after the speech dictionary or braille dictionary. A symbol read alone, such as during navigation by character, is still spoken by its name. Text being typed on the braille display and SandFly's own screens are left as they are.
+
 ### Hide the on-screen keyboard
 
 In the braille display settings, **Hide the on-screen keyboard** keeps other on-screen keyboards hidden while a braille display is connected. SandFly's braille keyboard still shows its strip, since typing on the display goes into text fields through it. Keyboards show again when the display disconnects or the switch is turned off.

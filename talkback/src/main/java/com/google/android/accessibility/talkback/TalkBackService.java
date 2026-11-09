@@ -253,6 +253,7 @@ import com.google.android.accessibility.talkback.notifications.NotificationReade
 import com.google.android.accessibility.talkback.notifications.NotificationSettings;
 import com.google.android.accessibility.talkback.speechdictionary.BrailleDictionary;
 import com.google.android.accessibility.talkback.speechdictionary.SpeechDictionary;
+import com.google.android.accessibility.talkback.speechdictionary.SymbolDictionary;
 import com.google.android.accessibility.talkback.gesture.AppGestures;
 import com.google.android.accessibility.talkback.pause.PauseController;
 import com.google.android.accessibility.talkback.preference.PreferencesActivityUtils;
@@ -4014,6 +4015,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     FocusProcessorForLogicalNavigation.setWrapAround(
         getBooleanPref(R.string.pref_wrap_around_key, R.bool.pref_wrap_around_default));
     AutomaticTranslation.update(this);
+    SymbolDictionary.load(prefs);
     SpeechDictionary.load(this, prefs);
     BrailleDictionary.load(this, prefs);
     AppGestures.load(prefs);

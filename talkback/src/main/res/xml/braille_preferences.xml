@@ -19,4 +19,9 @@
       android:key="pref_braille_dictionary_screen"
       android:persistent="false"
       android:title="@string/title_pref_braille_dictionary" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+      android:fragment="com.google.android.accessibility.talkback.speechdictionary.SymbolDictionaryFragment"
+      android:key="pref_braille_symbol_dictionary_screen"
+      android:persistent="false"
+      android:title="@string/title_pref_symbol_dictionary" />
 </PreferenceScreen>

@@ -35,7 +35,7 @@ object BrailleDictionary {
   fun load(context: Context, prefs: SharedPreferences) {
     entries = read(prefs)
     BrailleTextFilter.set(
-      if (entries.isEmpty()) null
+      if (entries.isEmpty() && SymbolDictionary.isEmpty) null
       else BrailleTextFilter.Filter { SpeechDictionary.applyInCurrentApp(it, entries) }
     )
   }
