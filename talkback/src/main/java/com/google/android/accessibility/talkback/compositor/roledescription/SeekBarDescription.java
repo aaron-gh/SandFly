@@ -115,7 +115,7 @@ public final class SeekBarDescription implements RoleDescription {
       case RangeInfoCompat.RANGE_TYPE_FLOAT ->
           context.getString(R.string.template_value, String.valueOf(current));
       default ->
-          event.getItemCount() > 0
+          event != null && event.getItemCount() > 0
               ? context.getString(
                   R.string.tb_template_percent,
                   String.valueOf(

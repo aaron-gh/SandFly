@@ -175,7 +175,9 @@ public class TreeNodesDescription {
    */
   private static boolean shouldAppendChildNode(
       Context context, AccessibilityEvent event, boolean shouldIterateChildren) {
-    if (!shouldIterateChildren || event.getEventType() != TYPE_WINDOW_CONTENT_CHANGED) {
+    if (!shouldIterateChildren
+        || event == null
+        || event.getEventType() != TYPE_WINDOW_CONTENT_CHANGED) {
       return false;
     }
     AccessibilityNodeInfoCompat srcNode = AccessibilityEventUtils.sourceCompat(event);
