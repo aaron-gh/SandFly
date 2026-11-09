@@ -113,6 +113,7 @@ object ProblemReportSender {
       if (withLog && result == Result.SENT) {
         CrashLog.clear(appContext)
         TurnOffLog.clear(appContext)
+        StallLog.clear(appContext)
       }
       val token = answer?.optString("token")?.takeIf { it.isNotEmpty() }
       mainHandler.post {
@@ -273,23 +274,27 @@ object ProblemReportSender {
   private const val MAX_ANSWER_BYTES = 4 * 1024 * 1024
 
   /**
-   * The log, after SandFly's last crash and last turn-off if there were any, which the log doesn't
-   * reach back to, and how its last processes ended, and then the ends of the logs of SandFly's
+   * The log, after SandFly's last crash, last turn-off and main thread stalls if there were any,
+   * which the log doesn't reach back to, and how its last processes ended, and then the ends of the logs of SandFly's
    * other processes, such as the one that runs on-device AI.
    */
   @WorkerThread
   private fun logWithCrash(context: Context): String? {
     val crash = CrashLog.read(context)
     val turnOff = TurnOffLog.read(context)
+    val stalls = StallLog.read(context)
     val exits = ExitReasons.describe(context)
     val others = otherProcessLogs(context)
     val log = readLog(Process.myPid(), LOG_LINES, MAIN_LOG_PRIORITY)
-    if (crash == null && turnOff == null && exits == null && others.isEmpty()) return log
+    if (crash == null && turnOff == null && stalls == null && exits == null && others.isEmpty()) {
+      return log
+    }
     val head =
       (if (crash == null) "" else "Last crash:\n$crash\n\n") +
         (if (turnOff == null) "" else "Last turn-off:\n$turnOff\n\n") +
+        (if (stalls == null) "" else "Main thread stalls:\n$stalls\n\n") +
         (if (exits == null) "" else "Process exits:\n$exits\n\n") +
-        (if (crash == null && turnOff == null && exits == null) "" else "Log:\n")
+        (if (crash == null && turnOff == null && stalls == null && exits == null) "" else "Log:\n")
     // The crash, as much of the end of the log as fits, and the other processes' logs.
     val room = (ProblemReport.MAX_LOG - head.length - others.length).coerceAtLeast(0)
     return head + log.orEmpty().takeLast(room) + others
