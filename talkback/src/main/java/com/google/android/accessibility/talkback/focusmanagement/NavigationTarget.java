@@ -46,12 +46,14 @@ import static com.google.android.accessibility.utils.input.CursorGranularity.WEB
 import static com.google.android.accessibility.utils.input.CursorGranularity.WINDOWS;
 
 import android.content.Context;
+import android.text.TextUtils;
 import androidx.annotation.IntDef;
 import androidx.annotation.Nullable;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.Filter;
+import com.google.android.accessibility.utils.Role;
 import com.google.android.accessibility.utils.WebInterfaceUtils;
 import com.google.android.accessibility.utils.input.CursorGranularity;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
@@ -176,7 +178,38 @@ public final class NavigationTarget {
     return type == TARGET_HEADING
         || type == TARGET_CONTROL
         || type == TARGET_LINK
-        || type == TARGET_CONTAINER;
+        || type == TARGET_CONTAINER
+        // Apps have no visited links, so nothing can be scrolled into view for those.
+        || (isWebOnlyTarget(type)
+            && !supportsTableNavigation(type)
+            && type != TARGET_HTML_ELEMENT_VISITED_LINK);
+  }
+
+  /** Returns whether navigation to the target moves between containers of its kind. */
+  public static boolean isContainerTarget(@TargetType int type) {
+    return type == TARGET_CONTAINER
+        || type == TARGET_HTML_ELEMENT_LIST
+        || type == TARGET_HTML_ELEMENT_TABLE
+        || type == TARGET_HTML_ELEMENT_ARIA_LANDMARK;
+  }
+
+  /** Gets the filter for the containers that the target moves between, outside web content. */
+  public static Filter<AccessibilityNodeInfoCompat> createContainerFilter(@TargetType int target) {
+    return switch (target) {
+      case TARGET_HTML_ELEMENT_LIST ->
+          Filter.node(
+              n ->
+                  !AccessibilityNodeInfoUtils.FILTER_TABLE.accept(n)
+                      && (Role.getRole(n) == Role.ROLE_LIST || n.getCollectionInfo() != null));
+      case TARGET_HTML_ELEMENT_TABLE -> AccessibilityNodeInfoUtils.FILTER_TABLE;
+      case TARGET_HTML_ELEMENT_ARIA_LANDMARK ->
+          AccessibilityNodeInfoUtils.FILTER_BAR.or(
+              Filter.node(
+                  n ->
+                      !TextUtils.isEmpty(n.getPaneTitle())
+                          || !TextUtils.isEmpty(n.getContainerTitle())));
+      default -> AccessibilityNodeInfoUtils.FILTER_CONTAINER;
+    };
   }
 
   /** Returns whether the target supports table navigation. */
@@ -235,6 +268,9 @@ public final class NavigationTarget {
   /** Gets display name of Native {@link TargetType}. Used to compose speaking feedback. */
   @SuppressWarnings("SwitchIntDef") // Only some values handled.
   public static String nativeTargetToDisplayName(Context context, @TargetType int type) {
+    if (isWebOnlyTarget(type)) {
+      return htmlTargetToDisplayName(context, type);
+    }
     return switch (type) {
       case TARGET_HEADING -> context.getString(R.string.display_name_heading);
       case TARGET_CONTROL -> context.getString(R.string.display_name_control);
@@ -294,16 +330,11 @@ public final class NavigationTarget {
     };
   }
 
-  /** Gets node filter for non-html {@link TargetType}. */
+  /** Gets node filter for {@link TargetType} outside web content. */
   @SuppressWarnings("SwitchIntDef") // Only some values handled.
-  @Nullable
   public static Filter<AccessibilityNodeInfoCompat> createNodeFilter(
       @TargetType int target,
       @Nullable final Map<AccessibilityNodeInfoCompat, Boolean> speakingNodesCache) {
-    if (NavigationTarget.isWebOnlyTarget(target)) {
-      LogUtils.w(TAG, "Cannot define node filter for web only target.");
-      return null;
-    }
     Filter<AccessibilityNodeInfoCompat> nodeFilter =
         new Filter<AccessibilityNodeInfoCompat>() {
           @Override
@@ -314,7 +345,14 @@ public final class NavigationTarget {
         };
     Filter<AccessibilityNodeInfoCompat> additionalCheckFilter = null;
     switch (target) {
-      case TARGET_HEADING ->
+      // Apps don't report heading levels, so every level moves between all headings.
+      case TARGET_HEADING,
+          TARGET_HTML_ELEMENT_HEADING_1,
+          TARGET_HTML_ELEMENT_HEADING_2,
+          TARGET_HTML_ELEMENT_HEADING_3,
+          TARGET_HTML_ELEMENT_HEADING_4,
+          TARGET_HTML_ELEMENT_HEADING_5,
+          TARGET_HTML_ELEMENT_HEADING_6 ->
           additionalCheckFilter =
               AccessibilityNodeInfoUtils.FILTER_HEADING.or(
                   AccessibilityNodeInfoUtils.FILTER_CONTAINER_WITH_UNFOCUSABLE_HEADING);
@@ -322,8 +360,45 @@ public final class NavigationTarget {
           additionalCheckFilter =
               AccessibilityNodeInfoUtils.getFilterIncludingChildren(
                   AccessibilityNodeInfoUtils.FILTER_CONTROL);
-      case TARGET_LINK -> additionalCheckFilter = AccessibilityNodeInfoUtils.FILTER_LINK;
-      case TARGET_CONTAINER -> additionalCheckFilter = AccessibilityNodeInfoUtils.FILTER_CONTAINER;
+      // Apps don't report visited links, so all their links count as unvisited.
+      case TARGET_LINK, TARGET_HTML_ELEMENT_UNVISITED_LINK ->
+          additionalCheckFilter = AccessibilityNodeInfoUtils.FILTER_LINK;
+      case TARGET_HTML_ELEMENT_VISITED_LINK -> additionalCheckFilter = Filter.node(n -> false);
+      case TARGET_CONTAINER,
+          TARGET_HTML_ELEMENT_LIST,
+          TARGET_HTML_ELEMENT_TABLE,
+          TARGET_HTML_ELEMENT_ARIA_LANDMARK ->
+          additionalCheckFilter = createContainerFilter(target);
+      case TARGET_HTML_ELEMENT_BUTTON ->
+          additionalCheckFilter =
+              controlRoleFilter(
+                  Role.ROLE_BUTTON,
+                  Role.ROLE_IMAGE_BUTTON,
+                  Role.ROLE_FLOATING_ACTION_BUTTON,
+                  Role.ROLE_VOICE_DICTATION_BUTTON);
+      case TARGET_HTML_ELEMENT_CHECKBOX ->
+          additionalCheckFilter =
+              controlRoleFilter(
+                  Role.ROLE_CHECK_BOX,
+                  Role.ROLE_CHECKED_TEXT_VIEW,
+                  Role.ROLE_SWITCH,
+                  Role.ROLE_TOGGLE_BUTTON);
+      case TARGET_HTML_ELEMENT_RADIO ->
+          additionalCheckFilter = controlRoleFilter(Role.ROLE_RADIO_BUTTON);
+      case TARGET_HTML_ELEMENT_EDIT_FIELD ->
+          additionalCheckFilter = controlRoleFilter(Role.ROLE_EDIT_TEXT);
+      case TARGET_HTML_ELEMENT_COMBOBOX ->
+          additionalCheckFilter = controlRoleFilter(Role.ROLE_DROP_DOWN_LIST);
+      case TARGET_HTML_ELEMENT_GRAPHIC ->
+          additionalCheckFilter = controlRoleFilter(Role.ROLE_IMAGE);
+      case TARGET_HTML_ELEMENT_FOCUSABLE_ITEM ->
+          additionalCheckFilter = Filter.node(AccessibilityNodeInfoCompat::isFocusable);
+      case TARGET_HTML_ELEMENT_LIST_ITEM ->
+          additionalCheckFilter =
+              Filter.node(
+                  n ->
+                      n.getCollectionItemInfo() != null
+                          || AccessibilityNodeInfoUtils.nodeIsListOrGridItem(n));
       default -> {
         // TARGET_DEFAULT:
       }
@@ -332,6 +407,20 @@ public final class NavigationTarget {
       nodeFilter = nodeFilter.and(additionalCheckFilter);
     }
     return nodeFilter;
+  }
+
+  private static Filter<AccessibilityNodeInfoCompat> controlRoleFilter(int... roles) {
+    return AccessibilityNodeInfoUtils.getFilterIncludingChildren(
+        Filter.node(
+            n -> {
+              int role = Role.getRole(n);
+              for (int candidate : roles) {
+                if (candidate == role) {
+                  return true;
+                }
+              }
+              return false;
+            }));
   }
 
   public static String targetTypeToString(@TargetType int targetType) {

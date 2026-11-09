@@ -40,11 +40,8 @@ object NavigationGestureActions {
     /** A character, word, line or paragraph, in apps and on web pages. */
     data class Text(val granularity: CursorGranularity) : Target
 
-    /** A heading, link or control: the native granularity in apps, the HTML element on the web. */
+    /** An element such as a heading or a button: the HTML element on the web, nodes in apps. */
     data class NativeOrWeb(val granularity: CursorGranularity, val htmlTarget: Int) : Target
-
-    /** An element that only web pages mark, such as a landmark or a list. */
-    data class Web(val granularity: CursorGranularity, val htmlTarget: Int) : Target
   }
 
   /**
@@ -270,7 +267,6 @@ object NavigationGestureActions {
    */
   @JvmStatic
   fun perform(
-    context: Context,
     value: String,
     pipeline: Pipeline.FeedbackReturner,
     hasWebContent: Boolean,
@@ -289,21 +285,6 @@ object NavigationGestureActions {
           pipeline.returnFeedback(
             eventId,
             direction.setGranularity(target.granularity).setWrap(true),
-          )
-        }
-      is Target.Web ->
-        if (hasWebContent) {
-          pipeline.returnFeedback(eventId, direction.setHtmlTargetType(target.htmlTarget))
-        } else {
-          // Say why nothing moved, as the reading control does for web-only items.
-          pipeline.returnFeedback(
-            eventId,
-            Feedback.speech(
-              context.getString(
-                R.string.web_granularity_not_supported,
-                context.getString(target.granularity.resourceId),
-              )
-            ),
           )
         }
     }
@@ -326,5 +307,5 @@ object NavigationGestureActions {
     @StringRes nextLabel: Int,
     granularity: CursorGranularity,
     htmlTarget: Int,
-  ): List<Action> = pair(name, previousLabel, nextLabel, Target.Web(granularity, htmlTarget))
+  ): List<Action> = pair(name, previousLabel, nextLabel, Target.NativeOrWeb(granularity, htmlTarget))
 }

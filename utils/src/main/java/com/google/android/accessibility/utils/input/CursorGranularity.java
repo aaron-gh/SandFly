@@ -153,9 +153,8 @@ public enum CursorGranularity {
       }
     }
 
-    if (hasWebContent) {
-      addWebGranularities(supportedHtmlElements, result);
-    }
+    // Outside web content, these move through the app's nodes, so all of them are available.
+    addWebGranularities(hasWebContent ? supportedHtmlElements : null, result);
     result.add(HEADING);
     result.add(CONTROL);
     result.add(LINK);

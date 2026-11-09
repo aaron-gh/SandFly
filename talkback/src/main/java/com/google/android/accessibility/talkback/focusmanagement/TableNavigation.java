@@ -48,9 +48,22 @@ public final class TableNavigation {
   private EventId eventId;
   private Table table;
 
-  /** Currently it only supports row and column navigation in native table. */
+  /** Returns whether the type moves between cells of a native table. */
   public static boolean isNativeTableGranularity(@TargetType int type) {
-    return (type == NavigationTarget.TARGET_COLUMN || type == NavigationTarget.TARGET_ROW);
+    return type == NavigationTarget.TARGET_COLUMN
+        || type == NavigationTarget.TARGET_ROW
+        || isBoundaryTarget(type);
+  }
+
+  private static boolean isBoundaryTarget(@TargetType int type) {
+    return type == NavigationTarget.TARGET_HTML_ELEMENT_ROW_BOUNDS
+        || type == NavigationTarget.TARGET_HTML_ELEMENT_COLUMN_BOUNDS
+        || type == NavigationTarget.TARGET_HTML_ELEMENT_TABLE_BOUNDS;
+  }
+
+  /** Returns whether the navigation goes to the first or last cell of a row, column or table. */
+  public boolean movesToBoundary() {
+    return isBoundaryTarget(navigationAction.targetType);
   }
 
   public TableNavigation(
@@ -125,10 +138,11 @@ public final class TableNavigation {
       LogUtils.w(TAG, "getScrollDirection but table is invalid. Return the original direction.");
       return navigationAction.searchDirection;
     }
-    boolean reversed =
-        (navigationAction.targetType == NavigationTarget.TARGET_ROW)
-            ? table.isVerticalReversed
-            : table.isHorizontalReversed;
+    boolean movesAlongColumn =
+        navigationAction.targetType == NavigationTarget.TARGET_ROW
+            || navigationAction.targetType == NavigationTarget.TARGET_HTML_ELEMENT_COLUMN_BOUNDS
+            || navigationAction.targetType == NavigationTarget.TARGET_HTML_ELEMENT_TABLE_BOUNDS;
+    boolean reversed = movesAlongColumn ? table.isVerticalReversed : table.isHorizontalReversed;
     if (navigationAction.searchDirection == TraversalStrategy.SEARCH_FOCUS_FORWARD) {
       return reversed
           ? TraversalStrategy.SEARCH_FOCUS_BACKWARD
@@ -184,6 +198,11 @@ public final class TableNavigation {
   private Pair<Integer, Integer> getTargetIndexIncrements(int increment) {
     int rowIndex = navigationAction.pivotIndex.first;
     int columnIndex = navigationAction.pivotIndex.second;
+    if (movesToBoundary()) {
+      Pair<Integer, Integer> boundary = getBoundaryIndex(rowIndex, columnIndex);
+      // Already at the boundary: nothing to move to.
+      return boundary.equals(navigationAction.pivotIndex) ? null : boundary;
+    }
     if (navigationAction.targetType == NavigationTarget.TARGET_ROW) {
       return Pair.create(
           navigationAction.searchDirection == TraversalStrategy.SEARCH_FOCUS_FORWARD
@@ -198,6 +217,19 @@ public final class TableNavigation {
               : columnIndex - increment);
     }
     return null;
+  }
+
+  private Pair<Integer, Integer> getBoundaryIndex(int rowIndex, int columnIndex) {
+    boolean forward = navigationAction.searchDirection == TraversalStrategy.SEARCH_FOCUS_FORWARD;
+    int lastRow = tableRoot.getCollectionInfo().getRowCount() - 1;
+    int lastColumn = tableRoot.getCollectionInfo().getColumnCount() - 1;
+    return switch (navigationAction.targetType) {
+      case NavigationTarget.TARGET_HTML_ELEMENT_ROW_BOUNDS ->
+          Pair.create(rowIndex, forward ? lastColumn : 0);
+      case NavigationTarget.TARGET_HTML_ELEMENT_COLUMN_BOUNDS ->
+          Pair.create(forward ? lastRow : 0, columnIndex);
+      default -> forward ? Pair.create(lastRow, lastColumn) : Pair.create(0, 0);
+    };
   }
 
   // Finds the first focusable node in the visible cell in the target position.
