@@ -454,6 +454,13 @@ public class CursorGranularityManager {
       return navigateWeb(action, requestedGranularity, eventId);
     }
 
+    if (requestedGranularity == CursorGranularity.PARAGRAPH
+        && isSelectionModeActive()
+        && copySelection.isActive()
+        && WebInterfaceUtils.isWebContainer(lockedNode)) {
+      return selectWebParagraph(action);
+    }
+
     final Bundle arguments = new Bundle();
     final int count = navigableNodes.size();
     final int increment;
@@ -535,6 +542,37 @@ public class CursorGranularityManager {
     // Microgranularity traversal can't navigate out of a focused editable node. For non-editable
     // nodes, allow traversal out of the focused node.
     return isEditing ? HIT_EDGE : NOT_SUPPORTED;
+  }
+
+  /**
+   * Selects the focused paragraph of web content, or deselects it moving back. Web content moves
+   * focus to the next block for a paragraph and ignores extending the selection, so copying mode
+   * selects the whole item. Moving on from a selected paragraph goes to the next item.
+   */
+  private int selectWebParagraph(int action) {
+    List<CharSequence> texts = navigableTexts();
+    boolean selected = copySelection.isAllSelected(navigableNodes, texts);
+    CharSequence changed;
+    if (action == AccessibilityNodeInfoCompat.ACTION_NEXT_AT_MOVEMENT_GRANULARITY) {
+      if (selected) {
+        return NOT_SUPPORTED;
+      }
+      changed = copySelection.selectAll(navigableNodes, texts);
+      if (changed.length() == 0) {
+        return NOT_SUPPORTED;
+      }
+      granularityTraversal.announceCopyChange(changed, "");
+      return SUCCESS;
+    }
+    if (!selected) {
+      return NOT_SUPPORTED;
+    }
+    changed = copySelection.deselectAll(navigableNodes);
+    if (changed.length() == 0) {
+      return NOT_SUPPORTED;
+    }
+    granularityTraversal.announceCopyChange("", changed);
+    return SUCCESS;
   }
 
   /**

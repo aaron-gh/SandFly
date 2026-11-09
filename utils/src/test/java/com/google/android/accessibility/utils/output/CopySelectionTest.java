@@ -334,4 +334,33 @@ public class CopySelectionTest {
             .selectAll(Arrays.asList(row2), Arrays.<CharSequence>asList(big))
             .toString());
   }
+
+  @Test
+  public void isAllSelectedNeedsTheWholeOfEveryItemWithText() {
+    assertFalse(
+        selection.isAllSelected(Arrays.asList(row1), Arrays.<CharSequence>asList(ROW1)));
+    selection.move(row1, ROW1, 0, 5, true);
+    assertFalse(
+        selection.isAllSelected(Arrays.asList(row1), Arrays.<CharSequence>asList(ROW1)));
+    selection.selectAll(Arrays.asList(row1, row2), Arrays.<CharSequence>asList(ROW1, ""));
+    assertTrue(
+        selection.isAllSelected(Arrays.asList(row1, row2), Arrays.<CharSequence>asList(ROW1, "")));
+  }
+
+  @Test
+  public void deselectAllDropsOnlyTheRangesInTheItems() {
+    selection.selectAll(Arrays.asList(row1, row2), Arrays.<CharSequence>asList(ROW1, ROW2));
+    assertEquals(ROW2, selection.deselectAll(Arrays.asList(row2)).toString());
+    assertEquals(ROW1, selection.selectedText().toString());
+    assertEquals("", selection.deselectAll(Arrays.asList(row3)).toString());
+    assertEquals(ROW1, selection.selectedText().toString());
+  }
+
+  @Test
+  public void selectAllAfterDeselectAllSelectsAgain() {
+    selection.selectAll(Arrays.asList(row1), Arrays.<CharSequence>asList(ROW1));
+    selection.deselectAll(Arrays.asList(row1));
+    selection.selectAll(Arrays.asList(row1), Arrays.<CharSequence>asList(ROW1));
+    assertEquals(ROW1, selection.selectedText().toString());
+  }
 }
