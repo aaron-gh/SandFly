@@ -29,6 +29,7 @@ import android.text.style.LocaleSpan;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.view.accessibility.AccessibilityWindowInfo;
+import androidx.annotation.VisibleForTesting;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.talkback.Feedback;
 import com.google.android.accessibility.talkback.Pipeline;
@@ -358,6 +359,49 @@ public class ProcessorPhoneticLetters implements AccessibilityEventListener {
     return resultList.isEmpty() ? "" : String.join(", ", resultList);
   }
 
+  /**
+   * Normalizes a BCP-47 locale tag to the key of the phonetic letters JSON node to look up.
+   *
+   * <p>Chinese locale tags come in many forms (zh, zh-Hans, zh-Hant-TW, zh-SG, ...), but the JSON
+   * only has zh, zh-CN and zh-TW nodes, and LocaleUtils.parseLocaleString does not handle script
+   * subtags (see the TODO there), so the subtags are inspected directly: simplified variants
+   * (script Hans, or region CN or SG) resolve to zh-CN, and traditional variants (script Hant, or
+   * region TW, HK or MO) resolve to zh-TW, with the script taking priority over the region. Any
+   * other locale tag is returned unchanged.
+   */
+  @VisibleForTesting
+  static String normalizePhoneticLocale(@Nullable String locale) {
+    if (locale == null) {
+      return null;
+    }
+    String[] subtags = locale.split("-", 3);
+    if (subtags.length == 0 || !"zh".equalsIgnoreCase(subtags[0])) {
+      return locale;
+    }
+    String script = null;
+    String region = null;
+    for (int i = 1; i < subtags.length; i++) {
+      if (subtags[i].length() == 4) {
+        script = subtags[i];
+      } else if (subtags[i].length() == 2) {
+        region = subtags[i];
+      }
+    }
+    if ("Hans".equalsIgnoreCase(script)) {
+      return "zh-CN";
+    }
+    if ("Hant".equalsIgnoreCase(script)) {
+      return "zh-TW";
+    }
+    if ("CN".equalsIgnoreCase(region) || "SG".equalsIgnoreCase(region)) {
+      return "zh-CN";
+    }
+    if ("TW".equalsIgnoreCase(region) || "HK".equalsIgnoreCase(region) || "MO".equalsIgnoreCase(region)) {
+      return "zh-TW";
+    }
+    return "zh";
+  }
+
   // Map a character to a phonetic letter. If the locale cannot be parsed, falls back to english.
   private @Nullable CharSequence getPhoneticLetter(String locale, String letter) {
     Locale parsedLocale = LocaleUtils.parseLocaleString(locale);
@@ -365,7 +409,7 @@ public class ProcessorPhoneticLetters implements AccessibilityEventListener {
       parsedLocale = Locale.getDefault();
     }
     String normalizedLetter = letter.toLowerCase(parsedLocale);
-    String value = getPhoneticLetterMap(locale).get(normalizedLetter);
+    String value = getPhoneticLetterMap(normalizePhoneticLocale(locale)).get(normalizedLetter);
     if (value == null) {
       if (parsedLocale.getCountry().isEmpty()) {
         // As a last resort, fall back to English.
