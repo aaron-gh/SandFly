@@ -19,7 +19,6 @@ package com.google.android.accessibility.talkback.overview
 import android.accessibilityservice.AccessibilityService
 import android.app.KeyguardManager
 import android.content.ComponentName
-import android.content.Context
 import android.content.pm.LauncherApps
 import android.content.Intent
 import android.net.Uri
@@ -56,7 +55,8 @@ import com.google.android.material.floatingactionbutton.ExtendedFloatingActionBu
  * or last with Most recent app at the bottom: the most recent is the app the overview was opened
  * from. A double tap switches to a task; Close, Split screen and App info are actions of its row.
  * Close all and System overview are floating buttons at the bottom left and bottom right. With
- * Columns above 1, the rows are a grid, filled a row at a time.
+ * Columns above 1, the rows are a grid, filled a row at a time. The Overview action, performed
+ * again while this is on screen, switches to the previous app.
  */
 class OverviewActivity : AppCompatActivity() {
   private lateinit var scroll: ScrollView
@@ -155,6 +155,7 @@ class OverviewActivity : AppCompatActivity() {
 
   override fun onStart() {
     super.onStart()
+    started++
     newestLast = RecentTasks.isNewestLast(this)
     // A short list sits at the bottom, beside the buttons.
     content.gravity = if (newestLast) Gravity.BOTTOM else Gravity.TOP
@@ -169,6 +170,7 @@ class OverviewActivity : AppCompatActivity() {
   }
 
   override fun onStop() {
+    started--
     ShizukuShell.release()
     super.onStop()
     // Like the system's overview, this one closes when the user leaves it.
@@ -527,20 +529,36 @@ class OverviewActivity : AppCompatActivity() {
     /** Space around the floating buttons. */
     private const val BUTTON_MARGIN_DP = 16
 
+    /** The number of started overviews: a new one can start before the last one has stopped. */
+    private var started = 0
+
+    /** The app windows on screen when the overview was last opened, as [RecentTasks.frontPackages]. */
+    private var openedFromPackages: List<String> = emptyList()
+
+    /** Whether the overview is on screen. */
+    @JvmStatic fun isShown(): Boolean = started > 0
+
+    /**
+     * The app windows on screen when the overview on screen was opened, or null when the overview
+     * isn't on screen.
+     */
+    fun openedFrom(): List<String>? = if (isShown()) openedFromPackages else null
+
     /**
      * Opens the overview in place of the system's, if the user has chosen it and Shizuku runs,
      * asking Shizuku to allow SandFly first if it doesn't. The system's overview is kept on the
      * lock screen, and opens when Shizuku doesn't allow SandFly.
      */
     @JvmStatic
-    fun openInsteadOfSystem(context: Context): Boolean {
-      if (!RecentTasks.isEnabled(context) || !ShizukuShell.isAvailable(context) || !ShizukuGrants.isReady()) {
+    fun openInsteadOfSystem(service: AccessibilityService): Boolean {
+      if (!RecentTasks.isEnabled(service) || !ShizukuShell.isAvailable(service) || !ShizukuGrants.isReady()) {
         return false
       }
-      if (context.getSystemService(KeyguardManager::class.java).isKeyguardLocked) {
+      if (service.getSystemService(KeyguardManager::class.java).isKeyguardLocked) {
         return false
       }
-      val appContext = context.applicationContext
+      openedFromPackages = RecentTasks.frontPackages(service)
+      val appContext = service.applicationContext
       ShizukuGrants.withShizukuPermission { allowed ->
         if (allowed) {
           appContext.startActivity(

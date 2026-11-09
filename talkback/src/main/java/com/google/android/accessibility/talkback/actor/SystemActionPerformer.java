@@ -8,6 +8,7 @@ import com.google.android.accessibility.talkback.ActorStateWritable;
 import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.notificationlist.NotificationListActivity;
 import com.google.android.accessibility.talkback.overview.OverviewActivity;
+import com.google.android.accessibility.talkback.overview.PreviousApp;
 import com.google.android.accessibility.talkback.overview.SplitScreen;
 import com.google.android.accessibility.talkback.quicksettings.QuickSettingsActivity;
 import com.google.android.accessibility.utils.FeatureSupport;
@@ -98,6 +99,9 @@ public final class SystemActionPerformer {
     }
     if (id == GLOBAL_ACTION_SYSTEM_OVERVIEW) {
       return service.performGlobalAction(AccessibilityService.GLOBAL_ACTION_RECENTS);
+    }
+    if (id == AccessibilityService.GLOBAL_ACTION_RECENTS && OverviewActivity.isShown()) {
+      return PreviousApp.switchTo(service);
     }
     if (id == AccessibilityService.GLOBAL_ACTION_RECENTS
         && OverviewActivity.openInsteadOfSystem(service)) {

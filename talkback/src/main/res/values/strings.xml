@@ -968,6 +968,8 @@
     <string name="overview_unavailable">Recent apps unavailable</string>
     <!-- Spoken when SandFly's overview couldn't switch to or close an app. [CHAR_LIMIT=NONE] -->
     <string name="overview_failed">Failed</string>
+    <!-- Spoken when there is no app to switch to with the Previous app command. [CHAR_LIMIT=NONE] -->
+    <string name="overview_no_previous_app">No previous app</string>
     <!-- Spoken when SandFly's overview couldn't show an app in split screen. [CHAR_LIMIT=NONE] -->
     <string name="overview_split_failed">Split screen failed</string>
     <!-- Spoken when an app was closed in SandFly's overview. %1$s is the app's name. [CHAR_LIMIT=NONE] -->
@@ -2251,6 +2253,8 @@
     <string name="shortcut_system_quick_settings">System quick settings</string>
     <!-- Label for the shortcut that opens the system's overview, even when the Overview shortcut opens SandFly's own overview. [CHAR_LIMIT=40] -->
     <string name="shortcut_system_overview">System overview</string>
+    <!-- Label for the shortcut that switches to the app used before the current one. [CHAR_LIMIT=40] -->
+    <string name="shortcut_previous_app">Previous app</string>
     <string name="title_split_screen">Split screen</string>
     <string name="split_screen_go_to_divider">Go to divider</string>
     <string name="split_screen_not_active">Not in split screen</string>
