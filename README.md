@@ -103,7 +103,7 @@ Leaving the screen, locking the phone, pausing SandFly or turning off every mode
 
 ## Languages
 
-SandFly's own strings are translated into German, Afrikaans, Amharic, Arabic, Assamese, Azerbaijani, Belarusian, Bulgarian, Bangla, Bosnian, Catalan, Czech, Danish, Greek, English (United Kingdom, Australia and India), Spanish (Spain and Latin America), Estonian, Basque, Persian, Finnish, Filipino, French (France and Canada), Galician, Hindi, Vietnamese and Simplified Chinese. Strings that are not translated yet, such as most of the notification settings, show in English. Strings from TalkBack keep Google's translations.
+SandFly's own strings are translated into Afrikaans, Albanian, Amharic, Arabic, Armenian, Assamese, Azerbaijani, Bangla, Basque, Belarusian, Bosnian, Bulgarian, Burmese, Catalan, Chinese (Simplified, Traditional and Hong Kong), Croatian, Czech, Danish, Dutch, English (United Kingdom, Australia and India), Estonian, Filipino, Finnish, French (France and Canada), Galician, Georgian, German, Greek, Gujarati, Hebrew, Hindi, Hungarian, Icelandic, Indonesian, Italian, Japanese, Kannada, Kazakh, Khmer, Korean, Kyrgyz, Lao, Latvian, Lithuanian, Macedonian, Malay, Malayalam, Marathi, Mongolian, Nepali, Norwegian, Odia, Persian, Polish, Portuguese (Brazil and Portugal), Punjabi, Romanian, Russian, Serbian (Cyrillic and Latin), Sinhala, Slovak, Slovenian, Spanish (Spain and Latin America), Swahili, Swedish, Tamil, Telugu, Thai, Turkish, Ukrainian, Urdu, Uzbek, Vietnamese and Zulu. Strings from TalkBack keep Google's translations.
 
 ## Android TV
 
