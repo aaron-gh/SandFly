@@ -169,6 +169,15 @@ def sounds():
                                              note(E6, 0.12, 0.14, 0.06)], 0.26, -5)
     s["browse_mode_off_v4_2"] = ([TALKBACK], [note(E6, 0, 0.09, 0.04), note(C6, 0.06, 0.09, 0.04),
                                               note(G5, 0.12, 0.14, 0.06)], 0.26, -5)
+    # An on-screen keyboard opened: a fast run of wooden keys, rising. Closed: the same, falling.
+    for name in ("keyboard_opened", "keyboard_closed"):
+        run = (E5, G5, B5, E6) if name == "keyboard_opened" else (E6, B5, G5, E5)
+        parts = []
+        for i, pitch in enumerate(run):
+            start = i * 0.035
+            parts.append(click(start, 0.02, 0.003, 0.35, cutoff_hz=2200, seed=20 + i))
+            parts.append(note(pitch, start, 0.08, 0.02, partials=HOLLOW))
+        s[name] = ([TALKBACK, BRAILLE], parts, 0.2, -7)
     # Waiting, such as for an image description; repeats every 3 seconds.
     s["loading"] = ([TALKBACK], [note(A5, 0, 0.35, 0.12, partials=((1, 1.0), (2, 0.15))),
                                  note(E5, 0.25, 0.45, 0.16, partials=((1, 1.0), (2, 0.15)))], 0.7, -9)

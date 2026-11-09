@@ -135,6 +135,8 @@ object SoundVibrations {
       "loading" to "loading_pattern",
       "browse_mode_on_v4_2" to "browse_mode_on_pattern",
       "browse_mode_off_v4_2" to "browse_mode_off_pattern",
+      "keyboard_opened" to "keyboard_opened_pattern",
+      "keyboard_closed" to "keyboard_closed_pattern",
       "screen_on" to "screen_on_pattern",
       // The braille display's sounds.
       "display_connected" to "display_connected_pattern",

@@ -127,6 +127,19 @@ public class ScreenFeedbackManager
    */
   private static volatile boolean windowNamesSpoken = true;
 
+  private static volatile boolean keyboardShownOrHiddenSpoken = true;
+
+  /** Sets whether speech reports an on-screen keyboard being shown or hidden. */
+  public static void setKeyboardShownOrHiddenSpoken(boolean spoken) {
+    keyboardShownOrHiddenSpoken = spoken;
+  }
+
+  /** Returns whether the input method window appeared or disappeared, not just changed title. */
+  static boolean isKeyboardShownOrHidden(WindowEventInterpreter.EventInterpretation interpretation) {
+    return (interpretation.getInputMethod().getId() == WINDOW_ID_NONE)
+        != (interpretation.getInputMethod().getOldId() == WINDOW_ID_NONE);
+  }
+
   /** Sets the Window names setting, one of {@link WindowNamesSetting}'s constants. */
   public static void setWindowNames(String windowNames) {
     firstItemInterruptsWindowName = windowNames.equals(WindowNamesSetting.UNTIL_FIRST_ITEM);
@@ -395,7 +408,9 @@ public class ScreenFeedbackManager
 
       // Compose feedback for announcement.
       Announcement announcement = interpretation.getAnnouncement();
-      if (announcement != null) {
+      boolean keyboardChangeSilent =
+          !keyboardShownOrHiddenSpoken && isKeyboardShownOrHidden(interpretation);
+      if (announcement != null && !(keyboardChangeSilent && announcement.isFromInputMethodEditor())) {
         logCompose(logDepth, "composeFeedback", "announcement");
         feedback.addPart(
             new FeedbackPart(announcement.text())
@@ -405,7 +420,7 @@ public class ScreenFeedbackManager
       }
 
       // Compose feedback for IME window
-      if (interpretation.getShouldAnnounceInputMethodChange()) {
+      if (interpretation.getShouldAnnounceInputMethodChange() && !keyboardChangeSilent) {
         logCompose(logDepth, "composeFeedback", "input method");
         CharSequence inputMethodFeedback;
         if (interpretation.getInputMethod().getId() == WINDOW_ID_NONE) {

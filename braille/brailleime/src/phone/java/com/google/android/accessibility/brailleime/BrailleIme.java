@@ -660,8 +660,8 @@ public class BrailleIme extends InputMethodService {
     if (feedback != null) {
       feedback.playAuditory(
           active
-              ? com.google.android.accessibility.braille.common.R.raw.chime_up
-              : com.google.android.accessibility.braille.common.R.raw.chime_down,
+              ? com.google.android.accessibility.braille.common.R.raw.keyboard_opened
+              : com.google.android.accessibility.braille.common.R.raw.keyboard_closed,
           Performance.EVENT_ID_UNTRACKED);
     }
   }
