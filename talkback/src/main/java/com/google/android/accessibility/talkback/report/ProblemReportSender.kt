@@ -16,14 +16,20 @@
 
 package com.google.android.accessibility.talkback.report
 
+import android.app.Activity
 import android.app.ActivityManager
 import android.content.Context
 import android.os.Handler
 import android.os.Looper
+import android.os.PowerManager
 import android.os.Process
+import android.os.SystemClock
 import androidx.annotation.MainThread
 import androidx.annotation.VisibleForTesting
 import androidx.annotation.WorkerThread
+import androidx.fragment.app.FragmentActivity
+import androidx.lifecycle.DefaultLifecycleObserver
+import androidx.lifecycle.LifecycleOwner
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 import java.io.File
 import java.io.IOException
@@ -32,6 +38,7 @@ import java.net.URL
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
+import java.util.concurrent.Callable
 import java.util.concurrent.LinkedBlockingQueue
 import java.util.concurrent.ThreadPoolExecutor
 import java.util.concurrent.TimeUnit
@@ -81,6 +88,38 @@ object ProblemReportSender {
   private val executor = ThreadPoolExecutor(0, 1, 30, TimeUnit.SECONDS, LinkedBlockingQueue())
   private val mainHandler = Handler(Looper.getMainLooper())
 
+  // One thread at most, which ends when idle. Not [executor], whose sends can take a minute and
+  // would delay a read that has to come before the report form's own output.
+  private val snapshotExecutor =
+    ThreadPoolExecutor(0, 1, 30, TimeUnit.SECONDS, LinkedBlockingQueue())
+  private val logSnapshot =
+    ReportLogSnapshot(
+      submit = { task -> snapshotExecutor.submit(task) },
+      elapsedMs = { SystemClock.elapsedRealtime() },
+      postDelayed = { task, delayMs -> mainHandler.postDelayed(task, delayMs) },
+      removeCallbacks = { task -> mainHandler.removeCallbacks(task) },
+    )
+
+  // Holds no activity, so it can stay in each activity's lifecycle.
+  private val reportActivityObserver =
+    object : DefaultLifecycleObserver {
+      override fun onStart(owner: LifecycleOwner) {
+        logSnapshot.activityStarted(System.identityHashCode(owner))
+      }
+
+      override fun onStop(owner: LifecycleOwner) {
+        val activity = owner as? Activity ?: return
+        if (activity.isChangingConfigurations) return
+        val screenOn = activity.getSystemService(PowerManager::class.java)?.isInteractive != false
+        logSnapshot.activityStopped(System.identityHashCode(owner), screenOn)
+      }
+
+      override fun onDestroy(owner: LifecycleOwner) {
+        val activity = owner as? Activity ?: return
+        if (!activity.isChangingConfigurations) logSnapshot.endVisit(System.identityHashCode(owner))
+      }
+    }
+
   /** True from [send] until its result is delivered. */
   @Volatile
   var isSending = false
@@ -90,22 +129,63 @@ object ProblemReportSender {
   data class ReportThread(val token: String, val status: String, val messages: List<ReportMessage>)
 
   /**
+   * Call when a report screen is shown in [activity]. Starts a visit to the report screens, with a
+   * snapshot of the logcat text read off the main thread, if none is open. See [ReportLogSnapshot].
+   */
+  @MainThread
+  fun reportScreenShown(activity: FragmentActivity) {
+    activity.lifecycle.addObserver(reportActivityObserver)
+    logSnapshot.screenShown(System.identityHashCode(activity), snapshotRead(activity))
+  }
+
+  /** Call when a report form is opened: reads a snapshot if the visit has none. */
+  @MainThread
+  fun reportFormOpened(activity: FragmentActivity) {
+    logSnapshot.readIfMissing(snapshotRead(activity))
+  }
+
+  /**
+   * Call when Include SandFly log changes. Turning it off drops the snapshot, and no later form of
+   * the visit reads one.
+   */
+  @MainThread
+  fun includeLogChanged(activity: FragmentActivity, include: Boolean) {
+    if (include) logSnapshot.logTurnedOn(snapshotRead(activity)) else logSnapshot.logTurnedOff()
+  }
+
+  /** Call when the list of reports closes, which ends the visit. */
+  @MainThread
+  fun reportListClosed() {
+    logSnapshot.endVisit()
+  }
+
+  /**
    * Sends the [report], with SandFly's log if [withLog], and calls [done] on the main thread with
-   * the result and, once sent, the token the server knows the report by.
+   * the result and, once sent, the token the server knows the report by. The logcat text is the
+   * snapshot read when the report screens opened, or the log at the time of sending if there is
+   * none or [inMultiWindow], where the reporter can reproduce a problem in the other pane. The
+   * head sections are always read at the time of sending.
    */
   @MainThread
   fun send(
     context: Context,
     report: ProblemReport,
     withLog: Boolean,
+    inMultiWindow: Boolean,
     done: (Result, String?) -> Unit,
   ) {
     isSending = true
     val appContext = context.applicationContext
+    if (!withLog || inMultiWindow) logSnapshot.discard()
+    val snapshot = logSnapshot.current()
     executor.execute {
       val (result, answer) =
         try {
-          sendReport(appContext, if (withLog) report.copy(log = logWithCrash(appContext)) else report)
+          sendReport(
+            appContext,
+            if (withLog) report.copy(log = logWithCrash(appContext, logSnapshot.await(snapshot)))
+            else report,
+          )
         } catch (e: RuntimeException) {
           LogUtils.e(TAG, "Report not sent: %s", e)
           Result.NOT_SENT to null
@@ -118,6 +198,8 @@ object ProblemReportSender {
       val token = answer?.optString("token")?.takeIf { it.isNotEmpty() }
       mainHandler.post {
         isSending = false
+        // A report that was not sent can be sent again, with the same log.
+        if (result == Result.SENT) logSnapshot.clearSent(snapshot)
         done(result, token)
       }
     }
@@ -279,13 +361,13 @@ object ProblemReportSender {
    * other processes, such as the one that runs on-device AI.
    */
   @WorkerThread
-  private fun logWithCrash(context: Context): String? {
+  private fun logWithCrash(context: Context, snapshot: LogcatSnapshot?): String? {
     val crash = CrashLog.read(context)
     val turnOff = TurnOffLog.read(context)
     val stalls = StallLog.read(context)
     val exits = ExitReasons.describe(context)
-    val others = otherProcessLogs(context)
-    val log = readLog(Process.myPid(), LOG_LINES, MAIN_LOG_PRIORITY)
+    val others = snapshot?.others ?: otherProcessLogs(context)
+    val log = snapshot?.main ?: readLog(Process.myPid(), LOG_LINES, MAIN_LOG_PRIORITY)
     if (crash == null && turnOff == null && stalls == null && exits == null && others.isEmpty()) {
       return log
     }
@@ -298,6 +380,23 @@ object ProblemReportSender {
     // The crash, as much of the end of the log as fits, and the other processes' logs.
     val room = (ProblemReport.MAX_LOG - head.length - others.length).coerceAtLeast(0)
     return head + log.orEmpty().takeLast(room) + others
+  }
+
+  /**
+   * Reads the logcat text for a snapshot, null when [activity] is in multi-window mode. The read
+   * gives null if logcat gives no main log, so that Send reads the log itself.
+   */
+  private fun snapshotRead(activity: FragmentActivity): Callable<LogcatSnapshot?>? {
+    if (activity.isInMultiWindowMode) return null
+    val context = activity.applicationContext
+    return Callable<LogcatSnapshot?> {
+      val main =
+        readLog(Process.myPid(), LOG_LINES, MAIN_LOG_PRIORITY)?.takeIf { it.isNotBlank() }
+          ?: return@Callable null
+      val others = otherProcessLogs(context)
+      val room = (ProblemReport.MAX_LOG - others.length).coerceAtLeast(0)
+      LogcatSnapshot(main.takeLast(room), others)
+    }
   }
 
   /**
@@ -321,7 +420,14 @@ object ProblemReportSender {
     val pids = LinkedHashMap<Int, String>()
     // Processes that ran since, whose logs are still in the log buffer if they have ended.
     File(context.noBackupFilesDir, PROCESS_IDS_DIR).listFiles()?.forEach { file ->
-      file.readText().trim().toIntOrNull()?.let { pids[it] = file.name }
+      val text =
+        try {
+          file.readText()
+        } catch (e: IOException) {
+          LogUtils.w(TAG, "Cannot read the process ID %s: %s", file.name, e)
+          return@forEach
+        }
+      text.trim().toIntOrNull()?.let { pids[it] = file.name }
     }
     try {
       context.getSystemService(ActivityManager::class.java)?.runningAppProcesses?.forEach {

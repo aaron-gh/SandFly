@@ -46,6 +46,7 @@ class ReportsFragment : TalkbackBaseFragment() {
 
   override fun onResume() {
     super.onResume()
+    ProblemReportSender.reportScreenShown(requireActivity())
     store.addListener(onChange)
     refresh()
     ReportInbox.checkNow(requireContext())
@@ -54,6 +55,11 @@ class ReportsFragment : TalkbackBaseFragment() {
   override fun onPause() {
     store.removeListener(onChange)
     super.onPause()
+  }
+
+  override fun onDestroy() {
+    if (isRemoving) ProblemReportSender.reportListClosed()
+    super.onDestroy()
   }
 
   /** Updates the rows in place, or builds the screen again if reports or drafts came or went. */
