@@ -962,7 +962,7 @@ A phone that's opened flat, and that hasn't been held up since the screen came o
 
 SandFly's EuroBraille driver is from a newer brltty than TalkBack's, so it also supports the b.note, b.note 2, b.book and b.book 2, with their keypads and navigation keys. Over USB they are found by their USB IDs.
 
-On EuroBraille displays, Space chords and Dot 8 run the same commands as on other displays, and can be assigned in **Braille display commands**. This includes the chords that EuroBraille uses for Tab, Shift+Tab, Page Up, Page Down, Insert, Delete and Shift (Space with dots 2 5 6, 2 3 6, 1 3, 4 6, 1 3 5, 3 6 and 7), which run nothing until assigned. The cursor routing keys move the cursor and activate items. On the right joystick, pressing it activates, like Dot 8; on the left joystick, left and right move by character and up and down by word.
+On EuroBraille displays, Space chords and Dot 8 run the same commands as on other displays, and can be assigned in **Braille display commands**. Space with dot 2, 3, 5 or 6 is the exception: these chords run nothing until assigned, so they can have commands different from the left joystick. This includes the chords that EuroBraille uses for Tab, Shift+Tab, Page Up, Page Down, Insert, Delete and Shift (Space with dots 2 5 6, 2 3 6, 1 3, 4 6, 1 3 5, 3 6 and 7), which run nothing until assigned. The cursor routing keys move the cursor and activate items. On the right joystick, pressing it activates, like Dot 8; on the left joystick, left and right move by character and up and down by word.
 
 ### Any braille display that uses HID
 

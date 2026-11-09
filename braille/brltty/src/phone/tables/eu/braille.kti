@@ -83,4 +83,7 @@ bind Backspace+Dot1+Dot2+Dot3 KEY_FUNCTION+11
 # BrailleBack Bindings #
 ########################
 
+#SandFly: the left joystick has the character and word commands, so Space with dot 2, 3, 5 and 6
+#stay unbound and can be assigned separately in Braille display commands.
+assign noCharacterWordChords yes
 include ../android-chords.kti
