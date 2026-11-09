@@ -25,6 +25,7 @@ import android.media.AudioManager;
 import androidx.annotation.Nullable;
 import androidx.annotation.VisibleForTesting;
 import com.google.android.accessibility.talkback.Feedback.AdjustVolume.StreamType;
+import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.utils.FormFactorUtils;
 
 /**
@@ -77,6 +78,10 @@ public class VolumeAdjustor {
         || (decrease && currentVolume <= minVolume)
         || (!decrease && currentVolume >= maxVolume)) {
       return false;
+    }
+    @Nullable TalkBackService service = TalkBackService.getInstance();
+    if (service != null) {
+      service.markOwnVolumeChange();
     }
     audioManager.adjustStreamVolume(streamTypeToAdjust, decrease ? ADJUST_LOWER : ADJUST_RAISE, 0);
     return true;

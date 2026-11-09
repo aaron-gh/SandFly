@@ -333,6 +333,17 @@
     <string name="pref_focus_new_windows_key" translatable="false">pref_focus_new_windows_key</string>
     <string name="pref_volume_keys_adjust_sliders_key" translatable="false">pref_volume_keys_adjust_sliders_key</string>
     <string name="pref_volume_keys_move_cursor_key" translatable="false">pref_volume_keys_move_cursor</string>
+    <string name="pref_volume_change_feedback_key" translatable="false">pref_volume_change_feedback</string>
+    <string name="pref_volume_change_feedback_default" translatable="false">off</string>
+    <string name="value_volume_change_feedback_tone" translatable="false">tone</string>
+    <string name="value_volume_change_feedback_spoken" translatable="false">spoken</string>
+    <string name="value_volume_change_feedback_tone_and_spoken" translatable="false">tone_and_spoken</string>
+    <string-array name="pref_volume_change_feedback_values" translatable="false">
+        <item>@string/pref_volume_change_feedback_default</item>
+        <item>@string/value_volume_change_feedback_tone</item>
+        <item>@string/value_volume_change_feedback_spoken</item>
+        <item>@string/value_volume_change_feedback_tone_and_spoken</item>
+    </string-array>
     <string name="pref_volume_up_double_press_key" translatable="false">pref_volume_up_double_press</string>
     <string name="pref_volume_up_triple_press_key" translatable="false">pref_volume_up_triple_press</string>
     <string name="pref_volume_up_long_press_key" translatable="false">pref_volume_up_long_press</string>
