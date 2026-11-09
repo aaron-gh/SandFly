@@ -134,6 +134,8 @@
     <string name="title_gesture_profile">Gesture profile</string>
     <!-- Name of the gesture profile that leaves every gesture as on the Gestures screen, in apps and in scripts. [CHAR LIMIT=NONE] -->
     <string name="gesture_profile_default">Default</string>
+    <!-- A gesture in a gesture profile that runs what it runs without the profile, and the name of that command. [CHAR_LIMIT=NONE] -->
+    <string name="gesture_profile_default_command">Default: <xliff:g id="command" example="Scroll back">%1$s</xliff:g></string>
     <!-- Item in the menu of gesture profiles for the profile in use. [CHAR LIMIT=NONE] -->
     <string name="gesture_profile_menu_item_in_use"><xliff:g id="name" example="Driving">%1$s</xliff:g>, in use</string>
     <!-- Said when a command that changes gesture profile is used before any profile is added. [CHAR LIMIT=NONE] -->
