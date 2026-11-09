@@ -17,6 +17,7 @@
 package com.google.android.accessibility.talkback.actor;
 
 import static android.view.accessibility.AccessibilityNodeInfo.FOCUS_ACCESSIBILITY;
+import static android.view.accessibility.AccessibilityNodeInfo.FOCUS_INPUT;
 import static com.google.android.accessibility.talkback.Feedback.Focus.Action.INITIAL_FOCUS_FIRST_CONTENT;
 import static com.google.android.accessibility.talkback.Feedback.Focus.Action.INITIAL_FOCUS_FOLLOW_INPUT;
 import static com.google.android.accessibility.talkback.Feedback.Focus.Action.INITIAL_FOCUS_RESTORE;
@@ -32,6 +33,7 @@ import com.google.android.accessibility.talkback.CursorGranularityManager;
 import com.google.android.accessibility.talkback.Feedback;
 import com.google.android.accessibility.talkback.Feedback.Focus;
 import com.google.android.accessibility.talkback.Pipeline;
+import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.TouchInteractionMonitor;
 import com.google.android.accessibility.talkback.actor.helper.FocusActorHelper;
 import com.google.android.accessibility.talkback.focusmanagement.AccessibilityFocusMonitor;
@@ -51,6 +53,7 @@ import com.google.android.accessibility.utils.Performance.EventId;
 import com.google.android.accessibility.utils.WebInterfaceUtils;
 import com.google.android.accessibility.utils.input.CursorGranularity;
 import com.google.android.accessibility.utils.input.WindowEventInterpreter;
+import com.google.android.accessibility.utils.monitor.InputModeTracker;
 import com.google.android.accessibility.utils.output.LowLatencyAudio;
 import com.google.android.accessibility.utils.traversal.OrderedTraversalStrategy;
 import com.google.android.accessibility.utils.traversal.TraversalStrategy;
@@ -284,6 +287,11 @@ public class FocusManagerInternal {
       return false;
     }
 
+    // Typing can take focus off the text field, such as when a new line makes the field taller.
+    if (refocusEditField(eventId)) {
+      return true;
+    }
+
     if (!FocusProcessorForScreenStateChange.focusesNewWindows()) {
       // Only replace focus that was lost on this screen, such as when the focused item is removed.
       return focusedSinceScreenChange(state) && requestA11yFocusFromLastFocusRecord(eventId);
@@ -315,6 +323,55 @@ public class FocusManagerInternal {
         toFeedbackPart(INITIAL_FOCUS_FIRST_CONTENT, screenState.getStableScreenState()));
 
     return pipeline.returnFeedback(Feedback.create(eventId, feedbackFailovers));
+  }
+
+  /**
+   * Puts focus back on the text field with input focus when focus was last on a text field in that
+   * window, without speaking it again.
+   *
+   * @return true if accessibility focus was placed on the text field
+   */
+  private boolean refocusEditField(EventId eventId) {
+    @Nullable FocusActionRecord record = history.getLastFocusActionRecord();
+    if (record == null) {
+      return false;
+    }
+    AccessibilityNodeInfoCompat lastFocus = record.getFocusedNode();
+    if (lastFocus == null) {
+      return false;
+    }
+    AccessibilityNodeInfoCompat editField = focusFinder.findFocusCompat(FOCUS_INPUT);
+    if (editField == null || !editField.isEditable() || !editField.isVisibleToUser()) {
+      return false;
+    }
+    boolean wasOnEditField =
+        lastFocus.isEditable() && editField.getWindowId() == lastFocus.getWindowId();
+    // Gboard moves focus to its suggestions during physical typing, and Enter removes them.
+    boolean wasOnKeyboardWhileTyping =
+        isKeyboardInput()
+            && AccessibilityWindowInfoUtils.isImeWindow(
+                AccessibilityNodeInfoUtils.getWindow(lastFocus));
+    if (!wasOnEditField && !wasOnKeyboardWhileTyping) {
+      return false;
+    }
+    LogUtils.d(TAG, "EnsureOnScreen: Focus returns to the text field.");
+    FocusActionInfo focusActionInfo =
+        FocusActionInfo.builder()
+            .setForceMuteFeedback(true)
+            .setSourceAction(FocusActionInfo.ENSURE_ON_SCREEN)
+            .build();
+    return pipeline.returnFeedback(
+        eventId,
+        Focus.builder()
+            .setAction(Focus.Action.FOCUS)
+            .setFocusActionInfo(focusActionInfo)
+            .setTarget(editField));
+  }
+
+  /** Returns whether the last input was from a physical keyboard. */
+  private boolean isKeyboardInput() {
+    return service instanceof TalkBackService talkBack
+        && talkBack.getInputModeTracker().getInputMode() == InputModeTracker.INPUT_MODE_KEYBOARD;
   }
 
   /** Returns whether focus was last placed after the windows changed. */
