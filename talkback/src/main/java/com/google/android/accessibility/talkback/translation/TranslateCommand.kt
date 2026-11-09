@@ -171,14 +171,16 @@ class TranslateCommand(private val service: TalkBackService) {
 
   internal companion object {
     /**
-     * The text typed in [node], or null when [node] isn't a text field, is a password field, or
-     * shows only its hint or nothing.
+     * The text typed in [node], or null when [node] isn't a text field, is a password field, shows
+     * only its hint or nothing, or may include its label. Telling text from a label takes moving
+     * the cursor, which would be spoken and interrupt the translation.
      */
     fun fieldTextToTranslate(node: AccessibilityNodeInfoCompat?): String? {
       if (node == null || node.isPassword) return null
       if (!node.isEditable && Role.getRole(node) != Role.ROLE_EDIT_TEXT) return null
       if (node.isShowingHintText || AccessibilityNodeInfoUtils.isEmptyEditTextRegardlessOfHint(node)) return null
-      return GranularEditing.fieldText(node).trim().ifEmpty { null }
+      if (GranularEditing.mayHaveLabel(node)) return null
+      return node.text?.toString()?.trim()?.ifEmpty { null }
     }
   }
 }

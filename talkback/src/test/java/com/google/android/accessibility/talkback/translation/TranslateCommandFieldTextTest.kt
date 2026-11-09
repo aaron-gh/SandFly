@@ -45,6 +45,18 @@ class TranslateCommandFieldTextTest {
   }
 
   @Test
+  fun commaWithoutMatchingDescriptionKeepsTheWholeText() {
+    assertEquals("Hello, world", TranslateCommand.fieldTextToTranslate(field("Hello, world")))
+  }
+
+  @Test
+  fun textThatMayIncludeItsLabelGivesNothing() {
+    val node = field("Hello, Message")
+    node.contentDescription = "Hello, Message"
+    assertNull(TranslateCommand.fieldTextToTranslate(node))
+  }
+
+  @Test
   fun noNodeOrOtherItemsGiveNothing() {
     assertNull(TranslateCommand.fieldTextToTranslate(null))
     val label = TextView(context).apply { text = "A label" }.createAccessibilityNodeInfo()

@@ -129,11 +129,9 @@ object GranularEditing {
    * text is as long as the furthest the cursor can go, which this finds by moving the cursor, then
    * puts it back.
    */
-  internal fun fieldText(field: AccessibilityNodeInfoCompat): String {
+  private fun fieldText(field: AccessibilityNodeInfoCompat): String {
     val reported = field.text?.toString().orEmpty()
-    val mayHaveLabel =
-      reported.contains(", ") && field.contentDescription?.toString() == reported
-    if (!mayHaveLabel) return reported
+    if (!mayHaveLabel(field)) return reported
     val start = field.textSelectionStart
     val end = field.textSelectionEnd
     if (canPlaceCursor(field, reported.length)) {
@@ -149,6 +147,12 @@ object GranularEditing {
     }
     setSelection(field, start, end)
     return reported.substring(0, low)
+  }
+
+  /** Whether [field]'s reported text may end with its label, as Compose text fields report it. */
+  internal fun mayHaveLabel(field: AccessibilityNodeInfoCompat): Boolean {
+    val reported = field.text?.toString().orEmpty()
+    return reported.contains(", ") && field.contentDescription?.toString() == reported
   }
 
   private fun canPlaceCursor(field: AccessibilityNodeInfoCompat, at: Int): Boolean =
