@@ -38,8 +38,11 @@ object PreviousApp {
   /** Time for the system's overview to open before the second Recents action. */
   private const val RECENTS_INTERVAL_MS = 500L
 
-  /** The longest a read of the recent tasks can take for its result to be acted on. */
-  internal const val READ_LIMIT_MS = 2_000L
+  /**
+   * The longest a read of the recent tasks can take for its result to be acted on. It includes
+   * starting the Shizuku service, which runs anew for each use from an ordinary app.
+   */
+  internal const val READ_LIMIT_MS = 5_000L
 
   /** What to do when the read of the recent tasks ends. */
   internal enum class AfterRead {
