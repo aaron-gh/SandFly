@@ -103,7 +103,11 @@ public final class AccessibilityEventFeedbackUtils {
 
   /** Returns the page index count. */
   public static CharSequence getPagerIndexCount(
-      AccessibilityEvent event, Context context, GlobalVariables globalVariables) {
+      @Nullable AccessibilityEvent event, Context context, GlobalVariables globalVariables) {
+    // Describing the focused node without an event, such as for lift to type.
+    if (event == null) {
+      return "";
+    }
     int fromIndex = event.getFromIndex();
     int itemCount = event.getItemCount();
     if (fromIndex >= 0 && itemCount > 0) {
