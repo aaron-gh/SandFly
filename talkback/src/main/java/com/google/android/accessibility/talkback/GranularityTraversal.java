@@ -26,6 +26,7 @@ import androidx.annotation.Nullable;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.talkback.Pipeline.SyntheticEvent;
 import com.google.android.accessibility.talkback.eventprocessor.ProcessorPhoneticLetters;
+import com.google.android.accessibility.talkback.granularediting.SentenceSegmentIterator;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.FeatureSupport;
 import com.google.android.accessibility.utils.PackageManagerUtils;
@@ -75,6 +76,9 @@ public final class GranularityTraversal {
    */
   private final Map<AccessibilityNodeInfoCompat, Integer> cache = new ConcurrentHashMap<>();
 
+  /** The sentences of the item last moved through by sentence. Dropped with the cursor cache. */
+  @Nullable private SentenceSegmentIterator sentences;
+
   private final CopySelection copySelection;
   private final Context context;
 
@@ -106,6 +110,7 @@ public final class GranularityTraversal {
    */
   void clearAllCursors() {
     cache.clear();
+    sentences = null;
   }
 
   /**
@@ -287,6 +292,79 @@ public final class GranularityTraversal {
     return true;
   }
 
+  /** Returns whether {@code node} is a focused editor whose caret the cursor action can't move. */
+  private static boolean isFocusedEditorOtherThanEditText(AccessibilityNodeInfoCompat node) {
+    return node.isEditable() && node.isFocused() && Role.getRole(node) != Role.ROLE_EDIT_TEXT;
+  }
+
+  /** Returns whether {@code node} can be moved through by sentence. */
+  static boolean supportsSentenceTraversal(AccessibilityNodeInfoCompat node) {
+    return !isFocusedEditorOtherThanEditText(node) && !TextUtils.isEmpty(getTraversedText(node));
+  }
+
+  /**
+   * Keeps {@code position} as the sentence position of {@code node}, whose text has changed, or the
+   * end of the text if the text is now shorter.
+   */
+  void restoreSentencePosition(AccessibilityNodeInfoCompat node, int position) {
+    CharSequence text = getTraversedText(node);
+    setCursorPosition(node, Math.min(position, text == null ? 0 : text.length()));
+  }
+
+  /**
+   * Moves over the next or previous sentence of {@code node}. Android has no sentence movement
+   * granularity, so the text is split here when the item is first moved through by sentence. In a
+   * focused edit text the position is the field's cursor, moved as {@link
+   * #traverseAtLineGranularity} moves it. In any other text the position is kept in the cursor
+   * cache and is lost when focus moves.
+   *
+   * @return {@code true} if there was a sentence to move over.
+   */
+  boolean traverseAtSentenceGranularity(
+      AccessibilityNodeInfoCompat node, boolean forward, EventId eventId) {
+    if (isFocusedEditorOtherThanEditText(node)) {
+      return false;
+    }
+    boolean editing = Role.getRole(node) == Role.ROLE_EDIT_TEXT && node.isFocused();
+    if (editing && (!node.refresh() || node.isShowingHintText())) {
+      return false;
+    }
+    CharSequence text = getTraversedText(node);
+    if (TextUtils.isEmpty(text)) {
+      return false;
+    }
+    if (sentences == null || !sentences.getText().contentEquals(text)) {
+      sentences = new SentenceSegmentIterator(text.toString());
+    }
+    int current =
+        editing
+            ? (forward ? node.getTextSelectionEnd() : node.getTextSelectionStart())
+            : getCursorPosition(node);
+    if (current < 0) {
+      current = forward ? 0 : text.length();
+    }
+    int[] range = forward ? sentences.following(current) : sentences.preceding(current);
+    if (range == null) {
+      return false;
+    }
+    if (editing) {
+      int cursor = forward ? range[1] : range[0];
+      pipelineReturner.ifPresent(
+          feedbackReturner ->
+              feedbackReturner.returnFeedback(
+                  Feedback.create(
+                      eventId,
+                      Feedback.part()
+                          .setEdit(Feedback.edit(node, MOVE_CURSOR).setCursorIndex(cursor).build())
+                          .build())));
+    } else {
+      setAccessibilityCursor(node, range[1], range[0], text.length(), forward);
+    }
+    sendViewTextTraversedAtGranularityEvent(
+        range[0], range[1], forward, text, CursorGranularity.SENTENCE.value, node, eventId);
+    return true;
+  }
+
   /**
    * Moves the cursor of text the framework moves through, a focused edit text or selectable text,
    * over the next or previous word when that word is an emoji, and Backtalk names emoji. The
@@ -402,7 +480,7 @@ public final class GranularityTraversal {
     return contentDescription;
   }
 
-  private int getCursorPosition(AccessibilityNodeInfoCompat node) {
+  int getCursorPosition(AccessibilityNodeInfoCompat node) {
     if (cache.containsKey(node)) {
       return cache.get(node);
     }

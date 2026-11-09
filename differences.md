@@ -602,6 +602,12 @@ Phone numbers come from Android's text classifier, which also finds dates, times
 
 On web pages, the reading control switches to **Actions** automatically only on items that have actions of their own, not on text or for links in it, and switches back on the next item that has none. When **Actions** was chosen automatically and has nothing for the focused item, swiping up or down uses the reading control that it replaced.
 
+### Sentences reading control
+
+With the **Sentences** reading control, swiping down moves to and speaks the next sentence of the focused item and swiping up the previous one, and moving past the first or last sentence moves to the adjacent item. Android has no sentence movement granularity, so SandFly splits the text itself: a sentence ends at sentence punctuation, including Chinese 。！？, and at the end of a line. It isn't in the reading controls by default. To add it, go to **Reading controls**.
+
+In a focused text field, the text cursor moves to the end of the sentence when you swipe down and to the start when you swipe up, and swiping stays in the field. On web pages, a sentence that continues into another item, such as a link in the middle of it, is read in separate parts. **Sentences** is unavailable in selection mode.
+
 ### Double tap with the actions reading control on Android 11
 
 On Android 11, when you picked an action with the **Actions** reading control, a double tap only played a sound. In SandFly, a double tap performs the action, and a double-tap and hold performs a long press.
