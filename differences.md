@@ -115,7 +115,13 @@ SandFly also finds the end of a list that's laid out in reverse, such as a chat,
 
 Some screens are one long page rather than a list, and keep all of their content in the accessibility tree. On these screens, when you swipe past the last item on screen, SandFly scrolls straight to the next screen without the animation, so that the next item is at the top, and searches again immediately. An item that was cut off at the edge of the screen is read rather than scrolled past, as TalkBack's page scroll did.
 
-This requires Android 14 or later. Lists, grids, pagers, and Compose screens still scroll a page at a time, because they create only the items on screen or they animate their scrolling.
+This requires Android 14 or later. Lists, grids, pagers, and Compose screens still scroll a page at a time, because they create only the items on screen or they animate their scrolling. For the exception in lists, see [Swiping past list items taller than the screen](#swiping-past-list-items-taller-than-the-screen).
+
+### Swiping past list items taller than the screen
+
+When a swipe moved past a list item that reaches the edge of the list, such as a long post, the list scrolled a page at a time, and SandFly waited about a second after each page. In a list that offers it, SandFly now shows the next item immediately, so an item of any height takes one step. On a Galaxy S24, swipes past a post ten screens tall in Eltenger went from about 7 seconds to about 0.16 seconds.
+
+This applies to lists with one column whose indexes run down the screen, and whose item has no other controls. SandFly must have seen at least two items of the list on screen before it jumps. Other lists still scroll a page at a time, and SandFly continues once the list has sent no scroll event for 200 ms.
 
 ### Focus that stays where a swipe's scroll put it
 

@@ -1236,6 +1236,9 @@ public class TalkBackService extends AccessibilityServiceCompat
     if (ShizukuClipboard.isReadToast(event)) {
       return;
     }
+    if (event.getEventType() == AccessibilityEvent.TYPE_VIEW_SCROLLED) {
+      FocusProcessorForLogicalNavigation.onScrollEventReceived();
+    }
     if (scriptHost != null) {
       scriptHost.onAccessibilityEvent(event);
     }
