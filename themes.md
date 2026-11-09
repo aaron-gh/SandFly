@@ -175,6 +175,8 @@ play is left out when the theme is installed, and SandFly says so.
 | `loading` | Loading |
 | `browse_mode_on_v4_2` | Browse mode on |
 | `browse_mode_off_v4_2` | Browse mode off |
+| `keyboard_opened` | An on-screen keyboard opens |
+| `keyboard_closed` | An on-screen keyboard closes |
 | `radial_menu` | Circle menu (all eight notes play this one sound) |
 | `display_connected` | Braille display connected |
 | `display_disconnected` | Braille display disconnected |

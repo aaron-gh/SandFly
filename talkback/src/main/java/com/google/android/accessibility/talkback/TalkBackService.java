@@ -167,6 +167,7 @@ import com.google.android.accessibility.talkback.contextmenu.ListMenuManager;
 import com.google.android.accessibility.talkback.controller.TelevisionNavigationController;
 import com.google.android.accessibility.talkback.controlsounds.ControlSoundsSettings;
 import com.google.android.accessibility.talkback.directtouch.DirectTouchController;
+import com.google.android.accessibility.talkback.feedbackpolicy.KeyboardWindowSounds;
 import com.google.android.accessibility.talkback.directtouch.DirectTouchSettings;
 import com.google.android.accessibility.talkback.eventprocessor.AccessibilityEventProcessor;
 import com.google.android.accessibility.talkback.eventprocessor.AccessibilityEventProcessor.TalkBackListener;
@@ -809,6 +810,7 @@ public class TalkBackService extends AccessibilityServiceCompat
   private final InputModeTracker inputModeTracker = new InputModeTracker();
   private WindowEventInterpreter windowEventInterpreter;
   private ScreenFeedbackManager processorScreen;
+  private KeyboardWindowSounds keyboardWindowSounds;
 
   // Values of the "Interrupt speech when typing" setting.
   private static final int INTERRUPT_TYPING_ALWAYS = 0;
@@ -1045,6 +1047,11 @@ public class TalkBackService extends AccessibilityServiceCompat
       gestureController.shutdown();
     }
     AutomaticTranslation.stop();
+
+    if (keyboardWindowSounds != null) {
+      keyboardWindowSounds.shutdown();
+      keyboardWindowSounds = null;
+    }
 
     if (directTouchController != null) {
       directTouchController.shutdown();
@@ -3027,6 +3034,17 @@ public class TalkBackService extends AccessibilityServiceCompat
       windowEventInterpreter.addListener(screenStateMonitor);
       windowEventInterpreter.addListener(uiChangeEventInterpreter);
       windowEventInterpreter.addListener(imageCaptioner);
+      keyboardWindowSounds =
+          new KeyboardWindowSounds(
+              this,
+              soundResId -> {
+                pipeline
+                    .getFeedbackReturner()
+                    .returnFeedback(EVENT_ID_UNTRACKED, Feedback.sound(soundResId));
+                return Unit.INSTANCE;
+              },
+              () -> isServiceActive() && !PauseController.isPaused());
+      windowEventInterpreter.addListener(keyboardWindowSounds);
       directTouchController =
           new DirectTouchController(
               this, prefs, pipeline.getFeedbackReturner(), windowEventInterpreter);
@@ -3950,6 +3968,10 @@ public class TalkBackService extends AccessibilityServiceCompat
     WindowEventInterpreter.setReduceWindowDelay(reduceDelayPref);
     String windowNames = WindowNamesSetting.read(prefs, res);
     ScreenFeedbackManager.setWindowNames(windowNames);
+    ScreenFeedbackManager.setKeyboardShownOrHiddenSpoken(
+        getBooleanPref(
+            R.string.pref_announce_keyboard_shown_hidden_key,
+            R.bool.pref_announce_keyboard_shown_hidden_default));
 
     FocusProcessorForLogicalNavigation.setWrapAround(
         getBooleanPref(R.string.pref_wrap_around_key, R.bool.pref_wrap_around_default));

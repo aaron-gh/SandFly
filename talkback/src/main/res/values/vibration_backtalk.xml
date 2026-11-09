@@ -393,6 +393,86 @@
         <item>60</item><!-- delayMs -->
     </integer-array>
 
+    <!-- On-screen keyboard opened: four fast taps that get stronger. -->
+    <integer-array name="keyboard_opened_pattern">
+        <item>0</item>
+        <item>6</item>
+        <item>30</item>
+        <item>8</item>
+        <item>30</item>
+        <item>10</item>
+        <item>30</item>
+        <item>14</item>
+        <item>-9998</item><!-- AMPLITUDES: ms, amplitude -->
+        <item>6</item>
+        <item>60</item>
+        <item>30</item>
+        <item>0</item>
+        <item>8</item>
+        <item>100</item>
+        <item>30</item>
+        <item>0</item>
+        <item>10</item>
+        <item>140</item>
+        <item>30</item>
+        <item>0</item>
+        <item>14</item>
+        <item>190</item>
+        <item>-9999</item><!-- SENTINEL SEPARATOR -->
+        <item>7</item><!-- TICK -->
+        <item>60</item><!-- scale -->
+        <item>0</item><!-- delayMs -->
+        <item>7</item><!-- TICK -->
+        <item>100</item><!-- scale -->
+        <item>30</item><!-- delayMs -->
+        <item>7</item><!-- TICK -->
+        <item>140</item><!-- scale -->
+        <item>30</item><!-- delayMs -->
+        <item>7</item><!-- TICK -->
+        <item>190</item><!-- scale -->
+        <item>30</item><!-- delayMs -->
+    </integer-array>
+
+    <!-- On-screen keyboard closed: four fast taps that get weaker. -->
+    <integer-array name="keyboard_closed_pattern">
+        <item>0</item>
+        <item>14</item>
+        <item>30</item>
+        <item>10</item>
+        <item>30</item>
+        <item>8</item>
+        <item>30</item>
+        <item>6</item>
+        <item>-9998</item><!-- AMPLITUDES: ms, amplitude -->
+        <item>14</item>
+        <item>190</item>
+        <item>30</item>
+        <item>0</item>
+        <item>10</item>
+        <item>140</item>
+        <item>30</item>
+        <item>0</item>
+        <item>8</item>
+        <item>100</item>
+        <item>30</item>
+        <item>0</item>
+        <item>6</item>
+        <item>60</item>
+        <item>-9999</item><!-- SENTINEL SEPARATOR -->
+        <item>7</item><!-- TICK -->
+        <item>190</item><!-- scale -->
+        <item>0</item><!-- delayMs -->
+        <item>7</item><!-- TICK -->
+        <item>140</item><!-- scale -->
+        <item>30</item><!-- delayMs -->
+        <item>7</item><!-- TICK -->
+        <item>100</item><!-- scale -->
+        <item>30</item><!-- delayMs -->
+        <item>7</item><!-- TICK -->
+        <item>60</item><!-- scale -->
+        <item>30</item><!-- delayMs -->
+    </integer-array>
+
     <!-- Circle menu opened with 1 item: a swell, then one tick for each item. -->
     <integer-array name="radial_menu_1_pattern">
         <item>0</item>

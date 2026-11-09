@@ -129,6 +129,10 @@
         android:defaultValue="@bool/pref_announce_full_charge_default"
         android:key="@string/pref_announce_full_charge_key"
         android:title="@string/title_pref_announce_full_charge" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="@bool/pref_announce_keyboard_shown_hidden_default"
+        android:key="@string/pref_announce_keyboard_shown_hidden_key"
+        android:title="@string/title_pref_announce_keyboard_shown_hidden" />
     <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
         android:key="pref_screen_announcements"
         android:summary="@string/summary_pref_screen_announcements"
