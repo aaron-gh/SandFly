@@ -531,6 +531,28 @@ public class DirectionNavigationActor implements UserInputEventListener {
       pivot = AccessibilityServiceCompatUtils.getRootInActiveWindow(service);
     }
 
+    // Outside web content, these targets are found among the window's nodes.
+    if (NavigationTarget.isWebOnlyTarget(targetType)
+        && !WebInterfaceUtils.supportsWebActions(pivot)) {
+      boolean moved =
+          sendNavigationAction(
+              new NavigationAction.Builder()
+                  .setAction(NavigationAction.DIRECTIONAL_NAVIGATION)
+                  .setDirection(direction)
+                  .setTarget(targetType)
+                  .setShouldScroll(true)
+                  .setUseInputFocusAsPivotIfEmpty(true)
+                  .setInputMode(inputMode)
+                  .setOriginalNavigationGranularity(
+                      NavigationTarget.targetTypeToGranularity(targetType))
+                  .build(),
+              eventId);
+      if (moved) {
+        analytics.onMoveWithGranularity(NavigationTarget.targetTypeToGranularity(targetType));
+      }
+      return moved;
+    }
+
     boolean result = pipeline.returnFeedback(eventId, Feedback.webDirectionHtml(pivot, action));
 
     if (result) {

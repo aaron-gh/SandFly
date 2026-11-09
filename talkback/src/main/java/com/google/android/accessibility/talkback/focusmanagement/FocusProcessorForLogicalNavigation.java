@@ -524,7 +524,12 @@ public class FocusProcessorForLogicalNavigation {
     if (!result && tableNavigation.canScroll(scrollAction)) {
       NavigationAction actionForScroll =
           NavigationAction.Builder.copy(tableNavigation.getNavigationAction())
-              .setShouldScroll(false) // Sets to false to avoid scrolling again.
+              // Sets to false to avoid scrolling again, except for the far end of a table, which
+              // can be more than one scroll away.
+              .setShouldScroll(
+                  tableNavigation.movesToBoundary()
+                      && shouldKeepSearch(tableNavigation.getNavigationAction()))
+              .setAutoScrollAttempt(tableNavigation.getNavigationAction().autoScrollAttempt + 1)
               .build();
       AutoScrollSuccessChecker autoScrollChecker =
           createAutoScrollCheckerIfNeeded(
@@ -599,10 +604,18 @@ public class FocusProcessorForLogicalNavigation {
       return navigateToWindowTarget(pivot, navigationAction, eventId);
     } else if (NavigationTarget.supportsTableNavigation(navigationAction.targetType)) {
       return navigateToTableTarget(pivot, navigationAction, eventId);
-    } else if (NavigationTarget.isWebOnlyTarget(navigationAction.targetType)) {
+    } else if (NavigationTarget.isWebOnlyTarget(navigationAction.targetType)
+        && WebInterfaceUtils.supportsWebActions(pivot)) {
       return navigateToHtmlTarget(pivot, navigationAction, eventId);
     } else if (navigationAction.targetType == NavigationTarget.TARGET_SEARCH) {
       return navigateToScreenSearchTarget(pivot, navigationAction, eventId);
+    } else if (navigationAction.targetType == NavigationTarget.TARGET_HTML_ELEMENT_VISITED_LINK) {
+      // Apps have no visited links, so scrolling could not bring one on screen.
+      return navigateToDefaultOrMacroGranularityTarget(
+          pivot,
+          ignoreDescendantsOfPivot,
+          NavigationAction.Builder.copy(navigationAction).setShouldScroll(false).build(),
+          eventId);
     } else {
       return navigateToDefaultOrMacroGranularityTarget(
           pivot, ignoreDescendantsOfPivot, navigationAction, eventId);
@@ -880,7 +893,11 @@ public class FocusProcessorForLogicalNavigation {
     @Nullable AccessibilityNodeInfoCompat root = AccessibilityNodeInfoUtils.getRoot(start);
 
     // Find current container, searching up from current-focus.
-    @Nullable AccessibilityNodeInfoCompat containerOld = currentContainer(start);
+    Filter<AccessibilityNodeInfoCompat> containerFilter =
+        NavigationTarget.createContainerFilter(navigationAction.targetType);
+    // Moving by list, table or landmark skips items outside any of them.
+    boolean containerRequired = NavigationTarget.isWebOnlyTarget(navigationAction.targetType);
+    @Nullable AccessibilityNodeInfoCompat containerOld = currentContainer(start, containerFilter);
     LogUtils.v(
         TAG,
         "FocusProcessorForLogicalNavigation.findContainerTarget() containerOld=%s",
@@ -895,18 +912,23 @@ public class FocusProcessorForLogicalNavigation {
             start,
             direction,
             Filter.node(
-                n ->
-                    !Objects.equals(containerOld, currentContainer(n))
-                        && AccessibilityNodeInfoUtils.shouldFocusNode(
-                            n, traversalStrategy.getSpeakingNodesCache())));
+                n -> {
+                  @Nullable
+                  AccessibilityNodeInfoCompat container = currentContainer(n, containerFilter);
+                  return (container != null || !containerRequired)
+                      && !Objects.equals(containerOld, container)
+                      && AccessibilityNodeInfoUtils.shouldFocusNode(
+                          n, traversalStrategy.getSpeakingNodesCache());
+                }));
     // SandFly: the previous container is entered at its start, as the next one is, rather than at
     // its last item.
     // Web content keeps the old landing; stepping through a whole page would take long.
     if (target != null
         && direction == TraversalStrategy.SEARCH_FOCUS_BACKWARD
-        && navigationAction.targetType == TARGET_CONTAINER
+        && NavigationTarget.isContainerTarget(navigationAction.targetType)
         && !WebInterfaceUtils.supportsWebActions(target)) {
-      @Nullable AccessibilityNodeInfoCompat containerNew = currentContainer(target);
+      @Nullable
+      AccessibilityNodeInfoCompat containerNew = currentContainer(target, containerFilter);
       for (int step = 0; step < MAX_CONTAINER_START_STEPS; step++) {
         @Nullable AccessibilityNodeInfoCompat previous =
             TraversalStrategyUtils.searchFocus(
@@ -917,7 +939,8 @@ public class FocusProcessorForLogicalNavigation {
                     n ->
                         AccessibilityNodeInfoUtils.shouldFocusNode(
                             n, traversalStrategy.getSpeakingNodesCache())));
-        if (previous == null || !Objects.equals(containerNew, currentContainer(previous))) {
+        if (previous == null
+            || !Objects.equals(containerNew, currentContainer(previous, containerFilter))) {
           break;
         }
         target = previous;
@@ -926,20 +949,21 @@ public class FocusProcessorForLogicalNavigation {
     LogUtils.v(
         TAG,
         "FocusProcessorForLogicalNavigation.findContainerTarget() target container=%s",
-        currentContainer(target));
+        currentContainer(target, containerFilter));
     return target;
   }
 
   /** Finds current container (list/grid/pager/recycler/scrollable/containerTitle...) */
   private @Nullable AccessibilityNodeInfoCompat currentContainer(
-      @Nullable AccessibilityNodeInfoCompat start) {
+      @Nullable AccessibilityNodeInfoCompat start,
+      Filter<AccessibilityNodeInfoCompat> containerFilter) {
     if (start == null) {
       return null;
     }
 
     // Search up from start-node.
     @Nullable AccessibilityNodeInfoCompat container =
-        AccessibilityNodeInfoUtils.getSelfOrMatchingAncestor(start, FILTER_CONTAINER);
+        AccessibilityNodeInfoUtils.getSelfOrMatchingAncestor(start, containerFilter);
     // SandFly: a bar inside a bar, such as a search bar in a toolbar, is one stop: the outer bar.
     if (container != null && AccessibilityNodeInfoUtils.FILTER_BAR.accept(container)) {
       @Nullable AccessibilityNodeInfoCompat outer =
@@ -1645,7 +1669,7 @@ public class FocusProcessorForLogicalNavigation {
               ? findTargetOutsideWebView(pivot, navigationAction, nodeFilter, traversalStrategy)
               : findTargetFromWebElement(
                   pivot, navigationAction, nodeFilter, traversalStrategy, eventId);
-    } else if (navigationAction.targetType == TARGET_CONTAINER) {
+    } else if (NavigationTarget.isContainerTarget(navigationAction.targetType)) {
       navigationResult = NavigationResult.create(findContainerTarget(pivot, navigationAction));
     } else {
       int linkIndex = getLinkIndexFromPivot(pivot, navigationAction);
@@ -2018,7 +2042,9 @@ public class FocusProcessorForLogicalNavigation {
   }
 
   private boolean supportClickableLinks(int targetType) {
-    return globalVariables.supportClickableLinks() && targetType == NavigationTarget.TARGET_LINK;
+    return globalVariables.supportClickableLinks()
+        && (targetType == NavigationTarget.TARGET_LINK
+            || targetType == NavigationTarget.TARGET_HTML_ELEMENT_UNVISITED_LINK);
   }
 
   /**
@@ -3498,10 +3524,12 @@ public class FocusProcessorForLogicalNavigation {
     AccessibilityNodeInfoCompat nodeToFocus;
     if (nodeFilter.accept(refNode) && !refNode.isAccessibilityFocused()) {
       nodeToFocus = refNode;
-    } else if (sourceAction.targetType == TARGET_CONTAINER) {
+    } else if (NavigationTarget.isContainerTarget(sourceAction.targetType)) {
       nodeToFocus = findContainerTarget(refNode, sourceAction);
 
-      if (currentContainer(nodeToFocus) == null) {
+      if (currentContainer(
+              nodeToFocus, NavigationTarget.createContainerFilter(sourceAction.targetType))
+          == null) {
         announceNativeElement(logicalDirection, navigationAction.targetType, eventId);
       }
     } else {

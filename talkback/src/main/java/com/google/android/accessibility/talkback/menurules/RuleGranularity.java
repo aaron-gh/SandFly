@@ -44,7 +44,6 @@ import com.google.android.accessibility.talkback.selector.SelectorController;
 import com.google.android.accessibility.utils.FeatureSupport;
 import com.google.android.accessibility.utils.Performance.EventId;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
-import com.google.android.accessibility.utils.WebInterfaceUtils;
 import com.google.android.accessibility.utils.input.CursorGranularity;
 import java.util.ArrayList;
 import java.util.List;
@@ -236,14 +235,8 @@ public class RuleGranularity extends NodeMenuRule {
   public List<ContextMenuItem> getMenuItemsForNode(
       Context context, AccessibilityNodeInfoCompat node, boolean includeAncestors) {
     final List<ContextMenuItem> items = new ArrayList<>();
-    final boolean hasWebContent = WebInterfaceUtils.hasNavigableWebContent(node);
-
     for (CursorGranularity granularity : CursorGranularity.values()) {
       if (!isShowItemByGranularity(context, granularity, actorState)) {
-        continue;
-      }
-
-      if (granularity.isWebOnlyGranularity() && !hasWebContent) {
         continue;
       }
 

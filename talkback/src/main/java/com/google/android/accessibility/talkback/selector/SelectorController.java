@@ -150,13 +150,12 @@ import org.checkerframework.checker.nullness.qual.Nullable;
 public class SelectorController implements UserInputEventListener {
 
   /** The type of granularity. */
-  @IntDef({GRANULARITY_FOR_ALL_NODE, GRANULARITY_FOR_NATIVE_NODE, GRANULARITY_FOR_WEB_NODE})
+  @IntDef({GRANULARITY_FOR_ALL_NODE, GRANULARITY_FOR_NATIVE_NODE})
   public @interface GranularityType {}
 
   private static final String TAG = "SelectorController";
   private static final int GRANULARITY_FOR_ALL_NODE = 0;
   @VisibleForTesting static final int GRANULARITY_FOR_NATIVE_NODE = 1;
-  @VisibleForTesting static final int GRANULARITY_FOR_WEB_NODE = 2;
 
   /** The current action id selected for the actions setting. */
   private ContextMenuItemId currentActionId;
@@ -582,50 +581,50 @@ public class SelectorController implements UserInputEventListener {
     WEB_LANDMARKS(
         Setting.GRANULARITY_WEB_LANDMARKS,
         CursorGranularity.WEB_LANDMARK,
-        GRANULARITY_FOR_WEB_NODE),
+        GRANULARITY_FOR_ALL_NODE),
     WEB_BUTTONS(
-        Setting.GRANULARITY_WEB_BUTTONS, CursorGranularity.WEB_BUTTON, GRANULARITY_FOR_WEB_NODE),
+        Setting.GRANULARITY_WEB_BUTTONS, CursorGranularity.WEB_BUTTON, GRANULARITY_FOR_ALL_NODE),
     WEB_CHECKBOXES(
         Setting.GRANULARITY_WEB_CHECKBOXES,
         CursorGranularity.WEB_CHECKBOX,
-        GRANULARITY_FOR_WEB_NODE),
+        GRANULARITY_FOR_ALL_NODE),
     WEB_EDITFIELDS(
         Setting.GRANULARITY_WEB_EDITFIELDS,
         CursorGranularity.WEB_EDITFIELD,
-        GRANULARITY_FOR_WEB_NODE),
+        GRANULARITY_FOR_ALL_NODE),
     WEB_FOCUSABLES(
         Setting.GRANULARITY_WEB_FOCUSABLES,
         CursorGranularity.WEB_FOCUSABLE,
-        GRANULARITY_FOR_WEB_NODE),
-    WEB_H1(Setting.GRANULARITY_WEB_H1, CursorGranularity.WEB_H1, GRANULARITY_FOR_WEB_NODE),
-    WEB_H2(Setting.GRANULARITY_WEB_H2, CursorGranularity.WEB_H2, GRANULARITY_FOR_WEB_NODE),
-    WEB_H3(Setting.GRANULARITY_WEB_H3, CursorGranularity.WEB_H3, GRANULARITY_FOR_WEB_NODE),
-    WEB_H4(Setting.GRANULARITY_WEB_H4, CursorGranularity.WEB_H4, GRANULARITY_FOR_WEB_NODE),
-    WEB_H5(Setting.GRANULARITY_WEB_H5, CursorGranularity.WEB_H5, GRANULARITY_FOR_WEB_NODE),
-    WEB_H6(Setting.GRANULARITY_WEB_H6, CursorGranularity.WEB_H6, GRANULARITY_FOR_WEB_NODE),
+        GRANULARITY_FOR_ALL_NODE),
+    WEB_H1(Setting.GRANULARITY_WEB_H1, CursorGranularity.WEB_H1, GRANULARITY_FOR_ALL_NODE),
+    WEB_H2(Setting.GRANULARITY_WEB_H2, CursorGranularity.WEB_H2, GRANULARITY_FOR_ALL_NODE),
+    WEB_H3(Setting.GRANULARITY_WEB_H3, CursorGranularity.WEB_H3, GRANULARITY_FOR_ALL_NODE),
+    WEB_H4(Setting.GRANULARITY_WEB_H4, CursorGranularity.WEB_H4, GRANULARITY_FOR_ALL_NODE),
+    WEB_H5(Setting.GRANULARITY_WEB_H5, CursorGranularity.WEB_H5, GRANULARITY_FOR_ALL_NODE),
+    WEB_H6(Setting.GRANULARITY_WEB_H6, CursorGranularity.WEB_H6, GRANULARITY_FOR_ALL_NODE),
     WEB_GRAPHICS(
-        Setting.GRANULARITY_WEB_GRAPHICS, CursorGranularity.WEB_GRAPHIC, GRANULARITY_FOR_WEB_NODE),
-    WEB_LISTS(Setting.GRANULARITY_WEB_LISTS, CursorGranularity.WEB_LIST, GRANULARITY_FOR_WEB_NODE),
+        Setting.GRANULARITY_WEB_GRAPHICS, CursorGranularity.WEB_GRAPHIC, GRANULARITY_FOR_ALL_NODE),
+    WEB_LISTS(Setting.GRANULARITY_WEB_LISTS, CursorGranularity.WEB_LIST, GRANULARITY_FOR_ALL_NODE),
     WEB_LISTITEMS(
         Setting.GRANULARITY_WEB_LISTITEMS,
         CursorGranularity.WEB_LISTITEM,
-        GRANULARITY_FOR_WEB_NODE),
+        GRANULARITY_FOR_ALL_NODE),
     WEB_TABLES(
-        Setting.GRANULARITY_WEB_TABLES, CursorGranularity.WEB_TABLE, GRANULARITY_FOR_WEB_NODE),
+        Setting.GRANULARITY_WEB_TABLES, CursorGranularity.WEB_TABLE, GRANULARITY_FOR_ALL_NODE),
     WEB_COMBOBOXES(
         Setting.GRANULARITY_WEB_COMBOBOXES,
         CursorGranularity.WEB_COMBOBOX,
-        GRANULARITY_FOR_WEB_NODE),
+        GRANULARITY_FOR_ALL_NODE),
     WEB_VISITED_LINKS(
         Setting.GRANULARITY_WEB_VISITED_LINKS,
         CursorGranularity.WEB_VISITED_LINK,
-        GRANULARITY_FOR_WEB_NODE),
+        GRANULARITY_FOR_ALL_NODE),
     WEB_UNVISITED_LINKS(
         Setting.GRANULARITY_WEB_UNVISITED_LINKS,
         CursorGranularity.WEB_UNVISITED_LINK,
-        GRANULARITY_FOR_WEB_NODE),
+        GRANULARITY_FOR_ALL_NODE),
     WEB_RADIOS(
-        Setting.GRANULARITY_WEB_RADIOS, CursorGranularity.WEB_RADIO, GRANULARITY_FOR_WEB_NODE);
+        Setting.GRANULARITY_WEB_RADIOS, CursorGranularity.WEB_RADIO, GRANULARITY_FOR_ALL_NODE);
 
     final Setting setting;
     final CursorGranularity cursorGranularity;
@@ -691,12 +690,7 @@ public class SelectorController implements UserInputEventListener {
       }
 
       boolean isWebContent = actorState.getDirectionNavigation().hasNavigableWebContent();
-      if ((granularity.granularityType == GRANULARITY_FOR_NATIVE_NODE && !isWebContent)
-          || (granularity.granularityType == GRANULARITY_FOR_WEB_NODE && isWebContent)) {
-        return true;
-      }
-
-      return false;
+      return granularity.granularityType == GRANULARITY_FOR_NATIVE_NODE && !isWebContent;
     }
   }
 
@@ -2022,10 +2016,7 @@ public class SelectorController implements UserInputEventListener {
           GRANULARITY_WEB_VISITED_LINKS,
           GRANULARITY_WEB_UNVISITED_LINKS,
           GRANULARITY_WEB_RADIOS -> {
-        if (node == null) {
-          node = accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ false);
-        }
-        return WebInterfaceUtils.hasNavigableWebContent(node);
+        return true;
       }
       case ADJUSTABLE_WIDGET -> {
         Optional<ContextualSetting> adjustableWidget = findContextualSetting(ADJUSTABLE_WIDGET);
@@ -2494,11 +2485,6 @@ public class SelectorController implements UserInputEventListener {
       text =
           context.getString(
               R.string.native_granularity_not_supported,
-              context.getString(granularity.cursorGranularity.resourceId));
-    } else if (granularity.granularityType == GRANULARITY_FOR_WEB_NODE) {
-      text =
-          context.getString(
-              R.string.web_granularity_not_supported,
               context.getString(granularity.cursorGranularity.resourceId));
     }
     if (!TextUtils.isEmpty(text)) {

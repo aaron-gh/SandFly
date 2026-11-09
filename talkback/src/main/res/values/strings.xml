@@ -1391,7 +1391,7 @@
     <!-- Keyboard key combination assignment for show the keyboard shortcuts dialog. [CHAR LIMIT=60] -->
     <string name="keycombo_menu_other_show_keyboard_shortcuts_dialog">Show keyboard shortcuts list</string>
     <!-- Web navigation actions group name title [CHAR LIMIT=40] -->
-    <string name="keycombo_menu_category_web">Web navigation actions</string>
+    <string name="keycombo_menu_category_web">Element navigation actions</string>
     <!-- Keyboard shortcut text representation for reading current web page URL. [CHAR LIMIT=40] -->
     <string name="keycombo_menu_other_read_current_url">Speak page URL</string>
     <!-- Keyboard shortcut text representation for reading link URL in currently node. [CHAR LIMIT=40] -->
@@ -2558,7 +2558,7 @@
     <!-- Others group name title [CHAR LIMIT=40] -->
     <string name="context_menu_category_others">Other</string>
     <!-- Web navigation options group name title [CHAR LIMIT=40] -->
-    <string name="menu_category_web_navigation">Web navigation</string>
+    <string name="menu_category_web_navigation">Element navigation</string>
     <!-- Basic navigation options group name title [CHAR LIMIT=40] -->
     <string name="menu_category_basic_navigation">Basic navigation</string>
 
@@ -2625,43 +2625,43 @@
     <!-- Summary for the navigation options menu or quick menu containing links. [CHAR_LIMIT=100] -->
     <string name="summary_links">Jump between links</string>
     <!-- Summary for the navigation options menu or quick menu containing landmarks. [CHAR_LIMIT=NONE] -->
-    <string name="summary_landmarks">Jump between landmarks on web pages, like \"main\" or \"navigation\"</string>
+    <string name="summary_landmarks">Jump between landmarks, like \"main\" or \"navigation\"</string>
     <!-- Summary for the navigation options menu or quick menu containing buttons. [CHAR_LIMIT=NONE] -->
-    <string name="summary_buttons">Jump between buttons on web pages</string>
+    <string name="summary_buttons">Jump between buttons</string>
     <!-- Summary for the navigation options menu or quick menu containing checkboxes. [CHAR_LIMIT=NONE] -->
-    <string name="summary_checkboxes">Jump between checkboxes on web pages</string>
+    <string name="summary_checkboxes">Jump between checkboxes</string>
     <!-- Summary for the navigation options menu or quick menu containing edit fields. [CHAR_LIMIT=NONE] -->
-    <string name="summary_editfields">Jump between edit fields on web pages</string>
+    <string name="summary_editfields">Jump between edit fields</string>
     <!-- Summary for the navigation options menu or quick menu containing focusable items. [CHAR_LIMIT=NONE] -->
-    <string name="summary_focusables">Jump between focusable items on web pages</string>
+    <string name="summary_focusables">Jump between focusable items</string>
     <!-- Summary for the navigation options menu or quick menu containing heading 1. [CHAR_LIMIT=NONE] -->
-    <string name="summary_h1">Jump between heading 1 on web pages</string>
+    <string name="summary_h1">Jump between heading 1</string>
     <!-- Summary for the navigation options menu or quick menu containing heading 2. [CHAR_LIMIT=NONE] -->
-    <string name="summary_h2">Jump between heading 2 on web pages</string>
+    <string name="summary_h2">Jump between heading 2</string>
     <!-- Summary for the navigation options menu or quick menu containing heading 3. [CHAR_LIMIT=NONE] -->
-    <string name="summary_h3">Jump between heading 3 on web pages</string>
+    <string name="summary_h3">Jump between heading 3</string>
     <!-- Summary for the navigation options menu or quick menu containing heading 4. [CHAR_LIMIT=NONE] -->
-    <string name="summary_h4">Jump between heading 4 on web pages</string>
+    <string name="summary_h4">Jump between heading 4</string>
     <!-- Summary for the navigation options menu or quick menu containing heading 5. [CHAR_LIMIT=NONE] -->
-    <string name="summary_h5">Jump between heading 5 on web pages</string>
+    <string name="summary_h5">Jump between heading 5</string>
     <!-- Summary for the navigation options menu or quick menu containing heading 6. [CHAR_LIMIT=NONE] -->
-    <string name="summary_h6">Jump between heading 6 on web pages</string>
+    <string name="summary_h6">Jump between heading 6</string>
     <!-- Summary for the navigation options menu or quick menu containing graphics. [CHAR_LIMIT=NONE] -->
-    <string name="summary_graphics">Jump between images and videos on web pages</string>
+    <string name="summary_graphics">Jump between images and videos</string>
     <!-- Summary for the navigation options menu or quick menu containing list items. [CHAR_LIMIT=NONE] -->
-    <string name="summary_listitems">Jump between list items on web pages</string>
+    <string name="summary_listitems">Jump between list items</string>
     <!-- Summary for the navigation options menu or quick menu containing lists. [CHAR_LIMIT=NONE] -->
-    <string name="summary_lists">Jump between lists on web pages</string>
+    <string name="summary_lists">Jump between lists</string>
     <!-- Summary for the navigation options menu or quick menu containing tables. [CHAR_LIMIT=NONE] -->
-    <string name="summary_tables">Jump between tables on web pages</string>
+    <string name="summary_tables">Jump between tables</string>
     <!-- Summary for the navigation options menu or quick menu containing combo boxes. [CHAR_LIMIT=NONE] -->
-    <string name="summary_comboboxes">Jump between combo boxes, like dropdown menus, on web pages</string>
+    <string name="summary_comboboxes">Jump between combo boxes, like dropdown menus</string>
     <!-- Summary for the navigation options menu or quick menu containing visited links. [CHAR_LIMIT=NONE] -->
     <string name="summary_visited_links">Jump between links you\'ve previously opened on web pages</string>
     <!-- Summary for the navigation options menu or quick menu containing unvisited links. [CHAR_LIMIT=NONE] -->
-    <string name="summary_unvisited_links">Jump between links you haven\'t opened on web pages</string>
+    <string name="summary_unvisited_links">Jump between links you haven\'t opened</string>
     <!-- Summary for the navigation options menu or quick menu containing radios. [CHAR_LIMIT=NONE] -->
-    <string name="summary_radios">Jump between radio buttons on web pages</string>
+    <string name="summary_radios">Jump between radio buttons</string>
     <!-- Summary for the navigation options menu containing screen search result. [CHAR_LIMIT=200] -->
     <string name="summary_search">Jump to other screen search results</string>
     <!-- Summary for the navigation options menu containing row and column result. [CHAR_LIMIT=200] -->
@@ -3356,8 +3356,6 @@
     <!-- Spoken description when the user navigates forwards with screen search granularity and there is no more items. -->
     <string name="search_end_of_page">No next result on this page</string>
 
-    <!-- Announce that selected web granularity is not supported on the current view.  [CHAR LIMIT=NONE] -->
-    <string name="web_granularity_not_supported"><xliff:g name="granularity" example="heading">%1$s</xliff:g> only supported on web pages</string>
     <!-- Announce that selected native granularity is not supported on the current view.  [CHAR LIMIT=NONE] -->
     <string name="native_granularity_not_supported"><xliff:g name="granularity" example="heading">%1$s</xliff:g> only supported on native pages</string>
 

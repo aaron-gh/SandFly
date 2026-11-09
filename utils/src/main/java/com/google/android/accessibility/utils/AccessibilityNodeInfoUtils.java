@@ -357,7 +357,7 @@ public class AccessibilityNodeInfoUtils {
       FILTER_SCROLLABLE.and(Filter.node((n) -> Role.getRole(n) == Role.ROLE_GRID));
 
   /** Filter for table. */
-  private static final Filter<AccessibilityNodeInfoCompat> FILTER_TABLE =
+  public static final Filter<AccessibilityNodeInfoCompat> FILTER_TABLE =
       Filter.node((node) -> isTableRoot(node));
 
   /** Filter for table cell. */

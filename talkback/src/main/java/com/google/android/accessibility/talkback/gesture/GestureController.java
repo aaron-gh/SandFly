@@ -398,7 +398,6 @@ public class GestureController {
     } else if (NavigationGestureActions.isAction(action)) {
       result =
           NavigationGestureActions.perform(
-              service,
               action,
               pipeline,
               actorState.getDirectionNavigation().hasNavigableWebContent(),
