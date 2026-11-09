@@ -73,6 +73,14 @@ class NativeElementNavigationTest {
   }
 
   @Test
+  fun graphicTargetFindsImagesButNotImageButtons() {
+    val target = NavigationTarget.TARGET_HTML_ELEMENT_GRAPHIC
+    assertTrue(accepts(target, node("android.widget.ImageView")))
+    assertTrue(accepts(target, node("android.widget.ImageView") { isClickable = true }))
+    assertFalse(accepts(target, node("android.widget.ImageButton") { isClickable = true }))
+  }
+
+  @Test
   fun everyHeadingLevelFindsHeadings() {
     val heading = node("android.widget.TextView") { isHeading = true }
     for (

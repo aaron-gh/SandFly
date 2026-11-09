@@ -389,8 +389,17 @@ public final class NavigationTarget {
           additionalCheckFilter = controlRoleFilter(Role.ROLE_EDIT_TEXT);
       case TARGET_HTML_ELEMENT_COMBOBOX ->
           additionalCheckFilter = controlRoleFilter(Role.ROLE_DROP_DOWN_LIST);
+      // Android gives clickable images the image button role, so buttons are told apart by class.
       case TARGET_HTML_ELEMENT_GRAPHIC ->
-          additionalCheckFilter = controlRoleFilter(Role.ROLE_IMAGE);
+          additionalCheckFilter =
+              AccessibilityNodeInfoUtils.getFilterIncludingChildren(
+                  Filter.node(
+                      n -> {
+                        int role = Role.getRole(n);
+                        return role == Role.ROLE_IMAGE
+                            || (role == Role.ROLE_IMAGE_BUTTON
+                                && !"android.widget.ImageButton".contentEquals(n.getClassName()));
+                      }));
       case TARGET_HTML_ELEMENT_FOCUSABLE_ITEM ->
           additionalCheckFilter = Filter.node(AccessibilityNodeInfoCompat::isFocusable);
       case TARGET_HTML_ELEMENT_LIST_ITEM ->
