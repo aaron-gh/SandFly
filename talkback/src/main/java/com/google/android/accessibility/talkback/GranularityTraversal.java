@@ -427,19 +427,32 @@ public final class GranularityTraversal {
   }
 
   private CharSequence describeChange(CopySelection.Change change) {
+    return describeChange(change.selected, change.deselected);
+  }
+
+  private CharSequence describeChange(CharSequence selectedText, CharSequence deselectedText) {
     CharSequence deselected =
-        TextUtils.isEmpty(change.deselected)
+        TextUtils.isEmpty(deselectedText)
             ? ""
             : SpannableUtils.getSpannedFormattedString(
                 context.getString(R.string.template_text_unselected),
-                CompositorUtils.refineInputText(context, change.deselected));
+                CompositorUtils.refineInputText(context, deselectedText));
     CharSequence selected =
-        TextUtils.isEmpty(change.selected)
+        TextUtils.isEmpty(selectedText)
             ? ""
             : SpannableUtils.getSpannedFormattedString(
                 context.getString(R.string.template_text_selected),
-                CompositorUtils.refineInputText(context, change.selected));
+                CompositorUtils.refineInputText(context, selectedText));
     return CompositorUtils.joinCharSequences(deselected, selected);
+  }
+
+  /** Says what copying mode selected and deselected, for a change not made by moving a cursor. */
+  void announceCopyChange(CharSequence selected, CharSequence deselected) {
+    if (pipelineReceiver.isPresent()) {
+      pipelineReceiver
+          .get()
+          .input(SyntheticEvent.Type.TEXT_TRAVERSAL, describeChange(selected, deselected));
+    }
   }
 
   /**

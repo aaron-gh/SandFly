@@ -185,6 +185,50 @@ public final class CopySelection {
     return result;
   }
 
+  /** Whether all the text of {@code items} is selected in the open part. */
+  public boolean isAllSelected(
+      List<AccessibilityNodeInfoCompat> items, List<CharSequence> itemTexts) {
+    for (int i = 0; i < items.size(); i++) {
+      CharSequence text = itemTexts.get(i);
+      if (text == null || text.length() == 0 || items.get(i).isPassword()) {
+        continue;
+      }
+      if (!hasWholeRange(items.get(i), text)) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  private boolean hasWholeRange(AccessibilityNodeInfoCompat item, CharSequence text) {
+    for (Range range : ranges) {
+      if (range.node.equals(item) && range.start() == 0 && range.end() == text.length()) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  /**
+   * Removes the ranges in {@code items} from the open part.
+   *
+   * @return the text no longer selected, which is empty if there is none.
+   */
+  public CharSequence deselectAll(List<AccessibilityNodeInfoCompat> items) {
+    SpannableStringBuilder result = new SpannableStringBuilder();
+    for (Range range : new ArrayList<>(ranges)) {
+      if (!items.contains(range.node)) {
+        continue;
+      }
+      ranges.remove(range);
+      if (range == current) {
+        current = null;
+      }
+      appendLine(result, trim(range.selected()));
+    }
+    return result;
+  }
+
   private int openLength() {
     int total = 0;
     for (Range range : ranges) {
