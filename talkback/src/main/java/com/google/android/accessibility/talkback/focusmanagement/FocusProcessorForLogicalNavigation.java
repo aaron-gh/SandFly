@@ -1920,6 +1920,18 @@ public class FocusProcessorForLogicalNavigation {
   }
 
   /**
+   * Returns whether {@code node} is a WebView that navigation goes into. Moving by element first
+   * finds what comes before a WebView that is still off screen.
+   */
+  private static boolean isWebViewToEnter(
+      AccessibilityNodeInfoCompat node, NavigationAction navigationAction) {
+    return Role.getRole(node) == Role.ROLE_WEB_VIEW
+        && WebInterfaceUtils.supportsWebActions(node)
+        && (navigationAction.targetType == NavigationTarget.TARGET_DEFAULT
+            || AccessibilityNodeInfoUtils.isVisible(node));
+  }
+
+  /**
    * If the pivot is native view, searches for the middlePivot node first and then determines to
    * navigate to native or web element.
    */
@@ -1934,8 +1946,7 @@ public class FocusProcessorForLogicalNavigation {
         new Filter<AccessibilityNodeInfoCompat>() {
           @Override
           public boolean accept(AccessibilityNodeInfoCompat node) {
-            return (Role.getRole(node) == Role.ROLE_WEB_VIEW)
-                && WebInterfaceUtils.supportsWebActions(node);
+            return isWebViewToEnter(node, navigationAction);
           }
         }.or(nodeFilter);
 
@@ -2327,8 +2338,7 @@ public class FocusProcessorForLogicalNavigation {
         new Filter<AccessibilityNodeInfoCompat>() {
           @Override
           public boolean accept(AccessibilityNodeInfoCompat node) {
-            return (Role.getRole(node) == Role.ROLE_WEB_VIEW)
-                && WebInterfaceUtils.supportsWebActions(node);
+            return isWebViewToEnter(node, navigationAction);
           }
         }.or(nodeFilter);
 
@@ -3022,6 +3032,8 @@ public class FocusProcessorForLogicalNavigation {
     if (!BuildVersionUtils.isAtLeastU()
         || !navigationAction.shouldScroll
         || navigationAction.actionType != NavigationAction.DIRECTIONAL_NAVIGATION
+        // A heading or button can be many screens away, which only auto-scrolling reaches.
+        || navigationAction.targetType != NavigationTarget.TARGET_DEFAULT
         || (logicalDirection != SEARCH_FOCUS_FORWARD && logicalDirection != SEARCH_FOCUS_BACKWARD)
         || WebInterfaceUtils.supportsWebActions(pivot)) {
       return REVEAL_NONE;
@@ -3533,7 +3545,7 @@ public class FocusProcessorForLogicalNavigation {
         announceNativeElement(logicalDirection, navigationAction.targetType, eventId);
         // The scroll may have moved the focused item off screen. Keep focus in the scrolled view.
         if (nodeToFocus == null) {
-          nodeToFocus = refNode;
+          nodeToFocus = findInitialFocusAfterScrolled(refNode, sourceAction, localTraversalStrategy);
         }
       }
     } else {
@@ -3633,13 +3645,13 @@ public class FocusProcessorForLogicalNavigation {
       NavigationAction navigationAction,
       TraversalStrategy localTraversalStrategy) {
     if (refNode != null && !refNode.isAccessibilityFocused()) {
-      return FILTER_SHOULD_FOCUS.accept(refNode)
+      // Focus on an edit field gives it input focus, and browse mode's letters would be typed.
+      Filter<AccessibilityNodeInfoCompat> filter =
+          FILTER_SHOULD_FOCUS.and(Filter.node(n -> Role.getRole(n) != Role.ROLE_EDIT_TEXT));
+      return filter.accept(refNode)
           ? refNode
           : TraversalStrategyUtils.searchFocus(
-              localTraversalStrategy,
-              refNode,
-              navigationAction.searchDirection,
-              FILTER_SHOULD_FOCUS);
+              localTraversalStrategy, refNode, navigationAction.searchDirection, filter);
     }
     return null;
   }
