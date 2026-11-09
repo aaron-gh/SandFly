@@ -72,6 +72,11 @@
         android:key="pref_speech_dictionary_screen"
         android:persistent="false"
         android:title="@string/title_pref_speech_dictionary" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+        android:fragment="com.google.android.accessibility.talkback.speechdictionary.SymbolDictionaryFragment"
+        android:key="pref_symbol_dictionary_screen"
+        android:persistent="false"
+        android:title="@string/title_pref_symbol_dictionary" />
   </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
       android:key="pref_speech_category_stopping"

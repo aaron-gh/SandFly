@@ -65,7 +65,8 @@ object SpeechDictionary {
     ownPackage = context.packageName
     entries = read(prefs)
     SpeechControllerImpl.setDictionaryFilter(
-      if (entries.isEmpty()) null else SpeechControllerImpl.SpeechFilter(::apply)
+      if (entries.isEmpty() && SymbolDictionary.isEmpty) null
+      else SpeechControllerImpl.SpeechFilter(::apply)
     )
   }
 
@@ -84,18 +85,18 @@ object SpeechDictionary {
 
   /** Returns [text] with the entries applied, or null when none changed it. */
   @JvmStatic
-  fun apply(text: CharSequence): CharSequence? {
-    val app = app
-    return if (app == ownPackage) null else apply(text, entries, app)
-  }
+  fun apply(text: CharSequence): CharSequence? = applyInCurrentApp(text, entries)
 
   /**
-   * Returns [text] with [entries], such as the braille dictionary's, applied for the app shown
-   * last, or null when none changed it. Text in SandFly's own windows is left as it is.
+   * Returns [text] with [entries], such as the braille dictionary's, and then the symbol dictionary
+   * applied for the app shown last, or null when none changed it. Text in SandFly's own windows is
+   * left as it is.
    */
   fun applyInCurrentApp(text: CharSequence, entries: List<DictionaryEntry>): CharSequence? {
     val app = app
-    return if (app == ownPackage) null else apply(text, entries, app)
+    if (app == ownPackage) return null
+    val changed = apply(text, entries, app)
+    return SymbolDictionary.apply(changed ?: text, app) ?: changed
   }
 
   internal fun apply(text: CharSequence, entries: List<DictionaryEntry>, app: String): CharSequence? {

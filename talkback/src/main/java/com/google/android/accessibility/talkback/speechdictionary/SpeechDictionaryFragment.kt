@@ -39,9 +39,33 @@ class BrailleDictionaryFragment :
   override fun write(entries: List<DictionaryEntry>) = BrailleDictionary.write(prefs, entries)
 }
 
-/** A dictionary's entries, each with the app it is used in. */
-abstract class DictionaryFragment(@StringRes title: Int, @StringRes private val removedText: Int) :
-  NotificationCodeFragment(title) {
+/** Symbol dictionary: the entries, each with the app it is used in. */
+class SymbolDictionaryFragment :
+  DictionaryFragment(
+    R.string.title_pref_symbol_dictionary,
+    R.string.symbol_dictionary_removed,
+    findHint = R.string.symbol_dictionary_find,
+    replaceHint = R.string.symbol_dictionary_replace_with,
+    plainText = true,
+    maxEntries = SymbolDictionary.MAX_ENTRIES,
+  ) {
+  override fun read(): List<DictionaryEntry> = SymbolDictionary.read(prefs)
+
+  override fun write(entries: List<DictionaryEntry>) = SymbolDictionary.write(prefs, entries)
+}
+
+/**
+ * A dictionary's entries, each with the app it is used in. With [plainText], an entry has no
+ * Whole words or Regular expression option.
+ */
+abstract class DictionaryFragment(
+  @StringRes title: Int,
+  @StringRes private val removedText: Int,
+  @StringRes private val findHint: Int = R.string.notification_replace_find,
+  @StringRes private val replaceHint: Int = R.string.notification_replace_with,
+  private val plainText: Boolean = false,
+  private val maxEntries: Int = Int.MAX_VALUE,
+) : NotificationCodeFragment(title) {
 
   protected abstract fun read(): List<DictionaryEntry>
 
@@ -49,7 +73,9 @@ abstract class DictionaryFragment(@StringRes title: Int, @StringRes private val 
 
   override fun build(screen: PreferenceGroup) {
     val entries = read()
-    screen.action(getString(R.string.notification_add_replacement)) { edit(entries, -1) }
+    if (entries.size < maxEntries) {
+      screen.action(getString(R.string.notification_add_replacement)) { edit(entries, -1) }
+    }
     entries.forEachIndexed { index, entry ->
       val title = describe(entry.replacement)
       val summary =
@@ -94,15 +120,23 @@ abstract class DictionaryFragment(@StringRes title: Int, @StringRes private val 
     askText(
       getString(if (current == null) R.string.notification_add_replacement else R.string.notification_edit),
       current?.replacement?.find.orEmpty(),
-      hint = getString(R.string.notification_replace_find),
-      secondHint = getString(R.string.notification_replace_with),
+      hint = getString(findHint),
+      secondHint = getString(replaceHint),
       secondText = current?.replacement?.replace.orEmpty(),
-      checkLabels = listOf(getString(R.string.notification_whole_words), getString(R.string.notification_regex)),
-      checked = listOf(current?.replacement?.wholeWord ?: true, current?.replacement?.regex == true),
+      checkLabels =
+        if (plainText) emptyList()
+        else listOf(getString(R.string.notification_whole_words), getString(R.string.notification_regex)),
+      checked =
+        if (plainText) emptyList()
+        else listOf(current?.replacement?.wholeWord ?: true, current?.replacement?.regex == true),
     ) { find, replace, checks ->
       if (find.isEmpty()) return@askText getString(R.string.notification_enter_text)
-      if (checks[1] && !TextMatch.isValidRegex(find)) return@askText getString(R.string.notification_invalid_regex)
-      val replacement = Replacement(find, replace, regex = checks[1], wholeWord = checks[0])
+      if (!plainText && checks[1] && !TextMatch.isValidRegex(find)) {
+        return@askText getString(R.string.notification_invalid_regex)
+      }
+      val replacement =
+        if (plainText) Replacement(find, replace, regex = false, wholeWord = false)
+        else Replacement(find, replace, regex = checks[1], wholeWord = checks[0])
       save(
         if (current == null) entries + DictionaryEntry(replacement)
         else entries.replace(index, current.copy(replacement = replacement))
