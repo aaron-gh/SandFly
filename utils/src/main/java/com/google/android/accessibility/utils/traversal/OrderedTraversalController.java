@@ -218,8 +218,8 @@ public class OrderedTraversalController {
 
     // Find destination for movingTreeRoot.
     WorkingTree parent = targetTree.getParent();
-    if (movingTreeRoot.hasDescendant(parent)) {
-      return; // Moving movingTreeRoot under its own descendant would create a loop.
+    if (movingTreeRoot.hasDescendant(targetTree)) {
+      return; // Moving movingTreeRoot under itself or its own descendant would create a loop.
     }
 
     // Unlink moving subtree from tree.
