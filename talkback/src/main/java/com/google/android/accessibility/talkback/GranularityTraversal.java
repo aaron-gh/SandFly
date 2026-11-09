@@ -26,6 +26,7 @@ import androidx.annotation.Nullable;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.talkback.Pipeline.SyntheticEvent;
 import com.google.android.accessibility.talkback.eventprocessor.ProcessorPhoneticLetters;
+import com.google.android.accessibility.talkback.granularediting.SentenceSegmentIterator;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.FeatureSupport;
 import com.google.android.accessibility.utils.PackageManagerUtils;
@@ -59,7 +60,8 @@ public final class GranularityTraversal {
   static final int TALKBACK_SUPPORTED_GRANULARITIES =
       AccessibilityNodeInfo.MOVEMENT_GRANULARITY_CHARACTER
           | AccessibilityNodeInfo.MOVEMENT_GRANULARITY_WORD
-          | AccessibilityNodeInfo.MOVEMENT_GRANULARITY_PARAGRAPH;
+          | AccessibilityNodeInfo.MOVEMENT_GRANULARITY_PARAGRAPH
+          | CursorGranularity.SENTENCE.value;
 
   private static final int ACCESSIBILITY_CURSOR_POSITION_UNDEFINED = -1;
   private static final String TAG = "GranularityTraversal";
@@ -74,6 +76,9 @@ public final class GranularityTraversal {
    * Manages the cursor position for each node while traversing with granularity within Talkback.
    */
   private final Map<AccessibilityNodeInfoCompat, Integer> cache = new ConcurrentHashMap<>();
+
+  /** The sentences of the item last moved through by sentence. Dropped with the cursor cache. */
+  @Nullable private SentenceSegmentIterator sentences;
 
   private final CopySelection copySelection;
   private final Context context;
@@ -106,6 +111,7 @@ public final class GranularityTraversal {
    */
   void clearAllCursors() {
     cache.clear();
+    sentences = null;
   }
 
   /**
@@ -284,6 +290,57 @@ public final class GranularityTraversal {
                         .build())));
     sendViewTextTraversedAtGranularityEvent(
         segmentStart, segmentEnd, forward, text, CursorGranularity.LINE.value, node, eventId);
+    return true;
+  }
+
+  /**
+   * Moves over the next or previous sentence of {@code node}. Android has no sentence movement
+   * granularity, so the text is split here when the item is first moved through by sentence. In a
+   * focused edit text the position is the field's cursor, moved as {@link
+   * #traverseAtLineGranularity} moves it. In any other text the position is kept in the cursor
+   * cache and is lost when focus moves.
+   *
+   * @return {@code true} if there was a sentence to move over.
+   */
+  boolean traverseAtSentenceGranularity(
+      AccessibilityNodeInfoCompat node, boolean forward, EventId eventId) {
+    boolean editing = Role.getRole(node) == Role.ROLE_EDIT_TEXT && node.isFocused();
+    if (editing && (!node.refresh() || node.isShowingHintText())) {
+      return false;
+    }
+    CharSequence text = getTraversedText(node);
+    if (TextUtils.isEmpty(text)) {
+      return false;
+    }
+    if (sentences == null || !sentences.getText().contentEquals(text)) {
+      sentences = new SentenceSegmentIterator(text.toString());
+    }
+    int current =
+        editing
+            ? (forward ? node.getTextSelectionEnd() : node.getTextSelectionStart())
+            : getCursorPosition(node);
+    if (current < 0) {
+      current = forward ? 0 : text.length();
+    }
+    int[] range = forward ? sentences.following(current) : sentences.preceding(current);
+    if (range == null) {
+      return false;
+    }
+    if (editing) {
+      int cursor = forward ? range[1] : range[0];
+      pipelineReturner.ifPresent(
+          feedbackReturner ->
+              feedbackReturner.returnFeedback(
+                  Feedback.create(
+                      eventId,
+                      Feedback.part()
+                          .setEdit(Feedback.edit(node, MOVE_CURSOR).setCursorIndex(cursor).build())
+                          .build())));
+    } else {
+      setAccessibilityCursor(node, range[1], range[0], text.length(), forward);
+    }
+    sendViewTextTraversedAtGranularityEvent(
+        range[0], range[1], forward, text, CursorGranularity.SENTENCE.value, node, eventId);
     return true;
   }
 

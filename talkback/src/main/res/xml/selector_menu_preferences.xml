@@ -60,6 +60,10 @@
             android:title="@string/granularity_line"
             android:summary="@string/summary_lines"/>
         <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
+            android:defaultValue="@bool/pref_selector_granularity_sentences_default"
+            android:key="@string/pref_selector_granularity_sentences_key"
+            android:title="@string/granularity_sentence"/>
+        <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
             android:layout="@layout/listitem_2texts"
             android:defaultValue="@bool/pref_selector_granularity_paragraphs_default"
             android:key="@string/pref_selector_granularity_paragraphs_key"

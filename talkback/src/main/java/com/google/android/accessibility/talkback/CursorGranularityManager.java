@@ -511,7 +511,11 @@ public class CursorGranularityManager {
 
       final AccessibilityNodeInfoCompat currentNode = navigableNodes.get(currentNodeIndex);
 
-      if (GranularityTraversal.shouldHandleGranularityTraversalInTalkback(currentNode)) {
+      if (requestedGranularity == CursorGranularity.SENTENCE) {
+        if (granularityTraversal.traverseAtSentenceGranularity(currentNode, forward, eventId)) {
+          return SUCCESS;
+        }
+      } else if (GranularityTraversal.shouldHandleGranularityTraversalInTalkback(currentNode)) {
         if (granularityTraversal.traverseAtGranularity(
             currentNode, requestedGranularity.value, forward, eventId)) {
           return SUCCESS;
@@ -777,6 +781,9 @@ public class CursorGranularityManager {
         nodes.add(root);
       }
       supportedGranularities |= root.getMovementGranularities();
+      if (!TextUtils.isEmpty(GranularityTraversal.getTraversedText(root))) {
+        supportedGranularities |= CursorGranularity.SENTENCE.value;
+      }
     }
 
     if (!TextUtils.isEmpty(root.getContentDescription())) {

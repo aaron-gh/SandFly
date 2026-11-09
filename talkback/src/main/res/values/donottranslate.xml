@@ -427,6 +427,7 @@
     <string name="pref_selector_granularity_paragraphs_key">pref_selector_granularity_paragraphs_key</string>
     <string name="pref_selector_granularity_characters_key">pref_selector_granularity_characters_key</string>
     <string name="pref_selector_granularity_lines_key">pref_selector_granularity_lines_key</string>
+    <string name="pref_selector_granularity_sentences_key" translatable="false">pref_selector_granularity_sentences_key</string>
     <string name="pref_selector_granularity_windows_key">pref_selector_granularity_windows_key</string>
     <string name="pref_selector_granularity_links_key">pref_selector_granularity_links_key</string>
     <string name="pref_selector_granularity_controls_key">pref_selector_granularity_controls_key</string>
@@ -1956,6 +1957,7 @@
     <bool name="pref_selector_granularity_paragraphs_default">true</bool>
     <bool name="pref_selector_granularity_characters_default">true</bool>
     <bool name="pref_selector_granularity_lines_default">true</bool>
+    <bool name="pref_selector_granularity_sentences_default">false</bool>
     <bool name="pref_selector_granularity_windows_default">false</bool>
     <bool name="pref_selector_granularity_links_default">true</bool>
     <bool name="pref_selector_granularity_controls_default">true</bool>
@@ -2343,6 +2345,7 @@
     <string name="selector_granularity_paragraphs">GRANULARITY_PARAGRAPHS</string>
     <string name="selector_granularity_characters">GRANULARITY_CHARACTERS</string>
     <string name="selector_granularity_lines">GRANULARITY_LINES</string>
+    <string name="selector_granularity_sentences" translatable="false">GRANULARITY_SENTENCES</string>
     <string name="selector_granularity_windows">GRANULARITY_WINDOWS</string>
     <string name="selector_granularity_links">GRANULARITY_LINKS</string>
     <string name="selector_granularity_controls">GRANULARITY_CONTROLS</string>

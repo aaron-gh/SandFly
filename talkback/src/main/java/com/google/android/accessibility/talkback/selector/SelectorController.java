@@ -315,6 +315,10 @@ public class SelectorController implements UserInputEventListener {
         R.string.pref_selector_granularity_lines_key,
         R.string.selector_granularity_lines,
         R.bool.pref_selector_granularity_lines_default),
+    GRANULARITY_SENTENCES(
+        R.string.pref_selector_granularity_sentences_key,
+        R.string.selector_granularity_sentences,
+        R.bool.pref_selector_granularity_sentences_default),
     GRANULARITY_LINKS(
         R.string.pref_selector_granularity_links_key,
         R.string.selector_granularity_links,
@@ -565,6 +569,7 @@ public class SelectorController implements UserInputEventListener {
     CHARACTERS(
         Setting.GRANULARITY_CHARACTERS, CursorGranularity.CHARACTER, GRANULARITY_FOR_ALL_NODE),
     LINES(Setting.GRANULARITY_LINES, CursorGranularity.LINE, GRANULARITY_FOR_ALL_NODE),
+    SENTENCES(Setting.GRANULARITY_SENTENCES, CursorGranularity.SENTENCE, GRANULARITY_FOR_ALL_NODE),
     LINKS(Setting.GRANULARITY_LINKS, CursorGranularity.LINK, GRANULARITY_FOR_ALL_NODE),
     CONTROLS(Setting.GRANULARITY_CONTROLS, CursorGranularity.CONTROL, GRANULARITY_FOR_ALL_NODE),
     ROW_COLUMN(
@@ -725,6 +730,7 @@ public class SelectorController implements UserInputEventListener {
           Setting.GRANULARITY_CHARACTERS,
           Setting.GRANULARITY_WORDS,
           Setting.GRANULARITY_LINES,
+          Setting.GRANULARITY_SENTENCES,
           Setting.GRANULARITY_PARAGRAPHS,
           Setting.GRANULARITY_HEADINGS,
           Setting.GRANULARITY_CONTROLS,
@@ -939,6 +945,8 @@ public class SelectorController implements UserInputEventListener {
       return Setting.GRANULARITY_WORDS;
     } else if (granularity == R.string.granularity_line) {
       return Setting.GRANULARITY_LINES;
+    } else if (granularity == R.string.granularity_sentence) {
+      return Setting.GRANULARITY_SENTENCES;
     } else if (granularity == R.string.granularity_paragraph) {
       return Setting.GRANULARITY_PARAGRAPHS;
     } else if (granularity == R.string.granularity_native_heading) {
@@ -1032,6 +1040,7 @@ public class SelectorController implements UserInputEventListener {
             GRANULARITY_PARAGRAPHS,
             GRANULARITY_CHARACTERS,
             GRANULARITY_LINES,
+            GRANULARITY_SENTENCES,
             GRANULARITY_LINKS,
             GRANULARITY_CONTROLS,
             GRANULARITY_WEB_LANDMARKS,
@@ -1236,6 +1245,7 @@ public class SelectorController implements UserInputEventListener {
           GRANULARITY_PARAGRAPHS,
           GRANULARITY_CHARACTERS,
           GRANULARITY_LINES,
+          GRANULARITY_SENTENCES,
           GRANULARITY_LINKS,
           GRANULARITY_CONTROLS,
           GRANULARITY_WEB_LANDMARKS,
@@ -1978,6 +1988,10 @@ public class SelectorController implements UserInputEventListener {
         return FeatureSupport.supportInputConnectionByA11yService()
             || !actorState.getDirectionNavigation().isSelectionModeActive();
       }
+      case GRANULARITY_SENTENCES -> {
+        // Moving by sentence does not extend a selection.
+        return !actorState.getDirectionNavigation().isSelectionModeActive();
+      }
       case GRANULARITY_LINKS, GRANULARITY_CONTROLS -> {
         if (!prefs.getBoolean(
             context.getString(R.string.pref_selector_links_controls_web_only_key),
@@ -2419,6 +2433,7 @@ public class SelectorController implements UserInputEventListener {
           GRANULARITY_PARAGRAPHS,
           GRANULARITY_CHARACTERS,
           GRANULARITY_LINES,
+          GRANULARITY_SENTENCES,
           GRANULARITY_LINKS,
           GRANULARITY_CONTROLS,
           GRANULARITY_WEB_LANDMARKS,

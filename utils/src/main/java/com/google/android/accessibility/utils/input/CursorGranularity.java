@@ -34,6 +34,9 @@ public enum CursorGranularity {
       AccessibilityNodeInfoCompat.MOVEMENT_GRANULARITY_CHARACTER),
   WORD(R.string.granularity_word, 3, AccessibilityNodeInfoCompat.MOVEMENT_GRANULARITY_WORD),
   LINE(R.string.granularity_line, 4, AccessibilityNodeInfoCompat.MOVEMENT_GRANULARITY_LINE),
+  // Android has no sentence granularity: this mask bit, above the framework's values, is never sent
+  // to an app.
+  SENTENCE(R.string.granularity_sentence, 37, 0x10000),
   PARAGRAPH(
       R.string.granularity_paragraph,
       5,
@@ -295,6 +298,7 @@ public enum CursorGranularity {
     return resourceId == R.string.granularity_character
         || resourceId == R.string.granularity_word
         || resourceId == R.string.granularity_line
+        || resourceId == R.string.granularity_sentence
         || resourceId == R.string.granularity_paragraph;
   }
 
