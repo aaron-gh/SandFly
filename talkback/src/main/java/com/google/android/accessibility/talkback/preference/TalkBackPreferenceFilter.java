@@ -31,6 +31,7 @@ import com.google.android.accessibility.utils.BuildConfig;
 import com.google.android.accessibility.utils.FeatureSupport;
 import com.google.android.accessibility.utils.FormFactorUtils;
 import com.google.android.accessibility.utils.SettingsUtils;
+import com.google.android.accessibility.utils.monitor.InputDeviceMonitor;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.util.Optional;
@@ -44,6 +45,7 @@ public class TalkBackPreferenceFilter {
   /** Flags to filter TalkBack preference setting. */
   @IntDef({
     HIDDEN_ON_TV,
+    HIDDEN_ON_TV_NO_KEYBOARD,
     HIDDEN_ON_WATCH,
     HIDDEN_NO_VIBRATION,
     HIDDEN_SETUP,
@@ -82,6 +84,8 @@ public class TalkBackPreferenceFilter {
   private static final int HIDDEN = Integer.MAX_VALUE;
   /** Flag to hide preference on TV. */
   private static final int HIDDEN_ON_TV = 0x02;
+  /** Flag to hide preference on TV when no physical keyboard is connected. */
+  private static final int HIDDEN_ON_TV_NO_KEYBOARD = 0x80;
   /** Flag to hide preference on watch. */
   private static final int HIDDEN_ON_WATCH = 0x08;
   /** Flag to hide preference if the device doesn't support vibration. */
@@ -160,7 +164,8 @@ public class TalkBackPreferenceFilter {
     REDUCE_WINDOW_DELAY(
         R.string.pref_reduce_window_delay_key, HIDE_IF_NO_USER_DISABLING_OF_GLOBAL_ANIMATIONS),
     KEYBOARD_SHORTCUTS(
-        R.string.pref_category_manage_keyboard_shortcut_key, HIDDEN_ON_TV | HIDDEN_ON_WATCH),
+        R.string.pref_category_manage_keyboard_shortcut_key,
+        HIDDEN_ON_TV_NO_KEYBOARD | HIDDEN_ON_WATCH),
     PLAY_PAUSE_MEDIA(R.string.keycombo_shortcut_global_play_pause_media, HIDDEN_NO_MEDIA_CONTROL),
     // The delay settings work on watches as on phones, so watches show them too.
     TYPING_CONFIRMATION(R.string.pref_typing_confirmation_key, HIDDEN_ON_TV),
@@ -519,6 +524,12 @@ public class TalkBackPreferenceFilter {
     }
 
     if (hasFlag(pref.get(), HIDDEN_ON_TV) && FormFactorUtils.isAndroidTv()) {
+      return true;
+    }
+
+    if (hasFlag(pref.get(), HIDDEN_ON_TV_NO_KEYBOARD)
+        && FormFactorUtils.isAndroidTv()
+        && !new InputDeviceMonitor(context).hasPhysicalKeyboard()) {
       return true;
     }
 
