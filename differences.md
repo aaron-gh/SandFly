@@ -966,7 +966,7 @@ In TalkBack, **Braille display commands** only lists the keys of each command. I
 
 ## Translation
 
-**Translate last spoken phrase**, a gesture action under **Reading control**, translates what SandFly said last and speaks the translation. Done again right after, it translates the same phrase again, not the translation, so a language changed in between takes effect. The translation stays in the speech history, so Repeat, Spell and Copy last spoken phrase work on it. Messages such as "Nothing to translate" don't.
+**Translate last spoken phrase**, a gesture action under **Reading control**, translates what SandFly said last and speaks the translation. In a text field, it translates the text of the field instead, except in password fields. Done again right after, it translates the same phrase again, not the translation, so a language changed in between takes effect. The translation stays in the speech history, so Repeat, Spell and Copy last spoken phrase work on it. Messages such as "Nothing to translate" don't.
 
 **Settings > Translation** has:
 
