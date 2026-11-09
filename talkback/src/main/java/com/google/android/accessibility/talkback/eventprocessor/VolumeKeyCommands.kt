@@ -36,6 +36,8 @@ class VolumeKeyCommands(
   perform: (String) -> Unit,
   /** Runs when a kept press changes the volume. */
   private val onVolumeAdjusted: () -> Unit,
+  /** The stream to suggest to Android for a kept press. */
+  private val suggestedStream: () -> Int,
 ) {
   private val audioManager = context.getSystemService(AudioManager::class.java)
   private val handler = Handler(Looper.getMainLooper())
@@ -60,22 +62,7 @@ class VolumeKeyCommands(
         override fun perform(command: String) = perform(command)
 
         override fun adjustVolume(keyCode: Int, repeated: Boolean) {
-          val direction =
-            if (keyCode == KeyEvent.KEYCODE_VOLUME_UP) {
-              AudioManager.ADJUST_RAISE
-            } else {
-              AudioManager.ADJUST_LOWER
-            }
-          // As Android does for the key: the media playing, a cast device, or the ringer.
-          var flags = AudioManager.FLAG_SHOW_UI or AudioManager.FLAG_VIBRATE
-          if (!repeated) {
-            flags = flags or AudioManager.FLAG_PLAY_SOUND
-          }
-          audioManager?.adjustSuggestedStreamVolume(
-            direction,
-            AudioManager.USE_DEFAULT_STREAM_TYPE,
-            flags,
-          )
+          adjustSuggestedVolume(audioManager, keyCode, repeated, suggestedStream())
           onVolumeAdjusted()
         }
       },
@@ -162,6 +149,26 @@ class VolumeKeyCommands(
   }
 
   companion object {
+    /** Changes the volume as Android does for the key, starting from [stream]. */
+    fun adjustSuggestedVolume(
+      audioManager: AudioManager?,
+      keyCode: Int,
+      repeated: Boolean,
+      stream: Int,
+    ) {
+      val direction =
+        if (keyCode == KeyEvent.KEYCODE_VOLUME_UP) {
+          AudioManager.ADJUST_RAISE
+        } else {
+          AudioManager.ADJUST_LOWER
+        }
+      var flags = AudioManager.FLAG_SHOW_UI or AudioManager.FLAG_VIBRATE
+      if (!repeated) {
+        flags = flags or AudioManager.FLAG_PLAY_SOUND
+      }
+      audioManager?.adjustSuggestedStreamVolume(direction, stream, flags)
+    }
+
     /**
      * Whether the audio [usages] playing and the audio [mode] make up an app call: audio with the
      * voice communication usage plays. When SandFly's own speech and sounds have that usage, its

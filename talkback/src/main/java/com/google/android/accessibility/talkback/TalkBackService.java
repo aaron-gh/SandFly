@@ -171,6 +171,7 @@ import com.google.android.accessibility.talkback.feedbackpolicy.KeyboardWindowSo
 import com.google.android.accessibility.talkback.directtouch.DirectTouchSettings;
 import com.google.android.accessibility.talkback.eventprocessor.AccessibilityEventProcessor;
 import com.google.android.accessibility.talkback.eventprocessor.AccessibilityEventProcessor.TalkBackListener;
+import com.google.android.accessibility.talkback.eventprocessor.OneUiVolumeKeys;
 import com.google.android.accessibility.talkback.eventprocessor.PhoneticLetterMode;
 import com.google.android.accessibility.talkback.eventprocessor.ProcessorEmojiTraversal;
 import com.google.android.accessibility.talkback.eventprocessor.ProcessorEventQueue;
@@ -848,6 +849,7 @@ public class TalkBackService extends AccessibilityServiceCompat
   private PauseController pauseController;
   private AudioDeviceRouter audioDeviceRouter;
   private @Nullable AccessibilityAudioWatcher accessibilityAudioWatcher;
+  private @Nullable OneUiVolumeKeys oneUiVolumeKeys;
   private @Nullable ScriptHost scriptHost;
   private InputMethodMonitor inputMethodMonitor;
   private DisplayMonitor displayMonitor;
@@ -1079,6 +1081,10 @@ public class TalkBackService extends AccessibilityServiceCompat
     NotificationReader.detach();
     NotificationListService.onSandFlyStopped();
 
+    if (oneUiVolumeKeys != null) {
+      oneUiVolumeKeys.stop();
+      oneUiVolumeKeys = null;
+    }
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU
         && accessibilityAudioWatcher != null) {
       accessibilityAudioWatcher.stop();
@@ -1631,6 +1637,11 @@ public class TalkBackService extends AccessibilityServiceCompat
     }
     if (volumeKeyCommands != null
         && volumeKeyCommands.onKeyEvent(
+            keyEvent, () -> canUseVolumeKeyPresses(triggerModifierPressed))) {
+      return true;
+    }
+    if (oneUiVolumeKeys != null
+        && oneUiVolumeKeys.onKeyEvent(
             keyEvent, () -> canUseVolumeKeyPresses(triggerModifierPressed))) {
       return true;
     }
@@ -2401,6 +2412,16 @@ public class TalkBackService extends AccessibilityServiceCompat
       accessibilityAudioWatcher = new AccessibilityAudioWatcher(this);
       accessibilityAudioWatcher.start();
     }
+    oneUiVolumeKeys =
+        new OneUiVolumeKeys(
+            this,
+            () -> {
+              if (FeatureSupport.hasAccessibilityAudioStream(this)) {
+                volumeMonitor.onVolumeKeyPressed();
+              }
+              return Unit.INSTANCE;
+            });
+    oneUiVolumeKeys.start();
     speechController =
         new SpeechControllerImpl(
             this,
@@ -2850,11 +2871,18 @@ public class TalkBackService extends AccessibilityServiceCompat
                 volumeMonitor.onVolumeKeyPressed();
               }
               return Unit.INSTANCE;
-            });
+            },
+            () ->
+                (oneUiVolumeKeys != null)
+                    ? oneUiVolumeKeys.suggestedStream()
+                    : AudioManager.USE_DEFAULT_STREAM_TYPE);
     ringerModeAndScreenMonitor.addScreenChangedListener(
         (isInteractive, eventId) -> {
           if (!isInteractive && volumeKeyCommands != null) {
             volumeKeyCommands.onScreenOff();
+          }
+          if (!isInteractive && oneUiVolumeKeys != null) {
+            oneUiVolumeKeys.onScreenOff();
           }
           if (!isInteractive && appSwitcherKeys != null) {
             appSwitcherKeys.reset();
@@ -3702,6 +3730,10 @@ public class TalkBackService extends AccessibilityServiceCompat
       feedbackController.shutdown();
     }
     EmojiSpeech.release();
+    if (oneUiVolumeKeys != null) {
+      oneUiVolumeKeys.stop();
+      oneUiVolumeKeys = null;
+    }
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU
         && accessibilityAudioWatcher != null) {
       accessibilityAudioWatcher.stop();
