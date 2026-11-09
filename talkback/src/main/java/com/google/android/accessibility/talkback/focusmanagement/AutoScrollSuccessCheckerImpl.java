@@ -20,6 +20,7 @@ import android.graphics.Rect;
 import android.os.Build.VERSION_CODES;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
+import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat.CollectionInfoCompat;
@@ -73,9 +74,14 @@ public class AutoScrollSuccessCheckerImpl implements AutoScrollSuccessChecker {
    * reverse, with the first item at the bottom. Compares two of the items on screen.
    */
   public static boolean indexesRunUpward(AccessibilityNodeInfoCompat scrollable) {
+    return Boolean.TRUE.equals(indexesRunUpwardIfKnown(scrollable));
+  }
+
+  /** Same as {@link #indexesRunUpward}, but null when the items on screen can't show it. */
+  public static @Nullable Boolean indexesRunUpwardIfKnown(AccessibilityNodeInfoCompat scrollable) {
     CollectionInfoCompat collection = scrollable.getCollectionInfo();
     if (collection == null || collection.getRowCount() <= 1) {
-      return false;
+      return null;
     }
     int lastIndex = -1;
     int lastTop = 0;
@@ -93,7 +99,7 @@ public class AutoScrollSuccessCheckerImpl implements AutoScrollSuccessChecker {
       lastIndex = item.getRowIndex();
       lastTop = bounds.top;
     }
-    return false;
+    return null;
   }
 
   /**

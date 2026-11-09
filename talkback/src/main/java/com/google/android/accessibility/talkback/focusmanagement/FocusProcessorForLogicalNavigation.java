@@ -124,6 +124,7 @@ import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -193,6 +194,9 @@ public class FocusProcessorForLogicalNavigation {
   // Checks once a frame for about 100 ms, when Android would send the scroll event anyway.
   private static final long EARLY_SCROLL_RETRY_MS = 16;
   private static final int EARLY_SCROLL_RETRIES = 6;
+  // A jump lays the list out anew, which can take longer. Giving up too soon on a jump that later
+  // takes effect would add a page scroll on top of it, so it gets about 300 ms.
+  private static final int EARLY_JUMP_RETRIES = 18;
 
   /** Most items that previous container steps back over to reach the start of a container. */
   private static final int MAX_CONTAINER_START_STEPS = 500;
@@ -206,8 +210,30 @@ public class FocusProcessorForLogicalNavigation {
   private static final long SETTLE_CHECK_MS = 16;
   private static final int SETTLE_CHECKS = 20;
 
+  /**
+   * How long a list must send no scroll event, and no auto scroll must happen, before a focused
+   * item that fills it counts as stopped. Android sends a moving list's scroll events at most every
+   * 100 ms.
+   */
+  private static final long LIST_QUIET_MS = 200;
+
+  /** When the last scroll event of any window arrived, in {@link SystemClock#uptimeMillis()}. */
+  private static volatile long lastScrollEventUptime;
+
+  /** When the last auto scroll for a navigation started, in {@link SystemClock#uptimeMillis()}. */
+  private long lastAutoScrollUptime;
+
+  /** Records that a scroll event arrived, so that the wait for a list to stop can end sooner. */
+  public static void onScrollEventReceived() {
+    lastScrollEventUptime = SystemClock.uptimeMillis();
+  }
+
   // Counts navigation actions, so that a search waiting for a list to stop gives way to a newer one.
   private int navigationSerial;
+
+  // The last list whose items showed which way their indexes run, and which way they run.
+  private @Nullable AccessibilityNodeInfoCompat listWithKnownOrder;
+  private boolean listWithKnownOrderRunsUpward;
 
   // Target to put focus on on the next window navigation action
   private @Nullable AccessibilityNodeInfoCompat stealWindowNavigationTarget = null;
@@ -2403,10 +2429,20 @@ public class FocusProcessorForLogicalNavigation {
       @Nullable Pair<Integer, Integer> targetPosition,
       NavigationAction navigationAction,
       EventId eventId) {
+    return performActionScrollToPosition(
+        nodeInfo, nodeInfo, targetPosition, navigationAction, eventId);
+  }
+
+  private boolean performActionScrollToPosition(
+      AccessibilityNodeInfoCompat nodeInfo,
+      AccessibilityNodeInfoCompat pivot,
+      @Nullable Pair<Integer, Integer> targetPosition,
+      NavigationAction navigationAction,
+      EventId eventId) {
     if (targetPosition == null) {
       return false;
     }
-    scrollCallback = new AutoScrollCallback(this, navigationAction, nodeInfo);
+    scrollCallback = new AutoScrollCallback(this, navigationAction, pivot);
     Bundle arguments = new Bundle();
     arguments.putInt(AccessibilityNodeInfo.ACTION_ARGUMENT_ROW_INT, targetPosition.first);
     arguments.putInt(AccessibilityNodeInfo.ACTION_ARGUMENT_COLUMN_INT, targetPosition.second);
@@ -3208,6 +3244,20 @@ public class FocusProcessorForLogicalNavigation {
     NavigationAction supportedNavigationAction =
         NavigationAction.Builder.copy(navigationAction).setDirection(supportedDirection).build();
 
+    // Only the first attempt jumps. A jump that left the focused item where it was is repeated with
+    // a page scroll, as a list can accept the action without moving.
+    if (navigationAction.actionType == NavigationAction.DIRECTIONAL_NAVIGATION
+        && navigationAction.targetType == NavigationTarget.TARGET_DEFAULT
+        && navigationAction.autoScrollAttempt == 0) {
+      Integer row =
+          rowToJumpTo(
+              scrollableNodeInfo.getNode(), pivot, supportedNavigationAction.searchDirection);
+      if (row != null
+          && jumpToRow(scrollableNodeInfo.getNode(), pivot, row, navigationAction, eventId)) {
+        return true;
+      }
+    }
+
     int scrollAction =
         TraversalStrategyUtils.convertSearchDirectionToScrollAction(
             supportedNavigationAction.searchDirection);
@@ -3243,6 +3293,176 @@ public class FocusProcessorForLogicalNavigation {
     return scrolled;
   }
 
+  /** Most layers between a list and the focused node of one of its items. */
+  private static final int MAX_ITEM_DEPTH = 3;
+
+  /** At most this many nodes of a list item are read to look for parts that take focus. */
+  private static final int MAX_ITEM_NODES_CHECKED = 100;
+
+  /** The check for parts that take focus runs on the main thread and stops after this long. */
+  private static final long MAX_ITEM_CHECK_MS = 30;
+
+  /**
+   * Returns the row after the focused item when the list can jump straight to it, or null to scroll
+   * a page as usual. An item taller than the list took one scroll per screen, each waited for,
+   * before the next item came into view. This is only done going forward, in a one-column list
+   * running down the screen whose item holds the pivot and reaches the list's bottom, so that the
+   * next item isn't on screen, and has no other part that takes focus on its own, which a jump
+   * would skip. Going backward a jump would land on the top of an item taller than the list and
+   * skip its parts further down, which a page scroll back reaches first.
+   */
+  private @Nullable Integer rowToJumpTo(
+      AccessibilityNodeInfoCompat list,
+      AccessibilityNodeInfoCompat pivot,
+      @SearchDirection int direction) {
+    if (direction != SEARCH_FOCUS_FORWARD && direction != SEARCH_FOCUS_DOWN) {
+      return null;
+    }
+    if (!AccessibilityNodeInfoUtils.supportsAction(
+        list, AccessibilityActionCompat.ACTION_SCROLL_TO_POSITION.getId())) {
+      return null;
+    }
+    CollectionInfoCompat collection = list.getCollectionInfo();
+    if (collection == null || collection.getColumnCount() != 1 || collection.getRowCount() < 2) {
+      return null;
+    }
+    // In a list laid out in reverse, such as a chat, the next row is the one above.
+    Boolean runUpward = indexesRunUpward(list);
+    if (runUpward == null || runUpward) {
+      LogUtils.d(TAG, "Not jumping: the list's order is reversed or not known yet.");
+      return null;
+    }
+    // The list's item may be the pivot, or a node holding it in layouts that aren't focusable.
+    AccessibilityNodeInfoCompat itemNode = pivot;
+    AccessibilityNodeInfoCompat parent = pivot.getParent();
+    for (int depth = 0; parent != null && !parent.equals(list); depth++) {
+      if (depth >= MAX_ITEM_DEPTH) {
+        LogUtils.d(TAG, "Not jumping: the focused node is too deep in the list's item.");
+        return null;
+      }
+      itemNode = parent;
+      parent = parent.getParent();
+    }
+    if (parent == null) {
+      LogUtils.d(TAG, "Not jumping: the focused node isn't in the list.");
+      return null;
+    }
+    CollectionItemInfoCompat item = itemNode.getCollectionItemInfo();
+    if (item == null
+        && itemNode != pivot
+        && list.equals(AccessibilityNodeInfoUtils.getCollectionRoot(pivot))) {
+      item = pivot.getCollectionItemInfo();
+    }
+    if (item == null) {
+      LogUtils.d(TAG, "Not jumping: the list's item has no row.");
+      return null;
+    }
+    int row = rowAfter(item.getRowIndex(), item.getRowSpan(), collection.getRowCount());
+    if (row < 0) {
+      return null;
+    }
+    Rect itemBounds = new Rect();
+    itemNode.getBoundsInScreen(itemBounds);
+    Rect listBounds = new Rect();
+    list.getBoundsInScreen(listBounds);
+    if (!reachesListBottom(itemBounds, listBounds)) {
+      LogUtils.v(TAG, "Not jumping: the focused item doesn't reach the list's bottom.");
+      return null;
+    }
+    if (hasPartsTakingFocus(itemNode, pivot)) {
+      LogUtils.d(TAG, "Not jumping to row %d: the item has parts that take focus.", row);
+      return null;
+    }
+    return row;
+  }
+
+  /**
+   * Returns whether the indexes of {@code list} run up the screen, or null if that isn't known. A
+   * list showing one item can't show it, so the last list that did is remembered.
+   */
+  private @Nullable Boolean indexesRunUpward(AccessibilityNodeInfoCompat list) {
+    Boolean onScreen = AutoScrollSuccessCheckerImpl.indexesRunUpwardIfKnown(list);
+    if (onScreen != null) {
+      listWithKnownOrder = list;
+      listWithKnownOrderRunsUpward = onScreen;
+      return onScreen;
+    }
+    return list.equals(listWithKnownOrder) ? listWithKnownOrderRunsUpward : null;
+  }
+
+  /**
+   * Returns the row after an item at {@code rowIndex} spanning {@code rowSpan} rows, or -1 if the
+   * collection has no such row.
+   */
+  @VisibleForTesting
+  static int rowAfter(int rowIndex, int rowSpan, int rowCount) {
+    if (rowIndex < 0 || rowIndex >= rowCount) {
+      return -1;
+    }
+    int row = rowIndex + Math.max(1, rowSpan);
+    return row < rowCount ? row : -1;
+  }
+
+  /** Returns whether {@code itemBounds} reach the bottom of {@code listBounds}. */
+  @VisibleForTesting
+  static boolean reachesListBottom(Rect itemBounds, Rect listBounds) {
+    return !listBounds.isEmpty() && !itemBounds.isEmpty() && itemBounds.bottom >= listBounds.bottom;
+  }
+
+  /**
+   * Returns whether a descendant of {@code item} other than {@code pivot}, on screen or not, can
+   * take focus on its own, or whether there are too many nodes to tell.
+   */
+  @VisibleForTesting
+  static boolean hasPartsTakingFocus(
+      AccessibilityNodeInfoCompat item, AccessibilityNodeInfoCompat pivot) {
+    long deadline = SystemClock.uptimeMillis() + MAX_ITEM_CHECK_MS;
+    ArrayDeque<AccessibilityNodeInfoCompat> queue = new ArrayDeque<>();
+    queue.add(item);
+    int read = 0;
+    while (!queue.isEmpty()) {
+      AccessibilityNodeInfoCompat node = queue.poll();
+      if (node != item
+          && !node.equals(pivot)
+          && AccessibilityNodeInfoUtils.takesFocusWhenVisible(node)) {
+        return true;
+      }
+      int children = node.getChildCount();
+      for (int i = 0; i < children; i++) {
+        if (++read > MAX_ITEM_NODES_CHECKED || SystemClock.uptimeMillis() > deadline) {
+          return true;
+        }
+        AccessibilityNodeInfoCompat child = node.getChild(i);
+        if (child != null) {
+          queue.add(child);
+        }
+      }
+    }
+    return false;
+  }
+
+  /** Shows {@code row} of {@code list} at once, then moves focus as after an auto scroll. */
+  private boolean jumpToRow(
+      AccessibilityNodeInfoCompat list,
+      AccessibilityNodeInfoCompat pivot,
+      int row,
+      NavigationAction navigationAction,
+      EventId eventId) {
+    LogUtils.d(TAG, "Jumping to row %d of the list.", row);
+    Rect pivotBefore = new Rect();
+    pivot.getBoundsInScreen(pivotBefore);
+    boolean scrolled =
+        performActionScrollToPosition(
+            list, pivot, Pair.create(row, 0), navigationAction, eventId);
+    if (scrolled) {
+      AutoScrollCallback callback = scrollCallback;
+      callback.isJump = true;
+      earlyScrollCheckHandler.post(
+          () -> checkScrollEarly(callback, list, pivotBefore, eventId, EARLY_JUMP_RETRIES));
+    }
+    return scrolled;
+  }
+
   /**
    * Continues the navigation as soon as the pivot has moved, instead of waiting for the scroll
    * event. Android sends scroll events at most every 100 ms, but lists usually scroll before the
@@ -3269,8 +3489,14 @@ public class FocusProcessorForLogicalNavigation {
           earlyScrollCheckHandler.postDelayed(
               () -> checkScrollEarly(callback, scrollable, pivotBefore, eventId, retries - 1),
               EARLY_SCROLL_RETRY_MS);
+          return;
         }
-        return;
+        // A jump that changed nothing may send no scroll event at all, and waiting for the failure
+        // timeout would move focus out of the list. Continue, so that a page scroll follows.
+        if (!callback.isJump) {
+          return;
+        }
+        LogUtils.d(TAG, "checkScrollEarly: the jump left the focused item where it was.");
       }
     }
     int deltaX =
@@ -3798,8 +4024,9 @@ public class FocusProcessorForLogicalNavigation {
         // The pivot moved since the scroll or the last look, so the list may still be moving and
         // its next item not on screen yet. Navigating again now would scroll a second page. A pivot
         // that fills the list, such as a post taller than the screen, is cut to the list's bounds
-        // and doesn't seem to move, so the list is given the same time to stop.
-        if ((!previousRect.equals(newRect) || fillsList(newRect, scrolledNode))
+        // and doesn't seem to move, so the list's scroll events decide instead.
+        if ((!previousRect.equals(newRect)
+                || (fillsList(newRect, scrolledNode) && listMayStillMove()))
             && settleChecksLeft > 0
             && sourceAction.shouldScroll) {
           LogUtils.d(TAG, "List still moving; searching again on the next frame.");
@@ -3885,6 +4112,21 @@ public class FocusProcessorForLogicalNavigation {
       Filter<AccessibilityNodeInfoCompat> nodeFilter) {
     return TraversalStrategyUtils.findFirstFocusInNodeTree(
         traversalStrategy, scrolledNode, searchDirection, nodeFilter);
+  }
+
+  /** Returns whether a list whose focused item fills it may still be moving. */
+  private boolean listMayStillMove() {
+    return listMayStillMove(
+        SystemClock.uptimeMillis(), lastScrollEventUptime, lastAutoScrollUptime);
+  }
+
+  /**
+   * Returns whether a list counts as moving: the last scroll event of any window or the last auto
+   * scroll happened less than {@link #LIST_QUIET_MS} before {@code now}.
+   */
+  @VisibleForTesting
+  static boolean listMayStillMove(long now, long lastScrollEvent, long lastAutoScroll) {
+    return now - Math.max(lastScrollEvent, lastAutoScroll) < LIST_QUIET_MS;
   }
 
   /** Returns whether {@code pivotBounds} cover all of {@code list} that is on screen. */
@@ -4063,6 +4305,9 @@ public class FocusProcessorForLogicalNavigation {
 
     private boolean assumeScrollSuccess;
 
+    /** Whether the scroll was a jump to a row, which keeps searching with a page scroll. */
+    private boolean isJump;
+
     AutoScrollCallback(
         FocusProcessorForLogicalNavigation parent,
         NavigationAction sourceAction,
@@ -4079,6 +4324,8 @@ public class FocusProcessorForLogicalNavigation {
       this.sourceAction = sourceAction;
       this.pivot = pivot;
       this.assumeScrollSuccess = assumeScrollSuccess;
+      // Each callback is created as its scroll starts. See listMayStillMove().
+      parent.lastAutoScrollUptime = SystemClock.uptimeMillis();
     }
 
     public void onAutoScrolled(
@@ -4132,6 +4379,10 @@ public class FocusProcessorForLogicalNavigation {
       }
       if (scrollDeltaY != DELTA_UNDEFINED && scrollDeltaY != 0) {
         builder.setPrevScrollDeltaSumY(sourceAction.prevScrollDeltaSumY + scrollDeltaY);
+        builder.setIsPrevScrolled(true);
+      }
+      if (isJump) {
+        // A jump that left the pivot in place reports no delta. It must not end the scrolling.
         builder.setIsPrevScrolled(true);
       }
       return builder.build();
