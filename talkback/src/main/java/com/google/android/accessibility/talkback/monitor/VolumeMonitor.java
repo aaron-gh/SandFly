@@ -30,6 +30,7 @@ import android.os.SystemClock;
 import android.telephony.TelephonyManager;
 import android.util.SparseIntArray;
 import android.util.SparseLongArray;
+import androidx.annotation.Nullable;
 import androidx.annotation.VisibleForTesting;
 import com.google.android.accessibility.talkback.Feedback;
 import com.google.android.accessibility.talkback.Feedback.Part;
@@ -111,6 +112,11 @@ public class VolumeMonitor extends SameThreadBroadcastReceiver {
 
   private final List<VolumeChangedListener> listeners = new ArrayList<>();
 
+  private @Nullable VolumeChangeFeedback volumeChangeFeedback;
+
+  /** Whether the announcement of the last change says only the percentage. */
+  private boolean speakPercentage;
+
   /** Creates and initializes a new volume monitor. */
   public VolumeMonitor(
       FeedbackReturner pipeline, Context context, CallStateMonitor callStateMonitor) {
@@ -124,6 +130,11 @@ public class VolumeMonitor extends SameThreadBroadcastReceiver {
     audioManager = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
     this.callStateMonitor = callStateMonitor;
     this.hintA11yVolumeControl = FeatureSupport.hasAccessibilityAudioStream(context);
+  }
+
+  /** Sets the feedback that gets each volume change SandFly did not make. */
+  public void setVolumeChangeFeedback(@Nullable VolumeChangeFeedback volumeChangeFeedback) {
+    this.volumeChangeFeedback = volumeChangeFeedback;
   }
 
   public void addVolumeChangedListener(VolumeChangedListener listener) {
@@ -184,6 +195,14 @@ public class VolumeMonitor extends SameThreadBroadcastReceiver {
         || SystemClock.uptimeMillis() < selfAdjustedUntil.get(streamType, 0)) {
       // Ignore self-adjustments.
       return;
+    }
+
+    if (volumeChangeFeedback != null) {
+      boolean sayPercentage =
+          volumeChangeFeedback.onVolumeChanged(streamType, volume, prevVolume, isPhoneBusy());
+      if (volume != prevVolume) {
+        speakPercentage = sayPercentage;
+      }
     }
 
     if (FeatureSupport.hasAccessibilityAudioStream(context)
@@ -333,23 +352,37 @@ public class VolumeMonitor extends SameThreadBroadcastReceiver {
    * @return The volume announcement text for the stream.
    */
   private String getAnnouncementForStreamType(int templateResId, int streamType) {
-    // The ringer has special cases for silent and vibrate.
-    if (streamType == AudioManager.STREAM_RING) {
-      switch (audioManager.getRingerMode()) {
-        case AudioManager.RINGER_MODE_VIBRATE -> {
-          return context.getString(R.string.value_ringer_vibrate);
-        }
-        case AudioManager.RINGER_MODE_SILENT -> {
-          return context.getString(R.string.value_ringer_silent);
-        }
-        default -> {}
-      }
+    @Nullable String ringerAnnouncement = getRingerModeAnnouncement(streamType);
+    if (ringerAnnouncement != null) {
+      return ringerAnnouncement;
     }
 
     final String streamName = getStreamName(streamType);
     final int volume = getStreamVolume(streamType);
 
     return context.getString(templateResId, streamName, volume);
+  }
+
+  /** Returns the announcement of the volume as a percentage alone, as in "60 percent". */
+  private String getPercentageAnnouncement(int streamType) {
+    @Nullable String ringerAnnouncement = getRingerModeAnnouncement(streamType);
+    if (ringerAnnouncement != null) {
+      return ringerAnnouncement;
+    }
+    return context.getString(
+        R.string.tb_template_percent, String.valueOf(getStreamVolume(streamType)));
+  }
+
+  /** The ringer has special cases for silent and vibrate. */
+  private @Nullable String getRingerModeAnnouncement(int streamType) {
+    if (streamType != AudioManager.STREAM_RING) {
+      return null;
+    }
+    return switch (audioManager.getRingerMode()) {
+      case AudioManager.RINGER_MODE_VIBRATE -> context.getString(R.string.value_ringer_vibrate);
+      case AudioManager.RINGER_MODE_SILENT -> context.getString(R.string.value_ringer_silent);
+      default -> null;
+    };
   }
 
   /**
@@ -367,13 +400,19 @@ public class VolumeMonitor extends SameThreadBroadcastReceiver {
 
     LogUtils.v(TAG, "Released control of stream %d", currentStream);
 
-    if (!shouldAnnounceStream(streamType) || !speakVolumeChanges()) {
+    // Volume change feedback's spoken percentage replaces the announcement, whichever way Speak
+    // volume changes is set.
+    final boolean percentageOnly = speakPercentage;
+    speakPercentage = false;
+    if (!percentageOnly && (!shouldAnnounceStream(streamType) || !speakVolumeChanges())) {
       handler.post(this::releaseControl);
       return;
     }
 
     final String text =
-        getAnnouncementForStreamType(R.string.template_stream_volume_set, streamType);
+        percentageOnly
+            ? getPercentageAnnouncement(streamType)
+            : getAnnouncementForStreamType(R.string.template_stream_volume_set, streamType);
 
     EventId eventId = EVENT_ID_UNTRACKED; // Delayed feedback occurs after normal feedback.
     speakWithCompletion(text, streamType, utteranceCompleteRunnable, eventId);
@@ -426,8 +465,7 @@ public class VolumeMonitor extends SameThreadBroadcastReceiver {
       int streamType,
       SpeechController.UtteranceCompleteRunnable completedAction,
       EventId eventId) {
-    if ((callStateMonitor != null)
-        && (callStateMonitor.getCurrentCallState() != TelephonyManager.CALL_STATE_IDLE)) {
+    if (isPhoneBusy()) {
       // If the phone is busy, don't speak anything.
       handler.post(this::releaseControl);
       return;
@@ -462,6 +500,11 @@ public class VolumeMonitor extends SameThreadBroadcastReceiver {
 
     Feedback.Part.Builder part = Feedback.Part.builder().setSpeech(speechBuilder.build());
     pipeline.returnFeedback(eventId, part);
+  }
+
+  private boolean isPhoneBusy() {
+    return (callStateMonitor != null)
+        && (callStateMonitor.getCurrentCallState() != TelephonyManager.CALL_STATE_IDLE);
   }
 
   /**

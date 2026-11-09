@@ -3160,6 +3160,22 @@
     <string name="title_pref_volume_keys_move_cursor">Volume keys move the cursor</string>
     <!-- Summary of the switch that makes the volume keys move the cursor in the focused text field. [CHAR LIMIT=NONE] -->
     <string name="summary_pref_volume_keys_move_cursor">When a text field has focus, volume up moves the cursor back a character and volume down moves it on</string>
+    <!-- Title of the setting that chooses the feedback given when the volume changes: nothing, a short tone, the level spoken as a percentage, or both. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_volume_change_feedback">Volume change feedback</string>
+    <!-- Entry of the Volume change feedback setting: no feedback. [CHAR LIMIT=NONE] -->
+    <string name="volume_change_feedback_off">Off</string>
+    <!-- Entry of the Volume change feedback setting: a short tone on each volume step. [CHAR LIMIT=NONE] -->
+    <string name="volume_change_feedback_tone">Tone</string>
+    <!-- Entry of the Volume change feedback setting: the volume level spoken as a percentage. [CHAR LIMIT=NONE] -->
+    <string name="volume_change_feedback_spoken">Spoken percentage</string>
+    <!-- Entry of the Volume change feedback setting: both a tone and the spoken percentage. [CHAR LIMIT=NONE] -->
+    <string name="volume_change_feedback_tone_and_spoken">Tone and spoken percentage</string>
+    <string-array name="pref_volume_change_feedback_entries">
+        <item>@string/volume_change_feedback_off</item>
+        <item>@string/volume_change_feedback_tone</item>
+        <item>@string/volume_change_feedback_spoken</item>
+        <item>@string/volume_change_feedback_tone_and_spoken</item>
+    </string-array>
     <!-- Title of the setting that chooses the command run by pressing volume up twice quickly. Volume up is the hardware key. [CHAR LIMIT=NONE] -->
     <string name="title_pref_volume_up_double_press">Volume up double press</string>
     <!-- Title of the setting that chooses the command run by pressing volume up three times quickly. Volume up is the hardware key. [CHAR LIMIT=NONE] -->

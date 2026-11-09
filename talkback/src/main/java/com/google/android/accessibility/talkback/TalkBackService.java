@@ -244,6 +244,7 @@ import com.google.android.accessibility.talkback.monitor.InputMethodMonitor;
 import com.google.android.accessibility.talkback.monitor.KeyboardLockMonitor;
 import com.google.android.accessibility.talkback.monitor.ProximitySensorMonitor;
 import com.google.android.accessibility.talkback.monitor.RingerModeAndScreenMonitor;
+import com.google.android.accessibility.talkback.monitor.VolumeChangeFeedback;
 import com.google.android.accessibility.talkback.monitor.VolumeMonitor;
 import com.google.android.accessibility.talkback.notificationlist.NotificationListService;
 import com.google.android.accessibility.talkback.applauncher.HomeScreenApps;
@@ -738,6 +739,9 @@ public class TalkBackService extends AccessibilityServiceCompat
   /** {@link BroadcastReceiver} for tracking volume changes. */
   private VolumeMonitor volumeMonitor;
 
+  /** Volume keys > Volume change feedback. */
+  private VolumeChangeFeedback volumeChangeFeedback;
+
   /** {@link android.content.BroadcastReceiver} for tracking battery status changes. */
   private BatteryMonitor batteryMonitor;
   private StatusReader statusReader;
@@ -1085,6 +1089,9 @@ public class TalkBackService extends AccessibilityServiceCompat
     if (oneUiVolumeKeys != null) {
       oneUiVolumeKeys.stop();
       oneUiVolumeKeys = null;
+    }
+    if (volumeChangeFeedback != null) {
+      volumeChangeFeedback.release();
     }
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU
         && accessibilityAudioWatcher != null) {
@@ -2359,6 +2366,15 @@ public class TalkBackService extends AccessibilityServiceCompat
     if (volumeMonitor != null) {
       volumeMonitor.ignoreSelfAdjustment(streamType);
     }
+    // The change can be reported under another stream that shares the volume.
+    markOwnVolumeChange();
+  }
+
+  /** Keeps a volume change SandFly is about to make from getting Volume change feedback. */
+  public void markOwnVolumeChange() {
+    if (volumeChangeFeedback != null) {
+      volumeChangeFeedback.noteOwnChange();
+    }
   }
 
   /** Initialize {@link FingerprintGestureCallback} for detecting fingerprint gestures. */
@@ -2765,6 +2781,8 @@ public class TalkBackService extends AccessibilityServiceCompat
     focuser.setMenuManager(menuManager);
 
     volumeMonitor = new VolumeMonitor(pipeline.getFeedbackReturner(), this, callStateMonitor);
+    volumeChangeFeedback = new VolumeChangeFeedback(this, this::userSpeechVolume);
+    volumeMonitor.setVolumeChangeFeedback(volumeChangeFeedback);
     selectorController =
         new SelectorController(
             this,
@@ -3654,6 +3672,9 @@ public class TalkBackService extends AccessibilityServiceCompat
       volumeMonitor.releaseControl();
       volumeMonitor.clearVolumeChangedListener();
     }
+    if (volumeChangeFeedback != null) {
+      volumeChangeFeedback.release();
+    }
 
     if (headphoneStateMonitor != null) {
       headphoneStateMonitor.stopMonitoring();
@@ -3737,6 +3758,9 @@ public class TalkBackService extends AccessibilityServiceCompat
     if (oneUiVolumeKeys != null) {
       oneUiVolumeKeys.stop();
       oneUiVolumeKeys = null;
+    }
+    if (volumeChangeFeedback != null) {
+      volumeChangeFeedback.release();
     }
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU
         && accessibilityAudioWatcher != null) {
@@ -4267,6 +4291,9 @@ public class TalkBackService extends AccessibilityServiceCompat
             R.string.pref_telegram_reply_quotes_key, R.bool.pref_telegram_reply_quotes_default));
     if (volumeKeyCommands != null) {
       volumeKeyCommands.reload(prefs);
+    }
+    if (volumeChangeFeedback != null) {
+      volumeChangeFeedback.reload(prefs);
     }
     if (backTapCommands != null) {
       backTapCommands.reload(prefs);

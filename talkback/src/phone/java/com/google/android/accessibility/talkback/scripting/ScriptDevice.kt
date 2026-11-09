@@ -29,6 +29,7 @@ import android.os.BatteryManager
 import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
+import com.google.android.accessibility.talkback.TalkBackService
 import org.json.JSONArray
 import org.json.JSONObject
 
@@ -106,6 +107,7 @@ class ScriptDevice(private val context: Context) {
     val stream = stream(args)
     val level =
       args.optInt("level").coerceIn(minVolume(audio, stream), audio.getStreamMaxVolume(stream))
+    TalkBackService.getInstance()?.markOwnVolumeChange()
     permitted { audio.setStreamVolume(stream, level, 0) }
   }
 
