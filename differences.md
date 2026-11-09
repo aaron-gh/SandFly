@@ -219,11 +219,11 @@ To stop SandFly from saying the new volume after you press the volume keys, turn
 
 **Volume keys** > **Volume change feedback** gives feedback when you change the volume. It's off by default.
 
-- **Tone** plays a 50 millisecond tone at 1 kHz on each volume step, at the volume speech uses. A step that comes while a tone is still playing gets no tone, so tones never queue.
+- **Tone** plays a 50 millisecond tone at 1 kHz on each volume step, at the volume speech uses. On Samsung phones, when speech uses the accessibility volume, the tone uses the media volume. A step that comes while a tone is still playing gets no tone, so tones never queue.
 - **Spoken percentage** says the new level, such as "60 percent", about 0.6 seconds after the last step. It replaces what **Speak volume changes** says, whichever way that's set, and it's also spoken while media plays.
 - **Tone and spoken percentage** does both.
 
-Volume changes that SandFly makes, such as with the accessibility volume commands or a script, get no feedback. Volume changes that other apps make do. There's no tone during a phone call or while SandFly is paused. A press at the highest or lowest volume changes nothing and gets no feedback.
+Volume changes that SandFly makes, such as with the accessibility volume commands or a script, get no feedback. Volume changes that other apps make do. There's no tone during a phone call, during a call in an app, or while SandFly is paused. A press at the highest or lowest volume changes nothing and gets no feedback.
 
 ### Full charge
 

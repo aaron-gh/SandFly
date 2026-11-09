@@ -19,11 +19,14 @@ package com.google.android.accessibility.talkback.monitor
 import android.content.Context
 import android.content.SharedPreferences
 import android.media.AudioFormat
+import android.media.AudioManager
 import android.media.AudioTrack
+import android.os.Build
 import android.os.Handler
 import android.os.Looper
 import android.os.SystemClock
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.talkback.eventprocessor.VolumeKeyCommands
 import com.google.android.accessibility.talkback.pause.PauseController
 import com.google.android.accessibility.utils.output.FailoverTextToSpeech
 import com.google.android.accessibility.utils.output.FeedbackController
@@ -75,10 +78,11 @@ class VolumeChangeFeedback(
   }
 
   /**
-   * Handles a reported change of [stream], and plays the tone if it is a step made by the user.
-   * Returns whether the announcement of this change is to say only the percentage.
+   * Handles a reported change of [stream], and plays the tone if it is a step made by the user and
+   * neither a phone call, [phoneCallActive], nor an app call is going on. Returns whether the
+   * announcement of this change is to say only the percentage.
    */
-  fun onVolumeChanged(stream: Int, value: Int, prevValue: Int, callActive: Boolean): Boolean {
+  fun onVolumeChanged(stream: Int, value: Int, prevValue: Int, phoneCallActive: Boolean): Boolean {
     if (!playsTone && !speaksPercentage) {
       return false
     }
@@ -86,8 +90,9 @@ class VolumeChangeFeedback(
     if (
       playsTone &&
         kind == VolumeChangeFilter.Kind.STEP &&
-        !callActive &&
-        !PauseController.isPaused()
+        !phoneCallActive &&
+        !PauseController.isPaused() &&
+        !isAppCallActive()
     ) {
       playTone()
     }
@@ -118,7 +123,16 @@ class VolumeChangeFeedback(
     handler.postDelayed(releaseTrackTask, TONE_MS + RELEASE_AFTER_MS)
   }
 
-  /** Starts a new track playing the tone, with the audio usage speech has now. */
+  private fun isAppCallActive(): Boolean {
+    val audio = context.getSystemService(AudioManager::class.java) ?: return false
+    return VolumeKeyCommands.isAppCall(
+      audio.activePlaybackConfigurations.map { it.audioAttributes.usage },
+      FailoverTextToSpeech.speechUsage(context),
+      audio.mode,
+    )
+  }
+
+  /** Starts a new track playing the tone, with the audio usage from [volumeToneUsage]. */
   private fun startTrack(): AudioTrack? {
     var created: AudioTrack? = null
     try {
@@ -126,7 +140,12 @@ class VolumeChangeFeedback(
       val newTrack =
         AudioTrack.Builder()
           .setAudioAttributes(
-            FeedbackController.feedbackAttributes(FailoverTextToSpeech.speechUsage(context))
+            FeedbackController.feedbackAttributes(
+              volumeToneUsage(
+                FailoverTextToSpeech.speechUsage(context),
+                Build.MANUFACTURER.equals(SAMSUNG, ignoreCase = true),
+              )
+            )
           )
           .setAudioFormat(
             AudioFormat.Builder()
@@ -159,6 +178,7 @@ class VolumeChangeFeedback(
 
   private companion object {
     private const val TAG = "VolumeChangeFeedback"
+    private const val SAMSUNG = "samsung"
     private const val SAMPLE_RATE = 48_000
     private const val TONE_HZ = 1_000
     private const val TONE_MS = 50L

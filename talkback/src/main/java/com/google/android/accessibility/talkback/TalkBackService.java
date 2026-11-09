@@ -2362,6 +2362,8 @@ public class TalkBackService extends AccessibilityServiceCompat
     if (volumeMonitor != null) {
       volumeMonitor.ignoreSelfAdjustment(streamType);
     }
+    // The change can be reported under another stream that shares the volume.
+    markOwnVolumeChange();
   }
 
   /** Keeps a volume change SandFly is about to make from getting Volume change feedback. */

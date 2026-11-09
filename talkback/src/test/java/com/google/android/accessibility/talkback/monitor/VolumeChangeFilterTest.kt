@@ -16,6 +16,10 @@
 
 package com.google.android.accessibility.talkback.monitor
 
+import android.media.AudioAttributes.USAGE_ASSISTANCE_ACCESSIBILITY
+import android.media.AudioAttributes.USAGE_MEDIA
+import android.media.AudioAttributes.USAGE_NOTIFICATION_RINGTONE
+import android.media.AudioAttributes.USAGE_VOICE_COMMUNICATION
 import android.media.AudioManager.STREAM_MUSIC
 import android.media.AudioManager.STREAM_RING
 import com.google.android.accessibility.talkback.monitor.VolumeChangeFilter.Kind
@@ -71,6 +75,38 @@ class VolumeChangeFilterTest {
     filter.noteOwnChange(1_000)
     assertEquals(Kind.OWN, filter.classify(STREAM_MUSIC, 6, 5, 1_100))
     assertEquals(Kind.OWN, filter.classify(STREAM_MUSIC, 6, 5, 1_150))
+  }
+
+  @Test
+  fun sandFlysOwnChangeCoversAStreamReportedUnderAnotherName() {
+    filter.noteOwnChange(1_000)
+    assertEquals(Kind.OWN, filter.classify(STREAM_RING, 6, 5, 1_100))
+  }
+
+  @Test
+  fun theToneUsesMediaOnOneUiWhenSpeechUsesAccessibility() {
+    assertEquals(USAGE_MEDIA, volumeToneUsage(USAGE_ASSISTANCE_ACCESSIBILITY, oneUi = true))
+  }
+
+  @Test
+  fun theToneUsesTheSpeechUsageOnOtherDevices() {
+    assertEquals(
+      USAGE_ASSISTANCE_ACCESSIBILITY,
+      volumeToneUsage(USAGE_ASSISTANCE_ACCESSIBILITY, oneUi = false),
+    )
+  }
+
+  @Test
+  fun theToneKeepsOtherSpeechUsagesOnOneUi() {
+    assertEquals(USAGE_MEDIA, volumeToneUsage(USAGE_MEDIA, oneUi = true))
+    assertEquals(
+      USAGE_NOTIFICATION_RINGTONE,
+      volumeToneUsage(USAGE_NOTIFICATION_RINGTONE, oneUi = true),
+    )
+    assertEquals(
+      USAGE_VOICE_COMMUNICATION,
+      volumeToneUsage(USAGE_VOICE_COMMUNICATION, oneUi = true),
+    )
   }
 
   @Test
