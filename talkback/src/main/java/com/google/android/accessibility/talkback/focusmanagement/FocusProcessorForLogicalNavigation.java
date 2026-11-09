@@ -3542,6 +3542,21 @@ public class FocusProcessorForLogicalNavigation {
       if (currentContainer(
               nodeToFocus, NavigationTarget.createContainerFilter(sourceAction.targetType))
           == null) {
+        // Lists, tables and landmarks can be further than one scroll away, as other elements can.
+        if (NavigationTarget.isWebOnlyTarget(sourceAction.targetType)
+            && shouldKeepSearch(navigationAction)
+            && performScrollActionInternal(
+                ScrollActionRecord.ACTION_AUTO_SCROLL,
+                scrolledNode,
+                refNode,
+                TraversalStrategyUtils.convertSearchDirectionToScrollAction(
+                    navigationAction.searchDirection),
+                navigationAction,
+                ScrollTimeout.SCROLL_TIMEOUT_LONG,
+                /* autoScrollSuccessChecker= */ null,
+                eventId)) {
+          return;
+        }
         announceNativeElement(logicalDirection, navigationAction.targetType, eventId);
         // The scroll may have moved the focused item off screen. Keep focus in the scrolled view.
         if (nodeToFocus == null) {
