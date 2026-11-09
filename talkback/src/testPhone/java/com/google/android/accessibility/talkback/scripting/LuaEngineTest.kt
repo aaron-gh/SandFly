@@ -192,6 +192,12 @@ class LuaEngineTest {
   }
 
   @Test
+  fun controlCharactersSurvive() {
+    run("sf.speak('a\\1b\\127c')")
+    assertEquals(listOf("a\u0001b\u007Fc"), host.spoken())
+  }
+
+  @Test
   fun aScriptWaitsForAnAnswer() {
     host.answers["ui.confirm"] = { """{"promise":7}""" }
     run("local yes = sf.ui.confirm('Go?') sf.speak('answer ' .. tostring(yes))")

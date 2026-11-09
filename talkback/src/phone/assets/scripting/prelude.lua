@@ -81,7 +81,8 @@ local function encode_string(s)
   if not utf8.len(s) then
     s = gsub(s, '[\128-\255]', '?')
   end
-  return '"' .. gsub(s, '[%c"\\]', function(c)
+  -- Not %c: C libraries differ on bytes above 127, and macOS's matches UTF-8 continuation bytes.
+  return '"' .. gsub(s, '[\0-\31"\\\127]', function(c)
     return escapes[c] or format('\\u%04x', byte(c))
   end) .. '"'
 end
