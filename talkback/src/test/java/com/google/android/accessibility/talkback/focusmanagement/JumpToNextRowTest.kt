@@ -36,53 +36,39 @@ import org.robolectric.annotation.Config
 class JumpToNextRowTest {
 
   @Test
-  fun forwardUsesRowAfterSpan() {
-    assertEquals(3, FocusProcessorForLogicalNavigation.adjacentRow(2, 1, 10, true))
-    assertEquals(5, FocusProcessorForLogicalNavigation.adjacentRow(2, 3, 10, true))
-    assertEquals(3, FocusProcessorForLogicalNavigation.adjacentRow(2, 0, 10, true))
+  fun usesRowAfterSpan() {
+    assertEquals(3, FocusProcessorForLogicalNavigation.rowAfter(2, 1, 10))
+    assertEquals(5, FocusProcessorForLogicalNavigation.rowAfter(2, 3, 10))
+    assertEquals(3, FocusProcessorForLogicalNavigation.rowAfter(2, 0, 10))
   }
 
   @Test
-  fun backwardUsesRowBefore() {
-    assertEquals(1, FocusProcessorForLogicalNavigation.adjacentRow(2, 3, 10, false))
-  }
-
-  @Test
-  fun noRowPastEitherEnd() {
-    assertEquals(-1, FocusProcessorForLogicalNavigation.adjacentRow(9, 1, 10, true))
-    assertEquals(-1, FocusProcessorForLogicalNavigation.adjacentRow(8, 3, 10, true))
-    assertEquals(-1, FocusProcessorForLogicalNavigation.adjacentRow(0, 1, 10, false))
+  fun noRowPastTheEnd() {
+    assertEquals(-1, FocusProcessorForLogicalNavigation.rowAfter(9, 1, 10))
+    assertEquals(-1, FocusProcessorForLogicalNavigation.rowAfter(8, 3, 10))
   }
 
   @Test
   fun noRowForIndexOutOfBounds() {
-    assertEquals(-1, FocusProcessorForLogicalNavigation.adjacentRow(-1, 1, 10, true))
-    assertEquals(-1, FocusProcessorForLogicalNavigation.adjacentRow(12, 1, 10, false))
+    assertEquals(-1, FocusProcessorForLogicalNavigation.rowAfter(-1, 1, 10))
+    assertEquals(-1, FocusProcessorForLogicalNavigation.rowAfter(12, 1, 10))
   }
 
   @Test
-  fun itemMustReachEdgeInDirection() {
+  fun itemMustReachListBottom() {
     val list = Rect(0, 200, 1000, 2000)
-    assertTrue(
-      FocusProcessorForLogicalNavigation.reachesListEdge(Rect(0, 900, 1000, 2000), list, true)
-    )
+    assertTrue(FocusProcessorForLogicalNavigation.reachesListBottom(Rect(0, 900, 1000, 2000), list))
     assertFalse(
-      FocusProcessorForLogicalNavigation.reachesListEdge(Rect(0, 900, 1000, 1990), list, true)
-    )
-    assertTrue(
-      FocusProcessorForLogicalNavigation.reachesListEdge(Rect(0, 200, 1000, 900), list, false)
-    )
-    assertFalse(
-      FocusProcessorForLogicalNavigation.reachesListEdge(Rect(0, 210, 1000, 900), list, false)
+      FocusProcessorForLogicalNavigation.reachesListBottom(Rect(0, 900, 1000, 1990), list)
     )
   }
 
   @Test
-  fun emptyBoundsDoNotReachEdge() {
+  fun emptyBoundsDoNotReachListBottom() {
     val list = Rect(0, 200, 1000, 2000)
-    assertFalse(FocusProcessorForLogicalNavigation.reachesListEdge(Rect(), list, true))
+    assertFalse(FocusProcessorForLogicalNavigation.reachesListBottom(Rect(), list))
     assertFalse(
-      FocusProcessorForLogicalNavigation.reachesListEdge(Rect(0, 900, 1000, 2000), Rect(), true)
+      FocusProcessorForLogicalNavigation.reachesListBottom(Rect(0, 900, 1000, 2000), Rect())
     )
   }
 
@@ -99,6 +85,13 @@ class JumpToNextRowTest {
     val item = node()
     val layout = node(item)
     node(layout).unwrap().isClickable = true
+    assertTrue(FocusProcessorForLogicalNavigation.hasPartsTakingFocus(item, item))
+  }
+
+  @Test
+  fun adjustableSliderTakesFocus() {
+    val item = node()
+    node(item).unwrap().className = "android.widget.SeekBar"
     assertTrue(FocusProcessorForLogicalNavigation.hasPartsTakingFocus(item, item))
   }
 

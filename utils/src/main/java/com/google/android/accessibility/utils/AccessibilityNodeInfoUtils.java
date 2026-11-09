@@ -1990,12 +1990,18 @@ public class AccessibilityNodeInfoUtils {
    * @return {@code true} if the node is focusable or clickable
    */
   private static boolean isFocusableOrClickable(AccessibilityNodeInfoCompat node) {
-    return (node != null)
-        && isVisible(node)
-        && (node.isScreenReaderFocusable()
-            || NodeOverrides.grouped(node)
-            || isActionableForAccessibility(node)
-            || isAdjustableSlider(node));
+    return (node != null) && isVisible(node) && takesFocusWhenVisible(node);
+  }
+
+  /**
+   * Returns whether {@code node} is a focus stop of its own once it is on screen: the conditions of
+   * {@link #isFocusableOrClickable} without its visibility requirement.
+   */
+  public static boolean takesFocusWhenVisible(@NonNull AccessibilityNodeInfoCompat node) {
+    return node.isScreenReaderFocusable()
+        || NodeOverrides.grouped(node)
+        || isActionableForAccessibility(node)
+        || isAdjustableSlider(node);
   }
 
   /**

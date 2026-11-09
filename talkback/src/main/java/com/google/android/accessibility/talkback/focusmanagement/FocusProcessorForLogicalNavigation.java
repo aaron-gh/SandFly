@@ -194,6 +194,9 @@ public class FocusProcessorForLogicalNavigation {
   // Checks once a frame for about 100 ms, when Android would send the scroll event anyway.
   private static final long EARLY_SCROLL_RETRY_MS = 16;
   private static final int EARLY_SCROLL_RETRIES = 6;
+  // A jump lays the list out anew, which can take longer. Giving up too soon on a jump that later
+  // takes effect would add a page scroll on top of it, so it gets about 300 ms.
+  private static final int EARLY_JUMP_RETRIES = 18;
 
   /** Most items that previous container steps back over to reach the start of a container. */
   private static final int MAX_CONTAINER_START_STEPS = 500;
@@ -3241,8 +3244,8 @@ public class FocusProcessorForLogicalNavigation {
     NavigationAction supportedNavigationAction =
         NavigationAction.Builder.copy(navigationAction).setDirection(supportedDirection).build();
 
-    // Only the first attempt jumps: a repeat after a jump that found nothing would jump to the same
-    // row again and, with no list movement, end in the scroll timeout.
+    // Only the first attempt jumps. A jump that left the focused item where it was is repeated with
+    // a page scroll, as a list can accept the action without moving.
     if (navigationAction.actionType == NavigationAction.DIRECTIONAL_NAVIGATION
         && navigationAction.targetType == NavigationTarget.TARGET_DEFAULT
         && navigationAction.autoScrollAttempt == 0) {
@@ -3300,23 +3303,19 @@ public class FocusProcessorForLogicalNavigation {
   private static final long MAX_ITEM_CHECK_MS = 30;
 
   /**
-   * Returns the row next to the focused item in {@code direction} when the list can jump straight
-   * to it, or null to scroll a page as usual. An item taller than the list took one scroll per
-   * screen, each waited for, before the next item came into view. This is only done for a
-   * one-column list running down the screen whose item holds the pivot and reaches the list's edge
-   * in {@code direction}, so that the next item isn't on screen, and has no other part that takes
-   * focus on its own, which a jump would skip.
+   * Returns the row after the focused item when the list can jump straight to it, or null to scroll
+   * a page as usual. An item taller than the list took one scroll per screen, each waited for,
+   * before the next item came into view. This is only done going forward, in a one-column list
+   * running down the screen whose item holds the pivot and reaches the list's bottom, so that the
+   * next item isn't on screen, and has no other part that takes focus on its own, which a jump
+   * would skip. Going backward a jump would land on the top of an item taller than the list and
+   * skip its parts further down, which a page scroll back reaches first.
    */
   private @Nullable Integer rowToJumpTo(
       AccessibilityNodeInfoCompat list,
       AccessibilityNodeInfoCompat pivot,
       @SearchDirection int direction) {
-    boolean forward;
-    if (direction == SEARCH_FOCUS_FORWARD || direction == SEARCH_FOCUS_DOWN) {
-      forward = true;
-    } else if (direction == SEARCH_FOCUS_BACKWARD || direction == SEARCH_FOCUS_UP) {
-      forward = false;
-    } else {
+    if (direction != SEARCH_FOCUS_FORWARD && direction != SEARCH_FOCUS_DOWN) {
       return null;
     }
     if (!AccessibilityNodeInfoUtils.supportsAction(
@@ -3358,7 +3357,7 @@ public class FocusProcessorForLogicalNavigation {
       LogUtils.d(TAG, "Not jumping: the list's item has no row.");
       return null;
     }
-    int row = adjacentRow(item.getRowIndex(), item.getRowSpan(), collection.getRowCount(), forward);
+    int row = rowAfter(item.getRowIndex(), item.getRowSpan(), collection.getRowCount());
     if (row < 0) {
       return null;
     }
@@ -3366,8 +3365,8 @@ public class FocusProcessorForLogicalNavigation {
     itemNode.getBoundsInScreen(itemBounds);
     Rect listBounds = new Rect();
     list.getBoundsInScreen(listBounds);
-    if (!reachesListEdge(itemBounds, listBounds, forward)) {
-      LogUtils.v(TAG, "Not jumping: the focused item doesn't reach the list's edge.");
+    if (!reachesListBottom(itemBounds, listBounds)) {
+      LogUtils.v(TAG, "Not jumping: the focused item doesn't reach the list's bottom.");
       return null;
     }
     if (hasPartsTakingFocus(itemNode, pivot)) {
@@ -3392,25 +3391,22 @@ public class FocusProcessorForLogicalNavigation {
   }
 
   /**
-   * Returns the row next to an item at {@code rowIndex} spanning {@code rowSpan} rows, or -1 if the
+   * Returns the row after an item at {@code rowIndex} spanning {@code rowSpan} rows, or -1 if the
    * collection has no such row.
    */
   @VisibleForTesting
-  static int adjacentRow(int rowIndex, int rowSpan, int rowCount, boolean forward) {
+  static int rowAfter(int rowIndex, int rowSpan, int rowCount) {
     if (rowIndex < 0 || rowIndex >= rowCount) {
       return -1;
     }
-    int row = forward ? rowIndex + Math.max(1, rowSpan) : rowIndex - 1;
-    return row >= 0 && row < rowCount ? row : -1;
+    int row = rowIndex + Math.max(1, rowSpan);
+    return row < rowCount ? row : -1;
   }
 
-  /** Returns whether {@code itemBounds} reach the list's bottom going forward, or else its top. */
+  /** Returns whether {@code itemBounds} reach the bottom of {@code listBounds}. */
   @VisibleForTesting
-  static boolean reachesListEdge(Rect itemBounds, Rect listBounds, boolean forward) {
-    if (listBounds.isEmpty() || itemBounds.isEmpty()) {
-      return false;
-    }
-    return forward ? itemBounds.bottom >= listBounds.bottom : itemBounds.top <= listBounds.top;
+  static boolean reachesListBottom(Rect itemBounds, Rect listBounds) {
+    return !listBounds.isEmpty() && !itemBounds.isEmpty() && itemBounds.bottom >= listBounds.bottom;
   }
 
   /**
@@ -3428,8 +3424,7 @@ public class FocusProcessorForLogicalNavigation {
       AccessibilityNodeInfoCompat node = queue.poll();
       if (node != item
           && !node.equals(pivot)
-          && (AccessibilityNodeInfoUtils.isActionableForAccessibility(node)
-              || node.isScreenReaderFocusable())) {
+          && AccessibilityNodeInfoUtils.takesFocusWhenVisible(node)) {
         return true;
       }
       int children = node.getChildCount();
@@ -3461,8 +3456,9 @@ public class FocusProcessorForLogicalNavigation {
             list, pivot, Pair.create(row, 0), navigationAction, eventId);
     if (scrolled) {
       AutoScrollCallback callback = scrollCallback;
+      callback.isJump = true;
       earlyScrollCheckHandler.post(
-          () -> checkScrollEarly(callback, list, pivotBefore, eventId, EARLY_SCROLL_RETRIES));
+          () -> checkScrollEarly(callback, list, pivotBefore, eventId, EARLY_JUMP_RETRIES));
     }
     return scrolled;
   }
@@ -3493,8 +3489,14 @@ public class FocusProcessorForLogicalNavigation {
           earlyScrollCheckHandler.postDelayed(
               () -> checkScrollEarly(callback, scrollable, pivotBefore, eventId, retries - 1),
               EARLY_SCROLL_RETRY_MS);
+          return;
         }
-        return;
+        // A jump that changed nothing may send no scroll event at all, and waiting for the failure
+        // timeout would move focus out of the list. Continue, so that a page scroll follows.
+        if (!callback.isJump) {
+          return;
+        }
+        LogUtils.d(TAG, "checkScrollEarly: the jump left the focused item where it was.");
       }
     }
     int deltaX =
@@ -4303,6 +4305,9 @@ public class FocusProcessorForLogicalNavigation {
 
     private boolean assumeScrollSuccess;
 
+    /** Whether the scroll was a jump to a row, which keeps searching with a page scroll. */
+    private boolean isJump;
+
     AutoScrollCallback(
         FocusProcessorForLogicalNavigation parent,
         NavigationAction sourceAction,
@@ -4374,6 +4379,10 @@ public class FocusProcessorForLogicalNavigation {
       }
       if (scrollDeltaY != DELTA_UNDEFINED && scrollDeltaY != 0) {
         builder.setPrevScrollDeltaSumY(sourceAction.prevScrollDeltaSumY + scrollDeltaY);
+        builder.setIsPrevScrolled(true);
+      }
+      if (isJump) {
+        // A jump that left the pivot in place reports no delta. It must not end the scrolling.
         builder.setIsPrevScrolled(true);
       }
       return builder.build();
