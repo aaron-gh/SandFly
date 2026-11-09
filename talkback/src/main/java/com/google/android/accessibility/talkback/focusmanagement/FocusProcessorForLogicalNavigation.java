@@ -3531,6 +3531,10 @@ public class FocusProcessorForLogicalNavigation {
               nodeToFocus, NavigationTarget.createContainerFilter(sourceAction.targetType))
           == null) {
         announceNativeElement(logicalDirection, navigationAction.targetType, eventId);
+        // The scroll may have moved the focused item off screen. Keep focus in the scrolled view.
+        if (nodeToFocus == null) {
+          nodeToFocus = refNode;
+        }
       }
     } else {
       nodeToFocus =
