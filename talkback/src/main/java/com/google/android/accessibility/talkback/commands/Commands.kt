@@ -754,6 +754,7 @@ object Commands {
         gesture(R.string.shortcut_value_overview, R.string.shortcut_overview, Key.RECENT_APPS)
         gesture(R.string.shortcut_value_system_overview, R.string.shortcut_system_overview)
         gesture(R.string.shortcut_value_previous_app, R.string.shortcut_previous_app)
+        gesture(R.string.shortcut_value_take_screenshot, R.string.shortcut_take_screenshot)
         gesture(R.string.shortcut_value_split_screen, R.string.title_split_screen, Key.SHOW_SPLIT_SCREEN)
         gesture(
           R.string.shortcut_value_notifications,

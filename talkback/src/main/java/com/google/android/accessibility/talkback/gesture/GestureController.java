@@ -536,6 +536,10 @@ public class GestureController {
       result =
           pipeline.returnFeedback(
               eventId, Feedback.systemAction(SystemActionPerformer.GLOBAL_ACTION_SYSTEM_OVERVIEW));
+    } else if (action.equals(service.getString(R.string.shortcut_value_take_screenshot))) {
+      result =
+          Build.VERSION.SDK_INT >= Build.VERSION_CODES.P
+              && service.performGlobalAction(AccessibilityService.GLOBAL_ACTION_TAKE_SCREENSHOT);
     } else if (action.equals(service.getString(R.string.shortcut_value_previous_app))) {
       result = PreviousApp.switchTo(service);
     } else if (action.equals(service.getString(R.string.shortcut_value_notifications))) {
