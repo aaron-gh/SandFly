@@ -99,8 +99,7 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
   private final boolean isWatch;
   @Nullable private final StatusReader statusReader;
 
-  // When the screen last turned on.
-  private long screenOnUptime = 0;
+  private final ScreenOnRecorder screenOnRecorder = new ScreenOnRecorder();
 
   /** The current ringer mode. */
   private int ringerMode = AudioManager.RINGER_MODE_NORMAL;
@@ -132,6 +131,7 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
     final boolean preDisplayOn = defaultDisplayOn;
     defaultDisplayOn = displayOn;
     if (defaultDisplayOn && !preDisplayOn) {
+      screenOnRecorder.onScreenOnSignal(SystemClock.uptimeMillis());
       // When the display turns on, we announce the current time and the current ringer
       // state when phone is idle.
       speakForDisplayOn(EVENT_ID_UNTRACKED);
@@ -212,7 +212,7 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
               intent.getIntExtra(AudioManager.EXTRA_RINGER_MODE, AudioManager.RINGER_MODE_NORMAL));
       case Intent.ACTION_SCREEN_ON -> {
         isInteractive = true;
-        screenOnUptime = SystemClock.uptimeMillis();
+        screenOnRecorder.onScreenOnSignal(SystemClock.uptimeMillis());
         AudioDeviceRouter router = AudioDeviceRouter.getInstance();
         if (router != null) {
           router.ensureRouting();
@@ -222,6 +222,7 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
       }
       case Intent.ACTION_SCREEN_OFF -> {
         isInteractive = false;
+        screenOnRecorder.onScreenOff();
         AudioDeviceRouter router = AudioDeviceRouter.getInstance();
         if (router != null) {
           router.ensureRouting();
@@ -248,7 +249,7 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
 
   /** When the screen last turned on, in {@link SystemClock#uptimeMillis()}, or 0. */
   public long getScreenOnUptime() {
-    return screenOnUptime;
+    return screenOnRecorder.getScreenOnUptime();
   }
 
   public boolean isInteractive() {

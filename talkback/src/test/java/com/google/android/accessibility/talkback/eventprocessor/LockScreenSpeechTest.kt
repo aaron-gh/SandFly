@@ -21,6 +21,7 @@ import android.view.accessibility.AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOC
 import android.view.accessibility.AccessibilityEvent.TYPE_VIEW_CLICKED
 import android.view.accessibility.AccessibilityEvent.TYPE_VIEW_SELECTED
 import com.google.android.accessibility.talkback.eventprocessor.AccessibilityEventProcessor.isLockScreenSpeechAfterScreenOn
+import com.google.android.accessibility.talkback.monitor.ScreenOnRecorder
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test
@@ -41,5 +42,21 @@ class LockScreenSpeechTest {
     assertFalse(isLockScreenSpeechAfterScreenOn(TYPE_ANNOUNCEMENT, systemUi, 3000, false))
     assertFalse(isLockScreenSpeechAfterScreenOn(TYPE_ANNOUNCEMENT, "com.example", 200, false))
     assertFalse(isLockScreenSpeechAfterScreenOn(TYPE_VIEW_CLICKED, systemUi, 200, false))
+  }
+
+  /** Display on at 1 000, then lock screen events, with the broadcast last and an old wake before. */
+  @Test
+  fun eventsBeforeBroadcast_fallInsideLockScreenWindow() {
+    val recorder = ScreenOnRecorder()
+    recorder.onScreenOnSignal(-59_000)
+    recorder.onScreenOff()
+
+    recorder.onScreenOnSignal(1_000)
+    val announcement = 1_087 - recorder.screenOnUptime
+    val selection = 1_121 - recorder.screenOnUptime
+    recorder.onScreenOnSignal(1_140)
+
+    assertTrue(isLockScreenSpeechAfterScreenOn(TYPE_ANNOUNCEMENT, systemUi, announcement, false))
+    assertTrue(isLockScreenSpeechAfterScreenOn(TYPE_VIEW_SELECTED, systemUi, selection, false))
   }
 }
