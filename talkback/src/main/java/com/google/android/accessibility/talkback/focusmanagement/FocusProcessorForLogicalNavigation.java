@@ -3645,9 +3645,13 @@ public class FocusProcessorForLogicalNavigation {
       NavigationAction navigationAction,
       TraversalStrategy localTraversalStrategy) {
     if (refNode != null && !refNode.isAccessibilityFocused()) {
-      // Focus on an edit field gives it input focus, and browse mode's letters would be typed.
+      // Focus on an edit field or slider gives it input focus, which turns browse mode off.
       Filter<AccessibilityNodeInfoCompat> filter =
-          FILTER_SHOULD_FOCUS.and(Filter.node(n -> Role.getRole(n) != Role.ROLE_EDIT_TEXT));
+          FILTER_SHOULD_FOCUS.and(
+              Filter.node(
+                  n ->
+                      Role.getRole(n) != Role.ROLE_EDIT_TEXT
+                          && !AccessibilityNodeInfoUtils.isInteractableWithArrowKeys(n)));
       return filter.accept(refNode)
           ? refNode
           : TraversalStrategyUtils.searchFocus(
@@ -3662,15 +3666,17 @@ public class FocusProcessorForLogicalNavigation {
   // keeping search. We will add a test to cover this scenario.
   // TODO: Create a test to cover the case of stopping multiple auto scroll.
   public static final int MAX_MULTIPLE_AUTO_SCROLL_ATTEMPT = 100;
+  private static final int MAX_ELEMENT_AUTO_SCROLL_ATTEMPT = 10;
   public static final int MAX_MULTIPLE_SCROLL_SCREEN_MULTIPLIER = 100;
 
   private boolean shouldKeepSearch(NavigationAction navigationAction) {
-    if (!TalkbackFeatureSupport.supportMultipleAutoScroll()) {
-      return false;
-    }
-
+    // Off watches, a limit keeps a search in an endless feed short. Only element moves get here.
+    int maxAttempts =
+        TalkbackFeatureSupport.supportMultipleAutoScroll()
+            ? MAX_MULTIPLE_AUTO_SCROLL_ATTEMPT
+            : MAX_ELEMENT_AUTO_SCROLL_ATTEMPT;
     final Point screenPxSize = DisplayUtils.getScreenPixelSizeWithoutWindowDecor(service);
-    return navigationAction.autoScrollAttempt <= MAX_MULTIPLE_AUTO_SCROLL_ATTEMPT
+    return navigationAction.autoScrollAttempt <= maxAttempts
         && (BuildVersionUtils.isAtLeastP() // Only build version at least P supports scroll delta.
             && Math.abs(navigationAction.prevScrollDeltaSumX)
                 < MAX_MULTIPLE_SCROLL_SCREEN_MULTIPLIER * screenPxSize.x

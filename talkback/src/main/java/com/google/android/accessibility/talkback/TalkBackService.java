@@ -2486,7 +2486,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     scrollPositionInterpreter = new ScrollPositionInterpreter();
     ScrollEventInterpreter scrollEventInterpreter =
         new ScrollEventInterpreter(
-            audioPlaybackMonitor, touchMonitor, TalkbackFeatureSupport.supportMultipleAutoScroll());
+            audioPlaybackMonitor, touchMonitor, /* supportMultipleAutoScroll= */ true);
     scrollTicks =
         new ScrollTicks(
             feedbackController,
