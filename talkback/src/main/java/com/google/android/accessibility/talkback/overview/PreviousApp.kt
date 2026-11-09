@@ -20,6 +20,7 @@ import android.accessibilityservice.AccessibilityService
 import android.app.KeyguardManager
 import android.os.Handler
 import android.os.Looper
+import android.os.SystemClock
 import androidx.annotation.StringRes
 import com.google.android.accessibility.talkback.Feedback
 import com.google.android.accessibility.talkback.R
@@ -37,6 +38,18 @@ object PreviousApp {
   /** Time for the system's overview to open before the second Recents action. */
   private const val RECENTS_INTERVAL_MS = 500L
 
+  /** The longest a read of the recent tasks can take for its result to be acted on. */
+  internal const val READ_LIMIT_MS = 2_000L
+
+  /** What to do when the read of the recent tasks ends. */
+  internal enum class AfterRead {
+    NOTHING,
+    SAY_FAILED,
+    SAY_UNAVAILABLE,
+    PERFORM_RECENTS_TWICE,
+    SWITCH,
+  }
+
   private val handler = Handler(Looper.getMainLooper())
 
   /** Whether the second Recents action is still to be performed. */
@@ -45,32 +58,72 @@ object PreviousApp {
   /** Returns whether the switch started: false on the lock screen, or if Recents failed. */
   @JvmStatic
   fun switchTo(service: AccessibilityService): Boolean {
-    if (service.getSystemService(KeyguardManager::class.java).isKeyguardLocked) {
+    if (isLocked(service)) {
       return false
     }
+    val openedFrom = OverviewActivity.openedFrom()
     if (!RecentTasks.isAvailable(service)) {
+      if (openedFrom != null) {
+        say(R.string.overview_unavailable)
+        return true
+      }
       return performRecentsTwice(service)
     }
-    val front = OverviewActivity.openedFrom() ?: RecentTasks.frontPackages(service)
+    val front = openedFrom ?: RecentTasks.frontPackages(service)
+    val requestedAt = SystemClock.uptimeMillis()
     RecentTasks.load(service) { tasks ->
-      if (tasks == null) {
-        performRecentsTwice(service)
-        return@load
-      }
-      val previous =
-        RecentTasks.previousTask(tasks, front, setOfNotNull(RecentTasks.homePackage(service)))
-      if (previous == null) {
-        say(R.string.overview_no_previous_app)
-        return@load
-      }
-      RecentTasks.open(service, previous) { worked ->
-        if (!worked) {
-          say(R.string.overview_failed)
-        }
+      when (
+        afterRead(
+          elapsedMs = SystemClock.uptimeMillis() - requestedAt,
+          locked = isLocked(service),
+          tasksRead = tasks != null,
+          fromOverview = openedFrom != null,
+        )
+      ) {
+        AfterRead.NOTHING -> {}
+        AfterRead.SAY_FAILED -> say(R.string.overview_failed)
+        AfterRead.SAY_UNAVAILABLE -> say(R.string.overview_unavailable)
+        AfterRead.PERFORM_RECENTS_TWICE -> performRecentsTwice(service)
+        AfterRead.SWITCH -> open(service, tasks.orEmpty(), front)
       }
     }
     return true
   }
+
+  /**
+   * The Recents action counts from the task in front, which is SandFly's overview when
+   * [fromOverview], so it would return to the app that the overview was opened from.
+   */
+  internal fun afterRead(
+    elapsedMs: Long,
+    locked: Boolean,
+    tasksRead: Boolean,
+    fromOverview: Boolean,
+  ): AfterRead =
+    when {
+      locked -> AfterRead.NOTHING
+      elapsedMs > READ_LIMIT_MS -> AfterRead.SAY_FAILED
+      tasksRead -> AfterRead.SWITCH
+      fromOverview -> AfterRead.SAY_UNAVAILABLE
+      else -> AfterRead.PERFORM_RECENTS_TWICE
+    }
+
+  private fun open(service: AccessibilityService, tasks: List<RecentTask>, front: List<String>) {
+    val previous =
+      RecentTasks.previousTask(tasks, front, setOfNotNull(RecentTasks.homePackage(service)))
+    if (previous == null) {
+      say(R.string.overview_no_previous_app)
+      return
+    }
+    RecentTasks.open(service, previous) { worked ->
+      if (!worked) {
+        say(R.string.overview_failed)
+      }
+    }
+  }
+
+  private fun isLocked(service: AccessibilityService): Boolean =
+    service.getSystemService(KeyguardManager::class.java).isKeyguardLocked
 
   private fun performRecentsTwice(service: AccessibilityService): Boolean {
     if (secondRecentsPending) {

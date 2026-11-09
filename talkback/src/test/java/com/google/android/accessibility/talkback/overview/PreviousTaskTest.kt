@@ -104,4 +104,46 @@ class PreviousTaskTest {
   fun unknownWindows_takesTheSecondTask() {
     assertEquals(b, previous(listOf(a, b, c), emptyList()))
   }
+
+  private fun afterRead(
+    elapsedMs: Long = 100,
+    locked: Boolean = false,
+    tasksRead: Boolean = true,
+    fromOverview: Boolean = false,
+  ) = PreviousApp.afterRead(elapsedMs, locked, tasksRead, fromOverview)
+
+  @Test
+  fun tasksReadInTime_switches() {
+    assertEquals(PreviousApp.AfterRead.SWITCH, afterRead())
+    assertEquals(PreviousApp.AfterRead.SWITCH, afterRead(elapsedMs = PreviousApp.READ_LIMIT_MS))
+  }
+
+  @Test
+  fun lateResult_saysFailed() {
+    val late = PreviousApp.READ_LIMIT_MS + 1
+    assertEquals(PreviousApp.AfterRead.SAY_FAILED, afterRead(elapsedMs = late))
+    assertEquals(PreviousApp.AfterRead.SAY_FAILED, afterRead(elapsedMs = late, tasksRead = false))
+  }
+
+  @Test
+  fun lockedDuringRead_doesNothing() {
+    assertEquals(PreviousApp.AfterRead.NOTHING, afterRead(locked = true))
+    assertEquals(
+      PreviousApp.AfterRead.NOTHING,
+      afterRead(elapsedMs = PreviousApp.READ_LIMIT_MS + 1, locked = true, tasksRead = false),
+    )
+  }
+
+  @Test
+  fun failedRead_performsRecentsTwice() {
+    assertEquals(PreviousApp.AfterRead.PERFORM_RECENTS_TWICE, afterRead(tasksRead = false))
+  }
+
+  @Test
+  fun failedReadFromOverview_saysUnavailable() {
+    assertEquals(
+      PreviousApp.AfterRead.SAY_UNAVAILABLE,
+      afterRead(tasksRead = false, fromOverview = true),
+    )
+  }
 }

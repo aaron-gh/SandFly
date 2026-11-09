@@ -155,7 +155,6 @@ class OverviewActivity : AppCompatActivity() {
 
   override fun onStart() {
     super.onStart()
-    started++
     newestLast = RecentTasks.isNewestLast(this)
     // A short list sits at the bottom, beside the buttons.
     content.gravity = if (newestLast) Gravity.BOTTOM else Gravity.TOP
@@ -169,8 +168,17 @@ class OverviewActivity : AppCompatActivity() {
     load()
   }
 
+  override fun onResume() {
+    super.onResume()
+    resumed++
+  }
+
+  override fun onPause() {
+    resumed--
+    super.onPause()
+  }
+
   override fun onStop() {
-    started--
     ShizukuShell.release()
     super.onStop()
     // Like the system's overview, this one closes when the user leaves it.
@@ -529,14 +537,17 @@ class OverviewActivity : AppCompatActivity() {
     /** Space around the floating buttons. */
     private const val BUTTON_MARGIN_DP = 16
 
-    /** The number of started overviews: a new one can start before the last one has stopped. */
-    private var started = 0
+    /**
+     * The number of resumed overviews. onStop can come long after the user has left, while onPause
+     * comes at once. SandFly's menus are overlays, which don't pause the overview.
+     */
+    private var resumed = 0
 
     /** The app windows on screen when the overview was last opened, as [RecentTasks.frontPackages]. */
     private var openedFromPackages: List<String> = emptyList()
 
     /** Whether the overview is on screen. */
-    @JvmStatic fun isShown(): Boolean = started > 0
+    @JvmStatic fun isShown(): Boolean = resumed > 0
 
     /**
      * The app windows on screen when the overview on screen was opened, or null when the overview
