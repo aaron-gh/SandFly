@@ -280,6 +280,15 @@ class ScriptManager(
       ScriptMenuItem(bound.command.title) { node -> runCommand(bound, "menu", node = node) }
     }
 
+  override fun runScriptCommand(value: String): Boolean {
+    if (activation.inBacktalk) {
+      return false
+    }
+    val bound = bindings.commands[value] ?: return false
+    runCommand(bound, "command")
+    return true
+  }
+
   override fun readingControls(): List<ScriptReadingControl> =
     bindings.controls.map { bound ->
       val key = "${bound.runtime.id}/${bound.command.id}"

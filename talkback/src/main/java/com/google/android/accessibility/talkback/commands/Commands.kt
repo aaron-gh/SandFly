@@ -34,6 +34,8 @@ import com.google.android.accessibility.talkback.keyboard.TalkBackPhysicalKeyboa
 import com.google.android.accessibility.talkback.recognition.LiveRecognition
 import com.google.android.accessibility.talkback.recognition.RecognitionMode
 import com.google.android.accessibility.talkback.sandflyai.SandflyAi
+import com.google.android.accessibility.talkback.scripting.ScriptCommands
+import com.google.android.accessibility.talkback.scripting.ScriptHostFactory
 import com.google.android.accessibility.talkback.selector.ReadingControlCommands
 import com.google.android.accessibility.talkback.selector.ReadingControlLists
 import com.google.android.accessibility.talkback.speech.VoiceProfileNames
@@ -146,15 +148,15 @@ object Commands {
   }
 
   /**
-   * Returns the commands available on this device, by category, ending with Custom menus, Gesture
-   * profiles, Voice profiles, Open app, App shortcuts and Accessibility shortcuts.
+   * Returns the commands available on this device, by category, ending with Scripts, Custom menus,
+   * Gesture profiles, Voice profiles, Open app, App shortcuts and Accessibility shortcuts.
    */
   @JvmStatic
   fun categories(context: Context): List<Category> = Builder(context, withApps = true).build()
 
   /**
-   * Returns the commands available on this device, by category, without Custom menus, Gesture
-   * profiles, Voice profiles, Open app, App shortcuts and Accessibility shortcuts.
+   * Returns the commands available on this device, by category, without Scripts, Custom menus,
+   * Gesture profiles, Voice profiles, Open app, App shortcuts and Accessibility shortcuts.
    */
   private fun categoriesWithoutApps(context: Context): List<Category> =
     Builder(context, withApps = false).build()
@@ -181,6 +183,9 @@ object Commands {
       return Command(value, it, keyboardAction = null)
     }
     customMenuLabel(context, value)?.let {
+      return Command(value, it, keyboardAction = null)
+    }
+    scriptCommandLabel(context, value)?.let {
       return Command(value, it, keyboardAction = null)
     }
     ReadingControlCommands.selectionLabel(context, value)?.let {
@@ -227,6 +232,7 @@ object Commands {
       ?: gestureProfileLabel(context, value)
       ?: readingControlListLabel(context, value)
       ?: customMenuLabel(context, value)
+      ?: scriptCommandLabel(context, value)
       ?: ReadingControlCommands.selectionLabel(context, value)
       ?: voiceProfileLabel(context, value)
       ?: NavigationGestureActions.label(context, value)
@@ -253,6 +259,13 @@ object Commands {
 
   private fun customMenuLabel(context: Context, value: String): String? =
     CommandMenus.label(SharedPreferencesUtils.getSharedPreferences(context), value)
+
+  private fun scriptCommandLabel(context: Context, value: String): String? =
+    if (ScriptCommands.isCommand(value)) {
+      ScriptHostFactory.commands(context, all = true).firstOrNull { it.value == value }?.label
+    } else {
+      null
+    }
 
   private fun voiceProfileLabel(context: Context, value: String): String? =
     VoiceProfileNames.commandLabel(context, SharedPreferencesUtils.getSharedPreferences(context), value)
@@ -306,6 +319,7 @@ object Commands {
       developer()
       settingValues()
       if (withApps) {
+        scripts()
         customMenus()
         gestureProfiles()
         readingControlLists()
@@ -1102,6 +1116,13 @@ object Commands {
               null,
             )
           )
+        }
+      }
+
+    private fun scripts() =
+      category(R.string.title_pref_scripts) {
+        for (entry in ScriptHostFactory.commands(context, all = false)) {
+          commands.add(Command(entry.value, entry.label, keyboardAction = null))
         }
       }
 

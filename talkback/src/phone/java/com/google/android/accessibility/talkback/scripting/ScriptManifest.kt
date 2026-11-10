@@ -287,7 +287,7 @@ data class ScriptManifest(
     }
 
   companion object {
-    const val API_VERSION = 3
+    const val API_VERSION = 4
 
     /**
      * The last version that changed what scripts already used. A script tested with it or later

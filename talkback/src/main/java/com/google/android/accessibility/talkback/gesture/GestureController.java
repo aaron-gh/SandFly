@@ -124,6 +124,7 @@ import com.google.android.accessibility.talkback.monitor.VolumeMonitor.VolumeCha
 import com.google.android.accessibility.talkback.notifications.NotificationReader;
 import com.google.android.accessibility.talkback.recognition.LiveRecognition;
 import com.google.android.accessibility.talkback.scripting.ItemInspector;
+import com.google.android.accessibility.talkback.scripting.ScriptCommands;
 import com.google.android.accessibility.talkback.scripting.Scripts;
 import com.google.android.accessibility.talkback.dictation.AiDictation;
 import com.google.android.accessibility.talkback.clipboard.ClipboardHistoryFragment;
@@ -1036,6 +1037,11 @@ public class GestureController {
           accessibilityFocusMonitor.getEditingNodeFromFocusedKeyboard(focus);
       translateCommand.translateLast(editing != null ? editing : focus);
       result = true;
+    } else if (ScriptCommands.isCommand(action)) {
+      if (!Scripts.runCommand(action)) {
+        pipeline.returnFeedback(
+            eventId, Feedback.speech(service.getString(R.string.script_command_not_running)));
+      }
     } else if (CommandMenus.isCommand(action)) {
       result = menuManager.showCustomMenu(action, eventId);
     } else if (MenuCommands.isMenuOnly(service, action)) {

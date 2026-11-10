@@ -319,4 +319,6 @@
     <string name="scripts_update_check_failed">Some sources could not be checked</string>
     <!-- Shown after checking for updates when every script is up to date. [CHAR LIMIT=NONE] -->
     <string name="scripts_up_to_date">All scripts are up to date</string>
+    <!-- Spoken when a command from a script is run and the script is off or does not run on the screen shown. [CHAR LIMIT=NONE] -->
+    <string name="script_command_not_running">Script not running on this screen</string>
 </resources>

@@ -65,6 +65,12 @@ interface ScriptHost {
 
   fun menuItems(): List<ScriptMenuItem>
 
+  /**
+   * Runs the script command saved as [value], as listed in Commands. Returns false if its script
+   * is not running on the screen shown.
+   */
+  fun runScriptCommand(value: String): Boolean = false
+
   fun readingControls(): List<ScriptReadingControl>
 
   fun itemActions(node: AccessibilityNodeInfoCompat): List<ScriptItemAction>
@@ -302,6 +308,9 @@ object Scripts {
   }
 
   @JvmStatic fun menuItems(): List<ScriptMenuItem> = host?.menuItems().orEmpty()
+
+  /** Runs the script command saved as {@code value}. Returns false if its script is not running. */
+  @JvmStatic fun runCommand(value: String): Boolean = host?.runScriptCommand(value) == true
 
   @JvmStatic
   fun readingControls(): List<ScriptReadingControl> = host?.readingControls().orEmpty()

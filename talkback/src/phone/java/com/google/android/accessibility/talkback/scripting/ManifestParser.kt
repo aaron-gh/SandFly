@@ -292,11 +292,6 @@ class ManifestParser(private val strict: Boolean) {
           menu = command.optBoolean("menu", false),
           control = command.optBoolean("control", false),
         )
-        .also {
-          manifestCheck(it.bindings.isNotEmpty()) {
-            "The command $id needs gesture, keys, menu or control"
-          }
-        }
     }
   }
 

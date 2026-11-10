@@ -478,7 +478,10 @@ class ScriptRuntime(
 
   private var commandListCache: JSONArray? = null
 
-  /** SandFly's commands that a script may run: all but Open app, App shortcuts and turning scripts off. */
+  /**
+   * SandFly's commands that a script may run: all but script commands, Open app, App shortcuts and
+   * turning scripts off.
+   */
   private fun commandList(): JSONArray =
     commandListCache
       ?: JSONArray(
@@ -486,7 +489,8 @@ class ScriptRuntime(
             val title = manager.service.getString(category.titleRes)
             category.commands
               .filter {
-                !OpenAppActions.isAction(it.value) &&
+                !ScriptCommands.isCommand(it.value) &&
+                  !OpenAppActions.isAction(it.value) &&
                   !AppShortcutActions.isAction(it.value) &&
                   it.value !in REFUSED_COMMANDS
               }

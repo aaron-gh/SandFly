@@ -298,11 +298,11 @@ class ManifestParserTest {
   }
 
   @Test
-  fun aCommandNeedsAWayToRunIt() {
-    assertTrue(
-      "needs gesture, keys, menu or control" in
-        rejects(""","permissions":["input"],"commands":[{"id":"go","title":"Go"}]""")
-    )
+  fun aCommandNeedsNoDefaultWayToRunIt() {
+    val command =
+      parse(""","permissions":["input"],"commands":[{"id":"go","title":"Go"}]""").commands[0]
+    assertEquals("Go", command.title)
+    assertTrue(command.bindings.isEmpty())
   }
 
   @Test
