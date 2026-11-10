@@ -75,12 +75,20 @@ class ProcessorPhoneticLettersLookupTest {
 
   @Test
   fun zhHansCnFallsBackToZhNodeForChineseCharacters() {
-    // The zh-CN node only covers Latin letters; Chinese characters come from the zh node via the
-    // base-language fallback.
+    // Synthetic loader: the zh-CN node has no entry for the character, so the lookup must fall
+    // back to the zh node through the base-language path. Synthetic data keeps this test
+    // independent of the JSON contents, which differ between branches.
+    val loader =
+      Function { locale: String ->
+        when (locale) {
+          "zh-CN" -> mapOf("a" to "alpha")
+          "zh" -> mapOf("大" to "大小")
+          else -> emptyMap<String, String>()
+        }
+      }
     assertEquals(
       "大小",
-      ProcessorPhoneticLetters.getPhoneticLetterWithMap("zh-Hans-CN", "大", realPhoneticLetterMap())
-        ?.toString(),
+      ProcessorPhoneticLetters.getPhoneticLetterWithMap("zh-Hans-CN", "大", loader)?.toString(),
     )
   }
 
