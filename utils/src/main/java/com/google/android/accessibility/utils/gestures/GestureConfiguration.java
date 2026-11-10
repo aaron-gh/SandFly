@@ -88,4 +88,43 @@ public final class GestureConfiguration {
             ? timeMs
             : DEFAULT_SWIPE_HOLD_TIME_MS;
   }
+
+  /**
+   * The default time a one-finger swipe has to move the gesture confirm distance before touch
+   * exploration starts: config_max_time_to_start_swipe_ms_per_cm times
+   * config_gesture_confirm_distance_cm on a phone.
+   */
+  public static final int DEFAULT_SWIPE_START_TIME_MS = 150;
+
+  private static final int MAX_SWIPE_START_TIME_MS = 300;
+
+  private static volatile int swipeStartTimeMs = DEFAULT_SWIPE_START_TIME_MS;
+
+  /** Returns the user-set gesture start time. */
+  public static int getSwipeStartTimeMs() {
+    return swipeStartTimeMs;
+  }
+
+  /**
+   * Sets the gesture start time. A value outside the setting's choices, such as 0 from a restored
+   * settings file, falls back to the default.
+   */
+  public static void setSwipeStartTimeMs(int timeMs) {
+    swipeStartTimeMs =
+        timeMs >= DEFAULT_SWIPE_START_TIME_MS && timeMs <= MAX_SWIPE_START_TIME_MS
+            ? timeMs
+            : DEFAULT_SWIPE_START_TIME_MS;
+  }
+
+  /**
+   * Scales a swipe start threshold computed from the resources to the user-set gesture start time.
+   * With the default time the threshold is returned unchanged.
+   */
+  public static int scaleSwipeStartThresholdMs(int thresholdMs) {
+    int timeMs = swipeStartTimeMs;
+    if (timeMs == DEFAULT_SWIPE_START_TIME_MS) {
+      return thresholdMs;
+    }
+    return (int) ((long) thresholdMs * timeMs / DEFAULT_SWIPE_START_TIME_MS);
+  }
 }

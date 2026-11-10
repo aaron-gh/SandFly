@@ -60,6 +60,10 @@ Taps with two or more fingers always allow at least 0.25 seconds between taps, a
 
 This setting appears only when SandFly recognizes gestures itself, which requires Android 13 or later and **Handle gestures in SandFly** turned on. For more information, see [Gestures recognized by SandFly](#gestures-recognized-by-sandfly).
 
+### Gesture start time
+
+A one-finger swipe in TalkBack has to move 1 cm within 0.15 seconds; a slower start becomes explore by touch. In SandFly, **Gesture start time** in gesture settings sets this time from 0.15 to 0.3 seconds, 0.15 by default. Like **Time between one-finger taps**, it appears only when SandFly recognizes gestures itself.
+
 ### Low-latency audio
 
 Android's usual audio path adds about 60 to 70 ms before a sound or speech reaches the speaker. When you turn on **Controls** > **Touch and activation** > **Reduce delay** > **Low-latency audio**, SandFly plays its sounds and speech through a single fast audio track at your phone's own sample rate. On a Galaxy Z Fold7, this path takes about 21 ms. The sounds of a sound theme are decoded for it as soon as the theme is chosen or SandFly starts, and over a minute of them stays decoded, so that none waits for its first play or plays the slower usual way.

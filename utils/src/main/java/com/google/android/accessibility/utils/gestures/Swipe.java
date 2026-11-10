@@ -241,7 +241,8 @@ class Swipe extends GestureMatcher {
         baseTime = time;
         startGesture(event);
       }
-    } else if (getState() == STATE_CLEAR && timeDelta > maxStartThreshold) {
+    } else if (getState() == STATE_CLEAR
+        && timeDelta > GestureConfiguration.scaleSwipeStartThresholdMs(maxStartThreshold)) {
         cancelGesture(event);
         return;
     } else if (getState() == STATE_GESTURE_STARTED && (timeDelta > maxContinueThreshold)) {
