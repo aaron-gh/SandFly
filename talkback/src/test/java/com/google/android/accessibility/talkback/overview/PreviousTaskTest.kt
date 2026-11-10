@@ -49,6 +49,26 @@ class PreviousTaskTest {
   ) = RecentTasks.previousTask(tasks, front, excluded)
 
   @Test
+  fun frontIndex_appInFront() {
+    assertEquals(0, RecentTasks.frontIndex(listOf(a, b, c), listOf("app.a")))
+  }
+
+  @Test
+  fun frontIndex_homeScreenIsBeforeTheFirstTask() {
+    assertEquals(-1, RecentTasks.frontIndex(listOf(a, b, c), listOf("launcher")))
+  }
+
+  @Test
+  fun frontIndex_splitScreenCountsBothApps() {
+    assertEquals(1, RecentTasks.frontIndex(listOf(a, b, c), listOf("app.b", "app.a")))
+  }
+
+  @Test
+  fun frontIndex_unknownWindowsTakeTheFirstTask() {
+    assertEquals(0, RecentTasks.frontIndex(listOf(a, b), emptyList()))
+  }
+
+  @Test
   fun fromAnApp_takesTheNextTask() {
     assertEquals(b, previous(listOf(a, b, c), listOf("app.a")))
   }

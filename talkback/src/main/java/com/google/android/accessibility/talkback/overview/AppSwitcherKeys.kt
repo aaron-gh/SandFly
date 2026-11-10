@@ -16,6 +16,7 @@
 
 package com.google.android.accessibility.talkback.overview
 
+import android.accessibilityservice.AccessibilityService
 import android.content.Context
 import android.os.Handler
 import android.os.Looper
@@ -53,6 +54,10 @@ class AppSwitcherKeys(
   /** Tab presses before the tasks were read: positive forward, negative back. */
   private var steps = 0
   private var index = 0
+  /** The position of the task in front, or -1 when none of the tasks is on screen. */
+  private var frontIndex = 0
+  /** Packages of the app windows on screen when Alt+Tab started. */
+  private var front = emptyList<String>()
   /** Whether Alt was released before the tasks were read, so the switch waits for them. */
   private var switchWhenRead = false
   /** Counts Alt+Tab sequences, so that a late read for an earlier one is ignored. */
@@ -157,6 +162,7 @@ class AppSwitcherKeys(
     tasks = null
     steps = step
     index = 0
+    front = (context as? AccessibilityService)?.let { RecentTasks.frontPackages(it) }.orEmpty()
     val current = ++sequence
     holdShell()
     RecentTasks.load(context) { result ->
@@ -167,7 +173,8 @@ class AppSwitcherKeys(
         return@load
       }
       tasks = result
-      index = 0
+      frontIndex = RecentTasks.frontIndex(result, front)
+      index = frontIndex
       val pending = steps
       steps = 0
       move(pending)
@@ -183,7 +190,8 @@ class AppSwitcherKeys(
       steps += step
       return
     }
-    index = Math.floorMod(index + step, list.size)
+    // Before the first task, as on the home screen, going back starts from the last task.
+    index = Math.floorMod(if (index < 0 && step < 0) step else index + step, list.size)
     speak(list[index].name(context))
   }
 
@@ -196,8 +204,7 @@ class AppSwitcherKeys(
     }
     val task = list.getOrNull(index)
     reset()
-    // The first task is in front already.
-    if (task != null && index != 0) {
+    if (task != null && index != frontIndex) {
       RecentTasks.open(context, task) { worked ->
         if (!worked) speak(context.getString(R.string.overview_failed))
       }
@@ -207,7 +214,7 @@ class AppSwitcherKeys(
   private fun cancel() {
     val list = tasks
     reset()
-    list?.firstOrNull()?.let { speak(it.name(context)) }
+    list?.getOrNull(frontIndex)?.let { speak(it.name(context)) }
   }
 
   private fun speak(text: CharSequence) {

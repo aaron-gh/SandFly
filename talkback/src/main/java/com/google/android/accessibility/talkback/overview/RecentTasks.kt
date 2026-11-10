@@ -177,6 +177,24 @@ object RecentTasks {
     return null
   }
 
+  /**
+   * The position of the last of the first tasks that are on screen, or -1 when the first task isn't
+   * on screen, as on the home screen. [front] is as for [previousTask], and when empty the first
+   * task is taken to be on screen.
+   */
+  internal fun frontIndex(tasks: List<RecentTask>, front: List<String>): Int {
+    if (front.isEmpty()) return 0
+    val windows = front.toMutableList()
+    var last = -1
+    for ((position, task) in tasks.withIndex()) {
+      val onScreen =
+        windows.remove(task.packageName) || (task.topPackage != null && windows.remove(task.topPackage))
+      if (!onScreen) break
+      last = position
+    }
+    return last
+  }
+
   private fun hasWindow(service: AccessibilityService, packageName: String): Boolean =
     AccessibilityServiceCompatUtils.getWindows(service).orEmpty().any {
       it.type == AccessibilityWindowInfo.TYPE_APPLICATION &&
