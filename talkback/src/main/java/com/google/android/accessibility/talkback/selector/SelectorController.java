@@ -824,6 +824,9 @@ public class SelectorController implements UserInputEventListener {
       };
 
   private Setting settingToRestore;
+
+  /** The reading control last chosen from a Reading control list, which the main list can omit. */
+  private @Nullable Setting settingFromReadingControlList;
   // Whether focus switched the reading control to Actions, rather than the user choosing it.
   private boolean actionsSwitchedAutomatically;
 
@@ -1656,6 +1659,7 @@ public class SelectorController implements UserInputEventListener {
     pipeline.returnFeedback(
         eventId,
         Feedback.sound(isNext ? R.raw.next_reading_control : R.raw.previous_reading_control));
+    settingFromReadingControlList = settings.get(newIndex);
     setCurrentSetting(
         eventId, settings.get(newIndex), AnnounceType.DESCRIPTION_AND_HINT, /* showOverlay= */ false);
     return true;
@@ -1849,7 +1853,7 @@ public class SelectorController implements UserInputEventListener {
    * rejected.
    */
   private void restoreSetting() {
-    if (settingToRestore != null && allowedSetting(settingToRestore)) {
+    if (settingToRestore != null && canRestore(settingToRestore)) {
       setCurrentSetting(
           EVENT_ID_UNTRACKED,
           settingToRestore,
@@ -1861,6 +1865,13 @@ public class SelectorController implements UserInputEventListener {
 
     // Clear the cache setting.
     settingToRestore = null;
+  }
+
+  /** Returns whether {@code setting}, replaced automatically, can be current again. */
+  private boolean canRestore(Setting setting) {
+    return setting == settingFromReadingControlList
+        ? !hiddenSettings.contains(setting) && availableHere(setting, /* node= */ null)
+        : allowedSetting(setting);
   }
 
   /** Selects setting silently. For selecting setting automatically. */
@@ -3394,7 +3405,7 @@ public class SelectorController implements UserInputEventListener {
         // automatically.
         if (settingToRestore != null
             && settingToRestore != ACTIONS
-            && allowedSetting(settingToRestore)) {
+            && canRestore(settingToRestore)) {
           restoreSetting();
           adjustSelectedSetting(eventId, isNext);
           return;
