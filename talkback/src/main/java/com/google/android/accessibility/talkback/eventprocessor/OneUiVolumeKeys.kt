@@ -86,7 +86,9 @@ class OneUiVolumeKeys(
         val repeated = event.repeatCount > 0
         if (!repeated) {
           keptKeys.remove(event.keyCode)
-          if (suggestedStream() != AudioManager.USE_DEFAULT_STREAM_TYPE && canUse()) {
+          if (
+            suggestedStream() != AudioManager.USE_DEFAULT_STREAM_TYPE && !isAppCall() && canUse()
+          ) {
             keptKeys.add(event.keyCode)
           }
         }
@@ -118,6 +120,16 @@ class OneUiVolumeKeys(
       return AudioManager.USE_DEFAULT_STREAM_TYPE
     }
     return streamWithoutAccessibilityAudio(adjustsMediaVolumeOnly(), isVoiceCapable())
+  }
+
+  /** Whether an app call is going on, whose volume the keys are left to change. */
+  private fun isAppCall(): Boolean {
+    val audio = audioManager ?: return false
+    return VolumeKeyCommands.isAppCall(
+      audio.activePlaybackConfigurations.map { it.audioAttributes.usage },
+      FailoverTextToSpeech.speechUsage(context),
+      audio.mode,
+    )
   }
 
   private fun onPlaybackChanged(configs: List<AudioPlaybackConfiguration>) {
