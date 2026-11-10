@@ -128,6 +128,8 @@
     <string name="command_previous_value"><xliff:g id="setting" example="Punctuation">%1$s</xliff:g>: previous value</string>
     <!-- Name of the command and SandFly menu item with the commands of the running scripts. [CHAR LIMIT=40] -->
     <string name="shortcut_script_commands">Script commands</string>
+    <!-- Name of a command that makes a reading control the selected one. control is its name. [CHAR LIMIT=60] -->
+    <string name="shortcut_set_reading_control">Set reading control to <xliff:g id="control" example="Headings">%1$s</xliff:g></string>
     <!-- Button that adds a submenu to a menu. [CHAR LIMIT=40] -->
     <string name="menu_add_submenu">Add submenu</string>
     <!-- Button that makes a new custom menu. [CHAR LIMIT=40] -->

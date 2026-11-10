@@ -183,6 +183,9 @@ object Commands {
     customMenuLabel(context, value)?.let {
       return Command(value, it, keyboardAction = null)
     }
+    ReadingControlCommands.selectionLabel(context, value)?.let {
+      return Command(value, it, keyboardAction = null)
+    }
     voiceProfileLabel(context, value)?.let {
       return Command(value, it, keyboardAction = null)
     }
@@ -224,6 +227,7 @@ object Commands {
       ?: gestureProfileLabel(context, value)
       ?: readingControlListLabel(context, value)
       ?: customMenuLabel(context, value)
+      ?: ReadingControlCommands.selectionLabel(context, value)
       ?: voiceProfileLabel(context, value)
       ?: NavigationGestureActions.label(context, value)
       ?: keyboardActionOf(context, value)?.getDescription(context.resources)
@@ -764,6 +768,10 @@ object Commands {
           R.string.shortcut_value_write_reading_control,
           R.string.shortcut_write_reading_control,
         )
+        val prefs = SharedPreferencesUtils.getSharedPreferences(context)
+        for (selection in ReadingControlCommands.selections(context, prefs)) {
+          commands.add(Command(selection.value, selection.label, keyboardAction = null))
+        }
       }
 
     private fun textEditing() =

@@ -607,6 +607,10 @@ public class GestureController {
       selectorController.changeGestureProfile(eventId, /* isNext= */ false);
     } else if (action.equals(service.getString(R.string.shortcut_value_next_gesture_profile))) {
       selectorController.changeGestureProfile(eventId, /* isNext= */ true);
+    } else if (ReadingControlCommands.isSelection(action)) {
+      result =
+          selectorController.selectReadingControlByKey(
+              eventId, ReadingControlCommands.selectedKey(action));
     } else if (ReadingControlLists.isCommand(action)) {
       List<String> controls =
           ReadingControlLists.controls(

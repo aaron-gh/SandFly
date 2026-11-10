@@ -21,8 +21,11 @@ import android.content.pm.PackageManager
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.keyboard.TalkBackPhysicalKeyboardShortcut
 import com.google.android.accessibility.talkback.recognition.LiveRecognition
+import com.google.android.accessibility.talkback.preference.ItemOrder
 import com.google.android.accessibility.talkback.recognition.RecognitionMode
+import com.google.android.accessibility.talkback.selector.ReadingControlCommands
 import com.google.android.accessibility.utils.FormFactorUtils
+import com.google.android.accessibility.utils.SharedPreferencesUtils
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNotNull
@@ -74,6 +77,38 @@ class CommandsTest {
       )) {
       assertTrue(context.getString(res) in values)
     }
+  }
+
+  @Test
+  fun readingControlsInTheUsersListHaveSelectionCommands() {
+    val prefs = SharedPreferencesUtils.getSharedPreferences(context)
+    val key = context.getString(R.string.pref_selector_punctuation_key)
+    val value = "SET_READING_CONTROL:$key"
+    prefs.edit().putBoolean(key, true).commit()
+    assertTrue(value in allCommands().map { it.value })
+    prefs.edit().putBoolean(key, false).commit()
+    assertFalse(value in allCommands().map { it.value })
+    // A gesture assigned before the control left the list still has a name.
+    assertEquals(
+      context.getString(
+        R.string.shortcut_set_reading_control,
+        context.getString(R.string.pref_punctuation_title),
+      ),
+      Commands.label(context, value),
+    )
+    prefs.edit().remove(key).commit()
+  }
+
+  @Test
+  fun selectionCommandsFollowTheOrderOfTheList() {
+    val prefs = SharedPreferencesUtils.getSharedPreferences(context)
+    val first = context.getString(R.string.pref_selector_punctuation_key)
+    val second = context.getString(R.string.pref_selector_speech_rate_key)
+    prefs.edit().putBoolean(first, true).putBoolean(second, true)
+      .putString(ItemOrder.READING_CONTROLS_KEY, "$first,$second").commit()
+    val values = ReadingControlCommands.selections(context, prefs).map { it.value }
+    assertTrue(values.indexOf("SET_READING_CONTROL:$first") < values.indexOf("SET_READING_CONTROL:$second"))
+    prefs.edit().remove(first).remove(second).remove(ItemOrder.READING_CONTROLS_KEY).commit()
   }
 
   @Test
