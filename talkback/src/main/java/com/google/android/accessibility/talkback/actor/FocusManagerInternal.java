@@ -326,8 +326,8 @@ public class FocusManagerInternal {
   }
 
   /**
-   * Puts focus back on the text field with input focus when focus was last on a text field in that
-   * window, without speaking it again.
+   * Puts focus back on the text field with input focus when focus was last on that text field,
+   * without speaking it again.
    *
    * @return true if accessibility focus was placed on the text field
    */
@@ -344,8 +344,13 @@ public class FocusManagerInternal {
     if (editField == null || !editField.isEditable() || !editField.isVisibleToUser()) {
       return false;
     }
+    // The same field can be a new node after a layout change, and then has the same view ID.
     boolean wasOnEditField =
-        lastFocus.isEditable() && editField.getWindowId() == lastFocus.getWindowId();
+        lastFocus.isEditable()
+            && editField.getWindowId() == lastFocus.getWindowId()
+            && (editField.equals(lastFocus)
+                || (editField.getViewIdResourceName() != null
+                    && editField.getViewIdResourceName().equals(lastFocus.getViewIdResourceName())));
     // Gboard moves focus to its suggestions during physical typing, and Enter removes them.
     boolean wasOnKeyboardWhileTyping =
         isKeyboardInput()
