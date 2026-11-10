@@ -1,7 +1,7 @@
 [versions]
 luajava = "4.1.0"
 shizuku = "13.1.5"
-agp = "9.4.1"
+agp = "9.5.1"
 kotlin = "2.4.21"
 autoValue = "1.11.1"
 compose = "1.12.1"
@@ -11,7 +11,7 @@ camerax = "1.6.2"
 
 [libraries]
 # Google common
-mlkit-text-recognition = "com.google.android.gms:play-services-mlkit-text-recognition:19.0.1"
+mlkit-text-recognition = "com.google.android.gms:play-services-mlkit-text-recognition:19.0.2"
 mlkit-language-id = "com.google.android.gms:play-services-mlkit-language-id:17.0.0"
 mlkit-digital-ink = "com.google.mlkit:digital-ink-recognition:19.0.0"
 mlkit-translate = "com.google.mlkit:translate:17.0.3"
@@ -46,7 +46,7 @@ androidx-viewpager2 = "androidx.viewpager2:viewpager2:1.1.0"
 # Used directly by the TalkBack sources
 guava = "com.google.guava:guava:33.7.2-android"
 checker-qual = "org.checkerframework:checker-qual:4.3.1"
-errorprone-annotations = "com.google.errorprone:error_prone_annotations:2.51.0"
+errorprone-annotations = "com.google.errorprone:error_prone_annotations:2.52.0"
 
 # Auto-value
 auto-value-annotations = { module = "com.google.auto.value:auto-value-annotations", version.ref = "autoValue" }
