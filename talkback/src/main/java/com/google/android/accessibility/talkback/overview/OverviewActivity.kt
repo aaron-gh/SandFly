@@ -205,6 +205,7 @@ class OverviewActivity : AppCompatActivity() {
     opening = true
     loaded = false
     ShizukuShell.hold(this)
+    show()
     load()
   }
 
