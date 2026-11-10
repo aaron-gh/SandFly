@@ -1165,22 +1165,25 @@ public class ImageCaptioner extends Handler
       handleScreenshotCaptureFailure(request, isUserRequested);
       return;
     }
-    byte[] imageBytes = DataFieldUtils.encodeImageToByteArray(screenCapture);
-    if (imageBytes == null) {
-      handleScreenshotCaptureFailure(request, isUserRequested);
-      return;
-    }
-
-    requestId++;
-    AiResultOutput.claim(requestId);
-    pipeline.returnFeedback(
-        EVENT_ID_UNTRACKED, Feedback.geminiScreenOverview(requestId, focusedNode, imageBytes));
-
-    if (!screenCapture.isRecycled()) {
-      screenCapture.recycle();
-    }
-
-    screenshotRequests.performNextRequest(request);
+    // The capture is compressed, then recycled, off the main thread.
+    DataFieldUtils.encodeImageInBackground(
+        screenCapture,
+        /* recycle= */ true,
+        imageBytes -> {
+          if (isShutdown) {
+            return;
+          }
+          if (imageBytes == null) {
+            handleScreenshotCaptureFailure(request, isUserRequested);
+            return;
+          }
+          requestId++;
+          AiResultOutput.claim(requestId);
+          pipeline.returnFeedback(
+              EVENT_ID_UNTRACKED,
+              Feedback.geminiScreenOverview(requestId, focusedNode, imageBytes));
+          screenshotRequests.performNextRequest(request);
+        });
   }
 
   /**
@@ -1221,9 +1224,15 @@ public class ImageCaptioner extends Handler
       return;
     }
     if (wholeScreen) {
-      byte[] imageBytes = DataFieldUtils.encodeImageToByteArray(screenCapture);
-      recycle(screenCapture);
-      askAboutImageBytes(request, wholeScreen, imageBytes);
+      // The capture is compressed, then recycled, off the main thread.
+      DataFieldUtils.encodeImageInBackground(
+          screenCapture,
+          /* recycle= */ true,
+          imageBytes -> {
+            if (!isShutdown) {
+              askAboutImageBytes(request, wholeScreen, imageBytes);
+            }
+          });
     } else {
       prepareScreens(
           request,
@@ -1232,10 +1241,16 @@ public class ImageCaptioner extends Handler
           /* isUserRequested= */ true,
           captureByWindow,
           screens -> {
-            byte[] imageBytes =
-                DataFieldUtils.encodeImageToByteArray(screens.croppedScreenCapture());
+            // A copy of the crop is compressed off the main thread, so the screens can go now.
+            DataFieldUtils.encodeImageInBackground(
+                screens.croppedScreenCapture(),
+                /* recycle= */ false,
+                imageBytes -> {
+                  if (!isShutdown) {
+                    askAboutImageBytes(request, wholeScreen, imageBytes);
+                  }
+                });
             recycle(screens);
-            askAboutImageBytes(request, wholeScreen, imageBytes);
           });
     }
   }

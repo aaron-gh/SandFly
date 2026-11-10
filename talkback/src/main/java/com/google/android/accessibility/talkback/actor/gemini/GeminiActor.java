@@ -80,6 +80,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import org.checkerframework.checker.nullness.qual.Nullable;
 
 /** GeminiActor performs Gemini commands, via {@link GeminiEndpoint}. */
 public class GeminiActor {
@@ -308,19 +309,25 @@ public class GeminiActor {
           }
         };
 
-    byte[] imageBytes = DataFieldUtils.encodeImageToByteArray(image);
-    if (geminiEndpoint.createRequestGeminiCommand(
-        new CommonRequest(action, text, imageBytes, /* manualTrigger= */ true, responseListener))) {
-      if (requestIdMap.size() > REQUEST_ID_MAP_CAPACITY) {
-        LogUtils.w(TAG, "The requestIdMap reaches its max capacity.");
-        requestIdMap.clear();
-      }
-      requestIdMap.put(requestId, /* isServerSide= */ true);
-      progressTonePlayer.stop();
-      aiCoreEndpoint.cancelCommand();
-      progressTonePlayer.play(/* playTone= */ true, /* delayPlayTone= */ false);
-      cachedImageMap.put(requestId, imageBytes);
-    }
+    // The caller keeps the image, so a copy is compressed.
+    DataFieldUtils.encodeImageInBackground(
+        image,
+        /* recycle= */ false,
+        imageBytes -> {
+          if (geminiEndpoint.createRequestGeminiCommand(
+              new CommonRequest(
+                  action, text, imageBytes, /* manualTrigger= */ true, responseListener))) {
+            if (requestIdMap.size() > REQUEST_ID_MAP_CAPACITY) {
+              LogUtils.w(TAG, "The requestIdMap reaches its max capacity.");
+              requestIdMap.clear();
+            }
+            requestIdMap.put(requestId, /* isServerSide= */ true);
+            progressTonePlayer.stop();
+            aiCoreEndpoint.cancelCommand();
+            progressTonePlayer.play(/* playTone= */ true, /* delayPlayTone= */ false);
+            cachedImageMap.put(requestId, imageBytes);
+          }
+        });
   }
 
   /**
@@ -329,20 +336,22 @@ public class GeminiActor {
    * @param request the request to be sent to Gemini.
    */
   public void requestScreenOverview(GeminiRequest request) {
+    if (request.imageBytes() == null) {
+      // The request's image is compressed, then recycled, off the main thread.
+      DataFieldUtils.encodeImageInBackground(
+          request.image(),
+          /* recycle= */ true,
+          imageBytes -> requestScreenOverview(request, imageBytes));
+    } else {
+      requestScreenOverview(request, request.imageBytes());
+    }
+  }
+
+  private void requestScreenOverview(GeminiRequest request, byte @Nullable [] imageBytes) {
     var requestId = request.requestId();
-    var imageBytes = request.imageBytes();
     var focusedNode = request.focusedNode();
     var query = request.text();
     var a11yTree = request.a11yTree();
-    if (imageBytes == null) {
-      var image = request.image();
-      if (image != null) {
-        imageBytes = DataFieldUtils.encodeImageToByteArray(image);
-      }
-      if (!image.isRecycled()) {
-        image.recycle();
-      }
-    }
     if (imageBytes == null) {
       LogUtils.e(TAG, "Invalid request for requestScreenOverview: required fields are null");
       return;

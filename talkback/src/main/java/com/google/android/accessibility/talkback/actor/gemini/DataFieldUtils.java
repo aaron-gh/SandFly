@@ -20,6 +20,8 @@ package com.google.android.accessibility.talkback.actor.gemini;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.CompressFormat;
+import android.os.Handler;
+import android.os.Looper;
 import android.text.TextUtils;
 import android.util.Base64;
 import android.util.Pair;
@@ -34,6 +36,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.Queue;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.RejectedExecutionException;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+import java.util.function.Consumer;
 import org.checkerframework.checker.nullness.qual.Nullable;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -130,6 +137,76 @@ public class DataFieldUtils {
       return null;
     }
     return byteArrayOutputStream.toByteArray();
+  }
+
+  // Compresses images for AI requests off the main thread, one at a time. The thread ends when it
+  // has nothing to do.
+  private static final ThreadPoolExecutor IMAGE_ENCODER = createImageEncoder();
+
+  private static ThreadPoolExecutor createImageEncoder() {
+    ThreadPoolExecutor executor =
+        new ThreadPoolExecutor(
+            1,
+            1,
+            30,
+            TimeUnit.SECONDS,
+            new ArrayBlockingQueue<>(8),
+            runnable -> {
+              Thread thread = new Thread(runnable, "AI image encoder");
+              thread.setDaemon(true);
+              return thread;
+            });
+    executor.allowCoreThreadTimeOut(true);
+    return executor;
+  }
+
+  /**
+   * Compresses {@code image} as {@link #encodeImageToByteArray} does, on a background thread, and
+   * then gives the bytes, or null when there is no image or compression fails, to {@code then} on
+   * the main thread. With {@code recycle}, the image belongs to this call and is recycled after
+   * compression. Otherwise a copy is compressed, so that the caller may recycle the image at once.
+   */
+  public static void encodeImageInBackground(
+      @Nullable Bitmap image, boolean recycle, Consumer<byte @Nullable []> then) {
+    Handler main = new Handler(Looper.getMainLooper());
+    @Nullable Bitmap source = image;
+    if (image != null && !recycle) {
+      source =
+          image.isRecycled()
+              ? null
+              : image.copy(
+                  image.getConfig() == null ? Bitmap.Config.ARGB_8888 : image.getConfig(),
+                  /* isMutable= */ false);
+    }
+    if (source == null) {
+      main.post(() -> then.accept(null));
+      return;
+    }
+    Bitmap toEncode = source;
+    try {
+      IMAGE_ENCODER.execute(
+          () -> {
+            byte @Nullable [] bytes = null;
+            // An OutOfMemoryError while compressing would otherwise stop SandFly.
+            try {
+              if (!toEncode.isRecycled()) {
+                bytes = encodeImageToByteArray(toEncode);
+              }
+            } catch (Throwable e) {
+              LogUtils.e(TAG, "Bitmap compression failed: %s", e);
+            } finally {
+              if (!toEncode.isRecycled()) {
+                toEncode.recycle();
+              }
+            }
+            byte @Nullable [] result = bytes;
+            main.post(() -> then.accept(result));
+          });
+    } catch (RejectedExecutionException e) {
+      LogUtils.e(TAG, "Too many images waiting for compression");
+      toEncode.recycle();
+      main.post(() -> then.accept(null));
+    }
   }
 
   /** Creates a JSON object for the data body of a Gemini request. */
