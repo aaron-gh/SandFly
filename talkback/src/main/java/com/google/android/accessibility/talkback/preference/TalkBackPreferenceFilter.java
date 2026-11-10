@@ -180,6 +180,9 @@ public class TalkBackPreferenceFilter {
     SWIPE_HOLD_TIME(
         R.string.pref_swipe_hold_time_key,
         HIDDEN_ON_TV | HIDDEN_ON_WATCH | SHOW_IF_SERVICE_GESTURE_DETECTION),
+    SWIPE_START_TIME(
+        R.string.pref_swipe_start_time_key,
+        HIDDEN_ON_TV | HIDDEN_ON_WATCH | SHOW_IF_SERVICE_GESTURE_DETECTION),
     // Swipes that end with a rest, which only SandFly's own gesture detection recognizes.
     CUSTOMIZE_GESTURE_UP_AND_HOLD(
         R.string.pref_shortcut_up_and_hold_key,

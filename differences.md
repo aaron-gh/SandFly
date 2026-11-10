@@ -60,6 +60,10 @@ Taps with two or more fingers always allow at least 0.25 seconds between taps, a
 
 This setting appears only when SandFly recognizes gestures itself, which requires Android 13 or later and **Handle gestures in SandFly** turned on. For more information, see [Gestures recognized by SandFly](#gestures-recognized-by-sandfly).
 
+### Gesture start time
+
+A one-finger swipe in TalkBack has to move 1 cm within 0.15 seconds; a slower start becomes explore by touch. In SandFly, **Gesture start time** in gesture settings sets this time from 0.15 to 0.3 seconds, 0.15 by default. Like **Time between one-finger taps**, it appears only when SandFly recognizes gestures itself.
+
 ### Low-latency audio
 
 Android's usual audio path adds about 60 to 70 ms before a sound or speech reaches the speaker. When you turn on **Controls** > **Touch and activation** > **Reduce delay** > **Low-latency audio**, SandFly plays its sounds and speech through a single fast audio track at your phone's own sample rate. On a Galaxy Z Fold7, this path takes about 21 ms. The sounds of a sound theme are decoded for it as soon as the theme is chosen or SandFly starts, and over a minute of them stays decoded, so that none waits for its first play or plays the slower usual way.
@@ -480,6 +484,7 @@ SandFly adds these actions, which you can assign to gestures in gesture settings
 *   **System quick settings** and **System notification shade** open the system's own quick settings and notification shade, when **Use SandFly's quick settings** or **Use SandFly's notification list** is on.
 *   **Previous app**, in **System actions**, switches to the app before the one on screen. With Shizuku, SandFly reads the recent apps and opens that app, leaving out the launcher, and says "No previous app" when there is none. Without Shizuku, it performs the system's Recents action twice. **Overview**, performed again while SandFly's overview is on screen, opens the previous app the same way, and says "Recent apps unavailable" when the recent apps can't be read.
 *   **Take screenshot**, in **System actions**, takes a screenshot with Android's screenshot action.
+*   **Answer call**, in **System actions**, answers the ringing call, and says "No incoming call" when none rings. The first time, SandFly asks for permission to answer calls. While a call rings, only a volume key with Answer call assigned to one of its presses runs commands; Android keeps a volume key press that silences the ringer from SandFly.
 *   **Write the letter of a reading control**, in **Menu and controls**, opens a writing surface on the whole screen. Write a letter with one finger, and SandFly chooses the reading control with that letter, or else the next one whose name starts with it. The letters are mostly NVDA's quick navigation keys: H for Headings, K for Links, L for Lines, A for Landmarks, W for Words, C for Characters, P for Paragraphs, O for Controls, S for Speech rate, and B, X, E, G, I, T, R, V and U for buttons, checkboxes, edit fields, graphics, list items, tables, radio buttons, visited and unvisited links. **Reading controls** > **Handwriting letters** changes or clears each one. A tap closes the surface, and so do 10 seconds without writing. Handwriting is recognized on the phone by Google's ML Kit, in the phone's language. The first time, SandFly asks whether to download its model for the language, about 20 MB, from Google, and a message shows when it has downloaded. Not on watches.
 
 ### Menus
@@ -788,6 +793,8 @@ There's nothing extra to install or turn on in Accessibility settings, and no se
 ### Choose your games
 
 Go to **Direct touch**, under **Controls** in SandFly settings, and turn on each game in the **Apps** list. When a game that you chose comes to the front, SandFly says "Direct touch on", and when the game gives touch back, it says "Direct touch off". To turn the announcements off, turn off **Speak when direct touch changes**. To feel a short vibration instead or as well, turn on **Vibrate when direct touch changes**. The **Direct touch** switch at the top of the screen turns the whole feature on or off, and is on by default.
+
+The **Turn direct touch on or off for this app** command, in **Activation**, adds the app on screen to the **Apps** list or removes it, and says "Direct touch on" or "Direct touch off". Turning it on also turns on the **Direct touch** switch. Assign it to a volume key press so that a sighted helper can operate an app that doesn't work with SandFly while you still hear speech, and you can turn direct touch off again without touching the screen. With SandFly or the notification shade in front, it says "No app for direct touch".
 
 ### When SandFly takes touch back
 

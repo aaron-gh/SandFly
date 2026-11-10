@@ -298,7 +298,10 @@ public class TouchInteractionMonitor
   // after the finger has been lifted.
   // This happens because of the time overhead of IPCs.
   private final int determineUserIntentTimeout = GestureConfiguration.DOUBLE_TAP_TIMEOUT_MS;
-  /** How long after touch down a one-finger swipe can start: the swipe matchers' start limit. */
+  /**
+   * How long after touch down a one-finger swipe can start: the swipe matchers' start limit with the
+   * default gesture start time.
+   */
   private final int swipeStartWindowMs;
   private int typingFocusUserIntentTimeout;
   private int touchFocusUserIntentTimeout;
@@ -636,6 +639,12 @@ public class TouchInteractionMonitor
             context.getResources(),
             R.string.pref_swipe_hold_time_key,
             R.string.pref_swipe_hold_time_default));
+    GestureConfiguration.setSwipeStartTimeMs(
+        SharedPreferencesUtils.getIntFromStringPref(
+            prefs,
+            context.getResources(),
+            R.string.pref_swipe_start_time_key,
+            R.string.pref_swipe_start_time_default));
   }
 
   /** Reads how far edge gestures slide in to their first click, and on to their second. */
@@ -742,7 +751,8 @@ public class TouchInteractionMonitor
                       R.string.pref_touch_focus_time_out_default)
                   - 50;
         } else if (context.getString(R.string.pref_multi_tap_timeout_key).equals(key)
-            || context.getString(R.string.pref_swipe_hold_time_key).equals(key)) {
+            || context.getString(R.string.pref_swipe_hold_time_key).equals(key)
+            || context.getString(R.string.pref_swipe_start_time_key).equals(key)) {
           updateMultiTapTimeout(prefs);
         } else if (context.getString(R.string.pref_typing_confirmation_key).equals(key)) {
           typingMethod =
@@ -2031,7 +2041,10 @@ public class TouchInteractionMonitor
       // A one-finger swipe moving its way: touch exploration waits until the swipe either starts
       // or runs out of time to, so that a swipe that starts slowly isn't explored.
       if (requestTouchExplorationDelayed.isPending() && !isLiftToType && !downOnKeyboard) {
-        requestTouchExplorationDelayed.extendTo(swipeStartWindowMs);
+        requestTouchExplorationDelayed.extendTo(
+            GestureConfiguration.scaleSwipeStartThresholdMs(
+                    swipeStartWindowMs - SWIPE_START_MARGIN_MS)
+                + SWIPE_START_MARGIN_MS);
       }
       return;
     }

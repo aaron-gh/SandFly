@@ -136,6 +136,9 @@ class VolumeKeyCommands(
     }
   }
 
+  /** Whether a double, triple or long press of [keyCode] has [command]. */
+  fun hasCommand(keyCode: Int, command: String): Boolean = presses.hasCommand(keyCode, command)
+
   /** Forgets the presses so far, such as when another feature took the volume keys. */
   fun cancel() {
     presses.cancel()

@@ -522,4 +522,18 @@ class VolumeKeyPressesTest {
     advance(300)
     assertEquals(listOf("run L", "up"), log)
   }
+
+  @Test
+  fun hasCommand_findsTheCommandOfAnyPressOfTheKey() {
+    assign(up = KeyCommands(null, null, "ANSWER_CALL"), down = KeyCommands("A", "ANSWER_CALL", null))
+    assertTrue(presses.hasCommand(KEYCODE_VOLUME_UP, "ANSWER_CALL"))
+    assertTrue(presses.hasCommand(KEYCODE_VOLUME_DOWN, "ANSWER_CALL"))
+    assertTrue(presses.hasCommand(KEYCODE_VOLUME_DOWN, "A"))
+    assertFalse(presses.hasCommand(KEYCODE_VOLUME_UP, "A"))
+  }
+
+  @Test
+  fun hasCommand_falseWithoutCommands() {
+    assertFalse(presses.hasCommand(KEYCODE_VOLUME_UP, "ANSWER_CALL"))
+  }
 }

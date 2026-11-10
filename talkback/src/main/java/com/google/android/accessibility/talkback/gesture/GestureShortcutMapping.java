@@ -784,6 +784,7 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
     SYSTEM_OVERVIEW(R.string.shortcut_value_system_overview, R.string.shortcut_system_overview),
     PREVIOUS_APP(R.string.shortcut_value_previous_app, R.string.shortcut_previous_app),
     TAKE_SCREENSHOT(R.string.shortcut_value_take_screenshot, R.string.shortcut_take_screenshot),
+    ANSWER_CALL(R.string.shortcut_value_answer_call, R.string.shortcut_answer_call),
     SPLIT_SCREEN(R.string.shortcut_value_split_screen, R.string.title_split_screen),
     NOTIFICATIONS(R.string.shortcut_value_notifications, R.string.shortcut_notifications),
     SYSTEM_NOTIFICATIONS(
@@ -904,6 +905,8 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
     PAUSE_BACKTALK(R.string.shortcut_value_pause_backtalk, R.string.title_pause_backtalk),
     PASS_THROUGH_NEXT_GESTURE(
         R.string.shortcut_value_pass_through_next_gesture, R.string.shortcut_pass_through_next),
+    TOGGLE_DIRECT_TOUCH_APP(
+        R.string.shortcut_value_toggle_direct_touch_app, R.string.shortcut_toggle_direct_touch_app),
     PRINT_NODE_TREE(R.string.shortcut_value_print_node_tree, R.string.shortcut_print_node_tree),
     PRINT_PERFORMANCE_STATS(
         R.string.shortcut_value_print_performance_stats, R.string.shortcut_print_performance_stats),

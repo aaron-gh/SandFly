@@ -2261,6 +2261,12 @@
     <string name="shortcut_previous_app">Previous app</string>
     <!-- Label for the shortcut that takes a screenshot. [CHAR_LIMIT=40] -->
     <string name="shortcut_take_screenshot">Take screenshot</string>
+    <!-- Label for the shortcut that answers the incoming phone call that is ringing. [CHAR_LIMIT=40] -->
+    <string name="shortcut_answer_call">Answer call</string>
+    <!-- Spoken when the Answer call shortcut runs while no phone call is ringing. [CHAR_LIMIT=40] -->
+    <string name="answer_call_no_call">No incoming call</string>
+    <!-- Spoken when the Answer call shortcut runs before the user has allowed the screen reader to answer phone calls; Android then asks for that permission. [CHAR_LIMIT=60] -->
+    <string name="answer_call_permission">Permission needed to answer calls</string>
     <string name="title_split_screen">Split screen</string>
     <string name="split_screen_go_to_divider">Go to divider</string>
     <string name="split_screen_not_active">Not in split screen</string>
@@ -3002,6 +3008,8 @@
     <string name="title_pref_multi_tap_timeout">Time between one-finger taps</string>
     <!-- Title of the setting for how long the finger rests at the end of a swipe before lifting, for a swipe and hold gesture. [CHAR_LIMIT=60] -->
     <string name="title_pref_swipe_hold_time">Hold time after a swipe</string>
+    <!-- Title of the setting for how long a one-finger swipe may take to move its first centimeter before the touch is treated as exploring the screen instead of a gesture. [CHAR_LIMIT=60] -->
+    <string name="title_pref_swipe_start_time">Gesture start time</string>
     <!-- Label for multi-tap timeout. [CHAR LIMIT=NONE]-->
     <string name="value_multi_tap_timeout_100ms">0.1 seconds</string>
     <!-- Label for multi-tap timeout. [CHAR LIMIT=NONE]-->

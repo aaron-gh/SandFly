@@ -21,6 +21,9 @@
     <!-- Required to monitor phone busy state. -->
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
+    <!-- Answer call command. Asked for the first time the command runs. -->
+    <uses-permission android:name="android.permission.ANSWER_PHONE_CALLS" />
+
     <!-- Required for haptic feedback. -->
     <uses-permission android:name="android.permission.VIBRATE" />
 

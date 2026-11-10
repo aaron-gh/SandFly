@@ -126,7 +126,9 @@ import com.google.android.accessibility.talkback.recognition.LiveRecognition;
 import com.google.android.accessibility.talkback.scripting.ItemInspector;
 import com.google.android.accessibility.talkback.scripting.ScriptCommands;
 import com.google.android.accessibility.talkback.scripting.Scripts;
+import com.google.android.accessibility.talkback.calls.AnswerCall;
 import com.google.android.accessibility.talkback.dictation.AiDictation;
+import com.google.android.accessibility.talkback.directtouch.DirectTouchController;
 import com.google.android.accessibility.talkback.clipboard.ClipboardHistoryFragment;
 import com.google.android.accessibility.talkback.granularediting.GranularEditing;
 import com.google.android.accessibility.talkback.applauncher.BrailleAppLauncher;
@@ -545,6 +547,13 @@ public class GestureController {
       result =
           Build.VERSION.SDK_INT >= Build.VERSION_CODES.P
               && service.performGlobalAction(AccessibilityService.GLOBAL_ACTION_TAKE_SCREENSHOT);
+    } else if (action.equals(service.getString(R.string.shortcut_value_answer_call))) {
+      switch (AnswerCall.answer(service, service.getVoiceActionMonitor().getCurrentCallState())) {
+        case NO_CALL -> speak(service.getString(R.string.answer_call_no_call));
+        case PERMISSION_REQUESTED -> speak(service.getString(R.string.answer_call_permission));
+        case FAILED -> result = false;
+        case ANSWERED -> {}
+      }
     } else if (action.equals(service.getString(R.string.shortcut_value_previous_app))) {
       result = PreviousApp.switchTo(service);
     } else if (action.equals(service.getString(R.string.shortcut_value_notifications))) {
@@ -709,6 +718,14 @@ public class GestureController {
         service.getString(R.string.shortcut_value_pass_through_next_gesture))) {
       result =
           pipeline.returnFeedback(eventId, Feedback.passThroughMode(PASSTHROUGH_CONFIRM_DIALOG));
+    } else if (action.equals(service.getString(R.string.shortcut_value_toggle_direct_touch_app))) {
+      DirectTouchController directTouch = service.getDirectTouchController();
+      Boolean on = (directTouch == null) ? null : directTouch.toggleForAppInFront();
+      if (on == null) {
+        speak(service.getString(R.string.direct_touch_no_app));
+      } else {
+        speak(service.getString(on ? R.string.direct_touch_on : R.string.direct_touch_off));
+      }
     } else if (action.equals(service.getString(R.string.shortcut_value_a11y_button))) {
       result =
           pipeline.returnFeedback(

@@ -104,7 +104,7 @@ class TapUpToTouchExplore extends GestureMatcher {
       return;
     }
     final long timeDelta = event.getEventTime() - firstDownTime;
-    if (timeDelta > maxStartThreshold) {
+    if (timeDelta > GestureConfiguration.scaleSwipeStartThresholdMs(maxStartThreshold)) {
       debugMotionEvent(TAG, "onMove/timeDelta is over. Gesture:%d", getGestureId());
       completeGesture(eventId, event);
       return;

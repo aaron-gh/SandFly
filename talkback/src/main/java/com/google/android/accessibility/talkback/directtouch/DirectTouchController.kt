@@ -89,6 +89,8 @@ class DirectTouchController(
   private var paused = false
   // The value of takesTouchesDirectly() last reported to onTouchesDirectChanged.
   private var reportedTouchesDirect = false
+  // False while the direct touch command changes the settings, as the command speaks the result.
+  private var speakChanges = true
 
   /** Runs on the main thread when [takesTouchesDirectly] changes. */
   var onTouchesDirectChanged: Runnable? = null
@@ -208,6 +210,50 @@ class DirectTouchController(
     if (!paused) {
       evaluate()
     }
+  }
+
+  /**
+   * Turns direct touch on or off for the app in front, for the Turn direct touch on or off for this
+   * app command, and applies it at once. Turning it on also turns on the Direct touch switch.
+   * Returns whether direct touch is now on for the app, or null when no app is in front, such as
+   * when SandFly or System UI is.
+   */
+  fun toggleForAppInFront(): Boolean? {
+    if (!FeatureSupport.supportPassthrough()) {
+      return null
+    }
+    val pkg = appInFront(service.windows.orEmpty()) ?: return null
+    // Marks the app seen without turning it on, so that its manifest can't undo the user's choice.
+    DirectTouchSettings.onFirstSight(prefs, pkg, declaresCapability = false)
+    val on =
+      !(DirectTouchSettings.isMasterEnabled(prefs) && DirectTouchSettings.isAppEnabled(prefs, pkg))
+    speakChanges = false
+    try {
+      if (on) {
+        DirectTouchSettings.setMasterEnabled(prefs, true)
+      }
+      DirectTouchSettings.setAppEnabled(prefs, pkg, on)
+      evaluate()
+    } finally {
+      speakChanges = true
+    }
+    return on
+  }
+
+  /**
+   * The package of the app in front: the main window's, or else the active application window's.
+   * Null for SandFly, System UI and the other packages direct touch never works in.
+   */
+  private fun appInFront(windows: List<AccessibilityWindowInfo>): String? {
+    val window =
+      windows.firstOrNull {
+        it.id == mainWindowId && it.type == AccessibilityWindowInfo.TYPE_APPLICATION
+      }
+        ?: windows.firstOrNull {
+          it.isActive && it.type == AccessibilityWindowInfo.TYPE_APPLICATION
+        }
+        ?: return null
+    return rootPackage(window)?.takeUnless { it in IGNORED_PACKAGES || it == service.packageName }
   }
 
   /**
@@ -496,7 +542,7 @@ class DirectTouchController(
     Rect(service.getSystemService(WindowManager::class.java).currentWindowMetrics.bounds)
 
   private fun announce(on: Boolean) {
-    if (DirectTouchSettings.isSpeechEnabled(prefs)) {
+    if (speakChanges && DirectTouchSettings.isSpeechEnabled(prefs)) {
       val text = service.getString(if (on) R.string.direct_touch_on else R.string.direct_touch_off)
       // A game is always playing audio, and speech is dropped while audio plays unless it is forced.
       val options =

@@ -197,6 +197,7 @@
     <string name="pref_typing_long_press_duration_key" translatable="false">pref_typing_long_press_duration</string>
     <string name="pref_multi_tap_timeout_key" translatable="false">pref_multi_tap_timeout</string>
     <string name="pref_swipe_hold_time_key" translatable="false">pref_swipe_hold_time</string>
+    <string name="pref_swipe_start_time_key" translatable="false">pref_swipe_start_time</string>
     <string name="pref_typing_focus_time_out_key" translatable="false">pref_typing_focus_time_out_key</string>
     <string name="pref_typing_focus_time_out_first_update_key" translatable="false">pref_typing_focus_time_out_first_update_key</string>
     <string name="pref_touch_focus_time_out_key" translatable="false">pref_touch_focus_time_out_key</string>
@@ -1249,6 +1250,24 @@
     <string name="pref_multi_tap_timeout_default" translatable="false">250</string>
     <string name="pref_swipe_hold_time_default" translatable="false">250</string>
 
+  <!-- Gesture start time entries: how long a one-finger swipe may take to move 1 cm. -->
+    <string-array name="pref_swipe_start_time_entries">
+      <item>@string/value_focus_delay_150ms_default</item>
+      <item>@string/value_handwriting_wait_200</item>
+      <item>@string/value_touch_explore_time_out_250ms</item>
+      <item>@string/value_handwriting_wait_300</item>
+    </string-array>
+
+  <!-- Gesture start time values, in milliseconds. -->
+    <string-array name="pref_swipe_start_time_values">
+      <item>150</item>
+      <item>200</item>
+      <item>250</item>
+      <item>300</item>
+    </string-array>
+
+    <string name="pref_swipe_start_time_default" translatable="false">150</string>
+
     <string name="pref_rotor_step_degrees_key" translatable="false">pref_rotor_step_degrees</string>
   <!-- Rotor turn per step entries -->
     <string-array name="pref_rotor_step_degrees_entries">
@@ -1391,6 +1410,7 @@
         <item>@string/shortcut_system_overview</item>
         <item>@string/shortcut_previous_app</item>
         <item>@string/shortcut_take_screenshot</item>
+        <item>@string/shortcut_answer_call</item>
         <item>@string/title_split_screen</item>
         <item>@string/shortcut_notifications</item>
         <item>@string/shortcut_system_notifications</item>
@@ -1410,6 +1430,7 @@
         <item>@string/shortcut_value_system_overview</item>
         <item>@string/shortcut_value_previous_app</item>
         <item>@string/shortcut_value_take_screenshot</item>
+        <item>@string/shortcut_value_answer_call</item>
         <item>@string/shortcut_value_split_screen</item>
         <item>@string/shortcut_value_notifications</item>
         <item>@string/shortcut_value_system_notifications</item>
@@ -1558,6 +1579,7 @@
   <string name="shortcut_value_system_overview">SYSTEM_OVERVIEW</string>
   <string name="shortcut_value_previous_app" translatable="false">PREVIOUS_APP</string>
   <string name="shortcut_value_take_screenshot" translatable="false">TAKE_SCREENSHOT</string>
+  <string name="shortcut_value_answer_call" translatable="false">ANSWER_CALL</string>
   <string name="shortcut_value_split_screen" translatable="false">SPLIT_SCREEN</string>
   <string name="shortcut_value_lock_screen">LOCK_SCREEN</string>
   <string name="shortcut_value_power_menu">POWER_MENU</string>
@@ -1622,6 +1644,7 @@
   <string name="shortcut_value_fast_forward">FAST_FORWARD</string>
   <string name="shortcut_value_decrease_volume">DECREASE_VOLUME</string>
   <string name="shortcut_value_pass_through_next_gesture">ENABLE_PASS_THROUGH</string>
+  <string name="shortcut_value_toggle_direct_touch_app" translatable="false">TOGGLE_DIRECT_TOUCH_APP</string>
   <string name="shortcut_value_a11y_button">ACCESSIBILITY_BUTTON</string>
   <string name="shortcut_value_a11y_button_long_press">ACCESSIBILITY_BUTTON_CHOOSER</string>
   <string name="shortcut_value_toggle_magnification">TOGGLE_MAGNIFICATION</string>
