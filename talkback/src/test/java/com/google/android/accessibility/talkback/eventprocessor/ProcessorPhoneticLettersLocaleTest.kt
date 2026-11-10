@@ -18,13 +18,8 @@ package com.google.android.accessibility.talkback.eventprocessor
 
 import org.junit.Assert.assertEquals
 import org.junit.Test
-import org.junit.runner.RunWith
-import org.robolectric.RobolectricTestRunner
-import org.robolectric.annotation.Config
 
 /** Tests for [ProcessorPhoneticLetters.normalizePhoneticLocale]. */
-@RunWith(RobolectricTestRunner::class)
-@Config(sdk = [34])
 class ProcessorPhoneticLettersLocaleTest {
 
   @Test
@@ -68,6 +63,16 @@ class ProcessorPhoneticLettersLocaleTest {
     assertEquals("zh-CN", ProcessorPhoneticLetters.normalizePhoneticLocale("zh-hans-cn"))
     assertEquals("zh-TW", ProcessorPhoneticLetters.normalizePhoneticLocale("ZH-HANT-HK"))
     assertEquals("zh-CN", ProcessorPhoneticLetters.normalizePhoneticLocale("zh-cn"))
+  }
+
+  @Test
+  fun extensionAndPrivateUseSubtagsDoNotAffectResolution() {
+    // Everything after a singleton subtag (x-, u-) is extension or private-use data and must not
+    // be mistaken for a script or region.
+    assertEquals("zh-CN", ProcessorPhoneticLetters.normalizePhoneticLocale("zh-CN-x-foo"))
+    assertEquals("zh", ProcessorPhoneticLetters.normalizePhoneticLocale("zh-x-Hans"))
+    assertEquals("zh", ProcessorPhoneticLetters.normalizePhoneticLocale("zh-u-ca-chinese"))
+    assertEquals("zh-CN", ProcessorPhoneticLetters.normalizePhoneticLocale("zh-Hans-x-foo"))
   }
 
   @Test

@@ -62,6 +62,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.function.Function;
 import org.checkerframework.checker.nullness.qual.Nullable;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -375,12 +376,17 @@ public class ProcessorPhoneticLetters implements AccessibilityEventListener {
       return null;
     }
     String[] subtags = locale.split("-", 3);
-    if (subtags.length == 0 || !"zh".equalsIgnoreCase(subtags[0])) {
+    if (!"zh".equalsIgnoreCase(subtags[0])) {
       return locale;
     }
     String script = null;
     String region = null;
     for (int i = 1; i < subtags.length; i++) {
+      if (subtags[i].length() == 1) {
+        // Singleton subtag such as x- or u-: everything after it is extension or private-use
+        // data, not a script or region subtag.
+        break;
+      }
       if (subtags[i].length() == 4) {
         script = subtags[i];
       } else if (subtags[i].length() == 2) {
@@ -396,7 +402,9 @@ public class ProcessorPhoneticLetters implements AccessibilityEventListener {
     if ("CN".equalsIgnoreCase(region) || "SG".equalsIgnoreCase(region)) {
       return "zh-CN";
     }
-    if ("TW".equalsIgnoreCase(region) || "HK".equalsIgnoreCase(region) || "MO".equalsIgnoreCase(region)) {
+    if ("TW".equalsIgnoreCase(region)
+        || "HK".equalsIgnoreCase(region)
+        || "MO".equalsIgnoreCase(region)) {
       return "zh-TW";
     }
     return "zh";
@@ -404,22 +412,38 @@ public class ProcessorPhoneticLetters implements AccessibilityEventListener {
 
   // Map a character to a phonetic letter. If the locale cannot be parsed, falls back to english.
   private @Nullable CharSequence getPhoneticLetter(String locale, String letter) {
-    Locale parsedLocale = LocaleUtils.parseLocaleString(locale);
+    return getPhoneticLetterWithMap(locale, letter, this::getPhoneticLetterMap);
+  }
+
+  /**
+   * Map a character to a phonetic letter, using {@code phoneticLetterMap} to get the letter
+   * descriptions for a locale node. Apart from the loader this is a pure function, so tests can
+   * supply real or stubbed letter maps.
+   *
+   * <p>The locale is normalized first (Chinese script/region variants collapse to the zh-CN /
+   * zh-TW / zh nodes), and both the lowercasing locale and the {@link LocaleSpan} attached to the
+   * result come from the normalized tag.
+   */
+  @VisibleForTesting
+  static @Nullable CharSequence getPhoneticLetterWithMap(
+      String locale, String letter, Function<String, Map<String, String>> phoneticLetterMap) {
+    String normalizedLocale = normalizePhoneticLocale(locale);
+    Locale parsedLocale = LocaleUtils.parseLocaleString(normalizedLocale);
     if (parsedLocale == null) {
       parsedLocale = Locale.getDefault();
     }
     String normalizedLetter = letter.toLowerCase(parsedLocale);
-    String value = getPhoneticLetterMap(normalizePhoneticLocale(locale)).get(normalizedLetter);
+    String value = phoneticLetterMap.apply(normalizedLocale).get(normalizedLetter);
     if (value == null) {
       if (parsedLocale.getCountry().isEmpty()) {
         // As a last resort, fall back to English.
-        value = getPhoneticLetterMap(FALLBACK_LOCALE).get(normalizedLetter);
+        value = phoneticLetterMap.apply(FALLBACK_LOCALE).get(normalizedLetter);
       } else {
         // Get the letter for the base language, if possible.
         String baseLanguage = parsedLocale.getLanguage();
         normalizedLetter =
             letter.toLowerCase(Objects.requireNonNull(LocaleUtils.parseLocaleString(baseLanguage)));
-        value = getPhoneticLetterMap(parsedLocale.getLanguage()).get(normalizedLetter);
+        value = phoneticLetterMap.apply(parsedLocale.getLanguage()).get(normalizedLetter);
       }
     }
     // Attaching the locale to the phonetic letter
