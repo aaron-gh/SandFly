@@ -190,6 +190,34 @@ class CommandMenusTest {
   }
 
   @Test
+  fun customReadingControlsAreKeptApartFromCustomMenus() {
+    val id = CommandMenus.newControlId()
+    assertTrue(CommandMenus.isControl(id))
+    CommandMenus.writeControls(prefs, listOf(Menu(id, "Frequent", listOf(Command("a")))))
+    assertEquals(emptyList<Menu>(), CommandMenus.custom(prefs))
+    assertEquals(listOf(Command("a")), CommandMenus.items(context, prefs, id))
+    CommandMenus.setChildren(context, prefs, Place(id, null), listOf(Command("b")))
+    CommandMenus.rename(prefs, id, "Other")
+    assertEquals(Menu(id, "Other", listOf(Command("b"))), CommandMenus.controls(prefs).single())
+    prefs.edit().putBoolean(id, true).commit()
+    CommandMenus.delete(prefs, id)
+    assertEquals(emptyList<Menu>(), CommandMenus.controls(prefs))
+    assertFalse(prefs.contains(id))
+  }
+
+  @Test
+  fun onlyCommandsMoveToAReadingControl() {
+    val id = CommandMenus.newControlId()
+    CommandMenus.writeControls(prefs, listOf(Menu(id, "Frequent", emptyList())))
+    val control = Place(id, null)
+    assertTrue(control in CommandMenus.destinations(context, prefs, top, Command("a")).map { it.place })
+    assertFalse(
+      control in
+        CommandMenus.destinations(context, prefs, top, Submenu("s", "S", emptyList())).map { it.place }
+    )
+  }
+
+  @Test
   fun menuOnlyCommandsHaveNames() {
     val unavailable = setOf(context.getString(R.string.shortcut_value_system_actions_menu), context.getString(R.string.shortcut_value_toggle_vibration))
     for (row in MenuCommands.rows(context).filter { it.menuOnly && it.value !in unavailable }) {

@@ -27,8 +27,9 @@ import org.json.JSONException
 import org.json.JSONObject
 
 /**
- * The menus made of commands: the SandFly menu and the custom menus. A menu holds commands and
- * submenus, which hold the same, to [MAX_DEPTH] levels.
+ * The menus made of commands: the SandFly menu and the custom menus, which hold commands and
+ * submenus, which hold the same, to [MAX_DEPTH] levels, and the custom reading controls, which hold
+ * commands only.
  *
  * Until the SandFly menu is first changed here, it comes from the old switches and saved order,
  * which watches still edit.
@@ -60,6 +61,8 @@ object CommandMenus {
 
   private const val TREE_KEY = "pref_sandfly_menu_tree"
   private const val CUSTOM_KEY = "pref_custom_menus"
+  private const val CONTROLS_KEY = "pref_custom_reading_controls"
+  private const val CONTROL_PREFIX = "reading-control-"
   private const val COMMAND_PREFIX = "MENU:"
   private const val PATH_SEPARATOR = " > "
 
@@ -86,11 +89,54 @@ object CommandMenus {
     prefs.edit { putString(CUSTOM_KEY, customToJson(menus)) }
   }
 
+  /** Returns whether [id] is the ID of a custom reading control, rather than a custom menu. */
+  @JvmStatic fun isControl(id: String): Boolean = id.startsWith(CONTROL_PREFIX)
+
+  @JvmStatic fun newControlId(): String = CONTROL_PREFIX + newId()
+
+  @Volatile private var parsedControls: Pair<String?, List<Menu>>? = null
+
+  /** Returns the custom reading controls. Called on every reading control gesture. */
+  @JvmStatic
+  fun controls(prefs: SharedPreferences): List<Menu> {
+    val json = prefs.getString(CONTROLS_KEY, null)
+    parsedControls?.takeIf { it.first == json }?.let {
+      return it.second
+    }
+    return customFromJson(json).also { parsedControls = json to it }
+  }
+
+  @JvmStatic
+  fun writeControls(prefs: SharedPreferences, controls: List<Menu>) {
+    prefs.edit { putString(CONTROLS_KEY, customToJson(controls)) }
+  }
+
+  /** Returns the custom menu or custom reading control [id], or null. */
+  fun find(prefs: SharedPreferences, id: String): Menu? = stored(prefs, id).firstOrNull { it.id == id }
+
+  private fun stored(prefs: SharedPreferences, id: String): List<Menu> =
+    if (isControl(id)) controls(prefs) else custom(prefs)
+
+  private fun writeStored(prefs: SharedPreferences, id: String, menus: List<Menu>) {
+    if (isControl(id)) writeControls(prefs, menus) else writeCustom(prefs, menus)
+  }
+
+  /** Renames the custom menu or custom reading control [id]. */
+  fun rename(prefs: SharedPreferences, id: String, name: String) {
+    writeStored(prefs, id, stored(prefs, id).map { if (it.id == id) it.copy(name = name) else it })
+  }
+
+  /** Deletes the custom menu or custom reading control [id]. */
+  fun delete(prefs: SharedPreferences, id: String) {
+    writeStored(prefs, id, stored(prefs, id).filter { it.id != id })
+    if (isControl(id)) prefs.edit { remove(id) }
+  }
+
   /** Returns the top of the menu [menuId], or an empty list when there is no such menu. */
   @JvmStatic
   fun items(context: Context, prefs: SharedPreferences, menuId: String): List<Node> =
     if (menuId == SANDFLY_MENU) sandflyItems(context, prefs)
-    else custom(prefs).firstOrNull { it.id == menuId }?.items.orEmpty()
+    else find(prefs, menuId)?.items.orEmpty()
 
   /** Returns the list at [place], or an empty list when it is gone. */
   fun children(context: Context, prefs: SharedPreferences, place: Place): List<Node> =
@@ -114,7 +160,7 @@ object CommandMenus {
 
   private fun write(context: Context, prefs: SharedPreferences, menuId: String, items: List<Node>) {
     if (menuId != SANDFLY_MENU) {
-      writeCustom(prefs, custom(prefs).map { if (it.id == menuId) it.copy(items = items) else it })
+      writeStored(prefs, menuId, stored(prefs, menuId).map { if (it.id == menuId) it.copy(items = items) else it })
       return
     }
     val rows = MenuCommands.rows(context)
@@ -264,6 +310,12 @@ object CommandMenus {
     add(SANDFLY_MENU, sandflyItems(context, prefs), null, context.getString(R.string.title_pref_category_context_menu))
     for (menu in custom(prefs)) {
       add(menu.id, menu.items, null, menu.name)
+    }
+    // A reading control holds commands only.
+    if (moving is Command) {
+      for (control in controls(prefs)) {
+        add(control.id, control.items, null, control.name)
+      }
     }
     return result
   }

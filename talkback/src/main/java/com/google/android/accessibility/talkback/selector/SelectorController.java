@@ -1675,7 +1675,7 @@ public class SelectorController implements UserInputEventListener {
    */
   public boolean selectReadingControlByKey(EventId eventId, String key) {
     applyPendingSwitch();
-    for (ScriptReadingControl control : Scripts.readingControls()) {
+    for (ScriptReadingControl control : dynamicControls()) {
       if (control.getKey().equals(key)) {
         pipeline.returnFeedback(eventId, Feedback.sound(R.raw.next_reading_control));
         selectScriptControl(
@@ -1702,45 +1702,28 @@ public class SelectorController implements UserInputEventListener {
   private boolean selectPreviousOrNext(
       EventId eventId, AnnounceType announceType, boolean isNext, boolean showOverlay) {
     applyPendingSwitch();
-    List<Setting> settings = getFilteredSettings();
-    List<ScriptReadingControl> controls = Scripts.readingControls();
-
-    int settingsSize = settings.size() + controls.size();
-    if (settingsSize == 0) {
+    List<Object> entries = rotorEntries();
+    int size = entries.size();
+    if (size == 0) {
       return false;
     }
 
-    // Get the index of the selected setting.
-    @Nullable ScriptReadingControl currentControl = currentScriptControl(controls);
-    int index =
-        currentControl != null
-            ? settings.size() + controls.indexOf(currentControl)
-            : settings.indexOf(getCurrentSetting(context, prefs));
-
-    // Change the selected setting.
-    // If the current settings is not valid, the index (-1) will fall-back to 0 or settingsSize - 1
+    // If the current settings is not valid, the index (-1) will fall-back to 0 or size - 1
     // depending on isNext
+    int index = currentRotorIndex(entries);
     if (isNext) {
-      index++;
-      if (index >= settingsSize || index < 0) {
-        // User has reached end of list so wrap to start of list.
-        index = 0;
-      }
-    } else { // Choose previous setting.
-      index--;
-      if (index >= settingsSize || index < 0) {
-        // User has reached start of list so wrap to end of list.
-        index = settingsSize - 1;
-      }
+      index = index + 1 >= size || index < 0 ? 0 : index + 1;
+    } else {
+      index = index - 1 < 0 ? size - 1 : index - 1;
     }
     pipeline.returnFeedback(
         eventId,
         Feedback.sound(isNext ? R.raw.next_reading_control : R.raw.previous_reading_control));
-    if (index < settings.size()) {
-      setCurrentSetting(eventId, settings.get(index), announceType, showOverlay);
+    Object entry = entries.get(index);
+    if (entry instanceof Setting setting) {
+      setCurrentSetting(eventId, setting, announceType, showOverlay);
     } else {
-      selectScriptControl(
-          eventId, controls.get(index - settings.size()), announceType, showOverlay);
+      selectScriptControl(eventId, (ScriptReadingControl) entry, announceType, showOverlay);
     }
     return true;
   }
@@ -1756,23 +1739,17 @@ public class SelectorController implements UserInputEventListener {
     if (wanted.isEmpty()) {
       return null;
     }
-    List<Setting> settings = getFilteredSettings();
-    List<ScriptReadingControl> controls = Scripts.readingControls();
-    int size = settings.size() + controls.size();
-    @Nullable ScriptReadingControl currentControl = currentScriptControl(controls);
-    int current =
-        currentControl != null
-            ? settings.size() + controls.indexOf(currentControl)
-            : settings.indexOf(getCurrentSetting(context, prefs));
+    List<Object> entries = rotorEntries();
+    int size = entries.size();
+    int current = currentRotorIndex(entries);
     // A control given this letter comes first; several with the same letter take turns.
     if (wanted.length() == 1) {
       char letterWanted = Character.toUpperCase(wanted.charAt(0));
       for (int step = 1; step <= size; step++) {
         int index = Math.floorMod(current + step, size);
-        if (index >= settings.size()) {
+        if (!(entries.get(index) instanceof Setting setting)) {
           continue;
         }
-        Setting setting = settings.get(index);
         Character assigned = ReadingControlLetters.letterOf(prefs, setting);
         if (assigned == null || assigned != letterWanted) {
           continue;
@@ -1785,27 +1762,93 @@ public class SelectorController implements UserInputEventListener {
     // Otherwise, the next control whose name starts with it.
     for (int step = 1; step <= size; step++) {
       int index = Math.floorMod(current + step, size);
+      Object entry = entries.get(index);
       String name =
-          index < settings.size()
-              ? getSettingActionDescriptionAndHint(settings.get(index), EVENT_ID_UNTRACKED)
-                  .description
-              : controls.get(index - settings.size()).getTitle().toString();
+          entry instanceof Setting setting
+              ? getSettingActionDescriptionAndHint(setting, EVENT_ID_UNTRACKED).description
+              : ((ScriptReadingControl) entry).getTitle();
       if (name == null || !foldForLetter(name).startsWith(wanted)) {
         continue;
       }
       pipeline.returnFeedback(eventId, Feedback.sound(R.raw.next_reading_control));
-      if (index < settings.size()) {
-        setCurrentSetting(eventId, settings.get(index), AnnounceType.DESCRIPTION_AND_HINT, false);
+      if (entry instanceof Setting setting) {
+        setCurrentSetting(eventId, setting, AnnounceType.DESCRIPTION_AND_HINT, false);
       } else {
         selectScriptControl(
             eventId,
-            controls.get(index - settings.size()),
+            (ScriptReadingControl) entry,
             AnnounceType.DESCRIPTION_AND_HINT,
             /* showOverlay= */ false);
       }
       return name;
     }
     return null;
+  }
+
+  /** The custom reading controls, in or out of the list, and the reading controls of scripts. */
+  private List<ScriptReadingControl> dynamicControls() {
+    List<ScriptReadingControl> controls = new ArrayList<>(customControls());
+    controls.addAll(Scripts.readingControls());
+    return controls;
+  }
+
+  private List<ScriptReadingControl> customControls() {
+    return CustomReadingControls.controls(
+        context,
+        prefs,
+        text ->
+            announceSetting(
+                EVENT_ID_UNTRACKED, text, context.getString(R.string.ai_actions_hint)));
+  }
+
+  /**
+   * The reading controls gestures move through: each is a {@link Setting} or a {@link
+   * ScriptReadingControl}. Custom reading controls take their places in the list, and those of
+   * scripts come last.
+   */
+  private List<Object> rotorEntries() {
+    List<Setting> settings = getFilteredSettings();
+    List<ScriptReadingControl> custom = customControls();
+    List<Object> entries = new ArrayList<>();
+    if (custom.isEmpty()) {
+      entries.addAll(settings);
+    } else {
+      Map<String, Object> byKey = new HashMap<>();
+      for (Setting setting : settings) {
+        byKey.put(context.getString(setting.prefKeyResId), setting);
+      }
+      List<String> defaults = new ArrayList<>(defaultOrderKeys(context));
+      for (ScriptReadingControl control : custom) {
+        defaults.add(control.getKey());
+        if (prefs.getBoolean(control.getKey(), true)) {
+          byKey.put(control.getKey(), control);
+        }
+      }
+      for (String key : ItemOrder.ordered(prefs, ItemOrder.READING_CONTROLS_KEY, defaults)) {
+        @Nullable Object entry = byKey.get(key);
+        if (entry != null) {
+          entries.add(entry);
+        }
+      }
+    }
+    entries.addAll(Scripts.readingControls());
+    return entries;
+  }
+
+  /** The index in {@code entries} of the selected reading control, or -1. */
+  private int currentRotorIndex(List<Object> entries) {
+    @Nullable ScriptReadingControl current = currentScriptControl(dynamicControls());
+    Setting setting = getCurrentSetting(context, prefs);
+    for (int i = 0; i < entries.size(); i++) {
+      Object entry = entries.get(i);
+      if (current != null
+          ? entry instanceof ScriptReadingControl control
+              && control.getKey().equals(current.getKey())
+          : entry == setting) {
+        return i;
+      }
+    }
+    return -1;
   }
 
   /** Text in lower case without accents, so that a written "e" finds "É". */
@@ -1833,12 +1876,18 @@ public class SelectorController implements UserInputEventListener {
       ScriptReadingControl control,
       AnnounceType announceType,
       boolean showOverlay) {
-    requestServiceHandlesDoubleTap(EVENT_ID_UNTRACKED, false);
+    doubleTapArmed = control.getActivates() && announceType != AnnounceType.SILENCE;
+    requestServiceHandlesDoubleTap(EVENT_ID_UNTRACKED, doubleTapArmed);
     scriptControlKey = control.getKey();
     if (announceType == AnnounceType.DESCRIPTION) {
-      announceSetting(eventId, control.getTitle(), null);
+      announceSetting(eventId, control.announcement(), null);
     } else if (announceType == AnnounceType.DESCRIPTION_AND_HINT) {
-      announceSetting(eventId, control.getTitle(), getAdjustSelectedSettingGestures());
+      announceSetting(
+          eventId,
+          control.announcement(),
+          control.getActivates()
+              ? context.getString(R.string.ai_actions_hint)
+              : getAdjustSelectedSettingGestures());
     }
     if (showOverlay
         && !(actorState.getDimScreen().isDimmingEnabled()
@@ -2306,9 +2355,13 @@ public class SelectorController implements UserInputEventListener {
   /** Change the value of the selected setting or scroll forward/backard of the seeker. */
   public void adjustSelectedSetting(EventId eventId, boolean isNext) {
     applyPendingSwitch();
-    @Nullable ScriptReadingControl scriptControl = currentScriptControl(Scripts.readingControls());
+    @Nullable ScriptReadingControl scriptControl = currentScriptControl(dynamicControls());
     if (scriptControl != null) {
       scriptControl.adjust(isNext);
+      if (scriptControl.getActivates()) {
+        doubleTapArmed = true;
+        requestServiceHandlesDoubleTap(eventId, true);
+      }
       return;
     }
     Setting currentSetting = getCurrentSetting(context, prefs);
@@ -2576,8 +2629,12 @@ public class SelectorController implements UserInputEventListener {
    * moved.
    */
   public boolean activateDoubleTapSetting() {
-    if (!doubleTapArmed || scriptControlKey != null) {
+    if (!doubleTapArmed) {
       return false;
+    }
+    if (scriptControlKey != null) {
+      @Nullable ScriptReadingControl control = currentScriptControl(dynamicControls());
+      return control != null && control.activate();
     }
     Setting setting = getCurrentSetting(context);
     if (setting == Setting.LIVE_RECOGNITION) {

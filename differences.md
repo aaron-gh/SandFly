@@ -490,6 +490,8 @@ The SandFly menu is made of commands. In **SandFly menu** settings, **Add comman
 
 The **Reading controls** category has **Set reading control to** a command for each item in the list on the **Reading controls** screen, in its order, including reading controls from scripts.
 
+**Custom reading controls**, on the **Reading controls** screen, makes reading controls of commands. Swipe up or down to choose a command, and double-tap to run it. A custom reading control can be moved in the list and removed from it like any other.
+
 The **Setting values** category has next and previous commands for reading controls that have no other command, such as **Punctuation** and **Speech engine**.
 
 When you choose an action for a gesture, the categories of actions are collapsed, except the one with the gesture's current action. The categories in gesture settings, **Reading controls** and **SandFly menu** are collapsed too, and expand when you activate them.

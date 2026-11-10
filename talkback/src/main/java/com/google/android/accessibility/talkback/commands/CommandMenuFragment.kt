@@ -34,6 +34,7 @@ import com.google.android.accessibility.talkback.preference.base.focusAfterLayou
 import com.google.android.accessibility.talkback.preference.base.positionText
 import com.google.android.accessibility.talkback.preference.base.setMoveActions
 import com.google.android.accessibility.talkback.preference.search.SettingsSearch
+import com.google.android.accessibility.talkback.selector.ReadingControlCommands
 
 /**
  * The SandFly menu, a custom menu or one of their submenus: its commands and submenus in order,
@@ -99,8 +100,7 @@ class CommandMenuFragment :
     }
   }
 
-  private fun customMenu(): CommandMenus.Menu? =
-    CommandMenus.custom(prefs).firstOrNull { it.id == place.menuId }
+  private fun customMenu(): CommandMenus.Menu? = CommandMenus.find(prefs, place.menuId)
 
   private fun findSubmenu(nodes: List<CommandMenus.Node>, id: String): CommandMenus.Submenu? {
     for (node in nodes) {
@@ -126,7 +126,9 @@ class CommandMenuFragment :
       putString(ARG_MENU, place.menuId)
       putString(ARG_PARENT, place.parent)
     }
-    screen.action(getString(R.string.menu_add_submenu)) { addSubmenu() }
+    if (!CommandMenus.isControl(place.menuId)) {
+      screen.action(getString(R.string.menu_add_submenu)) { addSubmenu() }
+    }
 
     val current = screen.category(R.string.item_list_current)
     val labels =
@@ -157,7 +159,11 @@ class CommandMenuFragment :
       screen.action(getString(R.string.menu_reset)) { confirmReset() }
     } else if (place.parent == null) {
       screen.link(getString(R.string.menu_assign), null, CommandFragment::class.java) {
-        putString(CommandFragment.ARG_COMMAND, CommandMenus.commandOf(place.menuId))
+        putString(
+          CommandFragment.ARG_COMMAND,
+          if (CommandMenus.isControl(place.menuId)) ReadingControlCommands.selectionValue(place.menuId)
+          else CommandMenus.commandOf(place.menuId),
+        )
       }
       screen.action(getString(R.string.menu_rename)) { renameMenu() }
       screen.action(getString(R.string.menu_delete)) { confirmDeleteMenu() }
@@ -288,10 +294,7 @@ class CommandMenuFragment :
   private fun renameMenu() {
     val menu = customMenu() ?: return
     askName(getString(R.string.menu_rename), menu.name) { name ->
-      CommandMenus.writeCustom(
-        prefs,
-        CommandMenus.custom(prefs).map { if (it.id == menu.id) it.copy(name = name) else it },
-      )
+      CommandMenus.rename(prefs, menu.id, name)
       activity?.title = name
       rebuild()
     }
@@ -302,7 +305,7 @@ class CommandMenuFragment :
     dialog()
       .setMessage(getString(R.string.menu_delete_confirm, menu.name))
       .setPositiveButton(R.string.menu_delete) { _, _ ->
-        CommandMenus.writeCustom(prefs, CommandMenus.custom(prefs).filter { it.id != menu.id })
+        CommandMenus.delete(prefs, menu.id)
         requireActivity().onBackPressedDispatcher.onBackPressed()
       }
       .setNegativeButton(android.R.string.cancel, null)
@@ -389,6 +392,36 @@ class CustomMenusFragment : NotificationCodeFragment(R.string.title_pref_custom_
         CommandMenus.writeCustom(
           prefs,
           CommandMenus.custom(prefs) + CommandMenus.Menu(CommandMenus.newId(), trimmed, emptyList()),
+        )
+        rebuild()
+        null
+      }
+    }
+  }
+}
+
+/** Custom reading controls: the controls the user made, and the button that makes another. */
+class CustomReadingControlsFragment :
+  NotificationCodeFragment(R.string.title_pref_custom_reading_controls) {
+
+  override fun build(screen: PreferenceGroup) {
+    screen.action(getString(R.string.menu_add_reading_control)) { add() }
+    for (control in CommandMenus.controls(prefs)) {
+      screen.link(control.name, null, CommandMenuFragment::class.java) {
+        putString(CommandMenuFragment.ARG_MENU, control.id)
+      }
+    }
+  }
+
+  private fun add() {
+    askText(getString(R.string.menu_add_reading_control), hint = getString(R.string.menu_name)) { name, _, _ ->
+      val trimmed = name.trim()
+      if (trimmed.isEmpty()) {
+        ""
+      } else {
+        CommandMenus.writeControls(
+          prefs,
+          CommandMenus.controls(prefs) + CommandMenus.Menu(CommandMenus.newControlId(), trimmed, emptyList()),
         )
         rebuild()
         null

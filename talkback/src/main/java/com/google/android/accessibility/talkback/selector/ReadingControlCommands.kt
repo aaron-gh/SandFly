@@ -20,9 +20,11 @@ import android.content.Context
 import android.content.SharedPreferences
 import androidx.annotation.StringRes
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.talkback.commands.CommandMenus
 import com.google.android.accessibility.talkback.preference.ItemOrder
 import com.google.android.accessibility.talkback.scripting.Scripts
 import com.google.android.accessibility.talkback.selector.SelectorController.Setting
+import com.google.android.accessibility.utils.SharedPreferencesUtils
 import java.util.Locale
 import org.xmlpull.v1.XmlPullParser
 
@@ -97,19 +99,28 @@ object ReadingControlCommands {
   /** The preference key or script key of the reading control the command [value] selects. */
   @JvmStatic fun selectedKey(value: String): String = value.removePrefix(SELECT_PREFIX)
 
+  /** The value of the command that selects the reading control with the key [key]. */
+  fun selectionValue(key: String): String = SELECT_PREFIX + key
+
   /** Returns a command for each reading control in the user's list, in its order. */
   fun selections(context: Context, prefs: SharedPreferences): List<Selection> {
     val titles = titles(context)
-    val settings =
-      SelectorController.orderSettings(context, ItemOrder.stored(prefs, ItemOrder.READING_CONTROLS_KEY))
-        .filter {
-          prefs.getBoolean(context.getString(it.prefKeyResId), context.resources.getBoolean(it.defaultValueResId))
+    val settings = SelectorController.SELECTOR_SETTINGS.associateBy { context.getString(it.prefKeyResId) }
+    val custom =
+      CommandMenus.controls(prefs).filter { it.items.isNotEmpty() && prefs.getBoolean(it.id, true) }.associateBy { it.id }
+    val defaults = SelectorController.defaultOrderKeys(context) + custom.keys
+    val listed =
+      ItemOrder.ordered(prefs, ItemOrder.READING_CONTROLS_KEY, defaults).mapNotNull { key ->
+        val setting = settings[key]
+        when {
+          key in custom -> selection(context, key, custom.getValue(key).name)
+          setting != null &&
+            prefs.getBoolean(key, context.resources.getBoolean(setting.defaultValueResId)) ->
+            titles[key]?.let { selection(context, key, it) }
+          else -> null
         }
-        .mapNotNull { setting ->
-          val key = context.getString(setting.prefKeyResId)
-          titles[key]?.let { selection(context, key, it) }
-        }
-    return settings + Scripts.readingControls().map { selection(context, it.key, it.title) }
+      }
+    return listed + Scripts.readingControls().map { selection(context, it.key, it.title) }
   }
 
   /** The name of the selection command [value], even when its control has left the list. */
@@ -117,7 +128,10 @@ object ReadingControlCommands {
     if (!isSelection(value)) return null
     val key = selectedKey(value)
     val title =
-      Scripts.readingControls().firstOrNull { it.key == key }?.title ?: titles(context)[key] ?: return null
+      Scripts.readingControls().firstOrNull { it.key == key }?.title
+        ?: CommandMenus.find(SharedPreferencesUtils.getSharedPreferences(context), key)?.name
+        ?: titles(context)[key]
+        ?: return null
     return context.getString(R.string.shortcut_set_reading_control, title)
   }
 
