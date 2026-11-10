@@ -20,11 +20,14 @@ import com.google.android.accessibility.utils.PreferenceSettingsUtils;
 import com.google.android.accessibility.utils.ServiceStateListener;
 import com.google.android.accessibility.utils.SettingsUtils;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
+import com.google.android.accessibility.utils.output.EmojiSpeech;
 import com.google.android.accessibility.utils.output.FailoverTextToSpeech;
 import com.google.android.accessibility.utils.output.SpeechEqualizer;
 import com.google.android.accessibility.utils.output.VoiceProfiles;
 import com.google.android.accessibility.utils.output.VoiceProfiles.VoiceProfile;
+import java.text.NumberFormat;
 import java.util.List;
+import java.util.Map;
 import java.util.function.IntFunction;
 
 public class TextToSpeechSettingsFragment extends TalkbackBaseFragment {
@@ -47,6 +50,9 @@ public class TextToSpeechSettingsFragment extends TalkbackBaseFragment {
         } else if (TextUtils.equals(key, VoiceProfiles.PREF_ACTIVE)) {
           // Switched by a gesture, keyboard shortcut or the Backtalk menu.
           updateVoiceProfileSummary();
+        } else if (TextUtils.equals(key, VoiceProfiles.PREF_IDS)) {
+          // A profile chosen as the emoji voice may have been removed.
+          setUpEmojiVoice();
         } else if (SpeechEqualizer.isKey(key)
             || TextUtils.equals(key, FailoverTextToSpeech.PREF_LOW_LATENCY_AUDIO_KEY)) {
           // Changed by the Equalizer reading controls.
@@ -74,6 +80,7 @@ public class TextToSpeechSettingsFragment extends TalkbackBaseFragment {
     setUpEnginePreference();
     setUpSystemTtsSettingsPreference();
     updateSpeechStreamValue();
+    setUpEmojiRate();
 
     setUpSeekBar(
         R.string.pref_speech_volume_seekbar_key_int,
@@ -102,6 +109,8 @@ public class TextToSpeechSettingsFragment extends TalkbackBaseFragment {
     updateSeekBarValues();
     updateVoiceProfileSummary();
     updateEqualizerSummary();
+    // Profiles may have been added, renamed or removed on their own screen.
+    setUpEmojiVoice();
 
     boolean serviceActive =
         TalkBackService.getServiceState() == ServiceStateListener.SERVICE_STATE_ACTIVE;
@@ -149,6 +158,51 @@ public class TextToSpeechSettingsFragment extends TalkbackBaseFragment {
           CharSequence entry = ((ListPreference) preference).getEntry();
           return (entry == null) ? entries[0] : entry;
         });
+  }
+
+  /** Lists the speech voice and the voice profiles, by name, to speak emoji with. */
+  private void setUpEmojiVoice() {
+    if (!(findPreference(EmojiSpeech.PREF_VOICE_PROFILE) instanceof ListPreference list)) {
+      return;
+    }
+    Map<String, String> names = VoiceProfileNames.names(requireContext(), prefs);
+    CharSequence[] entries = new CharSequence[names.size() + 1];
+    CharSequence[] values = new CharSequence[names.size() + 1];
+    entries[0] = getString(R.string.value_emoji_voice_same);
+    values[0] = "";
+    int i = 1;
+    for (Map.Entry<String, String> name : names.entrySet()) {
+      entries[i] = name.getValue();
+      values[i] = name.getKey();
+      i++;
+    }
+    list.setEntries(entries);
+    list.setEntryValues(values);
+    String value = list.getValue();
+    if (value == null || list.findIndexOfValue(value) < 0) {
+      // A removed profile: emoji are spoken with the speech voice, as the service reads it.
+      list.setValue("");
+    }
+  }
+
+  /** Lists the emoji speech rates, as percentages of the speech rate. */
+  private void setUpEmojiRate() {
+    if (!(findPreference(EmojiSpeech.PREF_RATE) instanceof ListPreference list)) {
+      return;
+    }
+    NumberFormat percent = NumberFormat.getPercentInstance();
+    CharSequence[] entries = new CharSequence[EmojiSpeech.RATES.length];
+    CharSequence[] values = new CharSequence[EmojiSpeech.RATES.length];
+    for (int i = 0; i < EmojiSpeech.RATES.length; i++) {
+      entries[i] = percent.format(EmojiSpeech.RATES[i] / 100.0);
+      values[i] = Integer.toString(EmojiSpeech.RATES[i]);
+    }
+    list.setEntries(entries);
+    list.setEntryValues(values);
+    String value = list.getValue();
+    if (value == null || list.findIndexOfValue(value) < 0) {
+      list.setValue(EmojiSpeech.RATE_DEFAULT);
+    }
   }
 
   /**

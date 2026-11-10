@@ -17,6 +17,7 @@
 package com.google.android.accessibility.utils.output;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertSame;
 
 import android.content.Context;
@@ -25,6 +26,9 @@ import android.text.Spanned;
 import android.text.style.LocaleSpan;
 import android.text.style.StyleSpan;
 import android.text.style.TtsSpan;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Locale;
 import org.junit.After;
 import org.junit.Before;
@@ -47,6 +51,7 @@ public class EmojiSpeechTest {
 
   @After
   public void tearDown() {
+    EmojiSpeech.setOwnSpeech(/* voice= */ false, /* multiple= */ 1f);
     EmojiSpeech.setMode(context, EmojiSpeech.MODE_ENGINE);
     EmojiSpeech.setRepeatCount(0);
   }
@@ -242,5 +247,90 @@ public class EmojiSpeechTest {
     EmojiSpeech.setMode(context, EmojiSpeech.MODE_NAMES);
     assertEquals(-1, EmojiSpeech.emojiEnd(context, text, 0));
     assertEquals(5, EmojiSpeech.emojiEnd(context, text, 1));
+  }
+
+  /** The start and end of each emoji mark in {@code text}, in order. */
+  private static List<String> marks(CharSequence text) {
+    List<String> found = new ArrayList<>();
+    if (!(text instanceof Spanned spanned)) {
+      return found;
+    }
+    EmojiSpeech.Mark[] marks = spanned.getSpans(0, text.length(), EmojiSpeech.Mark.class);
+    Arrays.sort(marks, (a, b) -> spanned.getSpanStart(a) - spanned.getSpanStart(b));
+    for (EmojiSpeech.Mark mark : marks) {
+      found.add(text.subSequence(spanned.getSpanStart(mark), spanned.getSpanEnd(mark)).toString());
+    }
+    return found;
+  }
+
+  @Test
+  public void nothingIsMarkedWithoutAnEmojiVoiceOrRate() {
+    EmojiSpeech.setMode(context, EmojiSpeech.MODE_ENGINE);
+    String text = "Hi 😀 there";
+    assertSame(text, EmojiSpeech.process(context, text));
+    assertFalse(EmojiSpeech.marksEmoji());
+  }
+
+  @Test
+  public void emojiTheEngineReadsAreMarkedForTheirRate() {
+    EmojiSpeech.setOwnSpeech(/* voice= */ false, /* multiple= */ 1.5f);
+    EmojiSpeech.setMode(context, EmojiSpeech.MODE_ENGINE);
+    CharSequence spoken = EmojiSpeech.process(context, "Hi 😀 there 👍🏽");
+    assertEquals("Hi 😀 there 👍🏽", spoken.toString());
+    assertEquals(List.of("😀", "👍🏽"), marks(spoken));
+  }
+
+  @Test
+  public void emojiWithOnlySpacesBetweenAreOneMark() {
+    EmojiSpeech.setOwnSpeech(/* voice= */ true, /* multiple= */ 1f);
+    EmojiSpeech.setMode(context, EmojiSpeech.MODE_ENGINE);
+    assertEquals(List.of("😀😀 👍"), marks(EmojiSpeech.process(context, "ok 😀😀 👍 ok")));
+  }
+
+  @Test
+  public void namesAreMarked() {
+    EmojiSpeech.setOwnSpeech(/* voice= */ true, /* multiple= */ 1f);
+    EmojiSpeech.setMode(context, EmojiSpeech.MODE_NAMES);
+    CharSequence spoken = EmojiSpeech.process(context, "Hi 😀 there 😀👍 ok");
+    assertEquals("Hi grinning face there grinning face thumbs up ok", spoken.toString());
+    assertEquals(List.of("grinning face", "grinning face thumbs up"), marks(spoken));
+  }
+
+  @Test
+  public void emojiUnderATtsSpanAreNotMarked() {
+    EmojiSpeech.setOwnSpeech(/* voice= */ false, /* multiple= */ 2f);
+    EmojiSpeech.setMode(context, EmojiSpeech.MODE_ENGINE);
+    SpannableStringBuilder text = new SpannableStringBuilder("lol 😂😂 ok 😀");
+    text.setSpan(new TtsSpan.TextBuilder("2 😂").build(), 4, 8, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+    assertEquals(List.of("😀"), marks(EmojiSpeech.process(context, text)));
+  }
+
+  @Test
+  public void joinRangesJoinsAcrossSpacesOnly() {
+    String text = "ab  cd e";
+    List<int[]> joined =
+        EmojiSpeech.joinRanges(
+            text, List.of(new int[] {4, 6}, new int[] {0, 2}, new int[] {7, 8}));
+    assertEquals(2, joined.size());
+    assertEquals(0, joined.get(0)[0]);
+    assertEquals(6, joined.get(0)[1]);
+    assertEquals(7, joined.get(1)[0]);
+    assertEquals(8, joined.get(1)[1]);
+  }
+
+  @Test
+  public void rateIsOneOfTheChoices() {
+    assertEquals(1.5f, EmojiSpeech.rateMultiple("150"), 0.001f);
+    assertEquals(0.5f, EmojiSpeech.rateMultiple("50"), 0.001f);
+    assertEquals(1f, EmojiSpeech.rateMultiple("999"), 0.001f);
+    assertEquals(1f, EmojiSpeech.rateMultiple("fast"), 0.001f);
+    assertEquals(1f, EmojiSpeech.rateMultiple(null), 0.001f);
+  }
+
+  @Test
+  public void rateStaysInTheSpeechRange() {
+    assertEquals(3f, EmojiSpeech.rateFor(2f, 1.5f), 0.001f);
+    assertEquals(6f, EmojiSpeech.rateFor(5f, 3f), 0.001f);
+    assertEquals(0.1f, EmojiSpeech.rateFor(0.1f, 0.5f), 0.001f);
   }
 }

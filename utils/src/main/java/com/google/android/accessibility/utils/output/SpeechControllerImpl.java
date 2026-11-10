@@ -2238,8 +2238,11 @@ public class SpeechControllerImpl implements SpeechController {
 
     boolean applyParams = mUseIntonation || params.containsKey(SPEECH_PARAM_FROM_SCRIPT);
     float pitch = speechPitch * (applyParams ? parseFloatParam(params, SpeechParam.PITCH, 1) : 1);
-    final float rate =
-        speechRate * (applyParams ? parseFloatParam(params, SpeechParam.RATE, 1) : 1);
+    float rate = speechRate * (applyParams ? parseFloatParam(params, SpeechParam.RATE, 1) : 1);
+    if (params.containsKey(EmojiSpeech.SPEECH_PARAM_EMOJI)) {
+      // The emoji speech rate applies whether or not intonation is on.
+      rate = EmojiSpeech.rateFor(rate);
+    }
     CharSequence text;
 
     final boolean shouldSilenceFragment = shouldSilenceSpeech(feedbackItem);

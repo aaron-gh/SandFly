@@ -17,12 +17,14 @@
 package com.google.android.accessibility.utils.output;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.res.AssetManager;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.text.TextUtils;
 import android.text.style.LocaleSpan;
 import android.text.style.TtsSpan;
+import androidx.annotation.VisibleForTesting;
 import com.google.android.accessibility.utils.R;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import java.io.BufferedReader;
@@ -62,6 +64,27 @@ public final class EmojiSpeech {
   /** Backtalk leaves emoji out, unless the text is only emoji. */
   public static final String MODE_NONE = "none";
 
+  /** The ID of the voice profile emoji are spoken with, or empty for the speech voice. */
+  public static final String PREF_VOICE_PROFILE = "pref_emoji_voice_profile";
+
+  /** The emoji speech rate, as a percentage of the speech rate. */
+  public static final String PREF_RATE = "pref_emoji_rate";
+
+  public static final String RATE_DEFAULT = "100";
+
+  /** The emoji speech rates that can be chosen, as percentages of the speech rate. */
+  public static final int[] RATES = {50, 75, 100, 125, 150, 175, 200, 250, 300};
+
+  // The range of speech rates, as in VoiceProfiles and SpeechRateAndPitchActor.
+  private static final float MIN_RATE = 0.1f;
+  private static final float MAX_RATE = 6.0f;
+
+  /**
+   * Marks a fragment of speech that is emoji, for {@link #rate} and the emoji voice. Speech
+   * parameters with this key are passed on to the speech engine as text, which engines ignore.
+   */
+  public static final String SPEECH_PARAM_EMOJI = "sandfly_emoji";
+
   /**
    * Most languages kept loaded: the voice's and those text switches to. Each holds only its names,
    * about 300 KB, as the emoji themselves are in the shared index.
@@ -75,6 +98,12 @@ public final class EmojiSpeech {
 
   /** How many times an emoji repeats before it is counted, or 0 to name each one. */
   private static volatile int repeatCount = 0;
+
+  /** Whether emoji are spoken with a voice profile of their own. */
+  private static volatile boolean ownVoice;
+
+  /** The emoji speech rate, as a multiple of the speech rate. */
+  private static volatile float rate = 1f;
 
   /** The app, for loading names where no context is at hand, such as text iterators. */
   private static volatile @Nullable Context appContext;
@@ -129,7 +158,9 @@ public final class EmojiSpeech {
     mode =
         newMode.equals(MODE_NAMES) || newMode.equals(MODE_NONE) ? newMode : MODE_ENGINE;
     if (mode.equals(MODE_ENGINE)) {
-      clear();
+      if (!marksEmoji()) {
+        clear();
+      }
     } else {
       preload(app, LanguageSwitch.spokenLanguage(null));
     }
@@ -163,7 +194,102 @@ public final class EmojiSpeech {
   /** Lets go of the loaded emoji and names when the service stops; they outlive it otherwise. */
   public static void release() {
     mode = MODE_ENGINE;
+    ownVoice = false;
+    rate = 1f;
     clear();
+  }
+
+  /**
+   * Reads the emoji voice and emoji speech rate. While either differs from the speech's, emoji are
+   * spoken as fragments of their own, marked with {@link Mark}, even when the speech engine reads
+   * them, so call this before {@link #setMode}.
+   */
+  public static void setVoice(SharedPreferences prefs) {
+    String profile = prefs.getString(PREF_VOICE_PROFILE, "");
+    boolean voice = !TextUtils.isEmpty(profile) && VoiceProfiles.ids(prefs).contains(profile);
+    setOwnSpeech(voice, rateMultiple(prefs.getString(PREF_RATE, RATE_DEFAULT)));
+  }
+
+  @VisibleForTesting
+  static void setOwnSpeech(boolean voice, float multiple) {
+    ownVoice = voice;
+    rate = multiple;
+    if (!marksEmoji() && mode.equals(MODE_ENGINE)) {
+      clear();
+    }
+  }
+
+  /**
+   * Returns the emoji speech rate saved as {@code percent} as a multiple of the speech rate: 1 for
+   * a value that isn't one of {@link #RATES}.
+   */
+  static float rateMultiple(@Nullable String percent) {
+    if (percent == null) {
+      return 1f;
+    }
+    try {
+      int value = Integer.parseInt(percent.trim());
+      for (int allowed : RATES) {
+        if (allowed == value) {
+          return value / 100f;
+        }
+      }
+    } catch (NumberFormatException e) {
+      // A damaged setting speaks emoji at the speech rate.
+    }
+    return 1f;
+  }
+
+  /** Returns the emoji speech rate, as a multiple of the speech rate. */
+  public static float rate() {
+    return rate;
+  }
+
+  /** Returns the rate to speak emoji at, for speech at {@code speechRate}. */
+  public static float rateFor(float speechRate) {
+    return rateFor(speechRate, rate);
+  }
+
+  /**
+   * Returns {@code speechRate} times {@code multiple}, kept to the rates speech can be set to, as
+   * in VoiceProfiles.
+   */
+  @VisibleForTesting
+  static float rateFor(float speechRate, float multiple) {
+    return Math.max(MIN_RATE, Math.min(MAX_RATE, speechRate * multiple));
+  }
+
+  /** Returns whether emoji are marked as fragments of their own, for their own voice or rate. */
+  public static boolean marksEmoji() {
+    return ownVoice || rate != 1f;
+  }
+
+  /**
+   * Marks speech that is emoji, as they are or by name, so that it is spoken as a fragment of its
+   * own with the emoji voice and rate. See {@link #marksEmoji}.
+   */
+  public static final class Mark {
+    private Mark() {}
+  }
+
+  /** Returns whether {@code start} to {@code end} of {@code text} is all marked as emoji. */
+  public static boolean isMarked(Spanned text, int start, int end) {
+    for (Mark mark : text.getSpans(start, end, Mark.class)) {
+      if (text.getSpanStart(mark) <= start && text.getSpanEnd(mark) >= end) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  /** Returns whether a mark of emoji starts at {@code index} of {@code text}. */
+  public static boolean startsMark(Spanned text, int index) {
+    for (Mark mark : text.getSpans(index, index, Mark.class)) {
+      if (text.getSpanStart(mark) == index) {
+        return true;
+      }
+    }
+    return false;
   }
 
   private static void clear() {
@@ -205,15 +331,25 @@ public final class EmojiSpeech {
    */
   public static CharSequence process(Context context, CharSequence text) {
     String currentMode = mode;
-    if (currentMode.equals(MODE_ENGINE) || TextUtils.isEmpty(text) || !mayHaveEmoji(text)) {
+    boolean mark = marksEmoji();
+    if ((currentMode.equals(MODE_ENGINE) && !mark)
+        || TextUtils.isEmpty(text)
+        || !mayHaveEmoji(text)) {
       return text;
     }
     try {
       SpannableStringBuilder result = new SpannableStringBuilder(text);
+      if (currentMode.equals(MODE_ENGINE)) {
+        // The engine reads the emoji, as fragments of their own.
+        return markEmoji(context, result) ? result : text;
+      }
       // With None, text that is only emoji is still named, so that it isn't silent.
       boolean names = currentMode.equals(MODE_NAMES) || onlyEmoji(context, result);
       boolean changed = speakTtsSpanText(context, result, names);
       changed |= replaceEmoji(context, result, names);
+      if (changed && mark) {
+        joinMarks(result);
+      }
       return changed ? result : text;
     } catch (RuntimeException e) {
       // Speech must never be lost: speak the text as it is.
@@ -362,11 +498,17 @@ public final class EmojiSpeech {
         boolean wordBefore = start > 0 && !isSpace(text.charAt(start - 1));
         boolean wordAfter = end < text.length() && !isSpace(text.charAt(end));
         replacement = (wordBefore ? " " : "") + name + (wordAfter ? " " : "");
+        replace(text, start, end, replacement);
+        if (marksEmoji() && !hasTtsSpan(text, start, start + replacement.length())) {
+          int nameStart = start + (wordBefore ? 1 : 0);
+          text.setSpan(
+              new Mark(), nameStart, nameStart + name.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        }
       } else {
         // A space rather than nothing, so words either side stay apart and the mark has a place.
         replacement = " ";
+        replace(text, start, end, replacement);
       }
-      replace(text, start, end, replacement);
       changed = true;
       last = first - 1;
     }
@@ -420,6 +562,83 @@ public final class EmojiSpeech {
       changed = true;
     }
     return changed;
+  }
+
+  /**
+   * Marks the emoji in {@code text} with {@link Mark}, those next to each other or with only spaces
+   * between them as one. Emoji under a {@link TtsSpan} are left, as the span's text would be spoken
+   * with each fragment it was split into. Returns whether any were marked.
+   */
+  private static boolean markEmoji(Context context, SpannableStringBuilder text) {
+    List<int[]> ranges = new ArrayList<>();
+    for (Found match : findAll(context, text)) {
+      if (!hasTtsSpan(text, match.start(), match.end())) {
+        ranges.add(new int[] {match.start(), match.end()});
+      }
+    }
+    for (int[] range : joinRanges(text, ranges)) {
+      text.setSpan(new Mark(), range[0], range[1], Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+    }
+    return !ranges.isEmpty();
+  }
+
+  /** Joins the marks in {@code text} that are next to each other or have only spaces between. */
+  private static void joinMarks(SpannableStringBuilder text) {
+    Mark[] marks = text.getSpans(0, text.length(), Mark.class);
+    if (marks.length < 2) {
+      return;
+    }
+    List<int[]> ranges = new ArrayList<>();
+    for (Mark mark : marks) {
+      ranges.add(new int[] {text.getSpanStart(mark), text.getSpanEnd(mark)});
+      text.removeSpan(mark);
+    }
+    for (int[] range : joinRanges(text, ranges)) {
+      text.setSpan(new Mark(), range[0], range[1], Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+    }
+  }
+
+  /**
+   * Returns {@code ranges} of {@code text} in order, with those next to each other or with only
+   * spaces between them joined, so that a run of emoji is spoken as one fragment.
+   */
+  @VisibleForTesting
+  static List<int[]> joinRanges(CharSequence text, List<int[]> ranges) {
+    List<int[]> sorted = new ArrayList<>(ranges);
+    sorted.sort((a, b) -> Integer.compare(a[0], b[0]));
+    List<int[]> joined = new ArrayList<>();
+    for (int[] range : sorted) {
+      if (range[0] < 0 || range[1] <= range[0]) {
+        continue;
+      }
+      int[] last = joined.isEmpty() ? null : joined.get(joined.size() - 1);
+      if (last != null && onlySpaces(text, last[1], range[0])) {
+        last[1] = Math.max(last[1], range[1]);
+      } else {
+        joined.add(new int[] {range[0], range[1]});
+      }
+    }
+    return joined;
+  }
+
+  /** Returns whether {@code start} to {@code end} of {@code text} is only spaces, or empty. */
+  private static boolean onlySpaces(CharSequence text, int start, int end) {
+    for (int i = start; i < end; i++) {
+      if (!isSpace(text.charAt(i))) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  /** Returns whether a {@link TtsSpan} covers part of {@code start} to {@code end}. */
+  private static boolean hasTtsSpan(Spanned text, int start, int end) {
+    for (TtsSpan span : text.getSpans(start, end, TtsSpan.class)) {
+      if (text.getSpanStart(span) < end && text.getSpanEnd(span) > start) {
+        return true;
+      }
+    }
+    return false;
   }
 
   /** Returns whether part of {@code start} to {@code end} was replaced already. */

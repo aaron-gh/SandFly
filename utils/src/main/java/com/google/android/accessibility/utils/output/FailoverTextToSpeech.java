@@ -443,6 +443,10 @@ public class FailoverTextToSpeech {
 
   private final OnSharedPreferenceChangeListener preferenceChangeListener =
       (sharedPrefs, key) -> {
+        if (EmojiVoice.isKey(key)) {
+          // Also a voice profile key, handled below too.
+          emojiVoice.read(sharedPrefs);
+        }
         if (PREF_TTS_ENGINE_KEY.equals(key)) {
           preferredTtsEngine = readPreferredEngine(sharedPrefs);
           updateDefaultEngine();
@@ -483,6 +487,12 @@ public class FailoverTextToSpeech {
           updateWarmEngines();
         }
       };
+
+  /**
+   * Says emoji with the voice profile chosen for them. Set in the constructor; not final, as the
+   * preference listener above, a lambda, reads it.
+   */
+  private EmojiVoice emojiVoice;
 
   /** The number of time the current TTS has failed consecutively. */
   private int ttsFailures;
@@ -613,6 +623,24 @@ public class FailoverTextToSpeech {
     updateDefaultRate();
 
     SharedPreferences prefs = SharedPreferencesUtils.getSharedPreferences(context);
+    emojiVoice =
+        new EmojiVoice(
+            context,
+            mHandler,
+            new EmojiVoice.Listener() {
+              // Handed over as the main engine's reports are, rather than handled within the
+              // emoji voice's own calls.
+              @Override
+              public void onStart(String utteranceId) {
+                mHandler.onUtteranceStarted(utteranceId);
+              }
+
+              @Override
+              public void onDone(String utteranceId, boolean success) {
+                mHandler.onUtteranceCompleted(utteranceId, success);
+              }
+            });
+    emojiVoice.read(prefs);
     preferredTtsEngine = readPreferredEngine(prefs);
     speakInPhrases = prefs.getBoolean(PREF_SPEAK_IN_PHRASES_KEY, SPEAK_IN_PHRASES_DEFAULT);
     lowLatencyAudio = prefs.getBoolean(PREF_LOW_LATENCY_AUDIO_KEY, lowLatencyAudioDefault(context));
@@ -864,6 +892,28 @@ public class FailoverTextToSpeech {
       return;
     }
 
+    if (utteranceId != null
+        && params.containsKey(EmojiSpeech.SPEECH_PARAM_EMOJI)
+        && emojiVoice.isInUse()) {
+      speakEmoji(
+          text,
+          locale,
+          pitch,
+          rate,
+          params,
+          customFlags,
+          stream,
+          volume,
+          preventDeviceSleep,
+          flushGlobalTtsQueue,
+          eventId);
+      return;
+    }
+    if (flushGlobalTtsQueue) {
+      // New speech replaces an emoji the emoji voice is saying.
+      emojiVoice.stop();
+    }
+
     int result;
 
     volume *= calculateVolumeAdjustment();
@@ -906,6 +956,64 @@ public class FailoverTextToSpeech {
 
       mHandler.onUtteranceCompleted(params.get(Engine.KEY_PARAM_UTTERANCE_ID), /* success= */ true);
     }
+  }
+
+  /**
+   * Says an emoji fragment with the emoji voice. The main engine's speech is flushed first if the
+   * fragment would flush it. If the emoji voice can't say it, the main engine does, with the same
+   * arguments.
+   */
+  private void speakEmoji(
+      CharSequence text,
+      @Nullable Locale locale,
+      float pitch,
+      float rate,
+      Map<String, String> params,
+      Map<String, Integer> customFlags,
+      int stream,
+      float volume,
+      boolean preventDeviceSleep,
+      boolean flushGlobalTtsQueue,
+      EventId eventId) {
+    String utteranceId = params.get(Engine.KEY_PARAM_UTTERANCE_ID);
+    // New speech ends a pause.
+    dropHeldSpeech();
+    if (flushGlobalTtsQueue && tts != null) {
+      stopLowLatencySpeech();
+      try {
+        tts.speak("", SPEECH_FLUSH_ALL, null);
+        unfinishedUtterances.clear();
+      } catch (Exception e) {
+        // Not speaking.
+      }
+    }
+    if (preventDeviceSleep && wakeLock != null && !wakeLock.isHeld()) {
+      wakeLock.acquire(10 * 60 * 1000L /*10 minutes*/);
+    }
+    // Copies: the speech controller fills the same maps again for each later utterance.
+    Map<String, String> mainParams = new HashMap<>(params);
+    mainParams.remove(EmojiSpeech.SPEECH_PARAM_EMOJI);
+    Map<String, Integer> mainFlags =
+        customFlags == null ? new HashMap<>() : new HashMap<>(customFlags);
+    LogUtils.d(TAG, "Saying %s with the emoji voice", utteranceId);
+    emojiVoice.speak(
+        utteranceId,
+        text,
+        EmojiSpeech.rate() * defaultRate,
+        defaultPitch,
+        () ->
+            speakNow(
+                text,
+                locale,
+                pitch,
+                rate,
+                mainParams,
+                mainFlags,
+                stream,
+                volume,
+                preventDeviceSleep,
+                /* flushGlobalTtsQueue= */ false,
+                eventId));
   }
 
   /**
@@ -1044,6 +1152,7 @@ public class FailoverTextToSpeech {
 
   /** Stops speech from all applications. No utterance callbacks will be sent. */
   public void stopAll() {
+    emojiVoice.stop();
     dropAfterCallSpeech();
     dropHeldSpeech();
     stopLowLatencySpeech();
@@ -1059,6 +1168,7 @@ public class FailoverTextToSpeech {
 
   /** Stops all speech that originated from TalkBack. No utterance callbacks will be sent. */
   public void stopFromTalkBack() {
+    emojiVoice.stop();
     dropAfterCallSpeech();
     if (holdLowLatencySpeech()) {
       // The engine keeps making the held speech, so it can carry on if speech is paused.
@@ -1082,6 +1192,7 @@ public class FailoverTextToSpeech {
   public void shutdown() {
     // The player outlives this engine, so speech it holds or waits for must not block the next.
     releaseLowLatencyAudio();
+    emojiVoice.shutdown();
     allowDeviceSleep();
     context.unregisterReceiver(mediaStateMonitor);
     context.unregisterReceiver(screenReceiver);

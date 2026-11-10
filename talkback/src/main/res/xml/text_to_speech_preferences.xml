@@ -24,6 +24,16 @@
         android:key="@string/pref_speech_volume_seekbar_key_int"
         android:persistent="false"
         android:title="@string/title_pref_speech_volume" />
+    <ListPreference
+        android:defaultValue=""
+        android:key="pref_emoji_voice_profile"
+        android:summary="%s"
+        android:title="@string/title_pref_emoji_voice" />
+    <ListPreference
+        android:defaultValue="100"
+        android:key="pref_emoji_rate"
+        android:summary="%s"
+        android:title="@string/title_pref_emoji_rate" />
     <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
         android:fragment="com.google.android.accessibility.talkback.preference.base.SpeechEqualizerFragment"
         android:key="pref_speech_equalizer_screen"
