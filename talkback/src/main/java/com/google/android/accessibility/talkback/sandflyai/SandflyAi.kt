@@ -18,7 +18,7 @@ interface SandflyAiFeatures {
     /** The name of the agent command in command lists. */
     fun agentCommandLabel(context: Context): String
 
-    /** Runs the agent command: starts a task, or stops the running one. */
+    /** Runs the agent command: records a task, or stops the recording or the running task. */
     fun startAgent(service: TalkBackService)
 
     /** The title of SandFly AI's settings screen in the main settings. */
@@ -58,6 +58,9 @@ object SandflyAi {
     /** SandFly Pro's commands that have SandFly menu items. */
     const val COMMAND_RECOGNIZE_SCREEN = "SFPRO_RECOGNIZE_SCREEN"
     const val COMMAND_SCREEN_RECOGNITION_IN_APP = "SFPRO_SCREEN_RECOGNITION_IN_APP"
+
+    /** Opens the text field for an agent task. */
+    const val COMMAND_TYPE_AGENT_TASK = "SFPRO_TYPE_AI_AGENT_TASK"
     private const val ENTRY = "io.github.aaron_gh.sandfly.ai.SandflyAiEntry"
 
     @JvmStatic
