@@ -173,7 +173,6 @@
     <string name="pref_time_feedback_format_key">pref_time_feedback_format_key</string>
     <string name="pref_speak_element_ids_key">pref_element_ids_key</string>
     <string name="pref_speak_notifications_key">pref_speak_notifications</string>
-    <string name="pref_speak_volume_changes_key">pref_speak_volume_changes</string>
     <string name="pref_sandfly_wallpaper_key" translatable="false">pref_sandfly_wallpaper</string>
     <string name="pref_sandfly_wallpaper_image_key" translatable="false">pref_sandfly_wallpaper_image</string>
     <string name="pref_diagnosis_mode_key">pref_diagnosis_mode</string>
@@ -334,12 +333,13 @@
     <string name="pref_volume_keys_adjust_sliders_key" translatable="false">pref_volume_keys_adjust_sliders_key</string>
     <string name="pref_volume_keys_move_cursor_key" translatable="false">pref_volume_keys_move_cursor</string>
     <string name="pref_volume_change_feedback_key" translatable="false">pref_volume_change_feedback</string>
-    <string name="pref_volume_change_feedback_default" translatable="false">off</string>
+    <string name="pref_volume_change_feedback_default" translatable="false">spoken</string>
+    <string name="value_volume_change_feedback_off" translatable="false">off</string>
     <string name="value_volume_change_feedback_tone" translatable="false">tone</string>
     <string name="value_volume_change_feedback_spoken" translatable="false">spoken</string>
     <string name="value_volume_change_feedback_tone_and_spoken" translatable="false">tone_and_spoken</string>
     <string-array name="pref_volume_change_feedback_values" translatable="false">
-        <item>@string/pref_volume_change_feedback_default</item>
+        <item>@string/value_volume_change_feedback_off</item>
         <item>@string/value_volume_change_feedback_tone</item>
         <item>@string/value_volume_change_feedback_spoken</item>
         <item>@string/value_volume_change_feedback_tone_and_spoken</item>
@@ -1900,7 +1900,6 @@
     <string name="pref_time_feedback_format_default">pref_time_feedback_format_values_undefined</string>
     <bool name="pref_speak_element_ids_default">false</bool>
     <bool name="pref_speak_notifications_default">true</bool>
-    <bool name="pref_speak_volume_changes_default">true</bool>
     <bool name="pref_diagnosis_mode_default">false</bool>
     <bool name="pref_tts_overlay_default">false</bool>
     <bool name="pref_multiple_gesture_set_default">false</bool>

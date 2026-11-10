@@ -17,6 +17,7 @@
 package com.google.android.accessibility.talkback.monitor
 
 import android.media.AudioAttributes
+import android.media.AudioManager
 import kotlin.math.PI
 import kotlin.math.cos
 import kotlin.math.sin
@@ -40,17 +41,17 @@ class VolumeToneGate {
   }
 }
 
-/**
- * The audio usage of the volume step tone: [speechUsage], except on One UI when that is
- * accessibility. One UI adjusts the accessibility stream with the volume keys while that stream is
- * active and for 1 s after, so a tone at accessibility usage would change which stream the next
- * step adjusts.
- */
-fun volumeToneUsage(speechUsage: Int, oneUi: Boolean): Int =
-  if (oneUi && speechUsage == AudioAttributes.USAGE_ASSISTANCE_ACCESSIBILITY) {
-    AudioAttributes.USAGE_MEDIA
-  } else {
-    speechUsage
+/** The audio usage that makes the volume step tone play at the volume of [stream]. */
+fun volumeToneUsage(stream: Int): Int =
+  when (stream) {
+    AudioManager.STREAM_VOICE_CALL -> AudioAttributes.USAGE_VOICE_COMMUNICATION
+    AudioManager.STREAM_SYSTEM -> AudioAttributes.USAGE_ASSISTANCE_SONIFICATION
+    AudioManager.STREAM_RING -> AudioAttributes.USAGE_NOTIFICATION_RINGTONE
+    AudioManager.STREAM_ALARM -> AudioAttributes.USAGE_ALARM
+    AudioManager.STREAM_NOTIFICATION -> AudioAttributes.USAGE_NOTIFICATION
+    AudioManager.STREAM_DTMF -> AudioAttributes.USAGE_VOICE_COMMUNICATION_SIGNALLING
+    AudioManager.STREAM_ACCESSIBILITY -> AudioAttributes.USAGE_ASSISTANCE_ACCESSIBILITY
+    else -> AudioAttributes.USAGE_MEDIA
   }
 
 /**

@@ -138,11 +138,6 @@
         android:summary="@string/summary_pref_screen_announcements"
         android:title="@string/title_pref_screen_announcements"
         android:fragment="com.google.android.accessibility.talkback.preference.base.ScreenAnnouncementsFragment" />
-    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
-        android:defaultValue="@bool/pref_speak_volume_changes_default"
-        android:key="@string/pref_speak_volume_changes_key"
-        android:summary="@string/summary_pref_speak_volume_changes"
-        android:title="@string/title_pref_speak_volume_changes" />
     <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
         android:defaultValue="@string/pref_time_feedback_format_default"
         android:dialogTitle="@string/pref_time_feedback_format_title"
