@@ -129,9 +129,9 @@ local Build = java.import('android.os.Build')
 sf.speak('This is a ' .. Build.MODEL)
 ```
 
-Calls into the script hold the script's Lua state, so a Java object made with `java.proxy` and called from another thread waits until the script's current call ends. Don't wait in the script for something that needs SandFly's main thread.
+Calls into the script hold the script's Lua state, so a Java object made with `java.proxy` and called from another thread waits until the script's current call ends. Don't wait in the script for something that needs SandFly's main thread. After the script unloads, calling a method of an object made with `java.proxy` does nothing and gives `nil`, 0 or `false`, so a script should remove anything it registered with Android before it unloads, in `onAppLeave` for example.
 
-In a script [loaded on demand](#scripts-loaded-on-demand), each object made with `java.proxy` keeps the script loaded until the first call to one of its methods has finished, or for 30 seconds, for up to 100 objects at once. After the script unloads, calling a method does nothing and gives `nil`, 0 or `false`. A listener that stays registered needs a script without `onDemand`. A table or function passed straight to a Java method doesn't count, so use `java.proxy` for those.
+In a script [loaded on demand](#scripts-loaded-on-demand), each object made with `java.proxy` keeps the script loaded until the first call to one of its methods has finished, or for 30 seconds, for up to 100 objects at once. A listener that stays registered needs a script without `onDemand`. A table or function passed straight to a Java method doesn't count, so use `java.proxy` for those.
 
 ## Rules
 
