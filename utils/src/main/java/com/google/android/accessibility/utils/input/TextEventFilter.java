@@ -203,6 +203,8 @@ public class TextEventFilter {
               textEventHistory.setLastFromIndex(0);
               textEventHistory.setLastToIndex(0);
               textEventHistory.setLastNode(source.unwrap());
+              textEventHistory.setLastText(
+                  source.unwrap(), source.isShowingHintText() ? "" : source.getText());
             }
           }
         }

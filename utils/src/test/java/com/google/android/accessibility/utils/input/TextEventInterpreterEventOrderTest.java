@@ -168,6 +168,23 @@ public class TextEventInterpreterEventOrderTest {
   }
 
   @Test
+  public void firstCharacterInAnEmptyFieldThatGainsFocusIsReadOnce() {
+    EditText field = new EditText(RuntimeEnvironment.getApplication());
+    field.setHint("Name");
+    node = field.createAccessibilityNodeInfo();
+    node.setFocused(true);
+    node.setEditable(true);
+    node.setVisibleToUser(true);
+    send(event(AccessibilityEvent.TYPE_VIEW_FOCUSED, "Name"));
+    send(event(AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED, "Name"));
+    sent.clear();
+    time += 1000;
+    send(selection("n", 1));
+    send(textChange("", "n", 0, 1, 0));
+    assertEquals(List.of(TextEventInterpretation.TEXT_ADD), sent);
+  }
+
+  @Test
   public void aCursorMoveIsRead() {
     send(selection("cm", 1));
     assertEquals(List.of(TextEventInterpretation.SELECTION_MOVE_CURSOR_NO_SELECTION), sent);
