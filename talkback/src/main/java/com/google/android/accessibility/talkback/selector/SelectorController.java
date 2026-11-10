@@ -1668,6 +1668,37 @@ public class SelectorController implements UserInputEventListener {
     return true;
   }
 
+  /**
+   * Makes the reading control with the preference key or script key {@code key} the selected one.
+   *
+   * @return {@code false} if there is no such control or it can't be used now.
+   */
+  public boolean selectReadingControlByKey(EventId eventId, String key) {
+    applyPendingSwitch();
+    for (ScriptReadingControl control : Scripts.readingControls()) {
+      if (control.getKey().equals(key)) {
+        pipeline.returnFeedback(eventId, Feedback.sound(R.raw.next_reading_control));
+        selectScriptControl(
+            eventId, control, AnnounceType.DESCRIPTION_AND_HINT, /* showOverlay= */ false);
+        return true;
+      }
+    }
+    @Nullable AccessibilityNodeInfoCompat node =
+        accessibilityFocusMonitor.getAccessibilityFocus(false);
+    for (Setting setting : SELECTOR_SETTINGS) {
+      if (key.equals(context.getString(setting.prefKeyResId))
+          && !hiddenSettings.contains(setting)
+          && availableHere(setting, node)) {
+        pipeline.returnFeedback(eventId, Feedback.sound(R.raw.next_reading_control));
+        settingFromReadingControlList = setting;
+        setCurrentSetting(
+            eventId, setting, AnnounceType.DESCRIPTION_AND_HINT, /* showOverlay= */ false);
+        return true;
+      }
+    }
+    return false;
+  }
+
   private boolean selectPreviousOrNext(
       EventId eventId, AnnounceType announceType, boolean isNext, boolean showOverlay) {
     applyPendingSwitch();

@@ -16,18 +16,27 @@
 
 package com.google.android.accessibility.talkback.selector
 
+import android.content.Context
+import android.content.SharedPreferences
 import androidx.annotation.StringRes
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.talkback.preference.ItemOrder
+import com.google.android.accessibility.talkback.scripting.Scripts
 import com.google.android.accessibility.talkback.selector.SelectorController.Setting
+import java.util.Locale
+import org.xmlpull.v1.XmlPullParser
 
 /**
- * Commands that change the value of a reading control without selecting it, for the reading
- * controls no other command changes. A [toggle] has one command, the others have next and previous.
+ * Commands that act on one reading control. Value commands change a reading control without
+ * selecting it, for those no other command changes: a [toggle] has one command, the others have next
+ * and previous. Selection commands make a reading control in the user's list the selected one.
  */
 object ReadingControlCommands {
   private const val PREFIX = "READING_CONTROL_VALUE:"
   private const val NEXT = ":NEXT"
   private const val PREVIOUS = ":PREVIOUS"
+  private const val SELECT_PREFIX = "SET_READING_CONTROL:"
+  private const val ANDROID_NAMESPACE = "http://schemas.android.com/apk/res/android"
 
   class Entry(val setting: Setting, @StringRes val title: Int, val toggle: Boolean = false)
 
@@ -78,4 +87,66 @@ object ReadingControlCommands {
   }
 
   @JvmStatic fun isNext(value: String): Boolean = value.endsWith(NEXT)
+
+  /** A command that makes a reading control the selected one. */
+  class Selection(val value: String, val label: String)
+
+  /** Returns whether [value] is a command that selects a reading control. */
+  @JvmStatic fun isSelection(value: String?): Boolean = value != null && value.startsWith(SELECT_PREFIX)
+
+  /** The preference key or script key of the reading control the command [value] selects. */
+  @JvmStatic fun selectedKey(value: String): String = value.removePrefix(SELECT_PREFIX)
+
+  /** Returns a command for each reading control in the user's list, in its order. */
+  fun selections(context: Context, prefs: SharedPreferences): List<Selection> {
+    val titles = titles(context)
+    val settings =
+      SelectorController.orderSettings(context, ItemOrder.stored(prefs, ItemOrder.READING_CONTROLS_KEY))
+        .filter {
+          prefs.getBoolean(context.getString(it.prefKeyResId), context.resources.getBoolean(it.defaultValueResId))
+        }
+        .mapNotNull { setting ->
+          val key = context.getString(setting.prefKeyResId)
+          titles[key]?.let { selection(context, key, it) }
+        }
+    return settings + Scripts.readingControls().map { selection(context, it.key, it.title) }
+  }
+
+  /** The name of the selection command [value], even when its control has left the list. */
+  fun selectionLabel(context: Context, value: String): String? {
+    if (!isSelection(value)) return null
+    val key = selectedKey(value)
+    val title =
+      Scripts.readingControls().firstOrNull { it.key == key }?.title ?: titles(context)[key] ?: return null
+    return context.getString(R.string.shortcut_set_reading_control, title)
+  }
+
+  private fun selection(context: Context, key: String, title: String) =
+    Selection(SELECT_PREFIX + key, context.getString(R.string.shortcut_set_reading_control, title))
+
+  @Volatile private var cachedTitles: Pair<Locale?, Map<String, String>>? = null
+
+  /** The title of each reading control on the Reading controls screen, by preference key. */
+  private fun titles(context: Context): Map<String, String> {
+    val locale = context.resources.configuration.locales.get(0)
+    cachedTitles?.takeIf { it.first == locale }?.let {
+      return it.second
+    }
+    val titles = HashMap<String, String>()
+    context.resources.getXml(R.xml.selector_menu_preferences).use { parser ->
+      var event = parser.next()
+      while (event != XmlPullParser.END_DOCUMENT) {
+        if (event == XmlPullParser.START_TAG) {
+          val key = parser.getAttributeResourceValue(ANDROID_NAMESPACE, "key", 0)
+          val title = parser.getAttributeResourceValue(ANDROID_NAMESPACE, "title", 0)
+          if (key != 0 && title != 0) {
+            titles[context.getString(key)] = context.getString(title)
+          }
+        }
+        event = parser.next()
+      }
+    }
+    cachedTitles = locale to titles
+    return titles
+  }
 }

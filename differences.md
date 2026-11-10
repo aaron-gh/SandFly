@@ -488,6 +488,8 @@ The SandFly menu is made of commands. In **SandFly menu** settings, **Add comman
 
 **Custom menus** makes other menus of commands. Each custom menu is a command in the **Custom menus** category, so a gesture, a keyboard shortcut, or a gesture or shortcut in one app can open it. A custom menu can also be added to another menu, where it appears as a submenu.
 
+The **Reading controls** category has **Set reading control to** a command for each item in the list on the **Reading controls** screen, in its order, including reading controls from scripts.
+
 The **Setting values** category has next and previous commands for reading controls that have no other command, such as **Punctuation** and **Speech engine**.
 
 When you choose an action for a gesture, the categories of actions are collapsed, except the one with the gesture's current action. The categories in gesture settings, **Reading controls** and **SandFly menu** are collapsed too, and expand when you activate them.
