@@ -25,6 +25,7 @@ import com.google.ai.edge.litertlm.Contents
 import com.google.ai.edge.litertlm.Conversation
 import com.google.ai.edge.litertlm.Engine
 import com.google.ai.edge.litertlm.EngineConfig
+import com.google.android.accessibility.talkback.dictation.ModelRetention
 import java.io.File
 import java.util.concurrent.Executors
 import java.util.concurrent.ScheduledFuture
@@ -32,8 +33,8 @@ import java.util.concurrent.TimeUnit
 
 /**
  * Runs a Gemma 4 `.litertlm` file with LiteRT-LM. The engine takes seconds to load and holds about
- * a gigabyte or more of memory, so it loads on the first request and unloads after [idleUnloadMs]
- * without one.
+ * a gigabyte or more of memory, so it loads on the first request or [preload], and unloads after
+ * [idleUnloadMs] without one, or only when closed for [ModelRetention.UNTIL_STOPPED].
  */
 class LiteRtLmLocalLlm(
   context: Context,
@@ -113,6 +114,24 @@ class LiteRtLmLocalLlm(
     }
   }
 
+  /** Loads the engine now, unless it is loaded, so that the next answer starts at once. */
+  fun preload() {
+    synchronized(generateLock) {
+      unloadTask?.cancel(false)
+      try {
+        loadEngine()
+      } catch (e: LocalLlmMemoryException) {
+        throw e
+      } catch (e: Throwable) {
+        // A failed engine may be half loaded, so drop it and load afresh next time.
+        unload()
+        throw LocalLlmException(e.message ?: e.javaClass.simpleName, e)
+      } finally {
+        scheduleUnload()
+      }
+    }
+  }
+
   /** Frees the model's memory now. */
   fun close() {
     synchronized(generateLock) {
@@ -158,7 +177,9 @@ class LiteRtLmLocalLlm(
   }
 
   private fun scheduleUnload() {
-    if (engine == null || unloader.isShutdown) return
+    if (engine == null || unloader.isShutdown || idleUnloadMs == ModelRetention.UNTIL_STOPPED) {
+      return
+    }
     unloadTask =
       unloader.schedule(
         {

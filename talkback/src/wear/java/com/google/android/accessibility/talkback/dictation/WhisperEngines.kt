@@ -33,4 +33,6 @@ object WhisperEngines {
     shortContext: Boolean,
     keepLoadedMs: Long,
   ): SpeechTranscriber? = null
+
+  fun releaseKept() {}
 }

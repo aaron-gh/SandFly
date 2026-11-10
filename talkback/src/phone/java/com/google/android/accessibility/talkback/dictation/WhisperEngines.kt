@@ -45,9 +45,10 @@ object WhisperEngines {
 
   /**
    * Transcribes with the model in [file], on the GPU when [gpu] is true and it can. The model stays
-   * loaded for [keepLoadedMs] after a transcription, or is closed at once for 0. [build] tells this
-   * install of SandFly from others, as [load] says. With [shortContext], for models fine-tuned for
-   * it, only the spoken audio is encoded.
+   * loaded for [keepLoadedMs] after a transcription, until [releaseKept] for
+   * [ModelRetention.UNTIL_STOPPED], or is closed at once for 0. [build] tells this install of
+   * SandFly from others, as [load] says. With [shortContext], for models fine-tuned for it, only
+   * the spoken audio is encoded.
    */
   fun transcriber(
     context: Context,
@@ -101,7 +102,15 @@ object WhisperEngines {
       }
     }
 
-  /** The model kept in memory after a transcription, until it is used, replaced or times out. */
+  /** Closes the model kept loaded after a transcription, if any. */
+  fun releaseKept() {
+    LoadedModel.closeNow()
+  }
+
+  /**
+   * The model kept in memory after a transcription, until it is used, replaced, times out or is
+   * released, or memory runs low.
+   */
   private object LoadedModel {
     private val closer =
       ScheduledThreadPoolExecutor(1) { Thread(it, "WhisperModel closer").apply { isDaemon = true } }
@@ -128,7 +137,10 @@ object WhisperEngines {
       return model.also { model = null }
     }
 
-    /** Keeps [loaded] for [keepMs], or closes it for 0. */
+    /**
+     * Keeps [loaded] for [keepMs], until released for [ModelRetention.UNTIL_STOPPED], or closes it
+     * for 0.
+     */
     fun keep(context: Context, file: File, gpu: Boolean, loaded: WhisperModel, keepMs: Long) {
       if (keepMs <= 0) {
         loaded.close()
@@ -142,13 +154,24 @@ object WhisperEngines {
         path = file.path
         modified = file.lastModified()
         onGpu = gpu
-        closing = closer.schedule({ closeNow() }, keepMs, TimeUnit.MILLISECONDS)
+        closing =
+          if (keepMs == ModelRetention.UNTIL_STOPPED) {
+            null
+          } else {
+            closer.schedule({ closeNow() }, keepMs, TimeUnit.MILLISECONDS)
+          }
         if (!listening) {
           listening = true
           context.applicationContext.registerComponentCallbacks(
             object : ComponentCallbacks2 {
               override fun onTrimMemory(level: Int) {
-                if (level >= ComponentCallbacks2.TRIM_MEMORY_RUNNING_LOW) closeNow()
+                // UI_HIDDEN only means that SandFly's screens were left, not that memory is low.
+                if (
+                  level >= ComponentCallbacks2.TRIM_MEMORY_RUNNING_LOW &&
+                    level != ComponentCallbacks2.TRIM_MEMORY_UI_HIDDEN
+                ) {
+                  closeNow()
+                }
               }
 
               override fun onConfigurationChanged(newConfig: Configuration) {}

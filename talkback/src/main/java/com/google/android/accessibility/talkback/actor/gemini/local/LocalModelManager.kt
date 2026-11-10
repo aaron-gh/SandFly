@@ -143,6 +143,21 @@ class LocalModelManager private constructor(context: Context) {
   /** The model that is loaded now, if any, without creating one. Never blocks. */
   fun currentLlm(): LocalLlm? = llm
 
+  /**
+   * Loads the model that answers requests, when on-device AI answers them, so that the first
+   * request does not wait for the load. Blocks until its process is bound, so call it off the main
+   * thread.
+   */
+  fun preload() {
+    if (!answersRequests()) return
+    (llm() as? RemoteLocalLlm)?.preload()
+  }
+
+  /** Closes the running model and lets its process go. Call it off the main thread. */
+  fun release() {
+    releaseLlm()
+  }
+
   private fun releaseLlm() {
     synchronized(llmLock) {
       llm?.let { retire(it) }

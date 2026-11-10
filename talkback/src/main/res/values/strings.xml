@@ -4908,6 +4908,8 @@
   <string name="value_keep_models_15">15 minutes</string>
   <!-- Choice for how long models stay loaded. [CHAR_LIMIT=NONE] -->
   <string name="value_keep_models_30">30 minutes</string>
+  <!-- Choice: recognition models stay in memory until SandFly stops. [CHAR_LIMIT=NONE] -->
+  <string name="value_keep_models_until_stopped">Until SandFly stops</string>
   <!-- Choices of Auto stop after silence. [CHAR_LIMIT=30] -->
   <string-array name="pref_dictation_auto_stop_entries">
     <item>Off</item>
