@@ -128,6 +128,12 @@ class VolumeKeyPresses(private val timer: Timer, private val callbacks: Callback
   val isUsed: Boolean
     get() = !upCommands.isEmpty || !downCommands.isEmpty
 
+  /** Whether a double, triple or long press of [keyCode] has [command]. */
+  fun hasCommand(keyCode: Int, command: String): Boolean {
+    val commands = commandsFor(keyCode)
+    return commands.double == command || commands.triple == command || commands.long == command
+  }
+
   /**
    * Notes that [keyCode] was pressed ([down]) or released. Called for every volume key event, before
    * [onKeyDown] or [onKeyUp] and also when they are not called.

@@ -86,6 +86,7 @@ import android.os.SystemClock;
 import android.provider.Settings;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.Voice;
+import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.SparseArray;
@@ -1657,7 +1658,8 @@ public class TalkBackService extends AccessibilityServiceCompat
     }
     if (volumeKeyCommands != null
         && volumeKeyCommands.onKeyEvent(
-            keyEvent, () -> canUseVolumeKeyCommands(triggerModifierPressed))) {
+            keyEvent,
+            () -> canUseVolumeKeyCommands(triggerModifierPressed, keyEvent.getKeyCode()))) {
       return true;
     }
     if (oneUiVolumeKeys != null
@@ -1773,15 +1775,32 @@ public class TalkBackService extends AccessibilityServiceCompat
   /**
    * Returns whether double, triple and long presses of the volume keys run their commands now: as
    * for {@link #canUseVolumeKeyPresses}, and also while an always-on display shows the lock screen.
+   * While a call rings, only a key with Answer call among its presses' commands is counted.
    */
-  private boolean canUseVolumeKeyCommands(boolean triggerModifierPressed) {
-    return canTakeVolumeKeys(triggerModifierPressed)
+  private boolean canUseVolumeKeyCommands(boolean triggerModifierPressed, int keyCode) {
+    return canTakeVolumeKeys(triggerModifierPressed, isRingingCallAnsweredBy(keyCode))
         && ringerModeAndScreenMonitor != null
         && (ringerModeAndScreenMonitor.isInteractive()
             || VolumeKeyCommands.canCountWhileNotInteractive(this));
   }
 
+  /** Whether a call rings and a press of the volume key {@code keyCode} has Answer call. */
+  private boolean isRingingCallAnsweredBy(int keyCode) {
+    return volumeKeyCommands != null
+        && voiceActionMonitor != null
+        && voiceActionMonitor.getCurrentCallState() == TelephonyManager.CALL_STATE_RINGING
+        && volumeKeyCommands.hasCommand(keyCode, getString(R.string.shortcut_value_answer_call));
+  }
+
   private boolean canTakeVolumeKeys(boolean triggerModifierPressed) {
+    return canTakeVolumeKeys(triggerModifierPressed, /* whileRinging= */ false);
+  }
+
+  /**
+   * Returns whether SandFly may keep volume key presses from Android now. {@code whileRinging}
+   * allows it while a call rings, though not during a call.
+   */
+  private boolean canTakeVolumeKeys(boolean triggerModifierPressed, boolean whileRinging) {
     return isServiceActive()
         // Shortcut Menu starts its safe mode, for a screen reader that stopped working, with three
         // presses of volume up, so its keys go to it as they are.
@@ -1790,7 +1809,7 @@ public class TalkBackService extends AccessibilityServiceCompat
         && !triggerModifierPressed
         && !isBrailleImeTouchInteracting()
         && !pipeline.getActorState().getContinuousRead().isActive()
-        && !isPhoneCallActive();
+        && (whileRinging || !isPhoneCallActive());
   }
 
   /**
