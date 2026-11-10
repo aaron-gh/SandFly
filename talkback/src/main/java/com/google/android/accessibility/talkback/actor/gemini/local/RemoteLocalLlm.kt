@@ -21,6 +21,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.ServiceConnection
 import android.os.Build
+import android.os.Bundle
 import android.os.Handler
 import android.os.IBinder
 import android.os.Looper
@@ -46,7 +47,8 @@ import java.util.concurrent.atomic.AtomicInteger
  * speak, as it does when there is not enough free memory to load the model.
  *
  * Stays bound to the service while answering, and unbinds after it has been idle as long as the
- * model stays loaded, so the process and its memory go away.
+ * model stays loaded, so the process and its memory go away. For [ModelRetention.UNTIL_STOPPED] it
+ * stays bound until [close].
  */
 class RemoteLocalLlm(
   context: Context,
@@ -74,6 +76,8 @@ class RemoteLocalLlm(
   // Counts the times this has bound, so that a request is failed only when its own process stops.
   private var binding = 0
   private var connected = CountDownLatch(1)
+  // After close, nothing binds again, so that no binding outlives this.
+  private var closed = false
   @Volatile private var currentId = 0
   @Volatile private var cancelRequested = false
   private val unbindIdle = Runnable { unbind() }
@@ -113,14 +117,7 @@ class RemoteLocalLlm(
       request.arg1 = id
       request.replyTo = replies
       request.data.apply {
-        putString(LocalModelService.KEY_MODEL_PATH, modelFile.path)
-        putLong(LocalModelService.KEY_IDLE_UNLOAD_MS, ModelRetention.onDeviceIdleMs(prefs))
-        putString(LocalModelService.KEY_PROCESSOR, processor.id)
-        putInt(
-          LocalModelService.KEY_MAX_TOKENS,
-          model.maxTokens ?: LocalModelService.NO_MAX_TOKENS,
-        )
-        putBoolean(LocalModelService.KEY_CHECK_MEMORY, !OnDeviceAiSettings.ignoreMemoryLimits(prefs))
+        putModel(this)
         putString(LocalModelService.KEY_PROMPT, prompt)
         imageFile?.let { putString(LocalModelService.KEY_IMAGE_PATH, it.path) }
       }
@@ -146,8 +143,50 @@ class RemoteLocalLlm(
       pending.remove(id)
       currentId = 0
       imageFile?.delete()
-      main.postDelayed(unbindIdle, ModelRetention.onDeviceIdleMs(prefs) + IDLE_UNBIND_MARGIN_MS)
+      scheduleIdleUnbind()
     }
+  }
+
+  /**
+   * Asks the service to load the model now, so that the first request does not wait for it. Blocks
+   * until the service is bound, so call it off the main thread. Throws [LocalLlmException] when the
+   * service does not start.
+   */
+  fun preload() {
+    main.removeCallbacks(unbindIdle)
+    try {
+      val (messenger, _) = connect()
+      val request = Message.obtain(null, LocalModelService.MSG_LOAD)
+      putModel(request.data)
+      messenger.send(request)
+    } catch (_: RemoteException) {
+      throw stopped()
+    } finally {
+      scheduleIdleUnbind()
+    }
+  }
+
+  /** Puts which model to run, and how, into a request's [data]. */
+  private fun putModel(data: Bundle) {
+    data.putString(LocalModelService.KEY_MODEL_PATH, modelFile.path)
+    data.putLong(LocalModelService.KEY_IDLE_UNLOAD_MS, ModelRetention.onDeviceIdleMs(prefs))
+    data.putString(LocalModelService.KEY_PROCESSOR, processor.id)
+    data.putInt(
+      LocalModelService.KEY_MAX_TOKENS,
+      model.maxTokens ?: LocalModelService.NO_MAX_TOKENS,
+    )
+    data.putBoolean(
+      LocalModelService.KEY_CHECK_MEMORY,
+      !OnDeviceAiSettings.ignoreMemoryLimits(prefs),
+    )
+  }
+
+  /** Unbinds once idle as long as the model stays loaded, unless it stays until close. */
+  private fun scheduleIdleUnbind() {
+    main.removeCallbacks(unbindIdle)
+    val idleMs = ModelRetention.onDeviceIdleMs(prefs)
+    if (idleMs == ModelRetention.UNTIL_STOPPED) return
+    main.postDelayed(unbindIdle, idleMs + IDLE_UNBIND_MARGIN_MS)
   }
 
   override fun cancel() {
@@ -164,8 +203,9 @@ class RemoteLocalLlm(
     }
   }
 
-  /** Stops the model and lets its process go. */
+  /** Stops the model and lets its process go. Nothing binds to it again. */
   fun close() {
+    synchronized(lock) { closed = true }
     cancel()
     main.removeCallbacks(unbindIdle)
     unbind()
@@ -178,6 +218,7 @@ class RemoteLocalLlm(
         service?.let {
           return it to binding
         }
+        if (closed) throw LocalLlmException("On-device AI was closed")
         if (!bound) {
           binding++
           connected = CountDownLatch(1)

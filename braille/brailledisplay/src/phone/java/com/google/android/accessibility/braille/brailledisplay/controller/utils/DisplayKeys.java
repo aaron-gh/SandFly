@@ -40,15 +40,21 @@ public final class DisplayKeys {
 
   /**
    * Returns the {@link DisplayKeyOverrides} key of an input event, or null when the keys that
-   * produced it can't be assigned: typing, panning and routing keys.
+   * produced it can't be assigned: typing, panning and routing keys, and Space and Backspace
+   * pressed together with dots.
    */
   @Nullable
   public static String keyOf(int command, int argument) {
     if (command == BrailleInputEvent.CMD_BRAILLE_KEY) {
       int dots = argument & DOTS_MASK;
-      return (argument & BrailleInputEvent.DOTS_WITH_SPACE) != 0 && dots != 0
+      boolean space = (argument & BrailleInputEvent.DOTS_WITH_SPACE) != 0;
+      boolean backspace = (argument & BrailleInputEvent.DOTS_WITH_BACKSPACE) != 0;
+      if (dots == 0 || space == backspace) {
+        return null;
+      }
+      return space
           ? DisplayKeyOverrides.chordKey(dots)
-          : null;
+          : DisplayKeyOverrides.backspaceChordKey(dots);
     }
     if (command < 0 || passesCapture(command)) {
       return null;
@@ -56,10 +62,11 @@ public final class DisplayKeys {
     return DisplayKeyOverrides.commandKey(command);
   }
 
-  /** Returns whether an unbound Space chord produced the input event. */
+  /** Returns whether an unbound Space or Backspace chord produced the input event. */
   public static boolean isUnboundChord(int command, int argument) {
     return command == BrailleInputEvent.CMD_BRAILLE_KEY
-        && (argument & BrailleInputEvent.DOTS_WITH_SPACE) != 0;
+        && (argument & (BrailleInputEvent.DOTS_WITH_SPACE | BrailleInputEvent.DOTS_WITH_BACKSPACE))
+            != 0;
   }
 
   /**
@@ -99,16 +106,23 @@ public final class DisplayKeys {
   }
 
   /**
-   * Returns whether {@code key} can be assigned to a command: Space with dots, or the keys of a
-   * display command listed in Braille display commands whose keys can change.
+   * Returns whether {@code key} can be assigned to a command: Space or Backspace with dots, a
+   * separate key, or the keys of a display command listed in Braille display commands whose keys
+   * can change.
    */
   public static boolean isAssignableKey(Context context, String key) {
-    if (DisplayKeyOverrides.chordDotsOf(key) > 0) {
+    if (DisplayKeyOverrides.chordDotsOf(key) > 0
+        || DisplayKeyOverrides.backspaceChordDotsOf(key) > 0) {
       return true;
     }
     int command = DisplayKeyOverrides.commandOf(key);
-    return command >= 0
-        && isAssignable(command)
+    if (command < 0) {
+      return false;
+    }
+    if (DisplayKeyOverrides.defaultCommandOf(command) != command) {
+      return true;
+    }
+    return isAssignable(command)
         && find(SupportedCommand.getAvailableSupportedCommands(context), command) != null;
   }
 
@@ -158,12 +172,11 @@ public final class DisplayKeys {
       Resources resources = context.getResources();
       int dots = DisplayKeyOverrides.chordDotsOf(key);
       if (dots > 0) {
-        String keys =
-            resources.getString(
-                R.string.bd_commands_delimiter,
-                resources.getString(R.string.bd_key_space),
-                getDotsDescription(resources, new BrailleCharacter((byte) dots)));
-        return resources.getString(R.string.bd_commands_press_template, keys);
+        return describeChord(resources, R.string.bd_key_space, dots);
+      }
+      dots = DisplayKeyOverrides.backspaceChordDotsOf(key);
+      if (dots > 0) {
+        return describeChord(resources, R.string.bd_key_backspace, dots);
       }
       int command = DisplayKeyOverrides.commandOf(key);
       if (command < 0) {
@@ -183,21 +196,49 @@ public final class DisplayKeys {
 
     /** Returns how to press the keys that run {@code target}, or an empty string for none. */
     public String describeKeysFor(DisplayKeyOverrides overrides, String target) {
-      List<String> descriptions = new ArrayList<>();
-      for (String key : overrides.keysFor(target)) {
-        String description = describe(key);
-        if (!description.isEmpty()) {
-          descriptions.add(description);
+      return describeAll(overrides.keysFor(target));
+    }
+
+    /**
+     * Returns how to press the separate keys that still run display command {@code command}, or an
+     * empty string for none.
+     */
+    public String describeSeparateKeysFor(DisplayKeyOverrides overrides, int command) {
+      List<String> keys = new ArrayList<>();
+      for (String key : overrides.keysFor(DisplayKeyOverrides.commandTarget(command))) {
+        int keyCommand = DisplayKeyOverrides.commandOf(key);
+        if (keyCommand >= 0 && DisplayKeyOverrides.defaultCommandOf(keyCommand) != keyCommand) {
+          keys.add(key);
         }
       }
+      return describeAll(keys);
+    }
+
+    /** Joins two key descriptions, either of which can be empty. */
+    public String join(String first, String second) {
+      if (first.isEmpty()) {
+        return second;
+      }
+      return second.isEmpty()
+          ? first
+          : context.getString(R.string.bd_commands_delimiter, first, second);
+    }
+
+    private String describeAll(List<String> keys) {
       String result = "";
-      for (String description : descriptions) {
-        result =
-            result.isEmpty()
-                ? description
-                : context.getString(R.string.bd_commands_delimiter, result, description);
+      for (String key : keys) {
+        result = join(result, describe(key));
       }
       return result;
+    }
+
+    private static String describeChord(Resources resources, int keyName, int dots) {
+      String keys =
+          resources.getString(
+              R.string.bd_commands_delimiter,
+              resources.getString(keyName),
+              getDotsDescription(resources, new BrailleCharacter((byte) dots)));
+      return resources.getString(R.string.bd_commands_press_template, keys);
     }
   }
 }

@@ -17,6 +17,7 @@
 package com.google.android.accessibility.braille.common
 
 import com.google.android.accessibility.braille.common.DisplayKeyOverrides.NONE
+import com.google.android.accessibility.braille.common.DisplayKeyOverrides.backspaceChordKey
 import com.google.android.accessibility.braille.common.DisplayKeyOverrides.chordKey
 import com.google.android.accessibility.braille.common.DisplayKeyOverrides.commandKey
 import com.google.android.accessibility.braille.common.DisplayKeyOverrides.commandTarget
@@ -30,6 +31,16 @@ import org.junit.Test
 class DisplayKeyOverridesTest {
   private val back = 90
   private val home = 91
+
+  // BrailleInputEvent commands, and the separate keys that stand in for some of them.
+  // DisplayKeysTest checks the separate keys against BrailleInputEvent.
+  private val itemNext = 4
+  private val panUp = 5
+  private val panDown = 6
+  private val delete = 71
+  private val panUpKey = 204
+  private val panDownKey = 205
+  private val deleteKey = 206
 
   @Test
   fun nothingSavedKeepsTheDefaults() {
@@ -191,5 +202,75 @@ class DisplayKeyOverridesTest {
       chordKey(1),
     )
     assertTrue(overrides.isEmpty)
+  }
+
+  @Test
+  fun backspaceChordsRunNothingUntilAssignedAndReadBack() {
+    val overrides = DisplayKeyOverrides.parse(null)
+    assertEquals(NONE, overrides.resolve(backspaceChordKey(0b11)))
+    assertEquals(0b11, DisplayKeyOverrides.backspaceChordDotsOf(backspaceChordKey(0b11)))
+    assertEquals(0, DisplayKeyOverrides.chordDotsOf(backspaceChordKey(0b11)))
+    assertEquals(0, DisplayKeyOverrides.backspaceChordDotsOf(chordKey(0b11)))
+
+    overrides.assign(commandTarget(back), backspaceChordKey(0b11))
+    val read = DisplayKeyOverrides.parse(overrides.serialize())
+
+    assertEquals(commandTarget(back), read.resolve(backspaceChordKey(0b11)))
+    assertEquals(NONE, read.resolve(chordKey(0b11)))
+    assertEquals(listOf(backspaceChordKey(0b11)), read.keysFor(commandTarget(back)))
+  }
+
+  @Test
+  fun separateKeysRunTheCommandTheyStandInForUntilAssigned() {
+    val overrides = DisplayKeyOverrides.parse(null)
+    assertEquals(panUp, DisplayKeyOverrides.defaultCommandOf(panUpKey))
+    assertEquals(delete, DisplayKeyOverrides.defaultCommandOf(deleteKey))
+    assertEquals(back, DisplayKeyOverrides.defaultCommandOf(back))
+    assertEquals(commandTarget(panUp), overrides.resolve(commandKey(panUpKey)))
+    assertEquals(
+      listOf(commandKey(delete), commandKey(deleteKey)),
+      overrides.keysFor(commandTarget(delete)),
+    )
+    assertFalse(overrides.isChanged(commandTarget(delete)))
+  }
+
+  @Test
+  fun aSeparateKeyIsAssignedApartFromTheOtherKeysOfItsCommand() {
+    val overrides = DisplayKeyOverrides.parse(null)
+    overrides.assign(commandTarget(itemNext), commandKey(panDownKey))
+
+    assertEquals(commandTarget(itemNext), overrides.resolve(commandKey(panDownKey)))
+    assertEquals(commandTarget(panDown), overrides.resolve(commandKey(panDown)))
+    assertEquals(listOf(commandKey(panDown)), overrides.keysFor(commandTarget(panDown)))
+    assertTrue(overrides.isChanged(commandTarget(panDown)))
+
+    overrides.reset(commandTarget(itemNext))
+    assertEquals(commandTarget(panDown), overrides.resolve(commandKey(panDownKey)))
+    assertTrue(overrides.isEmpty)
+  }
+
+  @Test
+  fun resetGivesSeparateKeysBackToTheCommandTheyStandInFor() {
+    val overrides = DisplayKeyOverrides.parse(null)
+    overrides.assign(commandTarget(back), commandKey(deleteKey))
+
+    assertEquals(listOf(commandKey(delete)), overrides.keysFor(commandTarget(delete)))
+    assertEquals(commandTarget(back), overrides.targetLosingKeyOnReset(commandTarget(delete)))
+    overrides.reset(commandTarget(delete))
+
+    assertEquals(commandTarget(delete), overrides.resolve(commandKey(deleteKey)))
+    assertEquals(NONE, overrides.resolve(commandKey(back)))
+  }
+
+  @Test
+  fun assigningASeparateKeyBackToItsCommandRemovesTheOverride() {
+    val overrides = DisplayKeyOverrides.parse(null)
+    overrides.assign(commandTarget(back), commandKey(deleteKey))
+    overrides.assign(commandTarget(delete), commandKey(deleteKey))
+
+    assertEquals(commandTarget(delete), overrides.resolve(commandKey(deleteKey)))
+    assertNull(overrides.get(commandKey(deleteKey)))
+    // Assigning makes the key the only key of the command.
+    assertEquals(NONE, overrides.resolve(commandKey(delete)))
   }
 }

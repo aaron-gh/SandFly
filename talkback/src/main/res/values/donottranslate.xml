@@ -45,12 +45,14 @@
         <item>@string/value_keep_models_5</item>
         <item>@string/value_keep_models_15</item>
         <item>@string/value_keep_models_30</item>
+        <item>@string/value_keep_models_until_stopped</item>
     </string-array>
     <string-array name="pref_keep_models_loaded_values" translatable="false">
         <item>0</item>
         <item>5</item>
         <item>15</item>
         <item>30</item>
+        <item>until_stopped</item>
     </string-array>
     <string-array name="problem_report_type_values" translatable="false">
         <item>Incorrect behavior</item>

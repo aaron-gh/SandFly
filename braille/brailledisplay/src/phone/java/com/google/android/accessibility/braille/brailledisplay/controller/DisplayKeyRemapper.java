@@ -50,7 +50,14 @@ final class DisplayKeyRemapper {
     }
     String target = current().get(key);
     if (target == null) {
-      return DisplayKeyOverrides.chordDotsOf(key) > 0 ? DisplayKeyOverrides.NONE : null;
+      // Unassigned, a chord runs nothing, a separate key runs the command it stands in for, and
+      // other keys run their own command.
+      int command = DisplayKeyOverrides.commandOf(key);
+      if (command < 0) {
+        return DisplayKeyOverrides.NONE;
+      }
+      int defaultCommand = DisplayKeyOverrides.defaultCommandOf(command);
+      return defaultCommand == command ? null : DisplayKeyOverrides.commandTarget(defaultCommand);
     }
     if (editing) {
       // Keys of commands without Space type their dots in text fields.

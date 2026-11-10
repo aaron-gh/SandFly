@@ -59,4 +59,45 @@ public class DisplayKeysTest {
     assertNull(DisplayKeys.keyOf(BrailleInputEvent.CMD_BRAILLE_KEY, withSpace));
     assertNull(DisplayKeys.keyOf(BrailleInputEvent.CMD_BRAILLE_KEY, 0b101));
   }
+
+  @Test
+  public void backspaceChordsAreKeysOnlyWithDots() {
+    int withBackspace = BrailleInputEvent.DOTS_WITH_BACKSPACE;
+    assertEquals(
+        DisplayKeyOverrides.backspaceChordKey(0b101),
+        DisplayKeys.keyOf(BrailleInputEvent.CMD_BRAILLE_KEY, withBackspace | 0b101));
+    assertNull(DisplayKeys.keyOf(BrailleInputEvent.CMD_BRAILLE_KEY, withBackspace));
+    assertTrue(DisplayKeys.isUnboundChord(BrailleInputEvent.CMD_BRAILLE_KEY, withBackspace | 1));
+    assertFalse(DisplayKeys.isUnboundChord(BrailleInputEvent.CMD_BRAILLE_KEY, 1));
+  }
+
+  @Test
+  public void spaceWithBackspaceAndDotsIsNoKeyAndRunsNothing() {
+    int argument =
+        BrailleInputEvent.DOTS_WITH_SPACE | BrailleInputEvent.DOTS_WITH_BACKSPACE | 0b11;
+    assertNull(DisplayKeys.keyOf(BrailleInputEvent.CMD_BRAILLE_KEY, argument));
+    assertTrue(DisplayKeys.isUnboundChord(BrailleInputEvent.CMD_BRAILLE_KEY, argument));
+  }
+
+  @Test
+  public void separateKeysRunTheirCommandUntilAssigned() {
+    int[][] separateKeys = {
+      {BrailleInputEvent.CMD_NAV_PAN_UP_SEPARATE_KEY, BrailleInputEvent.CMD_NAV_PAN_UP},
+      {BrailleInputEvent.CMD_NAV_PAN_DOWN_SEPARATE_KEY, BrailleInputEvent.CMD_NAV_PAN_DOWN},
+      {BrailleInputEvent.CMD_KEY_DEL_SEPARATE_KEY, BrailleInputEvent.CMD_KEY_DEL},
+    };
+    DisplayKeyOverrides overrides = DisplayKeyOverrides.parse(null);
+    for (int[] entry : separateKeys) {
+      int command = entry[0];
+      int standsInFor = entry[1];
+      assertEquals(standsInFor, DisplayKeyOverrides.defaultCommandOf(command));
+      assertFalse(DisplayKeys.passesCapture(command));
+      String key = DisplayKeys.keyOf(command, /* argument= */ 0);
+      assertEquals(DisplayKeyOverrides.commandKey(command), key);
+      assertEquals(DisplayKeyOverrides.commandTarget(standsInFor), overrides.resolve(key));
+    }
+    assertEquals(
+        BrailleInputEvent.CMD_NAV_PAN_UP,
+        DisplayKeyOverrides.defaultCommandOf(BrailleInputEvent.CMD_NAV_PAN_UP));
+  }
 }

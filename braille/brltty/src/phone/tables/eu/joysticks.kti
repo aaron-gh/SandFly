@@ -21,8 +21,10 @@ note The five-way joysticks (Left, Right, Up, Down, Press) are to the left and r
 #SandFly: HOME, PRPROMPT, NXPROMPT, TOP_LEFT and BOT_LEFT do nothing on Android, so these keys
 #run SandFly commands, as NVDA binds them: Enter, and previous and next character and word.
 bind RightJoystickPress KEY_FUNCTION+130
-bind RightJoystickLeft FWINLT
-bind RightJoystickRight FWINRT
+#SandFly: right joystick left and right pan backward and forward, as FWINLT and FWINRT do, but can
+#be assigned in Braille display commands apart from the other panning keys.
+bind RightJoystickLeft KEY_FUNCTION+224
+bind RightJoystickRight KEY_FUNCTION+225
 bind RightJoystickUp LNUP
 bind RightJoystickDown LNDN
 

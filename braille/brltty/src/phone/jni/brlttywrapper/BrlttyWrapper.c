@@ -742,7 +742,12 @@ initCommandTables(JNIEnv* env) {
       {"CMD_LINK_PREVIOUS", CUSTOM_KEY + 120},
       {"CMD_VISITED_LINK_NEXT_IN_BROWSE", CUSTOM_KEY + 121},
       {"CMD_VISITED_LINK_NEXT", CUSTOM_KEY + 122},
-      {"CMD_VISITED_LINK_PREVIOUS", CUSTOM_KEY + 123}};
+      {"CMD_VISITED_LINK_PREVIOUS", CUSTOM_KEY + 123},
+      // SandFly: keys that run another command until assigned in Braille display commands,
+      // so that they can be assigned apart from the other keys of that command.
+      {"CMD_NAV_PAN_UP_SEPARATE_KEY", CUSTOM_KEY + 124},
+      {"CMD_NAV_PAN_DOWN_SEPARATE_KEY", CUSTOM_KEY + 125},
+      {"CMD_KEY_DEL_SEPARATE_KEY", CUSTOM_KEY + 126}};
   unifiedCommandMap = createCommandMap(
       env, cls, unifiedCommands,
       sizeof(unifiedCommands) / sizeof(unifiedCommands[0]));

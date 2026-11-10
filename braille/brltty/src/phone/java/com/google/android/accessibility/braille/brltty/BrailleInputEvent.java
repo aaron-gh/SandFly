@@ -176,6 +176,12 @@ public class BrailleInputEvent implements Parcelable {
    */
   public static final int DOTS_WITH_SPACE = 0x100;
 
+  /**
+   * Bit set in the argument of {@link #CMD_BRAILLE_KEY} when Backspace was pressed with the dots and
+   * no command is bound to that chord.
+   */
+  public static final int DOTS_WITH_BACKSPACE = 0x200;
+
   // Editing keys.
 
   /** Keyboard command: Enter key. */
@@ -486,6 +492,19 @@ public class BrailleInputEvent implements Parcelable {
 
   /** Keyboard command: Previous unvisited link in page. */
   public static final int CMD_UNVISITED_LINK_PREVIOUS = 203;
+
+  // Keys that run another command until they are assigned in Braille display commands, so that
+  // they can be assigned apart from the other keys of that command. DisplayKeyOverrides keeps the
+  // command that each of them runs.
+
+  /** Keyboard command: Pans backward, as {@link #CMD_NAV_PAN_UP} does. */
+  public static final int CMD_NAV_PAN_UP_SEPARATE_KEY = 204;
+
+  /** Keyboard command: Pans forward, as {@link #CMD_NAV_PAN_DOWN} does. */
+  public static final int CMD_NAV_PAN_DOWN_SEPARATE_KEY = 205;
+
+  /** Keyboard command: Deletes backward, as {@link #CMD_KEY_DEL} does. */
+  public static final int CMD_KEY_DEL_SEPARATE_KEY = 206;
 
   // Meanings of the argument to a command.
 

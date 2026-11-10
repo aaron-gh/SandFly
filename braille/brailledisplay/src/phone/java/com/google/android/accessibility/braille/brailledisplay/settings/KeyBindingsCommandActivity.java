@@ -129,7 +129,10 @@ public class KeyBindingsCommandActivity extends PreferencesActivity {
           int command = supportedCommand.getCommand();
           String commandDescription = supportedCommand.getCommandDescription(getResources());
           if (!DisplayKeys.isAssignable(command)) {
-            String keys = getKeyDescription(supportedCommand, props);
+            String keys =
+                describer.join(
+                    getKeyDescription(supportedCommand, props),
+                    describer.describeSeparateKeysFor(overrides, command));
             if (TextUtils.isEmpty(keys)) {
               continue;
             }

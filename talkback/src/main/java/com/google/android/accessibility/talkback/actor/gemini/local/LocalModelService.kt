@@ -99,6 +99,22 @@ class LocalModelService : Service() {
       MSG_CANCEL -> {
         if (requests.cancel(message.arg1)) llm?.cancel()
       }
+      MSG_LOAD -> {
+        val data = Bundle(message.data)
+        worker.execute { preload(data) }
+      }
+    }
+  }
+
+  /** Loads the model for [data]'s settings ahead of the first request. */
+  private fun preload(data: Bundle) {
+    // Anything that escapes would stop the worker thread and this process.
+    try {
+      checkMemory = data.getBoolean(KEY_CHECK_MEMORY, true)
+      llmFor(data).preload()
+      Log.i(TAG, "Loaded the model ahead of the first request")
+    } catch (e: Throwable) {
+      Log.w(TAG, "Could not load the model ahead: $e")
     }
   }
 
@@ -206,6 +222,9 @@ class LocalModelService : Service() {
 
     /** Backtalk cancels the request whose ID is in arg1, and any before it. */
     const val MSG_CANCEL = 2
+
+    /** Backtalk asks to load the model now, with the same data as [MSG_GENERATE] but no prompt. */
+    const val MSG_LOAD = 7
 
     /** The answer, in [KEY_TEXT]. */
     const val MSG_ANSWER = 3

@@ -167,6 +167,7 @@ import com.google.android.accessibility.talkback.compositor.roledescription.Role
 import com.google.android.accessibility.talkback.contextmenu.ListMenuManager;
 import com.google.android.accessibility.talkback.controller.TelevisionNavigationController;
 import com.google.android.accessibility.talkback.controlsounds.ControlSoundsSettings;
+import com.google.android.accessibility.talkback.dictation.RecognitionModelKeeper;
 import com.google.android.accessibility.talkback.directtouch.DirectTouchController;
 import com.google.android.accessibility.talkback.feedbackpolicy.KeyboardWindowSounds;
 import com.google.android.accessibility.talkback.directtouch.DirectTouchSettings;
@@ -906,6 +907,8 @@ public class TalkBackService extends AccessibilityServiceCompat
   @Nullable private AppSwitcherKeys appSwitcherKeys;
   @Nullable private SplitScreen splitScreen;
   @Nullable private BackTapCommands backTapCommands;
+  // Keep recognition models loaded, Until SandFly stops.
+  @Nullable private RecognitionModelKeeper recognitionModelKeeper;
   // The strip at the bottom of the screen where lifting activates nothing with Lift to activate.
   @Nullable private LiftCancelStrip liftCancelStrip;
 
@@ -2978,6 +2981,11 @@ public class TalkBackService extends AccessibilityServiceCompat
               return Unit.INSTANCE;
             });
     addEventListener(backTapCommands);
+    if (recognitionModelKeeper != null) {
+      recognitionModelKeeper.stop();
+    }
+    recognitionModelKeeper = new RecognitionModelKeeper(this);
+    recognitionModelKeeper.start();
     ringerModeAndScreenMonitor.addScreenChangedListener(
         (isInteractive, eventId) -> {
           if (backTapCommands != null) {
@@ -3797,6 +3805,10 @@ public class TalkBackService extends AccessibilityServiceCompat
     }
     if (backTapCommands != null) {
       backTapCommands.shutdown();
+    }
+    if (recognitionModelKeeper != null) {
+      recognitionModelKeeper.stop();
+      recognitionModelKeeper = null;
     }
     if (feedbackController != null) {
       feedbackController.shutdown();

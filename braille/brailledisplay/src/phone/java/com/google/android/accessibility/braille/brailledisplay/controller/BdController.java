@@ -190,7 +190,9 @@ public class BdController implements Controller {
     talkBackForBrailleDisplay.performAction(
         ScreenReaderAction.ACCESSIBILITY_FOCUS,
         talkBackForBrailleDisplay.getAccessibilityFocusNode(false));
-    if (shouldResumeBrailleDisplay(brailleInputEvent)) {
+    int assignedCommand = target == null ? -1 : DisplayKeyOverrides.commandOf(target);
+    if (shouldResumeBrailleDisplay(
+        assignedCommand >= 0 ? assignedCommand : brailleInputEvent.getCommand())) {
       BrailleDisplayAnalytics.getInstance(context).logChangeTypingMode(/* toPhysical= */ true);
       suspended.set(false);
       BrailleCommonTalkBackSpeaker.getInstance()
@@ -458,11 +460,11 @@ public class BdController implements Controller {
         && AccessibilityNodeInfoUtils.nodeMatchesClassByType(accessibilityFocused, EditText.class));
   }
 
-  /** Returns whether to resume braille display. */
-  private boolean shouldResumeBrailleDisplay(BrailleInputEvent brailleInputEvent) {
+  /** Returns whether to resume braille display when keys run {@code command}. */
+  private boolean shouldResumeBrailleDisplay(int command) {
     // In case braille display is too small to show BK in use in a row.
-    return brailleInputEvent.getCommand() != CMD_NAV_PAN_UP
-        && brailleInputEvent.getCommand() != CMD_NAV_PAN_DOWN
+    return command != CMD_NAV_PAN_UP
+        && command != CMD_NAV_PAN_DOWN
         && isBrailleKeyboardActivated()
         && suspended.get();
   }
