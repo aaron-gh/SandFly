@@ -445,7 +445,7 @@ public class FailoverTextToSpeech {
       (sharedPrefs, key) -> {
         if (EmojiVoice.isKey(key)) {
           // Also a voice profile key, handled below too.
-          emojiVoice.read(sharedPrefs);
+          this.emojiVoice.read(sharedPrefs);
         }
         if (PREF_TTS_ENGINE_KEY.equals(key)) {
           preferredTtsEngine = readPreferredEngine(sharedPrefs);
