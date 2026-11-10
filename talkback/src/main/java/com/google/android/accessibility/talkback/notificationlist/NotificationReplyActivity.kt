@@ -26,6 +26,7 @@ import android.os.Build
 import android.os.Bundle
 import android.text.InputType
 import android.util.Log
+import android.view.View
 import android.view.WindowManager
 import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
@@ -51,6 +52,7 @@ class NotificationReplyActivity : AppCompatActivity() {
     }
     val field =
       EditText(this).apply {
+        importantForAutofill = View.IMPORTANT_FOR_AUTOFILL_NO
         hint = input.label ?: action.title
         inputType =
           InputType.TYPE_CLASS_TEXT or

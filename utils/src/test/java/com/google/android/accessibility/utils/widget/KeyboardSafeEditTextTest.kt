@@ -18,9 +18,11 @@ package com.google.android.accessibility.utils.widget
 
 import android.content.Context
 import android.provider.Settings
+import android.view.View
 import android.view.inputmethod.EditorInfo
 import androidx.appcompat.R
 import java.lang.reflect.Proxy
+import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test
@@ -47,6 +49,14 @@ class KeyboardSafeEditTextTest {
     val field = KeyboardSafeEditText(context)
     val connection = field.onCreateInputConnection(EditorInfo())!!
     return Proxy.isProxyClass(connection.javaClass)
+  }
+
+  @Test
+  fun autofillIsOff() {
+    context.setTheme(R.style.Theme_AppCompat)
+    val field = KeyboardSafeEditText(context)
+    assertEquals(View.AUTOFILL_TYPE_NONE, field.autofillType)
+    assertEquals(View.IMPORTANT_FOR_AUTOFILL_NO, field.importantForAutofill)
   }
 
   @Test
