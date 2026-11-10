@@ -42,14 +42,11 @@ class ReadingControlListsFragment :
     while (lists.any { it.name == getString(R.string.reading_control_list_new_name, number) }) {
       number++
     }
-    askText(
-      getString(R.string.title_pref_add_reading_control_list),
-      getString(R.string.reading_control_list_new_name, number),
-      hint = getString(R.string.title_pref_voice_profile_name),
-    ) { name, _, _ ->
+    val suggested = getString(R.string.reading_control_list_new_name, number)
+    askText(getString(R.string.title_pref_add_reading_control_list), hint = suggested) { entered, _, _ ->
+      val name = entered.ifEmpty { suggested }
       val all = ReadingControlLists.read(prefs)
       when {
-        name.isEmpty() -> ""
         all.any { it.name.equals(name, ignoreCase = true) } ->
           getString(R.string.reading_control_list_name_taken, name)
         else -> {
