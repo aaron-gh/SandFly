@@ -35,4 +35,6 @@ object WhisperEngines {
   ): SpeechTranscriber? = null
 
   fun releaseKept() {}
+
+  fun setServiceRunning(running: Boolean) {}
 }

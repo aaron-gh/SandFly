@@ -107,6 +107,15 @@ object WhisperEngines {
     LoadedModel.closeNow()
   }
 
+  // Whether SandFly runs. A model kept until SandFly stops is closed instead when a transcription
+  // ends after it stopped.
+  @Volatile private var serviceRunning = false
+
+  /** Call with true when SandFly starts and false when it stops. */
+  fun setServiceRunning(running: Boolean) {
+    serviceRunning = running
+  }
+
   /**
    * The model kept in memory after a transcription, until it is used, replaced, times out or is
    * released, or memory runs low.
@@ -142,7 +151,7 @@ object WhisperEngines {
      * for 0.
      */
     fun keep(context: Context, file: File, gpu: Boolean, loaded: WhisperModel, keepMs: Long) {
-      if (keepMs <= 0) {
+      if (keepMs <= 0 || (keepMs == ModelRetention.UNTIL_STOPPED && !serviceRunning)) {
         loaded.close()
         return
       }

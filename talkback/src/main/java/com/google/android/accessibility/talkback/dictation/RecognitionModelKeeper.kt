@@ -20,6 +20,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import androidx.annotation.MainThread
 import com.google.android.accessibility.talkback.actor.gemini.local.LocalModelManager
+import com.google.android.accessibility.talkback.actor.gemini.local.OnDeviceAiSettings
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 import java.util.concurrent.ScheduledFuture
@@ -55,7 +56,17 @@ class RecognitionModelKeeper(context: Context) {
   // Held here, since SharedPreferences keeps its listeners only weakly.
   private val listener =
     SharedPreferences.OnSharedPreferenceChangeListener { _, key ->
-      if (key != ModelRetention.KEY || stopped) return@OnSharedPreferenceChangeListener
+      if (stopped) return@OnSharedPreferenceChangeListener
+      if (key in MODEL_CHOICE_KEYS) {
+        // A kept model that on-device AI no longer uses is never unloaded on idle, so it is
+        // released now, and the one in use, if any, loaded instead.
+        if (untilStopped) {
+          executor.execute { release() }
+          schedulePreload(/* delayMs= */ 0)
+        }
+        return@OnSharedPreferenceChangeListener
+      }
+      if (key != ModelRetention.KEY) return@OnSharedPreferenceChangeListener
       val now = ModelRetention.untilStopped(prefs)
       if (now == untilStopped) return@OnSharedPreferenceChangeListener
       untilStopped = now
@@ -72,6 +83,7 @@ class RecognitionModelKeeper(context: Context) {
   fun start() {
     if (started || stopped) return
     started = true
+    WhisperEngines.setServiceRunning(true)
     prefs.registerOnSharedPreferenceChangeListener(listener)
     untilStopped = ModelRetention.untilStopped(prefs)
     if (untilStopped) schedulePreload(PRELOAD_DELAY_MS)
@@ -81,6 +93,7 @@ class RecognitionModelKeeper(context: Context) {
   fun stop() {
     if (stopped) return
     stopped = true
+    WhisperEngines.setServiceRunning(false)
     prefs.unregisterOnSharedPreferenceChangeListener(listener)
     preloading?.cancel(false)
     preloading = null
@@ -117,5 +130,13 @@ class RecognitionModelKeeper(context: Context) {
 
     /** After SandFly starts, so that loading does not slow down the start. */
     const val PRELOAD_DELAY_MS = 60_000L
+
+    /** Settings that change which on-device model answers requests, or whether one does. */
+    val MODEL_CHOICE_KEYS =
+      setOf(
+        OnDeviceAiSettings.PREF_PROVIDER,
+        OnDeviceAiSettings.PREF_MODEL,
+        OnDeviceAiSettings.PREF_PROCESSOR,
+      )
   }
 }
