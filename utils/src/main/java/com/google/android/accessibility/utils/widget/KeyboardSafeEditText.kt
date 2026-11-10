@@ -21,6 +21,7 @@ import android.content.Context
 import android.os.Build
 import android.provider.Settings
 import android.util.AttributeSet
+import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputConnection
 import android.view.inputmethod.InputMethodManager
@@ -36,6 +37,8 @@ import com.google.android.accessibility.utils.input.KeyboardCalls
  * its calls at once, so it gets the field's own connection. Through [KeyboardCalls], each of its
  * questions would wait for the main thread it runs on, and get no answer: typing was slow, and
  * deleting a word did nothing.
+ *
+ * Autofill is off, so that autofill services such as password managers offer nothing in the field.
  */
 open class KeyboardSafeEditText
 @JvmOverloads
@@ -44,6 +47,12 @@ constructor(
   attrs: AttributeSet? = null,
   defStyleAttr: Int = androidx.appcompat.R.attr.editTextStyle,
 ) : AppCompatEditText(context, attrs, defStyleAttr) {
+
+  init {
+    importantForAutofill = View.IMPORTANT_FOR_AUTOFILL_NO
+  }
+
+  override fun getAutofillType(): Int = View.AUTOFILL_TYPE_NONE
 
   override fun onCreateInputConnection(outAttrs: EditorInfo): InputConnection? {
     val connection = super.onCreateInputConnection(outAttrs)

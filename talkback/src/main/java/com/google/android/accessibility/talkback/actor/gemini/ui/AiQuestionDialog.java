@@ -93,6 +93,7 @@ public class AiQuestionDialog extends BaseDialog {
   public View getCustomizedView(LayoutInflater inflater) {
     Context context = inflater.getContext();
     EditText field = new EditText(context);
+    field.setImportantForAutofill(View.IMPORTANT_FOR_AUTOFILL_NO);
     field.setHint(R.string.ai_question_hint);
     field.setInputType(
         InputType.TYPE_CLASS_TEXT
