@@ -186,4 +186,20 @@ class SymbolDictionaryTest {
 
     assertTrue(SpeechCleanupUtils.getCleanValueFor(context, '#') != "#")
   }
+
+  @Test
+  fun speechDictionaryEntryLeavesTheCharacterName() {
+    val context = RuntimeEnvironment.getApplication()
+    SpeechDictionary.write(
+      prefs,
+      listOf(DictionaryEntry(Replacement("#", "hash", regex = false, wholeWord = true))),
+    )
+    prefs.edit().commit()
+    SymbolDictionary.load(prefs)
+    SpeechDictionary.load(context, prefs)
+    SpeechDictionary.onWindowShown("com.example")
+
+    // A whole-word entry does not match the character in "C#", so its name must stay.
+    assertTrue(SpeechCleanupUtils.characterToName(context, '#') != null)
+  }
 }
