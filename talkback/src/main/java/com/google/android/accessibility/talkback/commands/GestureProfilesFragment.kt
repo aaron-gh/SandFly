@@ -54,14 +54,11 @@ class GestureProfilesFragment : NotificationCodeFragment(R.string.title_pref_ges
     while (nameTaken(profiles, getString(R.string.gesture_profile_new_name, number), null)) {
       number++
     }
-    askText(
-      getString(R.string.title_pref_add_gesture_profile),
-      getString(R.string.gesture_profile_new_name, number),
-      hint = getString(R.string.title_pref_voice_profile_name),
-    ) { name, _, _ ->
+    val suggested = getString(R.string.gesture_profile_new_name, number)
+    askText(getString(R.string.title_pref_add_gesture_profile), hint = suggested) { entered, _, _ ->
+      val name = entered.ifEmpty { suggested }
       val all = GestureProfiles.read(prefs)
       when {
-        name.isEmpty() -> ""
         nameTaken(all, name, null) -> getString(R.string.gesture_profile_name_taken, name)
         else -> {
           GestureProfiles.write(prefs, all + GestureProfiles.Profile(GestureProfiles.newId(), name, emptyMap()))
