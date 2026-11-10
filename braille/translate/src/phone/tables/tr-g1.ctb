@@ -225,6 +225,10 @@ base uppercase \x0130 i		LATIN CAPITAL LETTER I WITH DOT/SMALL LETTER i
 # Specific signs
 
 sign @ 4-23456
+# Slash is dots 3 4 and at sign is dot 4 in Turkish braille, as in tr-g2.ctb. The at sign is
+# shown as before and typed either way.
+sign / 34
+nofor sign @ 4
 
 # Punctuation symbols
 
