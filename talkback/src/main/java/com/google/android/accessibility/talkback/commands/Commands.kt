@@ -32,6 +32,7 @@ import com.google.android.accessibility.talkback.gesture.OpenAppActions
 import com.google.android.accessibility.talkback.keyboard.TalkBackPhysicalKeyboardShortcut
 import com.google.android.accessibility.talkback.keyboard.TalkBackPhysicalKeyboardShortcut as Key
 import com.google.android.accessibility.talkback.recognition.LiveRecognition
+import com.google.android.accessibility.talkback.recognition.RecognitionMode
 import com.google.android.accessibility.talkback.sandflyai.SandflyAi
 import com.google.android.accessibility.talkback.selector.ReadingControlLists
 import com.google.android.accessibility.talkback.speech.VoiceProfileNames
@@ -287,6 +288,7 @@ object Commands {
       media()
       notifications()
       descriptions()
+      liveRecognition()
       braille()
       sandFly()
       developer()
@@ -452,6 +454,7 @@ object Commands {
           R.string.shortcut_show_custom_actions,
           Key.SHOW_ACTIONS,
         )
+        gesture(R.string.shortcut_value_text_entities, R.string.title_text_entities)
         gesture(
           R.string.shortcut_value_talkback_breakout,
           R.string.shortcut_talkback_breakout,
@@ -578,6 +581,10 @@ object Commands {
           R.string.title_translate_last_spoken_phrase,
         )
         gesture(
+          R.string.shortcut_value_toggle_auto_translation,
+          R.string.title_pref_translation_auto,
+        )
+        gesture(
           R.string.shortcut_value_announce_phonetic_pronunciation,
           R.string.shortcut_announce_phonetic_pronunciation,
           Key.ANNOUNCE_PHONETIC_PRONUNCIATION,
@@ -680,6 +687,11 @@ object Commands {
           R.string.shortcut_value_control_text_formatting,
           R.string.title_switch_text_formatting,
           available = FeatureFlagReader.enableTextFormattingInline(context),
+        )
+        gesture(
+          R.string.shortcut_value_toggle_equalizer,
+          R.string.title_pref_speech_equalizer_on,
+          available = !wear,
         )
         keyboard(Key.TOGGLE_SOUND_FEEDBACK)
         keyboard(Key.OPEN_TTS_SETTINGS)
@@ -891,6 +903,27 @@ object Commands {
             commands.add(Command(value, label, null))
           }
         }
+      }
+
+    private fun liveRecognition() =
+      category(R.string.live_recognition_title) {
+        if (!LiveRecognition.isSupported(context)) return@category
+        for (mode in RecognitionMode.entries) {
+          commands.add(
+            Command(
+              LiveRecognition.commandOf(mode),
+              context.getString(R.string.shortcut_live_recognition_mode, context.getString(mode.label)),
+              keyboardAction = null,
+            )
+          )
+        }
+        commands.add(
+          Command(
+            LiveRecognition.STOP_COMMAND,
+            context.getString(R.string.shortcut_stop_live_recognition),
+            keyboardAction = null,
+          )
+        )
       }
 
     private fun braille() =

@@ -67,6 +67,7 @@ import static com.google.android.accessibility.talkback.contextmenu.ListMenuMana
 import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.GESTURE_PROFILE;
 import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.LANGUAGE;
 import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.SPLIT_SCREEN;
+import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.TEXT_ENTITIES;
 import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.VOICE_PROFILE;
 import static com.google.android.accessibility.talkback.trainingcommon.PageConfig.ANNOUNCE_REAL_ACTION;
 import static com.google.android.accessibility.talkback.trainingcommon.PageConfig.UNKNOWN_ANNOUNCEMENT;
@@ -1028,6 +1029,14 @@ public class GestureController {
           accessibilityFocusMonitor.getEditingNodeFromFocusedKeyboard(focus);
       translateCommand.translateLast(editing != null ? editing : focus);
       result = true;
+    } else if (LiveRecognition.isCommand(action)) {
+      result = LiveRecognition.runCommand(service, action);
+    } else if (action.equals(service.getString(R.string.shortcut_value_text_entities))) {
+      result = menuManager.showMenu(TEXT_ENTITIES, eventId);
+    } else if (action.equals(service.getString(R.string.shortcut_value_toggle_auto_translation))) {
+      selectorController.switchOnOrOffAutoTranslation(eventId, /* hint= */ null);
+    } else if (action.equals(service.getString(R.string.shortcut_value_toggle_equalizer))) {
+      selectorController.switchEqualizerOnOrOff(eventId, /* hint= */ null);
     } else if (SandflyAi.getFeatures() != null
         && action.equals(service.getString(R.string.shortcut_value_ai_agent))) {
       SandflyAi.getFeatures().startAgent(service);

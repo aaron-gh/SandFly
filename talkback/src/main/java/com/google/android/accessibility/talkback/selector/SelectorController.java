@@ -2363,7 +2363,7 @@ public class SelectorController implements UserInputEventListener {
         return;
       }
       case AUTO_TRANSLATION -> {
-        switchOnOrOffAutoTranslation(eventId);
+        switchOnOrOffAutoTranslation(eventId, getAdjustSelectedSettingGestures());
         return;
       }
       case CHANGE_BRIGHTNESS -> {
@@ -2411,7 +2411,7 @@ public class SelectorController implements UserInputEventListener {
         return;
       }
       case EQUALIZER -> {
-        switchEqualizerOnOrOff(eventId);
+        switchEqualizerOnOrOff(eventId, getAdjustSelectedSettingGestures());
         return;
       }
       case EQUALIZER_32,
@@ -2765,15 +2765,15 @@ public class SelectorController implements UserInputEventListener {
    * Turns the equalizer of the voice in use on or off. Its gains are kept. Without low-latency
    * audio, the equalizer has no effect, which is said too.
    */
-  private void switchEqualizerOnOrOff(EventId eventId) {
+  /** Turns the equalizer of the voice in use on or off, and says so, followed by {@code hint}. */
+  public void switchEqualizerOnOrOff(EventId eventId, @Nullable String hint) {
     String id = VoiceProfiles.activeId(prefs);
     boolean on = !SpeechEqualizer.isOn(prefs, id);
     SpeechEqualizer.setOn(prefs, id, on);
     String displayText =
         context.getString(
             on ? R.string.speech_equalizer_turned_on : R.string.speech_equalizer_turned_off);
-    announceSetting(
-        eventId, withLowLatencyNeeded(displayText), getAdjustSelectedSettingGestures());
+    announceSetting(eventId, withLowLatencyNeeded(displayText), hint);
     showQuickMenuActionOverlay(
         eventId, context.getString(on ? R.string.value_on : R.string.value_off));
   }
@@ -3075,14 +3075,15 @@ public class SelectorController implements UserInputEventListener {
         eventId, context.getString(!audioFocusOn ? R.string.value_on : R.string.value_off));
   }
 
-  private void switchOnOrOffAutoTranslation(EventId eventId) {
+  /** Turns automatic translation on or off, and says so, followed by {@code hint}. */
+  public void switchOnOrOffAutoTranslation(EventId eventId, @Nullable String hint) {
     boolean on = !TranslationSettings.INSTANCE.auto(prefs);
     TranslationSettings.INSTANCE.setAuto(prefs, on);
     String state = context.getString(on ? R.string.value_on : R.string.value_off);
     announceSetting(
         eventId,
         context.getString(R.string.translation_auto_state, state),
-        getAdjustSelectedSettingGestures());
+        hint);
     showQuickMenuActionOverlay(eventId, state);
   }
 

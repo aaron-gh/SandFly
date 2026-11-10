@@ -72,4 +72,8 @@
     <string name="live_recognition_point_above">Read above the fingertip</string>
     <!-- Choice on the Live recognition screen: Point and Speak reads the text below the fingertip. [CHAR LIMIT=40] -->
     <string name="live_recognition_point_below">Read below the fingertip</string>
+    <!-- Name of the command that turns one Live recognition mode on or off. mode is the name of the mode. [CHAR LIMIT=60] -->
+    <string name="shortcut_live_recognition_mode">Live recognition: <xliff:g id="mode" example="Scenes">%1$s</xliff:g></string>
+    <!-- Name of the command that stops Live recognition and closes its screen. [CHAR LIMIT=40] -->
+    <string name="shortcut_stop_live_recognition">Stop Live recognition</string>
 </resources>

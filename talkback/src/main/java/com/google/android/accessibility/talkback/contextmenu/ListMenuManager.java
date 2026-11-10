@@ -30,6 +30,7 @@ import static com.google.android.accessibility.talkback.contextmenu.ListMenuMana
 import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.GESTURE_PROFILE;
 import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.LANGUAGE;
 import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.SPLIT_SCREEN;
+import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.TEXT_ENTITIES;
 import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.VOICE_PROFILE;
 import static com.google.android.accessibility.talkback.eventprocessor.EventState.EVENT_SKIP_FOCUS_SYNC_FROM_VIEW_FOCUSED;
 
@@ -139,6 +140,7 @@ public class ListMenuManager implements WindowEventHandler, AccessibilityEventLi
     GESTURE_PROFILE,
     SPLIT_SCREEN,
     EDITING,
+    TEXT_ENTITIES,
   }
 
   public ListMenuManager(
@@ -325,6 +327,14 @@ public class ListMenuManager implements WindowEventHandler, AccessibilityEventLi
     } else if (menuId == EDITING) {
       EditingMenuProcessor.prepareEditingMenu(service, menu);
       menu.setTitle(service.getString(R.string.title_editing_menu));
+    } else if (menuId == TEXT_ENTITIES) {
+      final AccessibilityNodeInfoCompat currentNode =
+          accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ true);
+      if (currentNode == null) {
+        return;
+      }
+      nodeMenuRuleProcessor.prepareRuleMenuForNode(menu, currentNode, R.id.text_entities_menu);
+      menu.setTitle(service.getString(R.string.title_text_entities));
     }
   }
 
