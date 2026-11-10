@@ -17,7 +17,9 @@
 package com.google.android.accessibility.talkback.selector
 
 import android.os.Bundle
+import androidx.preference.PreferenceCategory
 import androidx.preference.PreferenceGroup
+import com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.notifications.NotificationCodeFragment
 
@@ -68,24 +70,31 @@ class ReadingControlListFragment :
   NotificationCodeFragment(R.string.title_pref_reading_control_lists) {
   private val id: String by lazy { requireArguments().getString(ARG_ID).orEmpty() }
 
-  // The title of each reading control on the Reading controls screen, by preference key.
-  private var titles: Map<String, CharSequence> = emptyMap()
+  // The groups of reading controls on the Reading controls screen: the title of each, and the
+  // preference key and title of each of its controls.
+  private var groups: List<Pair<CharSequence, List<Pair<String, CharSequence>>>> = emptyList()
 
   override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
     preferenceManager.setStorageDeviceProtected()
     // Read from the Reading controls screen, which the screen built in code then replaces.
     setPreferencesFromResource(R.xml.selector_menu_preferences, null)
-    titles = buildMap { collectTitles(preferenceScreen) }
+    groups = readGroups(preferenceScreen)
     super.onCreatePreferences(savedInstanceState, rootKey)
   }
 
-  private fun MutableMap<String, CharSequence>.collectTitles(group: PreferenceGroup) {
-    for (index in 0 until group.preferenceCount) {
-      val preference = group.getPreference(index)
-      if (preference is PreferenceGroup) collectTitles(preference)
-      val title = preference.title
-      if (preference.key != null && title != null) put(preference.key, title)
-    }
+  private fun readGroups(screen: PreferenceGroup): List<Pair<CharSequence, List<Pair<String, CharSequence>>>> {
+    val known = SelectorController.defaultOrderKeys(requireContext()).toSet()
+    return (0 until screen.preferenceCount)
+      .map { screen.getPreference(it) }
+      .filterIsInstance<PreferenceCategory>()
+      .map { group ->
+        val controls =
+          (0 until group.preferenceCount)
+            .map { group.getPreference(it) }
+            .filter { it.key in known && it.title != null }
+            .map { it.key to it.title!! }
+        (group.title ?: "") to controls
+      }
   }
 
   private val list: ReadingControlLists.ControlList?
@@ -107,9 +116,18 @@ class ReadingControlListFragment :
         activity?.onBackPressedDispatcher?.onBackPressed()
       }
     }
-    for (key in SelectorController.defaultOrderKeys(requireContext())) {
-      val title = titles[key] ?: continue
-      screen.switch(title, key in list.controls) { checked -> setControl(key, checked) }
+    groups.forEachIndexed { index, (title, controls) ->
+      val group =
+        AccessibilitySuitePreferenceCategory(requireContext()).also {
+          it.key = "pref_reading_control_list_group_$index"
+          it.title = title
+          it.isIconSpaceReserved = false
+          screen.addPreference(it)
+        }
+      for ((key, name) in controls) {
+        group.switch(name, key in list.controls) { checked -> setControl(key, checked) }
+      }
+      group.setCollapsible(getString(R.string.category_collapsed), getString(R.string.category_expanded))
     }
   }
 
