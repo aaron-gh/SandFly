@@ -524,6 +524,10 @@ isRepeatableCommand (int command) {
           case BRL_CMD_MENU_NEXT_SETTING:
 
           case BRL_CMD_KEY(BACKSPACE):
+#ifdef __ANDROID__
+          /* SandFly: EuroBraille Backspace, bound apart from Dot 7 so it can be assigned. */
+          case BRL_CMD_KEY(FUNCTION) + 226:
+#endif
           case BRL_CMD_KEY(DELETE):
           case BRL_CMD_KEY(PAGE_UP):
           case BRL_CMD_KEY(PAGE_DOWN):
