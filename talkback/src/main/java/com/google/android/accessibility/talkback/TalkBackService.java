@@ -4364,6 +4364,9 @@ public class TalkBackService extends AccessibilityServiceCompat
     ThemeFeedback soundTheme = SoundThemes.feedback(this, prefs);
     Map<String, String> customSounds = soundTheme.getSoundPaths();
     feedbackController.setCustomSounds(customSounds);
+    if (volumeChangeFeedback != null) {
+      volumeChangeFeedback.setCustomSound(customSounds.get(SoundThemes.VOLUME_CHANGE));
+    }
     Map<String, int[]> themeVibrations = soundTheme.vibrationsPlaying(mutedVibrations);
     feedbackController.setThemeVibrations(themeVibrations);
     // For the braille keyboard and direct touch, which play their own vibrations.

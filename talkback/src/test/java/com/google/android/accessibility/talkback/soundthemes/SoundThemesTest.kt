@@ -62,6 +62,14 @@ class SoundThemesTest {
   }
 
   @Test
+  fun theVolumeChangeToneCanBeReplaced() {
+    assertTrue(SoundThemes.SOUND_KEYS.contains(SoundThemes.VOLUME_CHANGE))
+    // Volume change feedback turns it on and off, so it has no switch or vibration of its own.
+    assertTrue(IndividualFeedbackSettings.SOUNDS.none { it.key == SoundThemes.VOLUME_CHANGE })
+    assertFalse(SoundThemes.VIBRATION_NAMES.any { it.startsWith(SoundThemes.VOLUME_CHANGE) })
+  }
+
+  @Test
   fun eachCircleMenuSoundCanBeReplaced() {
     val circleMenu = SoundThemes.SOUNDS.single { it.key == "radial_menu" }
     for (i in 1..8) assertEquals(circleMenu, SoundThemes.PARTS["radial_menu_$i"])

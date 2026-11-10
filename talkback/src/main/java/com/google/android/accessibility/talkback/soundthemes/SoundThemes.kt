@@ -152,10 +152,18 @@ object SoundThemes {
       FeedbackItem("braille_keyboard_new_line", R.string.theme_sound_braille_new_line),
     )
 
+  /**
+   * The tone of a volume step, which plays only with Volume change feedback set to a tone. SandFly's
+   * own tone is generated, and res/raw/volume_change.wav, the same tone, is only for previews.
+   */
+  const val VOLUME_CHANGE = "volume_change"
+
+  private val VOLUME_CHANGE_SOUND = FeedbackItem(VOLUME_CHANGE, R.string.theme_sound_volume_change)
+
   /** Every sound a theme can replace, in the order the settings show them. */
   @JvmStatic
   val SOUNDS: List<FeedbackItem>
-    get() = IndividualFeedbackSettings.SOUNDS + BRAILLE_TYPING_SOUNDS
+    get() = IndividualFeedbackSettings.SOUNDS + VOLUME_CHANGE_SOUND + BRAILLE_TYPING_SOUNDS
 
   val SOUND_KEYS: Set<String>
     get() = SOUNDS.map { it.key }.toSet()
