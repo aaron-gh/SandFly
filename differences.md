@@ -422,7 +422,7 @@ Limitations:
 
 ### AI actions reading control
 
-The **AI actions** reading control (Android 11 and later) runs **Describe screen**, **Speak screen description**, **Ask about screen**, **Describe image**, **Speak image description**, **Ask about image** or **Start or stop AI agent task**. Swipe up or down to choose an action, then double-tap to run it. Double-tap runs the action that the reading control says until focus moves. **AI actions to include**, under Options in **Reading controls**, chooses which actions the reading control offers; all are included by default. Actions that aren't available, such as **Describe screen** in a phone language that it doesn't support, are left out, and the reading control is hidden when none is available.
+The **AI actions** reading control (Android 11 and later) runs **Describe screen**, **Speak screen description**, **Ask about screen**, **Describe image**, **Speak image description**, **Ask about image**, **Start or stop AI agent task** or **Type AI agent task**. Swipe up or down to choose an action, then double-tap to run it. Double-tap runs the action that the reading control says until focus moves. **AI actions to include**, under Options in **Reading controls**, chooses which actions the reading control offers; all are included by default. Actions that aren't available, such as **Describe screen** in a phone language that it doesn't support, are left out, and the reading control is hidden when none is available.
 
 ### Default gestures
 

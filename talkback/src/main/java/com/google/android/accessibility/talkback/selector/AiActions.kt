@@ -60,6 +60,9 @@ object AiActions {
       actions.add(
         Action(context.getString(R.string.shortcut_value_ai_agent), it.agentCommandLabel(context))
       )
+      it.commands(context)[SandflyAi.COMMAND_TYPE_AGENT_TASK]?.let { label ->
+        actions.add(Action(SandflyAi.COMMAND_TYPE_AGENT_TASK, label))
+      }
     }
     return actions
   }
