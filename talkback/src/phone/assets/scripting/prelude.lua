@@ -574,8 +574,53 @@ env.print = function(...)
   log('info', ...)
 end
 
+-- In an onDemand script, each proxy keeps the script loaded until it has been called once, or for
+-- a time, since SandFly can't tell whether a Java object still holds it. A proxy from a table or a
+-- function passed straight to a Java method is not counted.
+local function watched_java()
+  local watched = {}
+  for key, value in next, java do
+    watched[key] = value
+  end
+  local guard_class = java.import('com.google.android.accessibility.talkback.scripting.ScriptProxyGuard')
+  local make_proxy = java.proxy
+  watched.proxy = function(...)
+    local args = pack(...)
+    local handler = args[args.n]
+    local id
+    local function wrap(fn)
+      return function(...)
+        local result = pack(pcall(fn, ...))
+        if id then
+          local finished = id
+          id = nil
+          send('proxy.done', { id = finished })
+        end
+        if not result[1] then
+          error(result[2], 0)
+        end
+        return unpack(result, 2, result.n)
+      end
+    end
+    if type(handler) == 'function' then
+      args[args.n] = wrap(handler)
+    elseif type(handler) == 'table' then
+      args[args.n] = setmetatable({}, {
+        __index = function(_, name)
+          local value = handler[name]
+          return type(value) == 'function' and wrap(value) or value
+        end,
+      })
+    end
+    local proxy = make_proxy(unpack(args, 1, args.n))
+    id = call('proxy.watch')
+    return guard_class:guarded(proxy)
+  end
+  return watched
+end
+
 if with_java and java then
-  env.java = java
+  env.java = call('manifest').onDemand and watched_java() or java
 end
 G.java = nil
 env._G = env

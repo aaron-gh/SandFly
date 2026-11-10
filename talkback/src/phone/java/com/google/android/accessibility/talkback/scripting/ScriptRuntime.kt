@@ -38,7 +38,9 @@ import com.google.android.accessibility.talkback.scripting.ScriptPermission.PASS
 import com.google.android.accessibility.talkback.scripting.ScriptPermission.SCREEN
 import com.google.android.accessibility.talkback.scripting.ScriptPermission.SPEECH
 import com.google.android.accessibility.talkback.scripting.ScriptPermission.SYSTEM
+import java.util.concurrent.ConcurrentHashMap
 import java.util.concurrent.Future
+import java.util.concurrent.atomic.AtomicInteger
 import org.json.JSONArray
 import org.json.JSONObject
 
@@ -70,7 +72,7 @@ class ScriptRuntime(
 
   /** Whether the script is waiting for something, has a timer set, or shows a dialog or window. */
   val isBusy: Boolean
-    get() = unsettled > 0 || timers.isNotEmpty() || dialogs.hasOpen(id)
+    get() = unsettled > 0 || timers.isNotEmpty() || dialogs.hasOpen(id) || watchedProxies.isNotEmpty()
 
   private var lua: LuaEngine? = null
   private val store = manager.store
@@ -81,6 +83,9 @@ class ScriptRuntime(
   private val warned = HashSet<String>()
   private var nextPromise = 1
   private var unsettled = 0
+  // Called on whichever thread a script's proxy is called on.
+  private val watchedProxies = ConcurrentHashMap<Int, Runnable>()
+  private val nextWatchedProxy = AtomicInteger(1)
   private var recognizing = 0
   // When the script's current call runs out of time. The prelude's hook only stops Lua, so host
   // calls that walk the screen stop at this themselves.
@@ -139,6 +144,8 @@ class ScriptRuntime(
     dialogs.close(id)
     timers.values.forEach(handler::removeCallbacks)
     timers.clear()
+    watchedProxies.values.forEach(handler::removeCallbacks)
+    watchedProxies.clear()
     fetches.forEach { it.cancel(true) }
     fetches.clear()
     lua?.close()
@@ -295,6 +302,8 @@ class ScriptRuntime(
       file.readBytes().decodeToString()
     }
     on("clock") { SystemClock.uptimeMillis() }
+    on("proxy.watch") { watchProxy() }
+    on("proxy.done") { finishProxy(it.optInt("id")) }
     on("audio") { playAudio(it) }
     on("sound") { args ->
       val name = args.optString("name")
@@ -629,6 +638,25 @@ class ScriptRuntime(
 
   private fun resolved(value: Any?): JSONObject = promise { settle -> settle(true, value) }
 
+  /** Keeps an onDemand script loaded until its new proxy has been called, or for a time. */
+  private fun watchProxy(): Int? {
+    if (watchedProxies.size >= MAX_WATCHED_PROXIES) return null
+    val proxyId = nextWatchedProxy.getAndIncrement()
+    val expire = Runnable {
+      if (watchedProxies.remove(proxyId) != null) manager.scheduleOnDemandRelease()
+    }
+    watchedProxies[proxyId] = expire
+    handler.postDelayed(expire, PROXY_WATCH_MS)
+    return proxyId
+  }
+
+  private fun finishProxy(proxyId: Int) {
+    watchedProxies.remove(proxyId)?.let {
+      handler.removeCallbacks(it)
+      manager.scheduleOnDemandRelease()
+    }
+  }
+
   private fun setTimer(timerId: Int, delayMs: Long) {
     timers.remove(timerId)?.let(handler::removeCallbacks)
     apiCheck(timers.size < MAX_TIMERS) { "A script can have at most $MAX_TIMERS timers at once" }
@@ -692,6 +720,8 @@ class ScriptRuntime(
     private const val MAX_VIBRATION_MS = 5000L
     private const val MAX_FETCHES = 8
     private const val MAX_TIMERS = 100
+    private const val MAX_WATCHED_PROXIES = 100
+    private const val PROXY_WATCH_MS = 30_000L
     private const val MAX_SETTING_CHARS = 16 * 1024
     private const val MAX_SETTING_TEXT_CHARS = 500
     private const val MAX_ADDED_RULES = 200
