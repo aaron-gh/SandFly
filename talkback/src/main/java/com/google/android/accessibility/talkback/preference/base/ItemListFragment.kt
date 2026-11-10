@@ -19,8 +19,6 @@ package com.google.android.accessibility.talkback.preference.base
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.view.View
-import android.view.accessibility.AccessibilityNodeInfo
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.edit
@@ -313,37 +311,7 @@ abstract class ItemListFragment(xmlResId: Int) :
    * [announcement].
    */
   private fun focusAfterChange(preference: Preference?, announcement: String?) {
-    val list = listView ?: return
-    list.post {
-      list.addOnLayoutChangeListener(
-        object : View.OnLayoutChangeListener {
-          override fun onLayoutChange(
-            v: View,
-            left: Int,
-            top: Int,
-            right: Int,
-            bottom: Int,
-            oldLeft: Int,
-            oldTop: Int,
-            oldRight: Int,
-            oldBottom: Int,
-          ) {
-            list.removeOnLayoutChangeListener(this)
-            val adapter = list.adapter as? PreferenceGroup.PreferencePositionCallback
-            val position = preference?.let { adapter?.getPreferenceAdapterPosition(it) } ?: -1
-            if (position >= 0) {
-              list.scrollToPosition(position)
-              list
-                .findViewHolderForAdapterPosition(position)
-                ?.itemView
-                ?.performAccessibilityAction(AccessibilityNodeInfo.ACTION_ACCESSIBILITY_FOCUS, null)
-            }
-            announcement?.let { announce(list, it) }
-          }
-        }
-      )
-      list.requestLayout()
-    }
+    listView?.let { focusAfterLayout(it, preference, announcement) }
   }
 
   private fun rowKey(key: String) = "${orderKey}_row_$key"

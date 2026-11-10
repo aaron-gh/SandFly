@@ -18,13 +18,11 @@ package com.google.android.accessibility.talkback.contextmenu;
 
 import static com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED;
 
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.accessibility.AccessibilityNodeInfo;
-import androidx.annotation.BoolRes;
 import androidx.annotation.IdRes;
 import androidx.annotation.StringRes;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
@@ -32,11 +30,13 @@ import com.google.android.accessibility.talkback.ActorState;
 import com.google.android.accessibility.talkback.Feedback;
 import com.google.android.accessibility.talkback.Pipeline;
 import com.google.android.accessibility.talkback.R;
-import com.google.android.accessibility.talkback.preference.ItemOrder;
 import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.actor.DimScreenActor;
 import com.google.android.accessibility.talkback.actor.gemini.GeminiConfiguration;
 import com.google.android.accessibility.talkback.clipboard.ClipboardHistoryFragment;
+import com.google.android.accessibility.talkback.commands.CommandMenus;
+import com.google.android.accessibility.talkback.commands.Commands;
+import com.google.android.accessibility.talkback.commands.MenuCommands;
 import com.google.android.accessibility.talkback.contextmenu.ContextMenuItem.DeferredType;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.keyboardecho.KeyboardEchoSettings;
@@ -58,8 +58,10 @@ import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 import kotlin.Pair;
@@ -119,6 +121,9 @@ public class TalkbackMenuProcessor {
   private final Pipeline.FeedbackReturner pipeline;
   private final NodeMenuRuleProcessor nodeMenuRuleProcessor;
   private final AccessibilityNodeInfoCompat currentNode;
+  // The switches and item IDs of the items in the menu being made.
+  private final Set<String> wantedShowKeys = new HashSet<>();
+  private final Set<Integer> wantedItemIds = new HashSet<>();
 
   // TODO: Reduces dependency on TalkBackService to dependency on Context.
   public TalkbackMenuProcessor(
@@ -135,14 +140,37 @@ public class TalkbackMenuProcessor {
   }
 
   /**
-   * Populates a {@link Menu} with dynamic items relevant to the current global TalkBack state.
+   * Fills {@code target} with the commands and submenus {@code nodes}, in their order.
    *
-   * @param menu The menu to populate.
+   * @param target The menu to populate.
+   * @param nodes The items of the menu.
    * @return {@code true} if successful, {@code false} otherwise.
    */
-  public boolean prepareMenu(ContextMenu menu) {
+  public boolean prepareMenu(ContextMenu target, List<CommandMenus.Node> nodes) {
     // Apply attributes to menu items.
     SharedPreferences prefs = SharedPreferencesUtils.getSharedPreferences(service);
+    List<CommandMenus.Node> shown = CommandMenus.expanded(prefs, nodes);
+    Set<String> commands = CommandMenus.commandsIn(shown);
+    // The items with behavior of their own, made first and then placed where the menu has them.
+    ContextMenu menu = new ContextMenu(service);
+    menu.setDefaultListener(target.getDefaultListener());
+    wantedShowKeys.clear();
+    wantedItemIds.clear();
+    Map<Integer, String> commandByItemId = new HashMap<>();
+    Set<String> ownItem = new HashSet<>();
+    for (MenuCommands.Row row : MenuCommands.rows(service)) {
+      ownItem.add(row.getValue());
+      if (!commands.contains(row.getValue())) {
+        continue;
+      }
+      if (row.getShowKey() != 0) {
+        wantedShowKeys.add(service.getString(row.getShowKey()));
+      }
+      for (int id : row.getIds()) {
+        wantedItemIds.add(id);
+        commandByItemId.put(id, row.getValue());
+      }
+    }
 
     // Typo suggestions
     addItemOrSubMenuForCurrentNode(
@@ -227,14 +255,15 @@ public class TalkbackMenuProcessor {
     addSplitScreenMenuIfValid(menu);
     // System Action
     addWindowActionMenu(menu);
-    addScriptCommands(menu);
+    if (wantedItemIds.contains(R.id.script_command)) {
+      addScriptCommands(menu);
+    }
     addSandflyProItems(menu);
     addScriptTool(
         menu,
         R.id.inspect_item,
         ORDER_INSPECT_ITEM,
         R.string.pref_show_context_menu_inspect_item_setting_key,
-        R.bool.pref_show_context_menu_inspect_item_default,
         R.string.shortcut_inspect_item,
         (node, say) -> say.accept(ItemInspector.inspect(service, node)));
     addScriptTool(
@@ -242,7 +271,6 @@ public class TalkbackMenuProcessor {
         R.id.copy_screen_tree,
         ORDER_COPY_SCREEN_TREE,
         R.string.pref_show_context_menu_copy_screen_tree_setting_key,
-        R.bool.pref_show_context_menu_copy_screen_tree_default,
         R.string.shortcut_copy_screen_tree,
         (node, say) -> ItemInspector.copyScreenTree(service, node, say));
 
@@ -292,154 +320,74 @@ public class TalkbackMenuProcessor {
     setSkipRefocusAndWindowAnnounce(menu, R.id.sound_feedback, true);
     setSkipRefocusAndWindowAnnounce(menu, R.id.vibration_feedback, true);
 
-    menu.sortItemsByOrder();
-    applySavedOrder(menu);
-
+    Map<String, List<ContextMenuItem>> items = new HashMap<>();
+    for (ContextMenuItem item : menu.getItems()) {
+      String command = commandByItemId.get(item.getItemId());
+      if (command != null) {
+        items.computeIfAbsent(command, unused -> new ArrayList<>()).add(item);
+      }
+    }
+    List<String> plain = new ArrayList<>(commands);
+    plain.removeAll(ownItem);
+    List<String> labels = Commands.labels(service, plain);
+    Map<String, String> plainLabels = new HashMap<>();
+    for (int i = 0; i < plain.size(); i++) {
+      if (labels.get(i) != null) {
+        plainLabels.put(plain.get(i), labels.get(i));
+      }
+    }
+    addNodes(target, shown, items, plainLabels);
     return true;
   }
 
-  /**
-   * The items that SandFly menu settings list, in the menu's default order: each setting key with
-   * the IDs of the menu items it shows.
-   */
-  private static final int[][] MENU_ITEMS = {
-    {R.string.pref_show_context_menu_typo_suggestions_setting_key, R.id.typo_suggestions_menu},
-    {R.string.pref_show_context_menu_custom_action_setting_key, R.id.custom_action_menu},
-    {R.string.pref_show_context_menu_text_entities_setting_key, R.id.text_entities_menu},
-    {R.string.pref_show_context_menu_page_navigation_setting_key, R.id.viewpager_menu},
-    {R.string.pref_show_context_menu_labeling_setting_key, R.id.labeling_breakout_add_label},
-    {R.string.pref_show_context_menu_image_caption_setting_key, R.id.image_caption_menu},
-    {R.string.pref_show_context_menu_summarize_view_setting_key, R.id.summarize_view_menu},
-    {R.string.pref_show_context_menu_recognize_screen_setting_key, R.id.recognize_screen_menu},
-    {
-      R.string.pref_show_context_menu_screen_recognition_app_setting_key,
-      R.id.screen_recognition_app_menu
-    },
-    {R.string.pref_show_context_menu_granularity_setting_key, R.id.granularity_menu},
-    {R.string.pref_show_context_menu_read_from_top_setting_key, R.id.read_from_top},
-    {R.string.pref_show_context_menu_read_from_current_setting_key, R.id.read_from_current},
-    {
-      R.string.pref_show_context_menu_copy_last_spoken_phrase_setting_key,
-      R.id.copy_last_utterance_to_clipboard
-    },
-    {
-      R.string.pref_show_context_menu_spell_last_spoken_phrase_setting_key,
-      R.id.spell_last_utterance
-    },
-    {
-      R.string.pref_show_context_menu_repeat_last_spoken_phrase_setting_key,
-      R.id.repeat_last_utterance
-    },
-    {R.string.pref_show_context_menu_text_formatting_setting_key, R.id.text_formatting},
-    {
-      R.string.pref_show_context_menu_keyboard_echo_on_screen_setting_key,
-      R.id.keyboard_echo_on_screen_menu
-    },
-    {
-      R.string.pref_show_context_menu_keyboard_echo_physical_setting_key,
-      R.id.keyboard_echo_physical_menu
-    },
-    {
-      R.string.pref_show_context_menu_keyboard_echo_braille_keyboard_setting_key,
-      R.id.keyboard_echo_braille_keyboard_menu
-    },
-    {
-      R.string.pref_show_context_menu_keyboard_echo_braille_display_setting_key,
-      R.id.keyboard_echo_braille_display_menu
-    },
-    {
-      R.string.pref_show_context_menu_keyboard_echo_handwriting_keyboard_setting_key,
-      R.id.keyboard_echo_handwriting_keyboard_menu
-    },
-    {R.string.pref_show_context_menu_verbosity_setting_key, R.id.verbosity},
-    {R.string.pref_show_context_menu_language_setting_key, R.id.language_menu},
-    {R.string.pref_show_context_menu_emoji_setting_key, R.id.emoji_menu},
-    {R.string.pref_show_context_menu_gesture_profile_setting_key, R.id.gesture_profile_menu},
-    {R.string.pref_show_context_menu_voice_profile_setting_key, R.id.voice_profile_menu},
-    {R.string.pref_show_context_menu_audio_ducking_setting_key, R.id.audio_ducking},
-    {R.string.pref_show_context_menu_sound_feedback_setting_key, R.id.sound_feedback},
-    {R.string.pref_show_context_menu_vibration_feedback_setting_key, R.id.vibration_feedback},
-    {R.string.pref_show_context_menu_find_on_screen_setting_key, R.id.screen_search},
-    {
-      R.string.pref_show_context_menu_dim_or_brighten_setting_key,
-      R.id.enable_dimming,
-      R.id.disable_dimming
-    },
-    {R.string.pref_show_context_menu_voice_commands_setting_key, R.id.voice_commands},
-    {R.string.pref_show_context_menu_pause_backtalk_setting_key, R.id.pause_backtalk},
-    {R.string.pref_show_context_menu_turn_off_setting_key, R.id.turn_off_sandfly},
-    {
-      R.string.pref_show_context_menu_show_keyboard_shortcuts_setting_key,
-      R.id.show_keyboard_shortcuts
-    },
-    {R.string.pref_show_context_menu_talkback_settings_setting_key, R.id.talkback_settings},
-    {R.string.pref_show_context_menu_clipboard_history_setting_key, R.id.clipboard_history},
-    {R.string.pref_show_context_menu_send_feedback_setting_key, R.id.send_feedback},
-    {R.string.pref_show_context_menu_tts_settings_setting_key, R.id.tts_settings},
-    {R.string.pref_show_context_menu_split_screen_setting_key, R.id.split_screen_menu},
-    {R.string.pref_show_context_menu_system_action_setting_key, R.id.window_menu},
-    {
-      R.string.pref_show_context_menu_braille_display_settings_setting_key,
-      R.id.braille_display_settings
-    },
-    {R.string.pref_show_context_menu_inspect_item_setting_key, R.id.inspect_item},
-    {R.string.pref_show_context_menu_copy_screen_tree_setting_key, R.id.copy_screen_tree},
-    {
-      R.string.pref_show_context_menu_control_telling_time_setting_key,
-      R.id.enable_telling_time,
-      R.id.disable_telling_time
-    },
-  };
-
-  /** Returns the setting key of each SandFly menu item, in the menu's default order. */
-  public static List<String> defaultOrderKeys(Context context) {
-    List<String> keys = new ArrayList<>();
-    for (int[] item : MENU_ITEMS) {
-      keys.add(context.getString(item[0]));
-    }
-    return keys;
-  }
-
-  /**
-   * Puts the items that SandFly menu settings list in the order saved there. Other items, such as
-   * script commands, keep their places.
-   */
-  private void applySavedOrder(ContextMenu menu) {
-    List<String> saved =
-        ItemOrder.stored(
-            SharedPreferencesUtils.getSharedPreferences(service), ItemOrder.SANDFLY_MENU_KEY);
-    if (saved.isEmpty()) {
-      return;
-    }
-    List<String> order = ItemOrder.ordered(saved, defaultOrderKeys(service));
-    Map<Integer, Integer> rankById = new HashMap<>();
-    for (int[] item : MENU_ITEMS) {
-      int rank = order.indexOf(service.getString(item[0]));
-      for (int i = 1; i < item.length; i++) {
-        rankById.put(item[i], rank);
+  /** Adds {@code nodes} to {@code target}: submenus left empty on this screen are left out. */
+  private void addNodes(
+      ContextMenu target,
+      List<CommandMenus.Node> nodes,
+      Map<String, List<ContextMenuItem>> items,
+      Map<String, String> plainLabels) {
+    for (CommandMenus.Node node : nodes) {
+      if (node instanceof CommandMenus.Submenu submenu) {
+        ListSubMenu subMenu =
+            target.addSubMenu(
+                /* groupId= */ 0, R.id.command_submenu, Menu.NONE, submenu.getName());
+        subMenu.setDefaultListener(target.getDefaultListener());
+        subMenu.getItem().setOnMenuItemClickListener(target.getDefaultListener());
+        addNodes(subMenu, submenu.getChildren(), items, plainLabels);
+        if (subMenu.size() == 0) {
+          target.remove(subMenu.getItem());
+        }
+        continue;
+      }
+      String command = ((CommandMenus.Command) node).getValue();
+      List<ContextMenuItem> own = items.get(command);
+      if (own != null) {
+        own.forEach(target::add);
+      } else if (plainLabels.containsKey(command)) {
+        addPlainCommand(target, command, plainLabels.get(command));
       }
     }
-    List<ContextMenuItem> items = menu.getItems();
-    List<ContextMenuItem> ranked = new ArrayList<>();
-    for (ContextMenuItem item : items) {
-      if (rankById.containsKey(item.getItemId())) {
-        ranked.add(item);
-      }
-    }
-    ranked.sort(
-        (a, b) -> Integer.compare(rankById.get(a.getItemId()), rankById.get(b.getItemId())));
-    List<ContextMenuItem> result = new ArrayList<>();
-    int next = 0;
-    for (ContextMenuItem item : items) {
-      result.add(rankById.containsKey(item.getItemId()) ? ranked.get(next++) : item);
-    }
-    menu.setItems(result);
   }
 
-  private boolean showMenuItem(@StringRes int prefKeyId, @BoolRes int defaultValueResId) {
-    SharedPreferences prefs = SharedPreferencesUtils.getSharedPreferences(service);
-    return prefs.getBoolean(
-        service.getString(prefKeyId), service.getResources().getBoolean(defaultValueResId));
+  /** Adds an item that runs {@code command} once the menu has closed and focus is back. */
+  private void addPlainCommand(ContextMenu target, String command, String label) {
+    ContextMenuItem item = target.add(/* groupId= */ 0, R.id.command_item, Menu.NONE, label);
+    item.setOnMenuItemClickListener(
+        clicked -> {
+          service.performCommand(command);
+          return true;
+        });
+    item.setNeedRestoreFocus(true);
+    item.setDeferredType(
+        currentNode == null
+            ? DeferredType.WINDOWS_STABLE
+            : DeferredType.ACCESSIBILITY_FOCUS_RECEIVED);
+    item.setSkipRefocusEvents(true);
+    item.setSkipWindowEvents(true);
+  }
+
+  private boolean showMenuItem(@StringRes int prefKeyId) {
+    return wantedShowKeys.contains(service.getString(prefKeyId));
   }
 
   // Adds context_menu.xml, such as read from, last spoken, find on screen sub menu, .., to menu
@@ -450,47 +398,33 @@ public class TalkbackMenuProcessor {
     // show item.
     if (ScreenMonitor.isDeviceLocked(service)
         || !SettingsUtils.allowLinksOutOfSettings(service)
-        || !showMenuItem(
-            R.string.pref_show_context_menu_tts_settings_setting_key,
-            R.bool.pref_show_context_menu_tts_settings_default)) {
+        || !showMenuItem(R.string.pref_show_context_menu_tts_settings_setting_key)) {
       menu.removeItem(R.id.tts_settings);
     }
 
-    if (!showMenuItem(
-        R.string.pref_show_context_menu_read_from_top_setting_key,
-        R.bool.pref_show_context_menu_read_from_top_default)) {
+    if (!showMenuItem(R.string.pref_show_context_menu_read_from_top_setting_key)) {
       menu.removeItem(R.id.read_from_top);
     }
 
-    if (!showMenuItem(
-        R.string.pref_show_context_menu_read_from_current_setting_key,
-        R.bool.pref_show_context_menu_read_from_current_default)) {
+    if (!showMenuItem(R.string.pref_show_context_menu_read_from_current_setting_key)) {
       menu.removeItem(R.id.read_from_current);
     }
 
-    if (!showMenuItem(
-        R.string.pref_show_context_menu_copy_last_spoken_phrase_setting_key,
-        R.bool.pref_show_context_menu_copy_last_spoken_phrase_default)) {
+    if (!showMenuItem(R.string.pref_show_context_menu_copy_last_spoken_phrase_setting_key)) {
       menu.removeItem(R.id.copy_last_utterance_to_clipboard);
     }
 
-    if (!showMenuItem(
-        R.string.pref_show_context_menu_spell_last_spoken_phrase_setting_key,
-        R.bool.pref_show_context_menu_spell_last_spoken_phrase_default)) {
+    if (!showMenuItem(R.string.pref_show_context_menu_spell_last_spoken_phrase_setting_key)) {
       menu.removeItem(R.id.spell_last_utterance);
     }
 
-    if (!showMenuItem(
-        R.string.pref_show_context_menu_repeat_last_spoken_phrase_setting_key,
-        R.bool.pref_show_context_menu_repeat_last_spoken_phrase_default)) {
+    if (!showMenuItem(R.string.pref_show_context_menu_repeat_last_spoken_phrase_setting_key)) {
       menu.removeItem(R.id.repeat_last_utterance);
     }
 
     // Removes screen search if this is watch or uncheck show item.
     if (FormFactorUtils.isAndroidWear()
-        || !showMenuItem(
-            R.string.pref_show_context_menu_find_on_screen_setting_key,
-            R.bool.pref_show_context_menu_find_on_screen_default)) {
+        || !showMenuItem(R.string.pref_show_context_menu_find_on_screen_setting_key)) {
       menu.removeItem(R.id.screen_search);
     }
 
@@ -500,9 +434,7 @@ public class TalkbackMenuProcessor {
         || !SettingsUtils.allowLinksOutOfSettings(service)
         || FormFactorUtils.isAndroidWear()
         || FormFactorUtils.isAndroidXr()
-        || !showMenuItem(
-            R.string.pref_show_context_menu_voice_commands_setting_key,
-            R.bool.pref_show_context_menu_voice_commands_default)) {
+        || !showMenuItem(R.string.pref_show_context_menu_voice_commands_setting_key)) {
       menu.removeItem(R.id.voice_commands);
     }
 
@@ -510,17 +442,13 @@ public class TalkbackMenuProcessor {
     // item.
     if (ScreenMonitor.isDeviceLocked(service)
         || !SettingsUtils.allowLinksOutOfSettings(service)
-        || !showMenuItem(
-            R.string.pref_show_context_menu_talkback_settings_setting_key,
-            R.bool.pref_show_context_menu_talkback_settings_default)) {
+        || !showMenuItem(R.string.pref_show_context_menu_talkback_settings_setting_key)) {
       menu.removeItem(R.id.talkback_settings);
     }
 
     // The history can hold private text, so it isn't shown on the lock screen.
     if (ScreenMonitor.isDeviceLocked(service)
-        || !showMenuItem(
-            R.string.pref_show_context_menu_clipboard_history_setting_key,
-            R.bool.pref_show_context_menu_clipboard_history_default)) {
+        || !showMenuItem(R.string.pref_show_context_menu_clipboard_history_setting_key)) {
       menu.removeItem(R.id.clipboard_history);
     } else {
       @Nullable ContextMenuItem clipboardHistory = menu.findItem(R.id.clipboard_history);
@@ -534,9 +462,7 @@ public class TalkbackMenuProcessor {
 
     if (ScreenMonitor.isDeviceLocked(service)
         || !SettingsUtils.allowLinksOutOfSettings(service)
-        || !showMenuItem(
-            R.string.pref_show_context_menu_send_feedback_setting_key,
-            R.bool.pref_show_context_menu_send_feedback_default)) {
+        || !showMenuItem(R.string.pref_show_context_menu_send_feedback_setting_key)) {
       menu.removeItem(R.id.send_feedback);
     }
 
@@ -546,29 +472,21 @@ public class TalkbackMenuProcessor {
         || ScreenMonitor.isDeviceLocked(service)
         || !SettingsUtils.allowLinksOutOfSettings(service)
         || FormFactorUtils.isAndroidXr()
-        || !showMenuItem(
-            R.string.pref_show_context_menu_braille_display_settings_setting_key,
-            R.bool.pref_show_context_menu_braille_display_settings_default)) {
+        || !showMenuItem(R.string.pref_show_context_menu_braille_display_settings_setting_key)) {
       menu.removeItem(R.id.braille_display_settings);
     }
 
     if (!FeatureFlagReader.enableShowKeyboardShortcutsDialog(service)
-        || !showMenuItem(
-            R.string.pref_show_context_menu_show_keyboard_shortcuts_setting_key,
-            R.bool.pref_show_context_menu_show_keyboard_shortcuts_default)) {
+        || !showMenuItem(R.string.pref_show_context_menu_show_keyboard_shortcuts_setting_key)) {
       menu.removeItem(R.id.show_keyboard_shortcuts);
     }
 
     if (ScreenMonitor.isDeviceLocked(service)
-        || !showMenuItem(
-            R.string.pref_show_context_menu_verbosity_setting_key,
-            R.bool.pref_show_context_menu_verbosity_default)) {
+        || !showMenuItem(R.string.pref_show_context_menu_verbosity_setting_key)) {
       menu.removeItem(R.id.verbosity);
     }
 
-    if (showMenuItem(
-        R.string.pref_show_context_menu_audio_ducking_setting_key,
-        R.bool.pref_show_context_menu_audio_ducking_default)) {
+    if (showMenuItem(R.string.pref_show_context_menu_audio_ducking_setting_key)) {
       computeTitleForMenuItem(
           menu.findItem(R.id.audio_ducking),
           R.string.audio_focus_state,
@@ -578,9 +496,7 @@ public class TalkbackMenuProcessor {
       menu.removeItem(R.id.audio_ducking);
     }
 
-    if (showMenuItem(
-        R.string.pref_show_context_menu_sound_feedback_setting_key,
-        R.bool.pref_show_context_menu_sound_feedback_default)) {
+    if (showMenuItem(R.string.pref_show_context_menu_sound_feedback_setting_key)) {
       computeTitleForMenuItem(
           menu.findItem(R.id.sound_feedback),
           R.string.sound_feedback_state,
@@ -591,9 +507,7 @@ public class TalkbackMenuProcessor {
     }
 
     if (FeatureSupport.isVibratorSupported(service)
-        && showMenuItem(
-            R.string.pref_show_context_menu_vibration_feedback_setting_key,
-            R.bool.pref_show_context_menu_vibration_feedback_default)) {
+        && showMenuItem(R.string.pref_show_context_menu_vibration_feedback_setting_key)) {
       computeTitleForMenuItem(
           menu.findItem(R.id.vibration_feedback),
           R.string.vibration_feedback_state,
@@ -647,7 +561,7 @@ public class TalkbackMenuProcessor {
       menu.removeItem(R.id.labeling_breakout_edit_label);
     }
 
-    if (!nodeMenuRuleProcessor.isEnabled(itemId)) {
+    if (!wantedItemIds.contains(itemId)) {
       return;
     }
 
@@ -663,9 +577,7 @@ public class TalkbackMenuProcessor {
     // options appearing in the global context menu. This will dismiss the menu and clears the menu.
     menu.removeItem(R.id.language_menu);
 
-    if (!showMenuItem(
-        R.string.pref_show_context_menu_language_setting_key,
-        R.bool.pref_show_context_menu_language_default)) {
+    if (!showMenuItem(R.string.pref_show_context_menu_language_setting_key)) {
       return;
     }
 
@@ -690,9 +602,7 @@ public class TalkbackMenuProcessor {
 
   private void addSplitScreenMenuIfValid(ContextMenu menu) {
     menu.removeItem(R.id.split_screen_menu);
-    if (!showMenuItem(
-        R.string.pref_show_context_menu_split_screen_setting_key,
-        R.bool.pref_show_context_menu_split_screen_default)) {
+    if (!showMenuItem(R.string.pref_show_context_menu_split_screen_setting_key)) {
       return;
     }
     ListSubMenu subMenu =
@@ -709,9 +619,7 @@ public class TalkbackMenuProcessor {
   private void addVoiceProfileMenuIfValid(ContextMenu menu) {
     menu.removeItem(R.id.voice_profile_menu);
 
-    if (!showMenuItem(
-        R.string.pref_show_context_menu_voice_profile_setting_key,
-        R.bool.pref_show_context_menu_voice_profile_default)) {
+    if (!showMenuItem(R.string.pref_show_context_menu_voice_profile_setting_key)) {
       return;
     }
 
@@ -730,9 +638,7 @@ public class TalkbackMenuProcessor {
   private void addGestureProfileMenuIfValid(ContextMenu menu) {
     menu.removeItem(R.id.gesture_profile_menu);
 
-    if (!showMenuItem(
-        R.string.pref_show_context_menu_gesture_profile_setting_key,
-        R.bool.pref_show_context_menu_gesture_profile_default)) {
+    if (!showMenuItem(R.string.pref_show_context_menu_gesture_profile_setting_key)) {
       return;
     }
 
@@ -751,9 +657,7 @@ public class TalkbackMenuProcessor {
   /** Adds a sub menu to choose how emoji are read, titled with the current choice. */
   private void addEmojiMenuIfValid(ContextMenu menu) {
     menu.removeItem(R.id.emoji_menu);
-    if (!showMenuItem(
-        R.string.pref_show_context_menu_emoji_setting_key,
-        R.bool.pref_show_context_menu_emoji_default)) {
+    if (!showMenuItem(R.string.pref_show_context_menu_emoji_setting_key)) {
       return;
     }
     SharedPreferences prefs = SharedPreferencesUtils.getSharedPreferences(service);
@@ -803,7 +707,7 @@ public class TalkbackMenuProcessor {
   private void addKeyboardEchoMenuIfValid(
       ContextMenu menu, TypingInput input, @IdRes int menuId, @StringRes int prefKeyId) {
     menu.removeItem(menuId);
-    if (!showMenuItem(prefKeyId, R.bool.pref_show_context_menu_keyboard_echo_default)
+    if (!showMenuItem(prefKeyId)
         || (FormFactorUtils.isAndroidWear() && input != TypingInput.ON_SCREEN_KEYBOARD)) {
       return;
     }
@@ -849,9 +753,7 @@ public class TalkbackMenuProcessor {
       return;
     }
 
-    if (!showMenuItem(
-        R.string.pref_show_context_menu_dim_or_brighten_setting_key,
-        R.bool.pref_show_context_menu_dim_or_brighten_default)) {
+    if (!showMenuItem(R.string.pref_show_context_menu_dim_or_brighten_setting_key)) {
       return;
     }
 
@@ -885,9 +787,7 @@ public class TalkbackMenuProcessor {
     if (FormFactorUtils.isAndroidWear() || FormFactorUtils.isAndroidTv()) {
       return;
     }
-    if (!showMenuItem(
-        R.string.pref_show_context_menu_pause_backtalk_setting_key,
-        R.bool.pref_show_context_menu_pause_backtalk_default)) {
+    if (!showMenuItem(R.string.pref_show_context_menu_pause_backtalk_setting_key)) {
       return;
     }
 
@@ -897,9 +797,7 @@ public class TalkbackMenuProcessor {
 
   private void addTurnOff(ContextMenu menu) {
     menu.removeItem(R.id.turn_off_sandfly);
-    if (!showMenuItem(
-        R.string.pref_show_context_menu_turn_off_setting_key,
-        R.bool.pref_show_context_menu_turn_off_default)) {
+    if (!showMenuItem(R.string.pref_show_context_menu_turn_off_setting_key)) {
       return;
     }
     // Shares Pause SandFly's order, and is added after it.
@@ -911,9 +809,7 @@ public class TalkbackMenuProcessor {
     menu.removeItem(R.id.disable_telling_time);
     menu.removeItem(R.id.enable_telling_time);
 
-    if (!showMenuItem(
-        R.string.pref_show_context_menu_control_telling_time_setting_key,
-        R.bool.pref_show_context_menu_control_telling_time_default)) {
+    if (!showMenuItem(R.string.pref_show_context_menu_control_telling_time_setting_key)) {
       return;
     }
 
@@ -942,9 +838,7 @@ public class TalkbackMenuProcessor {
   private void addWindowActionMenu(ContextMenu menu) {
     menu.removeItem(R.id.window_menu);
 
-    if (!showMenuItem(
-        R.string.pref_show_context_menu_system_action_setting_key,
-        R.bool.pref_show_context_menu_system_action_default)) {
+    if (!showMenuItem(R.string.pref_show_context_menu_system_action_setting_key)) {
       return;
     }
 
@@ -969,20 +863,18 @@ public class TalkbackMenuProcessor {
         menu,
         R.id.recognize_screen_menu,
         R.string.pref_show_context_menu_recognize_screen_setting_key,
-        R.bool.pref_show_context_menu_recognize_screen_default,
         SandflyAi.COMMAND_RECOGNIZE_SCREEN);
     addSandflyProItem(
         menu,
         R.id.screen_recognition_app_menu,
         R.string.pref_show_context_menu_screen_recognition_app_setting_key,
-        R.bool.pref_show_context_menu_screen_recognition_app_default,
         SandflyAi.COMMAND_SCREEN_RECOGNITION_IN_APP);
   }
 
   private void addSandflyProItem(
-      ContextMenu menu, int itemId, @StringRes int showKey, @BoolRes int showDefault, String command) {
+      ContextMenu menu, int itemId, @StringRes int showKey, String command) {
     SandflyAiFeatures features = SandflyAi.getFeatures();
-    if (features == null || !showMenuItem(showKey, showDefault)) {
+    if (features == null || !showMenuItem(showKey)) {
       return;
     }
     @Nullable Pair<CharSequence, Runnable> item = features.menuItem(service, command);
@@ -1004,11 +896,10 @@ public class TalkbackMenuProcessor {
       int itemId,
       int order,
       @StringRes int showKey,
-      @BoolRes int showDefault,
       @StringRes int title,
       BiConsumer<@Nullable AccessibilityNodeInfoCompat, Consumer<String>> tool) {
     menu.removeItem(itemId);
-    if (showMenuItem(showKey, showDefault)) {
+    if (showMenuItem(showKey)) {
       addAfterMenuCloses(
           menu,
           itemId,

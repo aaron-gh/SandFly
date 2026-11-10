@@ -39,6 +39,7 @@ import com.google.android.accessibility.talkback.TalkBackService
 import com.google.android.accessibility.talkback.actor.ImageCaptioner
 import com.google.android.accessibility.talkback.commands.CommandFragment
 import com.google.android.accessibility.talkback.commands.Commands
+import com.google.android.accessibility.talkback.commands.CommandMenuFragment
 import com.google.android.accessibility.talkback.commands.CommandsFragment
 import com.google.android.accessibility.talkback.distribution.Distribution
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader
@@ -327,7 +328,8 @@ object SettingsIndex {
 
   /** Creating a fragment doesn't attach or start it. */
   private fun createdXmlOf(fragment: String): Int? =
-    try {
+    if (fragment == CommandMenuFragment::class.java.name) R.xml.context_menu_preferences
+    else try {
       val type = Class.forName(fragment, false, SettingsIndex::class.java.classLoader)
       if (TalkbackBaseFragment::class.java.isAssignableFrom(type)) {
         (type.getDeclaredConstructor().newInstance() as TalkbackBaseFragment).xmlResId.takeIf { it > 0 }

@@ -805,6 +805,9 @@ public class SelectorController implements UserInputEventListener {
           Setting.EQUALIZER_16K,
           Setting.GESTURE_PROFILE);
 
+  // Whether a command, not a gesture on the selected reading control, is changing a value.
+  private boolean adjustingByCommand;
+
   /** Lists all {@link Setting} that should be hidden for users. */
   private final ImmutableList<Setting> hiddenSettings;
 
@@ -2173,6 +2176,10 @@ public class SelectorController implements UserInputEventListener {
    * gesture, such as "Move reading control down or forward: Swipe down".
    */
   private String getAdjustSelectedSettingGestures() {
+    if (adjustingByCommand) {
+      // The command ran without selecting the reading control, so its gestures don't apply.
+      return "";
+    }
     return actionLines(
         R.string.shortcut_value_selected_setting_previous_action,
         R.string.shortcut_value_selected_setting_next_action);
@@ -2284,6 +2291,20 @@ public class SelectorController implements UserInputEventListener {
       analytics.onSelectorActionEvent(currentSetting);
     }
 
+    adjustSetting(eventId, currentSetting, isNext);
+  }
+
+  /** Changes the value of {@code setting}, which need not be the selected reading control. */
+  public void adjustSettingByCommand(EventId eventId, Setting setting, boolean isNext) {
+    adjustingByCommand = true;
+    try {
+      adjustSetting(eventId, setting, isNext);
+    } finally {
+      adjustingByCommand = false;
+    }
+  }
+
+  private void adjustSetting(EventId eventId, Setting currentSetting, boolean isNext) {
     switch (currentSetting) {
       case LIVE_RECOGNITION -> {
         doubleTapArmed = true;

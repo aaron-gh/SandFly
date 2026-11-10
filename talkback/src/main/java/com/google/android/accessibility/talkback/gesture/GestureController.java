@@ -107,6 +107,8 @@ import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.actor.SpeechRateAndPitchActor;
 import com.google.android.accessibility.talkback.actor.SystemActionPerformer;
 import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics;
+import com.google.android.accessibility.talkback.commands.CommandMenus;
+import com.google.android.accessibility.talkback.commands.MenuCommands;
 import com.google.android.accessibility.talkback.contextmenu.ListMenuManager;
 import com.google.android.accessibility.talkback.eventprocessor.ProcessorPhoneticLetters;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
@@ -132,6 +134,7 @@ import com.google.android.accessibility.talkback.handwriting.HandwritingCommand;
 import com.google.android.accessibility.talkback.sandflyai.SandflyAi;
 import com.google.android.accessibility.talkback.selector.ReadingControlLists;
 import com.google.android.accessibility.talkback.translation.TranslateCommand;
+import com.google.android.accessibility.talkback.selector.ReadingControlCommands;
 import com.google.android.accessibility.talkback.selector.SelectorController;
 import com.google.android.accessibility.talkback.speech.VoiceProfileNames;
 import com.google.android.accessibility.talkback.selector.SelectorController.AnnounceType;
@@ -1029,6 +1032,13 @@ public class GestureController {
           accessibilityFocusMonitor.getEditingNodeFromFocusedKeyboard(focus);
       translateCommand.translateLast(editing != null ? editing : focus);
       result = true;
+    } else if (CommandMenus.isCommand(action)) {
+      result = menuManager.showCustomMenu(action, eventId);
+    } else if (MenuCommands.isMenuOnly(service, action)) {
+      result = menuManager.showMenuItemCommand(action, eventId);
+    } else if (ReadingControlCommands.settingOf(action) != null) {
+      selectorController.adjustSettingByCommand(
+          eventId, ReadingControlCommands.settingOf(action), ReadingControlCommands.isNext(action));
     } else if (LiveRecognition.isCommand(action)) {
       result = LiveRecognition.runCommand(service, action);
     } else if (action.equals(service.getString(R.string.shortcut_value_text_entities))) {

@@ -482,6 +482,14 @@ SandFly adds these actions, which you can assign to gestures in gesture settings
 *   **Take screenshot**, in **System actions**, takes a screenshot with Android's screenshot action.
 *   **Write the letter of a reading control**, in **Menu and controls**, opens a writing surface on the whole screen. Write a letter with one finger, and SandFly chooses the reading control with that letter, or else the next one whose name starts with it. The letters are mostly NVDA's quick navigation keys: H for Headings, K for Links, L for Lines, A for Landmarks, W for Words, C for Characters, P for Paragraphs, O for Controls, S for Speech rate, and B, X, E, G, I, T, R, V and U for buttons, checkboxes, edit fields, graphics, list items, tables, radio buttons, visited and unvisited links. **Reading controls** > **Handwriting letters** changes or clears each one. A tap closes the surface, and so do 10 seconds without writing. Handwriting is recognized on the phone by Google's ML Kit, in the phone's language. The first time, SandFly asks whether to download its model for the language, about 20 MB, from Google, and a message shows when it has downloaded. Not on watches.
 
+### Menus
+
+The SandFly menu is made of commands. In **SandFly menu** settings, **Add command** lists every command by category, and **Add submenu** adds a submenu, which can hold commands and more submenus. Each item has **Move up**, **Move down**, **Move to** and **Remove**. **Move to** moves an item to another submenu or another menu. **Reset to default** restores the default items and order.
+
+**Custom menus** makes other menus of commands. Each custom menu is a command in the **Custom menus** category, so a gesture, a keyboard shortcut, or a gesture or shortcut in one app can open it. A custom menu can also be added to another menu, where it appears as a submenu.
+
+The **Setting values** category has next and previous commands for reading controls that have no other command, such as **Punctuation** and **Speech engine**.
+
 When you choose an action for a gesture, the categories of actions are collapsed, except the one with the gesture's current action. The categories in gesture settings, **Reading controls** and **SandFly menu** are collapsed too, and expand when you activate them.
 
 ### Gesture profiles

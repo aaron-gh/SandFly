@@ -24,7 +24,7 @@ import androidx.preference.PreferenceScreen;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.actor.ImageCaptioner;
 import com.google.android.accessibility.talkback.actor.gemini.GeminiConfiguration;
-import com.google.android.accessibility.talkback.contextmenu.TalkbackMenuProcessor;
+import com.google.android.accessibility.talkback.commands.MenuCommands;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.preference.ItemOrder;
 import com.google.android.accessibility.talkback.preference.PreferencesActivityUtils;
@@ -65,7 +65,7 @@ public class ContextMenuFragment extends ItemListFragment {
 
   @Override
   protected List<String> defaultOrder(Context context) {
-    return TalkbackMenuProcessor.defaultOrderKeys(context);
+    return MenuCommands.defaultOrderKeys(context);
   }
 
   @Override

@@ -91,6 +91,11 @@ public class ContextMenu implements Menu {
     items.add(item);
   }
 
+  /** Removes {@code item}, where several items can have the same ID. */
+  public void remove(ContextMenuItem item) {
+    items.remove(item);
+  }
+
   @Override
   public SubMenu addSubMenu(int titleRes) {
     return addSubMenu(NONE, NONE, NONE, titleRes);
