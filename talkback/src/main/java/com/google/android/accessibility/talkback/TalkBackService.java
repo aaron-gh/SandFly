@@ -250,6 +250,7 @@ import com.google.android.accessibility.talkback.notificationlist.NotificationLi
 import com.google.android.accessibility.talkback.applauncher.HomeScreenApps;
 import com.google.android.accessibility.talkback.overview.AppSwitcherKeys;
 import com.google.android.accessibility.talkback.overview.SplitScreen;
+import com.google.android.accessibility.talkback.overview.SystemOverviewRedirect;
 import com.google.android.accessibility.talkback.notifications.NotificationReader;
 import com.google.android.accessibility.talkback.notifications.NotificationSettings;
 import com.google.android.accessibility.talkback.speechdictionary.BrailleDictionary;
@@ -1242,6 +1243,14 @@ public class TalkBackService extends AccessibilityServiceCompat
     // Android says that the shell pasted from the clipboard each time SandFly reads a copy through
     // Shizuku for the clipboard history.
     if (ShizukuClipboard.isReadToast(event)) {
+      return;
+    }
+    // SandFly's overview takes the place of the system's, which isn't announced.
+    if (SystemOverviewRedirect.onAccessibilityEvent(
+        this,
+        event,
+        event.getEventType() == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED
+            && isAppWindowEvent(event))) {
       return;
     }
     if (event.getEventType() == AccessibilityEvent.TYPE_VIEW_SCROLLED) {
