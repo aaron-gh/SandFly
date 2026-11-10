@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:key="@string/pref_category_manage_selector_menu_key">
     <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
-        android:key="@string/pref_show_selector_menu_reading_control_category_key"
         android:title="@string/menu_category_reading_controls">
         <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
             android:defaultValue="@bool/pref_selector_actions_default"
@@ -130,7 +129,6 @@
             android:title="@string/title_selector_voice_profile"/>
     </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
     <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
-        android:key="@string/pref_show_selector_menu_web_navigation_category_key"
         android:title="@string/menu_category_web_navigation">
         <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
             android:defaultValue="@bool/pref_selector_granularity_landmarks_default"
@@ -229,7 +227,6 @@
             android:summary="@string/summary_radios"/>
     </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
     <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
-        android:key="@string/pref_show_selector_menu_special_features_category_key"
         android:title="@string/menu_category_special_features">
         <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
             android:defaultValue="@bool/pref_selector_hide_screen_default"
