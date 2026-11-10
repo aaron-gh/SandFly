@@ -57,9 +57,17 @@ class PictureDescriptionActivity : ComponentActivity() {
   private var capture: ImageCapture? = null
   private var taken = false
   private var capturing = false
+  /** Whether the camera permission was refused, so that resuming does not ask for it again. */
+  private var cameraRefused = false
   private val cameraPermission =
     registerForActivityResult(ActivityResultContracts.RequestPermission()) { granted ->
-      if (granted) start() else stop(R.string.live_recognition_camera_permission)
+      if (granted) {
+        cameraRefused = false
+        start()
+      } else {
+        cameraRefused = true
+        stop(R.string.live_recognition_camera_permission)
+      }
     }
 
   override fun onCreate(savedInstanceState: Bundle?) {
@@ -76,7 +84,7 @@ class PictureDescriptionActivity : ComponentActivity() {
       Button(this).apply {
         setText(R.string.picture_description_retake)
         isEnabled = false
-        setOnClickListener { start() }
+        setOnClickListener { startOrAsk() }
       }
     setContentView(
       LinearLayout(this).apply {
@@ -90,12 +98,8 @@ class PictureDescriptionActivity : ComponentActivity() {
 
   override fun onResume() {
     super.onResume()
-    if (taken || capturing) return
-    if (checkSelfPermission(Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
-      start()
-    } else {
-      cameraPermission.launch(Manifest.permission.CAMERA)
-    }
+    if (taken || capturing || (cameraRefused && !hasCameraPermission())) return
+    startOrAsk()
   }
 
   override fun onPause() {
@@ -112,6 +116,17 @@ class PictureDescriptionActivity : ComponentActivity() {
     worker.shutdown()
     shutter.release()
     super.onDestroy()
+  }
+
+  private fun hasCameraPermission(): Boolean =
+    checkSelfPermission(Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED
+
+  private fun startOrAsk() {
+    if (hasCameraPermission()) {
+      start()
+    } else {
+      cameraPermission.launch(Manifest.permission.CAMERA)
+    }
   }
 
   private fun start() {
