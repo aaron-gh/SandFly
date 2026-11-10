@@ -21,7 +21,6 @@ import android.content.SharedPreferences
 import android.media.AudioFormat
 import android.media.AudioManager
 import android.media.AudioTrack
-import android.os.Build
 import android.os.Handler
 import android.os.Looper
 import android.os.SystemClock
@@ -33,17 +32,13 @@ import com.google.android.accessibility.utils.output.FeedbackController
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 
 /**
- * Volume keys > Volume change feedback: a tone on each volume step made by the user, a spoken
- * percentage after the steps, or both.
+ * Volume keys > Volume change feedback: a tone on each volume step made by the user, at the volume
+ * of the stream that changed, an announcement of the new volume after the steps, or both.
  *
  * Volume changes come from [VolumeMonitor], which is registered for them anyway, so this class
  * registers nothing itself. A track exists only from the start of a tone until shortly after it.
  */
-class VolumeChangeFeedback(
-  private val context: Context,
-  /** SandFly's speech volume, from 0 to 1, which the tone plays at. */
-  private val speechVolume: () -> Float,
-) {
+class VolumeChangeFeedback(private val context: Context) {
   private val filter = VolumeChangeFilter()
   private val gate = VolumeToneGate()
   private val handler = Handler(Looper.getMainLooper())
@@ -53,11 +48,12 @@ class VolumeChangeFeedback(
   private val releaseTrackTask = Runnable { release() }
 
   private var playsTone = false
-  private var speaksPercentage = false
+  private var speaksVolume = false
   private var track: AudioTrack? = null
 
   /** Reads the setting from [prefs]. */
   fun reload(prefs: SharedPreferences) {
+    migrateSpeakVolumeChanges(prefs)
     val value =
       prefs.getString(
         context.getString(R.string.pref_volume_change_feedback_key),
@@ -65,11 +61,23 @@ class VolumeChangeFeedback(
       )
     val both = value == context.getString(R.string.value_volume_change_feedback_tone_and_spoken)
     playsTone = both || value == context.getString(R.string.value_volume_change_feedback_tone)
-    speaksPercentage =
-      both || value == context.getString(R.string.value_volume_change_feedback_spoken)
+    speaksVolume = both || value == context.getString(R.string.value_volume_change_feedback_spoken)
     if (!playsTone) {
       release()
     }
+  }
+
+  /** Turns the feedback off for users who had the old Speak volume changes off. Runs once. */
+  private fun migrateSpeakVolumeChanges(prefs: SharedPreferences) {
+    if (!prefs.contains(OLD_PREF_SPEAK_VOLUME_CHANGES)) {
+      return
+    }
+    val key = context.getString(R.string.pref_volume_change_feedback_key)
+    val editor = prefs.edit().remove(OLD_PREF_SPEAK_VOLUME_CHANGES)
+    if (!prefs.getBoolean(OLD_PREF_SPEAK_VOLUME_CHANGES, true) && !prefs.contains(key)) {
+      editor.putString(key, context.getString(R.string.value_volume_change_feedback_off))
+    }
+    editor.apply()
   }
 
   /** Records that SandFly itself is changing a volume, which gets no feedback. */
@@ -79,11 +87,11 @@ class VolumeChangeFeedback(
 
   /**
    * Handles a reported change of [stream], and plays the tone if it is a step made by the user and
-   * neither a phone call, [phoneCallActive], nor an app call is going on. Returns whether the
-   * announcement of this change is to say only the percentage.
+   * neither a phone call, [phoneCallActive], nor an app call is going on. Returns whether this
+   * change is to be announced.
    */
   fun onVolumeChanged(stream: Int, value: Int, prevValue: Int, phoneCallActive: Boolean): Boolean {
-    if (!playsTone && !speaksPercentage) {
+    if (!playsTone && !speaksVolume) {
       return false
     }
     val kind = filter.classify(stream, value, prevValue, SystemClock.uptimeMillis())
@@ -94,9 +102,9 @@ class VolumeChangeFeedback(
         !PauseController.isPaused() &&
         !isAppCallActive()
     ) {
-      playTone()
+      playTone(stream)
     }
-    return speaksPercentage &&
+    return speaksVolume &&
       (kind == VolumeChangeFilter.Kind.STEP || kind == VolumeChangeFilter.Kind.REPEAT)
   }
 
@@ -108,14 +116,14 @@ class VolumeChangeFeedback(
     gate.clear()
   }
 
-  private fun playTone() {
+  private fun playTone(stream: Int) {
     if (!gate.tryStart(SystemClock.uptimeMillis(), TONE_MS + TONE_LATENCY_MS)) {
       return
     }
     // The previous tone has ended by now. Only one track exists at a time.
     handler.removeCallbacks(releaseTrackTask)
     track?.release()
-    track = startTrack()
+    track = startTrack(stream)
     if (track == null) {
       gate.clear()
       return
@@ -132,21 +140,14 @@ class VolumeChangeFeedback(
     )
   }
 
-  /** Starts a new track playing the tone, with the audio usage from [volumeToneUsage]. */
-  private fun startTrack(): AudioTrack? {
+  /** Starts a new track playing the tone at the volume of [stream]. */
+  private fun startTrack(stream: Int): AudioTrack? {
     var created: AudioTrack? = null
     try {
       val samples = tone
       val newTrack =
         AudioTrack.Builder()
-          .setAudioAttributes(
-            FeedbackController.feedbackAttributes(
-              volumeToneUsage(
-                FailoverTextToSpeech.speechUsage(context),
-                Build.MANUFACTURER.equals(SAMSUNG, ignoreCase = true),
-              )
-            )
-          )
+          .setAudioAttributes(FeedbackController.feedbackAttributes(volumeToneUsage(stream)))
           .setAudioFormat(
             AudioFormat.Builder()
               .setEncoding(AudioFormat.ENCODING_PCM_16BIT)
@@ -165,7 +166,6 @@ class VolumeChangeFeedback(
         newTrack.release()
         return null
       }
-      newTrack.setVolume(speechVolume().coerceIn(0f, 1f))
       newTrack.play()
       return newTrack
     } catch (e: RuntimeException) {
@@ -178,7 +178,7 @@ class VolumeChangeFeedback(
 
   private companion object {
     private const val TAG = "VolumeChangeFeedback"
-    private const val SAMSUNG = "samsung"
+    private const val OLD_PREF_SPEAK_VOLUME_CHANGES = "pref_speak_volume_changes"
     private const val SAMPLE_RATE = 48_000
     private const val TONE_HZ = 1_000
     private const val TONE_MS = 50L

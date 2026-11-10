@@ -16,12 +16,20 @@
 
 package com.google.android.accessibility.talkback.monitor
 
+import android.media.AudioAttributes.USAGE_ALARM
 import android.media.AudioAttributes.USAGE_ASSISTANCE_ACCESSIBILITY
+import android.media.AudioAttributes.USAGE_ASSISTANCE_SONIFICATION
 import android.media.AudioAttributes.USAGE_MEDIA
+import android.media.AudioAttributes.USAGE_NOTIFICATION
 import android.media.AudioAttributes.USAGE_NOTIFICATION_RINGTONE
 import android.media.AudioAttributes.USAGE_VOICE_COMMUNICATION
+import android.media.AudioManager.STREAM_ACCESSIBILITY
+import android.media.AudioManager.STREAM_ALARM
 import android.media.AudioManager.STREAM_MUSIC
+import android.media.AudioManager.STREAM_NOTIFICATION
 import android.media.AudioManager.STREAM_RING
+import android.media.AudioManager.STREAM_SYSTEM
+import android.media.AudioManager.STREAM_VOICE_CALL
 import com.google.android.accessibility.talkback.monitor.VolumeChangeFilter.Kind
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
@@ -84,29 +92,14 @@ class VolumeChangeFilterTest {
   }
 
   @Test
-  fun theToneUsesMediaOnOneUiWhenSpeechUsesAccessibility() {
-    assertEquals(USAGE_MEDIA, volumeToneUsage(USAGE_ASSISTANCE_ACCESSIBILITY, oneUi = true))
-  }
-
-  @Test
-  fun theToneUsesTheSpeechUsageOnOtherDevices() {
-    assertEquals(
-      USAGE_ASSISTANCE_ACCESSIBILITY,
-      volumeToneUsage(USAGE_ASSISTANCE_ACCESSIBILITY, oneUi = false),
-    )
-  }
-
-  @Test
-  fun theToneKeepsOtherSpeechUsagesOnOneUi() {
-    assertEquals(USAGE_MEDIA, volumeToneUsage(USAGE_MEDIA, oneUi = true))
-    assertEquals(
-      USAGE_NOTIFICATION_RINGTONE,
-      volumeToneUsage(USAGE_NOTIFICATION_RINGTONE, oneUi = true),
-    )
-    assertEquals(
-      USAGE_VOICE_COMMUNICATION,
-      volumeToneUsage(USAGE_VOICE_COMMUNICATION, oneUi = true),
-    )
+  fun theToneUsesTheUsageOfTheChangedStream() {
+    assertEquals(USAGE_MEDIA, volumeToneUsage(STREAM_MUSIC))
+    assertEquals(USAGE_NOTIFICATION_RINGTONE, volumeToneUsage(STREAM_RING))
+    assertEquals(USAGE_ALARM, volumeToneUsage(STREAM_ALARM))
+    assertEquals(USAGE_NOTIFICATION, volumeToneUsage(STREAM_NOTIFICATION))
+    assertEquals(USAGE_ASSISTANCE_SONIFICATION, volumeToneUsage(STREAM_SYSTEM))
+    assertEquals(USAGE_VOICE_COMMUNICATION, volumeToneUsage(STREAM_VOICE_CALL))
+    assertEquals(USAGE_ASSISTANCE_ACCESSIBILITY, volumeToneUsage(STREAM_ACCESSIBILITY))
   }
 
   @Test

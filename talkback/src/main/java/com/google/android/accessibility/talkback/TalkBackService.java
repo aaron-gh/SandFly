@@ -2795,7 +2795,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     focuser.setMenuManager(menuManager);
 
     volumeMonitor = new VolumeMonitor(pipeline.getFeedbackReturner(), this, callStateMonitor);
-    volumeChangeFeedback = new VolumeChangeFeedback(this, this::userSpeechVolume);
+    volumeChangeFeedback = new VolumeChangeFeedback(this);
     volumeMonitor.setVolumeChangeFeedback(volumeChangeFeedback);
     selectorController =
         new SelectorController(
