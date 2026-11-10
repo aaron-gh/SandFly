@@ -71,7 +71,16 @@ class ScriptStore private constructor(private val context: Context) {
 
   @Synchronized fun find(id: String): InstalledScript? = all().firstOrNull { it.id == id }
 
-  @Synchronized fun anyEnabled(): Boolean = scripts.any { it.enabled }
+  /** Whether a script that is turned on is loaded without waiting for a command. */
+  @Synchronized fun anyAlwaysLoaded(): Boolean = scripts.any { it.enabled && !it.manifest.onDemand }
+
+  /** Returns the turned on onDemand script with the command saved as [value], or null. */
+  fun onDemandScriptOf(value: String): InstalledScript? =
+    all().firstOrNull { script ->
+      script.enabled &&
+        script.manifest.onDemand &&
+        script.manifest.commands.any { ScriptCommands.valueOf(script.id, it.id) == value }
+    }
 
   /** Turns every script off without changing which ones are switched on. */
   var allOff: Boolean

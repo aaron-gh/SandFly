@@ -60,7 +60,24 @@ class ManifestParser(private val strict: Boolean) {
       commands = commands(obj.optJSONArray("commands"), permissions),
       navigation = navigation(obj.optJSONArray("navigation"), permissions),
       json = obj.toString(),
-    )
+      onDemand = obj.optBoolean("onDemand", false),
+    ).also { if (it.onDemand) checkOnDemand(it) }
+  }
+
+  /** An unloaded script can't apply rules, take gestures or keys, or answer its settings page. */
+  private fun checkOnDemand(manifest: ScriptManifest) {
+    manifestCheck(manifest.commands.isNotEmpty()) { "An onDemand script needs commands" }
+    manifestCheck(
+      manifest.apps.isEmpty() && manifest.rules.isEmpty() && manifest.navigation.isEmpty()
+    ) {
+      "An onDemand script can't have apps, rules or navigation"
+    }
+    manifestCheck(manifest.commands.all { it.bindings.isEmpty() }) {
+      "An onDemand script's commands have only id and title"
+    }
+    manifestCheck(manifest.settings.none { it.type == ScriptSetting.Type.BUTTON }) {
+      "An onDemand script can't have button settings"
+    }
   }
 
   fun rule(json: JSONObject): ScriptRule {

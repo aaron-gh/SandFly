@@ -4,6 +4,7 @@ local manifest = {
   version = '1',
   author = 'SandFly',
   description = 'Searches English Wikipedia and opens the chosen article. Assign Search Wikipedia in Commands.',
+  onDemand = true,
   minApiVersion = 4,
   testedApiVersion = 4,
   permissions = { 'input', 'dialogs', 'network', 'system' },

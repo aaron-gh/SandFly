@@ -100,6 +100,15 @@ class ScriptDialogs(private val context: Context) {
   // Dialogs and windows on screen, the top one last. A script's confirm or prompt opens over its
   // own window, which stays open under it.
   private val open = ArrayList<Open>()
+  // What the script thread reads of [open].
+  @Volatile private var openOwners: Set<String> = emptySet()
+
+  /** Whether a dialog or window of script [owner] is on screen. */
+  fun hasOpen(owner: String): Boolean = owner in openOwners
+
+  private fun updateOwners() {
+    openOwners = open.mapTo(HashSet()) { it.owner }
+  }
 
   fun choose(
     owner: String,
@@ -225,11 +234,13 @@ class ScriptDialogs(private val context: Context) {
     cancel?.let { builder.setNegativeButton(it, null) }
     builder.setOnDismissListener {
       open.removeAll { it.dialog == dialog }
+      updateOwners()
       done(result)
     }
     dialog = builder.create()
     dialog.window?.let(DialogUtils::setWindowTypeToDialog)
     open.add(Open(owner, id, dialog, form()))
+    updateOwners()
     dialog.show()
     if (fullScreen) dialog.window?.setLayout(MATCH_PARENT, MATCH_PARENT)
   }

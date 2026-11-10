@@ -306,6 +306,22 @@ class ManifestParserTest {
   }
 
   @Test
+  fun anOnDemandScriptHasOnlyPlainCommands() {
+    val input = ""","permissions":["input"]"""
+    val plain = """"commands":[{"id":"go","title":"Go"}]"""
+    assertTrue(parse("""$input,"onDemand":true,$plain""").onDemand)
+    assertTrue("needs commands" in rejects("""$input,"onDemand":true"""))
+    assertTrue(
+      "only id and title" in
+        rejects("""$input,"onDemand":true,"commands":[{"id":"go","title":"Go","menu":true}]""")
+    )
+    assertTrue(
+      "apps, rules or navigation" in
+        rejects("""$input,"onDemand":true,"apps":"com.example",$plain""")
+    )
+  }
+
+  @Test
   fun aCommandsGestureAndKeysAreChecked() {
     val permission = """"permissions":["input"]"""
     assertTrue(

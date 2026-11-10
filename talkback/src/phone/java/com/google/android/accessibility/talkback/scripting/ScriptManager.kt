@@ -40,6 +40,8 @@ class ScriptManager(
   val service: AccessibilityService,
   val feedback: ScriptFeedback,
   private val activation: ScriptActivation,
+  /** Called on the main thread when no onDemand script is loaded or about to be any more. */
+  private val onDemandEnded: () -> Unit,
 ) : ScriptHost, ScriptStore.Listener {
 
   val store: ScriptStore = ScriptStore.get(service)
@@ -63,6 +65,9 @@ class ScriptManager(
   private val errors = ErrorCounter()
   private val compatibilityWarned = HashSet<String>()
   private val evaluateRunnable = Runnable { evaluate() }
+  /** The onDemand scripts to keep loaded, with the commands each has yet to start. */
+  private val onDemand = HashMap<String, Int>()
+  private val releaseOnDemand = Runnable { releaseIdleOnDemandScripts() }
   private val prelude by lazy {
     service.assets.open(PRELUDE_ASSET).use { it.readBytes().decodeToString() }
   }
@@ -281,12 +286,56 @@ class ScriptManager(
     }
 
   override fun runScriptCommand(value: String): Boolean {
+    activation.refresh()
     if (activation.inBacktalk) {
       return false
     }
-    val bound = bindings.commands[value] ?: return false
-    runCommand(bound, "command")
+    val script = store.onDemandScriptOf(value)
+    if (script == null) {
+      val bound = bindings.commands[value] ?: return false
+      runCommand(bound, "command")
+      return true
+    }
+    synchronized(onDemand) { onDemand.merge(script.id, 1, Int::plus) }
+    // Comes after the load that this evaluation queues on the script thread.
+    evaluate()
+    onScriptThread {
+      val bound = bindings.commands[value]
+      if (bound != null) {
+        runCommand(bound, "command", answered = { commandStarted(script.id) })
+      } else {
+        feedback.speak(service.getString(R.string.script_command_not_running), interrupt = false)
+        commandStarted(script.id)
+      }
+    }
     return true
+  }
+
+  val hasOnDemandScripts: Boolean
+    get() = synchronized(onDemand) { onDemand.isNotEmpty() }
+
+  private fun commandStarted(id: String) {
+    synchronized(onDemand) { onDemand.computeIfPresent(id) { _, runs -> (runs - 1).coerceAtLeast(0) } }
+    scheduleOnDemandRelease()
+  }
+
+  /** Checks a little later whether onDemand scripts have finished, as a command can start another. */
+  fun scheduleOnDemandRelease() {
+    scriptHandler.removeCallbacks(releaseOnDemand)
+    scriptHandler.postDelayed(releaseOnDemand, ON_DEMAND_IDLE_MS)
+  }
+
+  private fun releaseIdleOnDemandScripts() {
+    val released =
+      synchronized(onDemand) {
+        onDemand.entries.removeAll { (id, runs) -> runs == 0 && loaded[id]?.isBusy != true }
+      }
+    if (released) {
+      mainHandler.post {
+        evaluate()
+        onDemandEnded()
+      }
+    }
   }
 
   override fun readingControls(): List<ScriptReadingControl> =
@@ -355,7 +404,10 @@ class ScriptManager(
     }
   }
 
-  override fun onScriptsChanged() = evaluate()
+  override fun onScriptsChanged() {
+    evaluate()
+    scheduleOnDemandRelease()
+  }
 
   override fun onSettingChanged(id: String, key: String) = onScriptThread {
     loaded[id]?.let {
@@ -422,7 +474,11 @@ class ScriptManager(
     activation.refresh()
     rules.clearCache()
     val info = activation.appInfo
-    val wanted = store.all().filter(activation::wants)
+    val demanded = synchronized(onDemand) { onDemand.keys.toSet() }
+    val wanted =
+      store.all().filter {
+        if (it.manifest.onDemand) it.enabled && it.id in demanded else activation.wants(it)
+      }
     val version = ++speechStateVersion
     onScriptThread {
       apply(wanted, info)
@@ -574,6 +630,7 @@ class ScriptManager(
     const val WINDOWS_DEBOUNCE_MS = 100L
     const val LAYER_TIMEOUT_MS = 3000L
     const val KEY_WAIT_MS = 30L
+    const val ON_DEMAND_IDLE_MS = 2000L
     const val THREAD_STACK_BYTES = 4L * 1024 * 1024
     const val MAX_ERRORS = 5
     const val ERROR_WINDOW_MS = 60_000L

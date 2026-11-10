@@ -68,6 +68,10 @@ class ScriptRuntime(
   val isLoaded: Boolean
     get() = lua?.isClosed == false
 
+  /** Whether the script is waiting for something, has a timer set, or shows a dialog or window. */
+  val isBusy: Boolean
+    get() = unsettled > 0 || timers.isNotEmpty() || dialogs.hasOpen(id)
+
   private var lua: LuaEngine? = null
   private val store = manager.store
   private val dialogs = manager.dialogs
@@ -76,6 +80,7 @@ class ScriptRuntime(
   private val fetches = HashSet<Future<*>>()
   private val warned = HashSet<String>()
   private var nextPromise = 1
+  private var unsettled = 0
   private var recognizing = 0
   // When the script's current call runs out of time. The prelude's hook only stops Lua, so host
   // calls that walk the screen stop at this themselves.
@@ -102,6 +107,8 @@ class ScriptRuntime(
     } catch (e: LuaEngine.ScriptError) {
       manager.onScriptError(this, "$type: ${e.message}", e.interrupted)
       null
+    } finally {
+      if (script.manifest.onDemand) manager.scheduleOnDemandRelease()
     }
   }
 
@@ -569,6 +576,7 @@ class ScriptRuntime(
       ?: apiError("The manifest declares no such setting $key")
 
   private fun commandBinding(args: JSONObject): Pair<ScriptCommand, CommandBinding> {
+    apiCheck(!script.manifest.onDemand) { "An onDemand script's commands are assigned in Commands" }
     val commandId = args.optString("command")
     val command =
       script.manifest.commands.firstOrNull { it.id == commandId }
@@ -603,8 +611,14 @@ class ScriptRuntime(
 
   private fun promise(start: ((Boolean, Any?) -> Unit) -> Unit): JSONObject {
     val promiseId = nextPromise++
+    unsettled++
+    var settled = false
     start { ok, value ->
       handler.post {
+        if (!settled) {
+          settled = true
+          unsettled--
+        }
         val outcome =
           if (ok) "value" to value else "error" to (value as? String ?: "SandFly could not do it")
         dispatch("settle", jsonObject("id" to promiseId, "ok" to ok, outcome))

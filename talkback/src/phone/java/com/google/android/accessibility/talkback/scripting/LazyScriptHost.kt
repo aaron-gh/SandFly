@@ -121,10 +121,12 @@ class LazyScriptHost(
     update()
   }
 
+  private fun canRun() = !closed && !paused && screenOn && !unavailable && !store.allOff
+
   private fun update() {
-    val wanted =
-      !closed && !paused && screenOn && !unavailable && !store.allOff && store.anyEnabled()
     val running = manager
+    val wanted =
+      canRun() && (store.anyAlwaysLoaded() || running?.hasOnDemandScripts == true)
     if (wanted && running == null) {
       start()
     } else if (!wanted && running != null) {
@@ -137,7 +139,8 @@ class LazyScriptHost(
   private fun start() {
     try {
       LuaEngine.checkAvailable()
-      manager = ScriptManager(service, ScriptFeedback(service, feedback, resume, services), activation)
+      manager =
+        ScriptManager(service, ScriptFeedback(service, feedback, resume, services), activation, ::update)
     } catch (e: LinkageError) {
       LogUtils.e(TAG, "Scripts are unavailable: %s", e)
       unavailable = true
@@ -190,7 +193,11 @@ class LazyScriptHost(
 
   override fun menuItems(): List<ScriptMenuItem> = manager?.menuItems().orEmpty()
 
-  override fun runScriptCommand(value: String): Boolean = manager?.runScriptCommand(value) == true
+  override fun runScriptCommand(value: String): Boolean {
+    if (!canRun()) return false
+    if (manager == null && store.onDemandScriptOf(value) != null) start()
+    return manager?.runScriptCommand(value) == true
+  }
 
   override fun readingControls(): List<ScriptReadingControl> =
     manager?.readingControls().orEmpty()

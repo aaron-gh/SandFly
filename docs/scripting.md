@@ -66,6 +66,7 @@ A table with only listed values, such as `{ 'speech', 'screen' }`, is a list. A 
 | `version` | The script's own version, as text, such as `'1.2'`. The default is `'1'`. SandFly updates installed scripts from their source when this is higher, compared number by number, so raise it with each change. |
 | `description` | Shown on the script's page and before it's installed. |
 | `homepage` | An `http` or `https` address. The script's page has a button that opens it. |
+| `onDemand` | *Version 4.* `true` loads the script only to run one of its commands. See [Scripts loaded on demand](#scripts-loaded-on-demand). |
 | `apps` | Where the script runs. Leave it out for a script that runs in every app. See [Where a script runs](#where-a-script-runs). |
 | `permissions` | A list of the [permissions](#permissions) the script needs. |
 | `settings` | [Settings](#settings) the user can change on the script's page. |
@@ -336,7 +337,13 @@ commands = {
 },
 ```
 
-A script without `apps` that only declares commands is an extension: it does nothing until a command runs. [examples/wikipedia-search.lua](scripting/examples/wikipedia-search.lua) is one. If a command runs while its script is off, in an app the script doesn't list, or on a SandFly screen, SandFly speaks "Script not running on this screen".
+If a command runs while its script is off, in an app the script doesn't list, or on a SandFly screen, SandFly speaks "Script not running on this screen".
+
+#### Scripts loaded on demand
+
+*Version 4.* With `onDemand = true`, a script uses no memory until one of its commands runs. SandFly loads it, runs the command, and unloads it about 2 seconds after it has no dialog or window open, no timer set and nothing it is waiting for. [examples/wikipedia-search.lua](scripting/examples/wikipedia-search.lua) is one.
+
+Variables are lost when the script unloads, so use [`sf.storage`](#storage) for what should last. Hooks run only while the script is loaded. The manifest can't have `apps`, `rules`, `navigation` or button settings, each command has only `id` and `title`, and `sf.bind` and `sf.unbind` raise an error.
 
 `sf.bind(command, { gesture = name })` or `sf.bind(command, { keys = keys })` adds a gesture or keys to a declared command, and `sf.unbind` removes one.
 
