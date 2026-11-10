@@ -23,25 +23,33 @@ import party.iroiro.luajava.LuaException
 
 /**
  * Makes a script's Java proxy safe to call after the script has unloaded. LuaJava throws then, and
- * on the main thread that would stop SandFly. The prelude calls this for onDemand scripts.
+ * on the main thread that would stop SandFly. The prelude calls this for every `java.proxy`.
  */
 object ScriptProxyGuard {
   private const val CLOSED = "lua state closed"
 
   @JvmStatic
   fun guarded(target: Any): Any {
-    val handler = Proxy.getInvocationHandler(target)
     return Proxy.newProxyInstance(
       target.javaClass.classLoader,
       target.javaClass.interfaces,
-      InvocationHandler { _, method, args ->
-        try {
-          handler.invoke(target, method, args)
-        } catch (e: LuaException) {
-          if (e.message?.contains(CLOSED) == true) emptyResult(method) else throw e
-        }
-      },
+      Guard(target, Proxy.getInvocationHandler(target)),
     )
+  }
+
+  /** Returns the proxy that [value] guards, for `java.unwrap`, or [value] if it guards none. */
+  @JvmStatic
+  fun target(value: Any): Any =
+    (if (Proxy.isProxyClass(value.javaClass)) Proxy.getInvocationHandler(value) as? Guard else null)
+      ?.target ?: value
+
+  private class Guard(val target: Any, private val handler: InvocationHandler) : InvocationHandler {
+    override fun invoke(proxy: Any, method: Method, args: Array<out Any?>?): Any? =
+      try {
+        handler.invoke(target, method, args)
+      } catch (e: LuaException) {
+        if (e.message?.contains(CLOSED) == true) emptyResult(method) else throw e
+      }
   }
 
   private fun emptyResult(method: Method): Any? =

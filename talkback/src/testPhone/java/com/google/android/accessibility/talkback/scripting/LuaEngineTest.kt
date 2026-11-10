@@ -366,6 +366,32 @@ class LuaEngineTest {
   }
 
   @Test
+  fun aProxyOfAnotherScriptDoesNothingOnceTheScriptIsClosed() {
+    run(
+      """
+      local holder = java.import('${ProxyHolder::class.java.name}')
+      holder:put(java.proxy('java.lang.Runnable', { run = function() end }))
+      """,
+      java = true,
+    )
+    engine!!.close()
+    (ProxyHolder.values.single() as Runnable).run()
+    ProxyHolder.values.clear()
+  }
+
+  @Test
+  fun aGuardedProxyCanBeUnwrapped() {
+    run(
+      """
+      local proxy = java.proxy('java.lang.Runnable', { name = 'handler', run = function() end })
+      sf.speak(java.unwrap(proxy).name)
+      """,
+      java = true,
+    )
+    assertEquals(listOf("handler"), host.spoken())
+  }
+
+  @Test
   fun proxiesOfOtherScriptsAreNotWatched() {
     run(
       """
