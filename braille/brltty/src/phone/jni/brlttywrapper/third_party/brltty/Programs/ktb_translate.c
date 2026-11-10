@@ -502,8 +502,8 @@ isRepeatableCommand (int command) {
     switch (command & BRL_MSK_BLK) {
       case BRL_CMD_BLK(PASSDOTS):
 #ifdef __ANDROID__
-        /* SandFly: a Space + dots chord runs once, when released. */
-        if (command & BRL_DOTC) return 0;
+        /* SandFly: a Space + dots or Backspace + dots chord runs once, when released. */
+        if (command & (BRL_DOTC | KTB_DOTB)) return 0;
 #endif
         /* fall through */
       case BRL_CMD_BLK(PASSCHAR):

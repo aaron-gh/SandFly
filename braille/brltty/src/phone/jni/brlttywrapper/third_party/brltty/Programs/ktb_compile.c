@@ -47,6 +47,10 @@ const KeyboardFunction keyboardFunctionTable[] = {
   {.name="meta", .bit=BRL_FLG_INPUT_META},
   {.name="altgr", .bit=BRL_FLG_INPUT_ALTGR},
   {.name="gui", .bit=BRL_FLG_INPUT_GUI}
+#ifdef __ANDROID__
+  /* SandFly: Backspace pressed with dots, reported apart from typed dots. */
+  , {.name="backspace", .bit=KTB_DOTB}
+#endif /* __ANDROID__ */
 };
 unsigned char keyboardFunctionCount = ARRAY_COUNT(keyboardFunctionTable);
 

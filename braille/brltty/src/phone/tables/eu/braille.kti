@@ -30,7 +30,11 @@ map Dot7 DOT7
 map Dot8 DOT8
 
 map Space SPACE
-bind Backspace KEY_BACKSPACE
+#SandFly: Backspace deletes, as Dot7 does, but can be assigned in Braille display commands apart
+#from Dot7. Backspace with dots reaches SandFly as a Backspace chord, which runs nothing until
+#assigned.
+map Backspace BACKSPACE
+bind Backspace KEY_FUNCTION+226
 bind Backspace+Space KEY_ENTER
 
 #SandFly drops these PC keys and SHIFT, so these chords did nothing and couldn't be given
@@ -66,18 +70,20 @@ bind Space+Dot1+Dot2+Dot4+Dot5 KEY_ESCAPE
 #bind Space+Dot1+Dot2+Dot3+Dot4+Dot7 PREFLOAD
 #bind Space+Dot1+Dot2+Dot3+Dot4+Dot8 PREFSAVE
 
-bind Backspace+Dot1 KEY_FUNCTION+0
-bind Backspace+Dot1+Dot2 KEY_FUNCTION+1
-bind Backspace+Dot1+Dot4 KEY_FUNCTION+2
-bind Backspace+Dot1+Dot4+Dot5 KEY_FUNCTION+3
-bind Backspace+Dot1+Dot5 KEY_FUNCTION+4
-bind Backspace+Dot1+Dot2+Dot4 KEY_FUNCTION+5
-bind Backspace+Dot1+Dot2+Dot4+Dot5 KEY_FUNCTION+6
-bind Backspace+Dot1+Dot2+Dot5 KEY_FUNCTION+7
-bind Backspace+Dot2+Dot4 KEY_FUNCTION+8
-bind Backspace+Dot2+Dot4+Dot5 KEY_FUNCTION+9
-bind Backspace+Dot1+Dot3 KEY_FUNCTION+10
-bind Backspace+Dot1+Dot2+Dot3 KEY_FUNCTION+11
+#SandFly drops F1 to F12, so these chords did nothing and couldn't be given commands. Without the
+#bindings, they reach SandFly as Backspace with dots.
+#bind Backspace+Dot1 KEY_FUNCTION+0
+#bind Backspace+Dot1+Dot2 KEY_FUNCTION+1
+#bind Backspace+Dot1+Dot4 KEY_FUNCTION+2
+#bind Backspace+Dot1+Dot4+Dot5 KEY_FUNCTION+3
+#bind Backspace+Dot1+Dot5 KEY_FUNCTION+4
+#bind Backspace+Dot1+Dot2+Dot4 KEY_FUNCTION+5
+#bind Backspace+Dot1+Dot2+Dot4+Dot5 KEY_FUNCTION+6
+#bind Backspace+Dot1+Dot2+Dot5 KEY_FUNCTION+7
+#bind Backspace+Dot2+Dot4 KEY_FUNCTION+8
+#bind Backspace+Dot2+Dot4+Dot5 KEY_FUNCTION+9
+#bind Backspace+Dot1+Dot3 KEY_FUNCTION+10
+#bind Backspace+Dot1+Dot2+Dot3 KEY_FUNCTION+11
 
 ########################
 # BrailleBack Bindings #

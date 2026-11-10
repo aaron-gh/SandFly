@@ -29,6 +29,12 @@ extern "C" {
 
 #define MAX_MODIFIERS_PER_COMBINATION 10
 
+#ifdef __ANDROID__
+/* SandFly: set in a PASSDOTS command when the key mapped to BACKSPACE was pressed with the dots,
+ * so that Backspace chords reach SandFly apart from typed dots and Space chords. */
+#define KTB_DOTB BRL_ARG_DOT(10)
+#endif /* __ANDROID__ */
+
 typedef struct {
   const char *name;
   int bit;

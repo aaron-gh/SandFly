@@ -30,12 +30,14 @@ import java.util.Map;
  * The braille display keys that the user assigned to commands other than their own.
  *
  * <p>A key is what a braille display reports: either a display command, which stands for every
- * key that the display's key table binds to it ({@code "c<command>"}), or Space pressed with dots
- * that the key table binds to nothing ({@code "s<dots>"}). A target is a display command ({@code
- * "c<command>"}), a screen reader command ({@code "a:<value>"}) or {@link #NONE}.
+ * key that the display's key table binds to it ({@code "c<command>"}), or Space or Backspace
+ * pressed with dots that the key table binds to nothing ({@code "s<dots>"}, {@code "b<dots>"}). A
+ * target is a display command ({@code "c<command>"}), a screen reader command ({@code "a:<value>"})
+ * or {@link #NONE}.
  *
- * <p>Without an override, a display command key runs its own command and a Space chord runs
- * nothing. Keys moved away from their command are kept as {@link #NONE}.
+ * <p>Without an override, a display command key runs its own command, or, for a separate key (see
+ * {@link #defaultCommandOf}), the command it stands in for; a chord runs nothing. Keys moved away
+ * from their command are kept as {@link #NONE}.
  */
 public final class DisplayKeyOverrides {
   /** Target of a key that runs nothing. */
@@ -46,19 +48,28 @@ public final class DisplayKeyOverrides {
   private static final char KEY_SEPARATOR = '=';
   private static final String COMMAND_PREFIX = "c";
   private static final String CHORD_PREFIX = "s";
+  private static final String BACKSPACE_CHORD_PREFIX = "b";
   private static final String SCREEN_READER_PREFIX = "a:";
 
   /** Longest saved text that is read. */
   static final int MAX_LENGTH = 65536;
 
-  /** Most overrides kept: every display command and every Space chord fit. */
-  static final int MAX_ENTRIES = 512;
+  /** Most overrides kept: every display command and every Space and Backspace chord fit. */
+  static final int MAX_ENTRIES = 1024;
 
   /** Longest screen reader command value. */
   static final int MAX_VALUE_LENGTH = 512;
 
   private static final int MAX_COMMAND = 9999;
   private static final int MAX_DOTS = 0xFF;
+
+  /**
+   * Display commands of separate keys, each with the display command that it runs until assigned.
+   * They are BrailleInputEvent.CMD_NAV_PAN_UP_SEPARATE_KEY, CMD_NAV_PAN_DOWN_SEPARATE_KEY and
+   * CMD_KEY_DEL_SEPARATE_KEY, which run CMD_NAV_PAN_UP, CMD_NAV_PAN_DOWN and CMD_KEY_DEL.
+   * BrailleInputEvent is in a module that depends on this one; DisplayKeysTest checks the values.
+   */
+  private static final int[][] SEPARATE_KEY_COMMANDS = {{204, 5}, {205, 6}, {206, 71}};
 
   private final LinkedHashMap<String, String> overrides = new LinkedHashMap<>();
 
@@ -70,6 +81,11 @@ public final class DisplayKeyOverrides {
   /** Returns the key of Space pressed with {@code dots}, a bit mask with dot 1 as bit 0. */
   public static String chordKey(int dots) {
     return CHORD_PREFIX + dots;
+  }
+
+  /** Returns the key of Backspace pressed with {@code dots}, a bit mask with dot 1 as bit 0. */
+  public static String backspaceChordKey(int dots) {
+    return BACKSPACE_CHORD_PREFIX + dots;
   }
 
   /** Returns the target that runs a display command. */
@@ -93,6 +109,26 @@ public final class DisplayKeyOverrides {
     return dots < 0 ? 0 : dots;
   }
 
+  /** Returns the dots of a Backspace chord key, or 0. */
+  public static int backspaceChordDotsOf(@Nullable String key) {
+    int dots = number(key, BACKSPACE_CHORD_PREFIX, MAX_DOTS, 1);
+    return dots < 0 ? 0 : dots;
+  }
+
+  /**
+   * Returns the display command that the key of display command {@code command} runs when nothing
+   * overrides it: {@code command} itself, or for a separate key, the command it stands in for. A
+   * separate key runs a command that other keys also run, and can be assigned apart from them.
+   */
+  public static int defaultCommandOf(int command) {
+    for (int[] entry : SEPARATE_KEY_COMMANDS) {
+      if (entry[0] == command) {
+        return entry[1];
+      }
+    }
+    return command;
+  }
+
   /** Returns the screen reader command value of a target, or null. */
   @Nullable
   public static String screenReaderValueOf(@Nullable String target) {
@@ -107,7 +143,7 @@ public final class DisplayKeyOverrides {
 
   /** Returns whether {@code key} is a valid key. */
   public static boolean isKey(@Nullable String key) {
-    return commandOf(key) >= 0 || chordDotsOf(key) > 0;
+    return commandOf(key) >= 0 || chordDotsOf(key) > 0 || backspaceChordDotsOf(key) > 0;
   }
 
   /** Returns whether {@code target} is a valid target. */
@@ -118,7 +154,7 @@ public final class DisplayKeyOverrides {
   /** Returns what {@code key} runs when nothing overrides it. */
   public static String defaultTarget(String key) {
     int command = commandOf(key);
-    return command >= 0 ? commandTarget(command) : NONE;
+    return command >= 0 ? commandTarget(defaultCommandOf(command)) : NONE;
   }
 
   /** Reads the overrides saved by {@link #serialize}, skipping malformed entries. */
@@ -177,14 +213,15 @@ public final class DisplayKeyOverrides {
   }
 
   /**
-   * Returns the keys that run {@code target}: its own key unless that key is overridden, then the
+   * Returns the keys that run {@code target}: its own keys unless they are overridden, then the
    * keys assigned to it.
    */
   public List<String> keysFor(String target) {
     List<String> keys = new ArrayList<>();
-    int command = commandOf(target);
-    if (command >= 0 && !overrides.containsKey(commandKey(command))) {
-      keys.add(commandKey(command));
+    for (String key : defaultKeysFor(target)) {
+      if (!overrides.containsKey(key)) {
+        keys.add(key);
+      }
     }
     for (Map.Entry<String, String> entry : overrides.entrySet()) {
       if (entry.getValue().equals(target)) {
@@ -199,8 +236,12 @@ public final class DisplayKeyOverrides {
     if (overrides.containsValue(target)) {
       return true;
     }
-    int command = commandOf(target);
-    return command >= 0 && overrides.containsKey(commandKey(command));
+    for (String key : defaultKeysFor(target)) {
+      if (overrides.containsKey(key)) {
+        return true;
+      }
+    }
+    return false;
   }
 
   /**
@@ -220,7 +261,7 @@ public final class DisplayKeyOverrides {
   }
 
   /**
-   * Gives {@code target} its default keys back: its own key runs it again, and keys assigned to it
+   * Gives {@code target} its default keys back: its own keys run it again, and keys assigned to it
    * run their own commands again.
    */
   public void reset(String target) {
@@ -230,29 +271,50 @@ public final class DisplayKeyOverrides {
         iterator.remove();
       }
     }
-    int command = commandOf(target);
-    if (command >= 0) {
-      overrides.remove(commandKey(command));
+    for (String key : defaultKeysFor(target)) {
+      overrides.remove(key);
     }
   }
 
   /**
-   * Returns the target that {@link #reset} takes a key from: the target that the own key of {@code
+   * Returns the target that {@link #reset} takes a key from: the target that an own key of {@code
    * target} was assigned to, or null when resetting takes no key from another target.
    */
   @Nullable
   public String targetLosingKeyOnReset(String target) {
-    int command = commandOf(target);
-    if (command < 0) {
-      return null;
+    for (String key : defaultKeysFor(target)) {
+      String current = overrides.get(key);
+      if (current != null && !NONE.equals(current) && !current.equals(target)) {
+        return current;
+      }
     }
-    String current = overrides.get(commandKey(command));
-    return current == null || NONE.equals(current) || current.equals(target) ? null : current;
+    return null;
   }
 
   /** Removes every override. */
   public void clear() {
     overrides.clear();
+  }
+
+  /**
+   * Returns the keys that run {@code target} when nothing is overridden: the key of its display
+   * command, and the separate keys that stand in for that command.
+   */
+  private static List<String> defaultKeysFor(String target) {
+    List<String> keys = new ArrayList<>();
+    int command = commandOf(target);
+    if (command < 0) {
+      return keys;
+    }
+    if (defaultCommandOf(command) == command) {
+      keys.add(commandKey(command));
+    }
+    for (int[] entry : SEPARATE_KEY_COMMANDS) {
+      if (entry[1] == command) {
+        keys.add(commandKey(entry[0]));
+      }
+    }
+    return keys;
   }
 
   private void set(String key, String target) {
