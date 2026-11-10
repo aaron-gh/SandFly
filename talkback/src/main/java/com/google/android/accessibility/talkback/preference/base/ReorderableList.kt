@@ -17,9 +17,13 @@
 package com.google.android.accessibility.talkback.preference.base
 
 import android.view.View
+import android.view.accessibility.AccessibilityNodeInfo
 import androidx.annotation.StringRes
 import androidx.core.view.ViewCompat
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat.AccessibilityActionCompat
+import androidx.preference.Preference
+import androidx.preference.PreferenceGroup
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.accessibility.talkback.R
 
 fun setMoveActions(row: View, index: Int, count: Int, move: (offset: Int) -> Boolean) {
@@ -60,3 +64,40 @@ fun announce(view: View, text: CharSequence) {
 
 fun positionText(view: View, index: Int, count: Int): String =
   view.context.getString(R.string.template_list_position, index + 1, count)
+
+/**
+ * Moves accessibility focus in [list] to [preference] once the list has laid out again, and says
+ * [announcement].
+ */
+fun focusAfterLayout(list: RecyclerView, preference: Preference?, announcement: String?) {
+  list.post {
+    list.addOnLayoutChangeListener(
+      object : View.OnLayoutChangeListener {
+        override fun onLayoutChange(
+          v: View,
+          left: Int,
+          top: Int,
+          right: Int,
+          bottom: Int,
+          oldLeft: Int,
+          oldTop: Int,
+          oldRight: Int,
+          oldBottom: Int,
+        ) {
+          list.removeOnLayoutChangeListener(this)
+          val adapter = list.adapter as? PreferenceGroup.PreferencePositionCallback
+          val position = preference?.let { adapter?.getPreferenceAdapterPosition(it) } ?: -1
+          if (position >= 0) {
+            list.scrollToPosition(position)
+            list
+              .findViewHolderForAdapterPosition(position)
+              ?.itemView
+              ?.performAccessibilityAction(AccessibilityNodeInfo.ACTION_ACCESSIBILITY_FOCUS, null)
+          }
+          announcement?.let { announce(list, it) }
+        }
+      }
+    )
+    list.requestLayout()
+  }
+}

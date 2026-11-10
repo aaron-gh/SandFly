@@ -128,6 +128,13 @@ public class TalkBackPreferenceFragment extends TalkbackBaseFragment {
       hidePreference(R.string.pref_auto_image_captioning_key);
     }
 
+    if (FormFactorUtils.isAndroidWear()) {
+      // A watch keeps the switches of the SandFly menu.
+      Preference sandflyMenu = findPreference(getString(R.string.pref_category_manage_context_menu_key));
+      if (sandflyMenu != null) {
+        sandflyMenu.setFragment(ContextMenuFragment.class.getName());
+      }
+    }
     addSandflyAi();
     SettingsSearch.addSearchItem(getPreferenceScreen(), () -> SettingsSearch.searchSettings(this));
   }

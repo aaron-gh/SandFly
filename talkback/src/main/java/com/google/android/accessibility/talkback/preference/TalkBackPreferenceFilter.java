@@ -251,6 +251,7 @@ public class TalkBackPreferenceFilter {
     RESUME_BACKTALK(R.string.pref_resume_backtalk_key, HIDDEN_ON_WATCH | HIDDEN_ON_TV),
     // Pausing is turned off on TVs too: the volume keys often go to the TV or a soundbar, and there
     // is no notification shade to resume from.
+    CUSTOM_MENUS(R.string.pref_custom_menus_key, HIDDEN_ON_WATCH),
     PAUSE_BACKTALK_MENU_ITEM(
         R.string.pref_show_context_menu_pause_backtalk_setting_key, HIDDEN_ON_WATCH | HIDDEN_ON_TV),
     // A TV has no touchscreen for direct touch, and no gesture for the status readout.

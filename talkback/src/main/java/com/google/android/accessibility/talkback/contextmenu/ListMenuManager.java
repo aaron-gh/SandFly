@@ -24,6 +24,7 @@ import static com.google.android.accessibility.talkback.Feedback.Focus.Action.CL
 import static com.google.android.accessibility.talkback.Feedback.Focus.Action.MUTE_NEXT_FOCUS;
 import static com.google.android.accessibility.talkback.Feedback.Focus.Action.RESTORE_ON_NEXT_WINDOW;
 import static com.google.android.accessibility.talkback.Feedback.Speech.Action.SAVE_LAST;
+import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.COMMANDS;
 import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.CONTEXT;
 import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.CUSTOM_ACTION;
 import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.EDITING;
@@ -63,6 +64,8 @@ import com.google.android.accessibility.talkback.Feedback;
 import com.google.android.accessibility.talkback.Pipeline;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.TalkBackService;
+import com.google.android.accessibility.talkback.commands.CommandMenus;
+import com.google.android.accessibility.talkback.commands.Commands;
 import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics;
 import com.google.android.accessibility.talkback.contextmenu.ContextMenuItem.DeferredType;
 import com.google.android.accessibility.talkback.contextmenu.radial.RadialMenuController;
@@ -78,6 +81,7 @@ import com.google.android.accessibility.utils.DisplayUtils;
 import com.google.android.accessibility.utils.FormFactorUtils;
 import com.google.android.accessibility.utils.Performance.EventId;
 import com.google.android.accessibility.utils.SettingsUtils;
+import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import com.google.android.accessibility.utils.input.WindowEventInterpreter.EventInterpretation;
 import com.google.android.accessibility.utils.input.WindowEventInterpreter.WindowEventHandler;
 import com.google.android.accessibility.utils.material.A11yAlertDialogWrapper;
@@ -128,6 +132,10 @@ public class ListMenuManager implements WindowEventHandler, AccessibilityEventLi
   private AccessibilityNodeInfoCompat currentNode;
   private ContextMenu contextMenu;
   private @Nullable MenuId menuId;
+  // What COMMANDS menus show.
+  private List<CommandMenus.Node> commandNodes = ImmutableList.of();
+  private @Nullable String commandMenuTitle;
+  private boolean openSingleItem;
   private final RadialMenuController radialMenu;
   private @Nullable EventId radialMenuEventId;
 
@@ -141,6 +149,7 @@ public class ListMenuManager implements WindowEventHandler, AccessibilityEventLi
     SPLIT_SCREEN,
     EDITING,
     TEXT_ENTITIES,
+    COMMANDS,
   }
 
   public ListMenuManager(
@@ -185,6 +194,31 @@ public class ListMenuManager implements WindowEventHandler, AccessibilityEventLi
     return showMenu(menuId, eventId, INVALID_RES_ID);
   }
 
+  /** Opens the custom menu whose command is {@code command}. */
+  public boolean showCustomMenu(String command, EventId eventId) {
+    CommandMenus.Menu menu =
+        CommandMenus.expandedMenu(
+            SharedPreferencesUtils.getSharedPreferences(service), CommandMenus.idOf(command));
+    if (menu == null) {
+      return false;
+    }
+    commandNodes = menu.getItems();
+    commandMenuTitle = menu.getName();
+    openSingleItem = false;
+    return showMenu(COMMANDS, eventId);
+  }
+
+  /**
+   * Runs a command that only a menu item performs: opens the item's submenu, or does what the item
+   * does when it has none.
+   */
+  public boolean showMenuItemCommand(String command, EventId eventId) {
+    commandNodes = ImmutableList.of(new CommandMenus.Command(command));
+    commandMenuTitle = Commands.label(service, command);
+    openSingleItem = true;
+    return showMenu(COMMANDS, eventId);
+  }
+
   @CanIgnoreReturnValue
   public boolean showMenu(MenuId menuId, EventId eventId, int failureStringResId) {
     if (FormFactorUtils.isAndroidXr() && this.menuId == menuId && this.menuId == CONTEXT) {
@@ -221,7 +255,7 @@ public class ListMenuManager implements WindowEventHandler, AccessibilityEventLi
             CharSequence[] subMenuItems = getItemsFromMenu(subMenu);
             showDialogMenu(subMenu.getTitle(), subMenuItems, subMenu, eventId);
 
-            if (menuId == CONTEXT) {
+            if (menuId == CONTEXT || menuId == COMMANDS) {
               for (int i = 0; i < subMenu.size(); i++) {
                 if (menuClickProcessor.isItemSupported(subMenu.getItem(i))) {
                   subMenu
@@ -257,6 +291,17 @@ public class ListMenuManager implements WindowEventHandler, AccessibilityEventLi
                       FeedbackItem.FLAG_NO_HISTORY
                           | FeedbackItem.FLAG_FORCE_FEEDBACK_ALL)));
       return false;
+    }
+    if (menuId == COMMANDS && openSingleItem && contextMenu.size() == 1) {
+      ContextMenuItem only = contextMenu.getItem(0);
+      if (!only.hasSubMenu()) {
+        boolean performed = only.onClickPerformed();
+        clearMenu();
+        return performed;
+      }
+      ListSubMenu subMenu = (ListSubMenu) only.getSubMenu();
+      subMenu.setDefaultListener(contextMenu.getDefaultListener());
+      contextMenu = subMenu;
     }
     if (menuId == CONTEXT) {
       analytics.onGlobalContextMenuOpen(/* isListStyle= */ true);
@@ -300,8 +345,17 @@ public class ListMenuManager implements WindowEventHandler, AccessibilityEventLi
       TalkbackMenuProcessor talkbackMenuProcessor =
           new TalkbackMenuProcessor(
               service, actorState, pipeline, nodeMenuRuleProcessor, currentNode);
-      talkbackMenuProcessor.prepareMenu(menu);
+      talkbackMenuProcessor.prepareMenu(
+          menu,
+          CommandMenus.items(
+              service,
+              SharedPreferencesUtils.getSharedPreferences(service),
+              CommandMenus.SANDFLY_MENU));
       menu.setTitle(service.getString(R.string.talkback_menu_title));
+    } else if (menuId == COMMANDS) {
+      new TalkbackMenuProcessor(service, actorState, pipeline, nodeMenuRuleProcessor, currentNode)
+          .prepareMenu(menu, commandNodes);
+      menu.setTitle(commandMenuTitle);
     } else if (menuId == CUSTOM_ACTION) {
       final AccessibilityNodeInfoCompat currentNode =
           accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ true);

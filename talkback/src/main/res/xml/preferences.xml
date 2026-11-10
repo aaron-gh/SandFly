@@ -47,9 +47,13 @@
       android:key="@string/pref_category_manage_selector_menu_key"
       android:title="@string/title_pref_category_selector_menu" />
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
-      android:fragment="com.google.android.accessibility.talkback.preference.base.ContextMenuFragment"
+      android:fragment="com.google.android.accessibility.talkback.commands.CommandMenuFragment"
       android:key="@string/pref_category_manage_context_menu_key"
       android:title="@string/title_pref_category_context_menu" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+      android:fragment="com.google.android.accessibility.talkback.commands.CustomMenusFragment"
+      android:key="@string/pref_custom_menus_key"
+      android:title="@string/title_pref_custom_menus" />
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
       android:fragment="com.google.android.accessibility.talkback.preference.base.NavigationPrefFragment"
       android:key="@string/pref_navigation_settings_key"

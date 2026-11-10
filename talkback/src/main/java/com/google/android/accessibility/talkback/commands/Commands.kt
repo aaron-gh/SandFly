@@ -34,6 +34,7 @@ import com.google.android.accessibility.talkback.keyboard.TalkBackPhysicalKeyboa
 import com.google.android.accessibility.talkback.recognition.LiveRecognition
 import com.google.android.accessibility.talkback.recognition.RecognitionMode
 import com.google.android.accessibility.talkback.sandflyai.SandflyAi
+import com.google.android.accessibility.talkback.selector.ReadingControlCommands
 import com.google.android.accessibility.talkback.selector.ReadingControlLists
 import com.google.android.accessibility.talkback.speech.VoiceProfileNames
 import com.google.android.accessibility.talkback.utils.TalkbackFeatureSupport
@@ -145,15 +146,15 @@ object Commands {
   }
 
   /**
-   * Returns the commands available on this device, by category, ending with Gesture profiles, Voice
-   * profiles, Open app, App shortcuts and Accessibility shortcuts.
+   * Returns the commands available on this device, by category, ending with Custom menus, Gesture
+   * profiles, Voice profiles, Open app, App shortcuts and Accessibility shortcuts.
    */
   @JvmStatic
   fun categories(context: Context): List<Category> = Builder(context, withApps = true).build()
 
   /**
-   * Returns the commands available on this device, by category, without Gesture profiles, Voice
-   * profiles, Open app, App shortcuts and Accessibility shortcuts.
+   * Returns the commands available on this device, by category, without Custom menus, Gesture
+   * profiles, Voice profiles, Open app, App shortcuts and Accessibility shortcuts.
    */
   private fun categoriesWithoutApps(context: Context): List<Category> =
     Builder(context, withApps = false).build()
@@ -177,6 +178,9 @@ object Commands {
       return Command(value, it, keyboardAction = null)
     }
     readingControlListLabel(context, value)?.let {
+      return Command(value, it, keyboardAction = null)
+    }
+    customMenuLabel(context, value)?.let {
       return Command(value, it, keyboardAction = null)
     }
     voiceProfileLabel(context, value)?.let {
@@ -219,6 +223,7 @@ object Commands {
       ?: AccessibilityShortcutActions.label(context, value)
       ?: gestureProfileLabel(context, value)
       ?: readingControlListLabel(context, value)
+      ?: customMenuLabel(context, value)
       ?: voiceProfileLabel(context, value)
       ?: NavigationGestureActions.label(context, value)
       ?: keyboardActionOf(context, value)?.getDescription(context.resources)
@@ -241,6 +246,9 @@ object Commands {
 
   private fun readingControlListLabel(context: Context, value: String): String? =
     ReadingControlLists.label(context, SharedPreferencesUtils.getSharedPreferences(context), value)
+
+  private fun customMenuLabel(context: Context, value: String): String? =
+    CommandMenus.label(SharedPreferencesUtils.getSharedPreferences(context), value)
 
   private fun voiceProfileLabel(context: Context, value: String): String? =
     VoiceProfileNames.commandLabel(context, SharedPreferencesUtils.getSharedPreferences(context), value)
@@ -292,7 +300,9 @@ object Commands {
       braille()
       sandFly()
       developer()
+      settingValues()
       if (withApps) {
+        customMenus()
         gestureProfiles()
         readingControlLists()
         voiceProfiles()
@@ -392,6 +402,8 @@ object Commands {
 
     private fun navigationSetting() =
       category(R.string.commands_category_navigation_setting) {
+        gesture(R.string.shortcut_value_granularity_menu, R.string.title_granularity)
+        gesture(R.string.shortcut_value_page_navigation, R.string.title_viewpager_controls)
         keyboard(Key.NAVIGATE_NEXT)
         keyboard(Key.NAVIGATE_PREVIOUS)
         keyboard(Key.NEXT_NAVIGATION_SETTING)
@@ -455,6 +467,7 @@ object Commands {
           Key.SHOW_ACTIONS,
         )
         gesture(R.string.shortcut_value_text_entities, R.string.title_text_entities)
+        gesture(R.string.shortcut_value_label, R.string.title_labeling_controls)
         gesture(
           R.string.shortcut_value_talkback_breakout,
           R.string.shortcut_talkback_breakout,
@@ -693,6 +706,34 @@ object Commands {
           R.string.title_pref_speech_equalizer_on,
           available = !wear,
         )
+        gesture(R.string.shortcut_value_emoji_menu, R.string.title_pref_emoji_speech)
+        gesture(R.string.shortcut_value_keyboard_echo_on_screen, R.string.title_keyboard_echo_on_screen)
+        gesture(
+          R.string.shortcut_value_keyboard_echo_physical,
+          R.string.title_keyboard_echo_physical,
+          available = !wear,
+        )
+        gesture(
+          R.string.shortcut_value_keyboard_echo_braille_keyboard,
+          R.string.title_keyboard_echo_braille_keyboard,
+          available = !wear,
+        )
+        gesture(
+          R.string.shortcut_value_keyboard_echo_braille_display,
+          R.string.title_keyboard_echo_braille_display,
+          available = !wear,
+        )
+        gesture(
+          R.string.shortcut_value_keyboard_echo_handwriting,
+          R.string.title_keyboard_echo_handwriting_keyboard,
+          available = !wear,
+        )
+        gesture(R.string.shortcut_value_toggle_audio_ducking, R.string.title_pref_use_audio_focus)
+        gesture(
+          R.string.shortcut_value_toggle_vibration,
+          R.string.title_pref_vibration,
+          available = FeatureSupport.isVibratorSupported(context),
+        )
         keyboard(Key.TOGGLE_SOUND_FEEDBACK)
         keyboard(Key.OPEN_TTS_SETTINGS)
       }
@@ -756,6 +797,7 @@ object Commands {
           Key.COPY_LAST_SPOKEN_PHRASE,
         )
         gesture(R.string.shortcut_value_granular_editing, R.string.granular_editing_title)
+        gesture(R.string.shortcut_value_typo_suggestions, R.string.title_edittext_typo_suggestions)
         gesture(R.string.shortcut_value_dictate, R.string.shortcut_dictate)
       }
 
@@ -800,6 +842,11 @@ object Commands {
         gesture(
           R.string.shortcut_value_toggle_color_inversion,
           R.string.shortcut_toggle_color_inversion,
+        )
+        gesture(
+          R.string.shortcut_value_system_actions_menu,
+          R.string.system_actions,
+          available = systemActions,
         )
         gesture(R.string.shortcut_value_write_app_name, R.string.shortcut_write_app_name)
         gesture(R.string.shortcut_value_braille_app_name, R.string.shortcut_braille_app_name)
@@ -982,8 +1029,11 @@ object Commands {
         )
         gesture(R.string.shortcut_value_toggle_arrow_key_nav, R.string.arrow_key_nav_toggle)
         gesture(R.string.shortcut_value_toggle_scripts, R.string.shortcut_toggle_scripts)
+        gesture(R.string.shortcut_value_script_commands, R.string.shortcut_script_commands)
+        gesture(R.string.shortcut_value_verbosity_settings, R.string.title_pref_selector_verbosity)
         gesture(R.string.shortcut_value_turn_off_sandfly, R.string.turn_off_talkback)
         keyboard(Key.OPEN_TALKBACK_SETTINGS)
+        keyboard(Key.OPEN_MANAGE_KEYBOARD_SHORTCUTS)
         gesture(R.string.shortcut_value_tutorial, R.string.shortcut_tutorial, Key.SHOW_TUTORIAL)
         gesture(
           R.string.shortcut_value_practice_gestures,
@@ -1019,6 +1069,39 @@ object Commands {
           R.string.shortcut_report_gesture,
           available = GestureReporter.ENABLED && SettingsUtils.allowLinksOutOfSettings(context),
         )
+      }
+
+    private fun settingValues() =
+      category(R.string.commands_category_setting_values) {
+        if (wear) return@category
+        for (entry in ReadingControlCommands.ENTRIES) {
+          val title = context.getString(entry.title)
+          if (entry.toggle) {
+            commands.add(Command(ReadingControlCommands.valueOf(entry.setting, true), title, null))
+            continue
+          }
+          commands.add(
+            Command(
+              ReadingControlCommands.valueOf(entry.setting, true),
+              context.getString(R.string.command_next_value, title),
+              null,
+            )
+          )
+          commands.add(
+            Command(
+              ReadingControlCommands.valueOf(entry.setting, false),
+              context.getString(R.string.command_previous_value, title),
+              null,
+            )
+          )
+        }
+      }
+
+    private fun customMenus() =
+      category(R.string.title_pref_custom_menus) {
+        for (menu in CommandMenus.custom(SharedPreferencesUtils.getSharedPreferences(context))) {
+          commands.add(Command(CommandMenus.commandOf(menu.id), menu.name, keyboardAction = null))
+        }
       }
 
     private fun gestureProfiles() =

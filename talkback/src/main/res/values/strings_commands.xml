@@ -118,4 +118,38 @@
     <string name="command_choose_arrow_keys">Choose arrow keys</string>
     <!-- Button in the dialog for arrow keys of a command: the keys no longer run the command. [CHAR LIMIT=40] -->
     <string name="command_remove_arrow_keys">Remove arrow keys</string>
+    <!-- Title of the settings screen of menus the user makes, and the group of commands that open them. [CHAR LIMIT=40] -->
+    <string name="title_pref_custom_menus">Custom menus</string>
+    <!-- Group of commands that change the value of a setting without selecting a reading control. [CHAR LIMIT=40] -->
+    <string name="commands_category_setting_values">Setting values</string>
+    <!-- Name of a command that sets the next value of a setting. setting is the name of the setting. [CHAR LIMIT=60] -->
+    <string name="command_next_value"><xliff:g id="setting" example="Punctuation">%1$s</xliff:g>: next value</string>
+    <!-- Name of a command that sets the previous value of a setting. setting is the name of the setting. [CHAR LIMIT=60] -->
+    <string name="command_previous_value"><xliff:g id="setting" example="Punctuation">%1$s</xliff:g>: previous value</string>
+    <!-- Name of the command and SandFly menu item with the commands of the running scripts. [CHAR LIMIT=40] -->
+    <string name="shortcut_script_commands">Script commands</string>
+    <!-- Button that adds a submenu to a menu. [CHAR LIMIT=40] -->
+    <string name="menu_add_submenu">Add submenu</string>
+    <!-- Button that makes a new custom menu. [CHAR LIMIT=40] -->
+    <string name="menu_add_menu">Add menu</string>
+    <!-- Hint of the text field for the name of a menu or submenu. [CHAR LIMIT=40] -->
+    <string name="menu_name">Name</string>
+    <!-- Action on a submenu in a menu: shows what is in it. [CHAR LIMIT=40] -->
+    <string name="menu_open">Open</string>
+    <!-- Action on an item of a menu: moves it to another menu or submenu. [CHAR LIMIT=40] -->
+    <string name="menu_move_to">Move to</string>
+    <!-- Action on a menu or submenu: changes its name. [CHAR LIMIT=40] -->
+    <string name="menu_rename">Rename</string>
+    <!-- Action on a menu or submenu: deletes it. [CHAR LIMIT=40] -->
+    <string name="menu_delete">Delete</string>
+    <!-- Question before deleting a menu or submenu. name is its name. [CHAR LIMIT=NONE] -->
+    <string name="menu_delete_confirm">Delete <xliff:g id="name" example="AI">%1$s</xliff:g> and everything in it?</string>
+    <!-- Spoken after an item moves to another menu. place is the menu or submenu. [CHAR LIMIT=NONE] -->
+    <string name="menu_moved">Moved to <xliff:g id="place" example="AI">%1$s</xliff:g></string>
+    <!-- Button that puts the SandFly menu back to its default items and order. [CHAR LIMIT=40] -->
+    <string name="menu_reset">Reset to default</string>
+    <!-- Question before putting the SandFly menu back to its defaults. [CHAR LIMIT=NONE] -->
+    <string name="menu_reset_confirm">Reset the SandFly menu to its default items and order?</string>
+    <!-- Link to the gestures and keyboard shortcut that open a custom menu. [CHAR LIMIT=60] -->
+    <string name="menu_assign">Gestures and keyboard shortcut</string>
 </resources>
