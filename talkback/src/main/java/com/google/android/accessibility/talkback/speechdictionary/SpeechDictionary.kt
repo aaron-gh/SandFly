@@ -72,7 +72,7 @@ object SpeechDictionary {
       if (empty) null else SpeechControllerImpl.SpeechFilter(::apply)
     )
     SpeechCleanupUtils.setCharacterReplacement(
-      if (empty) null else SpeechCleanupUtils.CharacterReplacement(::replaces)
+      if (SymbolDictionary.isEmpty) null else SpeechCleanupUtils.CharacterReplacement(::replaces)
     )
   }
 
@@ -96,13 +96,18 @@ object SpeechDictionary {
   private val replacedCharacters = ConcurrentHashMap<Char, Boolean>()
 
   /**
-   * Whether [key] on its own is said as text that is not blank, so that it is spoken as itself and
-   * replaced here instead of by its name, such as when moving by character. An entry that removes a
-   * character from speech leaves its name for when it is on its own.
+   * Whether the symbol dictionary says [key] as text that is not blank, so that it is spoken as
+   * itself and replaced here instead of by its name, such as when moving by character. Symbol
+   * entries replace a character wherever it is; a speech dictionary entry may match the character
+   * only on its own, so its name stays. An entry that removes a character from speech leaves its
+   * name for when it is on its own.
    */
   @JvmStatic
   fun replaces(key: Char): Boolean =
-    replacedCharacters.getOrPut(key) { apply(key.toString())?.isNotBlank() == true }
+    replacedCharacters.getOrPut(key) {
+      val app = app
+      app != ownPackage && SymbolDictionary.apply(key.toString(), app)?.isNotBlank() == true
+    }
 
   /** Returns [text] with the entries applied, or null when none changed it. */
   @JvmStatic
