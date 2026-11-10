@@ -226,10 +226,18 @@ class NotificationRuleFragment : NotificationCodeFragment(R.string.notification_
     rule.conditions.forEachIndexed { index, condition ->
       val text = NotificationRulesFragment.describeCondition(context, condition)
       conditions.action(text) {
-        choose(text, listOf(getString(R.string.notification_rule_invert), getString(R.string.notification_remove))) { choice ->
-          update {
-            if (choice == 0) it.copy(conditions = it.conditions.mapIndexed { i, c -> if (i == index) c.copy(negate = !c.negate) else c })
-            else it.copy(conditions = it.conditions.filterIndexed { i, _ -> i != index })
+        val editable = condition.type in EDITABLE_CONDITIONS
+        val choices =
+          listOfNotNull(
+            if (editable) getString(R.string.notification_edit) else null,
+            getString(R.string.notification_rule_invert),
+            getString(R.string.notification_remove),
+          )
+        choose(text, choices) { choice ->
+          when (if (editable) choice else choice + 1) {
+            0 -> askCondition(condition.type, condition) { edited -> replaceCondition(index, condition, edited) }
+            1 -> update { it.copy(conditions = it.conditions.mapIndexed { i, c -> if (i == index) c.copy(negate = !c.negate) else c }) }
+            else -> update { it.copy(conditions = it.conditions.filterIndexed { i, _ -> i != index }) }
           }
         }
       }
@@ -263,6 +271,12 @@ class NotificationRuleFragment : NotificationCodeFragment(R.string.notification_
 
   private fun addCondition(condition: RuleCondition) = update { it.copy(conditions = it.conditions + condition) }
 
+  /** Puts [edited] in place of the condition at [index], if that is still [old]. */
+  private fun replaceCondition(index: Int, old: RuleCondition, edited: RuleCondition) = update { rule ->
+    if (rule.conditions.getOrNull(index) != old) rule
+    else rule.copy(conditions = rule.conditions.mapIndexed { i, c -> if (i == index) edited else c })
+  }
+
   private fun addCondition() {
     val types =
       listOf(
@@ -282,37 +296,64 @@ class NotificationRuleFragment : NotificationCodeFragment(R.string.notification_
         RuleCondition.Type.MEDIA_PLAYING to R.string.notification_type_media,
       )
     choose(getString(R.string.notification_rule_add_condition), types.map { getString(it.second) }) { index ->
-      when (val type = types[index].first) {
-        RuleCondition.Type.BLUETOOTH_DEVICE -> withPermissions(bluetoothPermissions()) { chooseBluetooth() }
-        RuleCondition.Type.WIFI_NETWORK ->
-          withPermissions(arrayOf(Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION)) {
-            val current = DeviceStateReader(requireContext()).read().wifiName
-            askText(getString(R.string.notification_type_wifi), current, getString(R.string.notification_wifi_hint)) { name, _, _ ->
-              addCondition(RuleCondition(type, value = name))
-              null
-            }
-          }
-        RuleCondition.Type.TIME -> chooseTime { start, end ->
-          chooseDays { days -> addCondition(RuleCondition(type, startMinutes = start, endMinutes = end, days = days)) }
-        }
-        RuleCondition.Type.FROM_APP, RuleCondition.Type.FOREGROUND_APP -> chooseApp { packageName, label ->
-          addCondition(RuleCondition(type, value = packageName, label = label))
-        }
-        RuleCondition.Type.CONTAINS ->
-          askText(getString(R.string.notification_type_contains), checkLabels = listOf(getString(R.string.notification_regex))) { text, _, checks ->
-            if (text.isEmpty()) return@askText getString(R.string.notification_enter_text)
-            if (checks[0] && !TextMatch.isValidRegex(text)) return@askText getString(R.string.notification_invalid_regex)
-            addCondition(RuleCondition(type, value = text, number = if (checks[0]) 1 else 0))
+      askCondition(types[index].first, null) { addCondition(it) }
+    }
+  }
+
+  /**
+   * Asks for what a condition of [type] looks for, and passes the condition to [done]. With a
+   * [current] condition, as when editing it, the prompt starts with its values, and the condition
+   * keeps whether it is inverted.
+   */
+  private fun askCondition(type: RuleCondition.Type, current: RuleCondition?, done: (RuleCondition) -> Unit) {
+    val base = current ?: RuleCondition(type)
+    when (type) {
+      RuleCondition.Type.BLUETOOTH_DEVICE -> withPermissions(bluetoothPermissions()) { chooseBluetooth(current, done) }
+      RuleCondition.Type.WIFI_NETWORK -> {
+        val ask = { name: String ->
+          askText(getString(R.string.notification_type_wifi), name, getString(R.string.notification_wifi_hint)) { text, _, _ ->
+            done(base.copy(value = text))
             null
           }
-        RuleCondition.Type.BATTERY_BELOW -> {
-          val levels = (1..19).map { it * 5 }
-          choose(getString(R.string.notification_type_battery), levels.map { getString(R.string.notification_percent, it) }) {
-            addCondition(RuleCondition(type, number = levels[it]))
+        }
+        if (current != null) {
+          ask(current.value)
+        } else {
+          withPermissions(arrayOf(Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION)) {
+            ask(DeviceStateReader(requireContext()).read().wifiName)
           }
         }
-        else -> addCondition(RuleCondition(type))
       }
+      RuleCondition.Type.TIME ->
+        chooseTime(current?.startMinutes ?: DEFAULT_START_MINUTES, current?.endMinutes ?: DEFAULT_END_MINUTES) { start, end ->
+          chooseDays(current?.days.orEmpty()) { days -> done(base.copy(startMinutes = start, endMinutes = end, days = days)) }
+        }
+      RuleCondition.Type.FROM_APP, RuleCondition.Type.FOREGROUND_APP -> chooseApp { packageName, label ->
+        done(base.copy(value = packageName, label = label))
+      }
+      RuleCondition.Type.CONTAINS ->
+        askText(
+          getString(R.string.notification_type_contains),
+          current?.value.orEmpty(),
+          checkLabels = listOf(getString(R.string.notification_regex)),
+          checked = listOf(current?.number == 1),
+        ) { text, _, checks ->
+          if (text.isEmpty()) return@askText getString(R.string.notification_enter_text)
+          if (checks[0] && !TextMatch.isValidRegex(text)) return@askText getString(R.string.notification_invalid_regex)
+          done(base.copy(value = text, number = if (checks[0]) 1 else 0))
+          null
+        }
+      RuleCondition.Type.BATTERY_BELOW -> {
+        val levels = (1..19).map { it * 5 }
+        choose(
+          getString(R.string.notification_type_battery),
+          levels.map { getString(R.string.notification_percent, it) },
+          current?.let { levels.indexOf(it.number) } ?: -1,
+        ) {
+          done(base.copy(number = levels[it]))
+        }
+      }
+      else -> done(base)
     }
   }
 
@@ -331,7 +372,7 @@ class NotificationRuleFragment : NotificationCodeFragment(R.string.notification_
   }
 
   @SuppressLint("MissingPermission")
-  private fun chooseBluetooth() {
+  private fun chooseBluetooth(current: RuleCondition?, done: (RuleCondition) -> Unit) {
     val manager = requireContext().getSystemService(BluetoothManager::class.java)
     val devices =
       try {
@@ -340,29 +381,36 @@ class NotificationRuleFragment : NotificationCodeFragment(R.string.notification_
         emptyList()
       }.map { (it.name ?: it.address) to it.address.uppercase() }.sortedBy { it.first.lowercase() }
     val items = listOf(getString(R.string.notification_bluetooth_any)) + devices.map { it.first }
-    choose(getString(R.string.notification_type_bluetooth), items) { index ->
-      if (index == 0) addCondition(RuleCondition(RuleCondition.Type.BLUETOOTH_DEVICE))
-      else devices[index - 1].let { (name, address) ->
-        addCondition(RuleCondition(RuleCondition.Type.BLUETOOTH_DEVICE, value = address, label = name))
+    val base = current ?: RuleCondition(RuleCondition.Type.BLUETOOTH_DEVICE)
+    val checked =
+      when {
+        current == null -> -1
+        current.value.isEmpty() -> 0
+        else -> devices.indexOfFirst { it.second.equals(current.value, ignoreCase = true) }.let { if (it < 0) -1 else it + 1 }
       }
+    choose(getString(R.string.notification_type_bluetooth), items, checked) { index ->
+      if (index == 0) done(base.copy(value = "", label = ""))
+      else devices[index - 1].let { (name, address) -> done(base.copy(value = address, label = name)) }
     }
   }
 
-  private fun chooseTime(then: (Int, Int) -> Unit) {
+  /** Asks for the start and the end of a time range, starting at [start] and [end], in minutes. */
+  private fun chooseTime(start: Int, end: Int, then: (Int, Int) -> Unit) {
     val context = requireContext()
     val is24 = DateFormat.is24HourFormat(context)
     TimePickerDialog(context, { _, startHour, startMinute ->
       TimePickerDialog(context, { _, endHour, endMinute ->
         then(startHour * 60 + startMinute, endHour * 60 + endMinute)
-      }, 7, 0, is24).apply { setTitle(R.string.notification_time_end) }.show()
-    }, 22, 0, is24).apply { setTitle(R.string.notification_time_start) }.show()
+      }, end / 60, end % 60, is24).apply { setTitle(R.string.notification_time_end) }.show()
+    }, start / 60, start % 60, is24).apply { setTitle(R.string.notification_time_start) }.show()
   }
 
-  private fun chooseDays(then: (Set<Int>) -> Unit) {
+  /** Asks for the days of the week, with [days] checked, or every day when it is empty. */
+  private fun chooseDays(days: Set<Int>, then: (Set<Int>) -> Unit) {
     val symbols = DateFormatSymbols.getInstance().weekdays
     // Monday first: 1 is Monday here.
     val names = (1..7).map { symbols[it % 7 + 1] }
-    val checked = BooleanArray(7) { true }
+    val checked = BooleanArray(7) { days.isEmpty() || (it + 1) in days }
     dialog()
       .setTitle(R.string.notification_time_days)
       .setMultiChoiceItems(names.toTypedArray(), checked) { _, which, isChecked -> checked[which] = isChecked }
@@ -420,5 +468,21 @@ class NotificationRuleFragment : NotificationCodeFragment(R.string.notification_
 
   companion object {
     const val ARG_RULE = "rule"
+
+    /** The conditions that look for something, which their Edit item changes. */
+    private val EDITABLE_CONDITIONS =
+      setOf(
+        RuleCondition.Type.BLUETOOTH_DEVICE,
+        RuleCondition.Type.WIFI_NETWORK,
+        RuleCondition.Type.TIME,
+        RuleCondition.Type.FROM_APP,
+        RuleCondition.Type.FOREGROUND_APP,
+        RuleCondition.Type.CONTAINS,
+        RuleCondition.Type.BATTERY_BELOW,
+      )
+
+    /** The time range a new time condition starts with: 22:00 to 7:00. */
+    private const val DEFAULT_START_MINUTES = 22 * 60
+    private const val DEFAULT_END_MINUTES = 7 * 60
   }
 }

@@ -38,7 +38,8 @@ import com.google.android.accessibility.utils.preference.PreferencesActivity.FRA
 
 /**
  * The texts copied, newest first: each can be pasted into the edit box it was opened from, copied
- * again or removed.
+ * again, added to the end of the clipboard's text, or removed. The list shows long texts shortened,
+ * and the choices use the whole text.
  */
 class ClipboardHistoryFragment : NotificationCodeFragment(R.string.title_clipboard_history) {
 
@@ -109,12 +110,15 @@ class ClipboardHistoryFragment : NotificationCodeFragment(R.string.title_clipboa
           listOfNotNull(
             target?.let { getString(android.R.string.paste) },
             getString(android.R.string.copy),
+            getString(R.string.shortcut_add_to_clipboard),
             getString(R.string.notification_remove),
           )
         choose(title, choices) {
           when (if (target == null) it + 1 else it) {
             0 -> paste(context, text, target!!)
             1 -> ClipboardHistory.copy(context, text)
+            // As the Add to clipboard command does, with the whole text rather than the title.
+            2 -> ClipboardHistory.append(context, text)
             else -> ClipboardHistory.remove(context, text)
           }
         }

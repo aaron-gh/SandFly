@@ -197,6 +197,7 @@ play is left out when the theme is installed, and SandFly says so.
 | `control_menu_item` | Control sound: menu item |
 | `control_list_item` | Control sound: list item |
 | `control_tree_item` | Control sound: tree item on a web page |
+| `volume_change` | A volume step, with **Volume change feedback** set to **Tone** or **Tone and speech** |
 | `braille_keyboard_character` | Braille keyboard: typing a character |
 | `braille_keyboard_space` | Braille keyboard: space |
 | `braille_keyboard_delete` | Braille keyboard: deleting a character or a word |
@@ -215,6 +216,10 @@ This is useful for themes modeled after other screen readers, such as iOS VoiceO
 
 The braille keyboard sounds play only with **Typing sounds** on in the braille keyboard's
 settings.
+
+`volume_change` plays at the volume of the stream that changed, such as media or ring, and not at
+the **Sound feedback volume**. A step while it plays starts it again. Without it, SandFly plays a
+generated tone. It has no vibration.
 
 The names are also shown in SandFly: in **Sounds**, selecting a sound shows its name after its
 title, such as "Click (tick)".
