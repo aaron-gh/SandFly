@@ -17,6 +17,7 @@
 package com.google.android.accessibility.talkback.scripting
 
 import android.accessibilityservice.AccessibilityService
+import android.content.Context
 import com.google.android.accessibility.talkback.Pipeline
 
 object ScriptHostFactory {
@@ -27,4 +28,16 @@ object ScriptHostFactory {
     resume: Runnable,
     services: ScriptServices,
   ): ScriptHost? = LazyScriptHost(service, feedback, resume, services)
+
+  /** Returns the commands of installed scripts, without those of turned off scripts unless [all]. */
+  @JvmStatic
+  fun commands(context: Context, all: Boolean): List<ScriptCommandEntry> =
+    ScriptStore.get(context).all().filter { all || it.enabled }.flatMap { script ->
+      script.manifest.commands.map {
+        ScriptCommandEntry(
+          ScriptCommands.valueOf(script.id, it.id),
+          "${script.manifest.name}: ${it.title}",
+        )
+      }
+    }
 }

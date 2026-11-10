@@ -298,10 +298,26 @@ class ManifestParserTest {
   }
 
   @Test
-  fun aCommandNeedsAWayToRunIt() {
+  fun aCommandNeedsNoDefaultWayToRunIt() {
+    val command =
+      parse(""","permissions":["input"],"commands":[{"id":"go","title":"Go"}]""").commands[0]
+    assertEquals("Go", command.title)
+    assertTrue(command.bindings.isEmpty())
+  }
+
+  @Test
+  fun anOnDemandScriptHasOnlyPlainCommands() {
+    val input = ""","permissions":["input"]"""
+    val plain = """"commands":[{"id":"go","title":"Go"}]"""
+    assertTrue(parse("""$input,"onDemand":true,$plain""").onDemand)
+    assertTrue("needs commands" in rejects("""$input,"onDemand":true"""))
     assertTrue(
-      "needs gesture, keys, menu or control" in
-        rejects(""","permissions":["input"],"commands":[{"id":"go","title":"Go"}]""")
+      "only id and title" in
+        rejects("""$input,"onDemand":true,"commands":[{"id":"go","title":"Go","menu":true}]""")
+    )
+    assertTrue(
+      "apps, rules or navigation" in
+        rejects("""$input,"onDemand":true,"apps":"com.example",$plain""")
     )
   }
 

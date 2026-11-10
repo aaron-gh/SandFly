@@ -234,6 +234,8 @@ data class ScriptManifest(
   val commands: List<ScriptCommand>,
   val navigation: List<ScriptNavigation>,
   val json: String,
+  /** Whether the script is loaded only to run a command, and unloaded when it has finished. */
+  val onDemand: Boolean = false,
 ) {
   val isGlobal: Boolean
     get() = apps.isEmpty()
@@ -287,7 +289,7 @@ data class ScriptManifest(
     }
 
   companion object {
-    const val API_VERSION = 3
+    const val API_VERSION = 4
 
     /**
      * The last version that changed what scripts already used. A script tested with it or later

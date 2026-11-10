@@ -17,6 +17,7 @@
 package com.google.android.accessibility.talkback.scripting
 
 import android.accessibilityservice.AccessibilityService
+import android.content.Context
 import com.google.android.accessibility.talkback.Pipeline
 
 object ScriptHostFactory {
@@ -28,4 +29,8 @@ object ScriptHostFactory {
     resume: Runnable,
     services: ScriptServices,
   ): ScriptHost? = null
+
+  @JvmStatic
+  @Suppress("UNUSED_PARAMETER")
+  fun commands(context: Context, all: Boolean): List<ScriptCommandEntry> = emptyList()
 }

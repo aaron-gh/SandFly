@@ -1,6 +1,6 @@
 # Writing SandFly scripts
 
-A script is a Lua file that changes how SandFly works in one app, or in every app. This document describes the whole script API, version 3.
+A script is a Lua file that changes how SandFly works in one app, or in every app. This document describes the whole script API, version 4.
 
 Scripts run on phones and tablets. Watches and TVs can't run them.
 
@@ -61,11 +61,12 @@ A table with only listed values, such as `{ 'speech', 'screen' }`, is a list. A 
 | `id` | Required. Lowercase letters, digits, dots, dashes and underscores, starting with a letter or digit, up to 64 characters. A script with the same id replaces the installed one. |
 | `name` | Required. Shown in the Scripts list, and at the start of the title of every dialog the script shows. |
 | `author` | Required. |
-| `minApiVersion` | Required. The lowest script API version the script works with. This document describes version 3. Use 2 for a script that uses anything marked *Version 2*, and 3 for one that uses anything marked *Version 3*. |
-| `testedApiVersion` | Required. The highest script API version you tested with. SandFly warns before installing a script tested only with a version older than the last one that changed existing calls. Versions 2 and 3 only add to version 1, so scripts tested with 1 get no warning. |
+| `minApiVersion` | Required. The lowest script API version the script works with. This document describes version 4. Use the highest version marked on anything the script uses, such as 3 for a script that uses anything marked *Version 3*. |
+| `testedApiVersion` | Required. The highest script API version you tested with. SandFly warns before installing a script tested only with a version older than the last one that changed existing calls. Versions 2, 3 and 4 only add to version 1, so scripts tested with 1 get no warning. |
 | `version` | The script's own version, as text, such as `'1.2'`. The default is `'1'`. SandFly updates installed scripts from their source when this is higher, compared number by number, so raise it with each change. |
 | `description` | Shown on the script's page and before it's installed. |
 | `homepage` | An `http` or `https` address. The script's page has a button that opens it. |
+| `onDemand` | *Version 4.* `true` loads the script only to run one of its commands. See [Scripts loaded on demand](#scripts-loaded-on-demand). |
 | `apps` | Where the script runs. Leave it out for a script that runs in every app. See [Where a script runs](#where-a-script-runs). |
 | `permissions` | A list of the [permissions](#permissions) the script needs. |
 | `settings` | [Settings](#settings) the user can change on the script's page. |
@@ -301,7 +302,7 @@ Changing speech needs the `speech` permission. SandFly waits 30 milliseconds for
 
 ### Commands
 
-A command is something the user runs. Declare it in the manifest, and give it at least one way to run:
+A command is something the user runs. Declare it in the manifest:
 
 ```lua
 commands = {
@@ -320,13 +321,29 @@ Commands need the `input` permission. The user can turn each gesture and key off
 
 ```lua
 sf.onCommand('unread', function(event)
-  -- event.id, event.via ('gesture', 'keys', 'menu' or 'control'), event.direction, event.node
+  -- event.id, event.via ('gesture', 'keys', 'menu', 'control' or 'command'), event.direction, event.node
 end)
 ```
 
 `event.node` is the focused item. Return `false`, before waiting for anything, to have SandFly do what the gesture or keys normally do.
 
 *Version 2.* For keys without `sf`, SandFly waits up to 30 milliseconds for the command. If it returns `false` in that time, before waiting for anything, the keys go to the app. Otherwise they don't, and returning `false` later does nothing. Holding the keys down runs the command again for each key repeat. Arrow key navigation, while on, takes the arrow keys before scripts.
+
+*Version 4.* Every command of a script that is turned on is listed in SandFly settings under **Commands** > **Scripts**, as the script's name and the command's title. From there the user assigns it to a gesture, a keyboard shortcut, the SandFly menu, a custom menu, a custom reading control or an app's gestures, as with SandFly's own commands, and `event.via` is `'command'`. These assignments are SandFly's and aren't shown on the script's page. A command needs only `id` and `title`, so a script can leave every assignment to the user:
+
+```lua
+commands = {
+  { id = 'search', title = 'Search Wikipedia' },
+},
+```
+
+If a command runs while its script is off, in an app the script doesn't list, or on a SandFly screen, SandFly speaks "Script not running on this screen".
+
+#### Scripts loaded on demand
+
+*Version 4.* With `onDemand = true`, a script uses no memory until one of its commands runs. SandFly loads it, runs the command, and unloads it about 2 seconds after it has no dialog or window open, no timer set and nothing it is waiting for. [examples/wikipedia-search.lua](scripting/examples/wikipedia-search.lua) is one.
+
+Variables are lost when the script unloads, so use [`sf.storage`](#storage) for what should last. Hooks run only while the script is loaded. The manifest can't have `apps`, `rules`, `navigation` or button settings, each command has only `id` and `title`, and `sf.bind` and `sf.unbind` raise an error.
 
 `sf.bind(command, { gesture = name })` or `sf.bind(command, { keys = keys })` adds a gesture or keys to a declared command, and `sf.unbind` removes one.
 
@@ -411,7 +428,7 @@ sf.commands.run('NEXT')          -- Next item
 sf.commands.run('READ_FROM_TOP') -- Read from top
 ```
 
-**Turn all scripts on or off**, **Turn SandFly keyboard input on or off** and **Open app** commands are not in the list.
+**Turn all scripts on or off**, **Turn SandFly keyboard input on or off**, **Open app** commands and the commands of scripts are not in the list.
 
 ### Rules from code
 

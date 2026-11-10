@@ -56,7 +56,7 @@ class ScriptDetailFragment : ScriptScreenFragment() {
       )
     }
     addPermissions(screen.category(getString(R.string.script_permissions_title)), script)
-    if (manifest.commands.isNotEmpty()) {
+    if (manifest.commands.isNotEmpty() && !manifest.onDemand) {
       addCommands(screen.category(getString(R.string.script_commands_category)), manifest)
     }
     addManagement(screen.category(getString(R.string.script_manage_category)), manifest)
