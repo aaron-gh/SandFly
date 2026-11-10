@@ -793,6 +793,8 @@ There's nothing extra to install or turn on in Accessibility settings, and no se
 
 Go to **Direct touch**, under **Controls** in SandFly settings, and turn on each game in the **Apps** list. When a game that you chose comes to the front, SandFly says "Direct touch on", and when the game gives touch back, it says "Direct touch off". To turn the announcements off, turn off **Speak when direct touch changes**. To feel a short vibration instead or as well, turn on **Vibrate when direct touch changes**. The **Direct touch** switch at the top of the screen turns the whole feature on or off, and is on by default.
 
+The **Turn direct touch on or off for this app** command, in **Activation**, adds the app on screen to the **Apps** list or removes it, and says "Direct touch on" or "Direct touch off". Turning it on also turns on the **Direct touch** switch. Assign it to a volume key press so that a sighted helper can operate an app that doesn't work with SandFly while you still hear speech, and you can turn direct touch off again without touching the screen. With SandFly or the notification shade in front, it says "No app for direct touch".
+
 ### When SandFly takes touch back
 
 Touch returns to SandFly when a dialog appears, another app opens on top of the game, you open the notification shade or quick settings, a text field takes focus, or the screen turns off. Touch goes back to the game when they're gone. The keyboard always stays with SandFly, so you can explore it while the rest of the screen stays in direct touch.

@@ -4,6 +4,10 @@
     <string name="direct_touch_on">Direct touch on</string>
     <!-- Spoken when direct touch turns off: touches go back to the screen reader. [CHAR LIMIT=40] -->
     <string name="direct_touch_off">Direct touch off</string>
+    <!-- Label of the command that turns direct touch on or off for the app on screen, which can be assigned to a gesture or a volume key press. [CHAR LIMIT=60] -->
+    <string name="shortcut_toggle_direct_touch_app">Turn direct touch on or off for this app</string>
+    <!-- Spoken when the command that turns direct touch on or off for the app on screen runs while no app is on screen, such as when SandFly or the notification shade is in front. [CHAR LIMIT=40] -->
+    <string name="direct_touch_no_app">No app for direct touch</string>
 
     <!-- Label of the quick settings tile that pauses and resumes direct touch. [CHAR LIMIT=20] -->
     <string name="direct_touch_tile_label">Direct touch</string>

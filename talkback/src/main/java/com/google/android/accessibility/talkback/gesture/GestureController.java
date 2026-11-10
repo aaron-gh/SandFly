@@ -127,6 +127,7 @@ import com.google.android.accessibility.talkback.scripting.ItemInspector;
 import com.google.android.accessibility.talkback.scripting.ScriptCommands;
 import com.google.android.accessibility.talkback.scripting.Scripts;
 import com.google.android.accessibility.talkback.dictation.AiDictation;
+import com.google.android.accessibility.talkback.directtouch.DirectTouchController;
 import com.google.android.accessibility.talkback.clipboard.ClipboardHistoryFragment;
 import com.google.android.accessibility.talkback.granularediting.GranularEditing;
 import com.google.android.accessibility.talkback.applauncher.BrailleAppLauncher;
@@ -709,6 +710,14 @@ public class GestureController {
         service.getString(R.string.shortcut_value_pass_through_next_gesture))) {
       result =
           pipeline.returnFeedback(eventId, Feedback.passThroughMode(PASSTHROUGH_CONFIRM_DIALOG));
+    } else if (action.equals(service.getString(R.string.shortcut_value_toggle_direct_touch_app))) {
+      DirectTouchController directTouch = service.getDirectTouchController();
+      Boolean on = (directTouch == null) ? null : directTouch.toggleForAppInFront();
+      if (on == null) {
+        speak(service.getString(R.string.direct_touch_no_app));
+      } else {
+        speak(service.getString(on ? R.string.direct_touch_on : R.string.direct_touch_off));
+      }
     } else if (action.equals(service.getString(R.string.shortcut_value_a11y_button))) {
       result =
           pipeline.returnFeedback(

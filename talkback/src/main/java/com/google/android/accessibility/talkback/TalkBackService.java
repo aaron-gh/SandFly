@@ -2011,6 +2011,11 @@ public class TalkBackService extends AccessibilityServiceCompat
     return pauseController;
   }
 
+  /** Returns the direct touch controller, or null before initialization and after shutdown. */
+  public @Nullable DirectTouchController getDirectTouchController() {
+    return directTouchController;
+  }
+
   /** Returns the actor state. */
   public ActorState getActorState() {
     return pipeline.getActorState();

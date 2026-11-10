@@ -496,6 +496,11 @@ object Commands {
           R.string.shortcut_pass_through_next,
           available = FeatureSupport.supportPassthrough(),
         )
+        gesture(
+          R.string.shortcut_value_toggle_direct_touch_app,
+          R.string.shortcut_toggle_direct_touch_app,
+          available = FeatureSupport.supportPassthrough(),
+        )
         keyboard(Key.TOGGLE_KEY_COMBO_PASS_THROUGH_ONCE)
         keyboard(Key.TOGGLE_PASS_KEYS_TO_APP)
         keyboard(Key.TOGGLE_KEYBOARD_INPUT)
