@@ -307,7 +307,7 @@ public class EmojiSpeechTest {
 
   @Test
   public void joinRangesJoinsAcrossSpacesOnly() {
-    String text = "ab  cd e";
+    String text = "ab  cdxe";
     List<int[]> joined =
         EmojiSpeech.joinRanges(
             text, List.of(new int[] {4, 6}, new int[] {0, 2}, new int[] {7, 8}));
