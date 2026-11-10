@@ -1,6 +1,6 @@
 # Writing SandFly scripts
 
-A script is a Lua file that changes how SandFly works in one app, or in every app. This document describes the whole script API, version 4.
+A script is a Lua file that changes how SandFly works in one app or in every app, or adds commands to SandFly. This document describes the whole script API, version 4.
 
 Scripts run on phones and tablets. Watches and TVs can't run them.
 
@@ -11,7 +11,7 @@ A script is one of these:
 *   A `.lua` file, up to 1 MB.
 *   A `.zip` file with a `main.lua` in it, plus anything `main.lua` uses: other Lua files, sounds, and translations. The zip can be up to 5 MB, up to 5 MB unpacked, and hold up to 200 files.
 
-To install a script, go to **Apps** > **Scripts** in SandFly settings and choose **Import script**. SandFly lists what the script asks to do before it installs it. Importing a file with the id of a script that's already installed updates that script and keeps its data and settings; SandFly always asks first, and says so if the author changed.
+To install a script, go to **Apps** > **Scripts** in SandFly settings and choose **Import script**, or open or share a script file or an `https` link to one with SandFly. SandFly asks before downloading from a link another app sends. SandFly lists what the script asks to do before it installs it. Importing a file with the id of a script that's already installed updates that script and keeps its data and settings; SandFly always asks first, and says so if the author changed.
 
 The install dialog starts with where the script came from (a file, a link, or a script source) and whether SandFly signed it. SandFly signs its own scripts, those in [aaron-gh/sandfly-scripts](https://github.com/aaron-gh/sandfly-scripts), with a key only SandFly has; the signature is the last line of `main.lua` and covers every file of the script. A signed script shows **Signed by SandFly.** wherever it came from. A script changed after signing shows that its signature doesn't match. Other scripts show **Not signed by SandFly.** The `author` in a manifest is whatever its writer put there, so only the signature shows that a script is SandFly's own.
 
@@ -91,7 +91,7 @@ apps = {
 
 A script with `apps` is loaded when one of its apps comes to the front and unloaded when it leaves, so anything it keeps in variables is lost then. Use [`sf.storage`](#storage) for what should last.
 
-A script without `apps` runs in every app and is loaded as long as it's turned on.
+A script without `apps` runs in every app and is loaded as long as it's turned on, unless it's [loaded on demand](#scripts-loaded-on-demand).
 
 Scripts never change SandFly's own screens. Rules, speech changes, gestures, keys, menu items and reading controls from scripts don't apply there, and a script can't name SandFly in `apps`. While a SandFly screen is in front, calls that need the `screen`, `actions`, `system` or `dialogs` permission raise an error, `sf.speak` doesn't interrupt, and scripts get no events from SandFly itself. This is so that **Apps** > **Scripts** always works, whatever a script does. A script with the `java` permission can get past all of this.
 
@@ -122,12 +122,16 @@ SandFly marks `passwords`, `network`, `clipboard`, `system`, `notifications`, `e
 
 With the `java` permission, a script gets LuaJava's [`java` module](https://luajava.iroiro.party/api.html): `java.import`, `java.new`, `java.proxy` and the rest. It can call any Java class in SandFly, with all of SandFly's access, in every app, and no other permission limits it. Install such a script only from someone you trust.
 
+Anything the `sf` table doesn't offer needs this permission, such as saving a screenshot to a file or sharing a file with another app.
+
 ```lua
 local Build = java.import('android.os.Build')
 sf.speak('This is a ' .. Build.MODEL)
 ```
 
 Calls into the script hold the script's Lua state, so a Java object made with `java.proxy` and called from another thread waits until the script's current call ends. Don't wait in the script for something that needs SandFly's main thread.
+
+A script [loaded on demand](#scripts-loaded-on-demand) isn't kept loaded for a `java.proxy` object. SandFly can't tell that a call to one is still to come, so the script must stay busy with `sf.sleep` or a timer until that call has finished.
 
 ## Rules
 
@@ -329,6 +333,8 @@ end)
 
 *Version 2.* For keys without `sf`, SandFly waits up to 30 milliseconds for the command. If it returns `false` in that time, before waiting for anything, the keys go to the app. Otherwise they don't, and returning `false` later does nothing. Holding the keys down runs the command again for each key repeat. Arrow key navigation, while on, takes the arrow keys before scripts.
 
+`sf.bind(command, { gesture = name })` or `sf.bind(command, { keys = keys })` adds a gesture or keys to a declared command, and `sf.unbind` removes one.
+
 *Version 4.* Every command of a script that is turned on is listed in SandFly settings under **Commands** > **Scripts**, as the script's name and the command's title. From there the user assigns it to a gesture, a keyboard shortcut, the SandFly menu, a custom menu, a custom reading control or an app's gestures, as with SandFly's own commands, and `event.via` is `'command'`. These assignments are SandFly's and aren't shown on the script's page. A command needs only `id` and `title`, so a script can leave every assignment to the user:
 
 ```lua
@@ -341,11 +347,9 @@ If a command runs while its script is off, in an app the script doesn't list, or
 
 #### Scripts loaded on demand
 
-*Version 4.* With `onDemand = true`, a script uses no memory until one of its commands runs. SandFly loads it, runs the command, and unloads it about 2 seconds after it has no dialog or window open, no timer set and nothing it is waiting for. [examples/wikipedia-search.lua](scripting/examples/wikipedia-search.lua) is one.
+*Version 4.* With `onDemand = true`, a script uses no memory until one of its commands runs. SandFly loads it, runs the command, and unloads it about 2 seconds after it has no dialog or window open, no timer set and nothing it is waiting for. A `java.proxy` object doesn't count: see [Java](#java). [examples/wikipedia-search.lua](scripting/examples/wikipedia-search.lua) is one.
 
-Variables are lost when the script unloads, so use [`sf.storage`](#storage) for what should last. Hooks run only while the script is loaded. The manifest can't have `apps`, `rules`, `navigation` or button settings, each command has only `id` and `title`, and `sf.bind` and `sf.unbind` raise an error.
-
-`sf.bind(command, { gesture = name })` or `sf.bind(command, { keys = keys })` adds a gesture or keys to a declared command, and `sf.unbind` removes one.
+Variables are lost when the script unloads, so use [`sf.storage`](#storage) for what should last. Hooks run only while the script is loaded. The manifest can't have `apps`, `rules`, `navigation` or button settings, each command has only `id` and `title`, `sf.bind` and `sf.unbind` raise an error, and the script's page doesn't list its commands.
 
 ### Navigation
 
@@ -365,7 +369,7 @@ Each entry becomes a reading control that moves to the next or previous item mat
 *   `sf.braille.show(text)` *Version 2.* Shows text on a connected braille display for a while, as SandFly shows an app's announcements. Needs `speech`.
 *   `sf.playSound(name)` plays one of SandFly's sounds (`focus`, `actionable`, `click`, `longClick`, `scroll`, `listEnter`, `listExit`, `end`, `enter`, `typo`, `beep`) or a sound file in the script's zip, such as `'sounds/chime.wav'`.
 *   `sf.playTone(frequency, ms, { volume })` plays a tone. `ms` is 100 if left out.
-*   `sf.playAudio(samples, { sampleRate, volume })` plays a list of samples from -1 to 1, up to 10 seconds.
+*   `sf.playAudio(samples, { sampleRate, volume })` plays a list of samples from -1 to 1, up to 10 seconds. `sampleRate` is from 8,000 to 48,000, and 22,050 if left out.
 *   `sf.vibrate(pattern)` vibrates for a number of milliseconds, or a list of up to 20 that alternates vibration and pause, up to 5 seconds.
 
 Sounds and vibration follow the user's **Sound feedback** and **Vibration feedback** settings. A script can play 4 sounds at once; more are skipped.
@@ -421,14 +425,14 @@ sf.message('Keys go to the game')
 *Version 2.* A script can run any command that a gesture or keys can be assigned to in SandFly, such as moving to the next heading, reading from the top or changing the reading control.
 
 *   `sf.commands.list()` lists them: `{ id, title, category }`, in the order of **Commands** in SandFly settings.
-*   `sf.commands.run(id)` runs one, as its gesture would, and gives whether it ran. It needs the `input` permission, and doesn't work on SandFly's own screens. Commands that pause or silence SandFly, act on the system (Back, Home, notifications, volume, lock screen, power menu), use the microphone or SandFly Pro also need `system`; commands that copy, cut, paste or open the clipboard history also need `clipboard`.
+*   `sf.commands.run(id)` runs one, as its gesture would, and gives whether it ran. It needs the `input` permission, and doesn't work on SandFly's own screens. Commands that pause or silence SandFly, act on the system (Back, Home, recent apps, screenshots, notifications, volume, lock screen, power menu), use the microphone or SandFly Pro also need `system`; commands that copy, cut, paste or open the clipboard history also need `clipboard`.
 
 ```lua
 sf.commands.run('NEXT')          -- Next item
 sf.commands.run('READ_FROM_TOP') -- Read from top
 ```
 
-**Turn all scripts on or off**, **Turn SandFly keyboard input on or off**, **Open app** commands and the commands of scripts are not in the list.
+**Turn all scripts on or off**, **Turn SandFly keyboard input on or off**, **Open app** and app shortcut commands, and the commands of scripts are not in the list.
 
 ### Rules from code
 
@@ -461,7 +465,7 @@ All of these need the `dialogs` permission, and all but `dialog` and `window` [w
 *   `sf.ui.alert(message, { title })`
 *   `sf.ui.confirm(message, { title, ok, cancel })` gives `true` or `false`.
 *   `sf.ui.prompt(title, { text, hint })` gives the text, or `nil` if cancelled.
-*   `sf.ui.choose(title, options, { selected })` gives the chosen value, or `nil`.
+*   `sf.ui.choose(title, options, { selected })` gives the chosen value, or `nil`. A list has 1 to 500 options.
 *   `sf.ui.dialog({ title, items, onClose })` shows a form with up to 50 items, and gives the form at once.
 *   `sf.ui.window({ title, items, onClose })` *Version 2* does the same in a window that fills the screen, for a script that is an app of its own, such as a notepad. Back closes it.
 *   `sf.ui.text(title, text)` *Version 2* shows text that can be read by line, word or character and selected, and waits until it's closed. Use it for results too long to say.
@@ -497,7 +501,7 @@ The form has `form:get(id)`, `form:values()`, `form:set(id, { value, label, item
 ### Clipboard, system and network
 
 *   `sf.clipboard.get()` and `sf.clipboard.set(text)`.
-*   `sf.system.back()`, `home()`, `recents()`, `notifications()`, `quickSettings()`, `powerDialog()`, `lockScreen()`, `takeScreenshot()` and `allApps()`.
+*   `sf.system.back()`, `home()`, `recents()`, `notifications()`, `quickSettings()`, `powerDialog()`, `lockScreen()`, `takeScreenshot()` and `allApps()`. `takeScreenshot()` takes Android's own screenshot, and the image doesn't reach the script.
 *   `sf.system.openApp(packageName)`.
 *   `sf.system.apps()` *Version 2* lists the apps with a launcher icon: `{ package, label }`, by name.
 *   `sf.system.openUrl(url)` *Version 2* opens an `http`, `https`, `mailto`, `tel`, `sms`, `smsto`, `geo` or `market` address in the app for it.
@@ -558,10 +562,12 @@ SandFly's own gestures, which it recognizes only while a command or a script use
 
 ## Limits
 
-*   A script has 2 seconds to load, and 2 seconds for each call into it. Hooks that change speech have 250 milliseconds. Searching the screen counts toward that time.
+*   A script has 2 seconds to load, and 2 seconds for each call into it. Hooks that change speech share 30 milliseconds. `onActions` has 250 milliseconds, and its items reach the menu only if it answers within 50. Searching the screen counts toward that time.
 *   A script can use 32 MB of memory. `string.rep` can make text up to 8 MB.
 *   SandFly checks the time and memory every 10,000 Lua instructions, and stops the call with an error that `pcall` can't catch. A single library call, such as a pattern match on long text with several `.-` or `.*`, runs to its end, so keep patterns simple on long text.
-*   SandFly turns a script off after 5 errors in a minute, or after it runs out of time 3 times in 5 minutes, and says so.
+*   SandFly turns a script off after 5 errors in a minute, or after it runs out of time 3 times in 5 minutes, and says so. SandFly also turns a script off when one call holds up scripts for more than 20 seconds, and starts the other scripts again.
+*   A manifest can have up to 500 rules, 100 of them with `match`, 50 commands and 20 `navigation` entries.
+*   Text for speech and dialogs is cut at 20,000 characters, and braille text at 1,000. Keys in `sf.storage` and settings are 1 to 200 characters.
 
 ## If a script goes wrong
 
