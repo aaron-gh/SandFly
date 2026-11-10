@@ -210,6 +210,16 @@ public class SoundAndVibrationFragment extends TalkbackBaseFragment {
         PreferenceSettingsUtils.findPreference(activity, getString(R.string.pref_audio_output_device_key));
     if (preference instanceof ListPreference) {
       ListPreference listPref = (ListPreference) preference;
+      // The Audio output device reading control saves the setting while this screen is open.
+      String saved =
+          SharedPreferencesUtils.getStringPref(
+              SharedPreferencesUtils.getSharedPreferences(activity),
+              getResources(),
+              R.string.pref_audio_output_device_key,
+              R.string.pref_audio_output_device_default);
+      if (!TextUtils.equals(saved, listPref.getValue())) {
+        listPref.setValue(saved);
+      }
       AudioDeviceRouter.updatePreference(listPref, activity);
     }
   }

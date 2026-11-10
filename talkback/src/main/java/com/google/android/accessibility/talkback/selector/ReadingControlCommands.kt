@@ -63,6 +63,7 @@ object ReadingControlCommands {
       Entry(Setting.TABLET_HELD_UP_FACES_AWAY, R.string.title_selector_tablet_held_up_faces_away, toggle = true),
       Entry(Setting.SWITCH_TTS_ENGINE, R.string.title_selector_switch_tts_engine),
       Entry(Setting.SPEECH_STREAM, R.string.title_pref_speech_stream),
+      Entry(Setting.AUDIO_OUTPUT, R.string.title_pref_audio_output_device),
       Entry(Setting.EQUALIZER_32, R.string.title_selector_equalizer_32),
       Entry(Setting.EQUALIZER_64, R.string.title_selector_equalizer_64),
       Entry(Setting.EQUALIZER_125, R.string.title_selector_equalizer_125),

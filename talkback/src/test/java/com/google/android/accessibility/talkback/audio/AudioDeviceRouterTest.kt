@@ -62,4 +62,57 @@ class AudioDeviceRouterTest {
     assertEquals(3, (bolt as AudioTarget.SpecificDevice).type)
     assertEquals("Bolt earphones", bolt.name)
   }
+
+  private val choices =
+    listOf("default", "speaker", "device:8:Storm wireless audio", "device:3:Bolt wired headphones")
+
+  @Test
+  fun adjacentChoice_cyclesForwardAndWraps() {
+    assertEquals(1, AudioTarget.adjacentChoice(choices, "default", isNext = true))
+    assertEquals(3, AudioTarget.adjacentChoice(choices, "device:8:Storm wireless audio", isNext = true))
+    assertEquals(0, AudioTarget.adjacentChoice(choices, "device:3:Bolt wired headphones", isNext = true))
+  }
+
+  @Test
+  fun adjacentChoice_cyclesBackwardAndWraps() {
+    assertEquals(3, AudioTarget.adjacentChoice(choices, "default", isNext = false))
+    assertEquals(0, AudioTarget.adjacentChoice(choices, "speaker", isNext = false))
+  }
+
+  @Test
+  fun adjacentChoice_unsavedValueIsSystemDefault() {
+    assertEquals(1, AudioTarget.adjacentChoice(choices, null, isNext = true))
+    assertEquals(1, AudioTarget.adjacentChoice(choices, "", isNext = true))
+  }
+
+  @Test
+  fun adjacentChoice_findsAConnectedOutputByName() {
+    // Saved with another device type, such as when the same headset connected over another profile.
+    assertEquals(2, AudioTarget.indexOfChoice(choices, "device:7:storm wireless audio"))
+    assertEquals(3, AudioTarget.adjacentChoice(choices, "device:7:Storm wireless audio", isNext = true))
+  }
+
+  @Test
+  fun adjacentChoice_fromADisconnectedOutputStartsAtAnEnd() {
+    assertEquals(-1, AudioTarget.indexOfChoice(choices, "device:8:Zebronics bluetooth speaker"))
+    assertEquals(0, AudioTarget.adjacentChoice(choices, "device:8:Zebronics bluetooth speaker", isNext = true))
+    assertEquals(3, AudioTarget.adjacentChoice(choices, "device:8:Zebronics bluetooth speaker", isNext = false))
+  }
+
+  @Test
+  fun adjacentChoice_anyExternalIsTheFirstConnectedOutput() {
+    assertEquals(2, AudioTarget.indexOfChoice(choices, "bluetooth_or_wired"))
+    assertEquals(-1, AudioTarget.indexOfChoice(listOf("default", "speaker"), "bluetooth_or_wired"))
+  }
+
+  @Test
+  fun adjacentChoice_noChoices() {
+    assertEquals(-1, AudioTarget.adjacentChoice(emptyList(), "default", isNext = true))
+  }
+
+  @Test
+  fun deviceValue_parsesBack() {
+    val value = AudioTarget.deviceValue(8, "Storm wireless audio")
+    assertEquals(AudioTarget.SpecificDevice(8, "Storm wireless audio"), AudioTarget.parse(value))
+  }
 }

@@ -89,6 +89,7 @@ import com.google.android.accessibility.talkback.gesture.GestureLayout;
 import com.google.android.accessibility.talkback.preference.ItemOrder;
 import com.google.android.accessibility.talkback.UserInterface.UserInputEventListener;
 import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics;
+import com.google.android.accessibility.talkback.audio.AudioDeviceRouter;
 import com.google.android.accessibility.talkback.compositor.Compositor;
 import com.google.android.accessibility.talkback.compositor.CompositorUtils;
 import com.google.android.accessibility.talkback.contextmenu.ContextMenu;
@@ -518,7 +519,11 @@ public class SelectorController implements UserInputEventListener {
     GESTURE_PROFILE(
         R.string.pref_selector_gesture_profile_key,
         R.string.selector_gesture_profile,
-        R.bool.pref_selector_gesture_profile_default);
+        R.bool.pref_selector_gesture_profile_default),
+    AUDIO_OUTPUT(
+        R.string.pref_selector_audio_output_key,
+        R.string.selector_audio_output,
+        R.bool.pref_selector_audio_output_default);
 
     /** The preference key of the filter in the selector settings page. */
     final int prefKeyResId;
@@ -789,6 +794,7 @@ public class SelectorController implements UserInputEventListener {
           Setting.CONTROL_TELLING_TIME,
           Setting.SWITCH_TTS_ENGINE,
           Setting.SPEECH_STREAM,
+          Setting.AUDIO_OUTPUT,
           Setting.SWITCH_VOICE_PROFILE,
           Setting.EQUALIZER,
           Setting.EQUALIZER_32,
@@ -904,6 +910,8 @@ public class SelectorController implements UserInputEventListener {
       // Watches have no low-latency audio, which the equalizer needs.
       hiddenSettingsBuilder.add(Setting.EQUALIZER);
       hiddenSettingsBuilder.addAll(EQUALIZER_BANDS);
+      // Watches have no Audio output settings.
+      hiddenSettingsBuilder.add(Setting.AUDIO_OUTPUT);
     } else if (!FeatureSupport.doesServiceHandleDoubleTap()) {
       hiddenSettingsBuilder.add(ACTIONS);
       hiddenSettingsBuilder.add(Setting.LIVE_RECOGNITION);
@@ -1184,6 +1192,10 @@ public class SelectorController implements UserInputEventListener {
       }
       case SPEECH_STREAM -> {
         actionDescription = context.getString(R.string.title_pref_speech_stream);
+        hint = getAdjustSelectedSettingGestures();
+      }
+      case AUDIO_OUTPUT -> {
+        actionDescription = context.getString(R.string.title_pref_audio_output_device);
         hint = getAdjustSelectedSettingGestures();
       }
       case VERTICAL_NAVIGATION -> {
@@ -2507,6 +2519,10 @@ public class SelectorController implements UserInputEventListener {
         changeSpeechStream(eventId, isNext);
         return;
       }
+      case AUDIO_OUTPUT -> {
+        changeAudioOutput(eventId, isNext);
+        return;
+      }
       case VERTICAL_NAVIGATION -> {
         moveVertically(eventId, isNext);
         return;
@@ -2922,6 +2938,35 @@ public class SelectorController implements UserInputEventListener {
     prefs.edit().putString(FailoverTextToSpeech.PREF_SPEECH_STREAM_KEY, stream).apply();
     String[] names = context.getResources().getStringArray(R.array.pref_speech_stream_entries);
     String displayText = names[streams.indexOf(stream)];
+    announceSetting(eventId, displayText, getSelectSettingGestures());
+    showQuickMenuActionOverlay(eventId, displayText);
+  }
+
+  /**
+   * Moves the Audio output device setting to the next or previous of System default, Phone speaker
+   * and the outputs connected now, and says its name.
+   */
+  private void changeAudioOutput(EventId eventId, boolean isNext) {
+    List<kotlin.Pair<String, String>> choices = AudioDeviceRouter.outputChoices(context);
+    List<String> values = new ArrayList<>();
+    for (kotlin.Pair<String, String> choice : choices) {
+      values.add(choice.getFirst());
+    }
+    String current =
+        SharedPreferencesUtils.getStringPref(
+            prefs,
+            context.getResources(),
+            R.string.pref_audio_output_device_key,
+            R.string.pref_audio_output_device_default);
+    int index = AudioDeviceRouter.AudioTarget.adjacentChoice(values, current, isNext);
+    if (index < 0) {
+      return;
+    }
+    prefs
+        .edit()
+        .putString(context.getString(R.string.pref_audio_output_device_key), values.get(index))
+        .apply();
+    String displayText = choices.get(index).getSecond();
     announceSetting(eventId, displayText, getSelectSettingGestures());
     showQuickMenuActionOverlay(eventId, displayText);
   }
