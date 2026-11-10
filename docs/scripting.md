@@ -131,7 +131,7 @@ sf.speak('This is a ' .. Build.MODEL)
 
 Calls into the script hold the script's Lua state, so a Java object made with `java.proxy` and called from another thread waits until the script's current call ends. Don't wait in the script for something that needs SandFly's main thread.
 
-A script [loaded on demand](#scripts-loaded-on-demand) isn't kept loaded for a `java.proxy` object. SandFly can't tell that a call to one is still to come, so the script must stay busy with `sf.sleep` or a timer until that call has finished.
+In a script [loaded on demand](#scripts-loaded-on-demand), each object made with `java.proxy` keeps the script loaded until the first call to one of its methods has finished, or for 30 seconds, for up to 100 objects at once. After the script unloads, calling a method does nothing and gives `nil`, 0 or `false`. A listener that stays registered needs a script without `onDemand`. A table or function passed straight to a Java method doesn't count, so use `java.proxy` for those.
 
 ## Rules
 
@@ -347,7 +347,7 @@ If a command runs while its script is off, in an app the script doesn't list, or
 
 #### Scripts loaded on demand
 
-*Version 4.* With `onDemand = true`, a script uses no memory until one of its commands runs. SandFly loads it, runs the command, and unloads it about 2 seconds after it has no dialog or window open, no timer set and nothing it is waiting for. A `java.proxy` object doesn't count: see [Java](#java). [examples/wikipedia-search.lua](scripting/examples/wikipedia-search.lua) is one.
+*Version 4.* With `onDemand = true`, a script uses no memory until one of its commands runs. SandFly loads it, runs the command, and unloads it about 2 seconds after it has no dialog or window open, no timer set, nothing it is waiting for and no [`java.proxy` object](#java) still to be called. [examples/wikipedia-search.lua](scripting/examples/wikipedia-search.lua) is one.
 
 Variables are lost when the script unloads, so use [`sf.storage`](#storage) for what should last. Hooks run only while the script is loaded. The manifest can't have `apps`, `rules`, `navigation` or button settings, each command has only `id` and `title`, `sf.bind` and `sf.unbind` raise an error, and the script's page doesn't list its commands.
 

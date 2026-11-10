@@ -311,6 +311,73 @@ class LuaEngineTest {
     assertEquals(listOf("nil"), host.spoken())
   }
 
+  private fun runOnDemand(source: String) {
+    host.answers["manifest"] = { """{"commands":[],"onDemand":true}""" }
+    host.answers["proxy.watch"] = { "7" }
+    run(source, java = true)
+  }
+
+  private fun proxyCalls(name: String) = host.calls.filter { it.first == name }
+
+  @Test
+  fun anOnDemandProxyIsWatchedUntilItsFirstCallEnds() {
+    runOnDemand(
+      """
+      local proxy = java.proxy('java.lang.Runnable', { run = function() sf.speak('ran') end })
+      sf.speak('made')
+      proxy:run()
+      proxy:run()
+      """
+    )
+    assertEquals(listOf("made", "ran", "ran"), host.spoken())
+    assertEquals(1, proxyCalls("proxy.watch").size)
+    assertEquals(7, proxyCalls("proxy.done").single().second!!.getInt("id"))
+    val names = host.calls.map { it.first }.filter { it == "speak" || it == "proxy.done" }
+    assertEquals(listOf("speak", "speak", "proxy.done", "speak"), names)
+  }
+
+  @Test
+  fun aFailingOnDemandProxyCallStillEndsTheWatch() {
+    runOnDemand(
+      """
+      local proxy = java.proxy('java.lang.Runnable', { run = function() error('broken') end })
+      sf.speak(tostring(pcall(function() proxy:run() end)))
+      """
+    )
+    assertEquals(listOf("false"), host.spoken())
+    assertEquals(1, proxyCalls("proxy.done").size)
+  }
+
+  @Test
+  fun anOnDemandProxyDoesNothingOnceTheScriptIsClosed() {
+    runOnDemand(
+      """
+      local holder = java.import('${ProxyHolder::class.java.name}')
+      holder:put(java.proxy('java.util.function.Supplier', { get = function() return 'x' end }))
+      holder:put(java.proxy('java.lang.Runnable', { run = function() end }))
+      holder:put(java.proxy('java.util.function.BooleanSupplier', { getAsBoolean = function() return true end }))
+      """
+    )
+    engine!!.close()
+    (ProxyHolder.values[1] as Runnable).run()
+    assertEquals(false, (ProxyHolder.values[2] as java.util.function.BooleanSupplier).asBoolean)
+    assertEquals(null, (ProxyHolder.values[0] as java.util.function.Supplier<*>).get())
+    ProxyHolder.values.clear()
+  }
+
+  @Test
+  fun proxiesOfOtherScriptsAreNotWatched() {
+    run(
+      """
+      java.proxy('java.lang.Runnable', { run = function() end }):run()
+      sf.speak('done')
+      """,
+      java = true,
+    )
+    assertEquals(listOf("done"), host.spoken())
+    assertEquals(0, proxyCalls("proxy.watch").size)
+  }
+
   @Test
   fun withTheJavaPermissionTheScriptHasJava() {
     run("sf.speak(java.import('java.lang.Integer'):toString(42))", java = true)
@@ -570,5 +637,15 @@ class LuaEngineTest {
     } catch (e: LuaEngine.ScriptError) {
       assertTrue(e.message, e.interrupted)
     }
+  }
+}
+
+/** Takes proxies from test scripts, so that a test can call them after the script has closed. */
+object ProxyHolder {
+  val values = mutableListOf<Any>()
+
+  @JvmStatic
+  fun put(value: Any) {
+    values += value
   }
 }
