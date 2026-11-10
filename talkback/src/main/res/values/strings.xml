@@ -286,6 +286,12 @@
       Description: Controls how high or low TalkBack's voice sounds. [CHAR LIMIT=NONE]
     -->
     <string name="title_pref_speech_pitch">Speech pitch</string>
+    <!-- Title of the text-to-speech setting that chooses the voice profile emoji are spoken with: its speech engine, voice, rate and pitch. [CHAR LIMIT=40] -->
+    <string name="title_pref_emoji_voice">Emoji voice</string>
+    <!-- Choice of Emoji voice: emoji are spoken with the same voice as other speech. [CHAR LIMIT=40] -->
+    <string name="value_emoji_voice_same">Same as speech</string>
+    <!-- Title of the text-to-speech setting for the rate emoji are spoken at, as a percentage of the speech rate. [CHAR LIMIT=40] -->
+    <string name="title_pref_emoji_rate">Emoji speech rate</string>
     <!-- Title of the setting, and of the reading control, that chooses which volume speech and sounds play at: accessibility, media, ring or call. [CHAR LIMIT=40] -->
     <string name="title_pref_speech_stream">Speech volume</string>
     <!-- Summary of the Speech volume reading control in the reading controls settings. [CHAR LIMIT=NONE] -->

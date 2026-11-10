@@ -426,6 +426,8 @@ public class FeedbackProcessingUtils {
         TextFormattingUtils.getFormattingSpanClasses(formattingOptions);
     formattingClasses.add(LocaleSpan.class);
     formattingClasses.add(BASE_CLICKABLE_SPAN);
+    // Emoji are fragments of their own while they have their own voice or rate.
+    formattingClasses.add(EmojiSpeech.Mark.class);
     for (int i = 0; i < item.getFragments().size(); ++i) {
       final FeedbackFragment fragment = item.getFragments().get(i);
       CharSequence fragmentText = fragment.getText();
@@ -457,6 +459,7 @@ public class FeedbackProcessingUtils {
         if (!usePunctuation
             && !isPrecedingCharSpace
             && next < len
+            && !EmojiSpeech.startsMark(spannable, next)
             && SpeechCleanupUtils.characterToName(context, fragmentText.charAt(next)) != null
             && !SpannableUtils.isWrappedWithTargetSpan(
                 fragmentText.subSequence(next, next + 1),
@@ -464,6 +467,8 @@ public class FeedbackProcessingUtils {
                 false)) {
           next += 1;
         }
+        // The fragment of a mark, with any punctuation added to it above.
+        boolean isEmoji = EmojiSpeech.isMarked(spannable, begin, begin + 1);
         // Use CharacterStyle to find all the text formatting in character level.
         CharacterStyle[] spans = spannable.getSpans(begin, next, CharacterStyle.class);
         boolean isClickableSpan = false;
@@ -528,6 +533,11 @@ public class FeedbackProcessingUtils {
         if (isClickableSpan) {
           handleClickableSpan(newFragment);
         }
+        if (isEmoji) {
+          Bundle emojiParams = new Bundle(newFragment.getSpeechParams());
+          emojiParams.putBoolean(EmojiSpeech.SPEECH_PARAM_EMOJI, true);
+          newFragment.setSpeechParams(emojiParams);
+        }
         formattingInfos.put(i, textFormattingInline);
       }
     }
@@ -580,7 +590,9 @@ public class FeedbackProcessingUtils {
    * <li>2. The span is in a full word.
    */
   private static boolean isValidSpan(Spannable spannable, int index, Class<?> type, int options) {
-    if (type == ClickableSpan.class || type == LocaleSpan.class) {
+    if (type == ClickableSpan.class
+        || type == LocaleSpan.class
+        || type == EmojiSpeech.Mark.class) {
       return true;
     }
     Object[] spans = spannable.getSpans(index, index, type);

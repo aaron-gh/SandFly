@@ -413,6 +413,7 @@
     </string-array>
     <string name="pref_selector_switch_tts_engine_key" translatable="false">pref_selector_switch_tts_engine_key</string>
     <string name="pref_selector_speech_stream_key" translatable="false">pref_selector_speech_stream_key</string>
+    <string name="pref_selector_audio_output_key" translatable="false">pref_selector_audio_output_key</string>
     <string name="pref_selector_sound_mode_key" translatable="false">pref_selector_sound_mode_key</string>
     <string name="pref_selector_equalizer_key" translatable="false">pref_selector_equalizer_key</string>
     <string name="pref_selector_equalizer_32_key" translatable="false">pref_selector_equalizer_32_key</string>
@@ -2021,6 +2022,7 @@
     <bool name="pref_selector_text_entities_default">false</bool>
     <bool name="pref_selector_switch_tts_engine_default">false</bool>
     <bool name="pref_selector_speech_stream_default">false</bool>
+    <bool name="pref_selector_audio_output_default">false</bool>
     <bool name="pref_selector_sound_mode_default">false</bool>
     <bool name="pref_selector_equalizer_default">false</bool>
     <bool name="pref_selector_auto_translation_default">false</bool>
@@ -2398,6 +2400,7 @@
     <string name="selector_text_entities" translatable="false">SELECTOR_TEXT_ENTITIES</string>
     <string name="selector_switch_tts_engine" translatable="false">SELECTOR_SWITCH_TTS_ENGINE</string>
     <string name="selector_speech_stream" translatable="false">SELECTOR_SPEECH_STREAM</string>
+    <string name="selector_audio_output" translatable="false">SELECTOR_AUDIO_OUTPUT</string>
     <string name="selector_sound_mode" translatable="false">SELECTOR_SOUND_MODE</string>
     <string name="selector_equalizer" translatable="false">SELECTOR_EQUALIZER</string>
     <string name="selector_equalizer_32" translatable="false">SELECTOR_EQUALIZER_32</string>

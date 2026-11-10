@@ -4209,6 +4209,8 @@ public class TalkBackService extends AccessibilityServiceCompat
                 res,
                 R.string.pref_punctuation_verbosity,
                 R.string.pref_punctuation_verbosity_default)));
+    // Before the mode, which keeps the emoji loaded while emoji have a voice or rate of their own.
+    EmojiSpeech.setVoice(prefs);
     EmojiSpeech.setMode(
         this,
         SharedPreferencesUtils.getStringPref(

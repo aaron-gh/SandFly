@@ -70,6 +70,49 @@ class AudioDeviceRouter @JvmOverloads constructor(
     data class SpecificDevice(val type: Int, val name: String) : AudioTarget()
 
     companion object {
+      /** The saved values of the Audio output device choices. */
+      const val VALUE_DEFAULT = "default"
+      const val VALUE_SPEAKER = "speaker"
+      const val DEVICE_PREFIX = "device:"
+
+      /** The saved value of the choice of a connected output. */
+      @JvmStatic fun deviceValue(type: Int, name: String): String = "$DEVICE_PREFIX$type:$name"
+
+      /**
+       * The index in [values], the Audio output device choices, of the saved value [current]: the
+       * same value, or the connected output of the same name, or for any external output the first
+       * connected one. -1 if none is, such as for an output no longer connected.
+       */
+      @JvmStatic
+      fun indexOfChoice(values: List<String>, current: String?): Int {
+        val exact = values.indexOf(current.orEmpty())
+        if (exact >= 0) return exact
+        return when (val target = parse(current)) {
+          SystemDefault -> values.indexOf(VALUE_DEFAULT)
+          PhoneSpeaker -> values.indexOf(VALUE_SPEAKER)
+          AnyExternal -> values.indexOfFirst { it.startsWith(DEVICE_PREFIX) }
+          is SpecificDevice ->
+            values.indexOfFirst {
+              val choice = parse(it)
+              choice is SpecificDevice && choice.name.equals(target.name, ignoreCase = true)
+            }
+        }
+      }
+
+      /**
+       * The index in [values] of the choice after, or before, the saved value [current], wrapping
+       * around. From a value that isn't among them, the first choice, or the last going back. -1 if
+       * there are no choices.
+       */
+      @JvmStatic
+      fun adjacentChoice(values: List<String>, current: String?, isNext: Boolean): Int {
+        if (values.isEmpty()) return -1
+        val index = indexOfChoice(values, current)
+        if (index < 0) return if (isNext) 0 else values.lastIndex
+        val step = if (isNext) 1 else -1
+        return Math.floorMod(index + step, values.size)
+      }
+
       fun parse(value: String?): AudioTarget {
         if (value.isNullOrEmpty() || value == "default") return SystemDefault
         if (value == "speaker") return PhoneSpeaker
@@ -881,6 +924,38 @@ class AudioDeviceRouter @JvmOverloads constructor(
     }
 
     /**
+     * The Audio output device choices, as saved value and name: System default, Phone speaker, and
+     * each connected external output, once by name.
+     */
+    @JvmStatic
+    fun outputChoices(context: Context): List<Pair<String, String>> {
+      val audioManager = context.getSystemService(Context.AUDIO_SERVICE) as? AudioManager
+      val devices = audioManager?.getDevices(AudioManager.GET_DEVICES_OUTPUTS) ?: emptyArray()
+      return outputChoices(context, devices.filter { isExternalDevice(it) })
+    }
+
+    private fun outputChoices(
+      context: Context,
+      externalDevices: List<AudioDeviceInfo>,
+    ): List<Pair<String, String>> {
+      val choices = mutableListOf<Pair<String, String>>()
+      choices.add(
+        AudioTarget.VALUE_DEFAULT to context.getString(R.string.value_audio_output_device_default)
+      )
+      choices.add(
+        AudioTarget.VALUE_SPEAKER to context.getString(R.string.value_audio_output_device_speaker)
+      )
+      val seenNames = mutableSetOf<String>()
+      for (dev in externalDevices) {
+        val displayName = getDeviceDisplayName(dev, context)
+        if (seenNames.add(displayName)) {
+          choices.add(AudioTarget.deviceValue(dev.type, displayName) to displayName)
+        }
+      }
+      return choices
+    }
+
+    /**
      * Dynamically populates entries and entry values for the audio output device [ListPreference].
      */
     @JvmStatic
@@ -891,26 +966,12 @@ class AudioDeviceRouter @JvmOverloads constructor(
 
       val externalDevices = connectedDevices.filter { isExternalDevice(it) }
 
-      val entries = mutableListOf<CharSequence>()
-      val entryValues = mutableListOf<CharSequence>()
+      val choices = outputChoices(context, externalDevices)
+      val entries = choices.map { it.second }
+      val entryValues = choices.map { it.first }
 
-      entries.add(context.getString(R.string.value_audio_output_device_default))
-      entryValues.add("default")
-
-      entries.add(context.getString(R.string.value_audio_output_device_speaker))
-      entryValues.add("speaker")
-
-      val seenNames = mutableSetOf<String>()
-      for (dev in externalDevices) {
-        val displayName = getDeviceDisplayName(dev, context)
-        if (seenNames.add(displayName)) {
-          entries.add(displayName)
-          entryValues.add("device:${dev.type}:$displayName")
-        }
-      }
-
-      preference.entries = entries.toTypedArray()
-      preference.entryValues = entryValues.toTypedArray()
+      preference.entries = entries.toTypedArray<CharSequence>()
+      preference.entryValues = entryValues.toTypedArray<CharSequence>()
 
       val currentValue = preference.value
       val currentTarget = AudioTarget.parse(currentValue)
