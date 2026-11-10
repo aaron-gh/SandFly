@@ -113,17 +113,13 @@ public final class PageConfigMapperImpl implements PageConfigMapper {
       case PAGE_ID_VOICE_COMMAND_OTHER_COMMANDS:
         return VoiceCommandAndHelpConfigs.VoiceCommandOtherCommands.build();
       case PAGE_ID_SANDFLY_GESTURES:
-        return OnboardingConfigs.sandflyGestures.build();
+        return OnboardingConfigs.sandflyApps.build();
       case PAGE_ID_SANDFLY_SPEECH:
         return OnboardingConfigs.sandflySpeech.build();
-      case PAGE_ID_SANDFLY_BRAILLE:
-        return OnboardingConfigs.sandflyBraille.build();
       case PAGE_ID_SANDFLY_COMMANDS:
-        return OnboardingConfigs.sandflyCommands.build();
+        return OnboardingConfigs.sandflyNavigation.build();
       case PAGE_ID_SANDFLY_AI:
         return OnboardingConfigs.sandflyAi.build();
-      case PAGE_ID_SANDFLY_OTHER:
-        return OnboardingConfigs.sandflyOther.build();
       case PAGE_ID_UPDATE_WELCOME:
         return OnboardingConfigs.updateWelcome.build();
       case PAGE_ID_NEW_SETTINGS_LAYOUT:
