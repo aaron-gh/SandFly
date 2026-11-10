@@ -22,6 +22,7 @@ import androidx.preference.MultiSelectListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceScreen;
 import com.google.android.accessibility.talkback.R;
+import com.google.android.accessibility.talkback.commands.CommandMenus;
 import com.google.android.accessibility.talkback.preference.ItemOrder;
 import com.google.android.accessibility.talkback.recognition.LiveRecognition;
 import com.google.android.accessibility.talkback.selector.AiActions;
@@ -32,6 +33,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import kotlin.Pair;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 /** Reading controls: the controls in the list, in order, and those that aren't. */
@@ -55,7 +57,29 @@ public class SelectorMenuFragment extends ItemListFragment {
 
   @Override
   protected List<String> defaultOrder(Context context) {
-    return SelectorController.defaultOrderKeys(context);
+    List<String> keys = new ArrayList<>(SelectorController.defaultOrderKeys(context));
+    for (CommandMenus.Menu control :
+        CommandMenus.controls(SharedPreferencesUtils.getSharedPreferences(context))) {
+      keys.add(control.getId());
+    }
+    return keys;
+  }
+
+  @Override
+  protected int extraGroupTitle() {
+    return R.string.title_pref_custom_reading_controls;
+  }
+
+  @Override
+  protected List<Pair<String, CharSequence>> extraItems(Context context) {
+    List<Pair<String, CharSequence>> items = new ArrayList<>();
+    if (FeatureSupport.doesServiceHandleDoubleTap()) {
+      for (CommandMenus.Menu control :
+          CommandMenus.controls(SharedPreferencesUtils.getSharedPreferences(context))) {
+        items.add(new Pair<>(control.getId(), control.getName()));
+      }
+    }
+    return items;
   }
 
   @Override

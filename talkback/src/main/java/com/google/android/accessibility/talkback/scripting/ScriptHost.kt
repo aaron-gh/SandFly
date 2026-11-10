@@ -163,9 +163,21 @@ class ScriptItemAction(val title: String, private val action: () -> Unit) {
 class ScriptReadingControl(
   val key: String,
   val title: String,
+  private val activator: (() -> Boolean)? = null,
+  private val choice: (() -> CharSequence?)? = null,
   private val adjuster: (Boolean) -> Unit,
 ) {
   fun adjust(isNext: Boolean) = adjuster(isNext)
+
+  /** Whether double-tap does something while this control is selected. */
+  val activates: Boolean
+    get() = activator != null
+
+  /** Does what double-tap does while this control is selected. Returns false if nothing ran. */
+  fun activate(): Boolean = activator?.invoke() ?: false
+
+  /** What is spoken when this control is selected: its title and what it has chosen, if any. */
+  fun announcement(): CharSequence = choice?.invoke()?.let { "$title, $it" } ?: title
 }
 
 object Scripts {

@@ -60,6 +60,12 @@ abstract class ItemListFragment(xmlResId: Int) :
   /** Returns the key of every item, in the list's default order. */
   protected abstract fun defaultOrder(context: Context): List<String>
 
+  /** The title of the group of items that aren't in the XML screen, 0 without such items. */
+  @StringRes protected open fun extraGroupTitle(): Int = 0
+
+  /** The key and title of each item that isn't in the XML screen, in the list by default. */
+  protected open fun extraItems(context: Context): List<Pair<String, CharSequence>> = emptyList()
+
   /** Hides the items and options of [screen], the XML screen, that this device can't use. */
   protected open fun hideUnavailable(screen: PreferenceScreen) {}
 
@@ -85,6 +91,9 @@ abstract class ItemListFragment(xmlResId: Int) :
   private val groups = ArrayList<AccessibilitySuitePreferenceCategory>()
   // The options of items, each with the keys of its items.
   private val itemOptions = LinkedHashMap<Preference, List<String>>()
+  // The items that aren't in the XML screen, and the index of their group.
+  private val extraKeys = LinkedHashSet<String>()
+  private var extraGroup = -1
 
   override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
     super.onCreatePreferences(savedInstanceState, rootKey)
@@ -126,6 +135,17 @@ abstract class ItemListFragment(xmlResId: Int) :
       }
     }
     read(xmlScreen, -1)
+    if (extraGroupTitle() != 0) {
+      extraGroup = groupTitles.size
+      groupTitles += getString(extraGroupTitle())
+      for ((index, extra) in extraItems(context).withIndex()) {
+        items[extra.first] = Item(extra.first, extra.second, null, extraGroup, index)
+        extraKeys += extra.first
+        if (prefs.getBoolean(extra.first, true)) {
+          enabled += extra.first
+        }
+      }
+    }
     options.forEach { it.parent?.removePreference(it) }
     itemOptions.keys.forEach { it.parent?.removePreference(it) }
     // Options of items that this device hides go with them.
@@ -188,6 +208,51 @@ abstract class ItemListFragment(xmlResId: Int) :
       getString(R.string.category_collapsed),
       getString(R.string.category_expanded),
     )
+  }
+
+  override fun onResume() {
+    super.onResume()
+    if (!FormFactorUtils.isAndroidWear() && extraGroupTitle() != 0) {
+      syncExtraItems()
+    }
+  }
+
+  /** Adds, renames and removes the items that aren't in the XML screen, which change elsewhere. */
+  private fun syncExtraItems() {
+    val context = requireContext()
+    val extras = extraItems(context).toMap()
+    for (key in extraKeys.filter { it !in extras }) {
+      extraKeys -= key
+      items.remove(key)
+      current.remove(key)
+      for (row in listOf(rowKey(key), availableKey(key))) {
+        findPreference<Preference>(row)?.let { it.parent?.removePreference(it) }
+      }
+    }
+    var added = false
+    extras.entries.forEachIndexed { index, (key, title) ->
+      if (key in extraKeys) {
+        items[key] = Item(key, title, null, extraGroup, index)
+        findPreference<Preference>(rowKey(key))?.title = title
+        findPreference<Preference>(availableKey(key))?.title = title
+      } else {
+        extraKeys += key
+        val item = Item(key, title, null, extraGroup, index)
+        items[key] = item
+        if (prefs.getBoolean(key, true)) {
+          current += key
+          addRow(currentCategory, CurrentRow(context, key, current.size - 1))
+          added = true
+        } else {
+          addRow(groups[extraGroup], AvailableRow(context, item))
+        }
+      }
+    }
+    if (added) {
+      fullOrder = ItemOrder.ordered(prefs, orderKey, defaultOrder(context))
+      save()
+    }
+    renumber()
   }
 
   private fun title(key: String): CharSequence = items[key]?.title ?: key

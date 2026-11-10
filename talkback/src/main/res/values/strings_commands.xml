@@ -130,6 +130,10 @@
     <string name="shortcut_script_commands">Script commands</string>
     <!-- Name of a command that makes a reading control the selected one. control is its name. [CHAR LIMIT=60] -->
     <string name="shortcut_set_reading_control">Set reading control to <xliff:g id="control" example="Headings">%1$s</xliff:g></string>
+    <!-- Title of the settings screen of reading controls the user makes from commands, and the group of them in the Reading controls screen. [CHAR LIMIT=40] -->
+    <string name="title_pref_custom_reading_controls">Custom reading controls</string>
+    <!-- Button that makes a new custom reading control. [CHAR LIMIT=40] -->
+    <string name="menu_add_reading_control">Add reading control</string>
     <!-- Button that adds a submenu to a menu. [CHAR LIMIT=40] -->
     <string name="menu_add_submenu">Add submenu</string>
     <!-- Button that makes a new custom menu. [CHAR LIMIT=40] -->
