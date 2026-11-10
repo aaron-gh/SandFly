@@ -37,6 +37,7 @@ import android.widget.GridLayout
 import android.widget.LinearLayout
 import android.widget.ScrollView
 import android.widget.TextView
+import androidx.activity.OnBackPressedCallback
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -93,6 +94,24 @@ class OverviewActivity : AppCompatActivity() {
   /** The view that gets accessibility focus when the overview's window has input focus. */
   private var pendingFocus: View? = null
   private var loaded = false
+
+  /** Whether the system's overview is open behind this one. */
+  private var overSystemOverview = false
+
+  /** Back returns to where the system's overview was opened, not to the system's overview. */
+  private val leaveSystemOverview =
+    object : OnBackPressedCallback(false) {
+      override fun handleOnBackPressed() {
+        val task = tasks.firstOrNull()
+        if (task != null && !SystemOverviewRedirect.openedFromHome()) {
+          switchTo(task)
+        } else {
+          TalkBackService.getInstance()?.performGlobalAction(AccessibilityService.GLOBAL_ACTION_HOME)
+          finish()
+        }
+      }
+    }
+
   /** Whether the tasks couldn't be read. */
   private var failed = false
   private var loading = false
@@ -119,10 +138,7 @@ class OverviewActivity : AppCompatActivity() {
         visibility = View.GONE
       }
     systemOverview =
-      button(R.string.overview_system, Gravity.BOTTOM or Gravity.END) {
-        TalkBackService.getInstance()?.performGlobalAction(AccessibilityService.GLOBAL_ACTION_RECENTS)
-        finish()
-      }
+      button(R.string.overview_system, Gravity.BOTTOM or Gravity.END) { openSystemOverview() }
     scroll =
       ScrollView(this).apply {
         isFillViewport = true
@@ -151,6 +167,30 @@ class OverviewActivity : AppCompatActivity() {
       insets
     }
     setContentView(root)
+    onBackPressedDispatcher.addCallback(this, leaveSystemOverview)
+    readIntent()
+  }
+
+  override fun onNewIntent(intent: Intent) {
+    super.onNewIntent(intent)
+    setIntent(intent)
+    readIntent()
+  }
+
+  private fun readIntent() {
+    overSystemOverview = intent.getBooleanExtra(EXTRA_OVER_SYSTEM_OVERVIEW, false)
+    leaveSystemOverview.isEnabled = overSystemOverview
+  }
+
+  private fun openSystemOverview() {
+    val service = TalkBackService.getInstance()
+    if (overSystemOverview) {
+      service?.let { SystemOverviewRedirect.showCoveredOverview(it) }
+    } else {
+      SystemOverviewRedirect.keepSystemOverview()
+      service?.performGlobalAction(AccessibilityService.GLOBAL_ACTION_RECENTS)
+    }
+    finish()
   }
 
   override fun onStart() {
@@ -171,6 +211,7 @@ class OverviewActivity : AppCompatActivity() {
   override fun onResume() {
     super.onResume()
     resumed++
+    SystemOverviewRedirect.onOverviewShown()
   }
 
   override fun onPause() {
@@ -531,6 +572,8 @@ class OverviewActivity : AppCompatActivity() {
       .toInt()
 
   companion object {
+    private const val EXTRA_OVER_SYSTEM_OVERVIEW = "over_system_overview"
+
     /** Longer than the screen reader takes to say the window's title when its menu closes. */
     private const val REFOCUS_DELAY_MS = 300L
 
@@ -581,6 +624,20 @@ class OverviewActivity : AppCompatActivity() {
         }
       }
       return true
+    }
+
+    /**
+     * Opens the overview on top of the system's, which is already on screen. The app windows under
+     * the system's overview aren't known, so [PreviousApp] takes the first task to be on screen.
+     */
+    fun openOverSystemOverview(service: AccessibilityService) {
+      openedFromPackages = emptyList()
+      val appContext = service.applicationContext
+      appContext.startActivity(
+        Intent(appContext, OverviewActivity::class.java)
+          .putExtra(EXTRA_OVER_SYSTEM_OVERVIEW, true)
+          .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
+      )
     }
   }
 }
