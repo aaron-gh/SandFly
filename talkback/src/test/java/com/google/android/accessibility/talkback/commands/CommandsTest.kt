@@ -17,10 +17,14 @@
 package com.google.android.accessibility.talkback.commands
 
 import android.content.Context
+import android.content.pm.PackageManager
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.keyboard.TalkBackPhysicalKeyboardShortcut
+import com.google.android.accessibility.talkback.recognition.LiveRecognition
+import com.google.android.accessibility.talkback.recognition.RecognitionMode
 import com.google.android.accessibility.utils.FormFactorUtils
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNotNull
 import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
@@ -29,6 +33,7 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.RuntimeEnvironment
+import org.robolectric.Shadows.shadowOf
 import org.robolectric.annotation.Config
 
 @RunWith(RobolectricTestRunner::class)
@@ -44,6 +49,32 @@ class CommandsTest {
   }
 
   private fun allCommands() = Commands.categories(context).flatMap { it.commands }
+
+  @Test
+  fun liveRecognitionModesAreCommandsWithACamera() {
+    shadowOf(context.packageManager).setSystemFeature(PackageManager.FEATURE_CAMERA, true)
+    val values = allCommands().map { it.value }
+    for (mode in RecognitionMode.entries) {
+      val value = LiveRecognition.commandOf(mode)
+      assertTrue(value in values)
+      assertTrue(LiveRecognition.isCommand(value))
+    }
+    assertTrue(LiveRecognition.STOP_COMMAND in values)
+    assertFalse(LiveRecognition.isCommand("LIVE_RECOGNITION_OTHER"))
+  }
+
+  @Test
+  fun newFeatureCommandsAreListed() {
+    val values = allCommands().map { it.value }
+    for (res in
+      listOf(
+        R.string.shortcut_value_text_entities,
+        R.string.shortcut_value_toggle_auto_translation,
+        R.string.shortcut_value_toggle_equalizer,
+      )) {
+      assertTrue(context.getString(res) in values)
+    }
+  }
 
   @Test
   fun everyCommandIsListedOnce() {

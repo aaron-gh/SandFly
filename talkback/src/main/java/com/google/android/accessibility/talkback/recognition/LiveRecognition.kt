@@ -33,6 +33,11 @@ import java.lang.ref.WeakReference
 
 /** Connects the Live recognition reading control to [LiveRecognitionActivity]. Main thread only. */
 object LiveRecognition {
+  private const val COMMAND_PREFIX = "LIVE_RECOGNITION_"
+
+  /** The value of the command that stops recognition. */
+  const val STOP_COMMAND = COMMAND_PREFIX + "STOP"
+
   private var activity = WeakReference<LiveRecognitionActivity>(null)
   private var selected = RecognitionMode.SCENES
   private var questions: ImageQuestions? = null
@@ -72,18 +77,42 @@ object LiveRecognition {
     return selection(context)
   }
 
-  @JvmStatic fun toggle(context: Context) {
+  @JvmStatic fun toggle(context: Context) = toggle(context, selected)
+
+  private fun toggle(context: Context, mode: RecognitionMode) {
     val current = activity.get()
     if (current != null) {
-      if (current.canUseRotor()) current.toggle(selected)
+      if (current.canUseRotor()) current.toggle(mode)
     } else {
       context.startActivity(Intent(context, LiveRecognitionActivity::class.java)
         .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_SINGLE_TOP)
-        .putExtra(LiveRecognitionActivity.EXTRA_MODE, selected.name))
+        .putExtra(LiveRecognitionActivity.EXTRA_MODE, mode.name))
     }
   }
 
-  @JvmStatic fun stop() { activity.get()?.stopAndFinish() }
+  /** Stops recognition and closes its screen. Returns false when the screen isn't showing. */
+  @JvmStatic fun stop(): Boolean {
+    val current = activity.get() ?: return false
+    current.stopAndFinish()
+    return true
+  }
+
+  /** Returns the value of the command that turns [mode] on or off. */
+  fun commandOf(mode: RecognitionMode): String = COMMAND_PREFIX + mode.name
+
+  internal fun modeOfCommand(value: String): RecognitionMode? =
+    RecognitionMode.entries.firstOrNull { commandOf(it) == value }
+
+  /** Whether [value] is the value of a Live recognition command. */
+  @JvmStatic fun isCommand(value: String): Boolean =
+    value == STOP_COMMAND || modeOfCommand(value) != null
+
+  /** Runs the Live recognition command [value]. Returns false when it did nothing. */
+  @JvmStatic fun runCommand(context: Context, value: String): Boolean {
+    if (value == STOP_COMMAND) return stop()
+    toggle(context, modeOfCommand(value) ?: return false)
+    return true
+  }
 
   @JvmStatic fun onGesture(gestureId: Int): Boolean {
     val current = activity.get() ?: return false
