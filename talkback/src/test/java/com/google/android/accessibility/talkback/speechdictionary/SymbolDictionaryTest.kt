@@ -21,6 +21,7 @@ import android.text.SpannableString
 import android.text.Spanned
 import android.text.style.LocaleSpan
 import com.google.android.accessibility.talkback.notifications.Replacement
+import com.google.android.accessibility.utils.output.SpeechCleanupUtils
 import java.util.Locale
 import org.junit.After
 import org.junit.Assert.assertEquals
@@ -49,6 +50,7 @@ class SymbolDictionaryTest {
   fun clearEntries() {
     prefs.edit().clear().commit()
     SymbolDictionary.load(prefs)
+    SpeechDictionary.load(RuntimeEnvironment.getApplication(), prefs)
   }
 
   @Test
@@ -154,5 +156,34 @@ class SymbolDictionaryTest {
     SpeechDictionary.onWindowShown("com.example")
 
     assertEquals("a b", SpeechDictionary.applyInCurrentApp("a.b", emptyList()).toString())
+  }
+
+  @Test
+  fun characterOnItsOwnKeepsItsTextForItsEntry() {
+    val context = RuntimeEnvironment.getApplication()
+    SymbolDictionary.write(prefs, listOf(entry("#", "hashmark"), entry(".", " ")))
+    prefs.edit().commit()
+    SymbolDictionary.load(prefs)
+    SpeechDictionary.load(context, prefs)
+    SpeechDictionary.onWindowShown("com.example")
+
+    assertEquals("#", SpeechCleanupUtils.getCleanValueFor(context, '#'))
+    assertNull(SpeechCleanupUtils.characterToName(context, '#'))
+    assertEquals("hashmark", SpeechDictionary.apply("#").toString())
+    // An entry that removes the character from speech leaves its name.
+    assertEquals(SpeechCleanupUtils.characterToName(context, '.'), SpeechCleanupUtils.getCleanValueFor(context, '.'))
+    assertTrue(SpeechCleanupUtils.getCleanValueFor(context, '.') != ".")
+  }
+
+  @Test
+  fun characterInSandFlyWindowsKeepsItsName() {
+    val context = RuntimeEnvironment.getApplication()
+    SymbolDictionary.write(prefs, listOf(entry("#", "hashmark")))
+    prefs.edit().commit()
+    SymbolDictionary.load(prefs)
+    SpeechDictionary.load(context, prefs)
+    SpeechDictionary.onWindowShown(context.packageName)
+
+    assertTrue(SpeechCleanupUtils.getCleanValueFor(context, '#') != "#")
   }
 }

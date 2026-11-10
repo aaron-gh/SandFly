@@ -370,10 +370,30 @@ public final class SpeechCleanupUtils {
         : cleanUp(context, text);
   }
 
+  /** Whether the speech dictionary says a character, on its own, as other text. */
+  public interface CharacterReplacement {
+    boolean replaces(char key);
+  }
+
+  private static volatile @Nullable CharacterReplacement characterReplacement;
+
+  /**
+   * Sets the characters that keep their own text instead of their name, so that the speech
+   * dictionary, applied to speech after this, replaces them. Null when the dictionary is empty.
+   */
+  public static void setCharacterReplacement(@Nullable CharacterReplacement replacement) {
+    characterReplacement = replacement;
+  }
+
+  private static boolean isReplaced(char key) {
+    @Nullable CharacterReplacement replacement = characterReplacement;
+    return replacement != null && replacement.replaces(key);
+  }
+
   /** Returns the "clean" value for the specified character. */
   public static String getCleanValueFor(Context context, char key) {
     Pair<Integer, Integer> pair = TALKBACK_PUNCTUATION_AND_SYMBOL.get(key);
-    if (pair != null) {
+    if (pair != null && !isReplaced(key)) {
       final int resId = pair.first;
 
       if (resId != 0) {
@@ -399,7 +419,7 @@ public final class SpeechCleanupUtils {
   public static @Nullable String characterToName(
       Context context, char key, int punctuationVerbosity) {
     Pair<Integer, Integer> pair = TALKBACK_PUNCTUATION_AND_SYMBOL.get(key);
-    if (pair == null) {
+    if (pair == null || isReplaced(key)) {
       return null;
     } else if (key != ' ') {
       if (pair.second < punctuationVerbosity) {

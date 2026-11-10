@@ -20,7 +20,9 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.text.SpannableStringBuilder
 import com.google.android.accessibility.talkback.notifications.Replacement
+import com.google.android.accessibility.utils.output.SpeechCleanupUtils
 import com.google.android.accessibility.utils.output.SpeechControllerImpl
+import java.util.concurrent.ConcurrentHashMap
 import java.util.regex.Matcher
 import org.json.JSONArray
 import org.json.JSONException
@@ -64,9 +66,13 @@ object SpeechDictionary {
   fun load(context: Context, prefs: SharedPreferences) {
     ownPackage = context.packageName
     entries = read(prefs)
+    replacedCharacters.clear()
+    val empty = entries.isEmpty() && SymbolDictionary.isEmpty
     SpeechControllerImpl.setDictionaryFilter(
-      if (entries.isEmpty() && SymbolDictionary.isEmpty) null
-      else SpeechControllerImpl.SpeechFilter(::apply)
+      if (empty) null else SpeechControllerImpl.SpeechFilter(::apply)
+    )
+    SpeechCleanupUtils.setCharacterReplacement(
+      if (empty) null else SpeechCleanupUtils.CharacterReplacement(::replaces)
     )
   }
 
@@ -80,8 +86,23 @@ object SpeechDictionary {
   /** Notes the app whose window is shown, for the entries of one app. */
   @JvmStatic
   fun onWindowShown(packageName: CharSequence?) {
-    app = packageName?.toString().orEmpty()
+    val shown = packageName?.toString().orEmpty()
+    if (shown != app) replacedCharacters.clear()
+    app = shown
   }
+
+  // Whether each character asked about is replaced in the app shown last. At most one entry for
+  // each character that has a spoken name.
+  private val replacedCharacters = ConcurrentHashMap<Char, Boolean>()
+
+  /**
+   * Whether [key] on its own is said as text that is not blank, so that it is spoken as itself and
+   * replaced here instead of by its name, such as when moving by character. An entry that removes a
+   * character from speech leaves its name for when it is on its own.
+   */
+  @JvmStatic
+  fun replaces(key: Char): Boolean =
+    replacedCharacters.getOrPut(key) { apply(key.toString())?.isNotBlank() == true }
 
   /** Returns [text] with the entries applied, or null when none changed it. */
   @JvmStatic
