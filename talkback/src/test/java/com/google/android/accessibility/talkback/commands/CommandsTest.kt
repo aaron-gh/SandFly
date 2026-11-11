@@ -74,6 +74,8 @@ class CommandsTest {
         R.string.shortcut_value_text_entities,
         R.string.shortcut_value_toggle_auto_translation,
         R.string.shortcut_value_toggle_equalizer,
+        R.string.shortcut_value_settings_profiles,
+        R.string.shortcut_value_next_settings_profile,
       )) {
       assertTrue(context.getString(res) in values)
     }

@@ -1140,6 +1140,16 @@ While SandFly is on, it checks for replies and status changes every hour, and wh
 
 **Export settings** saves SandFly's settings to a file, and **Import settings** replaces them with a file's, such as one from another phone. API keys stay on the phone. Import settings also reads a settings file exported from Backtalk: the settings in it replace SandFly's, and SandFly's own settings that Backtalk doesn't have are kept.
 
+### Settings profiles
+
+A settings profile is a named set of SandFly's settings. **Back up and restore** > **Settings profiles** lists the profiles, with the one in use marked **In use**. The first time the screen opens, or a settings profile command is used, the current settings become the profile **Default**. **New settings profile** adds a profile with a copy of the current settings. A profile's item has **Switch to**, **Save current settings to this profile**, **Rename** and **Delete**; the profile in use can't be deleted.
+
+Switching saves the current settings to the profile in use, applies the other profile without restarting SandFly, and says "<name> profile". Settings changed while a profile is in use are also saved to it when the Settings profiles screen opens and when SandFly turns off.
+
+The **Choose settings profile** command opens a menu of the profiles, and **Next settings profile** switches to the next one, wrapping around. Both are in the **SandFly** group of commands, unassigned.
+
+A profile holds the main, braille keyboard and braille display settings, including gestures, keyboard shortcuts, gesture profiles and the gesture profile in use. API keys, the SandFly Pro licence, the updater's state, installed scripts and their settings, sound theme drafts, and the state of this phone, such as which tutorials and dialogs were shown, are not in profiles and stay as they are. Profiles are kept on the phone, and are not in exported settings.
+
 ### App icon that opens the settings
 
 SandFly has an app icon in the launcher, labelled SandFly, that opens its settings. TalkBack's settings open only from the accessibility settings, which need TalkBack to be on. SandFly's settings open from the icon whether SandFly is on or off, so you can set it up, or change a setting, without turning it on first.

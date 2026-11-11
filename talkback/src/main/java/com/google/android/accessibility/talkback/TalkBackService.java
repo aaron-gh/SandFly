@@ -150,6 +150,7 @@ import com.google.android.accessibility.talkback.actor.voicecommands.VoiceComman
 import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics.PeriodicDataProvider;
 import com.google.android.accessibility.talkback.audio.AudioDeviceRouter;
 import com.google.android.accessibility.talkback.audio.AccessibilityAudioWatcher;
+import com.google.android.accessibility.talkback.backup.SettingsProfiles;
 import com.google.android.accessibility.talkback.braille.BrailleHelper;
 import com.google.android.accessibility.talkback.braille.TalkBackForBrailleCommonImpl;
 import com.google.android.accessibility.talkback.braille.TalkBackForBrailleDisplayImpl;
@@ -3714,6 +3715,8 @@ public class TalkBackService extends AccessibilityServiceCompat
 
     prefs.unregisterOnSharedPreferenceChangeListener(sharedPreferenceChangeListener);
     prefs.unregisterOnSharedPreferenceChangeListener(analytics);
+    // Settings changed while a settings profile is in use stay in it.
+    SettingsProfiles.saveActive(this);
 
     unregisterReceivers(batteryMonitor, volumeMonitor);
 
