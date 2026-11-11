@@ -1017,6 +1017,10 @@
     <string name="overview_empty">No recent apps</string>
     <!-- Shown in SandFly's overview when the recent apps can't be read through Shizuku. [CHAR_LIMIT=NONE] -->
     <string name="overview_unavailable">Recent apps unavailable</string>
+    <!-- Spoken when the system's recent apps screen opens in place of SandFly's overview because Shizuku isn't running. [CHAR_LIMIT=NONE] -->
+    <string name="overview_shizuku_not_running">Shizuku not running</string>
+    <!-- Spoken when the system's recent apps screen opens in place of SandFly's overview because Shizuku doesn't allow SandFly. [CHAR_LIMIT=NONE] -->
+    <string name="overview_shizuku_not_allowed">Shizuku doesn\'t allow SandFly</string>
     <!-- Spoken when SandFly's overview couldn't switch to or close an app. [CHAR_LIMIT=NONE] -->
     <string name="overview_failed">Failed</string>
     <!-- Spoken when there is no app to switch to with the Previous app command. [CHAR_LIMIT=NONE] -->
