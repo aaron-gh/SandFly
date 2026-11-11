@@ -188,6 +188,8 @@ public class TouchInteractionMonitor
   // How close to an edge a one-finger edge gesture must start, about the height of the gesture
   // navigation bar, until the Edge width setting is read.
   private static final float EDGE_GESTURE_ZONE_CM = 0.5f;
+  // The least width of a corner for corner gestures.
+  private static final float CORNER_SIZE_CM = 1.5f;
   // How close to an edge of the screen a finger lifts for lifting it, such as by sliding it off the
   // screen, to activate nothing with Lift to activate or lift to type.
   private static final float LIFT_CANCEL_ZONE_CM = 0.15f;
@@ -560,15 +562,12 @@ public class TouchInteractionMonitor
             this::edgeMenuItemCount);
     cornerTapTracker =
         new CornerTapTracker(
-            pixelsPerCm * EDGE_GESTURE_ZONE_CM,
+            pixelsPerCm * Math.max(CORNER_SIZE_CM, EDGE_GESTURE_ZONE_CM),
             ViewConfiguration.get(context).getScaledTouchSlop(),
             ViewConfiguration.get(context).getScaledDoubleTapSlop()
                 * FeatureFlagReader.gestureDoubleTapSlopMultiplier(service),
-            ViewConfiguration.getTapTimeout()
-                + context
-                    .getResources()
-                    .getInteger(
-                        com.google.android.accessibility.utils.R.integer.config_tap_timeout_delta),
+            // A corner tap may last up to the long press timeout, then it is a hold.
+            ViewConfiguration.getLongPressTimeout(),
             ViewConfiguration.getLongPressTimeout(),
             () -> (long) GestureConfiguration.getMultiTapTimeoutMs(),
             this::isCornerGestureAssigned);
@@ -711,8 +710,9 @@ public class TouchInteractionMonitor
             R.string.pref_edge_zone_mm_key,
             R.string.pref_edge_zone_mm_default);
     edgeSwipeTracker.setEdgeZone(pixelsPerCm * Math.max(zone, 1) / 10f);
-    // A corner is a square as wide as the edges.
-    cornerTapTracker.setCornerSize(pixelsPerCm * Math.max(zone, 1) / 10f);
+    // A corner is at least CORNER_SIZE_CM wide, as rounded screen corners leave little to touch.
+    cornerTapTracker.setCornerSize(
+        Math.max(pixelsPerCm * CORNER_SIZE_CM, pixelsPerCm * Math.max(zone, 1) / 10f));
   }
 
   /** Reads which edges scroll the app when a finger slides along them. */
