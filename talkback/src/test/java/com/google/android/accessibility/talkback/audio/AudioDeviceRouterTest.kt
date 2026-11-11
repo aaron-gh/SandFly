@@ -16,8 +16,10 @@
 
 package com.google.android.accessibility.talkback.audio
 
+import android.media.AudioDeviceInfo
 import com.google.android.accessibility.talkback.audio.AudioDeviceRouter.AudioTarget
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test
 
@@ -114,5 +116,17 @@ class AudioDeviceRouterTest {
   fun deviceValue_parsesBack() {
     val value = AudioTarget.deviceValue(8, "Storm wireless audio")
     assertEquals(AudioTarget.SpecificDevice(8, "Storm wireless audio"), AudioTarget.parse(value))
+  }
+
+  @Test
+  fun isBluetooth_bluetoothOutputsAreNotCommunicationDevices() {
+    assertTrue(AudioDeviceRouter.isBluetooth(AudioDeviceInfo.TYPE_BLUETOOTH_A2DP))
+    assertTrue(AudioDeviceRouter.isBluetooth(AudioDeviceInfo.TYPE_BLUETOOTH_SCO))
+    assertTrue(AudioDeviceRouter.isBluetooth(AudioDeviceInfo.TYPE_BLE_HEADSET))
+    assertTrue(AudioDeviceRouter.isBluetooth(AudioDeviceInfo.TYPE_BLE_SPEAKER))
+    assertFalse(AudioDeviceRouter.isBluetooth(AudioDeviceInfo.TYPE_WIRED_HEADPHONES))
+    assertFalse(AudioDeviceRouter.isBluetooth(AudioDeviceInfo.TYPE_USB_HEADSET))
+    assertFalse(AudioDeviceRouter.isBluetooth(AudioDeviceInfo.TYPE_HEARING_AID))
+    assertFalse(AudioDeviceRouter.isBluetooth(AudioDeviceInfo.TYPE_BUILTIN_SPEAKER))
   }
 }
