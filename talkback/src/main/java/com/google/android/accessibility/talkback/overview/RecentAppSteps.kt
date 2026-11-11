@@ -122,6 +122,8 @@ object RecentAppSteps {
     RecentTasks.load(service) { result ->
       if (current != sequence) return@load
       when {
+        // SandFly was turned off or suspended while the tasks were read.
+        TalkBackService.getInstance() == null || !TalkBackService.isServiceActive() -> end()
         isLocked(service) -> end()
         SystemClock.uptimeMillis() - readSince > PreviousApp.READ_LIMIT_MS -> {
           end()
@@ -185,6 +187,12 @@ object RecentAppSteps {
   private fun scheduleEnd() {
     handler.removeCallbacks(endSequence)
     handler.postDelayed(endSequence, SEQUENCE_MS)
+  }
+
+  /** Ends the sequence, as when SandFly is turned off, so that a read under way opens no task. */
+  @JvmStatic
+  fun stop() {
+    end()
   }
 
   /** Ends the sequence, so that the next step starts from the app on screen. */

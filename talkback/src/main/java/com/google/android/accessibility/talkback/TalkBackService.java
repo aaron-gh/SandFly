@@ -251,6 +251,7 @@ import com.google.android.accessibility.talkback.monitor.VolumeMonitor;
 import com.google.android.accessibility.talkback.notificationlist.NotificationListService;
 import com.google.android.accessibility.talkback.applauncher.HomeScreenApps;
 import com.google.android.accessibility.talkback.overview.AppSwitcherKeys;
+import com.google.android.accessibility.talkback.overview.RecentAppSteps;
 import com.google.android.accessibility.talkback.overview.SplitScreen;
 import com.google.android.accessibility.talkback.overview.SystemOverviewRedirect;
 import com.google.android.accessibility.talkback.notifications.NotificationReader;
@@ -1417,6 +1418,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     serviceState = newState;
     if (newState != ServiceStateListener.SERVICE_STATE_ACTIVE) {
       LiveRecognition.stop();
+      RecentAppSteps.stop();
     }
     for (ServiceStateListener listener : serviceStateListeners) {
       listener.onServiceStateChanged(newState);
