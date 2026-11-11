@@ -145,7 +145,7 @@ When the focused item is the last item of a list on screen, SandFly scrolls the 
 
 ### Scroll sound when moving between items
 
-TalkBack plays the scroll sound when a swipe or a key scrolls a list to reach the next item. SandFly plays it only for scrolls that you make or ask for, such as with **Scroll forward**.
+TalkBack plays the scroll sound when a swipe or a key scrolls a list to reach the next item, and when a web page scrolls to show the item that a swipe or a key focused. SandFly plays it only for scrolls that you make or ask for, such as with **Scroll forward**.
 
 ### Focus that stays where a swipe's scroll put it
 

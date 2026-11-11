@@ -111,6 +111,7 @@ import com.google.android.accessibility.utils.SettingsUtils;
 import com.google.android.accessibility.utils.WebInterfaceUtils;
 import com.google.android.accessibility.utils.WindowUtils;
 import com.google.android.accessibility.utils.input.CursorGranularity;
+import com.google.android.accessibility.utils.input.ScrollEventInterpreter;
 import com.google.android.accessibility.utils.input.ScrollEventInterpreter.ScrollTimeout;
 import com.google.android.accessibility.utils.monitor.CollectionState;
 import com.google.android.accessibility.utils.output.FeedbackItem;
@@ -555,6 +556,9 @@ public class FocusProcessorForLogicalNavigation {
       // Ideally the pivot should never be null. Do the null check in case of exception.
       LogUtils.w(TAG, "Cannot find pivot node for %s", navigationAction);
       return false;
+    }
+    if (navigationAction.actionType == NavigationAction.DIRECTIONAL_NAVIGATION) {
+      ScrollEventInterpreter.onNavigation(pivot.getWindowId());
     }
     return switch (navigationAction.actionType) {
       case NavigationAction.DIRECTIONAL_NAVIGATION ->

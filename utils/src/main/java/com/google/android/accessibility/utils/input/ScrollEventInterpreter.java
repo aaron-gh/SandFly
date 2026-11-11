@@ -58,6 +58,42 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
 
   private static final int SCROLL_NOISE_RANGE = 15;
 
+  /**
+   * A scroll this soon after moving to the next or previous item, in the same window and with no
+   * touch since, comes from the app showing the newly focused item, as web views do.
+   */
+  @VisibleForTesting static final long NAVIGATION_SCROLL_MS = 750;
+
+  /** When the last move to the next or previous item started, and in which window. Main thread. */
+  private static long navigationUptime = -1;
+
+  private static int navigationWindowId = -1;
+
+  /** Records that a move to the next or previous item in window {@code windowId} starts now. */
+  public static void onNavigation(int windowId) {
+    navigationUptime = android.os.SystemClock.uptimeMillis();
+    navigationWindowId = windowId;
+  }
+
+  /** Forgets the last move to the next or previous item, such as when a touch starts. */
+  public static void clearNavigation() {
+    navigationUptime = -1;
+  }
+
+  /**
+   * Whether a scroll event of window {@code windowId} at {@code eventUptime} follows a move to the
+   * next or previous item that started at {@code navigationUptime} in window {@code
+   * navigationWindowId}.
+   */
+  @VisibleForTesting
+  static boolean followsNavigation(
+      int windowId, long eventUptime, int navigationWindowId, long navigationUptime) {
+    return navigationUptime >= 0
+        && windowId == navigationWindowId
+        && eventUptime >= navigationUptime
+        && eventUptime - navigationUptime <= NAVIGATION_SCROLL_MS;
+  }
+
   // The record for the current scroll instance Id which we already have handled.
   private int handledScrollInstanceId = -1;
 
@@ -369,6 +405,13 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
         isFromNavigation = isNavigationScroll(finishedScrollRecord.get());
         isFromScrollAhead = isScrollAhead(finishedScrollRecord.get());
         LogUtils.i(TAG, "End of an auto scroll");
+      } else if (followsNavigation(
+          event.getWindowId(), event.getEventTime(), navigationWindowId, navigationUptime)) {
+        // The app scrolled to show the item that moving to the next or previous item focused,
+        // such as a web view showing a web element.
+        userAction = ScrollActionRecord.ACTION_UNKNOWN;
+        isFromNavigation = true;
+        LogUtils.i(TAG, "Scroll that shows the next or previous item");
       } else {
         userAction =
             scrollDirection == TraversalStrategy.SEARCH_FOCUS_UNKNOWN
