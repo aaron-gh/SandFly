@@ -245,6 +245,8 @@
     <string name="pref_category_controls_key" translatable="false">pref_category_controls_key</string>
     <string name="pref_category_others_key" translatable="false">pref_category_others_key</string>
     <string name="pref_cache_keyboard_keys" translatable="false">pref_cache_keyboard_keys</string>
+    <!-- Whether double-tapping a text field that is being edited moves the cursor to the start or end of its text. -->
+    <string name="pref_double_tap_moves_cursor_key" translatable="false">pref_double_tap_moves_cursor</string>
     <string name="pref_survey_setting_entry_point_key" translatable="false">pref_survey_setting_entry_point_key</string>
     <string name="pref_new_feature_in_talkback_entry_point_key" translatable="false">pref_new_feature_in_talkback_entry_point_key</string>
     <string name="pref_tutorial_and_help_key" translatable="false">pref_tutorial_and_help_key</string>
@@ -1995,6 +1997,7 @@
     <bool name="pref_overview_default">false</bool>
     <bool name="pref_overview_newest_last_default">false</bool>
     <bool name="pref_cache_keyboard_keys_default">false</bool>
+    <bool name="pref_double_tap_moves_cursor_default">false</bool>
     <bool name="pref_vibration_default">true</bool>
     <bool name="pref_soundback_default">true</bool>
     <bool name="pref_use_audio_focus_default">true</bool>

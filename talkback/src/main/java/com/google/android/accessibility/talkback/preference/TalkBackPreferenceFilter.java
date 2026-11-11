@@ -442,6 +442,9 @@ public class TalkBackPreferenceFilter {
     EDGE_MENU_RIGHT(
         R.string.pref_screen_edge_menu_right_key,
         SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
+    // SandFly's own double-tap handling moves the cursor.
+    DOUBLE_TAP_MOVES_CURSOR(
+        R.string.pref_double_tap_moves_cursor_key, SHOW_IF_SERVICE_GESTURE_DETECTION),
     CUSTOMIZE_FOCUS_INDICATOR(
         R.string.pref_category_manage_focus_indicator_key, SHOW_FOCUS_INDICATOR),
     AUTOMATIC_DESCRIPTIONS(R.string.pref_auto_image_captioning_key, HIDDEN_ON_TV | HIDDEN_ON_XR),
