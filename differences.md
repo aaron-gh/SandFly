@@ -508,7 +508,19 @@ When you choose an action for a gesture, the categories of actions are collapsed
 
 ### Macros
 
-**Macros** makes lists of steps that run one after another, without a script. A step can be **Run command**, any command; **Wait**, a number of seconds; **Tap item**, which activates the first item on screen whose text or description contains a text, waiting for it to appear up to a set time, 3 seconds by default; **Open app**; or **Type text**, which types in the focused edit field, at the cursor or in place of its text. Each step has **Edit**, **Move up**, **Move down** and **Delete**. **Run now** runs the macro.
+**Macros** makes lists of steps that run one after another, without a script. A step can be **Run command**, any command; **Wait**, a number of seconds; **Tap item**, which activates the first item on screen whose text or description contains a text, waiting for it to appear up to a set time, 3 seconds by default; **Open app**; or **Type text**, which types in the focused edit field, at the cursor or in place of its text. Each step has **Edit**, **Add step after**, **Move up**, **Move down** and **Delete**. **Run now** runs the macro.
+
+Steps can depend on conditions:
+
+*   **If**, **Else if**, **Else** and **End if** run the steps of the first branch whose condition is met. **Add step** adds **If** with its **End if**.
+*   **Repeat** runs the steps up to **End repeat** a number of times, up to 1000; **Repeat while** runs them while a condition is met, up to 1000 times. **Exit loop** goes on after the **End repeat** of the repeat it is in.
+*   **Wait until** waits until a condition is met, 10 seconds by default; the macro stops after that.
+*   **Stop macro** stops the macro.
+*   **Run only when**, on the macro's screen, is a condition the macro needs to run. When it isn't met, the command does nothing, and **Run now** says so.
+
+A condition is a list of tests: **Item on screen**, an item whose text, description or hint contains a text; **Focused item**, the item with accessibility focus, by its text, the text of the items in it, or its type; **App in front**; **Keyboard shown**; and **Screen locked**. The item tests can also require an item type: **Clickable**, **Long-clickable**, **Editable**, **Scrollable**, **Adjustable** (a slider), **Checkable**, **Checked**, **Selected**, **Heading** or **Enabled**. Each test has **Change to**, which reverses it (such as **Keyboard hidden** or **No item on screen**), and each test after the first has **Join with and** or **Join with or**. "And" goes before "or": the condition is met when all the tests of one of the groups that "or" separates are met.
+
+Steps in blocks are indented. When the blocks don't match, such as an **If** without **End if**, the macro's screen shows the step and the problem, and the macro doesn't run. Deleting **If** or a repeat also deletes its **Else if**, **Else** and **End** steps, and keeps the steps in it.
 
 Each macro is a command in the **Macros** category, so a gesture, a keyboard shortcut or a menu can run it. Starting a macro stops the one running, and so does **Stop macro**. When a step fails, such as an item that isn't found, SandFly says so and the macro stops. Deleting a macro removes it from the gestures, keys and menus that run it. Macros are included in exported settings. Not on watches.
 

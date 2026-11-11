@@ -60,4 +60,145 @@
     <string name="macro_item_not_found">Macro stopped. Not found: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
     <!-- Spoken when a macro stops because a step failed. step is the step, such as Open Gmail. [CHAR LIMIT=NONE] -->
     <string name="macro_step_failed">Macro stopped. Failed: <xliff:g id="step" example="Open Gmail">%1$s</xliff:g></string>
+    <!-- Kind of macro step, and the title of its screen: waits until a condition is met, up to a number of seconds, and stops the macro after that. [CHAR LIMIT=40] -->
+    <string name="macro_step_wait_until">Wait until</string>
+    <!-- Kind of macro step, and the title of its screen: the steps after it, up to Else if, Else or End if, run only when its condition is met. [CHAR LIMIT=40] -->
+    <string name="macro_step_if">If</string>
+    <!-- Kind of macro step, and the title of its screen: the steps after it run when no branch of the If before it ran and its condition is met. [CHAR LIMIT=40] -->
+    <string name="macro_step_else_if">Else if</string>
+    <!-- Kind of macro step: the steps after it run when no branch of the If before it ran. [CHAR LIMIT=40] -->
+    <string name="macro_step_else">Else</string>
+    <!-- Kind of macro step: ends an If block. [CHAR LIMIT=40] -->
+    <string name="macro_step_end_if">End if</string>
+    <!-- Kind of macro step: runs the steps up to End repeat a number of times. [CHAR LIMIT=40] -->
+    <string name="macro_step_repeat">Repeat</string>
+    <!-- Kind of macro step, and the title of its screen: runs the steps up to End repeat while a condition is met. [CHAR LIMIT=40] -->
+    <string name="macro_step_repeat_while">Repeat while</string>
+    <!-- Kind of macro step: ends a Repeat or Repeat while block. [CHAR LIMIT=40] -->
+    <string name="macro_step_end_repeat">End repeat</string>
+    <!-- Kind of macro step: goes on after the End repeat of the repeat it is in. [CHAR LIMIT=40] -->
+    <string name="macro_step_exit_loop">Exit loop</string>
+    <!-- An If step in a macro's list of steps. condition is its condition, such as "Keyboard shown and Focused item: Editable". [CHAR LIMIT=NONE] -->
+    <string name="macro_step_if_value">If <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <!-- An Else if step in a macro's list of steps. condition is its condition. [CHAR LIMIT=NONE] -->
+    <string name="macro_step_else_if_value">Else if <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <!-- A Repeat while step in a macro's list of steps. condition is its condition. [CHAR LIMIT=NONE] -->
+    <string name="macro_step_repeat_while_value">Repeat while <xliff:g id="condition" example="Item on screen: Load more">%1$s</xliff:g></string>
+    <!-- A Wait until step in a macro's list of steps. condition is its condition. [CHAR LIMIT=NONE] -->
+    <string name="macro_step_wait_until_value">Wait until <xliff:g id="condition" example="Item on screen: Send">%1$s</xliff:g></string>
+    <!-- A Repeat step in a macro's list of steps. count is how many times it runs the steps in it. [CHAR LIMIT=NONE] -->
+    <plurals name="macro_step_repeat_value">
+        <item quantity="one">Repeat <xliff:g id="count" example="1">%d</xliff:g> time</item>
+        <item quantity="other">Repeat <xliff:g id="count" example="3">%d</xliff:g> times</item>
+    </plurals>
+    <!-- Hint of the text field for how many times a Repeat step runs the steps in it. [CHAR LIMIT=40] -->
+    <string name="macro_times">Times</string>
+    <!-- Error under the times field of a Repeat step when it is not a number in range. max is the largest number allowed. [CHAR LIMIT=NONE] -->
+    <string name="macro_invalid_times">Enter a number from 1 to <xliff:g id="max" example="1000">%1$d</xliff:g></string>
+    <!-- Title of the setting of a macro with the condition that has to be met for the macro to run. [CHAR LIMIT=40] -->
+    <string name="macro_run_only_when">Run only when</string>
+    <!-- The condition of a macro that always runs, under Run only when. [CHAR LIMIT=40] -->
+    <string name="macro_always">Always</string>
+    <!-- A condition with no tests, which is always met. [CHAR LIMIT=40] -->
+    <string name="macro_no_tests">No tests</string>
+    <!-- Button that adds a test to a macro condition. [CHAR LIMIT=40] -->
+    <string name="macro_add_test">Add test</string>
+    <!-- Heading of the list of the tests of a macro condition. [CHAR LIMIT=40] -->
+    <string name="macro_tests">Tests</string>
+    <!-- Title of the dialog that asks for the kind of a test. [CHAR LIMIT=40] -->
+    <string name="macro_choose_test">Test</string>
+    <!-- Kind of test: an item on screen has a text. [CHAR LIMIT=40] -->
+    <string name="macro_test_item">Item on screen</string>
+    <!-- Kind of test: the item with accessibility focus has a text or is of a kind, such as editable. [CHAR LIMIT=40] -->
+    <string name="macro_test_focused">Focused item</string>
+    <!-- Kind of test: an app is in front. [CHAR LIMIT=40] -->
+    <string name="macro_test_app">App in front</string>
+    <!-- Kind of test, and a test in a condition: the on-screen keyboard is shown. [CHAR LIMIT=40] -->
+    <string name="macro_test_keyboard">Keyboard shown</string>
+    <!-- A reversed Keyboard shown test in a condition. [CHAR LIMIT=40] -->
+    <string name="macro_test_keyboard_hidden">Keyboard hidden</string>
+    <!-- Kind of test, and a test in a condition: the lock screen is shown. [CHAR LIMIT=40] -->
+    <string name="macro_test_locked">Screen locked</string>
+    <!-- A reversed Screen locked test in a condition. [CHAR LIMIT=40] -->
+    <string name="macro_test_unlocked">Screen unlocked</string>
+    <!-- An Item on screen test in a condition. item is its text, and can be followed by its kind, such as "Send, Clickable". [CHAR LIMIT=NONE] -->
+    <string name="macro_test_item_value">Item on screen: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <!-- A reversed Item on screen test in a condition. item is its text. [CHAR LIMIT=NONE] -->
+    <string name="macro_test_no_item_value">No item on screen: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <!-- A Focused item test in a condition. item is its text or kind, such as "Editable". [CHAR LIMIT=NONE] -->
+    <string name="macro_test_focused_value">Focused item: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <!-- A reversed Focused item test in a condition. item is its text or kind. [CHAR LIMIT=NONE] -->
+    <string name="macro_test_not_focused_value">Focused item not: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <!-- An App in front test in a condition. app is the app's name. [CHAR LIMIT=NONE] -->
+    <string name="macro_test_app_value">App in front: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <!-- A reversed App in front test in a condition. app is the app's name. [CHAR LIMIT=NONE] -->
+    <string name="macro_test_not_app_value">App not in front: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <!-- The text and kind of item a test looks for. [CHAR LIMIT=NONE] -->
+    <string name="macro_test_label_kind"><xliff:g id="label" example="Send">%1$s</xliff:g>, <xliff:g id="kind" example="Clickable">%2$s</xliff:g></string>
+    <!-- Two tests of a condition joined with and. [CHAR LIMIT=NONE] -->
+    <string name="macro_join_and"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g> and <xliff:g id="second" example="Focused item: Editable">%2$s</xliff:g></string>
+    <!-- Tests of a condition joined with or; and goes before or, which the comma shows. [CHAR LIMIT=NONE] -->
+    <string name="macro_join_or"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g>, or <xliff:g id="second" example="Screen locked">%2$s</xliff:g></string>
+    <!-- Hint of the text field for the text of the item a Focused item test looks for, which can be left empty. [CHAR LIMIT=60] -->
+    <string name="macro_test_label_optional">Item text (optional)</string>
+    <!-- Title of the dialog that asks for the kind of item a test looks for. [CHAR LIMIT=40] -->
+    <string name="macro_item_kind">Item type</string>
+    <!-- Item type: any item. [CHAR LIMIT=40] -->
+    <string name="macro_kind_any">Any type</string>
+    <!-- Item type: can be activated with a double tap. [CHAR LIMIT=40] -->
+    <string name="macro_kind_clickable">Clickable</string>
+    <!-- Item type: can be activated with a double tap and hold. [CHAR LIMIT=40] -->
+    <string name="macro_kind_long_clickable">Long-clickable</string>
+    <!-- Item type: an edit field. [CHAR LIMIT=40] -->
+    <string name="macro_kind_editable">Editable</string>
+    <!-- Item type: a list or page that can scroll. [CHAR LIMIT=40] -->
+    <string name="macro_kind_scrollable">Scrollable</string>
+    <!-- Item type: a slider or seek bar. [CHAR LIMIT=40] -->
+    <string name="macro_kind_adjustable">Adjustable</string>
+    <!-- Item type: a checkbox or switch. [CHAR LIMIT=40] -->
+    <string name="macro_kind_checkable">Checkable</string>
+    <!-- Item type: a checkbox or switch that is on. [CHAR LIMIT=40] -->
+    <string name="macro_kind_checked">Checked</string>
+    <!-- Item type: selected, such as the current tab. [CHAR LIMIT=40] -->
+    <string name="macro_kind_selected">Selected</string>
+    <!-- Item type: a heading. [CHAR LIMIT=40] -->
+    <string name="macro_kind_heading">Heading</string>
+    <!-- Item type: not dimmed. [CHAR LIMIT=40] -->
+    <string name="macro_kind_enabled">Enabled</string>
+    <!-- Action on a test of a condition that reverses it. test is the reversed test, such as Keyboard hidden. [CHAR LIMIT=NONE] -->
+    <string name="macro_change_to">Change to: <xliff:g id="test" example="Keyboard hidden">%1$s</xliff:g></string>
+    <!-- Action on a test of a condition that joins it to the tests before it with and. [CHAR LIMIT=40] -->
+    <string name="macro_join_with_and">Join with and</string>
+    <!-- Action on a test of a condition that joins it to the tests before it with or. [CHAR LIMIT=40] -->
+    <string name="macro_join_with_or">Join with or</string>
+    <!-- A test of a condition after the first, joined to the tests before it with and. test is the test. [CHAR LIMIT=NONE] -->
+    <string name="macro_clause_and">and <xliff:g id="test" example="Keyboard shown">%1$s</xliff:g></string>
+    <!-- A test of a condition after the first, joined to the tests before it with or. test is the test. [CHAR LIMIT=NONE] -->
+    <string name="macro_clause_or">or <xliff:g id="test" example="Screen locked">%1$s</xliff:g></string>
+    <!-- Setting of a Wait until step: how long it waits for its condition. [CHAR LIMIT=40] -->
+    <string name="macro_wait_timeout">Seconds to wait</string>
+    <!-- Action on a macro step that adds a step after it. [CHAR LIMIT=40] -->
+    <string name="macro_add_step_after">Add step after</string>
+    <!-- Shown over a macro's steps when its blocks don't match, and spoken when it is run. step is the step's number, problem one of the macro_problem texts. [CHAR LIMIT=NONE] -->
+    <string name="macro_problem">Step <xliff:g id="step" example="3">%1$d</xliff:g>: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <!-- Problem of a macro: an Else if, Else or End if step is not in an If block. [CHAR LIMIT=NONE] -->
+    <string name="macro_problem_no_if">Else if, Else or End if without If</string>
+    <!-- Problem of a macro: an Else if or Else step follows an Else in the same If block. [CHAR LIMIT=NONE] -->
+    <string name="macro_problem_after_else">Else if or Else after Else</string>
+    <!-- Problem of a macro: an End repeat step is not in a Repeat block. [CHAR LIMIT=NONE] -->
+    <string name="macro_problem_no_repeat">End repeat without Repeat</string>
+    <!-- Problem of a macro: an If step has no End if. [CHAR LIMIT=NONE] -->
+    <string name="macro_problem_no_end_if">If without End if</string>
+    <!-- Problem of a macro: a Repeat step has no End repeat. [CHAR LIMIT=NONE] -->
+    <string name="macro_problem_no_end_repeat">Repeat without End repeat</string>
+    <!-- Problem of a macro: an Exit loop step is not in a Repeat block. [CHAR LIMIT=NONE] -->
+    <string name="macro_problem_exit">Exit loop outside a repeat</string>
+    <!-- Spoken when a macro doesn't run because its blocks don't match. step is the step's number, problem one of the macro_problem texts. [CHAR LIMIT=NONE] -->
+    <string name="macro_stopped_problem">Macro stopped. Step <xliff:g id="step" example="3">%1$d</xliff:g>: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <!-- Spoken when a macro stops because a repeat ran its steps the most times allowed. count is that number, step the repeat step. [CHAR LIMIT=NONE] -->
+    <string name="macro_stopped_repeats">Macro stopped. Repeated <xliff:g id="count" example="1000">%1$d</xliff:g> times: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
+    <!-- Spoken when a macro stops because the condition of a Wait until step was not met in time. step is the step. [CHAR LIMIT=NONE] -->
+    <string name="macro_stopped_timeout">Macro stopped. Timed out: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
+    <!-- Spoken when Run now is pressed and the macro's Run only when condition is not met. [CHAR LIMIT=NONE] -->
+    <string name="macro_not_met">Macro not run. Run only when: not met</string>
 </resources>
