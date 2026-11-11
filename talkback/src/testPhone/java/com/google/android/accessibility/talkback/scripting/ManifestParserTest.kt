@@ -280,6 +280,24 @@ class ManifestParserTest {
   }
 
   @Test
+  fun anActionGoesBeforeTheAppsActionsOnlyWithFirst() {
+    val actions =
+      rule(
+          """{"id":"row","actions":[
+            {"title":"Archive","click":"archive","first":true},
+            {"title":"Say hello","speak":"Hello"}]}"""
+        )
+        .actions
+
+    assertTrue(actions[0].first)
+    assertFalse(actions[1].first)
+    assertTrue(
+      "true or false" in
+        rejectsRule("""{"id":"a","actions":[{"title":"T","click":"b","first":"yes"}]}""")
+    )
+  }
+
+  @Test
   fun anActionNeedsATitleAndOneVerb() {
     assertTrue("needs a title" in rejectsRule("""{"id":"a","actions":[{"click":"b"}]}"""))
     assertTrue("needs one of" in rejectsRule("""{"id":"a","actions":[{"title":"T"}]}"""))

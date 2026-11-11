@@ -929,7 +929,7 @@ local next_offer = 1
 
 local function offer_actions(data)
   local item = node(data.node)
-  local offered, titles = {}, {}
+  local offered, titles, first = {}, {}, {}
   for _, fn in ipairs(handlers.actions) do
     local list = call_now('onActions', fn, item)
     if type(list) == 'table' then
@@ -942,6 +942,9 @@ local function offer_actions(data)
             return run(item)
           end
           titles[#titles + 1] = title
+          if action.first == true then
+            first[#first + 1] = title
+          end
         end
       end
     end
@@ -953,7 +956,7 @@ local function offer_actions(data)
   if #offer_order > MAX_OFFERS then
     offers[remove(offer_order, 1)] = nil
   end
-  return { offer = offer, titles = titles }
+  return { offer = offer, titles = titles, first = first }
 end
 
 local function run_action(data)

@@ -64,7 +64,7 @@ class ScriptItemActions(private val handler: Handler, private val feedback: Scri
       .map { (runtime, action) ->
         @Suppress("DEPRECATION") val copy = AccessibilityNodeInfoCompat.obtain(node)
         // Finding the action's target can visit every item on screen.
-        ScriptItemAction(action.title) {
+        ScriptItemAction(action.title, action.first) {
           handler.post { ScriptThread.busy(runtime.id) { run(runtime, action, copy) } }
         }
       }
@@ -85,9 +85,12 @@ class ScriptItemActions(private val handler: Handler, private val feedback: Scri
     val data = jsonObject("node" to runtime.snapshotIfAllowed(node))
     val result = runtime.dispatch(HOOK, data, LIMIT_MS)?.let(::JSONObject) ?: return emptyList()
     val offer = result.optInt("offer")
+    val first = result.optJSONArray("first").strings().toSet()
     return result.optJSONArray("titles").strings().map { title ->
       val chosen = jsonObject("offer" to offer, "title" to title)
-      ScriptItemAction(title) { handler.post { runtime.dispatch("runAction", chosen) } }
+      ScriptItemAction(title, title in first) {
+        handler.post { runtime.dispatch("runAction", chosen) }
+      }
     }
   }
 

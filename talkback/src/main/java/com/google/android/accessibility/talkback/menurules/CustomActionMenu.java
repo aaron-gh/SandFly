@@ -82,12 +82,14 @@ public class CustomActionMenu implements NodeMenu {
   public List<ContextMenuItem> getMenuItemsForNode(
       Context context, AccessibilityNodeInfoCompat node, boolean includeAncestors) {
     List<ContextMenuItem> customItems = new ArrayList<>();
+    List<ScriptItemAction> scriptActions = Scripts.itemActions(node);
+    addScriptItems(context, scriptActions, /* first= */ true, customItems);
     HashSet<AccessibilityNodeInfoCompat> visitedNodes = new HashSet<>();
     if (acceptCustomActionMenu(node)) {
       populateCustomMenuItemsForNode(context, node, customItems, includeAncestors, visitedNodes);
     }
     addOpenInSplitItem(context, node, customItems);
-    addScriptItems(context, node, customItems);
+    addScriptItems(context, scriptActions, /* first= */ false, customItems);
     return customItems;
   }
 
@@ -122,11 +124,17 @@ public class CustomActionMenu implements NodeMenu {
     menu.add(item);
   }
 
+  /**
+   * Adds the scripts' actions that go before the app's actions when {@code first}, or the others,
+   * which go after them.
+   */
   private static void addScriptItems(
-      Context context, AccessibilityNodeInfoCompat node, List<ContextMenuItem> menu) {
-    List<ScriptItemAction> actions = Scripts.itemActions(node);
+      Context context, List<ScriptItemAction> actions, boolean first, List<ContextMenuItem> menu) {
     for (int i = 0; i < actions.size(); i++) {
       ScriptItemAction action = actions.get(i);
+      if (action.getFirst() != first) {
+        continue;
+      }
       ContextMenuItem item =
           ContextMenu.createMenuItem(
               context, CUSTOM_ACTION_GROUP_ID, SCRIPT_ACTION_ID + i, Menu.NONE, action.getTitle());
