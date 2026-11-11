@@ -44,6 +44,11 @@ object WebTreeOrder {
   /** Most remembered child positions, after which they are forgotten. */
   private const val MAX_POSITIONS = 1000
 
+  /** Chromium roles of text and of a line of text, the inline text box. */
+  private const val STATIC_TEXT_ROLE = "staticText"
+  private const val INLINE_TEXT_BOX_ROLE = "inlineTextBox"
+  private const val TEXT_VIEW_CLASS = "android.widget.TextView"
+
   /**
    * Chromium roles of controls, whose children are not items unless they can be acted on
    * themselves. Role names as in [AccessibilityNodeInfoUtils.getChromeRole].
@@ -113,8 +118,11 @@ object WebTreeOrder {
    * read.
    */
   @JvmStatic
-  fun find(pivot: AccessibilityNodeInfoCompat, forward: Boolean): AccessibilityNodeInfoCompat? =
-    find(CompatTree, pivot, forward)
+  fun find(pivot: AccessibilityNodeInfoCompat, forward: Boolean): AccessibilityNodeInfoCompat? {
+    // The caller has just read the pivot from the app.
+    CompatTree.startSearch(pivot)
+    return find(CompatTree, pivot, forward)
+  }
 
   @VisibleForTesting
   @JvmStatic
@@ -308,7 +316,40 @@ object WebTreeOrder {
     override fun parent(node: AccessibilityNodeInfoCompat): AccessibilityNodeInfoCompat? =
       node.parent
 
-    override fun childCount(node: AccessibilityNodeInfoCompat): Int = node.childCount
+    // Chromium gives a text node with focus a child for each line of its text, its inline text
+    // boxes. They repeat the text, so the text node counts as having no children.
+    override fun childCount(node: AccessibilityNodeInfoCompat): Int {
+      if (isText(node)) return 0
+      // Android keeps a copy of each node, and a copy made while the page was still being built
+      // can stay without children when Chromium reports no change. An empty node without text is
+      // read again from the app.
+      if (
+        node.childCount == 0 &&
+          !hasText(node.text) &&
+          !hasText(node.contentDescription) &&
+          refreshed.add(node)
+      ) {
+        node.refresh()
+      }
+      return node.childCount
+    }
+
+    /** The nodes read again from the app in this search, each at most once. */
+    private val refreshed = HashSet<AccessibilityNodeInfoCompat>()
+
+    fun startSearch(pivot: AccessibilityNodeInfoCompat) {
+      refreshed.clear()
+      refreshed.add(pivot)
+    }
+
+    private fun isText(node: AccessibilityNodeInfoCompat): Boolean {
+      val role = AccessibilityNodeInfoUtils.getChromeRole(node)?.toString()
+      return if (role != null) {
+        role == STATIC_TEXT_ROLE || role == INLINE_TEXT_BOX_ROLE
+      } else {
+        node.className?.toString() == TEXT_VIEW_CLASS && hasText(node.text)
+      }
+    }
 
     override fun child(node: AccessibilityNodeInfoCompat, index: Int): AccessibilityNodeInfoCompat? =
       node.getChild(index)
