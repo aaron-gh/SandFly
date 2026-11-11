@@ -44,6 +44,12 @@ To find the next item in a list, TalkBack also built the reading order of the wh
 
 In a test on a Realme phone, three in four swipes reused the reading order, and the longest pause during swiping went from about 450 ms to about 150 ms.
 
+### Next item found near the focused item
+
+A list that scrolls discards the saved reading order, so the swipe after it built the order of the whole screen again. SandFly first looks for the next or previous item near the focused one: in its children, and then in the items after or before it and after or before each item that contains it, in the same order as the whole screen's, including items that an app places before or after an item beside them, such as an action bar before the content. It uses what it finds only when the result is certain to be the same as with the whole screen's order, and keeps what it read for the next swipes until the screen changes. It builds the whole order as before at the start or end of the screen, when an app places items elsewhere in the order, in web content, in a container with more than 50 items, and when the search reads more than 150 items. This applies only on screens where the last whole order placed items only beside items next to them.
+
+SandFly also prepares the next swipe this way when no reading order is saved, so prepared speech is used after a list scrolls too.
+
 ### Swiping on web pages
 
 On a web page, TalkBack asks the page for the next item. Chromium, the engine of Chrome and of web views in apps, sometimes skips items on a page that was just opened, such as a paragraph or a quote, or reports no previous item when there is one, and TalkBack then moves focus out of the web view. SandFly takes the next or previous item from the page's items in page order, and asks the page only when an item that contains other items can be acted on, such as a clickable section, or when there is no further item in the page. On every swipe, TalkBack also built the reading order of the whole screen before it asked the page, and after focus moved, it read the items beside each item that contains the new focus. In apps with web pages inside other web pages, such as a restaurant menu in Uber Eats, focus and speech stopped during fast swiping. SandFly builds the reading order only when the swipe leaves the page. It reads the items beside the new focus when focus moves, and the items beside each item that contains it only when it needs them to put focus back after a screen change.

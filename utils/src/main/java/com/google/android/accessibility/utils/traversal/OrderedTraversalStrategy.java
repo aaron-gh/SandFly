@@ -51,6 +51,16 @@ public class OrderedTraversalStrategy implements TraversalStrategy {
     controller.initOrder(rootNode, includeChildrenOfNodesWithWebActions);
   }
 
+  /**
+   * For subclasses that work out the order in another way. Builds no order: the methods of this
+   * class find nothing until a subclass overrides them.
+   */
+  protected OrderedTraversalStrategy() {
+    speakingNodesCache = new HashMap<>();
+    controller = new OrderedTraversalController(false);
+    controller.setSpeakingNodesCache(speakingNodesCache);
+  }
+
   @Override
   public Map<AccessibilityNodeInfoCompat, Boolean> getSpeakingNodesCache() {
     return speakingNodesCache;
@@ -108,6 +118,14 @@ public class OrderedTraversalStrategy implements TraversalStrategy {
    */
   public boolean missesChildren() {
     return controller.missesChildren();
+  }
+
+  /**
+   * Whether every node that sets its place in the order moves next to a sibling, so that the order
+   * of a node's children follows from those children alone. True when no node sets its place.
+   */
+  public boolean movesOnlyAmongSiblings() {
+    return controller.movesOnlyAmongSiblings();
   }
 
   /** Dumps the traversal order tree. */

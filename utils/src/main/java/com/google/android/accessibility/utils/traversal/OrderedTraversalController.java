@@ -25,9 +25,11 @@ import com.google.android.accessibility.utils.WebInterfaceUtils;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 public class OrderedTraversalController {
@@ -40,6 +42,8 @@ public class OrderedTraversalController {
   private @Nullable AccessibilityNodeInfoCompat initialFocusNode;
   private final boolean makeFabFirst;
   private boolean missesChildren;
+  private boolean movesOnlyAmongSiblings = true;
+  private final Set<WorkingTree> movedNodes = new HashSet<>();
 
   public OrderedTraversalController() {
     this(false);
@@ -134,6 +138,30 @@ public class OrderedTraversalController {
   }
 
   /**
+   * Whether every node that sets its place in the order with traversal before or after moves next
+   * to a sibling, such as an action bar before the content beside it, with no node in two such
+   * moves, and no node is moved by a script or as a floating action button. True when no node sets
+   * its place. Only then does the order of a node's children follow from those children alone.
+   */
+  public boolean movesOnlyAmongSiblings() {
+    return movesOnlyAmongSiblings;
+  }
+
+  /** Notes a move of {@code movingTree} next to {@code targetTree}, before it is made. */
+  private void noteMove(WorkingTree movingTree, @Nullable WorkingTree targetTree) {
+    WorkingTree parent = movingTree.getParent();
+    if (targetTree == null
+        || targetTree == movingTree
+        || parent == null
+        || parent != targetTree.getParent()
+        || getParentsThatAreMovedBeforeOrSameNode(movingTree) != movingTree
+        || !movedNodes.add(movingTree)
+        || !movedNodes.add(targetTree)) {
+      movesOnlyAmongSiblings = false;
+    }
+  }
+
+  /**
    * reorder previously created tree according to after/before view traversal order on separate
    * nodes
    */
@@ -142,6 +170,7 @@ public class OrderedTraversalController {
     for (WorkingTree subtree : nodeTreeMap.values()) {
       AccessibilityNodeInfoCompat node = subtree.getNode();
       if (makeFabFirst && isFab(node)) {
+        movesOnlyAmongSiblings = false;
         WorkingTree targetTree = nodeTreeMap.get(compatRoot).getNext();
         moveNodeBefore(subtree, targetTree);
       }
@@ -151,6 +180,7 @@ public class OrderedTraversalController {
       }
       ScriptedMove scriptedMove = scriptedMoves.get(subtree);
       if (scriptedMove != null) {
+        movesOnlyAmongSiblings = false;
         if (scriptedMove.before) {
           moveNodeBefore(subtree, scriptedMove.target);
         } else {
@@ -158,14 +188,19 @@ public class OrderedTraversalController {
         }
         continue;
       }
+      if (NodeOverrides.order(node) != null) {
+        movesOnlyAmongSiblings = false;
+      }
       AccessibilityNodeInfoCompat beforeNode = node.getTraversalBefore();
       if (beforeNode != null) {
         WorkingTree targetTree = nodeTreeMap.get(beforeNode);
+        noteMove(subtree, targetTree);
         moveNodeBefore(subtree, targetTree);
       } else {
         AccessibilityNodeInfoCompat afterNode = node.getTraversalAfter();
         if (afterNode != null) {
           WorkingTree targetTree = nodeTreeMap.get(afterNode);
+          noteMove(subtree, targetTree);
           moveNodeAfter(subtree, targetTree);
         }
       }

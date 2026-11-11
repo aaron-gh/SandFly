@@ -96,6 +96,25 @@ object TraversalTreeCache {
   /** The window whose incomplete order was last read again, until an event changes that window. */
   private var rereadWindowId = NO_WINDOW_ID
 
+  /**
+   * The root of the window whose order was last built, if every node in that order that set its
+   * own place in it moved next to a sibling. Kept when the order is thrown away, until the window
+   * shows another screen, so that navigation there can work out the next item around the focused
+   * node; see [LocalTraversalOrder].
+   */
+  private var localRoot: AccessibilityNodeInfoCompat? = null
+
+  /**
+   * The nodes last read around a focused node while no order was saved, see [LocalTraversalOrder].
+   * They are held as the saved order's nodes are, until an event changes their window; see
+   * [holds].
+   */
+  private var localTree: LocalTraversalOrder.Tree? = null
+  private var localTreeWindowId = NO_WINDOW_ID
+
+  /** Whether a text or state in the window of [localTree] has changed since it was read. */
+  private var localTreeChanged = false
+
   /** Where the last navigation started, so a removed node does not send the user to the top. */
   private var lastPivotTop = Int.MIN_VALUE
   private var lastPivotWindowId = NO_WINDOW_ID
@@ -138,7 +157,8 @@ object TraversalTreeCache {
    * happened since the order was saved, so the node is still there.
    */
   @JvmStatic
-  fun holds(node: AccessibilityNodeInfoCompat): Boolean = strategy?.containsNode(node) == true
+  fun holds(node: AccessibilityNodeInfoCompat): Boolean =
+    strategy?.containsNode(node) == true || localTree?.holds(node) == true
 
   /**
    * Whether the saved order holds [node] as the app has it now: nothing in its window has changed
@@ -147,7 +167,8 @@ object TraversalTreeCache {
    */
   @JvmStatic
   fun holdsCurrent(node: AccessibilityNodeInfoCompat): Boolean =
-    firstIgnoredChangeTime == 0L && holds(node)
+    (firstIgnoredChangeTime == 0L && strategy?.containsNode(node) == true) ||
+      (!localTreeChanged && localTree?.holds(node) == true)
 
   /**
    * The root of the window that [node] is in, if the saved order holds [node]: the root the order
@@ -157,7 +178,7 @@ object TraversalTreeCache {
    */
   @JvmStatic
   fun rootFor(node: AccessibilityNodeInfoCompat): AccessibilityNodeInfoCompat? =
-    root?.takeIf { it.windowId == node.windowId && holds(node) }
+    root?.takeIf { it.windowId == node.windowId && strategy?.containsNode(node) == true }
 
   /**
    * Remembers where a navigation started. When the focused node is later removed — an app
@@ -213,7 +234,36 @@ object TraversalTreeCache {
     this.root = root
     this.strategy = strategy
     firstIgnoredChangeTime = 0L
+    localTree = null
+    localRoot = if (strategy.movesOnlyAmongSiblings()) root else null
   }
+
+  /**
+   * The root of the window of [node], if the next item there can be worked out around the focused
+   * node: in the last order built of that window, nodes set their own place only next to a sibling,
+   * and the window has shown no other screen since.
+   */
+  @JvmStatic
+  fun localRootFor(node: AccessibilityNodeInfoCompat): AccessibilityNodeInfoCompat? =
+    localRoot?.takeIf { it.windowId == node.windowId }
+
+  /**
+   * Keeps [tree], read around a focused node, so that its nodes count as held, and later navigation
+   * carries on with it, until an event changes its window.
+   */
+  @JvmStatic
+  fun putLocal(tree: LocalTraversalOrder.Tree) {
+    if (tree !== localTree) {
+      localTree = tree
+      localTreeWindowId = tree.root.windowId
+      localTreeChanged = false
+    }
+  }
+
+  /** The nodes kept by [putLocal] for the window of [root], if nothing there has changed since. */
+  @JvmStatic
+  fun localTreeFor(root: AccessibilityNodeInfoCompat): LocalTraversalOrder.Tree? =
+    localTree?.takeIf { !localTreeChanged && !it.broken && it.root == root }
 
   /**
    * Whether an incomplete order of window [windowId] may be read from the app again with one bulk
@@ -233,6 +283,7 @@ object TraversalTreeCache {
   @JvmStatic
   fun clear(reason: String) {
     rereadWindowId = NO_WINDOW_ID
+    localTree = null
     if (strategy == null) {
       return
     }
@@ -271,6 +322,21 @@ object TraversalTreeCache {
         !isNonStructural(event)
     ) {
       rereadWindowId = NO_WINDOW_ID
+    }
+    localRoot?.let {
+      if (
+        type == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED &&
+          (event.windowId == NO_WINDOW_ID || event.windowId == it.windowId)
+      ) {
+        localRoot = null
+      }
+    }
+    if (localTree != null && affectsWindow(event, localTreeWindowId)) {
+      if (isNonStructural(event)) {
+        localTreeChanged = true
+      } else {
+        localTree = null
+      }
     }
     val savedRoot = root ?: return
     if (affectsWindow(event, savedRoot.windowId)) {
