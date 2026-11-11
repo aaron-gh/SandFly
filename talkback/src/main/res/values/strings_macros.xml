@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Title of the settings screen of macros, lists of steps such as commands, waits and taps that run one after another, and the group of commands that run them. [CHAR LIMIT=40] -->
+    <string name="title_pref_macros">Macros</string>
+    <!-- Name of the command that stops the macro running. [CHAR LIMIT=40] -->
+    <string name="shortcut_stop_macro">Stop macro</string>
+    <!-- Button that makes a new macro. [CHAR LIMIT=40] -->
+    <string name="macro_add">Add macro</string>
+    <!-- Button on a macro's screen that runs the macro now, to test it. [CHAR LIMIT=40] -->
+    <string name="macro_run_now">Run now</string>
+    <!-- Button that adds a step to the end of a macro. [CHAR LIMIT=40] -->
+    <string name="macro_add_step">Add step</string>
+    <!-- Heading of the list of a macro's steps, in the order they run. [CHAR LIMIT=40] -->
+    <string name="macro_steps">Steps</string>
+    <!-- Shown in place of the steps of a macro that has none. [CHAR LIMIT=40] -->
+    <string name="macro_no_steps">No steps</string>
+    <!-- Button that deletes the macro shown. [CHAR LIMIT=40] -->
+    <string name="macro_delete">Delete macro</string>
+    <!-- Question before deleting a macro. name is its name. [CHAR LIMIT=NONE] -->
+    <string name="macro_delete_confirm">Delete <xliff:g id="name" example="Send message">%1$s</xliff:g>?</string>
+    <!-- Kind of macro step: runs a screen reader command, such as Back or Read from top. [CHAR LIMIT=40] -->
+    <string name="macro_step_command">Run command</string>
+    <!-- Kind of macro step, and the title of its dialog: waits a number of seconds before the next step. [CHAR LIMIT=40] -->
+    <string name="macro_step_wait">Wait</string>
+    <!-- Kind of macro step, and the title of its dialog: finds an item on screen by its text and activates it. [CHAR LIMIT=40] -->
+    <string name="macro_step_tap">Tap item</string>
+    <!-- Kind of macro step, and the title of its dialog: types text in the edit field that has focus. [CHAR LIMIT=40] -->
+    <string name="macro_step_type">Type text</string>
+    <!-- A Tap item step in a macro's list of steps. label is the text of the item it activates. [CHAR LIMIT=NONE] -->
+    <string name="macro_step_tap_value">Tap <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <!-- A Type text step in a macro's list of steps. text is the text it types. [CHAR LIMIT=NONE] -->
+    <string name="macro_step_type_value">Type <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <!-- A Type text step that replaces the text of the field, in a macro's list of steps. text is the text it types. [CHAR LIMIT=NONE] -->
+    <string name="macro_step_replace_value">Replace text with <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <!-- A Wait step in a macro's list of steps, for a whole number of seconds. [CHAR LIMIT=NONE] -->
+    <plurals name="macro_step_wait_seconds">
+        <item quantity="one">Wait <xliff:g id="count" example="1">%d</xliff:g> second</item>
+        <item quantity="other">Wait <xliff:g id="count" example="2">%d</xliff:g> seconds</item>
+    </plurals>
+    <!-- A Wait step in a macro's list of steps, for a time that is not a whole number of seconds. [CHAR LIMIT=NONE] -->
+    <plurals name="macro_step_wait_milliseconds">
+        <item quantity="one">Wait <xliff:g id="count" example="1">%d</xliff:g> millisecond</item>
+        <item quantity="other">Wait <xliff:g id="count" example="500">%d</xliff:g> milliseconds</item>
+    </plurals>
+    <!-- A macro step whose command or app is not on this phone. [CHAR LIMIT=40] -->
+    <string name="macro_step_unavailable">Not available</string>
+    <!-- Hint of the text field for the number of seconds a Wait step waits. [CHAR LIMIT=40] -->
+    <string name="macro_seconds">Seconds</string>
+    <!-- Error under the seconds field of a Wait step when it is not a number in range. max is the largest number allowed. [CHAR LIMIT=NONE] -->
+    <string name="macro_invalid_seconds">Enter a number of seconds up to <xliff:g id="max" example="600">%1$d</xliff:g></string>
+    <!-- Hint of the text field for the text of the item a Tap item step activates. [CHAR LIMIT=40] -->
+    <string name="macro_tap_label">Item text</string>
+    <!-- Hint of the text field for how long a Tap item step waits for its item to appear. [CHAR LIMIT=60] -->
+    <string name="macro_tap_timeout">Seconds to wait for the item</string>
+    <!-- Hint of the text field for the text a Type text step types. [CHAR LIMIT=40] -->
+    <string name="macro_text">Text</string>
+    <!-- Checkbox of a Type text step: the text replaces what is in the field, instead of going in at the cursor. [CHAR LIMIT=60] -->
+    <string name="macro_replace_text">Replace text in field</string>
+    <!-- Spoken when a macro stops because the item of a Tap item step is not on screen. label is the item's text. [CHAR LIMIT=NONE] -->
+    <string name="macro_item_not_found">Macro stopped. Not found: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <!-- Spoken when a macro stops because a step failed. step is the step, such as Open Gmail. [CHAR LIMIT=NONE] -->
+    <string name="macro_step_failed">Macro stopped. Failed: <xliff:g id="step" example="Open Gmail">%1$s</xliff:g></string>
+</resources>

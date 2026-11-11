@@ -238,6 +238,7 @@ import com.google.android.accessibility.talkback.labeling.CustomLabelManager;
 import com.google.android.accessibility.talkback.labeling.StoragelessLabelManager;
 import com.google.android.accessibility.talkback.labeling.TalkBackLabelManager;
 import com.google.android.accessibility.talkback.logging.EventLatencyLogger;
+import com.google.android.accessibility.talkback.macros.MacroRunner;
 import com.google.android.accessibility.talkback.menurules.NodeMenuRuleCreator;
 import com.google.android.accessibility.talkback.menurules.NodeMenuRuleProcessor;
 import com.google.android.accessibility.talkback.monitor.BatteryMonitor;
@@ -1418,6 +1419,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     serviceState = newState;
     if (newState != ServiceStateListener.SERVICE_STATE_ACTIVE) {
       LiveRecognition.stop();
+      MacroRunner.stop();
     }
     for (ServiceStateListener listener : serviceStateListeners) {
       listener.onServiceStateChanged(newState);

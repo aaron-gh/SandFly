@@ -239,6 +239,34 @@ object CommandMenus {
       }
     }
 
+  /**
+   * Takes the command saved as [value] out of the SandFly menu, the custom menus and the custom
+   * reading controls, and their submenus.
+   */
+  fun removeCommand(context: Context, prefs: SharedPreferences, value: String) {
+    val sandfly = sandflyItems(context, prefs)
+    if (value in commandsIn(sandfly)) {
+      write(context, prefs, SANDFLY_MENU, withoutCommand(sandfly, value))
+    }
+    val menus = custom(prefs)
+    if (menus.any { value in commandsIn(it.items) }) {
+      writeCustom(prefs, menus.map { it.copy(items = withoutCommand(it.items, value)) })
+    }
+    val controls = controls(prefs)
+    if (controls.any { value in commandsIn(it.items) }) {
+      writeControls(prefs, controls.map { it.copy(items = withoutCommand(it.items, value)) })
+    }
+  }
+
+  /** Returns [nodes] without the command saved as [value], in them or in their submenus. */
+  internal fun withoutCommand(nodes: List<Node>, value: String): List<Node> =
+    nodes.mapNotNull { node ->
+      when (node) {
+        is Command -> node.takeIf { it.value != value }
+        is Submenu -> node.copy(children = withoutCommand(node.children, value))
+      }
+    }
+
   /** Returns the commands in [nodes] and their submenus. */
   @JvmStatic
   fun commandsIn(nodes: List<Node>): Set<String> {

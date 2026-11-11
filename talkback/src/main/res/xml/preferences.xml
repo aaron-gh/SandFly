@@ -55,6 +55,10 @@
       android:key="@string/pref_custom_menus_key"
       android:title="@string/title_pref_custom_menus" />
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+      android:fragment="com.google.android.accessibility.talkback.macros.MacrosFragment"
+      android:key="@string/pref_macros_key"
+      android:title="@string/title_pref_macros" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
       android:fragment="com.google.android.accessibility.talkback.preference.base.NavigationPrefFragment"
       android:key="@string/pref_navigation_settings_key"
       android:title="@string/title_pref_navigation" />
