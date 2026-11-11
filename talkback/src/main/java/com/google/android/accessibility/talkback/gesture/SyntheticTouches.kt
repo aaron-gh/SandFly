@@ -51,43 +51,33 @@ object SyntheticTouches {
     detectionRegistered = registered
   }
 
-  /** Receives the end of a gesture sent by [dispatch]. */
-  fun interface Result {
-    /** [completed] is false when the gesture was cancelled, such as by the user's own touch. */
-    fun onEnded(completed: Boolean)
-  }
-
   /**
-   * Sends [gesture], which lasts [durationMs], to the app under it, and passes [onEnd] whether it
-   * completed when it ends or is cancelled. [startsTouch] is false for a gesture that continues the
-   * strokes of the one before, whose touch is already down. Returns false when it couldn't be sent.
+   * Sends [gesture], which lasts [durationMs], to the app under it, and runs [onEnd] when it ends
+   * or is cancelled. Returns false when it couldn't be sent.
    */
   @JvmStatic
   fun dispatch(
     service: AccessibilityService,
     gesture: GestureDescription,
     durationMs: Long,
-    startsTouch: Boolean = true,
-    onEnd: Result? = null,
+    onEnd: Runnable? = null,
   ): Boolean {
     if (!isAvailable()) return false
-    if (startsTouch) {
-      expectedUntil = SystemClock.uptimeMillis() + durationMs + START_MARGIN_MS
-    }
+    expectedUntil = SystemClock.uptimeMillis() + durationMs + START_MARGIN_MS
     val callback =
       object : AccessibilityService.GestureResultCallback() {
         override fun onCompleted(description: GestureDescription) {
-          if (startsTouch) expectedUntil = 0L
-          onEnd?.onEnded(true)
+          expectedUntil = 0L
+          onEnd?.run()
         }
 
         override fun onCancelled(description: GestureDescription) {
-          if (startsTouch) expectedUntil = 0L
-          onEnd?.onEnded(false)
+          expectedUntil = 0L
+          onEnd?.run()
         }
       }
     if (!service.dispatchGesture(gesture, callback, handler)) {
-      if (startsTouch) expectedUntil = 0L
+      expectedUntil = 0L
       return false
     }
     return true

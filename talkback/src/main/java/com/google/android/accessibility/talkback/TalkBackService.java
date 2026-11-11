@@ -205,7 +205,6 @@ import com.google.android.accessibility.talkback.gesture.GestureLayoutActivity;
 import com.google.android.accessibility.talkback.gesture.GestureHistory;
 import com.google.android.accessibility.talkback.gesture.GestureProfiles;
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping;
-import com.google.android.accessibility.talkback.gesture.DragScroll;
 import com.google.android.accessibility.talkback.gesture.SyntheticTouches;
 import com.google.android.accessibility.talkback.gesture.TwoFingerRotationTracker;
 import com.google.android.accessibility.talkback.gesture.VibrationWatchGestureSettings;
@@ -1265,7 +1264,6 @@ public class TalkBackService extends AccessibilityServiceCompat
     }
     if (event.getEventType() == AccessibilityEvent.TYPE_VIEW_SCROLLED) {
       FocusProcessorForLogicalNavigation.onScrollEventReceived(event);
-      DragScroll.onScrollEvent(event);
     }
     if (scriptHost != null) {
       scriptHost.onAccessibilityEvent(event);
@@ -4139,8 +4137,6 @@ public class TalkBackService extends AccessibilityServiceCompat
         getBooleanPref(
             R.string.pref_speak_items_before_scroll_key,
             R.bool.pref_speak_items_before_scroll_default));
-    DragScroll.setEnabled(
-        getBooleanPref(R.string.pref_drag_scroll_key, R.bool.pref_drag_scroll_default));
 
     // If performance statistics changing enabled setting... clear collected stats.
     boolean performanceEnabled =

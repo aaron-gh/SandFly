@@ -127,12 +127,6 @@ When a swipe moved past a list item that reaches the edge of the list, such as a
 
 This applies to lists with one column whose indexes run down the screen, and whose item has no other controls. SandFly must have seen at least two items of the list on screen before it jumps. Swipes back and other lists still scroll a page at a time. While the item fills the list, SandFly continues as soon as the list's scroll events show that the list is slowing down, at most 270 ms after the scroll, and doesn't wait for the list to stop.
 
-### Scrolling lists with a drag gesture
-
-When a swipe or a key moved past the last item on screen in a list, the list scrolled with a scroll action. Many lists animate that scroll for about half a second, and SandFly waited until the list had stopped. In a Telegram chat on a Galaxy Z Fold7, a swipe from a message taller than the screen to the next message took about 940 ms. SandFly now scrolls the list with a one-finger drag that it sends to the app. The list moves at once and doesn't continue moving after the drag, so SandFly moves to the next item as soon as the drag ends.
-
-The drag goes to the app as it is, like the swipe of **Refresh**, so it needs Android 13 or later. It applies to lists that scroll only up and down and whose scroll direction SandFly knows: lists made of Android views, and other lists after SandFly has seen them scroll. The drag stays clear of the edges of the screen and of what covers the list, such as a toolbar or a message field. SandFly uses the scroll action as before in web content, when the focused item is a text field, when the list jumps to its next item instead, and in a list that a drag didn't move. To use the scroll action in all lists, turn off **Controls** > **Navigation** > **Scroll lists with a drag gesture**.
-
 ### Focus that stays where a swipe's scroll put it
 
 A list can keep scrolling for a moment after a swipe has moved focus to the next item. TalkBack treated the rest of that scroll as a scroll that you made, and moved focus on to the next item by itself. SandFly counts it as part of its own scroll. As a result, if you scroll the same list yourself within a second of a swipe's scroll, focus doesn't move.
