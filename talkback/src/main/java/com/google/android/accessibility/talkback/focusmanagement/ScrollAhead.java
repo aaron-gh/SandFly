@@ -36,8 +36,6 @@ public final class ScrollAhead {
 
   private static final String TAG = "ScrollAhead";
 
-  /** How long after focus lands the first scroll waits, so that quick swipes don't scroll. */
-  private static final long START_DELAY_MS = 150;
 
   /** Checks this often whether the list has stopped. */
   private static final long CHECK_MS = 30;
@@ -67,12 +65,26 @@ public final class ScrollAhead {
   private @Nullable AccessibilityNodeInfoCompat focused;
   private int pages;
   private long waitStart;
+
+  /** When this last scrolled a page, in {@link SystemClock#uptimeMillis()}. */
+  private long lastPageUptime;
+
+  /** Run when scrolling ahead has brought the next item on screen and read the window's order. */
+  private static @Nullable Runnable onNextItemShown;
   private @Nullable AccessibilityNodeInfoCompat scrolledList;
   private int deltaSumAtScroll;
 
   ScrollAhead(FocusProcessorForLogicalNavigation navigation) {
     this.navigation = navigation;
     current = this;
+  }
+
+  /**
+   * Sets what runs once scrolling ahead has brought the next item on screen, such as preparing
+   * what the next swipe says.
+   */
+  public static void setOnNextItemShown(@Nullable Runnable runnable) {
+    onNextItemShown = runnable;
   }
 
   /** Sets whether lists are scrolled ahead of the focused item. */
@@ -122,7 +134,8 @@ public final class ScrollAhead {
     focused = node;
     pages = 0;
     waitStart = SystemClock.uptimeMillis();
-    handler.postDelayed(this::step, START_DELAY_MS);
+    // At once, so that the page has scrolled before the next swipe.
+    handler.post(this::step);
   }
 
   private void cancel(String reason) {
@@ -141,7 +154,8 @@ public final class ScrollAhead {
       return;
     }
     long now = SystemClock.uptimeMillis();
-    if (!isQuiet(now, FocusProcessorForLogicalNavigation.lastScrollEventUptime())) {
+    if (!isQuiet(now, FocusProcessorForLogicalNavigation.lastScrollEventUptime())
+        && !(pages == 0 && isOwnPageMoving(now))) {
       if (now - waitStart > MAX_WAIT_MS) {
         LogUtils.d(TAG, "Not scrolling ahead: the list doesn't stop.");
         focused = null;
@@ -199,6 +213,7 @@ public final class ScrollAhead {
       return;
     }
     scrolledList = plan.list;
+    lastPageUptime = SystemClock.uptimeMillis();
     pages++;
     LogUtils.d(
         TAG,
@@ -224,6 +239,27 @@ public final class ScrollAhead {
     long start = SystemClock.uptimeMillis();
     navigation.prepareWindowOrder(node);
     LogUtils.d(TAG, "Window order read in %d ms.", SystemClock.uptimeMillis() - start);
+    Runnable shown = onNextItemShown;
+    if (shown != null) {
+      shown.run();
+    }
+  }
+
+  /**
+   * Whether the list moves only from a page this scrolled for an earlier item, which a new page
+   * may take over from, rather than from a swipe's scroll, which the next item is waited for in.
+   */
+  private boolean isOwnPageMoving(long now) {
+    return isOwnPage(lastPageUptime, navigation.lastAutoScrollUptime(), now);
+  }
+
+  /**
+   * Returns whether the latest scroll at {@code now} is a page scrolled ahead at {@code
+   * pageUptime} rather than a swipe's scroll at {@code navigationScrollUptime}.
+   */
+  @VisibleForTesting
+  static boolean isOwnPage(long pageUptime, long navigationScrollUptime, long now) {
+    return pageUptime > 0 && pageUptime > navigationScrollUptime && now - pageUptime < MAX_WAIT_MS;
   }
 
   private float navigationDensity() {

@@ -268,6 +268,24 @@ class JumpToNextRowTest {
   }
 
   @Test
+  fun itemWhollyInsideTheListNeedsNoScroll() {
+    val list = Rect(0, 0, 1080, 2520)
+    assertTrue(FocusProcessorForLogicalNavigation.isInside(Rect(0, 900, 1080, 1400), list))
+    assertFalse(FocusProcessorForLogicalNavigation.isInside(Rect(0, 2000, 1080, 2520), list))
+    assertFalse(FocusProcessorForLogicalNavigation.isInside(Rect(0, 0, 1080, 400), list))
+    assertFalse(FocusProcessorForLogicalNavigation.isInside(Rect(), list))
+  }
+
+  @Test
+  fun scrollAheadTakesOverFromItsOwnPage() {
+    // The list moves from a page scrolled ahead 100 ms ago, after the swipe's own scroll.
+    assertTrue(ScrollAhead.isOwnPage(1900, 1000, 2000))
+    // A swipe's scroll after the page: wait for it.
+    assertFalse(ScrollAhead.isOwnPage(1000, 1900, 2000))
+    assertFalse(ScrollAhead.isOwnPage(0, 0, 2000))
+  }
+
+  @Test
   fun scrollAheadWaitsForTheListToStop() {
     assertFalse(ScrollAhead.isQuiet(1149, 1000))
     assertTrue(ScrollAhead.isQuiet(1150, 1000))

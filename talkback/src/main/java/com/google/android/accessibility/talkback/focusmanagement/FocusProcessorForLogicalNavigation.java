@@ -299,6 +299,11 @@ public class FocusProcessorForLogicalNavigation {
     return scrollDeltaSumY;
   }
 
+  /** When the last scroll for a navigation started, in {@link SystemClock#uptimeMillis()}. */
+  long lastAutoScrollUptime() {
+    return lastAutoScrollUptime;
+  }
+
   /** When the last scroll event of any window arrived, in {@link SystemClock#uptimeMillis()}. */
   static long lastScrollEventUptime() {
     return lastScrollEventUptime;
@@ -356,6 +361,10 @@ public class FocusProcessorForLogicalNavigation {
       return null;
     }
     AccessibilityNodeInfoCompat item = itemOf(focused, list);
+    if (item != null && !item.equals(focused)) {
+      // The list may still be moving from an earlier page, so read where the item is now.
+      item.refresh();
+    }
     Rect itemBounds = new Rect();
     (item != null ? item : focused).getBoundsInScreen(itemBounds);
     // Another item on screen below this one: the next swipe needn't scroll. Checked first, as it
@@ -3056,15 +3065,20 @@ public class FocusProcessorForLogicalNavigation {
     }
     AccessibilityNodeInfoCompat scrollableNode = scrollableNodeInfo.getNode();
 
+    // The edge check reads the list's items from the app, which waits while the app is busy, such
+    // as drawing a scroll. An item wholly inside the list needs no scroll to be seen.
     boolean needToEnsureOnScreen =
-        TraversalStrategyUtils.isAutoScrollEdgeListItem(
-                node,
-                scrollableNodeInfo,
-                /* ignoreDescendantsOfPivot= */ false,
-                searchDirection,
-                focusFinder,
-                windowOrderedStrategy)
-            || isPositionAtEdge(service, node, scrollableNode, searchDirection);
+        isPositionAtEdge(service, node, scrollableNode, searchDirection)
+            || (!isInside(
+                    AccessibilityNodeInfoUtils.getNodeBoundsInScreen(node),
+                    AccessibilityNodeInfoUtils.getNodeBoundsInScreen(scrollableNode))
+                && TraversalStrategyUtils.isAutoScrollEdgeListItem(
+                    node,
+                    scrollableNodeInfo,
+                    /* ignoreDescendantsOfPivot= */ false,
+                    searchDirection,
+                    focusFinder,
+                    windowOrderedStrategy));
 
     if (!needToEnsureOnScreen) {
       LogUtils.d(TAG, "check ensureOnScreen again for outer scrollable boundary");
@@ -3086,6 +3100,16 @@ public class FocusProcessorForLogicalNavigation {
     }
 
     return scrolled;
+  }
+
+  /** Whether {@code node} bounds lie wholly inside {@code list}, clear of all its edges. */
+  @VisibleForTesting
+  static boolean isInside(Rect node, Rect list) {
+    return !node.isEmpty()
+        && node.left >= list.left
+        && node.right <= list.right
+        && node.top > list.top
+        && node.bottom < list.bottom;
   }
 
   private static boolean isPositionAtEdge(

@@ -3088,6 +3088,7 @@ public class TalkBackService extends AccessibilityServiceCompat
           }
         });
     eventFilter.setTargetPredictor(directionNavigationActor::predictTarget);
+    ScrollAhead.setOnNextItemShown(eventFilter::prepareSwipeTargetsNow);
     eventFilter.setLastDirection(directionNavigationActor::lastLogicalDirection);
     eventFilter.setFingerDownSupplier(
         () ->

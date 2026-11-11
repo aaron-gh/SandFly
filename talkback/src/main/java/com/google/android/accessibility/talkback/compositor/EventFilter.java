@@ -165,6 +165,17 @@ public class EventFilter {
     voiceActionDelegate = delegate;
   }
 
+  /**
+   * Works out again what a swipe from the focused node would say, such as after a scroll has
+   * brought the next item on screen.
+   */
+  public void prepareSwipeTargetsNow() {
+    handler.removeCallbacks(prepareSwipeTargets);
+    if (targetPredictor != null && lastFocusedNode != null) {
+      handler.post(prepareSwipeTargets);
+    }
+  }
+
   public void setTargetPredictor(@Nullable TargetPredictor predictor) {
     targetPredictor = predictor;
   }
