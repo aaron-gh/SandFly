@@ -235,6 +235,9 @@ public class FocusProcessorForLogicalNavigation {
   /** When the last auto scroll for a navigation started, in {@link SystemClock#uptimeMillis()}. */
   private long lastAutoScrollUptime;
 
+  /** Whether following a node has shown that the list of the last auto scroll has slowed down. */
+  private boolean listSettled;
+
   /** {@link #scrollEventCount} and {@link #scrollDeltaSumY} when that scroll started. */
   private int scrollStartEventCount;
 
@@ -3340,12 +3343,222 @@ public class FocusProcessorForLogicalNavigation {
         && navigationAction.targetType == NavigationTarget.TARGET_DEFAULT) {
       AutoScrollCallback callback = scrollCallback;
       AccessibilityNodeInfoCompat scrollable = scrollableNodeInfo.getNode();
-      earlyScrollCheckHandler.post(
-          () ->
-              checkScrollEarly(
-                  callback, scrollable, pivotBefore, eventId, EARLY_SCROLL_RETRIES));
+      boolean contentUp =
+          scrollAction == AccessibilityNodeInfoCompat.ACTION_SCROLL_FORWARD
+              || scrollAction == AccessibilityActionCompat.ACTION_SCROLL_DOWN.getId();
+      @Nullable AccessibilityNodeInfoCompat tracker = trackerFor(pivot, scrollable, contentUp);
+      if (tracker != null) {
+        ScrollTrack track = new ScrollTrack(callback, scrollable, tracker, eventId);
+        earlyScrollCheckHandler.postDelayed(() -> trackScroll(track), FIRST_TRACK_CHECK_MS);
+      } else {
+        earlyScrollCheckHandler.post(
+            () ->
+                checkScrollEarly(
+                    callback, scrollable, pivotBefore, eventId, EARLY_SCROLL_RETRIES));
+      }
     }
     return scrolled;
+  }
+
+  // While a list that a swipe scrolled moves, a node on screen is read again every
+  // TRACK_CHECK_MS, as CSR does, to see how far it moved since the last check. The search starts
+  // once a step is less than half the one before or less than TRACK_STOP_PX, or TRACK_MAX_MS after
+  // the scroll. Items that fill the list are cut to its bounds and seem not to move, so then a
+  // small part of the item is read instead. If nothing moves within NO_MOVE_WAIT_MS, or the node
+  // is gone, the list's scroll events decide instead.
+  private static final long FIRST_TRACK_CHECK_MS = 16;
+  private static final long TRACK_CHECK_MS = 30;
+  private static final long TRACK_MAX_MS = 300;
+  private static final int TRACK_STOP_PX = 4;
+
+  /** Most nodes read to find a part of the focused item to follow while the list scrolls. */
+  private static final int MAX_TRACKER_NODES = 60;
+
+  /** Finding that part runs on the main thread and stops after this long. */
+  private static final long MAX_TRACKER_SEARCH_MS = 15;
+
+  /** A node followed while a list scrolls, and how it has moved since the scroll. */
+  private static final class ScrollTrack {
+    final AutoScrollCallback callback;
+    final AccessibilityNodeInfoCompat scrollable;
+    final AccessibilityNodeInfoCompat node;
+    final EventId eventId;
+    final Rect last = new Rect();
+    final StringBuilder steps = new StringBuilder();
+    int previousStep;
+    int totalShift;
+    boolean moved;
+
+    ScrollTrack(
+        AutoScrollCallback callback,
+        AccessibilityNodeInfoCompat scrollable,
+        AccessibilityNodeInfoCompat node,
+        EventId eventId) {
+      this.callback = callback;
+      this.scrollable = scrollable;
+      this.node = node;
+      this.eventId = eventId;
+      node.getBoundsInScreen(last);
+    }
+  }
+
+  /**
+   * Returns a copy of the node to follow while {@code list} scrolls from {@code pivot}: the pivot
+   * if it doesn't fill the list, otherwise a small part of its item, or null if there is none.
+   * {@code topLeavesFirst} says that the content moves up, so that a part near the top leaves the
+   * screen first.
+   */
+  private @Nullable AccessibilityNodeInfoCompat trackerFor(
+      AccessibilityNodeInfoCompat pivot, AccessibilityNodeInfoCompat list, boolean topLeavesFirst) {
+    Rect listBounds = new Rect();
+    list.getBoundsInScreen(listBounds);
+    Rect pivotBounds = new Rect();
+    pivot.getBoundsInScreen(pivotBounds);
+    if (listBounds.isEmpty()) {
+      return null;
+    }
+    if (!pivotBounds.isEmpty() && !fillsList(pivotBounds, list)) {
+      LogUtils.d(TAG, "Following the focused item at %s while the list scrolls.", pivotBounds);
+      return AccessibilityNodeInfoCompat.obtain(pivot);
+    }
+    // The pivot's own parts first, then those of the list item holding it.
+    AccessibilityNodeInfoCompat item = pivot;
+    AccessibilityNodeInfoCompat parent = pivot.getParent();
+    for (int depth = 0; parent != null && !parent.equals(list) && depth < MAX_ITEM_DEPTH; depth++) {
+      item = parent;
+      parent = parent.getParent();
+    }
+    List<AccessibilityNodeInfoCompat> nodes = new ArrayList<>();
+    List<Rect> bounds = new ArrayList<>();
+    long deadline = SystemClock.uptimeMillis() + MAX_TRACKER_SEARCH_MS;
+    collectParts(pivot, nodes, bounds, deadline);
+    if (nodes.isEmpty() && !item.equals(pivot)) {
+      collectParts(item, nodes, bounds, deadline);
+    }
+    int index = pickTracker(listBounds, bounds, topLeavesFirst);
+    if (index < 0) {
+      LogUtils.d(TAG, "No part of the focused item to follow while the list scrolls.");
+      return null;
+    }
+    LogUtils.d(
+        TAG, "Following a part of the focused item at %s while the list scrolls.", bounds.get(index));
+    return AccessibilityNodeInfoCompat.obtain(nodes.get(index));
+  }
+
+  /** Adds the descendants of {@code root} and their bounds, within the node and time limits. */
+  private static void collectParts(
+      AccessibilityNodeInfoCompat root,
+      List<AccessibilityNodeInfoCompat> nodes,
+      List<Rect> bounds,
+      long deadline) {
+    ArrayDeque<AccessibilityNodeInfoCompat> queue = new ArrayDeque<>();
+    queue.add(root);
+    int read = 0;
+    while (!queue.isEmpty()) {
+      AccessibilityNodeInfoCompat node = queue.poll();
+      int children = node.getChildCount();
+      for (int i = 0; i < children; i++) {
+        if (++read > MAX_TRACKER_NODES || SystemClock.uptimeMillis() > deadline) {
+          return;
+        }
+        AccessibilityNodeInfoCompat child = node.getChild(i);
+        if (child == null) {
+          continue;
+        }
+        Rect rect = new Rect();
+        child.getBoundsInScreen(rect);
+        nodes.add(child);
+        bounds.add(rect);
+        queue.add(child);
+      }
+    }
+  }
+
+  /**
+   * Returns the index in {@code parts} of the node to follow while a list with {@code list}
+   * bounds scrolls, or -1 if none will do: the part on screen at most half as tall as the list that
+   * is nearest its top when {@code topLeavesFirst}, otherwise nearest its bottom.
+   */
+  @VisibleForTesting
+  static int pickTracker(Rect list, List<Rect> parts, boolean topLeavesFirst) {
+    int best = -1;
+    for (int i = 0; i < parts.size(); i++) {
+      Rect part = parts.get(i);
+      if (part.isEmpty()
+          || !Rect.intersects(part, list)
+          || part.height() * 2 > list.height()) {
+        continue;
+      }
+      if (best < 0) {
+        best = i;
+        continue;
+      }
+      Rect chosen = parts.get(best);
+      if (topLeavesFirst ? part.top < chosen.top : part.bottom > chosen.bottom) {
+        best = i;
+      }
+    }
+    return best;
+  }
+
+  /**
+   * Returns whether a list counts as slowed down after a step of {@code step} pixels that followed
+   * one of {@code previousStep}, once it has {@code moved} at all.
+   */
+  @VisibleForTesting
+  static boolean trackerSlowed(int step, int previousStep, boolean moved) {
+    return moved && (step < TRACK_STOP_PX || 2L * step < previousStep);
+  }
+
+  /**
+   * Reads the followed node again, and continues the navigation once the list has slowed down.
+   * Reads one node per check and searches nothing meanwhile.
+   */
+  private void trackScroll(ScrollTrack track) {
+    if (scrollCallback != track.callback) {
+      return;
+    }
+    long elapsed = SystemClock.uptimeMillis() - lastAutoScrollUptime;
+    Rect now = new Rect();
+    if (!track.node.refresh() || isEmpty(now, track.node)) {
+      LogUtils.d(TAG, "The followed node is gone after %d ms; following scroll events.", elapsed);
+      searchWhenFilledListSlows(track.callback, track.scrollable, track.eventId);
+      return;
+    }
+    int shift = edgeShift(track.last.top, now.top, track.last.bottom, now.bottom);
+    int step = Math.abs(shift);
+    track.totalShift += shift;
+    track.steps.append(' ').append(step);
+    boolean slowed = trackerSlowed(step, track.previousStep, track.moved);
+    track.moved |= step > 0;
+    track.last.set(now);
+    if (!track.moved) {
+      if (elapsed >= NO_MOVE_WAIT_MS) {
+        LogUtils.d(TAG, "The followed node didn't move in %d ms; following scroll events.", elapsed);
+        searchWhenFilledListSlows(track.callback, track.scrollable, track.eventId);
+        return;
+      }
+    } else if (slowed || elapsed >= TRACK_MAX_MS) {
+      LogUtils.d(
+          TAG,
+          "List %s after %d ms; steps%s; searching now.",
+          slowed ? "slowed down" : "still moving",
+          elapsed,
+          track.steps);
+      listSettled = true;
+      track.scrollable.refresh();
+      readListAgain(track.scrollable);
+      onAutoScrolled(track.scrollable, track.eventId, /* scrollDeltaX= */ 0, track.totalShift);
+      return;
+    }
+    track.previousStep = step;
+    earlyScrollCheckHandler.postDelayed(() -> trackScroll(track), TRACK_CHECK_MS);
+  }
+
+  /** Puts the bounds of {@code node} in {@code bounds} and returns whether they are empty. */
+  private static boolean isEmpty(Rect bounds, AccessibilityNodeInfoCompat node) {
+    node.getBoundsInScreen(bounds);
+    return bounds.isEmpty();
   }
 
   /** Most layers between a list and the focused node of one of its items. */
@@ -4221,7 +4434,8 @@ public class FocusProcessorForLogicalNavigation {
 
   /** Returns whether the list of the last auto scroll still moves at speed. */
   private boolean listStillMoving() {
-    return listStillMoving(
+    return !listSettled
+        && listStillMoving(
         SystemClock.uptimeMillis(),
         lastAutoScrollUptime,
         scrollEventCount - scrollStartEventCount,
@@ -4497,6 +4711,7 @@ public class FocusProcessorForLogicalNavigation {
       parent.lastAutoScrollUptime = SystemClock.uptimeMillis();
       parent.scrollStartEventCount = scrollEventCount;
       parent.scrollStartDeltaSumY = scrollDeltaSumY;
+      parent.listSettled = false;
     }
 
     public void onAutoScrolled(

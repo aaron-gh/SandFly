@@ -125,7 +125,7 @@ This requires Android 14 or later. Lists, grids, pagers, and Compose screens sti
 
 When a swipe moved past a list item that reaches the edge of the list, such as a long post, the list scrolled a page at a time, and SandFly waited about a second after each page. When you swipe forward in a list that offers it, SandFly now shows the next item immediately, so an item of any height takes one step. On a Galaxy S24, swipes past a post ten screens tall in Eltenger went from about 7 seconds to about 0.16 seconds.
 
-This applies to lists with one column whose indexes run down the screen, and whose item has no other controls. SandFly must have seen at least two items of the list on screen before it jumps. Swipes back and other lists still scroll a page at a time. While the item fills the list, SandFly continues as soon as the list's scroll events show that the list is slowing down, at most 270 ms after the scroll, and doesn't wait for the list to stop.
+This applies to lists with one column whose indexes run down the screen, and whose item has no other controls. SandFly must have seen at least two items of the list on screen before it jumps. Swipes back and other lists still scroll a page at a time. After each page, SandFly reads the position of the focused item every 30 ms and searches as soon as the list slows down, at most 300 ms after the scroll, instead of waiting for the list to stop. For an item that fills the list, SandFly reads a small part of the item instead, since the item's bounds don't change while the list moves.
 
 ### Focus that stays where a swipe's scroll put it
 

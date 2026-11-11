@@ -141,6 +141,42 @@ class JumpToNextRowTest {
     assertFalse(FocusProcessorForLogicalNavigation.listStillMoving(1270, 1000, 3, 1260, 600, 600))
   }
 
+  @Test
+  fun trackerIsTheSmallPartThatLeavesFirst() {
+    val list = Rect(0, 200, 1000, 2200)
+    val parts =
+      listOf(
+        Rect(0, 200, 1000, 2200), // as tall as the list
+        Rect(125, 387, 1026, 472),
+        Rect(125, 1500, 1026, 1600),
+        Rect(0, 0, 0, 0), // empty
+        Rect(125, 2400, 1026, 2500), // off screen
+      )
+    assertEquals(1, FocusProcessorForLogicalNavigation.pickTracker(list, parts, true))
+    assertEquals(2, FocusProcessorForLogicalNavigation.pickTracker(list, parts, false))
+    assertEquals(-1, FocusProcessorForLogicalNavigation.pickTracker(list, listOf(Rect(list)), true))
+  }
+
+  @Test
+  fun trackerStepsFromCsrLogSlowDownOnlyAtTheEnd() {
+    // Steps of a Nekogram message scrolled forward, every 30 ms.
+    val steps = intArrayOf(542, 501, 301, 261, 165, 89, 56, 35)
+    var moved = false
+    var previous = 0
+    for (step in steps) {
+      assertFalse(FocusProcessorForLogicalNavigation.trackerSlowed(step, previous, moved))
+      moved = true
+      previous = step
+    }
+    assertTrue(FocusProcessorForLogicalNavigation.trackerSlowed(3, 35, true))
+    assertTrue(FocusProcessorForLogicalNavigation.trackerSlowed(100, 542, true))
+  }
+
+  @Test
+  fun trackerThatHasNotMovedHasNotSlowed() {
+    assertFalse(FocusProcessorForLogicalNavigation.trackerSlowed(0, 0, false))
+  }
+
   private fun node(parent: AccessibilityNodeInfoCompat? = null): AccessibilityNodeInfoCompat {
     val raw = AccessibilityNodeInfo.obtain()
     // Distinct sources keep the nodes unequal.
