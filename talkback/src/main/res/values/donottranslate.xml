@@ -352,6 +352,8 @@
         <item>@string/value_volume_change_feedback_spoken</item>
         <item>@string/value_volume_change_feedback_tone_and_spoken</item>
     </string-array>
+    <string name="pref_volume_change_tone_during_media_key" translatable="false">pref_volume_change_tone_during_media</string>
+    <string name="pref_volume_change_speech_during_media_key" translatable="false">pref_volume_change_speech_during_media</string>
     <string name="pref_volume_up_double_press_key" translatable="false">pref_volume_up_double_press</string>
     <string name="pref_volume_up_triple_press_key" translatable="false">pref_volume_up_triple_press</string>
     <string name="pref_volume_up_long_press_key" translatable="false">pref_volume_up_long_press</string>
@@ -2025,6 +2027,8 @@
     <bool name="pref_focus_new_windows_default">true</bool>
     <bool name="pref_volume_keys_adjust_sliders_default">false</bool>
     <bool name="pref_volume_keys_move_cursor_default">false</bool>
+    <bool name="pref_volume_change_tone_during_media_default">false</bool>
+    <bool name="pref_volume_change_speech_during_media_default">false</bool>
     <bool name="pref_speak_items_before_scroll_default">false</bool>
     <bool name="pref_first_item_interrupts_window_name_default">false</bool>
     <bool name="pref_auto_enter_table_navigation_default">false</bool>
