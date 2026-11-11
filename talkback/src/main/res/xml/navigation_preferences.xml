@@ -14,6 +14,10 @@
       android:title="@string/title_pref_speak_items_before_scroll"
       android:key="@string/pref_speak_items_before_scroll_key" />
   <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+      android:defaultValue="@bool/pref_drag_scroll_default"
+      android:key="@string/pref_drag_scroll_key"
+      android:title="@string/title_pref_drag_scroll" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
       android:defaultValue="@bool/pref_auto_enter_table_navigation_default"
       android:key="@string/pref_auto_enter_table_navigation_key"
       android:title="@string/pref_auto_enter_table_navigation_title" />

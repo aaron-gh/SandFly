@@ -87,6 +87,7 @@ import com.google.android.accessibility.talkback.focusmanagement.interpreter.Scr
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.ScreenStateMonitor;
 import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionInfo;
 import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionRecord;
+import com.google.android.accessibility.talkback.gesture.DragScroll;
 import com.google.android.accessibility.talkback.utils.LinkUtils;
 import com.google.android.accessibility.talkback.utils.TalkbackFeatureSupport;
 import com.google.android.accessibility.utils.AccessibilityNode;
@@ -231,6 +232,17 @@ public class FocusProcessorForLogicalNavigation {
 
   // Counts navigation actions, so that a search waiting for a list to stop gives way to a newer one.
   private int navigationSerial;
+
+  /** Drags lists to scroll them; created when first needed. */
+  private @Nullable DragScroll dragScroll;
+
+  /** Most scrolls of one move to the next item that drag; later ones use the scroll action. */
+  private static final int MAX_DRAG_ATTEMPTS = 30;
+
+  // After a drag that has shown no movement yet, checks once a frame for about 100 ms for the
+  // list's scroll event before scrolling with the scroll action.
+  private static final long DRAG_RESULT_RETRY_MS = 16;
+  private static final int DRAG_RESULT_RETRIES = 6;
 
   // The last list whose items showed which way their indexes run, and which way they run.
   private @Nullable AccessibilityNodeInfoCompat listWithKnownOrder;
@@ -3273,15 +3285,18 @@ public class FocusProcessorForLogicalNavigation {
 
     // Only the first attempt jumps. A jump that left the focused item where it was is repeated with
     // a page scroll, as a list can accept the action without moving.
+    boolean jumpTried = false;
     if (navigationAction.actionType == NavigationAction.DIRECTIONAL_NAVIGATION
         && navigationAction.targetType == NavigationTarget.TARGET_DEFAULT
         && navigationAction.autoScrollAttempt == 0) {
       Integer row =
           rowToJumpTo(
               scrollableNodeInfo.getNode(), pivot, supportedNavigationAction.searchDirection);
-      if (row != null
-          && jumpToRow(scrollableNodeInfo.getNode(), pivot, row, navigationAction, eventId)) {
-        return true;
+      if (row != null) {
+        jumpTried = true;
+        if (jumpToRow(scrollableNodeInfo.getNode(), pivot, row, navigationAction, eventId)) {
+          return true;
+        }
       }
     }
 
@@ -3289,18 +3304,36 @@ public class FocusProcessorForLogicalNavigation {
         TraversalStrategyUtils.convertSearchDirectionToScrollAction(
             supportedNavigationAction.searchDirection);
 
+    // A drag moves the list at once, where the scroll action makes many lists animate.
+    if (!jumpTried
+        && navigationAction.actionType == NavigationAction.DIRECTIONAL_NAVIGATION
+        && navigationAction.targetType == NavigationTarget.TARGET_DEFAULT
+        && navigationAction.autoScrollAttempt < MAX_DRAG_ATTEMPTS
+        && dragToScroll(scrollableNodeInfo.getNode(), pivot, scrollAction, navigationAction, eventId)) {
+      return true;
+    }
+    return scrollByAction(scrollableNodeInfo.getNode(), pivot, scrollAction, navigationAction, eventId);
+  }
+
+  /** Scrolls {@code scrollable} with {@code scrollAction} to find the next item from the pivot. */
+  private boolean scrollByAction(
+      AccessibilityNodeInfoCompat scrollable,
+      AccessibilityNodeInfoCompat pivot,
+      int scrollAction,
+      NavigationAction navigationAction,
+      EventId eventId) {
     AutoScrollSuccessChecker autoScrollChecker =
-        createAutoScrollCheckerIfNeeded(
-            scrollableNodeInfo.getNode(), navigationAction, scrollAction);
+        createAutoScrollCheckerIfNeeded(scrollable, navigationAction, scrollAction);
     Rect pivotBefore = new Rect();
     pivot.getBoundsInScreen(pivotBefore);
+    CharSequence pivotText = itemText(pivot);
     // Use SCROLL_TIMEOUT_LONG_MS since auto scroll may find some scrollable containers that request
     // a longer time to finish the scrolling action(like home screen), a short timeout will make
     // TalkBack detects the scroll action always fail, even through it's actually success.
     boolean scrolled =
         performScrollActionInternal(
             ScrollActionRecord.ACTION_AUTO_SCROLL,
-            scrollableNodeInfo.getNode(),
+            scrollable,
             pivot,
             scrollAction,
             navigationAction,
@@ -3311,13 +3344,181 @@ public class FocusProcessorForLogicalNavigation {
         && scrollCallback != null
         && navigationAction.targetType == NavigationTarget.TARGET_DEFAULT) {
       AutoScrollCallback callback = scrollCallback;
-      AccessibilityNodeInfoCompat scrollable = scrollableNodeInfo.getNode();
+      callback.scrollAction = scrollAction;
+      callback.pivotText = pivotText;
       earlyScrollCheckHandler.post(
           () ->
               checkScrollEarly(
                   callback, scrollable, pivotBefore, eventId, EARLY_SCROLL_RETRIES));
     }
     return scrolled;
+  }
+
+  private DragScroll dragScroll() {
+    if (dragScroll == null) {
+      dragScroll = new DragScroll(service);
+    }
+    return dragScroll;
+  }
+
+  /**
+   * Scrolls {@code list} as {@code scrollAction} would, with a drag sent to the app, and searches
+   * from the pivot again once the drag ends. Returns false if the list shouldn't be dragged.
+   */
+  private boolean dragToScroll(
+      AccessibilityNodeInfoCompat list,
+      AccessibilityNodeInfoCompat pivot,
+      int scrollAction,
+      NavigationAction navigationAction,
+      EventId eventId) {
+    DragScroll.DragPath path = dragScroll().plan(list, pivot, scrollAction);
+    if (path == null) {
+      return false;
+    }
+    Rect pivotBefore = new Rect();
+    pivot.getBoundsInScreen(pivotBefore);
+    CharSequence pivotText = itemText(pivot);
+    // An earlier scroll's record mustn't take the drag's scroll events for its own.
+    resetScrollRecord(eventId);
+    AutoScrollCallback callback = new AutoScrollCallback(this, navigationAction, pivot);
+    callback.isDrag = true;
+    scrollCallback = callback;
+    int serial = navigationSerial;
+    boolean sent =
+        dragScroll()
+            .drag(
+                list,
+                path,
+                (completed, scrollEvents, scrollDeltaY) ->
+                    onDragEnded(
+                        new DragState(
+                            callback,
+                            serial,
+                            list,
+                            pivot,
+                            pivotBefore,
+                            pivotText,
+                            scrollAction,
+                            path.getMovesContentUp(),
+                            navigationAction,
+                            eventId),
+                        completed,
+                        DRAG_RESULT_RETRIES));
+    if (!sent) {
+      scrollCallback = null;
+      LogUtils.d(TAG, "Not dragging: the drag couldn't be sent.");
+      return false;
+    }
+    return true;
+  }
+
+  /** What a drag for a navigation started from, for when it ends. */
+  private static final class DragState {
+    final AutoScrollCallback callback;
+    final int serial;
+    final AccessibilityNodeInfoCompat list;
+    final AccessibilityNodeInfoCompat pivot;
+    final Rect pivotBefore;
+    final @Nullable CharSequence pivotText;
+    final int scrollAction;
+    final boolean contentUp;
+    final NavigationAction navigationAction;
+    final EventId eventId;
+
+    DragState(
+        AutoScrollCallback callback,
+        int serial,
+        AccessibilityNodeInfoCompat list,
+        AccessibilityNodeInfoCompat pivot,
+        Rect pivotBefore,
+        @Nullable CharSequence pivotText,
+        int scrollAction,
+        boolean contentUp,
+        NavigationAction navigationAction,
+        EventId eventId) {
+      this.callback = callback;
+      this.serial = serial;
+      this.list = list;
+      this.pivot = pivot;
+      this.pivotBefore = pivotBefore;
+      this.pivotText = pivotText;
+      this.scrollAction = scrollAction;
+      this.contentUp = contentUp;
+      this.navigationAction = navigationAction;
+      this.eventId = eventId;
+    }
+  }
+
+  /**
+   * Searches for the next item as soon as a drag has moved the list. A drag that hasn't moved it is
+   * replaced by the scroll action.
+   */
+  private void onDragEnded(DragState drag, boolean completed, int retries) {
+    if (scrollCallback != drag.callback || drag.serial != navigationSerial) {
+      LogUtils.d(TAG, "After the drag: another navigation has started.");
+      return;
+    }
+    AccessibilityNodeInfoCompat focus =
+        accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ false);
+    if (focus != null && !focus.equals(drag.pivot)) {
+      LogUtils.d(TAG, "After the drag: focus has moved elsewhere.");
+      scrollCallback = null;
+      return;
+    }
+    AccessibilityNodeInfoCompat pivotNow = AccessibilityNodeInfoCompat.obtain(drag.pivot);
+    int shift = 0;
+    if (pivotNow.refresh() && TextUtils.equals(itemText(pivotNow), drag.pivotText)) {
+      Rect pivotAfter = new Rect();
+      pivotNow.getBoundsInScreen(pivotAfter);
+      shift =
+          edgeShift(
+              drag.pivotBefore.top, pivotAfter.top, drag.pivotBefore.bottom, pivotAfter.bottom);
+    }
+    int scrollEvents = DragScroll.scrollEventsOfDrag();
+    if (scrollEvents == 0 && shift == 0) {
+      if (completed && retries > 0) {
+        earlyScrollCheckHandler.postDelayed(
+            () -> onDragEnded(drag, completed, retries - 1), DRAG_RESULT_RETRY_MS);
+        return;
+      }
+      scrollCallback = null;
+      if (!completed && DragScroll.isFingerDown()) {
+        LogUtils.d(TAG, "After the drag: a touch cancelled it.");
+        return;
+      }
+      LogUtils.d(TAG, "The drag didn't move the list; scrolling with the scroll action.");
+      dragScroll().markFailed(drag.list);
+      drag.list.refresh();
+      if (!scrollByAction(
+          drag.list, drag.pivot, drag.scrollAction, drag.navigationAction, drag.eventId)) {
+        handleViewAutoScrollFailedForDirectionalNavigationAction(
+            drag.list, drag.navigationAction);
+      }
+      return;
+    }
+    int scrollDeltaY = DragScroll.scrollDeltaYOfDrag();
+    int deltaY = shift != 0 ? shift : scrollDeltaY != 0 ? scrollDeltaY : drag.contentUp ? 1 : -1;
+    LogUtils.d(
+        TAG,
+        "The drag moved the list: %d scroll events, pivot shift %d; searching now.",
+        scrollEvents,
+        shift);
+    drag.list.refresh();
+    readListAgain(drag.list);
+    deliverAutoScrolled(drag.list, drag.eventId, /* scrollDeltaX= */ 0, deltaY);
+  }
+
+  /**
+   * Returns what identifies the item of {@code node} while a list scrolls, its text and
+   * description, or null if it has neither. A list can reuse a node for another item.
+   */
+  private static @Nullable CharSequence itemText(AccessibilityNodeInfoCompat node) {
+    CharSequence text = node.getText();
+    CharSequence description = node.getContentDescription();
+    if (TextUtils.isEmpty(text) && TextUtils.isEmpty(description)) {
+      return null;
+    }
+    return text + "\n" + description;
   }
 
   /** Most layers between a list and the focused node of one of its items. */
@@ -3538,6 +3739,14 @@ public class FocusProcessorForLogicalNavigation {
             ? edgeShift(pivotBefore.top, pivotAfter.top, pivotBefore.bottom, pivotAfter.bottom)
             : DELTA_UNDEFINED;
     LogUtils.d(TAG, "checkScrollEarly: scrolled, deltaX=%s deltaY=%s", deltaX, deltaY);
+    // Which way the content moved on screen tells which way to drag this list later.
+    if (!callback.isJump
+        && pivotPresent
+        && deltaY != 0
+        && callback.pivotText != null
+        && TextUtils.equals(itemText(pivotNow), callback.pivotText)) {
+      dragScroll().learn(scrollable, callback.scrollAction, deltaY > 0);
+    }
     scrollable.refresh();
     readListAgain(scrollable);
     onAutoScrolled(scrollable, eventId, deltaX, deltaY);
@@ -3658,6 +3867,18 @@ public class FocusProcessorForLogicalNavigation {
       EventId eventId,
       int scrollDeltaX,
       int scrollDeltaY) {
+    if (scrollCallback != null && scrollCallback.isDrag) {
+      // The drag's end decides when to search, not an earlier scroll's record.
+      return;
+    }
+    deliverAutoScrolled(scrolledNode, eventId, scrollDeltaX, scrollDeltaY);
+  }
+
+  private void deliverAutoScrolled(
+      @NonNull AccessibilityNodeInfoCompat scrolledNode,
+      EventId eventId,
+      int scrollDeltaX,
+      int scrollDeltaY) {
     if (scrollCallback != null) {
       AccessibilityNodeInfoCompat currentFocus =
           accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ false);
@@ -3675,7 +3896,7 @@ public class FocusProcessorForLogicalNavigation {
 
   /** Determines feedback for auto-scroll failure after directional-navigation action. */
   public void onAutoScrollFailed(@NonNull AccessibilityNodeInfoCompat scrolledNode) {
-    if (scrollCallback != null) {
+    if (scrollCallback != null && !scrollCallback.isDrag) {
       scrollCallback.onAutoScrollFailed(scrolledNode);
       scrollCallback = null;
     }
@@ -3956,25 +4177,6 @@ public class FocusProcessorForLogicalNavigation {
   }
 
   /**
-   * Called when we receive result event for auto-scroll action with default target.
-   *
-   * <p><b>Warning:</b> Do not rely too much logic on {@code focusBeforeScroll}. It is possible in
-   * RecyclerView when {@code focusBeforeScroll} goes off screen, and after calling {@link
-   * AccessibilityNodeInfoCompat#refresh()}, the node is reused and pointed to another emerging list
-   * item. This is how RecyclerView "recycles" views and we cannot get rid of it. If using this
-   * field, please refresh and validate the node to ensure it is identical with what it was before
-   * scroll action.
-   */
-  private void handleViewAutoScrolledForDirectionalNavigationWithDefaultTarget(
-      @NonNull AccessibilityNodeInfoCompat scrolledNode,
-      @NonNull AccessibilityNodeInfoCompat focusBeforeScroll,
-      NavigationAction sourceAction,
-      EventId eventId) {
-    handleViewAutoScrolledForDirectionalNavigationWithDefaultTarget(
-        scrolledNode, focusBeforeScroll, sourceAction, eventId, SETTLE_CHECKS);
-  }
-
-  /**
    * Searches again {@code SETTLE_CHECK_MS} from now, after reading the list again, while it may
    * still be moving. Gives up if the user navigates or focus moves elsewhere in the meantime.
    */
@@ -4003,6 +4205,19 @@ public class FocusProcessorForLogicalNavigation {
         SETTLE_CHECK_MS);
   }
 
+  /**
+   * Called when we receive result event for auto-scroll action with default target.
+   *
+   * <p><b>Warning:</b> Do not rely too much logic on {@code focusBeforeScroll}. It is possible in
+   * RecyclerView when {@code focusBeforeScroll} goes off screen, and after calling {@link
+   * AccessibilityNodeInfoCompat#refresh()}, the node is reused and pointed to another emerging list
+   * item. This is how RecyclerView "recycles" views and we cannot get rid of it. If using this
+   * field, please refresh and validate the node to ensure it is identical with what it was before
+   * scroll action.
+   *
+   * <p>While the list may still be moving, the search is repeated at most {@code settleChecksLeft}
+   * more times; 0 after a drag, which leaves the list still.
+   */
   private void handleViewAutoScrolledForDirectionalNavigationWithDefaultTarget(
       @NonNull AccessibilityNodeInfoCompat scrolledNode,
       @NonNull AccessibilityNodeInfoCompat focusBeforeScroll,
@@ -4338,6 +4553,15 @@ public class FocusProcessorForLogicalNavigation {
     /** Whether the scroll was a jump to a row, which keeps searching with a page scroll. */
     private boolean isJump;
 
+    /** Whether the scroll was a drag, after which the list doesn't move on by itself. */
+    private boolean isDrag;
+
+    /** The scroll action performed, or 0. */
+    private int scrollAction;
+
+    /** What the pivot showed when the scroll started; see {@link #itemText}. */
+    private @Nullable CharSequence pivotText;
+
     AutoScrollCallback(
         FocusProcessorForLogicalNavigation parent,
         NavigationAction sourceAction,
@@ -4377,8 +4601,9 @@ public class FocusProcessorForLogicalNavigation {
       switch (sourceAction.actionType) {
         case NavigationAction.DIRECTIONAL_NAVIGATION -> {
           if (sourceAction.targetType == NavigationTarget.TARGET_DEFAULT) {
+            // A drag leaves the list still, so the search needn't wait for it to stop.
             parent.handleViewAutoScrolledForDirectionalNavigationWithDefaultTarget(
-                scrolledNode, pivot, navigationAction, eventId);
+                scrolledNode, pivot, navigationAction, eventId, isDrag ? 0 : SETTLE_CHECKS);
           } else if (NavigationTarget.isMacroGranularity(sourceAction.targetType)) {
             parent.handleViewAutoScrolledForDirectionalNavigationWithMacroGranularityTarget(
                 scrolledNode, navigationAction, eventId);

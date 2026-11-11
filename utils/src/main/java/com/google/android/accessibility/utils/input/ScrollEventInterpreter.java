@@ -21,6 +21,7 @@ import static android.view.accessibility.AccessibilityEvent.TYPE_VIEW_SCROLLED;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.os.Build.VERSION_CODES;
+import android.os.SystemClock;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 import androidx.annotation.VisibleForTesting;
@@ -55,6 +56,20 @@ import org.checkerframework.checker.nullness.qual.Nullable;
 public class ScrollEventInterpreter implements AccessibilityEventListener {
 
   private static final String TAG = "ScrollEventInterpreter";
+
+  /**
+   * Until when, in {@link SystemClock#uptimeMillis()}, scroll events that no scroll action explains
+   * come from a list that SandFly drags itself to reach the next item.
+   */
+  private static volatile long ownTouchScrollUntil;
+
+  /**
+   * Sets until when, in {@link SystemClock#uptimeMillis()}, scroll events that no scroll action
+   * explains come from SandFly's own drag, so that they count as its scroll rather than the user's.
+   */
+  public static void setOwnTouchScrollUntil(long uptimeMillis) {
+    ownTouchScrollUntil = uptimeMillis;
+  }
 
   private static final int SCROLL_NOISE_RANGE = 15;
 
@@ -325,7 +340,12 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
       // navigation after that, accessibility focus might go to the beginning of screen.
       // We take into account TYPE_WINDOW_CONTENT_CHANGED events to provide more
       // fine-grained manual scroll callback.
-      if (isFromFinishedAutoScroll(event)) {
+      if (SystemClock.uptimeMillis() < ownTouchScrollUntil) {
+        // SandFly's own drag of the list to reach the next item. As a manual scroll, it would move
+        // focus and tick as the user's own scrolling does.
+        userAction = ScrollActionRecord.ACTION_AUTO_SCROLL;
+        LogUtils.i(TAG, "SandFly's drag scroll");
+      } else if (isFromFinishedAutoScroll(event)) {
         // TalkBack's own scroll, still moving after it went far enough to count as complete. As a
         // manual scroll, it would move the focus that the scroll has just placed.
         userAction = ScrollActionRecord.ACTION_UNKNOWN;
