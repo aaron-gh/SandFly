@@ -185,7 +185,7 @@ class GranularEditingActivity : AppCompatActivity() {
     val piece = pieces.getOrNull(index) ?: return
     ask(R.string.granular_editing_edit, text.substring(piece.coreStart, piece.coreEnd)) { typed ->
       if (typed.isEmpty()) {
-        change(TextPieces.delete(text, listOf(piece)), index, R.string.granular_editing_deleted)
+        change(TextPieces.delete(text, listOf(piece), granularity), index, R.string.granular_editing_deleted)
       } else {
         change(TextPieces.replace(text, piece, typed), index)
       }
@@ -213,7 +213,7 @@ class GranularEditingActivity : AppCompatActivity() {
   private fun delete(indexes: Collection<Int>) {
     val chosen = indexes.mapNotNull { pieces.getOrNull(it) }
     if (chosen.isEmpty()) return
-    change(TextPieces.delete(text, chosen), indexes.min(), R.string.granular_editing_deleted)
+    change(TextPieces.delete(text, chosen, granularity), indexes.min(), R.string.granular_editing_deleted)
   }
 
   private fun toggleSelected(index: Int) {
@@ -223,14 +223,14 @@ class GranularEditingActivity : AppCompatActivity() {
 
   /** Copies the selected pieces, or all of the text when none is selected. */
   private fun copy() {
-    val copied = if (selected.isEmpty()) text else TextPieces.join(text, selected.map { pieces[it] })
+    val copied = if (selected.isEmpty()) text else TextPieces.join(text, selected.map { pieces[it] }, granularity)
     GranularEditing.copy(this, copied)
     list.announceForAccessibility(getString(R.string.granular_editing_copied))
   }
 
   private fun cut() {
     if (selected.isEmpty()) return
-    GranularEditing.copy(this, TextPieces.join(text, selected.map { pieces[it] }))
+    GranularEditing.copy(this, TextPieces.join(text, selected.map { pieces[it] }, granularity))
     delete(selected.toList())
   }
 
@@ -394,14 +394,21 @@ class GranularEditingActivity : AppCompatActivity() {
       setSelection(initial.length)
     }
 
-  /** What a piece is shown as: its text, or a name for white space, which has no text to read. */
+  /**
+   * What a piece is shown as: its text as it is, or, for white space, which has no text to read,
+   * what the white space is, such as "2 spaces, New line".
+   */
   private fun label(piece: Piece): String {
-    val shown = text.substring(piece.coreStart, piece.coreEnd)
-    return when {
-      shown == "\n" -> getString(R.string.granular_editing_new_line)
-      shown == "\t" -> getString(R.string.granular_editing_tab)
-      shown.isBlank() -> getString(R.string.granular_editing_space)
-      else -> shown
+    if (piece.isBlank) return getString(R.string.granular_editing_blank_line)
+    if (!TextPieces.isWhiteSpace(text, piece)) return text.substring(piece.coreStart, piece.coreEnd)
+    return TextPieces.whiteSpaceRuns(text.substring(piece.coreStart, piece.coreEnd)).joinToString(", ") { (kind, count) ->
+      val (one, many) =
+        when (kind) {
+          WhiteSpace.SPACE -> R.string.granular_editing_space to R.plurals.granular_editing_spaces
+          WhiteSpace.TAB -> R.string.granular_editing_tab to R.plurals.granular_editing_tabs
+          WhiteSpace.NEW_LINE -> R.string.granular_editing_new_line to R.plurals.granular_editing_new_lines
+        }
+      if (count == 1) getString(one) else resources.getQuantityString(many, count, count)
     }
   }
 
