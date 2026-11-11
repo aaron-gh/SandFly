@@ -162,7 +162,15 @@ class ScriptMenuItem(
   fun run(node: AccessibilityNodeInfoCompat?) = action(node)
 }
 
-class ScriptItemAction(val title: String, private val action: () -> Unit) {
+/**
+ * An action a script adds to an item's Actions menu. [first] puts it before the app's own actions;
+ * otherwise it comes after them.
+ */
+class ScriptItemAction(
+  val title: String,
+  val first: Boolean = false,
+  private val action: () -> Unit,
+) {
   fun run() = action()
 }
 

@@ -233,18 +233,27 @@ class ManifestParser(private val strict: Boolean) {
 
   private fun itemAction(json: JSONObject): RuleItemAction {
     val verbs = RuleItemAction.Verb.entries
-    json.allowOnly(verbs.map { it.key }.toSet() + "title", "action")
+    json.allowOnly(verbs.map { it.key }.toSet() + "title" + "first", "action")
     val title = json.optionalString("title")?.trim().orEmpty()
     manifestCheck(title.isNotEmpty()) { "An action needs a title" }
+    val first =
+      when (val flag = json.opt("first")) {
+        null,
+        JSONObject.NULL -> false
+        is Boolean -> flag
+        else -> manifestError("first in the action $title is true or false")
+      }
     val verb =
       verbs.singleOrNull { json.has(it.key) }
         ?: manifestError("The action $title needs one of ${verbs.joinToString { it.key }}")
     val value = json.get(verb.key)
-    if (verb != RuleItemAction.Verb.SPEAK) return RuleItemAction(title, verb, requiredTarget(value))
+    if (verb != RuleItemAction.Verb.SPEAK) {
+      return RuleItemAction(title, verb, requiredTarget(value), first = first)
+    }
     return when (value) {
-      is String -> RuleItemAction(title, verb, text = value)
+      is String -> RuleItemAction(title, verb, text = value, first = first)
       is JSONObject if value.keys().asSequence().toList() == listOf("textOf") ->
-        RuleItemAction(title, verb, requiredTarget(value.get("textOf")))
+        RuleItemAction(title, verb, requiredTarget(value.get("textOf")), first = first)
       else -> manifestError("The action $title speaks text or { textOf: item }")
     }
   }

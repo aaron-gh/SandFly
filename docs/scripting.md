@@ -1,6 +1,6 @@
 # Writing SandFly scripts
 
-A script is a Lua file that changes how SandFly works in one app or in every app, or adds commands to SandFly. This document describes the whole script API, version 4.
+A script is a Lua file that changes how SandFly works in one app or in every app, or adds commands to SandFly. This document describes the whole script API, version 5.
 
 Scripts run on phones and tablets. Watches and TVs can't run them.
 
@@ -61,8 +61,8 @@ A table with only listed values, such as `{ 'speech', 'screen' }`, is a list. A 
 | `id` | Required. Lowercase letters, digits, dots, dashes and underscores, starting with a letter or digit, up to 64 characters. A script with the same id replaces the installed one. |
 | `name` | Required. Shown in the Scripts list, and at the start of the title of every dialog the script shows. |
 | `author` | Required. |
-| `minApiVersion` | Required. The lowest script API version the script works with. This document describes version 4. Use the highest version marked on anything the script uses, such as 3 for a script that uses anything marked *Version 3*. |
-| `testedApiVersion` | Required. The highest script API version you tested with. SandFly warns before installing a script tested only with a version older than the last one that changed existing calls. Versions 2, 3 and 4 only add to version 1, so scripts tested with 1 get no warning. |
+| `minApiVersion` | Required. The lowest script API version the script works with. This document describes version 5. Use the highest version marked on anything the script uses, such as 3 for a script that uses anything marked *Version 3*. |
+| `testedApiVersion` | Required. The highest script API version you tested with. SandFly warns before installing a script tested only with a version older than the last one that changed existing calls. Versions 2 to 5 only add to version 1, so scripts tested with 1 get no warning. |
 | `version` | The script's own version, as text, such as `'1.2'`. The default is `'1'`. SandFly updates installed scripts from their source when this is higher, compared number by number, so raise it with each change. |
 | `description` | Shown on the script's page and before it's installed. |
 | `homepage` | An `http` or `https` address. The script's page has a button that opens it. |
@@ -190,6 +190,8 @@ To find an item's id, class and role, assign **Inspect focused item** to a gestu
 
 Each action has a `title` and one of `click`, `longClick`, `focus`, `scrollForward`, `scrollBackward` or `speak`. All but `speak` take the item to act on, as an id or a query, and need the `actions` permission. `speak` takes text, or `{ textOf = item }`, which needs `screen`. Actions in rules need the `input` permission.
 
+A script's actions come after the app's own actions in the Actions menu. *Version 5.* `first = true` puts an action before the app's actions: `{ title = 'Archive', click = 'archive_button', first = true }`.
+
 SandFly looks for the item inside the focused item first, and then on the whole screen. In a list where every row has the same button, the second search finds the first row's button, so use the [`onActions` hook](#hooks) there and search from the row yourself.
 
 ## Queries
@@ -289,7 +291,7 @@ Each of these takes a function and returns a function that removes it again.
 | `sf.onEvent` | For every accessibility event. | `{ type, package, className, text, contentDescription, beforeText, password, windowId, time }`. |
 | `sf.onSettingChange` | When the user changes one of the script's settings. | The key and the new value. |
 | `sf.onButton` | When the user presses a button setting. | The key. |
-| `sf.onActions` | When SandFly builds the Actions menu for an item. | The item. Return a list of `{ title, run }`; `run` is called with the item, and can wait. |
+| `sf.onActions` | When SandFly builds the Actions menu for an item. | The item. Return a list of `{ title, run }`; `run` is called with the item, and can wait. The actions come after the app's own actions. *Version 5:* `first = true` puts one before them: `{ title = 'Reply', first = true, run = reply }`. |
 | `sf.onScroll` | *Version 2.* Shortly after a list or page scrolls. | `{ package, node, from, to, count, scrollX, scrollY, deltaX, deltaY }`. `from` and `to` are the first and last items shown, counted from 1, and `count` the number of items, where the app gives them. |
 | `sf.onSelectionChange` | *Version 2.* When the cursor moves or the selection changes in a text. | `{ package, node, text, start, end, length, password }`. |
 | `sf.onClick`, `sf.onLongClick` | *Version 2.* When an item is clicked or long-clicked, by anyone. | `{ package, node }`. |

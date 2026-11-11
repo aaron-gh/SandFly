@@ -147,6 +147,8 @@ data class RuleItemAction(
   val verb: Verb,
   val target: NodeQuery? = null,
   val text: String? = null,
+  /** Whether the action goes before the app's own actions in the Actions menu. */
+  val first: Boolean = false,
 ) {
   enum class Verb(val key: String) {
     CLICK("click"),
@@ -289,7 +291,7 @@ data class ScriptManifest(
     }
 
   companion object {
-    const val API_VERSION = 4
+    const val API_VERSION = 5
 
     /**
      * The last version that changed what scripts already used. A script tested with it or later

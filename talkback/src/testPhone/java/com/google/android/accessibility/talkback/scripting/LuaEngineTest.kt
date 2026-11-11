@@ -256,6 +256,26 @@ class LuaEngineTest {
   }
 
   @Test
+  fun actionsMarkedFirstAreListedAsFirst() {
+    run(
+      """
+      sf.onActions(function(item)
+        return {
+          { title = 'Copy', run = function() end },
+          { title = 'Reply', first = true, run = function() end },
+        }
+      end)
+      """
+    )
+    val answer =
+      JSONObject(dispatch("actions", JSONObject().put("node", JSONObject().put("handle", 1)))!!)
+    val titles = answer.getJSONArray("titles")
+    assertEquals(listOf("Copy", "Reply"), List(titles.length()) { titles.getString(it) })
+    val first = answer.getJSONArray("first")
+    assertEquals(listOf("Reply"), List(first.length()) { first.getString(it) })
+  }
+
+  @Test
   fun sleepGoesOnAfterTheTimer() {
     run("sf.speak('before') sf.sleep(50) sf.speak('after')")
     val timer = host.calls.single { it.first == "timer.set" }.second!!
