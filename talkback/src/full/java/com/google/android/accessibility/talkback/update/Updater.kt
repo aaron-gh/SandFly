@@ -368,8 +368,8 @@ object Updater {
   }
 
   /**
-   * Downloads the APK, showing its progress in a notification. A watch downloads over Wi-Fi or
-   * another unmetered network when one comes up, not through the phone.
+   * Downloads the APK, showing its progress in a notification. A watch downloads over its own
+   * Wi-Fi when it comes up, not through the phone.
    */
   private fun download(context: Context, url: String, apiUrl: String?): File {
     // Not the cache directory: with little free storage, Android deletes cache files to make room
