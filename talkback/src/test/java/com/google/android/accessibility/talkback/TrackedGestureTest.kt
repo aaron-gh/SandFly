@@ -21,6 +21,7 @@ import android.accessibilityservice.AccessibilityService
 import android.accessibilityservice.AccessibilityService.GESTURE_SWIPE_RIGHT
 import android.accessibilityservice.AccessibilityService.GESTURE_SWIPE_UP
 import android.accessibilityservice.TouchInteractionController
+import android.accessibilityservice.TouchInteractionController.STATE_CLEAR
 import android.accessibilityservice.TouchInteractionController.STATE_DELEGATING
 import android.accessibilityservice.TouchInteractionController.STATE_DRAGGING
 import android.accessibilityservice.TouchInteractionController.STATE_TOUCH_EXPLORING
@@ -891,6 +892,51 @@ class TrackedGestureTest {
     assign(R.string.shortcut_value_home, R.string.pref_shortcut_corner_top_left_tap_key)
     tapsAt(310f, 460f, 0, 150)
     assertEquals(listOf(AccessibilityService.GESTURE_DOUBLE_TAP), service.gestures)
+  }
+
+  @Test
+  fun doubleTapWhoseFirstTapIsOutsideACornerIsADoubleTap() {
+    assign(R.string.shortcut_value_home, R.string.pref_shortcut_corner_top_left_tap_key)
+    stateChangeAt(STATE_TOUCH_INTERACTING, 0)
+    touchAt(ACTION_DOWN, 0, 45f, 45f)
+    touchAt(ACTION_UP, 50, 45f, 45f)
+    touchAt(ACTION_DOWN, 150, 20f, 20f)
+    touchAt(ACTION_UP, 200, 20f, 20f)
+    runUntil(1200)
+    assertEquals(listOf(AccessibilityService.GESTURE_DOUBLE_TAP), service.gestures)
+  }
+
+  @Test
+  fun heldSecondTapInACornerLiftedBeforeItsHoldIsExplored() {
+    assign(
+      R.string.shortcut_value_home,
+      R.string.pref_shortcut_corner_top_right_double_tap_hold_key,
+    )
+    tapsAt(310f, 10f, 0, 150, lastUpMs = 250)
+    assertEquals(listOf<Int>(), service.gestures)
+    assertEquals(true, requestedState(STATE_TOUCH_EXPLORING))
+  }
+
+  @Test
+  fun tapInACornerEndsWhenTheInteractionEnds() {
+    assign(R.string.shortcut_value_home, R.string.pref_shortcut_corner_top_left_tap_key)
+    stateChangeAt(STATE_TOUCH_INTERACTING, 0)
+    touchAt(ACTION_DOWN, 0, 10f, 10f)
+    touchAt(ACTION_UP, 50, 10f, 10f)
+    stateChangeAt(STATE_CLEAR, 100)
+    runUntil(110)
+    assertEquals(listOf(GESTURE_CORNER_TOP_LEFT_TAP), service.gestures)
+  }
+
+  @Test
+  fun tapInACornerRunsNothingAfterTheMonitorStops() {
+    assign(R.string.shortcut_value_home, R.string.pref_shortcut_corner_top_left_tap_key)
+    stateChangeAt(STATE_TOUCH_INTERACTING, 0)
+    touchAt(ACTION_DOWN, 0, 10f, 10f)
+    touchAt(ACTION_UP, 50, 10f, 10f)
+    main.postAtTime({ monitor.stop() }, start + 100)
+    runUntil(1000)
+    assertEquals(listOf<Int>(), service.gestures)
   }
 
   @Test

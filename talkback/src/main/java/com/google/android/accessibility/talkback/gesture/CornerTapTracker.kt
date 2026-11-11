@@ -39,7 +39,11 @@ import kotlin.math.hypot
  *
  * Any other touch, such as a finger that moves, lands a second finger, holds without a hold
  * gesture or lands away from the previous tap, isn't a corner gesture: [Result.Released] hands back
- * the kept events, in order, to be handled as usual.
+ * the kept events, in order, to be handled as usual. A held tap that lifts before its hold gesture
+ * is one tap, [Result.Taps] of 1, so that the taps before it don't make a double tap.
+ *
+ * A touch that lands in a corner as the second tap of a double tap whose first tap was outside the
+ * corner, reported by [onLift], is left alone.
  *
  * Time passes in [onTimeout], which the caller runs at [deadline]; motion events never complete a
  * sequence on time alone.
@@ -115,6 +119,10 @@ class CornerTapTracker(
   private var downY = 0f
   private var downTime = 0L
   private val kept = ArrayList<MotionEvent>()
+  // The last lift of a touch that wasn't corner taps, or NO_LIFT.
+  private var liftTime = NO_LIFT
+  private var liftX = 0f
+  private var liftY = 0f
 
   /** When [onTimeout] is due, in uptime milliseconds, or [NO_DEADLINE]. */
   var deadline = NO_DEADLINE
@@ -173,8 +181,14 @@ class CornerTapTracker(
           return release()
         }
       MotionEvent.ACTION_UP -> {
-        if (holding || hypot(event.x - downX, event.y - downY) > touchSlop) {
+        if (hypot(event.x - downX, event.y - downY) > touchSlop) {
           return release()
+        }
+        if (holding) {
+          // Lifted past the tap timeout but before the hold gesture: as elsewhere, the taps before
+          // it and the held tap make no double tap, and the held tap is explored.
+          reset()
+          return Result.Taps(1)
         }
         taps++
         fingerDown = false
@@ -210,14 +224,43 @@ class CornerTapTracker(
     return release()
   }
 
-  /** Ends any sequence, dropping the events it kept. */
+  /**
+   * Ends a sequence whose finger is up at once, as when the touch interaction ends, and returns
+   * what its taps make. Returns [Result.Kept] while the finger is down.
+   */
+  fun resolveNow(): Result {
+    val current = corner ?: return Result.Ignored
+    return if (fingerDown) Result.Kept else resolve(current)
+  }
+
+  /**
+   * Notes the lift of a one-finger touch that isn't corner taps, at [event], so that a touch landing
+   * in a corner as the next tap of a double tap is left alone.
+   */
+  fun onLift(event: MotionEvent) {
+    if (isActive) return
+    liftTime = event.eventTime
+    liftX = event.x
+    liftY = event.y
+  }
+
+  /** Ends any sequence, dropping the events it kept, and forgets the last lift. */
   fun clear() {
     reset()
+    liftTime = NO_LIFT
   }
 
   private fun start(event: MotionEvent, width: Int, height: Int, check: StartCheck): Result {
     val landed = cornerAt(event.x, event.y, width, height) ?: return Result.Ignored
     if (Kind.entries.none { assigned(landed, it) } || !check.allows(event.x, event.y)) {
+      return Result.Ignored
+    }
+    if (
+      liftTime != NO_LIFT &&
+        event.eventTime - liftTime <= multiTapTimeoutMs() &&
+        hypot(event.x - liftX, event.y - liftY) <= doubleTapSlop
+    ) {
+      // The second tap of a double tap that started outside the corner.
       return Result.Ignored
     }
     corner = landed
@@ -240,7 +283,7 @@ class CornerTapTracker(
 
   private fun resolve(current: Corner): Result {
     val tapped = taps
-    clear()
+    reset()
     val kind = Kind.of(tapped, hold = false)
     return if (kind != null && assigned(current, kind)) {
       Result.Gesture(current, kind)
@@ -269,5 +312,6 @@ class CornerTapTracker(
 
   companion object {
     const val NO_DEADLINE = Long.MAX_VALUE
+    private const val NO_LIFT = Long.MIN_VALUE
   }
 }

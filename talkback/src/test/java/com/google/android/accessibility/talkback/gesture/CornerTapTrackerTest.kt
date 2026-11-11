@@ -159,6 +159,49 @@ class CornerTapTrackerTest {
   }
 
   @Test
+  fun heldSecondTapLiftedBeforeItsHoldIsOneTap() {
+    inUse = setOf(Corner.TOP_LEFT to Kind.DOUBLE_TAP_AND_HOLD)
+    taps(0)
+    send(MotionEvent.ACTION_DOWN, 150)
+    assertEquals(Result.Kept, tracker.onTimeout(250))
+    assertEquals(Result.Taps(1), send(MotionEvent.ACTION_UP, 400))
+    assertFalse(tracker.isActive)
+  }
+
+  @Test
+  fun tapInACornerRightAfterATapOutsideItIsIgnored() {
+    inUse = setOf(Corner.TOP_LEFT to Kind.TAP)
+    tracker.onLift(event(MotionEvent.ACTION_UP, 50, x = 40f, y = 40f))
+    assertEquals(Result.Ignored, send(MotionEvent.ACTION_DOWN, 200))
+    assertFalse(tracker.isActive)
+  }
+
+  @Test
+  fun tapInACornerLongAfterATapOutsideItStarts() {
+    inUse = setOf(Corner.TOP_LEFT to Kind.TAP)
+    tracker.onLift(event(MotionEvent.ACTION_UP, 50, x = 40f, y = 40f))
+    assertEquals(Result.Kept, send(MotionEvent.ACTION_DOWN, 301))
+  }
+
+  @Test
+  fun tapInACornerFarFromATapOutsideItStarts() {
+    inUse = setOf(Corner.TOP_LEFT to Kind.TAP)
+    tracker.onLift(event(MotionEvent.ACTION_UP, 50, x = 200f, y = 500f))
+    assertEquals(Result.Kept, send(MotionEvent.ACTION_DOWN, 200))
+  }
+
+  @Test
+  fun resolveNowEndsTapsWithTheFingerUp() {
+    inUse = setOf(Corner.TOP_LEFT to Kind.TAP)
+    send(MotionEvent.ACTION_DOWN, 0)
+    assertEquals(Result.Kept, tracker.resolveNow())
+    send(MotionEvent.ACTION_UP, 50)
+    assertEquals(Result.Gesture(Corner.TOP_LEFT, Kind.TAP), tracker.resolveNow())
+    assertFalse(tracker.isActive)
+    assertEquals(Result.Ignored, tracker.resolveNow())
+  }
+
+  @Test
   fun tapAwayFromTheFirstIsReleased() {
     inUse = setOf(Corner.TOP_LEFT to Kind.DOUBLE_TAP)
     taps(0)
