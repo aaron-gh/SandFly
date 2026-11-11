@@ -210,6 +210,8 @@
 
     <string name="pref_phonetic_letters_key">pref_phonetic_letters</string>
     <string name="pref_phonetic_letters_mode_key" translatable="false">pref_phonetic_letters_mode</string>
+    <string name="pref_phonetic_letters_review_mode_key" translatable="false">pref_phonetic_letters_review_mode</string>
+    <string name="pref_phonetic_letters_typing_mode_key" translatable="false">pref_phonetic_letters_typing_mode</string>
     <string name="pref_punctuation_key" translatable="false">pref_punctuation</string>
     <string name="pref_punctuation_verbosity" translatable="false">pref_punctuation_verbosity</string>
     <string name="pref_count_repeated_symbols_key" >pref_collapse_repeated_symbols</string>
@@ -1808,6 +1810,8 @@
     </string-array>
 
     <string name="pref_phonetic_letters_mode_default" translatable="false">after_letter_delay</string>
+    <string name="pref_phonetic_letters_review_mode_default" translatable="false">after_letter_delay</string>
+    <string name="pref_phonetic_letters_typing_mode_default" translatable="false">after_letter_delay</string>
 
     <string-array name="pref_punctuation_entries">
       <item>@string/punctuation_all</item>

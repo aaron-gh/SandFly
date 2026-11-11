@@ -618,6 +618,10 @@
     <string name="summary_pref_phonetic_letters">When you select keyboard keys or navigate by character, you\'ll hear an example along with each letter, like \"h, hotel\"</string>
     <!-- Title of the setting for saying a word from a spelling alphabet, such as "hotel" for h, for letters such as keyboard keys and letters moved over by character. [CHAR LIMIT=40] -->
     <string name="title_pref_phonetic_letters_mode">Speak letters phonetically</string>
+    <!-- Title of the setting for saying a word from a spelling alphabet, such as "hotel" for h, for letters the user reviews: letters moved over by character and letters of spelled text. [CHAR LIMIT=60] -->
+    <string name="title_pref_phonetic_letters_review">Speak letters phonetically when reviewing</string>
+    <!-- Title of the setting for saying a word from a spelling alphabet, such as "hotel" for h, for letters the user types or deletes and keyboard keys. [CHAR LIMIT=60] -->
+    <string name="title_pref_phonetic_letters_typing">Speak letters phonetically when typing</string>
     <!-- Choice for Speak letters phonetically: only the letter is said. [CHAR LIMIT=NONE] -->
     <string name="phonetic_letters_mode_off">Off</string>
     <!-- Choice for Speak letters phonetically: the letter, then its word after a pause, as TalkBack does. Translate the example with the word that the phonetic letters for the language use for h. [CHAR LIMIT=NONE] -->

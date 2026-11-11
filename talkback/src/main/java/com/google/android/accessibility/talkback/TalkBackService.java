@@ -3598,6 +3598,8 @@ public class TalkBackService extends AccessibilityServiceCompat
     // The verbosity presets were removed: each setting keeps the chosen preset's value.
     PhoneticLetterMode.migrate(prefs, getResources());
     VerbosityPreferences.removePresets(prefs, getResources());
+    // Speak letters phonetically became one setting for reviewing and one for typing.
+    PhoneticLetterMode.split(prefs, getResources());
     // Arrow key navigation's own commands became arrow keys that run any command.
     ArrowKeyNav.migrate(this);
     VoiceProfiles.moveReadingControl(
@@ -4561,7 +4563,8 @@ public class TalkBackService extends AccessibilityServiceCompat
       globalVariables.setUsageHintEnabled(speakUsageHints);
 
       // Update preference: speak phonetic letters.
-      globalVariables.setPhoneticLetterMode(PhoneticLetterMode.read(prefs, res));
+      globalVariables.setPhoneticLetterModes(
+          PhoneticLetterMode.readReview(prefs, res), PhoneticLetterMode.readTyping(prefs, res));
 
       // Update preference: count repeated symbols.
       boolean countrepeatedSymbols =

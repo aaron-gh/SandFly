@@ -566,7 +566,8 @@ public final class GranularityTraversal {
       CharSequence spokenText =
           isCharacterGranularity
               ? processorPhoneticLetters
-                  .getPhoneticInPlaceOfLetter(isTalkbackPackage, traversedText)
+                  .getPhoneticInPlaceOfLetter(
+                      isTalkbackPackage, traversedText, /* typing= */ false)
                   .orElse(traversedText)
               : traversedText;
       CopySelection.Change change =

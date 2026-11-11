@@ -18,12 +18,15 @@ package com.google.android.accessibility.talkback.eventprocessor
 
 import android.content.SharedPreferences
 import android.content.res.Resources
+import androidx.annotation.StringRes
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.utils.VerbosityPreferences
 
 /**
- * How Backtalk says the phonetic word for a letter, such as "hotel" for h. This replaced an on/off
- * setting, whose on is [AFTER_LETTER_DELAY].
+ * How Backtalk says the phonetic word for a letter, such as "hotel" for h. There is a setting for
+ * letters reviewed (moved over by character or spelled) and one for letters typed or deleted and
+ * keyboard keys. Both replaced one setting for all letters, which replaced an on/off setting, whose
+ * on is [AFTER_LETTER_DELAY].
  */
 object PhoneticLetterMode {
   /** Only the letter is said. */
@@ -41,15 +44,73 @@ object PhoneticLetterMode {
   /** The word in place of the letter: "hotel". */
   const val INSTEAD_OF_LETTER = "instead_of_letter"
 
-  /** Reads the mode for the current verbosity preset. */
+  /** Reads the mode for letters reviewed. */
   @JvmStatic
-  fun read(prefs: SharedPreferences, res: Resources): String =
-    VerbosityPreferences.getPreferenceValueString(
+  fun readReview(prefs: SharedPreferences, res: Resources): String =
+    read(
       prefs,
       res,
-      res.getString(R.string.pref_phonetic_letters_mode_key),
-      res.getString(R.string.pref_phonetic_letters_mode_default),
-    ) ?: AFTER_LETTER_DELAY
+      R.string.pref_phonetic_letters_review_mode_key,
+      R.string.pref_phonetic_letters_review_mode_default,
+    )
+
+  /** Reads the mode for letters typed or deleted and keyboard keys. */
+  @JvmStatic
+  fun readTyping(prefs: SharedPreferences, res: Resources): String =
+    read(
+      prefs,
+      res,
+      R.string.pref_phonetic_letters_typing_mode_key,
+      R.string.pref_phonetic_letters_typing_mode_default,
+    )
+
+  /**
+   * Reads the mode under [keyId], or the one setting for all letters while [split] hasn't copied it,
+   * as after importing settings from before the split.
+   */
+  private fun read(
+    prefs: SharedPreferences,
+    res: Resources,
+    @StringRes keyId: Int,
+    @StringRes defaultId: Int,
+  ): String {
+    val values = res.getStringArray(R.array.pref_phonetic_letters_mode_values)
+    return prefs.getString(res.getString(keyId), null)?.takeIf { it in values }
+      ?: prefs
+        .getString(res.getString(R.string.pref_phonetic_letters_mode_key), null)
+        ?.takeIf { it in values }
+      ?: res.getString(defaultId)
+  }
+
+  /**
+   * Gives the settings for letters reviewed and letters typed the value of the one setting for all
+   * letters that they replaced, unless they have a value. Runs after [migrate] and
+   * [VerbosityPreferences.removePresets], which put the old values into that setting.
+   */
+  @JvmStatic
+  fun split(prefs: SharedPreferences, res: Resources) {
+    val old =
+      prefs
+        .getString(res.getString(R.string.pref_phonetic_letters_mode_key), null)
+        ?.takeIf { it in res.getStringArray(R.array.pref_phonetic_letters_mode_values) }
+        ?: return
+    val editor = prefs.edit()
+    var changed = false
+    for (keyId in
+      listOf(
+        R.string.pref_phonetic_letters_review_mode_key,
+        R.string.pref_phonetic_letters_typing_mode_key,
+      )) {
+      val key = res.getString(keyId)
+      if (!prefs.contains(key)) {
+        editor.putString(key, old)
+        changed = true
+      }
+    }
+    if (changed) {
+      editor.apply()
+    }
+  }
 
   /**
    * Gives each copy of the old on/off setting the matching mode, unless that copy has a mode

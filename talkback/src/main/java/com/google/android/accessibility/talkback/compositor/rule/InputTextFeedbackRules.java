@@ -186,7 +186,8 @@ public final class InputTextFeedbackRules {
             ? Optional.empty()
             : processorPhoneticLetters.getPhoneticInPlaceOfLetter(
                 event != null && PackageManagerUtils.isTalkBackPackage(event.getPackageName()),
-                textEventInterpretation.getRemovedText());
+                textEventInterpretation.getRemovedText(),
+                /* typing= */ true);
     CharSequence changedText =
         isCutAction
             ? FeatureFlagReader.reduceDuplicateTextCutFeedback(context)
@@ -287,7 +288,8 @@ public final class InputTextFeedbackRules {
       Optional<CharSequence> phoneticInPlaceOfLetter =
           processorPhoneticLetters.getPhoneticInPlaceOfLetter(
               event != null && PackageManagerUtils.isTalkBackPackage(event.getPackageName()),
-              textEventInterpretation.getAddedText());
+              textEventInterpretation.getAddedText(),
+              /* typing= */ true);
       if (phoneticInPlaceOfLetter.isPresent()) {
         changedText = phoneticInPlaceOfLetter.get();
       } else {

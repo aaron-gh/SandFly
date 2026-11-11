@@ -140,8 +140,8 @@ public class ProcessorPhoneticLetters implements AccessibilityEventListener {
     }
 
     // In place of the letter, the compositor says what getPhoneticInPlaceOfLetter returns.
-    if (!globalVariables.getSpeakPhoneticLettersEnabled()
-        || globalVariables.getPhoneticLetterTakesPlaceOfLetter()) {
+    if (!globalVariables.getSpeakPhoneticLettersEnabled(/* typing= */ false)
+        || globalVariables.getPhoneticLetterTakesPlaceOfLetter(/* typing= */ false)) {
       return;
     }
 
@@ -154,12 +154,12 @@ public class ProcessorPhoneticLetters implements AccessibilityEventListener {
    * Returns the spelling for the given {@code event} if it corresponds to an accessibility-focus
    * change on an on-screen keyboard.
    *
-   * <p>If phonetic spelling is turned off in the settings, or it is a password input field, it will
-   * return nothing.
+   * <p>If phonetic spelling when typing is turned off in the settings, or it is a password input
+   * field, it will return nothing.
    */
   public Optional<CharSequence> getPhoneticLetterForKeyboardFocusEvent(AccessibilityEvent event) {
     if (globalVariables == null
-        || !globalVariables.getSpeakPhoneticLettersEnabled()
+        || !globalVariables.getSpeakPhoneticLettersEnabled(/* typing= */ true)
         || !isKeyboardEvent(event)) {
       return Optional.empty();
     }
@@ -237,8 +237,8 @@ public class ProcessorPhoneticLetters implements AccessibilityEventListener {
   public void speakPhoneticLetterForTraversedText(
       boolean isTalkbackPackage, String letter, EventId eventId) {
     // In place of the letter, GranularityTraversal says what getPhoneticInPlaceOfLetter returns.
-    if (!globalVariables.getSpeakPhoneticLettersEnabled()
-        || globalVariables.getPhoneticLetterTakesPlaceOfLetter()) {
+    if (!globalVariables.getSpeakPhoneticLettersEnabled(/* typing= */ false)
+        || globalVariables.getPhoneticLetterTakesPlaceOfLetter(/* typing= */ false)) {
       return;
     }
     CharSequence phoneticLetter = getPhoneticLetter(traversalLocale(isTalkbackPackage), letter);
@@ -250,15 +250,16 @@ public class ProcessorPhoneticLetters implements AccessibilityEventListener {
   /**
    * Returns what to say in place of a letter that the user moved over by character, typed, or
    * deleted, when they chose to hear the letter and its phonetic word together, or the word alone.
-   * For a capital letter, it has the capital letter feedback that the user chose.
+   * For a capital letter, it has the capital letter feedback that the user chose. {@code typing}
+   * picks the setting for letters typed or deleted over the one for letters reviewed.
    */
   public Optional<CharSequence> getPhoneticInPlaceOfLetter(
-      boolean isTalkbackPackage, @Nullable CharSequence letter) {
-    if (!globalVariables.getPhoneticLetterTakesPlaceOfLetter() || TextUtils.isEmpty(letter)) {
+      boolean isTalkbackPackage, @Nullable CharSequence letter, boolean typing) {
+    if (!globalVariables.getPhoneticLetterTakesPlaceOfLetter(typing) || TextUtils.isEmpty(letter)) {
       return Optional.empty();
     }
     return inPlaceOf(
-        letter, getPhoneticLetter(traversalLocale(isTalkbackPackage), letter.toString()));
+        letter, getPhoneticLetter(traversalLocale(isTalkbackPackage), letter.toString()), typing);
   }
 
   /**
@@ -266,7 +267,8 @@ public class ProcessorPhoneticLetters implements AccessibilityEventListener {
    * say the letter.
    */
   public @Nullable CharSequence getPhoneticForSpelling(CharSequence letter) {
-    return getPhoneticInPlaceOfLetter(/* isTalkbackPackage= */ false, letter).orElse(null);
+    return getPhoneticInPlaceOfLetter(/* isTalkbackPackage= */ false, letter, /* typing= */ false)
+        .orElse(null);
   }
 
   /**
@@ -274,27 +276,29 @@ public class ProcessorPhoneticLetters implements AccessibilityEventListener {
    * {@link #getPhoneticInPlaceOfLetter}.
    */
   public Optional<CharSequence> getPhoneticInPlaceOfKeyboardKey(AccessibilityEvent event) {
-    if (!globalVariables.getPhoneticLetterTakesPlaceOfLetter()) {
+    if (!globalVariables.getPhoneticLetterTakesPlaceOfLetter(/* typing= */ true)) {
       return Optional.empty();
     }
     Optional<CharSequence> word = getPhoneticLetterForKeyboardFocusEvent(event);
     if (!word.isPresent()) {
       return Optional.empty();
     }
-    return inPlaceOf(AccessibilityEventUtils.getEventTextOrDescription(event), word.get());
+    return inPlaceOf(
+        AccessibilityEventUtils.getEventTextOrDescription(event), word.get(), /* typing= */ true);
   }
 
   /**
    * Returns {@code letter} and {@code word} together, as in "h hotel", or {@code word} alone, as
-   * the user chose, with the feedback that {@code letter} would have if it is a capital letter:
-   * "capital" before the letter or word, or the pitch or sound for all of it.
+   * the user chose for typing or reviewing, with the feedback that {@code letter} would have if it
+   * is a capital letter: "capital" before the letter or word, or the pitch or sound for all of it.
    */
   private Optional<CharSequence> inPlaceOf(
-      @Nullable CharSequence letter, @Nullable CharSequence word) {
+      @Nullable CharSequence letter, @Nullable CharSequence word, boolean typing) {
     if (TextUtils.isEmpty(word)) {
       return Optional.empty();
     }
-    boolean withLetter = !globalVariables.getSpeakPhoneticLetterInsteadOfLetter() && letter != null;
+    boolean withLetter =
+        !globalVariables.getSpeakPhoneticLetterInsteadOfLetter(typing) && letter != null;
     boolean isCapital =
         letter != null
             && TextUtils.getTrimmedLength(letter) == 1
