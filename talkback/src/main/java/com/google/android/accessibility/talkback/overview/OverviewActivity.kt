@@ -362,6 +362,8 @@ class OverviewActivity : AppCompatActivity() {
     RecentTasks.open(this, task) { worked ->
       if (!worked) {
         announce(column, getString(R.string.overview_failed))
+        // The task may be gone: Android removes a task it couldn't restore.
+        load()
       }
       // On success, the task covers the overview, which closes when it stops.
     }
