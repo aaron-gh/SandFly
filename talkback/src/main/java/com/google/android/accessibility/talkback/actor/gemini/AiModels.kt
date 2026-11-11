@@ -53,7 +53,9 @@ object AiModels {
         connection.setRequestProperty("anthropic-version", ANTHROPIC_VERSION)
       }
       val code = connection.responseCode
-      if (code != HttpURLConnection.HTTP_OK) throw IOException("HTTP $code")
+      if (code != HttpURLConnection.HTTP_OK) {
+        throw IOException(GeminiFailure.httpReason(code, GeminiModel.errorBody(connection)))
+      }
       val body =
         connection.inputStream.use { input ->
           val out = ByteArrayOutputStream()

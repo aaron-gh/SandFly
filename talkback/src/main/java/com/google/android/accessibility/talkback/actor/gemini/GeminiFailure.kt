@@ -151,6 +151,23 @@ class GeminiFailure(
       return GeminiFailure(kind, statusCode, status, message)
     }
 
+    /**
+     * The HTTP status, the service's status name and the first sentence of its message, such as
+     * "HTTP 400 INVALID_ARGUMENT: API key not valid.", for a failed list of models. A [body] that is
+     * not a JSON error, such as an HTML page, adds nothing.
+     */
+    @JvmStatic
+    fun httpReason(statusCode: Int, body: String?): String {
+      val error = errorObject(body)
+      val status = error?.optString("status").orEmpty()
+      val details = firstSentence(error?.optString("message").orEmpty())
+      return buildString {
+        append("HTTP ").append(statusCode)
+        if (status.isNotEmpty()) append(' ').append(status)
+        if (details.isNotEmpty()) append(": ").append(details)
+      }
+    }
+
     private fun isApiKeyError(statusCode: Int, error: JSONObject?, message: String): Boolean {
       if (statusCode == 401 || statusCode == 403) {
         return true
