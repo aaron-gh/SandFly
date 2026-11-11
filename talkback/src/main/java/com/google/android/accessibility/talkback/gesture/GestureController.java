@@ -110,6 +110,7 @@ import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics;
 import com.google.android.accessibility.talkback.commands.CommandMenus;
 import com.google.android.accessibility.talkback.commands.MenuCommands;
 import com.google.android.accessibility.talkback.contextmenu.ListMenuManager;
+import com.google.android.accessibility.talkback.dialog.WordSelectionDialog;
 import com.google.android.accessibility.talkback.eventprocessor.ProcessorPhoneticLetters;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.focusmanagement.AccessibilityFocusMonitor;
@@ -829,6 +830,10 @@ public class GestureController {
     } else if (action.equals(service.getString(R.string.shortcut_value_copy_last_spoken_phrase))) {
       pipeline.returnFeedback(
           eventId, Feedback.part().setSpeech(Feedback.Speech.create(COPY_LAST)));
+    } else if (action.equals(service.getString(R.string.shortcut_value_select_last_spoken_phrase_word_by_word))) {
+      WordSelectionDialog.showForLastUtterance(service, pipeline, /* fromMenu= */ false);
+    } else if (action.equals(service.getString(R.string.shortcut_value_copy_text_from_screen))) {
+      WordSelectionDialog.showForScreen(service, pipeline, /* fromMenu= */ false);
     } else if (action.equals(service.getString(R.string.shortcut_value_braille_keyboard))) {
       String inputMethodInfoId =
           KeyboardUtils.getImeId(

@@ -104,6 +104,16 @@
             android:title="@string/title_copy_last_spoken_phrase"
             android:summary="@string/summary_copy_last_spoken_phrase"/>
         <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
+            android:defaultValue="@bool/pref_show_context_menu_select_last_spoken_phrase_word_by_word_default"
+            android:key="@string/pref_show_context_menu_select_last_spoken_phrase_word_by_word_setting_key"
+            android:order="10"
+            android:title="@string/title_select_last_spoken_phrase_word_by_word" />
+        <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
+            android:defaultValue="@bool/pref_show_context_menu_copy_text_from_screen_default"
+            android:key="@string/pref_show_context_menu_copy_text_from_screen_setting_key"
+            android:order="10"
+            android:title="@string/title_copy_text_from_screen" />
+        <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
             android:defaultValue="@bool/pref_show_context_menu_spell_last_spoken_phrase_default"
             android:key="@string/pref_show_context_menu_spell_last_spoken_phrase_setting_key"
             android:order="11"

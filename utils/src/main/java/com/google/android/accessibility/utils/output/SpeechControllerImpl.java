@@ -847,6 +847,11 @@ public class SpeechControllerImpl implements SpeechController {
     savedUtterance = getLastUtterance();
   }
 
+  /** Returns the saved utterance if any. */
+  public @Nullable FeedbackItem getSavedUtterance() {
+    return savedUtterance;
+  }
+
   /** Returns {@code true} if SpeechControllerImpl should interrupt speech */
   public boolean getShouldSilentSpeech() {
     return shouldSilentSpeech;
