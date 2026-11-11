@@ -205,6 +205,12 @@ public class FocusProcessorForLogicalNavigation {
   // Checks whether a page scroll has already moved the list, before its scroll event arrives.
   private final Handler earlyScrollCheckHandler = new Handler(Looper.getMainLooper());
 
+  /** The order worked out around the pivot for the navigation in progress, if any. */
+  private @Nullable LocalTraversalOrder localOrder;
+
+  /** Whether the navigation in progress is done again with the whole order. */
+  private boolean localOrderOff;
+
   // While a list that a swipe scrolled is still moving, its next item may not be on screen yet.
   // The search is repeated once a frame until the list stops, for at most about 300 ms, rather
   // than navigating again, which would scroll a second page and skip the items in between.
@@ -1288,18 +1294,29 @@ public class FocusProcessorForLogicalNavigation {
         || WebInterfaceUtils.supportsWebActions(pivot)) {
       return null;
     }
-    // Only with the saved reading order: building one takes from about 10 ms to, in a big app, a
-    // few hundred, on the main thread, where a swipe that starts meanwhile would wait for it. A
-    // swipe saves the order it builds, so the next prediction has one. The root comes from the
-    // saved order too, as asking the window for it would wait for the app.
+    // Only with the saved reading order or an order worked out around the pivot, never a new
+    // whole order: building one takes from about 10 ms to, in a big app, a few hundred, on the
+    // main thread, where a swipe that starts meanwhile would wait for it. A swipe saves the order
+    // it builds, so the next prediction has one. The root comes from the saved order too, as
+    // asking the window for it would wait for the app.
     AccessibilityNodeInfoCompat rootNode = TraversalTreeCache.rootFor(pivot);
+    TraversalStrategy traversalStrategy = null;
+    @Nullable LocalTraversalOrder predictionOrder = null;
     if (rootNode == null) {
       // Remember where the next swipe starts all the same, as a search of the saved order does, so
       // that a swipe after the focused node is removed carries on from here.
       TraversalTreeCache.rememberPivot(pivot);
-      return null;
+      // Without a saved order, work out the next item around the pivot, as a swipe would, but
+      // never build the whole order here.
+      @Nullable AccessibilityNodeInfoCompat localRoot = TraversalTreeCache.localRootFor(pivot);
+      if (localRoot == null || ScreenElements.isShowing()) {
+        return null;
+      }
+      predictionOrder = LocalTraversalOrder.start(pivot, localRoot, /* buildFull= */ null);
+      traversalStrategy = predictionOrder;
+    } else {
+      traversalStrategy = TraversalTreeCache.get(rootNode, pivot);
     }
-    TraversalStrategy traversalStrategy = TraversalTreeCache.get(rootNode, pivot);
     if (traversalStrategy == null) {
       return null;
     }
@@ -1308,6 +1325,9 @@ public class FocusProcessorForLogicalNavigation {
             NavigationTarget.TARGET_DEFAULT, traversalStrategy.getSpeakingNodesCache());
     AccessibilityNodeInfoCompat target =
         TraversalStrategyUtils.searchFocus(traversalStrategy, pivot, searchDirection, nodeFilter);
+    if (predictionOrder != null) {
+      predictionOrder.finish();
+    }
     if (target == null
         || target.getWindowId() != pivot.getWindowId()
         || !target.isVisibleToUser()
@@ -1540,6 +1560,84 @@ public class FocusProcessorForLogicalNavigation {
       NavigationAction navigationAction,
       boolean htmlActionFailed,
       EventId eventId) {
+    @Nullable LocalTraversalOrder outerLocalOrder = localOrder;
+    localOrder = null;
+    try {
+      return navigateToDefaultOrMacroGranularityTargetInternal(
+          pivot, ignoreDescendantsOfPivot, navigationAction, htmlActionFailed, eventId);
+    } catch (LocalTraversalOrder.MismatchException e) {
+      // Thrown by a search, before anything was done with its result.
+      if (localOrder != null) {
+        localOrder.finish();
+        localOrder = null;
+      }
+      boolean outerOff = localOrderOff;
+      localOrderOff = true;
+      try {
+        return navigateToDefaultOrMacroGranularityTargetInternal(
+            pivot, ignoreDescendantsOfPivot, navigationAction, htmlActionFailed, eventId);
+      } finally {
+        localOrderOff = outerOff;
+      }
+    } finally {
+      if (localOrder != null) {
+        localOrder.finish();
+      }
+      localOrder = outerLocalOrder;
+    }
+  }
+
+  /**
+   * Whether the next or previous item from {@code pivot} may be worked out around it, with {@link
+   * LocalTraversalOrder}, when the saved reading order doesn't hold it: a swipe or key to the next
+   * or previous item in a native view.
+   */
+  private static boolean mayUseLocalOrder(
+      AccessibilityNodeInfoCompat pivot, NavigationAction navigationAction) {
+    return isMoveToNextOrPreviousItem(navigationAction)
+        && !ScreenElements.isShowing()
+        && !WebInterfaceUtils.supportsWebActions(pivot);
+  }
+
+  /**
+   * Builds the reading order of the window of {@code rootNode}, reading its nodes from the app
+   * first, and saves it for later swipes.
+   */
+  private TraversalStrategy buildWindowOrder(
+      AccessibilityNodeInfoCompat rootNode, @SearchDirection int searchDirection) {
+    boolean trace = LogUtils.shouldLog(Log.DEBUG);
+    long buildStart = trace ? SystemClock.uptimeMillis() : 0;
+    if (trace) {
+      Trace.beginSection("BuildTraversalStrategy");
+    }
+    WindowNodePrefetcher.prefetchWindow(rootNode, service.getPackageName());
+    TraversalStrategy traversalStrategy =
+        TraversalStrategyUtils.getTraversalStrategy(rootNode, focusFinder, searchDirection);
+    if (trace) {
+      Trace.endSection();
+      Log.d(
+          "BacktalkTreeCache",
+          "Built order in " + (SystemClock.uptimeMillis() - buildStart) + " ms");
+    }
+    if (traversalStrategy instanceof OrderedTraversalStrategy orderedStrategy
+        && orderedStrategy.missesChildren()) {
+      @Nullable OrderedTraversalStrategy reread = rereadIncompleteOrder(rootNode);
+      if (reread != null) {
+        traversalStrategy = reread;
+      }
+    }
+    if (traversalStrategy instanceof OrderedTraversalStrategy orderedStrategy) {
+      TraversalTreeCache.put(rootNode, orderedStrategy);
+    }
+    return traversalStrategy;
+  }
+
+  private boolean navigateToDefaultOrMacroGranularityTargetInternal(
+      @NonNull AccessibilityNodeInfoCompat pivot,
+      boolean ignoreDescendantsOfPivot,
+      NavigationAction navigationAction,
+      boolean htmlActionFailed,
+      EventId eventId) {
     int searchDirection = navigationAction.searchDirection;
     int logicalDirection =
         TraversalStrategyUtils.getLogicalDirection(
@@ -1581,6 +1679,23 @@ public class FocusProcessorForLogicalNavigation {
     // Asking the window for its root waits for the app on every swipe, so take the root of the
     // saved reading order when that holds the pivot.
     AccessibilityNodeInfoCompat rootNode = TraversalTreeCache.rootFor(pivot);
+    // Without a saved order, work out the next item around the pivot, as long as the answer is the
+    // same as the whole order's. The root kept for that is checked to be the pivot's.
+    if (rootNode == null && !localOrderOff && mayUseLocalOrder(pivot, navigationAction)) {
+      @Nullable AccessibilityNodeInfoCompat localRoot = TraversalTreeCache.localRootFor(pivot);
+      if (localRoot != null) {
+        TraversalTreeCache.rememberPivot(pivot);
+        localOrder =
+            LocalTraversalOrder.start(
+                pivot,
+                localRoot,
+                // A logical direction, which always gives an ordered strategy.
+                () -> (OrderedTraversalStrategy) buildWindowOrder(localRoot, searchDirection));
+        if (localOrder != null) {
+          rootNode = localRoot;
+        }
+      }
+    }
     if (rootNode == null) {
       rootNode = AccessibilityNodeInfoUtils.getRoot(pivot);
     }
@@ -1592,36 +1707,13 @@ public class FocusProcessorForLogicalNavigation {
     // Build the window's traversal tree once and share it with the edge checks below, which would
     // otherwise each build their own copy of the same tree. Reuse the tree of the last swipe if
     // nothing in the window has changed since.
-    TraversalStrategy traversalStrategy = null;
-    if (TraversalStrategyUtils.isLogicalDirection(searchDirection)) {
+    TraversalStrategy traversalStrategy = localOrder;
+    if (traversalStrategy == null && TraversalStrategyUtils.isLogicalDirection(searchDirection)) {
       traversalStrategy = TraversalTreeCache.get(rootNode, pivot);
     }
-    boolean usedSavedTree = traversalStrategy != null;
+    boolean usedSavedTree = traversalStrategy != null && traversalStrategy != localOrder;
     if (traversalStrategy == null) {
-      boolean trace = LogUtils.shouldLog(Log.DEBUG);
-      long buildStart = trace ? SystemClock.uptimeMillis() : 0;
-      if (trace) {
-        Trace.beginSection("BuildTraversalStrategy");
-      }
-      WindowNodePrefetcher.prefetchWindow(rootNode, service.getPackageName());
-      traversalStrategy =
-          TraversalStrategyUtils.getTraversalStrategy(rootNode, focusFinder, searchDirection);
-      if (trace) {
-        Trace.endSection();
-        Log.d(
-            "BacktalkTreeCache",
-            "Built order in " + (SystemClock.uptimeMillis() - buildStart) + " ms");
-      }
-      if (traversalStrategy instanceof OrderedTraversalStrategy orderedStrategy
-          && orderedStrategy.missesChildren()) {
-        @Nullable OrderedTraversalStrategy reread = rereadIncompleteOrder(rootNode);
-        if (reread != null) {
-          traversalStrategy = reread;
-        }
-      }
-      if (traversalStrategy instanceof OrderedTraversalStrategy orderedStrategy) {
-        TraversalTreeCache.put(rootNode, orderedStrategy);
-      }
+      traversalStrategy = buildWindowOrder(rootNode, searchDirection);
     }
 
     // In a scroll view the next item is already in the tree, just off screen. Show the next screen
