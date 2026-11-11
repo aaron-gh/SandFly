@@ -533,6 +533,20 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
         pending.clear()
       }
     }
+
+    /**
+     * Removes this stream as [discard] does if it has not started playing or finished, and returns
+     * whether it did.
+     */
+    fun discardUnplayed(): Boolean {
+      synchronized(lock) {
+        if (started || finished) return false
+        streams.remove(this)
+        finished = true
+        pending.clear()
+        return true
+      }
+    }
   }
 
   /**
