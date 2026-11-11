@@ -60,7 +60,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import java.util.Objects;
 import java.util.Optional;
 import java.util.function.Function;
 import org.checkerframework.checker.nullness.qual.Nullable;
@@ -371,10 +370,7 @@ public class ProcessorPhoneticLetters implements AccessibilityEventListener {
    * other locale tag is returned unchanged.
    */
   @VisibleForTesting
-  static String normalizePhoneticLocale(@Nullable String locale) {
-    if (locale == null) {
-      return null;
-    }
+  static String normalizePhoneticLocale(String locale) {
     String[] subtags = locale.split("-", 3);
     if (!"zh".equalsIgnoreCase(subtags[0])) {
       return locale;
@@ -421,36 +417,37 @@ public class ProcessorPhoneticLetters implements AccessibilityEventListener {
    * supply real or stubbed letter maps.
    *
    * <p>The locale is normalized first (Chinese script/region variants collapse to the zh-CN /
-   * zh-TW / zh nodes), and both the lowercasing locale and the {@link LocaleSpan} attached to the
-   * result come from the normalized tag.
+   * zh-TW / zh nodes), and the normalized tag only decides which JSON node is read and drives the
+   * base-language fallback. The lowercasing locale and the {@link LocaleSpan} attached to the
+   * result come from the original tag, so users of variants that share a node (such as zh-HK or
+   * zh-SG) still get the utterance spoken with their own voice.
    */
   @VisibleForTesting
   static @Nullable CharSequence getPhoneticLetterWithMap(
       String locale, String letter, Function<String, Map<String, String>> phoneticLetterMap) {
     String normalizedLocale = normalizePhoneticLocale(locale);
-    Locale parsedLocale = LocaleUtils.parseLocaleString(normalizedLocale);
-    if (parsedLocale == null) {
-      parsedLocale = Locale.getDefault();
+    Locale spanLocale = Locale.forLanguageTag(locale);
+    Locale normalizedParsed = LocaleUtils.parseLocaleString(normalizedLocale);
+    if (normalizedParsed == null) {
+      normalizedParsed = Locale.getDefault();
     }
-    String normalizedLetter = letter.toLowerCase(parsedLocale);
+    String normalizedLetter = letter.toLowerCase(spanLocale);
     String value = phoneticLetterMap.apply(normalizedLocale).get(normalizedLetter);
     if (value == null) {
-      if (parsedLocale.getCountry().isEmpty()) {
+      if (normalizedParsed.getCountry().isEmpty()) {
         // As a last resort, fall back to English.
         value = phoneticLetterMap.apply(FALLBACK_LOCALE).get(normalizedLetter);
       } else {
         // Get the letter for the base language, if possible.
-        String baseLanguage = parsedLocale.getLanguage();
-        normalizedLetter =
-            letter.toLowerCase(Objects.requireNonNull(LocaleUtils.parseLocaleString(baseLanguage)));
-        value = phoneticLetterMap.apply(parsedLocale.getLanguage()).get(normalizedLetter);
+        normalizedLetter = letter.toLowerCase(spanLocale);
+        value = phoneticLetterMap.apply(normalizedParsed.getLanguage()).get(normalizedLetter);
       }
     }
-    // Attaching the locale to the phonetic letter
+    // Attach the original locale to the phonetic letter so TTS keeps the user's voice.
     SpannableString ss = null;
     if (value != null) {
       ss = new SpannableString(value);
-      ss.setSpan(new LocaleSpan(parsedLocale), 0, ss.length(), 0);
+      ss.setSpan(new LocaleSpan(spanLocale), 0, ss.length(), 0);
     }
     return ss;
   }

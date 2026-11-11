@@ -82,9 +82,4 @@ class ProcessorPhoneticLettersLocaleTest {
     assertEquals("fr", ProcessorPhoneticLetters.normalizePhoneticLocale("fr"))
     assertEquals("yue-Hant-HK", ProcessorPhoneticLetters.normalizePhoneticLocale("yue-Hant-HK"))
   }
-
-  @Test
-  fun nullReturnsNull() {
-    assertEquals(null, ProcessorPhoneticLetters.normalizePhoneticLocale(null))
-  }
 }

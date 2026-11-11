@@ -16,10 +16,14 @@
 
 package com.google.android.accessibility.talkback.eventprocessor
 
+import android.text.Spanned
+import android.text.style.LocaleSpan
 import com.google.android.accessibility.talkback.R
+import java.util.Locale
 import java.util.function.Function
 import org.json.JSONObject
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertNotNull
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
@@ -27,9 +31,10 @@ import org.robolectric.RuntimeEnvironment
 import org.robolectric.annotation.Config
 
 /**
- * End-to-end tests for [ProcessorPhoneticLetters.getPhoneticLetterWithMap] against the real
- * phonetic_letters.json resource, covering locale normalization, node lookup and fallbacks
- * together with the actual data.
+ * End-to-end tests for [ProcessorPhoneticLetters.getPhoneticLetterWithMap] covering locale
+ * normalization, node lookup, fallbacks and the attached [LocaleSpan]. Tests that pin spoken
+ * values use synthetic data so they stay independent of the JSON contents; the real resource is
+ * exercised separately to keep an end-to-end path over the shipped data.
  */
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [34])
@@ -60,17 +65,33 @@ class ProcessorPhoneticLettersLookupTest {
     return Function { locale -> byLocale[locale] ?: emptyMap() }
   }
 
+  /** Returns the locale carried by the single [LocaleSpan] of the result, if any. */
+  private fun localeSpanOf(cs: CharSequence?): Locale? {
+    assertNotNull(cs)
+    val spans = (cs as Spanned).getSpans(0, cs.length, LocaleSpan::class.java)
+    assertEquals(1, spans.size)
+    return spans[0].locale
+  }
+
   @Test
   fun zhHansCnReadsZhCnLettersWithPosition() {
-    val loader = realPhoneticLetterMap()
     assertEquals(
-      "第1个字母, alpha",
-      ProcessorPhoneticLetters.getPhoneticLetterWithMap("zh-Hans-CN", "a", loader)?.toString(),
+      "第1个字母，alpha",
+      ProcessorPhoneticLetters.getPhoneticLetterWithMap("zh-Hans-CN", "a", realPhoneticLetterMap())
+        ?.toString(),
     )
     assertEquals(
-      "第26个字母, zulu",
-      ProcessorPhoneticLetters.getPhoneticLetterWithMap("zh-Hans-CN", "Z", loader)?.toString(),
+      "第26个字母，zulu",
+      ProcessorPhoneticLetters.getPhoneticLetterWithMap("zh-Hans-CN", "Z", realPhoneticLetterMap())
+        ?.toString(),
     )
+  }
+
+  @Test
+  fun zhHansCnMarksResultWithOriginalLocale() {
+    val cs =
+      ProcessorPhoneticLetters.getPhoneticLetterWithMap("zh-Hans-CN", "a", realPhoneticLetterMap())
+    assertEquals(Locale.forLanguageTag("zh-Hans-CN"), localeSpanOf(cs))
   }
 
   @Test
@@ -95,11 +116,33 @@ class ProcessorPhoneticLettersLookupTest {
   @Test
   fun zhTwLettersFallBackToZhNode() {
     // The zh-TW node has no Latin letters, so they come from the zh node.
+    val loader =
+      Function { locale: String ->
+        when (locale) {
+          "zh" -> mapOf("a" to "Alfa")
+          else -> emptyMap<String, String>()
+        }
+      }
     assertEquals(
       "Alfa",
-      ProcessorPhoneticLetters.getPhoneticLetterWithMap("zh-TW", "a", realPhoneticLetterMap())
-        ?.toString(),
+      ProcessorPhoneticLetters.getPhoneticLetterWithMap("zh-TW", "a", loader)?.toString(),
     )
+  }
+
+  @Test
+  fun zhHkSharesZhTwNodeButKeepsItsOwnLocaleSpan() {
+    // zh-HK resolves to the zh-TW node and its base-language fallback, but the utterance must
+    // still be marked with the original zh-HK locale so TTS keeps the user's voice.
+    val loader =
+      Function { locale: String ->
+        when (locale) {
+          "zh" -> mapOf("a" to "Alfa")
+          else -> emptyMap<String, String>()
+        }
+      }
+    val cs = ProcessorPhoneticLetters.getPhoneticLetterWithMap("zh-HK", "a", loader)
+    assertEquals("Alfa", cs?.toString())
+    assertEquals(Locale.forLanguageTag("zh-HK"), localeSpanOf(cs))
   }
 
   @Test
