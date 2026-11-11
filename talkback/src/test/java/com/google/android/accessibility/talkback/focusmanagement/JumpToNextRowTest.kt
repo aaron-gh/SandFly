@@ -268,6 +268,16 @@ class JumpToNextRowTest {
   }
 
   @Test
+  fun onlyASingleQuietPageNoTallerThanTheListIsLearned() {
+    assertTrue(FocusProcessorForLogicalNavigation.isReliablePage(2200, 2520, true, false))
+    // Overlapping scrolls added up past the list's height.
+    assertFalse(FocusProcessorForLogicalNavigation.isReliablePage(2884, 2520, true, false))
+    assertFalse(FocusProcessorForLogicalNavigation.isReliablePage(2200, 2520, false, false))
+    assertFalse(FocusProcessorForLogicalNavigation.isReliablePage(2200, 2520, true, true))
+    assertFalse(FocusProcessorForLogicalNavigation.isReliablePage(0, 2520, true, false))
+  }
+
+  @Test
   fun itemWhollyInsideTheListNeedsNoScroll() {
     val list = Rect(0, 0, 1080, 2520)
     assertTrue(FocusProcessorForLogicalNavigation.isInside(Rect(0, 900, 1080, 1400), list))

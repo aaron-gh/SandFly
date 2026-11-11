@@ -255,6 +255,9 @@ public class FocusProcessorForLogicalNavigation {
   /** The scroll whose list a node is being followed for, which decides when to search. */
   private @Nullable AutoScrollCallback trackedCallback;
 
+  /** Whether the list had sent no scroll event for a while when the last auto scroll started. */
+  private boolean scrollStartedQuiet;
+
   /** Whether following a node has shown that the list of the last auto scroll has slowed down. */
   private boolean listSettled;
 
@@ -402,6 +405,11 @@ public class FocusProcessorForLogicalNavigation {
     Rect listBounds = new Rect();
     list.getBoundsInScreen(listBounds);
     int page = learnedPage(list);
+    if (page > listBounds.height()) {
+      LogUtils.d(TAG, "Forgetting a page of %d px, taller than the list.", page);
+      forgetPage(list);
+      page = 0;
+    }
     CharSequence className = list.getClassName();
     if (!staysAfterPage(
         itemBounds,
@@ -468,6 +476,7 @@ public class FocusProcessorForLogicalNavigation {
 
   /** Scrolls {@code list} ahead of the focused item, as SandFly's own silent scroll. */
   boolean scrollListAhead(AccessibilityNodeInfoCompat list, int scrollAction) {
+    countScrollAction();
     return pipeline.returnFeedback(
         EVENT_ID_UNTRACKED,
         Feedback.scroll(
@@ -3678,6 +3687,8 @@ public class FocusProcessorForLogicalNavigation {
       boolean watchItems = speakWhileScrolling && navigationAction.shouldScroll;
       if (tracker != null || watchItems) {
         ScrollTrack track = new ScrollTrack(callback, scrollable, tracker, eventId);
+        track.quietAtStart = scrollStartedQuiet;
+        track.actionCountAtStart = scrollActionCount;
         if (watchItems) {
           track.watchItems(itemOf(pivot, scrollable), contentUp);
         }
@@ -3726,6 +3737,12 @@ public class FocusProcessorForLogicalNavigation {
     int previousStep;
     int totalShift;
     boolean moved;
+
+    /** Whether the list was still when the scroll started. */
+    boolean quietAtStart;
+
+    /** {@link #scrollActionCount} once the scroll had started. */
+    int actionCountAtStart;
 
     /** When the followed node was last read, in ms after the scroll. */
     long lastNodeCheck = Long.MIN_VALUE / 2;
@@ -4090,7 +4107,11 @@ public class FocusProcessorForLogicalNavigation {
         return;
       }
       int deltaY = scrollDeltaSumY - scrollStartDeltaSumY;
-      learnPage(track.scrollable, Math.abs(deltaY));
+      learnPage(
+          track.scrollable,
+          Math.abs(deltaY),
+          track.quietAtStart,
+          scrollActionCount != track.actionCountAtStart);
       LogUtils.d(
           TAG,
           "List stopped %d ms after the scroll: %d scroll events, deltaY=%d; searching now.",
@@ -4206,17 +4227,63 @@ public class FocusProcessorForLogicalNavigation {
 
   private static int pagePx;
 
-  /** Records how far a page scroll of {@code list} moved it, from its scroll events. */
-  static void learnPage(AccessibilityNodeInfoCompat list, int px) {
-    if (px > 0) {
-      pageList = list;
-      pagePx = px;
-    }
+  /** Counts the scroll actions performed for navigation and scrolling ahead. Main thread. */
+  private static int scrollActionCount;
+
+  static int scrollActionCount() {
+    return scrollActionCount;
   }
 
-  /** Returns how far a page scroll moved {@code list} last, or 0 if that isn't known. */
+  static void countScrollAction() {
+    scrollActionCount++;
+  }
+
+  /**
+   * Records how far one page scroll of {@code list} moved it, {@code px} from its scroll events,
+   * when the measurement can be trusted: the list was still when the scroll started ({@code
+   * quietAtStart}), no other scroll started before its events ended ({@code otherScrollSince}), and
+   * the page isn't taller than the list. The smallest such page of the list is kept.
+   */
+  static void learnPage(
+      AccessibilityNodeInfoCompat list, int px, boolean quietAtStart, boolean otherScrollSince) {
+    Rect bounds = new Rect();
+    list.getBoundsInScreen(bounds);
+    if (!isReliablePage(px, bounds.height(), quietAtStart, otherScrollSince)) {
+      LogUtils.d(
+          TAG,
+          "Page of %d px not learned: list %d px tall, still at start %b, other scroll %b.",
+          px,
+          bounds.height(),
+          quietAtStart,
+          otherScrollSince);
+      return;
+    }
+    if (list.equals(pageList) && pagePx > 0 && pagePx <= px) {
+      return;
+    }
+    pageList = list;
+    pagePx = px;
+    LogUtils.d(TAG, "Learned a page of %d px for the list %d px tall.", px, bounds.height());
+  }
+
+  /** Returns whether a measured page of {@code px} for a list {@code listHeight} tall is usable. */
+  @VisibleForTesting
+  static boolean isReliablePage(
+      int px, int listHeight, boolean quietAtStart, boolean otherScrollSince) {
+    return px > 0 && px <= listHeight && quietAtStart && !otherScrollSince;
+  }
+
+  /** Returns how far a page scroll moves {@code list}, or 0 if that isn't known. */
   static int learnedPage(AccessibilityNodeInfoCompat list) {
     return list.equals(pageList) ? pagePx : 0;
+  }
+
+  /** Forgets the page learned for {@code list}. */
+  static void forgetPage(AccessibilityNodeInfoCompat list) {
+    if (list.equals(pageList)) {
+      pageList = null;
+      pagePx = 0;
+    }
   }
 
   /** Puts the bounds of {@code node} in {@code bounds} and returns whether they are empty. */
@@ -5552,6 +5619,9 @@ public class FocusProcessorForLogicalNavigation {
       parent.scrollStartEventCount = scrollEventCount;
       parent.scrollStartDeltaSumY = scrollDeltaSumY;
       parent.listSettled = false;
+      parent.scrollStartedQuiet =
+          SystemClock.uptimeMillis() - lastScrollEventUptime >= LIST_STOPPED_MS;
+      countScrollAction();
     }
 
     public void onAutoScrolled(

@@ -74,6 +74,12 @@ public final class ScrollAhead {
   private @Nullable AccessibilityNodeInfoCompat scrolledList;
   private int deltaSumAtScroll;
 
+  /** Whether the list was still when the last page started, so that its distance can be learned. */
+  private boolean quietAtPage;
+
+  /** The scroll action count once the last page started; another scroll since spoils its distance. */
+  private int actionCountAtPage;
+
   ScrollAhead(FocusProcessorForLogicalNavigation navigation) {
     this.navigation = navigation;
     current = this;
@@ -177,7 +183,9 @@ public final class ScrollAhead {
     if (scrolledList != null) {
       FocusProcessorForLogicalNavigation.learnPage(
           scrolledList,
-          Math.abs(FocusProcessorForLogicalNavigation.scrollDeltaSumY() - deltaSumAtScroll));
+          Math.abs(FocusProcessorForLogicalNavigation.scrollDeltaSumY() - deltaSumAtScroll),
+          quietAtPage,
+          FocusProcessorForLogicalNavigation.scrollActionCount() != actionCountAtPage);
       scrolledList = null;
     }
     if (!node.refresh() || (pages > 0 && !node.isVisibleToUser())) {
@@ -208,10 +216,12 @@ public final class ScrollAhead {
       return;
     }
     deltaSumAtScroll = FocusProcessorForLogicalNavigation.scrollDeltaSumY();
+    quietAtPage = isQuiet(now, FocusProcessorForLogicalNavigation.lastScrollEventUptime());
     if (!navigation.scrollListAhead(plan.list, plan.scrollAction)) {
       focused = null;
       return;
     }
+    actionCountAtPage = FocusProcessorForLogicalNavigation.scrollActionCount();
     scrolledList = plan.list;
     lastPageUptime = SystemClock.uptimeMillis();
     pages++;
