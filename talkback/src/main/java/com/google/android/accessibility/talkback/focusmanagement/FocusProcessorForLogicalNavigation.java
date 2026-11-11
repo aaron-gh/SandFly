@@ -145,6 +145,15 @@ public class FocusProcessorForLogicalNavigation {
   // takes too.
   private @SearchDirection int lastLogicalDirection = TraversalStrategy.SEARCH_FOCUS_FORWARD;
 
+  /** When {@link #lastLogicalDirection} was set, in {@link SystemClock#uptimeMillis()}. */
+  private long lastLogicalDirectionUptime;
+
+  /** Whether a move to the previous item happened less than {@code withinMs} ago. */
+  boolean movedBackwardWithin(long withinMs) {
+    return lastLogicalDirection == TraversalStrategy.SEARCH_FOCUS_BACKWARD
+        && SystemClock.uptimeMillis() - lastLogicalDirectionUptime < withinMs;
+  }
+
 
   ///////////////////////////////////////////////////////////////////////////////////////////////
   // Constants
@@ -1771,6 +1780,7 @@ public class FocusProcessorForLogicalNavigation {
     if (logicalDirection == TraversalStrategy.SEARCH_FOCUS_FORWARD
         || logicalDirection == TraversalStrategy.SEARCH_FOCUS_BACKWARD) {
       lastLogicalDirection = logicalDirection;
+      lastLogicalDirectionUptime = SystemClock.uptimeMillis();
     }
 
     if (ScreenElements.isShowing()
@@ -3593,6 +3603,12 @@ public class FocusProcessorForLogicalNavigation {
     /** The list's children at the last look. */
     List<AccessibilityNodeInfoCompat> children = new ArrayList<>();
 
+    /** Whether the pivot's item left room past it at the last frame. */
+    boolean roomBefore;
+
+    /** When the list's items were last read, in {@link SystemClock#uptimeMillis()}. */
+    long lastLook;
+
     ScrollTrack(
         AutoScrollCallback callback,
         AccessibilityNodeInfoCompat scrollable,
@@ -3613,6 +3629,12 @@ public class FocusProcessorForLogicalNavigation {
       this.pivotItem = pivotItem;
       this.itemsComeBelow = itemsComeBelow;
       children = childrenOf(scrollable);
+      Rect itemBounds = null;
+      if (pivotItem != null) {
+        itemBounds = new Rect();
+        pivotItem.getBoundsInScreen(itemBounds);
+      }
+      roomBefore = leavesRoomPast(itemBounds, listBounds, itemsComeBelow);
     }
   }
 
@@ -3639,10 +3661,10 @@ public class FocusProcessorForLogicalNavigation {
       return false;
     }
     List<AccessibilityNodeInfoCompat> children = childrenOf(list);
-    if (children.equals(track.children)) {
-      return false;
-    }
+    boolean childrenChanged = !children.equals(track.children);
     track.children = children;
+    // An item already attached off screen comes on screen without changing the children; the
+    // pivot's item then leaves room past it in the list.
     Rect itemBounds = null;
     if (track.pivotItem != null) {
       AccessibilityNodeInfoCompat item = AccessibilityNodeInfoCompat.obtain(track.pivotItem);
@@ -3651,6 +3673,16 @@ public class FocusProcessorForLogicalNavigation {
         item.getBoundsInScreen(itemBounds);
       }
     }
+    boolean room = leavesRoomPast(itemBounds, track.listBounds, track.itemsComeBelow);
+    long now = SystemClock.uptimeMillis();
+    boolean look =
+        childrenChanged
+            || (room && (!track.roomBefore || now - track.lastLook >= LOOK_AGAIN_MS));
+    track.roomBefore = room;
+    if (!look) {
+      return false;
+    }
+    track.lastLook = now;
     boolean shown = false;
     Rect bounds = new Rect();
     for (AccessibilityNodeInfoCompat child : children) {
@@ -3702,6 +3734,25 @@ public class FocusProcessorForLogicalNavigation {
         () -> showWhenListStops(list, next, serial, track.eventId), SHOW_CHECK_MS);
     return true;
   }
+
+  /** While the pivot's item leaves room past it, the list's items are read at most this often. */
+  private static final long LOOK_AGAIN_MS = 50;
+
+  /**
+   * Returns whether the pivot's item, with {@code itemBounds} or off screen if null, leaves room
+   * in a list with {@code list} bounds where the next item comes, {@code below} it or above.
+   */
+  @VisibleForTesting
+  static boolean leavesRoomPast(@Nullable Rect itemBounds, Rect list, boolean below) {
+    if (itemBounds == null || itemBounds.isEmpty()) {
+      return true;
+    }
+    return below
+        ? itemBounds.bottom < list.bottom - ROOM_PX
+        : itemBounds.top > list.top + ROOM_PX;
+  }
+
+  private static final int ROOM_PX = 4;
 
   /**
    * Returns whether an item with {@code bounds} lies past the pivot's item, with {@code itemBounds}

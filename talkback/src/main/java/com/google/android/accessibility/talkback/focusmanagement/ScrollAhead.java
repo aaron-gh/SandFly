@@ -51,6 +51,9 @@ public final class ScrollAhead {
   /** Most pages scrolled ahead of one focused item. */
   @VisibleForTesting static final int MAX_PAGES = 10;
 
+  /** Focus that a move to the previous item placed this recently isn't scrolled ahead of. */
+  private static final long BACKWARD_MOVE_MS = 5000;
+
   /** Least height of the focused item that must stay on screen after a page, in dp. */
   private static final int MIN_REMAIN_DP = 48;
 
@@ -148,6 +151,12 @@ public final class ScrollAhead {
       return;
     }
     if (navigation.isReadingContinuously()) {
+      focused = null;
+      return;
+    }
+    // Back over items scrolled ahead of, scrolling forward again would undo the move.
+    if (pages == 0 && navigation.movedBackwardWithin(BACKWARD_MOVE_MS)) {
+      LogUtils.d(TAG, "Not scrolling ahead after a move to the previous item.");
       focused = null;
       return;
     }

@@ -247,6 +247,17 @@ class JumpToNextRowTest {
   }
 
   @Test
+  fun pivotsItemLeavesRoomForTheNextItem() {
+    val list = Rect(0, 0, 1080, 2520)
+    // Going back, the item above appears once the pivot's item moves down from the top.
+    assertFalse(FocusProcessorForLogicalNavigation.leavesRoomPast(Rect(0, 0, 1080, 2280), list, false))
+    assertTrue(FocusProcessorForLogicalNavigation.leavesRoomPast(Rect(0, 400, 1080, 2520), list, false))
+    assertFalse(FocusProcessorForLogicalNavigation.leavesRoomPast(Rect(0, 400, 1080, 2520), list, true))
+    assertTrue(FocusProcessorForLogicalNavigation.leavesRoomPast(Rect(0, 0, 1080, 2000), list, true))
+    assertTrue(FocusProcessorForLogicalNavigation.leavesRoomPast(null, list, true))
+  }
+
+  @Test
   fun cutOffItemIsShownAfterTheScroll() {
     val list = Rect(0, 200, 1080, 2520)
     assertTrue(FocusProcessorForLogicalNavigation.isCutOff(Rect(0, 2300, 1080, 2520), list))
