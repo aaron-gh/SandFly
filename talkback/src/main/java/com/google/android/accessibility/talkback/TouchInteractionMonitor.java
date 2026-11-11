@@ -657,6 +657,10 @@ public class TouchInteractionMonitor
 
   public void stop() {
     stateInActive = false;
+    // Nothing that is waiting runs a gesture or speaks after the service stops.
+    clearCornerTaps();
+    mainHandler.removeCallbacks(edgeSwipeStallCheck);
+    edgeSpeechStage++;
     context.unregisterComponentCallbacks(this);
     if (typingFocusTimeout || touchFocusTimeout) {
       sharedPreferences.unregisterOnSharedPreferenceChangeListener(sharedPreferenceChangeListener);
@@ -1100,6 +1104,11 @@ public class TouchInteractionMonitor
         TouchInteractionController.stateToString(this.state),
         TouchInteractionController.stateToString(state));
     touchExplorationModeFailureReporter.onTouchStateChanged(state);
+    if (state == STATE_CLEAR && this.state != STATE_CLEAR) {
+      // The interaction has ended, so taps in a corner waiting for the next tap end now, in the
+      // state they were made in, rather than at their timeout in CLEAR.
+      onCornerTapResult(cornerTapTracker.resolveNow());
+    }
     touchPassedToApp = state == STATE_DELEGATING;
     if (this.state == STATE_CLEAR) {
       // Clear on transition to a new interaction
@@ -1833,6 +1842,10 @@ public class TouchInteractionMonitor
    */
   private boolean handleCornerTap(MotionEvent event) {
     if (!cornerTapTracker.isActive()) {
+      if (event.getActionMasked() == MotionEvent.ACTION_UP) {
+        // The next tap, even in a corner, may be the second of a double tap.
+        cornerTapTracker.onLift(event);
+      }
       if (event.getActionMasked() != ACTION_DOWN
           || state != STATE_TOUCH_INTERACTING
           || cornerTapsDeclined) {
