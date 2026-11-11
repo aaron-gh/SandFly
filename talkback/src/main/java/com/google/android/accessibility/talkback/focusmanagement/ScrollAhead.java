@@ -49,7 +49,7 @@ public final class ScrollAhead {
   /** Most pages scrolled ahead of one focused item. */
   @VisibleForTesting static final int MAX_PAGES = 10;
 
-  /** Focus that a move to the previous item placed this recently isn't scrolled ahead of. */
+  /** Focus that a move to the previous item placed this recently is scrolled ahead backward. */
   private static final long BACKWARD_MOVE_MS = 5000;
 
   /** Least height of the focused item that must stay on screen after a page, in dp. */
@@ -65,6 +65,9 @@ public final class ScrollAhead {
   private @Nullable AccessibilityNodeInfoCompat focused;
   private int pages;
   private long waitStart;
+
+  /** Whether this scrolls toward the next item, or back toward the previous one. */
+  private boolean forward = true;
 
   /** When this last scrolled a page, in {@link SystemClock#uptimeMillis()}. */
   private long lastPageUptime;
@@ -174,11 +177,10 @@ public final class ScrollAhead {
       focused = null;
       return;
     }
-    // Back over items scrolled ahead of, scrolling forward again would undo the move.
-    if (pages == 0 && navigation.movedBackwardWithin(BACKWARD_MOVE_MS)) {
-      LogUtils.d(TAG, "Not scrolling ahead after a move to the previous item.");
-      focused = null;
-      return;
+    // The way of the last move to the next or previous item: the next move most likely goes the
+    // same way.
+    if (pages == 0) {
+      forward = !navigation.movedBackwardWithin(BACKWARD_MOVE_MS);
     }
     if (scrolledList != null) {
       FocusProcessorForLogicalNavigation.learnPage(
@@ -198,10 +200,15 @@ public final class ScrollAhead {
     boolean[] nextShown = new boolean[1];
     int minRemainPx =
         Math.round(MIN_REMAIN_DP * navigationDensity());
-    @Nullable ScrollAheadPlan plan = navigation.planScrollAhead(node, minRemainPx, nextShown);
+    @Nullable ScrollAheadPlan plan =
+        navigation.planScrollAhead(node, minRemainPx, forward, nextShown);
     if (plan == null) {
       if (nextShown[0] && pages > 0) {
-        LogUtils.d(TAG, "Next item on screen after scrolling ahead %d pages.", pages);
+        LogUtils.d(
+            TAG,
+            "%s item on screen after scrolling ahead %d pages.",
+            forward ? "Next" : "Previous",
+            pages);
         // The scroll cleared the saved order; read it now rather than on the next swipe.
         waitStart = SystemClock.uptimeMillis();
         handler.postDelayed(() -> prepareOrder(node), CHECK_MS);
@@ -227,7 +234,8 @@ public final class ScrollAhead {
     pages++;
     LogUtils.d(
         TAG,
-        "Scrolling ahead of the focused item: page %d, last page %s px.",
+        "Scrolling ahead of the focused item %s: page %d, last page %s px.",
+        forward ? "forward" : "back",
         pages,
         plan.pagePx > 0 ? String.valueOf(plan.pagePx) : "not known");
     waitStart = SystemClock.uptimeMillis();

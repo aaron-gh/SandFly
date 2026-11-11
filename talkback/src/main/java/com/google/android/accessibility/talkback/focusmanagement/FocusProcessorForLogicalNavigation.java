@@ -341,8 +341,14 @@ public class FocusProcessorForLogicalNavigation {
    * nextShown} gets whether the reason is that the next item is on screen already.
    */
   @Nullable ScrollAheadPlan planScrollAhead(
-      AccessibilityNodeInfoCompat focused, int minRemainPx, boolean[] nextShown) {
+      AccessibilityNodeInfoCompat focused,
+      int minRemainPx,
+      boolean forward,
+      boolean[] nextShown) {
     nextShown[0] = false;
+    @SearchDirection
+    int searchDirection =
+        forward ? TraversalStrategy.SEARCH_FOCUS_FORWARD : TraversalStrategy.SEARCH_FOCUS_BACKWARD;
     if (!AccessibilityNodeInfoUtils.isVisible(focused)
         || focused.isEditable()
         || Role.getRole(focused) == Role.ROLE_EDIT_TEXT
@@ -352,7 +358,7 @@ public class FocusProcessorForLogicalNavigation {
     }
     ScrollableNodeInfo scrollableNodeInfo =
         ScrollableNodeInfo.findScrollableNodeForDirection(
-            TraversalStrategy.SEARCH_FOCUS_FORWARD,
+            searchDirection,
             focused,
             /* includeSelf= */ false,
             WindowUtils.isScreenLayoutRTL(service));
@@ -370,36 +376,39 @@ public class FocusProcessorForLogicalNavigation {
     }
     Rect itemBounds = new Rect();
     (item != null ? item : focused).getBoundsInScreen(itemBounds);
-    // Another item on screen below this one: the next swipe needn't scroll. Checked first, as it
+    // Another item on screen past this one: the next swipe needn't scroll. Checked first, as it
     // reads no more than the list's children.
-    if (item != null && hasItemBeyond(list, item, itemBounds, /* forward= */ true)) {
+    if (item != null && hasItemBeyond(list, item, itemBounds, forward)) {
       nextShown[0] = true;
       return null;
     }
     // The next item as a swipe would find it in the list: if it is on screen, a swipe needn't
     // scroll.
     TraversalStrategy localTraversalStrategy =
-        TraversalStrategyUtils.getTraversalStrategy(
-            list, focusFinder, TraversalStrategy.SEARCH_FOCUS_FORWARD);
+        TraversalStrategyUtils.getTraversalStrategy(list, focusFinder, searchDirection);
     Filter<AccessibilityNodeInfoCompat> nodeFilter =
         NavigationTarget.createNodeFilter(
             NavigationTarget.TARGET_DEFAULT, localTraversalStrategy.getSpeakingNodesCache());
     AccessibilityNodeInfoCompat next =
         TraversalStrategyUtils.searchFocus(
-            localTraversalStrategy, focused, TraversalStrategy.SEARCH_FOCUS_FORWARD, nodeFilter);
+            localTraversalStrategy, focused, searchDirection, nodeFilter);
     if (next != null && AccessibilityNodeInfoUtils.isVisible(next)) {
       nextShown[0] = true;
       return null;
     }
     Integer direction =
-        scrollableNodeInfo.getSupportedScrollDirection(TraversalStrategy.SEARCH_FOCUS_FORWARD);
+        scrollableNodeInfo.getSupportedScrollDirection(searchDirection);
     if (direction == null) {
-      LogUtils.d(TAG, "Not scrolling ahead: the list can't scroll forward.");
+      LogUtils.d(
+          TAG, "Not scrolling ahead: the list can't scroll %s.", forward ? "forward" : "back");
       return null;
     }
     int scrollAction = TraversalStrategyUtils.convertSearchDirectionToScrollAction(direction);
-    if (scrollAction != AccessibilityNodeInfoCompat.ACTION_SCROLL_FORWARD
-        && scrollAction != AccessibilityActionCompat.ACTION_SCROLL_DOWN.getId()) {
+    if (forward
+        ? scrollAction != AccessibilityNodeInfoCompat.ACTION_SCROLL_FORWARD
+            && scrollAction != AccessibilityActionCompat.ACTION_SCROLL_DOWN.getId()
+        : scrollAction != AccessibilityNodeInfoCompat.ACTION_SCROLL_BACKWARD
+            && scrollAction != AccessibilityActionCompat.ACTION_SCROLL_UP.getId()) {
       return null;
     }
     Rect listBounds = new Rect();
@@ -416,7 +425,8 @@ public class FocusProcessorForLogicalNavigation {
         listBounds,
         page,
         className != null && PAGE_BELOW_HEIGHT_LISTS.contains(className.toString()),
-        minRemainPx)) {
+        minRemainPx,
+        forward)) {
       LogUtils.d(
           TAG,
           "Not scrolling ahead: a page (%s) could scroll the item at %s out of the list at %s.",
@@ -441,22 +451,25 @@ public class FocusProcessorForLogicalNavigation {
 
   /**
    * Returns whether at least {@code minRemainPx} of an item with {@code item} bounds stays in a
-   * list with {@code list} bounds after a page scroll forward. With a page of {@code pagePx}
-   * measured earlier, the item's bottom must stay that far below the list's top. Otherwise, in a
-   * list whose page is its height less its padding ({@code pageBelowHeight}), an item cut off at
-   * the list's bottom goes on below it, so part of it stays.
+   * list with {@code list} bounds after a page scroll {@code forward}, or back. With a page of
+   * {@code pagePx} measured earlier, the item's bottom must stay that far below the list's top, or
+   * its top that far above the list's bottom. Otherwise, in a list whose page is its height less its
+   * padding ({@code pageBelowHeight}), an item cut off at the list's edge it moves away from goes
+   * on past it, so part of it stays.
    */
   @VisibleForTesting
   static boolean staysAfterPage(
-      Rect item, Rect list, int pagePx, boolean pageBelowHeight, int minRemainPx) {
+      Rect item, Rect list, int pagePx, boolean pageBelowHeight, int minRemainPx, boolean forward) {
     if (item.isEmpty() || list.isEmpty()) {
       return false;
     }
     if (pagePx > 0) {
       return pagePx <= list.height() - minRemainPx
-          && item.bottom - pagePx >= list.top + minRemainPx;
+          && (forward
+              ? item.bottom - pagePx >= list.top + minRemainPx
+              : item.top + pagePx <= list.bottom - minRemainPx);
     }
-    return pageBelowHeight && item.bottom >= list.bottom;
+    return pageBelowHeight && (forward ? item.bottom >= list.bottom : item.top <= list.top);
   }
 
   /** Returns the item of {@code list} that holds {@code node}, or null if it isn't near one. */
@@ -2155,7 +2168,15 @@ public class FocusProcessorForLogicalNavigation {
       }
     }
 
-    if ((target != null) && navigationAction.shouldScroll) {
+    // A plain swipe to an item that is at least partly on screen speaks it first and brings the
+    // rest of it on screen after, as reading what may need scrolling waits for the app.
+    boolean revealAfterFocus =
+        target != null
+            && navigationAction.shouldScroll
+            && navigationAction.actionType == NavigationAction.DIRECTIONAL_NAVIGATION
+            && navigationAction.targetType == NavigationTarget.TARGET_DEFAULT
+            && target.isVisibleToUser();
+    if ((target != null) && navigationAction.shouldScroll && !revealAfterFocus) {
       boolean scrolled =
           ensureOnScreen(
               target,
@@ -2197,7 +2218,12 @@ public class FocusProcessorForLogicalNavigation {
       if (linkIndexToFocus >= 0) {
         // Announce the single link feedback instead of a11y focus feedback.
         announceSingleLinkFocused(LinkUtils.getLinkText(target, linkIndexToFocus), eventId);
-        return setAccessibilityFocusInternal(target, navigationAction, linkIndexToFocus, eventId);
+        boolean focused =
+            setAccessibilityFocusInternal(target, navigationAction, linkIndexToFocus, eventId);
+        if (focused && revealAfterFocus) {
+          revealAfterFocus(target, navigationAction, traversalStrategy, rootNode, eventId);
+        }
+        return focused;
       } else {
         boolean focused =
             setAccessibilityFocusInternal(
@@ -2206,6 +2232,9 @@ public class FocusProcessorForLogicalNavigation {
                 /* linkIndex= */ -1,
                 columnWrap(pivot, target, navigationAction, logicalDirection),
                 eventId);
+        if (focused && revealAfterFocus) {
+          revealAfterFocus(target, navigationAction, traversalStrategy, rootNode, eventId);
+        }
         if (!focused && usedSavedTree) {
           // The app might have removed the target before its change event reached us, so try
           // again with a new tree.
@@ -2220,6 +2249,33 @@ public class FocusProcessorForLogicalNavigation {
     // No target found.
     announceNativeElement(logicalDirection, navigationAction.targetType, eventId);
     return false;
+  }
+
+  /**
+   * Brings the rest of {@code target}, which focus has just moved to and which is being spoken,
+   * on screen. The scroll leaves focus where it is and says nothing.
+   */
+  private void revealAfterFocus(
+      AccessibilityNodeInfoCompat target,
+      NavigationAction navigationAction,
+      TraversalStrategy traversalStrategy,
+      AccessibilityNodeInfoCompat rootNode,
+      EventId eventId) {
+    long start = SystemClock.uptimeMillis();
+    boolean scrolled =
+        ensureOnScreen(
+            target,
+            navigationAction.searchDirection,
+            reusableOrderedStrategy(traversalStrategy, rootNode, target),
+            eventId);
+    // Focus is already on the target; the scroll's events have nothing to search for.
+    scrollCallback = null;
+    if (scrolled) {
+      LogUtils.d(
+          TAG,
+          "Showed the rest of the focused item after focusing it, in %d ms.",
+          SystemClock.uptimeMillis() - start);
+    }
   }
 
   /** Generates the speech and hint for the current focused single link. */

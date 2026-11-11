@@ -198,19 +198,29 @@ class JumpToNextRowTest {
   fun itemStaysAfterAMeasuredPage() {
     val list = Rect(0, 0, 1080, 2520)
     // Cut off at the bottom: 2520 - 2200 = 320 px stay.
-    assertTrue(FocusProcessorForLogicalNavigation.staysAfterPage(Rect(0, 361, 1080, 2520), list, 2200, false, 130))
+    assertTrue(FocusProcessorForLogicalNavigation.staysAfterPage(Rect(0, 361, 1080, 2520), list, 2200, false, 130, true))
     // A page as tall as the list leaves nothing.
-    assertFalse(FocusProcessorForLogicalNavigation.staysAfterPage(Rect(0, 361, 1080, 2520), list, 2500, true, 130))
+    assertFalse(FocusProcessorForLogicalNavigation.staysAfterPage(Rect(0, 361, 1080, 2520), list, 2500, true, 130, true))
     // An item ending high up leaves with the page.
-    assertFalse(FocusProcessorForLogicalNavigation.staysAfterPage(Rect(0, 1800, 1080, 2300), list, 2200, false, 130))
+    assertFalse(FocusProcessorForLogicalNavigation.staysAfterPage(Rect(0, 1800, 1080, 2300), list, 2200, false, 130, true))
+  }
+
+  @Test
+  fun itemStaysAfterAPageBack() {
+    val list = Rect(0, 0, 1080, 2520)
+    // Cut off at the top: its top moves down by the page and stays above the bottom.
+    assertTrue(FocusProcessorForLogicalNavigation.staysAfterPage(Rect(0, 0, 1080, 2000), list, 2200, false, 130, false))
+    assertFalse(FocusProcessorForLogicalNavigation.staysAfterPage(Rect(0, 400, 1080, 2000), list, 2200, false, 130, false))
+    assertTrue(FocusProcessorForLogicalNavigation.staysAfterPage(Rect(0, 0, 1080, 2000), list, 0, true, 130, false))
+    assertFalse(FocusProcessorForLogicalNavigation.staysAfterPage(Rect(0, 100, 1080, 2000), list, 0, true, 130, false))
   }
 
   @Test
   fun itemStaysInViewListsWithoutAMeasuredPage() {
     val list = Rect(0, 0, 1080, 2520)
-    assertTrue(FocusProcessorForLogicalNavigation.staysAfterPage(Rect(0, 361, 1080, 2520), list, 0, true, 130))
-    assertFalse(FocusProcessorForLogicalNavigation.staysAfterPage(Rect(0, 361, 1080, 2400), list, 0, true, 130))
-    assertFalse(FocusProcessorForLogicalNavigation.staysAfterPage(Rect(0, 361, 1080, 2520), list, 0, false, 130))
+    assertTrue(FocusProcessorForLogicalNavigation.staysAfterPage(Rect(0, 361, 1080, 2520), list, 0, true, 130, true))
+    assertFalse(FocusProcessorForLogicalNavigation.staysAfterPage(Rect(0, 361, 1080, 2400), list, 0, true, 130, true))
+    assertFalse(FocusProcessorForLogicalNavigation.staysAfterPage(Rect(0, 361, 1080, 2520), list, 0, false, 130, true))
   }
 
   @Test
