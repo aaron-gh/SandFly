@@ -190,6 +190,7 @@ import com.google.android.accessibility.talkback.flags.Flags;
 import com.google.android.accessibility.talkback.focusmanagement.AccessibilityFocusMonitor;
 import com.google.android.accessibility.talkback.focusmanagement.FocusFeedbackMapper;
 import com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForLogicalNavigation;
+import com.google.android.accessibility.talkback.focusmanagement.ScrollAhead;
 import com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForScreenStateChange;
 import com.google.android.accessibility.talkback.focusmanagement.HomeScreenPages;
 import com.google.android.accessibility.talkback.focusmanagement.LiftCancelStrip;
@@ -1265,6 +1266,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     if (event.getEventType() == AccessibilityEvent.TYPE_VIEW_SCROLLED) {
       FocusProcessorForLogicalNavigation.onScrollEventReceived(event);
     }
+    ScrollAhead.onAccessibilityEvent(event);
     if (scriptHost != null) {
       scriptHost.onAccessibilityEvent(event);
     }
@@ -1624,6 +1626,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     }
     if (keyEvent.getAction() == KeyEvent.ACTION_DOWN) {
       RecentUserInput.mark();
+      ScrollAhead.cancelAll("key");
       if (gestureController != null) {
         gestureController.onUserInputStarted();
       }
@@ -4137,6 +4140,11 @@ public class TalkBackService extends AccessibilityServiceCompat
         getBooleanPref(
             R.string.pref_speak_items_before_scroll_key,
             R.bool.pref_speak_items_before_scroll_default));
+    ScrollAhead.setEnabled(
+        getBooleanPref(R.string.pref_scroll_ahead_key, R.bool.pref_scroll_ahead_default));
+    FocusProcessorForLogicalNavigation.setSpeakWhileScrolling(
+        getBooleanPref(
+            R.string.pref_speak_while_scrolling_key, R.bool.pref_speak_while_scrolling_default));
 
     // If performance statistics changing enabled setting... clear collected stats.
     boolean performanceEnabled =

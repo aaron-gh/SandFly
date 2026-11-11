@@ -3732,6 +3732,10 @@
   <string name="title_pref_cache_keyboard_keys">Announce keyboard keys faster</string>
   <!-- Title of the switch that speaks a list item a swipe moves to before the list has scrolled it into view. [CHAR LIMIT=NONE] -->
   <string name="title_pref_speak_items_before_scroll">Speak items before they scroll into view</string>
+  <!-- Switch on the Navigation screen: when on, while the focused item is the last one of a list on screen, SandFly scrolls the list forward so that the next item is on screen before the next swipe, keeping part of the focused item on screen. [CHAR_LIMIT=NONE] -->
+  <string name="title_pref_scroll_ahead">Scroll ahead to the next item</string>
+  <!-- Switch on the Navigation screen: when on, a swipe that has to scroll a list focuses and speaks the next item as soon as it comes on screen, while the list still scrolls. [CHAR_LIMIT=NONE] -->
+  <string name="title_pref_speak_while_scrolling">Speak the next item while scrolling</string>
   <!--
   Source: Title for the sound and vibration.
   Description: The user can set sound and vibration. [CHAR_LIMIT=NONE]

@@ -103,6 +103,9 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
      */
     public final boolean isFromNavigation;
 
+    /** Whether the event comes from SandFly scrolling a list ahead of the focused item. */
+    public final boolean isFromScrollAhead;
+
     @VisibleForTesting
     public ScrollEventInterpretation(
         @UserAction int userAction,
@@ -120,7 +123,8 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
           isFromScrollable,
           isMediaPlayerAutoScroll,
           scrollInstanceId,
-          /* isFromNavigation= */ false);
+          /* isFromNavigation= */ false,
+          /* isFromScrollAhead= */ false);
     }
 
     public ScrollEventInterpretation(
@@ -131,8 +135,10 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
         boolean isFromScrollable,
         boolean isMediaPlayerAutoScroll,
         int scrollInstanceId,
-        boolean isFromNavigation) {
+        boolean isFromNavigation,
+        boolean isFromScrollAhead) {
       this.isFromNavigation = isFromNavigation;
+      this.isFromScrollAhead = isFromScrollAhead;
       this.userAction = userAction;
       this.scrollDirection = scrollDirection;
       this.hasValidIndex = hasValidIndex;
@@ -155,6 +161,7 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
       sb.append(", isMediaPlayerAutoScroll=").append(isMediaPlayerAutoScroll);
       sb.append(", scrollInstanceId=").append(scrollInstanceId);
       sb.append(", isFromNavigation=").append(isFromNavigation);
+      sb.append(", isFromScrollAhead=").append(isFromScrollAhead);
       sb.append('}');
       return sb.toString();
     }
@@ -342,6 +349,7 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
     @UserAction final int userAction;
     final int scrollInstanceId;
     boolean isFromNavigation = false;
+    boolean isFromScrollAhead = false;
 
     @Nullable ScrollActionRecord autoScrollRecord = getAutoScrollRecordIfAvailable(event);
     if (autoScrollRecord == null) {
@@ -359,6 +367,7 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
         // manual scroll, it would move the focus that the scroll has just placed.
         userAction = ScrollActionRecord.ACTION_UNKNOWN;
         isFromNavigation = isNavigationScroll(finishedScrollRecord.get());
+        isFromScrollAhead = isScrollAhead(finishedScrollRecord.get());
         LogUtils.i(TAG, "End of an auto scroll");
       } else {
         userAction =
@@ -371,6 +380,7 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
       scrollInstanceId = autoScrollRecord.scrollInstanceId;
       userAction = autoScrollRecord.userAction;
       isFromNavigation = isNavigationScroll(autoScrollRecord);
+      isFromScrollAhead = isScrollAhead(autoScrollRecord);
       if (handledScrollInstanceId < scrollInstanceId) {
         // We record the current scroll instance Id so if we handle this Id again, it would mean
         // that it is from the multiple scroll attempts trigger from the same scroll action.
@@ -393,7 +403,8 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
             isFromScrollable,
             isMediaPlayerAutoScroll,
             scrollInstanceId,
-            isFromNavigation);
+            isFromNavigation,
+            isFromScrollAhead);
     LogUtils.d(TAG, "interpret ScrollEventInterpretation=%s", interpretation);
     return interpretation;
   }
@@ -428,7 +439,12 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
   private static boolean isNavigationScroll(@Nullable ScrollActionRecord record) {
     return record != null
         && record.userAction == ScrollActionRecord.ACTION_AUTO_SCROLL
-        && ScrollActionRecord.FOCUS.equals(record.scrollSource);
+        && (ScrollActionRecord.FOCUS.equals(record.scrollSource) || isScrollAhead(record));
+  }
+
+  /** Whether {@code record} is of SandFly scrolling a list ahead of the focused item. */
+  private static boolean isScrollAhead(@Nullable ScrollActionRecord record) {
+    return record != null && ScrollActionRecord.SCROLL_AHEAD.equals(record.scrollSource);
   }
 
   /** Checks whether the {@code event} is resulted from cached auto-scroll action. */

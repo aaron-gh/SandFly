@@ -78,8 +78,10 @@ public class ScrollPositionInterpreter implements ScrollEventHandler {
   public void onScrollEvent(
       AccessibilityEvent event, ScrollEventInterpretation interpretation, EventId eventId) {
 
-    // Filter scroll-events.
-    if (!interpretation.hasValidIndex || interpretation.isDuplicateEvent) {
+    // Filter scroll-events. Scrolling ahead of the focused item says nothing.
+    if (!interpretation.hasValidIndex
+        || interpretation.isDuplicateEvent
+        || interpretation.isFromScrollAhead) {
       return;
     }
 

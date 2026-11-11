@@ -127,6 +127,14 @@ When a swipe moved past a list item that reaches the edge of the list, such as a
 
 This applies to lists with one column whose indexes run down the screen, and whose item has no other controls. SandFly must have seen at least two items of the list on screen before it jumps. Swipes back and other lists still scroll a page at a time. After each page, SandFly reads the position of the focused item every 30 ms and searches as soon as the list slows down, at most 300 ms after the scroll, instead of waiting for the list to stop. For an item that fills the list, SandFly reads a small part of the item instead, since the item's bounds don't change while the list moves. If the next item still isn't on screen then, SandFly scrolls again at once. When the focused item is the last row of the list on screen and has no other part that takes focus, SandFly scrolls before it reads the order of the items in the whole window.
 
+### Speaking the next item while a list scrolls
+
+When a swipe or a key has to scroll a list to reach the next item, SandFly focuses and speaks the next item as soon as it comes on screen, while the list is still scrolling. Once the list stops, an item that is still cut off by the edge of the list is scrolled fully into view. To wait until the list slows down instead, turn off **Controls** > **Navigation** > **Speak the next item while scrolling**.
+
+### Scrolling ahead to the next item
+
+When the focused item is the last item of a list on screen, SandFly scrolls the list forward while the item is spoken, until the next item is on screen, so that the next swipe doesn't have to wait for a scroll. Focus stays on the item, a part of the item stays on screen, and the scroll makes no sound. SandFly scrolls ahead only when the app shows how far the item continues below the screen, at most 10 pages. It doesn't scroll ahead in text fields, in web content, or during continuous reading, and stops when you touch the screen, press a key, or a window changes. To turn it off, turn off **Controls** > **Navigation** > **Scroll ahead to the next item**.
+
 ### Scroll sound when moving between items
 
 TalkBack plays the scroll sound when a swipe or a key scrolls a list to reach the next item. SandFly plays it only for scrolls that you make or ask for, such as with **Scroll forward**.

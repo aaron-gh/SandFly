@@ -194,6 +194,46 @@ class JumpToNextRowTest {
     assertFalse(FocusProcessorForLogicalNavigation.endsListOnScreen(Rect(), list, true))
   }
 
+  @Test
+  fun hiddenPartComesFromPartsBelowTheList() {
+    val list = Rect(0, 200, 1080, 2520)
+    assertEquals(0, FocusProcessorForLogicalNavigation.hiddenBelow(listOf(Rect(0, 1900, 1080, 2520)), list))
+    assertEquals(
+      600,
+      FocusProcessorForLogicalNavigation.hiddenBelow(
+        listOf(Rect(0, 1900, 1080, 2520), Rect(125, 3000, 1026, 3120), Rect()),
+        list,
+      ),
+    )
+  }
+
+  @Test
+  fun itemPastThePivotsItem() {
+    val pivotItem = Rect(0, 200, 1080, 1500)
+    assertTrue(FocusProcessorForLogicalNavigation.isPastItem(Rect(0, 1500, 1080, 2520), pivotItem, true))
+    assertFalse(FocusProcessorForLogicalNavigation.isPastItem(Rect(0, 0, 1080, 200), pivotItem, true))
+    assertTrue(FocusProcessorForLogicalNavigation.isPastItem(Rect(0, 0, 1080, 200), pivotItem, false))
+    // The pivot's item has left the screen: every item on screen is past it.
+    assertTrue(FocusProcessorForLogicalNavigation.isPastItem(Rect(0, 300, 1080, 600), null, true))
+    assertFalse(FocusProcessorForLogicalNavigation.isPastItem(Rect(), null, true))
+  }
+
+  @Test
+  fun cutOffItemIsShownAfterTheScroll() {
+    val list = Rect(0, 200, 1080, 2520)
+    assertTrue(FocusProcessorForLogicalNavigation.isCutOff(Rect(0, 2300, 1080, 2520), list))
+    assertTrue(FocusProcessorForLogicalNavigation.isCutOff(Rect(0, 200, 1080, 400), list))
+    assertFalse(FocusProcessorForLogicalNavigation.isCutOff(Rect(0, 600, 1080, 900), list))
+    // An item as tall as the list can't be shown whole.
+    assertFalse(FocusProcessorForLogicalNavigation.isCutOff(Rect(0, 200, 1080, 2520), list))
+  }
+
+  @Test
+  fun scrollAheadWaitsForTheListToStop() {
+    assertFalse(ScrollAhead.isQuiet(1149, 1000))
+    assertTrue(ScrollAhead.isQuiet(1150, 1000))
+  }
+
   private fun node(parent: AccessibilityNodeInfoCompat? = null): AccessibilityNodeInfoCompat {
     val raw = AccessibilityNodeInfo.obtain()
     // Distinct sources keep the nodes unequal.
