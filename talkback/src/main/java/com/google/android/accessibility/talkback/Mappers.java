@@ -329,8 +329,10 @@ public final class Mappers {
     } else if (interpretation instanceof Interpretation.Scroll) {
       if (variables.isMediaPlayerAutoScroll(depth)
           || !variables.isFromScrollable(depth)
-          || variables.isManualScroll(depth)) {
-        // ScrollTicks sounds the user's own scrolls, once for each item.
+          || variables.isManualScroll(depth)
+          || variables.isNavigationScroll(depth)) {
+        // ScrollTicks sounds the user's own scrolls, once for each item. Scrolls that moving to the
+        // next or previous item makes are silent: the item spoken next says where focus went.
         return null;
       }
       float rate = (float) Math.pow(2.0f, (variables.scrollPercent(depth) / 50.0f) - 1);
@@ -641,6 +643,14 @@ public final class Mappers {
           (interpretation instanceof Interpretation.Scroll)
               && ((Interpretation.Scroll) interpretation).scroll.isFromScrollable;
       LogDepth.logVar(LOG_TAG, ++depth, "isFromScrollable", result);
+      return result;
+    }
+
+    public boolean isNavigationScroll(int depth) {
+      boolean result =
+          (interpretation instanceof Interpretation.Scroll)
+              && ((Interpretation.Scroll) interpretation).scroll.isFromNavigation;
+      LogDepth.logVar(LOG_TAG, ++depth, "isNavigationScroll", result);
       return result;
     }
 

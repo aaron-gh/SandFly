@@ -97,6 +97,12 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
      */
     public final int scrollInstanceId;
 
+    /**
+     * Whether the event comes from a scroll that moving to the next or previous item made, rather
+     * than one that the user asked for.
+     */
+    public final boolean isFromNavigation;
+
     @VisibleForTesting
     public ScrollEventInterpretation(
         @UserAction int userAction,
@@ -106,6 +112,27 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
         boolean isFromScrollable,
         boolean isMediaPlayerAutoScroll,
         int scrollInstanceId) {
+      this(
+          userAction,
+          scrollDirection,
+          hasValidIndex,
+          isDuplicateEvent,
+          isFromScrollable,
+          isMediaPlayerAutoScroll,
+          scrollInstanceId,
+          /* isFromNavigation= */ false);
+    }
+
+    public ScrollEventInterpretation(
+        @UserAction int userAction,
+        @SearchDirectionOrUnknown int scrollDirection,
+        boolean hasValidIndex,
+        boolean isDuplicateEvent,
+        boolean isFromScrollable,
+        boolean isMediaPlayerAutoScroll,
+        int scrollInstanceId,
+        boolean isFromNavigation) {
+      this.isFromNavigation = isFromNavigation;
       this.userAction = userAction;
       this.scrollDirection = scrollDirection;
       this.hasValidIndex = hasValidIndex;
@@ -127,6 +154,7 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
       sb.append(", isFromScrollable=").append(isFromScrollable);
       sb.append(", isMediaPlayerAutoScroll=").append(isMediaPlayerAutoScroll);
       sb.append(", scrollInstanceId=").append(scrollInstanceId);
+      sb.append(", isFromNavigation=").append(isFromNavigation);
       sb.append('}');
       return sb.toString();
     }
@@ -313,6 +341,7 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
     final int scrollDirection = getScrollDirection(sourceNodeIdentifier, event);
     @UserAction final int userAction;
     final int scrollInstanceId;
+    boolean isFromNavigation = false;
 
     @Nullable ScrollActionRecord autoScrollRecord = getAutoScrollRecordIfAvailable(event);
     if (autoScrollRecord == null) {
@@ -329,6 +358,7 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
         // TalkBack's own scroll, still moving after it went far enough to count as complete. As a
         // manual scroll, it would move the focus that the scroll has just placed.
         userAction = ScrollActionRecord.ACTION_UNKNOWN;
+        isFromNavigation = isNavigationScroll(finishedScrollRecord.get());
         LogUtils.i(TAG, "End of an auto scroll");
       } else {
         userAction =
@@ -340,6 +370,7 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
     } else {
       scrollInstanceId = autoScrollRecord.scrollInstanceId;
       userAction = autoScrollRecord.userAction;
+      isFromNavigation = isNavigationScroll(autoScrollRecord);
       if (handledScrollInstanceId < scrollInstanceId) {
         // We record the current scroll instance Id so if we handle this Id again, it would mean
         // that it is from the multiple scroll attempts trigger from the same scroll action.
@@ -361,7 +392,8 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
             isDuplicateEvent,
             isFromScrollable,
             isMediaPlayerAutoScroll,
-            scrollInstanceId);
+            scrollInstanceId,
+            isFromNavigation);
     LogUtils.d(TAG, "interpret ScrollEventInterpretation=%s", interpretation);
     return interpretation;
   }
@@ -390,6 +422,13 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
     return finished != null
         && isFromAutoScrollAction(event, finished)
         && finished.scrolledNodeMatches(AccessibilityEventUtils.sourceCompat(event));
+  }
+
+  /** Whether {@code record} is of a scroll that moving to the next or previous item made. */
+  private static boolean isNavigationScroll(@Nullable ScrollActionRecord record) {
+    return record != null
+        && record.userAction == ScrollActionRecord.ACTION_AUTO_SCROLL
+        && ScrollActionRecord.FOCUS.equals(record.scrollSource);
   }
 
   /** Checks whether the {@code event} is resulted from cached auto-scroll action. */

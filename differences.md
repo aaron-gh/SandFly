@@ -127,6 +127,10 @@ When a swipe moved past a list item that reaches the edge of the list, such as a
 
 This applies to lists with one column whose indexes run down the screen, and whose item has no other controls. SandFly must have seen at least two items of the list on screen before it jumps. Swipes back and other lists still scroll a page at a time. After each page, SandFly reads the position of the focused item every 30 ms and searches as soon as the list slows down, at most 300 ms after the scroll, instead of waiting for the list to stop. For an item that fills the list, SandFly reads a small part of the item instead, since the item's bounds don't change while the list moves.
 
+### Scroll sound when moving between items
+
+TalkBack plays the scroll sound when a swipe or a key scrolls a list to reach the next item. SandFly plays it only for scrolls that you make or ask for, such as with **Scroll forward**.
+
 ### Focus that stays where a swipe's scroll put it
 
 A list can keep scrolling for a moment after a swipe has moved focus to the next item. TalkBack treated the rest of that scroll as a scroll that you made, and moved focus on to the next item by itself. SandFly counts it as part of its own scroll. As a result, if you scroll the same list yourself within a second of a swipe's scroll, focus doesn't move.
