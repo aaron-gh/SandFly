@@ -5,6 +5,10 @@
       android:fragment="com.google.android.accessibility.talkback.keyboardecho.KeyboardEchoFragment"
       android:key="@string/pref_keyboard_echo_screen_key"
       android:title="@string/title_pref_keyboard_echo" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+      android:defaultValue="@bool/pref_double_tap_moves_cursor_default"
+      android:key="@string/pref_double_tap_moves_cursor_key"
+      android:title="@string/title_pref_double_tap_moves_cursor" />
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
       android:key="pref_typing_category_keyboard"
       android:title="@string/title_pref_on_screen_keyboard">

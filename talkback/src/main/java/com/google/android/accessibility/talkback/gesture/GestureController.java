@@ -16,6 +16,7 @@
 
 package com.google.android.accessibility.talkback.gesture;
 
+import static android.accessibilityservice.AccessibilityService.GESTURE_DOUBLE_TAP;
 import static android.accessibilityservice.AccessibilityService.GESTURE_DOUBLE_TAP_AND_HOLD;
 import static android.accessibilityservice.AccessibilityService.GLOBAL_ACTION_ACCESSIBILITY_ALL_APPS;
 import static com.google.android.accessibility.talkback.Feedback.AdjustVolume.Action.DECREASE_VOLUME;
@@ -218,6 +219,8 @@ public class GestureController {
   private final @NonNull Map<Integer, Integer> captureGestureIdToAnnouncements = new HashMap<>();
   private final @NonNull Map<Integer, Integer> captureFingerprintGestureIdToAnnouncements =
       new HashMap<>();
+  // Whether the action being performed is that of the one-finger double tap.
+  private boolean performingDoubleTap;
 
   ////////////////////////////////////////////////////////////////////////////////////////////////
   // Constructor methods
@@ -697,6 +700,8 @@ public class GestureController {
         return;
       } else if (SelectorController.getCurrentSetting(service).equals(Setting.ACTIONS)) {
         selectorController.activateCurrentAction(eventId);
+      } else if (performingDoubleTap && doubleTapMovesCursor(eventId)) {
+        return;
       } else {
         result = pipeline.returnFeedback(eventId, Feedback.focus(CLICK_CURRENT));
       }
@@ -1166,12 +1171,45 @@ public class GestureController {
       return;
     }
     String fallbackAction = action;
-    if (!fromProfile
-        && !turnsScriptsOff(action)
-        && Scripts.onGesture(gestureId, () -> performAction(fallbackAction, eventId))) {
-      return;
+    performingDoubleTap = gestureId == GESTURE_DOUBLE_TAP;
+    try {
+      if (!fromProfile
+          && !turnsScriptsOff(action)
+          && Scripts.onGesture(gestureId, () -> performAction(fallbackAction, eventId))) {
+        return;
+      }
+      performAction(action, eventId);
+    } finally {
+      performingDoubleTap = false;
     }
-    performAction(action, eventId);
+  }
+
+  /**
+   * With Double-tap moves cursor to start or end on, moves the cursor of the text field that
+   * accessibility focus is on, while it has input focus and the keyboard is shown, to the start of
+   * its text, or to the end when it is at the start. Returns whether it moved the cursor.
+   */
+  private boolean doubleTapMovesCursor(EventId eventId) {
+    if (!SharedPreferencesUtils.getBooleanPref(
+            SharedPreferencesUtils.getSharedPreferences(service),
+            service.getResources(),
+            R.string.pref_double_tap_moves_cursor_key,
+            R.bool.pref_double_tap_moves_cursor_default)
+        || !KeyboardUtils.isKeyboardActive(service)) {
+      return false;
+    }
+    @Nullable AccessibilityNodeInfoCompat field =
+        accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ false);
+    if (field == null
+        || Role.getRole(field) != Role.ROLE_EDIT_TEXT
+        || !field.isFocused()
+        || field.isShowingHintText()
+        || TextUtils.isEmpty(AccessibilityNodeInfoUtils.getText(field))) {
+      return false;
+    }
+    boolean atStart = field.getTextSelectionStart() == 0 && field.getTextSelectionEnd() == 0;
+    return pipeline.returnFeedback(
+        eventId, Feedback.edit(field, atStart ? CURSOR_TO_END : CURSOR_TO_BEGINNING));
   }
 
   public void setCaptureGestureIdToAnnouncements(

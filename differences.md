@@ -872,6 +872,10 @@ In **On-screen keyboard** > **Typing method**, **Hold finger to select any key, 
 
 On Android 13 and later, **On-screen keyboard** > **Typing method** has **Tap any key to type it, or hold finger to select any key, then lift**. A quick tap on a key types it at once, as when typing directly in VoiceOver, so quick double letters type twice. Holding a finger on the keyboard explores the keys, and lifting types the key under the finger.
 
+### Double-tap to move the cursor to the start or end
+
+As in VoiceOver, turn on **Typing** > **Double-tap moves cursor to start or end** to move the cursor by double-tapping the text field you are typing in. When focus is on the text field that has the keyboard open, a double tap moves the cursor to the start of the text, and says "Beginning of field". When the cursor is already at the start, a double tap moves it to the end, and says "End of field". In any other control, or in a field you aren't typing in, a double tap activates as usual. This setting is off by default and requires **Handle gestures in SandFly** turned on.
+
 ### Alternative characters in Gboard
 
 When you hold a key in Gboard, SandFly long-presses it after the time set in **On-screen keyboard** > **Touch and hold delay when typing**, 3 seconds by default, and Gboard opens a popup of alternative characters. TalkBack announced the popup as a new keyboard, "Showing Available alternatives", and that announcement cut off the name of the character Gboard selected, so lifting your finger typed a character that hadn't been spoken. When the popup closed, TalkBack announced the keyboard again. SandFly says the selected character, such as "Comma", as soon as the popup opens. Slide your finger to the other characters to hear them, and lift to type the one you're on. After you lift, SandFly says nothing more.
