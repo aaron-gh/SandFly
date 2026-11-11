@@ -88,6 +88,7 @@ abstract class ItemListFragment(xmlResId: Int) :
   private val current = ArrayList<String>()
   private var fullOrder: List<String> = emptyList()
   private lateinit var currentCategory: AccessibilitySuitePreferenceCategory
+  private lateinit var notInListCategory: PreferenceCategory
   private val groups = ArrayList<AccessibilitySuitePreferenceCategory>()
   // The options of items, each with the keys of its items.
   private val itemOptions = LinkedHashMap<Preference, List<String>>()
@@ -178,13 +179,13 @@ abstract class ItemListFragment(xmlResId: Int) :
       options.forEach { optionsCategory.addPreference(it) }
     }
 
-    screen.addPreference(
+    notInListCategory =
       PreferenceCategory(context).apply {
         key = "${orderKey}_not_in_list"
         setTitle(notInListTitle)
         isIconSpaceReserved = false
       }
-    )
+    screen.addPreference(notInListCategory)
     groupTitles.forEachIndexed { index, title ->
       val group =
         AccessibilitySuitePreferenceCategory(context).apply {
@@ -201,9 +202,9 @@ abstract class ItemListFragment(xmlResId: Int) :
       }
     }
     for (group in groups) {
-      // Groups with nothing left still head the items removed from the list later.
       group.setCollapsible(getString(R.string.category_collapsed), getString(R.string.category_expanded))
     }
+    updateGroupVisibility()
     currentCategory.setCollapsible(
       getString(R.string.category_collapsed),
       getString(R.string.category_expanded),
@@ -253,6 +254,15 @@ abstract class ItemListFragment(xmlResId: Int) :
       save()
     }
     renumber()
+    updateGroupVisibility()
+  }
+
+  /** Hides the groups with no items, and the heading above them when all are hidden. */
+  private fun updateGroupVisibility() {
+    for (group in groups) {
+      group.isVisible = group.preferenceCount > 0
+    }
+    notInListCategory.isVisible = groups.any { it.isVisible }
   }
 
   private fun title(key: String): CharSequence = items[key]?.title ?: key
@@ -270,13 +280,16 @@ abstract class ItemListFragment(xmlResId: Int) :
     current += item.key
     save()
     prefs.edit { putBoolean(item.key, true) }
-    addRow(currentCategory, CurrentRow(requireContext(), item.key, current.size - 1))
+    val added = CurrentRow(requireContext(), item.key, current.size - 1)
+    addRow(currentCategory, added)
     placeOptions()
+    updateGroupVisibility()
     onMembershipChanged(item.key, true)
     val announcement = getString(R.string.quick_settings_added, item.title)
-    // Focus stays in the group, on the item that took the added one's place.
+    // Focus stays in the group, on the item that took the added one's place. A group left empty is
+    // hidden, so focus moves to the added item in Current.
     val next = group?.takeIf { it.preferenceCount > 0 }?.getPreference(minOf(index, group.preferenceCount - 1))
-    focusAfterChange(next ?: group, announcement)
+    focusAfterChange(next ?: group?.takeIf { it.isVisible } ?: added, announcement)
   }
 
   private fun remove(key: String) {
@@ -295,6 +308,7 @@ abstract class ItemListFragment(xmlResId: Int) :
         addRow(groups[item.group], AvailableRow(requireContext(), item))
       }
     }
+    updateGroupVisibility()
     val announcement = getString(R.string.quick_settings_removed, title(key))
     val next =
       current.getOrNull(minOf(index, current.size - 1))?.let {

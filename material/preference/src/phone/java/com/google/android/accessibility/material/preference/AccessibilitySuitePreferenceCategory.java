@@ -171,7 +171,10 @@ public class AccessibilitySuitePreferenceCategory extends PreferenceCategory {
         });
   }
 
-  /** Exposes the button role, the expanded state and the expand and collapse actions. */
+  /**
+   * Exposes the button role, the expanded state and the expand and collapse actions, when there is
+   * something to expand or collapse.
+   */
   private class CategoryDelegate extends AccessibilityDelegateCompat {
     private final @Nullable AccessibilityDelegateCompat inner;
 
@@ -186,10 +189,10 @@ public class AccessibilitySuitePreferenceCategory extends PreferenceCategory {
       } else {
         super.onInitializeAccessibilityNodeInfo(host, info);
       }
-      info.setClassName(Button.class.getName());
       if (!isToggleable()) {
         return;
       }
+      info.setClassName(Button.class.getName());
       info.addAction(
           collapsed
               ? AccessibilityActionCompat.ACTION_EXPAND
