@@ -2726,6 +2726,10 @@ public class FailoverTextToSpeech {
       stream.discard();
     }
     lowLatencyStreams.remove(utteranceId);
+    if (respokenUtterances.contains(utteranceId)) {
+      // Said again already, after an earlier piece of its utterance.
+      return;
+    }
     if (engineAtFault) {
       stopUsingLowLatencyAudio(stream == null ? "no audio in time" : "engine error");
     } else {
@@ -2736,26 +2740,70 @@ public class FailoverTextToSpeech {
       utteranceProgressCallback.onError(utteranceId);
       return;
     }
-    respokenUtterances.add(utteranceId);
+    List<String> ids = new ArrayList<>();
+    List<Pair<CharSequence, Bundle>> requests = new ArrayList<>();
+    ids.add(utteranceId);
+    requests.add(request);
+    // The engine makes the later pieces of a split utterance before this piece's second try, which
+    // is faster than they play, then plays the second try over them. So the later pieces that have
+    // not started playing are said again the usual way too, after it.
+    for (String next = nextPieceId(utteranceId); next != null; next = nextPieceId(next)) {
+      LowLatencyAudio.@Nullable SpeechStream nextStream = lowLatencyStreams.get(next);
+      @Nullable Pair<CharSequence, Bundle> nextRequest = lowLatencyRequests.get(next);
+      if (nextStream == null || nextRequest == null || !nextStream.discardUnplayed()) {
+        break;
+      }
+      lowLatencyStreams.remove(next);
+      lowLatencyRequests.remove(next);
+      unplayedByEngine.remove(next);
+      ids.add(next);
+      requests.add(nextRequest);
+    }
+    if (ids.size() > 1) {
+      LogUtils.e(
+          TAG, "%d later pieces of %s are said the usual way too", ids.size() - 1, utteranceId);
+    }
+    respokenUtterances.addAll(ids);
     mHandler.post(
         () -> {
           if (tts == null) {
-            respokenUtterances.remove(utteranceId);
-            utteranceProgressCallback.onError(utteranceId);
+            for (String id : ids) {
+              respokenUtterances.remove(id);
+              utteranceProgressCallback.onError(id);
+            }
             return;
           }
-          // The silent first try may still be in the engine, which would hold up the second try
-          // for as long as it takes. Stop it, unless other speech waits in the engine too, which
+          // The silent first tries may still be in the engine, which would hold up the second tries
+          // for as long as they take. Stop them, unless other speech waits in the engine too, which
           // stopping would lose.
-          boolean onlyThis =
-              unfinishedUtterances.isEmpty()
-                  || (unfinishedUtterances.size() == 1
-                      && unfinishedUtterances.contains(utteranceId));
-          if (onlyThis) {
+          boolean onlyThese = ids.containsAll(unfinishedUtterances);
+          if (onlyThese) {
             tts.stop();
+            unfinishedUtterances.removeAll(ids);
           }
-          tts.speak(request.first, QUEUE_ADD, request.second, RESPOKEN_ID_PREFIX + utteranceId);
+          for (int i = 0; i < ids.size(); i++) {
+            Pair<CharSequence, Bundle> said = requests.get(i);
+            tts.speak(said.first, QUEUE_ADD, said.second, RESPOKEN_ID_PREFIX + ids.get(i));
+          }
         });
+  }
+
+  /**
+   * Returns the ID of the piece after {@code pieceId} in its split utterance, or {@code null} if
+   * {@code pieceId} is not a piece. See {@link #speakInChunks}.
+   */
+  @VisibleForTesting
+  static @Nullable String nextPieceId(String pieceId) {
+    int at = pieceId.lastIndexOf(CHUNK_ID_SEPARATOR);
+    if (at < 0) {
+      return null;
+    }
+    int indexAt = at + CHUNK_ID_SEPARATOR.length();
+    try {
+      return pieceId.substring(0, indexAt) + (Integer.parseInt(pieceId.substring(indexAt)) + 1);
+    } catch (NumberFormatException e) {
+      return null;
+    }
   }
 
   /** Whether {@code utteranceId} is the silent first try of an utterance said again. */
