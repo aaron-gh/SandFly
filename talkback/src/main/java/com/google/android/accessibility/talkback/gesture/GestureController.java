@@ -1191,16 +1191,25 @@ public class GestureController {
       return;
     }
     String fallbackAction = action;
-    performingDoubleTap = gestureId == GESTURE_DOUBLE_TAP;
+    boolean doubleTap = gestureId == GESTURE_DOUBLE_TAP;
+    // A script can hand the gesture back later, so the fallback keeps whether it was a double tap.
+    if (!fromProfile
+        && !turnsScriptsOff(action)
+        && Scripts.onGesture(
+            gestureId, () -> performGestureAction(fallbackAction, eventId, doubleTap))) {
+      return;
+    }
+    performGestureAction(action, eventId, doubleTap);
+  }
+
+  /** Performs [action] of a gesture, noting whether the gesture is the one-finger double tap. */
+  private void performGestureAction(String action, EventId eventId, boolean doubleTap) {
+    boolean previous = performingDoubleTap;
+    performingDoubleTap = doubleTap;
     try {
-      if (!fromProfile
-          && !turnsScriptsOff(action)
-          && Scripts.onGesture(gestureId, () -> performAction(fallbackAction, eventId))) {
-        return;
-      }
       performAction(action, eventId);
     } finally {
-      performingDoubleTap = false;
+      performingDoubleTap = previous;
     }
   }
 
@@ -1215,7 +1224,7 @@ public class GestureController {
             service.getResources(),
             R.string.pref_double_tap_moves_cursor_key,
             R.bool.pref_double_tap_moves_cursor_default)
-        || !KeyboardUtils.isKeyboardActive(service)) {
+        || !KeyboardUtils.isSoftKeyboardActive(service)) {
       return false;
     }
     @Nullable AccessibilityNodeInfoCompat field =
