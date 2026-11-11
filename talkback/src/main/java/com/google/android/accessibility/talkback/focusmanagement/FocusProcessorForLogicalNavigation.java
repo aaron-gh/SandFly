@@ -132,6 +132,7 @@ import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Set;
 import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -278,6 +279,11 @@ public class FocusProcessorForLogicalNavigation {
     speakWhileScrolling = on;
   }
 
+  /** The vertical deltas of all scroll events so far, added up. */
+  static int scrollDeltaSumY() {
+    return scrollDeltaSumY;
+  }
+
   /** When the last scroll event of any window arrived, in {@link SystemClock#uptimeMillis()}. */
   static long lastScrollEventUptime() {
     return lastScrollEventUptime;
@@ -297,12 +303,12 @@ public class FocusProcessorForLogicalNavigation {
   static final class ScrollAheadPlan {
     final AccessibilityNodeInfoCompat list;
     final int scrollAction;
-    final int hiddenPx;
+    final int pagePx;
 
-    ScrollAheadPlan(AccessibilityNodeInfoCompat list, int scrollAction, int hiddenPx) {
+    ScrollAheadPlan(AccessibilityNodeInfoCompat list, int scrollAction, int pagePx) {
       this.list = list;
       this.scrollAction = scrollAction;
-      this.hiddenPx = hiddenPx;
+      this.pagePx = pagePx;
     }
   }
 
@@ -335,15 +341,26 @@ public class FocusProcessorForLogicalNavigation {
       return null;
     }
     AccessibilityNodeInfoCompat item = itemOf(focused, list);
-    if (item == null) {
+    Rect itemBounds = new Rect();
+    (item != null ? item : focused).getBoundsInScreen(itemBounds);
+    // Another item on screen below this one: the next swipe needn't scroll. Checked first, as it
+    // reads no more than the list's children.
+    if (item != null && hasItemBeyond(list, item, itemBounds, /* forward= */ true)) {
+      nextShown[0] = true;
       return null;
     }
-    Rect listBounds = new Rect();
-    list.getBoundsInScreen(listBounds);
-    Rect itemBounds = new Rect();
-    item.getBoundsInScreen(itemBounds);
-    if (!endsListOnScreen(itemBounds, listBounds, /* forward= */ true)
-        || hasItemBeyond(list, item, itemBounds, /* forward= */ true)) {
+    // The next item as a swipe would find it in the list: if it is on screen, a swipe needn't
+    // scroll.
+    TraversalStrategy localTraversalStrategy =
+        TraversalStrategyUtils.getTraversalStrategy(
+            list, focusFinder, TraversalStrategy.SEARCH_FOCUS_FORWARD);
+    Filter<AccessibilityNodeInfoCompat> nodeFilter =
+        NavigationTarget.createNodeFilter(
+            NavigationTarget.TARGET_DEFAULT, localTraversalStrategy.getSpeakingNodesCache());
+    AccessibilityNodeInfoCompat next =
+        TraversalStrategyUtils.searchFocus(
+            localTraversalStrategy, focused, TraversalStrategy.SEARCH_FOCUS_FORWARD, nodeFilter);
+    if (next != null && AccessibilityNodeInfoUtils.isVisible(next)) {
       nextShown[0] = true;
       return null;
     }
@@ -358,39 +375,56 @@ public class FocusProcessorForLogicalNavigation {
         && scrollAction != AccessibilityActionCompat.ACTION_SCROLL_DOWN.getId()) {
       return null;
     }
-    if (hasPartsTakingFocus(item, focused)) {
-      LogUtils.d(TAG, "Not scrolling ahead: the item has other parts that take focus.");
-      return null;
-    }
-    List<AccessibilityNodeInfoCompat> parts = new ArrayList<>();
-    List<Rect> partBounds = new ArrayList<>();
-    collectParts(item, parts, partBounds, SystemClock.uptimeMillis() + MAX_TRACKER_SEARCH_MS);
-    partBounds.add(itemBounds);
-    int hidden = hiddenBelow(partBounds, listBounds);
-    if (hidden < minRemainPx) {
+    Rect listBounds = new Rect();
+    list.getBoundsInScreen(listBounds);
+    int page = learnedPage(list);
+    CharSequence className = list.getClassName();
+    if (!staysAfterPage(
+        itemBounds,
+        listBounds,
+        page,
+        className != null && PAGE_BELOW_HEIGHT_LISTS.contains(className.toString()),
+        minRemainPx)) {
       LogUtils.d(
           TAG,
-          "Not scrolling ahead: only %d px of the item are known below the list, so a page would"
-              + " scroll it away.",
-          hidden);
+          "Not scrolling ahead: a page (%s) could scroll the item at %s out of the list at %s.",
+          page > 0 ? page + " px" : "size not known",
+          itemBounds,
+          listBounds);
       return null;
     }
-    return new ScrollAheadPlan(list, scrollAction, hidden);
+    return new ScrollAheadPlan(list, scrollAction, page);
   }
 
+  /** Lists whose page scroll is their height less their padding. */
+  private static final Set<String> PAGE_BELOW_HEIGHT_LISTS =
+      Set.of(
+          "androidx.recyclerview.widget.RecyclerView",
+          "android.support.v7.widget.RecyclerView",
+          "android.widget.ListView",
+          "android.widget.GridView",
+          "android.widget.ExpandableListView",
+          "androidx.core.widget.NestedScrollView",
+          "android.support.v4.widget.NestedScrollView");
+
   /**
-   * Returns how far below a list with {@code list} bounds the lowest of {@code parts} reaches, or
-   * 0. Apps that draw their items' parts themselves report where parts off screen are.
+   * Returns whether at least {@code minRemainPx} of an item with {@code item} bounds stays in a
+   * list with {@code list} bounds after a page scroll forward. With a page of {@code pagePx}
+   * measured earlier, the item's bottom must stay that far below the list's top. Otherwise, in a
+   * list whose page is its height less its padding ({@code pageBelowHeight}), an item cut off at
+   * the list's bottom goes on below it, so part of it stays.
    */
   @VisibleForTesting
-  static int hiddenBelow(List<Rect> parts, Rect list) {
-    int lowest = list.bottom;
-    for (Rect part : parts) {
-      if (!part.isEmpty()) {
-        lowest = Math.max(lowest, part.bottom);
-      }
+  static boolean staysAfterPage(
+      Rect item, Rect list, int pagePx, boolean pageBelowHeight, int minRemainPx) {
+    if (item.isEmpty() || list.isEmpty()) {
+      return false;
     }
-    return lowest - list.bottom;
+    if (pagePx > 0) {
+      return pagePx <= list.height() - minRemainPx
+          && item.bottom - pagePx >= list.top + minRemainPx;
+    }
+    return pageBelowHeight && item.bottom >= list.bottom;
   }
 
   /** Returns the item of {@code list} that holds {@code node}, or null if it isn't near one. */
@@ -3538,6 +3572,7 @@ public class FocusProcessorForLogicalNavigation {
     final @Nullable AccessibilityNodeInfoCompat node;
     final EventId eventId;
     final Rect last = new Rect();
+    final Rect listBounds = new Rect();
     final StringBuilder steps = new StringBuilder();
     int previousStep;
     int totalShift;
@@ -3567,6 +3602,7 @@ public class FocusProcessorForLogicalNavigation {
       this.scrollable = scrollable;
       this.node = node;
       this.eventId = eventId;
+      scrollable.getBoundsInScreen(listBounds);
       if (node != null) {
         node.getBoundsInScreen(last);
       }
@@ -3843,11 +3879,41 @@ public class FocusProcessorForLogicalNavigation {
     if (scrollCallback != track.callback) {
       return;
     }
-    long elapsed = SystemClock.uptimeMillis() - lastAutoScrollUptime;
-    if (track.watchItems && focusNextItemIfShown(track, elapsed)) {
+    long uptime = SystemClock.uptimeMillis();
+    long elapsed = uptime - lastAutoScrollUptime;
+    if (track.watchItems) {
+      if (focusNextItemIfShown(track, elapsed)) {
+        return;
+      }
+      // Another scroll only once this one has ended, which its scroll events show; meanwhile the
+      // next item is focused the moment it comes on screen.
+      int events = scrollEventCount - scrollStartEventCount;
+      @ListState
+      int state = watchedListState(elapsed, events, uptime - lastScrollEventUptime);
+      if (state == LIST_MOVING) {
+        earlyScrollCheckHandler.postDelayed(() -> trackScroll(track), FRAME_MS);
+        return;
+      }
+      trackedCallback = null;
+      if (state == LIST_NOT_SCROLLED) {
+        LogUtils.d(TAG, "The list sent no scroll event in %d ms; waiting for it.", elapsed);
+        return;
+      }
+      int deltaY = scrollDeltaSumY - scrollStartDeltaSumY;
+      learnPage(track.scrollable, Math.abs(deltaY));
+      LogUtils.d(
+          TAG,
+          "List stopped %d ms after the scroll: %d scroll events, deltaY=%d; searching now.",
+          elapsed,
+          events,
+          deltaY);
+      listSettled = true;
+      track.scrollable.refresh();
+      readListAgain(track.scrollable);
+      onAutoScrolled(track.scrollable, track.eventId, /* scrollDeltaX= */ 0, deltaY != 0 ? deltaY : 1);
       return;
     }
-    long interval = track.watchItems ? FRAME_MS : TRACK_CHECK_MS;
+    long interval = TRACK_CHECK_MS;
     if (track.node == null) {
       // Nothing to follow: the list's scroll events tell when it slows down.
       if (listStillMoving()) {
@@ -3875,7 +3941,10 @@ public class FocusProcessorForLogicalNavigation {
     int step = Math.abs(shift);
     track.totalShift += shift;
     track.steps.append(' ').append(step);
-    boolean slowed = trackerSlowed(step, track.previousStep, track.moved);
+    // A node cut off by the list's edge stops moving there while the list goes on, so its steps
+    // only count while it is inside the list.
+    boolean clipped = touchesEdge(now, track.listBounds) || touchesEdge(track.last, track.listBounds);
+    boolean slowed = !clipped && trackerSlowed(step, track.previousStep, track.moved);
     track.moved |= step > 0;
     track.last.set(now);
     if (!track.moved) {
@@ -3885,11 +3954,13 @@ public class FocusProcessorForLogicalNavigation {
         searchWhenFilledListSlows(track.callback, track.scrollable, track.eventId);
         return;
       }
-    } else if (slowed || elapsed >= TRACK_MAX_MS) {
+    } else if (clipped && listStillMoving() && elapsed < TRACK_MAX_MS) {
+      // The scroll events decide while the node is cut off.
+    } else if (slowed || clipped || elapsed >= TRACK_MAX_MS) {
       LogUtils.d(
           TAG,
           "List %s after %d ms; steps%s; searching now.",
-          slowed ? "slowed down" : "still moving",
+          slowed ? "slowed down" : clipped ? "slowed down by its scroll events" : "still moving",
           elapsed,
           track.steps);
       listSettled = true;
@@ -3901,6 +3972,61 @@ public class FocusProcessorForLogicalNavigation {
     }
     track.previousStep = step;
     earlyScrollCheckHandler.postDelayed(() -> trackScroll(track), interval);
+  }
+
+  /**
+   * Whether {@code bounds} end at an edge of {@code list}, as when the list cuts them off. Bounds
+   * past the edge are a part that the app reports where it is, off screen.
+   */
+  @VisibleForTesting
+  static boolean touchesEdge(Rect bounds, Rect list) {
+    return Math.abs(bounds.top - list.top) <= 1 || Math.abs(bounds.bottom - list.bottom) <= 1;
+  }
+
+  @IntDef({LIST_MOVING, LIST_STOPPED, LIST_NOT_SCROLLED})
+  @Retention(RetentionPolicy.SOURCE)
+  @interface ListState {}
+
+  static final int LIST_MOVING = 0;
+  static final int LIST_STOPPED = 1;
+  static final int LIST_NOT_SCROLLED = 2;
+
+  // While the next item is watched for, a list counts as stopped once it has sent no scroll event
+  // for LIST_STOPPED_MS, or WATCH_MAX_MS after the scroll.
+  private static final long LIST_STOPPED_MS = 150;
+  private static final long WATCH_MAX_MS = 1500;
+
+  /**
+   * Returns whether a list scrolled {@code elapsed} ms ago, which has sent {@code events} scroll
+   * events since, the last {@code sinceLastEvent} ms ago, still moves, has stopped, or sent none.
+   */
+  @VisibleForTesting
+  static @ListState int watchedListState(long elapsed, int events, long sinceLastEvent) {
+    if (events <= 0) {
+      return elapsed >= NO_MOVE_WAIT_MS ? LIST_NOT_SCROLLED : LIST_MOVING;
+    }
+    if (sinceLastEvent >= LIST_STOPPED_MS || elapsed >= WATCH_MAX_MS) {
+      return LIST_STOPPED;
+    }
+    return LIST_MOVING;
+  }
+
+  /** The last list whose page scroll was measured, and how far a page moved it. */
+  private static @Nullable AccessibilityNodeInfoCompat pageList;
+
+  private static int pagePx;
+
+  /** Records how far a page scroll of {@code list} moved it, from its scroll events. */
+  static void learnPage(AccessibilityNodeInfoCompat list, int px) {
+    if (px > 0) {
+      pageList = list;
+      pagePx = px;
+    }
+  }
+
+  /** Returns how far a page scroll moved {@code list} last, or 0 if that isn't known. */
+  static int learnedPage(AccessibilityNodeInfoCompat list) {
+    return list.equals(pageList) ? pagePx : 0;
   }
 
   /** Puts the bounds of {@code node} in {@code bounds} and returns whether they are empty. */

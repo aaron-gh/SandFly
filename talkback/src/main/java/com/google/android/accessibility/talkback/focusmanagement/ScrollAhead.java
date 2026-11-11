@@ -64,6 +64,8 @@ public final class ScrollAhead {
   private @Nullable AccessibilityNodeInfoCompat focused;
   private int pages;
   private long waitStart;
+  private @Nullable AccessibilityNodeInfoCompat scrolledList;
+  private int deltaSumAtScroll;
 
   ScrollAhead(FocusProcessorForLogicalNavigation navigation) {
     this.navigation = navigation;
@@ -126,6 +128,7 @@ public final class ScrollAhead {
     }
     handler.removeCallbacksAndMessages(null);
     focused = null;
+    scrolledList = null;
   }
 
   /** Scrolls a page once the list has stopped, until the next item is on screen. */
@@ -148,7 +151,16 @@ public final class ScrollAhead {
       focused = null;
       return;
     }
-    if (!node.refresh()) {
+    if (scrolledList != null) {
+      FocusProcessorForLogicalNavigation.learnPage(
+          scrolledList,
+          Math.abs(FocusProcessorForLogicalNavigation.scrollDeltaSumY() - deltaSumAtScroll));
+      scrolledList = null;
+    }
+    if (!node.refresh() || (pages > 0 && !node.isVisibleToUser())) {
+      if (pages > 0) {
+        LogUtils.d(TAG, "Stopped scrolling ahead after %d pages: the focused item left.", pages);
+      }
       focused = null;
       return;
     }
@@ -172,13 +184,18 @@ public final class ScrollAhead {
       focused = null;
       return;
     }
+    deltaSumAtScroll = FocusProcessorForLogicalNavigation.scrollDeltaSumY();
     if (!navigation.scrollListAhead(plan.list, plan.scrollAction)) {
       focused = null;
       return;
     }
+    scrolledList = plan.list;
     pages++;
     LogUtils.d(
-        TAG, "Scrolling ahead of the focused item: page %d, %d px of it below.", pages, plan.hiddenPx);
+        TAG,
+        "Scrolling ahead of the focused item: page %d, last page %s px.",
+        pages,
+        plan.pagePx > 0 ? String.valueOf(plan.pagePx) : "not known");
     waitStart = SystemClock.uptimeMillis();
     // The scroll event of the page comes after the scroll; wait for it to start.
     handler.postDelayed(this::step, CHECK_MS + QUIET_MS);

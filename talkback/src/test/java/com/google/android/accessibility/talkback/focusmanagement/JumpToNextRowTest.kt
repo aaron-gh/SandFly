@@ -195,16 +195,44 @@ class JumpToNextRowTest {
   }
 
   @Test
-  fun hiddenPartComesFromPartsBelowTheList() {
-    val list = Rect(0, 200, 1080, 2520)
-    assertEquals(0, FocusProcessorForLogicalNavigation.hiddenBelow(listOf(Rect(0, 1900, 1080, 2520)), list))
-    assertEquals(
-      600,
-      FocusProcessorForLogicalNavigation.hiddenBelow(
-        listOf(Rect(0, 1900, 1080, 2520), Rect(125, 3000, 1026, 3120), Rect()),
-        list,
-      ),
-    )
+  fun itemStaysAfterAMeasuredPage() {
+    val list = Rect(0, 0, 1080, 2520)
+    // Cut off at the bottom: 2520 - 2200 = 320 px stay.
+    assertTrue(FocusProcessorForLogicalNavigation.staysAfterPage(Rect(0, 361, 1080, 2520), list, 2200, false, 130))
+    // A page as tall as the list leaves nothing.
+    assertFalse(FocusProcessorForLogicalNavigation.staysAfterPage(Rect(0, 361, 1080, 2520), list, 2500, true, 130))
+    // An item ending high up leaves with the page.
+    assertFalse(FocusProcessorForLogicalNavigation.staysAfterPage(Rect(0, 1800, 1080, 2300), list, 2200, false, 130))
+  }
+
+  @Test
+  fun itemStaysInViewListsWithoutAMeasuredPage() {
+    val list = Rect(0, 0, 1080, 2520)
+    assertTrue(FocusProcessorForLogicalNavigation.staysAfterPage(Rect(0, 361, 1080, 2520), list, 0, true, 130))
+    assertFalse(FocusProcessorForLogicalNavigation.staysAfterPage(Rect(0, 361, 1080, 2400), list, 0, true, 130))
+    assertFalse(FocusProcessorForLogicalNavigation.staysAfterPage(Rect(0, 361, 1080, 2520), list, 0, false, 130))
+  }
+
+  @Test
+  fun clippedTrackerTouchesTheListsEdge() {
+    val list = Rect(0, 0, 1080, 2520)
+    assertTrue(FocusProcessorForLogicalNavigation.touchesEdge(Rect(0, 0, 1080, 2000), list))
+    assertTrue(FocusProcessorForLogicalNavigation.touchesEdge(Rect(0, 361, 1080, 2520), list))
+    // A part reported where it is, off screen.
+    assertFalse(FocusProcessorForLogicalNavigation.touchesEdge(Rect(125, -500, 1026, -400), list))
+    assertFalse(FocusProcessorForLogicalNavigation.touchesEdge(Rect(125, 900, 1026, 1000), list))
+  }
+
+  @Test
+  fun watchedListStopsOnlyAfterItsScrollEvents() {
+    val moving = FocusProcessorForLogicalNavigation.LIST_MOVING
+    val stopped = FocusProcessorForLogicalNavigation.LIST_STOPPED
+    val notScrolled = FocusProcessorForLogicalNavigation.LIST_NOT_SCROLLED
+    assertEquals(moving, FocusProcessorForLogicalNavigation.watchedListState(100, 0, 100))
+    assertEquals(notScrolled, FocusProcessorForLogicalNavigation.watchedListState(180, 0, 180))
+    assertEquals(moving, FocusProcessorForLogicalNavigation.watchedListState(300, 3, 60))
+    assertEquals(stopped, FocusProcessorForLogicalNavigation.watchedListState(500, 5, 150))
+    assertEquals(stopped, FocusProcessorForLogicalNavigation.watchedListState(1500, 9, 10))
   }
 
   @Test
