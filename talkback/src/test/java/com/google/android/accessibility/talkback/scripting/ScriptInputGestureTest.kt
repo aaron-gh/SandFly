@@ -35,6 +35,15 @@ class ScriptInputGestureTest {
   }
 
   @Test
+  fun cornerGesturesHaveNames() {
+    assertTrue(ScriptInput.isGesture("cornerTapTopLeft"))
+    assertEquals(
+      "cornerTripleTapAndHoldBottomRight",
+      ScriptInput.gestureName(GestureManifold.GESTURE_CORNER_BOTTOM_RIGHT_TRIPLE_TAP_AND_HOLD),
+    )
+  }
+
+  @Test
   fun everyGestureNameIsUnique() {
     assertEquals(ScriptInput.gestureNames.size, ScriptInput.gestureNames.toSet().size)
   }

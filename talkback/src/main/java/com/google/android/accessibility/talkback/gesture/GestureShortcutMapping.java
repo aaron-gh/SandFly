@@ -40,6 +40,26 @@ import static com.google.android.accessibility.utils.gestures.GestureManifold.GE
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_RIGHT_ALONG_TOP;
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_LEFT_ALONG_BOTTOM;
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_RIGHT_ALONG_BOTTOM;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_CORNER_TOP_LEFT_TAP;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_CORNER_TOP_LEFT_DOUBLE_TAP;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_CORNER_TOP_LEFT_TRIPLE_TAP;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_CORNER_TOP_LEFT_DOUBLE_TAP_AND_HOLD;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_CORNER_TOP_LEFT_TRIPLE_TAP_AND_HOLD;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_CORNER_TOP_RIGHT_TAP;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_CORNER_TOP_RIGHT_DOUBLE_TAP;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_CORNER_TOP_RIGHT_TRIPLE_TAP;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_CORNER_TOP_RIGHT_DOUBLE_TAP_AND_HOLD;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_CORNER_TOP_RIGHT_TRIPLE_TAP_AND_HOLD;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_CORNER_BOTTOM_LEFT_TAP;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_CORNER_BOTTOM_LEFT_DOUBLE_TAP;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_CORNER_BOTTOM_LEFT_TRIPLE_TAP;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_CORNER_BOTTOM_LEFT_DOUBLE_TAP_AND_HOLD;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_CORNER_BOTTOM_LEFT_TRIPLE_TAP_AND_HOLD;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_CORNER_BOTTOM_RIGHT_TAP;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_CORNER_BOTTOM_RIGHT_DOUBLE_TAP;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_CORNER_BOTTOM_RIGHT_TRIPLE_TAP;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_CORNER_BOTTOM_RIGHT_DOUBLE_TAP_AND_HOLD;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_CORNER_BOTTOM_RIGHT_TRIPLE_TAP_AND_HOLD;
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_LONG_SWIPE_LEFT_FROM_RIGHT_TOP;
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_LONG_SWIPE_RIGHT_FROM_LEFT_BOTTOM;
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_LONG_SWIPE_RIGHT_FROM_LEFT_TOP;
@@ -684,6 +704,107 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
         SINGLE_FINGER,
         R.string.pref_shortcut_edge_along_bottom_right_key,
         R.string.pref_shortcut_edge_along_bottom_right_default),
+    // Only recognized when SandFly detects gestures itself.
+    CORNER_TOP_LEFT_TAP(
+        GESTURE_CORNER_TOP_LEFT_TAP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_corner_top_left_tap_key,
+        R.string.pref_shortcut_corner_top_left_tap_default),
+    CORNER_TOP_LEFT_DOUBLE_TAP(
+        GESTURE_CORNER_TOP_LEFT_DOUBLE_TAP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_corner_top_left_double_tap_key,
+        R.string.pref_shortcut_corner_top_left_double_tap_default),
+    CORNER_TOP_LEFT_TRIPLE_TAP(
+        GESTURE_CORNER_TOP_LEFT_TRIPLE_TAP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_corner_top_left_triple_tap_key,
+        R.string.pref_shortcut_corner_top_left_triple_tap_default),
+    CORNER_TOP_LEFT_DOUBLE_TAP_AND_HOLD(
+        GESTURE_CORNER_TOP_LEFT_DOUBLE_TAP_AND_HOLD,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_corner_top_left_double_tap_hold_key,
+        R.string.pref_shortcut_corner_top_left_double_tap_hold_default),
+    CORNER_TOP_LEFT_TRIPLE_TAP_AND_HOLD(
+        GESTURE_CORNER_TOP_LEFT_TRIPLE_TAP_AND_HOLD,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_corner_top_left_triple_tap_hold_key,
+        R.string.pref_shortcut_corner_top_left_triple_tap_hold_default),
+    CORNER_TOP_RIGHT_TAP(
+        GESTURE_CORNER_TOP_RIGHT_TAP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_corner_top_right_tap_key,
+        R.string.pref_shortcut_corner_top_right_tap_default),
+    CORNER_TOP_RIGHT_DOUBLE_TAP(
+        GESTURE_CORNER_TOP_RIGHT_DOUBLE_TAP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_corner_top_right_double_tap_key,
+        R.string.pref_shortcut_corner_top_right_double_tap_default),
+    CORNER_TOP_RIGHT_TRIPLE_TAP(
+        GESTURE_CORNER_TOP_RIGHT_TRIPLE_TAP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_corner_top_right_triple_tap_key,
+        R.string.pref_shortcut_corner_top_right_triple_tap_default),
+    CORNER_TOP_RIGHT_DOUBLE_TAP_AND_HOLD(
+        GESTURE_CORNER_TOP_RIGHT_DOUBLE_TAP_AND_HOLD,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_corner_top_right_double_tap_hold_key,
+        R.string.pref_shortcut_corner_top_right_double_tap_hold_default),
+    CORNER_TOP_RIGHT_TRIPLE_TAP_AND_HOLD(
+        GESTURE_CORNER_TOP_RIGHT_TRIPLE_TAP_AND_HOLD,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_corner_top_right_triple_tap_hold_key,
+        R.string.pref_shortcut_corner_top_right_triple_tap_hold_default),
+    CORNER_BOTTOM_LEFT_TAP(
+        GESTURE_CORNER_BOTTOM_LEFT_TAP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_corner_bottom_left_tap_key,
+        R.string.pref_shortcut_corner_bottom_left_tap_default),
+    CORNER_BOTTOM_LEFT_DOUBLE_TAP(
+        GESTURE_CORNER_BOTTOM_LEFT_DOUBLE_TAP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_corner_bottom_left_double_tap_key,
+        R.string.pref_shortcut_corner_bottom_left_double_tap_default),
+    CORNER_BOTTOM_LEFT_TRIPLE_TAP(
+        GESTURE_CORNER_BOTTOM_LEFT_TRIPLE_TAP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_corner_bottom_left_triple_tap_key,
+        R.string.pref_shortcut_corner_bottom_left_triple_tap_default),
+    CORNER_BOTTOM_LEFT_DOUBLE_TAP_AND_HOLD(
+        GESTURE_CORNER_BOTTOM_LEFT_DOUBLE_TAP_AND_HOLD,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_corner_bottom_left_double_tap_hold_key,
+        R.string.pref_shortcut_corner_bottom_left_double_tap_hold_default),
+    CORNER_BOTTOM_LEFT_TRIPLE_TAP_AND_HOLD(
+        GESTURE_CORNER_BOTTOM_LEFT_TRIPLE_TAP_AND_HOLD,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_corner_bottom_left_triple_tap_hold_key,
+        R.string.pref_shortcut_corner_bottom_left_triple_tap_hold_default),
+    CORNER_BOTTOM_RIGHT_TAP(
+        GESTURE_CORNER_BOTTOM_RIGHT_TAP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_corner_bottom_right_tap_key,
+        R.string.pref_shortcut_corner_bottom_right_tap_default),
+    CORNER_BOTTOM_RIGHT_DOUBLE_TAP(
+        GESTURE_CORNER_BOTTOM_RIGHT_DOUBLE_TAP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_corner_bottom_right_double_tap_key,
+        R.string.pref_shortcut_corner_bottom_right_double_tap_default),
+    CORNER_BOTTOM_RIGHT_TRIPLE_TAP(
+        GESTURE_CORNER_BOTTOM_RIGHT_TRIPLE_TAP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_corner_bottom_right_triple_tap_key,
+        R.string.pref_shortcut_corner_bottom_right_triple_tap_default),
+    CORNER_BOTTOM_RIGHT_DOUBLE_TAP_AND_HOLD(
+        GESTURE_CORNER_BOTTOM_RIGHT_DOUBLE_TAP_AND_HOLD,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_corner_bottom_right_double_tap_hold_key,
+        R.string.pref_shortcut_corner_bottom_right_double_tap_hold_default),
+    CORNER_BOTTOM_RIGHT_TRIPLE_TAP_AND_HOLD(
+        GESTURE_CORNER_BOTTOM_RIGHT_TRIPLE_TAP_AND_HOLD,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_corner_bottom_right_triple_tap_hold_key,
+        R.string.pref_shortcut_corner_bottom_right_triple_tap_hold_default),
 
     // Fingerprint.
     FINGERPRINT_SWIPE_UP(
@@ -1735,6 +1856,46 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
       case GESTURE_EDGE_SWIPE_RIGHT_ALONG_TOP -> context.getString(R.string.title_pref_shortcut_edge_along_top_right);
       case GESTURE_EDGE_SWIPE_LEFT_ALONG_BOTTOM -> context.getString(R.string.title_pref_shortcut_edge_along_bottom_left);
       case GESTURE_EDGE_SWIPE_RIGHT_ALONG_BOTTOM -> context.getString(R.string.title_pref_shortcut_edge_along_bottom_right);
+      case GESTURE_CORNER_TOP_LEFT_TAP ->
+          context.getString(R.string.title_pref_shortcut_corner_top_left_tap);
+      case GESTURE_CORNER_TOP_LEFT_DOUBLE_TAP ->
+          context.getString(R.string.title_pref_shortcut_corner_top_left_double_tap);
+      case GESTURE_CORNER_TOP_LEFT_TRIPLE_TAP ->
+          context.getString(R.string.title_pref_shortcut_corner_top_left_triple_tap);
+      case GESTURE_CORNER_TOP_LEFT_DOUBLE_TAP_AND_HOLD ->
+          context.getString(R.string.title_pref_shortcut_corner_top_left_double_tap_hold);
+      case GESTURE_CORNER_TOP_LEFT_TRIPLE_TAP_AND_HOLD ->
+          context.getString(R.string.title_pref_shortcut_corner_top_left_triple_tap_hold);
+      case GESTURE_CORNER_TOP_RIGHT_TAP ->
+          context.getString(R.string.title_pref_shortcut_corner_top_right_tap);
+      case GESTURE_CORNER_TOP_RIGHT_DOUBLE_TAP ->
+          context.getString(R.string.title_pref_shortcut_corner_top_right_double_tap);
+      case GESTURE_CORNER_TOP_RIGHT_TRIPLE_TAP ->
+          context.getString(R.string.title_pref_shortcut_corner_top_right_triple_tap);
+      case GESTURE_CORNER_TOP_RIGHT_DOUBLE_TAP_AND_HOLD ->
+          context.getString(R.string.title_pref_shortcut_corner_top_right_double_tap_hold);
+      case GESTURE_CORNER_TOP_RIGHT_TRIPLE_TAP_AND_HOLD ->
+          context.getString(R.string.title_pref_shortcut_corner_top_right_triple_tap_hold);
+      case GESTURE_CORNER_BOTTOM_LEFT_TAP ->
+          context.getString(R.string.title_pref_shortcut_corner_bottom_left_tap);
+      case GESTURE_CORNER_BOTTOM_LEFT_DOUBLE_TAP ->
+          context.getString(R.string.title_pref_shortcut_corner_bottom_left_double_tap);
+      case GESTURE_CORNER_BOTTOM_LEFT_TRIPLE_TAP ->
+          context.getString(R.string.title_pref_shortcut_corner_bottom_left_triple_tap);
+      case GESTURE_CORNER_BOTTOM_LEFT_DOUBLE_TAP_AND_HOLD ->
+          context.getString(R.string.title_pref_shortcut_corner_bottom_left_double_tap_hold);
+      case GESTURE_CORNER_BOTTOM_LEFT_TRIPLE_TAP_AND_HOLD ->
+          context.getString(R.string.title_pref_shortcut_corner_bottom_left_triple_tap_hold);
+      case GESTURE_CORNER_BOTTOM_RIGHT_TAP ->
+          context.getString(R.string.title_pref_shortcut_corner_bottom_right_tap);
+      case GESTURE_CORNER_BOTTOM_RIGHT_DOUBLE_TAP ->
+          context.getString(R.string.title_pref_shortcut_corner_bottom_right_double_tap);
+      case GESTURE_CORNER_BOTTOM_RIGHT_TRIPLE_TAP ->
+          context.getString(R.string.title_pref_shortcut_corner_bottom_right_triple_tap);
+      case GESTURE_CORNER_BOTTOM_RIGHT_DOUBLE_TAP_AND_HOLD ->
+          context.getString(R.string.title_pref_shortcut_corner_bottom_right_double_tap_hold);
+      case GESTURE_CORNER_BOTTOM_RIGHT_TRIPLE_TAP_AND_HOLD ->
+          context.getString(R.string.title_pref_shortcut_corner_bottom_right_triple_tap_hold);
       case GESTURE_SWIPE_UP_AND_HOLD ->
           context.getString(R.string.title_pref_shortcut_up_and_hold);
       case GESTURE_SWIPE_DOWN_AND_HOLD ->
