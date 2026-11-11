@@ -121,6 +121,7 @@ import com.google.android.accessibility.talkback.actor.DirectionNavigationActor;
 import com.google.android.accessibility.talkback.actor.FocusActor;
 import com.google.android.accessibility.talkback.actor.FocusActorForScreenStateChange;
 import com.google.android.accessibility.talkback.actor.FocusActorForTapAndTouchExploration;
+import com.google.android.accessibility.talkback.actor.FocusManagerInternal;
 import com.google.android.accessibility.talkback.actor.FullScreenReadActor;
 import com.google.android.accessibility.talkback.actor.GestureReporter;
 import com.google.android.accessibility.talkback.actor.ImageCaptioner;
@@ -198,6 +199,7 @@ import com.google.android.accessibility.talkback.focusmanagement.TraversalTreeCa
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.ScreenStateMonitor;
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.TouchExplorationInterpreter;
 import com.google.android.accessibility.talkback.focusmanagement.record.AccessibilityFocusActionHistory;
+import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionInfo;
 import com.google.android.accessibility.talkback.gesture.BackTapCommands;
 import com.google.android.accessibility.talkback.gesture.GestureController;
 import com.google.android.accessibility.talkback.gesture.GestureLayout;
@@ -3053,14 +3055,35 @@ public class TalkBackService extends AccessibilityServiceCompat
     eventFilter =
         new EventFilter(this, compositor, touchMonitor, globalVariables, earlyFocusSpeech);
     focuser.setFocusSetListener(
-        (node, info, eventId, actionTime) ->
+        new FocusManagerInternal.FocusSetListener() {
+          @Override
+          public boolean beforeAccessibilityFocusSet(
+              AccessibilityNodeInfoCompat node,
+              FocusActionInfo info,
+              @Nullable EventId eventId,
+              long actionTime) {
+            return eventFilter.speakBeforeFocusSet(node, info, eventId, continuousReading());
+          }
+
+          @Override
+          public void onAccessibilityFocusSet(
+              AccessibilityNodeInfoCompat node,
+              FocusActionInfo info,
+              @Nullable EventId eventId,
+              long actionTime) {
             eventFilter.onAccessibilityFocusSet(
-                node,
-                info,
-                eventId,
-                actionTime,
-                /* continuousReading= */ fullScreenReadActor != null
-                    && fullScreenReadActor.isActive()));
+                node, info, eventId, actionTime, continuousReading());
+          }
+
+          @Override
+          public void onAccessibilityFocusNotSet(AccessibilityNodeInfoCompat node) {
+            eventFilter.onAccessibilityFocusNotSet(node);
+          }
+
+          private boolean continuousReading() {
+            return fullScreenReadActor != null && fullScreenReadActor.isActive();
+          }
+        });
     eventFilter.setTargetPredictor(directionNavigationActor::predictTarget);
     eventFilter.setLastDirection(directionNavigationActor::lastLogicalDirection);
     eventFilter.setFingerDownSupplier(

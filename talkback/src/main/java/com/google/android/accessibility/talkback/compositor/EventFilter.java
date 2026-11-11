@@ -104,6 +104,43 @@ public class EventFilter {
    */
   private static volatile boolean speakItemsBeforeScroll = false;
 
+  /** Focus spoken before its focus action, while the action runs. */
+  private static final class SpokenFirst {
+    /** The node that the action focuses. */
+    final AccessibilityNodeInfoCompat focusedNode;
+
+    /** The node that was described, read again from the app. */
+    final AccessibilityNodeInfoCompat node;
+
+    /** The state that follows focus as it was before, to put back if the action fails. */
+    final GlobalVariables.SavedFocusState saved;
+
+    /** Whether it was spoken, or only the state that follows focus updated. */
+    final boolean spoken;
+
+    SpokenFirst(
+        AccessibilityNodeInfoCompat focusedNode,
+        AccessibilityNodeInfoCompat node,
+        GlobalVariables.SavedFocusState saved,
+        boolean spoken) {
+      this.focusedNode = focusedNode;
+      this.node = node;
+      this.saved = saved;
+      this.spoken = spoken;
+    }
+  }
+
+  private @Nullable SpokenFirst spokenFirst;
+
+  /**
+   * How long a node whose focus action failed after it was spoken is spoken only after its action.
+   * A failed focus is tried again at once, and would be cut off a second time.
+   */
+  private static final long FAILED_FOCUS_MS = 2_000;
+
+  // The last node whose focus action failed after it was spoken, and when.
+  private @Nullable AccessibilityNodeInfoCompat failedFocusNode;
+  private long failedFocusTime;
 
   // /////////////////////////////////////////////////////////////////////////////////
   // Construction
@@ -309,9 +346,120 @@ public class EventFilter {
       @Nullable EventId eventId,
       long actionTime,
       boolean continuousReading) {
+    @Nullable SpokenFirst first = spokenFirst;
+    spokenFirst = null;
+    if (first != null && first.focusedNode.equals(node)) {
+      if (first.spoken) {
+        earlyFocusSpeech.addSpoken(first.node, actionTime);
+      } else {
+        earlyFocusSpeech.addStateUpdated(first.node, actionTime);
+      }
+      onFocusMoved(first.node);
+      return;
+    }
     if (continuousReading || !speakFocusEarly(node, info, eventId, actionTime)) {
       // A node spoken early before, whose event never came here, must not hide this focus.
       earlyFocusSpeech.forget(node);
+    }
+  }
+
+  /**
+   * Told just before SandFly performs the action that sets accessibility focus on {@code node},
+   * which waits for the app's main thread. Speaks the focus then, as {@link #speakFocusEarly} would
+   * after the action, when it can work out what to say without the action, so that the speech
+   * starts while the app sets the focus. Otherwise the focus is handled as usual after the action.
+   *
+   * <p>Items of web content are spoken here too, from their nodes, as their focus events carry
+   * nothing more than their nodes.
+   *
+   * @return whether the focus was spoken, or its state updated, in which case {@link
+   *     #onAccessibilityFocusSet} or {@link #onAccessibilityFocusNotSet} follows
+   */
+  public boolean speakBeforeFocusSet(
+      AccessibilityNodeInfoCompat focusedNode,
+      FocusActionInfo info,
+      @Nullable EventId eventId,
+      boolean continuousReading) {
+    spokenFirst = null;
+    if (continuousReading || !shouldSpeakFocusEarly(info)) {
+      return false;
+    }
+    if (focusedNode.equals(failedFocusNode)
+        && SystemClock.uptimeMillis() - failedFocusTime < FAILED_FOCUS_MS) {
+      return false;
+    }
+    // Only looked at: if nothing is spoken here, it is used after the action.
+    PreparedFocusSpeech.@Nullable Prepared prepared =
+        (info.columnWrap == ColumnWrap.NONE) ? PreparedFocusSpeech.peek(focusedNode) : null;
+    AccessibilityNodeInfoCompat node;
+    if (prepared != null) {
+      node = prepared.getNode();
+    } else if (TraversalTreeCache.holdsCurrent(focusedNode)) {
+      node = focusedNode;
+    } else {
+      // Read the node again from the app, as after the action. Before the action, the app has no
+      // new focus to draw first.
+      @SuppressWarnings("deprecation") // obtain(): copy, so that the saved node is left as it was.
+      AccessibilityNodeInfoCompat copy = AccessibilityNodeInfoCompat.obtain(focusedNode);
+      if (!copy.refresh()) {
+        return false;
+      }
+      node = copy;
+    }
+    if (!shouldSpeakFocusBeforeAction(node)) {
+      return false;
+    }
+    AccessibilityEvent event = focusEventFor(node);
+    EventInterpretation eventInterpreted = focusInterpretation(info);
+    GlobalVariables.SavedFocusState saved = globalVariables.saveFocusState();
+    EventFeedback feedback;
+    try {
+      globalVariables.updateStateFromFocusedNode(node);
+      globalVariables.updateCollectionStateFromFocusedNode(node, event);
+      if (prepared != null) {
+        feedback = prepared.getFeedback();
+        EventTypeViewAccessibilityFocusedFeedbackRule.currentContainerTitle =
+            prepared.getContainerTitle();
+      } else {
+        feedback = getSwipeTargetFeedback(event, node, eventInterpreted);
+      }
+    } catch (RuntimeException e) {
+      LogUtils.e(TAG, "Cannot speak focus before setting it: %s", e);
+      globalVariables.restoreFocusState(saved);
+      return false;
+    }
+    if (!hasSpeech(feedback)) {
+      // Some nodes show their content only once focused, so they are left to the action.
+      globalVariables.restoreFocusState(saved);
+      return false;
+    }
+    // The focus is moving, so the prepared announcements are used now or not at all.
+    PreparedFocusSpeech.clear();
+    lastHoverEnteredNode = null;
+    boolean spoken = true;
+    try {
+      compositor.handleEvent(event, node, eventId, eventInterpreted, feedback);
+    } catch (RuntimeException e) {
+      // As after the action: the state was updated, so the app's event is spoken without updating
+      // it again.
+      LogUtils.e(TAG, "Cannot speak focus before setting it: %s", e);
+      spoken = false;
+    }
+    spokenFirst = new SpokenFirst(focusedNode, node, saved, spoken);
+    return true;
+  }
+
+  /**
+   * Told when the focus action that {@link #speakBeforeFocusSet} spoke failed. Puts back the state
+   * that follows focus. The caller stops the speech.
+   */
+  public void onAccessibilityFocusNotSet(AccessibilityNodeInfoCompat focusedNode) {
+    @Nullable SpokenFirst first = spokenFirst;
+    spokenFirst = null;
+    if (first != null && first.focusedNode.equals(focusedNode)) {
+      globalVariables.restoreFocusState(first.saved);
+      failedFocusNode = focusedNode;
+      failedFocusTime = SystemClock.uptimeMillis();
     }
   }
 
@@ -457,16 +605,37 @@ public class EventFilter {
 
   /** Whether focus on {@code node} may be spoken early. */
   private boolean shouldSpeakFocusEarly(AccessibilityNodeInfoCompat node) {
+    return !WebInterfaceUtils.supportsWebActions(node)
+        && shouldSpeakFocusEarly(node, Role.getRole(node));
+  }
+
+  /**
+   * Whether focus on {@code node} may be spoken before the action that sets it. Unlike after the
+   * action, items of web content may: a page sends nothing more for focus that SandFly set than
+   * the item's node. The page itself is still spoken from its event.
+   */
+  private boolean shouldSpeakFocusBeforeAction(AccessibilityNodeInfoCompat node) {
+    int role = Role.getRole(node);
+    // The kind of a selectable image is said only while it has focus.
+    if (role == Role.ROLE_WEB_VIEW
+        || (role == Role.ROLE_IMAGE
+            && AccessibilityNodeInfoUtils.supportsAction(
+                node, AccessibilityNodeInfoCompat.ACTION_SELECT))) {
+      return false;
+    }
+    return shouldSpeakFocusEarly(node, role);
+  }
+
+  /** Whether focus on {@code node}, which has {@code role}, may be spoken early, web or not. */
+  private boolean shouldSpeakFocusEarly(AccessibilityNodeInfoCompat node, int role) {
     if (node.getWindowId() != globalVariables.getCurrentWindowId()) {
       return false;
     }
-    int role = Role.getRole(node);
     if (role == Role.ROLE_TEXT_ENTRY_KEY
         || role == Role.ROLE_KEYBOARD_KEY
         || role == Role.ROLE_SEEK_CONTROL
         || role == Role.ROLE_PROGRESS_BAR
-        || AccessibilityNodeInfoUtils.isPage(node)
-        || WebInterfaceUtils.supportsWebActions(node)) {
+        || AccessibilityNodeInfoUtils.isPage(node)) {
       return false;
     }
     // A Telegram chat list row may still describe the conversation it showed before it was reused,
