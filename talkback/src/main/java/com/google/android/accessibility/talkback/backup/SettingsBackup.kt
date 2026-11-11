@@ -51,6 +51,10 @@ import org.json.JSONObject
  * Custom labels, installed scripts and sound themes are files of their own, and are not in it.
  *
  * A settings file exported from Backtalk can be imported too.
+ *
+ * A settings profile holds the same settings in the same format, but only those of the main,
+ * braille keyboard and braille display preference files, and without the state that only this
+ * phone has, such as whether a tutorial was shown: see [exportProfile].
  */
 object SettingsBackup {
   private const val FORMAT = "sandfly-settings"
@@ -80,6 +84,57 @@ object SettingsBackup {
 
   /** Files of libraries, such as Google Play services and WebView, which hold their own state. */
   private val LIBRARY_PREFIXES = listOf("com.google.", "androidx.", "WebView", "Firebase")
+
+  /**
+   * The preference files, besides the default one, that a settings profile holds. Other files keep
+   * installed scripts, script sources, sound theme drafts and other content, not settings.
+   */
+  private val PROFILE_FILES = setOf("braille_keyboard", "braille_display")
+
+  /**
+   * Settings that stay as they are when a settings profile is applied: the state of first runs,
+   * tutorials, migrations, downloads and counters, which describe this phone and not a profile.
+   */
+  private val PROFILE_STATE_KEYS =
+    setOf(
+      "has_training_exit",
+      "has_onboarding_exit",
+      "pref_direct_touch_seen",
+      "pref_audio_outputs_seen",
+      "talkback_enabled_count",
+      "talkback_off_timestamp",
+      "pref_previous_global_window_animation_scale_key",
+      "migration_done",
+      "migration_attempts",
+      "cache_cleanup_version",
+      "battery_optimization_check_done",
+      "pref_brailleime_show_option_dialog_count",
+      "pref_brailleime_exit_keyboard_count",
+      "pref_bd_switch_contracted_count_key",
+      "pref_bd_show_caption_tutorial_dialog_timestamp",
+    )
+
+  /** Parts of the keys of [PROFILE_STATE_KEYS]-like state. */
+  private val PROFILE_STATE_FRAGMENTS =
+    listOf(
+      "_shown_times",
+      "first_time",
+      "first_update",
+      "opt_in_count",
+      "_installed",
+      "_uninstalled",
+      "install_lib",
+      "_tutorial_done",
+    )
+
+  /** Whether [key] is left out of settings profiles and kept when one is applied. */
+  @VisibleForTesting
+  fun isKeptOutOfProfiles(key: String): Boolean =
+    key in PROFILE_STATE_KEYS ||
+      key in BACKTALK_SKIPPED_KEYS ||
+      key.endsWith("_shown") ||
+      key.endsWith("_shown_key") ||
+      PROFILE_STATE_FRAGMENTS.any { key.contains(it) }
 
   /** Sets up Export settings and Import settings in the main settings screen. */
   @JvmStatic
@@ -185,26 +240,32 @@ object SettingsBackup {
   }
 
   /** Returns every exported setting as JSON. */
-  fun export(context: Context): String {
+  fun export(context: Context): String = exportJson(context, forProfile = false).toString(2)
+
+  /**
+   * Returns the settings that a settings profile holds, as JSON in the format of [export]: the
+   * main, braille keyboard and braille display preference files in device-protected storage,
+   * without API keys, the updater's state and the keys of [isKeptOutOfProfiles].
+   */
+  fun exportProfile(context: Context): String = exportJson(context, forProfile = true).toString()
+
+  private fun exportJson(context: Context, forProfile: Boolean): JSONObject {
     val files = JSONObject()
-    for ((storage, storageContext) in storages(context)) {
+    for ((storage, storageContext) in storages(context, forProfile)) {
       val storageFiles = JSONObject()
       for (name in prefsNames(context, storageContext)) {
+        if (forProfile && !isProfileFile(context, name)) continue
         val prefs = storageContext.getSharedPreferences(name, Context.MODE_PRIVATE)
         val values = JSONObject()
         for ((key, value) in prefs.all) {
-          if (isSecret(key) || isSkipped(context, name, key)) continue
+          if (isLeftOut(context, name, key, forProfile)) continue
           encode(value)?.let { values.put(key, it) }
         }
         storageFiles.put(exportedName(context, name), values)
       }
       files.put(storage, storageFiles)
     }
-    return JSONObject()
-      .put("format", FORMAT)
-      .put("version", VERSION)
-      .put("files", files)
-      .toString(2)
+    return JSONObject().put("format", FORMAT).put("version", VERSION).put("files", files)
   }
 
   /**
@@ -212,11 +273,21 @@ object SettingsBackup {
    * doesn't hold, API keys and the updater's state are kept. Returns false if [json] is not a
    * SandFly settings file, and then changes nothing.
    */
-  fun import(context: Context, json: String): Boolean {
+  fun import(context: Context, json: String): Boolean = import(context, json, forProfile = false)
+
+  /**
+   * Replaces the settings that a settings profile holds with those of [json], from
+   * [exportProfile]. Settings a profile leaves out are kept. Returns false if [json] can't be read,
+   * and then changes nothing.
+   */
+  fun importProfile(context: Context, json: String): Boolean =
+    import(context, json, forProfile = true)
+
+  private fun import(context: Context, json: String, forProfile: Boolean): Boolean {
     val files =
       try {
         val root = JSONObject(json)
-        if (isBacktalkFile(root)) {
+        if (!forProfile && isBacktalkFile(root)) {
           return importBacktalk(backtalkStores(context), root, context)
         }
         if (root.optString("format") != FORMAT || root.optInt("version") > VERSION) return false
@@ -225,15 +296,26 @@ object SettingsBackup {
         return false
       }
     val edits = mutableListOf<Pair<SharedPreferences, Map<String, Any>>>()
-    for ((storage, storageContext) in storages(context)) {
-      val storageFiles = files.optJSONObject(storage) ?: continue
-      for (file in storageFiles.keys()) {
+    for ((storage, storageContext) in storages(context, forProfile)) {
+      val storageFiles = files.optJSONObject(storage) ?: if (forProfile) JSONObject() else continue
+      val fileNames = storageFiles.keys().asSequence().toMutableSet()
+      if (forProfile) {
+        // A profile without one of its files, saved before the file was made, clears it.
+        fileNames +=
+          prefsNames(context, storageContext)
+            .filter { isProfileFile(context, it) }
+            .map { exportedName(context, it) }
+      }
+      for (file in fileNames) {
         val name = importedName(context, file) ?: continue
-        val values = storageFiles.optJSONObject(file) ?: return false
+        if (forProfile && !isProfileFile(context, name)) continue
+        val values =
+          if (storageFiles.has(file)) storageFiles.optJSONObject(file) ?: return false
+          else JSONObject()
         val prefs = storageContext.getSharedPreferences(name, Context.MODE_PRIVATE)
         val decoded = mutableMapOf<String, Any>()
         for (key in values.keys()) {
-          if (isSecret(key) || isSkipped(context, name, key)) continue
+          if (isLeftOut(context, name, key, forProfile)) continue
           val value = decode(values.optJSONObject(key)) ?: return false
           // A value that doesn't fit keeps the phone's own.
           decoded[key] = if (fits(context, prefs, key, value)) value else prefs.all[key] ?: continue
@@ -244,7 +326,7 @@ object SettingsBackup {
     for ((prefs, values) in edits) {
       val editor = prefs.edit()
       for (key in prefs.all.keys) {
-        if (key !in values && !isSecret(key) && !isSkipped(context, null, key)) {
+        if (key !in values && !isLeftOut(context, null, key, forProfile)) {
           editor.remove(key)
         }
       }
@@ -402,8 +484,21 @@ object SettingsBackup {
     return null
   }
 
-  private fun storages(context: Context): List<Pair<String, Context>> =
-    listOf(DEVICE to context.createDeviceProtectedStorageContext(), CREDENTIAL to context)
+  /** Settings profiles hold only device-protected storage, where SandFly keeps its settings. */
+  private fun storages(context: Context, forProfile: Boolean): List<Pair<String, Context>> {
+    val device = DEVICE to context.createDeviceProtectedStorageContext()
+    return if (forProfile) listOf(device) else listOf(device, CREDENTIAL to context)
+  }
+
+  private fun isProfileFile(context: Context, name: String) =
+    name == defaultName(context) || name in PROFILE_FILES
+
+  /**
+   * Whether [key] of the preference file [name], or of any file for null, is left out of the file
+   * or profile, and kept as it is when one is imported or applied.
+   */
+  private fun isLeftOut(context: Context, name: String?, key: String, forProfile: Boolean) =
+    isSecret(key) || isSkipped(context, name, key) || (forProfile && isKeptOutOfProfiles(key))
 
   private fun prefsNames(context: Context, storageContext: Context): List<String> {
     val directory = File(storageContext.dataDir, MigrationFiles.PREFS_DIR)

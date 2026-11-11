@@ -66,6 +66,7 @@ import static com.google.android.accessibility.talkback.contextmenu.ListMenuMana
 import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.EDITING;
 import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.GESTURE_PROFILE;
 import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.LANGUAGE;
+import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.SETTINGS_PROFILE;
 import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.SPLIT_SCREEN;
 import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.TEXT_ENTITIES;
 import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.VOICE_PROFILE;
@@ -107,6 +108,7 @@ import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.actor.SpeechRateAndPitchActor;
 import com.google.android.accessibility.talkback.actor.SystemActionPerformer;
 import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics;
+import com.google.android.accessibility.talkback.backup.SettingsProfiles;
 import com.google.android.accessibility.talkback.commands.CommandMenus;
 import com.google.android.accessibility.talkback.commands.MenuCommands;
 import com.google.android.accessibility.talkback.contextmenu.ListMenuManager;
@@ -618,6 +620,11 @@ public class GestureController {
       selectorController.changeGestureProfile(eventId, /* isNext= */ false);
     } else if (action.equals(service.getString(R.string.shortcut_value_next_gesture_profile))) {
       selectorController.changeGestureProfile(eventId, /* isNext= */ true);
+    } else if (action.equals(service.getString(R.string.shortcut_value_settings_profiles))) {
+      result = menuManager.showMenu(SETTINGS_PROFILE, eventId);
+    } else if (action.equals(service.getString(R.string.shortcut_value_next_settings_profile))) {
+      SettingsProfiles.switchToNext(
+          service, said -> pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.speech(said)));
     } else if (ReadingControlCommands.isSelection(action)) {
       result =
           selectorController.selectReadingControlByKey(

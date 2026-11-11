@@ -5019,6 +5019,42 @@
     <string name="settings_import_done">Settings imported</string>
     <!-- Message when a file could not be read as SandFly settings. [CHAR_LIMIT=NONE] -->
     <string name="settings_import_failed">This file is not a SandFly or Backtalk settings file, or could not be read</string>
+    <!-- Title of the settings screen that lists settings profiles: named sets of SandFly's settings, one of them in use. [CHAR_LIMIT=NONE] -->
+    <string name="title_pref_settings_profiles">Settings profiles</string>
+    <!-- Button on the Settings profiles screen that adds a profile with a copy of the current settings, and title of the dialog that asks for its name. [CHAR_LIMIT=NONE] -->
+    <string name="title_pref_new_settings_profile">New settings profile</string>
+    <!-- Name of the settings profile made from the current settings the first time settings profiles are used. [CHAR_LIMIT=NONE] -->
+    <string name="settings_profile_default">Default</string>
+    <!-- Suggested name of a new settings profile, with a number to tell it apart. [CHAR_LIMIT=NONE] -->
+    <string name="settings_profile_new_name">Profile <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <!-- Error on the name field when another settings profile has the name entered. [CHAR_LIMIT=NONE] -->
+    <string name="settings_profile_name_taken">A settings profile is already called <xliff:g id="name" example="Demo">%1$s</xliff:g></string>
+    <!-- Summary of the settings profile in use on the Settings profiles screen. [CHAR_LIMIT=NONE] -->
+    <string name="settings_profile_in_use">In use</string>
+    <!-- Item in the menu of settings profiles for the profile in use. [CHAR_LIMIT=NONE] -->
+    <string name="settings_profile_menu_item_in_use"><xliff:g id="name" example="Demo">%1$s</xliff:g>, in use</string>
+    <!-- Action on a settings profile that saves the current settings to the profile in use and applies this profile. [CHAR_LIMIT=NONE] -->
+    <string name="settings_profile_switch">Switch to</string>
+    <!-- Action on a settings profile that replaces its settings with the current settings. [CHAR_LIMIT=NONE] -->
+    <string name="settings_profile_save_current">Save current settings to this profile</string>
+    <!-- Asks whether to replace the settings of a settings profile that is not in use with the current settings. [CHAR_LIMIT=NONE] -->
+    <string name="settings_profile_save_confirm">Replace the settings of <xliff:g id="name" example="Demo">%1$s</xliff:g> with the current settings?</string>
+    <!-- Button that replaces the settings of a settings profile with the current settings. [CHAR_LIMIT=NONE] -->
+    <string name="settings_profile_save">Replace</string>
+    <!-- Spoken after the current settings were saved to a settings profile. [CHAR_LIMIT=NONE] -->
+    <string name="settings_profile_saved">Settings saved to <xliff:g id="name" example="Demo">%1$s</xliff:g></string>
+    <!-- Spoken when a settings profile could not be added or saved. [CHAR_LIMIT=NONE] -->
+    <string name="settings_profile_not_saved">Settings profile could not be saved</string>
+    <!-- Spoken after a settings profile was applied. %1$s is the profile's name. [CHAR_LIMIT=NONE] -->
+    <string name="settings_profile_in_use_announcement"><xliff:g id="name" example="Demo">%1$s</xliff:g> profile</string>
+    <!-- Spoken when a settings profile could not be applied, or was deleted. [CHAR_LIMIT=NONE] -->
+    <string name="settings_profile_not_changed">Settings profile not changed</string>
+    <!-- Title of the menu that chooses the settings profile in use. [CHAR_LIMIT=NONE] -->
+    <string name="title_settings_profile">Settings profile</string>
+    <!-- Gesture and keyboard shortcut command that opens a menu to choose the settings profile in use. [CHAR_LIMIT=NONE] -->
+    <string name="shortcut_settings_profiles">Choose settings profile</string>
+    <!-- Gesture and keyboard shortcut command that saves the current settings to the settings profile in use and applies the next profile. [CHAR_LIMIT=NONE] -->
+    <string name="shortcut_next_settings_profile">Next settings profile</string>
 
   <string name="title_copy_text_from_screen" tools:ignore="MissingTranslation">Copy text from screen</string>
   <string name="granularity_label" tools:ignore="MissingTranslation">Granularity</string>
