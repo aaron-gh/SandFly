@@ -254,7 +254,9 @@ public final class InputTextSelectionFeedbackRules {
     Optional<CharSequence> phoneticInPlaceOfLetter =
         (event != null && AccessibilityEventUtils.isCharacterTraversalEvent(event))
             ? processorPhoneticLetters.getPhoneticInPlaceOfLetter(
-                PackageManagerUtils.isTalkBackPackage(event.getPackageName()), traversedText)
+                PackageManagerUtils.isTalkBackPackage(event.getPackageName()),
+                traversedText,
+                /* typing= */ false)
             : Optional.empty();
     CharSequence ttsOutput;
     if (phoneticInPlaceOfLetter.isPresent()) {

@@ -52,14 +52,14 @@ class PhoneticLetterModeTest {
 
   @Test
   fun defaultIsWithTheLetter() {
-    assertEquals(PhoneticLetterMode.AFTER_LETTER_DELAY, PhoneticLetterMode.read(prefs, res))
+    assertEquals(PhoneticLetterMode.AFTER_LETTER_DELAY, PhoneticLetterMode.readReview(prefs, res))
   }
 
   @Test
   fun removingHighAndLowPresetsKeepsTheirModes() {
     setPreset(res.getString(R.string.pref_verbosity_preset_value_high))
     VerbosityPreferences.removePresets(prefs, res)
-    assertEquals(PhoneticLetterMode.AFTER_LETTER_DELAY, PhoneticLetterMode.read(prefs, res))
+    assertEquals(PhoneticLetterMode.AFTER_LETTER_DELAY, PhoneticLetterMode.readReview(prefs, res))
 
     val lowPrefs = FakeSharedPreferences()
     lowPrefs
@@ -70,7 +70,7 @@ class PhoneticLetterModeTest {
       )
       .apply()
     VerbosityPreferences.removePresets(lowPrefs, res)
-    assertEquals(PhoneticLetterMode.OFF, PhoneticLetterMode.read(lowPrefs, res))
+    assertEquals(PhoneticLetterMode.OFF, PhoneticLetterMode.readTyping(lowPrefs, res))
   }
 
   @Test
@@ -79,7 +79,7 @@ class PhoneticLetterModeTest {
     val customMode = VerbosityPreferences.toVerbosityPrefKey(custom, modeKey)
     prefs.edit().putString(customMode, PhoneticLetterMode.INSTEAD_OF_LETTER).apply()
     VerbosityPreferences.removePresets(prefs, res)
-    assertEquals(PhoneticLetterMode.INSTEAD_OF_LETTER, PhoneticLetterMode.read(prefs, res))
+    assertEquals(PhoneticLetterMode.INSTEAD_OF_LETTER, PhoneticLetterMode.readReview(prefs, res))
     assertFalse(prefs.contains(customMode))
     assertFalse(prefs.contains(res.getString(R.string.pref_verbosity_preset_key)))
   }
@@ -95,7 +95,7 @@ class PhoneticLetterModeTest {
     assertEquals(PhoneticLetterMode.AFTER_LETTER_DELAY, prefs.getString(modeKey, null))
     setPreset(custom)
     VerbosityPreferences.removePresets(prefs, res)
-    assertEquals(PhoneticLetterMode.OFF, PhoneticLetterMode.read(prefs, res))
+    assertEquals(PhoneticLetterMode.OFF, PhoneticLetterMode.readReview(prefs, res))
   }
 
   @Test
@@ -109,6 +109,47 @@ class PhoneticLetterModeTest {
       .apply()
     PhoneticLetterMode.migrate(prefs, res)
     assertEquals(PhoneticLetterMode.INSTEAD_OF_LETTER, prefs.getString(customMode, null))
+  }
+
+  @Test
+  fun splitCopiesTheOneModeToReviewAndTyping() {
+    prefs.edit().putString(modeKey, PhoneticLetterMode.INSTEAD_OF_LETTER).apply()
+    PhoneticLetterMode.split(prefs, res)
+    assertEquals(
+      PhoneticLetterMode.INSTEAD_OF_LETTER,
+      prefs.getString(res.getString(R.string.pref_phonetic_letters_review_mode_key), null),
+    )
+    assertEquals(
+      PhoneticLetterMode.INSTEAD_OF_LETTER,
+      prefs.getString(res.getString(R.string.pref_phonetic_letters_typing_mode_key), null),
+    )
+  }
+
+  @Test
+  fun splitKeepsModesAlreadyChosen() {
+    val typingKey = res.getString(R.string.pref_phonetic_letters_typing_mode_key)
+    prefs
+      .edit()
+      .putString(modeKey, PhoneticLetterMode.INSTEAD_OF_LETTER)
+      .putString(typingKey, PhoneticLetterMode.OFF)
+      .apply()
+    PhoneticLetterMode.split(prefs, res)
+    assertEquals(PhoneticLetterMode.OFF, PhoneticLetterMode.readTyping(prefs, res))
+    assertEquals(PhoneticLetterMode.INSTEAD_OF_LETTER, PhoneticLetterMode.readReview(prefs, res))
+  }
+
+  @Test
+  fun readFallsBackToTheOneModeBeforeSplit() {
+    prefs.edit().putString(modeKey, PhoneticLetterMode.AFTER_LETTER_NO_DELAY).apply()
+    assertEquals(PhoneticLetterMode.AFTER_LETTER_NO_DELAY, PhoneticLetterMode.readReview(prefs, res))
+    assertEquals(PhoneticLetterMode.AFTER_LETTER_NO_DELAY, PhoneticLetterMode.readTyping(prefs, res))
+  }
+
+  @Test
+  fun splitLeavesNewUsersAlone() {
+    PhoneticLetterMode.split(prefs, res)
+    assertFalse(prefs.contains(res.getString(R.string.pref_phonetic_letters_review_mode_key)))
+    assertFalse(prefs.contains(res.getString(R.string.pref_phonetic_letters_typing_mode_key)))
   }
 
   @Test

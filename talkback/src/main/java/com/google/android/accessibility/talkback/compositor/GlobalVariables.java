@@ -194,7 +194,11 @@ public class GlobalVariables extends TimedFlags implements ParseTree.VariableDel
   // How capital letters are told apart, one of SpeechControllerImpl's CAPITAL_LETTERS_TYPE values.
   private int capitalLetterFeedback = SpeechControllerImpl.CAPITAL_LETTERS_TYPE_SPEAK_CAP;
 
-  private String phoneticLetterMode = PhoneticLetterMode.AFTER_LETTER_DELAY;
+  // How phonetic letters are spoken for letters the user reviews: moves over by character or has
+  // spelled.
+  private String phoneticLetterReviewMode = PhoneticLetterMode.AFTER_LETTER_DELAY;
+  // How phonetic letters are spoken for letters the user types or deletes, and keyboard keys.
+  private String phoneticLetterTypingMode = PhoneticLetterMode.AFTER_LETTER_DELAY;
 
   // Verbosity settings
   private boolean speakRoles = true;
@@ -500,28 +504,40 @@ public class GlobalVariables extends TimedFlags implements ParseTree.VariableDel
     usageHintEnabled = enabled;
   }
 
-  /** Returns if TalkBack speaks phonetic letters, with or instead of the letter. */
-  public boolean getSpeakPhoneticLettersEnabled() {
-    return !PhoneticLetterMode.OFF.equals(phoneticLetterMode);
+  /**
+   * Returns if TalkBack speaks phonetic letters, with or instead of the letter, for letters typed
+   * or deleted and keyboard keys if {@code typing}, or for letters reviewed otherwise.
+   */
+  public boolean getSpeakPhoneticLettersEnabled(boolean typing) {
+    return !PhoneticLetterMode.OFF.equals(phoneticLetterMode(typing));
   }
 
   /**
    * Returns if what is said takes the place of the letter: the letter and its word together, or the
    * word alone. Otherwise the word, if any, follows the letter after a pause.
    */
-  public boolean getPhoneticLetterTakesPlaceOfLetter() {
-    return PhoneticLetterMode.AFTER_LETTER_NO_DELAY.equals(phoneticLetterMode)
-        || PhoneticLetterMode.INSTEAD_OF_LETTER.equals(phoneticLetterMode);
+  public boolean getPhoneticLetterTakesPlaceOfLetter(boolean typing) {
+    String mode = phoneticLetterMode(typing);
+    return PhoneticLetterMode.AFTER_LETTER_NO_DELAY.equals(mode)
+        || PhoneticLetterMode.INSTEAD_OF_LETTER.equals(mode);
   }
 
   /** Returns if the phonetic word is said in place of the letter, without the letter. */
-  public boolean getSpeakPhoneticLetterInsteadOfLetter() {
-    return PhoneticLetterMode.INSTEAD_OF_LETTER.equals(phoneticLetterMode);
+  public boolean getSpeakPhoneticLetterInsteadOfLetter(boolean typing) {
+    return PhoneticLetterMode.INSTEAD_OF_LETTER.equals(phoneticLetterMode(typing));
   }
 
-  /** Sets how phonetic letters are spoken, one of the {@link PhoneticLetterMode} values. */
-  public void setPhoneticLetterMode(String mode) {
-    phoneticLetterMode = mode;
+  private String phoneticLetterMode(boolean typing) {
+    return typing ? phoneticLetterTypingMode : phoneticLetterReviewMode;
+  }
+
+  /**
+   * Sets how phonetic letters are spoken when reviewing and when typing, each one of the {@link
+   * PhoneticLetterMode} values.
+   */
+  public void setPhoneticLetterModes(String reviewMode, String typingMode) {
+    phoneticLetterReviewMode = reviewMode;
+    phoneticLetterTypingMode = typingMode;
   }
 
   /** Returns if TalkBack speaks capital letter. */
