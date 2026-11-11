@@ -253,7 +253,7 @@ TalkBack ignored the order for a row whose checkbox or switch has no text of its
 
 ### Number of list items while scrolling
 
-With **Always speak number of list items** off, SandFly says no list position when a list scrolls. TalkBack still said it after its scroll commands and after a pager's page changed. When the setting is on, the position doesn't interrupt audio or video playback.
+With **Always speak number of list items** off, SandFly says no list position when a list scrolls. TalkBack still said it after its scroll commands and after a pager's page changed. When the setting is on, the position isn't spoken while audio or video plays.
 
 ### "SandFly off" at the right volume
 
