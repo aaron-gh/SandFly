@@ -94,7 +94,6 @@ public class ContextMenuItemClickProcessor {
         || (itemId == R.id.spell_last_utterance)
         || (itemId == R.id.copy_last_utterance_to_clipboard)
         || (itemId == R.id.select_last_spoken_phrase_word_by_word)
-        || (itemId == R.id.copy_text_from_screen)
         || (itemId == R.id.verbosity)
         || (itemId == R.id.audio_ducking)
         || (itemId == R.id.sound_feedback)
@@ -138,8 +137,6 @@ public class ContextMenuItemClickProcessor {
           eventId, Feedback.part().setSpeech(Feedback.Speech.create(COPY_SAVED)));
     } else if (itemId == R.id.select_last_spoken_phrase_word_by_word) {
       WordSelectionDialog.showForLastUtterance(service, pipeline, /* fromMenu= */ true);
-    } else if (itemId == R.id.copy_text_from_screen) {
-      WordSelectionDialog.showForScreen(service, pipeline, /* fromMenu= */ true);
     } else if (itemId == R.id.verbosity) {
       Intent intent = createSettingsIntent();
       intent.putExtra(FRAGMENT_NAME, VerbosityPrefFragment.class.getName());

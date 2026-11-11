@@ -65,6 +65,14 @@
             android:textAppearance="@style/A11yAlertDialogContentTextStyle" />
     </RadioGroup>
 
+    <TextView
+        android:id="@+id/truncated_notice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/A11yAlertDialogContentTextStyle"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/words_recycler_view"
         android:layout_width="match_parent"

@@ -179,6 +179,13 @@ object MenuCommands {
       R.string.shortcut_value_copy_last_spoken_phrase,
       R.id.copy_last_utterance_to_clipboard,
     )
+    // Its own item, so that it uses the phrase spoken before the menu opened.
+    command(
+      R.string.pref_show_context_menu_select_last_spoken_phrase_word_by_word_setting_key,
+      R.bool.pref_show_context_menu_select_last_spoken_phrase_word_by_word_default,
+      R.string.shortcut_value_select_last_spoken_phrase_word_by_word,
+      R.id.select_last_spoken_phrase_word_by_word,
+    )
     command(
       R.string.pref_show_context_menu_spell_last_spoken_phrase_setting_key,
       R.bool.pref_show_context_menu_spell_last_spoken_phrase_default,

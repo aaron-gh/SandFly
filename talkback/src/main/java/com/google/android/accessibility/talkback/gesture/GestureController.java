@@ -830,10 +830,11 @@ public class GestureController {
     } else if (action.equals(service.getString(R.string.shortcut_value_copy_last_spoken_phrase))) {
       pipeline.returnFeedback(
           eventId, Feedback.part().setSpeech(Feedback.Speech.create(COPY_LAST)));
-    } else if (action.equals(service.getString(R.string.shortcut_value_select_last_spoken_phrase_word_by_word))) {
+    } else if (action.equals(
+        service.getString(R.string.shortcut_value_select_last_spoken_phrase_word_by_word))) {
       WordSelectionDialog.showForLastUtterance(service, pipeline, /* fromMenu= */ false);
     } else if (action.equals(service.getString(R.string.shortcut_value_copy_text_from_screen))) {
-      WordSelectionDialog.showForScreen(service, pipeline, /* fromMenu= */ false);
+      WordSelectionDialog.showForScreen(service, pipeline);
     } else if (action.equals(service.getString(R.string.shortcut_value_braille_keyboard))) {
       String inputMethodInfoId =
           KeyboardUtils.getImeId(

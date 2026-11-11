@@ -48,14 +48,17 @@ import com.google.android.accessibility.utils.WindowUtils;
 import com.google.android.accessibility.utils.material.A11yAlertDialogWrapper;
 import com.google.android.accessibility.utils.output.EmojiSpeech;
 import com.google.android.accessibility.utils.output.FeedbackItem;
+import com.google.android.accessibility.utils.output.SpeechController;
+import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import java.text.BreakIterator;
 import java.util.ArrayList;
 import java.util.BitSet;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Dialog that allows selecting and copying text from the entire screen
@@ -70,15 +73,100 @@ public class WordSelectionDialog extends BaseDialog {
     PARAGRAPHS
   }
 
+  private static final String TAG = "WordSelectionDialog";
+
   @VisibleForTesting static final int MAX_TOKENS = 1000;
+  /** The most text collected from the screen or the last utterance. */
+  @VisibleForTesting static final int MAX_TEXT_CHARS = 20_000;
+  /** The longest item; longer paragraphs and words are split into several items. */
+  @VisibleForTesting static final int MAX_ITEM_CHARS = 300;
   private static final int MAX_NODES = 1500;
   private static final int MAX_DEPTH = 50;
 
-  private static final ExecutorService EXECUTOR =
-      Executors.newSingleThreadExecutor(r -> new Thread(r, "WordSelection"));
+  // One thread, which ends when it has been idle for a while.
+  private static final ThreadPoolExecutor EXECUTOR = createExecutor();
+
+  private static ThreadPoolExecutor createExecutor() {
+    ThreadPoolExecutor executor =
+        new ThreadPoolExecutor(
+            1,
+            1,
+            30,
+            TimeUnit.SECONDS,
+            new LinkedBlockingQueue<>(),
+            r -> {
+              Thread thread = new Thread(r, "WordSelection");
+              thread.setDaemon(true);
+              return thread;
+            });
+    executor.allowCoreThreadTimeOut(true);
+    return executor;
+  }
+
+  /** One item of the list. */
+  @VisibleForTesting
+  static final class Token {
+    final String text;
+    /**
+     * What joins this item to the one before it when both are copied, because both come from one
+     * paragraph or word that was too long for one item; null when the granularity's delimiter does.
+     */
+    @Nullable final String glue;
+
+    Token(String text, @Nullable String glue) {
+      this.text = text;
+      this.glue = glue;
+    }
+  }
+
+  /** The items of one granularity, and whether text was left out. */
+  @VisibleForTesting
+  static final class Tokens {
+    final List<Token> items = new ArrayList<>();
+    boolean truncated;
+
+    List<String> texts() {
+      List<String> texts = new ArrayList<>();
+      for (Token token : items) {
+        texts.add(token.text);
+      }
+      return texts;
+    }
+
+    boolean isFull() {
+      return items.size() >= MAX_TOKENS;
+    }
+  }
+
+  /** The collected text, and whether the {@link #MAX_TEXT_CHARS} limit cut it off. */
+  @VisibleForTesting
+  static final class Collected {
+    final List<String> paragraphs = new ArrayList<>();
+    int chars;
+    boolean truncated;
+
+    /** Adds {@code text} within the limit; returns false once the limit is reached. */
+    boolean add(String text) {
+      int room = MAX_TEXT_CHARS - chars;
+      if (room <= 0) {
+        truncated = true;
+        return false;
+      }
+      if (text.length() > room) {
+        text = text.substring(0, safeEnd(text, room));
+        truncated = true;
+      }
+      paragraphs.add(text);
+      chars += text.length();
+      return !truncated;
+    }
+  }
 
   private final List<String> paragraphs;
-  private final List<String> tokens = new ArrayList<>();
+  private final boolean textTruncated;
+  private final List<Token> tokens = new ArrayList<>();
+  private boolean listTruncated;
+  @Nullable private TextView truncatedNotice;
   private final BitSet checked = new BitSet();
   @Nullable private final FeedbackReturner pipeline;
   private Granularity currentGranularity = Granularity.WORDS;
@@ -89,11 +177,12 @@ public class WordSelectionDialog extends BaseDialog {
   public WordSelectionDialog(
       Context context,
       int titleResId,
-      List<String> paragraphs,
+      Collected collected,
       @Nullable FeedbackReturner pipeline,
       boolean showGranularityOptions) {
     super(context, titleResId, pipeline);
-    this.paragraphs = paragraphs;
+    this.paragraphs = collected.paragraphs;
+    this.textTruncated = collected.truncated;
     this.pipeline = pipeline;
     this.showGranularityOptions = showGranularityOptions;
     setPositiveButtonStringRes(android.R.string.copy);
@@ -114,6 +203,7 @@ public class WordSelectionDialog extends BaseDialog {
     checked.clear();
     adapter = null;
     wordsRecyclerView = null;
+    truncatedNotice = null;
   }
 
   @Override
@@ -125,6 +215,7 @@ public class WordSelectionDialog extends BaseDialog {
   public View getCustomizedView(LayoutInflater inflater) {
     View view = inflater.inflate(R.layout.word_selection_dialog, null, false);
     TextView granularityLabel = view.findViewById(R.id.granularity_label);
+    truncatedNotice = view.findViewById(R.id.truncated_notice);
     RadioGroup radioGroup = view.findViewById(R.id.granularity_group);
 
     if (!showGranularityOptions) {
@@ -164,28 +255,46 @@ public class WordSelectionDialog extends BaseDialog {
     }
     currentGranularity = granularity;
     populateItems(granularity);
+    announceTruncated(SpeechController.QUEUE_MODE_INTERRUPT);
   }
 
   private void populateItems(Granularity granularity) {
+    Tokens extracted = extractTokens(paragraphs, granularity);
     tokens.clear();
-    tokens.addAll(extractTokens(paragraphs, granularity));
+    tokens.addAll(extracted.items);
+    listTruncated = textTruncated || extracted.truncated;
     checked.clear();
     if (adapter != null) {
       adapter.notifyDataSetChanged();
     }
+    if (truncatedNotice != null) {
+      truncatedNotice.setText(truncatedText());
+      truncatedNotice.setVisibility(listTruncated ? View.VISIBLE : View.GONE);
+    }
   }
 
-  public static List<String> extractTokens(List<String> paragraphs, Granularity granularity) {
-    List<String> tokens = new ArrayList<>();
+  private String truncatedText() {
+    return context.getString(R.string.word_selection_list_cut_off, tokens.size());
+  }
+
+  private void announceTruncated(int queueMode) {
+    if (listTruncated && pipeline != null) {
+      pipeline.returnFeedback(
+          EVENT_ID_UNTRACKED,
+          Feedback.speech(
+              truncatedText(), SpeechController.SpeakOptions.create().setQueueMode(queueMode)));
+    }
+  }
+
+  @VisibleForTesting
+  static Tokens extractTokens(List<String> paragraphs, Granularity granularity) {
+    Tokens tokens = new Tokens();
     switch (granularity) {
       case PARAGRAPHS:
         for (String p : paragraphs) {
-          String trimmed = p.trim();
-          if (!trimmed.isEmpty()) {
-            tokens.add(trimmed);
-            if (tokens.size() >= MAX_TOKENS) {
-              return tokens;
-            }
+          addPieces(tokens, p.trim(), /* glue= */ " ");
+          if (tokens.truncated) {
+            break;
           }
         }
         break;
@@ -194,24 +303,36 @@ public class WordSelectionDialog extends BaseDialog {
         BreakIterator boundary = BreakIterator.getCharacterInstance();
         boundary.setText(fullText);
         int start = boundary.first();
-        for (int end = boundary.next();
-            end != BreakIterator.DONE && tokens.size() < MAX_TOKENS;
-            start = end, end = boundary.next()) {
-          tokens.add(fullText.substring(start, end));
+        for (int end = boundary.next(); end != BreakIterator.DONE; start = end, end = boundary.next()) {
+          if (tokens.isFull()) {
+            tokens.truncated = true;
+            break;
+          }
+          tokens.items.add(new Token(fullText.substring(start, end), /* glue= */ null));
         }
         break;
       case WORDS:
       default:
         for (String p : paragraphs) {
-          String[] words = p.split("\\s+");
-          for (String word : words) {
-            String trimmed = word.trim();
-            if (!trimmed.isEmpty()) {
-              tokens.add(trimmed);
-              if (tokens.size() >= MAX_TOKENS) {
-                return tokens;
+          int length = p.length();
+          int i = 0;
+          while (i < length) {
+            while (i < length && Character.isWhitespace(p.charAt(i))) {
+              i++;
+            }
+            int wordStart = i;
+            while (i < length && !Character.isWhitespace(p.charAt(i))) {
+              i++;
+            }
+            if (i > wordStart) {
+              addPieces(tokens, p.substring(wordStart, i), /* glue= */ "");
+              if (tokens.truncated) {
+                break;
               }
             }
+          }
+          if (tokens.truncated) {
+            break;
           }
         }
         break;
@@ -219,10 +340,59 @@ public class WordSelectionDialog extends BaseDialog {
     return tokens;
   }
 
+  /**
+   * Adds {@code text} as one item, or as several of at most {@link #MAX_ITEM_CHARS} when it is
+   * longer, split at whitespace where there is some. Sets {@link Tokens#truncated} when the list is
+   * full before the end of {@code text}.
+   */
+  private static void addPieces(Tokens tokens, String text, String glue) {
+    if (text.isEmpty()) {
+      return;
+    }
+    if (tokens.isFull()) {
+      tokens.truncated = true;
+      return;
+    }
+    int start = 0;
+    boolean first = true;
+    while (start < text.length()) {
+      if (tokens.isFull()) {
+        tokens.truncated = true;
+        return;
+      }
+      int end = text.length();
+      if (end - start > MAX_ITEM_CHARS) {
+        end = safeEnd(text, start + MAX_ITEM_CHARS);
+        int space = end;
+        while (space > start && !Character.isWhitespace(text.charAt(space - 1))) {
+          space--;
+        }
+        if (space > start) {
+          end = space;
+        }
+      }
+      String piece = text.substring(start, end).trim();
+      if (!piece.isEmpty()) {
+        tokens.items.add(new Token(piece, first ? null : glue));
+        first = false;
+      }
+      start = end;
+    }
+  }
+
+  /** Returns {@code end}, moved back one so that it does not split a surrogate pair. */
+  private static int safeEnd(String text, int end) {
+    if (end > 0 && end < text.length() && Character.isHighSurrogate(text.charAt(end - 1))) {
+      return end - 1;
+    }
+    return end;
+  }
+
   @Override
   public A11yAlertDialogWrapper showDialog() {
     A11yAlertDialogWrapper dialog = super.showDialog();
     if (dialog != null) {
+      announceTruncated(SpeechController.QUEUE_MODE_QUEUE);
       Button neutralButton = dialog.getButton(DialogInterface.BUTTON_NEUTRAL);
       if (neutralButton != null) {
         neutralButton.setOnClickListener(v -> toggleSelectAll());
@@ -232,8 +402,7 @@ public class WordSelectionDialog extends BaseDialog {
       if (positiveButton != null) {
         positiveButton.setOnClickListener(
             v -> {
-              List<String> selected = getSelectedItems();
-              if (selected.isEmpty()) {
+              if (checked.isEmpty()) {
                 if (pipeline != null) {
                   int emptyFeedbackRes =
                       showGranularityOptions
@@ -246,22 +415,15 @@ public class WordSelectionDialog extends BaseDialog {
                 return;
               }
 
-              String delimiter;
-              if (currentGranularity == Granularity.PARAGRAPHS) {
-                delimiter = "\n\n";
-              } else if (currentGranularity == Granularity.WORDS) {
-                delimiter = " ";
-              } else {
-                delimiter = "";
-              }
-
-              String joinedText = String.join(delimiter, selected);
-              ClipboardHistory.copy(context, joinedText);
+              int count = checked.cardinality();
+              ClipboardHistory.copy(context, joinSelected(tokens, checked, currentGranularity));
               if (pipeline != null) {
                 pipeline.returnFeedback(
                     EVENT_ID_UNTRACKED,
                     Feedback.speech(
-                        context.getString(R.string.script_tree_copied, selected.size())));
+                        context
+                            .getResources()
+                            .getQuantityString(R.plurals.word_selection_copied, count, count)));
               }
               dialog.dismiss();
             });
@@ -287,12 +449,29 @@ public class WordSelectionDialog extends BaseDialog {
     }
   }
 
-  private List<String> getSelectedItems() {
-    List<String> selected = new ArrayList<>();
+  /**
+   * Joins the checked items with the granularity's delimiter, or with their own glue where an item
+   * continues the one before it and both are checked.
+   */
+  @VisibleForTesting
+  static String joinSelected(List<Token> tokens, BitSet checked, Granularity granularity) {
+    String delimiter =
+        switch (granularity) {
+          case PARAGRAPHS -> "\n\n";
+          case WORDS -> " ";
+          case CHARACTERS -> "";
+        };
+    StringBuilder joined = new StringBuilder();
+    int previous = -1;
     for (int i = checked.nextSetBit(0); i >= 0 && i < tokens.size(); i = checked.nextSetBit(i + 1)) {
-      selected.add(tokens.get(i));
+      Token token = tokens.get(i);
+      if (previous >= 0) {
+        joined.append(token.glue != null && previous == i - 1 ? token.glue : delimiter);
+      }
+      joined.append(token.text);
+      previous = i;
     }
-    return selected;
+    return joined.toString();
   }
 
   /**
@@ -318,7 +497,7 @@ public class WordSelectionDialog extends BaseDialog {
             : null;
     String text = (copyableText != null) ? copyableText.toString().trim() : "";
 
-    if (TextUtils.isEmpty(text)) {
+    if (text.isEmpty()) {
       if (pipeline != null) {
         pipeline.returnFeedback(
             EVENT_ID_UNTRACKED,
@@ -327,14 +506,14 @@ public class WordSelectionDialog extends BaseDialog {
       return;
     }
 
-    List<String> paragraphs = new ArrayList<>();
-    paragraphs.add(text);
+    Collected collected = new Collected();
+    collected.add(text);
 
     WordSelectionDialog dialog =
         new WordSelectionDialog(
             service,
             R.string.title_select_last_spoken_phrase_word_by_word,
-            paragraphs,
+            collected,
             pipeline,
             /* showGranularityOptions= */ false);
     if (fromMenu) {
@@ -343,22 +522,25 @@ public class WordSelectionDialog extends BaseDialog {
     dialog.showDialog();
   }
 
-  /**
-   * Shows the screen text copy dialog for the given TalkBackService off the main thread.
-   *
-   * @param service The TalkBackService instance.
-   * @param pipeline The feedback returner for speech/audio.
-   * @param fromMenu Whether the action was triggered from the context menu.
-   */
-  public static void showForScreen(
-      TalkBackService service, @Nullable FeedbackReturner pipeline, boolean fromMenu) {
+  /** Collects the text on the screen off the main thread, then shows the dialog. */
+  public static void showForScreen(TalkBackService service, @Nullable FeedbackReturner pipeline) {
     EXECUTOR.execute(
         () -> {
-          List<String> paragraphs = extractScreenParagraphs(service);
+          Collected collected;
+          try {
+            collected = extractScreenParagraphs(service);
+          } catch (Throwable t) {
+            LogUtils.w(TAG, "Can't collect the text on the screen: %s", t);
+            collected = new Collected();
+          }
+          Collected result = collected;
           new Handler(service.getMainLooper())
               .post(
                   () -> {
-                    if (paragraphs.isEmpty()) {
+                    if (!TalkBackService.isServiceActive()) {
+                      return;
+                    }
+                    if (result.paragraphs.isEmpty()) {
                       if (pipeline != null) {
                         pipeline.returnFeedback(
                             EVENT_ID_UNTRACKED,
@@ -371,24 +553,24 @@ public class WordSelectionDialog extends BaseDialog {
                         new WordSelectionDialog(
                             service,
                             R.string.title_copy_text_from_screen,
-                            paragraphs,
+                            result,
                             pipeline,
                             /* showGranularityOptions= */ true);
-                    if (fromMenu) {
-                      dialog.setRestoreFocus(true);
-                    }
                     dialog.showDialog();
                   });
         });
   }
 
-  public static List<String> extractScreenParagraphs(TalkBackService service) {
-    List<String> paragraphs = new ArrayList<>();
+  private static Collected extractScreenParagraphs(TalkBackService service) {
+    Collected paragraphs = new Collected();
     Set<AccessibilityNodeInfoCompat> visited = new HashSet<>();
 
     List<AccessibilityWindowInfo> windows = AccessibilityServiceCompatUtils.getWindows(service);
     if (windows != null && !windows.isEmpty()) {
       for (AccessibilityWindowInfo window : windows) {
+        if (paragraphs.truncated) {
+          break;
+        }
         if (window == null || WindowUtils.isSystemBar(service, window)) {
           continue;
         }
@@ -404,7 +586,7 @@ public class WordSelectionDialog extends BaseDialog {
       }
     }
 
-    if (paragraphs.isEmpty()) {
+    if (paragraphs.paragraphs.isEmpty()) {
       AccessibilityNodeInfo activeRoot = service.getRootInActiveWindow();
       if (activeRoot != null) {
         collectTexts(
@@ -417,10 +599,13 @@ public class WordSelectionDialog extends BaseDialog {
 
   private static boolean collectTexts(
       @Nullable AccessibilityNodeInfoCompat node,
-      List<String> paragraphs,
+      Collected paragraphs,
       Set<AccessibilityNodeInfoCompat> visited,
       int depth) {
-    if (node == null || depth > MAX_DEPTH || visited.size() >= MAX_NODES) {
+    if (node == null
+        || depth > MAX_DEPTH
+        || visited.size() >= MAX_NODES
+        || paragraphs.truncated) {
       return false;
     }
     if (!visited.add(node)) {
@@ -483,10 +668,15 @@ public class WordSelectionDialog extends BaseDialog {
     @Override
     public void onBindViewHolder(TokenViewHolder holder, int position) {
       holder.checkBox.setOnCheckedChangeListener(null);
-      holder.checkBox.setText(tokens.get(position));
+      holder.checkBox.setText(tokens.get(position).text);
       holder.checkBox.setChecked(checked.get(position));
       holder.checkBox.setOnCheckedChangeListener(
-          (buttonView, isChecked) -> checked.set(position, isChecked));
+          (buttonView, isChecked) -> {
+            int at = holder.getBindingAdapterPosition();
+            if (at != RecyclerView.NO_POSITION) {
+              checked.set(at, isChecked);
+            }
+          });
     }
 
     @Override

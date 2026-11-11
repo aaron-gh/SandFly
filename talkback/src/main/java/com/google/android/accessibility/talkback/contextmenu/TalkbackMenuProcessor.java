@@ -316,6 +316,8 @@ public class TalkbackMenuProcessor {
     setSkipRefocusAndWindowAnnounce(menu, R.id.spell_last_utterance, true);
     setSkipRefocusAndWindowAnnounce(menu, R.id.repeat_last_utterance, true);
     setSkipRefocusAndWindowAnnounce(menu, R.id.copy_last_utterance_to_clipboard, true);
+    setMenuItemShowsDialog(menu, R.id.select_last_spoken_phrase_word_by_word, true);
+    setSkipRefocusAndWindowAnnounce(menu, R.id.select_last_spoken_phrase_word_by_word, true);
     setSkipRefocusAndWindowAnnounce(menu, R.id.audio_ducking, true);
     setSkipRefocusAndWindowAnnounce(menu, R.id.sound_feedback, true);
     setSkipRefocusAndWindowAnnounce(menu, R.id.vibration_feedback, true);
@@ -412,6 +414,11 @@ public class TalkbackMenuProcessor {
 
     if (!showMenuItem(R.string.pref_show_context_menu_copy_last_spoken_phrase_setting_key)) {
       menu.removeItem(R.id.copy_last_utterance_to_clipboard);
+    }
+
+    if (!showMenuItem(
+        R.string.pref_show_context_menu_select_last_spoken_phrase_word_by_word_setting_key)) {
+      menu.removeItem(R.id.select_last_spoken_phrase_word_by_word);
     }
 
     if (!showMenuItem(R.string.pref_show_context_menu_spell_last_spoken_phrase_setting_key)) {

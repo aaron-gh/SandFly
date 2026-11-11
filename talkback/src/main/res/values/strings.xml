@@ -5021,4 +5021,11 @@
   <string name="title_select_last_spoken_phrase_word_by_word" tools:ignore="MissingTranslation">Select last spoken phrase word by word</string>
   <string name="no_words_selected" tools:ignore="MissingTranslation">No words selected</string>
   <string name="no_phrase_to_select" tools:ignore="MissingTranslation">No phrase to select</string>
+  <!-- Shown and spoken in the Copy text from screen dialog when it lists only part of the text. [CHAR_LIMIT=NONE] -->
+  <string name="word_selection_list_cut_off" tools:ignore="MissingTranslation">List cut off at <xliff:g id="count" example="1000">%1$d</xliff:g> items</string>
+  <!-- Spoken after the checked items of the Copy text from screen dialog were copied. [CHAR_LIMIT=NONE] -->
+  <plurals name="word_selection_copied" tools:ignore="MissingTranslation">
+    <item quantity="one">Copied <xliff:g id="count" example="1">%1$d</xliff:g> item</item>
+    <item quantity="other">Copied <xliff:g id="count" example="5">%1$d</xliff:g> items</item>
+  </plurals>
 </resources>
