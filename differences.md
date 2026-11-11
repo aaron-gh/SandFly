@@ -265,7 +265,7 @@ In **Verbosity**, you can choose whether SandFly reads table column headers befo
 
 Under preset settings in **Verbosity**, you can also turn off **Speak row and column numbers** to hear only named headers without row and column coordinates. The setting is on by default.
 
-Both settings only apply while **Speak container info** is on, because rows and columns aren't spoken at all when it's off.
+Both settings only apply while **Speak grid and table information** is on, because rows and columns aren't spoken at all when it's off. That switch covers grids, staggered grids, and pagers laid out in rows and columns, such as a folder on a home screen.
 
 ### Speak letters phonetically
 

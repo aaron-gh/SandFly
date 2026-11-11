@@ -703,13 +703,27 @@ public class GlobalVariables extends TimedFlags implements ParseTree.VariableDel
 
   /** Returns if TalkBack speaks collection info for the collection focus is in. */
   public boolean getSpeakCollectionInfo() {
-    return speaksCollectionInfo(getCollectionRole(), speakCollectionInfo, speakGridInfo);
+    return speaksCollectionInfo(
+        getCollectionRole(),
+        collectionState.getCollectionRowCount(),
+        collectionState.getCollectionColumnCount(),
+        speakCollectionInfo,
+        speakGridInfo);
   }
 
-  /** Whether collection info is spoken for a collection of {@code role}. */
+  /**
+   * Whether collection info is spoken for a collection of {@code role} with {@code rows} and {@code
+   * columns}: grids, staggered grids and pagers laid out in rows and columns, which are spoken as
+   * grids with rows and columns, follow the grid switch, and other collections the list switch.
+   */
   @VisibleForTesting
-  static boolean speaksCollectionInfo(int role, boolean lists, boolean grids) {
-    return role == Role.ROLE_GRID ? grids : lists;
+  static boolean speaksCollectionInfo(
+      int role, int rows, int columns, boolean lists, boolean grids) {
+    boolean grid =
+        role == Role.ROLE_GRID
+            || role == Role.ROLE_STAGGERED_GRID
+            || (role == Role.ROLE_PAGER && rows > 1 && columns > 1);
+    return grid ? grids : lists;
   }
 
   /** Sets if TalkBack speaks collection info for lists and other collections that aren't grids. */
@@ -1032,7 +1046,7 @@ public class GlobalVariables extends TimedFlags implements ParseTree.VariableDel
    */
   public CharSequence getCollectionTransitionDescription() {
     return CollectionStateFeedbackUtils.getCollectionTransitionDescription(
-        collectionState, mContext);
+        collectionState, mContext, speakTableRowColumnNumbers);
   }
 
   /**
