@@ -198,29 +198,39 @@ class JumpToNextRowTest {
   fun itemStaysAfterAMeasuredPage() {
     val list = Rect(0, 0, 1080, 2520)
     // Cut off at the bottom: 2520 - 2200 = 320 px stay.
-    assertTrue(FocusProcessorForLogicalNavigation.staysAfterPage(Rect(0, 361, 1080, 2520), list, 2200, false, 130, true))
+    assertTrue(FocusProcessorForLogicalNavigation.staysAfterPage(Rect(0, 361, 1080, 2520), list, 2200, 130, true))
     // A page as tall as the list leaves nothing.
-    assertFalse(FocusProcessorForLogicalNavigation.staysAfterPage(Rect(0, 361, 1080, 2520), list, 2500, true, 130, true))
+    assertFalse(FocusProcessorForLogicalNavigation.staysAfterPage(Rect(0, 361, 1080, 2520), list, 2500, 130, true))
     // An item ending high up leaves with the page.
-    assertFalse(FocusProcessorForLogicalNavigation.staysAfterPage(Rect(0, 1800, 1080, 2300), list, 2200, false, 130, true))
+    assertFalse(FocusProcessorForLogicalNavigation.staysAfterPage(Rect(0, 1800, 1080, 2300), list, 2200, 130, true))
   }
 
   @Test
   fun itemStaysAfterAPageBack() {
     val list = Rect(0, 0, 1080, 2520)
     // Cut off at the top: its top moves down by the page and stays above the bottom.
-    assertTrue(FocusProcessorForLogicalNavigation.staysAfterPage(Rect(0, 0, 1080, 2000), list, 2200, false, 130, false))
-    assertFalse(FocusProcessorForLogicalNavigation.staysAfterPage(Rect(0, 400, 1080, 2000), list, 2200, false, 130, false))
-    assertTrue(FocusProcessorForLogicalNavigation.staysAfterPage(Rect(0, 0, 1080, 2000), list, 0, true, 130, false))
-    assertFalse(FocusProcessorForLogicalNavigation.staysAfterPage(Rect(0, 100, 1080, 2000), list, 0, true, 130, false))
+    assertTrue(FocusProcessorForLogicalNavigation.staysAfterPage(Rect(0, 0, 1080, 2000), list, 2200, 130, false))
+    assertFalse(FocusProcessorForLogicalNavigation.staysAfterPage(Rect(0, 400, 1080, 2000), list, 2200, 130, false))
   }
 
   @Test
-  fun itemStaysInViewListsWithoutAMeasuredPage() {
-    val list = Rect(0, 0, 1080, 2520)
-    assertTrue(FocusProcessorForLogicalNavigation.staysAfterPage(Rect(0, 361, 1080, 2520), list, 0, true, 130, true))
-    assertFalse(FocusProcessorForLogicalNavigation.staysAfterPage(Rect(0, 361, 1080, 2400), list, 0, true, 130, true))
-    assertFalse(FocusProcessorForLogicalNavigation.staysAfterPage(Rect(0, 361, 1080, 2520), list, 0, false, 130, true))
+  fun itemAtTheEdgeLeavesWithAPageNotMeasured() {
+    // SandFly#72: a settings row ending at the bottom of a list 2112 px tall, whose page scrolled
+    // 2120 px.
+    val list = Rect(0, 364, 1220, 2476)
+    assertFalse(FocusProcessorForLogicalNavigation.staysAfterPage(Rect(0, 2280, 1220, 2476), list, 0, 183, true))
+    assertFalse(FocusProcessorForLogicalNavigation.staysAfterPage(Rect(0, 364, 1220, 560), list, 0, 183, false))
+    // Reported past the edge by more than a page and the margin.
+    assertTrue(FocusProcessorForLogicalNavigation.staysAfterPage(Rect(0, 1000, 1220, 2900), list, 0, 183, true))
+    assertTrue(FocusProcessorForLogicalNavigation.staysAfterPage(Rect(0, -60, 1220, 1000), list, 0, 183, false))
+  }
+
+  @Test
+  fun nextItemFollowsTheScrolledAwayItem() {
+    // The row at 2280-2476 scrolled 2120 px up: the next row starts at 356.
+    assertEquals(356, TraversalTreeCache.placeAfterScroll(2280, 2476, 2120, true))
+    // A row at the top scrolled 2000 px down: the previous row ends at 2364.
+    assertEquals(2364, TraversalTreeCache.placeAfterScroll(364, 560, -2000, false))
   }
 
   @Test

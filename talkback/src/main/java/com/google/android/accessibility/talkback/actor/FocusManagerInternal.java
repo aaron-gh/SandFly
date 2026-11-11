@@ -26,6 +26,7 @@ import android.accessibilityservice.AccessibilityService;
 import android.os.Build;
 import android.os.SystemClock;
 import android.view.accessibility.AccessibilityNodeInfo;
+import android.view.accessibility.AccessibilityWindowInfo;
 import androidx.annotation.VisibleForTesting;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.talkback.ActorStateWritable;
@@ -38,6 +39,7 @@ import com.google.android.accessibility.talkback.TouchInteractionMonitor;
 import com.google.android.accessibility.talkback.actor.helper.FocusActorHelper;
 import com.google.android.accessibility.talkback.focusmanagement.AccessibilityFocusMonitor;
 import com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForScreenStateChange;
+import com.google.android.accessibility.talkback.focusmanagement.TraversalTreeCache;
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.ScreenState;
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.ScreenStateMonitor;
 import com.google.android.accessibility.talkback.focusmanagement.record.AccessibilityFocusActionHistory;
@@ -293,6 +295,14 @@ public class FocusManagerInternal {
       // Has focus on screen.
       LogUtils.d(TAG, String.format("%s: Return, accessibility focus is already there.", subTag));
       return true;
+    }
+
+    // Scrolling ahead moved the focused item off screen; the next swipe goes on from it.
+    AccessibilityWindowInfo activeWindow = state.getActiveWindow();
+    if (activeWindow != null
+        && TraversalTreeCache.continuesAfterScrolledAway(activeWindow.getId())) {
+      LogUtils.d(TAG, String.format("%s: Return, the focused item was scrolled ahead.", subTag));
+      return false;
     }
 
     // An app changing its controls as it starts recording, such as a voice message's record button
