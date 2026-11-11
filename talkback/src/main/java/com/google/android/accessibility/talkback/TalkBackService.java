@@ -1264,7 +1264,7 @@ public class TalkBackService extends AccessibilityServiceCompat
       return;
     }
     if (event.getEventType() == AccessibilityEvent.TYPE_VIEW_SCROLLED) {
-      FocusProcessorForLogicalNavigation.onScrollEventReceived();
+      FocusProcessorForLogicalNavigation.onScrollEventReceived(event);
       DragScroll.onScrollEvent(event);
     }
     if (scriptHost != null) {

@@ -111,11 +111,34 @@ class JumpToNextRowTest {
   }
 
   @Test
-  fun listMovesUntilQuietPeriodAfterLastActivity() {
-    assertTrue(FocusProcessorForLogicalNavigation.listMayStillMove(1199, 1000, 0))
-    assertTrue(FocusProcessorForLogicalNavigation.listMayStillMove(1199, 0, 1000))
-    assertFalse(FocusProcessorForLogicalNavigation.listMayStillMove(1200, 1000, 500))
-    assertFalse(FocusProcessorForLogicalNavigation.listMayStillMove(1200, 0, 0))
+  fun listWithoutScrollEventsWaitsBriefly() {
+    assertTrue(FocusProcessorForLogicalNavigation.listStillMoving(1179, 1000, 0, 0, 0, 0))
+    assertFalse(FocusProcessorForLogicalNavigation.listStillMoving(1180, 1000, 0, 0, 0, 0))
+  }
+
+  @Test
+  fun listMovingAtSpeedKeepsWaiting() {
+    // 20 px just after the scroll, then a full step: speeding up.
+    assertTrue(FocusProcessorForLogicalNavigation.listStillMoving(1110, 1000, 2, 1100, 600, 20))
+    // A step of at least half the one before.
+    assertTrue(FocusProcessorForLogicalNavigation.listStillMoving(1210, 1000, 3, 1200, 300, 600))
+    // One scroll event: nothing to compare yet.
+    assertTrue(FocusProcessorForLogicalNavigation.listStillMoving(1110, 1000, 1, 1100, 5, 900))
+  }
+
+  @Test
+  fun listSlowingDownCountsAsStopped() {
+    assertFalse(FocusProcessorForLogicalNavigation.listStillMoving(1210, 1000, 3, 1200, 250, 600))
+  }
+
+  @Test
+  fun listWithoutRecentScrollEventCountsAsStopped() {
+    assertFalse(FocusProcessorForLogicalNavigation.listStillMoving(1250, 1000, 2, 1100, 600, 600))
+  }
+
+  @Test
+  fun waitEndsAfterMaximum() {
+    assertFalse(FocusProcessorForLogicalNavigation.listStillMoving(1270, 1000, 3, 1260, 600, 600))
   }
 
   private fun node(parent: AccessibilityNodeInfoCompat? = null): AccessibilityNodeInfoCompat {

@@ -59,6 +59,7 @@ import android.os.Trace;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.Pair;
+import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.view.accessibility.AccessibilityWindowInfo;
 import androidx.annotation.IntDef;
@@ -90,6 +91,7 @@ import com.google.android.accessibility.talkback.focusmanagement.record.FocusAct
 import com.google.android.accessibility.talkback.gesture.DragScroll;
 import com.google.android.accessibility.talkback.utils.LinkUtils;
 import com.google.android.accessibility.talkback.utils.TalkbackFeatureSupport;
+import com.google.android.accessibility.utils.AccessibilityEventUtils;
 import com.google.android.accessibility.utils.AccessibilityNode;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.AccessibilityServiceCompatUtils;
@@ -212,22 +214,48 @@ public class FocusProcessorForLogicalNavigation {
   private static final long SETTLE_CHECK_MS = 16;
   private static final int SETTLE_CHECKS = 20;
 
-  /**
-   * How long a list must send no scroll event, and no auto scroll must happen, before a focused
-   * item that fills it counts as stopped. Android sends a moving list's scroll events at most every
-   * 100 ms.
-   */
-  private static final long LIST_QUIET_MS = 200;
+  // A focused item that fills its list doesn't seem to move while the list scrolls, so the list's
+  // scroll events tell whether it still moves. Android sends them at most every 100 ms while it
+  // does. The search waits while the list moves at speed, and starts once a scroll event shows it
+  // slowing down: a step less than half the one before. It waits at most MAX_MOVING_WAIT_MS from
+  // the scroll, NO_MOVE_WAIT_MS if the list sends no scroll event, and stops waiting when none has
+  // come for STOPPED_MS. The checks read nothing from the app.
+  private static final long MOVING_CHECK_MS = 30;
+  private static final long MAX_MOVING_WAIT_MS = 270;
+  private static final long NO_MOVE_WAIT_MS = 180;
+  private static final long STOPPED_MS = 150;
 
-  /** When the last scroll event of any window arrived, in {@link SystemClock#uptimeMillis()}. */
-  private static volatile long lastScrollEventUptime;
+  // The scroll events of any window, counted on the main thread: when the last arrived, how many
+  // have, how far the last two moved, and their vertical deltas added up.
+  private static long lastScrollEventUptime;
+  private static int scrollEventCount;
+  private static int lastScrollStep;
+  private static int previousScrollStep;
+  private static int scrollDeltaSumY;
 
   /** When the last auto scroll for a navigation started, in {@link SystemClock#uptimeMillis()}. */
   private long lastAutoScrollUptime;
 
-  /** Records that a scroll event arrived, so that the wait for a list to stop can end sooner. */
-  public static void onScrollEventReceived() {
+  /** {@link #scrollEventCount} and {@link #scrollDeltaSumY} when that scroll started. */
+  private int scrollStartEventCount;
+
+  private int scrollStartDeltaSumY;
+
+  /** Records a scroll event, which tells whether a list scrolled by navigation still moves. */
+  public static void onScrollEventReceived(AccessibilityEvent event) {
     lastScrollEventUptime = SystemClock.uptimeMillis();
+    scrollEventCount++;
+    int deltaX = AccessibilityEventUtils.getScrollDeltaX(event);
+    int deltaY = AccessibilityEventUtils.getScrollDeltaY(event);
+    int step = 0;
+    if (deltaY != DELTA_UNDEFINED && deltaY != 0) {
+      step = Math.abs(deltaY);
+      scrollDeltaSumY += deltaY;
+    } else if (deltaX != DELTA_UNDEFINED) {
+      step = Math.abs(deltaX);
+    }
+    previousScrollStep = lastScrollStep;
+    lastScrollStep = step;
   }
 
   // Counts navigation actions, so that a search waiting for a list to stop gives way to a newer one.
@@ -3716,6 +3744,12 @@ public class FocusProcessorForLogicalNavigation {
     if (pivotPresent) {
       pivotNow.getBoundsInScreen(pivotAfter);
       if (pivotAfter.equals(pivotBefore)) {
+        // A focused item that fills the list looks still while the list moves; its scroll events
+        // tell when the list slows down.
+        if (!callback.isJump && fillsList(pivotAfter, scrollable)) {
+          searchWhenFilledListSlows(callback, scrollable, eventId);
+          return;
+        }
         if (retries > 0) {
           earlyScrollCheckHandler.postDelayed(
               () -> checkScrollEarly(callback, scrollable, pivotBefore, eventId, retries - 1),
@@ -3750,6 +3784,33 @@ public class FocusProcessorForLogicalNavigation {
     scrollable.refresh();
     readListAgain(scrollable);
     onAutoScrolled(scrollable, eventId, deltaX, deltaY);
+  }
+
+  /**
+   * Continues the navigation once the list scrolled for {@code callback}, whose focused item fills
+   * it, has slowed down, rather than when its scroll events stop. If the list has sent no scroll
+   * event by then, leaves it to the scroll event or its timeout.
+   */
+  private void searchWhenFilledListSlows(
+      AutoScrollCallback callback, AccessibilityNodeInfoCompat scrollable, EventId eventId) {
+    if (scrollCallback != callback) {
+      return;
+    }
+    if (listStillMoving()) {
+      earlyScrollCheckHandler.postDelayed(
+          () -> searchWhenFilledListSlows(callback, scrollable, eventId), MOVING_CHECK_MS);
+      return;
+    }
+    int events = scrollEventCount - scrollStartEventCount;
+    if (events == 0) {
+      LogUtils.d(TAG, "The list sent no scroll event; waiting for it.");
+      return;
+    }
+    logListSlowed();
+    int deltaY = scrollDeltaSumY - scrollStartDeltaSumY;
+    scrollable.refresh();
+    readListAgain(scrollable);
+    onAutoScrolled(scrollable, eventId, /* scrollDeltaX= */ 0, deltaY != 0 ? deltaY : 1);
   }
 
   /**
@@ -4258,6 +4319,20 @@ public class FocusProcessorForLogicalNavigation {
             .setAutoScrollAttempt(sourceAction.autoScrollAttempt + 1)
             .build();
 
+    // A focused item that fills the list looks still while the list moves. Searching while it
+    // moves at speed finds nothing and reads the list each time, so wait until it slows down.
+    if (validAccessibilityFocus && settleChecksLeft > 0 && sourceAction.shouldScroll) {
+      Rect boundsNow = getBoundsAfterScroll(focusBeforeScroll);
+      if (previousRect.equals(boundsNow)
+          && fillsList(boundsNow, scrolledNode)
+          && listStillMoving()) {
+        LogUtils.d(TAG, "List still moving at speed; checking its scroll events again.");
+        searchWhenListSlows(
+            scrolledNode, focusBeforeScroll, sourceAction, eventId, settleChecksLeft - 1);
+        return;
+      }
+    }
+
     AccessibilityNodeInfoCompat nodeToFocus;
     if (validAccessibilityFocus) {
       // Try to find the next focusable node based on current focus.
@@ -4271,7 +4346,7 @@ public class FocusProcessorForLogicalNavigation {
         // that fills the list, such as a post taller than the screen, is cut to the list's bounds
         // and doesn't seem to move, so the list's scroll events decide instead.
         if ((!previousRect.equals(newRect)
-                || (fillsList(newRect, scrolledNode) && listMayStillMove()))
+                || (fillsList(newRect, scrolledNode) && listStillMoving()))
             && settleChecksLeft > 0
             && sourceAction.shouldScroll) {
           LogUtils.d(TAG, "List still moving; searching again on the next frame.");
@@ -4359,19 +4434,83 @@ public class FocusProcessorForLogicalNavigation {
         traversalStrategy, scrolledNode, searchDirection, nodeFilter);
   }
 
-  /** Returns whether a list whose focused item fills it may still be moving. */
-  private boolean listMayStillMove() {
-    return listMayStillMove(
-        SystemClock.uptimeMillis(), lastScrollEventUptime, lastAutoScrollUptime);
+  /** Returns whether the list of the last auto scroll still moves at speed. */
+  private boolean listStillMoving() {
+    return listStillMoving(
+        SystemClock.uptimeMillis(),
+        lastAutoScrollUptime,
+        scrollEventCount - scrollStartEventCount,
+        lastScrollEventUptime,
+        lastScrollStep,
+        previousScrollStep);
   }
 
   /**
-   * Returns whether a list counts as moving: the last scroll event of any window or the last auto
-   * scroll happened less than {@link #LIST_QUIET_MS} before {@code now}.
+   * Returns whether a list scrolled at {@code scrollStart} counts as still moving at speed at
+   * {@code now}, after {@code events} scroll events since the scroll, the last at {@code
+   * lastEvent}, which moved {@code lastStep} pixels after a step of {@code previousStep}.
    */
   @VisibleForTesting
-  static boolean listMayStillMove(long now, long lastScrollEvent, long lastAutoScroll) {
-    return now - Math.max(lastScrollEvent, lastAutoScroll) < LIST_QUIET_MS;
+  static boolean listStillMoving(
+      long now, long scrollStart, int events, long lastEvent, int lastStep, int previousStep) {
+    long sinceStart = now - scrollStart;
+    if (sinceStart >= MAX_MOVING_WAIT_MS) {
+      return false;
+    }
+    if (events <= 0) {
+      return sinceStart < NO_MOVE_WAIT_MS;
+    }
+    if (now - lastEvent >= STOPPED_MS) {
+      return false;
+    }
+    // Slowing down: the list is nearly where it stops.
+    return events < 2 || 2L * lastStep >= previousStep;
+  }
+
+  /**
+   * Searches again once the list, whose focused item fills it, has slowed down, checking its scroll
+   * events every {@link #MOVING_CHECK_MS} meanwhile. Gives up if the user navigates or focus moves
+   * elsewhere.
+   */
+  private void searchWhenListSlows(
+      @NonNull AccessibilityNodeInfoCompat scrolledNode,
+      @NonNull AccessibilityNodeInfoCompat focusBeforeScroll,
+      NavigationAction sourceAction,
+      EventId eventId,
+      int settleChecksLeft) {
+    int serial = navigationSerial;
+    earlyScrollCheckHandler.postDelayed(
+        () -> {
+          if (serial != navigationSerial) {
+            return;
+          }
+          AccessibilityNodeInfoCompat focus =
+              accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ false);
+          if (focus != null && !focus.equals(focusBeforeScroll)) {
+            return;
+          }
+          if (listStillMoving()) {
+            searchWhenListSlows(
+                scrolledNode, focusBeforeScroll, sourceAction, eventId, settleChecksLeft);
+            return;
+          }
+          logListSlowed();
+          scrolledNode.refresh();
+          readListAgain(scrolledNode);
+          handleViewAutoScrolledForDirectionalNavigationWithDefaultTarget(
+              scrolledNode, focusBeforeScroll, sourceAction, eventId, settleChecksLeft);
+        },
+        MOVING_CHECK_MS);
+  }
+
+  private void logListSlowed() {
+    LogUtils.d(
+        TAG,
+        "List slowed down %d ms after the scroll: %d scroll events, last steps %d and %d.",
+        SystemClock.uptimeMillis() - lastAutoScrollUptime,
+        scrollEventCount - scrollStartEventCount,
+        previousScrollStep,
+        lastScrollStep);
   }
 
   /** Returns whether {@code pivotBounds} cover all of {@code list} that is on screen. */
@@ -4578,8 +4717,10 @@ public class FocusProcessorForLogicalNavigation {
       this.sourceAction = sourceAction;
       this.pivot = pivot;
       this.assumeScrollSuccess = assumeScrollSuccess;
-      // Each callback is created as its scroll starts. See listMayStillMove().
+      // Each callback is created as its scroll starts. See listStillMoving().
       parent.lastAutoScrollUptime = SystemClock.uptimeMillis();
+      parent.scrollStartEventCount = scrollEventCount;
+      parent.scrollStartDeltaSumY = scrollDeltaSumY;
     }
 
     public void onAutoScrolled(
