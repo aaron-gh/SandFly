@@ -177,6 +177,23 @@ class JumpToNextRowTest {
     assertFalse(FocusProcessorForLogicalNavigation.trackerSlowed(0, 0, false))
   }
 
+  @Test
+  fun rowAtTheListsBottomEndsItGoingForward() {
+    val list = Rect(0, 200, 1080, 2520)
+    assertTrue(FocusProcessorForLogicalNavigation.endsListOnScreen(Rect(0, 1932, 1080, 2520), list, true))
+    assertFalse(FocusProcessorForLogicalNavigation.endsListOnScreen(Rect(0, 1932, 1080, 2400), list, true))
+    assertFalse(FocusProcessorForLogicalNavigation.endsListOnScreen(Rect(0, 1932, 1080, 2520), list, false))
+    assertTrue(FocusProcessorForLogicalNavigation.endsListOnScreen(Rect(0, 200, 1080, 900), list, false))
+  }
+
+  @Test
+  fun narrowItemDoesntEndTheList() {
+    val list = Rect(0, 200, 1080, 2520)
+    // An item of a grid may have another beside it.
+    assertFalse(FocusProcessorForLogicalNavigation.endsListOnScreen(Rect(0, 1932, 540, 2520), list, true))
+    assertFalse(FocusProcessorForLogicalNavigation.endsListOnScreen(Rect(), list, true))
+  }
+
   private fun node(parent: AccessibilityNodeInfoCompat? = null): AccessibilityNodeInfoCompat {
     val raw = AccessibilityNodeInfo.obtain()
     // Distinct sources keep the nodes unequal.
