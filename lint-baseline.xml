@@ -3,6 +3,83 @@
 
     <issue
         id="MissingTranslation"
+        message='"ai_provider_qwen" is not translated in "de" (German), "hi" (Hindi), "lo" (Lao), "pt" (Portuguese), "fil" (Filipino; Pilipino), "lt" (Lithuanian), "hr" (Croatian), "lv" (Latvian), "hu" (Hungarian), "hy" (Armenian), "uk" (Ukrainian), "id" (Indonesian), "ur" (Urdu), "mk" (Macedonian), "ml" (Malayalam), "mn" (Mongolian), "af" (Afrikaans), "in" (Indonesian), "mr" (Marathi), "uz" (Uzbek), "ms" (Malay), "el" (Greek), "en" (English), "is" (Icelandic), "it" (Italian), "am" (Amharic), "my" (Burmese), "es" (Spanish), "iw" (Hebrew), "zh" (Chinese), "et" (Estonian), "eu" (Basque), "ar" (Arabic), "as" (Assamese), "vi" (Vietnamese), "nb" (Norwegian Bokmål), "ja" (Japanese), "ne" (Nepali), "az" (Azerbaijani), "fa" (Persian), "zu" (Zulu), "ro" (Romanian), "nl" (Dutch), "no" (Norwegian), "be" (Belarusian), "fi" (Finnish), "ru" (Russian), "bg" (Bulgarian), "bn" (Bangla), "fr" (French), "bs" (Bosnian), "ka" (Georgian), "si" (Sinhala), "sk" (Slovak), "sl" (Slovenian), "ca" (Catalan), "sq" (Albanian), "sr" (Serbian), "kk" (Kazakh), "km" (Khmer), "kn" (Kannada), "or" (Odia), "sv" (Swedish), "ko" (Korean), "sw" (Swahili), "gl" (Galician), "ta" (Tamil), "gu" (Gujarati), "ky" (Kyrgyz), "cs" (Czech), "pa" (Punjabi), "te" (Telugu), "th" (Thai), "tl" (Tagalog), "pl" (Polish), "da" (Danish), "tr" (Turkish)'
+        errorLine1='    &lt;string name="ai_provider_qwen"&gt;Qwen&lt;/string&gt;'
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings_gemini_api_key.xml"
+            line="60"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="MissingTranslation"
+        message='"ai_provider_zhipu" is not translated in "de" (German), "hi" (Hindi), "lo" (Lao), "pt" (Portuguese), "fil" (Filipino; Pilipino), "lt" (Lithuanian), "hr" (Croatian), "lv" (Latvian), "hu" (Hungarian), "hy" (Armenian), "uk" (Ukrainian), "id" (Indonesian), "ur" (Urdu), "mk" (Macedonian), "ml" (Malayalam), "mn" (Mongolian), "af" (Afrikaans), "in" (Indonesian), "mr" (Marathi), "uz" (Uzbek), "ms" (Malay), "el" (Greek), "en" (English), "is" (Icelandic), "it" (Italian), "am" (Amharic), "my" (Burmese), "es" (Spanish), "iw" (Hebrew), "zh" (Chinese), "et" (Estonian), "eu" (Basque), "ar" (Arabic), "as" (Assamese), "vi" (Vietnamese), "nb" (Norwegian Bokmål), "ja" (Japanese), "ne" (Nepali), "az" (Azerbaijani), "fa" (Persian), "zu" (Zulu), "ro" (Romanian), "nl" (Dutch), "no" (Norwegian), "be" (Belarusian), "fi" (Finnish), "ru" (Russian), "bg" (Bulgarian), "bn" (Bangla), "fr" (French), "bs" (Bosnian), "ka" (Georgian), "si" (Sinhala), "sk" (Slovak), "sl" (Slovenian), "ca" (Catalan), "sq" (Albanian), "sr" (Serbian), "kk" (Kazakh), "km" (Khmer), "kn" (Kannada), "or" (Odia), "sv" (Swedish), "ko" (Korean), "sw" (Swahili), "gl" (Galician), "ta" (Tamil), "gu" (Gujarati), "ky" (Kyrgyz), "cs" (Czech), "pa" (Punjabi), "te" (Telugu), "th" (Thai), "tl" (Tagalog), "pl" (Polish), "da" (Danish), "tr" (Turkish)'
+        errorLine1='    &lt;string name="ai_provider_zhipu"&gt;Zhipu GLM&lt;/string&gt;'
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings_gemini_api_key.xml"
+            line="62"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="MissingTranslation"
+        message='"ai_provider_baichuan" is not translated in "de" (German), "hi" (Hindi), "lo" (Lao), "pt" (Portuguese), "fil" (Filipino; Pilipino), "lt" (Lithuanian), "hr" (Croatian), "lv" (Latvian), "hu" (Hungarian), "hy" (Armenian), "uk" (Ukrainian), "id" (Indonesian), "ur" (Urdu), "mk" (Macedonian), "ml" (Malayalam), "mn" (Mongolian), "af" (Afrikaans), "in" (Indonesian), "mr" (Marathi), "uz" (Uzbek), "ms" (Malay), "el" (Greek), "en" (English), "is" (Icelandic), "it" (Italian), "am" (Amharic), "my" (Burmese), "es" (Spanish), "iw" (Hebrew), "zh" (Chinese), "et" (Estonian), "eu" (Basque), "ar" (Arabic), "as" (Assamese), "vi" (Vietnamese), "nb" (Norwegian Bokmål), "ja" (Japanese), "ne" (Nepali), "az" (Azerbaijani), "fa" (Persian), "zu" (Zulu), "ro" (Romanian), "nl" (Dutch), "no" (Norwegian), "be" (Belarusian), "fi" (Finnish), "ru" (Russian), "bg" (Bulgarian), "bn" (Bangla), "fr" (French), "bs" (Bosnian), "ka" (Georgian), "si" (Sinhala), "sk" (Slovak), "sl" (Slovenian), "ca" (Catalan), "sq" (Albanian), "sr" (Serbian), "kk" (Kazakh), "km" (Khmer), "kn" (Kannada), "or" (Odia), "sv" (Swedish), "ko" (Korean), "sw" (Swahili), "gl" (Galician), "ta" (Tamil), "gu" (Gujarati), "ky" (Kyrgyz), "cs" (Czech), "pa" (Punjabi), "te" (Telugu), "th" (Thai), "tl" (Tagalog), "pl" (Polish), "da" (Danish), "tr" (Turkish)'
+        errorLine1='    &lt;string name="ai_provider_baichuan"&gt;Baichuan&lt;/string&gt;'
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings_gemini_api_key.xml"
+            line="64"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="MissingTranslation"
+        message='"ai_provider_deepseek" is not translated in "de" (German), "hi" (Hindi), "lo" (Lao), "pt" (Portuguese), "fil" (Filipino; Pilipino), "lt" (Lithuanian), "hr" (Croatian), "lv" (Latvian), "hu" (Hungarian), "hy" (Armenian), "uk" (Ukrainian), "id" (Indonesian), "ur" (Urdu), "mk" (Macedonian), "ml" (Malayalam), "mn" (Mongolian), "af" (Afrikaans), "in" (Indonesian), "mr" (Marathi), "uz" (Uzbek), "ms" (Malay), "el" (Greek), "en" (English), "is" (Icelandic), "it" (Italian), "am" (Amharic), "my" (Burmese), "es" (Spanish), "iw" (Hebrew), "zh" (Chinese), "et" (Estonian), "eu" (Basque), "ar" (Arabic), "as" (Assamese), "vi" (Vietnamese), "nb" (Norwegian Bokmål), "ja" (Japanese), "ne" (Nepali), "az" (Azerbaijani), "fa" (Persian), "zu" (Zulu), "ro" (Romanian), "nl" (Dutch), "no" (Norwegian), "be" (Belarusian), "fi" (Finnish), "ru" (Russian), "bg" (Bulgarian), "bn" (Bangla), "fr" (French), "bs" (Bosnian), "ka" (Georgian), "si" (Sinhala), "sk" (Slovak), "sl" (Slovenian), "ca" (Catalan), "sq" (Albanian), "sr" (Serbian), "kk" (Kazakh), "km" (Khmer), "kn" (Kannada), "or" (Odia), "sv" (Swedish), "ko" (Korean), "sw" (Swahili), "gl" (Galician), "ta" (Tamil), "gu" (Gujarati), "ky" (Kyrgyz), "cs" (Czech), "pa" (Punjabi), "te" (Telugu), "th" (Thai), "tl" (Tagalog), "pl" (Polish), "da" (Danish), "tr" (Turkish)'
+        errorLine1='    &lt;string name="ai_provider_deepseek"&gt;DeepSeek&lt;/string&gt;'
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings_gemini_api_key.xml"
+            line="66"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="MissingTranslation"
+        message='"ai_provider_kimi" is not translated in "de" (German), "hi" (Hindi), "lo" (Lao), "pt" (Portuguese), "fil" (Filipino; Pilipino), "lt" (Lithuanian), "hr" (Croatian), "lv" (Latvian), "hu" (Hungarian), "hy" (Armenian), "uk" (Ukrainian), "id" (Indonesian), "ur" (Urdu), "mk" (Macedonian), "ml" (Malayalam), "mn" (Mongolian), "af" (Afrikaans), "in" (Indonesian), "mr" (Marathi), "uz" (Uzbek), "ms" (Malay), "el" (Greek), "en" (English), "is" (Icelandic), "it" (Italian), "am" (Amharic), "my" (Burmese), "es" (Spanish), "iw" (Hebrew), "zh" (Chinese), "et" (Estonian), "eu" (Basque), "ar" (Arabic), "as" (Assamese), "vi" (Vietnamese), "nb" (Norwegian Bokmål), "ja" (Japanese), "ne" (Nepali), "az" (Azerbaijani), "fa" (Persian), "zu" (Zulu), "ro" (Romanian), "nl" (Dutch), "no" (Norwegian), "be" (Belarusian), "fi" (Finnish), "ru" (Russian), "bg" (Bulgarian), "bn" (Bangla), "fr" (French), "bs" (Bosnian), "ka" (Georgian), "si" (Sinhala), "sk" (Slovak), "sl" (Slovenian), "ca" (Catalan), "sq" (Albanian), "sr" (Serbian), "kk" (Kazakh), "km" (Khmer), "kn" (Kannada), "or" (Odia), "sv" (Swedish), "ko" (Korean), "sw" (Swahili), "gl" (Galician), "ta" (Tamil), "gu" (Gujarati), "ky" (Kyrgyz), "cs" (Czech), "pa" (Punjabi), "te" (Telugu), "th" (Thai), "tl" (Tagalog), "pl" (Polish), "da" (Danish), "tr" (Turkish)'
+        errorLine1='    &lt;string name="ai_provider_kimi"&gt;Kimi&lt;/string&gt;'
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings_gemini_api_key.xml"
+            line="68"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="MissingTranslation"
+        message='"ai_provider_hunyuan" is not translated in "de" (German), "hi" (Hindi), "lo" (Lao), "pt" (Portuguese), "fil" (Filipino; Pilipino), "lt" (Lithuanian), "hr" (Croatian), "lv" (Latvian), "hu" (Hungarian), "hy" (Armenian), "uk" (Ukrainian), "id" (Indonesian), "ur" (Urdu), "mk" (Macedonian), "ml" (Malayalam), "mn" (Mongolian), "af" (Afrikaans), "in" (Indonesian), "mr" (Marathi), "uz" (Uzbek), "ms" (Malay), "el" (Greek), "en" (English), "is" (Icelandic), "it" (Italian), "am" (Amharic), "my" (Burmese), "es" (Spanish), "iw" (Hebrew), "zh" (Chinese), "et" (Estonian), "eu" (Basque), "ar" (Arabic), "as" (Assamese), "vi" (Vietnamese), "nb" (Norwegian Bokmål), "ja" (Japanese), "ne" (Nepali), "az" (Azerbaijani), "fa" (Persian), "zu" (Zulu), "ro" (Romanian), "nl" (Dutch), "no" (Norwegian), "be" (Belarusian), "fi" (Finnish), "ru" (Russian), "bg" (Bulgarian), "bn" (Bangla), "fr" (French), "bs" (Bosnian), "ka" (Georgian), "si" (Sinhala), "sk" (Slovak), "sl" (Slovenian), "ca" (Catalan), "sq" (Albanian), "sr" (Serbian), "kk" (Kazakh), "km" (Khmer), "kn" (Kannada), "or" (Odia), "sv" (Swedish), "ko" (Korean), "sw" (Swahili), "gl" (Galician), "ta" (Tamil), "gu" (Gujarati), "ky" (Kyrgyz), "cs" (Czech), "pa" (Punjabi), "te" (Telugu), "th" (Thai), "tl" (Tagalog), "pl" (Polish), "da" (Danish), "tr" (Turkish)'
+        errorLine1='    &lt;string name="ai_provider_hunyuan"&gt;Hunyuan&lt;/string&gt;'
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings_gemini_api_key.xml"
+            line="70"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="MissingTranslation"
+        message='"ai_provider_siliconflow" is not translated in "de" (German), "hi" (Hindi), "lo" (Lao), "pt" (Portuguese), "fil" (Filipino; Pilipino), "lt" (Lithuanian), "hr" (Croatian), "lv" (Latvian), "hu" (Hungarian), "hy" (Armenian), "uk" (Ukrainian), "id" (Indonesian), "ur" (Urdu), "mk" (Macedonian), "ml" (Malayalam), "mn" (Mongolian), "af" (Afrikaans), "in" (Indonesian), "mr" (Marathi), "uz" (Uzbek), "ms" (Malay), "el" (Greek), "en" (English), "is" (Icelandic), "it" (Italian), "am" (Amharic), "my" (Burmese), "es" (Spanish), "iw" (Hebrew), "zh" (Chinese), "et" (Estonian), "eu" (Basque), "ar" (Arabic), "as" (Assamese), "vi" (Vietnamese), "nb" (Norwegian Bokmål), "ja" (Japanese), "ne" (Nepali), "az" (Azerbaijani), "fa" (Persian), "zu" (Zulu), "ro" (Romanian), "nl" (Dutch), "no" (Norwegian), "be" (Belarusian), "fi" (Finnish), "ru" (Russian), "bg" (Bulgarian), "bn" (Bangla), "fr" (French), "bs" (Bosnian), "ka" (Georgian), "si" (Sinhala), "sk" (Slovak), "sl" (Slovenian), "ca" (Catalan), "sq" (Albanian), "sr" (Serbian), "kk" (Kazakh), "km" (Khmer), "kn" (Kannada), "or" (Odia), "sv" (Swedish), "ko" (Korean), "sw" (Swahili), "gl" (Galician), "ta" (Tamil), "gu" (Gujarati), "ky" (Kyrgyz), "cs" (Czech), "pa" (Punjabi), "te" (Telugu), "th" (Thai), "tl" (Tagalog), "pl" (Polish), "da" (Danish), "tr" (Turkish)'
+        errorLine1='    &lt;string name="ai_provider_siliconflow"&gt;SiliconFlow&lt;/string&gt;'
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings_gemini_api_key.xml"
+            line="72"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="MissingTranslation"
         message='"shortcut_move_to_item_below" is not translated in "de" (German), "hi" (Hindi), "lo" (Lao), "pt" (Portuguese), "fil" (Filipino; Pilipino), "lt" (Lithuanian), "hr" (Croatian), "lv" (Latvian), "hu" (Hungarian), "hy" (Armenian), "uk" (Ukrainian), "id" (Indonesian), "ur" (Urdu), "mk" (Macedonian), "ml" (Malayalam), "mn" (Mongolian), "af" (Afrikaans), "in" (Indonesian), "mr" (Marathi), "uz" (Uzbek), "ms" (Malay), "el" (Greek), "en" (English), "is" (Icelandic), "it" (Italian), "am" (Amharic), "my" (Burmese), "es" (Spanish), "iw" (Hebrew), "zh" (Chinese), "et" (Estonian), "eu" (Basque), "ar" (Arabic), "as" (Assamese), "vi" (Vietnamese), "nb" (Norwegian Bokmål), "ja" (Japanese), "ne" (Nepali), "az" (Azerbaijani), "fa" (Persian), "zu" (Zulu), "ro" (Romanian), "nl" (Dutch), "no" (Norwegian), "be" (Belarusian), "fi" (Finnish), "ru" (Russian), "bg" (Bulgarian), "bn" (Bangla), "fr" (French), "bs" (Bosnian), "ka" (Georgian), "si" (Sinhala), "sk" (Slovak), "sl" (Slovenian), "ca" (Catalan), "sq" (Albanian), "sr" (Serbian), "kk" (Kazakh), "km" (Khmer), "kn" (Kannada), "or" (Odia), "sv" (Swedish), "ko" (Korean), "sw" (Swahili), "gl" (Galician), "ta" (Tamil), "gu" (Gujarati), "ky" (Kyrgyz), "cs" (Czech), "pa" (Punjabi), "te" (Telugu), "th" (Thai), "tl" (Tagalog), "pl" (Polish), "da" (Danish), "tr" (Turkish)'
         errorLine1='    &lt;string name="shortcut_move_to_item_below"&gt;Move to item below&lt;/string&gt;'
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">

@@ -66,6 +66,44 @@ enum class AiProvider(
     "https://openrouter.ai/settings/keys",
   ),
   OLLAMA("ollama", R.string.ai_provider_ollama, "https://ollama.com/v1", "https://ollama.com/settings/keys"),
+  // Services that can be reached from mainland China without a VPN (#62).
+  QWEN(
+    "qwen",
+    R.string.ai_provider_qwen,
+    "https://dashscope.aliyuncs.com/compatible-mode/v1",
+    "https://bailian.console.aliyun.com/?tab=model#/api-key",
+  ),
+  ZHIPU(
+    "zhipu",
+    R.string.ai_provider_zhipu,
+    "https://open.bigmodel.cn/api/paas/v4",
+    "https://open.bigmodel.cn/usercenter/apikeys",
+  ),
+  BAICHUAN(
+    "baichuan",
+    R.string.ai_provider_baichuan,
+    "https://api.baichuan-ai.com/v1",
+    "https://platform.baichuan-ai.com/console/apikey",
+  ),
+  DEEPSEEK(
+    "deepseek",
+    R.string.ai_provider_deepseek,
+    "https://api.deepseek.com/v1",
+    "https://platform.deepseek.com/api_keys",
+  ),
+  KIMI("kimi", R.string.ai_provider_kimi, "https://api.moonshot.cn/v1", "https://platform.moonshot.cn/console/api-keys"),
+  HUNYUAN(
+    "hunyuan",
+    R.string.ai_provider_hunyuan,
+    "https://api.hunyuan.cloud.tencent.com/v1",
+    "https://console.cloud.tencent.com/hunyuan/api-key",
+  ),
+  SILICONFLOW(
+    "siliconflow",
+    R.string.ai_provider_siliconflow,
+    "https://api.siliconflow.cn/v1",
+    "https://cloud.siliconflow.cn/account/ak",
+  ),
   OTHER("other", R.string.ai_provider_other, "", ""),
   /** No AI service: images and screens are described on the phone, or only their text is read. */
   NONE("none", R.string.ai_provider_none, "", "");

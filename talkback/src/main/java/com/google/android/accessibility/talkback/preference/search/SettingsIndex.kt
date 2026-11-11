@@ -37,6 +37,7 @@ import androidx.preference.TwoStatePreference
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.TalkBackService
 import com.google.android.accessibility.talkback.actor.ImageCaptioner
+import com.google.android.accessibility.talkback.actor.gemini.AiProviderPreferences
 import com.google.android.accessibility.talkback.commands.CommandFragment
 import com.google.android.accessibility.talkback.commands.Commands
 import com.google.android.accessibility.talkback.commands.CommandMenuFragment
@@ -210,6 +211,10 @@ object SettingsIndex {
           continue
         }
       filter.filterPreferences(preferences)
+      // Automatic descriptions adds a row for each AI service's settings in code.
+      preferences.findPreference<PreferenceGroup>(AiProviderPreferences.KEY_CATEGORY)?.let {
+        AiProviderPreferences.addRows(it, context)
+      }
       // An option of items in a list, such as AI actions to include, shows only while one of its
       // items is in the list. Watches show the items' switches and every option.
       fun hiddenOption(preference: Preference): Boolean {
