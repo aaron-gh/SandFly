@@ -556,6 +556,14 @@ To scrub, move two fingers quickly one way across the screen and back, each stro
 
 You can assign other actions to all of these in gesture settings, under **Edges** and **2 fingers**. Under **Edges**, **Edge width** sets how far from the edge a touch can start, from 0.5 to 2 cm (0.5 cm by default), **Distance to first click** sets how far you slide in from the edge, or along it, to the first click, from 0.5 to 2 cm (1 cm by default), and **Distance from first to second click** how far you slide on to the second, from 1 to 5 cm (4 cm by default).
 
+To hear what lifting would do, turn on **Edges** > **Speak command at each click**. At each click of a slide in from an edge, SandFly speaks the name of the command that lifting there runs, such as "Home" or "Overview". The next click interrupts it. A place without a command says nothing. Slides along an edge, which have no clicks, say nothing. This setting is off by default.
+
+### Corner gestures
+
+Under **Corners** in gesture settings, each corner of the screen has five one-finger gestures: **Tap**, **Double-tap**, **Triple-tap**, **Double-tap and hold** and **Triple-tap and hold**, such as **Tap top left corner**. They do nothing by default. A corner is a square as wide as **Edges** > **Edge width**, 0.5 cm by default.
+
+A corner with no gesture assigned works as before. In a corner with a gesture assigned, a tap that SandFly doesn't use is an ordinary tap or double tap: a tap still waits for a second tap and then explores, and a double tap still activates. A double tap waits for a third tap only while the corner's **Triple-tap** or **Triple-tap and hold** has a command. A touch that moves, adds a finger or rests without a hold gesture is handed back as an ordinary touch, so swipes and edge gestures from the corner still work; touch exploration that starts with a finger resting in such a corner starts about 0.1 seconds later. Corner gestures don't start on the keyboard, so the keys in the corners type as usual. They require Android 13 or later and **Handle gestures in SandFly** turned on, and aren't on watches.
+
 ### Pinch and spread
 
 You can assign actions to pinching and spreading with two, three or four fingers in gesture settings. They do nothing by default. A pinch or spread counts once the fingers have moved about half a centimeter toward or away from their middle, and by a third of the distance, without moving together or turning much. While a two-finger pinch or spread has an action, a two-finger movement that pinches more than it moves waits before it reaches the app, so apps that zoom with two fingers may not zoom until you set both to nothing. A scrub set to nothing is left to ordinary two-finger movements. While a scrub is still possible, a sideways scroll with two fingers waits for up to about half a second before it starts. Pinches and spreads require Android 13 or later and **Handle gestures in SandFly** turned on, and aren't on watches.

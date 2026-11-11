@@ -120,6 +120,34 @@ object ScriptInput {
       "edgeSwipeRightAlongTop" to GestureManifold.GESTURE_EDGE_SWIPE_RIGHT_ALONG_TOP,
       "edgeSwipeLeftAlongBottom" to GestureManifold.GESTURE_EDGE_SWIPE_LEFT_ALONG_BOTTOM,
       "edgeSwipeRightAlongBottom" to GestureManifold.GESTURE_EDGE_SWIPE_RIGHT_ALONG_BOTTOM,
+      "cornerTapTopLeft" to GestureManifold.GESTURE_CORNER_TOP_LEFT_TAP,
+      "cornerDoubleTapTopLeft" to GestureManifold.GESTURE_CORNER_TOP_LEFT_DOUBLE_TAP,
+      "cornerTripleTapTopLeft" to GestureManifold.GESTURE_CORNER_TOP_LEFT_TRIPLE_TAP,
+      "cornerDoubleTapAndHoldTopLeft" to
+        GestureManifold.GESTURE_CORNER_TOP_LEFT_DOUBLE_TAP_AND_HOLD,
+      "cornerTripleTapAndHoldTopLeft" to
+        GestureManifold.GESTURE_CORNER_TOP_LEFT_TRIPLE_TAP_AND_HOLD,
+      "cornerTapTopRight" to GestureManifold.GESTURE_CORNER_TOP_RIGHT_TAP,
+      "cornerDoubleTapTopRight" to GestureManifold.GESTURE_CORNER_TOP_RIGHT_DOUBLE_TAP,
+      "cornerTripleTapTopRight" to GestureManifold.GESTURE_CORNER_TOP_RIGHT_TRIPLE_TAP,
+      "cornerDoubleTapAndHoldTopRight" to
+        GestureManifold.GESTURE_CORNER_TOP_RIGHT_DOUBLE_TAP_AND_HOLD,
+      "cornerTripleTapAndHoldTopRight" to
+        GestureManifold.GESTURE_CORNER_TOP_RIGHT_TRIPLE_TAP_AND_HOLD,
+      "cornerTapBottomLeft" to GestureManifold.GESTURE_CORNER_BOTTOM_LEFT_TAP,
+      "cornerDoubleTapBottomLeft" to GestureManifold.GESTURE_CORNER_BOTTOM_LEFT_DOUBLE_TAP,
+      "cornerTripleTapBottomLeft" to GestureManifold.GESTURE_CORNER_BOTTOM_LEFT_TRIPLE_TAP,
+      "cornerDoubleTapAndHoldBottomLeft" to
+        GestureManifold.GESTURE_CORNER_BOTTOM_LEFT_DOUBLE_TAP_AND_HOLD,
+      "cornerTripleTapAndHoldBottomLeft" to
+        GestureManifold.GESTURE_CORNER_BOTTOM_LEFT_TRIPLE_TAP_AND_HOLD,
+      "cornerTapBottomRight" to GestureManifold.GESTURE_CORNER_BOTTOM_RIGHT_TAP,
+      "cornerDoubleTapBottomRight" to GestureManifold.GESTURE_CORNER_BOTTOM_RIGHT_DOUBLE_TAP,
+      "cornerTripleTapBottomRight" to GestureManifold.GESTURE_CORNER_BOTTOM_RIGHT_TRIPLE_TAP,
+      "cornerDoubleTapAndHoldBottomRight" to
+        GestureManifold.GESTURE_CORNER_BOTTOM_RIGHT_DOUBLE_TAP_AND_HOLD,
+      "cornerTripleTapAndHoldBottomRight" to
+        GestureManifold.GESTURE_CORNER_BOTTOM_RIGHT_TRIPLE_TAP_AND_HOLD,
       "twoFingerPinch" to GestureManifold.GESTURE_2_FINGER_PINCH,
       "twoFingerSpread" to GestureManifold.GESTURE_2_FINGER_SPREAD,
       "threeFingerPinch" to GestureManifold.GESTURE_3_FINGER_PINCH,

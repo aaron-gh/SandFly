@@ -23,6 +23,7 @@ import android.accessibilityservice.AccessibilityService.GESTURE_SWIPE_UP
 import android.accessibilityservice.TouchInteractionController
 import android.accessibilityservice.TouchInteractionController.STATE_DELEGATING
 import android.accessibilityservice.TouchInteractionController.STATE_DRAGGING
+import android.accessibilityservice.TouchInteractionController.STATE_TOUCH_EXPLORING
 import android.accessibilityservice.TouchInteractionController.STATE_TOUCH_INTERACTING
 import android.hardware.display.DisplayManager
 import android.graphics.Rect
@@ -52,6 +53,10 @@ import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_3
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_4_FINGER_SINGLE_TAP_BOTTOM
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_4_FINGER_SINGLE_TAP_TOP
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_4_FINGER_PINCH
+import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_CORNER_BOTTOM_RIGHT_TRIPLE_TAP
+import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_CORNER_TOP_LEFT_DOUBLE_TAP
+import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_CORNER_TOP_LEFT_TAP
+import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_CORNER_TOP_RIGHT_DOUBLE_TAP_AND_HOLD
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_LONG_SWIPE_DOWN_FROM_TOP_RIGHT
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_LONG_SWIPE_UP_FROM_BOTTOM
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_LONG_SWIPE_RIGHT_FROM_LEFT_BOTTOM
@@ -811,5 +816,87 @@ class TrackedGestureTest {
     assign(R.string.shortcut_value_home, R.string.pref_shortcut_2finger_spread_key)
     fingersMove(2, 70f, 75f, turnDegrees = 90f)
     assertEquals(false, service.gestures.contains(GESTURE_2_FINGER_SPREAD))
+  }
+
+  /**
+   * One finger taps at ([x], [y]), landing at each time in [downMs] and lifting 50 ms later, and
+   * the last tap lifts [lastUpMs] after landing.
+   */
+  private fun tapsAt(x: Float, y: Float, vararg downMs: Long, lastUpMs: Long = 50) {
+    stateChangeAt(STATE_TOUCH_INTERACTING, 0)
+    downMs.forEachIndexed { i, time ->
+      touchAt(ACTION_DOWN, time, x, y)
+      val upMs = if (i == downMs.lastIndex) lastUpMs else 50L
+      touchAt(ACTION_UP, time + upMs, x, y)
+    }
+    runUntil(downMs.last() + lastUpMs + 1000)
+  }
+
+  @Test
+  fun tapInACornerIsItsGestureWhenAssigned() {
+    assign(R.string.shortcut_value_home, R.string.pref_shortcut_corner_top_left_tap_key)
+    tapsAt(10f, 10f, 0)
+    assertEquals(listOf(GESTURE_CORNER_TOP_LEFT_TAP), service.gestures)
+    assertEquals(false, requestedState(STATE_TOUCH_EXPLORING))
+  }
+
+  @Test
+  fun doubleTapInACornerIsItsGestureWhenAssigned() {
+    assign(R.string.shortcut_value_home, R.string.pref_shortcut_corner_top_left_double_tap_key)
+    tapsAt(10f, 10f, 0, 150)
+    assertEquals(listOf(GESTURE_CORNER_TOP_LEFT_DOUBLE_TAP), service.gestures)
+  }
+
+  @Test
+  fun tripleTapInACornerIsItsGestureWhenAssigned() {
+    assign(R.string.shortcut_value_home, R.string.pref_shortcut_corner_bottom_right_triple_tap_key)
+    tapsAt(310f, 460f, 0, 150, 300)
+    assertEquals(listOf(GESTURE_CORNER_BOTTOM_RIGHT_TRIPLE_TAP), service.gestures)
+  }
+
+  @Test
+  fun doubleTapAndHoldInACornerIsItsGestureWhenAssigned() {
+    assign(
+      R.string.shortcut_value_home,
+      R.string.pref_shortcut_corner_top_right_double_tap_hold_key,
+    )
+    tapsAt(310f, 10f, 0, 150, lastUpMs = 900)
+    assertEquals(listOf(GESTURE_CORNER_TOP_RIGHT_DOUBLE_TAP_AND_HOLD), service.gestures)
+  }
+
+  @Test
+  fun doubleTapInACornerWithOnlyATapGestureIsADoubleTap() {
+    assign(R.string.shortcut_value_home, R.string.pref_shortcut_corner_top_left_tap_key)
+    tapsAt(10f, 10f, 0, 150)
+    assertEquals(listOf(AccessibilityService.GESTURE_DOUBLE_TAP), service.gestures)
+  }
+
+  @Test
+  fun doubleTapInACornerWithOnlyATripleTapGestureIsADoubleTap() {
+    assign(R.string.shortcut_value_home, R.string.pref_shortcut_corner_top_left_triple_tap_key)
+    tapsAt(10f, 10f, 0, 150)
+    assertEquals(listOf(AccessibilityService.GESTURE_DOUBLE_TAP), service.gestures)
+  }
+
+  @Test
+  fun tapInACornerWithOnlyADoubleTapGestureIsExplored() {
+    assign(R.string.shortcut_value_home, R.string.pref_shortcut_corner_top_left_double_tap_key)
+    tapsAt(10f, 10f, 0)
+    assertEquals(listOf<Int>(), service.gestures)
+    assertEquals(true, requestedState(STATE_TOUCH_EXPLORING))
+  }
+
+  @Test
+  fun tapsInAnUnassignedCornerAreOrdinary() {
+    assign(R.string.shortcut_value_home, R.string.pref_shortcut_corner_top_left_tap_key)
+    tapsAt(310f, 460f, 0, 150)
+    assertEquals(listOf(AccessibilityService.GESTURE_DOUBLE_TAP), service.gestures)
+  }
+
+  @Test
+  fun swipeFromACornerWithATapGestureIsAnEdgeGesture() {
+    assign(R.string.shortcut_value_home, R.string.pref_shortcut_corner_top_left_tap_key)
+    slide(20f, 5f, 90f)
+    assertEquals(listOf(GESTURE_EDGE_SWIPE_DOWN_FROM_TOP_LEFT), service.gestures)
   }
 }

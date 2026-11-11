@@ -653,6 +653,27 @@
     <string name="pref_shortcut_edge_along_bottom_left_key" translatable="false">pref_shortcut_edge_along_bottom_left</string>
     <string name="pref_shortcut_edge_along_bottom_right_key" translatable="false">pref_shortcut_edge_along_bottom_right</string>
     <string name="pref_category_edge_shortcuts_key" translatable="false">pref_category_edge_shortcuts</string>
+    <string name="pref_shortcut_corner_top_left_tap_key" translatable="false">pref_shortcut_corner_top_left_tap</string>
+    <string name="pref_shortcut_corner_top_left_double_tap_key" translatable="false">pref_shortcut_corner_top_left_double_tap</string>
+    <string name="pref_shortcut_corner_top_left_triple_tap_key" translatable="false">pref_shortcut_corner_top_left_triple_tap</string>
+    <string name="pref_shortcut_corner_top_left_double_tap_hold_key" translatable="false">pref_shortcut_corner_top_left_double_tap_hold</string>
+    <string name="pref_shortcut_corner_top_left_triple_tap_hold_key" translatable="false">pref_shortcut_corner_top_left_triple_tap_hold</string>
+    <string name="pref_shortcut_corner_top_right_tap_key" translatable="false">pref_shortcut_corner_top_right_tap</string>
+    <string name="pref_shortcut_corner_top_right_double_tap_key" translatable="false">pref_shortcut_corner_top_right_double_tap</string>
+    <string name="pref_shortcut_corner_top_right_triple_tap_key" translatable="false">pref_shortcut_corner_top_right_triple_tap</string>
+    <string name="pref_shortcut_corner_top_right_double_tap_hold_key" translatable="false">pref_shortcut_corner_top_right_double_tap_hold</string>
+    <string name="pref_shortcut_corner_top_right_triple_tap_hold_key" translatable="false">pref_shortcut_corner_top_right_triple_tap_hold</string>
+    <string name="pref_shortcut_corner_bottom_left_tap_key" translatable="false">pref_shortcut_corner_bottom_left_tap</string>
+    <string name="pref_shortcut_corner_bottom_left_double_tap_key" translatable="false">pref_shortcut_corner_bottom_left_double_tap</string>
+    <string name="pref_shortcut_corner_bottom_left_triple_tap_key" translatable="false">pref_shortcut_corner_bottom_left_triple_tap</string>
+    <string name="pref_shortcut_corner_bottom_left_double_tap_hold_key" translatable="false">pref_shortcut_corner_bottom_left_double_tap_hold</string>
+    <string name="pref_shortcut_corner_bottom_left_triple_tap_hold_key" translatable="false">pref_shortcut_corner_bottom_left_triple_tap_hold</string>
+    <string name="pref_shortcut_corner_bottom_right_tap_key" translatable="false">pref_shortcut_corner_bottom_right_tap</string>
+    <string name="pref_shortcut_corner_bottom_right_double_tap_key" translatable="false">pref_shortcut_corner_bottom_right_double_tap</string>
+    <string name="pref_shortcut_corner_bottom_right_triple_tap_key" translatable="false">pref_shortcut_corner_bottom_right_triple_tap</string>
+    <string name="pref_shortcut_corner_bottom_right_double_tap_hold_key" translatable="false">pref_shortcut_corner_bottom_right_double_tap_hold</string>
+    <string name="pref_shortcut_corner_bottom_right_triple_tap_hold_key" translatable="false">pref_shortcut_corner_bottom_right_triple_tap_hold</string>
+    <string name="pref_category_corner_shortcuts_key" translatable="false">pref_category_corner_shortcuts</string>
     <string name="pref_shortcut_2finger_rotate_counterclockwise_key" translatable="false">pref_shortcut_two_finger_rotate_counterclockwise</string>
 
     <!-- Fingerprint gesture shortcut keys -->
@@ -969,6 +990,26 @@
       <item>@string/pref_shortcut_edge_along_top_right_key</item>
       <item>@string/pref_shortcut_edge_along_bottom_left_key</item>
       <item>@string/pref_shortcut_edge_along_bottom_right_key</item>
+      <item>@string/pref_shortcut_corner_top_left_tap_key</item>
+      <item>@string/pref_shortcut_corner_top_left_double_tap_key</item>
+      <item>@string/pref_shortcut_corner_top_left_triple_tap_key</item>
+      <item>@string/pref_shortcut_corner_top_left_double_tap_hold_key</item>
+      <item>@string/pref_shortcut_corner_top_left_triple_tap_hold_key</item>
+      <item>@string/pref_shortcut_corner_top_right_tap_key</item>
+      <item>@string/pref_shortcut_corner_top_right_double_tap_key</item>
+      <item>@string/pref_shortcut_corner_top_right_triple_tap_key</item>
+      <item>@string/pref_shortcut_corner_top_right_double_tap_hold_key</item>
+      <item>@string/pref_shortcut_corner_top_right_triple_tap_hold_key</item>
+      <item>@string/pref_shortcut_corner_bottom_left_tap_key</item>
+      <item>@string/pref_shortcut_corner_bottom_left_double_tap_key</item>
+      <item>@string/pref_shortcut_corner_bottom_left_triple_tap_key</item>
+      <item>@string/pref_shortcut_corner_bottom_left_double_tap_hold_key</item>
+      <item>@string/pref_shortcut_corner_bottom_left_triple_tap_hold_key</item>
+      <item>@string/pref_shortcut_corner_bottom_right_tap_key</item>
+      <item>@string/pref_shortcut_corner_bottom_right_double_tap_key</item>
+      <item>@string/pref_shortcut_corner_bottom_right_triple_tap_key</item>
+      <item>@string/pref_shortcut_corner_bottom_right_double_tap_hold_key</item>
+      <item>@string/pref_shortcut_corner_bottom_right_triple_tap_hold_key</item>
 
       <!-- Fingerprint gestures-->
       <item>@string/pref_shortcut_fingerprint_up_key</item>
@@ -1326,6 +1367,9 @@
     <string name="pref_edge_scroll_top_key" translatable="false">pref_edge_scroll_top</string>
     <string name="pref_edge_scroll_bottom_key" translatable="false">pref_edge_scroll_bottom</string>
     <bool name="pref_edge_scroll_default">false</bool>
+    <!-- Whether an edge gesture speaks the command that lifting would run at each click. -->
+    <string name="pref_edge_speak_commands_key" translatable="false">pref_edge_speak_commands</string>
+    <bool name="pref_edge_speak_commands_default">false</bool>
     <!-- The screens of the menus along the left and right edges. -->
     <string name="pref_screen_edge_menu_left_key" translatable="false">pref_screen_edge_menu_left</string>
     <string name="pref_screen_edge_menu_right_key" translatable="false">pref_screen_edge_menu_right</string>
@@ -2257,6 +2301,26 @@
     <string name="pref_shortcut_edge_along_top_right_default">@string/shortcut_value_unassigned</string>
     <string name="pref_shortcut_edge_along_bottom_left_default">@string/shortcut_value_unassigned</string>
     <string name="pref_shortcut_edge_along_bottom_right_default">@string/shortcut_value_unassigned</string>
+    <string name="pref_shortcut_corner_top_left_tap_default">@string/shortcut_value_unassigned</string>
+    <string name="pref_shortcut_corner_top_left_double_tap_default">@string/shortcut_value_unassigned</string>
+    <string name="pref_shortcut_corner_top_left_triple_tap_default">@string/shortcut_value_unassigned</string>
+    <string name="pref_shortcut_corner_top_left_double_tap_hold_default">@string/shortcut_value_unassigned</string>
+    <string name="pref_shortcut_corner_top_left_triple_tap_hold_default">@string/shortcut_value_unassigned</string>
+    <string name="pref_shortcut_corner_top_right_tap_default">@string/shortcut_value_unassigned</string>
+    <string name="pref_shortcut_corner_top_right_double_tap_default">@string/shortcut_value_unassigned</string>
+    <string name="pref_shortcut_corner_top_right_triple_tap_default">@string/shortcut_value_unassigned</string>
+    <string name="pref_shortcut_corner_top_right_double_tap_hold_default">@string/shortcut_value_unassigned</string>
+    <string name="pref_shortcut_corner_top_right_triple_tap_hold_default">@string/shortcut_value_unassigned</string>
+    <string name="pref_shortcut_corner_bottom_left_tap_default">@string/shortcut_value_unassigned</string>
+    <string name="pref_shortcut_corner_bottom_left_double_tap_default">@string/shortcut_value_unassigned</string>
+    <string name="pref_shortcut_corner_bottom_left_triple_tap_default">@string/shortcut_value_unassigned</string>
+    <string name="pref_shortcut_corner_bottom_left_double_tap_hold_default">@string/shortcut_value_unassigned</string>
+    <string name="pref_shortcut_corner_bottom_left_triple_tap_hold_default">@string/shortcut_value_unassigned</string>
+    <string name="pref_shortcut_corner_bottom_right_tap_default">@string/shortcut_value_unassigned</string>
+    <string name="pref_shortcut_corner_bottom_right_double_tap_default">@string/shortcut_value_unassigned</string>
+    <string name="pref_shortcut_corner_bottom_right_triple_tap_default">@string/shortcut_value_unassigned</string>
+    <string name="pref_shortcut_corner_bottom_right_double_tap_hold_default">@string/shortcut_value_unassigned</string>
+    <string name="pref_shortcut_corner_bottom_right_triple_tap_hold_default">@string/shortcut_value_unassigned</string>
     <string name="pref_shortcut_2finger_rotate_counterclockwise_default">@string/shortcut_value_select_previous_setting</string>
 
     <!-- Fingerprint gesture shortcut default values -->

@@ -115,6 +115,28 @@ public class GestureManifold implements GestureMatcher.StateChangeListener {
   // TouchInteractionMonitor in place of the four-finger tap when one of them has an action.
   public static final int GESTURE_4_FINGER_SINGLE_TAP_TOP = -64;
   public static final int GESTURE_4_FINGER_SINGLE_TAP_BOTTOM = -65;
+  // One-finger taps in a corner of the screen. Reported by TalkBack's TouchInteractionMonitor in
+  // place of the taps when the corner gesture has an action.
+  public static final int GESTURE_CORNER_TOP_LEFT_TAP = -66;
+  public static final int GESTURE_CORNER_TOP_LEFT_DOUBLE_TAP = -67;
+  public static final int GESTURE_CORNER_TOP_LEFT_TRIPLE_TAP = -68;
+  public static final int GESTURE_CORNER_TOP_LEFT_DOUBLE_TAP_AND_HOLD = -69;
+  public static final int GESTURE_CORNER_TOP_LEFT_TRIPLE_TAP_AND_HOLD = -70;
+  public static final int GESTURE_CORNER_TOP_RIGHT_TAP = -71;
+  public static final int GESTURE_CORNER_TOP_RIGHT_DOUBLE_TAP = -72;
+  public static final int GESTURE_CORNER_TOP_RIGHT_TRIPLE_TAP = -73;
+  public static final int GESTURE_CORNER_TOP_RIGHT_DOUBLE_TAP_AND_HOLD = -74;
+  public static final int GESTURE_CORNER_TOP_RIGHT_TRIPLE_TAP_AND_HOLD = -75;
+  public static final int GESTURE_CORNER_BOTTOM_LEFT_TAP = -76;
+  public static final int GESTURE_CORNER_BOTTOM_LEFT_DOUBLE_TAP = -77;
+  public static final int GESTURE_CORNER_BOTTOM_LEFT_TRIPLE_TAP = -78;
+  public static final int GESTURE_CORNER_BOTTOM_LEFT_DOUBLE_TAP_AND_HOLD = -79;
+  public static final int GESTURE_CORNER_BOTTOM_LEFT_TRIPLE_TAP_AND_HOLD = -80;
+  public static final int GESTURE_CORNER_BOTTOM_RIGHT_TAP = -81;
+  public static final int GESTURE_CORNER_BOTTOM_RIGHT_DOUBLE_TAP = -82;
+  public static final int GESTURE_CORNER_BOTTOM_RIGHT_TRIPLE_TAP = -83;
+  public static final int GESTURE_CORNER_BOTTOM_RIGHT_DOUBLE_TAP_AND_HOLD = -84;
+  public static final int GESTURE_CORNER_BOTTOM_RIGHT_TRIPLE_TAP_AND_HOLD = -85;
 
   // Match the value of GESTURE_ID_2FINGER_1TAP_HOLD in TalkBack.
   public static final int GESTURE_2_FINGER_SINGLE_TAP_AND_HOLD = 63;

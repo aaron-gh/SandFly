@@ -389,6 +389,10 @@
         android:summary="%s"
         android:title="@string/title_pref_edge_second_click_mm" />
     <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="@bool/pref_edge_speak_commands_default"
+        android:key="@string/pref_edge_speak_commands_key"
+        android:title="@string/title_pref_edge_speak_commands" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
         android:defaultValue="@bool/pref_edge_scroll_default"
         android:key="@string/pref_edge_scroll_left_key"
         android:title="@string/title_pref_edge_scroll_left" />
@@ -418,6 +422,112 @@
         android:title="@string/title_pref_edge_menu_right">
       <extra android:name="edge" android:value="RIGHT" />
     </com.google.android.accessibility.material.preference.AccessibilitySuitePreference>
+  </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
+
+  <!-- Corner gestures -->
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
+      android:key="@string/pref_category_corner_shortcuts_key"
+      android:title="@string/corner_gestures_title">
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_corner_top_left_tap_default"
+        android:key="@string/pref_shortcut_corner_top_left_tap_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_corner_top_left_tap"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_corner_top_left_double_tap_default"
+        android:key="@string/pref_shortcut_corner_top_left_double_tap_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_corner_top_left_double_tap"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_corner_top_left_triple_tap_default"
+        android:key="@string/pref_shortcut_corner_top_left_triple_tap_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_corner_top_left_triple_tap"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_corner_top_left_double_tap_hold_default"
+        android:key="@string/pref_shortcut_corner_top_left_double_tap_hold_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_corner_top_left_double_tap_hold"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_corner_top_left_triple_tap_hold_default"
+        android:key="@string/pref_shortcut_corner_top_left_triple_tap_hold_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_corner_top_left_triple_tap_hold"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_corner_top_right_tap_default"
+        android:key="@string/pref_shortcut_corner_top_right_tap_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_corner_top_right_tap"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_corner_top_right_double_tap_default"
+        android:key="@string/pref_shortcut_corner_top_right_double_tap_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_corner_top_right_double_tap"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_corner_top_right_triple_tap_default"
+        android:key="@string/pref_shortcut_corner_top_right_triple_tap_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_corner_top_right_triple_tap"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_corner_top_right_double_tap_hold_default"
+        android:key="@string/pref_shortcut_corner_top_right_double_tap_hold_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_corner_top_right_double_tap_hold"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_corner_top_right_triple_tap_hold_default"
+        android:key="@string/pref_shortcut_corner_top_right_triple_tap_hold_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_corner_top_right_triple_tap_hold"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_corner_bottom_left_tap_default"
+        android:key="@string/pref_shortcut_corner_bottom_left_tap_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_corner_bottom_left_tap"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_corner_bottom_left_double_tap_default"
+        android:key="@string/pref_shortcut_corner_bottom_left_double_tap_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_corner_bottom_left_double_tap"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_corner_bottom_left_triple_tap_default"
+        android:key="@string/pref_shortcut_corner_bottom_left_triple_tap_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_corner_bottom_left_triple_tap"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_corner_bottom_left_double_tap_hold_default"
+        android:key="@string/pref_shortcut_corner_bottom_left_double_tap_hold_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_corner_bottom_left_double_tap_hold"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_corner_bottom_left_triple_tap_hold_default"
+        android:key="@string/pref_shortcut_corner_bottom_left_triple_tap_hold_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_corner_bottom_left_triple_tap_hold"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_corner_bottom_right_tap_default"
+        android:key="@string/pref_shortcut_corner_bottom_right_tap_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_corner_bottom_right_tap"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_corner_bottom_right_double_tap_default"
+        android:key="@string/pref_shortcut_corner_bottom_right_double_tap_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_corner_bottom_right_double_tap"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_corner_bottom_right_triple_tap_default"
+        android:key="@string/pref_shortcut_corner_bottom_right_triple_tap_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_corner_bottom_right_triple_tap"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_corner_bottom_right_double_tap_hold_default"
+        android:key="@string/pref_shortcut_corner_bottom_right_double_tap_hold_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_corner_bottom_right_double_tap_hold"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_corner_bottom_right_triple_tap_hold_default"
+        android:key="@string/pref_shortcut_corner_bottom_right_triple_tap_hold_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_corner_bottom_right_triple_tap_hold"/>
   </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
 
   <!-- Two finger gestures -->

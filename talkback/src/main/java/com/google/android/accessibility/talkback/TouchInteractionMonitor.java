@@ -104,6 +104,9 @@ import com.google.android.accessibility.talkback.PrimesController.TimerAction;
 import com.google.android.accessibility.talkback.contextmenu.ListMenuManager;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForTapAndTouchExploration;
+import com.google.android.accessibility.talkback.gesture.CornerTapTracker;
+import com.google.android.accessibility.talkback.gesture.CornerTapTracker.Corner;
+import com.google.android.accessibility.talkback.gesture.CornerTapTracker.Kind;
 import com.google.android.accessibility.talkback.gesture.EdgeMenus;
 import com.google.android.accessibility.talkback.gesture.EdgeSwipeTracker;
 import com.google.android.accessibility.talkback.gesture.EdgeSwipeTracker.Edge;
@@ -146,6 +149,10 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Queue;
 import java.util.Set;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 /**
@@ -278,6 +285,22 @@ public class TouchInteractionMonitor
   private boolean touchExplorationHeldForEdgeSwipe;
   // Ends the wait for an edge swipe when the finger stops moving.
   private final Runnable edgeSwipeStallCheck = this::checkEdgeSwipeStall;
+  // Taps in the corners of the screen, when a corner gesture has an action.
+  private final CornerTapTracker cornerTapTracker;
+  private final Runnable cornerTapTimeout = this::onCornerTapTimeout;
+  // Set once corner taps hand their touch back, so that the rest of the interaction's taps are
+  // ordinary ones.
+  private boolean cornerTapsDeclined;
+  // While corner taps report what events of the past made of them, such as when the events they
+  // kept go through the other gestures: a gesture then doesn't follow the finger now down.
+  private boolean replayingCornerTaps;
+  // Counts the edge gesture stages reached, so that a command name looked up for one stage isn't
+  // spoken once the finger has moved on or lifted.
+  private int edgeSpeechStage;
+  // Looks up the command names that edge gestures speak, away from the touch. Its thread ends when
+  // idle.
+  private final ExecutorService edgeSpeechExecutor =
+      new ThreadPoolExecutor(0, 1, 10, TimeUnit.SECONDS, new LinkedBlockingQueue<>());
   // Recognizes the two-finger scrub. A recognized scrub owns the rest of the touch.
   private final TwoFingerScrubTracker scrubTracker;
   // Recognizes pinches and spreads with two to four fingers. A recognized one owns the rest of the
@@ -535,6 +558,20 @@ public class TouchInteractionMonitor
             this::edgeScrolls,
             edgeSwipeListener,
             this::edgeMenuItemCount);
+    cornerTapTracker =
+        new CornerTapTracker(
+            pixelsPerCm * EDGE_GESTURE_ZONE_CM,
+            ViewConfiguration.get(context).getScaledTouchSlop(),
+            ViewConfiguration.get(context).getScaledDoubleTapSlop()
+                * FeatureFlagReader.gestureDoubleTapSlopMultiplier(service),
+            ViewConfiguration.getTapTimeout()
+                + context
+                    .getResources()
+                    .getInteger(
+                        com.google.android.accessibility.utils.R.integer.config_tap_timeout_delta),
+            ViewConfiguration.getLongPressTimeout(),
+            () -> (long) GestureConfiguration.getMultiTapTimeoutMs(),
+            this::isCornerGestureAssigned);
     readEdgeClickDistances(prefs);
     readEdgeScrolls(prefs);
     readEdgeMenus(prefs);
@@ -670,6 +707,8 @@ public class TouchInteractionMonitor
             R.string.pref_edge_zone_mm_key,
             R.string.pref_edge_zone_mm_default);
     edgeSwipeTracker.setEdgeZone(pixelsPerCm * Math.max(zone, 1) / 10f);
+    // A corner is a square as wide as the edges.
+    cornerTapTracker.setCornerSize(pixelsPerCm * Math.max(zone, 1) / 10f);
   }
 
   /** Reads which edges scroll the app when a finger slides along them. */
@@ -800,6 +839,7 @@ public class TouchInteractionMonitor
     if (passingSyntheticTouch) {
       return;
     }
+    runDueCornerTapTimeout(event);
     trackFingerAtScreenEdge(event);
     if (exploringKeyboard) {
       exploreKeyboard(event);
@@ -837,6 +877,14 @@ public class TouchInteractionMonitor
     if (handleEdgeSwipe(event)) {
       return;
     }
+    if (handleCornerTap(event)) {
+      return;
+    }
+    handleAfterCornerTaps(event);
+  }
+
+  /** Handles an event that neither an edge swipe nor corner taps keep. */
+  private void handleAfterCornerTaps(MotionEvent event) {
     if (handleScrub(event)) {
       return;
     }
@@ -1108,6 +1156,8 @@ public class TouchInteractionMonitor
     rotationTracker.clear();
     edgeSwipeTracker.clear();
     stopHoldingTouchExplorationForEdgeSwipe();
+    clearCornerTaps();
+    cornerTapsDeclined = false;
     scrubTracker.clear();
     pinchTracker.clear();
     tapToTypeTracker.clear();
@@ -1490,7 +1540,9 @@ public class TouchInteractionMonitor
         });
     clear();
     clearGestureDetectorOnNextDown = true;
-    if (fingerDown) {
+    // A gesture recognized from events that corner taps hand back ended in the past, with the
+    // finger as those events left it.
+    if (fingerDown && !replayingCornerTaps) {
       followingHeldTouch = true;
       heldTouchOffsetX = 0;
       heldTouchOffsetY = 0;
@@ -1775,6 +1827,181 @@ public class TouchInteractionMonitor
     };
   }
 
+  /**
+   * Passes the event to the corner tap tracker. Returns true if the event belongs to taps in a
+   * corner, so nothing else may handle it.
+   */
+  private boolean handleCornerTap(MotionEvent event) {
+    if (!cornerTapTracker.isActive()) {
+      if (event.getActionMasked() != ACTION_DOWN
+          || state != STATE_TOUCH_INTERACTING
+          || cornerTapsDeclined) {
+        return false;
+      }
+      display.getRealSize(screenSize);
+    }
+    boolean wasActive = cornerTapTracker.isActive();
+    boolean kept =
+        onCornerTapResult(
+            cornerTapTracker.onMotionEvent(
+                event, screenSize.x, screenSize.y, this::mayStartCornerTaps));
+    if (!wasActive && cornerTapTracker.isActive()) {
+      // As a new touch does, the taps cancel the touch exploration and gestures a previous tap was
+      // waiting for.
+      requestTouchExplorationDelayed.cancel();
+      gestureDetector.clear();
+    }
+    return kept;
+  }
+
+  /**
+   * Corner taps don't start on the keyboard, so that typing on the keys in the corners works as
+   * usual.
+   */
+  private boolean mayStartCornerTaps(float x, float y) {
+    return gboardRoot == null && !isOnKeyboard(x, y);
+  }
+
+  /** Ends the corner taps' wait that was due by the time of {@code event}, before the event. */
+  private void runDueCornerTapTimeout(MotionEvent event) {
+    long timeMs = event.getEventTime();
+    if (!cornerTapTracker.isActive() || timeMs < cornerTapTracker.getDeadline()) {
+      return;
+    }
+    // Before a finger landing, the finger was up.
+    replayingCornerTaps = event.getActionMasked() == ACTION_DOWN;
+    try {
+      onCornerTapResult(cornerTapTracker.onTimeout(timeMs));
+    } finally {
+      replayingCornerTaps = false;
+    }
+  }
+
+  private void onCornerTapTimeout() {
+    onCornerTapResult(cornerTapTracker.onTimeout(SystemClock.uptimeMillis()));
+  }
+
+  /**
+   * Acts on what the corner tap tracker made of an event or a timeout. Returns false when the event
+   * is no part of corner taps.
+   */
+  private boolean onCornerTapResult(CornerTapTracker.Result result) {
+    mainHandler.removeCallbacks(cornerTapTimeout);
+    if (cornerTapTracker.isActive()) {
+      mainHandler.postAtTime(cornerTapTimeout, cornerTapTracker.getDeadline());
+    }
+    if (result == CornerTapTracker.Result.Ignored.INSTANCE) {
+      return false;
+    }
+    if (result instanceof CornerTapTracker.Result.Gesture gesture) {
+      int gestureId = cornerGestureId(gesture.getCorner(), gesture.getKind());
+      if (GestureLog.getEnabled()) {
+        Log.d(
+            DEBUG_GESTURE_TAG,
+            "Gesture " + AccessibilityServiceCompatUtils.gestureIdToString(gestureId));
+      }
+      keepMonitorTouchExplore = false;
+      requestTouchExplorationDelayed.cancel();
+      service.onGestureDetectionStarted();
+      dispatchGestureToMainThreadAndClear(
+          new AccessibilityGestureEvent(gestureId, displayId, new ArrayList<MotionEvent>()));
+    } else if (result instanceof CornerTapTracker.Result.Taps taps) {
+      if (GestureLog.getEnabled()) {
+        Log.d(DEBUG_GESTURE_TAG, "Corner taps without a gesture: " + taps.getTaps());
+      }
+      if (taps.getTaps() == 1) {
+        // The finger is up, so touch exploration of where it lifted is reported as a tap. A touch
+        // that has just landed drops the tap instead, as it cancels the wait for exploring a tap.
+        if (!replayingCornerTaps) {
+          requestTouchExploration("cornerTap");
+        }
+      } else {
+        // Two taps, or three without a triple tap gesture, are a double tap, as elsewhere.
+        onGestureCompleted(
+            new AccessibilityGestureEvent(
+                AccessibilityService.GESTURE_DOUBLE_TAP, displayId, new ArrayList<MotionEvent>()));
+      }
+    } else if (result instanceof CornerTapTracker.Result.Released released) {
+      if (GestureLog.getEnabled()) {
+        Log.d(
+            DEBUG_GESTURE_TAG,
+            "Corner taps released: " + released.getEvents().size() + " events");
+      }
+      cornerTapsDeclined = true;
+      List<MotionEvent> events = released.getEvents();
+      // The gesture matchers may keep the events, so they aren't recycled.
+      replayingCornerTaps = true;
+      try {
+        for (int i = 0; i < events.size(); i++) {
+          if (stateChangeRequested) {
+            // Like events that arrive while a state change is pending, the rest are not needed.
+            break;
+          }
+          // The last event is the one that just came, with the finger where it is now.
+          replayingCornerTaps = i < events.size() - 1;
+          handleAfterCornerTaps(events.get(i));
+        }
+      } finally {
+        replayingCornerTaps = false;
+      }
+    }
+    return true;
+  }
+
+  private void clearCornerTaps() {
+    cornerTapTracker.clear();
+    mainHandler.removeCallbacks(cornerTapTimeout);
+  }
+
+  /** Returns whether the corner gesture runs a command, or a running script binds it. */
+  private boolean isCornerGestureAssigned(Corner corner, Kind kind) {
+    return isGestureAssigned(cornerGestureId(corner, kind));
+  }
+
+  /** Returns the gesture of the taps {@code kind} in {@code corner}. */
+  private static int cornerGestureId(Corner corner, Kind kind) {
+    return switch (corner) {
+      case TOP_LEFT ->
+          switch (kind) {
+            case TAP -> GestureManifold.GESTURE_CORNER_TOP_LEFT_TAP;
+            case DOUBLE_TAP -> GestureManifold.GESTURE_CORNER_TOP_LEFT_DOUBLE_TAP;
+            case TRIPLE_TAP -> GestureManifold.GESTURE_CORNER_TOP_LEFT_TRIPLE_TAP;
+            case DOUBLE_TAP_AND_HOLD -> GestureManifold.GESTURE_CORNER_TOP_LEFT_DOUBLE_TAP_AND_HOLD;
+            case TRIPLE_TAP_AND_HOLD -> GestureManifold.GESTURE_CORNER_TOP_LEFT_TRIPLE_TAP_AND_HOLD;
+          };
+      case TOP_RIGHT ->
+          switch (kind) {
+            case TAP -> GestureManifold.GESTURE_CORNER_TOP_RIGHT_TAP;
+            case DOUBLE_TAP -> GestureManifold.GESTURE_CORNER_TOP_RIGHT_DOUBLE_TAP;
+            case TRIPLE_TAP -> GestureManifold.GESTURE_CORNER_TOP_RIGHT_TRIPLE_TAP;
+            case DOUBLE_TAP_AND_HOLD ->
+                GestureManifold.GESTURE_CORNER_TOP_RIGHT_DOUBLE_TAP_AND_HOLD;
+            case TRIPLE_TAP_AND_HOLD ->
+                GestureManifold.GESTURE_CORNER_TOP_RIGHT_TRIPLE_TAP_AND_HOLD;
+          };
+      case BOTTOM_LEFT ->
+          switch (kind) {
+            case TAP -> GestureManifold.GESTURE_CORNER_BOTTOM_LEFT_TAP;
+            case DOUBLE_TAP -> GestureManifold.GESTURE_CORNER_BOTTOM_LEFT_DOUBLE_TAP;
+            case TRIPLE_TAP -> GestureManifold.GESTURE_CORNER_BOTTOM_LEFT_TRIPLE_TAP;
+            case DOUBLE_TAP_AND_HOLD ->
+                GestureManifold.GESTURE_CORNER_BOTTOM_LEFT_DOUBLE_TAP_AND_HOLD;
+            case TRIPLE_TAP_AND_HOLD ->
+                GestureManifold.GESTURE_CORNER_BOTTOM_LEFT_TRIPLE_TAP_AND_HOLD;
+          };
+      case BOTTOM_RIGHT ->
+          switch (kind) {
+            case TAP -> GestureManifold.GESTURE_CORNER_BOTTOM_RIGHT_TAP;
+            case DOUBLE_TAP -> GestureManifold.GESTURE_CORNER_BOTTOM_RIGHT_DOUBLE_TAP;
+            case TRIPLE_TAP -> GestureManifold.GESTURE_CORNER_BOTTOM_RIGHT_TRIPLE_TAP;
+            case DOUBLE_TAP_AND_HOLD ->
+                GestureManifold.GESTURE_CORNER_BOTTOM_RIGHT_DOUBLE_TAP_AND_HOLD;
+            case TRIPLE_TAP_AND_HOLD ->
+                GestureManifold.GESTURE_CORNER_BOTTOM_RIGHT_TRIPLE_TAP_AND_HOLD;
+          };
+    };
+  }
+
   /** Returns whether the gesture runs a command, or a running script binds it. */
   private boolean isGestureAssigned(int gestureId) {
     GestureShortcutMapping mapping = service.getGestureShortcutMapping();
@@ -1803,9 +2030,13 @@ public class TouchInteractionMonitor
 
         @Override
         public void onEdgeSwipeStage(Edge edge, int stage, int previousStage) {
-          @Nullable FeedbackController feedbackController = feedbackController();
           // A slide along an edge has one stage and plays no edge sounds or vibrations.
-          if (feedbackController == null || edge.getAlong()) {
+          if (edge.getAlong()) {
+            return;
+          }
+          speakEdgeCommand(edge, stage);
+          @Nullable FeedbackController feedbackController = feedbackController();
+          if (feedbackController == null) {
             return;
           }
           // Sliding back plays the sound of the place it is back at, with the slide back's
@@ -1838,6 +2069,8 @@ public class TouchInteractionMonitor
 
         @Override
         public void onEdgeSwipeEnded(Edge edge, int stage) {
+          // A command name still being looked up is not spoken.
+          edgeSpeechStage++;
           if (stage == 0) {
             // Slid back to the edge, or a second finger landed: no gesture.
             return;
@@ -1901,6 +2134,53 @@ public class TouchInteractionMonitor
               });
         }
       };
+
+  /**
+   * With Speak command at each click on, speaks the name of the command that lifting at {@code
+   * stage} of a slide from {@code edge} runs, interrupting the name of the stage before. Says
+   * nothing at a stage without a command. The name is looked up away from the touch, and dropped
+   * once the finger has reached another stage or lifted.
+   */
+  private void speakEdgeCommand(Edge edge, int stage) {
+    int reached = ++edgeSpeechStage;
+    if (stage == 0
+        || !SharedPreferencesUtils.getBooleanPref(
+            sharedPreferences,
+            context.getResources(),
+            R.string.pref_edge_speak_commands_key,
+            R.bool.pref_edge_speak_commands_default)) {
+      return;
+    }
+    @Nullable GestureShortcutMapping mapping = service.getGestureShortcutMapping();
+    if (mapping == null) {
+      return;
+    }
+    String action = mapping.getActionKeyFromGestureId(edgeGestureId(edge, stage));
+    if (TextUtils.isEmpty(action)
+        || TextUtils.equals(action, context.getString(R.string.shortcut_value_unassigned))) {
+      return;
+    }
+    edgeSpeechExecutor.execute(
+        () -> {
+          String name = GestureShortcutMapping.getActionString(context, action);
+          mainHandler.post(
+              () -> {
+                Pipeline.@Nullable FeedbackReturner feedback = service.getFeedbackReturner();
+                if (reached != edgeSpeechStage || feedback == null || TextUtils.isEmpty(name)) {
+                  return;
+                }
+                feedback.returnFeedback(
+                    Performance.EVENT_ID_UNTRACKED,
+                    Feedback.speech(
+                        name,
+                        SpeakOptions.create()
+                            .setQueueMode(SpeechController.QUEUE_MODE_INTERRUPT)
+                            .setFlags(
+                                FeedbackItem.FLAG_NO_HISTORY
+                                    | FeedbackItem.FLAG_FORCE_FEEDBACK_ALL)));
+              });
+        });
+  }
 
   /** The service's feedback controller, or null before it is set up. */
   private @Nullable FeedbackController feedbackController() {
@@ -1993,6 +2273,7 @@ public class TouchInteractionMonitor
    */
   private void takeOverTouch() {
     stopHoldingTouchExplorationForEdgeSwipe();
+    clearCornerTaps();
     keepMonitorTouchExplore = false;
     requestTouchExplorationDelayed.cancel();
     gestureDetector.clear();
@@ -2116,6 +2397,10 @@ public class TouchInteractionMonitor
   }
 
   void requestTouchExploration(String caller) {
+    if (cornerTapTracker.isActive()) {
+      // Corner taps keep the touch until they end.
+      return;
+    }
     if (holdTouchExplorationForEdgeSwipe()) {
       return;
     }
