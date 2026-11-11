@@ -177,6 +177,7 @@ play is left out when the theme is installed, and SandFly says so.
 | `browse_mode_off_v4_2` | Browse mode off |
 | `keyboard_opened` | An on-screen keyboard opens |
 | `keyboard_closed` | An on-screen keyboard closes |
+| `sandfly_notification` | SandFly posts a notification on a notification channel without a sound |
 | `radial_menu` | Circle menu (all eight notes play this one sound) |
 | `display_connected` | Braille display connected |
 | `display_disconnected` | Braille display disconnected |

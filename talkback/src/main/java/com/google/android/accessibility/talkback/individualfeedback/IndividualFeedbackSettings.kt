@@ -89,6 +89,7 @@ object IndividualFeedbackSettings {
       FeedbackItem("browse_mode_off_v4_2", R.string.individual_sound_browse_mode_off),
       FeedbackItem("keyboard_opened", R.string.individual_sound_keyboard_opened),
       FeedbackItem("keyboard_closed", R.string.individual_sound_keyboard_closed),
+      FeedbackItem("sandfly_notification", R.string.individual_sound_sandfly_notification),
       FeedbackItem(
         "radial_menu",
         R.string.individual_sound_radial_menu,
@@ -198,6 +199,10 @@ object IndividualFeedbackSettings {
       FeedbackItem("browse_mode_off_pattern", R.string.individual_sound_browse_mode_off),
       FeedbackItem("keyboard_opened_pattern", R.string.individual_sound_keyboard_opened),
       FeedbackItem("keyboard_closed_pattern", R.string.individual_sound_keyboard_closed),
+      FeedbackItem(
+        "sandfly_notification_pattern",
+        R.string.individual_sound_sandfly_notification,
+      ),
       FeedbackItem(
         "radial_menu_pattern",
         R.string.individual_sound_radial_menu,

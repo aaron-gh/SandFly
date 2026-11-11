@@ -473,6 +473,41 @@
         <item>30</item><!-- delayMs -->
     </integer-array>
 
+    <!-- SandFly notification: two taps, then a slow rise. -->
+    <integer-array name="sandfly_notification_pattern">
+        <item>0</item>
+        <item>15</item>
+        <item>90</item>
+        <item>15</item>
+        <item>90</item>
+        <item>60</item>
+        <item>-9998</item><!-- AMPLITUDES: ms, amplitude -->
+        <item>8</item>
+        <item>110</item>
+        <item>90</item>
+        <item>0</item>
+        <item>8</item>
+        <item>130</item>
+        <item>90</item>
+        <item>0</item>
+        <item>20</item>
+        <item>60</item>
+        <item>20</item>
+        <item>100</item>
+        <item>20</item>
+        <item>150</item>
+        <item>-9999</item><!-- SENTINEL SEPARATOR -->
+        <item>7</item><!-- TICK -->
+        <item>160</item><!-- scale -->
+        <item>0</item><!-- delayMs -->
+        <item>7</item><!-- TICK -->
+        <item>200</item><!-- scale -->
+        <item>90</item><!-- delayMs -->
+        <item>5</item><!-- SLOW_RISE -->
+        <item>220</item><!-- scale -->
+        <item>90</item><!-- delayMs -->
+    </integer-array>
+
     <!-- Circle menu opened with 1 item: a swell, then one tick for each item. -->
     <integer-array name="radial_menu_1_pattern">
         <item>0</item>

@@ -302,6 +302,8 @@ public class EventFilter {
       }
       if (isCall) {
         NotificationReader.noteCall(event, notification);
+      } else if (notification != null) {
+        NotificationReader.playOwnNotificationSound(event, notification, dnd);
       }
       // Incoming calls are still announced, so that the user hears who is calling.
       if ((notification != null) && !isCall && !globalVariables.getSpeakNotifications()) {
