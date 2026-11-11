@@ -25,8 +25,15 @@ import android.os.Handler
 import android.os.Looper
 import android.os.SystemClock
 import android.view.accessibility.AccessibilityEvent
+import com.google.android.accessibility.talkback.Feedback
+import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.TalkBackService
 import com.google.android.accessibility.talkback.focusmanagement.HomeScreenPages
+import com.google.android.accessibility.talkback.shizuku.ShizukuShell
+import com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED
+import com.google.android.accessibility.utils.output.FeedbackItem
+import com.google.android.accessibility.utils.output.SpeechController
+import com.google.android.accessibility.utils.output.SpeechController.SpeakOptions
 import java.util.Locale
 
 /**
@@ -191,6 +198,7 @@ object SystemOverviewRedirect {
       return true
     }
     if (!canOpen(service)) {
+      sayShizukuMissing(service)
       return false
     }
     // As with the Overview action, opening the overview again switches to the previous app.
@@ -237,6 +245,39 @@ object SystemOverviewRedirect {
     AccessibilityEvent.WINDOWS_CHANGE_ACTIVE or
       AccessibilityEvent.WINDOWS_CHANGE_FOCUSED or
       AccessibilityEvent.WINDOWS_CHANGE_TITLE
+
+  /**
+   * Says why the system's overview opens in place of SandFly's when Shizuku isn't running or
+   * doesn't allow SandFly, at most once in [SHIZUKU_MESSAGE_GAP_MS]. Nothing is said on the lock
+   * screen, where the system's overview is kept anyway.
+   */
+  @JvmStatic
+  fun sayShizukuMissing(service: AccessibilityService) {
+    if (!RecentTasks.isEnabled(service) || RecentTasks.isAvailable(service)) return
+    if (service.getSystemService(KeyguardManager::class.java).isKeyguardLocked) return
+    val now = SystemClock.uptimeMillis()
+    if (now - shizukuMessageAt < SHIZUKU_MESSAGE_GAP_MS) return
+    shizukuMessageAt = now
+    val talkBack = TalkBackService.getInstance() ?: return
+    val text =
+      service.getString(
+        if (ShizukuShell.isAvailable(service)) R.string.overview_shizuku_not_allowed
+        else R.string.overview_shizuku_not_running
+      )
+    talkBack.feedbackReturner?.returnFeedback(
+      EVENT_ID_UNTRACKED,
+      Feedback.speech(
+        text,
+        SpeakOptions.create()
+          // The system's overview is spoken after the message, not over it.
+          .setQueueMode(SpeechController.QUEUE_MODE_INTERRUPT_AND_UNINTERRUPTIBLE_BY_NEW_SPEECH)
+          .setFlags(FeedbackItem.FLAG_NO_HISTORY or FeedbackItem.FLAG_FORCE_FEEDBACK_ALL),
+      ),
+    )
+  }
+
+  private var shizukuMessageAt = Long.MIN_VALUE / 2
+  private const val SHIZUKU_MESSAGE_GAP_MS = 3_000L
 
   private fun canOpen(service: AccessibilityService): Boolean =
     RecentTasks.isAvailable(service) &&

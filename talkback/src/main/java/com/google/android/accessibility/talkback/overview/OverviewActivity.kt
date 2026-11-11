@@ -606,7 +606,11 @@ class OverviewActivity : AppCompatActivity() {
      */
     @JvmStatic
     fun openInsteadOfSystem(service: AccessibilityService): Boolean {
-      if (!RecentTasks.isEnabled(service) || !ShizukuShell.isAvailable(service) || !ShizukuGrants.isReady()) {
+      if (!RecentTasks.isEnabled(service)) {
+        return false
+      }
+      if (!ShizukuShell.isAvailable(service) || !ShizukuGrants.isReady()) {
+        SystemOverviewRedirect.sayShizukuMissing(service)
         return false
       }
       if (service.getSystemService(KeyguardManager::class.java).isKeyguardLocked) {
