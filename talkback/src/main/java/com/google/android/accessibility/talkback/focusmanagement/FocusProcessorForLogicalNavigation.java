@@ -4316,36 +4316,6 @@ public class FocusProcessorForLogicalNavigation {
 
   private static final int MAX_LIST_CHILDREN_CHECKED = 30;
 
-  /** Reads the order of the items of the window under {@code rootNode} and saves it. */
-  private TraversalStrategy buildWindowOrder(
-      AccessibilityNodeInfoCompat rootNode, @SearchDirection int searchDirection) {
-    boolean trace = LogUtils.shouldLog(Log.DEBUG);
-    long buildStart = trace ? SystemClock.uptimeMillis() : 0;
-    if (trace) {
-      Trace.beginSection("BuildTraversalStrategy");
-    }
-    WindowNodePrefetcher.prefetchWindow(rootNode, service.getPackageName());
-    TraversalStrategy traversalStrategy =
-        TraversalStrategyUtils.getTraversalStrategy(rootNode, focusFinder, searchDirection);
-    if (trace) {
-      Trace.endSection();
-      Log.d(
-          "BacktalkTreeCache",
-          "Built order in " + (SystemClock.uptimeMillis() - buildStart) + " ms");
-    }
-    if (traversalStrategy instanceof OrderedTraversalStrategy orderedStrategy
-        && orderedStrategy.missesChildren()) {
-      @Nullable OrderedTraversalStrategy reread = rereadIncompleteOrder(rootNode);
-      if (reread != null) {
-        traversalStrategy = reread;
-      }
-    }
-    if (traversalStrategy instanceof OrderedTraversalStrategy orderedStrategy) {
-      TraversalTreeCache.put(rootNode, orderedStrategy);
-    }
-    return traversalStrategy;
-  }
-
   /**
    * Reads the order of the items of the window of {@code focused} now, unless it is saved already,
    * so that the next swipe needn't. Called while nothing else happens, such as after scrolling
