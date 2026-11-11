@@ -2187,9 +2187,35 @@ public class FocusProcessorForLogicalNavigation {
   /**
    * Asks the web page to move focus from {@code webPivot}, as {@link #navigateToHtmlTarget} does,
    * and when it moves to the next or previous item, has its focus event checked for leaving a row.
+   * The next or previous item is taken from the page's node tree instead where that is clear:
+   * Chromium's own search can skip items, or find none, in a page that was just loaded.
    */
   private boolean navigateToHtmlTargetExpectingFocus(
       AccessibilityNodeInfoCompat webPivot, NavigationAction navigationAction, EventId eventId) {
+    if (isMoveToNextOrPreviousItem(navigationAction)) {
+      int logicalDirection =
+          TraversalStrategyUtils.getLogicalDirection(
+              navigationAction.searchDirection, WindowUtils.isScreenLayoutRTL(service));
+      long searchStart = SystemClock.uptimeMillis();
+      @Nullable AccessibilityNodeInfoCompat target =
+          WebTreeOrder.find(
+              webPivot, logicalDirection == TraversalStrategy.SEARCH_FOCUS_FORWARD);
+      LogUtils.d(
+          TAG,
+          "Web node tree searched in %d ms, %s",
+          SystemClock.uptimeMillis() - searchStart,
+          (target == null) ? "asking the page" : "found");
+      if (target != null
+          && setAccessibilityFocusInternal(
+              target,
+              navigationAction,
+              /* linkIndex= */ -1,
+              columnWrap(webPivot, target, navigationAction, logicalDirection),
+              eventId)) {
+        LogUtils.d(TAG, "Web item from the node tree: %s", target);
+        return true;
+      }
+    }
     if (!navigateToHtmlTarget(webPivot, navigationAction, eventId)) {
       return false;
     }
