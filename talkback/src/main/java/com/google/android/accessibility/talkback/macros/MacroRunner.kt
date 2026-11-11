@@ -223,7 +223,10 @@ object MacroRunner {
       if (finished) return
       val clicked =
         try {
-          findItem(service, step.label)?.let { click(it) }
+          val node = findItem(service, step.label)
+          // The run can be stopped while the windows are read.
+          if (finished) return
+          node?.let { click(it) }
         } catch (e: RuntimeException) {
           LogUtils.w(TAG, "Cannot read the windows: %s", e)
           null
