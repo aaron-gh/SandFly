@@ -25,6 +25,10 @@
         android:key="@string/pref_speak_time_key"
         android:title="@string/title_pref_announce_time" />
     <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="true"
+        android:key="pref_screen_on_notification_count"
+        android:title="@string/title_pref_screen_on_notification_count" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
         android:defaultValue="false"
         android:key="pref_screen_on_battery"
         android:summary="@string/status_item_battery_summary"
