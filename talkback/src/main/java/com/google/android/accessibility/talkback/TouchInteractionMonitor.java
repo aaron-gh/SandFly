@@ -287,6 +287,8 @@ public class TouchInteractionMonitor
   private final Runnable edgeSwipeStallCheck = this::checkEdgeSwipeStall;
   // Taps in the corners of the screen, when a corner gesture has an action.
   private final CornerTapTracker cornerTapTracker;
+  // The system tap timeout, the default corner tap time limit.
+  private final long systemTapTimeoutMs;
   private final Runnable cornerTapTimeout = this::onCornerTapTimeout;
   // Set once corner taps hand their touch back, so that the rest of the interaction's taps are
   // ordinary ones.
@@ -558,21 +560,24 @@ public class TouchInteractionMonitor
             this::edgeScrolls,
             edgeSwipeListener,
             this::edgeMenuItemCount);
+    systemTapTimeoutMs =
+        ViewConfiguration.getTapTimeout()
+            + context
+                .getResources()
+                .getInteger(
+                    com.google.android.accessibility.utils.R.integer.config_tap_timeout_delta);
     cornerTapTracker =
         new CornerTapTracker(
             pixelsPerCm * EDGE_GESTURE_ZONE_CM,
             ViewConfiguration.get(context).getScaledTouchSlop(),
             ViewConfiguration.get(context).getScaledDoubleTapSlop()
                 * FeatureFlagReader.gestureDoubleTapSlopMultiplier(service),
-            ViewConfiguration.getTapTimeout()
-                + context
-                    .getResources()
-                    .getInteger(
-                        com.google.android.accessibility.utils.R.integer.config_tap_timeout_delta),
+            systemTapTimeoutMs,
             ViewConfiguration.getLongPressTimeout(),
             () -> (long) GestureConfiguration.getMultiTapTimeoutMs(),
             this::isCornerGestureAssigned);
     readEdgeClickDistances(prefs);
+    readCornerSettings(prefs);
     readEdgeScrolls(prefs);
     readEdgeMenus(prefs);
     scrubTracker = new TwoFingerScrubTracker(pixelsPerCm * SCRUB_STROKE_CM, this::onScrub);
@@ -711,8 +716,32 @@ public class TouchInteractionMonitor
             R.string.pref_edge_zone_mm_key,
             R.string.pref_edge_zone_mm_default);
     edgeSwipeTracker.setEdgeZone(pixelsPerCm * Math.max(zone, 1) / 10f);
-    // A corner is a square as wide as the edges.
-    cornerTapTracker.setCornerSize(pixelsPerCm * Math.max(zone, 1) / 10f);
+  }
+
+  /** Reads the corner size and tap time limit; 0 is the edge width and the system tap timeout. */
+  private void readCornerSettings(SharedPreferences prefs) {
+    int size =
+        SharedPreferencesUtils.getIntFromStringPref(
+            prefs,
+            context.getResources(),
+            R.string.pref_corner_size_mm_key,
+            R.string.pref_corner_size_mm_default);
+    if (size <= 0) {
+      size =
+          SharedPreferencesUtils.getIntFromStringPref(
+              prefs,
+              context.getResources(),
+              R.string.pref_edge_zone_mm_key,
+              R.string.pref_edge_zone_mm_default);
+    }
+    cornerTapTracker.setCornerSize(pixelsPerCm * Math.max(size, 1) / 10f);
+    int tapTime =
+        SharedPreferencesUtils.getIntFromStringPref(
+            prefs,
+            context.getResources(),
+            R.string.pref_corner_tap_time_ms_key,
+            R.string.pref_corner_tap_time_ms_default);
+    cornerTapTracker.setTapTimeout(tapTime > 0 ? tapTime : systemTapTimeoutMs);
   }
 
   /** Reads which edges scroll the app when a finger slides along them. */
@@ -773,6 +802,10 @@ public class TouchInteractionMonitor
             || context.getString(R.string.pref_edge_second_click_mm_key).equals(key)
             || context.getString(R.string.pref_edge_zone_mm_key).equals(key)) {
           readEdgeClickDistances(prefs);
+          readCornerSettings(prefs);
+        } else if (context.getString(R.string.pref_corner_size_mm_key).equals(key)
+            || context.getString(R.string.pref_corner_tap_time_ms_key).equals(key)) {
+          readCornerSettings(prefs);
         } else if (isEdgeScrollKey(key)) {
           readEdgeScrolls(prefs);
         } else if (EdgeMenus.isKey(key)) {

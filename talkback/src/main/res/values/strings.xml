@@ -3127,6 +3127,14 @@
     <string name="title_pref_rotor_step_degrees">Rotor turn per step</string>
     <!-- Title for how far from an edge of the screen a touch starts to be an edge gesture or an edge menu. [CHAR LIMIT=NONE]-->
     <string name="title_pref_edge_zone_mm">Edge width</string>
+    <!-- Title for the size of the square at each corner of the screen in which taps are corner gestures. [CHAR LIMIT=NONE]-->
+    <string name="title_pref_corner_size_mm">Corner size</string>
+    <!-- Value of the corner size setting that makes each corner as wide as the Edge width setting. [CHAR LIMIT=NONE]-->
+    <string name="value_corner_size_edge_width">Same as edge width</string>
+    <!-- Title for the longest time a finger may stay down in a corner and still count as a tap of a corner gesture; a longer touch is a hold. [CHAR LIMIT=NONE]-->
+    <string name="title_pref_corner_tap_time_ms">Corner tap time limit</string>
+    <!-- Value of the corner tap time limit setting that uses the tap timeout of the system. [CHAR LIMIT=NONE]-->
+    <string name="value_corner_tap_time_system">System default</string>
     <!-- Title for how far a finger slides in from the edge of the screen to the first click of an edge gesture. [CHAR LIMIT=NONE]-->
     <string name="title_pref_edge_first_click_mm">Distance to first click</string>
     <!-- Title for how far a finger slides on from the first click of an edge gesture to its second click. [CHAR LIMIT=NONE]-->

@@ -420,6 +420,10 @@ public class TalkBackPreferenceFilter {
     CUSTOMIZE_GESTURE_GROUP_CORNERS(
         R.string.pref_category_corner_shortcuts_key,
         SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
+    CORNER_SIZE(
+        R.string.pref_corner_size_mm_key, SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
+    CORNER_TAP_TIME(
+        R.string.pref_corner_tap_time_ms_key, SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
     ROTOR_STEP_DEGREES(R.string.pref_rotor_step_degrees_key, SHOW_IF_SERVICE_GESTURE_DETECTION),
     EDGE_ZONE(R.string.pref_edge_zone_mm_key, SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
     EDGE_FIRST_CLICK(
