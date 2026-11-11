@@ -105,7 +105,7 @@ public final class EventTypeWindowContentChangedFeedbackRule {
       RoleDescriptionExtractor roleDescriptionExtractor,
       TreeNodesDescription treeNodesDescription) {
     if (node == null) {
-      LogUtils.e(TAG, "    windowContentChanged: error, node is null");
+      LogUtils.v(TAG, "    windowContentChanged: node is null");
       return EMPTY_FEEDBACK;
     }
 
@@ -114,7 +114,10 @@ public final class EventTypeWindowContentChangedFeedbackRule {
     int nodeRole = Role.getRole(node);
     int nodeLiveRegion = node.getLiveRegion();
     int queueMode = queueMode(nodeLiveRegion);
-    boolean isChromeEvent = isEventFromChrome(node, event);
+    // isEventFromChrome walks the ancestors over IPC; only needed with the flag on.
+    boolean onlyAnnounceChangedLiveRegionNodes =
+        FeatureFlagReader.enableOnlyAnnounceChangedLiveRegionNodes(context);
+    boolean isChromeEvent = onlyAnnounceChangedLiveRegionNodes && isEventFromChrome(node, event);
 
     CharSequence ttsOutput;
     // Do not handle the live region root node content change if the event comes from chrome. Chrome
@@ -127,8 +130,7 @@ public final class EventTypeWindowContentChangedFeedbackRule {
     // 3) Flag on + Chrome event -> do not handle live region root node content change. Instead,
     // handle the live region descendant node content change later.
     if (nodeLiveRegion != ACCESSIBILITY_LIVE_REGION_NONE
-        && (!FeatureFlagReader.enableOnlyAnnounceChangedLiveRegionNodes(context)
-            || !isChromeEvent)) {
+        && (!onlyAnnounceChangedLiveRegionNodes || !isChromeEvent)) {
       ttsOutput = treeNodesDescription.aggregateNodeTreeDescription(node, event);
     } else {
       ttsOutput =
@@ -144,9 +146,7 @@ public final class EventTypeWindowContentChangedFeedbackRule {
     // NOTE: Chrome is responsible for firing the correct WINDOW_CONTENT_CHANGED event on all nodes
     // that should be announced by TalkBack. This may include the root node or any of its
     // descendants.
-    if (TextUtils.isEmpty(ttsOutput)
-        && FeatureFlagReader.enableOnlyAnnounceChangedLiveRegionNodes(context)
-        && isChromeEvent) {
+    if (TextUtils.isEmpty(ttsOutput) && onlyAnnounceChangedLiveRegionNodes && isChromeEvent) {
       // Check whether `node` is a live region root node. If not, see if any of its ancestors are a
       // live region root node.
       Optional<AccessibilityNodeInfoCompat> liveRegionRootNode =
@@ -316,7 +316,6 @@ public final class EventTypeWindowContentChangedFeedbackRule {
       GlobalVariables globalVariables) {
     int nodeRole = Role.getRole(node);
     int contentChangeType = getContentChangeType(event.getContentChangeTypes());
-    boolean isSelfOrAncestorFocused = AccessibilityNodeInfoUtils.isSelfOrAncestorFocused(node);
 
     LogUtils.v(
         TAG,
@@ -334,23 +333,25 @@ public final class EventTypeWindowContentChangedFeedbackRule {
                         ? AccessibilityEventUtils.contentChangeTypesToString(contentChangeType)
                         : AccessibilityEventUtils.contentChangeTypesToString(
                             event.getContentChangeTypes())))
-            .append(String.format(", isSelfOrAncestorFocused=%s", isSelfOrAncestorFocused))
             .toString());
+
+    // isSelfOrAncestorFocused walks the ancestors over IPC; evaluate it only where it is used.
 
     switch (contentChangeType) {
       case CONTENT_CHANGE_TYPE_CONTENT_DESCRIPTION -> {
-        return (isSelfOrAncestorFocused)
+        return AccessibilityNodeInfoUtils.isSelfOrAncestorFocused(node)
             ? AccessibilityEventFeedbackUtils.getEventContentDescription(
                 event, globalVariables.getPreferredLocaleByNode(node))
             : "";
       }
       case CONTENT_CHANGE_TYPE_TEXT -> {
-        return isSelfOrAncestorFocused && nodeRole != Role.ROLE_EDIT_TEXT
+        return nodeRole != Role.ROLE_EDIT_TEXT
+                && AccessibilityNodeInfoUtils.isSelfOrAncestorFocused(node)
             ? AccessibilityNodeFeedbackUtils.getNodeText(node, context, globalVariables)
             : "";
       }
       case CONTENT_CHANGE_TYPE_STATE_DESCRIPTION -> {
-        if (!isSelfOrAncestorFocused) {
+        if (!AccessibilityNodeInfoUtils.isSelfOrAncestorFocused(node)) {
           return "";
         }
         if (nodeRole == Role.ROLE_SEEK_CONTROL) {
