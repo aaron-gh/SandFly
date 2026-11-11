@@ -16,6 +16,7 @@
 
 package com.google.android.accessibility.talkback.focusmanagement;
 
+import android.graphics.Rect;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
@@ -77,6 +78,9 @@ public final class ScrollAhead {
   private @Nullable AccessibilityNodeInfoCompat scrolledList;
   private int deltaSumAtScroll;
 
+  /** Where the focused item was before the last page. */
+  private @Nullable Rect pageItemBounds;
+
   /** Whether the list was still when the last page started, so that its distance can be learned. */
   private boolean quietAtPage;
 
@@ -115,12 +119,16 @@ public final class ScrollAhead {
     }
     switch (event.getEventType()) {
       case AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED -> {
+        TraversalTreeCache.forgetScrolledAway();
         AccessibilityNodeInfoCompat source =
             event.getSource() == null ? null : AccessibilityNodeInfoCompat.wrap(event.getSource());
         scrollAhead.onFocused(source);
       }
-      case AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUS_CLEARED,
-          AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED,
+      case AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUS_CLEARED -> {
+        scrollAhead.onFocusCleared();
+        scrollAhead.cancel(AccessibilityEvent.eventTypeToString(event.getEventType()));
+      }
+      case AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED,
           AccessibilityEvent.TYPE_TOUCH_INTERACTION_START ->
           scrollAhead.cancel(AccessibilityEvent.eventTypeToString(event.getEventType()));
       default -> {}
@@ -142,9 +150,29 @@ public final class ScrollAhead {
     }
     focused = node;
     pages = 0;
+    pageItemBounds = null;
     waitStart = SystemClock.uptimeMillis();
     // At once, so that the page has scrolled before the next swipe.
     handler.post(this::step);
+  }
+
+  /**
+   * Lets the next swipe go on from the focused item when its focus is cleared after a page: the
+   * page has moved it off screen. Swipes and keys stop scrolling ahead before they move focus.
+   */
+  private void onFocusCleared() {
+    if (focused != null && pages > 0) {
+      noteScrolledAway(focused);
+    }
+  }
+
+  private void noteScrolledAway(AccessibilityNodeInfoCompat node) {
+    Rect bounds = pageItemBounds;
+    if (bounds == null) {
+      return;
+    }
+    LogUtils.d(TAG, "The page moved the focused item at %s off screen.", bounds);
+    TraversalTreeCache.rememberScrolledAway(node.getWindowId(), bounds, deltaSumAtScroll, forward);
   }
 
   private void cancel(String reason) {
@@ -193,6 +221,7 @@ public final class ScrollAhead {
     if (!node.refresh() || (pages > 0 && !node.isVisibleToUser())) {
       if (pages > 0) {
         LogUtils.d(TAG, "Stopped scrolling ahead after %d pages: the focused item left.", pages);
+        noteScrolledAway(node);
       }
       focused = null;
       return;
@@ -230,6 +259,7 @@ public final class ScrollAhead {
     }
     actionCountAtPage = FocusProcessorForLogicalNavigation.scrollActionCount();
     scrolledList = plan.list;
+    pageItemBounds = plan.itemBounds;
     lastPageUptime = SystemClock.uptimeMillis();
     pages++;
     LogUtils.d(
