@@ -25,6 +25,7 @@ import com.google.android.accessibility.braille.brailledisplay.controller.BdCont
 import com.google.android.accessibility.braille.brailledisplay.controller.utils.BrailleKeyBindingUtils;
 import com.google.android.accessibility.braille.brltty.BrailleInputEvent;
 import com.google.android.accessibility.braille.common.BrailleImeAction;
+import com.google.android.accessibility.braille.common.BrailleUserPreferences;
 import com.google.android.accessibility.braille.common.FeedbackManager;
 import com.google.android.accessibility.braille.interfaces.BrailleCharacter;
 
@@ -55,7 +56,7 @@ class EditorConsumer implements EventConsumer {
    * dots of its keys instead of running.
    */
   static boolean typesDots(Context context, int command) {
-    if (command < 0 || handlesWhileEditing(command)) {
+    if (command < 0 || handlesWhileEditing(command) || switchesLanguage(context, command)) {
       return false;
     }
     SupportedCommand supportedCommand =
@@ -64,6 +65,16 @@ class EditorConsumer implements EventConsumer {
     return supportedCommand != null
         && !supportedCommand.hasSpace()
         && !supportedCommand.getPressDot().equals(BrailleCharacter.EMPTY_CELL);
+  }
+
+  /**
+   * Returns whether the command switches the typing or reading language in a text field instead of
+   * typing its dots. In an eight-dot typing language its dots are a character, so they type.
+   */
+  static boolean switchesLanguage(Context context, int command) {
+    return (command == BrailleInputEvent.CMD_SWITCH_TO_NEXT_INPUT_LANGUAGE
+            || command == BrailleInputEvent.CMD_SWITCH_TO_NEXT_OUTPUT_LANGUAGE)
+        && !BrailleUserPreferences.isCurrentActiveInputCodeEightDot(context);
   }
 
   /** Returns whether {@link #onMappedInputEvent} runs the command rather than typing its dots. */

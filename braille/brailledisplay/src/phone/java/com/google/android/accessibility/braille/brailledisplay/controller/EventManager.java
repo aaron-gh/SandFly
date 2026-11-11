@@ -536,6 +536,10 @@ public class EventManager implements EventConsumer {
 
   private boolean handleOtherCommands(BrailleInputEvent event) {
     updateConsumer(/* event= */ null);
+    if (currentConsumer == editorConsumer
+        && EditorConsumer.switchesLanguage(context, event.getCommand())) {
+      return defaultConsumer.onMappedInputEvent(event);
+    }
     return currentConsumer.onMappedInputEvent(event);
   }
 
