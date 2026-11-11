@@ -16,9 +16,14 @@
 
 package com.google.android.accessibility.talkback.monitor
 
+import android.media.AudioAttributes.CONTENT_TYPE_MOVIE
+import android.media.AudioAttributes.CONTENT_TYPE_MUSIC
+import android.media.AudioAttributes.CONTENT_TYPE_SONIFICATION
+import android.media.AudioAttributes.CONTENT_TYPE_SPEECH
 import android.media.AudioAttributes.USAGE_ALARM
 import android.media.AudioAttributes.USAGE_ASSISTANCE_ACCESSIBILITY
 import android.media.AudioAttributes.USAGE_ASSISTANCE_SONIFICATION
+import android.media.AudioAttributes.USAGE_GAME
 import android.media.AudioAttributes.USAGE_MEDIA
 import android.media.AudioAttributes.USAGE_NOTIFICATION
 import android.media.AudioAttributes.USAGE_NOTIFICATION_RINGTONE
@@ -175,5 +180,43 @@ class VolumeChangeFilterTest {
     assertEquals(0, samples.last().toInt())
     assertTrue(samples.maxOf { it.toInt() } <= Short.MAX_VALUE / 2)
     assertTrue(samples.maxOf { it.toInt() } > Short.MAX_VALUE / 3)
+  }
+
+  @Test
+  fun mediaPlaysWhenAnAppPlaysMediaOrAGame() {
+    assertTrue(isMediaPlaying(listOf(USAGE_MEDIA), listOf(CONTENT_TYPE_MUSIC), false))
+    assertTrue(isMediaPlaying(listOf(USAGE_GAME), listOf(CONTENT_TYPE_SONIFICATION), false))
+    assertTrue(
+      isMediaPlaying(
+        listOf(USAGE_ASSISTANCE_ACCESSIBILITY, USAGE_MEDIA),
+        listOf(CONTENT_TYPE_SPEECH, CONTENT_TYPE_MOVIE),
+        true,
+      )
+    )
+  }
+
+  @Test
+  fun otherAudioIsNotMedia() {
+    assertFalse(isMediaPlaying(emptyList(), emptyList(), false))
+    assertFalse(
+      isMediaPlaying(
+        listOf(USAGE_ASSISTANCE_ACCESSIBILITY, USAGE_NOTIFICATION, USAGE_VOICE_COMMUNICATION),
+        listOf(CONTENT_TYPE_SPEECH, CONTENT_TYPE_SONIFICATION, CONTENT_TYPE_SPEECH),
+        false,
+      )
+    )
+  }
+
+  @Test
+  fun ownSpeechAndSoundsAtTheMediaVolumeAreNotMedia() {
+    assertFalse(
+      isMediaPlaying(
+        listOf(USAGE_MEDIA, USAGE_MEDIA),
+        listOf(CONTENT_TYPE_SPEECH, CONTENT_TYPE_SONIFICATION),
+        true,
+      )
+    )
+    // A podcast app's speech counts when SandFly plays nothing at the media volume.
+    assertTrue(isMediaPlaying(listOf(USAGE_MEDIA), listOf(CONTENT_TYPE_SPEECH), false))
   }
 }

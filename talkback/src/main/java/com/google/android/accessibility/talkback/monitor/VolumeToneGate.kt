@@ -41,6 +41,23 @@ class VolumeToneGate {
   }
 }
 
+/**
+ * Whether media plays, from the [usages] and [contentTypes] of the active players, in the same
+ * order. When SandFly's own audio may have a media usage, [ownMediaAudio], players whose content is
+ * speech or sonification are taken to be SandFly's, as its speech and sounds have those types.
+ */
+fun isMediaPlaying(usages: List<Int>, contentTypes: List<Int>, ownMediaAudio: Boolean): Boolean =
+  usages.indices.any { i ->
+    val usage = usages[i]
+    val type = contentTypes.getOrElse(i) { AudioAttributes.CONTENT_TYPE_UNKNOWN }
+    (usage == AudioAttributes.USAGE_MEDIA ||
+      usage == AudioAttributes.USAGE_GAME ||
+      usage == AudioAttributes.USAGE_UNKNOWN) &&
+      (!ownMediaAudio ||
+        (type != AudioAttributes.CONTENT_TYPE_SPEECH &&
+          type != AudioAttributes.CONTENT_TYPE_SONIFICATION))
+  }
+
 /** The audio usage that makes the volume step tone play at the volume of [stream]. */
 fun volumeToneUsage(stream: Int): Int =
   when (stream) {

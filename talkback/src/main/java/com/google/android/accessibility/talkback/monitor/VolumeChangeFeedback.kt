@@ -18,6 +18,7 @@ package com.google.android.accessibility.talkback.monitor
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.media.AudioAttributes
 import android.media.AudioFormat
 import android.media.AudioManager
 import android.media.AudioTrack
@@ -35,7 +36,8 @@ import com.google.android.libraries.accessibility.utils.log.LogUtils
 
 /**
  * Volume keys > Volume change feedback: a tone on each volume step made by the user, at the volume
- * of the stream that changed, an announcement of the new volume after the steps, or both.
+ * of the stream that changed, an announcement of the new volume after the steps, or both. Either can
+ * be silenced while an app plays media.
  *
  * Volume changes come from [VolumeMonitor], which is registered for them anyway, so this class
  * registers nothing itself. A track exists only from the start of a tone until shortly after it.
@@ -55,6 +57,8 @@ class VolumeChangeFeedback(private val context: Context) {
 
   private var playsTone = false
   private var speaksVolume = false
+  private var toneDuringMedia = true
+  private var speechDuringMedia = true
   private var track: AudioTrack? = null
 
   /** The theme's file for the tone, [SoundThemeManifest.NONE] for none, or null for the tone. */
@@ -74,6 +78,16 @@ class VolumeChangeFeedback(private val context: Context) {
     val both = value == context.getString(R.string.value_volume_change_feedback_tone_and_spoken)
     playsTone = both || value == context.getString(R.string.value_volume_change_feedback_tone)
     speaksVolume = both || value == context.getString(R.string.value_volume_change_feedback_spoken)
+    toneDuringMedia =
+      !prefs.getBoolean(
+        context.getString(R.string.pref_volume_change_tone_during_media_key),
+        context.resources.getBoolean(R.bool.pref_volume_change_tone_during_media_default),
+      )
+    speechDuringMedia =
+      !prefs.getBoolean(
+        context.getString(R.string.pref_volume_change_speech_during_media_key),
+        context.resources.getBoolean(R.bool.pref_volume_change_speech_during_media_default),
+      )
     if (!playsTone) {
       release()
     }
@@ -111,15 +125,18 @@ class VolumeChangeFeedback(private val context: Context) {
   /**
    * Handles a reported change of [stream], and plays the tone if it is a step made by the user and
    * neither a phone call, [phoneCallActive], nor an app call is going on. Returns whether this
-   * change is to be announced.
+   * change is to be announced. Media playback silences the tone or the announcement when the user
+   * has chosen so.
    */
   fun onVolumeChanged(stream: Int, value: Int, prevValue: Int, phoneCallActive: Boolean): Boolean {
     if (!playsTone && !speaksVolume) {
       return false
     }
     val kind = filter.classify(stream, value, prevValue, SystemClock.uptimeMillis())
+    val media = if (toneDuringMedia && speechDuringMedia) false else isMediaActive()
     if (
       playsTone &&
+        (toneDuringMedia || !media) &&
         kind == VolumeChangeFilter.Kind.STEP &&
         !phoneCallActive &&
         !PauseController.isPaused() &&
@@ -128,6 +145,7 @@ class VolumeChangeFeedback(private val context: Context) {
       playTone(stream)
     }
     return speaksVolume &&
+      (speechDuringMedia || !media) &&
       (kind == VolumeChangeFilter.Kind.STEP || kind == VolumeChangeFilter.Kind.REPEAT)
   }
 
@@ -221,6 +239,23 @@ class VolumeChangeFeedback(private val context: Context) {
     playerSound = path
     playerUsage = usage
     return created
+  }
+
+  /**
+   * Whether an app plays media. The tone of an earlier step may still be playing with the media
+   * usage, and so may speech and sounds when they play at the media volume.
+   */
+  private fun isMediaActive(): Boolean {
+    val audio = context.getSystemService(AudioManager::class.java) ?: return false
+    val players = audio.activePlaybackConfigurations.map { it.audioAttributes }
+    return isMediaPlaying(
+      players.map { it.usage },
+      players.map { it.contentType },
+      ownMediaAudio =
+        track != null ||
+          player != null ||
+          FailoverTextToSpeech.speechUsage(context) == AudioAttributes.USAGE_MEDIA,
+    )
   }
 
   private fun isAppCallActive(): Boolean {
