@@ -55,6 +55,15 @@
         android:defaultValue="@bool/pref_switch_dialects_default"
         android:key="@string/pref_switch_dialects_key"
         android:title="@string/title_pref_switch_dialects" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+        android:fragment="com.google.android.accessibility.talkback.preference.base.LanguageVoicesFragment"
+        android:key="pref_language_voices_screen"
+        android:persistent="false"
+        android:title="@string/title_pref_language_voices" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="false"
+        android:key="pref_identify_languages_from_words"
+        android:title="@string/title_pref_identify_languages_from_words" />
   </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
       android:key="pref_speech_category_pronunciation"

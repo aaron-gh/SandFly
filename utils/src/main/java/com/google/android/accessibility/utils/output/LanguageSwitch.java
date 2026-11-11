@@ -35,7 +35,7 @@ import org.checkerframework.checker.nullness.qual.Nullable;
 public final class LanguageSwitch {
 
   /** A stretch of text, from {@code start} to {@code end}, in one language or none. */
-  record Run(int start, int end, @Nullable Locale locale) {}
+  public record Run(int start, int end, @Nullable Locale locale) {}
 
   private static volatile boolean switchLanguages = true;
   private static volatile boolean switchDialects = true;
@@ -72,9 +72,16 @@ public final class LanguageSwitch {
     }
   }
 
+  /** The language text with no mark is spoken in: the one chosen, else the voice's. */
+  public static Locale voiceLanguage() {
+    Locale chosen = chosenLanguage;
+    return chosen != null ? chosen : voiceLanguage;
+  }
+
   /** Returns the language to speak text marked as {@code marked} in, by the switches. */
   static @Nullable Locale localeToSpeak(@Nullable Locale marked) {
     if (VoiceProfiles.isProfileActive()) {
+      // Text in a language with a voice profile of its own is said with that profile instead.
       return null;
     }
     Locale chosen = chosenLanguage;
@@ -114,6 +121,47 @@ public final class LanguageSwitch {
     return chosen != null ? chosen : voiceLanguage;
   }
 
+  /**
+   * Returns {@code text} with the languages {@link LanguageDetector} finds marked, where the app
+   * marked none. Returns {@code text} itself if it finds none, or language switching is off.
+   */
+  static CharSequence markDetectedLanguages(CharSequence text) {
+    int length = text.length();
+    if (!switchLanguages || length == 0) {
+      return text;
+    }
+    Locale chosen = chosenLanguage;
+    Locale voice = chosen != null ? chosen : voiceLanguage;
+    LanguageVoices.State state = LanguageVoices.state();
+    @Nullable LanguageGuesser guesser = LanguageVoices.getGuesser();
+    List<Run> found = new ArrayList<>();
+    if (text instanceof Spanned spanned
+        && spanned.getSpans(0, length, LocaleSpan.class).length > 0) {
+      // Only the text the app left unmarked.
+      for (Run run : runs(spanned)) {
+        if (run.locale() != null) {
+          continue;
+        }
+        CharSequence part = text.subSequence(run.start(), run.end());
+        for (Run inPart : LanguageDetector.detect(part, voice, state, guesser)) {
+          found.add(
+              new Run(run.start() + inPart.start(), run.start() + inPart.end(), inPart.locale()));
+        }
+      }
+    } else {
+      found = LanguageDetector.detect(text, voice, state, guesser);
+    }
+    if (found.isEmpty()) {
+      return text;
+    }
+    Spannable marked = new SpannableString(text);
+    for (Run run : found) {
+      marked.setSpan(
+          new LocaleSpan(run.locale()), run.start(), run.end(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+    }
+    return marked;
+  }
+
   /** Splits {@code text} where its language marks change, into runs in the language marked. */
   static List<Run> runs(Spanned text) {
     int length = text.length();
@@ -142,9 +190,12 @@ public final class LanguageSwitch {
       return text;
     }
     if (VoiceProfiles.isProfileActive()) {
+      // Only text in a language said with a voice profile of its own changes voice.
       Spannable unmarked = new SpannableString(text);
       for (LocaleSpan mark : marks) {
-        unmarked.removeSpan(mark);
+        if (LanguageVoices.profileFor(mark.getLocale()) == null) {
+          unmarked.removeSpan(mark);
+        }
       }
       return unmarked;
     }

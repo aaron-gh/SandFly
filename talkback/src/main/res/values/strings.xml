@@ -351,6 +351,16 @@
       Description: When on, text that an app marks as another language is spoken in that language. [CHAR LIMIT=NONE]
     -->
     <string name="title_pref_switch_languages">Switch language automatically</string>
+    <!-- Settings screen that lists the languages the user reads, each with the voice it is spoken in. [CHAR LIMIT=40] -->
+    <string name="title_pref_language_voices">Voices by language</string>
+    <!-- Switch that tells languages written with the same letters apart by their words, such as English and French. [CHAR LIMIT=60] -->
+    <string name="title_pref_identify_languages_from_words">Identify languages from words</string>
+    <!-- Row on the Voices by language screen that adds a language to the list. [CHAR LIMIT=40] -->
+    <string name="title_pref_add_language">Add language</string>
+    <!-- Button in a language's dialog on the Voices by language screen that removes the language from the list. [CHAR LIMIT=30] -->
+    <string name="title_pref_remove_language">Remove language</string>
+    <!-- Setting on the Voices by language screen: the language that text in a script, such as the Latin script, is spoken in. %1$s is the script's name, such as "Latin". [CHAR LIMIT=40] -->
+    <string name="title_pref_script_language">%1$s script</string>
     <!--
       Source: Title for the "switch dialects" toggle.
       Description: When on, text marked as another country's form of the voice's language is spoken with that country's voice. [CHAR LIMIT=NONE]

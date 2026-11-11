@@ -431,7 +431,16 @@ public class FeedbackProcessingUtils {
     for (int i = 0; i < item.getFragments().size(); ++i) {
       final FeedbackFragment fragment = item.getFragments().get(i);
       CharSequence fragmentText = fragment.getText();
-      if (TextUtils.isEmpty(fragmentText) || !(fragmentText instanceof Spannable)) {
+      if (TextUtils.isEmpty(fragmentText)) {
+        continue;
+      }
+      // Languages the app didn't mark, found from the text's writing.
+      CharSequence detected = LanguageSwitch.markDetectedLanguages(fragmentText);
+      if (detected != fragmentText) {
+        fragmentText = detected;
+        fragment.setText(detected);
+      }
+      if (!(fragmentText instanceof Spannable)) {
         continue;
       }
       Spannable spannable = LanguageSwitch.markSpokenLanguages((Spannable) fragmentText);
