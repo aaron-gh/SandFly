@@ -275,8 +275,14 @@ class ShizukuGrantService(private val context: Context?) : IShizukuGrants.Stub()
         manager.javaClass
           .getMethod("startActivityFromRecents", Int::class.javaPrimitiveType, Bundle::class.java)
           .invoke(manager, taskId, null) as? Int
-      // ActivityManager's START_ codes: errors are negative.
-      if (result != null && result < 0) "Start from recents failed with $result" else null
+      // ActivityManager's START_ codes: errors are negative, and 100 and up mean nothing started,
+      // such as START_ABORTED when a task without activities replays its first intent as its app
+      // and Android blocks that as a background start.
+      if (result != null && (result < 0 || result >= START_SWITCHES_CANCELED)) {
+        "Start from recents failed with $result"
+      } else {
+        null
+      }
     } catch (e: InvocationTargetException) {
       e.targetException.toString()
     } catch (e: Throwable) {
@@ -672,5 +678,7 @@ class ShizukuGrantService(private val context: Context?) : IShizukuGrants.Stub()
     const val SYSTEM_UI_SERVICE = "com.android.systemui/.SystemUIService"
     /** SplitScreenConstants.SPLIT_POSITION_BOTTOM_OR_RIGHT. */
     const val SPLIT_POSITION_BOTTOM_OR_RIGHT = 1
+    /** ActivityManager.START_SWITCHES_CANCELED, the first code of a start that didn't happen. */
+    const val START_SWITCHES_CANCELED = 100
   }
 }

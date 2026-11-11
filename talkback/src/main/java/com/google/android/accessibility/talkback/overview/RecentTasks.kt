@@ -20,6 +20,7 @@ import android.accessibilityservice.AccessibilityService
 import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
+import android.content.pm.LauncherApps
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.os.Process
@@ -116,9 +117,37 @@ object RecentTasks {
     ShizukuShell.call(appContext, { service -> read(appContext, service) }, onResult)
   }
 
-  /** Brings [task] to the front. [onDone] gets whether it worked. */
+  /**
+   * Brings [task] to the front. A task whose activities have all finished can't be restored, since
+   * Android blocks the replay of its first intent as a background start and then removes the task:
+   * the task's app is started instead. [context] has to be allowed to start activities, such as an
+   * activity in front or the accessibility service. [onDone] gets whether it worked.
+   */
   fun open(context: Context, task: RecentTask, onDone: (Boolean) -> Unit = {}) {
-    run(context, "open ${task.id}", onDone) { it.openTask(task.id) }
+    run(context, "open ${task.id}", { worked -> onDone(worked || startApp(context, task)) }) {
+      it.openTask(task.id)
+    }
+  }
+
+  /** Starts [task]'s app at its home screen activity in the task's profile. */
+  private fun startApp(context: Context, task: RecentTask): Boolean {
+    val launcherApps = context.getSystemService(LauncherApps::class.java) ?: return false
+    return try {
+      val activities = launcherApps.getActivityList(task.packageName, task.user)
+      val activity =
+        activities.firstOrNull { it.componentName == task.component } ?: activities.firstOrNull()
+      if (activity == null) {
+        LogUtils.w(TAG, "%s has no home screen activity", task.packageName)
+        return false
+      }
+      launcherApps.startMainActivity(activity.componentName, task.user, null, null)
+      true
+    } catch (e: RuntimeException) {
+      // SecurityException for a profile SandFly can't reach, ActivityNotFoundException for an app
+      // removed since the list was read.
+      LogUtils.w(TAG, "start of %s failed: %s", task.packageName, e)
+      false
+    }
   }
 
   /** Removes [task] from the recent tasks, which stops its app if it has no other task. */
