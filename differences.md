@@ -10,7 +10,9 @@ Each section names the settings involved as they appear in SandFly. Unless a sec
 
 When you swiped to an item, TalkBack waited for the app to confirm the new focus before it put together what to say. SandFly speaks the item as soon as it has set focus, and does less other work around each swipe. On a Galaxy Z Fold7, the median time from lifting your finger to hearing speech went from about 68 ms to about 39 ms.
 
-This doesn't apply when focus moves to another window, when the screen changes, or during continuous reading. Keys on the keyboard, sliders, progress bars, pages in a pager, and web content still wait for the app.
+When SandFly knows what the item says before it moves focus, it speaks the item first and then asks the app to move focus. Moving focus waits for the app, which can take long in a busy app, and speech now plays during that wait. If the app doesn't move focus, the speech stops, and for 2 seconds that item is spoken only after focus has moved.
+
+This doesn't apply when focus moves to another window, when the screen changes, or during continuous reading. Keys on the keyboard, sliders, progress bars and pages in a pager still wait for the app. Items on web pages are spoken first when SandFly finds them in the page's items; items that the page finds itself wait for the page. On a test page in Chrome on an Android 17 emulator, the median time from the swipe to the start of speech went from 64 ms to 10 ms, and to the start of audio from 126 ms to 55 ms.
 
 ### Next swipe prepared in advance
 

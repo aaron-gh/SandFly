@@ -126,6 +126,21 @@ public class FocusManagerInternal {
   /** Told when accessibility focus has been set, before the app's focus event for it arrives. */
   public interface FocusSetListener {
     /**
+     * Told just before the focus action on {@code node}, which waits for the app. Returns whether
+     * the focus was spoken now. If it was, {@link #onAccessibilityFocusNotSet} follows when the
+     * action fails.
+     *
+     * @param actionTime when the focus action started, as for {@link #onAccessibilityFocusSet}
+     */
+    default boolean beforeAccessibilityFocusSet(
+        AccessibilityNodeInfoCompat node,
+        FocusActionInfo info,
+        @Nullable EventId eventId,
+        long actionTime) {
+      return false;
+    }
+
+    /**
      * @param actionTime when the focus action started, in {@link SystemClock#uptimeMillis()} time,
      *     before the app could send its focus event for it
      */
@@ -134,6 +149,9 @@ public class FocusManagerInternal {
         FocusActionInfo info,
         @Nullable EventId eventId,
         long actionTime);
+
+    /** Told when the focus action on {@code node}, spoken before it, failed. */
+    default void onAccessibilityFocusNotSet(AccessibilityNodeInfoCompat node) {}
   }
 
   private @Nullable FocusSetListener focusSetListener;
@@ -194,7 +212,8 @@ public class FocusManagerInternal {
     }
 
     boolean isAccessibilityFocusActionPerformedSuccessfully =
-        performAccessibilityFocusActionInternal(node, focusActionInfo, eventId);
+        performAccessibilityFocusActionInternal(
+            node, focusActionInfo, eventId, /* maySpeakFirst= */ !shouldSyncInputFocus);
     if (isAccessibilityFocusActionPerformedSuccessfully
         && !shouldSyncInputFocus
         && FocusActorHelper.shouldClearFocusAfterSetAccessibilityFocus(service, focusActionInfo)) {
@@ -562,18 +581,35 @@ public class FocusManagerInternal {
    * Performs {@link AccessibilityNodeInfoCompat#ACTION_ACCESSIBILITY_FOCUS} on the node. Saves the
    * record if the action is successfully performed.
    *
+   * <p>The focus can be spoken before the action, which waits for the app's main thread, when
+   * {@code maySpeakFirst}: the item is spoken while the app sets the focus. If the action then
+   * fails, the speech is stopped.
+   *
    * @return {@code true} if the action is successfully performed.
    */
   @VisibleForTesting
   protected boolean performAccessibilityFocusActionInternal(
       @NonNull AccessibilityNodeInfoCompat node,
       @NonNull FocusActionInfo focusActionInfo,
-      @Nullable EventId eventId) {
+      @Nullable EventId eventId,
+      boolean maySpeakFirst) {
     long currentTime = SystemClock.uptimeMillis();
+    // Focus that the action is about to mute is never spoken first.
+    boolean spokenFirst =
+        maySpeakFirst
+            && focusSetListener != null
+            && !muteNextFocus
+            && !shouldMuteFeedbackForMicroGranularityNavigation(focusActionInfo, node)
+            && focusSetListener.beforeAccessibilityFocusSet(
+                node, focusActionInfo, eventId, currentTime);
     boolean result =
         pipeline.returnFeedback(
             eventId,
             Feedback.nodeAction(node, AccessibilityNodeInfoCompat.ACTION_ACCESSIBILITY_FOCUS));
+    if (!result && spokenFirst) {
+      pipeline.returnFeedback(eventId, Feedback.part().setInterruptAllFeedback(true));
+      focusSetListener.onAccessibilityFocusNotSet(node);
+    }
     if (result) {
       focusActionInfo = updateFocusActionInfoIfNecessary(focusActionInfo, node);
       // Told first, so that speech can start before the history walks the node's ancestors. The

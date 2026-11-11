@@ -88,6 +88,14 @@ object PreparedFocusSpeech {
     return found?.takeIf { isOldEnough(it.time, SystemClock.uptimeMillis()) }
   }
 
+  /**
+   * Returns the announcement of focusing [node], or null if there is none or it was prepared less
+   * than [MIN_AGE_MS] ago, and keeps them all.
+   */
+  @JvmStatic
+  fun peek(node: AccessibilityNodeInfoCompat): Prepared? =
+    find(node)?.takeIf { isOldEnough(it.time, SystemClock.uptimeMillis()) }
+
   /** Whether an announcement prepared at [preparedTime] may be used at [now]; see [MIN_AGE_MS]. */
   @JvmStatic
   fun isOldEnough(preparedTime: Long, now: Long): Boolean = now - preparedTime >= MIN_AGE_MS
