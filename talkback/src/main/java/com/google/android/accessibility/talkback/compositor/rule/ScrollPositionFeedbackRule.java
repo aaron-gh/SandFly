@@ -63,7 +63,7 @@ public class ScrollPositionFeedbackRule {
           return EventFeedback.builder()
               .setTtsOutput(Optional.of(ttsOutput))
               .setQueueMode(QUEUE_MODE_QUEUE)
-              .setForceFeedbackEvenIfAudioPlaybackActive(true)
+              .setForceFeedbackEvenIfAudioPlaybackActive(false)
               .setForceFeedbackEvenIfMicrophoneActive(true)
               .setForceFeedbackEvenIfSsbActive(false)
               .setTtsPitch(1.2d)
