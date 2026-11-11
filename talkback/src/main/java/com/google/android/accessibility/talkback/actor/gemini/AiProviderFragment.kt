@@ -189,7 +189,8 @@ class AiProviderFragment : TalkbackBaseFragment() {
 
   /**
    * Lists the service's models once they are fetched, with a way to type a model name first.
-   * Nothing opens until the list is ready; when it can't be fetched, the reason is shown.
+   * Nothing opens until the list is ready; when it can't be fetched, the reason is shown and a
+   * field for the model name opens.
    */
   private fun chooseModel() {
     val context = requireContext().applicationContext
@@ -214,6 +215,8 @@ class AiProviderFragment : TalkbackBaseFragment() {
           { error ->
             val reason = (error as? IOException)?.message ?: error.javaClass.simpleName
             Toast.makeText(context, getString(R.string.gemini_model_list_failed, reason), Toast.LENGTH_LONG).show()
+            // Not every service lists its models, so the model name can still be typed.
+            askModel()
           },
         )
       }

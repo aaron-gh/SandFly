@@ -16,6 +16,7 @@
 
 package com.google.android.accessibility.talkback.actor.gemini
 
+import android.content.Context
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.preference.Preference
@@ -39,11 +40,20 @@ object AiProviderPreferences {
   @JvmStatic
   fun setUp(fragment: PreferenceFragmentCompat) {
     val category = fragment.findPreference<PreferenceGroup>(KEY_CATEGORY) ?: return
-    val context = fragment.requireContext()
     fragment.findPreference<Preference>(KEY_CHOICE)?.setOnPreferenceClickListener {
       choose(fragment)
       true
     }
+    addRows(category, fragment.requireContext())
+    refresh(fragment)
+  }
+
+  /**
+   * Adds a row for each service to [category], which opens its settings screen. Settings search
+   * adds them too, to find each service's settings.
+   */
+  @JvmStatic
+  fun addRows(category: PreferenceGroup, context: Context) {
     for (provider in AiProvider.entries) {
       if (provider == AiProvider.NONE || !provider.isOffered) continue
       if (category.findPreference<Preference>(KEY_PREFIX + provider.id) != null) continue
@@ -64,7 +74,6 @@ object AiProviderPreferences {
         }
       )
     }
-    refresh(fragment)
   }
 
   /** Shows which service is in use and how each is set up, after a settings screen closes. */

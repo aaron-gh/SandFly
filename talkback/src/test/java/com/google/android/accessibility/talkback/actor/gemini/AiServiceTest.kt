@@ -144,6 +144,62 @@ class AiServiceTest {
   }
 
   @Test
+  fun servicesInChinaComeBeforeTheOtherService() {
+    val presets =
+      listOf(
+        AiProvider.QWEN,
+        AiProvider.ZHIPU,
+        AiProvider.BAICHUAN,
+        AiProvider.DEEPSEEK,
+        AiProvider.KIMI,
+        AiProvider.HUNYUAN,
+        AiProvider.SILICONFLOW,
+      )
+    val entries = AiProvider.entries
+    assertEquals(
+      presets,
+      entries.subList(entries.indexOf(AiProvider.OLLAMA) + 1, entries.indexOf(AiProvider.OTHER)),
+    )
+    for (provider in presets) {
+      assertTrue(provider.id, AiService.isValidAddress(provider.address))
+      assertTrue(provider.id, provider.keyUrl.startsWith("https://"))
+      assertEquals(provider, AiProvider.of(provider.id))
+      assertTrue(provider.keyPref.contains("api_key"))
+    }
+    assertEquals(presets.size, presets.map { it.id }.toSet().size)
+    assertEquals(entries.size, entries.map { it.id }.toSet().size)
+  }
+
+  @Test
+  fun aServiceInChinaIsSetUpWithAKeyAndAModel() {
+    val prefs = FakeSharedPreferences()
+    assertEquals(AiProvider.Missing.API_KEY, AiProvider.DEEPSEEK.missing(prefs))
+    AiProvider.DEEPSEEK.setApiKey(prefs, "key")
+    assertEquals(AiProvider.Missing.MODEL, AiProvider.DEEPSEEK.missing(prefs))
+    AiProvider.DEEPSEEK.setModel(prefs, "deepseek-chat")
+    assertTrue(AiService.isSetUp(prefs))
+    assertEquals(AiProvider.DEEPSEEK, AiProvider.active(prefs))
+    assertTrue(AiProvider.DEEPSEEK in AiProvider.choices(prefs))
+    assertEquals("https://api.deepseek.com/v1", AiService.address(prefs))
+    assertEquals(
+      "https://open.bigmodel.cn/api/paas/v4/chat/completions",
+      AiService.chatUrl(AiProvider.ZHIPU.address),
+    )
+  }
+
+  @Test
+  fun theOldOtherServiceAtAServiceInChinaMovesToIt() {
+    val prefs = FakeSharedPreferences()
+    prefs.edit()
+      .putString("pref_ai_service_address", "https://api.moonshot.cn/v1/chat/completions")
+      .putString("pref_ai_service_model", "kimi")
+      .putString("pref_ai_service_api_key", "key")
+      .apply()
+    assertEquals(AiProvider.KIMI, AiProvider.active(prefs))
+    assertEquals("kimi", AiProvider.KIMI.model(prefs))
+  }
+
+  @Test
   fun onlyHttpsAddressesCanBeUsed() {
     assertTrue(AiService.isValidAddress("https://ollama.com/v1"))
     assertFalse(AiService.isValidAddress("http://192.168.1.5:11434/v1"))
