@@ -22,6 +22,7 @@ import android.os.Handler
 import android.os.HandlerThread
 import android.os.Looper
 import android.os.SystemClock
+import android.util.Log
 import android.view.accessibility.AccessibilityNodeInfo
 import android.view.accessibility.AccessibilityWindowInfo
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
@@ -135,6 +136,7 @@ object MacroRunner {
     /** Runs the steps when the macro's condition is met and its blocks match. */
     fun start(sayNotMet: Boolean) {
       flow.problem?.let {
+        Log.w(TAG, "Macro not run: blocks don't match at step ${it.index + 1}")
         say(
           service.getString(
             R.string.macro_stopped_problem,
@@ -182,8 +184,12 @@ object MacroRunner {
               return
             }
             // A macro started from a macro would stop it, and could start itself again and again.
-            if (Macros.isCommand(step.value) || !service.performCommand(step.value)) {
-              fail(step)
+            if (Macros.isCommand(step.value)) {
+              fail(index, step, "macro run from a macro")
+              return
+            }
+            if (!service.performCommand(step.value)) {
+              fail(index, step, "command not run")
               return
             }
             later(STEP_GAP_MS) { runStep(index + 1) }
@@ -191,7 +197,7 @@ object MacroRunner {
           is Macros.Wait -> later(step.millis) { runStep(index + 1) }
           is Macros.OpenApp -> {
             if (!OpenAppActions.open(service, step.value)) {
-              fail(step)
+              fail(index, step, "app not opened")
               return
             }
             later(STEP_GAP_MS) { runStep(index + 1) }
@@ -200,8 +206,7 @@ object MacroRunner {
           is Macros.Tap -> tap(index, step)
         }
       } catch (e: RuntimeException) {
-        LogUtils.w(TAG, "Macro step failed: %s", e)
-        fail(step)
+        fail(index, step, e.toString())
       }
     }
 
@@ -220,6 +225,7 @@ object MacroRunner {
         when {
           !again -> runStep(flow.end[index] + 1)
           repeats[index] >= Macros.MAX_REPEATS -> {
+            Log.w(TAG, "Macro stopped at step ${index + 1}: ${Macros.MAX_REPEATS} repeats")
             say(
               service.getString(
                 R.string.macro_stopped_repeats,
@@ -248,6 +254,7 @@ object MacroRunner {
           met -> runStep(index + 1)
           SystemClock.uptimeMillis() + POLL_MS <= deadline -> later(POLL_MS) { waitUntil(index, step, deadline) }
           else -> {
+            Log.w(TAG, "Macro stopped at step ${index + 1}: Wait until timed out")
             say(service.getString(R.string.macro_stopped_timeout, Macros.describe(service, step)))
             done()
           }
@@ -295,7 +302,7 @@ object MacroRunner {
         if (SystemClock.uptimeMillis() < deadline) {
           later(POLL_MS) { typeText(index, step, deadline) }
         } else {
-          fail(step)
+          fail(index, step, "no edit field with input focus")
         }
         return
       }
@@ -313,7 +320,7 @@ object MacroRunner {
           ) == true
         }
       if (!typed) {
-        fail(step)
+        fail(index, step, "text not set")
         return
       }
       later(STEP_GAP_MS) { runStep(index + 1) }
@@ -355,15 +362,19 @@ object MacroRunner {
         }
       when {
         clicked == true -> mainHandler.post { ifActive { later(STEP_GAP_MS) { runStep(index + 1) } } }
-        clicked == false -> mainHandler.post { ifActive { fail(step, found = true) } }
+        clicked == false -> mainHandler.post { ifActive { fail(index, step, "click not performed", found = true) } }
         SystemClock.uptimeMillis() + POLL_MS <= deadline ->
           searchHandler?.postDelayed({ search(index, step, deadline) }, POLL_MS)
-        else -> mainHandler.post { ifActive { fail(step) } }
+        else -> mainHandler.post { ifActive { fail(index, step, "item not found") } }
       }
     }
 
-    /** Says that [step] failed, or for a Tap step not [found], that its item isn't there, and stops. */
-    private fun fail(step: Macros.Step, found: Boolean = false) {
+    /**
+     * Says that [step], at [index], failed, or for a Tap step not [found], that its item isn't
+     * there, and stops. Logs [reason] at warning level, which problem reports include by default.
+     */
+    private fun fail(index: Int, step: Macros.Step, reason: String, found: Boolean = false) {
+      Log.w(TAG, "Macro stopped at step ${index + 1} of ${macro.steps.size}: ${step::class.simpleName}, $reason")
       val text =
         if (step is Macros.Tap && !found) {
           service.getString(R.string.macro_item_not_found, step.label)
@@ -530,10 +541,14 @@ object MacroRunner {
     repeat(MAX_CLICK_PARENTS + 1) {
       val item = candidate ?: return@repeat
       if (item.isClickable && item.isEnabled) {
-        return item.performAction(AccessibilityNodeInfo.ACTION_CLICK)
+        return item.performAction(AccessibilityNodeInfo.ACTION_CLICK).also {
+          if (!it) Log.w(TAG, "Click returned false: ${item.className} in ${item.packageName}")
+        }
       }
       candidate = item.parent
     }
-    return node.performAction(AccessibilityNodeInfo.ACTION_CLICK)
+    return node.performAction(AccessibilityNodeInfo.ACTION_CLICK).also {
+      if (!it) Log.w(TAG, "No clickable item: ${node.className} in ${node.packageName}")
+    }
   }
 }
