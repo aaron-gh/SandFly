@@ -2037,4 +2037,91 @@
   <string name="title_select_last_spoken_phrase_word_by_word">Laatste gesproken zin woord voor woord selecteren</string>
   <string name="no_words_selected">Geen woorden geselecteerd</string>
   <string name="no_phrase_to_select">Geen zin om te selecteren</string>
+  <string name="title_pref_speech_equalizer_save_preset">Opslaan als voorinstelling</string>
+  <string name="title_pref_speech_equalizer_saved_presets">Opgeslagen voorinstellingen</string>
+  <string name="speech_equalizer_preset_name">Naam</string>
+  <string name="speech_equalizer_preset_name_taken">Er bestaat al een voorinstelling met de naam <xliff:g id="name" example="Podcast">%1$s</xliff:g></string>
+  <string name="speech_equalizer_presets_full">Er kunnen geen voorinstellingen meer worden opgeslagen. Verwijder er een om een nieuwe op te slaan.</string>
+  <string name="speech_equalizer_preset_saved"><xliff:g id="name" example="Podcast">%1$s</xliff:g> opgeslagen</string>
+  <string name="speech_equalizer_preset_rename">Naam wijzigen</string>
+  <string name="speech_equalizer_preset_delete">Verwijderen</string>
+  <string name="speech_equalizer_preset_delete_confirm"><xliff:g id="name" example="Podcast">%1$s</xliff:g> verwijderen?</string>
+  <string name="speech_equalizer_preset_deleted"><xliff:g id="name" example="Podcast">%1$s</xliff:g> verwijderd</string>
+  <string name="title_pref_emoji_voice">Emoji-stem</string>
+  <string name="value_emoji_voice_same">Zelfde als spraak</string>
+  <string name="title_pref_emoji_rate">Spraaksnelheid voor emoji</string>
+  <string name="title_pref_language_voices">Stemmen per taal</string>
+  <string name="title_pref_identify_languages_from_words">Talen herkennen aan woorden</string>
+  <string name="title_pref_add_language">Taal toevoegen</string>
+  <string name="title_pref_remove_language">Taal verwijderen</string>
+  <string name="title_pref_script_language">%1$s schrift</string>
+  <string name="title_pref_screen_on_notification_count">Aantal meldingen</string>
+  <string name="title_pref_phonetic_letters_review">Letters fonetisch uitspreken bij doorlopen</string>
+  <string name="title_pref_phonetic_letters_typing">Letters fonetisch uitspreken bij typen</string>
+  <string name="overview_shizuku_not_running">Shizuku draait niet</string>
+  <string name="overview_shizuku_not_allowed">Shizuku staat SandFly niet toe</string>
+  <string name="overview_no_older_app">Geen oudere app</string>
+  <string name="overview_no_newer_app">Geen nieuwere app</string>
+  <string name="corner_gestures_title">Hoeken</string>
+  <string name="title_pref_shortcut_corner_top_left_tap">Tikken in de hoek linksboven</string>
+  <string name="title_pref_shortcut_corner_top_left_double_tap">Dubbeltikken in de hoek linksboven</string>
+  <string name="title_pref_shortcut_corner_top_left_triple_tap">3 keer tikken in de hoek linksboven</string>
+  <string name="title_pref_shortcut_corner_top_left_double_tap_hold">Dubbeltikken en vasthouden in de hoek linksboven</string>
+  <string name="title_pref_shortcut_corner_top_left_triple_tap_hold">3 keer tikken en vasthouden in de hoek linksboven</string>
+  <string name="title_pref_shortcut_corner_top_right_tap">Tikken in de hoek rechtsboven</string>
+  <string name="title_pref_shortcut_corner_top_right_double_tap">Dubbeltikken in de hoek rechtsboven</string>
+  <string name="title_pref_shortcut_corner_top_right_triple_tap">3 keer tikken in de hoek rechtsboven</string>
+  <string name="title_pref_shortcut_corner_top_right_double_tap_hold">Dubbeltikken en vasthouden in de hoek rechtsboven</string>
+  <string name="title_pref_shortcut_corner_top_right_triple_tap_hold">3 keer tikken en vasthouden in de hoek rechtsboven</string>
+  <string name="title_pref_shortcut_corner_bottom_left_tap">Tikken in de hoek linksonder</string>
+  <string name="title_pref_shortcut_corner_bottom_left_double_tap">Dubbeltikken in de hoek linksonder</string>
+  <string name="title_pref_shortcut_corner_bottom_left_triple_tap">3 keer tikken in de hoek linksonder</string>
+  <string name="title_pref_shortcut_corner_bottom_left_double_tap_hold">Dubbeltikken en vasthouden in de hoek linksonder</string>
+  <string name="title_pref_shortcut_corner_bottom_left_triple_tap_hold">3 keer tikken en vasthouden in de hoek linksonder</string>
+  <string name="title_pref_shortcut_corner_bottom_right_tap">Tikken in de hoek rechtsonder</string>
+  <string name="title_pref_shortcut_corner_bottom_right_double_tap">Dubbeltikken in de hoek rechtsonder</string>
+  <string name="title_pref_shortcut_corner_bottom_right_triple_tap">3 keer tikken in de hoek rechtsonder</string>
+  <string name="title_pref_shortcut_corner_bottom_right_double_tap_hold">Dubbeltikken en vasthouden in de hoek rechtsonder</string>
+  <string name="title_pref_shortcut_corner_bottom_right_triple_tap_hold">3 keer tikken en vasthouden in de hoek rechtsonder</string>
+  <string name="title_pref_swipe_start_time">Starttijd van gebaar</string>
+  <string name="title_pref_corner_size_mm">Hoekgrootte</string>
+  <string name="value_corner_size_edge_width">Zelfde als randbreedte</string>
+  <string name="title_pref_corner_tap_time_ms">Maximale tiktijd in hoek</string>
+  <string name="value_corner_tap_time_system">Systeemstandaard</string>
+  <string name="title_pref_edge_speak_commands">Opdracht uitspreken bij elke klik</string>
+  <string name="title_pref_volume_change_tone_during_media">Toon dempen tijdens afspelen van media</string>
+  <string name="title_pref_volume_change_speech_during_media">Spraak dempen tijdens afspelen van media</string>
+  <string name="title_pref_double_tap_moves_cursor">Dubbeltikken verplaatst cursor naar begin of einde</string>
+  <string name="title_pref_scroll_ahead">Alvast scrollen naar het volgende item</string>
+  <string name="title_pref_speak_while_scrolling">Volgende item uitspreken tijdens scrollen</string>
+  <string name="value_keep_models_until_stopped">Totdat SandFly stopt</string>
+  <string name="title_pref_settings_profiles">Instellingenprofielen</string>
+  <string name="title_pref_new_settings_profile">Nieuw instellingenprofiel</string>
+  <string name="settings_profile_default">Standaard</string>
+  <string name="settings_profile_new_name">Profiel <xliff:g id="number" example="2">%1$d</xliff:g></string>
+  <string name="settings_profile_name_taken">Er bestaat al een instellingenprofiel met de naam <xliff:g id="name" example="Demo">%1$s</xliff:g></string>
+  <string name="settings_profile_in_use">In gebruik</string>
+  <string name="settings_profile_menu_item_in_use"><xliff:g id="name" example="Demo">%1$s</xliff:g>, in gebruik</string>
+  <string name="settings_profile_switch">Wisselen naar</string>
+  <string name="settings_profile_save_current">Huidige instellingen opslaan in dit profiel</string>
+  <string name="settings_profile_save_confirm">Instellingen van <xliff:g id="name" example="Demo">%1$s</xliff:g> vervangen door de huidige instellingen?</string>
+  <string name="settings_profile_save">Vervangen</string>
+  <string name="settings_profile_saved">Instellingen opgeslagen in <xliff:g id="name" example="Demo">%1$s</xliff:g></string>
+  <string name="settings_profile_not_saved">Instellingenprofiel kon niet worden opgeslagen</string>
+  <string name="settings_profile_in_use_announcement">Profiel <xliff:g id="name" example="Demo">%1$s</xliff:g></string>
+  <string name="settings_profile_not_changed">Instellingenprofiel niet gewijzigd</string>
+  <string name="title_settings_profile">Instellingenprofiel</string>
+  <string name="shortcut_settings_profiles">Kies instellingenprofiel</string>
+  <string name="shortcut_next_settings_profile">Volgend instellingenprofiel</string>
+  <string name="shortcut_move_to_item_below">Naar item onder gaan</string>
+  <string name="shortcut_move_to_item_above">Naar item boven gaan</string>
+  <string name="shortcut_older_app">Oudere app</string>
+  <string name="shortcut_newer_app">Nieuwere app</string>
+  <string name="shortcut_answer_call">Gesprek beantwoorden</string>
+  <string name="answer_call_no_call">Geen inkomende oproep</string>
+  <string name="answer_call_permission">Toestemming nodig om gesprekken te beantwoorden</string>
+  <plurals name="template_screen_on_notification_count">
+    <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> melding</item>
+    <item quantity="other"><xliff:g id="count" example="6">%d</xliff:g> meldingen</item>
+  </plurals>
 </resources>
