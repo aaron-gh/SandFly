@@ -1637,6 +1637,14 @@ public class TalkBackService extends AccessibilityServiceCompat
       // While paused, keys pass to apps except the ones that resume Backtalk.
       Boolean handled = pauseController.onKeyEvent(keyEvent);
       if (handled != null) {
+        if (!handled && PauseController.isPaused() && isVolumeKeyForPauseCommand(keyEvent)) {
+          // A volume key press assigned to Pause SandFly resumes it.
+          return volumeKeyCommands.onKeyEvent(
+              keyEvent,
+              () ->
+                  canUseVolumeKeyCommands(
+                      /* triggerModifierPressed= */ false, keyEvent.getKeyCode()));
+        }
         return handled;
       }
     }
@@ -1805,6 +1813,20 @@ public class TalkBackService extends AccessibilityServiceCompat
         && voiceActionMonitor != null
         && voiceActionMonitor.getCurrentCallState() == TelephonyManager.CALL_STATE_RINGING
         && volumeKeyCommands.hasCommand(keyCode, getString(R.string.shortcut_value_answer_call));
+  }
+
+  /**
+   * Whether {@code keyEvent} is a volume key that has Pause SandFly on a press, or the release of a
+   * volume key, which may end such a press.
+   */
+  private boolean isVolumeKeyForPauseCommand(KeyEvent keyEvent) {
+    int keyCode = keyEvent.getKeyCode();
+    if (volumeKeyCommands == null
+        || (keyCode != KeyEvent.KEYCODE_VOLUME_UP && keyCode != KeyEvent.KEYCODE_VOLUME_DOWN)) {
+      return false;
+    }
+    return keyEvent.getAction() == KeyEvent.ACTION_UP
+        || volumeKeyCommands.hasCommand(keyCode, getString(R.string.shortcut_value_pause_backtalk));
   }
 
   private boolean canTakeVolumeKeys(boolean triggerModifierPressed) {
@@ -2947,7 +2969,13 @@ public class TalkBackService extends AccessibilityServiceCompat
         new VolumeKeyCommands(
             this,
             action -> {
-              if (gestureController != null) {
+              if (PauseController.isPaused()) {
+                // While paused, only the press that pauses SandFly does anything: it resumes.
+                if (pauseController != null
+                    && action.equals(getString(R.string.shortcut_value_pause_backtalk))) {
+                  pauseController.resume();
+                }
+              } else if (gestureController != null) {
                 gestureController.performAction(action, EVENT_ID_UNTRACKED);
               }
               return Unit.INSTANCE;
