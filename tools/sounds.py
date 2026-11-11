@@ -1,8 +1,8 @@
 # Synthesises all of SandFly's built-in sounds and writes them where the app reads them: focus,
 # clicks, scrolling, windows, list chimes, links, formatting, typos, browse mode, loading, volume,
 # screen off and on, the circle menu, reading controls, cursor moves, row wraps, edge gestures,
-# control sounds and the agent in talkback and utils, and the braille display and braille
-# keyboard sounds in braille/common.
+# control sounds, SandFly's notifications and the agent in talkback and utils, and the braille
+# display and braille keyboard sounds in braille/common.
 #
 # Each sound is a 48 kHz, 16-bit mono WAV, peak-normalised to its own level and dithered. WAV is
 # lossless, and Android plays it everywhere; ffmpeg's built-in Vorbis encoder, used before, added
@@ -242,6 +242,12 @@ def sounds():
     s["edge_gesture_middle"] = ([TALKBACK], [note(G5, 0, 0.07, 0.0156, partials=edge)], 0.08, -5)
     s["edge_gesture_top"] = ([TALKBACK], [note(C6, 0, 0.06, 0.0133, partials=edge),
                                           note(E6, 0.05, 0.08, 0.0178, partials=edge)], 0.14, -4)
+
+    # A notification of SandFly's own was posted, on a channel without a sound: three rising bell
+    # notes, the last left to ring.
+    s["sandfly_notification"] = ([TALKBACK], [note(A5, 0, 0.3, 0.09),
+                                              note(E6, 0.09, 0.3, 0.09),
+                                              note(A6, 0.18, 0.7, 0.22)], 0.9, -6)
 
     # The SandFly Pro agent: start, done, a question, a safety stop and a failure.
     s["agentic_interaction_start"] = ([TALKBACK], [note(G5, 0, 0.3, 0.1, attack=0.006),

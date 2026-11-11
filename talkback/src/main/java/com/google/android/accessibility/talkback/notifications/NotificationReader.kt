@@ -449,6 +449,45 @@ object NotificationReader {
     )
   }
 
+  /**
+   * Plays the SandFly notification sound for [notification], from [event], when SandFly posted it on
+   * a channel that has no sound, since its main channel is silent and some phones, such as
+   * Samsung's, don't let the user pick a sound for it. Nothing plays during Do Not Disturb unless
+   * it lets the notification through.
+   */
+  @JvmStatic
+  @MainThread
+  fun playOwnNotificationSound(event: AccessibilityEvent, notification: Notification, dnd: Boolean) {
+    val context = context ?: return
+    val feedback = feedback ?: return
+    if (event.packageName?.toString() != context.packageName) return
+    val channel =
+      context.getSystemService(NotificationManager::class.java)
+        ?.getNotificationChannel(notification.channelId ?: return) ?: return
+    if (!ownNotificationSounds(notification, channel.importance, channel.sound != null)) return
+    if (dnd &&
+      NotificationListService.instance?.matchesInterruptionFilter(context.packageName, notification) != true
+    ) {
+      return
+    }
+    feedback.returnFeedback(EVENT_ID_UNTRACKED, Feedback.sound(R.raw.sandfly_notification))
+  }
+
+  /**
+   * Whether a notification of SandFly's own gets the SandFly notification sound: one that alerts,
+   * on a channel of at least default [importance] without a sound of its own, and that isn't
+   * ongoing or a progress bar.
+   */
+  @JvmStatic
+  fun ownNotificationSounds(notification: Notification, importance: Int, channelHasSound: Boolean): Boolean =
+    !channelHasSound &&
+      importance >= NotificationManager.IMPORTANCE_DEFAULT &&
+      notification.flags and
+        (Notification.FLAG_ONGOING_EVENT or Notification.FLAG_FOREGROUND_SERVICE) == 0 &&
+      notification.category != Notification.CATEGORY_PROGRESS &&
+      (notification.extras?.getInt(Notification.EXTRA_PROGRESS_MAX, 0) ?: 0) <= 0 &&
+      !(notification.extras?.getBoolean(Notification.EXTRA_PROGRESS_INDETERMINATE) ?: false)
+
   /** Whether a call is announced while Do Not Disturb is on. */
   @JvmStatic
   @MainThread

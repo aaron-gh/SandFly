@@ -137,6 +137,7 @@ object SoundVibrations {
       "browse_mode_off_v4_2" to "browse_mode_off_pattern",
       "keyboard_opened" to "keyboard_opened_pattern",
       "keyboard_closed" to "keyboard_closed_pattern",
+      "sandfly_notification" to "sandfly_notification_pattern",
       "screen_on" to "screen_on_pattern",
       // The braille display's sounds.
       "display_connected" to "display_connected_pattern",
