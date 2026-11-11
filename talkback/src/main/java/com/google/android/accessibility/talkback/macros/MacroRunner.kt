@@ -16,6 +16,7 @@
 
 package com.google.android.accessibility.talkback.macros
 
+import android.app.KeyguardManager
 import android.os.Bundle
 import android.os.Handler
 import android.os.HandlerThread
@@ -36,8 +37,9 @@ import com.google.android.libraries.accessibility.utils.log.LogUtils
  * Runs macros, one at a time: starting a macro stops the one running.
  *
  * Steps run on the main thread, one after another through a handler, so gestures and the screen
- * reader go on between them. Looking for an item to tap reads the windows on a thread of the run's
- * own, since each node it reads asks the app. A step that fails says so and stops the macro.
+ * reader go on between them. Looking for an item to tap and checking conditions read the windows on
+ * a thread of the run's own, since each node they read asks the app. A step that fails says so and
+ * stops the macro.
  *
  * Called on the main thread.
  */
@@ -48,6 +50,12 @@ object MacroRunner {
   private const val STEP_GAP_MS = 300L
 
   private const val POLL_MS = 250L
+
+  /** The time between two runs of a repeat's steps, so that a repeat of quick steps doesn't spin. */
+  private const val REPEAT_GAP_MS = 100L
+
+  /** The most items in the focused item whose text a test reads. */
+  private const val MAX_FOCUS_NODES = 50
 
   /** How long a Type text step waits for an edit field to have input focus. */
   private const val FIELD_TIMEOUT_MS = 3_000L
@@ -76,15 +84,19 @@ object MacroRunner {
     return run(id)
   }
 
-  /** Runs the macro [id], stopping the one running. Returns false when it can't run. */
+  /**
+   * Runs the macro [id], stopping the one running, when its condition is met. [sayNotMet] says so
+   * when it isn't. Returns false when it can't run.
+   */
   @JvmStatic
-  fun run(id: String): Boolean {
+  @JvmOverloads
+  fun run(id: String, sayNotMet: Boolean = false): Boolean {
     val service = TalkBackService.getInstance() ?: return false
     val macro = Macros.find(SharedPreferencesUtils.getSharedPreferences(service), id) ?: return false
     stop()
     val run = Run(service, macro)
     current = run
-    run.later(0) { run.runStep(0) }
+    run.later(0) { run.start(sayNotMet) }
     return true
   }
 
@@ -99,7 +111,12 @@ object MacroRunner {
   private class Run(val service: TalkBackService, val macro: Macros.Macro) {
     @Volatile var finished = false
 
-    // The thread that looks for items to tap, made for the first Tap step.
+    private val flow = Macros.analyze(macro.steps)
+
+    // How many times each repeat has run its steps since the macro reached it.
+    private val repeats = IntArray(macro.steps.size)
+
+    // The thread that looks for items and checks conditions, made when the run first needs it.
     private var searchThread: HandlerThread? = null
     @Volatile private var searchHandler: Handler? = null
 
@@ -115,6 +132,29 @@ object MacroRunner {
       if (active) block() else done()
     }
 
+    /** Runs the steps when the macro's condition is met and its blocks match. */
+    fun start(sayNotMet: Boolean) {
+      flow.problem?.let {
+        say(
+          service.getString(
+            R.string.macro_stopped_problem,
+            it.index + 1,
+            service.getString(it.message),
+          )
+        )
+        done()
+        return
+      }
+      evaluate(macro.condition) { met ->
+        if (met) {
+          runStep(0)
+        } else {
+          if (sayNotMet) say(service.getString(R.string.macro_not_met))
+          done()
+        }
+      }
+    }
+
     fun runStep(index: Int) {
       if (!active) return
       val step = macro.steps.getOrNull(index)
@@ -124,6 +164,18 @@ object MacroRunner {
       }
       try {
         when (step) {
+          is Macros.If -> evaluate(step.condition) { if (it) runStep(index + 1) else branch(flow.next[index]) }
+          // The branch before it has run.
+          is Macros.ElseIf, Macros.Else -> runStep(flow.end[index] + 1)
+          Macros.EndIf -> runStep(index + 1)
+          is Macros.RepeatTimes, is Macros.RepeatWhile -> {
+            repeats[index] = 0
+            repeatAgain(index)
+          }
+          Macros.EndRepeat -> later(REPEAT_GAP_MS) { repeatAgain(flow.start[index]) }
+          Macros.ExitLoop -> runStep(flow.end[flow.start[index]] + 1)
+          Macros.StopMacro -> done()
+          is Macros.WaitUntil -> waitUntil(index, step, SystemClock.uptimeMillis() + step.timeoutMillis)
           is Macros.RunCommand -> {
             if (step.value == Macros.STOP_COMMAND) {
               done()
@@ -152,6 +204,84 @@ object MacroRunner {
         fail(step)
       }
     }
+
+    /** Goes on at [index], an Else if, Else or End if reached when the branches before it didn't run. */
+    private fun branch(index: Int) {
+      when (val step = macro.steps[index]) {
+        is Macros.ElseIf -> evaluate(step.condition) { if (it) runStep(index + 1) else branch(flow.next[index]) }
+        else -> runStep(index + 1)
+      }
+    }
+
+    /** Runs the steps of the repeat at [index] once more, or goes on after it. */
+    private fun repeatAgain(index: Int) {
+      val step = macro.steps[index]
+      val again: (Boolean) -> Unit = { again ->
+        when {
+          !again -> runStep(flow.end[index] + 1)
+          repeats[index] >= Macros.MAX_REPEATS -> {
+            say(
+              service.getString(
+                R.string.macro_stopped_repeats,
+                Macros.MAX_REPEATS,
+                Macros.describe(service, step),
+              )
+            )
+            done()
+          }
+          else -> {
+            repeats[index]++
+            runStep(index + 1)
+          }
+        }
+      }
+      when (step) {
+        is Macros.RepeatTimes -> again(repeats[index] < step.count)
+        is Macros.RepeatWhile -> evaluate(step.condition, again)
+        else -> runStep(index + 1)
+      }
+    }
+
+    private fun waitUntil(index: Int, step: Macros.WaitUntil, deadline: Long) {
+      evaluate(step.condition) { met ->
+        when {
+          met -> runStep(index + 1)
+          SystemClock.uptimeMillis() + POLL_MS <= deadline -> later(POLL_MS) { waitUntil(index, step, deadline) }
+          else -> {
+            say(service.getString(R.string.macro_stopped_timeout, Macros.describe(service, step)))
+            done()
+          }
+        }
+      }
+    }
+
+    /**
+     * Checks [condition] on the search thread, and calls [then] on the main thread with whether it
+     * is met, while the run is active. A test that can't read the windows isn't met.
+     */
+    private fun evaluate(condition: Macros.Condition, then: (Boolean) -> Unit) {
+      if (condition.clauses.isEmpty()) {
+        then(true)
+        return
+      }
+      searchHandler().post {
+        if (finished) return@post
+        val met =
+          try {
+            condition.isMet { check(service, it) }
+          } catch (e: RuntimeException) {
+            LogUtils.w(TAG, "Cannot check a macro condition: %s", e)
+            false
+          }
+        mainHandler.post { ifActive { then(met) } }
+      }
+    }
+
+    private fun searchHandler(): Handler =
+      searchHandler
+        ?: Handler(HandlerThread(TAG).also { it.start(); searchThread = it }.looper).also {
+          searchHandler = it
+        }
 
     private fun typeText(index: Int, step: Macros.TypeText, deadline: Long) {
       val field =
@@ -206,16 +336,8 @@ object MacroRunner {
     }
 
     private fun tap(index: Int, step: Macros.Tap) {
-      var handler = searchHandler
-      if (handler == null) {
-        val thread = HandlerThread(TAG)
-        thread.start()
-        searchThread = thread
-        handler = Handler(thread.looper)
-        searchHandler = handler
-      }
       val deadline = SystemClock.uptimeMillis() + step.timeoutMillis
-      handler.post { search(index, step, deadline) }
+      searchHandler().post { search(index, step, deadline) }
     }
 
     /** Looks for the item of [step] on the search thread until [deadline], and clicks it. */
@@ -248,8 +370,12 @@ object MacroRunner {
         } else {
           service.getString(R.string.macro_step_failed, Macros.describe(service, step))
         }
-      service.feedbackReturner?.returnFeedback(EVENT_ID_UNTRACKED, Feedback.requestedSpeech(text))
+      say(text)
       done()
+    }
+
+    private fun say(text: String) {
+      service.feedbackReturner?.returnFeedback(EVENT_ID_UNTRACKED, Feedback.requestedSpeech(text))
     }
 
     private fun done() {
@@ -271,7 +397,12 @@ object MacroRunner {
    * or description contains it, in the active window first, then from the top window down.
    * SandFly's own overlays are left out.
    */
-  private fun findItem(service: TalkBackService, label: String): AccessibilityNodeInfo? {
+  private fun findItem(
+    service: TalkBackService,
+    label: String,
+    kind: Macros.Kind? = null,
+    anyMatch: Boolean = false,
+  ): AccessibilityNodeInfo? {
     val target = label.trim()
     if (target.isEmpty()) return null
     val roots =
@@ -287,11 +418,17 @@ object MacroRunner {
       while (queue.isNotEmpty() && count < MAX_NODES) {
         val node = queue.removeFirst()
         count++
-        if (node.isVisibleToUser) {
-          for (text in listOfNotNull(node.text, node.contentDescription)) {
+        if (node.isVisibleToUser && (kind == null || isKind(node, kind))) {
+          val texts =
+            if (kind == null && !anyMatch) listOfNotNull(node.text, node.contentDescription)
+            else texts(node)
+          for (text in texts) {
             val trimmed = text.toString().trim()
             if (trimmed.equals(target, ignoreCase = true)) return node
-            if (partial == null && trimmed.contains(target, ignoreCase = true)) partial = node
+            if (partial == null && trimmed.contains(target, ignoreCase = true)) {
+              if (anyMatch) return node
+              partial = node
+            }
           }
         }
         for (i in 0 until node.childCount) {
@@ -300,6 +437,91 @@ object MacroRunner {
       }
     }
     return partial
+  }
+
+  /** Returns whether the macro condition test [test] is met. Called on the search thread. */
+  private fun check(service: TalkBackService, test: Macros.Test): Boolean =
+    when (test) {
+      is Macros.ItemOnScreen -> findItem(service, test.label, test.kind, anyMatch = true) != null
+      is Macros.FocusedItem -> {
+        val focused = service.findFocus(AccessibilityNodeInfo.FOCUS_ACCESSIBILITY)
+        focused != null &&
+          (test.kind == null || isKind(focused, test.kind)) &&
+          (test.label.isBlank() || containsText(focused, test.label.trim()))
+      }
+      is Macros.AppInFront -> activePackage(service) == test.packageName
+      Macros.KeyboardShown -> service.windows.any { it.type == AccessibilityWindowInfo.TYPE_INPUT_METHOD }
+      Macros.ScreenLocked -> service.getSystemService(KeyguardManager::class.java)?.isKeyguardLocked == true
+    }
+
+  /** The package of the app in the active window, or of the top app window when none is active. */
+  private fun activePackage(service: TalkBackService): CharSequence? {
+    val windows = service.windows
+    val window =
+      windows.firstOrNull { it.isActive && it.type == AccessibilityWindowInfo.TYPE_APPLICATION }
+        ?: windows
+          .filter { it.type == AccessibilityWindowInfo.TYPE_APPLICATION }
+          .maxByOrNull { it.layer }
+    return window?.root?.packageName
+  }
+
+  private fun texts(node: AccessibilityNodeInfo): List<CharSequence> =
+    listOfNotNull(
+      node.text,
+      node.contentDescription,
+      node.hintText,
+      AccessibilityNodeInfoCompat.wrap(node).stateDescription,
+    )
+
+  /** Returns whether the text of [node] or of the items in it contains [label], ignoring case. */
+  private fun containsText(node: AccessibilityNodeInfo, label: String): Boolean {
+    val queue = ArrayDeque<AccessibilityNodeInfo>()
+    queue.add(node)
+    var count = 0
+    while (queue.isNotEmpty() && count < MAX_FOCUS_NODES) {
+      val item = queue.removeFirst()
+      count++
+      if (texts(item).any { it.contains(label, ignoreCase = true) }) return true
+      for (i in 0 until item.childCount) {
+        item.getChild(i)?.let { queue.add(it) }
+      }
+    }
+    return false
+  }
+
+  /**
+   * Returns whether [node] is of [kind]. For Clickable and Long-clickable, an item above it within
+   * a few levels counts too, as the text of a button is often an item in it.
+   */
+  private fun isKind(node: AccessibilityNodeInfo, kind: Macros.Kind): Boolean =
+    when (kind) {
+      Macros.Kind.CLICKABLE -> nodeOrParent(node) { it.isClickable }
+      Macros.Kind.LONG_CLICKABLE -> nodeOrParent(node) { it.isLongClickable }
+      Macros.Kind.EDITABLE -> node.isEditable
+      Macros.Kind.SCROLLABLE ->
+        node.isScrollable ||
+          node.actionList.any {
+            it.id == AccessibilityNodeInfo.ACTION_SCROLL_FORWARD ||
+              it.id == AccessibilityNodeInfo.ACTION_SCROLL_BACKWARD
+          }
+      Macros.Kind.ADJUSTABLE ->
+        node.rangeInfo != null ||
+          node.actionList.any { it.id == AccessibilityNodeInfo.AccessibilityAction.ACTION_SET_PROGRESS.id }
+      Macros.Kind.CHECKABLE -> node.isCheckable
+      @Suppress("DEPRECATION") Macros.Kind.CHECKED -> node.isChecked
+      Macros.Kind.SELECTED -> node.isSelected
+      Macros.Kind.HEADING -> AccessibilityNodeInfoCompat.wrap(node).isHeading
+      Macros.Kind.ENABLED -> node.isEnabled
+    }
+
+  private fun nodeOrParent(node: AccessibilityNodeInfo, test: (AccessibilityNodeInfo) -> Boolean): Boolean {
+    var candidate: AccessibilityNodeInfo? = node
+    repeat(MAX_CLICK_PARENTS + 1) {
+      val item = candidate ?: return false
+      if (test(item)) return true
+      candidate = item.parent
+    }
+    return false
   }
 
   /** Clicks [node], or the nearest item above it that can be clicked. Returns whether it did. */

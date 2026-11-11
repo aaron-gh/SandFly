@@ -27,7 +27,8 @@ import java.util.Locale
 class SentenceSegmentIterator
 @JvmOverloads
 constructor(val text: String, locale: Locale = Locale.getDefault()) : TextSegmentIterator {
-  private val pieces = TextPieces.split(text, Granularity.SENTENCES, locale)
+  private val pieces =
+    TextPieces.split(text, Granularity.SENTENCES, locale).filterNot { TextPieces.isWhiteSpace(text, it) }
 
   override fun following(current: Int): IntArray? {
     val offset = current.coerceAtLeast(0)
