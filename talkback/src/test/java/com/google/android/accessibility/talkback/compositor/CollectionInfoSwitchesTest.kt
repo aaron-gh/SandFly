@@ -24,13 +24,31 @@ import org.junit.Test
 class CollectionInfoSwitchesTest {
   @Test
   fun grid_followsTheGridSwitch() {
-    assertTrue(GlobalVariables.speaksCollectionInfo(Role.ROLE_GRID, false, true))
-    assertFalse(GlobalVariables.speaksCollectionInfo(Role.ROLE_GRID, true, false))
+    assertTrue(GlobalVariables.speaksCollectionInfo(Role.ROLE_GRID, 3, 4, false, true))
+    assertFalse(GlobalVariables.speaksCollectionInfo(Role.ROLE_GRID, 3, 4, true, false))
+  }
+
+  @Test
+  fun staggeredGrid_followsTheGridSwitch() {
+    assertTrue(GlobalVariables.speaksCollectionInfo(Role.ROLE_STAGGERED_GRID, -1, 2, false, true))
+    assertFalse(GlobalVariables.speaksCollectionInfo(Role.ROLE_STAGGERED_GRID, -1, 2, true, false))
+  }
+
+  @Test
+  fun pagerInRowsAndColumns_followsTheGridSwitch() {
+    assertTrue(GlobalVariables.speaksCollectionInfo(Role.ROLE_PAGER, 2, 3, false, true))
+    assertFalse(GlobalVariables.speaksCollectionInfo(Role.ROLE_PAGER, 2, 3, true, false))
+  }
+
+  @Test
+  fun pagerInOneRow_followsTheListSwitch() {
+    assertTrue(GlobalVariables.speaksCollectionInfo(Role.ROLE_PAGER, 1, 3, true, false))
+    assertFalse(GlobalVariables.speaksCollectionInfo(Role.ROLE_PAGER, 1, 3, false, true))
   }
 
   @Test
   fun list_followsTheListSwitch() {
-    assertTrue(GlobalVariables.speaksCollectionInfo(Role.ROLE_LIST, true, false))
-    assertFalse(GlobalVariables.speaksCollectionInfo(Role.ROLE_LIST, false, true))
+    assertTrue(GlobalVariables.speaksCollectionInfo(Role.ROLE_LIST, 5, 1, true, false))
+    assertFalse(GlobalVariables.speaksCollectionInfo(Role.ROLE_LIST, 5, 1, false, true))
   }
 }

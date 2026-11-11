@@ -53,6 +53,16 @@ public final class CollectionStateFeedbackUtils {
    */
   public static CharSequence getCollectionTransitionDescription(
       CollectionState collectionState, Context context) {
+    return getCollectionTransitionDescription(
+        collectionState, context, /* speakTableRowColumnNumbers= */ true);
+  }
+
+  /**
+   * Returns the collection role description when it is transitioned to a node inside a collection,
+   * with the row and column of the item in a grid pager only if {@code speakTableRowColumnNumbers}.
+   */
+  public static CharSequence getCollectionTransitionDescription(
+      CollectionState collectionState, Context context, boolean speakTableRowColumnNumbers) {
     switch (collectionState.getCollectionTransition()) {
       case CollectionState.NAVIGATE_ENTER -> {
         if (collectionState.getCollectionRoleDescription() == null) {
@@ -90,7 +100,8 @@ public final class CollectionStateFeedbackUtils {
                     context);
               } else if (collectionState.getCollectionRowCount() > 1
                   && collectionState.getCollectionColumnCount() > 1) {
-                return getCollectionGridPagerEnter(collectionState, context);
+                return getCollectionGridPagerEnter(
+                    collectionState, context, speakTableRowColumnNumbers);
               } else if (isVerticalAligned(collectionState)) {
                 return getCollectionVerticalPagerEnter(collectionState, context);
               } else {
@@ -114,7 +125,9 @@ public final class CollectionStateFeedbackUtils {
               break;
             case Role.ROLE_PAGER:
               if (hasBothCount(collectionState)) {
-                itemCountCharSequence = getCollectionGridPagerEnter(collectionState, context);
+                itemCountCharSequence =
+                    getCollectionGridPagerEnter(
+                        collectionState, context, speakTableRowColumnNumbers);
               } else if (hasAnyCount(collectionState)) {
                 if (isVerticalAligned(collectionState)) {
                   itemCountCharSequence = getCollectionVerticalPagerEnter(collectionState, context);
@@ -554,7 +567,11 @@ public final class CollectionStateFeedbackUtils {
   }
 
   private static CharSequence getCollectionGridPagerEnter(
-      CollectionState collectionState, Context context) {
+      CollectionState collectionState, Context context, boolean speakTableRowColumnNumbers) {
+    // The page's row and column come from the pager's item state; a pager has no table item state.
+    CollectionState.PagerItemState pagerItemState = collectionState.getPagerItemState();
+    int rowIndex = pagerItemState != null ? pagerItemState.getRowIndex() : -1;
+    int columnIndex = pagerItemState != null ? pagerItemState.getColumnIndex() : -1;
     return CompositorUtils.joinCharSequences(
         getCollectionName(
             R.string.in_grid_pager,
@@ -562,15 +579,13 @@ public final class CollectionStateFeedbackUtils {
             collectionState.getCollectionName(),
             context),
         getCollectionLevel(collectionState, context),
-        hasBothCount(collectionState)
+        speakTableRowColumnNumbers
+                && hasBothCount(collectionState)
+                && rowIndex >= 0
+                && columnIndex >= 0
             ? CompositorUtils.joinCharSequences(
-                context.getString(
-                    R.string.row_index_template,
-                    getCollectionTableItemRowIndex(collectionState) + 1),
-                context.getString(
-                        R.string.column_index_template,
-                        getCollectionTableItemColumnIndex(collectionState))
-                    + 1)
+                context.getString(R.string.row_index_template, rowIndex + 1),
+                context.getString(R.string.column_index_template, columnIndex + 1))
             : null,
         quantityCharSequence(
             R.plurals.template_list_row_count,
