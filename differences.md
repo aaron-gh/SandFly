@@ -747,7 +747,7 @@ SandFly doesn't stop speech when something covers the proximity sensor. To turn 
 
 ### Screen on and off announcements
 
-In **Verbosity** > **Screen on and off**, you can choose what SandFly says when the screen turns off, when it turns on, and when you unlock the phone. When the screen turns off, SandFly says "Screen off" and the ringer mode. When the screen turns on, it says the time, and it can also say the battery, the Wi-Fi network, the mobile network, the ringer and Do Not Disturb, and airplane mode, after the time in the same announcement. When you unlock the phone, it says "Device unlocked". Each of these has its own switch. By default, everything except the extra screen-on items is on.
+In **Verbosity** > **Screen on and off**, you can choose what SandFly says when the screen turns off, when it turns on, and when you unlock the phone. When the screen turns off, SandFly says "Screen off" and the ringer mode. When the screen turns on, it says the time, and it can also say the battery, the Wi-Fi network, the mobile network, the ringer and Do Not Disturb, and airplane mode, after the time in the same announcement. It also says the number of notifications after the time, as in "6 notifications", when SandFly has notification access and there are notifications that aren't ongoing. When you unlock the phone, it says "Device unlocked". Each of these has its own switch. By default, everything except the extra status items is on.
 
 These switches are separate from **Status readout**, so the status gesture can say different things. SandFly doesn't make the screen-on announcement during calls, and the lock screen no longer cuts off "Screen off".
 

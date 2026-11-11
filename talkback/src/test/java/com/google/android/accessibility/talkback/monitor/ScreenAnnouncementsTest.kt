@@ -55,6 +55,12 @@ class ScreenAnnouncementsTest {
       ScreenAnnouncementSettings.isOn(prefs, ScreenAnnouncementSettings.SCREEN_OFF_RINGER)
     )
     assertTrue(ScreenAnnouncementSettings.isOn(prefs, ScreenAnnouncementSettings.SAY_UNLOCKED))
+    assertTrue(
+      ScreenAnnouncementSettings.isOn(
+        prefs,
+        ScreenAnnouncementSettings.SCREEN_ON_NOTIFICATION_COUNT,
+      )
+    )
     assertEquals(emptyList<StatusItem>(), ScreenAnnouncementSettings.screenOnStatusItems(prefs))
   }
 

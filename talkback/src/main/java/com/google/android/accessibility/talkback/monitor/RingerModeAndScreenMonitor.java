@@ -45,6 +45,7 @@ import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.audio.AudioDeviceRouter;
 import com.google.android.accessibility.talkback.contextmenu.ListMenuManager;
 import com.google.android.accessibility.talkback.controller.TelevisionNavigationController;
+import com.google.android.accessibility.talkback.notificationlist.NotificationListService;
 import com.google.android.accessibility.talkback.status.StatusReader;
 import com.google.android.accessibility.talkback.status.StatusItem;
 import com.google.android.accessibility.talkback.utils.DateTimeUtils;
@@ -432,6 +433,7 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
               service.getContentResolver(), Settings.Secure.DEVICE_PROVISIONED, 0)
           != 0) {
         appendCurrentTimeAnnouncementIfNeeded(ttsText);
+        appendNotificationCount(ttsText);
         appendStatusAnnouncement(ttsText);
       } else {
         // Device is not ready, just speak screen on
@@ -448,6 +450,32 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
             .setFlags(FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_AUDIO_PLAYBACK_ACTIVE);
 
     pipeline.returnFeedback(eventId, Feedback.speech(ttsText, speakOptions));
+  }
+
+  /**
+   * Appends how many notifications there are, if the user chose to hear it, there are any, and
+   * SandFly's notification listener is connected, which needs notification access.
+   */
+  private void appendNotificationCount(SpannableStringBuilder builder) {
+    SharedPreferences prefs = SharedPreferencesUtils.getSharedPreferences(service);
+    if (!ScreenAnnouncementSettings.isOn(
+        prefs, ScreenAnnouncementSettings.SCREEN_ON_NOTIFICATION_COUNT)) {
+      return;
+    }
+    Integer count = NotificationListService.countedNotifications(service);
+    if (count == null || count <= 0) {
+      return;
+    }
+    // A full stop after the time, so that they do not run together.
+    if (builder.length() > 0 && builder.charAt(builder.length() - 1) != '.') {
+      builder.append('.');
+    }
+    StringBuilderUtils.appendWithSeparator(
+        builder,
+        service
+                .getResources()
+                .getQuantityString(R.plurals.template_screen_on_notification_count, count, count)
+            + ".");
   }
 
   /**

@@ -516,6 +516,13 @@
     <string name="title_pref_say_device_unlocked">Say \"Device unlocked\"</string>
     <!-- Switch to say the time when the screen turns on. [CHAR LIMIT=NONE] -->
     <string name="title_pref_announce_time">Time</string>
+    <!-- Switch to say how many notifications there are, after the time, when the screen turns on. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_screen_on_notification_count">Number of notifications</string>
+    <!-- Said after the time when the screen turns on: how many notifications there are. Not said when there are none. [CHAR LIMIT=NONE] -->
+    <plurals name="template_screen_on_notification_count">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> notification</item>
+        <item quantity="other"><xliff:g id="count" example="6">%d</xliff:g> notifications</item>
+    </plurals>
     <!-- Switch to say the ringer mode. [CHAR LIMIT=NONE] -->
     <string name="title_pref_announce_ringer_mode">Ringer mode</string>
     <!-- [CHAR LIMIT=NONE] -->

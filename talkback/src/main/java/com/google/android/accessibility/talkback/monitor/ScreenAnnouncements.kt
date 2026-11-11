@@ -30,6 +30,12 @@ object ScreenAnnouncementSettings {
   const val SAY_UNLOCKED = "pref_unlock_say_unlocked"
 
   /**
+   * The number of notifications, said after the time as the screen turns on. It needs notification
+   * access, and nothing is said without it or with no notifications.
+   */
+  const val SCREEN_ON_NOTIFICATION_COUNT = "pref_screen_on_notification_count"
+
+  /**
    * The status items that can be spoken after the time as the screen turns on, in the order they
    * are spoken, with their switches. They are separate from the status gesture's, so that each can
    * say different things. The time has its own older switch.
@@ -43,9 +49,17 @@ object ScreenAnnouncementSettings {
       StatusItem.AIRPLANE_MODE to "pref_screen_on_airplane_mode",
     )
 
-  /** Each setting's default, which is what Backtalk said before these settings existed. */
+  /**
+   * Each setting's default, which is what Backtalk said before these settings existed, except the
+   * number of notifications, which is new and on.
+   */
   val DEFAULTS: Map<String, Boolean> =
-    mapOf(SAY_SCREEN_OFF to true, SCREEN_OFF_RINGER to true, SAY_UNLOCKED to true) +
+    mapOf(
+      SAY_SCREEN_OFF to true,
+      SCREEN_OFF_RINGER to true,
+      SAY_UNLOCKED to true,
+      SCREEN_ON_NOTIFICATION_COUNT to true,
+    ) +
       SCREEN_ON_STATUS.values.associateWith { false }
 
   @JvmStatic

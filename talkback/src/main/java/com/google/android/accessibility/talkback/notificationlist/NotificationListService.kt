@@ -30,6 +30,8 @@ import android.service.notification.StatusBarNotification
 import android.util.Log
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.TalkBackService
+import com.google.android.accessibility.talkback.monitor.ScreenAnnouncementSettings
+import com.google.android.accessibility.talkback.notifications.NotificationInfo
 import com.google.android.accessibility.talkback.notifications.NotificationReader
 import com.google.android.accessibility.talkback.notifications.NotificationSettings
 import com.google.android.accessibility.talkback.notifications.SpokenSchedules
@@ -48,7 +50,8 @@ class NotificationListService : NotificationListenerService() {
         key == NotificationSettings.Companion.Keys.DISMISS ||
         key == NotificationSettings.Companion.Keys.APP_CANCEL ||
         key == NotificationSettings.Companion.Keys.DND ||
-        key == NotificationSettings.Companion.Keys.ENABLED) {
+        key == NotificationSettings.Companion.Keys.ENABLED ||
+        key == ScreenAnnouncementSettings.SCREEN_ON_NOTIFICATION_COUNT) {
         if (!isNeeded(this)) {
           unbind()
         } else if (key == getString(R.string.pref_notification_list_key) && listEnabled()) {
@@ -77,8 +80,10 @@ class NotificationListService : NotificationListenerService() {
     instance = this
     rebindHandler.removeCallbacksAndMessages(null)
     // Notifications already in the shade aren't new.
+    countedKeys.clear()
     runCatching { activeNotifications }.getOrNull()?.forEach {
       postedTexts[it.key] = Posted(textOf(it.notification), it.notification.`when`)
+      if (isCounted(this, it)) countedKeys.add(it.key)
     }
     SharedPreferencesUtils.getSharedPreferences(this)
       .registerOnSharedPreferenceChangeListener(switchListener)
@@ -101,6 +106,7 @@ class NotificationListService : NotificationListenerService() {
   }
 
   private fun disconnected() {
+    countedKeys.clear()
     handler.removeCallbacks(unbindWhenUnneeded)
     SharedPreferencesUtils.getSharedPreferences(this)
       .unregisterOnSharedPreferenceChangeListener(switchListener)
@@ -118,8 +124,17 @@ class NotificationListService : NotificationListenerService() {
    */
   private val postedTexts = LinkedHashMap<String, Posted>()
 
+  /** The keys of the notifications in the shade that [isCounted] counts. */
+  private val countedKeys = HashSet<String>()
+
   override fun onNotificationPosted(notification: StatusBarNotification, ranking: RankingMap?) {
     if (listEnabled()) NotificationList.onPosted(notification, ranking)
+    // An update can make a notification ongoing or no longer ongoing.
+    if (isCounted(this, notification)) {
+      countedKeys.add(notification.key)
+    } else {
+      countedKeys.remove(notification.key)
+    }
     val posted = Posted(textOf(notification.notification), notification.notification.`when`)
     val before = postedTexts.put(notification.key, posted)
     // The same text posted again at a new time alerts again, such as the same message twice,
@@ -145,6 +160,7 @@ class NotificationListService : NotificationListenerService() {
 
   override fun onNotificationRemoved(notification: StatusBarNotification, ranking: RankingMap?) {
     postedTexts.remove(notification.key)
+    countedKeys.remove(notification.key)
     if (listEnabled()) NotificationList.onRemoved(notification, ranking)
   }
 
@@ -213,8 +229,42 @@ class NotificationListService : NotificationListenerService() {
             // With notification speech on, it reads notifications that Android sends no
             // accessibility event for, such as those on silent channels.
             NotificationSettings.read(it).let { s -> s.needsListener || s.enabled } ||
-              it.getBoolean(SpokenSchedules.KEY_SUMMARY_DAILY, false)
+              it.getBoolean(SpokenSchedules.KEY_SUMMARY_DAILY, false) ||
+              ScreenAnnouncementSettings.isOn(
+                it,
+                ScreenAnnouncementSettings.SCREEN_ON_NOTIFICATION_COUNT,
+              )
           })
+
+    /**
+     * Whether [notification] is one that the user would count in the shade, as the notification
+     * summary reads them: not ongoing, a group summary, One UI's "N more notifications", or one of
+     * SandFly's own without a channel.
+     */
+    fun isCounted(context: Context, notification: StatusBarNotification): Boolean {
+      val flags = notification.notification.flags
+      return (notification.packageName != context.packageName ||
+        notification.notification.channelId != null) &&
+        !NotificationInfo.isSamsungPlaceholder(notification.packageName, notification.notification) &&
+        flags and
+          (Notification.FLAG_GROUP_SUMMARY or
+            Notification.FLAG_ONGOING_EVENT or
+            Notification.FLAG_NO_CLEAR) == 0
+    }
+
+    /**
+     * How many notifications in the shade [isCounted] counts, or null while the listener isn't
+     * connected, such as without notification access. Without a connected listener but with
+     * access, the listener is asked to connect, for the next time.
+     */
+    @JvmStatic
+    fun countedNotifications(context: Context): Int? {
+      instance?.let {
+        return it.countedKeys.size
+      }
+      if (isAccessGranted(context)) onSandFlyStarted(context)
+      return null
+    }
 
     /** Connects the listener when SandFly starts, if it is needed. */
     @JvmStatic
