@@ -119,6 +119,28 @@ class SpeechEqualizerTest {
     assertArrayEquals(copy, samples, 0f)
   }
 
+  @Test
+  fun responseMatchesTheFilter() {
+    val presetGains = SpeechEqualizer.Preset.entries.map { it.gains() }
+    val custom = intArrayOf(3, -12, 0, 6, -4, 12, -8, 0, 2, -6, 9, -3)
+    for (gains in presetGains + listOf(custom)) {
+      for (frequency in doubleArrayOf(50.0, 200.0, 700.0, 1500.0, 3500.0, 7000.0, 12000.0)) {
+        assertEquals(
+          "${gains.joinToString()} at $frequency Hz",
+          gainDb(gains, frequency, amplitude = 0.01f),
+          SpeechEqualizer.responseDb(gains, frequency, rate),
+          0.3,
+        )
+      }
+    }
+  }
+
+  @Test
+  fun flatResponseIsZero() {
+    val gains = IntArray(SpeechEqualizer.BANDS)
+    assertEquals(0.0, SpeechEqualizer.responseDb(gains, 1000.0, rate), 0.0)
+  }
+
   /** The gain [gains] give a sine at [frequency], in dB, measured after the filter settles. */
   private fun gainDb(gains: IntArray, frequency: Double, amplitude: Float): Double {
     val frames = rate * 2

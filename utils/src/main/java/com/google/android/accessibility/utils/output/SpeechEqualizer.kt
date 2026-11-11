@@ -23,13 +23,15 @@ import kotlin.math.abs
 import kotlin.math.cos
 import kotlin.math.exp
 import kotlin.math.ln
+import kotlin.math.log10
 import kotlin.math.pow
 import kotlin.math.sin
 import kotlin.math.sqrt
 
 /**
  * A 12-band graphic equalizer for speech, set for SandFly default and for each voice profile. It
- * applies to speech that [LowLatencyAudio] plays; speech the engine plays itself is unchanged.
+ * filters speech that [LowLatencyAudio] plays, and [SessionEqualizer] applies it to speech the
+ * engine plays itself.
  *
  * Each setting is the gain of every band in dB, separated by commas. A missing or damaged setting
  * is flat.
@@ -253,6 +255,25 @@ object SpeechEqualizer {
       }
       return samples
     }
+  }
+
+  /** How much [Filter] for [gains] at [rate] Hz changes audio at [frequency] Hz, in dB. */
+  @JvmStatic
+  fun responseDb(gains: IntArray, frequency: Double, rate: Int): Double {
+    val w = 2 * PI * frequency / rate
+    var db = 0.0
+    for (i in 0 until BANDS) {
+      val gain = gains.getOrElse(i) { 0 }
+      val centre = FREQUENCIES[i].toDouble()
+      if (gain == 0 || centre >= rate * MAX_FREQUENCY_OF_RATE) continue
+      val c = peaking(centre, gain.toDouble(), q(i), rate.toDouble())
+      val numRe = c[0] + c[1] * cos(w) + c[2] * cos(2 * w)
+      val numIm = -(c[1] * sin(w) + c[2] * sin(2 * w))
+      val denRe = 1 + c[3] * cos(w) + c[4] * cos(2 * w)
+      val denIm = -(c[3] * sin(w) + c[4] * sin(2 * w))
+      db += 10 * log10((numRe * numRe + numIm * numIm) / (denRe * denRe + denIm * denIm))
+    }
+    return db
   }
 
   /** Band [index]'s Q, from its distance to the bands either side, in octaves. */

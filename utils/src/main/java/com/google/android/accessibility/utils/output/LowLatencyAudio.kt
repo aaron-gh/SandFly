@@ -219,6 +219,13 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
     fun onSilent(id: String)
 
     /**
+     * The engine took [ENGINE_PLAYED_MS] or longer to make speech with letters or digits, and gave
+     * no sound for it: it played the speech itself, as an engine that passes speech on to other
+     * engines does. The speech was heard, so the stream played nothing.
+     */
+    fun onPlayedByEngine(id: String)
+
+    /**
      * Held speech reached [MAX_HELD_MS] of audio, so the stream takes no more of it. The held
      * speech should be dropped and said again the usual way when it resumes.
      */
@@ -234,6 +241,7 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
     private val volume: Float,
     private val pan: Float,
     private val equalizer: IntArray?,
+    private val expectsSound: Boolean,
     private val listener: StreamListener,
   ) {
     private var resampler: SincResampler? = null
@@ -262,6 +270,29 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
     private var firstAudioAt = 0L
     // Word ranges by the output frame they start at.
     private val ranges = ArrayDeque<LongArray>()
+    // When the engine started this speech, and when it finished making it, or 0 before.
+    private var engineStartedAt = 0L
+    private var endedAt = 0L
+    // Whether the stream was dropped for getting no sound after the engine started it, and whether
+    // the engine gave sound for it after that.
+    private var stalledWithoutSound = false
+    private var lateSound = false
+
+    /** The engine started making this speech. */
+    fun engineStarted() {
+      synchronized(lock) {
+        if (engineStartedAt == 0L) engineStartedAt = SystemClock.uptimeMillis()
+      }
+    }
+
+    /**
+     * Whether the stream was dropped for getting no audio in time after the engine had started it.
+     * The engine may be playing it itself; see [StreamListener.onPlayedByEngine].
+     */
+    fun wasStalledWithoutSound(): Boolean = synchronized(lock) { stalledWithoutSound }
+
+    /** Whether the engine gave sound for this stream after it was dropped as stalled. */
+    fun hadLateSound(): Boolean = synchronized(lock) { lateSound }
 
     /** The engine's format, from the start of synthesis. */
     fun begin(rate: Int, encoding: Int, channels: Int) {
@@ -276,6 +307,7 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
         else null
       synchronized(lock) {
         lastActivity = SystemClock.uptimeMillis()
+        if (engineStartedAt == 0L) engineStartedAt = lastActivity
         if (built == null) {
           // An engine can claim any format. One Backtalk cannot play is said the usual way.
           LogUtils.w(TAG, "Speech %s has unsupported format %d Hz %d ch %d", id, rate, channels, encoding)
@@ -292,11 +324,16 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
 
     /** A piece of the engine's audio. */
     fun write(audio: ByteArray) {
-      if (resampler == null || finished) return
+      if (resampler == null) return
+      if (finished && (!wasStalledWithoutSound() || hadLateSound())) return
       val samples = AudioDecoder.FloatList()
       AudioDecoder.toFloats(ByteBuffer.wrap(audio), inEncoding, samples)
       val floats = samples.toArray()
       synchronized(lock) {
+        if (finished) {
+          if (stalledWithoutSound && floats.any { it != 0f }) lateSound = true
+          return
+        }
         lastActivity = SystemClock.uptimeMillis()
         val resampler = resampler ?: return
         if (finished) return
@@ -351,6 +388,7 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
         // about whether the engine silenced its audio. Only SILENT_MS of silence does.
         resampler?.let { add(toStereo(filtered(it.flush()), inChannels)) }
         ended = true
+        endedAt = SystemClock.uptimeMillis()
         wake()
       }
     }
@@ -450,7 +488,8 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
      * Ends this stream for another way to play it, without reporting that it finished.
      * [playerFailed] tells whether the player, rather than the engine, is why.
      */
-    internal fun abandon(playerFailed: Boolean) {
+    internal fun abandon(playerFailed: Boolean, stalled: Boolean = false) {
+      stalledWithoutSound = stalled && engineStartedAt != 0L && !heardSound
       finished = true
       pending.clear()
       callbacks.execute {
@@ -463,8 +502,19 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
       finished = true
       pending.clear()
       val noAudio = completed && framesWritten == 0L
+      val playedByEngine =
+        completed &&
+          expectsSound &&
+          !heardSound &&
+          (inRate == 0 || inFrames * 1000 / inRate < SILENT_MS) &&
+          engineStartedAt != 0L &&
+          endedAt - engineStartedAt >= ENGINE_PLAYED_MS
       callbacks.execute {
-        if (noAudio) listener.onNoAudio(id) else listener.onFinished(id, completed)
+        when {
+          playedByEngine -> listener.onPlayedByEngine(id)
+          noAudio -> listener.onNoAudio(id)
+          else -> listener.onFinished(id, completed)
+        }
       }
     }
 
@@ -488,18 +538,21 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
   /**
    * Opens a speech stream at [volume] from 0 to 1 and [pan] from -1, left, to 1, right, filtered by
    * [equalizer] gains (see [SpeechEqualizer]) unless null. It plays once the streams before it have
-   * finished.
+   * finished. [expectsSound] tells whether the speech has letters or digits, and so should have
+   * sound.
    */
   fun openStream(
     id: String,
     volume: Float,
     pan: Float,
     equalizer: IntArray?,
+    expectsSound: Boolean,
     listener: StreamListener,
   ): SpeechStream {
     synchronized(lock) {
       val stream =
-        SpeechStream(id, volume.coerceIn(0f, 1f), pan.coerceIn(-1f, 1f), equalizer, listener)
+        SpeechStream(
+          id, volume.coerceIn(0f, 1f), pan.coerceIn(-1f, 1f), equalizer, expectsSound, listener)
       if (released || broken) {
         // Shut down or given up on since it was got: said the usual way instead.
         stream.abandon(playerFailed = true)
@@ -606,7 +659,7 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
       val head = if (held) null else streams.peekFirst()
       if (head != null && head.isStalled(now)) {
         streams.removeFirst()
-        head.abandon(playerFailed = false)
+        head.abandon(playerFailed = false, stalled = true)
         LogUtils.w(TAG, "Speech %s got no audio in time", head.id)
       }
       val stuckFor = now - lastWrite
@@ -1022,6 +1075,12 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
 
     /** How much digital silence from the engine means it silenced the audio itself. */
     const val SILENT_MS = 500L
+
+    /**
+     * How long making speech without sound may take before it means that the engine played the
+     * speech itself. Engines make speech much faster than it plays.
+     */
+    const val ENGINE_PLAYED_MS = 250L
 
     /** How often the watchdog looks for stalled speech and a stuck track. */
     private const val WATCHDOG_MS = 250L

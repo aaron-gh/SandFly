@@ -34,6 +34,7 @@ import com.google.android.accessibility.material.preference.AccessibilitySuiteSw
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import com.google.android.accessibility.utils.output.FailoverTextToSpeech;
+import com.google.android.accessibility.utils.output.SessionEqualizer;
 import com.google.android.accessibility.utils.output.SpeechEqualizer;
 import com.google.android.accessibility.utils.output.SpeechEqualizer.Preset;
 import com.google.android.accessibility.utils.output.VoiceProfiles;
@@ -197,9 +198,10 @@ public class SpeechEqualizerFragment extends TalkbackBaseFragment {
    * the screen that opens it.
    */
   static String summary(Context context, SharedPreferences prefs, String profileId) {
-    if (!prefs.getBoolean(
-        FailoverTextToSpeech.PREF_LOW_LATENCY_AUDIO_KEY,
-        FailoverTextToSpeech.lowLatencyAudioDefault(context))) {
+    if (!SessionEqualizer.isAvailable()
+        && !prefs.getBoolean(
+            FailoverTextToSpeech.PREF_LOW_LATENCY_AUDIO_KEY,
+            FailoverTextToSpeech.lowLatencyAudioDefault(context))) {
       return context.getString(R.string.summary_speech_equalizer_needs_low_latency);
     }
     if (!SpeechEqualizer.isOn(prefs, profileId)) {
