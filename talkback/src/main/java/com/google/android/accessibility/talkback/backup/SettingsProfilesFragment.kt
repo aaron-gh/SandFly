@@ -46,6 +46,8 @@ class SettingsProfilesFragment : NotificationCodeFragment(R.string.title_pref_se
   }
 
   override fun build(screen: PreferenceGroup) {
+    // The screen is built again once the profiles have been read in the background.
+    val store = SettingsProfiles.loadedStore() ?: return
     screen.action(getString(R.string.title_pref_new_settings_profile)) { add() }
     val activeId = store.active()?.id
     for (profile in store.profiles()) {

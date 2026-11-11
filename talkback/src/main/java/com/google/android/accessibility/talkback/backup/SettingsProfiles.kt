@@ -50,17 +50,35 @@ object SettingsProfiles {
   private val executor =
     ThreadPoolExecutor(0, 1, 30, TimeUnit.SECONDS, LinkedBlockingQueue<Runnable>())
 
-  /** The store of profiles, in device-protected storage like the settings. */
+  /**
+   * The store of profiles, in device-protected storage like the settings. The first call reads the
+   * index; [preload] makes that call away from the main thread.
+   */
   @JvmStatic
   fun store(context: Context): SettingsProfileStore =
     store
       ?: synchronized(this) {
         store
-          ?: SettingsProfileStore(
-              File(context.applicationContext.createDeviceProtectedStorageContext().filesDir, DIRECTORY)
-            )
-            .also { store = it }
+          ?: run {
+            val app = context.applicationContext
+            SettingsProfileStore(
+                File(app.createDeviceProtectedStorageContext().filesDir, DIRECTORY)
+              ) { number ->
+                app.getString(R.string.settings_profile_new_name, number)
+              }
+              .also { store = it }
+          }
       }
+
+  /** The store of profiles if it has been read, or null. */
+  @JvmStatic fun loadedStore(): SettingsProfileStore? = store
+
+  /** Reads the store of profiles in the background, so that menus and screens find it read. */
+  @JvmStatic
+  fun preload(context: Context) {
+    val app = context.applicationContext
+    executor.execute { store(app) }
+  }
 
   /** The name of the profile made from the settings the first time profiles are used. */
   @JvmStatic
@@ -165,13 +183,22 @@ object SettingsProfiles {
     store: SettingsProfileStore,
     target: SettingsProfileStore.Profile,
   ): Boolean {
-    if (target.id == store.active()?.id) return true
+    val active = store.active()
+    if (target.id == active?.id) return true
+    val current = SettingsBackup.exportProfile(context)
     // Without the settings saved, the changes made in the profile in use would be lost.
-    if (!saveActiveNow(context)) return false
+    if (active != null && !store.saveSettings(active.id, current)) return false
     val settings = store.settings(target.id) ?: return false
     if (!SettingsBackup.importProfile(context, settings)) return false
-    if (!store.setActive(target.id)) {
-      LogUtils.e(TAG, "Applied a profile but cannot save which is in use")
+    if (!store.setActive(target.id) && !store.setActive(target.id)) {
+      // With the other profile's settings but the old one in use, the next save would write them
+      // to the old profile.
+      LogUtils.e(TAG, "Cannot save which profile is in use; restoring the settings")
+      if (!SettingsBackup.importProfile(context, current)) {
+        LogUtils.e(TAG, "Cannot restore the settings of the profile in use")
+      }
+      mainHandler.post { TalkBackService.getInstance()?.keyComboManager?.refreshKeyComboModel() }
+      return false
     }
     // The keyboard shortcuts are read once, when the key combo model is built.
     mainHandler.post { TalkBackService.getInstance()?.keyComboManager?.refreshKeyComboModel() }
