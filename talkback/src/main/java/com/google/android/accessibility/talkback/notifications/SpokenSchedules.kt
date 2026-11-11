@@ -234,7 +234,7 @@ class SpokenSchedules(
       val battery = context.registerReceiver(null, IntentFilter(Intent.ACTION_BATTERY_CHANGED))
       val level = battery?.getIntExtra(BatteryManager.EXTRA_LEVEL, -1) ?: -1
       val scale = battery?.getIntExtra(BatteryManager.EXTRA_SCALE, 100) ?: 100
-      val percent = if (level >= 0 && scale > 0) (level * 100 / scale).toString() else ""
+      val percent = if (level >= 0 && scale > 0) context.getString(R.string.notification_percent, level * 100 / scale) else ""
       val template = format.ifBlank { context.getString(R.string.notification_clock_format_default) }
       return NotificationText.tidySeparators(
         template
