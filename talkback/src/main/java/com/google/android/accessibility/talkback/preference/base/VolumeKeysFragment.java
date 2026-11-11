@@ -16,6 +16,9 @@
 
 package com.google.android.accessibility.talkback.preference.base;
 
+import android.os.Bundle;
+import androidx.annotation.Nullable;
+import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceGroup;
 import com.google.android.accessibility.talkback.R;
@@ -24,6 +27,39 @@ import com.google.android.accessibility.talkback.R;
 public class VolumeKeysFragment extends AdvancedSettingFragment {
   public VolumeKeysFragment() {
     super(R.xml.volume_keys_preferences, R.string.title_pref_volume_keys);
+  }
+
+  @Override
+  public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
+    super.onCreatePreferences(savedInstanceState, rootKey);
+    ListPreference feedback = findPreference(getString(R.string.pref_volume_change_feedback_key));
+    if (feedback == null) {
+      return;
+    }
+    showMediaSwitches(feedback.getValue());
+    feedback.setOnPreferenceChangeListener(
+        (preference, newValue) -> {
+          showMediaSwitches((String) newValue);
+          return true;
+        });
+  }
+
+  /** Shows the media playback switch of the tone and of speech only when {@code value} has it. */
+  private void showMediaSwitches(@Nullable String value) {
+    boolean both = getString(R.string.value_volume_change_feedback_tone_and_spoken).equals(value);
+    setVisible(
+        R.string.pref_volume_change_tone_during_media_key,
+        both || getString(R.string.value_volume_change_feedback_tone).equals(value));
+    setVisible(
+        R.string.pref_volume_change_speech_during_media_key,
+        both || getString(R.string.value_volume_change_feedback_spoken).equals(value));
+  }
+
+  private void setVisible(int keyResId, boolean visible) {
+    Preference preference = findPreference(getString(keyResId));
+    if (preference != null) {
+      preference.setVisible(visible);
+    }
   }
 
   @Override
