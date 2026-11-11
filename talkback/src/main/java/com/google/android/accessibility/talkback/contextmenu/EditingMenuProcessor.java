@@ -30,6 +30,7 @@ public final class EditingMenuProcessor {
     {R.string.shortcut_add_to_clipboard, R.string.shortcut_value_add_to_clipboard},
     {android.R.string.cut, R.string.shortcut_value_cut},
     {android.R.string.paste, R.string.shortcut_value_paste},
+    {R.string.shortcut_clear_text, R.string.shortcut_value_clear_text},
     {android.R.string.selectAll, R.string.shortcut_value_select_all},
     {
       R.string.title_edittext_breakout_start_selection_mode,
