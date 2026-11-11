@@ -28,7 +28,11 @@ import org.json.JSONObject
  * the profile in use, and a file for each profile with its settings, as [SettingsBackup] writes
  * them. The store only keeps the texts; [SettingsProfiles] makes and applies them.
  */
-class SettingsProfileStore(private val directory: File) {
+class SettingsProfileStore(
+  private val directory: File,
+  /** The name of the [number]th profile recovered from its file when the index can't be read. */
+  private val recoveredName: (number: Int) -> String = { "Profile $it" },
+) {
 
   /** A settings profile. */
   data class Profile(val id: String, val name: String)
@@ -150,7 +154,11 @@ class SettingsProfileStore(private val directory: File) {
 
   private fun load() {
     val file = File(directory, INDEX)
-    if (!file.isFile || file.length() > MAX_BYTES) return
+    if (!file.isFile) return
+    if (file.length() > MAX_BYTES) {
+      recover(file)
+      return
+    }
     try {
       val root = JSONObject(file.readText())
       val array = root.optJSONArray("profiles") ?: JSONArray()
@@ -167,10 +175,34 @@ class SettingsProfileStore(private val directory: File) {
       // An index without a valid profile in use uses the first.
       activeId = if (read.any { it.id == active }) active else read.firstOrNull()?.id
     } catch (e: IOException) {
-      // Starts without profiles.
+      recover(file)
     } catch (e: JSONException) {
-      // Starts without profiles.
+      recover(file)
     }
+  }
+
+  /**
+   * Moves the unreadable [index] aside, so that writing a new one doesn't lose it, and makes a
+   * profile of each profile file in [directory], oldest first. The file saved last, most likely
+   * that of the profile in use, becomes the one in use. The names are not known and are numbered.
+   */
+  private fun recover(index: File) {
+    index.renameTo(File(directory, "$INDEX.corrupt-${System.currentTimeMillis()}"))
+    val files =
+      directory
+        .listFiles { file ->
+          file.isFile && file.name.endsWith(SUFFIX) && ID.matches(file.name.removeSuffix(SUFFIX))
+        }
+        ?.sortedBy { it.lastModified() }
+        .orEmpty()
+    if (files.isEmpty()) return
+    profiles =
+      files.mapIndexedTo(mutableListOf()) { i, file ->
+        Profile(file.name.removeSuffix(SUFFIX), recoveredName(i + 1))
+      }
+    activeId = profiles.last().id
+    // Without a new index, the next change writes one.
+    saveIndex()
   }
 
   private fun saveIndex(): Boolean {

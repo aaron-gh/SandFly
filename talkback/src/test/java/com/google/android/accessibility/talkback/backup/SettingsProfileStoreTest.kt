@@ -132,6 +132,25 @@ class SettingsProfileStoreTest {
     directory.mkdirs()
     File(directory, "profiles.json").writeText("{not json")
     assertTrue(store().isEmpty())
+    val aside = directory.listFiles()!!.single { it.name.startsWith("profiles.json.corrupt-") }
+    assertEquals("{not json", aside.readText())
+  }
+
+  @Test
+  fun aBrokenIndexKeepsTheProfilesOfItsFiles() {
+    val first = store().add("Daily", "a")!!
+    val second = store().add("Demo", "b")!!
+    File(directory, "${first.id}.json").setLastModified(1_000_000L)
+    File(directory, "${second.id}.json").setLastModified(2_000_000L)
+    File(directory, "profiles.json").writeText("{not json")
+    val read = store()
+    assertEquals(listOf(first.id, second.id), read.profiles().map { it.id })
+    assertEquals(listOf("Profile 1", "Profile 2"), read.profiles().map { it.name })
+    // The file saved last is the profile in use.
+    assertEquals(second.id, read.active()?.id)
+    assertEquals("a", read.settings(first.id))
+    // The new index is read back.
+    assertEquals(read.profiles(), store().profiles())
   }
 
   @Test

@@ -2243,6 +2243,8 @@ public class TalkBackService extends AccessibilityServiceCompat
     // A report sent after the screen reader is turned off, from a new process, includes its log.
     ProblemReportSender.rememberProcess(this, "screen reader");
     StallLog.start(this);
+    // Menus read the settings profiles on the main thread.
+    SettingsProfiles.preload(this);
     EventId talkbackOnEventId =
         Performance.getInstance().onHintEventReceived(Performance.HINT_SUB_TYPE_TALKBACK_ON);
 
