@@ -505,6 +505,15 @@ import androidx.preference.PreferenceFragmentCompat;
         scannedDevices.stream()
             .map(device -> createInRangeDevice(device, /* isRemembered= */ false))
             .collect(toImmutableList()));
+    // Then the paired displays that the scan didn't find. A display that is paired but not
+    // discoverable doesn't answer a scan.
+    if (connectioneer.aspectConnection.useBluetoothConnection()) {
+      for (ConnectableDevice device : aspectConnection.getBondedDevicesCopy()) {
+        if (rowDevices.stream().noneMatch(info -> info.deviceAddress.equals(device.address()))) {
+          rowDevices.add(createInRangeDevice(device, /* isRemembered= */ false));
+        }
+      }
+    }
 
     // Variable isStructurePreserved is true if the newly built list of DeviceInfo has the same
     // length as the list of RowDevice pulled from the existing preferences, and the elements of
