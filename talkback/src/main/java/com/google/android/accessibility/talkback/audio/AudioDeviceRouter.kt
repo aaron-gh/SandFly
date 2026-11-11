@@ -51,7 +51,8 @@ import com.google.android.libraries.accessibility.utils.log.LogUtils
  * Allows users to choose where TalkBack audio (sound feedback and speech) routes:
  * 1. System default (follows Android system routing policy)
  * 2. Phone speaker (forces output to the phone's built-in speaker, even when Bluetooth is connected)
- * 3. Specific connected external devices (e.g. "Storm wireless audio", "Bolt wired headphones")
+ * 3. Specific connected external devices (e.g. "Storm wireless audio", "Bolt wired headphones").
+ *    Bluetooth outputs are left to Android's routing; see [isBluetooth].
  *
  * Employs a zero-volume keep-alive audio track, communication device change listeners,
  * and broadcast monitors to maintain active audio playback state in Android's AudioDeviceBroker,
@@ -343,28 +344,30 @@ class AudioDeviceRouter @JvmOverloads constructor(
           clearDeviceRouting(am)
         }
       }
-      is AudioTarget.AnyExternal -> {
-        val external = findExternalDevice(am)
-        if (external != null) {
+      is AudioTarget.AnyExternal,
+      is AudioTarget.SpecificDevice -> {
+        val external = externalDevice(am, target)
+        if (external != null && !isBluetooth(external.type)) {
           startKeepAlive(external)
           setDeviceRouting(am, external, forceSpeakerOn = false)
         } else {
-          stopKeepAlive()
-          clearDeviceRouting(am)
-        }
-      }
-      is AudioTarget.SpecificDevice -> {
-        val specific = findSpecificDevice(am, target) ?: findExternalDevice(am)
-        if (specific != null) {
-          startKeepAlive(specific)
-          setDeviceRouting(am, specific, forceSpeakerOn = false)
-        } else {
+          if (external != null) {
+            Log.i(TAG, "${external.productName} is Bluetooth, leaving the route to Android")
+          }
           stopKeepAlive()
           clearDeviceRouting(am)
         }
       }
     }
   }
+
+  /** The connected external output for [target], or null. */
+  private fun externalDevice(am: AudioManager, target: AudioTarget): AudioDeviceInfo? =
+    when (target) {
+      is AudioTarget.AnyExternal -> findExternalDevice(am)
+      is AudioTarget.SpecificDevice -> findSpecificDevice(am, target) ?: findExternalDevice(am)
+      else -> null
+    }
 
   /**
    * Fast check invoked before speech or auditory feedback to ensure routing is
@@ -586,7 +589,8 @@ class AudioDeviceRouter @JvmOverloads constructor(
     if (stepsAside) return
     val am = audioManager ?: return
     val targetDevice = getTargetAudioDevice()
-    if (targetDevice != null && (device == null || device.id != targetDevice.id)) {
+    if (targetDevice == null) return
+    if (device == null || device.id != targetDevice.id) {
       Log.i(
         TAG,
         "System altered communication device to ${device?.productName}, immediately re-asserting ${targetDevice.productName}",
@@ -686,14 +690,17 @@ class AudioDeviceRouter @JvmOverloads constructor(
     }
   }
 
-  /** Returns the active target [AudioDeviceInfo], or null if using system default. */
+  /**
+   * The output set as the communication device, or null if Android routes the audio, as for System
+   * default and Bluetooth outputs.
+   */
   fun getTargetAudioDevice(): AudioDeviceInfo? {
     val am = audioManager ?: return null
     return when (val target = currentTarget) {
       is AudioTarget.SystemDefault -> null
       is AudioTarget.PhoneSpeaker -> speakerToForce(am)
-      is AudioTarget.AnyExternal -> findExternalDevice(am)
-      is AudioTarget.SpecificDevice -> findSpecificDevice(am, target) ?: findExternalDevice(am)
+      is AudioTarget.AnyExternal,
+      is AudioTarget.SpecificDevice -> externalDevice(am, target)?.takeUnless { isBluetooth(it.type) }
     }
   }
 
@@ -875,6 +882,24 @@ class AudioDeviceRouter @JvmOverloads constructor(
       configs.orEmpty().any {
         it.clientAudioSource == MediaRecorder.AudioSource.VOICE_COMMUNICATION ||
           it.clientAudioSource == MediaRecorder.AudioSource.VOICE_RECOGNITION
+      }
+
+    /**
+     * Whether an output of [type] is Bluetooth. As a communication device, Android uses a Bluetooth
+     * headset's call profile (HFP, or LE Audio's conversational mode), which switches the headset
+     * to call mode. Bluetooth outputs therefore never become the communication device, and audio
+     * reaches them through Android's own routing, as with System default.
+     */
+    @VisibleForTesting
+    @JvmStatic
+    fun isBluetooth(type: Int): Boolean =
+      when (type) {
+        AudioDeviceInfo.TYPE_BLUETOOTH_A2DP,
+        AudioDeviceInfo.TYPE_BLUETOOTH_SCO,
+        AudioDeviceInfo.TYPE_BLE_HEADSET,
+        AudioDeviceInfo.TYPE_BLE_SPEAKER,
+        AudioDeviceInfo.TYPE_BLE_BROADCAST -> true
+        else -> false
       }
 
     /** Checks whether an [AudioDeviceInfo] represents an external device. */
