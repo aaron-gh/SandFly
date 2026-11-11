@@ -251,6 +251,10 @@ Word echo says the whole word, back to the last space, as it is in the field. Ta
 
 TalkBack ignored the order for a row whose checkbox or switch has no text of its own, such as the rows in **Reading controls**, and always read the checkbox's type and state before the row's text. SandFly reads such a row as one control, with the row's text as its name, in the order that you chose. A button or tab whose label is a separate view inside it, as in the Pixel power menu, also follows the order, with the label as its name.
 
+### Number of list items while scrolling
+
+With **Always speak number of list items** off, SandFly says no list position when a list scrolls. TalkBack still said it after its scroll commands and after a pager's page changed. When the setting is on, the position doesn't interrupt audio or video playback.
+
 ### "SandFly off" at the right volume
 
 When you turn SandFly off, it says "SandFly off" at the accessibility volume, using your device's real volume levels. TalkBack only approximated that volume.

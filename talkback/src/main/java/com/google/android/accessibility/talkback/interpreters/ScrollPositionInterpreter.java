@@ -27,7 +27,6 @@ import com.google.android.accessibility.utils.Performance.EventId;
 import com.google.android.accessibility.utils.Role;
 import com.google.android.accessibility.utils.input.ScrollEventInterpreter.ScrollEventHandler;
 import com.google.android.accessibility.utils.input.ScrollEventInterpreter.ScrollEventInterpretation;
-import com.google.android.accessibility.utils.output.ScrollActionRecord;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 /** Filters scroll-events, waiting for the last scroll-event within some wait-time. */
@@ -84,13 +83,9 @@ public class ScrollPositionInterpreter implements ScrollEventHandler {
       return;
     }
 
-    // If verbose mode is off, it only generates feedback for scrolling by talkback shortcuts or
-    // scrolling manually from ViewPager (b/174631424). Always announce for ViewPager, because user
-    // needs to know about page-changes for 2-finger pass-through scrolling.
-    if (!isVerbose
-        && (interpretation.userAction != ScrollActionRecord.ACTION_SCROLL_COMMAND)
-        && (Role.getSourceRole(event) != Role.ROLE_PAGER
-            || interpretation.userAction != ScrollActionRecord.ACTION_MANUAL_SCROLL)) {
+    // With Always speak number of list items off, no scroll position is spoken, including after
+    // scroll commands and pager scrolls.
+    if (!isVerbose) {
       return;
     }
 
