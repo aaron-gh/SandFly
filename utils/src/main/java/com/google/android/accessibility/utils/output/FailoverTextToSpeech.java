@@ -435,6 +435,36 @@ public class FailoverTextToSpeech {
   private final Set<String> respokenUtterances = ConcurrentHashMap.newKeySet();
 
   private static final String RESPOKEN_ID_PREFIX = "respoken:";
+
+  /**
+   * Low-latency utterances that got no audio in time after the engine started them, waiting for
+   * the engine to finish them, by ID. An engine that passes speech on to other engines plays it
+   * itself and gives no audio, so such speech was heard and is said again only if the engine gives
+   * audio after all, fails, or stops making speech.
+   */
+  private final Set<String> stalledInEngine = ConcurrentHashMap.newKeySet();
+
+  /** How the engine ended stalled utterances before they were put in {@link #stalledInEngine}. */
+  private final Map<String, Pair<StalledEnd, LowLatencyAudio.SpeechStream>> stalledEnds =
+      new ConcurrentHashMap<>();
+
+  private enum StalledEnd {
+    DONE,
+    STOPPED,
+    FAILED
+  }
+
+  /** How often an engine with a stalled utterance is checked for still making speech. */
+  private static final long STALLED_CHECK_MS = LowLatencyAudio.STALL_MS;
+
+  /**
+   * The equalizer for speech that the engine plays, or null before it is needed or if Android has
+   * none.
+   */
+  private @Nullable SessionEqualizer sessionEqualizer;
+
+  /** Whether Android could not make {@link #sessionEqualizer}. */
+  private boolean sessionEqualizerFailed;
   public static final String PREF_SWITCH_LANGUAGES_KEY = "pref_switch_languages";
   public static final String PREF_SWITCH_DIALECTS_KEY = "pref_switch_dialects";
   private static final boolean SWITCH_LANGUAGES_DEFAULT = true;
@@ -477,11 +507,11 @@ public class FailoverTextToSpeech {
           readLanguageSwitches(sharedPrefs);
         } else if (SpeechEqualizer.isKey(key)) {
           // Before profile settings, as each profile's equalizer is one of them.
-          equalizerGains = SpeechEqualizer.inUse(sharedPrefs);
+          readEqualizer(sharedPrefs);
         } else if (VoiceProfiles.isProfileKey(key)) {
           readVoiceProfile(sharedPrefs);
           updateWarmEngines();
-          equalizerGains = SpeechEqualizer.inUse(sharedPrefs);
+          readEqualizer(sharedPrefs);
         } else if (PREF_KEEP_PREVIOUS_ENGINE_KEY.equals(key)) {
           keepPreviousEngine = sharedPrefs.getBoolean(key, false);
           updateWarmEngines();
@@ -647,7 +677,7 @@ public class FailoverTextToSpeech {
     readLanguageSwitches(prefs);
     keepPreviousEngine = prefs.getBoolean(PREF_KEEP_PREVIOUS_ENGINE_KEY, false);
     VoiceProfiles.setActive(VoiceProfiles.readActive(prefs));
-    equalizerGains = SpeechEqualizer.inUse(prefs);
+    readEqualizer(prefs);
     prefs.registerOnSharedPreferenceChangeListener(preferenceChangeListener);
     CapturePolicy.applyToProcess(context, prefs);
     PowerManager power = context.getSystemService(PowerManager.class);
@@ -1192,6 +1222,7 @@ public class FailoverTextToSpeech {
   public void shutdown() {
     // The player outlives this engine, so speech it holds or waits for must not block the next.
     releaseLowLatencyAudio();
+    releaseSessionEqualizer();
     emojiVoice.shutdown();
     allowDeviceSleep();
     context.unregisterReceiver(mediaStateMonitor);
@@ -1409,6 +1440,11 @@ public class FailoverTextToSpeech {
     bundle.putInt(SpeechParam.RATE, (int) (rate * 100));
     bundle.putInt(Engine.KEY_PARAM_STREAM, stream);
     bundle.putFloat(SpeechParam.VOLUME, volume);
+    int equalizerSession = equalizerSession();
+    if (equalizerSession != 0) {
+      // For speech the engine plays: low-latency speech is filtered by its stream.
+      bundle.putInt(Engine.KEY_PARAM_SESSION_ID, equalizerSession);
+    }
     // When the language in use in not available, TTS will use en-us as the fallback locale.
     bundle.putString(SpeechParam.FALLBACK_LOCALE, "true");
 
@@ -1427,6 +1463,47 @@ public class FailoverTextToSpeech {
     }
 
     return speakWithCacheOrTts(utteranceId, text, queueMode, locale, bundle);
+  }
+
+  /**
+   * Returns the audio session for the engine to play speech on, with the equalizer in use on it, or
+   * 0 if the equalizer is flat or off or Android has no effect for it.
+   */
+  private int equalizerSession() {
+    int @Nullable [] gains = equalizerGains;
+    if (gains == null || android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.P) {
+      return 0;
+    }
+    if (sessionEqualizer == null && !sessionEqualizerFailed) {
+      sessionEqualizer = SessionEqualizer.create(context);
+      sessionEqualizerFailed = sessionEqualizer == null;
+    }
+    @Nullable SessionEqualizer equalizer = sessionEqualizer;
+    if (equalizer == null) {
+      return 0;
+    }
+    if (!equalizer.setGains(gains)) {
+      // Made again for the next speech.
+      releaseSessionEqualizer();
+      return 0;
+    }
+    return equalizer.getSessionId();
+  }
+
+  /** Frees the equalizer effect for speech the engine plays, until it is needed again. */
+  private void releaseSessionEqualizer() {
+    if (sessionEqualizer != null) {
+      sessionEqualizer.release();
+      sessionEqualizer = null;
+    }
+  }
+
+  /** Reads the equalizer in use, and frees its effect if there is none. */
+  private void readEqualizer(SharedPreferences prefs) {
+    equalizerGains = SpeechEqualizer.inUse(prefs);
+    if (equalizerGains == null) {
+      releaseSessionEqualizer();
+    }
   }
 
   private static void readLanguageSwitches(SharedPreferences prefs) {
@@ -1885,6 +1962,7 @@ public class FailoverTextToSpeech {
             floatParam(bundle, SpeechParam.VOLUME, 1f),
             floatParam(bundle, Engine.KEY_PARAM_PAN, 0f),
             equalizerGains,
+            hasLetterOrDigit(text),
             lowLatencyListener);
     lowLatencyStreams.put(utteranceId, stream);
     lowLatencyRequests.put(utteranceId, Pair.create(text, bundle));
@@ -2181,6 +2259,8 @@ public class FailoverTextToSpeech {
     lowLatencyRequests.clear();
     unplayedByEngine.clear();
     respokenUtterances.clear();
+    stalledInEngine.clear();
+    stalledEnds.clear();
     mHandler.removeCallbacks(checkEngineHang);
     engineQuietSince = 0;
     unfinishedUtterances.clear();
@@ -2246,13 +2326,18 @@ public class FailoverTextToSpeech {
 
         @Override
         public void onStalled(String id) {
-          // Say it the usual way. Only an engine that is idle and still sends nothing is at
-          // fault: one saying another app's speech, which shares it, or speech still ahead in its
-          // queue, just hasn't come to this yet, and low latency stays on for it.
-          mHandler.post(
-              () ->
-                  speakAgainWithoutLowLatency(
-                      id, /* stream= */ null, /* engineAtFault= */ !isEngineSpeaking()));
+          mHandler.post(() -> onLowLatencyStalled(id));
+        }
+
+        @Override
+        public void onPlayedByEngine(String id) {
+          // It was heard, so it is not said again. This engine speaks the usual way from now on,
+          // which also applies the equalizer if the engine passes the audio session on.
+          noAudioInARow = 0;
+          lowLatencyRequests.remove(id);
+          unplayedByEngine.remove(id);
+          stopUsingLowLatencyAudio("it plays its own audio");
+          utteranceProgressCallback.onDone(id);
         }
 
         @Override
@@ -2367,6 +2452,8 @@ public class FailoverTextToSpeech {
     lowLatencyRequests.clear();
     unplayedByEngine.clear();
     respokenUtterances.clear();
+    stalledInEngine.clear();
+    stalledEnds.clear();
     // Restarting the same engine does not help, since its process stays hung.
     ttsFailures = Math.max(ttsFailures, MAX_TTS_FAILURES - 1);
     attemptTtsFailover(ttsEngine);
@@ -2383,6 +2470,82 @@ public class FailoverTextToSpeech {
     // Logged at error level, so that it shows at the default log level: speech slows down from
     // here on, and the reason is needed to tell why.
     LogUtils.e(TAG, "Low-latency playback off for %s: %s", ttsEngine, reason);
+  }
+
+  /** Handles a low-latency utterance that got no audio in time. */
+  private void onLowLatencyStalled(String id) {
+    @Nullable Pair<StalledEnd, LowLatencyAudio.SpeechStream> ended = stalledEnds.remove(id);
+    if (ended != null) {
+      // The engine finished it already.
+      endStalledSpeech(id, ended.second, ended.first);
+      return;
+    }
+    LowLatencyAudio.@Nullable SpeechStream stream = lowLatencyStreams.get(id);
+    boolean speaking = isEngineSpeaking();
+    if (stream != null && stream.wasStalledWithoutSound() && speaking) {
+      // The engine is making it and may be playing it itself, so wait for it to finish.
+      stalledInEngine.add(id);
+      mHandler.postDelayed(() -> checkStalledInEngine(id), STALLED_CHECK_MS);
+      return;
+    }
+    // Say it the usual way. Only an engine that is idle and still sends nothing is at fault: one
+    // saying another app's speech, which shares it, or speech still ahead in its queue, just hasn't
+    // come to this yet, and low latency stays on for it.
+    speakAgainWithoutLowLatency(id, /* stream= */ null, /* engineAtFault= */ !speaking);
+  }
+
+  /** Says a stalled utterance again the usual way if its engine stopped making speech. */
+  private void checkStalledInEngine(String id) {
+    if (!stalledInEngine.contains(id)) {
+      return;
+    }
+    if (isEngineSpeaking()) {
+      mHandler.postDelayed(() -> checkStalledInEngine(id), STALLED_CHECK_MS);
+      return;
+    }
+    stalledInEngine.remove(id);
+    speakAgainWithoutLowLatency(id, /* stream= */ null, /* engineAtFault= */ true);
+  }
+
+  /**
+   * Called on any thread when the engine ends a low-latency utterance that got no audio in time
+   * after it started.
+   */
+  private void onStalledSpeechEnded(
+      String id, LowLatencyAudio.SpeechStream stream, StalledEnd end) {
+    mHandler.post(
+        () -> {
+          if (stalledInEngine.remove(id)) {
+            endStalledSpeech(id, stream, end);
+          } else {
+            // Before the stall was handled.
+            stalledEnds.put(id, Pair.create(end, stream));
+          }
+        });
+  }
+
+  /** Reports how the engine ended a stalled utterance, or says it again if nothing was heard. */
+  private void endStalledSpeech(String id, LowLatencyAudio.SpeechStream stream, StalledEnd end) {
+    lowLatencyStreams.remove(id);
+    switch (end) {
+      case DONE:
+        if (stream.hadLateSound()) {
+          // A slow engine, whose audio came after the stream was dropped.
+          speakAgainWithoutLowLatency(id, /* stream= */ null, /* engineAtFault= */ false);
+          return;
+        }
+        // The engine played it itself.
+        lowLatencyListener.onPlayedByEngine(id);
+        return;
+      case STOPPED:
+        lowLatencyRequests.remove(id);
+        unplayedByEngine.remove(id);
+        utteranceProgressCallback.onStop(id, /* interrupted= */ true);
+        return;
+      case FAILED:
+        speakAgainWithoutLowLatency(id, /* stream= */ null, /* engineAtFault= */ true);
+        return;
+    }
   }
 
   /**
@@ -2461,7 +2624,10 @@ public class FailoverTextToSpeech {
             return;
           }
           String reported = reportedId(utteranceId, /* finished= */ false);
-          if (!lowLatencyStreams.containsKey(utteranceId)) {
+          LowLatencyAudio.@Nullable SpeechStream stream = lowLatencyStreams.get(utteranceId);
+          if (stream != null) {
+            stream.engineStarted();
+          } else {
             utteranceProgressCallback.onStart(reported);
           }
         }
@@ -2519,7 +2685,13 @@ public class FailoverTextToSpeech {
             return;
           }
           String reported = reportedId(utteranceId, /* finished= */ true);
-          LowLatencyAudio.@Nullable SpeechStream stream = lowLatencyStreams.remove(utteranceId);
+          LowLatencyAudio.@Nullable SpeechStream stream = lowLatencyStreams.get(utteranceId);
+          if (stream != null && stream.wasStalledWithoutSound()) {
+            // Kept in lowLatencyStreams until the stall is handled.
+            onStalledSpeechEnded(utteranceId, stream, StalledEnd.DONE);
+            return;
+          }
+          stream = lowLatencyStreams.remove(utteranceId);
           if (stream != null) {
             stream.end();
           } else {
@@ -2534,7 +2706,13 @@ public class FailoverTextToSpeech {
             return;
           }
           String reported = reportedId(utteranceId, /* finished= */ true);
-          LowLatencyAudio.@Nullable SpeechStream stream = lowLatencyStreams.remove(utteranceId);
+          LowLatencyAudio.@Nullable SpeechStream stream = lowLatencyStreams.get(utteranceId);
+          if (stream != null && stream.wasStalledWithoutSound()) {
+            // Kept in lowLatencyStreams until the stall is handled.
+            onStalledSpeechEnded(utteranceId, stream, StalledEnd.STOPPED);
+            return;
+          }
+          stream = lowLatencyStreams.remove(utteranceId);
           if (stream != null) {
             stream.stop();
           } else {
@@ -2549,7 +2727,13 @@ public class FailoverTextToSpeech {
             return;
           }
           String reported = reportedId(utteranceId, /* finished= */ true);
-          LowLatencyAudio.@Nullable SpeechStream stream = lowLatencyStreams.remove(utteranceId);
+          LowLatencyAudio.@Nullable SpeechStream stream = lowLatencyStreams.get(utteranceId);
+          if (stream != null && stream.wasStalledWithoutSound()) {
+            // Kept in lowLatencyStreams until the stall is handled.
+            onStalledSpeechEnded(utteranceId, stream, StalledEnd.FAILED);
+            return;
+          }
+          stream = lowLatencyStreams.remove(utteranceId);
           if (stream != null) {
             // Not for speech that was stopped already, and reported so.
             if (!stream.isFinished()) {
@@ -2567,7 +2751,13 @@ public class FailoverTextToSpeech {
             return;
           }
           String reported = reportedId(utteranceId, /* finished= */ true);
-          LowLatencyAudio.@Nullable SpeechStream stream = lowLatencyStreams.remove(utteranceId);
+          LowLatencyAudio.@Nullable SpeechStream stream = lowLatencyStreams.get(utteranceId);
+          if (stream != null && stream.wasStalledWithoutSound()) {
+            // Kept in lowLatencyStreams until the stall is handled.
+            onStalledSpeechEnded(utteranceId, stream, StalledEnd.FAILED);
+            return;
+          }
+          stream = lowLatencyStreams.remove(utteranceId);
           if (stream != null) {
             // Not for speech that was stopped already, and reported so.
             if (!stream.isFinished()) {

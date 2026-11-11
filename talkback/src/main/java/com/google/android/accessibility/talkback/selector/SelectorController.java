@@ -129,6 +129,7 @@ import com.google.android.accessibility.utils.input.TextEventFilter.TypingInput;
 import com.google.android.accessibility.utils.monitor.CollectionState;
 import com.google.android.accessibility.utils.output.FailoverTextToSpeech;
 import com.google.android.accessibility.utils.output.FeedbackItem;
+import com.google.android.accessibility.utils.output.SessionEqualizer;
 import com.google.android.accessibility.utils.output.SpeechController;
 import com.google.android.accessibility.utils.output.SpeechController.SpeakOptions;
 import com.google.android.accessibility.utils.output.SpeechEqualizer;
@@ -2920,13 +2921,16 @@ public class SelectorController implements UserInputEventListener {
     showQuickMenuActionOverlay(eventId, displayText);
   }
 
-  /** {@code text}, and that the equalizer needs low-latency audio while that is off. */
+  /**
+   * {@code text}, and that the equalizer needs low-latency audio while that is off, where Android
+   * has no effect for speech the engine plays.
+   */
   private String withLowLatencyNeeded(String text) {
     boolean lowLatency =
         prefs.getBoolean(
             FailoverTextToSpeech.PREF_LOW_LATENCY_AUDIO_KEY,
             FailoverTextToSpeech.lowLatencyAudioDefault(context));
-    return lowLatency
+    return lowLatency || SessionEqualizer.isAvailable()
         ? text
         : text + ", " + context.getString(R.string.summary_speech_equalizer_needs_low_latency);
   }
