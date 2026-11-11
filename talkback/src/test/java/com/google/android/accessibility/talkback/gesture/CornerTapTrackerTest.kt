@@ -207,4 +207,33 @@ class CornerTapTrackerTest {
     taps(0)
     assertTrue(send(MotionEvent.ACTION_DOWN, 150, x = 200f, y = 500f) is Result.Released)
   }
+
+  @Test
+  fun longerTapTimeoutKeepsASlowTap() {
+    inUse = setOf(Corner.TOP_LEFT to Kind.TAP)
+    tracker.setTapTimeout(300)
+    send(MotionEvent.ACTION_DOWN, 0)
+    assertEquals(300L, tracker.deadline)
+    assertEquals(Result.Kept, send(MotionEvent.ACTION_UP, 250))
+    assertEquals(Result.Gesture(Corner.TOP_LEFT, Kind.TAP), tracker.onTimeout(500))
+  }
+
+  @Test
+  fun tapTimeoutPastTheHoldTimeoutReportsTheHoldAtOnce() {
+    inUse = setOf(Corner.TOP_LEFT to Kind.DOUBLE_TAP_AND_HOLD)
+    tracker.setTapTimeout(500)
+    taps(0)
+    send(MotionEvent.ACTION_DOWN, 150)
+    assertEquals(650L, tracker.deadline)
+    assertEquals(Result.Gesture(Corner.TOP_LEFT, Kind.DOUBLE_TAP_AND_HOLD), tracker.onTimeout(650))
+    assertFalse(tracker.isActive)
+  }
+
+  @Test
+  fun cornerSizeChangesTheCorners() {
+    assertEquals(null, tracker.cornerAt(50f, 50f, 300, 1000))
+    tracker.setCornerSize(60f)
+    assertEquals(Corner.TOP_LEFT, tracker.cornerAt(50f, 50f, 300, 1000))
+    assertEquals(Corner.BOTTOM_RIGHT, tracker.cornerAt(250f, 950f, 300, 1000))
+  }
 }

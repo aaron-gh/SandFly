@@ -528,6 +528,22 @@
         android:key="@string/pref_shortcut_corner_bottom_right_triple_tap_hold_key"
         android:summary="%s"
         android:title="@string/title_pref_shortcut_corner_bottom_right_triple_tap_hold"/>
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
+        android:defaultValue="@string/pref_corner_size_mm_default"
+        android:dialogTitle="@string/title_pref_corner_size_mm"
+        android:entries="@array/pref_corner_size_mm_entries"
+        android:entryValues="@array/pref_corner_size_mm_values"
+        android:key="@string/pref_corner_size_mm_key"
+        android:summary="%s"
+        android:title="@string/title_pref_corner_size_mm" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
+        android:defaultValue="@string/pref_corner_tap_time_ms_default"
+        android:dialogTitle="@string/title_pref_corner_tap_time_ms"
+        android:entries="@array/pref_corner_tap_time_ms_entries"
+        android:entryValues="@array/pref_corner_tap_time_ms_values"
+        android:key="@string/pref_corner_tap_time_ms_key"
+        android:summary="%s"
+        android:title="@string/title_pref_corner_tap_time_ms" />
   </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
 
   <!-- Two finger gestures -->

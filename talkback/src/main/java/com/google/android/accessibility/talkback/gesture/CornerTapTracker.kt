@@ -34,8 +34,8 @@ import kotlin.math.hypot
  * end:
  * - with a gesture of that tap count that has an action, it is reported as [Result.Gesture];
  * - otherwise they are reported as [Result.Taps], which act as ordinary taps;
- * - a tap held past [tapTimeoutMs] becomes a hold, reported after [holdTimeoutMs] from its landing
- *   when its hold gesture has an action.
+ * - a tap held past [tapTimeoutMs] becomes a hold, reported after [holdTimeoutMs] from its landing,
+ *   or at once when [tapTimeoutMs] is longer, when its hold gesture has an action.
  *
  * Any other touch, such as a finger that moves, lands a second finger, holds without a hold
  * gesture or lands away from the previous tap, isn't a corner gesture: [Result.Released] hands back
@@ -52,7 +52,7 @@ class CornerTapTracker(
   private var cornerSizePx: Float,
   private val touchSlop: Float,
   private val doubleTapSlop: Float,
-  private val tapTimeoutMs: Long,
+  private var tapTimeoutMs: Long,
   private val holdTimeoutMs: Long,
   // The longest time between a tap's lift and the next tap's landing.
   private val multiTapTimeoutMs: () -> Long,
@@ -136,6 +136,11 @@ class CornerTapTracker(
     cornerSizePx = px
   }
 
+  /** Sets how long a tap may stay down before it is a hold; takes effect from the next landing. */
+  fun setTapTimeout(ms: Long) {
+    tapTimeoutMs = ms
+  }
+
   /** Returns the corner of the screen of [width] by [height] that ([x], [y]) is in, or null. */
   fun cornerAt(x: Float, y: Float, width: Int, height: Int): Corner? {
     if (width <= 0 || height <= 0) {
@@ -217,6 +222,11 @@ class CornerTapTracker(
       return Result.Gesture(current, hold)
     }
     if (hold != null && assigned(current, hold)) {
+      if (now >= downTime + holdTimeoutMs) {
+        // The tap timeout is as long as the hold timeout or longer.
+        reset()
+        return Result.Gesture(current, hold)
+      }
       holding = true
       deadline = downTime + holdTimeoutMs
       return Result.Kept

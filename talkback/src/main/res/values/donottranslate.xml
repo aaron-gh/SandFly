@@ -1370,6 +1370,42 @@
       <item>15</item>
       <item>20</item>
     </string-array>
+    <!-- The size of each corner of the screen for corner gestures, in millimetres; 0 is the edge width. -->
+    <string name="pref_corner_size_mm_key" translatable="false">pref_corner_size_mm</string>
+    <string name="pref_corner_size_mm_default" translatable="false">0</string>
+    <string-array name="pref_corner_size_mm_entries">
+      <item>@string/value_corner_size_edge_width</item>
+      <item>@string/value_distance_5mm</item>
+      <item>@string/value_distance_10mm</item>
+      <item>@string/value_distance_15mm</item>
+      <item>@string/value_distance_20mm</item>
+    </string-array>
+    <string-array name="pref_corner_size_mm_values">
+      <item>0</item>
+      <item>5</item>
+      <item>10</item>
+      <item>15</item>
+      <item>20</item>
+    </string-array>
+    <!-- How long a corner tap may last before it is a hold, in milliseconds; 0 is the system tap timeout. -->
+    <string name="pref_corner_tap_time_ms_key" translatable="false">pref_corner_tap_time_ms</string>
+    <string name="pref_corner_tap_time_ms_default" translatable="false">0</string>
+    <string-array name="pref_corner_tap_time_ms_entries">
+      <item>@string/value_corner_tap_time_system</item>
+      <item>@string/value_multi_tap_timeout_150ms</item>
+      <item>@string/value_handwriting_wait_200</item>
+      <item>@string/value_handwriting_wait_300</item>
+      <item>@string/value_handwriting_wait_400</item>
+      <item>@string/value_handwriting_wait_500</item>
+    </string-array>
+    <string-array name="pref_corner_tap_time_ms_values">
+      <item>0</item>
+      <item>150</item>
+      <item>200</item>
+      <item>300</item>
+      <item>400</item>
+      <item>500</item>
+    </string-array>
     <!-- Whether one finger sliding along each edge scrolls the app. -->
     <string name="pref_edge_scroll_left_key" translatable="false">pref_edge_scroll_left</string>
     <string name="pref_edge_scroll_right_key" translatable="false">pref_edge_scroll_right</string>
