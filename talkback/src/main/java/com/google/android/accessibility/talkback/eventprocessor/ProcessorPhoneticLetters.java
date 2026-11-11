@@ -29,6 +29,7 @@ import android.text.style.LocaleSpan;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.view.accessibility.AccessibilityWindowInfo;
+import androidx.annotation.VisibleForTesting;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.talkback.Feedback;
 import com.google.android.accessibility.talkback.Pipeline;
@@ -59,8 +60,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import java.util.Objects;
 import java.util.Optional;
+import java.util.function.Function;
 import org.checkerframework.checker.nullness.qual.Nullable;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -358,31 +359,95 @@ public class ProcessorPhoneticLetters implements AccessibilityEventListener {
     return resultList.isEmpty() ? "" : String.join(", ", resultList);
   }
 
-  // Map a character to a phonetic letter. If the locale cannot be parsed, falls back to english.
-  private @Nullable CharSequence getPhoneticLetter(String locale, String letter) {
-    Locale parsedLocale = LocaleUtils.parseLocaleString(locale);
-    if (parsedLocale == null) {
-      parsedLocale = Locale.getDefault();
+  /**
+   * Normalizes a BCP-47 locale tag to the key of the phonetic letters JSON node to look up.
+   *
+   * <p>Chinese locale tags come in many forms (zh, zh-Hans, zh-Hant-TW, zh-SG, ...), but the JSON
+   * only has zh, zh-CN and zh-TW nodes, and LocaleUtils.parseLocaleString does not handle script
+   * subtags (see the TODO there), so the subtags are inspected directly: simplified variants
+   * (script Hans, or region CN or SG) resolve to zh-CN, and traditional variants (script Hant, or
+   * region TW, HK or MO) resolve to zh-TW, with the script taking priority over the region. Any
+   * other locale tag is returned unchanged.
+   */
+  @VisibleForTesting
+  static String normalizePhoneticLocale(String locale) {
+    String[] subtags = locale.split("-", 3);
+    if (!"zh".equalsIgnoreCase(subtags[0])) {
+      return locale;
     }
-    String normalizedLetter = letter.toLowerCase(parsedLocale);
-    String value = getPhoneticLetterMap(locale).get(normalizedLetter);
-    if (value == null) {
-      if (parsedLocale.getCountry().isEmpty()) {
-        // As a last resort, fall back to English.
-        value = getPhoneticLetterMap(FALLBACK_LOCALE).get(normalizedLetter);
-      } else {
-        // Get the letter for the base language, if possible.
-        String baseLanguage = parsedLocale.getLanguage();
-        normalizedLetter =
-            letter.toLowerCase(Objects.requireNonNull(LocaleUtils.parseLocaleString(baseLanguage)));
-        value = getPhoneticLetterMap(parsedLocale.getLanguage()).get(normalizedLetter);
+    String script = null;
+    String region = null;
+    for (int i = 1; i < subtags.length; i++) {
+      if (subtags[i].length() == 1) {
+        // Singleton subtag such as x- or u-: everything after it is extension or private-use
+        // data, not a script or region subtag.
+        break;
+      }
+      if (subtags[i].length() == 4) {
+        script = subtags[i];
+      } else if (subtags[i].length() == 2) {
+        region = subtags[i];
       }
     }
-    // Attaching the locale to the phonetic letter
+    if ("Hans".equalsIgnoreCase(script)) {
+      return "zh-CN";
+    }
+    if ("Hant".equalsIgnoreCase(script)) {
+      return "zh-TW";
+    }
+    if ("CN".equalsIgnoreCase(region) || "SG".equalsIgnoreCase(region)) {
+      return "zh-CN";
+    }
+    if ("TW".equalsIgnoreCase(region)
+        || "HK".equalsIgnoreCase(region)
+        || "MO".equalsIgnoreCase(region)) {
+      return "zh-TW";
+    }
+    return "zh";
+  }
+
+  // Map a character to a phonetic letter. If the locale cannot be parsed, falls back to english.
+  private @Nullable CharSequence getPhoneticLetter(String locale, String letter) {
+    return getPhoneticLetterWithMap(locale, letter, this::getPhoneticLetterMap);
+  }
+
+  /**
+   * Map a character to a phonetic letter, using {@code phoneticLetterMap} to get the letter
+   * descriptions for a locale node. Apart from the loader this is a pure function, so tests can
+   * supply real or stubbed letter maps.
+   *
+   * <p>The locale is normalized first (Chinese script/region variants collapse to the zh-CN /
+   * zh-TW / zh nodes), and the normalized tag only decides which JSON node is read and drives the
+   * base-language fallback. The lowercasing locale and the {@link LocaleSpan} attached to the
+   * result come from the original tag, so users of variants that share a node (such as zh-HK or
+   * zh-SG) still get the utterance spoken with their own voice.
+   */
+  @VisibleForTesting
+  static @Nullable CharSequence getPhoneticLetterWithMap(
+      String locale, String letter, Function<String, Map<String, String>> phoneticLetterMap) {
+    String normalizedLocale = normalizePhoneticLocale(locale);
+    Locale spanLocale = Locale.forLanguageTag(locale);
+    Locale normalizedParsed = LocaleUtils.parseLocaleString(normalizedLocale);
+    if (normalizedParsed == null) {
+      normalizedParsed = Locale.getDefault();
+    }
+    String normalizedLetter = letter.toLowerCase(spanLocale);
+    String value = phoneticLetterMap.apply(normalizedLocale).get(normalizedLetter);
+    if (value == null) {
+      if (normalizedParsed.getCountry().isEmpty()) {
+        // As a last resort, fall back to English.
+        value = phoneticLetterMap.apply(FALLBACK_LOCALE).get(normalizedLetter);
+      } else {
+        // Get the letter for the base language, if possible.
+        normalizedLetter = letter.toLowerCase(spanLocale);
+        value = phoneticLetterMap.apply(normalizedParsed.getLanguage()).get(normalizedLetter);
+      }
+    }
+    // Attach the original locale to the phonetic letter so TTS keeps the user's voice.
     SpannableString ss = null;
     if (value != null) {
       ss = new SpannableString(value);
-      ss.setSpan(new LocaleSpan(parsedLocale), 0, ss.length(), 0);
+      ss.setSpan(new LocaleSpan(spanLocale), 0, ss.length(), 0);
     }
     return ss;
   }
