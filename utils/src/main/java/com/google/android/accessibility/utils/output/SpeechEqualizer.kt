@@ -27,6 +27,9 @@ import kotlin.math.log10
 import kotlin.math.pow
 import kotlin.math.sin
 import kotlin.math.sqrt
+import org.json.JSONArray
+import org.json.JSONException
+import org.json.JSONObject
 
 /**
  * A 12-band graphic equalizer for speech, set for SandFly default and for each voice profile. It
@@ -34,7 +37,8 @@ import kotlin.math.sqrt
  * engine plays itself.
  *
  * Each setting is the gain of every band in dB, separated by commas. A missing or damaged setting
- * is flat.
+ * is flat. Presets that the user saves are shared by SandFly default and every voice profile, in
+ * [PREF_PRESETS].
  */
 object SpeechEqualizer {
 
@@ -43,6 +47,18 @@ object SpeechEqualizer {
 
   /** Whether SandFly default's equalizer is on. Off keeps its gains. */
   const val PREF_DEFAULT_ON = "pref_speech_equalizer_on"
+
+  /**
+   * The presets that the user saved, as a JSON array of objects with a "name" and the "gains" of
+   * every band.
+   */
+  const val PREF_PRESETS = "pref_speech_equalizer_presets"
+
+  /** The most presets that can be saved. */
+  const val MAX_SAVED_PRESETS = 50
+
+  /** The longest name of a saved preset, in characters. */
+  const val MAX_PRESET_NAME_LENGTH = 100
 
   /** The centre frequency of each band, in Hz. */
   @JvmField
@@ -176,6 +192,187 @@ object SpeechEqualizer {
 
   /** The preset saved as [value], or null. */
   @JvmStatic fun presetFor(value: String?): Preset? = Preset.entries.firstOrNull { it.value == value }
+
+  /** A preset that the user saved: its name and the gain of each band. */
+  class SavedPreset(val name: String, gains: IntArray) {
+    private val gains = gains.copyOf()
+
+    /** A copy of this preset's gains. */
+    fun gains(): IntArray = gains.copyOf()
+
+    /** Whether this preset's gains are [gains]. */
+    fun matches(gains: IntArray): Boolean = this.gains.contentEquals(gains)
+  }
+
+  /** [name] without spaces around it, and cut to [MAX_PRESET_NAME_LENGTH]; empty if none. */
+  @JvmStatic
+  fun cleanPresetName(name: String?): String {
+    val trimmed = name?.trim().orEmpty()
+    if (trimmed.length <= MAX_PRESET_NAME_LENGTH) return trimmed
+    var end = MAX_PRESET_NAME_LENGTH
+    // Don't cut a character outside the Basic Multilingual Plane, such as an emoji, in half.
+    if (Character.isHighSurrogate(trimmed[end - 1])) end--
+    return trimmed.substring(0, end).trim()
+  }
+
+  /**
+   * The saved presets in [value]. A preset without a name, with a name used earlier in the list, or
+   * without a whole number for each band is left out, and so is any after [MAX_SAVED_PRESETS].
+   */
+  @JvmStatic
+  fun parsePresets(value: String?): List<SavedPreset> {
+    if (value.isNullOrEmpty()) return emptyList()
+    val array =
+      try {
+        JSONArray(value)
+      } catch (e: JSONException) {
+        return emptyList()
+      }
+    val presets = ArrayList<SavedPreset>()
+    for (i in 0 until array.length()) {
+      if (presets.size >= MAX_SAVED_PRESETS) break
+      val preset = parsePreset(array.opt(i) as? JSONObject) ?: continue
+      if (isPresetNameTaken(presets, preset.name, except = null)) continue
+      presets += preset
+    }
+    return presets
+  }
+
+  private fun parsePreset(json: JSONObject?): SavedPreset? {
+    json ?: return null
+    val name = cleanPresetName(json.opt("name") as? String)
+    if (name.isEmpty()) return null
+    val array = json.opt("gains") as? JSONArray ?: return null
+    if (array.length() != BANDS) return null
+    val gains = IntArray(BANDS)
+    for (i in 0 until BANDS) {
+      val gain =
+        when (val item = array.opt(i)) {
+          is Int -> item.toLong()
+          is Long -> item
+          else -> return null
+        }
+      gains[i] = gain.coerceIn(-MAX_GAIN_DB.toLong(), MAX_GAIN_DB.toLong()).toInt()
+    }
+    return SavedPreset(name, gains)
+  }
+
+  /** The value saved for [presets]. */
+  @JvmStatic
+  fun formatPresets(presets: List<SavedPreset>): String {
+    val array = JSONArray()
+    for (preset in presets) {
+      val gains = JSONArray()
+      for (gain in preset.gains()) gains.put(gain)
+      array.put(JSONObject().put("name", preset.name).put("gains", gains))
+    }
+    return array.toString()
+  }
+
+  /** The saved presets, in the order they were saved. */
+  @JvmStatic
+  fun readPresets(prefs: SharedPreferences): List<SavedPreset> =
+    parsePresets(
+      try {
+        prefs.getString(PREF_PRESETS, null)
+      } catch (e: ClassCastException) {
+        null
+      }
+    )
+
+  private fun savePresets(prefs: SharedPreferences, presets: List<SavedPreset>) {
+    prefs.edit { putString(PREF_PRESETS, formatPresets(presets)) }
+  }
+
+  /**
+   * Whether a preset in [presets] other than the one named [except] is called [name], ignoring
+   * case.
+   */
+  @JvmStatic
+  fun isPresetNameTaken(presets: List<SavedPreset>, name: String, except: String?): Boolean =
+    presets.any {
+      it.name.equals(name, ignoreCase = true) && (except == null || it.name != except)
+    }
+
+  /** The first of [presets] with [gains], or null. */
+  @JvmStatic
+  fun savedPresetOf(presets: List<SavedPreset>, gains: IntArray): SavedPreset? =
+    presets.firstOrNull { it.matches(gains) }
+
+  /** The preset in [presets] called [name], or null. */
+  @JvmStatic
+  fun savedPresetNamed(presets: List<SavedPreset>, name: String?): SavedPreset? =
+    presets.firstOrNull { it.name == name }
+
+  /**
+   * [presets] with a preset called [name] with [gains] added at the end, or null if the name is
+   * empty or taken, or [MAX_SAVED_PRESETS] are saved.
+   */
+  @JvmStatic
+  fun withPresetAdded(
+    presets: List<SavedPreset>,
+    name: String,
+    gains: IntArray,
+  ): List<SavedPreset>? {
+    val cleaned = cleanPresetName(name)
+    if (
+      cleaned.isEmpty() ||
+        presets.size >= MAX_SAVED_PRESETS ||
+        isPresetNameTaken(presets, cleaned, except = null)
+    ) {
+      return null
+    }
+    val kept = IntArray(BANDS) { gains.getOrElse(it) { 0 }.coerceIn(-MAX_GAIN_DB, MAX_GAIN_DB) }
+    return presets + SavedPreset(cleaned, kept)
+  }
+
+  /**
+   * [presets] with the preset called [name] renamed to [newName], or null if there is none or the
+   * new name is empty or another preset's.
+   */
+  @JvmStatic
+  fun withPresetRenamed(
+    presets: List<SavedPreset>,
+    name: String,
+    newName: String,
+  ): List<SavedPreset>? {
+    val cleaned = cleanPresetName(newName)
+    if (
+      cleaned.isEmpty() ||
+        savedPresetNamed(presets, name) == null ||
+        isPresetNameTaken(presets, cleaned, except = name)
+    ) {
+      return null
+    }
+    return presets.map { if (it.name == name) SavedPreset(cleaned, it.gains()) else it }
+  }
+
+  /** [presets] without the preset called [name]. */
+  @JvmStatic
+  fun withPresetDeleted(presets: List<SavedPreset>, name: String): List<SavedPreset> =
+    presets.filter { it.name != name }
+
+  /** Saves [gains] as a preset called [name]; false if [withPresetAdded] can't. */
+  @JvmStatic
+  fun addPreset(prefs: SharedPreferences, name: String, gains: IntArray): Boolean {
+    val presets = withPresetAdded(readPresets(prefs), name, gains) ?: return false
+    savePresets(prefs, presets)
+    return true
+  }
+
+  /** Renames the preset called [name] to [newName]; false if [withPresetRenamed] can't. */
+  @JvmStatic
+  fun renamePreset(prefs: SharedPreferences, name: String, newName: String): Boolean {
+    val presets = withPresetRenamed(readPresets(prefs), name, newName) ?: return false
+    savePresets(prefs, presets)
+    return true
+  }
+
+  /** Deletes the preset called [name]. Equalizers set to its gains keep them. */
+  @JvmStatic
+  fun deletePreset(prefs: SharedPreferences, name: String) {
+    savePresets(prefs, withPresetDeleted(readPresets(prefs), name))
+  }
 
   /**
    * Filters interleaved audio of [channels] channels at [rate] Hz with a band filter per non-zero
