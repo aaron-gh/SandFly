@@ -232,6 +232,26 @@
     <string name="speech_equalizer_band_khz"><xliff:g id="frequency">%1$s</xliff:g> kHz</string>
     <!-- Spoken value of an equalizer band slider, its gain in decibels, such as "+3 dB" or "-6 dB". [CHAR LIMIT=20] -->
     <string name="speech_equalizer_gain_db"><xliff:g id="gain">%1$s</xliff:g> dB</string>
+    <!-- Button on the Equalizer screen that saves the current band settings as a preset with a name, and title of the dialog that asks for the name. [CHAR LIMIT=40] -->
+    <string name="title_pref_speech_equalizer_save_preset">Save as preset</string>
+    <!-- Button on the Equalizer screen that lists the presets the user saved, to rename or delete them, and title of that list. [CHAR LIMIT=40] -->
+    <string name="title_pref_speech_equalizer_saved_presets">Saved presets</string>
+    <!-- Hint of the name field in the dialog that saves or renames an equalizer preset. [CHAR LIMIT=40] -->
+    <string name="speech_equalizer_preset_name">Name</string>
+    <!-- Error on the name field when the name entered is already an equalizer preset's. [CHAR LIMIT=NONE] -->
+    <string name="speech_equalizer_preset_name_taken">A preset is already called <xliff:g id="name" example="Podcast">%1$s</xliff:g></string>
+    <!-- Shown when Save as preset is chosen while the most equalizer presets that can be saved are saved. [CHAR LIMIT=NONE] -->
+    <string name="speech_equalizer_presets_full">No more presets can be saved. Delete one to save another.</string>
+    <!-- Said after the equalizer band settings are saved as a preset. [CHAR LIMIT=NONE] -->
+    <string name="speech_equalizer_preset_saved"><xliff:g id="name" example="Podcast">%1$s</xliff:g> saved</string>
+    <!-- Action that renames a saved equalizer preset, and title of the dialog that asks for the new name. [CHAR LIMIT=40] -->
+    <string name="speech_equalizer_preset_rename">Rename</string>
+    <!-- Action that deletes a saved equalizer preset, and the button that confirms it. [CHAR LIMIT=40] -->
+    <string name="speech_equalizer_preset_delete">Delete</string>
+    <!-- Asks whether to delete a saved equalizer preset. [CHAR LIMIT=NONE] -->
+    <string name="speech_equalizer_preset_delete_confirm">Delete <xliff:g id="name" example="Podcast">%1$s</xliff:g>?</string>
+    <!-- Said after a saved equalizer preset is deleted. [CHAR LIMIT=NONE] -->
+    <string name="speech_equalizer_preset_deleted"><xliff:g id="name" example="Podcast">%1$s</xliff:g> deleted</string>
     <!-- Title for the button that adds a voice profile. [CHAR LIMIT=NONE] -->
     <string name="title_pref_add_voice_profile">Add voice profile</string>
     <!-- Name given to a new voice profile, with a number to tell it apart. [CHAR LIMIT=NONE] -->
