@@ -31,6 +31,7 @@ import com.google.android.accessibility.talkback.gesture.NavigationGestureAction
 import com.google.android.accessibility.talkback.gesture.OpenAppActions
 import com.google.android.accessibility.talkback.keyboard.TalkBackPhysicalKeyboardShortcut
 import com.google.android.accessibility.talkback.keyboard.TalkBackPhysicalKeyboardShortcut as Key
+import com.google.android.accessibility.talkback.macros.Macros
 import com.google.android.accessibility.talkback.recognition.LiveRecognition
 import com.google.android.accessibility.talkback.recognition.RecognitionMode
 import com.google.android.accessibility.talkback.sandflyai.SandflyAi
@@ -149,14 +150,14 @@ object Commands {
 
   /**
    * Returns the commands available on this device, by category, ending with Scripts, Custom menus,
-   * Gesture profiles, Voice profiles, Open app, App shortcuts and Accessibility shortcuts.
+   * Macros, Gesture profiles, Voice profiles, Open app, App shortcuts and Accessibility shortcuts.
    */
   @JvmStatic
   fun categories(context: Context): List<Category> = Builder(context, withApps = true).build()
 
   /**
    * Returns the commands available on this device, by category, without Scripts, Custom menus,
-   * Gesture profiles, Voice profiles, Open app, App shortcuts and Accessibility shortcuts.
+   * Macros, Gesture profiles, Voice profiles, Open app, App shortcuts and Accessibility shortcuts.
    */
   private fun categoriesWithoutApps(context: Context): List<Category> =
     Builder(context, withApps = false).build()
@@ -183,6 +184,9 @@ object Commands {
       return Command(value, it, keyboardAction = null)
     }
     customMenuLabel(context, value)?.let {
+      return Command(value, it, keyboardAction = null)
+    }
+    macroLabel(context, value)?.let {
       return Command(value, it, keyboardAction = null)
     }
     scriptCommandLabel(context, value)?.let {
@@ -232,6 +236,7 @@ object Commands {
       ?: gestureProfileLabel(context, value)
       ?: readingControlListLabel(context, value)
       ?: customMenuLabel(context, value)
+      ?: macroLabel(context, value)
       ?: scriptCommandLabel(context, value)
       ?: ReadingControlCommands.selectionLabel(context, value)
       ?: voiceProfileLabel(context, value)
@@ -259,6 +264,13 @@ object Commands {
 
   private fun customMenuLabel(context: Context, value: String): String? =
     CommandMenus.label(SharedPreferencesUtils.getSharedPreferences(context), value)
+
+  private fun macroLabel(context: Context, value: String): String? =
+    if (Macros.isCommand(value)) {
+      Macros.label(context, SharedPreferencesUtils.getSharedPreferences(context), value)
+    } else {
+      null
+    }
 
   private fun scriptCommandLabel(context: Context, value: String): String? =
     if (ScriptCommands.isCommand(value)) {
@@ -321,6 +333,7 @@ object Commands {
       if (withApps) {
         scripts()
         customMenus()
+        macros()
         gestureProfiles()
         readingControlLists()
         voiceProfiles()
@@ -1144,6 +1157,20 @@ object Commands {
       category(R.string.title_pref_custom_menus) {
         for (menu in CommandMenus.custom(SharedPreferencesUtils.getSharedPreferences(context))) {
           commands.add(Command(CommandMenus.commandOf(menu.id), menu.name, keyboardAction = null))
+        }
+      }
+
+    private fun macros() =
+      category(R.string.title_pref_macros) {
+        val macros = Macros.read(SharedPreferencesUtils.getSharedPreferences(context))
+        for (macro in macros) {
+          commands.add(Command(Macros.commandOf(macro.id), macro.name, keyboardAction = null))
+        }
+        // Without a macro, there is nothing to stop.
+        if (macros.isNotEmpty()) {
+          commands.add(
+            Command(Macros.STOP_COMMAND, context.getString(R.string.shortcut_stop_macro), keyboardAction = null)
+          )
         }
       }
 

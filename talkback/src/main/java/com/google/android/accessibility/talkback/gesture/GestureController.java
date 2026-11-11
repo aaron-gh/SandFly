@@ -118,6 +118,8 @@ import com.google.android.accessibility.talkback.focusmanagement.NavigationTarge
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.ScreenStateMonitor;
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping.TalkbackAction;
 import com.google.android.accessibility.talkback.interpreters.AccessibilityFocusInterpreter;
+import com.google.android.accessibility.talkback.macros.MacroRunner;
+import com.google.android.accessibility.talkback.macros.Macros;
 import com.google.android.accessibility.talkback.menurules.RuleTextFormatting;
 import com.google.android.accessibility.talkback.monitor.BatteryMonitor;
 import com.google.android.accessibility.talkback.monitor.VolumeMonitor;
@@ -1065,6 +1067,8 @@ public class GestureController {
         pipeline.returnFeedback(
             eventId, Feedback.speech(service.getString(R.string.script_command_not_running)));
       }
+    } else if (Macros.isCommand(action)) {
+      result = MacroRunner.runCommand(action);
     } else if (CommandMenus.isCommand(action)) {
       result = menuManager.showCustomMenu(action, eventId);
     } else if (MenuCommands.isMenuOnly(service, action)) {

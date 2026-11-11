@@ -186,6 +186,7 @@ abstract class NotificationCodeFragment(@StringRes private val title: Int) : Tal
   /**
    * Asks for a text, with [text] filled in, and an optional switch such as "Regular expression".
    * [onDone] gets the text and the switch, and returns an error to show, or null to close.
+   * [inputType] and [secondInputType] are the input types of the text fields.
    */
   protected fun askText(
     title: CharSequence,
@@ -196,6 +197,8 @@ abstract class NotificationCodeFragment(@StringRes private val title: Int) : Tal
     checked: List<Boolean> = emptyList(),
     secondHint: CharSequence? = null,
     secondText: String = "",
+    inputType: Int = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_FLAG_MULTI_LINE,
+    secondInputType: Int = InputType.TYPE_CLASS_TEXT,
     onDone: (String, String, List<Boolean>) -> String?,
   ) {
     val context = requireContext()
@@ -210,7 +213,7 @@ abstract class NotificationCodeFragment(@StringRes private val title: Int) : Tal
         setText(text)
         // The title labels the field when there is no hint.
         this.hint = hint ?: title
-        inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_FLAG_MULTI_LINE
+        this.inputType = inputType
         setSelection(text.length)
       }
     layout.addView(edit, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
@@ -219,7 +222,7 @@ abstract class NotificationCodeFragment(@StringRes private val title: Int) : Tal
         KeyboardSafeEditText(context).apply {
           setText(secondText)
           this.hint = it
-          inputType = InputType.TYPE_CLASS_TEXT
+          this.inputType = secondInputType
         }.also { layout.addView(it, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT) }
       }
     val boxes =

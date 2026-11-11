@@ -501,6 +501,12 @@ The **Setting values** category has next and previous commands for reading contr
 
 When you choose an action for a gesture, the categories of actions are collapsed, except the one with the gesture's current action. The categories in gesture settings, **Reading controls** and **SandFly menu** are collapsed too, and expand when you activate them.
 
+### Macros
+
+**Macros** makes lists of steps that run one after another, without a script. A step can be **Run command**, any command; **Wait**, a number of seconds; **Tap item**, which activates the first item on screen whose text or description contains a text, waiting for it to appear up to a set time, 3 seconds by default; **Open app**; or **Type text**, which types in the focused edit field, at the cursor or in place of its text. Each step has **Edit**, **Move up**, **Move down** and **Delete**. **Run now** runs the macro.
+
+Each macro is a command in the **Macros** category, so a gesture, a keyboard shortcut or a menu can run it. Starting a macro stops the one running, and so does **Stop macro**. When a step fails, such as an item that isn't found, SandFly says so and the macro stops. Deleting a macro removes it from the gestures, keys and menus that run it. Macros are included in exported settings. Not on watches.
+
 ### Gesture profiles
 
 A gesture profile is a set of gestures that run other commands while the profile is in use. To add one, go to **Gestures** > **Gesture profiles** and choose **Add gesture profile**. The profile's screen lists the gestures in the categories of the Gestures screen, each set to **Default** at first, and a gesture opens the same list of commands as on the Gestures screen, with **Default** first. A gesture set to **Default** runs what it runs without the profile: its command on the Gestures screen, its command in **Gestures in apps**, or a script's. A gesture set to a command runs that command, before gestures in apps, scripts and row and column navigation. A gesture set to **Tap to assign** does nothing. Profiles also have **Rename**, **Move up**, **Move down** and **Delete gesture profile**.
