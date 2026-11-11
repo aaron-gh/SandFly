@@ -16,6 +16,20 @@
     <string name="granular_editing_space">Space</string>
     <string name="granular_editing_new_line">New line</string>
     <string name="granular_editing_tab">Tab</string>
+    <plurals name="granular_editing_spaces">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> space</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> spaces</item>
+    </plurals>
+    <plurals name="granular_editing_new_lines">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> new line</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> new lines</item>
+    </plurals>
+    <plurals name="granular_editing_tabs">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> tab</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> tabs</item>
+    </plurals>
+    <!-- A line with no text in it. [CHAR LIMIT=30] -->
+    <string name="granular_editing_blank_line">Blank line</string>
     <!-- Shown when the text has no pieces. [CHAR LIMIT=NONE] -->
     <string name="granular_editing_empty">No text. Use Add text at end, in More.</string>
     <!-- Actions on a piece of the text. [CHAR LIMIT=40] -->
