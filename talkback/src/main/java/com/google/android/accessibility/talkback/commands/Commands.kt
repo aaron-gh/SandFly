@@ -381,6 +381,8 @@ object Commands {
           R.string.shortcut_previous,
           Key.NAVIGATE_PREVIOUS_DEFAULT,
         )
+        gesture(R.string.shortcut_value_move_to_item_below, R.string.shortcut_move_to_item_below)
+        gesture(R.string.shortcut_value_move_to_item_above, R.string.shortcut_move_to_item_above)
         keyboard(Key.NAVIGATE_BELOW)
         keyboard(Key.NAVIGATE_ABOVE)
         gesture(
@@ -843,6 +845,8 @@ object Commands {
         gesture(R.string.shortcut_value_overview, R.string.shortcut_overview, Key.RECENT_APPS)
         gesture(R.string.shortcut_value_system_overview, R.string.shortcut_system_overview)
         gesture(R.string.shortcut_value_previous_app, R.string.shortcut_previous_app)
+        gesture(R.string.shortcut_value_older_app, R.string.shortcut_older_app)
+        gesture(R.string.shortcut_value_newer_app, R.string.shortcut_newer_app)
         gesture(R.string.shortcut_value_take_screenshot, R.string.shortcut_take_screenshot)
         gesture(R.string.shortcut_value_answer_call, R.string.shortcut_answer_call)
         gesture(R.string.shortcut_value_split_screen, R.string.title_split_screen, Key.SHOW_SPLIT_SCREEN)

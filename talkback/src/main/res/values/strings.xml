@@ -990,6 +990,10 @@
     <string name="overview_failed">Failed</string>
     <!-- Spoken when there is no app to switch to with the Previous app command. [CHAR_LIMIT=NONE] -->
     <string name="overview_no_previous_app">No previous app</string>
+    <!-- Spoken when the Older app command runs at the oldest app in the list of recent apps. [CHAR_LIMIT=NONE] -->
+    <string name="overview_no_older_app">No older app</string>
+    <!-- Spoken when the Newer app command runs at the most recent app in the list of recent apps. [CHAR_LIMIT=NONE] -->
+    <string name="overview_no_newer_app">No newer app</string>
     <!-- Spoken when SandFly's overview couldn't show an app in split screen. [CHAR_LIMIT=NONE] -->
     <string name="overview_split_failed">Split screen failed</string>
     <!-- Spoken when an app was closed in SandFly's overview. %1$s is the app's name. [CHAR_LIMIT=NONE] -->
@@ -2113,6 +2117,10 @@
     <string name="shortcut_next">Next item</string>
     <!-- Label for the shortcut that moves accessibility focus to the previous item. [CHAR_LIMIT=40] -->
     <string name="shortcut_previous">Previous item</string>
+    <!-- Label for the shortcut that moves accessibility focus to the item below the focused one, past the other items of its row, as the Vertical navigation reading control does. [CHAR_LIMIT=40] -->
+    <string name="shortcut_move_to_item_below">Move to item below</string>
+    <!-- Label for the shortcut that moves accessibility focus to the item above the focused one, past the other items of its row, as the Vertical navigation reading control does. [CHAR_LIMIT=40] -->
+    <string name="shortcut_move_to_item_above">Move to item above</string>
     <!-- Label for the shortcut that tries to scroll current view forward. [CHAR_LIMIT=40] -->
     <string name="shortcut_scroll_forward">Scroll forward</string>
     <!-- Label for the shortcut that tries to scroll current view back. [CHAR_LIMIT=40] -->
@@ -2275,6 +2283,10 @@
     <string name="shortcut_system_overview">System overview</string>
     <!-- Label for the shortcut that switches to the app used before the current one. [CHAR_LIMIT=40] -->
     <string name="shortcut_previous_app">Previous app</string>
+    <!-- Label for the shortcut that opens the next older app in the list of recent apps. Repeated, it goes further back in the list. [CHAR_LIMIT=40] -->
+    <string name="shortcut_older_app">Older app</string>
+    <!-- Label for the shortcut that goes back toward the most recent app in the list of recent apps, after the Older app shortcut. [CHAR_LIMIT=40] -->
+    <string name="shortcut_newer_app">Newer app</string>
     <!-- Label for the shortcut that takes a screenshot. [CHAR_LIMIT=40] -->
     <string name="shortcut_take_screenshot">Take screenshot</string>
     <!-- Label for the shortcut that answers the incoming phone call that is ringing. [CHAR_LIMIT=40] -->

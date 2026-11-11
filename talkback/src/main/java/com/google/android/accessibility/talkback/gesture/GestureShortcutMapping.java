@@ -754,6 +754,10 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
     TOUCH_CLICK(R.string.shortcut_value_touch_click_action, R.string.shortcut_touch_click_action),
     PREVIOUS(R.string.shortcut_value_previous, R.string.shortcut_previous),
     NEXT(R.string.shortcut_value_next, R.string.shortcut_next),
+    MOVE_TO_ITEM_BELOW(
+        R.string.shortcut_value_move_to_item_below, R.string.shortcut_move_to_item_below),
+    MOVE_TO_ITEM_ABOVE(
+        R.string.shortcut_value_move_to_item_above, R.string.shortcut_move_to_item_above),
     FIRST_IN_SCREEN(R.string.shortcut_value_first_in_screen, R.string.shortcut_first_in_screen),
     LAST_IN_SCREEN(R.string.shortcut_value_last_in_screen, R.string.shortcut_last_in_screen),
     SCROLL_TO_TOP(R.string.shortcut_value_scroll_to_top, R.string.shortcut_scroll_to_top),
@@ -783,6 +787,8 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
     OVERVIEW(R.string.shortcut_value_overview, R.string.shortcut_overview),
     SYSTEM_OVERVIEW(R.string.shortcut_value_system_overview, R.string.shortcut_system_overview),
     PREVIOUS_APP(R.string.shortcut_value_previous_app, R.string.shortcut_previous_app),
+    OLDER_APP(R.string.shortcut_value_older_app, R.string.shortcut_older_app),
+    NEWER_APP(R.string.shortcut_value_newer_app, R.string.shortcut_newer_app),
     TAKE_SCREENSHOT(R.string.shortcut_value_take_screenshot, R.string.shortcut_take_screenshot),
     ANSWER_CALL(R.string.shortcut_value_answer_call, R.string.shortcut_answer_call),
     SPLIT_SCREEN(R.string.shortcut_value_split_screen, R.string.title_split_screen),

@@ -2857,9 +2857,11 @@ public class SelectorController implements UserInputEventListener {
 
   /**
    * Moves to the item below or above the focused one, past the other items of its row, and scrolls
-   * the list when there is none on screen.
+   * the list when there is none on screen. Used by the Vertical navigation reading control and the
+   * Move to item below and Move to item above commands, which leave the selected reading control
+   * as it is.
    */
-  private void moveVertically(EventId eventId, boolean isNext) {
+  public void moveVertically(EventId eventId, boolean isNext) {
     verticalNavigator.move(eventId, isNext);
   }
 

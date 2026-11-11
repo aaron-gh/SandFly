@@ -1048,6 +1048,8 @@ internal object TutorialLessons {
       R.string.shortcut_value_overview,
       R.string.shortcut_value_system_overview,
       R.string.shortcut_value_previous_app,
+      R.string.shortcut_value_older_app,
+      R.string.shortcut_value_newer_app,
       R.string.shortcut_value_notifications,
       R.string.shortcut_value_system_notifications,
       R.string.shortcut_value_quick_settings,
