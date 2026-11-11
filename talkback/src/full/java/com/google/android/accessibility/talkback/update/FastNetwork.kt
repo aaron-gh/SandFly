@@ -27,7 +27,7 @@ import java.util.concurrent.CountDownLatch
 import java.util.concurrent.TimeUnit
 
 /**
- * An unmetered network, such as Wi-Fi, held for a large download on a watch. A watch otherwise
+ * The watch's own Wi-Fi network, held for a large download on a watch. A watch otherwise
  * sends traffic through the phone's Bluetooth connection, which takes many minutes for an update.
  */
 internal class FastNetwork
@@ -49,7 +49,7 @@ private constructor(
     private const val TAG = "FastNetwork"
     private const val WAIT_SECONDS = 20L
 
-    /** Asks for an unmetered network and waits for it, or returns null if none comes up. */
+    /** Asks for a Wi-Fi network and waits for it, or returns null if none comes up. */
     @WorkerThread
     fun request(context: Context): FastNetwork? {
       val manager = context.getSystemService(ConnectivityManager::class.java) ?: return null
@@ -65,21 +65,39 @@ private constructor(
       val request =
         NetworkRequest.Builder()
           .addCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
-          .addCapability(NetworkCapabilities.NET_CAPABILITY_NOT_METERED)
+          // The phone's Bluetooth proxy counts as unmetered, so ask for Wi-Fi itself.
+          .addTransportType(NetworkCapabilities.TRANSPORT_WIFI)
           .build()
       try {
         manager.requestNetwork(request, callback)
       } catch (e: RuntimeException) {
-        LogUtils.w(TAG, "Cannot ask for an unmetered network: %s", e)
+        LogUtils.w(TAG, "Cannot ask for Wi-Fi: %s", e)
         return null
       }
       val network = if (available.await(WAIT_SECONDS, TimeUnit.SECONDS)) found else null
       if (network == null) {
-        LogUtils.w(TAG, "No unmetered network came up; downloading over the default network")
         manager.unregisterNetworkCallback(callback)
+        LogUtils.w(
+          TAG,
+          "No Wi-Fi came up; downloading over the default network (%s)",
+          transport(manager, runCatching { manager.activeNetwork }.getOrNull()),
+        )
         return null
       }
+      LogUtils.i(TAG, "Downloading over %s", transport(manager, network))
       return FastNetwork(manager, callback, network)
+    }
+
+    private fun transport(manager: ConnectivityManager, network: Network?): String {
+      val capabilities =
+        network?.let { runCatching { manager.getNetworkCapabilities(it) }.getOrNull() }
+          ?: return "unknown"
+      return when {
+        capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) -> "Wi-Fi"
+        capabilities.hasTransport(NetworkCapabilities.TRANSPORT_BLUETOOTH) -> "Bluetooth"
+        capabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> "cellular"
+        else -> "other"
+      }
     }
   }
 }

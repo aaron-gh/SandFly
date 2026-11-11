@@ -269,6 +269,15 @@ public class FeedbackController {
     if (themePattern != null) {
       return vibratePattern(themePattern, eventId);
     }
+    // A sound's own vibration, such as a control sound's while the sound itself does not play.
+    if (resId != 0 && !isPattern(resId)) {
+      @Nullable String soundName = resourceName(resId);
+      @Nullable Integer patternResId = soundName == null ? null : mSoundHaptics.get(soundName);
+      if (patternResId == null) {
+        return false;
+      }
+      resId = patternResId;
+    }
     if (!mHapticEnabled || resId == 0 || isMuted(mMutedHapticNames, resId)) {
       return false;
     }

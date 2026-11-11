@@ -500,6 +500,11 @@ public class Connectioneer {
           .collect(toCollection(ArrayList::new));
     }
 
+    /** Gets a copy list of the paired devices that may be braille displays. */
+    public List<ConnectableDevice> getBondedDevicesCopy() {
+      return new ArrayList<>(connectioneer.getBondedDeviceSet());
+    }
+
     /** Asks if the given device address is connecting-in-progress. */
     public boolean isConnectingTo(String candidateAddress) {
       return connectioneer.connectManagerProxy.isConnecting(candidateAddress);

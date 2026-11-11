@@ -73,7 +73,9 @@ object GeminiModel {
       connection.readTimeout = TIMEOUT_MS
       connection.setRequestProperty(API_KEY_HEADER, apiKey)
       val code = connection.responseCode
-      if (code != HttpURLConnection.HTTP_OK) throw IOException("HTTP $code")
+      if (code != HttpURLConnection.HTTP_OK) {
+        throw IOException(GeminiFailure.httpReason(code, errorBody(connection)))
+      }
       val body =
         connection.inputStream.use { input ->
           val bytes = input.readNBytesCompat(MAX_LIST_BYTES + 1)
@@ -106,6 +108,17 @@ object GeminiModel {
         .take(MAX_MODELS)
     } catch (e: JSONException) {
       throw IOException("Google's list could not be read")
+    }
+
+  private const val MAX_ERROR_BYTES = 64 * 1024
+
+  /** The error the service sent with a failed answer, or null when there is none to read. */
+  @JvmStatic
+  fun errorBody(connection: HttpURLConnection): String? =
+    try {
+      connection.errorStream?.use { it.readNBytesCompat(MAX_ERROR_BYTES).decodeToString() }
+    } catch (e: IOException) {
+      null
     }
 
   private fun java.io.InputStream.readNBytesCompat(limit: Int): ByteArray {

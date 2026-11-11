@@ -195,6 +195,19 @@ class GeminiFailureTest {
   }
 
   @Test
+  fun httpReasonNamesStatusAndMessage() {
+    assertEquals(
+      "HTTP 400 FAILED_PRECONDITION: User location is not supported for the API use.",
+      GeminiFailure.httpReason(
+        400,
+        body(400, "FAILED_PRECONDITION", "User location is not supported for the API use."),
+      ),
+    )
+    assertEquals("HTTP 502", GeminiFailure.httpReason(502, "<html>Bad Gateway</html>"))
+    assertEquals("HTTP 404", GeminiFailure.httpReason(404, null))
+  }
+
+  @Test
   fun firstSentenceIsEnoughToSpeak() {
     assertEquals(
       "You exceeded your current quota, please check your plan and billing details.",

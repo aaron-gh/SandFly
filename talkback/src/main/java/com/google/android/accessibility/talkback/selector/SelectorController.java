@@ -1541,12 +1541,8 @@ public class SelectorController implements UserInputEventListener {
       return;
     }
     lastFocusedNode = null;
-    boolean autoSwitch =
-        prefs.getBoolean(
-            context.getString(R.string.pref_selector_auto_switch_key),
-            context.getResources().getBoolean(R.bool.pref_selector_auto_switch_default));
     Optional<ContextualSetting> contextualMenu =
-        autoSwitch
+        autoSwitchEnabled()
             ? getMatchedContextualSettingForActivation(
                 context, AccessibilityNodeInfoCompat.wrap(nodeInfo), hiddenSettings)
             : Optional.empty();
@@ -1574,6 +1570,9 @@ public class SelectorController implements UserInputEventListener {
       restoreSetting();
       return;
     }
+    if (keepsChosenActions(currentSetting)) {
+      return;
+    }
     if (isContextualSettingNotSupported(
         currentSetting, AccessibilityNodeInfoCompat.wrap(nodeInfo))) {
       // If the current setting is a contextual setting and no longer allowed by the new focused
@@ -1581,6 +1580,20 @@ public class SelectorController implements UserInputEventListener {
       // item if the cached setting is also unavailable.
       restoreSetting();
     }
+  }
+
+  private boolean autoSwitchEnabled() {
+    return prefs.getBoolean(
+        context.getString(R.string.pref_selector_auto_switch_key),
+        context.getResources().getBoolean(R.bool.pref_selector_auto_switch_default));
+  }
+
+  /**
+   * Whether Actions stays the reading control on an item without actions: with Change reading
+   * control automatically off, when the user selected Actions.
+   */
+  private boolean keepsChosenActions(Setting currentSetting) {
+    return currentSetting == ACTIONS && !actionsSwitchedAutomatically && !autoSwitchEnabled();
   }
 
   /**
@@ -2379,6 +2392,7 @@ public class SelectorController implements UserInputEventListener {
     }
     Setting currentSetting = getCurrentSetting(context, prefs);
     if (isContextualSetting(currentSetting)
+        && !keepsChosenActions(currentSetting)
         && !accessibilityFocusMonitor.hasAccessibilityFocus(/* useInputFocusIfEmpty= */ false)) {
       restoreSetting();
       currentSetting = getCurrentSetting(context, prefs);
@@ -3561,8 +3575,9 @@ public class SelectorController implements UserInputEventListener {
       if (actionSize == 0) {
         // Actions stayed on an item without actions, such as after focus moved without the
         // reading control being matched. The swipe uses the reading control that Actions replaced
-        // automatically.
-        if (settingToRestore != null
+        // automatically, unless the user selected Actions with automatic changes off.
+        if (!keepsChosenActions(ACTIONS)
+            && settingToRestore != null
             && settingToRestore != ACTIONS
             && canRestore(settingToRestore)) {
           restoreSetting();
@@ -3604,6 +3619,10 @@ public class SelectorController implements UserInputEventListener {
               ? context.getString(R.string.use_spelling_suggestion_hint)
               : context.getString(R.string.use_action_hint));
       showQuickMenuActionOverlay(eventId, displayText);
+    } else {
+      // Actions, kept with Change reading control automatically off, with nothing focused.
+      announceSetting(
+          eventId, context.getString(R.string.no_action_available), getSelectSettingGestures());
     }
   }
 

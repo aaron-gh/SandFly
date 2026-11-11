@@ -473,7 +473,7 @@ object ProblemReportSender {
         return null
       }
     return try {
-      val log = process.inputStream.bufferedReader().use { it.readText() }
+      val log = compact(process.inputStream.bufferedReader().use { it.readText() })
       process.waitFor(LOG_TIMEOUT_SECONDS, TimeUnit.SECONDS)
       if (log.length <= ProblemReport.MAX_LOG) log
       else log.takeLast(ProblemReport.MAX_LOG).substringAfter('\n')
@@ -487,6 +487,30 @@ object ProblemReportSender {
       process.destroy()
     }
   }
+
+  /**
+   * Leaves out the Debug lines that repeat each feedback part ("Actors: act()" logs what
+   * "Pipeline: execute()" logged just before) and shortens the "Pipeline: execute()" lines, which
+   * otherwise fill most of a report's log in a few seconds of moving around.
+   */
+  @VisibleForTesting
+  internal fun compact(log: String): String {
+    if (!log.contains(PIPELINE_MARKER) && !log.contains(ACTORS_MARKER)) return log
+    return log
+      .split('\n')
+      .filterNot { it.contains(ACTORS_MARKER) }
+      .joinToString("\n") {
+        if (it.length > MAX_PIPELINE_LINE && it.contains(PIPELINE_MARKER)) {
+          it.substring(0, MAX_PIPELINE_LINE) + "…"
+        } else {
+          it
+        }
+      }
+  }
+
+  private const val PIPELINE_MARKER = " Pipeline: execute() "
+  private const val ACTORS_MARKER = " Actors: act() "
+  private const val MAX_PIPELINE_LINE = 300
 
   private const val CONNECTION_TIMEOUT_MS = 30_000
 
