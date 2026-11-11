@@ -2724,6 +2724,7 @@ public class SpeechControllerImpl implements SpeechController {
    * @param utteranceIndex The ID of the utterance that starts.
    */
   private void onUtteranceStarted(int utteranceIndex) {
+    GestureSpeechTiming.onSpeechStarted();
     UtteranceStartAction action;
     while (((action = mUtteranceStartActions.peek()) != null)
         && (action.utteranceIndex <= utteranceIndex)) {

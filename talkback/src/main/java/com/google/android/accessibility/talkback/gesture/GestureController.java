@@ -173,6 +173,7 @@ import com.google.android.accessibility.utils.TreeDebugRenderer;
 import com.google.android.accessibility.utils.WindowUtils;
 import com.google.android.accessibility.utils.input.CursorGranularity;
 import com.google.android.accessibility.utils.output.FeedbackItem;
+import com.google.android.accessibility.utils.output.GestureSpeechTiming;
 import com.google.android.accessibility.utils.output.SpeechController;
 import com.google.android.accessibility.utils.output.SpeechController.SpeakOptions;
 import com.google.android.accessibility.utils.output.SpeechControllerImpl;
@@ -1187,6 +1188,7 @@ public class GestureController {
         gestureId,
         GestureShortcutMapping.getGestureString(service, gestureId),
         action);
+    GestureSpeechTiming.onGesture(action);
     if (TutorialHooks.onGesture(gestureId, action)) {
       return;
     }
