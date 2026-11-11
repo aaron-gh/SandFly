@@ -2283,6 +2283,17 @@ public class SpeechControllerImpl implements SpeechController {
       }
     }
 
+    // Text in a language with a voice profile of its own is said with that profile's rate and
+    // pitch, changed as this fragment's are.
+    VoiceProfiles.@Nullable VoiceProfile languageProfile =
+        text == null ? null : LanguageVoices.profileFor(locale);
+    if (languageProfile != null) {
+      params.put(LanguageVoices.SPEECH_PARAM_PROFILE, languageProfile.id());
+      params.put(LanguageVoices.SPEECH_PARAM_RATE, String.valueOf(rate / Math.max(speechRate, 0.1f)));
+      params.put(
+          LanguageVoices.SPEECH_PARAM_PITCH, String.valueOf(pitch / Math.max(speechPitch, 0.1f)));
+    }
+
     final String logText = (text == null) ? null : String.format("\"%s\"", text.toString());
     LogUtils.v(
         TAG,

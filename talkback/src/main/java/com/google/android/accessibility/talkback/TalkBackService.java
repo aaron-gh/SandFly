@@ -295,6 +295,7 @@ import com.google.android.accessibility.talkback.report.ReportInbox;
 import com.google.android.accessibility.talkback.report.StallLog;
 import com.google.android.accessibility.talkback.report.TurnOffLog;
 import com.google.android.accessibility.talkback.translation.AutomaticTranslation;
+import com.google.android.accessibility.talkback.translation.WordLanguageGuesser;
 import com.google.android.accessibility.talkback.updatetasks.TalkBackUpdateHelper;
 import com.google.android.accessibility.talkback.utils.DiagnosticOverlayControllerImpl;
 import com.google.android.accessibility.talkback.utils.ExperimentalUtils;
@@ -1061,6 +1062,7 @@ public class TalkBackService extends AccessibilityServiceCompat
       gestureController.shutdown();
     }
     AutomaticTranslation.stop();
+    WordLanguageGuesser.stop();
 
     if (keyboardWindowSounds != null) {
       keyboardWindowSounds.shutdown();
@@ -4098,6 +4100,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     FocusProcessorForLogicalNavigation.setWrapAround(
         getBooleanPref(R.string.pref_wrap_around_key, R.bool.pref_wrap_around_default));
     AutomaticTranslation.update(this);
+    WordLanguageGuesser.update(prefs);
     SymbolDictionary.load(prefs);
     SpeechDictionary.load(this, prefs);
     BrailleDictionary.load(this, prefs);
