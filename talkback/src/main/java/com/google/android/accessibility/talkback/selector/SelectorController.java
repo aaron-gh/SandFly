@@ -57,6 +57,7 @@ import static com.google.android.accessibility.utils.monitor.InputModeTracker.IN
 import static com.google.android.accessibility.utils.traversal.TraversalStrategy.SEARCH_FOCUS_BACKWARD;
 import static com.google.android.accessibility.utils.traversal.TraversalStrategy.SEARCH_FOCUS_FORWARD;
 
+import android.accessibilityservice.AccessibilityService;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
@@ -709,6 +710,7 @@ public class SelectorController implements UserInputEventListener {
   private final AccessibilityFocusMonitor accessibilityFocusMonitor;
   private final Pipeline.FeedbackReturner pipeline;
   private final VerticalNavigator verticalNavigator;
+  private final @Nullable PageScroller pageScroller;
   private final ActorState actorState;
   private final NodeMenuRuleCreator nodeMenuCreator;
   private final TalkBackAnalytics analytics;
@@ -892,6 +894,10 @@ public class SelectorController implements UserInputEventListener {
     this.actorState = actorState;
     this.accessibilityFocusMonitor = accessibilityFocusMonitor;
     verticalNavigator = new VerticalNavigator(pipeline, accessibilityFocusMonitor);
+    pageScroller =
+        context instanceof AccessibilityService accessibilityService
+            ? new PageScroller(accessibilityService, pipeline, accessibilityFocusMonitor)
+            : null;
     this.nodeMenuCreator = nodeMenuCreator;
     this.analytics = analytics;
     this.gestureMapping = gestureMapping;
@@ -1616,6 +1622,7 @@ public class SelectorController implements UserInputEventListener {
     touchActive = active;
     if (active) {
       verticalNavigator.cancel();
+      cancelPageScroll();
     }
     handler.removeCallbacks(switchAfterTouch);
     if (!touchActive && lastFocusedNode != null) {
@@ -1637,6 +1644,7 @@ public class SelectorController implements UserInputEventListener {
   /** Forgets the item waiting for its reading control, such as when SandFly turns off. */
   public void shutdown() {
     handler.removeCallbacks(switchAfterTouch);
+    cancelPageScroll();
     lastFocusedNode = null;
     chosenTextEntity = null;
   }
@@ -3261,9 +3269,23 @@ public class SelectorController implements UserInputEventListener {
     showQuickMenuActionOverlay(eventId, state);
   }
 
-  /** Perform scrolling to previous/next page. */
+  /**
+   * Perform scrolling to previous/next page. Lists that don't move for their scroll action get a
+   * swipe instead.
+   */
   private void scrollForwardBackward(EventId eventId, boolean isNext) {
+    if (pageScroller != null) {
+      pageScroller.scroll(eventId, /* forward= */ !isNext);
+      return;
+    }
     pipeline.returnFeedback(eventId, Feedback.focusDirection(isNext ? PREVIOUS_PAGE : NEXT_PAGE));
+  }
+
+  /** Stops a swipe that the Scroll reading control has waiting, such as when a key is pressed. */
+  public void cancelPageScroll() {
+    if (pageScroller != null) {
+      pageScroller.cancel();
+    }
   }
 
   private EventId lastChangeAccessibilityEventId;
