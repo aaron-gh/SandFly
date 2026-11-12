@@ -433,6 +433,10 @@ On Android 13 and later, SandFly uses 3D when its audio plays on wired or USB he
 
 The **Sound mode** reading control, which you can turn on in **Reading controls**, sets the ringer to Sound, Vibrate or Mute when you swipe up or down. Vibrate is left out on devices without a vibrator. Android only lets SandFly turn Mute on or off with **Do Not Disturb access**; without it, SandFly opens that setting.
 
+### Volume reading controls
+
+**Media volume**, **Call volume**, **Ring volume**, **Notification volume** and **Alarm volume** are reading controls, like TalkBack's **Accessibility volume**. Swipe up to raise the volume one step and down to lower it; SandFly says the new volume as a percentage. Selecting one says its volume. They don't need Shizuku, and they aren't in the reading controls by default. To add them, go to **Reading controls**. Android doesn't let SandFly change the ring or notification volume to or from silent without **Do Not Disturb access**; SandFly then says so. The **Setting values** commands include next and previous values for each of them except **Media volume**, which has its own commands.
+
 ## Tutorial
 
 TalkBack's tutorial is a series of pages that describe gestures, with a few practice areas. SandFly replaces it with an interactive tutorial, modelled on the VoiceOver tutorial on the Mac. To open it, go to **SandFly tutorial** in SandFly settings. It also opens the first time SandFly is turned on.

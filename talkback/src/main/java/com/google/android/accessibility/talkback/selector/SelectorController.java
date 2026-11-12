@@ -138,6 +138,7 @@ import com.google.android.accessibility.utils.output.VoiceProfiles;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import com.google.common.base.Ascii;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import java.text.Normalizer;
 import java.text.NumberFormat;
 import java.util.ArrayList;
@@ -250,6 +251,26 @@ public class SelectorController implements UserInputEventListener {
         R.string.pref_selector_change_a11y_volume_key,
         R.string.selector_a11y_volume_change,
         R.bool.pref_selector_a11y_volume_default),
+    MEDIA_VOLUME(
+        R.string.pref_selector_media_volume_key,
+        R.string.selector_media_volume,
+        R.bool.pref_selector_stream_volume_default),
+    CALL_VOLUME(
+        R.string.pref_selector_call_volume_key,
+        R.string.selector_call_volume,
+        R.bool.pref_selector_stream_volume_default),
+    RING_VOLUME(
+        R.string.pref_selector_ring_volume_key,
+        R.string.selector_ring_volume,
+        R.bool.pref_selector_stream_volume_default),
+    NOTIFICATION_VOLUME(
+        R.string.pref_selector_notification_volume_key,
+        R.string.selector_notification_volume,
+        R.bool.pref_selector_stream_volume_default),
+    ALARM_VOLUME(
+        R.string.pref_selector_alarm_volume_key,
+        R.string.selector_alarm_volume,
+        R.bool.pref_selector_stream_volume_default),
     SOUND_MODE(
         R.string.pref_selector_sound_mode_key,
         R.string.selector_sound_mode,
@@ -785,6 +806,11 @@ public class SelectorController implements UserInputEventListener {
           Setting.AUDIO_FOCUS,
           Setting.SCROLLING_SEQUENTIAL,
           Setting.CHANGE_ACCESSIBILITY_VOLUME,
+          Setting.MEDIA_VOLUME,
+          Setting.CALL_VOLUME,
+          Setting.RING_VOLUME,
+          Setting.NOTIFICATION_VOLUME,
+          Setting.ALARM_VOLUME,
           Setting.SOUND_MODE,
           Setting.AUTO_TRANSLATION,
           Setting.CHANGE_BRIGHTNESS,
@@ -1155,6 +1181,14 @@ public class SelectorController implements UserInputEventListener {
       }
       case CHANGE_ACCESSIBILITY_VOLUME -> {
         actionDescription = context.getString(R.string.title_pref_a11y_volume);
+        hint = getAdjustSelectedSettingGestures();
+      }
+      case MEDIA_VOLUME, CALL_VOLUME, RING_VOLUME, NOTIFICATION_VOLUME, ALARM_VOLUME -> {
+        StreamVolume volume = STREAM_VOLUMES.get(setting);
+        actionDescription =
+            context.getString(volume.titleResId)
+                + ", "
+                + StreamVolumeControl.percentText(context, volume.stream);
         hint = getAdjustSelectedSettingGestures();
       }
       case SOUND_MODE -> {
@@ -2496,6 +2530,14 @@ public class SelectorController implements UserInputEventListener {
         changeAccessibilityVolume(eventId, isNext);
         return;
       }
+      case MEDIA_VOLUME, CALL_VOLUME, RING_VOLUME, NOTIFICATION_VOLUME, ALARM_VOLUME -> {
+        String displayText =
+            StreamVolumeControl.change(
+                context, STREAM_VOLUMES.get(currentSetting).stream, /* lower= */ isNext);
+        announceSetting(eventId, displayText, getAdjustSelectedSettingGestures());
+        showQuickMenuActionOverlay(eventId, displayText);
+        return;
+      }
       case SOUND_MODE -> {
         String displayText = SoundModeControl.change(context, isNext);
         announceSetting(eventId, displayText, getAdjustSelectedSettingGestures());
@@ -2904,6 +2946,32 @@ public class SelectorController implements UserInputEventListener {
     R.string.title_selector_equalizer_8k,
     R.string.title_selector_equalizer_16k
   };
+
+  /** The stream and title of a stream volume reading control. */
+  private static final class StreamVolume {
+    final int stream;
+    @StringRes final int titleResId;
+
+    StreamVolume(int stream, @StringRes int titleResId) {
+      this.stream = stream;
+      this.titleResId = titleResId;
+    }
+  }
+
+  /** The stream volume reading controls, which change a volume without Shizuku. */
+  private static final ImmutableMap<Setting, StreamVolume> STREAM_VOLUMES =
+      ImmutableMap.of(
+          Setting.MEDIA_VOLUME,
+          new StreamVolume(AudioManager.STREAM_MUSIC, R.string.quick_settings_media_volume),
+          Setting.CALL_VOLUME,
+          new StreamVolume(AudioManager.STREAM_VOICE_CALL, R.string.quick_settings_call_volume),
+          Setting.RING_VOLUME,
+          new StreamVolume(AudioManager.STREAM_RING, R.string.quick_settings_ring_volume),
+          Setting.NOTIFICATION_VOLUME,
+          new StreamVolume(
+              AudioManager.STREAM_NOTIFICATION, R.string.quick_settings_notification_volume),
+          Setting.ALARM_VOLUME,
+          new StreamVolume(AudioManager.STREAM_ALARM, R.string.quick_settings_alarm_volume));
 
   /** A band's gain as spoken, such as "+3 dB". */
   private String equalizerGainText(int gain) {

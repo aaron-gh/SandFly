@@ -1155,6 +1155,8 @@
     <string name="quick_settings_mute">Mute</string>
     <!-- Spoken by the Sound mode reading control when SandFly can't turn Mute on or off without Do Not Disturb access, and opens the system setting for it. [CHAR_LIMIT=NONE] -->
     <string name="sound_mode_needs_access">Allow Do Not Disturb access to turn Mute on or off.</string>
+    <!-- Spoken by the Ring volume and Notification volume reading controls when Android doesn't let SandFly change the volume, because the change would turn the ringer to or from silent and SandFly has no Do Not Disturb access. [CHAR_LIMIT=NONE] -->
+    <string name="stream_volume_needs_access">Allow Do Not Disturb access to change this volume.</string>
     <!-- State of a switch or tile in SandFly's quick settings panel that is on. [CHAR_LIMIT=NONE] -->
     <string name="quick_settings_on">On</string>
     <!-- State of a switch or tile in SandFly's quick settings panel that is off. [CHAR_LIMIT=NONE] -->
