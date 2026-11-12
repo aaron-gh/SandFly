@@ -231,6 +231,20 @@ abstract class MacroEditorFragment : NotificationCodeFragment(R.string.title_pre
  */
 class MacroFragment : MacroEditorFragment() {
 
+  // Where Add step adds a step: after the step added last, so that the steps added after If or a
+  // repeat go in its block. Null for the end.
+  private var insertAt: Int? = null
+
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    insertAt = savedInstanceState?.getInt(STATE_INSERT_AT, -1)?.takeIf { it >= 0 }
+  }
+
+  override fun onSaveInstanceState(outState: Bundle) {
+    super.onSaveInstanceState(outState)
+    outState.putInt(STATE_INSERT_AT, insertAt ?: -1)
+  }
+
   override fun getTitle(): CharSequence = macro()?.name ?: getText(R.string.title_pref_macros)
 
   private fun steps(): List<Macros.Step> = macro()?.steps.orEmpty()
@@ -244,8 +258,11 @@ class MacroFragment : MacroEditorFragment() {
     val context = requireContext()
     val macro = macro() ?: return
     screen.action(getString(R.string.macro_run_now)) { runNow() }
+    // The steps can have changed on another screen.
+    val at = insertAt?.takeIf { it < macro.steps.size }
+    insertAt = at
     if (macro.steps.size < Macros.MAX_STEPS) {
-      screen.action(getString(R.string.macro_add_step)) { addStep(null) }
+      screen.action(getString(R.string.macro_add_step), addStepPlace(context, macro.steps, at)) { addStep(at) }
     }
     screen.link(
       getString(R.string.macro_run_only_when),
@@ -277,6 +294,15 @@ class MacroFragment : MacroEditorFragment() {
     screen.action(getString(R.string.menu_rename)) { rename() }
     screen.action(getString(R.string.macro_delete)) { confirmDelete() }
   }
+
+  /** Says where Add step adds a step: at the end, at the start or after a step. */
+  private fun addStepPlace(context: Context, steps: List<Macros.Step>, at: Int?): CharSequence? =
+    when {
+      steps.isEmpty() -> null
+      at == null -> getString(R.string.macro_add_at_end)
+      at == 0 -> getString(R.string.macro_add_at_start)
+      else -> getString(R.string.macro_add_after, at, Macros.describe(context, steps[at - 1]))
+    }
 
   private fun infoRow(context: Context, rowKey: String, text: CharSequence): Preference =
     Preference(context).apply {
@@ -316,6 +342,7 @@ class MacroFragment : MacroEditorFragment() {
 
   private fun move(steps: List<Macros.Step>, index: Int, offset: Int): Boolean {
     val moved = Macros.moved(steps, index, offset) ?: return false
+    insertAt = insertAt?.let { Macros.positionAfterMove(it, index, index + offset) }
     save(moved)
     rebuild()
     listView?.let {
@@ -326,8 +353,10 @@ class MacroFragment : MacroEditorFragment() {
 
   /** Deletes the step at [index], and the Else and End steps of the block it starts. */
   private fun delete(index: Int, name: CharSequence): Boolean {
-    val removed = Macros.removed(steps(), index) ?: return false
-    save(removed)
+    val steps = steps()
+    val dropped = Macros.removedIndices(steps, index) ?: return false
+    insertAt = insertAt?.let { Macros.positionAfterRemoval(it, dropped) }
+    save(steps.filterIndexed { i, _ -> i !in dropped })
     rebuild()
     listView?.let { announce(it, getString(R.string.quick_settings_removed, name)) }
     return true
@@ -335,7 +364,8 @@ class MacroFragment : MacroEditorFragment() {
 
   /**
    * Asks for the kind of step, then for what it does, and adds it at [at], or at the end for null.
-   * If and the repeats are added with their End step.
+   * If and the repeats are added with their End step. Else if and Else added right after End if go
+   * before it.
    */
   private fun addStep(at: Int?) {
     val kinds =
@@ -357,7 +387,10 @@ class MacroFragment : MacroEditorFragment() {
         R.string.shortcut_stop_macro,
       )
     choose(getString(R.string.macro_add_step), kinds.map { getString(it) }) { chosen ->
-      val add: (Macros.Step) -> Unit = { step -> insertSteps(at, listOf(step)) }
+      val add: (Macros.Step) -> Unit = { step ->
+        val steps = steps()
+        insertSteps(Macros.insertPosition(steps, at ?: steps.size, step), listOf(step))
+      }
       fun condition(test: Macros.Test) = Macros.Condition(listOf(Macros.Clause(test)))
       when (kinds[chosen]) {
         R.string.macro_step_command -> chooseCommand(add)
@@ -411,12 +444,16 @@ class MacroFragment : MacroEditorFragment() {
     listView?.let { focusAfterLayout(it, findPreference(rowKey(index)), null) }
   }
 
-  /** Adds [added] at [at], or at the end for null, and moves focus to the first of them. */
+  /**
+   * Adds [added] at [at], or at the end for null, and moves focus to the first of them. The next
+   * step goes after the first of them: after a single step, or into the block it starts.
+   */
   private fun insertSteps(at: Int?, added: List<Macros.Step>) {
     if (!isAdded) return
     val steps = steps()
     if (steps.size + added.size > Macros.MAX_STEPS) return
     val position = at?.coerceIn(0, steps.size) ?: steps.size
+    insertAt = position + 1
     save(steps.subList(0, position) + added + steps.subList(position, steps.size))
     rebuild()
     listView?.let { focusAfterLayout(it, findPreference(rowKey(position)), null) }
@@ -592,6 +629,8 @@ class MacroFragment : MacroEditorFragment() {
   companion object {
     /** The argument with the ID of the macro, for each screen of a macro. */
     const val ARG_MACRO = "macro"
+
+    private const val STATE_INSERT_AT = "insert_at"
 
     private const val SECONDS_INPUT = InputType.TYPE_CLASS_NUMBER or InputType.TYPE_NUMBER_FLAG_DECIMAL
 
