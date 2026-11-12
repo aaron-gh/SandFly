@@ -124,6 +124,7 @@ import com.google.android.accessibility.utils.FormFactorUtils;
 import com.google.android.accessibility.utils.Performance.EventId;
 import com.google.android.accessibility.utils.Role;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
+import com.google.android.accessibility.utils.ValueSteps;
 import com.google.android.accessibility.utils.WebInterfaceUtils;
 import com.google.android.accessibility.utils.input.CursorGranularity;
 import com.google.android.accessibility.utils.input.TextEventFilter.TypingInput;
@@ -2425,7 +2426,7 @@ public class SelectorController implements UserInputEventListener {
     applyPendingSwitch();
     @Nullable ScriptReadingControl scriptControl = currentScriptControl(dynamicControls());
     if (scriptControl != null) {
-      scriptControl.adjust(isNext);
+      adjustValues(eventId, () -> scriptControl.adjust(isNext));
       if (scriptControl.getActivates()) {
         doubleTapArmed = true;
         requestServiceHandlesDoubleTap(eventId, true);
@@ -2458,6 +2459,26 @@ public class SelectorController implements UserInputEventListener {
   }
 
   private void adjustSetting(EventId eventId, Setting currentSetting, boolean isNext) {
+    adjustValues(eventId, () -> adjustSettingValue(eventId, currentSetting, isNext));
+  }
+
+  /**
+   * Runs {@code adjust}, which changes a reading control's value. With Wrap around off, a list of
+   * values stops at its first and last value, where the value is said again with the end sound.
+   */
+  private void adjustValues(EventId eventId, Runnable adjust) {
+    boolean wrap =
+        SharedPreferencesUtils.getBooleanPref(
+            prefs,
+            context.getResources(),
+            R.string.pref_wrap_around_key,
+            R.bool.pref_wrap_around_default);
+    if (ValueSteps.run(wrap, adjust)) {
+      pipeline.returnFeedback(eventId, Feedback.sound(R.raw.complete));
+    }
+  }
+
+  private void adjustSettingValue(EventId eventId, Setting currentSetting, boolean isNext) {
     switch (currentSetting) {
       case LIVE_RECOGNITION -> {
         doubleTapArmed = true;
@@ -2495,7 +2516,7 @@ public class SelectorController implements UserInputEventListener {
         return;
       }
       case PUNCTUATION -> {
-        cycleSpeakPunctuationVerbosity(eventId, TalkBackAnalytics.TYPE_SELECTOR);
+        cycleSpeakPunctuationVerbosity(eventId, TalkBackAnalytics.TYPE_SELECTOR, isNext);
         return;
       }
       case EMOJI -> {
@@ -2758,7 +2779,7 @@ public class SelectorController implements UserInputEventListener {
     if (index == -1) {
       index = isNext ? 0 : size - 1;
     } else {
-      index = (index + (isNext ? 1 : size - 1)) % size;
+      index = ValueSteps.step(index, size, isNext);
     }
     chosenTextEntity = entities.get(index);
     doubleTapArmed = true;
@@ -3030,7 +3051,7 @@ public class SelectorController implements UserInputEventListener {
   private void changeSpeechStream(EventId eventId, boolean isNext) {
     List<String> streams = FailoverTextToSpeech.STREAM_VALUES;
     int index = streams.indexOf(FailoverTextToSpeech.chosenSpeechStream(prefs));
-    String stream = streams.get(Math.floorMod(index + (isNext ? 1 : -1), streams.size()));
+    String stream = streams.get(ValueSteps.step(index, streams.size(), isNext));
     prefs.edit().putString(FailoverTextToSpeech.PREF_SPEECH_STREAM_KEY, stream).apply();
     String[] names = context.getResources().getStringArray(R.array.pref_speech_stream_entries);
     String displayText = names[streams.indexOf(stream)];
@@ -3090,7 +3111,7 @@ public class SelectorController implements UserInputEventListener {
     int nextIndex =
         (currentIndex < 0)
             ? (isNext ? 0 : engines.size() - 1)
-            : Math.floorMod(currentIndex + (isNext ? 1 : -1), engines.size());
+            : ValueSteps.step(currentIndex, engines.size(), isNext);
     String nextEngine = engines.get(nextIndex);
     prefs.edit().putString(context.getString(R.string.pref_tts_engine_key), nextEngine).apply();
 
@@ -3206,7 +3227,7 @@ public class SelectorController implements UserInputEventListener {
             R.string.pref_emoji_speech_key,
             R.string.pref_emoji_speech_default);
     int index = Math.max(0, Arrays.asList(values).indexOf(current));
-    index = (index + (isNext ? 1 : values.length - 1)) % values.length;
+    index = ValueSteps.step(index, values.length, isNext);
     SharedPreferencesUtils.putStringPref(
         prefs, context.getResources(), R.string.pref_emoji_speech_key, values[index]);
     announceSetting(
@@ -3238,6 +3259,11 @@ public class SelectorController implements UserInputEventListener {
 
   /** Cycle the punctuation verbosity to the next value */
   public void cycleSpeakPunctuationVerbosity(EventId eventId, int triggerAction) {
+    cycleSpeakPunctuationVerbosity(eventId, triggerAction, /* isNext= */ true);
+  }
+
+  /** Moves the punctuation verbosity to the next or previous value. */
+  private void cycleSpeakPunctuationVerbosity(EventId eventId, int triggerAction, boolean isNext) {
     Resources res = context.getResources();
     int punctuationLevel =
         Integer.parseInt(
@@ -3248,10 +3274,9 @@ public class SelectorController implements UserInputEventListener {
                 R.string.pref_punctuation_verbosity_default));
     analytics.onManuallyChangeSetting(
         res.getString(R.string.pref_punctuation_verbosity), triggerAction);
-    punctuationLevel++;
-    punctuationLevel %= 3;
     String[] punctuationValues =
         context.getResources().getStringArray(R.array.pref_punctuation_values);
+    punctuationLevel = ValueSteps.step(punctuationLevel, punctuationValues.length, isNext);
     String[] punctuationEntries =
         context.getResources().getStringArray(R.array.pref_punctuation_entries);
     SharedPreferencesUtils.putStringPref(
@@ -3684,11 +3709,7 @@ public class SelectorController implements UserInputEventListener {
       if (currentActionIndex == -1) {
         item = menuItems.get(0);
       } else {
-        if (isNext) {
-          item = menuItems.get((currentActionIndex + 1) % actionSize);
-        } else {
-          item = menuItems.get((currentActionIndex - 1 + actionSize) % actionSize);
-        }
+        item = menuItems.get(ValueSteps.step(currentActionIndex, actionSize, isNext));
       }
       currentActionId = item.getContextMenuItemId();
       displayText = item.getTitle();

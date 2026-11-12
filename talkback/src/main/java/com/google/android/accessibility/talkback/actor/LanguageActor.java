@@ -26,6 +26,7 @@ import com.google.android.accessibility.talkback.Pipeline.FeedbackReturner;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.TalkBackService.SpeechLanguage;
 import com.google.android.accessibility.utils.StringUtils;
+import com.google.android.accessibility.utils.ValueSteps;
 import com.google.android.accessibility.utils.monitor.ScreenMonitor;
 import com.google.android.accessibility.utils.output.VoiceProfiles;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
@@ -145,19 +146,11 @@ public class LanguageActor {
     Locale currentLanguage = speechLanguage.getCurrentLanguage();
     int index = languages.indexOf(currentLanguage);
 
-    // Changes to the next/previous language.
-    if (isNext) {
-      index++;
-      // Current item is the last item of the list, so wrap to the front of the list.
-      if (index >= size) {
-        index = 0;
-      }
+    // Changes to the next/previous language, around the ends of the list as ValueSteps goes.
+    if (index < 0) {
+      index = isNext ? 0 : size - 1;
     } else {
-      index--;
-      // Current item is the first item of the list, so wrap to the end of the list.
-      if (index < 0) {
-        index = size - 1;
-      }
+      index = ValueSteps.step(index, size, isNext);
     }
 
     setLanguage(languages.get(index));

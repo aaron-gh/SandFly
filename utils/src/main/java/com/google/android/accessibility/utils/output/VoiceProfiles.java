@@ -17,6 +17,7 @@
 package com.google.android.accessibility.utils.output;
 
 import android.content.SharedPreferences;
+import com.google.android.accessibility.utils.ValueSteps;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
@@ -172,14 +173,14 @@ public final class VoiceProfiles {
 
   /**
    * Returns the ID of the profile before or after the one in use, with Backtalk's default (empty)
-   * first, wrapping around at either end.
+   * first, as {@link ValueSteps} goes.
    */
   public static String adjacentId(SharedPreferences prefs, boolean isNext) {
     List<String> ids = new ArrayList<>();
     ids.add("");
     ids.addAll(ids(prefs));
     int currentIndex = ids.indexOf(activeId(prefs));
-    return ids.get(Math.floorMod(currentIndex + (isNext ? 1 : -1), ids.size()));
+    return ids.get(ValueSteps.step(currentIndex, ids.size(), isNext));
   }
 
   /** Returns the profile in use, or null for Backtalk's default. */

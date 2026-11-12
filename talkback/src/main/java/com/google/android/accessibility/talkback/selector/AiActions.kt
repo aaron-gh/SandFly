@@ -23,6 +23,7 @@ import com.google.android.accessibility.talkback.actor.ImageCaptioner
 import com.google.android.accessibility.talkback.actor.gemini.GeminiConfiguration
 import com.google.android.accessibility.talkback.sandflyai.SandflyAi
 import com.google.android.accessibility.utils.SharedPreferencesUtils
+import com.google.android.accessibility.utils.ValueSteps
 
 /**
  * The commands of the AI actions reading control: Describe screen, Describe image, their spoken and
@@ -93,7 +94,7 @@ object AiActions {
     return actions.firstOrNull { it.value == selected } ?: actions.firstOrNull()
   }
 
-  /** Chooses the next or previous action, wrapping around, and returns it. */
+  /** Chooses the next or previous action, as [ValueSteps] goes, and returns it. */
   @JvmStatic
   fun step(context: Context, forward: Boolean): Action? {
     val action = step(available(context), selected, forward) ?: return null
@@ -102,14 +103,15 @@ object AiActions {
   }
 
   /**
-   * Returns the action after or before the one with the value [selected] in [actions], wrapping
-   * around. With no choice yet, or one no longer available, the first action is the current one.
+   * Returns the action after or before the one with the value [selected] in [actions], as
+   * [ValueSteps] goes. With no choice yet, or one no longer available, the first action is the
+   * current one.
    */
   internal fun step(actions: List<Action>, selected: String?, forward: Boolean): Action? {
     if (actions.isEmpty()) {
       return null
     }
     val index = actions.indexOfFirst { it.value == selected }.coerceAtLeast(0)
-    return actions[Math.floorMod(index + if (forward) 1 else -1, actions.size)]
+    return actions[ValueSteps.step(index, actions.size, forward)]
   }
 }

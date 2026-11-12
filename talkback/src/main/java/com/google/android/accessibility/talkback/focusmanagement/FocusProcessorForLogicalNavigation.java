@@ -197,6 +197,10 @@ public class FocusProcessorForLogicalNavigation {
 
   private static boolean wrapAround = true;
 
+  // Whether the current navigation action stopped at the first or last item because wrapping is
+  // off, where it would otherwise have wrapped around.
+  private boolean stoppedAtEdge = false;
+
   /** The last node that was scrolled while navigating with native macro granularity. */
   private @Nullable AccessibilityNodeInfoCompat lastScrolledNodeForNativeMacroGranularity;
 
@@ -565,10 +569,12 @@ public class FocusProcessorForLogicalNavigation {
     if (navigationAction.actionType == NavigationAction.DIRECTIONAL_NAVIGATION) {
       ScrollEventInterpreter.onNavigation(pivot.getWindowId());
     }
+    stoppedAtEdge = false;
     return switch (navigationAction.actionType) {
       case NavigationAction.DIRECTIONAL_NAVIGATION ->
           onDirectionalNavigationAction(
-              pivot, /* ignoreDescendantsOfPivot= */ false, navigationAction, eventId);
+                  pivot, /* ignoreDescendantsOfPivot= */ false, navigationAction, eventId)
+              || repeatAtEdge(navigationAction, eventId);
       case NavigationAction.JUMP_TO_TOP, NavigationAction.JUMP_TO_BOTTOM ->
           onJumpAction(pivot, navigationAction, eventId);
       case NavigationAction.SCROLL_FORWARD, NavigationAction.SCROLL_BACKWARD ->
@@ -580,6 +586,29 @@ public class FocusProcessorForLogicalNavigation {
           onScrollOrPageAction(pivot, navigationAction, eventId);
       default -> false;
     };
+  }
+
+  /**
+   * With wrapping off, moving to the next item from the last one, or to the previous item from the
+   * first, focuses the item again, so that it is spoken again with the end sound in place of the
+   * focus sound. Returns whether it did.
+   */
+  @VisibleForTesting
+  boolean repeatAtEdge(NavigationAction navigationAction, @Nullable EventId eventId) {
+    if (!stoppedAtEdge
+        || wrapAround
+        || !navigationAction.shouldWrap
+        || !isMoveToNextOrPreviousItem(navigationAction)) {
+      return false;
+    }
+    stoppedAtEdge = false;
+    @Nullable AccessibilityNodeInfoCompat focused =
+        accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ false);
+    if (focused == null) {
+      return false;
+    }
+    return setAccessibilityFocusInternal(
+        focused, navigationAction, /* linkIndex= */ -1, ColumnWrap.EDGE, eventId);
   }
 
   @VisibleForTesting
@@ -1747,6 +1776,7 @@ public class FocusProcessorForLogicalNavigation {
     @Nullable AccessibilityNodeInfoCompat first = ScreenElements.firstAppNodeOrNull();
     if (first == null) {
       if (!navigationAction.shouldWrap || !wrapAround) {
+        stoppedAtEdge = !wrapAround;
         return false;
       }
       @Nullable AccessibilityNodeInfoCompat element = ScreenElements.beforeFirstNode(forward);
@@ -2738,6 +2768,7 @@ public class FocusProcessorForLogicalNavigation {
             || needPauseWhenTraverseAcrossWindow(
                 windowTraversal, isScreenRtl, currentWindow, searchDirection, windowFilter))) {
       reachEdge = true;
+      stoppedAtEdge = !wrapAround;
       announceNativeElement(logicalDirection, navigationAction.targetType, eventId);
       LogUtils.v(TAG, "Reach edge before searchTargetInNextOrPreviousWindow in:" + currentWindow);
       return NavigationResult.create(NavigationResult.Type.REACH_EDGE);
@@ -2772,6 +2803,7 @@ public class FocusProcessorForLogicalNavigation {
                 NavigationTarget.createNodeFilter(navigationAction.targetType, speakingNodesCache));
         if (reachEdgeBeforeSearch != reachEdge) {
           // Skip one swipe if reaching edge while searching windows in loop.
+          stoppedAtEdge = !wrapAround;
           announceNativeElement(logicalDirection, navigationAction.targetType, eventId);
           return NavigationResult.create(NavigationResult.Type.REACH_EDGE);
         }
@@ -3043,6 +3075,7 @@ public class FocusProcessorForLogicalNavigation {
               windowTraversal, isScreenRtl, targetWindow, direction, windowFilter)) {
         LogUtils.v(TAG, "Reach edge while searchTargetInNextOrPreviousWindow in:" + targetWindow);
         reachEdge = true;
+        stoppedAtEdge = !wrapAround;
         return null;
       }
       // Search for a target window.

@@ -160,8 +160,16 @@ public final class EventTypeViewAccessibilityFocusedFeedbackRule {
 
     // Moving to another row of a grid plays its sound with the focus sound, and its vibration in
     // place of the focus vibration.
-    int columnWrapSound = ColumnWrap.sound(accessibilityFocusEventInterpretation.getColumnWrap());
-    if (columnWrapSound != 0) {
+    int columnWrap = accessibilityFocusEventInterpretation.getColumnWrap();
+    int columnWrapSound = ColumnWrap.sound(columnWrap);
+    if (columnWrap == ColumnWrap.EDGE) {
+      // Focus stayed on the first or last item: the end sound and its vibration play alone.
+      earcon = columnWrapSound;
+      secondEarcon = -1;
+      earconPosition = null;
+      earconVibrates = true;
+      haptic = -1;
+    } else if (columnWrapSound != 0) {
       if (earcon == -1) {
         earcon = columnWrapSound;
       } else if (secondEarcon == -1) {

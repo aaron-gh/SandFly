@@ -33,6 +33,11 @@ object ColumnWrap {
   const val NONE = 0
   const val FORWARD = 1
   const val BACK = 2
+  /**
+   * Not a row change: the focus stayed on the first or last item because Wrap around is off, and
+   * the item is spoken again with the end sound in place of the focus sound.
+   */
+  const val EDGE = 3
 
   /** How long a web page has to move focus after being asked to, in milliseconds. */
   private const val WEB_FOCUS_TIMEOUT_MS = 1000L
@@ -48,6 +53,7 @@ object ColumnWrap {
     when (wrap) {
       FORWARD -> R.raw.column_wrap
       BACK -> R.raw.column_wrap_back
+      EDGE -> R.raw.complete
       else -> 0
     }
 
