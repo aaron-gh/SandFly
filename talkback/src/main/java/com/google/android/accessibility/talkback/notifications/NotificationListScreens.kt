@@ -25,10 +25,15 @@ import android.os.Bundle
 import android.text.InputType
 import android.text.format.DateFormat
 import android.view.KeyEvent
+import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.CheckBox
 import android.widget.LinearLayout
+import android.widget.Spinner
+import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AlertDialog
@@ -201,6 +206,7 @@ abstract class NotificationCodeFragment(@StringRes private val title: Int) : Tal
     secondText: String = "",
     inputType: Int = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_FLAG_MULTI_LINE,
     secondInputType: Int = InputType.TYPE_CLASS_TEXT,
+    choice: DialogChoice? = null,
     onDone: (String, String, List<Boolean>) -> String?,
   ) {
     val context = requireContext()
@@ -212,11 +218,15 @@ abstract class NotificationCodeFragment(@StringRes private val title: Int) : Tal
       }
     // Enter in a single-line field that is the only one presses OK.
     val enterPressesOk = secondHint == null && inputType and InputType.TYPE_TEXT_FLAG_MULTI_LINE == 0
+    // With more than one control, each has a label shown above it, as a hint is hidden by the text
+    // in the field.
+    val labelled = secondHint != null || choice != null
     val edit =
       KeyboardSafeEditText(context).apply {
+        id = View.generateViewId()
         setText(text)
         // The title labels the field when there is no hint.
-        this.hint = hint ?: title
+        if (labelled && hint != null) addLabel(layout, hint, this) else this.hint = hint ?: title
         this.inputType = inputType
         if (enterPressesOk) imeOptions = EditorInfo.IME_ACTION_DONE
         setSelection(text.length)
@@ -225,11 +235,33 @@ abstract class NotificationCodeFragment(@StringRes private val title: Int) : Tal
     val second =
       secondHint?.let {
         KeyboardSafeEditText(context).apply {
+          id = View.generateViewId()
           setText(secondText)
-          this.hint = it
+          addLabel(layout, it, this)
           this.inputType = secondInputType
         }.also { layout.addView(it, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT) }
       }
+    choice?.let {
+      val spinner =
+        Spinner(context).apply {
+          id = View.generateViewId()
+          adapter =
+            ArrayAdapter(context, android.R.layout.simple_spinner_item, it.items).apply {
+              setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            }
+          setSelection(it.selected.coerceIn(0, (it.items.size - 1).coerceAtLeast(0)))
+          onItemSelectedListener =
+            object : AdapterView.OnItemSelectedListener {
+              override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                it.selected = position
+              }
+
+              override fun onNothingSelected(parent: AdapterView<*>?) {}
+            }
+        }
+      addLabel(layout, it.label, spinner)
+      layout.addView(spinner, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+    }
     val boxes =
       checkLabels.mapIndexed { index, label ->
         CheckBox(context).apply {
@@ -270,6 +302,19 @@ abstract class NotificationCodeFragment(@StringRes private val title: Int) : Tal
     dialog.show()
     edit.requestFocus()
   }
+
+  /** Adds [text] to [layout] as the label shown above [view], which it names for screen readers. */
+  private fun addLabel(layout: LinearLayout, text: CharSequence, view: View) {
+    val label =
+      TextView(layout.context).apply {
+        this.text = text
+        labelFor = view.id
+      }
+    layout.addView(label, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+  }
+
+  /** A list in a text dialog, named [label], of which [selected] is the item chosen. */
+  class DialogChoice(val label: CharSequence, val items: List<CharSequence>, var selected: Int = 0)
 
   protected fun confirm(message: CharSequence, @StringRes button: Int, onYes: () -> Unit) {
     dialog()
