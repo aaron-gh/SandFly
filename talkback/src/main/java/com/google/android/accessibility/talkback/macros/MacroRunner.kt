@@ -357,7 +357,7 @@ object MacroRunner {
       if (finished) return
       val clicked =
         try {
-          val node = findItem(service, label)
+          val node = findItem(service, label, field = step.field)
           // The run can be stopped while the windows are read.
           if (finished) return
           node?.let { click(it) }
@@ -440,6 +440,7 @@ object MacroRunner {
     label: LabelMatch,
     kind: Macros.Kind? = null,
     anyMatch: Boolean = false,
+    field: Macros.Field? = null,
   ): AccessibilityNodeInfo? {
     if (!label.isUsable) return null
     val roots =
@@ -457,8 +458,11 @@ object MacroRunner {
         count++
         if (node.isVisibleToUser && (kind == null || isKind(node, kind))) {
           val texts =
-            if (kind == null && !anyMatch) listOfNotNull(node.text, node.contentDescription)
-            else texts(node)
+            when {
+              field != null -> texts(node, field)
+              kind == null && !anyMatch -> listOfNotNull(node.text, node.contentDescription)
+              else -> texts(node)
+            }
           for (text in texts) {
             val trimmed = text.toString().trim()
             if (label.isExactly(trimmed)) return node
@@ -480,13 +484,13 @@ object MacroRunner {
   private fun check(service: TalkBackService, test: Macros.Test): Boolean =
     when (test) {
       is Macros.ItemOnScreen ->
-        findItem(service, LabelMatch(test.label, test.regex), test.kind, anyMatch = true) != null
+        findItem(service, LabelMatch(test.label, test.regex), test.kind, anyMatch = true, field = test.field) != null
       is Macros.FocusedItem -> {
         val focused = service.findFocus(AccessibilityNodeInfo.FOCUS_ACCESSIBILITY)
         val label = LabelMatch(test.label, test.regex)
         focused != null &&
           (test.kind == null || isKind(focused, test.kind)) &&
-          (label.isEmpty || containsText(focused, label))
+          (label.isEmpty || containsText(focused, label, test.field))
       }
       is Macros.AppInFront -> activePackage(service) == test.packageName
       Macros.KeyboardShown -> service.windows.any { it.type == AccessibilityWindowInfo.TYPE_INPUT_METHOD }
@@ -504,6 +508,20 @@ object MacroRunner {
     return window?.root?.packageName
   }
 
+  /**
+   * The [field] of [node], or nothing when it has none. A resource ID is also given without its
+   * package, so that "send" is the whole of com.example:id/send.
+   */
+  private fun texts(node: AccessibilityNodeInfo, field: Macros.Field): List<CharSequence> =
+    when (field) {
+      Macros.Field.TEXT -> listOfNotNull(node.text)
+      Macros.Field.DESCRIPTION -> listOfNotNull(node.contentDescription)
+      Macros.Field.HINT -> listOfNotNull(node.hintText)
+      Macros.Field.STATE -> listOfNotNull(AccessibilityNodeInfoCompat.wrap(node).stateDescription)
+      Macros.Field.RESOURCE_ID ->
+        node.viewIdResourceName?.let { id -> listOf(id, id.substringAfter(":id/")).distinct() }.orEmpty()
+    }
+
   private fun texts(node: AccessibilityNodeInfo): List<CharSequence> =
     listOfNotNull(
       node.text,
@@ -512,15 +530,19 @@ object MacroRunner {
       AccessibilityNodeInfoCompat.wrap(node).stateDescription,
     )
 
-  /** Returns whether the text of [node] or of the items in it has [label] in it. */
-  private fun containsText(node: AccessibilityNodeInfo, label: LabelMatch): Boolean {
+  /**
+   * Returns whether the texts of [node] or of the items in it, or only their [field] when that
+   * isn't null, have [label] in them.
+   */
+  private fun containsText(node: AccessibilityNodeInfo, label: LabelMatch, field: Macros.Field?): Boolean {
     val queue = ArrayDeque<AccessibilityNodeInfo>()
     queue.add(node)
     var count = 0
     while (queue.isNotEmpty() && count < MAX_FOCUS_NODES) {
       val item = queue.removeFirst()
       count++
-      if (texts(item).any { label.isIn(it) }) return true
+      val texts = if (field != null) texts(item, field) else texts(item)
+      if (texts.any { label.isIn(it) }) return true
       for (i in 0 until item.childCount) {
         item.getChild(i)?.let { queue.add(it) }
       }

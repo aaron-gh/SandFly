@@ -75,6 +75,8 @@ class MacrosTest {
           Wait(1_500),
           Tap("Send", 5_000),
           Tap("Reply.*Anna", 5_000, regex = true),
+          Tap("send", 5_000, field = Macros.Field.RESOURCE_ID),
+          Tap("^Reply", 5_000, regex = true, field = Macros.Field.DESCRIPTION),
           OpenApp(gmail),
           TypeText("On my way", replace = true),
           TypeText("Thanks"),
@@ -289,6 +291,8 @@ class MacrosTest {
           Macros.Clause(Macros.ItemOnScreen("^Anna", regex = true)),
           Macros.Clause(Macros.FocusedItem("\\d+ new", Macros.Kind.CLICKABLE, regex = true), or = true),
           Macros.Clause(Macros.ItemOnScreen("Send")),
+          Macros.Clause(Macros.ItemOnScreen("send", field = Macros.Field.RESOURCE_ID)),
+          Macros.Clause(Macros.FocusedItem("Unread", field = Macros.Field.STATE)),
         )
       )
     val macro = Macro("a", "Reply", listOf(Macros.If(condition), Macros.EndIf))
@@ -301,6 +305,22 @@ class MacrosTest {
       "Item on screen: ^Anna (regular expression)",
       Macros.describe(context, Macros.Clause(Macros.ItemOnScreen("^Anna", regex = true))),
     )
+  }
+
+  @Test
+  fun describeFieldSteps() {
+    assertEquals("Tap send (Resource ID)", Macros.describe(context, Tap("send", field = Macros.Field.RESOURCE_ID)))
+    assertEquals(
+      "Tap ^Re (Description, regular expression)",
+      Macros.describe(context, Tap("^Re", regex = true, field = Macros.Field.DESCRIPTION)),
+    )
+  }
+
+  @Test
+  fun unknownFieldIsAnyText() {
+    val steps = JSONArray().put(JSONObject().put("type", "tap").put("label", "OK").put("field", "colour"))
+    val json = JSONArray().put(JSONObject().put("id", "a").put("name", "A").put("steps", steps)).toString()
+    assertEquals(Tap("OK"), Macros.fromJson(json).single().steps.single())
   }
 
   @Test

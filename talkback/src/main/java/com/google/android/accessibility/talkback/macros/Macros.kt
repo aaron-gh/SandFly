@@ -51,13 +51,15 @@ object Macros {
   data class Wait(val millis: Long) : Step()
 
   /**
-   * Clicks the first item on screen whose text or description contains [label], ignoring case, or
-   * matches it as a regular expression for [regex], waiting up to [timeoutMillis] for it to appear.
+   * Clicks the first item on screen whose text or description, or only its [field] when that isn't
+   * null, contains [label], ignoring case, or matches it as a regular expression for [regex],
+   * waiting up to [timeoutMillis] for it to appear.
    */
   data class Tap(
     val label: String,
     val timeoutMillis: Long = DEFAULT_TAP_TIMEOUT_MS,
     val regex: Boolean = false,
+    val field: Field? = null,
   ) : Step()
 
   /** Opens the app of the [OpenAppActions] value [value]. */
@@ -115,21 +117,45 @@ object Macros {
     }
   }
 
+  /** The one text of an item that a macro step or test looks in, instead of all of them. */
+  enum class Field(val key: String, @StringRes val title: Int) {
+    TEXT("text", R.string.macro_field_text),
+    DESCRIPTION("description", R.string.macro_field_description),
+    HINT("hint", R.string.macro_field_hint),
+    STATE("state", R.string.macro_field_state),
+    RESOURCE_ID("id", R.string.macro_field_id);
+
+    companion object {
+      fun of(key: String?): Field? = entries.firstOrNull { it.key == key }
+    }
+  }
+
   /** What a condition checks. */
   sealed class Test
 
   /**
-   * An item on screen whose text, description or hint contains [label], ignoring case, or matches
-   * it as a regular expression for [regex], and that is of [kind] when it isn't null.
+   * An item on screen whose text, description, hint or state, or only its [field] when that isn't
+   * null, contains [label], ignoring case, or matches it as a regular expression for [regex], and
+   * that is of [kind] when it isn't null.
    */
-  data class ItemOnScreen(val label: String, val kind: Kind? = null, val regex: Boolean = false) : Test()
+  data class ItemOnScreen(
+    val label: String,
+    val kind: Kind? = null,
+    val regex: Boolean = false,
+    val field: Field? = null,
+  ) : Test()
 
   /**
-   * The item with accessibility focus: its text, or the text of the items in it, contains [label]
-   * when it isn't empty, or matches it as a regular expression for [regex], and it is of [kind] when
-   * it isn't null.
+   * The item with accessibility focus: its texts, or those of the items in it, or only their
+   * [field] when that isn't null, contain [label] when it isn't empty, or match it as a regular
+   * expression for [regex], and it is of [kind] when it isn't null.
    */
-  data class FocusedItem(val label: String, val kind: Kind? = null, val regex: Boolean = false) : Test()
+  data class FocusedItem(
+    val label: String,
+    val kind: Kind? = null,
+    val regex: Boolean = false,
+    val field: Field? = null,
+  ) : Test()
 
   /** The app of the active window is [packageName]. */
   data class AppInFront(val packageName: String) : Test()
@@ -345,7 +371,7 @@ object Macros {
       is RunCommand ->
         Commands.label(context, step.value) ?: context.getString(R.string.macro_step_unavailable)
       is Wait -> waitText(context, step.millis)
-      is Tap -> context.getString(R.string.macro_step_tap_value, labelText(context, step.label, step.regex))
+      is Tap -> context.getString(R.string.macro_step_tap_value, labelText(context, step.label, step.regex, step.field))
       is OpenApp ->
         OpenAppActions.label(context, step.value) ?: context.getString(R.string.macro_step_unavailable)
       is TypeText ->
@@ -392,12 +418,12 @@ object Macros {
       is ItemOnScreen ->
         context.getString(
           if (not) R.string.macro_test_no_item_value else R.string.macro_test_item_value,
-          itemText(context, labelText(context, test.label, test.regex), test.kind),
+          itemText(context, labelText(context, test.label, test.regex, test.field), test.kind),
         )
       is FocusedItem ->
         context.getString(
           if (not) R.string.macro_test_not_focused_value else R.string.macro_test_focused_value,
-          itemText(context, labelText(context, test.label, test.regex), test.kind),
+          itemText(context, labelText(context, test.label, test.regex, test.field), test.kind),
         )
       is AppInFront ->
         context.getString(
@@ -411,9 +437,16 @@ object Macros {
     }
   }
 
-  /** Returns [label], said to be a regular expression for [regex]. */
-  private fun labelText(context: Context, label: String, regex: Boolean): String =
-    if (regex && label.isNotEmpty()) context.getString(R.string.macro_regex_value, label) else label
+  /** Returns [label], with the [field] it is looked in, and said to be a regular expression for [regex]. */
+  private fun labelText(context: Context, label: String, regex: Boolean, field: Field?): String =
+    when {
+      label.isEmpty() -> label
+      field != null && regex ->
+        context.getString(R.string.macro_field_regex_value, label, context.getString(field.title))
+      field != null -> context.getString(R.string.macro_field_value, label, context.getString(field.title))
+      regex -> context.getString(R.string.macro_regex_value, label)
+      else -> label
+    }
 
   /**
    * Returns [pattern] compiled to be found in a text ignoring case, or null when it isn't a regular
@@ -755,6 +788,7 @@ object Macros {
           .put("label", step.label)
           .put("timeout", step.timeoutMillis)
           .apply { if (step.regex) put("regex", true) }
+          .apply { step.field?.let { put("field", it.key) } }
       is OpenApp -> JSONObject().put("type", TYPE_OPEN_APP).put("app", step.value)
       is TypeText ->
         JSONObject().put("type", TYPE_TYPE_TEXT).put("text", step.text).put("replace", step.replace)
@@ -786,12 +820,14 @@ object Macros {
                 .put("label", test.label)
                 .put("kind", test.kind?.key)
                 .apply { if (test.regex) put("regex", true) }
+                .apply { test.field?.let { put("field", it.key) } }
             is FocusedItem ->
               JSONObject()
                 .put("test", TEST_FOCUSED)
                 .put("label", test.label)
                 .put("kind", test.kind?.key)
                 .apply { if (test.regex) put("regex", true) }
+                .apply { test.field?.let { put("field", it.key) } }
             is AppInFront -> JSONObject().put("test", TEST_APP).put("package", test.packageName)
             KeyboardShown -> JSONObject().put("test", TEST_KEYBOARD)
             ScreenLocked -> JSONObject().put("test", TEST_LOCKED)
@@ -813,13 +849,24 @@ object Macros {
             when (item.optString("test")) {
               TEST_ITEM ->
                 item.optString("label").take(MAX_LABEL).takeIf { it.isNotBlank() }?.let {
-                  ItemOnScreen(it, Kind.of(item.optString("kind")), item.optBoolean("regex", false))
+                  ItemOnScreen(
+                    it,
+                    Kind.of(item.optString("kind")),
+                    item.optBoolean("regex", false),
+                    Field.of(item.optString("field")),
+                  )
                 }
               TEST_FOCUSED -> {
                 val label = item.optString("label").take(MAX_LABEL)
                 val kind = Kind.of(item.optString("kind"))
                 if (label.isBlank() && kind == null) null
-                else FocusedItem(label.trim(), kind, label.isNotBlank() && item.optBoolean("regex", false))
+                else
+                  FocusedItem(
+                    label.trim(),
+                    kind,
+                    label.isNotBlank() && item.optBoolean("regex", false),
+                    Field.of(item.optString("field")).takeIf { label.isNotBlank() },
+                  )
               }
               TEST_APP -> item.optString("package").takeIf { it.isNotEmpty() }?.let { AppInFront(it) }
               TEST_KEYBOARD -> KeyboardShown
@@ -875,6 +922,7 @@ object Macros {
             it,
             item.optLong("timeout", DEFAULT_TAP_TIMEOUT_MS).coerceIn(MIN_TAP_TIMEOUT_MS, MAX_TAP_TIMEOUT_MS),
             item.optBoolean("regex", false),
+            Field.of(item.optString("field")),
           )
         }
       TYPE_OPEN_APP -> item.optString("app").takeIf { OpenAppActions.isAction(it) }?.let { OpenApp(it) }

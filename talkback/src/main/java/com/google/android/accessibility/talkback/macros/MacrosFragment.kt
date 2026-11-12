@@ -31,6 +31,7 @@ import com.google.android.accessibility.talkback.commands.CommandFragment
 import com.google.android.accessibility.talkback.commands.Commands
 import com.google.android.accessibility.talkback.gesture.OpenAppActions
 import com.google.android.accessibility.talkback.notifications.NotificationCodeFragment
+import com.google.android.accessibility.talkback.notifications.NotificationCodeFragment.DialogChoice
 import com.google.android.accessibility.talkback.preference.base.announce
 import com.google.android.accessibility.talkback.preference.base.focusAfterLayout
 import com.google.android.accessibility.talkback.preference.base.positionText
@@ -91,6 +92,17 @@ abstract class MacroEditorFragment : NotificationCodeFragment(R.string.title_pre
     )
   }
 
+  /** The Match in list of the item text dialogs, with [field] chosen: Any text, then each field. */
+  protected fun fieldChoice(field: Macros.Field?): DialogChoice =
+    DialogChoice(
+      getString(R.string.macro_match_in),
+      listOf(getString(R.string.macro_field_any)) + Macros.Field.entries.map { getString(it.title) },
+      field?.let { it.ordinal + 1 } ?: 0,
+    )
+
+  /** The field chosen in [choice], made by [fieldChoice], or null for Any text. */
+  protected fun chosenField(choice: DialogChoice): Macros.Field? = Macros.Field.entries.getOrNull(choice.selected - 1)
+
   /**
    * Asks for a test, with [old] chosen, then for what it looks for, and gives it to [then].
    */
@@ -116,6 +128,7 @@ abstract class MacroEditorFragment : NotificationCodeFragment(R.string.title_pre
       when (kinds[chosen]) {
         R.string.macro_test_item -> {
           val item = old as? Macros.ItemOnScreen
+          val fields = fieldChoice(item?.field)
           askText(
             getString(R.string.macro_test_item),
             text = item?.label.orEmpty(),
@@ -123,6 +136,7 @@ abstract class MacroEditorFragment : NotificationCodeFragment(R.string.title_pre
             checkLabels = listOf(getString(R.string.macro_regex)),
             checked = listOf(item?.regex == true),
             inputType = InputType.TYPE_CLASS_TEXT,
+            choice = fields,
           ) { text, _, checked ->
             val label = text.take(Macros.MAX_LABEL)
             val regex = checked.firstOrNull() == true
@@ -130,7 +144,8 @@ abstract class MacroEditorFragment : NotificationCodeFragment(R.string.title_pre
               label.isEmpty() -> ""
               regex && Macros.compilePattern(label) == null -> getString(R.string.macro_invalid_regex)
               else -> {
-                askKind(item?.kind, anyType = true) { then(Macros.ItemOnScreen(label, it, regex)) }
+                val field = chosenField(fields)
+                askKind(item?.kind, anyType = true) { then(Macros.ItemOnScreen(label, it, regex, field)) }
                 null
               }
             }
@@ -138,6 +153,7 @@ abstract class MacroEditorFragment : NotificationCodeFragment(R.string.title_pre
         }
         R.string.macro_test_focused -> {
           val item = old as? Macros.FocusedItem
+          val fields = fieldChoice(item?.field)
           askText(
             getString(R.string.macro_test_focused),
             text = item?.label.orEmpty(),
@@ -145,6 +161,7 @@ abstract class MacroEditorFragment : NotificationCodeFragment(R.string.title_pre
             checkLabels = listOf(getString(R.string.macro_regex)),
             checked = listOf(item?.regex == true),
             inputType = InputType.TYPE_CLASS_TEXT,
+            choice = fields,
           ) { text, _, checked ->
             val label = text.take(Macros.MAX_LABEL)
             val regex = label.isNotEmpty() && checked.firstOrNull() == true
@@ -152,7 +169,8 @@ abstract class MacroEditorFragment : NotificationCodeFragment(R.string.title_pre
               getString(R.string.macro_invalid_regex)
             } else {
               // A test of the focused item looks for a text, a type or both.
-              askKind(item?.kind, anyType = label.isNotEmpty()) { then(Macros.FocusedItem(label, it, regex)) }
+              val field = chosenField(fields).takeIf { label.isNotEmpty() }
+              askKind(item?.kind, anyType = label.isNotEmpty()) { then(Macros.FocusedItem(label, it, regex, field)) }
               null
             }
           }
@@ -518,6 +536,7 @@ class MacroFragment : MacroEditorFragment() {
   }
 
   private fun askTap(step: Macros.Tap?, then: (Macros.Step) -> Unit) {
+    val fields = fieldChoice(step?.field)
     askText(
       getString(R.string.macro_step_tap),
       text = step?.label.orEmpty(),
@@ -528,6 +547,7 @@ class MacroFragment : MacroEditorFragment() {
       checked = listOf(step?.regex == true),
       inputType = InputType.TYPE_CLASS_TEXT,
       secondInputType = SECONDS_INPUT,
+      choice = fields,
     ) { label, timeout, checked ->
       val regex = checked.firstOrNull() == true
       when {
@@ -537,7 +557,7 @@ class MacroFragment : MacroEditorFragment() {
           val millis =
             Macros.parseSeconds(timeout)?.coerceIn(Macros.MIN_TAP_TIMEOUT_MS, Macros.MAX_TAP_TIMEOUT_MS)
               ?: Macros.DEFAULT_TAP_TIMEOUT_MS
-          then(Macros.Tap(label, millis, regex))
+          then(Macros.Tap(label, millis, regex, chosenField(fields)))
           null
         }
       }
