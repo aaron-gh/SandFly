@@ -45,6 +45,7 @@ import com.google.android.accessibility.utils.WebInterfaceUtils;
 import com.google.android.accessibility.utils.input.TextEventInterpreter;
 import com.google.android.accessibility.utils.monitor.TouchMonitor;
 import com.google.android.accessibility.utils.monitor.VoiceActionDelegate;
+import com.google.android.accessibility.utils.output.SpeechHistory;
 import com.google.android.accessibility.utils.traversal.TraversalStrategy;
 import com.google.android.accessibility.utils.traversal.TraversalStrategy.SearchDirection;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
@@ -359,6 +360,9 @@ public class EventFilter {
       @Nullable EventId eventId,
       long actionTime,
       boolean continuousReading) {
+    // The speech history must know whether the node is a password before its focus is spoken,
+    // without waiting for the app's focus event.
+    SpeechHistory.onAccessibilityFocusSet(node.isPassword(), actionTime);
     @Nullable SpokenFirst first = spokenFirst;
     spokenFirst = null;
     if (first != null && first.focusedNode.equals(node)) {
@@ -449,6 +453,9 @@ public class EventFilter {
     // The focus is moving, so the prepared announcements are used now or not at all.
     PreparedFocusSpeech.clear();
     lastHoverEnteredNode = null;
+    // The speech history must know whether the node is a password before the speech starts; the
+    // action, and the app's focus event, come after.
+    SpeechHistory.onAccessibilityFocusSet(node.isPassword(), SystemClock.uptimeMillis());
     boolean spoken = true;
     try {
       compositor.handleEvent(event, node, eventId, eventInterpreted, feedback);
@@ -470,6 +477,8 @@ public class EventFilter {
     @Nullable SpokenFirst first = spokenFirst;
     spokenFirst = null;
     if (first != null && first.focusedNode.equals(focusedNode)) {
+      // The focus stays where it was, which may be a password field.
+      SpeechHistory.onFocusUnknown();
       globalVariables.restoreFocusState(first.saved);
       failedFocusNode = focusedNode;
       failedFocusTime = SystemClock.uptimeMillis();

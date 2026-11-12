@@ -1145,7 +1145,8 @@ public class TalkBackService extends AccessibilityServiceCompat
     ExitAfterTurnOff.schedule(getApplication());
     ShizukuGrants.onServiceDestroyed();
     ScreenElements.detach();
-    SpeechHistory.setPrivacyCheck(null);
+    passwordFocusHandler.removeCallbacks(readPasswordFocus);
+    SpeechHistory.stop();
     if (SandflyAi.getFeatures() != null) {
       SandflyAi.getFeatures().onServiceDestroyed(this);
     }
@@ -1241,6 +1242,7 @@ public class TalkBackService extends AccessibilityServiceCompat
 
   @Override
   public void onAccessibilityEvent(AccessibilityEvent event) {
+    updatePasswordFocus(event);
     // Paused Backtalk drops events, except the end of a touch that started before the pause, so
     // that nothing still thinks a finger is down after resuming. Its feedback is dropped too.
     if (PauseController.isPaused()
@@ -2055,16 +2057,40 @@ public class TalkBackService extends AccessibilityServiceCompat
     return directTouchController;
   }
 
-  /** Whether the item with accessibility focus, or the edit box with input focus, is a password. */
-  private boolean isPasswordFocused() {
-    for (int focus :
-        new int[] {AccessibilityNodeInfo.FOCUS_ACCESSIBILITY, AccessibilityNodeInfo.FOCUS_INPUT}) {
-      AccessibilityNodeInfo node = findFocus(focus);
-      if (node != null && node.isPassword()) {
-        return true;
-      }
+  /**
+   * Keeps the speech history's record of whether a password field has focus, from {@code event}.
+   * After a window change while one may have focus, the focus is read again once the changes
+   * settle, as the field may have gone with its window without a focus event. Until then, speech
+   * is not recorded.
+   */
+  private void updatePasswordFocus(AccessibilityEvent event) {
+    SpeechHistory.onAccessibilityEvent(event);
+    int type = event.getEventType();
+    if ((type == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED
+            || type == AccessibilityEvent.TYPE_WINDOWS_CHANGED)
+        && SpeechHistory.isPasswordFocused()) {
+      passwordFocusHandler.removeCallbacks(readPasswordFocus);
+      passwordFocusHandler.postDelayed(readPasswordFocus, PASSWORD_FOCUS_READ_DELAY_MS);
     }
-    return false;
+  }
+
+  private final Handler passwordFocusHandler = new Handler(Looper.getMainLooper());
+
+  /** How long window changes have to settle before the focus is read again. */
+  private static final long PASSWORD_FOCUS_READ_DELAY_MS = 300;
+
+  private final Runnable readPasswordFocus =
+      () -> {
+        if (!SpeechHistory.isPasswordFocused()) {
+          return;
+        }
+        SpeechHistory.onFocusRead(
+            isPassword(findFocus(AccessibilityNodeInfo.FOCUS_ACCESSIBILITY)),
+            isPassword(findFocus(AccessibilityNodeInfo.FOCUS_INPUT)));
+      };
+
+  private static boolean isPassword(@Nullable AccessibilityNodeInfo node) {
+    return node != null && node.isPassword();
   }
 
   /** Returns the actor state. */
@@ -2320,7 +2346,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     ReportInbox.startFollowing(this);
     ShizukuGrants.onServiceConnected(this);
     ScreenElements.attach(this, () -> pipeline == null ? null : pipeline.getFeedbackReturner());
-    SpeechHistory.setPrivacyCheck(this::isPasswordFocused);
+    SpeechHistory.start();
     if (SandflyAi.getFeatures() != null) {
       SandflyAi.getFeatures().onServiceConnected(this);
     }
