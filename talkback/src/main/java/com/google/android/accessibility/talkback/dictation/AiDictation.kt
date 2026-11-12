@@ -111,6 +111,8 @@ class AiDictation(
     }
   /** Gets the text instead of a field, for [listen], or null. */
   private var onText: ((String?) -> Unit)? = null
+  /** Whether the text for [listen] is corrected when Correct dictation with AI is on. */
+  private var listenCorrects = true
 
   init {
     SandflyDictation.instance = this
@@ -172,10 +174,10 @@ class AiDictation(
    * Starts recording for text to give to [callback] instead of typing it, or stops recording when
    * it is on, as [start] does for a field. Recording also stops after a pause in speech, or when
    * nothing is said; Auto stop after silence applies to Dictate only. [callback] gets the
-   * recognized and, when that is on, corrected text, or null when nothing was recognized or
-   * recording could not start.
+   * recognized and, when that is on and [correct] is true, corrected text, or null when nothing was
+   * recognized or recording could not start.
    */
-  fun listen(callback: (String?) -> Unit): Boolean {
+  fun listen(callback: (String?) -> Unit, correct: Boolean = true): Boolean {
     if (phase != Phase.IDLE) {
       // A dictation into a field goes on; an earlier listen stops. Either way this caller is
       // answered, or it would wait for good.
@@ -193,6 +195,7 @@ class AiDictation(
     }
     field = null
     onText = callback
+    listenCorrects = correct
     if (!startRecording(DictationSettings.effectiveRecognition(service, prefs))) {
       onText = null
       speak(service.getString(R.string.dictation_unavailable))
@@ -241,6 +244,8 @@ class AiDictation(
           onDone = { text -> if (request == generation) recognized(text, cleaned = false) },
           onFailed = { error -> if (request == generation) recognitionFailed(used, error) },
           onSpeech = ::heardSpeech,
+          // Listening ends at a pause; starting again would play the recognizer's start sound.
+          once = onText != null,
         )
       if (!recognizer.start()) return false
       continuous = recognizer
@@ -457,7 +462,13 @@ class AiDictation(
     }
     // A dictated password stays on the phone.
     val corrector =
-      if (cleaned || target?.isPassword == true || !DictationSettings.correctsWithAi(service, prefs)) null
+      if (
+        cleaned ||
+          target?.isPassword == true ||
+          (target == null && !listenCorrects) ||
+          !DictationSettings.correctsWithAi(service, prefs)
+      )
+        null
       else DictationSettings.correctingService(service, prefs)
     if (corrector == null) {
       finish()

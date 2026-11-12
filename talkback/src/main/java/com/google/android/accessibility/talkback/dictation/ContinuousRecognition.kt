@@ -33,6 +33,7 @@ import java.util.Locale
  * Android speech recognition that goes on until [stop]: each time the recognizer ends after a
  * pause, its text is kept and it starts again. [onDone] gets all the text, on the main thread, once
  * [stop] is called and the last part is recognized; [onFailed] gets the error that ended it early.
+ * With [once], recognition ends when the recognizer ends after a pause, and [onDone] gets its text.
  */
 internal class ContinuousRecognition(
   private val context: Context,
@@ -42,6 +43,8 @@ internal class ContinuousRecognition(
   private val onFailed: (Int) -> Unit,
   /** Runs on the main thread whenever the recognizer hears speech. */
   private val onSpeech: () -> Unit = {},
+  /** Whether recognition ends at the first pause instead of starting again. */
+  private val once: Boolean = false,
 ) : RecognitionListener {
   private var recognizer: SpeechRecognizer? = null
   private val parts = mutableListOf<String>()
@@ -67,14 +70,15 @@ internal class ContinuousRecognition(
   }
 
   private fun listen() {
+    val pause = if (once) ONCE_PAUSE_MS else PAUSE_MS
     val intent =
       Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH)
         .putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE, context.packageName)
         .putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM)
         .putExtra(RecognizerIntent.EXTRA_PARTIAL_RESULTS, true)
-        // Asks for long pauses before the recognizer ends; not every recognizer follows it.
-        .putExtra(RecognizerIntent.EXTRA_SPEECH_INPUT_COMPLETE_SILENCE_LENGTH_MILLIS, PAUSE_MS)
-        .putExtra(RecognizerIntent.EXTRA_SPEECH_INPUT_POSSIBLY_COMPLETE_SILENCE_LENGTH_MILLIS, PAUSE_MS)
+        // Asks for the pause before the recognizer ends; not every recognizer follows it.
+        .putExtra(RecognizerIntent.EXTRA_SPEECH_INPUT_COMPLETE_SILENCE_LENGTH_MILLIS, pause)
+        .putExtra(RecognizerIntent.EXTRA_SPEECH_INPUT_POSSIBLY_COMPLETE_SILENCE_LENGTH_MILLIS, pause)
     if (service != null) {
       // On the phone, with punctuation and capital letters where the recognizer can add them.
       intent
@@ -87,7 +91,7 @@ internal class ContinuousRecognition(
         )
       }
     }
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+    if (!once && Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
       // One listening session with results for each part, so that a recognizer that supports it
       // doesn't play its start sound again after each pause. Others end after a pause as before.
       intent
@@ -144,7 +148,7 @@ internal class ContinuousRecognition(
       parts.add(text)
       onSpeech()
     }
-    if (stopping) finish() else listen()
+    if (stopping || once) finish() else listen()
   }
 
   override fun onSegmentResults(segmentResults: Bundle) {
@@ -163,7 +167,7 @@ internal class ContinuousRecognition(
     if (finished) return
     if (partial.isNotBlank()) parts.add(partial.trim())
     partial = ""
-    if (stopping) finish() else listen()
+    if (stopping || once) finish() else listen()
   }
 
   override fun onPartialResults(partialResults: Bundle?) {
@@ -183,7 +187,7 @@ internal class ContinuousRecognition(
       SpeechRecognizer.ERROR_SPEECH_TIMEOUT -> {
         if (partial.isNotBlank()) parts.add(partial.trim())
         partial = ""
-        if (stopping) finish() else listen()
+        if (stopping || once) finish() else listen()
       }
       SpeechRecognizer.ERROR_RECOGNIZER_BUSY,
       SpeechRecognizer.ERROR_CLIENT ->
@@ -222,6 +226,8 @@ internal class ContinuousRecognition(
   private companion object {
     const val TAG = "ContinuousRecognition"
     const val PAUSE_MS = 10_000L
+    /** The pause that ends recognition [once], as for the other ways of recognizing. */
+    const val ONCE_PAUSE_MS = AiDictation.LISTEN_PAUSE_MS
     // Longer than AudioCapture records, so that only stop() ends the session.
     const val SESSION_MS = 60 * 60 * 1000L
     const val STOP_WAIT_MS = 5_000L
