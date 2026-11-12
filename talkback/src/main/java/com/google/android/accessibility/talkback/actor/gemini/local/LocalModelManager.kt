@@ -196,7 +196,7 @@ class LocalModelManager private constructor(context: Context) {
       val result =
         ModelDownloader()
           .download(
-            model.url,
+            ModelServer.url(prefs, model.url),
             store.file(model),
             model.sizeBytes,
             model.sha256,

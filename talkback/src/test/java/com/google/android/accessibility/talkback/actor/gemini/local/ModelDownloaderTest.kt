@@ -39,15 +39,18 @@ class ModelDownloaderTest {
   fun setUp() {
     dir = Files.createTempDirectory("models").toFile()
     server = HttpServer.create(InetSocketAddress("127.0.0.1", 0), 0)
-    server.createContext("/model") { ex ->
-      val range = ex.requestHeaders.getFirst("Range")
-      rangeRequests.add(range)
-      val start =
-        if (range != null && !ignoreRange) range.removePrefix("bytes=").removeSuffix("-").toInt()
-        else 0
-      val body = data.copyOfRange(start, data.size)
-      ex.sendResponseHeaders(if (start > 0) 206 else 200, body.size.toLong())
-      ex.responseBody.use { it.write(body) }
+    // The same file on two servers, such as Hugging Face and hf-mirror.com.
+    for (path in listOf("/model", "/mirror/model")) {
+      server.createContext(path) { ex ->
+        val range = ex.requestHeaders.getFirst("Range")
+        rangeRequests.add(range)
+        val start =
+          if (range != null && !ignoreRange) range.removePrefix("bytes=").removeSuffix("-").toInt()
+          else 0
+        val body = data.copyOfRange(start, data.size)
+        ex.sendResponseHeaders(if (start > 0) 206 else 200, body.size.toLong())
+        ex.responseBody.use { it.write(body) }
+      }
     }
     server.createContext("/missing") { ex ->
       ex.sendResponseHeaders(404, -1)
@@ -99,6 +102,18 @@ class ModelDownloaderTest {
 
     rangeRequests.clear()
     assertEquals(ModelDownloader.Result.Done, run(target))
+    assertEquals("bytes=$partial-", rangeRequests.single())
+    assertTrue(data.contentEquals(target.readBytes()))
+  }
+
+  @Test
+  fun aPartFromOneServerIsResumedFromAnother() {
+    val target = File(dir, "m.litertlm")
+    assertEquals(ModelDownloader.Result.Cancelled, run(target, cancelAfter = 100_000))
+    val partial = ModelFiles.partFile(target).length()
+
+    rangeRequests.clear()
+    assertEquals(ModelDownloader.Result.Done, run(target, path = "/mirror/model"))
     assertEquals("bytes=$partial-", rangeRequests.single())
     assertTrue(data.contentEquals(target.readBytes()))
   }

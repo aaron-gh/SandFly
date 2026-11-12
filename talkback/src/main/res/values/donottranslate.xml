@@ -55,6 +55,18 @@
         <item>30</item>
         <item>until_stopped</item>
     </string-array>
+    <string name="pref_model_download_server_key" translatable="false">pref_model_download_server</string>
+    <!-- Choices of Model download server: names of the servers, not translated. -->
+    <string name="value_model_server_hugging_face" translatable="false">Hugging Face</string>
+    <string name="value_model_server_hf_mirror" translatable="false">hf-mirror.com</string>
+    <string-array name="pref_model_download_server_entries" translatable="false">
+        <item>@string/value_model_server_hugging_face</item>
+        <item>@string/value_model_server_hf_mirror</item>
+    </string-array>
+    <string-array name="pref_model_download_server_values" translatable="false">
+        <item>huggingface</item>
+        <item>hf-mirror</item>
+    </string-array>
     <string-array name="problem_report_type_values" translatable="false">
         <item>Incorrect behavior</item>
         <item>Crash</item>

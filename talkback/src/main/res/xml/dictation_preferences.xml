@@ -31,9 +31,17 @@
       android:key="pref_keep_models_loaded_minutes"
       android:summary="%s"
       android:title="@string/title_pref_keep_models_loaded" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
+      android:defaultValue="huggingface"
+      android:entries="@array/pref_model_download_server_entries"
+      android:entryValues="@array/pref_model_download_server_values"
+      android:key="@string/pref_model_download_server_key"
+      android:order="4"
+      android:summary="%s"
+      android:title="@string/title_pref_model_download_server" />
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
       android:key="pref_dictation_ai"
-      android:order="4"
+      android:order="5"
       android:title="@string/title_pref_category_ai_services">
     <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
         android:defaultValue="@bool/pref_ai_dictation_default"
