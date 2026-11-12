@@ -3123,10 +3123,11 @@ public class FocusProcessorForLogicalNavigation {
     AccessibilityNodeInfoCompat scrollableNode = scrollableNodeInfo.getNode();
 
     // The edge check reads the list's items from the app, which waits while the app is busy, such
-    // as drawing a scroll. An item wholly inside the list needs no scroll to be seen.
+    // as drawing a scroll. An item at least its own size clear of the list's edges needs no scroll
+    // to be seen, and leaves no neighbour partly on screen for a show-on-screen scroll to reveal.
     boolean needToEnsureOnScreen =
         isPositionAtEdge(service, node, scrollableNode, searchDirection)
-            || (!isInside(
+            || (!isClearOfEdges(
                     AccessibilityNodeInfoUtils.getNodeBoundsInScreen(node),
                     AccessibilityNodeInfoUtils.getNodeBoundsInScreen(scrollableNode))
                 && TraversalStrategyUtils.isAutoScrollEdgeListItem(
@@ -3159,14 +3160,30 @@ public class FocusProcessorForLogicalNavigation {
     return scrolled;
   }
 
-  /** Whether {@code node} bounds lie wholly inside {@code list}, clear of all its edges. */
+  /**
+   * Whether {@code node} bounds lie inside {@code list} with room for a whole item of its size
+   * between it and each edge, on each axis that the item doesn't fill.
+   */
   @VisibleForTesting
-  static boolean isInside(Rect node, Rect list) {
+  static boolean isClearOfEdges(Rect node, Rect list) {
     return !node.isEmpty()
-        && node.left >= list.left
-        && node.right <= list.right
-        && node.top > list.top
-        && node.bottom < list.bottom;
+        && isClearOfEdges(node.left, node.right, list.left, list.right)
+        && isClearOfEdges(node.top, node.bottom, list.top, list.bottom);
+  }
+
+  private static boolean isClearOfEdges(int start, int end, int listStart, int listEnd) {
+    int before = start - listStart;
+    int after = listEnd - end;
+    if (before < 0 || after < 0) {
+      return false;
+    }
+    int size = end - start;
+    // An item that fills the list on this axis, such as a row across a list, has no neighbour
+    // beside it.
+    if ((before + after) * 8 < size) {
+      return true;
+    }
+    return before >= size && after >= size;
   }
 
   private static boolean isPositionAtEdge(

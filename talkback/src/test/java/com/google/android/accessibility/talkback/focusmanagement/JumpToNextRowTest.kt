@@ -358,12 +358,39 @@ class JumpToNextRowTest {
   }
 
   @Test
-  fun itemWhollyInsideTheListNeedsNoScroll() {
+  fun itemClearOfTheListEdgesNeedsNoScroll() {
     val list = Rect(0, 0, 1080, 2520)
-    assertTrue(FocusProcessorForLogicalNavigation.isInside(Rect(0, 900, 1080, 1400), list))
-    assertFalse(FocusProcessorForLogicalNavigation.isInside(Rect(0, 2000, 1080, 2520), list))
-    assertFalse(FocusProcessorForLogicalNavigation.isInside(Rect(0, 0, 1080, 400), list))
-    assertFalse(FocusProcessorForLogicalNavigation.isInside(Rect(), list))
+    assertTrue(FocusProcessorForLogicalNavigation.isClearOfEdges(Rect(0, 900, 1080, 1400), list))
+    assertFalse(FocusProcessorForLogicalNavigation.isClearOfEdges(Rect(0, 2000, 1080, 2520), list))
+    assertFalse(FocusProcessorForLogicalNavigation.isClearOfEdges(Rect(0, 0, 1080, 400), list))
+    assertFalse(FocusProcessorForLogicalNavigation.isClearOfEdges(Rect(), list))
+  }
+
+  @Test
+  fun lastWholeRowAboveAPartlyShownRowNeedsTheEdgeCheck() {
+    // #76: Xiaomi Control Panel app list. The next row shows 24 px below the focused row, and
+    // a show-on-screen scroll of the focused row reveals it.
+    val list = Rect(0, 713, 1220, 2656)
+    assertFalse(
+      FocusProcessorForLogicalNavigation.isClearOfEdges(Rect(44, 2374, 1176, 2632), list)
+    )
+    // The row above it has a whole row's room below it.
+    assertTrue(
+      FocusProcessorForLogicalNavigation.isClearOfEdges(Rect(44, 2116, 1176, 2374), list)
+    )
+  }
+
+  @Test
+  fun cardBesideAPartlyShownCardNeedsTheEdgeCheck() {
+    val carousel = Rect(0, 500, 1080, 900)
+    // A card at the start of a horizontal list, the next card partly shown after it.
+    assertFalse(
+      FocusProcessorForLogicalNavigation.isClearOfEdges(Rect(40, 520, 860, 880), carousel)
+    )
+    // A tile with a whole tile's room on each side.
+    assertTrue(
+      FocusProcessorForLogicalNavigation.isClearOfEdges(Rect(400, 520, 680, 880), carousel)
+    )
   }
 
   @Test
