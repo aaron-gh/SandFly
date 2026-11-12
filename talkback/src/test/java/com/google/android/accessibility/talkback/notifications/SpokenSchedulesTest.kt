@@ -21,7 +21,6 @@ import com.google.android.accessibility.utils.SharedPreferencesUtils
 import org.robolectric.RuntimeEnvironment
 import java.time.Instant
 import java.util.TimeZone
-import com.google.android.accessibility.utils.SharedPreferencesUtils
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
