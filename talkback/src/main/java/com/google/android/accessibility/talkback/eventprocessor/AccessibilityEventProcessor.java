@@ -408,11 +408,11 @@ public class AccessibilityEventProcessor implements DisplayStateChangedListener 
    * @return {@code true} if the event should be dropped.
    */
   private boolean shouldDropEvent(AccessibilityEvent event) {
-    if (SheetsGrid.shouldDropFocusEvent(event)) {
-      return true;
-    }
     // Always drop null events.
     if (event == null) {
+      return true;
+    }
+    if (SheetsGrid.shouldDropFocusEvent(event)) {
       return true;
     }
 
