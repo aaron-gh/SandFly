@@ -21,6 +21,8 @@ import com.google.android.accessibility.talkback.compositor.EarlyFocusMatch.SPOK
 import com.google.android.accessibility.talkback.compositor.EarlyFocusMatch.STALE
 import com.google.android.accessibility.talkback.compositor.EarlyFocusMatch.STATE_UPDATED
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
+import org.junit.Assert.assertTrue
 import org.junit.Test
 
 class EarlyFocusRecordsTest {
@@ -94,5 +96,44 @@ class EarlyFocusRecordsTest {
     records.addSpoken("a", actionTime = 1_000L)
     assertEquals(NONE, records.match(null, eventTime = 1_001L, consume = true))
     assertEquals(SPOKEN, records.match("a", eventTime = 1_001L, consume = true))
+  }
+
+  @Test
+  fun aChangeJustAfterASpokenFocusIsItsReaction() {
+    records.addSpoken("a", actionTime = 1_000L)
+    assertTrue(records.hasSpokenFocus())
+    // Before and after the focus event used the entry.
+    assertTrue(records.isReactionToSpokenFocus("a", eventTime = 1_003L))
+    assertEquals(SPOKEN, records.match("a", eventTime = 1_003L, consume = true))
+    assertTrue(records.isReactionToSpokenFocus("a", eventTime = 1_050L))
+    // Another node, a change sent before the action, and an unknown time.
+    assertFalse(records.isReactionToSpokenFocus("b", eventTime = 1_003L))
+    assertFalse(records.isReactionToSpokenFocus("a", eventTime = 999L))
+    assertFalse(records.isReactionToSpokenFocus("a", eventTime = 0L))
+    assertFalse(records.isReactionToSpokenFocus(null, eventTime = 1_003L))
+  }
+
+  @Test
+  fun aChangeLongAfterASpokenFocusIsNotItsReaction() {
+    records.addSpoken("a", actionTime = 1_000L)
+    assertFalse(
+      records.isReactionToSpokenFocus("a", eventTime = 1_001L + EarlyFocusRecords.REACTION_MS)
+    )
+    now = 1_001L + EarlyFocusRecords.REACTION_MS
+    assertFalse(records.hasSpokenFocus())
+    assertFalse(records.isReactionToSpokenFocus("a", eventTime = 1_500L))
+  }
+
+  @Test
+  fun focusNotSpokenEarlyHasNoReaction() {
+    records.addStateUpdated("a", actionTime = 1_000L)
+    assertFalse(records.isReactionToSpokenFocus("a", eventTime = 1_003L))
+    // Focused again without being spoken early, such as by touch.
+    records.addSpoken("b", actionTime = 1_100L)
+    records.forget("b")
+    assertFalse(records.isReactionToSpokenFocus("b", eventTime = 1_103L))
+    records.addSpoken("c", actionTime = 1_200L)
+    records.clear()
+    assertFalse(records.hasSpokenFocus())
   }
 }

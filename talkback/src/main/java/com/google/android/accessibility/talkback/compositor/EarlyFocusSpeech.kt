@@ -44,7 +44,8 @@ enum class EarlyFocusMatch {
 
 /**
  * Remembers the nodes whose accessibility focus was spoken as soon as Backtalk focused them, so
- * that the app's focus events for them, which come later, are not spoken again.
+ * that the app's focus events for them, which come later, are not spoken again, nor the content
+ * descriptions the app gives them in reaction to the focus.
  *
  * Each node is remembered for one focus event, for at most [MAX_WAIT_MS].
  */
@@ -75,6 +76,25 @@ class EarlyFocusSpeech(clock: () -> Long = SystemClock::uptimeMillis) {
   /** Forgets every node, such as when the events waiting to be spoken are thrown away. */
   fun clear() = records.clear()
 
+  /**
+   * Whether [event] is a change of the content description that the app made to a node in reaction
+   * to the focus that was spoken early, such as the One UI launcher adding "Column 2" to a folder
+   * item it is told to focus. Speaking it would read the item a second time.
+   */
+  fun isDescriptionChangeFromFocus(event: AccessibilityEvent): Boolean {
+    if (
+      event.eventType != AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED ||
+        (event.contentChangeTypes and AccessibilityEvent.CONTENT_CHANGE_TYPE_CONTENT_DESCRIPTION) ==
+          0 ||
+        !records.hasSpokenFocus()
+    ) {
+      return false
+    }
+    // Asked for only now, as it is a round trip to the app.
+    val source = AccessibilityEventUtils.sourceCompat(event)
+    return records.isReactionToSpokenFocus(source, event.eventTime)
+  }
+
   /** Whether the state that follows focus has already been updated for [event], or it is stale. */
   fun isHandled(event: AccessibilityEvent): Boolean =
     match(event, consume = false) != EarlyFocusMatch.NONE
@@ -104,15 +124,31 @@ class EarlyFocusSpeech(clock: () -> Long = SystemClock::uptimeMillis) {
 }
 
 /** The rules of [EarlyFocusSpeech], for any kind of [item], so that they can be tested. */
-class EarlyFocusRecords<T>(maxItems: Int, maxAgeMs: Long, clock: () -> Long) {
+class EarlyFocusRecords<T>(
+  maxItems: Int,
+  maxAgeMs: Long,
+  clock: () -> Long,
+  private val reactionMs: Long = REACTION_MS,
+) {
   private class Entry<T>(val item: T, val spoken: Boolean, val actionTime: Long)
 
   private val entries = RecentItems<Entry<T>>(maxItems, maxAgeMs, clock)
 
+  /**
+   * The items whose focus was spoken early in the last [reactionMs], kept after their focus events
+   * have used their [entries], as the app may change them in reaction to the focus after sending
+   * the focus event.
+   */
+  private val spokenFocus = RecentItems<Entry<T>>(maxItems, reactionMs, clock)
+
   /** When the latest focus action handled early started, or 0 if none has. */
   private var lastActionTime = 0L
 
-  fun addSpoken(item: T, actionTime: Long) = add(Entry(item, spoken = true, actionTime))
+  fun addSpoken(item: T, actionTime: Long) {
+    val entry = Entry(item, spoken = true, actionTime)
+    add(entry)
+    spokenFocus.add(entry)
+  }
 
   fun addStateUpdated(item: T, actionTime: Long) = add(Entry(item, spoken = false, actionTime))
 
@@ -126,11 +162,30 @@ class EarlyFocusRecords<T>(maxItems: Int, maxAgeMs: Long, clock: () -> Long) {
     lastActionTime = maxOf(lastActionTime, entry.actionTime)
   }
 
-  fun forget(item: T) = entries.removeAll { it.item == item }
+  fun forget(item: T) {
+    entries.removeAll { it.item == item }
+    spokenFocus.removeAll { it.item == item }
+  }
 
-  fun clear() = entries.clear()
+  fun clear() {
+    entries.clear()
+    spokenFocus.clear()
+  }
 
   fun isEmpty(): Boolean = entries.isEmpty()
+
+  fun hasSpokenFocus(): Boolean = !spokenFocus.isEmpty()
+
+  /**
+   * Whether a change of [item] (null when not looked up) sent at [eventTime] came within
+   * [reactionMs] after the latest focus action that focused it and spoke it early. An [eventTime]
+   * of 0 is unknown, and not matched.
+   */
+  fun isReactionToSpokenFocus(item: T?, eventTime: Long): Boolean {
+    if (item == null || eventTime <= 0) return false
+    val entry = spokenFocus.find { it.item == item } ?: return false
+    return eventTime >= entry.actionTime && eventTime - entry.actionTime <= reactionMs
+  }
 
   /**
    * Returns what was already done for the focus event of [item] (null when not looked up) sent at
@@ -155,6 +210,14 @@ class EarlyFocusRecords<T>(maxItems: Int, maxAgeMs: Long, clock: () -> Long) {
     } else {
       EarlyFocusMatch.NONE
     }
+  }
+
+  companion object {
+    /**
+     * How long after a focus action that spoke its node early a change the app makes to the node
+     * counts as its reaction to the focus.
+     */
+    const val REACTION_MS = 1_000L
   }
 }
 

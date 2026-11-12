@@ -212,6 +212,12 @@ public class EventFilter {
       LogUtils.d(TAG, "Drop focus event older than the focus spoken early: %s", event);
       return;
     }
+    if (earlyFocusSpeech.isDescriptionChangeFromFocus(event)) {
+      // The app changed the description of the node because it was focused, such as the One UI
+      // launcher adding the column to a folder item. The focus was spoken already.
+      LogUtils.d(TAG, "Drop description change made for the focus spoken early: %s", event);
+      return;
+    }
 
     if (event.getEventType() == AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED) {
       // The focus moved without being spoken early, so the prepared announcements are of no use.
