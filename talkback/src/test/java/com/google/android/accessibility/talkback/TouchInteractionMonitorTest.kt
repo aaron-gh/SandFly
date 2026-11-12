@@ -366,6 +366,25 @@ class TouchInteractionMonitorTest {
     assertEquals(listOf(mainThread), provisionThreads)
   }
 
+  @Test
+  fun touchExplorationTurnedOffAfterTheLastFingerLiftsChangesBeforeTheInteractionEnds() {
+    // A double tap opens the braille keyboard; Android ends the interaction about 300 ms after
+    // the second tap lifts.
+    stateChangeAt(STATE_TOUCH_INTERACTING, 0)
+    touchAt(ACTION_DOWN, 160f, 200f, 0)
+    touchAt(ACTION_UP, 160f, 200f, 50)
+    touchAt(ACTION_DOWN, 160f, 200f, 150)
+    touchAt(ACTION_UP, 160f, 200f, 200)
+    stateChangeAt(STATE_CLEAR, 500)
+    runUntil(240)
+
+    monitor.requestA11yTouchExploreState(false)
+    assertEquals(listOf(false), provisioned)
+
+    runUntil(510)
+    assertEquals(listOf(false), provisioned)
+  }
+
   /** A window of [type] at [bounds], as Android describes it. */
   private fun window(type: Int, bounds: Rect): AccessibilityWindowInfo {
     val window = AccessibilityWindowInfo.obtain()

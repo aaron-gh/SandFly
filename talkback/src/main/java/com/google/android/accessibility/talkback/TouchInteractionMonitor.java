@@ -652,7 +652,10 @@ public class TouchInteractionMonitor
    * @param enabled the requested state of Touch Explore status.
    */
   public void requestA11yTouchExploreState(boolean enabled) {
-    if (enabled || state == STATE_CLEAR) {
+    // After the last finger lifts, Android keeps the interaction open for about 300 ms in case
+    // another tap follows. Waiting for it to end left touch exploration on over the braille
+    // keyboard that a double tap had just opened, so its first touches were gestures.
+    if (enabled || state == STATE_CLEAR || (state == STATE_TOUCH_INTERACTING && !fingerDown)) {
       waitToChange = false;
       idlePerformer.provisionTouchExploreFeature(enabled);
     } else {
