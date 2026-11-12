@@ -66,6 +66,8 @@ class SpokenSchedules(
       ?.apply { setReferenceCounted(false) }
   private var started = false
   private var lastClockAt = 0L
+  /** When the clock alarm is set for, to log how late it went off. */
+  private var clockAlarmAt = 0L
 
   private val settingsListener =
     SharedPreferences.OnSharedPreferenceChangeListener { _, key ->
@@ -134,7 +136,10 @@ class SpokenSchedules(
     alarms.cancel(summaryAlarm)
     val interval = NotificationSettings.int(prefs, KEY_CLOCK_INTERVAL, 0)
     val now = System.currentTimeMillis()
-    if (interval > 0) set(alarms, nextClockTime(now, interval), clockAlarm)
+    if (interval > 0) {
+      clockAlarmAt = nextClockTime(now, interval)
+      set(alarms, clockAlarmAt, clockAlarm)
+    }
     if (prefs.getBoolean(KEY_SUMMARY_DAILY, false)) {
       val minutes = NotificationSettings.int(prefs, KEY_SUMMARY_TIME, 8 * 60)
       set(alarms, nextDailyTime(now, minutes), summaryAlarm)
@@ -149,18 +154,18 @@ class SpokenSchedules(
     if (canScheduleExact(alarms)) {
       try {
         alarms.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, at, operation)
+        LogUtils.d(TAG, "Exact alarm at %tT", at)
         return
       } catch (e: SecurityException) {
         // Alarms and reminders was turned off just now.
       }
     }
     alarms.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, at, operation)
+    LogUtils.d(TAG, "Inexact alarm at %tT, Alarms and reminders is off", at)
   }
 
-  private fun canScheduleExact(alarms: AlarmManager): Boolean =
-    Build.VERSION.SDK_INT < Build.VERSION_CODES.S || alarms.canScheduleExactAlarms()
-
   private fun onClock() {
+    LogUtils.d(TAG, "Clock alarm %d ms after its time", System.currentTimeMillis() - clockAlarmAt)
     schedule()
     val elapsed = SystemClock.elapsedRealtime()
     if (lastClockAt != 0L && elapsed - lastClockAt < MIN_CLOCK_GAP_MS) return
@@ -228,13 +233,36 @@ class SpokenSchedules(
       return calendar.timeInMillis
     }
 
+    private fun canScheduleExact(alarms: AlarmManager): Boolean =
+      Build.VERSION.SDK_INT < Build.VERSION_CODES.S || alarms.canScheduleExactAlarms()
+
+    /**
+     * Whether the time is said at intervals but Alarms and reminders is off, so the alarms are
+     * inexact and the time can be said minutes late.
+     */
+    fun needsExactAlarms(context: Context): Boolean {
+      val alarms = context.getSystemService(AlarmManager::class.java) ?: return false
+      val prefs = SharedPreferencesUtils.getSharedPreferences(context)
+      return NotificationSettings.int(prefs, KEY_CLOCK_INTERVAL, 0) > 0 && !canScheduleExact(alarms)
+    }
+
+    /**
+     * The battery level for {battery}, such as "76 percent", or empty when it is unknown. The word,
+     * not the % sign, which some text-to-speech engines don't say.
+     */
+    fun batteryText(context: Context, level: Int, scale: Int): String {
+      if (level < 0 || scale <= 0) return ""
+      val percent = level * 100 / scale
+      return context.resources.getQuantityString(R.plurals.notification_clock_battery, percent, percent)
+    }
+
     /** The time as [format] says, with {time}, {date} and {battery} filled in. */
     fun clockText(context: Context, format: String): String {
       val now = Date()
       val battery = context.registerReceiver(null, IntentFilter(Intent.ACTION_BATTERY_CHANGED))
       val level = battery?.getIntExtra(BatteryManager.EXTRA_LEVEL, -1) ?: -1
       val scale = battery?.getIntExtra(BatteryManager.EXTRA_SCALE, 100) ?: 100
-      val percent = if (level >= 0 && scale > 0) context.getString(R.string.notification_percent, level * 100 / scale) else ""
+      val percent = batteryText(context, level, scale)
       val template = format.ifBlank { context.getString(R.string.notification_clock_format_default) }
       return NotificationText.tidySeparators(
         template

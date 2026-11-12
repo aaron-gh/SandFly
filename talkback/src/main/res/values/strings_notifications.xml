@@ -255,6 +255,8 @@
     <string name="notification_category_clock">Time announcements</string>
     <!-- Setting: how often the time is said. -->
     <string name="notification_clock_interval_title">Say the time every</string>
+    <!-- Button shown while the time is said at intervals without the Alarms and reminders permission: opens the system setting. -->
+    <string name="notification_exact_alarms_title">Turn on Alarms and reminders</string>
     <!-- Setting: the text said for the time. -->
     <string name="notification_clock_format_title">Time format</string>
     <!-- Message of the time format dialog. Leave the placeholders in braces untranslated. -->
@@ -679,6 +681,11 @@
     <plurals name="notification_digits">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> digit</item>
         <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> digits</item>
+    </plurals>
+    <!-- The battery level said for {battery} in the time announcement, such as 76 percent. -->
+    <plurals name="notification_clock_battery">
+        <item quantity="one"><xliff:g id="percent" example="1">%d</xliff:g> percent</item>
+        <item quantity="other"><xliff:g id="percent" example="76">%d</xliff:g> percent</item>
     </plurals>
     <!-- How many notifications the summary reads, after the greeting. -->
     <plurals name="notification_summary_count">
