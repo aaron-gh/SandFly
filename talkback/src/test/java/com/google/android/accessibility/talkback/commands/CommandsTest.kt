@@ -76,6 +76,7 @@ class CommandsTest {
         R.string.shortcut_value_toggle_equalizer,
         R.string.shortcut_value_settings_profiles,
         R.string.shortcut_value_next_settings_profile,
+        R.string.shortcut_value_toggle_time_announcements,
       )) {
       assertTrue(context.getString(res) in values)
     }

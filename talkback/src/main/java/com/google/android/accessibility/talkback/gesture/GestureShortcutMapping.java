@@ -1024,6 +1024,9 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
     TOGGLE_NOTIFICATION_SPEECH(
         R.string.shortcut_value_toggle_notification_speech,
         R.string.shortcut_toggle_notification_speech),
+    TOGGLE_TIME_ANNOUNCEMENTS(
+        R.string.shortcut_value_toggle_time_announcements,
+        R.string.shortcut_toggle_time_announcements),
     READ_LAST_NOTIFICATION(
         R.string.shortcut_value_read_last_notification, R.string.shortcut_read_last_notification),
     STOP_NOTIFICATION(

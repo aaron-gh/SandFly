@@ -328,6 +328,8 @@ TalkBack reads each new notification with a fixed format and has no settings for
 
 The **Notification speech** quick settings tile turns reading on or off. The gesture actions **Read notifications**, **Notification speech on or off**, **Read the last notification again** and **Stop reading the notification** can be assigned in gesture settings. Several of these settings need notification access, which **Turn on notification access** on those screens opens.
 
+The **Time announcements on or off** command sets **Say the time every**, in **Summary and time**, to **Off**, or back to the interval it had before, or to 1 hour when no interval was set. It says "Time announcements on" or "Time announcements off".
+
 An app's own speech, such as a screen change, doesn't cut off a notification being read. A gesture, keyboard shortcut or key that you use after a notification starts does: what it says is spoken at once, and the notification stops, also in a voice profile's own speech engine. With **Stop speech when touching the screen** off, a swipe made 0.5 seconds into a 12-second notification was spoken after 0.9 seconds, instead of after the whole notification.
 
 ### SandFly's notification list
