@@ -17,6 +17,7 @@
 package com.google.android.accessibility.braille.brailledisplay.controller.utils;
 
 import static com.google.android.accessibility.braille.brailledisplay.SupportedCommand.getAllCommands;
+import static com.google.android.accessibility.braille.brailledisplay.SupportedCommand.getAvailableSupportedCommands;
 import static com.google.android.accessibility.braille.common.translate.BrailleTranslateUtils.changeToSentence;
 import static com.google.android.accessibility.braille.common.translate.BrailleTranslateUtils.getDotsDescription;
 
@@ -150,10 +151,13 @@ public class BrailleKeyBindingUtils {
         }
       };
 
-  /** Converts {@link BrailleInputEvent} to {@link SupportedCommand} by press key. */
+  /**
+   * Converts {@link BrailleInputEvent} to {@link SupportedCommand} by press key. Commands that are
+   * turned off, such as captions, are left out, so that their keys are unbound chords.
+   */
   @Nullable
   public static SupportedCommand convertToCommand(Context context, boolean hasSpace, int pressDot) {
-    return getAllCommands(context).stream()
+    return getAvailableSupportedCommands(context).stream()
         .filter(c -> c.hasSpace() == hasSpace && c.getPressDot().toInt() == pressDot)
         .findFirst()
         .orElse(null);
