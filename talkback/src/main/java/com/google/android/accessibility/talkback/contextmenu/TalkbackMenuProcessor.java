@@ -33,7 +33,7 @@ import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.actor.DimScreenActor;
 import com.google.android.accessibility.talkback.actor.gemini.GeminiConfiguration;
-import com.google.android.accessibility.talkback.clipboard.ClipboardHistoryFragment;
+import com.google.android.accessibility.talkback.clipboard.ClipboardHistoryOverlay;
 import com.google.android.accessibility.talkback.commands.CommandMenus;
 import com.google.android.accessibility.talkback.commands.Commands;
 import com.google.android.accessibility.talkback.commands.MenuCommands;
@@ -461,9 +461,11 @@ public class TalkbackMenuProcessor {
       @Nullable ContextMenuItem clipboardHistory = menu.findItem(R.id.clipboard_history);
       if (clipboardHistory != null) {
         // Found before the menu opens: the open menu has both focuses.
-        @Nullable AccessibilityNodeInfo editBox = ClipboardHistoryFragment.editBoxWithFocus(service);
+        @Nullable AccessibilityNodeInfo editBox = ClipboardHistoryOverlay.editBoxWithFocus(service);
         clipboardHistory.setOnMenuItemClickListener(
-            clicked -> ClipboardHistoryFragment.open(service, editBox));
+            clicked -> ClipboardHistoryOverlay.open(service, editBox));
+        // Opens once the menu is closed and focus is back on the screen under it.
+        clipboardHistory.setDeferredType(DeferredType.WINDOWS_STABLE);
       }
     }
 

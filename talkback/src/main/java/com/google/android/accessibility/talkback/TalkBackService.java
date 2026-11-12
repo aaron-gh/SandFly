@@ -158,6 +158,7 @@ import com.google.android.accessibility.talkback.braille.TalkBackForBrailleDispl
 import com.google.android.accessibility.talkback.braille.TalkBackForBrailleImeImpl;
 import com.google.android.accessibility.talkback.braille.TalkBackForBrailleImeImpl.TalkBackPrivateMethodProvider;
 import com.google.android.accessibility.talkback.commands.RemovedCommands;
+import com.google.android.accessibility.talkback.clipboard.ClipboardHistoryOverlay;
 import com.google.android.accessibility.talkback.compositor.ClickFeedback;
 import com.google.android.accessibility.talkback.compositor.Compositor;
 import com.google.android.accessibility.talkback.compositor.CompositorUtils;
@@ -1146,6 +1147,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     ShizukuGrants.onServiceDestroyed();
     ScreenElements.detach();
     SpeechHistory.setPrivacyCheck(null);
+    ClipboardHistoryOverlay.close();
     if (SandflyAi.getFeatures() != null) {
       SandflyAi.getFeatures().onServiceDestroyed(this);
     }
@@ -1194,6 +1196,8 @@ public class TalkBackService extends AccessibilityServiceCompat
     if (keyComboManager != null) {
       keyComboManager.onConfigurationChanged(newConfig);
     }
+
+    ClipboardHistoryOverlay.onConfigurationChanged(newConfig);
 
     if (pipeline != null) {
       updateSpeechOverlayOnConfigChange(newConfig);
@@ -1647,6 +1651,12 @@ public class TalkBackService extends AccessibilityServiceCompat
     }
 
     if (brailleDisplay.onKeyEvent(keyEvent)) {
+      return true;
+    }
+
+    // Back and Escape close the clipboard history, which doesn't take input focus when it is
+    // opened for an edit box: the keys would otherwise go to the screen under it.
+    if (ClipboardHistoryOverlay.onKeyEvent(keyEvent)) {
       return true;
     }
 
@@ -3057,6 +3067,7 @@ public class TalkBackService extends AccessibilityServiceCompat
                 if (menuManager != null) {
                   menuManager.dismissAll();
                 }
+                ClipboardHistoryOverlay.close();
                 interruptFullScreenReadActor();
                 clearQueues();
               }
@@ -3714,6 +3725,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     }
 
     setServiceState(ServiceStateListener.SERVICE_STATE_SHUTTING_DOWN);
+    ClipboardHistoryOverlay.close();
     if (liftCancelStrip != null) {
       liftCancelStrip.setShown(false);
     }

@@ -43,6 +43,7 @@ import com.google.android.accessibility.talkback.Pipeline.FeedbackReturner;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.audio.AudioDeviceRouter;
+import com.google.android.accessibility.talkback.clipboard.ClipboardHistoryOverlay;
 import com.google.android.accessibility.talkback.contextmenu.ListMenuManager;
 import com.google.android.accessibility.talkback.controller.TelevisionNavigationController;
 import com.google.android.accessibility.talkback.notificationlist.NotificationListService;
@@ -377,6 +378,7 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
   @SuppressWarnings("deprecation")
   private void handleScreenOff(EventId eventId) {
     menuManager.dismissAll();
+    ClipboardHistoryOverlay.close();
 
     // Iterate over a copy because dialog dismiss handlers might try to unregister dialogs.
     List<DialogInterface> openDialogsCopy = new ArrayList<>(openDialogs);

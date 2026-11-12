@@ -6,6 +6,7 @@ import android.accessibilityservice.AccessibilityService;
 import android.view.accessibility.AccessibilityNodeInfo.AccessibilityAction;
 import com.google.android.accessibility.talkback.ActorStateWritable;
 import com.google.android.accessibility.talkback.TalkBackService;
+import com.google.android.accessibility.talkback.clipboard.ClipboardHistoryOverlay;
 import com.google.android.accessibility.talkback.notificationlist.NotificationListActivity;
 import com.google.android.accessibility.talkback.overview.OverviewActivity;
 import com.google.android.accessibility.talkback.overview.PreviousApp;
@@ -83,6 +84,9 @@ public final class SystemActionPerformer {
   public boolean performAction(int id) {
     if (actorState != null) {
       actorState.setLastSystemAction(id);
+    }
+    if (ClipboardHistoryOverlay.onGlobalAction(id)) {
+      return true;
     }
     if (id == AccessibilityService.GLOBAL_ACTION_BACK && service instanceof TalkBackService) {
       SplitScreen splitScreen = ((TalkBackService) service).getSplitScreen();

@@ -101,6 +101,7 @@ import androidx.annotation.VisibleForTesting;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import androidx.core.view.accessibility.AccessibilityWindowInfoCompat;
 import com.google.android.accessibility.talkback.PrimesController.TimerAction;
+import com.google.android.accessibility.talkback.clipboard.ClipboardHistoryOverlay;
 import com.google.android.accessibility.talkback.contextmenu.ListMenuManager;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForTapAndTouchExploration;
@@ -1692,7 +1693,9 @@ public class TouchInteractionMonitor
   private boolean isOnKeyboard(float x, float y) {
     Region region = new Region();
     for (AccessibilityWindowInfo window : service.getWindowsOnDisplay(displayId)) {
-      if (window.getType() == AccessibilityWindowInfo.TYPE_ACCESSIBILITY_OVERLAY) {
+      // The clipboard history covers the keyboard.
+      if (window.getType() == AccessibilityWindowInfo.TYPE_ACCESSIBILITY_OVERLAY
+          && !ClipboardHistoryOverlay.isOwnWindow(service, window)) {
         continue;
       }
       window.getRegionInScreen(region);

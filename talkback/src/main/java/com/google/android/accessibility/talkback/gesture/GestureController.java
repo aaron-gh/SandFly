@@ -136,7 +136,7 @@ import com.google.android.accessibility.talkback.scripting.Scripts;
 import com.google.android.accessibility.talkback.calls.AnswerCall;
 import com.google.android.accessibility.talkback.dictation.AiDictation;
 import com.google.android.accessibility.talkback.directtouch.DirectTouchController;
-import com.google.android.accessibility.talkback.clipboard.ClipboardHistoryFragment;
+import com.google.android.accessibility.talkback.clipboard.ClipboardHistoryOverlay;
 import com.google.android.accessibility.talkback.speechhistory.SpeechHistoryFragment;
 import com.google.android.accessibility.talkback.granularediting.GranularEditing;
 import com.google.android.accessibility.talkback.applauncher.BrailleAppLauncher;
@@ -832,7 +832,7 @@ public class GestureController {
           accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ true);
       result = pipeline.returnFeedback(eventId, Feedback.edit(node, APPEND_COPY));
     } else if (action.equals(service.getString(R.string.shortcut_value_clipboard_history))) {
-      result = ClipboardHistoryFragment.open(service);
+      result = ClipboardHistoryOverlay.open(service);
     } else if (action.equals(service.getString(R.string.shortcut_value_cut))) {
       AccessibilityNodeInfoCompat node = getEditTextFocus();
       if (node == null) {
