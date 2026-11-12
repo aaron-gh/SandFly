@@ -4309,10 +4309,11 @@ public class FocusProcessorForLogicalNavigation {
   /**
    * Records how far one page scroll of {@code list} moved it, {@code px} from its scroll events,
    * when the measurement can be trusted: the list was still when the scroll started ({@code
-   * quietAtStart}), no other scroll started before its events ended ({@code otherScrollSince}), and
-   * the page isn't taller than the list, and the list can still scroll both ways. The largest such
-   * page of the list is kept, as a page measured too short lets scrolling ahead move the focused
-   * item off screen.
+   * quietAtStart}), no other scroll started before its events ended ({@code otherScrollSince}), the
+   * page is between half the list's height and its height, and the list can still scroll both ways.
+   * The largest such page of the list is kept, as a page measured too short lets scrolling ahead
+   * move the focused item off screen. A list whose page moved the focused item off screen is never
+   * learned again (see {@link #distrustPage}).
    */
   static void learnPage(
       AccessibilityNodeInfoCompat list, int px, boolean quietAtStart, boolean otherScrollSince) {
@@ -4329,7 +4330,7 @@ public class FocusProcessorForLogicalNavigation {
       return;
     }
     Integer known = pages.get(list);
-    if (known != null && known >= px) {
+    if (known != null && (known == PAGE_NOT_MEASURABLE || known >= px)) {
       return;
     }
     // A page that reached the list's start or end can be shorter than a full one.
@@ -4349,17 +4350,39 @@ public class FocusProcessorForLogicalNavigation {
     LogUtils.d(TAG, "Learned a page of %d px for the list %d px tall.", px, bounds.height());
   }
 
-  /** Returns whether a measured page of {@code px} for a list {@code listHeight} tall is usable. */
+  /**
+   * Returns whether a measured page of {@code px} for a list {@code listHeight} tall is usable. A
+   * page under half the list's height is taken to be measured in other units than pixels: the scroll
+   * deltas of a Compose lazy list in FastSM added up to 1 or 2 for a page of a 2030 px list.
+   */
   @VisibleForTesting
   static boolean isReliablePage(
       int px, int listHeight, boolean quietAtStart, boolean otherScrollSince) {
-    return px > 0 && px <= listHeight && quietAtStart && !otherScrollSince;
+    return px > 0
+        && px <= listHeight
+        && px * 2 >= listHeight
+        && quietAtStart
+        && !otherScrollSince;
   }
+
+  /** Marks a list in {@link #pages} whose page the scroll deltas don't measure. */
+  private static final int PAGE_NOT_MEASURABLE = -1;
 
   /** Returns how far a page scroll moves {@code list}, or 0 if that isn't known. */
   static int learnedPage(AccessibilityNodeInfoCompat list) {
     Integer page = pages.get(list);
-    return page == null ? 0 : page;
+    return page == null || page < 0 ? 0 : page;
+  }
+
+  /**
+   * Stops learning pages for {@code list}, after a page that scrolling ahead expected to leave the
+   * focused item on screen moved it off: the list's scroll deltas don't measure its page.
+   */
+  static void distrustPage(AccessibilityNodeInfoCompat list) {
+    Integer known = pages.put(list, PAGE_NOT_MEASURABLE);
+    if (known == null || known != PAGE_NOT_MEASURABLE) {
+      LogUtils.d(TAG, "Not learning pages of this list again: a page moved the focused item off.");
+    }
   }
 
   /** Forgets the page learned for {@code list}. */

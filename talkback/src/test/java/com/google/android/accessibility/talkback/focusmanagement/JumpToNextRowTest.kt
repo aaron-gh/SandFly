@@ -234,6 +234,22 @@ class JumpToNextRowTest {
   }
 
   @Test
+  fun scrolledAwayItemLeftTheList() {
+    // FastSM's Compose list 2030 px tall: its scroll deltas added up to 2 for a page that moved the
+    // item at 2198-2486 off the top, so the next item starts at the list's top.
+    val list = Rect(0, 456, 1080, 2486)
+    val shift = TraversalTreeCache.shiftOffList(2, Rect(0, 2198, 1080, 2486), list, true)
+    assertEquals(2030, shift)
+    assertEquals(456, TraversalTreeCache.placeAfterScroll(2198, 2486, shift, true))
+    // Back: the item at the top went below the list's bottom.
+    assertEquals(-2028, TraversalTreeCache.shiftOffList(-1, Rect(0, 458, 1080, 697), list, false))
+    // Deltas in pixels already move the item off.
+    val rows = Rect(0, 364, 1220, 2476)
+    assertEquals(2120, TraversalTreeCache.shiftOffList(2120, Rect(0, 2280, 1220, 2476), rows, true))
+    assertEquals(-2120, TraversalTreeCache.shiftOffList(-2120, Rect(0, 364, 1220, 560), rows, false))
+  }
+
+  @Test
   fun clippedTrackerTouchesTheListsEdge() {
     val list = Rect(0, 0, 1080, 2520)
     assertTrue(FocusProcessorForLogicalNavigation.touchesEdge(Rect(0, 0, 1080, 2000), list))
@@ -295,6 +311,15 @@ class JumpToNextRowTest {
     assertFalse(FocusProcessorForLogicalNavigation.isReliablePage(2200, 2520, false, false))
     assertFalse(FocusProcessorForLogicalNavigation.isReliablePage(2200, 2520, true, true))
     assertFalse(FocusProcessorForLogicalNavigation.isReliablePage(0, 2520, true, false))
+  }
+
+  @Test
+  fun pageShorterThanHalfTheListIsNotLearned() {
+    // FastSM's Compose list: deltas of 1 and 2 for pages of a 2030 px list.
+    assertFalse(FocusProcessorForLogicalNavigation.isReliablePage(1, 2030, true, false))
+    assertFalse(FocusProcessorForLogicalNavigation.isReliablePage(2, 2030, true, false))
+    assertFalse(FocusProcessorForLogicalNavigation.isReliablePage(1014, 2030, true, false))
+    assertTrue(FocusProcessorForLogicalNavigation.isReliablePage(1015, 2030, true, false))
   }
 
   @Test

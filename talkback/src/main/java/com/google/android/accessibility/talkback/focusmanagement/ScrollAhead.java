@@ -81,6 +81,11 @@ public final class ScrollAhead {
   /** Where the focused item was before the last page. */
   private @Nullable Rect pageItemBounds;
 
+  /** The list that the last page scrolled, and where it was on screen. */
+  private @Nullable AccessibilityNodeInfoCompat pageList;
+
+  private final Rect pageListBounds = new Rect();
+
   /** Whether the list was still when the last page started, so that its distance can be learned. */
   private boolean quietAtPage;
 
@@ -151,6 +156,7 @@ public final class ScrollAhead {
     focused = node;
     pages = 0;
     pageItemBounds = null;
+    pageList = null;
     waitStart = SystemClock.uptimeMillis();
     // At once, so that the page has scrolled before the next swipe.
     handler.post(this::step);
@@ -168,11 +174,15 @@ public final class ScrollAhead {
 
   private void noteScrolledAway(AccessibilityNodeInfoCompat node) {
     Rect bounds = pageItemBounds;
-    if (bounds == null) {
+    AccessibilityNodeInfoCompat list = pageList;
+    if (bounds == null || list == null) {
       return;
     }
     LogUtils.d(TAG, "The page moved the focused item at %s off screen.", bounds);
-    TraversalTreeCache.rememberScrolledAway(node.getWindowId(), bounds, deltaSumAtScroll, forward);
+    // The page was planned to leave a part of the item on screen, so it was longer than learned.
+    FocusProcessorForLogicalNavigation.distrustPage(list);
+    TraversalTreeCache.rememberScrolledAway(
+        node.getWindowId(), bounds, pageListBounds, deltaSumAtScroll, forward);
   }
 
   private void cancel(String reason) {
@@ -260,6 +270,8 @@ public final class ScrollAhead {
     actionCountAtPage = FocusProcessorForLogicalNavigation.scrollActionCount();
     scrolledList = plan.list;
     pageItemBounds = plan.itemBounds;
+    pageList = plan.list;
+    plan.list.getBoundsInScreen(pageListBounds);
     lastPageUptime = SystemClock.uptimeMillis();
     pages++;
     LogUtils.d(
