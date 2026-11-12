@@ -120,13 +120,19 @@ abstract class MacroEditorFragment : NotificationCodeFragment(R.string.title_pre
             getString(R.string.macro_test_item),
             text = item?.label.orEmpty(),
             hint = getString(R.string.macro_tap_label),
+            checkLabels = listOf(getString(R.string.macro_regex)),
+            checked = listOf(item?.regex == true),
             inputType = InputType.TYPE_CLASS_TEXT,
-          ) { label, _, _ ->
-            if (label.isEmpty()) {
-              ""
-            } else {
-              askKind(item?.kind, anyType = true) { then(Macros.ItemOnScreen(label.take(Macros.MAX_LABEL), it)) }
-              null
+          ) { text, _, checked ->
+            val label = text.take(Macros.MAX_LABEL)
+            val regex = checked.firstOrNull() == true
+            when {
+              label.isEmpty() -> ""
+              regex && Macros.compilePattern(label) == null -> getString(R.string.macro_invalid_regex)
+              else -> {
+                askKind(item?.kind, anyType = true) { then(Macros.ItemOnScreen(label, it, regex)) }
+                null
+              }
             }
           }
         }
@@ -136,13 +142,19 @@ abstract class MacroEditorFragment : NotificationCodeFragment(R.string.title_pre
             getString(R.string.macro_test_focused),
             text = item?.label.orEmpty(),
             hint = getString(R.string.macro_test_label_optional),
+            checkLabels = listOf(getString(R.string.macro_regex)),
+            checked = listOf(item?.regex == true),
             inputType = InputType.TYPE_CLASS_TEXT,
-          ) { label, _, _ ->
-            // A test of the focused item looks for a text, a type or both.
-            askKind(item?.kind, anyType = label.isNotEmpty()) {
-              then(Macros.FocusedItem(label.take(Macros.MAX_LABEL), it))
+          ) { text, _, checked ->
+            val label = text.take(Macros.MAX_LABEL)
+            val regex = label.isNotEmpty() && checked.firstOrNull() == true
+            if (regex && Macros.compilePattern(label) == null) {
+              getString(R.string.macro_invalid_regex)
+            } else {
+              // A test of the focused item looks for a text, a type or both.
+              askKind(item?.kind, anyType = label.isNotEmpty()) { then(Macros.FocusedItem(label, it, regex)) }
+              null
             }
-            null
           }
         }
         R.string.macro_test_app ->
@@ -512,17 +524,22 @@ class MacroFragment : MacroEditorFragment() {
       hint = getString(R.string.macro_tap_label),
       secondHint = getString(R.string.macro_tap_timeout),
       secondText = Macros.secondsText(step?.timeoutMillis ?: Macros.DEFAULT_TAP_TIMEOUT_MS),
+      checkLabels = listOf(getString(R.string.macro_regex)),
+      checked = listOf(step?.regex == true),
       inputType = InputType.TYPE_CLASS_TEXT,
       secondInputType = SECONDS_INPUT,
-    ) { label, timeout, _ ->
-      if (label.isEmpty()) {
-        ""
-      } else {
-        val millis =
-          Macros.parseSeconds(timeout)?.coerceIn(Macros.MIN_TAP_TIMEOUT_MS, Macros.MAX_TAP_TIMEOUT_MS)
-            ?: Macros.DEFAULT_TAP_TIMEOUT_MS
-        then(Macros.Tap(label, millis))
-        null
+    ) { label, timeout, checked ->
+      val regex = checked.firstOrNull() == true
+      when {
+        label.isEmpty() -> ""
+        regex && Macros.compilePattern(label) == null -> getString(R.string.macro_invalid_regex)
+        else -> {
+          val millis =
+            Macros.parseSeconds(timeout)?.coerceIn(Macros.MIN_TAP_TIMEOUT_MS, Macros.MAX_TAP_TIMEOUT_MS)
+              ?: Macros.DEFAULT_TAP_TIMEOUT_MS
+          then(Macros.Tap(label, millis, regex))
+          null
+        }
       }
     }
   }
