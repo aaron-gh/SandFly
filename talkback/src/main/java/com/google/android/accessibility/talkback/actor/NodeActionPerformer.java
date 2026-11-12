@@ -5,6 +5,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.talkback.Feedback.NodeAction;
 import com.google.android.accessibility.talkback.compositor.ClickFeedback;
+import com.google.android.accessibility.talkback.compositor.EarlyFocusSpeech;
 import com.google.android.accessibility.talkback.compositor.PreparedFocusSpeech;
 import com.google.android.accessibility.talkback.focusmanagement.TraversalTreeCache;
 import com.google.android.accessibility.utils.AccessibilityNode;
@@ -89,6 +90,7 @@ public class NodeActionPerformer {
     if (nodeActionTarget != null) {
       TraversalTreeCache.onNodeAction(nodeAction.actionId());
       PreparedFocusSpeech.onNodeAction(nodeAction.actionId());
+      EarlyFocusSpeech.onNodeAction(nodeAction.actionId());
       long time = SystemClock.uptimeMillis();
       if (nodeAction.actionId() == AccessibilityNodeInfoCompat.ACTION_CLICK
           && AccessibilityNodeInfoUtils.isKeyboard(nodeActionTarget.getCompat())) {
