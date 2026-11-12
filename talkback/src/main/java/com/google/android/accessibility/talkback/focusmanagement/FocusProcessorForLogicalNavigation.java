@@ -313,6 +313,11 @@ public class FocusProcessorForLogicalNavigation {
     return lastScrollEventUptime;
   }
 
+  /** The number of scroll events of any window that have arrived. */
+  public static int scrollEventCount() {
+    return scrollEventCount;
+  }
+
   /** The screen's density, pixels per dp. */
   float density() {
     return service.getResources().getDisplayMetrics().density;

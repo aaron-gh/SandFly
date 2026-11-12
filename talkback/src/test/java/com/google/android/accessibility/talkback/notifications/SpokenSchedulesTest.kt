@@ -20,12 +20,15 @@ import android.content.Context
 import org.robolectric.RuntimeEnvironment
 import java.time.Instant
 import java.util.TimeZone
+import com.google.android.accessibility.utils.SharedPreferencesUtils
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
+import org.robolectric.shadows.ShadowAlarmManager
 
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [34])
@@ -109,5 +112,26 @@ class SpokenSchedulesTest {
       count++
     }
     assertEquals(25, count)
+  }
+
+  @Test
+  fun batteryIsSaidAsAWordNotAPercentSign() {
+    val context = RuntimeEnvironment.getApplication()
+    assertEquals("76 percent", SpokenSchedules.batteryText(context, 76, 100))
+    assertEquals("50 percent", SpokenSchedules.batteryText(context, 100, 200))
+    assertEquals("", SpokenSchedules.batteryText(context, -1, 100))
+  }
+
+  @Test
+  fun alarmsAndRemindersIsNeededOnlyWhileTheTimeIsSaidWithoutIt() {
+    val context = RuntimeEnvironment.getApplication()
+    val prefs = SharedPreferencesUtils.getSharedPreferences(context)
+    ShadowAlarmManager.setCanScheduleExactAlarms(false)
+    prefs.edit().putString(SpokenSchedules.KEY_CLOCK_INTERVAL, "0").commit()
+    assertFalse(SpokenSchedules.needsExactAlarms(context))
+    prefs.edit().putString(SpokenSchedules.KEY_CLOCK_INTERVAL, "30").commit()
+    assertTrue(SpokenSchedules.needsExactAlarms(context))
+    ShadowAlarmManager.setCanScheduleExactAlarms(true)
+    assertFalse(SpokenSchedules.needsExactAlarms(context))
   }
 }

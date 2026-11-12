@@ -296,11 +296,15 @@ public class GestureController {
     dictation.shutdown();
   }
 
-  /** Stops scrolling to the top or bottom when the user touches the screen or presses a key. */
+  /**
+   * Stops scrolling to the top or bottom, and swipes still waiting, when the user touches the
+   * screen or presses a key.
+   */
   public void onUserInputStarted() {
     listEdgeScroller.cancel();
     pullToRefresh.cancel();
     swipeUp.cancel();
+    selectorController.cancelPageScroll();
   }
 
   ////////////////////////////////////////////////////////////////////////////////////////////////
