@@ -1315,6 +1315,12 @@ public class TalkBackService extends AccessibilityServiceCompat
         SpeechDictionary.onWindowShown(frontApp);
         AppGestures.onWindowShown(frontApp);
         ClipboardHistoryOverlay.onAppWindowShown(frontApp);
+        // Some launchers, such as Hyperion, send no window state change when the home screen is
+        // shown again, so the window list clears Android's cached copy of it as well.
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU
+            && HomeScreenPages.isHomePackage(this, frontApp)) {
+          clearCache();
+        }
       }
     }
     if (eventType == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED
