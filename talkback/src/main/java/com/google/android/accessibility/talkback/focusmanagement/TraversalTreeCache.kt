@@ -267,7 +267,9 @@ object TraversalTreeCache {
    * The node to search on from when the focused node has been removed: the last node above the
    * place the last navigation started, so a swipe forward lands on whatever now occupies that
    * place, rather than on the top of the page. Falls back to the first node when the removal was
-   * above everything. Null when nothing was remembered, or the window has changed.
+   * above everything. Null when nothing was remembered, or the window has changed. After scrolling
+   * ahead moved the focused item off its list, the search goes on from next to the list's item
+   * beside the place it went from (see [itemAfterScrolledAway]).
    *
    * The content change that removes a node usually throws the saved order away as well — an ad slot
    * collapsing sends a content change of the undefined type, which is structural here — so a fresh
@@ -294,6 +296,23 @@ object TraversalTreeCache {
           scrolledAwayForward,
         )
       val place = placeAfterScroll(away.top, away.bottom, shift, scrolledAwayForward)
+      val nodes = order.dumpTree().filter { it.windowId == lastPivotWindowId }
+      val target =
+        itemAfterScrolledAway(
+          nodes.map { node -> Rect().also { node.getBoundsInScreen(it) } },
+          nodes.map { node ->
+            node.isVisibleToUser &&
+              AccessibilityNodeInfoUtils.shouldFocusNode(node, order.speakingNodesCache)
+          },
+          scrolledAwayListBounds,
+          place,
+          scrolledAwayForward,
+        )
+      if (target >= 0) {
+        // The swipe searches on from the node next to the item in the order, so it lands on the
+        // item; past either end of the order, it searches from the window's root.
+        return nodes.getOrNull(if (scrolledAwayForward) target - 1 else target + 1)
+      }
       if (!scrolledAwayForward) {
         // The item before the one scrolled away ends at the place; a swipe back from the first
         // node below it lands there.
@@ -311,6 +330,42 @@ object TraversalTreeCache {
       return lastNodeAbove(order, place, bounds)
     }
     return lastNodeAbove(order, lastPivotTop, bounds)
+  }
+
+  /**
+   * The index of the item that a swipe [forward] or back goes to after the focused item scrolled
+   * off the list at [list], among nodes at [bounds] in reading order of which [focusable] can take
+   * focus: going forward, the item of the list nearest below [place], where the item after the one
+   * scrolled away starts; going back, the item nearest above [place], where the item before it
+   * ends. Ties go to the first node going forward and the last going back, as a swipe meets them.
+   * -1 when no item of the list is there, or the list's bounds aren't known.
+   */
+  @JvmStatic
+  fun itemAfterScrolledAway(
+    bounds: List<Rect>,
+    focusable: List<Boolean>,
+    list: Rect,
+    place: Int,
+    forward: Boolean,
+  ): Int {
+    if (list.isEmpty) {
+      return -1
+    }
+    var best = -1
+    for (i in bounds.indices) {
+      val item = bounds[i]
+      if (!focusable[i] || item.isEmpty || !Rect.intersects(item, list)) {
+        continue
+      }
+      if (forward) {
+        if (item.top >= place && (best < 0 || item.top < bounds[best].top)) {
+          best = i
+        }
+      } else if (item.bottom <= place && (best < 0 || item.bottom >= bounds[best].bottom)) {
+        best = i
+      }
+    }
+    return best
   }
 
   /** The last node of [order] above [place], or the first node if none is above it. */

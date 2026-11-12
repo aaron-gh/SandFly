@@ -314,6 +314,41 @@ class JumpToNextRowTest {
   }
 
   @Test
+  fun swipeGoesOnInTheListOfTheScrolledAwayItem() {
+    // FastSM's order: the window, the list, its items, then the title above the list.
+    val list = Rect(0, 456, 1080, 2486)
+    val bounds =
+      listOf(
+        Rect(0, 0, 1080, 2520),
+        list,
+        Rect(0, 456, 1080, 700),
+        Rect(0, 700, 1080, 1900),
+        Rect(0, 1900, 1080, 2486),
+        Rect(36, 145, 185, 202),
+      )
+    val focusable = listOf(false, false, true, true, true, true)
+    // Forward: the item at the list's top, not the title before it on screen.
+    assertEquals(2, TraversalTreeCache.itemAfterScrolledAway(bounds, focusable, list, 456, true))
+    // Back: the item at the list's bottom, though the title comes after it in the order.
+    assertEquals(4, TraversalTreeCache.itemAfterScrolledAway(bounds, focusable, list, 2486, false))
+    // A place between items: the next one starts below it, the previous one ends above it.
+    assertEquals(3, TraversalTreeCache.itemAfterScrolledAway(bounds, focusable, list, 650, true))
+    assertEquals(3, TraversalTreeCache.itemAfterScrolledAway(bounds, focusable, list, 2000, false))
+    // No list known, or nothing of the list past the place.
+    assertEquals(-1, TraversalTreeCache.itemAfterScrolledAway(bounds, focusable, Rect(), 456, true))
+    assertEquals(-1, TraversalTreeCache.itemAfterScrolledAway(bounds, focusable, list, 2500, true))
+  }
+
+  @Test
+  fun lastOfItemsEndingTogetherIsReachedFirstGoingBack() {
+    val list = Rect(0, 0, 1080, 2000)
+    val bounds = listOf(Rect(0, 1500, 1080, 2000), Rect(900, 1800, 1080, 2000))
+    val focusable = listOf(true, true)
+    assertEquals(1, TraversalTreeCache.itemAfterScrolledAway(bounds, focusable, list, 2000, false))
+    assertEquals(0, TraversalTreeCache.itemAfterScrolledAway(bounds, focusable, list, 1500, true))
+  }
+
+  @Test
   fun pageShorterThanHalfTheListIsNotLearned() {
     // FastSM's Compose list: deltas of 1 and 2 for pages of a 2030 px list.
     assertFalse(FocusProcessorForLogicalNavigation.isReliablePage(1, 2030, true, false))
