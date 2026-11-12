@@ -2152,6 +2152,7 @@ public class SpeechControllerImpl implements SpeechController {
         mFeedbackHistory.remove(mFeedbackHistory.peek());
       }
       mFeedbackHistory.addLast(item);
+      SpeechHistory.record(item);
     }
 
     if (speechListener != null) {

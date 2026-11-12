@@ -304,6 +304,10 @@ With **After the letter, no delay** and **Instead of the letter**, SandFly says 
 
 The **High** preset uses **After the letter, delayed** and the **Low** preset uses **Off**. Your choice from the switch carries over, and both settings start with the choice from the earlier single setting.
 
+### Speech history
+
+The **Speech history** command, in **Reading**, opens a list of the last 100 texts SandFly spoke, newest first. Double-tap a text for **Copy**, and for **Show all** when the text is longer than the list shows. **Clear history** removes every text. The history is kept in memory only, is never saved or logged, and is cleared when SandFly turns off. It leaves out speech while a password field has focus, speech while the list is open, and the hints and messages that **Repeat last spoken phrase** also leaves out. Texts are kept to 2,000 characters.
+
 ## Notifications
 
 ### Samsung watch notification content

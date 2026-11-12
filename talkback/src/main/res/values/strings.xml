@@ -2582,6 +2582,12 @@
     <string name="clipboard_history_empty">Nothing copied</string>
     <!-- Action at the end of the clipboard history that removes every text from it. [CHAR_LIMIT=40] -->
     <string name="clipboard_history_clear">Clear history</string>
+    <!-- Title of the screen and command listing the texts SandFly spoke lately, newest first. [CHAR_LIMIT=40] -->
+    <string name="title_speech_history">Speech history</string>
+    <!-- Shown in the speech history when it has no texts. [CHAR_LIMIT=NONE] -->
+    <string name="speech_history_empty">No speech</string>
+    <!-- Action at the end of the speech history that removes every text from it. [CHAR_LIMIT=40] -->
+    <string name="speech_history_clear">Clear history</string>
     <!-- Label for the menu item that lets the user spells the last spoken phrase. [CHAR_LIMIT=130] -->
     <string name="title_spell_last_spoken_phrase">Spell last spoken phrase</string>
     <!-- Label for the menu item that lets the user repeats the last spoken phrase. [CHAR_LIMIT=130] -->
