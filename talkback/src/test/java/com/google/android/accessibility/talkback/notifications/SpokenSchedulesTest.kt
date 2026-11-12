@@ -52,6 +52,48 @@ class SpokenSchedulesTest {
   }
 
   @Test
+  fun turningTimeAnnouncementsOnAgainRestoresTheInterval() {
+    val prefs =
+      RuntimeEnvironment.getApplication()
+        .getSharedPreferences("clock-toggle", Context.MODE_PRIVATE)
+    prefs.edit().clear().putString(SpokenSchedules.KEY_CLOCK_INTERVAL, "30").commit()
+
+    assertFalse(SpokenSchedules.toggleClock(prefs))
+    assertEquals(0, NotificationSettings.int(prefs, SpokenSchedules.KEY_CLOCK_INTERVAL, -1))
+
+    assertTrue(SpokenSchedules.toggleClock(prefs))
+    assertEquals(30, NotificationSettings.int(prefs, SpokenSchedules.KEY_CLOCK_INTERVAL, -1))
+  }
+
+  @Test
+  fun turningTimeAnnouncementsOnWithNoIntervalSetUsesTheDefault() {
+    val prefs =
+      RuntimeEnvironment.getApplication()
+        .getSharedPreferences("clock-toggle-default", Context.MODE_PRIVATE)
+    prefs.edit().clear().commit()
+
+    assertTrue(SpokenSchedules.toggleClock(prefs))
+    assertEquals(
+      SpokenSchedules.DEFAULT_CLOCK_INTERVAL,
+      NotificationSettings.int(prefs, SpokenSchedules.KEY_CLOCK_INTERVAL, -1),
+    )
+  }
+
+  @Test
+  fun intervalChosenBeforeTurningOffInSettingsIsRestored() {
+    val prefs =
+      RuntimeEnvironment.getApplication()
+        .getSharedPreferences("clock-toggle-settings", Context.MODE_PRIVATE)
+    prefs.edit().clear().commit()
+    SpokenSchedules.rememberClockInterval(prefs, 15)
+    SpokenSchedules.rememberClockInterval(prefs, 0)
+    prefs.edit().putString(SpokenSchedules.KEY_CLOCK_INTERVAL, "0").commit()
+
+    assertTrue(SpokenSchedules.toggleClock(prefs))
+    assertEquals(15, NotificationSettings.int(prefs, SpokenSchedules.KEY_CLOCK_INTERVAL, -1))
+  }
+
+  @Test
   fun repeatedHourAfterFallBackGoesToTheNextHour() {
     // 1:00 CST, the second 1:00 of the night.
     assertEquals(

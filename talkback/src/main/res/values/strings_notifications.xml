@@ -625,6 +625,12 @@
     <string name="shortcut_read_notifications">Read notifications</string>
     <!-- Gesture action that turns notification speech on or off. -->
     <string name="shortcut_toggle_notification_speech">Notification speech on or off</string>
+    <!-- Gesture action that turns the time announcements at a set interval on or off. -->
+    <string name="shortcut_toggle_time_announcements">Time announcements on or off</string>
+    <!-- Spoken when time announcements are turned on. -->
+    <string name="notification_clock_now_on">Time announcements on</string>
+    <!-- Spoken when time announcements are turned off. -->
+    <string name="notification_clock_now_off">Time announcements off</string>
     <!-- Gesture action that reads again the last notification that was read. -->
     <string name="shortcut_read_last_notification">Read the last notification again</string>
     <!-- Gesture action that stops the notification being read. -->

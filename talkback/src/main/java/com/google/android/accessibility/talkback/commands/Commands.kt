@@ -952,6 +952,10 @@ object Commands {
           R.string.shortcut_value_toggle_notification_speech,
           R.string.shortcut_toggle_notification_speech,
         )
+        gesture(
+          R.string.shortcut_value_toggle_time_announcements,
+          R.string.shortcut_toggle_time_announcements,
+        )
       }
 
     private fun descriptions() =

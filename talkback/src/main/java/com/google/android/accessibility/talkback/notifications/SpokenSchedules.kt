@@ -203,6 +203,38 @@ class SpokenSchedules(
     const val KEY_SUMMARY_NEWEST_FIRST = "pref_notification_summary_newest_first"
     const val KEY_SUMMARY_NAME = "pref_notification_summary_name"
     const val KEY_SUMMARY_GAP = "pref_notification_summary_gap"
+    /** The interval that turning time announcements on again sets. */
+    const val KEY_CLOCK_LAST_INTERVAL = "pref_notification_clock_last_interval"
+    /** The interval, in minutes, that turning time announcements on sets when none was set before. */
+    const val DEFAULT_CLOCK_INTERVAL = 60
+
+    /** Keeps [minutes], if above 0, as the interval that turning time announcements on sets. */
+    @JvmStatic
+    fun rememberClockInterval(prefs: SharedPreferences, minutes: Int) {
+      if (minutes > 0) prefs.edit().putString(KEY_CLOCK_LAST_INTERVAL, minutes.toString()).apply()
+    }
+
+    /**
+     * Turns time announcements off, keeping the interval, or on at the interval kept, or every
+     * [DEFAULT_CLOCK_INTERVAL] minutes when none was kept. The alarms follow the setting. Returns
+     * whether time announcements are on.
+     */
+    @JvmStatic
+    fun toggleClock(prefs: SharedPreferences): Boolean {
+      val interval = NotificationSettings.int(prefs, KEY_CLOCK_INTERVAL, 0)
+      if (interval > 0) {
+        prefs
+          .edit()
+          .putString(KEY_CLOCK_LAST_INTERVAL, interval.toString())
+          .putString(KEY_CLOCK_INTERVAL, "0")
+          .apply()
+        return false
+      }
+      val last = NotificationSettings.int(prefs, KEY_CLOCK_LAST_INTERVAL, 0)
+      val restored = if (last > 0) last else DEFAULT_CLOCK_INTERVAL
+      prefs.edit().putString(KEY_CLOCK_INTERVAL, restored.toString()).apply()
+      return true
+    }
 
     /**
      * The first minute after [now] at which the clock in [zone] shows a multiple of

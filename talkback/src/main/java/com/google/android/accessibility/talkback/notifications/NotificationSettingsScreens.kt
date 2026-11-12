@@ -107,7 +107,11 @@ abstract class NotificationXmlFragment(@XmlRes xml: Int, @StringRes private val 
         }
         SpokenSchedules.KEY_CLOCK_INTERVAL -> {
           updateExactAlarms()
-          if (NotificationSettings.int(prefs, key, 0) > 0) askForExactAlarms()
+          val interval = NotificationSettings.int(prefs, key, 0)
+          if (interval > 0) {
+            SpokenSchedules.rememberClockInterval(prefs, interval)
+            askForExactAlarms()
+          }
         }
       }
     }
