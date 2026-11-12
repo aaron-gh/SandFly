@@ -561,7 +561,7 @@ class MacroFragment : MacroEditorFragment() {
             then(Macros.OpenApp(apps[index - 1].value))
             return@choose
           }
-          askText(search) { text, _, _ ->
+          askText(search, inputType = InputType.TYPE_CLASS_TEXT) { text, _, _ ->
             val found = apps.filter { it.label.contains(text, ignoreCase = true) }
             if (found.isEmpty()) {
               getString(R.string.keyboard_shortcuts_no_results)

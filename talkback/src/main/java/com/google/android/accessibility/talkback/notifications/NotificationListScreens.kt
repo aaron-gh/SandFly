@@ -24,7 +24,9 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import android.text.InputType
 import android.text.format.DateFormat
+import android.view.KeyEvent
 import android.view.ViewGroup
+import android.view.inputmethod.EditorInfo
 import android.widget.CheckBox
 import android.widget.LinearLayout
 import android.widget.Toast
@@ -169,7 +171,7 @@ abstract class NotificationCodeFragment(@StringRes private val title: Int) : Tal
             choices[index - 1].let { then(it.first, it.second) }
             return@choose
           }
-          askText(search) { text, _, _ ->
+          askText(search, inputType = InputType.TYPE_CLASS_TEXT) { text, _, _ ->
             val found = apps.filter { it.third.contains(text, ignoreCase = true) || it.first.contains(text, ignoreCase = true) }
             if (found.isEmpty()) {
               getString(R.string.keyboard_shortcuts_no_results)
@@ -208,12 +210,15 @@ abstract class NotificationCodeFragment(@StringRes private val title: Int) : Tal
         orientation = LinearLayout.VERTICAL
         setPadding(padding, padding / 2, padding, 0)
       }
+    // Enter in a single-line field that is the only one presses OK.
+    val enterPressesOk = secondHint == null && inputType and InputType.TYPE_TEXT_FLAG_MULTI_LINE == 0
     val edit =
       KeyboardSafeEditText(context).apply {
         setText(text)
         // The title labels the field when there is no hint.
         this.hint = hint ?: title
         this.inputType = inputType
+        if (enterPressesOk) imeOptions = EditorInfo.IME_ACTION_DONE
         setSelection(text.length)
       }
     layout.addView(edit, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
@@ -241,9 +246,25 @@ abstract class NotificationCodeFragment(@StringRes private val title: Int) : Tal
         .setNegativeButton(android.R.string.cancel, null)
         .create()
     dialog.setOnShowListener {
-      dialog.getButton(AlertDialog.BUTTON_POSITIVE)?.setOnClickListener {
+      val ok = dialog.getButton(AlertDialog.BUTTON_POSITIVE)
+      ok?.setOnClickListener {
         val error = onDone(edit.text.toString().trim(), second?.text?.toString().orEmpty(), boxes.map { it.isChecked })
         if (error == null) dialog.dismiss() else edit.error = error
+      }
+      if (enterPressesOk) {
+        edit.setOnEditorActionListener { _, actionId, event ->
+          when {
+            actionId == EditorInfo.IME_ACTION_DONE -> {
+              ok?.performClick()
+              true
+            }
+            event?.keyCode == KeyEvent.KEYCODE_ENTER -> {
+              if (event.action == KeyEvent.ACTION_DOWN) ok?.performClick()
+              true
+            }
+            else -> false
+          }
+        }
       }
     }
     dialog.show()
