@@ -3301,6 +3301,8 @@
     <string name="title_pref_volume_change_tone_during_media">Silence tone during media playback</string>
     <!-- Title of the switch that turns off the spoken announcement of the new volume while an app plays media, such as music or a video. [CHAR LIMIT=NONE] -->
     <string name="title_pref_volume_change_speech_during_media">Silence speech during media playback</string>
+    <!-- Title of the switch that makes the spoken announcement of the new volume stop the speech already playing instead of waiting for it to end. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_volume_change_interrupts_speech">Interrupt speech to announce the volume</string>
     <!-- Title of the setting that chooses the command run by pressing volume up twice quickly. Volume up is the hardware key. [CHAR LIMIT=NONE] -->
     <string name="title_pref_volume_up_double_press">Volume up double press</string>
     <!-- Title of the setting that chooses the command run by pressing volume up three times quickly. Volume up is the hardware key. [CHAR LIMIT=NONE] -->

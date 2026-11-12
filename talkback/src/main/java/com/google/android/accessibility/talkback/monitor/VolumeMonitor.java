@@ -446,7 +446,10 @@ public class VolumeMonitor extends SameThreadBroadcastReceiver {
 
     SpeechController.SpeakOptions speakOptions =
         SpeechController.SpeakOptions.create()
-            .setQueueMode(SpeechController.QUEUE_MODE_QUEUE)
+            .setQueueMode(
+                volumeChangeFeedback == null || volumeChangeFeedback.getInterruptsSpeech()
+                    ? SpeechController.QUEUE_MODE_INTERRUPT
+                    : SpeechController.QUEUE_MODE_QUEUE)
             .setFlags(
                 FLAG_SOURCE_IS_VOLUME_CONTROL | FLAG_FORCE_FEEDBACK_EVEN_IF_AUDIO_PLAYBACK_ACTIVE)
             .setUtteranceGroup(SpeechController.UTTERANCE_GROUP_DEFAULT)

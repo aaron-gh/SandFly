@@ -59,6 +59,11 @@ class VolumeChangeFeedback(private val context: Context) {
   private var speaksVolume = false
   private var toneDuringMedia = true
   private var speechDuringMedia = true
+
+  /** Whether the announcement of the new volume stops the speech already playing. */
+  var interruptsSpeech = true
+    private set
+
   private var track: AudioTrack? = null
 
   /** The theme's file for the tone, [SoundThemeManifest.NONE] for none, or null for the tone. */
@@ -87,6 +92,11 @@ class VolumeChangeFeedback(private val context: Context) {
       !prefs.getBoolean(
         context.getString(R.string.pref_volume_change_speech_during_media_key),
         context.resources.getBoolean(R.bool.pref_volume_change_speech_during_media_default),
+      )
+    interruptsSpeech =
+      prefs.getBoolean(
+        context.getString(R.string.pref_volume_change_interrupts_speech_key),
+        context.resources.getBoolean(R.bool.pref_volume_change_interrupts_speech_default),
       )
     if (!playsTone) {
       release()
