@@ -48,13 +48,13 @@ object SandflyDictation {
    */
   @JvmStatic
   @JvmOverloads
-  fun listen(onText: (String?) -> Unit, correct: Boolean = true): Boolean {
+  fun listen(correct: Boolean = true, onText: (String?) -> Unit): Boolean {
     val dictation = instance
     if (dictation == null) {
       onText(null)
       return false
     }
-    return dictation.listen(onText, correct)
+    return dictation.listen(correct, onText)
   }
 
   /** Stops recording for [listen], so that what was said is recognized. */

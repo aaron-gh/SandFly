@@ -177,7 +177,7 @@ class AiDictation(
    * recognized and, when that is on and [correct] is true, corrected text, or null when nothing was
    * recognized or recording could not start.
    */
-  fun listen(callback: (String?) -> Unit, correct: Boolean = true): Boolean {
+  fun listen(correct: Boolean = true, callback: (String?) -> Unit): Boolean {
     if (phase != Phase.IDLE) {
       // A dictation into a field goes on; an earlier listen stops. Either way this caller is
       // answered, or it would wait for good.
