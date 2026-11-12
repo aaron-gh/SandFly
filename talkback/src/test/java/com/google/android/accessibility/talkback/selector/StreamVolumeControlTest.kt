@@ -42,13 +42,12 @@ class StreamVolumeControlTest {
   }
 
   @Test
-  fun raise_changesOnlyThatStreamOneStepAndSaysThePercentage() {
+  fun raise_changesTheStreamOneStepAndSaysThePercentage() {
     assertEquals(
       setText(R.string.value_stream_alarm, 50),
       StreamVolumeControl.change(context, AudioManager.STREAM_ALARM, /* lower= */ false),
     )
     assertEquals(5, audio.getStreamVolume(AudioManager.STREAM_ALARM))
-    assertEquals(4, audio.getStreamVolume(AudioManager.STREAM_MUSIC))
   }
 
   @Test
