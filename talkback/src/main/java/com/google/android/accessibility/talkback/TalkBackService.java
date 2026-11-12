@@ -372,6 +372,7 @@ import com.google.android.accessibility.utils.output.SpeechController;
 import com.google.android.accessibility.utils.output.SpeechController.UtteranceCompleteRunnable;
 import com.google.android.accessibility.utils.output.SpeechControllerImpl;
 import com.google.android.accessibility.utils.output.SpeechControllerImpl.CapitalLetterHandlingMethod;
+import com.google.android.accessibility.utils.output.SpeechHistory;
 import com.google.android.accessibility.utils.output.TextFormattingUtils;
 import com.google.android.accessibility.utils.output.ThemeVibrations;
 import com.google.android.accessibility.utils.output.VoiceProfiles;
@@ -1144,6 +1145,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     ExitAfterTurnOff.schedule(getApplication());
     ShizukuGrants.onServiceDestroyed();
     ScreenElements.detach();
+    SpeechHistory.setPrivacyCheck(null);
     if (SandflyAi.getFeatures() != null) {
       SandflyAi.getFeatures().onServiceDestroyed(this);
     }
@@ -2053,6 +2055,18 @@ public class TalkBackService extends AccessibilityServiceCompat
     return directTouchController;
   }
 
+  /** Whether the item with accessibility focus, or the edit box with input focus, is a password. */
+  private boolean isPasswordFocused() {
+    for (int focus :
+        new int[] {AccessibilityNodeInfo.FOCUS_ACCESSIBILITY, AccessibilityNodeInfo.FOCUS_INPUT}) {
+      AccessibilityNodeInfo node = findFocus(focus);
+      if (node != null && node.isPassword()) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   /** Returns the actor state. */
   public ActorState getActorState() {
     return pipeline.getActorState();
@@ -2306,6 +2320,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     ReportInbox.startFollowing(this);
     ShizukuGrants.onServiceConnected(this);
     ScreenElements.attach(this, () -> pipeline == null ? null : pipeline.getFeedbackReturner());
+    SpeechHistory.setPrivacyCheck(this::isPasswordFocused);
     if (SandflyAi.getFeatures() != null) {
       SandflyAi.getFeatures().onServiceConnected(this);
     }

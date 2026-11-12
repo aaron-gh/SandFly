@@ -137,6 +137,7 @@ import com.google.android.accessibility.talkback.calls.AnswerCall;
 import com.google.android.accessibility.talkback.dictation.AiDictation;
 import com.google.android.accessibility.talkback.directtouch.DirectTouchController;
 import com.google.android.accessibility.talkback.clipboard.ClipboardHistoryFragment;
+import com.google.android.accessibility.talkback.speechhistory.SpeechHistoryFragment;
 import com.google.android.accessibility.talkback.granularediting.GranularEditing;
 import com.google.android.accessibility.talkback.applauncher.BrailleAppLauncher;
 import com.google.android.accessibility.talkback.handwriting.HandwritingAppLauncher;
@@ -1087,6 +1088,8 @@ public class GestureController {
       result =
           pipeline.returnFeedback(
               eventId, Feedback.part().setSpeech(Feedback.Speech.create(SPELL_LAST)));
+    } else if (action.equals(service.getString(R.string.shortcut_value_speech_history))) {
+      result = SpeechHistoryFragment.open(service);
     } else if (action.equals(
         service.getString(R.string.shortcut_value_translate_last_spoken_phrase))) {
       AccessibilityNodeInfoCompat focus =
