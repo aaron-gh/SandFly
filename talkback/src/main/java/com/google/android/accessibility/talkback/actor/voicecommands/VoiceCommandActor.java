@@ -151,6 +151,7 @@ public class VoiceCommandActor implements SpeechRecognizerRequester {
     this.analytics = analytics;
     this.speechRecognizerPerformer = speechRecognizerPerformer;
     speechRecognizerPerformer.setListener(this);
+    speechRecognizerPerformer.setCorrectsDictation(false);
   }
 
   public void setPipeline(Pipeline.FeedbackReturner pipeline) {

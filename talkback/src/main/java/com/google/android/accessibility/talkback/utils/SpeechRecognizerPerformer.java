@@ -96,6 +96,8 @@ public class SpeechRecognizerPerformer {
   /** Dictation is stopped after this long at least, if nothing stops it before. */
   private static final int MIN_DICTATION_MS = 60_000;
   private final Runnable stopDictation = SandflyDictation::stop;
+  /** Whether SandFly's dictation corrects the text with AI when Correct dictation with AI is on. */
+  private boolean correctsDictation = true;
   private boolean sessionActive = false;
   private final boolean partialResultFastFeedback;
   private String cachedResult = "";
@@ -298,6 +300,14 @@ public class SpeechRecognizerPerformer {
   }
 
   /**
+   * Sets whether SandFly's dictation corrects the text with AI when Correct dictation with AI is
+   * on. Voice commands are matched word for word, so they aren't corrected.
+   */
+  public void setCorrectsDictation(boolean correctsDictation) {
+    this.correctsDictation = correctsDictation;
+  }
+
+  /**
    * Sets the recognition service to try first, asked each time listening starts; it gives null for
    * the phone's default one. When either fails for another reason than hearing no words, the
    * session goes on with the other.
@@ -420,7 +430,8 @@ public class SpeechRecognizerPerformer {
             speechRecognizerRequester.onResult(text, /* isPartialResult= */ false);
           }
           return Unit.INSTANCE;
-        });
+        },
+        correctsDictation);
   }
 
   /** Start the speech recognition session. */
