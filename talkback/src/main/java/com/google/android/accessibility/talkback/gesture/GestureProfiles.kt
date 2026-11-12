@@ -19,6 +19,7 @@ package com.google.android.accessibility.talkback.gesture
 import android.content.Context
 import android.content.SharedPreferences
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.utils.ValueSteps
 import java.util.UUID
 import org.json.JSONArray
 import org.json.JSONException
@@ -106,12 +107,15 @@ object GestureProfiles {
     return profile?.name ?: context.getString(R.string.gesture_profile_default)
   }
 
-  /** The ID of the profile after or before the one in use, with Default first, wrapping around. */
+  /**
+   * The ID of the profile after or before the one in use, with Default first, as [ValueSteps]
+   * goes.
+   */
   @JvmStatic
   fun adjacentId(prefs: SharedPreferences, next: Boolean): String {
     val ids = listOf("") + read(prefs).map { it.id }
     val index = ids.indexOf(activeId(prefs))
-    return ids[Math.floorMod(index + if (next) 1 else -1, ids.size)]
+    return ids[ValueSteps.step(index, ids.size, next)]
   }
 
   /** The IDs and names of Default and each profile, in order. */

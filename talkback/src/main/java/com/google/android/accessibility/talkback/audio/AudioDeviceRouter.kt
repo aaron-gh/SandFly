@@ -42,6 +42,7 @@ import androidx.core.content.ContextCompat
 import androidx.preference.ListPreference
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.utils.SharedPreferencesUtils
+import com.google.android.accessibility.utils.ValueSteps
 import com.google.android.accessibility.utils.output.FailoverTextToSpeech
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 
@@ -101,17 +102,16 @@ class AudioDeviceRouter @JvmOverloads constructor(
       }
 
       /**
-       * The index in [values] of the choice after, or before, the saved value [current], wrapping
-       * around. From a value that isn't among them, the first choice, or the last going back. -1 if
-       * there are no choices.
+       * The index in [values] of the choice after, or before, the saved value [current], as
+       * [ValueSteps] goes. From a value that isn't among them, the first choice, or the last going
+       * back. -1 if there are no choices.
        */
       @JvmStatic
       fun adjacentChoice(values: List<String>, current: String?, isNext: Boolean): Int {
         if (values.isEmpty()) return -1
         val index = indexOfChoice(values, current)
         if (index < 0) return if (isNext) 0 else values.lastIndex
-        val step = if (isNext) 1 else -1
-        return Math.floorMod(index + step, values.size)
+        return ValueSteps.step(index, values.size, isNext)
       }
 
       fun parse(value: String?): AudioTarget {

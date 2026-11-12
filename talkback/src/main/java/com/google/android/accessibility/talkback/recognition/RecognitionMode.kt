@@ -17,6 +17,7 @@
 package com.google.android.accessibility.talkback.recognition
 
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.utils.ValueSteps
 
 /** Live recognition modes, in reading control order. Each turns on and off by itself. */
 enum class RecognitionMode(
@@ -32,7 +33,7 @@ enum class RecognitionMode(
   LIGHT(R.string.live_recognition_light, false, usesCamera = false);
 
   fun step(forward: Boolean): RecognitionMode =
-    entries[Math.floorMod(ordinal + if (forward) 1 else -1, entries.size)]
+    entries[ValueSteps.step(ordinal, entries.size, forward)]
 }
 
 /** Turns light sensor readings into the levels Live recognition speaks. */
