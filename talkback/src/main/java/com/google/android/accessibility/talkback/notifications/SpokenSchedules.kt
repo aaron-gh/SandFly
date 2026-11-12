@@ -71,6 +71,7 @@ class SpokenSchedules(
 
   private val settingsListener =
     SharedPreferences.OnSharedPreferenceChangeListener { _, key ->
+      if (key == KEY_CLOCK_LAST_INTERVAL) return@OnSharedPreferenceChangeListener
       if (key == null || key.startsWith(CLOCK_PREFIX) || key.startsWith(SUMMARY_PREFIX)) schedule()
     }
 
@@ -137,6 +138,9 @@ class SpokenSchedules(
     val interval = NotificationSettings.int(prefs, KEY_CLOCK_INTERVAL, 0)
     val now = System.currentTimeMillis()
     if (interval > 0) {
+      // Kept for the Time announcements on or off command, also when the interval was set before
+      // it existed and is turned off later in settings.
+      rememberClockInterval(prefs, interval)
       clockAlarmAt = nextClockTime(now, interval)
       set(alarms, clockAlarmAt, clockAlarm)
     }
@@ -211,7 +215,11 @@ class SpokenSchedules(
     /** Keeps [minutes], if above 0, as the interval that turning time announcements on sets. */
     @JvmStatic
     fun rememberClockInterval(prefs: SharedPreferences, minutes: Int) {
-      if (minutes > 0) prefs.edit().putString(KEY_CLOCK_LAST_INTERVAL, minutes.toString()).apply()
+      if (minutes <= 0) return
+      val value = minutes.toString()
+      if (prefs.getString(KEY_CLOCK_LAST_INTERVAL, null) != value) {
+        prefs.edit().putString(KEY_CLOCK_LAST_INTERVAL, value).apply()
+      }
     }
 
     /**

@@ -17,6 +17,7 @@
 package com.google.android.accessibility.talkback.notifications
 
 import android.content.Context
+import com.google.android.accessibility.utils.SharedPreferencesUtils
 import org.robolectric.RuntimeEnvironment
 import java.time.Instant
 import java.util.TimeZone
@@ -88,6 +89,24 @@ class SpokenSchedulesTest {
     SpokenSchedules.rememberClockInterval(prefs, 15)
     SpokenSchedules.rememberClockInterval(prefs, 0)
     prefs.edit().putString(SpokenSchedules.KEY_CLOCK_INTERVAL, "0").commit()
+
+    assertTrue(SpokenSchedules.toggleClock(prefs))
+    assertEquals(15, NotificationSettings.int(prefs, SpokenSchedules.KEY_CLOCK_INTERVAL, -1))
+  }
+
+  @Test
+  fun intervalInUseWhenSchedulesStartIsRestoredAfterTurningOffInSettings() {
+    val context = RuntimeEnvironment.getApplication()
+    val prefs = SharedPreferencesUtils.getSharedPreferences(context)
+    prefs
+      .edit()
+      .remove(SpokenSchedules.KEY_CLOCK_LAST_INTERVAL)
+      .putString(SpokenSchedules.KEY_CLOCK_INTERVAL, "15")
+      .commit()
+    val schedules = SpokenSchedules(context, { _, _ -> }, {})
+    schedules.start()
+    prefs.edit().putString(SpokenSchedules.KEY_CLOCK_INTERVAL, "0").commit()
+    schedules.stop()
 
     assertTrue(SpokenSchedules.toggleClock(prefs))
     assertEquals(15, NotificationSettings.int(prefs, SpokenSchedules.KEY_CLOCK_INTERVAL, -1))
