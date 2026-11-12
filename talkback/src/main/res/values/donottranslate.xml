@@ -354,6 +354,7 @@
     </string-array>
     <string name="pref_volume_change_tone_during_media_key" translatable="false">pref_volume_change_tone_during_media</string>
     <string name="pref_volume_change_speech_during_media_key" translatable="false">pref_volume_change_speech_during_media</string>
+    <string name="pref_volume_change_interrupts_speech_key" translatable="false">pref_volume_change_interrupts_speech</string>
     <string name="pref_volume_up_double_press_key" translatable="false">pref_volume_up_double_press</string>
     <string name="pref_volume_up_triple_press_key" translatable="false">pref_volume_up_triple_press</string>
     <string name="pref_volume_up_long_press_key" translatable="false">pref_volume_up_long_press</string>
@@ -2067,6 +2068,7 @@
     <bool name="pref_volume_keys_move_cursor_default">false</bool>
     <bool name="pref_volume_change_tone_during_media_default">false</bool>
     <bool name="pref_volume_change_speech_during_media_default">false</bool>
+    <bool name="pref_volume_change_interrupts_speech_default">true</bool>
     <bool name="pref_speak_items_before_scroll_default">false</bool>
     <bool name="pref_scroll_ahead_default">true</bool>
     <bool name="pref_speak_while_scrolling_default">true</bool>
