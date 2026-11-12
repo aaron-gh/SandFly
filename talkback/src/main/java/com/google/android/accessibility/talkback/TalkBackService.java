@@ -1301,6 +1301,7 @@ public class TalkBackService extends AccessibilityServiceCompat
       if (isAppWindowEvent(event)) {
         SpeechDictionary.onWindowShown(lastWindowPackage);
         AppGestures.onWindowShown(lastWindowPackage);
+        ClipboardHistoryOverlay.onAppWindowShown(lastWindowPackage);
       }
     } else if (eventType == AccessibilityEvent.TYPE_WINDOWS_CHANGED && changesFrontWindow(event)) {
       // Some launchers, such as Xiaomi's, send no window state change when the home screen is shown
@@ -1309,6 +1310,7 @@ public class TalkBackService extends AccessibilityServiceCompat
       if (frontApp != null) {
         SpeechDictionary.onWindowShown(frontApp);
         AppGestures.onWindowShown(frontApp);
+        ClipboardHistoryOverlay.onAppWindowShown(frontApp);
       }
     }
     if (eventType == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED
@@ -2594,6 +2596,14 @@ public class TalkBackService extends AccessibilityServiceCompat
     batteryMonitor = new BatteryMonitor(this);
     statusReader = new StatusReader(this, batteryMonitor);
     callStateMonitor = new CallStateMonitor(this);
+    // The call's screen comes up under the clipboard history, which would hide it.
+    callStateMonitor.addCallStateChangedListener(
+        (oldState, newState) -> {
+          if (newState == TelephonyManager.CALL_STATE_RINGING
+              || newState == TelephonyManager.CALL_STATE_OFFHOOK) {
+            ClipboardHistoryOverlay.onCallStarted();
+          }
+        });
     inputMethodMonitor = new InputMethodMonitor(this);
     audioPlaybackMonitor = new AudioPlaybackMonitor(this);
     @NonNull TouchMonitor touchMonitor = new TouchMonitor();

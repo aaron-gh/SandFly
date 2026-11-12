@@ -64,7 +64,9 @@ import com.google.android.libraries.accessibility.utils.log.LogUtils
  * it and its app can read the clipboard for Paste. Opened without one, the window takes input
  * focus, as SandFly can read the clipboard only then.
  *
- * Back closes the actions of a text, then the window. Main thread only.
+ * Back closes the actions of a text, then the window. Another app's screen, such as an incoming
+ * call, an alarm or an app opened from a notification, closes the window, as does a call ringing
+ * or starting. Main thread only.
  */
 object ClipboardHistoryOverlay {
   private const val TAG = "ClipboardHistoryOverlay"
@@ -72,6 +74,7 @@ object ClipboardHistoryOverlay {
   private const val MAX_LINES = 3
   private const val PADDING_DP = 16
   private const val MIN_ROW_HEIGHT_DP = 48
+  private const val SYSTEM_UI_PACKAGE = "com.android.systemui"
 
   // Accessibility focus moves into a new window once it is in the window list, and onto a new page
   // once it is laid out.
@@ -118,6 +121,9 @@ object ClipboardHistoryOverlay {
   /** The item with accessibility focus when the history opened, focused again when it closes. */
   private var focusBefore: AccessibilityNodeInfo? = null
 
+  /** The package of the screen the history was opened over, or null if not known. */
+  private var openedOver: CharSequence? = null
+
   /** The text whose actions are shown, or null while the list is shown. */
   private var chosen: String? = null
 
@@ -160,8 +166,14 @@ object ClipboardHistoryOverlay {
     val target = editBox?.takeIf { it.isEditable } ?: if (wasShowing) pasteTarget else null
     val before =
       if (wasShowing) focusBefore else service.findFocus(AccessibilityNodeInfo.FOCUS_ACCESSIBILITY)
+    val over =
+      if (wasShowing) {
+        openedOver
+      } else {
+        target?.packageName ?: before?.packageName ?: service.rootInActiveWindow?.packageName
+      }
     close(restoreFocus = false)
-    return show(service, target, before)
+    return show(service, target, before, over)
   }
 
   /** Removes the window, such as when the screen turns off or SandFly stops. */
@@ -190,6 +202,42 @@ object ClipboardHistoryOverlay {
     if (action in LEAVING_ACTIONS) close()
     return false
   }
+
+  /**
+   * Called when an app window of [packageName] is shown, or comes in front: the window closes when
+   * it is another app's than the one it was opened over. SandFly's own windows, the history's
+   * included, leave it open.
+   */
+  @JvmStatic
+  fun onAppWindowShown(packageName: CharSequence?) {
+    val service = service ?: return
+    if (closesFor(packageName, openedOver, service.packageName)) {
+      LogUtils.d(TAG, "Closing the clipboard history for a window of %s", packageName)
+      close()
+    }
+  }
+
+  /** Called when a call starts ringing or is answered or made, whose screen the window would hide. */
+  @JvmStatic
+  fun onCallStarted() {
+    close()
+  }
+
+  /**
+   * Whether a window of [windowPackage] shown over the history opened over [openedOver] closes it.
+   * Windows of no known package, SandFly's own, of [ownPackage], and System UI's, such as the
+   * clipboard preview that Copy shows, don't.
+   */
+  @JvmStatic
+  fun closesFor(
+    windowPackage: CharSequence?,
+    openedOver: CharSequence?,
+    ownPackage: CharSequence,
+  ): Boolean =
+    !windowPackage.isNullOrEmpty() &&
+      !TextUtils.equals(windowPackage, ownPackage) &&
+      !TextUtils.equals(windowPackage, SYSTEM_UI_PACKAGE) &&
+      !TextUtils.equals(windowPackage, openedOver)
 
   /** Takes Back and Escape presses while the window shows. Returns whether [event] is used up. */
   @JvmStatic
@@ -220,8 +268,9 @@ object ClipboardHistoryOverlay {
     if ((shown.diff(newConfig) and REBUILD_CHANGES) == 0) return
     val target = pasteTarget
     val before = focusBefore
+    val over = openedOver
     close(restoreFocus = false)
-    show(service, target, before)
+    show(service, target, before, over)
   }
 
   /** Whether [window] is the clipboard history's window. */
@@ -241,6 +290,7 @@ object ClipboardHistoryOverlay {
     service: AccessibilityService,
     target: AccessibilityNodeInfo?,
     before: AccessibilityNodeInfo?,
+    over: CharSequence?,
   ): Boolean {
     val context = ContextThemeWrapper(service, R.style.TalkBackSettings)
     val padding = dp(context, PADDING_DP)
@@ -279,6 +329,7 @@ object ClipboardHistoryOverlay {
     root = content
     pasteTarget = target
     focusBefore = before
+    openedOver = over
     shownConfig = Configuration(service.resources.configuration)
     ClipboardHistory.addListener(onChange)
     content.viewTreeObserver.addOnWindowFocusChangeListener(onWindowFocus)
@@ -300,6 +351,7 @@ object ClipboardHistoryOverlay {
     shownConfig = null
     pasteTarget = null
     focusBefore = null
+    openedOver = null
     chosen = null
     entries = emptyList()
     listAdapter = null
