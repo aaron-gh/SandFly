@@ -631,7 +631,7 @@ TalkBack stops speech when a finger touches the screen. To keep speech going unt
 
 ### Wrap around
 
-When you swipe past the last item on the screen, TalkBack stops once and then goes back to the first item. To stop at the end instead, turn off **Controls** > **Navigation** > **Wrap around**. Each swipe past the end then plays the end sound. This also applies to moving by heading, link, or control in apps, and to moving with a keyboard. Web pages can still wrap by themselves.
+When you swipe past the last item on the screen, TalkBack stops once and then goes back to the first item. To stop at the end instead, turn off **Controls** > **Navigation** > **Wrap around**. Each swipe or key press past the first or last item then says the item again with the end sound. Moving by heading, link, or control in apps stops at the ends too. Web pages can still wrap by themselves.
 
 **Wrap around** is also a reading control, so you can turn it on or off with a swipe up or down. It's on by default.
 
