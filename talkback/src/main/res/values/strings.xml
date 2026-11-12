@@ -5047,6 +5047,8 @@
   <string name="value_keep_models_30">30 minutes</string>
   <!-- Choice: recognition models stay in memory until SandFly stops. [CHAR_LIMIT=NONE] -->
   <string name="value_keep_models_until_stopped">Until SandFly stops</string>
+  <!-- List: the server that Whisper and on-device AI model files are downloaded from. [CHAR_LIMIT=NONE] -->
+  <string name="title_pref_model_download_server">Model download server</string>
   <!-- Choices of Auto stop after silence. [CHAR_LIMIT=30] -->
   <string-array name="pref_dictation_auto_stop_entries">
     <item>Off</item>
