@@ -120,11 +120,13 @@ object TraversalTreeCache {
   private var lastPivotWindowId = NO_WINDOW_ID
 
   /**
-   * Set when scrolling ahead moved the focused item off screen: its bounds before the page, the
-   * sum of scroll deltas then (see [FocusProcessorForLogicalNavigation.scrollDeltaSumY]) and which
-   * way the page went. The next navigation goes on from the item next to it.
+   * Set when scrolling ahead moved the focused item off screen: its bounds and its list's before
+   * the page, the sum of scroll deltas then (see
+   * [FocusProcessorForLogicalNavigation.scrollDeltaSumY]) and which way the page went. The next
+   * navigation goes on from the item next to it.
    */
   private var scrolledAwayBounds: Rect? = null
+  private val scrolledAwayListBounds = Rect()
   private var scrolledAwayDeltaSum = 0
   private var scrolledAwayForward = true
 
@@ -205,12 +207,20 @@ object TraversalTreeCache {
 
   /**
    * Records that scrolling ahead moved the focused node of window [windowId] off screen. It was at
-   * [bounds] when the sum of scroll deltas was [deltaSum], and the page went [forward] or back.
+   * [bounds] in a list at [listBounds] when the sum of scroll deltas was [deltaSum], and the page
+   * went [forward] or back.
    */
   @JvmStatic
-  fun rememberScrolledAway(windowId: Int, bounds: Rect, deltaSum: Int, forward: Boolean) {
+  fun rememberScrolledAway(
+    windowId: Int,
+    bounds: Rect,
+    listBounds: Rect,
+    deltaSum: Int,
+    forward: Boolean,
+  ) {
     lastPivotWindowId = windowId
     scrolledAwayBounds = Rect(bounds)
+    scrolledAwayListBounds.set(listBounds)
     scrolledAwayDeltaSum = deltaSum
     scrolledAwayForward = forward
   }
@@ -239,6 +249,21 @@ object TraversalTreeCache {
     if (forward) bottom - shift else top - shift
 
   /**
+   * How far an item at [item] in a list at [list] scrolled off it, given [shift] from the list's
+   * scroll deltas: at least far enough to leave the list, as the deltas of some lists, such as
+   * Compose lazy lists, aren't in pixels.
+   */
+  @JvmStatic
+  fun shiftOffList(shift: Int, item: Rect, list: Rect, forward: Boolean): Int =
+    if (list.isEmpty) {
+      shift
+    } else if (forward) {
+      maxOf(shift, item.bottom - list.top)
+    } else {
+      minOf(shift, item.top - list.bottom)
+    }
+
+  /**
    * The node to search on from when the focused node has been removed: the last node above the
    * place the last navigation started, so a swipe forward lands on whatever now occupies that
    * place, rather than on the top of the page. Falls back to the first node when the removal was
@@ -261,7 +286,13 @@ object TraversalTreeCache {
     val bounds = Rect()
     val away = scrolledAwayBounds
     if (away != null) {
-      val shift = FocusProcessorForLogicalNavigation.scrollDeltaSumY() - scrolledAwayDeltaSum
+      val shift =
+        shiftOffList(
+          FocusProcessorForLogicalNavigation.scrollDeltaSumY() - scrolledAwayDeltaSum,
+          away,
+          scrolledAwayListBounds,
+          scrolledAwayForward,
+        )
       val place = placeAfterScroll(away.top, away.bottom, shift, scrolledAwayForward)
       if (!scrolledAwayForward) {
         // The item before the one scrolled away ends at the place; a swipe back from the first
