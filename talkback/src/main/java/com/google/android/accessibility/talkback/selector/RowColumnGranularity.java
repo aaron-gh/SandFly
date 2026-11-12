@@ -23,6 +23,7 @@ import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.talkback.ActorState;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
+import com.google.android.accessibility.talkback.focusmanagement.SheetsGrid;
 import com.google.android.accessibility.talkback.selector.SelectorController.ContextualSetting;
 import com.google.android.accessibility.talkback.selector.SelectorController.Setting;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
@@ -57,7 +58,7 @@ public class RowColumnGranularity implements ContextualSetting {
   public boolean shouldActivateSetting(Context context, AccessibilityNodeInfoCompat node) {
     // This is controlled by the preference.
     return FeatureFlagReader.enableRowAndColumnOneGranularity(context)
-        && collectionState.getCollectionTransition() == CollectionState.NAVIGATE_ENTER
+        && enteredTable(node)
         && autoEnterEnabled(context);
   }
 
@@ -65,6 +66,21 @@ public class RowColumnGranularity implements ContextualSetting {
   boolean enteredTableWithoutAutoEnter(Context context) {
     return collectionState.getCollectionTransition() == CollectionState.NAVIGATE_ENTER
         && !autoEnterEnabled(context);
+  }
+
+  /** Whether the last focused node was a Google Sheets cell. */
+  private boolean wasInSheetsGrid;
+
+  /**
+   * Returns whether focus just entered a table: one with collection information, or the Google
+   * Sheets grid, which has none (see {@link SheetsGrid}).
+   */
+  private boolean enteredTable(AccessibilityNodeInfoCompat node) {
+    boolean inSheetsGrid = SheetsGrid.isCell(node);
+    boolean enteredSheetsGrid = inSheetsGrid && !wasInSheetsGrid;
+    wasInSheetsGrid = inSheetsGrid;
+    return enteredSheetsGrid
+        || collectionState.getCollectionTransition() == CollectionState.NAVIGATE_ENTER;
   }
 
   /** Returns whether Switch to table navigation in tables is on. */

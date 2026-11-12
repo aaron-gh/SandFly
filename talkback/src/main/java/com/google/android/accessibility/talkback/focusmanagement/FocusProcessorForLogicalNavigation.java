@@ -757,6 +757,16 @@ public class FocusProcessorForLogicalNavigation {
       @NonNull AccessibilityNodeInfoCompat pivot,
       @NonNull NavigationAction navigationAction,
       @Nullable EventId eventId) {
+    if (SheetsGrid.isCell(pivot)) {
+      // Google Sheets: its grid sets no table information, see SheetsGrid.
+      AccessibilityNodeInfoCompat cell =
+          SheetsGrid.navigate(pivot, navigationAction.targetType, navigationAction.searchDirection);
+      if (cell != null && setAccessibilityFocusInternal(cell, navigationAction, eventId)) {
+        return true;
+      }
+      showFailureMessageForTableNavigationAction(navigationAction, eventId);
+      return false;
+    }
     AccessibilityNodeInfoCompat tableRoot = AccessibilityNodeInfoUtils.getTableRoot(pivot);
     if (tableRoot == null) {
       LogUtils.w(TAG, "Cannot perform table navigation: invalid tableRoot.");
