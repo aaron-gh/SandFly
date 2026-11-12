@@ -105,6 +105,10 @@ public class FocusFeedbackMapper {
     touchStopsSpeech = stops;
   }
 
+  public static boolean touchStopsSpeech() {
+    return touchStopsSpeech;
+  }
+
   /** Maps touch-events to focus actions. */
   public static @Nullable Feedback mapTouchToFocusAction(
       EventId eventId, Variables variables, int depth) {

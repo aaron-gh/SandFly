@@ -44,6 +44,7 @@ import com.google.android.accessibility.talkback.Interpretation;
 import com.google.android.accessibility.talkback.Pipeline;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics;
+import com.google.android.accessibility.talkback.contextmenu.radial.RadialMenuController;
 import com.google.android.accessibility.talkback.directtouch.DirectTouchRegions;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.focusmanagement.action.TouchExplorationAction;
@@ -305,7 +306,9 @@ public class FocusProcessorForTapAndTouchExploration {
     touchInteractionStartTime = SystemClock.uptimeMillis();
 
     interpretationReceiver.input(eventId, null, Interpretation.TouchInteraction.create(true));
-    if (actorState.getSpeechState().isSpeaking()) {
+    // The circle menu speaks the item under the finger as the touch starts, before this event
+    // arrives, so stopping speech here would cut that item off.
+    if (actorState.getSpeechState().isSpeaking() && !RadialMenuController.getAnyShowing()) {
       // We refocus and re-announce a node if TalkBack is currently speaking.
       mayBeRefocusAction = true;
       interpretationReceiver.input(
