@@ -78,6 +78,9 @@ class ShizukuGrantService(private val context: Context?) : IShizukuGrants.Stub()
     if (which == ShizukuCommand.ACCESSIBILITY_SHORTCUT) {
       return if (argument == null) "No accessibility service" else performAccessibilityShortcut(argument)
     }
+    if (which == ShizukuCommand.START_SHORTCUT_ACTIVITY) {
+      return if (argument == null) "No accessibility shortcut" else startShortcutActivity(argument)
+    }
     if (which == ShizukuCommand.RESET_ACCESSIBILITY_AUDIO) {
       return AccessibilityAudioOutput.reset()
     }
@@ -463,8 +466,7 @@ class ShizukuGrantService(private val context: Context?) : IShizukuGrants.Stub()
    *
    * Turning a service on or off is a change to the enabled services. Opening one is only possible
    * through a shortcut that has the service, since Android tells only those services that their
-   * button was pressed. One of the user's shortcuts that has it is used; otherwise the service is
-   * put in the volume keys shortcut for the moment it takes, and the shortcut set back as it was.
+   * button was pressed; see [runAsShortcut].
    */
   private fun performAccessibilityShortcut(argument: String): String? {
     restoreVolumeKeys()
@@ -477,6 +479,37 @@ class ShizukuGrantService(private val context: Context?) : IShizukuGrants.Stub()
     if (!button) {
       return setServiceEnabled(component, !enabledServices().contains(component))
     }
+    return runAsShortcut(component, service = true)
+  }
+
+  /**
+   * Starts the accessibility shortcut activity in [argument] as Android's own shortcuts do. Some,
+   * such as Samsung's, need a permission that only Android's shortcuts have, so the activity is
+   * started with `am start` only where Android has no shortcut call.
+   */
+  private fun startShortcutActivity(argument: String): String? {
+    restoreVolumeKeys()
+    val component = ComponentName.unflattenFromString(argument)
+    if (!ShizukuCommand.isComponent(argument) || component == null) {
+      return "Bad accessibility shortcut $argument"
+    }
+    val error = runAsShortcut(component, service = false)
+    if (error != NO_SHORTCUT_CALL) return error
+    val command = ShizukuCommand.START_SHORTCUT_ACTIVITY.shellCommand(argument) ?: return error
+    return exec(ShizukuCommand.START_SHORTCUT_ACTIVITY.name, command)
+  }
+
+  /**
+   * Runs [component], an accessibility service or a shortcut activity, through one of Android's
+   * accessibility shortcuts. A [service] that is off is turned on first.
+   *
+   * Some Android versions, such as Samsung's, ignore the target named in the call and show a
+   * chooser when a shortcut has more than one target, so only a shortcut with [component] as its
+   * one target is used. One of the user's shortcuts is used if it is one; otherwise the volume keys
+   * shortcut is set to [component] alone for the moment it takes, and set back as it was.
+   */
+  private fun runAsShortcut(component: ComponentName, service: Boolean): String? {
+    val target = component.flattenToString()
     val manager =
       try {
         val binder =
@@ -494,7 +527,7 @@ class ShizukuGrantService(private val context: Context?) : IShizukuGrants.Stub()
     // Android 15 and later name the display and the kind of shortcut.
     val performNew = methods.firstOrNull { it.name == "performAccessibilityShortcut" && it.parameterCount == 3 }
     val performOld = methods.firstOrNull { it.name == "performAccessibilityShortcut" && it.parameterCount == 1 }
-    if (performNew == null && performOld == null) return "No accessibility shortcut call"
+    if (performNew == null && performOld == null) return NO_SHORTCUT_CALL
     // Before Android 15, a shortcut can be run only as the volume keys shortcut.
     val kinds =
       if (performNew != null) listOf(HARDWARE_SHORTCUT, SOFTWARE_SHORTCUT, GESTURE_SHORTCUT)
@@ -504,7 +537,7 @@ class ShizukuGrantService(private val context: Context?) : IShizukuGrants.Stub()
       if (performNew != null) performNew.invoke(manager, 0, kind, target)
       else performOld?.invoke(manager, target)
     }
-    fun hasTarget(kind: Int): Boolean =
+    fun isOnlyTarget(kind: Int): Boolean =
       try {
         val get = methods.firstOrNull { it.name == "getAccessibilityShortcutTargets" }
         val targets =
@@ -513,7 +546,7 @@ class ShizukuGrantService(private val context: Context?) : IShizukuGrants.Stub()
             1 -> get.invoke(manager, kind)
             else -> null
           } as? List<*>
-        targets.orEmpty().any { ComponentName.unflattenFromString(it.toString()) == component }
+        targets?.size == 1 && ComponentName.unflattenFromString(targets[0].toString()) == component
       } catch (e: ReflectiveOperationException) {
         false
       }
@@ -538,11 +571,11 @@ class ShizukuGrantService(private val context: Context?) : IShizukuGrants.Stub()
     }
 
     try {
-      if (!isConnected()) {
+      if (service && !isConnected()) {
         setServiceEnabled(component, true)?.let { return it }
         if (!waitFor { isConnected() }) return "$target didn't start"
       }
-      kinds.firstOrNull { hasTarget(it) }?.let {
+      kinds.firstOrNull { isOnlyTarget(it) }?.let {
         perform(it)
         return null
       }
@@ -554,9 +587,10 @@ class ShizukuGrantService(private val context: Context?) : IShizukuGrants.Stub()
         return e.toString()
       }
       try {
-        val value = if (old.isNullOrEmpty()) target else "$old:$target"
-        exec("settings", listOf("settings", "put", "secure", VOLUME_KEYS_SETTING, value))?.let { return it }
-        waitFor { hasTarget(volumeKeys) }
+        exec("settings", listOf("settings", "put", "secure", VOLUME_KEYS_SETTING, target))?.let { return it }
+        // Otherwise the shortcut would run the user's own targets.
+        if (!waitFor { isOnlyTarget(volumeKeys) }) return "The volume keys shortcut didn't change"
+        // Android runs the shortcut on its main thread, before it reads the shortcut set back.
         perform(volumeKeys)
         return null
       } finally {
@@ -652,6 +686,8 @@ class ShizukuGrantService(private val context: Context?) : IShizukuGrants.Stub()
     const val ENABLED_SERVICES_SETTING = "enabled_accessibility_services"
     /** The volume keys shortcut as it was while a shortcut run has changed it. */
     const val VOLUME_KEYS_BACKUP = "/data/local/tmp/sandfly-volume-keys-shortcut"
+    /** What [runAsShortcut] returns where Android has no call to run a shortcut. */
+    const val NO_SHORTCUT_CALL = "No accessibility shortcut call"
     /** Written to [VOLUME_KEYS_BACKUP] when the shortcut had no setting. */
     const val NO_SETTING = "\u0000"
     /** AccessibilityManager.ACCESSIBILITY_SHORTCUT_KEY, the volume keys shortcut, before Android 15. */
