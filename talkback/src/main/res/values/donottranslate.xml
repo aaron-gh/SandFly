@@ -427,6 +427,11 @@
     <string name="pref_selector_speech_stream_key" translatable="false">pref_selector_speech_stream_key</string>
     <string name="pref_selector_audio_output_key" translatable="false">pref_selector_audio_output_key</string>
     <string name="pref_selector_sound_mode_key" translatable="false">pref_selector_sound_mode_key</string>
+    <string name="pref_selector_media_volume_key" translatable="false">pref_selector_media_volume_key</string>
+    <string name="pref_selector_call_volume_key" translatable="false">pref_selector_call_volume_key</string>
+    <string name="pref_selector_ring_volume_key" translatable="false">pref_selector_ring_volume_key</string>
+    <string name="pref_selector_notification_volume_key" translatable="false">pref_selector_notification_volume_key</string>
+    <string name="pref_selector_alarm_volume_key" translatable="false">pref_selector_alarm_volume_key</string>
     <string name="pref_selector_equalizer_key" translatable="false">pref_selector_equalizer_key</string>
     <string name="pref_selector_equalizer_32_key" translatable="false">pref_selector_equalizer_32_key</string>
     <string name="pref_selector_equalizer_64_key" translatable="false">pref_selector_equalizer_64_key</string>
@@ -2143,6 +2148,7 @@
     <bool name="pref_selector_speech_stream_default">false</bool>
     <bool name="pref_selector_audio_output_default">false</bool>
     <bool name="pref_selector_sound_mode_default">false</bool>
+    <bool name="pref_selector_stream_volume_default">false</bool>
     <bool name="pref_selector_equalizer_default">false</bool>
     <bool name="pref_selector_auto_translation_default">false</bool>
     <bool name="pref_selector_vertical_navigation_default">false</bool>
@@ -2543,6 +2549,11 @@
     <string name="selector_speech_stream" translatable="false">SELECTOR_SPEECH_STREAM</string>
     <string name="selector_audio_output" translatable="false">SELECTOR_AUDIO_OUTPUT</string>
     <string name="selector_sound_mode" translatable="false">SELECTOR_SOUND_MODE</string>
+    <string name="selector_media_volume" translatable="false">SELECTOR_MEDIA_VOLUME</string>
+    <string name="selector_call_volume" translatable="false">SELECTOR_CALL_VOLUME</string>
+    <string name="selector_ring_volume" translatable="false">SELECTOR_RING_VOLUME</string>
+    <string name="selector_notification_volume" translatable="false">SELECTOR_NOTIFICATION_VOLUME</string>
+    <string name="selector_alarm_volume" translatable="false">SELECTOR_ALARM_VOLUME</string>
     <string name="selector_equalizer" translatable="false">SELECTOR_EQUALIZER</string>
     <string name="selector_equalizer_32" translatable="false">SELECTOR_EQUALIZER_32</string>
     <string name="selector_equalizer_64" translatable="false">SELECTOR_EQUALIZER_64</string>
