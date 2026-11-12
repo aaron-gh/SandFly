@@ -34,6 +34,7 @@ import com.google.android.accessibility.talkback.Pipeline
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.contextmenu.ContextMenu
 import com.google.android.accessibility.talkback.contextmenu.ContextMenuItem
+import com.google.android.accessibility.talkback.focusmanagement.FocusFeedbackMapper
 import com.google.android.accessibility.utils.FeatureSupport
 import com.google.android.accessibility.utils.FormFactorUtils
 import com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED
@@ -107,6 +108,7 @@ class RadialMenuController(
     handler.removeCallbacks(hintRunnable)
     val menuView = view ?: return
     view = null
+    anyShowing = false
     items = emptyList()
     clearPassthroughRegion()
     try {
@@ -148,6 +150,10 @@ class RadialMenuController(
 
   override fun onTouchStarted() {
     handler.removeCallbacks(hintRunnable)
+    // In place of touch exploration's, which would also stop the item spoken next.
+    if (FocusFeedbackMapper.touchStopsSpeech()) {
+      pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.part().setInterruptGentle(true))
+    }
   }
 
   override fun onItemFocused(index: Int) {
@@ -205,6 +211,7 @@ class RadialMenuController(
       return null
     }
     view = menuView
+    anyShowing = true
     setPassthroughRegion()
     return menuView
   }
@@ -274,6 +281,15 @@ class RadialMenuController(
      * action runs on the screen under the menu.
      */
     const val DEFERRED_ACTION_DELAY_MS = 300L
+
+    /**
+     * Whether a circle menu is showing, for touch handling that has no reference to the menu. The
+     * menu speaks the touched item itself, so touching the screen must not stop that speech.
+     */
+    @JvmStatic
+    @Volatile
+    var anyShowing = false
+      private set
 
     /** Scales with one to eight notes, from TalkBack 8.1. */
     private val SCALES =
