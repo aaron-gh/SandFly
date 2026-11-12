@@ -528,12 +528,12 @@ When you choose an action for a gesture, the categories of actions are collapsed
 
 ### Macros
 
-**Macros** makes lists of steps that run one after another, without a script. A step can be **Run command**, any command; **Wait**, a number of seconds; **Tap item**, which activates the first item on screen whose text or description contains a text, waiting for it to appear up to a set time, 3 seconds by default; **Open app**; or **Type text**, which types in the focused edit field, at the cursor or in place of its text. Each step has **Edit**, **Add step after**, **Move up**, **Move down** and **Delete**. **Run now** runs the macro.
+**Macros** makes lists of steps that run one after another, without a script. A step can be **Run command**, any command; **Wait**, a number of seconds; **Tap item**, which activates the first item on screen whose text or description contains a text, waiting for it to appear up to a set time, 3 seconds by default; **Open app**; or **Type text**, which types in the focused edit field, at the cursor or in place of its text. Each step has **Edit**, **Add step after**, **Move up**, **Move down** and **Delete**. **Add step** adds a step after the step added last, as shown under it, or at the end. **Run now** runs the macro.
 
 Steps can depend on conditions:
 
-*   **If**, **Else if**, **Else** and **End if** run the steps of the first branch whose condition is met. **Add step** adds **If** with its **End if**.
-*   **Repeat** runs the steps up to **End repeat** a number of times, up to 1000; **Repeat while** runs them while a condition is met, up to 1000 times. **Exit loop** goes on after the **End repeat** of the repeat it is in.
+*   **If**, **Else if**, **Else** and **End if** run the steps of the first branch whose condition is met. **Add step** adds **If** with its **End if**, and the steps added next go in its block. **Else if** or **Else** added right after **End if** goes before it.
+*   **Repeat** runs the steps up to **End repeat** a number of times, up to 1000; **Repeat while** runs them while a condition is met, up to 1000 times. The steps added after a repeat go in its block. **Exit loop** goes on after the **End repeat** of the repeat it is in.
 *   **Wait until** waits until a condition is met, 10 seconds by default; the macro stops after that.
 *   **Stop macro** stops the macro.
 *   **Run only when**, on the macro's screen, is a condition the macro needs to run. When it isn't met, the command does nothing, and **Run now** says so.

@@ -8,8 +8,14 @@
     <string name="macro_add">Add macro</string>
     <!-- Button on a macro's screen that runs the macro now, to test it. [CHAR LIMIT=40] -->
     <string name="macro_run_now">Run now</string>
-    <!-- Button that adds a step to the end of a macro. [CHAR LIMIT=40] -->
+    <!-- Button that adds a step to a macro, after the step added last or at the end. [CHAR LIMIT=40] -->
     <string name="macro_add_step">Add step</string>
+    <!-- Shown under Add step: the step is added at the end of the macro. [CHAR LIMIT=NONE] -->
+    <string name="macro_add_at_end">At the end</string>
+    <!-- Shown under Add step: the step is added before the first step of the macro. [CHAR LIMIT=NONE] -->
+    <string name="macro_add_at_start">At the start</string>
+    <!-- Shown under Add step: where the step is added. step is the number of the step it follows, name that step. [CHAR LIMIT=NONE] -->
+    <string name="macro_add_after">After step <xliff:g id="step" example="2">%1$d</xliff:g>: <xliff:g id="name" example="If App in front: Chrome">%2$s</xliff:g></string>
     <!-- Heading of the list of a macro's steps, in the order they run. [CHAR LIMIT=40] -->
     <string name="macro_steps">Steps</string>
     <!-- Shown in place of the steps of a macro that has none. [CHAR LIMIT=40] -->

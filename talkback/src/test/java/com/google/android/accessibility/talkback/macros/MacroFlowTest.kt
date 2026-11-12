@@ -183,6 +183,31 @@ class MacroFlowTest {
   }
 
   @Test
+  fun elseIfAndElseAfterEndIfGoIntoTheBlock() {
+    val chrome = Condition(listOf(Clause(AppInFront("com.android.chrome"))))
+    val steps = listOf(If(keyboard), Wait(1), EndIf)
+    assertEquals(2, Macros.insertPosition(steps, 3, ElseIf(chrome)))
+    assertEquals(2, Macros.insertPosition(steps, 3, Else))
+    assertEquals(3, Macros.insertPosition(steps, 3, Wait(2)))
+    assertEquals(2, Macros.insertPosition(steps, 2, ElseIf(chrome)))
+    assertEquals(0, Macros.insertPosition(steps, -1, Else))
+    assertEquals(2, Macros.insertPosition(steps, 9, Else))
+  }
+
+  @Test
+  fun addPositionFollowsItsStep() {
+    // The next step goes after step 2 (index 1).
+    assertEquals(3, Macros.positionAfterMove(2, 1, 2))
+    assertEquals(1, Macros.positionAfterMove(2, 0, 3))
+    assertEquals(3, Macros.positionAfterMove(2, 3, 0))
+    assertEquals(2, Macros.positionAfterMove(2, 3, 4))
+    assertEquals(0, Macros.positionAfterMove(0, 1, 0))
+    assertEquals(2, Macros.positionAfterRemoval(3, setOf(0, 5)))
+    assertEquals(1, Macros.positionAfterRemoval(3, setOf(1, 2)))
+    assertEquals(setOf(0, 2), Macros.removedIndices(listOf(If(keyboard), Wait(1), EndIf), 0))
+  }
+
+  @Test
   fun conditionsAndBlocksSurviveJson() {
     val condition =
       Condition(

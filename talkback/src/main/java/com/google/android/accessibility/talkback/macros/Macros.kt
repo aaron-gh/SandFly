@@ -522,6 +522,13 @@ object Macros {
    */
   @JvmStatic
   fun removed(steps: List<Step>, index: Int): List<Step>? {
+    val drop = removedIndices(steps, index) ?: return null
+    return steps.filterIndexed { i, _ -> i !in drop }
+  }
+
+  /** Returns the indices of the steps [removed] takes out, or null when [index] isn't a step. */
+  @JvmStatic
+  fun removedIndices(steps: List<Step>, index: Int): Set<Int>? {
     if (index !in steps.indices) return null
     val drop = hashSetOf(index)
     val step = steps[index]
@@ -543,8 +550,40 @@ object Macros {
         }
       }
     }
-    return steps.filterIndexed { i, _ -> i !in drop }
+    return drop
   }
+
+  /**
+   * Returns where [step] goes when it is added at [position] of [steps]: an [ElseIf] or [Else] right
+   * after an [EndIf] goes before it, into that If block, since it can't follow End if.
+   */
+  @JvmStatic
+  fun insertPosition(steps: List<Step>, position: Int, step: Step): Int {
+    val at = position.coerceIn(0, steps.size)
+    return if ((step is ElseIf || step === Else) && at > 0 && steps[at - 1] === EndIf) at - 1 else at
+  }
+
+  /**
+   * Returns the position after the step that was before [position] once the step at [from] has moved
+   * to [to], so that the next step added still follows the same step.
+   */
+  @JvmStatic
+  fun positionAfterMove(position: Int, from: Int, to: Int): Int {
+    val anchor = position - 1
+    if (anchor < 0) return 0
+    val moved =
+      when {
+        anchor == from -> to
+        from < anchor && anchor <= to -> anchor - 1
+        to <= anchor && anchor < from -> anchor + 1
+        else -> anchor
+      }
+    return moved + 1
+  }
+
+  /** Returns [position] once the steps at [dropped] are deleted. */
+  @JvmStatic
+  fun positionAfterRemoval(position: Int, dropped: Set<Int>): Int = position - dropped.count { it < position }
 
   private fun waitText(context: Context, millis: Long): String =
     if (millis % 1000 == 0L) {
