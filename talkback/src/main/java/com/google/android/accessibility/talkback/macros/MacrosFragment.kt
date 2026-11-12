@@ -684,11 +684,12 @@ class MacroConditionFragment : MacroEditorFragment() {
     val clauses = condition.clauses
     if (clauses.size < Macros.MAX_CLAUSES) {
       screen.action(getString(R.string.macro_add_test)) {
-        askTest(null) { test ->
-          val current = condition() ?: return@askTest
-          save(Macros.Condition(current.clauses + Macros.Clause(test)))
-          rebuild()
-          listView?.let { focusAfterLayout(it, findPreference(rowKey(current.clauses.size)), null) }
+        if (condition()?.clauses.isNullOrEmpty()) {
+          addTest(or = false)
+        } else {
+          // A test after the first is joined to the ones before it with and or or.
+          val joins = listOf(getString(R.string.macro_join_with_and), getString(R.string.macro_join_with_or))
+          choose(getString(R.string.macro_add_test), joins) { addTest(or = it == 1) }
         }
       }
     }
@@ -711,6 +712,16 @@ class MacroConditionFragment : MacroEditorFragment() {
     }
     clauses.forEachIndexed { index, clause ->
       list.addPreference(ClauseRow(context, clauses, index, clauseText(index, clause)))
+    }
+  }
+
+  /** Asks for a test and adds it at the end, joined to the tests before it with or when [or]. */
+  private fun addTest(or: Boolean) {
+    askTest(null) { test ->
+      val current = condition() ?: return@askTest
+      save(Macros.Condition(current.clauses + Macros.Clause(test, or = or)))
+      rebuild()
+      listView?.let { focusAfterLayout(it, findPreference(rowKey(current.clauses.size)), null) }
     }
   }
 
