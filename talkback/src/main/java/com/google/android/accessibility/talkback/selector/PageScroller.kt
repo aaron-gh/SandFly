@@ -36,9 +36,9 @@ import com.google.android.accessibility.utils.Performance.EventId
 
 /**
  * Scrolls a page for the Scroll reading control. The list gets its scroll action, as before. Where
- * no list takes the action, or the list doesn't move, a swipe is sent to the list, or to the middle
- * of the window when no list is found, as a two-finger swipe passed to the app does. Some lists
- * move only for touches.
+ * no list takes the action, or the list doesn't move, a swipe is sent to the list, as a two-finger
+ * swipe passed to the app does. Some lists move only for touches. Without a list there is no swipe:
+ * on a home screen or the status bar it would open the app drawer or the notification shade.
  */
 class PageScroller(
   private val service: AccessibilityService,
@@ -65,15 +65,14 @@ class PageScroller(
       pipeline.returnFeedback(eventId, Feedback.focusDirection(direction))
       return
     }
-    val focusList = focus?.let { VerticalNavigation.listOf(it) }
-    val list = focusList ?: windowList(focus)
+    val list = focus?.let { VerticalNavigation.listOf(it) } ?: windowList(focus)
     val listTakesAction = list != null && AccessibilityNodeInfoUtils.supportsAction(list, action)
     val before = list?.let { contentOf(it) }
     val scrollEvents = FocusProcessorForLogicalNavigation.scrollEventCount()
     if (!pipeline.returnFeedback(eventId, Feedback.focusDirection(direction))) {
-      if (swipesAfterFailedAction(list != null, listTakesAction)) {
+      if (list != null && swipesAfterFailedAction(listFound = true, listTakesAction)) {
         // The gesture that adjusted the reading control may still be ending.
-        handler.postDelayed({ swipe(focusList, focus, forward) }, GESTURE_END_WAIT_MS)
+        handler.postDelayed({ swipe(list, forward) }, GESTURE_END_WAIT_MS)
       }
       return
     }
@@ -82,8 +81,8 @@ class PageScroller(
         val moved =
           FocusProcessorForLogicalNavigation.scrollEventCount() != scrollEvents ||
             (list != null && (!list.refresh() || contentOf(list) != before))
-        if (!moved) {
-          swipe(focusList, focus, forward)
+        if (!moved && list != null) {
+          swipe(list, forward)
         }
       },
       CHECK_DELAY_MS,
@@ -151,28 +150,14 @@ class PageScroller(
     return null
   }
 
-  /**
-   * Swipes over [focusList], the list with accessibility focus, or else over the middle of the
-   * window of [focus].
-   */
-  private fun swipe(
-    focusList: AccessibilityNodeInfoCompat?,
-    focus: AccessibilityNodeInfoCompat?,
-    forward: Boolean,
-  ) {
-    if (!SyntheticTouches.isAvailable()) return
-    val node =
-      focusList?.takeIf { it.refresh() }
-        ?: focus?.let { AccessibilityNodeInfoUtils.getRoot(it) }
-        ?: service.rootInActiveWindow?.let { AccessibilityNodeInfoCompat.wrap(it) }
-    val area = Rect()
-    node?.getBoundsInScreen(area)
+  /** Swipes over [list], a list that scrolls up and down. Nothing happens once it is gone. */
+  private fun swipe(list: AccessibilityNodeInfoCompat, forward: Boolean) {
+    if (!SyntheticTouches.isAvailable() || !list.refresh()) return
+    val bounds = Rect()
+    list.getBoundsInScreen(bounds)
     val metrics = service.resources.displayMetrics
-    val screen = Rect(0, 0, metrics.widthPixels, metrics.heightPixels)
-    if (screen.isEmpty) return
-    if (area.isEmpty || !area.intersect(screen) || area.isEmpty) {
-      area.set(screen)
-    }
+    val area =
+      swipeArea(bounds, Rect(0, 0, metrics.widthPixels, metrics.heightPixels)) ?: return
     val line = swipeLine(area, forward)
     val path =
       Path().apply {
@@ -207,11 +192,22 @@ class PageScroller(
 
     /**
      * Whether to swipe when the scroll action couldn't be sent. A list that doesn't take the action
-     * is at its start or end, where a swipe would only pull it to refresh or stretch it.
+     * is at its start or end, where a swipe would only pull it to refresh or stretch it. Without a
+     * list, a swipe would go to whatever is under it, such as a home screen or the status bar.
      */
     @JvmStatic
     fun swipesAfterFailedAction(listFound: Boolean, listTakesAction: Boolean): Boolean =
-      !listFound || listTakesAction
+      listFound && listTakesAction
+
+    /**
+     * The part of the list at [listBounds] on [screen] that the swipe goes over, or null when none
+     * of the list is on the screen.
+     */
+    @JvmStatic
+    fun swipeArea(listBounds: Rect, screen: Rect): Rect? {
+      val area = Rect(listBounds)
+      return if (!area.isEmpty && area.intersect(screen) && !area.isEmpty) area else null
+    }
 
     /**
      * The swipe over [area]: its x, then the y it starts and ends at. Scrolling forward shows what

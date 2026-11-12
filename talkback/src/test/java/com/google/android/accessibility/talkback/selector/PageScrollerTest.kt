@@ -19,6 +19,7 @@ package com.google.android.accessibility.talkback.selector
 import android.graphics.Rect
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
+import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -56,9 +57,27 @@ class PageScrollerTest {
   }
 
   @Test
-  fun noListOrAListThatRejectedTheActionGetsASwipe() {
-    assertTrue(PageScroller.swipesAfterFailedAction(listFound = false, listTakesAction = false))
+  fun aListThatRejectedTheActionGetsASwipe() {
     assertTrue(PageScroller.swipesAfterFailedAction(listFound = true, listTakesAction = true))
+  }
+
+  @Test
+  fun noListGetsNoSwipe() {
+    assertFalse(PageScroller.swipesAfterFailedAction(listFound = false, listTakesAction = false))
+    assertFalse(PageScroller.swipesAfterFailedAction(listFound = false, listTakesAction = true))
+  }
+
+  @Test
+  fun theSwipeAreaIsThePartOfTheListOnTheScreen() {
+    val screen = Rect(0, 0, 1000, 1000)
+    assertEquals(Rect(0, 200, 1000, 1000), PageScroller.swipeArea(list, screen))
+  }
+
+  @Test
+  fun aListOffTheScreenOrWithoutSizeGetsNoSwipe() {
+    val screen = Rect(0, 0, 1000, 1000)
+    assertNull(PageScroller.swipeArea(Rect(0, 1100, 1000, 1500), screen))
+    assertNull(PageScroller.swipeArea(Rect(), screen))
   }
 
   @Test
