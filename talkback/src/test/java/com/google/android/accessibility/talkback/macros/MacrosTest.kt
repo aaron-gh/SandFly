@@ -74,6 +74,7 @@ class MacrosTest {
           RunCommand(back()),
           Wait(1_500),
           Tap("Send", 5_000),
+          Tap("Reply.*Anna", 5_000, regex = true),
           OpenApp(gmail),
           TypeText("On my way", replace = true),
           TypeText("Thanks"),
@@ -200,6 +201,7 @@ class MacrosTest {
     assertEquals("Wait 2 seconds", Macros.describe(context, Wait(2_000)))
     assertEquals("Wait 500 milliseconds", Macros.describe(context, Wait(500)))
     assertEquals("Tap Send", Macros.describe(context, Tap("Send")))
+    assertEquals("Tap ^Re (regular expression)", Macros.describe(context, Tap("^Re", regex = true)))
     assertEquals("Type Hello", Macros.describe(context, TypeText("Hello")))
     assertEquals("Replace text with Hello", Macros.describe(context, TypeText("Hello", replace = true)))
   }
@@ -277,5 +279,62 @@ class MacrosTest {
     )
     assertEquals(mapOf("g2" to otherValue), GestureProfiles.read(prefs).single().gestures)
     assertEquals(listOf(CommandMenus.Command(back())), CommandMenus.custom(prefs).single().items)
+  }
+
+  @Test
+  fun regexTestsSurviveJson() {
+    val condition =
+      Macros.Condition(
+        listOf(
+          Macros.Clause(Macros.ItemOnScreen("^Anna", regex = true)),
+          Macros.Clause(Macros.FocusedItem("\\d+ new", Macros.Kind.CLICKABLE, regex = true), or = true),
+          Macros.Clause(Macros.ItemOnScreen("Send")),
+        )
+      )
+    val macro = Macro("a", "Reply", listOf(Macros.If(condition), Macros.EndIf))
+    assertEquals(listOf(macro), Macros.fromJson(Macros.toJson(listOf(macro))))
+  }
+
+  @Test
+  fun describeRegexTest() {
+    assertEquals(
+      "Item on screen: ^Anna (regular expression)",
+      Macros.describe(context, Macros.Clause(Macros.ItemOnScreen("^Anna", regex = true))),
+    )
+  }
+
+  @Test
+  fun compilePatternFindsIgnoringCase() {
+    val pattern = Macros.compilePattern("reply.*anna")!!
+    assertTrue(pattern.matcher("Reply to Anna Smith").find())
+    assertFalse(pattern.matcher("Reply to Bob").find())
+    assertTrue(Macros.compilePattern("^\\d+ new\\b")!!.matcher("12 new messages").find())
+  }
+
+  @Test
+  fun compilePatternRefusesInvalidAndSlowPatterns() {
+    for (pattern in listOf("", "(", "[a", "(a+)+", "(a|aa)*", "(x*){2,}", "((ab)*c)+", "(?:a|b)+", "([a-z]+\\s?)*", "(\\d{1,2})+")) {
+      assertNull(pattern, Macros.compilePattern(pattern))
+    }
+  }
+
+  @Test
+  fun compilePatternAcceptsGroupsThatAreNotRepeatedOrHaveNoRepetition() {
+    for (
+      pattern in
+        listOf(
+          "(Mon|Tue)day",
+          "(ab)+",
+          "(a+)?",
+          "(a{1})*",
+          "[(+*]+",
+          "\\(a+\\)+",
+          "\\Q(a+)+\\E",
+          "(?i:abc)+",
+          "(?<name>a)b+",
+        )
+    ) {
+      assertTrue(pattern, Macros.compilePattern(pattern) != null)
+    }
   }
 }

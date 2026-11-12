@@ -145,6 +145,12 @@
     <string name="macro_join_and"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g> and <xliff:g id="second" example="Focused item: Editable">%2$s</xliff:g></string>
     <!-- Tests of a condition joined with or; and goes before or, which the comma shows. [CHAR LIMIT=NONE] -->
     <string name="macro_join_or"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g>, or <xliff:g id="second" example="Screen locked">%2$s</xliff:g></string>
+    <!-- Check box in the macro item text dialogs: the text is a regular expression. [CHAR LIMIT=40] -->
+    <string name="macro_regex">Regular expression</string>
+    <!-- Error under the item text when it is not a regular expression macros can use. [CHAR LIMIT=NONE] -->
+    <string name="macro_invalid_regex">Not a usable regular expression. Repeated groups can\'t contain repetition or |.</string>
+    <!-- Item text of a macro step or test that is a regular expression. [CHAR LIMIT=NONE] -->
+    <string name="macro_regex_value"><xliff:g id="pattern" example="Reply.*Anna">%1$s</xliff:g> (regular expression)</string>
     <!-- Hint of the text field for the text of the item a Focused item test looks for, which can be left empty. [CHAR LIMIT=60] -->
     <string name="macro_test_label_optional">Item text (optional)</string>
     <!-- Title of the dialog that asks for the kind of item a test looks for. [CHAR LIMIT=40] -->

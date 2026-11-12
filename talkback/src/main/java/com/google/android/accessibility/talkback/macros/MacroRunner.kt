@@ -343,16 +343,21 @@ object MacroRunner {
     }
 
     private fun tap(index: Int, step: Macros.Tap) {
+      val label = LabelMatch(step.label, step.regex)
+      if (!label.isUsable) {
+        fail(index, step, "regular expression not usable", found = true)
+        return
+      }
       val deadline = SystemClock.uptimeMillis() + step.timeoutMillis
-      searchHandler().post { search(index, step, deadline) }
+      searchHandler().post { search(index, step, label, deadline) }
     }
 
-    /** Looks for the item of [step] on the search thread until [deadline], and clicks it. */
-    private fun search(index: Int, step: Macros.Tap, deadline: Long) {
+    /** Looks for the item of [step] by [label] on the search thread until [deadline], and clicks it. */
+    private fun search(index: Int, step: Macros.Tap, label: LabelMatch, deadline: Long) {
       if (finished) return
       val clicked =
         try {
-          val node = findItem(service, step.label)
+          val node = findItem(service, label)
           // The run can be stopped while the windows are read.
           if (finished) return
           node?.let { click(it) }
@@ -364,7 +369,7 @@ object MacroRunner {
         clicked == true -> mainHandler.post { ifActive { later(STEP_GAP_MS) { runStep(index + 1) } } }
         clicked == false -> mainHandler.post { ifActive { fail(index, step, "click not performed", found = true) } }
         SystemClock.uptimeMillis() + POLL_MS <= deadline ->
-          searchHandler?.postDelayed({ search(index, step, deadline) }, POLL_MS)
+          searchHandler?.postDelayed({ search(index, step, label, deadline) }, POLL_MS)
         else -> mainHandler.post { ifActive { fail(index, step, "item not found") } }
       }
     }
@@ -404,18 +409,39 @@ object MacroRunner {
   }
 
   /**
+   * Looks for the text of a macro step or test in the texts of items: as a text they contain,
+   * ignoring case, or for [regex] as a regular expression found in them. A regular expression that
+   * [Macros.compilePattern] refuses matches nothing.
+   */
+  private class LabelMatch(label: String, private val regex: Boolean) {
+    private val target = label.trim()
+    private val pattern = if (regex) Macros.compilePattern(target) else null
+
+    val isEmpty: Boolean = target.isEmpty()
+
+    /** Whether there is something to look for. */
+    val isUsable: Boolean = !isEmpty && (!regex || pattern != null)
+
+    /** Whether [text] is the text looked for. A regular expression is only ever found in a text. */
+    fun isExactly(text: String): Boolean = !regex && text.equals(target, ignoreCase = true)
+
+    fun isIn(text: CharSequence): Boolean =
+      if (regex) pattern?.matcher(text.take(Macros.MAX_PATTERN_INPUT))?.find() == true
+      else text.contains(target, ignoreCase = true)
+  }
+
+  /**
    * The item whose text or description is [label], ignoring case, or else the first one whose text
-   * or description contains it, in the active window first, then from the top window down.
-   * SandFly's own overlays are left out.
+   * or description contains it or, for a regular expression, matches it, in the active window
+   * first, then from the top window down. SandFly's own overlays are left out.
    */
   private fun findItem(
     service: TalkBackService,
-    label: String,
+    label: LabelMatch,
     kind: Macros.Kind? = null,
     anyMatch: Boolean = false,
   ): AccessibilityNodeInfo? {
-    val target = label.trim()
-    if (target.isEmpty()) return null
+    if (!label.isUsable) return null
     val roots =
       service.windows
         .filter { it.type != AccessibilityWindowInfo.TYPE_ACCESSIBILITY_OVERLAY }
@@ -435,8 +461,8 @@ object MacroRunner {
             else texts(node)
           for (text in texts) {
             val trimmed = text.toString().trim()
-            if (trimmed.equals(target, ignoreCase = true)) return node
-            if (partial == null && trimmed.contains(target, ignoreCase = true)) {
+            if (label.isExactly(trimmed)) return node
+            if (partial == null && label.isIn(trimmed)) {
               if (anyMatch) return node
               partial = node
             }
@@ -453,12 +479,14 @@ object MacroRunner {
   /** Returns whether the macro condition test [test] is met. Called on the search thread. */
   private fun check(service: TalkBackService, test: Macros.Test): Boolean =
     when (test) {
-      is Macros.ItemOnScreen -> findItem(service, test.label, test.kind, anyMatch = true) != null
+      is Macros.ItemOnScreen ->
+        findItem(service, LabelMatch(test.label, test.regex), test.kind, anyMatch = true) != null
       is Macros.FocusedItem -> {
         val focused = service.findFocus(AccessibilityNodeInfo.FOCUS_ACCESSIBILITY)
+        val label = LabelMatch(test.label, test.regex)
         focused != null &&
           (test.kind == null || isKind(focused, test.kind)) &&
-          (test.label.isBlank() || containsText(focused, test.label.trim()))
+          (label.isEmpty || containsText(focused, label))
       }
       is Macros.AppInFront -> activePackage(service) == test.packageName
       Macros.KeyboardShown -> service.windows.any { it.type == AccessibilityWindowInfo.TYPE_INPUT_METHOD }
@@ -484,15 +512,15 @@ object MacroRunner {
       AccessibilityNodeInfoCompat.wrap(node).stateDescription,
     )
 
-  /** Returns whether the text of [node] or of the items in it contains [label], ignoring case. */
-  private fun containsText(node: AccessibilityNodeInfo, label: String): Boolean {
+  /** Returns whether the text of [node] or of the items in it has [label] in it. */
+  private fun containsText(node: AccessibilityNodeInfo, label: LabelMatch): Boolean {
     val queue = ArrayDeque<AccessibilityNodeInfo>()
     queue.add(node)
     var count = 0
     while (queue.isNotEmpty() && count < MAX_FOCUS_NODES) {
       val item = queue.removeFirst()
       count++
-      if (texts(item).any { it.contains(label, ignoreCase = true) }) return true
+      if (texts(item).any { label.isIn(it) }) return true
       for (i in 0 until item.childCount) {
         item.getChild(i)?.let { queue.add(it) }
       }
