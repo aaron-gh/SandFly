@@ -420,6 +420,7 @@ public class SpeechRecognizerPerformer {
     executeCommandDelayHandler.postDelayed(
         stopDictation, Math.max(maxRecognitionDelayMs, MIN_DICTATION_MS));
     SandflyDictation.listen(
+        correctsDictation,
         text -> {
           dictating = false;
           executeCommandDelayHandler.removeCallbacks(stopDictation);
@@ -430,8 +431,7 @@ public class SpeechRecognizerPerformer {
             speechRecognizerRequester.onResult(text, /* isPartialResult= */ false);
           }
           return Unit.INSTANCE;
-        },
-        correctsDictation);
+        });
   }
 
   /** Start the speech recognition session. */
