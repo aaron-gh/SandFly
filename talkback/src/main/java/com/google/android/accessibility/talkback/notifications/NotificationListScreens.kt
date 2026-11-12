@@ -24,7 +24,9 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import android.text.InputType
 import android.text.format.DateFormat
+import android.view.KeyEvent
 import android.view.ViewGroup
+import android.view.inputmethod.EditorInfo
 import android.widget.CheckBox
 import android.widget.LinearLayout
 import android.widget.Toast
@@ -169,7 +171,7 @@ abstract class NotificationCodeFragment(@StringRes private val title: Int) : Tal
             choices[index - 1].let { then(it.first, it.second) }
             return@choose
           }
-          askText(search) { text, _, _ ->
+          askText(search, inputType = InputType.TYPE_CLASS_TEXT) { text, _, _ ->
             val found = apps.filter { it.third.contains(text, ignoreCase = true) || it.first.contains(text, ignoreCase = true) }
             if (found.isEmpty()) {
               getString(R.string.keyboard_shortcuts_no_results)
@@ -240,11 +242,25 @@ abstract class NotificationCodeFragment(@StringRes private val title: Int) : Tal
         .setPositiveButton(android.R.string.ok, null)
         .setNegativeButton(android.R.string.cancel, null)
         .create()
-    dialog.setOnShowListener {
-      dialog.getButton(AlertDialog.BUTTON_POSITIVE)?.setOnClickListener {
-        val error = onDone(edit.text.toString().trim(), second?.text?.toString().orEmpty(), boxes.map { it.isChecked })
-        if (error == null) dialog.dismiss() else edit.error = error
+    val submit: () -> Unit = {
+      val error = onDone(edit.text.toString().trim(), second?.text?.toString().orEmpty(), boxes.map { it.isChecked })
+      if (error == null) dialog.dismiss() else edit.error = error
+    }
+    if (inputType and InputType.TYPE_TEXT_FLAG_MULTI_LINE == 0) {
+      edit.setSingleLine(true)
+      edit.imeOptions = EditorInfo.IME_ACTION_DONE
+      edit.setOnEditorActionListener { _, actionId, event ->
+        val enter = event != null && event.keyCode == KeyEvent.KEYCODE_ENTER
+        if (actionId == EditorInfo.IME_ACTION_DONE || enter) {
+          if (event == null || event.action == KeyEvent.ACTION_DOWN) submit()
+          true
+        } else {
+          false
+        }
       }
+    }
+    dialog.setOnShowListener {
+      dialog.getButton(AlertDialog.BUTTON_POSITIVE)?.setOnClickListener { submit() }
     }
     dialog.show()
     edit.requestFocus()
