@@ -128,6 +128,7 @@
     </string-array>
     <string name="pref_mute_speech_while_recording_key">pref_mute_speech_while_recording</string>
     <string name="pref_speak_in_phrases_key">pref_speak_in_phrases</string>
+    <string name="pref_line_breaks_as_spaces_key" translatable="false">pref_line_breaks_as_spaces</string>
     <string name="pref_switch_languages_key">pref_switch_languages</string>
     <string name="pref_switch_dialects_key">pref_switch_dialects</string>
     <string name="pref_voice_profiles_screen_key">pref_tts_voice_profiles</string>
@@ -2021,6 +2022,7 @@
     <bool name="pref_use_accessibility_stream_default">true</bool>
     <bool name="pref_mute_speech_while_recording_default">false</bool>
     <bool name="pref_speak_in_phrases_default">false</bool>
+    <bool name="pref_line_breaks_as_spaces_default">false</bool>
     <bool name="pref_switch_languages_default">true</bool>
     <bool name="pref_switch_dialects_default">true</bool>
     <string name="pref_speech_volume_default">100</string>

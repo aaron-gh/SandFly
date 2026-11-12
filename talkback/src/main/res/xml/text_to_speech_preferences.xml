@@ -94,6 +94,10 @@
         android:key="@string/pref_speak_in_phrases_key"
         android:title="@string/title_pref_speak_in_phrases"
         android:summary="@string/summary_pref_speak_in_phrases" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="@bool/pref_line_breaks_as_spaces_default"
+        android:key="@string/pref_line_breaks_as_spaces_key"
+        android:title="@string/title_pref_line_breaks_as_spaces" />
     <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
         android:fragment="com.google.android.accessibility.talkback.speechdictionary.SpeechDictionaryFragment"
         android:key="pref_speech_dictionary_screen"

@@ -4144,6 +4144,9 @@ public class TalkBackService extends AccessibilityServiceCompat
     WordLanguageGuesser.update(prefs);
     SymbolDictionary.load(prefs);
     SpeechDictionary.load(this, prefs);
+    SpeechControllerImpl.setLineBreaksAsSpaces(
+        getBooleanPref(
+            R.string.pref_line_breaks_as_spaces_key, R.bool.pref_line_breaks_as_spaces_default));
     BrailleDictionary.load(this, prefs);
     AppGestures.load(prefs);
     GestureProfiles.load(prefs);
