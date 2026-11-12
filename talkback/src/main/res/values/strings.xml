@@ -335,6 +335,8 @@
       Description: When on, SandFly sends long text to the speech engine as separate phrases. [CHAR LIMIT=NONE]
     -->
     <string name="title_pref_speak_in_phrases">Send long text a sentence at a time</string>
+    <!-- Setting: when on, line breaks in spoken text are replaced by spaces, so speech does not pause at them. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_line_breaks_as_spaces">Read line breaks as spaces</string>
     <!-- Title of the settings screen of text that all speech says differently, such as a word as another word, or a symbol as a space. [CHAR LIMIT=40] -->
     <string name="title_pref_speech_dictionary">Speech dictionary</string>
     <!-- First choice when choosing the app a speech dictionary entry is used in: it is used in every app. [CHAR LIMIT=40] -->

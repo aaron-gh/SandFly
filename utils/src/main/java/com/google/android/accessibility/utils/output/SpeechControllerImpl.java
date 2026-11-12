@@ -130,6 +130,13 @@ public class SpeechControllerImpl implements SpeechController {
     dictionaryFilter = filter;
   }
 
+  // SandFly: Read line breaks as spaces.
+  private static volatile boolean lineBreaksAsSpaces;
+
+  public static void setLineBreaksAsSpaces(boolean asSpaces) {
+    lineBreaksAsSpaces = asSpaces;
+  }
+
   /**
    * SandFly: takes speech to change it before it is spoken, such as Automatic translation, which
    * translates it. Called on the main thread for each utterance, in order.
@@ -1294,6 +1301,13 @@ public class SpeechControllerImpl implements SpeechController {
     text = replaceSpanByContentDescription(text);
     text = replaceBrailleSymbolByDescription(mContext, text);
     text = EmojiSpeech.process(mContext, text);
+    // Before the text is split into utterances at its line breaks.
+    if (lineBreaksAsSpaces && !TextUtils.isEmpty(text)) {
+      @Nullable CharSequence spaced = LineBreaks.toSpaces(text);
+      if (spaced != null) {
+        text = spaced;
+      }
+    }
     final FeedbackItem pendingItem =
         FeedbackProcessingUtils.generateFeedbackItemFromInput(
             mContext,
