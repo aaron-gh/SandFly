@@ -24,6 +24,7 @@ import android.os.Vibrator
 import android.provider.Settings
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.quicksettings.SoundMode
+import com.google.android.accessibility.utils.ValueSteps
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 
 /** Moves the ringer between sound, vibrate and mute for the Sound mode reading control. */
@@ -31,9 +32,9 @@ internal object SoundModeControl {
   private const val TAG = "SoundModeControl"
 
   /**
-   * Sets the next or previous sound mode, wrapping around, and returns its name to speak. Vibrate
-   * is left out without a vibrator. Turning Mute on or off needs Do Not Disturb access; without
-   * it, the setting for it opens.
+   * Sets the next or previous sound mode, as [ValueSteps] goes, and returns its name to speak.
+   * Vibrate is left out without a vibrator. Turning Mute on or off needs Do Not Disturb access;
+   * without it, the setting for it opens.
    */
   @JvmStatic
   fun change(context: Context, next: Boolean): String {
@@ -44,7 +45,11 @@ internal object SoundModeControl {
           context.getSystemService(Vibrator::class.java)?.hasVibrator() == true
       }
     val index = modes.indexOfFirst { it.ringerMode == audio.ringerMode }
-    val mode = modes[Math.floorMod(index + if (next) 1 else -1, modes.size)]
+    val mode = modes[ValueSteps.step(index, modes.size, next)]
+    if (mode.ringerMode == audio.ringerMode) {
+      // At the first or last mode, with wrapping off.
+      return context.getString(mode.title)
+    }
     val togglesMute =
       mode == SoundMode.MUTE || audio.ringerMode == AudioManager.RINGER_MODE_SILENT
     val hasAccess =

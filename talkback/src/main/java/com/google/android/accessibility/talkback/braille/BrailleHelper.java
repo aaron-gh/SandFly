@@ -514,7 +514,12 @@ public final class BrailleHelper implements ScreenReaderActionPerformer {
         SelectorController.getCurrentSetting(context);
     return currentReadingControl == SPEECH_RATE
         || currentReadingControl == SCROLLING_SEQUENTIAL
-        || currentReadingControl == CHANGE_ACCESSIBILITY_VOLUME;
+        || currentReadingControl == CHANGE_ACCESSIBILITY_VOLUME
+        || currentReadingControl == SelectorController.Setting.MEDIA_VOLUME
+        || currentReadingControl == SelectorController.Setting.CALL_VOLUME
+        || currentReadingControl == SelectorController.Setting.RING_VOLUME
+        || currentReadingControl == SelectorController.Setting.NOTIFICATION_VOLUME
+        || currentReadingControl == SelectorController.Setting.ALARM_VOLUME;
   }
 
   private boolean isFocusedNodeEditable() {

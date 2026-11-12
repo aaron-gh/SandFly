@@ -48,6 +48,7 @@ import com.google.android.accessibility.talkback.gesture.GestureLayout
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping
 import com.google.android.accessibility.talkback.notificationlist.NotificationList
 import com.google.android.accessibility.talkback.notifications.NotificationXmlFragment
+import com.google.android.accessibility.talkback.notifications.SpokenSchedules
 import com.google.android.accessibility.talkback.preference.TalkBackPreferenceFilter
 import com.google.android.accessibility.talkback.preference.base.BrailleFragment
 import com.google.android.accessibility.talkback.preference.base.GestureListPreference
@@ -378,6 +379,7 @@ object SettingsIndex {
 
     // NotificationXmlFragment: shown until access is granted.
     hideIf(NotificationList.isAccessGranted(context), NotificationXmlFragment.KEY_ACCESS)
+    hideIf(!SpokenSchedules.needsExactAlarms(context), NotificationXmlFragment.KEY_EXACT_ALARMS)
 
     // TranslationFragment: a second language while the source language is detected, otherwise
     // swapping the languages.

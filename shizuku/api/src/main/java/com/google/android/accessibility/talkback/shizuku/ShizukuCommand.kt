@@ -48,7 +48,10 @@ enum class ShizukuCommand {
   INPUT_TEXT,
   /** Sends key events: up to 100 key code names, separated by spaces. */
   INPUT_KEYEVENT,
-  /** Starts an accessibility shortcut's activity that other apps may not start. */
+  /**
+   * Starts an accessibility shortcut's activity that other apps may not start, as Android's own
+   * shortcuts do.
+   */
   START_SHORTCUT_ACTIVITY,
   /**
    * Runs an accessibility service's accessibility shortcut, as Android's own shortcuts do, without

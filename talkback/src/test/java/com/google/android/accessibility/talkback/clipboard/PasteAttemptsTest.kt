@@ -117,16 +117,4 @@ class PasteAttemptsTest {
     assertEquals(1, attempts)
     assertEquals(0, failures)
   }
-
-  @Test
-  fun cancelStopsAStepNotRunYet() {
-    var ran = false
-    PasteAttempts.after(500L) { ran = true }
-    PasteAttempts.cancel()
-    idle(1000L)
-    assertEquals(false, ran)
-    PasteAttempts.after(500L) { ran = true }
-    idle(500L)
-    assertEquals(true, ran)
-  }
 }

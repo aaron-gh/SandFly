@@ -304,6 +304,10 @@ With **After the letter, no delay** and **Instead of the letter**, SandFly says 
 
 The **High** preset uses **After the letter, delayed** and the **Low** preset uses **Off**. Your choice from the switch carries over, and both settings start with the choice from the earlier single setting.
 
+### Speech history
+
+The **Speech history** command, in **Reading**, opens a list of the last 100 texts SandFly spoke, newest first. Double-tap a text for **Copy**, and for **Show all** when the text is longer than the list shows. **Clear history** removes every text. The history is kept in memory only, is never saved or logged, and is cleared when SandFly turns off. It leaves out speech while a password field has focus, speech while the list is open, and the hints and messages that **Repeat last spoken phrase** also leaves out. Texts are kept to 2,000 characters.
+
 ## Notifications
 
 ### Samsung watch notification content
@@ -327,6 +331,8 @@ TalkBack reads each new notification with a fixed format and has no settings for
 *   **Send a test notification**, **Allow automation apps** and **Automation**, which let apps such as Tasker turn notification speech on or off, stop it, or read the notifications.
 
 The **Notification speech** quick settings tile turns reading on or off. The gesture actions **Read notifications**, **Notification speech on or off**, **Read the last notification again** and **Stop reading the notification** can be assigned in gesture settings. Several of these settings need notification access, which **Turn on notification access** on those screens opens.
+
+The **Time announcements on or off** command sets **Say the time every**, in **Summary and time**, to **Off**, or back to the interval it had before, or to 1 hour when no interval was set. It says "Time announcements on" or "Time announcements off".
 
 An app's own speech, such as a screen change, doesn't cut off a notification being read. A gesture, keyboard shortcut or key that you use after a notification starts does: what it says is spoken at once, and the notification stops, also in a voice profile's own speech engine. With **Stop speech when touching the screen** off, a swipe made 0.5 seconds into a 12-second notification was spoken after 0.9 seconds, instead of after the whole notification.
 
@@ -426,6 +432,10 @@ On Android 13 and later, SandFly uses 3D when its audio plays on wired or USB he
 ### Sound mode reading control
 
 The **Sound mode** reading control, which you can turn on in **Reading controls**, sets the ringer to Sound, Vibrate or Mute when you swipe up or down. Vibrate is left out on devices without a vibrator. Android only lets SandFly turn Mute on or off with **Do Not Disturb access**; without it, SandFly opens that setting.
+
+### Volume reading controls
+
+**Media volume**, **Call volume**, **Ring volume**, **Notification volume** and **Alarm volume** are reading controls, like TalkBack's **Accessibility volume**. Swipe up to raise the volume one step and down to lower it; SandFly says the new volume as a percentage. Selecting one says its volume. They don't need Shizuku, and they aren't in the reading controls by default. To add them, go to **Reading controls**. Android doesn't let SandFly change the ring or notification volume to or from silent without **Do Not Disturb access**; SandFly then says so. The **Setting values** commands include next and previous values for each of them except **Media volume**, which has its own commands.
 
 ## Tutorial
 
@@ -631,7 +641,9 @@ TalkBack stops speech when a finger touches the screen. To keep speech going unt
 
 ### Wrap around
 
-When you swipe past the last item on the screen, TalkBack stops once and then goes back to the first item. To stop at the end instead, turn off **Controls** > **Navigation** > **Wrap around**. Each swipe past the end then plays the end sound. This also applies to moving by heading, link, or control in apps, and to moving with a keyboard. Web pages can still wrap by themselves.
+When you swipe past the last item on the screen, TalkBack stops once and then goes back to the first item. To stop at the end instead, turn off **Controls** > **Navigation** > **Wrap around**. Each swipe or key press past the first or last item then says the item again with the end sound. Moving by heading, link, or control in apps stops at the ends too. Web pages can still wrap by themselves.
+
+With **Wrap around** off, reading controls that go through a list of values, such as **Speech engine**, **Audio output device**, **AI actions**, **Live recognition**, **Actions**, **Addresses and numbers**, **Punctuation** and **Sound mode**, stop at the first and last value: swiping past it says the value again with the end sound. **Punctuation** goes back to the previous value when you swipe up.
 
 **Wrap around** is also a reading control, so you can turn it on or off with a swipe up or down. It's on by default.
 

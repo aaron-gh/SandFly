@@ -24,6 +24,7 @@ import android.text.TextUtils
 import android.view.accessibility.AccessibilityWindowInfo
 import androidx.annotation.RequiresApi
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
+import com.google.android.accessibility.talkback.clipboard.ClipboardHistoryOverlay
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils
 import com.google.android.accessibility.utils.AccessibilityServiceCompatUtils.Constants.GBOARD_PACKAGE_NAME
 import com.google.android.accessibility.utils.AccessibilityServiceCompatUtils.Constants.GBOARD_PACKAGE_NAME_DEV
@@ -82,7 +83,11 @@ object KeyboardExploration {
     val region = Region()
     val windows = service.windowsOnAllDisplays.get(displayId) ?: return null
     for (window in windows) {
-      if (window.type == AccessibilityWindowInfo.TYPE_ACCESSIBILITY_OVERLAY) {
+      // The clipboard history covers the keyboard.
+      if (
+        window.type == AccessibilityWindowInfo.TYPE_ACCESSIBILITY_OVERLAY &&
+          !ClipboardHistoryOverlay.isOwnWindow(service, window)
+      ) {
         continue
       }
       window.getRegionInScreen(region)

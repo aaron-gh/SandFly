@@ -37,6 +37,9 @@
         android:key="pref_notification_clock_interval"
         android:summary="%s"
         android:title="@string/notification_clock_interval_title" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+        android:key="pref_notification_exact_alarms"
+        android:title="@string/notification_exact_alarms_title" />
     <EditTextPreference
         android:dialogMessage="@string/notification_clock_format_message"
         android:key="pref_notification_clock_format"

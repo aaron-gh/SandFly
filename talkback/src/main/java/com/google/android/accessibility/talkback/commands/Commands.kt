@@ -627,6 +627,7 @@ object Commands {
           R.string.shortcut_value_spell_last_spoken_phrase,
           R.string.title_spell_last_spoken_phrase,
         )
+        gesture(R.string.shortcut_value_speech_history, R.string.title_speech_history)
         gesture(
           R.string.shortcut_value_translate_last_spoken_phrase,
           R.string.title_translate_last_spoken_phrase,
@@ -951,6 +952,10 @@ object Commands {
         gesture(
           R.string.shortcut_value_toggle_notification_speech,
           R.string.shortcut_toggle_notification_speech,
+        )
+        gesture(
+          R.string.shortcut_value_toggle_time_announcements,
+          R.string.shortcut_toggle_time_announcements,
         )
       }
 

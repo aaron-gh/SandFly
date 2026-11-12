@@ -105,8 +105,14 @@ abstract class NotificationXmlFragment(@XmlRes xml: Int, @StringRes private val 
           updateAccess()
           if (prefs.getBoolean(key, false)) askForExactAlarms()
         }
-        SpokenSchedules.KEY_CLOCK_INTERVAL ->
-          if (NotificationSettings.int(prefs, key, 0) > 0) askForExactAlarms()
+        SpokenSchedules.KEY_CLOCK_INTERVAL -> {
+          updateExactAlarms()
+          val interval = NotificationSettings.int(prefs, key, 0)
+          if (interval > 0) {
+            SpokenSchedules.rememberClockInterval(prefs, interval)
+            askForExactAlarms()
+          }
+        }
       }
     }
 
@@ -123,6 +129,7 @@ abstract class NotificationXmlFragment(@XmlRes xml: Int, @StringRes private val 
     super.onResume()
     prefs.registerOnSharedPreferenceChangeListener(listener)
     updateAccess()
+    updateExactAlarms()
   }
 
   override fun onPause() {
@@ -158,6 +165,10 @@ abstract class NotificationXmlFragment(@XmlRes xml: Int, @StringRes private val 
         key == SpokenSchedules.KEY_SUMMARY_TIME -> setUpTime(preference, key)
       key == KEY_ACCESS -> preference.setOnPreferenceClickListener {
         openAccessSettings(context)
+        true
+      }
+      key == KEY_EXACT_ALARMS -> preference.setOnPreferenceClickListener {
+        askForExactAlarms()
         true
       }
       key == KEY_SUMMARY_NOW -> preference.setOnPreferenceClickListener {
@@ -243,6 +254,11 @@ abstract class NotificationXmlFragment(@XmlRes xml: Int, @StringRes private val 
     access.summary = getString(R.string.notification_access_summary)
   }
 
+  private fun updateExactAlarms() {
+    findPreference<Preference>(KEY_EXACT_ALARMS)?.isVisible =
+      SpokenSchedules.needsExactAlarms(requireContext())
+  }
+
   private fun askForExactAlarms() {
     if (Build.VERSION.SDK_INT < Build.VERSION_CODES.S) return
     val alarms = requireContext().getSystemService(AlarmManager::class.java) ?: return
@@ -258,6 +274,7 @@ abstract class NotificationXmlFragment(@XmlRes xml: Int, @StringRes private val 
 
   companion object {
     const val KEY_ACCESS = "pref_notification_access"
+    const val KEY_EXACT_ALARMS = "pref_notification_exact_alarms"
     const val KEY_SUMMARY_NOW = "pref_notification_summary_now"
 
     fun timeText(context: Context, minutes: Int): String {

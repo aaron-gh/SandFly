@@ -26,6 +26,7 @@ import androidx.core.content.edit
 import com.google.android.accessibility.talkback.actor.gemini.local.DownloadProgress
 import com.google.android.accessibility.talkback.actor.gemini.local.ModelDownloader
 import com.google.android.accessibility.talkback.actor.gemini.local.ModelFiles
+import com.google.android.accessibility.talkback.actor.gemini.local.ModelServer
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import java.io.File
 import java.util.concurrent.CopyOnWriteArraySet
@@ -330,7 +331,7 @@ class WhisperModels private constructor(context: Context) {
       val result =
         ModelDownloader()
           .download(
-            model.url,
+            ModelServer.url(prefs, model.url),
             file(model),
             model.sizeBytes,
             model.sha256,

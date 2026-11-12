@@ -74,6 +74,9 @@ class MacrosTest {
           RunCommand(back()),
           Wait(1_500),
           Tap("Send", 5_000),
+          Tap("Reply.*Anna", 5_000, regex = true),
+          Tap("send", 5_000, field = Macros.Field.RESOURCE_ID),
+          Tap("^Reply", 5_000, regex = true, field = Macros.Field.DESCRIPTION),
           OpenApp(gmail),
           TypeText("On my way", replace = true),
           TypeText("Thanks"),
@@ -200,6 +203,7 @@ class MacrosTest {
     assertEquals("Wait 2 seconds", Macros.describe(context, Wait(2_000)))
     assertEquals("Wait 500 milliseconds", Macros.describe(context, Wait(500)))
     assertEquals("Tap Send", Macros.describe(context, Tap("Send")))
+    assertEquals("Tap ^Re (regular expression)", Macros.describe(context, Tap("^Re", regex = true)))
     assertEquals("Type Hello", Macros.describe(context, TypeText("Hello")))
     assertEquals("Replace text with Hello", Macros.describe(context, TypeText("Hello", replace = true)))
   }
@@ -277,5 +281,80 @@ class MacrosTest {
     )
     assertEquals(mapOf("g2" to otherValue), GestureProfiles.read(prefs).single().gestures)
     assertEquals(listOf(CommandMenus.Command(back())), CommandMenus.custom(prefs).single().items)
+  }
+
+  @Test
+  fun regexTestsSurviveJson() {
+    val condition =
+      Macros.Condition(
+        listOf(
+          Macros.Clause(Macros.ItemOnScreen("^Anna", regex = true)),
+          Macros.Clause(Macros.FocusedItem("\\d+ new", Macros.Kind.CLICKABLE, regex = true), or = true),
+          Macros.Clause(Macros.ItemOnScreen("Send")),
+          Macros.Clause(Macros.ItemOnScreen("send", field = Macros.Field.RESOURCE_ID)),
+          Macros.Clause(Macros.FocusedItem("Unread", field = Macros.Field.STATE)),
+        )
+      )
+    val macro = Macro("a", "Reply", listOf(Macros.If(condition), Macros.EndIf))
+    assertEquals(listOf(macro), Macros.fromJson(Macros.toJson(listOf(macro))))
+  }
+
+  @Test
+  fun describeRegexTest() {
+    assertEquals(
+      "Item on screen: ^Anna (regular expression)",
+      Macros.describe(context, Macros.Clause(Macros.ItemOnScreen("^Anna", regex = true))),
+    )
+  }
+
+  @Test
+  fun describeFieldSteps() {
+    assertEquals("Tap send (Resource ID)", Macros.describe(context, Tap("send", field = Macros.Field.RESOURCE_ID)))
+    assertEquals(
+      "Tap ^Re (Description, regular expression)",
+      Macros.describe(context, Tap("^Re", regex = true, field = Macros.Field.DESCRIPTION)),
+    )
+  }
+
+  @Test
+  fun unknownFieldIsAnyText() {
+    val steps = JSONArray().put(JSONObject().put("type", "tap").put("label", "OK").put("field", "colour"))
+    val json = JSONArray().put(JSONObject().put("id", "a").put("name", "A").put("steps", steps)).toString()
+    assertEquals(Tap("OK"), Macros.fromJson(json).single().steps.single())
+  }
+
+  @Test
+  fun compilePatternFindsIgnoringCase() {
+    val pattern = Macros.compilePattern("reply.*anna")!!
+    assertTrue(pattern.matcher("Reply to Anna Smith").find())
+    assertFalse(pattern.matcher("Reply to Bob").find())
+    assertTrue(Macros.compilePattern("^\\d+ new\\b")!!.matcher("12 new messages").find())
+  }
+
+  @Test
+  fun compilePatternRefusesInvalidAndSlowPatterns() {
+    for (pattern in listOf("", "(", "[a", "(a+)+", "(a|aa)*", "(x*){2,}", "((ab)*c)+", "(?:a|b)+", "([a-z]+\\s?)*", "(\\d{1,2})+")) {
+      assertNull(pattern, Macros.compilePattern(pattern))
+    }
+  }
+
+  @Test
+  fun compilePatternAcceptsGroupsThatAreNotRepeatedOrHaveNoRepetition() {
+    for (
+      pattern in
+        listOf(
+          "(Mon|Tue)day",
+          "(ab)+",
+          "(a+)?",
+          "(a{1})*",
+          "[(+*]+",
+          "\\(a+\\)+",
+          "\\Q(a+)+\\E",
+          "(?i:abc)+",
+          "(?<name>a)b+",
+        )
+    ) {
+      assertTrue(pattern, Macros.compilePattern(pattern) != null)
+    }
   }
 }

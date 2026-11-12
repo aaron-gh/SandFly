@@ -145,6 +145,30 @@
     <string name="macro_join_and"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g> and <xliff:g id="second" example="Focused item: Editable">%2$s</xliff:g></string>
     <!-- Tests of a condition joined with or; and goes before or, which the comma shows. [CHAR LIMIT=NONE] -->
     <string name="macro_join_or"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g>, or <xliff:g id="second" example="Screen locked">%2$s</xliff:g></string>
+    <!-- Check box in the macro item text dialogs: the text is a regular expression. [CHAR LIMIT=40] -->
+    <string name="macro_regex">Regular expression</string>
+    <!-- Error under the item text when it is not a regular expression macros can use. [CHAR LIMIT=NONE] -->
+    <string name="macro_invalid_regex">Not a usable regular expression. Repeated groups can\'t contain repetition or |.</string>
+    <!-- Label of the list in the macro item text dialogs: which text of an item is looked in. [CHAR LIMIT=40] -->
+    <string name="macro_match_in">Match in</string>
+    <!-- Choice in the Match in list: the item's text, description, hint and state. [CHAR LIMIT=40] -->
+    <string name="macro_field_any">Any text</string>
+    <!-- Choice in the Match in list: the item's text. [CHAR LIMIT=40] -->
+    <string name="macro_field_text">Text</string>
+    <!-- Choice in the Match in list: the item's content description. [CHAR LIMIT=40] -->
+    <string name="macro_field_description">Description</string>
+    <!-- Choice in the Match in list: the item's hint text. [CHAR LIMIT=40] -->
+    <string name="macro_field_hint">Hint</string>
+    <!-- Choice in the Match in list: the item's state description. [CHAR LIMIT=40] -->
+    <string name="macro_field_state">State</string>
+    <!-- Choice in the Match in list: the view ID of the item, such as com.example:id/send. [CHAR LIMIT=40] -->
+    <string name="macro_field_id">Resource ID</string>
+    <!-- Item text of a macro step or test looked for in one text of the item. field is that text, such as Description. [CHAR LIMIT=NONE] -->
+    <string name="macro_field_value"><xliff:g id="label" example="send">%1$s</xliff:g> (<xliff:g id="field" example="Resource ID">%2$s</xliff:g>)</string>
+    <!-- Item text of a macro step or test that is a regular expression looked for in one text of the item. [CHAR LIMIT=NONE] -->
+    <string name="macro_field_regex_value"><xliff:g id="pattern" example="^Reply">%1$s</xliff:g> (<xliff:g id="field" example="Description">%2$s</xliff:g>, regular expression)</string>
+    <!-- Item text of a macro step or test that is a regular expression. [CHAR LIMIT=NONE] -->
+    <string name="macro_regex_value"><xliff:g id="pattern" example="Reply.*Anna">%1$s</xliff:g> (regular expression)</string>
     <!-- Hint of the text field for the text of the item a Focused item test looks for, which can be left empty. [CHAR LIMIT=60] -->
     <string name="macro_test_label_optional">Item text (optional)</string>
     <!-- Title of the dialog that asks for the kind of item a test looks for. [CHAR LIMIT=40] -->

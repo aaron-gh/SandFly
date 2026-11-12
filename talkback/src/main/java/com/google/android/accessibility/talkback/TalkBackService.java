@@ -158,6 +158,7 @@ import com.google.android.accessibility.talkback.braille.TalkBackForBrailleDispl
 import com.google.android.accessibility.talkback.braille.TalkBackForBrailleImeImpl;
 import com.google.android.accessibility.talkback.braille.TalkBackForBrailleImeImpl.TalkBackPrivateMethodProvider;
 import com.google.android.accessibility.talkback.commands.RemovedCommands;
+import com.google.android.accessibility.talkback.clipboard.ClipboardHistoryOverlay;
 import com.google.android.accessibility.talkback.compositor.ClickFeedback;
 import com.google.android.accessibility.talkback.compositor.Compositor;
 import com.google.android.accessibility.talkback.compositor.CompositorUtils;
@@ -372,6 +373,7 @@ import com.google.android.accessibility.utils.output.SpeechController;
 import com.google.android.accessibility.utils.output.SpeechController.UtteranceCompleteRunnable;
 import com.google.android.accessibility.utils.output.SpeechControllerImpl;
 import com.google.android.accessibility.utils.output.SpeechControllerImpl.CapitalLetterHandlingMethod;
+import com.google.android.accessibility.utils.output.SpeechHistory;
 import com.google.android.accessibility.utils.output.TextFormattingUtils;
 import com.google.android.accessibility.utils.output.ThemeVibrations;
 import com.google.android.accessibility.utils.output.VoiceProfiles;
@@ -1144,6 +1146,9 @@ public class TalkBackService extends AccessibilityServiceCompat
     ExitAfterTurnOff.schedule(getApplication());
     ShizukuGrants.onServiceDestroyed();
     ScreenElements.detach();
+    passwordFocusHandler.removeCallbacks(readPasswordFocus);
+    SpeechHistory.stop();
+    ClipboardHistoryOverlay.close();
     if (SandflyAi.getFeatures() != null) {
       SandflyAi.getFeatures().onServiceDestroyed(this);
     }
@@ -1193,6 +1198,8 @@ public class TalkBackService extends AccessibilityServiceCompat
       keyComboManager.onConfigurationChanged(newConfig);
     }
 
+    ClipboardHistoryOverlay.onConfigurationChanged(newConfig);
+
     if (pipeline != null) {
       updateSpeechOverlayOnConfigChange(newConfig);
       resetTouchExplorePassThrough();
@@ -1239,6 +1246,7 @@ public class TalkBackService extends AccessibilityServiceCompat
 
   @Override
   public void onAccessibilityEvent(AccessibilityEvent event) {
+    updatePasswordFocus(event);
     // Paused Backtalk drops events, except the end of a touch that started before the pause, so
     // that nothing still thinks a finger is down after resuming. Its feedback is dropped too.
     if (PauseController.isPaused()
@@ -1297,6 +1305,7 @@ public class TalkBackService extends AccessibilityServiceCompat
       if (isAppWindowEvent(event)) {
         SpeechDictionary.onWindowShown(lastWindowPackage);
         AppGestures.onWindowShown(lastWindowPackage);
+        ClipboardHistoryOverlay.onAppWindowShown(lastWindowPackage);
       }
     } else if (eventType == AccessibilityEvent.TYPE_WINDOWS_CHANGED && changesFrontWindow(event)) {
       // Some launchers, such as Xiaomi's, send no window state change when the home screen is shown
@@ -1305,6 +1314,7 @@ public class TalkBackService extends AccessibilityServiceCompat
       if (frontApp != null) {
         SpeechDictionary.onWindowShown(frontApp);
         AppGestures.onWindowShown(frontApp);
+        ClipboardHistoryOverlay.onAppWindowShown(frontApp);
       }
     }
     if (eventType == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED
@@ -1645,6 +1655,12 @@ public class TalkBackService extends AccessibilityServiceCompat
     }
 
     if (brailleDisplay.onKeyEvent(keyEvent)) {
+      return true;
+    }
+
+    // Back and Escape close the clipboard history, which doesn't take input focus when it is
+    // opened for an edit box: the keys would otherwise go to the screen under it.
+    if (ClipboardHistoryOverlay.onKeyEvent(keyEvent)) {
       return true;
     }
 
@@ -2053,6 +2069,42 @@ public class TalkBackService extends AccessibilityServiceCompat
     return directTouchController;
   }
 
+  /**
+   * Keeps the speech history's record of whether a password field has focus, from {@code event}.
+   * After a window change while one may have focus, the focus is read again once the changes
+   * settle, as the field may have gone with its window without a focus event. Until then, speech
+   * is not recorded.
+   */
+  private void updatePasswordFocus(AccessibilityEvent event) {
+    SpeechHistory.onAccessibilityEvent(event);
+    int type = event.getEventType();
+    if ((type == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED
+            || type == AccessibilityEvent.TYPE_WINDOWS_CHANGED)
+        && SpeechHistory.isPasswordFocused()) {
+      passwordFocusHandler.removeCallbacks(readPasswordFocus);
+      passwordFocusHandler.postDelayed(readPasswordFocus, PASSWORD_FOCUS_READ_DELAY_MS);
+    }
+  }
+
+  private final Handler passwordFocusHandler = new Handler(Looper.getMainLooper());
+
+  /** How long window changes have to settle before the focus is read again. */
+  private static final long PASSWORD_FOCUS_READ_DELAY_MS = 300;
+
+  private final Runnable readPasswordFocus =
+      () -> {
+        if (!SpeechHistory.isPasswordFocused()) {
+          return;
+        }
+        SpeechHistory.onFocusRead(
+            isPassword(findFocus(AccessibilityNodeInfo.FOCUS_ACCESSIBILITY)),
+            isPassword(findFocus(AccessibilityNodeInfo.FOCUS_INPUT)));
+      };
+
+  private static boolean isPassword(@Nullable AccessibilityNodeInfo node) {
+    return node != null && node.isPassword();
+  }
+
   /** Returns the actor state. */
   public ActorState getActorState() {
     return pipeline.getActorState();
@@ -2306,6 +2358,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     ReportInbox.startFollowing(this);
     ShizukuGrants.onServiceConnected(this);
     ScreenElements.attach(this, () -> pipeline == null ? null : pipeline.getFeedbackReturner());
+    SpeechHistory.start();
     if (SandflyAi.getFeatures() != null) {
       SandflyAi.getFeatures().onServiceConnected(this);
     }
@@ -2584,6 +2637,14 @@ public class TalkBackService extends AccessibilityServiceCompat
     batteryMonitor = new BatteryMonitor(this);
     statusReader = new StatusReader(this, batteryMonitor);
     callStateMonitor = new CallStateMonitor(this);
+    // The call's screen comes up under the clipboard history, which would hide it.
+    callStateMonitor.addCallStateChangedListener(
+        (oldState, newState) -> {
+          if (newState == TelephonyManager.CALL_STATE_RINGING
+              || newState == TelephonyManager.CALL_STATE_OFFHOOK) {
+            ClipboardHistoryOverlay.onCallStarted();
+          }
+        });
     inputMethodMonitor = new InputMethodMonitor(this);
     audioPlaybackMonitor = new AudioPlaybackMonitor(this);
     @NonNull TouchMonitor touchMonitor = new TouchMonitor();
@@ -3042,6 +3103,7 @@ public class TalkBackService extends AccessibilityServiceCompat
                 if (menuManager != null) {
                   menuManager.dismissAll();
                 }
+                ClipboardHistoryOverlay.close();
                 interruptFullScreenReadActor();
                 clearQueues();
               }
@@ -3699,6 +3761,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     }
 
     setServiceState(ServiceStateListener.SERVICE_STATE_SHUTTING_DOWN);
+    ClipboardHistoryOverlay.close();
     if (liftCancelStrip != null) {
       liftCancelStrip.setShown(false);
     }
@@ -4144,6 +4207,9 @@ public class TalkBackService extends AccessibilityServiceCompat
     WordLanguageGuesser.update(prefs);
     SymbolDictionary.load(prefs);
     SpeechDictionary.load(this, prefs);
+    SpeechControllerImpl.setLineBreaksAsSpaces(
+        getBooleanPref(
+            R.string.pref_line_breaks_as_spaces_key, R.bool.pref_line_breaks_as_spaces_default));
     BrailleDictionary.load(this, prefs);
     AppGestures.load(prefs);
     GestureProfiles.load(prefs);

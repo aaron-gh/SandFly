@@ -57,6 +57,7 @@ import static com.google.android.accessibility.utils.monitor.InputModeTracker.IN
 import static com.google.android.accessibility.utils.traversal.TraversalStrategy.SEARCH_FOCUS_BACKWARD;
 import static com.google.android.accessibility.utils.traversal.TraversalStrategy.SEARCH_FOCUS_FORWARD;
 
+import android.accessibilityservice.AccessibilityService;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
@@ -123,6 +124,7 @@ import com.google.android.accessibility.utils.FormFactorUtils;
 import com.google.android.accessibility.utils.Performance.EventId;
 import com.google.android.accessibility.utils.Role;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
+import com.google.android.accessibility.utils.ValueSteps;
 import com.google.android.accessibility.utils.WebInterfaceUtils;
 import com.google.android.accessibility.utils.input.CursorGranularity;
 import com.google.android.accessibility.utils.input.TextEventFilter.TypingInput;
@@ -137,6 +139,7 @@ import com.google.android.accessibility.utils.output.VoiceProfiles;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import com.google.common.base.Ascii;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import java.text.Normalizer;
 import java.text.NumberFormat;
 import java.util.ArrayList;
@@ -249,6 +252,26 @@ public class SelectorController implements UserInputEventListener {
         R.string.pref_selector_change_a11y_volume_key,
         R.string.selector_a11y_volume_change,
         R.bool.pref_selector_a11y_volume_default),
+    MEDIA_VOLUME(
+        R.string.pref_selector_media_volume_key,
+        R.string.selector_media_volume,
+        R.bool.pref_selector_stream_volume_default),
+    CALL_VOLUME(
+        R.string.pref_selector_call_volume_key,
+        R.string.selector_call_volume,
+        R.bool.pref_selector_stream_volume_default),
+    RING_VOLUME(
+        R.string.pref_selector_ring_volume_key,
+        R.string.selector_ring_volume,
+        R.bool.pref_selector_stream_volume_default),
+    NOTIFICATION_VOLUME(
+        R.string.pref_selector_notification_volume_key,
+        R.string.selector_notification_volume,
+        R.bool.pref_selector_stream_volume_default),
+    ALARM_VOLUME(
+        R.string.pref_selector_alarm_volume_key,
+        R.string.selector_alarm_volume,
+        R.bool.pref_selector_stream_volume_default),
     SOUND_MODE(
         R.string.pref_selector_sound_mode_key,
         R.string.selector_sound_mode,
@@ -709,6 +732,7 @@ public class SelectorController implements UserInputEventListener {
   private final AccessibilityFocusMonitor accessibilityFocusMonitor;
   private final Pipeline.FeedbackReturner pipeline;
   private final VerticalNavigator verticalNavigator;
+  private final @Nullable PageScroller pageScroller;
   private final ActorState actorState;
   private final NodeMenuRuleCreator nodeMenuCreator;
   private final TalkBackAnalytics analytics;
@@ -783,6 +807,11 @@ public class SelectorController implements UserInputEventListener {
           Setting.AUDIO_FOCUS,
           Setting.SCROLLING_SEQUENTIAL,
           Setting.CHANGE_ACCESSIBILITY_VOLUME,
+          Setting.MEDIA_VOLUME,
+          Setting.CALL_VOLUME,
+          Setting.RING_VOLUME,
+          Setting.NOTIFICATION_VOLUME,
+          Setting.ALARM_VOLUME,
           Setting.SOUND_MODE,
           Setting.AUTO_TRANSLATION,
           Setting.CHANGE_BRIGHTNESS,
@@ -892,6 +921,10 @@ public class SelectorController implements UserInputEventListener {
     this.actorState = actorState;
     this.accessibilityFocusMonitor = accessibilityFocusMonitor;
     verticalNavigator = new VerticalNavigator(pipeline, accessibilityFocusMonitor);
+    pageScroller =
+        context instanceof AccessibilityService accessibilityService
+            ? new PageScroller(accessibilityService, pipeline, accessibilityFocusMonitor)
+            : null;
     this.nodeMenuCreator = nodeMenuCreator;
     this.analytics = analytics;
     this.gestureMapping = gestureMapping;
@@ -1149,6 +1182,14 @@ public class SelectorController implements UserInputEventListener {
       }
       case CHANGE_ACCESSIBILITY_VOLUME -> {
         actionDescription = context.getString(R.string.title_pref_a11y_volume);
+        hint = getAdjustSelectedSettingGestures();
+      }
+      case MEDIA_VOLUME, CALL_VOLUME, RING_VOLUME, NOTIFICATION_VOLUME, ALARM_VOLUME -> {
+        StreamVolume volume = STREAM_VOLUMES.get(setting);
+        actionDescription =
+            context.getString(volume.titleResId)
+                + ", "
+                + StreamVolumeControl.percentText(context, volume.stream);
         hint = getAdjustSelectedSettingGestures();
       }
       case SOUND_MODE -> {
@@ -1616,6 +1657,7 @@ public class SelectorController implements UserInputEventListener {
     touchActive = active;
     if (active) {
       verticalNavigator.cancel();
+      cancelPageScroll();
     }
     handler.removeCallbacks(switchAfterTouch);
     if (!touchActive && lastFocusedNode != null) {
@@ -1637,6 +1679,7 @@ public class SelectorController implements UserInputEventListener {
   /** Forgets the item waiting for its reading control, such as when SandFly turns off. */
   public void shutdown() {
     handler.removeCallbacks(switchAfterTouch);
+    cancelPageScroll();
     lastFocusedNode = null;
     chosenTextEntity = null;
   }
@@ -2383,7 +2426,7 @@ public class SelectorController implements UserInputEventListener {
     applyPendingSwitch();
     @Nullable ScriptReadingControl scriptControl = currentScriptControl(dynamicControls());
     if (scriptControl != null) {
-      scriptControl.adjust(isNext);
+      adjustValues(eventId, () -> scriptControl.adjust(isNext));
       if (scriptControl.getActivates()) {
         doubleTapArmed = true;
         requestServiceHandlesDoubleTap(eventId, true);
@@ -2416,6 +2459,26 @@ public class SelectorController implements UserInputEventListener {
   }
 
   private void adjustSetting(EventId eventId, Setting currentSetting, boolean isNext) {
+    adjustValues(eventId, () -> adjustSettingValue(eventId, currentSetting, isNext));
+  }
+
+  /**
+   * Runs {@code adjust}, which changes a reading control's value. With Wrap around off, a list of
+   * values stops at its first and last value, where the value is said again with the end sound.
+   */
+  private void adjustValues(EventId eventId, Runnable adjust) {
+    boolean wrap =
+        SharedPreferencesUtils.getBooleanPref(
+            prefs,
+            context.getResources(),
+            R.string.pref_wrap_around_key,
+            R.bool.pref_wrap_around_default);
+    if (ValueSteps.run(wrap, adjust)) {
+      pipeline.returnFeedback(eventId, Feedback.sound(R.raw.complete));
+    }
+  }
+
+  private void adjustSettingValue(EventId eventId, Setting currentSetting, boolean isNext) {
     switch (currentSetting) {
       case LIVE_RECOGNITION -> {
         doubleTapArmed = true;
@@ -2453,7 +2516,7 @@ public class SelectorController implements UserInputEventListener {
         return;
       }
       case PUNCTUATION -> {
-        cycleSpeakPunctuationVerbosity(eventId, TalkBackAnalytics.TYPE_SELECTOR);
+        cycleSpeakPunctuationVerbosity(eventId, TalkBackAnalytics.TYPE_SELECTOR, isNext);
         return;
       }
       case EMOJI -> {
@@ -2486,6 +2549,14 @@ public class SelectorController implements UserInputEventListener {
       }
       case CHANGE_ACCESSIBILITY_VOLUME -> {
         changeAccessibilityVolume(eventId, isNext);
+        return;
+      }
+      case MEDIA_VOLUME, CALL_VOLUME, RING_VOLUME, NOTIFICATION_VOLUME, ALARM_VOLUME -> {
+        String displayText =
+            StreamVolumeControl.change(
+                context, STREAM_VOLUMES.get(currentSetting).stream, /* lower= */ isNext);
+        announceSetting(eventId, displayText, getAdjustSelectedSettingGestures());
+        showQuickMenuActionOverlay(eventId, displayText);
         return;
       }
       case SOUND_MODE -> {
@@ -2708,7 +2779,7 @@ public class SelectorController implements UserInputEventListener {
     if (index == -1) {
       index = isNext ? 0 : size - 1;
     } else {
-      index = (index + (isNext ? 1 : size - 1)) % size;
+      index = ValueSteps.step(index, size, isNext);
     }
     chosenTextEntity = entities.get(index);
     doubleTapArmed = true;
@@ -2897,6 +2968,32 @@ public class SelectorController implements UserInputEventListener {
     R.string.title_selector_equalizer_16k
   };
 
+  /** The stream and title of a stream volume reading control. */
+  private static final class StreamVolume {
+    final int stream;
+    @StringRes final int titleResId;
+
+    StreamVolume(int stream, @StringRes int titleResId) {
+      this.stream = stream;
+      this.titleResId = titleResId;
+    }
+  }
+
+  /** The stream volume reading controls, which change a volume without Shizuku. */
+  private static final ImmutableMap<Setting, StreamVolume> STREAM_VOLUMES =
+      ImmutableMap.of(
+          Setting.MEDIA_VOLUME,
+          new StreamVolume(AudioManager.STREAM_MUSIC, R.string.quick_settings_media_volume),
+          Setting.CALL_VOLUME,
+          new StreamVolume(AudioManager.STREAM_VOICE_CALL, R.string.quick_settings_call_volume),
+          Setting.RING_VOLUME,
+          new StreamVolume(AudioManager.STREAM_RING, R.string.quick_settings_ring_volume),
+          Setting.NOTIFICATION_VOLUME,
+          new StreamVolume(
+              AudioManager.STREAM_NOTIFICATION, R.string.quick_settings_notification_volume),
+          Setting.ALARM_VOLUME,
+          new StreamVolume(AudioManager.STREAM_ALARM, R.string.quick_settings_alarm_volume));
+
   /** A band's gain as spoken, such as "+3 dB". */
   private String equalizerGainText(int gain) {
     String number = (gain > 0 ? "+" : "") + NumberFormat.getIntegerInstance().format(gain);
@@ -2954,7 +3051,7 @@ public class SelectorController implements UserInputEventListener {
   private void changeSpeechStream(EventId eventId, boolean isNext) {
     List<String> streams = FailoverTextToSpeech.STREAM_VALUES;
     int index = streams.indexOf(FailoverTextToSpeech.chosenSpeechStream(prefs));
-    String stream = streams.get(Math.floorMod(index + (isNext ? 1 : -1), streams.size()));
+    String stream = streams.get(ValueSteps.step(index, streams.size(), isNext));
     prefs.edit().putString(FailoverTextToSpeech.PREF_SPEECH_STREAM_KEY, stream).apply();
     String[] names = context.getResources().getStringArray(R.array.pref_speech_stream_entries);
     String displayText = names[streams.indexOf(stream)];
@@ -3014,7 +3111,7 @@ public class SelectorController implements UserInputEventListener {
     int nextIndex =
         (currentIndex < 0)
             ? (isNext ? 0 : engines.size() - 1)
-            : Math.floorMod(currentIndex + (isNext ? 1 : -1), engines.size());
+            : ValueSteps.step(currentIndex, engines.size(), isNext);
     String nextEngine = engines.get(nextIndex);
     prefs.edit().putString(context.getString(R.string.pref_tts_engine_key), nextEngine).apply();
 
@@ -3130,7 +3227,7 @@ public class SelectorController implements UserInputEventListener {
             R.string.pref_emoji_speech_key,
             R.string.pref_emoji_speech_default);
     int index = Math.max(0, Arrays.asList(values).indexOf(current));
-    index = (index + (isNext ? 1 : values.length - 1)) % values.length;
+    index = ValueSteps.step(index, values.length, isNext);
     SharedPreferencesUtils.putStringPref(
         prefs, context.getResources(), R.string.pref_emoji_speech_key, values[index]);
     announceSetting(
@@ -3162,6 +3259,11 @@ public class SelectorController implements UserInputEventListener {
 
   /** Cycle the punctuation verbosity to the next value */
   public void cycleSpeakPunctuationVerbosity(EventId eventId, int triggerAction) {
+    cycleSpeakPunctuationVerbosity(eventId, triggerAction, /* isNext= */ true);
+  }
+
+  /** Moves the punctuation verbosity to the next or previous value. */
+  private void cycleSpeakPunctuationVerbosity(EventId eventId, int triggerAction, boolean isNext) {
     Resources res = context.getResources();
     int punctuationLevel =
         Integer.parseInt(
@@ -3172,10 +3274,9 @@ public class SelectorController implements UserInputEventListener {
                 R.string.pref_punctuation_verbosity_default));
     analytics.onManuallyChangeSetting(
         res.getString(R.string.pref_punctuation_verbosity), triggerAction);
-    punctuationLevel++;
-    punctuationLevel %= 3;
     String[] punctuationValues =
         context.getResources().getStringArray(R.array.pref_punctuation_values);
+    punctuationLevel = ValueSteps.step(punctuationLevel, punctuationValues.length, isNext);
     String[] punctuationEntries =
         context.getResources().getStringArray(R.array.pref_punctuation_entries);
     SharedPreferencesUtils.putStringPref(
@@ -3261,9 +3362,23 @@ public class SelectorController implements UserInputEventListener {
     showQuickMenuActionOverlay(eventId, state);
   }
 
-  /** Perform scrolling to previous/next page. */
+  /**
+   * Perform scrolling to previous/next page. Lists that don't move for their scroll action get a
+   * swipe instead.
+   */
   private void scrollForwardBackward(EventId eventId, boolean isNext) {
+    if (pageScroller != null) {
+      pageScroller.scroll(eventId, /* forward= */ !isNext);
+      return;
+    }
     pipeline.returnFeedback(eventId, Feedback.focusDirection(isNext ? PREVIOUS_PAGE : NEXT_PAGE));
+  }
+
+  /** Stops a swipe that the Scroll reading control has waiting, such as when a key is pressed. */
+  public void cancelPageScroll() {
+    if (pageScroller != null) {
+      pageScroller.cancel();
+    }
   }
 
   private EventId lastChangeAccessibilityEventId;
@@ -3594,11 +3709,7 @@ public class SelectorController implements UserInputEventListener {
       if (currentActionIndex == -1) {
         item = menuItems.get(0);
       } else {
-        if (isNext) {
-          item = menuItems.get((currentActionIndex + 1) % actionSize);
-        } else {
-          item = menuItems.get((currentActionIndex - 1 + actionSize) % actionSize);
-        }
+        item = menuItems.get(ValueSteps.step(currentActionIndex, actionSize, isNext));
       }
       currentActionId = item.getContextMenuItemId();
       displayText = item.getTitle();

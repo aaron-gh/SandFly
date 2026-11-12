@@ -128,6 +128,7 @@ import com.google.android.accessibility.talkback.monitor.BatteryMonitor;
 import com.google.android.accessibility.talkback.monitor.VolumeMonitor;
 import com.google.android.accessibility.talkback.monitor.VolumeMonitor.VolumeChangedListener;
 import com.google.android.accessibility.talkback.notifications.NotificationReader;
+import com.google.android.accessibility.talkback.notifications.SpokenSchedules;
 import com.google.android.accessibility.talkback.recognition.LiveRecognition;
 import com.google.android.accessibility.talkback.scripting.ItemInspector;
 import com.google.android.accessibility.talkback.scripting.ScriptCommands;
@@ -135,7 +136,8 @@ import com.google.android.accessibility.talkback.scripting.Scripts;
 import com.google.android.accessibility.talkback.calls.AnswerCall;
 import com.google.android.accessibility.talkback.dictation.AiDictation;
 import com.google.android.accessibility.talkback.directtouch.DirectTouchController;
-import com.google.android.accessibility.talkback.clipboard.ClipboardHistoryFragment;
+import com.google.android.accessibility.talkback.clipboard.ClipboardHistoryOverlay;
+import com.google.android.accessibility.talkback.speechhistory.SpeechHistoryFragment;
 import com.google.android.accessibility.talkback.granularediting.GranularEditing;
 import com.google.android.accessibility.talkback.applauncher.BrailleAppLauncher;
 import com.google.android.accessibility.talkback.handwriting.HandwritingAppLauncher;
@@ -296,11 +298,15 @@ public class GestureController {
     dictation.shutdown();
   }
 
-  /** Stops scrolling to the top or bottom when the user touches the screen or presses a key. */
+  /**
+   * Stops scrolling to the top or bottom, and swipes still waiting, when the user touches the
+   * screen or presses a key.
+   */
   public void onUserInputStarted() {
     listEdgeScroller.cancel();
     pullToRefresh.cancel();
     swipeUp.cancel();
+    selectorController.cancelPageScroll();
   }
 
   ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -497,6 +503,12 @@ public class GestureController {
       result = NotificationReader.readSummary();
     } else if (action.equals(service.getString(R.string.shortcut_value_toggle_notification_speech))) {
       NotificationReader.setSpeechOn(service, null, /* announce= */ true);
+    } else if (action.equals(service.getString(R.string.shortcut_value_toggle_time_announcements))) {
+      boolean on =
+          SpokenSchedules.toggleClock(SharedPreferencesUtils.getSharedPreferences(service));
+      speak(
+          service.getString(
+              on ? R.string.notification_clock_now_on : R.string.notification_clock_now_off));
     } else if (action.equals(service.getString(R.string.shortcut_value_read_last_notification))) {
       result = NotificationReader.readLastAgain();
       if (!result) {
@@ -820,7 +832,7 @@ public class GestureController {
           accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ true);
       result = pipeline.returnFeedback(eventId, Feedback.edit(node, APPEND_COPY));
     } else if (action.equals(service.getString(R.string.shortcut_value_clipboard_history))) {
-      result = ClipboardHistoryFragment.open(service);
+      result = ClipboardHistoryOverlay.open(service);
     } else if (action.equals(service.getString(R.string.shortcut_value_cut))) {
       AccessibilityNodeInfoCompat node = getEditTextFocus();
       if (node == null) {
@@ -1076,6 +1088,8 @@ public class GestureController {
       result =
           pipeline.returnFeedback(
               eventId, Feedback.part().setSpeech(Feedback.Speech.create(SPELL_LAST)));
+    } else if (action.equals(service.getString(R.string.shortcut_value_speech_history))) {
+      result = SpeechHistoryFragment.open(service);
     } else if (action.equals(
         service.getString(R.string.shortcut_value_translate_last_spoken_phrase))) {
       AccessibilityNodeInfoCompat focus =

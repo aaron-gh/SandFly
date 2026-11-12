@@ -939,6 +939,7 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
         R.string.title_repeat_last_spoken_phrase),
     SPELL_LAST_PHRASE(
         R.string.shortcut_value_spell_last_spoken_phrase, R.string.title_spell_last_spoken_phrase),
+    SPEECH_HISTORY(R.string.shortcut_value_speech_history, R.string.title_speech_history),
     TRANSLATE_LAST_PHRASE(
         R.string.shortcut_value_translate_last_spoken_phrase,
         R.string.title_translate_last_spoken_phrase),
@@ -1024,6 +1025,9 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
     TOGGLE_NOTIFICATION_SPEECH(
         R.string.shortcut_value_toggle_notification_speech,
         R.string.shortcut_toggle_notification_speech),
+    TOGGLE_TIME_ANNOUNCEMENTS(
+        R.string.shortcut_value_toggle_time_announcements,
+        R.string.shortcut_toggle_time_announcements),
     READ_LAST_NOTIFICATION(
         R.string.shortcut_value_read_last_notification, R.string.shortcut_read_last_notification),
     STOP_NOTIFICATION(

@@ -23,8 +23,8 @@ import androidx.core.os.HandlerCompat
 
 /**
  * The Clipboard history's paste into an edit box, tried again every [INTERVAL_MS] for
- * [DURATION_MS]: the edit box's app reads the clipboard only once its window is back and has focus.
- * Starting again cancels the attempts before.
+ * [DURATION_MS]: the edit box's app reads the clipboard only while its window has input focus, and
+ * may still be busy. Starting again cancels the attempts before.
  */
 internal object PasteAttempts {
   const val INTERVAL_MS = 200L
@@ -32,12 +32,6 @@ internal object PasteAttempts {
 
   private val handler = Handler(Looper.getMainLooper())
   private val token = Any()
-
-  /** Runs [step] after [delayMs], cancelling the attempts before. */
-  fun after(delayMs: Long, step: () -> Unit) {
-    cancel()
-    post(delayMs, step)
-  }
 
   /**
    * Runs [attempt] after [delayMs], and again every [INTERVAL_MS] for [DURATION_MS] while it fails,

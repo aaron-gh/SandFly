@@ -22,6 +22,7 @@ import android.content.res.Resources
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.utils.VerbosityPreferences
 import com.google.android.accessibility.utils.SharedPreferencesUtils
+import com.google.android.accessibility.utils.ValueSteps
 import com.google.android.accessibility.utils.input.TextEventFilter
 import com.google.android.accessibility.utils.input.TextEventFilter.TypingInput
 
@@ -100,15 +101,15 @@ object KeyboardEchoSettings {
   }
 
   /**
-   * Moves the echo for [input] to the next or previous choice, wrapping around, and returns the
-   * new echo.
+   * Moves the echo for [input] to the next or previous choice, as [ValueSteps] goes, and returns
+   * the new echo.
    */
   @JvmStatic
   @TextEventFilter.KeyboardEchoType
   fun cycle(prefs: SharedPreferences, res: Resources, input: TypingInput, next: Boolean): Int {
     val choices = choices(res)
     val index = choices.indexOf(read(prefs, res, input)).coerceAtLeast(0)
-    val echo = choices[(index + if (next) 1 else choices.size - 1) % choices.size]
+    val echo = choices[ValueSteps.step(index, choices.size, next)]
     write(prefs, res, input, echo)
     return echo
   }

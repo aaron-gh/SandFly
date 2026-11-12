@@ -16,17 +16,19 @@
 
 package com.google.android.accessibility.talkback.focusmanagement
 
+import com.google.android.accessibility.utils.ValueSteps
+
 /** Where lifting a finger after touch exploring activates the item under it. */
 enum class LiftToActivateMode(val prefValue: String) {
   DISABLED("0"),
   NAVIGATION_BAR("1"),
   ENTIRE_SCREEN("2");
 
-  /** The mode after this one, wrapping around from the last to the first. */
-  fun next(): LiftToActivateMode = entries[(ordinal + 1) % entries.size]
+  /** The mode after this one, as [ValueSteps] goes. */
+  fun next(): LiftToActivateMode = entries[ValueSteps.step(ordinal, entries.size, true)]
 
-  /** The mode before this one, wrapping around from the first to the last. */
-  fun previous(): LiftToActivateMode = entries[(ordinal + entries.size - 1) % entries.size]
+  /** The mode before this one, as [ValueSteps] goes. */
+  fun previous(): LiftToActivateMode = entries[ValueSteps.step(ordinal, entries.size, false)]
 
   companion object {
     /** Returns the mode stored as [prefValue], or [DISABLED] if it is missing or unknown. */

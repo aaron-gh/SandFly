@@ -38,6 +38,13 @@
       android:key="pref_keep_models_loaded_minutes"
       android:summary="%s"
       android:title="@string/title_pref_keep_models_loaded" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
+      android:defaultValue="huggingface"
+      android:entries="@array/pref_model_download_server_entries"
+      android:entryValues="@array/pref_model_download_server_values"
+      android:key="@string/pref_model_download_server_key"
+      android:summary="%s"
+      android:title="@string/title_pref_model_download_server" />
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
       android:key="pref_live_recognition_screen"
       android:title="@string/live_recognition_title">

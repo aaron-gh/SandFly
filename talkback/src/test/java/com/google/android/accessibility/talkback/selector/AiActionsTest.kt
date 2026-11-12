@@ -17,8 +17,10 @@
 package com.google.android.accessibility.talkback.selector
 
 import com.google.android.accessibility.talkback.selector.AiActions.Action
+import com.google.android.accessibility.utils.ValueSteps
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
+import org.junit.Assert.assertTrue
 import org.junit.Test
 
 class AiActionsTest {
@@ -37,6 +39,15 @@ class AiActionsTest {
   fun step_wrapsAround() {
     assertEquals(screen, AiActions.step(actions, agent.value, forward = true))
     assertEquals(agent, AiActions.step(actions, screen.value, forward = false))
+  }
+
+  @Test
+  fun step_withWrapAroundOff_staysAtTheLastAndFirstAction() {
+    var action: Action? = null
+    assertTrue(ValueSteps.run(false) { action = AiActions.step(actions, agent.value, true) })
+    assertEquals(agent, action)
+    assertTrue(ValueSteps.run(false) { action = AiActions.step(actions, screen.value, false) })
+    assertEquals(screen, action)
   }
 
   @Test

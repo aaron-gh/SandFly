@@ -147,7 +147,10 @@ bind \{chord}+\{chord4}+\{chord5}+\{chord6}+\{chord7}+\{chord8} KEY_FUNCTION+160
 # Show announcement history
 bind \{chord}+\{chord1}+\{chord3}+\{chord4}+\{chord5}+\{chord7}+\{chord8} KEY_FUNCTION+161
 # Enter or exit captions
-bind \{chord}+\{chord1}+\{chord4}+\{chord7}+\{chord8} KEY_FUNCTION+162
+# SandFly: captions are off (FeatureFlagReader.useShowCaptions), so the command did nothing and its
+# keys couldn't be assigned. Without the binding, Space with dots 1 4 7 8 reaches SandFly as a
+# Space chord, which runs nothing until assigned in Braille display commands.
+#bind \{chord}+\{chord1}+\{chord4}+\{chord7}+\{chord8} KEY_FUNCTION+162
 
 # Browse mode
 # Enter or exit browse mode

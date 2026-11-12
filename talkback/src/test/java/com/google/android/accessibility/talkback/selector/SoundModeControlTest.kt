@@ -21,8 +21,10 @@ import android.media.AudioManager
 import android.os.Vibrator
 import android.provider.Settings
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.utils.ValueSteps
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
+import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -95,6 +97,25 @@ class SoundModeControlTest {
     setAccess(false)
     assertEquals(context.getString(R.string.sound_mode_needs_access), change(next = true))
     assertEquals(AudioManager.RINGER_MODE_SILENT, audio.ringerMode)
+  }
+
+  @Test
+  fun withWrapAroundOff_muteIsKeptAndSaidAgainWithoutAccess() {
+    audio.ringerMode = AudioManager.RINGER_MODE_SILENT
+    setAccess(false)
+    var text = ""
+    assertTrue(ValueSteps.run(false) { text = change(next = true) })
+    assertEquals(context.getString(R.string.quick_settings_mute), text)
+    assertEquals(AudioManager.RINGER_MODE_SILENT, audio.ringerMode)
+    assertNull(shadowOf(context).nextStartedActivity)
+  }
+
+  @Test
+  fun withWrapAroundOff_soundIsKeptGoingBack() {
+    var text = ""
+    assertTrue(ValueSteps.run(false) { text = change(next = false) })
+    assertEquals(context.getString(R.string.quick_settings_sound), text)
+    assertEquals(AudioManager.RINGER_MODE_NORMAL, audio.ringerMode)
   }
 
   private fun change(next: Boolean) = SoundModeControl.change(context, next)

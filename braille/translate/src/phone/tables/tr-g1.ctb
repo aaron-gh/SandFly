@@ -56,7 +56,9 @@ lowercase \x00e1 4-1
 lowercase \x00e3 4-1
 lowercase \x00e4 4-1
 lowercase \x00e5 4-1
-lowercase \x00e6 1-15
+# The ligatures æ, ĳ and œ are written as their two letters, so they are not used in
+# back-translation. Otherwise typing a e, i j or o e gives the ligature.
+noback lowercase \x00e6 1-15
 lowercase \x00e8 4-15
 lowercase \x00e9 4-15
 lowercase \x00ea 4-15
@@ -87,7 +89,7 @@ lowercase \x0119 4-15
 lowercase \x0129 4-24
 lowercase \x012b 4-24
 lowercase \x012f 4-24
-lowercase \x0133 24-245
+noback lowercase \x0133 24-245
 lowercase \x0135 4-245
 lowercase \x0137 4-13
 lowercase \x013a 4-123
@@ -102,7 +104,7 @@ lowercase \x014b 4-1345
 lowercase \x014d 4-135
 lowercase \x014f 4-135
 lowercase \x0151 4-135
-lowercase \x0153 135-15
+noback lowercase \x0153 135-15
 lowercase \x0155 4-1235
 lowercase \x0157 4-1235
 lowercase \x0159 4-1235
@@ -141,11 +143,11 @@ lowercase \x1e85 4-2456
 lowercase \x1ef3 4-13456
 lowercase \x00fe 4-2345
 
-uppercase Ĳ 24-6-245   # capsign included in definition
+noback uppercase Ĳ 24-6-245   # capsign included in definition
 uppercase Þ 4-2345
 uppercase Ā 4-1
-uppercase Æ 6-1-15      # capsign included in definition
-uppercase Œ 6-135-15    # capsign included in definition
+noback uppercase Æ 6-1-15      # capsign included in definition
+noback uppercase Œ 6-135-15    # capsign included in definition
 
 base uppercase \x0112 \x0113
 base uppercase \x0116 \x0117
@@ -252,6 +254,11 @@ punctuation ( 2356
 prepunc ( 2356
 punctuation ) 2356
 postpunc ) 2356
+
+# The UEB math rules in en-ueb-g1.ctb back-translate 35-126 and 146-35-126 to private use
+# characters. Back-translate them as the letters ığ and şığ.
+nofor always \x0131\x011f 35-126
+nofor always \x015f\x0131\x011f 146-35-126
 
 # Used to display symbols, Unicode chars and other symbols used
 # throughout UEB code.

@@ -19,6 +19,7 @@ package com.google.android.accessibility.talkback.compositor
 import android.os.SystemClock
 import android.view.accessibility.AccessibilityEvent
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
+import com.google.android.accessibility.talkback.focusmanagement.TraversalTreeCache
 import com.google.android.accessibility.utils.AccessibilityEventUtils
 
 /** What Backtalk already did for an app's focus event before it arrived. */
@@ -44,7 +45,8 @@ enum class EarlyFocusMatch {
 
 /**
  * Remembers the nodes whose accessibility focus was spoken as soon as Backtalk focused them, so
- * that the app's focus events for them, which come later, are not spoken again.
+ * that the app's focus events for them, which come later, are not spoken again, nor the content
+ * descriptions the app gives them in reaction to the focus.
  *
  * Each node is remembered for one focus event, for at most [MAX_WAIT_MS].
  */
@@ -75,6 +77,36 @@ class EarlyFocusSpeech(clock: () -> Long = SystemClock::uptimeMillis) {
   /** Forgets every node, such as when the events waiting to be spoken are thrown away. */
   fun clear() = records.clear()
 
+  /**
+   * Whether [event] is the first change of the content description that the app made to a node in
+   * reaction to the focus that was spoken early, such as the One UI launcher adding "Column 2" to a
+   * folder item it is told to focus. Speaking it would read the item a second time. Later changes,
+   * and changes after the node or another one was clicked or acted on, such as Play becoming Pause,
+   * are spoken.
+   */
+  fun isDescriptionChangeFromFocus(event: AccessibilityEvent): Boolean {
+    when (event.eventType) {
+      AccessibilityEvent.TYPE_VIEW_CLICKED,
+      AccessibilityEvent.TYPE_VIEW_LONG_CLICKED -> {
+        // Clicked some other way than by an action, such as by a gesture passed to the app.
+        records.forgetSpokenFocus()
+        return false
+      }
+      AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED -> {}
+      else -> return false
+    }
+    records.forgetSpokenFocusBefore(lastNodeActionTime)
+    if (
+      (event.contentChangeTypes and AccessibilityEvent.CONTENT_CHANGE_TYPE_CONTENT_DESCRIPTION) ==
+        0 || !records.hasSpokenFocus()
+    ) {
+      return false
+    }
+    // Asked for only now, as it is a round trip to the app.
+    val source = AccessibilityEventUtils.sourceCompat(event)
+    return records.consumeReactionToSpokenFocus(source, event.eventTime)
+  }
+
   /** Whether the state that follows focus has already been updated for [event], or it is stale. */
   fun isHandled(event: AccessibilityEvent): Boolean =
     match(event, consume = false) != EarlyFocusMatch.NONE
@@ -100,19 +132,52 @@ class EarlyFocusSpeech(clock: () -> Long = SystemClock::uptimeMillis) {
 
     /** How many nodes are remembered at once, for swipes faster than the app's events. */
     private const val MAX_NODES = 4
+
+    /**
+     * When Backtalk last performed an action other than focus on a node, such as a click, in
+     * [SystemClock.uptimeMillis] time, or 0 if it has not.
+     */
+    @Volatile private var lastNodeActionTime = 0L
+
+    /**
+     * Notes that Backtalk performs [actionId] on a node. Description changes after a click or
+     * another action that is not focus are the app's reaction to that action, not to the focus.
+     */
+    @JvmStatic
+    fun onNodeAction(actionId: Int) {
+      if (TraversalTreeCache.changesNodes(actionId)) {
+        lastNodeActionTime = SystemClock.uptimeMillis()
+      }
+    }
   }
 }
 
 /** The rules of [EarlyFocusSpeech], for any kind of [item], so that they can be tested. */
-class EarlyFocusRecords<T>(maxItems: Int, maxAgeMs: Long, clock: () -> Long) {
+class EarlyFocusRecords<T>(
+  maxItems: Int,
+  maxAgeMs: Long,
+  clock: () -> Long,
+  private val reactionMs: Long = REACTION_MS,
+) {
   private class Entry<T>(val item: T, val spoken: Boolean, val actionTime: Long)
 
   private val entries = RecentItems<Entry<T>>(maxItems, maxAgeMs, clock)
 
+  /**
+   * The items whose focus was spoken early in the last [reactionMs], kept after their focus events
+   * have used their [entries], as the app may change them in reaction to the focus after sending
+   * the focus event. Each is kept for one change.
+   */
+  private val spokenFocus = RecentItems<Entry<T>>(maxItems, reactionMs, clock)
+
   /** When the latest focus action handled early started, or 0 if none has. */
   private var lastActionTime = 0L
 
-  fun addSpoken(item: T, actionTime: Long) = add(Entry(item, spoken = true, actionTime))
+  fun addSpoken(item: T, actionTime: Long) {
+    val entry = Entry(item, spoken = true, actionTime)
+    add(entry)
+    spokenFocus.add(entry)
+  }
 
   fun addStateUpdated(item: T, actionTime: Long) = add(Entry(item, spoken = false, actionTime))
 
@@ -126,11 +191,43 @@ class EarlyFocusRecords<T>(maxItems: Int, maxAgeMs: Long, clock: () -> Long) {
     lastActionTime = maxOf(lastActionTime, entry.actionTime)
   }
 
-  fun forget(item: T) = entries.removeAll { it.item == item }
+  fun forget(item: T) {
+    entries.removeAll { it.item == item }
+    spokenFocus.removeAll { it.item == item }
+  }
 
-  fun clear() = entries.clear()
+  fun clear() {
+    entries.clear()
+    spokenFocus.clear()
+  }
 
   fun isEmpty(): Boolean = entries.isEmpty()
+
+  fun hasSpokenFocus(): Boolean = !spokenFocus.isEmpty()
+
+  /** Forgets the spoken focus of every item, such as when one of them is clicked. */
+  fun forgetSpokenFocus() = spokenFocus.clear()
+
+  /**
+   * Forgets the spoken focus of the items focused before [actionTime], when an action other than
+   * focus was performed. Changes after it are the app's reaction to that action.
+   */
+  fun forgetSpokenFocusBefore(actionTime: Long) {
+    if (actionTime > 0) spokenFocus.removeAll { it.actionTime < actionTime }
+  }
+
+  /**
+   * Whether a change of [item] (null when not looked up) sent at [eventTime] came within
+   * [reactionMs] after the latest focus action that focused it and spoke it early, and is the first
+   * change since. The item's spoken focus is then forgotten, so that later changes are spoken. An
+   * [eventTime] of 0 is unknown, and not matched.
+   */
+  fun consumeReactionToSpokenFocus(item: T?, eventTime: Long): Boolean {
+    if (item == null || eventTime <= 0) return false
+    return spokenFocus.removeFirst {
+      it.item == item && eventTime >= it.actionTime && eventTime - it.actionTime <= reactionMs
+    } != null
+  }
 
   /**
    * Returns what was already done for the focus event of [item] (null when not looked up) sent at
@@ -155,6 +252,14 @@ class EarlyFocusRecords<T>(maxItems: Int, maxAgeMs: Long, clock: () -> Long) {
     } else {
       EarlyFocusMatch.NONE
     }
+  }
+
+  companion object {
+    /**
+     * How long after a focus action that spoke its node early a change the app makes to the node
+     * counts as its reaction to the focus.
+     */
+    const val REACTION_MS = 1_000L
   }
 }
 

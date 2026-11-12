@@ -101,6 +101,7 @@ import androidx.annotation.VisibleForTesting;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import androidx.core.view.accessibility.AccessibilityWindowInfoCompat;
 import com.google.android.accessibility.talkback.PrimesController.TimerAction;
+import com.google.android.accessibility.talkback.clipboard.ClipboardHistoryOverlay;
 import com.google.android.accessibility.talkback.contextmenu.ListMenuManager;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForTapAndTouchExploration;
@@ -651,7 +652,10 @@ public class TouchInteractionMonitor
    * @param enabled the requested state of Touch Explore status.
    */
   public void requestA11yTouchExploreState(boolean enabled) {
-    if (enabled || state == STATE_CLEAR) {
+    // After the last finger lifts, Android keeps the interaction open for about 300 ms in case
+    // another tap follows. Waiting for it to end left touch exploration on over the braille
+    // keyboard that a double tap had just opened, so its first touches were gestures.
+    if (enabled || state == STATE_CLEAR || (state == STATE_TOUCH_INTERACTING && !fingerDown)) {
       waitToChange = false;
       idlePerformer.provisionTouchExploreFeature(enabled);
     } else {
@@ -1692,7 +1696,9 @@ public class TouchInteractionMonitor
   private boolean isOnKeyboard(float x, float y) {
     Region region = new Region();
     for (AccessibilityWindowInfo window : service.getWindowsOnDisplay(displayId)) {
-      if (window.getType() == AccessibilityWindowInfo.TYPE_ACCESSIBILITY_OVERLAY) {
+      // The clipboard history covers the keyboard.
+      if (window.getType() == AccessibilityWindowInfo.TYPE_ACCESSIBILITY_OVERLAY
+          && !ClipboardHistoryOverlay.isOwnWindow(service, window)) {
         continue;
       }
       window.getRegionInScreen(region);

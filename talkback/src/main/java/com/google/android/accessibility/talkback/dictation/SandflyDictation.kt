@@ -43,16 +43,18 @@ object SandflyDictation {
 
   /**
    * Starts recording, or stops recording when it is on. [onText] gets the text, or null when
-   * nothing was recognized or recording couldn't start. Returns false when it can't start.
+   * nothing was recognized or recording couldn't start. Returns false when it can't start. With
+   * [correct] false, the text isn't corrected with AI, as for voice commands.
    */
   @JvmStatic
-  fun listen(onText: (String?) -> Unit): Boolean {
+  @JvmOverloads
+  fun listen(correct: Boolean = true, onText: (String?) -> Unit): Boolean {
     val dictation = instance
     if (dictation == null) {
       onText(null)
       return false
     }
-    return dictation.listen(onText)
+    return dictation.listen(correct, onText)
   }
 
   /** Stops recording for [listen], so that what was said is recognized. */

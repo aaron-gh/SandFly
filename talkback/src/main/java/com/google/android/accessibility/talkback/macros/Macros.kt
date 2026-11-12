@@ -26,6 +26,7 @@ import com.google.android.accessibility.talkback.commands.CommandAssignments
 import com.google.android.accessibility.talkback.commands.Commands
 import com.google.android.accessibility.talkback.gesture.OpenAppActions
 import java.util.UUID
+import java.util.regex.Pattern
 import kotlin.math.roundToLong
 import org.json.JSONArray
 import org.json.JSONException
@@ -50,10 +51,16 @@ object Macros {
   data class Wait(val millis: Long) : Step()
 
   /**
-   * Clicks the first item on screen whose text or description contains [label], ignoring case,
+   * Clicks the first item on screen whose text or description, or only its [field] when that isn't
+   * null, contains [label], ignoring case, or matches it as a regular expression for [regex],
    * waiting up to [timeoutMillis] for it to appear.
    */
-  data class Tap(val label: String, val timeoutMillis: Long = DEFAULT_TAP_TIMEOUT_MS) : Step()
+  data class Tap(
+    val label: String,
+    val timeoutMillis: Long = DEFAULT_TAP_TIMEOUT_MS,
+    val regex: Boolean = false,
+    val field: Field? = null,
+  ) : Step()
 
   /** Opens the app of the [OpenAppActions] value [value]. */
   data class OpenApp(val value: String) : Step()
@@ -110,20 +117,45 @@ object Macros {
     }
   }
 
+  /** The one text of an item that a macro step or test looks in, instead of all of them. */
+  enum class Field(val key: String, @StringRes val title: Int) {
+    TEXT("text", R.string.macro_field_text),
+    DESCRIPTION("description", R.string.macro_field_description),
+    HINT("hint", R.string.macro_field_hint),
+    STATE("state", R.string.macro_field_state),
+    RESOURCE_ID("id", R.string.macro_field_id);
+
+    companion object {
+      fun of(key: String?): Field? = entries.firstOrNull { it.key == key }
+    }
+  }
+
   /** What a condition checks. */
   sealed class Test
 
   /**
-   * An item on screen whose text, description or hint contains [label], ignoring case, and that is
-   * of [kind] when it isn't null.
+   * An item on screen whose text, description, hint or state, or only its [field] when that isn't
+   * null, contains [label], ignoring case, or matches it as a regular expression for [regex], and
+   * that is of [kind] when it isn't null.
    */
-  data class ItemOnScreen(val label: String, val kind: Kind? = null) : Test()
+  data class ItemOnScreen(
+    val label: String,
+    val kind: Kind? = null,
+    val regex: Boolean = false,
+    val field: Field? = null,
+  ) : Test()
 
   /**
-   * The item with accessibility focus: its text, or the text of the items in it, contains [label]
-   * when it isn't empty, and it is of [kind] when it isn't null.
+   * The item with accessibility focus: its texts, or those of the items in it, or only their
+   * [field] when that isn't null, contain [label] when it isn't empty, or match it as a regular
+   * expression for [regex], and it is of [kind] when it isn't null.
    */
-  data class FocusedItem(val label: String, val kind: Kind? = null) : Test()
+  data class FocusedItem(
+    val label: String,
+    val kind: Kind? = null,
+    val regex: Boolean = false,
+    val field: Field? = null,
+  ) : Test()
 
   /** The app of the active window is [packageName]. */
   data class AppInFront(val packageName: String) : Test()
@@ -211,6 +243,9 @@ object Macros {
 
   /** The most characters of the text a test looks for. */
   const val MAX_LABEL = 500
+
+  /** The most characters of an item's text a regular expression is matched against. */
+  const val MAX_PATTERN_INPUT = 1_000
 
   /** The most characters of text a step types. */
   const val MAX_TEXT = 10_000
@@ -336,7 +371,7 @@ object Macros {
       is RunCommand ->
         Commands.label(context, step.value) ?: context.getString(R.string.macro_step_unavailable)
       is Wait -> waitText(context, step.millis)
-      is Tap -> context.getString(R.string.macro_step_tap_value, step.label)
+      is Tap -> context.getString(R.string.macro_step_tap_value, labelText(context, step.label, step.regex, step.field))
       is OpenApp ->
         OpenAppActions.label(context, step.value) ?: context.getString(R.string.macro_step_unavailable)
       is TypeText ->
@@ -383,12 +418,12 @@ object Macros {
       is ItemOnScreen ->
         context.getString(
           if (not) R.string.macro_test_no_item_value else R.string.macro_test_item_value,
-          itemText(context, test.label, test.kind),
+          itemText(context, labelText(context, test.label, test.regex, test.field), test.kind),
         )
       is FocusedItem ->
         context.getString(
           if (not) R.string.macro_test_not_focused_value else R.string.macro_test_focused_value,
-          itemText(context, test.label, test.kind),
+          itemText(context, labelText(context, test.label, test.regex, test.field), test.kind),
         )
       is AppInFront ->
         context.getString(
@@ -400,6 +435,140 @@ object Macros {
       ScreenLocked ->
         context.getString(if (not) R.string.macro_test_unlocked else R.string.macro_test_locked)
     }
+  }
+
+  /** Returns [label], with the [field] it is looked in, and said to be a regular expression for [regex]. */
+  private fun labelText(context: Context, label: String, regex: Boolean, field: Field?): String =
+    when {
+      label.isEmpty() -> label
+      field != null && regex ->
+        context.getString(R.string.macro_field_regex_value, label, context.getString(field.title))
+      field != null -> context.getString(R.string.macro_field_value, label, context.getString(field.title))
+      regex -> context.getString(R.string.macro_regex_value, label)
+      else -> label
+    }
+
+  /**
+   * Returns [pattern] compiled to be found in a text ignoring case, or null when it isn't a regular
+   * expression or repeats a group with repetition or alternatives in it. Java's regular expressions
+   * can take exponential time to match such a group, and a match can't be stopped once it starts.
+   */
+  @JvmStatic
+  fun compilePattern(pattern: String): Pattern? {
+    if (pattern.isEmpty() || repeatsComplexGroup(pattern)) return null
+    return try {
+      Pattern.compile(pattern, Pattern.CASE_INSENSITIVE or Pattern.UNICODE_CASE)
+    } catch (e: IllegalArgumentException) {
+      null
+    }
+  }
+
+  /** Returns whether [pattern] repeats a group that has repetition or alternatives in it. */
+  internal fun repeatsComplexGroup(pattern: String): Boolean {
+    // For each open group, whether it has repetition or alternatives in it.
+    val groups = ArrayList<Boolean>()
+    fun markComplex() {
+      if (groups.isNotEmpty()) groups[groups.size - 1] = true
+    }
+    var i = 0
+    while (i < pattern.length) {
+      when (pattern[i]) {
+        '\\' -> {
+          if (pattern.startsWith("Q", i + 1)) {
+            val end = pattern.indexOf("\\E", i + 2)
+            i = if (end < 0) pattern.length else end + 2
+          } else {
+            i += 2
+          }
+        }
+        '[' -> i = endOfClass(pattern, i)
+        '(' -> {
+          groups.add(false)
+          i = afterGroupStart(pattern, i + 1)
+        }
+        ')' -> {
+          val complex = if (groups.isEmpty()) false else groups.removeAt(groups.size - 1)
+          i++
+          val repeated = repeatEnd(pattern, i) > i
+          if (repeated && complex) return true
+          if (complex || repeated) markComplex()
+        }
+        '|' -> {
+          markComplex()
+          i++
+        }
+        else -> {
+          val end = repeatEnd(pattern, i)
+          if (end > i) {
+            markComplex()
+            i = end
+          } else {
+            i++
+          }
+        }
+      }
+    }
+    return false
+  }
+
+  /**
+   * Returns the end of a quantifier that repeats more than once at [start] of [pattern]: *, + or
+   * {n,} or {n,m} with m above 1. Returns [start] when there isn't one.
+   */
+  private fun repeatEnd(pattern: String, start: Int): Int {
+    if (start >= pattern.length) return start
+    return when (pattern[start]) {
+      '*', '+' -> start + 1
+      '{' -> {
+        val close = pattern.indexOf('}', start)
+        if (close < 0) return start
+        val bounds = pattern.substring(start + 1, close).split(',')
+        val repeats =
+          when (bounds.size) {
+            1 -> (bounds[0].trim().toIntOrNull() ?: 0) > 1
+            2 -> bounds[1].isBlank() || (bounds[1].trim().toIntOrNull() ?: 0) > 1
+            else -> false
+          }
+        if (repeats) close + 1 else start
+      }
+      else -> start
+    }
+  }
+
+  /** Returns the index after the character class that opens at [start] of [pattern]. */
+  private fun endOfClass(pattern: String, start: Int): Int {
+    var i = start + 1
+    // A ] first in the class, or after ^, is a character in it.
+    if (pattern.startsWith("^", i)) i++
+    if (pattern.startsWith("]", i)) i++
+    var depth = 1
+    while (i < pattern.length) {
+      when (pattern[i]) {
+        '\\' -> i++
+        '[' -> depth++
+        ']' -> if (--depth == 0) return i + 1
+      }
+      i++
+    }
+    return pattern.length
+  }
+
+  /** Returns the index after the (?:, (?=, (?<name> or flags that can start a group at [start]. */
+  private fun afterGroupStart(pattern: String, start: Int): Int {
+    if (!pattern.startsWith("?", start)) return start
+    var i = start + 1
+    if (i >= pattern.length) return i
+    when (pattern[i]) {
+      ':', '=', '!', '>' -> return i + 1
+      '<' -> {
+        if (pattern.startsWith("=", i + 1) || pattern.startsWith("!", i + 1)) return i + 2
+        val close = pattern.indexOf('>', i)
+        return if (close < 0) pattern.length else close + 1
+      }
+    }
+    // Flags, such as (?i) or (?i:.
+    while (i < pattern.length && (pattern[i].isLetter() || pattern[i] == '-')) i++
+    return if (pattern.startsWith(":", i)) i + 1 else i
   }
 
   private fun itemText(context: Context, label: String, kind: Kind?): String =
@@ -614,7 +783,12 @@ object Macros {
       is RunCommand -> JSONObject().put("type", TYPE_COMMAND).put("command", step.value)
       is Wait -> JSONObject().put("type", TYPE_WAIT).put("ms", step.millis)
       is Tap ->
-        JSONObject().put("type", TYPE_TAP).put("label", step.label).put("timeout", step.timeoutMillis)
+        JSONObject()
+          .put("type", TYPE_TAP)
+          .put("label", step.label)
+          .put("timeout", step.timeoutMillis)
+          .apply { if (step.regex) put("regex", true) }
+          .apply { step.field?.let { put("field", it.key) } }
       is OpenApp -> JSONObject().put("type", TYPE_OPEN_APP).put("app", step.value)
       is TypeText ->
         JSONObject().put("type", TYPE_TYPE_TEXT).put("text", step.text).put("replace", step.replace)
@@ -641,9 +815,19 @@ object Macros {
         val item =
           when (val test = clause.test) {
             is ItemOnScreen ->
-              JSONObject().put("test", TEST_ITEM).put("label", test.label).put("kind", test.kind?.key)
+              JSONObject()
+                .put("test", TEST_ITEM)
+                .put("label", test.label)
+                .put("kind", test.kind?.key)
+                .apply { if (test.regex) put("regex", true) }
+                .apply { test.field?.let { put("field", it.key) } }
             is FocusedItem ->
-              JSONObject().put("test", TEST_FOCUSED).put("label", test.label).put("kind", test.kind?.key)
+              JSONObject()
+                .put("test", TEST_FOCUSED)
+                .put("label", test.label)
+                .put("kind", test.kind?.key)
+                .apply { if (test.regex) put("regex", true) }
+                .apply { test.field?.let { put("field", it.key) } }
             is AppInFront -> JSONObject().put("test", TEST_APP).put("package", test.packageName)
             KeyboardShown -> JSONObject().put("test", TEST_KEYBOARD)
             ScreenLocked -> JSONObject().put("test", TEST_LOCKED)
@@ -665,12 +849,24 @@ object Macros {
             when (item.optString("test")) {
               TEST_ITEM ->
                 item.optString("label").take(MAX_LABEL).takeIf { it.isNotBlank() }?.let {
-                  ItemOnScreen(it, Kind.of(item.optString("kind")))
+                  ItemOnScreen(
+                    it,
+                    Kind.of(item.optString("kind")),
+                    item.optBoolean("regex", false),
+                    Field.of(item.optString("field")),
+                  )
                 }
               TEST_FOCUSED -> {
                 val label = item.optString("label").take(MAX_LABEL)
                 val kind = Kind.of(item.optString("kind"))
-                if (label.isBlank() && kind == null) null else FocusedItem(label.trim(), kind)
+                if (label.isBlank() && kind == null) null
+                else
+                  FocusedItem(
+                    label.trim(),
+                    kind,
+                    label.isNotBlank() && item.optBoolean("regex", false),
+                    Field.of(item.optString("field")).takeIf { label.isNotBlank() },
+                  )
               }
               TEST_APP -> item.optString("package").takeIf { it.isNotEmpty() }?.let { AppInFront(it) }
               TEST_KEYBOARD -> KeyboardShown
@@ -725,6 +921,8 @@ object Macros {
           Tap(
             it,
             item.optLong("timeout", DEFAULT_TAP_TIMEOUT_MS).coerceIn(MIN_TAP_TIMEOUT_MS, MAX_TAP_TIMEOUT_MS),
+            item.optBoolean("regex", false),
+            Field.of(item.optString("field")),
           )
         }
       TYPE_OPEN_APP -> item.optString("app").takeIf { OpenAppActions.isAction(it) }?.let { OpenApp(it) }
