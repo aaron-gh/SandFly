@@ -16,26 +16,28 @@
 
 package com.google.android.accessibility.talkback.speechhistory
 
+import android.view.accessibility.AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED
+import android.view.accessibility.AccessibilityEvent.TYPE_VIEW_FOCUSED
+import android.view.accessibility.AccessibilityEvent.TYPE_VIEW_TEXT_CHANGED
 import com.google.android.accessibility.utils.output.SpeechHistory
 import org.junit.After
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
 
 class SpeechHistoryTest {
-  private var password = false
-
   @Before
   fun setUp() {
     SpeechHistory.setPaused(false)
-    SpeechHistory.setPrivacyCheck { password }
+    SpeechHistory.start()
   }
 
   @After
   fun tearDown() {
     SpeechHistory.setPaused(false)
-    SpeechHistory.setPrivacyCheck(null)
+    SpeechHistory.stop()
   }
 
   @Test
@@ -75,10 +77,54 @@ class SpeechHistoryTest {
   }
 
   @Test
-  fun speechWithAPasswordFocusedIsLeftOut() {
-    password = true
+  fun speechWithAccessibilityFocusOnAPasswordIsLeftOut() {
+    SpeechHistory.onEvent(TYPE_VIEW_ACCESSIBILITY_FOCUSED, password = true, eventTime = 100L)
     SpeechHistory.record("Secret")
-    password = false
+    SpeechHistory.onEvent(TYPE_VIEW_ACCESSIBILITY_FOCUSED, password = false, eventTime = 200L)
+    SpeechHistory.record("Public")
+    assertEquals(listOf("Public"), SpeechHistory.entries())
+  }
+
+  @Test
+  fun speechWithInputFocusOnAPasswordIsLeftOut() {
+    SpeechHistory.onEvent(TYPE_VIEW_FOCUSED, password = true, eventTime = 100L)
+    // Keyboard keys have accessibility focus while typing.
+    SpeechHistory.onEvent(TYPE_VIEW_ACCESSIBILITY_FOCUSED, password = false, eventTime = 200L)
+    SpeechHistory.record("Typed")
+    SpeechHistory.onEvent(TYPE_VIEW_FOCUSED, password = false, eventTime = 300L)
+    SpeechHistory.record("Public")
+    assertEquals(listOf("Public"), SpeechHistory.entries())
+  }
+
+  @Test
+  fun typingInAPasswordFieldMeansItHasInputFocus() {
+    SpeechHistory.onEvent(TYPE_VIEW_TEXT_CHANGED, password = true, eventTime = 100L)
+    assertTrue(SpeechHistory.isPasswordFocused())
+    SpeechHistory.onEvent(TYPE_VIEW_TEXT_CHANGED, password = false, eventTime = 200L)
+    assertTrue(SpeechHistory.isPasswordFocused())
+  }
+
+  @Test
+  fun aPasswordFocusedBySandFlyIsLeftOutBeforeTheAppsEvent() {
+    SpeechHistory.onAccessibilityFocusSet(password = true, time = 1_000L)
+    SpeechHistory.record("Secret")
+    // The event of the focus before, sent before the action, arriving late.
+    SpeechHistory.onEvent(TYPE_VIEW_ACCESSIBILITY_FOCUSED, password = false, eventTime = 990L)
+    SpeechHistory.record("Secret again")
+    assertTrue(SpeechHistory.entries().isEmpty())
+    // The app's event for the next focus.
+    SpeechHistory.onAccessibilityFocusSet(password = false, time = 2_000L)
+    SpeechHistory.onEvent(TYPE_VIEW_ACCESSIBILITY_FOCUSED, password = false, eventTime = 2_001L)
+    SpeechHistory.record("Public")
+    assertEquals(listOf("Public"), SpeechHistory.entries())
+  }
+
+  @Test
+  fun unknownFocusIsLeftOutUntilFocusMovesOrIsReadAgain() {
+    SpeechHistory.onFocusUnknown()
+    SpeechHistory.record("Unknown")
+    SpeechHistory.onFocusRead(accessibilityFocusPassword = false, inputFocusPassword = false)
+    assertFalse(SpeechHistory.isPasswordFocused())
     SpeechHistory.record("Public")
     assertEquals(listOf("Public"), SpeechHistory.entries())
   }
@@ -91,7 +137,7 @@ class SpeechHistoryTest {
     SpeechHistory.record("Kept")
     assertEquals(listOf("Kept"), SpeechHistory.entries())
 
-    SpeechHistory.setPrivacyCheck(null)
+    SpeechHistory.stop()
     assertTrue(SpeechHistory.entries().isEmpty())
     SpeechHistory.record("After stop")
     assertTrue(SpeechHistory.entries().isEmpty())
