@@ -56,17 +56,26 @@ public class VerbosityPrefFragment extends TalkbackBaseFragment {
     setupEmojiRepeatCountPreference();
   }
 
-  /** Counting repeated emoji only applies while SandFly names emoji. */
+  /** Counting repeated emoji and the "emoji" suffix only apply while SandFly names emoji. */
   private void setupEmojiRepeatCountPreference() {
     Preference emoji = findPreference(R.string.pref_emoji_speech_key);
     Preference repeatCount = findPreference(R.string.pref_emoji_repeat_count_key);
+    Preference suffix = findPreference(R.string.pref_emoji_suffix_key);
     if (!(emoji instanceof ListPreference emojiList) || repeatCount == null) {
       return;
     }
-    repeatCount.setEnabled(EmojiSpeech.MODE_NAMES.equals(emojiList.getValue()));
+    boolean names = EmojiSpeech.MODE_NAMES.equals(emojiList.getValue());
+    repeatCount.setEnabled(names);
+    if (suffix != null) {
+      suffix.setEnabled(names);
+    }
     emoji.setOnPreferenceChangeListener(
         (preference, newValue) -> {
-          repeatCount.setEnabled(EmojiSpeech.MODE_NAMES.equals(newValue));
+          boolean namesNow = EmojiSpeech.MODE_NAMES.equals(newValue);
+          repeatCount.setEnabled(namesNow);
+          if (suffix != null) {
+            suffix.setEnabled(namesNow);
+          }
           return true;
         });
   }

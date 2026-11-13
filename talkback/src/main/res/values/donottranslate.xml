@@ -230,6 +230,7 @@
     <string name="pref_count_repeated_symbols_key" >pref_collapse_repeated_symbols</string>
     <string name="pref_emoji_speech_key" translatable="false">pref_emoji_speech</string>
     <string name="pref_emoji_repeat_count_key" translatable="false">pref_emoji_repeat_count</string>
+    <string name="pref_emoji_suffix_key" translatable="false">pref_emoji_suffix</string>
     <string name="pref_capital_letters_key">pref_capital_letters</string>
     <string name="pref_a11y_hints_key">pref_a11y_hints</string>
     <string name="pref_speak_container_element_positions_key">pref_speak_container_element_positions_key</string>
@@ -2072,6 +2073,7 @@
     <bool name="pref_punctuation_default">false</bool>
     <string name="pref_punctuation_verbosity_default">2</string>
     <bool name="pref_count_repeated_symbols_default">true</bool>
+    <bool name="pref_emoji_suffix_default">false</bool>
     <string name="pref_node_desc_order_default">pref_node_desc_order_value_state_name_role_pos</string>
     <string name="pref_time_feedback_format_default">pref_time_feedback_format_values_undefined</string>
     <bool name="pref_speak_element_ids_default">false</bool>

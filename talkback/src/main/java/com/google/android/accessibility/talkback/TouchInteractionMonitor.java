@@ -126,6 +126,7 @@ import com.google.android.accessibility.talkback.tutorial.TutorialHooks;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.AccessibilityServiceCompatUtils;
 import com.google.android.accessibility.utils.AccessibilityWindowInfoUtils;
+import com.google.android.accessibility.utils.FormFactorUtils;
 import com.google.android.accessibility.utils.Performance;
 import com.google.android.accessibility.utils.Performance.EventId;
 import com.google.android.accessibility.utils.Role;
@@ -288,6 +289,8 @@ public class TouchInteractionMonitor
   private final Runnable edgeSwipeStallCheck = this::checkEdgeSwipeStall;
   // Taps in the corners of the screen, when a corner gesture has an action.
   private final CornerTapTracker cornerTapTracker;
+  // Watches have their own edge swipes, so SandFly's edge and corner gestures are off there.
+  private final boolean edgeGesturesOff = FormFactorUtils.isAndroidWear();
   // The system tap timeout, the default corner tap time limit.
   private final long systemTapTimeoutMs;
   private final Runnable cornerTapTimeout = this::onCornerTapTimeout;
@@ -781,7 +784,7 @@ public class TouchInteractionMonitor
    */
   private int edgeMenuItemCount(MenuEdge edge) {
     EdgeMenus.Menu menu = edge == MenuEdge.LEFT ? leftEdgeMenu : rightEdgeMenu;
-    if (menu.getSize() == 0 || isOnKeyboard(lastFingerX, lastFingerY)) {
+    if (edgeGesturesOff || menu.getSize() == 0 || isOnKeyboard(lastFingerX, lastFingerY)) {
       touchEdgeMenu = EdgeMenus.Menu.NONE;
       return 0;
     }
@@ -791,6 +794,9 @@ public class TouchInteractionMonitor
 
   /** Returns whether a slide along an edge, such as {@code ALONG_LEFT_UP}, scrolls the app. */
   private boolean edgeScrolls(Edge slide) {
+    if (edgeGesturesOff) {
+      return false;
+    }
     return switch (slide) {
       case ALONG_LEFT_UP, ALONG_LEFT_DOWN -> leftEdgeScrolls;
       case ALONG_RIGHT_UP, ALONG_RIGHT_DOWN -> rightEdgeScrolls;
@@ -1824,6 +1830,9 @@ public class TouchInteractionMonitor
    */
   private List<Integer> edgeStages(Edge edge) {
     List<Integer> stages = new ArrayList<>(2);
+    if (edgeGesturesOff) {
+      return stages;
+    }
     int lastStage = edge.getAlong() ? 1 : 2;
     for (int stage = 1; stage <= lastStage; stage++) {
       if (isGestureAssigned(edgeGestureId(edge, stage))) {
@@ -2007,7 +2016,7 @@ public class TouchInteractionMonitor
 
   /** Returns whether the corner gesture runs a command, or a running script binds it. */
   private boolean isCornerGestureAssigned(Corner corner, Kind kind) {
-    return isGestureAssigned(cornerGestureId(corner, kind));
+    return !edgeGesturesOff && isGestureAssigned(cornerGestureId(corner, kind));
   }
 
   /** Returns the gesture of the taps {@code kind} in {@code corner}. */

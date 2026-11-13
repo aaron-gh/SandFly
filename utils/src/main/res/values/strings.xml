@@ -25,6 +25,8 @@
     <string name="template_capital_letter">capital <xliff:g id="uppercase_character">%1$s</xliff:g></string>
     <!-- Replacement string used when collapsing multiple repeated characters which is spoken to the user.  For example, in the case where we're about to speak 10 equal signs, we use this string to format the phrase "10 equal sign" rather than speaking "equal sign equal sign equal sign..." -->
     <string name="character_collapse_template">\u0020<xliff:g id="number" example="7">%1$d</xliff:g> <xliff:g id="character" example="equal sign">%2$s</xliff:g>      </string>
+    <!-- Spoken for an emoji when "emoji" is said after emoji names, like "grinning face emoji". [CHAR LIMIT=NONE] -->
+    <string name="template_emoji_name_suffix"><xliff:g id="name" example="grinning face">%1$s</xliff:g> emoji</string>
     <!--
       Source: An utterance template for announcing the current text-to-speech engine.
       Description: This is spoken to the user. [CHAR LIMIT=NONE]

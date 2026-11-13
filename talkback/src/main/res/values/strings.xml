@@ -704,6 +704,8 @@
       Source: Preference for saying how many times an emoji repeats, like "3 grinning face", instead of naming it each time. [CHAR LIMIT=45]
     -->
     <string name="title_pref_emoji_repeat_count">Count repeated emoji</string>
+    <!-- Title of the verbosity switch that speaks "emoji" after each emoji name, like "grinning face emoji". [CHAR LIMIT=50] -->
+    <string name="title_pref_emoji_suffix">Speak \"emoji\" after emoji names</string>
     <!--
       Source: Count repeated emoji choice: each emoji is named every time. [CHAR LIMIT=45]
     -->

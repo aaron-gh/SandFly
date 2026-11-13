@@ -74,6 +74,10 @@
         android:summary="%s"
         android:title="@string/title_pref_emoji_repeat_count" />
     <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="@bool/pref_emoji_suffix_default"
+        android:key="@string/pref_emoji_suffix_key"
+        android:title="@string/title_pref_emoji_suffix" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
         android:defaultValue="@bool/pref_count_repeated_symbols_default"
         android:key="@string/pref_count_repeated_symbols_key"
         android:summary="@string/summary_pref_count_repeated_symbols"

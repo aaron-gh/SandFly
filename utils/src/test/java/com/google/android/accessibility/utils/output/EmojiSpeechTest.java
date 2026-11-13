@@ -54,6 +54,7 @@ public class EmojiSpeechTest {
     EmojiSpeech.setOwnSpeech(/* voice= */ false, /* multiple= */ 1f);
     EmojiSpeech.setMode(context, EmojiSpeech.MODE_ENGINE);
     EmojiSpeech.setRepeatCount(0);
+    EmojiSpeech.setSuffix(false);
   }
 
   private String spoken(String mode, CharSequence text) {
@@ -196,6 +197,17 @@ public class EmojiSpeechTest {
     CharSequence text = "yes 😀😀 ok";
     EmojiSpeech.setMode(context, EmojiSpeech.MODE_ENGINE);
     assertSame(text, EmojiSpeech.process(context, text));
+  }
+
+  @Test
+  public void suffixFollowsEachName() {
+    EmojiSpeech.setSuffix(true);
+    EmojiSpeech.setRepeatCount(2);
+    assertEquals(
+        "yes 2 grinning face emoji great thumbs up emoji ok",
+        spoken(EmojiSpeech.MODE_NAMES, "yes 😀😀 great 👍 ok"));
+    // The engine reads emoji itself, so nothing is added.
+    assertEquals("yes 😀 ok", spoken(EmojiSpeech.MODE_ENGINE, "yes 😀 ok"));
   }
 
   @Test
