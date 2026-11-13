@@ -202,6 +202,7 @@ public class FocusActionRecord {
     AccessibilityNodeInfoCompat lastFocusedNode = focusActionRecord.getFocusedNode();
 
     // 1. Unique id match
+    Deadline uniqueIdDeadline = timeLimited ? Deadline.afterSearchTimeLimit() : Deadline.none();
     @Nullable String uniqueId = focusActionRecord.getUniqueId();
     if (uniqueId != null) {
       AccessibilityNodeInfoCompat uniqueIdNode = null;
@@ -216,6 +217,14 @@ public class FocusActionRecord {
                   @Override
                   public boolean accept(AccessibilityNodeInfoCompat node) {
                     return uniqueId.equals(compoundPackageNameAndUniqueId(node));
+                  }
+                },
+                new Filter<AccessibilityNodeInfoCompat>() {
+                  @Override
+                  public boolean accept(AccessibilityNodeInfoCompat node) {
+                    // Once the deadline has passed, the remaining queued nodes are skipped
+                    // without reading their children.
+                    return uniqueIdDeadline.shouldStop();
                   }
                 });
       }
@@ -250,7 +259,8 @@ public class FocusActionRecord {
     Deadline searchDeadline = timeLimited ? Deadline.afterSearchTimeLimit() : Deadline.none();
     @Nullable AccessibilityNodeInfoCompat nodeAtSamePosition =
         nodePath.findNodeToRefocus(root, focusFinder, searchDeadline);
-    stopped.set(siblingDeadline.stopped() || searchDeadline.stopped());
+    stopped.set(
+        uniqueIdDeadline.stopped() || siblingDeadline.stopped() || searchDeadline.stopped());
     if ((nodeAtSamePosition != null)
         && AccessibilityNodeInfoUtils.shouldFocusNode(nodeAtSamePosition)) {
       LogUtils.d(
