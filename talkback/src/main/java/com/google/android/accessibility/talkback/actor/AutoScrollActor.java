@@ -181,14 +181,25 @@ public class AutoScrollActor {
           autoScrollAttempt,
           autoScrollChecker);
     }
-    LogUtils.d(
-        TAG,
-        "Perform scroll action:result=%s\nnode=%s\nnodeCompat=%s\nScrollAction=%s\nUserAction=%s",
-        result,
-        node,
-        nodeCompat,
-        AccessibilityNodeInfoUtils.actionToString(scrollAccessibilityAction),
-        ScrollActionRecord.userActionToString(userAction));
+    if (result) {
+      LogUtils.d(
+          TAG,
+          "Perform scroll action:result=%s\nnode=%s\nnodeCompat=%s\nScrollAction=%s\nUserAction=%s",
+          result,
+          node,
+          nodeCompat,
+          AccessibilityNodeInfoUtils.actionToString(scrollAccessibilityAction),
+          ScrollActionRecord.userActionToString(userAction));
+    } else {
+      // Class names only: the nodes' text stays out of logs at this level.
+      LogUtils.i(
+          TAG,
+          "Perform scroll action:result=false class=%s ScrollAction=%s UserAction=%s source=%s",
+          node != null ? node.getClassName() : nodeCompat.getClassName(),
+          AccessibilityNodeInfoUtils.actionToString(scrollAccessibilityAction),
+          ScrollActionRecord.userActionToString(userAction),
+          scrollSource);
+    }
     return result;
   }
 

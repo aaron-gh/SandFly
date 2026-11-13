@@ -132,10 +132,12 @@ import java.lang.annotation.RetentionPolicy;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
@@ -194,6 +196,9 @@ public class FocusProcessorForLogicalNavigation {
   // Whether the previous navigation action reaches the edge of the window, reset the value after
   // successfully finding the focus.
   private boolean reachEdge = false;
+
+  /** What auto-scrolling at the edge did in the last search, for {@link #logEdge}. */
+  private String edgeScrollNote = "notTried";
 
   private static boolean wrapAround = true;
 
@@ -2050,6 +2055,7 @@ public class FocusProcessorForLogicalNavigation {
 
     // Perform auto-scroll action if necessary. Not after showing the next item, which has already
     // scrolled the view: a page scroll on top would pass content that never came on screen.
+    edgeScrollNote = revealingOffscreen ? "afterReveal" : "notTried";
     if (!revealingOffscreen
         && autoScrollAtEdge(
             pivot,
@@ -2274,6 +2280,7 @@ public class FocusProcessorForLogicalNavigation {
     }
 
     // No target found.
+    logEdge(pivot, navigationAction);
     announceNativeElement(logicalDirection, navigationAction.targetType, eventId);
     return false;
   }
@@ -2769,6 +2776,7 @@ public class FocusProcessorForLogicalNavigation {
                 windowTraversal, isScreenRtl, currentWindow, searchDirection, windowFilter))) {
       reachEdge = true;
       stoppedAtEdge = !wrapAround;
+      logEdge(pivot, navigationAction);
       announceNativeElement(logicalDirection, navigationAction.targetType, eventId);
       LogUtils.v(TAG, "Reach edge before searchTargetInNextOrPreviousWindow in:" + currentWindow);
       return NavigationResult.create(NavigationResult.Type.REACH_EDGE);
@@ -2804,6 +2812,7 @@ public class FocusProcessorForLogicalNavigation {
         if (reachEdgeBeforeSearch != reachEdge) {
           // Skip one swipe if reaching edge while searching windows in loop.
           stoppedAtEdge = !wrapAround;
+          logEdge(pivot, navigationAction);
           announceNativeElement(logicalDirection, navigationAction.targetType, eventId);
           return NavigationResult.create(NavigationResult.Type.REACH_EDGE);
         }
@@ -3641,12 +3650,14 @@ public class FocusProcessorForLogicalNavigation {
       @Nullable OrderedTraversalStrategy windowOrderedStrategy,
       EventId eventId) {
     if (!navigationAction.shouldScroll) {
+      edgeScrollNote = "shouldScroll=false";
       LogUtils.v(TAG, "autoScrollAtEdge returns due to shouldScroll is false");
       return false;
     }
     if (WebInterfaceUtils.supportsWebActions(pivot)) {
       // Do not autoScrollAtEdge on web node because autoScrollAtEdge relies on TraversalStrategy
       // but web nodes aren't in the traversal tree.
+      edgeScrollNote = "web";
       LogUtils.v(TAG, "autoScrollAtEdge returns due to pivot is web node");
       return false;
     }
@@ -3654,19 +3665,24 @@ public class FocusProcessorForLogicalNavigation {
     // Allow the pivot node itself being the scrollable container. This may happen when the
     // scrollable container is at the edge of the screen and contains no focusable item before
     // scrolling.
+    boolean rtl = WindowUtils.isScreenLayoutRTL(service);
     ScrollableNodeInfo scrollableNodeInfo =
         ScrollableNodeInfo.findScrollableNodeForDirection(
-            navigationAction.searchDirection,
-            pivot,
-            /* includeSelf= */ true,
-            WindowUtils.isScreenLayoutRTL(service));
+            navigationAction.searchDirection, pivot, /* includeSelf= */ true, rtl);
     if (scrollableNodeInfo == null) {
+      scrollableNodeInfo =
+          findAnyRoleScrollable(pivot, ignoreDescendantsOfPivot, navigationAction, rtl);
+    }
+    if (scrollableNodeInfo == null) {
+      edgeScrollNote = ignoreDescendantsOfPivot ? "none,ignoreDesc" : "none";
       return false;
     }
     AccessibilityNodeInfoCompat scrollableNode = scrollableNodeInfo.getNode();
+    String kind = scrollableNodeInfo.isAnyRole() ? "anyRole" : "list";
 
     // Don't try to scroll the pivot when ignoring all descendants from the pivot.
     if (scrollableNode.equals(pivot) && ignoreDescendantsOfPivot) {
+      edgeScrollNote = kind + ":pivot,ignoreDesc";
       return false;
     }
 
@@ -3678,10 +3694,145 @@ public class FocusProcessorForLogicalNavigation {
         navigationAction.searchDirection,
         focusFinder,
         windowOrderedStrategy)) {
+      edgeScrollNote = kind + ":notAtEdge";
       return false;
     }
 
-    return autoScroll(scrollableNodeInfo, pivot, navigationAction, eventId);
+    boolean scrolled = autoScroll(scrollableNodeInfo, pivot, navigationAction, eventId);
+    edgeScrollNote = kind + ":result=" + scrolled;
+    if (scrollableNodeInfo.isAnyRole()) {
+      LogUtils.i(
+          TAG,
+          "autoScrollAtEdge: scroll of %s/%s, which has no list role, result=%s",
+          scrollableNode.getClassName(),
+          Role.roleToString(Role.getRole(scrollableNode)),
+          scrolled);
+    }
+    return scrolled;
+  }
+
+  /**
+   * Returns the nearest ancestor of {@code pivot} that passes {@link
+   * AccessibilityNodeInfoUtils#FILTER_AUTO_SCROLL_ANY_ROLE} and scrolls in the direction of {@code
+   * navigationAction}, for moving to the next or previous item when no list, grid or scroll view
+   * can scroll, or {@code null}. Not after a failed scroll, which makes the container that didn't
+   * scroll the pivot and ignores its descendants.
+   */
+  private static @Nullable ScrollableNodeInfo findAnyRoleScrollable(
+      @NonNull AccessibilityNodeInfoCompat pivot,
+      boolean ignoreDescendantsOfPivot,
+      NavigationAction navigationAction,
+      boolean rtl) {
+    if (ignoreDescendantsOfPivot
+        || navigationAction.actionType != NavigationAction.DIRECTIONAL_NAVIGATION
+        || navigationAction.targetType != NavigationTarget.TARGET_DEFAULT) {
+      return null;
+    }
+    return ScrollableNodeInfo.findAnyRoleScrollableNodeForDirection(
+        navigationAction.searchDirection, pivot, /* includeSelf= */ false, rtl);
+  }
+
+  /** Most ancestors that {@link #logEdge} lists. */
+  private static final int EDGE_LOG_MAX_ANCESTORS = 12;
+
+  /**
+   * Logs in one line, at info level, where a move stopped at the edge: the pivot, its ancestors
+   * with their scroll actions and whether {@link AccessibilityNodeInfoUtils#FILTER_AUTO_SCROLL}
+   * accepts them, and what auto-scrolling did. Holds no node text.
+   */
+  private void logEdge(
+      @Nullable AccessibilityNodeInfoCompat pivot, NavigationAction navigationAction) {
+    if (!LogUtils.shouldLog(Log.INFO)) {
+      return;
+    }
+    LogUtils.i(
+        TAG,
+        "Edge: dir=%s target=%s scroll=%s %s",
+        TraversalStrategy.getSymbolicName(navigationAction.searchDirection),
+        NavigationTarget.targetTypeToString(navigationAction.targetType),
+        edgeScrollNote,
+        describeForEdgeLog(pivot));
+  }
+
+  /**
+   * Describes {@code pivot} and up to {@link #EDGE_LOG_MAX_ANCESTORS} of its ancestors by class,
+   * role and scroll actions, without their text.
+   */
+  @VisibleForTesting
+  static String describeForEdgeLog(@Nullable AccessibilityNodeInfoCompat pivot) {
+    if (pivot == null) {
+      return "pivot=null";
+    }
+    StringBuilder text = new StringBuilder("pivot=");
+    text.append(pivot.getClassName())
+        .append('/')
+        .append(Role.roleToString(Role.getRole(pivot)))
+        .append(" ancestors=[");
+    Set<AccessibilityNodeInfoCompat> seen = new HashSet<>();
+    seen.add(pivot);
+    AccessibilityNodeInfoCompat node = pivot.getParent();
+    int count = 0;
+    while (node != null && count < EDGE_LOG_MAX_ANCESTORS && seen.add(node)) {
+      if (count > 0) {
+        text.append("; ");
+      }
+      text.append(node.getClassName())
+          .append('/')
+          .append(Role.roleToString(Role.getRole(node)))
+          .append(" scr=")
+          .append(node.isScrollable() ? 1 : 0)
+          .append(" vis=")
+          .append(node.isVisibleToUser() ? 1 : 0)
+          .append(" act=")
+          .append(scrollActionLetters(node))
+          .append(" auto=")
+          .append(FILTER_AUTO_SCROLL.accept(node) ? 1 : 0)
+          .append(" any=")
+          .append(AccessibilityNodeInfoUtils.FILTER_AUTO_SCROLL_ANY_ROLE.accept(node) ? 1 : 0);
+      count++;
+      node = node.getParent();
+    }
+    if (node != null && count >= EDGE_LOG_MAX_ANCESTORS) {
+      text.append("; ...");
+    }
+    return text.append(']').toString();
+  }
+
+  /**
+   * Returns a letter for each scroll action of {@code node}: F forward, B backward, D down, U up, L
+   * left, R right, and P for any page action, or "-" for none.
+   */
+  private static String scrollActionLetters(AccessibilityNodeInfoCompat node) {
+    StringBuilder letters = new StringBuilder();
+    if (AccessibilityNodeInfoUtils.supportsAction(node, ACTION_SCROLL_FORWARD.getId())) {
+      letters.append('F');
+    }
+    if (AccessibilityNodeInfoUtils.supportsAction(node, ACTION_SCROLL_BACKWARD.getId())) {
+      letters.append('B');
+    }
+    if (AccessibilityNodeInfoUtils.supportsAction(
+        node, AccessibilityActionCompat.ACTION_SCROLL_DOWN.getId())) {
+      letters.append('D');
+    }
+    if (AccessibilityNodeInfoUtils.supportsAction(
+        node, AccessibilityActionCompat.ACTION_SCROLL_UP.getId())) {
+      letters.append('U');
+    }
+    if (AccessibilityNodeInfoUtils.supportsAction(node, ACTION_SCROLL_LEFT.getId())) {
+      letters.append('L');
+    }
+    if (AccessibilityNodeInfoUtils.supportsAction(node, ACTION_SCROLL_RIGHT.getId())) {
+      letters.append('R');
+    }
+    if (AccessibilityNodeInfoUtils.supportsAction(node, ACTION_PAGE_UP.getId())
+        || AccessibilityNodeInfoUtils.supportsAction(node, ACTION_PAGE_DOWN.getId())
+        || AccessibilityNodeInfoUtils.supportsAction(
+            node, AccessibilityActionCompat.ACTION_PAGE_LEFT.getId())
+        || AccessibilityNodeInfoUtils.supportsAction(
+            node, AccessibilityActionCompat.ACTION_PAGE_RIGHT.getId())) {
+      letters.append('P');
+    }
+    return letters.length() == 0 ? "-" : letters.toString();
   }
 
   /**
@@ -5471,12 +5622,14 @@ public class FocusProcessorForLogicalNavigation {
       NavigationAction navigationAction,
       EventId eventId) {
     list.refresh();
+    boolean rtl = WindowUtils.isScreenLayoutRTL(service);
     ScrollableNodeInfo scrollableNodeInfo =
         ScrollableNodeInfo.findScrollableNodeForDirection(
-            navigationAction.searchDirection,
-            pivot,
-            /* includeSelf= */ false,
-            WindowUtils.isScreenLayoutRTL(service));
+            navigationAction.searchDirection, pivot, /* includeSelf= */ false, rtl);
+    if (scrollableNodeInfo == null) {
+      scrollableNodeInfo =
+          findAnyRoleScrollable(pivot, /* ignoreDescendantsOfPivot= */ false, navigationAction, rtl);
+    }
     if (scrollableNodeInfo == null || !scrollableNodeInfo.getNode().equals(list)) {
       return false;
     }
