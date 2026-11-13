@@ -52,7 +52,6 @@ import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.actor.ImageCaptioner;
 import com.google.android.accessibility.talkback.actor.gemini.AiCoreEndpoint;
 import com.google.android.accessibility.talkback.actor.gemini.AiCoreEndpoint.AiFeatureDownloadCallback;
-import com.google.android.accessibility.talkback.actor.gemini.AiProviderPreferences;
 import com.google.android.accessibility.talkback.actor.gemini.GeminiConfiguration;
 import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics;
 import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics.ImageCaptionLogKeys;
@@ -162,13 +161,11 @@ public class AutomaticDescriptionsFragment extends TalkbackBaseFragment {
     setupTextRecognitionPreference();
     setupDetailedImageDescriptionPreference(
         FeatureSwitchDialogResources.DETAILED_IMAGE_DESCRIPTION);
-    AiProviderPreferences.setUp(this);
   }
 
   @Override
   public void onResume() {
     super.onResume();
-    AiProviderPreferences.refresh(this);
     updateGeminiSettingsSummary();
 
     // Cancels the download completion notification because users may be led to the settings page by

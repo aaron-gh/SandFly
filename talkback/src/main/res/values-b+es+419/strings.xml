@@ -1521,7 +1521,7 @@
     <string name="template_item_details_order_dropped">Se soltó <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly lee los detalles de un elemento en este orden. Para cambiarlo, mantén presionado un detalle y arrástralo hacia arriba o hacia abajo. Con SandFly activado, presiona dos veces y mantén presionado; luego, arrastra. También puedes usar las acciones Mover hacia arriba y Mover hacia abajo.</string>
     <string name="title_pref_speak_items_before_scroll">Leer los elementos antes de que se desplacen a la vista</string>
-    <string name="gemini_error_api_key">Gemini no aceptó la clave de API. Verifica la clave en la configuración de Descripciones de imagen y pantalla.</string>
+    <string name="gemini_error_api_key">Gemini no aceptó la clave de API. Verifica la clave en la configuración de Servicios de IA.</string>
     <string name="gemini_error_quota">Se alcanzó el límite de uso de tu clave de API de Gemini. Vuelve a intentarlo más tarde.</string>
     <string name="gemini_error_busy">Gemini está ocupado en este momento. Vuelve a intentarlo en unos instantes.</string>
     <string name="gemini_error_timeout">Gemini tardó demasiado en responder. Vuelve a intentarlo.</string>
@@ -1774,7 +1774,7 @@
         <item>1 minuto</item>
     </string-array>
     <string name="title_pref_dictation_auto_stop">Detener automáticamente tras un silencio</string>
-    <string name="dictation_ai_same">Igual que en \"Descripciones de imagen y pantalla\"</string>
+    <string name="dictation_ai_same">Igual que en \"Servicios de IA\"</string>
     <string name="navigation_settings_link">Configuración de SandFly &gt; Navegación</string>
     <string name="navigation_settings_link_tts">Configuración de SandFly y, luego, Navegación</string>
     <string name="shortcut_reserved_for_vibration_watch">Reservado para Vibration Watch en \"Gestos\"</string>

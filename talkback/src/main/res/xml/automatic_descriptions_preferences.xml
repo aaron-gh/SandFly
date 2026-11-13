@@ -19,32 +19,6 @@
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
       android:key="@string/pref_text_recognition_key"
       android:title="@string/title_pref_text_recognition" />
-  <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
-      android:key="pref_ai_services"
-      android:title="@string/title_pref_category_ai_services">
-    <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
-        android:key="pref_ai_provider_choice"
-        android:title="@string/title_pref_ai_provider" />
-  </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
-  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
-      android:fragment="com.google.android.accessibility.talkback.actor.gemini.local.OnDeviceAiFragment"
-      android:key="@string/pref_on_device_ai_key"
-      android:summary="@string/summary_pref_on_device_ai"
-      android:title="@string/title_pref_on_device_ai" />
-  <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
-      android:defaultValue="0"
-      android:entries="@array/pref_keep_models_loaded_entries"
-      android:entryValues="@array/pref_keep_models_loaded_values"
-      android:key="pref_keep_models_loaded_minutes"
-      android:summary="%s"
-      android:title="@string/title_pref_keep_models_loaded" />
-  <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
-      android:defaultValue="huggingface"
-      android:entries="@array/pref_model_download_server_entries"
-      android:entryValues="@array/pref_model_download_server_values"
-      android:key="@string/pref_model_download_server_key"
-      android:summary="%s"
-      android:title="@string/title_pref_model_download_server" />
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
       android:key="pref_live_recognition_screen"
       android:title="@string/live_recognition_title">

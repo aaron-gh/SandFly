@@ -1706,7 +1706,7 @@
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> をドロップしました。<xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly は項目の詳細をこの順序で読み上げます。順序を変更するには、詳細を長押しして上下にドラッグします。SandFly がオンの場合は、ダブルタップして長押ししてからドラッグします。[上に移動] と [下に移動] の操作も使用できます。</string>
     <string name="title_pref_speak_items_before_scroll">スクロールして表示される前に項目を読み上げる</string>
-    <string name="gemini_error_api_key">Gemini は API キーを受け入れませんでした。画像と画面の説明の設定でキーを確認してください。</string>
+    <string name="gemini_error_api_key">Gemini は API キーを受け入れませんでした。AI サービスの設定でキーを確認してください。</string>
     <string name="gemini_error_quota">Gemini API キーの使用制限に達しました。後でもう一度試してください。</string>
     <string name="gemini_error_busy">Gemini は現在混み合っています。しばらくしてからもう一度お試しください。</string>
     <string name="gemini_error_timeout">Gemini の応答に時間がかかりすぎました。もう一度お試しください。</string>
@@ -1767,7 +1767,7 @@
         <item>1 分</item>
     </string-array>
     <string name="title_pref_dictation_auto_stop">無音で自動停止</string>
-    <string name="dictation_ai_same">[画像と画面の説明] と同じ</string>
+    <string name="dictation_ai_same">[AI サービス] と同じ</string>
     <string name="navigation_settings_link">[SandFly の設定] &gt; [ナビゲーション] で</string>
     <string name="navigation_settings_link_tts">[SandFly の設定]、[ナビゲーション] の順に選択して</string>
     <string name="shortcut_reserved_for_vibration_watch">[ジェスチャー] で Vibration Watch 用に予約済み</string>

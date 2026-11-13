@@ -2003,7 +2003,7 @@
     <!-- The content of typo correction edit box typos example. [CHAR_LIMIT=NONE]-->
 
     <!-- Gemini rejected the API key the user entered in Automatic descriptions settings. [CHAR_LIMIT=NONE]-->
-    <string name="gemini_error_api_key">Gemini 不接受该 API 密钥。请在图片和屏幕描述设置中检查密钥。</string>
+    <string name="gemini_error_api_key">Gemini 不接受该 API 密钥。请在AI 服务设置中检查密钥。</string>
 
     <!-- The usage limit of the user's Gemini API key was reached. [CHAR_LIMIT=NONE]-->
     <string name="gemini_error_quota">你的 Gemini API 密钥用量已达上限。请稍后再试。</string>
@@ -2330,7 +2330,7 @@
         <item>1 分钟</item>
     </string-array>
     <string name="title_pref_dictation_auto_stop">静音后自动停止</string>
-    <string name="dictation_ai_same">与“图片和屏幕描述”相同</string>
+    <string name="dictation_ai_same">与“AI 服务”相同</string>
     <string name="navigation_settings_link">“SandFly 设置”&gt;“导航”</string>
     <string name="navigation_settings_link_tts">“SandFly 设置”和“导航”</string>
     <string name="shortcut_reserved_for_vibration_watch">已在“手势”中为 Vibration Watch 保留</string>

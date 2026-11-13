@@ -139,15 +139,15 @@ public class TalkBackPreferenceFragment extends TalkbackBaseFragment {
     SettingsSearch.addSearchItem(getPreferenceScreen(), () -> SettingsSearch.searchSettings(this));
   }
 
-  /** Adds SandFly AI's screen after Automatic descriptions, in builds that include it. */
+  /** Adds SandFly AI's screen after AI services, in builds that include it. */
   private void addSandflyAi() {
     SandflyAiFeatures features = SandflyAi.getFeatures();
     if (features == null) {
       return;
     }
     PreferenceScreen screen = getPreferenceScreen();
-    Preference descriptions = findPreference(getString(R.string.pref_auto_image_captioning_key));
-    int order = descriptions != null ? descriptions.getOrder() + 1 : Preference.DEFAULT_ORDER;
+    Preference aiServices = findPreference(getString(R.string.pref_ai_services_screen_key));
+    int order = aiServices != null ? aiServices.getOrder() + 1 : Preference.DEFAULT_ORDER;
     for (int i = 0; i < screen.getPreferenceCount(); i++) {
       Preference preference = screen.getPreference(i);
       if (order != Preference.DEFAULT_ORDER && preference.getOrder() >= order) {

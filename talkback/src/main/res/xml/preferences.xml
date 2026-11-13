@@ -91,6 +91,10 @@
       android:key="@string/pref_auto_image_captioning_key"
       android:title="@string/title_pref_image_and_screen_descriptions" />
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+      android:fragment="com.google.android.accessibility.talkback.actor.gemini.AiServicesFragment"
+      android:key="@string/pref_ai_services_screen_key"
+      android:title="@string/title_pref_category_ai_services" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
       android:key="@string/pref_scripts_key"
       android:title="@string/title_pref_scripts"
       android:summary="@string/summary_pref_scripts"
