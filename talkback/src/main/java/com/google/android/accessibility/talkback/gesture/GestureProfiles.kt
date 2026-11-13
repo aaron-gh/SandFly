@@ -20,6 +20,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.utils.ValueSteps
+import com.google.android.accessibility.utils.gestures.GestureConfiguration
 import java.util.UUID
 import org.json.JSONArray
 import org.json.JSONException
@@ -51,8 +52,19 @@ object GestureProfiles {
   /** Starts the key of a gesture's row on a profile's screen. */
   private const val ROW_PREFIX = "gesture_profile_row:"
 
+  private const val SWIPES_BEFORE_LIFT = "swipesBeforeLift"
+
   /** A gesture profile: its name and what each of its gestures runs. */
-  data class Profile(val id: String, val name: String, val gestures: Map<String, String>)
+  /**
+   * A gesture profile. [swipesBeforeLift] is whether swipes run before the finger lifts, or null to
+   * follow Default.
+   */
+  data class Profile(
+    val id: String,
+    val name: String,
+    val gestures: Map<String, String>,
+    val swipesBeforeLift: Boolean? = null,
+  )
 
   @Volatile private var profiles: List<Profile> = emptyList()
 
@@ -81,6 +93,17 @@ object GestureProfiles {
   @JvmStatic
   fun usesGesture(gestureKey: String): Boolean = profiles.any { gestureKey in it.gestures }
 
+  /**
+   * Whether swipes run before the finger lifts in the profile in use, or null when Default's switch
+   * decides, also for Default itself.
+   */
+  @JvmStatic
+  fun activeSwipesBeforeLift(prefs: SharedPreferences): Boolean? {
+    val id = prefs.getString(ACTIVE_KEY, "").orEmpty()
+    if (id.isEmpty()) return null
+    return read(prefs).firstOrNull { it.id == id }?.swipesBeforeLift
+  }
+
   /** Whether there is a profile to change to besides Default. */
   @JvmStatic fun hasProfiles(): Boolean = profiles.isNotEmpty()
 
@@ -104,6 +127,7 @@ object GestureProfiles {
     // The service reloads it from the preference too, but the next gesture may come first.
     profiles = all
     active = profile?.gestures
+    GestureConfiguration.setSwipesBeforeLift(SwipesBeforeLift.isOn(context))
     return profile?.name ?: context.getString(R.string.gesture_profile_default)
   }
 
@@ -214,6 +238,7 @@ object GestureProfiles {
           id,
           profile.optString("name", id),
           gestures.keys().asSequence().associateWith { gestures.getString(it) },
+          if (profile.has(SWIPES_BEFORE_LIFT)) profile.optBoolean(SWIPES_BEFORE_LIFT) else null,
         )
       }
     } catch (e: JSONException) {
@@ -226,9 +251,10 @@ object GestureProfiles {
     for (profile in profiles) {
       val gestures = JSONObject()
       profile.gestures.forEach { (key, value) -> gestures.put(key, value) }
-      array.put(
+      val json =
         JSONObject().put("id", profile.id).put("name", profile.name).put("gestures", gestures)
-      )
+      profile.swipesBeforeLift?.let { json.put(SWIPES_BEFORE_LIFT, it) }
+      array.put(json)
     }
     return array.toString()
   }

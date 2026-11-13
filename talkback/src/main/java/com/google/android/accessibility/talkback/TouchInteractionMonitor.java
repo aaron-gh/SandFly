@@ -113,6 +113,7 @@ import com.google.android.accessibility.talkback.gesture.EdgeSwipeTracker;
 import com.google.android.accessibility.talkback.gesture.EdgeSwipeTracker.Edge;
 import com.google.android.accessibility.talkback.gesture.EdgeSwipeTracker.MenuEdge;
 import com.google.android.accessibility.talkback.gesture.GestureLog;
+import com.google.android.accessibility.talkback.gesture.GestureProfiles;
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping;
 import com.google.android.accessibility.talkback.gesture.KeyboardExploration;
 import com.google.android.accessibility.talkback.gesture.PinchTracker;
@@ -846,7 +847,9 @@ public class TouchInteractionMonitor
         } else if (context.getString(R.string.pref_multi_tap_timeout_key).equals(key)
             || context.getString(R.string.pref_swipe_hold_time_key).equals(key)
             || context.getString(R.string.pref_swipe_start_time_key).equals(key)
-            || context.getString(R.string.pref_swipes_before_lift_key).equals(key)) {
+            || context.getString(R.string.pref_swipes_before_lift_key).equals(key)
+            || GestureProfiles.ACTIVE_KEY.equals(key)
+            || GestureProfiles.KEY.equals(key)) {
           updateMultiTapTimeout(prefs);
         } else if (context.getString(R.string.pref_typing_confirmation_key).equals(key)) {
           typingMethod =

@@ -20,6 +20,7 @@ import android.os.Bundle
 import androidx.preference.Preference
 import com.google.android.accessibility.material.preference.AccessibilitySuitePreference
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.talkback.gesture.SwipesBeforeLift
 import com.google.android.accessibility.talkback.preference.base.TalkbackBaseFragment
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 
@@ -121,7 +122,14 @@ internal fun readGestures(fragment: TalkbackBaseFragment): List<CommandBindings.
 }
 
 /** Returns the categories of the Gestures screen, with their gestures, as [readGestures] reads them. */
-internal fun readGestureCategories(fragment: TalkbackBaseFragment): List<CommandBindings.GestureCategory> {
+internal fun readGestureCategories(
+  fragment: TalkbackBaseFragment,
+  swipesBeforeLift: Boolean = SwipesBeforeLift.isOnByDefault(fragment.requireContext()),
+): List<CommandBindings.GestureCategory> {
   fragment.addPreferencesFromResource(R.xml.gesture_preferences)
-  return CommandBindings.gestureCategories(fragment.requireContext(), fragment.preferenceScreen)
+  return CommandBindings.gestureCategories(
+    fragment.requireContext(),
+    fragment.preferenceScreen,
+    swipesBeforeLift,
+  )
 }

@@ -20,8 +20,10 @@ import android.os.Bundle
 import androidx.preference.Preference
 import androidx.preference.PreferenceGroup
 import com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
+import com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.gesture.GestureProfiles
+import com.google.android.accessibility.talkback.gesture.SwipesBeforeLift
 import com.google.android.accessibility.talkback.notifications.NotificationCodeFragment
 import com.google.android.accessibility.talkback.preference.base.GestureListPreference
 
@@ -80,8 +82,9 @@ class GestureProfileFragment : NotificationCodeFragment(R.string.title_pref_gest
 
   override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
     preferenceManager.setStorageDeviceProtected()
-    // Read from the Gestures screen, which the screen built in code then replaces.
-    categories = readGestureCategories(this)
+    // Read from the Gestures screen, which the screen built in code then replaces. All of them,
+    // since the profile's own Recognize swipes before lifting decides which are shown.
+    categories = readGestureCategories(this, swipesBeforeLift = false)
     super.onCreatePreferences(savedInstanceState, rootKey)
   }
 
@@ -116,9 +119,30 @@ class GestureProfileFragment : NotificationCodeFragment(R.string.title_pref_gest
       }
     }
 
-    // The categories and rows of the Gestures screen, with the list of commands it opens.
     val context = requireContext()
+    val swipesBeforeLift = SwipesBeforeLift.isOnInProfile(context, profile)
+    if (SwipesBeforeLift.isSupported()) {
+      screen.addPreference(
+        AccessibilitySuiteSwitchPreference(context).apply {
+          isPersistent = false
+          isIconSpaceReserved = false
+          setTitle(R.string.title_pref_swipes_before_lift)
+          setSummary(R.string.summary_pref_swipes_before_lift)
+          isChecked = swipesBeforeLift
+          setOnPreferenceChangeListener { _, newValue ->
+            val value = SwipesBeforeLift.profileValue(context, newValue == true)
+            update { it.copy(swipesBeforeLift = value) }
+            true
+          }
+        }
+      )
+    }
+
+    // The categories and rows of the Gestures screen, with the list of commands it opens.
+    val twoDirectionKeys = SwipesBeforeLift.categoryKeys(context)
     for (category in categories) {
+      // Back-and-forth and angle gestures are off while swipes run before the finger lifts.
+      if (swipesBeforeLift && category.key in twoDirectionKeys) continue
       val group = AccessibilitySuitePreferenceCategory(context)
       // The Gestures screen's key, which keeps whether it is expanded.
       group.key = category.key

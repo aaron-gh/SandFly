@@ -291,7 +291,7 @@ public class TalkBackGestureShortcutPreferenceFragment extends TalkbackBaseFragm
 
   /** Back-and-forth and angle gestures are hidden while swipes run before the finger lifts. */
   private void updateTwoDirectionCategories() {
-    boolean hidden = SwipesBeforeLift.isOn(requireContext());
+    boolean hidden = SwipesBeforeLift.isOnByDefault(requireContext());
     for (String key : SwipesBeforeLift.categoryKeys(requireContext())) {
       Preference category = findPreference(key);
       if (category != null) {
