@@ -114,9 +114,24 @@ object TextPieces {
     return runs
   }
 
-  /** The text with the shown part of [piece] replaced by [replacement]. */
-  fun replace(text: String, piece: Piece, replacement: String): String =
-    text.replaceRange(piece.coreStart, piece.coreEnd, replacement)
+  /**
+   * The text with the shown part of [piece] replaced by [replacement]. A line break at the end of a
+   * replacement for a line is dropped, as the line already has a line break of its own.
+   */
+  fun replace(
+    text: String,
+    piece: Piece,
+    replacement: String,
+    granularity: Granularity? = null,
+  ): String {
+    val shown =
+      if (granularity == Granularity.LINES) {
+        replacement.removeSuffix("\n").removeSuffix("\r")
+      } else {
+        replacement
+      }
+    return text.replaceRange(piece.coreStart, piece.coreEnd, shown)
+  }
 
   /**
    * The text without [pieces]. Deleting the last line, which has no line break of its own, also
