@@ -67,6 +67,7 @@ A table with only listed values, such as `{ 'speech', 'screen' }`, is a list. A 
 | `description` | Shown on the script's page and before it's installed. |
 | `homepage` | An `http` or `https` address. The script's page has a button that opens it. |
 | `onDemand` | *Version 4.* `true` loads the script only to run one of its commands. See [Scripts loaded on demand](#scripts-loaded-on-demand). |
+| `keepLoaded` | *Version 5.* `true` adds **Keep running with the screen off** to the script's page. Only for scripts without `apps` or `onDemand`. See [With the screen off](#with-the-screen-off). |
 | `apps` | Where the script runs. Leave it out for a script that runs in every app. See [Where a script runs](#where-a-script-runs). |
 | `permissions` | A list of the [permissions](#permissions) the script needs. |
 | `settings` | [Settings](#settings) the user can change on the script's page. |
@@ -96,6 +97,10 @@ A script without `apps` runs in every app and is loaded as long as it's turned o
 Scripts never change SandFly's own screens. Rules, speech changes, gestures, keys, menu items and reading controls from scripts don't apply there, and a script can't name SandFly in `apps`. While a SandFly screen is in front, calls that need the `screen`, `actions`, `system` or `dialogs` permission raise an error, `sf.speak` doesn't interrupt, and scripts get no events from SandFly itself. This is so that **Apps** > **Scripts** always works, whatever a script does. A script with the `java` permission can get past all of this.
 
 Scripts are also unloaded while the screen is off, while SandFly is paused, and while **Turn off all scripts** is on. Timers and requests end when a script is unloaded.
+
+### With the screen off
+
+*Version 5.* A script with `keepLoaded = true` in its manifest, such as a talking clock or reminders, can stay loaded while the screen is off. The user turns this on with **Keep running with the screen off** on the script's page; it's off when the script is installed, and a script can't turn it on. While the screen is off, its timers, requests and `sf.speak` work, and hooks for the screen, such as focus changes, don't run. Timers don't wake the phone, so they can run late while it sleeps. The script is still unloaded while SandFly is paused and while **Turn off all scripts** is on.
 
 ### Permissions
 

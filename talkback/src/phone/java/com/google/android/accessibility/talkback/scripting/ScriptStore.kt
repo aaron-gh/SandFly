@@ -37,6 +37,11 @@ data class InstalledScript(
   val language: String = "",
   /** Where the script was installed from, as [ScriptUpdater.originOf] gives it, or empty. */
   val origin: String = "",
+  /**
+   * Whether the user turned on Keep running with the screen off. It applies only while the
+   * manifest has keepLoaded.
+   */
+  val keepRunning: Boolean = false,
 ) {
   val id: String
     get() = manifest.id
@@ -73,6 +78,9 @@ class ScriptStore private constructor(private val context: Context) {
 
   /** Whether a script that is turned on is loaded without waiting for a command. */
   @Synchronized fun anyAlwaysLoaded(): Boolean = scripts.any { it.enabled && !it.manifest.onDemand }
+
+  /** Whether any script stays loaded while the screen is off. */
+  @Synchronized fun anyKeptWithScreenOff(): Boolean = scripts.any(ScriptLoading::keptWithScreenOff)
 
   /** Returns the turned on onDemand script with the command saved as [value], or null. */
   fun onDemandScriptOf(value: String): InstalledScript? =
@@ -141,6 +149,7 @@ class ScriptStore private constructor(private val context: Context) {
           granted intersect pkg.manifest.permissions,
           System.currentTimeMillis(),
           origin = origin ?: existing?.origin.orEmpty(),
+          keepRunning = existing?.keepRunning ?: false,
         )
       if (existing == null) list + installed else list.map { if (it.id == id) installed else it }
     }
@@ -169,6 +178,8 @@ class ScriptStore private constructor(private val context: Context) {
   fun setEnabled(id: String, enabled: Boolean) = update(id) { it.copy(enabled = enabled) }
 
   fun setOrigin(id: String, origin: String) = update(id) { it.copy(origin = origin) }
+
+  fun setKeepRunning(id: String, on: Boolean) = update(id) { it.copy(keepRunning = on) }
 
   fun setGranted(id: String, permission: ScriptPermission, granted: Boolean) =
     update(id) { script ->
@@ -357,6 +368,7 @@ class ScriptStore private constructor(private val context: Context) {
               entry.optJSONArray("granted").strings().mapNotNull(ScriptPermission::fromKey).toSet(),
               entry.optLong("revision", 0L),
               origin = entry.optString("origin"),
+              keepRunning = entry.optBoolean("keepRunning", false),
             )
           } catch (e: ManifestException) {
             LogUtils.e(TAG, "Dropping a script whose manifest no longer parses: %s", e.message)
@@ -378,6 +390,7 @@ class ScriptStore private constructor(private val context: Context) {
             "granted" to JSONArray(it.granted.map(ScriptPermission::key)),
             "revision" to it.revision,
             "origin" to it.origin,
+            "keepRunning" to it.keepRunning,
           )
         }
       )

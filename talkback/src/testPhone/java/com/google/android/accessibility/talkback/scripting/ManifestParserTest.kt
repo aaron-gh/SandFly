@@ -340,6 +340,27 @@ class ManifestParserTest {
   }
 
   @Test
+  fun keepLoadedIsOffUnlessTheManifestAsks() {
+    assertFalse(parse().keepLoaded)
+    assertTrue(parse(""","keepLoaded":true""").keepLoaded)
+    assertFalse(parse(""","keepLoaded":false""").keepLoaded)
+  }
+
+  @Test
+  fun keepLoadedIsOnlyForScriptsWithoutAppsOrOnDemand() {
+    assertTrue(
+      "can't have apps or onDemand" in rejects(""","keepLoaded":true,"apps":"com.example"""")
+    )
+    assertTrue(
+      "can't have apps or onDemand" in
+        rejects(
+          ""","keepLoaded":true,"onDemand":true,"permissions":["input"],""" +
+            """"commands":[{"id":"go","title":"Go"}]"""
+        )
+    )
+  }
+
+  @Test
   fun aCommandsGestureAndKeysAreChecked() {
     val permission = """"permissions":["input"]"""
     assertTrue(

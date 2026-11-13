@@ -32,8 +32,8 @@ import com.google.android.libraries.accessibility.utils.log.LogUtils
 /**
  * Runs the script engine only while there is something for it to do. The native library, the
  * script thread and the work on every window change cost nothing for people who use no scripts,
- * and scripts do not run, keep timers or use the network while the screen is off or Backtalk is
- * paused.
+ * and scripts do not run, keep timers or use the network while Backtalk is paused, or while the
+ * screen is off unless the user chose to keep them running then.
  */
 class LazyScriptHost(
   private val service: AccessibilityService,
@@ -54,6 +54,7 @@ class LazyScriptHost(
     object : BroadcastReceiver() {
       override fun onReceive(context: Context, intent: Intent) {
         screenOn = intent.action != Intent.ACTION_SCREEN_OFF
+        manager?.setScreenOn(screenOn)
         update()
         if (screenOn && store.all().isNotEmpty()) ScriptUpdater.checkIfDue(service)
       }
@@ -121,12 +122,18 @@ class LazyScriptHost(
     update()
   }
 
-  private fun canRun() = !closed && !paused && screenOn && !unavailable && !store.allOff
+  private fun canRun() = !closed && !paused && !unavailable && !store.allOff
 
   private fun update() {
     val running = manager
     val wanted =
-      canRun() && (store.anyAlwaysLoaded() || running?.hasOnDemandScripts == true)
+      canRun() &&
+        ScriptLoading.engineNeeded(
+          screenOn,
+          store.anyAlwaysLoaded(),
+          running?.hasOnDemandScripts == true,
+          store.anyKeptWithScreenOff(),
+        )
     if (wanted && running == null) {
       start()
     } else if (!wanted && running != null) {
@@ -140,7 +147,13 @@ class LazyScriptHost(
     try {
       LuaEngine.checkAvailable()
       manager =
-        ScriptManager(service, ScriptFeedback(service, feedback, resume, services), activation, ::update)
+        ScriptManager(
+          service,
+          ScriptFeedback(service, feedback, resume, services),
+          activation,
+          ::update,
+          screenOn,
+        )
     } catch (e: LinkageError) {
       LogUtils.e(TAG, "Scripts are unavailable: %s", e)
       unavailable = true
@@ -194,7 +207,7 @@ class LazyScriptHost(
   override fun menuItems(): List<ScriptMenuItem> = manager?.menuItems().orEmpty()
 
   override fun runScriptCommand(value: String): Boolean {
-    if (!canRun()) return false
+    if (!canRun() || !screenOn) return false
     if (manager == null && store.onDemandScriptOf(value) != null) start()
     return manager?.runScriptCommand(value) == true
   }
