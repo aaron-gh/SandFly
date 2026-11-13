@@ -10,6 +10,8 @@
     <string name="script_install_label">Install SandFly script</string>
     <!-- Shown when something was shared to SandFly to install as a script, but it held no file. [CHAR LIMIT=NONE] -->
     <string name="script_import_nothing">There\'s no script file to install.</string>
+    <!-- Shown when a file or link that isn't a .lua or .zip file was shared to SandFly to install as a script. [CHAR LIMIT=NONE] -->
+    <string name="script_import_not_script">Not a .lua or .zip file.</string>
     <!-- The reason a shared script couldn't be installed, when its file couldn't be opened. [CHAR LIMIT=NONE] -->
     <string name="script_import_cannot_open">The file could not be opened.</string>
     <!-- Shown when a link to a whole GitHub repository was shared to SandFly to install as a script. [CHAR LIMIT=NONE] -->
