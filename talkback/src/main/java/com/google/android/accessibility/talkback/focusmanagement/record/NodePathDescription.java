@@ -117,6 +117,22 @@ public final class NodePathDescription {
     }
   }
 
+  /** The saved outermost Chromium document, identified without reading its current tree. */
+  public @Nullable AccessibilityNodeInfoCompat getSavedChromiumDocument() {
+    AccessibilityNodeInfoCompat document = null;
+    for (NodeDescription description : nodeDescriptions) {
+      if (description.savedNode != null) {
+        AccessibilityNodeInfoCompat node = description.savedNode.obtainCopyCompat();
+        if ("rootWebArea".contentEquals(
+                String.valueOf(AccessibilityNodeInfoUtils.getChromeRole(node)))
+            && node.getUniqueId() != null) {
+          document = node;
+        }
+      }
+    }
+    return document;
+  }
+
   public static @NonNull NodePathDescription obtain(AccessibilityNodeInfoCompat node) {
     final NodePathDescription nodePath = new NodePathDescription();
     // Each node's position is found among the children of the parent read for the path, rather

@@ -357,4 +357,36 @@ class RefocusSearchTest {
 
     assertEquals(newB, found)
   }
+  private fun document(label: String, id: String) = Node(label, web = true).apply {
+    className = "android.webkit.WebView"
+    uniqueId = id
+    extras.putString("AccessibilityNodeInfo.chromeRole", "rootWebArea")
+  }
+
+  @Test fun aMissingDocumentDoesNotSearchTheContentsOfOtherPages() {
+    val old = document("old", "document-old").apply { alive = false }
+    val other = document("other", "document-other").apply {
+      add(*Array(200) { Node("unrelated-$it", web = true) })
+    }
+    val root = Node("window").apply { add(other) }
+    assertNull(FocusActionRecord.findRecordedDocument(root, old))
+    assertEquals(0, other.childReads)
+  }
+
+  @Test fun theSameDocumentCanBeFoundUnderANewHost() {
+    val old = document("old host", "same-document").apply { alive = false }
+    val other = document("other", "another-document")
+    val moved = document("new host", "same-document")
+    val root = Node("window").apply { add(other, Node("new native host").apply { add(moved) }) }
+    assertEquals(moved, FocusActionRecord.findRecordedDocument(root, old))
+    assertEquals(0, other.childReads)
+  }
+
+  @Test fun aLivingDocumentDoesNotNeedAWindowSearch() {
+    val old = document("existing", "same-document")
+    val root = Node("window").apply { add(old) }
+    assertEquals(old, FocusActionRecord.findRecordedDocument(root, old))
+    assertEquals(0, root.childReads)
+  }
+
 }

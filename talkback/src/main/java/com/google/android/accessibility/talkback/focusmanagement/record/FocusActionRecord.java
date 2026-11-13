@@ -209,9 +209,17 @@ public class FocusActionRecord {
           && uniqueId.equals(compoundPackageNameAndUniqueId(lastFocusedNode))) {
         uniqueIdNode = lastFocusedNode;
       } else {
+        AccessibilityNodeInfoCompat searchRoot = root;
+        AccessibilityNodeInfoCompat document =
+            focusActionRecord.nodePathDescription.getSavedChromiumDocument();
+        if (document != null) {
+          String documentId = compoundPackageNameAndUniqueId(document);
+          searchRoot = findRecordedDocument(root, document);
+          LogUtils.d(TAG, "Historical web document %s found=%s", documentId, searchRoot != null);
+        }
         uniqueIdNode =
             AccessibilityNodeInfoUtils.searchFromBfs(
-                root,
+                searchRoot,
                 new Filter<AccessibilityNodeInfoCompat>() {
                   @Override
                   public boolean accept(AccessibilityNodeInfoCompat node) {
@@ -258,6 +266,33 @@ public class FocusActionRecord {
       return nodeAtSamePosition;
     }
     return null;
+  }
+
+  /** Finds the same document after a host move, without entering unrelated WebViews. */
+  static @Nullable AccessibilityNodeInfoCompat findRecordedDocument(
+      @Nullable AccessibilityNodeInfoCompat root, @NonNull AccessibilityNodeInfoCompat document) {
+    String documentId = compoundPackageNameAndUniqueId(document);
+    if (documentId == null || root == null) {
+      return null;
+    }
+    if (document.getWindowId() == root.getWindowId() && document.refresh()
+        && documentId.equals(compoundPackageNameAndUniqueId(document))) {
+      return document;
+    }
+    Filter<AccessibilityNodeInfoCompat> matchesDocument = new Filter<>() {
+      @Override
+      public boolean accept(AccessibilityNodeInfoCompat node) {
+        return documentId.equals(compoundPackageNameAndUniqueId(node))
+            && "rootWebArea".contentEquals(String.valueOf(AccessibilityNodeInfoUtils.getChromeRole(node)));
+      }
+    };
+    return AccessibilityNodeInfoUtils.searchFromBfs(root, matchesDocument,
+        new Filter<>() {
+          @Override
+          public boolean accept(AccessibilityNodeInfoCompat node) {
+            return WebInterfaceUtils.supportsWebActions(node) && !matchesDocument.accept(node);
+          }
+        });
   }
 
   /**
