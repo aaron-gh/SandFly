@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Title of the settings screen of voice commands: commands spoken after the voice commands gesture. [CHAR LIMIT=40] -->
+    <string name="title_pref_voice_commands">Voice commands</string>
+    <!-- Switch: voice commands that SandFly doesn't understand are sent, with the names of commands and the texts of items on the screen, to the AI service in use, which turns them into commands. [CHAR LIMIT=60] -->
+    <string name="title_pref_voice_commands_ai">Understand voice commands with AI</string>
+    <!-- Heading of the list of voice commands the user made. [CHAR LIMIT=40] -->
+    <string name="voice_commands_custom">Custom voice commands</string>
+    <!-- Button that makes a new voice command: a phrase that runs a command. [CHAR LIMIT=40] -->
+    <string name="voice_command_add">Add voice command</string>
+    <!-- Label of the field for the words of a custom voice command. [CHAR LIMIT=40] -->
+    <string name="voice_command_phrase">Phrase</string>
+    <!-- Action on a custom voice command that changes its words. [CHAR LIMIT=40] -->
+    <string name="voice_command_change_phrase">Change phrase</string>
+    <!-- Action on a custom voice command that changes the command it runs. [CHAR LIMIT=40] -->
+    <string name="voice_command_change_command">Change command</string>
+    <!-- Asks before deleting a custom voice command. phrase is its words. [CHAR LIMIT=NONE] -->
+    <string name="voice_command_delete_confirm">Delete <xliff:g id="phrase" example="Good morning">%1$s</xliff:g>?</string>
+    <!-- Error: another custom voice command has these words. [CHAR LIMIT=NONE] -->
+    <string name="voice_command_phrase_exists"><xliff:g id="phrase" example="Good morning">%1$s</xliff:g> is already a voice command</string>
+
+    <!-- Spoken when a part of a chained voice command isn't a command. text is that part. [CHAR LIMIT=NONE] -->
+    <string name="voice_commands_not_understood">Not understood: <xliff:g id="text" example="open the door">%1$s</xliff:g></string>
+    <!-- Spoken when a voice command names a command that can't run now. name is its name. [CHAR LIMIT=NONE] -->
+    <string name="voice_commands_not_available">Not available: <xliff:g id="name" example="Morning macro">%1$s</xliff:g></string>
+    <!-- Spoken when the item a voice command activates isn't on the screen. label is the name said. [CHAR LIMIT=NONE] -->
+    <string name="voice_commands_not_found">Not found: <xliff:g id="label" example="Settings">%1$s</xliff:g></string>
+    <!-- Spoken when a voice command names an app that isn't installed. name is the name said. [CHAR LIMIT=NONE] -->
+    <string name="voice_commands_no_app">No app named <xliff:g id="name" example="Signal">%1$s</xliff:g></string>
+    <!-- Spoken when no app can make a call or write a message. [CHAR LIMIT=NONE] -->
+    <string name="voice_commands_no_app_for_action">No app for this action</string>
+    <!-- Spoken before a call starts. name is the contact's name or the number. [CHAR LIMIT=NONE] -->
+    <string name="voice_commands_calling">Calling <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <!-- Spoken when SandFly asks for the permission to make phone calls. [CHAR LIMIT=NONE] -->
+    <string name="voice_commands_call_permission">Allow phone calls, then say the command again.</string>
+    <!-- Spoken when SandFly asks for the permission to read contacts. [CHAR LIMIT=NONE] -->
+    <string name="voice_commands_contacts_permission">Allow access to contacts, then say the command again.</string>
+    <!-- Spoken when no contact has the name said. name is the name said. [CHAR LIMIT=NONE] -->
+    <string name="voice_commands_no_contact">No contact named <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <!-- Spoken when several contacts have the name said. name is the name said, names the contacts' full names. [CHAR LIMIT=NONE] -->
+    <string name="voice_commands_contacts_several">More than one contact named <xliff:g id="name" example="Sam">%1$s</xliff:g>: <xliff:g id="names" example="Sam Jones, Sam Smith">%2$s</xliff:g></string>
+    <!-- Spoken before recording the text of a message. name is the recipient. [CHAR LIMIT=NONE] -->
+    <string name="voice_commands_message_text">Message to <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <!-- Spoken before recording whether to send a message. name is the recipient, text the message. [CHAR LIMIT=NONE] -->
+    <string name="voice_commands_message_confirm">Send to <xliff:g id="name" example="Sam">%1$s</xliff:g>: <xliff:g id="text" example="I am on my way">%2$s</xliff:g>?</string>
+    <!-- Spoken before recording whether to send a description, just spoken, as a message. name is the recipient. [CHAR LIMIT=NONE] -->
+    <string name="voice_commands_message_confirm_result">Send to <xliff:g id="name" example="Sam">%1$s</xliff:g>?</string>
+    <!-- Spoken when the answer to "Send to Sam?" wasn't yes. The message stays in the messaging app. [CHAR LIMIT=NONE] -->
+    <string name="voice_commands_message_not_sent">Message not sent</string>
+    <!-- Spoken after SandFly pressed the Send button of the messaging app. [CHAR LIMIT=NONE] -->
+    <string name="voice_commands_send_pressed">Send pressed</string>
+    <!-- The description of the Send button in messaging apps in this language, which SandFly looks for to press it. [CHAR LIMIT=NONE] -->
+    <string name="voice_commands_send_button">Send</string>
+    <!-- Spoken when a description for a voice command didn't arrive. [CHAR LIMIT=NONE] -->
+    <string name="voice_commands_no_description">No description received</string>
+    <!-- Spoken after a voice command copied a description. [CHAR LIMIT=NONE] -->
+    <string name="voice_commands_copied">Copied</string>
+
+    <!-- Words that join voice commands said one after another, such as "Open Messages then call Sam". Longest first is not needed. -->
+    <string-array name="voice_commands_chain_words">
+        <item>and then</item>
+        <item>then</item>
+        <item>after that</item>
+        <item>afterwards</item>
+    </string-array>
+    <!-- Words that join two voice commands when each part is a command, such as "Go home and open Messages". -->
+    <string-array name="voice_commands_and_words">
+        <item>and</item>
+    </string-array>
+    <!-- Words said at the start of a voice command that don't change it. -->
+    <string-array name="voice_commands_fillers_start">
+        <item>please</item>
+        <item>can you</item>
+        <item>could you</item>
+        <item>would you</item>
+        <item>I want to</item>
+        <item>I\'d like to</item>
+        <item>now</item>
+    </string-array>
+    <!-- Words said at the end of a voice command that don't change it. -->
+    <string-array name="voice_commands_fillers_end">
+        <item>please</item>
+        <item>for me</item>
+        <item>now</item>
+    </string-array>
+    <!-- Whole voice commands that stop the voice command running. -->
+    <string-array name="voice_commands_cancel_words">
+        <item>stop</item>
+        <item>cancel</item>
+        <item>quit</item>
+        <item>never mind</item>
+        <item>nevermind</item>
+        <item>shut up</item>
+    </string-array>
+    <!-- Answers that mean yes to "Send to Sam?". -->
+    <string-array name="voice_commands_yes">
+        <item>yes</item>
+        <item>yeah</item>
+        <item>yep</item>
+        <item>send</item>
+        <item>send it</item>
+        <item>ok</item>
+        <item>okay</item>
+        <item>sure</item>
+        <item>do it</item>
+    </string-array>
+    <!-- Names of the default messaging app in voice commands, such as "message Sam on SMS saying hello". -->
+    <string-array name="voice_commands_sms_names">
+        <item>SMS</item>
+        <item>text</item>
+        <item>text message</item>
+        <item>messages</item>
+    </string-array>
+
+    <!-- Voice command patterns. Words in braces are placeholders: keep them in English. Words in brackets, separated by |, are optional. Translate the other words; patterns can be added or removed. -->
+    <!-- Describe the focused image, then send the description as a message to {who}. -->
+    <string-array name="voice_commands_send_image_description">
+        <item>send [the|an] image description to {who}</item>
+        <item>send [a] description of [the|this] image to {who}</item>
+        <item>send [the|a] picture description to {who}</item>
+        <item>send [a] description of [the|this] picture to {who}</item>
+        <item>send [a|the] photo description to {who}</item>
+    </string-array>
+    <!-- Describe the screen, then send the description as a message to {who}. -->
+    <string-array name="voice_commands_send_screen_description">
+        <item>send [the|a] screen description to {who}</item>
+        <item>send [a] description of [the] screen to {who}</item>
+    </string-array>
+    <!-- Send the result of the command before, such as a description, to {who}, optionally in the app {app}. -->
+    <string-array name="voice_commands_send_previous">
+        <item>send it to {who} on {app}</item>
+        <item>send it to {who}</item>
+        <item>send that to {who}</item>
+        <item>send the description to {who}</item>
+        <item>share it with {who}</item>
+    </string-array>
+    <!-- Write a message. {who} is the recipient, {text} the message, {app} the messaging app. {whoandtext} is the recipient's name followed by the message, as in "text Sam I'm on my way". -->
+    <string-array name="voice_commands_message">
+        <item>send [a] message to {who} on {app} saying {text}</item>
+        <item>send [a] message to {who} on {app} that says {text}</item>
+        <item>send [a] message to {who} saying {text}</item>
+        <item>send [a] message to {who} that says {text}</item>
+        <item>send [a] message to {whoandtext}</item>
+        <item>send [a|an] {app} message to {who} saying {text}</item>
+        <item>send [a|an] {app} message to {who} that says {text}</item>
+        <item>send [a|an] {app} message to {who}</item>
+        <item>send {who} [a] message saying {text}</item>
+        <item>message {who} on {app} saying {text}</item>
+        <item>message {who} saying {text}</item>
+        <item>text {who} saying {text}</item>
+        <item>tell {who} on {app} {text}</item>
+        <item>message {whoandtext}</item>
+        <item>text {whoandtext}</item>
+    </string-array>
+    <!-- Call {who}, a contact or a phone number. -->
+    <string-array name="voice_commands_call">
+        <item>call {who}</item>
+        <item>phone {who}</item>
+        <item>ring {who}</item>
+        <item>dial {who}</item>
+        <item>make a call to {who}</item>
+    </string-array>
+    <!-- Speak a description of the screen. -->
+    <string-array name="voice_commands_describe_screen">
+        <item>describe [the] screen</item>
+        <item>describe what\'s on [the] screen</item>
+        <item>what\'s on [the|my] screen</item>
+        <item>what is on [the|my] screen</item>
+    </string-array>
+    <!-- Speak a description of the focused image. -->
+    <string-array name="voice_commands_describe_image">
+        <item>describe [the|this] image</item>
+        <item>describe [the|this] picture</item>
+        <item>describe [the|this] photo</item>
+        <item>what\'s in [the|this] image</item>
+        <item>what\'s in [the|this] picture</item>
+        <item>what\'s in [the|this] photo</item>
+    </string-array>
+    <!-- Copy the result of the command before, such as a description, or else the last phrase spoken. -->
+    <string-array name="voice_commands_copy_result">
+        <item>copy it</item>
+        <item>copy that</item>
+        <item>copy the description</item>
+        <item>copy what you [just] said</item>
+        <item>copy [the] last spoken [phrase]</item>
+        <item>copy [the] last phrase</item>
+        <item>copy [the] last thing said</item>
+    </string-array>
+    <!-- Wait {n} seconds, a number. -->
+    <string-array name="voice_commands_wait">
+        <item>wait {n} seconds</item>
+        <item>wait {n} second</item>
+        <item>wait [a] second</item>
+        <item>wait</item>
+    </string-array>
+    <!-- Type {text} into the focused edit field. -->
+    <string-array name="voice_commands_type_text">
+        <item>type {text}</item>
+        <item>write {text}</item>
+        <item>enter {text}</item>
+    </string-array>
+    <!-- Run the command, macro or script command named {command}. -->
+    <string-array name="voice_commands_run">
+        <item>run [the] {command} macro</item>
+        <item>run [the] macro {command}</item>
+        <item>run {command}</item>
+        <item>do {command}</item>
+    </string-array>
+    <!-- Open the app {app}. -->
+    <string-array name="voice_commands_open">
+        <item>open {app}</item>
+        <item>launch {app}</item>
+        <item>start {app}</item>
+        <item>switch to {app}</item>
+    </string-array>
+    <!-- Activate the item on the screen named {label}. -->
+    <string-array name="voice_commands_tap">
+        <item>double tap [on] {label}</item>
+        <item>tap [on] {label}</item>
+        <item>click [on] {label}</item>
+        <item>press {label}</item>
+        <item>activate {label}</item>
+        <item>select {label}</item>
+    </string-array>
+</resources>

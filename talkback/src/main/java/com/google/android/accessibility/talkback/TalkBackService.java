@@ -1439,6 +1439,9 @@ public class TalkBackService extends AccessibilityServiceCompat
       LiveRecognition.stop();
       MacroRunner.stop();
       RecentAppSteps.stop();
+      if (voiceCommandActor != null) {
+        voiceCommandActor.stopCommand();
+      }
     }
     for (ServiceStateListener listener : serviceStateListeners) {
       listener.onServiceStateChanged(newState);
@@ -5238,6 +5241,17 @@ public class TalkBackService extends AccessibilityServiceCompat
     }
   }
 
+  /** Returns the text of the last phrase spoken, as Copy last spoken phrase copies it, or null. */
+  public @Nullable String getLastSpokenText() {
+    FeedbackItem last = speechController == null ? null : speechController.getLastUtterance();
+    if (last == null) {
+      return null;
+    }
+    CharSequence text =
+        EmojiSpeech.restoreOriginalText(SpannableUtils.getCopyableText(last.getAggregateText()));
+    return text == null ? null : text.toString().trim();
+  }
+
   /** Runs the command saved as {@code value}, as a gesture assigned to it would. */
   public boolean performCommand(String value) {
     if (gestureController == null) {
@@ -5278,13 +5292,7 @@ public class TalkBackService extends AccessibilityServiceCompat
 
     @Override
     public @Nullable String lastSpeech() {
-      FeedbackItem last = speechController == null ? null : speechController.getLastUtterance();
-      if (last == null) {
-        return null;
-      }
-      CharSequence text =
-          EmojiSpeech.restoreOriginalText(SpannableUtils.getCopyableText(last.getAggregateText()));
-      return text == null ? null : text.toString().trim();
+      return getLastSpokenText();
     }
 
     @Override

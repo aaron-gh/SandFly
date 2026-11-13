@@ -59,6 +59,10 @@
       android:key="@string/pref_macros_key"
       android:title="@string/title_pref_macros" />
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+      android:fragment="com.google.android.accessibility.talkback.actor.voicecommands.VoiceCommandsFragment"
+      android:key="@string/pref_voice_commands_screen_key"
+      android:title="@string/title_pref_voice_commands" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
       android:fragment="com.google.android.accessibility.talkback.preference.base.NavigationPrefFragment"
       android:key="@string/pref_navigation_settings_key"
       android:title="@string/title_pref_navigation" />

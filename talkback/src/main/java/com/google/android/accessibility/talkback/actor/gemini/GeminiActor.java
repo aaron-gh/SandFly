@@ -585,10 +585,13 @@ public class GeminiActor {
     }
 
     if (AiResultOutput.takeSpoken(requestId)) {
-      speak(
+      CharSequence caption =
           ImageCaptionUtils.constructCaptionTextForManually(
-              context, imageDescriptionResult, iconLabelResult, ocrTextResult));
+              context, imageDescriptionResult, iconLabelResult, ocrTextResult);
+      speak(caption);
       requestIdMap.remove(requestId);
+      AiResultOutput.deliver(
+          requestId, TextUtils.isEmpty(caption) ? null : caption.toString().trim());
       return;
     }
 
@@ -626,9 +629,13 @@ public class GeminiActor {
       if (result.response() instanceof OverviewResponse.Error error) {
         // Spoken, not a toast: Android hides toasts from an app whose notifications are off.
         speak(getErrorMessage(context, error));
+        AiResultOutput.deliver(result.requestId(), null);
       } else if (spoken) {
         if (result.response() instanceof OverviewResponse.Success overview) {
           speak(overview.getOverview().getSummary());
+          AiResultOutput.deliver(result.requestId(), overview.getOverview().getSummary());
+        } else {
+          AiResultOutput.deliver(result.requestId(), null);
         }
       } else if (isSupportImageQna(result.requestId())) {
         mainHandler.post(

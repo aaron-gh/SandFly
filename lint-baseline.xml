@@ -3,6 +3,303 @@
 
     <issue
         id="MissingTranslation"
+        message='"voice_commands_not_found" is not translated in "de" (German), "hi" (Hindi), "lo" (Lao), "pt" (Portuguese), "fil" (Filipino; Pilipino), "lt" (Lithuanian), "hr" (Croatian), "lv" (Latvian), "hu" (Hungarian), "hy" (Armenian), "uk" (Ukrainian), "id" (Indonesian), "ur" (Urdu), "mk" (Macedonian), "ml" (Malayalam), "mn" (Mongolian), "af" (Afrikaans), "in" (Indonesian), "mr" (Marathi), "uz" (Uzbek), "ms" (Malay), "el" (Greek), "en" (English), "is" (Icelandic), "it" (Italian), "am" (Amharic), "my" (Burmese), "es" (Spanish), "iw" (Hebrew), "zh" (Chinese), "et" (Estonian), "eu" (Basque), "ar" (Arabic), "as" (Assamese), "vi" (Vietnamese), "nb" (Norwegian Bokmål), "ja" (Japanese), "ne" (Nepali), "az" (Azerbaijani), "fa" (Persian), "zu" (Zulu), "ro" (Romanian), "nl" (Dutch), "no" (Norwegian), "be" (Belarusian), "fi" (Finnish), "ru" (Russian), "bg" (Bulgarian), "bn" (Bangla), "fr" (French), "bs" (Bosnian), "ka" (Georgian), "si" (Sinhala), "sk" (Slovak), "sl" (Slovenian), "ca" (Catalan), "sq" (Albanian), "sr" (Serbian), "kk" (Kazakh), "km" (Khmer), "kn" (Kannada), "or" (Odia), "sv" (Swedish), "ko" (Korean), "sw" (Swahili), "gl" (Galician), "ta" (Tamil), "gu" (Gujarati), "ky" (Kyrgyz), "cs" (Czech), "pa" (Punjabi), "te" (Telugu), "th" (Thai), "tl" (Tagalog), "pl" (Polish), "da" (Danish), "tr" (Turkish)'
+        errorLine1='    &lt;string name="voice_commands_not_found"&gt;Not found: &lt;xliff:g id="label" example="Settings"&gt;%1$s&lt;/xliff:g&gt;&lt;/string&gt;'
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings_voice_commands_sandfly.xml"
+            line="27"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="MissingTranslation"
+        message='"title_pref_voice_commands" is not translated in "de" (German), "hi" (Hindi), "lo" (Lao), "pt" (Portuguese), "fil" (Filipino; Pilipino), "lt" (Lithuanian), "hr" (Croatian), "lv" (Latvian), "hu" (Hungarian), "hy" (Armenian), "uk" (Ukrainian), "id" (Indonesian), "ur" (Urdu), "mk" (Macedonian), "ml" (Malayalam), "mn" (Mongolian), "af" (Afrikaans), "in" (Indonesian), "mr" (Marathi), "uz" (Uzbek), "ms" (Malay), "el" (Greek), "en" (English), "is" (Icelandic), "it" (Italian), "am" (Amharic), "my" (Burmese), "es" (Spanish), "iw" (Hebrew), "zh" (Chinese), "et" (Estonian), "eu" (Basque), "ar" (Arabic), "as" (Assamese), "vi" (Vietnamese), "nb" (Norwegian Bokmål), "ja" (Japanese), "ne" (Nepali), "az" (Azerbaijani), "fa" (Persian), "zu" (Zulu), "ro" (Romanian), "nl" (Dutch), "no" (Norwegian), "be" (Belarusian), "fi" (Finnish), "ru" (Russian), "bg" (Bulgarian), "bn" (Bangla), "fr" (French), "bs" (Bosnian), "ka" (Georgian), "si" (Sinhala), "sk" (Slovak), "sl" (Slovenian), "ca" (Catalan), "sq" (Albanian), "sr" (Serbian), "kk" (Kazakh), "km" (Khmer), "kn" (Kannada), "or" (Odia), "sv" (Swedish), "ko" (Korean), "sw" (Swahili), "gl" (Galician), "ta" (Tamil), "gu" (Gujarati), "ky" (Kyrgyz), "cs" (Czech), "pa" (Punjabi), "te" (Telugu), "th" (Thai), "tl" (Tagalog), "pl" (Polish), "da" (Danish), "tr" (Turkish)'
+        errorLine1='    &lt;string name="title_pref_voice_commands"&gt;Voice commands&lt;/string&gt;'
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings_voice_commands_sandfly.xml"
+            line="4"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="MissingTranslation"
+        message='"title_pref_voice_commands_ai" is not translated in "de" (German), "hi" (Hindi), "lo" (Lao), "pt" (Portuguese), "fil" (Filipino; Pilipino), "lt" (Lithuanian), "hr" (Croatian), "lv" (Latvian), "hu" (Hungarian), "hy" (Armenian), "uk" (Ukrainian), "id" (Indonesian), "ur" (Urdu), "mk" (Macedonian), "ml" (Malayalam), "mn" (Mongolian), "af" (Afrikaans), "in" (Indonesian), "mr" (Marathi), "uz" (Uzbek), "ms" (Malay), "el" (Greek), "en" (English), "is" (Icelandic), "it" (Italian), "am" (Amharic), "my" (Burmese), "es" (Spanish), "iw" (Hebrew), "zh" (Chinese), "et" (Estonian), "eu" (Basque), "ar" (Arabic), "as" (Assamese), "vi" (Vietnamese), "nb" (Norwegian Bokmål), "ja" (Japanese), "ne" (Nepali), "az" (Azerbaijani), "fa" (Persian), "zu" (Zulu), "ro" (Romanian), "nl" (Dutch), "no" (Norwegian), "be" (Belarusian), "fi" (Finnish), "ru" (Russian), "bg" (Bulgarian), "bn" (Bangla), "fr" (French), "bs" (Bosnian), "ka" (Georgian), "si" (Sinhala), "sk" (Slovak), "sl" (Slovenian), "ca" (Catalan), "sq" (Albanian), "sr" (Serbian), "kk" (Kazakh), "km" (Khmer), "kn" (Kannada), "or" (Odia), "sv" (Swedish), "ko" (Korean), "sw" (Swahili), "gl" (Galician), "ta" (Tamil), "gu" (Gujarati), "ky" (Kyrgyz), "cs" (Czech), "pa" (Punjabi), "te" (Telugu), "th" (Thai), "tl" (Tagalog), "pl" (Polish), "da" (Danish), "tr" (Turkish)'
+        errorLine1='    &lt;string name="title_pref_voice_commands_ai"&gt;Understand voice commands with AI&lt;/string&gt;'
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings_voice_commands_sandfly.xml"
+            line="6"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="MissingTranslation"
+        message='"voice_commands_custom" is not translated in "de" (German), "hi" (Hindi), "lo" (Lao), "pt" (Portuguese), "fil" (Filipino; Pilipino), "lt" (Lithuanian), "hr" (Croatian), "lv" (Latvian), "hu" (Hungarian), "hy" (Armenian), "uk" (Ukrainian), "id" (Indonesian), "ur" (Urdu), "mk" (Macedonian), "ml" (Malayalam), "mn" (Mongolian), "af" (Afrikaans), "in" (Indonesian), "mr" (Marathi), "uz" (Uzbek), "ms" (Malay), "el" (Greek), "en" (English), "is" (Icelandic), "it" (Italian), "am" (Amharic), "my" (Burmese), "es" (Spanish), "iw" (Hebrew), "zh" (Chinese), "et" (Estonian), "eu" (Basque), "ar" (Arabic), "as" (Assamese), "vi" (Vietnamese), "nb" (Norwegian Bokmål), "ja" (Japanese), "ne" (Nepali), "az" (Azerbaijani), "fa" (Persian), "zu" (Zulu), "ro" (Romanian), "nl" (Dutch), "no" (Norwegian), "be" (Belarusian), "fi" (Finnish), "ru" (Russian), "bg" (Bulgarian), "bn" (Bangla), "fr" (French), "bs" (Bosnian), "ka" (Georgian), "si" (Sinhala), "sk" (Slovak), "sl" (Slovenian), "ca" (Catalan), "sq" (Albanian), "sr" (Serbian), "kk" (Kazakh), "km" (Khmer), "kn" (Kannada), "or" (Odia), "sv" (Swedish), "ko" (Korean), "sw" (Swahili), "gl" (Galician), "ta" (Tamil), "gu" (Gujarati), "ky" (Kyrgyz), "cs" (Czech), "pa" (Punjabi), "te" (Telugu), "th" (Thai), "tl" (Tagalog), "pl" (Polish), "da" (Danish), "tr" (Turkish)'
+        errorLine1='    &lt;string name="voice_commands_custom"&gt;Custom voice commands&lt;/string&gt;'
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings_voice_commands_sandfly.xml"
+            line="8"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="MissingTranslation"
+        message='"voice_command_add" is not translated in "de" (German), "hi" (Hindi), "lo" (Lao), "pt" (Portuguese), "fil" (Filipino; Pilipino), "lt" (Lithuanian), "hr" (Croatian), "lv" (Latvian), "hu" (Hungarian), "hy" (Armenian), "uk" (Ukrainian), "id" (Indonesian), "ur" (Urdu), "mk" (Macedonian), "ml" (Malayalam), "mn" (Mongolian), "af" (Afrikaans), "in" (Indonesian), "mr" (Marathi), "uz" (Uzbek), "ms" (Malay), "el" (Greek), "en" (English), "is" (Icelandic), "it" (Italian), "am" (Amharic), "my" (Burmese), "es" (Spanish), "iw" (Hebrew), "zh" (Chinese), "et" (Estonian), "eu" (Basque), "ar" (Arabic), "as" (Assamese), "vi" (Vietnamese), "nb" (Norwegian Bokmål), "ja" (Japanese), "ne" (Nepali), "az" (Azerbaijani), "fa" (Persian), "zu" (Zulu), "ro" (Romanian), "nl" (Dutch), "no" (Norwegian), "be" (Belarusian), "fi" (Finnish), "ru" (Russian), "bg" (Bulgarian), "bn" (Bangla), "fr" (French), "bs" (Bosnian), "ka" (Georgian), "si" (Sinhala), "sk" (Slovak), "sl" (Slovenian), "ca" (Catalan), "sq" (Albanian), "sr" (Serbian), "kk" (Kazakh), "km" (Khmer), "kn" (Kannada), "or" (Odia), "sv" (Swedish), "ko" (Korean), "sw" (Swahili), "gl" (Galician), "ta" (Tamil), "gu" (Gujarati), "ky" (Kyrgyz), "cs" (Czech), "pa" (Punjabi), "te" (Telugu), "th" (Thai), "tl" (Tagalog), "pl" (Polish), "da" (Danish), "tr" (Turkish)'
+        errorLine1='    &lt;string name="voice_command_add"&gt;Add voice command&lt;/string&gt;'
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings_voice_commands_sandfly.xml"
+            line="10"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="MissingTranslation"
+        message='"voice_command_phrase" is not translated in "de" (German), "hi" (Hindi), "lo" (Lao), "pt" (Portuguese), "fil" (Filipino; Pilipino), "lt" (Lithuanian), "hr" (Croatian), "lv" (Latvian), "hu" (Hungarian), "hy" (Armenian), "uk" (Ukrainian), "id" (Indonesian), "ur" (Urdu), "mk" (Macedonian), "ml" (Malayalam), "mn" (Mongolian), "af" (Afrikaans), "in" (Indonesian), "mr" (Marathi), "uz" (Uzbek), "ms" (Malay), "el" (Greek), "en" (English), "is" (Icelandic), "it" (Italian), "am" (Amharic), "my" (Burmese), "es" (Spanish), "iw" (Hebrew), "zh" (Chinese), "et" (Estonian), "eu" (Basque), "ar" (Arabic), "as" (Assamese), "vi" (Vietnamese), "nb" (Norwegian Bokmål), "ja" (Japanese), "ne" (Nepali), "az" (Azerbaijani), "fa" (Persian), "zu" (Zulu), "ro" (Romanian), "nl" (Dutch), "no" (Norwegian), "be" (Belarusian), "fi" (Finnish), "ru" (Russian), "bg" (Bulgarian), "bn" (Bangla), "fr" (French), "bs" (Bosnian), "ka" (Georgian), "si" (Sinhala), "sk" (Slovak), "sl" (Slovenian), "ca" (Catalan), "sq" (Albanian), "sr" (Serbian), "kk" (Kazakh), "km" (Khmer), "kn" (Kannada), "or" (Odia), "sv" (Swedish), "ko" (Korean), "sw" (Swahili), "gl" (Galician), "ta" (Tamil), "gu" (Gujarati), "ky" (Kyrgyz), "cs" (Czech), "pa" (Punjabi), "te" (Telugu), "th" (Thai), "tl" (Tagalog), "pl" (Polish), "da" (Danish), "tr" (Turkish)'
+        errorLine1='    &lt;string name="voice_command_phrase"&gt;Phrase&lt;/string&gt;'
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings_voice_commands_sandfly.xml"
+            line="12"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="MissingTranslation"
+        message='"voice_command_change_phrase" is not translated in "de" (German), "hi" (Hindi), "lo" (Lao), "pt" (Portuguese), "fil" (Filipino; Pilipino), "lt" (Lithuanian), "hr" (Croatian), "lv" (Latvian), "hu" (Hungarian), "hy" (Armenian), "uk" (Ukrainian), "id" (Indonesian), "ur" (Urdu), "mk" (Macedonian), "ml" (Malayalam), "mn" (Mongolian), "af" (Afrikaans), "in" (Indonesian), "mr" (Marathi), "uz" (Uzbek), "ms" (Malay), "el" (Greek), "en" (English), "is" (Icelandic), "it" (Italian), "am" (Amharic), "my" (Burmese), "es" (Spanish), "iw" (Hebrew), "zh" (Chinese), "et" (Estonian), "eu" (Basque), "ar" (Arabic), "as" (Assamese), "vi" (Vietnamese), "nb" (Norwegian Bokmål), "ja" (Japanese), "ne" (Nepali), "az" (Azerbaijani), "fa" (Persian), "zu" (Zulu), "ro" (Romanian), "nl" (Dutch), "no" (Norwegian), "be" (Belarusian), "fi" (Finnish), "ru" (Russian), "bg" (Bulgarian), "bn" (Bangla), "fr" (French), "bs" (Bosnian), "ka" (Georgian), "si" (Sinhala), "sk" (Slovak), "sl" (Slovenian), "ca" (Catalan), "sq" (Albanian), "sr" (Serbian), "kk" (Kazakh), "km" (Khmer), "kn" (Kannada), "or" (Odia), "sv" (Swedish), "ko" (Korean), "sw" (Swahili), "gl" (Galician), "ta" (Tamil), "gu" (Gujarati), "ky" (Kyrgyz), "cs" (Czech), "pa" (Punjabi), "te" (Telugu), "th" (Thai), "tl" (Tagalog), "pl" (Polish), "da" (Danish), "tr" (Turkish)'
+        errorLine1='    &lt;string name="voice_command_change_phrase"&gt;Change phrase&lt;/string&gt;'
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings_voice_commands_sandfly.xml"
+            line="14"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="MissingTranslation"
+        message='"voice_command_change_command" is not translated in "de" (German), "hi" (Hindi), "lo" (Lao), "pt" (Portuguese), "fil" (Filipino; Pilipino), "lt" (Lithuanian), "hr" (Croatian), "lv" (Latvian), "hu" (Hungarian), "hy" (Armenian), "uk" (Ukrainian), "id" (Indonesian), "ur" (Urdu), "mk" (Macedonian), "ml" (Malayalam), "mn" (Mongolian), "af" (Afrikaans), "in" (Indonesian), "mr" (Marathi), "uz" (Uzbek), "ms" (Malay), "el" (Greek), "en" (English), "is" (Icelandic), "it" (Italian), "am" (Amharic), "my" (Burmese), "es" (Spanish), "iw" (Hebrew), "zh" (Chinese), "et" (Estonian), "eu" (Basque), "ar" (Arabic), "as" (Assamese), "vi" (Vietnamese), "nb" (Norwegian Bokmål), "ja" (Japanese), "ne" (Nepali), "az" (Azerbaijani), "fa" (Persian), "zu" (Zulu), "ro" (Romanian), "nl" (Dutch), "no" (Norwegian), "be" (Belarusian), "fi" (Finnish), "ru" (Russian), "bg" (Bulgarian), "bn" (Bangla), "fr" (French), "bs" (Bosnian), "ka" (Georgian), "si" (Sinhala), "sk" (Slovak), "sl" (Slovenian), "ca" (Catalan), "sq" (Albanian), "sr" (Serbian), "kk" (Kazakh), "km" (Khmer), "kn" (Kannada), "or" (Odia), "sv" (Swedish), "ko" (Korean), "sw" (Swahili), "gl" (Galician), "ta" (Tamil), "gu" (Gujarati), "ky" (Kyrgyz), "cs" (Czech), "pa" (Punjabi), "te" (Telugu), "th" (Thai), "tl" (Tagalog), "pl" (Polish), "da" (Danish), "tr" (Turkish)'
+        errorLine1='    &lt;string name="voice_command_change_command"&gt;Change command&lt;/string&gt;'
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings_voice_commands_sandfly.xml"
+            line="16"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="MissingTranslation"
+        message='"voice_command_delete_confirm" is not translated in "de" (German), "hi" (Hindi), "lo" (Lao), "pt" (Portuguese), "fil" (Filipino; Pilipino), "lt" (Lithuanian), "hr" (Croatian), "lv" (Latvian), "hu" (Hungarian), "hy" (Armenian), "uk" (Ukrainian), "id" (Indonesian), "ur" (Urdu), "mk" (Macedonian), "ml" (Malayalam), "mn" (Mongolian), "af" (Afrikaans), "in" (Indonesian), "mr" (Marathi), "uz" (Uzbek), "ms" (Malay), "el" (Greek), "en" (English), "is" (Icelandic), "it" (Italian), "am" (Amharic), "my" (Burmese), "es" (Spanish), "iw" (Hebrew), "zh" (Chinese), "et" (Estonian), "eu" (Basque), "ar" (Arabic), "as" (Assamese), "vi" (Vietnamese), "nb" (Norwegian Bokmål), "ja" (Japanese), "ne" (Nepali), "az" (Azerbaijani), "fa" (Persian), "zu" (Zulu), "ro" (Romanian), "nl" (Dutch), "no" (Norwegian), "be" (Belarusian), "fi" (Finnish), "ru" (Russian), "bg" (Bulgarian), "bn" (Bangla), "fr" (French), "bs" (Bosnian), "ka" (Georgian), "si" (Sinhala), "sk" (Slovak), "sl" (Slovenian), "ca" (Catalan), "sq" (Albanian), "sr" (Serbian), "kk" (Kazakh), "km" (Khmer), "kn" (Kannada), "or" (Odia), "sv" (Swedish), "ko" (Korean), "sw" (Swahili), "gl" (Galician), "ta" (Tamil), "gu" (Gujarati), "ky" (Kyrgyz), "cs" (Czech), "pa" (Punjabi), "te" (Telugu), "th" (Thai), "tl" (Tagalog), "pl" (Polish), "da" (Danish), "tr" (Turkish)'
+        errorLine1='    &lt;string name="voice_command_delete_confirm"&gt;Delete &lt;xliff:g id="phrase" example="Good morning"&gt;%1$s&lt;/xliff:g&gt;?&lt;/string&gt;'
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings_voice_commands_sandfly.xml"
+            line="18"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="MissingTranslation"
+        message='"voice_command_phrase_exists" is not translated in "de" (German), "hi" (Hindi), "lo" (Lao), "pt" (Portuguese), "fil" (Filipino; Pilipino), "lt" (Lithuanian), "hr" (Croatian), "lv" (Latvian), "hu" (Hungarian), "hy" (Armenian), "uk" (Ukrainian), "id" (Indonesian), "ur" (Urdu), "mk" (Macedonian), "ml" (Malayalam), "mn" (Mongolian), "af" (Afrikaans), "in" (Indonesian), "mr" (Marathi), "uz" (Uzbek), "ms" (Malay), "el" (Greek), "en" (English), "is" (Icelandic), "it" (Italian), "am" (Amharic), "my" (Burmese), "es" (Spanish), "iw" (Hebrew), "zh" (Chinese), "et" (Estonian), "eu" (Basque), "ar" (Arabic), "as" (Assamese), "vi" (Vietnamese), "nb" (Norwegian Bokmål), "ja" (Japanese), "ne" (Nepali), "az" (Azerbaijani), "fa" (Persian), "zu" (Zulu), "ro" (Romanian), "nl" (Dutch), "no" (Norwegian), "be" (Belarusian), "fi" (Finnish), "ru" (Russian), "bg" (Bulgarian), "bn" (Bangla), "fr" (French), "bs" (Bosnian), "ka" (Georgian), "si" (Sinhala), "sk" (Slovak), "sl" (Slovenian), "ca" (Catalan), "sq" (Albanian), "sr" (Serbian), "kk" (Kazakh), "km" (Khmer), "kn" (Kannada), "or" (Odia), "sv" (Swedish), "ko" (Korean), "sw" (Swahili), "gl" (Galician), "ta" (Tamil), "gu" (Gujarati), "ky" (Kyrgyz), "cs" (Czech), "pa" (Punjabi), "te" (Telugu), "th" (Thai), "tl" (Tagalog), "pl" (Polish), "da" (Danish), "tr" (Turkish)'
+        errorLine1='    &lt;string name="voice_command_phrase_exists"&gt;&lt;xliff:g id="phrase" example="Good morning"&gt;%1$s&lt;/xliff:g&gt; is already a voice command&lt;/string&gt;'
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings_voice_commands_sandfly.xml"
+            line="20"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="MissingTranslation"
+        message='"voice_commands_not_understood" is not translated in "de" (German), "hi" (Hindi), "lo" (Lao), "pt" (Portuguese), "fil" (Filipino; Pilipino), "lt" (Lithuanian), "hr" (Croatian), "lv" (Latvian), "hu" (Hungarian), "hy" (Armenian), "uk" (Ukrainian), "id" (Indonesian), "ur" (Urdu), "mk" (Macedonian), "ml" (Malayalam), "mn" (Mongolian), "af" (Afrikaans), "in" (Indonesian), "mr" (Marathi), "uz" (Uzbek), "ms" (Malay), "el" (Greek), "en" (English), "is" (Icelandic), "it" (Italian), "am" (Amharic), "my" (Burmese), "es" (Spanish), "iw" (Hebrew), "zh" (Chinese), "et" (Estonian), "eu" (Basque), "ar" (Arabic), "as" (Assamese), "vi" (Vietnamese), "nb" (Norwegian Bokmål), "ja" (Japanese), "ne" (Nepali), "az" (Azerbaijani), "fa" (Persian), "zu" (Zulu), "ro" (Romanian), "nl" (Dutch), "no" (Norwegian), "be" (Belarusian), "fi" (Finnish), "ru" (Russian), "bg" (Bulgarian), "bn" (Bangla), "fr" (French), "bs" (Bosnian), "ka" (Georgian), "si" (Sinhala), "sk" (Slovak), "sl" (Slovenian), "ca" (Catalan), "sq" (Albanian), "sr" (Serbian), "kk" (Kazakh), "km" (Khmer), "kn" (Kannada), "or" (Odia), "sv" (Swedish), "ko" (Korean), "sw" (Swahili), "gl" (Galician), "ta" (Tamil), "gu" (Gujarati), "ky" (Kyrgyz), "cs" (Czech), "pa" (Punjabi), "te" (Telugu), "th" (Thai), "tl" (Tagalog), "pl" (Polish), "da" (Danish), "tr" (Turkish)'
+        errorLine1='    &lt;string name="voice_commands_not_understood"&gt;Not understood: &lt;xliff:g id="text" example="open the door"&gt;%1$s&lt;/xliff:g&gt;&lt;/string&gt;'
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings_voice_commands_sandfly.xml"
+            line="23"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="MissingTranslation"
+        message='"voice_commands_not_available" is not translated in "de" (German), "hi" (Hindi), "lo" (Lao), "pt" (Portuguese), "fil" (Filipino; Pilipino), "lt" (Lithuanian), "hr" (Croatian), "lv" (Latvian), "hu" (Hungarian), "hy" (Armenian), "uk" (Ukrainian), "id" (Indonesian), "ur" (Urdu), "mk" (Macedonian), "ml" (Malayalam), "mn" (Mongolian), "af" (Afrikaans), "in" (Indonesian), "mr" (Marathi), "uz" (Uzbek), "ms" (Malay), "el" (Greek), "en" (English), "is" (Icelandic), "it" (Italian), "am" (Amharic), "my" (Burmese), "es" (Spanish), "iw" (Hebrew), "zh" (Chinese), "et" (Estonian), "eu" (Basque), "ar" (Arabic), "as" (Assamese), "vi" (Vietnamese), "nb" (Norwegian Bokmål), "ja" (Japanese), "ne" (Nepali), "az" (Azerbaijani), "fa" (Persian), "zu" (Zulu), "ro" (Romanian), "nl" (Dutch), "no" (Norwegian), "be" (Belarusian), "fi" (Finnish), "ru" (Russian), "bg" (Bulgarian), "bn" (Bangla), "fr" (French), "bs" (Bosnian), "ka" (Georgian), "si" (Sinhala), "sk" (Slovak), "sl" (Slovenian), "ca" (Catalan), "sq" (Albanian), "sr" (Serbian), "kk" (Kazakh), "km" (Khmer), "kn" (Kannada), "or" (Odia), "sv" (Swedish), "ko" (Korean), "sw" (Swahili), "gl" (Galician), "ta" (Tamil), "gu" (Gujarati), "ky" (Kyrgyz), "cs" (Czech), "pa" (Punjabi), "te" (Telugu), "th" (Thai), "tl" (Tagalog), "pl" (Polish), "da" (Danish), "tr" (Turkish)'
+        errorLine1='    &lt;string name="voice_commands_not_available"&gt;Not available: &lt;xliff:g id="name" example="Morning macro"&gt;%1$s&lt;/xliff:g&gt;&lt;/string&gt;'
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings_voice_commands_sandfly.xml"
+            line="25"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="MissingTranslation"
+        message='"voice_commands_no_app" is not translated in "de" (German), "hi" (Hindi), "lo" (Lao), "pt" (Portuguese), "fil" (Filipino; Pilipino), "lt" (Lithuanian), "hr" (Croatian), "lv" (Latvian), "hu" (Hungarian), "hy" (Armenian), "uk" (Ukrainian), "id" (Indonesian), "ur" (Urdu), "mk" (Macedonian), "ml" (Malayalam), "mn" (Mongolian), "af" (Afrikaans), "in" (Indonesian), "mr" (Marathi), "uz" (Uzbek), "ms" (Malay), "el" (Greek), "en" (English), "is" (Icelandic), "it" (Italian), "am" (Amharic), "my" (Burmese), "es" (Spanish), "iw" (Hebrew), "zh" (Chinese), "et" (Estonian), "eu" (Basque), "ar" (Arabic), "as" (Assamese), "vi" (Vietnamese), "nb" (Norwegian Bokmål), "ja" (Japanese), "ne" (Nepali), "az" (Azerbaijani), "fa" (Persian), "zu" (Zulu), "ro" (Romanian), "nl" (Dutch), "no" (Norwegian), "be" (Belarusian), "fi" (Finnish), "ru" (Russian), "bg" (Bulgarian), "bn" (Bangla), "fr" (French), "bs" (Bosnian), "ka" (Georgian), "si" (Sinhala), "sk" (Slovak), "sl" (Slovenian), "ca" (Catalan), "sq" (Albanian), "sr" (Serbian), "kk" (Kazakh), "km" (Khmer), "kn" (Kannada), "or" (Odia), "sv" (Swedish), "ko" (Korean), "sw" (Swahili), "gl" (Galician), "ta" (Tamil), "gu" (Gujarati), "ky" (Kyrgyz), "cs" (Czech), "pa" (Punjabi), "te" (Telugu), "th" (Thai), "tl" (Tagalog), "pl" (Polish), "da" (Danish), "tr" (Turkish)'
+        errorLine1='    &lt;string name="voice_commands_no_app"&gt;No app named &lt;xliff:g id="name" example="Signal"&gt;%1$s&lt;/xliff:g&gt;&lt;/string&gt;'
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings_voice_commands_sandfly.xml"
+            line="27"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="MissingTranslation"
+        message='"voice_commands_no_app_for_action" is not translated in "de" (German), "hi" (Hindi), "lo" (Lao), "pt" (Portuguese), "fil" (Filipino; Pilipino), "lt" (Lithuanian), "hr" (Croatian), "lv" (Latvian), "hu" (Hungarian), "hy" (Armenian), "uk" (Ukrainian), "id" (Indonesian), "ur" (Urdu), "mk" (Macedonian), "ml" (Malayalam), "mn" (Mongolian), "af" (Afrikaans), "in" (Indonesian), "mr" (Marathi), "uz" (Uzbek), "ms" (Malay), "el" (Greek), "en" (English), "is" (Icelandic), "it" (Italian), "am" (Amharic), "my" (Burmese), "es" (Spanish), "iw" (Hebrew), "zh" (Chinese), "et" (Estonian), "eu" (Basque), "ar" (Arabic), "as" (Assamese), "vi" (Vietnamese), "nb" (Norwegian Bokmål), "ja" (Japanese), "ne" (Nepali), "az" (Azerbaijani), "fa" (Persian), "zu" (Zulu), "ro" (Romanian), "nl" (Dutch), "no" (Norwegian), "be" (Belarusian), "fi" (Finnish), "ru" (Russian), "bg" (Bulgarian), "bn" (Bangla), "fr" (French), "bs" (Bosnian), "ka" (Georgian), "si" (Sinhala), "sk" (Slovak), "sl" (Slovenian), "ca" (Catalan), "sq" (Albanian), "sr" (Serbian), "kk" (Kazakh), "km" (Khmer), "kn" (Kannada), "or" (Odia), "sv" (Swedish), "ko" (Korean), "sw" (Swahili), "gl" (Galician), "ta" (Tamil), "gu" (Gujarati), "ky" (Kyrgyz), "cs" (Czech), "pa" (Punjabi), "te" (Telugu), "th" (Thai), "tl" (Tagalog), "pl" (Polish), "da" (Danish), "tr" (Turkish)'
+        errorLine1='    &lt;string name="voice_commands_no_app_for_action"&gt;No app for this action&lt;/string&gt;'
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings_voice_commands_sandfly.xml"
+            line="29"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="MissingTranslation"
+        message='"voice_commands_calling" is not translated in "de" (German), "hi" (Hindi), "lo" (Lao), "pt" (Portuguese), "fil" (Filipino; Pilipino), "lt" (Lithuanian), "hr" (Croatian), "lv" (Latvian), "hu" (Hungarian), "hy" (Armenian), "uk" (Ukrainian), "id" (Indonesian), "ur" (Urdu), "mk" (Macedonian), "ml" (Malayalam), "mn" (Mongolian), "af" (Afrikaans), "in" (Indonesian), "mr" (Marathi), "uz" (Uzbek), "ms" (Malay), "el" (Greek), "en" (English), "is" (Icelandic), "it" (Italian), "am" (Amharic), "my" (Burmese), "es" (Spanish), "iw" (Hebrew), "zh" (Chinese), "et" (Estonian), "eu" (Basque), "ar" (Arabic), "as" (Assamese), "vi" (Vietnamese), "nb" (Norwegian Bokmål), "ja" (Japanese), "ne" (Nepali), "az" (Azerbaijani), "fa" (Persian), "zu" (Zulu), "ro" (Romanian), "nl" (Dutch), "no" (Norwegian), "be" (Belarusian), "fi" (Finnish), "ru" (Russian), "bg" (Bulgarian), "bn" (Bangla), "fr" (French), "bs" (Bosnian), "ka" (Georgian), "si" (Sinhala), "sk" (Slovak), "sl" (Slovenian), "ca" (Catalan), "sq" (Albanian), "sr" (Serbian), "kk" (Kazakh), "km" (Khmer), "kn" (Kannada), "or" (Odia), "sv" (Swedish), "ko" (Korean), "sw" (Swahili), "gl" (Galician), "ta" (Tamil), "gu" (Gujarati), "ky" (Kyrgyz), "cs" (Czech), "pa" (Punjabi), "te" (Telugu), "th" (Thai), "tl" (Tagalog), "pl" (Polish), "da" (Danish), "tr" (Turkish)'
+        errorLine1='    &lt;string name="voice_commands_calling"&gt;Calling &lt;xliff:g id="name" example="Sam"&gt;%1$s&lt;/xliff:g&gt;&lt;/string&gt;'
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings_voice_commands_sandfly.xml"
+            line="31"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="MissingTranslation"
+        message='"voice_commands_call_permission" is not translated in "de" (German), "hi" (Hindi), "lo" (Lao), "pt" (Portuguese), "fil" (Filipino; Pilipino), "lt" (Lithuanian), "hr" (Croatian), "lv" (Latvian), "hu" (Hungarian), "hy" (Armenian), "uk" (Ukrainian), "id" (Indonesian), "ur" (Urdu), "mk" (Macedonian), "ml" (Malayalam), "mn" (Mongolian), "af" (Afrikaans), "in" (Indonesian), "mr" (Marathi), "uz" (Uzbek), "ms" (Malay), "el" (Greek), "en" (English), "is" (Icelandic), "it" (Italian), "am" (Amharic), "my" (Burmese), "es" (Spanish), "iw" (Hebrew), "zh" (Chinese), "et" (Estonian), "eu" (Basque), "ar" (Arabic), "as" (Assamese), "vi" (Vietnamese), "nb" (Norwegian Bokmål), "ja" (Japanese), "ne" (Nepali), "az" (Azerbaijani), "fa" (Persian), "zu" (Zulu), "ro" (Romanian), "nl" (Dutch), "no" (Norwegian), "be" (Belarusian), "fi" (Finnish), "ru" (Russian), "bg" (Bulgarian), "bn" (Bangla), "fr" (French), "bs" (Bosnian), "ka" (Georgian), "si" (Sinhala), "sk" (Slovak), "sl" (Slovenian), "ca" (Catalan), "sq" (Albanian), "sr" (Serbian), "kk" (Kazakh), "km" (Khmer), "kn" (Kannada), "or" (Odia), "sv" (Swedish), "ko" (Korean), "sw" (Swahili), "gl" (Galician), "ta" (Tamil), "gu" (Gujarati), "ky" (Kyrgyz), "cs" (Czech), "pa" (Punjabi), "te" (Telugu), "th" (Thai), "tl" (Tagalog), "pl" (Polish), "da" (Danish), "tr" (Turkish)'
+        errorLine1='    &lt;string name="voice_commands_call_permission"&gt;Allow phone calls, then say the command again.&lt;/string&gt;'
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings_voice_commands_sandfly.xml"
+            line="33"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="MissingTranslation"
+        message='"voice_commands_contacts_permission" is not translated in "de" (German), "hi" (Hindi), "lo" (Lao), "pt" (Portuguese), "fil" (Filipino; Pilipino), "lt" (Lithuanian), "hr" (Croatian), "lv" (Latvian), "hu" (Hungarian), "hy" (Armenian), "uk" (Ukrainian), "id" (Indonesian), "ur" (Urdu), "mk" (Macedonian), "ml" (Malayalam), "mn" (Mongolian), "af" (Afrikaans), "in" (Indonesian), "mr" (Marathi), "uz" (Uzbek), "ms" (Malay), "el" (Greek), "en" (English), "is" (Icelandic), "it" (Italian), "am" (Amharic), "my" (Burmese), "es" (Spanish), "iw" (Hebrew), "zh" (Chinese), "et" (Estonian), "eu" (Basque), "ar" (Arabic), "as" (Assamese), "vi" (Vietnamese), "nb" (Norwegian Bokmål), "ja" (Japanese), "ne" (Nepali), "az" (Azerbaijani), "fa" (Persian), "zu" (Zulu), "ro" (Romanian), "nl" (Dutch), "no" (Norwegian), "be" (Belarusian), "fi" (Finnish), "ru" (Russian), "bg" (Bulgarian), "bn" (Bangla), "fr" (French), "bs" (Bosnian), "ka" (Georgian), "si" (Sinhala), "sk" (Slovak), "sl" (Slovenian), "ca" (Catalan), "sq" (Albanian), "sr" (Serbian), "kk" (Kazakh), "km" (Khmer), "kn" (Kannada), "or" (Odia), "sv" (Swedish), "ko" (Korean), "sw" (Swahili), "gl" (Galician), "ta" (Tamil), "gu" (Gujarati), "ky" (Kyrgyz), "cs" (Czech), "pa" (Punjabi), "te" (Telugu), "th" (Thai), "tl" (Tagalog), "pl" (Polish), "da" (Danish), "tr" (Turkish)'
+        errorLine1='    &lt;string name="voice_commands_contacts_permission"&gt;Allow access to contacts, then say the command again.&lt;/string&gt;'
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings_voice_commands_sandfly.xml"
+            line="35"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="MissingTranslation"
+        message='"voice_commands_no_contact" is not translated in "de" (German), "hi" (Hindi), "lo" (Lao), "pt" (Portuguese), "fil" (Filipino; Pilipino), "lt" (Lithuanian), "hr" (Croatian), "lv" (Latvian), "hu" (Hungarian), "hy" (Armenian), "uk" (Ukrainian), "id" (Indonesian), "ur" (Urdu), "mk" (Macedonian), "ml" (Malayalam), "mn" (Mongolian), "af" (Afrikaans), "in" (Indonesian), "mr" (Marathi), "uz" (Uzbek), "ms" (Malay), "el" (Greek), "en" (English), "is" (Icelandic), "it" (Italian), "am" (Amharic), "my" (Burmese), "es" (Spanish), "iw" (Hebrew), "zh" (Chinese), "et" (Estonian), "eu" (Basque), "ar" (Arabic), "as" (Assamese), "vi" (Vietnamese), "nb" (Norwegian Bokmål), "ja" (Japanese), "ne" (Nepali), "az" (Azerbaijani), "fa" (Persian), "zu" (Zulu), "ro" (Romanian), "nl" (Dutch), "no" (Norwegian), "be" (Belarusian), "fi" (Finnish), "ru" (Russian), "bg" (Bulgarian), "bn" (Bangla), "fr" (French), "bs" (Bosnian), "ka" (Georgian), "si" (Sinhala), "sk" (Slovak), "sl" (Slovenian), "ca" (Catalan), "sq" (Albanian), "sr" (Serbian), "kk" (Kazakh), "km" (Khmer), "kn" (Kannada), "or" (Odia), "sv" (Swedish), "ko" (Korean), "sw" (Swahili), "gl" (Galician), "ta" (Tamil), "gu" (Gujarati), "ky" (Kyrgyz), "cs" (Czech), "pa" (Punjabi), "te" (Telugu), "th" (Thai), "tl" (Tagalog), "pl" (Polish), "da" (Danish), "tr" (Turkish)'
+        errorLine1='    &lt;string name="voice_commands_no_contact"&gt;No contact named &lt;xliff:g id="name" example="Sam"&gt;%1$s&lt;/xliff:g&gt;&lt;/string&gt;'
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings_voice_commands_sandfly.xml"
+            line="37"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="MissingTranslation"
+        message='"voice_commands_contacts_several" is not translated in "de" (German), "hi" (Hindi), "lo" (Lao), "pt" (Portuguese), "fil" (Filipino; Pilipino), "lt" (Lithuanian), "hr" (Croatian), "lv" (Latvian), "hu" (Hungarian), "hy" (Armenian), "uk" (Ukrainian), "id" (Indonesian), "ur" (Urdu), "mk" (Macedonian), "ml" (Malayalam), "mn" (Mongolian), "af" (Afrikaans), "in" (Indonesian), "mr" (Marathi), "uz" (Uzbek), "ms" (Malay), "el" (Greek), "en" (English), "is" (Icelandic), "it" (Italian), "am" (Amharic), "my" (Burmese), "es" (Spanish), "iw" (Hebrew), "zh" (Chinese), "et" (Estonian), "eu" (Basque), "ar" (Arabic), "as" (Assamese), "vi" (Vietnamese), "nb" (Norwegian Bokmål), "ja" (Japanese), "ne" (Nepali), "az" (Azerbaijani), "fa" (Persian), "zu" (Zulu), "ro" (Romanian), "nl" (Dutch), "no" (Norwegian), "be" (Belarusian), "fi" (Finnish), "ru" (Russian), "bg" (Bulgarian), "bn" (Bangla), "fr" (French), "bs" (Bosnian), "ka" (Georgian), "si" (Sinhala), "sk" (Slovak), "sl" (Slovenian), "ca" (Catalan), "sq" (Albanian), "sr" (Serbian), "kk" (Kazakh), "km" (Khmer), "kn" (Kannada), "or" (Odia), "sv" (Swedish), "ko" (Korean), "sw" (Swahili), "gl" (Galician), "ta" (Tamil), "gu" (Gujarati), "ky" (Kyrgyz), "cs" (Czech), "pa" (Punjabi), "te" (Telugu), "th" (Thai), "tl" (Tagalog), "pl" (Polish), "da" (Danish), "tr" (Turkish)'
+        errorLine1='    &lt;string name="voice_commands_contacts_several"&gt;More than one contact named &lt;xliff:g id="name" example="Sam"&gt;%1$s&lt;/xliff:g&gt;: &lt;xliff:g id="names" example="Sam Jones, Sam Smith"&gt;%2$s&lt;/xliff:g&gt;&lt;/string&gt;'
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings_voice_commands_sandfly.xml"
+            line="39"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="MissingTranslation"
+        message='"voice_commands_message_text" is not translated in "de" (German), "hi" (Hindi), "lo" (Lao), "pt" (Portuguese), "fil" (Filipino; Pilipino), "lt" (Lithuanian), "hr" (Croatian), "lv" (Latvian), "hu" (Hungarian), "hy" (Armenian), "uk" (Ukrainian), "id" (Indonesian), "ur" (Urdu), "mk" (Macedonian), "ml" (Malayalam), "mn" (Mongolian), "af" (Afrikaans), "in" (Indonesian), "mr" (Marathi), "uz" (Uzbek), "ms" (Malay), "el" (Greek), "en" (English), "is" (Icelandic), "it" (Italian), "am" (Amharic), "my" (Burmese), "es" (Spanish), "iw" (Hebrew), "zh" (Chinese), "et" (Estonian), "eu" (Basque), "ar" (Arabic), "as" (Assamese), "vi" (Vietnamese), "nb" (Norwegian Bokmål), "ja" (Japanese), "ne" (Nepali), "az" (Azerbaijani), "fa" (Persian), "zu" (Zulu), "ro" (Romanian), "nl" (Dutch), "no" (Norwegian), "be" (Belarusian), "fi" (Finnish), "ru" (Russian), "bg" (Bulgarian), "bn" (Bangla), "fr" (French), "bs" (Bosnian), "ka" (Georgian), "si" (Sinhala), "sk" (Slovak), "sl" (Slovenian), "ca" (Catalan), "sq" (Albanian), "sr" (Serbian), "kk" (Kazakh), "km" (Khmer), "kn" (Kannada), "or" (Odia), "sv" (Swedish), "ko" (Korean), "sw" (Swahili), "gl" (Galician), "ta" (Tamil), "gu" (Gujarati), "ky" (Kyrgyz), "cs" (Czech), "pa" (Punjabi), "te" (Telugu), "th" (Thai), "tl" (Tagalog), "pl" (Polish), "da" (Danish), "tr" (Turkish)'
+        errorLine1='    &lt;string name="voice_commands_message_text"&gt;Message to &lt;xliff:g id="name" example="Sam"&gt;%1$s&lt;/xliff:g&gt;&lt;/string&gt;'
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings_voice_commands_sandfly.xml"
+            line="41"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="MissingTranslation"
+        message='"voice_commands_message_confirm" is not translated in "de" (German), "hi" (Hindi), "lo" (Lao), "pt" (Portuguese), "fil" (Filipino; Pilipino), "lt" (Lithuanian), "hr" (Croatian), "lv" (Latvian), "hu" (Hungarian), "hy" (Armenian), "uk" (Ukrainian), "id" (Indonesian), "ur" (Urdu), "mk" (Macedonian), "ml" (Malayalam), "mn" (Mongolian), "af" (Afrikaans), "in" (Indonesian), "mr" (Marathi), "uz" (Uzbek), "ms" (Malay), "el" (Greek), "en" (English), "is" (Icelandic), "it" (Italian), "am" (Amharic), "my" (Burmese), "es" (Spanish), "iw" (Hebrew), "zh" (Chinese), "et" (Estonian), "eu" (Basque), "ar" (Arabic), "as" (Assamese), "vi" (Vietnamese), "nb" (Norwegian Bokmål), "ja" (Japanese), "ne" (Nepali), "az" (Azerbaijani), "fa" (Persian), "zu" (Zulu), "ro" (Romanian), "nl" (Dutch), "no" (Norwegian), "be" (Belarusian), "fi" (Finnish), "ru" (Russian), "bg" (Bulgarian), "bn" (Bangla), "fr" (French), "bs" (Bosnian), "ka" (Georgian), "si" (Sinhala), "sk" (Slovak), "sl" (Slovenian), "ca" (Catalan), "sq" (Albanian), "sr" (Serbian), "kk" (Kazakh), "km" (Khmer), "kn" (Kannada), "or" (Odia), "sv" (Swedish), "ko" (Korean), "sw" (Swahili), "gl" (Galician), "ta" (Tamil), "gu" (Gujarati), "ky" (Kyrgyz), "cs" (Czech), "pa" (Punjabi), "te" (Telugu), "th" (Thai), "tl" (Tagalog), "pl" (Polish), "da" (Danish), "tr" (Turkish)'
+        errorLine1='    &lt;string name="voice_commands_message_confirm"&gt;Send to &lt;xliff:g id="name" example="Sam"&gt;%1$s&lt;/xliff:g&gt;: &lt;xliff:g id="text" example="I am on my way"&gt;%2$s&lt;/xliff:g&gt;?&lt;/string&gt;'
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings_voice_commands_sandfly.xml"
+            line="43"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="MissingTranslation"
+        message='"voice_commands_message_confirm_result" is not translated in "de" (German), "hi" (Hindi), "lo" (Lao), "pt" (Portuguese), "fil" (Filipino; Pilipino), "lt" (Lithuanian), "hr" (Croatian), "lv" (Latvian), "hu" (Hungarian), "hy" (Armenian), "uk" (Ukrainian), "id" (Indonesian), "ur" (Urdu), "mk" (Macedonian), "ml" (Malayalam), "mn" (Mongolian), "af" (Afrikaans), "in" (Indonesian), "mr" (Marathi), "uz" (Uzbek), "ms" (Malay), "el" (Greek), "en" (English), "is" (Icelandic), "it" (Italian), "am" (Amharic), "my" (Burmese), "es" (Spanish), "iw" (Hebrew), "zh" (Chinese), "et" (Estonian), "eu" (Basque), "ar" (Arabic), "as" (Assamese), "vi" (Vietnamese), "nb" (Norwegian Bokmål), "ja" (Japanese), "ne" (Nepali), "az" (Azerbaijani), "fa" (Persian), "zu" (Zulu), "ro" (Romanian), "nl" (Dutch), "no" (Norwegian), "be" (Belarusian), "fi" (Finnish), "ru" (Russian), "bg" (Bulgarian), "bn" (Bangla), "fr" (French), "bs" (Bosnian), "ka" (Georgian), "si" (Sinhala), "sk" (Slovak), "sl" (Slovenian), "ca" (Catalan), "sq" (Albanian), "sr" (Serbian), "kk" (Kazakh), "km" (Khmer), "kn" (Kannada), "or" (Odia), "sv" (Swedish), "ko" (Korean), "sw" (Swahili), "gl" (Galician), "ta" (Tamil), "gu" (Gujarati), "ky" (Kyrgyz), "cs" (Czech), "pa" (Punjabi), "te" (Telugu), "th" (Thai), "tl" (Tagalog), "pl" (Polish), "da" (Danish), "tr" (Turkish)'
+        errorLine1='    &lt;string name="voice_commands_message_confirm_result"&gt;Send to &lt;xliff:g id="name" example="Sam"&gt;%1$s&lt;/xliff:g&gt;?&lt;/string&gt;'
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings_voice_commands_sandfly.xml"
+            line="45"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="MissingTranslation"
+        message='"voice_commands_message_not_sent" is not translated in "de" (German), "hi" (Hindi), "lo" (Lao), "pt" (Portuguese), "fil" (Filipino; Pilipino), "lt" (Lithuanian), "hr" (Croatian), "lv" (Latvian), "hu" (Hungarian), "hy" (Armenian), "uk" (Ukrainian), "id" (Indonesian), "ur" (Urdu), "mk" (Macedonian), "ml" (Malayalam), "mn" (Mongolian), "af" (Afrikaans), "in" (Indonesian), "mr" (Marathi), "uz" (Uzbek), "ms" (Malay), "el" (Greek), "en" (English), "is" (Icelandic), "it" (Italian), "am" (Amharic), "my" (Burmese), "es" (Spanish), "iw" (Hebrew), "zh" (Chinese), "et" (Estonian), "eu" (Basque), "ar" (Arabic), "as" (Assamese), "vi" (Vietnamese), "nb" (Norwegian Bokmål), "ja" (Japanese), "ne" (Nepali), "az" (Azerbaijani), "fa" (Persian), "zu" (Zulu), "ro" (Romanian), "nl" (Dutch), "no" (Norwegian), "be" (Belarusian), "fi" (Finnish), "ru" (Russian), "bg" (Bulgarian), "bn" (Bangla), "fr" (French), "bs" (Bosnian), "ka" (Georgian), "si" (Sinhala), "sk" (Slovak), "sl" (Slovenian), "ca" (Catalan), "sq" (Albanian), "sr" (Serbian), "kk" (Kazakh), "km" (Khmer), "kn" (Kannada), "or" (Odia), "sv" (Swedish), "ko" (Korean), "sw" (Swahili), "gl" (Galician), "ta" (Tamil), "gu" (Gujarati), "ky" (Kyrgyz), "cs" (Czech), "pa" (Punjabi), "te" (Telugu), "th" (Thai), "tl" (Tagalog), "pl" (Polish), "da" (Danish), "tr" (Turkish)'
+        errorLine1='    &lt;string name="voice_commands_message_not_sent"&gt;Message not sent&lt;/string&gt;'
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings_voice_commands_sandfly.xml"
+            line="47"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="MissingTranslation"
+        message='"voice_commands_send_pressed" is not translated in "de" (German), "hi" (Hindi), "lo" (Lao), "pt" (Portuguese), "fil" (Filipino; Pilipino), "lt" (Lithuanian), "hr" (Croatian), "lv" (Latvian), "hu" (Hungarian), "hy" (Armenian), "uk" (Ukrainian), "id" (Indonesian), "ur" (Urdu), "mk" (Macedonian), "ml" (Malayalam), "mn" (Mongolian), "af" (Afrikaans), "in" (Indonesian), "mr" (Marathi), "uz" (Uzbek), "ms" (Malay), "el" (Greek), "en" (English), "is" (Icelandic), "it" (Italian), "am" (Amharic), "my" (Burmese), "es" (Spanish), "iw" (Hebrew), "zh" (Chinese), "et" (Estonian), "eu" (Basque), "ar" (Arabic), "as" (Assamese), "vi" (Vietnamese), "nb" (Norwegian Bokmål), "ja" (Japanese), "ne" (Nepali), "az" (Azerbaijani), "fa" (Persian), "zu" (Zulu), "ro" (Romanian), "nl" (Dutch), "no" (Norwegian), "be" (Belarusian), "fi" (Finnish), "ru" (Russian), "bg" (Bulgarian), "bn" (Bangla), "fr" (French), "bs" (Bosnian), "ka" (Georgian), "si" (Sinhala), "sk" (Slovak), "sl" (Slovenian), "ca" (Catalan), "sq" (Albanian), "sr" (Serbian), "kk" (Kazakh), "km" (Khmer), "kn" (Kannada), "or" (Odia), "sv" (Swedish), "ko" (Korean), "sw" (Swahili), "gl" (Galician), "ta" (Tamil), "gu" (Gujarati), "ky" (Kyrgyz), "cs" (Czech), "pa" (Punjabi), "te" (Telugu), "th" (Thai), "tl" (Tagalog), "pl" (Polish), "da" (Danish), "tr" (Turkish)'
+        errorLine1='    &lt;string name="voice_commands_send_pressed"&gt;Send pressed&lt;/string&gt;'
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings_voice_commands_sandfly.xml"
+            line="49"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="MissingTranslation"
+        message='"voice_commands_send_button" is not translated in "de" (German), "hi" (Hindi), "lo" (Lao), "pt" (Portuguese), "fil" (Filipino; Pilipino), "lt" (Lithuanian), "hr" (Croatian), "lv" (Latvian), "hu" (Hungarian), "hy" (Armenian), "uk" (Ukrainian), "id" (Indonesian), "ur" (Urdu), "mk" (Macedonian), "ml" (Malayalam), "mn" (Mongolian), "af" (Afrikaans), "in" (Indonesian), "mr" (Marathi), "uz" (Uzbek), "ms" (Malay), "el" (Greek), "en" (English), "is" (Icelandic), "it" (Italian), "am" (Amharic), "my" (Burmese), "es" (Spanish), "iw" (Hebrew), "zh" (Chinese), "et" (Estonian), "eu" (Basque), "ar" (Arabic), "as" (Assamese), "vi" (Vietnamese), "nb" (Norwegian Bokmål), "ja" (Japanese), "ne" (Nepali), "az" (Azerbaijani), "fa" (Persian), "zu" (Zulu), "ro" (Romanian), "nl" (Dutch), "no" (Norwegian), "be" (Belarusian), "fi" (Finnish), "ru" (Russian), "bg" (Bulgarian), "bn" (Bangla), "fr" (French), "bs" (Bosnian), "ka" (Georgian), "si" (Sinhala), "sk" (Slovak), "sl" (Slovenian), "ca" (Catalan), "sq" (Albanian), "sr" (Serbian), "kk" (Kazakh), "km" (Khmer), "kn" (Kannada), "or" (Odia), "sv" (Swedish), "ko" (Korean), "sw" (Swahili), "gl" (Galician), "ta" (Tamil), "gu" (Gujarati), "ky" (Kyrgyz), "cs" (Czech), "pa" (Punjabi), "te" (Telugu), "th" (Thai), "tl" (Tagalog), "pl" (Polish), "da" (Danish), "tr" (Turkish)'
+        errorLine1='    &lt;string name="voice_commands_send_button"&gt;Send&lt;/string&gt;'
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings_voice_commands_sandfly.xml"
+            line="51"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="MissingTranslation"
+        message='"voice_commands_no_description" is not translated in "de" (German), "hi" (Hindi), "lo" (Lao), "pt" (Portuguese), "fil" (Filipino; Pilipino), "lt" (Lithuanian), "hr" (Croatian), "lv" (Latvian), "hu" (Hungarian), "hy" (Armenian), "uk" (Ukrainian), "id" (Indonesian), "ur" (Urdu), "mk" (Macedonian), "ml" (Malayalam), "mn" (Mongolian), "af" (Afrikaans), "in" (Indonesian), "mr" (Marathi), "uz" (Uzbek), "ms" (Malay), "el" (Greek), "en" (English), "is" (Icelandic), "it" (Italian), "am" (Amharic), "my" (Burmese), "es" (Spanish), "iw" (Hebrew), "zh" (Chinese), "et" (Estonian), "eu" (Basque), "ar" (Arabic), "as" (Assamese), "vi" (Vietnamese), "nb" (Norwegian Bokmål), "ja" (Japanese), "ne" (Nepali), "az" (Azerbaijani), "fa" (Persian), "zu" (Zulu), "ro" (Romanian), "nl" (Dutch), "no" (Norwegian), "be" (Belarusian), "fi" (Finnish), "ru" (Russian), "bg" (Bulgarian), "bn" (Bangla), "fr" (French), "bs" (Bosnian), "ka" (Georgian), "si" (Sinhala), "sk" (Slovak), "sl" (Slovenian), "ca" (Catalan), "sq" (Albanian), "sr" (Serbian), "kk" (Kazakh), "km" (Khmer), "kn" (Kannada), "or" (Odia), "sv" (Swedish), "ko" (Korean), "sw" (Swahili), "gl" (Galician), "ta" (Tamil), "gu" (Gujarati), "ky" (Kyrgyz), "cs" (Czech), "pa" (Punjabi), "te" (Telugu), "th" (Thai), "tl" (Tagalog), "pl" (Polish), "da" (Danish), "tr" (Turkish)'
+        errorLine1='    &lt;string name="voice_commands_no_description"&gt;No description received&lt;/string&gt;'
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings_voice_commands_sandfly.xml"
+            line="53"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="MissingTranslation"
+        message='"voice_commands_copied" is not translated in "de" (German), "hi" (Hindi), "lo" (Lao), "pt" (Portuguese), "fil" (Filipino; Pilipino), "lt" (Lithuanian), "hr" (Croatian), "lv" (Latvian), "hu" (Hungarian), "hy" (Armenian), "uk" (Ukrainian), "id" (Indonesian), "ur" (Urdu), "mk" (Macedonian), "ml" (Malayalam), "mn" (Mongolian), "af" (Afrikaans), "in" (Indonesian), "mr" (Marathi), "uz" (Uzbek), "ms" (Malay), "el" (Greek), "en" (English), "is" (Icelandic), "it" (Italian), "am" (Amharic), "my" (Burmese), "es" (Spanish), "iw" (Hebrew), "zh" (Chinese), "et" (Estonian), "eu" (Basque), "ar" (Arabic), "as" (Assamese), "vi" (Vietnamese), "nb" (Norwegian Bokmål), "ja" (Japanese), "ne" (Nepali), "az" (Azerbaijani), "fa" (Persian), "zu" (Zulu), "ro" (Romanian), "nl" (Dutch), "no" (Norwegian), "be" (Belarusian), "fi" (Finnish), "ru" (Russian), "bg" (Bulgarian), "bn" (Bangla), "fr" (French), "bs" (Bosnian), "ka" (Georgian), "si" (Sinhala), "sk" (Slovak), "sl" (Slovenian), "ca" (Catalan), "sq" (Albanian), "sr" (Serbian), "kk" (Kazakh), "km" (Khmer), "kn" (Kannada), "or" (Odia), "sv" (Swedish), "ko" (Korean), "sw" (Swahili), "gl" (Galician), "ta" (Tamil), "gu" (Gujarati), "ky" (Kyrgyz), "cs" (Czech), "pa" (Punjabi), "te" (Telugu), "th" (Thai), "tl" (Tagalog), "pl" (Polish), "da" (Danish), "tr" (Turkish)'
+        errorLine1='    &lt;string name="voice_commands_copied"&gt;Copied&lt;/string&gt;'
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings_voice_commands_sandfly.xml"
+            line="55"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="MissingTranslation"
         message="&quot;template_emoji_name_suffix&quot; is not translated in &quot;de&quot; (German), &quot;hi&quot; (Hindi), &quot;lo&quot; (Lao), &quot;pt&quot; (Portuguese), &quot;fil&quot; (Filipino; Pilipino), &quot;lt&quot; (Lithuanian), &quot;hr&quot; (Croatian), &quot;lv&quot; (Latvian), &quot;hu&quot; (Hungarian), &quot;hy&quot; (Armenian), &quot;uk&quot; (Ukrainian), &quot;id&quot; (Indonesian), &quot;ur&quot; (Urdu), &quot;mk&quot; (Macedonian), &quot;ml&quot; (Malayalam), &quot;mn&quot; (Mongolian), &quot;af&quot; (Afrikaans), &quot;in&quot; (Indonesian), &quot;mr&quot; (Marathi), &quot;uz&quot; (Uzbek), &quot;ms&quot; (Malay), &quot;el&quot; (Greek), &quot;en&quot; (English), &quot;is&quot; (Icelandic), &quot;it&quot; (Italian), &quot;am&quot; (Amharic), &quot;my&quot; (Burmese), &quot;es&quot; (Spanish), &quot;iw&quot; (Hebrew), &quot;zh&quot; (Chinese), &quot;et&quot; (Estonian), &quot;eu&quot; (Basque), &quot;ar&quot; (Arabic), &quot;as&quot; (Assamese), &quot;vi&quot; (Vietnamese), &quot;nb&quot; (Norwegian Bokmål), &quot;ja&quot; (Japanese), &quot;ne&quot; (Nepali), &quot;az&quot; (Azerbaijani), &quot;fa&quot; (Persian), &quot;zu&quot; (Zulu), &quot;ro&quot; (Romanian), &quot;nl&quot; (Dutch), &quot;no&quot; (Norwegian), &quot;be&quot; (Belarusian), &quot;fi&quot; (Finnish), &quot;ru&quot; (Russian), &quot;bg&quot; (Bulgarian), &quot;bn&quot; (Bangla), &quot;fr&quot; (French), &quot;bs&quot; (Bosnian), &quot;ka&quot; (Georgian), &quot;si&quot; (Sinhala), &quot;sk&quot; (Slovak), &quot;sl&quot; (Slovenian), &quot;ca&quot; (Catalan), &quot;sq&quot; (Albanian), &quot;sr&quot; (Serbian), &quot;kk&quot; (Kazakh), &quot;km&quot; (Khmer), &quot;kn&quot; (Kannada), &quot;or&quot; (Odia), &quot;sv&quot; (Swedish), &quot;ko&quot; (Korean), &quot;sw&quot; (Swahili), &quot;gl&quot; (Galician), &quot;ta&quot; (Tamil), &quot;gu&quot; (Gujarati), &quot;ky&quot; (Kyrgyz), &quot;cs&quot; (Czech), &quot;pa&quot; (Punjabi), &quot;te&quot; (Telugu), &quot;th&quot; (Thai), &quot;tl&quot; (Tagalog), &quot;pl&quot; (Polish), &quot;da&quot; (Danish), &quot;tr&quot; (Turkish)"
         errorLine1="    &lt;string name=&quot;template_emoji_name_suffix&quot;>&lt;xliff:g id=&quot;name&quot; example=&quot;grinning face&quot;>%1$s&lt;/xliff:g> emoji&lt;/string>"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">

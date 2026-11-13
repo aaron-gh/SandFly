@@ -24,6 +24,10 @@
     <!-- Answer call command. Asked for the first time the command runs. -->
     <uses-permission android:name="android.permission.ANSWER_PHONE_CALLS" />
 
+    <!-- Voice commands that call and write messages to contacts. Asked for the first time one runs. -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
     <!-- Required for haptic feedback. -->
     <uses-permission android:name="android.permission.VIBRATE" />
 
@@ -97,6 +101,10 @@
         android:required="false" />
     <uses-feature
         android:name="android.hardware.sensor.accelerometer"
+        android:required="false" />
+    <!-- Calls by voice command are optional; CALL_PHONE would otherwise make telephony required. -->
+    <uses-feature
+        android:name="android.hardware.telephony"
         android:required="false" />
     <!-- Android TV is supported, but not needed. -->
     <uses-feature
