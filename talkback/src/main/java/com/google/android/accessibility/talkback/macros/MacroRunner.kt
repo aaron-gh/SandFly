@@ -100,13 +100,13 @@ object MacroRunner {
 
   /**
    * Runs [steps] as a macro that isn't saved, as a voice command does, stopping the macro running.
-   * [onDone] gets whether every step ran, unless the run is stopped. Returns false when SandFly
-   * isn't running.
+   * With [quiet], a step that fails says nothing. [onDone] gets whether every step ran, unless the
+   * run is stopped. Returns false when SandFly isn't running.
    */
   @JvmStatic
-  fun runSteps(steps: List<Macros.Step>, onDone: (Boolean) -> Unit): Boolean {
+  fun runSteps(steps: List<Macros.Step>, quiet: Boolean, onDone: (Boolean) -> Unit): Boolean {
     val service = TalkBackService.getInstance() ?: return false
-    start(service, Macros.Macro(UNSAVED_ID, "", steps), sayNotMet = false, onDone)
+    start(service, Macros.Macro(UNSAVED_ID, "", steps), sayNotMet = false, onDone, quiet)
     return true
   }
 
@@ -117,9 +117,10 @@ object MacroRunner {
     macro: Macros.Macro,
     sayNotMet: Boolean,
     onDone: ((Boolean) -> Unit)?,
+    quiet: Boolean = false,
   ) {
     stop()
-    val run = Run(service, macro, onDone)
+    val run = Run(service, macro, onDone, quiet)
     current = run
     run.later(0) { run.start(sayNotMet) }
   }
@@ -136,6 +137,7 @@ object MacroRunner {
     val service: TalkBackService,
     val macro: Macros.Macro,
     private var onDone: ((Boolean) -> Unit)?,
+    private val quiet: Boolean = false,
   ) {
     @Volatile var finished = false
 
@@ -426,6 +428,7 @@ object MacroRunner {
     }
 
     private fun say(text: String) {
+      if (quiet) return
       service.feedbackReturner?.returnFeedback(EVENT_ID_UNTRACKED, Feedback.requestedSpeech(text))
     }
 

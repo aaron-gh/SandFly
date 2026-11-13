@@ -23,6 +23,8 @@
     <string name="voice_commands_not_understood">Not understood: <xliff:g id="text" example="open the door">%1$s</xliff:g></string>
     <!-- Spoken when a voice command names a command that can't run now. name is its name. [CHAR LIMIT=NONE] -->
     <string name="voice_commands_not_available">Not available: <xliff:g id="name" example="Morning macro">%1$s</xliff:g></string>
+    <!-- Spoken when the item a voice command activates isn't on the screen. label is the name said. [CHAR LIMIT=NONE] -->
+    <string name="voice_commands_not_found">Not found: <xliff:g id="label" example="Settings">%1$s</xliff:g></string>
     <!-- Spoken when a voice command names an app that isn't installed. name is the name said. [CHAR LIMIT=NONE] -->
     <string name="voice_commands_no_app">No app named <xliff:g id="name" example="Signal">%1$s</xliff:g></string>
     <!-- Spoken when no app can make a call or write a message. [CHAR LIMIT=NONE] -->

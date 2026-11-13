@@ -69,6 +69,9 @@ object VoicePlanRunner {
   /** How long the Send button of a messaging app is looked for. */
   private const val SEND_TIMEOUT_MS = 5_000L
 
+  /** Anything between words of an item's text: not a letter or digit. */
+  private const val GAP = "[^\\p{L}\\p{N}]"
+
   private const val PREF_CALL_PERMISSION_ASKED = "pref_voice_commands_call_permission_asked"
 
   private const val WHATSAPP = "com.whatsapp"
@@ -153,9 +156,10 @@ object VoicePlanRunner {
       try {
         when (step) {
           is VoiceStep.Command -> command(step, index, next)
-          is VoiceStep.Tap -> macro(Macros.Tap(step.label), next)
+          is VoiceStep.Tap -> tap(step.label, next)
           is VoiceStep.OpenApp -> openApp(step, next)
-          is VoiceStep.TypeText -> macro(Macros.TypeText(step.text), next)
+          is VoiceStep.TypeText ->
+            macro(Macros.TypeText(step.text), next) { say(service.getString(R.string.not_editable)) }
           is VoiceStep.Wait -> later(step.millis) { runStep(index + 1) }
           is VoiceStep.Call -> call(step)
           is VoiceStep.Message -> message(step, next)
@@ -215,14 +219,19 @@ object VoicePlanRunner {
       }
     }
 
-    /** Runs [step] as a macro, which says why it failed, then [next]. */
-    private fun macro(step: Macros.Step, next: () -> Unit) {
+    /** Runs [step] as a macro, then [next], or [failed] and stops when the step fails. */
+    private fun macro(step: Macros.Step, next: () -> Unit, failed: () -> Unit) {
       macroRunning = true
       val started =
-        MacroRunner.runSteps(listOf(step)) { ok ->
+        MacroRunner.runSteps(listOf(step), quiet = true) { ok ->
           macroRunning = false
           if (!active) return@runSteps
-          if (ok) next() else done()
+          if (ok) {
+            next()
+          } else {
+            failed()
+            done()
+          }
         }
       if (!started) {
         macroRunning = false
@@ -230,9 +239,38 @@ object VoicePlanRunner {
       }
     }
 
+    /**
+     * Activates the item [label]: first one whose whole text is it, with any punctuation and "&"
+     * for "and", then one whose text contains it.
+     */
+    private fun tap(label: String, next: () -> Unit) {
+      val notFound = { say(service.getString(R.string.voice_commands_not_found, label)) }
+      val whole = wholeLabelPattern(label)
+      if (whole == null) {
+        macro(Macros.Tap(label), next, notFound)
+        return
+      }
+      macro(Macros.Tap(whole, Macros.DEFAULT_TAP_TIMEOUT_MS, regex = true), next) {
+        macro(Macros.Tap(label, Macros.MIN_TAP_TIMEOUT_MS), next, notFound)
+      }
+    }
+
+    /** A pattern for the whole of [label], or null when [Macros.compilePattern] refuses it. */
+    private fun wholeLabelPattern(label: String): String? {
+      val and = service.resources.getStringArray(R.array.voice_commands_and_words)
+      val words = VoiceGrammar.normalize(label, locale).split(' ').filter { it.isNotEmpty() }
+      if (words.isEmpty()) return null
+      val pattern =
+        words.joinToString("$GAP+", prefix = "^$GAP*", postfix = "$GAP*$") { word ->
+          if (and.any { VoiceGrammar.normalize(it, locale) == word }) "(?:" + Regex.escape(word) + "|&)"
+          else Regex.escape(word)
+        }
+      return pattern.takeIf { Macros.compilePattern(it) != null }
+    }
+
     private fun openApp(step: VoiceStep.OpenApp, next: () -> Unit) {
       if (step.value != null) {
-        macro(Macros.OpenApp(step.value), next)
+        macro(Macros.OpenApp(step.value), next) { say(service.getString(R.string.voice_commands_no_app, step.name)) }
         return
       }
       inBackground({ listOf(VoiceTargets.findApp(OpenAppActions.apps(service), step.name, locale)) }) { found ->
@@ -241,7 +279,7 @@ object VoicePlanRunner {
           say(service.getString(R.string.voice_commands_no_app, step.name))
           done()
         } else {
-          macro(Macros.OpenApp(app.value), next)
+          macro(Macros.OpenApp(app.value), next) { say(service.getString(R.string.voice_commands_no_app, step.name)) }
         }
       }
     }
@@ -411,13 +449,17 @@ object VoicePlanRunner {
       val label = service.getString(R.string.voice_commands_send_button)
       macroRunning = true
       val started =
-        MacroRunner.runSteps(listOf(Macros.Tap(label, SEND_TIMEOUT_MS, field = Macros.Field.DESCRIPTION))) { ok ->
+        MacroRunner.runSteps(
+          listOf(Macros.Tap(label, SEND_TIMEOUT_MS, field = Macros.Field.DESCRIPTION)),
+          quiet = true,
+        ) { ok ->
           macroRunning = false
           if (!active) return@runSteps
           if (ok) {
             say(service.getString(R.string.voice_commands_send_pressed))
             next()
           } else {
+            say(service.getString(R.string.voice_commands_not_found, label))
             done()
           }
         }
