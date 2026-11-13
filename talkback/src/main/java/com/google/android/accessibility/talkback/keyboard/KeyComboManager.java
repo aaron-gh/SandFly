@@ -1939,6 +1939,11 @@ public class KeyComboManager
               && Boolean.FALSE.equals(BrowseModeApps.remembered(context, focusedPackage));
       return;
     }
+    // This handler only turns browse mode on. When it is already on, the checks below
+    // cannot change the result, but can read input focus and many ancestors from the app.
+    if (browseModeEnabled) {
+      return;
+    }
     // The user turned browse mode off here, such as to use a control's arrow keys. Moving focus
     // with those keys must not turn it back on.
     if (browseModeTurnedOffByUser
