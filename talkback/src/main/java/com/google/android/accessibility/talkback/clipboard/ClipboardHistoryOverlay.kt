@@ -461,7 +461,8 @@ object ClipboardHistoryOverlay {
     list.setOnItemClickListener { _, _, position, _ -> actions.getOrNull(position)?.second?.invoke() }
     page.addView(list, fillHeight())
     button(page, android.R.string.cancel) { showList(focusText = text) }
-    focusLater(PAGE_FOCUS_DELAY_MS) { title }
+    // The first action, as in SandFly's other menus; the title only repeats the text.
+    focusLater(PAGE_FOCUS_DELAY_MS) { list.getChildAt(0) ?: title }
   }
 
   /** Runs [action] on [text], then shows the list with focus on the text, if it is still there. */
