@@ -54,11 +54,17 @@ class SettingsProfileStore(
   @Synchronized fun active(): Profile? = profiles.firstOrNull { it.id == activeId }
 
   /** The profile after the one in use, wrapping around, or null when there are none. */
+  fun next(): Profile? = offset(1)
+
+  /** The profile before the one in use, wrapping around, or null when there are none. */
+  fun previous(): Profile? = offset(-1)
+
   @Synchronized
-  fun next(): Profile? {
+  private fun offset(by: Int): Profile? {
     if (profiles.isEmpty()) return null
     val index = profiles.indexOfFirst { it.id == activeId }
-    return profiles[(index + 1).mod(profiles.size)]
+    if (index < 0) return profiles.first()
+    return profiles[(index + by).mod(profiles.size)]
   }
 
   /** Whether a profile other than [exceptId] is called [name], ignoring case and outer spaces. */

@@ -38,6 +38,7 @@ class SettingsProfileStoreTest {
     assertTrue(store.isEmpty())
     assertNull(store.active())
     assertNull(store.next())
+    assertNull(store.previous())
   }
 
   @Test
@@ -108,6 +109,17 @@ class SettingsProfileStoreTest {
     assertEquals(b, store.next())
     store.setActive(c.id)
     assertEquals(a, store.next())
+  }
+
+  @Test
+  fun previousWrapsAround() {
+    val store = store()
+    store.add("A", "a")!!
+    val b = store.add("B", "b")!!
+    val c = store.add("C", "c")!!
+    assertEquals(c, store.previous())
+    store.setActive(c.id)
+    assertEquals(b, store.previous())
   }
 
   @Test

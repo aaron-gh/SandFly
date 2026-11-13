@@ -159,6 +159,12 @@ object SettingsProfiles {
     inBackground(context, { switchNow(it, ready(it).next()?.id.orEmpty()) }, onDone)
   }
 
+  /** Changes to the profile before the one in use, as [switchTo] does. */
+  @JvmStatic
+  fun switchToPrevious(context: Context, onDone: Consumer<String>) {
+    inBackground(context, { switchNow(it, ready(it).previous()?.id.orEmpty()) }, onDone)
+  }
+
   /** Forgets the store, so that the next use reads it again. */
   @VisibleForTesting
   internal fun resetStore() {
