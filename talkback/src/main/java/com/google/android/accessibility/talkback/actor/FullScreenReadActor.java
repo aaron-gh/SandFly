@@ -33,6 +33,7 @@ import com.google.android.accessibility.talkback.Feedback;
 import com.google.android.accessibility.talkback.Pipeline;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.TalkBackService;
+import com.google.android.accessibility.talkback.backup.SettingsProfiles;
 import com.google.android.accessibility.talkback.eventprocessor.EventState;
 import com.google.android.accessibility.talkback.focusmanagement.AccessibilityFocusMonitor;
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.ScreenStateMonitor;
@@ -328,6 +329,7 @@ public class FullScreenReadActor {
     speechController.setShouldInjectAutoReadingCallbacks(isActive(), nodeSpokenRunnable);
     if (wasActive != isActive()) {
       TutorialHooks.onContinuousReading(isActive());
+      SettingsProfiles.onContinuousReading(isActive());
     }
   }
 

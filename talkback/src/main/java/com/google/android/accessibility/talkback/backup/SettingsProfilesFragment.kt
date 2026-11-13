@@ -22,65 +22,51 @@ import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.notifications.NotificationCodeFragment
 
 /**
- * Back up and restore > Settings profiles: the profiles, with the one in use marked, and New
- * settings profile. A profile's item offers Switch to, Save current settings to this profile,
- * Rename and Delete.
+ * Back up and restore > Settings profiles: New settings profile, and the profiles, with those in
+ * use marked. Each profile opens its own screen, [SettingsProfileFragment].
  */
 class SettingsProfilesFragment : NotificationCodeFragment(R.string.title_pref_settings_profiles) {
 
-  private val store: SettingsProfileStore
-    get() = SettingsProfiles.store(requireContext())
-
   override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
     super.onCreatePreferences(savedInstanceState, rootKey)
-    // The first time, the settings become Default; later, the profile in use gets the changes.
-    SettingsProfiles.inBackground(
-      requireContext(),
-      { context ->
-        SettingsProfiles.ready(context)
-        SettingsProfiles.saveActive(context)
-      },
-    ) {
+    SettingsProfiles.inBackground(requireContext(), { SettingsProfiles.ready(it) }) {
       if (isAdded) rebuild()
     }
+  }
+
+  override fun onResume() {
+    super.onResume()
+    // Coming back from changing a profile's settings ends it.
+    SettingsProfiles.finishEditing(requireContext()) { said -> done(said) }
   }
 
   override fun build(screen: PreferenceGroup) {
     // The screen is built again once the profiles have been read in the background.
     val store = SettingsProfiles.loadedStore() ?: return
-    screen.action(getString(R.string.title_pref_new_settings_profile)) { add() }
-    val activeId = store.active()?.id
+    if (store.isLegacy()) return
+    screen.action(getString(R.string.title_pref_new_settings_profile)) { add(store) }
+    val inUse = SettingsProfiles.inUse()
     for (profile in store.profiles()) {
-      val active = profile.id == activeId
-      screen.action(profile.name, if (active) getString(R.string.settings_profile_in_use) else null) {
-        actions(profile, active)
+      screen.link(
+        profile.name,
+        if (profile.id in inUse) getString(R.string.settings_profile_in_use) else null,
+        SettingsProfileFragment::class.java,
+      ) {
+        putString(SettingsProfileFragment.ARG_ID, profile.id)
       }
     }
   }
 
-  private fun actions(profile: SettingsProfileStore.Profile, active: Boolean) {
-    val actions = mutableListOf<Pair<CharSequence, () -> Unit>>()
-    if (!active) {
-      actions += getString(R.string.settings_profile_switch) to { switchTo(profile) }
-    }
-    actions += getString(R.string.settings_profile_save_current) to { saveTo(profile, active) }
-    actions += getString(R.string.voice_profile_rename) to { rename(profile) }
-    if (!active) {
-      actions += getString(R.string.voice_profile_delete) to { delete(profile) }
-    }
-    choose(profile.name, actions.map { it.first }) { actions[it].second() }
-  }
-
-  private fun add() {
+  private fun add(store: SettingsProfileStore) {
     val context = requireContext()
     var number = store.profiles().size + 1
-    while (nameTaken(getString(R.string.settings_profile_new_name, number), null)) {
+    while (store.isNameTaken(getString(R.string.settings_profile_new_name, number))) {
       number++
     }
     val suggested = getString(R.string.settings_profile_new_name, number)
     askText(getString(R.string.title_pref_new_settings_profile), hint = suggested) { entered, _, _ ->
       val name = entered.ifEmpty { suggested }.take(SettingsProfileStore.MAX_NAME_LENGTH)
-      if (nameTaken(name, null)) {
+      if (store.isNameTaken(name)) {
         getString(R.string.settings_profile_name_taken, name)
       } else {
         SettingsProfiles.inBackground(context, { SettingsProfiles.add(it, name) }) { added ->
@@ -90,62 +76,6 @@ class SettingsProfilesFragment : NotificationCodeFragment(R.string.title_pref_se
       }
     }
   }
-
-  private fun switchTo(profile: SettingsProfileStore.Profile) {
-    SettingsProfiles.switchTo(requireContext(), profile.id) { said -> done(said) }
-  }
-
-  private fun saveTo(profile: SettingsProfileStore.Profile, active: Boolean) {
-    val save = {
-      val context = requireContext()
-      SettingsProfiles.inBackground(context, { SettingsProfiles.saveTo(it, profile.id) }) { saved ->
-        done(
-          if (saved) context.getString(R.string.settings_profile_saved, profile.name)
-          else context.getString(R.string.settings_profile_not_saved)
-        )
-      }
-    }
-    if (active) {
-      save()
-    } else {
-      confirm(getString(R.string.settings_profile_save_confirm, profile.name), R.string.settings_profile_save) {
-        save()
-      }
-    }
-  }
-
-  private fun rename(profile: SettingsProfileStore.Profile) {
-    askText(
-      getString(R.string.voice_profile_rename),
-      profile.name,
-      hint = getString(R.string.title_pref_voice_profile_name),
-    ) { entered, _, _ ->
-      val name = entered.take(SettingsProfileStore.MAX_NAME_LENGTH)
-      when {
-        name.isEmpty() -> ""
-        nameTaken(name, profile.id) -> getString(R.string.settings_profile_name_taken, name)
-        else -> {
-          val profiles = store
-          SettingsProfiles.inBackground(requireContext(), { profiles.rename(profile.id, name) }) {
-            done(null)
-          }
-          null
-        }
-      }
-    }
-  }
-
-  private fun delete(profile: SettingsProfileStore.Profile) {
-    confirm(getString(R.string.voice_profile_delete_confirm, profile.name), R.string.voice_profile_delete) {
-      val profiles = store
-      SettingsProfiles.inBackground(requireContext(), { profiles.delete(profile.id) }) { done(null) }
-    }
-  }
-
-  /** Whether another profile is called [name], or Default before it is made. */
-  private fun nameTaken(name: String, exceptId: String?): Boolean =
-    store.isNameTaken(name, exceptId) ||
-      (store.isEmpty() && name.trim().equals(SettingsProfiles.defaultName(requireContext()), ignoreCase = true))
 
   /** Says [said], if anything, and shows the profiles as they are now. */
   private fun done(said: String?) {
