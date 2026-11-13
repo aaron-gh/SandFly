@@ -67,11 +67,10 @@ import com.google.android.accessibility.talkback.pause.PauseController
 import com.google.android.accessibility.utils.Performance
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.accessibility.utils.monitor.RecentUserInput
+import com.google.android.accessibility.utils.ocr.LanguageTextRecognizer
 import com.google.android.accessibility.utils.output.SpeechController
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 import com.google.mlkit.vision.common.InputImage
-import com.google.mlkit.vision.text.TextRecognition
-import com.google.mlkit.vision.text.latin.TextRecognizerOptions
 import java.io.ByteArrayOutputStream
 import java.util.Locale
 import java.util.concurrent.Executors
@@ -89,7 +88,7 @@ class LiveRecognitionActivity : ComponentActivity() {
   private val announcements = RecognitionAnnouncements()
   private val pendingResults = linkedMapOf<String, Pair<String, Long>>()
   private val prefs by lazy { SharedPreferencesUtils.getSharedPreferences(this) }
-  private val recognizer by lazy { TextRecognition.getClient(TextRecognizerOptions.DEFAULT_OPTIONS) }
+  private val recognizer by lazy { LanguageTextRecognizer(this) }
   private var recognizerUsed = false
   // Read by the camera thread, to encode a frame only when it can be described.
   @Volatile private var describer: FrameDescriber? = null

@@ -27,6 +27,7 @@ import com.google.android.accessibility.utils.Filter;
 import com.google.android.accessibility.utils.StringBuilderUtils;
 import com.google.android.accessibility.utils.ocr.OcrController;
 import com.google.android.accessibility.utils.ocr.OcrController.OcrListener;
+import com.google.android.accessibility.utils.ocr.LanguageTextRecognizer;
 import com.google.android.accessibility.utils.ocr.OcrInfo;
 import java.util.ArrayList;
 import java.util.List;
@@ -47,11 +48,12 @@ public class CharacterCaptionRequest extends CaptionRequest implements OcrListen
       AccessibilityService service,
       AccessibilityNodeInfoCompat node,
       Bitmap screenCapture,
+      LanguageTextRecognizer textRecognizer,
       @NonNull OnFinishListener onFinishListener,
       @NonNull OnErrorListener onErrorListener,
       boolean isUserRequested) {
     super(requestId, node, onFinishListener, onErrorListener, isUserRequested);
-    ocrController = new OcrController(this, /* needCropScreenshot= */ false);
+    ocrController = new OcrController(this, /* needCropScreenshot= */ false, textRecognizer);
     this.screenCapture = screenCapture;
   }
 

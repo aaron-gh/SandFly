@@ -43,18 +43,13 @@ import com.google.android.accessibility.talkback.keyboard.TalkBackPhysicalKeyboa
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils
 import com.google.android.accessibility.utils.Filter
 import com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED
+import com.google.android.accessibility.utils.ocr.LanguageTextRecognizer
 import com.google.android.accessibility.utils.output.FeedbackItem
 import com.google.android.accessibility.utils.output.SpeechCleanupUtils
 import com.google.android.accessibility.utils.output.SpeechController
 import com.google.android.accessibility.utils.output.SpeechController.SpeakOptions
 import com.google.android.libraries.accessibility.utils.log.LogUtils
-import com.google.android.gms.common.moduleinstall.ModuleInstall
-import com.google.android.gms.common.moduleinstall.ModuleInstallRequest
-import com.google.mlkit.common.MlKitException
 import com.google.mlkit.vision.common.InputImage
-import com.google.mlkit.vision.text.TextRecognition
-import com.google.mlkit.vision.text.TextRecognizer
-import com.google.mlkit.vision.text.latin.TextRecognizerOptions
 
 /**
  * Reviews the text on screen by line, word and character, as it is laid out, without moving SandFly
@@ -71,7 +66,7 @@ class ScreenReview(
   private val focusMonitor: AccessibilityFocusMonitor,
 ) {
   private val handler = Handler(Looper.getMainLooper())
-  private var recognizer: TextRecognizer? = null
+  private var recognizer: LanguageTextRecognizer? = null
 
   private var cursor: ReviewCursor? = null
 
@@ -577,16 +572,7 @@ class ScreenReview(
   }
 
   private fun recognize(bitmap: Bitmap) {
-    val recognizer =
-      recognizer
-        ?: try {
-          TextRecognition.getClient(TextRecognizerOptions.DEFAULT_OPTIONS).also { recognizer = it }
-        } catch (e: RuntimeException) {
-          LogUtils.w(TAG, "No text recognizer: %s", e)
-          bitmap.recycle()
-          speak(service.getString(R.string.recognize_screen_text_failed))
-          return
-        }
+    val recognizer = recognizer ?: LanguageTextRecognizer(service).also { recognizer = it }
     recognizer
       .process(InputImage.fromBitmap(bitmap, 0))
       .addOnSuccessListener { result ->
@@ -613,9 +599,9 @@ class ScreenReview(
       .addOnFailureListener { e ->
         LogUtils.w(TAG, "Text recognition failed: %s", e)
         // Google Play services installs the recognizer when an app first needs it.
-        if (e is MlKitException && e.errorCode == MlKitException.UNAVAILABLE) {
-          ModuleInstall.getClient(service)
-            .installModules(ModuleInstallRequest.newBuilder().addApi(recognizer).build())
+        if (LanguageTextRecognizer.isUnavailable(e)) {
+          recognizer
+            .download()
             .addOnSuccessListener { speak(service.getString(R.string.recognize_screen_text_downloading)) }
             .addOnFailureListener { speak(service.getString(R.string.recognize_screen_text_failed)) }
         } else {

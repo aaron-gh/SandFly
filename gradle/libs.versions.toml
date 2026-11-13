@@ -12,6 +12,10 @@ camerax = "1.6.2"
 [libraries]
 # Google common
 mlkit-text-recognition = "com.google.android.gms:play-services-mlkit-text-recognition:19.0.2"
+mlkit-text-recognition-chinese = "com.google.android.gms:play-services-mlkit-text-recognition-chinese:16.0.2"
+mlkit-text-recognition-devanagari = "com.google.android.gms:play-services-mlkit-text-recognition-devanagari:16.0.2"
+mlkit-text-recognition-japanese = "com.google.android.gms:play-services-mlkit-text-recognition-japanese:16.0.2"
+mlkit-text-recognition-korean = "com.google.android.gms:play-services-mlkit-text-recognition-korean:16.0.2"
 mlkit-language-id = "com.google.android.gms:play-services-mlkit-language-id:17.0.0"
 mlkit-digital-ink = "com.google.mlkit:digital-ink-recognition:19.0.0"
 mlkit-translate = "com.google.mlkit:translate:17.0.3"
