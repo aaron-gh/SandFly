@@ -28,6 +28,7 @@ import android.os.Looper
 import android.os.Message
 import android.os.Messenger
 import android.os.RemoteException
+import android.os.SystemClock
 import android.util.Log
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.dictation.ModelRetention
@@ -64,11 +65,20 @@ class RemoteLocalLlm(
   private val replies =
     Messenger(
       Handler(Looper.getMainLooper()) {
-        pending.complete(it.arg1, Reply(it.what, it.data.getString(LocalModelService.KEY_TEXT)))
+        if (it.what == LocalModelService.MSG_STAGE) {
+          onStage(it.arg1, it.arg2)
+        } else {
+          pending.complete(it.arg1, Reply(it.what, it.data.getString(LocalModelService.KEY_TEXT)))
+        }
         true
       }
     )
   private val pending = PendingRequests<Reply>()
+  // Who is told what the model does, for each request that wants to know.
+  private val stageListeners = ConcurrentHashMap<Int, ModelStageListener>()
+  // Whether the service last said the model is loaded, and when it last answered, for isLoaded.
+  @Volatile private var modelLoaded = false
+  @Volatile private var lastUsedAt = 0L
   private val lock = Any()
   // Guarded by lock.
   private var service: Messenger? = null
@@ -103,11 +113,32 @@ class RemoteLocalLlm(
       }
     }
 
-  override fun generate(prompt: String, jpeg: ByteArray?): String {
+  override fun generate(prompt: String, jpeg: ByteArray?): String = answer(prompt, jpeg, null)
+
+  override fun generate(prompt: String, jpeg: ByteArray?, onStage: ModelStageListener): String =
+    answer(prompt, jpeg, onStage)
+
+  override val isLoaded: Boolean
+    get() =
+      likelyLoaded(
+        modelLoaded,
+        lastUsedAt,
+        SystemClock.elapsedRealtime(),
+        ModelRetention.onDeviceIdleMs(prefs),
+      )
+
+  private fun onStage(id: Int, ordinal: Int) {
+    val stage = ModelStage.entries.getOrNull(ordinal) ?: return
+    modelLoaded = stage == ModelStage.PROCESSING
+    stageListeners[id]?.onStage(stage)
+  }
+
+  private fun answer(prompt: String, jpeg: ByteArray?, onStage: ModelStageListener?): String {
     cancelRequested = false
     main.removeCallbacks(unbindIdle)
     val id = NEXT_ID.incrementAndGet()
     val future = pending.add(id)
+    onStage?.let { stageListeners[id] = it }
     currentId = id
     var imageFile: File? = null
     try {
@@ -126,6 +157,10 @@ class RemoteLocalLlm(
       messenger.send(request)
       if (cancelRequested) cancel()
       val reply = future.get()
+      // A failed model is unloaded; a cancelled one stays as it was.
+      if (reply.what != LocalModelService.MSG_CANCELLED) {
+        modelLoaded = reply.what == LocalModelService.MSG_ANSWER
+      }
       return when (reply.what) {
         LocalModelService.MSG_ANSWER -> reply.text.orEmpty()
         LocalModelService.MSG_CANCELLED -> throw LocalLlmCancelledException()
@@ -141,6 +176,8 @@ class RemoteLocalLlm(
       throw LocalLlmException(e.cause?.message ?: "The on-device model failed", e)
     } finally {
       pending.remove(id)
+      stageListeners.remove(id)
+      lastUsedAt = SystemClock.elapsedRealtime()
       currentId = 0
       imageFile?.delete()
       scheduleIdleUnbind()
@@ -256,6 +293,7 @@ class RemoteLocalLlm(
       }
       bound = false
       service = null
+      modelLoaded = false
       connected.countDown()
     }
   }
@@ -292,6 +330,13 @@ class RemoteLocalLlm(
     private const val IDLE_UNBIND_MARGIN_MS = 10_000L
 
     private val NEXT_ID = AtomicInteger(0)
+
+    /**
+     * Whether the model is most likely loaded: the service last said so, and it has not been idle
+     * long enough, [idleMs] since it was [lastUsedAt], for the service to unload it.
+     */
+    internal fun likelyLoaded(loaded: Boolean, lastUsedAt: Long, now: Long, idleMs: Long): Boolean =
+      loaded && (idleMs == ModelRetention.UNTIL_STOPPED || now - lastUsedAt < idleMs)
   }
 }
 

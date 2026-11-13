@@ -2779,18 +2779,22 @@ public class TalkBackService extends AccessibilityServiceCompat
 
     languageActor = new LanguageActor(this, speechLanguage);
 
+    LocalGemmaRequestPerformer requestPerformer =
+        GeminiConfiguration.useAratea(this)
+            ? null
+            : new LocalGemmaRequestPerformer(this, this::speakOnDeviceAiProblem);
     geminiActor =
         new GeminiActor(
             this,
             analytics,
             primesController,
-            GeminiConfiguration.useAratea(this)
+            requestPerformer == null
                 ? new ArateaEndpoint(this, getApplication())
-                : new GeminiRestEndpoint(
-                    this,
-                    BuildConfig.GEMINI_API_KEY,
-                    new LocalGemmaRequestPerformer(this, this::speakOnDeviceAiProblem)),
+                : new GeminiRestEndpoint(this, BuildConfig.GEMINI_API_KEY, requestPerformer),
             new AiCoreEndpoint(this));
+    if (requestPerformer != null) {
+      requestPerformer.setStageListener(geminiActor.modelStageListener());
+    }
 
     KeyboardActor keyboardActor = new KeyboardActor(this);
 

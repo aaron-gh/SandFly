@@ -21,12 +21,14 @@ import android.content.SharedPreferences;
 import android.os.Handler;
 import android.os.Looper;
 import com.google.android.accessibility.talkback.actor.gemini.local.LocalModelManager;
+import com.google.android.accessibility.talkback.actor.gemini.local.ModelStage;
 import com.google.android.accessibility.talkback.actor.gemini.local.OnDeviceAiSettings;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.function.Consumer;
+import org.checkerframework.checker.nullness.qual.Nullable;
 import org.json.JSONObject;
 
 /**
@@ -72,6 +74,14 @@ public class LocalGemmaRequestPerformer extends GeminiRestRequestPerformer {
             mainHandler::post,
             announce);
     this.aiService = new AiServiceRequestPerformer(this.context);
+  }
+
+  /**
+   * Sets who is told, on the main thread, when the model on the phone starts loading and when it
+   * starts on the prompt, for the request that is running. Null to tell no one.
+   */
+  public void setStageListener(@Nullable Consumer<ModelStage> listener) {
+    runner.setStageListener(listener);
   }
 
   private boolean useOnDevice() {

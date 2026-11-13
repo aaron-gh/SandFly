@@ -24,8 +24,34 @@ interface LocalLlm {
    */
   fun generate(prompt: String, jpeg: ByteArray?): String
 
+  /**
+   * Like [generate], and tells [onStage] when the model starts loading and when it starts on the
+   * prompt. The calls can come on any thread. By default it reports nothing.
+   */
+  fun generate(prompt: String, jpeg: ByteArray?, onStage: ModelStageListener): String =
+    generate(prompt, jpeg)
+
   /** Stops the answer that [generate] is working on, if any. Safe to call from any thread. */
   fun cancel()
+
+  /**
+   * Whether the model is most likely loaded, so that the next answer does not wait for a load. Never
+   * blocks.
+   */
+  val isLoaded: Boolean
+    get() = true
+}
+
+/** What the on-device model does for a request. */
+enum class ModelStage {
+  /** Loading the model, before it can start on the prompt. */
+  LOADING,
+  /** Working on the prompt. */
+  PROCESSING,
+}
+
+fun interface ModelStageListener {
+  fun onStage(stage: ModelStage)
 }
 
 open class LocalLlmException(message: String, cause: Throwable? = null) : Exception(message, cause)

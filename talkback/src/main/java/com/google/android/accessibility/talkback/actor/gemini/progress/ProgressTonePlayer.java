@@ -24,6 +24,11 @@ public class ProgressTonePlayer {
 
   @Nullable private InfiniteIterator<Tone> tones;
   private long endTimeMs;
+  // Whether the tones for the on-device model loading play, rather than the others.
+  private boolean modelLoading;
+  // Whether the first tone has played, so that later ones are scheduled.
+  private boolean tonesStarted;
+  private final Runnable nextTone = this::playNextTone;
 
   /**
    * @param toneProvider provides the set of tones to play for each invocation of {@link
@@ -80,7 +85,16 @@ public class ProgressTonePlayer {
    * @param delayPlayTone if true, delay the tone play.
    */
   public void play(boolean playTone, boolean delayPlayTone) {
+    play(playTone, delayPlayTone, /* modelLoading= */ false);
+  }
+
+  /**
+   * Starts playback of the tones, with the tones for the on-device model loading when {@code
+   * modelLoading} is true.
+   */
+  public void play(boolean playTone, boolean delayPlayTone, boolean modelLoading) {
     stop();
+    this.modelLoading = modelLoading;
     long timeoutDelayMs = timeoutDelayMsSupplier.get();
     long timeoutMs = currentTimeMsSupplier.get() + timeoutDelayMs;
     if (!playTone) {
@@ -89,7 +103,7 @@ public class ProgressTonePlayer {
       return;
     }
 
-    tones = toneProvider.getNextToneGroup();
+    tones = toneProvider.getNextToneGroup(modelLoading);
     if (delayPlayTone) {
       handler.postDelayed(() -> playTonesInternal(timeoutMs), DELAY_PLAY_TONE_MS);
       return;
@@ -101,7 +115,29 @@ public class ProgressTonePlayer {
   /** Stops playback and cancels pending tones. Does not call onTimeoutListener. */
   public void stop() {
     stopTones();
+    tonesStarted = false;
     handler.removeCallbacksAndMessages(null);
+  }
+
+  /**
+   * Switches between the tones for the on-device model loading and the others. When tones have
+   * started, the new tone plays at once. Does nothing when no tones play. The timeout stays.
+   */
+  public void setModelLoading(boolean modelLoading) {
+    if (tones == null || this.modelLoading == modelLoading) {
+      return;
+    }
+    this.modelLoading = modelLoading;
+    tones = toneProvider.getNextToneGroup(modelLoading);
+    if (tonesStarted) {
+      handler.removeCallbacks(nextTone);
+      playNextTone();
+    }
+  }
+
+  /** Whether the tones for the on-device model loading play. */
+  public boolean isModelLoading() {
+    return tones != null && modelLoading;
   }
 
   public void stopTones() {
@@ -110,6 +146,7 @@ public class ProgressTonePlayer {
 
   private void playTonesInternal(long endTimeMs) {
     this.endTimeMs = endTimeMs;
+    tonesStarted = true;
     playNextTone();
   }
 
@@ -131,6 +168,6 @@ public class ProgressTonePlayer {
 
     Tone tone = tones.next();
     tonePlayer.accept(tone);
-    handler.postDelayed(this::playNextTone, tone.delayMs);
+    handler.postDelayed(nextTone, tone.delayMs);
   }
 }

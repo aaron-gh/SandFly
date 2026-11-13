@@ -143,6 +143,9 @@ class LocalModelManager private constructor(context: Context) {
   /** The model that is loaded now, if any, without creating one. Never blocks. */
   fun currentLlm(): LocalLlm? = llm
 
+  /** Whether the model that answers requests is most likely loaded. Never blocks. */
+  fun isModelLoaded(): Boolean = llm?.isLoaded == true
+
   /**
    * Loads the model that answers requests, when on-device AI answers them, so that the first
    * request does not wait for the load. Blocks until its process is bound, so call it off the main

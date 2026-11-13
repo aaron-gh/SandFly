@@ -54,7 +54,7 @@ class LiteRtLmLocalLlm(
     Executors.newSingleThreadScheduledExecutor { runnable ->
       Thread(runnable, "on-device-ai-unload").apply { isDaemon = true }
     }
-  private var engine: Engine? = null
+  @Volatile private var engine: Engine? = null
   private var unloadTask: ScheduledFuture<*>? = null
   @Volatile private var conversation: Conversation? = null
   @Volatile private var cancelRequested = false
@@ -62,23 +62,32 @@ class LiteRtLmLocalLlm(
   override fun generate(prompt: String, jpeg: ByteArray?): String =
     synchronized(generateLock) {
       cancelRequested = false
-      generate(prompt, jpeg) { cancelRequested }
+      generate(prompt, jpeg, isCancelled = { cancelRequested })
     }
 
   /**
    * Like [generate], but stops when [isCancelled] returns true, instead of using the flag that
    * [cancel] sets and [generate] clears. A cancel that comes before this starts, while the engine
    * waits for an earlier answer or loads, is then not lost. [cancel] still stops an answer that has
-   * started.
+   * started. [onLoading] runs before the model loads, and [onLoaded] once it is loaded, before it
+   * starts on the prompt.
    */
-  fun generate(prompt: String, jpeg: ByteArray?, isCancelled: () -> Boolean): String =
+  fun generate(
+    prompt: String,
+    jpeg: ByteArray?,
+    isCancelled: () -> Boolean,
+    onLoading: () -> Unit = {},
+    onLoaded: () -> Unit = {},
+  ): String =
     synchronized(generateLock) {
       unloadTask?.cancel(false)
       try {
         if (isCancelled()) throw LocalLlmCancelledException()
         val started = SystemClock.elapsedRealtime()
+        if (engine == null) onLoading()
         val loaded = loadEngine()
         val loadMs = SystemClock.elapsedRealtime() - started
+        onLoaded()
         val contents =
           if (jpeg != null) Contents.of(Content.ImageBytes(jpeg), Content.Text(prompt))
           else Contents.of(prompt)
@@ -113,6 +122,10 @@ class LiteRtLmLocalLlm(
       Log.w(TAG, "Could not cancel", e)
     }
   }
+
+  /** Whether the engine is loaded. */
+  override val isLoaded: Boolean
+    get() = engine != null
 
   /** Loads the engine now, unless it is loaded, so that the next answer starts at once. */
   fun preload() {

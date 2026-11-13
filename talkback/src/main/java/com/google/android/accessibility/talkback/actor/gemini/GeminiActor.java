@@ -46,6 +46,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import androidx.annotation.StringRes;
 import com.google.android.accessibility.talkback.actor.gemini.local.LocalModelManager;
+import com.google.android.accessibility.talkback.actor.gemini.local.ModelStage;
 import com.google.android.accessibility.talkback.actor.gemini.local.OnDeviceAiSettings;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import com.google.android.accessibility.utils.output.FeedbackItem;
@@ -80,6 +81,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 /** GeminiActor performs Gemini commands, via {@link GeminiEndpoint}. */
@@ -178,6 +180,8 @@ public class GeminiActor {
   private long startTime;
   private final Handler mainHandler;
   private final ProgressTonePlayer progressTonePlayer;
+  // Whether the on-device model reports when it loads, so its loading tones can be told apart.
+  private boolean reportsModelStages;
 
   private final BottomSheetResultOverlay bottomSheetResultOverlay;
 
@@ -324,7 +328,7 @@ public class GeminiActor {
             requestIdMap.put(requestId, /* isServerSide= */ true);
             progressTonePlayer.stop();
             aiCoreEndpoint.cancelCommand();
-            progressTonePlayer.play(/* playTone= */ true, /* delayPlayTone= */ false);
+            startProgressTones();
             cachedImageMap.put(requestId, imageBytes);
           }
         });
@@ -400,7 +404,7 @@ public class GeminiActor {
       requestIdMap.put(requestId, /* isServerSide= */ true);
       progressTonePlayer.stop();
       aiCoreEndpoint.cancelCommand();
-      progressTonePlayer.play(/* playTone= */ true, /* delayPlayTone= */ false);
+      startProgressTones();
     }
 
   }
@@ -490,7 +494,7 @@ public class GeminiActor {
         new CommonRequest(action, text, imageBytes, /* manualTrigger= */ true, responseListener))) {
       progressTonePlayer.stop();
       aiCoreEndpoint.cancelCommand();
-      progressTonePlayer.play(/* playTone= */ true, /* delayPlayTone= */ false);
+      startProgressTones();
     }
   }
 
@@ -515,7 +519,7 @@ public class GeminiActor {
         };
     if (geminiEndpoint.requestText(prompt, stopTones)) {
       progressTonePlayer.stop();
-      progressTonePlayer.play(/* playTone= */ true, /* delayPlayTone= */ false);
+      startProgressTones();
     }
   }
 
@@ -667,6 +671,7 @@ public class GeminiActor {
   }
 
   public void onUnbind() {
+    progressTonePlayer.stop();
     if (aiCoreEndpoint != null) {
       aiCoreEndpoint.onUnbind();
     }
@@ -684,6 +689,29 @@ public class GeminiActor {
     }
 
     return GeminiConfiguration.imageQnaEnabled(context);
+  }
+
+  /**
+   * Starts the progress tones for a request to the AI service in use. When the on-device model
+   * answers it and has to load first, the model loading tones play until it is loaded.
+   */
+  private void startProgressTones() {
+    LocalModelManager models = LocalModelManager.Companion.get(context);
+    progressTonePlayer.play(
+        /* playTone= */ true,
+        /* delayPlayTone= */ false,
+        /* modelLoading= */ reportsModelStages
+            && models.answersRequests()
+            && !models.isModelLoaded());
+  }
+
+  /**
+   * Returns who is told what the on-device model does for the request that is running, which
+   * switches the progress tones between loading and processing. Called on the main thread.
+   */
+  public Consumer<ModelStage> modelStageListener() {
+    reportsModelStages = true;
+    return stage -> progressTonePlayer.setModelLoading(stage == ModelStage.LOADING);
   }
 
   private void playTone(Tone tone) {
