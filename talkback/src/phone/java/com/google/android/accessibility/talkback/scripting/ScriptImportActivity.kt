@@ -22,6 +22,7 @@ import android.content.ContentResolver
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.provider.OpenableColumns
 import android.widget.Toast
 import androidx.core.content.IntentCompat
 import com.google.android.accessibility.talkback.R
@@ -34,10 +35,11 @@ import java.io.IOException
 import java.util.concurrent.Executors
 
 /**
- * Takes a script that is shared to Backtalk or opened with it, such as from a file manager or a
- * browser's downloads, or a shared https link to one, such as a script's page on GitHub, and opens
- * Scripts with it. Scripts then asks before installing, as it does for Import script, listing what
- * the script can do.
+ * Takes a script that is shared to Backtalk or opened with it, such as from a messaging app, a file
+ * manager or a browser's downloads, or a shared https link to one, such as a script's page on
+ * GitHub, and opens Scripts with it. Scripts then asks before installing, as it does for Import
+ * script, listing what the script can do. Files must be named .lua or .zip, and links must be to
+ * one, as the general types it is opened with, such as text/plain, are any file's.
  */
 class ScriptImportActivity : Activity() {
   override fun onCreate(savedInstanceState: Bundle?) {
@@ -65,12 +67,18 @@ class ScriptImportActivity : Activity() {
 
   private fun read(source: Source) {
     val context = applicationContext
+    val type = intent.type
     executor.execute {
       val file = File(cacheDir, SHARED_FILE)
       val error =
         try {
           when (source) {
             is Source.FromFile -> {
+              val name = displayName(source.uri)
+              val mimeType = type ?: contentResolver.getType(source.uri)
+              if (!ScriptShareTypes.acceptsFile(name, mimeType)) {
+                throw NotAScriptException()
+              }
               val bytes =
                 contentResolver.openInputStream(source.uri)?.use {
                   it.readAtMost(ScriptPackage.MAX_BYTES + 1)
@@ -81,17 +89,19 @@ class ScriptImportActivity : Activity() {
               ThemeLinks.fetch(source.url, file, ScriptPackage.MAX_BYTES.toLong())
           }
           null
+        } catch (e: NotAScriptException) {
+          getString(R.string.script_import_not_script)
         } catch (e: IOException) {
-          e.message.orEmpty()
-        } catch (e: RuntimeException) {
+          getString(R.string.script_import_failed, e.message.orEmpty())
+        } catch (e: Throwable) {
           // Another app's provider can throw anything, such as SecurityException.
-          e.message ?: e.javaClass.simpleName
+          getString(R.string.script_import_failed, e.message ?: e.javaClass.simpleName)
         }
       // Not what a download that stopped at the limit left behind.
       if (error != null) file.delete()
       runOnUiThread {
         if (error != null) {
-          failed(getString(R.string.script_import_failed, error))
+          failed(error)
         } else {
           startActivity(
             Intent(context, TalkBackPreferencesActivity::class.java)
@@ -110,6 +120,19 @@ class ScriptImportActivity : Activity() {
       }
     }
   }
+
+  /** The file's name as its app gives it, or null if it gives none. */
+  private fun displayName(uri: Uri): String? =
+    try {
+      contentResolver.query(uri, arrayOf(OpenableColumns.DISPLAY_NAME), null, null, null)?.use {
+        if (it.moveToFirst() && it.columnCount > 0) it.getString(0) else null
+      }
+    } catch (e: RuntimeException) {
+      null
+    }
+
+  /** A file that isn't named .lua or .zip. */
+  private class NotAScriptException : IOException()
 
   private fun failed(message: String) {
     Toast.makeText(applicationContext, message, Toast.LENGTH_LONG).show()
@@ -142,12 +165,17 @@ class ScriptImportActivity : Activity() {
   /**
    * The script a shared https link points to. A link to a file on GitHub downloads the file
    * rather than its page. A link to a whole repository or branch isn't taken, since it can hold
-   * more than one script, and its ZIP file isn't a script.
+   * more than one script, and its ZIP file isn't a script. Nor is a link to anything but a .lua or
+   * .zip file, as any shared text can hold a link.
    */
   private fun linkSource(text: String?): Source? {
     val download = ThemeLinks.findLink(text)?.let(ThemeLinks::download) ?: return null
     if (download.url.startsWith("https://github.com/") && download.url.contains("/archive/")) {
       failed(getString(R.string.script_import_repository))
+      return null
+    }
+    if (!ScriptShareTypes.isScriptLink(download.url)) {
+      failed(getString(R.string.script_import_not_script))
       return null
     }
     return Source.FromLink(download.url)
