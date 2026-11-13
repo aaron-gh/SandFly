@@ -157,6 +157,8 @@ public class GestureManifold implements GestureMatcher.StateChangeListener {
   // passthrough.
   private final List<GestureMatcher> twoFingerSwipes = new ArrayList<>();
   private boolean logMotionEvent = false;
+  // Whether a gesture completed on the move event being processed.
+  private boolean completedInMove = false;
 
   /** Define the interface to get project base feature settings. */
   /** Returns the swipe and hold version of the one-finger swipe {@code swipeGestureId}, or 0. */
@@ -205,6 +207,14 @@ public class GestureManifold implements GestureMatcher.StateChangeListener {
 
     /** Returns whether {@code gestureId} has an action, so that it is worth matching. */
     default boolean isGestureAssigned(int gestureId) {
+      return false;
+    }
+
+    /**
+     * Returns whether the touch may still become another kind of gesture, such as an edge swipe,
+     * so that a swipe must not run before the finger lifts.
+     */
+    default boolean holdsSwipeUntilLift() {
       return false;
     }
   }
@@ -287,6 +297,7 @@ public class GestureManifold implements GestureMatcher.StateChangeListener {
    */
   @CanIgnoreReturnValue
   public boolean onMotionEvent(EventId eventId, MotionEvent event) {
+    completedInMove = false;
     for (GestureMatcher matcher : gestures) {
       if (matcher.getState() != GestureMatcher.STATE_GESTURE_CANCELED) {
         if (logMotionEvent) {
@@ -297,7 +308,9 @@ public class GestureManifold implements GestureMatcher.StateChangeListener {
           LogUtils.v(LOG_TAG, matcher.toString());
         }
 
-        if (matcher.getState() == GestureMatcher.STATE_GESTURE_COMPLETED) {
+        // A gesture completed before the lift, whose listener may have cleared every matcher: the
+        // rest of the touch is not a gesture.
+        if (matcher.getState() == GestureMatcher.STATE_GESTURE_COMPLETED || completedInMove) {
           // Here we just return. The actual gesture dispatch is done in
           // onStateChanged().
           // No need to process this event any further.
@@ -373,6 +386,9 @@ public class GestureManifold implements GestureMatcher.StateChangeListener {
    * @param event the last MotionEvent to match the identified gesture.
    */
   private void onGestureCompleted(int gestureId, MotionEvent event) {
+    if (event != null && event.getActionMasked() == MotionEvent.ACTION_MOVE) {
+      completedInMove = true;
+    }
     // Note that gestures that complete immediately call clear() from onMotionEvent.
     // Gestures that complete on a delay call clear() here.
     ArrayList<MotionEvent> eventList = new ArrayList<>();

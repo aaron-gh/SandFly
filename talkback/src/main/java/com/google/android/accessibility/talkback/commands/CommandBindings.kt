@@ -82,6 +82,7 @@ object CommandBindings {
     TalkBackPreferenceFilter(context).filterPreferences(screen)
     return (0 until screen.preferenceCount)
       .mapNotNull { screen.getPreference(it) as? PreferenceGroup }
+      .filter { it.isVisible }
       .map { GestureCategory(it.key, it.title, slots(context, listPreferences(it))) }
       .filter { it.gestures.isNotEmpty() }
   }
@@ -132,14 +133,18 @@ object CommandBindings {
       }
   }
 
+  // Hidden gestures are off, such as angle gestures while swipes run before the finger lifts.
   private fun listPreferences(group: PreferenceGroup): List<GestureListPreference> =
-    (0 until group.preferenceCount).flatMap { index ->
-      when (val preference: Preference = group.getPreference(index)) {
-        is GestureListPreference -> listOf(preference)
-        is PreferenceGroup -> listPreferences(preference)
-        else -> emptyList()
+    (0 until group.preferenceCount)
+      .map { group.getPreference(it) }
+      .filter { it.isVisible }
+      .flatMap { preference ->
+        when (preference) {
+          is GestureListPreference -> listOf(preference)
+          is PreferenceGroup -> listPreferences(preference)
+          else -> emptyList()
+        }
       }
-    }
 
   /** Returns the arrow keys of arrow key navigation, each of which runs a command. */
   @JvmStatic

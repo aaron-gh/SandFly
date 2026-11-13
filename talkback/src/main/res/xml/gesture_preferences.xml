@@ -50,6 +50,11 @@
       android:key="@string/pref_swipe_start_time_key"
       android:summary="%s"
       android:title="@string/title_pref_swipe_start_time" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+      android:defaultValue="@bool/pref_swipes_before_lift_default"
+      android:key="@string/pref_swipes_before_lift_key"
+      android:summary="@string/summary_pref_swipes_before_lift"
+      android:title="@string/title_pref_swipes_before_lift" />
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
       android:fragment="com.google.android.accessibility.talkback.commands.AppGesturesFragment"
       android:key="pref_app_gestures_screen"

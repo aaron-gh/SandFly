@@ -16,6 +16,7 @@
 
 package com.google.android.accessibility.utils.gestures;
 
+import android.accessibilityservice.AccessibilityService;
 import android.view.ViewConfiguration;
 
 /** This class contains timeout values that control the behavior of gesture detection. */
@@ -114,6 +115,45 @@ public final class GestureConfiguration {
         timeMs >= DEFAULT_SWIPE_START_TIME_MS && timeMs <= MAX_SWIPE_START_TIME_MS
             ? timeMs
             : DEFAULT_SWIPE_START_TIME_MS;
+  }
+
+  private static volatile boolean swipesBeforeLift = false;
+
+  /**
+   * Returns whether a one-finger swipe runs once it has moved the gesture confirm distance, before
+   * the finger lifts, with back-and-forth and angle gestures off.
+   */
+  public static boolean swipesBeforeLift() {
+    return swipesBeforeLift;
+  }
+
+  public static void setSwipesBeforeLift(boolean on) {
+    swipesBeforeLift = on;
+  }
+
+  /**
+   * Returns whether {@code gestureId} is a one-finger swipe in two directions, back-and-forth or
+   * angle, or the swipe and hold version of one.
+   */
+  public static boolean isTwoDirectionSwipe(int gestureId) {
+    return switch (gestureId) {
+      case AccessibilityService.GESTURE_SWIPE_UP_AND_DOWN,
+          AccessibilityService.GESTURE_SWIPE_DOWN_AND_UP,
+          AccessibilityService.GESTURE_SWIPE_LEFT_AND_RIGHT,
+          AccessibilityService.GESTURE_SWIPE_RIGHT_AND_LEFT,
+          AccessibilityService.GESTURE_SWIPE_UP_AND_LEFT,
+          AccessibilityService.GESTURE_SWIPE_UP_AND_RIGHT,
+          AccessibilityService.GESTURE_SWIPE_DOWN_AND_LEFT,
+          AccessibilityService.GESTURE_SWIPE_DOWN_AND_RIGHT,
+          AccessibilityService.GESTURE_SWIPE_LEFT_AND_UP,
+          AccessibilityService.GESTURE_SWIPE_LEFT_AND_DOWN,
+          AccessibilityService.GESTURE_SWIPE_RIGHT_AND_UP,
+          AccessibilityService.GESTURE_SWIPE_RIGHT_AND_DOWN ->
+          true;
+      default ->
+          gestureId <= GestureManifold.GESTURE_SWIPE_UP_AND_DOWN_AND_HOLD
+              && gestureId >= GestureManifold.GESTURE_SWIPE_RIGHT_AND_DOWN_AND_HOLD;
+    };
   }
 
   /**

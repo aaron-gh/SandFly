@@ -116,6 +116,7 @@ import com.google.android.accessibility.talkback.gesture.GestureLog;
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping;
 import com.google.android.accessibility.talkback.gesture.KeyboardExploration;
 import com.google.android.accessibility.talkback.gesture.PinchTracker;
+import com.google.android.accessibility.talkback.gesture.SwipesBeforeLift;
 import com.google.android.accessibility.talkback.gesture.SyntheticTouches;
 import com.google.android.accessibility.talkback.gesture.TapToTypeTracker;
 import com.google.android.accessibility.talkback.gesture.TwoFingerRotationTracker;
@@ -540,6 +541,11 @@ public class TouchInteractionMonitor
               public boolean isGestureAssigned(int gestureId) {
                 return TouchInteractionMonitor.this.isGestureAssigned(gestureId);
               }
+
+              @Override
+              public boolean holdsSwipeUntilLift() {
+                return edgeSwipeTracker.isPossible();
+              }
             },
             logger,
             displayId,
@@ -698,6 +704,7 @@ public class TouchInteractionMonitor
             context.getResources(),
             R.string.pref_swipe_start_time_key,
             R.string.pref_swipe_start_time_default));
+    GestureConfiguration.setSwipesBeforeLift(SwipesBeforeLift.isOn(context));
   }
 
   /** Reads how far edge gestures slide in to their first click, and on to their second. */
@@ -838,7 +845,8 @@ public class TouchInteractionMonitor
                   - 50;
         } else if (context.getString(R.string.pref_multi_tap_timeout_key).equals(key)
             || context.getString(R.string.pref_swipe_hold_time_key).equals(key)
-            || context.getString(R.string.pref_swipe_start_time_key).equals(key)) {
+            || context.getString(R.string.pref_swipe_start_time_key).equals(key)
+            || context.getString(R.string.pref_swipes_before_lift_key).equals(key)) {
           updateMultiTapTimeout(prefs);
         } else if (context.getString(R.string.pref_typing_confirmation_key).equals(key)) {
           typingMethod =

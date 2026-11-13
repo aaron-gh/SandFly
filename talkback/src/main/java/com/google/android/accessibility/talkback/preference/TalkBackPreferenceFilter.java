@@ -25,6 +25,7 @@ import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.actor.ImageCaptioner;
 import com.google.android.accessibility.talkback.actor.gemini.GeminiConfiguration;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
+import com.google.android.accessibility.talkback.gesture.SwipesBeforeLift;
 import com.google.android.accessibility.talkback.trainingcommon.tv.TvTutorialInitiator;
 import com.google.android.accessibility.talkback.trainingcommon.tv.VendorConfigReader;
 import com.google.android.accessibility.utils.BuildConfig;
@@ -182,6 +183,9 @@ public class TalkBackPreferenceFilter {
         HIDDEN_ON_TV | HIDDEN_ON_WATCH | SHOW_IF_SERVICE_GESTURE_DETECTION),
     SWIPE_START_TIME(
         R.string.pref_swipe_start_time_key,
+        HIDDEN_ON_TV | HIDDEN_ON_WATCH | SHOW_IF_SERVICE_GESTURE_DETECTION),
+    SWIPES_BEFORE_LIFT(
+        R.string.pref_swipes_before_lift_key,
         HIDDEN_ON_TV | HIDDEN_ON_WATCH | SHOW_IF_SERVICE_GESTURE_DETECTION),
     // Swipes that end with a rest, which only SandFly's own gesture detection recognizes.
     CUSTOMIZE_GESTURE_UP_AND_HOLD(
@@ -510,6 +514,10 @@ public class TalkBackPreferenceFilter {
   public void filterPreferences(PreferenceGroup preferenceGroup) {
     for (int i = 0; i < preferenceGroup.getPreferenceCount(); ++i) {
       Preference preference = preferenceGroup.getPreference(i);
+      // Hidden rather than removed, so that the Gestures screen can show them again.
+      if (SwipesBeforeLift.hidesCategory(context, preference.getKey())) {
+        preference.setVisible(false);
+      }
       if (hide(preference)) {
         preferenceGroup.removePreference(preference);
         --i; // Preference i removed.
