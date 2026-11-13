@@ -16,6 +16,8 @@
 
 package com.google.android.accessibility.talkback.interpreters;
 
+import com.google.android.accessibility.utils.input.ScrollEventInterpreter;
+
 import static android.view.accessibility.AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED;
 import static com.google.android.accessibility.talkback.Interpretation.Touch.Action.LIFT;
 import static com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED;
@@ -242,6 +244,13 @@ public class AccessibilityFocusInterpreter
     schedulePendingManualScroll();
   }
 
+  @Override
+  public boolean shouldIgnoreManualScroll(
+      AccessibilityEvent event, AccessibilityNodeInfoCompat scrolledNode) {
+    return !FormFactorUtils.isAndroidWear() && WebScrollFocus.isWebContent(scrolledNode)
+        && ScrollEventInterpreter.isWebNavigationEvent(event);
+  }
+
   /** Handles {@link #pendingManualScroll} once scrolling settles, in place of any earlier scroll. */
   private void schedulePendingManualScroll() {
     cancelWebFocusRecovery();
@@ -260,6 +269,14 @@ public class AccessibilityFocusInterpreter
     if (scrolled == null || !WebScrollFocus.isWebContent(scrolled)) {
       return false;
     }
+    if (ScrollEventInterpreter.isWebNavigationEvent(interpretation.event())) {
+      // HTML navigation scrolls its new item into view too. It must not schedule manual-scroll
+      // recovery and then run the native focusability fallback on the same web item.
+      LogUtils.d(TAG, "Web scroll follows a focus action; no manual recovery needed");
+      return true;
+    }
+    // Keyboard and page-script scrolls keep the original non-touch handling.
+    if (!isUserScroll(interpretation)) return false;
     @WebScrollSource.Kind
     int kind = webScrollSource.onScroll(scrolled, touchMonitor.getTouchStartTime());
     if (kind == WebScrollSource.USER_START) {
@@ -296,6 +313,16 @@ public class AccessibilityFocusInterpreter
           TAG,
           "onScrollEvent return due to windows are not stable and the focus will"
               + " be handled by onScreenStateChanged after main windows are stable.");
+      return;
+    }
+
+    AccessibilityNodeInfoCompat scrolled =
+        AccessibilityEventUtils.sourceCompat(interpretation.event());
+    if (!FormFactorUtils.isAndroidWear() && WebScrollFocus.isWebContent(scrolled)
+        && ScrollEventInterpreter.isWebNavigationEvent(interpretation.event())) {
+      // A swipe can move focus after this scroll was queued. Neither web recovery nor the
+      // native fallback may then pull focus away from the newer navigation.
+      LogUtils.d(TAG, "Discard delayed web scroll after newer focus navigation");
       return;
     }
 
@@ -386,7 +413,7 @@ public class AccessibilityFocusInterpreter
     // swipe from it goes to the start of the page.
     boolean focusLost = focus == null || Role.getRole(focus) == Role.ROLE_WEB_VIEW;
     if (focusLost) {
-      if (!isUserScroll(interpretation)) {
+      if (ScrollEventInterpreter.isWebNavigationEvent(interpretation.event())) {
         return false;
       }
       AccessibilityNodeInfoCompat scrolled =
@@ -588,8 +615,12 @@ public class AccessibilityFocusInterpreter
    * a swipe or continuous reading focused, and that scroll is not one of SandFly's scroll actions.
    */
   private boolean isUserScroll(ManualScrollInterpretation interpretation) {
+    return isUserScroll(interpretation.event());
+  }
+
+  private boolean isUserScroll(AccessibilityEvent event) {
     return WebScrollFocus.isUserScroll(
-        interpretation.event().getEventTime(),
+        event.getEventTime(),
         touchMonitor.getTouchStartTime(),
         touchMonitor.getTouchEndTime(),
         touchMonitor.isUserTouchingScreen(),

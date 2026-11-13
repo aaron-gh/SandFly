@@ -22,6 +22,7 @@ import static com.google.android.accessibility.utils.monitor.InputModeTracker.IN
 import android.accessibilityservice.AccessibilityService;
 import android.os.Bundle;
 import android.os.SystemClock;
+import com.google.android.accessibility.utils.input.ScrollEventInterpreter;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.talkback.Feedback.WebAction;
 import com.google.android.accessibility.talkback.focusmanagement.NavigationTarget;
@@ -74,14 +75,13 @@ public class WebActor {
    * FocusActionInfo.LOGICAL_NAVIGATION}
    */
   public boolean performAction(@NonNull WebAction webAction, Performance.EventId eventId) {
-    if (webAction.updateFocusHistory() && focusHistory != null) {
+    if (webAction.updateFocusHistory() && focusHistory != null && webAction.target() != null) {
       focusHistory.beforeNavigation(webAction.target());
     }
     long actionTime = SystemClock.uptimeMillis();
-    boolean result =
-        PerformActionUtils.performAction(
-            webAction.target(), webAction.nodeAction(), webAction.nodeActionArgs(), eventId);
-    if (webAction.updateFocusHistory() && (focusHistory != null)) {
+    boolean result = performActionWithScrollAttribution(webAction.target(), webAction.nodeAction(),
+        webAction.nodeActionArgs(), eventId, actionTime);
+    if (result && webAction.updateFocusHistory() && (focusHistory != null)) {
       // The source action of FocusActionInfo only has FocusActionInfo.LOGICAL_NAVIGATION since web
       // navigation only has navigation action.
       focusHistory.updateHistory(
@@ -136,7 +136,7 @@ public class WebActor {
       focusHistory.beforeNavigation(start);
     }
     long actionTime = SystemClock.uptimeMillis();
-    if (PerformActionUtils.performAction(start, action, args, eventId)) {
+    if (performActionWithScrollAttribution(start, action, args, eventId, actionTime)) {
       if (focusHistory != null) {
         focusHistory.updateHistory(
             start,
@@ -159,6 +159,20 @@ public class WebActor {
 
       speakTTSText(ttsText, eventId);
       return false;
+    }
+  }
+
+  private static boolean performActionWithScrollAttribution(AccessibilityNodeInfoCompat target,
+      int action, Bundle args, Performance.EventId eventId, long actionTime) {
+    boolean html = target != null && (action == AccessibilityNodeInfoCompat.ACTION_NEXT_HTML_ELEMENT
+        || action == AccessibilityNodeInfoCompat.ACTION_PREVIOUS_HTML_ELEMENT);
+    if (html) ScrollEventInterpreter.startWebNavigation(actionTime);
+    boolean succeeded = false;
+    try {
+      succeeded = PerformActionUtils.performAction(target, action, args, eventId);
+      return succeeded;
+    } finally {
+      if (html) ScrollEventInterpreter.finishWebNavigationAction(target.getWindowId(), actionTime, succeeded);
     }
   }
 
