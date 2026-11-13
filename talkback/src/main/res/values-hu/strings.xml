@@ -1709,7 +1709,7 @@
     <string name="template_item_details_order_dropped">Elengedve: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">A SandFly ebben a sorrendben mondja be az elemek részleteit. A módosításhoz érintsen meg és tartson lenyomva egy részletet, majd húzza fel vagy le. Ha a SandFly be van kapcsolva, koppintson duplán, tartsa lenyomva, majd húzza. A Mozgatás felfelé és a Mozgatás lefelé műveletet is használhatja.</string>
     <string name="title_pref_speak_items_before_scroll">Elemek kimondása, mielőtt görgetéssel megjelennek</string>
-    <string name="gemini_error_api_key">A Gemini nem fogadta el az API-kulcsot. Ellenőrizze a kulcsot a Kép- és képernyőleírások beállításaiban.</string>
+    <string name="gemini_error_api_key">A Gemini nem fogadta el az API-kulcsot. Ellenőrizze a kulcsot a AI-szolgáltatások beállításaiban.</string>
     <string name="gemini_error_quota">Elérte a Gemini API-kulcs használati korlátját. Próbálja újra később.</string>
     <string name="gemini_error_busy">A Gemini jelenleg túlterhelt. Próbálja újra egy kis idő múlva.</string>
     <string name="gemini_error_timeout">A Gemini túl sokáig nem válaszolt. Próbálja újra.</string>
@@ -1770,7 +1770,7 @@
         <item>1 perc</item>
     </string-array>
     <string name="title_pref_dictation_auto_stop">Automatikus leállítás csend után</string>
-    <string name="dictation_ai_same">Ugyanaz, mint itt: Kép- és képernyőleírások</string>
+    <string name="dictation_ai_same">Ugyanaz, mint itt: AI-szolgáltatások</string>
     <string name="navigation_settings_link">A SandFly beállításai &gt; Navigáció</string>
     <string name="navigation_settings_link_tts">A SandFly beállításai, majd Navigáció</string>
     <string name="shortcut_reserved_for_vibration_watch">A Vibration Watch számára fenntartva, itt: Kézmozdulatok</string>

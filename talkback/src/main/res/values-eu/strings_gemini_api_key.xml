@@ -18,7 +18,7 @@
     <string name="ai_service_model_hint">Eredua</string>
     <string name="ai_service_address_invalid">Helbideak https:// aurrizkiarekin hasi behar du. Ez da ezer gorde.</string>
     <string name="dialog_message_ai_service_consent">Irudiak eta pantaila-argazkiak <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> zerbitzura bidaltzen dira deskribatzeko, eta segundo batzuk behar dira. Zerbitzuaren baldintzak eta pribatutasun-gidalerroak aplikatzen dira. AA sortzailea esperimentala da; beraz, akatsak egingo ditu.</string>
-    <string name="ai_service_error_api_key">Adimen artifizialeko zerbitzuak ez du onartu API gakoa. Egiaztatu bere ezarpenak Irudien eta pantailaren azalpenak atalean.</string>
+    <string name="ai_service_error_api_key">Adimen artifizialeko zerbitzuak ez du onartu API gakoa. Egiaztatu bere ezarpenak AI zerbitzuak atalean.</string>
     <string name="ai_service_error_quota">Adimen artifizialeko zerbitzuaren erabilera mugara iritsi da. Saiatu berriro geroago.</string>
     <string name="ai_service_error_busy">Adimen artifizialeko zerbitzua lanpetuta dago orain. Saiatu berriro une batean.</string>
     <string name="ai_service_error_timeout">Adimen artifizialeko zerbitzuak denbora gehiegi behar izan zuen erantzuteko. Saiatu berriro.</string>
@@ -30,7 +30,7 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">Bat ere ez</string>
-    <string name="ai_service_not_set_up">Ez dago adimen artifizialeko zerbitzurik erabiltzen. Konfiguratu bat edo aukeratu bat Irudien eta pantailaren azalpenak ataleko ezarpenetan.</string>
+    <string name="ai_service_not_set_up">Ez dago adimen artifizialeko zerbitzurik erabiltzen. Konfiguratu bat edo aukeratu bat AI zerbitzuak ataleko ezarpenetan.</string>
     <string name="ai_provider_none_set_up">Ez dago adimen artifizialeko zerbitzurik konfiguratuta. Konfiguratu bat beheko ezarpenetan.</string>
     <string name="ai_provider_other">Beste zerbitzu bat</string>
     <string name="title_pref_category_ai_services">AI zerbitzuak</string>

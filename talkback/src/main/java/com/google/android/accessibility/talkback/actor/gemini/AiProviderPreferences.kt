@@ -28,18 +28,20 @@ import com.google.android.accessibility.talkback.sandflyai.SandflyAi
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 
 /**
- * The AI services in Automatic descriptions settings: which one describes images and screens, and
- * a settings screen for each, such as Gemini settings and Claude settings.
+ * The AI services in AI services settings: which one SandFly uses, and a settings screen for each,
+ * such as Gemini settings and Claude settings.
  */
 object AiProviderPreferences {
   const val KEY_CATEGORY = "pref_ai_services"
   const val KEY_CHOICE = "pref_ai_provider_choice"
   private const val KEY_PREFIX = "pref_ai_settings_"
+  // The AI service row has order 0; the on-device model's rows come after the services' rows.
+  private const val FIRST_ROW_ORDER = 1
 
-  /** Adds a row for each service to the [fragment]'s category, if it has it. */
+  /** Adds a row for each service to the [fragment]'s screen or category of services, if it has one. */
   @JvmStatic
   fun setUp(fragment: PreferenceFragmentCompat) {
-    val category = fragment.findPreference<PreferenceGroup>(KEY_CATEGORY) ?: return
+    val category = group(fragment.preferenceScreen) ?: return
     fragment.findPreference<Preference>(KEY_CHOICE)?.setOnPreferenceClickListener {
       choose(fragment)
       true
@@ -48,8 +50,14 @@ object AiProviderPreferences {
     refresh(fragment)
   }
 
+  /** The screen or category that lists the services, [screen] itself or a group in it, or null. */
+  @JvmStatic
+  fun group(screen: PreferenceGroup?): PreferenceGroup? =
+    screen?.takeIf { it.key == KEY_CATEGORY } ?: screen?.findPreference(KEY_CATEGORY)
+
   /**
-   * Adds a row for each service to [category], which opens its settings screen. Settings search
+   * Adds a row for each service to [category], which opens its settings screen, after the AI
+   * service row. Settings search
    * adds them too, to find each service's settings.
    */
   @JvmStatic
@@ -60,6 +68,7 @@ object AiProviderPreferences {
       category.addPreference(
         AccessibilitySuitePreference(context).apply {
           key = KEY_PREFIX + provider.id
+          order = FIRST_ROW_ORDER + provider.ordinal
           isPersistent = false
           title = context.getString(R.string.title_ai_provider_settings, context.getString(provider.label))
           setFragment(

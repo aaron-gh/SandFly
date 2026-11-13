@@ -1520,7 +1520,7 @@
     <string name="template_item_details_order_dropped">Dropped <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly says an item\'s details in this order. To change it, touch and hold a detail, then drag it up or down. With SandFly on, double-tap and hold, then drag. You can also use the Move up and Move down actions.</string>
     <string name="title_pref_speak_items_before_scroll">Speak items before they scroll into view</string>
-    <string name="gemini_error_api_key">Gemini didn\'t accept the API key. Check the key in Image and screen descriptions settings.</string>
+    <string name="gemini_error_api_key">Gemini didn\'t accept the API key. Check the key in AI services settings.</string>
     <string name="gemini_error_quota">The usage limit for your Gemini API key has been reached. Try again later.</string>
     <string name="gemini_error_busy">Gemini is busy right now. Try again in a moment.</string>
     <string name="gemini_error_timeout">Gemini took too long to answer. Try again.</string>
@@ -1770,7 +1770,7 @@
         <item>1 minute</item>
     </string-array>
     <string name="title_pref_dictation_auto_stop">Auto stop after silence</string>
-    <string name="dictation_ai_same">Same as Image and screen descriptions</string>
+    <string name="dictation_ai_same">Same as AI services</string>
     <string name="navigation_settings_link">SandFly settings &gt; Navigation</string>
     <string name="navigation_settings_link_tts">SandFly settings then Navigation</string>
     <string name="shortcut_reserved_for_vibration_watch">Reserved for Vibration Watch under Gestures</string>

@@ -212,10 +212,8 @@ object SettingsIndex {
           continue
         }
       filter.filterPreferences(preferences)
-      // Automatic descriptions adds a row for each AI service's settings in code.
-      preferences.findPreference<PreferenceGroup>(AiProviderPreferences.KEY_CATEGORY)?.let {
-        AiProviderPreferences.addRows(it, context)
-      }
+      // AI services adds a row for each service's settings in code.
+      AiProviderPreferences.group(preferences)?.let { AiProviderPreferences.addRows(it, context) }
       // An option of items in a list, such as AI actions to include, shows only while one of its
       // items is in the list. Watches show the items' switches and every option.
       fun hiddenOption(preference: Preference): Boolean {

@@ -18,7 +18,7 @@
     <string name="ai_service_model_hint">Модел</string>
     <string name="ai_service_address_invalid">Адресът трябва да започва с https://. Нищо не е запазено.</string>
     <string name="dialog_message_ai_service_consent">Изображенията и екранните снимки се изпращат до <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> за описание, което отнема няколко секунди. Прилагат се собствените условия и политика за поверителност на услугата. Генеративният ИИ е експериментален, затова ще допуска грешки.</string>
-    <string name="ai_service_error_api_key">AI услугата не прие API ключа. Проверете настройките ѝ в „Описания на изображения и екрана“.</string>
+    <string name="ai_service_error_api_key">AI услугата не прие API ключа. Проверете настройките ѝ в „AI услуги“.</string>
     <string name="ai_service_error_quota">Лимитът за използване на AI услугата е достигнат. Опитайте отново по-късно.</string>
     <string name="ai_service_error_busy">AI услугата е заета в момента. Опитайте отново след малко.</string>
     <string name="ai_service_error_timeout">Отговорът на AI услугата отне твърде много време. Опитайте отново.</string>
@@ -30,7 +30,7 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">Няма</string>
-    <string name="ai_service_not_set_up">Не се използва AI услуга. Настройте или изберете такава в „Описания на изображения и екрана“.</string>
+    <string name="ai_service_not_set_up">Не се използва AI услуга. Настройте или изберете такава в „AI услуги“.</string>
     <string name="ai_provider_none_set_up">Няма настроена AI услуга. Настройте някоя в настройките ѝ по-долу.</string>
     <string name="ai_provider_other">Друга услуга</string>
     <string name="title_pref_category_ai_services">AI услуги</string>

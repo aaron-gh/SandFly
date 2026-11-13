@@ -4873,7 +4873,7 @@
   <!-- Gemini response parsing error. [CHAR_LIMIT=NONE]-->
   <string name="gemini_error_parsing_result">Gemini response parsing error</string>
   <!-- Gemini rejected the API key the user entered in Automatic descriptions settings. [CHAR_LIMIT=NONE]-->
-  <string name="gemini_error_api_key">Gemini didn\'t accept the API key. Check the key in Image and screen descriptions settings.</string>
+  <string name="gemini_error_api_key">Gemini didn\'t accept the API key. Check the key in AI services settings.</string>
   <!-- The usage limit of the user's Gemini API key was reached. [CHAR_LIMIT=NONE]-->
   <string name="gemini_error_quota">The usage limit for your Gemini API key has been reached. Try again later.</string>
   <!-- Gemini's servers are overloaded or had an internal error. [CHAR_LIMIT=NONE]-->
@@ -5104,7 +5104,7 @@
   <!-- Dictation setting: the AI service that corrects dictated text. [CHAR_LIMIT=NONE] -->
   <string name="title_pref_dictation_ai_service">AI service for dictation</string>
   <!-- AI service for dictation choice: the AI service chosen in the Image and screen descriptions settings. "Image and screen descriptions" is a setting name. [CHAR_LIMIT=NONE] -->
-  <string name="dictation_ai_same">Same as Image and screen descriptions</string>
+  <string name="dictation_ai_same">Same as AI services</string>
   <!-- Switch that keeps browse mode on or off in each app as the user last left it there. [CHAR_LIMIT=NONE] -->
   <string name="title_pref_browse_mode_per_app">Remember browse mode in each app</string>
   <!-- Switch on the Navigation screen, under Apps: when on, the quote of the message a Telegram message replies to is read with that message instead of being an item of its own. [CHAR_LIMIT=NONE] -->

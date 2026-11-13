@@ -1520,7 +1520,7 @@
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> pudotettu. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly sanoo kohteen tiedot tässä järjestyksessä. Voit muuttaa järjestystä koskettamalla tietoa pitkään ja vetämällä sitä ylös tai alas. Kun SandFly on päällä, kaksoisnapauta ja pidä painettuna ja vedä sitten. Voit myös käyttää toimintoja Siirrä ylös ja Siirrä alas.</string>
     <string name="title_pref_speak_items_before_scroll">Sano kohteet ennen kuin ne vierittyvät näkyviin</string>
-    <string name="gemini_error_api_key">Gemini ei hyväksynyt API-avainta. Tarkista avain kohdan Kuvien ja näytön kuvaukset asetuksista.</string>
+    <string name="gemini_error_api_key">Gemini ei hyväksynyt API-avainta. Tarkista avain kohdan Tekoälypalvelut asetuksista.</string>
     <string name="gemini_error_quota">Gemini-API-avaimesi käyttöraja on täynnä. Yritä myöhemmin uudelleen.</string>
     <string name="gemini_error_busy">Gemini on juuri nyt ruuhkautunut. Yritä hetken kuluttua uudelleen.</string>
     <string name="gemini_error_timeout">Geminin vastaus kesti liian kauan. Yritä uudelleen.</string>
@@ -1770,7 +1770,7 @@
         <item>1 minuutti</item>
     </string-array>
     <string name="title_pref_dictation_auto_stop">Automaattinen pysäytys hiljaisuuden jälkeen</string>
-    <string name="dictation_ai_same">Sama kuin kohdassa Kuvien ja näytön kuvaukset</string>
+    <string name="dictation_ai_same">Sama kuin kohdassa Tekoälypalvelut</string>
     <string name="navigation_settings_link">SandFly-asetukset &gt; Navigointi</string>
     <string name="navigation_settings_link_tts">SandFly-asetukset, sitten Navigointi</string>
     <string name="shortcut_reserved_for_vibration_watch">Varattu Vibration Watchille kohdassa Eleet</string>

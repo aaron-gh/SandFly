@@ -1708,7 +1708,7 @@
     <string name="template_item_details_order_dropped">已放下<xliff:g id="detail" example="Name">%1$s</xliff:g>。<xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly 會按此順序讀出項目的詳細資料。如要變更順序，請按住某項詳細資料，然後向上或向下拖曳。SandFly 開啟時，請輕按兩下並按住，然後拖曳。您亦可使用「向上移動」和「向下移動」操作。</string>
     <string name="title_pref_speak_items_before_scroll">在項目捲動到畫面中之前先讀出</string>
-    <string name="gemini_error_api_key">Gemini 不接受此 API 金鑰。請在圖片和畫面描述設定中檢查金鑰。</string>
+    <string name="gemini_error_api_key">Gemini 不接受此 API 金鑰。請在AI 服務設定中檢查金鑰。</string>
     <string name="gemini_error_quota">您的 Gemini API 金鑰已達到使用限制。請稍後再試。</string>
     <string name="gemini_error_busy">Gemini 目前繁忙，請稍後再試。</string>
     <string name="gemini_error_timeout">Gemini 回應時間過長。請再試一次。</string>
@@ -1769,7 +1769,7 @@
         <item>1 分鐘</item>
     </string-array>
     <string name="title_pref_dictation_auto_stop">靜音後自動停止</string>
-    <string name="dictation_ai_same">與「圖片和畫面描述」相同</string>
+    <string name="dictation_ai_same">與「AI 服務」相同</string>
     <string name="navigation_settings_link">SandFly 設定 &gt; [導覽方式]</string>
     <string name="navigation_settings_link_tts">SandFly 設定，然後㩒導覽方式</string>
     <string name="shortcut_reserved_for_vibration_watch">已在「手勢」中預留給 Vibration Watch</string>

@@ -1520,7 +1520,7 @@
     <string name="template_item_details_order_dropped">Αφέθηκε: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">Το SandFly εκφωνεί τις λεπτομέρειες ενός στοιχείου με αυτή τη σειρά. Για να την αλλάξετε, αγγίξτε παρατεταμένα μια λεπτομέρεια και σύρετέ τη προς τα πάνω ή προς τα κάτω. Με ενεργό το SandFly, πατήστε δύο φορές παρατεταμένα και σύρετε. Μπορείτε επίσης να χρησιμοποιήσετε τις ενέργειες «Μετακίνηση προς τα πάνω» και «Μετακίνηση προς τα κάτω».</string>
     <string name="title_pref_speak_items_before_scroll">Εκφώνηση στοιχείων πριν εμφανιστούν με κύλιση</string>
-    <string name="gemini_error_api_key">Το Gemini δεν αποδέχτηκε το κλειδί API. Ελέγξτε το κλειδί στις ρυθμίσεις Περιγραφές εικόνας και οθόνης.</string>
+    <string name="gemini_error_api_key">Το Gemini δεν αποδέχτηκε το κλειδί API. Ελέγξτε το κλειδί στις ρυθμίσεις Υπηρεσίες AI.</string>
     <string name="gemini_error_quota">Συμπληρώθηκε το όριο χρήσης για το κλειδί API του Gemini. Δοκιμάστε ξανά αργότερα.</string>
     <string name="gemini_error_busy">Το Gemini είναι απασχολημένο αυτή τη στιγμή. Δοκιμάστε ξανά σε λίγο.</string>
     <string name="gemini_error_timeout">Το Gemini άργησε πολύ να απαντήσει. Δοκιμάστε ξανά.</string>
@@ -1770,7 +1770,7 @@
         <item>1 λεπτό</item>
     </string-array>
     <string name="title_pref_dictation_auto_stop">Αυτόματη διακοπή μετά από σιωπή</string>
-    <string name="dictation_ai_same">Ίδια με «Περιγραφές εικόνας και οθόνης»</string>
+    <string name="dictation_ai_same">Ίδια με «Υπηρεσίες AI»</string>
     <string name="navigation_settings_link">Ρυθμίσεις SandFly > Πλοήγηση</string>
     <string name="navigation_settings_link_tts">Ρυθμίσεις SandFly και έπειτα Πλοήγηση</string>
     <string name="shortcut_reserved_for_vibration_watch">Δεσμευμένη για το Vibration Watch στις «Κινήσεις»</string>

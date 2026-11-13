@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- AI services: the service in use, each service's settings, and the on-device model. Each
+     service's settings row is added in code (AiProviderPreferences), after the AI service row. -->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key="pref_ai_services">
+
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+      android:key="pref_ai_provider_choice"
+      android:order="0"
+      android:title="@string/title_pref_ai_provider" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+      android:fragment="com.google.android.accessibility.talkback.actor.gemini.local.OnDeviceAiFragment"
+      android:key="@string/pref_on_device_ai_key"
+      android:order="100"
+      android:summary="@string/summary_pref_on_device_ai"
+      android:title="@string/title_pref_on_device_ai" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
+      android:defaultValue="0"
+      android:entries="@array/pref_keep_models_loaded_entries"
+      android:entryValues="@array/pref_keep_models_loaded_values"
+      android:key="pref_keep_models_loaded_minutes"
+      android:order="101"
+      android:summary="%s"
+      android:title="@string/title_pref_keep_models_loaded" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
+      android:defaultValue="huggingface"
+      android:entries="@array/pref_model_download_server_entries"
+      android:entryValues="@array/pref_model_download_server_values"
+      android:key="@string/pref_model_download_server_key"
+      android:order="102"
+      android:summary="%s"
+      android:title="@string/title_pref_model_download_server" />
+</PreferenceScreen>
