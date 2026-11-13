@@ -87,17 +87,22 @@ public final class NodeQueryExecutor implements Executor {
     accepting = true;
   }
 
+  public synchronized boolean isAccepting() {
+    return accepting;
+  }
+
   /** Does not join app IPC: a blocked old read must not hold up service shutdown. */
   public synchronized void shutdown() {
     accepting = false;
-    if (executor != null) {
-      executor.shutdownNow();
-      executor = null;
-    }
-    for (Runnable work : tasks) {
+    // Mark futures cancelled before interruption lets an app read return or fail.
+    for (Runnable work : new HashSet<>(tasks)) {
       if (work instanceof Future<?> future) {
         future.cancel(false);
       }
+    }
+    if (executor != null) {
+      executor.shutdownNow();
+      executor = null;
     }
     tasks.clear();
   }

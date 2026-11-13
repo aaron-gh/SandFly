@@ -1265,6 +1265,24 @@ public class AccessibilityNodeInfoUtils {
     return childVisibleCount;
   }
 
+  /** Whether exactly one child is visible, without reading past a second visible child. */
+  public static boolean hasExactlyOneVisibleChild(@Nullable AccessibilityNodeInfoCompat node) {
+    if (node == null) {
+      return false;
+    }
+    boolean found = false;
+    for (int i = 0, count = node.getChildCount(); i < count; i++) {
+      AccessibilityNodeInfoCompat child = node.getChild(i);
+      if (child != null && child.isVisibleToUser()) {
+        if (found) {
+          return false;
+        }
+        found = true;
+      }
+    }
+    return found;
+  }
+
   /**
    * Returns whether a node is actionable. That is, the node supports one of the following actions:
    *
@@ -1712,10 +1730,14 @@ public class AccessibilityNodeInfoUtils {
       return null;
     }
 
+    final boolean webAncestors = BuildVersionUtils.isAtLeastT()
+        && WebInterfaceUtils.supportsWebActions(node);
+    final int parentFlags = AccessibilityNodeInfoCompat.FLAG_PREFETCH_ANCESTORS
+        | AccessibilityNodeInfoCompat.FLAG_PREFETCH_UNINTERRUPTIBLE;
     final HashSet<AccessibilityNodeInfoCompat> ancestors = new HashSet<>();
 
     ancestors.add(node);
-    node = node.getParent();
+    node = webAncestors ? node.getParent(parentFlags) : node.getParent();
 
     while (node != null) {
       if (!ancestors.add(node)) {
@@ -1732,7 +1754,7 @@ public class AccessibilityNodeInfoUtils {
         return node;
       }
 
-      node = node.getParent();
+      node = webAncestors ? node.getParent(parentFlags) : node.getParent();
     }
 
     return null;
