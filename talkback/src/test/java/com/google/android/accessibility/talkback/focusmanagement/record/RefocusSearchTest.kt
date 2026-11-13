@@ -21,6 +21,7 @@ import android.view.View
 import android.view.accessibility.AccessibilityNodeInfo
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import com.google.android.accessibility.utils.FocusFinder
+import com.google.android.accessibility.utils.AccessibilityNode
 import java.time.Duration
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
@@ -317,8 +318,8 @@ class RefocusSearchTest {
 
     seekDuringRefocus(history, newRoot(), record)
 
-    // The search had its own time limit after the sibling reading reached its own.
-    assertTrue(group.refreshes > 0)
+    // Sibling reads exhausted the restoration budget; the downward search starts no new IPC.
+    assertEquals(0, group.refreshes)
     // The position of outer was not read, and is read the next time, without reading the group's
     // position again.
     assertEquals(0, root.childReads)
@@ -389,4 +390,75 @@ class RefocusSearchTest {
     assertEquals(0, root.childReads)
   }
 
+  @Test fun aRememberedWebChildPositionIsValidatedAfterAnInsertion() {
+    val parent = Node("parent", web = true)
+    val children = Array(12) { Node("child-$it", web = true) }
+    parent.add(*children)
+    val child = AccessibilityNode.takeOwnership(children[10])!!
+    val owner = AccessibilityNode.takeOwnership(parent)!!
+    assertEquals(10, NodeDescription.getRawIndexInParent(child, owner, NodePathDescription.Deadline.none()))
+    parent.childReads = 0
+    assertEquals(10, NodeDescription.getRawIndexInParent(child, owner, NodePathDescription.Deadline.none()))
+    assertEquals(1, parent.childReads)
+    parent.children.add(0, Node("inserted", web = true).apply { this.owner = parent })
+    parent.childReads = 0
+    assertEquals(11, NodeDescription.getRawIndexInParent(child, owner, NodePathDescription.Deadline.none()))
+    assertTrue(parent.childReads > 1)
+  }
+
+  @Test fun readingTheNextSiblingsTextAlsoRemembersItsPosition() {
+    val parent = Node("parent", web = true)
+    val children = Array(12) { Node("child-$it", web = true) }
+    parent.add(*children)
+    val owner = AccessibilityNode.takeOwnership(parent)!!
+    NodeDescription.withoutSiblingContext(children[9], true).withSiblingContext(owner, true, 50)
+    parent.childReads = 0
+    assertEquals(10, NodeDescription.getRawIndexInParent(
+      AccessibilityNode.takeOwnership(children[10])!!, owner, NodePathDescription.Deadline.none()))
+    assertEquals(1, parent.childReads)
+  }
+
+  @Test fun uniqueIdSearchChecksTheBudgetWithinOneWideParentsChildren() {
+    val old = Node("old", web = true).apply { uniqueId = "old-item" }
+    val record = record(old)
+    old.alive = false
+    val root = Node("large page").apply {
+      add(*Array(100) { Node("item-$it", web = true) })
+      answerMs = 100
+    }
+    val stopped = java.util.concurrent.atomic.AtomicBoolean()
+    assertNull(FocusActionRecord.getFocusableNodeFromFocusRecord(root, focusFinder, record, true, stopped))
+    assertTrue(stopped.get())
+    assertEquals(3, root.childReads)
+  }
+
+  @Test fun textCollectionStopsBeforeTheNextChildAfterItsDeadline() {
+    val root = Node("root").apply {
+      add(*Array(10) { Node("text-$it") })
+      answerMs = 150
+    }
+    val text = NodeDescription.getText(AccessibilityNode.takeOwnership(root), true,
+      NodePathDescription.Deadline.afterSearchTimeLimit())
+    assertEquals(2, root.childReads)
+    assertTrue(text.toString().contains("text-0"))
+  }
+
+  @Test fun aPositionFoundAtTheDeadlineIsKeptWhenItsNeighborsTextIsNotReady() {
+    val root = Node("root", web = true)
+    val outer = Node("outer", web = true)
+    val group = Node("group", web = true)
+    val leaf = Node("leaf", web = true)
+    root.add(outer)
+    outer.add(group, Node("neighbor", web = true))
+    group.add(leaf)
+    val path = NodePathDescription(record(leaf).ancestorIdentityPath)
+    outer.answerMs = NodePathDescription.SEARCH_TIME_LIMIT_MS
+    val next = path.addSiblingContext(1, NodePathDescription.Deadline.afterSearchTimeLimit())
+    assertEquals(2, next)
+    assertEquals(0, descriptions(path)[1].rawIndexInParent)
+    val reads = outer.childReads
+    outer.answerMs = 0
+    path.addSiblingContext(next, NodePathDescription.Deadline.afterSearchTimeLimit())
+    assertEquals(reads, outer.childReads)
+  }
 }

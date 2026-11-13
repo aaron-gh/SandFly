@@ -28,6 +28,8 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat.CollectionItemInfoCompat;
 import com.google.android.accessibility.utils.AccessibilityNode;
+import com.google.android.accessibility.utils.ConcurrentNodeQueries;
+import com.google.android.accessibility.utils.WebInterfaceUtils;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.DiagnosticOverlayUtils;
 import com.google.android.accessibility.utils.Filter;
@@ -37,6 +39,7 @@ import com.google.android.accessibility.utils.Role;
 import com.google.android.accessibility.utils.StringBuilderUtils;
 import com.google.android.accessibility.utils.compat.CompatUtils;
 import com.google.android.accessibility.utils.traversal.TraversalStrategy;
+import com.google.android.accessibility.utils.traversal.OrderedTraversalStrategy;
 import com.google.android.accessibility.utils.traversal.TraversalStrategyUtils;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import com.google.auto.value.AutoValue;
@@ -45,7 +48,14 @@ import com.google.errorprone.annotations.FormatString;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashSet;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.CancellationException;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
+import java.util.concurrent.Future;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
@@ -59,7 +69,7 @@ public final class NodePathDescription {
 
   /**
    * The most time, in milliseconds, that finding the node to refocus after a content change takes,
-   * and, separately, that reading the positions of the path's ancestors among their siblings takes.
+   * including reading the positions of the path's ancestors among their siblings.
    * Each step asks the app for a node and waits for the answer on the main thread. A page nested in
    * several web views, rebuilt by its app, answers slowly enough for an unbounded search to hold up
    * input for seconds.
@@ -69,7 +79,7 @@ public final class NodePathDescription {
   /** The time at which a search for the node to refocus stops asking the app for nodes. */
   static final class Deadline {
     private final long endTimeMs;
-    private boolean stopped = false;
+    private volatile boolean stopped = false;
 
     Deadline(long endTimeMs) {
       this.endTimeMs = endTimeMs;
@@ -87,6 +97,7 @@ public final class NodePathDescription {
 
     /** Returns whether the deadline has passed. Once it has, keeps returning true. */
     boolean shouldStop() {
+      if (Thread.currentThread().isInterrupted()) stopped = true;
       if (!stopped && SystemClock.uptimeMillis() >= endTimeMs) {
         stopped = true;
         LogUtils.w(LOG_TAG, "Stopped the focus path search at its time limit");
@@ -94,11 +105,60 @@ public final class NodePathDescription {
       return stopped;
     }
 
+    /** Remaining time is also the maximum wait for any independent read. */
+    long remainingMs() {
+      if (Thread.currentThread().isInterrupted()) stopped = true;
+      return stopped || shouldStop() ? 0 : Math.max(0, endTimeMs - SystemClock.uptimeMillis());
+    }
+
     /** Returns whether {@link #shouldStop} has found the deadline passed. */
     boolean stopped() {
       return stopped;
     }
   }
+
+  /** Refresh answers belong to one restoration, shared by its sibling and path phases. */
+  static final class Recovery {
+    final Map<AccessibilityNodeInfoCompat, AccessibilityNodeInfoCompat> confirmed = new HashMap<>();
+    final Map<AccessibilityNodeInfoCompat, AccessibilityNode> refreshed = new HashMap<>();
+    private final HashSet<AccessibilityNodeInfoCompat> attempted = new HashSet<>();
+
+    void prepare(List<AccessibilityNodeInfoCompat> nodes, Deadline deadline) {
+      if (nodes.isEmpty() || deadline.shouldStop()) return;
+      boolean parallel = ConcurrentNodeQueries.canRead(nodes.get(0));
+      List<AccessibilityNodeInfoCompat> missing = new ArrayList<>();
+      for (AccessibilityNodeInfoCompat node : nodes) {
+        // Without independent IPC, refresh only document/provider boundaries here. Other
+        // ancestors keep their original lazy refresh in the upward search.
+        boolean boundary = "rootWebArea".contentEquals(
+            String.valueOf(AccessibilityNodeInfoUtils.getChromeRole(node)))
+            || (Role.getRole(node) == Role.ROLE_WEB_VIEW && !WebInterfaceUtils.supportsWebActions(node));
+        if (!parallel && !boundary) continue;
+        if (!refreshed.containsKey(node) && attempted.add(node)) missing.add(node);
+      }
+      if (!parallel) {
+        for (AccessibilityNodeInfoCompat node : missing) {
+          if (deadline.shouldStop()) break;
+          AccessibilityNodeInfoCompat copy = node.getWindowId() < 0
+              ? node : AccessibilityNodeInfoCompat.obtain(node);
+          AccessibilityNodeInfoCompat value = copy.refresh() ? copy : null;
+          confirmed.put(node, value);
+          refreshed.put(node, AccessibilityNode.takeOwnership(value));
+        }
+        return;
+      }
+      Map<AccessibilityNodeInfoCompat, AccessibilityNodeInfoCompat> answers =
+          ConcurrentNodeQueries.refreshForRecovery(missing, deadline.remainingMs());
+      confirmed.putAll(answers);
+      // A timed-out read is unknown, not evidence that a document was removed. Do not
+      // start the same IPC again synchronously during this restoration.
+      for (AccessibilityNodeInfoCompat node : missing) {
+        refreshed.put(node, AccessibilityNode.takeOwnership(answers.get(node)));
+      }
+    }
+  }
+
+  static NodePathDescription empty() { return new NodePathDescription(); }
 
   // Node and ancestors, ordered from leaf to root
   private final ArrayList<NodeDescription> nodeDescriptions;
@@ -115,6 +175,25 @@ public final class NodePathDescription {
     for (@NonNull NodeDescription n : original.nodeDescriptions) {
       this.nodeDescriptions.add(new NodeDescription(n));
     }
+  }
+
+  /** Copies the recorded identities without reading the app or adding sibling context. */
+  public List<AccessibilityNodeInfoCompat> getSavedAncestorNodes() {
+    List<AccessibilityNodeInfoCompat> nodes = new ArrayList<>();
+    for (NodeDescription description : nodeDescriptions) {
+      if (description.savedNode != null) {
+        nodes.add(description.savedNode.obtainCopyCompat());
+      }
+    }
+    return nodes;
+  }
+
+  private List<AccessibilityNodeInfoCompat> getRecoveryAncestorNodes() {
+    List<AccessibilityNodeInfoCompat> nodes = new ArrayList<>();
+    for (NodeDescription description : nodeDescriptions) {
+      if (description.savedNode != null) nodes.add(description.savedNode.getCompat());
+    }
+    return nodes;
   }
 
   /** The saved outermost Chromium document, identified without reading its current tree. */
@@ -167,16 +246,27 @@ public final class NodePathDescription {
    */
   static @NonNull NodePathDescription obtainWithoutSiblingContext(
       AccessibilityNodeInfoCompat node) {
+    Deadline captureDeadline = Deadline.afterSearchTimeLimit();
+    AccessibilityNodeInfoCompat textNode = AccessibilityNodeInfoCompat.obtain(node);
+    // Text below the focused item is independent of its parents and neighbours. Read it while
+    // those are recorded, but finish both before the history entry becomes visible to consumers.
+    Future<CharSequence> textRead =
+        node.getChildCount() > 0 && TextUtils.isEmpty(node.getContentDescription())
+            ? ConcurrentNodeQueries.readAlongsidePath(node,
+                () -> NodeDescription.getText(AccessibilityNode.takeOwnership(
+                    textNode), /* isPathEnd= */ true, captureDeadline))
+            : null;
     final NodePathDescription nodePath = new NodePathDescription();
     HashSet<AccessibilityNodeInfoCompat> visited = new HashSet<>();
     AccessibilityNodeInfoCompat current = node;
-    while (current != null && visited.add(current)) {
+    while (current != null && visited.size() < 64 && !captureDeadline.shouldStop() && visited.add(current)) {
       boolean isPathEnd = nodePath.nodeDescriptions.isEmpty();
-      NodeDescription description = NodeDescription.withoutSiblingContext(current, isPathEnd);
+      NodeDescription description =
+          NodeDescription.withoutSiblingContext(current, isPathEnd && textRead == null, captureDeadline);
       // On Android 13 and later, one request reads all the ancestors, and nothing else: an ordinary
       // request also reads siblings and descendants, and can be cut short by the next request.
       AccessibilityNodeInfoCompat parent =
-          current.getParent(
+          captureDeadline.shouldStop() ? null : current.getParent(
               AccessibilityNodeInfoCompat.FLAG_PREFETCH_ANCESTORS
                   | AccessibilityNodeInfoCompat.FLAG_PREFETCH_UNINTERRUPTIBLE);
       if (isPathEnd && parent != null) {
@@ -185,13 +275,28 @@ public final class NodePathDescription {
               description.withSiblingContext(
                   AccessibilityNode.takeOwnership(parent),
                   /* isPathEnd= */ true,
-                  MAX_END_SIBLINGS_READ);
+                  MAX_END_SIBLINGS_READ, captureDeadline);
         } catch (RuntimeException e) {
           LogUtils.w(LOG_TAG, "Cannot read the siblings of the focused node: %s", e);
         }
       }
       nodePath.nodeDescriptions.add(description);
       current = parent;
+    }
+    if (textRead != null) {
+      CharSequence focusedText = node.getText();
+      try {
+        focusedText = textRead.get(captureDeadline.remainingMs(), TimeUnit.MILLISECONDS);
+      } catch (InterruptedException e) {
+        Thread.currentThread().interrupt();
+      } catch (ExecutionException | CancellationException | TimeoutException e) {
+        LogUtils.w(LOG_TAG, "Focused-item text was not ready within the capture budget: %s", e);
+      } finally {
+        ConcurrentNodeQueries.cancel(textRead);
+      }
+      if (!nodePath.nodeDescriptions.isEmpty()) {
+        nodePath.nodeDescriptions.set(0, nodePath.nodeDescriptions.get(0).withText(focusedText));
+      }
     }
     return nodePath;
   }
@@ -206,22 +311,78 @@ public final class NodePathDescription {
    * @return the index of the first ancestor not read, or the path's size when all have been read
    */
   int addSiblingContext(int from, @NonNull Deadline deadline) {
+    return addSiblingContext(from, deadline, new Recovery());
+  }
+
+  int addSiblingContext(int from, Deadline deadline, Recovery recovery) {
+    if (deadline.shouldStop()) return from;
+    recovery.prepare(getRecoveryAncestorNodes(), deadline);
+    return addSiblingContext(from, deadline, recovery.confirmed);
+  }
+
+  int addSiblingContext(int from, @NonNull Deadline deadline,
+      Map<AccessibilityNodeInfoCompat, AccessibilityNodeInfoCompat> refreshed) {
     int size = nodeDescriptions.size();
+    int unavailable = unavailableWebPrefix(refreshed);
     for (int i = Math.max(from, 1); i < size; i++) {
+      if (i < unavailable) {
+        // Neither a removed host nor its virtual nodes can occur among the current children.
+        // Their old child IDs cannot be read from that host, so sibling data stays undefined.
+        continue;
+      }
       if (deadline.shouldStop()) {
         return i;
       }
       @Nullable AccessibilityNode parent =
           (i + 1 < size) ? nodeDescriptions.get(i + 1).savedNode : null;
+      AccessibilityNode saved = nodeDescriptions.get(i).savedNode;
+      if ((saved != null && refreshed.containsKey(saved.getCompat())
+              && refreshed.get(saved.getCompat()) == null)
+          || (parent != null && refreshed.containsKey(parent.getCompat())
+              && refreshed.get(parent.getCompat()) == null)) {
+        // A removed ancestor cannot occur in its parent's current child list. Keep the original
+        // metadata for fallback scoring without asking for every child of that obsolete path.
+        continue;
+      }
       NodeDescription withPosition =
           nodeDescriptions.get(i).withSiblingContext(parent, /* isPathEnd= */ false, deadline);
       if (deadline.stopped()) {
-        // Reading the siblings was cut short, so the position is not known.
+        // Text can time out after the position was found. Keep that progress instead of
+        // asking for the same position again in the next slice.
+        if (withPosition.rawIndexInParent != UNDEFINED_INDEX) {
+          nodeDescriptions.set(i, withPosition);
+          return i + 1;
+        }
         return i;
       }
       nodeDescriptions.set(i, withPosition);
     }
     return size;
+  }
+
+  /** The number of nodes in the old prefix whose Chromium document or native host is gone. */
+  private int unavailableWebPrefix(Map<AccessibilityNodeInfoCompat, AccessibilityNodeInfoCompat> refreshed) {
+    int unavailable = 0;
+    for (int i = 0; i < nodeDescriptions.size(); i++) {
+      AccessibilityNode saved = nodeDescriptions.get(i).savedNode;
+      if (saved != null && "rootWebArea".contentEquals(
+          String.valueOf(AccessibilityNodeInfoUtils.getChromeRole(saved.getCompat())))
+          && isUnavailable(saved, refreshed)) {
+        // A native WebView can survive while its previous document is replaced. Virtual IDs
+        // from that document cannot be found in its new children either.
+        unavailable = i + 1;
+      }
+      if (saved != null && saved.getRole() == Role.ROLE_WEB_VIEW
+          && !WebInterfaceUtils.supportsWebActions(saved.getCompat())) {
+        return isUnavailable(saved, refreshed) ? i + 1 : unavailable;
+      }
+    }
+    return unavailable;
+  }
+
+  private static boolean isUnavailable(AccessibilityNode saved,
+      Map<AccessibilityNodeInfoCompat, AccessibilityNodeInfoCompat> refreshed) {
+    return refreshed.containsKey(saved.getCompat()) && refreshed.get(saved.getCompat()) == null;
   }
 
   /** Returns the number of nodes in the path. */
@@ -240,7 +401,13 @@ public final class NodePathDescription {
       @Nullable AccessibilityNodeInfoCompat rootCompat,
       @NonNull FocusFinder focusFinder,
       @NonNull Deadline deadline) {
+    return findNodeToRefocus(rootCompat, focusFinder, deadline, new Recovery());
+  }
 
+  @Nullable AccessibilityNodeInfoCompat findNodeToRefocus(
+      @Nullable AccessibilityNodeInfoCompat rootCompat, @NonNull FocusFinder focusFinder,
+      @NonNull Deadline deadline, @NonNull Recovery recovery) {
+    if (deadline.shouldStop()) return null;
     @Nullable AccessibilityNodeInfoCompat lastFocusedNode = null;
     if (!nodeDescriptions.isEmpty() && nodeDescriptions.get(0).savedNode != null) {
       lastFocusedNode = nodeDescriptions.get(0).savedNode.obtainCopyCompat();
@@ -253,11 +420,22 @@ public final class NodePathDescription {
       return null;
     }
 
-    @Nullable AccessibilityNode targetUp = matchAncestorUniqueId(deadline);
+    Map<AccessibilityNodeInfoCompat, AccessibilityNode> refreshed = recovery.refreshed;
+    if (lastFocusedNode != null && WebInterfaceUtils.supportsWebActions(lastFocusedNode)) {
+      List<AccessibilityNodeInfoCompat> saved = getRecoveryAncestorNodes();
+      recovery.prepare(saved, deadline);
+      int unavailable = unavailableWebPrefix(recovery.confirmed);
+      int firstAvailable = unavailable;
+      for (int i = 0; i < firstAvailable; i++) {
+        AccessibilityNode node = nodeDescriptions.get(i).savedNode;
+        if (node != null) refreshed.put(node.obtainCopyCompat(), null);
+      }
+    }
+    @Nullable AccessibilityNode targetUp = matchAncestorUniqueId(deadline, refreshed);
     if (targetUp != null && lastFocusedNode != null) {
-      if (lastFocusedNode.refresh()
-          && AccessibilityNodeInfoUtils.shouldFocusNode(lastFocusedNode)) {
-        return lastFocusedNode;
+      AccessibilityNode current = refreshOnce(nodeDescriptions.get(0).savedNode, refreshed, deadline);
+      if (current != null && AccessibilityNodeInfoUtils.shouldFocusNode(current.getCompat())) {
+        return current.obtainCopyCompat();
       }
     }
 
@@ -265,7 +443,7 @@ public final class NodePathDescription {
     // from the last-focused-node.  This limits the scope of the downward tree-search needed to find
     // a node that matches the full node-path.
     if (targetUp == null) {
-      targetUp = findUpward(deadline);
+      targetUp = findUpward(deadline, refreshed);
     }
     if (deadline.stopped()) {
       return null;
@@ -288,7 +466,9 @@ public final class NodePathDescription {
     return (targetDown == null) ? targetUp.obtainCopyCompat() : targetDown.obtainCopyCompat();
   }
 
-  private @Nullable AccessibilityNode matchAncestorUniqueId(@NonNull Deadline deadline) {
+  private @Nullable AccessibilityNode matchAncestorUniqueId(
+      @NonNull Deadline deadline,
+      Map<AccessibilityNodeInfoCompat, AccessibilityNode> refreshed) {
     for (int p = 1; p < nodeDescriptions.size() - 1; ++p) {
       NodeDescription pathParent = nodeDescriptions.get(p); // Parent of pathNode
       // Only an ancestor that had a unique id can match. Few apps set one, and refreshing the other
@@ -301,7 +481,7 @@ public final class NodePathDescription {
       if (deadline.shouldStop()) {
         return null;
       }
-      @Nullable AccessibilityNode parentNode = refreshOrNull(pathParent.savedNode);
+      @Nullable AccessibilityNode parentNode = refreshOnce(pathParent.savedNode, refreshed, deadline);
       if (parentNode != null && lastUniqueId.equals(parentNode.getUniqueId())) {
         return parentNode;
       }
@@ -310,7 +490,9 @@ public final class NodePathDescription {
   }
 
   /** Searches ancestors for a path-node that still exists, mostly unchanged. */
-  private @Nullable AccessibilityNode findUpward(@NonNull Deadline deadline) {
+  private @Nullable AccessibilityNode findUpward(
+      @NonNull Deadline deadline,
+      Map<AccessibilityNodeInfoCompat, AccessibilityNode> refreshed) {
     // The parent refreshed for one path-node is the next path-node up, so it is not refreshed again.
     @Nullable AccessibilityNode parentUpdatedBelow = null;
     // For each path-node, from leaf to root...
@@ -326,16 +508,16 @@ public final class NodePathDescription {
       // If node exists, with same content & identity... matched.
       @Nullable
       AccessibilityNode pathNodeUpdated =
-          (p == 0) ? refreshOrNull(pathNode.savedNode) : parentUpdatedBelow;
+          (p == 0) ? refreshOnce(pathNode.savedNode, refreshed, deadline) : parentUpdatedBelow;
       log("findUpward() p=%s pathNodeUpdated=%s", p, pathNodeUpdated);
-      @Nullable AccessibilityNode parentUpdated = refreshOrNull(pathParent.savedNode);
+      @Nullable AccessibilityNode parentUpdated = refreshOnce(pathParent.savedNode, refreshed, deadline);
       parentUpdatedBelow = parentUpdated;
       log("findUpward() p=%s parentUpdated=%s", p, parentUpdated);
 
       // Match if only 1 changed among {identity, index, content, adjacent-content}
       boolean identityMatch = identityMatches(pathNode, pathNodeUpdated);
-      boolean contentMatch = contentMatches(pathNode, pathNodeUpdated, isPathEnd);
-      boolean indexMatch = indexMatches(pathNode, pathNodeUpdated, parentUpdated);
+      boolean contentMatch = contentMatches(pathNode, pathNodeUpdated, isPathEnd, deadline);
+      boolean indexMatch = indexMatches(pathNode, pathNodeUpdated, parentUpdated, deadline);
 
       // Only run adjacentContentMatches() if necessary, for efficiency.
       @Nullable AccessibilityNode adjacentMatch = null;
@@ -464,7 +646,8 @@ public final class NodePathDescription {
     if (startNode == null) {
       return null;
     }
-    int startNodeDepth = startNode.findDepth();
+    int startNodeDepth = findDepth(startNode, deadline);
+    if (startNodeDepth < 0 || deadline.shouldStop()) return null;
     int startNodeIndexInParent =
         NodeDescription.getRawIndexInParent(startNode, startNode.getParent(), deadline);
     log(
@@ -494,7 +677,7 @@ public final class NodePathDescription {
     if (!bestMatch.isPathEnd()) {
       // Allow to restore focus on ViewGroup only when the node is perfectly matched.
       if (bestMatch.score() >= 3.3) { // adjacent(1.0) + identity(1.1) + content-match(1.2)
-        return nextInTraversalOrder(root, focusFinder, bestMatch.node());
+        return nextInTraversalOrder(root, focusFinder, bestMatch.node(), deadline);
       } else {
         return null;
       }
@@ -531,7 +714,7 @@ public final class NodePathDescription {
 
     // If node does not match... prune tree-branch.
     @NonNull
-    Match match = scoreMatch(node, childIndex, depth, previousSiblingText, nextSiblingText);
+    Match match = scoreMatch(node, childIndex, depth, previousSiblingText, nextSiblingText, deadline);
     log(depth, "findDownward() match=%s", match);
     if (!match.hasNode() || match.prune()) {
       return null;
@@ -560,7 +743,7 @@ public final class NodePathDescription {
       @Nullable AccessibilityNode nextChild =
           (nextChildIndex < node.getChildCount()) ? node.getChild(nextChildIndex) : null;
       @Nullable CharSequence nextChildText =
-          (nextChild == null) ? OUT_OF_RANGE : NodeDescription.getText(nextChild, isChildPathEnd);
+          (nextChild == null) ? OUT_OF_RANGE : NodeDescription.getText(nextChild, isChildPathEnd, deadline);
 
       CollectionItemInfoCompat itemInfoCompat =
           (nextChild == null) ? null : nextChild.getCollectionItemInfo();
@@ -606,7 +789,7 @@ public final class NodePathDescription {
       int index,
       int depth,
       @Nullable CharSequence previousSiblingText,
-      @Nullable CharSequence nextSiblingText) {
+      @Nullable CharSequence nextSiblingText, Deadline deadline) {
     Match.Builder match = Match.builder().setDepth(depth);
     boolean isRoot = (depth == 0);
 
@@ -634,7 +817,7 @@ public final class NodePathDescription {
         isTextMatchingNonEmptyText(previousSiblingText, pathNode.previousSiblingText)
             || isTextMatchingNonEmptyText(nextSiblingText, pathNode.nextSiblingText);
 
-    boolean contentMatch = contentMatches(pathNode, node, isPathEnd);
+    boolean contentMatch = contentMatches(pathNode, node, isPathEnd, deadline);
     boolean indexMatch = indexesMatch(pathNode, node, index);
     log(
         depth,
@@ -688,9 +871,9 @@ public final class NodePathDescription {
   private @Nullable AccessibilityNode nextInTraversalOrder(
       @NonNull AccessibilityNodeInfoCompat root,
       @NonNull FocusFinder focusFinder,
-      @NonNull AccessibilityNode node) {
-    TraversalStrategy traversal =
-        TraversalStrategyUtils.getTraversalStrategy(root, focusFinder, SEARCH_FOCUS_FORWARD);
+      @NonNull AccessibilityNode node, Deadline deadline) {
+    TraversalStrategy traversal = new OrderedTraversalStrategy(root, deadline::shouldStop);
+    if (deadline.shouldStop()) return null;
     @Nullable AccessibilityNodeInfoCompat nodeCompat = node.obtainCopyCompat();
     final @Nullable Map<AccessibilityNodeInfoCompat, Boolean> speakingNodes =
         traversal.getSpeakingNodesCache();
@@ -700,7 +883,18 @@ public final class NodePathDescription {
             traversal,
             nodeCompat,
             SEARCH_FOCUS_FORWARD,
-            Filter.node(n -> AccessibilityNodeInfoUtils.shouldFocusNode(n, speakingNodes))));
+            Filter.node(n -> !deadline.shouldStop() && AccessibilityNodeInfoUtils.shouldFocusNode(n, speakingNodes))));
+  }
+
+  private static int findDepth(AccessibilityNode node, Deadline deadline) {
+    HashSet<AccessibilityNode> seen = new HashSet<>();
+    int depth = -1;
+    while (node != null) {
+      if (deadline.shouldStop() || !seen.add(node)) return -1;
+      depth++;
+      node = node.getParent();
+    }
+    return depth;
   }
 
   ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -752,7 +946,7 @@ public final class NodePathDescription {
       @Nullable AccessibilityNode nextChild =
           (c < parent.getChildCount()) ? parent.getChild(c) : null;
       @Nullable CharSequence nextChildText =
-          (nextChild == null) ? OUT_OF_RANGE : NodeDescription.getText(nextChild, isPathEnd);
+          (nextChild == null) ? OUT_OF_RANGE : NodeDescription.getText(nextChild, isPathEnd, deadline);
       // If previous/next-child-texts match... return child.
       if ((child != null) && target.accept(child, c - 1, previousChildText, nextChildText)) {
         // Return found-child.
@@ -776,11 +970,11 @@ public final class NodePathDescription {
   }
 
   private static boolean contentMatches(
-      NodeDescription node, @Nullable AccessibilityNode nodeUpdated, boolean isPathEnd) {
+      NodeDescription node, @Nullable AccessibilityNode nodeUpdated, boolean isPathEnd, Deadline deadline) {
     if (nodeUpdated == null) {
       return false;
     }
-    @Nullable CharSequence nodeText = NodeDescription.getText(nodeUpdated, isPathEnd);
+    @Nullable CharSequence nodeText = NodeDescription.getText(nodeUpdated, isPathEnd, deadline);
 
     if (isPathEnd && TextUtils.isEmpty(node.text)) {
       return false;
@@ -803,7 +997,7 @@ public final class NodePathDescription {
       return null;
     }
     // Parent-text does not include descendant-text, because only leaves include descendant-text.
-    if (!TextUtils.equals(parent.text, NodeDescription.getText(parentUpdated, isPathEnd))) {
+    if (!TextUtils.equals(parent.text, NodeDescription.getText(parentUpdated, isPathEnd, deadline))) {
       return null;
     }
     return findChildBetweenText(
@@ -814,8 +1008,8 @@ public final class NodePathDescription {
   private static boolean indexMatches(
       @NonNull NodeDescription node,
       @Nullable AccessibilityNode nodeUpdated,
-      @Nullable AccessibilityNode parentUpdated) {
-
+      @Nullable AccessibilityNode parentUpdated, Deadline deadline) {
+    if (deadline.shouldStop()) return false;
     // Match row/column-index.
     if (node.hasCollectionIndex()) {
       return node.matchesCollectionIndices(nodeUpdated);
@@ -904,6 +1098,21 @@ public final class NodePathDescription {
   // Returns refreshed node, or null.
   private static @Nullable AccessibilityNode refreshOrNull(@Nullable AccessibilityNode node) {
     return (node != null) && node.refresh() ? node : null;
+  }
+
+  /** Both upward passes use the same answer, including a failed refresh, in this attempt. */
+  private static @Nullable AccessibilityNode refreshOnce(
+      @Nullable AccessibilityNode node,
+      Map<AccessibilityNodeInfoCompat, AccessibilityNode> refreshed, Deadline deadline) {
+    if (node == null || deadline.shouldStop()) {
+      return null;
+    }
+    AccessibilityNodeInfoCompat key = node.obtainCopyCompat();
+    if (!refreshed.containsKey(key)) {
+      refreshed.put(key, refreshOrNull(node.getCompat().getWindowId() < 0
+          ? node : AccessibilityNode.takeOwnership(key)));
+    }
+    return refreshed.get(key);
   }
 
   ////////////////////////////////////////////////////////////////////////////////////////////////

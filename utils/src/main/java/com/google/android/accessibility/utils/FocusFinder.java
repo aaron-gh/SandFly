@@ -20,6 +20,7 @@ import static android.view.accessibility.AccessibilityNodeInfo.FOCUS_ACCESSIBILI
 import static android.view.accessibility.AccessibilityNodeInfo.FOCUS_INPUT;
 
 import android.accessibilityservice.AccessibilityService;
+import android.os.Build;
 import android.view.accessibility.AccessibilityNodeInfo;
 import androidx.annotation.IntDef;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
@@ -114,6 +115,7 @@ public class FocusFinder {
       }
     }
 
+    boolean fromFocus = ret != null;
     if (ret == null && fallbackOnRoot) {
       ret = service.getRootInActiveWindow();
       if (ret == null) {
@@ -124,9 +126,27 @@ public class FocusFinder {
     if (ret != null) {
       AccessibilityNodeInfoCompat node = AccessibilityNodeInfoUtils.toCompat(ret);
       // When AccessibilityNodeProvider is used, the returned node may be stale.
-      if ((isCurrent == null || !isCurrent.accept(node)) && !ret.refresh()) {
-        return null;
+      boolean refreshed = (isCurrent != null && isCurrent.accept(node)) || ret.refresh();
+      if (fromFocus && Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU
+          && WebInterfaceUtils.supportsWebActions(node)
+          && (!refreshed || !ret.isAccessibilityFocused())) {
+        // The app has moved focus, but its event can still be behind another swipe on our
+        // main thread. Refresh succeeding only proves this old item exists. Reusing it would
+        // ask the browser for the same next item twice and consume a swipe without advancing.
+        service.clearCachedSubtree(ret);
+        AccessibilityNodeInfo current = service.findFocus(FOCUS_ACCESSIBILITY);
+        LogUtils.d(TAG, "Re-read stale web focus in window %d old=%d new=%d changed=%s currentFocused=%s oldExists=%s",
+            ret.getWindowId(), ret.hashCode(), current == null ? 0 : current.hashCode(),
+            current != null && !ret.equals(current), current != null && current.isAccessibilityFocused(), refreshed);
+        // Browsers can clear focus while keeping the old item alive. It remains the
+        // navigation pivot in that case, as before; only a removed item is discarded.
+        if (current == null) return refreshed ? node : null;
+        AccessibilityNodeInfoCompat currentNode = AccessibilityNodeInfoCompat.wrap(current);
+        // A replacement still follows the visibility rule used for the first result above.
+        return current.isVisibleToUser() || WebInterfaceUtils.isWebContainer(currentNode)
+            ? currentNode : null;
       }
+      if (!refreshed) return null;
       return node;
     }
 
