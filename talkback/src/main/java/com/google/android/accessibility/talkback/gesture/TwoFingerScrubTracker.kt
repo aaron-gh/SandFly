@@ -150,6 +150,7 @@ class TwoFingerScrubTracker(
     }
     if ((x - extreme) * direction > 0) {
       extreme = x
+      strokeTime = time
     } else if ((extreme - x) * direction >= strokePx) {
       direction = -direction
       extreme = x
