@@ -32,6 +32,7 @@ import com.google.android.accessibility.utils.Performance.EventId;
 import com.google.android.accessibility.utils.R;
 import com.google.android.accessibility.utils.gestures.GestureManifold.GestureConfigProvider;
 import java.util.ArrayList;
+import org.checkerframework.checker.nullness.qual.Nullable;
 
 /**
  * This class is responsible for matching one-finger swipe gestures. Each instance matches one swipe
@@ -79,8 +80,8 @@ class Swipe extends GestureMatcher {
   private static final float ANGLE_THRESHOLD = 0.0f;
   private final boolean invalidSwipeGestureEarlyDetection;
 
-  // The swipe and hold version of this swipe, reported when the finger rests at the end of the
-  // stroke before lifting, or 0 if there is none.
+  // The swipe and hold version of this swipe, reported when the finger has rested at the end of
+  // the stroke for the hold time, or 0 if there is none.
   private final int holdGestureId;
   private final GestureConfigProvider configProvider;
   // Whether the swipe and hold has an action in this touch. Without one, a rest is handled as
@@ -92,6 +93,12 @@ class Swipe extends GestureMatcher {
   private long restStartTime;
   // Whether a rest after a matching stroke has outlasted the time a swipe may pause.
   private boolean resting;
+  // Reports the swipe and hold when the finger has rested for the hold time without lifting.
+  private final Handler handler;
+  private final Runnable holdTimeout = this::onHoldTimeout;
+  // The latest move while the hold timer is pending, and its event ID.
+  private @Nullable MotionEvent holdEvent;
+  private @Nullable EventId holdEventId;
 
   Swipe(
       Context context,
@@ -121,7 +128,26 @@ class Swipe extends GestureMatcher {
       GestureMatcher.StateChangeListener listener,
       GestureConfigProvider configProvider,
       GestureMatcher.AnalyticsEventLogger logger) {
-    super(gesture, new Handler(context.getMainLooper()), listener, logger);
+    this(
+        context,
+        directions,
+        gesture,
+        new Handler(context.getMainLooper()),
+        listener,
+        configProvider,
+        logger);
+  }
+
+  private Swipe(
+      Context context,
+      int[] directions,
+      int gesture,
+      Handler handler,
+      GestureMatcher.StateChangeListener listener,
+      GestureConfigProvider configProvider,
+      GestureMatcher.AnalyticsEventLogger logger) {
+    super(gesture, handler, listener, logger);
+    this.handler = handler;
     float gestureConfirmDistanceCm =
         context.getResources().getFloat(R.dimen.config_gesture_confirm_distance_cm);
     int maxTimeToStartSwipeMsPerCm =
@@ -167,6 +193,7 @@ class Swipe extends GestureMatcher {
     restY = Float.NaN;
     restStartTime = 0;
     resting = false;
+    cancelHoldTimeout();
     strokeBuffer.clear();
     super.clear();
   }
@@ -189,6 +216,15 @@ class Swipe extends GestureMatcher {
 
   @Override
   protected void onMove(EventId eventId, MotionEvent event) {
+    trackMove(eventId, event);
+    if (holdAssigned && getState() == STATE_GESTURE_STARTED) {
+      postHoldTimeout(eventId, event);
+    } else {
+      cancelHoldTimeout();
+    }
+  }
+
+  private void trackMove(EventId eventId, MotionEvent event) {
     final float x = event.getX();
     final float y = event.getY();
     final long time = event.getEventTime();
@@ -246,7 +282,7 @@ class Swipe extends GestureMatcher {
         cancelGesture(event);
         return;
     } else if (getState() == STATE_GESTURE_STARTED && (timeDelta > maxContinueThreshold)) {
-      // A rest at the end of a matching stroke waits for the lift, which is the swipe and hold.
+      // A rest at the end of a matching stroke waits for the hold timer.
       if (holdAssigned && (resting || (resting = strokeMatches(strokeWith(x, y))))) {
         return;
       }
@@ -264,6 +300,7 @@ class Swipe extends GestureMatcher {
 
   @Override
   protected void onUp(EventId eventId, MotionEvent event) {
+    cancelHoldTimeout();
     switch (getState()) {
       case STATE_GESTURE_STARTED -> {}
       case STATE_CLEAR -> {
@@ -303,10 +340,54 @@ class Swipe extends GestureMatcher {
         && up.getEventTime() - restStartTime >= GestureConfiguration.getSwipeHoldTimeMs();
   }
 
-  /** The stroke so far, ending at ({@code x}, {@code y}). */
+  /**
+   * Reports the swipe and hold once the finger has stayed where it last moved to for the hold time,
+   * whether or not it sends further moves.
+   */
+  private void postHoldTimeout(EventId eventId, MotionEvent event) {
+    cancelHoldTimeout();
+    holdEvent = MotionEvent.obtain(event);
+    holdEventId = eventId;
+    long delayMs =
+        restStartTime + GestureConfiguration.getSwipeHoldTimeMs() - event.getEventTime();
+    handler.postDelayed(holdTimeout, Math.max(0, delayMs));
+  }
+
+  private void cancelHoldTimeout() {
+    handler.removeCallbacks(holdTimeout);
+    if (holdEvent != null) {
+      holdEvent.recycle();
+      holdEvent = null;
+    }
+    holdEventId = null;
+  }
+
+  private void onHoldTimeout() {
+    MotionEvent event = holdEvent;
+    EventId eventId = holdEventId;
+    holdEvent = null;
+    holdEventId = null;
+    if (event == null) {
+      return;
+    }
+    if (getState() == STATE_GESTURE_STARTED
+        && strokeMatches(strokeWith(event.getX(), event.getY()))) {
+      gestureMotionEventLog(VERBOSE, "Completed with a hold before the lift.");
+      completeGestureAs(holdGestureId, eventId, event);
+    }
+    event.recycle();
+  }
+
+  /**
+   * The stroke so far, ending at ({@code x}, {@code y}) when that is a sample apart from the last
+   * point, as the lift samples it.
+   */
   private ArrayList<PointF> strokeWith(float x, float y) {
     ArrayList<PointF> stroke = new ArrayList<>(strokeBuffer);
-    stroke.add(new PointF(x, y));
+    if (Math.abs(x - previousGestureX) >= minPixelsBetweenSamplesX
+        || Math.abs(y - previousGestureY) >= minPixelsBetweenSamplesY) {
+      stroke.add(new PointF(x, y));
+    }
     return stroke;
   }
 

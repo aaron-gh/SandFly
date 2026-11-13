@@ -125,10 +125,35 @@ class SwipeAndHoldTest {
   }
 
   @Test
-  fun swipeRightThenRest_doesNothingUntilTheLift() {
+  fun swipeRightThenRest_isRightAndHoldBeforeTheLift() {
+    send(MotionEvent.ACTION_DOWN)
+    move(2f, 0f)
+    rest(hold)
+    assertEquals(listOf(HOLD_RIGHT), completed)
+  }
+
+  @Test
+  fun swipeRightThenRestWithoutMoves_isRightAndHoldBeforeTheLift() {
+    send(MotionEvent.ACTION_DOWN)
+    move(2f, 0f)
+    waitMs(hold)
+    assertEquals(listOf(HOLD_RIGHT), completed)
+  }
+
+  @Test
+  fun liftingAfterTheHold_reportsItOnce() {
     send(MotionEvent.ACTION_DOWN)
     move(2f, 0f)
     rest(hold * 4)
+    send(MotionEvent.ACTION_UP)
+    assertEquals(listOf(HOLD_RIGHT), completed)
+  }
+
+  @Test
+  fun swipeRightThenRestShorterThanTheHold_isNothingYet() {
+    send(MotionEvent.ACTION_DOWN)
+    move(2f, 0f)
+    rest(hold - 100)
     assertTrue(completed.isEmpty())
   }
 
@@ -142,17 +167,28 @@ class SwipeAndHoldTest {
   }
 
   @Test
-  fun rightThenPauseThenLeft_isRightThenLeft() {
+  fun rightThenPauseShorterThanTheHoldThenLeft_isRightThenLeft() {
     send(MotionEvent.ACTION_DOWN)
     move(2f, 0f)
-    rest(hold + 50)
+    rest(hold - 100)
     move(-2f, 0f)
     send(MotionEvent.ACTION_UP)
     assertEquals(listOf(GESTURE_SWIPE_RIGHT_AND_LEFT), completed)
   }
 
   @Test
-  fun movingOnAfterALongRest_isNoGesture() {
+  fun rightThenPauseForTheHoldThenLeft_isRightAndHold() {
+    send(MotionEvent.ACTION_DOWN)
+    move(2f, 0f)
+    rest(hold + 50)
+    move(-2f, 0f)
+    send(MotionEvent.ACTION_UP)
+    assertEquals(listOf(HOLD_RIGHT), completed)
+  }
+
+  @Test
+  fun unassignedHold_movingOnAfterALongRestIsNoGesture() {
+    assigned = false
     send(MotionEvent.ACTION_DOWN)
     move(2f, 0f)
     rest(1_000L)
@@ -178,7 +214,16 @@ class SwipeAndHoldTest {
     move(-2f, 0f)
     move(0f, -2f)
     rest(hold)
-    send(MotionEvent.ACTION_UP)
+    assertEquals(listOf(HOLD_LEFT_UP), completed)
+  }
+
+  @Test
+  fun leftThenUpThenALongerHoldTime_isTheAngleHold() {
+    GestureConfiguration.setSwipeHoldTimeMs(500)
+    send(MotionEvent.ACTION_DOWN)
+    move(-2f, 0f)
+    move(0f, -2f)
+    rest(500)
     assertEquals(listOf(HOLD_LEFT_UP), completed)
   }
 
@@ -208,7 +253,6 @@ class SwipeAndHoldTest {
     send(MotionEvent.ACTION_DOWN)
     move(2f, 0f)
     rest(100)
-    send(MotionEvent.ACTION_UP)
     assertEquals(listOf(HOLD_RIGHT), completed)
   }
 
