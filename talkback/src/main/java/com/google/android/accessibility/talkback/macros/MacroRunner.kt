@@ -29,7 +29,9 @@ import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import com.google.android.accessibility.talkback.Feedback
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.TalkBackService
+import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionInfo
 import com.google.android.accessibility.talkback.gesture.OpenAppActions
+import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils
 import com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.libraries.accessibility.utils.log.LogUtils
@@ -237,7 +239,8 @@ object MacroRunner {
             later(STEP_GAP_MS) { runStep(index + 1) }
           }
           is Macros.TypeText -> typeText(index, step, SystemClock.uptimeMillis() + FIELD_TIMEOUT_MS)
-          is Macros.Tap -> tap(index, step)
+          is Macros.Tap -> findItem(index, step, step.label, step.regex, step.timeoutMillis)
+          is Macros.FocusItem -> findItem(index, step, step.label, step.regex, step.timeoutMillis)
         }
       } catch (e: RuntimeException) {
         fail(index, step, e.toString())
@@ -378,47 +381,71 @@ object MacroRunner {
       return true
     }
 
-    private fun tap(index: Int, step: Macros.Tap) {
-      val label = LabelMatch(step.label, step.regex)
-      if (!label.isUsable) {
+    /** Runs the Tap item or Focus item [step], whose item has [label], waiting up to [timeoutMillis]. */
+    private fun findItem(index: Int, step: Macros.Step, label: String, regex: Boolean, timeoutMillis: Long) {
+      val match = LabelMatch(label, regex)
+      if (!match.isUsable) {
         fail(index, step, "regular expression not usable", found = true)
         return
       }
-      val deadline = SystemClock.uptimeMillis() + step.timeoutMillis
-      searchHandler().post { search(index, step, label, deadline) }
+      val deadline = SystemClock.uptimeMillis() + timeoutMillis
+      searchHandler().post { search(index, step, match, deadline) }
     }
 
-    /** Looks for the item of [step] by [label] on the search thread until [deadline], and clicks it. */
-    private fun search(index: Int, step: Macros.Tap, label: LabelMatch, deadline: Long) {
+    /**
+     * Looks for the item of [step], a Tap item or Focus item step, by [label] on the search thread
+     * until [deadline], and clicks it or moves accessibility focus to it.
+     */
+    private fun search(index: Int, step: Macros.Step, label: LabelMatch, deadline: Long) {
       if (finished) return
-      val clicked =
+      val field = (step as? Macros.Tap)?.field ?: (step as? Macros.FocusItem)?.field
+      // The item to focus, whether the click was performed, or null when the item isn't there.
+      val result: Any? =
         try {
-          val node = findItem(service, label, field = step.field)
+          val node = findItem(service, label, field = field)
           // The run can be stopped while the windows are read.
           if (finished) return
-          node?.let { click(it) }
+          node?.let { if (step is Macros.FocusItem) focusTarget(it) else click(it) }
         } catch (e: RuntimeException) {
           LogUtils.w(TAG, "Cannot read the windows: %s", e)
           null
         }
       when {
-        clicked == true -> mainHandler.post { ifActive { later(STEP_GAP_MS) { runStep(index + 1) } } }
-        clicked == false -> mainHandler.post { ifActive { fail(index, step, "click not performed", found = true) } }
+        result is AccessibilityNodeInfoCompat -> mainHandler.post { ifActive { focus(index, step, result) } }
+        result == true -> mainHandler.post { ifActive { later(STEP_GAP_MS) { runStep(index + 1) } } }
+        result == false -> mainHandler.post { ifActive { fail(index, step, "click not performed", found = true) } }
         SystemClock.uptimeMillis() + POLL_MS <= deadline ->
           searchHandler?.postDelayed({ search(index, step, label, deadline) }, POLL_MS)
         else -> mainHandler.post { ifActive { fail(index, step, "item not found") } }
       }
     }
 
+    /** Moves accessibility focus to [node] through the pipeline, which speaks it, and goes on. */
+    private fun focus(index: Int, step: Macros.Step, node: AccessibilityNodeInfoCompat) {
+      val info = FocusActionInfo.builder().setSourceAction(FocusActionInfo.UNKNOWN).build()
+      val moved =
+        service.feedbackReturner?.returnFeedback(
+          EVENT_ID_UNTRACKED,
+          Feedback.focus(node, info).setForceRefocus(true),
+        ) == true
+      if (moved) {
+        later(STEP_GAP_MS) { runStep(index + 1) }
+      } else {
+        fail(index, step, "focus not moved", found = true)
+      }
+    }
+
     /**
-     * Says that [step], at [index], failed, or for a Tap step not [found], that its item isn't
-     * there, and stops. Logs [reason] at warning level, which problem reports include by default.
+     * Says that [step], at [index], failed, or for a Tap item or Focus item step not [found], that
+     * its item isn't there, and stops. Logs [reason] at warning level, which problem reports include
+     * by default.
      */
     private fun fail(index: Int, step: Macros.Step, reason: String, found: Boolean = false) {
       Log.w(TAG, "Macro stopped at step ${index + 1} of ${macro.steps.size}: ${step::class.simpleName}, $reason")
+      val itemLabel = (step as? Macros.Tap)?.label ?: (step as? Macros.FocusItem)?.label
       val text =
-        if (step is Macros.Tap && !found) {
-          service.getString(R.string.macro_item_not_found, step.label)
+        if (itemLabel != null && !found) {
+          service.getString(R.string.macro_item_not_found, itemLabel)
         } else {
           service.getString(R.string.macro_step_failed, Macros.describe(service, step))
         }
@@ -629,6 +656,18 @@ object MacroRunner {
       candidate = item.parent
     }
     return false
+  }
+
+  /**
+   * [node], or the nearest item above it that SandFly moves accessibility focus to, or [node] when
+   * there is none. Called on the search thread.
+   */
+  private fun focusTarget(node: AccessibilityNodeInfo): AccessibilityNodeInfoCompat {
+    val compat = AccessibilityNodeInfoCompat.wrap(node)
+    return AccessibilityNodeInfoUtils.getSelfOrMatchingAncestor(
+      compat,
+      AccessibilityNodeInfoUtils.FILTER_SHOULD_FOCUS,
+    ) ?: compat
   }
 
   /** Clicks [node], or the nearest item above it that can be clicked. Returns whether it did. */

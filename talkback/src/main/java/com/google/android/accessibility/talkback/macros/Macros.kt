@@ -62,6 +62,17 @@ object Macros {
     val field: Field? = null,
   ) : Step()
 
+  /**
+   * Moves accessibility focus to the item a [Tap] with the same values would click, which is then
+   * spoken, waiting up to [timeoutMillis] for it to appear.
+   */
+  data class FocusItem(
+    val label: String,
+    val timeoutMillis: Long = DEFAULT_TAP_TIMEOUT_MS,
+    val regex: Boolean = false,
+    val field: Field? = null,
+  ) : Step()
+
   /** Opens the app of the [OpenAppActions] value [value]. */
   data class OpenApp(val value: String) : Step()
 
@@ -256,6 +267,7 @@ object Macros {
   private const val TYPE_COMMAND = "command"
   private const val TYPE_WAIT = "wait"
   private const val TYPE_TAP = "tap"
+  private const val TYPE_FOCUS_ITEM = "focus_item"
   private const val TYPE_OPEN_APP = "open_app"
   private const val TYPE_TYPE_TEXT = "type_text"
   private const val TYPE_IF = "if"
@@ -372,6 +384,8 @@ object Macros {
         Commands.label(context, step.value) ?: context.getString(R.string.macro_step_unavailable)
       is Wait -> waitText(context, step.millis)
       is Tap -> context.getString(R.string.macro_step_tap_value, labelText(context, step.label, step.regex, step.field))
+      is FocusItem ->
+        context.getString(R.string.macro_step_focus_value, labelText(context, step.label, step.regex, step.field))
       is OpenApp ->
         OpenAppActions.label(context, step.value) ?: context.getString(R.string.macro_step_unavailable)
       is TypeText ->
@@ -789,6 +803,13 @@ object Macros {
           .put("timeout", step.timeoutMillis)
           .apply { if (step.regex) put("regex", true) }
           .apply { step.field?.let { put("field", it.key) } }
+      is FocusItem ->
+        JSONObject()
+          .put("type", TYPE_FOCUS_ITEM)
+          .put("label", step.label)
+          .put("timeout", step.timeoutMillis)
+          .apply { if (step.regex) put("regex", true) }
+          .apply { step.field?.let { put("field", it.key) } }
       is OpenApp -> JSONObject().put("type", TYPE_OPEN_APP).put("app", step.value)
       is TypeText ->
         JSONObject().put("type", TYPE_TYPE_TEXT).put("text", step.text).put("replace", step.replace)
@@ -919,6 +940,15 @@ object Macros {
       TYPE_TAP ->
         item.optString("label").takeIf { it.isNotBlank() }?.let {
           Tap(
+            it,
+            item.optLong("timeout", DEFAULT_TAP_TIMEOUT_MS).coerceIn(MIN_TAP_TIMEOUT_MS, MAX_TAP_TIMEOUT_MS),
+            item.optBoolean("regex", false),
+            Field.of(item.optString("field")),
+          )
+        }
+      TYPE_FOCUS_ITEM ->
+        item.optString("label").takeIf { it.isNotBlank() }?.let {
+          FocusItem(
             it,
             item.optLong("timeout", DEFAULT_TAP_TIMEOUT_MS).coerceIn(MIN_TAP_TIMEOUT_MS, MAX_TAP_TIMEOUT_MS),
             item.optBoolean("regex", false),

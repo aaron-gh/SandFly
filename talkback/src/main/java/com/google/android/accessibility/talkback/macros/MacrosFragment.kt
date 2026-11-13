@@ -402,6 +402,7 @@ class MacroFragment : MacroEditorFragment() {
       listOf(
         R.string.macro_step_command,
         R.string.macro_step_tap,
+        R.string.macro_step_focus,
         R.string.macro_step_type,
         R.string.shortcut_title_open_app,
         R.string.macro_step_wait,
@@ -425,6 +426,7 @@ class MacroFragment : MacroEditorFragment() {
       when (kinds[chosen]) {
         R.string.macro_step_command -> chooseCommand(add)
         R.string.macro_step_tap -> askTap(null, add)
+        R.string.macro_step_focus -> askTap(null, add, focus = true)
         R.string.macro_step_type -> askTypeText(null, add)
         R.string.shortcut_title_open_app -> chooseOpenApp(add)
         R.string.macro_step_wait -> askWait(null, add)
@@ -452,6 +454,8 @@ class MacroFragment : MacroEditorFragment() {
       is Macros.RunCommand -> chooseCommand(replace)
       is Macros.Wait -> askWait(step, replace)
       is Macros.Tap -> askTap(step, replace)
+      is Macros.FocusItem ->
+        askTap(Macros.Tap(step.label, step.timeoutMillis, step.regex, step.field), replace, focus = true)
       is Macros.OpenApp -> chooseOpenApp(replace)
       is Macros.TypeText -> askTypeText(step, replace)
       is Macros.RepeatTimes -> askTimes(step.count) { placeStep(index, Macros.RepeatTimes(it)) }
@@ -535,10 +539,11 @@ class MacroFragment : MacroEditorFragment() {
     }
   }
 
-  private fun askTap(step: Macros.Tap?, then: (Macros.Step) -> Unit) {
+  /** Asks for the values of a Tap item step, or of a Focus item step for [focus]. */
+  private fun askTap(step: Macros.Tap?, then: (Macros.Step) -> Unit, focus: Boolean = false) {
     val fields = fieldChoice(step?.field)
     askText(
-      getString(R.string.macro_step_tap),
+      getString(if (focus) R.string.macro_step_focus else R.string.macro_step_tap),
       text = step?.label.orEmpty(),
       hint = getString(R.string.macro_tap_label),
       secondHint = getString(R.string.macro_tap_timeout),
@@ -557,7 +562,11 @@ class MacroFragment : MacroEditorFragment() {
           val millis =
             Macros.parseSeconds(timeout)?.coerceIn(Macros.MIN_TAP_TIMEOUT_MS, Macros.MAX_TAP_TIMEOUT_MS)
               ?: Macros.DEFAULT_TAP_TIMEOUT_MS
-          then(Macros.Tap(label, millis, regex, chosenField(fields)))
+          val field = chosenField(fields)
+          then(
+            if (focus) Macros.FocusItem(label, millis, regex, field)
+            else Macros.Tap(label, millis, regex, field)
+          )
           null
         }
       }

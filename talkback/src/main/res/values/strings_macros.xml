@@ -30,10 +30,14 @@
     <string name="macro_step_wait">Wait</string>
     <!-- Kind of macro step, and the title of its dialog: finds an item on screen by its text and activates it. [CHAR LIMIT=40] -->
     <string name="macro_step_tap">Tap item</string>
+    <!-- Kind of macro step, and the title of its dialog: finds an item on screen by its text and moves the screen reader's focus to it, which speaks it, without activating it. [CHAR LIMIT=40] -->
+    <string name="macro_step_focus">Focus item</string>
     <!-- Kind of macro step, and the title of its dialog: types text in the edit field that has focus. [CHAR LIMIT=40] -->
     <string name="macro_step_type">Type text</string>
     <!-- A Tap item step in a macro's list of steps. label is the text of the item it activates. [CHAR LIMIT=NONE] -->
     <string name="macro_step_tap_value">Tap <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <!-- A Focus item step in a macro's list of steps. label is the text of the item it moves the screen reader's focus to. [CHAR LIMIT=NONE] -->
+    <string name="macro_step_focus_value">Focus <xliff:g id="label" example="Send">%1$s</xliff:g></string>
     <!-- A Type text step in a macro's list of steps. text is the text it types. [CHAR LIMIT=NONE] -->
     <string name="macro_step_type_value">Type <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
     <!-- A Type text step that replaces the text of the field, in a macro's list of steps. text is the text it types. [CHAR LIMIT=NONE] -->

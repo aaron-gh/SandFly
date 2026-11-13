@@ -23,6 +23,7 @@ import com.google.android.accessibility.talkback.commands.CommandMenus
 import com.google.android.accessibility.talkback.commands.Commands
 import com.google.android.accessibility.talkback.gesture.AppGestures
 import com.google.android.accessibility.talkback.gesture.GestureProfiles
+import com.google.android.accessibility.talkback.macros.Macros.FocusItem
 import com.google.android.accessibility.talkback.macros.Macros.Macro
 import com.google.android.accessibility.talkback.macros.Macros.OpenApp
 import com.google.android.accessibility.talkback.macros.Macros.RunCommand
@@ -77,6 +78,8 @@ class MacrosTest {
           Tap("Reply.*Anna", 5_000, regex = true),
           Tap("send", 5_000, field = Macros.Field.RESOURCE_ID),
           Tap("^Reply", 5_000, regex = true, field = Macros.Field.DESCRIPTION),
+          FocusItem("Send", 5_000),
+          FocusItem("^Reply", 5_000, regex = true, field = Macros.Field.DESCRIPTION),
           OpenApp(gmail),
           TypeText("On my way", replace = true),
           TypeText("Thanks"),
@@ -101,6 +104,8 @@ class MacrosTest {
         .put(JSONObject().put("type", "wait").put("ms", -5))
         .put(JSONObject().put("type", "tap").put("label", "OK").put("timeout", 1))
         .put(JSONObject().put("type", "tap").put("label", "  "))
+        .put(JSONObject().put("type", "focus_item").put("label", "OK").put("timeout", 99_999_999L))
+        .put(JSONObject().put("type", "focus_item").put("label", ""))
         .put(JSONObject().put("type", "open_app").put("app", "com.example"))
         .put(JSONObject().put("type", "type_text").put("text", ""))
         .put(JSONObject().put("type", "swipe"))
@@ -109,7 +114,12 @@ class MacrosTest {
     val json =
       JSONArray().put(JSONObject().put("id", "a").put("name", "A").put("steps", steps)).toString()
     assertEquals(
-      listOf(Wait(Macros.MAX_WAIT_MS), Wait(0), Tap("OK", Macros.MIN_TAP_TIMEOUT_MS)),
+      listOf(
+        Wait(Macros.MAX_WAIT_MS),
+        Wait(0),
+        Tap("OK", Macros.MIN_TAP_TIMEOUT_MS),
+        FocusItem("OK", Macros.MAX_TAP_TIMEOUT_MS),
+      ),
       Macros.fromJson(json).single().steps,
     )
   }
@@ -204,6 +214,8 @@ class MacrosTest {
     assertEquals("Wait 500 milliseconds", Macros.describe(context, Wait(500)))
     assertEquals("Tap Send", Macros.describe(context, Tap("Send")))
     assertEquals("Tap ^Re (regular expression)", Macros.describe(context, Tap("^Re", regex = true)))
+    assertEquals("Focus Send", Macros.describe(context, FocusItem("Send")))
+    assertEquals("Focus ^Re (regular expression)", Macros.describe(context, FocusItem("^Re", regex = true)))
     assertEquals("Type Hello", Macros.describe(context, TypeText("Hello")))
     assertEquals("Replace text with Hello", Macros.describe(context, TypeText("Hello", replace = true)))
   }
@@ -313,6 +325,10 @@ class MacrosTest {
     assertEquals(
       "Tap ^Re (Description, regular expression)",
       Macros.describe(context, Tap("^Re", regex = true, field = Macros.Field.DESCRIPTION)),
+    )
+    assertEquals(
+      "Focus send (Resource ID)",
+      Macros.describe(context, FocusItem("send", field = Macros.Field.RESOURCE_ID)),
     )
   }
 
