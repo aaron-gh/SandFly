@@ -238,6 +238,11 @@ data class ScriptManifest(
   val json: String,
   /** Whether the script is loaded only to run a command, and unloaded when it has finished. */
   val onDemand: Boolean = false,
+  /**
+   * Whether the user can keep the script loaded while the screen is off, with a switch on its
+   * page.
+   */
+  val keepLoaded: Boolean = false,
 ) {
   val isGlobal: Boolean
     get() = apps.isEmpty()

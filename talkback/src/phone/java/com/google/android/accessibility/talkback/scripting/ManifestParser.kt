@@ -61,7 +61,18 @@ class ManifestParser(private val strict: Boolean) {
       navigation = navigation(obj.optJSONArray("navigation"), permissions),
       json = obj.toString(),
       onDemand = obj.optBoolean("onDemand", false),
-    ).also { if (it.onDemand) checkOnDemand(it) }
+      keepLoaded = obj.optBoolean("keepLoaded", false),
+    ).also {
+      if (it.onDemand) checkOnDemand(it)
+      if (it.keepLoaded) checkKeepLoaded(it)
+    }
+  }
+
+  /** A script for some apps is unloaded when they leave, whatever the screen does. */
+  private fun checkKeepLoaded(manifest: ScriptManifest) {
+    manifestCheck(manifest.isGlobal && !manifest.onDemand) {
+      "A keepLoaded script can't have apps or onDemand"
+    }
   }
 
   /** An unloaded script can't apply rules, take gestures or keys, or answer its settings page. */

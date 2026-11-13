@@ -42,6 +42,8 @@ class ScriptManager(
   private val activation: ScriptActivation,
   /** Called on the main thread when no onDemand script is loaded or about to be any more. */
   private val onDemandEnded: () -> Unit,
+  /** Whether the screen is on. While it is off, only scripts kept loaded are loaded. */
+  private var screenOn: Boolean = true,
 ) : ScriptHost, ScriptStore.Listener {
 
   val store: ScriptStore = ScriptStore.get(service)
@@ -314,6 +316,18 @@ class ScriptManager(
   val hasOnDemandScripts: Boolean
     get() = synchronized(onDemand) { onDemand.isNotEmpty() }
 
+  /**
+   * Loads only the scripts kept loaded while the screen is off, and the others again once it is
+   * on. Called on the main thread.
+   */
+  fun setScreenOn(on: Boolean) {
+    if (on == screenOn) return
+    screenOn = on
+    // onDemand scripts are unloaded with the others.
+    if (!on) synchronized(onDemand) { onDemand.clear() }
+    evaluate()
+  }
+
   private fun commandStarted(id: String) {
     synchronized(onDemand) { onDemand.computeIfPresent(id) { _, runs -> (runs - 1).coerceAtLeast(0) } }
     scheduleOnDemandRelease()
@@ -475,10 +489,7 @@ class ScriptManager(
     rules.clearCache()
     val info = activation.appInfo
     val demanded = synchronized(onDemand) { onDemand.keys.toSet() }
-    val wanted =
-      store.all().filter {
-        if (it.manifest.onDemand) it.enabled && it.id in demanded else activation.wants(it)
-      }
+    val wanted = ScriptLoading.wanted(store.all(), screenOn, demanded, activation::wants)
     val version = ++speechStateVersion
     onScriptThread {
       apply(wanted, info)

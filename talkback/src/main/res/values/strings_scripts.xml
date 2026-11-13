@@ -2,6 +2,8 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Title of the settings screen that lists installed scripts. [CHAR LIMIT=40] -->
     <string name="title_pref_scripts">Scripts</string>
+    <!-- Switch on a script's page that keeps the script loaded, with its timers, while the screen is off. Shown only for scripts that allow it. [CHAR LIMIT=60] -->
+    <string name="script_keep_running">Keep running with the screen off</string>
     <!-- Summary of the Scripts settings entry. [CHAR LIMIT=NONE] -->
     <string name="summary_pref_scripts">Change how SandFly works in apps</string>
     <!-- Action that imports a script file. [CHAR LIMIT=40] -->

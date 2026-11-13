@@ -37,6 +37,12 @@ class ScriptDetailFragment : ScriptScreenFragment() {
     screen.switch(getString(R.string.script_enabled), null, script.enabled) {
       store.setEnabled(scriptId, it)
     }
+    // Only the user turns this on: the manifest only offers it.
+    if (manifest.keepLoaded) {
+      screen.switch(getString(R.string.script_keep_running), null, script.keepRunning) {
+        store.setKeepRunning(scriptId, it)
+      }
+    }
     screen.info(manifest.name, context.scriptAbout(manifest))
     manifest.compatibilityWarning(context)?.let {
       screen.info(getString(R.string.script_compatibility_title), it)
