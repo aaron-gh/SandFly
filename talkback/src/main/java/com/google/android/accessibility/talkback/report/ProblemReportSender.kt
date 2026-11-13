@@ -186,7 +186,9 @@ object ProblemReportSender {
             if (withLog) report.copy(log = logWithCrash(appContext, logSnapshot.await(snapshot)))
             else report,
           )
-        } catch (e: RuntimeException) {
+        } catch (e: Throwable) {
+          // Building the log copies up to 400,000 characters several times, which can run out of
+          // memory on a watch.
           LogUtils.e(TAG, "Report not sent: %s", e)
           Result.NOT_SENT to null
         }
@@ -213,7 +215,7 @@ object ProblemReportSender {
       val (result, answer) =
         try {
           post(appContext, REPLY_URL, JSONObject().put("token", token).put("body", body))
-        } catch (e: RuntimeException) {
+        } catch (e: Throwable) {
           LogUtils.e(TAG, "Reply not sent: %s", e)
           Result.NOT_SENT to null
         }

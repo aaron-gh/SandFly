@@ -46,7 +46,9 @@ constructor(
               RadioButton(
                 selected = entryValues[index] == value,
                 onSelect = {
-                  setValueIndex(index)
+                  if (callChangeListener(entryValues[index].toString())) {
+                    setValueIndex(index)
+                  }
                   dialogOpened = false
                 },
                 modifier =

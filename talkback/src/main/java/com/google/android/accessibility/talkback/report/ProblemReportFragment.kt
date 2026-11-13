@@ -192,10 +192,19 @@ class ProblemReportFragment : TalkbackBaseFragment(R.xml.problem_report_preferen
       }
       shown?.apply {
         showSending()
-        if (result == Result.SENT && draftId == id) parentFragmentManager.popBackStack()
+        if (result == Result.SENT && draftId == id) close()
       }
     }
     showSending()
+  }
+
+  /** Leaves the form. On a watch, the form is the first screen of an activity of its own. */
+  private fun close() {
+    if (parentFragmentManager.backStackEntryCount > 0) {
+      parentFragmentManager.popBackStack()
+    } else {
+      activity?.finish()
+    }
   }
 
   private fun confirmDelete() {
@@ -203,7 +212,7 @@ class ProblemReportFragment : TalkbackBaseFragment(R.xml.problem_report_preferen
       .setTitle(R.string.dialog_title_report_delete_draft)
       .setPositiveButton(R.string.button_report_delete) { _, _ ->
         store.deleteDraft(draftId)
-        parentFragmentManager.popBackStack()
+        close()
       }
       .setNegativeButton(android.R.string.cancel) { dialog, _ -> dialog.dismiss() }
       .setCancelable(true)
