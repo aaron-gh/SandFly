@@ -19,6 +19,7 @@ package com.google.android.accessibility.talkback.eventprocessor
 import android.media.AudioManager.STREAM_MUSIC
 import android.media.AudioManager.STREAM_RING
 import com.google.android.accessibility.talkback.eventprocessor.OneUiVolumeKeys.Companion.isAccessibilityStreamActive
+import com.google.android.accessibility.talkback.eventprocessor.OneUiVolumeKeys.Companion.keepsFromAccessibilityStream
 import com.google.android.accessibility.talkback.eventprocessor.OneUiVolumeKeys.Companion.streamWithoutAccessibilityAudio
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
@@ -49,6 +50,41 @@ class OneUiVolumeKeysTest {
     assertFalse(
       isAccessibilityStreamActive(playing = false, stoppedAt = Long.MIN_VALUE, now = 100L)
     )
+  }
+
+  @Test
+  fun playing_keptByDefault() {
+    assertTrue(keepsFromAccessibilityStream(true, Long.MIN_VALUE, 100_000L, false))
+  }
+
+  @Test
+  fun playing_speechVolumeWhileSpeaking_notKept() {
+    assertFalse(keepsFromAccessibilityStream(true, Long.MIN_VALUE, 100_000L, true))
+  }
+
+  @Test
+  fun playingAgainAfterStop_speechVolumeWhileSpeaking_notKept() {
+    assertFalse(keepsFromAccessibilityStream(true, 10_000L, 10_500L, true))
+  }
+
+  @Test
+  fun justStopped_speechVolumeWhileSpeaking_kept() {
+    assertTrue(keepsFromAccessibilityStream(false, 10_000L, 11_000L, true))
+  }
+
+  @Test
+  fun justStopped_keptByDefault() {
+    assertTrue(keepsFromAccessibilityStream(false, 10_000L, 11_000L, false))
+  }
+
+  @Test
+  fun stoppedLongAgo_speechVolumeWhileSpeaking_notKept() {
+    assertFalse(keepsFromAccessibilityStream(false, 10_000L, 12_000L, true))
+  }
+
+  @Test
+  fun neverPlayed_notKept() {
+    assertFalse(keepsFromAccessibilityStream(false, Long.MIN_VALUE, 100L, false))
   }
 
   @Test

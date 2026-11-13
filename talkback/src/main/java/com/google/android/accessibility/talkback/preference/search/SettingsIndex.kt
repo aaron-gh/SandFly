@@ -43,6 +43,7 @@ import com.google.android.accessibility.talkback.commands.Commands
 import com.google.android.accessibility.talkback.commands.CommandMenuFragment
 import com.google.android.accessibility.talkback.commands.CommandsFragment
 import com.google.android.accessibility.talkback.distribution.Distribution
+import com.google.android.accessibility.talkback.eventprocessor.OneUiVolumeKeys
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader
 import com.google.android.accessibility.talkback.gesture.GestureLayout
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping
@@ -413,6 +414,12 @@ object SettingsIndex {
 
     // TypingFragment: shown while a physical keyboard is connected.
     hideIf(!InputDeviceMonitor(context).hasPhysicalKeyboard(), R.string.pref_physical_keyboard_key)
+
+    // VolumeKeysFragment.
+    hideIf(
+      !OneUiVolumeKeys.isSupported(),
+      R.string.pref_volume_keys_speech_volume_while_speaking_key,
+    )
 
     // SoundAndVibrationFragment.
     hideIf(Build.VERSION.SDK_INT < Build.VERSION_CODES.S, R.string.pref_speakerphone_away_from_ear_key)

@@ -34,7 +34,8 @@ import com.google.android.accessibility.utils.output.FailoverTextToSpeech
  * Volume key presses on One UI while accessibility audio plays. With no suggested stream, One UI
  * adjusts the accessibility stream while it is active and for 1 s after it stops, so speech and the
  * spoken volume itself keep media volume from changing. These presses are kept from Android and
- * adjust the stream One UI uses when accessibility audio is not active.
+ * adjust the stream One UI uses when accessibility audio is not active. With
+ * [speechVolumeWhileSpeaking], presses while accessibility audio plays are left to One UI.
  */
 class OneUiVolumeKeys(
   private val context: Context,
@@ -48,6 +49,9 @@ class OneUiVolumeKeys(
   private var playing = false
   private var stoppedAt = NEVER
 
+  /** Volume keys > Volume keys change speech volume while speaking. */
+  var speechVolumeWhileSpeaking = false
+
   private val playback =
     object : AudioManager.AudioPlaybackCallback() {
       override fun onPlaybackConfigChanged(configs: MutableList<AudioPlaybackConfiguration>) {
@@ -57,7 +61,7 @@ class OneUiVolumeKeys(
 
   fun start() {
     val audio = audioManager ?: return
-    if (started || !Build.MANUFACTURER.equals(SAMSUNG, ignoreCase = true)) return
+    if (started || !isSupported()) return
     started = true
     audio.registerAudioPlaybackCallback(playback, handler)
     onPlaybackChanged(audio.activePlaybackConfigurations)
@@ -109,13 +113,19 @@ class OneUiVolumeKeys(
 
   /**
    * The stream to suggest to Android for a press now: [AudioManager.USE_DEFAULT_STREAM_TYPE] unless
-   * One UI would adjust the accessibility stream because of speech and sounds.
+   * One UI would adjust the accessibility stream because of speech and sounds, and that press is
+   * not left to it.
    */
   fun suggestedStream(): Int {
     if (
       !started ||
         !FailoverTextToSpeech.shouldUseAccessibilityStream(context) ||
-        !isAccessibilityStreamActive(playing, stoppedAt, SystemClock.uptimeMillis())
+        !keepsFromAccessibilityStream(
+          playing,
+          stoppedAt,
+          SystemClock.uptimeMillis(),
+          speechVolumeWhileSpeaking,
+        )
     ) {
       return AudioManager.USE_DEFAULT_STREAM_TYPE
     }
@@ -160,11 +170,33 @@ class OneUiVolumeKeys(
     private const val ACTIVE_AFTER_STOP_MS = 1_500L
     private const val NEVER = Long.MIN_VALUE
 
+    /** Whether the device runs One UI, where presses are redirected. */
+    @JvmStatic fun isSupported(): Boolean = Build.MANUFACTURER.equals(SAMSUNG, ignoreCase = true)
+
     /** Whether One UI counts the accessibility stream as active at [now]. */
     @VisibleForTesting
     @JvmStatic
     fun isAccessibilityStreamActive(playing: Boolean, stoppedAt: Long, now: Long): Boolean =
       playing || (stoppedAt != NEVER && now - stoppedAt < ACTIVE_AFTER_STOP_MS)
+
+    /**
+     * Whether a press at [now] is kept from the accessibility stream. With
+     * [speechVolumeWhileSpeaking], presses while accessibility audio plays are not, and only those
+     * in the time after it stops are.
+     */
+    @VisibleForTesting
+    @JvmStatic
+    fun keepsFromAccessibilityStream(
+      playing: Boolean,
+      stoppedAt: Long,
+      now: Long,
+      speechVolumeWhileSpeaking: Boolean,
+    ): Boolean =
+      if (playing) {
+        !speechVolumeWhileSpeaking
+      } else {
+        isAccessibilityStreamActive(playing = false, stoppedAt, now)
+      }
 
     /** The stream One UI adjusts for a press when no stream is active. */
     @VisibleForTesting
