@@ -17,6 +17,7 @@
 package com.google.android.accessibility.talkback.keyboard
 
 import android.content.Context
+import android.os.Looper
 import android.view.KeyEvent
 import android.view.KeyEvent.KEYCODE_DPAD_DOWN
 import android.view.KeyEvent.KEYCODE_DPAD_LEFT
@@ -33,7 +34,9 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.RuntimeEnvironment
+import org.robolectric.Shadows.shadowOf
 import org.robolectric.annotation.Config
+import java.time.Duration
 
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [34])
@@ -160,11 +163,32 @@ class ArrowKeyNavKeyHandlerTest {
     editingText = true
     assertFalse(down(KEYCODE_DPAD_LEFT))
     assertTrue(performed.isEmpty())
-    assertTrue(down(KEYCODE_DPAD_RIGHT))
-    up(KEYCODE_DPAD_RIGHT)
-    up(KEYCODE_DPAD_LEFT)
+    assertFalse(down(KEYCODE_DPAD_RIGHT))
+    idle(100)
+    assertTrue(performed.isEmpty())
+    idle(400)
+    assertFalse(up(KEYCODE_DPAD_RIGHT))
+    assertFalse(up(KEYCODE_DPAD_LEFT))
     assertEquals(listOf(ArrowKeyNav.TOGGLE), performed)
     assertFalse(ArrowKeyNav.isOn(context))
+  }
+
+  @Test
+  fun editingText_rollingBetweenLeftAndRight_doesNotToggle() {
+    ArrowKeyNav.setOn(context, true)
+    editingText = true
+    assertFalse(down(KEYCODE_DPAD_LEFT))
+    assertFalse(down(KEYCODE_DPAD_RIGHT))
+    idle(100)
+    assertFalse(up(KEYCODE_DPAD_LEFT))
+    idle(1000)
+    assertFalse(up(KEYCODE_DPAD_RIGHT))
+    assertTrue(performed.isEmpty())
+    assertTrue(ArrowKeyNav.isOn(context))
+  }
+
+  private fun idle(millis: Long) {
+    shadowOf(Looper.getMainLooper()).idleFor(Duration.ofMillis(millis))
   }
 
   @Test
