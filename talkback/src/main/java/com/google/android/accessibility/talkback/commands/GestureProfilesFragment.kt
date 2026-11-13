@@ -22,6 +22,8 @@ import androidx.preference.PreferenceGroup
 import com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
 import com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.talkback.backup.ItemFileLauncher
+import com.google.android.accessibility.talkback.backup.ItemFiles
 import com.google.android.accessibility.talkback.gesture.GestureProfiles
 import com.google.android.accessibility.talkback.gesture.SwipesBeforeLift
 import com.google.android.accessibility.talkback.notifications.NotificationCodeFragment
@@ -29,6 +31,8 @@ import com.google.android.accessibility.talkback.preference.base.GestureListPref
 
 /** Gestures > Gesture profiles: the profile in use, and the profiles to add, change or delete. */
 class GestureProfilesFragment : NotificationCodeFragment(R.string.title_pref_gesture_profiles) {
+
+  private val files = ItemFileLauncher(this) { rebuild() }
 
   override fun build(screen: PreferenceGroup) {
     val context = requireContext()
@@ -43,6 +47,14 @@ class GestureProfilesFragment : NotificationCodeFragment(R.string.title_pref_ges
       }
     }
     screen.action(getString(R.string.title_pref_add_gesture_profile)) { add() }
+    if (ItemFileLauncher.isAvailable) {
+      screen.action(getString(R.string.item_file_import)) { files.importFile() }
+      if (profiles.isNotEmpty()) {
+        screen.action(getString(R.string.item_file_export)) {
+          files.export(getString(R.string.title_pref_gesture_profiles)) { ItemFiles.exportGestureProfiles(it) }
+        }
+      }
+    }
     for (profile in profiles) {
       screen.link(profile.name, null, GestureProfileFragment::class.java) {
         putString(GestureProfileFragment.ARG_ID, profile.id)
@@ -74,6 +86,8 @@ class GestureProfilesFragment : NotificationCodeFragment(R.string.title_pref_ges
 
 /** One gesture profile: its name, its place in the list, and what each gesture runs in it. */
 class GestureProfileFragment : NotificationCodeFragment(R.string.title_pref_gesture_profiles) {
+
+  private val files = ItemFileLauncher(this) { rebuild() }
 
   private val id: String by lazy { requireArguments().getString(ARG_ID).orEmpty() }
 
@@ -108,6 +122,11 @@ class GestureProfileFragment : NotificationCodeFragment(R.string.title_pref_gest
     }
     if (index < all.size - 1) {
       screen.action(getString(R.string.voice_profile_move_down)) { move(1) }
+    }
+    if (ItemFileLauncher.isAvailable) {
+      screen.action(getString(R.string.item_file_export)) {
+        files.export(profile.name) { ItemFiles.exportGestureProfiles(it, setOf(id)) }
+      }
     }
     screen.action(getString(R.string.title_pref_delete_gesture_profile)) {
       confirm(getString(R.string.voice_profile_delete_confirm, profile.name), R.string.voice_profile_delete) {

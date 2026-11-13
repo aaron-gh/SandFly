@@ -28,6 +28,7 @@ import android.os.Process
 import android.os.Vibrator
 import androidx.annotation.XmlRes
 import androidx.preference.ListPreference
+import androidx.preference.MultiSelectListPreference
 import androidx.preference.Preference
 import androidx.preference.PreferenceCategory
 import androidx.preference.PreferenceDataStore
@@ -103,7 +104,8 @@ object SettingsIndex {
 
   /**
    * A setting: its [title] and [summary], the titles of the screens and categories that lead to it,
-   * and the screen that has it, opened with [args], where [key] names it.
+   * and the screen that has it, opened with [args], where [key] names it. A list's [choices] are
+   * its values with their names.
    */
   class Entry(
     val title: String,
@@ -112,6 +114,7 @@ object SettingsIndex {
     val screen: String,
     val args: Bundle,
     val key: String?,
+    val choices: List<Pair<String, String>>? = null,
   )
 
   private class Screen(val name: String, @XmlRes val xml: Int, val path: List<String>, val args: Bundle)
@@ -238,7 +241,8 @@ object SettingsIndex {
           if (title == null || !preference.isSelectable) {
             continue
           }
-          entries += Entry(title, summaryOf(preference), path, screen.name, screen.args, preference.key)
+          entries +=
+            Entry(title, summaryOf(preference), path, screen.name, screen.args, preference.key, choicesOf(preference))
           if (preference is PreferenceGroup) {
             add(preference, path + title)
           }
@@ -261,6 +265,18 @@ object SettingsIndex {
       }
     }
     return entries
+  }
+
+  /** The values of a list with their names, or null for other preferences. */
+  private fun choicesOf(preference: Preference): List<Pair<String, String>>? {
+    val (values, names) =
+      when (preference) {
+        is ListPreference -> preference.entryValues to preference.entries
+        is MultiSelectListPreference -> preference.entryValues to preference.entries
+        else -> return null
+      }
+    if (values == null || names == null) return null
+    return values.indices.map { values[it].toString() to (names.getOrNull(it)?.toString() ?: values[it].toString()) }
   }
 
   /**

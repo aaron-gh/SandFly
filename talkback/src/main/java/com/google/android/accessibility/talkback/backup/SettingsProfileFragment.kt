@@ -32,6 +32,8 @@ import com.google.android.accessibility.talkback.preference.search.SettingsSearc
  */
 class SettingsProfileFragment : NotificationCodeFragment(R.string.title_pref_settings_profiles) {
 
+  private val files = ItemFileLauncher(this) { load() }
+
   private val id: String
     get() = arguments?.getString(ARG_ID).orEmpty()
 
@@ -156,6 +158,11 @@ class SettingsProfileFragment : NotificationCodeFragment(R.string.title_pref_set
     }
     if (index < store.profiles().size - 1) {
       screen.action(getString(R.string.voice_profile_move_down)) { move(profile, 1) }
+    }
+    if (ItemFileLauncher.isAvailable) {
+      screen.action(getString(R.string.item_file_export)) {
+        files.export(profile.name) { ItemFiles.exportSettingsProfiles(it, setOf(profile.id)) }
+      }
     }
     screen.action(getString(R.string.voice_profile_delete)) { delete(profile) }
   }

@@ -20,6 +20,8 @@ import android.os.Bundle
 import androidx.preference.PreferenceGroup
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.TalkBackService
+import com.google.android.accessibility.talkback.backup.ItemFileLauncher
+import com.google.android.accessibility.talkback.backup.ItemFiles
 import com.google.android.accessibility.talkback.gesture.AppGestures
 import com.google.android.accessibility.talkback.keyboard.KeyComboModel
 import com.google.android.accessibility.talkback.notifications.NotificationCodeFragment
@@ -31,6 +33,8 @@ import com.google.android.accessibility.talkback.preference.base.KeyboardShortcu
  * which gestures and keyboard shortcuts run other commands.
  */
 class AppGesturesFragment : NotificationCodeFragment(R.string.title_pref_app_gestures) {
+
+  private val files = ItemFileLauncher(this) { rebuild() }
 
   override fun getTitle(): CharSequence =
     getText(
@@ -44,6 +48,14 @@ class AppGesturesFragment : NotificationCodeFragment(R.string.title_pref_app_ges
   override fun build(screen: PreferenceGroup) {
     val apps = AppGestures.read(prefs)
     screen.action(getString(R.string.app_gestures_add_app)) { chooseApp() }
+    if (ItemFileLauncher.isAvailable) {
+      screen.action(getString(R.string.item_file_import)) { files.importFile() }
+      if (apps.isNotEmpty()) {
+        screen.action(getString(R.string.item_file_export)) {
+          files.export(getTitle().toString()) { ItemFiles.exportApps(it) }
+        }
+      }
+    }
     apps.entries
       .sortedBy { it.value.name.lowercase() }
       .forEach { (packageName, app) ->
@@ -72,6 +84,8 @@ class AppGesturesFragment : NotificationCodeFragment(R.string.title_pref_app_ges
 
 /** The gestures and keyboard shortcuts that run other commands in one app. */
 class AppGestureFragment : NotificationCodeFragment(R.string.title_pref_app_gestures) {
+
+  private val files = ItemFileLauncher(this) { rebuild() }
 
   private val packageName: String by lazy { requireArguments().getString(ARG_PACKAGE).orEmpty() }
 
@@ -119,6 +133,11 @@ class AppGestureFragment : NotificationCodeFragment(R.string.title_pref_app_gest
       }
     }
 
+    if (ItemFileLauncher.isAvailable && app != null) {
+      screen.action(getString(R.string.item_file_export)) {
+        files.export(getTitle().toString()) { ItemFiles.exportApps(it, setOf(packageName)) }
+      }
+    }
     screen.action(getString(R.string.app_gestures_remove_app)) {
       AppGestures.write(prefs, AppGestures.read(prefs) - packageName)
       requireActivity().onBackPressedDispatcher.onBackPressed()

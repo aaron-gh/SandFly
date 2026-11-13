@@ -19,13 +19,19 @@ package com.google.android.accessibility.talkback.speechdictionary
 import androidx.annotation.StringRes
 import androidx.preference.PreferenceGroup
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.talkback.backup.ItemFileLauncher
+import com.google.android.accessibility.talkback.backup.ItemFiles
 import com.google.android.accessibility.talkback.notifications.NotificationCodeFragment
 import com.google.android.accessibility.talkback.notifications.Replacement
 import com.google.android.accessibility.talkback.notifications.TextMatch
 
 /** Speech > Speech dictionary: the entries, each with the app it is used in. */
 class SpeechDictionaryFragment :
-  DictionaryFragment(R.string.title_pref_speech_dictionary, R.string.speech_dictionary_not_said) {
+  DictionaryFragment(
+    R.string.title_pref_speech_dictionary,
+    R.string.speech_dictionary_not_said,
+    ItemFiles.Kind.SPEECH_DICTIONARY,
+  ) {
   override fun read(): List<DictionaryEntry> = SpeechDictionary.read(prefs)
 
   override fun write(entries: List<DictionaryEntry>) = SpeechDictionary.write(prefs, entries)
@@ -33,7 +39,11 @@ class SpeechDictionaryFragment :
 
 /** Braille > Braille dictionary: the entries, each with the app it is used in. */
 class BrailleDictionaryFragment :
-  DictionaryFragment(R.string.title_pref_braille_dictionary, R.string.braille_dictionary_not_shown) {
+  DictionaryFragment(
+    R.string.title_pref_braille_dictionary,
+    R.string.braille_dictionary_not_shown,
+    ItemFiles.Kind.BRAILLE_DICTIONARY,
+  ) {
   override fun read(): List<DictionaryEntry> = BrailleDictionary.read(prefs)
 
   override fun write(entries: List<DictionaryEntry>) = BrailleDictionary.write(prefs, entries)
@@ -44,6 +54,7 @@ class SymbolDictionaryFragment :
   DictionaryFragment(
     R.string.title_pref_symbol_dictionary,
     R.string.symbol_dictionary_removed,
+    ItemFiles.Kind.SYMBOL_DICTIONARY,
     findHint = R.string.symbol_dictionary_find,
     replaceHint = R.string.symbol_dictionary_replace_with,
     plainText = true,
@@ -59,13 +70,16 @@ class SymbolDictionaryFragment :
  * Whole words or Regular expression option.
  */
 abstract class DictionaryFragment(
-  @StringRes title: Int,
+  @StringRes private val titleRes: Int,
   @StringRes private val removedText: Int,
+  private val kind: ItemFiles.Kind,
   @StringRes private val findHint: Int = R.string.notification_replace_find,
   @StringRes private val replaceHint: Int = R.string.notification_replace_with,
   private val plainText: Boolean = false,
   private val maxEntries: Int = Int.MAX_VALUE,
-) : NotificationCodeFragment(title) {
+) : NotificationCodeFragment(titleRes) {
+
+  private val files = ItemFileLauncher(this) { rebuild() }
 
   protected abstract fun read(): List<DictionaryEntry>
 
@@ -75,6 +89,14 @@ abstract class DictionaryFragment(
     val entries = read()
     if (entries.size < maxEntries) {
       screen.action(getString(R.string.notification_add_replacement)) { edit(entries, -1) }
+    }
+    if (ItemFileLauncher.isAvailable) {
+      screen.action(getString(R.string.item_file_import)) { files.importFile() }
+      if (entries.isNotEmpty()) {
+        screen.action(getString(R.string.item_file_export)) {
+          files.export(getString(titleRes)) { ItemFiles.exportDictionary(it, kind) }
+        }
+      }
     }
     entries.forEachIndexed { index, entry ->
       val title = describe(entry.replacement)

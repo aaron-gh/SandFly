@@ -87,6 +87,8 @@ android {
     }
     // Robolectric tests read the module's strings.
     testOptions.unitTests.includeAndroidResources = true
+    // The file format reference starts with the description of item files.
+    sourceSets.main.assets.srcDirs += "$rootDir/docs/reference"
     buildFeatures {
         aidl = true
     }

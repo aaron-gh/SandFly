@@ -126,6 +126,34 @@ object CustomKeymaps {
     return keymap
   }
 
+  /**
+   * Replaces the shortcuts of [keymap] with [shortcuts], also those resetting it goes back to, and
+   * its other settings.
+   */
+  fun replace(
+    context: Context,
+    keymap: CustomKeymap,
+    usesSequences: Boolean,
+    sandFlyKey: SandFlyKey,
+    shortcuts: Map<String, KeyCombo>,
+    arrowsNavigate: Boolean,
+  ) {
+    for (prefix in listOf(keymap.persisterPrefix, keymap.originalPersisterPrefix)) {
+      val persister = KeyComboPersister(context, prefix)
+      for (key in persister.keysStartingWith("")) {
+        persister.remove(key)
+      }
+      for ((key, keyCombo) in shortcuts) {
+        persister.saveKeyCombo(key, keyCombo)
+      }
+    }
+    prefs(context).edit {
+      putBoolean(SEQUENCES + keymap.id, usesSequences)
+      putBoolean(ARROWS_NAVIGATE + keymap.id, arrowsNavigate)
+      putString(keymap.sandFlyKeyPref, context.getString(sandFlyKey.valueRes))
+    }
+  }
+
   @JvmStatic
   fun rename(context: Context, keymap: CustomKeymap, name: String) {
     prefs(context).edit { putString(NAME + keymap.id, name) }
