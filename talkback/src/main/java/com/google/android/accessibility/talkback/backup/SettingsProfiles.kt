@@ -475,6 +475,31 @@ object SettingsProfiles {
       ready(context).settings(id)
     }
 
+  /**
+   * Makes the profile called [name], ignoring case, or a new one, set [settings], by profile key,
+   * when [triggers] say. Returns false when it can't be saved.
+   */
+  @WorkerThread
+  fun importProfile(
+    context: Context,
+    name: String,
+    triggers: SettingsProfileStore.Triggers,
+    settings: Map<String, Any?>,
+  ): Boolean =
+    synchronized(lock) {
+      val store = ready(context)
+      // Settings changed while a profile is applied go to it before it changes.
+      applyNow(context, force = true)
+      val id =
+        store.profiles().firstOrNull { it.name.equals(name.trim(), ignoreCase = true) }?.id
+          ?: store.add(name)?.id
+          ?: return@synchronized false
+      val saved = store.saveSettings(id, settings) && store.setTriggers(id, triggers)
+      updateWatches(store)
+      applyNow(context, force = true)
+      saved
+    }
+
   /** Stops the profile [id] from setting [key]. */
   @WorkerThread
   fun removeSetting(context: Context, id: String, key: String): Boolean =

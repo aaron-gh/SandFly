@@ -27,6 +27,8 @@ import com.google.android.accessibility.talkback.notifications.NotificationCodeF
  */
 class SettingsProfilesFragment : NotificationCodeFragment(R.string.title_pref_settings_profiles) {
 
+  private val files = ItemFileLauncher(this) { rebuild() }
+
   override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
     super.onCreatePreferences(savedInstanceState, rootKey)
     SettingsProfiles.inBackground(requireContext(), { SettingsProfiles.ready(it) }) {
@@ -45,6 +47,14 @@ class SettingsProfilesFragment : NotificationCodeFragment(R.string.title_pref_se
     val store = SettingsProfiles.loadedStore() ?: return
     if (store.isLegacy()) return
     screen.action(getString(R.string.title_pref_new_settings_profile)) { add(store) }
+    if (ItemFileLauncher.isAvailable) {
+      screen.action(getString(R.string.item_file_import)) { files.importFile() }
+      if (!store.isEmpty()) {
+        screen.action(getString(R.string.item_file_export)) {
+          files.export(getString(R.string.title_pref_settings_profiles)) { ItemFiles.exportSettingsProfiles(it) }
+        }
+      }
+    }
     val inUse = SettingsProfiles.inUse()
     for (profile in store.profiles()) {
       screen.link(

@@ -27,6 +27,8 @@ import androidx.preference.PreferenceGroup
 import androidx.preference.PreferenceViewHolder
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.TalkBackService
+import com.google.android.accessibility.talkback.backup.ItemFileLauncher
+import com.google.android.accessibility.talkback.backup.ItemFiles
 import com.google.android.accessibility.talkback.commands.CommandFragment
 import com.google.android.accessibility.talkback.commands.Commands
 import com.google.android.accessibility.talkback.gesture.OpenAppActions
@@ -44,9 +46,20 @@ import java.util.concurrent.TimeUnit
 /** Macros: the macros the user made, and the button that makes another. */
 class MacrosFragment : NotificationCodeFragment(R.string.title_pref_macros) {
 
+  private val files = ItemFileLauncher(this) { rebuild() }
+
   override fun build(screen: PreferenceGroup) {
     screen.action(getString(R.string.macro_add)) { add() }
-    for (macro in Macros.read(prefs)) {
+    val macros = Macros.read(prefs)
+    if (ItemFileLauncher.isAvailable) {
+      screen.action(getString(R.string.item_file_import)) { files.importFile() }
+      if (macros.isNotEmpty()) {
+        screen.action(getString(R.string.item_file_export)) {
+          files.export(getString(R.string.title_pref_macros)) { ItemFiles.exportMacros(it) }
+        }
+      }
+    }
+    for (macro in macros) {
       screen.link(macro.name, null, MacroFragment::class.java) {
         putString(MacroFragment.ARG_MACRO, macro.id)
       }
@@ -261,6 +274,8 @@ abstract class MacroEditorFragment : NotificationCodeFragment(R.string.title_pre
  */
 class MacroFragment : MacroEditorFragment() {
 
+  private val files = ItemFileLauncher(this) { rebuild() }
+
   // Where Add step adds a step: after the step added last, so that the steps added after If or a
   // repeat go in its block. Null for the end.
   private var insertAt: Int? = null
@@ -322,6 +337,11 @@ class MacroFragment : MacroEditorFragment() {
       putString(CommandFragment.ARG_COMMAND, Macros.commandOf(macro.id))
     }
     screen.action(getString(R.string.menu_rename)) { rename() }
+    if (ItemFileLauncher.isAvailable) {
+      screen.action(getString(R.string.item_file_export)) {
+        files.export(macro.name) { ItemFiles.exportMacros(it, setOf(macro.id)) }
+      }
+    }
     screen.action(getString(R.string.macro_delete)) { confirmDelete() }
   }
 

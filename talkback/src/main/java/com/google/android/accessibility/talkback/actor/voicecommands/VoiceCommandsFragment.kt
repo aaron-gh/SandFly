@@ -19,6 +19,8 @@ package com.google.android.accessibility.talkback.actor.voicecommands
 import android.text.InputType
 import androidx.preference.PreferenceGroup
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.talkback.backup.ItemFileLauncher
+import com.google.android.accessibility.talkback.backup.ItemFiles
 import com.google.android.accessibility.talkback.commands.Commands
 import com.google.android.accessibility.talkback.notifications.NotificationCodeFragment
 
@@ -28,6 +30,8 @@ import com.google.android.accessibility.talkback.notifications.NotificationCodeF
  */
 class VoiceCommandsFragment : NotificationCodeFragment(R.string.title_pref_voice_commands) {
 
+  private val files = ItemFileLauncher(this) { rebuild() }
+
   override fun build(screen: PreferenceGroup) {
     val aiKey = getString(R.string.pref_voice_commands_ai_key)
     screen.switch(getString(R.string.title_pref_voice_commands_ai), prefs.getBoolean(aiKey, false)) {
@@ -36,7 +40,16 @@ class VoiceCommandsFragment : NotificationCodeFragment(R.string.title_pref_voice
     val custom = screen.category(R.string.voice_commands_custom)
     custom.action(getString(R.string.voice_command_add)) { add() }
     val context = requireContext()
-    for (entry in CustomVoiceCommands.read(prefs)) {
+    val entries = CustomVoiceCommands.read(prefs)
+    if (ItemFileLauncher.isAvailable) {
+      custom.action(getString(R.string.item_file_import)) { files.importFile() }
+      if (entries.isNotEmpty()) {
+        custom.action(getString(R.string.item_file_export)) {
+          files.export(getString(R.string.voice_commands_custom)) { ItemFiles.exportVoiceCommands(it) }
+        }
+      }
+    }
+    for (entry in entries) {
       val label = Commands.find(context, entry.value)?.label ?: entry.value
       custom.action(entry.phrase, label) { showActions(entry) }
     }

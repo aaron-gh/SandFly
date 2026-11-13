@@ -61,11 +61,12 @@ object SettingsBackup {
   private const val FORMAT = "sandfly-settings"
   private const val VERSION = 1
   private const val FILE_NAME = "sandfly-settings.json"
+  private const val REFERENCE_FILE_NAME = "sandfly-file-format.md"
   private const val MAX_BYTES = 5 * 1024 * 1024
   private const val PREFS_SUFFIX = ".xml"
 
   /** The default preference file, whose name holds the app ID, so a file from another ID fits. */
-  private const val DEFAULT_PREFS = "default"
+  const val DEFAULT_PREFS = "default"
   private const val DEVICE = "device"
   private const val CREDENTIAL = "credential"
 
@@ -151,6 +152,9 @@ object SettingsBackup {
     if (FormFactorUtils.isAndroidWear()) {
       export.parent?.removePreference(export)
       import.parent?.removePreference(import)
+      fragment.findPreference<Preference>(fragment.getString(R.string.pref_export_item_file_reference_key))?.let {
+        it.parent?.removePreference(it)
+      }
       return
     }
     val create =
@@ -175,6 +179,24 @@ object SettingsBackup {
     }
     import.setOnPreferenceClickListener {
       open.launch(arrayOf("application/json", "text/plain", "application/octet-stream"))
+      true
+    }
+    setUpReference(fragment)
+  }
+
+  /** Sets up Export file format reference, which describes item files with this phone's lists. */
+  private fun setUpReference(fragment: PreferenceFragmentCompat) {
+    val reference =
+      fragment.findPreference<Preference>(fragment.getString(R.string.pref_export_item_file_reference_key))
+        ?: return
+    val create =
+      fragment.registerForActivityResult(ActivityResultContracts.CreateDocument("text/markdown")) { uri ->
+        // The settings screens are read with this screen's theme.
+        val themed = fragment.context ?: return@registerForActivityResult
+        uri?.let { ItemFileLauncher.exportText(themed, it) { ItemFileReference.build(themed) } }
+      }
+    reference.setOnPreferenceClickListener {
+      create.launch(REFERENCE_FILE_NAME)
       true
     }
   }
@@ -340,6 +362,15 @@ object SettingsBackup {
     return storage.getSharedPreferences(name, Context.MODE_PRIVATE) to key
   }
 
+  /**
+   * The value of [profileKey] now, or its default when it isn't set, or null when it has neither or
+   * a profile can't hold it.
+   */
+  fun currentOrDefault(context: Context, profileKey: String): Any? {
+    val (prefs, key) = profilePrefs(context, profileKey) ?: return null
+    return prefs.all[key] ?: defaultValue(context, key)
+  }
+
   /** Whether a settings profile can hold [profileKey]. */
   fun isProfileKey(context: Context, profileKey: String): Boolean = profilePrefs(context, profileKey) != null
 
@@ -356,6 +387,66 @@ object SettingsBackup {
   fun canSetProfileValue(context: Context, profileKey: String, value: Any?): Boolean {
     val (prefs, key) = profilePrefs(context, profileKey) ?: return false
     return value == null || fits(context, prefs, key, value)
+  }
+
+  /**
+   * Returns [json], a value from a file written by hand, such as a number or a list, as the type
+   * the setting [profileKey] is saved as, or null when it can't be: the setting can't be in a
+   * profile, or the value doesn't fit it. A number for a setting saved as text becomes its text.
+   */
+  fun profileValueFromJson(context: Context, profileKey: String, json: Any): Any? {
+    val (prefs, key) = profilePrefs(context, profileKey) ?: return null
+    val expected = prefs.all[key] ?: defaultValue(context, key)
+    val value: Any =
+      when (expected) {
+        is Boolean -> json as? Boolean ?: (json as? String)?.toBooleanStrictOrNull()
+        is Int -> wholeNumber(json)?.takeIf { it in Int.MIN_VALUE..Int.MAX_VALUE }?.toInt()
+        is Long -> wholeNumber(json)
+        is Float -> (json as? Number)?.toFloat() ?: (json as? String)?.toFloatOrNull()
+        is String ->
+          when (json) {
+            is String -> json
+            is Number, is Boolean -> json.toString()
+            else -> null
+          }
+        is Set<*> -> stringSet(json)
+        // A setting with no value or default resource: JSON's own type.
+        else ->
+          when (json) {
+            is Boolean, is String -> json
+            is Int -> json
+            is Long -> if (json in Int.MIN_VALUE..Int.MAX_VALUE) json.toInt() else json
+            is Number -> json.toFloat()
+            else -> stringSet(json)
+          }
+      } ?: return null
+    return value.takeIf { fits(context, prefs, key, it) }
+  }
+
+  private fun wholeNumber(json: Any): Long? =
+    when (json) {
+      is Int -> json.toLong()
+      is Long -> json
+      is Number -> json.toDouble().takeIf { it % 1.0 == 0.0 && Math.abs(it) < 9.0E15 }?.toLong()
+      is String -> json.toLongOrNull()
+      else -> null
+    }
+
+  private fun stringSet(json: Any): Set<String>? {
+    val array = json as? JSONArray ?: return null
+    return (0 until array.length()).map { array.get(it).toString() }.toSet()
+  }
+
+  /**
+   * The [profileKey] of the setting [key]: in the braille keyboard or braille display file when it
+   * is there, otherwise in the main file.
+   */
+  fun profileKeyOf(context: Context, key: String): String {
+    val storage = context.createDeviceProtectedStorageContext()
+    for (file in PROFILE_FILES.sorted()) {
+      if (storage.getSharedPreferences(file, Context.MODE_PRIVATE).contains(key)) return profileKey(file, key)
+    }
+    return profileKey(DEFAULT_PREFS, key)
   }
 
   /** Sets each of [values] by [profileKey], and removes those that are null. */

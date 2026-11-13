@@ -36,6 +36,8 @@ import com.google.android.accessibility.material.preference.AccessibilitySuiteSw
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.TalkBackService.TalkbackServiceStateNotifier.TalkBackServiceStateChangeListener;
 import com.google.android.accessibility.talkback.TalkBackService;
+import com.google.android.accessibility.talkback.backup.ItemFileLauncher;
+import com.google.android.accessibility.talkback.backup.ItemFiles;
 import com.google.android.accessibility.talkback.commands.CommandBindings;
 import com.google.android.accessibility.talkback.commands.Commands;
 import com.google.android.accessibility.talkback.keyboard.ArrowKeyNav;
@@ -63,6 +65,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
+import kotlin.Unit;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 /** Panel holding a set of keyboard shortcut preferences. */
@@ -75,6 +78,14 @@ public class TalkBackKeyboardShortcutPreferenceFragment extends TalkbackBaseFrag
   private String keymap;
   private SharedPreferences prefs;
   private PreferenceScreen resetKeymapPreference;
+
+  private final ItemFileLauncher files =
+      new ItemFileLauncher(
+          this,
+          () -> {
+            updateFragment();
+            return Unit.INSTANCE;
+          });
 
   public TalkBackKeyboardShortcutPreferenceFragment() {
     super(R.xml.new_key_combo_preferences);
@@ -473,6 +484,7 @@ public class TalkBackKeyboardShortcutPreferenceFragment extends TalkbackBaseFrag
           return true;
         });
     category.addPreference(create);
+    addKeymapFileActions(category, context);
     @Nullable CustomKeymap custom = CustomKeymaps.of(context, keymap);
     if (custom == null) {
       return;
@@ -510,6 +522,40 @@ public class TalkBackKeyboardShortcutPreferenceFragment extends TalkbackBaseFrag
           return true;
         });
     category.addPreference(delete);
+  }
+
+  /** Adds Export to file, which saves the keymap in use, and Import from file. */
+  private void addKeymapFileActions(PreferenceCategory category, Context context) {
+    if (!ItemFileLauncher.isAvailable()) {
+      return;
+    }
+    Preference export = new Preference(context);
+    export.setKey("pref_export_keymap");
+    export.setTitle(R.string.item_file_export);
+    export.setIconSpaceReserved(false);
+    export.setOnPreferenceClickListener(
+        preference -> {
+          KeyComboManager manager = getKeyComboManager();
+          if (!(manager.getKeyComboModel() instanceof NewKeyComboModel model)) {
+            return true;
+          }
+          String name = getKeymapName(keymap);
+          // Read now, while the keymap is the one shown.
+          String text = ItemFiles.INSTANCE.exportKeymap(context, model, name, manager.getSandFlyKey());
+          files.export(name, unused -> text);
+          return true;
+        });
+    category.addPreference(export);
+    Preference imported = new Preference(context);
+    imported.setKey("pref_import_keymap");
+    imported.setTitle(R.string.item_file_import);
+    imported.setIconSpaceReserved(false);
+    imported.setOnPreferenceClickListener(
+        preference -> {
+          files.importFile();
+          return true;
+        });
+    category.addPreference(imported);
   }
 
   /** Asks for a keymap's name, starting from [current], or suggesting [suggested] when empty. */
