@@ -190,6 +190,8 @@ public final class AccessibilityFocusActionHistory {
 
   private boolean focusOnTalkBackUiBeforeWindowTransition = false;
   private long pendingWebFocusActionTime = -1;
+  /** For event-driven default navigation, its old pivot and pre-action timestamp. */
+  private @Nullable AccessibilityNodeInfoCompat pendingWebPivot = null;
 
   /** The number of {@link #startRefocus} calls not yet ended by {@link #endRefocus}. */
   private int refocusDepth = 0;
@@ -226,10 +228,10 @@ public final class AccessibilityFocusActionHistory {
       @NonNull FocusActionInfo extraData,
       long actionTime,
       @Nullable ScreenState currentScreenState) {
+    FocusActionRecord lastFocus = getLastFocusActionRecord();
     // FocusActionRecord handles making a copy of 'node'. We don't nee to call obtain() here.
     FocusActionRecord record = new FocusActionRecord(node, extraData, actionTime);
 
-    FocusActionRecord lastFocus = getLastFocusActionRecord();
     if (lastFocus != null) {
       AccessibilityNodeInfoCompat lastFocusedNode = lastFocus.getFocusedNode();
       focusOnTalkBackUiBeforeWindowTransition =
@@ -266,6 +268,21 @@ public final class AccessibilityFocusActionHistory {
     pendingWebFocusActionInfo = extraData;
     pendingScreenState = currentScreenState;
     pendingWebFocusActionTime = actionTime;
+    pendingWebPivot = null;
+  }
+
+  public void onPendingWebNavigationAction(
+      @NonNull FocusActionInfo info, long actionTime, @Nullable ScreenState state,
+      @NonNull AccessibilityNodeInfoCompat pivot) {
+    onPendingAccessibilityFocusActionOnWebElement(info, actionTime, state);
+    pendingWebPivot = AccessibilityNodeInfoCompat.obtain(pivot);
+  }
+
+  /** A newer command may run before the earlier focus event. Its fresh pivot completes it. */
+  public void completePendingWebFocusFromPivot(@NonNull AccessibilityNodeInfoCompat pivot) {
+    if (pendingWebPivot != null) {
+      tryMatchingPendingFocusAction(pivot, SystemClock.uptimeMillis());
+    }
   }
 
   public @Nullable FocusActionRecord getLastFocusActionRecordInWindow(
@@ -379,7 +396,8 @@ public final class AccessibilityFocusActionHistory {
     // onPendingAccessibilityFocusActionOnWebElement.
     long eventTime = SystemClock.uptimeMillis();
 
-    tryMatchingPendingFocusAction(eventNode, eventTime);
+    tryMatchingPendingFocusAction(
+        eventNode, pendingWebPivot == null ? eventTime : event.getEventTime());
 
     FocusActionRecord result = null;
     // Iterate from the newest(last) record to the eldest(first) record.
@@ -407,7 +425,11 @@ public final class AccessibilityFocusActionHistory {
   private void tryMatchingPendingFocusAction(
       @NonNull AccessibilityNodeInfoCompat focusedNode, long focusEventTime) {
     if ((pendingWebFocusActionInfo != null)
-        && (focusEventTime - pendingWebFocusActionTime > 0)
+        && (focusEventTime - pendingWebFocusActionTime >= 0)
+        && (pendingWebPivot != null || focusEventTime > pendingWebFocusActionTime)
+        && (pendingWebPivot == null
+            || (pendingWebPivot.getWindowId() == focusedNode.getWindowId()
+                && !pendingWebPivot.equals(focusedNode)))
         && WebInterfaceUtils.supportsWebActions(focusedNode)
         && (focusEventTime - pendingWebFocusActionTime < getTimeoutToleranceMs(focusedNode))) {
       onAccessibilityFocusAction(
@@ -450,6 +472,7 @@ public final class AccessibilityFocusActionHistory {
   private void clearPendingFocusAction() {
     pendingWebFocusActionInfo = null;
     pendingWebFocusActionTime = -1;
+    pendingWebPivot = null;
   }
 
   private int getTimeoutToleranceMs(AccessibilityNodeInfoCompat node) {

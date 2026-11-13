@@ -21,6 +21,7 @@ import static com.google.android.accessibility.utils.monitor.InputModeTracker.IN
 
 import android.accessibilityservice.AccessibilityService;
 import android.os.Bundle;
+import android.os.SystemClock;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.talkback.Feedback.WebAction;
 import com.google.android.accessibility.talkback.focusmanagement.NavigationTarget;
@@ -42,7 +43,9 @@ public class WebActor {
 
   /** Interface for a update history method, used to update focus history. */
   public interface UpdateFocusHistory {
-    void updateHistory(AccessibilityNodeInfoCompat start, FocusActionInfo focusActionInfo);
+    void updateHistory(AccessibilityNodeInfoCompat start, FocusActionInfo focusActionInfo, long actionTime);
+
+    default void beforeNavigation(AccessibilityNodeInfoCompat start) {}
   }
 
   private final UpdateFocusHistory focusHistory;
@@ -71,6 +74,10 @@ public class WebActor {
    * FocusActionInfo.LOGICAL_NAVIGATION}
    */
   public boolean performAction(@NonNull WebAction webAction, Performance.EventId eventId) {
+    if (webAction.updateFocusHistory() && focusHistory != null) {
+      focusHistory.beforeNavigation(webAction.target());
+    }
+    long actionTime = SystemClock.uptimeMillis();
     boolean result =
         PerformActionUtils.performAction(
             webAction.target(), webAction.nodeAction(), webAction.nodeActionArgs(), eventId);
@@ -82,7 +89,7 @@ public class WebActor {
           FocusActionInfo.builder()
               .setSourceAction(FocusActionInfo.LOGICAL_NAVIGATION)
               .setNavigationAction(webAction.navigationAction())
-              .build());
+              .build(), actionTime);
     }
     return result;
   }
@@ -125,6 +132,10 @@ public class WebActor {
             ? AccessibilityNodeInfoCompat.ACTION_NEXT_HTML_ELEMENT
             : AccessibilityNodeInfoCompat.ACTION_PREVIOUS_HTML_ELEMENT;
 
+    if (focusHistory != null) {
+      focusHistory.beforeNavigation(start);
+    }
+    long actionTime = SystemClock.uptimeMillis();
     if (PerformActionUtils.performAction(start, action, args, eventId)) {
       if (focusHistory != null) {
         focusHistory.updateHistory(
@@ -132,7 +143,7 @@ public class WebActor {
             FocusActionInfo.builder()
                 .setSourceAction(FocusActionInfo.LOGICAL_NAVIGATION)
                 .setNavigationAction(navigationAction)
-                .build());
+                .build(), actionTime);
       }
       return true;
     } else {
