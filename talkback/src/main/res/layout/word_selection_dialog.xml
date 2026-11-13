@@ -37,16 +37,22 @@
         android:id="@+id/granularity_group"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_marginBottom="8dp">
+
+        <RadioButton
+            android:id="@+id/radio_entities"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_text_entities"
+            android:textAppearance="@style/A11yAlertDialogContentTextStyle" />
 
         <RadioButton
             android:id="@+id/radio_characters"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/granularity_characters"
-            android:textAppearance="@style/A11yAlertDialogContentTextStyle"
-            android:layout_marginEnd="12dp" />
+            android:textAppearance="@style/A11yAlertDialogContentTextStyle" />
 
         <RadioButton
             android:id="@+id/radio_words"
@@ -54,7 +60,6 @@
             android:layout_height="wrap_content"
             android:text="@string/granularity_words"
             android:textAppearance="@style/A11yAlertDialogContentTextStyle"
-            android:layout_marginEnd="12dp"
             android:checked="true" />
 
         <RadioButton

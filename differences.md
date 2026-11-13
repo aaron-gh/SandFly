@@ -692,6 +692,8 @@ The **Addresses and numbers** reading control and SandFly menu item list the web
 
 Phone numbers come from Android's text classifier, which also finds dates, times, addresses and flight numbers. Digits in any of these, and digits joined to a word, a user name, a time or an amount, aren't listed as codes. Other numbers of 4 to 8 digits, such as a year in a headline, are listed as codes, since the text classifier doesn't tell them apart. Nothing is looked up as focus moves: the text is classified when the reading control is swiped or the SandFly menu opens, waiting at most a second. On Android 8, and when the text classifier doesn't answer within a second, only web and email addresses are listed.
 
+**Copy text from screen** has an **Addresses and numbers** option beside **Characters**, **Words** and **Paragraphs**. It lists every web address, email address, phone number and code on the screen as written, so that a phone number can be copied instead of called. Checked items are copied one per line. The option isn't shown when the screen has none. The text classifier runs when the dialog opens, so the dialog can take up to a second longer to appear. **Addresses and numbers to include** doesn't apply to this list.
+
 On web pages, the reading control switches to **Actions** automatically only on items that have actions of their own, not on text or for links in it, and switches back on the next item that has none. When **Actions** was chosen automatically and has nothing for the focused item, swiping up or down uses the reading control that it replaced.
 
 ### Sentences reading control

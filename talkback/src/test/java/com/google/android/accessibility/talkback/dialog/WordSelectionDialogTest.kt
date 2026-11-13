@@ -135,4 +135,31 @@ class WordSelectionDialogTest {
     assertFalse(collected.add("c"))
     assertEquals(2, collected.paragraphs.size)
   }
+
+  @Test
+  fun entitiesModeListsEachAddressOrNumberAsWritten() {
+    val tokens = WordSelectionDialog.entityTokens(listOf("020 7946 0000", "help@example.org"))
+    assertEquals(listOf("020 7946 0000", "help@example.org"), tokens.texts())
+    assertFalse(tokens.truncated)
+  }
+
+  @Test
+  fun entitiesModeCapsTokensAtMaxLimit() {
+    val tokens = WordSelectionDialog.entityTokens(List(WordSelectionDialog.MAX_TOKENS + 1) { "$it" })
+    assertEquals(WordSelectionDialog.MAX_TOKENS, tokens.items.size)
+    assertTrue(tokens.truncated)
+  }
+
+  @Test
+  fun entitiesModeJoinsCheckedItemsWithLineBreaks() {
+    val tokens = WordSelectionDialog.entityTokens(listOf("482916", "020 7946 0000", "a@b.org"))
+    val checked = BitSet().apply {
+      set(0)
+      set(2)
+    }
+    assertEquals(
+      "482916\na@b.org",
+      WordSelectionDialog.joinSelected(tokens.items, checked, Granularity.ENTITIES),
+    )
+  }
 }
