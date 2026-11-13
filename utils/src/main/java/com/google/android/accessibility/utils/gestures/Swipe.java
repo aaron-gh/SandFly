@@ -87,6 +87,9 @@ class Swipe extends GestureMatcher {
   // Whether the swipe and hold has an action in this touch. Without one, a rest is handled as
   // before: a long rest cancels the swipe.
   private boolean holdAssigned;
+  // Whether this one-direction swipe runs once it has moved the gesture confirm distance, before
+  // the finger lifts.
+  private boolean runsBeforeLift;
   // Where the finger last moved beyond the touch slop, and when.
   private float restX;
   private float restY;
@@ -189,6 +192,7 @@ class Swipe extends GestureMatcher {
     previousGestureX = Float.NaN;
     previousGestureY = Float.NaN;
     holdAssigned = false;
+    runsBeforeLift = false;
     restX = Float.NaN;
     restY = Float.NaN;
     restStartTime = 0;
@@ -207,6 +211,9 @@ class Swipe extends GestureMatcher {
       previousGestureX = baseX;
       previousGestureY = baseY;
       holdAssigned = holdGestureId != 0 && configProvider.isGestureAssigned(holdGestureId);
+      // A swipe and hold needs the rest at the end, so that swipe still waits for the lift.
+      runsBeforeLift =
+          directions.length == 1 && GestureConfiguration.swipesBeforeLift() && !holdAssigned;
       restX = baseX;
       restY = baseY;
       restStartTime = baseTime;
@@ -254,7 +261,9 @@ class Swipe extends GestureMatcher {
       } else if (strokeBuffer.isEmpty()) {
         // First, make sure the pointer is going in the right direction.
         int direction = toDirection(x - baseX, y - baseY);
-        if (direction != directions[0]) {
+        // Swipes run before the lift leave no time for a second direction.
+        if (direction != directions[0]
+            || (directions.length > 1 && GestureConfiguration.swipesBeforeLift())) {
           cancelGesture(event);
           return;
         }
@@ -295,6 +304,13 @@ class Swipe extends GestureMatcher {
       previousGestureX = x;
       previousGestureY = y;
       strokeBuffer.add(new PointF(x, y));
+    }
+    if (runsBeforeLift
+        && getState() == STATE_GESTURE_STARTED
+        && !configProvider.holdsSwipeUntilLift()
+        && strokeMatches(strokeWith(x, y))) {
+      gestureMotionEventLog(VERBOSE, "Completed before the lift.");
+      completeGesture(eventId, event);
     }
   }
 

@@ -214,6 +214,7 @@
     <string name="pref_multi_tap_timeout_key" translatable="false">pref_multi_tap_timeout</string>
     <string name="pref_swipe_hold_time_key" translatable="false">pref_swipe_hold_time</string>
     <string name="pref_swipe_start_time_key" translatable="false">pref_swipe_start_time</string>
+    <string name="pref_swipes_before_lift_key" translatable="false">pref_swipes_before_lift</string>
     <string name="pref_typing_focus_time_out_key" translatable="false">pref_typing_focus_time_out_key</string>
     <string name="pref_typing_focus_time_out_first_update_key" translatable="false">pref_typing_focus_time_out_first_update_key</string>
     <string name="pref_touch_focus_time_out_key" translatable="false">pref_touch_focus_time_out_key</string>
@@ -2088,6 +2089,7 @@
     <bool name="pref_diagnosis_mode_default">false</bool>
     <bool name="pref_tts_overlay_default">false</bool>
     <bool name="pref_multiple_gesture_set_default">false</bool>
+    <bool name="pref_swipes_before_lift_default">false</bool>
     <bool name="pref_echo_recognized_text_default">false</bool>
     <bool name="pref_reduce_window_delay_default">true</bool>
     <bool name="pref_wrap_around_default">true</bool>

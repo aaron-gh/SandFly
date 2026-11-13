@@ -37,6 +37,7 @@ import com.google.android.accessibility.talkback.preference.TalkBackPreferencesA
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.gesture.GestureLayout;
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping;
+import com.google.android.accessibility.talkback.gesture.SwipesBeforeLift;
 import com.google.android.accessibility.talkback.gesture.VibrationWatchGestureSettings;
 import com.google.android.accessibility.talkback.preference.PreferencesActivityUtils;
 import com.google.android.accessibility.talkback.preference.search.SettingsSearch;
@@ -283,8 +284,21 @@ public class TalkBackGestureShortcutPreferenceFragment extends TalkbackBaseFragm
           updateTwoFingerSwipeRows();
         } else if (TextUtils.equals(key, VibrationWatchGestureSettings.PREF_RESERVED)) {
           updatePreferencesForVibrationWatchIfNeeded();
+        } else if (TextUtils.equals(key, getString(R.string.pref_swipes_before_lift_key))) {
+          updateTwoDirectionCategories();
         }
       };
+
+  /** Back-and-forth and angle gestures are hidden while swipes run before the finger lifts. */
+  private void updateTwoDirectionCategories() {
+    boolean hidden = SwipesBeforeLift.isOn(requireContext());
+    for (String key : SwipesBeforeLift.categoryKeys(requireContext())) {
+      Preference category = findPreference(key);
+      if (category != null) {
+        category.setVisible(!hidden);
+      }
+    }
+  }
 
   /** Returns the gesture set in use, 0 with only one. */
   private int gestureSet() {

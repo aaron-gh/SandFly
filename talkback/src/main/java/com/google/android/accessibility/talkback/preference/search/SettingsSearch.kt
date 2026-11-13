@@ -342,6 +342,9 @@ object SettingsSearch {
   ) {
     for (i in 0 until group.preferenceCount) {
       val preference = group.getPreference(i)
+      if (!preference.isVisible) {
+        continue
+      }
       if (preference is PreferenceGroup) {
         collectRows(preference, include, rows)
       } else if (preference.isEnabled && !preference.title.isNullOrEmpty() && include.test(preference)) {
