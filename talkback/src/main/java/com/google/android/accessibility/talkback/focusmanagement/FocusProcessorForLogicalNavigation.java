@@ -1276,6 +1276,48 @@ public class FocusProcessorForLogicalNavigation {
     return target;
   }
 
+  /**
+   * Returns the list that moving by list item from {@code pivot} goes through item by item, or null
+   * when the move isn't by list item or {@code pivot} isn't in a list outside web content.
+   */
+  private static @Nullable AccessibilityNodeInfoCompat listForListItemTarget(
+      AccessibilityNodeInfoCompat pivot,
+      boolean ignoreDescendantsOfPivot,
+      NavigationAction navigationAction) {
+    if (navigationAction.targetType != NavigationTarget.TARGET_HTML_ELEMENT_LIST_ITEM
+        || ignoreDescendantsOfPivot
+        || !TraversalStrategyUtils.isLogicalDirection(navigationAction.searchDirection)) {
+      return null;
+    }
+    return ListItemNavigation.listOf(pivot);
+  }
+
+  /**
+   * Finds the item of {@code list} after or before the one holding {@code pivot}, passing over the
+   * controls inside items. Past the last item on screen, finds the next list item after the list,
+   * which the list is scrolled through first, as for other elements.
+   */
+  private @NonNull NavigationResult findListItemTarget(
+      AccessibilityNodeInfoCompat pivot,
+      AccessibilityNodeInfoCompat list,
+      NavigationAction navigationAction,
+      @SearchDirection int logicalDirection,
+      Filter<AccessibilityNodeInfoCompat> nodeFilter,
+      TraversalStrategy traversalStrategy,
+      EventId eventId) {
+    @Nullable
+    AccessibilityNodeInfoCompat target =
+        ListItemNavigation.target(
+            pivot, list, /* forward= */ logicalDirection == TraversalStrategy.SEARCH_FOCUS_FORWARD);
+    if (target != null) {
+      return NavigationResult.create(target);
+    }
+    Filter<AccessibilityNodeInfoCompat> outsideList =
+        Filter.node(n -> !AccessibilityNodeInfoUtils.hasAncestor(n, list)).and(nodeFilter);
+    return findTargetFromNativeElement(
+        list, navigationAction, outsideList, traversalStrategy, eventId);
+  }
+
   /** Finds current container (list/grid/pager/recycler/scrollable/containerTitle...) */
   private @Nullable AccessibilityNodeInfoCompat currentContainer(
       @Nullable AccessibilityNodeInfoCompat start,
@@ -2075,6 +2117,10 @@ public class FocusProcessorForLogicalNavigation {
     }
 
     NavigationResult navigationResult = NavigationResult.create(NavigationResult.Type.EMPTY);
+    // Moving by list item in a list goes from item to item of that list.
+    @Nullable
+    AccessibilityNodeInfoCompat list =
+        listForListItemTarget(pivot, ignoreDescendantsOfPivot, navigationAction);
 
     // Search for target node within current window.
     // Consider the following linear order when navigating between web elements and native elements
@@ -2091,6 +2137,16 @@ public class FocusProcessorForLogicalNavigation {
                   pivot, navigationAction, nodeFilter, traversalStrategy, eventId);
     } else if (NavigationTarget.isContainerTarget(navigationAction.targetType)) {
       navigationResult = NavigationResult.create(findContainerTarget(pivot, navigationAction));
+    } else if (list != null) {
+      navigationResult =
+          findListItemTarget(
+              pivot,
+              list,
+              navigationAction,
+              logicalDirection,
+              nodeFilter,
+              traversalStrategy,
+              eventId);
     } else {
       int linkIndex = getLinkIndexFromPivot(pivot, navigationAction);
       if (linkIndex >= 0) {
@@ -5084,6 +5140,11 @@ public class FocusProcessorForLogicalNavigation {
               + " refNode is null");
       return;
     }
+    if (sourceAction.targetType == NavigationTarget.TARGET_HTML_ELEMENT_LIST_ITEM
+        && handleViewAutoScrolledForListItem(
+            scrolledNode, refNode, navigationAction, logicalDirection, eventId)) {
+      return;
+    }
     Filter<AccessibilityNodeInfoCompat> nodeFilter =
         NavigationTarget.createNodeFilter(
             sourceAction.targetType, localTraversalStrategy.getSpeakingNodesCache());
@@ -5166,6 +5227,67 @@ public class FocusProcessorForLogicalNavigation {
     if (nodeToFocus != null) {
       setAccessibilityFocusInternal(nodeToFocus, navigationAction, eventId);
     }
+  }
+
+  /**
+   * Moves by list item after a scroll made for it, when {@code refNode} is in a list: to the item
+   * after or before the focused one, or, when the scroll took the focused item off screen, to the
+   * item of {@code refNode}, the first one on screen in the direction of the move. Scrolls again
+   * when no item has come on screen yet. Returns false when {@code refNode} isn't in a list.
+   */
+  private boolean handleViewAutoScrolledForListItem(
+      @NonNull AccessibilityNodeInfoCompat scrolledNode,
+      @NonNull AccessibilityNodeInfoCompat refNode,
+      NavigationAction navigationAction,
+      @SearchDirection int logicalDirection,
+      EventId eventId) {
+    boolean focused = refNode.isAccessibilityFocused();
+    // Without focus, the first node on screen can be in a list inside an item, such as a row of
+    // pictures in a post, so the scrolled list is the one to move in.
+    @Nullable
+    AccessibilityNodeInfoCompat list =
+        !focused
+                && ListItemNavigation.isList(scrolledNode)
+                && AccessibilityNodeInfoUtils.hasAncestor(refNode, scrolledNode)
+            ? scrolledNode
+            : ListItemNavigation.listOf(refNode);
+    if (list == null) {
+      return false;
+    }
+    @Nullable
+    AccessibilityNodeInfoCompat nodeToFocus =
+        focused
+            ? ListItemNavigation.target(
+                refNode, list, /* forward= */ logicalDirection == SEARCH_FOCUS_FORWARD)
+            : ListItemNavigation.itemTarget(refNode, list);
+    if (nodeToFocus != null) {
+      setAccessibilityFocusInternal(nodeToFocus, navigationAction, eventId);
+      return true;
+    }
+    // An item taller than the list can need more than one scroll before the next one shows.
+    if (shouldKeepSearch(navigationAction)
+        && performScrollActionInternal(
+            ScrollActionRecord.ACTION_AUTO_SCROLL,
+            scrolledNode,
+            refNode,
+            TraversalStrategyUtils.convertSearchDirectionToScrollAction(
+                navigationAction.searchDirection),
+            navigationAction,
+            ScrollTimeout.SCROLL_TIMEOUT_LONG,
+            /* autoScrollSuccessChecker= */ null,
+            eventId)) {
+      return true;
+    }
+    // The end of the list: the list item found after it before scrolling, if any.
+    if (navigationAction.fallbackTarget != null) {
+      navigationAction.fallbackTarget.refresh();
+      if (FILTER_SHOULD_FOCUS.accept(navigationAction.fallbackTarget)) {
+        setAccessibilityFocusInternal(navigationAction.fallbackTarget, navigationAction, eventId);
+        return true;
+      }
+    }
+    announceNativeElement(logicalDirection, navigationAction.targetType, eventId);
+    return true;
   }
 
   /** Called when we receive result event for auto-scroll action with screen search target. */

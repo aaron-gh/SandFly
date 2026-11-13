@@ -496,6 +496,8 @@ You can assign a gesture to move to the next or previous character, word, line, 
 
 All of these elements work in apps and on web pages. Apps don't report heading levels, so each heading level moves through all headings. Apps don't report visited links, so all links in an app count as unvisited.
 
+In an app, moving by list item with focus in a list, such as a channel's posts, moves to the next or previous item of that list and passes over the buttons and other parts inside each item, such as a post's Share button. The list scrolls when the next item is off screen. The list is the nearest list, grid, scroll view, collection or other view that scrolls, other than a pager, that holds focus. An item that can't be focused itself is entered at its first part. After the last item, moving by list item goes on to the next list item after the list. Outside a list, it moves to the next list item on screen, as before. The **List items** reading control and the list item gestures and keyboard shortcuts all move this way.
+
 ### More gesture actions
 
 SandFly adds these actions, which you can assign to gestures in gesture settings. None is assigned by default.
