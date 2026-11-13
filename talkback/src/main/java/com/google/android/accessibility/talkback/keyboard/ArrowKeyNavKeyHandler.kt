@@ -84,7 +84,10 @@ class ArrowKeyNavKeyHandler(private val context: Context, private val callbacks:
   private fun onKeyDown(event: KeyEvent, canAct: Boolean): Boolean {
     val keyCode = event.keyCode
     if (event.repeatCount > 0) {
-      return keyCode in consumedKeys
+      if (keyCode in consumedKeys) {
+        return true
+      }
+      return canAct && performHeldToggle(event)
     }
     // A key whose up event was lost would otherwise pair with every later key.
     heldKeys.entries.removeIf { event.downTime - it.value > STALE_KEY_MILLIS }
@@ -102,7 +105,10 @@ class ArrowKeyNavKeyHandler(private val context: Context, private val callbacks:
     val modifiers = event.modifiers and KeyCombo.KEY_EVENT_MODIFIER_MASK
     if (otherKey != null) {
       val command = commandFor(ArrowKeyNav.keys(modifiers, otherKey, keyCode))
-      if (command != null && (on || command == ArrowKeyNav.TOGGLE)) {
+      // While editing text, rolling from one arrow key to the other moves the cursor; Toggle
+      // there waits until the keys are held, see performHeldToggle.
+      val waitsForHold = command == ArrowKeyNav.TOGGLE && callbacks.isEditingText()
+      if (command != null && !waitsForHold && (on || command == ArrowKeyNav.TOGGLE)) {
         // The first key's own command, if it waits, doesn't run.
         clearPending()
         consumedKeys += keyCode
@@ -122,6 +128,30 @@ class ArrowKeyNavKeyHandler(private val context: Context, private val callbacks:
     } else {
       callbacks.perform(command)
     }
+    return true
+  }
+
+  /**
+   * Runs Toggle when [event], a repeat of a key held down, makes two keys held together that run it
+   * in a text field being edited. Returns true to consume the event.
+   */
+  private fun performHeldToggle(event: KeyEvent): Boolean {
+    val keyCode = event.keyCode
+    if (event.eventTime - event.downTime < TOGGLE_HOLD_MILLIS || !callbacks.isEditingText()) {
+      return false
+    }
+    if (!ArrowKeyNav.isAvailable(context)) {
+      return false
+    }
+    val otherKey = heldKeys.keys.lastOrNull { it != keyCode } ?: return false
+    val modifiers = event.modifiers and KeyCombo.KEY_EVENT_MODIFIER_MASK
+    val command = commandFor(ArrowKeyNav.keys(modifiers, otherKey, keyCode))
+    if (command != ArrowKeyNav.TOGGLE) {
+      return false
+    }
+    clearPending()
+    consumedKeys += keyCode
+    callbacks.perform(command)
     return true
   }
 
@@ -163,5 +193,6 @@ class ArrowKeyNavKeyHandler(private val context: Context, private val callbacks:
 
   private companion object {
     const val STALE_KEY_MILLIS = 30_000L
+    const val TOGGLE_HOLD_MILLIS = 300L
   }
 }

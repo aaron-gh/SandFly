@@ -160,11 +160,35 @@ class ArrowKeyNavKeyHandlerTest {
     editingText = true
     assertFalse(down(KEYCODE_DPAD_LEFT))
     assertTrue(performed.isEmpty())
-    assertTrue(down(KEYCODE_DPAD_RIGHT))
+    assertFalse(down(KEYCODE_DPAD_RIGHT))
+    assertFalse(repeat(KEYCODE_DPAD_RIGHT, 100))
+    assertTrue(performed.isEmpty())
+    assertTrue(repeat(KEYCODE_DPAD_RIGHT, 400))
     up(KEYCODE_DPAD_RIGHT)
     up(KEYCODE_DPAD_LEFT)
     assertEquals(listOf(ArrowKeyNav.TOGGLE), performed)
     assertFalse(ArrowKeyNav.isOn(context))
+  }
+
+  @Test
+  fun editingText_rollingBetweenLeftAndRight_doesNotToggle() {
+    ArrowKeyNav.setOn(context, true)
+    editingText = true
+    assertFalse(down(KEYCODE_DPAD_LEFT))
+    assertFalse(down(KEYCODE_DPAD_RIGHT))
+    up(KEYCODE_DPAD_LEFT)
+    up(KEYCODE_DPAD_RIGHT)
+    assertTrue(performed.isEmpty())
+    assertTrue(ArrowKeyNav.isOn(context))
+  }
+
+  /** A repeat of [keyCode] that has been down for [heldMillis] since its down event. */
+  private fun repeat(keyCode: Int, heldMillis: Long): Boolean {
+    val downTime = time
+    return handler.onKeyEvent(
+      KeyEvent(downTime, downTime + heldMillis, KeyEvent.ACTION_DOWN, keyCode, 1, 0),
+      /* canAct= */ true,
+    )
   }
 
   @Test
