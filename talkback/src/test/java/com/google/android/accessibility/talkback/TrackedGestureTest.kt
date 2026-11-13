@@ -44,6 +44,7 @@ import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics
 import com.google.android.accessibility.talkback.gesture.EdgeMenus
 import com.google.android.accessibility.talkback.gesture.EdgeSwipeTracker.MenuEdge
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping
+import com.google.android.accessibility.utils.FormFactorUtils
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_PINCH
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_ROTATE_CLOCKWISE
@@ -127,6 +128,8 @@ class TrackedGestureTest {
   @Before
   fun setUp() {
     service = Robolectric.buildService(RecordingService::class.java).get()
+    // TouchInteractionMonitor turns edge gestures off on watches.
+    FormFactorUtils.initialize(service)
     service.mapping = GestureShortcutMapping(service)
     controller =
       TouchInteractionController::class
