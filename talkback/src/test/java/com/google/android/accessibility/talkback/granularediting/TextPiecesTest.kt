@@ -157,6 +157,16 @@ class TextPiecesTest {
   }
 
   @Test
+  fun lineReplacedWithALineBreakLeavesOneBlankLine() {
+    val text = "one\ntwo\nthree"
+    val lines = TextPieces.split(text, Granularity.LINES, Locale.US)
+    assertEquals("one\n\nthree", TextPieces.replace(text, lines[1], "\n", Granularity.LINES))
+    assertEquals("one\nb\nthree", TextPieces.replace(text, lines[1], "b\r\n", Granularity.LINES))
+    // The last line has no line break of its own, so a typed one is kept.
+    assertEquals("one\ntwo\nend\n", TextPieces.replace(text, lines[2], "end\n", Granularity.LINES))
+  }
+
+  @Test
   fun paragraphsInsertBetweenBlankLines() {
     val t = "P1\n\nP2"
     val paragraphs = TextPieces.split(t, Granularity.PARAGRAPHS, Locale.US)
