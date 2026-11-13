@@ -187,7 +187,7 @@ class GranularEditingActivity : AppCompatActivity() {
       if (typed.isEmpty()) {
         change(TextPieces.delete(text, listOf(piece), granularity), index, R.string.granular_editing_deleted)
       } else {
-        change(TextPieces.replace(text, piece, typed), index)
+        change(TextPieces.replace(text, piece, typed, granularity), index)
       }
     }
   }
