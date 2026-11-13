@@ -1374,6 +1374,17 @@
 
     <issue
         id="MissingTranslation"
+        message='"shortcut_previous_settings_profile" is not translated in "de" (German), "hi" (Hindi), "lo" (Lao), "pt" (Portuguese), "fil" (Filipino; Pilipino), "lt" (Lithuanian), "hr" (Croatian), "lv" (Latvian), "hu" (Hungarian), "hy" (Armenian), "uk" (Ukrainian), "id" (Indonesian), "ur" (Urdu), "mk" (Macedonian), "ml" (Malayalam), "mn" (Mongolian), "af" (Afrikaans), "in" (Indonesian), "mr" (Marathi), "uz" (Uzbek), "ms" (Malay), "el" (Greek), "en" (English), "is" (Icelandic), "it" (Italian), "am" (Amharic), "my" (Burmese), "es" (Spanish), "iw" (Hebrew), "zh" (Chinese), "et" (Estonian), "eu" (Basque), "ar" (Arabic), "as" (Assamese), "vi" (Vietnamese), "nb" (Norwegian Bokmål), "ja" (Japanese), "ne" (Nepali), "az" (Azerbaijani), "fa" (Persian), "zu" (Zulu), "ro" (Romanian), "nl" (Dutch), "no" (Norwegian), "be" (Belarusian), "fi" (Finnish), "ru" (Russian), "bg" (Bulgarian), "bn" (Bangla), "fr" (French), "bs" (Bosnian), "ka" (Georgian), "si" (Sinhala), "sk" (Slovak), "sl" (Slovenian), "ca" (Catalan), "sq" (Albanian), "sr" (Serbian), "kk" (Kazakh), "km" (Khmer), "kn" (Kannada), "or" (Odia), "sv" (Swedish), "ko" (Korean), "sw" (Swahili), "gl" (Galician), "ta" (Tamil), "gu" (Gujarati), "ky" (Kyrgyz), "cs" (Czech), "pa" (Punjabi), "te" (Telugu), "th" (Thai), "tl" (Tagalog), "pl" (Polish), "da" (Danish), "tr" (Turkish)'
+        errorLine1="    &lt;string name=&quot;shortcut_previous_settings_profile&quot;&gt;Previous settings profile&lt;/string&gt;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="5196"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="MissingTranslation"
         message='"shortcut_next_settings_profile" is not translated in "de" (German), "hi" (Hindi), "lo" (Lao), "pt" (Portuguese), "fil" (Filipino; Pilipino), "lt" (Lithuanian), "hr" (Croatian), "lv" (Latvian), "hu" (Hungarian), "hy" (Armenian), "uk" (Ukrainian), "id" (Indonesian), "ur" (Urdu), "mk" (Macedonian), "ml" (Malayalam), "mn" (Mongolian), "af" (Afrikaans), "in" (Indonesian), "mr" (Marathi), "uz" (Uzbek), "ms" (Malay), "el" (Greek), "en" (English), "is" (Icelandic), "it" (Italian), "am" (Amharic), "my" (Burmese), "es" (Spanish), "iw" (Hebrew), "zh" (Chinese), "et" (Estonian), "eu" (Basque), "ar" (Arabic), "as" (Assamese), "vi" (Vietnamese), "nb" (Norwegian Bokmål), "ja" (Japanese), "ne" (Nepali), "az" (Azerbaijani), "fa" (Persian), "zu" (Zulu), "ro" (Romanian), "no" (Norwegian), "be" (Belarusian), "fi" (Finnish), "ru" (Russian), "bg" (Bulgarian), "bn" (Bangla), "fr" (French), "bs" (Bosnian), "ka" (Georgian), "si" (Sinhala), "sk" (Slovak), "sl" (Slovenian), "ca" (Catalan), "sq" (Albanian), "sr" (Serbian), "kk" (Kazakh), "km" (Khmer), "kn" (Kannada), "or" (Odia), "sv" (Swedish), "ko" (Korean), "sw" (Swahili), "gl" (Galician), "ta" (Tamil), "gu" (Gujarati), "ky" (Kyrgyz), "cs" (Czech), "pa" (Punjabi), "te" (Telugu), "th" (Thai), "tl" (Tagalog), "pl" (Polish), "da" (Danish), "tr" (Turkish)'
         errorLine1='    &lt;string name="shortcut_next_settings_profile"&gt;Next settings profile&lt;/string&gt;'
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">

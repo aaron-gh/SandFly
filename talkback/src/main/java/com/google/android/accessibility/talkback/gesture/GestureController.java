@@ -650,6 +650,9 @@ public class GestureController {
       selectorController.changeGestureProfile(eventId, /* isNext= */ true);
     } else if (action.equals(service.getString(R.string.shortcut_value_settings_profiles))) {
       result = menuManager.showMenu(SETTINGS_PROFILE, eventId);
+    } else if (action.equals(service.getString(R.string.shortcut_value_previous_settings_profile))) {
+      SettingsProfiles.switchToPrevious(
+          service, said -> pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.speech(said)));
     } else if (action.equals(service.getString(R.string.shortcut_value_next_settings_profile))) {
       SettingsProfiles.switchToNext(
           service, said -> pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.speech(said)));

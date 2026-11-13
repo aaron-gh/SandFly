@@ -1221,7 +1221,7 @@ A settings profile is a named set of SandFly's settings. **Back up and restore**
 
 Switching saves the current settings to the profile in use, applies the other profile without restarting SandFly, and says "<name> profile". Settings changed while a profile is in use are also saved to it when the Settings profiles screen opens and when SandFly turns off.
 
-The **Choose settings profile** command opens a menu of the profiles, and **Next settings profile** switches to the next one, wrapping around. Both are in the **SandFly** group of commands, unassigned.
+The **Choose settings profile** command opens a menu of the profiles, and **Next settings profile** and **Previous settings profile** switch to the next or previous one, wrapping around. All three are in the **SandFly** group of commands, unassigned.
 
 A profile holds the main, braille keyboard and braille display settings, including gestures, keyboard shortcuts, gesture profiles and the gesture profile in use. API keys, the SandFly Pro licence, the updater's state, installed scripts and their settings, sound theme drafts, and the state of this phone, such as which tutorials and dialogs were shown, are not in profiles and stay as they are. Profiles are kept on the phone, and are not in exported settings.
 
