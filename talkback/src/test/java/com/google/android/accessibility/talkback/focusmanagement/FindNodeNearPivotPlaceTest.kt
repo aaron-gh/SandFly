@@ -1,0 +1,119 @@
+/*
+ * Copyright 2026 SandFly contributors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not
+ * use this file except in compliance with the License. You may obtain a copy of
+ * the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations under
+ * the License.
+ */
+
+package com.google.android.accessibility.talkback.focusmanagement
+
+import android.graphics.Rect
+import android.view.accessibility.AccessibilityNodeInfo
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
+import com.google.android.accessibility.utils.traversal.OrderedTraversalStrategy
+import com.google.android.accessibility.utils.traversal.TraversalStrategy
+import com.google.android.accessibility.utils.traversal.TraversalStrategyUtils
+import org.junit.Assert.assertEquals
+import org.junit.Test
+import org.junit.runner.RunWith
+import org.robolectric.RobolectricTestRunner
+import org.robolectric.annotation.Config
+import org.robolectric.util.ReflectionHelpers
+
+/**
+ * [FocusProcessorForLogicalNavigation.findNodeNearPivotPlace] finds a node to resume a search
+ * from when a pivot is missing from a freshly-built local tree, read live by its own on-screen
+ * bounds. The tree is laid out with the pivot's place sitting inside a container -- as a
+ * RecyclerView item row normally would -- rather than directly under the tree's root, since the
+ * container's bounds also span the pivot's place and must not be picked instead of the real
+ * nearest node.
+ */
+@RunWith(RobolectricTestRunner::class)
+@Config(sdk = [34])
+class FindNodeNearPivotPlaceTest {
+  private var nextId = 1L
+
+  private inner class Node(bounds: Rect) :
+    AccessibilityNodeInfoCompat(info(bounds)) {
+    val kids = ArrayList<Node>()
+    var up: Node? = null
+
+    fun add(vararg children: Node): Node {
+      for (child in children) {
+        kids.add(child)
+        child.up = this
+      }
+      return this
+    }
+
+    override fun getChildCount(): Int = kids.size
+
+    override fun getChild(index: Int): AccessibilityNodeInfoCompat? = kids[index]
+
+    override fun getParent(): AccessibilityNodeInfoCompat? = up
+  }
+
+  private fun info(bounds: Rect): AccessibilityNodeInfo {
+    val info = AccessibilityNodeInfo.obtain()
+    ReflectionHelpers.setField(info, "mSourceNodeId", nextId++)
+    info.setBoundsInScreen(bounds)
+    info.isVisibleToUser = true
+    info.isClickable = true
+    info.isFocusable = true
+    info.className = "android.widget.TextView"
+    return info
+  }
+
+  /** A standalone node, not part of any tree, read live only for its on-screen bounds. */
+  private fun pivotAt(bounds: Rect): Node = Node(bounds)
+
+  @Test
+  fun backward_skipsContainerThatSpansThePivotsPlace() {
+    val itemAbove = Node(Rect(0, 100, 200, 200))
+    val itemBelow = Node(Rect(0, 400, 200, 500))
+    val row = Node(Rect(0, 100, 200, 500)).add(itemAbove, itemBelow)
+    val root = Node(Rect(0, 0, 200, 1000)).add(row)
+    val strategy = OrderedTraversalStrategy(root)
+    // The pivot's place is between itemAbove and itemBelow, inside row -- row isn't in the
+    // tree built from root once the pivot's own view has been recycled, but row's bounds still
+    // span the pivot's place, the same way row's would if the pivot were still a child of it.
+    val pivot = pivotAt(Rect(0, 200, 200, 300))
+
+    val nearest =
+        FocusProcessorForLogicalNavigation.findNodeNearPivotPlace(
+            strategy, pivot, TraversalStrategy.SEARCH_FOCUS_BACKWARD)
+
+    val resumed =
+        TraversalStrategyUtils.searchFocus(
+            strategy, nearest, TraversalStrategy.SEARCH_FOCUS_BACKWARD, null)
+    assertEquals(itemAbove, resumed)
+  }
+
+  @Test
+  fun forward_skipsContainerThatSpansThePivotsPlace() {
+    val itemAbove = Node(Rect(0, 100, 200, 200))
+    val itemBelow = Node(Rect(0, 400, 200, 500))
+    val row = Node(Rect(0, 100, 200, 500)).add(itemAbove, itemBelow)
+    val root = Node(Rect(0, 0, 200, 1000)).add(row)
+    val strategy = OrderedTraversalStrategy(root)
+    val pivot = pivotAt(Rect(0, 200, 200, 300))
+
+    val nearest =
+        FocusProcessorForLogicalNavigation.findNodeNearPivotPlace(
+            strategy, pivot, TraversalStrategy.SEARCH_FOCUS_FORWARD)
+
+    val resumed =
+        TraversalStrategyUtils.searchFocus(
+            strategy, nearest, TraversalStrategy.SEARCH_FOCUS_FORWARD, null)
+    assertEquals(itemBelow, resumed)
+  }
+}
