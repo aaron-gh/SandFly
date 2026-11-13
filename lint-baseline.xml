@@ -3,6 +3,116 @@
 
     <issue
         id="MissingTranslation"
+        message='"title_pref_capitalize_sentences" is not translated in "de" (German), "hi" (Hindi), "lo" (Lao), "pt" (Portuguese), "fil" (Filipino; Pilipino), "lt" (Lithuanian), "hr" (Croatian), "lv" (Latvian), "hu" (Hungarian), "hy" (Armenian), "uk" (Ukrainian), "id" (Indonesian), "ur" (Urdu), "mk" (Macedonian), "ml" (Malayalam), "mn" (Mongolian), "af" (Afrikaans), "in" (Indonesian), "mr" (Marathi), "uz" (Uzbek), "ms" (Malay), "el" (Greek), "en" (English), "is" (Icelandic), "it" (Italian), "am" (Amharic), "my" (Burmese), "es" (Spanish), "iw" (Hebrew), "zh" (Chinese), "et" (Estonian), "eu" (Basque), "ar" (Arabic), "as" (Assamese), "vi" (Vietnamese), "nb" (Norwegian Bokmål), "ja" (Japanese), "ne" (Nepali), "az" (Azerbaijani), "fa" (Persian), "zu" (Zulu), "ro" (Romanian), "nl" (Dutch), "no" (Norwegian), "be" (Belarusian), "fi" (Finnish), "ru" (Russian), "bg" (Bulgarian), "bn" (Bangla), "fr" (French), "bs" (Bosnian), "ka" (Georgian), "si" (Sinhala), "sk" (Slovak), "sl" (Slovenian), "ca" (Catalan), "sq" (Albanian), "sr" (Serbian), "kk" (Kazakh), "km" (Khmer), "kn" (Kannada), "or" (Odia), "sv" (Swedish), "ko" (Korean), "sw" (Swahili), "gl" (Galician), "ta" (Tamil), "gu" (Gujarati), "ky" (Kyrgyz), "cs" (Czech), "pa" (Punjabi), "te" (Telugu), "th" (Thai), "tl" (Tagalog), "pl" (Polish), "da" (Danish), "tr" (Turkish)'
+        errorLine1='  &lt;string name="title_pref_capitalize_sentences"&gt;Capitalize sentences&lt;/string&gt;'
+        errorLine2="          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/phone/res/values/strings.xml"
+            line="188"
+            column="11"/>
+    </issue>
+
+    <issue
+        id="MissingTranslation"
+        message='"shortcut_switch_keyboard" is not translated in "de" (German), "hi" (Hindi), "lo" (Lao), "pt" (Portuguese), "fil" (Filipino; Pilipino), "lt" (Lithuanian), "hr" (Croatian), "lv" (Latvian), "hu" (Hungarian), "hy" (Armenian), "uk" (Ukrainian), "id" (Indonesian), "ur" (Urdu), "mk" (Macedonian), "ml" (Malayalam), "mn" (Mongolian), "af" (Afrikaans), "in" (Indonesian), "mr" (Marathi), "uz" (Uzbek), "ms" (Malay), "el" (Greek), "en" (English), "is" (Icelandic), "it" (Italian), "am" (Amharic), "my" (Burmese), "es" (Spanish), "iw" (Hebrew), "zh" (Chinese), "et" (Estonian), "eu" (Basque), "ar" (Arabic), "as" (Assamese), "vi" (Vietnamese), "nb" (Norwegian Bokmål), "ja" (Japanese), "ne" (Nepali), "az" (Azerbaijani), "fa" (Persian), "zu" (Zulu), "ro" (Romanian), "nl" (Dutch), "no" (Norwegian), "be" (Belarusian), "fi" (Finnish), "ru" (Russian), "bg" (Bulgarian), "bn" (Bangla), "fr" (French), "bs" (Bosnian), "ka" (Georgian), "si" (Sinhala), "sk" (Slovak), "sl" (Slovenian), "ca" (Catalan), "sq" (Albanian), "sr" (Serbian), "kk" (Kazakh), "km" (Khmer), "kn" (Kannada), "or" (Odia), "sv" (Swedish), "ko" (Korean), "sw" (Swahili), "gl" (Galician), "ta" (Tamil), "gu" (Gujarati), "ky" (Kyrgyz), "cs" (Czech), "pa" (Punjabi), "te" (Telugu), "th" (Thai), "tl" (Tagalog), "pl" (Polish), "da" (Danish), "tr" (Turkish)'
+        errorLine1='    &lt;string name="shortcut_switch_keyboard"&gt;Switch keyboard&lt;/string&gt;'
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="2580"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="MissingTranslation"
+        message='"switch_keyboard_none" is not translated in "de" (German), "hi" (Hindi), "lo" (Lao), "pt" (Portuguese), "fil" (Filipino; Pilipino), "lt" (Lithuanian), "hr" (Croatian), "lv" (Latvian), "hu" (Hungarian), "hy" (Armenian), "uk" (Ukrainian), "id" (Indonesian), "ur" (Urdu), "mk" (Macedonian), "ml" (Malayalam), "mn" (Mongolian), "af" (Afrikaans), "in" (Indonesian), "mr" (Marathi), "uz" (Uzbek), "ms" (Malay), "el" (Greek), "en" (English), "is" (Icelandic), "it" (Italian), "am" (Amharic), "my" (Burmese), "es" (Spanish), "iw" (Hebrew), "zh" (Chinese), "et" (Estonian), "eu" (Basque), "ar" (Arabic), "as" (Assamese), "vi" (Vietnamese), "nb" (Norwegian Bokmål), "ja" (Japanese), "ne" (Nepali), "az" (Azerbaijani), "fa" (Persian), "zu" (Zulu), "ro" (Romanian), "nl" (Dutch), "no" (Norwegian), "be" (Belarusian), "fi" (Finnish), "ru" (Russian), "bg" (Bulgarian), "bn" (Bangla), "fr" (French), "bs" (Bosnian), "ka" (Georgian), "si" (Sinhala), "sk" (Slovak), "sl" (Slovenian), "ca" (Catalan), "sq" (Albanian), "sr" (Serbian), "kk" (Kazakh), "km" (Khmer), "kn" (Kannada), "or" (Odia), "sv" (Swedish), "ko" (Korean), "sw" (Swahili), "gl" (Galician), "ta" (Tamil), "gu" (Gujarati), "ky" (Kyrgyz), "cs" (Czech), "pa" (Punjabi), "te" (Telugu), "th" (Thai), "tl" (Tagalog), "pl" (Polish), "da" (Danish), "tr" (Turkish)'
+        errorLine1='    &lt;string name="switch_keyboard_none"&gt;No other keyboard turned on&lt;/string&gt;'
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="2582"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="MissingTranslation"
+        message='"switch_keyboard_failed" is not translated in "de" (German), "hi" (Hindi), "lo" (Lao), "pt" (Portuguese), "fil" (Filipino; Pilipino), "lt" (Lithuanian), "hr" (Croatian), "lv" (Latvian), "hu" (Hungarian), "hy" (Armenian), "uk" (Ukrainian), "id" (Indonesian), "ur" (Urdu), "mk" (Macedonian), "ml" (Malayalam), "mn" (Mongolian), "af" (Afrikaans), "in" (Indonesian), "mr" (Marathi), "uz" (Uzbek), "ms" (Malay), "el" (Greek), "en" (English), "is" (Icelandic), "it" (Italian), "am" (Amharic), "my" (Burmese), "es" (Spanish), "iw" (Hebrew), "zh" (Chinese), "et" (Estonian), "eu" (Basque), "ar" (Arabic), "as" (Assamese), "vi" (Vietnamese), "nb" (Norwegian Bokmål), "ja" (Japanese), "ne" (Nepali), "az" (Azerbaijani), "fa" (Persian), "zu" (Zulu), "ro" (Romanian), "nl" (Dutch), "no" (Norwegian), "be" (Belarusian), "fi" (Finnish), "ru" (Russian), "bg" (Bulgarian), "bn" (Bangla), "fr" (French), "bs" (Bosnian), "ka" (Georgian), "si" (Sinhala), "sk" (Slovak), "sl" (Slovenian), "ca" (Catalan), "sq" (Albanian), "sr" (Serbian), "kk" (Kazakh), "km" (Khmer), "kn" (Kannada), "or" (Odia), "sv" (Swedish), "ko" (Korean), "sw" (Swahili), "gl" (Galician), "ta" (Tamil), "gu" (Gujarati), "ky" (Kyrgyz), "cs" (Czech), "pa" (Punjabi), "te" (Telugu), "th" (Thai), "tl" (Tagalog), "pl" (Polish), "da" (Danish), "tr" (Turkish)'
+        errorLine1='    &lt;string name="switch_keyboard_failed"&gt;Keyboard not switched&lt;/string&gt;'
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="2584"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="MissingTranslation"
+        message='"title_pref_volume_keys_speech_volume_while_speaking" is not translated in "de" (German), "hi" (Hindi), "lo" (Lao), "pt" (Portuguese), "fil" (Filipino; Pilipino), "lt" (Lithuanian), "hr" (Croatian), "lv" (Latvian), "hu" (Hungarian), "hy" (Armenian), "uk" (Ukrainian), "id" (Indonesian), "ur" (Urdu), "mk" (Macedonian), "ml" (Malayalam), "mn" (Mongolian), "af" (Afrikaans), "in" (Indonesian), "mr" (Marathi), "uz" (Uzbek), "ms" (Malay), "el" (Greek), "en" (English), "is" (Icelandic), "it" (Italian), "am" (Amharic), "my" (Burmese), "es" (Spanish), "iw" (Hebrew), "zh" (Chinese), "et" (Estonian), "eu" (Basque), "ar" (Arabic), "as" (Assamese), "vi" (Vietnamese), "nb" (Norwegian Bokmål), "ja" (Japanese), "ne" (Nepali), "az" (Azerbaijani), "fa" (Persian), "zu" (Zulu), "ro" (Romanian), "nl" (Dutch), "no" (Norwegian), "be" (Belarusian), "fi" (Finnish), "ru" (Russian), "bg" (Bulgarian), "bn" (Bangla), "fr" (French), "bs" (Bosnian), "ka" (Georgian), "si" (Sinhala), "sk" (Slovak), "sl" (Slovenian), "ca" (Catalan), "sq" (Albanian), "sr" (Serbian), "kk" (Kazakh), "km" (Khmer), "kn" (Kannada), "or" (Odia), "sv" (Swedish), "ko" (Korean), "sw" (Swahili), "gl" (Galician), "ta" (Tamil), "gu" (Gujarati), "ky" (Kyrgyz), "cs" (Czech), "pa" (Punjabi), "te" (Telugu), "th" (Thai), "tl" (Tagalog), "pl" (Polish), "da" (Danish), "tr" (Turkish)'
+        errorLine1='    &lt;string name="title_pref_volume_keys_speech_volume_while_speaking"&gt;Volume keys change speech volume while speaking&lt;/string&gt;'
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="3325"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="MissingTranslation"
+        message='"individual_sound_model_loading" is not translated in "de" (German), "hi" (Hindi), "lo" (Lao), "pt" (Portuguese), "fil" (Filipino; Pilipino), "lt" (Lithuanian), "hr" (Croatian), "lv" (Latvian), "hu" (Hungarian), "hy" (Armenian), "uk" (Ukrainian), "id" (Indonesian), "ur" (Urdu), "mk" (Macedonian), "ml" (Malayalam), "mn" (Mongolian), "af" (Afrikaans), "in" (Indonesian), "mr" (Marathi), "uz" (Uzbek), "ms" (Malay), "el" (Greek), "en" (English), "is" (Icelandic), "it" (Italian), "am" (Amharic), "my" (Burmese), "es" (Spanish), "iw" (Hebrew), "zh" (Chinese), "et" (Estonian), "eu" (Basque), "ar" (Arabic), "as" (Assamese), "vi" (Vietnamese), "nb" (Norwegian Bokmål), "ja" (Japanese), "ne" (Nepali), "az" (Azerbaijani), "fa" (Persian), "zu" (Zulu), "ro" (Romanian), "nl" (Dutch), "no" (Norwegian), "be" (Belarusian), "fi" (Finnish), "ru" (Russian), "bg" (Bulgarian), "bn" (Bangla), "fr" (French), "bs" (Bosnian), "ka" (Georgian), "si" (Sinhala), "sk" (Slovak), "sl" (Slovenian), "ca" (Catalan), "sq" (Albanian), "sr" (Serbian), "kk" (Kazakh), "km" (Khmer), "kn" (Kannada), "or" (Odia), "sv" (Swedish), "ko" (Korean), "sw" (Swahili), "gl" (Galician), "ta" (Tamil), "gu" (Gujarati), "ky" (Kyrgyz), "cs" (Czech), "pa" (Punjabi), "te" (Telugu), "th" (Thai), "tl" (Tagalog), "pl" (Polish), "da" (Danish), "tr" (Turkish)'
+        errorLine1='    &lt;string name="individual_sound_model_loading"&gt;On-device AI model loading&lt;/string&gt;'
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings_individual_feedback.xml"
+            line="73"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="MissingTranslation"
+        message='"macro_step_focus" is not translated in "de" (German), "hi" (Hindi), "lo" (Lao), "pt" (Portuguese), "fil" (Filipino; Pilipino), "lt" (Lithuanian), "hr" (Croatian), "lv" (Latvian), "hu" (Hungarian), "hy" (Armenian), "uk" (Ukrainian), "id" (Indonesian), "ur" (Urdu), "mk" (Macedonian), "ml" (Malayalam), "mn" (Mongolian), "af" (Afrikaans), "in" (Indonesian), "mr" (Marathi), "uz" (Uzbek), "ms" (Malay), "el" (Greek), "en" (English), "is" (Icelandic), "it" (Italian), "am" (Amharic), "my" (Burmese), "es" (Spanish), "iw" (Hebrew), "zh" (Chinese), "et" (Estonian), "eu" (Basque), "ar" (Arabic), "as" (Assamese), "vi" (Vietnamese), "nb" (Norwegian Bokmål), "ja" (Japanese), "ne" (Nepali), "az" (Azerbaijani), "fa" (Persian), "zu" (Zulu), "ro" (Romanian), "nl" (Dutch), "no" (Norwegian), "be" (Belarusian), "fi" (Finnish), "ru" (Russian), "bg" (Bulgarian), "bn" (Bangla), "fr" (French), "bs" (Bosnian), "ka" (Georgian), "si" (Sinhala), "sk" (Slovak), "sl" (Slovenian), "ca" (Catalan), "sq" (Albanian), "sr" (Serbian), "kk" (Kazakh), "km" (Khmer), "kn" (Kannada), "or" (Odia), "sv" (Swedish), "ko" (Korean), "sw" (Swahili), "gl" (Galician), "ta" (Tamil), "gu" (Gujarati), "ky" (Kyrgyz), "cs" (Czech), "pa" (Punjabi), "te" (Telugu), "th" (Thai), "tl" (Tagalog), "pl" (Polish), "da" (Danish), "tr" (Turkish)'
+        errorLine1='    &lt;string name="macro_step_focus"&gt;Focus item&lt;/string&gt;'
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings_macros.xml"
+            line="34"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="MissingTranslation"
+        message='"macro_step_focus_value" is not translated in "de" (German), "hi" (Hindi), "lo" (Lao), "pt" (Portuguese), "fil" (Filipino; Pilipino), "lt" (Lithuanian), "hr" (Croatian), "lv" (Latvian), "hu" (Hungarian), "hy" (Armenian), "uk" (Ukrainian), "id" (Indonesian), "ur" (Urdu), "mk" (Macedonian), "ml" (Malayalam), "mn" (Mongolian), "af" (Afrikaans), "in" (Indonesian), "mr" (Marathi), "uz" (Uzbek), "ms" (Malay), "el" (Greek), "en" (English), "is" (Icelandic), "it" (Italian), "am" (Amharic), "my" (Burmese), "es" (Spanish), "iw" (Hebrew), "zh" (Chinese), "et" (Estonian), "eu" (Basque), "ar" (Arabic), "as" (Assamese), "vi" (Vietnamese), "nb" (Norwegian Bokmål), "ja" (Japanese), "ne" (Nepali), "az" (Azerbaijani), "fa" (Persian), "zu" (Zulu), "ro" (Romanian), "nl" (Dutch), "no" (Norwegian), "be" (Belarusian), "fi" (Finnish), "ru" (Russian), "bg" (Bulgarian), "bn" (Bangla), "fr" (French), "bs" (Bosnian), "ka" (Georgian), "si" (Sinhala), "sk" (Slovak), "sl" (Slovenian), "ca" (Catalan), "sq" (Albanian), "sr" (Serbian), "kk" (Kazakh), "km" (Khmer), "kn" (Kannada), "or" (Odia), "sv" (Swedish), "ko" (Korean), "sw" (Swahili), "gl" (Galician), "ta" (Tamil), "gu" (Gujarati), "ky" (Kyrgyz), "cs" (Czech), "pa" (Punjabi), "te" (Telugu), "th" (Thai), "tl" (Tagalog), "pl" (Polish), "da" (Danish), "tr" (Turkish)'
+        errorLine1='    &lt;string name="macro_step_focus_value"&gt;Focus &lt;xliff:g id="label" example="Send"&gt;%1$s&lt;/xliff:g&gt;&lt;/string&gt;'
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings_macros.xml"
+            line="40"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="MissingTranslation"
+        message='"script_keep_running" is not translated in "de" (German), "hi" (Hindi), "lo" (Lao), "pt" (Portuguese), "fil" (Filipino; Pilipino), "lt" (Lithuanian), "hr" (Croatian), "lv" (Latvian), "hu" (Hungarian), "hy" (Armenian), "uk" (Ukrainian), "id" (Indonesian), "ur" (Urdu), "mk" (Macedonian), "ml" (Malayalam), "mn" (Mongolian), "af" (Afrikaans), "in" (Indonesian), "mr" (Marathi), "uz" (Uzbek), "ms" (Malay), "el" (Greek), "en" (English), "is" (Icelandic), "it" (Italian), "am" (Amharic), "my" (Burmese), "es" (Spanish), "iw" (Hebrew), "zh" (Chinese), "et" (Estonian), "eu" (Basque), "ar" (Arabic), "as" (Assamese), "vi" (Vietnamese), "nb" (Norwegian Bokmål), "ja" (Japanese), "ne" (Nepali), "az" (Azerbaijani), "fa" (Persian), "zu" (Zulu), "ro" (Romanian), "nl" (Dutch), "no" (Norwegian), "be" (Belarusian), "fi" (Finnish), "ru" (Russian), "bg" (Bulgarian), "bn" (Bangla), "fr" (French), "bs" (Bosnian), "ka" (Georgian), "si" (Sinhala), "sk" (Slovak), "sl" (Slovenian), "ca" (Catalan), "sq" (Albanian), "sr" (Serbian), "kk" (Kazakh), "km" (Khmer), "kn" (Kannada), "or" (Odia), "sv" (Swedish), "ko" (Korean), "sw" (Swahili), "gl" (Galician), "ta" (Tamil), "gu" (Gujarati), "ky" (Kyrgyz), "cs" (Czech), "pa" (Punjabi), "te" (Telugu), "th" (Thai), "tl" (Tagalog), "pl" (Polish), "da" (Danish), "tr" (Turkish)'
+        errorLine1='    &lt;string name="script_keep_running"&gt;Keep running with the screen off&lt;/string&gt;'
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings_scripts.xml"
+            line="6"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="MissingTranslation"
+        message='"script_import_not_script" is not translated in "de" (German), "hi" (Hindi), "lo" (Lao), "pt" (Portuguese), "fil" (Filipino; Pilipino), "lt" (Lithuanian), "hr" (Croatian), "lv" (Latvian), "hu" (Hungarian), "hy" (Armenian), "uk" (Ukrainian), "id" (Indonesian), "ur" (Urdu), "mk" (Macedonian), "ml" (Malayalam), "mn" (Mongolian), "af" (Afrikaans), "in" (Indonesian), "mr" (Marathi), "uz" (Uzbek), "ms" (Malay), "el" (Greek), "en" (English), "is" (Icelandic), "it" (Italian), "am" (Amharic), "my" (Burmese), "es" (Spanish), "iw" (Hebrew), "zh" (Chinese), "et" (Estonian), "eu" (Basque), "ar" (Arabic), "as" (Assamese), "vi" (Vietnamese), "nb" (Norwegian Bokmål), "ja" (Japanese), "ne" (Nepali), "az" (Azerbaijani), "fa" (Persian), "zu" (Zulu), "ro" (Romanian), "nl" (Dutch), "no" (Norwegian), "be" (Belarusian), "fi" (Finnish), "ru" (Russian), "bg" (Bulgarian), "bn" (Bangla), "fr" (French), "bs" (Bosnian), "ka" (Georgian), "si" (Sinhala), "sk" (Slovak), "sl" (Slovenian), "ca" (Catalan), "sq" (Albanian), "sr" (Serbian), "kk" (Kazakh), "km" (Khmer), "kn" (Kannada), "or" (Odia), "sv" (Swedish), "ko" (Korean), "sw" (Swahili), "gl" (Galician), "ta" (Tamil), "gu" (Gujarati), "ky" (Kyrgyz), "cs" (Czech), "pa" (Punjabi), "te" (Telugu), "th" (Thai), "tl" (Tagalog), "pl" (Polish), "da" (Danish), "tr" (Turkish)'
+        errorLine1='    &lt;string name="script_import_not_script"&gt;Not a .lua or .zip file.&lt;/string&gt;'
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings_scripts.xml"
+            line="16"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="MissingTranslation"
         message='"voice_commands_not_found" is not translated in "de" (German), "hi" (Hindi), "lo" (Lao), "pt" (Portuguese), "fil" (Filipino; Pilipino), "lt" (Lithuanian), "hr" (Croatian), "lv" (Latvian), "hu" (Hungarian), "hy" (Armenian), "uk" (Ukrainian), "id" (Indonesian), "ur" (Urdu), "mk" (Macedonian), "ml" (Malayalam), "mn" (Mongolian), "af" (Afrikaans), "in" (Indonesian), "mr" (Marathi), "uz" (Uzbek), "ms" (Malay), "el" (Greek), "en" (English), "is" (Icelandic), "it" (Italian), "am" (Amharic), "my" (Burmese), "es" (Spanish), "iw" (Hebrew), "zh" (Chinese), "et" (Estonian), "eu" (Basque), "ar" (Arabic), "as" (Assamese), "vi" (Vietnamese), "nb" (Norwegian Bokmål), "ja" (Japanese), "ne" (Nepali), "az" (Azerbaijani), "fa" (Persian), "zu" (Zulu), "ro" (Romanian), "nl" (Dutch), "no" (Norwegian), "be" (Belarusian), "fi" (Finnish), "ru" (Russian), "bg" (Bulgarian), "bn" (Bangla), "fr" (French), "bs" (Bosnian), "ka" (Georgian), "si" (Sinhala), "sk" (Slovak), "sl" (Slovenian), "ca" (Catalan), "sq" (Albanian), "sr" (Serbian), "kk" (Kazakh), "km" (Khmer), "kn" (Kannada), "or" (Odia), "sv" (Swedish), "ko" (Korean), "sw" (Swahili), "gl" (Galician), "ta" (Tamil), "gu" (Gujarati), "ky" (Kyrgyz), "cs" (Czech), "pa" (Punjabi), "te" (Telugu), "th" (Thai), "tl" (Tagalog), "pl" (Polish), "da" (Danish), "tr" (Turkish)'
         errorLine1='    &lt;string name="voice_commands_not_found"&gt;Not found: &lt;xliff:g id="label" example="Settings"&gt;%1$s&lt;/xliff:g&gt;&lt;/string&gt;'
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
