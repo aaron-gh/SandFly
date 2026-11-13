@@ -24,6 +24,7 @@ import com.google.android.accessibility.talkback.ActorState;
 import com.google.android.accessibility.talkback.actor.AutoScrollActor;
 import com.google.android.accessibility.talkback.compositor.GlobalVariables;
 import com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForScreenStateChange;
+import com.google.android.accessibility.talkback.focusmanagement.LiftToActivate;
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.ScreenState;
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.ScreenStateMonitor.ScreenStateChangeListener;
 import com.google.android.accessibility.talkback.overview.SplitScreen;
@@ -184,6 +185,14 @@ public class InputFocusInterpreter
     AccessibilityNodeInfoCompat sourceNode = AccessibilityNodeInfoUtils.toCompat(event.getSource());
     if (sourceNode == null) {
       // Invalid TYPE_VIEW_FOCUSED event.
+      return;
+    }
+
+    // A navigation bar button can take input focus while text is edited, such as after a paste.
+    // Accessibility focus must stay in the edit field.
+    if (LiftToActivate.isNavigationBarButton(
+        sourceNode.getPackageName(), sourceNode.getViewIdResourceName())) {
+      LogUtils.d(TAG, "Ignore TYPE_VIEW_FOCUSED event from a navigation bar button.");
       return;
     }
 

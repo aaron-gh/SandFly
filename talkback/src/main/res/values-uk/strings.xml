@@ -23,8 +23,8 @@
   <string name="template_charging">Стан акумулятора: %1$s; рівень заряду у відсотках: %2$s.</string>
   <string name="template_charging_lite">Заряджання %1$s</string>
   <string name="template_language_options_menu_item">%1$s (%2$s)</string>
-  <string name="value_ringer_vibrate">Вібросигнал.</string>
-  <string name="value_ringer_silent">Дзвінок беззвучний.</string>
+  <string name="value_ringer_vibrate">Режим вібрації.</string>
+  <string name="value_ringer_silent">Беззвучний режим.</string>
   <string name="value_screen_on">Екран увімкнено.</string>
   <string name="value_screen_off">Екран вимкнено.</string>
   <string name="value_device_unlocked">Пристрій розблоковано.</string>
@@ -396,7 +396,7 @@
   <string name="shortcut_select_previous_setting">Попередній елемент керування читанням</string>
   <string name="shortcut_pass_through_next">Універсальний системний жест</string>
   <string name="shortcut_a11y_button">Кнопка функцій доступності</string>
-  <string name="shortcut_a11y_button_long_press">Утримувати кнопку спеціальних можливостей</string>
+  <string name="shortcut_a11y_button_long_press">Утримувати кнопку функцій доступності</string>
   <string name="shortcut_selected_setting_next_action">Перемістити елемент керування читанням униз або вперед</string>
   <string name="shortcut_selected_setting_previous_action">Перемістити елемент керування читанням угору або назад</string>
   <string name="label_screen_search_result">Результат пошуку</string>
@@ -570,8 +570,8 @@
   <string name="title_pref_shortcut_down_and_right">Провести пальцем униз, потім праворуч</string>
   <string name="title_pref_shortcut_up_and_left">Провести пальцем угору, потім ліворуч</string>
   <string name="title_pref_shortcut_up_and_right">Провести пальцем угору, потім праворуч</string>
-  <string name="title_pref_shortcut_right_and_down">Провести пальцем праворуч і вниз</string>
-  <string name="title_pref_shortcut_right_and_up">Провести пальцем праворуч і вгору</string>
+  <string name="title_pref_shortcut_right_and_down">Провести пальцем праворуч, потім униз</string>
+  <string name="title_pref_shortcut_right_and_up">Провести пальцем праворуч, потім угору</string>
   <string name="title_pref_shortcut_left_and_down">Провести пальцем ліворуч, потім униз</string>
   <string name="title_pref_shortcut_left_and_up">Провести пальцем ліворуч, потім угору</string>
   <string name="title_pref_shortcut_2finger_1tap">Дотик двома пальцями</string>
@@ -1541,7 +1541,7 @@
     <string name="dialog_message_detailed_ai_description">Вибрані зображення надсилаються до Gemini API від Google для опису. Коли ввімкнено ШІ на пристрої, вони натомість описуються на цьому телефоні й не надсилаються.\n\nЗ безкоштовним ключем API Google може зберігати отримане, використовувати це для покращення своїх продуктів і передавати на перевірку людям. Генеративний ШІ експериментальний, тому помилятиметься. Застосовуються <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
     <string name="dialog_message_detailed_ai_promotion">Детальні описи зображень створює генеративний ШІ. Вибрані зображення надсилаються до Gemini API від Google для опису. Коли ввімкнено ШІ на пристрої, вони натомість описуються на цьому телефоні й не надсилаються.\n\nЗ безкоштовним ключем API Google може зберігати отримане, використовувати це для покращення своїх продуктів і передавати на перевірку людям. Генеративний ШІ експериментальний, тому помилятиметься. Детальні описи зображень можна будь-коли вимкнути в налаштуваннях SandFly.\n\nЗастосовуються <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
     <string name="dialog_message_screen_overview_promotion">Знімок екрана надсилається до Gemini API від Google для опису, що триває кілька секунд. Коли ввімкнено ШІ на пристрої, він натомість описується на цьому телефоні й не надсилається.\n\nЗ безкоштовним ключем API Google може зберігати отримане, використовувати це для покращення своїх продуктів і передавати на перевірку людям. Генеративний ШІ експериментальний, тому помилятиметься. Застосовуються <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
-    <string name="shortcut_title_open_app">Відкрити програму</string>
+    <string name="shortcut_title_open_app">Відкрити додаток</string>
     <string name="shortcut_open_app">Відкрити <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
     <string name="shortcut_scroll_to_top">Прокрутити на початок</string>
     <string name="shortcut_write_reading_control">Написати літеру елемента керування читанням</string>
@@ -1611,7 +1611,7 @@
     <string name="title_pref_shortcut_3finger_pinch">Зведення трьох пальців</string>
     <string name="title_pref_shortcut_3finger_spread">Розведіть 3 пальцями</string>
     <string name="title_pref_shortcut_4finger_pinch">Зведення чотирьох пальців</string>
-    <string name="title_pref_shortcut_4finger_spread">Розведіть 4 пальцями</string>
+    <string name="title_pref_shortcut_4finger_spread">Розведення чотирьох пальців</string>
     <string name="title_pref_shortcut_edge_bottom_up">Провести пальцем угору від нижнього краю</string>
     <string name="title_pref_shortcut_edge_bottom_long_up">Довге проведення вгору від нижнього краю</string>
     <string name="title_pref_shortcut_edge_top_left_down">Провести пальцем униз від верхнього лівого кута</string>
@@ -1834,8 +1834,8 @@
     <string name="title_pref_shortcut_down_and_right_and_hold">Провести пальцем униз, потім праворуч та утримувати</string>
     <string name="title_pref_shortcut_left_and_up_and_hold">Провести пальцем ліворуч, потім угору та утримувати</string>
     <string name="title_pref_shortcut_left_and_down_and_hold">Провести пальцем ліворуч, потім униз та утримувати</string>
-    <string name="title_pref_shortcut_right_and_up_and_hold">Провести пальцем праворуч і вгору та утримувати</string>
-    <string name="title_pref_shortcut_right_and_down_and_hold">Провести пальцем праворуч і вниз та утримувати</string>
+    <string name="title_pref_shortcut_right_and_up_and_hold">Провести пальцем праворуч, потім угору та утримувати</string>
+    <string name="title_pref_shortcut_right_and_down_and_hold">Провести пальцем праворуч, потім униз та утримувати</string>
   <string name="shortcut_toggle_magnification">Увімкнути або вимкнути збільшення</string>
   <string name="shortcut_submit_text">Надіслати текст</string>
   <string name="shortcut_clear_text">Очистити текст</string>
