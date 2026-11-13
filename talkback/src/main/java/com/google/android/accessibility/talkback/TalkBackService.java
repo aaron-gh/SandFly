@@ -1803,7 +1803,13 @@ public class TalkBackService extends AccessibilityServiceCompat
   private boolean canUseVolumeKeyPresses(boolean triggerModifierPressed) {
     return canTakeVolumeKeys(triggerModifierPressed)
         && ringerModeAndScreenMonitor != null
-        && ringerModeAndScreenMonitor.isInteractive();
+        && ringerModeAndScreenMonitor.isInteractive()
+        // While speech other than the volume announcement plays, the presses go to Android, which
+        // adjusts the accessibility stream.
+        && !pipeline
+            .getActorState()
+            .getSpeechState()
+            .isSpeakingOrQueuedAndNotSourceIsVolumeAnnouncement();
   }
 
   /**
