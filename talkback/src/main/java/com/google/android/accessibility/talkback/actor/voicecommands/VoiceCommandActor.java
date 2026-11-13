@@ -35,6 +35,7 @@ import com.google.android.accessibility.talkback.Feedback;
 import com.google.android.accessibility.talkback.Feedback.ShowToast;
 import com.google.android.accessibility.talkback.Pipeline;
 import com.google.android.accessibility.talkback.R;
+import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics;
 import com.google.android.accessibility.talkback.gesture.GestureHints;
 import com.google.android.accessibility.talkback.training.VoiceCommandHelpInitiator;
@@ -44,6 +45,7 @@ import com.google.android.accessibility.utils.monitor.ScreenMonitor;
 import com.google.android.accessibility.utils.output.FeedbackItem;
 import com.google.android.accessibility.utils.output.SpeechController.SpeakOptions;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
+import org.checkerframework.checker.nullness.qual.Nullable;
 
 /**
  * Starts and ends the voice recognition for Talkback. For more information on implementation check
@@ -62,11 +64,25 @@ public class VoiceCommandActor implements SpeechRecognizerRequester {
   private final VoiceCommandProcessor voiceCommandProcessor;
   private final SpeechRecognizerPerformer speechRecognizerPerformer;
 
+  // Null when the context isn't the running service, as in tests.
+  private final @Nullable VoiceCommandEngine engine;
+
   @Override
   public boolean onResult(String command, boolean isPartialResult) {
     LogUtils.v(
         TAG, "handleSpeechCommand with command: \"%s\", isPartial:%b", command, isPartialResult);
+    if (!isPartialResult && engine != null) {
+      engine.handle(command);
+      return true;
+    }
     return voiceCommandProcessor.handleSpeechCommand(commandText(command), isPartialResult);
+  }
+
+  /** Stops the voice command running, if one is. */
+  public void stopCommand() {
+    if (engine != null) {
+      engine.stop();
+    }
   }
 
   /**
@@ -150,6 +166,10 @@ public class VoiceCommandActor implements SpeechRecognizerRequester {
     this.voiceCommandProcessor = voiceCommandProcessor;
     this.analytics = analytics;
     this.speechRecognizerPerformer = speechRecognizerPerformer;
+    engine =
+        context instanceof TalkBackService talkBackService
+            ? new VoiceCommandEngine(talkBackService, voiceCommandProcessor)
+            : null;
     speechRecognizerPerformer.setListener(this);
     speechRecognizerPerformer.setCorrectsDictation(false);
   }

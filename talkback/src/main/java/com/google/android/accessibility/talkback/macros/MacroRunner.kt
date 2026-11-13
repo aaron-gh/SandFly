@@ -69,7 +69,7 @@ object MacroRunner {
   private var current: Run? = null
 
   /** Returns the ID of the macro running, or null. */
-  @JvmStatic fun runningId(): String? = current?.macro?.id
+  @JvmStatic fun runningId(): String? = current?.macro?.id?.takeIf { it != UNSAVED_ID }
 
   /**
    * Runs the command [value]: the macro whose command it is, or [Macros.STOP_COMMAND]. Returns
@@ -91,14 +91,37 @@ object MacroRunner {
    */
   @JvmStatic
   @JvmOverloads
-  fun run(id: String, sayNotMet: Boolean = false): Boolean {
+  fun run(id: String, sayNotMet: Boolean = false, onDone: ((Boolean) -> Unit)? = null): Boolean {
     val service = TalkBackService.getInstance() ?: return false
     val macro = Macros.find(SharedPreferencesUtils.getSharedPreferences(service), id) ?: return false
+    start(service, macro, sayNotMet, onDone)
+    return true
+  }
+
+  /**
+   * Runs [steps] as a macro that isn't saved, as a voice command does, stopping the macro running.
+   * [onDone] gets whether every step ran, unless the run is stopped. Returns false when SandFly
+   * isn't running.
+   */
+  @JvmStatic
+  fun runSteps(steps: List<Macros.Step>, onDone: (Boolean) -> Unit): Boolean {
+    val service = TalkBackService.getInstance() ?: return false
+    start(service, Macros.Macro(UNSAVED_ID, "", steps), sayNotMet = false, onDone)
+    return true
+  }
+
+  private const val UNSAVED_ID = ""
+
+  private fun start(
+    service: TalkBackService,
+    macro: Macros.Macro,
+    sayNotMet: Boolean,
+    onDone: ((Boolean) -> Unit)?,
+  ) {
     stop()
-    val run = Run(service, macro)
+    val run = Run(service, macro, onDone)
     current = run
     run.later(0) { run.start(sayNotMet) }
-    return true
   }
 
   /** Stops the macro running, if one is. */
@@ -109,8 +132,15 @@ object MacroRunner {
   }
 
   /** One run of [macro]. Its callbacks on the main handler are posted with the run as token. */
-  private class Run(val service: TalkBackService, val macro: Macros.Macro) {
+  private class Run(
+    val service: TalkBackService,
+    val macro: Macros.Macro,
+    private var onDone: ((Boolean) -> Unit)?,
+  ) {
     @Volatile var finished = false
+
+    // Whether a step failed or the condition wasn't met.
+    private var failed = false
 
     private val flow = Macros.analyze(macro.steps)
 
@@ -144,6 +174,7 @@ object MacroRunner {
             service.getString(it.message),
           )
         )
+        failed = true
         done()
         return
       }
@@ -152,6 +183,7 @@ object MacroRunner {
           runStep(0)
         } else {
           if (sayNotMet) say(service.getString(R.string.macro_not_met))
+          failed = true
           done()
         }
       }
@@ -233,6 +265,7 @@ object MacroRunner {
                 Macros.describe(service, step),
               )
             )
+            failed = true
             done()
           }
           else -> {
@@ -256,6 +289,7 @@ object MacroRunner {
           else -> {
             Log.w(TAG, "Macro stopped at step ${index + 1}: Wait until timed out")
             say(service.getString(R.string.macro_stopped_timeout, Macros.describe(service, step)))
+            failed = true
             done()
           }
         }
@@ -387,6 +421,7 @@ object MacroRunner {
           service.getString(R.string.macro_step_failed, Macros.describe(service, step))
         }
       say(text)
+      failed = true
       done()
     }
 
@@ -395,8 +430,16 @@ object MacroRunner {
     }
 
     private fun done() {
+      val wasActive = !finished
       finish()
       if (current === this) current = null
+      // A run that was stopped, as by another, says nothing.
+      if (wasActive && TalkBackService.getInstance() === service) {
+        onDone?.let { callback ->
+          onDone = null
+          callback(!failed)
+        }
+      }
     }
 
     fun finish() {

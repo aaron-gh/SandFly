@@ -142,6 +142,11 @@ public class VoiceCommandProcessor {
 
   private boolean echoNotRecognizedTextEnabled;
 
+  // While handleIfRecognized runs: whether the command was recognized, and that a command that
+  // isn't says nothing.
+  private boolean recognized;
+  private boolean quietWhenNotRecognized;
+
   ////////////////////////////////////////////////////////////////////////////////////////////////
   private List<String> granularityCommandList;
 
@@ -779,6 +784,9 @@ public class VoiceCommandProcessor {
       return true;
     }
 
+    if (quietWhenNotRecognized) {
+      return false;
+    }
     if (echoNotRecognizedTextEnabled) {
       speakDelayed(
           service.getString(R.string.voice_commands_echo_feedback_not_recognized, command));
@@ -811,7 +819,36 @@ public class VoiceCommandProcessor {
     return commandList;
   }
 
+  /**
+   * Runs {@code command}, in lower case, when it is one of these voice commands, and returns whether
+   * it is. Says nothing when it isn't.
+   */
+  public boolean handleIfRecognized(String command) {
+    recognized = false;
+    quietWhenNotRecognized = true;
+    try {
+      handleSpeechCommand(command, /* isPartialResult= */ false);
+    } finally {
+      quietWhenNotRecognized = false;
+    }
+    return recognized;
+  }
+
+  /** Says that {@code command} isn't a voice command, as when no command matches it. */
+  public void sayNotRecognized(String command) {
+    if (echoNotRecognizedTextEnabled) {
+      speakDelayed(
+          service.getString(R.string.voice_commands_echo_feedback_not_recognized, command));
+    } else {
+      speakDelayed(
+          service.getString(
+              R.string.voice_commands_partial_result, service.getString(R.string.title_pref_help)));
+    }
+    analytics.onVoiceCommandEvent(VOICE_COMMAND_UNRECOGNIZED);
+  }
+
   private void handleVoiceCommandRecognized(@VoiceCommandTypeId int type) {
+    recognized = true;
     analytics.onVoiceCommandEvent(VOICE_COMMAND_RECOGNIZED);
     analytics.onVoiceCommandType(type);
   }
