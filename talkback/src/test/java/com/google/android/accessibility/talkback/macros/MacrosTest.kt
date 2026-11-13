@@ -27,6 +27,8 @@ import com.google.android.accessibility.talkback.macros.Macros.FocusItem
 import com.google.android.accessibility.talkback.macros.Macros.Macro
 import com.google.android.accessibility.talkback.macros.Macros.OpenApp
 import com.google.android.accessibility.talkback.macros.Macros.RunCommand
+import com.google.android.accessibility.talkback.macros.Macros.SpeakItem
+import com.google.android.accessibility.talkback.macros.Macros.SpeakText
 import com.google.android.accessibility.talkback.macros.Macros.Tap
 import com.google.android.accessibility.talkback.macros.Macros.TypeText
 import com.google.android.accessibility.talkback.macros.Macros.Wait
@@ -80,6 +82,9 @@ class MacrosTest {
           Tap("^Reply", 5_000, regex = true, field = Macros.Field.DESCRIPTION),
           FocusItem("Send", 5_000),
           FocusItem("^Reply", 5_000, regex = true, field = Macros.Field.DESCRIPTION),
+          SpeakItem("Unread", 5_000),
+          SpeakItem("status", 5_000, regex = true, field = Macros.Field.RESOURCE_ID),
+          SpeakText("Message sent"),
           OpenApp(gmail),
           TypeText("On my way", replace = true),
           TypeText("Thanks"),
@@ -106,6 +111,11 @@ class MacrosTest {
         .put(JSONObject().put("type", "tap").put("label", "  "))
         .put(JSONObject().put("type", "focus_item").put("label", "OK").put("timeout", 99_999_999L))
         .put(JSONObject().put("type", "focus_item").put("label", ""))
+        .put(JSONObject().put("type", "speak_item").put("label", "OK").put("timeout", 1))
+        .put(JSONObject().put("type", "speak_item").put("label", " "))
+        .put(JSONObject().put("type", "speak_text").put("text", "x".repeat(Macros.MAX_TEXT + 5)))
+        .put(JSONObject().put("type", "speak_text").put("text", "  "))
+        .put(JSONObject().put("type", "speak_text"))
         .put(JSONObject().put("type", "open_app").put("app", "com.example"))
         .put(JSONObject().put("type", "type_text").put("text", ""))
         .put(JSONObject().put("type", "swipe"))
@@ -119,6 +129,8 @@ class MacrosTest {
         Wait(0),
         Tap("OK", Macros.MIN_TAP_TIMEOUT_MS),
         FocusItem("OK", Macros.MAX_TAP_TIMEOUT_MS),
+        SpeakItem("OK", Macros.MIN_TAP_TIMEOUT_MS),
+        SpeakText("x".repeat(Macros.MAX_TEXT)),
       ),
       Macros.fromJson(json).single().steps,
     )
@@ -216,6 +228,9 @@ class MacrosTest {
     assertEquals("Tap ^Re (regular expression)", Macros.describe(context, Tap("^Re", regex = true)))
     assertEquals("Focus Send", Macros.describe(context, FocusItem("Send")))
     assertEquals("Focus ^Re (regular expression)", Macros.describe(context, FocusItem("^Re", regex = true)))
+    assertEquals("Speak Send", Macros.describe(context, SpeakItem("Send")))
+    assertEquals("Speak ^Re (regular expression)", Macros.describe(context, SpeakItem("^Re", regex = true)))
+    assertEquals("Speak Done", Macros.describe(context, SpeakText("Done")))
     assertEquals("Type Hello", Macros.describe(context, TypeText("Hello")))
     assertEquals("Replace text with Hello", Macros.describe(context, TypeText("Hello", replace = true)))
   }
@@ -329,6 +344,10 @@ class MacrosTest {
     assertEquals(
       "Focus send (Resource ID)",
       Macros.describe(context, FocusItem("send", field = Macros.Field.RESOURCE_ID)),
+    )
+    assertEquals(
+      "Speak status (Hint)",
+      Macros.describe(context, SpeakItem("status", field = Macros.Field.HINT)),
     )
   }
 
