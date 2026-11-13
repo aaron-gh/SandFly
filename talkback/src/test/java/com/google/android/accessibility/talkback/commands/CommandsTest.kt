@@ -78,6 +78,7 @@ class CommandsTest {
         R.string.shortcut_value_next_settings_profile,
         R.string.shortcut_value_toggle_time_announcements,
         R.string.shortcut_value_speech_history,
+        R.string.shortcut_value_switch_keyboard,
       )) {
       assertTrue(context.getString(res) in values)
     }

@@ -2576,6 +2576,12 @@
     <string name="shortcut_submit_text">Submit text</string>
     <!-- Label for the command that removes all text from the focused edit box. [CHAR_LIMIT=NONE] -->
     <string name="shortcut_clear_text">Clear text</string>
+    <!-- Label for the command that switches to the next on-screen keyboard (input method) turned on in Android's keyboard settings. [CHAR LIMIT=NONE] -->
+    <string name="shortcut_switch_keyboard">Switch keyboard</string>
+    <!-- Spoken when the Switch keyboard command finds no keyboard turned on other than the current one. [CHAR LIMIT=NONE] -->
+    <string name="switch_keyboard_none">No other keyboard turned on</string>
+    <!-- Spoken when Android didn't switch to the next keyboard for the Switch keyboard command. [CHAR LIMIT=NONE] -->
+    <string name="switch_keyboard_failed">Keyboard not switched</string>
     <!-- Label for the command that adds the text of the focused item, or the selected text, to the end of the text on the clipboard. [CHAR_LIMIT=40] -->
     <string name="shortcut_add_to_clipboard">Add to clipboard</string>
     <!-- Title of the window, command and SandFly menu item listing the texts copied, newest first. [CHAR_LIMIT=40] -->
