@@ -19,6 +19,7 @@ package com.google.android.accessibility.talkback.eventprocessor;
 import android.os.Message;
 import android.os.SystemClock;
 import android.view.View;
+import android.os.Build;
 import android.view.accessibility.AccessibilityEvent;
 import androidx.annotation.VisibleForTesting;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
@@ -26,6 +27,7 @@ import com.google.android.accessibility.talkback.compositor.Compositor;
 import com.google.android.accessibility.talkback.compositor.EventFilter;
 import com.google.android.accessibility.utils.AccessibilityEventListener;
 import com.google.android.accessibility.utils.AccessibilityEventUtils;
+import com.google.android.accessibility.utils.ConcurrentNodeQueries;
 import com.google.android.accessibility.utils.Performance;
 import com.google.android.accessibility.utils.Performance.EventId;
 import com.google.android.accessibility.utils.WeakReferenceHandler;
@@ -34,6 +36,9 @@ import com.google.android.accessibility.utils.input.TextEventInterpreter;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import java.util.Collections;
 import java.util.IdentityHashMap;
+import java.util.Map;
+import java.util.function.Predicate;
+import java.util.function.Function;
 import java.util.List;
 import java.util.Set;
 import java.util.function.BiConsumer;
@@ -45,6 +50,8 @@ import java.util.function.BiConsumer;
 public class ProcessorEventQueue implements AccessibilityEventListener {
 
   private static final String TAG = "ProcessorEventQueue";
+  private static final Predicate<AccessibilityEvent> DEFAULT_ASSERTIVE_CLASSIFIER =
+      ProcessorEventQueue::isAssertiveLiveRegionChange;
 
   /** Manages pending speech events. */
   private final ProcessorEventHandler handler = new ProcessorEventHandler(this);
@@ -79,6 +86,15 @@ public class ProcessorEventQueue implements AccessibilityEventListener {
    * received event.
    */
   private final EventQueue eventQueue = new EventQueue();
+  /** Answers belong to queued event copies, not to nodes or future content changes. */
+  private final Map<AccessibilityEvent, Boolean> assertiveClassifications = new IdentityHashMap<>();
+  private final Predicate<AccessibilityEvent> assertiveClassifier;
+  private final Function<List<AccessibilityEvent>, ConcurrentNodeQueries.LiveRegionRead> liveRegionPreparer;
+  private long contentGeneration;
+  private record PreparedRegions(AccessibilityEvent focus, long generation,
+      List<AccessibilityEvent> changes, ConcurrentNodeQueries.LiveRegionRead read) {}
+  private PreparedRegions preparedRegions;
+
 
   /** Speaks an event through the {@link Compositor} and interprets its text changes. */
   private final BiConsumer<AccessibilityEvent, EventId> eventProcessor;
@@ -94,7 +110,44 @@ public class ProcessorEventQueue implements AccessibilityEventListener {
 
   @VisibleForTesting
   ProcessorEventQueue(BiConsumer<AccessibilityEvent, EventId> eventProcessor) {
+    this(eventProcessor, DEFAULT_ASSERTIVE_CLASSIFIER);
+  }
+
+  @VisibleForTesting
+  ProcessorEventQueue(BiConsumer<AccessibilityEvent, EventId> eventProcessor,
+      Predicate<AccessibilityEvent> assertiveClassifier) {
+    this(eventProcessor, assertiveClassifier, assertiveClassifier == DEFAULT_ASSERTIVE_CLASSIFIER
+        ? changes -> ConcurrentNodeQueries.beginLiveRegions(changes, MAX_LIVE_REGION_DEPTH) : null);
+  }
+
+  @VisibleForTesting
+  ProcessorEventQueue(BiConsumer<AccessibilityEvent, EventId> eventProcessor,
+      Predicate<AccessibilityEvent> assertiveClassifier,
+      Function<List<AccessibilityEvent>, ConcurrentNodeQueries.LiveRegionRead> liveRegionPreparer) {
     this.eventProcessor = eventProcessor;
+    this.assertiveClassifier = assertiveClassifier;
+    this.liveRegionPreparer = liveRegionPreparer;
+  }
+
+  private void cancelPreparedRegions() {
+    if (preparedRegions != null) preparedRegions.read.cancel();
+    preparedRegions = null;
+  }
+
+  /** Starts this focus event's alert reads while the earlier listeners handle collection data. */
+  public void prepareWebFocus(AccessibilityEvent event) {
+    cancelPreparedRegions();
+    if (liveRegionPreparer == null || !isWebFocus(event)) return;
+    List<AccessibilityEvent> changes;
+    synchronized (eventQueue) {
+      changes = eventQueue.latestOfType(
+          AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED, MAX_CONTENT_CHANGES_CHECKED);
+    }
+    changes.removeIf(assertiveClassifications::containsKey);
+    if (!changes.isEmpty()) {
+      preparedRegions = new PreparedRegions(event, contentGeneration,
+          new java.util.ArrayList<>(changes), liveRegionPreparer.apply(changes));
+    }
   }
 
   @Override
@@ -102,8 +155,28 @@ public class ProcessorEventQueue implements AccessibilityEventListener {
     return MASK_EVENTS_HANDLED_BY_PROCESSOR_EVENT_QUEUE;
   }
 
+  private static boolean changesWindowStructure(AccessibilityEvent event) {
+    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.P) return true;
+    int focusOnly = AccessibilityEvent.WINDOWS_CHANGE_ACTIVE
+        | AccessibilityEvent.WINDOWS_CHANGE_FOCUSED
+        | AccessibilityEvent.WINDOWS_CHANGE_ACCESSIBILITY_FOCUSED;
+    int changes = event.getWindowChanges();
+    // Moving focus does not change aria-live or a queued change's ancestor chain. Unknown and
+    // structural window changes still invalidate it, as does every content change below.
+    return changes == 0 || (changes & ~focusOnly) != 0;
+  }
+
   @Override
   public void onAccessibilityEvent(AccessibilityEvent event, EventId eventId) {
+    if (event.getEventType() == AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED
+        || event.getEventType() == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED
+        || (event.getEventType() == AccessibilityEvent.TYPE_WINDOWS_CHANGED
+            && changesWindowStructure(event))) {
+      // A new change can alter aria-live on an ancestor of an already queued change.
+      assertiveClassifications.clear();
+      contentGeneration++;
+      cancelPreparedRegions();
+    }
     if (isWebFocus(event)) {
       processWebFocus(event, eventId);
       return;
@@ -143,8 +216,25 @@ public class ProcessorEventQueue implements AccessibilityEventListener {
               AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED, MAX_CONTENT_CHANGES_CHECKED);
     }
     Set<AccessibilityEvent> assertiveChanges = Collections.newSetFromMap(new IdentityHashMap<>());
+    // A polite change can remain queued across many focus events. Read it once while it is
+    // queued, rather than walking its parents again before each item can be spoken.
+    assertiveClassifications.keySet().retainAll(latestContentChanges);
+    List<AccessibilityEvent> unchecked = new java.util.ArrayList<>();
+    for (AccessibilityEvent change : latestContentChanges) {
+      if (!assertiveClassifications.containsKey(change)) unchecked.add(change);
+    }
+    // Classification still precedes focus speech. Only independent app reads are batched;
+    // any timed-out or own-window result is checked by the original synchronous path.
+    PreparedRegions prepared = preparedRegions;
+    preparedRegions = null;
+    if (prepared != null && prepared.focus == event && prepared.generation == contentGeneration
+        && prepared.changes.equals(unchecked)) {
+      assertiveClassifications.putAll(prepared.read.finish());
+    } else {
+      if (prepared != null) prepared.read.cancel();
+    }
     for (AccessibilityEvent contentChange : latestContentChanges) {
-      if (isAssertiveLiveRegionChange(contentChange)) {
+      if (assertiveClassifications.computeIfAbsent(contentChange, assertiveClassifier::test)) {
         assertiveChanges.add(contentChange);
       }
     }
@@ -183,6 +273,9 @@ public class ProcessorEventQueue implements AccessibilityEventListener {
 
   public void clearQueue() {
     handler.removeMessages(WHAT_SPEAK);
+    assertiveClassifications.clear();
+    contentGeneration++;
+    cancelPreparedRegions();
   }
 
   /**
@@ -196,6 +289,7 @@ public class ProcessorEventQueue implements AccessibilityEventListener {
       return;
     }
     LogUtils.d(TAG, "Processing event: %s", event);
+    assertiveClassifications.remove(event);
 
     eventProcessor.accept(event, eventId);
   }
