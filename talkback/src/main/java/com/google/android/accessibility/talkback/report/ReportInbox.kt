@@ -85,7 +85,7 @@ object ReportInbox {
       val checked =
         try {
           check(app)
-        } catch (e: RuntimeException) {
+        } catch (e: Throwable) {
           LogUtils.e(TAG, "Reports not checked: %s", e)
           false
         }
