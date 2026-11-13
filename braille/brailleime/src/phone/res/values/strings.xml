@@ -184,6 +184,8 @@
   <string name="summary_pref_typing_sounds">Play keyboard clicks when you type a character, a space, a new line, or delete</string>
   <!-- Title of the option that speaks "Submitting text" when the braille keyboard sends text. "Submitting text" is the announcement perform_action_submitting. [CHAR_LIMIT=60]-->
   <string name="title_pref_speak_submitting">Say \"Submitting text\"</string>
+  <!-- Title of the option that changes the first letter typed at the start of a sentence to a capital letter. [CHAR_LIMIT=60]-->
+  <string name="title_pref_capitalize_sentences">Capitalize sentences</string>
   <!-- Title of the option that updates the braille keyboard dot positions when the user holds the fingers of one hand on the screen, then adds the fingers of the other hand. "Update dot positions" is context_menu_layout_calibration. [CHAR_LIMIT=80] -->
   <string name="title_pref_quick_calibration">Update dot positions with one hand, then the other</string>
 

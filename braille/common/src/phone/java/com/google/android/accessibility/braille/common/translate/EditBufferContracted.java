@@ -284,6 +284,13 @@ public abstract class EditBufferContracted implements EditBuffer {
     String holdingsBeforeCursor = translator.translateToPrint(holdings.subword(0, holdingPosition));
     String holdingsAfterCursor =
         translator.translateToPrint(holdings.subword(holdingPosition, holdings.size()));
+    if (SentenceCapitalization.shouldCapitalize(context, imeConnection)) {
+      if (holdingsBeforeCursor.isEmpty()) {
+        holdingsAfterCursor = SentenceCapitalization.apply(true, holdingsAfterCursor);
+      } else {
+        holdingsBeforeCursor = SentenceCapitalization.apply(true, holdingsBeforeCursor);
+      }
+    }
 
     int textCursorStartIndex = getTextCursorStartIndex(imeConnection.inputConnection);
 

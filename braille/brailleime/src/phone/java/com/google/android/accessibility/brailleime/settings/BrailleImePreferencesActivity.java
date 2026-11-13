@@ -273,6 +273,20 @@ public class BrailleImePreferencesActivity extends PreferencesActivity {
       }
 
       {
+        // Capitalize sentences preference.
+        SwitchPreferenceCompat capitalizeSentencesPref =
+            findPreference(getString(R.string.pref_brailleime_capitalize_sentences));
+        capitalizeSentencesPref.setChecked(
+            BrailleUserPreferences.readCapitalizeSentences(getContext()));
+        capitalizeSentencesPref.setOnPreferenceClickListener(
+            preference -> {
+              BrailleUserPreferences.writeCapitalizeSentences(
+                  getContext(), ((SwitchPreferenceCompat) preference).isChecked());
+              return true;
+            });
+      }
+
+      {
         // Swap top and bottom dots preference.
         SwitchPreferenceCompat flipDotsVerticallyPref =
             findPreference(getString(R.string.pref_brailleime_flip_dots_vertically));
