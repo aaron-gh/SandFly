@@ -31,9 +31,15 @@ import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.TalkBackService
 import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionInfo
 import com.google.android.accessibility.talkback.gesture.OpenAppActions
+import com.google.android.accessibility.talkback.labeling.TalkBackLabelManager
+import com.google.android.accessibility.talkback.screenelements.ScreenElements
+import com.google.android.accessibility.talkback.scripting.Scripts
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils
 import com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED
 import com.google.android.accessibility.utils.SharedPreferencesUtils
+import com.google.android.accessibility.utils.output.FeedbackItem
+import com.google.android.accessibility.utils.output.SpeechController
+import com.google.android.accessibility.utils.output.SpeechController.SpeakOptions
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 
 /**
@@ -241,6 +247,11 @@ object MacroRunner {
           is Macros.TypeText -> typeText(index, step, SystemClock.uptimeMillis() + FIELD_TIMEOUT_MS)
           is Macros.Tap -> findItem(index, step, step.label, step.regex, step.timeoutMillis)
           is Macros.FocusItem -> findItem(index, step, step.label, step.regex, step.timeoutMillis)
+          is Macros.SpeakItem -> findItem(index, step, step.label, step.regex, step.timeoutMillis)
+          is Macros.SpeakText -> {
+            speak(step.text)
+            runStep(index + 1)
+          }
         }
       } catch (e: RuntimeException) {
         fail(index, step, e.toString())
@@ -381,7 +392,10 @@ object MacroRunner {
       return true
     }
 
-    /** Runs the Tap item or Focus item [step], whose item has [label], waiting up to [timeoutMillis]. */
+    /**
+     * Runs the Tap item, Focus item or Speak item [step], whose item has [label], waiting up to
+     * [timeoutMillis].
+     */
     private fun findItem(index: Int, step: Macros.Step, label: String, regex: Boolean, timeoutMillis: Long) {
       val match = LabelMatch(label, regex)
       if (!match.isUsable) {
@@ -393,25 +407,39 @@ object MacroRunner {
     }
 
     /**
-     * Looks for the item of [step], a Tap item or Focus item step, by [label] on the search thread
-     * until [deadline], and clicks it or moves accessibility focus to it.
+     * Looks for the item of [step], a Tap item, Focus item or Speak item step, by [label] on the
+     * search thread until [deadline], and clicks it, moves accessibility focus to it or speaks it.
      */
     private fun search(index: Int, step: Macros.Step, label: LabelMatch, deadline: Long) {
       if (finished) return
-      val field = (step as? Macros.Tap)?.field ?: (step as? Macros.FocusItem)?.field
-      // The item to focus, whether the click was performed, or null when the item isn't there.
+      val field =
+        when (step) {
+          is Macros.Tap -> step.field
+          is Macros.FocusItem -> step.field
+          is Macros.SpeakItem -> step.field
+          else -> null
+        }
+      // The item to focus or speak, whether the click was performed, or null when the item isn't
+      // there.
       val result: Any? =
         try {
           val node = findItem(service, label, field = field)
           // The run can be stopped while the windows are read.
           if (finished) return
-          node?.let { if (step is Macros.FocusItem) focusTarget(it) else click(it) }
+          node?.let {
+            when (step) {
+              is Macros.FocusItem -> focusTarget(it)
+              is Macros.SpeakItem -> ItemToSpeak(AccessibilityNodeInfoCompat.wrap(it), innerText(it))
+              else -> click(it)
+            }
+          }
         } catch (e: RuntimeException) {
           LogUtils.w(TAG, "Cannot read the windows: %s", e)
           null
         }
       when {
         result is AccessibilityNodeInfoCompat -> mainHandler.post { ifActive { focus(index, step, result) } }
+        result is ItemToSpeak -> mainHandler.post { ifActive { speakItem(index, step, result) } }
         result == true -> mainHandler.post { ifActive { later(STEP_GAP_MS) { runStep(index + 1) } } }
         result == false -> mainHandler.post { ifActive { fail(index, step, "click not performed", found = true) } }
         SystemClock.uptimeMillis() + POLL_MS <= deadline ->
@@ -436,13 +464,60 @@ object MacroRunner {
     }
 
     /**
-     * Says that [step], at [index], failed, or for a Tap item or Focus item step not [found], that
-     * its item isn't there, and stops. Logs [reason] at warning level, which problem reports include
-     * by default.
+     * Speaks the name of the item [item] found for [step], as SandFly speaks it, without moving
+     * accessibility focus, and goes on.
+     */
+    private fun speakItem(index: Int, step: Macros.Step, item: ItemToSpeak) {
+      val name =
+        try {
+          itemName(item.node) ?: item.innerText
+        } catch (e: RuntimeException) {
+          LogUtils.w(TAG, "Cannot read the item: %s", e)
+          null
+        }
+      if (name.isNullOrBlank()) {
+        fail(index, step, "item has no text", found = true)
+        return
+      }
+      speak(name.take(Macros.MAX_TEXT))
+      runStep(index + 1)
+    }
+
+    /**
+     * The name SandFly speaks for [node]: its label from a script, screen recognition or a custom
+     * label, its description or text, or its hint. Null when it has none.
+     */
+    private fun itemName(node: AccessibilityNodeInfoCompat): CharSequence? {
+      val labelManager =
+        try {
+          service.labelManager
+        } catch (e: IllegalStateException) {
+          null
+        }
+      return sequenceOf<() -> CharSequence?>(
+          { Scripts.ruleLabel(node) },
+          { ScreenElements.label(node) },
+          { TalkBackLabelManager.getNodeText(node, labelManager) },
+          { node.hintText },
+        )
+        .map { it() }
+        .firstOrNull { !it.isNullOrBlank() }
+    }
+
+    /**
+     * Says that [step], at [index], failed, or for a step that finds an item not [found], that its
+     * item isn't there, and stops. Logs [reason] at warning level, which problem reports include by
+     * default.
      */
     private fun fail(index: Int, step: Macros.Step, reason: String, found: Boolean = false) {
       Log.w(TAG, "Macro stopped at step ${index + 1} of ${macro.steps.size}: ${step::class.simpleName}, $reason")
-      val itemLabel = (step as? Macros.Tap)?.label ?: (step as? Macros.FocusItem)?.label
+      val itemLabel =
+        when (step) {
+          is Macros.Tap -> step.label
+          is Macros.FocusItem -> step.label
+          is Macros.SpeakItem -> step.label
+          else -> null
+        }
       val text =
         if (itemLabel != null && !found) {
           service.getString(R.string.macro_item_not_found, itemLabel)
@@ -457,6 +532,14 @@ object MacroRunner {
     private fun say(text: String) {
       if (quiet) return
       service.feedbackReturner?.returnFeedback(EVENT_ID_UNTRACKED, Feedback.requestedSpeech(text))
+    }
+
+    /**
+     * Speaks [text] for a Speak text or Speak item step, after the speech before it, such as that
+     * of a Focus item step, also in a run that says nothing about failed steps.
+     */
+    private fun speak(text: CharSequence) {
+      service.feedbackReturner?.returnFeedback(EVENT_ID_UNTRACKED, Feedback.speech(text, speakStepOptions()))
     }
 
     private fun done() {
@@ -480,6 +563,18 @@ object MacroRunner {
       searchHandler = null
     }
   }
+
+  /**
+   * The item a Speak item step found, read on the search thread, with [innerText], the texts of the
+   * items in it, for when it has no name of its own.
+   */
+  private class ItemToSpeak(val node: AccessibilityNodeInfoCompat, val innerText: String?)
+
+  /** Options for the speech of Speak text and Speak item steps: queued, and heard during calls and media. */
+  private fun speakStepOptions(): SpeakOptions =
+    SpeakOptions.create()
+      .setQueueMode(SpeechController.QUEUE_MODE_QUEUE)
+      .setFlags(FeedbackItem.FLAG_FORCE_FEEDBACK_ALL)
 
   /**
    * Looks for the text of a macro step or test in the texts of items: as a text they contain,
@@ -656,6 +751,33 @@ object MacroRunner {
       candidate = item.parent
     }
     return false
+  }
+
+  /**
+   * The descriptions or texts of the items in [node], in order, joined with commas, when [node] has
+   * neither itself, or null. Called on the search thread.
+   */
+  private fun innerText(node: AccessibilityNodeInfo): String? {
+    if (node.contentDescription?.isNotBlank() == true || node.text?.isNotBlank() == true) return null
+    val texts = mutableListOf<String>()
+    val stack = ArrayDeque<AccessibilityNodeInfo>()
+    for (i in node.childCount - 1 downTo 0) node.getChild(i)?.let { stack.addLast(it) }
+    var count = 0
+    var length = 0
+    while (stack.isNotEmpty() && count < MAX_FOCUS_NODES && length < Macros.MAX_TEXT) {
+      val item = stack.removeLast()
+      count++
+      if (!item.isVisibleToUser) continue
+      val text = AccessibilityNodeInfoUtils.getNodeText(AccessibilityNodeInfoCompat.wrap(item))?.toString()?.trim()
+      if (!text.isNullOrEmpty()) {
+        texts.add(text)
+        length += text.length
+        // An item's description stands for the items in it.
+        if (!item.contentDescription.isNullOrBlank()) continue
+      }
+      for (i in item.childCount - 1 downTo 0) item.getChild(i)?.let { stack.addLast(it) }
+    }
+    return texts.joinToString(", ").takeIf { it.isNotEmpty() }
   }
 
   /**

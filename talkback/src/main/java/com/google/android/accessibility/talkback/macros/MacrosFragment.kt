@@ -403,6 +403,8 @@ class MacroFragment : MacroEditorFragment() {
         R.string.macro_step_command,
         R.string.macro_step_tap,
         R.string.macro_step_focus,
+        R.string.macro_step_speak_item,
+        R.string.macro_step_speak_text,
         R.string.macro_step_type,
         R.string.shortcut_title_open_app,
         R.string.macro_step_wait,
@@ -426,7 +428,9 @@ class MacroFragment : MacroEditorFragment() {
       when (kinds[chosen]) {
         R.string.macro_step_command -> chooseCommand(add)
         R.string.macro_step_tap -> askTap(null, add)
-        R.string.macro_step_focus -> askTap(null, add, focus = true)
+        R.string.macro_step_focus -> askTap(null, add, R.string.macro_step_focus)
+        R.string.macro_step_speak_item -> askTap(null, add, R.string.macro_step_speak_item)
+        R.string.macro_step_speak_text -> askSpeakText(null, add)
         R.string.macro_step_type -> askTypeText(null, add)
         R.string.shortcut_title_open_app -> chooseOpenApp(add)
         R.string.macro_step_wait -> askWait(null, add)
@@ -455,7 +459,18 @@ class MacroFragment : MacroEditorFragment() {
       is Macros.Wait -> askWait(step, replace)
       is Macros.Tap -> askTap(step, replace)
       is Macros.FocusItem ->
-        askTap(Macros.Tap(step.label, step.timeoutMillis, step.regex, step.field), replace, focus = true)
+        askTap(
+          Macros.Tap(step.label, step.timeoutMillis, step.regex, step.field),
+          replace,
+          R.string.macro_step_focus,
+        )
+      is Macros.SpeakItem ->
+        askTap(
+          Macros.Tap(step.label, step.timeoutMillis, step.regex, step.field),
+          replace,
+          R.string.macro_step_speak_item,
+        )
+      is Macros.SpeakText -> askSpeakText(step, replace)
       is Macros.OpenApp -> chooseOpenApp(replace)
       is Macros.TypeText -> askTypeText(step, replace)
       is Macros.RepeatTimes -> askTimes(step.count) { placeStep(index, Macros.RepeatTimes(it)) }
@@ -539,11 +554,14 @@ class MacroFragment : MacroEditorFragment() {
     }
   }
 
-  /** Asks for the values of a Tap item step, or of a Focus item step for [focus]. */
-  private fun askTap(step: Macros.Tap?, then: (Macros.Step) -> Unit, focus: Boolean = false) {
+  /**
+   * Asks for the values of a step that finds an item: Tap item, or the step whose name is [kind],
+   * Focus item or Speak item.
+   */
+  private fun askTap(step: Macros.Tap?, then: (Macros.Step) -> Unit, kind: Int = R.string.macro_step_tap) {
     val fields = fieldChoice(step?.field)
     askText(
-      getString(if (focus) R.string.macro_step_focus else R.string.macro_step_tap),
+      getString(kind),
       text = step?.label.orEmpty(),
       hint = getString(R.string.macro_tap_label),
       secondHint = getString(R.string.macro_tap_timeout),
@@ -564,8 +582,11 @@ class MacroFragment : MacroEditorFragment() {
               ?: Macros.DEFAULT_TAP_TIMEOUT_MS
           val field = chosenField(fields)
           then(
-            if (focus) Macros.FocusItem(label, millis, regex, field)
-            else Macros.Tap(label, millis, regex, field)
+            when (kind) {
+              R.string.macro_step_focus -> Macros.FocusItem(label, millis, regex, field)
+              R.string.macro_step_speak_item -> Macros.SpeakItem(label, millis, regex, field)
+              else -> Macros.Tap(label, millis, regex, field)
+            }
           )
           null
         }
@@ -585,6 +606,21 @@ class MacroFragment : MacroEditorFragment() {
         ""
       } else {
         then(Macros.TypeText(text.take(Macros.MAX_TEXT), checked.firstOrNull() == true))
+        null
+      }
+    }
+  }
+
+  private fun askSpeakText(step: Macros.SpeakText?, then: (Macros.Step) -> Unit) {
+    askText(
+      getString(R.string.macro_step_speak_text),
+      text = step?.text.orEmpty(),
+      hint = getString(R.string.macro_text),
+    ) { text, _, _ ->
+      if (text.isBlank()) {
+        ""
+      } else {
+        then(Macros.SpeakText(text.take(Macros.MAX_TEXT)))
         null
       }
     }
