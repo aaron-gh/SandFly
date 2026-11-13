@@ -173,6 +173,7 @@ play is left out when the theme is installed, and SandFly says so.
 | `screen_off` | Screen off |
 | `screen_on` | Screen on |
 | `loading` | Loading |
+| `model_loading` | The on-device AI model loading |
 | `browse_mode_on_v4_2` | Browse mode on |
 | `browse_mode_off_v4_2` | Browse mode off |
 | `keyboard_opened` | An on-screen keyboard opens |

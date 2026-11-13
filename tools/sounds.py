@@ -181,6 +181,11 @@ def sounds():
     # Waiting, such as for an image description; repeats every 3 seconds.
     s["loading"] = ([TALKBACK], [note(A5, 0, 0.35, 0.12, partials=((1, 1.0), (2, 0.15))),
                                  note(E5, 0.25, 0.45, 0.16, partials=((1, 1.0), (2, 0.15)))], 0.7, -9)
+    # The on-device AI model loading, before it can start on the image; repeats every 2 seconds.
+    # Three low, muted knocks that rise, unlike the bell-like fall of loading.
+    s["model_loading"] = ([TALKBACK], [note(G4, 0, 0.18, 0.06, partials=HOLLOW),
+                                       note(C5, 0.16, 0.18, 0.06, partials=HOLLOW),
+                                       note(D5, 0.32, 0.3, 0.1, partials=HOLLOW)], 0.62, -10)
     # A volume change, and the braille display's beep.
     s["volume_beep"] = ([TALKBACK, BRAILLE], [note(1000, 0, 0.15, 0.08, partials=PURE, attack=0.005,
                                                    detune_cents=0)], 0.16, -6)

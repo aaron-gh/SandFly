@@ -1123,9 +1123,13 @@ With Gemini, SandFly asks the model to think as little as it can, and asks Gemin
 
 SandFly can describe images and screens with a model that runs on your phone, so nothing is sent to Google or anyone else. For more information, see [On-device AI](README.md#on-device-ai). On phones that have one, **Processor** runs the model on the GPU, or on the NPU of Google Tensor G5 and G6 (Gemma 4 E2B) and Snapdragon 8 Elite and 8 Elite Gen 5 (FastVLM 0.5B).
 
+While the on-device model loads, a sound of its own repeats every 2 seconds; once the model is loaded and works on the image, the loading sound plays instead. Both can be turned off in **Individual sounds and vibrations**, and a [sound theme](themes.md) can replace them.
+
 ### Live recognition
 
 A camera screen like VoiceOver's Live Recognition, with Scenes, Text, Point and Speak, People detection and Door detection, and a **Live recognition** reading control that turns each mode on and off. Text is recognized on the phone; the other modes use what Describe image uses: the on-device model, the AI service in use, or Gemini Live. For more information, see [Live recognition](README.md#live-recognition).
+
+With the on-device model or the AI service in use, the loading sound plays until the first description, and the model loading sound plays whenever the on-device model loads.
 
 ### Clear error messages
 

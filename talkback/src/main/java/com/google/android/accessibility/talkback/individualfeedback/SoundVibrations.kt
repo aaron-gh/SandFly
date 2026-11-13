@@ -133,6 +133,7 @@ object SoundVibrations {
       // The loading tone repeats while waiting, such as for an image description, so its
       // vibration is a heartbeat that shows the work goes on even with sounds off.
       "loading" to "loading_pattern",
+      "model_loading" to "model_loading_pattern",
       "browse_mode_on_v4_2" to "browse_mode_on_pattern",
       "browse_mode_off_v4_2" to "browse_mode_off_pattern",
       "keyboard_opened" to "keyboard_opened_pattern",

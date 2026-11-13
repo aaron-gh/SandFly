@@ -11,11 +11,25 @@ public class DefaultProgressToneProvider implements ProgressToneProvider {
    */
   private static final int EARCON_PLAY_CYCLE_MS = 3000;
 
+  /** The model loading sound repeats faster, so that it differs in rhythm as well. */
+  private static final int MODEL_LOADING_CYCLE_MS = 2000;
+
   @Override
   public InfiniteIterator<Tone> getNextToneGroup() {
     return () ->
         new Tone(
             Feedback.sound(R.raw.loading, /* ignoreVolumeAdjustment= */ false),
             EARCON_PLAY_CYCLE_MS);
+  }
+
+  @Override
+  public InfiniteIterator<Tone> getNextToneGroup(boolean modelLoading) {
+    if (!modelLoading) {
+      return getNextToneGroup();
+    }
+    return () ->
+        new Tone(
+            Feedback.sound(R.raw.model_loading, /* ignoreVolumeAdjustment= */ false),
+            MODEL_LOADING_CYCLE_MS);
   }
 }

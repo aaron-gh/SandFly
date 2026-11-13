@@ -20,6 +20,8 @@ import com.google.android.accessibility.talkback.actor.gemini.GeminiRestRequestP
 import com.google.android.accessibility.talkback.actor.gemini.local.LocalLlm
 import com.google.android.accessibility.talkback.actor.gemini.local.LocalLlmCancelledException
 import com.google.android.accessibility.talkback.actor.gemini.local.LocalLlmMemoryException
+import com.google.android.accessibility.talkback.actor.gemini.local.ModelStage
+import com.google.android.accessibility.talkback.actor.gemini.local.ModelStageListener
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 import java.util.Base64
 import java.util.concurrent.Executor
@@ -59,6 +61,12 @@ internal class LocalGemmaRunner(
 
   private val pending = AtomicReference<Job?>(null)
 
+  /**
+   * Told on the callback executor when the model starts loading, and when it starts on the prompt,
+   * for the request that is running. Not told after the request ends or is cancelled.
+   */
+  @Volatile var stageListener: Consumer<ModelStage>? = null
+
   val hasPending: Boolean
     get() = pending.get() != null
 
@@ -97,7 +105,7 @@ internal class LocalGemmaRunner(
         }
         return
       }
-      val raw = model.generate(job.prompt, job.jpeg)
+      val raw = model.generate(job.prompt, job.jpeg, ModelStageListener { reportStage(job, it) })
       val text = if (job.json) extractJson(raw) else raw.trim()
       if (job.cancelled.get()) {
         report(job) { callback.onCancelled() }
@@ -126,6 +134,12 @@ internal class LocalGemmaRunner(
     } finally {
       // Already cleared when a result was reported, unless something unexpected was thrown.
       pending.compareAndSet(job, null)
+    }
+  }
+
+  private fun reportStage(job: Job, stage: ModelStage) {
+    callbackExecutor.execute {
+      if (pending.get() === job && !job.cancelled.get()) stageListener?.accept(stage)
     }
   }
 

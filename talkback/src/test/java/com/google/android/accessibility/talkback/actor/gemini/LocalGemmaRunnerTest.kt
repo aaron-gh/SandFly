@@ -22,6 +22,8 @@ import com.google.android.accessibility.talkback.actor.gemini.local.LocalLlm
 import com.google.android.accessibility.talkback.actor.gemini.local.LocalLlmCancelledException
 import com.google.android.accessibility.talkback.actor.gemini.local.LocalLlmException
 import com.google.android.accessibility.talkback.actor.gemini.local.LocalLlmMemoryException
+import com.google.android.accessibility.talkback.actor.gemini.local.ModelStage
+import com.google.android.accessibility.talkback.actor.gemini.local.ModelStageListener
 import java.util.Base64
 import java.util.concurrent.CountDownLatch
 import java.util.concurrent.Executors
@@ -232,6 +234,60 @@ class LocalGemmaRunnerTest {
     second.await()
     assertTrue(first.cancelled)
     assertEquals("hello", second.response!!.text())
+  }
+
+  /** Loads, then works on the prompt, then answers once released. */
+  private class StagedLlm : LocalLlm {
+    val release = CountDownLatch(1)
+    val processing = CountDownLatch(1)
+    var listener: ModelStageListener? = null
+
+    override fun generate(prompt: String, jpeg: ByteArray?): String = "plain"
+
+    override fun generate(prompt: String, jpeg: ByteArray?, onStage: ModelStageListener): String {
+      listener = onStage
+      onStage.onStage(ModelStage.LOADING)
+      onStage.onStage(ModelStage.PROCESSING)
+      processing.countDown()
+      release.await(5, TimeUnit.SECONDS)
+      return "described"
+    }
+
+    override fun cancel() {
+      release.countDown()
+    }
+  }
+
+  @Test
+  fun theStagesOfTheRunningRequestAreReported() {
+    val llm = StagedLlm()
+    val runner = runner(llm)
+    val stages = mutableListOf<ModelStage>()
+    runner.stageListener = java.util.function.Consumer { synchronized(stages) { stages.add(it) } }
+    val recorder = Recorder()
+    runner.run(request("p"), recorder)
+    assertTrue(llm.processing.await(5, TimeUnit.SECONDS))
+    assertEquals(listOf(ModelStage.LOADING, ModelStage.PROCESSING), synchronized(stages) { stages.toList() })
+    llm.release.countDown()
+    recorder.await()
+    assertEquals("described", recorder.response!!.text())
+  }
+
+  @Test
+  fun stagesAfterTheRequestEndsAreNotReported() {
+    val llm = StagedLlm()
+    val runner = runner(llm)
+    val stages = mutableListOf<ModelStage>()
+    runner.stageListener = java.util.function.Consumer { synchronized(stages) { stages.add(it) } }
+    val recorder = Recorder()
+    runner.run(request("p"), recorder)
+    assertTrue(llm.processing.await(5, TimeUnit.SECONDS))
+    runner.cancel()
+    llm.listener!!.onStage(ModelStage.LOADING)
+    llm.release.countDown()
+    recorder.await()
+    llm.listener!!.onStage(ModelStage.PROCESSING)
+    assertEquals(listOf(ModelStage.LOADING, ModelStage.PROCESSING), synchronized(stages) { stages.toList() })
   }
 
   @Test

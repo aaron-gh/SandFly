@@ -38,4 +38,12 @@ public interface ProgressToneProvider {
    * for the user each time.
    */
   InfiniteIterator<Tone> getNextToneGroup();
+
+  /**
+   * Like {@link #getNextToneGroup()}, for the tones that play while the on-device model loads when
+   * {@code modelLoading} is true. By default the same tones play while the model loads.
+   */
+  default InfiniteIterator<Tone> getNextToneGroup(boolean modelLoading) {
+    return getNextToneGroup();
+  }
 }

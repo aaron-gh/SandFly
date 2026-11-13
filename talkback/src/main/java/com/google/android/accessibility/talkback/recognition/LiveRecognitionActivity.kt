@@ -58,7 +58,13 @@ import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.TalkBackService
 import com.google.android.accessibility.talkback.actor.gemini.AiService
 import com.google.android.accessibility.talkback.actor.gemini.GeminiApiKey
+import com.google.android.accessibility.talkback.actor.gemini.local.LocalModelManager
+import com.google.android.accessibility.talkback.actor.gemini.local.ModelStage
+import com.google.android.accessibility.talkback.actor.gemini.local.OnDeviceAiSettings
+import com.google.android.accessibility.talkback.actor.gemini.progress.DefaultProgressToneProvider
+import com.google.android.accessibility.talkback.actor.gemini.progress.ProgressTonePlayer
 import com.google.android.accessibility.talkback.pause.PauseController
+import com.google.android.accessibility.utils.Performance
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.accessibility.utils.monitor.RecentUserInput
 import com.google.android.accessibility.utils.output.SpeechController
@@ -69,6 +75,8 @@ import com.google.mlkit.vision.text.latin.TextRecognizerOptions
 import java.io.ByteArrayOutputStream
 import java.util.Locale
 import java.util.concurrent.Executors
+import java.util.concurrent.TimeUnit
+import java.util.function.Consumer
 import java.util.concurrent.atomic.AtomicBoolean
 
 /** The Live recognition screen. The camera runs only while this screen is in the foreground. */
@@ -384,21 +392,39 @@ class LiveRecognitionActivity : ComponentActivity() {
       }
       AiBackend.ON_DEVICE, AiBackend.SERVICE -> {
         val questions = LiveRecognition.imageQuestions(this)
-        val plain = backend == AiBackend.ON_DEVICE && AiBackend.usesPlainPrompts(this)
-        RequestDescriber(
-          prompt = { modes, above ->
-            if (plain) GeminiLiveProtocol.plainPrompt(modes, above, language)
-            else GeminiLiveProtocol.imagePrompt(modes, above, language)
-          },
-          ask = questions::ask,
-          cancel = questions::cancel,
-          // The on-device model takes the next frame as soon as it is free; a service is paid for.
-          minIntervalMs = if (backend == AiBackend.ON_DEVICE) 0 else GeminiLiveSession.REQUEST_INTERVAL_MS,
-          maxResultAgeMs = REQUEST_MAX_RESULT_AGE_MS,
-          onResult = onResult,
-          // A cancelled request said why itself, such as the phone being low on memory.
-          onFailure = { stopAi(it?.userMessage(this)) },
-        )
+        val onDevice = backend == AiBackend.ON_DEVICE
+        val plain = onDevice && AiBackend.usesPlainPrompts(this)
+        val tones = recognitionTones(onDevice)
+        val stageListener = Consumer<ModelStage> { tones.onStage(it) }
+        questions.setStageListener(stageListener)
+        val requests =
+          RequestDescriber(
+            prompt = { modes, above ->
+              if (plain) GeminiLiveProtocol.plainPrompt(modes, above, language)
+              else GeminiLiveProtocol.imagePrompt(modes, above, language)
+            },
+            ask = { prompt, jpeg, done ->
+              tones.onRequest()
+              questions.ask(prompt, jpeg) { answer, failure ->
+                tones.onRequestEnd(answer != null)
+                done(answer, failure)
+              }
+            },
+            cancel = questions::cancel,
+            // The on-device model takes the next frame as soon as it is free; a service is paid for.
+            minIntervalMs = if (onDevice) 0 else GeminiLiveSession.REQUEST_INTERVAL_MS,
+            maxResultAgeMs = REQUEST_MAX_RESULT_AGE_MS,
+            onResult = onResult,
+            // A cancelled request said why itself, such as the phone being low on memory.
+            onFailure = { stopAi(it?.userMessage(this)) },
+          )
+        object : FrameDescriber by requests {
+          override fun close() {
+            requests.close()
+            tones.close()
+            questions.setStageListener(null)
+          }
+        }
       }
       AiBackend.NONE -> {
         enabled.removeAll { it.usesAi }
@@ -406,6 +432,28 @@ class LiveRecognitionActivity : ComponentActivity() {
         report(R.string.ai_service_not_set_up)
         null
       }
+    }
+  }
+
+  /** The progress tones for the requests that describe frames, as for Describe image. */
+  private fun recognitionTones(onDevice: Boolean): RecognitionTones {
+    val models = LocalModelManager.get(this)
+    val player =
+      ProgressTonePlayer(
+        DefaultProgressToneProvider(),
+        { tone ->
+          TalkBackService.getInstance()
+            ?.feedbackReturner
+            ?.returnFeedback(Performance.EVENT_ID_UNTRACKED, tone.tone)
+        },
+        {
+          if (onDevice) TimeUnit.SECONDS.toMillis(OnDeviceAiSettings.timeoutSeconds(prefs).toLong())
+          else SERVICE_TONES_MS
+        },
+        {},
+      )
+    return RecognitionTones(RecognitionTones.PlayerTones(player)) {
+      !onDevice || models.isModelLoaded()
     }
   }
 
@@ -547,6 +595,8 @@ class LiveRecognitionActivity : ComponentActivity() {
     private const val SERVICE_CONSENT_PREF = "pref_live_recognition_consent_"
     /** How old an answer from the on-device model or an AI service can be when it comes. */
     private const val REQUEST_MAX_RESULT_AGE_MS = 30_000L
+    /** How long the progress tones play for a request to a service, as for Describe image. */
+    private const val SERVICE_TONES_MS = 35_000L
     private const val FRAME_INTERVAL_MS = 1_000L
     private const val CHECK_INTERVAL_MS = 500L
     private const val LIGHT_SETTLE_MS = 1000L

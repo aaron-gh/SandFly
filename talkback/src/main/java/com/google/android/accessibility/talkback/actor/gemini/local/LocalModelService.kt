@@ -94,6 +94,9 @@ class LocalModelService : Service() {
         val id = message.arg1
         val data = Bundle(message.data)
         val replyTo = message.replyTo
+        // Said at once, so that a request that waits for a load, even behind another request or a
+        // preload, is heard as loading.
+        if (llm?.isLoaded != true) sendStage(replyTo, id, ModelStage.LOADING)
         worker.execute { generate(id, data, replyTo) }
       }
       MSG_CANCEL -> {
@@ -129,7 +132,13 @@ class LocalModelService : Service() {
         val model = llmFor(data)
         if (requests.isCancelled(id)) throw LocalLlmCancelledException()
         val answer =
-          model.generate(data.getString(KEY_PROMPT).orEmpty(), jpeg) { requests.isCancelled(id) }
+          model.generate(
+            data.getString(KEY_PROMPT).orEmpty(),
+            jpeg,
+            isCancelled = { requests.isCancelled(id) },
+            onLoading = { sendStage(replyTo, id, ModelStage.LOADING) },
+            onLoaded = { sendStage(replyTo, id, ModelStage.PROCESSING) },
+          )
         if (requests.isCancelled(id)) throw LocalLlmCancelledException()
         Message.obtain(null, MSG_ANSWER).apply { this.data.putString(KEY_TEXT, answer) }
       } catch (_: LocalLlmCancelledException) {
@@ -146,6 +155,20 @@ class LocalModelService : Service() {
     reply.arg1 = id
     try {
       replyTo.send(reply)
+    } catch (e: RemoteException) {
+      Log.w(TAG, "Backtalk is gone", e)
+    }
+  }
+
+  /** Tells Backtalk what the model does for request [id]. */
+  private fun sendStage(replyTo: Messenger, id: Int, stage: ModelStage) {
+    val message =
+      Message.obtain(null, MSG_STAGE).apply {
+        arg1 = id
+        arg2 = stage.ordinal
+      }
+    try {
+      replyTo.send(message)
     } catch (e: RemoteException) {
       Log.w(TAG, "Backtalk is gone", e)
     }
@@ -236,6 +259,12 @@ class LocalModelService : Service() {
 
     /** Any other failure, described in [KEY_TEXT]. */
     const val MSG_FAILED = 6
+
+    /**
+     * What the model does for the request in arg1, before the answer: the ordinal of a [ModelStage]
+     * in arg2.
+     */
+    const val MSG_STAGE = 8
 
     const val KEY_MODEL_PATH = "model_path"
     const val KEY_IDLE_UNLOAD_MS = "idle_unload_ms"

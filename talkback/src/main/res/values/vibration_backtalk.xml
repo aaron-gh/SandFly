@@ -331,6 +331,38 @@
         <item>150</item><!-- delayMs -->
     </integer-array>
 
+    <!-- On-device AI model loading, repeated every 2 seconds: three soft clicks, unlike the
+         heartbeat of loading. -->
+    <integer-array name="model_loading_pattern">
+        <item>0</item>
+        <item>10</item>
+        <item>150</item>
+        <item>10</item>
+        <item>150</item>
+        <item>10</item>
+        <item>-9998</item><!-- AMPLITUDES: ms, amplitude -->
+        <item>10</item>
+        <item>110</item>
+        <item>150</item>
+        <item>0</item>
+        <item>10</item>
+        <item>110</item>
+        <item>150</item>
+        <item>0</item>
+        <item>10</item>
+        <item>110</item>
+        <item>-9999</item><!-- SENTINEL SEPARATOR -->
+        <item>1</item><!-- CLICK -->
+        <item>90</item><!-- scale -->
+        <item>0</item><!-- delayMs -->
+        <item>1</item><!-- CLICK -->
+        <item>90</item><!-- scale -->
+        <item>150</item><!-- delayMs -->
+        <item>1</item><!-- CLICK -->
+        <item>90</item><!-- scale -->
+        <item>150</item><!-- delayMs -->
+    </integer-array>
+
     <!-- Browse mode on: three taps that get stronger. -->
     <integer-array name="browse_mode_on_pattern">
         <item>0</item>

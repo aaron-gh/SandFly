@@ -16,6 +16,7 @@
 package com.google.android.accessibility.talkback.actor.gemini
 
 import android.content.Context
+import com.google.android.accessibility.talkback.actor.gemini.local.ModelStage
 import java.util.function.Consumer
 import org.json.JSONArray
 import org.json.JSONObject
@@ -57,4 +58,10 @@ class ImageQuestions(context: Context, announce: Consumer<String>) {
   }
 
   fun cancel() = performer.cancelExistingRequestIfNeeded()
+
+  /**
+   * Sets who is told, on the main thread, when the on-device model starts loading and when it
+   * starts on the image, for the request that is running. Null to tell no one.
+   */
+  fun setStageListener(listener: Consumer<ModelStage>?) = performer.setStageListener(listener)
 }
