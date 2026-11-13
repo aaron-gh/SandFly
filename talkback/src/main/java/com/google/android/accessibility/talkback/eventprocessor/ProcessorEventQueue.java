@@ -176,7 +176,7 @@ public class ProcessorEventQueue implements AccessibilityEventListener {
       if (liveRegion != View.ACCESSIBILITY_LIVE_REGION_NONE) {
         return liveRegion == View.ACCESSIBILITY_LIVE_REGION_ASSERTIVE;
       }
-      node = node.getParent();
+      if (depth < MAX_LIVE_REGION_DEPTH) node = node.getParent();
     }
     return false;
   }
