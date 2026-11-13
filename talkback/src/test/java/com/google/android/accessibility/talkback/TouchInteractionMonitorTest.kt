@@ -39,6 +39,7 @@ import android.view.ViewConfiguration
 import android.view.accessibility.AccessibilityWindowInfo
 import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics
 import com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForTapAndTouchExploration.TAP_TO_TYPE
+import com.google.android.accessibility.utils.FormFactorUtils
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import java.time.Duration
 import org.junit.After
@@ -124,6 +125,8 @@ class TouchInteractionMonitorTest {
   @Before
   fun setUp() {
     service = Robolectric.buildService(RecordingService::class.java).get()
+    // TouchInteractionMonitor turns edge gestures off on watches.
+    FormFactorUtils.initialize(service)
     controller =
       TouchInteractionController::class
         .java
