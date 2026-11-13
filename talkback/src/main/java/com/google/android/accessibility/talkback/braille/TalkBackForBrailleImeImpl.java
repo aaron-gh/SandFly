@@ -16,6 +16,9 @@ import static com.google.common.collect.ImmutableSet.toImmutableSet;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Region;
+import android.hardware.display.DisplayManager;
+import android.util.DisplayMetrics;
+import android.view.Display;
 import android.view.WindowManager;
 import androidx.annotation.VisibleForTesting;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
@@ -61,6 +64,8 @@ public class TalkBackForBrailleImeImpl implements TalkBackForBrailleIme {
 
   /** A reference to the active Braille IME if any. */
   private @Nullable BrailleImeForTalkBack brailleImeForTalkBack;
+
+  private boolean overlayPassThroughLocked;
 
   @VisibleForTesting
   static final Setting[] VALID_CURSOR_GRANULARITIES =
@@ -183,12 +188,46 @@ public class TalkBackForBrailleImeImpl implements TalkBackForBrailleIme {
           Feedback.passThroughMode(LOCK_PASS_THROUGH, passThroughRegion));
     } else {
       service.getInputModeTracker().setInputMode(INPUT_MODE_BRAILLE_KEYBOARD);
-      talkBackPrivateMethodProvider.requestTouchExploration(!disableEbt);
+      if (disableEbt && FeatureSupport.supportPassthrough()) {
+        passWholeScreenThroughKeepingExploreByTouchOn();
+      } else {
+        talkBackPrivateMethodProvider.requestTouchExploration(!disableEbt);
+      }
     }
+  }
+
+  private void passWholeScreenThroughKeepingExploreByTouchOn() {
+    overlayPassThroughLocked = true;
+    feedbackReturner.returnFeedback(
+        Performance.EVENT_ID_UNTRACKED,
+        Feedback.passThroughMode(LOCK_PASS_THROUGH, fullScreenRegion()));
+  }
+
+  private void releaseOverlayPassThrough() {
+    overlayPassThroughLocked = false;
+    feedbackReturner.returnFeedback(
+        Performance.EVENT_ID_UNTRACKED,
+        Feedback.passThroughMode(LOCK_PASS_THROUGH, /* region= */ null));
+  }
+
+  private Region fullScreenRegion() {
+    DisplayMetrics metrics = new DisplayMetrics();
+    Display display =
+        ((DisplayManager) service.getSystemService(Context.DISPLAY_SERVICE))
+            .getDisplay(Display.DEFAULT_DISPLAY);
+    if (display == null) {
+      return new Region();
+    }
+    display.getRealMetrics(metrics);
+    return new Region(0, 0, metrics.widthPixels, metrics.heightPixels);
   }
 
   @Override
   public void onBrailleImeInactivated(boolean usePassThrough) {
+    if (overlayPassThroughLocked) {
+      releaseOverlayPassThrough();
+      return;
+    }
     if (getServiceStatus() != ServiceStatus.ON) {
       return;
     }
