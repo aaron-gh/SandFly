@@ -21,6 +21,8 @@ import static androidx.core.view.accessibility.AccessibilityNodeInfoCompat.Acces
 import static androidx.core.view.accessibility.AccessibilityNodeInfoCompat.AccessibilityActionCompat.ACTION_SCROLL_RIGHT;
 import static androidx.core.view.accessibility.AccessibilityNodeInfoCompat.AccessibilityActionCompat.ACTION_SCROLL_UP;
 import static com.google.android.accessibility.utils.AccessibilityNodeInfoUtils.FILTER_AUTO_SCROLL;
+import static com.google.android.accessibility.utils.AccessibilityNodeInfoUtils.FILTER_AUTO_SCROLL_ANY_ROLE;
+import static com.google.android.accessibility.utils.traversal.TraversalStrategy.SEARCH_FOCUS_BACKWARD;
 import static com.google.android.accessibility.utils.traversal.TraversalStrategy.SEARCH_FOCUS_DOWN;
 import static com.google.android.accessibility.utils.traversal.TraversalStrategy.SEARCH_FOCUS_FORWARD;
 import static com.google.android.accessibility.utils.traversal.TraversalStrategy.SEARCH_FOCUS_LEFT;
@@ -50,6 +52,7 @@ import org.checkerframework.checker.nullness.qual.Nullable;
 public class ScrollableNodeInfo {
   private final AccessibilityNodeInfoCompat node;
   private final boolean rtl;
+  private final Filter<AccessibilityNodeInfoCompat> containerFilter;
   private boolean supportsUpDownScrolling;
   private boolean supportsLeftRightScrolling;
 
@@ -63,14 +66,38 @@ public class ScrollableNodeInfo {
    *     to spatial directions.
    */
   public ScrollableNodeInfo(@NonNull AccessibilityNodeInfoCompat node, boolean rtl) {
+    this(node, rtl, FILTER_AUTO_SCROLL);
+  }
+
+  private ScrollableNodeInfo(
+      @NonNull AccessibilityNodeInfoCompat node,
+      boolean rtl,
+      @NonNull Filter<AccessibilityNodeInfoCompat> containerFilter) {
     this.node = node;
     this.rtl = rtl;
+    this.containerFilter = containerFilter;
     initSupportedDirections();
   }
 
   /** Returns the single node which is wrapped by the instance. */
   public @NonNull AccessibilityNodeInfoCompat getNode() {
     return node;
+  }
+
+  /**
+   * Returns the filter that the node was found with: {@link
+   * AccessibilityNodeInfoUtils#FILTER_AUTO_SCROLL}, or {@link
+   * AccessibilityNodeInfoUtils#FILTER_AUTO_SCROLL_ANY_ROLE} for {@link
+   * #findAnyRoleScrollableNodeForDirection}. Edge checks use it to tell whether an item is in the
+   * node.
+   */
+  public @NonNull Filter<AccessibilityNodeInfoCompat> getContainerFilter() {
+    return containerFilter;
+  }
+
+  /** Whether the node was found by {@link #findAnyRoleScrollableNodeForDirection}. */
+  public boolean isAnyRole() {
+    return containerFilter == FILTER_AUTO_SCROLL_ANY_ROLE;
   }
 
   /**
@@ -179,18 +206,49 @@ public class ScrollableNodeInfo {
       @NonNull AccessibilityNodeInfoCompat pivot,
       boolean includeSelf,
       boolean rtl) {
+    return findScrollableNodeForDirection(direction, pivot, includeSelf, rtl, FILTER_AUTO_SCROLL);
+  }
+
+  /**
+   * Like {@link #findScrollableNodeForDirection}, but accepts ancestors of any role that pass
+   * {@link AccessibilityNodeInfoUtils#FILTER_AUTO_SCROLL_ANY_ROLE}, for when that finds none.
+   * Returns {@code null} for left and right, as the filter leaves out what scrolls only sideways
+   * and those directions would scroll pagers and tabs.
+   */
+  public static @Nullable ScrollableNodeInfo findAnyRoleScrollableNodeForDirection(
+      @SearchDirectionOrUnknown int direction,
+      @NonNull AccessibilityNodeInfoCompat pivot,
+      boolean includeSelf,
+      boolean rtl) {
+    if (direction != SEARCH_FOCUS_FORWARD
+        && direction != SEARCH_FOCUS_BACKWARD
+        && direction != SEARCH_FOCUS_DOWN
+        && direction != SEARCH_FOCUS_UP) {
+      return null;
+    }
+    return findScrollableNodeForDirection(
+        direction, pivot, includeSelf, rtl, FILTER_AUTO_SCROLL_ANY_ROLE);
+  }
+
+  private static @Nullable ScrollableNodeInfo findScrollableNodeForDirection(
+      @SearchDirectionOrUnknown int direction,
+      @NonNull AccessibilityNodeInfoCompat pivot,
+      boolean includeSelf,
+      boolean rtl,
+      @NonNull Filter<AccessibilityNodeInfoCompat> containerFilter) {
     if (direction == TraversalStrategy.SEARCH_FOCUS_UNKNOWN) {
       return null;
     }
     if (includeSelf) {
-      ScrollableNodeInfo match = findMatchingScrollable(direction, pivot, rtl);
+      ScrollableNodeInfo match = findMatchingScrollable(direction, pivot, rtl, containerFilter);
       if (match != null) {
         return match;
       }
     }
     if (pivot.getParent() != null) {
       Set<AccessibilityNodeInfoCompat> visited = new HashSet<>();
-      return findScrollableNodeForDirectionRecursive(direction, pivot.getParent(), rtl, visited);
+      return findScrollableNodeForDirectionRecursive(
+          direction, pivot.getParent(), rtl, visited, containerFilter);
     }
     return null;
   }
@@ -199,7 +257,8 @@ public class ScrollableNodeInfo {
       @SearchDirection int direction,
       @NonNull AccessibilityNodeInfoCompat node,
       boolean rtl,
-      Set<AccessibilityNodeInfoCompat> visited) {
+      Set<AccessibilityNodeInfoCompat> visited,
+      @NonNull Filter<AccessibilityNodeInfoCompat> containerFilter) {
     // If node already checked... quit.
     if (node == null || visited.contains(node)) {
       return null;
@@ -207,23 +266,27 @@ public class ScrollableNodeInfo {
       visited.add(node);
     }
 
-    ScrollableNodeInfo match = findMatchingScrollable(direction, node, rtl);
+    ScrollableNodeInfo match = findMatchingScrollable(direction, node, rtl, containerFilter);
     if (match != null) {
       return match;
     }
     if (node.getParent() != null) {
-      return findScrollableNodeForDirectionRecursive(direction, node.getParent(), rtl, visited);
+      return findScrollableNodeForDirectionRecursive(
+          direction, node.getParent(), rtl, visited, containerFilter);
     }
     return null;
   }
 
   private static @Nullable ScrollableNodeInfo findMatchingScrollable(
-      @SearchDirection int direction, @NonNull AccessibilityNodeInfoCompat node, boolean rtl) {
-    if (!FILTER_AUTO_SCROLL.accept(node)) {
+      @SearchDirection int direction,
+      @NonNull AccessibilityNodeInfoCompat node,
+      boolean rtl,
+      @NonNull Filter<AccessibilityNodeInfoCompat> containerFilter) {
+    if (!containerFilter.accept(node)) {
       return null;
     }
 
-    ScrollableNodeInfo scrollableNodeInfo = new ScrollableNodeInfo(node, rtl);
+    ScrollableNodeInfo scrollableNodeInfo = new ScrollableNodeInfo(node, rtl, containerFilter);
     Integer supportedDirection = scrollableNodeInfo.getSupportedScrollDirection(direction);
     if (supportedDirection != null) {
       NodeActionFilter scrollableFilter =

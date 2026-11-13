@@ -216,7 +216,8 @@ public class TraversalStrategyUtils {
 
   /**
    * Convenience method determining if the current item is at the edge of a scrollable view and
-   * suitable autoscroll. Calls {@code isEdgeListItem} with {@code FILTER_AUTO_SCROLL}.
+   * suitable autoscroll. Calls {@code isEdgeListItem} with the filter that the scrollable node was
+   * found with, {@code FILTER_AUTO_SCROLL} or {@code FILTER_AUTO_SCROLL_ANY_ROLE}.
    *
    * @param pivot The node to check.
    * @param scrollableNodeInfo The info about the scrollable container for which is checked if the
@@ -272,7 +273,7 @@ public class TraversalStrategyUtils {
         scrollableNodeInfo.getNode(),
         ignoreDescendantsOfPivot,
         supportedDirection,
-        AccessibilityNodeInfoUtils.FILTER_AUTO_SCROLL,
+        scrollableNodeInfo.getContainerFilter(),
         traversalStrategy);
   }
 

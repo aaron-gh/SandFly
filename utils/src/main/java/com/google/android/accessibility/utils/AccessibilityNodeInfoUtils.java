@@ -539,6 +539,53 @@ public class AccessibilityNodeInfoUtils {
         }
       };
 
+  /**
+   * Filter for containers that moving to the next or previous item may scroll when no ancestor
+   * passes {@link #FILTER_AUTO_SCROLL}, such as NestedScrollView, Compose scrollables and custom
+   * lists. Accepts visible nodes with a scroll action whatever their role, except pagers, tab bars,
+   * pickers, seek controls, edit texts, web views and nodes that scroll only sideways, so that the
+   * scroll doesn't switch pages or tabs or change a value.
+   */
+  public static final Filter<AccessibilityNodeInfoCompat> FILTER_AUTO_SCROLL_ANY_ROLE =
+      Filter.node(
+          (node) -> {
+            if (node == null || !isScrollable(node) || !isVisible(node)) {
+              return false;
+            }
+            @RoleName int role = Role.getRole(node);
+            return role != Role.ROLE_PAGER
+                && role != Role.ROLE_HORIZONTAL_SCROLL_VIEW
+                && role != Role.ROLE_TAB_BAR
+                && role != Role.ROLE_SEEK_CONTROL
+                && role != Role.ROLE_PROGRESS_BAR
+                && role != Role.ROLE_DATE_PICKER
+                && role != Role.ROLE_TIME_PICKER
+                && role != Role.ROLE_NUMBER_PICKER
+                && role != Role.ROLE_DROP_DOWN_LIST
+                && role != Role.ROLE_EDIT_TEXT
+                && role != Role.ROLE_WEB_VIEW
+                && !scrollsOnlySideways(node);
+          });
+
+  /**
+   * Returns whether {@code node} scrolls left and right but not up and down: it has left or right
+   * scroll or page actions and no up or down scroll actions, or it is a collection of one row.
+   */
+  public static boolean scrollsOnlySideways(@NonNull AccessibilityNodeInfoCompat node) {
+    if (supportsAction(node, AccessibilityActionCompat.ACTION_SCROLL_UP.getId())
+        || supportsAction(node, AccessibilityActionCompat.ACTION_SCROLL_DOWN.getId())) {
+      return false;
+    }
+    if (supportsAction(node, AccessibilityActionCompat.ACTION_SCROLL_LEFT.getId())
+        || supportsAction(node, AccessibilityActionCompat.ACTION_SCROLL_RIGHT.getId())
+        || supportsAction(node, AccessibilityActionCompat.ACTION_PAGE_LEFT.getId())
+        || supportsAction(node, AccessibilityActionCompat.ACTION_PAGE_RIGHT.getId())) {
+      return true;
+    }
+    CollectionInfoCompat collection = node.getCollectionInfo();
+    return collection != null && collection.getRowCount() == 1 && collection.getColumnCount() > 1;
+  }
+
   public static final Filter<AccessibilityNodeInfoCompat> FILTER_COLLECTION =
       Filter.node(
           (node) -> {
