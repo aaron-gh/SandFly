@@ -17,6 +17,8 @@
 package com.google.android.accessibility.talkback.keyboard
 
 import android.content.Context
+import android.os.Handler
+import android.os.Looper
 import android.view.KeyEvent
 
 /**
@@ -24,6 +26,8 @@ import android.view.KeyEvent
  * acts when it is released, unless the second key was pressed meanwhile; other keys act when
  * pressed. Toggle works while arrow key navigation is off too, and in a text field being edited
  * only commands of two keys together and Toggle work, so that single arrow keys move the cursor.
+ * There, Toggle runs only once its two keys have been held together for [TOGGLE_HOLD_MILLIS], so
+ * that rolling from one arrow key to the other moves the cursor.
  */
 class ArrowKeyNavKeyHandler(private val context: Context, private val callbacks: Callbacks) {
 
@@ -45,11 +49,18 @@ class ArrowKeyNavKeyHandler(private val context: Context, private val callbacks:
   private var pendingKey = KeyEvent.KEYCODE_UNKNOWN
   private var pendingCommand: String? = null
 
+  private val handler = Handler(Looper.getMainLooper())
+
+  /** The two keys whose Toggle waits until they have been held together, in a text field. */
+  private var heldToggleKeys: Pair<Int, Int>? = null
+  private val heldToggle = Runnable { performHeldToggle() }
+
   /** Forgets every key, such as when key events may have been lost. */
   fun reset() {
     heldKeys.clear()
     consumedKeys.clear()
     clearPending()
+    cancelHeldToggle()
   }
 
   /**
@@ -73,6 +84,7 @@ class ArrowKeyNavKeyHandler(private val context: Context, private val callbacks:
   /** Notes a key event that something before arrow key navigation consumed. */
   fun onKeyEventConsumedElsewhere(event: KeyEvent) {
     if (event.action == KeyEvent.ACTION_UP) {
+      cancelHeldToggle()
       heldKeys.remove(event.keyCode)
       consumedKeys.remove(event.keyCode)
       if (pendingKey == event.keyCode) {
@@ -86,6 +98,7 @@ class ArrowKeyNavKeyHandler(private val context: Context, private val callbacks:
     if (event.repeatCount > 0) {
       return keyCode in consumedKeys
     }
+    cancelHeldToggle()
     // A key whose up event was lost would otherwise pair with every later key.
     heldKeys.entries.removeIf { event.downTime - it.value > STALE_KEY_MILLIS }
     val otherKey = heldKeys.keys.lastOrNull { it != keyCode }
@@ -102,6 +115,12 @@ class ArrowKeyNavKeyHandler(private val context: Context, private val callbacks:
     val modifiers = event.modifiers and KeyCombo.KEY_EVENT_MODIFIER_MASK
     if (otherKey != null) {
       val command = commandFor(ArrowKeyNav.keys(modifiers, otherKey, keyCode))
+      if (command == ArrowKeyNav.TOGGLE && callbacks.isEditingText()) {
+        // Both key down events go to the field, so their up events must too.
+        heldToggleKeys = otherKey to keyCode
+        handler.postDelayed(heldToggle, TOGGLE_HOLD_MILLIS)
+        return false
+      }
       if (command != null && (on || command == ArrowKeyNav.TOGGLE)) {
         // The first key's own command, if it waits, doesn't run.
         clearPending()
@@ -125,6 +144,28 @@ class ArrowKeyNavKeyHandler(private val context: Context, private val callbacks:
     return true
   }
 
+  /** Runs Toggle if its two keys are still held together in a text field being edited. */
+  private fun performHeldToggle() {
+    val keys = heldToggleKeys ?: return
+    heldToggleKeys = null
+    if (
+      keys.first in heldKeys &&
+        keys.second in heldKeys &&
+        callbacks.isEditingText() &&
+        ArrowKeyNav.isAvailable(context)
+    ) {
+      clearPending()
+      callbacks.perform(ArrowKeyNav.TOGGLE)
+    }
+  }
+
+  private fun cancelHeldToggle() {
+    if (heldToggleKeys != null) {
+      heldToggleKeys = null
+      handler.removeCallbacks(heldToggle)
+    }
+  }
+
   /** The command that the arrow keys pressed as [keys] run, or null. */
   private fun commandFor(keys: Long): String? {
     val arrowKeys = ArrowKeyNav.arrowKeysFor(keys) ?: return null
@@ -132,6 +173,7 @@ class ArrowKeyNavKeyHandler(private val context: Context, private val callbacks:
   }
 
   private fun onKeyUp(keyCode: Int): Boolean {
+    cancelHeldToggle()
     heldKeys.remove(keyCode)
     if (!consumedKeys.remove(keyCode)) {
       return false
@@ -163,5 +205,6 @@ class ArrowKeyNavKeyHandler(private val context: Context, private val callbacks:
 
   private companion object {
     const val STALE_KEY_MILLIS = 30_000L
+    const val TOGGLE_HOLD_MILLIS = 400L
   }
 }
