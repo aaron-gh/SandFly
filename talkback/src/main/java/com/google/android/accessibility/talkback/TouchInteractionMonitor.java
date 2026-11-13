@@ -1109,6 +1109,9 @@ public class TouchInteractionMonitor
           case 2:
             if (isDraggingGesture(event)) {
               // Do nothing. The system will continue the drag on its own.
+            } else if (scrubTracker.isTracking()) {
+              // A scrub turns back near where the fingers landed, where their movements are too
+              // small to look like a drag. Delegating would stop the events that complete it.
             } else {
               // The two pointers are moving either in different directions or
               // no close enough => delegate the gesture to the view hierarchy.

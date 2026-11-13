@@ -25,12 +25,12 @@ import kotlin.math.sign
 /**
  * Recognizes a two-finger scrub: two fingers moving quickly one way across the screen and back.
  *
- * The middle of the two fingers is followed from the moment the second finger lands. Each stroke
- * is a movement of [strokePx] across the screen, and the next stroke goes back the other way.
- * The second stroke completes the scrub, which is reported at once, while the fingers are still
- * down. Movement up or down, a pinch, a third
- * finger, a stroke that doesn't turn back within [MAX_STROKE_MILLIS], or a scrub that takes longer
- * than [MAX_MILLIS] is not a scrub.
+ * The middle of the two fingers is followed from the moment the second finger lands. The first
+ * stroke is a movement of [strokePx] across the screen, and the stroke back the other way needs
+ * [RETURN_FRACTION] of that. The second stroke completes the scrub, which is reported at once, while
+ * the fingers are still down. Movement up or down, a pinch, a third finger, a stroke that stops
+ * moving out for longer than [MAX_STROKE_MILLIS] before it turns back, or a scrub that takes longer
+ * than [MAX_MILLIS] from when the fingers start to move is not a scrub.
  */
 class TwoFingerScrubTracker(
   private val strokePx: Float,
@@ -63,6 +63,10 @@ class TwoFingerScrubTracker(
   private var strokes = 0
   private var strokeTime = 0L
 
+  /** Whether two fingers are being followed and may still make a scrub. */
+  val isTracking: Boolean
+    get() = state == State.TRACKING
+
   /** Whether a scrub was recognized and owns the current touch. */
   val isScrubbed: Boolean
     get() = state == State.SCRUBBED
@@ -86,13 +90,14 @@ class TwoFingerScrubTracker(
       MotionEvent.ACTION_POINTER_DOWN ->
         when (state) {
           State.IDLE -> if (event.pointerCount == 2) startTracking(event)
-          State.TRACKING -> state = State.REJECTED
+          State.TRACKING -> reject("third finger")
           else -> {}
         }
       MotionEvent.ACTION_MOVE -> if (state == State.TRACKING) onTrackingMove(event)
-      MotionEvent.ACTION_POINTER_UP -> if (state == State.TRACKING) state = State.REJECTED
+      MotionEvent.ACTION_POINTER_UP -> if (state == State.TRACKING) reject("finger lifted")
       MotionEvent.ACTION_UP,
       MotionEvent.ACTION_CANCEL -> {
+        if (state == State.TRACKING) reject("touch ended")
         val scrubbed = state == State.SCRUBBED
         clear()
         return scrubbed
@@ -118,7 +123,7 @@ class TwoFingerScrubTracker(
     val firstIndex = event.findPointerIndex(firstId)
     val secondIndex = event.findPointerIndex(secondId)
     if (event.pointerCount != 2 || firstIndex < 0 || secondIndex < 0) {
-      state = State.REJECTED
+      reject("${event.pointerCount} fingers")
       return
     }
     val x0 = event.getX(firstIndex)
@@ -128,6 +133,10 @@ class TwoFingerScrubTracker(
     val x = (x0 + x1) / 2
     val y = (y0 + y1) / 2
     val time = event.eventTime
+    // The time limit starts when the fingers start to move, not when they land.
+    if (direction == 0 && hypot(x - startX, y - startY) < strokePx * START_FRACTION) {
+      startTime = time
+    }
     if (time - startTime > MAX_MILLIS) {
       reject("too slow")
       return
@@ -150,7 +159,8 @@ class TwoFingerScrubTracker(
     }
     if ((x - extreme) * direction > 0) {
       extreme = x
-    } else if ((extreme - x) * direction >= strokePx) {
+      strokeTime = time
+    } else if ((extreme - x) * direction >= strokePx * RETURN_FRACTION) {
       direction = -direction
       extreme = x
       strokes++
@@ -171,7 +181,10 @@ class TwoFingerScrubTracker(
 
   private fun reject(reason: String) {
     if (GestureLog.enabled) {
-      Log.d(DEBUG_TAG, "Two-finger scrub rejected: $reason after $strokes strokes")
+      Log.d(
+        DEBUG_TAG,
+        "Two-finger scrub rejected: $reason after $strokes strokes, stroke ${strokePx.toInt()} px",
+      )
     }
     state = State.REJECTED
   }
@@ -185,8 +198,14 @@ class TwoFingerScrubTracker(
     /** Longest time for the whole scrub, in milliseconds. */
     private const val MAX_MILLIS = 1200L
 
-    /** Longest time for one stroke before it turns back, in milliseconds. */
+    /** Longest time a stroke may stop moving out before it turns back, in milliseconds. */
     private const val MAX_STROKE_MILLIS = 450L
+
+    /** The part of a stroke the fingers must move back. */
+    private const val RETURN_FRACTION = 0.6f
+
+    /** The part of a stroke the fingers move before the time limit starts. */
+    private const val START_FRACTION = 0.25f
 
     private const val DEBUG_TAG = "BacktalkGesture"
   }
