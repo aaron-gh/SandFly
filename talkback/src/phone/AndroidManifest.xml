@@ -15,10 +15,7 @@
                 android:name="android.view.im"
                 android:resource="@xml/handwriting_ime" />
         </service>
-        <!-- Installs scripts that are opened with or shared to SandFly, through Scripts. Messaging
-             apps and file managers often give .lua files a general type, so text/plain and
-             application/octet-stream files are taken too, and the activity checks the file's
-             name. -->
+        <!-- Installs scripts that are opened with or shared to SandFly, through Scripts. -->
         <activity
             android:name="com.google.android.accessibility.talkback.scripting.ScriptImportActivity"
             android:excludeFromRecents="true"
@@ -35,8 +32,6 @@
                 <data android:mimeType="text/x-script.lua" />
                 <data android:mimeType="application/zip" />
                 <data android:mimeType="application/x-zip-compressed" />
-                <data android:mimeType="text/plain" />
-                <data android:mimeType="application/octet-stream" />
             </intent-filter>
             <intent-filter android:label="@string/script_install_label">
                 <action android:name="android.intent.action.SEND" />
@@ -46,8 +41,7 @@
                 <data android:mimeType="text/x-script.lua" />
                 <data android:mimeType="application/zip" />
                 <data android:mimeType="application/x-zip-compressed" />
-                <data android:mimeType="application/octet-stream" />
-                <!-- A .lua file, or a link to a script, such as one shared from a browser. -->
+                <!-- A link to a script, such as one shared from a browser. -->
                 <data android:mimeType="text/plain" />
             </intent-filter>
         </activity>
