@@ -1219,13 +1219,22 @@ While SandFly is on, it checks for replies and status changes every hour, and wh
 
 ### Settings profiles
 
-A settings profile is a named set of SandFly's settings. **Back up and restore** > **Settings profiles** lists the profiles, with the one in use marked **In use**. The first time the screen opens, or a settings profile command is used, the current settings become the profile **Default**. **New settings profile** adds a profile with a copy of the current settings. A profile's item has **Switch to**, **Save current settings to this profile**, **Rename** and **Delete**; the profile in use can't be deleted.
+A settings profile is a named set of settings that replace SandFly's settings while the profile is used. A profile holds only the settings changed in it; every other setting stays as it is without profiles. **Back up and restore** > **Settings profiles** lists the profiles, with those in use marked **In use**. **New settings profile** adds a profile that sets nothing yet. Each profile opens a screen of its own:
 
-Switching saves the current settings to the profile in use, applies the other profile without restarting SandFly, and says "<name> profile". Settings changed while a profile is in use are also saved to it when the Settings profiles screen opens and when SandFly turns off.
+*   **Use now** uses the profile everywhere, until **Stop using**. One profile at a time is used this way.
+*   **Change settings** opens the settings with the profile applied, and every setting changed there goes to the profile until the profile's screen is shown again or another app is opened; SandFly says "Changes go to <name>" and "Changes saved to <name>".
+*   **Use automatically** has **Web content**, **Continuous reading** and **Text editing**: the profile is used while focus is in web content, during continuous reading such as Read from top, and while focus is in an edit field or on the keyboard.
+*   **Apps** lists the apps in which the profile is used; **Add app** adds one, and choosing an app removes it.
+*   **Settings in this profile** lists the settings the profile sets, by their titles in the settings; choosing one removes it from the profile, which brings back the setting without the profile.
+*   **Rename**, **Move up**, **Move down** and **Delete**.
 
-The **Choose settings profile** command opens a menu of the profiles, and **Next settings profile** and **Previous settings profile** switch to the next or previous one, wrapping around. All three are in the **SandFly** group of commands, unassigned.
+When profiles in use set the same setting, the profile used with **Use now** wins, then the profile higher in the list. Profiles used automatically aren't used in SandFly's own settings, which show the settings without them, and aren't used while SandFly is off. A setting changed while a profile in use sets it, such as speech rate changed with the reading controls, is saved to that profile; other settings changed apply without profiles.
 
-A profile holds the main, braille keyboard and braille display settings, including gestures, keyboard shortcuts, gesture profiles and the gesture profile in use. API keys, the SandFly Pro licence, the updater's state, installed scripts and their settings, sound theme drafts, and the state of this phone, such as which tutorials and dialogs were shown, are not in profiles and stay as they are. Profiles are kept on the phone, and are not in exported settings.
+The **Choose settings profile** command opens a menu with **No settings profile** and the profiles, and **Next settings profile** and **Previous settings profile** go through the profiles and No settings profile. All three choose the profile used everywhere, and say "<name> profile" or "No settings profile". They are in the **SandFly** group of commands, unassigned.
+
+A profile can hold the main, braille keyboard and braille display settings, including gestures, keyboard shortcuts, gesture profiles and the gesture profile in use. API keys, the SandFly Pro licence, the updater's state, installed scripts and their settings, sound theme drafts, and the state of this phone, such as which tutorials and dialogs were shown, are not in profiles. Profiles are kept on the phone, and are not in exported settings; **Export settings** saves the settings without profiles, and **Import settings** replaces them, with the profiles in use applied again.
+
+Profiles made before profiles held only their changes become profiles of the settings in which they differ from the profile that was in use, which is removed, since its settings are the settings without profiles.
 
 ### App icon that opens the settings
 

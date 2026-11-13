@@ -1290,6 +1290,10 @@ public class TalkBackService extends AccessibilityServiceCompat
     Performance perf = Performance.getInstance();
     EventId eventId = perf.onEventReceived(event);
     int eventType = event.getEventType();
+    if (eventType == AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED
+        && SettingsProfiles.watchesFocus()) {
+      SettingsProfiles.onFocused(AccessibilityEventUtils.sourceCompat(event));
+    }
     // Some launchers, such as Hyperion, don't report that their home screen is shown again after
     // the apps list, so Android's copy of its nodes keeps them hidden, and only the dock can be
     // reached until the copy is cleared.
@@ -1305,6 +1309,7 @@ public class TalkBackService extends AccessibilityServiceCompat
       if (isAppWindowEvent(event)) {
         SpeechDictionary.onWindowShown(lastWindowPackage);
         AppGestures.onWindowShown(lastWindowPackage);
+        SettingsProfiles.onAppShown(lastWindowPackage);
         ClipboardHistoryOverlay.onAppWindowShown(lastWindowPackage);
       }
     } else if (eventType == AccessibilityEvent.TYPE_WINDOWS_CHANGED && changesFrontWindow(event)) {
@@ -1314,6 +1319,7 @@ public class TalkBackService extends AccessibilityServiceCompat
       if (frontApp != null) {
         SpeechDictionary.onWindowShown(frontApp);
         AppGestures.onWindowShown(frontApp);
+        SettingsProfiles.onAppShown(frontApp);
         ClipboardHistoryOverlay.onAppWindowShown(frontApp);
       }
     }
@@ -3823,8 +3829,8 @@ public class TalkBackService extends AccessibilityServiceCompat
 
     prefs.unregisterOnSharedPreferenceChangeListener(sharedPreferenceChangeListener);
     prefs.unregisterOnSharedPreferenceChangeListener(analytics);
-    // Settings changed while a settings profile is in use stay in it.
-    SettingsProfiles.saveActive(this);
+    // Profiles used in apps and contexts don't apply while SandFly is off.
+    SettingsProfiles.onServiceStopped(this);
 
     unregisterReceivers(batteryMonitor, volumeMonitor);
 
@@ -5141,8 +5147,27 @@ public class TalkBackService extends AccessibilityServiceCompat
             || DirectTouchSettings.PREF_SEEN.equals(key)) {
           return;
         }
+        // Settings profiles write many settings at once, and reload them once afterwards.
+        if (SettingsProfiles.isWriting()) {
+          return;
+        }
         reloadPreferences(key);
       };
+
+  /**
+   * Reloads the settings after settings profiles changed them, and the keyboard shortcuts when
+   * [keyboard] ones changed.
+   */
+  public void onSettingsProfilesApplied(boolean keyboard) {
+    if (serviceState == ServiceStateListener.SERVICE_STATE_INACTIVE) {
+      return;
+    }
+    PreparedFocusSpeech.clear();
+    reloadPreferences();
+    if (keyboard && keyComboManager != null) {
+      keyComboManager.refreshKeyComboModel();
+    }
+  }
 
   public void onLockedBootCompleted(EventId eventId) {
     if (serviceState == ServiceStateListener.SERVICE_STATE_INACTIVE) {

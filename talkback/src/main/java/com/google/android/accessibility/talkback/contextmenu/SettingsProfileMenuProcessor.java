@@ -28,40 +28,49 @@ import com.google.android.accessibility.talkback.backup.SettingsProfiles;
 import java.util.List;
 import kotlin.Pair;
 
-/** Fills the menu that chooses the settings profile in use. */
+/** Fills the menu that chooses the settings profile used everywhere. */
 public final class SettingsProfileMenuProcessor {
 
   private SettingsProfileMenuProcessor() {}
 
   /**
-   * Adds an item for each settings profile, in the order of the Settings profiles screen. Before
-   * profiles are used, Default is the only item.
+   * Adds No settings profile, then an item for each settings profile, in the order of the Settings
+   * profiles screen.
    */
   public static void prepareSettingsProfileMenu(
       Context context, Pipeline.FeedbackReturner pipeline, ContextMenu menu) {
     Pair<List<SettingsProfileStore.Profile>, String> choices = SettingsProfiles.choices(context);
-    String activeId = choices.getSecond();
+    String manualId = choices.getSecond();
+    add(context, pipeline, menu, "", context.getString(R.string.settings_profile_none), manualId);
     for (SettingsProfileStore.Profile profile : choices.getFirst()) {
-      String id = profile.getId();
-      String name = profile.getName();
-      ContextMenuItem item =
-          ContextMenu.createMenuItem(
-              context,
-              R.id.group_settings_profile,
-              Menu.NONE,
-              Menu.NONE,
-              id.equals(activeId)
-                  ? context.getString(R.string.settings_profile_menu_item_in_use, name)
-                  : name);
-      item.setOnMenuItemClickListener(
-          clicked -> {
-            SettingsProfiles.switchTo(
-                context,
-                id,
-                said -> pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.speech(said)));
-            return true;
-          });
-      menu.add(item);
+      add(context, pipeline, menu, profile.getId(), profile.getName(), manualId);
     }
+  }
+
+  private static void add(
+      Context context,
+      Pipeline.FeedbackReturner pipeline,
+      ContextMenu menu,
+      String id,
+      String name,
+      String manualId) {
+    ContextMenuItem item =
+        ContextMenu.createMenuItem(
+            context,
+            R.id.group_settings_profile,
+            Menu.NONE,
+            Menu.NONE,
+            id.equals(manualId)
+                ? context.getString(R.string.settings_profile_menu_item_in_use, name)
+                : name);
+    item.setOnMenuItemClickListener(
+        clicked -> {
+          SettingsProfiles.switchTo(
+              context,
+              id,
+              said -> pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.speech(said)));
+          return true;
+        });
+    menu.add(item);
   }
 }
