@@ -144,4 +144,13 @@ class TextEntityMenuTest {
       TextEntityMenu.find("Code:482916 10 min", classified = listOf()),
     )
   }
+
+  @Test
+  fun aLimitCapsTheEntities() {
+    val text = "1111 2222 3333 4444"
+    assertEquals(
+      listOf<Entity>(Entity.Code("1111"), Entity.Code("2222")),
+      TextEntityMenu.find(text, classified = listOf(), limit = 2),
+    )
+  }
 }

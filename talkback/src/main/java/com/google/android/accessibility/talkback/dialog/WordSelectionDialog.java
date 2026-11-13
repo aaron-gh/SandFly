@@ -40,6 +40,7 @@ import com.google.android.accessibility.talkback.Feedback;
 import com.google.android.accessibility.talkback.Pipeline.FeedbackReturner;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.TalkBackService;
+import com.google.android.accessibility.talkback.menurules.TextEntityMenu;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.AccessibilityServiceCompatUtils;
 import com.google.android.accessibility.utils.ClipboardHistory;
@@ -62,12 +63,14 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * Dialog that allows selecting and copying text from the entire screen
- * with granularity options (characters, words, and paragraphs), or selecting
- * words individually from the last spoken phrase.
+ * with granularity options (addresses and numbers, characters, words, and paragraphs), or
+ * selecting words individually from the last spoken phrase.
  */
 public class WordSelectionDialog extends BaseDialog {
 
   public enum Granularity {
+    /** The web and email addresses, phone numbers and codes found by {@link TextEntityMenu}. */
+    ENTITIES,
     CHARACTERS,
     WORDS,
     PARAGRAPHS
@@ -138,10 +141,14 @@ public class WordSelectionDialog extends BaseDialog {
     }
   }
 
-  /** The collected text, and whether the {@link #MAX_TEXT_CHARS} limit cut it off. */
+  /**
+   * The collected text, and whether the {@link #MAX_TEXT_CHARS} limit cut it off, with the
+   * addresses and numbers found in it.
+   */
   @VisibleForTesting
   static final class Collected {
     final List<String> paragraphs = new ArrayList<>();
+    final List<String> entities = new ArrayList<>();
     int chars;
     boolean truncated;
 
@@ -163,6 +170,7 @@ public class WordSelectionDialog extends BaseDialog {
   }
 
   private final List<String> paragraphs;
+  private final List<String> entities;
   private final boolean textTruncated;
   private final List<Token> tokens = new ArrayList<>();
   private boolean listTruncated;
@@ -182,6 +190,7 @@ public class WordSelectionDialog extends BaseDialog {
       boolean showGranularityOptions) {
     super(context, titleResId, pipeline);
     this.paragraphs = collected.paragraphs;
+    this.entities = collected.entities;
     this.textTruncated = collected.truncated;
     this.pipeline = pipeline;
     this.showGranularityOptions = showGranularityOptions;
@@ -226,9 +235,17 @@ public class WordSelectionDialog extends BaseDialog {
         radioGroup.setVisibility(View.GONE);
       }
     } else if (radioGroup != null) {
+      if (entities.isEmpty()) {
+        View entitiesButton = radioGroup.findViewById(R.id.radio_entities);
+        if (entitiesButton != null) {
+          entitiesButton.setVisibility(View.GONE);
+        }
+      }
       radioGroup.setOnCheckedChangeListener(
           (group, checkedId) -> {
-            if (checkedId == R.id.radio_characters) {
+            if (checkedId == R.id.radio_entities) {
+              setGranularity(Granularity.ENTITIES);
+            } else if (checkedId == R.id.radio_characters) {
               setGranularity(Granularity.CHARACTERS);
             } else if (checkedId == R.id.radio_paragraphs) {
               setGranularity(Granularity.PARAGRAPHS);
@@ -259,7 +276,10 @@ public class WordSelectionDialog extends BaseDialog {
   }
 
   private void populateItems(Granularity granularity) {
-    Tokens extracted = extractTokens(paragraphs, granularity);
+    Tokens extracted =
+        granularity == Granularity.ENTITIES
+            ? entityTokens(entities)
+            : extractTokens(paragraphs, granularity);
     tokens.clear();
     tokens.addAll(extracted.items);
     listTruncated = textTruncated || extracted.truncated;
@@ -286,6 +306,24 @@ public class WordSelectionDialog extends BaseDialog {
     }
   }
 
+  /** One item for each address or number, as written. */
+  @VisibleForTesting
+  static Tokens entityTokens(List<String> entities) {
+    Tokens tokens = new Tokens();
+    for (String entity : entities) {
+      if (tokens.isFull()) {
+        tokens.truncated = true;
+        break;
+      }
+      tokens.items.add(new Token(entity, /* glue= */ null));
+    }
+    return tokens;
+  }
+
+  /**
+   * The items of {@code granularity}, other than {@link Granularity#ENTITIES}, which come from
+   * {@link #entityTokens}.
+   */
   @VisibleForTesting
   static Tokens extractTokens(List<String> paragraphs, Granularity granularity) {
     Tokens tokens = new Tokens();
@@ -458,6 +496,7 @@ public class WordSelectionDialog extends BaseDialog {
     String delimiter =
         switch (granularity) {
           case PARAGRAPHS -> "\n\n";
+          case ENTITIES -> "\n";
           case WORDS -> " ";
           case CHARACTERS -> "";
         };
@@ -533,6 +572,11 @@ public class WordSelectionDialog extends BaseDialog {
             LogUtils.w(TAG, "Can't collect the text on the screen: %s", t);
             collected = new Collected();
           }
+          try {
+            collected.entities.addAll(findEntities(service, collected.paragraphs));
+          } catch (Throwable t) {
+            LogUtils.w(TAG, "Can't find addresses and numbers on the screen: %s", t);
+          }
           Collected result = collected;
           new Handler(service.getMainLooper())
               .post(
@@ -559,6 +603,27 @@ public class WordSelectionDialog extends BaseDialog {
                     dialog.showDialog();
                   });
         });
+  }
+
+  /**
+   * The web and email addresses, phone numbers and codes in {@code paragraphs}, as written, waiting
+   * for Android's text classifier as long as {@link TextEntityMenu#classify} does.
+   */
+  private static List<String> findEntities(Context context, List<String> paragraphs) {
+    List<String> found = new ArrayList<>();
+    if (paragraphs.isEmpty()) {
+      return found;
+    }
+    String text = String.join("\n\n", paragraphs);
+    for (TextEntityMenu.Entity entity :
+        TextEntityMenu.find(
+            text,
+            TextEntityMenu.classify(context, text),
+            TextEntityMenu.ALL_TYPES,
+            MAX_TOKENS)) {
+      found.add(entity.getText());
+    }
+    return found;
   }
 
   private static Collected extractScreenParagraphs(TalkBackService service) {

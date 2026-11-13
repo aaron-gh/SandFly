@@ -366,16 +366,17 @@ class TextEntityMenu(private val pipeline: Pipeline.FeedbackReturner) : NodeMenu
     }
 
     /**
-     * Finds the entities of the types in [included] in [text]. [classified] is what the text
-     * classifier found; when it is null, only web and email addresses are listed, since nothing
-     * then tells a code from a date.
+     * Finds at most [limit] entities of the types in [included] in [text]. [classified] is what
+     * the text classifier found; when it is null, only web and email addresses are listed, since
+     * nothing then tells a code from a date.
      */
     @JvmStatic
     fun find(
       text: String,
       classified: List<Classified>? = null,
       included: Set<String> = ALL_TYPES,
-    ): List<Entity> = findAll(text, classified).filter { typeOf(it) in included }.take(MAX_ENTITIES)
+      limit: Int = MAX_ENTITIES,
+    ): List<Entity> = findAll(text, classified).filter { typeOf(it) in included }.take(limit)
 
     private fun findAll(text: String, classified: List<Classified>?): List<Entity> {
       if (text.isBlank()) return emptyList()
