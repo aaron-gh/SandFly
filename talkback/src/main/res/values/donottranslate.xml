@@ -1633,6 +1633,7 @@
         <item>@string/title_copy_text_from_screen</item>
         <item>@string/granular_editing_title</item>
         <item>@string/shortcut_dictate</item>
+        <item>@string/shortcut_switch_keyboard</item>
     </string-array>
 
     <!-- Shortcut preference value of text editing -->
@@ -1653,6 +1654,7 @@
         <item>@string/shortcut_value_copy_text_from_screen</item>
         <item>@string/shortcut_value_granular_editing</item>
         <item>@string/shortcut_value_dictate</item>
+        <item>@string/shortcut_value_switch_keyboard</item>
     </string-array>
 
   <!-- The shortcut of unsupported gestures -->
@@ -1798,6 +1800,7 @@
   <string name="shortcut_value_copy_text_from_screen" translatable="false">COPY_TEXT_FROM_SCREEN</string>
   <string name="shortcut_value_submit_text" translatable="false">SUBMIT_TEXT</string>
   <string name="shortcut_value_clear_text" translatable="false">CLEAR_TEXT</string>
+  <string name="shortcut_value_switch_keyboard" translatable="false">SWITCH_KEYBOARD</string>
   <string name="shortcut_value_pause_or_resume_feedback">PAUSE_FEEDBACK</string>
   <string name="shortcut_value_all_apps" translatable="false">ALL_APPS</string>
   <string name="shortcut_value_braille_keyboard" translatable="false">BRAILLE_KEYBOARD</string>

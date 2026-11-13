@@ -159,6 +159,7 @@ import com.google.android.accessibility.talkback.utils.DebugProperties;
 import com.google.android.accessibility.talkback.utils.FocusIndicatorUtils;
 import com.google.android.accessibility.talkback.utils.GeminiCommandUtils;
 import com.google.android.accessibility.talkback.keyboard.KeyComboManager;
+import com.google.android.accessibility.talkback.keyboard.NextKeyboard;
 import com.google.android.accessibility.talkback.overview.PreviousApp;
 import com.google.android.accessibility.talkback.overview.RecentAppSteps;
 import com.google.android.accessibility.utils.AccessibilityServiceCompatUtils;
@@ -819,6 +820,8 @@ public class GestureController {
       result = GranularEditing.open(service, editing != null ? editing : focus);
     } else if (action.equals(service.getString(R.string.shortcut_value_dictate))) {
       result = dictation.start(dictationTarget());
+    } else if (action.equals(service.getString(R.string.shortcut_value_switch_keyboard))) {
+      result = NextKeyboard.switchKeyboard(service, said -> speak(said.toString()));
     } else if (action.equals(service.getString(R.string.shortcut_value_clear_selection))) {
       AccessibilityNodeInfoCompat node =
           accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ true);
