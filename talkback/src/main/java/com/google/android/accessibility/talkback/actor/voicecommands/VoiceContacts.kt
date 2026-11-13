@@ -54,6 +54,21 @@ object VoiceContacts {
   @JvmStatic
   fun isNumber(who: String): Boolean = Regex("^\\+?[\\d\\s().-]{3,}$").matches(who.trim())
 
+  /**
+   * The phone number at the start of [text], and the rest of [text], or null when it doesn't start
+   * with one.
+   */
+  @JvmStatic
+  fun numberAtStart(text: String): Pair<String, String>? {
+    val match = Regex("^(\\+?[\\d(][\\d\\s().-]*\\d)(?:\\s+(.*))?$", RegexOption.DOT_MATCHES_ALL).find(text.trim())
+      ?: return null
+    val number = match.groupValues[1]
+    if (number.count { it.isDigit() } < MIN_DIGITS) return null
+    return number to match.groupValues[2]
+  }
+
+  private const val MIN_DIGITS = 3
+
   /** Reads every phone number in the contacts. */
   @JvmStatic
   fun numbers(context: Context): List<Number> {

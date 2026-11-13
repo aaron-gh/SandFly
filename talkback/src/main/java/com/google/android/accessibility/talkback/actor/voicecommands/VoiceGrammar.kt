@@ -116,41 +116,69 @@ class VoiceGrammar(phrases: Phrases, private val resolver: Resolver, private val
     if (normalize(text, locale) in cancel) {
       return Result(emptyList(), emptyList(), parts = 1, joined = false, cancel = true)
     }
-    val parts = split(text, chainSplit)
-    val joined = parts.size > 1 || split(text, andSplit).size > 1
-    if (parts.size > 1) {
-      val steps = mutableListOf<VoiceStep>()
-      val unparsed = mutableListOf<String>()
-      for (part in parts) {
-        val partSteps = parseJoined(part)
-        if (partSteps == null) {
-          unparsed.add(part)
-          steps.add(VoiceStep.Legacy(part))
-        } else {
-          steps.addAll(partSteps)
-        }
+    val cache = HashMap<String, List<VoiceStep>?>()
+    val segment = { part: String -> cache.getOrPut("s:$part") { parseSegment(part) } }
+    val joinedPart = { part: String -> cache.getOrPut("j:$part") { bestSplit(part, pieces(part, andSplit), segment) } }
+    val parts = pieces(text, chainSplit)
+    val joined = parts.size > 1 || pieces(text, andSplit).size > 1
+    bestSplit(text, parts, joinedPart)?.let { return Result(it, emptyList(), parts.size, joined) }
+    // Some part isn't understood: each part is a command of its own.
+    val steps = mutableListOf<VoiceStep>()
+    val unparsed = mutableListOf<String>()
+    for (range in parts) {
+      val part = trimText(text.substring(range.first, range.second))
+      val partSteps = joinedPart(part)
+      if (partSteps == null) {
+        unparsed.add(part)
+        steps.add(VoiceStep.Legacy(part))
+      } else {
+        steps.addAll(partSteps)
       }
-      if (unparsed.isEmpty()) return Result(steps, unparsed, parts.size, joined)
-      // A message can have the joining words in its text.
-      parseSegment(text)?.let { return Result(it, emptyList(), parts = 1, joined = joined) }
-      return Result(steps, unparsed, parts.size, joined)
     }
-    val steps = parseJoined(text)
-    return if (steps != null) Result(steps, emptyList(), parts = 1, joined = joined)
-    else Result(listOf(VoiceStep.Legacy(text)), listOf(text), parts = 1, joined = joined)
+    return Result(steps, unparsed, parts.size, joined)
   }
 
   /**
-   * Reads [part] as one command, or else as commands joined by "and" when each of them is one.
-   * Returns null when it isn't understood.
+   * Reads [text], whose pieces between joining words are [pieces], as consecutive groups of pieces
+   * that [parse] each understands, with as many groups as possible: "open Chrome and call Sam" is
+   * two commands, "tap Salt and pepper" one. Returns null when there is no such grouping.
    */
-  private fun parseJoined(part: String): List<VoiceStep>? {
-    val joinedParts = split(part, andSplit)
-    if (joinedParts.size > 1) {
-      val steps = joinedParts.map { parseSegment(it) }
-      if (steps.all { it != null }) return steps.flatMap { it!! }
+  private fun bestSplit(
+    text: String,
+    pieces: List<Pair<Int, Int>>,
+    parse: (String) -> List<VoiceStep>?,
+  ): List<VoiceStep>? {
+    val count = pieces.size
+    if (count <= 1 || count > MAX_PIECES) return parse(trimText(text))
+    // best[i]: the most groups that pieces i and after make, and their steps.
+    val best = arrayOfNulls<Pair<Int, List<VoiceStep>>>(count + 1)
+    best[count] = 0 to emptyList()
+    for (i in count - 1 downTo 0) {
+      for (j in i until count) {
+        val rest = best[j + 1] ?: continue
+        val steps = parse(trimText(text.substring(pieces[i].first, pieces[j].second))) ?: continue
+        val groups = rest.first + 1
+        if (best[i].let { it == null || groups > it.first }) best[i] = groups to steps + rest.second
+      }
     }
-    return parseSegment(part)
+    return best[0]?.second
+  }
+
+  /**
+   * The pieces of [text] between the joining words that [splitter] finds, each as the range from
+   * its start and its end.
+   */
+  private fun pieces(text: String, splitter: Pattern?): List<Pair<Int, Int>> {
+    if (splitter == null) return listOf(0 to text.length)
+    val ranges = mutableListOf<Pair<Int, Int>>()
+    val matcher = splitter.matcher(text)
+    var start = 0
+    while (matcher.find()) {
+      if (text.substring(start, matcher.start()).isNotBlank()) ranges.add(start to matcher.start())
+      start = matcher.end()
+    }
+    if (text.substring(start).isNotBlank()) ranges.add(start to text.length)
+    return ranges.ifEmpty { listOf(0 to text.length) }
   }
 
   /** Reads [segment] as one command. Returns null when it isn't understood. */
@@ -294,14 +322,13 @@ class VoiceGrammar(phrases: Phrases, private val resolver: Resolver, private val
     return Pattern.compile(regex, FLAGS)
   }
 
-  private fun split(text: String, splitter: Pattern?): List<String> =
-    splitter?.split(text)?.map { trimText(it) }?.filter { it.isNotEmpty() }?.ifEmpty { listOf(text) }
-      ?: listOf(text)
-
   companion object {
     private const val FLAGS = Pattern.CASE_INSENSITIVE or Pattern.UNICODE_CASE
     private const val SEPARATOR = "[\\s,:]+"
     private const val MAX_WAIT_SECONDS = 60
+
+    /** The most pieces between joining words that are grouped into commands. */
+    private const val MAX_PIECES = 12
 
     /** The longest text read as a command. */
     private const val MAX_TEXT = 1_000

@@ -159,7 +159,7 @@ object VoicePlanRunner {
           is VoiceStep.Tap -> tap(step.label, next)
           is VoiceStep.OpenApp -> openApp(step, next)
           is VoiceStep.TypeText ->
-            macro(Macros.TypeText(step.text), next) { say(service.getString(R.string.not_editable)) }
+            macro(Macros.TypeText(step.text), next) { stop(service.getString(R.string.not_editable)) }
           is VoiceStep.Wait -> later(step.millis) { runStep(index + 1) }
           is VoiceStep.Call -> call(step)
           is VoiceStep.Message -> message(step, next)
@@ -219,19 +219,17 @@ object VoicePlanRunner {
       }
     }
 
-    /** Runs [step] as a macro, then [next], or [failed] and stops when the step fails. */
+    /**
+     * Runs [step] as a macro, then [next]. When the step fails, [failed] runs, and goes on or
+     * calls [stop].
+     */
     private fun macro(step: Macros.Step, next: () -> Unit, failed: () -> Unit) {
       macroRunning = true
       val started =
         MacroRunner.runSteps(listOf(step), quiet = true) { ok ->
           macroRunning = false
           if (!active) return@runSteps
-          if (ok) {
-            next()
-          } else {
-            failed()
-            done()
-          }
+          if (ok) next() else failed()
         }
       if (!started) {
         macroRunning = false
@@ -244,7 +242,7 @@ object VoicePlanRunner {
      * for "and", then one whose text contains it.
      */
     private fun tap(label: String, next: () -> Unit) {
-      val notFound = { say(service.getString(R.string.voice_commands_not_found, label)) }
+      val notFound = { stop(service.getString(R.string.voice_commands_not_found, label)) }
       val whole = wholeLabelPattern(label)
       if (whole == null) {
         macro(Macros.Tap(label), next, notFound)
@@ -270,7 +268,7 @@ object VoicePlanRunner {
 
     private fun openApp(step: VoiceStep.OpenApp, next: () -> Unit) {
       if (step.value != null) {
-        macro(Macros.OpenApp(step.value), next) { say(service.getString(R.string.voice_commands_no_app, step.name)) }
+        macro(Macros.OpenApp(step.value), next) { stop(service.getString(R.string.voice_commands_no_app, step.name)) }
         return
       }
       inBackground({ listOf(VoiceTargets.findApp(OpenAppActions.apps(service), step.name, locale)) }) { found ->
@@ -279,7 +277,7 @@ object VoicePlanRunner {
           say(service.getString(R.string.voice_commands_no_app, step.name))
           done()
         } else {
-          macro(Macros.OpenApp(app.value), next) { say(service.getString(R.string.voice_commands_no_app, step.name)) }
+          macro(Macros.OpenApp(app.value), next) { stop(service.getString(R.string.voice_commands_no_app, step.name)) }
         }
       }
     }
@@ -328,6 +326,12 @@ object VoicePlanRunner {
       val who = step.who
       if (who != null && VoiceContacts.isNumber(who)) {
         messageText(step, who, who, step.text, next)
+        return
+      }
+      val numberAtStart = if (who == null) VoiceContacts.numberAtStart(step.whoAndText.orEmpty()) else null
+      if (numberAtStart != null) {
+        val (number, rest) = numberAtStart
+        messageText(step, number, number, step.text ?: VoiceGrammar.trimText(rest).ifEmpty { null }, next)
         return
       }
       if (!VoiceContacts.canRead(service)) {
@@ -621,6 +625,12 @@ object VoicePlanRunner {
 
     private fun say(text: String) {
       service.feedbackReturner?.returnFeedback(EVENT_ID_UNTRACKED, Feedback.requestedSpeech(text))
+    }
+
+    /** Says [text] and stops. */
+    private fun stop(text: String) {
+      say(text)
+      done()
     }
 
     private fun fail(reason: String) {

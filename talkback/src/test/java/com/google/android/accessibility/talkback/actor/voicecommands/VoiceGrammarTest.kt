@@ -86,6 +86,20 @@ class VoiceGrammarTest {
   }
 
   @Test
+  fun andJoinsAsManyCommandsAsUnderstood() {
+    assertEquals(
+      listOf(
+        VoiceStep.Command("HOME", "home"),
+        VoiceStep.OpenApp("Chrome", "OPEN_APP:chrome"),
+        VoiceStep.Tap("Network and internet"),
+      ),
+      steps("Home then open Chrome and tap Network and internet"),
+    )
+    assertEquals(listOf(VoiceStep.Tap("Salt and pepper")), steps("tap Salt and pepper"))
+    assertEquals(listOf(VoiceStep.Tap("A"), VoiceStep.Call("Sam")), steps("tap A and call Sam"))
+  }
+
+  @Test
   fun messages() {
     assertEquals(
       listOf(VoiceStep.Message(who = "Sam", text = "I'm on my way!")),

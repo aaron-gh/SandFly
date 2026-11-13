@@ -68,6 +68,14 @@ class VoiceContactsTest {
   }
 
   @Test
+  fun numberAtStart() {
+    assertEquals("07700 900123" to "I am on my way!", VoiceContacts.numberAtStart("07700 900123 I am on my way!"))
+    assertEquals("+44 (0)20 7946 0000" to "", VoiceContacts.numberAtStart("+44 (0)20 7946 0000"))
+    assertNull(VoiceContacts.numberAtStart("Sam 07700"))
+    assertNull(VoiceContacts.numberAtStart("12 apples"))
+  }
+
+  @Test
   fun numbers() {
     assertTrue(VoiceContacts.isNumber("+44 7700 900123"))
     assertTrue(VoiceContacts.isNumber("999"))
