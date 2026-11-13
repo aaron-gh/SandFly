@@ -256,6 +256,32 @@ class WebTreeOrderTest {
   }
 
   @Test
+  fun ambiguousPivotDoesNotReadAncestorsInEitherDirection() {
+    val pivot = clickable(text("inside"))
+    var outer = pivot
+    repeat(30) { outer = container(outer) }
+    page(outer)
+    for (forward in listOf(true, false)) {
+      reads = 0
+      assertNull(WebTreeOrder.find(tree, pivot, forward))
+      assertEquals(0, reads)
+    }
+  }
+
+  @Test
+  fun ambiguousAncestorStopsBeforeTheRestOfTheChainInEitherDirection() {
+    val pivot = text("inside")
+    var outer = clickable(pivot, text("another item"))
+    repeat(30) { outer = container(outer) }
+    page(outer)
+    for (forward in listOf(true, false)) {
+      reads = 0
+      assertNull(WebTreeOrder.find(tree, pivot, forward))
+      assertEquals(1, reads)
+    }
+  }
+
+  @Test
   fun framesAreEnteredAndEmptyFramesPassedOver() {
     val start = text("start")
     val inFrame = text("in frame")
