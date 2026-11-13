@@ -1219,7 +1219,7 @@ While SandFly is on, it checks for replies and status changes every hour, and wh
 
 ### Settings profiles
 
-A settings profile is a named set of settings that replace SandFly's settings while the profile is used. A profile holds only the settings changed in it; every other setting stays as it is without profiles. **Back up and restore** > **Settings profiles** lists the profiles, with those in use marked **In use**. **New settings profile** adds a profile that sets nothing yet. Each profile opens a screen of its own:
+A settings profile is a named set of settings that replace SandFly's settings while the profile is used. A profile holds only the settings changed in it; every other setting stays as it is without profiles. **Settings profiles**, in the main settings, lists the profiles, with those in use marked **In use**. **New settings profile** adds a profile that sets nothing yet. Each profile opens a screen of its own:
 
 *   **Use now** uses the profile everywhere, until **Stop using**. One profile at a time is used this way.
 *   **Change settings** opens the settings with the profile applied, and every setting changed there goes to the profile until the profile's screen is shown again or another app is opened; SandFly says "Changes go to <name>" and "Changes saved to <name>".

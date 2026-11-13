@@ -119,6 +119,10 @@
       android:key="pref_pause_screen"
       android:title="@string/title_pref_pause" />
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+      android:fragment="com.google.android.accessibility.talkback.backup.SettingsProfilesFragment"
+      android:key="@string/pref_settings_profiles_key"
+      android:title="@string/title_pref_settings_profiles" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
       android:fragment="com.google.android.accessibility.talkback.preference.base.BackupFragment"
       android:key="pref_backup_screen"
       android:title="@string/title_pref_backup" />

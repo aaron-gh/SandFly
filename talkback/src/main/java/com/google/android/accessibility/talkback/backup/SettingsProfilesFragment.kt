@@ -22,7 +22,7 @@ import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.notifications.NotificationCodeFragment
 
 /**
- * Back up and restore > Settings profiles: New settings profile, and the profiles, with those in
+ * Settings > Settings profiles: New settings profile, and the profiles, with those in
  * use marked. Each profile opens its own screen, [SettingsProfileFragment].
  */
 class SettingsProfilesFragment : NotificationCodeFragment(R.string.title_pref_settings_profiles) {
