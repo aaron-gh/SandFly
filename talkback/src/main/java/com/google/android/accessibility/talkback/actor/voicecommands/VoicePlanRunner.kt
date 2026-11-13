@@ -434,7 +434,8 @@ object VoicePlanRunner {
       }
       val question =
         if (fromResult) service.getString(R.string.voice_commands_message_confirm_result, name)
-        else service.getString(R.string.voice_commands_message_confirm, name, text)
+        // The question mark follows the text, without the text's own end mark.
+        else service.getString(R.string.voice_commands_message_confirm, name, text.trimEnd('.', '!', '?', ' '))
       later(COMPOSE_GAP_MS) {
         afterSpeech {
           askByVoice(question) { answer ->
