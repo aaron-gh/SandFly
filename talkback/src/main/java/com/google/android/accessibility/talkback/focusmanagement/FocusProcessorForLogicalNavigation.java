@@ -3824,8 +3824,10 @@ public class FocusProcessorForLogicalNavigation {
     if (AccessibilityNodeInfoUtils.supportsAction(node, ACTION_SCROLL_RIGHT.getId())) {
       letters.append('R');
     }
-    if (AccessibilityNodeInfoUtils.supportsAction(node, ACTION_PAGE_UP.getId())
-        || AccessibilityNodeInfoUtils.supportsAction(node, ACTION_PAGE_DOWN.getId())
+    if (AccessibilityNodeInfoUtils.supportsAction(
+            node, AccessibilityActionCompat.ACTION_PAGE_UP.getId())
+        || AccessibilityNodeInfoUtils.supportsAction(
+            node, AccessibilityActionCompat.ACTION_PAGE_DOWN.getId())
         || AccessibilityNodeInfoUtils.supportsAction(
             node, AccessibilityActionCompat.ACTION_PAGE_LEFT.getId())
         || AccessibilityNodeInfoUtils.supportsAction(
