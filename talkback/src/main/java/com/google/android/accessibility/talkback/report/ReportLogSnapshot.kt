@@ -27,9 +27,9 @@ import java.util.concurrent.TimeoutException
 
 /**
  * The logcat text of SandFly's processes at the time the report screens opened: the end of this
- * process's log, and the ends of the logs of the other processes.
+ * process's log, the ends of the logs of the other processes, and this process's last gesture lines.
  */
-internal data class LogcatSnapshot(val main: String, val others: String)
+internal data class LogcatSnapshot(val main: String, val others: String, val gestures: String = "")
 
 /**
  * The one copy of SandFly's logcat text for the report being written, read when the report screens
