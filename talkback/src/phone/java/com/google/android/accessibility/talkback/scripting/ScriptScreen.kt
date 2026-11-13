@@ -26,11 +26,10 @@ import android.os.SystemClock
 import android.view.Display
 import android.view.accessibility.AccessibilityWindowInfo
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
+import com.google.android.accessibility.utils.ocr.LanguageTextRecognizer
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 import com.google.mlkit.vision.common.InputImage
 import com.google.mlkit.vision.text.Text
-import com.google.mlkit.vision.text.TextRecognition
-import com.google.mlkit.vision.text.latin.TextRecognizerOptions
 import java.util.concurrent.Executor
 import org.json.JSONArray
 import org.json.JSONObject
@@ -39,12 +38,9 @@ import org.json.JSONObject
 class ScriptScreen(private val service: AccessibilityService) {
   private val mainHandler = Handler(Looper.getMainLooper())
   private val mainExecutor = Executor { mainHandler.post(it) }
-  private val recognizerHolder = lazy {
-    TextRecognition.getClient(TextRecognizerOptions.DEFAULT_OPTIONS)
-  }
-  private val recognizer by recognizerHolder
+  private val recognizer = LanguageTextRecognizer(service)
 
-  /** Set on the main thread, where the recognizer is made, once scripts are off. */
+  /** Set on the main thread once scripts are off. */
   private var closed = false
 
   /**
@@ -194,11 +190,11 @@ class ScriptScreen(private val service: AccessibilityService) {
     )
   }
 
-  /** Closes the recognizer, on the main thread, where it's made. Called from any thread. */
+  /** Closes the recognizer, on the main thread. Called from any thread. */
   fun close() {
     mainHandler.post {
       closed = true
-      if (recognizerHolder.isInitialized()) recognizer.close()
+      recognizer.close()
     }
   }
 

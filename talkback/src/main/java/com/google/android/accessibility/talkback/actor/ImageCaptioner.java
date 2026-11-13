@@ -148,6 +148,7 @@ import com.google.android.accessibility.utils.StringBuilderUtils;
 import com.google.android.accessibility.utils.input.WindowEventInterpreter.EventInterpretation;
 import com.google.android.accessibility.utils.input.WindowEventInterpreter.WindowEventHandler;
 import com.google.android.accessibility.utils.output.SpeechController.SpeakOptions;
+import com.google.android.accessibility.utils.ocr.LanguageTextRecognizer;
 import com.google.android.accessibility.utils.screenunderstanding.IconAnnotationsDetector;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import com.google.auto.value.AutoValue;
@@ -236,6 +237,8 @@ public class ImageCaptioner extends Handler
   private final PrimesController primesController;
   @VisibleForTesting @Nullable IconAnnotationsDetector iconAnnotationsDetector;
   private boolean iconAnnotationsDetectorStarted = false;
+  // Made on first use, and closed when automatic text recognition is turned off and on shutdown.
+  @Nullable private LanguageTextRecognizer textRecognizer;
   @Nullable private AccessibilityNodeInfoCompat queuedNode;
   private final CaptionResults captionResults;
   @VisibleForTesting @Nullable ImageDescriptionProcessor imageDescriptionProcessor;
@@ -723,6 +726,7 @@ public class ImageCaptioner extends Handler
     dismissQuestionDialog();
     shutdownIconDetector();
     shutdownImageDescription();
+    closeTextRecognizer();
     moduleStateManager.shutdown();
 
     SharedPreferencesUtils.getSharedPreferences(service)
@@ -1365,8 +1369,33 @@ public class ImageCaptioner extends Handler
     return true;
   }
 
+  private synchronized LanguageTextRecognizer textRecognizer() {
+    if (textRecognizer == null) {
+      textRecognizer = new LanguageTextRecognizer(service);
+    }
+    return textRecognizer;
+  }
+
+  private synchronized void closeTextRecognizer() {
+    if (textRecognizer != null) {
+      textRecognizer.close();
+      textRecognizer = null;
+    }
+  }
+
   @Override
   public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+    if (service.getString(R.string.pref_auto_text_recognition_key).equals(key)
+        && !SharedPreferencesUtils.getBooleanPref(
+            sharedPreferences,
+            service.getResources(),
+            R.string.pref_auto_text_recognition_key,
+            R.bool.pref_auto_text_recognition_default)) {
+      // Describe image makes it again when asked.
+      closeTextRecognizer();
+      return;
+    }
+
     if (service.getString(ImageCaptionPreferenceKeys.ICON_DETECTION.uninstalledKey).equals(key)
         && moduleStateManager.isLegacyUninstalled(ICON_LABEL)) {
       iconDetectionRequests.clear();
@@ -1952,6 +1981,7 @@ public class ImageCaptioner extends Handler
             service,
             node,
             screenCapture,
+            textRecognizer(),
             /* onFinishListener= */ this::onCharacterCaptionFinish,
             /* onErrorListener= */ (errorRequest, errorNode, errorCode, userRequest) -> {
               if (errorRequest.getDurationMillis() != INVALID_DURATION) {

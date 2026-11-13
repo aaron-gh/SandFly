@@ -35,9 +35,6 @@ import com.google.mlkit.vision.common.InputImage;
 import com.google.mlkit.vision.text.Text.Element;
 import com.google.mlkit.vision.text.Text.Line;
 import com.google.mlkit.vision.text.Text.TextBlock;
-import com.google.mlkit.vision.text.TextRecognition;
-import com.google.mlkit.vision.text.TextRecognizer;
-import com.google.mlkit.vision.text.latin.TextRecognizerOptions;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashSet;
@@ -46,7 +43,7 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * OcrController holds onto an OCR TextRecognizer, and allows consumers to perform OCR based on a
+ * OcrController uses a {@link LanguageTextRecognizer}, and allows consumers to perform OCR based on a
  * list of {@link AccessibilityNodeInfoCompat}, and a screencapture {@link Bitmap}.
  */
 public class OcrController {
@@ -72,38 +69,23 @@ public class OcrController {
   private final OcrListener ocrListener;
   private final boolean needCropScreenshot;
   private final Handler handler;
-  // TextRecognizer (MlKitContext) may not be ready when the device just boots completely, so this
-  // recognizer can't be initialized in the constructor.
-  @Nullable private TextRecognizer recognizer;
+  // Owned by the caller, which closes it.
+  private final LanguageTextRecognizer recognizer;
 
-  public OcrController(OcrListener ocrListener, boolean needCropScreenshot) {
-    this(
-        new Handler(Looper.getMainLooper()),
-        ocrListener,
-        needCropScreenshot,
-        /* recognizer= */ null);
+  public OcrController(
+      OcrListener ocrListener, boolean needCropScreenshot, LanguageTextRecognizer recognizer) {
+    this(new Handler(Looper.getMainLooper()), ocrListener, needCropScreenshot, recognizer);
   }
 
   public OcrController(
       Handler handler,
       OcrListener ocrListener,
       boolean needCropScreenshot,
-      @Nullable TextRecognizer recognizer) {
+      LanguageTextRecognizer recognizer) {
     this.ocrListener = ocrListener;
     this.handler = handler;
     this.recognizer = recognizer;
     this.needCropScreenshot = needCropScreenshot;
-  }
-
-  /**
-   * Closes the detector and releases its resources. Invokes this method when you no longer want to
-   * use OcrController.
-   */
-  public void shutdown() {
-    if (recognizer != null) {
-      recognizer.close();
-      recognizer = null;
-    }
   }
 
   /**
@@ -121,17 +103,6 @@ public class OcrController {
       List<OcrInfo> ocrInfos,
       Rect selectionBounds,
       Filter<AccessibilityNodeInfoCompat> filter) {
-    if (recognizer == null) {
-      try {
-        recognizer = TextRecognition.getClient(TextRecognizerOptions.DEFAULT_OPTIONS);
-      } catch (IllegalStateException e) {
-        LogUtils.w(TAG, "Fail to get TextRecognizer.");
-        // MlKitContext is not ready.
-        ocrListener.onOcrFinished(ocrInfos);
-        return;
-      }
-    }
-
     new Thread(
             new OcrRunnable(
                 handler,
@@ -236,7 +207,44 @@ public class OcrController {
       }
     }
 
-    return text.toString();
+    return removeSpacesBetweenIdeographs(text.toString());
+  }
+
+  /**
+   * Removes the word separators put between Chinese and Japanese characters, which are written
+   * without spaces.
+   */
+  public static String removeSpacesBetweenIdeographs(String text) {
+    if (text.indexOf(' ') < 0) {
+      return text;
+    }
+    StringBuilder result = new StringBuilder(text.length());
+    int length = text.length();
+    for (int i = 0; i < length; i++) {
+      char c = text.charAt(i);
+      if (c == ' '
+          && i > 0
+          && i + 1 < length
+          && isWrittenWithoutSpaces(Character.codePointBefore(text, i))
+          && isWrittenWithoutSpaces(Character.codePointAt(text, i + 1))) {
+        continue;
+      }
+      result.append(c);
+    }
+    return result.toString();
+  }
+
+  private static boolean isWrittenWithoutSpaces(int codePoint) {
+    Character.UnicodeScript script = Character.UnicodeScript.of(codePoint);
+    if (script == Character.UnicodeScript.HAN
+        || script == Character.UnicodeScript.HIRAGANA
+        || script == Character.UnicodeScript.KATAKANA) {
+      return true;
+    }
+    Character.UnicodeBlock block = Character.UnicodeBlock.of(codePoint);
+    return block == Character.UnicodeBlock.CJK_SYMBOLS_AND_PUNCTUATION
+        || (block == Character.UnicodeBlock.HALFWIDTH_AND_FULLWIDTH_FORMS
+            && !Character.isLetterOrDigit(codePoint));
   }
 
   /**
@@ -292,7 +300,7 @@ public class OcrController {
 
     private final Handler handler;
     private final OcrListener ocrListener;
-    private final TextRecognizer recognizer;
+    private final LanguageTextRecognizer recognizer;
     private final Bitmap screenshot;
     private final List<OcrInfo> ocrInfos;
     @Nullable private final Rect selectionBounds;
@@ -302,7 +310,7 @@ public class OcrController {
     public OcrRunnable(
         Handler handler,
         OcrListener ocrListener,
-        TextRecognizer recognizer,
+        LanguageTextRecognizer recognizer,
         Bitmap screenshot,
         boolean needCropScreenshot,
         List<OcrInfo> ocrInfos,
