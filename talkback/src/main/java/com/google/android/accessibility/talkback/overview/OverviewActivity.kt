@@ -56,7 +56,8 @@ import com.google.android.material.floatingactionbutton.ExtendedFloatingActionBu
  * or last with Most recent app at the bottom: the most recent is the app the overview was opened
  * from. A double tap switches to a task; Close, Split screen and App info are actions of its row.
  * Close all and System overview are floating buttons at the bottom left and bottom right. With
- * Columns above 1, the rows are a grid, filled a row at a time. The Overview action, performed
+ * Columns above 1, the rows are a grid, filled a row at a time, its cells at least as tall as they
+ * are wide and stretched to fill the window when the grid is shorter. The Overview action, performed
  * again while this is on screen, switches to the previous app.
  */
 class OverviewActivity : AppCompatActivity() {
@@ -150,6 +151,13 @@ class OverviewActivity : AppCompatActivity() {
       val bottom = view.height + 2 * dp(BUTTON_MARGIN_DP)
       if (scroll.paddingBottom != bottom) {
         scroll.setPadding(0, 0, 0, bottom)
+        scroll.post { sizeCells() }
+      }
+    }
+    // Cell sizes follow the window's size and the space the buttons leave.
+    scroll.addOnLayoutChangeListener { _, left, top, right, bottom, oldLeft, oldTop, oldRight, oldBottom ->
+      if (right - left != oldRight - oldLeft || bottom - top != oldBottom - oldTop) {
+        scroll.post { sizeCells() }
       }
     }
     val root =
@@ -288,10 +296,31 @@ class OverviewActivity : AppCompatActivity() {
         focusAfter = views[minOf(index, views.size - 1)]
       }
     setChildren(views)
+    sizeCells()
     if (scrollToEnd) {
       scroll.doOnPreDraw { scroll.scrollTo(0, content.height) }
     }
     focusAfter?.let { focus(it) }
+  }
+
+  /**
+   * Makes the grid's cells at least as tall as they are wide, up to half the space above the
+   * buttons, and as tall as that space divided among the grid's rows when they fit there. A list
+   * keeps rows of its text's height.
+   */
+  private fun sizeCells() {
+    val gridRows = if (columns > 1 && tasks.isNotEmpty()) (tasks.size + columns - 1) / columns else null
+    var height = dp(ROW_MIN_HEIGHT_DP)
+    if (gridRows != null && scroll.width > 0) {
+      val viewport = scroll.height - scroll.paddingTop - scroll.paddingBottom
+      height = maxOf(height, minOf(scroll.width / columns, viewport / 2), viewport / gridRows)
+    }
+    for (row in rows.values) {
+      row.gravity = if (gridRows != null) Gravity.CENTER else Gravity.TOP or Gravity.START
+      if (row.minHeight != height) {
+        row.minHeight = height
+      }
+    }
   }
 
   /** The tasks in the order they are listed. */
@@ -534,7 +563,7 @@ class OverviewActivity : AppCompatActivity() {
     TextView(this).apply {
       val padding = dp(16)
       setPadding(padding, padding, padding, padding)
-      minHeight = dp(48)
+      minHeight = dp(ROW_MIN_HEIGHT_DP)
       setTextSize(TypedValue.COMPLEX_UNIT_SP, 16f)
       isFocusable = true
       layoutParams = cellParams()
@@ -579,6 +608,9 @@ class OverviewActivity : AppCompatActivity() {
 
     /** Longer than the screen reader takes to say the window's title when its menu closes. */
     private const val REFOCUS_DELAY_MS = 300L
+
+    /** The height of a row in the list, and the least height of a cell in the grid. */
+    private const val ROW_MIN_HEIGHT_DP = 48
 
     /** Space around the floating buttons. */
     private const val BUTTON_MARGIN_DP = 16
