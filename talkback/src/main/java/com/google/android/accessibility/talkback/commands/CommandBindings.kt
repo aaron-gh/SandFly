@@ -24,6 +24,7 @@ import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.TalkBackService
 import com.google.android.accessibility.talkback.gesture.GestureLayout
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping
+import com.google.android.accessibility.talkback.gesture.SwipesBeforeLift
 import com.google.android.accessibility.talkback.keyboard.ArrowKeyNav
 import com.google.android.accessibility.talkback.keyboard.ArrowKeys
 import com.google.android.accessibility.talkback.keyboard.KeyComboManager
@@ -78,8 +79,18 @@ object CommandBindings {
    * [gestures] reads them.
    */
   @JvmStatic
-  fun gestureCategories(context: Context, screen: PreferenceGroup): List<GestureCategory> {
+  @JvmOverloads
+  fun gestureCategories(
+    context: Context,
+    screen: PreferenceGroup,
+    swipesBeforeLift: Boolean = SwipesBeforeLift.isOnByDefault(context),
+  ): List<GestureCategory> {
     TalkBackPreferenceFilter(context).filterPreferences(screen)
+    // The filter hides back-and-forth and angle gestures as Default has them; a gesture profile can
+    // have them the other way.
+    for (key in SwipesBeforeLift.categoryKeys(context)) {
+      screen.findPreference<Preference>(key)?.isVisible = !swipesBeforeLift
+    }
     return (0 until screen.preferenceCount)
       .mapNotNull { screen.getPreference(it) as? PreferenceGroup }
       .filter { it.isVisible }
