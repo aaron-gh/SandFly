@@ -3127,6 +3127,10 @@
     <string name="title_pref_swipe_hold_time">Hold time after a swipe</string>
     <!-- Title of the setting for how long a one-finger swipe may take to move its first centimeter before the touch is treated as exploring the screen instead of a gesture. [CHAR_LIMIT=60] -->
     <string name="title_pref_swipe_start_time">Gesture start time</string>
+    <!-- Title of the switch that runs a one-finger swipe once it has moved its first centimeter, before the finger lifts. [CHAR_LIMIT=60] -->
+    <string name="title_pref_swipes_before_lift">Recognize swipes before lifting</string>
+    <!-- Summary of the switch that runs one-finger swipes before the finger lifts: the gestures that it turns off. [CHAR_LIMIT=NONE] -->
+    <string name="summary_pref_swipes_before_lift">Turns off back-and-forth and angle gestures.</string>
     <!-- Label for multi-tap timeout. [CHAR LIMIT=NONE]-->
     <string name="value_multi_tap_timeout_100ms">0.1 seconds</string>
     <!-- Label for multi-tap timeout. [CHAR LIMIT=NONE]-->

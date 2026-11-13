@@ -114,6 +114,7 @@ import com.google.android.accessibility.utils.FormFactorUtils;
 import com.google.android.accessibility.utils.Logger;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import com.google.android.accessibility.utils.WindowUtils;
+import com.google.android.accessibility.utils.gestures.GestureConfiguration;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -1506,6 +1507,7 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
 
     // We initialize the list in the first run and later only update its elements.
     boolean isFirstRun = actionToGesture.isEmpty();
+    boolean swipesBeforeLift = SwipesBeforeLift.isOn(context);
 
     HashMap<Integer, String> newFingerPrintGestureIdToActionKey = new HashMap<>();
     for (int index = 0; index < NUMBER_OF_GESTURE_SET; index++) {
@@ -1542,6 +1544,11 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
         if (isTwoFingerSwipe(gesture)
             && GestureLayout.isVoiceOver(prefs)
             && !GestureLayout.handlesTwoFingerSwipes(prefs)) {
+          continue;
+        }
+
+        // Back-and-forth and angle gestures are off while swipes run before the finger lifts.
+        if (swipesBeforeLift && GestureConfiguration.isTwoDirectionSwipe(gesture.gestureId)) {
           continue;
         }
 
