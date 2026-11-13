@@ -22,6 +22,7 @@ import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceGroup;
 import com.google.android.accessibility.talkback.R;
+import com.google.android.accessibility.talkback.eventprocessor.OneUiVolumeKeys;
 
 /** Volume keys: what the volume keys do while SandFly is on. */
 public class VolumeKeysFragment extends AdvancedSettingFragment {
@@ -32,6 +33,8 @@ public class VolumeKeysFragment extends AdvancedSettingFragment {
   @Override
   public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
     super.onCreatePreferences(savedInstanceState, rootKey);
+    setVisible(
+        R.string.pref_volume_keys_speech_volume_while_speaking_key, OneUiVolumeKeys.isSupported());
     ListPreference feedback = findPreference(getString(R.string.pref_volume_change_feedback_key));
     if (feedback == null) {
       return;

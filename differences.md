@@ -198,6 +198,8 @@ TalkBack always plays speech at the accessibility volume. In SandFly, **Text-to-
 
 The **Speech volume** reading control, which you can turn on in **Reading controls**, switches between them. While **Audio output device** sends speech to a device other than the system default, speech uses the accessibility volume.
 
+On Samsung phones, One UI changes the accessibility volume with the volume keys while speech or a sound plays and for 1 second after. SandFly changes the media or ring volume instead, as One UI does when no speech plays. With **Volume keys** > **Volume keys change speech volume while speaking** on, presses while speech plays change the accessibility volume; presses in the 1.5 seconds after it stops still change the media or ring volume.
+
 ### Automatic language and dialect changes
 
 When text is marked as another language, TalkBack switches the voice to that language. SandFly lets you turn this off. In **Text-to-speech**, **Switch language automatically** controls changes to another language, and **Switch dialect automatically** controls changes to another country's form of the voice's language, such as US English text with a British English voice. Both are on by default.

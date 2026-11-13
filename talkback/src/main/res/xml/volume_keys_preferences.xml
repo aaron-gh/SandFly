@@ -10,6 +10,10 @@
       android:key="@string/pref_volume_keys_move_cursor_key"
       android:summary="@string/summary_pref_volume_keys_move_cursor"
       android:title="@string/title_pref_volume_keys_move_cursor" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+      android:defaultValue="@bool/pref_volume_keys_speech_volume_while_speaking_default"
+      android:key="@string/pref_volume_keys_speech_volume_while_speaking_key"
+      android:title="@string/title_pref_volume_keys_speech_volume_while_speaking" />
   <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
       android:defaultValue="@string/pref_volume_change_feedback_default"
       android:entries="@array/pref_volume_change_feedback_entries"

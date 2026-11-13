@@ -4473,6 +4473,12 @@ public class TalkBackService extends AccessibilityServiceCompat
     if (volumeKeyCommands != null) {
       volumeKeyCommands.reload(prefs);
     }
+    if (oneUiVolumeKeys != null) {
+      oneUiVolumeKeys.setSpeechVolumeWhileSpeaking(
+          getBooleanPref(
+              R.string.pref_volume_keys_speech_volume_while_speaking_key,
+              R.bool.pref_volume_keys_speech_volume_while_speaking_default));
+    }
     if (volumeChangeFeedback != null) {
       volumeChangeFeedback.reload(prefs);
     }
