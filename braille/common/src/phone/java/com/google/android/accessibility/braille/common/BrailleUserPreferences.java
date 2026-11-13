@@ -74,6 +74,7 @@ public class BrailleUserPreferences {
   private static final boolean TABLET_HELD_UP_FACES_AWAY_DEFAULT = true;
   private static final boolean TYPING_SOUNDS_DEFAULT = false;
   private static final boolean SPEAK_SUBMITTING_DEFAULT = true;
+  private static final boolean CAPITALIZE_SENTENCES_DEFAULT = false;
   private static final boolean QUICK_CALIBRATION_DEFAULT = true;
   private static final boolean LAUNCH_TUTORIAL_DEFAULT = true;
   private static final int EXIT_KEYBOARD_DEFAULT = 0;
@@ -390,6 +391,23 @@ public class BrailleUserPreferences {
     getSharedPreferences(context, BRAILLE_SHARED_PREFS_FILENAME)
         .edit()
         .putBoolean(context.getString(R.string.pref_brailleime_quick_calibration), quickCalibration)
+        .apply();
+  }
+
+  /** Reads whether the braille keyboard capitalizes the first letter of each sentence. */
+  public static boolean readCapitalizeSentences(Context context) {
+    return getSharedPreferences(context, BRAILLE_SHARED_PREFS_FILENAME)
+        .getBoolean(
+            context.getString(R.string.pref_brailleime_capitalize_sentences),
+            CAPITALIZE_SENTENCES_DEFAULT);
+  }
+
+  /** Writes whether the braille keyboard capitalizes the first letter of each sentence. */
+  public static void writeCapitalizeSentences(Context context, boolean capitalizeSentences) {
+    getSharedPreferences(context, BRAILLE_SHARED_PREFS_FILENAME)
+        .edit()
+        .putBoolean(
+            context.getString(R.string.pref_brailleime_capitalize_sentences), capitalizeSentences)
         .apply();
   }
 

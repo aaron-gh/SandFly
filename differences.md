@@ -1000,6 +1000,10 @@ In braille keyboard settings, **Typing sounds** plays a sound for each character
 
 In braille keyboard settings, **Say "Submitting text"** can be turned off to send text without the announcement. It's on by default.
 
+### Capitalize sentences
+
+In braille keyboard settings, **Capitalize sentences** changes the first letter typed at the start of a sentence to a capital: at the start of a field, after a new line, and after a full stop, question mark, or exclamation mark followed by a space. It doesn't change password, email address, web address, or number fields. It's off by default.
+
 ### Update dot positions with one hand, then the other
 
 To update the dot positions without holding six fingers on the screen for 2 seconds, hold three fingers of one hand on the screen for at least 0.4 seconds, then put down the three fingers of the other hand and keep all six still for 0.65 seconds. Either hand can go first, so dots 4, 5, and 6 and then 1, 2, and 3 works, as does the reverse. With eight-dot braille, use four fingers of each hand. Six fingers that land together, or that are lifted sooner, still type a full cell. With **Include all pressed dots** on, this is off. In braille keyboard settings, **Update dot positions with one hand, then the other** turns this off. It's on by default.

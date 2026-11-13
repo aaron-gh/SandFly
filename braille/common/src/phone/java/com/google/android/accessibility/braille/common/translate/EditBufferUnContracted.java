@@ -73,6 +73,8 @@ public class EditBufferUnContracted implements EditBuffer {
   private final Context context;
   protected final BrailleWord holdings = new BrailleWord();
   protected int lastCommitIndexOfHoldings = NO_CURSOR;
+  /** Whether the word in holdings starts a sentence and so gets a capital first letter. */
+  private boolean capitalizeHoldings;
 
   protected EditBufferUnContracted(
       Context context, BrailleTranslator ueb1Translator, TalkBackSpeaker talkBack) {
@@ -85,9 +87,14 @@ public class EditBufferUnContracted implements EditBuffer {
   @Override
   public String appendBraille(ImeConnection imeConnection, BrailleCharacter brailleCharacter) {
     String result = "";
-    String previousTranslation = translator.translateToPrint(holdings);
+    if (holdings.isEmpty()) {
+      capitalizeHoldings = SentenceCapitalization.shouldCapitalize(context, imeConnection);
+    }
+    String previousTranslation =
+        SentenceCapitalization.apply(capitalizeHoldings, translator.translateToPrint(holdings));
     holdings.append(brailleCharacter);
-    String currentTranslation = translator.translateToPrint(holdings);
+    String currentTranslation =
+        SentenceCapitalization.apply(capitalizeHoldings, translator.translateToPrint(holdings));
     if (currentTranslation.startsWith(previousTranslation)) {
       result = currentTranslation.substring(previousTranslation.length());
     }

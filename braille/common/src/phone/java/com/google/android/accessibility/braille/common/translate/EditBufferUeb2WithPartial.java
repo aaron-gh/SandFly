@@ -233,7 +233,10 @@ public class EditBufferUeb2WithPartial implements EditBuffer {
     if (holdings.isEmpty()) {
       return;
     }
-    String currentTranslation = translator.translateToPrint(holdings);
+    String currentTranslation =
+        SentenceCapitalization.apply(
+            SentenceCapitalization.shouldCapitalize(context, imeConnection),
+            translator.translateToPrint(holdings));
     imeConnection.inputConnection.commitText(currentTranslation, 1);
 
     holdings.clear();
