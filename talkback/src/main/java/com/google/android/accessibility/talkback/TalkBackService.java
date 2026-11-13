@@ -4349,6 +4349,8 @@ public class TalkBackService extends AccessibilityServiceCompat
                 res,
                 R.string.pref_emoji_repeat_count_key,
                 R.string.pref_emoji_repeat_count_default)));
+    EmojiSpeech.setSuffix(
+        getBooleanPref(R.string.pref_emoji_suffix_key, R.bool.pref_emoji_suffix_default));
 
     int formattingOptions = TextFormattingUtils.OPTION_NONE;
     int formattingFeedbackMode = TextFormattingUtils.FEEDBACK_MODE_NONE;

@@ -99,6 +99,9 @@ public final class EmojiSpeech {
   /** How many times an emoji repeats before it is counted, or 0 to name each one. */
   private static volatile int repeatCount = 0;
 
+  /** Whether "emoji" is spoken after each emoji name. */
+  private static volatile boolean suffix;
+
   /** Whether emoji are spoken with a voice profile of their own. */
   private static volatile boolean ownVoice;
 
@@ -305,6 +308,11 @@ public final class EmojiSpeech {
    */
   public static void setRepeatCount(int count) {
     repeatCount = count;
+  }
+
+  /** Sets whether "emoji" is spoken after each emoji name, such as "grinning face emoji". */
+  public static void setSuffix(boolean on) {
+    suffix = on;
   }
 
   /** Returns whether the speech engine reads emoji, so text should keep them. */
@@ -686,7 +694,10 @@ public final class EmojiSpeech {
 
   /** Returns the name of an emoji found in text, or null if the names couldn't be read. */
   private static @Nullable String nameOf(Context context, Found found) {
-    return namesFor(context, found.language()).name(found.emoji());
+    @Nullable String name = namesFor(context, found.language()).name(found.emoji());
+    return name == null || !suffix
+        ? name
+        : context.getString(R.string.template_emoji_name_suffix, name);
   }
 
   /** Returns whether {@code text} holds nothing but emoji and spaces. */
