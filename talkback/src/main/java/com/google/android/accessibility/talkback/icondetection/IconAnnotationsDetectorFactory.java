@@ -23,6 +23,14 @@ import org.checkerframework.checker.nullness.qual.Nullable;
 /** Factory class for {@link IconAnnotationsDetector}. */
 public final class IconAnnotationsDetectorFactory {
 
+  /**
+   * Returns whether {@link #create} can return a detector. The open-source TalkBack code has no
+   * icon detection model or download for it, so SandFly has none.
+   */
+  public static boolean isAvailable() {
+    return false;
+  }
+
   public static @Nullable IconAnnotationsDetector create(Context context) {
     return null;
   }

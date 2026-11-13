@@ -24,6 +24,7 @@ import android.os.Looper
 import android.provider.Settings
 import android.view.ContextThemeWrapper
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.talkback.actor.ImageCaptioner
 import com.google.android.accessibility.talkback.commands.CommandFragment
 import com.google.android.accessibility.talkback.commands.Commands
 import com.google.android.accessibility.talkback.gesture.GestureLayout
@@ -181,6 +182,12 @@ class SettingsIndexTest {
     val keys = entries.mapNotNull { it.key }.toSet()
     assertFalse(context.getString(R.string.pref_survey_setting_entry_point_key) in keys)
     assertFalse(SettingsSearch.SEARCH_KEY in keys)
+  }
+
+  @Test
+  fun automaticIconDescriptionsAreNotFoundWithoutAnIconDetector() {
+    assertFalse(ImageCaptioner.isSupportIconDetection())
+    assertFalse(context.getString(R.string.pref_icon_detection_key) in keys())
   }
 
   @Test
