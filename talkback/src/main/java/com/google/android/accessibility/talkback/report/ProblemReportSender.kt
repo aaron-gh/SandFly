@@ -31,6 +31,7 @@ import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
 import com.google.android.libraries.accessibility.utils.log.LogUtils
+import java.io.BufferedReader
 import java.io.File
 import java.io.IOException
 import java.net.HttpURLConnection
@@ -71,6 +72,15 @@ object ProblemReportSender {
   /** The most lines and characters of the log of each of SandFly's other processes. */
   private const val OTHER_LOG_LINES = 3_000
   private const val MAX_OTHER_LOG = 100_000
+
+  /**
+   * The most lines and characters of the gesture log: this process's last lines with the gesture
+   * tag, which the main log reaches back only a few seconds for at Debug level.
+   */
+  internal const val GESTURE_LOG_LINES = 2_000
+  internal const val MAX_GESTURE_LOG = 60_000
+  private const val GESTURE_TAG = "BacktalkGesture"
+  private const val MAX_GESTURE_LINE = 1_000
 
   /**
    * The lowest priority of this process's log lines that a report holds: debug. Verbose lines come
@@ -359,8 +369,9 @@ object ProblemReportSender {
 
   /**
    * The log, after SandFly's last crash, last turn-off and main thread stalls if there were any,
-   * which the log doesn't reach back to, and how its last processes ended, and then the ends of the logs of SandFly's
-   * other processes, such as the one that runs on-device AI.
+   * which the log doesn't reach back to, and how its last processes ended, then the last gesture
+   * lines, and then the ends of the logs of SandFly's other processes, such as the one that runs
+   * on-device AI.
    */
   @WorkerThread
   private fun logWithCrash(context: Context, snapshot: LogcatSnapshot?): String? {
@@ -370,7 +381,15 @@ object ProblemReportSender {
     val exits = ExitReasons.describe(context)
     val others = snapshot?.others ?: otherProcessLogs(context)
     val log = snapshot?.main ?: readLog(Process.myPid(), LOG_LINES, MAIN_LOG_PRIORITY)
-    if (crash == null && turnOff == null && stalls == null && exits == null && others.isEmpty()) {
+    val gestures = snapshot?.gestures ?: readGestureLog(Process.myPid()).orEmpty()
+    if (
+      crash == null &&
+        turnOff == null &&
+        stalls == null &&
+        exits == null &&
+        others.isEmpty() &&
+        gestures.isEmpty()
+    ) {
       return log
     }
     val head =
@@ -379,10 +398,24 @@ object ProblemReportSender {
         (if (stalls == null) "" else "Main thread stalls:\n$stalls\n\n") +
         (if (exits == null) "" else "Process exits:\n$exits\n\n") +
         (if (crash == null && turnOff == null && stalls == null && exits == null) "" else "Log:\n")
-    // The crash, as much of the end of the log as fits, and the other processes' logs.
-    val room = (ProblemReport.MAX_LOG - head.length - others.length).coerceAtLeast(0)
-    return head + log.orEmpty().takeLast(room) + others
+    return joinLog(head, log.orEmpty(), gestures, others)
   }
+
+  /**
+   * [head], as much of the end of [log] as fits in [ProblemReport.MAX_LOG], the gesture lines
+   * under their heading, and the other processes' logs.
+   */
+  @VisibleForTesting
+  internal fun joinLog(head: String, log: String, gestures: String, others: String): String {
+    val gestureSection = gestureSection(gestures)
+    val room =
+      (ProblemReport.MAX_LOG - head.length - gestureSection.length - others.length).coerceAtLeast(0)
+    return head + log.takeLast(room) + gestureSection + others
+  }
+
+  private fun gestureSection(gestures: String): String =
+    if (gestures.isEmpty()) "" else "\n\nGesture log:\n$gestures"
+
 
   /**
    * Reads the logcat text for a snapshot, null when [activity] is in multi-window mode. The read
@@ -395,9 +428,12 @@ object ProblemReportSender {
       val main =
         readLog(Process.myPid(), LOG_LINES, MAIN_LOG_PRIORITY)?.takeIf { it.isNotBlank() }
           ?: return@Callable null
+      val gestures = readGestureLog(Process.myPid()).orEmpty()
       val others = otherProcessLogs(context)
-      val room = (ProblemReport.MAX_LOG - others.length).coerceAtLeast(0)
-      LogcatSnapshot(main.takeLast(room), others)
+      val room =
+        (ProblemReport.MAX_LOG - gestureSection(gestures).length - others.length)
+          .coerceAtLeast(0)
+      LogcatSnapshot(main.takeLast(room), others, gestures)
     }
   }
 
@@ -489,6 +525,74 @@ object ProblemReportSender {
       process.destroy()
     }
   }
+
+  /**
+   * The last [GESTURE_LOG_LINES] lines of process [pid] with the gesture tag, at most
+   * [MAX_GESTURE_LOG] characters, or null if logcat cannot be run.
+   */
+  @WorkerThread
+  private fun readGestureLog(pid: Int): String? {
+    // No -t: logcat counts those lines before it filters by tag, which would leave only the
+    // gesture lines among the last lines of the whole log.
+    val process =
+      try {
+        ProcessBuilder(
+            "logcat",
+            "-d",
+            "-v",
+            "threadtime",
+            "--pid",
+            pid.toString(),
+            "-s",
+            "$GESTURE_TAG:V",
+          )
+          .redirectErrorStream(true)
+          .start()
+      } catch (e: IOException) {
+        LogUtils.w(TAG, "Cannot run logcat: %s", e)
+        return null
+      }
+    return try {
+      val log =
+        process.inputStream.bufferedReader().use {
+          lastLines(it, GESTURE_LOG_LINES, MAX_GESTURE_LOG)
+        }
+      process.waitFor(LOG_TIMEOUT_SECONDS, TimeUnit.SECONDS)
+      log
+    } catch (e: IOException) {
+      LogUtils.w(TAG, "Cannot read the gesture log: %s", e)
+      null
+    } catch (e: InterruptedException) {
+      Thread.currentThread().interrupt()
+      null
+    } finally {
+      process.destroy()
+    }
+  }
+
+  /**
+   * The last [maxLines] lines of [reader], at most [maxChars] characters in all, without logcat's
+   * buffer headings. Holds no more than that while it reads; longer lines are cut.
+   */
+  @VisibleForTesting
+  internal fun lastLines(reader: BufferedReader, maxLines: Int, maxChars: Int): String {
+    val lines = ArrayDeque<String>()
+    var chars = 0
+    while (true) {
+      val line = reader.readLine() ?: break
+      if (line.isEmpty() || line.startsWith(LOGCAT_HEADING)) continue
+      val kept =
+        if (line.length > MAX_GESTURE_LINE) line.substring(0, MAX_GESTURE_LINE) + "…" else line
+      lines.addLast(kept)
+      chars += kept.length + 1
+      while (lines.isNotEmpty() && (lines.size > maxLines || chars - 1 > maxChars)) {
+        chars -= lines.removeFirst().length + 1
+      }
+    }
+    return lines.joinToString("\n")
+  }
+
+  private const val LOGCAT_HEADING = "--------- "
 
   /**
    * Leaves out the Debug lines that repeat each feedback part ("Actors: act()" logs what
