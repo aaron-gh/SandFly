@@ -353,8 +353,13 @@ public class GestureController {
   public void performAction(String action, EventId eventId) {
     RecentUserInput.mark();
     NotificationReader.onUserAction();
-    // Actions use the reading control, which may be waiting to match the item last touched.
-    selectorController.applyPendingSwitch();
+    boolean defaultItemNavigation =
+        action.equals(service.getString(R.string.shortcut_value_next))
+            || action.equals(service.getString(R.string.shortcut_value_previous));
+    // Next/previous item explicitly use DEFAULT, independent of the selected reading control.
+    // Any command that can use that control still resolves its pending context before it runs.
+    if (defaultItemNavigation) selectorController.applyPendingSwitchForDefaultNavigation();
+    else selectorController.applyPendingSwitch();
     Performance.getInstance().onPerformAction(eventId, action);
     TalkbackAction actionEvent = gestureShortcutMapping.getActionEvent(action);
     if (actionEvent != null) {

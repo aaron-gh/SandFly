@@ -102,6 +102,9 @@ import androidx.annotation.VisibleForTesting;
 import androidx.core.content.ContextCompat;
 import androidx.core.os.UserManagerCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
+import com.google.android.accessibility.utils.ConcurrentNodeQueries;
+import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionRecord;
+import com.google.android.accessibility.utils.WebInterfaceUtils;
 import com.google.android.accessibility.braille.brailledisplay.BrailleDisplay;
 import com.google.android.accessibility.braille.interfaces.BrailleImeForTalkBack;
 import com.google.android.accessibility.braille.interfaces.ScreenReaderActionPerformer;
@@ -1005,6 +1008,7 @@ public class TalkBackService extends AccessibilityServiceCompat
   public boolean onUnbind(Intent intent) {
     LogUtils.d(TAG, "onUnbind start");
     StallLog.stop();
+    stopNodeQueries();
     // First, while Android may still be connected to SandFly.
     boolean touchHandlingReleased = releaseTouchHandling();
     TurnOffLog.record(this, lastWindowPackage, touchHandlingReleased);
@@ -1278,7 +1282,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     }
     ScrollAhead.onAccessibilityEvent(event);
     if (event.getEventType() == AccessibilityEvent.TYPE_TOUCH_INTERACTION_START) {
-      ScrollEventInterpreter.clearNavigation();
+      ScrollEventInterpreter.onTouchInteractionStart();
     }
     if (scriptHost != null) {
       scriptHost.onAccessibilityEvent(event);
@@ -1293,6 +1297,24 @@ public class TalkBackService extends AccessibilityServiceCompat
     if (eventType == AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED
         && SettingsProfiles.watchesFocus()) {
       SettingsProfiles.onFocused(AccessibilityEventUtils.sourceCompat(event));
+    }
+    if (eventType == AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED && pipeline != null) {
+      boolean htmlNavigation = event.getAction() == AccessibilityNodeInfo.ACTION_NEXT_HTML_ELEMENT
+          || event.getAction() == AccessibilityNodeInfo.ACTION_PREVIOUS_HTML_ELEMENT;
+      // Other focus events retain Android's default prefetch. For browser navigation, finish
+      // only its ancestor reads before the later collection and hint listeners need them.
+      AccessibilityNodeInfo source = Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU && htmlNavigation
+          ? event.getSource(AccessibilityNodeInfo.FLAG_PREFETCH_ANCESTORS
+              | AccessibilityNodeInfo.FLAG_PREFETCH_UNINTERRUPTIBLE)
+          : event.getSource();
+      FocusActionRecord record = pipeline.getActorState().getFocusHistory().getLastFocusActionRecord();
+      if (source != null && record != null
+          && source.getWindowId() == record.getFocusedNode().getWindowId()
+          && WebInterfaceUtils.supportsWebActions(AccessibilityNodeInfoCompat.wrap(source))) {
+        // Resolve queued alerts alongside focus metadata, before the later speech listener
+        // needs their answers. No event or feedback is delivered from these worker reads.
+        if (processorEventQueue != null) processorEventQueue.prepareWebFocus(event);
+      }
     }
     // Some launchers, such as Hyperion, don't report that their home screen is shown again after
     // the apps list, so Android's copy of its nodes keeps them hidden, and only the dock can be
@@ -2548,6 +2570,9 @@ public class TalkBackService extends AccessibilityServiceCompat
    * {@link #onServiceConnected()}.
    */
   private void initializeInfrastructure() {
+    ConcurrentNodeQueries.start();
+    FocusActionRecord.startNodeQueries();
+    ScrollEventInterpreter.resetNavigation();
     // TODO: we still need it keep true for TV until TouchExplore and Accessibility focus is
     // not unpaired
     // supportsTouchScreen = packageManager.hasSystemFeature(PackageManager.FEATURE_TOUCHSCREEN);
@@ -3885,8 +3910,18 @@ public class TalkBackService extends AccessibilityServiceCompat
     IpcService.setClientCallback(null);
   }
 
+  /** Cancels reads and pending context before the service can deliver more feedback. */
+  private void stopNodeQueries() {
+    if (selectorController != null) selectorController.shutdown();
+    if (processorEventQueue != null) processorEventQueue.clearQueue();
+    ConcurrentNodeQueries.shutdown();
+    FocusActionRecord.stopNodeQueries();
+    ScrollEventInterpreter.resetNavigation();
+  }
+
   /** Shuts down the infrastructure in case it has been initialized. */
   protected void shutdownInfrastructure() {
+    stopNodeQueries();
     setServiceState(ServiceStateListener.SERVICE_STATE_SHUTTING_DOWN);
     if (liftCancelStrip != null) {
       liftCancelStrip.setShown(false);

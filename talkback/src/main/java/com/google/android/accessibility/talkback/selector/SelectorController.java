@@ -1534,9 +1534,20 @@ public class SelectorController implements UserInputEventListener {
     if (nodeInfo == null || nodeInfo.equals(lastFocusedNode)) {
       return;
     }
-    if (touchActive) {
+    NavigationAction navigation = focusActionInfo.navigationAction;
+    boolean defaultTouchNavigation = WebInterfaceUtils.supportsWebActions(
+        AccessibilityNodeInfoCompat.wrap(nodeInfo)) && navigation != null
+        && navigation.inputMode == INPUT_MODE_TOUCH
+        && navigation.actionType == NavigationAction.DIRECTIONAL_NAVIGATION
+        && (navigation.originalNavigationGranularity == null
+            || navigation.originalNavigationGranularity == CursorGranularity.DEFAULT)
+        && !needsImmediateTableSwitch(nodeInfo);
+    if (touchActive || defaultTouchNavigation) {
       handler.removeCallbacks(switchAfterTouch);
       lastFocusedNode = nodeInfo;
+      // Browser focus often arrives after touch-end. It is still the answer to a swipe, and
+      // matching controls for that item can wait until the same short idle interval ends.
+      if (!touchActive) handler.postDelayed(switchAfterTouch, SWITCH_AFTER_TOUCH_MS);
     } else {
       handler.removeCallbacks(switchAfterTouch);
       switchCurrentSetting(nodeInfo);
@@ -1674,6 +1685,19 @@ public class SelectorController implements UserInputEventListener {
     if (lastFocusedNode != null) {
       switchCurrentSetting(lastFocusedNode);
     }
+  }
+
+  /** Table navigation can change what left/right gestures mean; keep that match immediate. */
+  public void applyPendingSwitchForDefaultNavigation() {
+    if (lastFocusedNode != null && (!WebInterfaceUtils.supportsWebActions(
+        AccessibilityNodeInfoCompat.wrap(lastFocusedNode)) || needsImmediateTableSwitch(lastFocusedNode))) {
+      applyPendingSwitch();
+    }
+  }
+
+  private boolean needsImmediateTableSwitch(AccessibilityNodeInfo node) {
+    return isTableNavigation(getCurrentSetting(context, prefs))
+        || rowColumnGranularity.shouldActivateSetting(context, AccessibilityNodeInfoCompat.wrap(node));
   }
 
   /** Forgets the item waiting for its reading control, such as when SandFly turns off. */

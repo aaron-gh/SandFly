@@ -20,6 +20,7 @@ import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.BooleanSupplier;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 /**
@@ -38,6 +39,14 @@ public class OrderedTraversalStrategy implements TraversalStrategy {
 
   public OrderedTraversalStrategy(@Nullable AccessibilityNodeInfoCompat rootNode) {
     this(rootNode, false, false);
+  }
+
+  /** A restoration can stop construction without publishing an incomplete order. */
+  public OrderedTraversalStrategy(@Nullable AccessibilityNodeInfoCompat rootNode, BooleanSupplier shouldStop) {
+    speakingNodesCache = new HashMap<>();
+    controller = new OrderedTraversalController(false);
+    controller.setSpeakingNodesCache(speakingNodesCache);
+    controller.initOrder(rootNode, false, shouldStop);
   }
 
   /** TODO: Experimental code. Remove {@code makeFabFirst} when experiment is done. */
