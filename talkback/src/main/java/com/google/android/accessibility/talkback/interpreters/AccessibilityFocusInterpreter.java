@@ -251,6 +251,20 @@ public class AccessibilityFocusInterpreter
         && ScrollEventInterpreter.isWebNavigationEvent(event);
   }
 
+  @Override
+  public boolean onManualWebScroll(ManualScrollInterpretation interpretation) {
+    AccessibilityNodeInfoCompat scrolled =
+        AccessibilityEventUtils.sourceCompat(interpretation.event());
+    // A sideways strip needs the saved path to tell whether it holds focus. Other finger-driven
+    // web scrolls determine that from live ancestry during recovery, without blocking this event
+    // on the independent path capture. Keyboard, native and Wear scrolls keep their old handling.
+    return !FormFactorUtils.isAndroidWear()
+        && WebScrollFocus.isWebContent(scrolled)
+        && !WebScrollFocus.scrollsOnlySideways(scrolled)
+        && isUserScroll(interpretation)
+        && onWebScroll(interpretation);
+  }
+
   /** Handles {@link #pendingManualScroll} once scrolling settles, in place of any earlier scroll. */
   private void schedulePendingManualScroll() {
     cancelWebFocusRecovery();

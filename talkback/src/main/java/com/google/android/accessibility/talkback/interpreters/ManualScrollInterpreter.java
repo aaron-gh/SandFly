@@ -50,6 +50,9 @@ public class ManualScrollInterpreter implements ScrollEventHandler {
     /** Rejects an already-attributed navigation scroll before waiting for its saved focus path. */
     default boolean shouldIgnoreManualScroll(
         AccessibilityEvent event, AccessibilityNodeInfoCompat scrolledNode) { return false; }
+
+    /** Handles a web scroll without waiting for the saved focus path, if it does not need it. */
+    default boolean onManualWebScroll(ManualScrollInterpretation interpretation) { return false; }
   }
 
   /** Data structure for interpretation of manual scroll. */
@@ -112,6 +115,13 @@ public class ManualScrollInterpreter implements ScrollEventHandler {
     }
 
     if (listener.shouldIgnoreManualScroll(event, scrolledNode)) return;
+
+    if (isScrollAroundWebFocus(scrolledNode)
+        && listener.onManualWebScroll(
+            ManualScrollInterpretation.create(
+                eventId, event, interpretation.scrollDirection, /* scrolledHoldsFocus= */ false))) {
+      return;
+    }
 
     NodePathDescription lastFocusNodePathDescription =
         actorState.getFocusHistory().getLastFocusAncestorIdentityPath();
