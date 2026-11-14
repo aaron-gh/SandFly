@@ -46,6 +46,10 @@ public class ManualScrollInterpreter implements ScrollEventHandler {
 
     /** Callback when the view is manually scrolled. */
     void onManualScroll(ManualScrollInterpretation interpretation);
+
+    /** Rejects an already-attributed navigation scroll before waiting for its saved focus path. */
+    default boolean shouldIgnoreManualScroll(
+        AccessibilityEvent event, AccessibilityNodeInfoCompat scrolledNode) { return false; }
   }
 
   /** Data structure for interpretation of manual scroll. */
@@ -106,6 +110,8 @@ public class ManualScrollInterpreter implements ScrollEventHandler {
     if (scrolledNode == null) {
       return;
     }
+
+    if (listener.shouldIgnoreManualScroll(event, scrolledNode)) return;
 
     NodePathDescription lastFocusNodePathDescription =
         actorState.getFocusHistory().getLastFocusAncestorIdentityPath();

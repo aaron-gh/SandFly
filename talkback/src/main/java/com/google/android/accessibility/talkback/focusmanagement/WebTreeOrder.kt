@@ -153,6 +153,11 @@ object WebTreeOrder {
           return null
         }
         chain.add(node)
+        // An ambiguous item or ancestor already makes the browser the only authority.
+        // There is no need to read the remaining ancestors to reach that same result.
+        if (kindOf(node) == Kind.UNSURE) {
+          return null
+        }
         val parent = read { tree.parent(node) }
         if (unsure) {
           return null
