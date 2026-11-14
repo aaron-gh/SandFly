@@ -141,6 +141,17 @@ class SwipeAndHoldTest {
   }
 
   @Test
+  fun theHoldTimeCountsFromTheLastMove() {
+    send(MotionEvent.ACTION_DOWN)
+    move(2f, 0f)
+    move(2f, 0f)
+    waitMs(hold - 20)
+    assertTrue(completed.isEmpty())
+    waitMs(30)
+    assertEquals(listOf(HOLD_RIGHT), completed)
+  }
+
+  @Test
   fun liftingAfterTheHold_reportsItOnce() {
     send(MotionEvent.ACTION_DOWN)
     move(2f, 0f)
