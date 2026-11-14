@@ -405,6 +405,7 @@
     <string name="pref_selector_ai_actions_key" translatable="false">pref_selector_ai_actions_key</string>
     <string name="pref_ai_actions_included_key" translatable="false">pref_ai_actions_included_key</string>
     <string name="pref_selector_text_entities_key" translatable="false">pref_selector_text_entities_key</string>
+    <string name="pref_selector_clipboard_history_key" translatable="false">pref_selector_clipboard_history_key</string>
     <string name="pref_text_entities_key" translatable="false">pref_text_entities</string>
     <!-- Must match pref_text_entities_entries and TextEntityMenu's types. -->
     <string-array name="pref_text_entities_values" translatable="false">
@@ -2172,6 +2173,7 @@
     <bool name="pref_selector_live_recognition_default">true</bool>
     <bool name="pref_selector_ai_actions_default">true</bool>
     <bool name="pref_selector_text_entities_default">false</bool>
+    <bool name="pref_selector_clipboard_history_default">false</bool>
     <bool name="pref_selector_switch_tts_engine_default">false</bool>
     <bool name="pref_selector_speech_stream_default">false</bool>
     <bool name="pref_selector_audio_output_default">false</bool>
@@ -2573,6 +2575,7 @@
     <string name="selector_live_recognition" translatable="false">SELECTOR_LIVE_RECOGNITION</string>
     <string name="selector_ai_actions" translatable="false">SELECTOR_AI_ACTIONS</string>
     <string name="selector_text_entities" translatable="false">SELECTOR_TEXT_ENTITIES</string>
+    <string name="selector_clipboard_history" translatable="false">SELECTOR_CLIPBOARD_HISTORY</string>
     <string name="selector_switch_tts_engine" translatable="false">SELECTOR_SWITCH_TTS_ENGINE</string>
     <string name="selector_speech_stream" translatable="false">SELECTOR_SPEECH_STREAM</string>
     <string name="selector_audio_output" translatable="false">SELECTOR_AUDIO_OUTPUT</string>

@@ -273,6 +273,18 @@ object ClipboardHistoryOverlay {
     show(service, target, before, over)
   }
 
+  /**
+   * Pastes [text] into [target], an edit box: puts it on the clipboard and at the top of the
+   * history, then pastes, trying again while the edit box's app is busy. Plays the complete sound
+   * when the paste failed. Returns false when [text] is empty.
+   */
+  @JvmStatic
+  fun pasteEntry(service: AccessibilityService, target: AccessibilityNodeInfo, text: String): Boolean {
+    if (!ClipboardHistory.copy(service, text)) return false
+    startPaste(service, target)
+    return true
+  }
+
   /** Whether [window] is the clipboard history's window. */
   @JvmStatic
   fun isOwnWindow(context: Context, window: AccessibilityWindowInfo): Boolean =
@@ -477,6 +489,10 @@ object ClipboardHistoryOverlay {
     val target = pasteTarget ?: return
     if (!ClipboardHistory.copy(service, text)) return
     close(restoreFocus = true)
+    startPaste(service, target)
+  }
+
+  private fun startPaste(service: AccessibilityService, target: AccessibilityNodeInfo) {
     // The edit box's window kept input focus, so the paste normally works at once; it is tried
     // again while the edit box's app is busy.
     PasteAttempts.start(
@@ -545,7 +561,9 @@ object ClipboardHistoryOverlay {
         }
     }
 
-  private fun shortened(text: String): String =
+  /** [text], cut to [TITLE_LENGTH] characters, as the list shows and reads it. */
+  @JvmStatic
+  fun shortened(text: String): String =
     if (text.length > TITLE_LENGTH) text.take(TITLE_LENGTH) + "…" else text
 
   private fun themeColor(context: Context, attr: Int): Int {
