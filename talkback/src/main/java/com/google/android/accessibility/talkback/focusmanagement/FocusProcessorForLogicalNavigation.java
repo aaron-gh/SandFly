@@ -4194,11 +4194,13 @@ public class FocusProcessorForLogicalNavigation {
             sourceAction.targetType, localTraversalStrategy.getSpeakingNodesCache());
     AccessibilityNodeInfoCompat pivot = AccessibilityNodeInfoCompat.obtain(track.callback.pivot);
     AccessibilityNodeInfoCompat next =
-        pivot.refresh() && AccessibilityNodeInfoUtils.isVisible(pivot)
-            ? TraversalStrategyUtils.searchFocus(
-                localTraversalStrategy, pivot, sourceAction.searchDirection, nodeFilter)
-            : findFocusAfterInvalidPivot(
-                localTraversalStrategy, list, sourceAction.searchDirection, nodeFilter);
+        searchFocusRecoveringMissingPivot(
+            localTraversalStrategy,
+            list,
+            pivot,
+            sourceAction.searchDirection,
+            nodeFilter,
+            WindowUtils.isScreenLayoutRTL(service));
     if (next == null || !AccessibilityNodeInfoUtils.isVisible(next)) {
       LogUtils.d(TAG, "A list item came on screen after %d ms, but nothing to focus yet.", elapsed);
       return false;
@@ -5630,20 +5632,65 @@ public class FocusProcessorForLogicalNavigation {
     Filter<AccessibilityNodeInfoCompat> nodeFilter =
         NavigationTarget.createNodeFilter(
             sourceAction.targetType, localTraversalStrategy.getSpeakingNodesCache());
-    Rect previousRect = new Rect();
-    focusBeforeScroll.getBoundsInScreen(previousRect);
-    boolean validAccessibilityFocus =
-        focusBeforeScroll.refresh() && AccessibilityNodeInfoUtils.isVisible(focusBeforeScroll);
 
     NavigationAction navigationAction =
         NavigationAction.Builder.copy(sourceAction)
             .setAutoScrollAttempt(sourceAction.autoScrollAttempt + 1)
             .build();
 
+    // A RecyclerView can recycle focusBeforeScroll's view after a large or multi-step
+    // auto-scroll, so it still refreshes fine and stays visible, yet isn't a key in this
+    // freshly-built local tree -- searching from it below would look exactly like "no more
+    // items" to every caller. Recover by resuming from the node nearest where this pivot
+    // currently is, read live (it's still valid), within this same local tree -- not a
+    // remembered position from elsewhere, which could be stale by several auto-scroll retries.
+    // searchPivot anchors everything computed synchronously below (bounds tracking, the
+    // searchFocus call, the final focus target); focusBeforeScroll itself is left untouched so
+    // the settle-check callbacks deferred further down keep comparing against the node that's
+    // actually accessibility-focused right now, not a resume point that was never focused.
+    AccessibilityNodeInfoCompat searchPivot = focusBeforeScroll;
+    if (focusBeforeScroll.refresh()
+        && AccessibilityNodeInfoUtils.isVisible(focusBeforeScroll)
+        && localTraversalStrategy instanceof OrderedTraversalStrategy orderedLocalStrategy
+        && !orderedLocalStrategy.containsNode(focusBeforeScroll)) {
+      AccessibilityNodeInfoCompat nearest =
+          findNodeNearPivotPlace(
+              orderedLocalStrategy,
+              focusBeforeScroll,
+              sourceAction.searchDirection,
+              WindowUtils.isScreenLayoutRTL(service));
+      if (nearest != null) {
+        LogUtils.d(
+            TAG, "Pivot missing from the local tree after auto-scroll; resuming from its place.");
+        searchPivot = nearest;
+      } else {
+        // The pivot's own place was at the very edge of what this local tree currently has (e.g.
+        // the auto-scroll revealed exactly the top/bottom of the content), so there's nothing to
+        // anchor a further search from. Resolve the same way an already-invalid pivot is resolved
+        // below, including the wait for the list to settle: the edge item can be just as mid-move
+        // here as it is there.
+        focusEdgeNodeWhenSettled(
+            localTraversalStrategy,
+            scrolledNode,
+            focusBeforeScroll,
+            sourceAction,
+            navigationAction,
+            nodeFilter,
+            eventId,
+            settleChecksLeft);
+        return;
+      }
+    }
+
+    Rect previousRect = new Rect();
+    searchPivot.getBoundsInScreen(previousRect);
+    boolean validAccessibilityFocus =
+        searchPivot.refresh() && AccessibilityNodeInfoUtils.isVisible(searchPivot);
+
     // A focused item that fills the list looks still while the list moves. Searching while it
     // moves at speed finds nothing and reads the list each time, so wait until it slows down.
     if (validAccessibilityFocus && settleChecksLeft > 0 && sourceAction.shouldScroll) {
-      Rect boundsNow = getBoundsAfterScroll(focusBeforeScroll);
+      Rect boundsNow = getBoundsAfterScroll(searchPivot);
       if (previousRect.equals(boundsNow)
           && fillsList(boundsNow, scrolledNode)
           && listStillMoving()) {
@@ -5659,9 +5706,9 @@ public class FocusProcessorForLogicalNavigation {
       // Try to find the next focusable node based on current focus.
       nodeToFocus =
           TraversalStrategyUtils.searchFocus(
-              localTraversalStrategy, focusBeforeScroll, sourceAction.searchDirection, nodeFilter);
+              localTraversalStrategy, searchPivot, sourceAction.searchDirection, nodeFilter);
       if (nodeToFocus == null) {
-        Rect newRect = getBoundsAfterScroll(focusBeforeScroll);
+        Rect newRect = getBoundsAfterScroll(searchPivot);
         // The pivot moved since the scroll or the last look, so the list may still be moving and
         // its next item not on screen yet. Navigating again now would scroll a second page. A pivot
         // that fills the list, such as a post taller than the screen, is cut to the list's bounds
@@ -5678,7 +5725,7 @@ public class FocusProcessorForLogicalNavigation {
         if (settled
             && sourceAction.shouldScroll
             && sourceAction.isPrevScrolled
-            && scrollAgainAtOnce(scrolledNode, focusBeforeScroll, navigationAction, eventId)) {
+            && scrollAgainAtOnce(scrolledNode, searchPivot, navigationAction, eventId)) {
           return;
         }
         if (previousRect.equals(newRect) && sourceAction.shouldScroll) {
@@ -5695,7 +5742,7 @@ public class FocusProcessorForLogicalNavigation {
         }
         // Repeat navigation action in hope that eventually a new item will be exposed.
         onDirectionalNavigationAction(
-            /* pivot= */ focusBeforeScroll,
+            /* pivot= */ searchPivot,
             /* ignoreDescendantsOfPivot= */ false,
             navigationAction,
             eventId);
@@ -5704,30 +5751,76 @@ public class FocusProcessorForLogicalNavigation {
     } else {
       // RecyclerView may recycle focusBeforeScroll after it leaves the viewport. Do not search
       // from that stale node: searching from it can skip the first newly visible item.
-      nodeToFocus =
-          findFocusAfterInvalidPivot(
-              localTraversalStrategy, scrolledNode, sourceAction.searchDirection, nodeFilter);
-
-      if (nodeToFocus == null) {
-        // Since there is no visible/valid accessibility focus on screen, we play safe and don't
-        // repeat navigation action without a valid pivot node.
-        return;
-      }
-
-      // The pivot left the list while it still moves, so the first item may scroll away too and
-      // focus would be lost. Wait until that item stops moving.
-      Rect firstItemBounds = new Rect();
-      nodeToFocus.getBoundsInScreen(firstItemBounds);
-      if (settleChecksLeft > 0 && !firstItemBounds.equals(firstItemBoundsAfterPivotLeft)) {
-        firstItemBoundsAfterPivotLeft = firstItemBounds;
-        LogUtils.d(TAG, "Pivot left the list; searching again when the list stops.");
-        searchAgainWhenListMoves(
-            scrolledNode, focusBeforeScroll, sourceAction, eventId, settleChecksLeft - 1);
-        return;
-      }
-      firstItemBoundsAfterPivotLeft = null;
+      focusEdgeNodeWhenSettled(
+          localTraversalStrategy,
+          scrolledNode,
+          focusBeforeScroll,
+          sourceAction,
+          navigationAction,
+          nodeFilter,
+          eventId,
+          settleChecksLeft);
+      return;
     }
 
+    finishAutoScrolledNavigation(searchPivot, nodeToFocus, scrolledNode, navigationAction, eventId);
+  }
+
+  /**
+   * Focuses the first/last focusable node in {@code scrolledNode}'s subtree (per {@link
+   * #findFocusAfterInvalidPivot}), for when there's no usable pivot to search onward from --
+   * either because it's invalid/not visible, or because it's missing from the local tree and was
+   * itself at the relevant edge of what that tree currently has. Waits for the list to settle
+   * first via {@link #searchAgainWhenListMoves} when it might still be moving, since the edge
+   * item can still scroll away and lose focus if focused too early. Does nothing if there's no
+   * edge node to focus.
+   */
+  private void focusEdgeNodeWhenSettled(
+      TraversalStrategy localTraversalStrategy,
+      AccessibilityNodeInfoCompat scrolledNode,
+      AccessibilityNodeInfoCompat focusBeforeScroll,
+      NavigationAction sourceAction,
+      NavigationAction navigationAction,
+      Filter<AccessibilityNodeInfoCompat> nodeFilter,
+      EventId eventId,
+      int settleChecksLeft) {
+    AccessibilityNodeInfoCompat edgeNode =
+        findFocusAfterInvalidPivot(
+            localTraversalStrategy, scrolledNode, sourceAction.searchDirection, nodeFilter);
+    if (edgeNode == null) {
+      // Since there is no visible/valid accessibility focus on screen, we play safe and don't
+      // repeat navigation action without a valid pivot node.
+      return;
+    }
+
+    // The pivot left the list while it still moves, so the first item may scroll away too and
+    // focus would be lost. Wait until that item stops moving.
+    Rect edgeBounds = new Rect();
+    edgeNode.getBoundsInScreen(edgeBounds);
+    if (settleChecksLeft > 0 && !edgeBounds.equals(firstItemBoundsAfterPivotLeft)) {
+      firstItemBoundsAfterPivotLeft = edgeBounds;
+      LogUtils.d(TAG, "Pivot left the list; searching again when the list stops.");
+      searchAgainWhenListMoves(
+          scrolledNode, focusBeforeScroll, sourceAction, eventId, settleChecksLeft - 1);
+      return;
+    }
+    firstItemBoundsAfterPivotLeft = null;
+
+    finishAutoScrolledNavigation(
+        focusBeforeScroll, edgeNode, scrolledNode, navigationAction, eventId);
+  }
+
+  /**
+   * Common tail of {@link #handleViewAutoScrolledForDirectionalNavigationWithDefaultTarget}: if
+   * moving backward with default target lands on a WebView container node, descends into its
+   * last element instead; otherwise ensures {@code nodeToFocus} is on screen and focuses it.
+   */
+  private void finishAutoScrolledNavigation(
+      AccessibilityNodeInfoCompat searchPivot,
+      AccessibilityNodeInfoCompat nodeToFocus,
+      AccessibilityNodeInfoCompat scrolledNode,
+      NavigationAction navigationAction,
+      EventId eventId) {
     // If we're moving backward with default target from native views to WebView container node,
     // automatically descend to the last element in the WebView.
     int logicalDirection =
@@ -5743,11 +5836,136 @@ public class FocusProcessorForLogicalNavigation {
       }
     }
 
-    if (shouldReEnsureSmallNodeOnScreen(focusBeforeScroll, nodeToFocus, navigationAction)) {
+    if (shouldReEnsureSmallNodeOnScreen(searchPivot, nodeToFocus, navigationAction)) {
       ensureOnScreenInternal(scrolledNode, nodeToFocus, eventId);
     }
 
     setAccessibilityFocusInternal(nodeToFocus, navigationAction, eventId);
+  }
+
+  /**
+   * Searches {@code strategy} for the node after/before {@code pivot}, recovering first if
+   * {@code pivot} -- though still valid and visible -- isn't a key in that tree (e.g. a
+   * RecyclerView recycled its view during the auto-scroll this caller is tracking), the same way
+   * {@link #handleViewAutoScrolledForDirectionalNavigationWithDefaultTarget} does. Falls back to
+   * {@link #findFocusAfterInvalidPivot} -- the first/last focusable in {@code scrolledNode}'s
+   * subtree -- when {@code pivot} is outright invalid, or was itself at the relevant edge of
+   * what the tree currently has.
+   */
+  private static @Nullable AccessibilityNodeInfoCompat searchFocusRecoveringMissingPivot(
+      TraversalStrategy strategy,
+      AccessibilityNodeInfoCompat scrolledNode,
+      AccessibilityNodeInfoCompat pivot,
+      @SearchDirection int direction,
+      Filter<AccessibilityNodeInfoCompat> nodeFilter,
+      boolean rtl) {
+    if (!pivot.refresh() || !AccessibilityNodeInfoUtils.isVisible(pivot)) {
+      return findFocusAfterInvalidPivot(strategy, scrolledNode, direction, nodeFilter);
+    }
+    if (strategy instanceof OrderedTraversalStrategy orderedStrategy
+        && !orderedStrategy.containsNode(pivot)) {
+      AccessibilityNodeInfoCompat nearest =
+          findNodeNearPivotPlace(orderedStrategy, pivot, direction, rtl);
+      return (nearest != null)
+          ? TraversalStrategyUtils.searchFocus(strategy, nearest, direction, nodeFilter)
+          : findFocusAfterInvalidPivot(strategy, scrolledNode, direction, nodeFilter);
+    }
+    return TraversalStrategyUtils.searchFocus(strategy, pivot, direction, nodeFilter);
+  }
+
+  /**
+   * Finds the node in {@code strategy}'s own tree nearest {@code pivot}'s current on-screen
+   * position, for when {@code pivot} -- though still valid and visible -- isn't a key in that
+   * tree (e.g. a RecyclerView recycled its view during a multi-step auto-scroll, so the
+   * freshly-built local tree never included it). The caller always does a further search from
+   * the direction edge of whatever is returned, so this returns the node whose position is
+   * nearest {@code pivot}'s on the near side: for a forward search, the last node not yet past
+   * {@code pivot}'s own bottom edge; for a backward search, the first node at or past {@code
+   * pivot}'s own top edge. Returns {@code null} when {@code pivot} was itself at the relevant
+   * edge of what this tree currently has (e.g. the auto-scroll revealed exactly the top/bottom
+   * of the content) -- there is nothing on the near side to anchor a further search from, so the
+   * caller resolves that case directly instead, the same way an already-invalid pivot is.
+   */
+  @VisibleForTesting
+  static @Nullable AccessibilityNodeInfoCompat findNodeNearPivotPlace(
+      OrderedTraversalStrategy strategy,
+      AccessibilityNodeInfoCompat pivot,
+      @SearchDirection int direction,
+      boolean rtl) {
+    Rect pivotBounds = new Rect();
+    pivot.getBoundsInScreen(pivotBounds);
+    // dumpTree() is in traversal order, so an ancestor of where the pivot sits -- starting with
+    // dumpTree()'s first entry, the strategy's own root (here, scrolledNode) -- always comes
+    // before it, and its bounds span its entire subtree, so they always contain the pivot's.
+    // Such a node is never a real anchor: in the backward direction especially, it would be the
+    // very first node whose bounds reach the pivot's place, even though its own children above
+    // that place -- real candidates -- haven't been considered yet. Skip any node whose bounds
+    // contain the pivot's, not just the root.
+    List<AccessibilityNodeInfoCompat> nodes = strategy.dumpTree();
+    Rect bounds = new Rect();
+    if (direction == TraversalStrategy.SEARCH_FOCUS_FORWARD) {
+      AccessibilityNodeInfoCompat above = null;
+      for (AccessibilityNodeInfoCompat node : nodes) {
+        node.getBoundsInScreen(bounds);
+        if (bounds.contains(pivotBounds)) {
+          continue;
+        }
+        // A node sharing the pivot's row/band (e.g. a grid cell or a carousel item) can match
+        // on top/bottom alone regardless of which side of the pivot it's actually on. Tell them
+        // apart by reading-order position within the row instead -- but only for an actual
+        // row-mate beside the pivot; a node in the pivot's own column just happens to overlap it
+        // vertically (e.g. mid-scroll), and falls through to the ordinary top/bottom check below.
+        if (isRowMateOfPivot(bounds, pivotBounds)) {
+          if (isBeforePivotInRow(bounds, pivotBounds, rtl)) {
+            above = node;
+            continue;
+          }
+          return above;
+        }
+        if (bounds.top >= pivotBounds.bottom) {
+          return above;
+        }
+        above = node;
+      }
+      return above;
+    } else {
+      for (AccessibilityNodeInfoCompat node : nodes) {
+        node.getBoundsInScreen(bounds);
+        if (bounds.contains(pivotBounds)) {
+          continue;
+        }
+        if (isRowMateOfPivot(bounds, pivotBounds)) {
+          if (isBeforePivotInRow(bounds, pivotBounds, rtl)) {
+            continue;
+          }
+          return node;
+        }
+        if (bounds.bottom > pivotBounds.top) {
+          return node;
+        }
+      }
+      return null;
+    }
+  }
+
+  /**
+   * Returns whether {@code bounds} shares {@code pivotBounds}'s row/band (vertical overlap)
+   * while sitting beside it rather than above/below it (no horizontal overlap) -- the shape of a
+   * grid cell or carousel item next to the pivot, as opposed to an ordinary single-column sibling
+   * that happens to vertically overlap the pivot's place (e.g. mid-scroll).
+   */
+  private static boolean isRowMateOfPivot(Rect bounds, Rect pivotBounds) {
+    boolean verticalOverlap = bounds.top < pivotBounds.bottom && bounds.bottom > pivotBounds.top;
+    boolean horizontalOverlap = bounds.left < pivotBounds.right && bounds.right > pivotBounds.left;
+    return verticalOverlap && !horizontalOverlap;
+  }
+
+  /**
+   * Returns whether {@code bounds} sits before {@code pivotBounds} in reading order within a
+   * shared row, going right-to-left when {@code rtl}.
+   */
+  private static boolean isBeforePivotInRow(Rect bounds, Rect pivotBounds, boolean rtl) {
+    return rtl ? bounds.left >= pivotBounds.right : bounds.right <= pivotBounds.left;
   }
 
   /**
