@@ -70,6 +70,7 @@ public class SubtreeChangeEventInterpreter
   private boolean defaultDisplayOn = true;
   private final DisplayMonitor displayMonitor;
   private Supplier<ScrollActionRecord> scrollActorState;
+  private Supplier<Boolean> webScrollFocusPending = () -> false;
 
   /** Event types that are handled by SubtreeChangeEventInterpreter. */
   private final int maskEventType;
@@ -100,6 +101,11 @@ public class SubtreeChangeEventInterpreter
 
   public void setActorState(Supplier<ScrollActionRecord> scrollActorState) {
     this.scrollActorState = scrollActorState;
+  }
+
+  /** Lets manual web-scroll recovery place its item before the general focus fallback. */
+  public void setWebScrollFocusPending(Supplier<Boolean> pending) {
+    webScrollFocusPending = pending;
   }
 
   @Override
@@ -187,6 +193,13 @@ public class SubtreeChangeEventInterpreter
       }
 
       if (msg.what == MSG_CHECK_ACCESSIBILITY_FOCUS) {
+
+        if (parent.webScrollFocusPending.get()) {
+          // Otherwise general recovery can focus the whole document and cancel the sliced search.
+          sendMessageDelayed(obtainMessage(MSG_CHECK_ACCESSIBILITY_FOCUS, msg.obj),
+              parent.subtreeChangedDelayMs);
+          return;
+        }
 
         if (shouldKeepDelayMessage(parent.scrollActorState.get())) {
           LogUtils.i(TAG, "Keep delaying because we have a new auto scroll action.");

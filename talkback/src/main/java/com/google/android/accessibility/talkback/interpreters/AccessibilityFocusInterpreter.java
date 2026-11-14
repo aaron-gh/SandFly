@@ -592,6 +592,12 @@ public class AccessibilityFocusInterpreter
     webFocusRecoveryScroll = null;
   }
 
+  /** Whether manual web-scroll recovery must finish before general lost-focus recovery runs. */
+  public boolean isWebScrollFocusPending() {
+    return webFocusRecovery != null
+        || (pendingManualScroll != null && pendingManualScroll == webScroll);
+  }
+
   /**
    * Handles a scroll of web content that waits for scrolling to settle, and finishes the search for
    * an item in view, at once. Called before a gesture runs its command, so that a swipe after a
