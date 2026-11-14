@@ -42,6 +42,7 @@ import com.google.android.accessibility.talkback.ActorState;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.VoiceActionMonitor;
+import com.google.android.accessibility.talkback.focusmanagement.SheetsGrid;
 import com.google.android.accessibility.talkback.gesture.KeyboardExploration;
 import com.google.android.accessibility.talkback.monitor.RingerModeAndScreenMonitor;
 import com.google.android.accessibility.utils.AccessibilityEventListener;
@@ -409,6 +410,9 @@ public class AccessibilityEventProcessor implements DisplayStateChangedListener 
   private boolean shouldDropEvent(AccessibilityEvent event) {
     // Always drop null events.
     if (event == null) {
+      return true;
+    }
+    if (SheetsGrid.shouldDropFocusEvent(event)) {
       return true;
     }
 
