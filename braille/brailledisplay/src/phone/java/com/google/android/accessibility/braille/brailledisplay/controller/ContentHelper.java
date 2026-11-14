@@ -310,6 +310,15 @@ public class ContentHelper {
     if (oldSpanned == null || newSpanned == null) {
       return NO_CURSOR;
     }
+    // When the translation is unchanged, keep the display position as it is. Mapping it through
+    // the text positions and back can land on an earlier cell and move the display backward.
+    if (oldDisplayPosition >= 0
+        && oldTranslationResult.text().toString().equals(newTranslationResult.text().toString())
+        && oldTranslationResult
+            .brailleToTextPositions()
+            .equals(newTranslationResult.brailleToTextPositions())) {
+      return oldDisplayPosition;
+    }
     // Map the current display start and past-the-end positions
     // to the corresponding input positions.
     int oldTextStart = displayToTextPosition(oldTranslationResult, oldDisplayPosition);
