@@ -257,6 +257,19 @@ public class FocusActionRecord {
     return uniqueId;
   }
 
+  /** Whether this record and {@code other} share one web path capture. */
+  boolean sharesWebPathCapture(@Nullable FocusActionRecord other) {
+    return deferredWebPath != null && other != null && other.deferredWebPath == deferredWebPath;
+  }
+
+  /**
+   * Stops the web path capture that no record in the history uses any more. A later read of the
+   * path gets an empty path.
+   */
+  void cancelWebPathCapture() {
+    if (deferredWebPath != null) deferredWebPath.cancel();
+  }
+
   /** Returns a copied instance of another FocusActionRecord. */
   public static @Nullable FocusActionRecord copy(FocusActionRecord record) {
     if (record == null) {
@@ -546,6 +559,11 @@ public class FocusActionRecord {
       }
     }
     private final AtomicReference<RecordedWebPath> resolved = new AtomicReference<>();
+
+    void cancel() {
+      if (executor instanceof NodeQueryExecutor queries) queries.cancel(task);
+      else task.cancel(false);
+    }
 
     RecordedWebPath get(Deadline deadline) {
       RecordedWebPath existing = resolved.get();

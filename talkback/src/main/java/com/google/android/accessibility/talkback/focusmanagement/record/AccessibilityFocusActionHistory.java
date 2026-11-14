@@ -243,7 +243,10 @@ public final class AccessibilityFocusActionHistory {
     focusActionRecordList.offer(record);
     if (focusActionRecordList.size() > MAXIMUM_RECORD_QUEUE_SIZE) {
       // Poll the eldest order if the queue grows up its maximum size.
-      focusActionRecordList.pollFirst();
+      FocusActionRecord evicted = focusActionRecordList.pollFirst();
+      if (evicted != null && !isWebPathCaptureKept(evicted)) {
+        evicted.cancelWebPathCapture();
+      }
     }
 
     final int windowId = node.getWindowId();
@@ -255,6 +258,20 @@ public final class AccessibilityFocusActionHistory {
     if (node.isEditable() || (Role.getRole(node) == Role.ROLE_EDIT_TEXT)) {
       lastEditableFocusActionRecord = FocusActionRecord.copy(record);
     }
+  }
+
+  /** Whether a record outside the action queue shares the web path capture of {@code record}. */
+  private boolean isWebPathCaptureKept(FocusActionRecord record) {
+    if (record.sharesWebPathCapture(lastEditableFocusActionRecord)
+        || record.sharesWebPathCapture(recordNotFound)) {
+      return true;
+    }
+    for (FocusActionRecord kept : windowIdentifierToFocusActionRecordMap.snapshot().values()) {
+      if (record.sharesWebPathCapture(kept)) {
+        return true;
+      }
+    }
+    return false;
   }
 
   /**

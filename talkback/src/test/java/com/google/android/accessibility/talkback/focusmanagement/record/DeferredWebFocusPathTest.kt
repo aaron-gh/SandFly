@@ -146,4 +146,19 @@ class DeferredWebFocusPathTest {
     assertEquals(0, fallback.size())
     assertSame(fallback, FocusActionRecord.copy(record)!!.ancestorIdentityPath)
   }
+
+  @Test fun aCancelledCaptureOfAnEvictedRecordDoesNotRead() {
+    val work = mutableListOf<Runnable>()
+    var reads = 0
+    val focused = node()
+    val record = FocusActionRecord(focused, FocusActionInfo.builder().build(), 1000,
+      { work.add(it) }) { reads++; NodePathDescription.obtainWithoutSiblingContext(focused) }
+    val copy = FocusActionRecord.copy(record)!!
+    assertTrue(record.sharesWebPathCapture(copy))
+    assertFalse(record.sharesWebPathCapture(null))
+    record.cancelWebPathCapture()
+    work.single().run()
+    assertEquals(0, reads)
+    assertEquals(0, copy.ancestorIdentityPath.size())
+  }
 }
