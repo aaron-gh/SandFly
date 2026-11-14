@@ -1186,6 +1186,15 @@ public class GestureController {
     if (LiveRecognition.onGesture(gestureId)) {
       return;
     }
+    // While SandFly takes two-finger swipes, the lock screen never sees one, so it gets SandFly's
+    // own two-finger swipe up to unlock or show the PIN, pattern or password.
+    if (gestureId == AccessibilityService.GESTURE_2_FINGER_SWIPE_UP
+        && GestureLayout.handlesTwoFingerSwipes(SharedPreferencesUtils.getSharedPreferences(service))
+        && SyntheticTouches.isAvailable()
+        && swipeUp.isLockScreenShown()
+        && swipeUp.swipeUp(/* fingers= */ 2)) {
+      return;
+    }
     // While SandFly takes two-finger swipes, the launcher, which opens its apps list from a
     // two-finger swipe up, gets SandFly's own swipe up instead.
     if (gestureId == AccessibilityService.GESTURE_2_FINGER_SWIPE_UP
