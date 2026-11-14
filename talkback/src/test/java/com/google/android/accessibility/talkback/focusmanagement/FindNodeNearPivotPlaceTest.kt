@@ -165,6 +165,33 @@ class FindNodeNearPivotPlaceTest {
   }
 
   /**
+   * An ordinary single-column item can vertically overlap the pivot's stale place (e.g. mid-
+   * scroll, before the list settles) without being a real row-mate: it shares the pivot's column
+   * instead of sitting beside it. The row/grid tie-break must not mistake it for one -- that would
+   * stop the forward scan right there and lose both this item and the real next item after it.
+   */
+  @Test
+  fun forward_treatsAColumnOverlapAsAnOrdinarySiblingNotARowMate() {
+    val itemOverlap = Node(Rect(0, 150, 200, 250))
+    val itemBelow = Node(Rect(0, 400, 200, 500))
+    val row = Node(Rect(0, 100, 200, 500)).add(itemOverlap, itemBelow)
+    val root = Node(Rect(0, 0, 200, 1000)).add(row)
+    val strategy = OrderedTraversalStrategy(root)
+    // The pivot's place vertically overlaps itemOverlap's -- both span the same column -- rather
+    // than sitting cleanly between two stacked items as in the tests above.
+    val pivot = pivotAt(Rect(0, 200, 200, 300))
+
+    val nearest =
+        FocusProcessorForLogicalNavigation.findNodeNearPivotPlace(
+            strategy, pivot, TraversalStrategy.SEARCH_FOCUS_FORWARD, /* rtl= */ false)
+
+    val resumed =
+        TraversalStrategyUtils.searchFocus(
+            strategy, nearest, TraversalStrategy.SEARCH_FOCUS_FORWARD, null)
+    assertEquals(itemBelow, resumed)
+  }
+
+  /**
    * Same row, but in an RTL layout: reading order runs right-to-left, so the item with the
    * larger X coordinate is the one that comes first.
    */

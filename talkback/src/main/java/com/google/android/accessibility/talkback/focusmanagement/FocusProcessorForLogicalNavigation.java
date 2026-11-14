@@ -5742,7 +5742,7 @@ public class FocusProcessorForLogicalNavigation {
         }
         // Repeat navigation action in hope that eventually a new item will be exposed.
         onDirectionalNavigationAction(
-            /* pivot= */ focusBeforeScroll,
+            /* pivot= */ searchPivot,
             /* ignoreDescendantsOfPivot= */ false,
             navigationAction,
             eventId);
@@ -5816,7 +5816,7 @@ public class FocusProcessorForLogicalNavigation {
    * last element instead; otherwise ensures {@code nodeToFocus} is on screen and focuses it.
    */
   private void finishAutoScrolledNavigation(
-      AccessibilityNodeInfoCompat focusBeforeScroll,
+      AccessibilityNodeInfoCompat searchPivot,
       AccessibilityNodeInfoCompat nodeToFocus,
       AccessibilityNodeInfoCompat scrolledNode,
       NavigationAction navigationAction,
@@ -5836,7 +5836,7 @@ public class FocusProcessorForLogicalNavigation {
       }
     }
 
-    if (shouldReEnsureSmallNodeOnScreen(focusBeforeScroll, nodeToFocus, navigationAction)) {
+    if (shouldReEnsureSmallNodeOnScreen(searchPivot, nodeToFocus, navigationAction)) {
       ensureOnScreenInternal(scrolledNode, nodeToFocus, eventId);
     }
 
@@ -5912,8 +5912,10 @@ public class FocusProcessorForLogicalNavigation {
         }
         // A node sharing the pivot's row/band (e.g. a grid cell or a carousel item) can match
         // on top/bottom alone regardless of which side of the pivot it's actually on. Tell them
-        // apart by reading-order position within the row instead.
-        if (rowOverlapsPivot(bounds, pivotBounds)) {
+        // apart by reading-order position within the row instead -- but only for an actual
+        // row-mate beside the pivot; a node in the pivot's own column just happens to overlap it
+        // vertically (e.g. mid-scroll), and falls through to the ordinary top/bottom check below.
+        if (isRowMateOfPivot(bounds, pivotBounds)) {
           if (isBeforePivotInRow(bounds, pivotBounds, rtl)) {
             above = node;
             continue;
@@ -5932,7 +5934,7 @@ public class FocusProcessorForLogicalNavigation {
         if (bounds.contains(pivotBounds)) {
           continue;
         }
-        if (rowOverlapsPivot(bounds, pivotBounds)) {
+        if (isRowMateOfPivot(bounds, pivotBounds)) {
           if (isBeforePivotInRow(bounds, pivotBounds, rtl)) {
             continue;
           }
@@ -5946,9 +5948,16 @@ public class FocusProcessorForLogicalNavigation {
     }
   }
 
-  /** Returns whether {@code bounds} vertically overlaps {@code pivotBounds} at all. */
-  private static boolean rowOverlapsPivot(Rect bounds, Rect pivotBounds) {
-    return bounds.top < pivotBounds.bottom && bounds.bottom > pivotBounds.top;
+  /**
+   * Returns whether {@code bounds} shares {@code pivotBounds}'s row/band (vertical overlap)
+   * while sitting beside it rather than above/below it (no horizontal overlap) -- the shape of a
+   * grid cell or carousel item next to the pivot, as opposed to an ordinary single-column sibling
+   * that happens to vertically overlap the pivot's place (e.g. mid-scroll).
+   */
+  private static boolean isRowMateOfPivot(Rect bounds, Rect pivotBounds) {
+    boolean verticalOverlap = bounds.top < pivotBounds.bottom && bounds.bottom > pivotBounds.top;
+    boolean horizontalOverlap = bounds.left < pivotBounds.right && bounds.right > pivotBounds.left;
+    return verticalOverlap && !horizontalOverlap;
   }
 
   /**
