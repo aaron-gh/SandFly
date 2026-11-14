@@ -458,7 +458,7 @@ public class FeedbackController {
    */
   public void playAuditory(
       int resId, float rate, float volume, float x, float y, @Nullable EventId eventId) {
-    if (x < 0 || y < 0) {
+    if (!(x >= 0) || !(y >= 0)) {
       playAuditory(resId, rate, volume, eventId);
       return;
     }
@@ -471,7 +471,7 @@ public class FeedbackController {
   /** Plays a sound from a place on the screen, like {@link #playAuditory}, without its vibration. */
   public void playAuditoryWithoutHaptic(
       int resId, float rate, float volume, float x, float y, @Nullable EventId eventId) {
-    if (x < 0 || y < 0) {
+    if (!(x >= 0) || !(y >= 0)) {
       playAuditoryWithoutHaptic(resId, rate, volume, eventId);
       return;
     }
@@ -506,6 +506,14 @@ public class FeedbackController {
   }
 
   private void playFromPool(int resId, float rate, float leftVolume, float rightVolume) {
+    // A NaN rate or volume makes noise in SoundPool, and filled the low-latency output with it.
+    if (!Float.isFinite(rate) || !Float.isFinite(leftVolume) || !Float.isFinite(rightVolume)) {
+      LogUtils.w(
+          TAG, "Sound %d has rate %f, volumes %f %f", resId, rate, leftVolume, rightVolume);
+      rate = Float.isFinite(rate) ? rate : 1.0f;
+      leftVolume = Float.isFinite(leftVolume) ? leftVolume : 0f;
+      rightVolume = Float.isFinite(rightVolume) ? rightVolume : 0f;
+    }
     @Nullable String path = customSoundPath(resId);
     if (mLowLatencyAudio
         && !LowLatencyAudio.isMicrophoneInUse()
