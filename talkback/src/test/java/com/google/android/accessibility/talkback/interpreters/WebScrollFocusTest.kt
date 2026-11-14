@@ -58,6 +58,8 @@ class WebScrollFocusTest {
       addAction(ACTION_PREVIOUS_HTML_ELEMENT)
     }
 
+    override fun getChild(index: Int, flags: Int): AccessibilityNodeInfoCompat? = getChild(index)
+
     override fun getChildCount() = nodes.size
 
     override fun getChild(index: Int): AccessibilityNodeInfoCompat {

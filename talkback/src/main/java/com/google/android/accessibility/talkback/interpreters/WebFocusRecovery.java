@@ -234,7 +234,10 @@ final class WebFocusRecovery {
       return;
     }
     ancestorsRead++;
-    AccessibilityNodeInfoCompat parent = node.getParent();
+    // Read the ancestry without unrelated sibling or descendant branches.
+    AccessibilityNodeInfoCompat parent = node.getParent(
+        AccessibilityNodeInfoCompat.FLAG_PREFETCH_ANCESTORS
+            | AccessibilityNodeInfoCompat.FLAG_PREFETCH_UNINTERRUPTIBLE);
     // The outermost of the nested documents that a WebView reports: a document inside a page is a
     // web element's child, not a WebView's.
     if (webView == null

@@ -60,6 +60,10 @@ class WebFocusRecoveryTest {
       }
     }
 
+    override fun getChild(index: Int, flags: Int): AccessibilityNodeInfoCompat? = getChild(index)
+
+    override fun getParent(flags: Int): AccessibilityNodeInfoCompat? = getParent()
+
     override fun getChildCount() = nodes.size
 
     override fun getChild(index: Int): AccessibilityNodeInfoCompat {

@@ -18,6 +18,7 @@ package com.google.android.accessibility.talkback.interpreters;
 
 import android.graphics.Rect;
 import android.text.TextUtils;
+import android.view.accessibility.AccessibilityNodeInfo;
 import androidx.annotation.VisibleForTesting;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat.AccessibilityActionCompat;
@@ -371,7 +372,7 @@ final class WebScrollFocus {
       if (indexScan < count && indexReadsLeft > 0) {
         indexReadsLeft--;
         int i = indexScan++;
-        if (node.equals(parent.getChild(i))) {
+        if (node.equals(readSibling(parent, i))) {
           findingIndex = false;
           frames.push(new Frame(parent, count, forward ? i + 1 : i - 1));
         }
@@ -425,7 +426,7 @@ final class WebScrollFocus {
         return true;
       }
       frame.next += forward ? 1 : -1;
-      AccessibilityNodeInfoCompat child = frame.node.getChild(i);
+      AccessibilityNodeInfoCompat child = readSibling(frame.node, i);
       if (child == null) {
         return true;
       }
@@ -460,7 +461,7 @@ final class WebScrollFocus {
       }
       int middle = (frame.low + frame.high) >>> 1;
       nodesLeft--;
-      AccessibilityNodeInfoCompat child = frame.node.getChild(middle);
+      AccessibilityNodeInfoCompat child = readSibling(frame.node, middle);
       boolean before = false;
       if (child != null) {
         child.getBoundsInScreen(bounds);
@@ -474,6 +475,16 @@ final class WebScrollFocus {
       if (frame.low >= frame.high) {
         frame.next = forward ? frame.low : frame.high - 1;
       }
+    }
+    /** Fetch a bounded sibling group together, without changing the traversal order. */
+    private static @Nullable AccessibilityNodeInfoCompat readSibling(
+        AccessibilityNodeInfoCompat parent, int index) {
+      int count = parent.getChildCount();
+      if (count > 1 && count < AccessibilityNodeInfo.MAX_NUMBER_OF_PREFETCHED_NODES) {
+        return parent.getChild(index, AccessibilityNodeInfoCompat.FLAG_PREFETCH_SIBLINGS
+            | AccessibilityNodeInfoCompat.FLAG_PREFETCH_UNINTERRUPTIBLE);
+      }
+      return parent.getChild(index, 0);
     }
   }
 
