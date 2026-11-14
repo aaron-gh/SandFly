@@ -86,6 +86,7 @@ import java.util.Collections;
 import java.util.Deque;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
@@ -316,6 +317,22 @@ public class FailoverTextToSpeech {
   private static final long HELD_SPEECH_TIMEOUT_MS = 800;
 
   private final Runnable dropHeldSpeech = this::dropHeldSpeech;
+
+  /** How many utterances {@link #flattenedTexts} keeps, as a flushed one may never end. */
+  private static final int MAX_FLATTENED_TEXTS = 32;
+
+  /**
+   * Utterances whose text spans, such as punctuation names, were written into their text for
+   * engines that ignore spans, by ID, so that word positions are reported in the text as given.
+   */
+  private final Map<String, TtsSpanText> flattenedTexts =
+      Collections.synchronizedMap(
+          new LinkedHashMap<String, TtsSpanText>() {
+            @Override
+            protected boolean removeEldestEntry(Map.Entry<String, TtsSpanText> eldest) {
+              return size() > MAX_FLATTENED_TEXTS;
+            }
+          });
 
   /**
    * How long speech waits after a phone call ends for the audio mode to leave the call. Until then,
@@ -981,6 +998,7 @@ public class FailoverTextToSpeech {
       mHandler.onUtteranceCompleted(params.get(Engine.KEY_PARAM_UTTERANCE_ID), /* success= */ true);
       return;
     }
+    text = withSpanTextWritten(utteranceId, text);
 
     if (utteranceId != null
         && params.containsKey(EmojiSpeech.SPEECH_PARAM_EMOJI)
@@ -1064,6 +1082,33 @@ public class FailoverTextToSpeech {
 
       mHandler.onUtteranceCompleted(params.get(Engine.KEY_PARAM_UTTERANCE_ID), /* success= */ true);
     }
+  }
+
+  /**
+   * Returns {@code text} with its {@link android.text.style.TtsSpan} texts, such as punctuation
+   * names, written in as words. Engines other than Google's and Samsung's read only the plain text,
+   * so they would say the punctuation mark itself, or nothing. Held speech carried on keeps the
+   * positions of the text it carries on.
+   */
+  private CharSequence withSpanTextWritten(@Nullable String utteranceId, CharSequence text) {
+    @Nullable TtsSpanText flattened = TtsSpanText.flatten(text);
+    CharSequence said = flattened == null ? text : flattened.getText();
+    if (utteranceId == null) {
+      return said;
+    }
+    @Nullable TtsSpanText earlier = flattenedTexts.get(utteranceId);
+    boolean carriesOnHeld =
+        utteranceId.equals(heldUtteranceId)
+            && earlier != null
+            && earlier.getText().toString().endsWith(said.toString());
+    if (!carriesOnHeld) {
+      if (flattened == null) {
+        flattenedTexts.remove(utteranceId);
+      } else {
+        flattenedTexts.put(utteranceId, flattened);
+      }
+    }
+    return said;
   }
 
   /**
@@ -3284,6 +3329,12 @@ public class FailoverTextToSpeech {
    * @param end The end index of the range in the utterance text.
    */
   private void handleUtteranceRangeStarted(String utteranceId, int start, int end) {
+    @Nullable TtsSpanText flattened = flattenedTexts.get(utteranceId);
+    if (flattened != null) {
+      int originalStart = flattened.toOriginal(start);
+      end = end > start ? flattened.toOriginal(end - 1) + 1 : originalStart;
+      start = originalStart;
+    }
     for (FailoverTtsListener mListener : listeners) {
       mListener.onUtteranceRangeStarted(utteranceId, start, end);
     }
@@ -3303,6 +3354,7 @@ public class FailoverTextToSpeech {
       ttsFailures = 0;
     }
     allowDeviceSleep(utteranceId);
+    flattenedTexts.remove(utteranceId);
     for (FailoverTtsListener mListener : listeners) {
       mListener.onUtteranceCompleted(utteranceId, success);
     }
