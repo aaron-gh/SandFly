@@ -195,6 +195,24 @@ class SettingsProfilesTest {
   }
 
   @Test
+  fun sandFlyOverlaysKeepTheAppAndItsContext() {
+    profile("Messaging", mapOf(rate to 80))
+    profile("Web", mapOf(other to true), SettingsProfileStore.Triggers(web = true))
+    SettingsProfiles.setContext(app, web = true)
+    SettingsProfiles.applyNow(context)
+
+    SettingsProfiles.onAppShown(context.packageName, true)
+    SettingsProfiles.applyNow(context)
+    assertEquals(80, prefs.getInt("rate", 0))
+    assertTrue(prefs.getBoolean("other", false))
+
+    SettingsProfiles.onAppShown(context.packageName, false)
+    SettingsProfiles.applyNow(context)
+    assertEquals(1, prefs.getInt("rate", 0))
+    assertFalse(prefs.contains("other"))
+  }
+
+  @Test
   fun changingAProfilesSettingsSavesEveryChangeToIt() {
     val messaging = profile("Messaging", mapOf(rate to 80))
     SettingsProfiles.setContext(context.packageName)

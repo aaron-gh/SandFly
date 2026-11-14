@@ -20,6 +20,7 @@ import android.content.Context
 import android.net.Uri
 import android.os.Handler
 import android.os.Looper
+import android.provider.DocumentsContract
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
@@ -39,15 +40,16 @@ import java.util.concurrent.TimeUnit
  */
 class ItemFileLauncher(private val fragment: Fragment, private val onImported: () -> Unit) {
 
-  // What the file being created is written with, from the last export; gone if the screen was made
-  // again while the file picker was open.
-  private var pending: ((Context) -> String)? = null
-
   private val create =
     fragment.registerForActivityResult(ActivityResultContracts.CreateDocument("application/json")) { uri ->
       val build = pending
       pending = null
-      if (uri != null && build != null) exportText(fragment.requireContext(), uri, build)
+      if (uri == null) return@registerForActivityResult
+      if (build != null) {
+        exportText(fragment.requireContext(), uri, build)
+      } else {
+        discard(fragment.requireContext(), uri)
+      }
     }
 
   private val open =
@@ -97,6 +99,13 @@ class ItemFileLauncher(private val fragment: Fragment, private val onImported: (
   }
 
   companion object {
+    /**
+     * What the file being created is written with, from the last export. Kept here rather than on
+     * the screen, which is made again while the file picker is open when the device is rotated or
+     * folded; only one file picker is open at a time. Gone if SandFly's process was stopped.
+     */
+    @Volatile private var pending: ((Context) -> String)? = null
+
     /** Watches have no file picker. */
     @JvmStatic
     val isAvailable: Boolean
@@ -147,6 +156,22 @@ class ItemFileLauncher(private val fragment: Fragment, private val onImported: (
             false
           }
         toast(app, app.getString(if (written) R.string.item_file_exported else R.string.item_file_export_failed))
+      }
+    }
+
+    /**
+     * Deletes the empty file created for an export whose contents were lost, and says that the
+     * export failed.
+     */
+    private fun discard(context: Context, uri: Uri) {
+      val app = context.applicationContext
+      executor.execute {
+        try {
+          DocumentsContract.deleteDocument(app.contentResolver, uri)
+        } catch (e: Exception) {
+          // Some providers can't delete; the file stays empty.
+        }
+        toast(app, app.getString(R.string.item_file_export_failed))
       }
     }
 

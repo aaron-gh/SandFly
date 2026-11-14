@@ -1087,21 +1087,13 @@ public class FailoverTextToSpeech {
   /**
    * Returns {@code text} with its {@link android.text.style.TtsSpan} texts, such as punctuation
    * names, written in as words. Engines other than Google's and Samsung's read only the plain text,
-   * so they would say the punctuation mark itself, or nothing. Held speech carried on keeps the
-   * positions of the text it carries on.
+   * so they would say the punctuation mark itself, or nothing. Held speech carried on with the rest
+   * of its text reports positions from the start of the rest, so the rest's own positions map them.
    */
   private CharSequence withSpanTextWritten(@Nullable String utteranceId, CharSequence text) {
     @Nullable TtsSpanText flattened = TtsSpanText.flatten(text);
     CharSequence said = flattened == null ? text : flattened.getText();
-    if (utteranceId == null) {
-      return said;
-    }
-    @Nullable TtsSpanText earlier = flattenedTexts.get(utteranceId);
-    boolean carriesOnHeld =
-        utteranceId.equals(heldUtteranceId)
-            && earlier != null
-            && earlier.getText().toString().endsWith(said.toString());
-    if (!carriesOnHeld) {
+    if (utteranceId != null) {
       if (flattened == null) {
         flattenedTexts.remove(utteranceId);
       } else {

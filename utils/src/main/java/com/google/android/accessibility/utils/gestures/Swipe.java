@@ -23,6 +23,7 @@ import android.content.Context;
 import android.graphics.PointF;
 import android.os.Build;
 import android.os.Handler;
+import android.os.SystemClock;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.MotionEvent;
@@ -99,8 +100,18 @@ class Swipe extends GestureMatcher {
   // Reports the swipe and hold when the finger has rested for the hold time without lifting.
   private final Handler handler;
   private final Runnable holdTimeout = this::onHoldTimeout;
-  // The latest move while the hold timer is pending, and its event ID.
-  private @Nullable MotionEvent holdEvent;
+  // Whether the hold timer is posted. It is posted once, and posted again when it fires before the
+  // end of a rest that started later, rather than on every move.
+  private boolean holdPending;
+  // The rest the hold timer is for, and when it ends, in uptime ms.
+  private long holdRestStartTime;
+  private long holdDeadline;
+  // A copy of a move of this touch, taken once, for the event the swipe and hold is reported with.
+  private @Nullable MotionEvent holdTemplate;
+  // Where and when the finger last moved while the hold timer is pending, and the move's event ID.
+  private float holdX;
+  private float holdY;
+  private long holdEventTime;
   private @Nullable EventId holdEventId;
 
   Swipe(
@@ -225,7 +236,7 @@ class Swipe extends GestureMatcher {
   protected void onMove(EventId eventId, MotionEvent event) {
     trackMove(eventId, event);
     if (holdAssigned && getState() == STATE_GESTURE_STARTED) {
-      postHoldTimeout(eventId, event);
+      noteHoldMove(eventId, event);
     } else {
       cancelHoldTimeout();
     }
@@ -358,40 +369,90 @@ class Swipe extends GestureMatcher {
 
   /**
    * Reports the swipe and hold once the finger has stayed where it last moved to for the hold time,
-   * whether or not it sends further moves.
+   * whether or not it sends further moves. Notes the move, and posts the hold timer when the rest
+   * started with this move and the timer isn't posted yet.
    */
-  private void postHoldTimeout(EventId eventId, MotionEvent event) {
-    cancelHoldTimeout();
-    holdEvent = MotionEvent.obtain(event);
+  private void noteHoldMove(EventId eventId, MotionEvent event) {
+    holdX = event.getX();
+    holdY = event.getY();
+    holdEventTime = event.getEventTime();
     holdEventId = eventId;
-    long delayMs =
-        restStartTime + GestureConfiguration.getSwipeHoldTimeMs() - event.getEventTime();
-    handler.postDelayed(holdTimeout, Math.max(0, delayMs));
+    if (holdTemplate == null) {
+      holdTemplate = MotionEvent.obtain(event);
+    }
+    if (holdPending && restStartTime == holdRestStartTime) {
+      return;
+    }
+    holdRestStartTime = restStartTime;
+    holdDeadline =
+        SystemClock.uptimeMillis()
+            + Math.max(0, restStartTime + GestureConfiguration.getSwipeHoldTimeMs() - holdEventTime);
+    if (!holdPending) {
+      holdPending = true;
+      handler.postAtTime(holdTimeout, holdDeadline);
+    }
   }
 
   private void cancelHoldTimeout() {
     handler.removeCallbacks(holdTimeout);
-    if (holdEvent != null) {
-      holdEvent.recycle();
-      holdEvent = null;
+    holdPending = false;
+    if (holdTemplate != null) {
+      holdTemplate.recycle();
+      holdTemplate = null;
     }
     holdEventId = null;
   }
 
   private void onHoldTimeout() {
-    MotionEvent event = holdEvent;
-    EventId eventId = holdEventId;
-    holdEvent = null;
-    holdEventId = null;
-    if (event == null) {
+    holdPending = false;
+    // The finger moved on and rested again since the timer was posted.
+    if (SystemClock.uptimeMillis() < holdDeadline) {
+      holdPending = true;
+      handler.postAtTime(holdTimeout, holdDeadline);
       return;
     }
-    if (getState() == STATE_GESTURE_STARTED
-        && strokeMatches(strokeWith(event.getX(), event.getY()))) {
-      gestureMotionEventLog(VERBOSE, "Completed with a hold before the lift.");
-      completeGestureAs(holdGestureId, eventId, event);
+    MotionEvent template = holdTemplate;
+    EventId eventId = holdEventId;
+    holdEventId = null;
+    if (template == null) {
+      return;
     }
-    event.recycle();
+    if (getState() == STATE_GESTURE_STARTED && strokeMatches(strokeWith(holdX, holdY))) {
+      gestureMotionEventLog(VERBOSE, "Completed with a hold before the lift.");
+      MotionEvent event = latestHoldMove(template);
+      completeGestureAs(holdGestureId, eventId, event);
+      event.recycle();
+    }
+  }
+
+  /** The last move noted for the hold timer, made from {@code template}, a move of this touch. */
+  private MotionEvent latestHoldMove(MotionEvent template) {
+    int count = template.getPointerCount();
+    MotionEvent.PointerProperties[] properties = new MotionEvent.PointerProperties[count];
+    MotionEvent.PointerCoords[] coords = new MotionEvent.PointerCoords[count];
+    for (int i = 0; i < count; i++) {
+      properties[i] = new MotionEvent.PointerProperties();
+      template.getPointerProperties(i, properties[i]);
+      coords[i] = new MotionEvent.PointerCoords();
+      template.getPointerCoords(i, coords[i]);
+    }
+    coords[0].x = holdX;
+    coords[0].y = holdY;
+    return MotionEvent.obtain(
+        template.getDownTime(),
+        holdEventTime,
+        template.getAction(),
+        count,
+        properties,
+        coords,
+        template.getMetaState(),
+        template.getButtonState(),
+        template.getXPrecision(),
+        template.getYPrecision(),
+        template.getDeviceId(),
+        template.getEdgeFlags(),
+        template.getSource(),
+        template.getFlags());
   }
 
   /**
