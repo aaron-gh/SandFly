@@ -510,8 +510,14 @@ final class WebScrollFocus {
       return false;
     }
     // A container that fills most of the viewport, such as a clickable page wrapper or section.
-    if (node.getChildCount() > 0 && visible.height() * 4 > viewport.height() * 3) {
-      return false;
+    if (node.getChildCount() > 0) {
+      // Chrome can clip an entire page wrapper to a short fragment at an edge. Its actual height
+      // still makes it a container to look into, not a partial item to focus at the time limit.
+      long height = Math.max(visible.height(),
+          node.getExtras().getInt("AccessibilityNodeInfo.unclippedHeight", 0));
+      if (height * 4 > viewport.height() * 3L) {
+        return false;
+      }
     }
     return node.isScreenReaderFocusable()
         || AccessibilityNodeInfoUtils.isActionableForAccessibility(node)

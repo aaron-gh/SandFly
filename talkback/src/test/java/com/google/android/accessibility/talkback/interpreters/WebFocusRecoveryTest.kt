@@ -67,6 +67,7 @@ class WebFocusRecoveryTest {
       return nodes[index]
     }
 
+
     override fun refresh() = true
 
     override fun getParent(): AccessibilityNodeInfoCompat? {
@@ -117,6 +118,22 @@ class WebFocusRecoveryTest {
 
     assertEquals(WebFocusRecovery.FOUND, recovery.outcome())
     assertSame(firstInView, recovery.item())
+  }
+
+  @Test
+  fun aSidewaysAncestorMustBeKnownBeforeSelectingAnInnerVisibleSibling() {
+    val focus = above("Old tab")
+    val inner = Node(viewport, null, false, true, focus, item(300, 500, "Other tab content"))
+    val strip = Node(Rect(0, 100, 1000, 600), null, false, true, inner).apply {
+      addAction(AccessibilityNodeInfoCompat.AccessibilityActionCompat.ACTION_SCROLL_LEFT)
+      addAction(AccessibilityNodeInfoCompat.AccessibilityActionCompat.ACTION_SCROLL_RIGHT)
+    }
+    val target = item(800, 1000, "Page content after the strip")
+    val document = Node(viewport, null, true, true, strip, target)
+    val host = Node(viewport, null, true, false, document)
+    val recovery = WebFocusRecovery(focus, null, host, false, true, null, false)
+    run(recovery)
+    assertSame(target, recovery.item())
   }
 
   @Test
