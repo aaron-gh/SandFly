@@ -150,10 +150,12 @@ public final class NodePathDescription {
       Map<AccessibilityNodeInfoCompat, AccessibilityNodeInfoCompat> answers =
           ConcurrentNodeQueries.refreshForRecovery(missing, deadline.remainingMs());
       confirmed.putAll(answers);
-      // A timed-out read is unknown, not evidence that a document was removed. Do not
-      // start the same IPC again synchronously during this restoration.
+      // A timed-out read is unknown, not evidence that a node was removed. Nodes without an
+      // answer keep the lazy refresh in the upward search, bounded by the deadline.
       for (AccessibilityNodeInfoCompat node : missing) {
-        refreshed.put(node, AccessibilityNode.takeOwnership(answers.get(node)));
+        if (answers.containsKey(node)) {
+          refreshed.put(node, AccessibilityNode.takeOwnership(answers.get(node)));
+        }
       }
     }
   }
