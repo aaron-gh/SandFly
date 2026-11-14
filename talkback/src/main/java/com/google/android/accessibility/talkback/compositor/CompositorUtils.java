@@ -224,7 +224,8 @@ public final class CompositorUtils {
   /** Appends postfix "emoji" to the emoji in text but respect the original TtsSpan. */
   public static CharSequence enhanceEmojiFeedback(Context context, @Nullable CharSequence text) {
     if (!FeatureFlagReader.enableEmojiPostfixFeedback(context)
-        || !EmojiSpeech.engineSpeaksEmoji()) {
+        || !EmojiSpeech.engineSpeaksEmoji()
+        || !EmojiSpeech.speaksSuffix()) {
       return text;
     }
     if (TextUtils.isEmpty(text)) {
