@@ -901,7 +901,12 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
     }
     val head = if (held) null else streams.peekFirst()
     if (head != null && !head.mixInto(out, burstFrames)) streams.removeFirst()
-    for (i in out.indices) out[i] = out[i].coerceIn(-1f, 1f)
+    // A NaN sample passes through coerceIn, and the mixer would play it as a loud pop and could
+    // stop taking the track's audio. Engines can give such samples.
+    for (i in out.indices) {
+      val sample = out[i]
+      out[i] = if (sample.isNaN()) 0f else sample.coerceIn(-1f, 1f)
+    }
   }
 
   private fun createTrack(): AudioTrack? =
