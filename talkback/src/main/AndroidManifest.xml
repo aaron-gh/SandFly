@@ -462,6 +462,17 @@
             android:theme="@style/NotificationReplyTheme"
             android:windowSoftInputMode="stateVisible|adjustResize" />
 
+        <!-- Edit and Export to file of the clipboard history, opened from its window. -->
+        <activity
+            android:name="com.google.android.accessibility.talkback.clipboard.ClipboardHistoryActivity"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize|keyboardHidden|uiMode|fontScale"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:label="@string/title_clipboard_history"
+            android:taskAffinity="com.google.android.accessibility.talkback.ClipboardHistoryAffinity"
+            android:theme="@style/NotificationReplyTheme"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+
         <!-- SandFly's interactive tutorial. In the service's process, which tells it each gesture. -->
         <activity
             android:name="com.google.android.accessibility.talkback.tutorial.TutorialActivity"

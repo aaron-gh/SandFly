@@ -98,6 +98,11 @@ public class SelectorMenuFragment extends ItemListFragment {
       if (textEntities != null) {
         textEntities.setVisible(false);
       }
+      Preference clipboardHistory =
+          screen.findPreference(getString(R.string.pref_selector_clipboard_history_key));
+      if (clipboardHistory != null) {
+        clipboardHistory.setVisible(false);
+      }
     }
     List<AiActions.Action> aiActions =
         FeatureSupport.doesServiceHandleDoubleTap()

@@ -464,6 +464,7 @@ object SettingsIndex {
     hideIf(noAiActions, R.string.pref_selector_ai_actions_key)
     hideIf(noAiActions, R.string.pref_ai_actions_included_key)
     hideIf(!FeatureSupport.doesServiceHandleDoubleTap(), R.string.pref_selector_text_entities_key)
+    hideIf(!FeatureSupport.doesServiceHandleDoubleTap(), R.string.pref_selector_clipboard_history_key)
 
     // ContextMenuFragment.
     hideIf(

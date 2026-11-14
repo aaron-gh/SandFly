@@ -85,6 +85,7 @@ import com.google.android.accessibility.talkback.Interpretation;
 import com.google.android.accessibility.talkback.Pipeline;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.TalkBackService;
+import com.google.android.accessibility.talkback.clipboard.ClipboardHistoryOverlay;
 import com.google.android.accessibility.talkback.gesture.GestureLayout;
 import com.google.android.accessibility.talkback.preference.ItemOrder;
 import com.google.android.accessibility.talkback.UserInterface.UserInputEventListener;
@@ -118,6 +119,7 @@ import com.google.android.accessibility.talkback.selector.SelectorController.Set
 import com.google.android.accessibility.talkback.speech.VoiceProfileNames;
 import com.google.android.accessibility.talkback.translation.TranslationSettings;
 import com.google.android.accessibility.talkback.utils.VerbosityPreferences;
+import com.google.android.accessibility.utils.ClipboardHistory;
 import com.google.android.accessibility.utils.FeatureSupport;
 import com.google.android.accessibility.utils.FormFactorUtils;
 import com.google.android.accessibility.utils.Performance.EventId;
@@ -128,6 +130,7 @@ import com.google.android.accessibility.utils.WebInterfaceUtils;
 import com.google.android.accessibility.utils.input.CursorGranularity;
 import com.google.android.accessibility.utils.input.TextEventFilter.TypingInput;
 import com.google.android.accessibility.utils.monitor.CollectionState;
+import com.google.android.accessibility.utils.monitor.ScreenMonitor;
 import com.google.android.accessibility.utils.output.FailoverTextToSpeech;
 import com.google.android.accessibility.utils.output.FeedbackItem;
 import com.google.android.accessibility.utils.output.SessionEqualizer;
@@ -180,6 +183,8 @@ public class SelectorController implements UserInputEventListener {
   // The address or number that the reading control last said, which double-tap opens, calls or
   // copies until focus moves.
   private TextEntityMenu.@Nullable Entity chosenTextEntity;
+  // The Clipboard history reading control, in edit boxes.
+  private final ClipboardHistorySetting clipboardHistorySetting;
 
   /** Audial feedback announce types. */
   public enum AnnounceType {
@@ -314,6 +319,10 @@ public class SelectorController implements UserInputEventListener {
         R.string.pref_selector_text_entities_key,
         R.string.selector_text_entities,
         R.bool.pref_selector_text_entities_default),
+    CLIPBOARD_HISTORY(
+        R.string.pref_selector_clipboard_history_key,
+        R.string.selector_clipboard_history,
+        R.bool.pref_selector_clipboard_history_default),
     ACTIONS(
         R.string.pref_selector_actions_key,
         R.string.selector_actions,
@@ -751,6 +760,7 @@ public class SelectorController implements UserInputEventListener {
           Setting.GRANULARITY_TYPO,
           Setting.ACTIONS,
           Setting.TEXT_ENTITIES,
+          Setting.CLIPBOARD_HISTORY,
           // Puts table navigation granularities on top of the selector.
           Setting.GRANULARITY_ROW_COLUMN,
           Setting.GRANULARITY_ROW,
@@ -949,6 +959,7 @@ public class SelectorController implements UserInputEventListener {
       hiddenSettingsBuilder.add(Setting.LIVE_RECOGNITION);
       hiddenSettingsBuilder.add(Setting.AI_ACTIONS);
       hiddenSettingsBuilder.add(Setting.TEXT_ENTITIES);
+      hiddenSettingsBuilder.add(Setting.CLIPBOARD_HISTORY);
     }
     // Hide SEARCH in selector.
     if (!FeatureFlagReader.enableScreenSearchNavigation(context)
@@ -974,6 +985,8 @@ public class SelectorController implements UserInputEventListener {
     contextualSettingsBuilder.add(new AdjustableWidgetSetting());
     contextualSettingsBuilder.add(new ActionsSetting(nodeMenuCreator, accessibilityFocusMonitor));
     contextualSettingsBuilder.add(new TypoGranularity(accessibilityFocusMonitor));
+    clipboardHistorySetting = new ClipboardHistorySetting(accessibilityFocusMonitor);
+    contextualSettingsBuilder.add(clipboardHistorySetting);
     contextualSettings = contextualSettingsBuilder.build();
 
     resetActionMenuToDefault();
@@ -1284,6 +1297,11 @@ public class SelectorController implements UserInputEventListener {
         actionDescription = context.getString(R.string.title_text_entities);
         hint = context.getString(R.string.text_entities_hint);
       }
+      case CLIPBOARD_HISTORY -> {
+        clipboardHistorySetting.reset();
+        actionDescription = context.getString(R.string.title_clipboard_history);
+        hint = context.getString(R.string.clipboard_history_hint);
+      }
       case ACTIONS -> {
         // Reset currentActionId to the default action.
         resetActionMenuToDefault();
@@ -1561,6 +1579,7 @@ public class SelectorController implements UserInputEventListener {
       requestServiceHandlesDoubleTap(EVENT_ID_UNTRACKED, false);
     }
     chosenTextEntity = null;
+    clipboardHistorySetting.reset();
     // Reset currentActionId to the default action.
     resetActionMenuToDefault();
 
@@ -1749,6 +1768,7 @@ public class SelectorController implements UserInputEventListener {
     cancelPageScroll();
     lastFocusedNode = null;
     chosenTextEntity = null;
+    clipboardHistorySetting.reset();
   }
 
   /** Selects the previous or next setting. For selecting setting via gesture. */
@@ -2201,6 +2221,12 @@ public class SelectorController implements UserInputEventListener {
         return FeatureSupport.doesServiceHandleDoubleTap()
             && !TextEntityMenu.included(context).isEmpty();
       }
+      case CLIPBOARD_HISTORY -> {
+        // The history can hold private text.
+        return FeatureSupport.doesServiceHandleDoubleTap()
+            && !ScreenMonitor.isDeviceLocked(context)
+            && clipboardHistorySetting.isNodeSupportSetting(context, node);
+      }
       case ACTIONS -> {
         Optional<ContextualSetting> actions = findContextualSetting(ACTIONS);
         if (actions.isEmpty()) {
@@ -2568,6 +2594,10 @@ public class SelectorController implements UserInputEventListener {
         changeTextEntity(eventId, isNext);
         return;
       }
+      case CLIPBOARD_HISTORY -> {
+        changeClipboardEntry(eventId, isNext);
+        return;
+      }
       case SPEECH_RATE -> {
         // TODO: Increase speech rate when swipe-up is assigned to the selected setting's
         // previous action, which will be the default assignment.
@@ -2822,7 +2852,45 @@ public class SelectorController implements UserInputEventListener {
       TextEntityMenu.Entity entity = chosenTextEntity;
       return entity != null && textEntityMenu.choose(context, entity);
     }
+    if (setting == Setting.CLIPBOARD_HISTORY) {
+      return pasteClipboardEntry();
+    }
     return false;
+  }
+
+  /**
+   * Says the next or previous text of the clipboard history, newest first, which double-tap then
+   * pastes into the edit box.
+   */
+  private void changeClipboardEntry(EventId eventId, boolean isNext) {
+    List<String> entries =
+        ScreenMonitor.isDeviceLocked(context) ? List.of() : ClipboardHistory.entries(context);
+    @Nullable String text = clipboardHistorySetting.step(entries, isNext);
+    if (text == null) {
+      doubleTapArmed = false;
+      requestServiceHandlesDoubleTap(eventId, false);
+      announceSetting(eventId, context.getString(R.string.clipboard_history_empty), null);
+      return;
+    }
+    doubleTapArmed = true;
+    requestServiceHandlesDoubleTap(eventId, true);
+    announceSetting(
+        eventId,
+        ClipboardHistoryOverlay.shortened(text),
+        context.getString(R.string.clipboard_history_hint));
+  }
+
+  /** Pastes the clipboard history's text said last into the edit box with focus. */
+  private boolean pasteClipboardEntry() {
+    @Nullable String text = clipboardHistorySetting.getChosen();
+    @Nullable AccessibilityNodeInfoCompat editBox = clipboardHistorySetting.editBox(null);
+    if (text == null
+        || editBox == null
+        || !(context instanceof AccessibilityService service)
+        || ScreenMonitor.isDeviceLocked(context)) {
+      return false;
+    }
+    return ClipboardHistoryOverlay.pasteEntry(service, editBox.unwrap(), text);
   }
 
   /**
