@@ -21,6 +21,7 @@ import androidx.annotation.IntDef;
 import androidx.annotation.VisibleForTesting;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.utils.Role;
+import com.google.android.accessibility.utils.WebInterfaceUtils;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.util.ArrayList;
@@ -242,6 +243,14 @@ final class WebFocusRecovery {
       webView = node;
       if (walk == WALK_FROM_SCROLLED) {
         scrolledInWebView = true;
+        walking = null;
+        return;
+      }
+      if (scrolledHoldsFocus
+          && WebScrollFocus.isWebContent(scrolled)
+          && !WebInterfaceUtils.supportsWebActions(node)) {
+        // The web source is already on this path. Native ancestors above its WebView
+        // cannot change the search; keep reading them only for a native scroll source.
         walking = null;
         return;
       }

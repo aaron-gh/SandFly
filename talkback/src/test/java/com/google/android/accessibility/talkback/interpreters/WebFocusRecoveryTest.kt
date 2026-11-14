@@ -44,6 +44,7 @@ class WebFocusRecoveryTest {
   ) : AccessibilityNodeInfoCompat(AccessibilityNodeInfo.obtain()) {
     val nodes = children.toList()
     var parentNode: Node? = null
+    var parentReads = 0
 
     init {
       setBoundsInScreen(bounds)
@@ -70,6 +71,7 @@ class WebFocusRecoveryTest {
 
     override fun getParent(): AccessibilityNodeInfoCompat? {
       reads++
+      parentReads++
       return parentNode
     }
 
@@ -115,6 +117,57 @@ class WebFocusRecoveryTest {
 
     assertEquals(WebFocusRecovery.FOUND, recovery.outcome())
     assertSame(firstInView, recovery.item())
+  }
+
+  @Test
+  fun aKnownWebScrollNeedsNoAncestorsAboveItsNativeWebView() {
+    for (scrollTheHost in listOf(false, true)) {
+      val focus = above("Burger")
+      val firstInView = item(300, 500, "Fries")
+      val document = Node(viewport, null, true, true, focus, firstInView)
+      val host = Node(viewport, null, true, false, document)
+      val container = Node(viewport, null, false, false, host)
+      Node(viewport, null, false, false, container)
+      val scrolled = if (scrollTheHost) host else document
+      val recovery = WebFocusRecovery(focus, null, scrolled, false, true, null, false)
+
+      run(recovery)
+
+      assertEquals(WebFocusRecovery.FOUND, recovery.outcome())
+      assertSame(firstInView, recovery.item())
+      assertEquals(0, container.parentReads)
+    }
+  }
+
+  @Test
+  fun aBackwardWebScrollNeedsNoAncestorsAboveItsNativeWebView() {
+    val lastInView = item(1500, 1900, "Fries")
+    val focus = Node(Rect(0, 2100, 1000, 2100), text = "Burger")
+    val document = Node(viewport, null, true, true, lastInView, focus)
+    val host = Node(viewport, null, true, false, document)
+    val container = Node(viewport, null, false, false, host)
+    val recovery = WebFocusRecovery(focus, null, document, false, false, null, false)
+
+    run(recovery)
+
+    assertSame(lastInView, recovery.item())
+    assertEquals(0, container.parentReads)
+  }
+
+  @Test
+  fun aNativeContainerScrollingTheWebViewStillChecksItsAncestors() {
+    val focus = above("Burger")
+    val firstInView = item(300, 500, "Fries")
+    val document = Node(viewport, null, true, true, focus, firstInView)
+    val host = Node(viewport, null, true, false, document)
+    val container = Node(viewport, null, false, false, host)
+    val recovery = WebFocusRecovery(focus, null, container, false, true, null, false)
+
+    run(recovery)
+
+    assertEquals(WebFocusRecovery.FOUND, recovery.outcome())
+    assertSame(firstInView, recovery.item())
+    assertTrue(container.parentReads > 0)
   }
 
   @Test
