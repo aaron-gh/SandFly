@@ -27,6 +27,7 @@ import org.robolectric.Shadows.shadowOf
 import org.robolectric.annotation.Config
 import org.robolectric.util.ReflectionHelpers
 import org.robolectric.util.ReflectionHelpers.ClassParameter
+import java.util.concurrent.FutureTask
 
 /** The page scrolling a newly focused card sideways must not replay the old vertical scroll. */
 @RunWith(RobolectricTestRunner::class)
@@ -51,7 +52,8 @@ class ManualScrollRecoveryCompletionTest {
       TraversalStrategy.SEARCH_FOCUS_FORWARD, true)
   }
 
-  private fun checkCompletion(outcome: Int, focusSucceeded: Boolean, shouldRetry: Boolean) {
+  private fun checkCompletion(outcome: Int, focusSucceeded: Boolean, shouldRetry: Boolean,
+    waitingRead: Boolean = false) {
     FormFactorUtils.initialize(context)
     val source = node(false)
     val focus = AccessibilityNodeInfoCompat.wrap(node(false))
@@ -89,7 +91,18 @@ class ManualScrollRecoveryCompletionTest {
     ReflectionHelpers.setField(interpreter, "webFocusRecovery", recovery)
     ReflectionHelpers.setField(interpreter, "webFocusRecoveryScroll", original)
     ReflectionHelpers.setField(interpreter, "webFocusRecoveryFocusTime", 1L)
-    ReflectionHelpers.setField(interpreter, "webFocusRecoveryStartTime", SystemClock.uptimeMillis())
+    ReflectionHelpers.setField(interpreter, "webFocusRecoveryStartTime",
+      SystemClock.uptimeMillis() - if (waitingRead) 501 else 0)
+    if (waitingRead) {
+      val work = FutureTask<Boolean> { true }
+      ReflectionHelpers.setField(interpreter, "webFocusRecoveryWork", work)
+      ReflectionHelpers.callInstanceMethod<Unit>(interpreter, "runWebFocusRecovery",
+        ClassParameter.from(Boolean::class.javaPrimitiveType, true))
+      assertSame(recovery, ReflectionHelpers.getField(interpreter, "webFocusRecovery"))
+      assertFalse(work.isCancelled)
+      assertEquals(0, focusCalls)
+      work.run()
+    }
     ReflectionHelpers.callInstanceMethod<Unit>(interpreter, "runWebFocusRecovery",
       ClassParameter.from(Boolean::class.javaPrimitiveType, true))
     assertEquals(if (outcome == WebFocusRecovery.FOUND) 1 else 0, focusCalls)
@@ -111,6 +124,10 @@ class ManualScrollRecoveryCompletionTest {
 
   @Test fun scrollingTheRecoveredCardSidewaysDoesNotRecoverTheSameVerticalScrollAgain() =
     checkCompletion(WebFocusRecovery.FOUND, focusSucceeded = true, shouldRetry = false)
+
+  @Test fun anOutstandingReadAtTheDeadlineDoesNotDiscardThePartialResult() =
+    checkCompletion(WebFocusRecovery.FOUND, focusSucceeded = true, shouldRetry = false,
+      waitingRead = true)
 
   @Test fun aFailedFocusStillAllowsTheStripToRequestRecovery() =
     checkCompletion(WebFocusRecovery.FOUND, focusSucceeded = false, shouldRetry = true)

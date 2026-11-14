@@ -575,12 +575,9 @@ public class AccessibilityFocusInterpreter
     Future<Boolean> work = webFocusRecoveryWork;
     if (work != null) {
       if (yieldToInput && !work.isDone()) {
-        if (SystemClock.uptimeMillis() - webFocusRecoveryStartTime
-            >= WEB_FOCUS_RECOVERY_TIME_LIMIT_MS) {
-          LogUtils.w(TAG, "Stopped waiting for the web scroll recovery at its time limit");
-          cancelWebFocusRecovery();
-          return;
-        }
+        // The worker stops starting reads at the deadline. As with the serial path, an
+        // already outstanding IPC may finish later and supply the partial item. Keep
+        // polling without blocking input; new focus or another scroll still cancels it.
         handler.postDelayed(continueWebFocusRecovery, WEB_FOCUS_RECOVERY_SLICE_MS);
         return;
       }
