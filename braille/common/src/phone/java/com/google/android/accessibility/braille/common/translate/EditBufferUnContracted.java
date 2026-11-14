@@ -34,6 +34,7 @@ import com.google.android.accessibility.braille.interfaces.BrailleCharacter;
 import com.google.android.accessibility.braille.interfaces.BrailleDisplayForBrailleIme.ResultForDisplay.HoldingsInfo;
 import com.google.android.accessibility.braille.interfaces.BrailleWord;
 import com.google.android.accessibility.braille.translate.BrailleTranslator;
+import com.google.android.accessibility.utils.input.HiddenFieldEcho;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.nio.ByteBuffer;
 import java.util.Optional;
@@ -75,6 +76,8 @@ public class EditBufferUnContracted implements EditBuffer {
   protected int lastCommitIndexOfHoldings = NO_CURSOR;
   /** Whether the word in holdings starts a sentence and so gets a capital first letter. */
   private boolean capitalizeHoldings;
+  private boolean numberSignAddedAutomatically;
+  private final StringBuilder typedIntoFieldThatHidesText = new StringBuilder();
 
   protected EditBufferUnContracted(
       Context context, BrailleTranslator ueb1Translator, TalkBackSpeaker talkBack) {
@@ -89,6 +92,7 @@ public class EditBufferUnContracted implements EditBuffer {
     String result = "";
     if (holdings.isEmpty()) {
       capitalizeHoldings = SentenceCapitalization.shouldCapitalize(context, imeConnection);
+      startWordInNumbersInNumberField(imeConnection, brailleCharacter);
     }
     String previousTranslation =
         SentenceCapitalization.apply(capitalizeHoldings, translator.translateToPrint(holdings));
@@ -107,6 +111,7 @@ public class EditBufferUnContracted implements EditBuffer {
         imeConnection.inputConnection.setComposingText(currentTranslation, 1);
       } else {
         imeConnection.inputConnection.commitText(result, 1);
+        speakIfFieldHidesTypedText(imeConnection, result);
       }
       lastCommitIndexOfHoldings = holdings.size();
     }
@@ -123,6 +128,37 @@ public class EditBufferUnContracted implements EditBuffer {
       result = textToSpeak;
     }
     return result;
+  }
+
+  private void startWordInNumbersInNumberField(
+      ImeConnection imeConnection, BrailleCharacter firstCharacter) {
+    BrailleCharacter numberSign = getNumeric();
+    numberSignAddedAutomatically =
+        numberSign != null
+            && isNumberField(imeConnection)
+            && !firstCharacter.equals(numberSign);
+    if (numberSignAddedAutomatically) {
+      holdings.append(numberSign);
+    }
+  }
+
+  private static boolean isNumberField(ImeConnection imeConnection) {
+    return imeConnection.editorInfo != null
+        && !BrailleCommonUtils.isTextField(imeConnection.editorInfo);
+  }
+
+  private static boolean isSpokenNumberField(ImeConnection imeConnection) {
+    return isNumberField(imeConnection)
+        && !BrailleCommonUtils.isPasswordField(imeConnection.editorInfo);
+  }
+
+  private void speakIfFieldHidesTypedText(ImeConnection imeConnection, String committed) {
+    if (!fieldHidesText(imeConnection)) {
+      typedIntoFieldThatHidesText.setLength(0);
+      return;
+    }
+    typedIntoFieldThatHidesText.append(committed);
+    talkBack.speak(committed, TalkBackSpeaker.AnnounceType.INTERRUPT);
   }
 
   /** Provides (optionally) an audial announcement for a just-appended {@code brailleCharacter}. */
@@ -154,7 +190,41 @@ public class EditBufferUnContracted implements EditBuffer {
 
   @Override
   public void deleteCharacterBackward(ImeConnection imeConnection) {
+    if (typedIntoFieldThatHidesText.length() == 0
+        && deletionReachesField()
+        && fieldHidesText(imeConnection)) {
+      speakDeletedCharacterFromFieldDescription(imeConnection.editorInfo.packageName);
+    }
     deleteCharacter(imeConnection.inputConnection, KeyEvent.KEYCODE_DEL);
+  }
+
+  private boolean deletionReachesField() {
+    return holdings.isEmpty() || (numberSignAddedAutomatically && holdings.size() == 1);
+  }
+
+  private static boolean fieldHidesText(ImeConnection imeConnection) {
+    if (!isSpokenNumberField(imeConnection)) {
+      return false;
+    }
+    InputConnection field = imeConnection.inputConnection;
+    return TextUtils.isEmpty(field.getTextBeforeCursor(1, 0))
+        && TextUtils.isEmpty(field.getTextAfterCursor(1, 0));
+  }
+
+  private void speakDeletedCharacterFromFieldDescription(String fieldPackage) {
+    HiddenFieldEcho.expect(
+        fieldPackage,
+        new HiddenFieldEcho.Listener() {
+          @Override
+          public void onDeleted(String deleted) {
+            EditBufferUtils.speakDelete(context, talkBack, deleted);
+          }
+
+          @Override
+          public void onChanged(CharSequence now) {
+            talkBack.speak(now, TalkBackSpeaker.AnnounceType.INTERRUPT);
+          }
+        });
   }
 
   @Override
@@ -257,6 +327,7 @@ public class EditBufferUnContracted implements EditBuffer {
   }
 
   private void deleteCharacter(InputConnection inputConnection, int keyCode) {
+    dropAutomaticNumberSignWithLastDigit();
     // Delete a single terminal prefix from holdings, if any. In that case, stop.
     if (holdingsEndsWithPrefix()) {
       BrailleCharacter brailleCharacter = holdings.remove(holdings.size() - 1);
@@ -272,8 +343,28 @@ public class EditBufferUnContracted implements EditBuffer {
         holdings.remove(holdings.size() - 1);
       }
       BrailleCommonUtils.performKeyAction(inputConnection, keyCode);
+      if (keyCode == KeyEvent.KEYCODE_DEL) {
+        speakLastCharacterTypedIntoFieldThatHidesText();
+      }
     }
     lastCommitIndexOfHoldings = holdings.size();
+  }
+
+  private void dropAutomaticNumberSignWithLastDigit() {
+    if (numberSignAddedAutomatically && holdings.size() <= 1) {
+      holdings.clear();
+      numberSignAddedAutomatically = false;
+    }
+  }
+
+  private void speakLastCharacterTypedIntoFieldThatHidesText() {
+    int length = typedIntoFieldThatHidesText.length();
+    if (length == 0) {
+      return;
+    }
+    String deleted = typedIntoFieldThatHidesText.substring(length - 1);
+    typedIntoFieldThatHidesText.setLength(length - 1);
+    EditBufferUtils.speakDelete(context, talkBack, deleted);
   }
 
   /**

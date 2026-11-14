@@ -109,7 +109,6 @@ import com.google.android.accessibility.braille.brailledisplay.BrailleDisplay;
 import com.google.android.accessibility.braille.interfaces.BrailleImeForTalkBack;
 import com.google.android.accessibility.braille.interfaces.ScreenReaderActionPerformer;
 import com.google.android.accessibility.braille.interfaces.TalkBackForBrailleCommon;
-import com.google.android.accessibility.braille.interfaces.TalkBackForBrailleIme;
 import com.google.android.accessibility.braille.interfaces.TalkBackForBrailleIme.BrailleImeForTalkBackProvider;
 import com.google.android.accessibility.brailleime.BrailleIme;
 import com.google.android.accessibility.material.flags.MaterialFlags;
@@ -345,6 +344,7 @@ import com.google.android.accessibility.utils.gestures.GestureManifold.TapToTouc
 import com.google.android.accessibility.utils.gestures.MultiTap.MultiTapAnalyticsEvent;
 import com.google.android.accessibility.utils.input.CursorGranularity;
 import com.google.android.accessibility.utils.input.HeadsUpNotificationEventInterpreter;
+import com.google.android.accessibility.utils.input.HiddenFieldEcho;
 import com.google.android.accessibility.utils.input.NonmodalAlertEventInterpreter;
 import com.google.android.accessibility.utils.input.ScrollEventInterpreter;
 import com.google.android.accessibility.utils.input.SelectionEventInterpreter;
@@ -878,6 +878,7 @@ public class TalkBackService extends AccessibilityServiceCompat
 
   private BrailleDisplay brailleDisplay;
   private BrailleImeForTalkBackProvider brailleImeForTalkBackProvider;
+  private @Nullable TalkBackForBrailleImeImpl talkBackForBrailleIme;
 
   private GestureShortcutMapping gestureShortcutMapping;
   private NodeMenuRuleProcessor nodeMenuRuleProcessor;
@@ -1257,6 +1258,9 @@ public class TalkBackService extends AccessibilityServiceCompat
         && event.getEventType() != AccessibilityEvent.TYPE_TOUCH_INTERACTION_END) {
       return;
     }
+    if (talkBackForBrailleIme != null && talkBackForBrailleIme.isTouchOfOverlayKeyboard(event)) {
+      return;
+    }
     // The quick settings panel is using the system's quick settings for the user, who doesn't need
     // to hear them open and close. Notifications that arrive meanwhile are still read.
     if (SystemPanelClicker.shouldDrop(event.getPackageName())
@@ -1280,6 +1284,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     if (event.getEventType() == AccessibilityEvent.TYPE_VIEW_SCROLLED) {
       FocusProcessorForLogicalNavigation.onScrollEventReceived(event);
     }
+    HiddenFieldEcho.onAccessibilityEvent(event);
     ScrollAhead.onAccessibilityEvent(event);
     if (event.getEventType() == AccessibilityEvent.TYPE_TOUCH_INTERACTION_START) {
       ScrollEventInterpreter.onTouchInteractionStart();
@@ -3403,7 +3408,7 @@ public class TalkBackService extends AccessibilityServiceCompat
 
     HandwritingKeyboardHost.setFeedback(pipeline.getFeedbackReturner());
     TutorialHooks.setFeedback(pipeline.getFeedbackReturner());
-    TalkBackForBrailleIme talkBackForBrailleIme =
+    talkBackForBrailleIme =
         new TalkBackForBrailleImeImpl(
             this,
             pipeline.getFeedbackReturner(),
