@@ -68,6 +68,9 @@ object ShizukuShell {
    */
   @JvmStatic fun isAvailable(context: Context): Boolean = ShellAccess.isAvailable(context)
 
+  /** Whether SandFly runs commands through su instead of Shizuku (Use root instead of Shizuku). */
+  @JvmStatic fun usesRoot(): Boolean = ShellAccess.usesRoot()
+
   /** Whether Shizuku runs and allows SandFly, so that commands run without asking the user. */
   fun isAllowed(): Boolean = ShizukuGrants.isReady() && ShizukuGrants.hasShizukuPermission()
 

@@ -388,6 +388,7 @@ object SettingsIndex {
     hideIf(true, R.string.pref_survey_setting_entry_point_key)
     hideIf(!BrailleFragment.isSupported(context), "pref_braille_screen")
     hideIf(Distribution.IS_PLAY, "pref_updates_screen")
+    hideIf(Distribution.IS_PLAY, "pref_shizuku_root_screen")
     hideIf(!ImageCaptioner.supportsImageCaption(context), R.string.pref_auto_image_captioning_key)
     // During setup.
     hideIf(!SettingsUtils.allowLinksOutOfSettings(context), R.string.pref_manage_labels_key)

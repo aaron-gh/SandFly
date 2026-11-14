@@ -24,6 +24,7 @@ import com.google.android.accessibility.talkback.Pipeline
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.gesture.OpenAppActions
 import com.google.android.accessibility.talkback.overview.RecentTasks
+import com.google.android.accessibility.talkback.shizuku.ShizukuShell
 import com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED
 import com.google.android.accessibility.utils.output.FeedbackItem
 import com.google.android.accessibility.utils.output.SpeechController
@@ -217,7 +218,11 @@ class AppNameSearch(
         )
       }
       if (!RecentTasks.isAvailable(service)) {
-        say(service.getString(R.string.split_screen_needs_shizuku))
+        say(
+          service.getString(
+            if (ShizukuShell.usesRoot()) R.string.no_root_access else R.string.split_screen_needs_shizuku
+          )
+        )
         return
       }
       RecentTasks.openBeside(service, app) { worked ->
