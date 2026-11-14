@@ -560,8 +560,8 @@ public class AccessibilityFocusInterpreter
       return;
     }
     switch (recovery.outcome()) {
-      case WebFocusRecovery.FOUND ->
-          pipelineInterpretations.input(
+      case WebFocusRecovery.FOUND -> {
+        boolean focused = pipelineInterpretations.input(
               interpretation.eventId(),
               interpretation.event(),
               ManualScroll.builder()
@@ -569,6 +569,13 @@ public class AccessibilityFocusInterpreter
                   .setScreenState(screenState.getStableScreenState())
                   .setWebItemInView(recovery.item())
                   .build());
+        if (focused && webScroll == interpretation) {
+          // Focusing the item may make its carousel scroll it sideways into view. That is
+          // not another reason to recover this already-handled vertical scroll.
+          webScroll = null;
+          pageScrolledFocusStrip = false;
+        }
+      }
       case WebFocusRecovery.NOTHING_IN_VIEW -> {
         LogUtils.d(TAG, "Web focus is out of view, and no item is in view");
         AccessibilityNodeInfoCompat focus =

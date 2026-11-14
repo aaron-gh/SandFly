@@ -1,0 +1,120 @@
+/* Copyright 2026 SandFly contributors. Licensed under the Apache License, Version 2.0. */
+package com.google.android.accessibility.talkback.interpreters
+
+import android.os.SystemClock
+import android.view.View
+import android.view.accessibility.AccessibilityEvent
+import android.view.accessibility.AccessibilityNodeInfo
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
+import com.google.android.accessibility.talkback.ActorState
+import com.google.android.accessibility.talkback.ActorStateWritable
+import com.google.android.accessibility.talkback.Pipeline
+import com.google.android.accessibility.talkback.focusmanagement.interpreter.ScreenStateMonitor
+import com.google.android.accessibility.talkback.monitor.InputMethodMonitor
+import com.google.android.accessibility.talkback.focusmanagement.record.AccessibilityFocusActionHistory
+import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionInfo
+import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionRecord
+import com.google.android.accessibility.talkback.interpreters.ManualScrollInterpreter.ManualScrollInterpretation
+import com.google.android.accessibility.utils.FormFactorUtils
+import com.google.android.accessibility.utils.monitor.TouchMonitor
+import com.google.android.accessibility.utils.traversal.TraversalStrategy
+import org.junit.Assert.*
+import org.junit.Test
+import org.junit.runner.RunWith
+import org.robolectric.RobolectricTestRunner
+import org.robolectric.RuntimeEnvironment
+import org.robolectric.Shadows.shadowOf
+import org.robolectric.annotation.Config
+import org.robolectric.util.ReflectionHelpers
+import org.robolectric.util.ReflectionHelpers.ClassParameter
+
+/** The page scrolling a newly focused card sideways must not replay the old vertical scroll. */
+@RunWith(RobolectricTestRunner::class)
+@Config(sdk = [35])
+class ManualScrollRecoveryCompletionTest {
+  private val context = RuntimeEnvironment.getApplication()
+
+  private fun node(sideways: Boolean) = AccessibilityNodeInfo.obtain(View(context)).apply {
+    addAction(AccessibilityNodeInfo.ACTION_NEXT_HTML_ELEMENT)
+    addAction(if (sideways) AccessibilityNodeInfo.AccessibilityAction.ACTION_SCROLL_RIGHT
+              else AccessibilityNodeInfo.AccessibilityAction.ACTION_SCROLL_DOWN)
+    ReflectionHelpers.callInstanceMethod<Unit>(this, "setSealed",
+      ClassParameter.from(Boolean::class.javaPrimitiveType, true))
+  }
+
+  private fun scroll(source: AccessibilityNodeInfo, time: Long): ManualScrollInterpretation {
+    val event = AccessibilityEvent.obtain(AccessibilityEvent.TYPE_VIEW_SCROLLED).apply {
+      eventTime = time
+      shadowOf(this).setSourceNode(source)
+    }
+    return ManualScrollInterpretation.create(null, event,
+      TraversalStrategy.SEARCH_FOCUS_FORWARD, true)
+  }
+
+  private fun checkCompletion(outcome: Int, focusSucceeded: Boolean, shouldRetry: Boolean) {
+    FormFactorUtils.initialize(context)
+    val source = node(false)
+    val focus = AccessibilityNodeInfoCompat.wrap(node(false))
+    val history = AccessibilityFocusActionHistory(context)
+    val info = FocusActionInfo.builder().setSourceAction(FocusActionInfo.MANUAL_SCROLL).build()
+    val record = FocusActionRecord(focus, info, 1)
+    ReflectionHelpers.getField<java.util.ArrayDeque<FocusActionRecord>>(history,
+      "focusActionRecordList").add(record)
+    val actorState = ActorState(ActorStateWritable(null, null, null, null, history.reader,
+      null, null, null, null, null, null, null, null, null))
+    val touch = TouchMonitor()
+    touch.onAccessibilityEvent(AccessibilityEvent.obtain(
+      AccessibilityEvent.TYPE_TOUCH_INTERACTION_START).apply { eventTime = 10 })
+    touch.onAccessibilityEvent(AccessibilityEvent.obtain(
+      AccessibilityEvent.TYPE_TOUCH_INTERACTION_END).apply { eventTime = 20 })
+    val monitor = ReflectionHelpers.callConstructor(ScreenStateMonitor::class.java,
+      ClassParameter.from(android.accessibilityservice.AccessibilityService::class.java, null),
+      ClassParameter.from(InputMethodMonitor::class.java, null))
+    ReflectionHelpers.setField(monitor, "areMainWindowsStable", true)
+    val interpreter = AccessibilityFocusInterpreter(context, null, monitor.state, touch, null)
+    interpreter.setActorState(actorState)
+    var focusCalls = 0
+    interpreter.setPipeline(Pipeline.InterpretationReceiver { _, _, _, _ ->
+      focusCalls++; focusSucceeded
+    })
+    interpreter.onManualWebScroll(scroll(source, 20))
+    val original = ReflectionHelpers.getField<ManualScrollInterpretation>(interpreter,
+      "pendingManualScroll")
+    assertNotNull(original)
+    ReflectionHelpers.setField(interpreter, "pendingManualScroll", null)
+    val recovery = WebFocusRecovery(focus, null, AccessibilityNodeInfoCompat.wrap(source),
+      true, true, null, false)
+    ReflectionHelpers.setField(recovery, "outcome", outcome)
+    ReflectionHelpers.setField(recovery, "item", focus)
+    ReflectionHelpers.setField(interpreter, "webFocusRecovery", recovery)
+    ReflectionHelpers.setField(interpreter, "webFocusRecoveryScroll", original)
+    ReflectionHelpers.setField(interpreter, "webFocusRecoveryFocusTime", 1L)
+    ReflectionHelpers.setField(interpreter, "webFocusRecoveryStartTime", SystemClock.uptimeMillis())
+    ReflectionHelpers.callInstanceMethod<Unit>(interpreter, "runWebFocusRecovery",
+      ClassParameter.from(Boolean::class.javaPrimitiveType, true))
+    assertEquals(if (outcome == WebFocusRecovery.FOUND) 1 else 0, focusCalls)
+
+    // Chrome can scroll a horizontal carousel to show the card SandFly just focused.
+    // It is not a new user scroll, and must not send focus to a fixed page header.
+    interpreter.onManualScroll(scroll(node(true), 30))
+    val repeated = ReflectionHelpers.getField<ManualScrollInterpretation?>(interpreter,
+      "pendingManualScroll")
+    assertEquals(shouldRetry, repeated != null)
+
+    // A real continuation of the user's vertical scroll must still be handled.
+    interpreter.onManualWebScroll(scroll(source, 40))
+    assertNotNull(ReflectionHelpers.getField<ManualScrollInterpretation?>(interpreter,
+      "pendingManualScroll"))
+    ReflectionHelpers.getField<android.os.Handler>(interpreter, "handler")
+      .removeCallbacksAndMessages(null)
+  }
+
+  @Test fun scrollingTheRecoveredCardSidewaysDoesNotRecoverTheSameVerticalScrollAgain() =
+    checkCompletion(WebFocusRecovery.FOUND, focusSucceeded = true, shouldRetry = false)
+
+  @Test fun aFailedFocusStillAllowsTheStripToRequestRecovery() =
+    checkCompletion(WebFocusRecovery.FOUND, focusSucceeded = false, shouldRetry = true)
+
+  @Test fun aUserSelectedTabStillFollowsThePageScrollingItSideways() =
+    checkCompletion(WebFocusRecovery.IN_VIEW, focusSucceeded = true, shouldRetry = true)
+}
