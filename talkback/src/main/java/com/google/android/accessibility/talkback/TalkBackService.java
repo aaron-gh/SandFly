@@ -1306,10 +1306,17 @@ public class TalkBackService extends AccessibilityServiceCompat
       // The app in front decides which app's gestures, keys and dictionary entries apply. The
       // keyboard, the volume panel and the notification shade send this event too, and closing
       // them sends none for the app under them.
-      if (isAppWindowEvent(event)) {
+      int windowType = AccessibilityEventUtils.getWindowType(event);
+      if (isAppWindowType(windowType, lastWindowPackage)) {
         SpeechDictionary.onWindowShown(lastWindowPackage);
         AppGestures.onWindowShown(lastWindowPackage);
-        SettingsProfiles.onAppShown(lastWindowPackage);
+        // An event from SandFly whose window can't be told may be one of its overlays; the window
+        // list decides on the windows change that follows.
+        SettingsProfiles.onAppShown(
+            lastWindowPackage,
+            windowType == AccessibilityWindowInfo.TYPE_ACCESSIBILITY_OVERLAY
+                || (windowType == AccessibilityWindowInfoUtils.WINDOW_TYPE_NONE
+                    && TextUtils.equals(lastWindowPackage, getPackageName())));
         ClipboardHistoryOverlay.onAppWindowShown(lastWindowPackage);
       }
     } else if (eventType == AccessibilityEvent.TYPE_WINDOWS_CHANGED && changesFrontWindow(event)) {
@@ -1319,7 +1326,7 @@ public class TalkBackService extends AccessibilityServiceCompat
       if (frontApp != null) {
         SpeechDictionary.onWindowShown(frontApp);
         AppGestures.onWindowShown(frontApp);
-        SettingsProfiles.onAppShown(frontApp);
+        SettingsProfiles.onAppShown(frontApp, frontAppIsOverlay);
         ClipboardHistoryOverlay.onAppWindowShown(frontApp);
       }
     }
@@ -5851,12 +5858,17 @@ public class TalkBackService extends AccessibilityServiceCompat
    * count as not an app's.
    */
   private static boolean isAppWindowEvent(AccessibilityEvent event) {
-    switch (AccessibilityEventUtils.getWindowType(event)) {
+    return isAppWindowType(AccessibilityEventUtils.getWindowType(event), event.getPackageName());
+  }
+
+  /** Whether a window of [windowType] from [packageName] counts as an app's window. */
+  private static boolean isAppWindowType(int windowType, @Nullable CharSequence packageName) {
+    switch (windowType) {
       case AccessibilityWindowInfo.TYPE_APPLICATION:
       case AccessibilityWindowInfo.TYPE_ACCESSIBILITY_OVERLAY:
         return true;
       case AccessibilityWindowInfoUtils.WINDOW_TYPE_NONE:
-        return !"com.android.systemui".contentEquals(String.valueOf(event.getPackageName()));
+        return !"com.android.systemui".contentEquals(String.valueOf(packageName));
       default:
         return false;
     }
@@ -5880,6 +5892,8 @@ public class TalkBackService extends AccessibilityServiceCompat
 
   // The window frontAppPackage last found in front, whose package was then taken.
   private int lastFrontWindowId = -1;
+  // Whether the window frontAppPackage last found in front is one of SandFly's own overlays.
+  private boolean frontAppIsOverlay;
 
   /**
    * The package of the app window in front: the active window if it is an app's or one of
@@ -5923,6 +5937,7 @@ public class TalkBackService extends AccessibilityServiceCompat
       return null;
     }
     lastFrontWindowId = front.getId();
+    frontAppIsOverlay = front.getType() == AccessibilityWindowInfo.TYPE_ACCESSIBILITY_OVERLAY;
     @Nullable AccessibilityNodeInfo root = frontRoot != null ? frontRoot : front.getRoot();
     return root == null ? null : root.getPackageName();
   }

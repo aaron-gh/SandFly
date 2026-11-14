@@ -196,10 +196,14 @@ object SettingsProfiles {
     watchesReading = profiles.any { it.triggers.reading }
   }
 
-  /** Notes the app whose window is shown. */
+  /**
+   * Notes the app whose window is shown. An accessibility [overlay], such as the SandFly menu, is
+   * shown over the app, whose profiles and web and editing state stay.
+   */
   @JvmStatic
   @MainThread
-  fun onAppShown(packageName: CharSequence?) {
+  fun onAppShown(packageName: CharSequence?, overlay: Boolean) {
+    if (overlay) return
     val shown = packageName?.toString().orEmpty()
     if (shown == app) return
     app = shown
