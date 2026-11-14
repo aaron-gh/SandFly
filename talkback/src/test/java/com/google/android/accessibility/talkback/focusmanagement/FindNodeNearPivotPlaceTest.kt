@@ -90,7 +90,7 @@ class FindNodeNearPivotPlaceTest {
 
     val nearest =
         FocusProcessorForLogicalNavigation.findNodeNearPivotPlace(
-            strategy, pivot, TraversalStrategy.SEARCH_FOCUS_BACKWARD)
+            strategy, pivot, TraversalStrategy.SEARCH_FOCUS_BACKWARD, /* rtl= */ false)
 
     val resumed =
         TraversalStrategyUtils.searchFocus(
@@ -109,11 +109,81 @@ class FindNodeNearPivotPlaceTest {
 
     val nearest =
         FocusProcessorForLogicalNavigation.findNodeNearPivotPlace(
-            strategy, pivot, TraversalStrategy.SEARCH_FOCUS_FORWARD)
+            strategy, pivot, TraversalStrategy.SEARCH_FOCUS_FORWARD, /* rtl= */ false)
 
     val resumed =
         TraversalStrategyUtils.searchFocus(
             strategy, nearest, TraversalStrategy.SEARCH_FOCUS_FORWARD, null)
     assertEquals(itemBelow, resumed)
+  }
+
+  /**
+   * A horizontal row (a carousel, or a grid row) has siblings that share the same top/bottom, so
+   * comparing bounds on the vertical axis alone can't tell which side of the pivot's place they're
+   * on. Rotates the nested-container scenario above by 90 degrees: the pivot's place sits in the
+   * gap between two side-by-side items instead of two stacked ones.
+   */
+  @Test
+  fun backward_ordersRowSiblingsHorizontallyInsteadOfOnlyByVerticalOverlap() {
+    val itemLeft = Node(Rect(0, 0, 100, 200))
+    val itemRight = Node(Rect(300, 0, 400, 200))
+    val row = Node(Rect(0, 0, 400, 200)).add(itemLeft, itemRight)
+    val root = Node(Rect(0, 0, 400, 1000)).add(row)
+    val strategy = OrderedTraversalStrategy(root)
+    // The pivot's place is between itemLeft and itemRight, inside row -- same top/bottom as both,
+    // so only their horizontal position (not just whether their bounds reach the pivot's) tells
+    // them apart.
+    val pivot = pivotAt(Rect(150, 0, 250, 200))
+
+    val nearest =
+        FocusProcessorForLogicalNavigation.findNodeNearPivotPlace(
+            strategy, pivot, TraversalStrategy.SEARCH_FOCUS_BACKWARD, /* rtl= */ false)
+
+    val resumed =
+        TraversalStrategyUtils.searchFocus(
+            strategy, nearest, TraversalStrategy.SEARCH_FOCUS_BACKWARD, null)
+    assertEquals(itemLeft, resumed)
+  }
+
+  @Test
+  fun forward_ordersRowSiblingsHorizontallyInsteadOfOnlyByVerticalOverlap() {
+    val itemLeft = Node(Rect(0, 0, 100, 200))
+    val itemRight = Node(Rect(300, 0, 400, 200))
+    val row = Node(Rect(0, 0, 400, 200)).add(itemLeft, itemRight)
+    val root = Node(Rect(0, 0, 400, 1000)).add(row)
+    val strategy = OrderedTraversalStrategy(root)
+    val pivot = pivotAt(Rect(150, 0, 250, 200))
+
+    val nearest =
+        FocusProcessorForLogicalNavigation.findNodeNearPivotPlace(
+            strategy, pivot, TraversalStrategy.SEARCH_FOCUS_FORWARD, /* rtl= */ false)
+
+    val resumed =
+        TraversalStrategyUtils.searchFocus(
+            strategy, nearest, TraversalStrategy.SEARCH_FOCUS_FORWARD, null)
+    assertEquals(itemRight, resumed)
+  }
+
+  /**
+   * Same row, but in an RTL layout: reading order runs right-to-left, so the item with the
+   * larger X coordinate is the one that comes first.
+   */
+  @Test
+  fun backward_mirrorsRowOrderForRtl() {
+    val itemFirst = Node(Rect(300, 0, 400, 200))
+    val itemSecond = Node(Rect(0, 0, 100, 200))
+    val row = Node(Rect(0, 0, 400, 200)).add(itemFirst, itemSecond)
+    val root = Node(Rect(0, 0, 400, 1000)).add(row)
+    val strategy = OrderedTraversalStrategy(root)
+    val pivot = pivotAt(Rect(150, 0, 250, 200))
+
+    val nearest =
+        FocusProcessorForLogicalNavigation.findNodeNearPivotPlace(
+            strategy, pivot, TraversalStrategy.SEARCH_FOCUS_BACKWARD, /* rtl= */ true)
+
+    val resumed =
+        TraversalStrategyUtils.searchFocus(
+            strategy, nearest, TraversalStrategy.SEARCH_FOCUS_BACKWARD, null)
+    assertEquals(itemFirst, resumed)
   }
 }

@@ -4195,7 +4195,12 @@ public class FocusProcessorForLogicalNavigation {
     AccessibilityNodeInfoCompat pivot = AccessibilityNodeInfoCompat.obtain(track.callback.pivot);
     AccessibilityNodeInfoCompat next =
         searchFocusRecoveringMissingPivot(
-            localTraversalStrategy, list, pivot, sourceAction.searchDirection, nodeFilter);
+            localTraversalStrategy,
+            list,
+            pivot,
+            sourceAction.searchDirection,
+            nodeFilter,
+            WindowUtils.isScreenLayoutRTL(service));
     if (next == null || !AccessibilityNodeInfoUtils.isVisible(next)) {
       LogUtils.d(TAG, "A list item came on screen after %d ms, but nothing to focus yet.", elapsed);
       return false;
@@ -5639,17 +5644,25 @@ public class FocusProcessorForLogicalNavigation {
     // items" to every caller. Recover by resuming from the node nearest where this pivot
     // currently is, read live (it's still valid), within this same local tree -- not a
     // remembered position from elsewhere, which could be stale by several auto-scroll retries.
+    // searchPivot anchors everything computed synchronously below (bounds tracking, the
+    // searchFocus call, the final focus target); focusBeforeScroll itself is left untouched so
+    // the settle-check callbacks deferred further down keep comparing against the node that's
+    // actually accessibility-focused right now, not a resume point that was never focused.
+    AccessibilityNodeInfoCompat searchPivot = focusBeforeScroll;
     if (focusBeforeScroll.refresh()
         && AccessibilityNodeInfoUtils.isVisible(focusBeforeScroll)
         && localTraversalStrategy instanceof OrderedTraversalStrategy orderedLocalStrategy
         && !orderedLocalStrategy.containsNode(focusBeforeScroll)) {
       AccessibilityNodeInfoCompat nearest =
           findNodeNearPivotPlace(
-              orderedLocalStrategy, focusBeforeScroll, sourceAction.searchDirection);
+              orderedLocalStrategy,
+              focusBeforeScroll,
+              sourceAction.searchDirection,
+              WindowUtils.isScreenLayoutRTL(service));
       if (nearest != null) {
         LogUtils.d(
             TAG, "Pivot missing from the local tree after auto-scroll; resuming from its place.");
-        focusBeforeScroll = nearest;
+        searchPivot = nearest;
       } else {
         // The pivot's own place was at the very edge of what this local tree currently has (e.g.
         // the auto-scroll revealed exactly the top/bottom of the content), so there's nothing to
@@ -5670,14 +5683,14 @@ public class FocusProcessorForLogicalNavigation {
     }
 
     Rect previousRect = new Rect();
-    focusBeforeScroll.getBoundsInScreen(previousRect);
+    searchPivot.getBoundsInScreen(previousRect);
     boolean validAccessibilityFocus =
-        focusBeforeScroll.refresh() && AccessibilityNodeInfoUtils.isVisible(focusBeforeScroll);
+        searchPivot.refresh() && AccessibilityNodeInfoUtils.isVisible(searchPivot);
 
     // A focused item that fills the list looks still while the list moves. Searching while it
     // moves at speed finds nothing and reads the list each time, so wait until it slows down.
     if (validAccessibilityFocus && settleChecksLeft > 0 && sourceAction.shouldScroll) {
-      Rect boundsNow = getBoundsAfterScroll(focusBeforeScroll);
+      Rect boundsNow = getBoundsAfterScroll(searchPivot);
       if (previousRect.equals(boundsNow)
           && fillsList(boundsNow, scrolledNode)
           && listStillMoving()) {
@@ -5693,9 +5706,9 @@ public class FocusProcessorForLogicalNavigation {
       // Try to find the next focusable node based on current focus.
       nodeToFocus =
           TraversalStrategyUtils.searchFocus(
-              localTraversalStrategy, focusBeforeScroll, sourceAction.searchDirection, nodeFilter);
+              localTraversalStrategy, searchPivot, sourceAction.searchDirection, nodeFilter);
       if (nodeToFocus == null) {
-        Rect newRect = getBoundsAfterScroll(focusBeforeScroll);
+        Rect newRect = getBoundsAfterScroll(searchPivot);
         // The pivot moved since the scroll or the last look, so the list may still be moving and
         // its next item not on screen yet. Navigating again now would scroll a second page. A pivot
         // that fills the list, such as a post taller than the screen, is cut to the list's bounds
@@ -5712,7 +5725,7 @@ public class FocusProcessorForLogicalNavigation {
         if (settled
             && sourceAction.shouldScroll
             && sourceAction.isPrevScrolled
-            && scrollAgainAtOnce(scrolledNode, focusBeforeScroll, navigationAction, eventId)) {
+            && scrollAgainAtOnce(scrolledNode, searchPivot, navigationAction, eventId)) {
           return;
         }
         if (previousRect.equals(newRect) && sourceAction.shouldScroll) {
@@ -5750,8 +5763,7 @@ public class FocusProcessorForLogicalNavigation {
       return;
     }
 
-    finishAutoScrolledNavigation(
-        focusBeforeScroll, nodeToFocus, scrolledNode, navigationAction, eventId);
+    finishAutoScrolledNavigation(searchPivot, nodeToFocus, scrolledNode, navigationAction, eventId);
   }
 
   /**
@@ -5845,13 +5857,15 @@ public class FocusProcessorForLogicalNavigation {
       AccessibilityNodeInfoCompat scrolledNode,
       AccessibilityNodeInfoCompat pivot,
       @SearchDirection int direction,
-      Filter<AccessibilityNodeInfoCompat> nodeFilter) {
+      Filter<AccessibilityNodeInfoCompat> nodeFilter,
+      boolean rtl) {
     if (!pivot.refresh() || !AccessibilityNodeInfoUtils.isVisible(pivot)) {
       return findFocusAfterInvalidPivot(strategy, scrolledNode, direction, nodeFilter);
     }
     if (strategy instanceof OrderedTraversalStrategy orderedStrategy
         && !orderedStrategy.containsNode(pivot)) {
-      AccessibilityNodeInfoCompat nearest = findNodeNearPivotPlace(orderedStrategy, pivot, direction);
+      AccessibilityNodeInfoCompat nearest =
+          findNodeNearPivotPlace(orderedStrategy, pivot, direction, rtl);
       return (nearest != null)
           ? TraversalStrategyUtils.searchFocus(strategy, nearest, direction, nodeFilter)
           : findFocusAfterInvalidPivot(strategy, scrolledNode, direction, nodeFilter);
@@ -5876,7 +5890,8 @@ public class FocusProcessorForLogicalNavigation {
   static @Nullable AccessibilityNodeInfoCompat findNodeNearPivotPlace(
       OrderedTraversalStrategy strategy,
       AccessibilityNodeInfoCompat pivot,
-      @SearchDirection int direction) {
+      @SearchDirection int direction,
+      boolean rtl) {
     Rect pivotBounds = new Rect();
     pivot.getBoundsInScreen(pivotBounds);
     // dumpTree() is in traversal order, so an ancestor of where the pivot sits -- starting with
@@ -5895,6 +5910,16 @@ public class FocusProcessorForLogicalNavigation {
         if (bounds.contains(pivotBounds)) {
           continue;
         }
+        // A node sharing the pivot's row/band (e.g. a grid cell or a carousel item) can match
+        // on top/bottom alone regardless of which side of the pivot it's actually on. Tell them
+        // apart by reading-order position within the row instead.
+        if (rowOverlapsPivot(bounds, pivotBounds)) {
+          if (isBeforePivotInRow(bounds, pivotBounds, rtl)) {
+            above = node;
+            continue;
+          }
+          return above;
+        }
         if (bounds.top >= pivotBounds.bottom) {
           return above;
         }
@@ -5907,12 +5932,31 @@ public class FocusProcessorForLogicalNavigation {
         if (bounds.contains(pivotBounds)) {
           continue;
         }
+        if (rowOverlapsPivot(bounds, pivotBounds)) {
+          if (isBeforePivotInRow(bounds, pivotBounds, rtl)) {
+            continue;
+          }
+          return node;
+        }
         if (bounds.bottom > pivotBounds.top) {
           return node;
         }
       }
       return null;
     }
+  }
+
+  /** Returns whether {@code bounds} vertically overlaps {@code pivotBounds} at all. */
+  private static boolean rowOverlapsPivot(Rect bounds, Rect pivotBounds) {
+    return bounds.top < pivotBounds.bottom && bounds.bottom > pivotBounds.top;
+  }
+
+  /**
+   * Returns whether {@code bounds} sits before {@code pivotBounds} in reading order within a
+   * shared row, going right-to-left when {@code rtl}.
+   */
+  private static boolean isBeforePivotInRow(Rect bounds, Rect pivotBounds, boolean rtl) {
+    return rtl ? bounds.left >= pivotBounds.right : bounds.right <= pivotBounds.left;
   }
 
   /**
