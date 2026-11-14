@@ -22,7 +22,9 @@ import android.text.style.LocaleSpan
 import android.text.style.TtsSpan
 import java.util.Locale
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertNotEquals
 import org.junit.Assert.assertNull
+import org.junit.Assert.assertTrue
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
@@ -55,6 +57,19 @@ class TtsSpanTextTest {
     assertEquals(4, flat.toOriginal(10))
     assertEquals(7, flat.toOriginal(15))
     assertEquals(8, flat.toOriginal(flat.text.length))
+  }
+
+  @Test
+  fun resumedRest_mapsWithItsOwnPositions() {
+    // Held speech resumed with the rest of its text reports positions from the start of the rest,
+    // which only the rest's own positions map back.
+    val full = TtsSpanText.flatten(named("a; b, c.", 1 to "semicolon", 4 to "comma"))!!
+    val rest = TtsSpanText.flatten(named("b, c.", 1 to "comma"))!!
+    assertTrue(full.text.toString().endsWith(rest.text.toString()))
+    // "c" starts at 9 in "b comma  c." and at 3 in "b, c.".
+    assertEquals(9, rest.text.indexOf(" c.") + 1)
+    assertEquals(3, rest.toOriginal(9))
+    assertNotEquals(3, full.toOriginal(9))
   }
 
   @Test
