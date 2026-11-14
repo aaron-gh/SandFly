@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="item_file_import">Importér fra fil</string>
+    <string name="item_file_export">Eksportér til fil</string>
+    <string name="title_pref_export_item_file_reference">Eksportér reference til filformat</string>
+    <string name="item_file_keymaps">Tastaturoversigter</string>
+    <string name="item_file_exported">Eksporteret</string>
+    <string name="item_file_export_failed">Kunne ikke eksportere</string>
+    <string name="item_file_not_read">Filen er ikke en SandFly-elementfil eller kunne ikke læses</string>
+    <string name="item_file_settings_file">Dette er en indstillingsfil. Importér den med Sikkerhedskopiering og gendannelse &gt; Importér indstillinger</string>
+    <string name="item_file_newer">Filen stammer fra en nyere version af SandFly</string>
+    <string name="item_file_nothing_imported">Intet importeret</string>
+    <string name="item_file_imported"><xliff:g id="items" example="2 macros, 1 gesture profile">%1$s</xliff:g> importeret</string>
+    <string name="item_file_left_out">Udeladt:</string>
+    <string name="item_file_problem_not_read"><xliff:g id="kind" example="Macros">%1$s</xliff:g>, element <xliff:g id="number" example="3">%2$d</xliff:g>: ikke læst</string>
+    <string name="item_file_problem_command"><xliff:g id="item" example="Open mail">%1$s</xliff:g>: ukendt kommando <xliff:g id="command" example="READ_ALL">%2$s</xliff:g></string>
+    <string name="item_file_problem_gesture"><xliff:g id="item" example="Reading">%1$s</xliff:g>: ukendt bevægelse <xliff:g id="gesture" example="pref_shortcut_spin">%2$s</xliff:g></string>
+    <string name="item_file_problem_keys"><xliff:g id="item" example="My keymap">%1$s</xliff:g>: taster ikke forstået: <xliff:g id="keys" example="SandFly+Foo">%2$s</xliff:g></string>
+    <string name="item_file_problem_keys_taken"><xliff:g id="item" example="My keymap">%1$s</xliff:g>: taster er allerede i brug: <xliff:g id="keys" example="SandFly+H">%2$s</xliff:g></string>
+    <string name="item_file_problem_setting"><xliff:g id="item" example="Reading">%1$s</xliff:g>: indstillingen <xliff:g id="key" example="pref_vibration">%2$s</xliff:g> er ukendt, kan ikke indgå i en profil eller har en værdi af forkert type</string>
+    <string name="item_file_problem_regex"><xliff:g id="dictionary" example="Speech dictionary">%1$s</xliff:g>: regulært udtryk afvist: <xliff:g id="expression" example="(a+)+">%2$s</xliff:g></string>
+    <string name="item_file_problem_limit"><xliff:g id="kind" example="Symbol dictionary">%1$s</xliff:g>: højst <xliff:g id="number" example="500">%2$d</xliff:g> elementer</string>
+    <string name="item_file_problem_more">Mere blev udeladt</string>
+    <plurals name="item_file_count_macros">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> makro</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> makroer</item>
+    </plurals>
+    <plurals name="item_file_count_gesture_profiles">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> bevægelsesprofil</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> bevægelsesprofiler</item>
+    </plurals>
+    <plurals name="item_file_count_keymaps">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> tastaturoversigt</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> tastaturoversigter</item>
+    </plurals>
+    <plurals name="item_file_count_apps">
+        <item quantity="one">bevægelser og tastaturgenveje for <xliff:g id="count" example="2">%d</xliff:g> app</item>
+        <item quantity="other">bevægelser og tastaturgenveje for <xliff:g id="count" example="2">%d</xliff:g> apps</item>
+    </plurals>
+    <plurals name="item_file_count_settings_profiles">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> indstillingsprofil</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> indstillingsprofiler</item>
+    </plurals>
+    <plurals name="item_file_count_speech_dictionary">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> post i taleordbogen</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> poster i taleordbogen</item>
+    </plurals>
+    <plurals name="item_file_count_symbol_dictionary">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> post i symbolordbogen</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> poster i symbolordbogen</item>
+    </plurals>
+    <plurals name="item_file_count_braille_dictionary">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> post i brailleordbogen</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> poster i brailleordbogen</item>
+    </plurals>
+    <plurals name="item_file_count_voice_commands">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> tilpasset stemmekommando</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> tilpassede stemmekommandoer</item>
+    </plurals>
+</resources>

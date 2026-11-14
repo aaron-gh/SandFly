@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_voice_commands">音声コマンド</string>
+    <string name="title_pref_voice_commands_ai">AI で音声コマンドを理解</string>
+    <string name="voice_commands_custom">カスタム音声コマンド</string>
+    <string name="voice_command_add">音声コマンドを追加</string>
+    <string name="voice_command_phrase">フレーズ</string>
+    <string name="voice_command_change_phrase">フレーズを変更</string>
+    <string name="voice_command_change_command">コマンドを変更</string>
+    <string name="voice_command_delete_confirm"><xliff:g id="phrase" example="Good morning">%1$s</xliff:g> を削除しますか?</string>
+    <string name="voice_command_phrase_exists"><xliff:g id="phrase" example="Good morning">%1$s</xliff:g> はすでに音声コマンドです</string>
+    <string name="voice_commands_not_understood">理解できませんでした: <xliff:g id="text" example="open the door">%1$s</xliff:g></string>
+    <string name="voice_commands_not_available">利用できません: <xliff:g id="name" example="Morning macro">%1$s</xliff:g></string>
+    <string name="voice_commands_not_found">見つかりません: <xliff:g id="label" example="Settings">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app"><xliff:g id="name" example="Signal">%1$s</xliff:g> というアプリはありません</string>
+    <string name="voice_commands_no_app_for_action">この操作に使えるアプリがありません</string>
+    <string name="voice_commands_calling"><xliff:g id="name" example="Sam">%1$s</xliff:g> に発信中</string>
+    <string name="voice_commands_call_permission">電話の発信を許可してから、もう一度コマンドを言ってください。</string>
+    <string name="voice_commands_contacts_permission">連絡先へのアクセスを許可してから、もう一度コマンドを言ってください。</string>
+    <string name="voice_commands_no_contact"><xliff:g id="name" example="Sam">%1$s</xliff:g> という連絡先はありません</string>
+    <string name="voice_commands_contacts_several"><xliff:g id="name" example="Sam">%1$s</xliff:g> という連絡先が複数あります: <xliff:g id="names" example="Sam Jones, Sam Smith">%2$s</xliff:g></string>
+    <string name="voice_commands_message_text"><xliff:g id="name" example="Sam">%1$s</xliff:g> へのメッセージ</string>
+    <string name="voice_commands_message_confirm"><xliff:g id="name" example="Sam">%1$s</xliff:g> に送信しますか: <xliff:g id="text" example="I am on my way">%2$s</xliff:g></string>
+    <string name="voice_commands_message_confirm_result"><xliff:g id="name" example="Sam">%1$s</xliff:g> に送信しますか?</string>
+    <string name="voice_commands_message_not_sent">メッセージは送信されませんでした</string>
+    <string name="voice_commands_send_pressed">送信を押しました</string>
+    <string name="voice_commands_send_button">送信</string>
+    <string name="voice_commands_no_description">説明を受信できませんでした</string>
+    <string name="voice_commands_copied">コピーしました</string>
+    <string-array name="voice_commands_chain_words">
+        <item>その後</item>
+        <item>それから</item>
+        <item>そのあと</item>
+        <item>次に</item>
+    </string-array>
+    <string-array name="voice_commands_and_words">
+        <item>そして</item>
+        <item>かつ</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_start">
+        <item>お願い</item>
+        <item>お願いします</item>
+        <item>ちょっと</item>
+        <item>今</item>
+        <item>できれば</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_end">
+        <item>お願い</item>
+        <item>お願いします</item>
+        <item>ください</item>
+        <item>今すぐ</item>
+        <item>今</item>
+    </string-array>
+    <string-array name="voice_commands_cancel_words">
+        <item>停止</item>
+        <item>キャンセル</item>
+        <item>中止</item>
+        <item>やめて</item>
+        <item>やめる</item>
+        <item>終了</item>
+        <item>もういい</item>
+        <item>黙って</item>
+    </string-array>
+    <string-array name="voice_commands_yes">
+        <item>はい</item>
+        <item>ええ</item>
+        <item>うん</item>
+        <item>送信</item>
+        <item>送って</item>
+        <item>送信して</item>
+        <item>オーケー</item>
+        <item>OK</item>
+        <item>お願いします</item>
+    </string-array>
+    <string-array name="voice_commands_sms_names">
+        <item>SMS</item>
+        <item>ショートメッセージ</item>
+        <item>テキスト メッセージ</item>
+        <item>テキストメッセージ</item>
+        <item>メッセージ</item>
+    </string-array>
+    <string-array name="voice_commands_send_image_description">
+        <item>画像の説明を {who} に送信</item>
+        <item>画像の説明を {who} に送って</item>
+        <item>画像の説明を {who} に送信して</item>
+        <item>写真の説明を {who} に送信</item>
+        <item>写真の説明を {who} に送って</item>
+        <item>写真の説明を {who} に送信して</item>
+    </string-array>
+    <string-array name="voice_commands_send_screen_description">
+        <item>画面の説明を {who} に送信</item>
+        <item>画面の説明を {who} に送って</item>
+        <item>画面の説明を {who} に送信して</item>
+    </string-array>
+    <string-array name="voice_commands_send_previous">
+        <item>{app} で {who} に送信</item>
+        <item>{app} で {who} に送って</item>
+        <item>{who} に送信</item>
+        <item>{who} に送って</item>
+        <item>{who} に送信して</item>
+        <item>これを {who} に送信</item>
+        <item>説明を {who} に送信</item>
+        <item>{who} と共有</item>
+    </string-array>
+    <string-array name="voice_commands_message">
+        <item>{app} で {who} に {text} と伝えて</item>
+        <item>{app} で {who} にメッセージ {text}</item>
+        <item>{app} で {who} にメッセージを送信 {text}</item>
+        <item>{who} に {text} と伝えて</item>
+        <item>{who} に {text} とメッセージを送って</item>
+        <item>{who} にメッセージ {text}</item>
+        <item>{who} にメッセージを送信 {text}</item>
+        <item>{who} にメッセージを送って {text}</item>
+        <item>{who} に {app} メッセージを送信 {text}</item>
+        <item>メッセージを送信 {whoandtext}</item>
+        <item>メッセージ {whoandtext}</item>
+        <item>テキスト {whoandtext}</item>
+    </string-array>
+    <string-array name="voice_commands_call">
+        <item>{who} に電話</item>
+        <item>{who} に電話して</item>
+        <item>{who} に電話をかけて</item>
+        <item>{who} に電話する</item>
+        <item>{who} に発信</item>
+        <item>電話 {who}</item>
+        <item>発信 {who}</item>
+    </string-array>
+    <string-array name="voice_commands_describe_screen">
+        <item>画面を説明</item>
+        <item>画面を説明して</item>
+        <item>画面の説明</item>
+        <item>画面に何があるか教えて</item>
+        <item>画面には何がありますか</item>
+        <item>画面に何が表示されていますか</item>
+    </string-array>
+    <string-array name="voice_commands_describe_image">
+        <item>画像を説明</item>
+        <item>画像を説明して</item>
+        <item>この画像を説明して</item>
+        <item>写真を説明</item>
+        <item>写真を説明して</item>
+        <item>この写真を説明して</item>
+        <item>画像には何が写っていますか</item>
+        <item>写真には何が写っていますか</item>
+    </string-array>
+    <string-array name="voice_commands_copy_result">
+        <item>コピー</item>
+        <item>コピーして</item>
+        <item>それをコピー</item>
+        <item>説明をコピー</item>
+        <item>今言ったことをコピー</item>
+        <item>最後に読み上げたものをコピー</item>
+        <item>最後のフレーズをコピー</item>
+    </string-array>
+    <string-array name="voice_commands_wait">
+        <item>{n} 秒待って</item>
+        <item>{n} 秒待つ</item>
+        <item>{n} 秒間待って</item>
+        <item>1 秒待って</item>
+        <item>待って</item>
+        <item>待機</item>
+    </string-array>
+    <string-array name="voice_commands_type_text">
+        <item>{text} と入力</item>
+        <item>{text} と入力して</item>
+        <item>{text} と打って</item>
+        <item>{text} と書いて</item>
+        <item>入力 {text}</item>
+    </string-array>
+    <string-array name="voice_commands_run">
+        <item>マクロ {command} を実行</item>
+        <item>{command} マクロを実行</item>
+        <item>{command} を実行</item>
+        <item>{command} を実行して</item>
+    </string-array>
+    <string-array name="voice_commands_open">
+        <item>{app} を開いて</item>
+        <item>{app} を開く</item>
+        <item>{app} を起動</item>
+        <item>{app} を起動して</item>
+        <item>{app} に切り替え</item>
+        <item>{app} に切り替えて</item>
+    </string-array>
+    <string-array name="voice_commands_tap">
+        <item>{label} をダブルタップ</item>
+        <item>{label} をタップ</item>
+        <item>{label} をタップして</item>
+        <item>{label} をクリック</item>
+        <item>{label} を押して</item>
+        <item>{label} を有効にして</item>
+        <item>{label} を選択</item>
+    </string-array>
+</resources>

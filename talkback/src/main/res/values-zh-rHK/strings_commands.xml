@@ -59,4 +59,24 @@
     <string name="keycombo_menu_navigate_next_by_setting">按導覽設定前往下一個</string>
     <string name="keycombo_menu_navigate_previous_by_setting">按導覽設定前往上一個</string>
     <string name="title_pref_overview_screen">概覽</string>
+    <string name="title_pref_custom_menus">自訂選單</string>
+    <string name="commands_category_setting_values">設定值</string>
+    <string name="command_next_value"><xliff:g id="setting" example="Punctuation">%1$s</xliff:g>：下一個值</string>
+    <string name="command_previous_value"><xliff:g id="setting" example="Punctuation">%1$s</xliff:g>：上一個值</string>
+    <string name="shortcut_script_commands">腳本命令</string>
+    <string name="shortcut_set_reading_control">將朗讀控制項設為<xliff:g id="control" example="Headings">%1$s</xliff:g></string>
+    <string name="title_pref_custom_reading_controls">自訂朗讀控制項</string>
+    <string name="menu_add_reading_control">新增朗讀控制項</string>
+    <string name="menu_add_submenu">新增子選單</string>
+    <string name="menu_add_menu">新增選單</string>
+    <string name="menu_name">名稱</string>
+    <string name="menu_open">開啟</string>
+    <string name="menu_move_to">移至</string>
+    <string name="menu_rename">重新命名</string>
+    <string name="menu_delete">刪除</string>
+    <string name="menu_delete_confirm">刪除<xliff:g id="name" example="AI">%1$s</xliff:g>及其中的所有內容？</string>
+    <string name="menu_moved">已移至<xliff:g id="place" example="AI">%1$s</xliff:g></string>
+    <string name="menu_reset">重設為預設值</string>
+    <string name="menu_reset_confirm">將 SandFly 選單重設為預設項目和順序？</string>
+    <string name="menu_assign">手勢和鍵盤快速鍵</string>
 </resources>

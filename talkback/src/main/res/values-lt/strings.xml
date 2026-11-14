@@ -2033,4 +2033,148 @@
     <string name="value_keep_models_5">5 minutės</string>
     <string name="value_keep_models_15">15 minučių</string>
     <string name="value_keep_models_30">30 minučių</string>
+    <string name="title_pref_speech_equalizer_save_preset">Išsaugoti kaip išankstinį nustatymą</string>
+    <string name="title_pref_speech_equalizer_saved_presets">Išsaugoti išankstiniai nustatymai</string>
+    <string name="speech_equalizer_preset_name">Pavadinimas</string>
+    <string name="speech_equalizer_preset_name_taken">Išankstinis nustatymas „<xliff:g id="name" example="Podcast">%1$s</xliff:g>“ jau yra</string>
+    <string name="speech_equalizer_presets_full">Daugiau išankstinių nustatymų išsaugoti negalima. Ištrinkite vieną, kad išsaugotumėte kitą.</string>
+    <string name="speech_equalizer_preset_saved">Išsaugota: <xliff:g id="name" example="Podcast">%1$s</xliff:g></string>
+    <string name="speech_equalizer_preset_rename">Pervardyti</string>
+    <string name="speech_equalizer_preset_delete">Ištrinti</string>
+    <string name="speech_equalizer_preset_delete_confirm">Ištrinti „<xliff:g id="name" example="Podcast">%1$s</xliff:g>“?</string>
+    <string name="speech_equalizer_preset_deleted">Ištrinta: <xliff:g id="name" example="Podcast">%1$s</xliff:g></string>
+    <string name="title_pref_emoji_voice">Jaustukų balsas</string>
+    <string name="value_emoji_voice_same">Toks pat kaip kalbos</string>
+    <string name="title_pref_emoji_rate">Jaustukų kalbėjimo sparta</string>
+    <string name="title_pref_line_breaks_as_spaces">Skaityti eilučių lūžius kaip tarpus</string>
+    <string name="title_pref_language_voices">Balsai pagal kalbą</string>
+    <string name="title_pref_identify_languages_from_words">Atpažinti kalbas pagal žodžius</string>
+    <string name="title_pref_add_language">Pridėti kalbą</string>
+    <string name="title_pref_remove_language">Pašalinti kalbą</string>
+    <string name="title_pref_script_language">%1$s rašmenys</string>
+    <string name="title_pref_screen_on_notification_count">Pranešimų skaičius</string>
+    <plurals name="template_screen_on_notification_count">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> pranešimas</item>
+        <item quantity="few"><xliff:g id="count" example="6">%d</xliff:g> pranešimai</item>
+        <item quantity="many"><xliff:g id="count" example="6">%d</xliff:g> pranešimo</item>
+        <item quantity="other"><xliff:g id="count" example="6">%d</xliff:g> pranešimų</item>
+    </plurals>
+    <string name="title_pref_phonetic_letters_review">Peržiūrint skaityti raides fonetiškai</string>
+    <string name="title_pref_phonetic_letters_typing">Rašant skaityti raides fonetiškai</string>
+    <string name="title_pref_emoji_suffix">Po jaustukų pavadinimų tarti „jaustukas“</string>
+    <string name="overview_shizuku_not_running">Shizuku neveikia</string>
+    <string name="overview_shizuku_not_allowed">Shizuku neleidžia SandFly</string>
+    <string name="overview_no_older_app">Nėra senesnės programos</string>
+    <string name="overview_no_newer_app">Nėra naujesnės programos</string>
+    <string name="stream_volume_needs_access">Leiskite prieigą prie „Netrukdyti“, kad galėtumėte keisti šį garsumą.</string>
+    <string name="corner_gestures_title">Kampai</string>
+    <string name="shortcut_move_to_item_below">Pereiti prie elemento žemiau</string>
+    <string name="shortcut_move_to_item_above">Pereiti prie elemento aukščiau</string>
+    <string name="shortcut_older_app">Senesnė programa</string>
+    <string name="shortcut_newer_app">Naujesnė programa</string>
+    <string name="shortcut_answer_call">Atsiliepti į skambutį</string>
+    <string name="answer_call_no_call">Nėra gaunamo skambučio</string>
+    <string name="answer_call_permission">Norint atsiliepti į skambučius, reikia leidimo</string>
+    <string name="shortcut_switch_keyboard">Perjungti klaviatūrą</string>
+    <string name="switch_keyboard_none">Neįjungta jokia kita klaviatūra</string>
+    <string name="switch_keyboard_failed">Klaviatūra neperjungta</string>
+    <string name="clipboard_history_hint">Perbraukite aukštyn arba žemyn, kad pasirinktumėte, tada dukart palieskite, kad įklijuotumėte</string>
+    <string name="title_speech_history">Kalbos istorija</string>
+    <string name="speech_history_empty">Nėra kalbos</string>
+    <string name="speech_history_clear">Išvalyti istoriją</string>
+    <string name="title_pref_shortcut_corner_top_left_tap">Palieskite viršutinį kairįjį kampą</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap">Dukart palieskite viršutinį kairįjį kampą</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap">Triskart palieskite viršutinį kairįjį kampą</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap_hold">Dukart palieskite ir palaikykite viršutinį kairįjį kampą</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap_hold">Triskart palieskite ir palaikykite viršutinį kairįjį kampą</string>
+    <string name="title_pref_shortcut_corner_top_right_tap">Palieskite viršutinį dešinįjį kampą</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap">Dukart palieskite viršutinį dešinįjį kampą</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap">Triskart palieskite viršutinį dešinįjį kampą</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap_hold">Dukart palieskite ir palaikykite viršutinį dešinįjį kampą</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap_hold">Triskart palieskite ir palaikykite viršutinį dešinįjį kampą</string>
+    <string name="title_pref_shortcut_corner_bottom_left_tap">Palieskite apatinį kairįjį kampą</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap">Dukart palieskite apatinį kairįjį kampą</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap">Triskart palieskite apatinį kairįjį kampą</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap_hold">Dukart palieskite ir palaikykite apatinį kairįjį kampą</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap_hold">Triskart palieskite ir palaikykite apatinį kairįjį kampą</string>
+    <string name="title_pref_shortcut_corner_bottom_right_tap">Palieskite apatinį dešinįjį kampą</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap">Dukart palieskite apatinį dešinįjį kampą</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap">Triskart palieskite apatinį dešinįjį kampą</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap_hold">Dukart palieskite ir palaikykite apatinį dešinįjį kampą</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap_hold">Triskart palieskite ir palaikykite apatinį dešinįjį kampą</string>
+    <string name="title_pref_swipe_start_time">Gesto pradžios laikas</string>
+    <string name="title_pref_swipes_before_lift">Atpažinti perbraukimus prieš pakeliant pirštą</string>
+    <string name="summary_pref_swipes_before_lift">Išjungia gestus pirmyn ir atgal bei kampu.</string>
+    <string name="title_pref_corner_size_mm">Kampo dydis</string>
+    <string name="value_corner_size_edge_width">Toks pat kaip krašto plotis</string>
+    <string name="title_pref_corner_tap_time_ms">Kampo palietimo trukmės riba</string>
+    <string name="value_corner_tap_time_system">Numatytasis sistemos</string>
+    <string name="title_pref_edge_speak_commands">Tarti komandą po kiekvieno spragtelėjimo</string>
+    <string-array name="pref_volume_change_feedback_entries">
+        <item>@string/volume_change_feedback_off</item>
+        <item>@string/volume_change_feedback_tone</item>
+        <item>@string/volume_change_feedback_spoken</item>
+        <item>@string/volume_change_feedback_tone_and_spoken</item>
+    </string-array>
+    <string name="title_pref_volume_change_tone_during_media">Nutildyti toną leidžiant mediją</string>
+    <string name="title_pref_volume_change_speech_during_media">Nutildyti kalbą leidžiant mediją</string>
+    <string name="title_pref_volume_change_interrupts_speech">Pertraukti kalbą, kad būtų pasakytas garsumas</string>
+    <string name="title_pref_volume_keys_speech_volume_while_speaking">Garsumo klavišai kalbant keičia kalbos garsumą</string>
+    <string name="title_pref_double_tap_moves_cursor">Dukart palietus žymeklis pereina į pradžią arba pabaigą</string>
+    <string name="title_pref_scroll_ahead">Slinkti į priekį iki kito elemento</string>
+    <string name="title_pref_speak_while_scrolling">Tarti kitą elementą slenkant</string>
+    <string-array name="pref_text_entities_entries">
+    <item>@string/text_entity_web</item>
+    <item>@string/text_entity_email</item>
+    <item>@string/text_entity_phone</item>
+    <item>@string/text_entity_code</item>
+  </string-array>
+    <string name="value_keep_models_until_stopped">Kol SandFly sustos</string>
+    <string name="title_pref_model_download_server">Modelių atsisiuntimo serveris</string>
+    <string name="title_pref_settings_profiles">Nustatymų profiliai</string>
+    <string name="title_pref_new_settings_profile">Naujas nustatymų profilis</string>
+    <string name="settings_profile_new_name">Profilis <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="settings_profile_name_taken">Nustatymų profilis „<xliff:g id="name" example="Demo">%1$s</xliff:g>“ jau yra</string>
+    <string name="settings_profile_in_use">Naudojamas</string>
+    <string name="settings_profile_menu_item_in_use"><xliff:g id="name" example="Demo">%1$s</xliff:g>, naudojamas</string>
+    <string name="settings_profile_none">Jokio nustatymų profilio</string>
+    <string name="settings_profile_use_now">Naudoti dabar</string>
+    <string name="settings_profile_stop_using">Nebenaudoti</string>
+    <string name="settings_profile_change_settings">Keisti nustatymus</string>
+    <string name="settings_profile_editing">Pakeitimai išsaugomi profilyje <xliff:g id="name" example="Messaging">%1$s</xliff:g></string>
+    <string name="settings_profile_edit_saved">Pakeitimai išsaugoti profilyje <xliff:g id="name" example="Messaging">%1$s</xliff:g></string>
+    <string name="settings_profile_use_automatically">Naudoti automatiškai</string>
+    <string name="settings_profile_web">Žiniatinklio turinys</string>
+    <string name="settings_profile_reading">Ištisinis skaitymas</string>
+    <string name="settings_profile_text_editing">Teksto redagavimas</string>
+    <string name="settings_profile_apps">Programos</string>
+    <string name="settings_profile_add_app">Pridėti programą</string>
+    <string name="settings_profile_settings">Šio profilio nustatymai</string>
+    <string name="settings_profile_no_settings">Nėra</string>
+    <string name="settings_profile_remove_confirm">Pašalinti „<xliff:g id="item" example="Speech rate">%1$s</xliff:g>“ iš „<xliff:g id="name" example="Messaging">%2$s</xliff:g>“?</string>
+    <string name="settings_profile_not_saved">Nustatymų profilio išsaugoti nepavyko</string>
+    <string name="settings_profile_in_use_announcement">Profilis „<xliff:g id="name" example="Demo">%1$s</xliff:g>“</string>
+    <string name="settings_profile_not_changed">Nustatymų profilis nepakeistas</string>
+    <string name="title_settings_profile">Nustatymų profilis</string>
+    <string name="shortcut_settings_profiles">Pasirinkti nustatymų profilį</string>
+    <string name="shortcut_next_settings_profile">Kitas nustatymų profilis</string>
+    <string name="shortcut_previous_settings_profile">Ankstesnis nustatymų profilis</string>
+    <string name="title_copy_text_from_screen">Kopijuoti tekstą iš ekrano</string>
+    <string name="granularity_label">Detalumas</string>
+    <string name="granularity_characters">Simboliai</string>
+    <string name="granularity_words">Žodžiai</string>
+    <string name="granularity_paragraphs">Paragrafai</string>
+    <string name="button_select_all">Pasirinkti viską</string>
+    <string name="no_text_selected">Tekstas nepasirinktas</string>
+    <string name="no_text_on_screen">Ekrane teksto nerasta</string>
+    <string name="title_select_last_spoken_phrase_word_by_word">Pasirinkti paskutinę ištartą frazę žodis po žodžio</string>
+    <string name="no_words_selected">Žodžių nepasirinkta</string>
+    <string name="no_phrase_to_select">Nėra frazės, kurią galima pasirinkti</string>
+    <string name="word_selection_list_cut_off">Sąrašas nutrauktas ties <xliff:g id="count" example="1000">%1$d</xliff:g> elementų</string>
+    <plurals name="word_selection_copied">
+        <item quantity="one">Nukopijuotas <xliff:g id="count" example="1">%1$d</xliff:g> elementas</item>
+        <item quantity="few">Nukopijuoti <xliff:g id="count" example="5">%1$d</xliff:g> elementai</item>
+        <item quantity="many">Nukopijuoto <xliff:g id="count" example="5">%1$d</xliff:g> elemento</item>
+        <item quantity="other">Nukopijuota <xliff:g id="count" example="5">%1$d</xliff:g> elementų</item>
+    </plurals>
 </resources>

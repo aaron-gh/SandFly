@@ -2025,4 +2025,144 @@
     <string name="value_keep_models_5">5 minutes</string>
     <string name="value_keep_models_15">15 minutes</string>
     <string name="value_keep_models_30">30 minutes</string>
+    <string name="title_pref_speech_equalizer_save_preset">Save as preset</string>
+    <string name="title_pref_speech_equalizer_saved_presets">Saved presets</string>
+    <string name="speech_equalizer_preset_name">Name</string>
+    <string name="speech_equalizer_preset_name_taken">A preset is already called <xliff:g id="name" example="Podcast">%1$s</xliff:g></string>
+    <string name="speech_equalizer_presets_full">No more presets can be saved. Delete one to save another.</string>
+    <string name="speech_equalizer_preset_saved"><xliff:g id="name" example="Podcast">%1$s</xliff:g> saved</string>
+    <string name="speech_equalizer_preset_rename">Rename</string>
+    <string name="speech_equalizer_preset_delete">Delete</string>
+    <string name="speech_equalizer_preset_delete_confirm">Delete <xliff:g id="name" example="Podcast">%1$s</xliff:g>?</string>
+    <string name="speech_equalizer_preset_deleted"><xliff:g id="name" example="Podcast">%1$s</xliff:g> deleted</string>
+    <string name="title_pref_emoji_voice">Emoji voice</string>
+    <string name="value_emoji_voice_same">Same as speech</string>
+    <string name="title_pref_emoji_rate">Emoji speech rate</string>
+    <string name="title_pref_line_breaks_as_spaces">Read line breaks as spaces</string>
+    <string name="title_pref_language_voices">Voices by language</string>
+    <string name="title_pref_identify_languages_from_words">Identify languages from words</string>
+    <string name="title_pref_add_language">Add language</string>
+    <string name="title_pref_remove_language">Remove language</string>
+    <string name="title_pref_script_language">%1$s script</string>
+    <string name="title_pref_screen_on_notification_count">Number of notifications</string>
+    <plurals name="template_screen_on_notification_count">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> notification</item>
+        <item quantity="other"><xliff:g id="count" example="6">%d</xliff:g> notifications</item>
+    </plurals>
+    <string name="title_pref_phonetic_letters_review">Speak letters phonetically when reviewing</string>
+    <string name="title_pref_phonetic_letters_typing">Speak letters phonetically when typing</string>
+    <string name="title_pref_emoji_suffix">Speak \"emoji\" after emoji names</string>
+    <string name="overview_shizuku_not_running">Shizuku not running</string>
+    <string name="overview_shizuku_not_allowed">Shizuku doesn\'t allow SandFly</string>
+    <string name="overview_no_older_app">No older app</string>
+    <string name="overview_no_newer_app">No newer app</string>
+    <string name="stream_volume_needs_access">Allow Do Not Disturb access to change this volume.</string>
+    <string name="corner_gestures_title">Corners</string>
+    <string name="shortcut_move_to_item_below">Move to item below</string>
+    <string name="shortcut_move_to_item_above">Move to item above</string>
+    <string name="shortcut_older_app">Older app</string>
+    <string name="shortcut_newer_app">Newer app</string>
+    <string name="shortcut_answer_call">Answer call</string>
+    <string name="answer_call_no_call">No incoming call</string>
+    <string name="answer_call_permission">Permission needed to answer calls</string>
+    <string name="shortcut_switch_keyboard">Switch keyboard</string>
+    <string name="switch_keyboard_none">No other keyboard turned on</string>
+    <string name="switch_keyboard_failed">Keyboard not switched</string>
+    <string name="clipboard_history_hint">Swipe up or down to choose, then double-tap to paste</string>
+    <string name="title_speech_history">Speech history</string>
+    <string name="speech_history_empty">No speech</string>
+    <string name="speech_history_clear">Clear history</string>
+    <string name="title_pref_shortcut_corner_top_left_tap">Tap top left corner</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap">Double-tap top left corner</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap">Triple-tap top left corner</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap_hold">Double-tap and hold top left corner</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap_hold">Triple-tap and hold top left corner</string>
+    <string name="title_pref_shortcut_corner_top_right_tap">Tap top right corner</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap">Double-tap top right corner</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap">Triple-tap top right corner</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap_hold">Double-tap and hold top right corner</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap_hold">Triple-tap and hold top right corner</string>
+    <string name="title_pref_shortcut_corner_bottom_left_tap">Tap bottom left corner</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap">Double-tap bottom left corner</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap">Triple-tap bottom left corner</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap_hold">Double-tap and hold bottom left corner</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap_hold">Triple-tap and hold bottom left corner</string>
+    <string name="title_pref_shortcut_corner_bottom_right_tap">Tap bottom right corner</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap">Double-tap bottom right corner</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap">Triple-tap bottom right corner</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap_hold">Double-tap and hold bottom right corner</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap_hold">Triple-tap and hold bottom right corner</string>
+    <string name="title_pref_swipe_start_time">Gesture start time</string>
+    <string name="title_pref_swipes_before_lift">Recognize swipes before lifting</string>
+    <string name="summary_pref_swipes_before_lift">Turns off back-and-forth and angle gestures.</string>
+    <string name="title_pref_corner_size_mm">Corner size</string>
+    <string name="value_corner_size_edge_width">Same as edge width</string>
+    <string name="title_pref_corner_tap_time_ms">Corner tap time limit</string>
+    <string name="value_corner_tap_time_system">System default</string>
+    <string name="title_pref_edge_speak_commands">Speak command at each click</string>
+    <string-array name="pref_volume_change_feedback_entries">
+        <item>@string/volume_change_feedback_off</item>
+        <item>@string/volume_change_feedback_tone</item>
+        <item>@string/volume_change_feedback_spoken</item>
+        <item>@string/volume_change_feedback_tone_and_spoken</item>
+    </string-array>
+    <string name="title_pref_volume_change_tone_during_media">Silence tone during media playback</string>
+    <string name="title_pref_volume_change_speech_during_media">Silence speech during media playback</string>
+    <string name="title_pref_volume_change_interrupts_speech">Interrupt speech to announce the volume</string>
+    <string name="title_pref_volume_keys_speech_volume_while_speaking">Volume keys change speech volume while speaking</string>
+    <string name="title_pref_double_tap_moves_cursor">Double-tap moves cursor to start or end</string>
+    <string name="title_pref_scroll_ahead">Scroll ahead to the next item</string>
+    <string name="title_pref_speak_while_scrolling">Speak the next item while scrolling</string>
+    <string-array name="pref_text_entities_entries">
+    <item>@string/text_entity_web</item>
+    <item>@string/text_entity_email</item>
+    <item>@string/text_entity_phone</item>
+    <item>@string/text_entity_code</item>
+  </string-array>
+    <string name="value_keep_models_until_stopped">Until SandFly stops</string>
+    <string name="title_pref_model_download_server">Model download server</string>
+    <string name="title_pref_settings_profiles">Settings profiles</string>
+    <string name="title_pref_new_settings_profile">New settings profile</string>
+    <string name="settings_profile_new_name">Profile <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="settings_profile_name_taken">A settings profile is already called <xliff:g id="name" example="Demo">%1$s</xliff:g></string>
+    <string name="settings_profile_in_use">In use</string>
+    <string name="settings_profile_menu_item_in_use"><xliff:g id="name" example="Demo">%1$s</xliff:g>, in use</string>
+    <string name="settings_profile_none">No settings profile</string>
+    <string name="settings_profile_use_now">Use now</string>
+    <string name="settings_profile_stop_using">Stop using</string>
+    <string name="settings_profile_change_settings">Change settings</string>
+    <string name="settings_profile_editing">Changes go to <xliff:g id="name" example="Messaging">%1$s</xliff:g></string>
+    <string name="settings_profile_edit_saved">Changes saved to <xliff:g id="name" example="Messaging">%1$s</xliff:g></string>
+    <string name="settings_profile_use_automatically">Use automatically</string>
+    <string name="settings_profile_web">Web content</string>
+    <string name="settings_profile_reading">Continuous reading</string>
+    <string name="settings_profile_text_editing">Text editing</string>
+    <string name="settings_profile_apps">Apps</string>
+    <string name="settings_profile_add_app">Add app</string>
+    <string name="settings_profile_settings">Settings in this profile</string>
+    <string name="settings_profile_no_settings">None</string>
+    <string name="settings_profile_remove_confirm">Remove <xliff:g id="item" example="Speech rate">%1$s</xliff:g> from <xliff:g id="name" example="Messaging">%2$s</xliff:g>?</string>
+    <string name="settings_profile_not_saved">Settings profile could not be saved</string>
+    <string name="settings_profile_in_use_announcement"><xliff:g id="name" example="Demo">%1$s</xliff:g> profile</string>
+    <string name="settings_profile_not_changed">Settings profile not changed</string>
+    <string name="title_settings_profile">Settings profile</string>
+    <string name="shortcut_settings_profiles">Choose settings profile</string>
+    <string name="shortcut_next_settings_profile">Next settings profile</string>
+    <string name="shortcut_previous_settings_profile">Previous settings profile</string>
+    <string name="title_copy_text_from_screen">Copy text from screen</string>
+    <string name="granularity_label">Granularity</string>
+    <string name="granularity_characters">Characters</string>
+    <string name="granularity_words">Words</string>
+    <string name="granularity_paragraphs">Paragraphs</string>
+    <string name="button_select_all">Select all</string>
+    <string name="no_text_selected">No text selected</string>
+    <string name="no_text_on_screen">No text found on screen</string>
+    <string name="title_select_last_spoken_phrase_word_by_word">Select last spoken phrase word by word</string>
+    <string name="no_words_selected">No words selected</string>
+    <string name="no_phrase_to_select">No phrase to select</string>
+    <string name="word_selection_list_cut_off">List cut off at <xliff:g id="count" example="1000">%1$d</xliff:g> items</string>
+    <plurals name="word_selection_copied">
+    <item quantity="one">Copied <xliff:g id="count" example="1">%1$d</xliff:g> item</item>
+    <item quantity="other">Copied <xliff:g id="count" example="5">%1$d</xliff:g> items</item>
+  </plurals>
 </resources>

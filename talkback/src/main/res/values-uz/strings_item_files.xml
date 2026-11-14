@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="item_file_import">Fayldan import qilish</string>
+    <string name="item_file_export">Faylga eksport qilish</string>
+    <string name="title_pref_export_item_file_reference">Eksport fayli formati haqida maʼlumot</string>
+    <string name="item_file_keymaps">Tugma xaritalari</string>
+    <string name="item_file_exported">Eksport qilindi</string>
+    <string name="item_file_export_failed">Eksport qilib boʻlmadi</string>
+    <string name="item_file_not_read">Bu fayl SandFly element fayli emas yoki oʻqib boʻlmadi</string>
+    <string name="item_file_settings_file">Bu sozlamalar fayli. Uni Zaxira nusxa va tiklash &gt; Sozlamalarni import qilish orqali import qiling</string>
+    <string name="item_file_newer">Bu fayl SandFlyʼning yangiroq versiyasidan</string>
+    <string name="item_file_nothing_imported">Hech narsa import qilinmadi</string>
+    <string name="item_file_imported">Import qilindi: <xliff:g id="items" example="2 macros, 1 gesture profile">%1$s</xliff:g></string>
+    <string name="item_file_left_out">Qoldirilganlar:</string>
+    <string name="item_file_problem_not_read"><xliff:g id="kind" example="Macros">%1$s</xliff:g>, <xliff:g id="number" example="3">%2$d</xliff:g>-element: oʻqilmadi</string>
+    <string name="item_file_problem_command"><xliff:g id="item" example="Open mail">%1$s</xliff:g>: nomaʼlum buyruq <xliff:g id="command" example="READ_ALL">%2$s</xliff:g></string>
+    <string name="item_file_problem_gesture"><xliff:g id="item" example="Reading">%1$s</xliff:g>: nomaʼlum imo-ishora <xliff:g id="gesture" example="pref_shortcut_spin">%2$s</xliff:g></string>
+    <string name="item_file_problem_keys"><xliff:g id="item" example="My keymap">%1$s</xliff:g>: tugmalar tushunilmadi: <xliff:g id="keys" example="SandFly+Foo">%2$s</xliff:g></string>
+    <string name="item_file_problem_keys_taken"><xliff:g id="item" example="My keymap">%1$s</xliff:g>: tugmalar allaqachon ishlatilmoqda: <xliff:g id="keys" example="SandFly+H">%2$s</xliff:g></string>
+    <string name="item_file_problem_setting"><xliff:g id="item" example="Reading">%1$s</xliff:g>: <xliff:g id="key" example="pref_vibration">%2$s</xliff:g> sozlamasi nomaʼlum, profilda boʻlishi mumkin emas yoki qiymati notoʻgʻri turda</string>
+    <string name="item_file_problem_regex"><xliff:g id="dictionary" example="Speech dictionary">%1$s</xliff:g>: muntazam ifoda rad etildi: <xliff:g id="expression" example="(a+)+">%2$s</xliff:g></string>
+    <string name="item_file_problem_limit"><xliff:g id="kind" example="Symbol dictionary">%1$s</xliff:g>: koʻpi bilan <xliff:g id="number" example="500">%2$d</xliff:g> element</string>
+    <string name="item_file_problem_more">Yana koʻp narsa qoldirildi</string>
+    <plurals name="item_file_count_macros">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> makro</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> makro</item>
+    </plurals>
+    <plurals name="item_file_count_gesture_profiles">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> imo-ishora profili</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> imo-ishora profili</item>
+    </plurals>
+    <plurals name="item_file_count_keymaps">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> tugma xaritasi</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> tugma xaritasi</item>
+    </plurals>
+    <plurals name="item_file_count_apps">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> ilovaning imo-ishoralari va klaviatura yorliqlari</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> ilovaning imo-ishoralari va klaviatura yorliqlari</item>
+    </plurals>
+    <plurals name="item_file_count_settings_profiles">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> sozlama profili</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> sozlama profili</item>
+    </plurals>
+    <plurals name="item_file_count_speech_dictionary">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> nutq lugʻati yozuvi</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> nutq lugʻati yozuvi</item>
+    </plurals>
+    <plurals name="item_file_count_symbol_dictionary">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> belgilar lugʻati yozuvi</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> belgilar lugʻati yozuvi</item>
+    </plurals>
+    <plurals name="item_file_count_braille_dictionary">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> Brayl lugʻati yozuvi</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> Brayl lugʻati yozuvi</item>
+    </plurals>
+    <plurals name="item_file_count_voice_commands">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> maxsus ovozli buyruq</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> maxsus ovozli buyruq</item>
+    </plurals>
+</resources>

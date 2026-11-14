@@ -46,4 +46,17 @@
     <string name="granular_editing_not_saved">సేవ్ చేయబడలేదు: టెక్స్ట్ ఫీల్డ్ పోయింది. వచనం కాపీ చేయబడింది.</string>
     <string name="granular_editing_no_text">సవరించడానికి టెక్స్ట్ లేదు</string>
     <string name="granular_editing_password">పాస్‌వర్డ్ ఫీల్డ్‌లలో అందుబాటులో లేదు</string>
+    <plurals name="granular_editing_spaces">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> స్పేస్</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> స్పేస్‌లు</item>
+    </plurals>
+    <plurals name="granular_editing_new_lines">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> కొత్త లైన్</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> కొత్త లైన్‌లు</item>
+    </plurals>
+    <plurals name="granular_editing_tabs">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ట్యాబ్</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> ట్యాబ్‌లు</item>
+    </plurals>
+    <string name="granular_editing_blank_line">ఖాళీ లైన్</string>
 </resources>

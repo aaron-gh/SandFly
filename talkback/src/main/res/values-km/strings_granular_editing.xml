@@ -46,4 +46,14 @@
     <string name="granular_editing_not_saved">មិនបានរក្សាទុក៖ វាលអត្ថបទបានបាត់។ អត្ថបទត្រូវបានចម្លង។</string>
     <string name="granular_editing_no_text">គ្មានអត្ថបទដើម្បីកែសម្រួលទេ</string>
     <string name="granular_editing_password">មិនអាចប្រើក្នុងប្រអប់ពាក្យសម្ងាត់ទេ</string>
+    <plurals name="granular_editing_spaces">
+        <item quantity="other"><xliff:g id="count" example="1">%d</xliff:g> ចន្លោះ</item>
+    </plurals>
+    <plurals name="granular_editing_new_lines">
+        <item quantity="other"><xliff:g id="count" example="1">%d</xliff:g> បន្ទាត់ថ្មី</item>
+    </plurals>
+    <plurals name="granular_editing_tabs">
+        <item quantity="other"><xliff:g id="count" example="1">%d</xliff:g> ថេប</item>
+    </plurals>
+    <string name="granular_editing_blank_line">បន្ទាត់ទទេ</string>
 </resources>

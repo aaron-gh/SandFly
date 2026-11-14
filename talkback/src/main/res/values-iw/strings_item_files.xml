@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="item_file_import">ייבוא מקובץ</string>
+    <string name="item_file_export">ייצוא לקובץ</string>
+    <string name="title_pref_export_item_file_reference">מפרט פורמט קובץ הייצוא</string>
+    <string name="item_file_keymaps">מפות מקשים</string>
+    <string name="item_file_exported">יוצא</string>
+    <string name="item_file_export_failed">הייצוא נכשל</string>
+    <string name="item_file_not_read">הקובץ הזה אינו קובץ פריטים של SandFly או שלא ניתן היה לקרוא אותו</string>
+    <string name="item_file_settings_file">זה קובץ הגדרות. אפשר לייבא אותו דרך גיבוי ושחזור &gt; ייבוא הגדרות</string>
+    <string name="item_file_newer">הקובץ הזה הוא מגרסה חדשה יותר של SandFly</string>
+    <string name="item_file_nothing_imported">לא יובא דבר</string>
+    <string name="item_file_imported">יובאו: <xliff:g id="items" example="2 macros, 1 gesture profile">%1$s</xliff:g></string>
+    <string name="item_file_left_out">לא נכללו:</string>
+    <string name="item_file_problem_not_read"><xliff:g id="kind" example="Macros">%1$s</xliff:g>, פריט <xliff:g id="number" example="3">%2$d</xliff:g>: לא נקרא</string>
+    <string name="item_file_problem_command"><xliff:g id="item" example="Open mail">%1$s</xliff:g>: פקודה לא מוכרת <xliff:g id="command" example="READ_ALL">%2$s</xliff:g></string>
+    <string name="item_file_problem_gesture"><xliff:g id="item" example="Reading">%1$s</xliff:g>: תנועה לא מוכרת <xliff:g id="gesture" example="pref_shortcut_spin">%2$s</xliff:g></string>
+    <string name="item_file_problem_keys"><xliff:g id="item" example="My keymap">%1$s</xliff:g>: המקשים לא הובנו: <xliff:g id="keys" example="SandFly+Foo">%2$s</xliff:g></string>
+    <string name="item_file_problem_keys_taken"><xliff:g id="item" example="My keymap">%1$s</xliff:g>: המקשים כבר בשימוש: <xliff:g id="keys" example="SandFly+H">%2$s</xliff:g></string>
+    <string name="item_file_problem_setting"><xliff:g id="item" example="Reading">%1$s</xliff:g>: ההגדרה <xliff:g id="key" example="pref_vibration">%2$s</xliff:g> לא מוכרת, לא יכולה להיות בפרופיל או שסוג הערך שלה שגוי</string>
+    <string name="item_file_problem_regex"><xliff:g id="dictionary" example="Speech dictionary">%1$s</xliff:g>: הביטוי הרגולרי נדחה: <xliff:g id="expression" example="(a+)+">%2$s</xliff:g></string>
+    <string name="item_file_problem_limit"><xliff:g id="kind" example="Symbol dictionary">%1$s</xliff:g>: <xliff:g id="number" example="500">%2$d</xliff:g> פריטים לכל היותר</string>
+    <string name="item_file_problem_more">עוד פריטים לא נכללו</string>
+    <plurals name="item_file_count_macros">
+        <item quantity="one">מאקרו אחד</item>
+        <item quantity="two">שני מאקרו</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> מאקרו</item>
+    </plurals>
+    <plurals name="item_file_count_gesture_profiles">
+        <item quantity="one">פרופיל תנועות אחד</item>
+        <item quantity="two">שני פרופילי תנועות</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> פרופילי תנועות</item>
+    </plurals>
+    <plurals name="item_file_count_keymaps">
+        <item quantity="one">מפת מקשים אחת</item>
+        <item quantity="two">שתי מפות מקשים</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> מפות מקשים</item>
+    </plurals>
+    <plurals name="item_file_count_apps">
+        <item quantity="one">תנועות וקיצורי מקלדת של אפליקציה אחת</item>
+        <item quantity="two">תנועות וקיצורי מקלדת של שתי אפליקציות</item>
+        <item quantity="other">תנועות וקיצורי מקלדת של <xliff:g id="count" example="2">%d</xliff:g> אפליקציות</item>
+    </plurals>
+    <plurals name="item_file_count_settings_profiles">
+        <item quantity="one">פרופיל הגדרות אחד</item>
+        <item quantity="two">שני פרופילי הגדרות</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> פרופילי הגדרות</item>
+    </plurals>
+    <plurals name="item_file_count_speech_dictionary">
+        <item quantity="one">ערך אחד במילון הדיבור</item>
+        <item quantity="two">שני ערכים במילון הדיבור</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> ערכים במילון הדיבור</item>
+    </plurals>
+    <plurals name="item_file_count_symbol_dictionary">
+        <item quantity="one">ערך אחד במילון הסמלים</item>
+        <item quantity="two">שני ערכים במילון הסמלים</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> ערכים במילון הסמלים</item>
+    </plurals>
+    <plurals name="item_file_count_braille_dictionary">
+        <item quantity="one">ערך אחד במילון הברייל</item>
+        <item quantity="two">שני ערכים במילון הברייל</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> ערכים במילון הברייל</item>
+    </plurals>
+    <plurals name="item_file_count_voice_commands">
+        <item quantity="one">פקודה קולית מותאמת אישית אחת</item>
+        <item quantity="two">שתי פקודות קוליות מותאמות אישית</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> פקודות קוליות מותאמות אישית</item>
+    </plurals>
+</resources>

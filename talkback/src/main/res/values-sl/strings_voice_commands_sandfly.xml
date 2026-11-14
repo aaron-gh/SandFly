@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_voice_commands">Glasovni ukazi</string>
+    <string name="title_pref_voice_commands_ai">Razumevanje glasovnih ukazov z AI</string>
+    <string name="voice_commands_custom">Glasovni ukazi po meri</string>
+    <string name="voice_command_add">Dodaj glasovni ukaz</string>
+    <string name="voice_command_phrase">Fraza</string>
+    <string name="voice_command_change_phrase">Spremeni frazo</string>
+    <string name="voice_command_change_command">Spremeni ukaz</string>
+    <string name="voice_command_delete_confirm">Želite izbrisati <xliff:g id="phrase" example="Good morning">%1$s</xliff:g>?</string>
+    <string name="voice_command_phrase_exists"><xliff:g id="phrase" example="Good morning">%1$s</xliff:g> je že glasovni ukaz</string>
+    <string name="voice_commands_not_understood">Ni razumljeno: <xliff:g id="text" example="open the door">%1$s</xliff:g></string>
+    <string name="voice_commands_not_available">Ni na voljo: <xliff:g id="name" example="Morning macro">%1$s</xliff:g></string>
+    <string name="voice_commands_not_found">Ni najdeno: <xliff:g id="label" example="Settings">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app">Ni aplikacije z imenom <xliff:g id="name" example="Signal">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app_for_action">Ni aplikacije za to dejanje</string>
+    <string name="voice_commands_calling">Klicanje: <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_call_permission">Dovolite telefonske klice, nato ponovno izgovorite ukaz.</string>
+    <string name="voice_commands_contacts_permission">Dovolite dostop do stikov, nato ponovno izgovorite ukaz.</string>
+    <string name="voice_commands_no_contact">Ni stika z imenom <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_contacts_several">Več stikov z imenom <xliff:g id="name" example="Sam">%1$s</xliff:g>: <xliff:g id="names" example="Sam Jones, Sam Smith">%2$s</xliff:g></string>
+    <string name="voice_commands_message_text">Sporočilo za <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_message_confirm">Pošlji stiku <xliff:g id="name" example="Sam">%1$s</xliff:g>: <xliff:g id="text" example="I am on my way">%2$s</xliff:g>?</string>
+    <string name="voice_commands_message_confirm_result">Pošlji stiku <xliff:g id="name" example="Sam">%1$s</xliff:g>?</string>
+    <string name="voice_commands_message_not_sent">Sporočilo ni poslano</string>
+    <string name="voice_commands_send_pressed">Pošlji pritisnjeno</string>
+    <string name="voice_commands_send_button">Pošlji</string>
+    <string name="voice_commands_no_description">Opis ni prejet</string>
+    <string name="voice_commands_copied">Kopirano</string>
+    <string-array name="voice_commands_chain_words">
+        <item>in nato</item>
+        <item>nato</item>
+        <item>potem</item>
+        <item>in potem</item>
+        <item>zatem</item>
+    </string-array>
+    <string-array name="voice_commands_and_words">
+        <item>in</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_start">
+        <item>prosim</item>
+        <item>lahko</item>
+        <item>ali lahko</item>
+        <item>ali bi lahko</item>
+        <item>želim</item>
+        <item>rad bi</item>
+        <item>rada bi</item>
+        <item>zdaj</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_end">
+        <item>prosim</item>
+        <item>zame</item>
+        <item>zdaj</item>
+    </string-array>
+    <string-array name="voice_commands_cancel_words">
+        <item>stop</item>
+        <item>ustavi</item>
+        <item>prekliči</item>
+        <item>prekini</item>
+        <item>pozabi</item>
+        <item>ni važno</item>
+        <item>tiho</item>
+    </string-array>
+    <string-array name="voice_commands_yes">
+        <item>da</item>
+        <item>ja</item>
+        <item>seveda</item>
+        <item>pošlji</item>
+        <item>pošlji ga</item>
+        <item>pošlji jo</item>
+        <item>v redu</item>
+        <item>ok</item>
+        <item>okej</item>
+        <item>naredi to</item>
+    </string-array>
+    <string-array name="voice_commands_sms_names">
+        <item>SMS</item>
+        <item>besedilno sporočilo</item>
+        <item>sporočila</item>
+    </string-array>
+    <string-array name="voice_commands_send_image_description">
+        <item>pošlji opis slike stiku {who}</item>
+        <item>pošlji opis te slike stiku {who}</item>
+        <item>pošlji opis fotografije stiku {who}</item>
+        <item>pošlji opis te fotografije stiku {who}</item>
+        <item>pošljite opis slike stiku {who}</item>
+    </string-array>
+    <string-array name="voice_commands_send_screen_description">
+        <item>pošlji opis zaslona stiku {who}</item>
+        <item>pošlji opis tega zaslona stiku {who}</item>
+        <item>pošljite opis zaslona stiku {who}</item>
+    </string-array>
+    <string-array name="voice_commands_send_previous">
+        <item>pošlji to stiku {who} v {app}</item>
+        <item>pošlji to stiku {who} prek {app}</item>
+        <item>pošlji to stiku {who}</item>
+        <item>pošlji opis stiku {who}</item>
+        <item>deli to s stikom {who}</item>
+    </string-array>
+    <string-array name="voice_commands_message">
+        <item>pošlji sporočilo stiku {who} v {app} z besedilom {text}</item>
+        <item>pošlji sporočilo stiku {who} prek {app} z besedilom {text}</item>
+        <item>pošlji sporočilo stiku {who} z besedilom {text}</item>
+        <item>pošlji sporočilo stiku {whoandtext}</item>
+        <item>pošlji sporočilo {app} stiku {who} z besedilom {text}</item>
+        <item>pošlji sporočilo {app} stiku {who}</item>
+        <item>pošljite sporočilo stiku {who} z besedilom {text}</item>
+        <item>piši stiku {who} v {app} {text}</item>
+        <item>piši stiku {who} {text}</item>
+        <item>napiši sporočilo stiku {who} {text}</item>
+        <item>napiši SMS stiku {who} {text}</item>
+        <item>napišite stiku {who} {text}</item>
+        <item>piši stiku {whoandtext}</item>
+        <item>povej stiku {who} v {app} {text}</item>
+    </string-array>
+    <string-array name="voice_commands_call">
+        <item>pokliči {who}</item>
+        <item>pokliči stik {who}</item>
+        <item>pokličite {who}</item>
+        <item>kliči {who}</item>
+        <item>pokliči številko {who}</item>
+        <item>opravi klic na {who}</item>
+    </string-array>
+    <string-array name="voice_commands_describe_screen">
+        <item>opiši zaslon</item>
+        <item>opiši, kaj je na zaslonu</item>
+        <item>kaj je na zaslonu</item>
+        <item>kaj je na mojem zaslonu</item>
+    </string-array>
+    <string-array name="voice_commands_describe_image">
+        <item>opiši [to] sliko</item>
+        <item>opiši [to] fotografijo</item>
+        <item>kaj je na [tej] sliki</item>
+        <item>kaj je na [tej] fotografiji</item>
+    </string-array>
+    <string-array name="voice_commands_copy_result">
+        <item>kopiraj to</item>
+        <item>kopiraj opis</item>
+        <item>kopiraj zadnjo frazo</item>
+        <item>kopiraj zadnji stavek</item>
+        <item>kopiraj zadnje izgovorjeno</item>
+        <item>kopiraj, kar si [pravkar] rekel</item>
+    </string-array>
+    <string-array name="voice_commands_wait">
+        <item>počakaj {n} sekund</item>
+        <item>počakaj {n} sekundo</item>
+        <item>počakaj {n} sekundi</item>
+        <item>počakaj {n} sekunde</item>
+        <item>počakaj sekundo</item>
+        <item>počakaj</item>
+        <item>počakajte</item>
+    </string-array>
+    <string-array name="voice_commands_type_text">
+        <item>vtipkaj {text}</item>
+        <item>napiši {text}</item>
+        <item>vnesi {text}</item>
+        <item>vtipkajte {text}</item>
+    </string-array>
+    <string-array name="voice_commands_run">
+        <item>zaženi makro {command}</item>
+        <item>zaženi ukaz {command}</item>
+        <item>zaženi {command}</item>
+        <item>izvedi {command}</item>
+    </string-array>
+    <string-array name="voice_commands_open">
+        <item>odpri {app}</item>
+        <item>odpri aplikacijo {app}</item>
+        <item>zaženi {app}</item>
+        <item>preklopi na {app}</item>
+        <item>odprite {app}</item>
+    </string-array>
+    <string-array name="voice_commands_tap">
+        <item>dvakrat se dotakni {label}</item>
+        <item>dotakni se {label}</item>
+        <item>klikni {label}</item>
+        <item>pritisni {label}</item>
+        <item>aktiviraj {label}</item>
+        <item>izberi {label}</item>
+    </string-array>
+</resources>

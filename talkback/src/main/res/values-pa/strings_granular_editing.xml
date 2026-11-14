@@ -46,4 +46,17 @@
     <string name="granular_editing_not_saved">ਰੱਖਿਅਤ ਨਹੀਂ ਹੋਇਆ: ਟੈਕਸਟ ਖੇਤਰ ਹੁਣ ਮੌਜੂਦ ਨਹੀਂ ਹੈ। ਟੈਕਸਟ ਕਾਪੀ ਕੀਤਾ ਗਿਆ ਹੈ।</string>
     <string name="granular_editing_no_text">ਸੰਪਾਦਨ ਕਰਨ ਲਈ ਕੋਈ ਲਿਖਤ ਨਹੀਂ ਹੈ</string>
     <string name="granular_editing_password">ਪਾਸਵਰਡ ਖੇਤਰਾਂ ਵਿੱਚ ਉਪਲਬਧ ਨਹੀਂ ਹੈ</string>
+    <plurals name="granular_editing_spaces">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ਖਾਲੀ ਥਾਂ</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> ਖਾਲੀ ਥਾਂਵਾਂ</item>
+    </plurals>
+    <plurals name="granular_editing_new_lines">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ਨਵੀਂ ਲਾਈਨ</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> ਨਵੀਆਂ ਲਾਈਨਾਂ</item>
+    </plurals>
+    <plurals name="granular_editing_tabs">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ਟੈਬ</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> ਟੈਬਾਂ</item>
+    </plurals>
+    <string name="granular_editing_blank_line">ਖਾਲੀ ਲਾਈਨ</string>
 </resources>

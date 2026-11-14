@@ -390,4 +390,12 @@
         <item>@string/notification_shake_3</item>
     </string-array>
     <string name="notification_clock_voice_notifications">Хабарландыру дауысы</string>
+    <string name="notification_exact_alarms_title">Дабылдар мен еске салғыштар рұқсатын қосу</string>
+    <string name="shortcut_toggle_time_announcements">Уақыт хабарландыруларын қосу не өшіру</string>
+    <string name="notification_clock_now_on">Уақыт хабарландырулары қосулы</string>
+    <string name="notification_clock_now_off">Уақыт хабарландырулары өшірулі</string>
+    <plurals name="notification_clock_battery">
+        <item quantity="one"><xliff:g id="percent" example="76">%d</xliff:g> пайыз</item>
+        <item quantity="other"><xliff:g id="percent" example="76">%d</xliff:g> пайыз</item>
+    </plurals>
 </resources>

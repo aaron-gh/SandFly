@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="item_file_import">கோப்பிலிருந்து இறக்குமதி செய்</string>
+    <string name="item_file_export">கோப்பாக ஏற்றுமதி செய்</string>
+    <string name="title_pref_export_item_file_reference">ஏற்றுமதி கோப்பு வடிவக் குறிப்பு</string>
+    <string name="item_file_keymaps">விசை வரைபடங்கள்</string>
+    <string name="item_file_exported">ஏற்றுமதி செய்யப்பட்டது</string>
+    <string name="item_file_export_failed">ஏற்றுமதி செய்ய முடியவில்லை</string>
+    <string name="item_file_not_read">இது SandFly உருப்படி கோப்பு அல்ல, அல்லது படிக்க முடியவில்லை</string>
+    <string name="item_file_settings_file">இது அமைப்புகள் கோப்பு. காப்புப் பிரதியும் மீட்டமைத்தலும் &gt; அமைப்புகளை இறக்குமதி செய் மூலம் இறக்குமதி செய்யவும்</string>
+    <string name="item_file_newer">இந்தக் கோப்பு SandFly இன் புதிய பதிப்பிலிருந்து வந்தது</string>
+    <string name="item_file_nothing_imported">எதுவும் இறக்குமதி செய்யப்படவில்லை</string>
+    <string name="item_file_imported">இறக்குமதி செய்யப்பட்டது: <xliff:g id="items" example="2 macros, 1 gesture profile">%1$s</xliff:g></string>
+    <string name="item_file_left_out">தவிர்க்கப்பட்டவை:</string>
+    <string name="item_file_problem_not_read"><xliff:g id="kind" example="Macros">%1$s</xliff:g>, உருப்படி <xliff:g id="number" example="3">%2$d</xliff:g>: படிக்கப்படவில்லை</string>
+    <string name="item_file_problem_command"><xliff:g id="item" example="Open mail">%1$s</xliff:g>: தெரியாத கட்டளை <xliff:g id="command" example="READ_ALL">%2$s</xliff:g></string>
+    <string name="item_file_problem_gesture"><xliff:g id="item" example="Reading">%1$s</xliff:g>: தெரியாத சைகை <xliff:g id="gesture" example="pref_shortcut_spin">%2$s</xliff:g></string>
+    <string name="item_file_problem_keys"><xliff:g id="item" example="My keymap">%1$s</xliff:g>: விசைகள் புரியவில்லை: <xliff:g id="keys" example="SandFly+Foo">%2$s</xliff:g></string>
+    <string name="item_file_problem_keys_taken"><xliff:g id="item" example="My keymap">%1$s</xliff:g>: விசைகள் ஏற்கனவே பயன்பாட்டில் உள்ளன: <xliff:g id="keys" example="SandFly+H">%2$s</xliff:g></string>
+    <string name="item_file_problem_setting"><xliff:g id="item" example="Reading">%1$s</xliff:g>: அமைப்பு <xliff:g id="key" example="pref_vibration">%2$s</xliff:g> தெரியாதது, சுயவிவரத்தில் இடம்பெற முடியாதது, அல்லது தவறான வகை மதிப்பு கொண்டது</string>
+    <string name="item_file_problem_regex"><xliff:g id="dictionary" example="Speech dictionary">%1$s</xliff:g>: ஒழுங்கு கோவை நிராகரிக்கப்பட்டது: <xliff:g id="expression" example="(a+)+">%2$s</xliff:g></string>
+    <string name="item_file_problem_limit"><xliff:g id="kind" example="Symbol dictionary">%1$s</xliff:g>: அதிகபட்சம் <xliff:g id="number" example="500">%2$d</xliff:g> உருப்படிகள்</string>
+    <string name="item_file_problem_more">மேலும் தவிர்க்கப்பட்டன</string>
+    <plurals name="item_file_count_macros">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> மேக்ரோ</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> மேக்ரோக்கள்</item>
+    </plurals>
+    <plurals name="item_file_count_gesture_profiles">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> சைகை சுயவிவரம்</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> சைகை சுயவிவரங்கள்</item>
+    </plurals>
+    <plurals name="item_file_count_keymaps">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> விசை வரைபடம்</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> விசை வரைபடங்கள்</item>
+    </plurals>
+    <plurals name="item_file_count_apps">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ஆப்ஸின் சைகைகளும் விசைப்பலகை குறுக்குவழிகளும்</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> ஆப்ஸ்களின் சைகைகளும் விசைப்பலகை குறுக்குவழிகளும்</item>
+    </plurals>
+    <plurals name="item_file_count_settings_profiles">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> அமைப்புகள் சுயவிவரம்</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> அமைப்புகள் சுயவிவரங்கள்</item>
+    </plurals>
+    <plurals name="item_file_count_speech_dictionary">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> பேச்சு அகராதி உள்ளீடு</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> பேச்சு அகராதி உள்ளீடுகள்</item>
+    </plurals>
+    <plurals name="item_file_count_symbol_dictionary">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> குறியீட்டு அகராதி உள்ளீடு</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> குறியீட்டு அகராதி உள்ளீடுகள்</item>
+    </plurals>
+    <plurals name="item_file_count_braille_dictionary">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> பிரெய்ல் அகராதி உள்ளீடு</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> பிரெய்ல் அகராதி உள்ளீடுகள்</item>
+    </plurals>
+    <plurals name="item_file_count_voice_commands">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> தனிப்பயன் குரல் கட்டளை</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> தனிப்பயன் குரல் கட்டளைகள்</item>
+    </plurals>
+</resources>

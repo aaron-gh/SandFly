@@ -2025,4 +2025,144 @@
     <string name="value_keep_models_5">5 daqiqa</string>
     <string name="value_keep_models_15">15 daqiqa</string>
     <string name="value_keep_models_30">30 daqiqa</string>
+    <string name="title_pref_speech_equalizer_save_preset">Andoza sifatida saqlash</string>
+    <string name="title_pref_speech_equalizer_saved_presets">Saqlangan andozalar</string>
+    <string name="speech_equalizer_preset_name">Nom</string>
+    <string name="speech_equalizer_preset_name_taken"><xliff:g id="name" example="Podcast">%1$s</xliff:g> nomli andoza bor</string>
+    <string name="speech_equalizer_presets_full">Boshqa andozalarni saqlab boʻlmaydi. Yangisini saqlash uchun bittasini oʻchiring.</string>
+    <string name="speech_equalizer_preset_saved"><xliff:g id="name" example="Podcast">%1$s</xliff:g> saqlandi</string>
+    <string name="speech_equalizer_preset_rename">Nomini oʻzgartirish</string>
+    <string name="speech_equalizer_preset_delete">Oʻchirish</string>
+    <string name="speech_equalizer_preset_delete_confirm"><xliff:g id="name" example="Podcast">%1$s</xliff:g> oʻchirilsinmi?</string>
+    <string name="speech_equalizer_preset_deleted"><xliff:g id="name" example="Podcast">%1$s</xliff:g> oʻchirildi</string>
+    <string name="title_pref_emoji_voice">Emoji ovozi</string>
+    <string name="value_emoji_voice_same">Nutq bilan bir xil</string>
+    <string name="title_pref_emoji_rate">Emoji nutq tezligi</string>
+    <string name="title_pref_line_breaks_as_spaces">Qator uzilishlarini boʻshliq sifatida oʻqish</string>
+    <string name="title_pref_language_voices">Til boʻyicha ovozlar</string>
+    <string name="title_pref_identify_languages_from_words">Tillarni soʻzlardan aniqlash</string>
+    <string name="title_pref_add_language">Til qoʻshish</string>
+    <string name="title_pref_remove_language">Tilni olib tashlash</string>
+    <string name="title_pref_script_language">%1$s yozuvi</string>
+    <string name="title_pref_screen_on_notification_count">Bildirishnomalar soni</string>
+    <plurals name="template_screen_on_notification_count">
+        <item quantity="one"><xliff:g id="count" example="6">%d</xliff:g> bildirishnoma</item>
+        <item quantity="other"><xliff:g id="count" example="6">%d</xliff:g> bildirishnoma</item>
+    </plurals>
+    <string name="title_pref_phonetic_letters_review">Koʻrib chiqishda harflarni fonetik oʻqish</string>
+    <string name="title_pref_phonetic_letters_typing">Yozishda harflarni fonetik oʻqish</string>
+    <string name="title_pref_emoji_suffix">Emoji nomlaridan keyin «emoji» deyish</string>
+    <string name="overview_shizuku_not_running">Shizuku ishlamayapti</string>
+    <string name="overview_shizuku_not_allowed">Shizuku SandFly uchun ruxsat bermaydi</string>
+    <string name="overview_no_older_app">Eskiroq ilova yoʻq</string>
+    <string name="overview_no_newer_app">Yangiroq ilova yoʻq</string>
+    <string name="stream_volume_needs_access">Bu tovush balandligini oʻzgartirish uchun «Bezovta qilinmasin» rejimiga kirishga ruxsat bering.</string>
+    <string name="corner_gestures_title">Burchaklar</string>
+    <string name="shortcut_move_to_item_below">Pastdagi elementga oʻtish</string>
+    <string name="shortcut_move_to_item_above">Yuqoridagi elementga oʻtish</string>
+    <string name="shortcut_older_app">Eskiroq ilova</string>
+    <string name="shortcut_newer_app">Yangiroq ilova</string>
+    <string name="shortcut_answer_call">Qoʻngʻiroqqa javob berish</string>
+    <string name="answer_call_no_call">Kiruvchi qoʻngʻiroq yoʻq</string>
+    <string name="answer_call_permission">Qoʻngʻiroqlarga javob berish uchun ruxsat kerak</string>
+    <string name="shortcut_switch_keyboard">Klaviaturani almashtirish</string>
+    <string name="switch_keyboard_none">Boshqa klaviatura yoqilmagan</string>
+    <string name="switch_keyboard_failed">Klaviatura almashtirilmadi</string>
+    <string name="clipboard_history_hint">Tanlash uchun yuqoriga yoki pastga suring, joylash uchun ikki marta bosing</string>
+    <string name="title_speech_history">Nutq tarixi</string>
+    <string name="speech_history_empty">Nutq yoʻq</string>
+    <string name="speech_history_clear">Tarixni tozalash</string>
+    <string name="title_pref_shortcut_corner_top_left_tap">Yuqori chap burchakka teginish</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap">Yuqori chap burchakka ikki marta teginish</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap">Yuqori chap burchakka uch marta teginish</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap_hold">Yuqori chap burchakka ikki marta teginib ushlab turish</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap_hold">Yuqori chap burchakka uch marta teginib ushlab turish</string>
+    <string name="title_pref_shortcut_corner_top_right_tap">Yuqori oʻng burchakka teginish</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap">Yuqori oʻng burchakka ikki marta teginish</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap">Yuqori oʻng burchakka uch marta teginish</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap_hold">Yuqori oʻng burchakka ikki marta teginib ushlab turish</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap_hold">Yuqori oʻng burchakka uch marta teginib ushlab turish</string>
+    <string name="title_pref_shortcut_corner_bottom_left_tap">Pastki chap burchakka teginish</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap">Pastki chap burchakka ikki marta teginish</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap">Pastki chap burchakka uch marta teginish</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap_hold">Pastki chap burchakka ikki marta teginib ushlab turish</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap_hold">Pastki chap burchakka uch marta teginib ushlab turish</string>
+    <string name="title_pref_shortcut_corner_bottom_right_tap">Pastki oʻng burchakka teginish</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap">Pastki oʻng burchakka ikki marta teginish</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap">Pastki oʻng burchakka uch marta teginish</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap_hold">Pastki oʻng burchakka ikki marta teginib ushlab turish</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap_hold">Pastki oʻng burchakka uch marta teginib ushlab turish</string>
+    <string name="title_pref_swipe_start_time">Imo-ishorani boshlash vaqti</string>
+    <string name="title_pref_swipes_before_lift">Barmoq koʻtarilguncha surishlarni aniqlash</string>
+    <string name="summary_pref_swipes_before_lift">Oldinga-orqaga va burchakli imo-ishoralarni oʻchiradi.</string>
+    <string name="title_pref_corner_size_mm">Burchak oʻlchami</string>
+    <string name="value_corner_size_edge_width">Chet kengligi bilan bir xil</string>
+    <string name="title_pref_corner_tap_time_ms">Burchakka teginish vaqti chegarasi</string>
+    <string name="value_corner_tap_time_system">Tizim standarti</string>
+    <string name="title_pref_edge_speak_commands">Har bir bosishda buyruqni aytish</string>
+    <string-array name="pref_volume_change_feedback_entries">
+        <item>@string/volume_change_feedback_off</item>
+        <item>@string/volume_change_feedback_tone</item>
+        <item>@string/volume_change_feedback_spoken</item>
+        <item>@string/volume_change_feedback_tone_and_spoken</item>
+    </string-array>
+    <string name="title_pref_volume_change_tone_during_media">Media ijro etilganda tonni oʻchirish</string>
+    <string name="title_pref_volume_change_speech_during_media">Media ijro etilganda nutqni oʻchirish</string>
+    <string name="title_pref_volume_change_interrupts_speech">Tovush balandligini aytish uchun nutqni uzish</string>
+    <string name="title_pref_volume_keys_speech_volume_while_speaking">Nutq paytida tovush tugmalari nutq ovozini oʻzgartiradi</string>
+    <string name="title_pref_double_tap_moves_cursor">Ikki marta bosish kursorni boshiga yoki oxiriga oʻtkazadi</string>
+    <string name="title_pref_scroll_ahead">Keyingi elementgacha oldindan aylantirish</string>
+    <string name="title_pref_speak_while_scrolling">Aylantirishda keyingi elementni aytish</string>
+    <string-array name="pref_text_entities_entries">
+    <item>@string/text_entity_web</item>
+    <item>@string/text_entity_email</item>
+    <item>@string/text_entity_phone</item>
+    <item>@string/text_entity_code</item>
+  </string-array>
+    <string name="value_keep_models_until_stopped">SandFly toʻxtaguncha</string>
+    <string name="title_pref_model_download_server">Model yuklab olish serveri</string>
+    <string name="title_pref_settings_profiles">Sozlama profillari</string>
+    <string name="title_pref_new_settings_profile">Yangi sozlama profili</string>
+    <string name="settings_profile_new_name">Profil <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="settings_profile_name_taken"><xliff:g id="name" example="Demo">%1$s</xliff:g> nomli sozlama profili bor</string>
+    <string name="settings_profile_in_use">Ishlatilmoqda</string>
+    <string name="settings_profile_menu_item_in_use"><xliff:g id="name" example="Demo">%1$s</xliff:g>, ishlatilmoqda</string>
+    <string name="settings_profile_none">Sozlama profili yoʻq</string>
+    <string name="settings_profile_use_now">Hozir ishlatish</string>
+    <string name="settings_profile_stop_using">Ishlatishni toʻxtatish</string>
+    <string name="settings_profile_change_settings">Sozlamalarni oʻzgartirish</string>
+    <string name="settings_profile_editing">Oʻzgarishlar <xliff:g id="name" example="Messaging">%1$s</xliff:g> profiliga saqlanadi</string>
+    <string name="settings_profile_edit_saved">Oʻzgarishlar <xliff:g id="name" example="Messaging">%1$s</xliff:g> profiliga saqlandi</string>
+    <string name="settings_profile_use_automatically">Avtomatik ishlatish</string>
+    <string name="settings_profile_web">Veb-kontent</string>
+    <string name="settings_profile_reading">Uzluksiz oʻqish</string>
+    <string name="settings_profile_text_editing">Matn tahrirlash</string>
+    <string name="settings_profile_apps">Ilovalar</string>
+    <string name="settings_profile_add_app">Ilova qoʻshish</string>
+    <string name="settings_profile_settings">Bu profildagi sozlamalar</string>
+    <string name="settings_profile_no_settings">Yoʻq</string>
+    <string name="settings_profile_remove_confirm"><xliff:g id="item" example="Speech rate">%1$s</xliff:g> <xliff:g id="name" example="Messaging">%2$s</xliff:g> profilidan olib tashlansinmi?</string>
+    <string name="settings_profile_not_saved">Sozlama profili saqlanmadi</string>
+    <string name="settings_profile_in_use_announcement"><xliff:g id="name" example="Demo">%1$s</xliff:g> profili</string>
+    <string name="settings_profile_not_changed">Sozlama profili oʻzgartirilmadi</string>
+    <string name="title_settings_profile">Sozlama profili</string>
+    <string name="shortcut_settings_profiles">Sozlama profilini tanlash</string>
+    <string name="shortcut_next_settings_profile">Keyingi sozlama profili</string>
+    <string name="shortcut_previous_settings_profile">Oldingi sozlama profili</string>
+    <string name="title_copy_text_from_screen">Ekrandan matn nusxasini olish</string>
+    <string name="granularity_label">Boʻlish darajasi</string>
+    <string name="granularity_characters">Belgilar</string>
+    <string name="granularity_words">Soʻzlar</string>
+    <string name="granularity_paragraphs">Xatboshilar</string>
+    <string name="button_select_all">Hammasini tanlash</string>
+    <string name="no_text_selected">Matn tanlanmagan</string>
+    <string name="no_text_on_screen">Ekranda matn topilmadi</string>
+    <string name="title_select_last_spoken_phrase_word_by_word">Oxirgi aytilgan iborani soʻzma-soʻz tanlash</string>
+    <string name="no_words_selected">Soʻzlar tanlanmagan</string>
+    <string name="no_phrase_to_select">Tanlash uchun ibora yoʻq</string>
+    <string name="word_selection_list_cut_off">Roʻyxat <xliff:g id="count" example="1000">%1$d</xliff:g> elementda uzildi</string>
+    <plurals name="word_selection_copied">
+        <item quantity="one"><xliff:g id="count" example="5">%1$d</xliff:g> element nusxalandi</item>
+        <item quantity="other"><xliff:g id="count" example="5">%1$d</xliff:g> element nusxalandi</item>
+    </plurals>
 </resources>

@@ -47,4 +47,20 @@
     <string name="granular_editing_not_saved">לא נשמר: שדה הטקסט כבר לא קיים. הטקסט הועתק.</string>
     <string name="granular_editing_no_text">אין טקסט לעריכה</string>
     <string name="granular_editing_password">לא זמין בשדות הסיסמה</string>
+    <plurals name="granular_editing_spaces">
+        <item quantity="one">רווח אחד</item>
+        <item quantity="two">שני רווחים</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> רווחים</item>
+    </plurals>
+    <plurals name="granular_editing_new_lines">
+        <item quantity="one">שורה חדשה אחת</item>
+        <item quantity="two">שתי שורות חדשות</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> שורות חדשות</item>
+    </plurals>
+    <plurals name="granular_editing_tabs">
+        <item quantity="one">תו טאב אחד</item>
+        <item quantity="two">שני תווי טאב</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> תווי טאב</item>
+    </plurals>
+    <string name="granular_editing_blank_line">שורה ריקה</string>
 </resources>

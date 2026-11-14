@@ -46,4 +46,17 @@
     <string name="granular_editing_not_saved">Nuk u ruajt: fusha e tekstit është zhdukur. Teksti është kopjuar.</string>
     <string name="granular_editing_no_text">Nuk ka tekst për të redaktuar</string>
     <string name="granular_editing_password">Nuk disponohet në fushat e fjalëkalimit</string>
+    <plurals name="granular_editing_spaces">
+        <item quantity="one"><xliff:g id="count" example="3">%d</xliff:g> hapësirë</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> hapësira</item>
+    </plurals>
+    <plurals name="granular_editing_new_lines">
+        <item quantity="one"><xliff:g id="count" example="3">%d</xliff:g> rresht i ri</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> rreshta të rinj</item>
+    </plurals>
+    <plurals name="granular_editing_tabs">
+        <item quantity="one"><xliff:g id="count" example="3">%d</xliff:g> tabulator</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> tabulatorë</item>
+    </plurals>
+    <string name="granular_editing_blank_line">Rresht bosh</string>
 </resources>

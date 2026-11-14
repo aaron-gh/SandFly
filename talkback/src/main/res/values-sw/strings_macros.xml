@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_macros">Makro</string>
+    <string name="shortcut_stop_macro">Acha makro</string>
+    <string name="macro_add">Ongeza makro</string>
+    <string name="macro_run_now">Endesha sasa</string>
+    <string name="macro_add_step">Ongeza hatua</string>
+    <string name="macro_add_at_end">Mwishoni</string>
+    <string name="macro_add_at_start">Mwanzoni</string>
+    <string name="macro_add_after">Baada ya hatua <xliff:g id="step" example="2">%1$d</xliff:g>: <xliff:g id="name" example="If App in front: Chrome">%2$s</xliff:g></string>
+    <string name="macro_steps">Hatua</string>
+    <string name="macro_no_steps">Hakuna hatua</string>
+    <string name="macro_delete">Futa makro</string>
+    <string name="macro_delete_confirm">Futa <xliff:g id="name" example="Send message">%1$s</xliff:g>?</string>
+    <string name="macro_step_command">Endesha amri</string>
+    <string name="macro_step_wait">Subiri</string>
+    <string name="macro_step_tap">Gusa kipengee</string>
+    <string name="macro_step_focus">Lenga kipengee</string>
+    <string name="macro_step_speak_item">Tamka kipengee</string>
+    <string name="macro_step_speak_text">Tamka maandishi</string>
+    <string name="macro_step_type">Andika maandishi</string>
+    <string name="macro_step_tap_value">Gusa <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_focus_value">Lenga <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_item_value">Tamka <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_text_value">Tamka <xliff:g id="text" example="Done">%1$s</xliff:g></string>
+    <string name="macro_step_type_value">Andika <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <string name="macro_step_replace_value">Badilisha maandishi kuwa <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <plurals name="macro_step_wait_seconds">
+        <item quantity="one">Subiri sekunde <xliff:g id="count" example="2">%d</xliff:g></item>
+        <item quantity="other">Subiri sekunde <xliff:g id="count" example="2">%d</xliff:g></item>
+    </plurals>
+    <plurals name="macro_step_wait_milliseconds">
+        <item quantity="one">Subiri milisekunde <xliff:g id="count" example="500">%d</xliff:g></item>
+        <item quantity="other">Subiri milisekunde <xliff:g id="count" example="500">%d</xliff:g></item>
+    </plurals>
+    <string name="macro_step_unavailable">Haipatikani</string>
+    <string name="macro_seconds">Sekunde</string>
+    <string name="macro_invalid_seconds">Weka idadi ya sekunde hadi <xliff:g id="max" example="600">%1$d</xliff:g></string>
+    <string name="macro_tap_label">Maandishi ya kipengee</string>
+    <string name="macro_tap_timeout">Sekunde za kusubiri kipengee</string>
+    <string name="macro_text">Maandishi</string>
+    <string name="macro_replace_text">Badilisha maandishi kwenye sehemu</string>
+    <string name="macro_item_not_found">Makro imesimama. Haikupatikana: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_failed">Makro imesimama. Imeshindwa: <xliff:g id="step" example="Open Gmail">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until">Subiri hadi</string>
+    <string name="macro_step_if">Ikiwa</string>
+    <string name="macro_step_else_if">Ikiwa sivyo, ikiwa</string>
+    <string name="macro_step_else">Ikiwa sivyo</string>
+    <string name="macro_step_end_if">Mwisho wa ikiwa</string>
+    <string name="macro_step_repeat">Rudia</string>
+    <string name="macro_step_repeat_while">Rudia wakati</string>
+    <string name="macro_step_end_repeat">Mwisho wa kurudia</string>
+    <string name="macro_step_exit_loop">Toka kwenye mzunguko</string>
+    <string name="macro_step_if_value">Ikiwa <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_else_if_value">Ikiwa sivyo, ikiwa <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_repeat_while_value">Rudia wakati <xliff:g id="condition" example="Item on screen: Load more">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until_value">Subiri hadi <xliff:g id="condition" example="Item on screen: Send">%1$s</xliff:g></string>
+    <plurals name="macro_step_repeat_value">
+        <item quantity="one">Rudia mara <xliff:g id="count" example="3">%d</xliff:g></item>
+        <item quantity="other">Rudia mara <xliff:g id="count" example="3">%d</xliff:g></item>
+    </plurals>
+    <string name="macro_times">Mara</string>
+    <string name="macro_invalid_times">Weka nambari kutoka 1 hadi <xliff:g id="max" example="1000">%1$d</xliff:g></string>
+    <string name="macro_run_only_when">Endesha tu wakati</string>
+    <string name="macro_always">Kila mara</string>
+    <string name="macro_no_tests">Hakuna majaribio</string>
+    <string name="macro_add_test">Ongeza jaribio</string>
+    <string name="macro_tests">Majaribio</string>
+    <string name="macro_choose_test">Jaribio</string>
+    <string name="macro_test_item">Kipengee kwenye skrini</string>
+    <string name="macro_test_focused">Kipengee kilicholengwa</string>
+    <string name="macro_test_app">Programu iliyo mbele</string>
+    <string name="macro_test_keyboard">Kibodi inaonyeshwa</string>
+    <string name="macro_test_keyboard_hidden">Kibodi imefichwa</string>
+    <string name="macro_test_locked">Skrini imefungwa</string>
+    <string name="macro_test_unlocked">Skrini imefunguliwa</string>
+    <string name="macro_test_item_value">Kipengee kwenye skrini: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_no_item_value">Hakuna kipengee kwenye skrini: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_focused_value">Kipengee kilicholengwa: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_not_focused_value">Kipengee kilicholengwa si: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_app_value">Programu iliyo mbele: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_not_app_value">Programu isiyo mbele: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_label_kind"><xliff:g id="label" example="Send">%1$s</xliff:g>, <xliff:g id="kind" example="Clickable">%2$s</xliff:g></string>
+    <string name="macro_join_and"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g> na <xliff:g id="second" example="Focused item: Editable">%2$s</xliff:g></string>
+    <string name="macro_join_or"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g>, au <xliff:g id="second" example="Screen locked">%2$s</xliff:g></string>
+    <string name="macro_regex">Kielezo cha kawaida</string>
+    <string name="macro_invalid_regex">Hiki si kielezo cha kawaida kinachoweza kutumika. Vikundi vinavyorudiwa haviwezi kuwa na urudiaji au |.</string>
+    <string name="macro_match_in">Linganisha katika</string>
+    <string name="macro_field_any">Maandishi yoyote</string>
+    <string name="macro_field_text">Maandishi</string>
+    <string name="macro_field_description">Maelezo</string>
+    <string name="macro_field_hint">Kidokezo</string>
+    <string name="macro_field_state">Hali</string>
+    <string name="macro_field_id">Kitambulisho cha rasilimali</string>
+    <string name="macro_field_value"><xliff:g id="label" example="send">%1$s</xliff:g> (<xliff:g id="field" example="Resource ID">%2$s</xliff:g>)</string>
+    <string name="macro_field_regex_value"><xliff:g id="pattern" example="^Reply">%1$s</xliff:g> (<xliff:g id="field" example="Description">%2$s</xliff:g>, kielezo cha kawaida)</string>
+    <string name="macro_regex_value"><xliff:g id="pattern" example="Reply.*Anna">%1$s</xliff:g> (kielezo cha kawaida)</string>
+    <string name="macro_test_label_optional">Maandishi ya kipengee (hiari)</string>
+    <string name="macro_item_kind">Aina ya kipengee</string>
+    <string name="macro_kind_any">Aina yoyote</string>
+    <string name="macro_kind_clickable">Kinachoweza kubofywa</string>
+    <string name="macro_kind_long_clickable">Kinachoweza kubofywa kwa muda mrefu</string>
+    <string name="macro_kind_editable">Kinachoweza kuhaririwa</string>
+    <string name="macro_kind_scrollable">Kinachoweza kusogezwa</string>
+    <string name="macro_kind_adjustable">Kinachoweza kurekebishwa</string>
+    <string name="macro_kind_checkable">Kinachoweza kuteuliwa</string>
+    <string name="macro_kind_checked">Kimeteuliwa</string>
+    <string name="macro_kind_selected">Kimechaguliwa</string>
+    <string name="macro_kind_heading">Kichwa</string>
+    <string name="macro_kind_enabled">Kimewezeshwa</string>
+    <string name="macro_change_to">Badilisha kuwa: <xliff:g id="test" example="Keyboard hidden">%1$s</xliff:g></string>
+    <string name="macro_join_with_and">Unganisha kwa na</string>
+    <string name="macro_join_with_or">Unganisha kwa au</string>
+    <string name="macro_clause_and">na <xliff:g id="test" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_clause_or">au <xliff:g id="test" example="Screen locked">%1$s</xliff:g></string>
+    <string name="macro_wait_timeout">Sekunde za kusubiri</string>
+    <string name="macro_add_step_after">Ongeza hatua baada ya</string>
+    <string name="macro_problem">Hatua <xliff:g id="step" example="3">%1$d</xliff:g>: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_problem_no_if">Ikiwa sivyo ikiwa, Ikiwa sivyo au Mwisho wa ikiwa bila Ikiwa</string>
+    <string name="macro_problem_after_else">Ikiwa sivyo ikiwa au Ikiwa sivyo baada ya Ikiwa sivyo</string>
+    <string name="macro_problem_no_repeat">Mwisho wa kurudia bila Rudia</string>
+    <string name="macro_problem_no_end_if">Ikiwa bila Mwisho wa ikiwa</string>
+    <string name="macro_problem_no_end_repeat">Rudia bila Mwisho wa kurudia</string>
+    <string name="macro_problem_exit">Toka kwenye mzunguko nje ya Rudia</string>
+    <string name="macro_stopped_problem">Makro imesimama. Hatua <xliff:g id="step" example="3">%1$d</xliff:g>: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_stopped_repeats">Makro imesimama. Imerudiwa mara <xliff:g id="count" example="1000">%1$d</xliff:g>: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
+    <string name="macro_stopped_timeout">Makro imesimama. Muda umeisha: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
+    <string name="macro_not_met">Makro haikuendeshwa. Endesha tu wakati: haijatimizwa</string>
+</resources>

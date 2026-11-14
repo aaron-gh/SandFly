@@ -390,4 +390,12 @@
         <item>@string/notification_shake_3</item>
     </string-array>
     <string name="notification_clock_voice_notifications">اطلاعات کی آواز</string>
+    <string name="notification_exact_alarms_title">“الارم اور یاد دہانیاں” آن کریں</string>
+    <string name="shortcut_toggle_time_announcements">وقت کے اعلانات آن یا آف کریں</string>
+    <string name="notification_clock_now_on">وقت کے اعلانات آن</string>
+    <string name="notification_clock_now_off">وقت کے اعلانات آف</string>
+    <plurals name="notification_clock_battery">
+        <item quantity="one"><xliff:g id="percent" example="76">%d</xliff:g> فیصد</item>
+        <item quantity="other"><xliff:g id="percent" example="76">%d</xliff:g> فیصد</item>
+    </plurals>
 </resources>

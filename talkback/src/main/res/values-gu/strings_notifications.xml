@@ -390,4 +390,12 @@
         <item>@string/notification_shake_3</item>
     </string-array>
     <string name="notification_clock_voice_notifications">નોટિફિકેશનનો વૉઇસ</string>
+    <string name="notification_exact_alarms_title">એલાર્મ અને રિમાઇન્ડર ચાલુ કરો</string>
+    <string name="shortcut_toggle_time_announcements">સમયની જાહેરાત ચાલુ અથવા બંધ</string>
+    <string name="notification_clock_now_on">સમયની જાહેરાત ચાલુ</string>
+    <string name="notification_clock_now_off">સમયની જાહેરાત બંધ</string>
+    <plurals name="notification_clock_battery">
+        <item quantity="one"><xliff:g id="percent" example="1">%d</xliff:g> ટકા</item>
+        <item quantity="other"><xliff:g id="percent" example="76">%d</xliff:g> ટકા</item>
+    </plurals>
 </resources>

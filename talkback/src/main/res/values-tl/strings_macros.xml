@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_macros">Mga macro</string>
+    <string name="shortcut_stop_macro">Ihinto ang macro</string>
+    <string name="macro_add">Magdagdag ng macro</string>
+    <string name="macro_run_now">Patakbuhin ngayon</string>
+    <string name="macro_add_step">Magdagdag ng hakbang</string>
+    <string name="macro_add_at_end">Sa dulo</string>
+    <string name="macro_add_at_start">Sa simula</string>
+    <string name="macro_add_after">Pagkatapos ng hakbang <xliff:g id="step" example="2">%1$d</xliff:g>: <xliff:g id="name" example="If App in front: Chrome">%2$s</xliff:g></string>
+    <string name="macro_steps">Mga hakbang</string>
+    <string name="macro_no_steps">Walang hakbang</string>
+    <string name="macro_delete">I-delete ang macro</string>
+    <string name="macro_delete_confirm">I-delete ang <xliff:g id="name" example="Send message">%1$s</xliff:g>?</string>
+    <string name="macro_step_command">Magpatakbo ng command</string>
+    <string name="macro_step_wait">Maghintay</string>
+    <string name="macro_step_tap">I-tap ang item</string>
+    <string name="macro_step_focus">I-focus ang item</string>
+    <string name="macro_step_speak_item">Bigkasin ang item</string>
+    <string name="macro_step_speak_text">Bigkasin ang text</string>
+    <string name="macro_step_type">I-type ang text</string>
+    <string name="macro_step_tap_value">I-tap ang <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_focus_value">I-focus ang <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_item_value">Bigkasin ang <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_text_value">Bigkasin ang <xliff:g id="text" example="Done">%1$s</xliff:g></string>
+    <string name="macro_step_type_value">I-type ang <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <string name="macro_step_replace_value">Palitan ang text ng <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <plurals name="macro_step_wait_seconds">
+        <item quantity="one">Maghintay ng <xliff:g id="count" example="2">%d</xliff:g> segundo</item>
+        <item quantity="other">Maghintay ng <xliff:g id="count" example="2">%d</xliff:g> segundo</item>
+    </plurals>
+    <plurals name="macro_step_wait_milliseconds">
+        <item quantity="one">Maghintay ng <xliff:g id="count" example="500">%d</xliff:g> millisecond</item>
+        <item quantity="other">Maghintay ng <xliff:g id="count" example="500">%d</xliff:g> millisecond</item>
+    </plurals>
+    <string name="macro_step_unavailable">Hindi available</string>
+    <string name="macro_seconds">Mga segundo</string>
+    <string name="macro_invalid_seconds">Maglagay ng bilang ng segundo hanggang <xliff:g id="max" example="600">%1$d</xliff:g></string>
+    <string name="macro_tap_label">Text ng item</string>
+    <string name="macro_tap_timeout">Mga segundong paghihintay sa item</string>
+    <string name="macro_text">Text</string>
+    <string name="macro_replace_text">Palitan ang text sa field</string>
+    <string name="macro_item_not_found">Huminto ang macro. Hindi nahanap: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_failed">Huminto ang macro. Nabigo: <xliff:g id="step" example="Open Gmail">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until">Maghintay hanggang</string>
+    <string name="macro_step_if">Kung</string>
+    <string name="macro_step_else_if">Kung hindi, kung</string>
+    <string name="macro_step_else">Kung hindi</string>
+    <string name="macro_step_end_if">Tapos ng kung</string>
+    <string name="macro_step_repeat">Ulitin</string>
+    <string name="macro_step_repeat_while">Ulitin habang</string>
+    <string name="macro_step_end_repeat">Tapos ng ulitin</string>
+    <string name="macro_step_exit_loop">Lumabas sa loop</string>
+    <string name="macro_step_if_value">Kung <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_else_if_value">Kung hindi, kung <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_repeat_while_value">Ulitin habang <xliff:g id="condition" example="Item on screen: Load more">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until_value">Maghintay hanggang <xliff:g id="condition" example="Item on screen: Send">%1$s</xliff:g></string>
+    <plurals name="macro_step_repeat_value">
+        <item quantity="one">Ulitin nang <xliff:g id="count" example="3">%d</xliff:g> beses</item>
+        <item quantity="other">Ulitin nang <xliff:g id="count" example="3">%d</xliff:g> beses</item>
+    </plurals>
+    <string name="macro_times">Mga beses</string>
+    <string name="macro_invalid_times">Maglagay ng numero mula 1 hanggang <xliff:g id="max" example="1000">%1$d</xliff:g></string>
+    <string name="macro_run_only_when">Patakbuhin lang kapag</string>
+    <string name="macro_always">Palagi</string>
+    <string name="macro_no_tests">Walang test</string>
+    <string name="macro_add_test">Magdagdag ng test</string>
+    <string name="macro_tests">Mga test</string>
+    <string name="macro_choose_test">Test</string>
+    <string name="macro_test_item">Item sa screen</string>
+    <string name="macro_test_focused">Naka-focus na item</string>
+    <string name="macro_test_app">App sa harap</string>
+    <string name="macro_test_keyboard">Nakikita ang keyboard</string>
+    <string name="macro_test_keyboard_hidden">Nakatago ang keyboard</string>
+    <string name="macro_test_locked">Naka-lock ang screen</string>
+    <string name="macro_test_unlocked">Naka-unlock ang screen</string>
+    <string name="macro_test_item_value">Item sa screen: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_no_item_value">Walang item sa screen: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_focused_value">Naka-focus na item: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_not_focused_value">Hindi naka-focus na item: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_app_value">App sa harap: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_not_app_value">Hindi app sa harap: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_label_kind"><xliff:g id="label" example="Send">%1$s</xliff:g>, <xliff:g id="kind" example="Clickable">%2$s</xliff:g></string>
+    <string name="macro_join_and"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g> at <xliff:g id="second" example="Focused item: Editable">%2$s</xliff:g></string>
+    <string name="macro_join_or"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g>, o <xliff:g id="second" example="Screen locked">%2$s</xliff:g></string>
+    <string name="macro_regex">Regular expression</string>
+    <string name="macro_invalid_regex">Hindi magagamit na regular expression. Hindi puwedeng may pag-uulit o | ang mga paulit-ulit na grupo.</string>
+    <string name="macro_match_in">Itugma sa</string>
+    <string name="macro_field_any">Anumang text</string>
+    <string name="macro_field_text">Text</string>
+    <string name="macro_field_description">Paglalarawan</string>
+    <string name="macro_field_hint">Hint</string>
+    <string name="macro_field_state">Estado</string>
+    <string name="macro_field_id">Resource ID</string>
+    <string name="macro_field_value"><xliff:g id="label" example="send">%1$s</xliff:g> (<xliff:g id="field" example="Resource ID">%2$s</xliff:g>)</string>
+    <string name="macro_field_regex_value"><xliff:g id="pattern" example="^Reply">%1$s</xliff:g> (<xliff:g id="field" example="Description">%2$s</xliff:g>, regular expression)</string>
+    <string name="macro_regex_value"><xliff:g id="pattern" example="Reply.*Anna">%1$s</xliff:g> (regular expression)</string>
+    <string name="macro_test_label_optional">Text ng item (opsyonal)</string>
+    <string name="macro_item_kind">Uri ng item</string>
+    <string name="macro_kind_any">Anumang uri</string>
+    <string name="macro_kind_clickable">Maki-click</string>
+    <string name="macro_kind_long_clickable">Maaaring i-long click</string>
+    <string name="macro_kind_editable">Ine-edit</string>
+    <string name="macro_kind_scrollable">Naso-scroll</string>
+    <string name="macro_kind_adjustable">Naa-adjust</string>
+    <string name="macro_kind_checkable">Maaaring i-check</string>
+    <string name="macro_kind_checked">Naka-check</string>
+    <string name="macro_kind_selected">Napili</string>
+    <string name="macro_kind_heading">Heading</string>
+    <string name="macro_kind_enabled">Naka-enable</string>
+    <string name="macro_change_to">Palitan sa: <xliff:g id="test" example="Keyboard hidden">%1$s</xliff:g></string>
+    <string name="macro_join_with_and">Pagsamahin gamit ang at</string>
+    <string name="macro_join_with_or">Pagsamahin gamit ang o</string>
+    <string name="macro_clause_and">at <xliff:g id="test" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_clause_or">o <xliff:g id="test" example="Screen locked">%1$s</xliff:g></string>
+    <string name="macro_wait_timeout">Mga segundong paghihintay</string>
+    <string name="macro_add_step_after">Magdagdag ng hakbang pagkatapos ng</string>
+    <string name="macro_problem">Hakbang <xliff:g id="step" example="3">%1$d</xliff:g>: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_problem_no_if">Kung hindi, kung; Kung hindi; o Tapos ng kung na walang Kung</string>
+    <string name="macro_problem_after_else">Kung hindi, kung o Kung hindi pagkatapos ng Kung hindi</string>
+    <string name="macro_problem_no_repeat">Tapos ng ulitin na walang Ulitin</string>
+    <string name="macro_problem_no_end_if">Kung na walang Tapos ng kung</string>
+    <string name="macro_problem_no_end_repeat">Ulitin na walang Tapos ng ulitin</string>
+    <string name="macro_problem_exit">Lumabas sa loop sa labas ng Ulitin</string>
+    <string name="macro_stopped_problem">Huminto ang macro. Hakbang <xliff:g id="step" example="3">%1$d</xliff:g>: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_stopped_repeats">Huminto ang macro. Inulit nang <xliff:g id="count" example="1000">%1$d</xliff:g> beses: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
+    <string name="macro_stopped_timeout">Huminto ang macro. Nag-time out: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
+    <string name="macro_not_met">Hindi pinatakbo ang macro. Patakbuhin lang kapag: hindi natutugunan</string>
+</resources>

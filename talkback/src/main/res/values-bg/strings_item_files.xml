@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="item_file_import">Импортиране от файл</string>
+    <string name="item_file_export">Експортиране във файл</string>
+    <string name="title_pref_export_item_file_reference">Справка за формата на файла за експортиране</string>
+    <string name="item_file_keymaps">Клавишни карти</string>
+    <string name="item_file_exported">Експортирано</string>
+    <string name="item_file_export_failed">Експортирането не бе успешно</string>
+    <string name="item_file_not_read">Този файл не е файл с елементи на SandFly или не можа да бъде прочетен</string>
+    <string name="item_file_settings_file">Това е файл с настройки. Импортирайте го от Резервно копие и възстановяване &gt; Импортиране на настройки</string>
+    <string name="item_file_newer">Този файл е от по-нова версия на SandFly</string>
+    <string name="item_file_nothing_imported">Нищо не е импортирано</string>
+    <string name="item_file_imported">Импортирано: <xliff:g id="items" example="2 macros, 1 gesture profile">%1$s</xliff:g></string>
+    <string name="item_file_left_out">Пропуснато:</string>
+    <string name="item_file_problem_not_read"><xliff:g id="kind" example="Macros">%1$s</xliff:g>, елемент <xliff:g id="number" example="3">%2$d</xliff:g>: не е прочетен</string>
+    <string name="item_file_problem_command"><xliff:g id="item" example="Open mail">%1$s</xliff:g>: непозната команда <xliff:g id="command" example="READ_ALL">%2$s</xliff:g></string>
+    <string name="item_file_problem_gesture"><xliff:g id="item" example="Reading">%1$s</xliff:g>: неизвестен жест <xliff:g id="gesture" example="pref_shortcut_spin">%2$s</xliff:g></string>
+    <string name="item_file_problem_keys"><xliff:g id="item" example="My keymap">%1$s</xliff:g>: клавишите не са разпознати: <xliff:g id="keys" example="SandFly+Foo">%2$s</xliff:g></string>
+    <string name="item_file_problem_keys_taken"><xliff:g id="item" example="My keymap">%1$s</xliff:g>: клавишите вече се използват: <xliff:g id="keys" example="SandFly+H">%2$s</xliff:g></string>
+    <string name="item_file_problem_setting"><xliff:g id="item" example="Reading">%1$s</xliff:g>: настройката <xliff:g id="key" example="pref_vibration">%2$s</xliff:g> е неизвестна, не може да бъде в профил или има стойност от грешен тип</string>
+    <string name="item_file_problem_regex"><xliff:g id="dictionary" example="Speech dictionary">%1$s</xliff:g>: регулярният израз е отхвърлен: <xliff:g id="expression" example="(a+)+">%2$s</xliff:g></string>
+    <string name="item_file_problem_limit"><xliff:g id="kind" example="Symbol dictionary">%1$s</xliff:g>: най-много <xliff:g id="number" example="500">%2$d</xliff:g> елемента</string>
+    <string name="item_file_problem_more">Пропуснато е още</string>
+    <plurals name="item_file_count_macros">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> макрос</item>
+        <item quantity="other"><xliff:g id="count" example="1">%d</xliff:g> макроса</item>
+    </plurals>
+    <plurals name="item_file_count_gesture_profiles">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> профил на жестове</item>
+        <item quantity="other"><xliff:g id="count" example="1">%d</xliff:g> профила на жестове</item>
+    </plurals>
+    <plurals name="item_file_count_keymaps">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> клавишна карта</item>
+        <item quantity="other"><xliff:g id="count" example="1">%d</xliff:g> клавишни карти</item>
+    </plurals>
+    <plurals name="item_file_count_apps">
+        <item quantity="one">жестове и клавишни комбинации на <xliff:g id="count" example="1">%d</xliff:g> приложение</item>
+        <item quantity="other">жестове и клавишни комбинации на <xliff:g id="count" example="1">%d</xliff:g> приложения</item>
+    </plurals>
+    <plurals name="item_file_count_settings_profiles">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> профил на настройките</item>
+        <item quantity="other"><xliff:g id="count" example="1">%d</xliff:g> профила на настройките</item>
+    </plurals>
+    <plurals name="item_file_count_speech_dictionary">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> запис в речника на речта</item>
+        <item quantity="other"><xliff:g id="count" example="1">%d</xliff:g> записа в речника на речта</item>
+    </plurals>
+    <plurals name="item_file_count_symbol_dictionary">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> запис в речника на символите</item>
+        <item quantity="other"><xliff:g id="count" example="1">%d</xliff:g> записа в речника на символите</item>
+    </plurals>
+    <plurals name="item_file_count_braille_dictionary">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> запис в брайловия речник</item>
+        <item quantity="other"><xliff:g id="count" example="1">%d</xliff:g> записа в брайловия речник</item>
+    </plurals>
+    <plurals name="item_file_count_voice_commands">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> персонализирана гласова команда</item>
+        <item quantity="other"><xliff:g id="count" example="1">%d</xliff:g> персонализирани гласови команди</item>
+    </plurals>
+</resources>

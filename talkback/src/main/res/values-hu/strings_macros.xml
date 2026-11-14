@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_macros">Makrók</string>
+    <string name="shortcut_stop_macro">Makró leállítása</string>
+    <string name="macro_add">Makró hozzáadása</string>
+    <string name="macro_run_now">Futtatás most</string>
+    <string name="macro_add_step">Lépés hozzáadása</string>
+    <string name="macro_add_at_end">A végére</string>
+    <string name="macro_add_at_start">Az elejére</string>
+    <string name="macro_add_after">A(z) <xliff:g id="step" example="2">%1$d</xliff:g>. lépés után: <xliff:g id="name" example="If App in front: Chrome">%2$s</xliff:g></string>
+    <string name="macro_steps">Lépések</string>
+    <string name="macro_no_steps">Nincs lépés</string>
+    <string name="macro_delete">Makró törlése</string>
+    <string name="macro_delete_confirm">Törli a következőt: <xliff:g id="name" example="Send message">%1$s</xliff:g>?</string>
+    <string name="macro_step_command">Parancs futtatása</string>
+    <string name="macro_step_wait">Várakozás</string>
+    <string name="macro_step_tap">Elem érintése</string>
+    <string name="macro_step_focus">Fókusz az elemre</string>
+    <string name="macro_step_speak_item">Elem felolvasása</string>
+    <string name="macro_step_speak_text">Szöveg felolvasása</string>
+    <string name="macro_step_type">Szöveg beírása</string>
+    <string name="macro_step_tap_value">Érintés: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_focus_value">Fókusz: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_item_value">Felolvasás: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_text_value">Felolvasás: <xliff:g id="text" example="Done">%1$s</xliff:g></string>
+    <string name="macro_step_type_value">Beírás: <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <string name="macro_step_replace_value">Szöveg cseréje erre: <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <plurals name="macro_step_wait_seconds">
+        <item quantity="one">Várakozás <xliff:g id="count" example="2">%d</xliff:g> másodpercig</item>
+        <item quantity="other">Várakozás <xliff:g id="count" example="2">%d</xliff:g> másodpercig</item>
+    </plurals>
+    <plurals name="macro_step_wait_milliseconds">
+        <item quantity="one">Várakozás <xliff:g id="count" example="500">%d</xliff:g> ezredmásodpercig</item>
+        <item quantity="other">Várakozás <xliff:g id="count" example="500">%d</xliff:g> ezredmásodpercig</item>
+    </plurals>
+    <string name="macro_step_unavailable">Nem érhető el</string>
+    <string name="macro_seconds">Másodperc</string>
+    <string name="macro_invalid_seconds">Adjon meg másodpercet legfeljebb <xliff:g id="max" example="600">%1$d</xliff:g> értékig</string>
+    <string name="macro_tap_label">Elem szövege</string>
+    <string name="macro_tap_timeout">Várakozás az elemre (másodperc)</string>
+    <string name="macro_text">Szöveg</string>
+    <string name="macro_replace_text">Mező szövegének cseréje</string>
+    <string name="macro_item_not_found">A makró leállt. Nem található: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_failed">A makró leállt. Sikertelen: <xliff:g id="step" example="Open Gmail">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until">Várakozás, amíg</string>
+    <string name="macro_step_if">Ha</string>
+    <string name="macro_step_else_if">Különben, ha</string>
+    <string name="macro_step_else">Különben</string>
+    <string name="macro_step_end_if">Elágazás vége</string>
+    <string name="macro_step_repeat">Ismétlés</string>
+    <string name="macro_step_repeat_while">Ismétlés, amíg</string>
+    <string name="macro_step_end_repeat">Ismétlés vége</string>
+    <string name="macro_step_exit_loop">Kilépés a ciklusból</string>
+    <string name="macro_step_if_value">Ha <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_else_if_value">Különben, ha <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_repeat_while_value">Ismétlés, amíg <xliff:g id="condition" example="Item on screen: Load more">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until_value">Várakozás, amíg <xliff:g id="condition" example="Item on screen: Send">%1$s</xliff:g></string>
+    <plurals name="macro_step_repeat_value">
+        <item quantity="one"><xliff:g id="count" example="3">%d</xliff:g> ismétlés</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> ismétlés</item>
+    </plurals>
+    <string name="macro_times">Alkalom</string>
+    <string name="macro_invalid_times">Adjon meg 1 és <xliff:g id="max" example="1000">%1$d</xliff:g> közötti számot</string>
+    <string name="macro_run_only_when">Futtatás csak ekkor</string>
+    <string name="macro_always">Mindig</string>
+    <string name="macro_no_tests">Nincs vizsgálat</string>
+    <string name="macro_add_test">Vizsgálat hozzáadása</string>
+    <string name="macro_tests">Vizsgálatok</string>
+    <string name="macro_choose_test">Vizsgálat</string>
+    <string name="macro_test_item">Elem a képernyőn</string>
+    <string name="macro_test_focused">Fókuszált elem</string>
+    <string name="macro_test_app">Előtérben lévő alkalmazás</string>
+    <string name="macro_test_keyboard">Billentyűzet látható</string>
+    <string name="macro_test_keyboard_hidden">Billentyűzet rejtve</string>
+    <string name="macro_test_locked">Képernyő zárolva</string>
+    <string name="macro_test_unlocked">Képernyő feloldva</string>
+    <string name="macro_test_item_value">Elem a képernyőn: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_no_item_value">Nincs elem a képernyőn: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_focused_value">Fókuszált elem: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_not_focused_value">Nem fókuszált elem: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_app_value">Előtérben lévő alkalmazás: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_not_app_value">Nem az előtérben lévő alkalmazás: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_label_kind"><xliff:g id="label" example="Send">%1$s</xliff:g>, <xliff:g id="kind" example="Clickable">%2$s</xliff:g></string>
+    <string name="macro_join_and"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g> és <xliff:g id="second" example="Focused item: Editable">%2$s</xliff:g></string>
+    <string name="macro_join_or"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g>, vagy <xliff:g id="second" example="Screen locked">%2$s</xliff:g></string>
+    <string name="macro_regex">Reguláris kifejezés</string>
+    <string name="macro_invalid_regex">Nem használható reguláris kifejezés. Az ismételt csoportok nem tartalmazhatnak ismétlést vagy |-t.</string>
+    <string name="macro_match_in">Keresés ebben</string>
+    <string name="macro_field_any">Bármely szöveg</string>
+    <string name="macro_field_text">Szöveg</string>
+    <string name="macro_field_description">Leírás</string>
+    <string name="macro_field_hint">Tipp</string>
+    <string name="macro_field_state">Állapot</string>
+    <string name="macro_field_id">Erőforrás-azonosító</string>
+    <string name="macro_field_value"><xliff:g id="label" example="send">%1$s</xliff:g> (<xliff:g id="field" example="Resource ID">%2$s</xliff:g>)</string>
+    <string name="macro_field_regex_value"><xliff:g id="pattern" example="^Reply">%1$s</xliff:g> (<xliff:g id="field" example="Description">%2$s</xliff:g>, reguláris kifejezés)</string>
+    <string name="macro_regex_value"><xliff:g id="pattern" example="Reply.*Anna">%1$s</xliff:g> (reguláris kifejezés)</string>
+    <string name="macro_test_label_optional">Elem szövege (nem kötelező)</string>
+    <string name="macro_item_kind">Elem típusa</string>
+    <string name="macro_kind_any">Bármely típus</string>
+    <string name="macro_kind_clickable">Kattintható</string>
+    <string name="macro_kind_long_clickable">Hosszan kattintható</string>
+    <string name="macro_kind_editable">Szerkeszthető</string>
+    <string name="macro_kind_scrollable">Görgethető</string>
+    <string name="macro_kind_adjustable">Állítható</string>
+    <string name="macro_kind_checkable">Bejelölhető</string>
+    <string name="macro_kind_checked">Bejelölt</string>
+    <string name="macro_kind_selected">Kijelölt</string>
+    <string name="macro_kind_heading">Címsor</string>
+    <string name="macro_kind_enabled">Engedélyezett</string>
+    <string name="macro_change_to">Módosítás erre: <xliff:g id="test" example="Keyboard hidden">%1$s</xliff:g></string>
+    <string name="macro_join_with_and">Összekapcsolás „és” szóval</string>
+    <string name="macro_join_with_or">Összekapcsolás „vagy” szóval</string>
+    <string name="macro_clause_and">és <xliff:g id="test" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_clause_or">vagy <xliff:g id="test" example="Screen locked">%1$s</xliff:g></string>
+    <string name="macro_wait_timeout">Várakozás (másodperc)</string>
+    <string name="macro_add_step_after">Lépés hozzáadása utána</string>
+    <string name="macro_problem"><xliff:g id="step" example="3">%1$d</xliff:g>. lépés: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_problem_no_if">Különben, ha, Különben vagy Elágazás vége Ha nélkül</string>
+    <string name="macro_problem_after_else">Különben, ha vagy Különben a Különben után</string>
+    <string name="macro_problem_no_repeat">Ismétlés vége Ismétlés nélkül</string>
+    <string name="macro_problem_no_end_if">Ha Elágazás vége nélkül</string>
+    <string name="macro_problem_no_end_repeat">Ismétlés Ismétlés vége nélkül</string>
+    <string name="macro_problem_exit">Kilépés a ciklusból ismétlésen kívül</string>
+    <string name="macro_stopped_problem">A makró leállt. <xliff:g id="step" example="3">%1$d</xliff:g>. lépés: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_stopped_repeats">A makró leállt. <xliff:g id="count" example="1000">%1$d</xliff:g> ismétlés: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
+    <string name="macro_stopped_timeout">A makró leállt. Időtúllépés: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
+    <string name="macro_not_met">A makró nem futott. Futtatás csak ekkor: feltétel nem teljesül</string>
+</resources>

@@ -398,4 +398,9 @@
         <item>@string/notification_shake_3</item>
     </string-array>
     <string name="notification_clock_voice_notifications">Paziņojumu balss</string>
+    <string name="notification_exact_alarms_title">Ieslēgt Modinātājus un atgādinājumus</string>
+    <string name="shortcut_toggle_time_announcements">Laika paziņojumi ieslēgti vai izslēgti</string>
+    <string name="notification_clock_now_on">Laika paziņojumi ieslēgti</string>
+    <string name="notification_clock_now_off">Laika paziņojumi izslēgti</string>
+    <plurals name="notification_clock_battery"><item quantity="zero"><xliff:g id="percent" example="76">%d</xliff:g> procentu</item><item quantity="one"><xliff:g id="percent" example="76">%d</xliff:g> procents</item><item quantity="other"><xliff:g id="percent" example="76">%d</xliff:g> procenti</item></plurals>
 </resources>

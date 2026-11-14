@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_macros">Makros</string>
+    <string name="shortcut_stop_macro">Makro beenden</string>
+    <string name="macro_add">Makro hinzufügen</string>
+    <string name="macro_run_now">Jetzt ausführen</string>
+    <string name="macro_add_step">Schritt hinzufügen</string>
+    <string name="macro_add_at_end">Am Ende</string>
+    <string name="macro_add_at_start">Am Anfang</string>
+    <string name="macro_add_after">Nach Schritt <xliff:g id="step" example="2">%1$d</xliff:g>: <xliff:g id="name" example="If App in front: Chrome">%2$s</xliff:g></string>
+    <string name="macro_steps">Schritte</string>
+    <string name="macro_no_steps">Keine Schritte</string>
+    <string name="macro_delete">Makro löschen</string>
+    <string name="macro_delete_confirm"><xliff:g id="name" example="Send message">%1$s</xliff:g> löschen?</string>
+    <string name="macro_step_command">Befehl ausführen</string>
+    <string name="macro_step_wait">Warten</string>
+    <string name="macro_step_tap">Element antippen</string>
+    <string name="macro_step_focus">Element fokussieren</string>
+    <string name="macro_step_speak_item">Element vorlesen</string>
+    <string name="macro_step_speak_text">Text vorlesen</string>
+    <string name="macro_step_type">Text eingeben</string>
+    <string name="macro_step_tap_value"><xliff:g id="label" example="Send">%1$s</xliff:g> antippen</string>
+    <string name="macro_step_focus_value"><xliff:g id="label" example="Send">%1$s</xliff:g> fokussieren</string>
+    <string name="macro_step_speak_item_value"><xliff:g id="label" example="Send">%1$s</xliff:g> vorlesen</string>
+    <string name="macro_step_speak_text_value"><xliff:g id="text" example="Done">%1$s</xliff:g> vorlesen</string>
+    <string name="macro_step_type_value"><xliff:g id="text" example="On my way">%1$s</xliff:g> eingeben</string>
+    <string name="macro_step_replace_value">Text durch <xliff:g id="text" example="On my way">%1$s</xliff:g> ersetzen</string>
+    <plurals name="macro_step_wait_seconds">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> Sekunde warten</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> Sekunden warten</item>
+    </plurals>
+    <plurals name="macro_step_wait_milliseconds">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> Millisekunde warten</item>
+        <item quantity="other"><xliff:g id="count" example="500">%d</xliff:g> Millisekunden warten</item>
+    </plurals>
+    <string name="macro_step_unavailable">Nicht verfügbar</string>
+    <string name="macro_seconds">Sekunden</string>
+    <string name="macro_invalid_seconds">Gib eine Anzahl Sekunden bis <xliff:g id="max" example="600">%1$d</xliff:g> ein</string>
+    <string name="macro_tap_label">Text des Elements</string>
+    <string name="macro_tap_timeout">Sekunden Wartezeit auf das Element</string>
+    <string name="macro_text">Text</string>
+    <string name="macro_replace_text">Text im Feld ersetzen</string>
+    <string name="macro_item_not_found">Makro beendet. Nicht gefunden: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_failed">Makro beendet. Fehlgeschlagen: <xliff:g id="step" example="Open Gmail">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until">Warten bis</string>
+    <string name="macro_step_if">Wenn</string>
+    <string name="macro_step_else_if">Sonst wenn</string>
+    <string name="macro_step_else">Sonst</string>
+    <string name="macro_step_end_if">Ende wenn</string>
+    <string name="macro_step_repeat">Wiederholen</string>
+    <string name="macro_step_repeat_while">Wiederholen solange</string>
+    <string name="macro_step_end_repeat">Ende wiederholen</string>
+    <string name="macro_step_exit_loop">Schleife verlassen</string>
+    <string name="macro_step_if_value">Wenn <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_else_if_value">Sonst wenn <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_repeat_while_value">Wiederholen solange <xliff:g id="condition" example="Item on screen: Load more">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until_value">Warten bis <xliff:g id="condition" example="Item on screen: Send">%1$s</xliff:g></string>
+    <plurals name="macro_step_repeat_value">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> Mal wiederholen</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> Mal wiederholen</item>
+    </plurals>
+    <string name="macro_times">Anzahl</string>
+    <string name="macro_invalid_times">Gib eine Zahl von 1 bis <xliff:g id="max" example="1000">%1$d</xliff:g> ein</string>
+    <string name="macro_run_only_when">Nur ausführen, wenn</string>
+    <string name="macro_always">Immer</string>
+    <string name="macro_no_tests">Keine Bedingungen</string>
+    <string name="macro_add_test">Bedingung hinzufügen</string>
+    <string name="macro_tests">Bedingungen</string>
+    <string name="macro_choose_test">Bedingung</string>
+    <string name="macro_test_item">Element auf dem Bildschirm</string>
+    <string name="macro_test_focused">Fokussiertes Element</string>
+    <string name="macro_test_app">App im Vordergrund</string>
+    <string name="macro_test_keyboard">Tastatur angezeigt</string>
+    <string name="macro_test_keyboard_hidden">Tastatur ausgeblendet</string>
+    <string name="macro_test_locked">Bildschirm gesperrt</string>
+    <string name="macro_test_unlocked">Bildschirm entsperrt</string>
+    <string name="macro_test_item_value">Element auf dem Bildschirm: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_no_item_value">Kein Element auf dem Bildschirm: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_focused_value">Fokussiertes Element: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_not_focused_value">Fokussiertes Element nicht: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_app_value">App im Vordergrund: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_not_app_value">App nicht im Vordergrund: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_label_kind"><xliff:g id="label" example="Send">%1$s</xliff:g>, <xliff:g id="kind" example="Clickable">%2$s</xliff:g></string>
+    <string name="macro_join_and"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g> und <xliff:g id="second" example="Focused item: Editable">%2$s</xliff:g></string>
+    <string name="macro_join_or"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g> oder <xliff:g id="second" example="Screen locked">%2$s</xliff:g></string>
+    <string name="macro_regex">Regulärer Ausdruck</string>
+    <string name="macro_invalid_regex">Kein verwendbarer regulärer Ausdruck. Wiederholte Gruppen dürfen keine Wiederholung oder kein | enthalten.</string>
+    <string name="macro_match_in">Suchen in</string>
+    <string name="macro_field_any">Beliebiger Text</string>
+    <string name="macro_field_text">Text</string>
+    <string name="macro_field_description">Beschreibung</string>
+    <string name="macro_field_hint">Hinweis</string>
+    <string name="macro_field_state">Status</string>
+    <string name="macro_field_id">Ressourcen-ID</string>
+    <string name="macro_field_value"><xliff:g id="label" example="send">%1$s</xliff:g> (<xliff:g id="field" example="Resource ID">%2$s</xliff:g>)</string>
+    <string name="macro_field_regex_value"><xliff:g id="pattern" example="^Reply">%1$s</xliff:g> (<xliff:g id="field" example="Description">%2$s</xliff:g>, regulärer Ausdruck)</string>
+    <string name="macro_regex_value"><xliff:g id="pattern" example="Reply.*Anna">%1$s</xliff:g> (regulärer Ausdruck)</string>
+    <string name="macro_test_label_optional">Text des Elements (optional)</string>
+    <string name="macro_item_kind">Elementtyp</string>
+    <string name="macro_kind_any">Beliebiger Typ</string>
+    <string name="macro_kind_clickable">Anklickbar</string>
+    <string name="macro_kind_long_clickable">Lang anklickbar</string>
+    <string name="macro_kind_editable">Bearbeitbar</string>
+    <string name="macro_kind_scrollable">Scrollbar</string>
+    <string name="macro_kind_adjustable">Einstellbar</string>
+    <string name="macro_kind_checkable">Aktivierbar</string>
+    <string name="macro_kind_checked">Aktiviert</string>
+    <string name="macro_kind_selected">Ausgewählt</string>
+    <string name="macro_kind_heading">Überschrift</string>
+    <string name="macro_kind_enabled">Verfügbar</string>
+    <string name="macro_change_to">Ändern in: <xliff:g id="test" example="Keyboard hidden">%1$s</xliff:g></string>
+    <string name="macro_join_with_and">Mit „und“ verbinden</string>
+    <string name="macro_join_with_or">Mit „oder“ verbinden</string>
+    <string name="macro_clause_and">und <xliff:g id="test" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_clause_or">oder <xliff:g id="test" example="Screen locked">%1$s</xliff:g></string>
+    <string name="macro_wait_timeout">Sekunden Wartezeit</string>
+    <string name="macro_add_step_after">Schritt hinzufügen nach</string>
+    <string name="macro_problem">Schritt <xliff:g id="step" example="3">%1$d</xliff:g>: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_problem_no_if">Sonst wenn, Sonst oder Ende wenn ohne Wenn</string>
+    <string name="macro_problem_after_else">Sonst wenn oder Sonst nach Sonst</string>
+    <string name="macro_problem_no_repeat">Ende wiederholen ohne Wiederholen</string>
+    <string name="macro_problem_no_end_if">Wenn ohne Ende wenn</string>
+    <string name="macro_problem_no_end_repeat">Wiederholen ohne Ende wiederholen</string>
+    <string name="macro_problem_exit">Schleife verlassen außerhalb einer Wiederholung</string>
+    <string name="macro_stopped_problem">Makro beendet. Schritt <xliff:g id="step" example="3">%1$d</xliff:g>: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_stopped_repeats">Makro beendet. <xliff:g id="count" example="1000">%1$d</xliff:g> Mal wiederholt: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
+    <string name="macro_stopped_timeout">Makro beendet. Zeitüberschreitung: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
+    <string name="macro_not_met">Makro nicht ausgeführt. Nur ausführen, wenn: nicht erfüllt</string>
+</resources>

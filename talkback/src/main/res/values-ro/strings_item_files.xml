@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="item_file_import">Importă din fișier</string>
+    <string name="item_file_export">Exportă în fișier</string>
+    <string name="title_pref_export_item_file_reference">Referință pentru formatul fișierului de export</string>
+    <string name="item_file_keymaps">Configurări de taste</string>
+    <string name="item_file_exported">Exportat</string>
+    <string name="item_file_export_failed">Exportul nu a reușit</string>
+    <string name="item_file_not_read">Acest fișier nu este un fișier de elemente SandFly sau nu a putut fi citit</string>
+    <string name="item_file_settings_file">Acesta este un fișier de setări. Importă-l cu Backup și restabilire &gt; Importă setările</string>
+    <string name="item_file_newer">Acest fișier provine dintr-o versiune mai nouă de SandFly</string>
+    <string name="item_file_nothing_imported">Nu s-a importat nimic</string>
+    <string name="item_file_imported">Importat: <xliff:g id="items" example="2 macros, 1 gesture profile">%1$s</xliff:g></string>
+    <string name="item_file_left_out">Omise:</string>
+    <string name="item_file_problem_not_read"><xliff:g id="kind" example="Macros">%1$s</xliff:g>, elementul <xliff:g id="number" example="3">%2$d</xliff:g>: necitit</string>
+    <string name="item_file_problem_command"><xliff:g id="item" example="Open mail">%1$s</xliff:g>: comandă necunoscută <xliff:g id="command" example="READ_ALL">%2$s</xliff:g></string>
+    <string name="item_file_problem_gesture"><xliff:g id="item" example="Reading">%1$s</xliff:g>: gest necunoscut <xliff:g id="gesture" example="pref_shortcut_spin">%2$s</xliff:g></string>
+    <string name="item_file_problem_keys"><xliff:g id="item" example="My keymap">%1$s</xliff:g>: taste neînțelese: <xliff:g id="keys" example="SandFly+Foo">%2$s</xliff:g></string>
+    <string name="item_file_problem_keys_taken"><xliff:g id="item" example="My keymap">%1$s</xliff:g>: taste deja folosite: <xliff:g id="keys" example="SandFly+H">%2$s</xliff:g></string>
+    <string name="item_file_problem_setting"><xliff:g id="item" example="Reading">%1$s</xliff:g>: setarea <xliff:g id="key" example="pref_vibration">%2$s</xliff:g> este necunoscută, nu poate fi într-un profil sau are o valoare de tip greșit</string>
+    <string name="item_file_problem_regex"><xliff:g id="dictionary" example="Speech dictionary">%1$s</xliff:g>: expresie regulată refuzată: <xliff:g id="expression" example="(a+)+">%2$s</xliff:g></string>
+    <string name="item_file_problem_limit"><xliff:g id="kind" example="Symbol dictionary">%1$s</xliff:g>: cel mult <xliff:g id="number" example="500">%2$d</xliff:g> elemente</string>
+    <string name="item_file_problem_more">Au mai fost omise elemente</string>
+    <plurals name="item_file_count_macros">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> macrocomandă</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> macrocomenzi</item>
+        <item quantity="other"><xliff:g id="count" example="20">%d</xliff:g> de macrocomenzi</item>
+    </plurals>
+    <plurals name="item_file_count_gesture_profiles">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> profil de gesturi</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> profiluri de gesturi</item>
+        <item quantity="other"><xliff:g id="count" example="20">%d</xliff:g> de profiluri de gesturi</item>
+    </plurals>
+    <plurals name="item_file_count_keymaps">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> configurare de taste</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> configurări de taste</item>
+        <item quantity="other"><xliff:g id="count" example="20">%d</xliff:g> de configurări de taste</item>
+    </plurals>
+    <plurals name="item_file_count_apps">
+        <item quantity="one">gesturile și comenzile rapide de la tastatură pentru <xliff:g id="count" example="1">%d</xliff:g> aplicație</item>
+        <item quantity="few">gesturile și comenzile rapide de la tastatură pentru <xliff:g id="count" example="2">%d</xliff:g> aplicații</item>
+        <item quantity="other">gesturile și comenzile rapide de la tastatură pentru <xliff:g id="count" example="20">%d</xliff:g> de aplicații</item>
+    </plurals>
+    <plurals name="item_file_count_settings_profiles">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> profil de setări</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> profiluri de setări</item>
+        <item quantity="other"><xliff:g id="count" example="20">%d</xliff:g> de profiluri de setări</item>
+    </plurals>
+    <plurals name="item_file_count_speech_dictionary">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> intrare în dicționarul de vorbire</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> intrări în dicționarul de vorbire</item>
+        <item quantity="other"><xliff:g id="count" example="20">%d</xliff:g> de intrări în dicționarul de vorbire</item>
+    </plurals>
+    <plurals name="item_file_count_symbol_dictionary">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> intrare în dicționarul de simboluri</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> intrări în dicționarul de simboluri</item>
+        <item quantity="other"><xliff:g id="count" example="20">%d</xliff:g> de intrări în dicționarul de simboluri</item>
+    </plurals>
+    <plurals name="item_file_count_braille_dictionary">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> intrare în dicționarul Braille</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> intrări în dicționarul Braille</item>
+        <item quantity="other"><xliff:g id="count" example="20">%d</xliff:g> de intrări în dicționarul Braille</item>
+    </plurals>
+    <plurals name="item_file_count_voice_commands">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> comandă vocală personalizată</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> comenzi vocale personalizate</item>
+        <item quantity="other"><xliff:g id="count" example="20">%d</xliff:g> de comenzi vocale personalizate</item>
+    </plurals>
+</resources>

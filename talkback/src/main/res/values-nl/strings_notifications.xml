@@ -390,4 +390,12 @@
         <item>@string/notification_shake_3</item>
     </string-array>
     <string name="notification_clock_voice_notifications">Stem voor meldingen</string>
+    <string name="notification_exact_alarms_title">Wekkers en herinneringen inschakelen</string>
+    <string name="shortcut_toggle_time_announcements">Tijdaankondigingen aan of uit</string>
+    <string name="notification_clock_now_on">Tijdaankondigingen aan</string>
+    <string name="notification_clock_now_off">Tijdaankondigingen uit</string>
+    <plurals name="notification_clock_battery">
+        <item quantity="one"><xliff:g id="percent" example="1">%d</xliff:g> procent</item>
+        <item quantity="other"><xliff:g id="percent" example="76">%d</xliff:g> procent</item>
+    </plurals>
 </resources>

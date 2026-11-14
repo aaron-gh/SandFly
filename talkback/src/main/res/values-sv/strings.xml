@@ -2025,4 +2025,144 @@
     <string name="value_keep_models_5">5 minuter</string>
     <string name="value_keep_models_15">15 minuter</string>
     <string name="value_keep_models_30">30 minuter</string>
+    <string name="title_pref_speech_equalizer_save_preset">Spara som förinställning</string>
+    <string name="title_pref_speech_equalizer_saved_presets">Sparade förinställningar</string>
+    <string name="speech_equalizer_preset_name">Namn</string>
+    <string name="speech_equalizer_preset_name_taken">Det finns redan en förinställning med namnet <xliff:g id="name" example="Podcast">%1$s</xliff:g></string>
+    <string name="speech_equalizer_presets_full">Fler förinställningar kan inte sparas. Radera en för att spara en annan.</string>
+    <string name="speech_equalizer_preset_saved"><xliff:g id="name" example="Podcast">%1$s</xliff:g> sparad</string>
+    <string name="speech_equalizer_preset_rename">Byt namn</string>
+    <string name="speech_equalizer_preset_delete">Radera</string>
+    <string name="speech_equalizer_preset_delete_confirm">Radera <xliff:g id="name" example="Podcast">%1$s</xliff:g>?</string>
+    <string name="speech_equalizer_preset_deleted"><xliff:g id="name" example="Podcast">%1$s</xliff:g> raderad</string>
+    <string name="title_pref_emoji_voice">Emojiröst</string>
+    <string name="value_emoji_voice_same">Samma som tal</string>
+    <string name="title_pref_emoji_rate">Talhastighet för emoji</string>
+    <string name="title_pref_line_breaks_as_spaces">Läs radbrytningar som blanksteg</string>
+    <string name="title_pref_language_voices">Röster per språk</string>
+    <string name="title_pref_identify_languages_from_words">Identifiera språk utifrån ord</string>
+    <string name="title_pref_add_language">Lägg till språk</string>
+    <string name="title_pref_remove_language">Ta bort språk</string>
+    <string name="title_pref_script_language">Skrift: %1$s</string>
+    <string name="title_pref_screen_on_notification_count">Antal aviseringar</string>
+    <plurals name="template_screen_on_notification_count">
+        <item quantity="one"><xliff:g id="count" example="6">%d</xliff:g> avisering</item>
+        <item quantity="other"><xliff:g id="count" example="6">%d</xliff:g> aviseringar</item>
+    </plurals>
+    <string name="title_pref_phonetic_letters_review">Läs upp bokstäver fonetiskt vid granskning</string>
+    <string name="title_pref_phonetic_letters_typing">Läs upp bokstäver fonetiskt vid skrivning</string>
+    <string name="title_pref_emoji_suffix">Säg ”emoji” efter emojinamn</string>
+    <string name="overview_shizuku_not_running">Shizuku körs inte</string>
+    <string name="overview_shizuku_not_allowed">Shizuku tillåter inte SandFly</string>
+    <string name="overview_no_older_app">Ingen äldre app</string>
+    <string name="overview_no_newer_app">Ingen nyare app</string>
+    <string name="stream_volume_needs_access">Ge åtkomst till Stör ej för att ändra den här volymen.</string>
+    <string name="corner_gestures_title">Hörn</string>
+    <string name="shortcut_move_to_item_below">Gå till objektet nedanför</string>
+    <string name="shortcut_move_to_item_above">Gå till objektet ovanför</string>
+    <string name="shortcut_older_app">Äldre app</string>
+    <string name="shortcut_newer_app">Nyare app</string>
+    <string name="shortcut_answer_call">Svara på samtal</string>
+    <string name="answer_call_no_call">Inget inkommande samtal</string>
+    <string name="answer_call_permission">Behörighet krävs för att svara på samtal</string>
+    <string name="shortcut_switch_keyboard">Byt tangentbord</string>
+    <string name="switch_keyboard_none">Inget annat tangentbord är aktiverat</string>
+    <string name="switch_keyboard_failed">Tangentbordet byttes inte</string>
+    <string name="clipboard_history_hint">Svep uppåt eller nedåt för att välja och dubbeltryck sedan för att klistra in</string>
+    <string name="title_speech_history">Talhistorik</string>
+    <string name="speech_history_empty">Inget tal</string>
+    <string name="speech_history_clear">Rensa historik</string>
+    <string name="title_pref_shortcut_corner_top_left_tap">Tryck på övre vänstra hörnet</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap">Dubbeltryck på övre vänstra hörnet</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap">Trippeltryck på övre vänstra hörnet</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap_hold">Dubbeltryck och håll kvar på övre vänstra hörnet</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap_hold">Trippeltryck och håll kvar på övre vänstra hörnet</string>
+    <string name="title_pref_shortcut_corner_top_right_tap">Tryck på övre högra hörnet</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap">Dubbeltryck på övre högra hörnet</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap">Trippeltryck på övre högra hörnet</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap_hold">Dubbeltryck och håll kvar på övre högra hörnet</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap_hold">Trippeltryck och håll kvar på övre högra hörnet</string>
+    <string name="title_pref_shortcut_corner_bottom_left_tap">Tryck på nedre vänstra hörnet</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap">Dubbeltryck på nedre vänstra hörnet</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap">Trippeltryck på nedre vänstra hörnet</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap_hold">Dubbeltryck och håll kvar på nedre vänstra hörnet</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap_hold">Trippeltryck och håll kvar på nedre vänstra hörnet</string>
+    <string name="title_pref_shortcut_corner_bottom_right_tap">Tryck på nedre högra hörnet</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap">Dubbeltryck på nedre högra hörnet</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap">Trippeltryck på nedre högra hörnet</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap_hold">Dubbeltryck och håll kvar på nedre högra hörnet</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap_hold">Trippeltryck och håll kvar på nedre högra hörnet</string>
+    <string name="title_pref_swipe_start_time">Starttid för rörelse</string>
+    <string name="title_pref_swipes_before_lift">Känn igen svep innan fingret lyfts</string>
+    <string name="summary_pref_swipes_before_lift">Stänger av fram-och-tillbaka-rörelser och vinkelrörelser.</string>
+    <string name="title_pref_corner_size_mm">Hörnstorlek</string>
+    <string name="value_corner_size_edge_width">Samma som kantbredd</string>
+    <string name="title_pref_corner_tap_time_ms">Tidsgräns för tryck i hörn</string>
+    <string name="value_corner_tap_time_system">Systemstandard</string>
+    <string name="title_pref_edge_speak_commands">Läs upp kommando vid varje klick</string>
+    <string-array name="pref_volume_change_feedback_entries">
+        <item>@string/volume_change_feedback_off</item>
+        <item>@string/volume_change_feedback_tone</item>
+        <item>@string/volume_change_feedback_spoken</item>
+        <item>@string/volume_change_feedback_tone_and_spoken</item>
+    </string-array>
+    <string name="title_pref_volume_change_tone_during_media">Tysta ton under mediauppspelning</string>
+    <string name="title_pref_volume_change_speech_during_media">Tysta tal under mediauppspelning</string>
+    <string name="title_pref_volume_change_interrupts_speech">Avbryt tal för att läsa upp volymen</string>
+    <string name="title_pref_volume_keys_speech_volume_while_speaking">Volymknapparna ändrar talvolymen medan tal läses upp</string>
+    <string name="title_pref_double_tap_moves_cursor">Dubbeltryck flyttar markören till början eller slutet</string>
+    <string name="title_pref_scroll_ahead">Rulla vidare till nästa objekt</string>
+    <string name="title_pref_speak_while_scrolling">Läs upp nästa objekt under rullning</string>
+    <string-array name="pref_text_entities_entries">
+    <item>@string/text_entity_web</item>
+    <item>@string/text_entity_email</item>
+    <item>@string/text_entity_phone</item>
+    <item>@string/text_entity_code</item>
+  </string-array>
+    <string name="value_keep_models_until_stopped">Tills SandFly stoppas</string>
+    <string name="title_pref_model_download_server">Server för modellnedladdning</string>
+    <string name="title_pref_settings_profiles">Inställningsprofiler</string>
+    <string name="title_pref_new_settings_profile">Ny inställningsprofil</string>
+    <string name="settings_profile_new_name">Profil <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="settings_profile_name_taken">Det finns redan en inställningsprofil med namnet <xliff:g id="name" example="Demo">%1$s</xliff:g></string>
+    <string name="settings_profile_in_use">Används</string>
+    <string name="settings_profile_menu_item_in_use"><xliff:g id="name" example="Demo">%1$s</xliff:g>, används</string>
+    <string name="settings_profile_none">Ingen inställningsprofil</string>
+    <string name="settings_profile_use_now">Använd nu</string>
+    <string name="settings_profile_stop_using">Sluta använda</string>
+    <string name="settings_profile_change_settings">Ändra inställningar</string>
+    <string name="settings_profile_editing">Ändringar sparas i <xliff:g id="name" example="Messaging">%1$s</xliff:g></string>
+    <string name="settings_profile_edit_saved">Ändringar sparade i <xliff:g id="name" example="Messaging">%1$s</xliff:g></string>
+    <string name="settings_profile_use_automatically">Använd automatiskt</string>
+    <string name="settings_profile_web">Webbinnehåll</string>
+    <string name="settings_profile_reading">Kontinuerlig läsning</string>
+    <string name="settings_profile_text_editing">Textredigering</string>
+    <string name="settings_profile_apps">Appar</string>
+    <string name="settings_profile_add_app">Lägg till app</string>
+    <string name="settings_profile_settings">Inställningar i den här profilen</string>
+    <string name="settings_profile_no_settings">Inga</string>
+    <string name="settings_profile_remove_confirm">Ta bort <xliff:g id="item" example="Speech rate">%1$s</xliff:g> från <xliff:g id="name" example="Messaging">%2$s</xliff:g>?</string>
+    <string name="settings_profile_not_saved">Inställningsprofilen kunde inte sparas</string>
+    <string name="settings_profile_in_use_announcement">Profilen <xliff:g id="name" example="Demo">%1$s</xliff:g></string>
+    <string name="settings_profile_not_changed">Inställningsprofilen ändrades inte</string>
+    <string name="title_settings_profile">Inställningsprofil</string>
+    <string name="shortcut_settings_profiles">Välj inställningsprofil</string>
+    <string name="shortcut_next_settings_profile">Nästa inställningsprofil</string>
+    <string name="shortcut_previous_settings_profile">Föregående inställningsprofil</string>
+    <string name="title_copy_text_from_screen">Kopiera text från skärmen</string>
+    <string name="granularity_label">Granularitet</string>
+    <string name="granularity_characters">Tecken</string>
+    <string name="granularity_words">Ord</string>
+    <string name="granularity_paragraphs">Stycken</string>
+    <string name="button_select_all">Markera alla</string>
+    <string name="no_text_selected">Ingen text markerad</string>
+    <string name="no_text_on_screen">Ingen text hittades på skärmen</string>
+    <string name="title_select_last_spoken_phrase_word_by_word">Markera senast uppläst fras ord för ord</string>
+    <string name="no_words_selected">Inga ord markerade</string>
+    <string name="no_phrase_to_select">Ingen fras att markera</string>
+    <string name="word_selection_list_cut_off">Listan avkortad vid <xliff:g id="count" example="1000">%1$d</xliff:g> objekt</string>
+    <plurals name="word_selection_copied">
+        <item quantity="one"><xliff:g id="count" example="5">%1$d</xliff:g> objekt kopierat</item>
+        <item quantity="other"><xliff:g id="count" example="5">%1$d</xliff:g> objekt kopierade</item>
+    </plurals>
 </resources>

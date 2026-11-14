@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_voice_commands">語音指令</string>
+    <string name="title_pref_voice_commands_ai">用 AI 理解語音指令</string>
+    <string name="voice_commands_custom">自訂語音指令</string>
+    <string name="voice_command_add">新增語音指令</string>
+    <string name="voice_command_phrase">片語</string>
+    <string name="voice_command_change_phrase">變更片語</string>
+    <string name="voice_command_change_command">變更命令</string>
+    <string name="voice_command_delete_confirm">刪除<xliff:g id="phrase" example="Good morning">%1$s</xliff:g>？</string>
+    <string name="voice_command_phrase_exists"><xliff:g id="phrase" example="Good morning">%1$s</xliff:g>已是語音指令</string>
+    <string name="voice_commands_not_understood">無法理解：<xliff:g id="text" example="open the door">%1$s</xliff:g></string>
+    <string name="voice_commands_not_available">無法使用：<xliff:g id="name" example="Morning macro">%1$s</xliff:g></string>
+    <string name="voice_commands_not_found">找不到：<xliff:g id="label" example="Settings">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app">沒有名為<xliff:g id="name" example="Signal">%1$s</xliff:g>的應用程式</string>
+    <string name="voice_commands_no_app_for_action">沒有可執行此動作的應用程式</string>
+    <string name="voice_commands_calling">正在撥打給<xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_call_permission">請允許撥打電話，然後再說一次該命令。</string>
+    <string name="voice_commands_contacts_permission">請允許存取聯絡人，然後再說一次該命令。</string>
+    <string name="voice_commands_no_contact">沒有名為<xliff:g id="name" example="Sam">%1$s</xliff:g>的聯絡人</string>
+    <string name="voice_commands_contacts_several">有多位名為<xliff:g id="name" example="Sam">%1$s</xliff:g>的聯絡人：<xliff:g id="names" example="Sam Jones, Sam Smith">%2$s</xliff:g></string>
+    <string name="voice_commands_message_text">傳給<xliff:g id="name" example="Sam">%1$s</xliff:g>的訊息</string>
+    <string name="voice_commands_message_confirm">傳送給<xliff:g id="name" example="Sam">%1$s</xliff:g>：<xliff:g id="text" example="I am on my way">%2$s</xliff:g>？</string>
+    <string name="voice_commands_message_confirm_result">傳送給<xliff:g id="name" example="Sam">%1$s</xliff:g>？</string>
+    <string name="voice_commands_message_not_sent">訊息未傳送</string>
+    <string name="voice_commands_send_pressed">已按下傳送</string>
+    <string name="voice_commands_send_button">傳送</string>
+    <string name="voice_commands_no_description">未收到描述</string>
+    <string name="voice_commands_copied">已複製</string>
+    <string-array name="voice_commands_chain_words">
+        <item>然後</item>
+        <item>跟住</item>
+        <item>之後</item>
+        <item>再</item>
+    </string-array>
+    <string-array name="voice_commands_and_words">
+        <item>並且</item>
+        <item>並</item>
+        <item>而且</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_start">
+        <item>請</item>
+        <item>請你</item>
+        <item>你可以</item>
+        <item>你可唔可以</item>
+        <item>我想</item>
+        <item>我想要</item>
+        <item>而家</item>
+        <item>現在</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_end">
+        <item>請</item>
+        <item>幫我</item>
+        <item>一下</item>
+        <item>而家</item>
+        <item>現在</item>
+    </string-array>
+    <string-array name="voice_commands_cancel_words">
+        <item>停止</item>
+        <item>停</item>
+        <item>取消</item>
+        <item>退出</item>
+        <item>算了</item>
+        <item>唔使了</item>
+        <item>別說了</item>
+        <item>唔好講</item>
+    </string-array>
+    <string-array name="voice_commands_yes">
+        <item>是</item>
+        <item>是的</item>
+        <item>好</item>
+        <item>好的</item>
+        <item>傳送</item>
+        <item>發送</item>
+        <item>確定</item>
+        <item>可以</item>
+        <item>得</item>
+        <item>冇問題</item>
+        <item>係</item>
+    </string-array>
+    <string-array name="voice_commands_sms_names">
+        <item>短訊</item>
+        <item>簡訊</item>
+        <item>SMS</item>
+        <item>訊息</item>
+        <item>文字訊息</item>
+    </string-array>
+    <string-array name="voice_commands_send_image_description">
+        <item>把圖片描述傳給 {who}</item>
+        <item>傳送圖片描述給 {who}</item>
+        <item>發送圖片描述畀 {who}</item>
+        <item>把這張圖片的描述傳給 {who}</item>
+        <item>把相片描述傳給 {who}</item>
+        <item>傳送相片描述給 {who}</item>
+    </string-array>
+    <string-array name="voice_commands_send_screen_description">
+        <item>把畫面描述傳給 {who}</item>
+        <item>傳送畫面描述給 {who}</item>
+        <item>發送畫面描述畀 {who}</item>
+        <item>把畫面的描述傳給 {who}</item>
+    </string-array>
+    <string-array name="voice_commands_send_previous">
+        <item>用 {app} 把它傳給 {who}</item>
+        <item>把它傳給 {who}</item>
+        <item>傳給 {who}</item>
+        <item>傳畀 {who}</item>
+        <item>把這個傳給 {who}</item>
+        <item>把描述傳給 {who}</item>
+        <item>分享給 {who}</item>
+        <item>分享畀 {who}</item>
+    </string-array>
+    <string-array name="voice_commands_message">
+        <item>用 {app} 傳訊息給 {who} 說 {text}</item>
+        <item>用 {app} 發訊息畀 {who} {text}</item>
+        <item>用 {app} 傳訊息給 {who} {text}</item>
+        <item>在 {app} 上傳訊息給 {who} {text}</item>
+        <item>傳訊息給 {who} 說 {text}</item>
+        <item>傳送訊息給 {who} 說 {text}</item>
+        <item>發訊息給 {who} 說 {text}</item>
+        <item>發訊息畀 {who} {text}</item>
+        <item>發短訊畀 {who} {text}</item>
+        <item>傳短訊給 {who} 說 {text}</item>
+        <item>傳訊息給 {whoandtext}</item>
+        <item>傳送訊息給 {whoandtext}</item>
+        <item>發訊息畀 {whoandtext}</item>
+        <item>發短訊畀 {whoandtext}</item>
+        <item>傳短訊給 {whoandtext}</item>
+        <item>傳 {app} 訊息給 {who} {text}</item>
+        <item>在 {app} 上告訴 {who} {text}</item>
+        <item>告訴 {who} {text}</item>
+        <item>同 {who} 講 {text}</item>
+    </string-array>
+    <string-array name="voice_commands_call">
+        <item>打電話給 {who}</item>
+        <item>打電話畀 {who}</item>
+        <item>打俾 {who}</item>
+        <item>打給 {who}</item>
+        <item>撥打 {who}</item>
+        <item>撥號給 {who}</item>
+        <item>致電 {who}</item>
+        <item>呼叫 {who}</item>
+    </string-array>
+    <string-array name="voice_commands_describe_screen">
+        <item>描述畫面</item>
+        <item>描述一下畫面</item>
+        <item>描述目前畫面</item>
+        <item>畫面上有什麼</item>
+        <item>畫面上有咩</item>
+        <item>畫面上是什麼</item>
+        <item>畫面上顯示了什麼</item>
+    </string-array>
+    <string-array name="voice_commands_describe_image">
+        <item>描述圖片</item>
+        <item>描述這張圖片</item>
+        <item>描述相片</item>
+        <item>描述這張相片</item>
+        <item>圖片裡有什麼</item>
+        <item>圖片入面有咩</item>
+        <item>圖片中是什麼</item>
+        <item>相片裡有什麼</item>
+        <item>相片入面有咩</item>
+    </string-array>
+    <string-array name="voice_commands_copy_result">
+        <item>複製</item>
+        <item>複製它</item>
+        <item>複製這個</item>
+        <item>複製描述</item>
+        <item>複製剛才說的話</item>
+        <item>複製上一句</item>
+        <item>複製最後朗讀的內容</item>
+        <item>複製最後一句話</item>
+    </string-array>
+    <string-array name="voice_commands_wait">
+        <item>等待 {n} 秒</item>
+        <item>等 {n} 秒</item>
+        <item>等待 {n} 秒鐘</item>
+        <item>等待一秒</item>
+        <item>等一秒</item>
+        <item>等一等</item>
+        <item>等一下</item>
+        <item>等待</item>
+    </string-array>
+    <string-array name="voice_commands_type_text">
+        <item>輸入 {text}</item>
+        <item>鍵入 {text}</item>
+        <item>打字 {text}</item>
+        <item>寫下 {text}</item>
+    </string-array>
+    <string-array name="voice_commands_run">
+        <item>執行 {command} 巨集</item>
+        <item>執行巨集 {command}</item>
+        <item>執行 {command}</item>
+        <item>運行 {command}</item>
+    </string-array>
+    <string-array name="voice_commands_open">
+        <item>開啟 {app}</item>
+        <item>打開 {app}</item>
+        <item>啟動 {app}</item>
+        <item>切換到 {app}</item>
+        <item>進入 {app}</item>
+    </string-array>
+    <string-array name="voice_commands_tap">
+        <item>輕按兩下 {label}</item>
+        <item>輕按 {label}</item>
+        <item>點選 {label}</item>
+        <item>點擊 {label}</item>
+        <item>按 {label}</item>
+        <item>啟用 {label}</item>
+        <item>選擇 {label}</item>
+    </string-array>
+</resources>

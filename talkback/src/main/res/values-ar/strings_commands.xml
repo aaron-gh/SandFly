@@ -59,4 +59,24 @@
     <string name="keycombo_menu_navigate_next_by_setting">التالي حسب إعداد التنقل</string>
     <string name="keycombo_menu_navigate_previous_by_setting">السابق حسب إعداد التنقل</string>
     <string name="title_pref_overview_screen">نظرة عامة</string>
+    <string name="title_pref_custom_menus">القوائم المخصّصة</string>
+    <string name="commands_category_setting_values">قيم الإعدادات</string>
+    <string name="command_next_value"><xliff:g id="setting" example="Punctuation">%1$s</xliff:g>: القيمة التالية</string>
+    <string name="command_previous_value"><xliff:g id="setting" example="Punctuation">%1$s</xliff:g>: القيمة السابقة</string>
+    <string name="shortcut_script_commands">أوامر النص البرمجي</string>
+    <string name="shortcut_set_reading_control">ضبط عنصر التحكّم في القراءة على <xliff:g id="control" example="Headings">%1$s</xliff:g></string>
+    <string name="title_pref_custom_reading_controls">عناصر التحكّم المخصّصة في القراءة</string>
+    <string name="menu_add_reading_control">إضافة عنصر تحكّم في القراءة</string>
+    <string name="menu_add_submenu">إضافة قائمة فرعية</string>
+    <string name="menu_add_menu">إضافة قائمة</string>
+    <string name="menu_name">الاسم</string>
+    <string name="menu_open">فتح</string>
+    <string name="menu_move_to">نقل إلى</string>
+    <string name="menu_rename">إعادة التسمية</string>
+    <string name="menu_delete">حذف</string>
+    <string name="menu_delete_confirm">هل تريد حذف <xliff:g id="name" example="AI">%1$s</xliff:g> وكل ما فيها؟</string>
+    <string name="menu_moved">تم النقل إلى <xliff:g id="place" example="AI">%1$s</xliff:g></string>
+    <string name="menu_reset">إعادة الضبط إلى الإعداد التلقائي</string>
+    <string name="menu_reset_confirm">هل تريد إعادة ضبط قائمة SandFly إلى عناصرها وترتيبها التلقائيين؟</string>
+    <string name="menu_assign">الإيماءات واختصارات لوحة المفاتيح</string>
 </resources>

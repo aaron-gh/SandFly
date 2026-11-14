@@ -2016,4 +2016,144 @@
     <string name="value_keep_models_5">5 నిమిషాలు</string>
     <string name="value_keep_models_15">15 నిమిషాలు</string>
     <string name="value_keep_models_30">30 నిమిషాలు</string>
+    <string name="title_pref_speech_equalizer_save_preset">ప్రీసెట్‌గా సేవ్ చేయండి</string>
+    <string name="title_pref_speech_equalizer_saved_presets">సేవ్ చేసిన ప్రీసెట్‌లు</string>
+    <string name="speech_equalizer_preset_name">పేరు</string>
+    <string name="speech_equalizer_preset_name_taken"><xliff:g id="name" example="Podcast">%1$s</xliff:g> అనే ప్రీసెట్ ఇప్పటికే ఉంది</string>
+    <string name="speech_equalizer_presets_full">ఇంకా ప్రీసెట్‌లను సేవ్ చేయలేరు. మరొకటి సేవ్ చేయడానికి ఒకదాన్ని తొలగించండి.</string>
+    <string name="speech_equalizer_preset_saved"><xliff:g id="name" example="Podcast">%1$s</xliff:g> సేవ్ చేయబడింది</string>
+    <string name="speech_equalizer_preset_rename">పేరు మార్చండి</string>
+    <string name="speech_equalizer_preset_delete">తొలగించండి</string>
+    <string name="speech_equalizer_preset_delete_confirm"><xliff:g id="name" example="Podcast">%1$s</xliff:g>ని తొలగించాలా?</string>
+    <string name="speech_equalizer_preset_deleted"><xliff:g id="name" example="Podcast">%1$s</xliff:g> తొలగించబడింది</string>
+    <string name="title_pref_emoji_voice">ఎమోజి వాయిస్</string>
+    <string name="value_emoji_voice_same">స్పీచ్‌తో సమానం</string>
+    <string name="title_pref_emoji_rate">ఎమోజి స్పీచ్ రేట్</string>
+    <string name="title_pref_line_breaks_as_spaces">లైన్ బ్రేక్‌లను స్పేస్‌లుగా చదవండి</string>
+    <string name="title_pref_language_voices">భాషల వారీగా వాయిస్‌లు</string>
+    <string name="title_pref_identify_languages_from_words">పదాల ఆధారంగా భాషలను గుర్తించండి</string>
+    <string name="title_pref_add_language">భాషను జోడించండి</string>
+    <string name="title_pref_remove_language">భాషను తీసివేయండి</string>
+    <string name="title_pref_script_language">%1$s లిపి</string>
+    <string name="title_pref_screen_on_notification_count">నోటిఫికేషన్‌ల సంఖ్య</string>
+    <plurals name="template_screen_on_notification_count">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> నోటిఫికేషన్</item>
+        <item quantity="other"><xliff:g id="count" example="6">%d</xliff:g> నోటిఫికేషన్‌లు</item>
+    </plurals>
+    <string name="title_pref_phonetic_letters_review">సమీక్షించేటప్పుడు అక్షరాలను ఫోనెటిక్‌గా పలకండి</string>
+    <string name="title_pref_phonetic_letters_typing">టైప్ చేసేటప్పుడు అక్షరాలను ఫోనెటిక్‌గా పలకండి</string>
+    <string name="title_pref_emoji_suffix">ఎమోజి పేర్ల తర్వాత \"ఎమోజి\" అని పలకండి</string>
+    <string name="overview_shizuku_not_running">Shizuku అమలులో లేదు</string>
+    <string name="overview_shizuku_not_allowed">SandFlyను Shizuku అనుమతించడం లేదు</string>
+    <string name="overview_no_older_app">పాత యాప్ లేదు</string>
+    <string name="overview_no_newer_app">కొత్త యాప్ లేదు</string>
+    <string name="stream_volume_needs_access">ఈ వాల్యూమ్‌ను మార్చడానికి అంతరాయం కలిగించవద్దు యాక్సెస్‌ను అనుమతించండి.</string>
+    <string name="corner_gestures_title">మూలలు</string>
+    <string name="shortcut_move_to_item_below">కింది ఐటెమ్‌కు వెళ్లండి</string>
+    <string name="shortcut_move_to_item_above">పై ఐటెమ్‌కు వెళ్లండి</string>
+    <string name="shortcut_older_app">పాత యాప్</string>
+    <string name="shortcut_newer_app">కొత్త యాప్</string>
+    <string name="shortcut_answer_call">కాల్‌కు సమాధానం ఇవ్వండి</string>
+    <string name="answer_call_no_call">ఇన్‌కమింగ్ కాల్ లేదు</string>
+    <string name="answer_call_permission">కాల్‌లకు సమాధానం ఇవ్వడానికి అనుమతి అవసరం</string>
+    <string name="shortcut_switch_keyboard">కీబోర్డ్ మార్చండి</string>
+    <string name="switch_keyboard_none">ఇతర కీబోర్డ్ ఆన్‌లో లేదు</string>
+    <string name="switch_keyboard_failed">కీబోర్డ్ మారలేదు</string>
+    <string name="clipboard_history_hint">ఎంచుకోవడానికి పైకి లేదా కిందికి స్వైప్ చేసి, అతికించడానికి రెండుసార్లు నొక్కండి</string>
+    <string name="title_speech_history">స్పీచ్ చరిత్ర</string>
+    <string name="speech_history_empty">స్పీచ్ లేదు</string>
+    <string name="speech_history_clear">చరిత్రను క్లియర్ చేయండి</string>
+    <string name="title_pref_shortcut_corner_top_left_tap">ఎగువ ఎడమ మూలను నొక్కండి</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap">ఎగువ ఎడమ మూలను రెండుసార్లు నొక్కండి</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap">ఎగువ ఎడమ మూలను మూడుసార్లు నొక్కండి</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap_hold">ఎగువ ఎడమ మూలను రెండుసార్లు నొక్కి పట్టుకోండి</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap_hold">ఎగువ ఎడమ మూలను మూడుసార్లు నొక్కి పట్టుకోండి</string>
+    <string name="title_pref_shortcut_corner_top_right_tap">ఎగువ కుడి మూలను నొక్కండి</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap">ఎగువ కుడి మూలను రెండుసార్లు నొక్కండి</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap">ఎగువ కుడి మూలను మూడుసార్లు నొక్కండి</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap_hold">ఎగువ కుడి మూలను రెండుసార్లు నొక్కి పట్టుకోండి</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap_hold">ఎగువ కుడి మూలను మూడుసార్లు నొక్కి పట్టుకోండి</string>
+    <string name="title_pref_shortcut_corner_bottom_left_tap">దిగువ ఎడమ మూలను నొక్కండి</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap">దిగువ ఎడమ మూలను రెండుసార్లు నొక్కండి</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap">దిగువ ఎడమ మూలను మూడుసార్లు నొక్కండి</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap_hold">దిగువ ఎడమ మూలను రెండుసార్లు నొక్కి పట్టుకోండి</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap_hold">దిగువ ఎడమ మూలను మూడుసార్లు నొక్కి పట్టుకోండి</string>
+    <string name="title_pref_shortcut_corner_bottom_right_tap">దిగువ కుడి మూలను నొక్కండి</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap">దిగువ కుడి మూలను రెండుసార్లు నొక్కండి</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap">దిగువ కుడి మూలను మూడుసార్లు నొక్కండి</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap_hold">దిగువ కుడి మూలను రెండుసార్లు నొక్కి పట్టుకోండి</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap_hold">దిగువ కుడి మూలను మూడుసార్లు నొక్కి పట్టుకోండి</string>
+    <string name="title_pref_swipe_start_time">సంజ్ఞ ప్రారంభ సమయం</string>
+    <string name="title_pref_swipes_before_lift">వేలు ఎత్తే ముందే స్వైప్‌లను గుర్తించండి</string>
+    <string name="summary_pref_swipes_before_lift">ముందుకు వెనుకకు, కోణ సంజ్ఞలు ఆఫ్ అవుతాయి.</string>
+    <string name="title_pref_corner_size_mm">మూల పరిమాణం</string>
+    <string name="value_corner_size_edge_width">అంచు వెడల్పుతో సమానం</string>
+    <string name="title_pref_corner_tap_time_ms">మూల నొక్కు సమయ పరిమితి</string>
+    <string name="value_corner_tap_time_system">సిస్టమ్ డిఫాల్ట్</string>
+    <string name="title_pref_edge_speak_commands">ప్రతి క్లిక్ వద్ద ఆదేశాన్ని పలకండి</string>
+    <string-array name="pref_volume_change_feedback_entries">
+        <item>@string/volume_change_feedback_off</item>
+        <item>@string/volume_change_feedback_tone</item>
+        <item>@string/volume_change_feedback_spoken</item>
+        <item>@string/volume_change_feedback_tone_and_spoken</item>
+    </string-array>
+    <string name="title_pref_volume_change_tone_during_media">మీడియా ప్లేబ్యాక్ సమయంలో టోన్‌ను నిశ్శబ్దం చేయండి</string>
+    <string name="title_pref_volume_change_speech_during_media">మీడియా ప్లేబ్యాక్ సమయంలో స్పీచ్‌ను నిశ్శబ్దం చేయండి</string>
+    <string name="title_pref_volume_change_interrupts_speech">వాల్యూమ్‌ను ప్రకటించడానికి స్పీచ్‌కు అంతరాయం కలిగించండి</string>
+    <string name="title_pref_volume_keys_speech_volume_while_speaking">మాట్లాడుతున్నప్పుడు వాల్యూమ్ కీలు స్పీచ్ వాల్యూమ్‌ను మారుస్తాయి</string>
+    <string name="title_pref_double_tap_moves_cursor">రెండుసార్లు నొక్కితే కర్సర్ ప్రారంభానికి లేదా చివరికి వెళ్తుంది</string>
+    <string name="title_pref_scroll_ahead">తదుపరి ఐటెమ్‌కు ముందుగా స్క్రోల్ చేయండి</string>
+    <string name="title_pref_speak_while_scrolling">స్క్రోల్ చేస్తున్నప్పుడు తదుపరి ఐటెమ్‌ను పలకండి</string>
+    <string-array name="pref_text_entities_entries">
+    <item>@string/text_entity_web</item>
+    <item>@string/text_entity_email</item>
+    <item>@string/text_entity_phone</item>
+    <item>@string/text_entity_code</item>
+  </string-array>
+    <string name="value_keep_models_until_stopped">SandFly ఆగే వరకు</string>
+    <string name="title_pref_model_download_server">మోడల్ డౌన్‌లోడ్ సర్వర్</string>
+    <string name="title_pref_settings_profiles">సెట్టింగ్‌ల ప్రొఫైల్స్</string>
+    <string name="title_pref_new_settings_profile">కొత్త సెట్టింగ్‌ల ప్రొఫైల్</string>
+    <string name="settings_profile_new_name">ప్రొఫైల్ <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="settings_profile_name_taken"><xliff:g id="name" example="Demo">%1$s</xliff:g> అనే సెట్టింగ్‌ల ప్రొఫైల్ ఇప్పటికే ఉంది</string>
+    <string name="settings_profile_in_use">వాడుకలో ఉంది</string>
+    <string name="settings_profile_menu_item_in_use"><xliff:g id="name" example="Demo">%1$s</xliff:g>, వాడుకలో ఉంది</string>
+    <string name="settings_profile_none">సెట్టింగ్‌ల ప్రొఫైల్ లేదు</string>
+    <string name="settings_profile_use_now">ఇప్పుడు ఉపయోగించండి</string>
+    <string name="settings_profile_stop_using">ఉపయోగించడం ఆపండి</string>
+    <string name="settings_profile_change_settings">సెట్టింగ్‌లను మార్చండి</string>
+    <string name="settings_profile_editing">మార్పులు <xliff:g id="name" example="Messaging">%1$s</xliff:g>కు వెళ్తాయి</string>
+    <string name="settings_profile_edit_saved">మార్పులు <xliff:g id="name" example="Messaging">%1$s</xliff:g>లో సేవ్ చేయబడ్డాయి</string>
+    <string name="settings_profile_use_automatically">స్వయంచాలకంగా ఉపయోగించండి</string>
+    <string name="settings_profile_web">వెబ్ కంటెంట్</string>
+    <string name="settings_profile_reading">నిరంతర చదవడం</string>
+    <string name="settings_profile_text_editing">టెక్స్ట్ ఎడిటింగ్</string>
+    <string name="settings_profile_apps">యాప్‌లు</string>
+    <string name="settings_profile_add_app">యాప్‌ను జోడించండి</string>
+    <string name="settings_profile_settings">ఈ ప్రొఫైల్‌లోని సెట్టింగ్‌లు</string>
+    <string name="settings_profile_no_settings">ఏదీ లేదు</string>
+    <string name="settings_profile_remove_confirm"><xliff:g id="name" example="Messaging">%2$s</xliff:g> నుండి <xliff:g id="item" example="Speech rate">%1$s</xliff:g>ని తీసివేయాలా?</string>
+    <string name="settings_profile_not_saved">సెట్టింగ్‌ల ప్రొఫైల్‌ను సేవ్ చేయలేకపోయింది</string>
+    <string name="settings_profile_in_use_announcement"><xliff:g id="name" example="Demo">%1$s</xliff:g> ప్రొఫైల్</string>
+    <string name="settings_profile_not_changed">సెట్టింగ్‌ల ప్రొఫైల్ మారలేదు</string>
+    <string name="title_settings_profile">సెట్టింగ్‌ల ప్రొఫైల్</string>
+    <string name="shortcut_settings_profiles">సెట్టింగ్‌ల ప్రొఫైల్‌ను ఎంచుకోండి</string>
+    <string name="shortcut_next_settings_profile">తర్వాతి సెట్టింగ్‌ల ప్రొఫైల్</string>
+    <string name="shortcut_previous_settings_profile">మునుపటి సెట్టింగ్‌ల ప్రొఫైల్</string>
+    <string name="title_copy_text_from_screen">స్క్రీన్ నుండి టెక్స్ట్‌ను కాపీ చేయండి</string>
+    <string name="granularity_label">గ్రాన్యులారిటీ</string>
+    <string name="granularity_characters">అక్షరాలు</string>
+    <string name="granularity_words">పదాలు</string>
+    <string name="granularity_paragraphs">పేరాలు</string>
+    <string name="button_select_all">అన్నీ ఎంచుకోండి</string>
+    <string name="no_text_selected">టెక్స్ట్ ఎంచుకోలేదు</string>
+    <string name="no_text_on_screen">స్క్రీన్‌పై టెక్స్ట్ కనుగొనబడలేదు</string>
+    <string name="title_select_last_spoken_phrase_word_by_word">చివరిగా పలికిన పదబంధాన్ని పదం పదంగా ఎంచుకోండి</string>
+    <string name="no_words_selected">పదాలు ఎంచుకోలేదు</string>
+    <string name="no_phrase_to_select">ఎంచుకోవడానికి పదబంధం లేదు</string>
+    <string name="word_selection_list_cut_off">జాబితా <xliff:g id="count" example="1000">%1$d</xliff:g> ఐటెమ్‌ల వద్ద ఆగిపోయింది</string>
+    <plurals name="word_selection_copied">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> ఐటెమ్ కాపీ చేయబడింది</item>
+        <item quantity="other"><xliff:g id="count" example="5">%1$d</xliff:g> ఐటెమ్‌లు కాపీ చేయబడ్డాయి</item>
+    </plurals>
 </resources>

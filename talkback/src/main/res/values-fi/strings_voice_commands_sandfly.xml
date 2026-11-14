@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_voice_commands">Äänikomennot</string>
+    <string name="title_pref_voice_commands_ai">Ymmärrä äänikomennot tekoälyllä</string>
+    <string name="voice_commands_custom">Omat äänikomennot</string>
+    <string name="voice_command_add">Lisää äänikomento</string>
+    <string name="voice_command_phrase">Lause</string>
+    <string name="voice_command_change_phrase">Muuta lausetta</string>
+    <string name="voice_command_change_command">Muuta komentoa</string>
+    <string name="voice_command_delete_confirm">Poistetaanko <xliff:g id="phrase" example="Good morning">%1$s</xliff:g>?</string>
+    <string name="voice_command_phrase_exists"><xliff:g id="phrase" example="Good morning">%1$s</xliff:g> on jo äänikomento</string>
+    <string name="voice_commands_not_understood">Ei ymmärretty: <xliff:g id="text" example="open the door">%1$s</xliff:g></string>
+    <string name="voice_commands_not_available">Ei käytettävissä: <xliff:g id="name" example="Morning macro">%1$s</xliff:g></string>
+    <string name="voice_commands_not_found">Ei löytynyt: <xliff:g id="label" example="Settings">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app">Sovellusta nimeltä <xliff:g id="name" example="Signal">%1$s</xliff:g> ei ole</string>
+    <string name="voice_commands_no_app_for_action">Ei sovellusta tälle toiminnolle</string>
+    <string name="voice_commands_calling">Soitetaan: <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_call_permission">Salli puhelut ja sano komento uudelleen.</string>
+    <string name="voice_commands_contacts_permission">Salli yhteystietojen käyttö ja sano komento uudelleen.</string>
+    <string name="voice_commands_no_contact">Yhteystietoa nimeltä <xliff:g id="name" example="Sam">%1$s</xliff:g> ei ole</string>
+    <string name="voice_commands_contacts_several">Useita yhteystietoja nimeltä <xliff:g id="name" example="Sam">%1$s</xliff:g>: <xliff:g id="names" example="Sam Jones, Sam Smith">%2$s</xliff:g></string>
+    <string name="voice_commands_message_text">Viesti: <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_message_confirm">Lähetetäänkö nimelle <xliff:g id="name" example="Sam">%1$s</xliff:g>: <xliff:g id="text" example="I am on my way">%2$s</xliff:g>?</string>
+    <string name="voice_commands_message_confirm_result">Lähetetäänkö nimelle <xliff:g id="name" example="Sam">%1$s</xliff:g>?</string>
+    <string name="voice_commands_message_not_sent">Viestiä ei lähetetty</string>
+    <string name="voice_commands_send_pressed">Lähetä painettu</string>
+    <string name="voice_commands_send_button">Lähetä</string>
+    <string name="voice_commands_no_description">Kuvausta ei saatu</string>
+    <string name="voice_commands_copied">Kopioitu</string>
+    <string-array name="voice_commands_chain_words">
+        <item>ja sitten</item>
+        <item>sitten</item>
+        <item>sen jälkeen</item>
+        <item>ja sen jälkeen</item>
+    </string-array>
+    <string-array name="voice_commands_and_words">
+        <item>ja</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_start">
+        <item>ole hyvä ja</item>
+        <item>voisitko</item>
+        <item>voitko</item>
+        <item>haluan</item>
+        <item>haluaisin</item>
+        <item>nyt</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_end">
+        <item>kiitos</item>
+        <item>ole hyvä</item>
+        <item>minulle</item>
+        <item>nyt</item>
+    </string-array>
+    <string-array name="voice_commands_cancel_words">
+        <item>lopeta</item>
+        <item>peruuta</item>
+        <item>unohda</item>
+        <item>anna olla</item>
+        <item>hiljaa</item>
+    </string-array>
+    <string-array name="voice_commands_yes">
+        <item>kyllä</item>
+        <item>joo</item>
+        <item>juu</item>
+        <item>lähetä</item>
+        <item>ok</item>
+        <item>okei</item>
+        <item>varmasti</item>
+        <item>tee se</item>
+    </string-array>
+    <string-array name="voice_commands_sms_names">
+        <item>tekstiviesti</item>
+        <item>tekstari</item>
+        <item>SMS</item>
+        <item>viestit</item>
+    </string-array>
+    <string-array name="voice_commands_send_image_description">
+        <item>lähetä kuvan kuvaus nimelle {who}</item>
+        <item>lähetä kuvaus kuvasta nimelle {who}</item>
+        <item>lähetä valokuvan kuvaus nimelle {who}</item>
+        <item>lähetä kuvaus tästä kuvasta nimelle {who}</item>
+    </string-array>
+    <string-array name="voice_commands_send_screen_description">
+        <item>lähetä näytön kuvaus nimelle {who}</item>
+        <item>lähetä kuvaus näytöstä nimelle {who}</item>
+    </string-array>
+    <string-array name="voice_commands_send_previous">
+        <item>lähetä se nimelle {who} sovelluksessa {app}</item>
+        <item>lähetä se nimelle {who}</item>
+        <item>lähetä tämä nimelle {who}</item>
+        <item>lähetä kuvaus nimelle {who}</item>
+        <item>jaa se nimelle {who}</item>
+    </string-array>
+    <string-array name="voice_commands_message">
+        <item>lähetä viesti nimelle {who} sovelluksessa {app} tekstillä {text}</item>
+        <item>lähetä viesti nimelle {who} tekstillä {text}</item>
+        <item>lähetä viesti {whoandtext}</item>
+        <item>lähetä {app}-viesti nimelle {who} tekstillä {text}</item>
+        <item>lähetä {app}-viesti nimelle {who}</item>
+        <item>viesti nimelle {who} sovelluksessa {app} tekstillä {text}</item>
+        <item>viesti nimelle {who} tekstillä {text}</item>
+        <item>tekstiviesti nimelle {who} tekstillä {text}</item>
+        <item>kerro nimelle {who} sovelluksessa {app} {text}</item>
+        <item>viesti {whoandtext}</item>
+        <item>tekstiviesti {whoandtext}</item>
+    </string-array>
+    <string-array name="voice_commands_call">
+        <item>soita nimelle {who}</item>
+        <item>soita numeroon {who}</item>
+        <item>soita {who}</item>
+        <item>soita puhelu nimelle {who}</item>
+        <item>puhelu {who}</item>
+    </string-array>
+    <string-array name="voice_commands_describe_screen">
+        <item>kuvaile näyttö</item>
+        <item>kuvaile näyttöä</item>
+        <item>mitä näytöllä on</item>
+        <item>kerro mitä näytöllä on</item>
+    </string-array>
+    <string-array name="voice_commands_describe_image">
+        <item>kuvaile kuva</item>
+        <item>kuvaile tämä kuva</item>
+        <item>kuvaile valokuva</item>
+        <item>mitä kuvassa on</item>
+        <item>mitä tässä kuvassa on</item>
+        <item>mitä valokuvassa on</item>
+    </string-array>
+    <string-array name="voice_commands_copy_result">
+        <item>kopioi se</item>
+        <item>kopioi tämä</item>
+        <item>kopioi kuvaus</item>
+        <item>kopioi mitä juuri sanoit</item>
+        <item>kopioi viimeksi puhuttu lause</item>
+        <item>kopioi viimeinen lause</item>
+    </string-array>
+    <string-array name="voice_commands_wait">
+        <item>odota {n} sekuntia</item>
+        <item>odota {n} sekunti</item>
+        <item>odota sekunti</item>
+        <item>odota</item>
+    </string-array>
+    <string-array name="voice_commands_type_text">
+        <item>kirjoita {text}</item>
+        <item>syötä {text}</item>
+        <item>näppäile {text}</item>
+    </string-array>
+    <string-array name="voice_commands_run">
+        <item>suorita makro {command}</item>
+        <item>suorita {command}-makro</item>
+        <item>suorita {command}</item>
+        <item>käynnistä {command}</item>
+        <item>tee {command}</item>
+    </string-array>
+    <string-array name="voice_commands_open">
+        <item>avaa {app}</item>
+        <item>käynnistä {app}</item>
+        <item>siirry sovellukseen {app}</item>
+        <item>vaihda sovellukseen {app}</item>
+    </string-array>
+    <string-array name="voice_commands_tap">
+        <item>kaksoisnapauta {label}</item>
+        <item>napauta {label}</item>
+        <item>napsauta {label}</item>
+        <item>paina {label}</item>
+        <item>aktivoi {label}</item>
+        <item>valitse {label}</item>
+    </string-array>
+</resources>

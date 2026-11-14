@@ -2033,4 +2033,138 @@
     <string name="value_keep_models_5">5 хвилин</string>
     <string name="value_keep_models_15">15 хвилин</string>
     <string name="value_keep_models_30">30 хвилин</string>
+    <string name="title_pref_speech_equalizer_save_preset">Зберегти як пресет</string>
+    <string name="title_pref_speech_equalizer_saved_presets">Збережені пресети</string>
+    <string name="speech_equalizer_preset_name">Назва</string>
+    <string name="speech_equalizer_preset_name_taken">Пресет із назвою <xliff:g id="name" example="Podcast">%1$s</xliff:g> уже існує</string>
+    <string name="speech_equalizer_presets_full">Більше пресетів зберегти не можна. Видаліть один, щоб зберегти інший.</string>
+    <string name="speech_equalizer_preset_saved"><xliff:g id="name" example="Podcast">%1$s</xliff:g> збережено</string>
+    <string name="speech_equalizer_preset_rename">Перейменувати</string>
+    <string name="speech_equalizer_preset_delete">Видалити</string>
+    <string name="speech_equalizer_preset_delete_confirm">Видалити <xliff:g id="name" example="Podcast">%1$s</xliff:g>?</string>
+    <string name="speech_equalizer_preset_deleted"><xliff:g id="name" example="Podcast">%1$s</xliff:g> видалено</string>
+    <string name="title_pref_emoji_voice">Голос для емодзі</string>
+    <string name="value_emoji_voice_same">Той самий, що для мовлення</string>
+    <string name="title_pref_emoji_rate">Швидкість мовлення для емодзі</string>
+    <string name="title_pref_line_breaks_as_spaces">Читати розриви рядків як пробіли</string>
+    <string name="title_pref_language_voices">Голоси за мовами</string>
+    <string name="title_pref_identify_languages_from_words">Визначати мови за словами</string>
+    <string name="title_pref_add_language">Додати мову</string>
+    <string name="title_pref_remove_language">Видалити мову</string>
+    <string name="title_pref_script_language">Письмо: %1$s</string>
+    <string name="title_pref_screen_on_notification_count">Кількість сповіщень</string>
+    <plurals name="template_screen_on_notification_count"><item quantity="one"><xliff:g id="count" example="6">%d</xliff:g> сповіщення</item><item quantity="few"><xliff:g id="count" example="6">%d</xliff:g> сповіщення</item><item quantity="many"><xliff:g id="count" example="6">%d</xliff:g> сповіщень</item><item quantity="other"><xliff:g id="count" example="6">%d</xliff:g> сповіщення</item></plurals>
+    <string name="title_pref_phonetic_letters_review">Вимовляти літери фонетично під час перегляду</string>
+    <string name="title_pref_phonetic_letters_typing">Вимовляти літери фонетично під час введення</string>
+    <string name="title_pref_emoji_suffix">Вимовляти «емодзі» після назв емодзі</string>
+    <string name="overview_shizuku_not_running">Shizuku не запущено</string>
+    <string name="overview_shizuku_not_allowed">Shizuku не дозволяє SandFly</string>
+    <string name="overview_no_older_app">Немає старішого додатка</string>
+    <string name="overview_no_newer_app">Немає новішого додатка</string>
+    <string name="stream_volume_needs_access">Щоб змінити цю гучність, дозвольте доступ до режиму «Не турбувати».</string>
+    <string name="corner_gestures_title">Кути</string>
+    <string name="shortcut_move_to_item_below">Перейти до елемента нижче</string>
+    <string name="shortcut_move_to_item_above">Перейти до елемента вище</string>
+    <string name="shortcut_older_app">Старіший додаток</string>
+    <string name="shortcut_newer_app">Новіший додаток</string>
+    <string name="shortcut_answer_call">Відповісти на виклик</string>
+    <string name="answer_call_no_call">Немає вхідного виклику</string>
+    <string name="answer_call_permission">Потрібен дозвіл на відповіді на виклики</string>
+    <string name="shortcut_switch_keyboard">Змінити клавіатуру</string>
+    <string name="switch_keyboard_none">Інших клавіатур не ввімкнено</string>
+    <string name="switch_keyboard_failed">Клавіатуру не змінено</string>
+    <string name="clipboard_history_hint">Проведіть угору або вниз, щоб вибрати, потім двічі торкніться, щоб вставити</string>
+    <string name="title_speech_history">Історія мовлення</string>
+    <string name="speech_history_empty">Немає мовлення</string>
+    <string name="speech_history_clear">Очистити історію</string>
+    <string name="title_pref_shortcut_corner_top_left_tap">Торкнутися: верхній лівий кут</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap">Двічі торкнутися: верхній лівий кут</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap">Тричі торкнутися: верхній лівий кут</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap_hold">Двічі торкнутися й утримувати: верхній лівий кут</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap_hold">Тричі торкнутися й утримувати: верхній лівий кут</string>
+    <string name="title_pref_shortcut_corner_top_right_tap">Торкнутися: верхній правий кут</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap">Двічі торкнутися: верхній правий кут</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap">Тричі торкнутися: верхній правий кут</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap_hold">Двічі торкнутися й утримувати: верхній правий кут</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap_hold">Тричі торкнутися й утримувати: верхній правий кут</string>
+    <string name="title_pref_shortcut_corner_bottom_left_tap">Торкнутися: нижній лівий кут</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap">Двічі торкнутися: нижній лівий кут</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap">Тричі торкнутися: нижній лівий кут</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap_hold">Двічі торкнутися й утримувати: нижній лівий кут</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap_hold">Тричі торкнутися й утримувати: нижній лівий кут</string>
+    <string name="title_pref_shortcut_corner_bottom_right_tap">Торкнутися: нижній правий кут</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap">Двічі торкнутися: нижній правий кут</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap">Тричі торкнутися: нижній правий кут</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap_hold">Двічі торкнутися й утримувати: нижній правий кут</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap_hold">Тричі торкнутися й утримувати: нижній правий кут</string>
+    <string name="title_pref_swipe_start_time">Час початку жесту</string>
+    <string name="title_pref_swipes_before_lift">Розпізнавати проведення до відриву пальця</string>
+    <string name="summary_pref_swipes_before_lift">Вимикає жести вперед і назад та кутові жести.</string>
+    <string name="title_pref_corner_size_mm">Розмір кута</string>
+    <string name="value_corner_size_edge_width">Як ширина краю</string>
+    <string name="title_pref_corner_tap_time_ms">Обмеження часу дотику в куті</string>
+    <string name="value_corner_tap_time_system">Системне за умовчанням</string>
+    <string name="title_pref_edge_speak_commands">Озвучувати команду при кожному клацанні</string>
+    <string-array name="pref_volume_change_feedback_entries">
+        <item>@string/volume_change_feedback_off</item>
+        <item>@string/volume_change_feedback_tone</item>
+        <item>@string/volume_change_feedback_spoken</item>
+        <item>@string/volume_change_feedback_tone_and_spoken</item>
+    </string-array>
+    <string name="title_pref_volume_change_tone_during_media">Вимкнути сигнал під час відтворення медіа</string>
+    <string name="title_pref_volume_change_speech_during_media">Вимкнути мовлення під час відтворення медіа</string>
+    <string name="title_pref_volume_change_interrupts_speech">Переривати мовлення, щоб озвучити гучність</string>
+    <string name="title_pref_volume_keys_speech_volume_while_speaking">Клавіші гучності змінюють гучність мовлення під час мовлення</string>
+    <string name="title_pref_double_tap_moves_cursor">Подвійний дотик переміщує курсор на початок або в кінець</string>
+    <string name="title_pref_scroll_ahead">Прокручувати до наступного елемента заздалегідь</string>
+    <string name="title_pref_speak_while_scrolling">Озвучувати наступний елемент під час прокручування</string>
+    <string-array name="pref_text_entities_entries">
+    <item>@string/text_entity_web</item>
+    <item>@string/text_entity_email</item>
+    <item>@string/text_entity_phone</item>
+    <item>@string/text_entity_code</item>
+  </string-array>
+    <string name="value_keep_models_until_stopped">Доки SandFly не зупиниться</string>
+    <string name="title_pref_model_download_server">Сервер завантаження моделей</string>
+    <string name="title_pref_settings_profiles">Профілі налаштувань</string>
+    <string name="title_pref_new_settings_profile">Новий профіль налаштувань</string>
+    <string name="settings_profile_new_name">Профіль <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="settings_profile_name_taken">Профіль налаштувань із назвою <xliff:g id="name" example="Demo">%1$s</xliff:g> уже існує</string>
+    <string name="settings_profile_in_use">Використовується</string>
+    <string name="settings_profile_menu_item_in_use"><xliff:g id="name" example="Demo">%1$s</xliff:g>, використовується</string>
+    <string name="settings_profile_none">Без профілю налаштувань</string>
+    <string name="settings_profile_use_now">Використовувати зараз</string>
+    <string name="settings_profile_stop_using">Припинити використання</string>
+    <string name="settings_profile_change_settings">Змінити налаштування</string>
+    <string name="settings_profile_editing">Зміни зберігаються в <xliff:g id="name" example="Messaging">%1$s</xliff:g></string>
+    <string name="settings_profile_edit_saved">Зміни збережено в <xliff:g id="name" example="Messaging">%1$s</xliff:g></string>
+    <string name="settings_profile_use_automatically">Використовувати автоматично</string>
+    <string name="settings_profile_web">Вебвміст</string>
+    <string name="settings_profile_reading">Читання без пауз</string>
+    <string name="settings_profile_text_editing">Редагування тексту</string>
+    <string name="settings_profile_apps">Додатки</string>
+    <string name="settings_profile_add_app">Додати додаток</string>
+    <string name="settings_profile_settings">Налаштування в цьому профілі</string>
+    <string name="settings_profile_no_settings">Немає</string>
+    <string name="settings_profile_remove_confirm">Видалити <xliff:g id="item" example="Speech rate">%1$s</xliff:g> із профілю <xliff:g id="name" example="Messaging">%2$s</xliff:g>?</string>
+    <string name="settings_profile_not_saved">Не вдалося зберегти профіль налаштувань</string>
+    <string name="settings_profile_in_use_announcement">Профіль <xliff:g id="name" example="Demo">%1$s</xliff:g></string>
+    <string name="settings_profile_not_changed">Профіль налаштувань не змінено</string>
+    <string name="title_settings_profile">Профіль налаштувань</string>
+    <string name="shortcut_settings_profiles">Вибрати профіль налаштувань</string>
+    <string name="shortcut_next_settings_profile">Наступний профіль налаштувань</string>
+    <string name="shortcut_previous_settings_profile">Попередній профіль налаштувань</string>
+    <string name="title_copy_text_from_screen">Копіювати текст з екрана</string>
+    <string name="granularity_label">Деталізація</string>
+    <string name="granularity_characters">Символи</string>
+    <string name="granularity_words">Слова</string>
+    <string name="granularity_paragraphs">Абзаци</string>
+    <string name="button_select_all">Вибрати все</string>
+    <string name="no_text_selected">Текст не вибрано</string>
+    <string name="no_text_on_screen">На екрані немає тексту</string>
+    <string name="title_select_last_spoken_phrase_word_by_word">Вибрати останню озвучену фразу по словах</string>
+    <string name="no_words_selected">Слова не вибрано</string>
+    <string name="no_phrase_to_select">Немає фрази для вибору</string>
+    <string name="word_selection_list_cut_off">Список обрізано до <xliff:g id="count" example="1000">%1$d</xliff:g> елементів</string>
+    <plurals name="word_selection_copied"><item quantity="one">Скопійовано <xliff:g id="count" example="5">%1$d</xliff:g> елемент</item><item quantity="few">Скопійовано <xliff:g id="count" example="5">%1$d</xliff:g> елементи</item><item quantity="many">Скопійовано <xliff:g id="count" example="5">%1$d</xliff:g> елементів</item><item quantity="other">Скопійовано <xliff:g id="count" example="5">%1$d</xliff:g> елемента</item></plurals>
 </resources>

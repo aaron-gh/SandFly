@@ -46,4 +46,17 @@
     <string name="granular_editing_not_saved">சேமிக்கப்படவில்லை: உரை புலம் போய்விட்டது. உரை நகலெடுக்கப்பட்டது.</string>
     <string name="granular_editing_no_text">திருத்துவதற்கு உரை இல்லை</string>
     <string name="granular_editing_password">கடவுச்சொல் புலங்களில் கிடைக்கவில்லை</string>
+    <plurals name="granular_editing_spaces">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> இடைவெளி</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> இடைவெளிகள்</item>
+    </plurals>
+    <plurals name="granular_editing_new_lines">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> புதிய வரி</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> புதிய வரிகள்</item>
+    </plurals>
+    <plurals name="granular_editing_tabs">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> தத்தல்</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> தத்தல்கள்</item>
+    </plurals>
+    <string name="granular_editing_blank_line">வெற்று வரி</string>
 </resources>

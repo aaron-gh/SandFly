@@ -59,4 +59,24 @@
     <string name="keycombo_menu_navigate_next_by_setting">Sledeće po podešavanju navigacije</string>
     <string name="keycombo_menu_navigate_previous_by_setting">Prethodno po podešavanju navigacije</string>
     <string name="title_pref_overview_screen">Pregled</string>
+    <string name="title_pref_custom_menus">Prilagođeni meniji</string>
+    <string name="commands_category_setting_values">Vrednosti podešavanja</string>
+    <string name="command_next_value"><xliff:g id="setting" example="Punctuation">%1$s</xliff:g>: sledeća vrednost</string>
+    <string name="command_previous_value"><xliff:g id="setting" example="Punctuation">%1$s</xliff:g>: prethodna vrednost</string>
+    <string name="shortcut_script_commands">Komande skripte</string>
+    <string name="shortcut_set_reading_control">Postavi kontrolu čitanja na: <xliff:g id="control" example="Headings">%1$s</xliff:g></string>
+    <string name="title_pref_custom_reading_controls">Prilagođene kontrole čitanja</string>
+    <string name="menu_add_reading_control">Dodaj kontrolu čitanja</string>
+    <string name="menu_add_submenu">Dodaj podmeni</string>
+    <string name="menu_add_menu">Dodaj meni</string>
+    <string name="menu_name">Naziv</string>
+    <string name="menu_open">Otvori</string>
+    <string name="menu_move_to">Premesti u</string>
+    <string name="menu_rename">Preimenuj</string>
+    <string name="menu_delete">Izbriši</string>
+    <string name="menu_delete_confirm">Izbrisati <xliff:g id="name" example="AI">%1$s</xliff:g> i sve u njemu?</string>
+    <string name="menu_moved">Premešteno u: <xliff:g id="place" example="AI">%1$s</xliff:g></string>
+    <string name="menu_reset">Vrati na podrazumevano</string>
+    <string name="menu_reset_confirm">Vratiti SandFly meni na podrazumevane stavke i redosled?</string>
+    <string name="menu_assign">Pokreti i tasterska prečica</string>
 </resources>

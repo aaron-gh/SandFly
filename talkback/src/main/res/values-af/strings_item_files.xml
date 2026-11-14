@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="item_file_import">Voer in vanuit lêer</string>
+    <string name="item_file_export">Voer na lêer uit</string>
+    <string name="title_pref_export_item_file_reference">Voer lêerformaatverwysing uit</string>
+    <string name="item_file_keymaps">Sleutelkaarte</string>
+    <string name="item_file_exported">Uitgevoer</string>
+    <string name="item_file_export_failed">Kon nie uitvoer nie</string>
+    <string name="item_file_not_read">Hierdie lêer is nie ’n SandFly-itemlêer nie, of kon nie gelees word nie</string>
+    <string name="item_file_settings_file">Dit is ’n instellingslêer. Voer dit in met Rugsteun en teruglaai &gt; Voer instellings in</string>
+    <string name="item_file_newer">Hierdie lêer is van ’n nuwer weergawe van SandFly</string>
+    <string name="item_file_nothing_imported">Niks ingevoer nie</string>
+    <string name="item_file_imported"><xliff:g id="items" example="2 macros, 1 gesture profile">%1$s</xliff:g> ingevoer</string>
+    <string name="item_file_left_out">Weggelaat:</string>
+    <string name="item_file_problem_not_read"><xliff:g id="kind" example="Macros">%1$s</xliff:g>, item <xliff:g id="number" example="3">%2$d</xliff:g>: nie gelees nie</string>
+    <string name="item_file_problem_command"><xliff:g id="item" example="Open mail">%1$s</xliff:g>: onbekende opdrag <xliff:g id="command" example="READ_ALL">%2$s</xliff:g></string>
+    <string name="item_file_problem_gesture"><xliff:g id="item" example="Reading">%1$s</xliff:g>: onbekende gebaar <xliff:g id="gesture" example="pref_shortcut_spin">%2$s</xliff:g></string>
+    <string name="item_file_problem_keys"><xliff:g id="item" example="My keymap">%1$s</xliff:g>: sleutels nie verstaan nie: <xliff:g id="keys" example="SandFly+Foo">%2$s</xliff:g></string>
+    <string name="item_file_problem_keys_taken"><xliff:g id="item" example="My keymap">%1$s</xliff:g>: sleutels reeds in gebruik: <xliff:g id="keys" example="SandFly+H">%2$s</xliff:g></string>
+    <string name="item_file_problem_setting"><xliff:g id="item" example="Reading">%1$s</xliff:g>: instelling <xliff:g id="key" example="pref_vibration">%2$s</xliff:g> is onbekend, kan nie in ’n profiel wees nie, of het ’n waarde van die verkeerde tipe</string>
+    <string name="item_file_problem_regex"><xliff:g id="dictionary" example="Speech dictionary">%1$s</xliff:g>: gewone uitdrukking geweier: <xliff:g id="expression" example="(a+)+">%2$s</xliff:g></string>
+    <string name="item_file_problem_limit"><xliff:g id="kind" example="Symbol dictionary">%1$s</xliff:g>: hoogstens <xliff:g id="number" example="500">%2$d</xliff:g> items</string>
+    <string name="item_file_problem_more">Meer is weggelaat</string>
+    <plurals name="item_file_count_macros">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> makro</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> makro’s</item>
+    </plurals>
+    <plurals name="item_file_count_gesture_profiles">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> gebaarprofiel</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> gebaarprofiele</item>
+    </plurals>
+    <plurals name="item_file_count_keymaps">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> sleutelkaart</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> sleutelkaarte</item>
+    </plurals>
+    <plurals name="item_file_count_apps">
+        <item quantity="one">gebare en sleutelbordkortpaaie van <xliff:g id="count" example="2">%d</xliff:g> app</item>
+        <item quantity="other">gebare en sleutelbordkortpaaie van <xliff:g id="count" example="2">%d</xliff:g> apps</item>
+    </plurals>
+    <plurals name="item_file_count_settings_profiles">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> instellingsprofiel</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> instellingsprofiele</item>
+    </plurals>
+    <plurals name="item_file_count_speech_dictionary">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> spraakwoordeboekinskrywing</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> spraakwoordeboekinskrywings</item>
+    </plurals>
+    <plurals name="item_file_count_symbol_dictionary">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> simboolwoordeboekinskrywing</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> simboolwoordeboekinskrywings</item>
+    </plurals>
+    <plurals name="item_file_count_braille_dictionary">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> braillewoordeboekinskrywing</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> braillewoordeboekinskrywings</item>
+    </plurals>
+    <plurals name="item_file_count_voice_commands">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> pasgemaakte stemopdrag</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> pasgemaakte stemopdragte</item>
+    </plurals>
+</resources>

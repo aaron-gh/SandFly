@@ -2025,4 +2025,144 @@
     <string name="value_keep_models_5">5 minuto</string>
     <string name="value_keep_models_15">15 minuto</string>
     <string name="value_keep_models_30">30 minuto</string>
+    <string name="title_pref_speech_equalizer_save_preset">I-save bilang preset</string>
+    <string name="title_pref_speech_equalizer_saved_presets">Mga naka-save na preset</string>
+    <string name="speech_equalizer_preset_name">Pangalan</string>
+    <string name="speech_equalizer_preset_name_taken">May preset nang may pangalang <xliff:g id="name" example="Podcast">%1$s</xliff:g></string>
+    <string name="speech_equalizer_presets_full">Wala nang preset na mase-save. Mag-delete ng isa para makapag-save ng iba.</string>
+    <string name="speech_equalizer_preset_saved">Na-save ang <xliff:g id="name" example="Podcast">%1$s</xliff:g></string>
+    <string name="speech_equalizer_preset_rename">Palitan ang pangalan</string>
+    <string name="speech_equalizer_preset_delete">I-delete</string>
+    <string name="speech_equalizer_preset_delete_confirm">I-delete ang <xliff:g id="name" example="Podcast">%1$s</xliff:g>?</string>
+    <string name="speech_equalizer_preset_deleted">Na-delete ang <xliff:g id="name" example="Podcast">%1$s</xliff:g></string>
+    <string name="title_pref_emoji_voice">Boses ng emoji</string>
+    <string name="value_emoji_voice_same">Kapareho ng pagsasalita</string>
+    <string name="title_pref_emoji_rate">Bilis ng pagsasalita ng emoji</string>
+    <string name="title_pref_line_breaks_as_spaces">Basahin ang mga line break bilang espasyo</string>
+    <string name="title_pref_language_voices">Mga boses ayon sa wika</string>
+    <string name="title_pref_identify_languages_from_words">Tukuyin ang mga wika mula sa mga salita</string>
+    <string name="title_pref_add_language">Magdagdag ng wika</string>
+    <string name="title_pref_remove_language">Alisin ang wika</string>
+    <string name="title_pref_script_language">Script na %1$s</string>
+    <string name="title_pref_screen_on_notification_count">Bilang ng mga notification</string>
+    <plurals name="template_screen_on_notification_count">
+        <item quantity="one"><xliff:g id="count" example="6">%d</xliff:g> notification</item>
+        <item quantity="other"><xliff:g id="count" example="6">%d</xliff:g> notification</item>
+    </plurals>
+    <string name="title_pref_phonetic_letters_review">Bigkasin nang phonetic ang mga titik habang nirerepaso</string>
+    <string name="title_pref_phonetic_letters_typing">Bigkasin nang phonetic ang mga titik habang nagta-type</string>
+    <string name="title_pref_emoji_suffix">Bigkasin ang \"emoji\" pagkatapos ng mga pangalan ng emoji</string>
+    <string name="overview_shizuku_not_running">Hindi tumatakbo ang Shizuku</string>
+    <string name="overview_shizuku_not_allowed">Hindi pinapayagan ng Shizuku ang SandFly</string>
+    <string name="overview_no_older_app">Walang mas lumang app</string>
+    <string name="overview_no_newer_app">Walang mas bagong app</string>
+    <string name="stream_volume_needs_access">Payagan ang access sa Huwag Istorbohin para mabago ang volume na ito.</string>
+    <string name="corner_gestures_title">Mga sulok</string>
+    <string name="shortcut_move_to_item_below">Lumipat sa item sa ibaba</string>
+    <string name="shortcut_move_to_item_above">Lumipat sa item sa itaas</string>
+    <string name="shortcut_older_app">Mas lumang app</string>
+    <string name="shortcut_newer_app">Mas bagong app</string>
+    <string name="shortcut_answer_call">Sagutin ang tawag</string>
+    <string name="answer_call_no_call">Walang papasok na tawag</string>
+    <string name="answer_call_permission">Kailangan ng pahintulot para sumagot ng mga tawag</string>
+    <string name="shortcut_switch_keyboard">Magpalit ng keyboard</string>
+    <string name="switch_keyboard_none">Walang ibang keyboard na naka-on</string>
+    <string name="switch_keyboard_failed">Hindi napalitan ang keyboard</string>
+    <string name="clipboard_history_hint">Mag-swipe pataas o pababa para pumili, pagkatapos ay mag-double tap para mag-paste</string>
+    <string name="title_speech_history">History ng pagsasalita</string>
+    <string name="speech_history_empty">Walang pagsasalita</string>
+    <string name="speech_history_clear">I-clear ang history</string>
+    <string name="title_pref_shortcut_corner_top_left_tap">I-tap ang sulok sa kaliwang itaas</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap">Mag-double tap sa sulok sa kaliwang itaas</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap">Mag-triple tap sa sulok sa kaliwang itaas</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap_hold">Mag-double tap at mag-hold sa sulok sa kaliwang itaas</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap_hold">Mag-triple tap at mag-hold sa sulok sa kaliwang itaas</string>
+    <string name="title_pref_shortcut_corner_top_right_tap">I-tap ang sulok sa kanang itaas</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap">Mag-double tap sa sulok sa kanang itaas</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap">Mag-triple tap sa sulok sa kanang itaas</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap_hold">Mag-double tap at mag-hold sa sulok sa kanang itaas</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap_hold">Mag-triple tap at mag-hold sa sulok sa kanang itaas</string>
+    <string name="title_pref_shortcut_corner_bottom_left_tap">I-tap ang sulok sa kaliwang ibaba</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap">Mag-double tap sa sulok sa kaliwang ibaba</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap">Mag-triple tap sa sulok sa kaliwang ibaba</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap_hold">Mag-double tap at mag-hold sa sulok sa kaliwang ibaba</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap_hold">Mag-triple tap at mag-hold sa sulok sa kaliwang ibaba</string>
+    <string name="title_pref_shortcut_corner_bottom_right_tap">I-tap ang sulok sa kanang ibaba</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap">Mag-double tap sa sulok sa kanang ibaba</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap">Mag-triple tap sa sulok sa kanang ibaba</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap_hold">Mag-double tap at mag-hold sa sulok sa kanang ibaba</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap_hold">Mag-triple tap at mag-hold sa sulok sa kanang ibaba</string>
+    <string name="title_pref_swipe_start_time">Oras ng pagsisimula ng galaw</string>
+    <string name="title_pref_swipes_before_lift">Kilalanin ang mga swipe bago iangat ang daliri</string>
+    <string name="summary_pref_swipes_before_lift">Ino-off ang mga galaw na pabalik-balik at anggulo.</string>
+    <string name="title_pref_corner_size_mm">Laki ng sulok</string>
+    <string name="value_corner_size_edge_width">Kapareho ng lapad ng gilid</string>
+    <string name="title_pref_corner_tap_time_ms">Limitasyon sa oras ng pag-tap sa sulok</string>
+    <string name="value_corner_tap_time_system">Default ng system</string>
+    <string name="title_pref_edge_speak_commands">Bigkasin ang command sa bawat click</string>
+    <string-array name="pref_volume_change_feedback_entries">
+        <item>@string/volume_change_feedback_off</item>
+        <item>@string/volume_change_feedback_tone</item>
+        <item>@string/volume_change_feedback_spoken</item>
+        <item>@string/volume_change_feedback_tone_and_spoken</item>
+    </string-array>
+    <string name="title_pref_volume_change_tone_during_media">I-silence ang tunog habang nagpe-play ang media</string>
+    <string name="title_pref_volume_change_speech_during_media">I-silence ang pagsasalita habang nagpe-play ang media</string>
+    <string name="title_pref_volume_change_interrupts_speech">Ihinto ang pagsasalita para ianunsyo ang volume</string>
+    <string name="title_pref_volume_keys_speech_volume_while_speaking">Binabago ng mga volume key ang volume ng pagsasalita habang nagsasalita</string>
+    <string name="title_pref_double_tap_moves_cursor">Inililipat ng double tap ang cursor sa simula o dulo</string>
+    <string name="title_pref_scroll_ahead">Mag-scroll nang maaga sa susunod na item</string>
+    <string name="title_pref_speak_while_scrolling">Bigkasin ang susunod na item habang nag-i-scroll</string>
+    <string-array name="pref_text_entities_entries">
+    <item>@string/text_entity_web</item>
+    <item>@string/text_entity_email</item>
+    <item>@string/text_entity_phone</item>
+    <item>@string/text_entity_code</item>
+  </string-array>
+    <string name="value_keep_models_until_stopped">Hanggang sa tumigil ang SandFly</string>
+    <string name="title_pref_model_download_server">Server ng pag-download ng model</string>
+    <string name="title_pref_settings_profiles">Mga profile ng setting</string>
+    <string name="title_pref_new_settings_profile">Bagong profile ng setting</string>
+    <string name="settings_profile_new_name">Profile <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="settings_profile_name_taken">May profile ng setting nang may pangalang <xliff:g id="name" example="Demo">%1$s</xliff:g></string>
+    <string name="settings_profile_in_use">Ginagamit</string>
+    <string name="settings_profile_menu_item_in_use"><xliff:g id="name" example="Demo">%1$s</xliff:g>, ginagamit</string>
+    <string name="settings_profile_none">Walang profile ng setting</string>
+    <string name="settings_profile_use_now">Gamitin ngayon</string>
+    <string name="settings_profile_stop_using">Ihinto ang paggamit</string>
+    <string name="settings_profile_change_settings">Baguhin ang mga setting</string>
+    <string name="settings_profile_editing">Mapupunta sa <xliff:g id="name" example="Messaging">%1$s</xliff:g> ang mga pagbabago</string>
+    <string name="settings_profile_edit_saved">Na-save ang mga pagbabago sa <xliff:g id="name" example="Messaging">%1$s</xliff:g></string>
+    <string name="settings_profile_use_automatically">Awtomatikong gamitin</string>
+    <string name="settings_profile_web">Web content</string>
+    <string name="settings_profile_reading">Tuloy-tuloy na pagbabasa</string>
+    <string name="settings_profile_text_editing">Pag-edit ng text</string>
+    <string name="settings_profile_apps">Mga app</string>
+    <string name="settings_profile_add_app">Magdagdag ng app</string>
+    <string name="settings_profile_settings">Mga setting sa profile na ito</string>
+    <string name="settings_profile_no_settings">Wala</string>
+    <string name="settings_profile_remove_confirm">Alisin ang <xliff:g id="item" example="Speech rate">%1$s</xliff:g> sa <xliff:g id="name" example="Messaging">%2$s</xliff:g>?</string>
+    <string name="settings_profile_not_saved">Hindi na-save ang profile ng setting</string>
+    <string name="settings_profile_in_use_announcement">Profile na <xliff:g id="name" example="Demo">%1$s</xliff:g></string>
+    <string name="settings_profile_not_changed">Hindi binago ang profile ng setting</string>
+    <string name="title_settings_profile">Profile ng setting</string>
+    <string name="shortcut_settings_profiles">Pumili ng profile ng setting</string>
+    <string name="shortcut_next_settings_profile">Susunod na profile ng setting</string>
+    <string name="shortcut_previous_settings_profile">Nakaraang profile ng setting</string>
+    <string name="title_copy_text_from_screen">Kopyahin ang text mula sa screen</string>
+    <string name="granularity_label">Granularity</string>
+    <string name="granularity_characters">Mga character</string>
+    <string name="granularity_words">Mga salita</string>
+    <string name="granularity_paragraphs">Mga talata</string>
+    <string name="button_select_all">Piliin lahat</string>
+    <string name="no_text_selected">Walang napiling text</string>
+    <string name="no_text_on_screen">Walang nahanap na text sa screen</string>
+    <string name="title_select_last_spoken_phrase_word_by_word">Piliin ang huling binigkas na parirala nang salita por salita</string>
+    <string name="no_words_selected">Walang napiling salita</string>
+    <string name="no_phrase_to_select">Walang pariralang mapipili</string>
+    <string name="word_selection_list_cut_off">Pinutol ang listahan sa <xliff:g id="count" example="1000">%1$d</xliff:g> item</string>
+    <plurals name="word_selection_copied">
+        <item quantity="one">Nakopya ang <xliff:g id="count" example="5">%1$d</xliff:g> item</item>
+        <item quantity="other">Nakopya ang <xliff:g id="count" example="5">%1$d</xliff:g> item</item>
+    </plurals>
 </resources>

@@ -46,4 +46,14 @@
     <string name="granular_editing_not_saved">Tidak disimpan: medan teks hilang. Teks disalin.</string>
     <string name="granular_editing_no_text">Tiada teks untuk diedit</string>
     <string name="granular_editing_password">Tidak tersedia dalam medan kata laluan</string>
+    <plurals name="granular_editing_spaces">
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> ruang</item>
+    </plurals>
+    <plurals name="granular_editing_new_lines">
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> baris baharu</item>
+    </plurals>
+    <plurals name="granular_editing_tabs">
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> tab</item>
+    </plurals>
+    <string name="granular_editing_blank_line">Baris kosong</string>
 </resources>

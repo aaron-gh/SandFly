@@ -46,4 +46,17 @@
     <string name="granular_editing_not_saved">जतन केलेले नाही: मजकूर फील्ड गेले आहे. मजकूर कॉपी केला आहे.</string>
     <string name="granular_editing_no_text">संपादित करण्यासाठी मजकूर नाही</string>
     <string name="granular_editing_password">पासवर्ड फील्डमध्ये उपलब्ध नाही</string>
+    <plurals name="granular_editing_spaces">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> स्पेस</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> स्पेस</item>
+    </plurals>
+    <plurals name="granular_editing_new_lines">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> नवी ओळ</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> नव्या ओळी</item>
+    </plurals>
+    <plurals name="granular_editing_tabs">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> टॅब</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> टॅब</item>
+    </plurals>
+    <string name="granular_editing_blank_line">रिकामी ओळ</string>
 </resources>

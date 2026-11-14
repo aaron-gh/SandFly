@@ -46,4 +46,17 @@
     <string name="granular_editing_not_saved">Niet opgeslagen: het tekstveld bestaat niet meer. De tekst is gekopieerd.</string>
     <string name="granular_editing_no_text">Geen tekst om te bewerken</string>
     <string name="granular_editing_password">Niet beschikbaar in wachtwoordvelden</string>
+    <plurals name="granular_editing_spaces">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> spatie</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> spaties</item>
+    </plurals>
+    <plurals name="granular_editing_new_lines">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> nieuwe regel</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> nieuwe regels</item>
+    </plurals>
+    <plurals name="granular_editing_tabs">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> tab-teken</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> tab-tekens</item>
+    </plurals>
+    <string name="granular_editing_blank_line">Lege regel</string>
 </resources>

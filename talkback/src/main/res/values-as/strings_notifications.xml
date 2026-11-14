@@ -390,4 +390,12 @@
         <item>@string/notification_shake_3</item>
     </string-array>
     <string name="notification_clock_voice_notifications">জাননীৰ কণ্ঠ</string>
+    <string name="notification_exact_alarms_title">এলাৰ্ম আৰু ৰিমাইণ্ডাৰ অন কৰক</string>
+    <string name="shortcut_toggle_time_announcements">সময়ৰ ঘোষণা অন বা অফ</string>
+    <string name="notification_clock_now_on">সময়ৰ ঘোষণা অন</string>
+    <string name="notification_clock_now_off">সময়ৰ ঘোষণা অফ</string>
+    <plurals name="notification_clock_battery">
+        <item quantity="one"><xliff:g id="percent" example="1">%d</xliff:g> শতাংশ</item>
+        <item quantity="other"><xliff:g id="percent" example="76">%d</xliff:g> শতাংশ</item>
+    </plurals>
 </resources>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_macros">Macro\'s</string>
+    <string name="shortcut_stop_macro">Macro stoppen</string>
+    <string name="macro_add">Macro toevoegen</string>
+    <string name="macro_run_now">Nu uitvoeren</string>
+    <string name="macro_add_step">Stap toevoegen</string>
+    <string name="macro_add_at_end">Aan het einde</string>
+    <string name="macro_add_at_start">Aan het begin</string>
+    <string name="macro_add_after">Na stap <xliff:g id="step" example="2">%1$d</xliff:g>: <xliff:g id="name" example="If App in front: Chrome">%2$s</xliff:g></string>
+    <string name="macro_steps">Stappen</string>
+    <string name="macro_no_steps">Geen stappen</string>
+    <string name="macro_delete">Macro verwijderen</string>
+    <string name="macro_delete_confirm"><xliff:g id="name" example="Send message">%1$s</xliff:g> verwijderen?</string>
+    <string name="macro_step_command">Commando uitvoeren</string>
+    <string name="macro_step_wait">Wachten</string>
+    <string name="macro_step_tap">Item aantikken</string>
+    <string name="macro_step_focus">Item focussen</string>
+    <string name="macro_step_speak_item">Item uitspreken</string>
+    <string name="macro_step_speak_text">Tekst uitspreken</string>
+    <string name="macro_step_type">Tekst typen</string>
+    <string name="macro_step_tap_value"><xliff:g id="label" example="Send">%1$s</xliff:g> aantikken</string>
+    <string name="macro_step_focus_value"><xliff:g id="label" example="Send">%1$s</xliff:g> focussen</string>
+    <string name="macro_step_speak_item_value"><xliff:g id="label" example="Send">%1$s</xliff:g> uitspreken</string>
+    <string name="macro_step_speak_text_value"><xliff:g id="text" example="Done">%1$s</xliff:g> uitspreken</string>
+    <string name="macro_step_type_value"><xliff:g id="text" example="On my way">%1$s</xliff:g> typen</string>
+    <string name="macro_step_replace_value">Tekst vervangen door <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <plurals name="macro_step_wait_seconds">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> seconde wachten</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> seconden wachten</item>
+    </plurals>
+    <plurals name="macro_step_wait_milliseconds">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> milliseconde wachten</item>
+        <item quantity="other"><xliff:g id="count" example="500">%d</xliff:g> milliseconden wachten</item>
+    </plurals>
+    <string name="macro_step_unavailable">Niet beschikbaar</string>
+    <string name="macro_seconds">Seconden</string>
+    <string name="macro_invalid_seconds">Voer een aantal seconden in tot <xliff:g id="max" example="600">%1$d</xliff:g></string>
+    <string name="macro_tap_label">Itemtekst</string>
+    <string name="macro_tap_timeout">Seconden wachten op het item</string>
+    <string name="macro_text">Tekst</string>
+    <string name="macro_replace_text">Tekst in veld vervangen</string>
+    <string name="macro_item_not_found">Macro gestopt. Niet gevonden: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_failed">Macro gestopt. Mislukt: <xliff:g id="step" example="Open Gmail">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until">Wachten tot</string>
+    <string name="macro_step_if">Als</string>
+    <string name="macro_step_else_if">Anders als</string>
+    <string name="macro_step_else">Anders</string>
+    <string name="macro_step_end_if">Einde als</string>
+    <string name="macro_step_repeat">Herhalen</string>
+    <string name="macro_step_repeat_while">Herhalen zolang</string>
+    <string name="macro_step_end_repeat">Einde herhalen</string>
+    <string name="macro_step_exit_loop">Lus verlaten</string>
+    <string name="macro_step_if_value">Als <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_else_if_value">Anders als <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_repeat_while_value">Herhalen zolang <xliff:g id="condition" example="Item on screen: Load more">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until_value">Wachten tot <xliff:g id="condition" example="Item on screen: Send">%1$s</xliff:g></string>
+    <plurals name="macro_step_repeat_value">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> keer herhalen</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> keer herhalen</item>
+    </plurals>
+    <string name="macro_times">Aantal keer</string>
+    <string name="macro_invalid_times">Voer een getal van 1 tot <xliff:g id="max" example="1000">%1$d</xliff:g> in</string>
+    <string name="macro_run_only_when">Alleen uitvoeren als</string>
+    <string name="macro_always">Altijd</string>
+    <string name="macro_no_tests">Geen voorwaarden</string>
+    <string name="macro_add_test">Voorwaarde toevoegen</string>
+    <string name="macro_tests">Voorwaarden</string>
+    <string name="macro_choose_test">Voorwaarde</string>
+    <string name="macro_test_item">Item op scherm</string>
+    <string name="macro_test_focused">Item met focus</string>
+    <string name="macro_test_app">App op de voorgrond</string>
+    <string name="macro_test_keyboard">Toetsenbord getoond</string>
+    <string name="macro_test_keyboard_hidden">Toetsenbord verborgen</string>
+    <string name="macro_test_locked">Scherm vergrendeld</string>
+    <string name="macro_test_unlocked">Scherm ontgrendeld</string>
+    <string name="macro_test_item_value">Item op scherm: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_no_item_value">Geen item op scherm: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_focused_value">Item met focus: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_not_focused_value">Item met focus niet: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_app_value">App op de voorgrond: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_not_app_value">App niet op de voorgrond: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_label_kind"><xliff:g id="label" example="Send">%1$s</xliff:g>, <xliff:g id="kind" example="Clickable">%2$s</xliff:g></string>
+    <string name="macro_join_and"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g> en <xliff:g id="second" example="Focused item: Editable">%2$s</xliff:g></string>
+    <string name="macro_join_or"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g>, of <xliff:g id="second" example="Screen locked">%2$s</xliff:g></string>
+    <string name="macro_regex">Reguliere expressie</string>
+    <string name="macro_invalid_regex">Geen bruikbare reguliere expressie. Herhaalde groepen mogen geen herhaling of | bevatten.</string>
+    <string name="macro_match_in">Zoeken in</string>
+    <string name="macro_field_any">Willekeurige tekst</string>
+    <string name="macro_field_text">Tekst</string>
+    <string name="macro_field_description">Beschrijving</string>
+    <string name="macro_field_hint">Hint</string>
+    <string name="macro_field_state">Status</string>
+    <string name="macro_field_id">Resource-ID</string>
+    <string name="macro_field_value"><xliff:g id="label" example="send">%1$s</xliff:g> (<xliff:g id="field" example="Resource ID">%2$s</xliff:g>)</string>
+    <string name="macro_field_regex_value"><xliff:g id="pattern" example="^Reply">%1$s</xliff:g> (<xliff:g id="field" example="Description">%2$s</xliff:g>, reguliere expressie)</string>
+    <string name="macro_regex_value"><xliff:g id="pattern" example="Reply.*Anna">%1$s</xliff:g> (reguliere expressie)</string>
+    <string name="macro_test_label_optional">Itemtekst (optioneel)</string>
+    <string name="macro_item_kind">Itemtype</string>
+    <string name="macro_kind_any">Elk type</string>
+    <string name="macro_kind_clickable">Aanklikbaar</string>
+    <string name="macro_kind_long_clickable">Lang aanklikbaar</string>
+    <string name="macro_kind_editable">Bewerkbaar</string>
+    <string name="macro_kind_scrollable">Scrollbaar</string>
+    <string name="macro_kind_adjustable">Aanpasbaar</string>
+    <string name="macro_kind_checkable">Aanvinkbaar</string>
+    <string name="macro_kind_checked">Aangevinkt</string>
+    <string name="macro_kind_selected">Geselecteerd</string>
+    <string name="macro_kind_heading">Kop</string>
+    <string name="macro_kind_enabled">Aangezet</string>
+    <string name="macro_change_to">Wijzigen in: <xliff:g id="test" example="Keyboard hidden">%1$s</xliff:g></string>
+    <string name="macro_join_with_and">Verbinden met en</string>
+    <string name="macro_join_with_or">Verbinden met of</string>
+    <string name="macro_clause_and">en <xliff:g id="test" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_clause_or">of <xliff:g id="test" example="Screen locked">%1$s</xliff:g></string>
+    <string name="macro_wait_timeout">Seconden wachten</string>
+    <string name="macro_add_step_after">Stap toevoegen na</string>
+    <string name="macro_problem">Stap <xliff:g id="step" example="3">%1$d</xliff:g>: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_problem_no_if">Anders als, Anders of Einde als zonder Als</string>
+    <string name="macro_problem_after_else">Anders als of Anders na Anders</string>
+    <string name="macro_problem_no_repeat">Einde herhalen zonder Herhalen</string>
+    <string name="macro_problem_no_end_if">Als zonder Einde als</string>
+    <string name="macro_problem_no_end_repeat">Herhalen zonder Einde herhalen</string>
+    <string name="macro_problem_exit">Lus verlaten buiten een herhaling</string>
+    <string name="macro_stopped_problem">Macro gestopt. Stap <xliff:g id="step" example="3">%1$d</xliff:g>: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_stopped_repeats">Macro gestopt. <xliff:g id="count" example="1000">%1$d</xliff:g> keer herhaald: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
+    <string name="macro_stopped_timeout">Macro gestopt. Time-out: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
+    <string name="macro_not_met">Macro niet uitgevoerd. Alleen uitvoeren als: niet voldaan</string>
+</resources>

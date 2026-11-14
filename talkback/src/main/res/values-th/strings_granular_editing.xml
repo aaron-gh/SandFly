@@ -46,4 +46,14 @@
     <string name="granular_editing_not_saved">ไม่ได้บันทึก: ช่องข้อความหายไป ข้อความถูกคัดลอก</string>
     <string name="granular_editing_no_text">ไม่มีข้อความให้แก้ไข</string>
     <string name="granular_editing_password">ใช้ไม่ได้ในช่องรหัสผ่าน</string>
+    <plurals name="granular_editing_spaces">
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> ช่องว่าง</item>
+    </plurals>
+    <plurals name="granular_editing_new_lines">
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> บรรทัดใหม่</item>
+    </plurals>
+    <plurals name="granular_editing_tabs">
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> แท็บ</item>
+    </plurals>
+    <string name="granular_editing_blank_line">บรรทัดว่าง</string>
 </resources>

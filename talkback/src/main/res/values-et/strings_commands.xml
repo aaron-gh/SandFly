@@ -59,4 +59,24 @@
     <string name="keycombo_menu_navigate_next_by_setting">Järgmisele liikumine navigeerimisseade järgi</string>
     <string name="keycombo_menu_navigate_previous_by_setting">Eelmisele liikumine navigeerimisseade järgi</string>
     <string name="title_pref_overview_screen">Ülevaade</string>
+    <string name="title_pref_custom_menus">Kohandatud menüüd</string>
+    <string name="commands_category_setting_values">Seadete väärtused</string>
+    <string name="command_next_value"><xliff:g id="setting" example="Punctuation">%1$s</xliff:g>: järgmine väärtus</string>
+    <string name="command_previous_value"><xliff:g id="setting" example="Punctuation">%1$s</xliff:g>: eelmine väärtus</string>
+    <string name="shortcut_script_commands">Skriptikäsud</string>
+    <string name="shortcut_set_reading_control">Määra lugemise juhtelemendiks <xliff:g id="control" example="Headings">%1$s</xliff:g></string>
+    <string name="title_pref_custom_reading_controls">Kohandatud lugemise juhtelemendid</string>
+    <string name="menu_add_reading_control">Lisa lugemise juhtelement</string>
+    <string name="menu_add_submenu">Lisa alammenüü</string>
+    <string name="menu_add_menu">Lisa menüü</string>
+    <string name="menu_name">Nimi</string>
+    <string name="menu_open">Ava</string>
+    <string name="menu_move_to">Teisalda</string>
+    <string name="menu_rename">Nimeta ümber</string>
+    <string name="menu_delete">Kustuta</string>
+    <string name="menu_delete_confirm">Kustutada <xliff:g id="name" example="AI">%1$s</xliff:g> ja kõik selle sisu?</string>
+    <string name="menu_moved">Teisaldatud: <xliff:g id="place" example="AI">%1$s</xliff:g></string>
+    <string name="menu_reset">Lähtesta vaikeseadele</string>
+    <string name="menu_reset_confirm">Lähtestada SandFlyi menüü vaikeüksustele ja -järjestusele?</string>
+    <string name="menu_assign">Liigutused ja klaviatuuri otsetee</string>
 </resources>

@@ -2033,4 +2033,148 @@
     <string name="value_keep_models_5">5 minút</string>
     <string name="value_keep_models_15">15 minút</string>
     <string name="value_keep_models_30">30 minút</string>
+    <string name="title_pref_speech_equalizer_save_preset">Uložiť ako predvoľbu</string>
+    <string name="title_pref_speech_equalizer_saved_presets">Uložené predvoľby</string>
+    <string name="speech_equalizer_preset_name">Názov</string>
+    <string name="speech_equalizer_preset_name_taken">Predvoľba s názvom <xliff:g id="name" example="Podcast">%1$s</xliff:g> už existuje</string>
+    <string name="speech_equalizer_presets_full">Ďalšie predvoľby sa nedajú uložiť. Odstráňte jednu, aby ste mohli uložiť inú.</string>
+    <string name="speech_equalizer_preset_saved"><xliff:g id="name" example="Podcast">%1$s</xliff:g> – uložené</string>
+    <string name="speech_equalizer_preset_rename">Premenovať</string>
+    <string name="speech_equalizer_preset_delete">Odstrániť</string>
+    <string name="speech_equalizer_preset_delete_confirm">Odstrániť <xliff:g id="name" example="Podcast">%1$s</xliff:g>?</string>
+    <string name="speech_equalizer_preset_deleted"><xliff:g id="name" example="Podcast">%1$s</xliff:g> – odstránené</string>
+    <string name="title_pref_emoji_voice">Hlas pre emoji</string>
+    <string name="value_emoji_voice_same">Rovnaký ako reč</string>
+    <string name="title_pref_emoji_rate">Rýchlosť reči pre emoji</string>
+    <string name="title_pref_line_breaks_as_spaces">Čítať zalomenia riadkov ako medzery</string>
+    <string name="title_pref_language_voices">Hlasy podľa jazyka</string>
+    <string name="title_pref_identify_languages_from_words">Rozpoznávať jazyky podľa slov</string>
+    <string name="title_pref_add_language">Pridať jazyk</string>
+    <string name="title_pref_remove_language">Odstrániť jazyk</string>
+    <string name="title_pref_script_language">Písmo: %1$s</string>
+    <string name="title_pref_screen_on_notification_count">Počet upozornení</string>
+    <plurals name="template_screen_on_notification_count">
+        <item quantity="one"><xliff:g id="count" example="6">%d</xliff:g> upozornenie</item>
+        <item quantity="few"><xliff:g id="count" example="6">%d</xliff:g> upozornenia</item>
+        <item quantity="many"><xliff:g id="count" example="6">%d</xliff:g> upozornenia</item>
+        <item quantity="other"><xliff:g id="count" example="6">%d</xliff:g> upozornení</item>
+    </plurals>
+    <string name="title_pref_phonetic_letters_review">Vyslovovať písmená foneticky pri prechádzaní</string>
+    <string name="title_pref_phonetic_letters_typing">Vyslovovať písmená foneticky pri písaní</string>
+    <string name="title_pref_emoji_suffix">Vysloviť „emoji“ za názvami emoji</string>
+    <string name="overview_shizuku_not_running">Shizuku nie je spustený</string>
+    <string name="overview_shizuku_not_allowed">Shizuku nepovoľuje SandFly</string>
+    <string name="overview_no_older_app">Žiadna staršia aplikácia</string>
+    <string name="overview_no_newer_app">Žiadna novšia aplikácia</string>
+    <string name="stream_volume_needs_access">Ak chcete zmeniť túto hlasitosť, povoľte prístup k režimu Nerušiť.</string>
+    <string name="corner_gestures_title">Rohy</string>
+    <string name="shortcut_move_to_item_below">Presunúť na položku pod</string>
+    <string name="shortcut_move_to_item_above">Presunúť na položku nad</string>
+    <string name="shortcut_older_app">Staršia aplikácia</string>
+    <string name="shortcut_newer_app">Novšia aplikácia</string>
+    <string name="shortcut_answer_call">Prijať hovor</string>
+    <string name="answer_call_no_call">Žiadny prichádzajúci hovor</string>
+    <string name="answer_call_permission">Na prijímanie hovorov je potrebné povolenie</string>
+    <string name="shortcut_switch_keyboard">Prepnúť klávesnicu</string>
+    <string name="switch_keyboard_none">Nie je zapnutá žiadna iná klávesnica</string>
+    <string name="switch_keyboard_failed">Klávesnica sa neprepla</string>
+    <string name="clipboard_history_hint">Potiahnutím nahor alebo nadol vyberte a dvojitým klepnutím vložte</string>
+    <string name="title_speech_history">História reči</string>
+    <string name="speech_history_empty">Žiadna reč</string>
+    <string name="speech_history_clear">Vymazať históriu</string>
+    <string name="title_pref_shortcut_corner_top_left_tap">Klepnutie na ľavý horný roh</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap">Dvojité klepnutie na ľavý horný roh</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap">Trojité klepnutie na ľavý horný roh</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap_hold">Dvojité klepnutie a pridržanie ľavého horného rohu</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap_hold">Trojité klepnutie a pridržanie ľavého horného rohu</string>
+    <string name="title_pref_shortcut_corner_top_right_tap">Klepnutie na pravý horný roh</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap">Dvojité klepnutie na pravý horný roh</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap">Trojité klepnutie na pravý horný roh</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap_hold">Dvojité klepnutie a pridržanie pravého horného rohu</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap_hold">Trojité klepnutie a pridržanie pravého horného rohu</string>
+    <string name="title_pref_shortcut_corner_bottom_left_tap">Klepnutie na ľavý dolný roh</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap">Dvojité klepnutie na ľavý dolný roh</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap">Trojité klepnutie na ľavý dolný roh</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap_hold">Dvojité klepnutie a pridržanie ľavého dolného rohu</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap_hold">Trojité klepnutie a pridržanie ľavého dolného rohu</string>
+    <string name="title_pref_shortcut_corner_bottom_right_tap">Klepnutie na pravý dolný roh</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap">Dvojité klepnutie na pravý dolný roh</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap">Trojité klepnutie na pravý dolný roh</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap_hold">Dvojité klepnutie a pridržanie pravého dolného rohu</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap_hold">Trojité klepnutie a pridržanie pravého dolného rohu</string>
+    <string name="title_pref_swipe_start_time">Čas začiatku gesta</string>
+    <string name="title_pref_swipes_before_lift">Rozpoznať potiahnutia pred zdvihnutím prsta</string>
+    <string name="summary_pref_swipes_before_lift">Vypne gestá tam a späť a gestá s uhlom.</string>
+    <string name="title_pref_corner_size_mm">Veľkosť rohu</string>
+    <string name="value_corner_size_edge_width">Rovnaká ako šírka okraja</string>
+    <string name="title_pref_corner_tap_time_ms">Časový limit klepnutia na roh</string>
+    <string name="value_corner_tap_time_system">Predvolené nastavenie systému</string>
+    <string name="title_pref_edge_speak_commands">Vysloviť príkaz pri každom kliknutí</string>
+    <string-array name="pref_volume_change_feedback_entries">
+        <item>@string/volume_change_feedback_off</item>
+        <item>@string/volume_change_feedback_tone</item>
+        <item>@string/volume_change_feedback_spoken</item>
+        <item>@string/volume_change_feedback_tone_and_spoken</item>
+    </string-array>
+    <string name="title_pref_volume_change_tone_during_media">Vypnúť tón počas prehrávania médií</string>
+    <string name="title_pref_volume_change_speech_during_media">Vypnúť reč počas prehrávania médií</string>
+    <string name="title_pref_volume_change_interrupts_speech">Prerušiť reč pri hlásení hlasitosti</string>
+    <string name="title_pref_volume_keys_speech_volume_while_speaking">Tlačidlá hlasitosti menia hlasitosť reči počas hovorenia</string>
+    <string name="title_pref_double_tap_moves_cursor">Dvojité klepnutie presunie kurzor na začiatok alebo koniec</string>
+    <string name="title_pref_scroll_ahead">Posúvať dopredu na ďalšiu položku</string>
+    <string name="title_pref_speak_while_scrolling">Vysloviť ďalšiu položku počas posúvania</string>
+    <string-array name="pref_text_entities_entries">
+    <item>@string/text_entity_web</item>
+    <item>@string/text_entity_email</item>
+    <item>@string/text_entity_phone</item>
+    <item>@string/text_entity_code</item>
+  </string-array>
+    <string name="value_keep_models_until_stopped">Kým sa SandFly nezastaví</string>
+    <string name="title_pref_model_download_server">Server na sťahovanie modelov</string>
+    <string name="title_pref_settings_profiles">Profily nastavení</string>
+    <string name="title_pref_new_settings_profile">Nový profil nastavení</string>
+    <string name="settings_profile_new_name">Profil <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="settings_profile_name_taken">Profil nastavení s názvom <xliff:g id="name" example="Demo">%1$s</xliff:g> už existuje</string>
+    <string name="settings_profile_in_use">Používa sa</string>
+    <string name="settings_profile_menu_item_in_use"><xliff:g id="name" example="Demo">%1$s</xliff:g>, používa sa</string>
+    <string name="settings_profile_none">Žiadny profil nastavení</string>
+    <string name="settings_profile_use_now">Použiť teraz</string>
+    <string name="settings_profile_stop_using">Prestať používať</string>
+    <string name="settings_profile_change_settings">Zmeniť nastavenia</string>
+    <string name="settings_profile_editing">Zmeny sa ukladajú do profilu <xliff:g id="name" example="Messaging">%1$s</xliff:g></string>
+    <string name="settings_profile_edit_saved">Zmeny uložené do profilu <xliff:g id="name" example="Messaging">%1$s</xliff:g></string>
+    <string name="settings_profile_use_automatically">Používať automaticky</string>
+    <string name="settings_profile_web">Webový obsah</string>
+    <string name="settings_profile_reading">Nepretržité čítanie</string>
+    <string name="settings_profile_text_editing">Úprava textu</string>
+    <string name="settings_profile_apps">Aplikácie</string>
+    <string name="settings_profile_add_app">Pridať aplikáciu</string>
+    <string name="settings_profile_settings">Nastavenia v tomto profile</string>
+    <string name="settings_profile_no_settings">Žiadne</string>
+    <string name="settings_profile_remove_confirm">Odstrániť <xliff:g id="item" example="Speech rate">%1$s</xliff:g> z profilu <xliff:g id="name" example="Messaging">%2$s</xliff:g>?</string>
+    <string name="settings_profile_not_saved">Profil nastavení sa nepodarilo uložiť</string>
+    <string name="settings_profile_in_use_announcement">Profil <xliff:g id="name" example="Demo">%1$s</xliff:g></string>
+    <string name="settings_profile_not_changed">Profil nastavení sa nezmenil</string>
+    <string name="title_settings_profile">Profil nastavení</string>
+    <string name="shortcut_settings_profiles">Vybrať profil nastavení</string>
+    <string name="shortcut_next_settings_profile">Ďalší profil nastavení</string>
+    <string name="shortcut_previous_settings_profile">Predchádzajúci profil nastavení</string>
+    <string name="title_copy_text_from_screen">Kopírovať text z obrazovky</string>
+    <string name="granularity_label">Podrobnosť členenia</string>
+    <string name="granularity_characters">Znaky</string>
+    <string name="granularity_words">Slová</string>
+    <string name="granularity_paragraphs">Odseky</string>
+    <string name="button_select_all">Vybrať všetko</string>
+    <string name="no_text_selected">Nie je vybraný žiadny text</string>
+    <string name="no_text_on_screen">Na obrazovke sa nenašiel žiadny text</string>
+    <string name="title_select_last_spoken_phrase_word_by_word">Vybrať poslednú vyslovenú frázu po slovách</string>
+    <string name="no_words_selected">Nie sú vybrané žiadne slová</string>
+    <string name="no_phrase_to_select">Nie je čo vybrať</string>
+    <string name="word_selection_list_cut_off">Zoznam obmedzený na <xliff:g id="count" example="1000">%1$d</xliff:g> položiek</string>
+    <plurals name="word_selection_copied">
+        <item quantity="one">Skopírovaná <xliff:g id="count" example="5">%1$d</xliff:g> položka</item>
+        <item quantity="few">Skopírované <xliff:g id="count" example="5">%1$d</xliff:g> položky</item>
+        <item quantity="many">Skopírovaných <xliff:g id="count" example="5">%1$d</xliff:g> položky</item>
+        <item quantity="other">Skopírovaných <xliff:g id="count" example="5">%1$d</xliff:g> položiek</item>
+    </plurals>
 </resources>

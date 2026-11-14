@@ -46,4 +46,17 @@
     <string name="granular_editing_not_saved">Չի պահպանվել. տեքստային դաշտը չկա։ Տեքստը պատճենված է։</string>
     <string name="granular_editing_no_text">Խմբագրելու տեքստ չկա</string>
     <string name="granular_editing_password">Հասանելի չէ գաղտնաբառի դաշտերում</string>
+    <plurals name="granular_editing_spaces">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> բացատ</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> բացատ</item>
+    </plurals>
+    <plurals name="granular_editing_new_lines">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> նոր տող</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> նոր տող</item>
+    </plurals>
+    <plurals name="granular_editing_tabs">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> տաբուլյացիա</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> տաբուլյացիա</item>
+    </plurals>
+    <string name="granular_editing_blank_line">Դատարկ տող</string>
 </resources>

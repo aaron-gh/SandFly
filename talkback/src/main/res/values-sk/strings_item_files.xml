@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="item_file_import">Importovať zo súboru</string>
+    <string name="item_file_export">Exportovať do súboru</string>
+    <string name="title_pref_export_item_file_reference">Exportovať popis formátu súboru</string>
+    <string name="item_file_keymaps">Klávesové mapy</string>
+    <string name="item_file_exported">Exportované</string>
+    <string name="item_file_export_failed">Export sa nepodaril</string>
+    <string name="item_file_not_read">Tento súbor nie je súbor položiek SandFly alebo sa nepodarilo prečítať</string>
+    <string name="item_file_settings_file">Toto je súbor nastavení. Importujte ho cez Zálohovanie a obnovenie &gt; Importovať nastavenia</string>
+    <string name="item_file_newer">Tento súbor pochádza z novšej verzie SandFly</string>
+    <string name="item_file_nothing_imported">Nič sa neimportovalo</string>
+    <string name="item_file_imported">Importované: <xliff:g id="items" example="2 macros, 1 gesture profile">%1$s</xliff:g></string>
+    <string name="item_file_left_out">Vynechané:</string>
+    <string name="item_file_problem_not_read"><xliff:g id="kind" example="Macros">%1$s</xliff:g>, položka <xliff:g id="number" example="3">%2$d</xliff:g>: nepodarilo sa prečítať</string>
+    <string name="item_file_problem_command"><xliff:g id="item" example="Open mail">%1$s</xliff:g>: neznámy príkaz <xliff:g id="command" example="READ_ALL">%2$s</xliff:g></string>
+    <string name="item_file_problem_gesture"><xliff:g id="item" example="Reading">%1$s</xliff:g>: neznáme gesto <xliff:g id="gesture" example="pref_shortcut_spin">%2$s</xliff:g></string>
+    <string name="item_file_problem_keys"><xliff:g id="item" example="My keymap">%1$s</xliff:g>: klávesy sa nepodarilo rozpoznať: <xliff:g id="keys" example="SandFly+Foo">%2$s</xliff:g></string>
+    <string name="item_file_problem_keys_taken"><xliff:g id="item" example="My keymap">%1$s</xliff:g>: klávesy sa už používajú: <xliff:g id="keys" example="SandFly+H">%2$s</xliff:g></string>
+    <string name="item_file_problem_setting"><xliff:g id="item" example="Reading">%1$s</xliff:g>: nastavenie <xliff:g id="key" example="pref_vibration">%2$s</xliff:g> je neznáme, nemôže byť v profile alebo má hodnotu nesprávneho typu</string>
+    <string name="item_file_problem_regex"><xliff:g id="dictionary" example="Speech dictionary">%1$s</xliff:g>: regulárny výraz bol odmietnutý: <xliff:g id="expression" example="(a+)+">%2$s</xliff:g></string>
+    <string name="item_file_problem_limit"><xliff:g id="kind" example="Symbol dictionary">%1$s</xliff:g>: najviac <xliff:g id="number" example="500">%2$d</xliff:g> položiek</string>
+    <string name="item_file_problem_more">Ďalšie položky boli vynechané</string>
+    <plurals name="item_file_count_macros">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> makro</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> makrá</item>
+        <item quantity="many"><xliff:g id="count" example="2">%d</xliff:g> makra</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> mák</item>
+    </plurals>
+    <plurals name="item_file_count_gesture_profiles">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> profil gest</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> profily gest</item>
+        <item quantity="many"><xliff:g id="count" example="2">%d</xliff:g> profilu gest</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> profilov gest</item>
+    </plurals>
+    <plurals name="item_file_count_keymaps">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> klávesová mapa</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> klávesové mapy</item>
+        <item quantity="many"><xliff:g id="count" example="2">%d</xliff:g> klávesovej mapy</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> klávesových máp</item>
+    </plurals>
+    <plurals name="item_file_count_apps">
+        <item quantity="one">gestá a klávesové skratky <xliff:g id="count" example="2">%d</xliff:g> aplikácie</item>
+        <item quantity="few">gestá a klávesové skratky <xliff:g id="count" example="2">%d</xliff:g> aplikácií</item>
+        <item quantity="many">gestá a klávesové skratky <xliff:g id="count" example="2">%d</xliff:g> aplikácie</item>
+        <item quantity="other">gestá a klávesové skratky <xliff:g id="count" example="2">%d</xliff:g> aplikácií</item>
+    </plurals>
+    <plurals name="item_file_count_settings_profiles">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> profil nastavení</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> profily nastavení</item>
+        <item quantity="many"><xliff:g id="count" example="2">%d</xliff:g> profilu nastavení</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> profilov nastavení</item>
+    </plurals>
+    <plurals name="item_file_count_speech_dictionary">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> položka slovníka reči</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> položky slovníka reči</item>
+        <item quantity="many"><xliff:g id="count" example="2">%d</xliff:g> položky slovníka reči</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> položiek slovníka reči</item>
+    </plurals>
+    <plurals name="item_file_count_symbol_dictionary">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> položka slovníka symbolov</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> položky slovníka symbolov</item>
+        <item quantity="many"><xliff:g id="count" example="2">%d</xliff:g> položky slovníka symbolov</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> položiek slovníka symbolov</item>
+    </plurals>
+    <plurals name="item_file_count_braille_dictionary">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> položka Braillovho slovníka</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> položky Braillovho slovníka</item>
+        <item quantity="many"><xliff:g id="count" example="2">%d</xliff:g> položky Braillovho slovníka</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> položiek Braillovho slovníka</item>
+    </plurals>
+    <plurals name="item_file_count_voice_commands">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> vlastný hlasový príkaz</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> vlastné hlasové príkazy</item>
+        <item quantity="many"><xliff:g id="count" example="2">%d</xliff:g> vlastného hlasového príkazu</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> vlastných hlasových príkazov</item>
+    </plurals>
+</resources>

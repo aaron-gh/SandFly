@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_voice_commands">ຄຳສັ່ງສຽງ</string>
+    <string name="title_pref_voice_commands_ai">ເຂົ້າໃຈຄຳສັ່ງສຽງດ້ວຍ AI</string>
+    <string name="voice_commands_custom">ຄຳສັ່ງສຽງກຳນົດເອງ</string>
+    <string name="voice_command_add">ເພີ່ມຄຳສັ່ງສຽງ</string>
+    <string name="voice_command_phrase">ປະໂຫຍກ</string>
+    <string name="voice_command_change_phrase">ປ່ຽນປະໂຫຍກ</string>
+    <string name="voice_command_change_command">ປ່ຽນຄຳສັ່ງ</string>
+    <string name="voice_command_delete_confirm">ລຶບ <xliff:g id="phrase" example="Good morning">%1$s</xliff:g>?</string>
+    <string name="voice_command_phrase_exists"><xliff:g id="phrase" example="Good morning">%1$s</xliff:g> ເປັນຄຳສັ່ງສຽງແລ້ວ</string>
+    <string name="voice_commands_not_understood">ບໍ່ເຂົ້າໃຈ: <xliff:g id="text" example="open the door">%1$s</xliff:g></string>
+    <string name="voice_commands_not_available">ບໍ່ສາມາດໃຊ້ໄດ້: <xliff:g id="name" example="Morning macro">%1$s</xliff:g></string>
+    <string name="voice_commands_not_found">ບໍ່ພົບ: <xliff:g id="label" example="Settings">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app">ບໍ່ມີແອັບຊື່ <xliff:g id="name" example="Signal">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app_for_action">ບໍ່ມີແອັບສຳລັບການດຳເນີນການນີ້</string>
+    <string name="voice_commands_calling">ກຳລັງໂທຫາ <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_call_permission">ອະນຸຍາດການໂທ, ຈາກນັ້ນເວົ້າຄຳສັ່ງອີກຄັ້ງ.</string>
+    <string name="voice_commands_contacts_permission">ອະນຸຍາດການເຂົ້າເຖິງລາຍຊື່ຜູ້ຕິດຕໍ່, ຈາກນັ້ນເວົ້າຄຳສັ່ງອີກຄັ້ງ.</string>
+    <string name="voice_commands_no_contact">ບໍ່ມີຜູ້ຕິດຕໍ່ຊື່ <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_contacts_several">ມີຜູ້ຕິດຕໍ່ຊື່ <xliff:g id="name" example="Sam">%1$s</xliff:g> ຫຼາຍກວ່າໜຶ່ງຄົນ: <xliff:g id="names" example="Sam Jones, Sam Smith">%2$s</xliff:g></string>
+    <string name="voice_commands_message_text">ຂໍ້ຄວາມເຖິງ <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_message_confirm">ສົ່ງເຖິງ <xliff:g id="name" example="Sam">%1$s</xliff:g>: <xliff:g id="text" example="I am on my way">%2$s</xliff:g>?</string>
+    <string name="voice_commands_message_confirm_result">ສົ່ງເຖິງ <xliff:g id="name" example="Sam">%1$s</xliff:g>?</string>
+    <string name="voice_commands_message_not_sent">ບໍ່ໄດ້ສົ່ງຂໍ້ຄວາມ</string>
+    <string name="voice_commands_send_pressed">ກົດສົ່ງແລ້ວ</string>
+    <string name="voice_commands_send_button">ສົ່ງ</string>
+    <string name="voice_commands_no_description">ບໍ່ໄດ້ຮັບຄຳອະທິບາຍ</string>
+    <string name="voice_commands_copied">ສຳເນົາແລ້ວ</string>
+    <string-array name="voice_commands_chain_words">
+        <item>ແລ້ວຈຶ່ງ</item>
+        <item>ຈາກນັ້ນ</item>
+        <item>ຫຼັງຈາກນັ້ນ</item>
+        <item>ແລ້ວ</item>
+    </string-array>
+    <string-array name="voice_commands_and_words">
+        <item>ແລະ</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_start">
+        <item>ກະລຸນາ</item>
+        <item>ຊ່ວຍ</item>
+        <item>ເຈົ້າຊ່ວຍ</item>
+        <item>ຂ້ອຍຢາກ</item>
+        <item>ຂ້ອຍຕ້ອງການ</item>
+        <item>ດຽວນີ້</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_end">
+        <item>ກະລຸນາ</item>
+        <item>ໃຫ້ຂ້ອຍ</item>
+        <item>ດຽວນີ້</item>
+    </string-array>
+    <string-array name="voice_commands_cancel_words">
+        <item>ຢຸດ</item>
+        <item>ຍົກເລີກ</item>
+        <item>ເລີກ</item>
+        <item>ບໍ່ເປັນຫຍັງ</item>
+        <item>ຊ່າງມັນ</item>
+        <item>ງຽບ</item>
+    </string-array>
+    <string-array name="voice_commands_yes">
+        <item>ແມ່ນ</item>
+        <item>ໄດ້</item>
+        <item>ຕົກລົງ</item>
+        <item>ສົ່ງ</item>
+        <item>ສົ່ງເລີຍ</item>
+        <item>ໂອເຄ</item>
+        <item>ເຮັດເລີຍ</item>
+    </string-array>
+    <string-array name="voice_commands_sms_names">
+        <item>SMS</item>
+        <item>ຂໍ້ຄວາມສັ້ນ</item>
+        <item>ຂໍ້ຄວາມ</item>
+    </string-array>
+    <string-array name="voice_commands_send_image_description">
+        <item>ສົ່ງຄຳອະທິບາຍຮູບໃຫ້ {who}</item>
+        <item>ສົ່ງຄຳອະທິບາຍຂອງຮູບນີ້ໃຫ້ {who}</item>
+        <item>ສົ່ງຄຳອະທິບາຍຮູບຖ່າຍໃຫ້ {who}</item>
+        <item>ສົ່ງຄຳອະທິບາຍຂອງຮູບຖ່າຍນີ້ໃຫ້ {who}</item>
+    </string-array>
+    <string-array name="voice_commands_send_screen_description">
+        <item>ສົ່ງຄຳອະທິບາຍໜ້າຈໍໃຫ້ {who}</item>
+        <item>ສົ່ງຄຳອະທິບາຍຂອງໜ້າຈໍໃຫ້ {who}</item>
+    </string-array>
+    <string-array name="voice_commands_send_previous">
+        <item>ສົ່ງໃຫ້ {who} ທາງ {app}</item>
+        <item>ສົ່ງໃຫ້ {who}</item>
+        <item>ສົ່ງອັນນັ້ນໃຫ້ {who}</item>
+        <item>ສົ່ງຄຳອະທິບາຍໃຫ້ {who}</item>
+        <item>ແບ່ງປັນໃຫ້ {who}</item>
+    </string-array>
+    <string-array name="voice_commands_message">
+        <item>ສົ່ງຂໍ້ຄວາມຫາ {who} ທາງ {app} ວ່າ {text}</item>
+        <item>ສົ່ງຂໍ້ຄວາມຫາ {who} ວ່າ {text}</item>
+        <item>ສົ່ງຂໍ້ຄວາມຫາ {whoandtext}</item>
+        <item>ສົ່ງຂໍ້ຄວາມ {app} ຫາ {who} ວ່າ {text}</item>
+        <item>ສົ່ງຂໍ້ຄວາມ {app} ຫາ {who}</item>
+        <item>ສົ່ງຂໍ້ຄວາມຫາ {who} ທາງ {app}</item>
+        <item>ສົ່ງຂໍ້ຄວາມຫາ {who}</item>
+        <item>ສົ່ງ SMS ຫາ {who} ວ່າ {text}</item>
+        <item>ບອກ {who} ທາງ {app} ວ່າ {text}</item>
+        <item>ບອກ {who} ວ່າ {text}</item>
+        <item>ສົ່ງ SMS ຫາ {whoandtext}</item>
+    </string-array>
+    <string-array name="voice_commands_call">
+        <item>ໂທຫາ {who}</item>
+        <item>ໂທ {who}</item>
+        <item>ໂທລະສັບຫາ {who}</item>
+        <item>ກົດເບີ {who}</item>
+        <item>ໂທອອກຫາ {who}</item>
+    </string-array>
+    <string-array name="voice_commands_describe_screen">
+        <item>ອະທິບາຍໜ້າຈໍ</item>
+        <item>ອະທິບາຍສິ່ງທີ່ຢູ່ໃນໜ້າຈໍ</item>
+        <item>ໜ້າຈໍມີຫຍັງ</item>
+        <item>ໃນໜ້າຈໍມີຫຍັງ</item>
+    </string-array>
+    <string-array name="voice_commands_describe_image">
+        <item>ອະທິບາຍຮູບ[ນີ້]</item>
+        <item>ອະທິບາຍຮູບຖ່າຍ[ນີ້]</item>
+        <item>ໃນຮູບ[ນີ້]ມີຫຍັງ</item>
+        <item>ໃນຮູບຖ່າຍ[ນີ້]ມີຫຍັງ</item>
+    </string-array>
+    <string-array name="voice_commands_copy_result">
+        <item>ສຳເນົາອັນນັ້ນ</item>
+        <item>ສຳເນົາຄຳອະທິບາຍ</item>
+        <item>ສຳເນົາສິ່ງທີ່ເຈົ້າເພິ່ງເວົ້າ</item>
+        <item>ສຳເນົາປະໂຫຍກທີ່ເວົ້າຫຼ້າສຸດ</item>
+        <item>ສຳເນົາປະໂຫຍກຫຼ້າສຸດ</item>
+        <item>ສຳເນົາສິ່ງທີ່ເວົ້າຫຼ້າສຸດ</item>
+    </string-array>
+    <string-array name="voice_commands_wait">
+        <item>ລໍຖ້າ {n} ວິນາທີ</item>
+        <item>ລໍຖ້າໜຶ່ງວິນາທີ</item>
+        <item>ລໍຖ້າ</item>
+    </string-array>
+    <string-array name="voice_commands_type_text">
+        <item>ພິມ {text}</item>
+        <item>ຂຽນ {text}</item>
+        <item>ໃສ່ {text}</item>
+    </string-array>
+    <string-array name="voice_commands_run">
+        <item>ແລ່ນມາໂຄຣ {command}</item>
+        <item>ແລ່ນ {command}</item>
+        <item>ເຮັດ {command}</item>
+    </string-array>
+    <string-array name="voice_commands_open">
+        <item>ເປີດ {app}</item>
+        <item>ເລີ່ມ {app}</item>
+        <item>ປ່ຽນໄປ {app}</item>
+    </string-array>
+    <string-array name="voice_commands_tap">
+        <item>ແຕະສອງເທື່ອທີ່ {label}</item>
+        <item>ແຕະ {label}</item>
+        <item>ກົດ {label}</item>
+        <item>ເລືອກ {label}</item>
+        <item>ເປີດໃຊ້ {label}</item>
+    </string-array>
+</resources>

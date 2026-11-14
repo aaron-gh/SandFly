@@ -46,4 +46,17 @@
     <string name="granular_editing_not_saved">Kaydedilmedi: metin alanı artık yok. Metin kopyalandı.</string>
     <string name="granular_editing_no_text">Düzenlenecek metin yok</string>
     <string name="granular_editing_password">Şifre alanlarında kullanılamaz</string>
+    <plurals name="granular_editing_spaces">
+        <item quantity="one"><xliff:g id="count" example="3">%d</xliff:g> boşluk</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> boşluk</item>
+    </plurals>
+    <plurals name="granular_editing_new_lines">
+        <item quantity="one"><xliff:g id="count" example="3">%d</xliff:g> yeni satır</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> yeni satır</item>
+    </plurals>
+    <plurals name="granular_editing_tabs">
+        <item quantity="one"><xliff:g id="count" example="3">%d</xliff:g> sekme</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> sekme</item>
+    </plurals>
+    <string name="granular_editing_blank_line">Boş satır</string>
 </resources>

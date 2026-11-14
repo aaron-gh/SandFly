@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_voice_commands">คำสั่งเสียง</string>
+    <string name="title_pref_voice_commands_ai">เข้าใจคำสั่งเสียงด้วย AI</string>
+    <string name="voice_commands_custom">คำสั่งเสียงที่กำหนดเอง</string>
+    <string name="voice_command_add">เพิ่มคำสั่งเสียง</string>
+    <string name="voice_command_phrase">วลี</string>
+    <string name="voice_command_change_phrase">เปลี่ยนวลี</string>
+    <string name="voice_command_change_command">เปลี่ยนคำสั่ง</string>
+    <string name="voice_command_delete_confirm">ลบ <xliff:g id="phrase" example="Good morning">%1$s</xliff:g> หรือไม่</string>
+    <string name="voice_command_phrase_exists"><xliff:g id="phrase" example="Good morning">%1$s</xliff:g> เป็นคำสั่งเสียงอยู่แล้ว</string>
+    <string name="voice_commands_not_understood">ไม่เข้าใจ: <xliff:g id="text" example="open the door">%1$s</xliff:g></string>
+    <string name="voice_commands_not_available">ไม่พร้อมใช้งาน: <xliff:g id="name" example="Morning macro">%1$s</xliff:g></string>
+    <string name="voice_commands_not_found">ไม่พบ: <xliff:g id="label" example="Settings">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app">ไม่มีแอปชื่อ <xliff:g id="name" example="Signal">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app_for_action">ไม่มีแอปสำหรับการดำเนินการนี้</string>
+    <string name="voice_commands_calling">กำลังโทรหา <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_call_permission">อนุญาตการโทร แล้วพูดคำสั่งอีกครั้ง</string>
+    <string name="voice_commands_contacts_permission">อนุญาตการเข้าถึงรายชื่อติดต่อ แล้วพูดคำสั่งอีกครั้ง</string>
+    <string name="voice_commands_no_contact">ไม่มีผู้ติดต่อชื่อ <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_contacts_several">มีผู้ติดต่อชื่อ <xliff:g id="name" example="Sam">%1$s</xliff:g> มากกว่าหนึ่งราย: <xliff:g id="names" example="Sam Jones, Sam Smith">%2$s</xliff:g></string>
+    <string name="voice_commands_message_text">ข้อความถึง <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_message_confirm">ส่งถึง <xliff:g id="name" example="Sam">%1$s</xliff:g>: <xliff:g id="text" example="I am on my way">%2$s</xliff:g> หรือไม่</string>
+    <string name="voice_commands_message_confirm_result">ส่งถึง <xliff:g id="name" example="Sam">%1$s</xliff:g> หรือไม่</string>
+    <string name="voice_commands_message_not_sent">ไม่ได้ส่งข้อความ</string>
+    <string name="voice_commands_send_pressed">กดส่งแล้ว</string>
+    <string name="voice_commands_send_button">ส่ง</string>
+    <string name="voice_commands_no_description">ไม่ได้รับคำอธิบาย</string>
+    <string name="voice_commands_copied">คัดลอกแล้ว</string>
+    <string-array name="voice_commands_chain_words">
+        <item>แล้วจึง</item>
+        <item>แล้ว</item>
+        <item>หลังจากนั้น</item>
+        <item>ต่อจากนั้น</item>
+    </string-array>
+    <string-array name="voice_commands_and_words">
+        <item>และ</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_start">
+        <item>กรุณา</item>
+        <item>ช่วย</item>
+        <item>คุณช่วย</item>
+        <item>ฉันอยากจะ</item>
+        <item>ฉันต้องการ</item>
+        <item>ขอ</item>
+        <item>ตอนนี้</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_end">
+        <item>ด้วย</item>
+        <item>ให้หน่อย</item>
+        <item>ตอนนี้</item>
+    </string-array>
+    <string-array name="voice_commands_cancel_words">
+        <item>หยุด</item>
+        <item>ยกเลิก</item>
+        <item>เลิก</item>
+        <item>ช่างมัน</item>
+        <item>ไม่เป็นไร</item>
+        <item>เงียบ</item>
+    </string-array>
+    <string-array name="voice_commands_yes">
+        <item>ใช่</item>
+        <item>ครับ</item>
+        <item>ค่ะ</item>
+        <item>ส่ง</item>
+        <item>ส่งเลย</item>
+        <item>ตกลง</item>
+        <item>โอเค</item>
+        <item>ได้</item>
+        <item>ทำเลย</item>
+    </string-array>
+    <string-array name="voice_commands_sms_names">
+        <item>SMS</item>
+        <item>ข้อความสั้น</item>
+        <item>ข้อความ</item>
+        <item>ข้อความตัวอักษร</item>
+    </string-array>
+    <string-array name="voice_commands_send_image_description">
+        <item>ส่งคำอธิบายรูปภาพไปให้ {who}</item>
+        <item>ส่งคำอธิบายของ[รูปภาพ|ภาพ]นี้ไปให้ {who}</item>
+        <item>ส่งคำอธิบายภาพไปให้ {who}</item>
+        <item>ส่งคำอธิบายของภาพนี้ไปให้ {who}</item>
+        <item>ส่งคำอธิบายรูปถ่ายไปให้ {who}</item>
+    </string-array>
+    <string-array name="voice_commands_send_screen_description">
+        <item>ส่งคำอธิบายหน้าจอไปให้ {who}</item>
+        <item>ส่งคำอธิบายของหน้าจอไปให้ {who}</item>
+    </string-array>
+    <string-array name="voice_commands_send_previous">
+        <item>ส่งไปให้ {who} ทาง {app}</item>
+        <item>ส่งไปให้ {who}</item>
+        <item>ส่งสิ่งนั้นไปให้ {who}</item>
+        <item>ส่งคำอธิบายไปให้ {who}</item>
+        <item>แชร์ให้ {who}</item>
+    </string-array>
+    <string-array name="voice_commands_message">
+        <item>ส่งข้อความถึง {who} ทาง {app} ว่า {text}</item>
+        <item>ส่งข้อความถึง {who} ทาง {app} โดยบอกว่า {text}</item>
+        <item>ส่งข้อความถึง {who} ว่า {text}</item>
+        <item>ส่งข้อความถึง {who} โดยบอกว่า {text}</item>
+        <item>ส่งข้อความถึง {whoandtext}</item>
+        <item>ส่งข้อความ {app} ถึง {who} ว่า {text}</item>
+        <item>ส่งข้อความ {app} ถึง {who} โดยบอกว่า {text}</item>
+        <item>ส่งข้อความ {app} ถึง {who}</item>
+        <item>ส่ง {who} ข้อความว่า {text}</item>
+        <item>ส่งข้อความหา {who} ทาง {app} ว่า {text}</item>
+        <item>ส่งข้อความหา {who} ว่า {text}</item>
+        <item>ส่ง SMS หา {who} ว่า {text}</item>
+        <item>บอก {who} ทาง {app} ว่า {text}</item>
+        <item>ส่งข้อความหา {whoandtext}</item>
+        <item>ส่ง SMS หา {whoandtext}</item>
+    </string-array>
+    <string-array name="voice_commands_call">
+        <item>โทรหา {who}</item>
+        <item>โทร {who}</item>
+        <item>โทรศัพท์หา {who}</item>
+        <item>หมุนหมายเลข {who}</item>
+        <item>โทรออกไปที่ {who}</item>
+    </string-array>
+    <string-array name="voice_commands_describe_screen">
+        <item>อธิบายหน้าจอ</item>
+        <item>อธิบายสิ่งที่อยู่บนหน้าจอ</item>
+        <item>บนหน้าจอมีอะไร</item>
+        <item>หน้าจอของฉันมีอะไร</item>
+    </string-array>
+    <string-array name="voice_commands_describe_image">
+        <item>อธิบาย[รูปภาพ|ภาพ|รูปถ่าย]นี้</item>
+        <item>อธิบายรูปภาพ</item>
+        <item>อธิบายภาพ</item>
+        <item>ในรูปภาพนี้มีอะไร</item>
+        <item>ในภาพนี้มีอะไร</item>
+        <item>ในรูปถ่ายนี้มีอะไร</item>
+    </string-array>
+    <string-array name="voice_commands_copy_result">
+        <item>คัดลอกสิ่งนั้น</item>
+        <item>คัดลอกอันนั้น</item>
+        <item>คัดลอกคำอธิบาย</item>
+        <item>คัดลอกสิ่งที่คุณเพิ่งพูด</item>
+        <item>คัดลอกวลีที่พูดล่าสุด</item>
+        <item>คัดลอกวลีล่าสุด</item>
+        <item>คัดลอกสิ่งที่พูดล่าสุด</item>
+    </string-array>
+    <string-array name="voice_commands_wait">
+        <item>รอ {n} วินาที</item>
+        <item>รอ {n} วินาที</item>
+        <item>รอสักครู่</item>
+        <item>รอ</item>
+    </string-array>
+    <string-array name="voice_commands_type_text">
+        <item>พิมพ์ {text}</item>
+        <item>เขียน {text}</item>
+        <item>ป้อน {text}</item>
+    </string-array>
+    <string-array name="voice_commands_run">
+        <item>เรียกใช้มาโคร {command}</item>
+        <item>เรียกใช้ {command}</item>
+        <item>ทำ {command}</item>
+        <item>สั่ง {command}</item>
+    </string-array>
+    <string-array name="voice_commands_open">
+        <item>เปิด {app}</item>
+        <item>เปิดแอป {app}</item>
+        <item>เริ่ม {app}</item>
+        <item>สลับไปที่ {app}</item>
+    </string-array>
+    <string-array name="voice_commands_tap">
+        <item>แตะสองครั้งที่ {label}</item>
+        <item>แตะ {label}</item>
+        <item>คลิก {label}</item>
+        <item>กด {label}</item>
+        <item>เปิดใช้งาน {label}</item>
+        <item>เลือก {label}</item>
+    </string-array>
+</resources>

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_voice_commands">Ahozko aginduak</string>
+    <string name="title_pref_voice_commands_ai">Ulertu ahozko aginduak AA bidez</string>
+    <string name="voice_commands_custom">Ahozko agindu pertsonalizatuak</string>
+    <string name="voice_command_add">Gehitu ahozko agindua</string>
+    <string name="voice_command_phrase">Esaldia</string>
+    <string name="voice_command_change_phrase">Aldatu esaldia</string>
+    <string name="voice_command_change_command">Aldatu agindua</string>
+    <string name="voice_command_delete_confirm"><xliff:g id="phrase" example="Good morning">%1$s</xliff:g> ezabatu nahi duzu?</string>
+    <string name="voice_command_phrase_exists"><xliff:g id="phrase" example="Good morning">%1$s</xliff:g> ahozko agindu bat da jada</string>
+    <string name="voice_commands_not_understood">Ez da ulertu: <xliff:g id="text" example="open the door">%1$s</xliff:g></string>
+    <string name="voice_commands_not_available">Ez dago erabilgarri: <xliff:g id="name" example="Morning macro">%1$s</xliff:g></string>
+    <string name="voice_commands_not_found">Ez da aurkitu: <xliff:g id="label" example="Settings">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app">Ez dago <xliff:g id="name" example="Signal">%1$s</xliff:g> izeneko aplikaziorik</string>
+    <string name="voice_commands_no_app_for_action">Ez dago aplikaziorik ekintza honetarako</string>
+    <string name="voice_commands_calling"><xliff:g id="name" example="Sam">%1$s</xliff:g> deitzen</string>
+    <string name="voice_commands_call_permission">Baimendu telefono-deiak, eta esan agindua berriro.</string>
+    <string name="voice_commands_contacts_permission">Baimendu kontaktuetarako sarbidea, eta esan agindua berriro.</string>
+    <string name="voice_commands_no_contact">Ez dago <xliff:g id="name" example="Sam">%1$s</xliff:g> izeneko kontakturik</string>
+    <string name="voice_commands_contacts_several"><xliff:g id="name" example="Sam">%1$s</xliff:g> izeneko kontaktu bat baino gehiago daude: <xliff:g id="names" example="Sam Jones, Sam Smith">%2$s</xliff:g></string>
+    <string name="voice_commands_message_text">Mezua: <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_message_confirm">Bidali honi: <xliff:g id="name" example="Sam">%1$s</xliff:g>: <xliff:g id="text" example="I am on my way">%2$s</xliff:g>?</string>
+    <string name="voice_commands_message_confirm_result">Bidali honi: <xliff:g id="name" example="Sam">%1$s</xliff:g>?</string>
+    <string name="voice_commands_message_not_sent">Mezua ez da bidali</string>
+    <string name="voice_commands_send_pressed">Bidali sakatu da</string>
+    <string name="voice_commands_send_button">Bidali</string>
+    <string name="voice_commands_no_description">Ez da azalpenik jaso</string>
+    <string name="voice_commands_copied">Kopiatu da</string>
+    <string-array name="voice_commands_chain_words">
+        <item>eta gero</item>
+        <item>gero</item>
+        <item>ondoren</item>
+        <item>ostean</item>
+    </string-array>
+    <string-array name="voice_commands_and_words">
+        <item>eta</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_start">
+        <item>mesedez</item>
+        <item>ahal duzu</item>
+        <item>zenezake</item>
+        <item>nahi nuke</item>
+        <item>nahi dut</item>
+        <item>orain</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_end">
+        <item>mesedez</item>
+        <item>niretzat</item>
+        <item>orain</item>
+    </string-array>
+    <string-array name="voice_commands_cancel_words">
+        <item>gelditu</item>
+        <item>utzi</item>
+        <item>ezeztatu</item>
+        <item>ahaztu</item>
+        <item>isildu</item>
+        <item>nahikoa</item>
+    </string-array>
+    <string-array name="voice_commands_yes">
+        <item>bai</item>
+        <item>ados</item>
+        <item>ondo</item>
+        <item>bidali</item>
+        <item>bidaliozu</item>
+        <item>egin</item>
+    </string-array>
+    <string-array name="voice_commands_sms_names">
+        <item>SMS</item>
+        <item>testu-mezua</item>
+        <item>mezua</item>
+        <item>mezuak</item>
+    </string-array>
+    <string-array name="voice_commands_send_image_description">
+        <item>bidali irudiaren azalpena {who}</item>
+        <item>bidali irudi honen azalpena {who}</item>
+        <item>bidali argazkiaren azalpena {who}</item>
+        <item>bidali argazki honen azalpena {who}</item>
+    </string-array>
+    <string-array name="voice_commands_send_screen_description">
+        <item>bidali pantailaren azalpena {who}</item>
+        <item>bidali pantaila honen azalpena {who}</item>
+    </string-array>
+    <string-array name="voice_commands_send_previous">
+        <item>bidali hori {who} {app} bidez</item>
+        <item>bidali hori {who}</item>
+        <item>bidali hau {who}</item>
+        <item>bidali azalpena {who}</item>
+        <item>partekatu {who} kontaktuarekin</item>
+    </string-array>
+    <string-array name="voice_commands_message">
+        <item>bidali mezu bat {who} {app} bidez esanez {text}</item>
+        <item>bidali mezu bat {who} esanez {text}</item>
+        <item>bidali mezu bat {whoandtext}</item>
+        <item>bidali {app} mezu bat {who} esanez {text}</item>
+        <item>bidali {app} mezu bat {who}</item>
+        <item>bidali mezua {who} {app} bidez esanez {text}</item>
+        <item>bidali mezua {who} esanez {text}</item>
+        <item>bidali mezua {whoandtext}</item>
+        <item>idatzi {who} {app} bidez {text}</item>
+        <item>idatzi {who} {text}</item>
+        <item>esan {who} {app} bidez {text}</item>
+        <item>esan {who} {text}</item>
+        <item>mezua {whoandtext}</item>
+    </string-array>
+    <string-array name="voice_commands_call">
+        <item>deitu {who}</item>
+        <item>deitu telefonoz {who}</item>
+        <item>egin dei bat {who}</item>
+        <item>markatu {who}</item>
+        <item>telefonatu {who}</item>
+    </string-array>
+    <string-array name="voice_commands_describe_screen">
+        <item>azaldu pantaila</item>
+        <item>azaldu zer dagoen pantailan</item>
+        <item>zer dago pantailan</item>
+        <item>zer dago nire pantailan</item>
+    </string-array>
+    <string-array name="voice_commands_describe_image">
+        <item>azaldu irudia</item>
+        <item>azaldu irudi hau</item>
+        <item>azaldu argazkia</item>
+        <item>azaldu argazki hau</item>
+        <item>zer dago irudian</item>
+        <item>zer dago argazkian</item>
+    </string-array>
+    <string-array name="voice_commands_copy_result">
+        <item>kopiatu hori</item>
+        <item>kopiatu hau</item>
+        <item>kopiatu azalpena</item>
+        <item>kopiatu esan duzuna</item>
+        <item>kopiatu irakurritako azken esaldia</item>
+        <item>kopiatu azken esaldia</item>
+    </string-array>
+    <string-array name="voice_commands_wait">
+        <item>itxaron {n} segundo</item>
+        <item>itxaron segundo bat</item>
+        <item>itxaron</item>
+    </string-array>
+    <string-array name="voice_commands_type_text">
+        <item>idatzi {text}</item>
+        <item>sartu {text}</item>
+    </string-array>
+    <string-array name="voice_commands_run">
+        <item>exekutatu {command} makroa</item>
+        <item>exekutatu makroa {command}</item>
+        <item>exekutatu {command}</item>
+        <item>egin {command}</item>
+    </string-array>
+    <string-array name="voice_commands_open">
+        <item>ireki {app}</item>
+        <item>abiarazi {app}</item>
+        <item>hasi {app}</item>
+        <item>aldatu {app} aplikaziora</item>
+        <item>joan {app} aplikaziora</item>
+    </string-array>
+    <string-array name="voice_commands_tap">
+        <item>sakatu birritan {label}</item>
+        <item>sakatu {label}</item>
+        <item>egin klik {label}</item>
+        <item>sakatu {label} elementua</item>
+        <item>aktibatu {label}</item>
+        <item>hautatu {label}</item>
+    </string-array>
+</resources>

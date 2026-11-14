@@ -2025,4 +2025,142 @@
     <string name="value_keep_models_5">5 ນາທີ</string>
     <string name="value_keep_models_15">15 ນາທີ</string>
     <string name="value_keep_models_30">30 ນາທີ</string>
+    <string name="title_pref_speech_equalizer_save_preset">ບັນທຶກເປັນຄ່າທີ່ຕັ້ງໄວ້ລ່ວງໜ້າ</string>
+    <string name="title_pref_speech_equalizer_saved_presets">ຄ່າທີ່ຕັ້ງໄວ້ລ່ວງໜ້າທີ່ບັນທຶກໄວ້</string>
+    <string name="speech_equalizer_preset_name">ຊື່</string>
+    <string name="speech_equalizer_preset_name_taken">ມີຄ່າທີ່ຕັ້ງໄວ້ລ່ວງໜ້າຊື່ <xliff:g id="name" example="Podcast">%1$s</xliff:g> ແລ້ວ</string>
+    <string name="speech_equalizer_presets_full">ບັນທຶກຄ່າທີ່ຕັ້ງໄວ້ລ່ວງໜ້າເພີ່ມບໍ່ໄດ້. ລຶບອັນໜຶ່ງເພື່ອບັນທຶກອັນອື່ນ.</string>
+    <string name="speech_equalizer_preset_saved">ບັນທຶກ <xliff:g id="name" example="Podcast">%1$s</xliff:g> ແລ້ວ</string>
+    <string name="speech_equalizer_preset_rename">ປ່ຽນຊື່</string>
+    <string name="speech_equalizer_preset_delete">ລຶບ</string>
+    <string name="speech_equalizer_preset_delete_confirm">ລຶບ <xliff:g id="name" example="Podcast">%1$s</xliff:g>?</string>
+    <string name="speech_equalizer_preset_deleted">ລຶບ <xliff:g id="name" example="Podcast">%1$s</xliff:g> ແລ້ວ</string>
+    <string name="title_pref_emoji_voice">ສຽງອີໂມຈິ</string>
+    <string name="value_emoji_voice_same">ຄືກັບການເວົ້າ</string>
+    <string name="title_pref_emoji_rate">ອັດຕາການເວົ້າອີໂມຈິ</string>
+    <string name="title_pref_line_breaks_as_spaces">ອ່ານການຂຶ້ນແຖວໃໝ່ເປັນຍະຫວ່າງ</string>
+    <string name="title_pref_language_voices">ສຽງຕາມພາສາ</string>
+    <string name="title_pref_identify_languages_from_words">ລະບຸພາສາຈາກຄຳສັບ</string>
+    <string name="title_pref_add_language">ເພີ່ມພາສາ</string>
+    <string name="title_pref_remove_language">ເອົາພາສາອອກ</string>
+    <string name="title_pref_script_language">ລະບົບຕົວຂຽນ %1$s</string>
+    <string name="title_pref_screen_on_notification_count">ຈຳນວນການແຈ້ງເຕືອນ</string>
+    <plurals name="template_screen_on_notification_count">
+        <item quantity="other"><xliff:g id="count" example="1">%d</xliff:g> ການແຈ້ງເຕືອນ</item>
+    </plurals>
+    <string name="title_pref_phonetic_letters_review">ອ່ານຕົວອັກສອນຕາມສຽງເມື່ອກວດທານ</string>
+    <string name="title_pref_phonetic_letters_typing">ອ່ານຕົວອັກສອນຕາມສຽງເມື່ອພິມ</string>
+    <string name="title_pref_emoji_suffix">ອ່ານ \"ອີໂມຈິ\" ຫຼັງຊື່ອີໂມຈິ</string>
+    <string name="overview_shizuku_not_running">Shizuku ບໍ່ເຮັດວຽກ</string>
+    <string name="overview_shizuku_not_allowed">Shizuku ບໍ່ອະນຸຍາດ SandFly</string>
+    <string name="overview_no_older_app">ບໍ່ມີແອັບເກົ່າກວ່າ</string>
+    <string name="overview_no_newer_app">ບໍ່ມີແອັບໃໝ່ກວ່າ</string>
+    <string name="stream_volume_needs_access">ອະນຸຍາດການເຂົ້າເຖິງ “ຫ້າມລົບກວນ” ເພື່ອປ່ຽນລະດັບສຽງນີ້.</string>
+    <string name="corner_gestures_title">ມຸມ</string>
+    <string name="shortcut_move_to_item_below">ຍ້າຍໄປລາຍການຂ້າງລຸ່ມ</string>
+    <string name="shortcut_move_to_item_above">ຍ້າຍໄປລາຍການຂ້າງເທິງ</string>
+    <string name="shortcut_older_app">ແອັບເກົ່າກວ່າ</string>
+    <string name="shortcut_newer_app">ແອັບໃໝ່ກວ່າ</string>
+    <string name="shortcut_answer_call">ຮັບສາຍ</string>
+    <string name="answer_call_no_call">ບໍ່ມີສາຍໂທເຂົ້າ</string>
+    <string name="answer_call_permission">ຕ້ອງມີສິດອະນຸຍາດເພື່ອຮັບສາຍ</string>
+    <string name="shortcut_switch_keyboard">ສະຫຼັບແປ້ນພິມ</string>
+    <string name="switch_keyboard_none">ບໍ່ໄດ້ເປີດແປ້ນພິມອື່ນ</string>
+    <string name="switch_keyboard_failed">ບໍ່ໄດ້ສະຫຼັບແປ້ນພິມ</string>
+    <string name="clipboard_history_hint">ປັດຂຶ້ນ ຫຼື ລົງເພື່ອເລືອກ, ຈາກນັ້ນແຕະສອງເທື່ອເພື່ອວາງ</string>
+    <string name="title_speech_history">ປະຫວັດການເວົ້າ</string>
+    <string name="speech_history_empty">ບໍ່ມີການເວົ້າ</string>
+    <string name="speech_history_clear">ລ້າງປະຫວັດ</string>
+    <string name="title_pref_shortcut_corner_top_left_tap">ແຕະມຸມເທິງຊ້າຍ</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap">ແຕະສອງເທື່ອມຸມເທິງຊ້າຍ</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap">ແຕະສາມເທື່ອມຸມເທິງຊ້າຍ</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap_hold">ແຕະສອງເທື່ອຄ້າງໄວ້ມຸມເທິງຊ້າຍ</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap_hold">ແຕະສາມເທື່ອຄ້າງໄວ້ມຸມເທິງຊ້າຍ</string>
+    <string name="title_pref_shortcut_corner_top_right_tap">ແຕະມຸມເທິງຂວາ</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap">ແຕະສອງເທື່ອມຸມເທິງຂວາ</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap">ແຕະສາມເທື່ອມຸມເທິງຂວາ</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap_hold">ແຕະສອງເທື່ອຄ້າງໄວ້ມຸມເທິງຂວາ</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap_hold">ແຕະສາມເທື່ອຄ້າງໄວ້ມຸມເທິງຂວາ</string>
+    <string name="title_pref_shortcut_corner_bottom_left_tap">ແຕະມຸມລຸ່ມຊ້າຍ</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap">ແຕະສອງເທື່ອມຸມລຸ່ມຊ້າຍ</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap">ແຕະສາມເທື່ອມຸມລຸ່ມຊ້າຍ</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap_hold">ແຕະສອງເທື່ອຄ້າງໄວ້ມຸມລຸ່ມຊ້າຍ</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap_hold">ແຕະສາມເທື່ອຄ້າງໄວ້ມຸມລຸ່ມຊ້າຍ</string>
+    <string name="title_pref_shortcut_corner_bottom_right_tap">ແຕະມຸມລຸ່ມຂວາ</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap">ແຕະສອງເທື່ອມຸມລຸ່ມຂວາ</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap">ແຕະສາມເທື່ອມຸມລຸ່ມຂວາ</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap_hold">ແຕະສອງເທື່ອຄ້າງໄວ້ມຸມລຸ່ມຂວາ</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap_hold">ແຕະສາມເທື່ອຄ້າງໄວ້ມຸມລຸ່ມຂວາ</string>
+    <string name="title_pref_swipe_start_time">ເວລາເລີ່ມທ່າທາງ</string>
+    <string name="title_pref_swipes_before_lift">ຈຳແນກການປັດກ່ອນຍົກນິ້ວ</string>
+    <string name="summary_pref_swipes_before_lift">ປິດທ່າທາງໄປ-ກັບ ແລະ ທ່າທາງມຸມ.</string>
+    <string name="title_pref_corner_size_mm">ຂະໜາດມຸມ</string>
+    <string name="value_corner_size_edge_width">ຄືກັບຄວາມກວ້າງຂອບ</string>
+    <string name="title_pref_corner_tap_time_ms">ຂີດຈຳກັດເວລາແຕະມຸມ</string>
+    <string name="value_corner_tap_time_system">ຄ່າເລີ່ມຕົ້ນຂອງລະບົບ</string>
+    <string name="title_pref_edge_speak_commands">ອ່ານຄຳສັ່ງທຸກຄັ້ງທີ່ຄລິກ</string>
+    <string-array name="pref_volume_change_feedback_entries">
+        <item>@string/volume_change_feedback_off</item>
+        <item>@string/volume_change_feedback_tone</item>
+        <item>@string/volume_change_feedback_spoken</item>
+        <item>@string/volume_change_feedback_tone_and_spoken</item>
+    </string-array>
+    <string name="title_pref_volume_change_tone_during_media">ປິດສຽງເຕືອນໃນລະຫວ່າງການຫຼິ້ນມີເດຍ</string>
+    <string name="title_pref_volume_change_speech_during_media">ປິດການເວົ້າໃນລະຫວ່າງການຫຼິ້ນມີເດຍ</string>
+    <string name="title_pref_volume_change_interrupts_speech">ຂັດຈັງຫວະການເວົ້າເພື່ອປະກາດລະດັບສຽງ</string>
+    <string name="title_pref_volume_keys_speech_volume_while_speaking">ປຸ່ມລະດັບສຽງປ່ຽນລະດັບສຽງເວົ້າໃນຂະນະທີ່ກຳລັງເວົ້າ</string>
+    <string name="title_pref_double_tap_moves_cursor">ແຕະສອງເທື່ອຍ້າຍເຄີເຊີໄປຕົ້ນ ຫຼື ທ້າຍ</string>
+    <string name="title_pref_scroll_ahead">ເລື່ອນລ່ວງໜ້າໄປຫາລາຍການຖັດໄປ</string>
+    <string name="title_pref_speak_while_scrolling">ອ່ານລາຍການຖັດໄປໃນຂະນະທີ່ເລື່ອນ</string>
+    <string-array name="pref_text_entities_entries">
+    <item>@string/text_entity_web</item>
+    <item>@string/text_entity_email</item>
+    <item>@string/text_entity_phone</item>
+    <item>@string/text_entity_code</item>
+  </string-array>
+    <string name="value_keep_models_until_stopped">ຈົນກວ່າ SandFly ຢຸດ</string>
+    <string name="title_pref_model_download_server">ເຊີບເວີດາວໂຫຼດໂມເດວ</string>
+    <string name="title_pref_settings_profiles">ໂປຣໄຟລ໌ການຕັ້ງຄ່າ</string>
+    <string name="title_pref_new_settings_profile">ໂປຣໄຟລ໌ການຕັ້ງຄ່າໃໝ່</string>
+    <string name="settings_profile_new_name">ໂປຣໄຟລ໌ <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="settings_profile_name_taken">ມີໂປຣໄຟລ໌ການຕັ້ງຄ່າຊື່ <xliff:g id="name" example="Demo">%1$s</xliff:g> ແລ້ວ</string>
+    <string name="settings_profile_in_use">ກຳລັງໃຊ້</string>
+    <string name="settings_profile_menu_item_in_use"><xliff:g id="name" example="Demo">%1$s</xliff:g>, ກຳລັງໃຊ້</string>
+    <string name="settings_profile_none">ບໍ່ມີໂປຣໄຟລ໌ການຕັ້ງຄ່າ</string>
+    <string name="settings_profile_use_now">ໃຊ້ດຽວນີ້</string>
+    <string name="settings_profile_stop_using">ເລີກໃຊ້</string>
+    <string name="settings_profile_change_settings">ປ່ຽນການຕັ້ງຄ່າ</string>
+    <string name="settings_profile_editing">ການປ່ຽນແປງໄປທີ່ <xliff:g id="name" example="Messaging">%1$s</xliff:g></string>
+    <string name="settings_profile_edit_saved">ບັນທຶກການປ່ຽນແປງໃນ <xliff:g id="name" example="Messaging">%1$s</xliff:g> ແລ້ວ</string>
+    <string name="settings_profile_use_automatically">ໃຊ້ອັດຕະໂນມັດ</string>
+    <string name="settings_profile_web">ເນື້ອຫາເວັບ</string>
+    <string name="settings_profile_reading">ການອ່ານແບບຕໍ່ເນື່ອງ</string>
+    <string name="settings_profile_text_editing">ການແກ້ໄຂຂໍ້ຄວາມ</string>
+    <string name="settings_profile_apps">ແອັບ</string>
+    <string name="settings_profile_add_app">ເພີ່ມແອັບ</string>
+    <string name="settings_profile_settings">ການຕັ້ງຄ່າໃນໂປຣໄຟລ໌ນີ້</string>
+    <string name="settings_profile_no_settings">ບໍ່ມີ</string>
+    <string name="settings_profile_remove_confirm">ເອົາ <xliff:g id="item" example="Speech rate">%1$s</xliff:g> ອອກຈາກ <xliff:g id="name" example="Messaging">%2$s</xliff:g>?</string>
+    <string name="settings_profile_not_saved">ບັນທຶກໂປຣໄຟລ໌ການຕັ້ງຄ່າບໍ່ໄດ້</string>
+    <string name="settings_profile_in_use_announcement">ໂປຣໄຟລ໌ <xliff:g id="name" example="Demo">%1$s</xliff:g></string>
+    <string name="settings_profile_not_changed">ບໍ່ໄດ້ປ່ຽນໂປຣໄຟລ໌ການຕັ້ງຄ່າ</string>
+    <string name="title_settings_profile">ໂປຣໄຟລ໌ການຕັ້ງຄ່າ</string>
+    <string name="shortcut_settings_profiles">ເລືອກໂປຣໄຟລ໌ການຕັ້ງຄ່າ</string>
+    <string name="shortcut_next_settings_profile">ໂປຣໄຟລ໌ການຕັ້ງຄ່າຖັດໄປ</string>
+    <string name="shortcut_previous_settings_profile">ໂປຣໄຟລ໌ການຕັ້ງຄ່າກ່ອນໜ້າ</string>
+    <string name="title_copy_text_from_screen">ສຳເນົາຂໍ້ຄວາມຈາກໜ້າຈໍ</string>
+    <string name="granularity_label">ລາຍລະອຽດ</string>
+    <string name="granularity_characters">ຕົວອັກສອນ</string>
+    <string name="granularity_words">ຄຳສັບ</string>
+    <string name="granularity_paragraphs">ຫຍໍ້ໜ້າ</string>
+    <string name="button_select_all">ເລືອກທັງໝົດ</string>
+    <string name="no_text_selected">ບໍ່ໄດ້ເລືອກຂໍ້ຄວາມ</string>
+    <string name="no_text_on_screen">ບໍ່ພົບຂໍ້ຄວາມໃນໜ້າຈໍ</string>
+    <string name="title_select_last_spoken_phrase_word_by_word">ເລືອກປະໂຫຍກທີ່ເວົ້າຫຼ້າສຸດເທື່ອລະຄຳ</string>
+    <string name="no_words_selected">ບໍ່ໄດ້ເລືອກຄຳສັບ</string>
+    <string name="no_phrase_to_select">ບໍ່ມີປະໂຫຍກໃຫ້ເລືອກ</string>
+    <string name="word_selection_list_cut_off">ຕັດລາຍຊື່ທີ່ <xliff:g id="count" example="1000">%1$d</xliff:g> ລາຍການ</string>
+    <plurals name="word_selection_copied">
+        <item quantity="other">ສຳເນົາ <xliff:g id="count" example="1">%1$d</xliff:g> ລາຍການແລ້ວ</item>
+    </plurals>
 </resources>

@@ -2025,4 +2025,144 @@
     <string name="value_keep_models_5">5 മിനിറ്റ്</string>
     <string name="value_keep_models_15">15 മിനിറ്റ്</string>
     <string name="value_keep_models_30">30 മിനിറ്റ്</string>
+    <string name="title_pref_speech_equalizer_save_preset">പ്രീസെറ്റായി സംരക്ഷിക്കുക</string>
+    <string name="title_pref_speech_equalizer_saved_presets">സംരക്ഷിച്ച പ്രീസെറ്റുകൾ</string>
+    <string name="speech_equalizer_preset_name">പേര്</string>
+    <string name="speech_equalizer_preset_name_taken"><xliff:g id="name" example="Podcast">%1$s</xliff:g> എന്ന പേരിൽ ഒരു പ്രീസെറ്റ് ഇതിനകം ഉണ്ട്</string>
+    <string name="speech_equalizer_presets_full">കൂടുതൽ പ്രീസെറ്റുകൾ സംരക്ഷിക്കാനാകില്ല. മറ്റൊന്ന് സംരക്ഷിക്കാൻ ഒന്ന് ഇല്ലാതാക്കുക.</string>
+    <string name="speech_equalizer_preset_saved"><xliff:g id="name" example="Podcast">%1$s</xliff:g> സംരക്ഷിച്ചു</string>
+    <string name="speech_equalizer_preset_rename">പേരുമാറ്റുക</string>
+    <string name="speech_equalizer_preset_delete">ഇല്ലാതാക്കുക</string>
+    <string name="speech_equalizer_preset_delete_confirm"><xliff:g id="name" example="Podcast">%1$s</xliff:g> ഇല്ലാതാക്കണോ?</string>
+    <string name="speech_equalizer_preset_deleted"><xliff:g id="name" example="Podcast">%1$s</xliff:g> ഇല്ലാതാക്കി</string>
+    <string name="title_pref_emoji_voice">ഇമോജി ശബ്‌ദം</string>
+    <string name="value_emoji_voice_same">സംഭാഷണത്തിന് തുല്യം</string>
+    <string name="title_pref_emoji_rate">ഇമോജി വായനയുടെ വേഗത</string>
+    <string name="title_pref_line_breaks_as_spaces">ലൈൻ ബ്രേക്കുകൾ സ്‌പേസുകളായി വായിക്കുക</string>
+    <string name="title_pref_language_voices">ഭാഷ അനുസരിച്ചുള്ള ശബ്‌ദങ്ങൾ</string>
+    <string name="title_pref_identify_languages_from_words">വാക്കുകളിൽ നിന്ന് ഭാഷകൾ തിരിച്ചറിയുക</string>
+    <string name="title_pref_add_language">ഭാഷ ചേർക്കുക</string>
+    <string name="title_pref_remove_language">ഭാഷ നീക്കം ചെയ്യുക</string>
+    <string name="title_pref_script_language">%1$s ലിപി</string>
+    <string name="title_pref_screen_on_notification_count">അറിയിപ്പുകളുടെ എണ്ണം</string>
+    <plurals name="template_screen_on_notification_count">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> അറിയിപ്പ്</item>
+        <item quantity="other"><xliff:g id="count" example="6">%d</xliff:g> അറിയിപ്പുകൾ</item>
+    </plurals>
+    <string name="title_pref_phonetic_letters_review">പരിശോധിക്കുമ്പോൾ അക്ഷരങ്ങൾ ഫൊണറ്റിക്കായി പറയുക</string>
+    <string name="title_pref_phonetic_letters_typing">ടൈപ്പ് ചെയ്യുമ്പോൾ അക്ഷരങ്ങൾ ഫൊണറ്റിക്കായി പറയുക</string>
+    <string name="title_pref_emoji_suffix">ഇമോജി പേരുകൾക്ക് ശേഷം \"ഇമോജി\" എന്ന് പറയുക</string>
+    <string name="overview_shizuku_not_running">Shizuku പ്രവർത്തിക്കുന്നില്ല</string>
+    <string name="overview_shizuku_not_allowed">SandFly-യെ Shizuku അനുവദിക്കുന്നില്ല</string>
+    <string name="overview_no_older_app">പഴയ ആപ്പ് ഇല്ല</string>
+    <string name="overview_no_newer_app">പുതിയ ആപ്പ് ഇല്ല</string>
+    <string name="stream_volume_needs_access">ഈ വോളിയം മാറ്റാൻ ശല്യപ്പെടുത്തരുത് ആക്‌സസ് അനുവദിക്കുക.</string>
+    <string name="corner_gestures_title">മൂലകൾ</string>
+    <string name="shortcut_move_to_item_below">താഴെയുള്ള ഇനത്തിലേക്ക് പോകുക</string>
+    <string name="shortcut_move_to_item_above">മുകളിലുള്ള ഇനത്തിലേക്ക് പോകുക</string>
+    <string name="shortcut_older_app">പഴയ ആപ്പ്</string>
+    <string name="shortcut_newer_app">പുതിയ ആപ്പ്</string>
+    <string name="shortcut_answer_call">കോൾ എടുക്കുക</string>
+    <string name="answer_call_no_call">ഇൻകമിംഗ് കോൾ ഇല്ല</string>
+    <string name="answer_call_permission">കോളുകൾ എടുക്കാൻ അനുമതി ആവശ്യമാണ്</string>
+    <string name="shortcut_switch_keyboard">കീബോർഡ് മാറ്റുക</string>
+    <string name="switch_keyboard_none">മറ്റ് കീബോർഡ് ഓണാക്കിയിട്ടില്ല</string>
+    <string name="switch_keyboard_failed">കീബോർഡ് മാറിയില്ല</string>
+    <string name="clipboard_history_hint">തിരഞ്ഞെടുക്കാൻ മുകളിലേക്കോ താഴേക്കോ സ്വൈപ്പ് ചെയ്യുക, തുടർന്ന് ഒട്ടിക്കാൻ ഡബിൾ ടാപ്പ് ചെയ്യുക</string>
+    <string name="title_speech_history">സംഭാഷണ ചരിത്രം</string>
+    <string name="speech_history_empty">സംഭാഷണം ഇല്ല</string>
+    <string name="speech_history_clear">ചരിത്രം മായ്ക്കുക</string>
+    <string name="title_pref_shortcut_corner_top_left_tap">മുകളിൽ ഇടത് മൂല ടാപ്പ് ചെയ്യുക</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap">മുകളിൽ ഇടത് മൂല ഡബിൾ ടാപ്പ് ചെയ്യുക</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap">മുകളിൽ ഇടത് മൂല ട്രിപ്പിൾ ടാപ്പ് ചെയ്യുക</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap_hold">മുകളിൽ ഇടത് മൂല ഡബിൾ ടാപ്പ് ചെയ്ത് അമർത്തിപ്പിടിക്കുക</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap_hold">മുകളിൽ ഇടത് മൂല ട്രിപ്പിൾ ടാപ്പ് ചെയ്ത് അമർത്തിപ്പിടിക്കുക</string>
+    <string name="title_pref_shortcut_corner_top_right_tap">മുകളിൽ വലത് മൂല ടാപ്പ് ചെയ്യുക</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap">മുകളിൽ വലത് മൂല ഡബിൾ ടാപ്പ് ചെയ്യുക</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap">മുകളിൽ വലത് മൂല ട്രിപ്പിൾ ടാപ്പ് ചെയ്യുക</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap_hold">മുകളിൽ വലത് മൂല ഡബിൾ ടാപ്പ് ചെയ്ത് അമർത്തിപ്പിടിക്കുക</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap_hold">മുകളിൽ വലത് മൂല ട്രിപ്പിൾ ടാപ്പ് ചെയ്ത് അമർത്തിപ്പിടിക്കുക</string>
+    <string name="title_pref_shortcut_corner_bottom_left_tap">താഴെ ഇടത് മൂല ടാപ്പ് ചെയ്യുക</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap">താഴെ ഇടത് മൂല ഡബിൾ ടാപ്പ് ചെയ്യുക</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap">താഴെ ഇടത് മൂല ട്രിപ്പിൾ ടാപ്പ് ചെയ്യുക</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap_hold">താഴെ ഇടത് മൂല ഡബിൾ ടാപ്പ് ചെയ്ത് അമർത്തിപ്പിടിക്കുക</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap_hold">താഴെ ഇടത് മൂല ട്രിപ്പിൾ ടാപ്പ് ചെയ്ത് അമർത്തിപ്പിടിക്കുക</string>
+    <string name="title_pref_shortcut_corner_bottom_right_tap">താഴെ വലത് മൂല ടാപ്പ് ചെയ്യുക</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap">താഴെ വലത് മൂല ഡബിൾ ടാപ്പ് ചെയ്യുക</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap">താഴെ വലത് മൂല ട്രിപ്പിൾ ടാപ്പ് ചെയ്യുക</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap_hold">താഴെ വലത് മൂല ഡബിൾ ടാപ്പ് ചെയ്ത് അമർത്തിപ്പിടിക്കുക</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap_hold">താഴെ വലത് മൂല ട്രിപ്പിൾ ടാപ്പ് ചെയ്ത് അമർത്തിപ്പിടിക്കുക</string>
+    <string name="title_pref_swipe_start_time">ജെസ്‌ച്ചർ ആരംഭ സമയം</string>
+    <string name="title_pref_swipes_before_lift">വിരൽ ഉയർത്തുന്നതിന് മുമ്പ് സ്വൈപ്പുകൾ തിരിച്ചറിയുക</string>
+    <string name="summary_pref_swipes_before_lift">മുന്നോട്ടും പിന്നോട്ടുമുള്ള, കോണിലുള്ള ജെസ്‌ച്ചറുകൾ ഓഫാക്കുന്നു.</string>
+    <string name="title_pref_corner_size_mm">മൂലയുടെ വലുപ്പം</string>
+    <string name="value_corner_size_edge_width">അരികിന്റെ വീതിക്ക് തുല്യം</string>
+    <string name="title_pref_corner_tap_time_ms">മൂല ടാപ്പ് സമയ പരിധി</string>
+    <string name="value_corner_tap_time_system">സിസ്റ്റം ഡിഫോൾട്ട്</string>
+    <string name="title_pref_edge_speak_commands">ഓരോ ക്ലിക്കിലും കമാൻഡ് പറയുക</string>
+    <string-array name="pref_volume_change_feedback_entries">
+        <item>@string/volume_change_feedback_off</item>
+        <item>@string/volume_change_feedback_tone</item>
+        <item>@string/volume_change_feedback_spoken</item>
+        <item>@string/volume_change_feedback_tone_and_spoken</item>
+    </string-array>
+    <string name="title_pref_volume_change_tone_during_media">മീഡിയ പ്ലേ ചെയ്യുമ്പോൾ ടോൺ നിശബ്‌ദമാക്കുക</string>
+    <string name="title_pref_volume_change_speech_during_media">മീഡിയ പ്ലേ ചെയ്യുമ്പോൾ സംഭാഷണം നിശബ്‌ദമാക്കുക</string>
+    <string name="title_pref_volume_change_interrupts_speech">വോളിയം അറിയിക്കാൻ സംഭാഷണം തടസ്സപ്പെടുത്തുക</string>
+    <string name="title_pref_volume_keys_speech_volume_while_speaking">സംസാരിക്കുമ്പോൾ വോളിയം കീകൾ സംഭാഷണ വോളിയം മാറ്റുന്നു</string>
+    <string name="title_pref_double_tap_moves_cursor">ഡബിൾ ടാപ്പ് കഴ്‌സറിനെ തുടക്കത്തിലേക്കോ ഒടുക്കത്തിലേക്കോ നീക്കുന്നു</string>
+    <string name="title_pref_scroll_ahead">അടുത്ത ഇനത്തിലേക്ക് മുൻകൂട്ടി സ്ക്രോൾ ചെയ്യുക</string>
+    <string name="title_pref_speak_while_scrolling">സ്ക്രോൾ ചെയ്യുമ്പോൾ അടുത്ത ഇനം പറയുക</string>
+    <string-array name="pref_text_entities_entries">
+    <item>@string/text_entity_web</item>
+    <item>@string/text_entity_email</item>
+    <item>@string/text_entity_phone</item>
+    <item>@string/text_entity_code</item>
+  </string-array>
+    <string name="value_keep_models_until_stopped">SandFly നിൽക്കുന്നത് വരെ</string>
+    <string name="title_pref_model_download_server">മോഡൽ ഡൗൺലോഡ് സെർവർ</string>
+    <string name="title_pref_settings_profiles">ക്രമീകരണ പ്രൊഫൈലുകൾ</string>
+    <string name="title_pref_new_settings_profile">പുതിയ ക്രമീകരണ പ്രൊഫൈൽ</string>
+    <string name="settings_profile_new_name">പ്രൊഫൈൽ <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="settings_profile_name_taken"><xliff:g id="name" example="Demo">%1$s</xliff:g> എന്ന പേരിൽ ഒരു ക്രമീകരണ പ്രൊഫൈൽ ഇതിനകം ഉണ്ട്</string>
+    <string name="settings_profile_in_use">ഉപയോഗത്തിലുണ്ട്</string>
+    <string name="settings_profile_menu_item_in_use"><xliff:g id="name" example="Demo">%1$s</xliff:g>, ഉപയോഗത്തിലുണ്ട്</string>
+    <string name="settings_profile_none">ക്രമീകരണ പ്രൊഫൈൽ ഇല്ല</string>
+    <string name="settings_profile_use_now">ഇപ്പോൾ ഉപയോഗിക്കുക</string>
+    <string name="settings_profile_stop_using">ഉപയോഗിക്കുന്നത് നിർത്തുക</string>
+    <string name="settings_profile_change_settings">ക്രമീകരണങ്ങൾ മാറ്റുക</string>
+    <string name="settings_profile_editing">മാറ്റങ്ങൾ <xliff:g id="name" example="Messaging">%1$s</xliff:g>-ലേക്ക് പോകുന്നു</string>
+    <string name="settings_profile_edit_saved">മാറ്റങ്ങൾ <xliff:g id="name" example="Messaging">%1$s</xliff:g>-ൽ സംരക്ഷിച്ചു</string>
+    <string name="settings_profile_use_automatically">സ്വയമേവ ഉപയോഗിക്കുക</string>
+    <string name="settings_profile_web">വെബ് ഉള്ളടക്കം</string>
+    <string name="settings_profile_reading">തുടർച്ചയായ വായന</string>
+    <string name="settings_profile_text_editing">ടെക്‌സ്റ്റ് എഡിറ്റ് ചെയ്യൽ</string>
+    <string name="settings_profile_apps">ആപ്പുകൾ</string>
+    <string name="settings_profile_add_app">ആപ്പ് ചേർക്കുക</string>
+    <string name="settings_profile_settings">ഈ പ്രൊഫൈലിലെ ക്രമീകരണങ്ങൾ</string>
+    <string name="settings_profile_no_settings">ഒന്നുമില്ല</string>
+    <string name="settings_profile_remove_confirm"><xliff:g id="name" example="Messaging">%2$s</xliff:g>-ൽ നിന്ന് <xliff:g id="item" example="Speech rate">%1$s</xliff:g> നീക്കം ചെയ്യണോ?</string>
+    <string name="settings_profile_not_saved">ക്രമീകരണ പ്രൊഫൈൽ സംരക്ഷിക്കാനായില്ല</string>
+    <string name="settings_profile_in_use_announcement"><xliff:g id="name" example="Demo">%1$s</xliff:g> പ്രൊഫൈൽ</string>
+    <string name="settings_profile_not_changed">ക്രമീകരണ പ്രൊഫൈൽ മാറിയില്ല</string>
+    <string name="title_settings_profile">ക്രമീകരണ പ്രൊഫൈൽ</string>
+    <string name="shortcut_settings_profiles">ക്രമീകരണ പ്രൊഫൈൽ തിരഞ്ഞെടുക്കുക</string>
+    <string name="shortcut_next_settings_profile">അടുത്ത ക്രമീകരണ പ്രൊഫൈൽ</string>
+    <string name="shortcut_previous_settings_profile">മുമ്പത്തെ ക്രമീകരണ പ്രൊഫൈൽ</string>
+    <string name="title_copy_text_from_screen">സ്ക്രീനിൽ നിന്ന് ടെക്‌സ്റ്റ് പകർത്തുക</string>
+    <string name="granularity_label">ഗ്രാനുലാരിറ്റി</string>
+    <string name="granularity_characters">പ്രതീകങ്ങൾ</string>
+    <string name="granularity_words">വാക്കുകൾ</string>
+    <string name="granularity_paragraphs">ഖണ്ഡികകൾ</string>
+    <string name="button_select_all">എല്ലാം തിരഞ്ഞെടുക്കുക</string>
+    <string name="no_text_selected">ടെക്‌സ്റ്റ് തിരഞ്ഞെടുത്തിട്ടില്ല</string>
+    <string name="no_text_on_screen">സ്ക്രീനിൽ ടെക്‌സ്റ്റ് കണ്ടെത്തിയില്ല</string>
+    <string name="title_select_last_spoken_phrase_word_by_word">അവസാനം പറഞ്ഞ വാക്യഭാഗം വാക്ക് വാക്കായി തിരഞ്ഞെടുക്കുക</string>
+    <string name="no_words_selected">വാക്കുകൾ തിരഞ്ഞെടുത്തിട്ടില്ല</string>
+    <string name="no_phrase_to_select">തിരഞ്ഞെടുക്കാൻ വാക്യഭാഗം ഇല്ല</string>
+    <string name="word_selection_list_cut_off">പട്ടിക <xliff:g id="count" example="1000">%1$d</xliff:g> ഇനങ്ങളിൽ അവസാനിപ്പിച്ചു</string>
+    <plurals name="word_selection_copied">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> ഇനം പകർത്തി</item>
+        <item quantity="other"><xliff:g id="count" example="5">%1$d</xliff:g> ഇനങ്ങൾ പകർത്തി</item>
+    </plurals>
 </resources>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_macros">მაკროები</string>
+    <string name="shortcut_stop_macro">მაკროს შეჩერება</string>
+    <string name="macro_add">მაკროს დამატება</string>
+    <string name="macro_run_now">ახლა გაშვება</string>
+    <string name="macro_add_step">ნაბიჯის დამატება</string>
+    <string name="macro_add_at_end">ბოლოში</string>
+    <string name="macro_add_at_start">დასაწყისში</string>
+    <string name="macro_add_after">ნაბიჯის შემდეგ <xliff:g id="step" example="2">%1$d</xliff:g>: <xliff:g id="name" example="If App in front: Chrome">%2$s</xliff:g></string>
+    <string name="macro_steps">ნაბიჯები</string>
+    <string name="macro_no_steps">ნაბიჯები არ არის</string>
+    <string name="macro_delete">მაკროს წაშლა</string>
+    <string name="macro_delete_confirm">წაიშალოს „<xliff:g id="name" example="Send message">%1$s</xliff:g>“?</string>
+    <string name="macro_step_command">ბრძანების გაშვება</string>
+    <string name="macro_step_wait">ლოდინი</string>
+    <string name="macro_step_tap">ერთეულზე შეხება</string>
+    <string name="macro_step_focus">ერთეულზე ფოკუსი</string>
+    <string name="macro_step_speak_item">ერთეულის წარმოთქმა</string>
+    <string name="macro_step_speak_text">ტექსტის წარმოთქმა</string>
+    <string name="macro_step_type">ტექსტის აკრეფა</string>
+    <string name="macro_step_tap_value">შეხება: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_focus_value">ფოკუსი: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_item_value">წარმოთქმა: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_text_value">წარმოთქმა: <xliff:g id="text" example="Done">%1$s</xliff:g></string>
+    <string name="macro_step_type_value">აკრეფა: <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <string name="macro_step_replace_value">ტექსტის ჩანაცვლება: <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <plurals name="macro_step_wait_seconds">
+        <item quantity="one">ლოდინი <xliff:g id="count" example="2">%d</xliff:g> წამი</item>
+        <item quantity="other">ლოდინი <xliff:g id="count" example="2">%d</xliff:g> წამი</item>
+    </plurals>
+    <plurals name="macro_step_wait_milliseconds">
+        <item quantity="one">ლოდინი <xliff:g id="count" example="500">%d</xliff:g> მილიწამი</item>
+        <item quantity="other">ლოდინი <xliff:g id="count" example="500">%d</xliff:g> მილიწამი</item>
+    </plurals>
+    <string name="macro_step_unavailable">მიუწვდომელია</string>
+    <string name="macro_seconds">წამები</string>
+    <string name="macro_invalid_seconds">შეიყვანეთ წამების რაოდენობა <xliff:g id="max" example="600">%1$d</xliff:g>-მდე</string>
+    <string name="macro_tap_label">ერთეულის ტექსტი</string>
+    <string name="macro_tap_timeout">ერთეულის მოლოდინის წამები</string>
+    <string name="macro_text">ტექსტი</string>
+    <string name="macro_replace_text">ველში ტექსტის ჩანაცვლება</string>
+    <string name="macro_item_not_found">მაკრო შეჩერდა. ვერ მოიძებნა: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_failed">მაკრო შეჩერდა. ვერ შესრულდა: <xliff:g id="step" example="Open Gmail">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until">ლოდინი, სანამ</string>
+    <string name="macro_step_if">თუ</string>
+    <string name="macro_step_else_if">სხვა შემთხვევაში, თუ</string>
+    <string name="macro_step_else">სხვა შემთხვევაში</string>
+    <string name="macro_step_end_if">„თუ“-ს დასასრული</string>
+    <string name="macro_step_repeat">გამეორება</string>
+    <string name="macro_step_repeat_while">გამეორება, სანამ</string>
+    <string name="macro_step_end_repeat">გამეორების დასასრული</string>
+    <string name="macro_step_exit_loop">ციკლიდან გამოსვლა</string>
+    <string name="macro_step_if_value">თუ <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_else_if_value">სხვა შემთხვევაში, თუ <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_repeat_while_value">გამეორება, სანამ <xliff:g id="condition" example="Item on screen: Load more">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until_value">ლოდინი, სანამ <xliff:g id="condition" example="Item on screen: Send">%1$s</xliff:g></string>
+    <plurals name="macro_step_repeat_value">
+        <item quantity="one">გამეორება <xliff:g id="count" example="3">%d</xliff:g>-ჯერ</item>
+        <item quantity="other">გამეორება <xliff:g id="count" example="3">%d</xliff:g>-ჯერ</item>
+    </plurals>
+    <string name="macro_times">ჯერ</string>
+    <string name="macro_invalid_times">შეიყვანეთ რიცხვი 1-დან <xliff:g id="max" example="1000">%1$d</xliff:g>-მდე</string>
+    <string name="macro_run_only_when">გაშვება მხოლოდ მაშინ, როცა</string>
+    <string name="macro_always">ყოველთვის</string>
+    <string name="macro_no_tests">პირობები არ არის</string>
+    <string name="macro_add_test">პირობის დამატება</string>
+    <string name="macro_tests">პირობები</string>
+    <string name="macro_choose_test">პირობა</string>
+    <string name="macro_test_item">ერთეული ეკრანზე</string>
+    <string name="macro_test_focused">ფოკუსირებული ერთეული</string>
+    <string name="macro_test_app">წინა პლანზე მყოფი აპი</string>
+    <string name="macro_test_keyboard">კლავიატურა ნაჩვენებია</string>
+    <string name="macro_test_keyboard_hidden">კლავიატურა დამალულია</string>
+    <string name="macro_test_locked">ეკრანი დაბლოკილია</string>
+    <string name="macro_test_unlocked">ეკრანი განბლოკილია</string>
+    <string name="macro_test_item_value">ერთეული ეკრანზე: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_no_item_value">ერთეული ეკრანზე არ არის: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_focused_value">ფოკუსირებული ერთეული: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_not_focused_value">ფოკუსირებული ერთეული არ არის: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_app_value">წინა პლანზე მყოფი აპი: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_not_app_value">წინა პლანზე მყოფი აპი არ არის: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_label_kind"><xliff:g id="label" example="Send">%1$s</xliff:g>, <xliff:g id="kind" example="Clickable">%2$s</xliff:g></string>
+    <string name="macro_join_and"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g> და <xliff:g id="second" example="Focused item: Editable">%2$s</xliff:g></string>
+    <string name="macro_join_or"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g>, ან <xliff:g id="second" example="Screen locked">%2$s</xliff:g></string>
+    <string name="macro_regex">რეგულარული გამოხატულება</string>
+    <string name="macro_invalid_regex">გამოუსადეგარი რეგულარული გამოხატულება. გამეორებული ჯგუფები ვერ შეიცავს გამეორებას ან |-ს.</string>
+    <string name="macro_match_in">დამთხვევა აქ</string>
+    <string name="macro_field_any">ნებისმიერი ტექსტი</string>
+    <string name="macro_field_text">ტექსტი</string>
+    <string name="macro_field_description">აღწერა</string>
+    <string name="macro_field_hint">მინიშნება</string>
+    <string name="macro_field_state">მდგომარეობა</string>
+    <string name="macro_field_id">რესურსის ID</string>
+    <string name="macro_field_value"><xliff:g id="label" example="send">%1$s</xliff:g> (<xliff:g id="field" example="Resource ID">%2$s</xliff:g>)</string>
+    <string name="macro_field_regex_value"><xliff:g id="pattern" example="^Reply">%1$s</xliff:g> (<xliff:g id="field" example="Description">%2$s</xliff:g>, რეგულარული გამოხატულება)</string>
+    <string name="macro_regex_value"><xliff:g id="pattern" example="Reply.*Anna">%1$s</xliff:g> (რეგულარული გამოხატულება)</string>
+    <string name="macro_test_label_optional">ერთეულის ტექსტი (არასავალდებულო)</string>
+    <string name="macro_item_kind">ერთეულის ტიპი</string>
+    <string name="macro_kind_any">ნებისმიერი ტიპი</string>
+    <string name="macro_kind_clickable">დაწკაპუნებადი</string>
+    <string name="macro_kind_long_clickable">ხანგრძლივად დაწკაპუნებადი</string>
+    <string name="macro_kind_editable">რედაქტირებადი</string>
+    <string name="macro_kind_scrollable">გადასახვევი</string>
+    <string name="macro_kind_adjustable">რეგულირებადი</string>
+    <string name="macro_kind_checkable">მოსანიშნი</string>
+    <string name="macro_kind_checked">მონიშნული</string>
+    <string name="macro_kind_selected">არჩეული</string>
+    <string name="macro_kind_heading">სათაური</string>
+    <string name="macro_kind_enabled">ჩართული</string>
+    <string name="macro_change_to">შეცვლა: <xliff:g id="test" example="Keyboard hidden">%1$s</xliff:g></string>
+    <string name="macro_join_with_and">შეერთება „და“-თი</string>
+    <string name="macro_join_with_or">შეერთება „ან“-ით</string>
+    <string name="macro_clause_and">და <xliff:g id="test" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_clause_or">ან <xliff:g id="test" example="Screen locked">%1$s</xliff:g></string>
+    <string name="macro_wait_timeout">ლოდინის წამები</string>
+    <string name="macro_add_step_after">ნაბიჯის დამატება შემდეგ</string>
+    <string name="macro_problem">ნაბიჯი <xliff:g id="step" example="3">%1$d</xliff:g>: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_problem_no_if">„სხვა შემთხვევაში, თუ“, „სხვა შემთხვევაში“ ან „„თუ“-ს დასასრული“ „თუ“-ს გარეშე</string>
+    <string name="macro_problem_after_else">„სხვა შემთხვევაში, თუ“ ან „სხვა შემთხვევაში“ „სხვა შემთხვევაში“-ს შემდეგ</string>
+    <string name="macro_problem_no_repeat">„გამეორების დასასრული“ „გამეორების“ გარეშე</string>
+    <string name="macro_problem_no_end_if">„თუ“ „„თუ“-ს დასასრულის“ გარეშე</string>
+    <string name="macro_problem_no_end_repeat">„გამეორება“ „გამეორების დასასრულის“ გარეშე</string>
+    <string name="macro_problem_exit">„ციკლიდან გამოსვლა“ გამეორების გარეთ</string>
+    <string name="macro_stopped_problem">მაკრო შეჩერდა. ნაბიჯი <xliff:g id="step" example="3">%1$d</xliff:g>: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_stopped_repeats">მაკრო შეჩერდა. გამეორდა <xliff:g id="count" example="1000">%1$d</xliff:g>-ჯერ: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
+    <string name="macro_stopped_timeout">მაკრო შეჩერდა. დრო ამოიწურა: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
+    <string name="macro_not_met">მაკრო არ გაეშვა. გაშვება მხოლოდ მაშინ, როცა: პირობა არ სრულდება</string>
+</resources>

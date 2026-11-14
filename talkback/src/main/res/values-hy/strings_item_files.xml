@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="item_file_import">Ներմուծել ֆայլից</string>
+    <string name="item_file_export">Արտահանել ֆայլի մեջ</string>
+    <string name="title_pref_export_item_file_reference">Արտահանման ֆայլի ձևաչափի տեղեկատու</string>
+    <string name="item_file_keymaps">Ստեղնային դասավորություններ</string>
+    <string name="item_file_exported">Արտահանվեց</string>
+    <string name="item_file_export_failed">Չհաջողվեց արտահանել</string>
+    <string name="item_file_not_read">Այս ֆայլը SandFly-ի տարրերի ֆայլ չէ կամ չհաջողվեց կարդալ</string>
+    <string name="item_file_settings_file">Սա կարգավորումների ֆայլ է։ Ներմուծեք այն՝ Պահուստավորում և վերականգնում &gt; Ներմուծել կարգավորումները</string>
+    <string name="item_file_newer">Այս ֆայլը SandFly-ի ավելի նոր տարբերակից է</string>
+    <string name="item_file_nothing_imported">Ոչինչ չներմուծվեց</string>
+    <string name="item_file_imported">Ներմուծվեց՝ <xliff:g id="items" example="2 macros, 1 gesture profile">%1$s</xliff:g></string>
+    <string name="item_file_left_out">Բաց թողնվեց՝</string>
+    <string name="item_file_problem_not_read"><xliff:g id="kind" example="Macros">%1$s</xliff:g>, տարր <xliff:g id="number" example="3">%2$d</xliff:g>՝ չկարդացվեց</string>
+    <string name="item_file_problem_command"><xliff:g id="item" example="Open mail">%1$s</xliff:g>՝ անհայտ հրաման <xliff:g id="command" example="READ_ALL">%2$s</xliff:g></string>
+    <string name="item_file_problem_gesture"><xliff:g id="item" example="Reading">%1$s</xliff:g>՝ անհայտ ժեստ <xliff:g id="gesture" example="pref_shortcut_spin">%2$s</xliff:g></string>
+    <string name="item_file_problem_keys"><xliff:g id="item" example="My keymap">%1$s</xliff:g>՝ ստեղները չհասկացվեցին՝ <xliff:g id="keys" example="SandFly+Foo">%2$s</xliff:g></string>
+    <string name="item_file_problem_keys_taken"><xliff:g id="item" example="My keymap">%1$s</xliff:g>՝ ստեղներն արդեն օգտագործվում են՝ <xliff:g id="keys" example="SandFly+H">%2$s</xliff:g></string>
+    <string name="item_file_problem_setting"><xliff:g id="item" example="Reading">%1$s</xliff:g>՝ <xliff:g id="key" example="pref_vibration">%2$s</xliff:g> կարգավորումն անհայտ է, չի կարող լինել պրոֆիլում կամ ունի սխալ տեսակի արժեք</string>
+    <string name="item_file_problem_regex"><xliff:g id="dictionary" example="Speech dictionary">%1$s</xliff:g>՝ կանոնավոր արտահայտությունը մերժվեց՝ <xliff:g id="expression" example="(a+)+">%2$s</xliff:g></string>
+    <string name="item_file_problem_limit"><xliff:g id="kind" example="Symbol dictionary">%1$s</xliff:g>՝ առավելագույնը <xliff:g id="number" example="500">%2$d</xliff:g> տարր</string>
+    <string name="item_file_problem_more">Ավելին բաց թողնվեց</string>
+    <plurals name="item_file_count_macros">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> մակրո</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> մակրո</item>
+    </plurals>
+    <plurals name="item_file_count_gesture_profiles">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ժեստի պրոֆիլ</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> ժեստի պրոֆիլ</item>
+    </plurals>
+    <plurals name="item_file_count_keymaps">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ստեղնային դասավորություն</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> ստեղնային դասավորություն</item>
+    </plurals>
+    <plurals name="item_file_count_apps">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> հավելվածի ժեստեր և ստեղնային դյուրանցումներ</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> հավելվածի ժեստեր և ստեղնային դյուրանցումներ</item>
+    </plurals>
+    <plurals name="item_file_count_settings_profiles">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> կարգավորումների պրոֆիլ</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> կարգավորումների պրոֆիլ</item>
+    </plurals>
+    <plurals name="item_file_count_speech_dictionary">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> խոսքի բառարանի գրառում</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> խոսքի բառարանի գրառում</item>
+    </plurals>
+    <plurals name="item_file_count_symbol_dictionary">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> նշանների բառարանի գրառում</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> նշանների բառարանի գրառում</item>
+    </plurals>
+    <plurals name="item_file_count_braille_dictionary">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> բրայլյան բառարանի գրառում</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> բրայլյան բառարանի գրառում</item>
+    </plurals>
+    <plurals name="item_file_count_voice_commands">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> հատուկ ձայնային հրաման</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> հատուկ ձայնային հրաման</item>
+    </plurals>
+</resources>

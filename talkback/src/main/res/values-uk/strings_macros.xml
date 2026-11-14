@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_macros">Макроси</string>
+    <string name="shortcut_stop_macro">Зупинити макрос</string>
+    <string name="macro_add">Додати макрос</string>
+    <string name="macro_run_now">Запустити зараз</string>
+    <string name="macro_add_step">Додати крок</string>
+    <string name="macro_add_at_end">У кінці</string>
+    <string name="macro_add_at_start">На початку</string>
+    <string name="macro_add_after">Після кроку <xliff:g id="step" example="2">%1$d</xliff:g>: <xliff:g id="name" example="If App in front: Chrome">%2$s</xliff:g></string>
+    <string name="macro_steps">Кроки</string>
+    <string name="macro_no_steps">Немає кроків</string>
+    <string name="macro_delete">Видалити макрос</string>
+    <string name="macro_delete_confirm">Видалити <xliff:g id="name" example="Send message">%1$s</xliff:g>?</string>
+    <string name="macro_step_command">Виконати команду</string>
+    <string name="macro_step_wait">Зачекати</string>
+    <string name="macro_step_tap">Торкнутися елемента</string>
+    <string name="macro_step_focus">Перейти до елемента</string>
+    <string name="macro_step_speak_item">Озвучити елемент</string>
+    <string name="macro_step_speak_text">Озвучити текст</string>
+    <string name="macro_step_type">Ввести текст</string>
+    <string name="macro_step_tap_value">Торкнутися: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_focus_value">Перейти до: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_item_value">Озвучити: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_text_value">Озвучити: <xliff:g id="text" example="Done">%1$s</xliff:g></string>
+    <string name="macro_step_type_value">Ввести: <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <string name="macro_step_replace_value">Замінити текст на <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <plurals name="macro_step_wait_seconds"><item quantity="one">Зачекати <xliff:g id="count" example="2">%d</xliff:g> секунду</item><item quantity="few">Зачекати <xliff:g id="count" example="2">%d</xliff:g> секунди</item><item quantity="many">Зачекати <xliff:g id="count" example="2">%d</xliff:g> секунд</item><item quantity="other">Зачекати <xliff:g id="count" example="2">%d</xliff:g> секунди</item></plurals>
+    <plurals name="macro_step_wait_milliseconds"><item quantity="one">Зачекати <xliff:g id="count" example="500">%d</xliff:g> мілісекунду</item><item quantity="few">Зачекати <xliff:g id="count" example="500">%d</xliff:g> мілісекунди</item><item quantity="many">Зачекати <xliff:g id="count" example="500">%d</xliff:g> мілісекунд</item><item quantity="other">Зачекати <xliff:g id="count" example="500">%d</xliff:g> мілісекунди</item></plurals>
+    <string name="macro_step_unavailable">Недоступно</string>
+    <string name="macro_seconds">Секунди</string>
+    <string name="macro_invalid_seconds">Введіть кількість секунд не більше <xliff:g id="max" example="600">%1$d</xliff:g></string>
+    <string name="macro_tap_label">Текст елемента</string>
+    <string name="macro_tap_timeout">Секунд очікування елемента</string>
+    <string name="macro_text">Текст</string>
+    <string name="macro_replace_text">Замінити текст у полі</string>
+    <string name="macro_item_not_found">Макрос зупинено. Не знайдено: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_failed">Макрос зупинено. Помилка: <xliff:g id="step" example="Open Gmail">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until">Чекати, доки</string>
+    <string name="macro_step_if">Якщо</string>
+    <string name="macro_step_else_if">Інакше, якщо</string>
+    <string name="macro_step_else">Інакше</string>
+    <string name="macro_step_end_if">Кінець «Якщо»</string>
+    <string name="macro_step_repeat">Повторювати</string>
+    <string name="macro_step_repeat_while">Повторювати, поки</string>
+    <string name="macro_step_end_repeat">Кінець «Повторювати»</string>
+    <string name="macro_step_exit_loop">Вийти з циклу</string>
+    <string name="macro_step_if_value">Якщо <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_else_if_value">Інакше, якщо <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_repeat_while_value">Повторювати, поки <xliff:g id="condition" example="Item on screen: Load more">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until_value">Чекати, доки <xliff:g id="condition" example="Item on screen: Send">%1$s</xliff:g></string>
+    <plurals name="macro_step_repeat_value"><item quantity="one">Повторити <xliff:g id="count" example="3">%d</xliff:g> раз</item><item quantity="few">Повторити <xliff:g id="count" example="3">%d</xliff:g> рази</item><item quantity="many">Повторити <xliff:g id="count" example="3">%d</xliff:g> разів</item><item quantity="other">Повторити <xliff:g id="count" example="3">%d</xliff:g> раза</item></plurals>
+    <string name="macro_times">Разів</string>
+    <string name="macro_invalid_times">Введіть число від 1 до <xliff:g id="max" example="1000">%1$d</xliff:g></string>
+    <string name="macro_run_only_when">Запускати лише коли</string>
+    <string name="macro_always">Завжди</string>
+    <string name="macro_no_tests">Немає умов</string>
+    <string name="macro_add_test">Додати умову</string>
+    <string name="macro_tests">Умови</string>
+    <string name="macro_choose_test">Умова</string>
+    <string name="macro_test_item">Елемент на екрані</string>
+    <string name="macro_test_focused">Елемент у фокусі</string>
+    <string name="macro_test_app">Додаток на передньому плані</string>
+    <string name="macro_test_keyboard">Клавіатуру показано</string>
+    <string name="macro_test_keyboard_hidden">Клавіатуру приховано</string>
+    <string name="macro_test_locked">Екран заблоковано</string>
+    <string name="macro_test_unlocked">Екран розблоковано</string>
+    <string name="macro_test_item_value">Елемент на екрані: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_no_item_value">Немає елемента на екрані: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_focused_value">Елемент у фокусі: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_not_focused_value">Елемент у фокусі не є: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_app_value">Додаток на передньому плані: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_not_app_value">Додаток не на передньому плані: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_label_kind"><xliff:g id="label" example="Send">%1$s</xliff:g>, <xliff:g id="kind" example="Clickable">%2$s</xliff:g></string>
+    <string name="macro_join_and"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g> і <xliff:g id="second" example="Focused item: Editable">%2$s</xliff:g></string>
+    <string name="macro_join_or"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g> або <xliff:g id="second" example="Screen locked">%2$s</xliff:g></string>
+    <string name="macro_regex">Регулярний вираз</string>
+    <string name="macro_invalid_regex">Непридатний регулярний вираз. Групи, що повторюються, не можуть містити повторення або |.</string>
+    <string name="macro_match_in">Шукати в</string>
+    <string name="macro_field_any">Будь-який текст</string>
+    <string name="macro_field_text">Текст</string>
+    <string name="macro_field_description">Опис</string>
+    <string name="macro_field_hint">Підказка</string>
+    <string name="macro_field_state">Стан</string>
+    <string name="macro_field_id">Ідентифікатор ресурсу</string>
+    <string name="macro_field_value"><xliff:g id="label" example="send">%1$s</xliff:g> (<xliff:g id="field" example="Resource ID">%2$s</xliff:g>)</string>
+    <string name="macro_field_regex_value"><xliff:g id="pattern" example="^Reply">%1$s</xliff:g> (<xliff:g id="field" example="Description">%2$s</xliff:g>, регулярний вираз)</string>
+    <string name="macro_regex_value"><xliff:g id="pattern" example="Reply.*Anna">%1$s</xliff:g> (регулярний вираз)</string>
+    <string name="macro_test_label_optional">Текст елемента (необов’язково)</string>
+    <string name="macro_item_kind">Тип елемента</string>
+    <string name="macro_kind_any">Будь-який тип</string>
+    <string name="macro_kind_clickable">Натискний</string>
+    <string name="macro_kind_long_clickable">Із довгим натисканням</string>
+    <string name="macro_kind_editable">Редагований</string>
+    <string name="macro_kind_scrollable">Прокручуваний</string>
+    <string name="macro_kind_adjustable">Регульований</string>
+    <string name="macro_kind_checkable">З позначкою</string>
+    <string name="macro_kind_checked">Позначений</string>
+    <string name="macro_kind_selected">Вибраний</string>
+    <string name="macro_kind_heading">Заголовок</string>
+    <string name="macro_kind_enabled">Увімкнений</string>
+    <string name="macro_change_to">Змінити на: <xliff:g id="test" example="Keyboard hidden">%1$s</xliff:g></string>
+    <string name="macro_join_with_and">Поєднати через «і»</string>
+    <string name="macro_join_with_or">Поєднати через «або»</string>
+    <string name="macro_clause_and">і <xliff:g id="test" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_clause_or">або <xliff:g id="test" example="Screen locked">%1$s</xliff:g></string>
+    <string name="macro_wait_timeout">Секунд очікування</string>
+    <string name="macro_add_step_after">Додати крок після</string>
+    <string name="macro_problem">Крок <xliff:g id="step" example="3">%1$d</xliff:g>: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_problem_no_if">«Інакше, якщо», «Інакше» або «Кінець “Якщо”» без «Якщо»</string>
+    <string name="macro_problem_after_else">«Інакше, якщо» або «Інакше» після «Інакше»</string>
+    <string name="macro_problem_no_repeat">«Кінець “Повторювати”» без «Повторювати»</string>
+    <string name="macro_problem_no_end_if">«Якщо» без «Кінець “Якщо”»</string>
+    <string name="macro_problem_no_end_repeat">«Повторювати» без «Кінець “Повторювати”»</string>
+    <string name="macro_problem_exit">«Вийти з циклу» поза циклом</string>
+    <string name="macro_stopped_problem">Макрос зупинено. Крок <xliff:g id="step" example="3">%1$d</xliff:g>: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_stopped_repeats">Макрос зупинено. Повторено <xliff:g id="count" example="1000">%1$d</xliff:g> разів: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
+    <string name="macro_stopped_timeout">Макрос зупинено. Час очікування вичерпано: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
+    <string name="macro_not_met">Макрос не запущено. Запускати лише коли: умову не виконано</string>
+</resources>

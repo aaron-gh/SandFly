@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_macros">Makrokomandos</string>
+    <string name="shortcut_stop_macro">Sustabdyti makrokomandą</string>
+    <string name="macro_add">Pridėti makrokomandą</string>
+    <string name="macro_run_now">Vykdyti dabar</string>
+    <string name="macro_add_step">Pridėti veiksmą</string>
+    <string name="macro_add_at_end">Pabaigoje</string>
+    <string name="macro_add_at_start">Pradžioje</string>
+    <string name="macro_add_after">Po <xliff:g id="step" example="2">%1$d</xliff:g> veiksmo: <xliff:g id="name" example="If App in front: Chrome">%2$s</xliff:g></string>
+    <string name="macro_steps">Veiksmai</string>
+    <string name="macro_no_steps">Nėra veiksmų</string>
+    <string name="macro_delete">Ištrinti makrokomandą</string>
+    <string name="macro_delete_confirm">Ištrinti „<xliff:g id="name" example="Send message">%1$s</xliff:g>“?</string>
+    <string name="macro_step_command">Vykdyti komandą</string>
+    <string name="macro_step_wait">Laukti</string>
+    <string name="macro_step_tap">Paliesti elementą</string>
+    <string name="macro_step_focus">Sufokusuoti elementą</string>
+    <string name="macro_step_speak_item">Tarti elementą</string>
+    <string name="macro_step_speak_text">Tarti tekstą</string>
+    <string name="macro_step_type">Įvesti tekstą</string>
+    <string name="macro_step_tap_value">Paliesti: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_focus_value">Sufokusuoti: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_item_value">Tarti: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_text_value">Tarti: <xliff:g id="text" example="Done">%1$s</xliff:g></string>
+    <string name="macro_step_type_value">Įvesti: <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <string name="macro_step_replace_value">Pakeisti tekstą į <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <plurals name="macro_step_wait_seconds">
+        <item quantity="one">Laukti <xliff:g id="count" example="1">%d</xliff:g> sekundę</item>
+        <item quantity="few">Laukti <xliff:g id="count" example="2">%d</xliff:g> sekundes</item>
+        <item quantity="many">Laukti <xliff:g id="count" example="2">%d</xliff:g> sekundės</item>
+        <item quantity="other">Laukti <xliff:g id="count" example="2">%d</xliff:g> sekundžių</item>
+    </plurals>
+    <plurals name="macro_step_wait_milliseconds">
+        <item quantity="one">Laukti <xliff:g id="count" example="1">%d</xliff:g> milisekundę</item>
+        <item quantity="few">Laukti <xliff:g id="count" example="500">%d</xliff:g> milisekundes</item>
+        <item quantity="many">Laukti <xliff:g id="count" example="500">%d</xliff:g> milisekundės</item>
+        <item quantity="other">Laukti <xliff:g id="count" example="500">%d</xliff:g> milisekundžių</item>
+    </plurals>
+    <string name="macro_step_unavailable">Nepasiekiama</string>
+    <string name="macro_seconds">Sekundės</string>
+    <string name="macro_invalid_seconds">Įveskite sekundžių skaičių iki <xliff:g id="max" example="600">%1$d</xliff:g></string>
+    <string name="macro_tap_label">Elemento tekstas</string>
+    <string name="macro_tap_timeout">Sekundės, kiek laukti elemento</string>
+    <string name="macro_text">Tekstas</string>
+    <string name="macro_replace_text">Pakeisti tekstą lauke</string>
+    <string name="macro_item_not_found">Makrokomanda sustabdyta. Nerasta: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_failed">Makrokomanda sustabdyta. Nepavyko: <xliff:g id="step" example="Open Gmail">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until">Laukti, kol</string>
+    <string name="macro_step_if">Jei</string>
+    <string name="macro_step_else_if">Kitu atveju, jei</string>
+    <string name="macro_step_else">Kitu atveju</string>
+    <string name="macro_step_end_if">Jei pabaiga</string>
+    <string name="macro_step_repeat">Kartoti</string>
+    <string name="macro_step_repeat_while">Kartoti, kol</string>
+    <string name="macro_step_end_repeat">Kartojimo pabaiga</string>
+    <string name="macro_step_exit_loop">Išeiti iš ciklo</string>
+    <string name="macro_step_if_value">Jei <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_else_if_value">Kitu atveju, jei <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_repeat_while_value">Kartoti, kol <xliff:g id="condition" example="Item on screen: Load more">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until_value">Laukti, kol <xliff:g id="condition" example="Item on screen: Send">%1$s</xliff:g></string>
+    <plurals name="macro_step_repeat_value">
+        <item quantity="one">Kartoti <xliff:g id="count" example="1">%d</xliff:g> kartą</item>
+        <item quantity="few">Kartoti <xliff:g id="count" example="3">%d</xliff:g> kartus</item>
+        <item quantity="many">Kartoti <xliff:g id="count" example="3">%d</xliff:g> karto</item>
+        <item quantity="other">Kartoti <xliff:g id="count" example="3">%d</xliff:g> kartų</item>
+    </plurals>
+    <string name="macro_times">Kartai</string>
+    <string name="macro_invalid_times">Įveskite skaičių nuo 1 iki <xliff:g id="max" example="1000">%1$d</xliff:g></string>
+    <string name="macro_run_only_when">Vykdyti tik tada, kai</string>
+    <string name="macro_always">Visada</string>
+    <string name="macro_no_tests">Nėra sąlygų</string>
+    <string name="macro_add_test">Pridėti sąlygą</string>
+    <string name="macro_tests">Sąlygos</string>
+    <string name="macro_choose_test">Sąlyga</string>
+    <string name="macro_test_item">Elementas ekrane</string>
+    <string name="macro_test_focused">Sufokusuotas elementas</string>
+    <string name="macro_test_app">Programa priekyje</string>
+    <string name="macro_test_keyboard">Klaviatūra rodoma</string>
+    <string name="macro_test_keyboard_hidden">Klaviatūra paslėpta</string>
+    <string name="macro_test_locked">Ekranas užrakintas</string>
+    <string name="macro_test_unlocked">Ekranas atrakintas</string>
+    <string name="macro_test_item_value">Elementas ekrane: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_no_item_value">Elemento ekrane nėra: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_focused_value">Sufokusuotas elementas: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_not_focused_value">Sufokusuotas ne šis elementas: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_app_value">Programa priekyje: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_not_app_value">Programa ne priekyje: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_label_kind"><xliff:g id="label" example="Send">%1$s</xliff:g>, <xliff:g id="kind" example="Clickable">%2$s</xliff:g></string>
+    <string name="macro_join_and"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g> ir <xliff:g id="second" example="Focused item: Editable">%2$s</xliff:g></string>
+    <string name="macro_join_or"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g> arba <xliff:g id="second" example="Screen locked">%2$s</xliff:g></string>
+    <string name="macro_regex">Reguliarioji išraiška</string>
+    <string name="macro_invalid_regex">Netinkama reguliarioji išraiška. Pasikartojančiose grupėse negali būti kartojimo arba |.</string>
+    <string name="macro_match_in">Ieškoti</string>
+    <string name="macro_field_any">Bet koks tekstas</string>
+    <string name="macro_field_text">Tekstas</string>
+    <string name="macro_field_description">Aprašymas</string>
+    <string name="macro_field_hint">Užuomina</string>
+    <string name="macro_field_state">Būsena</string>
+    <string name="macro_field_id">Ištekliaus ID</string>
+    <string name="macro_field_value"><xliff:g id="label" example="send">%1$s</xliff:g> (<xliff:g id="field" example="Resource ID">%2$s</xliff:g>)</string>
+    <string name="macro_field_regex_value"><xliff:g id="pattern" example="^Reply">%1$s</xliff:g> (<xliff:g id="field" example="Description">%2$s</xliff:g>, reguliarioji išraiška)</string>
+    <string name="macro_regex_value"><xliff:g id="pattern" example="Reply.*Anna">%1$s</xliff:g> (reguliarioji išraiška)</string>
+    <string name="macro_test_label_optional">Elemento tekstas (neprivaloma)</string>
+    <string name="macro_item_kind">Elemento tipas</string>
+    <string name="macro_kind_any">Bet koks tipas</string>
+    <string name="macro_kind_clickable">Paliečiamas</string>
+    <string name="macro_kind_long_clickable">Ilgai paliečiamas</string>
+    <string name="macro_kind_editable">Redaguojamas</string>
+    <string name="macro_kind_scrollable">Slenkamas</string>
+    <string name="macro_kind_adjustable">Reguliuojamas</string>
+    <string name="macro_kind_checkable">Pažymimas</string>
+    <string name="macro_kind_checked">Pažymėta</string>
+    <string name="macro_kind_selected">Pasirinkta</string>
+    <string name="macro_kind_heading">Antraštė</string>
+    <string name="macro_kind_enabled">Įgalinta</string>
+    <string name="macro_change_to">Keisti į: <xliff:g id="test" example="Keyboard hidden">%1$s</xliff:g></string>
+    <string name="macro_join_with_and">Sujungti su „ir“</string>
+    <string name="macro_join_with_or">Sujungti su „arba“</string>
+    <string name="macro_clause_and">ir <xliff:g id="test" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_clause_or">arba <xliff:g id="test" example="Screen locked">%1$s</xliff:g></string>
+    <string name="macro_wait_timeout">Sekundės, kiek laukti</string>
+    <string name="macro_add_step_after">Pridėti veiksmą po</string>
+    <string name="macro_problem"><xliff:g id="step" example="3">%1$d</xliff:g> veiksmas: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_problem_no_if">„Kitu atveju, jei“, „Kitu atveju“ arba „Jei pabaiga“ be „Jei“</string>
+    <string name="macro_problem_after_else">„Kitu atveju, jei“ arba „Kitu atveju“ po „Kitu atveju“</string>
+    <string name="macro_problem_no_repeat">„Kartojimo pabaiga“ be „Kartoti“</string>
+    <string name="macro_problem_no_end_if">„Jei“ be „Jei pabaiga“</string>
+    <string name="macro_problem_no_end_repeat">„Kartoti“ be „Kartojimo pabaiga“</string>
+    <string name="macro_problem_exit">„Išeiti iš ciklo“ ne kartojimo viduje</string>
+    <string name="macro_stopped_problem">Makrokomanda sustabdyta. <xliff:g id="step" example="3">%1$d</xliff:g> veiksmas: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_stopped_repeats">Makrokomanda sustabdyta. Pakartota <xliff:g id="count" example="1000">%1$d</xliff:g> k.: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
+    <string name="macro_stopped_timeout">Makrokomanda sustabdyta. Baigėsi laikas: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
+    <string name="macro_not_met">Makrokomanda nevykdyta. Vykdyti tik tada, kai: sąlyga neįvykdyta</string>
+</resources>

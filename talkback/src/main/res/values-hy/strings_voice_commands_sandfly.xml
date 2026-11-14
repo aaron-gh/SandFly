@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_voice_commands">Ձայնային հրամաններ</string>
+    <string name="title_pref_voice_commands_ai">Հասկանալ ձայնային հրամանները AI-ով</string>
+    <string name="voice_commands_custom">Հատուկ ձայնային հրամաններ</string>
+    <string name="voice_command_add">Ավելացնել ձայնային հրաման</string>
+    <string name="voice_command_phrase">Արտահայտություն</string>
+    <string name="voice_command_change_phrase">Փոխել արտահայտությունը</string>
+    <string name="voice_command_change_command">Փոխել հրամանը</string>
+    <string name="voice_command_delete_confirm">Ջնջե՞լ «<xliff:g id="phrase" example="Good morning">%1$s</xliff:g>»-ը</string>
+    <string name="voice_command_phrase_exists">«<xliff:g id="phrase" example="Good morning">%1$s</xliff:g>»-ն արդեն ձայնային հրաման է</string>
+    <string name="voice_commands_not_understood">Չհասկացվեց՝ <xliff:g id="text" example="open the door">%1$s</xliff:g></string>
+    <string name="voice_commands_not_available">Հասանելի չէ՝ <xliff:g id="name" example="Morning macro">%1$s</xliff:g></string>
+    <string name="voice_commands_not_found">Չգտնվեց՝ <xliff:g id="label" example="Settings">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app"><xliff:g id="name" example="Signal">%1$s</xliff:g> անունով հավելված չկա</string>
+    <string name="voice_commands_no_app_for_action">Այս գործողության համար հավելված չկա</string>
+    <string name="voice_commands_calling">Զանգում է՝ <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_call_permission">Թույլատրեք հեռախոսային զանգերը, ապա նորից ասեք հրամանը։</string>
+    <string name="voice_commands_contacts_permission">Թույլատրեք կոնտակտների հասանելիությունը, ապա նորից ասեք հրամանը։</string>
+    <string name="voice_commands_no_contact"><xliff:g id="name" example="Sam">%1$s</xliff:g> անունով կոնտակտ չկա</string>
+    <string name="voice_commands_contacts_several"><xliff:g id="name" example="Sam">%1$s</xliff:g> անունով մեկից ավելի կոնտակտ կա՝ <xliff:g id="names" example="Sam Jones, Sam Smith">%2$s</xliff:g></string>
+    <string name="voice_commands_message_text">Հաղորդագրություն՝ <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_message_confirm">Ուղարկե՞լ <xliff:g id="name" example="Sam">%1$s</xliff:g>-ին՝ <xliff:g id="text" example="I am on my way">%2$s</xliff:g></string>
+    <string name="voice_commands_message_confirm_result">Ուղարկե՞լ <xliff:g id="name" example="Sam">%1$s</xliff:g>-ին</string>
+    <string name="voice_commands_message_not_sent">Հաղորդագրությունը չուղարկվեց</string>
+    <string name="voice_commands_send_pressed">Ուղարկելը սեղմվեց</string>
+    <string name="voice_commands_send_button">Ուղարկել</string>
+    <string name="voice_commands_no_description">Նկարագրություն չստացվեց</string>
+    <string name="voice_commands_copied">Պատճենվեց</string>
+    <string-array name="voice_commands_chain_words">
+        <item>և հետո</item>
+        <item>հետո</item>
+        <item>դրանից հետո</item>
+        <item>ապա</item>
+    </string-array>
+    <string-array name="voice_commands_and_words">
+        <item>և</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_start">
+        <item>խնդրում եմ</item>
+        <item>կարող ես</item>
+        <item>կարող եք</item>
+        <item>ուզում եմ</item>
+        <item>հիմա</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_end">
+        <item>խնդրում եմ</item>
+        <item>ինձ համար</item>
+        <item>հիմա</item>
+    </string-array>
+    <string-array name="voice_commands_cancel_words">
+        <item>կանգ</item>
+        <item>չեղարկել</item>
+        <item>չեղարկիր</item>
+        <item>դադարեցրու</item>
+        <item>մոռացիր</item>
+        <item>լռիր</item>
+    </string-array>
+    <string-array name="voice_commands_yes">
+        <item>այո</item>
+        <item>հա</item>
+        <item>ուղարկիր</item>
+        <item>ուղարկել</item>
+        <item>լավ</item>
+        <item>օքեյ</item>
+        <item>իհարկե</item>
+        <item>արա</item>
+    </string-array>
+    <string-array name="voice_commands_sms_names">
+        <item>SMS</item>
+        <item>հաղորդագրություն</item>
+        <item>տեքստային հաղորդագրություն</item>
+        <item>հաղորդագրություններ</item>
+    </string-array>
+    <string-array name="voice_commands_send_image_description">
+        <item>ուղարկիր պատկերի նկարագրությունը {who}</item>
+        <item>ուղարկիր նկարի նկարագրությունը {who}</item>
+        <item>ուղարկիր լուսանկարի նկարագրությունը {who}</item>
+        <item>ուղարկիր {who} պատկերի նկարագրությունը</item>
+    </string-array>
+    <string-array name="voice_commands_send_screen_description">
+        <item>ուղարկիր էկրանի նկարագրությունը {who}</item>
+        <item>ուղարկիր {who} էկրանի նկարագրությունը</item>
+    </string-array>
+    <string-array name="voice_commands_send_previous">
+        <item>ուղարկիր սա {who} {app} հավելվածով</item>
+        <item>ուղարկիր սա {who}</item>
+        <item>ուղարկիր նկարագրությունը {who}</item>
+        <item>կիսվիր սրանով {who}</item>
+    </string-array>
+    <string-array name="voice_commands_message">
+        <item>ուղարկիր հաղորդագրություն {who} {app} հավելվածով {text}</item>
+        <item>ուղարկիր {who} հաղորդագրություն {text}</item>
+        <item>ուղարկիր հաղորդագրություն {whoandtext}</item>
+        <item>ուղարկիր {app} հաղորդագրություն {who} {text}</item>
+        <item>գրիր {who} {app} հավելվածով {text}</item>
+        <item>գրիր {who} {text}</item>
+        <item>ասա {who} {app} հավելվածով {text}</item>
+        <item>գրիր {whoandtext}</item>
+    </string-array>
+    <string-array name="voice_commands_call">
+        <item>զանգիր {who}</item>
+        <item>զանգահարիր {who}</item>
+        <item>հավաքիր {who}</item>
+        <item>զանգ կատարիր {who}</item>
+    </string-array>
+    <string-array name="voice_commands_describe_screen">
+        <item>նկարագրիր էկրանը</item>
+        <item>նկարագրիր ինչ կա էկրանին</item>
+        <item>ինչ կա էկրանին</item>
+    </string-array>
+    <string-array name="voice_commands_describe_image">
+        <item>նկարագրիր [այս] պատկերը</item>
+        <item>նկարագրիր [այս] նկարը</item>
+        <item>նկարագրիր [այս] լուսանկարը</item>
+        <item>ինչ կա [այս] պատկերում</item>
+        <item>ինչ կա [այս] նկարում</item>
+        <item>ինչ կա [այս] լուսանկարում</item>
+    </string-array>
+    <string-array name="voice_commands_copy_result">
+        <item>պատճենիր սա</item>
+        <item>պատճենիր նկարագրությունը</item>
+        <item>պատճենիր ինչ [հենց նոր] ասացիր</item>
+        <item>պատճենիր վերջին արտասանված արտահայտությունը</item>
+        <item>պատճենիր վերջին արտահայտությունը</item>
+    </string-array>
+    <string-array name="voice_commands_wait">
+        <item>սպասիր {n} վայրկյան</item>
+        <item>սպասիր վայրկյան</item>
+        <item>սպասիր</item>
+    </string-array>
+    <string-array name="voice_commands_type_text">
+        <item>մուտքագրիր {text}</item>
+        <item>տպիր {text}</item>
+        <item>լրացրու {text}</item>
+    </string-array>
+    <string-array name="voice_commands_run">
+        <item>գործարկիր {command} մակրոն</item>
+        <item>գործարկիր մակրոն {command}</item>
+        <item>գործարկիր {command}</item>
+        <item>կատարիր {command}</item>
+    </string-array>
+    <string-array name="voice_commands_open">
+        <item>բացիր {app}</item>
+        <item>գործարկիր {app}</item>
+        <item>միացրու {app}</item>
+        <item>անցիր {app}</item>
+    </string-array>
+    <string-array name="voice_commands_tap">
+        <item>երկու անգամ հպիր {label}</item>
+        <item>հպիր {label}</item>
+        <item>սեղմիր {label}</item>
+        <item>ակտիվացրու {label}</item>
+        <item>ընտրիր {label}</item>
+    </string-array>
+</resources>

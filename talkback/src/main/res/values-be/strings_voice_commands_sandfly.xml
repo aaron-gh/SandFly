@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_voice_commands">Галасавыя каманды</string>
+    <string name="title_pref_voice_commands_ai">Распазнаваць галасавыя каманды з дапамогай AI</string>
+    <string name="voice_commands_custom">Уласныя галасавыя каманды</string>
+    <string name="voice_command_add">Дадаць галасавую каманду</string>
+    <string name="voice_command_phrase">Фраза</string>
+    <string name="voice_command_change_phrase">Змяніць фразу</string>
+    <string name="voice_command_change_command">Змяніць каманду</string>
+    <string name="voice_command_delete_confirm">Выдаліць «<xliff:g id="phrase" example="Good morning">%1$s</xliff:g>»?</string>
+    <string name="voice_command_phrase_exists">«<xliff:g id="phrase" example="Good morning">%1$s</xliff:g>» ужо ёсць сярод галасавых каманд</string>
+    <string name="voice_commands_not_understood">Не зразумела: <xliff:g id="text" example="open the door">%1$s</xliff:g></string>
+    <string name="voice_commands_not_available">Недаступна: <xliff:g id="name" example="Morning macro">%1$s</xliff:g></string>
+    <string name="voice_commands_not_found">Не знойдзена: <xliff:g id="label" example="Settings">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app">Няма праграмы з назвай <xliff:g id="name" example="Signal">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app_for_action">Няма праграмы для гэтага дзеяння</string>
+    <string name="voice_commands_calling">Выклік: <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_call_permission">Дазвольце тэлефонныя выклікі, потым паўтарыце каманду.</string>
+    <string name="voice_commands_contacts_permission">Дазвольце доступ да кантактаў, потым паўтарыце каманду.</string>
+    <string name="voice_commands_no_contact">Няма кантакту з імем <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_contacts_several">Некалькі кантактаў з імем <xliff:g id="name" example="Sam">%1$s</xliff:g>: <xliff:g id="names" example="Sam Jones, Sam Smith">%2$s</xliff:g></string>
+    <string name="voice_commands_message_text">Паведамленне для <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_message_confirm">Адправіць для <xliff:g id="name" example="Sam">%1$s</xliff:g>: <xliff:g id="text" example="I am on my way">%2$s</xliff:g>?</string>
+    <string name="voice_commands_message_confirm_result">Адправіць для <xliff:g id="name" example="Sam">%1$s</xliff:g>?</string>
+    <string name="voice_commands_message_not_sent">Паведамленне не адпраўлена</string>
+    <string name="voice_commands_send_pressed">Націснута «Адправіць»</string>
+    <string name="voice_commands_send_button">Адправіць</string>
+    <string name="voice_commands_no_description">Апісанне не атрымана</string>
+    <string name="voice_commands_copied">Скапіравана</string>
+    <string-array name="voice_commands_chain_words">
+        <item>а потым</item>
+        <item>потым</item>
+        <item>пасля гэтага</item>
+        <item>затым</item>
+        <item>пасля чаго</item>
+    </string-array>
+    <string-array name="voice_commands_and_words">
+        <item>і</item>
+        <item>а таксама</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_start">
+        <item>калі ласка</item>
+        <item>ці можаш</item>
+        <item>ці можаце</item>
+        <item>ці мог бы ты</item>
+        <item>ці маглі б вы</item>
+        <item>я хачу</item>
+        <item>я хацеў бы</item>
+        <item>я хацела б</item>
+        <item>цяпер</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_end">
+        <item>калі ласка</item>
+        <item>для мяне</item>
+        <item>цяпер</item>
+        <item>калі можна</item>
+    </string-array>
+    <string-array name="voice_commands_cancel_words">
+        <item>стоп</item>
+        <item>скасаваць</item>
+        <item>скасуй</item>
+        <item>скасуйце</item>
+        <item>адмяні</item>
+        <item>адмяніць</item>
+        <item>забудзь</item>
+        <item>забудзьце</item>
+        <item>змоўкні</item>
+        <item>хопіць</item>
+        <item>спыні</item>
+        <item>спыніць</item>
+    </string-array>
+    <string-array name="voice_commands_yes">
+        <item>так</item>
+        <item>ага</item>
+        <item>угу</item>
+        <item>добра</item>
+        <item>ладна</item>
+        <item>вядома</item>
+        <item>безумоўна</item>
+        <item>адправіць</item>
+        <item>адправі</item>
+        <item>адпраўце</item>
+        <item>адправі яго</item>
+        <item>давай</item>
+        <item>рабі</item>
+        <item>ок</item>
+        <item>окей</item>
+    </string-array>
+    <string-array name="voice_commands_sms_names">
+        <item>SMS</item>
+        <item>смс</item>
+        <item>тэкст</item>
+        <item>тэкставае паведамленне</item>
+        <item>паведамленні</item>
+        <item>эсэмэс</item>
+    </string-array>
+    <string-array name="voice_commands_send_image_description">
+        <item>адправі апісанне [гэтага] відарыса для {who}</item>
+        <item>адправі апісанне [гэтага] малюнка для {who}</item>
+        <item>адправіць апісанне [гэтага] відарыса для {who}</item>
+        <item>адправіць апісанне [гэтага] малюнка для {who}</item>
+        <item>адпраўце апісанне [гэтага] відарыса для {who}</item>
+        <item>адпраўце апісанне [гэтага] малюнка для {who}</item>
+        <item>адправі апісанне [гэтага] фота для {who}</item>
+        <item>адправіць апісанне [гэтага] фота для {who}</item>
+        <item>адпраўце апісанне [гэтага] фота для {who}</item>
+        <item>адправі {who} апісанне [гэтага] відарыса</item>
+    </string-array>
+    <string-array name="voice_commands_send_screen_description">
+        <item>адправі апісанне [гэтага] экрана для {who}</item>
+        <item>адправіць апісанне [гэтага] экрана для {who}</item>
+        <item>адпраўце апісанне [гэтага] экрана для {who}</item>
+        <item>адправі {who} апісанне [гэтага] экрана</item>
+    </string-array>
+    <string-array name="voice_commands_send_previous">
+        <item>адправі гэта для {who} у {app}</item>
+        <item>адправі гэта для {who} праз {app}</item>
+        <item>адправі гэта для {who}</item>
+        <item>адправіць гэта для {who}</item>
+        <item>адпраўце гэта для {who}</item>
+        <item>адправі {who} гэта</item>
+        <item>адправі апісанне для {who}</item>
+        <item>адправіць апісанне для {who}</item>
+        <item>падзяліся гэтым з {who}</item>
+        <item>падзяліцеся гэтым з {who}</item>
+    </string-array>
+    <string-array name="voice_commands_message">
+        <item>адправі паведамленне для {who} у {app} з тэкстам {text}</item>
+        <item>адправіць паведамленне для {who} у {app} з тэкстам {text}</item>
+        <item>адпраўце паведамленне для {who} у {app} з тэкстам {text}</item>
+        <item>адправі паведамленне для {who} з тэкстам {text}</item>
+        <item>адправіць паведамленне для {who} з тэкстам {text}</item>
+        <item>адпраўце паведамленне для {who} з тэкстам {text}</item>
+        <item>адправі паведамленне для {whoandtext}</item>
+        <item>адправіць паведамленне для {whoandtext}</item>
+        <item>адправі паведамленне {app} для {who} з тэкстам {text}</item>
+        <item>адправі паведамленне {app} для {who}</item>
+        <item>адправі {who} паведамленне з тэкстам {text}</item>
+        <item>напішы {who} у {app} з тэкстам {text}</item>
+        <item>напішы {who} з тэкстам {text}</item>
+        <item>напішыце {who} з тэкстам {text}</item>
+        <item>напішы {who} {text}</item>
+        <item>скажы {who} у {app} {text}</item>
+        <item>паведамі {who} у {app} {text}</item>
+        <item>паведамі {who} {text}</item>
+        <item>напішы {whoandtext}</item>
+        <item>напішыце {whoandtext}</item>
+        <item>паведамленне {whoandtext}</item>
+    </string-array>
+    <string-array name="voice_commands_call">
+        <item>пазваніць {who}</item>
+        <item>пазвані {who}</item>
+        <item>пазваніце {who}</item>
+        <item>патэлефанаваць {who}</item>
+        <item>патэлефануй {who}</item>
+        <item>патэлефануйце {who}</item>
+        <item>набяры {who}</item>
+        <item>набраць {who}</item>
+        <item>зрабі званок {who}</item>
+        <item>званок {who}</item>
+    </string-array>
+    <string-array name="voice_commands_describe_screen">
+        <item>апішы экран</item>
+        <item>апішыце экран</item>
+        <item>апісаць экран</item>
+        <item>апішы што на экране</item>
+        <item>што на экране</item>
+        <item>што ў мяне на экране</item>
+        <item>што адбываецца на экране</item>
+    </string-array>
+    <string-array name="voice_commands_describe_image">
+        <item>апішы [гэты] відарыс</item>
+        <item>апішы [гэты] малюнак</item>
+        <item>апішы [гэтае] фота</item>
+        <item>апішыце [гэты] відарыс</item>
+        <item>апісаць [гэты] відарыс</item>
+        <item>што на [гэтым] відарысе</item>
+        <item>што на [гэтым] малюнку</item>
+        <item>што на [гэтым] фота</item>
+        <item>што намалявана на [гэтым] малюнку</item>
+    </string-array>
+    <string-array name="voice_commands_copy_result">
+        <item>скапіруй гэта</item>
+        <item>скапіруйце гэта</item>
+        <item>скапіраваць гэта</item>
+        <item>скапіруй апісанне</item>
+        <item>скапіруй тое што ты [толькі што] сказаў</item>
+        <item>скапіруй тое што вы [толькі што] сказалі</item>
+        <item>скапіруй [апошнюю] агучаную фразу</item>
+        <item>скапіруй апошнюю фразу</item>
+        <item>скапіруй апошняе сказанае</item>
+        <item>скапіруй тое што было сказана</item>
+    </string-array>
+    <string-array name="voice_commands_wait">
+        <item>пачакай {n} секунд</item>
+        <item>пачакай {n} секунды</item>
+        <item>пачакай {n} секунду</item>
+        <item>пачакайце {n} секунд</item>
+        <item>пачакаць {n} секунд</item>
+        <item>пачакай [адну] секунду</item>
+        <item>пачакайце [адну] секунду</item>
+        <item>пачакай</item>
+        <item>пачакайце</item>
+    </string-array>
+    <string-array name="voice_commands_type_text">
+        <item>увядзі {text}</item>
+        <item>увядзіце {text}</item>
+        <item>увесці {text}</item>
+        <item>надрукуй {text}</item>
+        <item>надрукуйце {text}</item>
+        <item>напішы тэкст {text}</item>
+        <item>набяры тэкст {text}</item>
+    </string-array>
+    <string-array name="voice_commands_run">
+        <item>запусці [макрас] {command}</item>
+        <item>запусціце [макрас] {command}</item>
+        <item>запусці {command}</item>
+        <item>запусціць {command}</item>
+        <item>выканай [макрас] {command}</item>
+        <item>выканайце [макрас] {command}</item>
+        <item>выканаць {command}</item>
+    </string-array>
+    <string-array name="voice_commands_open">
+        <item>адкрый {app}</item>
+        <item>адкрыйце {app}</item>
+        <item>адкрыць {app}</item>
+        <item>запусці {app}</item>
+        <item>запусціце {app}</item>
+        <item>перайдзі ў {app}</item>
+        <item>пераключыся на {app}</item>
+        <item>уключы {app}</item>
+    </string-array>
+    <string-array name="voice_commands_tap">
+        <item>двойчы націсні [на] {label}</item>
+        <item>двойчы націсніце [на] {label}</item>
+        <item>націсні [на] {label}</item>
+        <item>націсніце [на] {label}</item>
+        <item>націснуць [на] {label}</item>
+        <item>клікні [на] {label}</item>
+        <item>актывуй {label}</item>
+        <item>выбяры {label}</item>
+        <item>выберы {label}</item>
+    </string-array>
+</resources>

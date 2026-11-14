@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_macros">Makra</string>
+    <string name="shortcut_stop_macro">Zastavit makro</string>
+    <string name="macro_add">Přidat makro</string>
+    <string name="macro_run_now">Spustit nyní</string>
+    <string name="macro_add_step">Přidat krok</string>
+    <string name="macro_add_at_end">Na konec</string>
+    <string name="macro_add_at_start">Na začátek</string>
+    <string name="macro_add_after">Za krok <xliff:g id="step" example="2">%1$d</xliff:g>: <xliff:g id="name" example="If App in front: Chrome">%2$s</xliff:g></string>
+    <string name="macro_steps">Kroky</string>
+    <string name="macro_no_steps">Žádné kroky</string>
+    <string name="macro_delete">Smazat makro</string>
+    <string name="macro_delete_confirm">Smazat <xliff:g id="name" example="Send message">%1$s</xliff:g>?</string>
+    <string name="macro_step_command">Spustit příkaz</string>
+    <string name="macro_step_wait">Počkat</string>
+    <string name="macro_step_tap">Klepnout na položku</string>
+    <string name="macro_step_focus">Zaměřit položku</string>
+    <string name="macro_step_speak_item">Přečíst položku</string>
+    <string name="macro_step_speak_text">Přečíst text</string>
+    <string name="macro_step_type">Napsat text</string>
+    <string name="macro_step_tap_value">Klepnout na <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_focus_value">Zaměřit <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_item_value">Přečíst <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_text_value">Přečíst <xliff:g id="text" example="Done">%1$s</xliff:g></string>
+    <string name="macro_step_type_value">Napsat <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <string name="macro_step_replace_value">Nahradit text textem <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <plurals name="macro_step_wait_seconds">
+        <item quantity="one">Počkat <xliff:g id="count" example="2">%d</xliff:g> sekundu</item>
+        <item quantity="few">Počkat <xliff:g id="count" example="2">%d</xliff:g> sekundy</item>
+        <item quantity="many">Počkat <xliff:g id="count" example="2">%d</xliff:g> sekundy</item>
+        <item quantity="other">Počkat <xliff:g id="count" example="2">%d</xliff:g> sekund</item>
+    </plurals>
+    <plurals name="macro_step_wait_milliseconds">
+        <item quantity="one">Počkat <xliff:g id="count" example="500">%d</xliff:g> milisekundu</item>
+        <item quantity="few">Počkat <xliff:g id="count" example="500">%d</xliff:g> milisekundy</item>
+        <item quantity="many">Počkat <xliff:g id="count" example="500">%d</xliff:g> milisekundy</item>
+        <item quantity="other">Počkat <xliff:g id="count" example="500">%d</xliff:g> milisekund</item>
+    </plurals>
+    <string name="macro_step_unavailable">Není k dispozici</string>
+    <string name="macro_seconds">Sekundy</string>
+    <string name="macro_invalid_seconds">Zadejte počet sekund nejvýše <xliff:g id="max" example="600">%1$d</xliff:g></string>
+    <string name="macro_tap_label">Text položky</string>
+    <string name="macro_tap_timeout">Sekundy čekání na položku</string>
+    <string name="macro_text">Text</string>
+    <string name="macro_replace_text">Nahradit text v poli</string>
+    <string name="macro_item_not_found">Makro zastaveno. Nenalezeno: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_failed">Makro zastaveno. Selhalo: <xliff:g id="step" example="Open Gmail">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until">Počkat, dokud</string>
+    <string name="macro_step_if">Pokud</string>
+    <string name="macro_step_else_if">Jinak pokud</string>
+    <string name="macro_step_else">Jinak</string>
+    <string name="macro_step_end_if">Konec podmínky</string>
+    <string name="macro_step_repeat">Opakovat</string>
+    <string name="macro_step_repeat_while">Opakovat, dokud</string>
+    <string name="macro_step_end_repeat">Konec opakování</string>
+    <string name="macro_step_exit_loop">Opustit smyčku</string>
+    <string name="macro_step_if_value">Pokud <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_else_if_value">Jinak pokud <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_repeat_while_value">Opakovat, dokud <xliff:g id="condition" example="Item on screen: Load more">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until_value">Počkat, dokud <xliff:g id="condition" example="Item on screen: Send">%1$s</xliff:g></string>
+    <plurals name="macro_step_repeat_value">
+        <item quantity="one">Opakovat <xliff:g id="count" example="3">%d</xliff:g>krát</item>
+        <item quantity="few">Opakovat <xliff:g id="count" example="3">%d</xliff:g>krát</item>
+        <item quantity="many">Opakovat <xliff:g id="count" example="3">%d</xliff:g>krát</item>
+        <item quantity="other">Opakovat <xliff:g id="count" example="3">%d</xliff:g>krát</item>
+    </plurals>
+    <string name="macro_times">Počet opakování</string>
+    <string name="macro_invalid_times">Zadejte číslo od 1 do <xliff:g id="max" example="1000">%1$d</xliff:g></string>
+    <string name="macro_run_only_when">Spustit pouze, když</string>
+    <string name="macro_always">Vždy</string>
+    <string name="macro_no_tests">Žádné podmínky</string>
+    <string name="macro_add_test">Přidat podmínku</string>
+    <string name="macro_tests">Podmínky</string>
+    <string name="macro_choose_test">Podmínka</string>
+    <string name="macro_test_item">Položka na obrazovce</string>
+    <string name="macro_test_focused">Zaměřená položka</string>
+    <string name="macro_test_app">Aplikace v popředí</string>
+    <string name="macro_test_keyboard">Klávesnice zobrazena</string>
+    <string name="macro_test_keyboard_hidden">Klávesnice skryta</string>
+    <string name="macro_test_locked">Obrazovka uzamčena</string>
+    <string name="macro_test_unlocked">Obrazovka odemčena</string>
+    <string name="macro_test_item_value">Položka na obrazovce: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_no_item_value">Žádná položka na obrazovce: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_focused_value">Zaměřená položka: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_not_focused_value">Zaměřená položka není: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_app_value">Aplikace v popředí: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_not_app_value">Aplikace není v popředí: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_label_kind"><xliff:g id="label" example="Send">%1$s</xliff:g>, <xliff:g id="kind" example="Clickable">%2$s</xliff:g></string>
+    <string name="macro_join_and"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g> a <xliff:g id="second" example="Focused item: Editable">%2$s</xliff:g></string>
+    <string name="macro_join_or"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g> nebo <xliff:g id="second" example="Screen locked">%2$s</xliff:g></string>
+    <string name="macro_regex">Regulární výraz</string>
+    <string name="macro_invalid_regex">Nepoužitelný regulární výraz. Opakované skupiny nesmí obsahovat opakování ani znak |.</string>
+    <string name="macro_match_in">Hledat v</string>
+    <string name="macro_field_any">Libovolný text</string>
+    <string name="macro_field_text">Text</string>
+    <string name="macro_field_description">Popis</string>
+    <string name="macro_field_hint">Nápověda</string>
+    <string name="macro_field_state">Stav</string>
+    <string name="macro_field_id">ID zdroje</string>
+    <string name="macro_field_value"><xliff:g id="label" example="send">%1$s</xliff:g> (<xliff:g id="field" example="Resource ID">%2$s</xliff:g>)</string>
+    <string name="macro_field_regex_value"><xliff:g id="pattern" example="^Reply">%1$s</xliff:g> (<xliff:g id="field" example="Description">%2$s</xliff:g>, regulární výraz)</string>
+    <string name="macro_regex_value"><xliff:g id="pattern" example="Reply.*Anna">%1$s</xliff:g> (regulární výraz)</string>
+    <string name="macro_test_label_optional">Text položky (nepovinné)</string>
+    <string name="macro_item_kind">Typ položky</string>
+    <string name="macro_kind_any">Libovolný typ</string>
+    <string name="macro_kind_clickable">Klepnutelná</string>
+    <string name="macro_kind_long_clickable">Podržitelná</string>
+    <string name="macro_kind_editable">Upravitelná</string>
+    <string name="macro_kind_scrollable">Posouvatelná</string>
+    <string name="macro_kind_adjustable">Nastavitelná</string>
+    <string name="macro_kind_checkable">Zaškrtávací</string>
+    <string name="macro_kind_checked">Zaškrtnutá</string>
+    <string name="macro_kind_selected">Vybraná</string>
+    <string name="macro_kind_heading">Nadpis</string>
+    <string name="macro_kind_enabled">Zapnutá</string>
+    <string name="macro_change_to">Změnit na: <xliff:g id="test" example="Keyboard hidden">%1$s</xliff:g></string>
+    <string name="macro_join_with_and">Spojit spojkou a</string>
+    <string name="macro_join_with_or">Spojit spojkou nebo</string>
+    <string name="macro_clause_and">a <xliff:g id="test" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_clause_or">nebo <xliff:g id="test" example="Screen locked">%1$s</xliff:g></string>
+    <string name="macro_wait_timeout">Sekundy čekání</string>
+    <string name="macro_add_step_after">Přidat krok za</string>
+    <string name="macro_problem">Krok <xliff:g id="step" example="3">%1$d</xliff:g>: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_problem_no_if">Jinak pokud, Jinak nebo Konec podmínky bez Pokud</string>
+    <string name="macro_problem_after_else">Jinak pokud nebo Jinak po Jinak</string>
+    <string name="macro_problem_no_repeat">Konec opakování bez Opakovat</string>
+    <string name="macro_problem_no_end_if">Pokud bez Konec podmínky</string>
+    <string name="macro_problem_no_end_repeat">Opakovat bez Konec opakování</string>
+    <string name="macro_problem_exit">Opustit smyčku mimo opakování</string>
+    <string name="macro_stopped_problem">Makro zastaveno. Krok <xliff:g id="step" example="3">%1$d</xliff:g>: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_stopped_repeats">Makro zastaveno. Opakováno <xliff:g id="count" example="1000">%1$d</xliff:g>krát: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
+    <string name="macro_stopped_timeout">Makro zastaveno. Vypršel čas: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
+    <string name="macro_not_met">Makro nebylo spuštěno. Spustit pouze, když: nesplněno</string>
+</resources>

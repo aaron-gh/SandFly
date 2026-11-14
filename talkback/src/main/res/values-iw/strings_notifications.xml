@@ -398,4 +398,13 @@
         <item>@string/notification_shake_3</item>
     </string-array>
     <string name="notification_clock_voice_notifications">קול ההתראות</string>
+    <string name="notification_exact_alarms_title">הפעלת \"התראות ותזכורות\"</string>
+    <string name="shortcut_toggle_time_announcements">הפעלה או כיבוי של הודעות זמן</string>
+    <string name="notification_clock_now_on">הודעות זמן מופעלות</string>
+    <string name="notification_clock_now_off">הודעות זמן כבויות</string>
+    <plurals name="notification_clock_battery">
+        <item quantity="one">אחוז אחד</item>
+        <item quantity="two">שני אחוזים</item>
+        <item quantity="other"><xliff:g id="percent" example="76">%d</xliff:g> אחוזים</item>
+    </plurals>
 </resources>

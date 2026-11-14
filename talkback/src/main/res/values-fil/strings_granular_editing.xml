@@ -46,4 +46,17 @@
     <string name="granular_editing_not_saved">Hindi na-save: wala na ang field ng text. Ang teksto ay kinopya.</string>
     <string name="granular_editing_no_text">Walang text na ie-edit</string>
     <string name="granular_editing_password">Hindi available sa mga field ng password</string>
+    <plurals name="granular_editing_spaces">
+        <item quantity="one"><xliff:g id="count" example="3">%d</xliff:g> espasyo</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> espasyo</item>
+    </plurals>
+    <plurals name="granular_editing_new_lines">
+        <item quantity="one"><xliff:g id="count" example="3">%d</xliff:g> bagong linya</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> bagong linya</item>
+    </plurals>
+    <plurals name="granular_editing_tabs">
+        <item quantity="one"><xliff:g id="count" example="3">%d</xliff:g> tab</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> tab</item>
+    </plurals>
+    <string name="granular_editing_blank_line">Walang laman na linya</string>
 </resources>

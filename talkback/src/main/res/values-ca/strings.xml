@@ -2029,4 +2029,144 @@
     <string name="value_keep_models_5">5 minuts</string>
     <string name="value_keep_models_15">15 minuts</string>
     <string name="value_keep_models_30">30 minuts</string>
+    <string name="title_pref_speech_equalizer_save_preset">Desa com a valor predefinit</string>
+    <string name="title_pref_speech_equalizer_saved_presets">Valors predefinits desats</string>
+    <string name="speech_equalizer_preset_name">Nom</string>
+    <string name="speech_equalizer_preset_name_taken">Ja hi ha un valor predefinit anomenat <xliff:g id="name" example="Podcast">%1$s</xliff:g></string>
+    <string name="speech_equalizer_presets_full">No es poden desar més valors predefinits. Suprimeix-ne un per desar-ne un altre.</string>
+    <string name="speech_equalizer_preset_saved"><xliff:g id="name" example="Podcast">%1$s</xliff:g> desat</string>
+    <string name="speech_equalizer_preset_rename">Canvia el nom</string>
+    <string name="speech_equalizer_preset_delete">Suprimeix</string>
+    <string name="speech_equalizer_preset_delete_confirm">Vols suprimir <xliff:g id="name" example="Podcast">%1$s</xliff:g>?</string>
+    <string name="speech_equalizer_preset_deleted"><xliff:g id="name" example="Podcast">%1$s</xliff:g> suprimit</string>
+    <string name="title_pref_emoji_voice">Veu dels emojis</string>
+    <string name="value_emoji_voice_same">Igual que la veu</string>
+    <string name="title_pref_emoji_rate">Velocitat de parla dels emojis</string>
+    <string name="title_pref_line_breaks_as_spaces">Llegeix els salts de línia com a espais</string>
+    <string name="title_pref_language_voices">Veus per idioma</string>
+    <string name="title_pref_identify_languages_from_words">Identifica els idiomes per les paraules</string>
+    <string name="title_pref_add_language">Afegeix un idioma</string>
+    <string name="title_pref_remove_language">Elimina l\'idioma</string>
+    <string name="title_pref_script_language">Escriptura %1$s</string>
+    <string name="title_pref_screen_on_notification_count">Nombre de notificacions</string>
+    <plurals name="template_screen_on_notification_count">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> notificació</item>
+        <item quantity="other"><xliff:g id="count" example="1">%d</xliff:g> notificacions</item>
+    </plurals>
+    <string name="title_pref_phonetic_letters_review">Enuncia les lletres amb exemples en revisar</string>
+    <string name="title_pref_phonetic_letters_typing">Enuncia les lletres amb exemples en escriure</string>
+    <string name="title_pref_emoji_suffix">Digues «emoji» després dels noms dels emojis</string>
+    <string name="overview_shizuku_not_running">Shizuku no s\'està executant</string>
+    <string name="overview_shizuku_not_allowed">Shizuku no permet SandFly</string>
+    <string name="overview_no_older_app">No hi ha cap aplicació més antiga</string>
+    <string name="overview_no_newer_app">No hi ha cap aplicació més recent</string>
+    <string name="stream_volume_needs_access">Permet l\'accés a No molestis per canviar aquest volum.</string>
+    <string name="corner_gestures_title">Cantonades</string>
+    <string name="shortcut_move_to_item_below">Ves a l\'element de sota</string>
+    <string name="shortcut_move_to_item_above">Ves a l\'element de dalt</string>
+    <string name="shortcut_older_app">Aplicació més antiga</string>
+    <string name="shortcut_newer_app">Aplicació més recent</string>
+    <string name="shortcut_answer_call">Respon la trucada</string>
+    <string name="answer_call_no_call">No hi ha cap trucada entrant</string>
+    <string name="answer_call_permission">Cal permís per respondre trucades</string>
+    <string name="shortcut_switch_keyboard">Canvia de teclat</string>
+    <string name="switch_keyboard_none">No hi ha cap altre teclat activat</string>
+    <string name="switch_keyboard_failed">No s\'ha canviat el teclat</string>
+    <string name="clipboard_history_hint">Llisca cap amunt o cap avall per triar i toca dues vegades per enganxar</string>
+    <string name="title_speech_history">Historial de veu</string>
+    <string name="speech_history_empty">Cap veu</string>
+    <string name="speech_history_clear">Esborra l\'historial</string>
+    <string name="title_pref_shortcut_corner_top_left_tap">Toca la cantonada superior esquerra</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap">Doble toc a la cantonada superior esquerra</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap">Triple toc a la cantonada superior esquerra</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap_hold">Doble toc i mantén premut a la cantonada superior esquerra</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap_hold">Triple toc i mantén premut a la cantonada superior esquerra</string>
+    <string name="title_pref_shortcut_corner_top_right_tap">Toca la cantonada superior dreta</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap">Doble toc a la cantonada superior dreta</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap">Triple toc a la cantonada superior dreta</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap_hold">Doble toc i mantén premut a la cantonada superior dreta</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap_hold">Triple toc i mantén premut a la cantonada superior dreta</string>
+    <string name="title_pref_shortcut_corner_bottom_left_tap">Toca la cantonada inferior esquerra</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap">Doble toc a la cantonada inferior esquerra</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap">Triple toc a la cantonada inferior esquerra</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap_hold">Doble toc i mantén premut a la cantonada inferior esquerra</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap_hold">Triple toc i mantén premut a la cantonada inferior esquerra</string>
+    <string name="title_pref_shortcut_corner_bottom_right_tap">Toca la cantonada inferior dreta</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap">Doble toc a la cantonada inferior dreta</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap">Triple toc a la cantonada inferior dreta</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap_hold">Doble toc i mantén premut a la cantonada inferior dreta</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap_hold">Triple toc i mantén premut a la cantonada inferior dreta</string>
+    <string name="title_pref_swipe_start_time">Temps d\'inici del gest</string>
+    <string name="title_pref_swipes_before_lift">Reconeix els lliscaments abans d\'alçar el dit</string>
+    <string name="summary_pref_swipes_before_lift">Desactiva els gestos d\'anada i tornada i en angle.</string>
+    <string name="title_pref_corner_size_mm">Mida de les cantonades</string>
+    <string name="value_corner_size_edge_width">Igual que l\'amplada de la vora</string>
+    <string name="title_pref_corner_tap_time_ms">Límit de temps del toc a les cantonades</string>
+    <string name="value_corner_tap_time_system">Predeterminat del sistema</string>
+    <string name="title_pref_edge_speak_commands">Digues l\'ordre a cada clic</string>
+    <string-array name="pref_volume_change_feedback_entries">
+        <item>@string/volume_change_feedback_off</item>
+        <item>@string/volume_change_feedback_tone</item>
+        <item>@string/volume_change_feedback_spoken</item>
+        <item>@string/volume_change_feedback_tone_and_spoken</item>
+    </string-array>
+    <string name="title_pref_volume_change_tone_during_media">Silencia el to durant la reproducció multimèdia</string>
+    <string name="title_pref_volume_change_speech_during_media">Silencia la veu durant la reproducció multimèdia</string>
+    <string name="title_pref_volume_change_interrupts_speech">Interromp la veu per anunciar el volum</string>
+    <string name="title_pref_volume_keys_speech_volume_while_speaking">Les tecles de volum canvien el volum de la veu mentre parla</string>
+    <string name="title_pref_double_tap_moves_cursor">El doble toc mou el cursor a l\'inici o al final</string>
+    <string name="title_pref_scroll_ahead">Desplaça per avançat fins a l\'element següent</string>
+    <string name="title_pref_speak_while_scrolling">Digues l\'element següent en desplaçar</string>
+    <string-array name="pref_text_entities_entries">
+    <item>@string/text_entity_web</item>
+    <item>@string/text_entity_email</item>
+    <item>@string/text_entity_phone</item>
+    <item>@string/text_entity_code</item>
+  </string-array>
+    <string name="value_keep_models_until_stopped">Fins que SandFly s\'aturi</string>
+    <string name="title_pref_model_download_server">Servidor de baixada de models</string>
+    <string name="title_pref_settings_profiles">Perfils de configuració</string>
+    <string name="title_pref_new_settings_profile">Perfil de configuració nou</string>
+    <string name="settings_profile_new_name">Perfil <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="settings_profile_name_taken">Ja hi ha un perfil de configuració anomenat <xliff:g id="name" example="Demo">%1$s</xliff:g></string>
+    <string name="settings_profile_in_use">En ús</string>
+    <string name="settings_profile_menu_item_in_use"><xliff:g id="name" example="Demo">%1$s</xliff:g>, en ús</string>
+    <string name="settings_profile_none">Cap perfil de configuració</string>
+    <string name="settings_profile_use_now">Utilitza ara</string>
+    <string name="settings_profile_stop_using">Deixa d\'utilitzar</string>
+    <string name="settings_profile_change_settings">Canvia la configuració</string>
+    <string name="settings_profile_editing">Els canvis van a <xliff:g id="name" example="Messaging">%1$s</xliff:g></string>
+    <string name="settings_profile_edit_saved">Canvis desats a <xliff:g id="name" example="Messaging">%1$s</xliff:g></string>
+    <string name="settings_profile_use_automatically">Utilitza automàticament</string>
+    <string name="settings_profile_web">Contingut web</string>
+    <string name="settings_profile_reading">Lectura contínua</string>
+    <string name="settings_profile_text_editing">Edició de text</string>
+    <string name="settings_profile_apps">Aplicacions</string>
+    <string name="settings_profile_add_app">Afegeix una aplicació</string>
+    <string name="settings_profile_settings">Configuració d\'aquest perfil</string>
+    <string name="settings_profile_no_settings">Cap</string>
+    <string name="settings_profile_remove_confirm">Vols eliminar <xliff:g id="item" example="Speech rate">%1$s</xliff:g> de <xliff:g id="name" example="Messaging">%2$s</xliff:g>?</string>
+    <string name="settings_profile_not_saved">No s\'ha pogut desar el perfil de configuració</string>
+    <string name="settings_profile_in_use_announcement">Perfil <xliff:g id="name" example="Demo">%1$s</xliff:g></string>
+    <string name="settings_profile_not_changed">Perfil de configuració sense canvis</string>
+    <string name="title_settings_profile">Perfil de configuració</string>
+    <string name="shortcut_settings_profiles">Tria el perfil de configuració</string>
+    <string name="shortcut_next_settings_profile">Perfil de configuració següent</string>
+    <string name="shortcut_previous_settings_profile">Perfil de configuració anterior</string>
+    <string name="title_copy_text_from_screen">Copia el text de la pantalla</string>
+    <string name="granularity_label">Granularitat</string>
+    <string name="granularity_characters">Caràcters</string>
+    <string name="granularity_words">Paraules</string>
+    <string name="granularity_paragraphs">Paràgrafs</string>
+    <string name="button_select_all">Selecciona-ho tot</string>
+    <string name="no_text_selected">No hi ha text seleccionat</string>
+    <string name="no_text_on_screen">No hi ha text a la pantalla</string>
+    <string name="title_select_last_spoken_phrase_word_by_word">Selecciona l\'última frase dita paraula per paraula</string>
+    <string name="no_words_selected">No hi ha paraules seleccionades</string>
+    <string name="no_phrase_to_select">No hi ha cap frase per seleccionar</string>
+    <string name="word_selection_list_cut_off">Llista retallada a <xliff:g id="count" example="1000">%1$d</xliff:g> elements</string>
+    <plurals name="word_selection_copied">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> element copiat</item>
+        <item quantity="other"><xliff:g id="count" example="1">%1$d</xliff:g> elements copiats</item>
+    </plurals>
 </resources>

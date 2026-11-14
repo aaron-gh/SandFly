@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_macros">Amamakhro</string>
+    <string name="shortcut_stop_macro">Misa imakhro</string>
+    <string name="macro_add">Engeza imakhro</string>
+    <string name="macro_run_now">Qalisa manje</string>
+    <string name="macro_add_step">Engeza isinyathelo</string>
+    <string name="macro_add_at_end">Ekugcineni</string>
+    <string name="macro_add_at_start">Ekuqaleni</string>
+    <string name="macro_add_after">Ngemva kwesinyathelo <xliff:g id="step" example="2">%1$d</xliff:g>: <xliff:g id="name" example="If App in front: Chrome">%2$s</xliff:g></string>
+    <string name="macro_steps">Izinyathelo</string>
+    <string name="macro_no_steps">Azikho izinyathelo</string>
+    <string name="macro_delete">Susa imakhro</string>
+    <string name="macro_delete_confirm">Susa <xliff:g id="name" example="Send message">%1$s</xliff:g>?</string>
+    <string name="macro_step_command">Qalisa umyalo</string>
+    <string name="macro_step_wait">Linda</string>
+    <string name="macro_step_tap">Thepha into</string>
+    <string name="macro_step_focus">Gxila entweni</string>
+    <string name="macro_step_speak_item">Khuluma into</string>
+    <string name="macro_step_speak_text">Khuluma umbhalo</string>
+    <string name="macro_step_type">Thayipha umbhalo</string>
+    <string name="macro_step_tap_value">Thepha <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_focus_value">Gxila ku-<xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_item_value">Khuluma <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_text_value">Khuluma <xliff:g id="text" example="Done">%1$s</xliff:g></string>
+    <string name="macro_step_type_value">Thayipha <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <string name="macro_step_replace_value">Shintsha umbhalo ube <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <plurals name="macro_step_wait_seconds">
+        <item quantity="one">Linda isekhondi elingu-<xliff:g id="count" example="2">%d</xliff:g></item>
+        <item quantity="other">Linda amasekhondi angu-<xliff:g id="count" example="2">%d</xliff:g></item>
+    </plurals>
+    <plurals name="macro_step_wait_milliseconds">
+        <item quantity="one">Linda imilisekhondi engu-<xliff:g id="count" example="500">%d</xliff:g></item>
+        <item quantity="other">Linda imilisekhondi engu-<xliff:g id="count" example="500">%d</xliff:g></item>
+    </plurals>
+    <string name="macro_step_unavailable">Akutholakali</string>
+    <string name="macro_seconds">Amasekhondi</string>
+    <string name="macro_invalid_seconds">Faka inombolo yamasekhondi kuze kube ngu-<xliff:g id="max" example="600">%1$d</xliff:g></string>
+    <string name="macro_tap_label">Umbhalo wento</string>
+    <string name="macro_tap_timeout">Amasekhondi okulinda into</string>
+    <string name="macro_text">Umbhalo</string>
+    <string name="macro_replace_text">Shintsha umbhalo enkundleni</string>
+    <string name="macro_item_not_found">Imakhro imisiwe. Ayitholakalanga: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_failed">Imakhro imisiwe. Yehlulekile: <xliff:g id="step" example="Open Gmail">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until">Linda kuze</string>
+    <string name="macro_step_if">Uma</string>
+    <string name="macro_step_else_if">Uma kungenjalo, uma</string>
+    <string name="macro_step_else">Uma kungenjalo</string>
+    <string name="macro_step_end_if">Ukuphela kwe-uma</string>
+    <string name="macro_step_repeat">Phinda</string>
+    <string name="macro_step_repeat_while">Phinda kuyilapho</string>
+    <string name="macro_step_end_repeat">Ukuphela kokuphinda</string>
+    <string name="macro_step_exit_loop">Phuma ekuphindeni</string>
+    <string name="macro_step_if_value">Uma <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_else_if_value">Uma kungenjalo, uma <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_repeat_while_value">Phinda kuyilapho <xliff:g id="condition" example="Item on screen: Load more">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until_value">Linda kuze <xliff:g id="condition" example="Item on screen: Send">%1$s</xliff:g></string>
+    <plurals name="macro_step_repeat_value">
+        <item quantity="one">Phinda kayi-<xliff:g id="count" example="1">%d</xliff:g></item>
+        <item quantity="other">Phinda kayi-<xliff:g id="count" example="3">%d</xliff:g></item>
+    </plurals>
+    <string name="macro_times">Izikhathi</string>
+    <string name="macro_invalid_times">Faka inombolo kusuka ku-1 kuze kube ngu-<xliff:g id="max" example="1000">%1$d</xliff:g></string>
+    <string name="macro_run_only_when">Qalisa kuphela uma</string>
+    <string name="macro_always">Njalo</string>
+    <string name="macro_no_tests">Ayikho imihlolo</string>
+    <string name="macro_add_test">Engeza isivivinyo</string>
+    <string name="macro_tests">Imihlolo</string>
+    <string name="macro_choose_test">Isivivinyo</string>
+    <string name="macro_test_item">Into esikrinini</string>
+    <string name="macro_test_focused">Into egxilisiwe</string>
+    <string name="macro_test_app">I-app engaphambili</string>
+    <string name="macro_test_keyboard">Ikhibhodi iyabonakala</string>
+    <string name="macro_test_keyboard_hidden">Ikhibhodi ifihliwe</string>
+    <string name="macro_test_locked">Isikrini sikhiyiwe</string>
+    <string name="macro_test_unlocked">Isikrini sivuliwe</string>
+    <string name="macro_test_item_value">Into esikrinini: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_no_item_value">Ayikho into esikrinini: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_focused_value">Into egxilisiwe: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_not_focused_value">Into egxilisiwe hhayi: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_app_value">I-app engaphambili: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_not_app_value">I-app ayiphambili: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_label_kind"><xliff:g id="label" example="Send">%1$s</xliff:g>, <xliff:g id="kind" example="Clickable">%2$s</xliff:g></string>
+    <string name="macro_join_and"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g> no-<xliff:g id="second" example="Focused item: Editable">%2$s</xliff:g></string>
+    <string name="macro_join_or"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g>, noma <xliff:g id="second" example="Screen locked">%2$s</xliff:g></string>
+    <string name="macro_regex">Inkulumo evamile</string>
+    <string name="macro_invalid_regex">Akuyona inkulumo evamile engasetshenziswa. Amaqembu aphindwayo awakwazi ukuqukatha ukuphindaphinda noma |.</string>
+    <string name="macro_match_in">Fanisa ku-</string>
+    <string name="macro_field_any">Noma yimuphi umbhalo</string>
+    <string name="macro_field_text">Umbhalo</string>
+    <string name="macro_field_description">Incazelo</string>
+    <string name="macro_field_hint">Isikhumbuzo</string>
+    <string name="macro_field_state">Isimo</string>
+    <string name="macro_field_id">I-ID yomthombo</string>
+    <string name="macro_field_value"><xliff:g id="label" example="send">%1$s</xliff:g> (<xliff:g id="field" example="Resource ID">%2$s</xliff:g>)</string>
+    <string name="macro_field_regex_value"><xliff:g id="pattern" example="^Reply">%1$s</xliff:g> (<xliff:g id="field" example="Description">%2$s</xliff:g>, inkulumo evamile)</string>
+    <string name="macro_regex_value"><xliff:g id="pattern" example="Reply.*Anna">%1$s</xliff:g> (inkulumo evamile)</string>
+    <string name="macro_test_label_optional">Umbhalo wento (ongakhethwa)</string>
+    <string name="macro_item_kind">Uhlobo lwento</string>
+    <string name="macro_kind_any">Noma yiluphi uhlobo</string>
+    <string name="macro_kind_clickable">Ekwazi ukuchofozwa</string>
+    <string name="macro_kind_long_clickable">Ekwazi ukuchofozwa isikhathi eside</string>
+    <string name="macro_kind_editable">Ekwazi ukuhlelwa</string>
+    <string name="macro_kind_scrollable">Ekwazi ukuskrolwa</string>
+    <string name="macro_kind_adjustable">Ekwazi ukulungiswa</string>
+    <string name="macro_kind_checkable">Ekwazi ukuthikwa</string>
+    <string name="macro_kind_checked">Kuthikiwe</string>
+    <string name="macro_kind_selected">Kukhethiwe</string>
+    <string name="macro_kind_heading">Isihloko</string>
+    <string name="macro_kind_enabled">Kuvuliwe</string>
+    <string name="macro_change_to">Shintsha ube: <xliff:g id="test" example="Keyboard hidden">%1$s</xliff:g></string>
+    <string name="macro_join_with_and">Hlanganisa ngo-futhi</string>
+    <string name="macro_join_with_or">Hlanganisa ngo-noma</string>
+    <string name="macro_clause_and">futhi <xliff:g id="test" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_clause_or">noma <xliff:g id="test" example="Screen locked">%1$s</xliff:g></string>
+    <string name="macro_wait_timeout">Amasekhondi okulinda</string>
+    <string name="macro_add_step_after">Engeza isinyathelo ngemva kwa-</string>
+    <string name="macro_problem">Isinyathelo <xliff:g id="step" example="3">%1$d</xliff:g>: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_problem_no_if">Uma kungenjalo uma, Uma kungenjalo noma Ukuphela kwe-uma ngaphandle kwe-Uma</string>
+    <string name="macro_problem_after_else">Uma kungenjalo uma noma Uma kungenjalo ngemva kwe-Uma kungenjalo</string>
+    <string name="macro_problem_no_repeat">Ukuphela kokuphinda ngaphandle kwe-Phinda</string>
+    <string name="macro_problem_no_end_if">Uma ngaphandle kwe-Ukuphela kwe-uma</string>
+    <string name="macro_problem_no_end_repeat">Phinda ngaphandle kwe-Ukuphela kokuphinda</string>
+    <string name="macro_problem_exit">Phuma ekuphindeni ngaphandle kwe-Phinda</string>
+    <string name="macro_stopped_problem">Imakhro imisiwe. Isinyathelo <xliff:g id="step" example="3">%1$d</xliff:g>: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_stopped_repeats">Imakhro imisiwe. Iphindiwe kayi-<xliff:g id="count" example="1000">%1$d</xliff:g>: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
+    <string name="macro_stopped_timeout">Imakhro imisiwe. Isikhathi siphelile: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
+    <string name="macro_not_met">Imakhro ayiqalisiwe. Qalisa kuphela uma: akuhlangatshezwanga</string>
+</resources>

@@ -2025,4 +2025,144 @@
     <string name="value_keep_models_5">5 நிமிடங்கள்</string>
     <string name="value_keep_models_15">15 நிமிடங்கள்</string>
     <string name="value_keep_models_30">30 நிமிடங்கள்</string>
+    <string name="title_pref_speech_equalizer_save_preset">முன்னமைவாகச் சேமி</string>
+    <string name="title_pref_speech_equalizer_saved_presets">சேமித்த முன்னமைவுகள்</string>
+    <string name="speech_equalizer_preset_name">பெயர்</string>
+    <string name="speech_equalizer_preset_name_taken"><xliff:g id="name" example="Podcast">%1$s</xliff:g> என்ற முன்னமைவு ஏற்கனவே உள்ளது</string>
+    <string name="speech_equalizer_presets_full">இனி முன்னமைவுகளைச் சேமிக்க முடியாது. மற்றொன்றைச் சேமிக்க ஒன்றை நீக்கவும்.</string>
+    <string name="speech_equalizer_preset_saved"><xliff:g id="name" example="Podcast">%1$s</xliff:g> சேமிக்கப்பட்டது</string>
+    <string name="speech_equalizer_preset_rename">மறுபெயரிடு</string>
+    <string name="speech_equalizer_preset_delete">நீக்கு</string>
+    <string name="speech_equalizer_preset_delete_confirm"><xliff:g id="name" example="Podcast">%1$s</xliff:g> ஐ நீக்கவா?</string>
+    <string name="speech_equalizer_preset_deleted"><xliff:g id="name" example="Podcast">%1$s</xliff:g> நீக்கப்பட்டது</string>
+    <string name="title_pref_emoji_voice">ஈமோஜி குரல்</string>
+    <string name="value_emoji_voice_same">பேச்சைப் போலவே</string>
+    <string name="title_pref_emoji_rate">ஈமோஜி பேச்சு வீதம்</string>
+    <string name="title_pref_line_breaks_as_spaces">வரி முறிவுகளை இடைவெளிகளாக வாசி</string>
+    <string name="title_pref_language_voices">மொழிக்கு ஏற்ற குரல்கள்</string>
+    <string name="title_pref_identify_languages_from_words">சொற்களிலிருந்து மொழிகளை அடையாளம் காண்</string>
+    <string name="title_pref_add_language">மொழியைச் சேர்</string>
+    <string name="title_pref_remove_language">மொழியை அகற்று</string>
+    <string name="title_pref_script_language">%1$s எழுத்துமுறை</string>
+    <string name="title_pref_screen_on_notification_count">அறிவிப்புகளின் எண்ணிக்கை</string>
+    <plurals name="template_screen_on_notification_count">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> அறிவிப்பு</item>
+        <item quantity="other"><xliff:g id="count" example="6">%d</xliff:g> அறிவிப்புகள்</item>
+    </plurals>
+    <string name="title_pref_phonetic_letters_review">மதிப்பாய்வின்போது எழுத்துகளை ஒலிப்பு முறையில் பேசு</string>
+    <string name="title_pref_phonetic_letters_typing">டைப் செய்யும்போது எழுத்துகளை ஒலிப்பு முறையில் பேசு</string>
+    <string name="title_pref_emoji_suffix">ஈமோஜி பெயர்களுக்குப் பிறகு \"ஈமோஜி\" எனப் பேசு</string>
+    <string name="overview_shizuku_not_running">Shizuku இயங்கவில்லை</string>
+    <string name="overview_shizuku_not_allowed">SandFly ஐ Shizuku அனுமதிக்கவில்லை</string>
+    <string name="overview_no_older_app">பழைய ஆப்ஸ் இல்லை</string>
+    <string name="overview_no_newer_app">புதிய ஆப்ஸ் இல்லை</string>
+    <string name="stream_volume_needs_access">இந்த ஒலியளவை மாற்ற தொந்தரவு செய்யாதே அணுகலை அனுமதிக்கவும்.</string>
+    <string name="corner_gestures_title">மூலைகள்</string>
+    <string name="shortcut_move_to_item_below">கீழுள்ள உருப்படிக்குச் செல்</string>
+    <string name="shortcut_move_to_item_above">மேலுள்ள உருப்படிக்குச் செல்</string>
+    <string name="shortcut_older_app">பழைய ஆப்ஸ்</string>
+    <string name="shortcut_newer_app">புதிய ஆப்ஸ்</string>
+    <string name="shortcut_answer_call">அழைப்பை ஏற்கவும்</string>
+    <string name="answer_call_no_call">உள்வரும் அழைப்பு இல்லை</string>
+    <string name="answer_call_permission">அழைப்புகளை ஏற்க அனுமதி தேவை</string>
+    <string name="shortcut_switch_keyboard">கீபோர்டை மாற்று</string>
+    <string name="switch_keyboard_none">வேறு கீபோர்டு இயக்கப்படவில்லை</string>
+    <string name="switch_keyboard_failed">கீபோர்டு மாற்றப்படவில்லை</string>
+    <string name="clipboard_history_hint">தேர்ந்தெடுக்க மேலே அல்லது கீழே ஸ்வைப் செய்து, ஒட்ட இருமுறை தட்டவும்</string>
+    <string name="title_speech_history">பேச்சு வரலாறு</string>
+    <string name="speech_history_empty">பேச்சு இல்லை</string>
+    <string name="speech_history_clear">வரலாற்றை அழி</string>
+    <string name="title_pref_shortcut_corner_top_left_tap">மேல் இடது மூலையைத் தட்டுதல்</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap">மேல் இடது மூலையை இருமுறை தட்டுதல்</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap">மேல் இடது மூலையை மும்முறை தட்டுதல்</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap_hold">மேல் இடது மூலையை இருமுறை தட்டிப் பிடித்தல்</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap_hold">மேல் இடது மூலையை மும்முறை தட்டிப் பிடித்தல்</string>
+    <string name="title_pref_shortcut_corner_top_right_tap">மேல் வலது மூலையைத் தட்டுதல்</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap">மேல் வலது மூலையை இருமுறை தட்டுதல்</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap">மேல் வலது மூலையை மும்முறை தட்டுதல்</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap_hold">மேல் வலது மூலையை இருமுறை தட்டிப் பிடித்தல்</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap_hold">மேல் வலது மூலையை மும்முறை தட்டிப் பிடித்தல்</string>
+    <string name="title_pref_shortcut_corner_bottom_left_tap">கீழ் இடது மூலையைத் தட்டுதல்</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap">கீழ் இடது மூலையை இருமுறை தட்டுதல்</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap">கீழ் இடது மூலையை மும்முறை தட்டுதல்</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap_hold">கீழ் இடது மூலையை இருமுறை தட்டிப் பிடித்தல்</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap_hold">கீழ் இடது மூலையை மும்முறை தட்டிப் பிடித்தல்</string>
+    <string name="title_pref_shortcut_corner_bottom_right_tap">கீழ் வலது மூலையைத் தட்டுதல்</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap">கீழ் வலது மூலையை இருமுறை தட்டுதல்</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap">கீழ் வலது மூலையை மும்முறை தட்டுதல்</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap_hold">கீழ் வலது மூலையை இருமுறை தட்டிப் பிடித்தல்</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap_hold">கீழ் வலது மூலையை மும்முறை தட்டிப் பிடித்தல்</string>
+    <string name="title_pref_swipe_start_time">சைகை தொடங்கும் நேரம்</string>
+    <string name="title_pref_swipes_before_lift">விரலை எடுப்பதற்கு முன் ஸ்வைப்களை அறி</string>
+    <string name="summary_pref_swipes_before_lift">முன்னும் பின்னும் மற்றும் கோண சைகைகளை முடக்கும்.</string>
+    <string name="title_pref_corner_size_mm">மூலை அளவு</string>
+    <string name="value_corner_size_edge_width">விளிம்பு அகலத்தைப் போலவே</string>
+    <string name="title_pref_corner_tap_time_ms">மூலை தட்டும் நேர வரம்பு</string>
+    <string name="value_corner_tap_time_system">கணினி இயல்புநிலை</string>
+    <string name="title_pref_edge_speak_commands">ஒவ்வொரு கிளிக்கிலும் கட்டளையைப் பேசு</string>
+    <string-array name="pref_volume_change_feedback_entries">
+        <item>@string/volume_change_feedback_off</item>
+        <item>@string/volume_change_feedback_tone</item>
+        <item>@string/volume_change_feedback_spoken</item>
+        <item>@string/volume_change_feedback_tone_and_spoken</item>
+    </string-array>
+    <string name="title_pref_volume_change_tone_during_media">மீடியா இயங்கும்போது ஒலியை அமைதியாக்கு</string>
+    <string name="title_pref_volume_change_speech_during_media">மீடியா இயங்கும்போது பேச்சை அமைதியாக்கு</string>
+    <string name="title_pref_volume_change_interrupts_speech">ஒலியளவை அறிவிக்க பேச்சை இடைநிறுத்து</string>
+    <string name="title_pref_volume_keys_speech_volume_while_speaking">பேசும்போது ஒலியளவு பட்டன்கள் பேச்சின் ஒலியளவை மாற்றும்</string>
+    <string name="title_pref_double_tap_moves_cursor">இருமுறை தட்டினால் கர்சர் தொடக்கத்திற்கு அல்லது முடிவுக்குச் செல்லும்</string>
+    <string name="title_pref_scroll_ahead">அடுத்த உருப்படிக்கு முன்கூட்டியே உருட்டு</string>
+    <string name="title_pref_speak_while_scrolling">உருட்டும்போது அடுத்த உருப்படியைப் பேசு</string>
+    <string-array name="pref_text_entities_entries">
+    <item>@string/text_entity_web</item>
+    <item>@string/text_entity_email</item>
+    <item>@string/text_entity_phone</item>
+    <item>@string/text_entity_code</item>
+  </string-array>
+    <string name="value_keep_models_until_stopped">SandFly நிற்கும் வரை</string>
+    <string name="title_pref_model_download_server">மாதிரி பதிவிறக்க சேவையகம்</string>
+    <string name="title_pref_settings_profiles">அமைப்புகள் சுயவிவரங்கள்</string>
+    <string name="title_pref_new_settings_profile">புதிய அமைப்புகள் சுயவிவரம்</string>
+    <string name="settings_profile_new_name">சுயவிவரம் <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="settings_profile_name_taken"><xliff:g id="name" example="Demo">%1$s</xliff:g> என்ற அமைப்புகள் சுயவிவரம் ஏற்கனவே உள்ளது</string>
+    <string name="settings_profile_in_use">பயன்பாட்டில் உள்ளது</string>
+    <string name="settings_profile_menu_item_in_use"><xliff:g id="name" example="Demo">%1$s</xliff:g>, பயன்பாட்டில் உள்ளது</string>
+    <string name="settings_profile_none">அமைப்புகள் சுயவிவரம் இல்லை</string>
+    <string name="settings_profile_use_now">இப்போது பயன்படுத்து</string>
+    <string name="settings_profile_stop_using">பயன்படுத்துவதை நிறுத்து</string>
+    <string name="settings_profile_change_settings">அமைப்புகளை மாற்று</string>
+    <string name="settings_profile_editing">மாற்றங்கள் <xliff:g id="name" example="Messaging">%1$s</xliff:g> இல் சேமிக்கப்படும்</string>
+    <string name="settings_profile_edit_saved">மாற்றங்கள் <xliff:g id="name" example="Messaging">%1$s</xliff:g> இல் சேமிக்கப்பட்டன</string>
+    <string name="settings_profile_use_automatically">தானாகப் பயன்படுத்து</string>
+    <string name="settings_profile_web">இணைய உள்ளடக்கம்</string>
+    <string name="settings_profile_reading">தொடர் வாசிப்பு</string>
+    <string name="settings_profile_text_editing">வார்த்தைகளைத் திருத்துதல்</string>
+    <string name="settings_profile_apps">ஆப்ஸ்</string>
+    <string name="settings_profile_add_app">ஆப்ஸைச் சேர்</string>
+    <string name="settings_profile_settings">இந்தச் சுயவிவரத்தில் உள்ள அமைப்புகள்</string>
+    <string name="settings_profile_no_settings">எதுவுமில்லை</string>
+    <string name="settings_profile_remove_confirm"><xliff:g id="name" example="Messaging">%2$s</xliff:g> இலிருந்து <xliff:g id="item" example="Speech rate">%1$s</xliff:g> ஐ அகற்றவா?</string>
+    <string name="settings_profile_not_saved">அமைப்புகள் சுயவிவரத்தைச் சேமிக்க முடியவில்லை</string>
+    <string name="settings_profile_in_use_announcement"><xliff:g id="name" example="Demo">%1$s</xliff:g> சுயவிவரம்</string>
+    <string name="settings_profile_not_changed">அமைப்புகள் சுயவிவரம் மாற்றப்படவில்லை</string>
+    <string name="title_settings_profile">அமைப்புகள் சுயவிவரம்</string>
+    <string name="shortcut_settings_profiles">அமைப்புகள் சுயவிவரத்தைத் தேர்ந்தெடு</string>
+    <string name="shortcut_next_settings_profile">அடுத்த அமைப்புகள் சுயவிவரம்</string>
+    <string name="shortcut_previous_settings_profile">முந்தைய அமைப்புகள் சுயவிவரம்</string>
+    <string name="title_copy_text_from_screen">திரையிலிருந்து உரையை நகலெடு</string>
+    <string name="granularity_label">நுணுக்கம்</string>
+    <string name="granularity_characters">எழுத்துகள்</string>
+    <string name="granularity_words">சொற்கள்</string>
+    <string name="granularity_paragraphs">பத்திகள்</string>
+    <string name="button_select_all">அனைத்தையும் தேர்ந்தெடு</string>
+    <string name="no_text_selected">உரை தேர்ந்தெடுக்கப்படவில்லை</string>
+    <string name="no_text_on_screen">திரையில் உரை இல்லை</string>
+    <string name="title_select_last_spoken_phrase_word_by_word">கடைசியாகப் பேசிய சொற்றொடரைச் சொல் வாரியாகத் தேர்ந்தெடு</string>
+    <string name="no_words_selected">சொற்கள் தேர்ந்தெடுக்கப்படவில்லை</string>
+    <string name="no_phrase_to_select">தேர்ந்தெடுக்க சொற்றொடர் இல்லை</string>
+    <string name="word_selection_list_cut_off">பட்டியல் <xliff:g id="count" example="1000">%1$d</xliff:g> உருப்படிகளில் நிறுத்தப்பட்டது</string>
+    <plurals name="word_selection_copied">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> உருப்படி நகலெடுக்கப்பட்டது</item>
+        <item quantity="other"><xliff:g id="count" example="5">%1$d</xliff:g> உருப்படிகள் நகலெடுக்கப்பட்டன</item>
+    </plurals>
 </resources>

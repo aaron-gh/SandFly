@@ -46,4 +46,14 @@
     <string name="granular_editing_not_saved">မသိမ်းဆည်းထားပါ- စာသားအကွက် မရှိတော့ပါ။ စာသားကို ကူးယူထားသည်။</string>
     <string name="granular_editing_no_text">တည်းဖြတ်ရန် စာသားမရှိပါ</string>
     <string name="granular_editing_password">စကားဝှက်အကွက်များတွင် မရရှိနိုင်ပါ</string>
+    <plurals name="granular_editing_spaces">
+        <item quantity="other">နေရာလွတ် <xliff:g id="count" example="1">%d</xliff:g> ခု</item>
+    </plurals>
+    <plurals name="granular_editing_new_lines">
+        <item quantity="other">လိုင်းအသစ် <xliff:g id="count" example="1">%d</xliff:g> ခု</item>
+    </plurals>
+    <plurals name="granular_editing_tabs">
+        <item quantity="other">တဘ် <xliff:g id="count" example="1">%d</xliff:g> ခု</item>
+    </plurals>
+    <string name="granular_editing_blank_line">လိုင်းလွတ်</string>
 </resources>

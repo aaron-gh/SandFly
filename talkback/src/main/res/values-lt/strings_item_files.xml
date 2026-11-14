@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="item_file_import">Importuoti iš failo</string>
+    <string name="item_file_export">Eksportuoti į failą</string>
+    <string name="title_pref_export_item_file_reference">Eksportuojamo failo formato žinynas</string>
+    <string name="item_file_keymaps">Klavišų schemos</string>
+    <string name="item_file_exported">Eksportuota</string>
+    <string name="item_file_export_failed">Eksportuoti nepavyko</string>
+    <string name="item_file_not_read">Šis failas nėra SandFly elementų failas arba jo nepavyko perskaityti</string>
+    <string name="item_file_settings_file">Tai nustatymų failas. Importuokite jį per Atsarginė kopija ir atkūrimas &gt; Importuoti nustatymus</string>
+    <string name="item_file_newer">Šis failas sukurtas naujesnėje SandFly versijoje</string>
+    <string name="item_file_nothing_imported">Nieko neimportuota</string>
+    <string name="item_file_imported">Importuota: <xliff:g id="items" example="2 macros, 1 gesture profile">%1$s</xliff:g></string>
+    <string name="item_file_left_out">Praleista:</string>
+    <string name="item_file_problem_not_read"><xliff:g id="kind" example="Macros">%1$s</xliff:g>, <xliff:g id="number" example="3">%2$d</xliff:g> elementas: neperskaityta</string>
+    <string name="item_file_problem_command"><xliff:g id="item" example="Open mail">%1$s</xliff:g>: nežinoma komanda <xliff:g id="command" example="READ_ALL">%2$s</xliff:g></string>
+    <string name="item_file_problem_gesture"><xliff:g id="item" example="Reading">%1$s</xliff:g>: nežinomas gestas <xliff:g id="gesture" example="pref_shortcut_spin">%2$s</xliff:g></string>
+    <string name="item_file_problem_keys"><xliff:g id="item" example="My keymap">%1$s</xliff:g>: nesuprasti klavišai: <xliff:g id="keys" example="SandFly+Foo">%2$s</xliff:g></string>
+    <string name="item_file_problem_keys_taken"><xliff:g id="item" example="My keymap">%1$s</xliff:g>: klavišai jau naudojami: <xliff:g id="keys" example="SandFly+H">%2$s</xliff:g></string>
+    <string name="item_file_problem_setting"><xliff:g id="item" example="Reading">%1$s</xliff:g>: nustatymas <xliff:g id="key" example="pref_vibration">%2$s</xliff:g> nežinomas, negali būti profilyje arba jo reikšmės tipas netinkamas</string>
+    <string name="item_file_problem_regex"><xliff:g id="dictionary" example="Speech dictionary">%1$s</xliff:g>: reguliarioji išraiška atmesta: <xliff:g id="expression" example="(a+)+">%2$s</xliff:g></string>
+    <string name="item_file_problem_limit"><xliff:g id="kind" example="Symbol dictionary">%1$s</xliff:g>: daugiausia <xliff:g id="number" example="500">%2$d</xliff:g> elementų</string>
+    <string name="item_file_problem_more">Praleista daugiau</string>
+    <plurals name="item_file_count_macros">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> makrokomanda</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> makrokomandos</item>
+        <item quantity="many"><xliff:g id="count" example="2">%d</xliff:g> makrokomandos</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> makrokomandų</item>
+    </plurals>
+    <plurals name="item_file_count_gesture_profiles">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> gestų profilis</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> gestų profiliai</item>
+        <item quantity="many"><xliff:g id="count" example="2">%d</xliff:g> gestų profilio</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> gestų profilių</item>
+    </plurals>
+    <plurals name="item_file_count_keymaps">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> klavišų schema</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> klavišų schemos</item>
+        <item quantity="many"><xliff:g id="count" example="2">%d</xliff:g> klavišų schemos</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> klavišų schemų</item>
+    </plurals>
+    <plurals name="item_file_count_apps">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> programos gestai ir spartieji klavišai</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> programų gestai ir spartieji klavišai</item>
+        <item quantity="many"><xliff:g id="count" example="2">%d</xliff:g> programos gestai ir spartieji klavišai</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> programų gestai ir spartieji klavišai</item>
+    </plurals>
+    <plurals name="item_file_count_settings_profiles">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> nustatymų profilis</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> nustatymų profiliai</item>
+        <item quantity="many"><xliff:g id="count" example="2">%d</xliff:g> nustatymų profilio</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> nustatymų profilių</item>
+    </plurals>
+    <plurals name="item_file_count_speech_dictionary">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> kalbos žodyno įrašas</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> kalbos žodyno įrašai</item>
+        <item quantity="many"><xliff:g id="count" example="2">%d</xliff:g> kalbos žodyno įrašo</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> kalbos žodyno įrašų</item>
+    </plurals>
+    <plurals name="item_file_count_symbol_dictionary">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> simbolių žodyno įrašas</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> simbolių žodyno įrašai</item>
+        <item quantity="many"><xliff:g id="count" example="2">%d</xliff:g> simbolių žodyno įrašo</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> simbolių žodyno įrašų</item>
+    </plurals>
+    <plurals name="item_file_count_braille_dictionary">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> Brailio rašto žodyno įrašas</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> Brailio rašto žodyno įrašai</item>
+        <item quantity="many"><xliff:g id="count" example="2">%d</xliff:g> Brailio rašto žodyno įrašo</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> Brailio rašto žodyno įrašų</item>
+    </plurals>
+    <plurals name="item_file_count_voice_commands">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> tinkinta komanda balsu</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> tinkintos komandos balsu</item>
+        <item quantity="many"><xliff:g id="count" example="2">%d</xliff:g> tinkintos komandos balsu</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> tinkintų komandų balsu</item>
+    </plurals>
+</resources>

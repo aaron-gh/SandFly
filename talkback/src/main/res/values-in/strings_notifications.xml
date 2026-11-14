@@ -390,4 +390,11 @@
         <item>@string/notification_shake_3</item>
     </string-array>
     <string name="notification_clock_voice_notifications">Suara notifikasi</string>
+    <string name="notification_exact_alarms_title">Aktifkan Alarm dan pengingat</string>
+    <string name="shortcut_toggle_time_announcements">Pengumuman waktu aktif atau nonaktif</string>
+    <string name="notification_clock_now_on">Pengumuman waktu aktif</string>
+    <string name="notification_clock_now_off">Pengumuman waktu nonaktif</string>
+    <plurals name="notification_clock_battery">
+        <item quantity="other"><xliff:g id="percent" example="76">%d</xliff:g> persen</item>
+    </plurals>
 </resources>

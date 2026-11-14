@@ -50,4 +50,29 @@
     <string name="granular_editing_not_saved">لم يُحفظ: حقل النص لم يعد متاحًا. تم نسخ النص.</string>
     <string name="granular_editing_no_text">لا يوجد نص لتحريره</string>
     <string name="granular_editing_password">غير متوفر في حقول كلمة المرور</string>
+    <plurals name="granular_editing_spaces">
+        <item quantity="one">مسافة واحدة</item>
+        <item quantity="two">مسافتان</item>
+        <item quantity="few"><xliff:g id="count" example="3">%d</xliff:g> مسافات</item>
+        <item quantity="many"><xliff:g id="count" example="3">%d</xliff:g> مسافة</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> مسافة</item>
+        <item quantity="zero">لا مسافات</item>
+    </plurals>
+    <plurals name="granular_editing_new_lines">
+        <item quantity="one">سطر جديد واحد</item>
+        <item quantity="two">سطران جديدان</item>
+        <item quantity="few"><xliff:g id="count" example="3">%d</xliff:g> أسطر جديدة</item>
+        <item quantity="many"><xliff:g id="count" example="3">%d</xliff:g> سطرًا جديدًا</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> سطر جديد</item>
+        <item quantity="zero">لا أسطر جديدة</item>
+    </plurals>
+    <plurals name="granular_editing_tabs">
+        <item quantity="one">علامة جدولة واحدة</item>
+        <item quantity="two">علامتا جدولة</item>
+        <item quantity="few"><xliff:g id="count" example="3">%d</xliff:g> علامات جدولة</item>
+        <item quantity="many"><xliff:g id="count" example="3">%d</xliff:g> علامة جدولة</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> علامة جدولة</item>
+        <item quantity="zero">لا علامات جدولة</item>
+    </plurals>
+    <string name="granular_editing_blank_line">سطر فارغ</string>
 </resources>

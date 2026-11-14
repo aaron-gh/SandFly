@@ -2025,4 +2025,144 @@
     <string name="value_keep_models_5">5 წუთი</string>
     <string name="value_keep_models_15">15 წუთი</string>
     <string name="value_keep_models_30">30 წუთი</string>
+    <string name="title_pref_speech_equalizer_save_preset">პრესეტად შენახვა</string>
+    <string name="title_pref_speech_equalizer_saved_presets">შენახული პრესეტები</string>
+    <string name="speech_equalizer_preset_name">სახელი</string>
+    <string name="speech_equalizer_preset_name_taken">პრესეტი „<xliff:g id="name" example="Podcast">%1$s</xliff:g>“ უკვე არსებობს</string>
+    <string name="speech_equalizer_presets_full">მეტი პრესეტის შენახვა შეუძლებელია. წაშალეთ ერთი, რომ სხვა შეინახოთ.</string>
+    <string name="speech_equalizer_preset_saved">„<xliff:g id="name" example="Podcast">%1$s</xliff:g>“ შენახულია</string>
+    <string name="speech_equalizer_preset_rename">გადარქმევა</string>
+    <string name="speech_equalizer_preset_delete">წაშლა</string>
+    <string name="speech_equalizer_preset_delete_confirm">წაიშალოს „<xliff:g id="name" example="Podcast">%1$s</xliff:g>“?</string>
+    <string name="speech_equalizer_preset_deleted">„<xliff:g id="name" example="Podcast">%1$s</xliff:g>“ წაშლილია</string>
+    <string name="title_pref_emoji_voice">Emoji-ის ხმა</string>
+    <string name="value_emoji_voice_same">მეტყველების იგივე</string>
+    <string name="title_pref_emoji_rate">Emoji-ის მეტყველების ტემპი</string>
+    <string name="title_pref_line_breaks_as_spaces">სტრიქონების გაწყვეტის წაკითხვა ჰარებად</string>
+    <string name="title_pref_language_voices">ხმები ენების მიხედვით</string>
+    <string name="title_pref_identify_languages_from_words">ენების ამოცნობა სიტყვებით</string>
+    <string name="title_pref_add_language">ენის დამატება</string>
+    <string name="title_pref_remove_language">ენის ამოშლა</string>
+    <string name="title_pref_script_language">%1$s დამწერლობა</string>
+    <string name="title_pref_screen_on_notification_count">შეტყობინებების რაოდენობა</string>
+    <plurals name="template_screen_on_notification_count">
+        <item quantity="one"><xliff:g id="count" example="6">%d</xliff:g> შეტყობინება</item>
+        <item quantity="other"><xliff:g id="count" example="6">%d</xliff:g> შეტყობინება</item>
+    </plurals>
+    <string name="title_pref_phonetic_letters_review">ასოების ფონეტიკურად წარმოთქმა გადახედვისას</string>
+    <string name="title_pref_phonetic_letters_typing">ასოების ფონეტიკურად წარმოთქმა აკრეფისას</string>
+    <string name="title_pref_emoji_suffix">სიტყვა „emoji“-ის წარმოთქმა emoji-ის სახელების შემდეგ</string>
+    <string name="overview_shizuku_not_running">Shizuku არ მუშაობს</string>
+    <string name="overview_shizuku_not_allowed">Shizuku არ აძლევს SandFly-ს ნებას</string>
+    <string name="overview_no_older_app">უფრო ძველი აპი არ არის</string>
+    <string name="overview_no_newer_app">უფრო ახალი აპი არ არის</string>
+    <string name="stream_volume_needs_access">ამ ხმის შესაცვლელად დართეთ ნება „არ შემაწუხოთ“ რეჟიმზე წვდომას.</string>
+    <string name="corner_gestures_title">კუთხეები</string>
+    <string name="shortcut_move_to_item_below">გადასვლა ქვემოთ მდებარე ერთეულზე</string>
+    <string name="shortcut_move_to_item_above">გადასვლა ზემოთ მდებარე ერთეულზე</string>
+    <string name="shortcut_older_app">უფრო ძველი აპი</string>
+    <string name="shortcut_newer_app">უფრო ახალი აპი</string>
+    <string name="shortcut_answer_call">ზარზე პასუხი</string>
+    <string name="answer_call_no_call">შემომავალი ზარი არ არის</string>
+    <string name="answer_call_permission">ზარებზე პასუხისთვის საჭიროა ნებართვა</string>
+    <string name="shortcut_switch_keyboard">კლავიატურის გადართვა</string>
+    <string name="switch_keyboard_none">სხვა კლავიატურა ჩართული არ არის</string>
+    <string name="switch_keyboard_failed">კლავიატურა არ გადაირთო</string>
+    <string name="clipboard_history_hint">ასარჩევად გადაფურცლეთ ზემოთ ან ქვემოთ, შემდეგ ჩასასმელად ორმაგად შეეხეთ</string>
+    <string name="title_speech_history">მეტყველების ისტორია</string>
+    <string name="speech_history_empty">მეტყველება არ არის</string>
+    <string name="speech_history_clear">ისტორიის გასუფთავება</string>
+    <string name="title_pref_shortcut_corner_top_left_tap">ზედა მარცხენა კუთხე: შეხება</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap">ზედა მარცხენა კუთხე: ორმაგი შეხება</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap">ზედა მარცხენა კუთხე: სამმაგი შეხება</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap_hold">ზედა მარცხენა კუთხე: ორმაგი შეხება და დაყოვნება</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap_hold">ზედა მარცხენა კუთხე: სამმაგი შეხება და დაყოვნება</string>
+    <string name="title_pref_shortcut_corner_top_right_tap">ზედა მარჯვენა კუთხე: შეხება</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap">ზედა მარჯვენა კუთხე: ორმაგი შეხება</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap">ზედა მარჯვენა კუთხე: სამმაგი შეხება</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap_hold">ზედა მარჯვენა კუთხე: ორმაგი შეხება და დაყოვნება</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap_hold">ზედა მარჯვენა კუთხე: სამმაგი შეხება და დაყოვნება</string>
+    <string name="title_pref_shortcut_corner_bottom_left_tap">ქვედა მარცხენა კუთხე: შეხება</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap">ქვედა მარცხენა კუთხე: ორმაგი შეხება</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap">ქვედა მარცხენა კუთხე: სამმაგი შეხება</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap_hold">ქვედა მარცხენა კუთხე: ორმაგი შეხება და დაყოვნება</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap_hold">ქვედა მარცხენა კუთხე: სამმაგი შეხება და დაყოვნება</string>
+    <string name="title_pref_shortcut_corner_bottom_right_tap">ქვედა მარჯვენა კუთხე: შეხება</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap">ქვედა მარჯვენა კუთხე: ორმაგი შეხება</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap">ქვედა მარჯვენა კუთხე: სამმაგი შეხება</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap_hold">ქვედა მარჯვენა კუთხე: ორმაგი შეხება და დაყოვნება</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap_hold">ქვედა მარჯვენა კუთხე: სამმაგი შეხება და დაყოვნება</string>
+    <string name="title_pref_swipe_start_time">ჟესტის დაწყების დრო</string>
+    <string name="title_pref_swipes_before_lift">გადაფურცვლის ამოცნობა თითის აწევამდე</string>
+    <string name="summary_pref_swipes_before_lift">გამორთავს წინ-უკან და კუთხიან ჟესტებს.</string>
+    <string name="title_pref_corner_size_mm">კუთხის ზომა</string>
+    <string name="value_corner_size_edge_width">კიდის სიგანის იგივე</string>
+    <string name="title_pref_corner_tap_time_ms">კუთხეზე შეხების დროის ლიმიტი</string>
+    <string name="value_corner_tap_time_system">სისტემის ნაგულისხმევი</string>
+    <string name="title_pref_edge_speak_commands">ბრძანების წარმოთქმა თითოეულ დაწკაპუნებაზე</string>
+    <string-array name="pref_volume_change_feedback_entries">
+        <item>@string/volume_change_feedback_off</item>
+        <item>@string/volume_change_feedback_tone</item>
+        <item>@string/volume_change_feedback_spoken</item>
+        <item>@string/volume_change_feedback_tone_and_spoken</item>
+    </string-array>
+    <string name="title_pref_volume_change_tone_during_media">ტონის დადუმება მედიის დროს</string>
+    <string name="title_pref_volume_change_speech_during_media">მეტყველების დადუმება მედიის დროს</string>
+    <string name="title_pref_volume_change_interrupts_speech">მეტყველების შეწყვეტა ხმის გამოსაცხადებლად</string>
+    <string name="title_pref_volume_keys_speech_volume_while_speaking">ხმის კლავიშები ცვლის მეტყველების ხმას მეტყველებისას</string>
+    <string name="title_pref_double_tap_moves_cursor">ორმაგი შეხება გადააქვს კურსორი დასაწყისში ან ბოლოში</string>
+    <string name="title_pref_scroll_ahead">გადახვევა შემდეგ ერთეულამდე წინასწარ</string>
+    <string name="title_pref_speak_while_scrolling">შემდეგი ერთეულის წარმოთქმა გადახვევისას</string>
+    <string-array name="pref_text_entities_entries">
+    <item>@string/text_entity_web</item>
+    <item>@string/text_entity_email</item>
+    <item>@string/text_entity_phone</item>
+    <item>@string/text_entity_code</item>
+  </string-array>
+    <string name="value_keep_models_until_stopped">სანამ SandFly არ შეწყდება</string>
+    <string name="title_pref_model_download_server">მოდელების ჩამოტვირთვის სერვერი</string>
+    <string name="title_pref_settings_profiles">პარამეტრების პროფილები</string>
+    <string name="title_pref_new_settings_profile">პარამეტრების ახალი პროფილი</string>
+    <string name="settings_profile_new_name">პროფილი <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="settings_profile_name_taken">პარამეტრების პროფილი „<xliff:g id="name" example="Demo">%1$s</xliff:g>“ უკვე არსებობს</string>
+    <string name="settings_profile_in_use">გამოიყენება</string>
+    <string name="settings_profile_menu_item_in_use"><xliff:g id="name" example="Demo">%1$s</xliff:g>, გამოიყენება</string>
+    <string name="settings_profile_none">პარამეტრების პროფილი არ არის</string>
+    <string name="settings_profile_use_now">ახლა გამოყენება</string>
+    <string name="settings_profile_stop_using">გამოყენების შეწყვეტა</string>
+    <string name="settings_profile_change_settings">პარამეტრების შეცვლა</string>
+    <string name="settings_profile_editing">ცვლილებები ინახება პროფილში „<xliff:g id="name" example="Messaging">%1$s</xliff:g>“</string>
+    <string name="settings_profile_edit_saved">ცვლილებები შენახულია პროფილში „<xliff:g id="name" example="Messaging">%1$s</xliff:g>“</string>
+    <string name="settings_profile_use_automatically">ავტომატურად გამოყენება</string>
+    <string name="settings_profile_web">ვებ-კონტენტი</string>
+    <string name="settings_profile_reading">უწყვეტი კითხვა</string>
+    <string name="settings_profile_text_editing">ტექსტის რედაქტირება</string>
+    <string name="settings_profile_apps">აპები</string>
+    <string name="settings_profile_add_app">აპის დამატება</string>
+    <string name="settings_profile_settings">ამ პროფილის პარამეტრები</string>
+    <string name="settings_profile_no_settings">არცერთი</string>
+    <string name="settings_profile_remove_confirm">ამოიშალოს „<xliff:g id="item" example="Speech rate">%1$s</xliff:g>“ პროფილიდან „<xliff:g id="name" example="Messaging">%2$s</xliff:g>“?</string>
+    <string name="settings_profile_not_saved">პარამეტრების პროფილი ვერ შეინახა</string>
+    <string name="settings_profile_in_use_announcement">პროფილი „<xliff:g id="name" example="Demo">%1$s</xliff:g>“</string>
+    <string name="settings_profile_not_changed">პარამეტრების პროფილი არ შეცვლილა</string>
+    <string name="title_settings_profile">პარამეტრების პროფილი</string>
+    <string name="shortcut_settings_profiles">პარამეტრების პროფილის არჩევა</string>
+    <string name="shortcut_next_settings_profile">პარამეტრების შემდეგი პროფილი</string>
+    <string name="shortcut_previous_settings_profile">პარამეტრების წინა პროფილი</string>
+    <string name="title_copy_text_from_screen">ტექსტის კოპირება ეკრანიდან</string>
+    <string name="granularity_label">დეტალიზაციის დონე</string>
+    <string name="granularity_characters">სიმბოლოები</string>
+    <string name="granularity_words">სიტყვები</string>
+    <string name="granularity_paragraphs">აბზაცები</string>
+    <string name="button_select_all">ყველას არჩევა</string>
+    <string name="no_text_selected">ტექსტი არჩეული არ არის</string>
+    <string name="no_text_on_screen">ეკრანზე ტექსტი ვერ მოიძებნა</string>
+    <string name="title_select_last_spoken_phrase_word_by_word">ბოლო წარმოთქმული ფრაზის არჩევა სიტყვა-სიტყვით</string>
+    <string name="no_words_selected">სიტყვები არჩეული არ არის</string>
+    <string name="no_phrase_to_select">არჩევისთვის ფრაზა არ არის</string>
+    <string name="word_selection_list_cut_off">სია შეიკვეცა <xliff:g id="count" example="1000">%1$d</xliff:g> ერთეულზე</string>
+    <plurals name="word_selection_copied">
+        <item quantity="one">დაკოპირდა <xliff:g id="count" example="5">%1$d</xliff:g> ერთეული</item>
+        <item quantity="other">დაკოპირდა <xliff:g id="count" example="5">%1$d</xliff:g> ერთეული</item>
+    </plurals>
 </resources>

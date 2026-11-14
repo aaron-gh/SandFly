@@ -2046,4 +2046,137 @@
   <string name="title_select_last_spoken_phrase_word_by_word">Выбрать последнюю фразу по словам</string>
   <string name="no_words_selected">Слова не выбраны</string>
   <string name="no_phrase_to_select">Нет фразы для выбора</string>
+    <string name="title_pref_speech_equalizer_save_preset">Сохранить как предустановку</string>
+    <string name="title_pref_speech_equalizer_saved_presets">Сохранённые предустановки</string>
+    <string name="speech_equalizer_preset_name">Название</string>
+    <string name="speech_equalizer_preset_name_taken">Предустановка «<xliff:g id="name" example="Podcast">%1$s</xliff:g>» уже есть</string>
+    <string name="speech_equalizer_presets_full">Больше предустановок сохранить нельзя. Удалите одну, чтобы сохранить другую.</string>
+    <string name="speech_equalizer_preset_saved"><xliff:g id="name" example="Podcast">%1$s</xliff:g>: сохранено</string>
+    <string name="speech_equalizer_preset_rename">Переименовать</string>
+    <string name="speech_equalizer_preset_delete">Удалить</string>
+    <string name="speech_equalizer_preset_delete_confirm">Удалить «<xliff:g id="name" example="Podcast">%1$s</xliff:g>»?</string>
+    <string name="speech_equalizer_preset_deleted"><xliff:g id="name" example="Podcast">%1$s</xliff:g>: удалено</string>
+    <string name="title_pref_emoji_voice">Голос для эмодзи</string>
+    <string name="value_emoji_voice_same">Как для речи</string>
+    <string name="title_pref_emoji_rate">Скорость речи для эмодзи</string>
+    <string name="title_pref_line_breaks_as_spaces">Читать переводы строк как пробелы</string>
+    <string name="title_pref_language_voices">Голоса по языкам</string>
+    <string name="title_pref_identify_languages_from_words">Определять язык по словам</string>
+    <string name="title_pref_add_language">Добавить язык</string>
+    <string name="title_pref_remove_language">Удалить язык</string>
+    <string name="title_pref_script_language">Язык письма: %1$s</string>
+    <string name="title_pref_screen_on_notification_count">Количество уведомлений</string>
+    <plurals name="template_screen_on_notification_count">
+        <item quantity="one"><xliff:g id="count" example="6">%d</xliff:g> уведомление</item>
+        <item quantity="few"><xliff:g id="count" example="6">%d</xliff:g> уведомления</item>
+        <item quantity="many"><xliff:g id="count" example="6">%d</xliff:g> уведомлений</item>
+        <item quantity="other"><xliff:g id="count" example="6">%d</xliff:g> уведомления</item>
+    </plurals>
+    <string name="title_pref_phonetic_letters_review">Произносить буквы по алфавиту при просмотре</string>
+    <string name="title_pref_phonetic_letters_typing">Произносить буквы по алфавиту при вводе</string>
+    <string name="title_pref_emoji_suffix">Произносить «эмодзи» после названий эмодзи</string>
+    <string name="overview_shizuku_not_running">Shizuku не запущен</string>
+    <string name="overview_shizuku_not_allowed">Shizuku не разрешает SandFly</string>
+    <string name="overview_no_older_app">Нет более старого приложения</string>
+    <string name="overview_no_newer_app">Нет более нового приложения</string>
+    <string name="stream_volume_needs_access">Разрешите доступ к режиму «Не беспокоить», чтобы изменять эту громкость.</string>
+    <string name="corner_gestures_title">Углы</string>
+    <string name="shortcut_move_to_item_below">Перейти к объекту ниже</string>
+    <string name="shortcut_move_to_item_above">Перейти к объекту выше</string>
+    <string name="shortcut_older_app">Более старое приложение</string>
+    <string name="shortcut_newer_app">Более новое приложение</string>
+    <string name="shortcut_answer_call">Ответить на звонок</string>
+    <string name="answer_call_no_call">Нет входящего звонка</string>
+    <string name="answer_call_permission">Нужно разрешение на ответ на звонки</string>
+    <string name="shortcut_switch_keyboard">Переключить клавиатуру</string>
+    <string name="switch_keyboard_none">Другие клавиатуры не включены</string>
+    <string name="switch_keyboard_failed">Клавиатура не переключена</string>
+    <string name="clipboard_history_hint">Проведите вверх или вниз, чтобы выбрать, затем нажмите дважды, чтобы вставить</string>
+    <string name="title_speech_history">История речи</string>
+    <string name="speech_history_empty">Речи нет</string>
+    <string name="speech_history_clear">Очистить историю</string>
+    <string name="title_pref_shortcut_corner_top_left_tap">Нажатие в левом верхнем углу</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap">Двойное нажатие в левом верхнем углу</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap">Тройное нажатие в левом верхнем углу</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap_hold">Двойное нажатие и удерживание в левом верхнем углу</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap_hold">Тройное нажатие и удерживание в левом верхнем углу</string>
+    <string name="title_pref_shortcut_corner_top_right_tap">Нажатие в правом верхнем углу</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap">Двойное нажатие в правом верхнем углу</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap">Тройное нажатие в правом верхнем углу</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap_hold">Двойное нажатие и удерживание в правом верхнем углу</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap_hold">Тройное нажатие и удерживание в правом верхнем углу</string>
+    <string name="title_pref_shortcut_corner_bottom_left_tap">Нажатие в левом нижнем углу</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap">Двойное нажатие в левом нижнем углу</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap">Тройное нажатие в левом нижнем углу</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap_hold">Двойное нажатие и удерживание в левом нижнем углу</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap_hold">Тройное нажатие и удерживание в левом нижнем углу</string>
+    <string name="title_pref_shortcut_corner_bottom_right_tap">Нажатие в правом нижнем углу</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap">Двойное нажатие в правом нижнем углу</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap">Тройное нажатие в правом нижнем углу</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap_hold">Двойное нажатие и удерживание в правом нижнем углу</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap_hold">Тройное нажатие и удерживание в правом нижнем углу</string>
+    <string name="title_pref_swipe_start_time">Время начала жеста</string>
+    <string name="title_pref_swipes_before_lift">Распознавать свайпы до отрыва пальца</string>
+    <string name="summary_pref_swipes_before_lift">Отключает жесты вперёд-назад и жесты под углом.</string>
+    <string name="title_pref_corner_size_mm">Размер угла</string>
+    <string name="value_corner_size_edge_width">Как ширина края</string>
+    <string name="title_pref_corner_tap_time_ms">Предельное время нажатия в углу</string>
+    <string name="value_corner_tap_time_system">По умолчанию в системе</string>
+    <string name="title_pref_edge_speak_commands">Произносить команду при каждом щелчке</string>
+    <string-array name="pref_volume_change_feedback_entries">
+        <item>@string/volume_change_feedback_off</item>
+        <item>@string/volume_change_feedback_tone</item>
+        <item>@string/volume_change_feedback_spoken</item>
+        <item>@string/volume_change_feedback_tone_and_spoken</item>
+    </string-array>
+    <string name="title_pref_volume_change_tone_during_media">Отключать сигнал при воспроизведении мультимедиа</string>
+    <string name="title_pref_volume_change_speech_during_media">Отключать речь при воспроизведении мультимедиа</string>
+    <string name="title_pref_volume_change_interrupts_speech">Прерывать речь, чтобы объявить громкость</string>
+    <string name="title_pref_volume_keys_speech_volume_while_speaking">Клавиши громкости меняют громкость речи во время речи</string>
+    <string name="title_pref_double_tap_moves_cursor">Двойное нажатие перемещает курсор в начало или конец</string>
+    <string name="title_pref_scroll_ahead">Прокручивать вперёд до следующего объекта</string>
+    <string name="title_pref_speak_while_scrolling">Произносить следующий объект во время прокрутки</string>
+    <string-array name="pref_text_entities_entries">
+    <item>@string/text_entity_web</item>
+    <item>@string/text_entity_email</item>
+    <item>@string/text_entity_phone</item>
+    <item>@string/text_entity_code</item>
+  </string-array>
+    <string name="value_keep_models_until_stopped">Пока SandFly не остановится</string>
+    <string name="title_pref_model_download_server">Сервер загрузки моделей</string>
+    <string name="title_pref_settings_profiles">Профили настроек</string>
+    <string name="title_pref_new_settings_profile">Новый профиль настроек</string>
+    <string name="settings_profile_new_name">Профиль <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="settings_profile_name_taken">Профиль настроек «<xliff:g id="name" example="Demo">%1$s</xliff:g>» уже есть</string>
+    <string name="settings_profile_in_use">Используется</string>
+    <string name="settings_profile_menu_item_in_use"><xliff:g id="name" example="Demo">%1$s</xliff:g>, используется</string>
+    <string name="settings_profile_none">Без профиля настроек</string>
+    <string name="settings_profile_use_now">Использовать сейчас</string>
+    <string name="settings_profile_stop_using">Прекратить использование</string>
+    <string name="settings_profile_change_settings">Изменить настройки</string>
+    <string name="settings_profile_editing">Изменения сохраняются в «<xliff:g id="name" example="Messaging">%1$s</xliff:g>»</string>
+    <string name="settings_profile_edit_saved">Изменения сохранены в «<xliff:g id="name" example="Messaging">%1$s</xliff:g>»</string>
+    <string name="settings_profile_use_automatically">Использовать автоматически</string>
+    <string name="settings_profile_web">Веб-содержимое</string>
+    <string name="settings_profile_reading">Непрерывное чтение</string>
+    <string name="settings_profile_text_editing">Редактирование текста</string>
+    <string name="settings_profile_apps">Приложения</string>
+    <string name="settings_profile_add_app">Добавить приложение</string>
+    <string name="settings_profile_settings">Настройки в этом профиле</string>
+    <string name="settings_profile_no_settings">Нет</string>
+    <string name="settings_profile_remove_confirm">Удалить «<xliff:g id="item" example="Speech rate">%1$s</xliff:g>» из «<xliff:g id="name" example="Messaging">%2$s</xliff:g>»?</string>
+    <string name="settings_profile_not_saved">Не удалось сохранить профиль настроек</string>
+    <string name="settings_profile_in_use_announcement">Профиль «<xliff:g id="name" example="Demo">%1$s</xliff:g>»</string>
+    <string name="settings_profile_not_changed">Профиль настроек не изменён</string>
+    <string name="title_settings_profile">Профиль настроек</string>
+    <string name="shortcut_settings_profiles">Выбрать профиль настроек</string>
+    <string name="shortcut_next_settings_profile">Следующий профиль настроек</string>
+    <string name="shortcut_previous_settings_profile">Предыдущий профиль настроек</string>
+    <string name="word_selection_list_cut_off">Список обрезан на <xliff:g id="count" example="1000">%1$d</xliff:g> объектах</string>
+    <plurals name="word_selection_copied">
+        <item quantity="one">Скопирован <xliff:g id="count" example="5">%1$d</xliff:g> объект</item>
+        <item quantity="few">Скопировано <xliff:g id="count" example="5">%1$d</xliff:g> объекта</item>
+        <item quantity="many">Скопировано <xliff:g id="count" example="5">%1$d</xliff:g> объектов</item>
+        <item quantity="other">Скопировано <xliff:g id="count" example="5">%1$d</xliff:g> объекта</item>
+    </plurals>
 </resources>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_macros">Макростор</string>
+    <string name="shortcut_stop_macro">Макросту токтотуу</string>
+    <string name="macro_add">Макрос кошуу</string>
+    <string name="macro_run_now">Азыр иштетүү</string>
+    <string name="macro_add_step">Кадам кошуу</string>
+    <string name="macro_add_at_end">Аягына</string>
+    <string name="macro_add_at_start">Башына</string>
+    <string name="macro_add_after"><xliff:g id="step" example="2">%1$d</xliff:g>-кадамдан кийин: <xliff:g id="name" example="If App in front: Chrome">%2$s</xliff:g></string>
+    <string name="macro_steps">Кадамдар</string>
+    <string name="macro_no_steps">Кадамдар жок</string>
+    <string name="macro_delete">Макросту өчүрүү</string>
+    <string name="macro_delete_confirm"><xliff:g id="name" example="Send message">%1$s</xliff:g> өчүрүлсүнбү?</string>
+    <string name="macro_step_command">Буйрукту аткаруу</string>
+    <string name="macro_step_wait">Күтүү</string>
+    <string name="macro_step_tap">Объектти таптоо</string>
+    <string name="macro_step_focus">Объектке фокус коюу</string>
+    <string name="macro_step_speak_item">Объектти айтуу</string>
+    <string name="macro_step_speak_text">Текстти айтуу</string>
+    <string name="macro_step_type">Текст терүү</string>
+    <string name="macro_step_tap_value">Таптоо: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_focus_value">Фокус: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_item_value">Айтуу: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_text_value">Айтуу: <xliff:g id="text" example="Done">%1$s</xliff:g></string>
+    <string name="macro_step_type_value">Терүү: <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <string name="macro_step_replace_value">Текстти муну менен алмаштыруу: <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <plurals name="macro_step_wait_seconds">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> секунд күтүү</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> секунд күтүү</item>
+    </plurals>
+    <plurals name="macro_step_wait_milliseconds">
+        <item quantity="one"><xliff:g id="count" example="500">%d</xliff:g> миллисекунд күтүү</item>
+        <item quantity="other"><xliff:g id="count" example="500">%d</xliff:g> миллисекунд күтүү</item>
+    </plurals>
+    <string name="macro_step_unavailable">Жеткиликсиз</string>
+    <string name="macro_seconds">Секунддар</string>
+    <string name="macro_invalid_seconds"><xliff:g id="max" example="600">%1$d</xliff:g> чейинки секунд санын киргизиңиз</string>
+    <string name="macro_tap_label">Объекттин тексти</string>
+    <string name="macro_tap_timeout">Объектти күтүү секунддары</string>
+    <string name="macro_text">Текст</string>
+    <string name="macro_replace_text">Талаадагы текстти алмаштыруу</string>
+    <string name="macro_item_not_found">Макрос токтоду. Табылган жок: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_failed">Макрос токтоду. Аткарылган жок: <xliff:g id="step" example="Open Gmail">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until">Чейин күтүү</string>
+    <string name="macro_step_if">Эгер</string>
+    <string name="macro_step_else_if">Антпесе эгер</string>
+    <string name="macro_step_else">Антпесе</string>
+    <string name="macro_step_end_if">Эгер аяктоо</string>
+    <string name="macro_step_repeat">Кайталоо</string>
+    <string name="macro_step_repeat_while">Качан болсо кайталоо</string>
+    <string name="macro_step_end_repeat">Кайталоо аяктоо</string>
+    <string name="macro_step_exit_loop">Циклден чыгуу</string>
+    <string name="macro_step_if_value">Эгер <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_else_if_value">Антпесе эгер <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_repeat_while_value">Качан болсо кайталоо <xliff:g id="condition" example="Item on screen: Load more">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until_value">Күтүү, чейин <xliff:g id="condition" example="Item on screen: Send">%1$s</xliff:g></string>
+    <plurals name="macro_step_repeat_value">
+        <item quantity="one"><xliff:g id="count" example="3">%d</xliff:g> жолу кайталоо</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> жолу кайталоо</item>
+    </plurals>
+    <string name="macro_times">Жолу</string>
+    <string name="macro_invalid_times">1 менен <xliff:g id="max" example="1000">%1$d</xliff:g> ортосундагы санды киргизиңиз</string>
+    <string name="macro_run_only_when">Мындай учурда гана иштетүү</string>
+    <string name="macro_always">Ар дайым</string>
+    <string name="macro_no_tests">Текшерүүлөр жок</string>
+    <string name="macro_add_test">Текшерүү кошуу</string>
+    <string name="macro_tests">Текшерүүлөр</string>
+    <string name="macro_choose_test">Текшерүү</string>
+    <string name="macro_test_item">Экрандагы объект</string>
+    <string name="macro_test_focused">Фокустагы объект</string>
+    <string name="macro_test_app">Алдыңкы колдонмо</string>
+    <string name="macro_test_keyboard">Баскычтоп көрсөтүлгөн</string>
+    <string name="macro_test_keyboard_hidden">Баскычтоп жашырылган</string>
+    <string name="macro_test_locked">Экран кулпуланган</string>
+    <string name="macro_test_unlocked">Экрандын кулпусу ачылган</string>
+    <string name="macro_test_item_value">Экрандагы объект: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_no_item_value">Экранда объект жок: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_focused_value">Фокустагы объект: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_not_focused_value">Фокуста жок объект: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_app_value">Алдыңкы колдонмо: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_not_app_value">Алдыңкы эмес колдонмо: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_label_kind"><xliff:g id="label" example="Send">%1$s</xliff:g>, <xliff:g id="kind" example="Clickable">%2$s</xliff:g></string>
+    <string name="macro_join_and"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g> жана <xliff:g id="second" example="Focused item: Editable">%2$s</xliff:g></string>
+    <string name="macro_join_or"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g>, же <xliff:g id="second" example="Screen locked">%2$s</xliff:g></string>
+    <string name="macro_regex">Туруктуу туюнтма</string>
+    <string name="macro_invalid_regex">Колдонууга жарактуу туруктуу туюнтма эмес. Кайталануучу топтордо кайталоо же | болбошу керек.</string>
+    <string name="macro_match_in">Дал келүүнү издөө</string>
+    <string name="macro_field_any">Каалаган текст</string>
+    <string name="macro_field_text">Текст</string>
+    <string name="macro_field_description">Сүрөттөмө</string>
+    <string name="macro_field_hint">Кеңеш</string>
+    <string name="macro_field_state">Абалы</string>
+    <string name="macro_field_id">Ресурс ID</string>
+    <string name="macro_field_value"><xliff:g id="label" example="send">%1$s</xliff:g> (<xliff:g id="field" example="Resource ID">%2$s</xliff:g>)</string>
+    <string name="macro_field_regex_value"><xliff:g id="pattern" example="^Reply">%1$s</xliff:g> (<xliff:g id="field" example="Description">%2$s</xliff:g>, туруктуу туюнтма)</string>
+    <string name="macro_regex_value"><xliff:g id="pattern" example="Reply.*Anna">%1$s</xliff:g> (туруктуу туюнтма)</string>
+    <string name="macro_test_label_optional">Объекттин тексти (милдеттүү эмес)</string>
+    <string name="macro_item_kind">Объекттин түрү</string>
+    <string name="macro_kind_any">Каалаган түр</string>
+    <string name="macro_kind_clickable">Таптоого болот</string>
+    <string name="macro_kind_long_clickable">Узакка таптоого болот</string>
+    <string name="macro_kind_editable">Түзөтүүгө болот</string>
+    <string name="macro_kind_scrollable">Жылдырууга болот</string>
+    <string name="macro_kind_adjustable">Жөнгө салууга болот</string>
+    <string name="macro_kind_checkable">Белгилөөгө болот</string>
+    <string name="macro_kind_checked">Белгиленген</string>
+    <string name="macro_kind_selected">Тандалган</string>
+    <string name="macro_kind_heading">Баш аты</string>
+    <string name="macro_kind_enabled">Күйгүзүлгөн</string>
+    <string name="macro_change_to">Өзгөртүү: <xliff:g id="test" example="Keyboard hidden">%1$s</xliff:g></string>
+    <string name="macro_join_with_and">Жана менен бириктирүү</string>
+    <string name="macro_join_with_or">Же менен бириктирүү</string>
+    <string name="macro_clause_and">жана <xliff:g id="test" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_clause_or">же <xliff:g id="test" example="Screen locked">%1$s</xliff:g></string>
+    <string name="macro_wait_timeout">Күтүү секунддары</string>
+    <string name="macro_add_step_after">Кийин кадам кошуу</string>
+    <string name="macro_problem"><xliff:g id="step" example="3">%1$d</xliff:g>-кадам: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_problem_no_if">Эгерсиз Антпесе эгер, Антпесе же Эгер аяктоо</string>
+    <string name="macro_problem_after_else">Антпеседен кийин Антпесе эгер же Антпесе</string>
+    <string name="macro_problem_no_repeat">Кайталоосуз Кайталоо аяктоо</string>
+    <string name="macro_problem_no_end_if">Эгер аяктоосуз Эгер</string>
+    <string name="macro_problem_no_end_repeat">Кайталоо аяктоосуз Кайталоо</string>
+    <string name="macro_problem_exit">Кайталоодон тышкары Циклден чыгуу</string>
+    <string name="macro_stopped_problem">Макрос токтоду. <xliff:g id="step" example="3">%1$d</xliff:g>-кадам: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_stopped_repeats">Макрос токтоду. <xliff:g id="count" example="1000">%1$d</xliff:g> жолу кайталанды: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
+    <string name="macro_stopped_timeout">Макрос токтоду. Убакыт бүттү: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
+    <string name="macro_not_met">Макрос иштетилген жок. Мындай учурда гана иштетүү: шарт аткарылган жок</string>
+</resources>

@@ -46,4 +46,17 @@
     <string name="granular_editing_not_saved">Δεν αποθηκεύτηκε: το πεδίο κειμένου δεν είναι πλέον διαθέσιμο. Το κείμενο αντιγράφηκε.</string>
     <string name="granular_editing_no_text">Δεν υπάρχει κείμενο για επεξεργασία</string>
     <string name="granular_editing_password">Δεν διατίθεται στα πεδία κωδικού πρόσβασης</string>
+    <plurals name="granular_editing_spaces">
+        <item quantity="one"><xliff:g id="count" example="3">%d</xliff:g> διάστημα</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> διαστήματα</item>
+    </plurals>
+    <plurals name="granular_editing_new_lines">
+        <item quantity="one"><xliff:g id="count" example="3">%d</xliff:g> νέα γραμμή</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> νέες γραμμές</item>
+    </plurals>
+    <plurals name="granular_editing_tabs">
+        <item quantity="one"><xliff:g id="count" example="3">%d</xliff:g> στηλοθέτης</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> στηλοθέτες</item>
+    </plurals>
+    <string name="granular_editing_blank_line">Κενή γραμμή</string>
 </resources>

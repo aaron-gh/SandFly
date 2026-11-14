@@ -406,4 +406,14 @@
         <item>@string/notification_shake_3</item>
     </string-array>
     <string name="notification_clock_voice_notifications">Glas obvestil</string>
+    <string name="notification_exact_alarms_title">Vklopite Alarme in opomnike</string>
+    <string name="shortcut_toggle_time_announcements">Napovedovanje časa vklopljeno ali izklopljeno</string>
+    <string name="notification_clock_now_on">Napovedovanje časa vklopljeno</string>
+    <string name="notification_clock_now_off">Napovedovanje časa izklopljeno</string>
+    <plurals name="notification_clock_battery">
+        <item quantity="one"><xliff:g id="percent" example="76">%d</xliff:g> odstotek</item>
+        <item quantity="two"><xliff:g id="percent" example="76">%d</xliff:g> odstotka</item>
+        <item quantity="few"><xliff:g id="percent" example="76">%d</xliff:g> odstotki</item>
+        <item quantity="other"><xliff:g id="percent" example="76">%d</xliff:g> odstotkov</item>
+    </plurals>
 </resources>

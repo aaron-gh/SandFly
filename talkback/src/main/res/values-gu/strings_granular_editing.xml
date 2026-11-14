@@ -46,4 +46,17 @@
     <string name="granular_editing_not_saved">સાચવેલ નથી: ટેક્સ્ટ ફીલ્ડ જતી રહી છે. ટેક્સ્ટની નકલ કરવામાં આવી છે.</string>
     <string name="granular_editing_no_text">ફેરફાર કરવા માટે કોઈ ટેક્સ્ટ નથી</string>
     <string name="granular_editing_password">પાસવર્ડ ફીલ્ડમાં ઉપલબ્ધ નથી</string>
+    <plurals name="granular_editing_spaces">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> સ્પેસ</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> સ્પેસ</item>
+    </plurals>
+    <plurals name="granular_editing_new_lines">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> નવી લાઇન</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> નવી લાઇન</item>
+    </plurals>
+    <plurals name="granular_editing_tabs">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ટૅબ</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> ટૅબ</item>
+    </plurals>
+    <string name="granular_editing_blank_line">ખાલી લાઇન</string>
 </resources>

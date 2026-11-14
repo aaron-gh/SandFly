@@ -59,4 +59,24 @@
     <string name="keycombo_menu_navigate_next_by_setting">Gezinme ayarına göre sonraki</string>
     <string name="keycombo_menu_navigate_previous_by_setting">Gezinme ayarına göre önceki</string>
     <string name="title_pref_overview_screen">Genel Bakış</string>
+    <string name="title_pref_custom_menus">Özel menüler</string>
+    <string name="commands_category_setting_values">Ayar değerleri</string>
+    <string name="command_next_value"><xliff:g id="setting" example="Punctuation">%1$s</xliff:g>: sonraki değer</string>
+    <string name="command_previous_value"><xliff:g id="setting" example="Punctuation">%1$s</xliff:g>: önceki değer</string>
+    <string name="shortcut_script_commands">Komut dosyası komutları</string>
+    <string name="shortcut_set_reading_control">Okuma kontrolünü <xliff:g id="control" example="Headings">%1$s</xliff:g> yap</string>
+    <string name="title_pref_custom_reading_controls">Özel okuma kontrolleri</string>
+    <string name="menu_add_reading_control">Okuma kontrolü ekle</string>
+    <string name="menu_add_submenu">Alt menü ekle</string>
+    <string name="menu_add_menu">Menü ekle</string>
+    <string name="menu_name">Ad</string>
+    <string name="menu_open">Aç</string>
+    <string name="menu_move_to">Taşı</string>
+    <string name="menu_rename">Yeniden adlandır</string>
+    <string name="menu_delete">Sil</string>
+    <string name="menu_delete_confirm"><xliff:g id="name" example="AI">%1$s</xliff:g> ve içindekilerin tümü silinsin mi?</string>
+    <string name="menu_moved"><xliff:g id="place" example="AI">%1$s</xliff:g> konumuna taşındı</string>
+    <string name="menu_reset">Varsayılana sıfırla</string>
+    <string name="menu_reset_confirm">SandFly menüsü varsayılan öğelerine ve sırasına sıfırlansın mı?</string>
+    <string name="menu_assign">Hareketler ve klavye kısayolu</string>
 </resources>

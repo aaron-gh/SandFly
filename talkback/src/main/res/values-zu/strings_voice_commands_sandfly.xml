@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_voice_commands">Imiyalo yezwi</string>
+    <string name="title_pref_voice_commands_ai">Qonda imiyalo yezwi nge-AI</string>
+    <string name="voice_commands_custom">Imiyalo yezwi eyenziwe ngezifiso</string>
+    <string name="voice_command_add">Engeza umyalo wezwi</string>
+    <string name="voice_command_phrase">Ibinzana</string>
+    <string name="voice_command_change_phrase">Shintsha ibinzana</string>
+    <string name="voice_command_change_command">Shintsha umyalo</string>
+    <string name="voice_command_delete_confirm">Susa <xliff:g id="phrase" example="Good morning">%1$s</xliff:g>?</string>
+    <string name="voice_command_phrase_exists"><xliff:g id="phrase" example="Good morning">%1$s</xliff:g> seyiwumyalo wezwi</string>
+    <string name="voice_commands_not_understood">Akuqondwanga: <xliff:g id="text" example="open the door">%1$s</xliff:g></string>
+    <string name="voice_commands_not_available">Akutholakali: <xliff:g id="name" example="Morning macro">%1$s</xliff:g></string>
+    <string name="voice_commands_not_found">Akutholakalanga: <xliff:g id="label" example="Settings">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app">Alikho i-app elibizwa ngokuthi <xliff:g id="name" example="Signal">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app_for_action">Alikho i-app lalesi senzo</string>
+    <string name="voice_commands_calling">Ishaya ucingo ku-<xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_call_permission">Vumela amakholi efoni, bese usho umyalo futhi.</string>
+    <string name="voice_commands_contacts_permission">Vumela ukufinyelela kubathintana nabo, bese usho umyalo futhi.</string>
+    <string name="voice_commands_no_contact">Akukho muntu othintana naye obizwa ngokuthi <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_contacts_several">Kunabathintana nabo abangaphezu komunye ababizwa ngokuthi <xliff:g id="name" example="Sam">%1$s</xliff:g>: <xliff:g id="names" example="Sam Jones, Sam Smith">%2$s</xliff:g></string>
+    <string name="voice_commands_message_text">Umlayezo ku-<xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_message_confirm">Thumela ku-<xliff:g id="name" example="Sam">%1$s</xliff:g>: <xliff:g id="text" example="I am on my way">%2$s</xliff:g>?</string>
+    <string name="voice_commands_message_confirm_result">Thumela ku-<xliff:g id="name" example="Sam">%1$s</xliff:g>?</string>
+    <string name="voice_commands_message_not_sent">Umlayezo awuthunyelwanga</string>
+    <string name="voice_commands_send_pressed">Thumela kucindezelwe</string>
+    <string name="voice_commands_send_button">Thumela</string>
+    <string name="voice_commands_no_description">Ayikho incazelo etholakele</string>
+    <string name="voice_commands_copied">Kukopishiwe</string>
+    <string-array name="voice_commands_chain_words">
+        <item>bese</item>
+        <item>ngemuva kwalokho</item>
+        <item>emva kwalokho</item>
+        <item>futhi bese</item>
+    </string-array>
+    <string-array name="voice_commands_and_words">
+        <item>futhi</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_start">
+        <item>sicela</item>
+        <item>ungakwazi</item>
+        <item>ungakhona</item>
+        <item>ngifuna</item>
+        <item>ngithanda</item>
+        <item>manje</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_end">
+        <item>sicela</item>
+        <item>ngenxa yami</item>
+        <item>manje</item>
+    </string-array>
+    <string-array name="voice_commands_cancel_words">
+        <item>misa</item>
+        <item>yeka</item>
+        <item>khansela</item>
+        <item>qeda</item>
+        <item>ungakhathazeki</item>
+        <item>yeka konke</item>
+        <item>thula</item>
+    </string-array>
+    <string-array name="voice_commands_yes">
+        <item>yebo</item>
+        <item>ye</item>
+        <item>thumela</item>
+        <item>yithumele</item>
+        <item>kulungile</item>
+        <item>ok</item>
+        <item>impela</item>
+        <item>yenza</item>
+    </string-array>
+    <string-array name="voice_commands_sms_names">
+        <item>SMS</item>
+        <item>umlayezo wombhalo</item>
+        <item>umbhalo</item>
+        <item>imilayezo</item>
+    </string-array>
+    <string-array name="voice_commands_send_image_description">
+        <item>thumela incazelo yesithombe ku-{who}</item>
+        <item>thumela ku-{who} incazelo yesithombe</item>
+        <item>thumela incazelo yalesi sithombe ku-{who}</item>
+        <item>thumela incazelo yesithombe ku-{who}</item>
+    </string-array>
+    <string-array name="voice_commands_send_screen_description">
+        <item>thumela incazelo yesikrini ku-{who}</item>
+        <item>thumela ku-{who} incazelo yesikrini</item>
+        <item>thumela incazelo yalesi sikrini ku-{who}</item>
+    </string-array>
+    <string-array name="voice_commands_send_previous">
+        <item>thumela ku-{who} ku-{app}</item>
+        <item>yithumele ku-{who} ku-{app}</item>
+        <item>thumela ku-{who}</item>
+        <item>yithumele ku-{who}</item>
+        <item>thumela lokho ku-{who}</item>
+        <item>thumela incazelo ku-{who}</item>
+        <item>yabelane no-{who}</item>
+    </string-array>
+    <string-array name="voice_commands_message">
+        <item>thumela umlayezo ku-{who} ku-{app} othi {text}</item>
+        <item>thumela umlayezo ku-{who} ku-{app}: {text}</item>
+        <item>thumela umlayezo ku-{who} othi {text}</item>
+        <item>thumela umlayezo ku-{who}: {text}</item>
+        <item>thumela umlayezo ku-{whoandtext}</item>
+        <item>thumela umlayezo we-{app} ku-{who} othi {text}</item>
+        <item>thumela umlayezo we-{app} ku-{who}</item>
+        <item>thumela {who} umlayezo othi {text}</item>
+        <item>thumela {who} umlayezo ku-{app}: {text}</item>
+        <item>yisa umlayezo ku-{who} othi {text}</item>
+        <item>thumela i-SMS ku-{who} {text}</item>
+        <item>tshela {who} ku-{app} {text}</item>
+        <item>thumela {whoandtext} umlayezo</item>
+        <item>thumela i-SMS ku-{whoandtext}</item>
+    </string-array>
+    <string-array name="voice_commands_call">
+        <item>shayela {who} ucingo</item>
+        <item>shaya ucingo ku-{who}</item>
+        <item>shayela {who}</item>
+        <item>fona {who}</item>
+        <item>dayela {who}</item>
+    </string-array>
+    <string-array name="voice_commands_describe_screen">
+        <item>chaza isikrini</item>
+        <item>chaza okusesikrinini</item>
+        <item>yini esesikrinini</item>
+        <item>yini esesikrinini sami</item>
+    </string-array>
+    <string-array name="voice_commands_describe_image">
+        <item>chaza [lesi] sithombe</item>
+        <item>chaza isithombe</item>
+        <item>chaza i-foto</item>
+        <item>yini esesithombeni [lesi]</item>
+        <item>yini esesithombeni</item>
+        <item>yini ku-foto</item>
+    </string-array>
+    <string-array name="voice_commands_copy_result">
+        <item>kopisha lokho</item>
+        <item>kopisha</item>
+        <item>kopisha incazelo</item>
+        <item>kopisha oshilo [nje]</item>
+        <item>kopisha ibinzana lokugcina elikhulunyiwe</item>
+        <item>kopisha ibinzana lokugcina</item>
+        <item>kopisha okushiwo ekugcineni</item>
+    </string-array>
+    <string-array name="voice_commands_wait">
+        <item>linda amasekhondi angu-{n}</item>
+        <item>linda isekhondi</item>
+        <item>linda</item>
+    </string-array>
+    <string-array name="voice_commands_type_text">
+        <item>thayipha {text}</item>
+        <item>bhala {text}</item>
+        <item>faka {text}</item>
+    </string-array>
+    <string-array name="voice_commands_run">
+        <item>qalisa imakhro {command}</item>
+        <item>qalisa {command}</item>
+        <item>yenza {command}</item>
+    </string-array>
+    <string-array name="voice_commands_open">
+        <item>vula {app}</item>
+        <item>layisha {app}</item>
+        <item>qala {app}</item>
+        <item>shintshela ku-{app}</item>
+    </string-array>
+    <string-array name="voice_commands_tap">
+        <item>thepha kabili ku-{label}</item>
+        <item>thepha ku-{label}</item>
+        <item>chofoza ku-{label}</item>
+        <item>cindezela {label}</item>
+        <item>vula {label}</item>
+        <item>khetha {label}</item>
+    </string-array>
+</resources>

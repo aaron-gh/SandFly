@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="item_file_import">فائل سے درآمد کریں</string>
+    <string name="item_file_export">فائل میں برآمد کریں</string>
+    <string name="title_pref_export_item_file_reference">برآمد فائل فارمیٹ کا حوالہ</string>
+    <string name="item_file_keymaps">کلیدی نقشے</string>
+    <string name="item_file_exported">برآمد ہو گیا</string>
+    <string name="item_file_export_failed">برآمد نہیں ہو سکا</string>
+    <string name="item_file_not_read">یہ فائل SandFly آئٹم فائل نہیں ہے یا پڑھی نہیں جا سکی</string>
+    <string name="item_file_settings_file">یہ ترتیبات کی فائل ہے۔ اسے بیک اپ اور بحالی &gt; ترتیبات درآمد کریں سے درآمد کریں</string>
+    <string name="item_file_newer">یہ فائل SandFly کے نئے ورژن کی ہے</string>
+    <string name="item_file_nothing_imported">کچھ درآمد نہیں ہوا</string>
+    <string name="item_file_imported">درآمد ہوا: <xliff:g id="items" example="2 macros, 1 gesture profile">%1$s</xliff:g></string>
+    <string name="item_file_left_out">چھوڑا گیا:</string>
+    <string name="item_file_problem_not_read"><xliff:g id="kind" example="Macros">%1$s</xliff:g>، آئٹم <xliff:g id="number" example="3">%2$d</xliff:g>: پڑھا نہیں گیا</string>
+    <string name="item_file_problem_command"><xliff:g id="item" example="Open mail">%1$s</xliff:g>: نامعلوم کمانڈ <xliff:g id="command" example="READ_ALL">%2$s</xliff:g></string>
+    <string name="item_file_problem_gesture"><xliff:g id="item" example="Reading">%1$s</xliff:g>: نامعلوم اشارہ <xliff:g id="gesture" example="pref_shortcut_spin">%2$s</xliff:g></string>
+    <string name="item_file_problem_keys"><xliff:g id="item" example="My keymap">%1$s</xliff:g>: کلیدیں سمجھ میں نہیں آئیں: <xliff:g id="keys" example="SandFly+Foo">%2$s</xliff:g></string>
+    <string name="item_file_problem_keys_taken"><xliff:g id="item" example="My keymap">%1$s</xliff:g>: کلیدیں پہلے سے استعمال میں ہیں: <xliff:g id="keys" example="SandFly+H">%2$s</xliff:g></string>
+    <string name="item_file_problem_setting"><xliff:g id="item" example="Reading">%1$s</xliff:g>: ترتیب <xliff:g id="key" example="pref_vibration">%2$s</xliff:g> نامعلوم ہے، پروفائل میں نہیں ہو سکتی، یا اس کی قدر کی قسم غلط ہے</string>
+    <string name="item_file_problem_regex"><xliff:g id="dictionary" example="Speech dictionary">%1$s</xliff:g>: ریگولر ایکسپریشن مسترد کیا گیا: <xliff:g id="expression" example="(a+)+">%2$s</xliff:g></string>
+    <string name="item_file_problem_limit"><xliff:g id="kind" example="Symbol dictionary">%1$s</xliff:g>: زیادہ سے زیادہ <xliff:g id="number" example="500">%2$d</xliff:g> آئٹمز</string>
+    <string name="item_file_problem_more">مزید چھوڑا گیا</string>
+    <plurals name="item_file_count_macros">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> میکرو</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> میکروز</item>
+    </plurals>
+    <plurals name="item_file_count_gesture_profiles">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> اشارہ پروفائل</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> اشارہ پروفائلز</item>
+    </plurals>
+    <plurals name="item_file_count_keymaps">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> کلیدی نقشہ</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> کلیدی نقشے</item>
+    </plurals>
+    <plurals name="item_file_count_apps">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> ایپ کے اشارے اور کی بورڈ شارٹ کٹس</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> ایپس کے اشارے اور کی بورڈ شارٹ کٹس</item>
+    </plurals>
+    <plurals name="item_file_count_settings_profiles">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> ترتیبات کا پروفائل</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> ترتیبات کے پروفائلز</item>
+    </plurals>
+    <plurals name="item_file_count_speech_dictionary">
+        <item quantity="one">تقریری لغت کی <xliff:g id="count" example="2">%d</xliff:g> اندراج</item>
+        <item quantity="other">تقریری لغت کے <xliff:g id="count" example="2">%d</xliff:g> اندراجات</item>
+    </plurals>
+    <plurals name="item_file_count_symbol_dictionary">
+        <item quantity="one">علامات کی لغت کی <xliff:g id="count" example="2">%d</xliff:g> اندراج</item>
+        <item quantity="other">علامات کی لغت کے <xliff:g id="count" example="2">%d</xliff:g> اندراجات</item>
+    </plurals>
+    <plurals name="item_file_count_braille_dictionary">
+        <item quantity="one">بریل لغت کی <xliff:g id="count" example="2">%d</xliff:g> اندراج</item>
+        <item quantity="other">بریل لغت کے <xliff:g id="count" example="2">%d</xliff:g> اندراجات</item>
+    </plurals>
+    <plurals name="item_file_count_voice_commands">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> حسب ضرورت صوتی کمانڈ</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> حسب ضرورت صوتی کمانڈز</item>
+    </plurals>
+</resources>

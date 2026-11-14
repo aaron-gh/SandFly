@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="item_file_import">फाइलमधून आयात करा</string>
+    <string name="item_file_export">फाइलमध्ये निर्यात करा</string>
+    <string name="title_pref_export_item_file_reference">निर्यात फाइल फॉरमॅट संदर्भ</string>
+    <string name="item_file_keymaps">कीमॅप</string>
+    <string name="item_file_exported">निर्यात केले</string>
+    <string name="item_file_export_failed">निर्यात करता आले नाही</string>
+    <string name="item_file_not_read">ही SandFly आयटम फाइल नाही, किंवा वाचता आली नाही</string>
+    <string name="item_file_settings_file">ही सेटिंग्ज फाइल आहे. ती बॅकअप आणि रिस्टोअर &gt; सेटिंग्ज आयात करा येथून आयात करा</string>
+    <string name="item_file_newer">ही फाइल SandFly च्या नवीन आवृत्तीतील आहे</string>
+    <string name="item_file_nothing_imported">काहीही आयात केले नाही</string>
+    <string name="item_file_imported"><xliff:g id="items" example="2 macros, 1 gesture profile">%1$s</xliff:g> आयात केले</string>
+    <string name="item_file_left_out">वगळले:</string>
+    <string name="item_file_problem_not_read"><xliff:g id="kind" example="Macros">%1$s</xliff:g>, आयटम <xliff:g id="number" example="3">%2$d</xliff:g>: वाचला नाही</string>
+    <string name="item_file_problem_command"><xliff:g id="item" example="Open mail">%1$s</xliff:g>: अज्ञात कमांड <xliff:g id="command" example="READ_ALL">%2$s</xliff:g></string>
+    <string name="item_file_problem_gesture"><xliff:g id="item" example="Reading">%1$s</xliff:g>: अज्ञात जेश्चर <xliff:g id="gesture" example="pref_shortcut_spin">%2$s</xliff:g></string>
+    <string name="item_file_problem_keys"><xliff:g id="item" example="My keymap">%1$s</xliff:g>: कीज समजल्या नाहीत: <xliff:g id="keys" example="SandFly+Foo">%2$s</xliff:g></string>
+    <string name="item_file_problem_keys_taken"><xliff:g id="item" example="My keymap">%1$s</xliff:g>: कीज आधीच वापरात आहेत: <xliff:g id="keys" example="SandFly+H">%2$s</xliff:g></string>
+    <string name="item_file_problem_setting"><xliff:g id="item" example="Reading">%1$s</xliff:g>: सेटिंग <xliff:g id="key" example="pref_vibration">%2$s</xliff:g> अज्ञात आहे, प्रोफाइलमध्ये असू शकत नाही, किंवा तिचे मूल्य चुकीच्या प्रकारचे आहे</string>
+    <string name="item_file_problem_regex"><xliff:g id="dictionary" example="Speech dictionary">%1$s</xliff:g>: रेग्युलर एक्स्प्रेशन नाकारले: <xliff:g id="expression" example="(a+)+">%2$s</xliff:g></string>
+    <string name="item_file_problem_limit"><xliff:g id="kind" example="Symbol dictionary">%1$s</xliff:g>: जास्तीत जास्त <xliff:g id="number" example="500">%2$d</xliff:g> आयटम</string>
+    <string name="item_file_problem_more">आणखी वगळले</string>
+    <plurals name="item_file_count_macros">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> मॅक्रो</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> मॅक्रो</item>
+    </plurals>
+    <plurals name="item_file_count_gesture_profiles">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> जेश्चर प्रोफाइल</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> जेश्चर प्रोफाइल</item>
+    </plurals>
+    <plurals name="item_file_count_keymaps">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> कीमॅप</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> कीमॅप</item>
+    </plurals>
+    <plurals name="item_file_count_apps">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ॲपचे जेश्चर आणि कीबोर्ड शॉर्टकट</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> ॲप्सचे जेश्चर आणि कीबोर्ड शॉर्टकट</item>
+    </plurals>
+    <plurals name="item_file_count_settings_profiles">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> सेटिंग्ज प्रोफाइल</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> सेटिंग्ज प्रोफाइल</item>
+    </plurals>
+    <plurals name="item_file_count_speech_dictionary">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> स्पीच डिक्शनरी नोंद</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> स्पीच डिक्शनरी नोंदी</item>
+    </plurals>
+    <plurals name="item_file_count_symbol_dictionary">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> चिन्ह डिक्शनरी नोंद</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> चिन्ह डिक्शनरी नोंदी</item>
+    </plurals>
+    <plurals name="item_file_count_braille_dictionary">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ब्रेल डिक्शनरी नोंद</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> ब्रेल डिक्शनरी नोंदी</item>
+    </plurals>
+    <plurals name="item_file_count_voice_commands">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> कस्टम व्हॉइस कमांड</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> कस्टम व्हॉइस कमांड</item>
+    </plurals>
+</resources>

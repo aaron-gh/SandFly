@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_voice_commands">વૉઇસ આદેશો</string>
+    <string name="title_pref_voice_commands_ai">AI થી વૉઇસ આદેશો સમજો</string>
+    <string name="voice_commands_custom">કસ્ટમ વૉઇસ આદેશો</string>
+    <string name="voice_command_add">વૉઇસ આદેશ ઉમેરો</string>
+    <string name="voice_command_phrase">શબ્દસમૂહ</string>
+    <string name="voice_command_change_phrase">શબ્દસમૂહ બદલો</string>
+    <string name="voice_command_change_command">આદેશ બદલો</string>
+    <string name="voice_command_delete_confirm"><xliff:g id="phrase" example="Good morning">%1$s</xliff:g> ડિલીટ કરવો?</string>
+    <string name="voice_command_phrase_exists"><xliff:g id="phrase" example="Good morning">%1$s</xliff:g> પહેલેથી વૉઇસ આદેશ છે</string>
+    <string name="voice_commands_not_understood">સમજાયું નથી: <xliff:g id="text" example="open the door">%1$s</xliff:g></string>
+    <string name="voice_commands_not_available">ઉપલબ્ધ નથી: <xliff:g id="name" example="Morning macro">%1$s</xliff:g></string>
+    <string name="voice_commands_not_found">મળ્યું નથી: <xliff:g id="label" example="Settings">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app"><xliff:g id="name" example="Signal">%1$s</xliff:g> નામની કોઈ ઍપ નથી</string>
+    <string name="voice_commands_no_app_for_action">આ ક્રિયા માટે કોઈ ઍપ નથી</string>
+    <string name="voice_commands_calling"><xliff:g id="name" example="Sam">%1$s</xliff:g> ને કૉલ કરી રહ્યું છે</string>
+    <string name="voice_commands_call_permission">ફોન કૉલની મંજૂરી આપો, પછી આદેશ ફરીથી બોલો.</string>
+    <string name="voice_commands_contacts_permission">સંપર્કોના ઍક્સેસની મંજૂરી આપો, પછી આદેશ ફરીથી બોલો.</string>
+    <string name="voice_commands_no_contact"><xliff:g id="name" example="Sam">%1$s</xliff:g> નામનો કોઈ સંપર્ક નથી</string>
+    <string name="voice_commands_contacts_several"><xliff:g id="name" example="Sam">%1$s</xliff:g> નામના એક કરતાં વધુ સંપર્ક: <xliff:g id="names" example="Sam Jones, Sam Smith">%2$s</xliff:g></string>
+    <string name="voice_commands_message_text"><xliff:g id="name" example="Sam">%1$s</xliff:g> ને સંદેશ</string>
+    <string name="voice_commands_message_confirm"><xliff:g id="name" example="Sam">%1$s</xliff:g> ને મોકલવું: <xliff:g id="text" example="I am on my way">%2$s</xliff:g>?</string>
+    <string name="voice_commands_message_confirm_result"><xliff:g id="name" example="Sam">%1$s</xliff:g> ને મોકલવું?</string>
+    <string name="voice_commands_message_not_sent">સંદેશ મોકલ્યો નથી</string>
+    <string name="voice_commands_send_pressed">મોકલો દબાવ્યું</string>
+    <string name="voice_commands_send_button">મોકલો</string>
+    <string name="voice_commands_no_description">વર્ણન મળ્યું નથી</string>
+    <string name="voice_commands_copied">કૉપિ કર્યું</string>
+    <string-array name="voice_commands_chain_words">
+        <item>અને પછી</item>
+        <item>પછી</item>
+        <item>તે પછી</item>
+        <item>ત્યારબાદ</item>
+    </string-array>
+    <string-array name="voice_commands_and_words">
+        <item>અને</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_start">
+        <item>કૃપા કરીને</item>
+        <item>શું તમે</item>
+        <item>હમણાં</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_end">
+        <item>કૃપા કરીને</item>
+        <item>મારા માટે</item>
+        <item>હમણાં</item>
+    </string-array>
+    <string-array name="voice_commands_cancel_words">
+        <item>રોકો</item>
+        <item>અટકો</item>
+        <item>રદ કરો</item>
+        <item>બંધ કરો</item>
+        <item>જવા દો</item>
+        <item>રહેવા દો</item>
+    </string-array>
+    <string-array name="voice_commands_yes">
+        <item>હા</item>
+        <item>હાજી</item>
+        <item>જી હા</item>
+        <item>મોકલો</item>
+        <item>મોકલી દો</item>
+        <item>ઠીક છે</item>
+        <item>ઓકે</item>
+        <item>ચોક્કસ</item>
+        <item>કરો</item>
+    </string-array>
+    <string-array name="voice_commands_sms_names">
+        <item>SMS</item>
+        <item>એસએમએસ</item>
+        <item>ટેક્સ્ટ</item>
+        <item>ટેક્સ્ટ મેસેજ</item>
+        <item>મેસેજ</item>
+        <item>સંદેશ</item>
+    </string-array>
+    <string-array name="voice_commands_send_image_description">
+        <item>{who} ને [આ] છબીનું વર્ણન મોકલો</item>
+        <item>{who} ને [આ] ઇમેજનું વર્ણન મોકલો</item>
+        <item>{who} ને [આ] ફોટાનું વર્ણન મોકલો</item>
+        <item>[આ] છબીનું વર્ણન {who} ને મોકલો</item>
+        <item>[આ] ફોટાનું વર્ણન {who} ને મોકલો</item>
+    </string-array>
+    <string-array name="voice_commands_send_screen_description">
+        <item>{who} ને [આ] સ્ક્રીનનું વર્ણન મોકલો</item>
+        <item>[આ] સ્ક્રીનનું વર્ણન {who} ને મોકલો</item>
+    </string-array>
+    <string-array name="voice_commands_send_previous">
+        <item>આ {who} ને {app} પર મોકલો</item>
+        <item>આ {who} ને મોકલો</item>
+        <item>વર્ણન {who} ને મોકલો</item>
+        <item>આ {who} સાથે શેર કરો</item>
+    </string-array>
+    <string-array name="voice_commands_message">
+        <item>{who} ને {app} પર મેસેજ મોકલો {text}</item>
+        <item>{who} ને {app} પર મેસેજ મોકલો કે {text}</item>
+        <item>{who} ને મેસેજ મોકલો {text}</item>
+        <item>{who} ને મેસેજ મોકલો કે {text}</item>
+        <item>{who} ને {app} મેસેજ મોકલો {text}</item>
+        <item>{who} ને {app} મેસેજ મોકલો</item>
+        <item>{who} ને {app} પર મેસેજ કરો {text}</item>
+        <item>{who} ને મેસેજ કરો {text}</item>
+        <item>{who} ને {app} પર કહો {text}</item>
+        <item>મેસેજ મોકલો {whoandtext}</item>
+        <item>મેસેજ કરો {whoandtext}</item>
+        <item>મેસેજ {whoandtext}</item>
+        <item>ટેક્સ્ટ {whoandtext}</item>
+    </string-array>
+    <string-array name="voice_commands_call">
+        <item>{who} ને કૉલ કરો</item>
+        <item>{who} ને ફોન કરો</item>
+        <item>{who} ને ડાયલ કરો</item>
+        <item>કૉલ {who}</item>
+    </string-array>
+    <string-array name="voice_commands_describe_screen">
+        <item>સ્ક્રીનનું વર્ણન કરો</item>
+        <item>સ્ક્રીન પર શું છે</item>
+        <item>[આ|મારી] સ્ક્રીન પર શું છે</item>
+    </string-array>
+    <string-array name="voice_commands_describe_image">
+        <item>[આ] છબીનું વર્ણન કરો</item>
+        <item>[આ] ઇમેજનું વર્ણન કરો</item>
+        <item>[આ] ફોટાનું વર્ણન કરો</item>
+        <item>[આ] છબીમાં શું છે</item>
+        <item>[આ] ફોટામાં શું છે</item>
+    </string-array>
+    <string-array name="voice_commands_copy_result">
+        <item>આ કૉપિ કરો</item>
+        <item>વર્ણન કૉપિ કરો</item>
+        <item>જે [હમણાં] કહ્યું તે કૉપિ કરો</item>
+        <item>છેલ્લો [બોલાયેલો] શબ્દસમૂહ કૉપિ કરો</item>
+    </string-array>
+    <string-array name="voice_commands_wait">
+        <item>{n} સેકન્ડ રાહ જુઓ</item>
+        <item>{n} સેકન્ડ રોકાઓ</item>
+        <item>એક સેકન્ડ રાહ જુઓ</item>
+        <item>રાહ જુઓ</item>
+    </string-array>
+    <string-array name="voice_commands_type_text">
+        <item>ટાઇપ કરો {text}</item>
+        <item>લખો {text}</item>
+        <item>{text} ટાઇપ કરો</item>
+        <item>{text} લખો</item>
+    </string-array>
+    <string-array name="voice_commands_run">
+        <item>{command} મેક્રો ચલાવો</item>
+        <item>મેક્રો {command} ચલાવો</item>
+        <item>{command} ચલાવો</item>
+        <item>{command} કરો</item>
+    </string-array>
+    <string-array name="voice_commands_open">
+        <item>{app} ખોલો</item>
+        <item>{app} શરૂ કરો</item>
+        <item>{app} પર જાઓ</item>
+        <item>{app} પર સ્વિચ કરો</item>
+    </string-array>
+    <string-array name="voice_commands_tap">
+        <item>{label} પર બે વાર ટેપ કરો</item>
+        <item>{label} પર ટેપ કરો</item>
+        <item>{label} પર ક્લિક કરો</item>
+        <item>{label} દબાવો</item>
+        <item>{label} ચાલુ કરો</item>
+        <item>{label} પસંદ કરો</item>
+    </string-array>
+</resources>

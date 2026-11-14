@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_voice_commands">Röstkommandon</string>
+    <string name="title_pref_voice_commands_ai">Tolka röstkommandon med AI</string>
+    <string name="voice_commands_custom">Anpassade röstkommandon</string>
+    <string name="voice_command_add">Lägg till röstkommando</string>
+    <string name="voice_command_phrase">Fras</string>
+    <string name="voice_command_change_phrase">Ändra fras</string>
+    <string name="voice_command_change_command">Ändra kommando</string>
+    <string name="voice_command_delete_confirm">Radera <xliff:g id="phrase" example="Good morning">%1$s</xliff:g>?</string>
+    <string name="voice_command_phrase_exists"><xliff:g id="phrase" example="Good morning">%1$s</xliff:g> är redan ett röstkommando</string>
+    <string name="voice_commands_not_understood">Förstods inte: <xliff:g id="text" example="open the door">%1$s</xliff:g></string>
+    <string name="voice_commands_not_available">Inte tillgängligt: <xliff:g id="name" example="Morning macro">%1$s</xliff:g></string>
+    <string name="voice_commands_not_found">Hittades inte: <xliff:g id="label" example="Settings">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app">Ingen app med namnet <xliff:g id="name" example="Signal">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app_for_action">Ingen app för den här åtgärden</string>
+    <string name="voice_commands_calling">Ringer <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_call_permission">Tillåt telefonsamtal och säg sedan kommandot igen.</string>
+    <string name="voice_commands_contacts_permission">Tillåt åtkomst till kontakter och säg sedan kommandot igen.</string>
+    <string name="voice_commands_no_contact">Ingen kontakt med namnet <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_contacts_several">Fler än en kontakt med namnet <xliff:g id="name" example="Sam">%1$s</xliff:g>: <xliff:g id="names" example="Sam Jones, Sam Smith">%2$s</xliff:g></string>
+    <string name="voice_commands_message_text">Meddelande till <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_message_confirm">Skicka till <xliff:g id="name" example="Sam">%1$s</xliff:g>: <xliff:g id="text" example="I am on my way">%2$s</xliff:g>?</string>
+    <string name="voice_commands_message_confirm_result">Skicka till <xliff:g id="name" example="Sam">%1$s</xliff:g>?</string>
+    <string name="voice_commands_message_not_sent">Meddelandet skickades inte</string>
+    <string name="voice_commands_send_pressed">Skicka tryckt</string>
+    <string name="voice_commands_send_button">Skicka</string>
+    <string name="voice_commands_no_description">Ingen beskrivning mottogs</string>
+    <string name="voice_commands_copied">Kopierat</string>
+    <string-array name="voice_commands_chain_words">
+        <item>och sedan</item>
+        <item>sedan</item>
+        <item>därefter</item>
+        <item>efteråt</item>
+    </string-array>
+    <string-array name="voice_commands_and_words">
+        <item>och</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_start">
+        <item>snälla</item>
+        <item>kan du</item>
+        <item>kan du snälla</item>
+        <item>skulle du</item>
+        <item>jag vill</item>
+        <item>jag skulle vilja</item>
+        <item>nu</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_end">
+        <item>tack</item>
+        <item>snälla</item>
+        <item>åt mig</item>
+        <item>nu</item>
+    </string-array>
+    <string-array name="voice_commands_cancel_words">
+        <item>stopp</item>
+        <item>avbryt</item>
+        <item>glöm det</item>
+        <item>sluta</item>
+    </string-array>
+    <string-array name="voice_commands_yes">
+        <item>ja</item>
+        <item>japp</item>
+        <item>javisst</item>
+        <item>skicka</item>
+        <item>skicka det</item>
+        <item>ok</item>
+        <item>okej</item>
+        <item>gärna</item>
+        <item>gör det</item>
+    </string-array>
+    <string-array name="voice_commands_sms_names">
+        <item>SMS</item>
+        <item>textmeddelande</item>
+        <item>meddelanden</item>
+    </string-array>
+    <string-array name="voice_commands_send_image_description">
+        <item>skicka [en|den] bildbeskrivning till {who}</item>
+        <item>skicka [en] beskrivning av [bilden|den här bilden] till {who}</item>
+        <item>skicka [en|den] fotobeskrivning till {who}</item>
+        <item>skicka [en] beskrivning av [fotot|det här fotot] till {who}</item>
+    </string-array>
+    <string-array name="voice_commands_send_screen_description">
+        <item>skicka [en|den] skärmbeskrivning till {who}</item>
+        <item>skicka [en] beskrivning av skärmen till {who}</item>
+    </string-array>
+    <string-array name="voice_commands_send_previous">
+        <item>skicka det till {who} på {app}</item>
+        <item>skicka det till {who}</item>
+        <item>skicka den till {who}</item>
+        <item>skicka beskrivningen till {who}</item>
+        <item>dela det med {who}</item>
+    </string-array>
+    <string-array name="voice_commands_message">
+        <item>skicka [ett] meddelande till {who} på {app} som lyder {text}</item>
+        <item>skicka [ett] meddelande till {who} på {app} med texten {text}</item>
+        <item>skicka [ett] meddelande till {who} som lyder {text}</item>
+        <item>skicka [ett] meddelande till {who} med texten {text}</item>
+        <item>skicka [ett] meddelande till {whoandtext}</item>
+        <item>skicka [ett] {app} meddelande till {who} som lyder {text}</item>
+        <item>skicka [ett] {app} meddelande till {who}</item>
+        <item>skicka {who} [ett] meddelande som lyder {text}</item>
+        <item>skriv till {who} på {app} {text}</item>
+        <item>skriv till {who} {text}</item>
+        <item>sms {who} {text}</item>
+        <item>säg till {who} på {app} {text}</item>
+        <item>skriv till {whoandtext}</item>
+        <item>sms {whoandtext}</item>
+    </string-array>
+    <string-array name="voice_commands_call">
+        <item>ring {who}</item>
+        <item>ring upp {who}</item>
+        <item>ring till {who}</item>
+        <item>ring ett samtal till {who}</item>
+    </string-array>
+    <string-array name="voice_commands_describe_screen">
+        <item>beskriv skärmen</item>
+        <item>beskriv vad som finns på skärmen</item>
+        <item>vad finns på skärmen</item>
+        <item>vad står det på skärmen</item>
+    </string-array>
+    <string-array name="voice_commands_describe_image">
+        <item>beskriv bilden</item>
+        <item>beskriv den här bilden</item>
+        <item>beskriv fotot</item>
+        <item>beskriv det här fotot</item>
+        <item>vad finns på bilden</item>
+        <item>vad finns på fotot</item>
+    </string-array>
+    <string-array name="voice_commands_copy_result">
+        <item>kopiera det</item>
+        <item>kopiera den</item>
+        <item>kopiera beskrivningen</item>
+        <item>kopiera vad du [just] sa</item>
+        <item>kopiera [den] senast upplästa [frasen]</item>
+        <item>kopiera [den] sista frasen</item>
+    </string-array>
+    <string-array name="voice_commands_wait">
+        <item>vänta {n} sekunder</item>
+        <item>vänta {n} sekund</item>
+        <item>vänta [en] sekund</item>
+        <item>vänta</item>
+    </string-array>
+    <string-array name="voice_commands_type_text">
+        <item>skriv {text}</item>
+        <item>skriv in {text}</item>
+        <item>ange {text}</item>
+    </string-array>
+    <string-array name="voice_commands_run">
+        <item>kör makrot {command}</item>
+        <item>kör {command} makrot</item>
+        <item>kör {command}</item>
+        <item>utför {command}</item>
+        <item>starta {command}</item>
+    </string-array>
+    <string-array name="voice_commands_open">
+        <item>öppna {app}</item>
+        <item>starta {app}</item>
+        <item>byt till {app}</item>
+        <item>gå till {app}</item>
+    </string-array>
+    <string-array name="voice_commands_tap">
+        <item>dubbeltryck [på] {label}</item>
+        <item>tryck [på] {label}</item>
+        <item>klicka [på] {label}</item>
+        <item>aktivera {label}</item>
+        <item>välj {label}</item>
+    </string-array>
+</resources>

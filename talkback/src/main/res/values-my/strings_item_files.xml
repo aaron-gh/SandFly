@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="item_file_import">ဖိုင်မှ တင်သွင်းရန်</string>
+    <string name="item_file_export">ဖိုင်သို့ ထုတ်ရန်</string>
+    <string name="title_pref_export_item_file_reference">ထုတ်ယူသော ဖိုင်ပုံစံ ကိုးကားချက်</string>
+    <string name="item_file_keymaps">ကီးမြေပုံများ</string>
+    <string name="item_file_exported">ထုတ်ပြီး</string>
+    <string name="item_file_export_failed">မထုတ်နိုင်ပါ</string>
+    <string name="item_file_not_read">ဤဖိုင်သည် SandFly အရာဖိုင် မဟုတ်ပါ သို့မဟုတ် ဖတ်၍မရပါ</string>
+    <string name="item_file_settings_file">ဤသည်မှာ ဆက်တင်ဖိုင် ဖြစ်သည်။ အရန်သိမ်းခြင်းနှင့် ပြန်ယူခြင်း > ဆက်တင်များကို တင်သွင်းပါ ဖြင့် တင်သွင်းပါ</string>
+    <string name="item_file_newer">ဤဖိုင်သည် SandFly ၏ ပိုသစ်သော ဗားရှင်းမှ ဖြစ်သည်</string>
+    <string name="item_file_nothing_imported">ဘာမှ မတင်သွင်းရပါ</string>
+    <string name="item_file_imported"><xliff:g id="items" example="2 macros, 1 gesture profile">%1$s</xliff:g> တင်သွင်းပြီး</string>
+    <string name="item_file_left_out">ချန်လှပ်ထားသည်-</string>
+    <string name="item_file_problem_not_read"><xliff:g id="kind" example="Macros">%1$s</xliff:g>၊ အရာ <xliff:g id="number" example="3">%2$d</xliff:g>- မဖတ်နိုင်ပါ</string>
+    <string name="item_file_problem_command"><xliff:g id="item" example="Open mail">%1$s</xliff:g>- မသိသော ကွန်မန်း <xliff:g id="command" example="READ_ALL">%2$s</xliff:g></string>
+    <string name="item_file_problem_gesture"><xliff:g id="item" example="Reading">%1$s</xliff:g>- မသိသော လက်ဟန် <xliff:g id="gesture" example="pref_shortcut_spin">%2$s</xliff:g></string>
+    <string name="item_file_problem_keys"><xliff:g id="item" example="My keymap">%1$s</xliff:g>- ကီးများကို နားမလည်ပါ- <xliff:g id="keys" example="SandFly+Foo">%2$s</xliff:g></string>
+    <string name="item_file_problem_keys_taken"><xliff:g id="item" example="My keymap">%1$s</xliff:g>- ကီးများကို သုံးပြီးသား- <xliff:g id="keys" example="SandFly+H">%2$s</xliff:g></string>
+    <string name="item_file_problem_setting"><xliff:g id="item" example="Reading">%1$s</xliff:g>- ဆက်တင် <xliff:g id="key" example="pref_vibration">%2$s</xliff:g> ကို မသိပါ၊ ပရိုဖိုင်တွင် မထည့်နိုင်ပါ၊ သို့မဟုတ် တန်ဖိုးအမျိုးအစား မှားနေသည်</string>
+    <string name="item_file_problem_regex"><xliff:g id="dictionary" example="Speech dictionary">%1$s</xliff:g>- Regular expression ကို ပယ်ချထားသည်- <xliff:g id="expression" example="(a+)+">%2$s</xliff:g></string>
+    <string name="item_file_problem_limit"><xliff:g id="kind" example="Symbol dictionary">%1$s</xliff:g>- အများဆုံး <xliff:g id="number" example="500">%2$d</xliff:g> ခု</string>
+    <string name="item_file_problem_more">ထပ်မံ ချန်လှပ်ထားသည်</string>
+    <plurals name="item_file_count_macros">
+        <item quantity="other">မက်ခရို <xliff:g id="count" example="1">%d</xliff:g> ခု</item>
+    </plurals>
+    <plurals name="item_file_count_gesture_profiles">
+        <item quantity="other">လက်ဟန် ပရိုဖိုင် <xliff:g id="count" example="1">%d</xliff:g> ခု</item>
+    </plurals>
+    <plurals name="item_file_count_keymaps">
+        <item quantity="other">ကီးမြေပုံ <xliff:g id="count" example="1">%d</xliff:g> ခု</item>
+    </plurals>
+    <plurals name="item_file_count_apps">
+        <item quantity="other">အက်ပ် <xliff:g id="count" example="1">%d</xliff:g> ခု၏ လက်ဟန်များနှင့် လက်ကွက်ဖြတ်လမ်းများ</item>
+    </plurals>
+    <plurals name="item_file_count_settings_profiles">
+        <item quantity="other">ဆက်တင်ပရိုဖိုင် <xliff:g id="count" example="1">%d</xliff:g> ခု</item>
+    </plurals>
+    <plurals name="item_file_count_speech_dictionary">
+        <item quantity="other">စကားပြော အဘိဓာန် ထည့်သွင်းမှု <xliff:g id="count" example="1">%d</xliff:g> ခု</item>
+    </plurals>
+    <plurals name="item_file_count_symbol_dictionary">
+        <item quantity="other">သင်္ကေတ အဘိဓာန် ထည့်သွင်းမှု <xliff:g id="count" example="1">%d</xliff:g> ခု</item>
+    </plurals>
+    <plurals name="item_file_count_braille_dictionary">
+        <item quantity="other">မျက်မမြင်စာရေးစနစ် အဘိဓာန် ထည့်သွင်းမှု <xliff:g id="count" example="1">%d</xliff:g> ခု</item>
+    </plurals>
+    <plurals name="item_file_count_voice_commands">
+        <item quantity="other">စိတ်ကြိုက် အသံကွန်မန်း <xliff:g id="count" example="1">%d</xliff:g> ခု</item>
+    </plurals>
+</resources>

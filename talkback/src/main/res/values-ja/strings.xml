@@ -2034,4 +2034,131 @@
   <string name="title_select_last_spoken_phrase_word_by_word">最後に読み上げたフレーズを単語ごとに選択</string>
   <string name="no_words_selected">単語が選択されていません</string>
   <string name="no_phrase_to_select">選択するフレーズがありません</string>
+    <string name="title_pref_speech_equalizer_save_preset">プリセットとして保存</string>
+    <string name="title_pref_speech_equalizer_saved_presets">保存したプリセット</string>
+    <string name="speech_equalizer_preset_name">名前</string>
+    <string name="speech_equalizer_preset_name_taken"><xliff:g id="name" example="Podcast">%1$s</xliff:g> という名前のプリセットはすでにあります</string>
+    <string name="speech_equalizer_presets_full">これ以上プリセットを保存できません。別のプリセットを保存するには、いずれかを削除してください。</string>
+    <string name="speech_equalizer_preset_saved"><xliff:g id="name" example="Podcast">%1$s</xliff:g> を保存しました</string>
+    <string name="speech_equalizer_preset_rename">名前の変更</string>
+    <string name="speech_equalizer_preset_delete">削除</string>
+    <string name="speech_equalizer_preset_delete_confirm"><xliff:g id="name" example="Podcast">%1$s</xliff:g> を削除しますか?</string>
+    <string name="speech_equalizer_preset_deleted"><xliff:g id="name" example="Podcast">%1$s</xliff:g> を削除しました</string>
+    <string name="title_pref_emoji_voice">絵文字の音声</string>
+    <string name="value_emoji_voice_same">読み上げと同じ</string>
+    <string name="title_pref_emoji_rate">絵文字の音声速度</string>
+    <string name="title_pref_line_breaks_as_spaces">改行をスペースとして読み上げる</string>
+    <string name="title_pref_language_voices">言語別の音声</string>
+    <string name="title_pref_identify_languages_from_words">単語から言語を判別</string>
+    <string name="title_pref_add_language">言語を追加</string>
+    <string name="title_pref_remove_language">言語を削除</string>
+    <string name="title_pref_script_language">%1$s 文字</string>
+    <string name="title_pref_screen_on_notification_count">通知の数</string>
+    <plurals name="template_screen_on_notification_count">
+        <item quantity="other">通知 <xliff:g id="count" example="6">%d</xliff:g> 件</item>
+    </plurals>
+    <string name="title_pref_phonetic_letters_review">確認時に文字をフォネティックで読み上げる</string>
+    <string name="title_pref_phonetic_letters_typing">入力時に文字をフォネティックで読み上げる</string>
+    <string name="title_pref_emoji_suffix">絵文字の名前の後に「絵文字」と読み上げる</string>
+    <string name="overview_shizuku_not_running">Shizuku が実行されていません</string>
+    <string name="overview_shizuku_not_allowed">Shizuku が SandFly を許可していません</string>
+    <string name="overview_no_older_app">これより古いアプリはありません</string>
+    <string name="overview_no_newer_app">これより新しいアプリはありません</string>
+    <string name="stream_volume_needs_access">この音量を変更するには、サイレント モードへのアクセスを許可してください。</string>
+    <string name="corner_gestures_title">四隅</string>
+    <string name="shortcut_move_to_item_below">下の項目に移動</string>
+    <string name="shortcut_move_to_item_above">上の項目に移動</string>
+    <string name="shortcut_older_app">古いアプリ</string>
+    <string name="shortcut_newer_app">新しいアプリ</string>
+    <string name="shortcut_answer_call">電話に出る</string>
+    <string name="answer_call_no_call">着信はありません</string>
+    <string name="answer_call_permission">電話に出るには権限が必要です</string>
+    <string name="shortcut_switch_keyboard">キーボードを切り替える</string>
+    <string name="switch_keyboard_none">他のキーボードがオンになっていません</string>
+    <string name="switch_keyboard_failed">キーボードを切り替えられませんでした</string>
+    <string name="clipboard_history_hint">上下にスワイプして選択し、ダブルタップして貼り付けます</string>
+    <string name="title_speech_history">読み上げ履歴</string>
+    <string name="speech_history_empty">読み上げはありません</string>
+    <string name="speech_history_clear">履歴を消去</string>
+    <string name="title_pref_shortcut_corner_top_left_tap">左上隅をタップ</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap">左上隅をダブルタップ</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap">左上隅をトリプルタップ</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap_hold">左上隅をダブルタップして長押し</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap_hold">左上隅をトリプルタップして長押し</string>
+    <string name="title_pref_shortcut_corner_top_right_tap">右上隅をタップ</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap">右上隅をダブルタップ</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap">右上隅をトリプルタップ</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap_hold">右上隅をダブルタップして長押し</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap_hold">右上隅をトリプルタップして長押し</string>
+    <string name="title_pref_shortcut_corner_bottom_left_tap">左下隅をタップ</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap">左下隅をダブルタップ</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap">左下隅をトリプルタップ</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap_hold">左下隅をダブルタップして長押し</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap_hold">左下隅をトリプルタップして長押し</string>
+    <string name="title_pref_shortcut_corner_bottom_right_tap">右下隅をタップ</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap">右下隅をダブルタップ</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap">右下隅をトリプルタップ</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap_hold">右下隅をダブルタップして長押し</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap_hold">右下隅をトリプルタップして長押し</string>
+    <string name="title_pref_swipe_start_time">ジェスチャーの開始時間</string>
+    <string name="title_pref_swipes_before_lift">指を離す前にスワイプを認識</string>
+    <string name="summary_pref_swipes_before_lift">往復ジェスチャーと角度ジェスチャーをオフにします。</string>
+    <string name="title_pref_corner_size_mm">隅のサイズ</string>
+    <string name="value_corner_size_edge_width">エッジの幅と同じ</string>
+    <string name="title_pref_corner_tap_time_ms">隅のタップの制限時間</string>
+    <string name="value_corner_tap_time_system">システムのデフォルト</string>
+    <string name="title_pref_edge_speak_commands">クリックごとにコマンドを読み上げる</string>
+    <string-array name="pref_volume_change_feedback_entries">
+        <item>@string/volume_change_feedback_off</item>
+        <item>@string/volume_change_feedback_tone</item>
+        <item>@string/volume_change_feedback_spoken</item>
+        <item>@string/volume_change_feedback_tone_and_spoken</item>
+    </string-array>
+    <string name="title_pref_volume_change_tone_during_media">メディア再生中はトーンを鳴らさない</string>
+    <string name="title_pref_volume_change_speech_during_media">メディア再生中は読み上げない</string>
+    <string name="title_pref_volume_change_interrupts_speech">音量の読み上げで読み上げを中断</string>
+    <string name="title_pref_volume_keys_speech_volume_while_speaking">読み上げ中は音量ボタンで読み上げの音量を変更</string>
+    <string name="title_pref_double_tap_moves_cursor">ダブルタップでカーソルを先頭または末尾に移動</string>
+    <string name="title_pref_scroll_ahead">次の項目までスクロールを先行</string>
+    <string name="title_pref_speak_while_scrolling">スクロール中に次の項目を読み上げる</string>
+    <string-array name="pref_text_entities_entries">
+    <item>@string/text_entity_web</item>
+    <item>@string/text_entity_email</item>
+    <item>@string/text_entity_phone</item>
+    <item>@string/text_entity_code</item>
+  </string-array>
+    <string name="value_keep_models_until_stopped">SandFly が停止するまで</string>
+    <string name="title_pref_model_download_server">モデルのダウンロード サーバー</string>
+    <string name="title_pref_settings_profiles">設定プロファイル</string>
+    <string name="title_pref_new_settings_profile">新しい設定プロファイル</string>
+    <string name="settings_profile_new_name">プロファイル <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="settings_profile_name_taken"><xliff:g id="name" example="Demo">%1$s</xliff:g> という名前の設定プロファイルはすでにあります</string>
+    <string name="settings_profile_in_use">使用中</string>
+    <string name="settings_profile_menu_item_in_use"><xliff:g id="name" example="Demo">%1$s</xliff:g>、使用中</string>
+    <string name="settings_profile_none">設定プロファイルなし</string>
+    <string name="settings_profile_use_now">今すぐ使用</string>
+    <string name="settings_profile_stop_using">使用を停止</string>
+    <string name="settings_profile_change_settings">設定を変更</string>
+    <string name="settings_profile_editing">変更は <xliff:g id="name" example="Messaging">%1$s</xliff:g> に反映されます</string>
+    <string name="settings_profile_edit_saved">変更を <xliff:g id="name" example="Messaging">%1$s</xliff:g> に保存しました</string>
+    <string name="settings_profile_use_automatically">自動的に使用</string>
+    <string name="settings_profile_web">ウェブ コンテンツ</string>
+    <string name="settings_profile_reading">連続読み上げ</string>
+    <string name="settings_profile_text_editing">テキスト編集</string>
+    <string name="settings_profile_apps">アプリ</string>
+    <string name="settings_profile_add_app">アプリを追加</string>
+    <string name="settings_profile_settings">このプロファイルの設定</string>
+    <string name="settings_profile_no_settings">なし</string>
+    <string name="settings_profile_remove_confirm"><xliff:g id="name" example="Messaging">%2$s</xliff:g> から <xliff:g id="item" example="Speech rate">%1$s</xliff:g> を削除しますか?</string>
+    <string name="settings_profile_not_saved">設定プロファイルを保存できませんでした</string>
+    <string name="settings_profile_in_use_announcement"><xliff:g id="name" example="Demo">%1$s</xliff:g> プロファイル</string>
+    <string name="settings_profile_not_changed">設定プロファイルは変更されていません</string>
+    <string name="title_settings_profile">設定プロファイル</string>
+    <string name="shortcut_settings_profiles">設定プロファイルを選択</string>
+    <string name="shortcut_next_settings_profile">次の設定プロファイル</string>
+    <string name="shortcut_previous_settings_profile">前の設定プロファイル</string>
+    <string name="word_selection_list_cut_off">リストを <xliff:g id="count" example="1000">%1$d</xliff:g> 項目で打ち切りました</string>
+    <plurals name="word_selection_copied">
+        <item quantity="other"><xliff:g id="count" example="5">%1$d</xliff:g> 個の項目をコピーしました</item>
+    </plurals>
 </resources>

@@ -59,4 +59,24 @@
     <string name="keycombo_menu_navigate_next_by_setting">Successivo per impostazione di navigazione</string>
     <string name="keycombo_menu_navigate_previous_by_setting">Precedente per impostazione di navigazione</string>
     <string name="title_pref_overview_screen">Panoramica</string>
+    <string name="title_pref_custom_menus">Menu personalizzati</string>
+    <string name="commands_category_setting_values">Valori delle impostazioni</string>
+    <string name="command_next_value"><xliff:g id="setting" example="Punctuation">%1$s</xliff:g>: valore successivo</string>
+    <string name="command_previous_value"><xliff:g id="setting" example="Punctuation">%1$s</xliff:g>: valore precedente</string>
+    <string name="shortcut_script_commands">Comandi dello script</string>
+    <string name="shortcut_set_reading_control">Imposta il controllo di lettura su <xliff:g id="control" example="Headings">%1$s</xliff:g></string>
+    <string name="title_pref_custom_reading_controls">Controlli di lettura personalizzati</string>
+    <string name="menu_add_reading_control">Aggiungi controllo di lettura</string>
+    <string name="menu_add_submenu">Aggiungi sottomenu</string>
+    <string name="menu_add_menu">Aggiungi menu</string>
+    <string name="menu_name">Nome</string>
+    <string name="menu_open">Apri</string>
+    <string name="menu_move_to">Sposta in</string>
+    <string name="menu_rename">Rinomina</string>
+    <string name="menu_delete">Elimina</string>
+    <string name="menu_delete_confirm">Eliminare <xliff:g id="name" example="AI">%1$s</xliff:g> e tutto il suo contenuto?</string>
+    <string name="menu_moved">Spostato in <xliff:g id="place" example="AI">%1$s</xliff:g></string>
+    <string name="menu_reset">Ripristina predefiniti</string>
+    <string name="menu_reset_confirm">Ripristinare le voci e l\'ordine predefiniti del menu SandFly?</string>
+    <string name="menu_assign">Gesti e scorciatoia da tastiera</string>
 </resources>

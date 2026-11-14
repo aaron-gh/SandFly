@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_voice_commands">Spraakopdrachten</string>
+    <string name="title_pref_voice_commands_ai">Spraakopdrachten begrijpen met AI</string>
+    <string name="voice_commands_custom">Aangepaste spraakopdrachten</string>
+    <string name="voice_command_add">Spraakopdracht toevoegen</string>
+    <string name="voice_command_phrase">Zin</string>
+    <string name="voice_command_change_phrase">Zin wijzigen</string>
+    <string name="voice_command_change_command">Commando wijzigen</string>
+    <string name="voice_command_delete_confirm"><xliff:g id="phrase" example="Good morning">%1$s</xliff:g> verwijderen?</string>
+    <string name="voice_command_phrase_exists"><xliff:g id="phrase" example="Good morning">%1$s</xliff:g> is al een spraakopdracht</string>
+    <string name="voice_commands_not_understood">Niet begrepen: <xliff:g id="text" example="open the door">%1$s</xliff:g></string>
+    <string name="voice_commands_not_available">Niet beschikbaar: <xliff:g id="name" example="Morning macro">%1$s</xliff:g></string>
+    <string name="voice_commands_not_found">Niet gevonden: <xliff:g id="label" example="Settings">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app">Geen app met de naam <xliff:g id="name" example="Signal">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app_for_action">Geen app voor deze actie</string>
+    <string name="voice_commands_calling"><xliff:g id="name" example="Sam">%1$s</xliff:g> bellen</string>
+    <string name="voice_commands_call_permission">Sta telefoongesprekken toe en zeg het commando daarna opnieuw.</string>
+    <string name="voice_commands_contacts_permission">Sta toegang tot contacten toe en zeg het commando daarna opnieuw.</string>
+    <string name="voice_commands_no_contact">Geen contact met de naam <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_contacts_several">Meer dan één contact met de naam <xliff:g id="name" example="Sam">%1$s</xliff:g>: <xliff:g id="names" example="Sam Jones, Sam Smith">%2$s</xliff:g></string>
+    <string name="voice_commands_message_text">Bericht aan <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_message_confirm">Versturen naar <xliff:g id="name" example="Sam">%1$s</xliff:g>: <xliff:g id="text" example="I am on my way">%2$s</xliff:g>?</string>
+    <string name="voice_commands_message_confirm_result">Versturen naar <xliff:g id="name" example="Sam">%1$s</xliff:g>?</string>
+    <string name="voice_commands_message_not_sent">Bericht niet verstuurd</string>
+    <string name="voice_commands_send_pressed">Verzenden ingedrukt</string>
+    <string name="voice_commands_send_button">Verzenden</string>
+    <string name="voice_commands_no_description">Geen beschrijving ontvangen</string>
+    <string name="voice_commands_copied">Gekopieerd</string>
+    <string-array name="voice_commands_chain_words">
+        <item>en dan</item>
+        <item>dan</item>
+        <item>daarna</item>
+        <item>vervolgens</item>
+    </string-array>
+    <string-array name="voice_commands_and_words">
+        <item>en</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_start">
+        <item>alsjeblieft</item>
+        <item>kun je</item>
+        <item>kan je</item>
+        <item>zou je</item>
+        <item>ik wil</item>
+        <item>ik zou graag</item>
+        <item>nu</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_end">
+        <item>alsjeblieft</item>
+        <item>graag</item>
+        <item>voor mij</item>
+        <item>nu</item>
+    </string-array>
+    <string-array name="voice_commands_cancel_words">
+        <item>stop</item>
+        <item>stoppen</item>
+        <item>annuleer</item>
+        <item>annuleren</item>
+        <item>laat maar</item>
+        <item>hou op</item>
+    </string-array>
+    <string-array name="voice_commands_yes">
+        <item>ja</item>
+        <item>jazeker</item>
+        <item>jep</item>
+        <item>verstuur</item>
+        <item>verstuur het</item>
+        <item>stuur</item>
+        <item>stuur het</item>
+        <item>ok</item>
+        <item>oké</item>
+        <item>okay</item>
+        <item>prima</item>
+        <item>doe maar</item>
+    </string-array>
+    <string-array name="voice_commands_sms_names">
+        <item>sms</item>
+        <item>sms-bericht</item>
+        <item>tekstbericht</item>
+        <item>berichten</item>
+    </string-array>
+    <string-array name="voice_commands_send_image_description">
+        <item>stuur [de|een] afbeeldingsbeschrijving naar {who}</item>
+        <item>stuur [de|een] beschrijving van [de|deze] afbeelding naar {who}</item>
+        <item>stuur [de|een] fotobeschrijving naar {who}</item>
+        <item>stuur [de|een] beschrijving van [de|deze] foto naar {who}</item>
+    </string-array>
+    <string-array name="voice_commands_send_screen_description">
+        <item>stuur [de|een] schermbeschrijving naar {who}</item>
+        <item>stuur [de|een] beschrijving van [het] scherm naar {who}</item>
+    </string-array>
+    <string-array name="voice_commands_send_previous">
+        <item>stuur het naar {who} via {app}</item>
+        <item>stuur het naar {who}</item>
+        <item>stuur dat naar {who}</item>
+        <item>stuur de beschrijving naar {who}</item>
+        <item>deel het met {who}</item>
+    </string-array>
+    <string-array name="voice_commands_message">
+        <item>stuur [een] bericht naar {who} via {app} met de tekst {text}</item>
+        <item>stuur [een] bericht naar {who} via {app} waarin staat {text}</item>
+        <item>stuur [een] bericht naar {who} met de tekst {text}</item>
+        <item>stuur [een] bericht naar {who} waarin staat {text}</item>
+        <item>stuur [een] bericht naar {whoandtext}</item>
+        <item>stuur [een] {app} bericht naar {who} met de tekst {text}</item>
+        <item>stuur [een] {app} bericht naar {who}</item>
+        <item>stuur {who} [een] bericht met de tekst {text}</item>
+        <item>bericht {who} via {app} {text}</item>
+        <item>bericht {who} {text}</item>
+        <item>sms {who} {text}</item>
+        <item>zeg tegen {who} via {app} {text}</item>
+        <item>bericht {whoandtext}</item>
+        <item>sms {whoandtext}</item>
+    </string-array>
+    <string-array name="voice_commands_call">
+        <item>bel {who}</item>
+        <item>bel {who} op</item>
+        <item>bel naar {who}</item>
+        <item>telefoneer met {who}</item>
+        <item>kies {who}</item>
+    </string-array>
+    <string-array name="voice_commands_describe_screen">
+        <item>beschrijf [het] scherm</item>
+        <item>beschrijf wat er op [het] scherm staat</item>
+        <item>wat staat er op [het|mijn] scherm</item>
+        <item>wat is er te zien op [het|mijn] scherm</item>
+    </string-array>
+    <string-array name="voice_commands_describe_image">
+        <item>beschrijf [de|deze] afbeelding</item>
+        <item>beschrijf [de|deze] foto</item>
+        <item>wat staat er op [de|deze] afbeelding</item>
+        <item>wat staat er op [de|deze] foto</item>
+        <item>wat is er te zien op [de|deze] afbeelding</item>
+        <item>wat is er te zien op [de|deze] foto</item>
+    </string-array>
+    <string-array name="voice_commands_copy_result">
+        <item>kopieer het</item>
+        <item>kopieer dat</item>
+        <item>kopieer de beschrijving</item>
+        <item>kopieer wat je [net] zei</item>
+        <item>kopieer [de|het] laatst gesproken [zin]</item>
+        <item>kopieer [de] laatste zin</item>
+    </string-array>
+    <string-array name="voice_commands_wait">
+        <item>wacht {n} seconden</item>
+        <item>wacht {n} seconde</item>
+        <item>wacht [een] seconde</item>
+        <item>wacht</item>
+    </string-array>
+    <string-array name="voice_commands_type_text">
+        <item>typ {text}</item>
+        <item>schrijf {text}</item>
+        <item>voer {text} in</item>
+        <item>tik {text} in</item>
+    </string-array>
+    <string-array name="voice_commands_run">
+        <item>voer [de] macro {command} uit</item>
+        <item>voer [de] {command} macro uit</item>
+        <item>voer {command} uit</item>
+        <item>start {command}</item>
+        <item>doe {command}</item>
+    </string-array>
+    <string-array name="voice_commands_open">
+        <item>open {app}</item>
+        <item>start {app}</item>
+        <item>ga naar {app}</item>
+        <item>schakel over naar {app}</item>
+        <item>{app} openen</item>
+    </string-array>
+    <string-array name="voice_commands_tap">
+        <item>dubbeltik [op] {label}</item>
+        <item>tik dubbel [op] {label}</item>
+        <item>tik [op] {label}</item>
+        <item>klik [op] {label}</item>
+        <item>druk op {label}</item>
+        <item>activeer {label}</item>
+        <item>selecteer {label}</item>
+    </string-array>
+</resources>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="item_file_import">ගොනුවකින් ආයාත කරන්න</string>
+    <string name="item_file_export">ගොනුවකට නිර්යාත කරන්න</string>
+    <string name="title_pref_export_item_file_reference">නිර්යාත ගොනු ආකෘති යොමුව</string>
+    <string name="item_file_keymaps">යතුරු සිතියම්</string>
+    <string name="item_file_exported">නිර්යාත කරන ලදී</string>
+    <string name="item_file_export_failed">නිර්යාත කළ නොහැකි විය</string>
+    <string name="item_file_not_read">මෙය SandFly අයිතම ගොනුවක් නොවේ, නැතහොත් කියවිය නොහැකි විය</string>
+    <string name="item_file_settings_file">මෙය සැකසුම් ගොනුවකි. එය උපස්ථ කිරීම සහ ප්‍රතිසාධනය &gt; සැකසීම් ආයාත කරන්න මගින් ආයාත කරන්න</string>
+    <string name="item_file_newer">මෙම ගොනුව SandFly හි අලුත් අනුවාදයකිනි</string>
+    <string name="item_file_nothing_imported">කිසිවක් ආයාත නොකරන ලදී</string>
+    <string name="item_file_imported">ආයාත කරන ලදී: <xliff:g id="items" example="2 macros, 1 gesture profile">%1$s</xliff:g></string>
+    <string name="item_file_left_out">ඉවත ලූ දේ:</string>
+    <string name="item_file_problem_not_read"><xliff:g id="kind" example="Macros">%1$s</xliff:g>, අයිතමය <xliff:g id="number" example="3">%2$d</xliff:g>: කියවා නැත</string>
+    <string name="item_file_problem_command"><xliff:g id="item" example="Open mail">%1$s</xliff:g>: නොදන්නා විධානය <xliff:g id="command" example="READ_ALL">%2$s</xliff:g></string>
+    <string name="item_file_problem_gesture"><xliff:g id="item" example="Reading">%1$s</xliff:g>: නොදන්නා ඉංගිතය <xliff:g id="gesture" example="pref_shortcut_spin">%2$s</xliff:g></string>
+    <string name="item_file_problem_keys"><xliff:g id="item" example="My keymap">%1$s</xliff:g>: යතුරු තේරුම් ගත නොහැකි විය: <xliff:g id="keys" example="SandFly+Foo">%2$s</xliff:g></string>
+    <string name="item_file_problem_keys_taken"><xliff:g id="item" example="My keymap">%1$s</xliff:g>: යතුරු දැනටමත් භාවිතයේ ඇත: <xliff:g id="keys" example="SandFly+H">%2$s</xliff:g></string>
+    <string name="item_file_problem_setting"><xliff:g id="item" example="Reading">%1$s</xliff:g>: සැකසුම <xliff:g id="key" example="pref_vibration">%2$s</xliff:g> නොදන්නා ය, පැතිකඩක තිබිය නොහැක, නැතහොත් වැරදි වර්ගයේ අගයක් ඇත</string>
+    <string name="item_file_problem_regex"><xliff:g id="dictionary" example="Speech dictionary">%1$s</xliff:g>: Regular expression ප්‍රතික්ෂේප කරන ලදී: <xliff:g id="expression" example="(a+)+">%2$s</xliff:g></string>
+    <string name="item_file_problem_limit"><xliff:g id="kind" example="Symbol dictionary">%1$s</xliff:g>: උපරිම අයිතම <xliff:g id="number" example="500">%2$d</xliff:g></string>
+    <string name="item_file_problem_more">තවත් ඉවත ලන ලදී</string>
+    <plurals name="item_file_count_macros">
+        <item quantity="one">මැක්‍රෝ <xliff:g id="count" example="1">%d</xliff:g></item>
+        <item quantity="other">මැක්‍රෝ <xliff:g id="count" example="2">%d</xliff:g></item>
+    </plurals>
+    <plurals name="item_file_count_gesture_profiles">
+        <item quantity="one">ඉංගිත පැතිකඩ <xliff:g id="count" example="1">%d</xliff:g></item>
+        <item quantity="other">ඉංගිත පැතිකඩ <xliff:g id="count" example="2">%d</xliff:g></item>
+    </plurals>
+    <plurals name="item_file_count_keymaps">
+        <item quantity="one">යතුරු සිතියම් <xliff:g id="count" example="1">%d</xliff:g></item>
+        <item quantity="other">යතුරු සිතියම් <xliff:g id="count" example="2">%d</xliff:g></item>
+    </plurals>
+    <plurals name="item_file_count_apps">
+        <item quantity="one">යෙදුම් <xliff:g id="count" example="1">%d</xliff:g> හි ඉංගිත සහ යතුරු පුවරු කෙටිමං</item>
+        <item quantity="other">යෙදුම් <xliff:g id="count" example="2">%d</xliff:g> හි ඉංගිත සහ යතුරු පුවරු කෙටිමං</item>
+    </plurals>
+    <plurals name="item_file_count_settings_profiles">
+        <item quantity="one">සැකසුම් පැතිකඩ <xliff:g id="count" example="1">%d</xliff:g></item>
+        <item quantity="other">සැකසුම් පැතිකඩ <xliff:g id="count" example="2">%d</xliff:g></item>
+    </plurals>
+    <plurals name="item_file_count_speech_dictionary">
+        <item quantity="one">කථන ශබ්දකෝෂ ඇතුළත් කිරීම් <xliff:g id="count" example="1">%d</xliff:g></item>
+        <item quantity="other">කථන ශබ්දකෝෂ ඇතුළත් කිරීම් <xliff:g id="count" example="2">%d</xliff:g></item>
+    </plurals>
+    <plurals name="item_file_count_symbol_dictionary">
+        <item quantity="one">සංකේත ශබ්දකෝෂ ඇතුළත් කිරීම් <xliff:g id="count" example="1">%d</xliff:g></item>
+        <item quantity="other">සංකේත ශබ්දකෝෂ ඇතුළත් කිරීම් <xliff:g id="count" example="2">%d</xliff:g></item>
+    </plurals>
+    <plurals name="item_file_count_braille_dictionary">
+        <item quantity="one">බ්‍රේල් ශබ්දකෝෂ ඇතුළත් කිරීම් <xliff:g id="count" example="1">%d</xliff:g></item>
+        <item quantity="other">බ්‍රේල් ශබ්දකෝෂ ඇතුළත් කිරීම් <xliff:g id="count" example="2">%d</xliff:g></item>
+    </plurals>
+    <plurals name="item_file_count_voice_commands">
+        <item quantity="one">අභිරුචි හඬ විධාන <xliff:g id="count" example="1">%d</xliff:g></item>
+        <item quantity="other">අභිරුචි හඬ විධාන <xliff:g id="count" example="2">%d</xliff:g></item>
+    </plurals>
+</resources>

@@ -46,4 +46,14 @@
     <string name="granular_editing_not_saved">ບໍ່ໄດ້ບັນທຶກໄວ້: ກ່ອງຂໍ້ຄວາມຫາຍໄປ. ຂໍ້ຄວາມຖືກຄັດລອກ.</string>
     <string name="granular_editing_no_text">ບໍ່ມີຂໍ້ຄວາມໃຫ້ແກ້ໄຂ</string>
     <string name="granular_editing_password">ໃຊ້ບໍ່ໄດ້ໃນຊ່ອງລະຫັດຜ່ານ</string>
+    <plurals name="granular_editing_spaces">
+        <item quantity="other"><xliff:g id="count" example="1">%d</xliff:g> ຍະຫວ່າງ</item>
+    </plurals>
+    <plurals name="granular_editing_new_lines">
+        <item quantity="other"><xliff:g id="count" example="1">%d</xliff:g> ແຖວໃໝ່</item>
+    </plurals>
+    <plurals name="granular_editing_tabs">
+        <item quantity="other"><xliff:g id="count" example="1">%d</xliff:g> ແທັບ</item>
+    </plurals>
+    <string name="granular_editing_blank_line">ແຖວວ່າງ</string>
 </resources>

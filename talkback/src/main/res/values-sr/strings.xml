@@ -2029,4 +2029,146 @@
     <string name="value_keep_models_5">5 минута</string>
     <string name="value_keep_models_15">15 минута</string>
     <string name="value_keep_models_30">30 минута</string>
+    <string name="title_pref_speech_equalizer_save_preset">Сачувај као унапред подешено</string>
+    <string name="title_pref_speech_equalizer_saved_presets">Сачуване унапред подешене вредности</string>
+    <string name="speech_equalizer_preset_name">Назив</string>
+    <string name="speech_equalizer_preset_name_taken">Унапред подешена вредност „<xliff:g id="name" example="Podcast">%1$s</xliff:g>“ већ постоји</string>
+    <string name="speech_equalizer_presets_full">Није могуће сачувати више унапред подешених вредности. Избришите једну да бисте сачували другу.</string>
+    <string name="speech_equalizer_preset_saved"><xliff:g id="name" example="Podcast">%1$s</xliff:g>: сачувано</string>
+    <string name="speech_equalizer_preset_rename">Преименуј</string>
+    <string name="speech_equalizer_preset_delete">Избриши</string>
+    <string name="speech_equalizer_preset_delete_confirm">Избрисати <xliff:g id="name" example="Podcast">%1$s</xliff:g>?</string>
+    <string name="speech_equalizer_preset_deleted"><xliff:g id="name" example="Podcast">%1$s</xliff:g>: избрисано</string>
+    <string name="title_pref_emoji_voice">Глас за емоџије</string>
+    <string name="value_emoji_voice_same">Као говор</string>
+    <string name="title_pref_emoji_rate">Брзина говора за емоџије</string>
+    <string name="title_pref_line_breaks_as_spaces">Читај прелом реда као размак</string>
+    <string name="title_pref_language_voices">Гласови по језику</string>
+    <string name="title_pref_identify_languages_from_words">Препознај језике на основу речи</string>
+    <string name="title_pref_add_language">Додај језик</string>
+    <string name="title_pref_remove_language">Уклони језик</string>
+    <string name="title_pref_script_language">Писмо: %1$s</string>
+    <string name="title_pref_screen_on_notification_count">Број обавештења</string>
+    <plurals name="template_screen_on_notification_count">
+        <item quantity="one"><xliff:g id="count" example="6">%d</xliff:g> обавештење</item>
+        <item quantity="few"><xliff:g id="count" example="6">%d</xliff:g> обавештења</item>
+        <item quantity="other"><xliff:g id="count" example="6">%d</xliff:g> обавештења</item>
+    </plurals>
+    <string name="title_pref_phonetic_letters_review">Изговарај слова фонетски при прегледању</string>
+    <string name="title_pref_phonetic_letters_typing">Изговарај слова фонетски при куцању</string>
+    <string name="title_pref_emoji_suffix">Изговарај „емоџи“ после назива емоџија</string>
+    <string name="overview_shizuku_not_running">Shizuku није покренут</string>
+    <string name="overview_shizuku_not_allowed">Shizuku не дозвољава SandFly</string>
+    <string name="overview_no_older_app">Нема старије апликације</string>
+    <string name="overview_no_newer_app">Нема новије апликације</string>
+    <string name="stream_volume_needs_access">Дозволите приступ режиму „Не узнемиравај“ да бисте променили ову јачину звука.</string>
+    <string name="corner_gestures_title">Углови</string>
+    <string name="shortcut_move_to_item_below">Пређи на ставку испод</string>
+    <string name="shortcut_move_to_item_above">Пређи на ставку изнад</string>
+    <string name="shortcut_older_app">Старија апликација</string>
+    <string name="shortcut_newer_app">Новија апликација</string>
+    <string name="shortcut_answer_call">Јави се на позив</string>
+    <string name="answer_call_no_call">Нема долазног позива</string>
+    <string name="answer_call_permission">Потребна је дозвола за јављање на позиве</string>
+    <string name="shortcut_switch_keyboard">Промени тастатуру</string>
+    <string name="switch_keyboard_none">Ниједна друга тастатура није укључена</string>
+    <string name="switch_keyboard_failed">Тастатура није промењена</string>
+    <string name="clipboard_history_hint">Превуците нагоре или надоле да бисте изабрали, па двапут додирните да бисте налепили</string>
+    <string name="title_speech_history">Историја говора</string>
+    <string name="speech_history_empty">Нема говора</string>
+    <string name="speech_history_clear">Обриши историју</string>
+    <string name="title_pref_shortcut_corner_top_left_tap">Додир: горњи леви угао</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap">Двоструки додир: горњи леви угао</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap">Троструки додир: горњи леви угао</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap_hold">Двоструки додир и задржавање: горњи леви угао</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap_hold">Троструки додир и задржавање: горњи леви угао</string>
+    <string name="title_pref_shortcut_corner_top_right_tap">Додир: горњи десни угао</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap">Двоструки додир: горњи десни угао</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap">Троструки додир: горњи десни угао</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap_hold">Двоструки додир и задржавање: горњи десни угао</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap_hold">Троструки додир и задржавање: горњи десни угао</string>
+    <string name="title_pref_shortcut_corner_bottom_left_tap">Додир: доњи леви угао</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap">Двоструки додир: доњи леви угао</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap">Троструки додир: доњи леви угао</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap_hold">Двоструки додир и задржавање: доњи леви угао</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap_hold">Троструки додир и задржавање: доњи леви угао</string>
+    <string name="title_pref_shortcut_corner_bottom_right_tap">Додир: доњи десни угао</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap">Двоструки додир: доњи десни угао</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap">Троструки додир: доњи десни угао</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap_hold">Двоструки додир и задржавање: доњи десни угао</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap_hold">Троструки додир и задржавање: доњи десни угао</string>
+    <string name="title_pref_swipe_start_time">Време почетка покрета</string>
+    <string name="title_pref_swipes_before_lift">Препознај превлачење пре подизања прста</string>
+    <string name="summary_pref_swipes_before_lift">Искључује покрете напред-назад и покрете под углом.</string>
+    <string name="title_pref_corner_size_mm">Величина угла</string>
+    <string name="value_corner_size_edge_width">Као ширина ивице</string>
+    <string name="title_pref_corner_tap_time_ms">Временско ограничење додира у углу</string>
+    <string name="value_corner_tap_time_system">Подразумевано за систем</string>
+    <string name="title_pref_edge_speak_commands">Изговарај команду при сваком клику</string>
+    <string-array name="pref_volume_change_feedback_entries">
+        <item>@string/volume_change_feedback_off</item>
+        <item>@string/volume_change_feedback_tone</item>
+        <item>@string/volume_change_feedback_spoken</item>
+        <item>@string/volume_change_feedback_tone_and_spoken</item>
+    </string-array>
+    <string name="title_pref_volume_change_tone_during_media">Искључи тон током пуштања медија</string>
+    <string name="title_pref_volume_change_speech_during_media">Искључи говор током пуштања медија</string>
+    <string name="title_pref_volume_change_interrupts_speech">Прекини говор да би се најавила јачина звука</string>
+    <string name="title_pref_volume_keys_speech_volume_while_speaking">Тастери за јачину звука мењају јачину говора током говора</string>
+    <string name="title_pref_double_tap_moves_cursor">Двоструки додир помера курсор на почетак или крај</string>
+    <string name="title_pref_scroll_ahead">Помери унапред до следеће ставке</string>
+    <string name="title_pref_speak_while_scrolling">Изговори следећу ставку током померања</string>
+    <string-array name="pref_text_entities_entries">
+    <item>@string/text_entity_web</item>
+    <item>@string/text_entity_email</item>
+    <item>@string/text_entity_phone</item>
+    <item>@string/text_entity_code</item>
+  </string-array>
+    <string name="value_keep_models_until_stopped">Док се SandFly не заустави</string>
+    <string name="title_pref_model_download_server">Сервер за преузимање модела</string>
+    <string name="title_pref_settings_profiles">Профили подешавања</string>
+    <string name="title_pref_new_settings_profile">Нови профил подешавања</string>
+    <string name="settings_profile_new_name">Профил <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="settings_profile_name_taken">Профил подешавања „<xliff:g id="name" example="Demo">%1$s</xliff:g>“ већ постоји</string>
+    <string name="settings_profile_in_use">У употреби</string>
+    <string name="settings_profile_menu_item_in_use"><xliff:g id="name" example="Demo">%1$s</xliff:g>, у употреби</string>
+    <string name="settings_profile_none">Без профила подешавања</string>
+    <string name="settings_profile_use_now">Користи сада</string>
+    <string name="settings_profile_stop_using">Престани да користиш</string>
+    <string name="settings_profile_change_settings">Промени подешавања</string>
+    <string name="settings_profile_editing">Измене се уносе у профил <xliff:g id="name" example="Messaging">%1$s</xliff:g></string>
+    <string name="settings_profile_edit_saved">Измене су сачуване у профилу <xliff:g id="name" example="Messaging">%1$s</xliff:g></string>
+    <string name="settings_profile_use_automatically">Користи аутоматски</string>
+    <string name="settings_profile_web">Веб-садржај</string>
+    <string name="settings_profile_reading">Непрекидно читање</string>
+    <string name="settings_profile_text_editing">Мењање текста</string>
+    <string name="settings_profile_apps">Апликације</string>
+    <string name="settings_profile_add_app">Додај апликацију</string>
+    <string name="settings_profile_settings">Подешавања у овом профилу</string>
+    <string name="settings_profile_no_settings">Ништа</string>
+    <string name="settings_profile_remove_confirm">Уклонити <xliff:g id="item" example="Speech rate">%1$s</xliff:g> из профила <xliff:g id="name" example="Messaging">%2$s</xliff:g>?</string>
+    <string name="settings_profile_not_saved">Профил подешавања није сачуван</string>
+    <string name="settings_profile_in_use_announcement">Профил <xliff:g id="name" example="Demo">%1$s</xliff:g></string>
+    <string name="settings_profile_not_changed">Профил подешавања није промењен</string>
+    <string name="title_settings_profile">Профил подешавања</string>
+    <string name="shortcut_settings_profiles">Изабери профил подешавања</string>
+    <string name="shortcut_next_settings_profile">Следећи профил подешавања</string>
+    <string name="shortcut_previous_settings_profile">Претходни профил подешавања</string>
+    <string name="title_copy_text_from_screen">Копирај текст са екрана</string>
+    <string name="granularity_label">Прецизност</string>
+    <string name="granularity_characters">Знакови</string>
+    <string name="granularity_words">Речи</string>
+    <string name="granularity_paragraphs">Пасуси</string>
+    <string name="button_select_all">Изабери све</string>
+    <string name="no_text_selected">Ниједан текст није изабран</string>
+    <string name="no_text_on_screen">На екрану није пронађен текст</string>
+    <string name="title_select_last_spoken_phrase_word_by_word">Изабери последњу изговорену фразу реч по реч</string>
+    <string name="no_words_selected">Ниједна реч није изабрана</string>
+    <string name="no_phrase_to_select">Нема фразе за избор</string>
+    <string name="word_selection_list_cut_off">Листа је скраћена на <xliff:g id="count" example="1000">%1$d</xliff:g> ставки</string>
+    <plurals name="word_selection_copied">
+        <item quantity="one">Копирана је <xliff:g id="count" example="5">%1$d</xliff:g> ставка</item>
+        <item quantity="few">Копиране су <xliff:g id="count" example="5">%1$d</xliff:g> ставке</item>
+        <item quantity="other">Копирано је <xliff:g id="count" example="5">%1$d</xliff:g> ставки</item>
+    </plurals>
 </resources>

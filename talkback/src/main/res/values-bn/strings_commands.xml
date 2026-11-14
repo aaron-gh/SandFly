@@ -59,4 +59,24 @@
     <string name="keycombo_menu_navigate_next_by_setting">নেভিগেশন সেটিং অনুযায়ী পরবর্তী</string>
     <string name="keycombo_menu_navigate_previous_by_setting">নেভিগেশন সেটিং অনুযায়ী পূর্ববর্তী</string>
     <string name="title_pref_overview_screen">এক নজরে</string>
+    <string name="title_pref_custom_menus">কাস্টম মেনু</string>
+    <string name="commands_category_setting_values">সেটিংসের মান</string>
+    <string name="command_next_value"><xliff:g id="setting" example="Punctuation">%1$s</xliff:g>: পরবর্তী মান</string>
+    <string name="command_previous_value"><xliff:g id="setting" example="Punctuation">%1$s</xliff:g>: আগের মান</string>
+    <string name="shortcut_script_commands">স্ক্রিপ্ট কমান্ড</string>
+    <string name="shortcut_set_reading_control">রিডিং কন্ট্রোল <xliff:g id="control" example="Headings">%1$s</xliff:g>-এ সেট করুন</string>
+    <string name="title_pref_custom_reading_controls">কাস্টম রিডিং কন্ট্রোল</string>
+    <string name="menu_add_reading_control">রিডিং কন্ট্রোল যোগ করুন</string>
+    <string name="menu_add_submenu">সাবমেনু যোগ করুন</string>
+    <string name="menu_add_menu">মেনু যোগ করুন</string>
+    <string name="menu_name">নাম</string>
+    <string name="menu_open">খুলুন</string>
+    <string name="menu_move_to">এখানে সরান</string>
+    <string name="menu_rename">নাম পরিবর্তন করুন</string>
+    <string name="menu_delete">মুছুন</string>
+    <string name="menu_delete_confirm"><xliff:g id="name" example="AI">%1$s</xliff:g> এবং এর ভিতরের সবকিছু মুছবেন?</string>
+    <string name="menu_moved"><xliff:g id="place" example="AI">%1$s</xliff:g>-এ সরানো হয়েছে</string>
+    <string name="menu_reset">ডিফল্টে রিসেট করুন</string>
+    <string name="menu_reset_confirm">SandFly মেনু তার ডিফল্ট আইটেম ও ক্রমে রিসেট করবেন?</string>
+    <string name="menu_assign">জেসচার ও কীবোর্ড শর্টকাট</string>
 </resources>

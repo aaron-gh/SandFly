@@ -390,4 +390,12 @@
         <item>@string/notification_shake_3</item>
     </string-array>
     <string name="notification_clock_voice_notifications">የማሳወቂያ ድምፅ</string>
+    <string name="notification_exact_alarms_title">ማንቂያዎችን እና አስታዋሾችን አብራ</string>
+    <string name="shortcut_toggle_time_announcements">የሰዓት ማስታወቂያዎችን አብራ ወይም አጥፋ</string>
+    <string name="notification_clock_now_on">የሰዓት ማስታወቂያዎች በርተዋል</string>
+    <string name="notification_clock_now_off">የሰዓት ማስታወቂያዎች ጠፍተዋል</string>
+    <plurals name="notification_clock_battery">
+        <item quantity="one"><xliff:g id="percent" example="76">%d</xliff:g> በመቶ</item>
+        <item quantity="other"><xliff:g id="percent" example="76">%d</xliff:g> በመቶ</item>
+    </plurals>
 </resources>

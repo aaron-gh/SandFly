@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_voice_commands">Amri za sauti</string>
+    <string name="title_pref_voice_commands_ai">Elewa amri za sauti kwa AI</string>
+    <string name="voice_commands_custom">Amri maalum za sauti</string>
+    <string name="voice_command_add">Ongeza amri ya sauti</string>
+    <string name="voice_command_phrase">Kifungu</string>
+    <string name="voice_command_change_phrase">Badilisha kifungu</string>
+    <string name="voice_command_change_command">Badilisha amri</string>
+    <string name="voice_command_delete_confirm">Futa <xliff:g id="phrase" example="Good morning">%1$s</xliff:g>?</string>
+    <string name="voice_command_phrase_exists"><xliff:g id="phrase" example="Good morning">%1$s</xliff:g> tayari ni amri ya sauti</string>
+    <string name="voice_commands_not_understood">Haieleweki: <xliff:g id="text" example="open the door">%1$s</xliff:g></string>
+    <string name="voice_commands_not_available">Haipatikani: <xliff:g id="name" example="Morning macro">%1$s</xliff:g></string>
+    <string name="voice_commands_not_found">Haikupatikana: <xliff:g id="label" example="Settings">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app">Hakuna programu inayoitwa <xliff:g id="name" example="Signal">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app_for_action">Hakuna programu ya kitendo hiki</string>
+    <string name="voice_commands_calling">Inapiga simu kwa <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_call_permission">Ruhusu kupiga simu, kisha useme amri tena.</string>
+    <string name="voice_commands_contacts_permission">Ruhusu ufikiaji wa anwani, kisha useme amri tena.</string>
+    <string name="voice_commands_no_contact">Hakuna anwani inayoitwa <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_contacts_several">Zaidi ya anwani moja inayoitwa <xliff:g id="name" example="Sam">%1$s</xliff:g>: <xliff:g id="names" example="Sam Jones, Sam Smith">%2$s</xliff:g></string>
+    <string name="voice_commands_message_text">Ujumbe kwa <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_message_confirm">Tuma kwa <xliff:g id="name" example="Sam">%1$s</xliff:g>: <xliff:g id="text" example="I am on my way">%2$s</xliff:g>?</string>
+    <string name="voice_commands_message_confirm_result">Tuma kwa <xliff:g id="name" example="Sam">%1$s</xliff:g>?</string>
+    <string name="voice_commands_message_not_sent">Ujumbe haukutumwa</string>
+    <string name="voice_commands_send_pressed">Tuma imebonyezwa</string>
+    <string name="voice_commands_send_button">Tuma</string>
+    <string name="voice_commands_no_description">Hakuna maelezo yaliyopokelewa</string>
+    <string name="voice_commands_copied">Imenakiliwa</string>
+    <string-array name="voice_commands_chain_words">
+        <item>kisha</item>
+        <item>halafu</item>
+        <item>baada ya hapo</item>
+        <item>baadaye</item>
+    </string-array>
+    <string-array name="voice_commands_and_words">
+        <item>na</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_start">
+        <item>tafadhali</item>
+        <item>unaweza</item>
+        <item>naomba</item>
+        <item>ningependa</item>
+        <item>nataka</item>
+        <item>sasa</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_end">
+        <item>tafadhali</item>
+        <item>kwa ajili yangu</item>
+        <item>sasa</item>
+    </string-array>
+    <string-array name="voice_commands_cancel_words">
+        <item>acha</item>
+        <item>simama</item>
+        <item>ghairi</item>
+        <item>sitisha</item>
+        <item>achana nayo</item>
+        <item>sahau</item>
+        <item>nyamaza</item>
+    </string-array>
+    <string-array name="voice_commands_yes">
+        <item>ndiyo</item>
+        <item>ndio</item>
+        <item>ee</item>
+        <item>tuma</item>
+        <item>itume</item>
+        <item>sawa</item>
+        <item>ok</item>
+        <item>hakika</item>
+        <item>fanya</item>
+    </string-array>
+    <string-array name="voice_commands_sms_names">
+        <item>SMS</item>
+        <item>ujumbe mfupi</item>
+        <item>ujumbe wa maandishi</item>
+        <item>jumbe</item>
+    </string-array>
+    <string-array name="voice_commands_send_image_description">
+        <item>tuma maelezo ya picha kwa {who}</item>
+        <item>tuma maelezo ya picha hii kwa {who}</item>
+        <item>tuma kwa {who} maelezo ya picha</item>
+        <item>tuma maelezo ya taswira kwa {who}</item>
+    </string-array>
+    <string-array name="voice_commands_send_screen_description">
+        <item>tuma maelezo ya skrini kwa {who}</item>
+        <item>tuma maelezo ya skrini hii kwa {who}</item>
+        <item>tuma kwa {who} maelezo ya skrini</item>
+    </string-array>
+    <string-array name="voice_commands_send_previous">
+        <item>tuma kwa {who} kwenye {app}</item>
+        <item>itume kwa {who} kwenye {app}</item>
+        <item>tuma kwa {who}</item>
+        <item>itume kwa {who}</item>
+        <item>tuma hiyo kwa {who}</item>
+        <item>tuma maelezo kwa {who}</item>
+        <item>shiriki na {who}</item>
+    </string-array>
+    <string-array name="voice_commands_message">
+        <item>tuma ujumbe kwa {who} kwenye {app} unaosema {text}</item>
+        <item>tuma ujumbe kwa {who} kwenye {app}: {text}</item>
+        <item>tuma ujumbe kwa {who} unaosema {text}</item>
+        <item>tuma ujumbe kwa {who}: {text}</item>
+        <item>tuma ujumbe kwa {whoandtext}</item>
+        <item>tuma ujumbe wa {app} kwa {who} unaosema {text}</item>
+        <item>tuma ujumbe wa {app} kwa {who}</item>
+        <item>mtumie {who} ujumbe unaosema {text}</item>
+        <item>mtumie {who} ujumbe kwenye {app}: {text}</item>
+        <item>mtumie {who} ujumbe {text}</item>
+        <item>tuma SMS kwa {who} {text}</item>
+        <item>mwambie {who} kwenye {app} {text}</item>
+        <item>mtumie {whoandtext} ujumbe</item>
+        <item>tuma SMS kwa {whoandtext}</item>
+    </string-array>
+    <string-array name="voice_commands_call">
+        <item>mpigie {who} simu</item>
+        <item>piga simu kwa {who}</item>
+        <item>mpigie {who}</item>
+        <item>piga {who}</item>
+        <item>wasiliana na {who} kwa simu</item>
+    </string-array>
+    <string-array name="voice_commands_describe_screen">
+        <item>eleza skrini</item>
+        <item>eleza kilicho kwenye skrini</item>
+        <item>ni nini kilicho kwenye skrini</item>
+        <item>nini kiko kwenye skrini</item>
+    </string-array>
+    <string-array name="voice_commands_describe_image">
+        <item>eleza picha [hii]</item>
+        <item>eleza taswira [hii]</item>
+        <item>eleza [picha|taswira] [hii]</item>
+        <item>ni nini kilicho kwenye picha [hii]</item>
+        <item>nini kiko kwenye picha [hii]</item>
+        <item>ni nini kilicho kwenye taswira [hii]</item>
+    </string-array>
+    <string-array name="voice_commands_copy_result">
+        <item>inakili</item>
+        <item>nakili</item>
+        <item>nakili hiyo</item>
+        <item>nakili maelezo</item>
+        <item>nakili ulichosema [sasa hivi]</item>
+        <item>nakili kifungu cha mwisho kilichotamkwa</item>
+        <item>nakili kifungu cha mwisho</item>
+        <item>nakili kilichosemwa mwisho</item>
+    </string-array>
+    <string-array name="voice_commands_wait">
+        <item>subiri sekunde {n}</item>
+        <item>subiri sekunde moja</item>
+        <item>subiri</item>
+    </string-array>
+    <string-array name="voice_commands_type_text">
+        <item>andika {text}</item>
+        <item>weka {text}</item>
+        <item>ingiza {text}</item>
+    </string-array>
+    <string-array name="voice_commands_run">
+        <item>endesha makro ya {command}</item>
+        <item>endesha makro {command}</item>
+        <item>endesha {command}</item>
+        <item>fanya {command}</item>
+    </string-array>
+    <string-array name="voice_commands_open">
+        <item>fungua {app}</item>
+        <item>zindua {app}</item>
+        <item>anzisha {app}</item>
+        <item>badilisha hadi {app}</item>
+    </string-array>
+    <string-array name="voice_commands_tap">
+        <item>gusa mara mbili [kwenye] {label}</item>
+        <item>gusa [kwenye] {label}</item>
+        <item>bofya [kwenye] {label}</item>
+        <item>bonyeza {label}</item>
+        <item>washa {label}</item>
+        <item>chagua {label}</item>
+    </string-array>
+</resources>

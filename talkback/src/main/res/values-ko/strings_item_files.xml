@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="item_file_import">파일에서 가져오기</string>
+    <string name="item_file_export">파일로 내보내기</string>
+    <string name="title_pref_export_item_file_reference">내보내기 파일 형식 참조</string>
+    <string name="item_file_keymaps">키맵</string>
+    <string name="item_file_exported">내보냈습니다</string>
+    <string name="item_file_export_failed">내보내지 못했습니다</string>
+    <string name="item_file_not_read">SandFly 항목 파일이 아니거나 읽을 수 없는 파일입니다</string>
+    <string name="item_file_settings_file">설정 파일입니다. 백업 및 복원 &gt; 설정 가져오기에서 가져오세요</string>
+    <string name="item_file_newer">이 파일은 더 최신 버전의 SandFly에서 만든 파일입니다</string>
+    <string name="item_file_nothing_imported">가져온 항목 없음</string>
+    <string name="item_file_imported"><xliff:g id="items" example="2 macros, 1 gesture profile">%1$s</xliff:g> 가져옴</string>
+    <string name="item_file_left_out">제외됨:</string>
+    <string name="item_file_problem_not_read"><xliff:g id="kind" example="Macros">%1$s</xliff:g>, 항목 <xliff:g id="number" example="3">%2$d</xliff:g>: 읽지 못함</string>
+    <string name="item_file_problem_command"><xliff:g id="item" example="Open mail">%1$s</xliff:g>: 알 수 없는 명령 <xliff:g id="command" example="READ_ALL">%2$s</xliff:g></string>
+    <string name="item_file_problem_gesture"><xliff:g id="item" example="Reading">%1$s</xliff:g>: 알 수 없는 동작 <xliff:g id="gesture" example="pref_shortcut_spin">%2$s</xliff:g></string>
+    <string name="item_file_problem_keys"><xliff:g id="item" example="My keymap">%1$s</xliff:g>: 인식할 수 없는 키: <xliff:g id="keys" example="SandFly+Foo">%2$s</xliff:g></string>
+    <string name="item_file_problem_keys_taken"><xliff:g id="item" example="My keymap">%1$s</xliff:g>: 이미 사용 중인 키: <xliff:g id="keys" example="SandFly+H">%2$s</xliff:g></string>
+    <string name="item_file_problem_setting"><xliff:g id="item" example="Reading">%1$s</xliff:g>: 설정 <xliff:g id="key" example="pref_vibration">%2$s</xliff:g>을(를) 알 수 없거나, 프로필에 넣을 수 없거나, 값의 형식이 잘못되었습니다</string>
+    <string name="item_file_problem_regex"><xliff:g id="dictionary" example="Speech dictionary">%1$s</xliff:g>: 정규 표현식이 거부됨: <xliff:g id="expression" example="(a+)+">%2$s</xliff:g></string>
+    <string name="item_file_problem_limit"><xliff:g id="kind" example="Symbol dictionary">%1$s</xliff:g>: 항목 최대 <xliff:g id="number" example="500">%2$d</xliff:g>개</string>
+    <string name="item_file_problem_more">더 많은 항목이 제외되었습니다</string>
+    <plurals name="item_file_count_macros">
+        <item quantity="other">매크로 <xliff:g id="count" example="2">%d</xliff:g>개</item>
+    </plurals>
+    <plurals name="item_file_count_gesture_profiles">
+        <item quantity="other">동작 프로필 <xliff:g id="count" example="2">%d</xliff:g>개</item>
+    </plurals>
+    <plurals name="item_file_count_keymaps">
+        <item quantity="other">키맵 <xliff:g id="count" example="2">%d</xliff:g>개</item>
+    </plurals>
+    <plurals name="item_file_count_apps">
+        <item quantity="other">앱 <xliff:g id="count" example="2">%d</xliff:g>개의 동작 및 단축키</item>
+    </plurals>
+    <plurals name="item_file_count_settings_profiles">
+        <item quantity="other">설정 프로필 <xliff:g id="count" example="2">%d</xliff:g>개</item>
+    </plurals>
+    <plurals name="item_file_count_speech_dictionary">
+        <item quantity="other">음성 사전 항목 <xliff:g id="count" example="2">%d</xliff:g>개</item>
+    </plurals>
+    <plurals name="item_file_count_symbol_dictionary">
+        <item quantity="other">기호 사전 항목 <xliff:g id="count" example="2">%d</xliff:g>개</item>
+    </plurals>
+    <plurals name="item_file_count_braille_dictionary">
+        <item quantity="other">점자 사전 항목 <xliff:g id="count" example="2">%d</xliff:g>개</item>
+    </plurals>
+    <plurals name="item_file_count_voice_commands">
+        <item quantity="other">맞춤 음성 명령 <xliff:g id="count" example="2">%d</xliff:g>개</item>
+    </plurals>
+</resources>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_macros">巨集</string>
+    <string name="shortcut_stop_macro">停止巨集</string>
+    <string name="macro_add">新增巨集</string>
+    <string name="macro_run_now">立即執行</string>
+    <string name="macro_add_step">新增步驟</string>
+    <string name="macro_add_at_end">在結尾</string>
+    <string name="macro_add_at_start">在開頭</string>
+    <string name="macro_add_after">第 <xliff:g id="step" example="2">%1$d</xliff:g> 步之後：<xliff:g id="name" example="If App in front: Chrome">%2$s</xliff:g></string>
+    <string name="macro_steps">步驟</string>
+    <string name="macro_no_steps">沒有步驟</string>
+    <string name="macro_delete">刪除巨集</string>
+    <string name="macro_delete_confirm">刪除<xliff:g id="name" example="Send message">%1$s</xliff:g>？</string>
+    <string name="macro_step_command">執行命令</string>
+    <string name="macro_step_wait">等待</string>
+    <string name="macro_step_tap">輕觸項目</string>
+    <string name="macro_step_focus">聚焦項目</string>
+    <string name="macro_step_speak_item">朗讀項目</string>
+    <string name="macro_step_speak_text">朗讀文字</string>
+    <string name="macro_step_type">輸入文字</string>
+    <string name="macro_step_tap_value">輕觸<xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_focus_value">聚焦<xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_item_value">朗讀<xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_text_value">朗讀<xliff:g id="text" example="Done">%1$s</xliff:g></string>
+    <string name="macro_step_type_value">輸入<xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <string name="macro_step_replace_value">將文字取代為<xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <plurals name="macro_step_wait_seconds">
+        <item quantity="other">等待 <xliff:g id="count" example="2">%d</xliff:g> 秒</item>
+    </plurals>
+    <plurals name="macro_step_wait_milliseconds">
+        <item quantity="other">等待 <xliff:g id="count" example="500">%d</xliff:g> 毫秒</item>
+    </plurals>
+    <string name="macro_step_unavailable">無法使用</string>
+    <string name="macro_seconds">秒數</string>
+    <string name="macro_invalid_seconds">請輸入不超過 <xliff:g id="max" example="600">%1$d</xliff:g> 的秒數</string>
+    <string name="macro_tap_label">項目文字</string>
+    <string name="macro_tap_timeout">等待項目的秒數</string>
+    <string name="macro_text">文字</string>
+    <string name="macro_replace_text">取代欄位中的文字</string>
+    <string name="macro_item_not_found">巨集已停止。找不到：<xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_failed">巨集已停止。失敗：<xliff:g id="step" example="Open Gmail">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until">等待直到</string>
+    <string name="macro_step_if">如果</string>
+    <string name="macro_step_else_if">否則如果</string>
+    <string name="macro_step_else">否則</string>
+    <string name="macro_step_end_if">結束如果</string>
+    <string name="macro_step_repeat">重複</string>
+    <string name="macro_step_repeat_while">符合條件時重複</string>
+    <string name="macro_step_end_repeat">結束重複</string>
+    <string name="macro_step_exit_loop">結束迴圈</string>
+    <string name="macro_step_if_value">如果<xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_else_if_value">否則如果<xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_repeat_while_value">符合條件時重複：<xliff:g id="condition" example="Item on screen: Load more">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until_value">等待直到<xliff:g id="condition" example="Item on screen: Send">%1$s</xliff:g></string>
+    <plurals name="macro_step_repeat_value">
+        <item quantity="other">重複 <xliff:g id="count" example="3">%d</xliff:g> 次</item>
+    </plurals>
+    <string name="macro_times">次數</string>
+    <string name="macro_invalid_times">請輸入 1 到 <xliff:g id="max" example="1000">%1$d</xliff:g> 的數字</string>
+    <string name="macro_run_only_when">僅在以下情況執行</string>
+    <string name="macro_always">總是</string>
+    <string name="macro_no_tests">無條件</string>
+    <string name="macro_add_test">新增條件</string>
+    <string name="macro_tests">條件</string>
+    <string name="macro_choose_test">條件</string>
+    <string name="macro_test_item">螢幕上的項目</string>
+    <string name="macro_test_focused">聚焦的項目</string>
+    <string name="macro_test_app">前景應用程式</string>
+    <string name="macro_test_keyboard">鍵盤已顯示</string>
+    <string name="macro_test_keyboard_hidden">鍵盤已隱藏</string>
+    <string name="macro_test_locked">螢幕已鎖定</string>
+    <string name="macro_test_unlocked">螢幕已解鎖</string>
+    <string name="macro_test_item_value">螢幕上的項目：<xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_no_item_value">螢幕上沒有項目：<xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_focused_value">聚焦的項目：<xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_not_focused_value">聚焦的項目不是：<xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_app_value">前景應用程式：<xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_not_app_value">前景應用程式不是：<xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_label_kind"><xliff:g id="label" example="Send">%1$s</xliff:g>，<xliff:g id="kind" example="Clickable">%2$s</xliff:g></string>
+    <string name="macro_join_and"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g>且<xliff:g id="second" example="Focused item: Editable">%2$s</xliff:g></string>
+    <string name="macro_join_or"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g>，或<xliff:g id="second" example="Screen locked">%2$s</xliff:g></string>
+    <string name="macro_regex">正規表示式</string>
+    <string name="macro_invalid_regex">不是可用的正規表示式。重複的群組不能包含重複或 |。</string>
+    <string name="macro_match_in">比對範圍</string>
+    <string name="macro_field_any">任何文字</string>
+    <string name="macro_field_text">文字</string>
+    <string name="macro_field_description">描述</string>
+    <string name="macro_field_hint">提示</string>
+    <string name="macro_field_state">狀態</string>
+    <string name="macro_field_id">資源 ID</string>
+    <string name="macro_field_value"><xliff:g id="label" example="send">%1$s</xliff:g>（<xliff:g id="field" example="Resource ID">%2$s</xliff:g>）</string>
+    <string name="macro_field_regex_value"><xliff:g id="pattern" example="^Reply">%1$s</xliff:g>（<xliff:g id="field" example="Description">%2$s</xliff:g>，正規表示式）</string>
+    <string name="macro_regex_value"><xliff:g id="pattern" example="Reply.*Anna">%1$s</xliff:g>（正規表示式）</string>
+    <string name="macro_test_label_optional">項目文字（選填）</string>
+    <string name="macro_item_kind">項目類型</string>
+    <string name="macro_kind_any">任何類型</string>
+    <string name="macro_kind_clickable">可輕觸</string>
+    <string name="macro_kind_long_clickable">可長按</string>
+    <string name="macro_kind_editable">可編輯</string>
+    <string name="macro_kind_scrollable">可捲動</string>
+    <string name="macro_kind_adjustable">可調整</string>
+    <string name="macro_kind_checkable">可勾選</string>
+    <string name="macro_kind_checked">已勾選</string>
+    <string name="macro_kind_selected">已選取</string>
+    <string name="macro_kind_heading">標題</string>
+    <string name="macro_kind_enabled">已啟用</string>
+    <string name="macro_change_to">變更為：<xliff:g id="test" example="Keyboard hidden">%1$s</xliff:g></string>
+    <string name="macro_join_with_and">以「且」連接</string>
+    <string name="macro_join_with_or">以「或」連接</string>
+    <string name="macro_clause_and">且<xliff:g id="test" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_clause_or">或<xliff:g id="test" example="Screen locked">%1$s</xliff:g></string>
+    <string name="macro_wait_timeout">等待的秒數</string>
+    <string name="macro_add_step_after">在此之後新增步驟</string>
+    <string name="macro_problem">第 <xliff:g id="step" example="3">%1$d</xliff:g> 步：<xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_problem_no_if">沒有「如果」的「否則如果」、「否則」或「結束如果」</string>
+    <string name="macro_problem_after_else">「否則」之後的「否則如果」或「否則」</string>
+    <string name="macro_problem_no_repeat">沒有「重複」的「結束重複」</string>
+    <string name="macro_problem_no_end_if">沒有「結束如果」的「如果」</string>
+    <string name="macro_problem_no_end_repeat">沒有「結束重複」的「重複」</string>
+    <string name="macro_problem_exit">「結束迴圈」不在重複之內</string>
+    <string name="macro_stopped_problem">巨集已停止。第 <xliff:g id="step" example="3">%1$d</xliff:g> 步：<xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_stopped_repeats">巨集已停止。已重複 <xliff:g id="count" example="1000">%1$d</xliff:g> 次：<xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
+    <string name="macro_stopped_timeout">巨集已停止。逾時：<xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
+    <string name="macro_not_met">巨集未執行。僅在以下情況執行：條件不符</string>
+</resources>

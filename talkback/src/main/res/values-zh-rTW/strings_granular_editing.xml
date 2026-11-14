@@ -46,4 +46,14 @@
     <string name="granular_editing_not_saved">未儲存：文字欄位已不存在。文字已複製。</string>
     <string name="granular_editing_no_text">沒有要編輯的文字</string>
     <string name="granular_editing_password">密碼欄位中不可用</string>
+    <plurals name="granular_editing_spaces">
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g>個空格</item>
+    </plurals>
+    <plurals name="granular_editing_new_lines">
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g>個換行</item>
+    </plurals>
+    <plurals name="granular_editing_tabs">
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g>個定位字元</item>
+    </plurals>
+    <string name="granular_editing_blank_line">空白行</string>
 </resources>

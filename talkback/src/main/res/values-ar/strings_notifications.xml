@@ -422,4 +422,16 @@
         <item>@string/notification_shake_3</item>
     </string-array>
     <string name="notification_clock_voice_notifications">صوت الإشعارات</string>
+    <string name="notification_exact_alarms_title">تشغيل \"التنبيهات والتذكيرات\"</string>
+    <string name="shortcut_toggle_time_announcements">تشغيل إعلانات الوقت أو إيقافها</string>
+    <string name="notification_clock_now_on">تم تشغيل إعلانات الوقت</string>
+    <string name="notification_clock_now_off">تم إيقاف إعلانات الوقت</string>
+    <plurals name="notification_clock_battery">
+        <item quantity="one"><xliff:g id="percent" example="76">%d</xliff:g> بالمائة</item>
+        <item quantity="two"><xliff:g id="percent" example="76">%d</xliff:g> بالمائة</item>
+        <item quantity="few"><xliff:g id="percent" example="76">%d</xliff:g> بالمائة</item>
+        <item quantity="many"><xliff:g id="percent" example="76">%d</xliff:g> بالمائة</item>
+        <item quantity="other"><xliff:g id="percent" example="76">%d</xliff:g> بالمائة</item>
+        <item quantity="zero"><xliff:g id="percent" example="76">%d</xliff:g> بالمائة</item>
+    </plurals>
 </resources>

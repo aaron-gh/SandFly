@@ -2021,4 +2021,142 @@
     <string name="value_keep_models_5">5 phút</string>
     <string name="value_keep_models_15">15 phút</string>
     <string name="value_keep_models_30">30 phút</string>
+    <string name="title_pref_speech_equalizer_save_preset">Lưu thành chế độ đặt sẵn</string>
+    <string name="title_pref_speech_equalizer_saved_presets">Chế độ đặt sẵn đã lưu</string>
+    <string name="speech_equalizer_preset_name">Tên</string>
+    <string name="speech_equalizer_preset_name_taken">Đã có chế độ đặt sẵn tên <xliff:g id="name" example="Podcast">%1$s</xliff:g></string>
+    <string name="speech_equalizer_presets_full">Không thể lưu thêm chế độ đặt sẵn. Hãy xoá một chế độ để lưu chế độ khác.</string>
+    <string name="speech_equalizer_preset_saved">Đã lưu <xliff:g id="name" example="Podcast">%1$s</xliff:g></string>
+    <string name="speech_equalizer_preset_rename">Đổi tên</string>
+    <string name="speech_equalizer_preset_delete">Xoá</string>
+    <string name="speech_equalizer_preset_delete_confirm">Xoá <xliff:g id="name" example="Podcast">%1$s</xliff:g>?</string>
+    <string name="speech_equalizer_preset_deleted">Đã xoá <xliff:g id="name" example="Podcast">%1$s</xliff:g></string>
+    <string name="title_pref_emoji_voice">Giọng đọc biểu tượng cảm xúc</string>
+    <string name="value_emoji_voice_same">Giống lời nói</string>
+    <string name="title_pref_emoji_rate">Tốc độ lời nói của biểu tượng cảm xúc</string>
+    <string name="title_pref_line_breaks_as_spaces">Đọc ngắt dòng như dấu cách</string>
+    <string name="title_pref_language_voices">Giọng nói theo ngôn ngữ</string>
+    <string name="title_pref_identify_languages_from_words">Nhận biết ngôn ngữ từ từ ngữ</string>
+    <string name="title_pref_add_language">Thêm ngôn ngữ</string>
+    <string name="title_pref_remove_language">Xoá ngôn ngữ</string>
+    <string name="title_pref_script_language">Chữ viết %1$s</string>
+    <string name="title_pref_screen_on_notification_count">Số lượng thông báo</string>
+    <plurals name="template_screen_on_notification_count">
+        <item quantity="other"><xliff:g id="count" example="6">%d</xliff:g> thông báo</item>
+    </plurals>
+    <string name="title_pref_phonetic_letters_review">Đọc chữ cái theo âm khi xem lại</string>
+    <string name="title_pref_phonetic_letters_typing">Đọc chữ cái theo âm khi nhập</string>
+    <string name="title_pref_emoji_suffix">Đọc \"biểu tượng cảm xúc\" sau tên biểu tượng cảm xúc</string>
+    <string name="overview_shizuku_not_running">Shizuku không chạy</string>
+    <string name="overview_shizuku_not_allowed">Shizuku không cho phép SandFly</string>
+    <string name="overview_no_older_app">Không có ứng dụng cũ hơn</string>
+    <string name="overview_no_newer_app">Không có ứng dụng mới hơn</string>
+    <string name="stream_volume_needs_access">Hãy cho phép truy cập chế độ Không làm phiền để thay đổi âm lượng này.</string>
+    <string name="corner_gestures_title">Góc màn hình</string>
+    <string name="shortcut_move_to_item_below">Chuyển đến mục bên dưới</string>
+    <string name="shortcut_move_to_item_above">Chuyển đến mục bên trên</string>
+    <string name="shortcut_older_app">Ứng dụng cũ hơn</string>
+    <string name="shortcut_newer_app">Ứng dụng mới hơn</string>
+    <string name="shortcut_answer_call">Trả lời cuộc gọi</string>
+    <string name="answer_call_no_call">Không có cuộc gọi đến</string>
+    <string name="answer_call_permission">Cần có quyền để trả lời cuộc gọi</string>
+    <string name="shortcut_switch_keyboard">Chuyển bàn phím</string>
+    <string name="switch_keyboard_none">Không có bàn phím nào khác được bật</string>
+    <string name="switch_keyboard_failed">Không chuyển được bàn phím</string>
+    <string name="clipboard_history_hint">Vuốt lên hoặc xuống để chọn, sau đó nhấn đúp để dán</string>
+    <string name="title_speech_history">Nhật ký lời nói</string>
+    <string name="speech_history_empty">Không có lời nói</string>
+    <string name="speech_history_clear">Xoá nhật ký</string>
+    <string name="title_pref_shortcut_corner_top_left_tap">Nhấn góc trên bên trái</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap">Nhấn đúp góc trên bên trái</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap">Nhấn ba lần góc trên bên trái</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap_hold">Nhấn đúp và giữ góc trên bên trái</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap_hold">Nhấn ba lần và giữ góc trên bên trái</string>
+    <string name="title_pref_shortcut_corner_top_right_tap">Nhấn góc trên bên phải</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap">Nhấn đúp góc trên bên phải</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap">Nhấn ba lần góc trên bên phải</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap_hold">Nhấn đúp và giữ góc trên bên phải</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap_hold">Nhấn ba lần và giữ góc trên bên phải</string>
+    <string name="title_pref_shortcut_corner_bottom_left_tap">Nhấn góc dưới bên trái</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap">Nhấn đúp góc dưới bên trái</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap">Nhấn ba lần góc dưới bên trái</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap_hold">Nhấn đúp và giữ góc dưới bên trái</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap_hold">Nhấn ba lần và giữ góc dưới bên trái</string>
+    <string name="title_pref_shortcut_corner_bottom_right_tap">Nhấn góc dưới bên phải</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap">Nhấn đúp góc dưới bên phải</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap">Nhấn ba lần góc dưới bên phải</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap_hold">Nhấn đúp và giữ góc dưới bên phải</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap_hold">Nhấn ba lần và giữ góc dưới bên phải</string>
+    <string name="title_pref_swipe_start_time">Thời gian bắt đầu cử chỉ</string>
+    <string name="title_pref_swipes_before_lift">Nhận dạng thao tác vuốt trước khi nhấc ngón tay</string>
+    <string name="summary_pref_swipes_before_lift">Tắt cử chỉ qua lại và cử chỉ theo góc.</string>
+    <string name="title_pref_corner_size_mm">Kích thước góc</string>
+    <string name="value_corner_size_edge_width">Giống độ rộng cạnh</string>
+    <string name="title_pref_corner_tap_time_ms">Giới hạn thời gian nhấn góc</string>
+    <string name="value_corner_tap_time_system">Mặc định của hệ thống</string>
+    <string name="title_pref_edge_speak_commands">Đọc lệnh ở mỗi lần nhấp</string>
+    <string-array name="pref_volume_change_feedback_entries">
+        <item>@string/volume_change_feedback_off</item>
+        <item>@string/volume_change_feedback_tone</item>
+        <item>@string/volume_change_feedback_spoken</item>
+        <item>@string/volume_change_feedback_tone_and_spoken</item>
+    </string-array>
+    <string name="title_pref_volume_change_tone_during_media">Tắt âm báo khi phát nội dung nghe nhìn</string>
+    <string name="title_pref_volume_change_speech_during_media">Tắt lời nói khi phát nội dung nghe nhìn</string>
+    <string name="title_pref_volume_change_interrupts_speech">Ngắt lời nói để thông báo âm lượng</string>
+    <string name="title_pref_volume_keys_speech_volume_while_speaking">Phím âm lượng đổi âm lượng lời nói khi đang đọc</string>
+    <string name="title_pref_double_tap_moves_cursor">Nhấn đúp để chuyển con trỏ đến đầu hoặc cuối</string>
+    <string name="title_pref_scroll_ahead">Cuộn trước đến mục tiếp theo</string>
+    <string name="title_pref_speak_while_scrolling">Đọc mục tiếp theo khi cuộn</string>
+    <string-array name="pref_text_entities_entries">
+    <item>@string/text_entity_web</item>
+    <item>@string/text_entity_email</item>
+    <item>@string/text_entity_phone</item>
+    <item>@string/text_entity_code</item>
+  </string-array>
+    <string name="value_keep_models_until_stopped">Cho đến khi SandFly dừng</string>
+    <string name="title_pref_model_download_server">Máy chủ tải mô hình xuống</string>
+    <string name="title_pref_settings_profiles">Hồ sơ cài đặt</string>
+    <string name="title_pref_new_settings_profile">Hồ sơ cài đặt mới</string>
+    <string name="settings_profile_new_name">Hồ sơ <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="settings_profile_name_taken">Đã có hồ sơ cài đặt tên <xliff:g id="name" example="Demo">%1$s</xliff:g></string>
+    <string name="settings_profile_in_use">Đang dùng</string>
+    <string name="settings_profile_menu_item_in_use"><xliff:g id="name" example="Demo">%1$s</xliff:g>, đang dùng</string>
+    <string name="settings_profile_none">Không có hồ sơ cài đặt</string>
+    <string name="settings_profile_use_now">Dùng ngay</string>
+    <string name="settings_profile_stop_using">Ngừng dùng</string>
+    <string name="settings_profile_change_settings">Thay đổi cài đặt</string>
+    <string name="settings_profile_editing">Các thay đổi được lưu vào <xliff:g id="name" example="Messaging">%1$s</xliff:g></string>
+    <string name="settings_profile_edit_saved">Đã lưu các thay đổi vào <xliff:g id="name" example="Messaging">%1$s</xliff:g></string>
+    <string name="settings_profile_use_automatically">Tự động dùng</string>
+    <string name="settings_profile_web">Nội dung web</string>
+    <string name="settings_profile_reading">Đọc liên tục</string>
+    <string name="settings_profile_text_editing">Chỉnh sửa văn bản</string>
+    <string name="settings_profile_apps">Ứng dụng</string>
+    <string name="settings_profile_add_app">Thêm ứng dụng</string>
+    <string name="settings_profile_settings">Cài đặt trong hồ sơ này</string>
+    <string name="settings_profile_no_settings">Không có</string>
+    <string name="settings_profile_remove_confirm">Xoá <xliff:g id="item" example="Speech rate">%1$s</xliff:g> khỏi <xliff:g id="name" example="Messaging">%2$s</xliff:g>?</string>
+    <string name="settings_profile_not_saved">Không lưu được hồ sơ cài đặt</string>
+    <string name="settings_profile_in_use_announcement">Hồ sơ <xliff:g id="name" example="Demo">%1$s</xliff:g></string>
+    <string name="settings_profile_not_changed">Hồ sơ cài đặt không thay đổi</string>
+    <string name="title_settings_profile">Hồ sơ cài đặt</string>
+    <string name="shortcut_settings_profiles">Chọn hồ sơ cài đặt</string>
+    <string name="shortcut_next_settings_profile">Hồ sơ cài đặt tiếp theo</string>
+    <string name="shortcut_previous_settings_profile">Hồ sơ cài đặt trước</string>
+    <string name="title_copy_text_from_screen">Sao chép văn bản từ màn hình</string>
+    <string name="granularity_label">Mức chi tiết</string>
+    <string name="granularity_characters">Ký tự</string>
+    <string name="granularity_words">Từ</string>
+    <string name="granularity_paragraphs">Đoạn văn</string>
+    <string name="button_select_all">Chọn tất cả</string>
+    <string name="no_text_selected">Chưa chọn văn bản</string>
+    <string name="no_text_on_screen">Không tìm thấy văn bản trên màn hình</string>
+    <string name="title_select_last_spoken_phrase_word_by_word">Chọn cụm từ đọc gần nhất theo từng từ</string>
+    <string name="no_words_selected">Chưa chọn từ nào</string>
+    <string name="no_phrase_to_select">Không có cụm từ để chọn</string>
+    <string name="word_selection_list_cut_off">Danh sách bị cắt ở <xliff:g id="count" example="1000">%1$d</xliff:g> mục</string>
+    <plurals name="word_selection_copied">
+        <item quantity="other">Đã sao chép <xliff:g id="count" example="5">%1$d</xliff:g> mục</item>
+    </plurals>
 </resources>

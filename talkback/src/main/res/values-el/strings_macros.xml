@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_macros">Μακροεντολές</string>
+    <string name="shortcut_stop_macro">Διακοπή μακροεντολής</string>
+    <string name="macro_add">Προσθήκη μακροεντολής</string>
+    <string name="macro_run_now">Εκτέλεση τώρα</string>
+    <string name="macro_add_step">Προσθήκη βήματος</string>
+    <string name="macro_add_at_end">Στο τέλος</string>
+    <string name="macro_add_at_start">Στην αρχή</string>
+    <string name="macro_add_after">Μετά το βήμα <xliff:g id="step" example="2">%1$d</xliff:g>: <xliff:g id="name" example="If App in front: Chrome">%2$s</xliff:g></string>
+    <string name="macro_steps">Βήματα</string>
+    <string name="macro_no_steps">Κανένα βήμα</string>
+    <string name="macro_delete">Διαγραφή μακροεντολής</string>
+    <string name="macro_delete_confirm">Διαγραφή του <xliff:g id="name" example="Send message">%1$s</xliff:g>;</string>
+    <string name="macro_step_command">Εκτέλεση εντολής</string>
+    <string name="macro_step_wait">Αναμονή</string>
+    <string name="macro_step_tap">Πάτημα στοιχείου</string>
+    <string name="macro_step_focus">Εστίαση σε στοιχείο</string>
+    <string name="macro_step_speak_item">Εκφώνηση στοιχείου</string>
+    <string name="macro_step_speak_text">Εκφώνηση κειμένου</string>
+    <string name="macro_step_type">Πληκτρολόγηση κειμένου</string>
+    <string name="macro_step_tap_value">Πάτημα: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_focus_value">Εστίαση: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_item_value">Εκφώνηση: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_text_value">Εκφώνηση: <xliff:g id="text" example="Done">%1$s</xliff:g></string>
+    <string name="macro_step_type_value">Πληκτρολόγηση: <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <string name="macro_step_replace_value">Αντικατάσταση κειμένου με <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <plurals name="macro_step_wait_seconds">
+        <item quantity="one">Αναμονή <xliff:g id="count" example="2">%d</xliff:g> δευτερολέπτου</item>
+        <item quantity="other">Αναμονή <xliff:g id="count" example="2">%d</xliff:g> δευτερολέπτων</item>
+    </plurals>
+    <plurals name="macro_step_wait_milliseconds">
+        <item quantity="one">Αναμονή <xliff:g id="count" example="500">%d</xliff:g> χιλιοστού του δευτερολέπτου</item>
+        <item quantity="other">Αναμονή <xliff:g id="count" example="500">%d</xliff:g> χιλιοστών του δευτερολέπτου</item>
+    </plurals>
+    <string name="macro_step_unavailable">Μη διαθέσιμο</string>
+    <string name="macro_seconds">Δευτερόλεπτα</string>
+    <string name="macro_invalid_seconds">Εισαγάγετε αριθμό δευτερολέπτων έως <xliff:g id="max" example="600">%1$d</xliff:g></string>
+    <string name="macro_tap_label">Κείμενο στοιχείου</string>
+    <string name="macro_tap_timeout">Δευτερόλεπτα αναμονής για το στοιχείο</string>
+    <string name="macro_text">Κείμενο</string>
+    <string name="macro_replace_text">Αντικατάσταση κειμένου στο πεδίο</string>
+    <string name="macro_item_not_found">Η μακροεντολή σταμάτησε. Δεν βρέθηκε: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_failed">Η μακροεντολή σταμάτησε. Απέτυχε: <xliff:g id="step" example="Open Gmail">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until">Αναμονή μέχρι</string>
+    <string name="macro_step_if">Αν</string>
+    <string name="macro_step_else_if">Αλλιώς αν</string>
+    <string name="macro_step_else">Αλλιώς</string>
+    <string name="macro_step_end_if">Τέλος αν</string>
+    <string name="macro_step_repeat">Επανάληψη</string>
+    <string name="macro_step_repeat_while">Επανάληψη όσο</string>
+    <string name="macro_step_end_repeat">Τέλος επανάληψης</string>
+    <string name="macro_step_exit_loop">Έξοδος από βρόχο</string>
+    <string name="macro_step_if_value">Αν <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_else_if_value">Αλλιώς αν <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_repeat_while_value">Επανάληψη όσο <xliff:g id="condition" example="Item on screen: Load more">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until_value">Αναμονή μέχρι <xliff:g id="condition" example="Item on screen: Send">%1$s</xliff:g></string>
+    <plurals name="macro_step_repeat_value">
+        <item quantity="one">Επανάληψη <xliff:g id="count" example="3">%d</xliff:g> φορά</item>
+        <item quantity="other">Επανάληψη <xliff:g id="count" example="3">%d</xliff:g> φορές</item>
+    </plurals>
+    <string name="macro_times">Φορές</string>
+    <string name="macro_invalid_times">Εισαγάγετε αριθμό από 1 έως <xliff:g id="max" example="1000">%1$d</xliff:g></string>
+    <string name="macro_run_only_when">Εκτέλεση μόνο όταν</string>
+    <string name="macro_always">Πάντα</string>
+    <string name="macro_no_tests">Κανένας έλεγχος</string>
+    <string name="macro_add_test">Προσθήκη ελέγχου</string>
+    <string name="macro_tests">Έλεγχοι</string>
+    <string name="macro_choose_test">Έλεγχος</string>
+    <string name="macro_test_item">Στοιχείο στην οθόνη</string>
+    <string name="macro_test_focused">Στοιχείο με εστίαση</string>
+    <string name="macro_test_app">Εφαρμογή στο προσκήνιο</string>
+    <string name="macro_test_keyboard">Πληκτρολόγιο εμφανίζεται</string>
+    <string name="macro_test_keyboard_hidden">Πληκτρολόγιο κρυφό</string>
+    <string name="macro_test_locked">Οθόνη κλειδωμένη</string>
+    <string name="macro_test_unlocked">Οθόνη ξεκλείδωτη</string>
+    <string name="macro_test_item_value">Στοιχείο στην οθόνη: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_no_item_value">Κανένα στοιχείο στην οθόνη: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_focused_value">Στοιχείο με εστίαση: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_not_focused_value">Στοιχείο χωρίς εστίαση: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_app_value">Εφαρμογή στο προσκήνιο: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_not_app_value">Εφαρμογή όχι στο προσκήνιο: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_label_kind"><xliff:g id="label" example="Send">%1$s</xliff:g>, <xliff:g id="kind" example="Clickable">%2$s</xliff:g></string>
+    <string name="macro_join_and"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g> και <xliff:g id="second" example="Focused item: Editable">%2$s</xliff:g></string>
+    <string name="macro_join_or"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g>, ή <xliff:g id="second" example="Screen locked">%2$s</xliff:g></string>
+    <string name="macro_regex">Κανονική έκφραση</string>
+    <string name="macro_invalid_regex">Μη έγκυρη κανονική έκφραση. Οι επαναλαμβανόμενες ομάδες δεν μπορούν να περιέχουν επανάληψη ή |.</string>
+    <string name="macro_match_in">Αναζήτηση σε</string>
+    <string name="macro_field_any">Οποιοδήποτε κείμενο</string>
+    <string name="macro_field_text">Κείμενο</string>
+    <string name="macro_field_description">Περιγραφή</string>
+    <string name="macro_field_hint">Υπόδειξη</string>
+    <string name="macro_field_state">Κατάσταση</string>
+    <string name="macro_field_id">Αναγνωριστικό πόρου</string>
+    <string name="macro_field_value"><xliff:g id="label" example="send">%1$s</xliff:g> (<xliff:g id="field" example="Resource ID">%2$s</xliff:g>)</string>
+    <string name="macro_field_regex_value"><xliff:g id="pattern" example="^Reply">%1$s</xliff:g> (<xliff:g id="field" example="Description">%2$s</xliff:g>, κανονική έκφραση)</string>
+    <string name="macro_regex_value"><xliff:g id="pattern" example="Reply.*Anna">%1$s</xliff:g> (κανονική έκφραση)</string>
+    <string name="macro_test_label_optional">Κείμενο στοιχείου (προαιρετικό)</string>
+    <string name="macro_item_kind">Τύπος στοιχείου</string>
+    <string name="macro_kind_any">Οποιοσδήποτε τύπος</string>
+    <string name="macro_kind_clickable">Με δυνατότητα πατήματος</string>
+    <string name="macro_kind_long_clickable">Με δυνατότητα παρατεταμένου πατήματος</string>
+    <string name="macro_kind_editable">Επεξεργάσιμο</string>
+    <string name="macro_kind_scrollable">Με δυνατότητα κύλισης</string>
+    <string name="macro_kind_adjustable">Ρυθμιζόμενο</string>
+    <string name="macro_kind_checkable">Με δυνατότητα επιλογής</string>
+    <string name="macro_kind_checked">Επιλεγμένο</string>
+    <string name="macro_kind_selected">Επιλεγμένο</string>
+    <string name="macro_kind_heading">Επικεφαλίδα</string>
+    <string name="macro_kind_enabled">Ενεργό</string>
+    <string name="macro_change_to">Αλλαγή σε: <xliff:g id="test" example="Keyboard hidden">%1$s</xliff:g></string>
+    <string name="macro_join_with_and">Σύνδεση με και</string>
+    <string name="macro_join_with_or">Σύνδεση με ή</string>
+    <string name="macro_clause_and">και <xliff:g id="test" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_clause_or">ή <xliff:g id="test" example="Screen locked">%1$s</xliff:g></string>
+    <string name="macro_wait_timeout">Δευτερόλεπτα αναμονής</string>
+    <string name="macro_add_step_after">Προσθήκη βήματος μετά</string>
+    <string name="macro_problem">Βήμα <xliff:g id="step" example="3">%1$d</xliff:g>: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_problem_no_if">Αλλιώς αν, Αλλιώς ή Τέλος αν χωρίς Αν</string>
+    <string name="macro_problem_after_else">Αλλιώς αν ή Αλλιώς μετά από Αλλιώς</string>
+    <string name="macro_problem_no_repeat">Τέλος επανάληψης χωρίς Επανάληψη</string>
+    <string name="macro_problem_no_end_if">Αν χωρίς Τέλος αν</string>
+    <string name="macro_problem_no_end_repeat">Επανάληψη χωρίς Τέλος επανάληψης</string>
+    <string name="macro_problem_exit">Έξοδος από βρόχο εκτός επανάληψης</string>
+    <string name="macro_stopped_problem">Η μακροεντολή σταμάτησε. Βήμα <xliff:g id="step" example="3">%1$d</xliff:g>: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_stopped_repeats">Η μακροεντολή σταμάτησε. Επαναλήφθηκε <xliff:g id="count" example="1000">%1$d</xliff:g> φορές: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
+    <string name="macro_stopped_timeout">Η μακροεντολή σταμάτησε. Έληξε ο χρόνος: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
+    <string name="macro_not_met">Η μακροεντολή δεν εκτελέστηκε. Εκτέλεση μόνο όταν: δεν ικανοποιείται</string>
+</resources>

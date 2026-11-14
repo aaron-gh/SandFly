@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_macros">Macrocomenzi</string>
+    <string name="shortcut_stop_macro">Oprește macrocomanda</string>
+    <string name="macro_add">Adaugă o macrocomandă</string>
+    <string name="macro_run_now">Rulează acum</string>
+    <string name="macro_add_step">Adaugă un pas</string>
+    <string name="macro_add_at_end">La sfârșit</string>
+    <string name="macro_add_at_start">La început</string>
+    <string name="macro_add_after">După pasul <xliff:g id="step" example="2">%1$d</xliff:g>: <xliff:g id="name" example="If App in front: Chrome">%2$s</xliff:g></string>
+    <string name="macro_steps">Pași</string>
+    <string name="macro_no_steps">Niciun pas</string>
+    <string name="macro_delete">Șterge macrocomanda</string>
+    <string name="macro_delete_confirm">Ștergi <xliff:g id="name" example="Send message">%1$s</xliff:g>?</string>
+    <string name="macro_step_command">Rulează o comandă</string>
+    <string name="macro_step_wait">Așteaptă</string>
+    <string name="macro_step_tap">Atinge elementul</string>
+    <string name="macro_step_focus">Focalizează elementul</string>
+    <string name="macro_step_speak_item">Rostește elementul</string>
+    <string name="macro_step_speak_text">Rostește textul</string>
+    <string name="macro_step_type">Introdu text</string>
+    <string name="macro_step_tap_value">Atinge <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_focus_value">Focalizează <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_item_value">Rostește <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_text_value">Rostește <xliff:g id="text" example="Done">%1$s</xliff:g></string>
+    <string name="macro_step_type_value">Introdu <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <string name="macro_step_replace_value">Înlocuiește textul cu <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <plurals name="macro_step_wait_seconds">
+        <item quantity="one">Așteaptă <xliff:g id="count" example="1">%d</xliff:g> secundă</item>
+        <item quantity="few">Așteaptă <xliff:g id="count" example="2">%d</xliff:g> secunde</item>
+        <item quantity="other">Așteaptă <xliff:g id="count" example="20">%d</xliff:g> de secunde</item>
+    </plurals>
+    <plurals name="macro_step_wait_milliseconds">
+        <item quantity="one">Așteaptă <xliff:g id="count" example="1">%d</xliff:g> milisecundă</item>
+        <item quantity="few">Așteaptă <xliff:g id="count" example="2">%d</xliff:g> milisecunde</item>
+        <item quantity="other">Așteaptă <xliff:g id="count" example="500">%d</xliff:g> de milisecunde</item>
+    </plurals>
+    <string name="macro_step_unavailable">Indisponibil</string>
+    <string name="macro_seconds">Secunde</string>
+    <string name="macro_invalid_seconds">Introdu un număr de secunde până la <xliff:g id="max" example="600">%1$d</xliff:g></string>
+    <string name="macro_tap_label">Textul elementului</string>
+    <string name="macro_tap_timeout">Secunde de așteptare pentru element</string>
+    <string name="macro_text">Text</string>
+    <string name="macro_replace_text">Înlocuiește textul din câmp</string>
+    <string name="macro_item_not_found">Macrocomandă oprită. Negăsit: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_failed">Macrocomandă oprită. Eșuat: <xliff:g id="step" example="Open Gmail">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until">Așteaptă până când</string>
+    <string name="macro_step_if">Dacă</string>
+    <string name="macro_step_else_if">Altfel, dacă</string>
+    <string name="macro_step_else">Altfel</string>
+    <string name="macro_step_end_if">Sfârșit dacă</string>
+    <string name="macro_step_repeat">Repetă</string>
+    <string name="macro_step_repeat_while">Repetă cât timp</string>
+    <string name="macro_step_end_repeat">Sfârșit repetare</string>
+    <string name="macro_step_exit_loop">Ieși din buclă</string>
+    <string name="macro_step_if_value">Dacă <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_else_if_value">Altfel, dacă <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_repeat_while_value">Repetă cât timp <xliff:g id="condition" example="Item on screen: Load more">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until_value">Așteaptă până când <xliff:g id="condition" example="Item on screen: Send">%1$s</xliff:g></string>
+    <plurals name="macro_step_repeat_value">
+        <item quantity="one">Repetă de <xliff:g id="count" example="1">%d</xliff:g> dată</item>
+        <item quantity="few">Repetă de <xliff:g id="count" example="3">%d</xliff:g> ori</item>
+        <item quantity="other">Repetă de <xliff:g id="count" example="20">%d</xliff:g> de ori</item>
+    </plurals>
+    <string name="macro_times">Număr de ori</string>
+    <string name="macro_invalid_times">Introdu un număr de la 1 la <xliff:g id="max" example="1000">%1$d</xliff:g></string>
+    <string name="macro_run_only_when">Rulează numai când</string>
+    <string name="macro_always">Întotdeauna</string>
+    <string name="macro_no_tests">Fără teste</string>
+    <string name="macro_add_test">Adaugă un test</string>
+    <string name="macro_tests">Teste</string>
+    <string name="macro_choose_test">Test</string>
+    <string name="macro_test_item">Element pe ecran</string>
+    <string name="macro_test_focused">Element focalizat</string>
+    <string name="macro_test_app">Aplicație în prim-plan</string>
+    <string name="macro_test_keyboard">Tastatură afișată</string>
+    <string name="macro_test_keyboard_hidden">Tastatură ascunsă</string>
+    <string name="macro_test_locked">Ecran blocat</string>
+    <string name="macro_test_unlocked">Ecran deblocat</string>
+    <string name="macro_test_item_value">Element pe ecran: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_no_item_value">Niciun element pe ecran: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_focused_value">Element focalizat: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_not_focused_value">Elementul focalizat nu este: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_app_value">Aplicație în prim-plan: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_not_app_value">Aplicația nu este în prim-plan: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_label_kind"><xliff:g id="label" example="Send">%1$s</xliff:g>, <xliff:g id="kind" example="Clickable">%2$s</xliff:g></string>
+    <string name="macro_join_and"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g> și <xliff:g id="second" example="Focused item: Editable">%2$s</xliff:g></string>
+    <string name="macro_join_or"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g> sau <xliff:g id="second" example="Screen locked">%2$s</xliff:g></string>
+    <string name="macro_regex">Expresie regulată</string>
+    <string name="macro_invalid_regex">Nu este o expresie regulată utilizabilă. Grupurile repetate nu pot conține repetiții sau |.</string>
+    <string name="macro_match_in">Potrivește în</string>
+    <string name="macro_field_any">Orice text</string>
+    <string name="macro_field_text">Text</string>
+    <string name="macro_field_description">Descriere</string>
+    <string name="macro_field_hint">Indiciu</string>
+    <string name="macro_field_state">Stare</string>
+    <string name="macro_field_id">ID resursă</string>
+    <string name="macro_field_value"><xliff:g id="label" example="send">%1$s</xliff:g> (<xliff:g id="field" example="Resource ID">%2$s</xliff:g>)</string>
+    <string name="macro_field_regex_value"><xliff:g id="pattern" example="^Reply">%1$s</xliff:g> (<xliff:g id="field" example="Description">%2$s</xliff:g>, expresie regulată)</string>
+    <string name="macro_regex_value"><xliff:g id="pattern" example="Reply.*Anna">%1$s</xliff:g> (expresie regulată)</string>
+    <string name="macro_test_label_optional">Textul elementului (opțional)</string>
+    <string name="macro_item_kind">Tipul elementului</string>
+    <string name="macro_kind_any">Orice tip</string>
+    <string name="macro_kind_clickable">Care poate fi atins</string>
+    <string name="macro_kind_long_clickable">Care poate fi atins lung</string>
+    <string name="macro_kind_editable">Editabil</string>
+    <string name="macro_kind_scrollable">Derulabil</string>
+    <string name="macro_kind_adjustable">Reglabil</string>
+    <string name="macro_kind_checkable">Care poate fi bifat</string>
+    <string name="macro_kind_checked">Bifat</string>
+    <string name="macro_kind_selected">Selectat</string>
+    <string name="macro_kind_heading">Titlu</string>
+    <string name="macro_kind_enabled">Activat</string>
+    <string name="macro_change_to">Schimbă în: <xliff:g id="test" example="Keyboard hidden">%1$s</xliff:g></string>
+    <string name="macro_join_with_and">Îmbină cu „și”</string>
+    <string name="macro_join_with_or">Îmbină cu „sau”</string>
+    <string name="macro_clause_and">și <xliff:g id="test" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_clause_or">sau <xliff:g id="test" example="Screen locked">%1$s</xliff:g></string>
+    <string name="macro_wait_timeout">Secunde de așteptare</string>
+    <string name="macro_add_step_after">Adaugă un pas după</string>
+    <string name="macro_problem">Pasul <xliff:g id="step" example="3">%1$d</xliff:g>: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_problem_no_if">Altfel, dacă, Altfel sau Sfârșit dacă fără Dacă</string>
+    <string name="macro_problem_after_else">Altfel, dacă sau Altfel după Altfel</string>
+    <string name="macro_problem_no_repeat">Sfârșit repetare fără Repetă</string>
+    <string name="macro_problem_no_end_if">Dacă fără Sfârșit dacă</string>
+    <string name="macro_problem_no_end_repeat">Repetă fără Sfârșit repetare</string>
+    <string name="macro_problem_exit">Ieși din buclă în afara unei repetări</string>
+    <string name="macro_stopped_problem">Macrocomandă oprită. Pasul <xliff:g id="step" example="3">%1$d</xliff:g>: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_stopped_repeats">Macrocomandă oprită. Repetată de <xliff:g id="count" example="1000">%1$d</xliff:g> ori: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
+    <string name="macro_stopped_timeout">Macrocomandă oprită. Timp expirat: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
+    <string name="macro_not_met">Macrocomandă nerulată. Rulează numai când: condiție neîndeplinită</string>
+</resources>

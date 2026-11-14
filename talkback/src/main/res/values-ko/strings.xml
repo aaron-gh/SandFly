@@ -2025,4 +2025,142 @@
     <string name="value_keep_models_5">5분</string>
     <string name="value_keep_models_15">15분</string>
     <string name="value_keep_models_30">30분</string>
+    <string name="title_pref_speech_equalizer_save_preset">프리셋으로 저장</string>
+    <string name="title_pref_speech_equalizer_saved_presets">저장된 프리셋</string>
+    <string name="speech_equalizer_preset_name">이름</string>
+    <string name="speech_equalizer_preset_name_taken">이름이 <xliff:g id="name" example="Podcast">%1$s</xliff:g>인 프리셋이 이미 있습니다</string>
+    <string name="speech_equalizer_presets_full">프리셋을 더 저장할 수 없습니다. 다른 프리셋을 저장하려면 하나를 삭제하세요.</string>
+    <string name="speech_equalizer_preset_saved"><xliff:g id="name" example="Podcast">%1$s</xliff:g> 저장됨</string>
+    <string name="speech_equalizer_preset_rename">이름 바꾸기</string>
+    <string name="speech_equalizer_preset_delete">삭제</string>
+    <string name="speech_equalizer_preset_delete_confirm"><xliff:g id="name" example="Podcast">%1$s</xliff:g>을(를) 삭제하시겠습니까?</string>
+    <string name="speech_equalizer_preset_deleted"><xliff:g id="name" example="Podcast">%1$s</xliff:g> 삭제됨</string>
+    <string name="title_pref_emoji_voice">이모티콘 음성</string>
+    <string name="value_emoji_voice_same">음성과 동일</string>
+    <string name="title_pref_emoji_rate">이모티콘 말하기 속도</string>
+    <string name="title_pref_line_breaks_as_spaces">줄바꿈을 공백으로 읽기</string>
+    <string name="title_pref_language_voices">언어별 음성</string>
+    <string name="title_pref_identify_languages_from_words">단어로 언어 식별</string>
+    <string name="title_pref_add_language">언어 추가</string>
+    <string name="title_pref_remove_language">언어 삭제</string>
+    <string name="title_pref_script_language">%1$s 문자</string>
+    <string name="title_pref_screen_on_notification_count">알림 개수</string>
+    <plurals name="template_screen_on_notification_count">
+        <item quantity="other">알림 <xliff:g id="count" example="6">%d</xliff:g>개</item>
+    </plurals>
+    <string name="title_pref_phonetic_letters_review">검토할 때 글자를 발음 부호로 읽기</string>
+    <string name="title_pref_phonetic_letters_typing">입력할 때 글자를 발음 부호로 읽기</string>
+    <string name="title_pref_emoji_suffix">이모티콘 이름 뒤에 \"이모티콘\" 읽기</string>
+    <string name="overview_shizuku_not_running">Shizuku가 실행되고 있지 않음</string>
+    <string name="overview_shizuku_not_allowed">Shizuku가 SandFly를 허용하지 않음</string>
+    <string name="overview_no_older_app">더 이전 앱 없음</string>
+    <string name="overview_no_newer_app">더 최근 앱 없음</string>
+    <string name="stream_volume_needs_access">이 볼륨을 변경하려면 방해 금지 모드 접근을 허용하세요.</string>
+    <string name="corner_gestures_title">모서리</string>
+    <string name="shortcut_move_to_item_below">아래 항목으로 이동</string>
+    <string name="shortcut_move_to_item_above">위 항목으로 이동</string>
+    <string name="shortcut_older_app">이전 앱</string>
+    <string name="shortcut_newer_app">최근 앱</string>
+    <string name="shortcut_answer_call">전화 받기</string>
+    <string name="answer_call_no_call">수신 전화 없음</string>
+    <string name="answer_call_permission">전화를 받으려면 권한이 필요합니다</string>
+    <string name="shortcut_switch_keyboard">키보드 전환</string>
+    <string name="switch_keyboard_none">사용 설정된 다른 키보드 없음</string>
+    <string name="switch_keyboard_failed">키보드를 전환하지 못했습니다</string>
+    <string name="clipboard_history_hint">위나 아래로 스와이프하여 선택한 다음 두 번 탭하여 붙여넣습니다</string>
+    <string name="title_speech_history">음성 기록</string>
+    <string name="speech_history_empty">음성 없음</string>
+    <string name="speech_history_clear">기록 지우기</string>
+    <string name="title_pref_shortcut_corner_top_left_tap">왼쪽 위 모서리 탭</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap">왼쪽 위 모서리 두 번 탭</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap">왼쪽 위 모서리 세 번 탭</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap_hold">왼쪽 위 모서리 두 번 탭한 후 길게 누르기</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap_hold">왼쪽 위 모서리 세 번 탭한 후 길게 누르기</string>
+    <string name="title_pref_shortcut_corner_top_right_tap">오른쪽 위 모서리 탭</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap">오른쪽 위 모서리 두 번 탭</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap">오른쪽 위 모서리 세 번 탭</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap_hold">오른쪽 위 모서리 두 번 탭한 후 길게 누르기</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap_hold">오른쪽 위 모서리 세 번 탭한 후 길게 누르기</string>
+    <string name="title_pref_shortcut_corner_bottom_left_tap">왼쪽 아래 모서리 탭</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap">왼쪽 아래 모서리 두 번 탭</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap">왼쪽 아래 모서리 세 번 탭</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap_hold">왼쪽 아래 모서리 두 번 탭한 후 길게 누르기</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap_hold">왼쪽 아래 모서리 세 번 탭한 후 길게 누르기</string>
+    <string name="title_pref_shortcut_corner_bottom_right_tap">오른쪽 아래 모서리 탭</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap">오른쪽 아래 모서리 두 번 탭</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap">오른쪽 아래 모서리 세 번 탭</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap_hold">오른쪽 아래 모서리 두 번 탭한 후 길게 누르기</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap_hold">오른쪽 아래 모서리 세 번 탭한 후 길게 누르기</string>
+    <string name="title_pref_swipe_start_time">동작 시작 시간</string>
+    <string name="title_pref_swipes_before_lift">손가락을 떼기 전에 스와이프 인식</string>
+    <string name="summary_pref_swipes_before_lift">왕복 동작과 각도 동작을 사용 중지합니다.</string>
+    <string name="title_pref_corner_size_mm">모서리 크기</string>
+    <string name="value_corner_size_edge_width">가장자리 너비와 동일</string>
+    <string name="title_pref_corner_tap_time_ms">모서리 탭 시간 제한</string>
+    <string name="value_corner_tap_time_system">시스템 기본값</string>
+    <string name="title_pref_edge_speak_commands">클릭할 때마다 명령 읽기</string>
+    <string-array name="pref_volume_change_feedback_entries">
+        <item>@string/volume_change_feedback_off</item>
+        <item>@string/volume_change_feedback_tone</item>
+        <item>@string/volume_change_feedback_spoken</item>
+        <item>@string/volume_change_feedback_tone_and_spoken</item>
+    </string-array>
+    <string name="title_pref_volume_change_tone_during_media">미디어 재생 중 신호음 끄기</string>
+    <string name="title_pref_volume_change_speech_during_media">미디어 재생 중 음성 끄기</string>
+    <string name="title_pref_volume_change_interrupts_speech">음성을 중단하고 볼륨 알림</string>
+    <string name="title_pref_volume_keys_speech_volume_while_speaking">말하는 동안 볼륨 키로 음성 볼륨 변경</string>
+    <string name="title_pref_double_tap_moves_cursor">두 번 탭하여 커서를 처음 또는 끝으로 이동</string>
+    <string name="title_pref_scroll_ahead">다음 항목까지 미리 스크롤</string>
+    <string name="title_pref_speak_while_scrolling">스크롤하는 동안 다음 항목 읽기</string>
+    <string-array name="pref_text_entities_entries">
+    <item>@string/text_entity_web</item>
+    <item>@string/text_entity_email</item>
+    <item>@string/text_entity_phone</item>
+    <item>@string/text_entity_code</item>
+  </string-array>
+    <string name="value_keep_models_until_stopped">SandFly가 중지될 때까지</string>
+    <string name="title_pref_model_download_server">모델 다운로드 서버</string>
+    <string name="title_pref_settings_profiles">설정 프로필</string>
+    <string name="title_pref_new_settings_profile">새 설정 프로필</string>
+    <string name="settings_profile_new_name">프로필 <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="settings_profile_name_taken">이름이 <xliff:g id="name" example="Demo">%1$s</xliff:g>인 설정 프로필이 이미 있습니다</string>
+    <string name="settings_profile_in_use">사용 중</string>
+    <string name="settings_profile_menu_item_in_use"><xliff:g id="name" example="Demo">%1$s</xliff:g>, 사용 중</string>
+    <string name="settings_profile_none">설정 프로필 없음</string>
+    <string name="settings_profile_use_now">지금 사용</string>
+    <string name="settings_profile_stop_using">사용 중지</string>
+    <string name="settings_profile_change_settings">설정 변경</string>
+    <string name="settings_profile_editing">변경사항이 <xliff:g id="name" example="Messaging">%1$s</xliff:g>에 저장됩니다</string>
+    <string name="settings_profile_edit_saved">변경사항을 <xliff:g id="name" example="Messaging">%1$s</xliff:g>에 저장했습니다</string>
+    <string name="settings_profile_use_automatically">자동으로 사용</string>
+    <string name="settings_profile_web">웹 콘텐츠</string>
+    <string name="settings_profile_reading">연속 읽기</string>
+    <string name="settings_profile_text_editing">텍스트 수정</string>
+    <string name="settings_profile_apps">앱</string>
+    <string name="settings_profile_add_app">앱 추가</string>
+    <string name="settings_profile_settings">이 프로필의 설정</string>
+    <string name="settings_profile_no_settings">없음</string>
+    <string name="settings_profile_remove_confirm"><xliff:g id="name" example="Messaging">%2$s</xliff:g>에서 <xliff:g id="item" example="Speech rate">%1$s</xliff:g>을(를) 삭제하시겠습니까?</string>
+    <string name="settings_profile_not_saved">설정 프로필을 저장하지 못했습니다</string>
+    <string name="settings_profile_in_use_announcement"><xliff:g id="name" example="Demo">%1$s</xliff:g> 프로필</string>
+    <string name="settings_profile_not_changed">설정 프로필이 변경되지 않았습니다</string>
+    <string name="title_settings_profile">설정 프로필</string>
+    <string name="shortcut_settings_profiles">설정 프로필 선택</string>
+    <string name="shortcut_next_settings_profile">다음 설정 프로필</string>
+    <string name="shortcut_previous_settings_profile">이전 설정 프로필</string>
+    <string name="title_copy_text_from_screen">화면에서 텍스트 복사</string>
+    <string name="granularity_label">세분화 단위</string>
+    <string name="granularity_characters">글자</string>
+    <string name="granularity_words">단어</string>
+    <string name="granularity_paragraphs">단락</string>
+    <string name="button_select_all">모두 선택</string>
+    <string name="no_text_selected">선택된 텍스트 없음</string>
+    <string name="no_text_on_screen">화면에서 텍스트를 찾을 수 없음</string>
+    <string name="title_select_last_spoken_phrase_word_by_word">마지막으로 읽은 문구를 단어별로 선택</string>
+    <string name="no_words_selected">선택된 단어 없음</string>
+    <string name="no_phrase_to_select">선택할 문구 없음</string>
+    <string name="word_selection_list_cut_off">목록이 항목 <xliff:g id="count" example="1000">%1$d</xliff:g>개에서 잘림</string>
+    <plurals name="word_selection_copied">
+        <item quantity="other">항목 <xliff:g id="count" example="5">%1$d</xliff:g>개를 복사했습니다</item>
+    </plurals>
 </resources>

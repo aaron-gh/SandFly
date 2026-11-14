@@ -46,4 +46,17 @@
     <string name="granular_editing_not_saved">Nie gestoor nie: die teksveld is weg. Die teks is gekopieer.</string>
     <string name="granular_editing_no_text">Geen teks om te wysig nie</string>
     <string name="granular_editing_password">Nie beskikbaar in wagwoordvelde nie</string>
+    <plurals name="granular_editing_spaces">
+        <item quantity="one"><xliff:g id="count" example="3">%d</xliff:g> spasie</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> spasies</item>
+    </plurals>
+    <plurals name="granular_editing_new_lines">
+        <item quantity="one"><xliff:g id="count" example="3">%d</xliff:g> nuwe reël</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> nuwe reëls</item>
+    </plurals>
+    <plurals name="granular_editing_tabs">
+        <item quantity="one"><xliff:g id="count" example="3">%d</xliff:g> tab</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> tabs</item>
+    </plurals>
+    <string name="granular_editing_blank_line">Leë reël</string>
 </resources>

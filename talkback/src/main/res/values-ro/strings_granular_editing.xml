@@ -47,4 +47,20 @@
     <string name="granular_editing_not_saved">Nu s-a salvat: câmpul de text nu mai există. Textul a fost copiat.</string>
     <string name="granular_editing_no_text">Niciun text de editat</string>
     <string name="granular_editing_password">Nu este disponibil în câmpurile pentru parole</string>
+    <plurals name="granular_editing_spaces">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> spațiu</item>
+        <item quantity="few"><xliff:g id="count" example="3">%d</xliff:g> spații</item>
+        <item quantity="other"><xliff:g id="count" example="20">%d</xliff:g> de spații</item>
+    </plurals>
+    <plurals name="granular_editing_new_lines">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> rând nou</item>
+        <item quantity="few"><xliff:g id="count" example="3">%d</xliff:g> rânduri noi</item>
+        <item quantity="other"><xliff:g id="count" example="20">%d</xliff:g> de rânduri noi</item>
+    </plurals>
+    <plurals name="granular_editing_tabs">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> caracter tabulator</item>
+        <item quantity="few"><xliff:g id="count" example="3">%d</xliff:g> caractere tabulator</item>
+        <item quantity="other"><xliff:g id="count" example="20">%d</xliff:g> de caractere tabulator</item>
+    </plurals>
+    <string name="granular_editing_blank_line">Rând gol</string>
 </resources>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_voice_commands">Hangalapú utasítások</string>
+    <string name="title_pref_voice_commands_ai">Hangalapú utasítások értelmezése AI-val</string>
+    <string name="voice_commands_custom">Egyéni hangalapú utasítások</string>
+    <string name="voice_command_add">Hangalapú utasítás hozzáadása</string>
+    <string name="voice_command_phrase">Kifejezés</string>
+    <string name="voice_command_change_phrase">Kifejezés módosítása</string>
+    <string name="voice_command_change_command">Parancs módosítása</string>
+    <string name="voice_command_delete_confirm">Törli a következőt: <xliff:g id="phrase" example="Good morning">%1$s</xliff:g>?</string>
+    <string name="voice_command_phrase_exists">A(z) <xliff:g id="phrase" example="Good morning">%1$s</xliff:g> már hangalapú utasítás</string>
+    <string name="voice_commands_not_understood">Nem értette: <xliff:g id="text" example="open the door">%1$s</xliff:g></string>
+    <string name="voice_commands_not_available">Nem érhető el: <xliff:g id="name" example="Morning macro">%1$s</xliff:g></string>
+    <string name="voice_commands_not_found">Nem található: <xliff:g id="label" example="Settings">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app">Nincs ilyen nevű alkalmazás: <xliff:g id="name" example="Signal">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app_for_action">Nincs alkalmazás ehhez a művelethez</string>
+    <string name="voice_commands_calling">Hívás: <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_call_permission">Engedélyezze a telefonhívásokat, majd mondja ki újra az utasítást.</string>
+    <string name="voice_commands_contacts_permission">Engedélyezze a névjegyekhez való hozzáférést, majd mondja ki újra az utasítást.</string>
+    <string name="voice_commands_no_contact">Nincs ilyen nevű névjegy: <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_contacts_several">Több ilyen nevű névjegy van: <xliff:g id="name" example="Sam">%1$s</xliff:g>: <xliff:g id="names" example="Sam Jones, Sam Smith">%2$s</xliff:g></string>
+    <string name="voice_commands_message_text">Üzenet neki: <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_message_confirm">Küldés neki: <xliff:g id="name" example="Sam">%1$s</xliff:g>: <xliff:g id="text" example="I am on my way">%2$s</xliff:g>?</string>
+    <string name="voice_commands_message_confirm_result">Küldés neki: <xliff:g id="name" example="Sam">%1$s</xliff:g>?</string>
+    <string name="voice_commands_message_not_sent">Az üzenet nem lett elküldve</string>
+    <string name="voice_commands_send_pressed">Küldés megnyomva</string>
+    <string name="voice_commands_send_button">Küldés</string>
+    <string name="voice_commands_no_description">Nem érkezett leírás</string>
+    <string name="voice_commands_copied">Másolva</string>
+    <string-array name="voice_commands_chain_words">
+        <item>és utána</item>
+        <item>aztán</item>
+        <item>ezután</item>
+        <item>majd</item>
+    </string-array>
+    <string-array name="voice_commands_and_words">
+        <item>és</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_start">
+        <item>kérlek</item>
+        <item>légy szíves</item>
+        <item>kérem</item>
+        <item>tudnál</item>
+        <item>szeretném</item>
+        <item>szeretnék</item>
+        <item>most</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_end">
+        <item>kérlek</item>
+        <item>nekem</item>
+        <item>most</item>
+    </string-array>
+    <string-array name="voice_commands_cancel_words">
+        <item>állj</item>
+        <item>mégse</item>
+        <item>kilépés</item>
+        <item>mindegy</item>
+        <item>hagyd</item>
+        <item>maradj csendben</item>
+    </string-array>
+    <string-array name="voice_commands_yes">
+        <item>igen</item>
+        <item>aha</item>
+        <item>persze</item>
+        <item>küldés</item>
+        <item>küldd el</item>
+        <item>ok</item>
+        <item>oké</item>
+        <item>rendben</item>
+        <item>csináld</item>
+    </string-array>
+    <string-array name="voice_commands_sms_names">
+        <item>SMS</item>
+        <item>szöveges üzenet</item>
+        <item>üzenet</item>
+        <item>üzenetek</item>
+    </string-array>
+    <string-array name="voice_commands_send_image_description">
+        <item>küldd el a kép leírását neki: {who}</item>
+        <item>küldd el ennek a képnek a leírását neki: {who}</item>
+        <item>küldd el a fénykép leírását neki: {who}</item>
+        <item>küldd el ennek a fényképnek a leírását neki: {who}</item>
+        <item>küldd el a fotó leírását neki: {who}</item>
+    </string-array>
+    <string-array name="voice_commands_send_screen_description">
+        <item>küldd el a képernyő leírását neki: {who}</item>
+        <item>küldd el a képernyőleírást neki: {who}</item>
+    </string-array>
+    <string-array name="voice_commands_send_previous">
+        <item>küldd el neki: {who} ebben: {app}</item>
+        <item>küldd el neki: {who}</item>
+        <item>küldd el ezt neki: {who}</item>
+        <item>küldd el a leírást neki: {who}</item>
+        <item>oszd meg vele: {who}</item>
+    </string-array>
+    <string-array name="voice_commands_message">
+        <item>üzenet neki: {who} ebben: {app} ezzel: {text}</item>
+        <item>üzenet neki: {who} ebben: {app} ezzel a szöveggel: {text}</item>
+        <item>üzenet neki: {who} ezzel: {text}</item>
+        <item>üzenet neki: {who} ezzel a szöveggel: {text}</item>
+        <item>üzenet neki: {whoandtext}</item>
+        <item>{app} üzenet neki: {who} ezzel: {text}</item>
+        <item>{app} üzenet neki: {who} ezzel a szöveggel: {text}</item>
+        <item>{app} üzenet neki: {who}</item>
+        <item>üzenet küldése neki: {who}</item>
+        <item>írj neki: {who} ebben: {app} {text}</item>
+        <item>írj neki: {who} ezt: {text}</item>
+        <item>szöveges üzenet neki: {who} ezzel: {text}</item>
+        <item>üzenet neki: {who} ebben: {app}: {text}</item>
+        <item>írj neki: {whoandtext}</item>
+        <item>üzenj neki: {whoandtext}</item>
+    </string-array>
+    <string-array name="voice_commands_call">
+        <item>hívd: {who}</item>
+        <item>hívás: {who}</item>
+        <item>telefonálj neki: {who}</item>
+        <item>tárcsázd: {who}</item>
+        <item>hívást kezdeményezek: {who}</item>
+    </string-array>
+    <string-array name="voice_commands_describe_screen">
+        <item>írd le a képernyőt</item>
+        <item>mi van a képernyőn</item>
+        <item>mi látható a képernyőn</item>
+        <item>írd le, mi van a képernyőn</item>
+    </string-array>
+    <string-array name="voice_commands_describe_image">
+        <item>írd le ezt a képet</item>
+        <item>írd le a képet</item>
+        <item>írd le ezt a fényképet</item>
+        <item>mi van ezen a képen</item>
+        <item>mi van a képen</item>
+        <item>mi van ezen a fényképen</item>
+    </string-array>
+    <string-array name="voice_commands_copy_result">
+        <item>másold ki</item>
+        <item>másold ezt</item>
+        <item>másold a leírást</item>
+        <item>másold, amit az előbb mondtál</item>
+        <item>másold az utolsó felolvasott kifejezést</item>
+        <item>másold az utolsó kifejezést</item>
+        <item>másold az utoljára mondottat</item>
+    </string-array>
+    <string-array name="voice_commands_wait">
+        <item>várj {n} másodpercet</item>
+        <item>várj {n} másodperc</item>
+        <item>várj egy másodpercet</item>
+        <item>várj</item>
+    </string-array>
+    <string-array name="voice_commands_type_text">
+        <item>írd be: {text}</item>
+        <item>írd: {text}</item>
+        <item>gépeld be: {text}</item>
+    </string-array>
+    <string-array name="voice_commands_run">
+        <item>futtasd a(z) {command} makrót</item>
+        <item>futtasd a makrót: {command}</item>
+        <item>futtasd: {command}</item>
+        <item>csináld: {command}</item>
+    </string-array>
+    <string-array name="voice_commands_open">
+        <item>nyisd meg: {app}</item>
+        <item>indítsd el: {app}</item>
+        <item>indítsd: {app}</item>
+        <item>váltás ide: {app}</item>
+    </string-array>
+    <string-array name="voice_commands_tap">
+        <item>koppints duplán ide: {label}</item>
+        <item>koppints ide: {label}</item>
+        <item>kattints ide: {label}</item>
+        <item>nyomd meg: {label}</item>
+        <item>aktiváld: {label}</item>
+        <item>válaszd ki: {label}</item>
+    </string-array>
+</resources>

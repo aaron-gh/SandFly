@@ -46,4 +46,17 @@
     <string name="granular_editing_not_saved">ସେଭ୍ ହୋଇନାହିଁ: ଟେକ୍ସଟ୍ ଫିଲ୍ଡ ଆଉ ନାହିଁ। ଟେକ୍ସଟ୍ କପି କରାଯାଇଛି।</string>
     <string name="granular_editing_no_text">ସଂପାଦନ କରିବାକୁ କୌଣସି ପାଠ ନାହିଁ</string>
     <string name="granular_editing_password">ପାସୱାର୍ଡ କ୍ଷେତ୍ରରେ ଉପଲବ୍ଧ ନାହିଁ</string>
+    <plurals name="granular_editing_spaces">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ସ୍ପେସ</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> ସ୍ପେସ</item>
+    </plurals>
+    <plurals name="granular_editing_new_lines">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ନୂଆ ଲାଇନ</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> ନୂଆ ଲାଇନ</item>
+    </plurals>
+    <plurals name="granular_editing_tabs">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ଟାବ</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> ଟାବ</item>
+    </plurals>
+    <string name="granular_editing_blank_line">ଖାଲି ଲାଇନ</string>
 </resources>

@@ -2025,4 +2025,144 @@
     <string name="value_keep_models_5">5 minuta</string>
     <string name="value_keep_models_15">15 minuta</string>
     <string name="value_keep_models_30">30 minuta</string>
+    <string name="title_pref_speech_equalizer_save_preset">Ruaj si paracaktim</string>
+    <string name="title_pref_speech_equalizer_saved_presets">Paracaktimet e ruajtura</string>
+    <string name="speech_equalizer_preset_name">Emri</string>
+    <string name="speech_equalizer_preset_name_taken">Një paracaktim me emrin <xliff:g id="name" example="Podcast">%1$s</xliff:g> ekziston tashmë</string>
+    <string name="speech_equalizer_presets_full">Nuk mund të ruhen më paracaktime. Fshi një për të ruajtur një tjetër.</string>
+    <string name="speech_equalizer_preset_saved"><xliff:g id="name" example="Podcast">%1$s</xliff:g> u ruajt</string>
+    <string name="speech_equalizer_preset_rename">Riemërto</string>
+    <string name="speech_equalizer_preset_delete">Fshi</string>
+    <string name="speech_equalizer_preset_delete_confirm">Të fshihet <xliff:g id="name" example="Podcast">%1$s</xliff:g>?</string>
+    <string name="speech_equalizer_preset_deleted"><xliff:g id="name" example="Podcast">%1$s</xliff:g> u fshi</string>
+    <string name="title_pref_emoji_voice">Zëri i emoji-ve</string>
+    <string name="value_emoji_voice_same">Si ligjërimi</string>
+    <string name="title_pref_emoji_rate">Shpejtësia e të folurit për emoji</string>
+    <string name="title_pref_line_breaks_as_spaces">Lexo ndërprerjet e rreshtave si hapësira</string>
+    <string name="title_pref_language_voices">Zërat sipas gjuhës</string>
+    <string name="title_pref_identify_languages_from_words">Identifiko gjuhët nga fjalët</string>
+    <string name="title_pref_add_language">Shto gjuhë</string>
+    <string name="title_pref_remove_language">Hiq gjuhën</string>
+    <string name="title_pref_script_language">Shkrimi %1$s</string>
+    <string name="title_pref_screen_on_notification_count">Numri i njoftimeve</string>
+    <plurals name="template_screen_on_notification_count">
+        <item quantity="one"><xliff:g id="count" example="6">%d</xliff:g> njoftim</item>
+        <item quantity="other"><xliff:g id="count" example="6">%d</xliff:g> njoftime</item>
+    </plurals>
+    <string name="title_pref_phonetic_letters_review">Lexo me zë shkronjat fonetikisht gjatë shqyrtimit</string>
+    <string name="title_pref_phonetic_letters_typing">Lexo me zë shkronjat fonetikisht gjatë shkrimit</string>
+    <string name="title_pref_emoji_suffix">Thuaj „emoji“ pas emrave të emoji-ve</string>
+    <string name="overview_shizuku_not_running">Shizuku nuk është në ekzekutim</string>
+    <string name="overview_shizuku_not_allowed">Shizuku nuk e lejon SandFly</string>
+    <string name="overview_no_older_app">Nuk ka aplikacion më të vjetër</string>
+    <string name="overview_no_newer_app">Nuk ka aplikacion më të ri</string>
+    <string name="stream_volume_needs_access">Lejo qasjen te Mos shqetëso për të ndryshuar këtë volum.</string>
+    <string name="corner_gestures_title">Cepat</string>
+    <string name="shortcut_move_to_item_below">Shko te artikulli më poshtë</string>
+    <string name="shortcut_move_to_item_above">Shko te artikulli më sipër</string>
+    <string name="shortcut_older_app">Aplikacioni më i vjetër</string>
+    <string name="shortcut_newer_app">Aplikacioni më i ri</string>
+    <string name="shortcut_answer_call">Përgjigju thirrjes</string>
+    <string name="answer_call_no_call">Nuk ka thirrje hyrëse</string>
+    <string name="answer_call_permission">Nevojitet leje për t\'iu përgjigjur thirrjeve</string>
+    <string name="shortcut_switch_keyboard">Ndrysho tastierën</string>
+    <string name="switch_keyboard_none">Nuk është aktivizuar asnjë tastierë tjetër</string>
+    <string name="switch_keyboard_failed">Tastiera nuk u ndryshua</string>
+    <string name="clipboard_history_hint">Rrëshqit lart ose poshtë për të zgjedhur, pastaj trokit dy herë për ta ngjitur</string>
+    <string name="title_speech_history">Historiku i ligjërimit</string>
+    <string name="speech_history_empty">Nuk ka ligjërim</string>
+    <string name="speech_history_clear">Pastro historikun</string>
+    <string name="title_pref_shortcut_corner_top_left_tap">Trokit në cepin e sipërm majtas</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap">Trokit dy herë në cepin e sipërm majtas</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap">Trokit tri herë në cepin e sipërm majtas</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap_hold">Trokit dy herë dhe mbaj cepin e sipërm majtas</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap_hold">Trokit tri herë dhe mbaj cepin e sipërm majtas</string>
+    <string name="title_pref_shortcut_corner_top_right_tap">Trokit në cepin e sipërm djathtas</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap">Trokit dy herë në cepin e sipërm djathtas</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap">Trokit tri herë në cepin e sipërm djathtas</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap_hold">Trokit dy herë dhe mbaj cepin e sipërm djathtas</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap_hold">Trokit tri herë dhe mbaj cepin e sipërm djathtas</string>
+    <string name="title_pref_shortcut_corner_bottom_left_tap">Trokit në cepin e poshtëm majtas</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap">Trokit dy herë në cepin e poshtëm majtas</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap">Trokit tri herë në cepin e poshtëm majtas</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap_hold">Trokit dy herë dhe mbaj cepin e poshtëm majtas</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap_hold">Trokit tri herë dhe mbaj cepin e poshtëm majtas</string>
+    <string name="title_pref_shortcut_corner_bottom_right_tap">Trokit në cepin e poshtëm djathtas</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap">Trokit dy herë në cepin e poshtëm djathtas</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap">Trokit tri herë në cepin e poshtëm djathtas</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap_hold">Trokit dy herë dhe mbaj cepin e poshtëm djathtas</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap_hold">Trokit tri herë dhe mbaj cepin e poshtëm djathtas</string>
+    <string name="title_pref_swipe_start_time">Koha e fillimit të gjestit</string>
+    <string name="title_pref_swipes_before_lift">Njih rrëshqitjet para ngritjes së gishtit</string>
+    <string name="summary_pref_swipes_before_lift">Çaktivizon gjestet para-mbrapa dhe gjestet me kënd.</string>
+    <string name="title_pref_corner_size_mm">Madhësia e cepit</string>
+    <string name="value_corner_size_edge_width">Si gjerësia e skajit</string>
+    <string name="title_pref_corner_tap_time_ms">Kufiri i kohës për trokitjen në cep</string>
+    <string name="value_corner_tap_time_system">Parazgjedhja e sistemit</string>
+    <string name="title_pref_edge_speak_commands">Thuaj komandën në çdo klikim</string>
+    <string-array name="pref_volume_change_feedback_entries">
+        <item>@string/volume_change_feedback_off</item>
+        <item>@string/volume_change_feedback_tone</item>
+        <item>@string/volume_change_feedback_spoken</item>
+        <item>@string/volume_change_feedback_tone_and_spoken</item>
+    </string-array>
+    <string name="title_pref_volume_change_tone_during_media">Hesht tonin gjatë luajtjes së medias</string>
+    <string name="title_pref_volume_change_speech_during_media">Hesht ligjërimin gjatë luajtjes së medias</string>
+    <string name="title_pref_volume_change_interrupts_speech">Ndërprit ligjërimin për të njoftuar volumin</string>
+    <string name="title_pref_volume_keys_speech_volume_while_speaking">Tastet e volumit ndryshojnë volumin e ligjërimit gjatë të folurit</string>
+    <string name="title_pref_double_tap_moves_cursor">Trokitja e dyfishtë e zhvendos kursorin në fillim ose në fund</string>
+    <string name="title_pref_scroll_ahead">Lëviz përpara te artikulli tjetër</string>
+    <string name="title_pref_speak_while_scrolling">Thuaj artikullin tjetër gjatë lëvizjes</string>
+    <string-array name="pref_text_entities_entries">
+    <item>@string/text_entity_web</item>
+    <item>@string/text_entity_email</item>
+    <item>@string/text_entity_phone</item>
+    <item>@string/text_entity_code</item>
+  </string-array>
+    <string name="value_keep_models_until_stopped">Deri sa SandFly ndalon</string>
+    <string name="title_pref_model_download_server">Serveri i shkarkimit të modeleve</string>
+    <string name="title_pref_settings_profiles">Profilet e cilësimeve</string>
+    <string name="title_pref_new_settings_profile">Profil i ri cilësimesh</string>
+    <string name="settings_profile_new_name">Profili <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="settings_profile_name_taken">Një profil cilësimesh me emrin <xliff:g id="name" example="Demo">%1$s</xliff:g> ekziston tashmë</string>
+    <string name="settings_profile_in_use">Në përdorim</string>
+    <string name="settings_profile_menu_item_in_use"><xliff:g id="name" example="Demo">%1$s</xliff:g>, në përdorim</string>
+    <string name="settings_profile_none">Asnjë profil cilësimesh</string>
+    <string name="settings_profile_use_now">Përdor tani</string>
+    <string name="settings_profile_stop_using">Ndalo përdorimin</string>
+    <string name="settings_profile_change_settings">Ndrysho cilësimet</string>
+    <string name="settings_profile_editing">Ndryshimet shkojnë te <xliff:g id="name" example="Messaging">%1$s</xliff:g></string>
+    <string name="settings_profile_edit_saved">Ndryshimet u ruajtën te <xliff:g id="name" example="Messaging">%1$s</xliff:g></string>
+    <string name="settings_profile_use_automatically">Përdor automatikisht</string>
+    <string name="settings_profile_web">Përmbajtja e uebit</string>
+    <string name="settings_profile_reading">Leximi i vazhdueshëm</string>
+    <string name="settings_profile_text_editing">Redaktimi i tekstit</string>
+    <string name="settings_profile_apps">Aplikacionet</string>
+    <string name="settings_profile_add_app">Shto aplikacion</string>
+    <string name="settings_profile_settings">Cilësimet në këtë profil</string>
+    <string name="settings_profile_no_settings">Asnjë</string>
+    <string name="settings_profile_remove_confirm">Të hiqet <xliff:g id="item" example="Speech rate">%1$s</xliff:g> nga <xliff:g id="name" example="Messaging">%2$s</xliff:g>?</string>
+    <string name="settings_profile_not_saved">Profili i cilësimeve nuk mund të ruhej</string>
+    <string name="settings_profile_in_use_announcement">Profili <xliff:g id="name" example="Demo">%1$s</xliff:g></string>
+    <string name="settings_profile_not_changed">Profili i cilësimeve nuk u ndryshua</string>
+    <string name="title_settings_profile">Profili i cilësimeve</string>
+    <string name="shortcut_settings_profiles">Zgjidh profilin e cilësimeve</string>
+    <string name="shortcut_next_settings_profile">Profili tjetër i cilësimeve</string>
+    <string name="shortcut_previous_settings_profile">Profili i mëparshëm i cilësimeve</string>
+    <string name="title_copy_text_from_screen">Kopjo tekstin nga ekrani</string>
+    <string name="granularity_label">Detajimi</string>
+    <string name="granularity_characters">Karakteret</string>
+    <string name="granularity_words">Fjalët</string>
+    <string name="granularity_paragraphs">Paragrafët</string>
+    <string name="button_select_all">Zgjidh të gjitha</string>
+    <string name="no_text_selected">Nuk është zgjedhur tekst</string>
+    <string name="no_text_on_screen">Nuk u gjet tekst në ekran</string>
+    <string name="title_select_last_spoken_phrase_word_by_word">Zgjidh frazën e fundit të folur fjalë për fjalë</string>
+    <string name="no_words_selected">Nuk janë zgjedhur fjalë</string>
+    <string name="no_phrase_to_select">Nuk ka frazë për t\'u zgjedhur</string>
+    <string name="word_selection_list_cut_off">Lista u shkurtua në <xliff:g id="count" example="1000">%1$d</xliff:g> artikuj</string>
+    <plurals name="word_selection_copied">
+        <item quantity="one">U kopjua <xliff:g id="count" example="5">%1$d</xliff:g> artikull</item>
+        <item quantity="other">U kopjuan <xliff:g id="count" example="5">%1$d</xliff:g> artikuj</item>
+    </plurals>
 </resources>

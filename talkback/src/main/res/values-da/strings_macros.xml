@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_macros">Makroer</string>
+    <string name="shortcut_stop_macro">Stop makro</string>
+    <string name="macro_add">Tilføj makro</string>
+    <string name="macro_run_now">Kør nu</string>
+    <string name="macro_add_step">Tilføj trin</string>
+    <string name="macro_add_at_end">I slutningen</string>
+    <string name="macro_add_at_start">I starten</string>
+    <string name="macro_add_after">Efter trin <xliff:g id="step" example="2">%1$d</xliff:g>: <xliff:g id="name" example="If App in front: Chrome">%2$s</xliff:g></string>
+    <string name="macro_steps">Trin</string>
+    <string name="macro_no_steps">Ingen trin</string>
+    <string name="macro_delete">Slet makro</string>
+    <string name="macro_delete_confirm">Vil du slette <xliff:g id="name" example="Send message">%1$s</xliff:g>?</string>
+    <string name="macro_step_command">Kør kommando</string>
+    <string name="macro_step_wait">Vent</string>
+    <string name="macro_step_tap">Tryk på element</string>
+    <string name="macro_step_focus">Fokusér på element</string>
+    <string name="macro_step_speak_item">Oplæs element</string>
+    <string name="macro_step_speak_text">Oplæs tekst</string>
+    <string name="macro_step_type">Skriv tekst</string>
+    <string name="macro_step_tap_value">Tryk på <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_focus_value">Fokusér på <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_item_value">Oplæs <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_text_value">Oplæs <xliff:g id="text" example="Done">%1$s</xliff:g></string>
+    <string name="macro_step_type_value">Skriv <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <string name="macro_step_replace_value">Erstat tekst med <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <plurals name="macro_step_wait_seconds">
+        <item quantity="one">Vent <xliff:g id="count" example="2">%d</xliff:g> sekund</item>
+        <item quantity="other">Vent <xliff:g id="count" example="2">%d</xliff:g> sekunder</item>
+    </plurals>
+    <plurals name="macro_step_wait_milliseconds">
+        <item quantity="one">Vent <xliff:g id="count" example="500">%d</xliff:g> millisekund</item>
+        <item quantity="other">Vent <xliff:g id="count" example="500">%d</xliff:g> millisekunder</item>
+    </plurals>
+    <string name="macro_step_unavailable">Ikke tilgængelig</string>
+    <string name="macro_seconds">Sekunder</string>
+    <string name="macro_invalid_seconds">Angiv et antal sekunder op til <xliff:g id="max" example="600">%1$d</xliff:g></string>
+    <string name="macro_tap_label">Elementets tekst</string>
+    <string name="macro_tap_timeout">Sekunder at vente på elementet</string>
+    <string name="macro_text">Tekst</string>
+    <string name="macro_replace_text">Erstat tekst i feltet</string>
+    <string name="macro_item_not_found">Makroen er stoppet. Ikke fundet: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_failed">Makroen er stoppet. Mislykkedes: <xliff:g id="step" example="Open Gmail">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until">Vent til</string>
+    <string name="macro_step_if">Hvis</string>
+    <string name="macro_step_else_if">Ellers hvis</string>
+    <string name="macro_step_else">Ellers</string>
+    <string name="macro_step_end_if">Slut hvis</string>
+    <string name="macro_step_repeat">Gentag</string>
+    <string name="macro_step_repeat_while">Gentag, mens</string>
+    <string name="macro_step_end_repeat">Slut gentagelse</string>
+    <string name="macro_step_exit_loop">Afslut løkke</string>
+    <string name="macro_step_if_value">Hvis <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_else_if_value">Ellers hvis <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_repeat_while_value">Gentag, mens <xliff:g id="condition" example="Item on screen: Load more">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until_value">Vent til <xliff:g id="condition" example="Item on screen: Send">%1$s</xliff:g></string>
+    <plurals name="macro_step_repeat_value">
+        <item quantity="one">Gentag <xliff:g id="count" example="3">%d</xliff:g> gang</item>
+        <item quantity="other">Gentag <xliff:g id="count" example="3">%d</xliff:g> gange</item>
+    </plurals>
+    <string name="macro_times">Gange</string>
+    <string name="macro_invalid_times">Angiv et tal fra 1 til <xliff:g id="max" example="1000">%1$d</xliff:g></string>
+    <string name="macro_run_only_when">Kør kun, når</string>
+    <string name="macro_always">Altid</string>
+    <string name="macro_no_tests">Ingen tests</string>
+    <string name="macro_add_test">Tilføj test</string>
+    <string name="macro_tests">Tests</string>
+    <string name="macro_choose_test">Test</string>
+    <string name="macro_test_item">Element på skærmen</string>
+    <string name="macro_test_focused">Element med fokus</string>
+    <string name="macro_test_app">App i forgrunden</string>
+    <string name="macro_test_keyboard">Tastatur vist</string>
+    <string name="macro_test_keyboard_hidden">Tastatur skjult</string>
+    <string name="macro_test_locked">Skærm låst</string>
+    <string name="macro_test_unlocked">Skærm låst op</string>
+    <string name="macro_test_item_value">Element på skærmen: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_no_item_value">Intet element på skærmen: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_focused_value">Element med fokus: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_not_focused_value">Element med fokus er ikke: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_app_value">App i forgrunden: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_not_app_value">App ikke i forgrunden: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_label_kind"><xliff:g id="label" example="Send">%1$s</xliff:g>, <xliff:g id="kind" example="Clickable">%2$s</xliff:g></string>
+    <string name="macro_join_and"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g> og <xliff:g id="second" example="Focused item: Editable">%2$s</xliff:g></string>
+    <string name="macro_join_or"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g>, eller <xliff:g id="second" example="Screen locked">%2$s</xliff:g></string>
+    <string name="macro_regex">Regulært udtryk</string>
+    <string name="macro_invalid_regex">Ikke et brugbart regulært udtryk. Gentagne grupper kan ikke indeholde gentagelse eller |.</string>
+    <string name="macro_match_in">Match i</string>
+    <string name="macro_field_any">Enhver tekst</string>
+    <string name="macro_field_text">Tekst</string>
+    <string name="macro_field_description">Beskrivelse</string>
+    <string name="macro_field_hint">Hint</string>
+    <string name="macro_field_state">Tilstand</string>
+    <string name="macro_field_id">Ressource-ID</string>
+    <string name="macro_field_value"><xliff:g id="label" example="send">%1$s</xliff:g> (<xliff:g id="field" example="Resource ID">%2$s</xliff:g>)</string>
+    <string name="macro_field_regex_value"><xliff:g id="pattern" example="^Reply">%1$s</xliff:g> (<xliff:g id="field" example="Description">%2$s</xliff:g>, regulært udtryk)</string>
+    <string name="macro_regex_value"><xliff:g id="pattern" example="Reply.*Anna">%1$s</xliff:g> (regulært udtryk)</string>
+    <string name="macro_test_label_optional">Elementets tekst (valgfri)</string>
+    <string name="macro_item_kind">Elementtype</string>
+    <string name="macro_kind_any">Enhver type</string>
+    <string name="macro_kind_clickable">Kan trykkes på</string>
+    <string name="macro_kind_long_clickable">Kan trykkes på og holdes</string>
+    <string name="macro_kind_editable">Kan redigeres</string>
+    <string name="macro_kind_scrollable">Kan rulles</string>
+    <string name="macro_kind_adjustable">Kan justeres</string>
+    <string name="macro_kind_checkable">Kan markeres</string>
+    <string name="macro_kind_checked">Markeret</string>
+    <string name="macro_kind_selected">Valgt</string>
+    <string name="macro_kind_heading">Overskrift</string>
+    <string name="macro_kind_enabled">Aktiveret</string>
+    <string name="macro_change_to">Skift til: <xliff:g id="test" example="Keyboard hidden">%1$s</xliff:g></string>
+    <string name="macro_join_with_and">Sammenkæd med og</string>
+    <string name="macro_join_with_or">Sammenkæd med eller</string>
+    <string name="macro_clause_and">og <xliff:g id="test" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_clause_or">eller <xliff:g id="test" example="Screen locked">%1$s</xliff:g></string>
+    <string name="macro_wait_timeout">Sekunder at vente</string>
+    <string name="macro_add_step_after">Tilføj trin efter</string>
+    <string name="macro_problem">Trin <xliff:g id="step" example="3">%1$d</xliff:g>: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_problem_no_if">Ellers hvis, Ellers eller Slut hvis uden Hvis</string>
+    <string name="macro_problem_after_else">Ellers hvis eller Ellers efter Ellers</string>
+    <string name="macro_problem_no_repeat">Slut gentagelse uden Gentag</string>
+    <string name="macro_problem_no_end_if">Hvis uden Slut hvis</string>
+    <string name="macro_problem_no_end_repeat">Gentag uden Slut gentagelse</string>
+    <string name="macro_problem_exit">Afslut løkke uden for en gentagelse</string>
+    <string name="macro_stopped_problem">Makroen er stoppet. Trin <xliff:g id="step" example="3">%1$d</xliff:g>: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_stopped_repeats">Makroen er stoppet. Gentaget <xliff:g id="count" example="1000">%1$d</xliff:g> gange: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
+    <string name="macro_stopped_timeout">Makroen er stoppet. Tidsgrænse overskredet: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
+    <string name="macro_not_met">Makroen blev ikke kørt. Kør kun, når: ikke opfyldt</string>
+</resources>

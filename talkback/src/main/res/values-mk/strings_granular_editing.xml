@@ -46,4 +46,17 @@
     <string name="granular_editing_not_saved">Не е зачувано: полето за текст исчезна. Текстот е копиран.</string>
     <string name="granular_editing_no_text">Нема текст за уредување</string>
     <string name="granular_editing_password">Не е достапно во полињата за лозинка</string>
+    <plurals name="granular_editing_spaces">
+        <item quantity="one"><xliff:g id="count" example="3">%d</xliff:g> празно место</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> празни места</item>
+    </plurals>
+    <plurals name="granular_editing_new_lines">
+        <item quantity="one"><xliff:g id="count" example="3">%d</xliff:g> нов ред</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> нови редови</item>
+    </plurals>
+    <plurals name="granular_editing_tabs">
+        <item quantity="one"><xliff:g id="count" example="3">%d</xliff:g> табулатор</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> табулатори</item>
+    </plurals>
+    <string name="granular_editing_blank_line">Празен ред</string>
 </resources>

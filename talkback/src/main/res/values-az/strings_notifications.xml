@@ -390,4 +390,12 @@
         <item>@string/notification_shake_3</item>
     </string-array>
     <string name="notification_clock_voice_notifications">Bildiriş oxuma səsi</string>
+    <string name="notification_exact_alarms_title">Siqnallar və xatırlatmalar icazəsini aktiv edin</string>
+    <string name="shortcut_toggle_time_announcements">Vaxt elanları aktiv və ya deaktiv</string>
+    <string name="notification_clock_now_on">Vaxt elanları aktivdir</string>
+    <string name="notification_clock_now_off">Vaxt elanları deaktivdir</string>
+    <plurals name="notification_clock_battery">
+        <item quantity="one"><xliff:g id="percent" example="76">%d</xliff:g> faiz</item>
+        <item quantity="other"><xliff:g id="percent" example="76">%d</xliff:g> faiz</item>
+    </plurals>
 </resources>

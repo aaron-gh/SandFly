@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="item_file_import">Uvozi iz datoteke</string>
+    <string name="item_file_export">Izvozi v datoteko</string>
+    <string name="title_pref_export_item_file_reference">Izvozi opis oblike datoteke</string>
+    <string name="item_file_keymaps">Tipkovne razporeditve</string>
+    <string name="item_file_exported">Izvoženo</string>
+    <string name="item_file_export_failed">Izvoz ni uspel</string>
+    <string name="item_file_not_read">Ta datoteka ni datoteka elementov SandFly ali je ni bilo mogoče prebrati</string>
+    <string name="item_file_settings_file">To je datoteka z nastavitvami. Uvozite jo z Varnostno kopiranje in obnovitev &gt; Uvozi nastavitve</string>
+    <string name="item_file_newer">Ta datoteka je iz novejše različice SandFly</string>
+    <string name="item_file_nothing_imported">Nič ni uvoženo</string>
+    <string name="item_file_imported">Uvoženo: <xliff:g id="items" example="2 macros, 1 gesture profile">%1$s</xliff:g></string>
+    <string name="item_file_left_out">Izpuščeno:</string>
+    <string name="item_file_problem_not_read"><xliff:g id="kind" example="Macros">%1$s</xliff:g>, element <xliff:g id="number" example="3">%2$d</xliff:g>: ni prebran</string>
+    <string name="item_file_problem_command"><xliff:g id="item" example="Open mail">%1$s</xliff:g>: neznan ukaz <xliff:g id="command" example="READ_ALL">%2$s</xliff:g></string>
+    <string name="item_file_problem_gesture"><xliff:g id="item" example="Reading">%1$s</xliff:g>: neznana poteza <xliff:g id="gesture" example="pref_shortcut_spin">%2$s</xliff:g></string>
+    <string name="item_file_problem_keys"><xliff:g id="item" example="My keymap">%1$s</xliff:g>: tipke niso razumljive: <xliff:g id="keys" example="SandFly+Foo">%2$s</xliff:g></string>
+    <string name="item_file_problem_keys_taken"><xliff:g id="item" example="My keymap">%1$s</xliff:g>: tipke so že v uporabi: <xliff:g id="keys" example="SandFly+H">%2$s</xliff:g></string>
+    <string name="item_file_problem_setting"><xliff:g id="item" example="Reading">%1$s</xliff:g>: nastavitev <xliff:g id="key" example="pref_vibration">%2$s</xliff:g> je neznana, ne more biti v profilu ali ima vrednost napačne vrste</string>
+    <string name="item_file_problem_regex"><xliff:g id="dictionary" example="Speech dictionary">%1$s</xliff:g>: regularni izraz zavrnjen: <xliff:g id="expression" example="(a+)+">%2$s</xliff:g></string>
+    <string name="item_file_problem_limit"><xliff:g id="kind" example="Symbol dictionary">%1$s</xliff:g>: največ <xliff:g id="number" example="500">%2$d</xliff:g> elementov</string>
+    <string name="item_file_problem_more">Izpuščeno je bilo še več</string>
+    <plurals name="item_file_count_macros">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> makro</item>
+        <item quantity="two"><xliff:g id="count" example="2">%d</xliff:g> makra</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> makri</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> makrov</item>
+    </plurals>
+    <plurals name="item_file_count_gesture_profiles">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> profil potez</item>
+        <item quantity="two"><xliff:g id="count" example="2">%d</xliff:g> profila potez</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> profili potez</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> profilov potez</item>
+    </plurals>
+    <plurals name="item_file_count_keymaps">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> tipkovna razporeditev</item>
+        <item quantity="two"><xliff:g id="count" example="2">%d</xliff:g> tipkovni razporeditvi</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> tipkovne razporeditve</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> tipkovnih razporeditev</item>
+    </plurals>
+    <plurals name="item_file_count_apps">
+        <item quantity="one">poteze in bližnjične tipke <xliff:g id="count" example="2">%d</xliff:g> aplikacije</item>
+        <item quantity="two">poteze in bližnjične tipke <xliff:g id="count" example="2">%d</xliff:g> aplikacij</item>
+        <item quantity="few">poteze in bližnjične tipke <xliff:g id="count" example="2">%d</xliff:g> aplikacij</item>
+        <item quantity="other">poteze in bližnjične tipke <xliff:g id="count" example="2">%d</xliff:g> aplikacij</item>
+    </plurals>
+    <plurals name="item_file_count_settings_profiles">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> profil nastavitev</item>
+        <item quantity="two"><xliff:g id="count" example="2">%d</xliff:g> profila nastavitev</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> profili nastavitev</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> profilov nastavitev</item>
+    </plurals>
+    <plurals name="item_file_count_speech_dictionary">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> vnos slovarja govora</item>
+        <item quantity="two"><xliff:g id="count" example="2">%d</xliff:g> vnosa slovarja govora</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> vnosi slovarja govora</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> vnosov slovarja govora</item>
+    </plurals>
+    <plurals name="item_file_count_symbol_dictionary">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> vnos slovarja simbolov</item>
+        <item quantity="two"><xliff:g id="count" example="2">%d</xliff:g> vnosa slovarja simbolov</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> vnosi slovarja simbolov</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> vnosov slovarja simbolov</item>
+    </plurals>
+    <plurals name="item_file_count_braille_dictionary">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> vnos slovarja brailla</item>
+        <item quantity="two"><xliff:g id="count" example="2">%d</xliff:g> vnosa slovarja brailla</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> vnosi slovarja brailla</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> vnosov slovarja brailla</item>
+    </plurals>
+    <plurals name="item_file_count_voice_commands">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> glasovni ukaz po meri</item>
+        <item quantity="two"><xliff:g id="count" example="2">%d</xliff:g> glasovna ukaza po meri</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> glasovni ukazi po meri</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> glasovnih ukazov po meri</item>
+    </plurals>
+</resources>

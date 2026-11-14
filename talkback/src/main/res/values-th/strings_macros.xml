@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_macros">มาโคร</string>
+    <string name="shortcut_stop_macro">หยุดมาโคร</string>
+    <string name="macro_add">เพิ่มมาโคร</string>
+    <string name="macro_run_now">เรียกใช้ตอนนี้</string>
+    <string name="macro_add_step">เพิ่มขั้นตอน</string>
+    <string name="macro_add_at_end">ที่ท้าย</string>
+    <string name="macro_add_at_start">ที่ต้น</string>
+    <string name="macro_add_after">หลังขั้นตอนที่ <xliff:g id="step" example="2">%1$d</xliff:g>: <xliff:g id="name" example="If App in front: Chrome">%2$s</xliff:g></string>
+    <string name="macro_steps">ขั้นตอน</string>
+    <string name="macro_no_steps">ไม่มีขั้นตอน</string>
+    <string name="macro_delete">ลบมาโคร</string>
+    <string name="macro_delete_confirm">ลบ <xliff:g id="name" example="Send message">%1$s</xliff:g> หรือไม่</string>
+    <string name="macro_step_command">เรียกใช้คำสั่ง</string>
+    <string name="macro_step_wait">รอ</string>
+    <string name="macro_step_tap">แตะรายการ</string>
+    <string name="macro_step_focus">โฟกัสรายการ</string>
+    <string name="macro_step_speak_item">พูดรายการ</string>
+    <string name="macro_step_speak_text">พูดข้อความ</string>
+    <string name="macro_step_type">พิมพ์ข้อความ</string>
+    <string name="macro_step_tap_value">แตะ <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_focus_value">โฟกัส <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_item_value">พูด <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_text_value">พูด <xliff:g id="text" example="Done">%1$s</xliff:g></string>
+    <string name="macro_step_type_value">พิมพ์ <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <string name="macro_step_replace_value">แทนที่ข้อความด้วย <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <plurals name="macro_step_wait_seconds">
+        <item quantity="other">รอ <xliff:g id="count" example="2">%d</xliff:g> วินาที</item>
+    </plurals>
+    <plurals name="macro_step_wait_milliseconds">
+        <item quantity="other">รอ <xliff:g id="count" example="500">%d</xliff:g> มิลลิวินาที</item>
+    </plurals>
+    <string name="macro_step_unavailable">ไม่พร้อมใช้งาน</string>
+    <string name="macro_seconds">วินาที</string>
+    <string name="macro_invalid_seconds">ป้อนจำนวนวินาทีไม่เกิน <xliff:g id="max" example="600">%1$d</xliff:g></string>
+    <string name="macro_tap_label">ข้อความของรายการ</string>
+    <string name="macro_tap_timeout">จำนวนวินาทีที่รอรายการ</string>
+    <string name="macro_text">ข้อความ</string>
+    <string name="macro_replace_text">แทนที่ข้อความในช่อง</string>
+    <string name="macro_item_not_found">มาโครหยุดแล้ว ไม่พบ: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_failed">มาโครหยุดแล้ว ล้มเหลว: <xliff:g id="step" example="Open Gmail">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until">รอจนกว่า</string>
+    <string name="macro_step_if">ถ้า</string>
+    <string name="macro_step_else_if">มิฉะนั้นถ้า</string>
+    <string name="macro_step_else">มิฉะนั้น</string>
+    <string name="macro_step_end_if">จบถ้า</string>
+    <string name="macro_step_repeat">ทำซ้ำ</string>
+    <string name="macro_step_repeat_while">ทำซ้ำขณะที่</string>
+    <string name="macro_step_end_repeat">จบการทำซ้ำ</string>
+    <string name="macro_step_exit_loop">ออกจากลูป</string>
+    <string name="macro_step_if_value">ถ้า <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_else_if_value">มิฉะนั้นถ้า <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_repeat_while_value">ทำซ้ำขณะที่ <xliff:g id="condition" example="Item on screen: Load more">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until_value">รอจนกว่า <xliff:g id="condition" example="Item on screen: Send">%1$s</xliff:g></string>
+    <plurals name="macro_step_repeat_value">
+        <item quantity="other">ทำซ้ำ <xliff:g id="count" example="3">%d</xliff:g> ครั้ง</item>
+    </plurals>
+    <string name="macro_times">จำนวนครั้ง</string>
+    <string name="macro_invalid_times">ป้อนตัวเลขตั้งแต่ 1 ถึง <xliff:g id="max" example="1000">%1$d</xliff:g></string>
+    <string name="macro_run_only_when">เรียกใช้เฉพาะเมื่อ</string>
+    <string name="macro_always">เสมอ</string>
+    <string name="macro_no_tests">ไม่มีเงื่อนไข</string>
+    <string name="macro_add_test">เพิ่มเงื่อนไข</string>
+    <string name="macro_tests">เงื่อนไข</string>
+    <string name="macro_choose_test">เงื่อนไข</string>
+    <string name="macro_test_item">รายการบนหน้าจอ</string>
+    <string name="macro_test_focused">รายการที่โฟกัส</string>
+    <string name="macro_test_app">แอปที่อยู่ด้านหน้า</string>
+    <string name="macro_test_keyboard">แสดงแป้นพิมพ์</string>
+    <string name="macro_test_keyboard_hidden">ซ่อนแป้นพิมพ์</string>
+    <string name="macro_test_locked">หน้าจอล็อก</string>
+    <string name="macro_test_unlocked">หน้าจอปลดล็อก</string>
+    <string name="macro_test_item_value">รายการบนหน้าจอ: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_no_item_value">ไม่มีรายการบนหน้าจอ: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_focused_value">รายการที่โฟกัส: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_not_focused_value">รายการที่โฟกัสไม่ใช่: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_app_value">แอปที่อยู่ด้านหน้า: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_not_app_value">แอปที่ไม่ได้อยู่ด้านหน้า: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_label_kind"><xliff:g id="label" example="Send">%1$s</xliff:g>, <xliff:g id="kind" example="Clickable">%2$s</xliff:g></string>
+    <string name="macro_join_and"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g> และ <xliff:g id="second" example="Focused item: Editable">%2$s</xliff:g></string>
+    <string name="macro_join_or"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g> หรือ <xliff:g id="second" example="Screen locked">%2$s</xliff:g></string>
+    <string name="macro_regex">นิพจน์ทั่วไป</string>
+    <string name="macro_invalid_regex">ไม่ใช่นิพจน์ทั่วไปที่ใช้ได้ กลุ่มที่ซ้ำไม่มีการซ้ำหรือ | ได้</string>
+    <string name="macro_match_in">จับคู่ใน</string>
+    <string name="macro_field_any">ข้อความใดก็ได้</string>
+    <string name="macro_field_text">ข้อความ</string>
+    <string name="macro_field_description">คำอธิบาย</string>
+    <string name="macro_field_hint">คำใบ้</string>
+    <string name="macro_field_state">สถานะ</string>
+    <string name="macro_field_id">Resource ID</string>
+    <string name="macro_field_value"><xliff:g id="label" example="send">%1$s</xliff:g> (<xliff:g id="field" example="Resource ID">%2$s</xliff:g>)</string>
+    <string name="macro_field_regex_value"><xliff:g id="pattern" example="^Reply">%1$s</xliff:g> (<xliff:g id="field" example="Description">%2$s</xliff:g>, นิพจน์ทั่วไป)</string>
+    <string name="macro_regex_value"><xliff:g id="pattern" example="Reply.*Anna">%1$s</xliff:g> (นิพจน์ทั่วไป)</string>
+    <string name="macro_test_label_optional">ข้อความของรายการ (ไม่บังคับ)</string>
+    <string name="macro_item_kind">ประเภทรายการ</string>
+    <string name="macro_kind_any">ประเภทใดก็ได้</string>
+    <string name="macro_kind_clickable">คลิกได้</string>
+    <string name="macro_kind_long_clickable">กดค้างได้</string>
+    <string name="macro_kind_editable">แก้ไขได้</string>
+    <string name="macro_kind_scrollable">เลื่อนได้</string>
+    <string name="macro_kind_adjustable">ปรับได้</string>
+    <string name="macro_kind_checkable">เลือกได้</string>
+    <string name="macro_kind_checked">เลือกไว้</string>
+    <string name="macro_kind_selected">เลือกแล้ว</string>
+    <string name="macro_kind_heading">ส่วนหัว</string>
+    <string name="macro_kind_enabled">เปิดใช้งาน</string>
+    <string name="macro_change_to">เปลี่ยนเป็น: <xliff:g id="test" example="Keyboard hidden">%1$s</xliff:g></string>
+    <string name="macro_join_with_and">เชื่อมด้วย และ</string>
+    <string name="macro_join_with_or">เชื่อมด้วย หรือ</string>
+    <string name="macro_clause_and">และ <xliff:g id="test" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_clause_or">หรือ <xliff:g id="test" example="Screen locked">%1$s</xliff:g></string>
+    <string name="macro_wait_timeout">จำนวนวินาทีที่รอ</string>
+    <string name="macro_add_step_after">เพิ่มขั้นตอนหลัง</string>
+    <string name="macro_problem">ขั้นตอนที่ <xliff:g id="step" example="3">%1$d</xliff:g>: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_problem_no_if">มิฉะนั้นถ้า มิฉะนั้น หรือจบถ้า โดยไม่มีถ้า</string>
+    <string name="macro_problem_after_else">มิฉะนั้นถ้า หรือมิฉะนั้น ต่อจากมิฉะนั้น</string>
+    <string name="macro_problem_no_repeat">จบการทำซ้ำโดยไม่มีทำซ้ำ</string>
+    <string name="macro_problem_no_end_if">ถ้าโดยไม่มีจบถ้า</string>
+    <string name="macro_problem_no_end_repeat">ทำซ้ำโดยไม่มีจบการทำซ้ำ</string>
+    <string name="macro_problem_exit">ออกจากลูปนอกการทำซ้ำ</string>
+    <string name="macro_stopped_problem">มาโครหยุดแล้ว ขั้นตอนที่ <xliff:g id="step" example="3">%1$d</xliff:g>: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_stopped_repeats">มาโครหยุดแล้ว ทำซ้ำ <xliff:g id="count" example="1000">%1$d</xliff:g> ครั้ง: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
+    <string name="macro_stopped_timeout">มาโครหยุดแล้ว หมดเวลา: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
+    <string name="macro_not_met">ไม่ได้เรียกใช้มาโคร เรียกใช้เฉพาะเมื่อ: ไม่เป็นไปตามเงื่อนไข</string>
+</resources>

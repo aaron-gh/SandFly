@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_voice_commands">Balss komandas</string>
+    <string name="title_pref_voice_commands_ai">Saprast balss komandas ar AI</string>
+    <string name="voice_commands_custom">Pielāgotas balss komandas</string>
+    <string name="voice_command_add">Pievienot balss komandu</string>
+    <string name="voice_command_phrase">Frāze</string>
+    <string name="voice_command_change_phrase">Mainīt frāzi</string>
+    <string name="voice_command_change_command">Mainīt komandu</string>
+    <string name="voice_command_delete_confirm">Vai dzēst <xliff:g id="phrase" example="Good morning">%1$s</xliff:g>?</string>
+    <string name="voice_command_phrase_exists"><xliff:g id="phrase" example="Good morning">%1$s</xliff:g> jau ir balss komanda</string>
+    <string name="voice_commands_not_understood">Nav saprasts: <xliff:g id="text" example="open the door">%1$s</xliff:g></string>
+    <string name="voice_commands_not_available">Nav pieejams: <xliff:g id="name" example="Morning macro">%1$s</xliff:g></string>
+    <string name="voice_commands_not_found">Nav atrasts: <xliff:g id="label" example="Settings">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app">Nav lietotnes ar nosaukumu <xliff:g id="name" example="Signal">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app_for_action">Nav lietotnes šai darbībai</string>
+    <string name="voice_commands_calling">Zvana uz <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_call_permission">Atļaujiet tālruņa zvanus, pēc tam atkārtojiet komandu.</string>
+    <string name="voice_commands_contacts_permission">Atļaujiet piekļuvi kontaktpersonām, pēc tam atkārtojiet komandu.</string>
+    <string name="voice_commands_no_contact">Nav kontaktpersonas ar vārdu <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_contacts_several">Vairākas kontaktpersonas ar vārdu <xliff:g id="name" example="Sam">%1$s</xliff:g>: <xliff:g id="names" example="Sam Jones, Sam Smith">%2$s</xliff:g></string>
+    <string name="voice_commands_message_text">Ziņa personai <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_message_confirm">Sūtīt personai <xliff:g id="name" example="Sam">%1$s</xliff:g>: <xliff:g id="text" example="I am on my way">%2$s</xliff:g>?</string>
+    <string name="voice_commands_message_confirm_result">Sūtīt personai <xliff:g id="name" example="Sam">%1$s</xliff:g>?</string>
+    <string name="voice_commands_message_not_sent">Ziņa nav nosūtīta</string>
+    <string name="voice_commands_send_pressed">Nosūtīt nospiests</string>
+    <string name="voice_commands_send_button">Sūtīt</string>
+    <string name="voice_commands_no_description">Apraksts nav saņemts</string>
+    <string name="voice_commands_copied">Nokopēts</string>
+    <string-array name="voice_commands_chain_words"><item>un tad</item><item>tad</item><item>pēc tam</item><item>pēc tā</item><item>pēc tam vēl</item></string-array>
+    <string-array name="voice_commands_and_words"><item>un</item></string-array>
+    <string-array name="voice_commands_fillers_start"><item>lūdzu</item><item>vai vari</item><item>vai varat</item><item>vai tu varētu</item><item>vai jūs varētu</item><item>es vēlos</item><item>es gribu</item><item>vēlos</item><item>gribu</item><item>tagad</item></string-array>
+    <string-array name="voice_commands_fillers_end"><item>lūdzu</item><item>man</item><item>tagad</item></string-array>
+    <string-array name="voice_commands_cancel_words"><item>stop</item><item>apturēt</item><item>aptur</item><item>atcelt</item><item>atcel</item><item>pietiek</item><item>neko</item><item>nekas</item><item>aizmirsti</item><item>aizmirst</item><item>beigt</item><item>beidz</item></string-array>
+    <string-array name="voice_commands_yes"><item>jā</item><item>jā jā</item><item>jep</item><item>sūti</item><item>sūtīt</item><item>nosūti</item><item>nosūtīt</item><item>ok</item><item>okei</item><item>labi</item><item>protams</item><item>dari to</item><item>izdari</item></string-array>
+    <string-array name="voice_commands_sms_names"><item>SMS</item><item>īsziņa</item><item>īsziņu</item><item>īsziņas</item><item>ziņas</item></string-array>
+    <string-array name="voice_commands_send_image_description"><item>sūti [attēla|bildes] aprakstu personai {who}</item><item>nosūti [attēla|bildes] aprakstu personai {who}</item><item>sūti [šī|šīs] [attēla|bildes] aprakstu personai {who}</item><item>nosūti [šī|šīs] [attēla|bildes] aprakstu personai {who}</item><item>sūti [foto|fotoattēla] aprakstu personai {who}</item><item>nosūti [foto|fotoattēla] aprakstu personai {who}</item></string-array>
+    <string-array name="voice_commands_send_screen_description"><item>sūti ekrāna aprakstu personai {who}</item><item>nosūti ekrāna aprakstu personai {who}</item><item>sūti [šī] ekrāna aprakstu personai {who}</item><item>nosūti [šī] ekrāna aprakstu personai {who}</item></string-array>
+    <string-array name="voice_commands_send_previous"><item>sūti to personai {who} lietotnē {app}</item><item>nosūti to personai {who} lietotnē {app}</item><item>sūti to personai {who}</item><item>nosūti to personai {who}</item><item>sūti aprakstu personai {who}</item><item>nosūti aprakstu personai {who}</item><item>kopīgo to ar personu {who}</item></string-array>
+    <string-array name="voice_commands_message"><item>sūti [ziņu|ziņojumu] personai {who} lietotnē {app} ar tekstu {text}</item><item>nosūti [ziņu|ziņojumu] personai {who} lietotnē {app} ar tekstu {text}</item><item>sūti [ziņu|ziņojumu] personai {who} ar tekstu {text}</item><item>nosūti [ziņu|ziņojumu] personai {who} ar tekstu {text}</item><item>sūti [ziņu|ziņojumu] personai {whoandtext}</item><item>nosūti [ziņu|ziņojumu] personai {whoandtext}</item><item>sūti {app} ziņu personai {who} ar tekstu {text}</item><item>nosūti {app} ziņu personai {who} ar tekstu {text}</item><item>sūti {app} ziņu personai {who}</item><item>nosūti {app} ziņu personai {who}</item><item>sūti personai {who} [ziņu|ziņojumu] ar tekstu {text}</item><item>nosūti personai {who} [ziņu|ziņojumu] ar tekstu {text}</item><item>uzraksti personai {who} lietotnē {app} {text}</item><item>uzraksti personai {who} {text}</item><item>uzraksti personai {whoandtext}</item><item>pasaki personai {who} lietotnē {app} {text}</item><item>sūti īsziņu personai {whoandtext}</item></string-array>
+    <string-array name="voice_commands_call"><item>zvani {who}</item><item>zvani personai {who}</item><item>piezvani {who}</item><item>piezvani personai {who}</item><item>sazvani {who}</item><item>sastādi numuru {who}</item><item>veic zvanu uz {who}</item></string-array>
+    <string-array name="voice_commands_describe_screen"><item>apraksti ekrānu</item><item>apraksti, kas ir ekrānā</item><item>kas ir ekrānā</item><item>kas ir uz ekrāna</item><item>kas ir manā ekrānā</item></string-array>
+    <string-array name="voice_commands_describe_image"><item>apraksti [šo] attēlu</item><item>apraksti [šo] bildi</item><item>apraksti [šo] foto</item><item>kas ir [šajā] attēlā</item><item>kas ir [šajā] bildē</item><item>kas ir [šajā] foto</item></string-array>
+    <string-array name="voice_commands_copy_result"><item>kopē to</item><item>nokopē to</item><item>kopē aprakstu</item><item>nokopē aprakstu</item><item>kopē, ko [tikko] teici</item><item>kopē pēdējo izrunāto [frāzi]</item><item>nokopē pēdējo izrunāto [frāzi]</item><item>kopē pēdējo frāzi</item></string-array>
+    <string-array name="voice_commands_wait"><item>gaidi {n} sekundes</item><item>gaidi {n} sekundi</item><item>gaidi {n} sekundes</item><item>gaidi sekundi</item><item>gaidi</item></string-array>
+    <string-array name="voice_commands_type_text"><item>ievadi {text}</item><item>raksti {text}</item><item>uzraksti {text}</item></string-array>
+    <string-array name="voice_commands_run"><item>palaid makro {command}</item><item>palaid [komandu] {command}</item><item>izpildi {command}</item><item>dari {command}</item></string-array>
+    <string-array name="voice_commands_open"><item>atver {app}</item><item>atveries {app}</item><item>palaid {app}</item><item>startē {app}</item><item>pārslēdzies uz {app}</item></string-array>
+    <string-array name="voice_commands_tap"><item>veic dubultskārienu [uz] {label}</item><item>pieskaries {label}</item><item>uzklikšķini [uz] {label}</item><item>nospied {label}</item><item>aktivizē {label}</item><item>atlasi {label}</item></string-array>
+</resources>

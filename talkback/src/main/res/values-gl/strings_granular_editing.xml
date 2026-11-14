@@ -46,4 +46,17 @@
     <string name="granular_editing_not_saved">Non se gardou: o campo de texto xa non está. Copiouse o texto.</string>
     <string name="granular_editing_no_text">Non hai texto para editar</string>
     <string name="granular_editing_password">Non dispoñible nos campos de contrasinal</string>
+    <plurals name="granular_editing_spaces">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> espazo</item>
+        <item quantity="other"><xliff:g id="count" example="1">%d</xliff:g> espazos</item>
+    </plurals>
+    <plurals name="granular_editing_new_lines">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> liña nova</item>
+        <item quantity="other"><xliff:g id="count" example="1">%d</xliff:g> liñas novas</item>
+    </plurals>
+    <plurals name="granular_editing_tabs">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> tabulación</item>
+        <item quantity="other"><xliff:g id="count" example="1">%d</xliff:g> tabulacións</item>
+    </plurals>
+    <string name="granular_editing_blank_line">Liña en branco</string>
 </resources>

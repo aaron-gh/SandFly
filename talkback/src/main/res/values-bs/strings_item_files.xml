@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="item_file_import">Uvezi iz datoteke</string>
+    <string name="item_file_export">Izvezi u datoteku</string>
+    <string name="title_pref_export_item_file_reference">Izvezi opis formata datoteke</string>
+    <string name="item_file_keymaps">Mape tipki</string>
+    <string name="item_file_exported">Izvezeno</string>
+    <string name="item_file_export_failed">Izvoz nije uspio</string>
+    <string name="item_file_not_read">Ova datoteka nije datoteka stavki SandFlya ili se nije mogla pročitati</string>
+    <string name="item_file_settings_file">Ovo je datoteka postavki. Uvezite je putem Sigurnosno kopiranje i vraćanje &gt; Uvezi postavke</string>
+    <string name="item_file_newer">Ova datoteka potječe iz novije verzije SandFlya</string>
+    <string name="item_file_nothing_imported">Ništa nije uvezeno</string>
+    <string name="item_file_imported">Uvezeno: <xliff:g id="items" example="2 macros, 1 gesture profile">%1$s</xliff:g></string>
+    <string name="item_file_left_out">Izostavljeno:</string>
+    <string name="item_file_problem_not_read"><xliff:g id="kind" example="Macros">%1$s</xliff:g>, stavka <xliff:g id="number" example="3">%2$d</xliff:g>: nije pročitana</string>
+    <string name="item_file_problem_command"><xliff:g id="item" example="Open mail">%1$s</xliff:g>: nepoznata komanda <xliff:g id="command" example="READ_ALL">%2$s</xliff:g></string>
+    <string name="item_file_problem_gesture"><xliff:g id="item" example="Reading">%1$s</xliff:g>: nepoznat pokret <xliff:g id="gesture" example="pref_shortcut_spin">%2$s</xliff:g></string>
+    <string name="item_file_problem_keys"><xliff:g id="item" example="My keymap">%1$s</xliff:g>: tipke nisu prepoznate: <xliff:g id="keys" example="SandFly+Foo">%2$s</xliff:g></string>
+    <string name="item_file_problem_keys_taken"><xliff:g id="item" example="My keymap">%1$s</xliff:g>: tipke se već koriste: <xliff:g id="keys" example="SandFly+H">%2$s</xliff:g></string>
+    <string name="item_file_problem_setting"><xliff:g id="item" example="Reading">%1$s</xliff:g>: postavka <xliff:g id="key" example="pref_vibration">%2$s</xliff:g> nije poznata, ne može biti u profilu ili ima vrijednost pogrešne vrste</string>
+    <string name="item_file_problem_regex"><xliff:g id="dictionary" example="Speech dictionary">%1$s</xliff:g>: regularni izraz odbijen: <xliff:g id="expression" example="(a+)+">%2$s</xliff:g></string>
+    <string name="item_file_problem_limit"><xliff:g id="kind" example="Symbol dictionary">%1$s</xliff:g>: najviše <xliff:g id="number" example="500">%2$d</xliff:g> stavki</string>
+    <string name="item_file_problem_more">Izostavljeno je još stavki</string>
+    <plurals name="item_file_count_macros">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> makro</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> makra</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> makra</item>
+    </plurals>
+    <plurals name="item_file_count_gesture_profiles">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> profil pokreta</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> profila pokreta</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> profila pokreta</item>
+    </plurals>
+    <plurals name="item_file_count_keymaps">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> mapa tipki</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> mape tipki</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> mapa tipki</item>
+    </plurals>
+    <plurals name="item_file_count_apps">
+        <item quantity="one">pokreti i prečica na tastaturii <xliff:g id="count" example="2">%d</xliff:g> aplikacije</item>
+        <item quantity="few">pokreti i prečica na tastaturii <xliff:g id="count" example="2">%d</xliff:g> aplikacije</item>
+        <item quantity="other">pokreti i prečica na tastaturii <xliff:g id="count" example="2">%d</xliff:g> aplikacija</item>
+    </plurals>
+    <plurals name="item_file_count_settings_profiles">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> profil postavki</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> profila postavki</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> profila postavki</item>
+    </plurals>
+    <plurals name="item_file_count_speech_dictionary">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> unos rječnika govora</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> unosa rječnika govora</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> unosa rječnika govora</item>
+    </plurals>
+    <plurals name="item_file_count_symbol_dictionary">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> unos rječnika simbola</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> unosa rječnika simbola</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> unosa rječnika simbola</item>
+    </plurals>
+    <plurals name="item_file_count_braille_dictionary">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> unos Brailleovog rječnika</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> unosa Brailleovog rječnika</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> unosa Brailleovog rječnika</item>
+    </plurals>
+    <plurals name="item_file_count_voice_commands">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> prilagođena glasovna komanda</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> prilagođene glasovne komande</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> prilagođenih glasovnih komandi</item>
+    </plurals>
+</resources>

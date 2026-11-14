@@ -2037,4 +2037,131 @@
   <string name="title_select_last_spoken_phrase_word_by_word">按字詞選取最後讀出的詞組</string>
   <string name="no_words_selected">未選取任何詞</string>
   <string name="no_phrase_to_select">沒有可供選取的詞組</string>
+    <string name="title_pref_speech_equalizer_save_preset">另存為預設組合</string>
+    <string name="title_pref_speech_equalizer_saved_presets">已儲存的預設組合</string>
+    <string name="speech_equalizer_preset_name">名稱</string>
+    <string name="speech_equalizer_preset_name_taken">已有名為<xliff:g id="name" example="Podcast">%1$s</xliff:g>的預設組合</string>
+    <string name="speech_equalizer_presets_full">無法再儲存預設組合。請先刪除一個。</string>
+    <string name="speech_equalizer_preset_saved"><xliff:g id="name" example="Podcast">%1$s</xliff:g>已儲存</string>
+    <string name="speech_equalizer_preset_rename">重新命名</string>
+    <string name="speech_equalizer_preset_delete">刪除</string>
+    <string name="speech_equalizer_preset_delete_confirm">刪除<xliff:g id="name" example="Podcast">%1$s</xliff:g>？</string>
+    <string name="speech_equalizer_preset_deleted"><xliff:g id="name" example="Podcast">%1$s</xliff:g>已刪除</string>
+    <string name="title_pref_emoji_voice">表情符號語音</string>
+    <string name="value_emoji_voice_same">與語音相同</string>
+    <string name="title_pref_emoji_rate">表情符號語音速率</string>
+    <string name="title_pref_line_breaks_as_spaces">將換行朗讀為空格</string>
+    <string name="title_pref_language_voices">依語言設定語音</string>
+    <string name="title_pref_identify_languages_from_words">依字詞辨識語言</string>
+    <string name="title_pref_add_language">新增語言</string>
+    <string name="title_pref_remove_language">移除語言</string>
+    <string name="title_pref_script_language">%1$s文字</string>
+    <string name="title_pref_screen_on_notification_count">通知數量</string>
+    <plurals name="template_screen_on_notification_count">
+        <item quantity="other"><xliff:g id="count" example="6">%d</xliff:g>則通知</item>
+    </plurals>
+    <string name="title_pref_phonetic_letters_review">檢閱時以拼讀單字讀出字母</string>
+    <string name="title_pref_phonetic_letters_typing">輸入時以拼讀單字讀出字母</string>
+    <string name="title_pref_emoji_suffix">在表情符號名稱後讀出「表情符號」</string>
+    <string name="overview_shizuku_not_running">Shizuku 未執行</string>
+    <string name="overview_shizuku_not_allowed">Shizuku 不允許 SandFly</string>
+    <string name="overview_no_older_app">沒有更早的應用程式</string>
+    <string name="overview_no_newer_app">沒有更新的應用程式</string>
+    <string name="stream_volume_needs_access">請允許「零打擾」存取權，以變更此音量。</string>
+    <string name="corner_gestures_title">螢幕角落</string>
+    <string name="shortcut_move_to_item_below">移至下方項目</string>
+    <string name="shortcut_move_to_item_above">移至上方項目</string>
+    <string name="shortcut_older_app">更早的應用程式</string>
+    <string name="shortcut_newer_app">更新的應用程式</string>
+    <string name="shortcut_answer_call">接聽來電</string>
+    <string name="answer_call_no_call">沒有來電</string>
+    <string name="answer_call_permission">接聽來電需要權限</string>
+    <string name="shortcut_switch_keyboard">切換鍵盤</string>
+    <string name="switch_keyboard_none">沒有其他已開啟的鍵盤</string>
+    <string name="switch_keyboard_failed">鍵盤未切換</string>
+    <string name="clipboard_history_hint">向上或向下滑動即可選擇，然後輕觸兩下即可貼上</string>
+    <string name="title_speech_history">朗讀記錄</string>
+    <string name="speech_history_empty">沒有朗讀內容</string>
+    <string name="speech_history_clear">清除記錄</string>
+    <string name="title_pref_shortcut_corner_top_left_tap">輕觸左上角</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap">輕觸左上角兩下</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap">輕觸左上角三下</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap_hold">輕觸左上角兩下並按住</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap_hold">輕觸左上角三下並按住</string>
+    <string name="title_pref_shortcut_corner_top_right_tap">輕觸右上角</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap">輕觸右上角兩下</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap">輕觸右上角三下</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap_hold">輕觸右上角兩下並按住</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap_hold">輕觸右上角三下並按住</string>
+    <string name="title_pref_shortcut_corner_bottom_left_tap">輕觸左下角</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap">輕觸左下角兩下</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap">輕觸左下角三下</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap_hold">輕觸左下角兩下並按住</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap_hold">輕觸左下角三下並按住</string>
+    <string name="title_pref_shortcut_corner_bottom_right_tap">輕觸右下角</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap">輕觸右下角兩下</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap">輕觸右下角三下</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap_hold">輕觸右下角兩下並按住</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap_hold">輕觸右下角三下並按住</string>
+    <string name="title_pref_swipe_start_time">手勢開始時間</string>
+    <string name="title_pref_swipes_before_lift">抬起前辨識滑動</string>
+    <string name="summary_pref_swipes_before_lift">會關閉往返手勢和角度手勢。</string>
+    <string name="title_pref_corner_size_mm">角落大小</string>
+    <string name="value_corner_size_edge_width">與邊緣寬度相同</string>
+    <string name="title_pref_corner_tap_time_ms">角落輕觸時間限制</string>
+    <string name="value_corner_tap_time_system">系統預設</string>
+    <string name="title_pref_edge_speak_commands">每次喀嗒時朗讀命令</string>
+    <string-array name="pref_volume_change_feedback_entries">
+        <item>@string/volume_change_feedback_off</item>
+        <item>@string/volume_change_feedback_tone</item>
+        <item>@string/volume_change_feedback_spoken</item>
+        <item>@string/volume_change_feedback_tone_and_spoken</item>
+    </string-array>
+    <string name="title_pref_volume_change_tone_during_media">媒體播放期間靜音提示音</string>
+    <string name="title_pref_volume_change_speech_during_media">媒體播放期間靜音語音</string>
+    <string name="title_pref_volume_change_interrupts_speech">中斷語音以播報音量</string>
+    <string name="title_pref_volume_keys_speech_volume_while_speaking">朗讀時音量鍵變更語音音量</string>
+    <string name="title_pref_double_tap_moves_cursor">輕觸兩下將游標移至開頭或結尾</string>
+    <string name="title_pref_scroll_ahead">提前捲動到下一個項目</string>
+    <string name="title_pref_speak_while_scrolling">捲動時朗讀下一個項目</string>
+    <string-array name="pref_text_entities_entries">
+        <item>@string/text_entity_web</item>
+        <item>@string/text_entity_email</item>
+        <item>@string/text_entity_phone</item>
+        <item>@string/text_entity_code</item>
+    </string-array>
+    <string name="value_keep_models_until_stopped">直到 SandFly 停止</string>
+    <string name="title_pref_model_download_server">模型下載伺服器</string>
+    <string name="title_pref_settings_profiles">設定檔</string>
+    <string name="title_pref_new_settings_profile">新增設定檔</string>
+    <string name="settings_profile_new_name">設定檔 <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="settings_profile_name_taken">已有名為<xliff:g id="name" example="Demo">%1$s</xliff:g>的設定檔</string>
+    <string name="settings_profile_in_use">使用中</string>
+    <string name="settings_profile_menu_item_in_use"><xliff:g id="name" example="Demo">%1$s</xliff:g>，使用中</string>
+    <string name="settings_profile_none">沒有設定檔</string>
+    <string name="settings_profile_use_now">立即使用</string>
+    <string name="settings_profile_stop_using">停止使用</string>
+    <string name="settings_profile_change_settings">變更設定</string>
+    <string name="settings_profile_editing">變更會儲存到<xliff:g id="name" example="Messaging">%1$s</xliff:g></string>
+    <string name="settings_profile_edit_saved">變更已儲存到<xliff:g id="name" example="Messaging">%1$s</xliff:g></string>
+    <string name="settings_profile_use_automatically">自動使用</string>
+    <string name="settings_profile_web">網頁內容</string>
+    <string name="settings_profile_reading">持續朗讀</string>
+    <string name="settings_profile_text_editing">文字編輯</string>
+    <string name="settings_profile_apps">應用程式</string>
+    <string name="settings_profile_add_app">新增應用程式</string>
+    <string name="settings_profile_settings">此設定檔中的設定</string>
+    <string name="settings_profile_no_settings">無</string>
+    <string name="settings_profile_remove_confirm">從<xliff:g id="name" example="Messaging">%2$s</xliff:g>移除<xliff:g id="item" example="Speech rate">%1$s</xliff:g>？</string>
+    <string name="settings_profile_not_saved">無法儲存設定檔</string>
+    <string name="settings_profile_in_use_announcement"><xliff:g id="name" example="Demo">%1$s</xliff:g>設定檔</string>
+    <string name="settings_profile_not_changed">設定檔未變更</string>
+    <string name="title_settings_profile">設定檔</string>
+    <string name="shortcut_settings_profiles">選擇設定檔</string>
+    <string name="shortcut_next_settings_profile">下一個設定檔</string>
+    <string name="shortcut_previous_settings_profile">上一個設定檔</string>
+    <string name="word_selection_list_cut_off">清單已在 <xliff:g id="count" example="1000">%1$d</xliff:g> 個項目處截斷</string>
+    <plurals name="word_selection_copied">
+        <item quantity="other">已複製 <xliff:g id="count" example="5">%1$d</xliff:g> 個項目</item>
+    </plurals>
 </resources>

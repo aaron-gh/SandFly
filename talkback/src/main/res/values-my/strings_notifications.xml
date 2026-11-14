@@ -390,4 +390,11 @@
         <item>@string/notification_shake_3</item>
     </string-array>
     <string name="notification_clock_voice_notifications">အကြောင်းကြားချက် အသံ</string>
+    <string name="notification_exact_alarms_title">နှိုးစက်နှင့် သတိပေးချက်များ ဖွင့်ရန်</string>
+    <string name="shortcut_toggle_time_announcements">အချိန်ကြေညာချက် ဖွင့်ရန် သို့မဟုတ် ပိတ်ရန်</string>
+    <string name="notification_clock_now_on">အချိန်ကြေညာချက် ဖွင့်ထားသည်</string>
+    <string name="notification_clock_now_off">အချိန်ကြေညာချက် ပိတ်ထားသည်</string>
+    <plurals name="notification_clock_battery">
+        <item quantity="other">ရာခိုင်နှုန်း <xliff:g id="percent" example="1">%d</xliff:g></item>
+    </plurals>
 </resources>

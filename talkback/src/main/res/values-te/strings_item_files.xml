@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="item_file_import">ఫైల్ నుండి దిగుమతి చేయండి</string>
+    <string name="item_file_export">ఫైల్‌కు ఎగుమతి చేయండి</string>
+    <string name="title_pref_export_item_file_reference">ఎగుమతి ఫైల్ ఫార్మాట్ రిఫరెన్స్</string>
+    <string name="item_file_keymaps">కీమ్యాప్‌లు</string>
+    <string name="item_file_exported">ఎగుమతి చేయబడింది</string>
+    <string name="item_file_export_failed">ఎగుమతి చేయలేకపోయింది</string>
+    <string name="item_file_not_read">ఈ ఫైల్ SandFly ఐటెమ్ ఫైల్ కాదు, లేదా చదవలేకపోయింది</string>
+    <string name="item_file_settings_file">ఇది సెట్టింగ్‌ల ఫైల్. బ్యాకప్, పునరుద్ధరణ &gt; సెట్టింగ్‌లను దిగుమతి చేయండి ద్వారా దీన్ని దిగుమతి చేయండి</string>
+    <string name="item_file_newer">ఈ ఫైల్ SandFly యొక్క కొత్త వెర్షన్‌కు చెందినది</string>
+    <string name="item_file_nothing_imported">ఏదీ దిగుమతి కాలేదు</string>
+    <string name="item_file_imported">దిగుమతి చేయబడింది: <xliff:g id="items" example="2 macros, 1 gesture profile">%1$s</xliff:g></string>
+    <string name="item_file_left_out">వదిలివేయబడినవి:</string>
+    <string name="item_file_problem_not_read"><xliff:g id="kind" example="Macros">%1$s</xliff:g>, ఐటెమ్ <xliff:g id="number" example="3">%2$d</xliff:g>: చదవలేదు</string>
+    <string name="item_file_problem_command"><xliff:g id="item" example="Open mail">%1$s</xliff:g>: తెలియని ఆదేశం <xliff:g id="command" example="READ_ALL">%2$s</xliff:g></string>
+    <string name="item_file_problem_gesture"><xliff:g id="item" example="Reading">%1$s</xliff:g>: తెలియని సంజ్ఞ <xliff:g id="gesture" example="pref_shortcut_spin">%2$s</xliff:g></string>
+    <string name="item_file_problem_keys"><xliff:g id="item" example="My keymap">%1$s</xliff:g>: కీలు అర్థం కాలేదు: <xliff:g id="keys" example="SandFly+Foo">%2$s</xliff:g></string>
+    <string name="item_file_problem_keys_taken"><xliff:g id="item" example="My keymap">%1$s</xliff:g>: కీలు ఇప్పటికే వాడుకలో ఉన్నాయి: <xliff:g id="keys" example="SandFly+H">%2$s</xliff:g></string>
+    <string name="item_file_problem_setting"><xliff:g id="item" example="Reading">%1$s</xliff:g>: సెట్టింగ్ <xliff:g id="key" example="pref_vibration">%2$s</xliff:g> తెలియనిది, ప్రొఫైల్‌లో ఉండకూడనిది, లేదా తప్పు రకం విలువ కలిగి ఉంది</string>
+    <string name="item_file_problem_regex"><xliff:g id="dictionary" example="Speech dictionary">%1$s</xliff:g>: రెగ్యులర్ ఎక్స్‌ప్రెషన్ తిరస్కరించబడింది: <xliff:g id="expression" example="(a+)+">%2$s</xliff:g></string>
+    <string name="item_file_problem_limit"><xliff:g id="kind" example="Symbol dictionary">%1$s</xliff:g>: గరిష్టంగా <xliff:g id="number" example="500">%2$d</xliff:g> ఐటెమ్‌లు</string>
+    <string name="item_file_problem_more">మరిన్ని వదిలివేయబడ్డాయి</string>
+    <plurals name="item_file_count_macros">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> మాక్రో</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> మాక్రోలు</item>
+    </plurals>
+    <plurals name="item_file_count_gesture_profiles">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> సంజ్ఞ ప్రొఫైల్</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> సంజ్ఞ ప్రొఫైల్స్</item>
+    </plurals>
+    <plurals name="item_file_count_keymaps">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> కీమ్యాప్</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> కీమ్యాప్‌లు</item>
+    </plurals>
+    <plurals name="item_file_count_apps">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> యాప్ యొక్క సంజ్ఞలు, కీబోర్డ్ షార్ట్‌కట్‌లు</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> యాప్‌ల సంజ్ఞలు, కీబోర్డ్ షార్ట్‌కట్‌లు</item>
+    </plurals>
+    <plurals name="item_file_count_settings_profiles">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> సెట్టింగ్‌ల ప్రొఫైల్</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> సెట్టింగ్‌ల ప్రొఫైల్స్</item>
+    </plurals>
+    <plurals name="item_file_count_speech_dictionary">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ప్రసంగ నిఘంటువు ఎంట్రీ</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> ప్రసంగ నిఘంటువు ఎంట్రీలు</item>
+    </plurals>
+    <plurals name="item_file_count_symbol_dictionary">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> చిహ్నాల నిఘంటువు ఎంట్రీ</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> చిహ్నాల నిఘంటువు ఎంట్రీలు</item>
+    </plurals>
+    <plurals name="item_file_count_braille_dictionary">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> బ్రెయిలీ నిఘంటువు ఎంట్రీ</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> బ్రెయిలీ నిఘంటువు ఎంట్రీలు</item>
+    </plurals>
+    <plurals name="item_file_count_voice_commands">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> అనుకూల వాయిస్ కమాండ్</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> అనుకూల వాయిస్ కమాండ్‌లు</item>
+    </plurals>
+</resources>

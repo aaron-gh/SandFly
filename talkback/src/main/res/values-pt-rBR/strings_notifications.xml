@@ -398,4 +398,12 @@
         <item>@string/notification_shake_3</item>
     </string-array>
     <string name="notification_clock_voice_notifications">Voz das notificações</string>
+    <string name="notification_exact_alarms_title">Ativar Alarmes e lembretes</string>
+    <string name="shortcut_toggle_time_announcements">Anúncios de hora ativados ou desativados</string>
+    <string name="notification_clock_now_on">Anúncios de hora ativados</string>
+    <string name="notification_clock_now_off">Anúncios de hora desativados</string>
+    <plurals name="notification_clock_battery">
+        <item quantity="one"><xliff:g id="percent" example="1">%d</xliff:g> por cento</item>
+        <item quantity="other"><xliff:g id="percent" example="76">%d</xliff:g> por cento</item>
+    </plurals>
 </resources>

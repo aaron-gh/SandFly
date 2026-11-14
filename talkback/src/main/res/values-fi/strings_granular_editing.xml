@@ -46,4 +46,17 @@
     <string name="granular_editing_not_saved">Ei tallennettu: tekstikenttä on poistunut. Teksti on kopioitu.</string>
     <string name="granular_editing_no_text">Ei muokattavaa tekstiä</string>
     <string name="granular_editing_password">Ei saatavilla salasanakentissä</string>
+    <plurals name="granular_editing_spaces">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> välilyönti</item>
+        <item quantity="other"><xliff:g id="count" example="1">%d</xliff:g> välilyöntiä</item>
+    </plurals>
+    <plurals name="granular_editing_new_lines">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> rivinvaihto</item>
+        <item quantity="other"><xliff:g id="count" example="1">%d</xliff:g> rivinvaihtoa</item>
+    </plurals>
+    <plurals name="granular_editing_tabs">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> sarkain</item>
+        <item quantity="other"><xliff:g id="count" example="1">%d</xliff:g> sarkainta</item>
+    </plurals>
+    <string name="granular_editing_blank_line">Tyhjä rivi</string>
 </resources>

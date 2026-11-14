@@ -2025,4 +2025,142 @@
     <string name="value_keep_models_5">၅ မိနစ်</string>
     <string name="value_keep_models_15">၁၅ မိနစ်</string>
     <string name="value_keep_models_30">၃၀ မိနစ်</string>
+    <string name="title_pref_speech_equalizer_save_preset">ကြိုတင်သတ်မှတ်ချက်အဖြစ် သိမ်းရန်</string>
+    <string name="title_pref_speech_equalizer_saved_presets">သိမ်းထားသော ကြိုတင်သတ်မှတ်ချက်များ</string>
+    <string name="speech_equalizer_preset_name">နာမည်</string>
+    <string name="speech_equalizer_preset_name_taken"><xliff:g id="name" example="Podcast">%1$s</xliff:g> အမည်ဖြင့် ကြိုတင်သတ်မှတ်ချက် ရှိပြီးသား ဖြစ်သည်</string>
+    <string name="speech_equalizer_presets_full">ကြိုတင်သတ်မှတ်ချက် ထပ်မသိမ်းနိုင်တော့ပါ။ တစ်ခုကို ဖျက်ပြီးမှ အခြားတစ်ခု သိမ်းပါ။</string>
+    <string name="speech_equalizer_preset_saved"><xliff:g id="name" example="Podcast">%1$s</xliff:g> သိမ်းပြီး</string>
+    <string name="speech_equalizer_preset_rename">အမည်ပြောင်းပါ</string>
+    <string name="speech_equalizer_preset_delete">ဖျက်ပါ</string>
+    <string name="speech_equalizer_preset_delete_confirm"><xliff:g id="name" example="Podcast">%1$s</xliff:g> ကို ဖျက်မလား။</string>
+    <string name="speech_equalizer_preset_deleted"><xliff:g id="name" example="Podcast">%1$s</xliff:g> ဖျက်ပြီး</string>
+    <string name="title_pref_emoji_voice">အီမိုဂျီ အသံ</string>
+    <string name="value_emoji_voice_same">စကားပြောနှင့် တူညီ</string>
+    <string name="title_pref_emoji_rate">အီမိုဂျီ စကားပြောနှုန်း</string>
+    <string name="title_pref_line_breaks_as_spaces">လိုင်းခွဲများကို နေရာလွတ်အဖြစ် ဖတ်ရန်</string>
+    <string name="title_pref_language_voices">ဘာသာစကားအလိုက် အသံများ</string>
+    <string name="title_pref_identify_languages_from_words">စကားလုံးများမှ ဘာသာစကား ခွဲခြားရန်</string>
+    <string name="title_pref_add_language">ဘာသာစကား ထည့်ရန်</string>
+    <string name="title_pref_remove_language">ဘာသာစကား ဖယ်ရှားရန်</string>
+    <string name="title_pref_script_language">%1$s အက္ခရာစနစ်</string>
+    <string name="title_pref_screen_on_notification_count">အကြောင်းကြားချက် အရေအတွက်</string>
+    <plurals name="template_screen_on_notification_count">
+        <item quantity="other">အကြောင်းကြားချက် <xliff:g id="count" example="1">%d</xliff:g> ခု</item>
+    </plurals>
+    <string name="title_pref_phonetic_letters_review">ပြန်စစ်ရာတွင် စာလုံးများကို အသံထွက်အတိုင်း ပြောရန်</string>
+    <string name="title_pref_phonetic_letters_typing">စာရိုက်ရာတွင် စာလုံးများကို အသံထွက်အတိုင်း ပြောရန်</string>
+    <string name="title_pref_emoji_suffix">အီမိုဂျီအမည်များနောက်တွင် \"အီမိုဂျီ\" ဟု ပြောရန်</string>
+    <string name="overview_shizuku_not_running">Shizuku မလုပ်ဆောင်နေပါ</string>
+    <string name="overview_shizuku_not_allowed">Shizuku က SandFly ကို ခွင့်မပြုပါ</string>
+    <string name="overview_no_older_app">ပိုဟောင်းသော အက်ပ် မရှိပါ</string>
+    <string name="overview_no_newer_app">ပိုသစ်သော အက်ပ် မရှိပါ</string>
+    <string name="stream_volume_needs_access">ဤအသံအတိုးအကျယ်ကို ပြောင်းရန် “မနှောင့်ယှက်ရ” ခွင့်ပြုချက်ကို ပေးပါ။</string>
+    <string name="corner_gestures_title">ထောင့်များ</string>
+    <string name="shortcut_move_to_item_below">အောက်ရှိ အရာသို့ ရွှေ့ရန်</string>
+    <string name="shortcut_move_to_item_above">အပေါ်ရှိ အရာသို့ ရွှေ့ရန်</string>
+    <string name="shortcut_older_app">ပိုဟောင်းသော အက်ပ်</string>
+    <string name="shortcut_newer_app">ပိုသစ်သော အက်ပ်</string>
+    <string name="shortcut_answer_call">ဖုန်းကိုင်ရန်</string>
+    <string name="answer_call_no_call">ဝင်လာသော ဖုန်းခေါ်ဆိုမှု မရှိပါ</string>
+    <string name="answer_call_permission">ဖုန်းကိုင်ရန် ခွင့်ပြုချက် လိုအပ်သည်</string>
+    <string name="shortcut_switch_keyboard">ကီးဘုတ် ပြောင်းရန်</string>
+    <string name="switch_keyboard_none">အခြား ကီးဘုတ် မဖွင့်ထားပါ</string>
+    <string name="switch_keyboard_failed">ကီးဘုတ် မပြောင်းရပါ</string>
+    <string name="clipboard_history_hint">ရွေးရန် အပေါ် သို့မဟုတ် အောက်သို့ ပွတ်ဆွဲပြီး ကူးထည့်ရန် နှစ်ချက်တို့ပါ</string>
+    <string name="title_speech_history">စကားပြော မှတ်တမ်း</string>
+    <string name="speech_history_empty">စကားပြော မရှိပါ</string>
+    <string name="speech_history_clear">မှတ်တမ်း ရှင်းရန်</string>
+    <string name="title_pref_shortcut_corner_top_left_tap">ဘယ်ဘက်အပေါ်ထောင့်ကို တစ်ချက်တို့ရန်</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap">ဘယ်ဘက်အပေါ်ထောင့်ကို နှစ်ချက်တို့ရန်</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap">ဘယ်ဘက်အပေါ်ထောင့်ကို သုံးချက်တို့ရန်</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap_hold">ဘယ်ဘက်အပေါ်ထောင့်ကို နှစ်ချက်တို့ပြီး ဖိထားရန်</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap_hold">ဘယ်ဘက်အပေါ်ထောင့်ကို သုံးချက်တို့ပြီး ဖိထားရန်</string>
+    <string name="title_pref_shortcut_corner_top_right_tap">ညာဘက်အပေါ်ထောင့်ကို တစ်ချက်တို့ရန်</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap">ညာဘက်အပေါ်ထောင့်ကို နှစ်ချက်တို့ရန်</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap">ညာဘက်အပေါ်ထောင့်ကို သုံးချက်တို့ရန်</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap_hold">ညာဘက်အပေါ်ထောင့်ကို နှစ်ချက်တို့ပြီး ဖိထားရန်</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap_hold">ညာဘက်အပေါ်ထောင့်ကို သုံးချက်တို့ပြီး ဖိထားရန်</string>
+    <string name="title_pref_shortcut_corner_bottom_left_tap">ဘယ်ဘက်အောက်ထောင့်ကို တစ်ချက်တို့ရန်</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap">ဘယ်ဘက်အောက်ထောင့်ကို နှစ်ချက်တို့ရန်</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap">ဘယ်ဘက်အောက်ထောင့်ကို သုံးချက်တို့ရန်</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap_hold">ဘယ်ဘက်အောက်ထောင့်ကို နှစ်ချက်တို့ပြီး ဖိထားရန်</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap_hold">ဘယ်ဘက်အောက်ထောင့်ကို သုံးချက်တို့ပြီး ဖိထားရန်</string>
+    <string name="title_pref_shortcut_corner_bottom_right_tap">ညာဘက်အောက်ထောင့်ကို တစ်ချက်တို့ရန်</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap">ညာဘက်အောက်ထောင့်ကို နှစ်ချက်တို့ရန်</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap">ညာဘက်အောက်ထောင့်ကို သုံးချက်တို့ရန်</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap_hold">ညာဘက်အောက်ထောင့်ကို နှစ်ချက်တို့ပြီး ဖိထားရန်</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap_hold">ညာဘက်အောက်ထောင့်ကို သုံးချက်တို့ပြီး ဖိထားရန်</string>
+    <string name="title_pref_swipe_start_time">လက်ဟန် စတင်ချိန်</string>
+    <string name="title_pref_swipes_before_lift">မြှောက်မတင် ပွတ်ဆွဲမှုကို သိရှိရန်</string>
+    <string name="summary_pref_swipes_before_lift">ရှေ့နောက်နှင့် ထောင့်ချိုး လက်ဟန်များကို ပိတ်သည်။</string>
+    <string name="title_pref_corner_size_mm">ထောင့် အရွယ်အစား</string>
+    <string name="value_corner_size_edge_width">အနား အကျယ်နှင့် တူညီ</string>
+    <string name="title_pref_corner_tap_time_ms">ထောင့်တို့ချိန် ကန့်သတ်ချက်</string>
+    <string name="value_corner_tap_time_system">စနစ် ပုံသေ</string>
+    <string name="title_pref_edge_speak_commands">ကလစ်တိုင်းတွင် ကွန်မန်း ပြောရန်</string>
+    <string-array name="pref_volume_change_feedback_entries">
+        <item>@string/volume_change_feedback_off</item>
+        <item>@string/volume_change_feedback_tone</item>
+        <item>@string/volume_change_feedback_spoken</item>
+        <item>@string/volume_change_feedback_tone_and_spoken</item>
+    </string-array>
+    <string name="title_pref_volume_change_tone_during_media">မီဒီယာဖွင့်နေစဉ် အသံတိတ်ရန်</string>
+    <string name="title_pref_volume_change_speech_during_media">မီဒီယာဖွင့်နေစဉ် စကားပြောကို ပိတ်ရန်</string>
+    <string name="title_pref_volume_change_interrupts_speech">အသံအတိုးအကျယ်ကို ကြေညာရန် စကားပြောကို ဖြတ်တောက်ရန်</string>
+    <string name="title_pref_volume_keys_speech_volume_while_speaking">စကားပြောနေစဉ် အသံအတိုးအကျယ်ခလုတ်များဖြင့် စကားပြောသံကို ပြောင်းရန်</string>
+    <string name="title_pref_double_tap_moves_cursor">နှစ်ချက်တို့လျှင် ကာဆာကို အစ သို့မဟုတ် အဆုံးသို့ ရွှေ့ရန်</string>
+    <string name="title_pref_scroll_ahead">နောက်အရာသို့ ကြိုတင်လှိမ့်ရန်</string>
+    <string name="title_pref_speak_while_scrolling">လှိမ့်နေစဉ် နောက်အရာကို ပြောရန်</string>
+    <string-array name="pref_text_entities_entries">
+    <item>@string/text_entity_web</item>
+    <item>@string/text_entity_email</item>
+    <item>@string/text_entity_phone</item>
+    <item>@string/text_entity_code</item>
+  </string-array>
+    <string name="value_keep_models_until_stopped">SandFly ရပ်သည်အထိ</string>
+    <string name="title_pref_model_download_server">မော်ဒယ် ဒေါင်းလုဒ် ဆာဗာ</string>
+    <string name="title_pref_settings_profiles">ဆက်တင်ပရိုဖိုင်များ</string>
+    <string name="title_pref_new_settings_profile">ဆက်တင်ပရိုဖိုင် အသစ်</string>
+    <string name="settings_profile_new_name">ပရိုဖိုင် <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="settings_profile_name_taken"><xliff:g id="name" example="Demo">%1$s</xliff:g> အမည်ဖြင့် ဆက်တင်ပရိုဖိုင် ရှိပြီးသား ဖြစ်သည်</string>
+    <string name="settings_profile_in_use">အသုံးပြုနေသည်</string>
+    <string name="settings_profile_menu_item_in_use"><xliff:g id="name" example="Demo">%1$s</xliff:g>၊ အသုံးပြုနေသည်</string>
+    <string name="settings_profile_none">ဆက်တင်ပရိုဖိုင် မရှိပါ</string>
+    <string name="settings_profile_use_now">ယခု သုံးရန်</string>
+    <string name="settings_profile_stop_using">သုံးခြင်း ရပ်ရန်</string>
+    <string name="settings_profile_change_settings">ဆက်တင်များ ပြောင်းရန်</string>
+    <string name="settings_profile_editing">ပြောင်းလဲမှုများသည် <xliff:g id="name" example="Messaging">%1$s</xliff:g> သို့ သွားသည်</string>
+    <string name="settings_profile_edit_saved">ပြောင်းလဲမှုများကို <xliff:g id="name" example="Messaging">%1$s</xliff:g> တွင် သိမ်းပြီး</string>
+    <string name="settings_profile_use_automatically">အလိုအလျောက် သုံးရန်</string>
+    <string name="settings_profile_web">ဝဘ်အကြောင်းအရာ</string>
+    <string name="settings_profile_reading">ဆက်တိုက်ဖတ်ခြင်း</string>
+    <string name="settings_profile_text_editing">စာသား တည်းဖြတ်ခြင်း</string>
+    <string name="settings_profile_apps">အက်ပ်များ</string>
+    <string name="settings_profile_add_app">အက်ပ် ထည့်ရန်</string>
+    <string name="settings_profile_settings">ဤပရိုဖိုင်ရှိ ဆက်တင်များ</string>
+    <string name="settings_profile_no_settings">မရှိ</string>
+    <string name="settings_profile_remove_confirm"><xliff:g id="name" example="Messaging">%2$s</xliff:g> မှ <xliff:g id="item" example="Speech rate">%1$s</xliff:g> ကို ဖယ်ရှားမလား။</string>
+    <string name="settings_profile_not_saved">ဆက်တင်ပရိုဖိုင်ကို မသိမ်းနိုင်ပါ</string>
+    <string name="settings_profile_in_use_announcement"><xliff:g id="name" example="Demo">%1$s</xliff:g> ပရိုဖိုင်</string>
+    <string name="settings_profile_not_changed">ဆက်တင်ပရိုဖိုင် မပြောင်းပါ</string>
+    <string name="title_settings_profile">ဆက်တင်ပရိုဖိုင်</string>
+    <string name="shortcut_settings_profiles">ဆက်တင်ပရိုဖိုင် ရွေးရန်</string>
+    <string name="shortcut_next_settings_profile">နောက် ဆက်တင်ပရိုဖိုင်</string>
+    <string name="shortcut_previous_settings_profile">ယခင် ဆက်တင်ပရိုဖိုင်</string>
+    <string name="title_copy_text_from_screen">ဖန်သားပြင်မှ စာသား မိတ္တူကူးရန်</string>
+    <string name="granularity_label">အသေးစိတ်အဆင့်</string>
+    <string name="granularity_characters">အက္ခရာများ</string>
+    <string name="granularity_words">စကားလုံးများ</string>
+    <string name="granularity_paragraphs">စာပိုဒ်များ</string>
+    <string name="button_select_all">အားလုံး ရွေးရန်</string>
+    <string name="no_text_selected">စာသား မရွေးထားပါ</string>
+    <string name="no_text_on_screen">မျက်နှာပြင်ပေါ်တွင် စာသား မတွေ့ပါ</string>
+    <string name="title_select_last_spoken_phrase_word_by_word">နောက်ဆုံးပြောခဲ့သော စကားရပ်ကို စကားလုံးတစ်လုံးချင်း ရွေးရန်</string>
+    <string name="no_words_selected">စကားလုံး မရွေးထားပါ</string>
+    <string name="no_phrase_to_select">ရွေးရန် စကားရပ် မရှိပါ</string>
+    <string name="word_selection_list_cut_off">စာရင်းကို အရာ <xliff:g id="count" example="1000">%1$d</xliff:g> ခုတွင် ဖြတ်ထားသည်</string>
+    <plurals name="word_selection_copied">
+        <item quantity="other">အရာ <xliff:g id="count" example="1">%1$d</xliff:g> ခု မိတ္တူကူးပြီး</item>
+    </plurals>
 </resources>

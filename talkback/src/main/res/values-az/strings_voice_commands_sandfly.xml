@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_voice_commands">Səsli əmrlər</string>
+    <string name="title_pref_voice_commands_ai">Səsli əmrləri AI ilə anlayın</string>
+    <string name="voice_commands_custom">Fərdi səsli əmrlər</string>
+    <string name="voice_command_add">Səsli əmr əlavə edin</string>
+    <string name="voice_command_phrase">İfadə</string>
+    <string name="voice_command_change_phrase">İfadəni dəyişin</string>
+    <string name="voice_command_change_command">Əmri dəyişin</string>
+    <string name="voice_command_delete_confirm"><xliff:g id="phrase" example="Good morning">%1$s</xliff:g> silinsin?</string>
+    <string name="voice_command_phrase_exists"><xliff:g id="phrase" example="Good morning">%1$s</xliff:g> artıq səsli əmrdir</string>
+    <string name="voice_commands_not_understood">Anlaşılmadı: <xliff:g id="text" example="open the door">%1$s</xliff:g></string>
+    <string name="voice_commands_not_available">Əlçatan deyil: <xliff:g id="name" example="Morning macro">%1$s</xliff:g></string>
+    <string name="voice_commands_not_found">Tapılmadı: <xliff:g id="label" example="Settings">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app"><xliff:g id="name" example="Signal">%1$s</xliff:g> adlı tətbiq yoxdur</string>
+    <string name="voice_commands_no_app_for_action">Bu əməliyyat üçün tətbiq yoxdur</string>
+    <string name="voice_commands_calling">Zəng edilir: <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_call_permission">Telefon zənglərinə icazə verin, sonra əmri yenidən deyin.</string>
+    <string name="voice_commands_contacts_permission">Kontaktlara girişə icazə verin, sonra əmri yenidən deyin.</string>
+    <string name="voice_commands_no_contact"><xliff:g id="name" example="Sam">%1$s</xliff:g> adlı kontakt yoxdur</string>
+    <string name="voice_commands_contacts_several"><xliff:g id="name" example="Sam">%1$s</xliff:g> adlı birdən çox kontakt var: <xliff:g id="names" example="Sam Jones, Sam Smith">%2$s</xliff:g></string>
+    <string name="voice_commands_message_text">Mesaj alıcısı: <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_message_confirm"><xliff:g id="name" example="Sam">%1$s</xliff:g> şəxsinə göndərilsin: <xliff:g id="text" example="I am on my way">%2$s</xliff:g>?</string>
+    <string name="voice_commands_message_confirm_result"><xliff:g id="name" example="Sam">%1$s</xliff:g> şəxsinə göndərilsin?</string>
+    <string name="voice_commands_message_not_sent">Mesaj göndərilmədi</string>
+    <string name="voice_commands_send_pressed">Göndər düyməsi basıldı</string>
+    <string name="voice_commands_send_button">Göndər</string>
+    <string name="voice_commands_no_description">Təsvir alınmadı</string>
+    <string name="voice_commands_copied">Kopyalandı</string>
+    <string-array name="voice_commands_chain_words">
+        <item>və sonra</item>
+        <item>sonra</item>
+        <item>ondan sonra</item>
+        <item>daha sonra</item>
+    </string-array>
+    <string-array name="voice_commands_and_words">
+        <item>və</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_start">
+        <item>xahiş edirəm</item>
+        <item>zəhmət olmasa</item>
+        <item>indi</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_end">
+        <item>xahiş edirəm</item>
+        <item>zəhmət olmasa</item>
+        <item>mənim üçün</item>
+        <item>indi</item>
+    </string-array>
+    <string-array name="voice_commands_cancel_words">
+        <item>dayan</item>
+        <item>dayandır</item>
+        <item>ləğv et</item>
+        <item>çıx</item>
+        <item>boş ver</item>
+        <item>vaz keç</item>
+        <item>sus</item>
+    </string-array>
+    <string-array name="voice_commands_yes">
+        <item>bəli</item>
+        <item>hə</item>
+        <item>yaxşı</item>
+        <item>oldu</item>
+        <item>göndər</item>
+        <item>tamam</item>
+        <item>əlbəttə</item>
+        <item>ok</item>
+    </string-array>
+    <string-array name="voice_commands_sms_names">
+        <item>SMS</item>
+        <item>mətn mesajı</item>
+        <item>qısa mesaj</item>
+        <item>mesaj</item>
+        <item>mesajlar</item>
+    </string-array>
+    <string-array name="voice_commands_send_image_description">
+        <item>{who} şəxsinə [bu] şəklin təsvirini göndər</item>
+        <item>{who} şəxsinə [bu] fotonun təsvirini göndər</item>
+        <item>şəkil təsvirini {who} şəxsinə göndər</item>
+        <item>foto təsvirini {who} şəxsinə göndər</item>
+    </string-array>
+    <string-array name="voice_commands_send_screen_description">
+        <item>{who} şəxsinə ekranın təsvirini göndər</item>
+        <item>ekran təsvirini {who} şəxsinə göndər</item>
+    </string-array>
+    <string-array name="voice_commands_send_previous">
+        <item>bunu {who} şəxsinə {app} ilə göndər</item>
+        <item>bunu {who} şəxsinə göndər</item>
+        <item>onu {who} şəxsinə göndər</item>
+        <item>təsviri {who} şəxsinə göndər</item>
+        <item>bunu {who} ilə paylaş</item>
+    </string-array>
+    <string-array name="voice_commands_message">
+        <item>{who} şəxsinə {app} ilə {text} deyən mesaj göndər</item>
+        <item>{who} şəxsinə {app} ilə mesaj göndər {text}</item>
+        <item>{who} şəxsinə {text} deyən mesaj göndər</item>
+        <item>{who} şəxsinə mesaj göndər {text}</item>
+        <item>{whoandtext} deyə mesaj göndər</item>
+        <item>{who} şəxsinə {app} mesajı göndər {text}</item>
+        <item>{who} şəxsinə {app} mesajı göndər</item>
+        <item>{who} şəxsinə {app} ilə {text} yaz</item>
+        <item>{who} şəxsinə {text} yaz</item>
+        <item>{who} şəxsinə {app} ilə de {text}</item>
+        <item>{whoandtext} yaz</item>
+        <item>{whoandtext} mesaj yaz</item>
+    </string-array>
+    <string-array name="voice_commands_call">
+        <item>{who} şəxsinə zəng et</item>
+        <item>{who} nömrəsinə zəng et</item>
+        <item>{who} zəng et</item>
+        <item>{who} nömrəsini yığ</item>
+    </string-array>
+    <string-array name="voice_commands_describe_screen">
+        <item>ekranı təsvir et</item>
+        <item>ekranda nə var</item>
+        <item>ekranımda nə var</item>
+        <item>ekranda olanı təsvir et</item>
+    </string-array>
+    <string-array name="voice_commands_describe_image">
+        <item>[bu] şəkli təsvir et</item>
+        <item>[bu] fotonu təsvir et</item>
+        <item>şəkildə nə var</item>
+        <item>fotoda nə var</item>
+    </string-array>
+    <string-array name="voice_commands_copy_result">
+        <item>kopyala</item>
+        <item>bunu kopyala</item>
+        <item>təsviri kopyala</item>
+        <item>indicə dediyini kopyala</item>
+        <item>son oxunan ifadəni kopyala</item>
+        <item>son deyiləni kopyala</item>
+    </string-array>
+    <string-array name="voice_commands_wait">
+        <item>{n} saniyə gözlə</item>
+        <item>bir saniyə gözlə</item>
+        <item>gözlə</item>
+    </string-array>
+    <string-array name="voice_commands_type_text">
+        <item>{text} yaz</item>
+        <item>{text} daxil et</item>
+        <item>{text} yığ</item>
+    </string-array>
+    <string-array name="voice_commands_run">
+        <item>{command} makrosunu işə sal</item>
+        <item>{command} əmrini işə sal</item>
+        <item>{command} işə sal</item>
+        <item>{command} et</item>
+    </string-array>
+    <string-array name="voice_commands_open">
+        <item>{app} tətbiqini aç</item>
+        <item>{app} aç</item>
+        <item>{app} tətbiqini işə sal</item>
+        <item>{app} başlat</item>
+        <item>{app} tətbiqinə keç</item>
+    </string-array>
+    <string-array name="voice_commands_tap">
+        <item>{label} elementinə iki dəfə toxun</item>
+        <item>{label} elementinə toxun</item>
+        <item>{label} elementinə klik et</item>
+        <item>{label} elementini aktiv et</item>
+        <item>{label} elementini seç</item>
+        <item>{label} bas</item>
+    </string-array>
+</resources>

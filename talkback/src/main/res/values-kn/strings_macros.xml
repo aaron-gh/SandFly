@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_macros">ಮ್ಯಾಕ್ರೋಗಳು</string>
+    <string name="shortcut_stop_macro">ಮ್ಯಾಕ್ರೋ ನಿಲ್ಲಿಸಿ</string>
+    <string name="macro_add">ಮ್ಯಾಕ್ರೋ ಸೇರಿಸಿ</string>
+    <string name="macro_run_now">ಈಗ ರನ್ ಮಾಡಿ</string>
+    <string name="macro_add_step">ಹಂತ ಸೇರಿಸಿ</string>
+    <string name="macro_add_at_end">ಕೊನೆಯಲ್ಲಿ</string>
+    <string name="macro_add_at_start">ಆರಂಭದಲ್ಲಿ</string>
+    <string name="macro_add_after">ಹಂತ <xliff:g id="step" example="2">%1$d</xliff:g> ನಂತರ: <xliff:g id="name" example="If App in front: Chrome">%2$s</xliff:g></string>
+    <string name="macro_steps">ಹಂತಗಳು</string>
+    <string name="macro_no_steps">ಹಂತಗಳಿಲ್ಲ</string>
+    <string name="macro_delete">ಮ್ಯಾಕ್ರೋ ಅಳಿಸಿ</string>
+    <string name="macro_delete_confirm"><xliff:g id="name" example="Send message">%1$s</xliff:g> ಅಳಿಸಬೇಕೇ?</string>
+    <string name="macro_step_command">ಆಜ್ಞೆಯನ್ನು ರನ್ ಮಾಡಿ</string>
+    <string name="macro_step_wait">ಕಾಯಿರಿ</string>
+    <string name="macro_step_tap">ಐಟಂ ಟ್ಯಾಪ್ ಮಾಡಿ</string>
+    <string name="macro_step_focus">ಐಟಂಗೆ ಫೋಕಸ್ ಮಾಡಿ</string>
+    <string name="macro_step_speak_item">ಐಟಂ ಹೇಳಿ</string>
+    <string name="macro_step_speak_text">ಪಠ್ಯ ಹೇಳಿ</string>
+    <string name="macro_step_type">ಪಠ್ಯ ಟೈಪ್ ಮಾಡಿ</string>
+    <string name="macro_step_tap_value"><xliff:g id="label" example="Send">%1$s</xliff:g> ಟ್ಯಾಪ್ ಮಾಡಿ</string>
+    <string name="macro_step_focus_value"><xliff:g id="label" example="Send">%1$s</xliff:g> ಗೆ ಫೋಕಸ್ ಮಾಡಿ</string>
+    <string name="macro_step_speak_item_value"><xliff:g id="label" example="Send">%1$s</xliff:g> ಹೇಳಿ</string>
+    <string name="macro_step_speak_text_value"><xliff:g id="text" example="Done">%1$s</xliff:g> ಹೇಳಿ</string>
+    <string name="macro_step_type_value"><xliff:g id="text" example="On my way">%1$s</xliff:g> ಟೈಪ್ ಮಾಡಿ</string>
+    <string name="macro_step_replace_value">ಪಠ್ಯವನ್ನು <xliff:g id="text" example="On my way">%1$s</xliff:g> ನಿಂದ ಬದಲಾಯಿಸಿ</string>
+    <plurals name="macro_step_wait_seconds">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ಸೆಕೆಂಡ್ ಕಾಯಿರಿ</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> ಸೆಕೆಂಡ್‌ಗಳು ಕಾಯಿರಿ</item>
+    </plurals>
+    <plurals name="macro_step_wait_milliseconds">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ಮಿಲಿಸೆಕೆಂಡ್ ಕಾಯಿರಿ</item>
+        <item quantity="other"><xliff:g id="count" example="500">%d</xliff:g> ಮಿಲಿಸೆಕೆಂಡ್‌ಗಳು ಕಾಯಿರಿ</item>
+    </plurals>
+    <string name="macro_step_unavailable">ಲಭ್ಯವಿಲ್ಲ</string>
+    <string name="macro_seconds">ಸೆಕೆಂಡ್‌ಗಳು</string>
+    <string name="macro_invalid_seconds"><xliff:g id="max" example="600">%1$d</xliff:g> ವರೆಗಿನ ಸೆಕೆಂಡ್‌ಗಳ ಸಂಖ್ಯೆಯನ್ನು ನಮೂದಿಸಿ</string>
+    <string name="macro_tap_label">ಐಟಂ ಪಠ್ಯ</string>
+    <string name="macro_tap_timeout">ಐಟಂಗಾಗಿ ಕಾಯುವ ಸೆಕೆಂಡ್‌ಗಳು</string>
+    <string name="macro_text">ಪಠ್ಯ</string>
+    <string name="macro_replace_text">ಫೀಲ್ಡ್‌ನಲ್ಲಿರುವ ಪಠ್ಯವನ್ನು ಬದಲಾಯಿಸಿ</string>
+    <string name="macro_item_not_found">ಮ್ಯಾಕ್ರೋ ನಿಂತಿದೆ. ಕಂಡುಬಂದಿಲ್ಲ: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_failed">ಮ್ಯಾಕ್ರೋ ನಿಂತಿದೆ. ವಿಫಲವಾಗಿದೆ: <xliff:g id="step" example="Open Gmail">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until">ಇದಾಗುವವರೆಗೆ ಕಾಯಿರಿ</string>
+    <string name="macro_step_if">ಒಂದು ವೇಳೆ</string>
+    <string name="macro_step_else_if">ಇಲ್ಲದಿದ್ದರೆ, ಒಂದು ವೇಳೆ</string>
+    <string name="macro_step_else">ಇಲ್ಲದಿದ್ದರೆ</string>
+    <string name="macro_step_end_if">ಒಂದು ವೇಳೆ ಮುಕ್ತಾಯ</string>
+    <string name="macro_step_repeat">ಪುನರಾವರ್ತಿಸಿ</string>
+    <string name="macro_step_repeat_while">ಇದಿರುವವರೆಗೆ ಪುನರಾವರ್ತಿಸಿ</string>
+    <string name="macro_step_end_repeat">ಪುನರಾವರ್ತನೆ ಮುಕ್ತಾಯ</string>
+    <string name="macro_step_exit_loop">ಲೂಪ್‌ನಿಂದ ಹೊರಬನ್ನಿ</string>
+    <string name="macro_step_if_value">ಒಂದು ವೇಳೆ <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_else_if_value">ಇಲ್ಲದಿದ್ದರೆ, ಒಂದು ವೇಳೆ <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_repeat_while_value"><xliff:g id="condition" example="Item on screen: Load more">%1$s</xliff:g> ಇರುವವರೆಗೆ ಪುನರಾವರ್ತಿಸಿ</string>
+    <string name="macro_step_wait_until_value"><xliff:g id="condition" example="Item on screen: Send">%1$s</xliff:g> ಆಗುವವರೆಗೆ ಕಾಯಿರಿ</string>
+    <plurals name="macro_step_repeat_value">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ಬಾರಿ ಪುನರಾವರ್ತಿಸಿ</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> ಬಾರಿ ಪುನರಾವರ್ತಿಸಿ</item>
+    </plurals>
+    <string name="macro_times">ಬಾರಿ</string>
+    <string name="macro_invalid_times">1 ರಿಂದ <xliff:g id="max" example="1000">%1$d</xliff:g> ರ ವರೆಗಿನ ಸಂಖ್ಯೆಯನ್ನು ನಮೂದಿಸಿ</string>
+    <string name="macro_run_only_when">ಇದ್ದಾಗ ಮಾತ್ರ ರನ್ ಮಾಡಿ</string>
+    <string name="macro_always">ಯಾವಾಗಲೂ</string>
+    <string name="macro_no_tests">ಪರೀಕ್ಷೆಗಳಿಲ್ಲ</string>
+    <string name="macro_add_test">ಪರೀಕ್ಷೆ ಸೇರಿಸಿ</string>
+    <string name="macro_tests">ಪರೀಕ್ಷೆಗಳು</string>
+    <string name="macro_choose_test">ಪರೀಕ್ಷೆ</string>
+    <string name="macro_test_item">ಸ್ಕ್ರೀನ್‌ನಲ್ಲಿರುವ ಐಟಂ</string>
+    <string name="macro_test_focused">ಫೋಕಸ್‌ನಲ್ಲಿರುವ ಐಟಂ</string>
+    <string name="macro_test_app">ಮುಂದಿರುವ ಆ್ಯಪ್</string>
+    <string name="macro_test_keyboard">ಕೀಬೋರ್ಡ್ ತೋರಿಸಲಾಗಿದೆ</string>
+    <string name="macro_test_keyboard_hidden">ಕೀಬೋರ್ಡ್ ಮರೆಮಾಡಲಾಗಿದೆ</string>
+    <string name="macro_test_locked">ಸ್ಕ್ರೀನ್ ಲಾಕ್ ಆಗಿದೆ</string>
+    <string name="macro_test_unlocked">ಸ್ಕ್ರೀನ್ ಅನ್‌ಲಾಕ್ ಆಗಿದೆ</string>
+    <string name="macro_test_item_value">ಸ್ಕ್ರೀನ್‌ನಲ್ಲಿರುವ ಐಟಂ: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_no_item_value">ಸ್ಕ್ರೀನ್‌ನಲ್ಲಿ ಐಟಂ ಇಲ್ಲ: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_focused_value">ಫೋಕಸ್‌ನಲ್ಲಿರುವ ಐಟಂ: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_not_focused_value">ಫೋಕಸ್‌ನಲ್ಲಿಲ್ಲದ ಐಟಂ: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_app_value">ಮುಂದಿರುವ ಆ್ಯಪ್: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_not_app_value">ಮುಂದೆ ಇಲ್ಲದ ಆ್ಯಪ್: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_label_kind"><xliff:g id="label" example="Send">%1$s</xliff:g>, <xliff:g id="kind" example="Clickable">%2$s</xliff:g></string>
+    <string name="macro_join_and"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g> ಮತ್ತು <xliff:g id="second" example="Focused item: Editable">%2$s</xliff:g></string>
+    <string name="macro_join_or"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g>, ಅಥವಾ <xliff:g id="second" example="Screen locked">%2$s</xliff:g></string>
+    <string name="macro_regex">ರೆಗ್ಯುಲರ್ ಎಕ್ಸ್‌ಪ್ರೆಶನ್</string>
+    <string name="macro_invalid_regex">ಬಳಸಬಹುದಾದ ರೆಗ್ಯುಲರ್ ಎಕ್ಸ್‌ಪ್ರೆಶನ್ ಅಲ್ಲ. ಪುನರಾವರ್ತಿತ ಗುಂಪುಗಳಲ್ಲಿ ಪುನರಾವರ್ತನೆ ಅಥವಾ | ಇರಬಾರದು.</string>
+    <string name="macro_match_in">ಇದರಲ್ಲಿ ಹೊಂದಿಸಿ</string>
+    <string name="macro_field_any">ಯಾವುದೇ ಪಠ್ಯ</string>
+    <string name="macro_field_text">ಪಠ್ಯ</string>
+    <string name="macro_field_description">ವಿವರಣೆ</string>
+    <string name="macro_field_hint">ಸುಳಿವು</string>
+    <string name="macro_field_state">ಸ್ಥಿತಿ</string>
+    <string name="macro_field_id">ರಿಸೋರ್ಸ್ ID</string>
+    <string name="macro_field_value"><xliff:g id="label" example="send">%1$s</xliff:g> (<xliff:g id="field" example="Resource ID">%2$s</xliff:g>)</string>
+    <string name="macro_field_regex_value"><xliff:g id="pattern" example="^Reply">%1$s</xliff:g> (<xliff:g id="field" example="Description">%2$s</xliff:g>, ರೆಗ್ಯುಲರ್ ಎಕ್ಸ್‌ಪ್ರೆಶನ್)</string>
+    <string name="macro_regex_value"><xliff:g id="pattern" example="Reply.*Anna">%1$s</xliff:g> (ರೆಗ್ಯುಲರ್ ಎಕ್ಸ್‌ಪ್ರೆಶನ್)</string>
+    <string name="macro_test_label_optional">ಐಟಂ ಪಠ್ಯ (ಐಚ್ಛಿಕ)</string>
+    <string name="macro_item_kind">ಐಟಂ ಪ್ರಕಾರ</string>
+    <string name="macro_kind_any">ಯಾವುದೇ ಪ್ರಕಾರ</string>
+    <string name="macro_kind_clickable">ಕ್ಲಿಕ್ ಮಾಡಬಹುದಾದದ್ದು</string>
+    <string name="macro_kind_long_clickable">ದೀರ್ಘವಾಗಿ ಕ್ಲಿಕ್ ಮಾಡಬಹುದಾದದ್ದು</string>
+    <string name="macro_kind_editable">ಎಡಿಟ್ ಮಾಡಬಹುದಾದದ್ದು</string>
+    <string name="macro_kind_scrollable">ಸ್ಕ್ರಾಲ್ ಮಾಡಬಹುದಾದದ್ದು</string>
+    <string name="macro_kind_adjustable">ಹೊಂದಿಸಬಹುದಾದದ್ದು</string>
+    <string name="macro_kind_checkable">ಟಿಕ್ ಮಾಡಬಹುದಾದದ್ದು</string>
+    <string name="macro_kind_checked">ಟಿಕ್ ಮಾಡಲಾಗಿದೆ</string>
+    <string name="macro_kind_selected">ಆಯ್ಕೆ ಮಾಡಲಾಗಿದೆ</string>
+    <string name="macro_kind_heading">ಶೀರ್ಷಿಕೆ</string>
+    <string name="macro_kind_enabled">ಸಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ</string>
+    <string name="macro_change_to">ಇದಕ್ಕೆ ಬದಲಾಯಿಸಿ: <xliff:g id="test" example="Keyboard hidden">%1$s</xliff:g></string>
+    <string name="macro_join_with_and">ಮತ್ತು ಜೊತೆ ಸೇರಿಸಿ</string>
+    <string name="macro_join_with_or">ಅಥವಾ ಜೊತೆ ಸೇರಿಸಿ</string>
+    <string name="macro_clause_and">ಮತ್ತು <xliff:g id="test" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_clause_or">ಅಥವಾ <xliff:g id="test" example="Screen locked">%1$s</xliff:g></string>
+    <string name="macro_wait_timeout">ಕಾಯುವ ಸೆಕೆಂಡ್‌ಗಳು</string>
+    <string name="macro_add_step_after">ನಂತರ ಹಂತ ಸೇರಿಸಿ</string>
+    <string name="macro_problem">ಹಂತ <xliff:g id="step" example="3">%1$d</xliff:g>: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_problem_no_if">ಒಂದು ವೇಳೆ ಇಲ್ಲದೆ ಇಲ್ಲದಿದ್ದರೆ-ಒಂದು ವೇಳೆ, ಇಲ್ಲದಿದ್ದರೆ ಅಥವಾ ಒಂದು ವೇಳೆ ಮುಕ್ತಾಯ</string>
+    <string name="macro_problem_after_else">ಇಲ್ಲದಿದ್ದರೆ ನಂತರ ಇಲ್ಲದಿದ್ದರೆ-ಒಂದು ವೇಳೆ ಅಥವಾ ಇಲ್ಲದಿದ್ದರೆ</string>
+    <string name="macro_problem_no_repeat">ಪುನರಾವರ್ತಿಸಿ ಇಲ್ಲದೆ ಪುನರಾವರ್ತನೆ ಮುಕ್ತಾಯ</string>
+    <string name="macro_problem_no_end_if">ಒಂದು ವೇಳೆ ಮುಕ್ತಾಯ ಇಲ್ಲದೆ ಒಂದು ವೇಳೆ</string>
+    <string name="macro_problem_no_end_repeat">ಪುನರಾವರ್ತನೆ ಮುಕ್ತಾಯ ಇಲ್ಲದೆ ಪುನರಾವರ್ತಿಸಿ</string>
+    <string name="macro_problem_exit">ಪುನರಾವರ್ತನೆಯ ಹೊರಗೆ ಲೂಪ್‌ನಿಂದ ಹೊರಬನ್ನಿ</string>
+    <string name="macro_stopped_problem">ಮ್ಯಾಕ್ರೋ ನಿಂತಿದೆ. ಹಂತ <xliff:g id="step" example="3">%1$d</xliff:g>: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_stopped_repeats">ಮ್ಯಾಕ್ರೋ ನಿಂತಿದೆ. <xliff:g id="count" example="1000">%1$d</xliff:g> ಬಾರಿ ಪುನರಾವರ್ತನೆಯಾಗಿದೆ: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
+    <string name="macro_stopped_timeout">ಮ್ಯಾಕ್ರೋ ನಿಂತಿದೆ. ಸಮಯ ಮೀರಿದೆ: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
+    <string name="macro_not_met">ಮ್ಯಾಕ್ರೋ ರನ್ ಆಗಿಲ್ಲ. ಇದ್ದಾಗ ಮಾತ್ರ ರನ್ ಮಾಡಿ: ಷರತ್ತು ಪೂರೈಸಿಲ್ಲ</string>
+</resources>

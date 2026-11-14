@@ -46,4 +46,17 @@
     <string name="granular_editing_not_saved">Nicht gespeichert: Das Textfeld ist nicht mehr verfügbar. Der Text wurde kopiert.</string>
     <string name="granular_editing_no_text">Kein Text zum Bearbeiten vorhanden</string>
     <string name="granular_editing_password">In Passwortfeldern nicht verfügbar</string>
+    <plurals name="granular_editing_spaces">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> Leerzeichen</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> Leerzeichen</item>
+    </plurals>
+    <plurals name="granular_editing_new_lines">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> neue Zeile</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> neue Zeilen</item>
+    </plurals>
+    <plurals name="granular_editing_tabs">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> Tab</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> Tabs</item>
+    </plurals>
+    <string name="granular_editing_blank_line">Leere Zeile</string>
 </resources>

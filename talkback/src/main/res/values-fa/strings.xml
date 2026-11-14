@@ -2026,4 +2026,144 @@
     <string name="value_keep_models_5">۵ دقیقه</string>
     <string name="value_keep_models_15">۱۵ دقیقه</string>
     <string name="value_keep_models_30">۳۰ دقیقه</string>
+    <string name="title_pref_speech_equalizer_save_preset">ذخیره به‌عنوان پیش‌تنظیم</string>
+    <string name="title_pref_speech_equalizer_saved_presets">پیش‌تنظیم‌های ذخیره‌شده</string>
+    <string name="speech_equalizer_preset_name">نام</string>
+    <string name="speech_equalizer_preset_name_taken">پیش‌تنظیمی به نام «<xliff:g id="name" example="Podcast">%1$s</xliff:g>» وجود دارد</string>
+    <string name="speech_equalizer_presets_full">پیش‌تنظیم دیگری نمی‌توان ذخیره کرد. برای ذخیره پیش‌تنظیم دیگر، یکی را حذف کنید.</string>
+    <string name="speech_equalizer_preset_saved">«<xliff:g id="name" example="Podcast">%1$s</xliff:g>» ذخیره شد</string>
+    <string name="speech_equalizer_preset_rename">تغییر نام</string>
+    <string name="speech_equalizer_preset_delete">حذف</string>
+    <string name="speech_equalizer_preset_delete_confirm">«<xliff:g id="name" example="Podcast">%1$s</xliff:g>» حذف شود؟</string>
+    <string name="speech_equalizer_preset_deleted">«<xliff:g id="name" example="Podcast">%1$s</xliff:g>» حذف شد</string>
+    <string name="title_pref_emoji_voice">صدای اموجی</string>
+    <string name="value_emoji_voice_same">همانند گفتار</string>
+    <string name="title_pref_emoji_rate">سرعت گفتار اموجی</string>
+    <string name="title_pref_line_breaks_as_spaces">خواندن خط‌شکن‌ها به‌صورت فاصله</string>
+    <string name="title_pref_language_voices">صدا بر اساس زبان</string>
+    <string name="title_pref_identify_languages_from_words">شناسایی زبان‌ها از روی کلمه‌ها</string>
+    <string name="title_pref_add_language">افزودن زبان</string>
+    <string name="title_pref_remove_language">حذف زبان</string>
+    <string name="title_pref_script_language">خط %1$s</string>
+    <string name="title_pref_screen_on_notification_count">تعداد اعلان‌ها</string>
+    <plurals name="template_screen_on_notification_count">
+        <item quantity="one"><xliff:g id="count" example="6">%d</xliff:g> اعلان</item>
+        <item quantity="other"><xliff:g id="count" example="6">%d</xliff:g> اعلان</item>
+    </plurals>
+    <string name="title_pref_phonetic_letters_review">گفتن حرف‌ها به‌صورت آوایی هنگام مرور</string>
+    <string name="title_pref_phonetic_letters_typing">گفتن حرف‌ها به‌صورت آوایی هنگام تایپ</string>
+    <string name="title_pref_emoji_suffix">گفتن «اموجی» بعد از نام اموجی‌ها</string>
+    <string name="overview_shizuku_not_running">Shizuku در حال اجرا نیست</string>
+    <string name="overview_shizuku_not_allowed">Shizuku به SandFly اجازه نمی‌دهد</string>
+    <string name="overview_no_older_app">برنامه قدیمی‌تری وجود ندارد</string>
+    <string name="overview_no_newer_app">برنامه جدیدتری وجود ندارد</string>
+    <string name="stream_volume_needs_access">برای تغییر این میزان صدا، دسترسی «مزاحم نشوید» را مجاز کنید.</string>
+    <string name="corner_gestures_title">گوشه‌ها</string>
+    <string name="shortcut_move_to_item_below">رفتن به مورد پایین</string>
+    <string name="shortcut_move_to_item_above">رفتن به مورد بالا</string>
+    <string name="shortcut_older_app">برنامه قدیمی‌تر</string>
+    <string name="shortcut_newer_app">برنامه جدیدتر</string>
+    <string name="shortcut_answer_call">پاسخ به تماس</string>
+    <string name="answer_call_no_call">تماس ورودی وجود ندارد</string>
+    <string name="answer_call_permission">برای پاسخ به تماس‌ها مجوز لازم است</string>
+    <string name="shortcut_switch_keyboard">تغییر صفحه‌کلید</string>
+    <string name="switch_keyboard_none">صفحه‌کلید دیگری روشن نیست</string>
+    <string name="switch_keyboard_failed">صفحه‌کلید تغییر نکرد</string>
+    <string name="clipboard_history_hint">برای انتخاب، تند به‌بالا یا به‌پایین بکشید، سپس برای جای‌گذاری دو تک‌ضرب بزنید</string>
+    <string name="title_speech_history">سابقه گفتار</string>
+    <string name="speech_history_empty">گفتاری وجود ندارد</string>
+    <string name="speech_history_clear">پاک کردن سابقه</string>
+    <string name="title_pref_shortcut_corner_top_left_tap">تک‌ضرب زدن روی گوشه بالا سمت چپ</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap">دو تک‌ضرب زدن روی گوشه بالا سمت چپ</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap">سه تک‌ضرب زدن روی گوشه بالا سمت چپ</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap_hold">دو تک‌ضرب زدن و نگه داشتن روی گوشه بالا سمت چپ</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap_hold">سه تک‌ضرب زدن و نگه داشتن روی گوشه بالا سمت چپ</string>
+    <string name="title_pref_shortcut_corner_top_right_tap">تک‌ضرب زدن روی گوشه بالا سمت راست</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap">دو تک‌ضرب زدن روی گوشه بالا سمت راست</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap">سه تک‌ضرب زدن روی گوشه بالا سمت راست</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap_hold">دو تک‌ضرب زدن و نگه داشتن روی گوشه بالا سمت راست</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap_hold">سه تک‌ضرب زدن و نگه داشتن روی گوشه بالا سمت راست</string>
+    <string name="title_pref_shortcut_corner_bottom_left_tap">تک‌ضرب زدن روی گوشه پایین سمت چپ</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap">دو تک‌ضرب زدن روی گوشه پایین سمت چپ</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap">سه تک‌ضرب زدن روی گوشه پایین سمت چپ</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap_hold">دو تک‌ضرب زدن و نگه داشتن روی گوشه پایین سمت چپ</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap_hold">سه تک‌ضرب زدن و نگه داشتن روی گوشه پایین سمت چپ</string>
+    <string name="title_pref_shortcut_corner_bottom_right_tap">تک‌ضرب زدن روی گوشه پایین سمت راست</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap">دو تک‌ضرب زدن روی گوشه پایین سمت راست</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap">سه تک‌ضرب زدن روی گوشه پایین سمت راست</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap_hold">دو تک‌ضرب زدن و نگه داشتن روی گوشه پایین سمت راست</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap_hold">سه تک‌ضرب زدن و نگه داشتن روی گوشه پایین سمت راست</string>
+    <string name="title_pref_swipe_start_time">زمان شروع اشاره</string>
+    <string name="title_pref_swipes_before_lift">تشخیص تند کشیدن‌ها پیش از بلند کردن انگشت</string>
+    <string name="summary_pref_swipes_before_lift">اشاره‌های رفت‌وبرگشتی و زاویه‌ای را خاموش می‌کند.</string>
+    <string name="title_pref_corner_size_mm">اندازه گوشه</string>
+    <string name="value_corner_size_edge_width">همانند پهنای لبه</string>
+    <string name="title_pref_corner_tap_time_ms">محدودیت زمان تک‌ضرب گوشه</string>
+    <string name="value_corner_tap_time_system">پیش‌فرض سیستم</string>
+    <string name="title_pref_edge_speak_commands">گفتن فرمان در هر کلیک</string>
+    <string-array name="pref_volume_change_feedback_entries">
+        <item>@string/volume_change_feedback_off</item>
+        <item>@string/volume_change_feedback_tone</item>
+        <item>@string/volume_change_feedback_spoken</item>
+        <item>@string/volume_change_feedback_tone_and_spoken</item>
+    </string-array>
+    <string name="title_pref_volume_change_tone_during_media">بی‌صدا کردن آهنگ هنگام پخش رسانه</string>
+    <string name="title_pref_volume_change_speech_during_media">بی‌صدا کردن گفتار هنگام پخش رسانه</string>
+    <string name="title_pref_volume_change_interrupts_speech">قطع گفتار برای اعلام میزان صدا</string>
+    <string name="title_pref_volume_keys_speech_volume_while_speaking">کلیدهای میزان صدا هنگام گفتار، میزان صدای گفتار را تغییر می‌دهند</string>
+    <string name="title_pref_double_tap_moves_cursor">دو تک‌ضرب، مکان‌نما را به ابتدا یا انتها می‌برد</string>
+    <string name="title_pref_scroll_ahead">پیمایش پیشاپیش به مورد بعدی</string>
+    <string name="title_pref_speak_while_scrolling">گفتن مورد بعدی هنگام پیمایش</string>
+    <string-array name="pref_text_entities_entries">
+    <item>@string/text_entity_web</item>
+    <item>@string/text_entity_email</item>
+    <item>@string/text_entity_phone</item>
+    <item>@string/text_entity_code</item>
+  </string-array>
+    <string name="value_keep_models_until_stopped">تا زمان توقف SandFly</string>
+    <string name="title_pref_model_download_server">سرور بارگیری مدل</string>
+    <string name="title_pref_settings_profiles">نمایه‌های تنظیمات</string>
+    <string name="title_pref_new_settings_profile">نمایه تنظیمات جدید</string>
+    <string name="settings_profile_new_name">نمایه <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="settings_profile_name_taken">نمایه تنظیماتی به نام «<xliff:g id="name" example="Demo">%1$s</xliff:g>» وجود دارد</string>
+    <string name="settings_profile_in_use">در حال استفاده</string>
+    <string name="settings_profile_menu_item_in_use"><xliff:g id="name" example="Demo">%1$s</xliff:g>، در حال استفاده</string>
+    <string name="settings_profile_none">بدون نمایه تنظیمات</string>
+    <string name="settings_profile_use_now">استفاده از همین حالا</string>
+    <string name="settings_profile_stop_using">توقف استفاده</string>
+    <string name="settings_profile_change_settings">تغییر تنظیمات</string>
+    <string name="settings_profile_editing">تغییرات در «<xliff:g id="name" example="Messaging">%1$s</xliff:g>» ذخیره می‌شود</string>
+    <string name="settings_profile_edit_saved">تغییرات در «<xliff:g id="name" example="Messaging">%1$s</xliff:g>» ذخیره شد</string>
+    <string name="settings_profile_use_automatically">استفاده خودکار</string>
+    <string name="settings_profile_web">محتوای وب</string>
+    <string name="settings_profile_reading">خواندن پیوسته</string>
+    <string name="settings_profile_text_editing">ویرایش نوشتار</string>
+    <string name="settings_profile_apps">برنامه‌ها</string>
+    <string name="settings_profile_add_app">افزودن برنامه</string>
+    <string name="settings_profile_settings">تنظیمات این نمایه</string>
+    <string name="settings_profile_no_settings">هیچ‌کدام</string>
+    <string name="settings_profile_remove_confirm">«<xliff:g id="item" example="Speech rate">%1$s</xliff:g>» از «<xliff:g id="name" example="Messaging">%2$s</xliff:g>» حذف شود؟</string>
+    <string name="settings_profile_not_saved">نمایه تنظیمات ذخیره نشد</string>
+    <string name="settings_profile_in_use_announcement">نمایه <xliff:g id="name" example="Demo">%1$s</xliff:g></string>
+    <string name="settings_profile_not_changed">نمایه تنظیمات تغییر نکرد</string>
+    <string name="title_settings_profile">نمایه تنظیمات</string>
+    <string name="shortcut_settings_profiles">انتخاب نمایه تنظیمات</string>
+    <string name="shortcut_next_settings_profile">نمایه تنظیمات بعدی</string>
+    <string name="shortcut_previous_settings_profile">نمایه تنظیمات قبلی</string>
+    <string name="title_copy_text_from_screen">کپی نوشتار از صفحه</string>
+    <string name="granularity_label">دقت</string>
+    <string name="granularity_characters">نویسه‌ها</string>
+    <string name="granularity_words">کلمه‌ها</string>
+    <string name="granularity_paragraphs">پاراگراف‌ها</string>
+    <string name="button_select_all">انتخاب همه</string>
+    <string name="no_text_selected">نوشتاری انتخاب نشده است</string>
+    <string name="no_text_on_screen">نوشتاری در صفحه پیدا نشد</string>
+    <string name="title_select_last_spoken_phrase_word_by_word">انتخاب آخرین عبارت گفته‌شده کلمه به کلمه</string>
+    <string name="no_words_selected">کلمه‌ای انتخاب نشده است</string>
+    <string name="no_phrase_to_select">عبارتی برای انتخاب وجود ندارد</string>
+    <string name="word_selection_list_cut_off">فهرست در <xliff:g id="count" example="1000">%1$d</xliff:g> مورد قطع شد</string>
+    <plurals name="word_selection_copied">
+        <item quantity="one"><xliff:g id="count" example="5">%1$d</xliff:g> مورد کپی شد</item>
+        <item quantity="other"><xliff:g id="count" example="5">%1$d</xliff:g> مورد کپی شد</item>
+    </plurals>
 </resources>

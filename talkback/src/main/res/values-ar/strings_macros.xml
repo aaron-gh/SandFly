@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_macros">وحدات الماكرو</string>
+    <string name="shortcut_stop_macro">إيقاف الماكرو</string>
+    <string name="macro_add">إضافة ماكرو</string>
+    <string name="macro_run_now">تشغيل الآن</string>
+    <string name="macro_add_step">إضافة خطوة</string>
+    <string name="macro_add_at_end">في النهاية</string>
+    <string name="macro_add_at_start">في البداية</string>
+    <string name="macro_add_after">بعد الخطوة <xliff:g id="step" example="2">%1$d</xliff:g>: <xliff:g id="name" example="If App in front: Chrome">%2$s</xliff:g></string>
+    <string name="macro_steps">الخطوات</string>
+    <string name="macro_no_steps">لا خطوات</string>
+    <string name="macro_delete">حذف الماكرو</string>
+    <string name="macro_delete_confirm">هل تريد حذف <xliff:g id="name" example="Send message">%1$s</xliff:g>؟</string>
+    <string name="macro_step_command">تشغيل أمر</string>
+    <string name="macro_step_wait">انتظار</string>
+    <string name="macro_step_tap">النقر على عنصر</string>
+    <string name="macro_step_focus">التركيز على عنصر</string>
+    <string name="macro_step_speak_item">نطق عنصر</string>
+    <string name="macro_step_speak_text">نطق نص</string>
+    <string name="macro_step_type">كتابة نص</string>
+    <string name="macro_step_tap_value">النقر على <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_focus_value">التركيز على <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_item_value">نطق <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_text_value">نطق <xliff:g id="text" example="Done">%1$s</xliff:g></string>
+    <string name="macro_step_type_value">كتابة <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <string name="macro_step_replace_value">استبدال النص بـ<xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <plurals name="macro_step_wait_seconds">
+        <item quantity="one">انتظار ثانية واحدة</item>
+        <item quantity="two">انتظار ثانيتين</item>
+        <item quantity="few">انتظار <xliff:g id="count" example="2">%d</xliff:g> ثوانٍ</item>
+        <item quantity="many">انتظار <xliff:g id="count" example="2">%d</xliff:g> ثانية</item>
+        <item quantity="other">انتظار <xliff:g id="count" example="2">%d</xliff:g> ثانية</item>
+        <item quantity="zero">انتظار <xliff:g id="count" example="2">%d</xliff:g> ثانية</item>
+    </plurals>
+    <plurals name="macro_step_wait_milliseconds">
+        <item quantity="one">انتظار جزء واحد من الألف من الثانية</item>
+        <item quantity="two">انتظار جزأين من الألف من الثانية</item>
+        <item quantity="few">انتظار <xliff:g id="count" example="500">%d</xliff:g> أجزاء من الألف من الثانية</item>
+        <item quantity="many">انتظار <xliff:g id="count" example="500">%d</xliff:g> جزءًا من الألف من الثانية</item>
+        <item quantity="other">انتظار <xliff:g id="count" example="500">%d</xliff:g> جزء من الألف من الثانية</item>
+        <item quantity="zero">انتظار <xliff:g id="count" example="500">%d</xliff:g> جزء من الألف من الثانية</item>
+    </plurals>
+    <string name="macro_step_unavailable">غير متاح</string>
+    <string name="macro_seconds">الثواني</string>
+    <string name="macro_invalid_seconds">أدخل عدد ثوانٍ لا يزيد على <xliff:g id="max" example="600">%1$d</xliff:g></string>
+    <string name="macro_tap_label">نص العنصر</string>
+    <string name="macro_tap_timeout">ثوانٍ لانتظار العنصر</string>
+    <string name="macro_text">النص</string>
+    <string name="macro_replace_text">استبدال النص في الحقل</string>
+    <string name="macro_item_not_found">توقف الماكرو. لم يتم العثور على: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_failed">توقف الماكرو. فشل: <xliff:g id="step" example="Open Gmail">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until">الانتظار حتى</string>
+    <string name="macro_step_if">إذا</string>
+    <string name="macro_step_else_if">وإلا إذا</string>
+    <string name="macro_step_else">وإلا</string>
+    <string name="macro_step_end_if">نهاية إذا</string>
+    <string name="macro_step_repeat">تكرار</string>
+    <string name="macro_step_repeat_while">التكرار أثناء</string>
+    <string name="macro_step_end_repeat">نهاية التكرار</string>
+    <string name="macro_step_exit_loop">الخروج من الحلقة</string>
+    <string name="macro_step_if_value">إذا <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_else_if_value">وإلا إذا <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_repeat_while_value">التكرار أثناء <xliff:g id="condition" example="Item on screen: Load more">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until_value">الانتظار حتى <xliff:g id="condition" example="Item on screen: Send">%1$s</xliff:g></string>
+    <plurals name="macro_step_repeat_value">
+        <item quantity="one">تكرار مرة واحدة</item>
+        <item quantity="two">تكرار مرتين</item>
+        <item quantity="few">تكرار <xliff:g id="count" example="3">%d</xliff:g> مرات</item>
+        <item quantity="many">تكرار <xliff:g id="count" example="3">%d</xliff:g> مرة</item>
+        <item quantity="other">تكرار <xliff:g id="count" example="3">%d</xliff:g> مرة</item>
+        <item quantity="zero">تكرار <xliff:g id="count" example="3">%d</xliff:g> مرة</item>
+    </plurals>
+    <string name="macro_times">المرات</string>
+    <string name="macro_invalid_times">أدخل رقمًا من 1 إلى <xliff:g id="max" example="1000">%1$d</xliff:g></string>
+    <string name="macro_run_only_when">التشغيل فقط عند</string>
+    <string name="macro_always">دائمًا</string>
+    <string name="macro_no_tests">بلا اختبارات</string>
+    <string name="macro_add_test">إضافة اختبار</string>
+    <string name="macro_tests">الاختبارات</string>
+    <string name="macro_choose_test">اختبار</string>
+    <string name="macro_test_item">عنصر على الشاشة</string>
+    <string name="macro_test_focused">العنصر المركَّز عليه</string>
+    <string name="macro_test_app">التطبيق في المقدمة</string>
+    <string name="macro_test_keyboard">لوحة المفاتيح ظاهرة</string>
+    <string name="macro_test_keyboard_hidden">لوحة المفاتيح مخفية</string>
+    <string name="macro_test_locked">الشاشة مقفلة</string>
+    <string name="macro_test_unlocked">الشاشة غير مقفلة</string>
+    <string name="macro_test_item_value">عنصر على الشاشة: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_no_item_value">لا يوجد عنصر على الشاشة: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_focused_value">العنصر المركَّز عليه: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_not_focused_value">العنصر المركَّز عليه ليس: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_app_value">التطبيق في المقدمة: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_not_app_value">التطبيق ليس في المقدمة: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_label_kind"><xliff:g id="label" example="Send">%1$s</xliff:g>، <xliff:g id="kind" example="Clickable">%2$s</xliff:g></string>
+    <string name="macro_join_and"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g> و<xliff:g id="second" example="Focused item: Editable">%2$s</xliff:g></string>
+    <string name="macro_join_or"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g>، أو <xliff:g id="second" example="Screen locked">%2$s</xliff:g></string>
+    <string name="macro_regex">تعبير نمطي</string>
+    <string name="macro_invalid_regex">ليس تعبيرًا نمطيًا قابلًا للاستخدام. لا يمكن أن تحتوي المجموعات المتكررة على تكرار أو |.</string>
+    <string name="macro_match_in">المطابقة في</string>
+    <string name="macro_field_any">أي نص</string>
+    <string name="macro_field_text">النص</string>
+    <string name="macro_field_description">الوصف</string>
+    <string name="macro_field_hint">التلميح</string>
+    <string name="macro_field_state">الحالة</string>
+    <string name="macro_field_id">معرّف المورد</string>
+    <string name="macro_field_value"><xliff:g id="label" example="send">%1$s</xliff:g> (<xliff:g id="field" example="Resource ID">%2$s</xliff:g>)</string>
+    <string name="macro_field_regex_value"><xliff:g id="pattern" example="^Reply">%1$s</xliff:g> (<xliff:g id="field" example="Description">%2$s</xliff:g>، تعبير نمطي)</string>
+    <string name="macro_regex_value"><xliff:g id="pattern" example="Reply.*Anna">%1$s</xliff:g> (تعبير نمطي)</string>
+    <string name="macro_test_label_optional">نص العنصر (اختياري)</string>
+    <string name="macro_item_kind">نوع العنصر</string>
+    <string name="macro_kind_any">أي نوع</string>
+    <string name="macro_kind_clickable">قابل للنقر</string>
+    <string name="macro_kind_long_clickable">قابل للنقر مع الاستمرار</string>
+    <string name="macro_kind_editable">قابل للتعديل</string>
+    <string name="macro_kind_scrollable">قابل للتمرير</string>
+    <string name="macro_kind_adjustable">قابل للضبط</string>
+    <string name="macro_kind_checkable">قابل للتحديد</string>
+    <string name="macro_kind_checked">محدَّد</string>
+    <string name="macro_kind_selected">مختار</string>
+    <string name="macro_kind_heading">عنوان</string>
+    <string name="macro_kind_enabled">مفعّل</string>
+    <string name="macro_change_to">التغيير إلى: <xliff:g id="test" example="Keyboard hidden">%1$s</xliff:g></string>
+    <string name="macro_join_with_and">الربط بـ\"و\"</string>
+    <string name="macro_join_with_or">الربط بـ\"أو\"</string>
+    <string name="macro_clause_and">و<xliff:g id="test" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_clause_or">أو <xliff:g id="test" example="Screen locked">%1$s</xliff:g></string>
+    <string name="macro_wait_timeout">ثوانٍ للانتظار</string>
+    <string name="macro_add_step_after">إضافة خطوة بعدها</string>
+    <string name="macro_problem">الخطوة <xliff:g id="step" example="3">%1$d</xliff:g>: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_problem_no_if">وإلا إذا أو وإلا أو نهاية إذا بدون إذا</string>
+    <string name="macro_problem_after_else">وإلا إذا أو وإلا بعد وإلا</string>
+    <string name="macro_problem_no_repeat">نهاية التكرار بدون تكرار</string>
+    <string name="macro_problem_no_end_if">إذا بدون نهاية إذا</string>
+    <string name="macro_problem_no_end_repeat">تكرار بدون نهاية التكرار</string>
+    <string name="macro_problem_exit">الخروج من الحلقة خارج التكرار</string>
+    <string name="macro_stopped_problem">توقف الماكرو. الخطوة <xliff:g id="step" example="3">%1$d</xliff:g>: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_stopped_repeats">توقف الماكرو. تكرر <xliff:g id="count" example="1000">%1$d</xliff:g> مرة: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
+    <string name="macro_stopped_timeout">توقف الماكرو. انتهت المهلة: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
+    <string name="macro_not_met">لم يعمل الماكرو. التشغيل فقط عند: غير مستوفى</string>
+</resources>

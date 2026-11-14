@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_voice_commands">Perintah suara</string>
+    <string name="title_pref_voice_commands_ai">Pahami perintah suara dengan AI</string>
+    <string name="voice_commands_custom">Perintah suara kustom</string>
+    <string name="voice_command_add">Tambahkan perintah suara</string>
+    <string name="voice_command_phrase">Frasa</string>
+    <string name="voice_command_change_phrase">Ubah frasa</string>
+    <string name="voice_command_change_command">Ubah perintah</string>
+    <string name="voice_command_delete_confirm">Hapus <xliff:g id="phrase" example="Good morning">%1$s</xliff:g>?</string>
+    <string name="voice_command_phrase_exists"><xliff:g id="phrase" example="Good morning">%1$s</xliff:g> sudah menjadi perintah suara</string>
+    <string name="voice_commands_not_understood">Tidak dipahami: <xliff:g id="text" example="open the door">%1$s</xliff:g></string>
+    <string name="voice_commands_not_available">Tidak tersedia: <xliff:g id="name" example="Morning macro">%1$s</xliff:g></string>
+    <string name="voice_commands_not_found">Tidak ditemukan: <xliff:g id="label" example="Settings">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app">Tidak ada aplikasi bernama <xliff:g id="name" example="Signal">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app_for_action">Tidak ada aplikasi untuk tindakan ini</string>
+    <string name="voice_commands_calling">Menelepon <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_call_permission">Izinkan panggilan telepon, lalu ucapkan perintah lagi.</string>
+    <string name="voice_commands_contacts_permission">Izinkan akses ke kontak, lalu ucapkan perintah lagi.</string>
+    <string name="voice_commands_no_contact">Tidak ada kontak bernama <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_contacts_several">Ada lebih dari satu kontak bernama <xliff:g id="name" example="Sam">%1$s</xliff:g>: <xliff:g id="names" example="Sam Jones, Sam Smith">%2$s</xliff:g></string>
+    <string name="voice_commands_message_text">Pesan untuk <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_message_confirm">Kirim ke <xliff:g id="name" example="Sam">%1$s</xliff:g>: <xliff:g id="text" example="I am on my way">%2$s</xliff:g>?</string>
+    <string name="voice_commands_message_confirm_result">Kirim ke <xliff:g id="name" example="Sam">%1$s</xliff:g>?</string>
+    <string name="voice_commands_message_not_sent">Pesan tidak dikirim</string>
+    <string name="voice_commands_send_pressed">Kirim ditekan</string>
+    <string name="voice_commands_send_button">Kirim</string>
+    <string name="voice_commands_no_description">Deskripsi tidak diterima</string>
+    <string name="voice_commands_copied">Disalin</string>
+    <string-array name="voice_commands_chain_words">
+        <item>lalu</item>
+        <item>setelah itu</item>
+        <item>kemudian</item>
+        <item>sesudah itu</item>
+    </string-array>
+    <string-array name="voice_commands_and_words">
+        <item>dan</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_start">
+        <item>tolong</item>
+        <item>bisakah kamu</item>
+        <item>bisakah Anda</item>
+        <item>maukah kamu</item>
+        <item>maukah Anda</item>
+        <item>saya ingin</item>
+        <item>saya mau</item>
+        <item>sekarang</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_end">
+        <item>tolong</item>
+        <item>untuk saya</item>
+        <item>sekarang</item>
+    </string-array>
+    <string-array name="voice_commands_cancel_words">
+        <item>berhenti</item>
+        <item>stop</item>
+        <item>batal</item>
+        <item>batalkan</item>
+        <item>lupakan</item>
+        <item>sudahlah</item>
+        <item>diam</item>
+    </string-array>
+    <string-array name="voice_commands_yes">
+        <item>ya</item>
+        <item>iya</item>
+        <item>yap</item>
+        <item>kirim</item>
+        <item>kirim saja</item>
+        <item>oke</item>
+        <item>ok</item>
+        <item>baik</item>
+        <item>tentu</item>
+        <item>lakukan</item>
+    </string-array>
+    <string-array name="voice_commands_sms_names">
+        <item>SMS</item>
+        <item>pesan teks</item>
+        <item>teks</item>
+        <item>pesan</item>
+    </string-array>
+    <string-array name="voice_commands_send_image_description">
+        <item>kirim deskripsi gambar ke {who}</item>
+        <item>kirim deskripsi [dari] [gambar|foto] ini ke {who}</item>
+        <item>kirim deskripsi foto ke {who}</item>
+        <item>kirimkan deskripsi gambar ke {who}</item>
+    </string-array>
+    <string-array name="voice_commands_send_screen_description">
+        <item>kirim deskripsi layar ke {who}</item>
+        <item>kirim deskripsi [dari] layar ke {who}</item>
+        <item>kirimkan deskripsi layar ke {who}</item>
+    </string-array>
+    <string-array name="voice_commands_send_previous">
+        <item>kirim ke {who} lewat {app}</item>
+        <item>kirim ke {who} di {app}</item>
+        <item>kirim ke {who}</item>
+        <item>kirim itu ke {who}</item>
+        <item>kirim deskripsinya ke {who}</item>
+        <item>bagikan ke {who}</item>
+    </string-array>
+    <string-array name="voice_commands_message">
+        <item>kirim pesan ke {who} lewat {app} yang berbunyi {text}</item>
+        <item>kirim pesan ke {who} di {app} yang berbunyi {text}</item>
+        <item>kirim pesan ke {who} yang berbunyi {text}</item>
+        <item>kirim pesan ke {who} bahwa {text}</item>
+        <item>kirim pesan ke {whoandtext}</item>
+        <item>kirim pesan {app} ke {who} yang berbunyi {text}</item>
+        <item>kirim pesan {app} ke {who}</item>
+        <item>kirim {who} pesan yang berbunyi {text}</item>
+        <item>kirim pesan ke {who} lewat {app}: {text}</item>
+        <item>kirim pesan ke {who}: {text}</item>
+        <item>pesan {who} lewat {app} {text}</item>
+        <item>pesan {who} {text}</item>
+        <item>SMS {who} {text}</item>
+        <item>beri tahu {who} lewat {app} {text}</item>
+        <item>pesan {whoandtext}</item>
+        <item>kirim SMS ke {whoandtext}</item>
+    </string-array>
+    <string-array name="voice_commands_call">
+        <item>telepon {who}</item>
+        <item>hubungi {who}</item>
+        <item>panggil {who}</item>
+        <item>telepon ke {who}</item>
+        <item>lakukan panggilan ke {who}</item>
+    </string-array>
+    <string-array name="voice_commands_describe_screen">
+        <item>jelaskan layar</item>
+        <item>deskripsikan layar</item>
+        <item>jelaskan apa yang ada di layar</item>
+        <item>apa yang ada di layar</item>
+        <item>apa isi layar</item>
+    </string-array>
+    <string-array name="voice_commands_describe_image">
+        <item>jelaskan [gambar|foto] [ini]</item>
+        <item>deskripsikan [gambar|foto] [ini]</item>
+        <item>apa yang ada di [gambar|foto] [ini]</item>
+        <item>apa isi [gambar|foto] [ini]</item>
+    </string-array>
+    <string-array name="voice_commands_copy_result">
+        <item>salin itu</item>
+        <item>salin</item>
+        <item>salin deskripsinya</item>
+        <item>salin yang baru kamu ucapkan</item>
+        <item>salin frasa terakhir yang diucapkan</item>
+        <item>salin frasa terakhir</item>
+        <item>salin ucapan terakhir</item>
+    </string-array>
+    <string-array name="voice_commands_wait">
+        <item>tunggu {n} detik</item>
+        <item>tunggu sebentar</item>
+        <item>tunggu</item>
+    </string-array>
+    <string-array name="voice_commands_type_text">
+        <item>ketik {text}</item>
+        <item>tulis {text}</item>
+        <item>masukkan {text}</item>
+    </string-array>
+    <string-array name="voice_commands_run">
+        <item>jalankan makro {command}</item>
+        <item>jalankan {command}</item>
+        <item>lakukan {command}</item>
+    </string-array>
+    <string-array name="voice_commands_open">
+        <item>buka {app}</item>
+        <item>jalankan {app}</item>
+        <item>mulai {app}</item>
+        <item>beralih ke {app}</item>
+    </string-array>
+    <string-array name="voice_commands_tap">
+        <item>ketuk dua kali [pada] {label}</item>
+        <item>ketuk [pada] {label}</item>
+        <item>klik [pada] {label}</item>
+        <item>tekan {label}</item>
+        <item>aktifkan {label}</item>
+        <item>pilih {label}</item>
+    </string-array>
+</resources>
