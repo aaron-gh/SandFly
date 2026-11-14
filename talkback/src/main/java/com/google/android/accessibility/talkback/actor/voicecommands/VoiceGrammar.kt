@@ -87,6 +87,15 @@ class VoiceGrammar(phrases: Phrases, private val resolver: Resolver, private val
 
   private class Template(val pattern: Pattern, val names: List<String>)
 
+  /** Languages written without spaces between words, whose recognizers return none. */
+  private val spaceless = locale.language in SPACELESS_LANGUAGES
+
+  /** What separates two words of a phrase, or a word from a placeholder. */
+  private val separator = if (spaceless) "[\\s,:]*" else SEPARATOR
+
+  /** The space around joining words: none needed in [spaceless] languages. */
+  private val gap = if (spaceless) "\\s*" else "\\s+"
+
   private val chainSplit = splitter(phrases.chain, punctuation = "[,;.]")
   private val andSplit = splitter(phrases.and, punctuation = ",")
   private val fillersStart = phrases.fillersStart.map { normalize(it, locale) }.sortedByDescending { it.length }
@@ -255,8 +264,8 @@ class VoiceGrammar(phrases: Phrases, private val resolver: Resolver, private val
   private fun dropWords(text: String, words: String, start: Boolean): String? {
     if (words.isEmpty()) return null
     val pattern =
-      if (start) Pattern.compile("^" + wordsRegex(words) + "[\\s,]+(.+)$", FLAGS)
-      else Pattern.compile("^(.+?)[\\s,]+" + wordsRegex(words) + "[\\p{P}\\s]*$", FLAGS)
+      if (start) Pattern.compile("^" + wordsRegex(words) + "[\\s,]" + (if (spaceless) "*" else "+") + "(.+)$", FLAGS)
+      else Pattern.compile("^(.+?)[\\s,]" + (if (spaceless) "*" else "+") + wordsRegex(words) + "[\\p{P}\\s]*$", FLAGS)
     val matcher = pattern.matcher(text)
     return if (matcher.matches()) trimText(matcher.group(1)!!).ifEmpty { null } else null
   }
@@ -288,22 +297,22 @@ class VoiceGrammar(phrases: Phrases, private val resolver: Resolver, private val
           names.add(name)
           // The last placeholder takes the rest, with the punctuation said at the end.
           regex.append("(?<").append(name).append(if (last) ">.+)" else ">.+?)")
-          if (!last) regex.append(SEPARATOR)
+          if (!last) regex.append(separator)
         }
         token.startsWith("[") && token.endsWith("]") -> {
           val alternatives =
             token.substring(1, token.length - 1).split('|').joinToString("|") { wordsRegex(it) }
           if (last) {
             // The separator before it is part of the optional words.
-            if (regex.endsWith(SEPARATOR)) regex.setLength(regex.length - SEPARATOR.length)
-            regex.append("(?:").append(SEPARATOR).append("(?:").append(alternatives).append("))?")
+            if (regex.endsWith(separator)) regex.setLength(regex.length - separator.length)
+            regex.append("(?:").append(separator).append("(?:").append(alternatives).append("))?")
           } else {
-            regex.append("(?:(?:").append(alternatives).append(")").append(SEPARATOR).append(")?")
+            regex.append("(?:(?:").append(alternatives).append(")").append(separator).append(")?")
           }
         }
         else -> {
           regex.append(wordsRegex(token))
-          if (!last) regex.append(SEPARATOR)
+          if (!last) regex.append(separator)
         }
       }
     }
@@ -316,8 +325,8 @@ class VoiceGrammar(phrases: Phrases, private val resolver: Resolver, private val
     val joiners = alternatives.joinToString("|")
     val regex =
       when {
-        joiners.isEmpty() -> "\\s*$punctuation\\s+"
-        else -> "\\s*$punctuation?\\s+(?:$joiners)\\s+|\\s*$punctuation\\s+"
+        joiners.isEmpty() -> "\\s*$punctuation$gap"
+        else -> "\\s*$punctuation?$gap(?:$joiners)$gap|\\s*$punctuation$gap"
       }
     return Pattern.compile(regex, FLAGS)
   }
@@ -325,6 +334,9 @@ class VoiceGrammar(phrases: Phrases, private val resolver: Resolver, private val
   companion object {
     private const val FLAGS = Pattern.CASE_INSENSITIVE or Pattern.UNICODE_CASE
     private const val SEPARATOR = "[\\s,:]+"
+
+    /** Chinese, Japanese, Thai, Lao, Khmer and Burmese, which put no spaces between words. */
+    private val SPACELESS_LANGUAGES = setOf("zh", "ja", "th", "lo", "km", "my", "yue")
     private const val MAX_WAIT_SECONDS = 60
 
     /** The most pieces between joining words that are grouped into commands. */
@@ -354,12 +366,12 @@ class VoiceGrammar(phrases: Phrases, private val resolver: Resolver, private val
     @JvmStatic
     fun trimText(text: String): String = text.replace(Regex("^[\\s,;:.]+|[\\s,;:.]+$"), "")
 
-    /** Words that match [words], with any spaces between them and any apostrophe or none. */
-    private fun wordsRegex(words: String): String =
-      words.trim().split(Regex("\\s+")).joinToString(SEPARATOR) { word ->
-        word.split(Regex("['’]")).joinToString("['’]?") { if (it.isEmpty()) "" else Pattern.quote(it) }
-      }
-
     private fun parseNumber(text: String): Int? = text.trim().toIntOrNull()
   }
+
+  /** Words that match [words], with any spaces between them and any apostrophe or none. */
+  private fun wordsRegex(words: String): String =
+    words.trim().split(Regex("\\s+")).joinToString(separator) { word ->
+      word.split(Regex("['’]")).joinToString("['’]?") { if (it.isEmpty()) "" else Pattern.quote(it) }
+    }
 }
