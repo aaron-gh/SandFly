@@ -42,8 +42,8 @@ import org.robolectric.util.ReflectionHelpers
 class FindNodeNearPivotPlaceTest {
   private var nextId = 1L
 
-  private inner class Node(bounds: Rect) :
-    AccessibilityNodeInfoCompat(info(bounds)) {
+  private inner class Node(bounds: Rect, focusable: Boolean = true) :
+    AccessibilityNodeInfoCompat(info(bounds, focusable)) {
     val kids = ArrayList<Node>()
     var up: Node? = null
 
@@ -62,19 +62,22 @@ class FindNodeNearPivotPlaceTest {
     override fun getParent(): AccessibilityNodeInfoCompat? = up
   }
 
-  private fun info(bounds: Rect): AccessibilityNodeInfo {
+  private fun info(bounds: Rect, focusable: Boolean = true): AccessibilityNodeInfo {
     val info = AccessibilityNodeInfo.obtain()
     ReflectionHelpers.setField(info, "mSourceNodeId", nextId++)
     info.setBoundsInScreen(bounds)
     info.isVisibleToUser = true
-    info.isClickable = true
-    info.isFocusable = true
+    info.isClickable = focusable
+    info.isFocusable = focusable
     info.className = "android.widget.TextView"
     return info
   }
 
   /** A standalone node, not part of any tree, read live only for its on-screen bounds. */
   private fun pivotAt(bounds: Rect): Node = Node(bounds)
+
+  /** A plain layout wrapper (e.g. a grid row): not itself an accessibility-focusable unit. */
+  private fun container(bounds: Rect): Node = Node(bounds, focusable = false)
 
   @Test
   fun backward_skipsContainerThatSpansThePivotsPlace() {
@@ -192,6 +195,55 @@ class FindNodeNearPivotPlaceTest {
   }
 
   /**
+   * A real grid has more than one row. The pivot's own row-mate ends that row, so recovering
+   * from it must cross into the next row's first item instead of stopping at the row boundary --
+   * exercising the same path the single-row tests above don't: the row container (not the
+   * pivot's own ancestor) is what the ordinary top/bottom check has to clear.
+   */
+  @Test
+  fun forward_transitionsFromOneGridRowToTheNextWhenThePivotIsMissing() {
+    val itemA = Node(Rect(0, 0, 100, 100))
+    val row1 = container(Rect(0, 0, 200, 100)).add(itemA)
+    val itemC = Node(Rect(0, 100, 100, 200))
+    val itemD = Node(Rect(100, 100, 200, 200))
+    val row2 = container(Rect(0, 100, 200, 200)).add(itemC, itemD)
+    val root = container(Rect(0, 0, 200, 200)).add(row1, row2)
+    val strategy = OrderedTraversalStrategy(root)
+    // The pivot's place is row1's second cell -- missing from the tree, so row1 only has itemA.
+    val pivot = pivotAt(Rect(100, 0, 200, 100))
+
+    val nearest =
+        FocusProcessorForLogicalNavigation.findNodeNearPivotPlace(
+            strategy, pivot, TraversalStrategy.SEARCH_FOCUS_FORWARD, /* rtl= */ false)
+
+    // itemA is the real anchor: the caller's own further search from it (with its real node
+    // filter, not exercised by this lower-level test) is what actually crosses into row2.
+    assertEquals(itemA, nearest)
+  }
+
+  /** Same grid, recovering backward across the row boundary instead. */
+  @Test
+  fun backward_transitionsFromOneGridRowToThePreviousWhenThePivotIsMissing() {
+    val itemA = Node(Rect(0, 0, 100, 100))
+    val itemB = Node(Rect(100, 0, 200, 100))
+    val row1 = container(Rect(0, 0, 200, 100)).add(itemA, itemB)
+    val itemD = Node(Rect(100, 100, 200, 200))
+    val row2 = container(Rect(0, 100, 200, 200)).add(itemD)
+    val root = container(Rect(0, 0, 200, 200)).add(row1, row2)
+    val strategy = OrderedTraversalStrategy(root)
+    // The pivot's place is row2's first cell -- missing from the tree, so row2 only has itemD.
+    val pivot = pivotAt(Rect(0, 100, 100, 200))
+
+    val nearest =
+        FocusProcessorForLogicalNavigation.findNodeNearPivotPlace(
+            strategy, pivot, TraversalStrategy.SEARCH_FOCUS_BACKWARD, /* rtl= */ false)
+
+    // itemD is the real anchor: the caller's own further search from it (with its real node
+    // filter, not exercised by this lower-level test) is what actually crosses back into row1.
+    assertEquals(itemD, nearest)
+  }
+
+  /**
    * Same row, but in an RTL layout: reading order runs right-to-left, so the item with the
    * larger X coordinate is the one that comes first.
    */
@@ -212,5 +264,25 @@ class FindNodeNearPivotPlaceTest {
         TraversalStrategyUtils.searchFocus(
             strategy, nearest, TraversalStrategy.SEARCH_FOCUS_BACKWARD, null)
     assertEquals(itemFirst, resumed)
+  }
+
+  /** Same row and RTL layout, recovering forward instead. */
+  @Test
+  fun forward_mirrorsRowOrderForRtl() {
+    val itemFirst = Node(Rect(300, 0, 400, 200))
+    val itemSecond = Node(Rect(0, 0, 100, 200))
+    val row = Node(Rect(0, 0, 400, 200)).add(itemFirst, itemSecond)
+    val root = Node(Rect(0, 0, 400, 1000)).add(row)
+    val strategy = OrderedTraversalStrategy(root)
+    val pivot = pivotAt(Rect(150, 0, 250, 200))
+
+    val nearest =
+        FocusProcessorForLogicalNavigation.findNodeNearPivotPlace(
+            strategy, pivot, TraversalStrategy.SEARCH_FOCUS_FORWARD, /* rtl= */ true)
+
+    val resumed =
+        TraversalStrategyUtils.searchFocus(
+            strategy, nearest, TraversalStrategy.SEARCH_FOCUS_FORWARD, null)
+    assertEquals(itemSecond, resumed)
   }
 }
