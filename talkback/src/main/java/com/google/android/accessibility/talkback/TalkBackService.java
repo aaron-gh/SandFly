@@ -3919,6 +3919,7 @@ public class TalkBackService extends AccessibilityServiceCompat
 
   /** Cancels reads and pending context before the service can deliver more feedback. */
   private void stopNodeQueries() {
+    if (accessibilityFocusInterpreter != null) accessibilityFocusInterpreter.shutdown();
     if (selectorController != null) selectorController.shutdown();
     if (processorEventQueue != null) processorEventQueue.clearQueue();
     ConcurrentNodeQueries.shutdown();

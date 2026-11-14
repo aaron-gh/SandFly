@@ -23,9 +23,13 @@ import androidx.annotation.VisibleForTesting;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat.AccessibilityActionCompat;
 import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionInfo;
+import com.google.android.accessibility.talkback.focusmanagement.NavigationTarget;
+import com.google.android.accessibility.talkback.focusmanagement.action.NavigationAction;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.Role;
 import com.google.android.accessibility.utils.WebInterfaceUtils;
+import com.google.android.accessibility.utils.input.CursorGranularity;
+import com.google.android.accessibility.utils.monitor.InputModeTracker;
 import java.util.ArrayDeque;
 import java.util.List;
 import org.checkerframework.checker.nullness.qual.Nullable;
@@ -63,6 +67,37 @@ final class WebScrollFocus {
   @VisibleForTesting static final long FLING_MS = 3000;
 
   private WebScrollFocus() {}
+
+  static boolean isPlainTouchNavigation(@Nullable NavigationAction action) {
+    return action != null && action.actionType == NavigationAction.DIRECTIONAL_NAVIGATION
+        && action.targetType == NavigationTarget.TARGET_DEFAULT
+        && action.inputMode == InputModeTracker.INPUT_MODE_TOUCH
+        && action.originalNavigationGranularity == CursorGranularity.DEFAULT;
+  }
+
+  /** A flick to an item already in view does not stop a preceding manual fling. */
+  static boolean continuesManualScrollAfterNavigation(
+      long eventTime, long manualTime, long focusTime, int focusSource, boolean forward,
+      AccessibilityNodeInfoCompat focusedThen, AccessibilityNodeInfoCompat viewportNode) {
+    if (manualTime < 0 || focusTime <= manualTime || eventTime < focusTime
+        || eventTime - manualTime > FLING_MS
+        || focusSource != FocusActionInfo.LOGICAL_NAVIGATION
+        || focusedThen.getWindowId() != viewportNode.getWindowId()
+        || focusedThen.isEditable()
+        || !WebInterfaceUtils.supportsWebActions(focusedThen)) {
+      return false;
+    }
+    Rect focusBounds = new Rect();
+    Rect viewport = new Rect();
+    focusedThen.getBoundsInScreen(focusBounds);
+    viewportNode.getBoundsInScreen(viewport);
+    if (viewport.isEmpty()) return false;
+    // A normal browser scroll moves towards an offscreen navigation target. A preceding
+    // manual fling can instead keep moving away from it, even if focus delivery was late.
+    boolean wasInView = focusedThen.isVisibleToUser() && !focusBounds.isEmpty()
+        && !isOutside(focusBounds, viewport);
+    return wasInView || (forward ? isAbove(focusBounds, viewport) : isBelow(focusBounds, viewport));
+  }
 
   /** Whether a scroll from {@code node} can concern focus in web content. Asks the app nothing. */
   static boolean isWebContent(@Nullable AccessibilityNodeInfoCompat node) {
@@ -372,7 +407,8 @@ final class WebScrollFocus {
       if (indexScan < count && indexReadsLeft > 0) {
         indexReadsLeft--;
         int i = indexScan++;
-        if (node.equals(readSibling(parent, i))) {
+        AccessibilityNodeInfoCompat sibling = readSibling(parent, i);
+        if (node.equals(sibling)) {
           findingIndex = false;
           frames.push(new Frame(parent, count, forward ? i + 1 : i - 1));
         }

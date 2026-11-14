@@ -20,6 +20,10 @@ import android.graphics.Rect
 import android.view.accessibility.AccessibilityNodeInfo
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionInfo
+import com.google.android.accessibility.talkback.focusmanagement.NavigationTarget
+import com.google.android.accessibility.talkback.focusmanagement.action.NavigationAction
+import com.google.android.accessibility.utils.input.CursorGranularity
+import com.google.android.accessibility.utils.monitor.InputModeTracker
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNull
@@ -81,6 +85,71 @@ class WebScrollFocusTest {
 
   /** Chrome clips a node below the viewport to its bottom edge. */
   private fun below(text: String) = Node(Rect(0, 2300, 1000, 2000), text = text)
+
+  @Test
+  fun onlyDefaultTouchNavigationCanContinueTheManualFling() {
+    fun action() = NavigationAction.Builder().setAction(NavigationAction.DIRECTIONAL_NAVIGATION)
+      .setTarget(NavigationTarget.TARGET_DEFAULT).setInputMode(InputModeTracker.INPUT_MODE_TOUCH)
+      .setOriginalNavigationGranularity(CursorGranularity.DEFAULT)
+    assertTrue(WebScrollFocus.isPlainTouchNavigation(action().build()))
+    assertFalse(WebScrollFocus.isPlainTouchNavigation(null))
+    assertFalse(WebScrollFocus.isPlainTouchNavigation(
+      action().setTarget(NavigationTarget.TARGET_HEADING).build()))
+    assertFalse(WebScrollFocus.isPlainTouchNavigation(
+      action().setInputMode(InputModeTracker.INPUT_MODE_KEYBOARD).build()))
+    assertFalse(WebScrollFocus.isPlainTouchNavigation(
+      action().setOriginalNavigationGranularity(CursorGranularity.WORD).build()))
+    assertFalse(WebScrollFocus.isPlainTouchNavigation(
+      action().setAction(NavigationAction.JUMP_TO_TOP).build()))
+  }
+
+  @Test
+  fun aManualFlingCanContinueAfterAFlickToAnAlreadyVisibleItem() {
+    val focus = item(400, 600, "Next visible item")
+    val page = Node(viewport, null, false, true)
+    assertTrue(WebScrollFocus.continuesManualScrollAfterNavigation(
+      900, 100, 200, FocusActionInfo.LOGICAL_NAVIGATION, true, focus, page))
+  }
+
+  @Test
+  fun aFlingMovingAwayFromALateNavigationTargetIsStillManual() {
+    val page = Node(viewport, null, false, true)
+    assertTrue(WebScrollFocus.continuesManualScrollAfterNavigation(
+      900, 100, 200, FocusActionInfo.LOGICAL_NAVIGATION, true, above("Focus left above"), page))
+    assertTrue(WebScrollFocus.continuesManualScrollAfterNavigation(
+      900, 100, 200, FocusActionInfo.LOGICAL_NAVIGATION, false, below("Focus left below"), page))
+  }
+
+  @Test
+  fun unrelatedOrOldNavigationDoesNotBecomeManualScrolling() {
+    val focus = item(400, 600, "Next visible item")
+    val page = Node(viewport, null, false, true)
+    for ((event, manual, navigation) in listOf(Triple(150L, 100L, 200L),
+      Triple(900L, 200L, 100L), Triple(4000L, 100L, 200L), Triple(900L, -1L, 200L))) {
+      assertFalse(WebScrollFocus.continuesManualScrollAfterNavigation(
+        event, manual, navigation, FocusActionInfo.LOGICAL_NAVIGATION, true, focus, page))
+    }
+    for (source in listOf(FocusActionInfo.MANUAL_SCROLL, FocusActionInfo.TOUCH_EXPLORATION,
+      FocusActionInfo.SCREEN_STATE_CHANGE, FocusActionInfo.UNKNOWN)) {
+      assertFalse(WebScrollFocus.continuesManualScrollAfterNavigation(
+        900, 100, 200, source, true, focus, page))
+    }
+  }
+
+  @Test
+  fun browserNavigationToAnOffscreenItemKeepsItsNormalScrollHandling() {
+    val page = Node(viewport, null, false, true)
+    assertFalse(WebScrollFocus.continuesManualScrollAfterNavigation(
+      900, 100, 200, FocusActionInfo.LOGICAL_NAVIGATION, false, above("Earlier item"), page))
+    assertFalse(WebScrollFocus.continuesManualScrollAfterNavigation(
+      900, 100, 200, FocusActionInfo.LOGICAL_NAVIGATION, true, below("Later item"), page))
+    for (focus in listOf(item(400, 600, "Hidden item").apply { isVisibleToUser = false },
+      item(400, 600, "Text being edited").apply { isEditable = true },
+      Node(Rect(), text = "Unknown bounds"))) {
+      assertFalse(WebScrollFocus.continuesManualScrollAfterNavigation(
+        900, 100, 200, FocusActionInfo.LOGICAL_NAVIGATION, true, focus, page))
+    }
+  }
 
   @Test
   fun boundsClippedAtAnEdgeOfTheViewportAreOutsideIt() {
