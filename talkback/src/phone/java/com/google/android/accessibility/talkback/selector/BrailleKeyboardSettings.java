@@ -24,6 +24,11 @@ final class BrailleKeyboardSettings {
 
   private BrailleKeyboardSettings() {}
 
+  /** Returns whether "Tablet held up faces away" is on. */
+  static boolean isTabletHeldUpFacesAway(Context context) {
+    return BrailleUserPreferences.readTabletHeldUpFacesAway(context);
+  }
+
   /** Turns "Tablet held up faces away" on or off, and returns its new value. */
   static boolean toggleTabletHeldUpFacesAway(Context context) {
     boolean facesAway = !BrailleUserPreferences.readTabletHeldUpFacesAway(context);

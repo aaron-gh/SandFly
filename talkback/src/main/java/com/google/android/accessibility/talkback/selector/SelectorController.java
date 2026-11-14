@@ -64,7 +64,6 @@ import android.content.SharedPreferences.Editor;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.content.res.Resources;
 import android.media.AudioManager;
-import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.text.TextUtils;
@@ -141,7 +140,6 @@ import com.google.common.base.Ascii;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import java.text.Normalizer;
-import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -1185,11 +1183,7 @@ public class SelectorController implements UserInputEventListener {
         hint = getAdjustSelectedSettingGestures();
       }
       case MEDIA_VOLUME, CALL_VOLUME, RING_VOLUME, NOTIFICATION_VOLUME, ALARM_VOLUME -> {
-        StreamVolume volume = STREAM_VOLUMES.get(setting);
-        actionDescription =
-            context.getString(volume.titleResId)
-                + ", "
-                + StreamVolumeControl.percentText(context, volume.stream);
+        actionDescription = context.getString(STREAM_VOLUMES.get(setting).titleResId);
         hint = getAdjustSelectedSettingGestures();
       }
       case SOUND_MODE -> {
@@ -1264,12 +1258,8 @@ public class SelectorController implements UserInputEventListener {
           EQUALIZER_6K,
           EQUALIZER_8K,
           EQUALIZER_16K -> {
-        int band = EQUALIZER_BANDS.indexOf(setting);
         actionDescription =
-            context.getString(EQUALIZER_BAND_TITLES[band])
-                + ", "
-                + equalizerGainText(
-                    SpeechEqualizer.read(prefs, VoiceProfiles.activeId(prefs))[band]);
+            context.getString(EQUALIZER_BAND_TITLES[EQUALIZER_BANDS.indexOf(setting)]);
         hint = getAdjustSelectedSettingGestures();
       }
       case GESTURE_PROFILE -> {
@@ -1367,6 +1357,56 @@ public class SelectorController implements UserInputEventListener {
   }
 
   /**
+   * The value of {@code setting} said after its name when it is selected, such as "60 percent" for
+   * Speech rate, or null for a reading control without a value.
+   */
+  private @Nullable String settingValue(Setting setting) {
+    switch (setting) {
+      case SPEECH_RATE -> {
+        return context.getString(
+            R.string.tb_template_percent,
+            String.valueOf(actorState.getSpeechRateState().getSpeechRatePercentage()));
+      }
+      case LANGUAGE -> {
+        // A voice profile in use sets the language, and the reading control can't change it.
+        return VoiceProfiles.isProfileActive()
+            ? null
+            : actorState.getLanguageState().getCurrentLanguageString();
+      }
+      case HIDE_SCREEN -> {
+        return ReadingControlValues.onOff(context, actorState.getDimScreen().isDimmingEnabled());
+      }
+      case MEDIA_VOLUME, CALL_VOLUME, RING_VOLUME, NOTIFICATION_VOLUME, ALARM_VOLUME -> {
+        return StreamVolumeControl.percentText(context, STREAM_VOLUMES.get(setting).stream);
+      }
+      case EQUALIZER_32,
+          EQUALIZER_64,
+          EQUALIZER_125,
+          EQUALIZER_250,
+          EQUALIZER_500,
+          EQUALIZER_1K,
+          EQUALIZER_2K,
+          EQUALIZER_3K,
+          EQUALIZER_4K,
+          EQUALIZER_6K,
+          EQUALIZER_8K,
+          EQUALIZER_16K -> {
+        return equalizerGainText(
+            SpeechEqualizer.read(prefs, VoiceProfiles.activeId(prefs))[
+                EQUALIZER_BANDS.indexOf(setting)]);
+      }
+      default -> {
+        return ReadingControlValues.of(context, prefs, setting);
+      }
+    }
+  }
+
+  /** {@code name} followed by {@code value}, or {@code name} alone without a value. */
+  private static String withValue(String name, @Nullable String value) {
+    return ReadingControlValues.withValue(name, value);
+  }
+
+  /**
    * Called after screen search action performed. It set search granularity in selector settings
    * automatically that make user easier to use screen search navigation.
    */
@@ -1403,17 +1443,20 @@ public class SelectorController implements UserInputEventListener {
       return;
     }
 
-    if (announceType == AnnounceType.DESCRIPTION) {
-      announceSetting(eventId, descriptionAndHint.description, null);
-    } else if (announceType == AnnounceType.DESCRIPTION_AND_HINT) {
-      announceSetting(eventId, descriptionAndHint.description, descriptionAndHint.hint);
-    }
-    if (showOverlay) {
-      if (actorState.getDimScreen().isDimmingEnabled()
-          && !actorState.getDimScreen().isInstructionDisplayed()) {
-        LogUtils.d(TAG, "Hide the UI if the screen is dimming.");
-      } else {
-        showQuickMenuOverlay(eventId, descriptionAndHint.description);
+    if (announceType != AnnounceType.SILENCE || showOverlay) {
+      String description = withValue(descriptionAndHint.description, settingValue(newSetting));
+      if (announceType == AnnounceType.DESCRIPTION) {
+        announceSetting(eventId, description, null);
+      } else if (announceType == AnnounceType.DESCRIPTION_AND_HINT) {
+        announceSetting(eventId, description, descriptionAndHint.hint);
+      }
+      if (showOverlay) {
+        if (actorState.getDimScreen().isDimmingEnabled()
+            && !actorState.getDimScreen().isInstructionDisplayed()) {
+          LogUtils.d(TAG, "Hide the UI if the screen is dimming.");
+        } else {
+          showQuickMenuOverlay(eventId, description);
+        }
       }
     }
     // Update cursor granularity if the setting related to granularity.
@@ -3020,8 +3063,7 @@ public class SelectorController implements UserInputEventListener {
 
   /** A band's gain as spoken, such as "+3 dB". */
   private String equalizerGainText(int gain) {
-    String number = (gain > 0 ? "+" : "") + NumberFormat.getIntegerInstance().format(gain);
-    return context.getString(R.string.speech_equalizer_gain_db, number);
+    return ReadingControlValues.equalizerGainText(context, gain);
   }
 
   /**
@@ -3262,7 +3304,7 @@ public class SelectorController implements UserInputEventListener {
   }
 
   /** Returns the way of typing whose keyboard echo a keyboard echo reading control changes. */
-  private static TypingInput keyboardEchoInput(Setting setting) {
+  static TypingInput keyboardEchoInput(Setting setting) {
     return switch (setting) {
       case KEYBOARD_ECHO_PHYSICAL -> TypingInput.PHYSICAL_KEYBOARD;
       case KEYBOARD_ECHO_BRAILLE_KEYBOARD -> TypingInput.BRAILLE_KEYBOARD;
@@ -3552,46 +3594,15 @@ public class SelectorController implements UserInputEventListener {
   }
 
   private int accessibilityVolumePercent() {
-    AudioManager audioManager = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
-    int min =
-        Build.VERSION.SDK_INT >= Build.VERSION_CODES.P
-            ? audioManager.getStreamMinVolume(AudioManager.STREAM_ACCESSIBILITY)
-            : 0;
-    int max = audioManager.getStreamMaxVolume(AudioManager.STREAM_ACCESSIBILITY);
-    int volume = audioManager.getStreamVolume(AudioManager.STREAM_ACCESSIBILITY);
-    return max > min ? Math.round(100f * (volume - min) / (max - min)) : 100;
+    return ReadingControlValues.accessibilityVolumePercent(context);
   }
 
   private String focusDelayText() {
-    int timeout =
-        SharedPreferencesUtils.getIntFromStringPref(
-            prefs,
-            context.getResources(),
-            R.string.pref_touch_focus_time_out_key,
-            R.string.pref_touch_focus_time_out_default);
-    for (FocusDelayPrefFragment.FocusDelayPref source :
-        FocusDelayPrefFragment.FocusDelayPref.values()) {
-      if (timeout == source.getDelay()) {
-        return context.getString(source.getTitleId());
-      }
-    }
-    return "";
+    return ReadingControlValues.focusDelayText(context, prefs);
   }
 
   private String typingFocusDelayText() {
-    int timeout =
-        SharedPreferencesUtils.getIntFromStringPref(
-            prefs,
-            context.getResources(),
-            R.string.pref_typing_focus_time_out_key,
-            R.string.pref_touch_explore_time_out_default);
-    for (TypingFocusDelayPrefFragment.TypingFocusDelayPref source :
-        TypingFocusDelayPrefFragment.TypingFocusDelayPref.values()) {
-      if (timeout == source.getDelay()) {
-        return context.getString(source.getTitleId());
-      }
-    }
-    return "";
+    return ReadingControlValues.typingFocusDelayText(context, prefs);
   }
 
   private void updateFocusDelayPreference(EventId eventId) {
