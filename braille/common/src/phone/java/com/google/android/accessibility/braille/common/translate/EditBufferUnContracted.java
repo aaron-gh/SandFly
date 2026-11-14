@@ -76,7 +76,7 @@ public class EditBufferUnContracted implements EditBuffer {
   protected int lastCommitIndexOfHoldings = NO_CURSOR;
   /** Whether the word in holdings starts a sentence and so gets a capital first letter. */
   private boolean capitalizeHoldings;
-  private boolean holdingsStartInNumbers;
+  private boolean numberSignAddedAutomatically;
   private final StringBuilder typedIntoFieldThatHidesText = new StringBuilder();
 
   protected EditBufferUnContracted(
@@ -132,9 +132,13 @@ public class EditBufferUnContracted implements EditBuffer {
 
   private void startWordInNumbersInNumberField(
       ImeConnection imeConnection, BrailleCharacter firstCharacter) {
-    holdingsStartInNumbers = isNumberField(imeConnection);
-    if (holdingsStartInNumbers && !firstCharacter.equals(getNumeric())) {
-      holdings.append(getNumeric());
+    BrailleCharacter numberSign = getNumeric();
+    numberSignAddedAutomatically =
+        numberSign != null
+            && isNumberField(imeConnection)
+            && !firstCharacter.equals(numberSign);
+    if (numberSignAddedAutomatically) {
+      holdings.append(numberSign);
     }
   }
 
@@ -149,12 +153,7 @@ public class EditBufferUnContracted implements EditBuffer {
   }
 
   private void speakIfFieldHidesTypedText(ImeConnection imeConnection, String committed) {
-    if (!isSpokenNumberField(imeConnection)) {
-      return;
-    }
-    CharSequence before =
-        imeConnection.inputConnection.getTextBeforeCursor(committed.length(), 0);
-    if (before != null && before.toString().equals(committed)) {
+    if (!fieldHidesText(imeConnection)) {
       typedIntoFieldThatHidesText.setLength(0);
       return;
     }
@@ -194,25 +193,27 @@ public class EditBufferUnContracted implements EditBuffer {
     if (typedIntoFieldThatHidesText.length() == 0
         && deletionReachesField()
         && fieldHidesText(imeConnection)) {
-      speakDeletedCharacterFromFieldDescription();
+      speakDeletedCharacterFromFieldDescription(imeConnection.editorInfo.packageName);
     }
     deleteCharacter(imeConnection.inputConnection, KeyEvent.KEYCODE_DEL);
   }
 
   private boolean deletionReachesField() {
-    return holdings.isEmpty() || (holdingsStartInNumbers && holdings.size() == 1);
+    return holdings.isEmpty() || (numberSignAddedAutomatically && holdings.size() == 1);
   }
 
   private static boolean fieldHidesText(ImeConnection imeConnection) {
     if (!isSpokenNumberField(imeConnection)) {
       return false;
     }
-    CharSequence before = imeConnection.inputConnection.getTextBeforeCursor(1, 0);
-    return before == null || before.length() == 0;
+    InputConnection field = imeConnection.inputConnection;
+    return TextUtils.isEmpty(field.getTextBeforeCursor(1, 0))
+        && TextUtils.isEmpty(field.getTextAfterCursor(1, 0));
   }
 
-  private void speakDeletedCharacterFromFieldDescription() {
+  private void speakDeletedCharacterFromFieldDescription(String fieldPackage) {
     HiddenFieldEcho.expect(
+        fieldPackage,
         new HiddenFieldEcho.Listener() {
           @Override
           public void onDeleted(String deleted) {
@@ -326,7 +327,7 @@ public class EditBufferUnContracted implements EditBuffer {
   }
 
   private void deleteCharacter(InputConnection inputConnection, int keyCode) {
-    dropNumberSignWithLastDigit();
+    dropAutomaticNumberSignWithLastDigit();
     // Delete a single terminal prefix from holdings, if any. In that case, stop.
     if (holdingsEndsWithPrefix()) {
       BrailleCharacter brailleCharacter = holdings.remove(holdings.size() - 1);
@@ -349,10 +350,10 @@ public class EditBufferUnContracted implements EditBuffer {
     lastCommitIndexOfHoldings = holdings.size();
   }
 
-  private void dropNumberSignWithLastDigit() {
-    if (holdingsStartInNumbers && holdings.size() <= 1) {
+  private void dropAutomaticNumberSignWithLastDigit() {
+    if (numberSignAddedAutomatically && holdings.size() <= 1) {
       holdings.clear();
-      holdingsStartInNumbers = false;
+      numberSignAddedAutomatically = false;
     }
   }
 

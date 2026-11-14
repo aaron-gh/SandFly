@@ -1,9 +1,12 @@
 package com.google.android.accessibility.utils.input;
 
-import android.os.SystemClock;
+import android.os.Handler;
+import android.os.Looper;
 import android.text.TextUtils;
 import android.view.accessibility.AccessibilityEvent;
 import androidx.annotation.Nullable;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 /**
  * Tells the keyboard what a field that doesn't hand its text back lost to a deletion.
@@ -11,8 +14,8 @@ import androidx.annotation.Nullable;
  * <p>Revolut's top-up amount takes digits from the keyboard but returns no text and sends no text
  * change events: only its container's content description changes, such as from "zł500" to "zł50".
  * The screen reader passes every description change here; after the braille keyboard deletes a
- * character it can't name, it calls {@link #expect}, and the next description change is compared
- * with the one before to find the deleted character.
+ * character it can't name, it calls {@link #expect}, and the next description change from the
+ * field's app is compared with the one before it in the same window to find the deleted character.
  */
 public final class HiddenFieldEcho {
   public interface Listener {
@@ -22,16 +25,43 @@ public final class HiddenFieldEcho {
   }
 
   private static final long ANSWER_WINDOW_MS = 1000;
+  private static final int REMEMBERED_WINDOWS = 8;
 
-  private static volatile long expectedUntil;
-  private static volatile @Nullable Listener listener;
-  private static @Nullable String lastDescription;
+  private static final class Description {
+    final String packageName;
+    final String text;
+
+    Description(String packageName, String text) {
+      this.packageName = packageName;
+      this.text = text;
+    }
+  }
+
+  private static @Nullable Listener listener;
+  private static @Nullable String expectedPackage;
+  private static @Nullable Handler handler;
+  private static final Runnable stopExpecting = HiddenFieldEcho::stopExpecting;
+
+  private static final Map<Integer, Description> lastDescriptionByWindow =
+      new LinkedHashMap<>() {
+        @Override
+        protected boolean removeEldestEntry(Map.Entry<Integer, Description> eldest) {
+          return size() > REMEMBERED_WINDOWS;
+        }
+      };
 
   private HiddenFieldEcho() {}
 
-  public static void expect(Listener deletionListener) {
+  /**
+   * Waits up to {@link #ANSWER_WINDOW_MS} for the next description change in a window of {@code
+   * fieldPackage} that had a description before.
+   */
+  public static void expect(String fieldPackage, Listener deletionListener) {
     listener = deletionListener;
-    expectedUntil = SystemClock.uptimeMillis() + ANSWER_WINDOW_MS;
+    expectedPackage = fieldPackage;
+    Handler mainHandler = mainHandler();
+    mainHandler.removeCallbacks(stopExpecting);
+    mainHandler.postDelayed(stopExpecting, ANSWER_WINDOW_MS);
   }
 
   public static void onAccessibilityEvent(AccessibilityEvent event) {
@@ -42,24 +72,39 @@ public final class HiddenFieldEcho {
     if (TextUtils.isEmpty(description)) {
       return;
     }
-    String before = lastDescription;
-    lastDescription = description.toString();
+    String packageName = String.valueOf(event.getPackageName());
+    Description before =
+        lastDescriptionByWindow.put(
+            event.getWindowId(), new Description(packageName, description.toString()));
     Listener waiting = listener;
-    if (waiting == null) {
+    if (waiting == null
+        || !packageName.equals(expectedPackage)
+        || before == null
+        || !before.packageName.equals(packageName)) {
       return;
     }
-    boolean inTime = SystemClock.uptimeMillis() <= expectedUntil;
-    expectedUntil = 0;
-    listener = null;
-    if (!inTime) {
-      return;
-    }
-    String deleted = before == null ? null : removedCharacter(before, lastDescription);
+    stopExpecting();
+    String deleted = removedCharacter(before.text, description.toString());
     if (deleted != null) {
       waiting.onDeleted(deleted);
     } else {
       waiting.onChanged(description);
     }
+  }
+
+  private static void stopExpecting() {
+    listener = null;
+    expectedPackage = null;
+    if (handler != null) {
+      handler.removeCallbacks(stopExpecting);
+    }
+  }
+
+  private static Handler mainHandler() {
+    if (handler == null) {
+      handler = new Handler(Looper.getMainLooper());
+    }
+    return handler;
   }
 
   private static boolean isContentDescriptionChange(AccessibilityEvent event) {

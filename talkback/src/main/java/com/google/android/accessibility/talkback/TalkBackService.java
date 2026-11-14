@@ -106,7 +106,6 @@ import com.google.android.accessibility.braille.brailledisplay.BrailleDisplay;
 import com.google.android.accessibility.braille.interfaces.BrailleImeForTalkBack;
 import com.google.android.accessibility.braille.interfaces.ScreenReaderActionPerformer;
 import com.google.android.accessibility.braille.interfaces.TalkBackForBrailleCommon;
-import com.google.android.accessibility.braille.interfaces.TalkBackForBrailleIme;
 import com.google.android.accessibility.braille.interfaces.TalkBackForBrailleIme.BrailleImeForTalkBackProvider;
 import com.google.android.accessibility.brailleime.BrailleIme;
 import com.google.android.accessibility.material.flags.MaterialFlags;
@@ -876,6 +875,7 @@ public class TalkBackService extends AccessibilityServiceCompat
 
   private BrailleDisplay brailleDisplay;
   private BrailleImeForTalkBackProvider brailleImeForTalkBackProvider;
+  private @Nullable TalkBackForBrailleImeImpl talkBackForBrailleIme;
 
   private GestureShortcutMapping gestureShortcutMapping;
   private NodeMenuRuleProcessor nodeMenuRuleProcessor;
@@ -1252,6 +1252,9 @@ public class TalkBackService extends AccessibilityServiceCompat
     // that nothing still thinks a finger is down after resuming. Its feedback is dropped too.
     if (PauseController.isPaused()
         && event.getEventType() != AccessibilityEvent.TYPE_TOUCH_INTERACTION_END) {
+      return;
+    }
+    if (talkBackForBrailleIme != null && talkBackForBrailleIme.isTouchOfOverlayKeyboard(event)) {
       return;
     }
     // The quick settings panel is using the system's quick settings for the user, who doesn't need
@@ -3373,7 +3376,7 @@ public class TalkBackService extends AccessibilityServiceCompat
 
     HandwritingKeyboardHost.setFeedback(pipeline.getFeedbackReturner());
     TutorialHooks.setFeedback(pipeline.getFeedbackReturner());
-    TalkBackForBrailleIme talkBackForBrailleIme =
+    talkBackForBrailleIme =
         new TalkBackForBrailleImeImpl(
             this,
             pipeline.getFeedbackReturner(),

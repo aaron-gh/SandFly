@@ -16,10 +16,8 @@ import static com.google.common.collect.ImmutableSet.toImmutableSet;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Region;
-import android.hardware.display.DisplayManager;
-import android.util.DisplayMetrics;
-import android.view.Display;
 import android.view.WindowManager;
+import android.view.accessibility.AccessibilityEvent;
 import androidx.annotation.VisibleForTesting;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.braille.interfaces.BrailleImeForTalkBack;
@@ -65,7 +63,10 @@ public class TalkBackForBrailleImeImpl implements TalkBackForBrailleIme {
   /** A reference to the active Braille IME if any. */
   private @Nullable BrailleImeForTalkBack brailleImeForTalkBack;
 
+  private static final int LARGER_THAN_ANY_SCREEN_PX = 1 << 16;
+
   private boolean overlayPassThroughLocked;
+  private boolean touchGoesToOverlayKeyboard;
 
   @VisibleForTesting
   static final Setting[] VALID_CURSOR_GRANULARITIES =
@@ -200,7 +201,8 @@ public class TalkBackForBrailleImeImpl implements TalkBackForBrailleIme {
     overlayPassThroughLocked = true;
     feedbackReturner.returnFeedback(
         Performance.EVENT_ID_UNTRACKED,
-        Feedback.passThroughMode(LOCK_PASS_THROUGH, fullScreenRegion()));
+        Feedback.passThroughMode(LOCK_PASS_THROUGH, regionOfEveryOrientationAndFold()));
+    applyExploreByTouchPreference();
   }
 
   private void releaseOverlayPassThrough() {
@@ -210,23 +212,47 @@ public class TalkBackForBrailleImeImpl implements TalkBackForBrailleIme {
         Feedback.passThroughMode(LOCK_PASS_THROUGH, /* region= */ null));
   }
 
-  private Region fullScreenRegion() {
-    DisplayMetrics metrics = new DisplayMetrics();
-    Display display =
-        ((DisplayManager) service.getSystemService(Context.DISPLAY_SERVICE))
-            .getDisplay(Display.DEFAULT_DISPLAY);
-    if (display == null) {
-      return new Region();
+  private static Region regionOfEveryOrientationAndFold() {
+    return new Region(0, 0, LARGER_THAN_ANY_SCREEN_PX, LARGER_THAN_ANY_SCREEN_PX);
+  }
+
+  private void applyExploreByTouchPreference() {
+    boolean ebtEnabled =
+        SharedPreferencesUtils.getBooleanPref(
+            prefs,
+            service.getResources(),
+            R.string.pref_explore_by_touch_key,
+            R.bool.pref_explore_by_touch_default);
+    if (ebtEnabled) {
+      talkBackPrivateMethodProvider.requestTouchExploration(true);
     }
-    display.getRealMetrics(metrics);
-    return new Region(0, 0, metrics.widthPixels, metrics.heightPixels);
+  }
+
+  /**
+   * Whether the screen reader should ignore this touch interaction event because the touch goes to
+   * the overlay braille keyboard, as it did when explore by touch was off for the keyboard.
+   */
+  public boolean isTouchOfOverlayKeyboard(AccessibilityEvent event) {
+    switch (event.getEventType()) {
+      case AccessibilityEvent.TYPE_TOUCH_INTERACTION_START -> {
+        touchGoesToOverlayKeyboard = overlayPassThroughLocked;
+        return touchGoesToOverlayKeyboard;
+      }
+      case AccessibilityEvent.TYPE_TOUCH_INTERACTION_END -> {
+        boolean startWasIgnored = touchGoesToOverlayKeyboard;
+        touchGoesToOverlayKeyboard = false;
+        return startWasIgnored;
+      }
+      default -> {
+        return false;
+      }
+    }
   }
 
   @Override
   public void onBrailleImeInactivated(boolean usePassThrough) {
     if (overlayPassThroughLocked) {
       releaseOverlayPassThrough();
-      return;
     }
     if (getServiceStatus() != ServiceStatus.ON) {
       return;
@@ -236,15 +262,7 @@ public class TalkBackForBrailleImeImpl implements TalkBackForBrailleIme {
           Performance.EVENT_ID_UNTRACKED,
           Feedback.passThroughMode(LOCK_PASS_THROUGH, /* region= */ null));
     } else {
-      boolean ebtEnabled =
-          SharedPreferencesUtils.getBooleanPref(
-              prefs,
-              service.getResources(),
-              R.string.pref_explore_by_touch_key,
-              R.bool.pref_explore_by_touch_default);
-      if (ebtEnabled) {
-        talkBackPrivateMethodProvider.requestTouchExploration(true);
-      }
+      applyExploreByTouchPreference();
     }
   }
 
