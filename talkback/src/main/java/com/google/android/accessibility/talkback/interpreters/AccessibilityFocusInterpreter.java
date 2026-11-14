@@ -413,7 +413,8 @@ public class AccessibilityFocusInterpreter
     // swipe from it goes to the start of the page.
     boolean focusLost = focus == null || Role.getRole(focus) == Role.ROLE_WEB_VIEW;
     if (focusLost) {
-      if (ScrollEventInterpreter.isWebNavigationEvent(interpretation.event())) {
+      if (ScrollEventInterpreter.isWebNavigationEvent(interpretation.event())
+          || !isUserScroll(interpretation)) {
         return false;
       }
       AccessibilityNodeInfoCompat scrolled =
