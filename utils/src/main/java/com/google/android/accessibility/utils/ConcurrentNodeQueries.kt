@@ -130,7 +130,6 @@ object ConcurrentNodeQueries {
     val eligible = if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) emptyList()
       else events.filter { it.windowId >= 0 && !PackageManagerUtils.isTalkBackPackage(it.packageName) }
     val answers = ConcurrentLinkedQueue<Answer>()
-    val done = CountDownLatch(eligible.size)
     val stopped = AtomicBoolean()
     val tasks = mutableListOf<Future<*>>()
     val end = SystemClock.uptimeMillis() + TREE_WAIT_MS
@@ -160,15 +159,15 @@ object ConcurrentNodeQueries {
               if (!stopped.get()) result?.let { answers.add(Answer(original, it)) }
             }
           } catch (failure: RuntimeException) { Log.w(TAG, "Could not read live region", failure) }
-          finally { Trace.endSection(); done.countDown() }
+          finally { Trace.endSection() }
         })
-      } catch (_: RejectedExecutionException) { done.countDown() }
+      } catch (_: RejectedExecutionException) {}
     }
     return object : LiveRegionRead {
+      // Called on the main thread before focus speech: takes the answers already in without
+      // waiting, and leaves the rest to the caller's synchronous check.
       override fun finish(): Map<AccessibilityEvent, Boolean> {
-        try { if (!stopped.get()) done.await(minOf(PATH_WAIT_MS, (end - SystemClock.uptimeMillis()).coerceAtLeast(0)), TimeUnit.MILLISECONDS) }
-        catch (_: InterruptedException) { Thread.currentThread().interrupt() }
-        finally { cancel() }
+        cancel()
         val result = IdentityHashMap<AccessibilityEvent, Boolean>()
         answers.forEach { result[it.original] = it.assertive }
         return result
