@@ -1025,6 +1025,8 @@
     <string name="overview_shizuku_not_running">Shizuku not running</string>
     <!-- Spoken when the system's recent apps screen opens in place of SandFly's overview because Shizuku doesn't allow SandFly. [CHAR_LIMIT=NONE] -->
     <string name="overview_shizuku_not_allowed">Shizuku doesn\'t allow SandFly</string>
+    <!-- Spoken when a feature that needs root can't run because su doesn't give SandFly root, with Use root instead of Shizuku on. [CHAR_LIMIT=NONE] -->
+    <string name="no_root_access">No root access</string>
     <!-- Spoken when SandFly's overview couldn't switch to or close an app. [CHAR_LIMIT=NONE] -->
     <string name="overview_failed">Failed</string>
     <!-- Spoken when there is no app to switch to with the Previous app command. [CHAR_LIMIT=NONE] -->

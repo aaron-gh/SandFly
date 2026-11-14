@@ -108,6 +108,10 @@
     <string name="title_pref_backup">Back up and restore</string>
     <!-- Title of the settings screen for checking for SandFly updates and how SandFly appears installed. [CHAR LIMIT=40] -->
     <string name="title_pref_updates">Updates and installation</string>
+    <!-- Title of the settings screen for how SandFly runs the commands that need Shizuku or root. "Shizuku" is an app's name. [CHAR LIMIT=40] -->
+    <string name="title_pref_shizuku_root_screen">Shizuku and root</string>
+    <!-- Switch: SandFly runs the commands that need Shizuku through su (Magisk, KernelSU, APatch) instead. [CHAR LIMIT=60] -->
+    <string name="title_pref_use_root">Use root instead of Shizuku</string>
     <!-- Audio output setting: which volume control, such as Accessibility volume or Media volume, sets how loud speech is. [CHAR LIMIT=60] -->
     <string name="title_pref_speech_stream_control">Volume control for speech</string>
     <!-- Shown in place of the arrow keys of a command that no arrow keys run. [CHAR LIMIT=40] -->

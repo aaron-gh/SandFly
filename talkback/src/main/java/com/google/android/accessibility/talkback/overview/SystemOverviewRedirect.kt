@@ -261,8 +261,11 @@ object SystemOverviewRedirect {
     val talkBack = TalkBackService.getInstance() ?: return
     val text =
       service.getString(
-        if (ShizukuShell.isAvailable(service)) R.string.overview_shizuku_not_allowed
-        else R.string.overview_shizuku_not_running
+        when {
+          ShizukuShell.usesRoot() -> R.string.no_root_access
+          ShizukuShell.isAvailable(service) -> R.string.overview_shizuku_not_allowed
+          else -> R.string.overview_shizuku_not_running
+        }
       )
     talkBack.feedbackReturner?.returnFeedback(
       EVENT_ID_UNTRACKED,
