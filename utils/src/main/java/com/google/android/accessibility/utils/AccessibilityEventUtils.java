@@ -259,6 +259,10 @@ public class AccessibilityEventUtils {
     }
     final int maxProgress = event.getItemCount();
     final int progress = event.getCurrentItemIndex();
+    if (maxProgress <= 0) {
+      // An indeterminate progress bar, such as Chrome's while a page starts to load, has no range.
+      return 0.0f;
+    }
     final float percent = (progress / (float) maxProgress);
 
     return (100.0f * Math.max(0.0f, Math.min(1.0f, percent)));
