@@ -148,7 +148,23 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
     completedWebNavigation.clear();
   }
 
-  private static synchronized boolean followsCurrentNavigation(int window, long time) {
+  /**
+   * Forgets browser navigation when a window changes state. A native app's scroll to show the next
+   * item can follow such a change, so its navigation marker stays.
+   */
+  private static synchronized void resetWebNavigation() {
+    if (webNavigation) {
+      navigationUptime = -1;
+      navigationWindowId = -1;
+    }
+    webNavigation = false;
+    pendingWebActionTime = -1;
+    pendingDirectTouchTime = -1;
+    completedWebNavigation.clear();
+  }
+
+  @VisibleForTesting
+  static synchronized boolean followsCurrentNavigation(int window, long time) {
     return webNavigation ? followsCurrentWebNavigation(window, time)
         : followsNavigation(window, time, navigationWindowId, navigationUptime);
   }
@@ -454,7 +470,7 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
       case AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED:
         // Window state changes clear the cache.
         cachedPositionInfo.clear();
-        resetNavigation();
+        resetWebNavigation();
         break;
       case AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED:
         if (((event.getContentChangeTypes() & AccessibilityEvent.CONTENT_CHANGE_TYPE_SUBTREE) == 0)

@@ -152,4 +152,21 @@ class CompletedWebNavigationTest {
     org.robolectric.Shadows.shadowOf(event).setWindowId(12)
     assertFalse(ScrollEventInterpreter.isWebNavigationEvent(event))
   }
+
+  @Test fun aWindowStateChangeForgetsWebNavigationButKeepsNativeNavigation() {
+    val interpreter = ScrollEventInterpreter(
+      null, com.google.android.accessibility.utils.monitor.TouchMonitor(), false)
+    val stateChange = android.view.accessibility.AccessibilityEvent.obtain(
+      android.view.accessibility.AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED)
+    ScrollEventInterpreter.onNavigation(5)
+    val now = SystemClock.uptimeMillis()
+    interpreter.onAccessibilityEvent(stateChange, null)
+    assertTrue(ScrollEventInterpreter.followsCurrentNavigation(5, now))
+
+    ScrollEventInterpreter.onWebNavigation(12, now)
+    assertTrue(ScrollEventInterpreter.isWebNavigationEvent(navigationEvent(now)))
+    interpreter.onAccessibilityEvent(stateChange, null)
+    assertFalse(ScrollEventInterpreter.isWebNavigationEvent(navigationEvent(now)))
+    assertFalse(ScrollEventInterpreter.followsCurrentNavigation(12, now))
+  }
 }
