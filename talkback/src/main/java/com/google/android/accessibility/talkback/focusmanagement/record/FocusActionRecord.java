@@ -550,19 +550,19 @@ public class FocusActionRecord {
     RecordedWebPath get(Deadline deadline) {
       RecordedWebPath existing = resolved.get();
       if (existing != null) return existing;
-      RecordedWebPath result = null;
+      RecordedWebPath result;
       try {
         result = task.get(Math.min(NodePathDescription.SEARCH_TIME_LIMIT_MS,
             deadline.remainingMs()), TimeUnit.MILLISECONDS);
-      } catch (InterruptedException e) {
-        Thread.currentThread().interrupt();
-      } catch (ExecutionException | CancellationException | TimeoutException e) {
+      } catch (InterruptedException | TimeoutException e) {
+        if (e instanceof InterruptedException) Thread.currentThread().interrupt();
+        // The capture keeps running for a later caller with a longer budget, such as a
+        // restoration started right after a swipe. Only this caller goes without a path.
         LogUtils.w(TAG, "Web focus path was not available within its budget: %s", e);
-      }
-      if (result == null) {
-        task.cancel(false);
-        if (executor instanceof NodeQueryExecutor queries) queries.cancel(task);
-        // Pin the fallback for copies and future callers; a late worker cannot change equality.
+        return new RecordedWebPath(NodePathDescription.empty());
+      } catch (ExecutionException | CancellationException e) {
+        LogUtils.w(TAG, "Web focus path could not be captured: %s", e);
+        // Pin the fallback for copies and future callers: the capture cannot complete.
         result = new RecordedWebPath(NodePathDescription.empty());
       }
       resolved.compareAndSet(null, result);

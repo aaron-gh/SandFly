@@ -98,41 +98,52 @@ class DeferredWebFocusPathTest {
     assertEquals(hash, copy.hashCode())
   }
 
-  @Test fun anExpiredConsumerBudgetCancelsAQueuedCaptureAndPinsItsFallback() {
+  @Test fun anExpiredConsumerBudgetKeepsAQueuedCaptureForLaterCallers() {
     val work = mutableListOf<Runnable>()
     var reads = 0
     val focused = node()
+    val expected = NodePathDescription.obtainWithoutSiblingContext(focused)
     val record = FocusActionRecord(focused, FocusActionInfo.builder().build(), 1000,
       { work.add(it) }) { reads++; NodePathDescription.obtainWithoutSiblingContext(focused) }
     val copy = FocusActionRecord.copy(record)!!
     val hash = record.hashCode()
     assertEquals(0, reads)
     assertEquals(record, copy)
-    val path = identityAt(record, SystemClock.uptimeMillis())
-    assertEquals(0, path.size())
+    assertEquals(0, identityAt(record, SystemClock.uptimeMillis()).size())
     work.single().run()
-    assertEquals(0, reads)
-    assertSame(path, copy.ancestorIdentityPath)
+    assertEquals(1, reads)
+    assertEquals(expected, copy.ancestorIdentityPath)
+    assertSame(record.ancestorIdentityPath, copy.ancestorIdentityPath)
     assertEquals(hash, record.hashCode())
   }
 
-  @Test fun aLateWorkerCannotReplaceTheFallbackAfterAnExpiredConsumerBudget() {
+  @Test fun aLateWorkerReplacesTheTemporaryFallbackAfterAnExpiredConsumerBudget() {
     val executor = Executors.newSingleThreadExecutor()
     val entered = CountDownLatch(1)
     val release = CountDownLatch(1)
-    val finished = CountDownLatch(1)
     val focused = node()
     val expected = NodePathDescription.obtainWithoutSiblingContext(focused)
     try {
       val record = FocusActionRecord(focused, FocusActionInfo.builder().build(), 1000, executor) {
-        entered.countDown(); release.await(5, TimeUnit.SECONDS); finished.countDown(); expected
+        entered.countDown(); release.await(5, TimeUnit.SECONDS); expected
       }
       assertTrue(entered.await(2, TimeUnit.SECONDS))
-      val fallback = identityAt(record, SystemClock.uptimeMillis())
-      assertEquals(0, fallback.size())
+      assertEquals(0, identityAt(record, SystemClock.uptimeMillis()).size())
       release.countDown()
-      assertTrue(finished.await(2, TimeUnit.SECONDS))
-      assertSame(fallback, record.ancestorIdentityPath)
+      assertSame(expected, record.ancestorIdentityPath)
+      assertFalse(record.readyAncestorNodes.isEmpty())
     } finally { release.countDown(); executor.shutdownNow() }
+  }
+
+  @Test fun aCancelledCapturePinsItsFallback() {
+    val focused = node()
+    val stopped = com.google.android.accessibility.utils.NodeQueryExecutor("Stopped", 1, 1)
+    stopped.shutdown()
+    val record = FocusActionRecord(focused, FocusActionInfo.builder().build(), 1000, stopped) {
+      NodePathDescription.obtainWithoutSiblingContext(focused)
+    }
+    val fallback = record.ancestorIdentityPath
+    assertEquals(0, fallback.size())
+    assertSame(fallback, FocusActionRecord.copy(record)!!.ancestorIdentityPath)
   }
 }
