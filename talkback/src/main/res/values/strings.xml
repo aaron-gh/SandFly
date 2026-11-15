@@ -538,6 +538,12 @@
     <string name="title_pref_say_device_unlocked">Say \"Device unlocked\"</string>
     <!-- Switch to say the time when the screen turns on. [CHAR LIMIT=NONE] -->
     <string name="title_pref_announce_time">Time</string>
+    <!-- Choice for when the battery level is said when the screen turns on: never. [CHAR LIMIT=40] -->
+    <string name="screen_on_battery_off">Off</string>
+    <!-- Choice for when the battery level is said when the screen turns on: every time. [CHAR LIMIT=40] -->
+    <string name="screen_on_battery_always">Always</string>
+    <!-- Choice for when the battery level is said when the screen turns on: only while the charger is connected. [CHAR LIMIT=40] -->
+    <string name="screen_on_battery_while_charging">Only while charging</string>
     <!-- Switch to say how many notifications there are, after the time, when the screen turns on. [CHAR LIMIT=NONE] -->
     <string name="title_pref_screen_on_notification_count">Number of notifications</string>
     <!-- Said after the time when the screen turns on: how many notifications there are. Not said when there are none. [CHAR LIMIT=NONE] -->

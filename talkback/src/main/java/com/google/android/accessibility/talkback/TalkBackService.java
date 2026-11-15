@@ -254,6 +254,7 @@ import com.google.android.accessibility.talkback.monitor.InputMethodMonitor;
 import com.google.android.accessibility.talkback.monitor.KeyboardLockMonitor;
 import com.google.android.accessibility.talkback.monitor.ProximitySensorMonitor;
 import com.google.android.accessibility.talkback.monitor.RingerModeAndScreenMonitor;
+import com.google.android.accessibility.talkback.monitor.ScreenAnnouncementSettings;
 import com.google.android.accessibility.talkback.monitor.VolumeChangeFeedback;
 import com.google.android.accessibility.talkback.monitor.VolumeMonitor;
 import com.google.android.accessibility.talkback.notificationlist.NotificationListService;
@@ -3805,6 +3806,8 @@ public class TalkBackService extends AccessibilityServiceCompat
     KeyboardEchoSettings.migrate(this, prefs);
     // Combines the two window name switches into the Window names setting.
     WindowNamesSetting.migrate(prefs, getResources());
+    // The battery switch for when the screen turns on became a list with Only while charging.
+    ScreenAnnouncementSettings.migrateBattery(prefs);
     // Verbosity's switch for notifications with the screen off became the Notifications one.
     NotificationSettings.migrateScreenOff(
         prefs,

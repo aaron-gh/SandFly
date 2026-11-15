@@ -86,6 +86,9 @@ class StatusReader(private val context: Context, private val batteryMonitor: Bat
     overrideNetworkType = TelephonyDisplayInfo.OVERRIDE_NETWORK_TYPE_NONE
   }
 
+  /** Whether the charger is connected or the battery is charging. */
+  fun isCharging(): Boolean = batteryMonitor.isCharging
+
   /**
    * Describes the items turned on in the status readout settings, in their order. Without
    * [askForLocation], it never asks for the location permission that the Wi-Fi name needs, for when

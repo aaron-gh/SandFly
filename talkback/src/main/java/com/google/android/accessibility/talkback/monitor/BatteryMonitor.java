@@ -46,6 +46,8 @@ public class BatteryMonitor extends SameThreadBroadcastReceiver {
   private boolean fullAnnounced;
   // Whether a battery change has been received: the first is the state SandFly started in.
   private boolean batteryStateKnown;
+  // Whether the last battery change had the charger connected or the battery charging.
+  private boolean charging;
 
   public BatteryMonitor(Context context) {
     this.context = context;
@@ -86,6 +88,7 @@ public class BatteryMonitor extends SameThreadBroadcastReceiver {
         boolean plugged = intent.getIntExtra(BatteryManager.EXTRA_PLUGGED, 0) != 0;
         int status =
             intent.getIntExtra(BatteryManager.EXTRA_STATUS, BatteryManager.BATTERY_STATUS_UNKNOWN);
+        charging = plugged || status == BatteryManager.BATTERY_STATUS_CHARGING;
         onBatteryState(plugged, status == BatteryManager.BATTERY_STATUS_FULL || batteryLevel >= 100);
       }
       case Intent.ACTION_POWER_DISCONNECTED -> {
@@ -139,6 +142,14 @@ public class BatteryMonitor extends SameThreadBroadcastReceiver {
         EVENT_ID_UNTRACKED,
         new Interpretation.Power(
             /* connected= */ true, batteryLevel, powerSaveMode, /* fullyCharged= */ true));
+  }
+
+  /**
+   * Returns whether the charger is connected or the battery is charging, including a full battery
+   * on the charger.
+   */
+  public boolean isCharging() {
+    return batteryStateKnown ? charging : powerConnected;
   }
 
   @VisibleForTesting
