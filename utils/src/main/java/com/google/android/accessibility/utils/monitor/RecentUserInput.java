@@ -17,6 +17,7 @@
 package com.google.android.accessibility.utils.monitor;
 
 import android.os.SystemClock;
+import java.util.concurrent.atomic.AtomicLong;
 
 /**
  * When the user last did something: a touch, a gesture, a key, input on the braille keyboard or a
@@ -31,12 +32,19 @@ public final class RecentUserInput {
   private static final long WINDOW_MS = 2000;
 
   private static volatile long lastInputUptimeMs = -WINDOW_MS;
+  private static final AtomicLong inputSequence = new AtomicLong();
 
   private RecentUserInput() {}
 
   /** Records that the user just did something. */
   public static void mark() {
+    inputSequence.incrementAndGet();
     lastInputUptimeMs = SystemClock.uptimeMillis();
+  }
+
+  /** Changes for every user action, including actions in the same uptime millisecond. */
+  public static long inputSequence() {
+    return inputSequence.get();
   }
 
   /**
