@@ -751,7 +751,8 @@ public class BrailleInputView extends View
   private void updateTouchAction(MotionEvent event) {
     switch (event.getAction()) {
       case MotionEvent.ACTION_DOWN -> touchInteracting = true;
-      case MotionEvent.ACTION_UP -> touchInteracting = false;
+      // A cancelled touch, such as at screen off, ends with no ACTION_UP.
+      case MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL -> touchInteracting = false;
       default -> {}
     }
   }
