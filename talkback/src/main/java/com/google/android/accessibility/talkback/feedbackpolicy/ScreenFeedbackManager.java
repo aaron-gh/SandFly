@@ -22,13 +22,16 @@ import static com.google.android.accessibility.talkback.Feedback.HINT;
 import static com.google.android.accessibility.utils.AccessibilityWindowInfoUtils.WINDOW_ID_NONE;
 
 import android.accessibilityservice.AccessibilityService;
+import android.app.Notification;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.os.SystemClock;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.text.style.LocaleSpan;
+import android.util.SparseArray;
 import android.view.KeyEvent;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
@@ -98,7 +101,16 @@ public class ScreenFeedbackManager
 
   /** Event types that are handled by ScreenFeedbackManager. */
   private static final int MASK_EVENTS_HANDLED_BY_SCREEN_FEEDBACK_MANAGER =
-      AccessibilityEvent.TYPE_WINDOWS_CHANGED | TYPE_WINDOW_STATE_CHANGED;
+      AccessibilityEvent.TYPE_WINDOWS_CHANGED
+          | TYPE_WINDOW_STATE_CHANGED
+          | AccessibilityEvent.TYPE_NOTIFICATION_STATE_CHANGED
+          | AccessibilityEvent.TYPE_TOUCH_INTERACTION_START;
+
+  /**
+   * How long after a notification arrives a pane that appears in a system window is taken to be
+   * shown for that notification, in milliseconds.
+   */
+  @VisibleForTesting static final long NOTIFICATION_PANE_MS = 3000;
 
   private final WindowEventInterpreter interpreter;
   private boolean listeningToInterpreter = false;
@@ -112,6 +124,12 @@ public class ScreenFeedbackManager
 
   /** Event time of the last key press that stopped speech, in uptime milliseconds. */
   private long speechStoppedByKeyTime = 0;
+
+  /** Event time of the last notification that arrived, in uptime milliseconds, or -1. */
+  private long notificationTime = -1;
+
+  /** Event time of the last touch or key press, in uptime milliseconds, or -1. */
+  private long userInputTime = -1;
 
   /**
    * Set from the Window names setting's "cut off by the first item" choice. When on, the window
@@ -176,8 +194,65 @@ public class ScreenFeedbackManager
 
   @Override
   public void onAccessibilityEvent(AccessibilityEvent event, EventId eventId) {
+    switch (event.getEventType()) {
+      case AccessibilityEvent.TYPE_NOTIFICATION_STATE_CHANGED -> {
+        // Toasts come as this event type too, without a notification.
+        if ((event.getParcelableData() instanceof Notification)
+            || Notification.class.getName().contentEquals(String.valueOf(event.getClassName()))) {
+          notificationTime = event.getEventTime();
+        }
+        return;
+      }
+      case AccessibilityEvent.TYPE_TOUCH_INTERACTION_START -> {
+        userInputTime = event.getEventTime();
+        return;
+      }
+      default -> {}
+    }
     // Skip the delayed interpret if doesn't allow the announcement.
     getInterpreter().interpret(event, eventId, allowAnnounce(event));
+  }
+
+  /** Records a key press, after which a pane that appears is not taken to be a notification's. */
+  public void onKeyPressed(KeyEvent keyEvent) {
+    userInputTime = keyEvent.getEventTime();
+  }
+
+  /**
+   * Returns whether a pane appeared in a system window for a notification that arrived, not for
+   * something the user did: a notification arrived {@link #NOTIFICATION_PANE_MS} or less before
+   * {@code now}, and no touch or key press came after it. Some phones, such as Vivo's, show the
+   * notification shade's pane for a heads-up notification without the shade being opened.
+   */
+  @VisibleForTesting
+  static boolean followsNotification(long notificationTime, long userInputTime, long now) {
+    return notificationTime >= 0
+        && now - notificationTime <= NOTIFICATION_PANE_MS
+        && userInputTime < notificationTime;
+  }
+
+  /** Whether the pane that appeared in {@code interpretation} was shown for a notification. */
+  private boolean isNotificationPane(WindowEventInterpreter.EventInterpretation interpretation) {
+    if (interpretation.getEventType() != TYPE_WINDOW_STATE_CHANGED
+        || interpretation.getContentChangeTypes() != CONTENT_CHANGE_TYPE_PANE_APPEARED
+        || !followsNotification(notificationTime, userInputTime, SystemClock.uptimeMillis())) {
+      return false;
+    }
+    int windowId = interpretation.getEventSourceWindow().getId();
+    SparseArray<List<AccessibilityWindowInfo>> windowsOnAllDisplays =
+        AccessibilityServiceCompatUtils.getWindowsOnAllDisplays(service);
+    for (int i = 0; i < windowsOnAllDisplays.size(); i++) {
+      List<AccessibilityWindowInfo> windows = windowsOnAllDisplays.valueAt(i);
+      if (windows == null) {
+        continue;
+      }
+      for (AccessibilityWindowInfo window : windows) {
+        if (window.getId() == windowId) {
+          return window.getType() == AccessibilityWindowInfo.TYPE_SYSTEM;
+        }
+      }
+    }
+    return false;
   }
 
   /**
@@ -263,7 +338,13 @@ public class ScreenFeedbackManager
     }
 
     // Generate feedback from interpreted event.
-    Feedback feedback = feedbackComposer.composeFeedback(interpretation, /* logDepth= */ 0);
+    boolean notificationPane = isNotificationPane(interpretation);
+    if (notificationPane) {
+      LogUtils.d(TAG, "Pane title not spoken: the pane appeared for a notification");
+    }
+    Feedback feedback =
+        feedbackComposer.composeFeedback(
+            interpretation, /* speakPaneTitle= */ !notificationPane, /* logDepth= */ 0);
     LogUtils.v(TAG, "feedback=%s", feedback);
 
     if (!feedback.isEmpty()) {
@@ -388,9 +469,15 @@ public class ScreenFeedbackManager
       this.gestureShortcutMapping = gestureShortcutMapping;
     }
 
-    /** Compose speech feedback for fully interpreted window event, statelessly. */
+    /**
+     * Compose speech feedback for fully interpreted window event, statelessly.
+     *
+     * @param speakPaneTitle whether a pane that appeared in the event's window has its title spoken
+     */
     public Feedback composeFeedback(
-        WindowEventInterpreter.EventInterpretation interpretation, final int logDepth) {
+        WindowEventInterpreter.EventInterpretation interpretation,
+        boolean speakPaneTitle,
+        final int logDepth) {
 
       logCompose(logDepth, "composeFeedback", "interpretation=%s", interpretation);
 
@@ -517,7 +604,8 @@ public class ScreenFeedbackManager
 
         // For TYPE_WINDOW_STATE_CHANGED events, only announce the accessibility pane title.
         if (interpretation.getEventType() == TYPE_WINDOW_STATE_CHANGED) {
-          if (interpretation.getContentChangeTypes() == CONTENT_CHANGE_TYPE_PANE_APPEARED) {
+          if (interpretation.getContentChangeTypes() == CONTENT_CHANGE_TYPE_PANE_APPEARED
+              && speakPaneTitle) {
             logCompose(logDepth, "composeFeedback", "Pane appeared");
             utterance = interpretation.getEventSourceWindow().getTitleForFeedback();
           }

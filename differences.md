@@ -354,6 +354,10 @@ While Do Not Disturb was on, TalkBack didn't speak toasts, the short messages th
 
 SandFly doesn't say "collapsed" for each notification on the lock screen and in the notification shade. It still says "expanded" when you open a notification, and it still says "collapsed" in other apps.
 
+### No shade name for a heads-up notification
+
+Some phones, such as Vivo's, show the notification shade's pane when a heads-up notification arrives, without the shade being opened, and TalkBack says the shade's name, such as "Notification Center". SandFly doesn't say the name of a pane that appears in a system window within 3 seconds after a notification arrives, unless the screen was touched or a key was pressed after the notification.
+
 ### Notices that you can dismiss
 
 TalkBack marked its notices that it was updated, or that gestures changed, as ongoing, so you couldn't swipe them away or dismiss them. In SandFly, you can dismiss these notices, including on the lock screen. The notifications for pausing SandFly and for downloading an on-device model stay ongoing while those continue.

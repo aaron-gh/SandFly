@@ -1803,6 +1803,9 @@ public class TalkBackService extends AccessibilityServiceCompat
       textEventInterpreter.setLastKeyEventTime(keyEvent.getEventTime());
       InputFocusInterpreter.setLastKeyDownTime(keyEvent.getEventTime());
       textEventInterpreter.resetLastKeyDown();
+      if (processorScreen != null) {
+        processorScreen.onKeyPressed(keyEvent);
+      }
     }
     Performance perf = Performance.getInstance();
     EventId eventId = perf.onEventReceived(keyEvent);
