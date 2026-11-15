@@ -22,6 +22,21 @@ import org.junit.Test
 
 class AiDictationTest {
   @Test
+  fun textChangesDuringAndJustAfterTypingAreFromTheTyping() {
+    assertTrue(AiDictation.isTypingChange(1_000, 1_000, 1_050))
+    assertTrue(AiDictation.isTypingChange(1_050 + AiDictation.TYPING_CHANGE_MS, 1_000, 1_050))
+    assertTrue(!AiDictation.isTypingChange(999, 1_000, 1_050))
+    assertTrue(!AiDictation.isTypingChange(1_051 + AiDictation.TYPING_CHANGE_MS, 1_000, 1_050))
+  }
+
+  @Test
+  fun noTextChangeIsFromTypingThatNeverRan() {
+    val never = Long.MIN_VALUE / 2
+    assertTrue(!AiDictation.isTypingChange(0, never, never))
+    assertTrue(!AiDictation.isTypingChange(Long.MAX_VALUE / 2, never, never))
+  }
+
+  @Test
   fun answersKeepTheirTextWithoutWrapping() {
     assertEquals("Hello, world.", AiDictation.cleanUp("  Hello, world.\n"))
     assertEquals("Hello, world.", AiDictation.cleanUp("\"\"\"Hello, world.\"\"\""))

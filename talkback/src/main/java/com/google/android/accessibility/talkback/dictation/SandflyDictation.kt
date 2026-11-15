@@ -57,6 +57,13 @@ object SandflyDictation {
     return dictation.listen(correct, onText)
   }
 
+  /**
+   * Whether a text change at [eventTime], in uptime milliseconds, is from text that Dictate typed
+   * and spoke with Speak dictated text, so that the change itself isn't spoken.
+   */
+  @JvmStatic
+  fun typedSpokenText(eventTime: Long): Boolean = instance?.typedSpokenText(eventTime) == true
+
   /** Stops recording for [listen], so that what was said is recognized. */
   @JvmStatic
   fun stop() {
