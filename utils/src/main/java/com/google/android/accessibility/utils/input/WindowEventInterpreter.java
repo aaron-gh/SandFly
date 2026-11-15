@@ -842,6 +842,32 @@ public class WindowEventInterpreter implements WindowsDelegate, DisplayStateChan
     }
   }
 
+  /**
+   * Records the windows already on the screen when the service starts, before any window event, so
+   * that the first event, such as a pane appearing in a keyboard already open, isn't taken for those
+   * windows appearing and announced as them.
+   */
+  public void initializeRoles() {
+    if (Boolean.FALSE.equals(defaultDisplayOn)
+        || windowRoles.windowIdA != WINDOW_ID_NONE
+        || windowRoles.inputMethodWindowId != WINDOW_ID_NONE) {
+      return;
+    }
+    EventInterpretation interpretation = new EventInterpretation();
+    interpretation.setDisplayId(Display.DEFAULT_DISPLAY);
+    interpretation.setWindowIdFromEvent(WINDOW_ID_NONE);
+    WindowRoles roles = new WindowRoles();
+    interpreting = true;
+    try {
+      updateWindowRoles(interpretation, service, roles, /* depth= */ 0);
+      setWindowTitles(roles);
+    } finally {
+      interpreting = false;
+    }
+    setRoles(roles);
+    LogUtils.v(TAG, "initializeRoles() roles=%s", roles);
+  }
+
   public void clearQueue() {
     windowEventDelayer.removeMessages(WindowEventDelayer.MSG_DELAY_INTERPRET);
     clearWindowTransition();

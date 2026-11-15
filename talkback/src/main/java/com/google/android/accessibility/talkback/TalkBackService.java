@@ -3779,6 +3779,11 @@ public class TalkBackService extends AccessibilityServiceCompat
       forgetTouchInteraction("service flags set");
     }
 
+    if (windowEventInterpreter != null) {
+      // The windows open before the service started don't appear at the next window event.
+      windowEventInterpreter.initializeRoles();
+    }
+
     if (callStateMonitor != null) {
       // If we need to show the tutorial, we will ask permission after completing it.
       if (!shouldShowTutorial()) {
