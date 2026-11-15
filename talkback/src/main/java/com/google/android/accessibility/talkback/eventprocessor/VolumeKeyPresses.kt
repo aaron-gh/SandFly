@@ -19,8 +19,8 @@ package com.google.android.accessibility.talkback.eventprocessor
 import android.view.KeyEvent
 
 /**
- * Recognizes double presses, triple presses and long presses of the volume keys that have a
- * command, and changes the volume for the presses that make up none of them.
+ * Recognizes single presses, double presses, triple presses and long presses of the volume keys
+ * that have a command, and changes the volume for the presses that make up none of them.
  *
  * A key with no command passes to Android untouched, unless [OtherPresses] keeps it. A key with a
  * command is kept from Android while it is pressed: when the presses end without making up a press
@@ -67,10 +67,18 @@ class VolumeKeyPresses(private val timer: Timer, private val callbacks: Callback
     NOTHING,
   }
 
-  /** The commands of one volume key's presses, null when a press has none. */
-  data class KeyCommands(val double: String?, val triple: String?, val long: String?) {
+  /**
+   * The commands of one volume key's presses, null when a press has none. A [single] press command
+   * is given only with [OtherPresses.NOTHING], where a single press changes no volume.
+   */
+  data class KeyCommands(
+    val double: String?,
+    val triple: String?,
+    val long: String?,
+    val single: String? = null,
+  ) {
     val isEmpty: Boolean
-      get() = double == null && triple == null && long == null
+      get() = single == null && double == null && triple == null && long == null
 
     /** The number of presses after which no further press can change the command. */
     val maxPresses: Int
@@ -149,10 +157,13 @@ class VolumeKeyPresses(private val timer: Timer, private val callbacks: Callback
   val isUsed: Boolean
     get() = !upCommands.isEmpty || !downCommands.isEmpty
 
-  /** Whether a double, triple or long press of [keyCode] has [command]. */
+  /** Whether a single, double, triple or long press of [keyCode] has [command]. */
   fun hasCommand(keyCode: Int, command: String): Boolean {
     val commands = commandsFor(keyCode)
-    return commands.double == command || commands.triple == command || commands.long == command
+    return commands.single == command ||
+      commands.double == command ||
+      commands.triple == command ||
+      commands.long == command
   }
 
   /**
@@ -291,6 +302,7 @@ class VolumeKeyPresses(private val timer: Timer, private val callbacks: Callback
     reset()
     val command =
       when (count) {
+        1 -> commands.single
         2 -> commands.double
         3 -> commands.triple
         else -> null

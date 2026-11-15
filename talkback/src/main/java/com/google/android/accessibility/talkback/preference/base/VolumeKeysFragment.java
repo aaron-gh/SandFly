@@ -21,6 +21,7 @@ import androidx.annotation.Nullable;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceGroup;
+import androidx.preference.TwoStatePreference;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.eventprocessor.OneUiVolumeKeys;
 
@@ -35,6 +36,15 @@ public class VolumeKeysFragment extends AdvancedSettingFragment {
     super.onCreatePreferences(savedInstanceState, rootKey);
     setVisible(
         R.string.pref_volume_keys_speech_volume_while_speaking_key, OneUiVolumeKeys.isSupported());
+    TwoStatePreference takeAll = findPreference(getString(R.string.pref_volume_keys_take_all_key));
+    if (takeAll != null) {
+      showSinglePresses(takeAll.isChecked());
+      takeAll.setOnPreferenceChangeListener(
+          (preference, newValue) -> {
+            showSinglePresses((Boolean) newValue);
+            return true;
+          });
+    }
     ListPreference feedback = findPreference(getString(R.string.pref_volume_change_feedback_key));
     if (feedback == null) {
       return;
@@ -45,6 +55,12 @@ public class VolumeKeysFragment extends AdvancedSettingFragment {
           showMediaSwitches((String) newValue);
           return true;
         });
+  }
+
+  /** Shows Volume up press and Volume down press only while SandFly handles every press. */
+  private void showSinglePresses(boolean takesAll) {
+    setVisible(R.string.pref_volume_up_press_key, takesAll);
+    setVisible(R.string.pref_volume_down_press_key, takesAll);
   }
 
   /**

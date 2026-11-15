@@ -677,4 +677,64 @@ class VolumeKeyPressesTest {
     advance(300)
     assertTrue(log.isEmpty())
   }
+
+  @Test
+  fun takeAll_singlePress_runsCommandAtRelease() {
+    others = OtherPresses.NOTHING
+    assign(up = KeyCommands(null, null, null, single = "S"))
+    assertTrue(down(KEYCODE_VOLUME_UP))
+    assertTrue(log.isEmpty())
+    assertTrue(up(KEYCODE_VOLUME_UP))
+    assertEquals(listOf("run S"), log)
+    assertEquals(null, task)
+  }
+
+  @Test
+  fun takeAll_singleAndDouble_singleRunsAfterTimeout() {
+    others = OtherPresses.NOTHING
+    assign(down = KeyCommands("D", null, null, single = "S"))
+    press(KEYCODE_VOLUME_DOWN)
+    assertTrue(log.isEmpty())
+    advance(300)
+    assertEquals(listOf("run S"), log)
+    press(KEYCODE_VOLUME_DOWN)
+    advance(100)
+    press(KEYCODE_VOLUME_DOWN)
+    assertEquals(listOf("run S", "run D"), log)
+  }
+
+  @Test
+  fun takeAll_singleAndLong_holdRunsLongOnly() {
+    others = OtherPresses.NOTHING
+    assign(up = KeyCommands(null, null, "L", single = "S"))
+    assertTrue(down(KEYCODE_VOLUME_UP))
+    advance(400)
+    assertTrue(up(KEYCODE_VOLUME_UP))
+    assertEquals(listOf("run L"), log)
+  }
+
+  @Test
+  fun takeAll_singleOnly_heldRunsNothing() {
+    others = OtherPresses.NOTHING
+    assign(up = KeyCommands(null, null, null, single = "S"))
+    assertTrue(down(KEYCODE_VOLUME_UP))
+    advance(3000)
+    assertTrue(up(KEYCODE_VOLUME_UP))
+    assertTrue(log.isEmpty())
+  }
+
+  @Test
+  fun takeAll_singleOnOtherKey_unassignedKeyChangesNothing() {
+    others = OtherPresses.NOTHING
+    assign(up = KeyCommands(null, null, null, single = "S"))
+    assertTrue(press(KEYCODE_VOLUME_DOWN))
+    advance(1000)
+    assertTrue(log.isEmpty())
+  }
+
+  @Test
+  fun hasCommand_findsSinglePressCommand() {
+    assign(down = KeyCommands(null, null, null, single = "ANSWER_CALL"))
+    assertTrue(presses.hasCommand(KEYCODE_VOLUME_DOWN, "ANSWER_CALL"))
+  }
 }

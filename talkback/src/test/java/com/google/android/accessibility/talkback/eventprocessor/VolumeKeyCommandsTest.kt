@@ -25,11 +25,25 @@ import android.media.AudioManager.FLAG_VIBRATE
 import android.media.AudioManager.MODE_IN_CALL
 import android.media.AudioManager.MODE_IN_COMMUNICATION
 import android.media.AudioManager.MODE_NORMAL
+import android.media.AudioManager.STREAM_ALARM
+import android.media.AudioManager.STREAM_MUSIC
+import android.media.AudioManager.USE_DEFAULT_STREAM_TYPE
+import android.media.VolumeProvider.VOLUME_CONTROL_ABSOLUTE
+import android.media.VolumeProvider.VOLUME_CONTROL_FIXED
+import android.media.session.MediaController.PlaybackInfo.PLAYBACK_TYPE_LOCAL
+import android.media.session.MediaController.PlaybackInfo.PLAYBACK_TYPE_REMOTE
+import android.media.session.PlaybackState.STATE_BUFFERING
+import android.media.session.PlaybackState.STATE_PAUSED
+import android.media.session.PlaybackState.STATE_PLAYING
 import com.google.android.accessibility.talkback.eventprocessor.VolumeKeyCommands.Companion.isAppCall
 import com.google.android.accessibility.talkback.eventprocessor.VolumeKeyCommands.Companion.longPressDuration
 import com.google.android.accessibility.talkback.eventprocessor.VolumeKeyCommands.Companion.otherPresses
-import com.google.android.accessibility.talkback.eventprocessor.VolumeKeyCommands.Companion.volumeFlags
 import com.google.android.accessibility.talkback.eventprocessor.VolumeKeyPresses.OtherPresses
+import com.google.android.accessibility.talkback.eventprocessor.VolumeKeyVolume.Companion.FLAG_FROM_KEY
+import com.google.android.accessibility.talkback.eventprocessor.VolumeKeyVolume.Companion.handlesVolumeKeys
+import com.google.android.accessibility.talkback.eventprocessor.VolumeKeyVolume.Companion.isPlaybackActive
+import com.google.android.accessibility.talkback.eventprocessor.VolumeKeyVolume.Companion.localSessionStream
+import com.google.android.accessibility.talkback.eventprocessor.VolumeKeyVolume.Companion.volumeFlags
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
@@ -113,8 +127,36 @@ class VolumeKeyCommandsTest {
 
   @Test
   fun volumeFlags_panelOnlyWithShowUi() {
-    assertEquals(FLAG_SHOW_UI or FLAG_VIBRATE or FLAG_PLAY_SOUND, volumeFlags(false, true))
-    assertEquals(FLAG_VIBRATE or FLAG_PLAY_SOUND, volumeFlags(false, false))
-    assertEquals(FLAG_VIBRATE, volumeFlags(true, false))
+    assertEquals(
+      FLAG_SHOW_UI or FLAG_VIBRATE or FLAG_PLAY_SOUND or FLAG_FROM_KEY,
+      volumeFlags(false, true),
+    )
+    assertEquals(FLAG_VIBRATE or FLAG_PLAY_SOUND or FLAG_FROM_KEY, volumeFlags(false, false))
+    assertEquals(FLAG_VIBRATE or FLAG_FROM_KEY, volumeFlags(true, false))
+  }
+
+  @Test
+  fun isPlaybackActive_playingAndBufferingOnly() {
+    assertTrue(isPlaybackActive(STATE_PLAYING))
+    assertTrue(isPlaybackActive(STATE_BUFFERING))
+    assertFalse(isPlaybackActive(STATE_PAUSED))
+    assertFalse(isPlaybackActive(null))
+  }
+
+  @Test
+  fun handlesVolumeKeys_notFixedRemoteSessions() {
+    assertTrue(handlesVolumeKeys(PLAYBACK_TYPE_LOCAL, VOLUME_CONTROL_FIXED))
+    assertTrue(handlesVolumeKeys(PLAYBACK_TYPE_REMOTE, VOLUME_CONTROL_ABSOLUTE))
+    assertFalse(handlesVolumeKeys(PLAYBACK_TYPE_REMOTE, VOLUME_CONTROL_FIXED))
+  }
+
+  @Test
+  fun localSessionStream_sessionStreamUnlessMusicSilent() {
+    assertEquals(STREAM_MUSIC, localSessionStream(STREAM_MUSIC, USE_DEFAULT_STREAM_TYPE, true))
+    assertEquals(
+      USE_DEFAULT_STREAM_TYPE,
+      localSessionStream(STREAM_MUSIC, USE_DEFAULT_STREAM_TYPE, false),
+    )
+    assertEquals(STREAM_ALARM, localSessionStream(STREAM_ALARM, USE_DEFAULT_STREAM_TYPE, false))
   }
 }
