@@ -192,6 +192,11 @@ public class TalkBackForBrailleImeImpl implements TalkBackForBrailleIme {
       if (disableEbt && FeatureSupport.supportPassthrough()) {
         passWholeScreenThroughKeepingExploreByTouchOn();
       } else {
+        // A braille display connected while the on-screen keyboard was up replaces it with the
+        // strip, which needs touch exploration.
+        if (overlayPassThroughLocked) {
+          releaseOverlayPassThrough();
+        }
         talkBackPrivateMethodProvider.requestTouchExploration(!disableEbt);
       }
     }
