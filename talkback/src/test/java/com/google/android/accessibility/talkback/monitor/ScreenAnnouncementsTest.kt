@@ -176,6 +176,24 @@ class ScreenAnnouncementsTest {
   }
 
   @Test
+  fun aForcedMigrationReplacesTheBatteryValue() {
+    val prefs = FakeSharedPreferences()
+    prefs
+      .edit()
+      .putBoolean(ScreenAnnouncementSettings.OLD_SCREEN_ON_BATTERY, true)
+      .putString(
+        ScreenAnnouncementSettings.SCREEN_ON_BATTERY,
+        ScreenAnnouncementSettings.BATTERY_OFF,
+      )
+      .apply()
+    ScreenAnnouncementSettings.migrateBattery(prefs, force = true)
+    assertEquals(
+      ScreenAnnouncementSettings.BATTERY_ALWAYS,
+      prefs.getString(ScreenAnnouncementSettings.SCREEN_ON_BATTERY, null),
+    )
+  }
+
+  @Test
   fun theBatteryListOnScreenMatchesTheValues() {
     val screen = File("src/main/res/xml/screen_announcement_preferences.xml")
     val lists =

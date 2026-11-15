@@ -71,6 +71,23 @@ class SettingsProfilesTest {
   }
 
   @Test
+  fun aProfileScreenOnBatterySwitchSetsTheList() {
+    assertEquals(
+      mapOf(rate to 2, "default/pref_screen_on_battery_mode" to "always"),
+      SettingsProfiles.withCurrentKeys(mapOf(rate to 2, "default/pref_screen_on_battery" to true)),
+    )
+    assertEquals(
+      mapOf("default/pref_screen_on_battery_mode" to "while_charging"),
+      SettingsProfiles.withCurrentKeys(
+        mapOf(
+          "default/pref_screen_on_battery" to true,
+          "default/pref_screen_on_battery_mode" to "while_charging",
+        )
+      ),
+    )
+  }
+
+  @Test
   fun profilesHoldSettingsButNotKeysOrState() {
     prefs
       .edit()

@@ -198,6 +198,24 @@ class SettingsBackupTest {
   }
 
   @Test
+  fun anImportedScreenOnBatterySwitchSetsTheList() {
+    prefs.edit().clear().putString("pref_screen_on_battery_mode", "while_charging").commit()
+    val sandFly =
+      """
+      {"format": "sandfly-settings", "version": 1, "files": {"device": {"default": {
+        "pref_screen_on_battery": {"type": "boolean", "value": true}
+      }}}}
+      """
+    assertTrue(SettingsBackup.import(context, sandFly))
+    assertEquals("always", prefs.getString("pref_screen_on_battery_mode", null))
+
+    val backtalk =
+      """{"format":1,"stores":{"main":{"pref_screen_on_battery":{"t":"bool","v":false}}}}"""
+    assertTrue(SettingsBackup.import(context, backtalk))
+    assertEquals("off", prefs.getString("pref_screen_on_battery_mode", null))
+  }
+
+  @Test
   fun aDamagedBacktalkFileChangesNothing() {
     prefs.edit().clear().putBoolean("a_switch", false).commit()
     val damaged =
