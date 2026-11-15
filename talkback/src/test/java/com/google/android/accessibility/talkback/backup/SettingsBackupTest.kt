@@ -82,6 +82,22 @@ class SettingsBackupTest {
   }
 
   @Test
+  fun appsThatUsedTheSpeechServiceStayOnThePhone() {
+    prefs
+      .edit()
+      .putString("pref_speech_control_connected_apps", "com.example.first")
+      .putStringSet("pref_speech_control_allowed_apps", setOf("com.example.allowed"))
+      .commit()
+    val json = SettingsBackup.export(context)
+    assertFalse(json.contains("com.example.first"))
+    assertTrue(json.contains("com.example.allowed"))
+
+    prefs.edit().putString("pref_speech_control_connected_apps", "com.example.second").commit()
+    assertTrue(SettingsBackup.import(context, json))
+    assertEquals("com.example.second", prefs.getString("pref_speech_control_connected_apps", null))
+  }
+
+  @Test
   fun theProLicenceStaysOnThePhone() {
     val pro =
       context

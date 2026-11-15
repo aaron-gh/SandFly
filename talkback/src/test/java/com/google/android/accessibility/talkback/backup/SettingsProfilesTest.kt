@@ -71,6 +71,21 @@ class SettingsProfilesTest {
   }
 
   @Test
+  fun profilesLeaveOutTheAnswersAboutOtherAppsSpeaking() {
+    for (key in
+      listOf(
+        "pref_speech_control_allowed_apps",
+        "pref_speech_control_denied_apps",
+        "pref_speech_control_locked_allowed_apps",
+        "pref_speech_control_locked_denied_apps",
+        "pref_speech_control_connected_apps",
+      )) {
+      assertTrue(key, SettingsBackup.isKeptOutOfProfiles(key))
+      assertFalse(key, SettingsBackup.isProfileKey(context, "default/$key"))
+    }
+  }
+
+  @Test
   fun profilesHoldSettingsButNotKeysOrState() {
     prefs
       .edit()
