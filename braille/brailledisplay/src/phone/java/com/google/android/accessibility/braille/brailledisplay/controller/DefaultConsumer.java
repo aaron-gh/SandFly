@@ -838,7 +838,10 @@ class DefaultConsumer implements EventConsumer {
   private void brailleFocusedEventTimedMessage(AccessibilityEvent event) {
     AccessibilityNodeInfoCompat node = AccessibilityNodeInfoUtils.toCompat(event.getSource());
     if (node != null && node.equals(lastFocusedNode.get())) {
-      String state = formatEventToBraille(event).getText().toString();
+      // Don't use formatEventToBraille() here: it clears lastFocusedNode when the event has no
+      // text, which makes the next content update reset the pan position of the focused node.
+      CharSequence text = nodeBrailler.brailleEvent(event).getText();
+      String state = text == null ? "" : text.toString();
       if (!TextUtils.isEmpty(state)) {
         displayTimedMessage(state);
       }
