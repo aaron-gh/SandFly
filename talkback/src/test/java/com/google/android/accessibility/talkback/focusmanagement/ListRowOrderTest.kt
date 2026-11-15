@@ -124,6 +124,26 @@ class ListRowOrderTest {
   }
 
   @Test
+  fun backwardIntoAFocusableRowReachesItsLastPartFirst() {
+    val list = list(columns = 1)
+    val post = row(list, 13, top = 0)
+    node("title", post)
+    val moreOptions = node("More options", post)
+    val strategy = OrderedTraversalStrategy(list)
+    val backward = TraversalStrategy.SEARCH_FOCUS_BACKWARD
+    val forward = TraversalStrategy.SEARCH_FOCUS_FORWARD
+    assertEquals(
+      moreOptions.text,
+      FocusProcessorForLogicalNavigation.focusIn(post, strategy, backward, focusable)?.text,
+    )
+    // Forward, the row itself comes first.
+    assertEquals(
+      post.text,
+      FocusProcessorForLogicalNavigation.focusIn(post, strategy, forward, focusable)?.text,
+    )
+  }
+
+  @Test
   fun noFocusInAnItemWithNothingToFocus() {
     val list = list(columns = 1)
     val divider = row(list, 13, top = 0)

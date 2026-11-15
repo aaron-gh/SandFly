@@ -5027,8 +5027,9 @@ public class FocusProcessorForLogicalNavigation {
   }
 
   /**
-   * Returns the node to focus in {@code item}, as a swipe {@code direction} would reach it: the
-   * item, or the first part of it that takes focus. Null if nothing in it does.
+   * Returns the node to focus in {@code item}, as a swipe in the logical {@code direction} would
+   * reach it: going forward, the item or its first part that takes focus; going back, its last
+   * part that takes focus, or the item. Null if nothing in it does.
    */
   @VisibleForTesting
   static @Nullable AccessibilityNodeInfoCompat focusIn(
@@ -5037,9 +5038,7 @@ public class FocusProcessorForLogicalNavigation {
       @SearchDirection int direction,
       Filter<AccessibilityNodeInfoCompat> filter) {
     AccessibilityNodeInfoCompat target =
-        filter.accept(item)
-            ? item
-            : TraversalStrategyUtils.findFirstFocusInNodeTree(strategy, item, direction, filter);
+        TraversalStrategyUtils.findFirstFocusInNodeTree(strategy, item, direction, filter);
     if (target == null
         || !(target.equals(item) || AccessibilityNodeInfoUtils.hasAncestor(target, item))
         || !AccessibilityNodeInfoUtils.isVisible(target)) {
@@ -5088,12 +5087,12 @@ public class FocusProcessorForLogicalNavigation {
     AccessibilityNodeInfoCompat target = null;
     if (item != null) {
       TraversalStrategy strategy =
-          TraversalStrategyUtils.getTraversalStrategy(list, focusFinder, searchDirection);
+          TraversalStrategyUtils.getTraversalStrategy(list, focusFinder, logicalDirection);
       target =
           focusIn(
               item,
               strategy,
-              searchDirection,
+              logicalDirection,
               NavigationTarget.createNodeFilter(
                   NavigationTarget.TARGET_DEFAULT, strategy.getSpeakingNodesCache()));
     }
