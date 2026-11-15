@@ -109,6 +109,48 @@ final class OffscreenContent {
   }
 
   /**
+   * Whether {@code scrollable}, which keeps all of its content, has nothing after {@code pivot} in
+   * tree order that is off screen or cut off at the edge and has something to say or do, so
+   * scrolling it can't bring a next item on screen. The pivot's own descendants don't count.
+   * {@code false} when the pivot is the scroll view itself or isn't in it, when the content is too
+   * large to read, or when a collapsed or nested scrolling container comes after the pivot.
+   */
+  static boolean hasNothingAhead(
+      AccessibilityNodeInfoCompat scrollable, AccessibilityNodeInfoCompat pivot, boolean forward) {
+    if (scrollable.equals(pivot)) {
+      return false;
+    }
+    List<AccessibilityNodeInfoCompat> nodes = new ArrayList<>();
+    List<Integer> subtreeEnds = new ArrayList<>();
+    List<Boolean> hidden = new ArrayList<>();
+    if (!collect(scrollable, nodes, subtreeEnds, hidden)) {
+      return false;
+    }
+    int pivotIndex = nodes.indexOf(pivot);
+    if (pivotIndex < 0) {
+      return false;
+    }
+    if (forward) {
+      for (int i = subtreeEnds.get(pivotIndex); i < nodes.size(); i++) {
+        if (hidden.get(i) || isCandidate(nodes.get(i))) {
+          return false;
+        }
+      }
+    } else {
+      for (int i = pivotIndex - 1; i >= 0; i--) {
+        // Ancestors of the pivot come before it in tree order, but they are on screen around it.
+        if (subtreeEnds.get(i) > pivotIndex) {
+          continue;
+        }
+        if (hidden.get(i) || isCandidate(nodes.get(i))) {
+          return false;
+        }
+      }
+    }
+    return true;
+  }
+
+  /**
    * Lists the subtree in pre-order, with the index just past each node's subtree, and whether each
    * node is hidden inside a collapsed or nested scrolling container. Returns {@code false} if the
    * subtree is too large.

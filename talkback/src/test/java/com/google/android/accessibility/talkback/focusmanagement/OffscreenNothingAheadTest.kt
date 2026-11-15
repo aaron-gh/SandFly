@@ -1,0 +1,142 @@
+/*
+ * Copyright 2026 SandFly contributors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not
+ * use this file except in compliance with the License. You may obtain a copy of
+ * the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations under
+ * the License.
+ */
+
+package com.google.android.accessibility.talkback.focusmanagement
+
+import android.graphics.Rect
+import android.view.accessibility.AccessibilityNodeInfo
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
+import org.junit.Assert.assertFalse
+import org.junit.Assert.assertTrue
+import org.junit.Test
+import org.junit.runner.RunWith
+import org.robolectric.RobolectricTestRunner
+import org.robolectric.annotation.Config
+import org.robolectric.util.ReflectionHelpers
+
+/**
+ * A swipe out of a scroll view doesn't scroll it when nothing after the focused item is off
+ * screen, as with a dialog message of one long text.
+ */
+@RunWith(RobolectricTestRunner::class)
+@Config(sdk = [35])
+class OffscreenNothingAheadTest {
+  private var nextId = 1L
+
+  private inner class Node(className: String) : AccessibilityNodeInfoCompat(info(className)) {
+    var parentNode: Node? = null
+    val children = mutableListOf<Node>()
+
+    override fun getParent(): AccessibilityNodeInfoCompat? = parentNode
+
+    override fun getChildCount(): Int = children.size
+
+    override fun getChild(index: Int): AccessibilityNodeInfoCompat? = children[index]
+
+    fun add(vararg nodes: Node): Node {
+      nodes.forEach {
+        it.parentNode = this
+        children.add(it)
+      }
+      return this
+    }
+  }
+
+  @Suppress("DEPRECATION")
+  private fun info(className: String) =
+    AccessibilityNodeInfo.obtain().apply {
+      ReflectionHelpers.setField(this, "mSourceNodeId", nextId++)
+      this.className = className
+      isVisibleToUser = true
+      setBoundsInParent(Rect(0, 0, 900, 100))
+      setBoundsInScreen(Rect(0, 0, 900, 100))
+    }
+
+  /** A scroll view 1000 px tall on screen. */
+  @Suppress("DEPRECATION")
+  private fun scrollView() =
+    Node("android.widget.ScrollView").apply {
+      isScrollable = true
+      setBoundsInParent(Rect(0, 0, 900, 1000))
+      setBoundsInScreen(Rect(0, 0, 900, 1000))
+    }
+
+  /** A text 3000 px tall, of which the top 1000 px are on screen. */
+  @Suppress("DEPRECATION")
+  private fun longText() =
+    Node("android.widget.TextView").apply {
+      text = "Changes"
+      setBoundsInParent(Rect(0, 0, 900, 3000))
+      setBoundsInScreen(Rect(0, 0, 900, 1000))
+    }
+
+  /** A button scrolled out of view. */
+  private fun offscreenButton() =
+    Node("android.widget.Button").apply {
+      text = "OK"
+      isFocusable = true
+      isClickable = true
+      isVisibleToUser = false
+      setBoundsInScreen(Rect())
+    }
+
+  @Test
+  fun oneLongText_hasNothingAheadEitherWay() {
+    val text = longText()
+    val scroll = scrollView().add(Node("android.view.View"), text)
+    assertTrue(OffscreenContent.hasNothingAhead(scroll, text, /* forward= */ true))
+    assertTrue(OffscreenContent.hasNothingAhead(scroll, text, /* forward= */ false))
+  }
+
+  @Test
+  fun offscreenButtonAfterText_isAheadForwardOnly() {
+    val text = longText()
+    val scroll = scrollView().add(text, offscreenButton())
+    assertFalse(OffscreenContent.hasNothingAhead(scroll, text, /* forward= */ true))
+    assertTrue(OffscreenContent.hasNothingAhead(scroll, text, /* forward= */ false))
+  }
+
+  @Test
+  fun offscreenButtonBeforeText_isAheadBackwardOnly() {
+    val text = longText()
+    val scroll = scrollView().add(offscreenButton(), text)
+    assertTrue(OffscreenContent.hasNothingAhead(scroll, text, /* forward= */ true))
+    assertFalse(OffscreenContent.hasNothingAhead(scroll, text, /* forward= */ false))
+  }
+
+  @Test
+  fun nestedScrollingContainerAfterText_mayHoldMore() {
+    val message = longText()
+    val nested =
+      Node("android.widget.HorizontalScrollView")
+        .apply { isScrollable = true }
+        .add(Node("android.widget.Button").apply { text = "Next" })
+    val scroll = scrollView().add(message, nested)
+    assertFalse(OffscreenContent.hasNothingAhead(scroll, message, /* forward= */ true))
+  }
+
+  @Test
+  fun pivotIsTheScrollView_scrollsAsBefore() {
+    val scroll = scrollView().add(longText())
+    assertFalse(OffscreenContent.hasNothingAhead(scroll, scroll, /* forward= */ true))
+  }
+
+  @Test
+  fun pivotOutsideTheScrollView_scrollsAsBefore() {
+    val scroll = scrollView().add(longText())
+    assertFalse(OffscreenContent.hasNothingAhead(scroll, longText(), /* forward= */ true))
+  }
+}
