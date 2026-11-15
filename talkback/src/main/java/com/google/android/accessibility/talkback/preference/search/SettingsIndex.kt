@@ -71,6 +71,7 @@ import com.google.android.accessibility.utils.SettingsUtils
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.accessibility.utils.monitor.InputDeviceMonitor
 import com.google.android.accessibility.utils.output.CapturePolicy
+import com.google.android.accessibility.utils.output.HapticPatternParser
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 import java.util.concurrent.ExecutionException
 import java.util.concurrent.FutureTask
@@ -461,6 +462,7 @@ object SettingsIndex {
       vibrator == null || !vibrator.hasVibrator() || !vibrator.hasAmplitudeControl(),
       R.string.pref_vibration_strength_key,
     )
+    hideIf(HapticPatternParser.availableTypes(vibrator).size < 2, R.string.pref_vibration_type_key)
 
     // AutomaticDescriptionsFragment.
     hideIf(!LiveRecognition.isSupported(context), "pref_live_recognition_screen")

@@ -17,23 +17,23 @@
 package com.google.android.accessibility.brailleime
 
 import android.content.Context
-import android.os.Build
-import android.os.VibrationEffect
 import android.os.VibrationEffect.Composition.PRIMITIVE_CLICK
 import android.os.VibrationEffect.Composition.PRIMITIVE_LOW_TICK
 import android.os.VibrationEffect.Composition.PRIMITIVE_QUICK_FALL
 import android.os.VibrationEffect.Composition.PRIMITIVE_QUICK_RISE
 import android.os.VibrationEffect.Composition.PRIMITIVE_TICK
 import android.os.Vibrator
-import androidx.annotation.RequiresApi
+import com.google.android.accessibility.utils.output.HapticPatternParser
 import com.google.android.accessibility.utils.output.ThemeVibrations
+import com.google.android.accessibility.utils.output.VibrationSettings
 
 /** Singleton class which presents vibrations in braille keyboard. */
 class BrailleImeVibrator private constructor(context: Context) {
 
   /**
    * Vibration type in braille keyboard. Types play their steps as a composition when the device
-   * supports all of the primitives, and fall back to a one-shot vibration otherwise. A sound theme
+   * supports all of the primitives and Vibration type allows them, and fall back to a one-shot
+   * vibration otherwise. A sound theme
    * can replace each by its [themeName].
    */
   enum class VibrationType(
@@ -69,6 +69,13 @@ class BrailleImeVibrator private constructor(context: Context) {
   /** One primitive in a composition, with its scale and the delay before it plays. */
   internal data class Step(val primitive: Int, val scale: Float = 1f, val delayMs: Int = 0)
 
+  /** [VibrationType] as a [HapticPatternParser] pattern: on and off, amplitude and primitives. */
+  private fun VibrationType.pattern(): IntArray = buildList {
+    addAll(listOf(0, duration.toInt(), AMPLITUDE_SEPARATOR, duration.toInt(), amplitude))
+    add(PRIMITIVE_SEPARATOR)
+    steps.forEach { addAll(listOf(it.primitive, Math.round(it.scale * 255), it.delayMs)) }
+  }.toIntArray()
+
   private val vibrator = context.getSystemService(Vibrator::class.java)
   private var enabled = false
 
@@ -102,23 +109,14 @@ class BrailleImeVibrator private constructor(context: Context) {
     return true
   }
 
+  // Through the pattern parser, so that Vibration strength and Vibration type apply.
   private fun playOwn(vibrationType: VibrationType) {
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R && isCompositionSupported(vibrationType)) {
-      val composition = VibrationEffect.startComposition()
-      vibrationType.steps.forEach { composition.addPrimitive(it.primitive, it.scale, it.delayMs) }
-      vibrator.vibrate(composition.compose())
-      return
-    }
-    vibrator.vibrate(
-      VibrationEffect.createOneShot(vibrationType.duration, vibrationType.amplitude)
-    )
+    vibrator.vibrate(VibrationSettings.parser(vibrator).parse(vibrationType.pattern()))
   }
 
-  @RequiresApi(Build.VERSION_CODES.R)
-  private fun isCompositionSupported(vibrationType: VibrationType): Boolean =
-    vibrator.areAllPrimitivesSupported(*vibrationType.steps.map { it.primitive }.toIntArray())
-
   companion object {
+    private const val AMPLITUDE_SEPARATOR = -9998
+    private const val PRIMITIVE_SEPARATOR = -9999
     private var instance: BrailleImeVibrator? = null
 
     @JvmStatic
