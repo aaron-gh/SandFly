@@ -48,11 +48,15 @@ class UnlabelledIconLabelTest {
   }
 
   @Test fun anEmptyParentOfAnInteractiveChildIsNotAnnouncedAsUnlabelled() {
-    assertFalse(needsLabel(control(control())))
+    assertFalse(needsLabel(control(control().apply { isImportantForAccessibility = false })))
   }
 
   @Test fun aTextContainerIsNotAnnouncedAsUnlabelled() {
-    assertFalse(needsLabel(control(node().apply { text = "Continue"; isImportantForAccessibility = true })))
+    assertFalse(needsLabel(control(node().apply { text = "Continue" })))
+  }
+
+  @Test fun aContainerWithAChildStateIsNotAnnouncedAsUnlabelled() {
+    assertFalse(needsLabel(control(node().apply { stateDescription = "Expanded" })))
   }
 
   @Test fun anImportantChildIsNotAssumedToBeDecoration() {

@@ -47,16 +47,28 @@ class UnlabelledIconFocusTest {
     assertTrue(accepts(control(node()).apply { contentDescription = "Remove item" }))
   }
 
+  private fun hasOnlyDecorativeChild(node: AccessibilityNodeInfo) =
+    AccessibilityNodeInfoUtils.isClickableWithOnlyDecorativeChild(
+      AccessibilityNodeInfoCompat.wrap(node)
+    )
+
   @Test fun textInTheChildStillMakesItsParentSpeak() {
-    assertTrue(accepts(control(node().apply { text = "Continue" })))
+    val parent = control(node().apply { text = "Continue" })
+    assertTrue(accepts(parent))
+    assertFalse(hasOnlyDecorativeChild(parent))
   }
 
   @Test fun stateInTheChildStillMakesItsParentSpeak() {
-    assertTrue(accepts(control(node().apply { stateDescription = "Expanded" })))
+    val parent = control(node().apply { stateDescription = "Expanded" })
+    assertTrue(accepts(parent))
+    assertFalse(hasOnlyDecorativeChild(parent))
   }
 
   @Test fun anEmptyContainerAroundAnotherControlIsStillSkipped() {
-    val child = control().apply { setBoundsInScreen(Rect(120, 120, 180, 180)) }
+    val child = control().apply {
+      isImportantForAccessibility = false
+      setBoundsInScreen(Rect(120, 120, 180, 180))
+    }
     assertFalse(accepts(control(child)))
     assertTrue(accepts(child))
   }
