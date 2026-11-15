@@ -47,6 +47,7 @@ import com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED
 import com.google.android.accessibility.utils.Role
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.accessibility.utils.output.FeedbackItem
+import com.google.android.accessibility.utils.output.SpeechController
 import com.google.android.accessibility.utils.output.SpeechController.SpeakOptions
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 import java.io.IOException
@@ -127,6 +128,12 @@ class AiDictation(
   private var generation = 0
   /** Types the recognized text when the correction takes too long, or null when none waits. */
   private var giveUp: Runnable? = null
+  /**
+   * When Dictate last started and finished typing text that it spoke, in uptime milliseconds, for
+   * [typedSpokenText].
+   */
+  @Volatile private var spokenTypingStart = NEVER
+  @Volatile private var spokenTypingEnd = NEVER
 
   /**
    * Starts recording for text to type into [node], or stops recording when it is on. While a
@@ -624,6 +631,7 @@ class AiDictation(
       return
     }
     if (text.isEmpty()) return
+    val start = SystemClock.uptimeMillis()
     if (
       !target.refresh() ||
         !pipeline.returnFeedback(
@@ -633,8 +641,31 @@ class AiDictation(
         )
     ) {
       speak(service.getString(R.string.dictation_field_gone))
+      return
     }
+    // A dictated password isn't spoken.
+    if (!DictationSettings.speaksText(prefs) || target.isPassword) return
+    // The field's text change events come after this, and are left unspoken.
+    spokenTypingStart = start
+    spokenTypingEnd = SystemClock.uptimeMillis()
+    pipeline.returnFeedback(
+      EVENT_ID_UNTRACKED,
+      Feedback.speech(
+          text,
+          SpeakOptions.create()
+            .setQueueMode(SpeechController.QUEUE_MODE_QUEUE)
+            .setFlags(FeedbackItem.FLAG_FORCE_FEEDBACK_ALL),
+        )
+        .setDelayMs(SPEECH_DELAY_MS),
+    )
   }
+
+  /**
+   * Whether a text change at [eventTime], in uptime milliseconds, came from the last text typed
+   * with Speak dictated text on.
+   */
+  fun typedSpokenText(eventTime: Long): Boolean =
+    isTypingChange(eventTime, spokenTypingStart, spokenTypingEnd)
 
   private fun speak(text: String) {
     pipeline.returnFeedback(
@@ -680,6 +711,17 @@ class AiDictation(
     /** A model on the phone is slower than one in the cloud. */
     private const val DEVICE_CORRECTION_TIMEOUT_MS = 60_000L
     private const val SPEECH_DELAY_MS = 100
+    /** Far in the past, without overflowing when [TYPING_CHANGE_MS] is added. */
+    private const val NEVER = Long.MIN_VALUE / 2
+    /** How long after typing the field's text change events still come from it. */
+    const val TYPING_CHANGE_MS = 1_000L
+
+    /**
+     * Whether a text change at [eventTime] came from typing that ran from [start] to [end]: during
+     * it or up to [TYPING_CHANGE_MS] after it.
+     */
+    fun isTypingChange(eventTime: Long, start: Long, end: Long): Boolean =
+      eventTime >= start && eventTime <= end + TYPING_CHANGE_MS
 
     /**
      * How long silence lasts before recording stops by itself, or 0 for never: for [listen], a

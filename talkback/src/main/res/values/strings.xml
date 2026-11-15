@@ -5073,6 +5073,8 @@
   <string name="title_pref_dictation_rambler_live">Rambler live transcription</string>
   <!-- Dictation setting: how long after the last speech recording stops by itself. [CHAR_LIMIT=40] -->
   <string name="title_pref_dictation_auto_stop">Auto stop after silence</string>
+  <!-- Dictation switch: when dictation ends, SandFly speaks the text it typed into the field. [CHAR_LIMIT=NONE] -->
+  <string name="title_pref_dictation_speak_text">Speak dictated text</string>
   <!-- List: how long recognition models stay in memory after use. [CHAR_LIMIT=NONE] -->
   <string name="title_pref_keep_models_loaded">Keep recognition models loaded</string>
   <!-- Choice: recognition models are unloaded after each use. [CHAR_LIMIT=NONE] -->

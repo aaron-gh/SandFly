@@ -110,6 +110,12 @@ public class TextEventFilter {
   /** Tells whether the current on-screen keyboard says what is typed with it. */
   private @Nullable BooleanSupplier onScreenKeyboardEchoSuppressor;
 
+  /**
+   * Tells, for a text change at an event time, whether SandFly typed and spoke the text itself, so
+   * that the change isn't spoken.
+   */
+  private @Nullable LongPredicate textChangeSuppressor;
+
   ///////////////////////////////////////////////////////////////////////////////////
   // Member variables
 
@@ -259,6 +265,10 @@ public class TextEventFilter {
             LogUtils.d(TAG, "Drop text change: the keyboard says what is typed with it.");
             return;
           }
+          if (textChangeSuppressor != null && textChangeSuppressor.test(event.getEventTime())) {
+            LogUtils.d(TAG, "Drop text change: SandFly spoke the text it typed.");
+            return;
+          }
         }
         // Text input selection change
       }
@@ -402,6 +412,11 @@ public class TextEventFilter {
 
   public void setEchoSuppressor(@Nullable LongPredicate echoSuppressor) {
     this.echoSuppressor = echoSuppressor;
+  }
+
+  /** Leaves out text changes, removals and replacements included, at times [suppressor] accepts. */
+  public void setTextChangeSuppressor(@Nullable LongPredicate suppressor) {
+    this.textChangeSuppressor = suppressor;
   }
 
   /**

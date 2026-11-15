@@ -173,6 +173,7 @@ import com.google.android.accessibility.talkback.contextmenu.ListMenuManager;
 import com.google.android.accessibility.talkback.controller.TelevisionNavigationController;
 import com.google.android.accessibility.talkback.controlsounds.ControlSoundsSettings;
 import com.google.android.accessibility.talkback.dictation.RecognitionModelKeeper;
+import com.google.android.accessibility.talkback.dictation.SandflyDictation;
 import com.google.android.accessibility.talkback.directtouch.DirectTouchController;
 import com.google.android.accessibility.talkback.feedbackpolicy.KeyboardWindowSounds;
 import com.google.android.accessibility.talkback.directtouch.DirectTouchSettings;
@@ -3313,6 +3314,8 @@ public class TalkBackService extends AccessibilityServiceCompat
     textEventFilter.setEchoSuppressor(eventTime -> HandwritingKeyboardHost.isTyping());
     // So does a keyboard that speaks through SandFly and says so.
     textEventFilter.setOnScreenKeyboardEchoSuppressor(() -> KeyboardSpeech.isTypingSpoken(this));
+    // Dictation that speaks the text it types.
+    textEventFilter.setTextChangeSuppressor(SandflyDictation::typedSpokenText);
     textEventFilter.setBrailleInputReader(
         () -> {
           BrailleImeForTalkBack brailleIme = getBrailleImeForTalkBack();

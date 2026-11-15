@@ -141,6 +141,15 @@ public class TextEventFilterDropTest {
   }
 
   @Test
+  public void changeOfTextSandFlySpokeIsDropped() {
+    filter.setTextChangeSuppressor(time -> time == START);
+    change(START, TextEventInterpretation.TEXT_ADD, "");
+    change(START + 500, TextEventInterpretation.TEXT_REPLACE, "");
+    assertEquals(1, sent.size());
+    assertEquals(TextEventInterpretation.TEXT_REPLACE, sent.get(0).getEvent());
+  }
+
+  @Test
   public void changeSoonAfterAnotherIsDropped() {
     change(START, "");
     change(START + 50, "");

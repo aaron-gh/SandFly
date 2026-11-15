@@ -37,6 +37,7 @@ object DictationSettings {
   const val PREF_WHISPER_GPU = "pref_dictation_whisper_gpu"
   const val PREF_RAMBLER_LIVE = "pref_dictation_rambler_live"
   const val PREF_AUTO_STOP_MS = "pref_dictation_auto_stop_ms"
+  const val PREF_SPEAK_TEXT = "pref_dictation_speak_text"
 
   /** The AI service of automatic descriptions corrects dictation too. */
   const val AI_SAME = "same"
@@ -89,6 +90,9 @@ object DictationSettings {
 
   /** Whether Rambler transcribes while the user speaks, so that the text is ready sooner. */
   fun ramblerLive(prefs: SharedPreferences): Boolean = prefs.getBoolean(PREF_RAMBLER_LIVE, true)
+
+  /** Whether Dictate speaks the text it types: Speak dictated text. */
+  fun speaksText(prefs: SharedPreferences): Boolean = prefs.getBoolean(PREF_SPEAK_TEXT, false)
 
   /** How long after the last speech recording stops by itself, in milliseconds, or 0 for never. */
   fun autoStopMs(prefs: SharedPreferences): Long =
