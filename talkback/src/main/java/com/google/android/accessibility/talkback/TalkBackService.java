@@ -895,6 +895,19 @@ public class TalkBackService extends AccessibilityServiceCompat
   // TYPE_TOUCH_INTERACTION_END will be considered as passthrough window.
   private boolean isTouchInteracting = false;
 
+  /**
+   * The service flags that make Android set up touch exploration again when they change, ending
+   * the touch in progress without a {@link AccessibilityEvent#TYPE_TOUCH_INTERACTION_END}.
+   */
+  private static final int TOUCH_EXPLORATION_SETUP_FLAGS =
+      AccessibilityServiceInfo.FLAG_REQUEST_TOUCH_EXPLORATION_MODE
+          | FLAG_SERVICE_HANDLES_DOUBLE_TAP
+          | AccessibilityServiceInfo.FLAG_REQUEST_MULTI_FINGER_GESTURES
+          | AccessibilityServiceInfo.FLAG_REQUEST_2_FINGER_PASSTHROUGH
+          | AccessibilityServiceInfo.FLAG_SEND_MOTION_EVENTS;
+
+  @Nullable private ProcessorVolumeStream processorVolumeStream;
+
   // In order to handle key action down/up in pair for the same functions.
   // Records whether the last keystroke of VolumeUp key occurred in the passthrough window.
   private boolean volumeUpKeyPressedInPassThroughWindow = false;
@@ -2001,6 +2014,24 @@ public class TalkBackService extends AccessibilityServiceCompat
     return getBrailleImeForTalkBack() != null && getBrailleImeForTalkBack().isTouchInteracting();
   }
 
+  /**
+   * Ends the touch interaction in progress, for when Android ends it without a {@link
+   * AccessibilityEvent#TYPE_TOUCH_INTERACTION_END}: when touch exploration is set up again or the
+   * touch is cancelled. Otherwise, until the next touch, the volume keys change speech volume only,
+   * their commands and cursor movement stay off, and notifications held for the touch stay held.
+   */
+  private void forgetTouchInteraction(String reason) {
+    if (!isTouchInteracting) {
+      return;
+    }
+    Log.i(TAG, "Touch interaction ended without its event: " + reason);
+    isTouchInteracting = false;
+    if (processorVolumeStream != null) {
+      processorVolumeStream.forgetTouchInteraction();
+    }
+    NotificationReader.onTouchEnded();
+  }
+
   @Override
   protected boolean onGesture(int gestureId) {
     return handleOnGestureById(Display.DEFAULT_DISPLAY, gestureId);
@@ -3080,7 +3111,7 @@ public class TalkBackService extends AccessibilityServiceCompat
 
     headphoneStateMonitor = new HeadphoneStateMonitor(this);
 
-    ProcessorVolumeStream processorVolumeStream =
+    processorVolumeStream =
         new ProcessorVolumeStream(pipeline.getActorState(), this, touchInteractingIndicator);
     addEventListener(processorVolumeStream);
     keyEventListeners.add(processorVolumeStream);
@@ -3106,6 +3137,10 @@ public class TalkBackService extends AccessibilityServiceCompat
                     : AudioManager.USE_DEFAULT_STREAM_TYPE);
     ringerModeAndScreenMonitor.addScreenChangedListener(
         (isInteractive, eventId) -> {
+          if (!isInteractive) {
+            // Android cancels the touch, which ends with no TYPE_TOUCH_INTERACTION_END.
+            forgetTouchInteraction("screen off");
+          }
           if (!isInteractive && volumeKeyCommands != null) {
             volumeKeyCommands.onScreenOff();
           }
@@ -3669,6 +3704,7 @@ public class TalkBackService extends AccessibilityServiceCompat
 
       LogUtils.v(TAG, "Accessibility Service flag set: 0x%X", info.flags);
       setServiceInfo(info);
+      forgetTouchInteraction("service flags set");
     }
 
     if (callStateMonitor != null) {
@@ -5004,6 +5040,9 @@ public class TalkBackService extends AccessibilityServiceCompat
 
     LogUtils.v(TAG, "Accessibility Service flag changed: 0x%X", info.flags);
     setServiceInfo(info);
+    if ((flags & TOUCH_EXPLORATION_SETUP_FLAGS) != 0) {
+      forgetTouchInteraction("touch exploration set up again");
+    }
     if ((flags & AccessibilityServiceInfo.FLAG_REQUEST_TOUCH_EXPLORATION_MODE)
             == AccessibilityServiceInfo.FLAG_REQUEST_TOUCH_EXPLORATION_MODE
         && newValue
@@ -5572,8 +5611,12 @@ public class TalkBackService extends AccessibilityServiceCompat
       // When gesture detection's enabled in the service side, FLAG_SERVICE_HANDLES_DOUBLE_TAP
       // will be set. And it won't be changed during the life time of service. Otherwise the touch
       // interaction controller will be affected.
+      boolean changed = (info.flags & FLAG_SERVICE_HANDLES_DOUBLE_TAP) == 0;
       info.flags |= FLAG_SERVICE_HANDLES_DOUBLE_TAP;
       setServiceInfo(info);
+      if (changed) {
+        forgetTouchInteraction("touch exploration set up again");
+      }
     }
 
     List<Display> displays = WindowUtils.getAllDisplays(getApplicationContext());
