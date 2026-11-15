@@ -69,6 +69,7 @@ public class EditBufferUnContracted implements EditBuffer {
 
   private static final String TAG = "EditBufferCommon";
   private static final int DELETE_WORD_MAX = 50;
+  private static final int TYPED_INTO_FIELD_THAT_HIDES_TEXT_MAX = 100;
   private final TalkBackSpeaker talkBack;
   private final BrailleTranslator translator;
   private final Context context;
@@ -136,10 +137,32 @@ public class EditBufferUnContracted implements EditBuffer {
     numberSignAddedAutomatically =
         numberSign != null
             && isNumberField(imeConnection)
-            && !firstCharacter.equals(numberSign);
+            && numberSignMakesDigit(translator, numberSign, firstCharacter);
     if (numberSignAddedAutomatically) {
       holdings.append(numberSign);
     }
+  }
+
+  /**
+   * Whether {@code numberSign} before {@code cell} makes it a digit that the cell alone is not.
+   * False for the number sign itself, for cells that are no digit after it, such as a minus sign or
+   * a decimal point, and for tables whose digits need no number sign.
+   */
+  @VisibleForTesting
+  static boolean numberSignMakesDigit(
+      BrailleTranslator translator, BrailleCharacter numberSign, BrailleCharacter cell) {
+    if (cell.equals(numberSign)) {
+      return false;
+    }
+    String sign = translator.translateToPrint(new BrailleWord(numberSign));
+    String signAndCell = translator.translateToPrint(new BrailleWord(numberSign, cell));
+    if (sign == null || signAndCell == null || !signAndCell.startsWith(sign)) {
+      return false;
+    }
+    String digit = signAndCell.substring(sign.length());
+    return digit.length() == 1
+        && Character.isDigit(digit.charAt(0))
+        && !digit.equals(translator.translateToPrint(new BrailleWord(cell)));
   }
 
   private static boolean isNumberField(ImeConnection imeConnection) {
@@ -158,7 +181,14 @@ public class EditBufferUnContracted implements EditBuffer {
       return;
     }
     typedIntoFieldThatHidesText.append(committed);
-    talkBack.speak(committed, TalkBackSpeaker.AnnounceType.INTERRUPT);
+    int excess = typedIntoFieldThatHidesText.length() - TYPED_INTO_FIELD_THAT_HIDES_TEXT_MAX;
+    if (excess > 0) {
+      typedIntoFieldThatHidesText.delete(0, excess);
+    }
+    // SILENCE when character echo is off in the keyboard echo settings.
+    if (imeConnection.announceType != ImeConnection.AnnounceType.SILENCE) {
+      talkBack.speak(committed, TalkBackSpeaker.AnnounceType.INTERRUPT);
+    }
   }
 
   /** Provides (optionally) an audial announcement for a just-appended {@code brailleCharacter}. */
@@ -241,6 +271,7 @@ public class EditBufferUnContracted implements EditBuffer {
     // If there is any holdings left, clear it out; otherwise delete at the Editor level.
     if (holdings.size() > 0) {
       holdings.clear();
+      numberSignAddedAutomatically = false;
       lastCommitIndexOfHoldings = NO_CURSOR;
       imeConnection.inputConnection.setComposingText("", 0);
     } else {
@@ -315,6 +346,7 @@ public class EditBufferUnContracted implements EditBuffer {
 
   private void clearHoldingsAndFinishComposing(InputConnection inputConnection) {
     holdings.clear();
+    numberSignAddedAutomatically = false;
     lastCommitIndexOfHoldings = NO_CURSOR;
     inputConnection.finishComposingText();
   }

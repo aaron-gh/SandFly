@@ -6,6 +6,8 @@ apply from: "../../shared.gradle"
 
 android {
     namespace = "com.google.android.accessibility.braille.common"
+    // Robolectric tests read the module's strings.
+    testOptions.unitTests.includeAndroidResources = true
 }
 
 dependencies {
@@ -14,4 +16,5 @@ dependencies {
     implementation project(':proguard')
     implementation project(':utils')
     testImplementation libs.junit
+    testImplementation libs.robolectric
 }
