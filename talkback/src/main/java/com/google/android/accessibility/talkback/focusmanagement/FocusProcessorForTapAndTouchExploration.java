@@ -49,6 +49,7 @@ import com.google.android.accessibility.talkback.directtouch.DirectTouchRegions;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.focusmanagement.action.TouchExplorationAction;
 import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionRecord;
+import com.google.android.accessibility.talkback.gesture.KeyboardHover;
 import com.google.android.accessibility.talkback.scripting.Scripts;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.AccessibilityWindowInfoUtils;
@@ -761,13 +762,22 @@ public class FocusProcessorForTapAndTouchExploration {
         case MSG_REFOCUS ->
             parent.touchFocusedNode(parent.lastFocusableNodeBeingTouched, /* eventId= */ null);
         case MSG_LONG_CLICK_LAST_NODE -> {
-          if (parent.supportsLiftToType(parent.lastFocusableNodeBeingTouched)
-              || Scripts.longPressAfterMs(parent.lastFocusableNodeBeingTouched) > 0) {
-            parent.interpretationReceiver.input(
-                /* eventId= */ null,
-                /* event= */ null,
-                Interpretation.Touch.create(LONG_PRESS, parent.lastFocusableNodeBeingTouched));
-            parent.mayBeLiftToType = false;
+          AccessibilityNodeInfoCompat node = parent.lastFocusableNodeBeingTouched;
+          if (parent.supportsLiftToType(node) || Scripts.longPressAfterMs(node) > 0) {
+            // A hover sent to Gboard ends first: its exit on Gboard's popup of alternative
+            // characters, which the long press opens, would type one.
+            KeyboardHover.exitThen(
+                () -> {
+                  if (node == null || node != parent.lastFocusableNodeBeingTouched) {
+                    // The touch ended, or moved to another item, while the hover ended.
+                    return;
+                  }
+                  parent.interpretationReceiver.input(
+                      /* eventId= */ null,
+                      /* event= */ null,
+                      Interpretation.Touch.create(LONG_PRESS, node));
+                  parent.mayBeLiftToType = false;
+                });
           }
         }
         case MSG_HOLD_TO_CANCEL -> parent.holdToCancel();

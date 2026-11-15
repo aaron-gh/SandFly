@@ -88,4 +88,12 @@ interface IShizukuGrants {
      * Returns null if it worked, or what went wrong.
      */
     String exitSplit(int taskId) = 10;
+
+    /**
+     * Injects a touch screen hover event, of MotionEvent [action] HOVER_ENTER, HOVER_MOVE or
+     * HOVER_EXIT, at [x], [y] on the default display, for a hover that started at [downTime]. With
+     * [waitForFinish], returns once the app under it has handled the event. Returns null if it
+     * worked, or what went wrong.
+     */
+    String injectHover(int action, long downTime, float x, float y, boolean waitForFinish) = 11;
 }

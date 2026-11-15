@@ -44,6 +44,7 @@ import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.VoiceActionMonitor;
 import com.google.android.accessibility.talkback.focusmanagement.SheetsGrid;
 import com.google.android.accessibility.talkback.gesture.KeyboardExploration;
+import com.google.android.accessibility.talkback.gesture.KeyboardHover;
 import com.google.android.accessibility.talkback.monitor.RingerModeAndScreenMonitor;
 import com.google.android.accessibility.utils.AccessibilityEventListener;
 import com.google.android.accessibility.utils.AccessibilityEventUtils;
@@ -284,6 +285,15 @@ public class AccessibilityEventProcessor implements DisplayStateChangedListener 
     }
 
     if (shouldDropEvent(event)) {
+      return;
+    }
+
+    if (KeyboardHover.isSentHover(event)) {
+      // Gboard reporting the hover SandFly sent it, not the user's touch exploration.
+      LogUtils.v(
+          TAG,
+          "Dropped Gboard's %s for the hover sent to it",
+          AccessibilityEvent.eventTypeToString(event.getEventType()));
       return;
     }
 

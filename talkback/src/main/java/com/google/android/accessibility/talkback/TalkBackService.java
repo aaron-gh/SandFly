@@ -213,6 +213,7 @@ import com.google.android.accessibility.talkback.gesture.GestureLayoutActivity;
 import com.google.android.accessibility.talkback.gesture.GestureHistory;
 import com.google.android.accessibility.talkback.gesture.GestureProfiles;
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping;
+import com.google.android.accessibility.talkback.gesture.KeyboardHover;
 import com.google.android.accessibility.talkback.gesture.SyntheticTouches;
 import com.google.android.accessibility.talkback.gesture.TwoFingerRotationTracker;
 import com.google.android.accessibility.talkback.gesture.VibrationWatchGestureSettings;
@@ -850,6 +851,7 @@ public class TalkBackService extends AccessibilityServiceCompat
   private WindowEventInterpreter windowEventInterpreter;
   private ScreenFeedbackManager processorScreen;
   private KeyboardWindowSounds keyboardWindowSounds;
+  private KeyboardHover.WindowHandler keyboardHoverWindows;
 
   // Values of the "Interrupt speech when typing" setting.
   private static final int INTERRUPT_TYPING_ALWAYS = 0;
@@ -1112,6 +1114,10 @@ public class TalkBackService extends AccessibilityServiceCompat
     if (keyboardWindowSounds != null) {
       keyboardWindowSounds.shutdown();
       keyboardWindowSounds = null;
+    }
+    if (keyboardHoverWindows != null) {
+      keyboardHoverWindows.shutdown();
+      keyboardHoverWindows = null;
     }
 
     if (directTouchController != null) {
@@ -3431,6 +3437,8 @@ public class TalkBackService extends AccessibilityServiceCompat
               },
               () -> isServiceActive() && !PauseController.isPaused());
       windowEventInterpreter.addListener(keyboardWindowSounds);
+      keyboardHoverWindows = new KeyboardHover.WindowHandler(this);
+      windowEventInterpreter.addListener(keyboardHoverWindows);
       directTouchController =
           new DirectTouchController(
               this, prefs, pipeline.getFeedbackReturner(), windowEventInterpreter);
