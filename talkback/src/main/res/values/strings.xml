@@ -2602,6 +2602,12 @@
     <string name="switch_keyboard_none">No other keyboard turned on</string>
     <!-- Spoken when Android didn't switch to the next keyboard for the Switch keyboard command. [CHAR LIMIT=NONE] -->
     <string name="switch_keyboard_failed">Keyboard not switched</string>
+    <!-- Label for the command that moves through every item after the focused one without speaking, scrolling lists on the way, and collects their text; also the title of the window that lists the texts with a check box each. [CHAR LIMIT=NONE] -->
+    <string name="title_continuous_copy">Continuous copy</string>
+    <!-- Button in the Continuous copy window that puts the checked texts, one per line, on the clipboard and in the clipboard history. [CHAR LIMIT=20] -->
+    <string name="continuous_copy_save">Save</string>
+    <!-- Spoken when the Continuous copy command runs while no item has accessibility focus. [CHAR LIMIT=NONE] -->
+    <string name="continuous_copy_no_focus">No item has focus</string>
     <!-- Label for the command that adds the text of the focused item, or the selected text, to the end of the text on the clipboard. [CHAR_LIMIT=40] -->
     <string name="shortcut_add_to_clipboard">Add to clipboard</string>
     <!-- Title of the window, command, SandFly menu item and reading control listing the texts copied, newest first. [CHAR_LIMIT=40] -->

@@ -760,7 +760,7 @@ class ScriptRuntime(
         .associateWith { SYSTEM } +
         listOf(
             "COPY", "CUT", "PASTE", "ADD_TO_CLIPBOARD", "COPY_LAST_SPOKEN_UTTERANCE",
-            "SELECT_LAST_SPOKEN_PHRASE_WORD_BY_WORD", "COPY_TEXT_FROM_SCREEN",
+            "SELECT_LAST_SPOKEN_PHRASE_WORD_BY_WORD", "COPY_TEXT_FROM_SCREEN", "CONTINUOUS_COPY",
             "COPY_SCREEN_TREE", "CLIPBOARD_HISTORY", "SPEECH_HISTORY",
           )
           .associateWith { CLIPBOARD }

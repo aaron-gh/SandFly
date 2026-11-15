@@ -84,6 +84,9 @@ public class FocusManagerInternal {
 
   @VisibleForTesting protected boolean muteNextFocus = false;
 
+  /** Whether every focus set is silent, as while Continuous copy collects the items' text. */
+  private boolean muteFocus = false;
+
   /** Writable focus-history. */
   private final AccessibilityFocusActionHistory history;
 
@@ -167,6 +170,11 @@ public class FocusManagerInternal {
 
   public void setMuteNextFocus() {
     muteNextFocus = true;
+  }
+
+  /** Makes every focus set silent until called with false. */
+  public void setMuteFocus(boolean mute) {
+    muteFocus = mute;
   }
 
   public void renewEnsureFocus() {
@@ -627,6 +635,7 @@ public class FocusManagerInternal {
         maySpeakFirst
             && focusSetListener != null
             && !muteNextFocus
+            && !muteFocus
             && !shouldMuteFeedbackForMicroGranularityNavigation(focusActionInfo, node)
             && focusSetListener.beforeAccessibilityFocusSet(
                 node, focusActionInfo, eventId, currentTime);
@@ -672,6 +681,9 @@ public class FocusManagerInternal {
       muteNextFocus = false;
 
       LogUtils.d(TAG, "FocusActionInfo modified.");
+      focusActionInfo =
+          new FocusActionInfo.Builder(focusActionInfo).setForceMuteFeedback(true).build();
+    } else if (muteFocus) {
       focusActionInfo =
           new FocusActionInfo.Builder(focusActionInfo).setForceMuteFeedback(true).build();
     }

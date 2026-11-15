@@ -81,6 +81,7 @@ class CommandsTest {
         R.string.shortcut_value_speech_history,
         R.string.shortcut_value_switch_keyboard,
         R.string.shortcut_value_app_gestures_for_app,
+        R.string.shortcut_value_continuous_copy,
       )) {
       assertTrue(context.getString(res) in values)
     }

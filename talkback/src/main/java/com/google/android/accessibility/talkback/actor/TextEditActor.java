@@ -538,7 +538,7 @@ public class TextEditActor {
    * The texts of the items inside {@code node}, such as the title and summary of a row that has no
    * text of its own, one per line, or null if there are none.
    */
-  private static @Nullable CharSequence childrenText(AccessibilityNodeInfoCompat node) {
+  static @Nullable CharSequence childrenText(AccessibilityNodeInfoCompat node) {
     List<CharSequence> texts = new ArrayList<>();
     ArrayDeque<AccessibilityNodeInfoCompat> pending = new ArrayDeque<>();
     for (int i = 0; i < node.getChildCount(); i++) {

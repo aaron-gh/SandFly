@@ -63,8 +63,9 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * Dialog that allows selecting and copying text from the entire screen
- * with granularity options (addresses and numbers, characters, words, and paragraphs), or
- * selecting words individually from the last spoken phrase.
+ * with granularity options (addresses and numbers, characters, words, and paragraphs),
+ * selecting words individually from the last spoken phrase, or choosing which of the texts that
+ * Continuous copy collected to save.
  */
 public class WordSelectionDialog extends BaseDialog {
 
@@ -73,7 +74,9 @@ public class WordSelectionDialog extends BaseDialog {
     ENTITIES,
     CHARACTERS,
     WORDS,
-    PARAGRAPHS
+    PARAGRAPHS,
+    /** One item for each text Continuous copy collected, as it is. */
+    LINES
   }
 
   private static final String TAG = "WordSelectionDialog";
@@ -181,6 +184,8 @@ public class WordSelectionDialog extends BaseDialog {
   @Nullable private RecyclerView wordsRecyclerView;
   @Nullable private TokenAdapter adapter;
   private final boolean showGranularityOptions;
+  /** Whether every item starts checked, as the texts of Continuous copy do. */
+  private boolean checkedAtFirst;
 
   public WordSelectionDialog(
       Context context,
@@ -284,6 +289,9 @@ public class WordSelectionDialog extends BaseDialog {
     tokens.addAll(extracted.items);
     listTruncated = textTruncated || extracted.truncated;
     checked.clear();
+    if (checkedAtFirst) {
+      checked.set(0, tokens.size());
+    }
     if (adapter != null) {
       adapter.notifyDataSetChanged();
     }
@@ -328,6 +336,12 @@ public class WordSelectionDialog extends BaseDialog {
   static Tokens extractTokens(List<String> paragraphs, Granularity granularity) {
     Tokens tokens = new Tokens();
     switch (granularity) {
+      case LINES:
+        // Continuous copy keeps to its own limits.
+        for (String p : paragraphs) {
+          tokens.items.add(new Token(p, /* glue= */ null));
+        }
+        break;
       case PARAGRAPHS:
         for (String p : paragraphs) {
           addPieces(tokens, p.trim(), /* glue= */ " ");
@@ -443,7 +457,7 @@ public class WordSelectionDialog extends BaseDialog {
               if (checked.isEmpty()) {
                 if (pipeline != null) {
                   int emptyFeedbackRes =
-                      showGranularityOptions
+                      showGranularityOptions || currentGranularity == Granularity.LINES
                           ? R.string.no_text_selected
                           : R.string.no_words_selected;
                   pipeline.returnFeedback(
@@ -496,7 +510,7 @@ public class WordSelectionDialog extends BaseDialog {
     String delimiter =
         switch (granularity) {
           case PARAGRAPHS -> "\n\n";
-          case ENTITIES -> "\n";
+          case ENTITIES, LINES -> "\n";
           case WORDS -> " ";
           case CHARACTERS -> "";
         };
@@ -558,6 +572,31 @@ public class WordSelectionDialog extends BaseDialog {
     if (fromMenu) {
       dialog.setRestoreFocus(true);
     }
+    dialog.showDialog();
+  }
+
+  /**
+   * Shows the texts Continuous copy collected, one item each, all checked; Save puts the checked
+   * ones, one per line, on the clipboard and in the clipboard history.
+   */
+  public static void showForLines(
+      TalkBackService service,
+      @Nullable FeedbackReturner pipeline,
+      List<String> lines,
+      boolean truncated) {
+    Collected collected = new Collected();
+    collected.paragraphs.addAll(lines);
+    collected.truncated = truncated;
+    WordSelectionDialog dialog =
+        new WordSelectionDialog(
+            service,
+            R.string.title_continuous_copy,
+            collected,
+            pipeline,
+            /* showGranularityOptions= */ false);
+    dialog.currentGranularity = Granularity.LINES;
+    dialog.checkedAtFirst = true;
+    dialog.setPositiveButtonStringRes(R.string.continuous_copy_save);
     dialog.showDialog();
   }
 

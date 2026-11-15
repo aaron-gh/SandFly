@@ -851,6 +851,7 @@ object Commands {
           R.string.shortcut_value_copy_text_from_screen,
           R.string.title_copy_text_from_screen,
         )
+        gesture(R.string.shortcut_value_continuous_copy, R.string.title_continuous_copy)
         gesture(R.string.shortcut_value_granular_editing, R.string.granular_editing_title)
         gesture(R.string.shortcut_value_typo_suggestions, R.string.title_edittext_typo_suggestions)
         gesture(R.string.shortcut_value_dictate, R.string.shortcut_dictate)

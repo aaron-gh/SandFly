@@ -117,6 +117,7 @@ import com.google.android.accessibility.talkback.PrimesController.TimerAction;
 import com.google.android.accessibility.talkback.TalkBackExitController.TrainingState;
 import com.google.android.accessibility.talkback.actor.AutoScrollActor;
 import com.google.android.accessibility.talkback.actor.BrailleDisplayActor;
+import com.google.android.accessibility.talkback.actor.ContinuousCopy;
 import com.google.android.accessibility.talkback.actor.DimScreenActor;
 import com.google.android.accessibility.talkback.actor.DimScreenActor.DimScreenNotifier;
 import com.google.android.accessibility.talkback.actor.DirectionNavigationActor;
@@ -721,6 +722,7 @@ public class TalkBackService extends AccessibilityServiceCompat
   private Compositor compositor;
   private DirectionNavigationActor.StateReader directionNavigationActorStateReader;
   private FullScreenReadActor fullScreenReadActor;
+  private @Nullable ContinuousCopy continuousCopy;
   private GeminiActor geminiActor;
   private EditTextActionHistory editTextActionHistory;
 
@@ -1031,6 +1033,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     boolean touchHandlingReleased = releaseTouchHandling();
     TurnOffLog.record(this, lastWindowPackage, touchHandlingReleased);
     final long turningOffTime = System.currentTimeMillis();
+    cancelContinuousCopy();
     interruptAllFeedback(/* stopTtsSpeechCompletely= */ false);
     storeTalkBackUserUsage();
     if (pipeline != null) {
@@ -1413,6 +1416,7 @@ public class TalkBackService extends AccessibilityServiceCompat
       // TODO: Could move the logic of TOUCH_INTERACTION related event handling out of
       // TalkBackService, and concentrated in a dedicated module such as ?
       isTouchInteracting = true;
+      stopContinuousCopy();
       if (globalVariables != null) {
         globalVariables.setTapToType(false);
       }
@@ -1709,6 +1713,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     if (keyEvent.getAction() == KeyEvent.ACTION_DOWN) {
       RecentUserInput.mark();
       ScrollAhead.cancelAll("key");
+      stopContinuousCopy();
       if (gestureController != null) {
         gestureController.onUserInputStarted();
       }
@@ -2420,6 +2425,25 @@ public class TalkBackService extends AccessibilityServiceCompat
     }
   }
 
+  /** Continuous copy, null before the service is set up. */
+  public @Nullable ContinuousCopy getContinuousCopy() {
+    return continuousCopy;
+  }
+
+  /** Ends a Continuous copy collection and shows what it collected, as the user's input does. */
+  public void stopContinuousCopy() {
+    if (continuousCopy != null) {
+      continuousCopy.stopByUser();
+    }
+  }
+
+  /** Ends a Continuous copy collection and drops what it collected. */
+  private void cancelContinuousCopy() {
+    if (continuousCopy != null) {
+      continuousCopy.cancel();
+    }
+  }
+
   @Override
   protected void onServiceConnected() {
     ExitAfterTurnOff.cancel();
@@ -3009,6 +3033,10 @@ public class TalkBackService extends AccessibilityServiceCompat
     voiceCommandProcessor.setActorState(pipeline.getActorState());
     voiceCommandProcessor.setPipeline(pipeline.getFeedbackReturner());
 
+    continuousCopy =
+        new ContinuousCopy(this, accessibilityFocusMonitor, focuser, fullScreenReadActor);
+    continuousCopy.setPipeline(pipeline.getFeedbackReturner());
+
     accessibilityEventProcessor.setActorState(pipeline.getActorState());
     accessibilityEventProcessor.setAccessibilityEventIdleListener(pipeline);
 
@@ -3168,6 +3196,9 @@ public class TalkBackService extends AccessibilityServiceCompat
           if (!isInteractive && appSwitcherKeys != null) {
             appSwitcherKeys.reset();
           }
+          if (!isInteractive) {
+            cancelContinuousCopy();
+          }
         });
     splitScreen = new SplitScreen(this);
     appSwitcherKeys =
@@ -3236,6 +3267,7 @@ public class TalkBackService extends AccessibilityServiceCompat
                 }
                 ClipboardHistoryOverlay.close();
                 interruptFullScreenReadActor();
+                cancelContinuousCopy();
                 clearQueues();
               }
 
@@ -3898,6 +3930,7 @@ public class TalkBackService extends AccessibilityServiceCompat
 
     setServiceState(ServiceStateListener.SERVICE_STATE_SHUTTING_DOWN);
     ClipboardHistoryOverlay.close();
+    cancelContinuousCopy();
     if (liftCancelStrip != null) {
       liftCancelStrip.setShown(false);
     }
@@ -4044,6 +4077,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     if (fullScreenReadActor != null) {
       fullScreenReadActor.shutdown();
     }
+    cancelContinuousCopy();
 
     if (labelManager != null) {
       labelManager.shutdown();

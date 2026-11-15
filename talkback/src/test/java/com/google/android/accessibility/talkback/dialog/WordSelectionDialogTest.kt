@@ -96,6 +96,20 @@ class WordSelectionDialogTest {
   }
 
   @Test
+  fun linesAreOneItemEachAndJoinedByLineBreaks() {
+    val lines = List(WordSelectionDialog.MAX_TOKENS + 5) { "Line $it" } + "x".repeat(500)
+    val tokens = WordSelectionDialog.extractTokens(lines, Granularity.LINES)
+    assertEquals(lines, tokens.texts())
+    assertFalse(tokens.truncated)
+    val checked = BitSet().apply { set(0, tokens.items.size) }
+    checked.clear(1)
+    assertEquals(
+      (lines.take(1) + lines.drop(2)).joinToString("\n"),
+      WordSelectionDialog.joinSelected(tokens.items, checked, Granularity.LINES),
+    )
+  }
+
+  @Test
   fun longWordIsSplitAndRejoinedWithoutSpaces() {
     val word = "x".repeat(WordSelectionDialog.MAX_ITEM_CHARS * 2 + 5)
     val tokens = WordSelectionDialog.extractTokens(listOf("a $word b"), Granularity.WORDS)

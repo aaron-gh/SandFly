@@ -274,6 +274,11 @@ public class FocusActor implements UserInputEventListener {
     focusManagerInternal.setMuteNextFocus();
   }
 
+  /** Makes every focus set silent until called with false. */
+  public void setMuteFocus(boolean mute) {
+    focusManagerInternal.setMuteFocus(mute);
+  }
+
   public void renewEnsureFocus() {
     focusManagerInternal.renewEnsureFocus();
   }
