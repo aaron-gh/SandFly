@@ -25,6 +25,8 @@ import org.junit.Assert.assertEquals
 import org.junit.Assert.assertSame
 import org.junit.Assert.assertTrue
 import org.junit.Assert.assertFalse
+import org.junit.Assert.assertNotNull
+import org.junit.Assert.assertNotSame
 import org.junit.Assert.assertNull
 import java.util.concurrent.CountDownLatch
 import java.util.concurrent.Executors
@@ -33,6 +35,7 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
+import org.robolectric.util.ReflectionHelpers
 
 /** The steps that find an item of web content in view after the user scrolled the page. */
 @RunWith(RobolectricTestRunner::class)
@@ -251,6 +254,22 @@ class WebFocusRecoveryTest {
       assertNull(recovery.item())
       assertEquals(1, reads)
     } finally { release.countDown(); executor.shutdownNow() }
+  }
+
+  @Test
+  fun theStripIsCopiedBeforeTheWorkerStarts() {
+    val focus = above("Old item")
+    val strip = Node(Rect(0, 100, 1000, 200), null, false, true)
+    val document = Node(viewport, null, true, true, focus, strip, item(500, 700, "Visible item"))
+    inApp(document)
+    val recovery = WebFocusRecovery(focus, null, document, true, true, strip, true)
+    var stripWhenSubmitted: Any? = null
+    recovery.startInBackground(SystemClock.uptimeMillis() + 500) { _ ->
+      stripWhenSubmitted = ReflectionHelpers.getField(recovery, "strip")
+      null
+    }
+    assertNotNull(stripWhenSubmitted)
+    assertNotSame(strip, stripWhenSubmitted)
   }
 
   @Test

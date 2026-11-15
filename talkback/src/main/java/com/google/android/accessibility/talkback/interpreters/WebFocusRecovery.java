@@ -140,11 +140,12 @@ final class WebFocusRecovery {
   @VisibleForTesting
   @Nullable Future<Boolean> startInBackground(
       long deadline, Function<Supplier<Boolean>, Future<Boolean>> submit) {
+    // The strip is also kept by the interpreter. Copy it here, on the caller's thread, so that the
+    // worker never reads a node that the main thread can refresh.
+    if (strip != null) strip = AccessibilityNodeInfoCompat.obtain(strip);
     Future<Boolean> work = submit.apply(() -> {
       readDeadline = deadline;
       if (backgroundCancelled.get() || Thread.currentThread().isInterrupted()) return false;
-      // The strip is also kept by the interpreter. Refresh a worker-owned copy.
-      if (strip != null) strip = AccessibilityNodeInfoCompat.obtain(strip);
       while (!backgroundCancelled.get() && !Thread.currentThread().isInterrupted()
           && SystemClock.uptimeMillis() < deadline) {
         if (step()) return !backgroundCancelled.get() && !Thread.currentThread().isInterrupted();
