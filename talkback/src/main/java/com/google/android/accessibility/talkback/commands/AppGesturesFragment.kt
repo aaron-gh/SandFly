@@ -30,6 +30,8 @@ import com.google.android.accessibility.talkback.notifications.NotificationCodeF
 import com.google.android.accessibility.talkback.notifications.NotificationReader
 import com.google.android.accessibility.talkback.preference.TalkBackPreferencesActivity
 import com.google.android.accessibility.talkback.preference.base.KeyboardShortcutDialogPreference
+import com.google.android.accessibility.utils.SettingsUtils
+import com.google.android.accessibility.utils.monitor.ScreenMonitor
 import com.google.android.accessibility.utils.preference.BasePreferencesActivity
 
 /**
@@ -242,11 +244,17 @@ class AppGestureFragment : NotificationCodeFragment(R.string.title_pref_app_gest
 
     /**
      * Opens the screen of [packageName], the app in front, for Gestures for this app. Returns false
-     * when there is no app in front, or SandFly is.
+     * when there is no app in front, SandFly is, the device is locked or setup isn't complete.
      */
     @JvmStatic
     fun open(context: Context, packageName: String): Boolean {
-      if (!canOpen(context, packageName)) return false
+      if (
+        !canOpen(context, packageName) ||
+          ScreenMonitor.isDeviceLocked(context) ||
+          !SettingsUtils.allowLinksOutOfSettings(context)
+      ) {
+        return false
+      }
       context.startActivity(
         Intent(context, TalkBackPreferencesActivity::class.java)
           .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
