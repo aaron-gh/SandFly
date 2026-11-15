@@ -3267,6 +3267,10 @@
     <string name="title_pref_wrap_around">Wrap around</string>
     <!-- Summary of the wrap around setting. [CHAR LIMIT=NONE]-->
     <string name="summary_pref_wrap_around">Swiping past the last item goes to the first, and past the first goes to the last. When off, a sound plays at the end instead.</string>
+    <!-- Title of the setting, used while wrap around is on, that makes the first swipe past the last item on the screen, or past the first, stop there, and the next swipe wrap around. When off, the first swipe wraps around. [CHAR LIMIT=NONE]-->
+    <string name="title_pref_stop_before_wrap">Stop at the last item before wrapping</string>
+    <!-- Title of the setting that makes swiping up or down past the last value of a reading control, such as a speech engine or an action, go to the first value, and past the first go to the last. When off, the value is said again with a sound. [CHAR LIMIT=NONE]-->
+    <string name="title_pref_wrap_around_reading_controls">Wrap around in reading controls</string>
     <!-- Title of the setting that notices when touch exploration stops responding because of an Android bug, and fixes it. [CHAR LIMIT=NONE]-->
     <string name="title_pref_fix_stuck_touch_exploration">Fix stuck touch exploration</string>
     <!-- Summary of the fix stuck touch exploration setting while SandFly doesn't have the DUMP permission. Leave "DUMP" and the command untranslated. [CHAR LIMIT=NONE]-->

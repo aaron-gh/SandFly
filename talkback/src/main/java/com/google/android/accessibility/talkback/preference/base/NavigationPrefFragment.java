@@ -16,13 +16,26 @@
 
 package com.google.android.accessibility.talkback.preference.base;
 
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.os.Bundle;
+import androidx.preference.TwoStatePreference;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
+import com.google.android.accessibility.talkback.selector.SelectorController;
 import com.google.android.accessibility.utils.PreferenceSettingsUtils;
+import com.google.android.accessibility.utils.SharedPreferencesUtils;
 
 /** Settings for where focus goes as the user moves through the screen. */
 public class NavigationPrefFragment extends TalkbackBaseFragment {
+
+  /** Shows Wrap around in reading controls following Wrap around while it isn't set. */
+  private final OnSharedPreferenceChangeListener wrapListener =
+      (prefs, key) -> {
+        if (getString(R.string.pref_wrap_around_key).equals(key)) {
+          showReadingControlsWrap(prefs);
+        }
+      };
 
   public NavigationPrefFragment() {
     super(R.xml.navigation_preferences);
@@ -44,5 +57,36 @@ public class NavigationPrefFragment extends TalkbackBaseFragment {
       PreferenceSettingsUtils.hidePreference(
           getContext(), getPreferenceScreen(), R.string.pref_browse_mode_per_app_key);
     }
+  }
+
+  @Override
+  public void onResume() {
+    super.onResume();
+    SharedPreferences prefs = SharedPreferencesUtils.getSharedPreferences(getContext());
+    showReadingControlsWrap(prefs);
+    prefs.registerOnSharedPreferenceChangeListener(wrapListener);
+  }
+
+  @Override
+  public void onPause() {
+    SharedPreferencesUtils.getSharedPreferences(getContext())
+        .unregisterOnSharedPreferenceChangeListener(wrapListener);
+    super.onPause();
+  }
+
+  /**
+   * Shows the value of Wrap around in reading controls, without saving it, while it isn't set and
+   * follows Wrap around.
+   */
+  private void showReadingControlsWrap(SharedPreferences prefs) {
+    String key = getString(R.string.pref_wrap_around_reading_controls_key);
+    TwoStatePreference preference = findPreference(key);
+    if (preference == null || prefs.contains(key)) {
+      return;
+    }
+    preference.setPersistent(false);
+    preference.setChecked(
+        SelectorController.wrapsReadingControlValues(prefs, getResources()));
+    preference.setPersistent(true);
   }
 }

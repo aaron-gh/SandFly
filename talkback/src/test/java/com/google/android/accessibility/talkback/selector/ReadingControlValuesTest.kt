@@ -25,7 +25,9 @@ import com.google.android.accessibility.utils.input.TextEventFilter.TypingInput
 import com.google.android.accessibility.utils.output.FailoverTextToSpeech
 import com.google.android.accessibility.talkback.keyboardecho.KeyboardEchoSettings
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNull
+import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -72,6 +74,20 @@ class ReadingControlValuesTest {
     assertEquals(off, value(Setting.CONTROL_TELLING_TIME))
     prefs.edit().putBoolean(context.getString(R.string.pref_formatting_inline_key), true).commit()
     assertEquals(on, value(Setting.FORMATTING))
+  }
+
+  @Test
+  fun wrapAroundInReadingControls_followsWrapAroundUntilItIsSet() {
+    val wrap = context.getString(R.string.pref_wrap_around_key)
+    val values = context.getString(R.string.pref_wrap_around_reading_controls_key)
+    assertTrue(SelectorController.wrapsReadingControlValues(prefs, res))
+    prefs.edit().putBoolean(wrap, false).commit()
+    assertFalse(SelectorController.wrapsReadingControlValues(prefs, res))
+
+    prefs.edit().putBoolean(values, true).commit()
+    assertTrue(SelectorController.wrapsReadingControlValues(prefs, res))
+    prefs.edit().putBoolean(wrap, true).putBoolean(values, false).commit()
+    assertFalse(SelectorController.wrapsReadingControlValues(prefs, res))
   }
 
   @Test

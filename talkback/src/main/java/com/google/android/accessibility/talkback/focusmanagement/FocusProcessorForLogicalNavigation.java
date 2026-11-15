@@ -202,6 +202,10 @@ public class FocusProcessorForLogicalNavigation {
 
   private static boolean wrapAround = true;
 
+  // With wrapping on, whether the first swipe past the last or first item stops there, and only
+  // the next one wraps around.
+  private static boolean stopBeforeWrap = true;
+
   // Whether the current navigation action stopped at the first or last item because wrapping is
   // off, where it would otherwise have wrapped around.
   private boolean stoppedAtEdge = false;
@@ -555,6 +559,15 @@ public class FocusProcessorForLogicalNavigation {
 
   public static void setWrapAround(boolean wrap) {
     wrapAround = wrap;
+  }
+
+  public static void setStopBeforeWrap(boolean stop) {
+    stopBeforeWrap = stop;
+  }
+
+  /** Whether a swipe past the last or first item stops there, rather than wrapping around. */
+  private static boolean stopsAtEdge() {
+    return !wrapAround || stopBeforeWrap;
   }
 
   ///////////////////////////////////////////////////////////////////////////////////////////////
@@ -2846,11 +2859,14 @@ public class FocusProcessorForLogicalNavigation {
             || needPauseWhenTraverseAcrossWindow(
                 windowTraversal, isScreenRtl, currentWindow, searchDirection, windowFilter))) {
       reachEdge = true;
-      stoppedAtEdge = !wrapAround;
-      logEdge(pivot, navigationAction);
-      announceNativeElement(logicalDirection, navigationAction.targetType, eventId);
-      LogUtils.v(TAG, "Reach edge before searchTargetInNextOrPreviousWindow in:" + currentWindow);
-      return NavigationResult.create(NavigationResult.Type.REACH_EDGE);
+      // Otherwise this swipe goes on as the next one would, around to the first window.
+      if (stopsAtEdge()) {
+        stoppedAtEdge = !wrapAround;
+        logEdge(pivot, navigationAction);
+        announceNativeElement(logicalDirection, navigationAction.targetType, eventId);
+        LogUtils.v(TAG, "Reach edge before searchTargetInNextOrPreviousWindow in:" + currentWindow);
+        return NavigationResult.create(NavigationResult.Type.REACH_EDGE);
+      }
     }
 
     AccessibilityNodeInfoCompat target = null;
@@ -2880,7 +2896,7 @@ public class FocusProcessorForLogicalNavigation {
                 /* isInitialFocus= */ false,
                 windowFilter,
                 NavigationTarget.createNodeFilter(navigationAction.targetType, speakingNodesCache));
-        if (reachEdgeBeforeSearch != reachEdge) {
+        if (reachEdgeBeforeSearch != reachEdge && stopsAtEdge()) {
           // Skip one swipe if reaching edge while searching windows in loop.
           stoppedAtEdge = !wrapAround;
           logEdge(pivot, navigationAction);
@@ -3155,8 +3171,10 @@ public class FocusProcessorForLogicalNavigation {
               windowTraversal, isScreenRtl, targetWindow, direction, windowFilter)) {
         LogUtils.v(TAG, "Reach edge while searchTargetInNextOrPreviousWindow in:" + targetWindow);
         reachEdge = true;
-        stoppedAtEdge = !wrapAround;
-        return null;
+        if (stopsAtEdge()) {
+          stoppedAtEdge = !wrapAround;
+          return null;
+        }
       }
       // Search for a target window.
       targetWindow =
