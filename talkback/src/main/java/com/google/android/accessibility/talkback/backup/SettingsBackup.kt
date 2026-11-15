@@ -115,7 +115,18 @@ object SettingsBackup {
       "pref_brailleime_exit_keyboard_count",
       "pref_bd_switch_contracted_count_key",
       "pref_bd_show_caption_tutorial_dialog_timestamp",
+      // Answers about other apps, which apply whatever profile is used, and the apps that used
+      // the speech service without an answer.
+      "pref_speech_control_locked_allowed_apps",
+      "pref_speech_control_locked_denied_apps",
+      BACKUP_STATE_KEY_CONNECTED_APPS,
     )
+
+  /**
+   * Keys of the default file that are left out of the file and kept when one is imported: the
+   * apps that used the speech service on this phone without an answer.
+   */
+  private const val BACKUP_STATE_KEY_CONNECTED_APPS = "pref_speech_control_connected_apps"
 
   /** Parts of the keys of [PROFILE_STATE_KEYS]-like state. */
   private val PROFILE_STATE_FRAGMENTS =
@@ -725,7 +736,8 @@ object SettingsBackup {
 
   /** The updater's state stays as it is on this phone. Null [name] means any file. */
   private fun isSkipped(context: Context, name: String?, key: String) =
-    (name == null || name == defaultName(context)) && key in MigrationFiles.SKIPPED_PREF_KEYS
+    (name == null || name == defaultName(context)) &&
+      (key in MigrationFiles.SKIPPED_PREF_KEYS || key == BACKUP_STATE_KEY_CONNECTED_APPS)
 
   @VisibleForTesting
   fun encode(value: Any?): JSONObject? =
