@@ -46,4 +46,17 @@
     <string name="granular_editing_not_saved">সংরক্ষিত হয়নি: পাঠ্য ক্ষেত্রটি চলে গেছে। লেখাটি কপি করা হয়েছে।</string>
     <string name="granular_editing_no_text">সম্পাদনা করার জন্য কোন পাঠ্য নেই</string>
     <string name="granular_editing_password">পাসওয়ার্ড ক্ষেত্রে উপলব্ধ নেই</string>
+    <plurals name="granular_editing_spaces">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> টি স্পেস</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> টি স্পেস</item>
+    </plurals>
+    <plurals name="granular_editing_new_lines">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> টি নতুন লাইন</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> টি নতুন লাইন</item>
+    </plurals>
+    <plurals name="granular_editing_tabs">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> টি ট্যাব</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> টি ট্যাব</item>
+    </plurals>
+    <string name="granular_editing_blank_line">ফাঁকা লাইন</string>
 </resources>

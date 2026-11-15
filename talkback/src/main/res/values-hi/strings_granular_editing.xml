@@ -46,4 +46,17 @@
     <string name="granular_editing_not_saved">सेव नहीं हुआ: टेक्स्ट फ़ील्ड अब मौजूद नहीं है। टेक्स्ट कॉपी कर दिया गया है।</string>
     <string name="granular_editing_no_text">संपादित करने के लिए कोई पाठ नहीं</string>
     <string name="granular_editing_password">पासवर्ड फ़ील्ड में उपलब्ध नहीं है</string>
+    <plurals name="granular_editing_spaces">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> स्पेस</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> स्पेस</item>
+    </plurals>
+    <plurals name="granular_editing_new_lines">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> नई लाइन</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> नई लाइनें</item>
+    </plurals>
+    <plurals name="granular_editing_tabs">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> टैब</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> टैब</item>
+    </plurals>
+    <string name="granular_editing_blank_line">खाली लाइन</string>
 </resources>

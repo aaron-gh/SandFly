@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_voice_commands">Дуут тушаал</string>
+    <string name="title_pref_voice_commands_ai">Дуут тушаалыг AI-аар ойлгох</string>
+    <string name="voice_commands_custom">Өөрийн дуут тушаал</string>
+    <string name="voice_command_add">Дуут тушаал нэмэх</string>
+    <string name="voice_command_phrase">Хэллэг</string>
+    <string name="voice_command_change_phrase">Хэллэгийг өөрчлөх</string>
+    <string name="voice_command_change_command">Тушаалыг өөрчлөх</string>
+    <string name="voice_command_delete_confirm">«<xliff:g id="phrase" example="Good morning">%1$s</xliff:g>»-г устгах уу?</string>
+    <string name="voice_command_phrase_exists">«<xliff:g id="phrase" example="Good morning">%1$s</xliff:g>» аль хэдийн дуут тушаал байна</string>
+    <string name="voice_commands_not_understood">Ойлгогдсонгүй: <xliff:g id="text" example="open the door">%1$s</xliff:g></string>
+    <string name="voice_commands_not_available">Боломжгүй: <xliff:g id="name" example="Morning macro">%1$s</xliff:g></string>
+    <string name="voice_commands_not_found">Олдсонгүй: <xliff:g id="label" example="Settings">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app">«<xliff:g id="name" example="Signal">%1$s</xliff:g>» нэртэй апп алга</string>
+    <string name="voice_commands_no_app_for_action">Энэ үйлдэлд апп алга</string>
+    <string name="voice_commands_calling">Залгаж байна: <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_call_permission">Утасны дуудлагыг зөвшөөрч, дараа нь тушаалыг дахин хэлнэ үү.</string>
+    <string name="voice_commands_contacts_permission">Харилцагчид хандахыг зөвшөөрч, дараа нь тушаалыг дахин хэлнэ үү.</string>
+    <string name="voice_commands_no_contact">«<xliff:g id="name" example="Sam">%1$s</xliff:g>» нэртэй харилцагч алга</string>
+    <string name="voice_commands_contacts_several">«<xliff:g id="name" example="Sam">%1$s</xliff:g>» нэртэй нэгээс олон харилцагч байна: <xliff:g id="names" example="Sam Jones, Sam Smith">%2$s</xliff:g></string>
+    <string name="voice_commands_message_text">Мессеж: <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_message_confirm">Илгээх: <xliff:g id="name" example="Sam">%1$s</xliff:g>: <xliff:g id="text" example="I am on my way">%2$s</xliff:g>?</string>
+    <string name="voice_commands_message_confirm_result">Илгээх: <xliff:g id="name" example="Sam">%1$s</xliff:g>?</string>
+    <string name="voice_commands_message_not_sent">Мессеж илгээгдсэнгүй</string>
+    <string name="voice_commands_send_pressed">Илгээх дарагдлаа</string>
+    <string name="voice_commands_send_button">Илгээх</string>
+    <string name="voice_commands_no_description">Тодорхойлолт ирсэнгүй</string>
+    <string name="voice_commands_copied">Хуулсан</string>
+    <string-array name="voice_commands_chain_words">
+        <item>дараа нь</item>
+        <item>дараа нь тэгээд</item>
+        <item>тэгээд</item>
+        <item>үүний дараа</item>
+    </string-array>
+    <string-array name="voice_commands_and_words">
+        <item>ба</item>
+        <item>болон</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_start">
+        <item>гуйя</item>
+        <item>чадах уу</item>
+        <item>та чадах уу</item>
+        <item>би хүсэж байна</item>
+        <item>одоо</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_end">
+        <item>гуйя</item>
+        <item>миний төлөө</item>
+        <item>одоо</item>
+    </string-array>
+    <string-array name="voice_commands_cancel_words">
+        <item>зогс</item>
+        <item>зогсоо</item>
+        <item>цуцал</item>
+        <item>болих</item>
+        <item>хамаагүй</item>
+        <item>дуугүй бай</item>
+    </string-array>
+    <string-array name="voice_commands_yes">
+        <item>тийм</item>
+        <item>за</item>
+        <item>аан</item>
+        <item>илгээ</item>
+        <item>илгээгээрэй</item>
+        <item>ок</item>
+        <item>мэдээж</item>
+        <item>хий</item>
+    </string-array>
+    <string-array name="voice_commands_sms_names">
+        <item>SMS</item>
+        <item>мессеж</item>
+        <item>текст мессеж</item>
+        <item>мессежүүд</item>
+    </string-array>
+    <string-array name="voice_commands_send_image_description">
+        <item>зургийн тайлбарыг {who} руу илгээ</item>
+        <item>зургийн тодорхойлолтыг {who} руу илгээ</item>
+        <item>фото зургийн тайлбарыг {who} руу илгээ</item>
+        <item>{who} руу зургийн тайлбар илгээ</item>
+    </string-array>
+    <string-array name="voice_commands_send_screen_description">
+        <item>дэлгэцийн тайлбарыг {who} руу илгээ</item>
+        <item>{who} руу дэлгэцийн тайлбар илгээ</item>
+    </string-array>
+    <string-array name="voice_commands_send_previous">
+        <item>үүнийг {who} руу {app} дээр илгээ</item>
+        <item>үүнийг {who} руу илгээ</item>
+        <item>тайлбарыг {who} руу илгээ</item>
+        <item>үүнийг {who}-тай хуваалц</item>
+    </string-array>
+    <string-array name="voice_commands_message">
+        <item>{who} руу {app} дээр {text} гэж мессеж илгээ</item>
+        <item>{who} руу {text} гэж мессеж илгээ</item>
+        <item>{who} руу {text} мессеж илгээ</item>
+        <item>{whoandtext} мессеж илгээ</item>
+        <item>{who} руу {app} мессеж илгээ {text}</item>
+        <item>{who} руу {app} дээр {text} гэж бич</item>
+        <item>{who} руу {text} гэж бич</item>
+        <item>{whoandtext} гэж бич</item>
+        <item>{who} руу {app} дээр {text} гэж хэл</item>
+    </string-array>
+    <string-array name="voice_commands_call">
+        <item>{who} руу залга</item>
+        <item>{who} руу дуудлага хий</item>
+        <item>{who} руу утасда</item>
+        <item>{who} дугаарла</item>
+    </string-array>
+    <string-array name="voice_commands_describe_screen">
+        <item>дэлгэцийг тайлбарла</item>
+        <item>дэлгэц дээр юу байгааг тайлбарла</item>
+        <item>дэлгэц дээр юу байна</item>
+        <item>миний дэлгэц дээр юу байна</item>
+    </string-array>
+    <string-array name="voice_commands_describe_image">
+        <item>[энэ] зургийг тайлбарла</item>
+        <item>[энэ] фото зургийг тайлбарла</item>
+        <item>[энэ] зураг дээр юу байна</item>
+        <item>[энэ] фото зураг дээр юу байна</item>
+    </string-array>
+    <string-array name="voice_commands_copy_result">
+        <item>үүнийг хуул</item>
+        <item>тайлбарыг хуул</item>
+        <item>[дөнгөж сая] хэлснийг хуул</item>
+        <item>сүүлд хэлсэн хэллэгийг хуул</item>
+        <item>сүүлийн хэллэгийг хуул</item>
+    </string-array>
+    <string-array name="voice_commands_wait">
+        <item>{n} секунд хүлээ</item>
+        <item>нэг секунд хүлээ</item>
+        <item>хүлээ</item>
+    </string-array>
+    <string-array name="voice_commands_type_text">
+        <item>{text} гэж бич</item>
+        <item>{text} бич</item>
+        <item>{text} оруул</item>
+    </string-array>
+    <string-array name="voice_commands_run">
+        <item>{command} макро ажиллуул</item>
+        <item>макро {command} ажиллуул</item>
+        <item>{command} ажиллуул</item>
+        <item>{command} хий</item>
+    </string-array>
+    <string-array name="voice_commands_open">
+        <item>{app} нээ</item>
+        <item>{app} ажиллуул</item>
+        <item>{app} эхлүүл</item>
+        <item>{app} руу шилж</item>
+    </string-array>
+    <string-array name="voice_commands_tap">
+        <item>{label} дээр хоёр товш</item>
+        <item>{label} дээр товш</item>
+        <item>{label} дар</item>
+        <item>{label} идэвхжүүл</item>
+        <item>{label} сонго</item>
+    </string-array>
+</resources>

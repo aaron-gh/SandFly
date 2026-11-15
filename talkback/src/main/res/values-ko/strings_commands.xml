@@ -59,4 +59,24 @@
     <string name="keycombo_menu_navigate_next_by_setting">탐색 설정 기준 다음으로 이동</string>
     <string name="keycombo_menu_navigate_previous_by_setting">탐색 설정 기준 이전으로 이동</string>
     <string name="title_pref_overview_screen">최근 앱</string>
+    <string name="title_pref_custom_menus">맞춤 메뉴</string>
+    <string name="commands_category_setting_values">설정 값</string>
+    <string name="command_next_value"><xliff:g id="setting" example="Punctuation">%1$s</xliff:g>: 다음 값</string>
+    <string name="command_previous_value"><xliff:g id="setting" example="Punctuation">%1$s</xliff:g>: 이전 값</string>
+    <string name="shortcut_script_commands">스크립트 명령</string>
+    <string name="shortcut_set_reading_control">읽기 제어 설정을 <xliff:g id="control" example="Headings">%1$s</xliff:g>(으)로 설정</string>
+    <string name="title_pref_custom_reading_controls">맞춤 읽기 제어 설정</string>
+    <string name="menu_add_reading_control">읽기 제어 설정 추가</string>
+    <string name="menu_add_submenu">하위 메뉴 추가</string>
+    <string name="menu_add_menu">메뉴 추가</string>
+    <string name="menu_name">이름</string>
+    <string name="menu_open">열기</string>
+    <string name="menu_move_to">이동</string>
+    <string name="menu_rename">이름 바꾸기</string>
+    <string name="menu_delete">삭제</string>
+    <string name="menu_delete_confirm"><xliff:g id="name" example="AI">%1$s</xliff:g>과(와) 그 안의 모든 항목을 삭제하시겠습니까?</string>
+    <string name="menu_moved"><xliff:g id="place" example="AI">%1$s</xliff:g>(으)로 이동했습니다</string>
+    <string name="menu_reset">기본값으로 재설정</string>
+    <string name="menu_reset_confirm">SandFly 메뉴를 기본 항목과 순서로 재설정하시겠습니까?</string>
+    <string name="menu_assign">동작 및 단축키</string>
 </resources>

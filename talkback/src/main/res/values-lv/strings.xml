@@ -2030,4 +2030,128 @@
     <string name="value_keep_models_5">5 minūtes</string>
     <string name="value_keep_models_15">15 minūtes</string>
     <string name="value_keep_models_30">30 minūtes</string>
+    <string name="title_pref_speech_equalizer_save_preset">Saglabāt kā priekšiestatījumu</string>
+    <string name="title_pref_speech_equalizer_saved_presets">Saglabātie priekšiestatījumi</string>
+    <string name="speech_equalizer_preset_name">Nosaukums</string>
+    <string name="speech_equalizer_preset_name_taken">Priekšiestatījums <xliff:g id="name" example="Podcast">%1$s</xliff:g> jau pastāv</string>
+    <string name="speech_equalizer_presets_full">Vairs nevar saglabāt priekšiestatījumus. Izdzēsiet kādu, lai saglabātu citu.</string>
+    <string name="speech_equalizer_preset_saved"><xliff:g id="name" example="Podcast">%1$s</xliff:g> saglabāts</string>
+    <string name="speech_equalizer_preset_rename">Pārdēvēt</string>
+    <string name="speech_equalizer_preset_delete">Dzēst</string>
+    <string name="speech_equalizer_preset_delete_confirm">Vai dzēst <xliff:g id="name" example="Podcast">%1$s</xliff:g>?</string>
+    <string name="speech_equalizer_preset_deleted"><xliff:g id="name" example="Podcast">%1$s</xliff:g> izdzēsts</string>
+    <string name="title_pref_emoji_voice">Emocijzīmju balss</string>
+    <string name="value_emoji_voice_same">Tāda pati kā runai</string>
+    <string name="title_pref_emoji_rate">Emocijzīmju runas ātrums</string>
+    <string name="title_pref_line_breaks_as_spaces">Rindas pārtraukumus lasīt kā atstarpes</string>
+    <string name="title_pref_language_voices">Balsis pēc valodas</string>
+    <string name="title_pref_identify_languages_from_words">Noteikt valodas pēc vārdiem</string>
+    <string name="title_pref_add_language">Pievienot valodu</string>
+    <string name="title_pref_remove_language">Noņemt valodu</string>
+    <string name="title_pref_script_language">Rakstība: %1$s</string>
+    <string name="title_pref_screen_on_notification_count">Paziņojumu skaits</string>
+    <plurals name="template_screen_on_notification_count"><item quantity="zero"><xliff:g id="count" example="6">%d</xliff:g> paziņojumu</item><item quantity="one"><xliff:g id="count" example="6">%d</xliff:g> paziņojums</item><item quantity="other"><xliff:g id="count" example="6">%d</xliff:g> paziņojumi</item></plurals>
+    <string name="title_pref_phonetic_letters_review">Burtus izrunāt fonētiski pārskatīšanas laikā</string>
+    <string name="title_pref_phonetic_letters_typing">Burtus izrunāt fonētiski rakstīšanas laikā</string>
+    <string name="title_pref_emoji_suffix">Pēc emocijzīmju nosaukumiem teikt “emocijzīme”</string>
+    <string name="overview_shizuku_not_running">Shizuku nedarbojas</string>
+    <string name="overview_shizuku_not_allowed">Shizuku neatļauj SandFly</string>
+    <string name="overview_no_older_app">Nav vecākas lietotnes</string>
+    <string name="overview_no_newer_app">Nav jaunākas lietotnes</string>
+    <string name="stream_volume_needs_access">Lai mainītu šo skaļumu, atļaujiet piekļuvi režīmam “Netraucēt”.</string>
+    <string name="corner_gestures_title">Stūri</string>
+    <string name="shortcut_move_to_item_below">Pāriet uz vienumu zemāk</string>
+    <string name="shortcut_move_to_item_above">Pāriet uz vienumu augstāk</string>
+    <string name="shortcut_older_app">Vecāka lietotne</string>
+    <string name="shortcut_newer_app">Jaunāka lietotne</string>
+    <string name="shortcut_answer_call">Atbildēt uz zvanu</string>
+    <string name="answer_call_no_call">Nav ienākoša zvana</string>
+    <string name="answer_call_permission">Lai atbildētu uz zvaniem, nepieciešama atļauja</string>
+    <string name="shortcut_switch_keyboard">Pārslēgt tastatūru</string>
+    <string name="switch_keyboard_none">Nav ieslēgtas citas tastatūras</string>
+    <string name="switch_keyboard_failed">Tastatūra nav pārslēgta</string>
+    <string name="clipboard_history_hint">Velciet augšup vai lejup, lai izvēlētos, pēc tam veiciet dubultskārienu, lai ielīmētu</string>
+    <string name="title_speech_history">Runas vēsture</string>
+    <string name="speech_history_empty">Nav runas</string>
+    <string name="speech_history_clear">Notīrīt vēsturi</string>
+    <string name="title_pref_shortcut_corner_top_left_tap">Pieskarties augšējo kreiso stūri</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap">Veikt dubultskārienu augšējo kreiso stūri</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap">Veikt trīskāršu skārienu augšējo kreiso stūri</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap_hold">Veikt dubultskārienu un turēt augšējo kreiso stūri</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap_hold">Veikt trīskāršu skārienu un turēt augšējo kreiso stūri</string>
+    <string name="title_pref_shortcut_corner_top_right_tap">Pieskarties augšējo labo stūri</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap">Veikt dubultskārienu augšējo labo stūri</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap">Veikt trīskāršu skārienu augšējo labo stūri</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap_hold">Veikt dubultskārienu un turēt augšējo labo stūri</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap_hold">Veikt trīskāršu skārienu un turēt augšējo labo stūri</string>
+    <string name="title_pref_shortcut_corner_bottom_left_tap">Pieskarties apakšējo kreiso stūri</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap">Veikt dubultskārienu apakšējo kreiso stūri</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap">Veikt trīskāršu skārienu apakšējo kreiso stūri</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap_hold">Veikt dubultskārienu un turēt apakšējo kreiso stūri</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap_hold">Veikt trīskāršu skārienu un turēt apakšējo kreiso stūri</string>
+    <string name="title_pref_shortcut_corner_bottom_right_tap">Pieskarties apakšējo labo stūri</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap">Veikt dubultskārienu apakšējo labo stūri</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap">Veikt trīskāršu skārienu apakšējo labo stūri</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap_hold">Veikt dubultskārienu un turēt apakšējo labo stūri</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap_hold">Veikt trīskāršu skārienu un turēt apakšējo labo stūri</string>
+    <string name="title_pref_swipe_start_time">Žesta sākuma laiks</string>
+    <string name="title_pref_swipes_before_lift">Atpazīt vilkšanu pirms pirksta pacelšanas</string>
+    <string name="summary_pref_swipes_before_lift">Izslēdz divvirzienu un leņķveida žestus.</string>
+    <string name="title_pref_corner_size_mm">Stūra izmērs</string>
+    <string name="value_corner_size_edge_width">Tāds pats kā malas platums</string>
+    <string name="title_pref_corner_tap_time_ms">Stūra skāriena laika ierobežojums</string>
+    <string name="value_corner_tap_time_system">Sistēmas noklusējums</string>
+    <string name="title_pref_edge_speak_commands">Izrunāt komandu pie katra klikšķa</string>
+    <string-array name="pref_volume_change_feedback_entries"><item>@string/volume_change_feedback_off</item><item>@string/volume_change_feedback_tone</item><item>@string/volume_change_feedback_spoken</item><item>@string/volume_change_feedback_tone_and_spoken</item></string-array>
+    <string name="title_pref_volume_change_tone_during_media">Neatskaņot signālu multivides atskaņošanas laikā</string>
+    <string name="title_pref_volume_change_speech_during_media">Neizrunāt skaļumu multivides atskaņošanas laikā</string>
+    <string name="title_pref_volume_change_interrupts_speech">Pārtraukt runu, lai paziņotu skaļumu</string>
+    <string name="title_pref_volume_keys_speech_volume_while_speaking">Skaļuma taustiņi maina runas skaļumu runas laikā</string>
+    <string name="title_pref_double_tap_moves_cursor">Dubultskāriens pārvieto kursoru uz sākumu vai beigām</string>
+    <string name="title_pref_scroll_ahead">Ritināt uz priekšu līdz nākamajam vienumam</string>
+    <string name="title_pref_speak_while_scrolling">Izrunāt nākamo vienumu ritināšanas laikā</string>
+    <string-array name="pref_text_entities_entries"><item>@string/text_entity_web</item><item>@string/text_entity_email</item><item>@string/text_entity_phone</item><item>@string/text_entity_code</item></string-array>
+    <string name="value_keep_models_until_stopped">Līdz SandFly apstājas</string>
+    <string name="title_pref_model_download_server">Modeļu lejupielādes serveris</string>
+    <string name="title_pref_settings_profiles">Iestatījumu profili</string>
+    <string name="title_pref_new_settings_profile">Jauns iestatījumu profils</string>
+    <string name="settings_profile_new_name">Profils <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="settings_profile_name_taken">Iestatījumu profils <xliff:g id="name" example="Demo">%1$s</xliff:g> jau pastāv</string>
+    <string name="settings_profile_in_use">Tiek izmantots</string>
+    <string name="settings_profile_menu_item_in_use"><xliff:g id="name" example="Demo">%1$s</xliff:g>, tiek izmantots</string>
+    <string name="settings_profile_none">Nav iestatījumu profila</string>
+    <string name="settings_profile_use_now">Izmantot tagad</string>
+    <string name="settings_profile_stop_using">Beigt izmantot</string>
+    <string name="settings_profile_change_settings">Mainīt iestatījumus</string>
+    <string name="settings_profile_editing">Izmaiņas tiek saglabātas profilā <xliff:g id="name" example="Messaging">%1$s</xliff:g></string>
+    <string name="settings_profile_edit_saved">Izmaiņas saglabātas profilā <xliff:g id="name" example="Messaging">%1$s</xliff:g></string>
+    <string name="settings_profile_use_automatically">Izmantot automātiski</string>
+    <string name="settings_profile_web">Tīmekļa saturs</string>
+    <string name="settings_profile_reading">Nepārtraukta lasīšana</string>
+    <string name="settings_profile_text_editing">Teksta rediģēšana</string>
+    <string name="settings_profile_apps">Lietotnes</string>
+    <string name="settings_profile_add_app">Pievienot lietotni</string>
+    <string name="settings_profile_settings">Šī profila iestatījumi</string>
+    <string name="settings_profile_no_settings">Nav</string>
+    <string name="settings_profile_remove_confirm">Vai noņemt <xliff:g id="item" example="Speech rate">%1$s</xliff:g> no <xliff:g id="name" example="Messaging">%2$s</xliff:g>?</string>
+    <string name="settings_profile_not_saved">Iestatījumu profilu nevarēja saglabāt</string>
+    <string name="settings_profile_in_use_announcement">Profils <xliff:g id="name" example="Demo">%1$s</xliff:g></string>
+    <string name="settings_profile_not_changed">Iestatījumu profils nav mainīts</string>
+    <string name="title_settings_profile">Iestatījumu profils</string>
+    <string name="shortcut_settings_profiles">Izvēlēties iestatījumu profilu</string>
+    <string name="shortcut_next_settings_profile">Nākamais iestatījumu profils</string>
+    <string name="shortcut_previous_settings_profile">Iepriekšējais iestatījumu profils</string>
+    <string name="title_copy_text_from_screen">Kopēt tekstu no ekrāna</string>
+    <string name="granularity_label">Detalizācijas līmenis</string>
+    <string name="granularity_characters">Rakstzīmes</string>
+    <string name="granularity_words">Vārdi</string>
+    <string name="granularity_paragraphs">Rindkopas</string>
+    <string name="button_select_all">Atlasīt visu</string>
+    <string name="no_text_selected">Teksts nav atlasīts</string>
+    <string name="no_text_on_screen">Ekrānā teksts nav atrasts</string>
+    <string name="title_select_last_spoken_phrase_word_by_word">Atlasīt pēdējo izrunāto frāzi pa vārdiem</string>
+    <string name="no_words_selected">Vārdi nav atlasīti</string>
+    <string name="no_phrase_to_select">Nav frāzes, ko atlasīt</string>
+    <string name="word_selection_list_cut_off">Saraksts saīsināts līdz <xliff:g id="count" example="1000">%1$d</xliff:g> vienumiem</string>
+    <plurals name="word_selection_copied"><item quantity="zero">Nokopēti <xliff:g id="count" example="5">%1$d</xliff:g> vienumu</item><item quantity="one">Nokopēts <xliff:g id="count" example="5">%1$d</xliff:g> vienums</item><item quantity="other">Nokopēti <xliff:g id="count" example="5">%1$d</xliff:g> vienumi</item></plurals>
 </resources>

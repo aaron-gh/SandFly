@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_voice_commands">Φωνητικές εντολές</string>
+    <string name="title_pref_voice_commands_ai">Κατανόηση φωνητικών εντολών με AI</string>
+    <string name="voice_commands_custom">Προσαρμοσμένες φωνητικές εντολές</string>
+    <string name="voice_command_add">Προσθήκη φωνητικής εντολής</string>
+    <string name="voice_command_phrase">Φράση</string>
+    <string name="voice_command_change_phrase">Αλλαγή φράσης</string>
+    <string name="voice_command_change_command">Αλλαγή εντολής</string>
+    <string name="voice_command_delete_confirm">Διαγραφή του <xliff:g id="phrase" example="Good morning">%1$s</xliff:g>;</string>
+    <string name="voice_command_phrase_exists">Το <xliff:g id="phrase" example="Good morning">%1$s</xliff:g> είναι ήδη φωνητική εντολή</string>
+    <string name="voice_commands_not_understood">Δεν κατανοήθηκε: <xliff:g id="text" example="open the door">%1$s</xliff:g></string>
+    <string name="voice_commands_not_available">Μη διαθέσιμο: <xliff:g id="name" example="Morning macro">%1$s</xliff:g></string>
+    <string name="voice_commands_not_found">Δεν βρέθηκε: <xliff:g id="label" example="Settings">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app">Δεν υπάρχει εφαρμογή με όνομα <xliff:g id="name" example="Signal">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app_for_action">Δεν υπάρχει εφαρμογή για αυτήν την ενέργεια</string>
+    <string name="voice_commands_calling">Κλήση: <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_call_permission">Επιτρέψτε τις τηλεφωνικές κλήσεις και πείτε ξανά την εντολή.</string>
+    <string name="voice_commands_contacts_permission">Επιτρέψτε την πρόσβαση στις επαφές και πείτε ξανά την εντολή.</string>
+    <string name="voice_commands_no_contact">Δεν υπάρχει επαφή με όνομα <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_contacts_several">Περισσότερες από μία επαφές με όνομα <xliff:g id="name" example="Sam">%1$s</xliff:g>: <xliff:g id="names" example="Sam Jones, Sam Smith">%2$s</xliff:g></string>
+    <string name="voice_commands_message_text">Μήνυμα προς <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_message_confirm">Αποστολή προς <xliff:g id="name" example="Sam">%1$s</xliff:g>: <xliff:g id="text" example="I am on my way">%2$s</xliff:g>;</string>
+    <string name="voice_commands_message_confirm_result">Αποστολή προς <xliff:g id="name" example="Sam">%1$s</xliff:g>;</string>
+    <string name="voice_commands_message_not_sent">Το μήνυμα δεν στάλθηκε</string>
+    <string name="voice_commands_send_pressed">Πατήθηκε η αποστολή</string>
+    <string name="voice_commands_send_button">Αποστολή</string>
+    <string name="voice_commands_no_description">Δεν ελήφθη περιγραφή</string>
+    <string name="voice_commands_copied">Αντιγράφηκε</string>
+    <string-array name="voice_commands_chain_words">
+        <item>και μετά</item>
+        <item>μετά</item>
+        <item>έπειτα</item>
+        <item>ύστερα</item>
+        <item>κατόπιν</item>
+    </string-array>
+    <string-array name="voice_commands_and_words">
+        <item>και</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_start">
+        <item>παρακαλώ</item>
+        <item>μπορείς να</item>
+        <item>μπορείτε να</item>
+        <item>θα μπορούσες να</item>
+        <item>θα μπορούσατε να</item>
+        <item>θέλω να</item>
+        <item>θα ήθελα να</item>
+        <item>τώρα</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_end">
+        <item>παρακαλώ</item>
+        <item>για μένα</item>
+        <item>τώρα</item>
+    </string-array>
+    <string-array name="voice_commands_cancel_words">
+        <item>στοπ</item>
+        <item>ακύρωση</item>
+        <item>άκυρο</item>
+        <item>σταμάτα</item>
+        <item>σταμάτησε</item>
+        <item>άστο</item>
+        <item>τίποτα</item>
+        <item>σιωπή</item>
+    </string-array>
+    <string-array name="voice_commands_yes">
+        <item>ναι</item>
+        <item>μάλιστα</item>
+        <item>σωστά</item>
+        <item>στείλε</item>
+        <item>στείλτο</item>
+        <item>ok</item>
+        <item>οκ</item>
+        <item>εντάξει</item>
+        <item>βεβαίως</item>
+        <item>κάντο</item>
+    </string-array>
+    <string-array name="voice_commands_sms_names">
+        <item>SMS</item>
+        <item>μήνυμα</item>
+        <item>μηνύματα</item>
+        <item>γραπτό μήνυμα</item>
+    </string-array>
+    <string-array name="voice_commands_send_image_description">
+        <item>στείλε [την|μια] περιγραφή της εικόνας σε {who}</item>
+        <item>στείλε [την|μια] περιγραφή αυτής της εικόνας σε {who}</item>
+        <item>στείλε [την|μια] περιγραφή της φωτογραφίας σε {who}</item>
+        <item>στείλε [την|μια] περιγραφή αυτής της φωτογραφίας σε {who}</item>
+        <item>στείλε σε {who} [την|μια] περιγραφή της εικόνας</item>
+    </string-array>
+    <string-array name="voice_commands_send_screen_description">
+        <item>στείλε [την|μια] περιγραφή της οθόνης σε {who}</item>
+        <item>στείλε σε {who} [την|μια] περιγραφή της οθόνης</item>
+    </string-array>
+    <string-array name="voice_commands_send_previous">
+        <item>στείλε το σε {who} στο {app}</item>
+        <item>στείλτο σε {who} στο {app}</item>
+        <item>στείλε το σε {who}</item>
+        <item>στείλτο σε {who}</item>
+        <item>στείλε αυτό σε {who}</item>
+        <item>στείλε την περιγραφή σε {who}</item>
+        <item>μοιράσου το με {who}</item>
+    </string-array>
+    <string-array name="voice_commands_message">
+        <item>στείλε [ένα] μήνυμα σε {who} στο {app} που λέει {text}</item>
+        <item>στείλε [ένα] μήνυμα σε {who} στο {app} με κείμενο {text}</item>
+        <item>στείλε [ένα] μήνυμα σε {who} που λέει {text}</item>
+        <item>στείλε [ένα] μήνυμα σε {who} με κείμενο {text}</item>
+        <item>στείλε [ένα] μήνυμα σε {whoandtext}</item>
+        <item>στείλε [ένα] μήνυμα {app} σε {who} που λέει {text}</item>
+        <item>στείλε [ένα] μήνυμα {app} σε {who}</item>
+        <item>στείλε σε {who} [ένα] μήνυμα που λέει {text}</item>
+        <item>γράψε σε {who} στο {app} {text}</item>
+        <item>γράψε σε {who} {text}</item>
+        <item>πες σε {who} στο {app} {text}</item>
+        <item>μήνυμα σε {whoandtext}</item>
+        <item>γράψε σε {whoandtext}</item>
+    </string-array>
+    <string-array name="voice_commands_call">
+        <item>κάλεσε {who}</item>
+        <item>καλέστε {who}</item>
+        <item>τηλεφώνησε σε {who}</item>
+        <item>πάρε τηλέφωνο {who}</item>
+        <item>κάνε κλήση σε {who}</item>
+    </string-array>
+    <string-array name="voice_commands_describe_screen">
+        <item>περιέγραψε την οθόνη</item>
+        <item>περιέγραψε τι υπάρχει στην οθόνη</item>
+        <item>τι υπάρχει στην οθόνη</item>
+        <item>τι υπάρχει στην οθόνη μου</item>
+    </string-array>
+    <string-array name="voice_commands_describe_image">
+        <item>περιέγραψε [την|αυτή την] εικόνα</item>
+        <item>περιέγραψε [τη|αυτή τη] φωτογραφία</item>
+        <item>τι υπάρχει στην εικόνα</item>
+        <item>τι υπάρχει σε αυτή την εικόνα</item>
+        <item>τι υπάρχει στη φωτογραφία</item>
+        <item>τι υπάρχει σε αυτή τη φωτογραφία</item>
+    </string-array>
+    <string-array name="voice_commands_copy_result">
+        <item>αντίγραψέ το</item>
+        <item>αντίγραψε αυτό</item>
+        <item>αντίγραψε την περιγραφή</item>
+        <item>αντίγραψε αυτό που [μόλις] είπες</item>
+        <item>αντίγραψε την τελευταία φράση</item>
+        <item>αντίγραψε το τελευταίο που ειπώθηκε</item>
+    </string-array>
+    <string-array name="voice_commands_wait">
+        <item>περίμενε {n} δευτερόλεπτα</item>
+        <item>περίμενε {n} δευτερόλεπτο</item>
+        <item>περίμενε ένα δευτερόλεπτο</item>
+        <item>περίμενε</item>
+    </string-array>
+    <string-array name="voice_commands_type_text">
+        <item>πληκτρολόγησε {text}</item>
+        <item>γράψε {text}</item>
+        <item>εισήγαγε {text}</item>
+    </string-array>
+    <string-array name="voice_commands_run">
+        <item>εκτέλεσε τη μακροεντολή {command}</item>
+        <item>εκτέλεσε {command}</item>
+        <item>τρέξε {command}</item>
+        <item>κάνε {command}</item>
+    </string-array>
+    <string-array name="voice_commands_open">
+        <item>άνοιξε {app}</item>
+        <item>άνοιξε την εφαρμογή {app}</item>
+        <item>εκκίνησε {app}</item>
+        <item>πήγαινε στο {app}</item>
+    </string-array>
+    <string-array name="voice_commands_tap">
+        <item>πάτα διπλά {label}</item>
+        <item>πάτησε διπλά {label}</item>
+        <item>πάτησε {label}</item>
+        <item>πάτα {label}</item>
+        <item>κάνε κλικ στο {label}</item>
+        <item>ενεργοποίησε {label}</item>
+        <item>επίλεξε {label}</item>
+    </string-array>
+</resources>

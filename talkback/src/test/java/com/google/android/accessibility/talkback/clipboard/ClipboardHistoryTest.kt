@@ -21,6 +21,8 @@ import android.content.Context
 import org.robolectric.RuntimeEnvironment
 import com.google.android.accessibility.utils.ClipboardHistory
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
+import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -81,5 +83,56 @@ class ClipboardHistoryTest {
     assertEquals(listOf("b"), ClipboardHistory.entries(context))
     ClipboardHistory.clear(context)
     assertEquals(emptyList<String>(), ClipboardHistory.entries(context))
+  }
+
+  @Test
+  fun editedTextTakesThePlaceOfTheEntry() {
+    ClipboardHistory.record(context, "c")
+    ClipboardHistory.record(context, "b")
+    ClipboardHistory.record(context, "a")
+    ClipboardHistory.copy(context, "on clipboard")
+    assertTrue(ClipboardHistory.replace(context, "b", "b edited"))
+    assertEquals(listOf("on clipboard", "a", "b edited", "c"), ClipboardHistory.entries(context))
+    assertEquals("on clipboard", clip())
+  }
+
+  @Test
+  fun editedTextSameAsAnotherEntryReplacesItOnce() {
+    ClipboardHistory.record(context, "c")
+    ClipboardHistory.record(context, "b")
+    ClipboardHistory.record(context, "a")
+    assertTrue(ClipboardHistory.replace(context, "c", "a"))
+    assertEquals(listOf("b", "a"), ClipboardHistory.entries(context))
+  }
+
+  @Test
+  fun blankEditChangesNothing() {
+    ClipboardHistory.record(context, "a")
+    assertFalse(ClipboardHistory.replace(context, "a", " \n "))
+    assertEquals(listOf("a"), ClipboardHistory.entries(context))
+  }
+
+  @Test
+  fun editOfARemovedEntryGoesAtTheTop() {
+    ClipboardHistory.record(context, "a")
+    assertTrue(ClipboardHistory.replace(context, "gone", "new"))
+    assertEquals(listOf("new", "a"), ClipboardHistory.entries(context))
+  }
+
+  @Test
+  fun editedTextIsCutToTheLongestEntry() {
+    ClipboardHistory.record(context, "a")
+    ClipboardHistory.replace(context, "a", "x".repeat(ClipboardHistory.MAX_LENGTH + 10))
+    assertEquals(ClipboardHistory.MAX_LENGTH, ClipboardHistory.entries(context).single().length)
+  }
+
+  @Test
+  fun exportedTextSeparatesEntriesWithALineOfHyphens() {
+    assertEquals(
+      "newest\n\n---\n\ntwo\nlines\n\n---\n\noldest\n",
+      ClipboardHistory.exportText(listOf("newest", "two\nlines", "oldest")),
+    )
+    assertEquals("only\n", ClipboardHistory.exportText(listOf("only")))
+    assertEquals("", ClipboardHistory.exportText(emptyList()))
   }
 }

@@ -59,4 +59,24 @@
     <string name="keycombo_menu_navigate_next_by_setting">Seguinte pela definição de navegação</string>
     <string name="keycombo_menu_navigate_previous_by_setting">Anterior pela definição de navegação</string>
     <string name="title_pref_overview_screen">Vista geral</string>
+    <string name="title_pref_custom_menus">Menus personalizados</string>
+    <string name="commands_category_setting_values">Valores das definições</string>
+    <string name="command_next_value"><xliff:g id="setting" example="Punctuation">%1$s</xliff:g>: valor seguinte</string>
+    <string name="command_previous_value"><xliff:g id="setting" example="Punctuation">%1$s</xliff:g>: valor anterior</string>
+    <string name="shortcut_script_commands">Comandos de script</string>
+    <string name="shortcut_set_reading_control">Definir o controlo de leitura como <xliff:g id="control" example="Headings">%1$s</xliff:g></string>
+    <string name="title_pref_custom_reading_controls">Controlos de leitura personalizados</string>
+    <string name="menu_add_reading_control">Adicionar controlo de leitura</string>
+    <string name="menu_add_submenu">Adicionar submenu</string>
+    <string name="menu_add_menu">Adicionar menu</string>
+    <string name="menu_name">Nome</string>
+    <string name="menu_open">Abrir</string>
+    <string name="menu_move_to">Mover para</string>
+    <string name="menu_rename">Renomear</string>
+    <string name="menu_delete">Eliminar</string>
+    <string name="menu_delete_confirm">Eliminar <xliff:g id="name" example="AI">%1$s</xliff:g> e tudo o que contém?</string>
+    <string name="menu_moved">Movido para <xliff:g id="place" example="AI">%1$s</xliff:g></string>
+    <string name="menu_reset">Repor predefinição</string>
+    <string name="menu_reset_confirm">Repor o menu do SandFly nos itens e na ordem predefinidos?</string>
+    <string name="menu_assign">Gestos e atalho de teclado</string>
 </resources>

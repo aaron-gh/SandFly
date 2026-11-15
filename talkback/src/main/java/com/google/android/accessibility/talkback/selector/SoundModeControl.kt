@@ -31,6 +31,14 @@ import com.google.android.libraries.accessibility.utils.log.LogUtils
 internal object SoundModeControl {
   private const val TAG = "SoundModeControl"
 
+  /** Returns the name of the sound mode in use. */
+  @JvmStatic
+  fun current(context: Context): String {
+    val ringerMode = context.getSystemService(AudioManager::class.java)?.ringerMode
+    val mode = SoundMode.entries.firstOrNull { it.ringerMode == ringerMode } ?: SoundMode.SOUND
+    return context.getString(mode.title)
+  }
+
   /**
    * Sets the next or previous sound mode, as [ValueSteps] goes, and returns its name to speak.
    * Vibrate is left out without a vibrator. Turning Mute on or off needs Do Not Disturb access;

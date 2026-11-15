@@ -2037,4 +2037,133 @@
   <string name="title_select_last_spoken_phrase_word_by_word">Son söylenen ifadeyi kelime kelime seç</string>
   <string name="no_words_selected">Hiçbir kelime seçilmedi</string>
   <string name="no_phrase_to_select">Seçilecek ifade bulunamadı</string>
+    <string name="title_pref_speech_equalizer_save_preset">Hazır ayar olarak kaydet</string>
+    <string name="title_pref_speech_equalizer_saved_presets">Kayıtlı hazır ayarlar</string>
+    <string name="speech_equalizer_preset_name">Ad</string>
+    <string name="speech_equalizer_preset_name_taken"><xliff:g id="name" example="Podcast">%1$s</xliff:g> adlı bir hazır ayar zaten var</string>
+    <string name="speech_equalizer_presets_full">Daha fazla hazır ayar kaydedilemez. Yenisini kaydetmek için birini silin.</string>
+    <string name="speech_equalizer_preset_saved"><xliff:g id="name" example="Podcast">%1$s</xliff:g> kaydedildi</string>
+    <string name="speech_equalizer_preset_rename">Yeniden adlandır</string>
+    <string name="speech_equalizer_preset_delete">Sil</string>
+    <string name="speech_equalizer_preset_delete_confirm"><xliff:g id="name" example="Podcast">%1$s</xliff:g> silinsin mi?</string>
+    <string name="speech_equalizer_preset_deleted"><xliff:g id="name" example="Podcast">%1$s</xliff:g> silindi</string>
+    <string name="title_pref_emoji_voice">Emoji sesi</string>
+    <string name="value_emoji_voice_same">Konuşmayla aynı</string>
+    <string name="title_pref_emoji_rate">Emoji konuşma hızı</string>
+    <string name="title_pref_line_breaks_as_spaces">Satır sonlarını boşluk olarak oku</string>
+    <string name="title_pref_language_voices">Dile göre sesler</string>
+    <string name="title_pref_identify_languages_from_words">Dilleri sözcüklerden belirle</string>
+    <string name="title_pref_add_language">Dil ekle</string>
+    <string name="title_pref_remove_language">Dili kaldır</string>
+    <string name="title_pref_script_language">%1$s yazısı</string>
+    <string name="title_pref_screen_on_notification_count">Bildirim sayısı</string>
+    <plurals name="template_screen_on_notification_count">
+        <item quantity="one"><xliff:g id="count" example="6">%d</xliff:g> bildirim</item>
+        <item quantity="other"><xliff:g id="count" example="6">%d</xliff:g> bildirim</item>
+    </plurals>
+    <string name="title_pref_phonetic_letters_review">İnceleme sırasında harfleri fonetik olarak söyle</string>
+    <string name="title_pref_phonetic_letters_typing">Yazarken harfleri fonetik olarak söyle</string>
+    <string name="title_pref_emoji_suffix">Emoji adlarından sonra «emoji» söyle</string>
+    <string name="overview_shizuku_not_running">Shizuku çalışmıyor</string>
+    <string name="overview_shizuku_not_allowed">Shizuku, SandFly\'ye izin vermiyor</string>
+    <string name="overview_no_older_app">Daha eski uygulama yok</string>
+    <string name="overview_no_newer_app">Daha yeni uygulama yok</string>
+    <string name="stream_volume_needs_access">Bu ses düzeyini değiştirmek için Rahatsız Etmeyin erişimine izin verin.</string>
+    <string name="corner_gestures_title">Köşeler</string>
+    <string name="shortcut_move_to_item_below">Alttaki öğeye git</string>
+    <string name="shortcut_move_to_item_above">Üstteki öğeye git</string>
+    <string name="shortcut_older_app">Daha eski uygulama</string>
+    <string name="shortcut_newer_app">Daha yeni uygulama</string>
+    <string name="shortcut_answer_call">Aramayı yanıtla</string>
+    <string name="answer_call_no_call">Gelen arama yok</string>
+    <string name="answer_call_permission">Aramaları yanıtlamak için izin gerekli</string>
+    <string name="shortcut_switch_keyboard">Klavyeyi değiştir</string>
+    <string name="switch_keyboard_none">Etkin başka klavye yok</string>
+    <string name="switch_keyboard_failed">Klavye değiştirilemedi</string>
+    <string name="clipboard_history_hint">Seçmek için yukarı veya aşağı kaydırın, yapıştırmak için iki kez dokunun</string>
+    <string name="title_speech_history">Konuşma geçmişi</string>
+    <string name="speech_history_empty">Konuşma yok</string>
+    <string name="speech_history_clear">Geçmişi temizle</string>
+    <string name="title_pref_shortcut_corner_top_left_tap">Sol üst köşeye dokunma</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap">Sol üst köşeye iki kez dokunma</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap">Sol üst köşeye üç kez dokunma</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap_hold">Sol üst köşeye iki kez dokunup basılı tutma</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap_hold">Sol üst köşeye üç kez dokunup basılı tutma</string>
+    <string name="title_pref_shortcut_corner_top_right_tap">Sağ üst köşeye dokunma</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap">Sağ üst köşeye iki kez dokunma</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap">Sağ üst köşeye üç kez dokunma</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap_hold">Sağ üst köşeye iki kez dokunup basılı tutma</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap_hold">Sağ üst köşeye üç kez dokunup basılı tutma</string>
+    <string name="title_pref_shortcut_corner_bottom_left_tap">Sol alt köşeye dokunma</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap">Sol alt köşeye iki kez dokunma</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap">Sol alt köşeye üç kez dokunma</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap_hold">Sol alt köşeye iki kez dokunup basılı tutma</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap_hold">Sol alt köşeye üç kez dokunup basılı tutma</string>
+    <string name="title_pref_shortcut_corner_bottom_right_tap">Sağ alt köşeye dokunma</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap">Sağ alt köşeye iki kez dokunma</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap">Sağ alt köşeye üç kez dokunma</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap_hold">Sağ alt köşeye iki kez dokunup basılı tutma</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap_hold">Sağ alt köşeye üç kez dokunup basılı tutma</string>
+    <string name="title_pref_swipe_start_time">Hareket başlangıç süresi</string>
+    <string name="title_pref_swipes_before_lift">Parmak kalkmadan kaydırmaları tanı</string>
+    <string name="summary_pref_swipes_before_lift">İleri-geri ve açılı hareketleri kapatır.</string>
+    <string name="title_pref_corner_size_mm">Köşe boyutu</string>
+    <string name="value_corner_size_edge_width">Kenar genişliğiyle aynı</string>
+    <string name="title_pref_corner_tap_time_ms">Köşe dokunma süre sınırı</string>
+    <string name="value_corner_tap_time_system">Sistem varsayılanı</string>
+    <string name="title_pref_edge_speak_commands">Her tıklamada komutu söyle</string>
+    <string-array name="pref_volume_change_feedback_entries">
+        <item>@string/volume_change_feedback_off</item>
+        <item>@string/volume_change_feedback_tone</item>
+        <item>@string/volume_change_feedback_spoken</item>
+        <item>@string/volume_change_feedback_tone_and_spoken</item>
+    </string-array>
+    <string name="title_pref_volume_change_tone_during_media">Medya oynatılırken sesi kapat</string>
+    <string name="title_pref_volume_change_speech_during_media">Medya oynatılırken konuşmayı kapat</string>
+    <string name="title_pref_volume_change_interrupts_speech">Ses düzeyini söylemek için konuşmayı kes</string>
+    <string name="title_pref_volume_keys_speech_volume_while_speaking">Ses tuşları konuşurken konuşma ses düzeyini değiştirir</string>
+    <string name="title_pref_double_tap_moves_cursor">İki kez dokunma imleci başa veya sona taşır</string>
+    <string name="title_pref_scroll_ahead">Sonraki öğeye kadar önceden kaydır</string>
+    <string name="title_pref_speak_while_scrolling">Kaydırırken sonraki öğeyi söyle</string>
+    <string-array name="pref_text_entities_entries">
+    <item>@string/text_entity_web</item>
+    <item>@string/text_entity_email</item>
+    <item>@string/text_entity_phone</item>
+    <item>@string/text_entity_code</item>
+  </string-array>
+    <string name="value_keep_models_until_stopped">SandFly durana kadar</string>
+    <string name="title_pref_model_download_server">Model indirme sunucusu</string>
+    <string name="title_pref_settings_profiles">Ayar profilleri</string>
+    <string name="title_pref_new_settings_profile">Yeni ayar profili</string>
+    <string name="settings_profile_new_name">Profil <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="settings_profile_name_taken"><xliff:g id="name" example="Demo">%1$s</xliff:g> adlı bir ayar profili zaten var</string>
+    <string name="settings_profile_in_use">Kullanımda</string>
+    <string name="settings_profile_menu_item_in_use"><xliff:g id="name" example="Demo">%1$s</xliff:g>, kullanımda</string>
+    <string name="settings_profile_none">Ayar profili yok</string>
+    <string name="settings_profile_use_now">Şimdi kullan</string>
+    <string name="settings_profile_stop_using">Kullanmayı durdur</string>
+    <string name="settings_profile_change_settings">Ayarları değiştir</string>
+    <string name="settings_profile_editing">Değişiklikler <xliff:g id="name" example="Messaging">%1$s</xliff:g> profiline kaydedilir</string>
+    <string name="settings_profile_edit_saved">Değişiklikler <xliff:g id="name" example="Messaging">%1$s</xliff:g> profiline kaydedildi</string>
+    <string name="settings_profile_use_automatically">Otomatik kullan</string>
+    <string name="settings_profile_web">Web içeriği</string>
+    <string name="settings_profile_reading">Sürekli okuma</string>
+    <string name="settings_profile_text_editing">Metin düzenleme</string>
+    <string name="settings_profile_apps">Uygulamalar</string>
+    <string name="settings_profile_add_app">Uygulama ekle</string>
+    <string name="settings_profile_settings">Bu profildeki ayarlar</string>
+    <string name="settings_profile_no_settings">Yok</string>
+    <string name="settings_profile_remove_confirm"><xliff:g id="item" example="Speech rate">%1$s</xliff:g>, <xliff:g id="name" example="Messaging">%2$s</xliff:g> profilinden kaldırılsın mı?</string>
+    <string name="settings_profile_not_saved">Ayar profili kaydedilemedi</string>
+    <string name="settings_profile_in_use_announcement"><xliff:g id="name" example="Demo">%1$s</xliff:g> profili</string>
+    <string name="settings_profile_not_changed">Ayar profili değiştirilmedi</string>
+    <string name="title_settings_profile">Ayar profili</string>
+    <string name="shortcut_settings_profiles">Ayar profili seç</string>
+    <string name="shortcut_next_settings_profile">Sonraki ayar profili</string>
+    <string name="shortcut_previous_settings_profile">Önceki ayar profili</string>
+    <string name="word_selection_list_cut_off">Liste <xliff:g id="count" example="1000">%1$d</xliff:g> öğede kesildi</string>
+    <plurals name="word_selection_copied">
+        <item quantity="one"><xliff:g id="count" example="5">%1$d</xliff:g> öğe kopyalandı</item>
+        <item quantity="other"><xliff:g id="count" example="5">%1$d</xliff:g> öğe kopyalandı</item>
+    </plurals>
 </resources>

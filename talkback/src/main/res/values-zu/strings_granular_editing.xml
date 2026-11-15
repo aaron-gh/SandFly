@@ -46,4 +46,17 @@
     <string name="granular_editing_not_saved">Akulondoloziwe: inkambu yombhalo ayisekho. Umbhalo ukopishiwe.</string>
     <string name="granular_editing_no_text">Awukho umbhalo ongahlelwa</string>
     <string name="granular_editing_password">Ayitholakali ezinkambini zephasiwedi</string>
+    <plurals name="granular_editing_spaces">
+        <item quantity="one">Isikhala esingu-<xliff:g id="count" example="3">%d</xliff:g></item>
+        <item quantity="other">Izikhala ezingu-<xliff:g id="count" example="3">%d</xliff:g></item>
+    </plurals>
+    <plurals name="granular_editing_new_lines">
+        <item quantity="one">Umugqa omusha oyi-<xliff:g id="count" example="3">%d</xliff:g></item>
+        <item quantity="other">Imigqa emisha eyi-<xliff:g id="count" example="3">%d</xliff:g></item>
+    </plurals>
+    <plurals name="granular_editing_tabs">
+        <item quantity="one">Ithebhu e-<xliff:g id="count" example="3">%d</xliff:g></item>
+        <item quantity="other">Amathebhu ayi-<xliff:g id="count" example="3">%d</xliff:g></item>
+    </plurals>
+    <string name="granular_editing_blank_line">Umugqa ongenalutho</string>
 </resources>

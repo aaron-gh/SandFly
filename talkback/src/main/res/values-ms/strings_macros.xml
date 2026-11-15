@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_macros">Makro</string>
+    <string name="shortcut_stop_macro">Hentikan makro</string>
+    <string name="macro_add">Tambah makro</string>
+    <string name="macro_run_now">Jalankan sekarang</string>
+    <string name="macro_add_step">Tambah langkah</string>
+    <string name="macro_add_at_end">Pada penghujung</string>
+    <string name="macro_add_at_start">Pada permulaan</string>
+    <string name="macro_add_after">Selepas langkah <xliff:g id="step" example="2">%1$d</xliff:g>: <xliff:g id="name" example="If App in front: Chrome">%2$s</xliff:g></string>
+    <string name="macro_steps">Langkah</string>
+    <string name="macro_no_steps">Tiada langkah</string>
+    <string name="macro_delete">Padam makro</string>
+    <string name="macro_delete_confirm">Padam <xliff:g id="name" example="Send message">%1$s</xliff:g>?</string>
+    <string name="macro_step_command">Jalankan perintah</string>
+    <string name="macro_step_wait">Tunggu</string>
+    <string name="macro_step_tap">Ketik item</string>
+    <string name="macro_step_focus">Fokus pada item</string>
+    <string name="macro_step_speak_item">Sebut item</string>
+    <string name="macro_step_speak_text">Sebut teks</string>
+    <string name="macro_step_type">Taip teks</string>
+    <string name="macro_step_tap_value">Ketik <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_focus_value">Fokus pada <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_item_value">Sebut <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_text_value">Sebut <xliff:g id="text" example="Done">%1$s</xliff:g></string>
+    <string name="macro_step_type_value">Taip <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <string name="macro_step_replace_value">Gantikan teks dengan <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <plurals name="macro_step_wait_seconds">
+        <item quantity="other">Tunggu <xliff:g id="count" example="2">%d</xliff:g> saat</item>
+    </plurals>
+    <plurals name="macro_step_wait_milliseconds">
+        <item quantity="other">Tunggu <xliff:g id="count" example="500">%d</xliff:g> milisaat</item>
+    </plurals>
+    <string name="macro_step_unavailable">Tidak tersedia</string>
+    <string name="macro_seconds">Saat</string>
+    <string name="macro_invalid_seconds">Masukkan bilangan saat sehingga <xliff:g id="max" example="600">%1$d</xliff:g></string>
+    <string name="macro_tap_label">Teks item</string>
+    <string name="macro_tap_timeout">Saat menunggu item</string>
+    <string name="macro_text">Teks</string>
+    <string name="macro_replace_text">Gantikan teks dalam medan</string>
+    <string name="macro_item_not_found">Makro dihentikan. Tidak ditemui: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_failed">Makro dihentikan. Gagal: <xliff:g id="step" example="Open Gmail">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until">Tunggu sehingga</string>
+    <string name="macro_step_if">Jika</string>
+    <string name="macro_step_else_if">Jika tidak, jika</string>
+    <string name="macro_step_else">Jika tidak</string>
+    <string name="macro_step_end_if">Tamat jika</string>
+    <string name="macro_step_repeat">Ulang</string>
+    <string name="macro_step_repeat_while">Ulang selagi</string>
+    <string name="macro_step_end_repeat">Tamat ulang</string>
+    <string name="macro_step_exit_loop">Keluar daripada gelung</string>
+    <string name="macro_step_if_value">Jika <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_else_if_value">Jika tidak, jika <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_repeat_while_value">Ulang selagi <xliff:g id="condition" example="Item on screen: Load more">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until_value">Tunggu sehingga <xliff:g id="condition" example="Item on screen: Send">%1$s</xliff:g></string>
+    <plurals name="macro_step_repeat_value">
+        <item quantity="other">Ulang <xliff:g id="count" example="3">%d</xliff:g> kali</item>
+    </plurals>
+    <string name="macro_times">Kali</string>
+    <string name="macro_invalid_times">Masukkan nombor dari 1 hingga <xliff:g id="max" example="1000">%1$d</xliff:g></string>
+    <string name="macro_run_only_when">Jalankan hanya apabila</string>
+    <string name="macro_always">Sentiasa</string>
+    <string name="macro_no_tests">Tiada ujian</string>
+    <string name="macro_add_test">Tambah ujian</string>
+    <string name="macro_tests">Ujian</string>
+    <string name="macro_choose_test">Ujian</string>
+    <string name="macro_test_item">Item pada skrin</string>
+    <string name="macro_test_focused">Item difokuskan</string>
+    <string name="macro_test_app">Apl di hadapan</string>
+    <string name="macro_test_keyboard">Papan kekunci dipaparkan</string>
+    <string name="macro_test_keyboard_hidden">Papan kekunci disembunyikan</string>
+    <string name="macro_test_locked">Skrin dikunci</string>
+    <string name="macro_test_unlocked">Skrin dibuka kunci</string>
+    <string name="macro_test_item_value">Item pada skrin: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_no_item_value">Tiada item pada skrin: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_focused_value">Item difokuskan: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_not_focused_value">Item difokuskan bukan: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_app_value">Apl di hadapan: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_not_app_value">Apl tidak di hadapan: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_label_kind"><xliff:g id="label" example="Send">%1$s</xliff:g>, <xliff:g id="kind" example="Clickable">%2$s</xliff:g></string>
+    <string name="macro_join_and"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g> dan <xliff:g id="second" example="Focused item: Editable">%2$s</xliff:g></string>
+    <string name="macro_join_or"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g>, atau <xliff:g id="second" example="Screen locked">%2$s</xliff:g></string>
+    <string name="macro_regex">Ungkapan nalar</string>
+    <string name="macro_invalid_regex">Bukan ungkapan nalar yang boleh digunakan. Kumpulan berulang tidak boleh mengandungi ulangan atau |.</string>
+    <string name="macro_match_in">Padankan dalam</string>
+    <string name="macro_field_any">Sebarang teks</string>
+    <string name="macro_field_text">Teks</string>
+    <string name="macro_field_description">Penerangan</string>
+    <string name="macro_field_hint">Petunjuk</string>
+    <string name="macro_field_state">Keadaan</string>
+    <string name="macro_field_id">ID sumber</string>
+    <string name="macro_field_value"><xliff:g id="label" example="send">%1$s</xliff:g> (<xliff:g id="field" example="Resource ID">%2$s</xliff:g>)</string>
+    <string name="macro_field_regex_value"><xliff:g id="pattern" example="^Reply">%1$s</xliff:g> (<xliff:g id="field" example="Description">%2$s</xliff:g>, ungkapan nalar)</string>
+    <string name="macro_regex_value"><xliff:g id="pattern" example="Reply.*Anna">%1$s</xliff:g> (ungkapan nalar)</string>
+    <string name="macro_test_label_optional">Teks item (pilihan)</string>
+    <string name="macro_item_kind">Jenis item</string>
+    <string name="macro_kind_any">Sebarang jenis</string>
+    <string name="macro_kind_clickable">Boleh diklik</string>
+    <string name="macro_kind_long_clickable">Boleh diklik lama</string>
+    <string name="macro_kind_editable">Boleh diedit</string>
+    <string name="macro_kind_scrollable">Boleh ditatal</string>
+    <string name="macro_kind_adjustable">Boleh dilaraskan</string>
+    <string name="macro_kind_checkable">Boleh disemak</string>
+    <string name="macro_kind_checked">Disemak</string>
+    <string name="macro_kind_selected">Dipilih</string>
+    <string name="macro_kind_heading">Tajuk</string>
+    <string name="macro_kind_enabled">Didayakan</string>
+    <string name="macro_change_to">Tukar kepada: <xliff:g id="test" example="Keyboard hidden">%1$s</xliff:g></string>
+    <string name="macro_join_with_and">Sertai dengan dan</string>
+    <string name="macro_join_with_or">Sertai dengan atau</string>
+    <string name="macro_clause_and">dan <xliff:g id="test" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_clause_or">atau <xliff:g id="test" example="Screen locked">%1$s</xliff:g></string>
+    <string name="macro_wait_timeout">Saat menunggu</string>
+    <string name="macro_add_step_after">Tambah langkah selepas</string>
+    <string name="macro_problem">Langkah <xliff:g id="step" example="3">%1$d</xliff:g>: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_problem_no_if">Jika tidak, jika, Jika tidak atau Tamat jika tanpa Jika</string>
+    <string name="macro_problem_after_else">Jika tidak, jika atau Jika tidak selepas Jika tidak</string>
+    <string name="macro_problem_no_repeat">Tamat ulang tanpa Ulang</string>
+    <string name="macro_problem_no_end_if">Jika tanpa Tamat jika</string>
+    <string name="macro_problem_no_end_repeat">Ulang tanpa Tamat ulang</string>
+    <string name="macro_problem_exit">Keluar daripada gelung di luar Ulang</string>
+    <string name="macro_stopped_problem">Makro dihentikan. Langkah <xliff:g id="step" example="3">%1$d</xliff:g>: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_stopped_repeats">Makro dihentikan. Diulang <xliff:g id="count" example="1000">%1$d</xliff:g> kali: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
+    <string name="macro_stopped_timeout">Makro dihentikan. Tamat masa: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
+    <string name="macro_not_met">Makro tidak dijalankan. Jalankan hanya apabila: tidak dipenuhi</string>
+</resources>

@@ -46,4 +46,17 @@
     <string name="granular_editing_not_saved">ಉಳಿಸಲಾಗಿಲ್ಲ: ಪಠ್ಯ ಕ್ಷೇತ್ರವು ಹೋಗಿದೆ. ಪಠ್ಯವನ್ನು ನಕಲಿಸಲಾಗಿದೆ.</string>
     <string name="granular_editing_no_text">ಸಂಪಾದಿಸಲು ಪಠ್ಯವಿಲ್ಲ</string>
     <string name="granular_editing_password">ಪಾಸ್ವರ್ಡ್ ಕ್ಷೇತ್ರಗಳಲ್ಲಿ ಲಭ್ಯವಿಲ್ಲ</string>
+    <plurals name="granular_editing_spaces">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ಸ್ಪೇಸ್</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> ಸ್ಪೇಸ್‌ಗಳು</item>
+    </plurals>
+    <plurals name="granular_editing_new_lines">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ಹೊಸ ಲೈನ್</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> ಹೊಸ ಲೈನ್‌ಗಳು</item>
+    </plurals>
+    <plurals name="granular_editing_tabs">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ಟ್ಯಾಬ್</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> ಟ್ಯಾಬ್‌ಗಳು</item>
+    </plurals>
+    <string name="granular_editing_blank_line">ಖಾಲಿ ಲೈನ್</string>
 </resources>

@@ -390,4 +390,11 @@
         <item>@string/notification_shake_3</item>
     </string-array>
     <string name="notification_clock_voice_notifications">알림 음성</string>
+    <string name="notification_exact_alarms_title">알람 및 리마인더 사용 설정</string>
+    <string name="shortcut_toggle_time_announcements">시간 알림 켜기 또는 끄기</string>
+    <string name="notification_clock_now_on">시간 알림 켜짐</string>
+    <string name="notification_clock_now_off">시간 알림 꺼짐</string>
+    <plurals name="notification_clock_battery">
+        <item quantity="other"><xliff:g id="percent" example="76">%d</xliff:g>퍼센트</item>
+    </plurals>
 </resources>

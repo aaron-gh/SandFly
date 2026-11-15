@@ -21,6 +21,7 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.provider.Settings
+import androidx.annotation.VisibleForTesting
 import com.google.android.accessibility.talkback.shizuku.ShizukuGrants
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.libraries.accessibility.utils.log.LogUtils
@@ -41,7 +42,11 @@ object HiddenScreenBrightness {
   /** The lowest value of the system brightness slider. */
   private const val MIN_BRIGHTNESS = 1
 
-  @JvmStatic fun canWrite(context: Context): Boolean = Settings.System.canWrite(context)
+  /** Whether SandFly may modify system settings; tests replace it. */
+  @VisibleForTesting
+  internal var writePermission: (Context) -> Boolean = { Settings.System.canWrite(it) }
+
+  @JvmStatic fun canWrite(context: Context): Boolean = writePermission(context)
 
   /**
    * Saves the brightness and brightness mode, unless they are already saved from an earlier hide,
@@ -80,20 +85,23 @@ object HiddenScreenBrightness {
     }
   }
 
-  /** Restores the saved brightness and brightness mode, if any, and removes them. */
+  /**
+   * Restores the saved brightness and brightness mode, if any, and removes them once restored.
+   * Without permission to modify system settings they stay saved, for the next restore, such as
+   * when SandFly starts again.
+   */
   @JvmStatic
   fun restore(context: Context) {
     val prefs = prefs(context)
     if (!prefs.contains(KEY_BRIGHTNESS)) {
       return
     }
-    val brightness = prefs.getInt(KEY_BRIGHTNESS, MIN_BRIGHTNESS)
-    val mode = prefs.getInt(KEY_MODE, Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL)
-    prefs.edit().remove(KEY_BRIGHTNESS).remove(KEY_MODE).commit()
     if (!canWrite(context)) {
       LogUtils.w(TAG, "Cannot restore the screen brightness without permission")
       return
     }
+    val brightness = prefs.getInt(KEY_BRIGHTNESS, MIN_BRIGHTNESS)
+    val mode = prefs.getInt(KEY_MODE, Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL)
     val resolver = context.contentResolver
     try {
       // The brightness first, so it is not applied to adaptive brightness when that comes back.
@@ -101,7 +109,9 @@ object HiddenScreenBrightness {
       Settings.System.putInt(resolver, Settings.System.SCREEN_BRIGHTNESS_MODE, mode)
     } catch (e: RuntimeException) {
       LogUtils.w(TAG, "Cannot restore the screen brightness: %s", e)
+      return
     }
+    prefs.edit().remove(KEY_BRIGHTNESS).remove(KEY_MODE).commit()
   }
 
   /**

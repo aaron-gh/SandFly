@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="item_file_import">Importar de ficheiro</string>
+    <string name="item_file_export">Exportar para ficheiro</string>
+    <string name="title_pref_export_item_file_reference">Referência do formato de ficheiro de exportação</string>
+    <string name="item_file_keymaps">Mapas de teclas</string>
+    <string name="item_file_exported">Exportado</string>
+    <string name="item_file_export_failed">Não foi possível exportar</string>
+    <string name="item_file_not_read">Este ficheiro não é um ficheiro de itens do SandFly ou não foi possível lê-lo</string>
+    <string name="item_file_settings_file">Este é um ficheiro de definições. Importe-o com Cópia de segurança e restauro &gt; Importar configurações</string>
+    <string name="item_file_newer">Este ficheiro é de uma versão mais recente do SandFly</string>
+    <string name="item_file_nothing_imported">Nada importado</string>
+    <string name="item_file_imported">Importado: <xliff:g id="items" example="2 macros, 1 gesture profile">%1$s</xliff:g></string>
+    <string name="item_file_left_out">Não incluído:</string>
+    <string name="item_file_problem_not_read"><xliff:g id="kind" example="Macros">%1$s</xliff:g>, item <xliff:g id="number" example="3">%2$d</xliff:g>: não lido</string>
+    <string name="item_file_problem_command"><xliff:g id="item" example="Open mail">%1$s</xliff:g>: comando desconhecido <xliff:g id="command" example="READ_ALL">%2$s</xliff:g></string>
+    <string name="item_file_problem_gesture"><xliff:g id="item" example="Reading">%1$s</xliff:g>: gesto desconhecido <xliff:g id="gesture" example="pref_shortcut_spin">%2$s</xliff:g></string>
+    <string name="item_file_problem_keys"><xliff:g id="item" example="My keymap">%1$s</xliff:g>: teclas não reconhecidas: <xliff:g id="keys" example="SandFly+Foo">%2$s</xliff:g></string>
+    <string name="item_file_problem_keys_taken"><xliff:g id="item" example="My keymap">%1$s</xliff:g>: teclas já em uso: <xliff:g id="keys" example="SandFly+H">%2$s</xliff:g></string>
+    <string name="item_file_problem_setting"><xliff:g id="item" example="Reading">%1$s</xliff:g>: a definição <xliff:g id="key" example="pref_vibration">%2$s</xliff:g> é desconhecida, não pode estar num perfil ou tem um valor do tipo errado</string>
+    <string name="item_file_problem_regex"><xliff:g id="dictionary" example="Speech dictionary">%1$s</xliff:g>: expressão regular recusada: <xliff:g id="expression" example="(a+)+">%2$s</xliff:g></string>
+    <string name="item_file_problem_limit"><xliff:g id="kind" example="Symbol dictionary">%1$s</xliff:g>: no máximo <xliff:g id="number" example="500">%2$d</xliff:g> itens</string>
+    <string name="item_file_problem_more">Foram omitidos mais itens</string>
+    <plurals name="item_file_count_macros">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> macro</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> macros</item>
+    </plurals>
+    <plurals name="item_file_count_gesture_profiles">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> perfil de gestos</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> perfis de gestos</item>
+    </plurals>
+    <plurals name="item_file_count_keymaps">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> mapa de teclas</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> mapas de teclas</item>
+    </plurals>
+    <plurals name="item_file_count_apps">
+        <item quantity="one">gestos e atalhos de teclado de <xliff:g id="count" example="1">%d</xliff:g> app</item>
+        <item quantity="other">gestos e atalhos de teclado de <xliff:g id="count" example="2">%d</xliff:g> apps</item>
+    </plurals>
+    <plurals name="item_file_count_settings_profiles">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> perfil de definições</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> perfis de definições</item>
+    </plurals>
+    <plurals name="item_file_count_speech_dictionary">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> entrada do dicionário de fala</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> entradas do dicionário de fala</item>
+    </plurals>
+    <plurals name="item_file_count_symbol_dictionary">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> entrada do dicionário de símbolos</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> entradas do dicionário de símbolos</item>
+    </plurals>
+    <plurals name="item_file_count_braille_dictionary">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> entrada do dicionário braille</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> entradas do dicionário braille</item>
+    </plurals>
+    <plurals name="item_file_count_voice_commands">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> comando de voz personalizado</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> comandos de voz personalizados</item>
+    </plurals>
+</resources>

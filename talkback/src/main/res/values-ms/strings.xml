@@ -2025,4 +2025,142 @@
     <string name="value_keep_models_5">5 minit</string>
     <string name="value_keep_models_15">15 minit</string>
     <string name="value_keep_models_30">30 minit</string>
+    <string name="title_pref_speech_equalizer_save_preset">Simpan sebagai pratetap</string>
+    <string name="title_pref_speech_equalizer_saved_presets">Pratetap tersimpan</string>
+    <string name="speech_equalizer_preset_name">Nama</string>
+    <string name="speech_equalizer_preset_name_taken">Sudah ada pratetap bernama <xliff:g id="name" example="Podcast">%1$s</xliff:g></string>
+    <string name="speech_equalizer_presets_full">Tiada lagi pratetap yang boleh disimpan. Padam satu untuk menyimpan yang lain.</string>
+    <string name="speech_equalizer_preset_saved"><xliff:g id="name" example="Podcast">%1$s</xliff:g> disimpan</string>
+    <string name="speech_equalizer_preset_rename">Namakan semula</string>
+    <string name="speech_equalizer_preset_delete">Padam</string>
+    <string name="speech_equalizer_preset_delete_confirm">Padam <xliff:g id="name" example="Podcast">%1$s</xliff:g>?</string>
+    <string name="speech_equalizer_preset_deleted"><xliff:g id="name" example="Podcast">%1$s</xliff:g> dipadam</string>
+    <string name="title_pref_emoji_voice">Suara emoji</string>
+    <string name="value_emoji_voice_same">Sama seperti pertuturan</string>
+    <string name="title_pref_emoji_rate">Kadar pertuturan emoji</string>
+    <string name="title_pref_line_breaks_as_spaces">Baca pemisah baris sebagai ruang</string>
+    <string name="title_pref_language_voices">Suara mengikut bahasa</string>
+    <string name="title_pref_identify_languages_from_words">Kenal pasti bahasa daripada perkataan</string>
+    <string name="title_pref_add_language">Tambah bahasa</string>
+    <string name="title_pref_remove_language">Alih keluar bahasa</string>
+    <string name="title_pref_script_language">Skrip %1$s</string>
+    <string name="title_pref_screen_on_notification_count">Bilangan pemberitahuan</string>
+    <plurals name="template_screen_on_notification_count">
+        <item quantity="other"><xliff:g id="count" example="6">%d</xliff:g> pemberitahuan</item>
+    </plurals>
+    <string name="title_pref_phonetic_letters_review">Sebut huruf secara fonetik semasa menyemak</string>
+    <string name="title_pref_phonetic_letters_typing">Sebut huruf secara fonetik semasa menaip</string>
+    <string name="title_pref_emoji_suffix">Sebut \"emoji\" selepas nama emoji</string>
+    <string name="overview_shizuku_not_running">Shizuku tidak berjalan</string>
+    <string name="overview_shizuku_not_allowed">Shizuku tidak membenarkan SandFly</string>
+    <string name="overview_no_older_app">Tiada apl yang lebih lama</string>
+    <string name="overview_no_newer_app">Tiada apl yang lebih baharu</string>
+    <string name="stream_volume_needs_access">Benarkan akses Jangan Ganggu untuk menukar kelantangan ini.</string>
+    <string name="corner_gestures_title">Penjuru</string>
+    <string name="shortcut_move_to_item_below">Alih ke item di bawah</string>
+    <string name="shortcut_move_to_item_above">Alih ke item di atas</string>
+    <string name="shortcut_older_app">Apl lebih lama</string>
+    <string name="shortcut_newer_app">Apl lebih baharu</string>
+    <string name="shortcut_answer_call">Jawab panggilan</string>
+    <string name="answer_call_no_call">Tiada panggilan masuk</string>
+    <string name="answer_call_permission">Kebenaran diperlukan untuk menjawab panggilan</string>
+    <string name="shortcut_switch_keyboard">Tukar papan kekunci</string>
+    <string name="switch_keyboard_none">Tiada papan kekunci lain dihidupkan</string>
+    <string name="switch_keyboard_failed">Papan kekunci tidak ditukar</string>
+    <string name="clipboard_history_hint">Leret ke atas atau ke bawah untuk memilih, kemudian ketik dua kali untuk menampal</string>
+    <string name="title_speech_history">Sejarah pertuturan</string>
+    <string name="speech_history_empty">Tiada pertuturan</string>
+    <string name="speech_history_clear">Kosongkan sejarah</string>
+    <string name="title_pref_shortcut_corner_top_left_tap">Ketik penjuru kiri atas</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap">Ketik dua kali penjuru kiri atas</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap">Ketik tiga kali penjuru kiri atas</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap_hold">Ketik dua kali dan tahan penjuru kiri atas</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap_hold">Ketik tiga kali dan tahan penjuru kiri atas</string>
+    <string name="title_pref_shortcut_corner_top_right_tap">Ketik penjuru kanan atas</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap">Ketik dua kali penjuru kanan atas</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap">Ketik tiga kali penjuru kanan atas</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap_hold">Ketik dua kali dan tahan penjuru kanan atas</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap_hold">Ketik tiga kali dan tahan penjuru kanan atas</string>
+    <string name="title_pref_shortcut_corner_bottom_left_tap">Ketik penjuru kiri bawah</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap">Ketik dua kali penjuru kiri bawah</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap">Ketik tiga kali penjuru kiri bawah</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap_hold">Ketik dua kali dan tahan penjuru kiri bawah</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap_hold">Ketik tiga kali dan tahan penjuru kiri bawah</string>
+    <string name="title_pref_shortcut_corner_bottom_right_tap">Ketik penjuru kanan bawah</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap">Ketik dua kali penjuru kanan bawah</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap">Ketik tiga kali penjuru kanan bawah</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap_hold">Ketik dua kali dan tahan penjuru kanan bawah</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap_hold">Ketik tiga kali dan tahan penjuru kanan bawah</string>
+    <string name="title_pref_swipe_start_time">Masa mula gerak isyarat</string>
+    <string name="title_pref_swipes_before_lift">Kenali leretan sebelum jari diangkat</string>
+    <string name="summary_pref_swipes_before_lift">Menyahaktifkan gerak isyarat ulang-alik dan sudut.</string>
+    <string name="title_pref_corner_size_mm">Saiz penjuru</string>
+    <string name="value_corner_size_edge_width">Sama seperti lebar tepi</string>
+    <string name="title_pref_corner_tap_time_ms">Had masa ketikan penjuru</string>
+    <string name="value_corner_tap_time_system">Lalai sistem</string>
+    <string name="title_pref_edge_speak_commands">Sebut perintah pada setiap klik</string>
+    <string-array name="pref_volume_change_feedback_entries">
+        <item>@string/volume_change_feedback_off</item>
+        <item>@string/volume_change_feedback_tone</item>
+        <item>@string/volume_change_feedback_spoken</item>
+        <item>@string/volume_change_feedback_tone_and_spoken</item>
+    </string-array>
+    <string name="title_pref_volume_change_tone_during_media">Senyapkan nada semasa main balik media</string>
+    <string name="title_pref_volume_change_speech_during_media">Senyapkan pertuturan semasa main balik media</string>
+    <string name="title_pref_volume_change_interrupts_speech">Henti pertuturan untuk mengumumkan kelantangan</string>
+    <string name="title_pref_volume_keys_speech_volume_while_speaking">Kekunci kelantangan menukar kelantangan pertuturan semasa bercakap</string>
+    <string name="title_pref_double_tap_moves_cursor">Ketik dua kali mengalihkan kursor ke permulaan atau penghujung</string>
+    <string name="title_pref_scroll_ahead">Tatal lebih awal ke item seterusnya</string>
+    <string name="title_pref_speak_while_scrolling">Sebut item seterusnya semasa menatal</string>
+    <string-array name="pref_text_entities_entries">
+    <item>@string/text_entity_web</item>
+    <item>@string/text_entity_email</item>
+    <item>@string/text_entity_phone</item>
+    <item>@string/text_entity_code</item>
+  </string-array>
+    <string name="value_keep_models_until_stopped">Sehingga SandFly berhenti</string>
+    <string name="title_pref_model_download_server">Pelayan muat turun model</string>
+    <string name="title_pref_settings_profiles">Profil tetapan</string>
+    <string name="title_pref_new_settings_profile">Profil tetapan baharu</string>
+    <string name="settings_profile_new_name">Profil <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="settings_profile_name_taken">Sudah ada profil tetapan bernama <xliff:g id="name" example="Demo">%1$s</xliff:g></string>
+    <string name="settings_profile_in_use">Sedang digunakan</string>
+    <string name="settings_profile_menu_item_in_use"><xliff:g id="name" example="Demo">%1$s</xliff:g>, sedang digunakan</string>
+    <string name="settings_profile_none">Tiada profil tetapan</string>
+    <string name="settings_profile_use_now">Gunakan sekarang</string>
+    <string name="settings_profile_stop_using">Berhenti menggunakan</string>
+    <string name="settings_profile_change_settings">Tukar tetapan</string>
+    <string name="settings_profile_editing">Perubahan disimpan ke <xliff:g id="name" example="Messaging">%1$s</xliff:g></string>
+    <string name="settings_profile_edit_saved">Perubahan disimpan ke <xliff:g id="name" example="Messaging">%1$s</xliff:g></string>
+    <string name="settings_profile_use_automatically">Gunakan secara automatik</string>
+    <string name="settings_profile_web">Kandungan web</string>
+    <string name="settings_profile_reading">Bacaan berterusan</string>
+    <string name="settings_profile_text_editing">Pengeditan teks</string>
+    <string name="settings_profile_apps">Apl</string>
+    <string name="settings_profile_add_app">Tambah apl</string>
+    <string name="settings_profile_settings">Tetapan dalam profil ini</string>
+    <string name="settings_profile_no_settings">Tiada</string>
+    <string name="settings_profile_remove_confirm">Alih keluar <xliff:g id="item" example="Speech rate">%1$s</xliff:g> daripada <xliff:g id="name" example="Messaging">%2$s</xliff:g>?</string>
+    <string name="settings_profile_not_saved">Profil tetapan tidak dapat disimpan</string>
+    <string name="settings_profile_in_use_announcement">Profil <xliff:g id="name" example="Demo">%1$s</xliff:g></string>
+    <string name="settings_profile_not_changed">Profil tetapan tidak ditukar</string>
+    <string name="title_settings_profile">Profil tetapan</string>
+    <string name="shortcut_settings_profiles">Pilih profil tetapan</string>
+    <string name="shortcut_next_settings_profile">Profil tetapan seterusnya</string>
+    <string name="shortcut_previous_settings_profile">Profil tetapan sebelumnya</string>
+    <string name="title_copy_text_from_screen">Salin teks daripada skrin</string>
+    <string name="granularity_label">Granulariti</string>
+    <string name="granularity_characters">Aksara</string>
+    <string name="granularity_words">Perkataan</string>
+    <string name="granularity_paragraphs">Perenggan</string>
+    <string name="button_select_all">Pilih semua</string>
+    <string name="no_text_selected">Tiada teks dipilih</string>
+    <string name="no_text_on_screen">Tiada teks ditemui pada skrin</string>
+    <string name="title_select_last_spoken_phrase_word_by_word">Pilih frasa yang terakhir disebut perkataan demi perkataan</string>
+    <string name="no_words_selected">Tiada perkataan dipilih</string>
+    <string name="no_phrase_to_select">Tiada frasa untuk dipilih</string>
+    <string name="word_selection_list_cut_off">Senarai dipotong pada <xliff:g id="count" example="1000">%1$d</xliff:g> item</string>
+    <plurals name="word_selection_copied">
+        <item quantity="other"><xliff:g id="count" example="5">%1$d</xliff:g> item disalin</item>
+    </plurals>
 </resources>

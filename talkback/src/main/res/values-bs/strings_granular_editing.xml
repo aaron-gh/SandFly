@@ -47,4 +47,20 @@
     <string name="granular_editing_not_saved">Nije sačuvano: polje za tekst je nestalo. Tekst je kopiran.</string>
     <string name="granular_editing_no_text">Nema teksta za uređivanje</string>
     <string name="granular_editing_password">Nije dostupno u poljima za lozinku</string>
+    <plurals name="granular_editing_spaces">
+        <item quantity="one"><xliff:g id="count" example="3">%d</xliff:g> razmak</item>
+        <item quantity="few"><xliff:g id="count" example="3">%d</xliff:g> razmaka</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> razmaka</item>
+    </plurals>
+    <plurals name="granular_editing_new_lines">
+        <item quantity="one"><xliff:g id="count" example="3">%d</xliff:g> novi red</item>
+        <item quantity="few"><xliff:g id="count" example="3">%d</xliff:g> nova reda</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> novih redova</item>
+    </plurals>
+    <plurals name="granular_editing_tabs">
+        <item quantity="one"><xliff:g id="count" example="3">%d</xliff:g> tabulator</item>
+        <item quantity="few"><xliff:g id="count" example="3">%d</xliff:g> tabulatora</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> tabulatora</item>
+    </plurals>
+    <string name="granular_editing_blank_line">Prazan red</string>
 </resources>

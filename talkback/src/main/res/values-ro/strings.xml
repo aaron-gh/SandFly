@@ -2029,4 +2029,146 @@
     <string name="value_keep_models_5">5 minute</string>
     <string name="value_keep_models_15">15 minute</string>
     <string name="value_keep_models_30">30 de minute</string>
+    <string name="title_pref_speech_equalizer_save_preset">Salvează ca presetare</string>
+    <string name="title_pref_speech_equalizer_saved_presets">Presetări salvate</string>
+    <string name="speech_equalizer_preset_name">Nume</string>
+    <string name="speech_equalizer_preset_name_taken">Există deja o presetare cu numele <xliff:g id="name" example="Podcast">%1$s</xliff:g></string>
+    <string name="speech_equalizer_presets_full">Nu se mai pot salva presetări. Șterge una pentru a salva alta.</string>
+    <string name="speech_equalizer_preset_saved"><xliff:g id="name" example="Podcast">%1$s</xliff:g> salvată</string>
+    <string name="speech_equalizer_preset_rename">Redenumește</string>
+    <string name="speech_equalizer_preset_delete">Șterge</string>
+    <string name="speech_equalizer_preset_delete_confirm">Ștergi <xliff:g id="name" example="Podcast">%1$s</xliff:g>?</string>
+    <string name="speech_equalizer_preset_deleted"><xliff:g id="name" example="Podcast">%1$s</xliff:g> ștearsă</string>
+    <string name="title_pref_emoji_voice">Vocea pentru emoji</string>
+    <string name="value_emoji_voice_same">Aceeași cu vorbirea</string>
+    <string name="title_pref_emoji_rate">Viteza vorbirii pentru emoji</string>
+    <string name="title_pref_line_breaks_as_spaces">Citește întreruperile de rând ca spații</string>
+    <string name="title_pref_language_voices">Voci în funcție de limbă</string>
+    <string name="title_pref_identify_languages_from_words">Identifică limbile după cuvinte</string>
+    <string name="title_pref_add_language">Adaugă o limbă</string>
+    <string name="title_pref_remove_language">Elimină limba</string>
+    <string name="title_pref_script_language">Scriere %1$s</string>
+    <string name="title_pref_screen_on_notification_count">Numărul de notificări</string>
+    <plurals name="template_screen_on_notification_count">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> notificare</item>
+        <item quantity="few"><xliff:g id="count" example="3">%d</xliff:g> notificări</item>
+        <item quantity="other"><xliff:g id="count" example="20">%d</xliff:g> de notificări</item>
+    </plurals>
+    <string name="title_pref_phonetic_letters_review">Rostește literele fonetic la revizuire</string>
+    <string name="title_pref_phonetic_letters_typing">Rostește literele fonetic la introducerea textului</string>
+    <string name="title_pref_emoji_suffix">Rostește „emoji” după numele emoji-urilor</string>
+    <string name="overview_shizuku_not_running">Shizuku nu rulează</string>
+    <string name="overview_shizuku_not_allowed">Shizuku nu permite SandFly</string>
+    <string name="overview_no_older_app">Nicio aplicație mai veche</string>
+    <string name="overview_no_newer_app">Nicio aplicație mai nouă</string>
+    <string name="stream_volume_needs_access">Permite accesul la Nu deranja pentru a schimba acest volum.</string>
+    <string name="corner_gestures_title">Colțuri</string>
+    <string name="shortcut_move_to_item_below">Treci la elementul de mai jos</string>
+    <string name="shortcut_move_to_item_above">Treci la elementul de mai sus</string>
+    <string name="shortcut_older_app">Aplicația mai veche</string>
+    <string name="shortcut_newer_app">Aplicația mai nouă</string>
+    <string name="shortcut_answer_call">Răspunde la apel</string>
+    <string name="answer_call_no_call">Niciun apel primit</string>
+    <string name="answer_call_permission">Este necesară permisiunea pentru a răspunde la apeluri</string>
+    <string name="shortcut_switch_keyboard">Schimbă tastatura</string>
+    <string name="switch_keyboard_none">Nicio altă tastatură activată</string>
+    <string name="switch_keyboard_failed">Tastatura nu a fost schimbată</string>
+    <string name="clipboard_history_hint">Glisează în sus sau în jos pentru a alege, apoi atinge de două ori pentru a lipi</string>
+    <string name="title_speech_history">Istoricul vorbirii</string>
+    <string name="speech_history_empty">Nicio vorbire</string>
+    <string name="speech_history_clear">Șterge istoricul</string>
+    <string name="title_pref_shortcut_corner_top_left_tap">Atinge colțul din stânga sus</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap">Atinge de două ori colțul din stânga sus</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap">Atinge de trei ori colțul din stânga sus</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap_hold">Atinge de două ori și ține apăsat colțul din stânga sus</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap_hold">Atinge de trei ori și ține apăsat colțul din stânga sus</string>
+    <string name="title_pref_shortcut_corner_top_right_tap">Atinge colțul din dreapta sus</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap">Atinge de două ori colțul din dreapta sus</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap">Atinge de trei ori colțul din dreapta sus</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap_hold">Atinge de două ori și ține apăsat colțul din dreapta sus</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap_hold">Atinge de trei ori și ține apăsat colțul din dreapta sus</string>
+    <string name="title_pref_shortcut_corner_bottom_left_tap">Atinge colțul din stânga jos</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap">Atinge de două ori colțul din stânga jos</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap">Atinge de trei ori colțul din stânga jos</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap_hold">Atinge de două ori și ține apăsat colțul din stânga jos</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap_hold">Atinge de trei ori și ține apăsat colțul din stânga jos</string>
+    <string name="title_pref_shortcut_corner_bottom_right_tap">Atinge colțul din dreapta jos</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap">Atinge de două ori colțul din dreapta jos</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap">Atinge de trei ori colțul din dreapta jos</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap_hold">Atinge de două ori și ține apăsat colțul din dreapta jos</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap_hold">Atinge de trei ori și ține apăsat colțul din dreapta jos</string>
+    <string name="title_pref_swipe_start_time">Momentul de început al gestului</string>
+    <string name="title_pref_swipes_before_lift">Recunoaște glisările înainte de ridicarea degetului</string>
+    <string name="summary_pref_swipes_before_lift">Dezactivează gesturile înainte și înapoi și cele în unghi.</string>
+    <string name="title_pref_corner_size_mm">Dimensiunea colțurilor</string>
+    <string name="value_corner_size_edge_width">La fel ca lățimea marginii</string>
+    <string name="title_pref_corner_tap_time_ms">Limita de timp pentru atingerea colțului</string>
+    <string name="value_corner_tap_time_system">Implicit de sistem</string>
+    <string name="title_pref_edge_speak_commands">Rostește comanda la fiecare clic</string>
+    <string-array name="pref_volume_change_feedback_entries">
+        <item>@string/volume_change_feedback_off</item>
+        <item>@string/volume_change_feedback_tone</item>
+        <item>@string/volume_change_feedback_spoken</item>
+        <item>@string/volume_change_feedback_tone_and_spoken</item>
+    </string-array>
+    <string name="title_pref_volume_change_tone_during_media">Dezactivează tonul în timpul redării media</string>
+    <string name="title_pref_volume_change_speech_during_media">Dezactivează vorbirea în timpul redării media</string>
+    <string name="title_pref_volume_change_interrupts_speech">Întrerupe vorbirea pentru a anunța volumul</string>
+    <string name="title_pref_volume_keys_speech_volume_while_speaking">Tastele de volum schimbă volumul vorbirii în timp ce se vorbește</string>
+    <string name="title_pref_double_tap_moves_cursor">Atingerea dublă mută cursorul la început sau la sfârșit</string>
+    <string name="title_pref_scroll_ahead">Derulează în avans la elementul următor</string>
+    <string name="title_pref_speak_while_scrolling">Rostește elementul următor în timpul derulării</string>
+    <string-array name="pref_text_entities_entries">
+    <item>@string/text_entity_web</item>
+    <item>@string/text_entity_email</item>
+    <item>@string/text_entity_phone</item>
+    <item>@string/text_entity_code</item>
+  </string-array>
+    <string name="value_keep_models_until_stopped">Până când SandFly se oprește</string>
+    <string name="title_pref_model_download_server">Server de descărcare a modelelor</string>
+    <string name="title_pref_settings_profiles">Profiluri de setări</string>
+    <string name="title_pref_new_settings_profile">Profil de setări nou</string>
+    <string name="settings_profile_new_name">Profilul <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="settings_profile_name_taken">Există deja un profil de setări cu numele <xliff:g id="name" example="Demo">%1$s</xliff:g></string>
+    <string name="settings_profile_in_use">În uz</string>
+    <string name="settings_profile_menu_item_in_use"><xliff:g id="name" example="Demo">%1$s</xliff:g>, în uz</string>
+    <string name="settings_profile_none">Niciun profil de setări</string>
+    <string name="settings_profile_use_now">Folosește acum</string>
+    <string name="settings_profile_stop_using">Nu mai folosi</string>
+    <string name="settings_profile_change_settings">Schimbă setările</string>
+    <string name="settings_profile_editing">Modificările merg în <xliff:g id="name" example="Messaging">%1$s</xliff:g></string>
+    <string name="settings_profile_edit_saved">Modificările au fost salvate în <xliff:g id="name" example="Messaging">%1$s</xliff:g></string>
+    <string name="settings_profile_use_automatically">Folosește automat</string>
+    <string name="settings_profile_web">Conținut web</string>
+    <string name="settings_profile_reading">Citire continuă</string>
+    <string name="settings_profile_text_editing">Editarea textului</string>
+    <string name="settings_profile_apps">Aplicații</string>
+    <string name="settings_profile_add_app">Adaugă o aplicație</string>
+    <string name="settings_profile_settings">Setări din acest profil</string>
+    <string name="settings_profile_no_settings">Niciuna</string>
+    <string name="settings_profile_remove_confirm">Elimini <xliff:g id="item" example="Speech rate">%1$s</xliff:g> din <xliff:g id="name" example="Messaging">%2$s</xliff:g>?</string>
+    <string name="settings_profile_not_saved">Profilul de setări nu a putut fi salvat</string>
+    <string name="settings_profile_in_use_announcement">Profilul <xliff:g id="name" example="Demo">%1$s</xliff:g></string>
+    <string name="settings_profile_not_changed">Profilul de setări nu a fost schimbat</string>
+    <string name="title_settings_profile">Profil de setări</string>
+    <string name="shortcut_settings_profiles">Alege profilul de setări</string>
+    <string name="shortcut_next_settings_profile">Următorul profil de setări</string>
+    <string name="shortcut_previous_settings_profile">Profilul de setări anterior</string>
+    <string name="title_copy_text_from_screen">Copiază textul de pe ecran</string>
+    <string name="granularity_label">Granularitate</string>
+    <string name="granularity_characters">Caractere</string>
+    <string name="granularity_words">Cuvinte</string>
+    <string name="granularity_paragraphs">Paragrafe</string>
+    <string name="button_select_all">Selectează tot</string>
+    <string name="no_text_selected">Niciun text selectat</string>
+    <string name="no_text_on_screen">Nu s-a găsit text pe ecran</string>
+    <string name="title_select_last_spoken_phrase_word_by_word">Selectează cuvânt cu cuvânt ultima expresie rostită</string>
+    <string name="no_words_selected">Niciun cuvânt selectat</string>
+    <string name="no_phrase_to_select">Nicio expresie de selectat</string>
+    <string name="word_selection_list_cut_off">Lista a fost trunchiată la <xliff:g id="count" example="1000">%1$d</xliff:g> elemente</string>
+    <plurals name="word_selection_copied">
+        <item quantity="one">S-a copiat <xliff:g id="count" example="1">%1$d</xliff:g> element</item>
+        <item quantity="few">S-au copiat <xliff:g id="count" example="5">%1$d</xliff:g> elemente</item>
+        <item quantity="other">S-au copiat <xliff:g id="count" example="25">%1$d</xliff:g> de elemente</item>
+    </plurals>
 </resources>

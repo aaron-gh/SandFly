@@ -48,4 +48,23 @@
     <string name="granular_editing_not_saved">Neuložené: textové pole už neexistuje. Text bol skopírovaný.</string>
     <string name="granular_editing_no_text">Žiadny text na úpravu</string>
     <string name="granular_editing_password">Nie je k dispozícii v poliach hesla</string>
+    <plurals name="granular_editing_spaces">
+        <item quantity="one"><xliff:g id="count" example="3">%d</xliff:g> medzera</item>
+        <item quantity="few"><xliff:g id="count" example="3">%d</xliff:g> medzery</item>
+        <item quantity="many"><xliff:g id="count" example="3">%d</xliff:g> medzery</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> medzier</item>
+    </plurals>
+    <plurals name="granular_editing_new_lines">
+        <item quantity="one"><xliff:g id="count" example="3">%d</xliff:g> nový riadok</item>
+        <item quantity="few"><xliff:g id="count" example="3">%d</xliff:g> nové riadky</item>
+        <item quantity="many"><xliff:g id="count" example="3">%d</xliff:g> nového riadka</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> nových riadkov</item>
+    </plurals>
+    <plurals name="granular_editing_tabs">
+        <item quantity="one"><xliff:g id="count" example="3">%d</xliff:g> tabulátor</item>
+        <item quantity="few"><xliff:g id="count" example="3">%d</xliff:g> tabulátory</item>
+        <item quantity="many"><xliff:g id="count" example="3">%d</xliff:g> tabulátora</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> tabulátorov</item>
+    </plurals>
+    <string name="granular_editing_blank_line">Prázdny riadok</string>
 </resources>

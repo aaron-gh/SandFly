@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_voice_commands">פקודות קוליות</string>
+    <string name="title_pref_voice_commands_ai">הבנת פקודות קוליות באמצעות AI</string>
+    <string name="voice_commands_custom">פקודות קוליות מותאמות אישית</string>
+    <string name="voice_command_add">הוספת פקודה קולית</string>
+    <string name="voice_command_phrase">ביטוי</string>
+    <string name="voice_command_change_phrase">שינוי ביטוי</string>
+    <string name="voice_command_change_command">שינוי פקודה</string>
+    <string name="voice_command_delete_confirm">למחוק את \"<xliff:g id="phrase" example="Good morning">%1$s</xliff:g>\"?</string>
+    <string name="voice_command_phrase_exists">\"<xliff:g id="phrase" example="Good morning">%1$s</xliff:g>\" כבר פקודה קולית</string>
+    <string name="voice_commands_not_understood">לא הובן: <xliff:g id="text" example="open the door">%1$s</xliff:g></string>
+    <string name="voice_commands_not_available">לא זמין: <xliff:g id="name" example="Morning macro">%1$s</xliff:g></string>
+    <string name="voice_commands_not_found">לא נמצא: <xliff:g id="label" example="Settings">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app">אין אפליקציה בשם <xliff:g id="name" example="Signal">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app_for_action">אין אפליקציה לפעולה הזו</string>
+    <string name="voice_commands_calling">שיחה אל <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_call_permission">צריך לאפשר שיחות טלפון, ואז לומר את הפקודה שוב.</string>
+    <string name="voice_commands_contacts_permission">צריך לאפשר גישה לאנשי הקשר, ואז לומר את הפקודה שוב.</string>
+    <string name="voice_commands_no_contact">אין איש קשר בשם <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_contacts_several">יש יותר מאיש קשר אחד בשם <xliff:g id="name" example="Sam">%1$s</xliff:g>: <xliff:g id="names" example="Sam Jones, Sam Smith">%2$s</xliff:g></string>
+    <string name="voice_commands_message_text">הודעה אל <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_message_confirm">לשלוח אל <xliff:g id="name" example="Sam">%1$s</xliff:g>: <xliff:g id="text" example="I am on my way">%2$s</xliff:g>?</string>
+    <string name="voice_commands_message_confirm_result">לשלוח אל <xliff:g id="name" example="Sam">%1$s</xliff:g>?</string>
+    <string name="voice_commands_message_not_sent">ההודעה לא נשלחה</string>
+    <string name="voice_commands_send_pressed">לחיצה על שליחה</string>
+    <string name="voice_commands_send_button">שליחה</string>
+    <string name="voice_commands_no_description">לא התקבל תיאור</string>
+    <string name="voice_commands_copied">הועתק</string>
+    <string-array name="voice_commands_chain_words">
+        <item>ואז</item>
+        <item>ואחר כך</item>
+        <item>אחר כך</item>
+        <item>לאחר מכן</item>
+        <item>אחרי זה</item>
+    </string-array>
+    <string-array name="voice_commands_and_words">
+        <item>וגם</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_start">
+        <item>בבקשה</item>
+        <item>אפשר</item>
+        <item>תוכל</item>
+        <item>תוכלי</item>
+        <item>אני רוצה</item>
+        <item>עכשיו</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_end">
+        <item>בבקשה</item>
+        <item>בשבילי</item>
+        <item>עכשיו</item>
+    </string-array>
+    <string-array name="voice_commands_cancel_words">
+        <item>עצור</item>
+        <item>עצרי</item>
+        <item>עצירה</item>
+        <item>בטל</item>
+        <item>בטלי</item>
+        <item>ביטול</item>
+        <item>עזוב</item>
+        <item>עזבי</item>
+        <item>שתוק</item>
+    </string-array>
+    <string-array name="voice_commands_yes">
+        <item>כן</item>
+        <item>בסדר</item>
+        <item>אוקיי</item>
+        <item>שלח</item>
+        <item>שלחי</item>
+        <item>בטח</item>
+        <item>סבבה</item>
+        <item>תעשה</item>
+    </string-array>
+    <string-array name="voice_commands_sms_names">
+        <item>SMS</item>
+        <item>אס אם אס</item>
+        <item>הודעת טקסט</item>
+        <item>הודעות</item>
+    </string-array>
+    <string-array name="voice_commands_send_image_description">
+        <item>שלח את תיאור התמונה אל {who}</item>
+        <item>שלחי את תיאור התמונה אל {who}</item>
+        <item>שלח תיאור של התמונה אל {who}</item>
+        <item>שלח אל {who} תיאור של התמונה</item>
+        <item>שלח את תיאור הצילום אל {who}</item>
+    </string-array>
+    <string-array name="voice_commands_send_screen_description">
+        <item>שלח את תיאור המסך אל {who}</item>
+        <item>שלחי את תיאור המסך אל {who}</item>
+        <item>שלח אל {who} תיאור של המסך</item>
+    </string-array>
+    <string-array name="voice_commands_send_previous">
+        <item>שלח אותו אל {who} באפליקציית {app}</item>
+        <item>שלח אותו אל {who}</item>
+        <item>שלח את זה אל {who}</item>
+        <item>שלח את התיאור אל {who}</item>
+        <item>שתף אותו עם {who}</item>
+    </string-array>
+    <string-array name="voice_commands_message">
+        <item>שלח הודעה אל {who} באפליקציית {app} שאומרת {text}</item>
+        <item>שלח הודעה אל {who} באפליקציית {app}: {text}</item>
+        <item>שלח הודעה אל {who} שאומרת {text}</item>
+        <item>שלח הודעה אל {who}: {text}</item>
+        <item>שלח הודעה אל {whoandtext}</item>
+        <item>שלח אל {who} הודעת {app}: {text}</item>
+        <item>שלח הודעת {app} אל {who}</item>
+        <item>כתוב אל {who} באפליקציית {app} {text}</item>
+        <item>כתוב אל {who} {text}</item>
+        <item>אמור אל {who} באפליקציית {app} {text}</item>
+        <item>שלחי הודעה אל {who} שאומרת {text}</item>
+        <item>שלחי הודעה אל {whoandtext}</item>
+        <item>כתוב הודעה אל {whoandtext}</item>
+    </string-array>
+    <string-array name="voice_commands_call">
+        <item>התקשר אל {who}</item>
+        <item>התקשרי אל {who}</item>
+        <item>חייג אל {who}</item>
+        <item>חייגי אל {who}</item>
+        <item>צלצל אל {who}</item>
+        <item>בצע שיחה אל {who}</item>
+    </string-array>
+    <string-array name="voice_commands_describe_screen">
+        <item>תאר את המסך</item>
+        <item>תארי את המסך</item>
+        <item>תאר מה יש במסך</item>
+        <item>מה יש במסך</item>
+        <item>מה מוצג במסך שלי</item>
+    </string-array>
+    <string-array name="voice_commands_describe_image">
+        <item>תאר את התמונה [הזו]</item>
+        <item>תארי את התמונה</item>
+        <item>תאר את הצילום</item>
+        <item>מה יש בתמונה</item>
+        <item>מה יש בצילום</item>
+    </string-array>
+    <string-array name="voice_commands_copy_result">
+        <item>העתק אותו</item>
+        <item>העתק את זה</item>
+        <item>העתק את התיאור</item>
+        <item>העתק את מה שאמרת [עכשיו]</item>
+        <item>העתק את הביטוי האחרון שהוקרא</item>
+        <item>העתק את הביטוי האחרון</item>
+    </string-array>
+    <string-array name="voice_commands_wait">
+        <item>המתן {n} שניות</item>
+        <item>המתן שנייה</item>
+        <item>חכה {n} שניות</item>
+        <item>חכה שנייה</item>
+        <item>המתן</item>
+    </string-array>
+    <string-array name="voice_commands_type_text">
+        <item>הקלד {text}</item>
+        <item>הקלידי {text}</item>
+        <item>כתוב {text}</item>
+        <item>הזן {text}</item>
+    </string-array>
+    <string-array name="voice_commands_run">
+        <item>הפעל את המאקרו {command}</item>
+        <item>הרץ את המאקרו {command}</item>
+        <item>הפעל {command}</item>
+        <item>הרץ {command}</item>
+        <item>בצע {command}</item>
+    </string-array>
+    <string-array name="voice_commands_open">
+        <item>פתח את {app}</item>
+        <item>פתח {app}</item>
+        <item>הפעל את {app}</item>
+        <item>עבור אל {app}</item>
+    </string-array>
+    <string-array name="voice_commands_tap">
+        <item>לחץ פעמיים על {label}</item>
+        <item>לחץ על {label}</item>
+        <item>הקש על {label}</item>
+        <item>הפעל את {label}</item>
+        <item>בחר את {label}</item>
+    </string-array>
+</resources>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_macros">Makrot</string>
+    <string name="shortcut_stop_macro">Lopeta makro</string>
+    <string name="macro_add">Lisää makro</string>
+    <string name="macro_run_now">Suorita nyt</string>
+    <string name="macro_add_step">Lisää vaihe</string>
+    <string name="macro_add_at_end">Loppuun</string>
+    <string name="macro_add_at_start">Alkuun</string>
+    <string name="macro_add_after">Vaiheen <xliff:g id="step" example="2">%1$d</xliff:g> jälkeen: <xliff:g id="name" example="If App in front: Chrome">%2$s</xliff:g></string>
+    <string name="macro_steps">Vaiheet</string>
+    <string name="macro_no_steps">Ei vaiheita</string>
+    <string name="macro_delete">Poista makro</string>
+    <string name="macro_delete_confirm">Poistetaanko <xliff:g id="name" example="Send message">%1$s</xliff:g>?</string>
+    <string name="macro_step_command">Suorita komento</string>
+    <string name="macro_step_wait">Odota</string>
+    <string name="macro_step_tap">Napauta kohdetta</string>
+    <string name="macro_step_focus">Kohdista kohteeseen</string>
+    <string name="macro_step_speak_item">Sano kohde</string>
+    <string name="macro_step_speak_text">Sano teksti</string>
+    <string name="macro_step_type">Kirjoita teksti</string>
+    <string name="macro_step_tap_value">Napauta <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_focus_value">Kohdista <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_item_value">Sano <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_text_value">Sano <xliff:g id="text" example="Done">%1$s</xliff:g></string>
+    <string name="macro_step_type_value">Kirjoita <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <string name="macro_step_replace_value">Korvaa teksti tekstillä <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <plurals name="macro_step_wait_seconds">
+        <item quantity="one">Odota <xliff:g id="count" example="1">%d</xliff:g> sekunti</item>
+        <item quantity="other">Odota <xliff:g id="count" example="1">%d</xliff:g> sekuntia</item>
+    </plurals>
+    <plurals name="macro_step_wait_milliseconds">
+        <item quantity="one">Odota <xliff:g id="count" example="1">%d</xliff:g> millisekunti</item>
+        <item quantity="other">Odota <xliff:g id="count" example="1">%d</xliff:g> millisekuntia</item>
+    </plurals>
+    <string name="macro_step_unavailable">Ei käytettävissä</string>
+    <string name="macro_seconds">Sekunnit</string>
+    <string name="macro_invalid_seconds">Anna sekuntimäärä enintään <xliff:g id="max" example="600">%1$d</xliff:g></string>
+    <string name="macro_tap_label">Kohteen teksti</string>
+    <string name="macro_tap_timeout">Kohteen odotusaika sekunteina</string>
+    <string name="macro_text">Teksti</string>
+    <string name="macro_replace_text">Korvaa kentän teksti</string>
+    <string name="macro_item_not_found">Makro pysäytetty. Ei löytynyt: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_failed">Makro pysäytetty. Epäonnistui: <xliff:g id="step" example="Open Gmail">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until">Odota kunnes</string>
+    <string name="macro_step_if">Jos</string>
+    <string name="macro_step_else_if">Muuten jos</string>
+    <string name="macro_step_else">Muuten</string>
+    <string name="macro_step_end_if">Jos päättyy</string>
+    <string name="macro_step_repeat">Toista</string>
+    <string name="macro_step_repeat_while">Toista kun</string>
+    <string name="macro_step_end_repeat">Toisto päättyy</string>
+    <string name="macro_step_exit_loop">Poistu silmukasta</string>
+    <string name="macro_step_if_value">Jos <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_else_if_value">Muuten jos <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_repeat_while_value">Toista kun <xliff:g id="condition" example="Item on screen: Load more">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until_value">Odota kunnes <xliff:g id="condition" example="Item on screen: Send">%1$s</xliff:g></string>
+    <plurals name="macro_step_repeat_value">
+        <item quantity="one">Toista <xliff:g id="count" example="1">%d</xliff:g> kerran</item>
+        <item quantity="other">Toista <xliff:g id="count" example="1">%d</xliff:g> kertaa</item>
+    </plurals>
+    <string name="macro_times">Kerrat</string>
+    <string name="macro_invalid_times">Anna luku väliltä 1–<xliff:g id="max" example="1000">%1$d</xliff:g></string>
+    <string name="macro_run_only_when">Suorita vain kun</string>
+    <string name="macro_always">Aina</string>
+    <string name="macro_no_tests">Ei ehtoja</string>
+    <string name="macro_add_test">Lisää ehto</string>
+    <string name="macro_tests">Ehdot</string>
+    <string name="macro_choose_test">Ehto</string>
+    <string name="macro_test_item">Kohde näytöllä</string>
+    <string name="macro_test_focused">Kohdistettu kohde</string>
+    <string name="macro_test_app">Etualan sovellus</string>
+    <string name="macro_test_keyboard">Näppäimistö näkyvissä</string>
+    <string name="macro_test_keyboard_hidden">Näppäimistö piilotettu</string>
+    <string name="macro_test_locked">Näyttö lukittu</string>
+    <string name="macro_test_unlocked">Näyttö avattu</string>
+    <string name="macro_test_item_value">Kohde näytöllä: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_no_item_value">Ei kohdetta näytöllä: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_focused_value">Kohdistettu kohde: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_not_focused_value">Kohdistettu kohde ei ole: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_app_value">Etualan sovellus: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_not_app_value">Etualalla ei ole sovellusta: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_label_kind"><xliff:g id="label" example="Send">%1$s</xliff:g>, <xliff:g id="kind" example="Clickable">%2$s</xliff:g></string>
+    <string name="macro_join_and"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g> ja <xliff:g id="second" example="Focused item: Editable">%2$s</xliff:g></string>
+    <string name="macro_join_or"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g> tai <xliff:g id="second" example="Screen locked">%2$s</xliff:g></string>
+    <string name="macro_regex">Säännöllinen lauseke</string>
+    <string name="macro_invalid_regex">Ei käyttökelpoinen säännöllinen lauseke. Toistetut ryhmät eivät voi sisältää toistoa tai merkkiä |.</string>
+    <string name="macro_match_in">Täsmää kohteessa</string>
+    <string name="macro_field_any">Mikä tahansa teksti</string>
+    <string name="macro_field_text">Teksti</string>
+    <string name="macro_field_description">Kuvaus</string>
+    <string name="macro_field_hint">Vihje</string>
+    <string name="macro_field_state">Tila</string>
+    <string name="macro_field_id">Resurssitunnus</string>
+    <string name="macro_field_value"><xliff:g id="label" example="send">%1$s</xliff:g> (<xliff:g id="field" example="Resource ID">%2$s</xliff:g>)</string>
+    <string name="macro_field_regex_value"><xliff:g id="pattern" example="^Reply">%1$s</xliff:g> (<xliff:g id="field" example="Description">%2$s</xliff:g>, säännöllinen lauseke)</string>
+    <string name="macro_regex_value"><xliff:g id="pattern" example="Reply.*Anna">%1$s</xliff:g> (säännöllinen lauseke)</string>
+    <string name="macro_test_label_optional">Kohteen teksti (valinnainen)</string>
+    <string name="macro_item_kind">Kohteen tyyppi</string>
+    <string name="macro_kind_any">Mikä tahansa tyyppi</string>
+    <string name="macro_kind_clickable">Napsautettava</string>
+    <string name="macro_kind_long_clickable">Pitkään napsautettava</string>
+    <string name="macro_kind_editable">Muokattava</string>
+    <string name="macro_kind_scrollable">Vieritettävä</string>
+    <string name="macro_kind_adjustable">Säädettävä</string>
+    <string name="macro_kind_checkable">Valittavissa</string>
+    <string name="macro_kind_checked">Valittu</string>
+    <string name="macro_kind_selected">Valittuna</string>
+    <string name="macro_kind_heading">Otsikko</string>
+    <string name="macro_kind_enabled">Käytössä</string>
+    <string name="macro_change_to">Vaihda ehtoon: <xliff:g id="test" example="Keyboard hidden">%1$s</xliff:g></string>
+    <string name="macro_join_with_and">Yhdistä ehdolla ja</string>
+    <string name="macro_join_with_or">Yhdistä ehdolla tai</string>
+    <string name="macro_clause_and">ja <xliff:g id="test" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_clause_or">tai <xliff:g id="test" example="Screen locked">%1$s</xliff:g></string>
+    <string name="macro_wait_timeout">Odotusaika sekunteina</string>
+    <string name="macro_add_step_after">Lisää vaihe jälkeen</string>
+    <string name="macro_problem">Vaihe <xliff:g id="step" example="3">%1$d</xliff:g>: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_problem_no_if">Muuten jos, Muuten tai Jos päättyy ilman Jos-vaihetta</string>
+    <string name="macro_problem_after_else">Muuten jos tai Muuten vaiheen Muuten jälkeen</string>
+    <string name="macro_problem_no_repeat">Toisto päättyy ilman Toista-vaihetta</string>
+    <string name="macro_problem_no_end_if">Jos ilman Jos päättyy -vaihetta</string>
+    <string name="macro_problem_no_end_repeat">Toista ilman Toisto päättyy -vaihetta</string>
+    <string name="macro_problem_exit">Poistu silmukasta toiston ulkopuolella</string>
+    <string name="macro_stopped_problem">Makro pysäytetty. Vaihe <xliff:g id="step" example="3">%1$d</xliff:g>: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_stopped_repeats">Makro pysäytetty. Toistettu <xliff:g id="count" example="1000">%1$d</xliff:g> kertaa: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
+    <string name="macro_stopped_timeout">Makro pysäytetty. Aikakatkaisu: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
+    <string name="macro_not_met">Makroa ei suoritettu. Suorita vain kun: ehto ei täyty</string>
+</resources>

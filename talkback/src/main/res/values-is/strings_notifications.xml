@@ -390,4 +390,12 @@
         <item>@string/notification_shake_3</item>
     </string-array>
     <string name="notification_clock_voice_notifications">Rödd tilkynninga</string>
+    <string name="notification_exact_alarms_title">Kveikja á Vekjarar og áminningar</string>
+    <string name="shortcut_toggle_time_announcements">Tímatilkynningar kveikt eða slökkt</string>
+    <string name="notification_clock_now_on">Tímatilkynningar kveiktar</string>
+    <string name="notification_clock_now_off">Tímatilkynningar slökktar</string>
+    <plurals name="notification_clock_battery">
+        <item quantity="one"><xliff:g id="percent" example="76">%d</xliff:g> prósent</item>
+        <item quantity="other"><xliff:g id="percent" example="76">%d</xliff:g> prósent</item>
+    </plurals>
 </resources>

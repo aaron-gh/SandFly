@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_voice_commands">Comandos de voz</string>
+    <string name="title_pref_voice_commands_ai">Entender los comandos de voz con IA</string>
+    <string name="voice_commands_custom">Comandos de voz personalizados</string>
+    <string name="voice_command_add">Añadir comando de voz</string>
+    <string name="voice_command_phrase">Frase</string>
+    <string name="voice_command_change_phrase">Cambiar frase</string>
+    <string name="voice_command_change_command">Cambiar comando</string>
+    <string name="voice_command_delete_confirm">¿Eliminar <xliff:g id="phrase" example="Good morning">%1$s</xliff:g>?</string>
+    <string name="voice_command_phrase_exists"><xliff:g id="phrase" example="Good morning">%1$s</xliff:g> ya es un comando de voz</string>
+    <string name="voice_commands_not_understood">No entendido: <xliff:g id="text" example="open the door">%1$s</xliff:g></string>
+    <string name="voice_commands_not_available">No disponible: <xliff:g id="name" example="Morning macro">%1$s</xliff:g></string>
+    <string name="voice_commands_not_found">No encontrado: <xliff:g id="label" example="Settings">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app">No hay ninguna aplicación llamada <xliff:g id="name" example="Signal">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app_for_action">No hay aplicación para esta acción</string>
+    <string name="voice_commands_calling">Llamando a <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_call_permission">Permite las llamadas telefónicas y di el comando de nuevo.</string>
+    <string name="voice_commands_contacts_permission">Permite el acceso a los contactos y di el comando de nuevo.</string>
+    <string name="voice_commands_no_contact">No hay ningún contacto llamado <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_contacts_several">Hay varios contactos llamados <xliff:g id="name" example="Sam">%1$s</xliff:g>: <xliff:g id="names" example="Sam Jones, Sam Smith">%2$s</xliff:g></string>
+    <string name="voice_commands_message_text">Mensaje para <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_message_confirm">¿Enviar a <xliff:g id="name" example="Sam">%1$s</xliff:g>: <xliff:g id="text" example="I am on my way">%2$s</xliff:g>?</string>
+    <string name="voice_commands_message_confirm_result">¿Enviar a <xliff:g id="name" example="Sam">%1$s</xliff:g>?</string>
+    <string name="voice_commands_message_not_sent">Mensaje no enviado</string>
+    <string name="voice_commands_send_pressed">Enviar pulsado</string>
+    <string name="voice_commands_send_button">Enviar</string>
+    <string name="voice_commands_no_description">No se recibió ninguna descripción</string>
+    <string name="voice_commands_copied">Copiado</string>
+    <string-array name="voice_commands_chain_words">
+        <item>y luego</item>
+        <item>luego</item>
+        <item>después</item>
+        <item>después de eso</item>
+        <item>a continuación</item>
+        <item>y después</item>
+    </string-array>
+    <string-array name="voice_commands_and_words">
+        <item>y</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_start">
+        <item>por favor</item>
+        <item>puedes</item>
+        <item>podrías</item>
+        <item>puede</item>
+        <item>podría</item>
+        <item>quiero</item>
+        <item>quisiera</item>
+        <item>me gustaría</item>
+        <item>ahora</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_end">
+        <item>por favor</item>
+        <item>por mí</item>
+        <item>para mí</item>
+        <item>ahora</item>
+    </string-array>
+    <string-array name="voice_commands_cancel_words">
+        <item>para</item>
+        <item>detente</item>
+        <item>detener</item>
+        <item>cancela</item>
+        <item>cancelar</item>
+        <item>sal</item>
+        <item>salir</item>
+        <item>olvídalo</item>
+        <item>déjalo</item>
+        <item>cállate</item>
+    </string-array>
+    <string-array name="voice_commands_yes">
+        <item>sí</item>
+        <item>si</item>
+        <item>claro</item>
+        <item>vale</item>
+        <item>ok</item>
+        <item>de acuerdo</item>
+        <item>envía</item>
+        <item>envíalo</item>
+        <item>enviar</item>
+        <item>hazlo</item>
+        <item>adelante</item>
+    </string-array>
+    <string-array name="voice_commands_sms_names">
+        <item>SMS</item>
+        <item>mensaje de texto</item>
+        <item>mensajes</item>
+        <item>texto</item>
+    </string-array>
+    <string-array name="voice_commands_send_image_description">
+        <item>envía [la|una] descripción de [la|esta] imagen a {who}</item>
+        <item>envía [la|una] descripción de [la|esta] foto a {who}</item>
+        <item>envía [la|una] descripción de [la|esta] fotografía a {who}</item>
+        <item>manda [la|una] descripción de [la|esta] imagen a {who}</item>
+        <item>manda [la|una] descripción de [la|esta] foto a {who}</item>
+        <item>enviar [la|una] descripción de [la|esta] imagen a {who}</item>
+    </string-array>
+    <string-array name="voice_commands_send_screen_description">
+        <item>envía [la|una] descripción de [la] pantalla a {who}</item>
+        <item>manda [la|una] descripción de [la] pantalla a {who}</item>
+        <item>enviar [la|una] descripción de [la] pantalla a {who}</item>
+    </string-array>
+    <string-array name="voice_commands_send_previous">
+        <item>envíalo a {who} por {app}</item>
+        <item>envíalo a {who} en {app}</item>
+        <item>envíalo a {who}</item>
+        <item>envía eso a {who}</item>
+        <item>envía la descripción a {who}</item>
+        <item>mándalo a {who}</item>
+        <item>manda eso a {who}</item>
+        <item>compártelo con {who}</item>
+    </string-array>
+    <string-array name="voice_commands_message">
+        <item>envía [un] mensaje a {who} por {app} que diga {text}</item>
+        <item>envía [un] mensaje a {who} por {app} diciendo {text}</item>
+        <item>envía [un] mensaje a {who} que diga {text}</item>
+        <item>envía [un] mensaje a {who} diciendo {text}</item>
+        <item>envía [un] mensaje a {whoandtext}</item>
+        <item>envía [un] mensaje de {app} a {who} que diga {text}</item>
+        <item>envía [un] mensaje de {app} a {who} diciendo {text}</item>
+        <item>envía [un] mensaje de {app} a {who}</item>
+        <item>envía un {app} a {who} que diga {text}</item>
+        <item>manda [un] mensaje a {who} por {app} que diga {text}</item>
+        <item>manda [un] mensaje a {who} que diga {text}</item>
+        <item>manda [un] mensaje a {whoandtext}</item>
+        <item>escribe a {who} por {app} {text}</item>
+        <item>escribe a {who} {text}</item>
+        <item>escríbele a {who} {text}</item>
+        <item>dile a {who} por {app} {text}</item>
+        <item>dile a {who} {text}</item>
+        <item>mensaje a {whoandtext}</item>
+        <item>texto a {whoandtext}</item>
+    </string-array>
+    <string-array name="voice_commands_call">
+        <item>llama a {who}</item>
+        <item>llama {who}</item>
+        <item>telefonea a {who}</item>
+        <item>marca a {who}</item>
+        <item>marca {who}</item>
+        <item>haz una llamada a {who}</item>
+        <item>realiza una llamada a {who}</item>
+    </string-array>
+    <string-array name="voice_commands_describe_screen">
+        <item>describe [la] pantalla</item>
+        <item>describe lo que hay en [la] pantalla</item>
+        <item>qué hay en [la|mi] pantalla</item>
+        <item>qué es lo que hay en [la|mi] pantalla</item>
+        <item>qué se ve en [la|mi] pantalla</item>
+    </string-array>
+    <string-array name="voice_commands_describe_image">
+        <item>describe [la|esta] imagen</item>
+        <item>describe [la|esta] foto</item>
+        <item>describe [la|esta] fotografía</item>
+        <item>qué hay en [la|esta] imagen</item>
+        <item>qué hay en [la|esta] foto</item>
+        <item>qué aparece en [la|esta] imagen</item>
+        <item>qué aparece en [la|esta] foto</item>
+    </string-array>
+    <string-array name="voice_commands_copy_result">
+        <item>cópialo</item>
+        <item>copia eso</item>
+        <item>copia la descripción</item>
+        <item>copia lo que acabas de decir</item>
+        <item>copia [la] última frase [dicha]</item>
+        <item>copia lo último que se dijo</item>
+        <item>copia lo último que dijiste</item>
+    </string-array>
+    <string-array name="voice_commands_wait">
+        <item>espera {n} segundos</item>
+        <item>espera {n} segundo</item>
+        <item>espera [un] segundo</item>
+        <item>espera</item>
+    </string-array>
+    <string-array name="voice_commands_type_text">
+        <item>escribe {text}</item>
+        <item>teclea {text}</item>
+        <item>introduce {text}</item>
+    </string-array>
+    <string-array name="voice_commands_run">
+        <item>ejecuta [la] macro {command}</item>
+        <item>ejecuta {command}</item>
+        <item>lanza [la] macro {command}</item>
+        <item>inicia [la] macro {command}</item>
+        <item>haz {command}</item>
+    </string-array>
+    <string-array name="voice_commands_open">
+        <item>abre {app}</item>
+        <item>abre la aplicación {app}</item>
+        <item>lanza {app}</item>
+        <item>inicia {app}</item>
+        <item>arranca {app}</item>
+        <item>cambia a {app}</item>
+        <item>ve a {app}</item>
+    </string-array>
+    <string-array name="voice_commands_tap">
+        <item>toca dos veces [en] {label}</item>
+        <item>toca [en] {label}</item>
+        <item>haz clic en {label}</item>
+        <item>pulsa {label}</item>
+        <item>pulsa en {label}</item>
+        <item>activa {label}</item>
+        <item>selecciona {label}</item>
+    </string-array>
+</resources>

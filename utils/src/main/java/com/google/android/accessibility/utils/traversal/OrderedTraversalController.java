@@ -30,6 +30,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.function.BooleanSupplier;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 public class OrderedTraversalController {
@@ -42,6 +43,10 @@ public class OrderedTraversalController {
   private @Nullable AccessibilityNodeInfoCompat initialFocusNode;
   private final boolean makeFabFirst;
   private boolean missesChildren;
+  private Runnable beforeNodeRead = () -> {};
+  private static final class ReadStopped extends RuntimeException {
+    ReadStopped() { super(null, null, false, false); }
+  }
   private boolean movesOnlyAmongSiblings = true;
   private final Set<WorkingTree> movedNodes = new HashSet<>();
 
@@ -73,15 +78,33 @@ public class OrderedTraversalController {
   public void initOrder(
       @Nullable AccessibilityNodeInfoCompat compatRoot,
       boolean includeChildrenOfNodesWithWebActions) {
+    initOrder(compatRoot, includeChildrenOfNodesWithWebActions, () -> false);
+  }
+
+  void initOrder(@Nullable AccessibilityNodeInfoCompat compatRoot,
+      boolean includeChildrenOfNodesWithWebActions, BooleanSupplier shouldStop) {
     if (compatRoot == null) {
       return;
     }
 
+    beforeNodeRead = () -> { if (shouldStop.getAsBoolean()) throw new ReadStopped(); };
     NodeCachedBoundsCalculator boundsCalculator = new NodeCachedBoundsCalculator();
     boundsCalculator.setSpeakingNodesCache(speakingNodesCache);
-    tree =
-        createWorkingTree(compatRoot, null, boundsCalculator, includeChildrenOfNodesWithWebActions);
-    reorderTree(compatRoot);
+    boundsCalculator.setBeforeNodeRead(beforeNodeRead);
+    try {
+      tree = createWorkingTree(compatRoot, null, boundsCalculator, includeChildrenOfNodesWithWebActions);
+      reorderTree(compatRoot);
+    } catch (ReadStopped stopped) {
+      // Never expose a partial reading order as the complete order of the window.
+      tree = null;
+      nodeTreeMap.clear();
+      if (speakingNodesCache != null) speakingNodesCache.clear();
+      movedNodes.clear();
+      initialFocusNode = null;
+      missesChildren = true;
+    } finally {
+      beforeNodeRead = () -> {};
+    }
   }
 
   /**
@@ -99,6 +122,7 @@ public class OrderedTraversalController {
       @Nullable WorkingTree parent,
       @NonNull NodeCachedBoundsCalculator boundsCalculator,
       boolean includeChildrenOfNodesWithWebActions) {
+    beforeNodeRead.run();
     if (nodeTreeMap.containsKey(rootNode)) {
       LogUtils.w(TAG, "creating node tree with looped nodes - break the loop edge");
       return null;
@@ -114,7 +138,7 @@ public class OrderedTraversalController {
     }
 
     ReorderedChildrenIterator iterator =
-        ReorderedChildrenIterator.createAscendingIterator(rootNode, boundsCalculator);
+        ReorderedChildrenIterator.createAscendingIterator(rootNode, boundsCalculator, beforeNodeRead);
     if (iterator.missedAllChildren()) {
       missesChildren = true;
     }
@@ -168,6 +192,7 @@ public class OrderedTraversalController {
   private void reorderTree(AccessibilityNodeInfoCompat compatRoot) {
     Map<WorkingTree, ScriptedMove> scriptedMoves = findScriptedMoves();
     for (WorkingTree subtree : nodeTreeMap.values()) {
+      beforeNodeRead.run();
       AccessibilityNodeInfoCompat node = subtree.getNode();
       if (makeFabFirst && isFab(node)) {
         movesOnlyAmongSiblings = false;
@@ -197,6 +222,7 @@ public class OrderedTraversalController {
         noteMove(subtree, targetTree);
         moveNodeBefore(subtree, targetTree);
       } else {
+        beforeNodeRead.run();
         AccessibilityNodeInfoCompat afterNode = node.getTraversalAfter();
         if (afterNode != null) {
           WorkingTree targetTree = nodeTreeMap.get(afterNode);
@@ -210,6 +236,7 @@ public class OrderedTraversalController {
   private Map<WorkingTree, ScriptedMove> findScriptedMoves() {
     Map<WorkingTree, ScriptedMove> moves = new HashMap<>();
     for (WorkingTree subtree : nodeTreeMap.values()) {
+      beforeNodeRead.run();
       NodeOverrides.Order order = NodeOverrides.order(subtree.getNode());
       if (order == null) {
         continue;

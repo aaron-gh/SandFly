@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_voice_commands">ხმოვანი ბრძანებები</string>
+    <string name="title_pref_voice_commands_ai">ხმოვანი ბრძანებების გაგება AI-ით</string>
+    <string name="voice_commands_custom">საკუთარი ხმოვანი ბრძანებები</string>
+    <string name="voice_command_add">ხმოვანი ბრძანების დამატება</string>
+    <string name="voice_command_phrase">ფრაზა</string>
+    <string name="voice_command_change_phrase">ფრაზის შეცვლა</string>
+    <string name="voice_command_change_command">ბრძანების შეცვლა</string>
+    <string name="voice_command_delete_confirm">წაიშალოს „<xliff:g id="phrase" example="Good morning">%1$s</xliff:g>“?</string>
+    <string name="voice_command_phrase_exists">„<xliff:g id="phrase" example="Good morning">%1$s</xliff:g>“ უკვე ხმოვანი ბრძანებაა</string>
+    <string name="voice_commands_not_understood">გაუგებარია: <xliff:g id="text" example="open the door">%1$s</xliff:g></string>
+    <string name="voice_commands_not_available">მიუწვდომელია: <xliff:g id="name" example="Morning macro">%1$s</xliff:g></string>
+    <string name="voice_commands_not_found">ვერ მოიძებნა: <xliff:g id="label" example="Settings">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app">აპი სახელით „<xliff:g id="name" example="Signal">%1$s</xliff:g>“ არ არის</string>
+    <string name="voice_commands_no_app_for_action">ამ მოქმედებისთვის აპი არ არის</string>
+    <string name="voice_commands_calling">რეკვა: <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_call_permission">დართეთ ნება სატელეფონო ზარებზე, შემდეგ ბრძანება ისევ თქვით.</string>
+    <string name="voice_commands_contacts_permission">დართეთ ნება კონტაქტებზე წვდომაზე, შემდეგ ბრძანება ისევ თქვით.</string>
+    <string name="voice_commands_no_contact">კონტაქტი სახელით „<xliff:g id="name" example="Sam">%1$s</xliff:g>“ არ არის</string>
+    <string name="voice_commands_contacts_several">ერთზე მეტი კონტაქტი სახელით „<xliff:g id="name" example="Sam">%1$s</xliff:g>“: <xliff:g id="names" example="Sam Jones, Sam Smith">%2$s</xliff:g></string>
+    <string name="voice_commands_message_text">შეტყობინება: <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_message_confirm">გაიგზავნოს: <xliff:g id="name" example="Sam">%1$s</xliff:g>: <xliff:g id="text" example="I am on my way">%2$s</xliff:g>?</string>
+    <string name="voice_commands_message_confirm_result">გაიგზავნოს: <xliff:g id="name" example="Sam">%1$s</xliff:g>?</string>
+    <string name="voice_commands_message_not_sent">შეტყობინება არ გაიგზავნა</string>
+    <string name="voice_commands_send_pressed">„გაგზავნა“ დაჭერილია</string>
+    <string name="voice_commands_send_button">გაგზავნა</string>
+    <string name="voice_commands_no_description">აღწერა არ მიღებულა</string>
+    <string name="voice_commands_copied">კოპირებულია</string>
+    <string-array name="voice_commands_chain_words">
+        <item>და შემდეგ</item>
+        <item>შემდეგ</item>
+        <item>ამის შემდეგ</item>
+        <item>მერე</item>
+    </string-array>
+    <string-array name="voice_commands_and_words">
+        <item>და</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_start">
+        <item>გთხოვთ</item>
+        <item>შეგიძლია</item>
+        <item>შეგიძლიათ</item>
+        <item>შეგეძლო</item>
+        <item>მინდა</item>
+        <item>მსურს</item>
+        <item>ახლა</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_end">
+        <item>გთხოვთ</item>
+        <item>ჩემთვის</item>
+        <item>ახლა</item>
+    </string-array>
+    <string-array name="voice_commands_cancel_words">
+        <item>გაჩერდი</item>
+        <item>შეწყვიტე</item>
+        <item>გააუქმე</item>
+        <item>გაუქმება</item>
+        <item>დაივიწყე</item>
+        <item>გაჩუმდი</item>
+    </string-array>
+    <string-array name="voice_commands_yes">
+        <item>კი</item>
+        <item>დიახ</item>
+        <item>ჰო</item>
+        <item>გააგზავნე</item>
+        <item>გაგზავნა</item>
+        <item>კარგი</item>
+        <item>ოკ</item>
+        <item>რა თქმა უნდა</item>
+        <item>გააკეთე</item>
+    </string-array>
+    <string-array name="voice_commands_sms_names">
+        <item>SMS</item>
+        <item>ესემესი</item>
+        <item>შეტყობინებები</item>
+        <item>ტექსტური შეტყობინება</item>
+    </string-array>
+    <string-array name="voice_commands_send_image_description">
+        <item>გაუგზავნე {who} სურათის აღწერა</item>
+        <item>გაუგზავნე {who} ფოტოს აღწერა</item>
+        <item>გააგზავნე სურათის აღწერა {who}</item>
+    </string-array>
+    <string-array name="voice_commands_send_screen_description">
+        <item>გაუგზავნე {who} ეკრანის აღწერა</item>
+        <item>გააგზავნე ეკრანის აღწერა {who}</item>
+    </string-array>
+    <string-array name="voice_commands_send_previous">
+        <item>გაუგზავნე ეს {who} {app}</item>
+        <item>გაუგზავნე ეს {who}</item>
+        <item>გაუგზავნე აღწერა {who}</item>
+        <item>გაუზიარე ეს {who}</item>
+    </string-array>
+    <string-array name="voice_commands_message">
+        <item>გაუგზავნე {who} შეტყობინება {app} ტექსტით {text}</item>
+        <item>გაუგზავნე {who} შეტყობინება ტექსტით {text}</item>
+        <item>გაუგზავნე {who} შეტყობინება {text}</item>
+        <item>გააგზავნე შეტყობინება {whoandtext}</item>
+        <item>გაუგზავნე {who} {app} შეტყობინება {text}</item>
+        <item>მისწერე {who} {app} {text}</item>
+        <item>მისწერე {who} {text}</item>
+        <item>მისწერე {whoandtext}</item>
+        <item>უთხარი {who} {app} {text}</item>
+    </string-array>
+    <string-array name="voice_commands_call">
+        <item>დაურეკე {who}</item>
+        <item>დარეკე {who}</item>
+        <item>აკრიფე {who}</item>
+        <item>დარეკვა {who}</item>
+    </string-array>
+    <string-array name="voice_commands_describe_screen">
+        <item>აღწერე ეკრანი</item>
+        <item>აღწერე რა არის ეკრანზე</item>
+        <item>რა არის ეკრანზე</item>
+        <item>რა არის ჩემს ეკრანზე</item>
+    </string-array>
+    <string-array name="voice_commands_describe_image">
+        <item>აღწერე [ეს] სურათი</item>
+        <item>აღწერე [ეს] ფოტო</item>
+        <item>რა არის [ამ] სურათზე</item>
+        <item>რა არის [ამ] ფოტოზე</item>
+    </string-array>
+    <string-array name="voice_commands_copy_result">
+        <item>დააკოპირე ეს</item>
+        <item>დააკოპირე აღწერა</item>
+        <item>დააკოპირე რაც [ახლახან] თქვი</item>
+        <item>დააკოპირე ბოლო წარმოთქმული ფრაზა</item>
+        <item>დააკოპირე ბოლო ფრაზა</item>
+    </string-array>
+    <string-array name="voice_commands_wait">
+        <item>დაელოდე {n} წამს</item>
+        <item>დაელოდე წამს</item>
+        <item>დაელოდე</item>
+    </string-array>
+    <string-array name="voice_commands_type_text">
+        <item>აკრიფე {text}</item>
+        <item>დაწერე {text}</item>
+        <item>შეიყვანე {text}</item>
+    </string-array>
+    <string-array name="voice_commands_run">
+        <item>გაუშვი მაკრო {command}</item>
+        <item>გაუშვი {command} მაკრო</item>
+        <item>გაუშვი {command}</item>
+        <item>შეასრულე {command}</item>
+    </string-array>
+    <string-array name="voice_commands_open">
+        <item>გახსენი {app}</item>
+        <item>გაუშვი {app}</item>
+        <item>ჩართე {app}</item>
+        <item>გადადი {app}</item>
+    </string-array>
+    <string-array name="voice_commands_tap">
+        <item>ორჯერ შეეხე {label}</item>
+        <item>შეეხე {label}</item>
+        <item>დააწკაპუნე {label}</item>
+        <item>დააჭირე {label}</item>
+        <item>გააქტიურე {label}</item>
+        <item>აირჩიე {label}</item>
+    </string-array>
+</resources>

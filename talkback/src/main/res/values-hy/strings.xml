@@ -2025,4 +2025,144 @@
     <string name="value_keep_models_5">5 րոպե</string>
     <string name="value_keep_models_15">15 րոպե</string>
     <string name="value_keep_models_30">30 րոպե</string>
+    <string name="title_pref_speech_equalizer_save_preset">Պահել որպես նախադրում</string>
+    <string name="title_pref_speech_equalizer_saved_presets">Պահված նախադրումներ</string>
+    <string name="speech_equalizer_preset_name">Անուն</string>
+    <string name="speech_equalizer_preset_name_taken">«<xliff:g id="name" example="Podcast">%1$s</xliff:g>» անունով նախադրում արդեն կա</string>
+    <string name="speech_equalizer_presets_full">Այլևս նախադրումներ պահել հնարավոր չէ։ Ջնջեք մեկը՝ մյուսը պահելու համար։</string>
+    <string name="speech_equalizer_preset_saved"><xliff:g id="name" example="Podcast">%1$s</xliff:g>՝ պահվեց</string>
+    <string name="speech_equalizer_preset_rename">Վերանվանել</string>
+    <string name="speech_equalizer_preset_delete">Ջնջել</string>
+    <string name="speech_equalizer_preset_delete_confirm">Ջնջե՞լ «<xliff:g id="name" example="Podcast">%1$s</xliff:g>»-ը</string>
+    <string name="speech_equalizer_preset_deleted"><xliff:g id="name" example="Podcast">%1$s</xliff:g>՝ ջնջվեց</string>
+    <string name="title_pref_emoji_voice">Էմոջիի ձայն</string>
+    <string name="value_emoji_voice_same">Նույնը, ինչ խոսքը</string>
+    <string name="title_pref_emoji_rate">Էմոջիի խոսքի արագություն</string>
+    <string name="title_pref_line_breaks_as_spaces">Տողադարձերը կարդալ որպես բացատներ</string>
+    <string name="title_pref_language_voices">Ձայներ ըստ լեզվի</string>
+    <string name="title_pref_identify_languages_from_words">Որոշել լեզուները բառերով</string>
+    <string name="title_pref_add_language">Ավելացնել լեզու</string>
+    <string name="title_pref_remove_language">Հեռացնել լեզուն</string>
+    <string name="title_pref_script_language">%1$s գրային համակարգ</string>
+    <string name="title_pref_screen_on_notification_count">Ծանուցումների քանակ</string>
+    <plurals name="template_screen_on_notification_count">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ծանուցում</item>
+        <item quantity="other"><xliff:g id="count" example="6">%d</xliff:g> ծանուցում</item>
+    </plurals>
+    <string name="title_pref_phonetic_letters_review">Վերանայելիս նշանները կարդալ հնչյունային այբուբենով</string>
+    <string name="title_pref_phonetic_letters_typing">Մուտքագրելիս նշանները կարդալ հնչյունային այբուբենով</string>
+    <string name="title_pref_emoji_suffix">Էմոջիների անվանումներից հետո ասել «էմոջի»</string>
+    <string name="overview_shizuku_not_running">Shizuku-ն չի աշխատում</string>
+    <string name="overview_shizuku_not_allowed">Shizuku-ն չի թույլատրում SandFly-ը</string>
+    <string name="overview_no_older_app">Ավելի հին հավելված չկա</string>
+    <string name="overview_no_newer_app">Ավելի նոր հավելված չկա</string>
+    <string name="stream_volume_needs_access">Թույլատրեք «Չանհանգստացնել» ռեժիմի հասանելիությունը՝ այս ձայնի ուժգնությունը փոխելու համար։</string>
+    <string name="corner_gestures_title">Անկյուններ</string>
+    <string name="shortcut_move_to_item_below">Անցնել ներքևի տարրին</string>
+    <string name="shortcut_move_to_item_above">Անցնել վերևի տարրին</string>
+    <string name="shortcut_older_app">Ավելի հին հավելված</string>
+    <string name="shortcut_newer_app">Ավելի նոր հավելված</string>
+    <string name="shortcut_answer_call">Պատասխանել զանգին</string>
+    <string name="answer_call_no_call">Մուտքային զանգ չկա</string>
+    <string name="answer_call_permission">Զանգերին պատասխանելու համար թույլտվություն է պետք</string>
+    <string name="shortcut_switch_keyboard">Փոխել ստեղնաշարը</string>
+    <string name="switch_keyboard_none">Այլ ստեղնաշար միացված չէ</string>
+    <string name="switch_keyboard_failed">Ստեղնաշարը չփոխվեց</string>
+    <string name="clipboard_history_hint">Սահեցրեք վերև կամ ներքև՝ ընտրելու համար, ապա կրկնակի հպեք՝ տեղադրելու համար</string>
+    <string name="title_speech_history">Խոսքի պատմություն</string>
+    <string name="speech_history_empty">Խոսք չկա</string>
+    <string name="speech_history_clear">Մաքրել պատմությունը</string>
+    <string name="title_pref_shortcut_corner_top_left_tap">Հպել վերևի ձախ անկյունին</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap">Կրկնակի հպել վերևի ձախ անկյունին</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap">Եռակի հպել վերևի ձախ անկյունին</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap_hold">Կրկնակի հպել և պահել վերևի ձախ անկյունը</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap_hold">Եռակի հպել և պահել վերևի ձախ անկյունը</string>
+    <string name="title_pref_shortcut_corner_top_right_tap">Հպել վերևի աջ անկյունին</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap">Կրկնակի հպել վերևի աջ անկյունին</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap">Եռակի հպել վերևի աջ անկյունին</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap_hold">Կրկնակի հպել և պահել վերևի աջ անկյունը</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap_hold">Եռակի հպել և պահել վերևի աջ անկյունը</string>
+    <string name="title_pref_shortcut_corner_bottom_left_tap">Հպել ներքևի ձախ անկյունին</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap">Կրկնակի հպել ներքևի ձախ անկյունին</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap">Եռակի հպել ներքևի ձախ անկյունին</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap_hold">Կրկնակի հպել և պահել ներքևի ձախ անկյունը</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap_hold">Եռակի հպել և պահել ներքևի ձախ անկյունը</string>
+    <string name="title_pref_shortcut_corner_bottom_right_tap">Հպել ներքևի աջ անկյունին</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap">Կրկնակի հպել ներքևի աջ անկյունին</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap">Եռակի հպել ներքևի աջ անկյունին</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap_hold">Կրկնակի հպել և պահել ներքևի աջ անկյունը</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap_hold">Եռակի հպել և պահել ներքևի աջ անկյունը</string>
+    <string name="title_pref_swipe_start_time">Ժեստի սկսման ժամանակը</string>
+    <string name="title_pref_swipes_before_lift">Ճանաչել սահեցումները մատը բարձրացնելուց առաջ</string>
+    <string name="summary_pref_swipes_before_lift">Անջատում է առաջ-հետ և անկյան ժեստերը։</string>
+    <string name="title_pref_corner_size_mm">Անկյան չափ</string>
+    <string name="value_corner_size_edge_width">Նույնը, ինչ եզրի լայնությունը</string>
+    <string name="title_pref_corner_tap_time_ms">Անկյան հպման ժամանակի սահման</string>
+    <string name="value_corner_tap_time_system">Համակարգի կանխադրված</string>
+    <string name="title_pref_edge_speak_commands">Ասել հրամանը յուրաքանչյուր սեղմման ժամանակ</string>
+    <string-array name="pref_volume_change_feedback_entries">
+        <item>@string/volume_change_feedback_off</item>
+        <item>@string/volume_change_feedback_tone</item>
+        <item>@string/volume_change_feedback_spoken</item>
+        <item>@string/volume_change_feedback_tone_and_spoken</item>
+    </string-array>
+    <string name="title_pref_volume_change_tone_during_media">Անջատել ձայնային ազդանշանը մեդիայի նվագարկման ժամանակ</string>
+    <string name="title_pref_volume_change_speech_during_media">Անջատել խոսքը մեդիայի նվագարկման ժամանակ</string>
+    <string name="title_pref_volume_change_interrupts_speech">Ընդհատել խոսքը՝ ձայնի ուժգնությունը հայտարարելու համար</string>
+    <string name="title_pref_volume_keys_speech_volume_while_speaking">Ձայնի ուժգնության ստեղները խոսելիս փոխում են խոսքի ձայնը</string>
+    <string name="title_pref_double_tap_moves_cursor">Երկհպումը կուրսորը տեղափոխում է սկիզբ կամ վերջ</string>
+    <string name="title_pref_scroll_ahead">Ոլորել առաջ մինչև հաջորդ տարրը</string>
+    <string name="title_pref_speak_while_scrolling">Ոլորելիս ասել հաջորդ տարրը</string>
+    <string-array name="pref_text_entities_entries">
+    <item>@string/text_entity_web</item>
+    <item>@string/text_entity_email</item>
+    <item>@string/text_entity_phone</item>
+    <item>@string/text_entity_code</item>
+  </string-array>
+    <string name="value_keep_models_until_stopped">Մինչև SandFly-ի կանգնելը</string>
+    <string name="title_pref_model_download_server">Մոդելների ներբեռնման սերվեր</string>
+    <string name="title_pref_settings_profiles">Կարգավորումների պրոֆիլներ</string>
+    <string name="title_pref_new_settings_profile">Նոր կարգավորումների պրոֆիլ</string>
+    <string name="settings_profile_new_name">Պրոֆիլ <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="settings_profile_name_taken">«<xliff:g id="name" example="Demo">%1$s</xliff:g>» անունով կարգավորումների պրոֆիլ արդեն կա</string>
+    <string name="settings_profile_in_use">Օգտագործվում է</string>
+    <string name="settings_profile_menu_item_in_use"><xliff:g id="name" example="Demo">%1$s</xliff:g>, օգտագործվում է</string>
+    <string name="settings_profile_none">Առանց կարգավորումների պրոֆիլի</string>
+    <string name="settings_profile_use_now">Օգտագործել հիմա</string>
+    <string name="settings_profile_stop_using">Դադարել օգտագործել</string>
+    <string name="settings_profile_change_settings">Փոխել կարգավորումները</string>
+    <string name="settings_profile_editing">Փոփոխությունները գնում են «<xliff:g id="name" example="Messaging">%1$s</xliff:g>» պրոֆիլ</string>
+    <string name="settings_profile_edit_saved">Փոփոխությունները պահվեցին «<xliff:g id="name" example="Messaging">%1$s</xliff:g>» պրոֆիլում</string>
+    <string name="settings_profile_use_automatically">Օգտագործել ինքնաշխատ</string>
+    <string name="settings_profile_web">Վեբ բովանդակություն</string>
+    <string name="settings_profile_reading">Անընդմեջ ընթերցում</string>
+    <string name="settings_profile_text_editing">Տեքստի խմբագրում</string>
+    <string name="settings_profile_apps">Հավելվածներ</string>
+    <string name="settings_profile_add_app">Ավելացնել հավելված</string>
+    <string name="settings_profile_settings">Այս պրոֆիլի կարգավորումները</string>
+    <string name="settings_profile_no_settings">Չկա</string>
+    <string name="settings_profile_remove_confirm">Հեռացնե՞լ «<xliff:g id="item" example="Speech rate">%1$s</xliff:g>»-ը «<xliff:g id="name" example="Messaging">%2$s</xliff:g>»-ից</string>
+    <string name="settings_profile_not_saved">Կարգավորումների պրոֆիլը չհաջողվեց պահել</string>
+    <string name="settings_profile_in_use_announcement">«<xliff:g id="name" example="Demo">%1$s</xliff:g>» պրոֆիլ</string>
+    <string name="settings_profile_not_changed">Կարգավորումների պրոֆիլը չփոխվեց</string>
+    <string name="title_settings_profile">Կարգավորումների պրոֆիլ</string>
+    <string name="shortcut_settings_profiles">Ընտրել կարգավորումների պրոֆիլ</string>
+    <string name="shortcut_next_settings_profile">Հաջորդ կարգավորումների պրոֆիլ</string>
+    <string name="shortcut_previous_settings_profile">Նախորդ կարգավորումների պրոֆիլ</string>
+    <string name="title_copy_text_from_screen">Պատճենել տեքստը էկրանից</string>
+    <string name="granularity_label">Մանրամասնության մակարդակ</string>
+    <string name="granularity_characters">Նիշեր</string>
+    <string name="granularity_words">Բառեր</string>
+    <string name="granularity_paragraphs">Պարբերություններ</string>
+    <string name="button_select_all">Ընտրել բոլորը</string>
+    <string name="no_text_selected">Տեքստ ընտրված չէ</string>
+    <string name="no_text_on_screen">Էկրանին տեքստ չի գտնվել</string>
+    <string name="title_select_last_spoken_phrase_word_by_word">Ընտրել վերջին ասված արտահայտությունը բառ առ բառ</string>
+    <string name="no_words_selected">Բառեր ընտրված չեն</string>
+    <string name="no_phrase_to_select">Ընտրելու արտահայտություն չկա</string>
+    <string name="word_selection_list_cut_off">Ցանկը կտրվել է <xliff:g id="count" example="1000">%1$d</xliff:g> տարրի վրա</string>
+    <plurals name="word_selection_copied">
+        <item quantity="one">Պատճենվեց <xliff:g id="count" example="1">%1$d</xliff:g> տարր</item>
+        <item quantity="other">Պատճենվեց <xliff:g id="count" example="5">%1$d</xliff:g> տարր</item>
+    </plurals>
 </resources>

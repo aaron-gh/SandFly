@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_macros">宏</string>
+    <string name="shortcut_stop_macro">停止宏</string>
+    <string name="macro_add">添加宏</string>
+    <string name="macro_run_now">立即运行</string>
+    <string name="macro_add_step">添加步骤</string>
+    <string name="macro_add_at_end">在末尾</string>
+    <string name="macro_add_at_start">在开头</string>
+    <string name="macro_add_after">第 <xliff:g id="step" example="2">%1$d</xliff:g> 步之后：<xliff:g id="name" example="If App in front: Chrome">%2$s</xliff:g></string>
+    <string name="macro_steps">步骤</string>
+    <string name="macro_no_steps">无步骤</string>
+    <string name="macro_delete">删除宏</string>
+    <string name="macro_delete_confirm">删除<xliff:g id="name" example="Send message">%1$s</xliff:g>？</string>
+    <string name="macro_step_command">运行命令</string>
+    <string name="macro_step_wait">等待</string>
+    <string name="macro_step_tap">点按项目</string>
+    <string name="macro_step_focus">聚焦项目</string>
+    <string name="macro_step_speak_item">朗读项目</string>
+    <string name="macro_step_speak_text">朗读文字</string>
+    <string name="macro_step_type">输入文字</string>
+    <string name="macro_step_tap_value">点按<xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_focus_value">聚焦<xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_item_value">朗读<xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_text_value">朗读<xliff:g id="text" example="Done">%1$s</xliff:g></string>
+    <string name="macro_step_type_value">输入<xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <string name="macro_step_replace_value">将文字替换为<xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <plurals name="macro_step_wait_seconds">
+        <item quantity="other">等待 <xliff:g id="count" example="2">%d</xliff:g> 秒</item>
+    </plurals>
+    <plurals name="macro_step_wait_milliseconds">
+        <item quantity="other">等待 <xliff:g id="count" example="500">%d</xliff:g> 毫秒</item>
+    </plurals>
+    <string name="macro_step_unavailable">不可用</string>
+    <string name="macro_seconds">秒数</string>
+    <string name="macro_invalid_seconds">请输入不超过 <xliff:g id="max" example="600">%1$d</xliff:g> 的秒数</string>
+    <string name="macro_tap_label">项目文字</string>
+    <string name="macro_tap_timeout">等待项目的秒数</string>
+    <string name="macro_text">文字</string>
+    <string name="macro_replace_text">替换字段中的文字</string>
+    <string name="macro_item_not_found">宏已停止。未找到：<xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_failed">宏已停止。失败：<xliff:g id="step" example="Open Gmail">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until">等待直到</string>
+    <string name="macro_step_if">如果</string>
+    <string name="macro_step_else_if">否则如果</string>
+    <string name="macro_step_else">否则</string>
+    <string name="macro_step_end_if">结束如果</string>
+    <string name="macro_step_repeat">重复</string>
+    <string name="macro_step_repeat_while">当满足时重复</string>
+    <string name="macro_step_end_repeat">结束重复</string>
+    <string name="macro_step_exit_loop">退出循环</string>
+    <string name="macro_step_if_value">如果<xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_else_if_value">否则如果<xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_repeat_while_value">当满足时重复：<xliff:g id="condition" example="Item on screen: Load more">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until_value">等待直到<xliff:g id="condition" example="Item on screen: Send">%1$s</xliff:g></string>
+    <plurals name="macro_step_repeat_value">
+        <item quantity="other">重复 <xliff:g id="count" example="3">%d</xliff:g> 次</item>
+    </plurals>
+    <string name="macro_times">次数</string>
+    <string name="macro_invalid_times">请输入 1 到 <xliff:g id="max" example="1000">%1$d</xliff:g> 的数字</string>
+    <string name="macro_run_only_when">仅在以下情况运行</string>
+    <string name="macro_always">始终</string>
+    <string name="macro_no_tests">无条件</string>
+    <string name="macro_add_test">添加条件</string>
+    <string name="macro_tests">条件</string>
+    <string name="macro_choose_test">条件</string>
+    <string name="macro_test_item">屏幕上的项目</string>
+    <string name="macro_test_focused">聚焦的项目</string>
+    <string name="macro_test_app">前台应用</string>
+    <string name="macro_test_keyboard">键盘已显示</string>
+    <string name="macro_test_keyboard_hidden">键盘已隐藏</string>
+    <string name="macro_test_locked">屏幕已锁定</string>
+    <string name="macro_test_unlocked">屏幕已解锁</string>
+    <string name="macro_test_item_value">屏幕上的项目：<xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_no_item_value">屏幕上没有项目：<xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_focused_value">聚焦的项目：<xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_not_focused_value">聚焦的项目不是：<xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_app_value">前台应用：<xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_not_app_value">前台应用不是：<xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_label_kind"><xliff:g id="label" example="Send">%1$s</xliff:g>，<xliff:g id="kind" example="Clickable">%2$s</xliff:g></string>
+    <string name="macro_join_and"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g>且<xliff:g id="second" example="Focused item: Editable">%2$s</xliff:g></string>
+    <string name="macro_join_or"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g>，或<xliff:g id="second" example="Screen locked">%2$s</xliff:g></string>
+    <string name="macro_regex">正则表达式</string>
+    <string name="macro_invalid_regex">不是可用的正则表达式。重复的分组不能包含重复或 |。</string>
+    <string name="macro_match_in">匹配范围</string>
+    <string name="macro_field_any">任意文字</string>
+    <string name="macro_field_text">文字</string>
+    <string name="macro_field_description">描述</string>
+    <string name="macro_field_hint">提示</string>
+    <string name="macro_field_state">状态</string>
+    <string name="macro_field_id">资源 ID</string>
+    <string name="macro_field_value"><xliff:g id="label" example="send">%1$s</xliff:g>（<xliff:g id="field" example="Resource ID">%2$s</xliff:g>）</string>
+    <string name="macro_field_regex_value"><xliff:g id="pattern" example="^Reply">%1$s</xliff:g>（<xliff:g id="field" example="Description">%2$s</xliff:g>，正则表达式）</string>
+    <string name="macro_regex_value"><xliff:g id="pattern" example="Reply.*Anna">%1$s</xliff:g>（正则表达式）</string>
+    <string name="macro_test_label_optional">项目文字（可选）</string>
+    <string name="macro_item_kind">项目类型</string>
+    <string name="macro_kind_any">任意类型</string>
+    <string name="macro_kind_clickable">可点按</string>
+    <string name="macro_kind_long_clickable">可长按</string>
+    <string name="macro_kind_editable">可编辑</string>
+    <string name="macro_kind_scrollable">可滚动</string>
+    <string name="macro_kind_adjustable">可调节</string>
+    <string name="macro_kind_checkable">可勾选</string>
+    <string name="macro_kind_checked">已选中</string>
+    <string name="macro_kind_selected">已选择</string>
+    <string name="macro_kind_heading">标题</string>
+    <string name="macro_kind_enabled">已启用</string>
+    <string name="macro_change_to">更改为：<xliff:g id="test" example="Keyboard hidden">%1$s</xliff:g></string>
+    <string name="macro_join_with_and">用“且”连接</string>
+    <string name="macro_join_with_or">用“或”连接</string>
+    <string name="macro_clause_and">且<xliff:g id="test" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_clause_or">或<xliff:g id="test" example="Screen locked">%1$s</xliff:g></string>
+    <string name="macro_wait_timeout">等待的秒数</string>
+    <string name="macro_add_step_after">在此之后添加步骤</string>
+    <string name="macro_problem">第 <xliff:g id="step" example="3">%1$d</xliff:g> 步：<xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_problem_no_if">没有“如果”的“否则如果”、“否则”或“结束如果”</string>
+    <string name="macro_problem_after_else">“否则”之后的“否则如果”或“否则”</string>
+    <string name="macro_problem_no_repeat">没有“重复”的“结束重复”</string>
+    <string name="macro_problem_no_end_if">没有“结束如果”的“如果”</string>
+    <string name="macro_problem_no_end_repeat">没有“结束重复”的“重复”</string>
+    <string name="macro_problem_exit">“退出循环”不在重复之内</string>
+    <string name="macro_stopped_problem">宏已停止。第 <xliff:g id="step" example="3">%1$d</xliff:g> 步：<xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_stopped_repeats">宏已停止。已重复 <xliff:g id="count" example="1000">%1$d</xliff:g> 次：<xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
+    <string name="macro_stopped_timeout">宏已停止。超时：<xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
+    <string name="macro_not_met">宏未运行。仅在以下情况运行：条件不满足</string>
+</resources>

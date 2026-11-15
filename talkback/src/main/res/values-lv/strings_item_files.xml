@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="item_file_import">Importēt no faila</string>
+    <string name="item_file_export">Eksportēt failā</string>
+    <string name="title_pref_export_item_file_reference">Eksportēšanas faila formāta atsauce</string>
+    <string name="item_file_keymaps">Taustiņu kartes</string>
+    <string name="item_file_exported">Eksportēts</string>
+    <string name="item_file_export_failed">Nevarēja eksportēt</string>
+    <string name="item_file_not_read">Šis nav SandFly vienumu fails, vai arī to nevarēja nolasīt</string>
+    <string name="item_file_settings_file">Šis ir iestatījumu fails. Importējiet to sadaļā Dublēšana un atjaunošana &gt; Importēt iestatījumus</string>
+    <string name="item_file_newer">Šis fails ir no jaunākas SandFly versijas</string>
+    <string name="item_file_nothing_imported">Nekas netika importēts</string>
+    <string name="item_file_imported">Importēts: <xliff:g id="items" example="2 macros, 1 gesture profile">%1$s</xliff:g></string>
+    <string name="item_file_left_out">Izlaists:</string>
+    <string name="item_file_problem_not_read"><xliff:g id="kind" example="Macros">%1$s</xliff:g>, vienums <xliff:g id="number" example="3">%2$d</xliff:g>: nav nolasīts</string>
+    <string name="item_file_problem_command"><xliff:g id="item" example="Open mail">%1$s</xliff:g>: nezināma komanda <xliff:g id="command" example="READ_ALL">%2$s</xliff:g></string>
+    <string name="item_file_problem_gesture"><xliff:g id="item" example="Reading">%1$s</xliff:g>: nezināms žests <xliff:g id="gesture" example="pref_shortcut_spin">%2$s</xliff:g></string>
+    <string name="item_file_problem_keys"><xliff:g id="item" example="My keymap">%1$s</xliff:g>: taustiņi nav saprasti: <xliff:g id="keys" example="SandFly+Foo">%2$s</xliff:g></string>
+    <string name="item_file_problem_keys_taken"><xliff:g id="item" example="My keymap">%1$s</xliff:g>: taustiņi jau tiek izmantoti: <xliff:g id="keys" example="SandFly+H">%2$s</xliff:g></string>
+    <string name="item_file_problem_setting"><xliff:g id="item" example="Reading">%1$s</xliff:g>: iestatījums <xliff:g id="key" example="pref_vibration">%2$s</xliff:g> nav zināms, nevar būt profilā vai tā vērtībai ir nepareizs tips</string>
+    <string name="item_file_problem_regex"><xliff:g id="dictionary" example="Speech dictionary">%1$s</xliff:g>: regulārā izteiksme noraidīta: <xliff:g id="expression" example="(a+)+">%2$s</xliff:g></string>
+    <string name="item_file_problem_limit"><xliff:g id="kind" example="Symbol dictionary">%1$s</xliff:g>: ne vairāk kā <xliff:g id="number" example="500">%2$d</xliff:g> vienumi</string>
+    <string name="item_file_problem_more">Izlaists vēl vairāk</string>
+    <plurals name="item_file_count_macros"><item quantity="zero"><xliff:g id="count" example="2">%d</xliff:g> makro</item><item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> makro</item><item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> makro</item></plurals>
+    <plurals name="item_file_count_gesture_profiles"><item quantity="zero"><xliff:g id="count" example="2">%d</xliff:g> žestu profilu</item><item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> žestu profils</item><item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> žestu profili</item></plurals>
+    <plurals name="item_file_count_keymaps"><item quantity="zero"><xliff:g id="count" example="2">%d</xliff:g> taustiņu karšu</item><item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> taustiņu karte</item><item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> taustiņu kartes</item></plurals>
+    <plurals name="item_file_count_apps"><item quantity="zero"><xliff:g id="count" example="2">%d</xliff:g> lietotņu žesti un īsinājumtaustiņi</item><item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> lietotnes žesti un īsinājumtaustiņi</item><item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> lietotņu žesti un īsinājumtaustiņi</item></plurals>
+    <plurals name="item_file_count_settings_profiles"><item quantity="zero"><xliff:g id="count" example="2">%d</xliff:g> iestatījumu profilu</item><item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> iestatījumu profils</item><item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> iestatījumu profili</item></plurals>
+    <plurals name="item_file_count_speech_dictionary"><item quantity="zero"><xliff:g id="count" example="2">%d</xliff:g> runas vārdnīcas ierakstu</item><item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> runas vārdnīcas ieraksts</item><item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> runas vārdnīcas ieraksti</item></plurals>
+    <plurals name="item_file_count_symbol_dictionary"><item quantity="zero"><xliff:g id="count" example="2">%d</xliff:g> simbolu vārdnīcas ierakstu</item><item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> simbolu vārdnīcas ieraksts</item><item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> simbolu vārdnīcas ieraksti</item></plurals>
+    <plurals name="item_file_count_braille_dictionary"><item quantity="zero"><xliff:g id="count" example="2">%d</xliff:g> Braila raksta vārdnīcas ierakstu</item><item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> Braila raksta vārdnīcas ieraksts</item><item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> Braila raksta vārdnīcas ieraksti</item></plurals>
+    <plurals name="item_file_count_voice_commands"><item quantity="zero"><xliff:g id="count" example="2">%d</xliff:g> pielāgotu balss komandu</item><item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> pielāgota balss komanda</item><item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> pielāgotas balss komandas</item></plurals>
+</resources>

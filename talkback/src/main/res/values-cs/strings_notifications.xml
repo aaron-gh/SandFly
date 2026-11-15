@@ -406,4 +406,14 @@
         <item>@string/notification_shake_3</item>
     </string-array>
     <string name="notification_clock_voice_notifications">Hlas oznámení</string>
+    <string name="notification_exact_alarms_title">Zapnout Budíky a připomenutí</string>
+    <string name="shortcut_toggle_time_announcements">Hlášení času zapnout nebo vypnout</string>
+    <string name="notification_clock_now_on">Hlášení času zapnuto</string>
+    <string name="notification_clock_now_off">Hlášení času vypnuto</string>
+    <plurals name="notification_clock_battery">
+        <item quantity="one"><xliff:g id="percent" example="76">%d</xliff:g> procento</item>
+        <item quantity="few"><xliff:g id="percent" example="76">%d</xliff:g> procenta</item>
+        <item quantity="many"><xliff:g id="percent" example="76">%d</xliff:g> procenta</item>
+        <item quantity="other"><xliff:g id="percent" example="76">%d</xliff:g> procent</item>
+    </plurals>
 </resources>

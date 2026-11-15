@@ -24,6 +24,7 @@ import android.os.SystemClock;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.UtteranceProgressListener;
 import android.speech.tts.Voice;
+import androidx.annotation.VisibleForTesting;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import com.google.android.accessibility.utils.output.VoiceProfiles.VoiceProfile;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
@@ -62,8 +63,14 @@ final class ProfileVoice {
   /** How long the engine has to start saying a fragment it took. */
   private static final long START_TIMEOUT_MS = 3000;
 
-  /** How long a fragment can take to say before it is ended, so speech carries on. */
+  /**
+   * How long a fragment can take to say, beyond the time its text takes at {@link
+   * #MS_PER_CHARACTER}, before it is ended, so speech carries on.
+   */
   private static final long DONE_TIMEOUT_MS = 15_000;
+
+  /** A slow speaking time for each character at rate 1, about a third of the usual speed. */
+  private static final long MS_PER_CHARACTER = 200;
 
   /** How long the engine stays connected after the last fragment. */
   private static final long IDLE_MS = 5 * 60_000;
@@ -426,6 +433,11 @@ final class ProfileVoice {
       }
 
       @Override
+      public void onRangeStart(String engineId, int start, int end, int frame) {
+        handler.post(() -> onProgress(connection, engineId, start));
+      }
+
+      @Override
       public void onStop(String engineId, boolean interrupted) {
         handler.post(() -> onEnded(connection, engineId, !interrupted));
       }
@@ -505,8 +517,29 @@ final class ProfileVoice {
     }
     request.started = true;
     handler.removeCallbacks(startTimeout);
-    handler.postDelayed(doneTimeout, DONE_TIMEOUT_MS);
+    handler.postDelayed(doneTimeout, doneTimeoutMs(request.text.length(), request.rate));
     listener.onStart(request.utteranceId);
+  }
+
+  /** The engine reached {@code start} in the text, so it has until the rest is said. */
+  private void onProgress(int connection, String engineId, int start) {
+    @Nullable Request request = currentFor(connection, engineId);
+    if (request == null || !request.started) {
+      return;
+    }
+    int left = Math.max(0, request.text.length() - start);
+    handler.removeCallbacks(doneTimeout);
+    handler.postDelayed(doneTimeout, doneTimeoutMs(left, request.rate));
+  }
+
+  /**
+   * How long {@code length} characters said at {@code rate} may take before the fragment is ended:
+   * {@link #DONE_TIMEOUT_MS} beyond the time they take at {@link #MS_PER_CHARACTER}.
+   */
+  @VisibleForTesting
+  static long doneTimeoutMs(int length, float rate) {
+    float speed = Float.isFinite(rate) ? Math.max(0.1f, Math.min(6f, rate)) : 1f;
+    return DONE_TIMEOUT_MS + (long) (Math.max(0, length) * MS_PER_CHARACTER / speed);
   }
 
   private void onEnded(int connection, String engineId, boolean success) {
@@ -573,7 +606,10 @@ final class ProfileVoice {
     if (request == null) {
       return;
     }
-    LogUtils.e(tag, "This voice didn't end a fragment within %d ms", DONE_TIMEOUT_MS);
+    LogUtils.e(
+        tag,
+        "This voice didn't end a fragment of %d characters in time",
+        request.text.length());
     try {
       if (tts != null) {
         tts.stop();

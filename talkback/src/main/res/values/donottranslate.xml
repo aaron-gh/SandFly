@@ -94,6 +94,7 @@
     <string name="pref_notification_list_key">pref_notification_list</string>
     <string name="pref_notification_parts_key">pref_notification_parts</string>
     <string name="pref_play_installer_key">pref_play_installer</string>
+    <string name="pref_use_root_key">pref_use_root</string>
     <string name="pref_quick_settings_key">pref_quick_settings</string>
     <string name="pref_overview_key">pref_overview</string>
     <string name="pref_overview_newest_last_key">pref_overview_newest_last</string>
@@ -405,6 +406,7 @@
     <string name="pref_selector_ai_actions_key" translatable="false">pref_selector_ai_actions_key</string>
     <string name="pref_ai_actions_included_key" translatable="false">pref_ai_actions_included_key</string>
     <string name="pref_selector_text_entities_key" translatable="false">pref_selector_text_entities_key</string>
+    <string name="pref_selector_clipboard_history_key" translatable="false">pref_selector_clipboard_history_key</string>
     <string name="pref_text_entities_key" translatable="false">pref_text_entities</string>
     <!-- Must match pref_text_entities_entries and TextEntityMenu's types. -->
     <string-array name="pref_text_entities_values" translatable="false">
@@ -2172,6 +2174,7 @@
     <bool name="pref_selector_live_recognition_default">true</bool>
     <bool name="pref_selector_ai_actions_default">true</bool>
     <bool name="pref_selector_text_entities_default">false</bool>
+    <bool name="pref_selector_clipboard_history_default">false</bool>
     <bool name="pref_selector_switch_tts_engine_default">false</bool>
     <bool name="pref_selector_speech_stream_default">false</bool>
     <bool name="pref_selector_audio_output_default">false</bool>
@@ -2573,6 +2576,7 @@
     <string name="selector_live_recognition" translatable="false">SELECTOR_LIVE_RECOGNITION</string>
     <string name="selector_ai_actions" translatable="false">SELECTOR_AI_ACTIONS</string>
     <string name="selector_text_entities" translatable="false">SELECTOR_TEXT_ENTITIES</string>
+    <string name="selector_clipboard_history" translatable="false">SELECTOR_CLIPBOARD_HISTORY</string>
     <string name="selector_switch_tts_engine" translatable="false">SELECTOR_SWITCH_TTS_ENGINE</string>
     <string name="selector_speech_stream" translatable="false">SELECTOR_SPEECH_STREAM</string>
     <string name="selector_audio_output" translatable="false">SELECTOR_AUDIO_OUTPUT</string>
@@ -2658,6 +2662,7 @@
     <string name="pref_update_welcome_sandfly_0_3_0_shown_key" translatable="false">pref_update_welcome_sandfly_0_3_0_shown_key</string>
     <string name="pref_update_welcome_sandfly_0_4_0_shown_key" translatable="false">pref_update_welcome_sandfly_0_4_0_shown_key</string>
     <string name="pref_update_welcome_sandfly_0_5_0_shown_key" translatable="false">pref_update_welcome_sandfly_0_5_0_shown_key</string>
+    <string name="pref_update_welcome_sandfly_0_6_0_shown_key" translatable="false">pref_update_welcome_sandfly_0_6_0_shown_key</string>
     <string-array name="pref_dictation_auto_stop_values" translatable="false">
         <item>0</item>
         <item>3000</item>

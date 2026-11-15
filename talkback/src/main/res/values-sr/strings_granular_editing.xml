@@ -47,4 +47,20 @@
     <string name="granular_editing_not_saved">Није сачувано: поље за текст је нестало. Текст је копиран.</string>
     <string name="granular_editing_no_text">Нема текста за уређивање</string>
     <string name="granular_editing_password">Није доступно у пољима за лозинку</string>
+    <plurals name="granular_editing_spaces">
+        <item quantity="one"><xliff:g id="count" example="3">%d</xliff:g> размак</item>
+        <item quantity="few"><xliff:g id="count" example="3">%d</xliff:g> размака</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> размака</item>
+    </plurals>
+    <plurals name="granular_editing_new_lines">
+        <item quantity="one"><xliff:g id="count" example="3">%d</xliff:g> нови ред</item>
+        <item quantity="few"><xliff:g id="count" example="3">%d</xliff:g> нова реда</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> нових редова</item>
+    </plurals>
+    <plurals name="granular_editing_tabs">
+        <item quantity="one"><xliff:g id="count" example="3">%d</xliff:g> таб знак</item>
+        <item quantity="few"><xliff:g id="count" example="3">%d</xliff:g> таб знака</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> таб знакова</item>
+    </plurals>
+    <string name="granular_editing_blank_line">Празан ред</string>
 </resources>

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_voice_commands">የድምፅ ትዕዛዞች</string>
+    <string name="title_pref_voice_commands_ai">የድምፅ ትዕዛዞችን በAI ተረዳ</string>
+    <string name="voice_commands_custom">ብጁ የድምፅ ትዕዛዞች</string>
+    <string name="voice_command_add">የድምፅ ትዕዛዝ አክል</string>
+    <string name="voice_command_phrase">ሐረግ</string>
+    <string name="voice_command_change_phrase">ሐረግ ቀይር</string>
+    <string name="voice_command_change_command">ትዕዛዝ ቀይር</string>
+    <string name="voice_command_delete_confirm"><xliff:g id="phrase" example="Good morning">%1$s</xliff:g> ይሰረዝ?</string>
+    <string name="voice_command_phrase_exists"><xliff:g id="phrase" example="Good morning">%1$s</xliff:g> አስቀድሞ የድምፅ ትዕዛዝ ነው</string>
+    <string name="voice_commands_not_understood">አልተረዳም፦ <xliff:g id="text" example="open the door">%1$s</xliff:g></string>
+    <string name="voice_commands_not_available">አይገኝም፦ <xliff:g id="name" example="Morning macro">%1$s</xliff:g></string>
+    <string name="voice_commands_not_found">አልተገኘም፦ <xliff:g id="label" example="Settings">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app"><xliff:g id="name" example="Signal">%1$s</xliff:g> የሚባል መተግበሪያ የለም</string>
+    <string name="voice_commands_no_app_for_action">ለዚህ እርምጃ መተግበሪያ የለም</string>
+    <string name="voice_commands_calling">ለ<xliff:g id="name" example="Sam">%1$s</xliff:g> በመደወል ላይ</string>
+    <string name="voice_commands_call_permission">የስልክ ጥሪዎችን ይፍቀዱ፣ ከዚያ ትዕዛዙን እንደገና ይናገሩ።</string>
+    <string name="voice_commands_contacts_permission">የእውቂያዎች መዳረሻን ይፍቀዱ፣ ከዚያ ትዕዛዙን እንደገና ይናገሩ።</string>
+    <string name="voice_commands_no_contact"><xliff:g id="name" example="Sam">%1$s</xliff:g> የሚባል እውቂያ የለም</string>
+    <string name="voice_commands_contacts_several"><xliff:g id="name" example="Sam">%1$s</xliff:g> የሚባሉ ከአንድ በላይ እውቂያዎች አሉ፦ <xliff:g id="names" example="Sam Jones, Sam Smith">%2$s</xliff:g></string>
+    <string name="voice_commands_message_text">ለ<xliff:g id="name" example="Sam">%1$s</xliff:g> መልእክት</string>
+    <string name="voice_commands_message_confirm">ለ<xliff:g id="name" example="Sam">%1$s</xliff:g> ይላክ፦ <xliff:g id="text" example="I am on my way">%2$s</xliff:g>?</string>
+    <string name="voice_commands_message_confirm_result">ለ<xliff:g id="name" example="Sam">%1$s</xliff:g> ይላክ?</string>
+    <string name="voice_commands_message_not_sent">መልእክቱ አልተላከም</string>
+    <string name="voice_commands_send_pressed">ላክ ተጭኗል</string>
+    <string name="voice_commands_send_button">ላክ</string>
+    <string name="voice_commands_no_description">ምንም መግለጫ አልተቀበለም</string>
+    <string name="voice_commands_copied">ተቀድቷል</string>
+    <string-array name="voice_commands_chain_words">
+        <item>ከዚያ</item>
+        <item>ከዚያም</item>
+        <item>ከዚያ በኋላ</item>
+        <item>በኋላ</item>
+    </string-array>
+    <string-array name="voice_commands_and_words">
+        <item>እና</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_start">
+        <item>እባክዎ</item>
+        <item>እባክህ</item>
+        <item>ይችላሉ</item>
+        <item>ትችላለህ</item>
+        <item>እፈልጋለሁ</item>
+        <item>አሁን</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_end">
+        <item>እባክዎ</item>
+        <item>ለእኔ</item>
+        <item>አሁን</item>
+    </string-array>
+    <string-array name="voice_commands_cancel_words">
+        <item>አቁም</item>
+        <item>ይቅር</item>
+        <item>ሰርዝ</item>
+        <item>ተው</item>
+        <item>እርሳው</item>
+        <item>ዝም በል</item>
+    </string-array>
+    <string-array name="voice_commands_yes">
+        <item>አዎ</item>
+        <item>አዎን</item>
+        <item>ላክ</item>
+        <item>ላከው</item>
+        <item>እሺ</item>
+        <item>ደህና</item>
+        <item>በእርግጥ</item>
+        <item>አድርግ</item>
+    </string-array>
+    <string-array name="voice_commands_sms_names">
+        <item>SMS</item>
+        <item>የጽሑፍ መልእክት</item>
+        <item>መልእክት</item>
+        <item>መልእክቶች</item>
+    </string-array>
+    <string-array name="voice_commands_send_image_description">
+        <item>የምስል መግለጫውን ለ{who} ላክ</item>
+        <item>የምስሉን መግለጫ ለ{who} ላክ</item>
+        <item>የፎቶ መግለጫውን ለ{who} ላክ</item>
+        <item>የዚህን ምስል መግለጫ ለ{who} ላክ</item>
+        <item>የምስል መግለጫ ለ{who} ላክ</item>
+    </string-array>
+    <string-array name="voice_commands_send_screen_description">
+        <item>የማያ ገጹን መግለጫ ለ{who} ላክ</item>
+        <item>የማያ ገጽ መግለጫ ለ{who} ላክ</item>
+        <item>የዚህን ማያ ገጽ መግለጫ ለ{who} ላክ</item>
+    </string-array>
+    <string-array name="voice_commands_send_previous">
+        <item>ለ{who} በ{app} ላከው</item>
+        <item>ለ{who} ላከው</item>
+        <item>ይህንን ለ{who} ላክ</item>
+        <item>መግለጫውን ለ{who} ላክ</item>
+        <item>ከ{who} ጋር አጋራው</item>
+    </string-array>
+    <string-array name="voice_commands_message">
+        <item>ለ{who} በ{app} {text} የሚል መልእክት ላክ</item>
+        <item>ለ{who} በ{app} መልእክት ላክ፦ {text}</item>
+        <item>ለ{who} {text} የሚል መልእክት ላክ</item>
+        <item>ለ{who} መልእክት ላክ፦ {text}</item>
+        <item>ለ{whoandtext} መልእክት ላክ</item>
+        <item>ለ{who} የ{app} መልእክት ላክ፦ {text}</item>
+        <item>ለ{who} የ{app} መልእክት ላክ</item>
+        <item>ለ{who} {text} የሚል መልእክት ላክ</item>
+        <item>ለ{who} በ{app} {text} ብለህ ንገር</item>
+        <item>{who}ን በ{app} መልእክት አድርግ {text}</item>
+        <item>{who}ን መልእክት አድርግ {text}</item>
+        <item>ለ{who} SMS ላክ {text}</item>
+        <item>ለ{who} በ{app} {text} በለው</item>
+        <item>{whoandtext} መልእክት ላክ</item>
+        <item>ለ{whoandtext} SMS ላክ</item>
+    </string-array>
+    <string-array name="voice_commands_call">
+        <item>ለ{who} ደውል</item>
+        <item>{who}ን ደውል</item>
+        <item>{who}ን ጥራ</item>
+        <item>ወደ {who} ደውል</item>
+        <item>ለ{who} ጥሪ አድርግ</item>
+    </string-array>
+    <string-array name="voice_commands_describe_screen">
+        <item>ማያ ገጹን ግለጽ</item>
+        <item>በማያ ገጹ ላይ ያለውን ግለጽ</item>
+        <item>በማያ ገጹ ላይ ምን አለ</item>
+        <item>በማያ ገጼ ላይ ምን አለ</item>
+    </string-array>
+    <string-array name="voice_commands_describe_image">
+        <item>[ይህን] ምስል ግለጽ</item>
+        <item>[ይህን] ፎቶ ግለጽ</item>
+        <item>በ[ዚህ] ምስል ውስጥ ምን አለ</item>
+        <item>በ[ዚህ] ፎቶ ውስጥ ምን አለ</item>
+    </string-array>
+    <string-array name="voice_commands_copy_result">
+        <item>ቅዳው</item>
+        <item>ቅዳ</item>
+        <item>መግለጫውን ቅዳ</item>
+        <item>ያሁኑን የተናገርከውን ቅዳ</item>
+        <item>መጨረሻ የተነገረውን ሐረግ ቅዳ</item>
+        <item>የመጨረሻውን ሐረግ ቅዳ</item>
+        <item>የመጨረሻውን የተነገረ ቅዳ</item>
+    </string-array>
+    <string-array name="voice_commands_wait">
+        <item>{n} ሰከንዶች ጠብቅ</item>
+        <item>አንድ ሰከንድ ጠብቅ</item>
+        <item>ጠብቅ</item>
+    </string-array>
+    <string-array name="voice_commands_type_text">
+        <item>{text} ተይብ</item>
+        <item>{text} ጻፍ</item>
+        <item>{text} አስገባ</item>
+    </string-array>
+    <string-array name="voice_commands_run">
+        <item>የ{command} ማክሮን አሂድ</item>
+        <item>ማክሮ {command} አሂድ</item>
+        <item>{command} አሂድ</item>
+        <item>{command} አድርግ</item>
+    </string-array>
+    <string-array name="voice_commands_open">
+        <item>{app} ክፈት</item>
+        <item>{app} አስጀምር</item>
+        <item>{app} ጀምር</item>
+        <item>ወደ {app} ቀይር</item>
+    </string-array>
+    <string-array name="voice_commands_tap">
+        <item>{label} ላይ ሁለቴ መታ አድርግ</item>
+        <item>{label} ላይ መታ አድርግ</item>
+        <item>{label} ጠቅ አድርግ</item>
+        <item>{label} ተጫን</item>
+        <item>{label} አንቃ</item>
+        <item>{label} ምረጥ</item>
+    </string-array>
+</resources>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_voice_commands">Дауыстық пәрмендер</string>
+    <string name="title_pref_voice_commands_ai">Дауыстық пәрмендерді AI арқылы түсіну</string>
+    <string name="voice_commands_custom">Арнаулы дауыстық пәрмендер</string>
+    <string name="voice_command_add">Дауыстық пәрмен қосу</string>
+    <string name="voice_command_phrase">Сөз тіркесі</string>
+    <string name="voice_command_change_phrase">Сөз тіркесін өзгерту</string>
+    <string name="voice_command_change_command">Пәрменді өзгерту</string>
+    <string name="voice_command_delete_confirm"><xliff:g id="phrase" example="Good morning">%1$s</xliff:g> жойылсын ба?</string>
+    <string name="voice_command_phrase_exists"><xliff:g id="phrase" example="Good morning">%1$s</xliff:g> дауыстық пәрмені бар</string>
+    <string name="voice_commands_not_understood">Түсініксіз: <xliff:g id="text" example="open the door">%1$s</xliff:g></string>
+    <string name="voice_commands_not_available">Қолжетімсіз: <xliff:g id="name" example="Morning macro">%1$s</xliff:g></string>
+    <string name="voice_commands_not_found">Табылмады: <xliff:g id="label" example="Settings">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app"><xliff:g id="name" example="Signal">%1$s</xliff:g> атты қолданба жоқ</string>
+    <string name="voice_commands_no_app_for_action">Бұл әрекет үшін қолданба жоқ</string>
+    <string name="voice_commands_calling">Қоңырау шалынуда: <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_call_permission">Телефон қоңырауларына рұқсат беріп, пәрменді қайта айтыңыз.</string>
+    <string name="voice_commands_contacts_permission">Контактілерге қол жеткізуге рұқсат беріп, пәрменді қайта айтыңыз.</string>
+    <string name="voice_commands_no_contact"><xliff:g id="name" example="Sam">%1$s</xliff:g> атты контакт жоқ</string>
+    <string name="voice_commands_contacts_several"><xliff:g id="name" example="Sam">%1$s</xliff:g> атты контакт біреуден көп: <xliff:g id="names" example="Sam Jones, Sam Smith">%2$s</xliff:g></string>
+    <string name="voice_commands_message_text">Хабар алушы: <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_message_confirm"><xliff:g id="name" example="Sam">%1$s</xliff:g> адамына жіберілсін бе: <xliff:g id="text" example="I am on my way">%2$s</xliff:g>?</string>
+    <string name="voice_commands_message_confirm_result"><xliff:g id="name" example="Sam">%1$s</xliff:g> адамына жіберілсін бе?</string>
+    <string name="voice_commands_message_not_sent">Хабар жіберілмеді</string>
+    <string name="voice_commands_send_pressed">Жіберу басылды</string>
+    <string name="voice_commands_send_button">Жіберу</string>
+    <string name="voice_commands_no_description">Сипаттама алынбады</string>
+    <string name="voice_commands_copied">Көшірілді</string>
+    <string-array name="voice_commands_chain_words">
+        <item>содан кейін</item>
+        <item>кейін</item>
+        <item>одан кейін</item>
+        <item>сосын</item>
+    </string-array>
+    <string-array name="voice_commands_and_words">
+        <item>және</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_start">
+        <item>өтінемін</item>
+        <item>өтінем</item>
+        <item>енді</item>
+        <item>қазір</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_end">
+        <item>өтінемін</item>
+        <item>мен үшін</item>
+        <item>қазір</item>
+    </string-array>
+    <string-array name="voice_commands_cancel_words">
+        <item>тоқта</item>
+        <item>тоқтат</item>
+        <item>бас тарту</item>
+        <item>болдырмау</item>
+        <item>шық</item>
+        <item>керек емес</item>
+        <item>қойшы</item>
+        <item>үндеме</item>
+    </string-array>
+    <string-array name="voice_commands_yes">
+        <item>иә</item>
+        <item>ия</item>
+        <item>жарайды</item>
+        <item>болады</item>
+        <item>жібер</item>
+        <item>жіберіңіз</item>
+        <item>ок</item>
+        <item>әрине</item>
+    </string-array>
+    <string-array name="voice_commands_sms_names">
+        <item>SMS</item>
+        <item>мәтіндік хабар</item>
+        <item>хабар</item>
+        <item>хабарлар</item>
+    </string-array>
+    <string-array name="voice_commands_send_image_description">
+        <item>{who} адамына [бұл] суреттің сипаттамасын жібер</item>
+        <item>{who} адамына [бұл] фотосуреттің сипаттамасын жібер</item>
+        <item>сурет сипаттамасын {who} адамына жібер</item>
+        <item>фотосурет сипаттамасын {who} адамына жібер</item>
+    </string-array>
+    <string-array name="voice_commands_send_screen_description">
+        <item>{who} адамына экран сипаттамасын жібер</item>
+        <item>экран сипаттамасын {who} адамына жібер</item>
+    </string-array>
+    <string-array name="voice_commands_send_previous">
+        <item>мұны {who} адамына {app} арқылы жібер</item>
+        <item>мұны {who} адамына жібер</item>
+        <item>оны {who} адамына жібер</item>
+        <item>сипаттаманы {who} адамына жібер</item>
+        <item>мұнымен {who} адамымен бөліс</item>
+    </string-array>
+    <string-array name="voice_commands_message">
+        <item>{who} адамына {app} арқылы {text} деп хабар жібер</item>
+        <item>{who} адамына {text} деп хабар жібер</item>
+        <item>{who} адамына {app} арқылы хабар жібер {text}</item>
+        <item>{who} адамына хабар жібер {text}</item>
+        <item>{whoandtext} деп хабар жібер</item>
+        <item>{who} адамына {app} хабарын жібер {text}</item>
+        <item>{who} адамына {app} хабарын жібер</item>
+        <item>{who} адамына {app} арқылы {text} деп жаз</item>
+        <item>{who} адамына {text} деп жаз</item>
+        <item>{whoandtext} деп жаз</item>
+    </string-array>
+    <string-array name="voice_commands_call">
+        <item>{who} адамына қоңырау шал</item>
+        <item>{who} нөміріне қоңырау шал</item>
+        <item>{who} қоңырау шал</item>
+        <item>{who} нөмірін тер</item>
+    </string-array>
+    <string-array name="voice_commands_describe_screen">
+        <item>экранды сипатта</item>
+        <item>экранда не бар</item>
+        <item>менің экранымда не бар</item>
+        <item>экрандағыны сипатта</item>
+    </string-array>
+    <string-array name="voice_commands_describe_image">
+        <item>[бұл] суретті сипатта</item>
+        <item>[бұл] фотосуретті сипатта</item>
+        <item>суретте не бар</item>
+        <item>фотосуретте не бар</item>
+    </string-array>
+    <string-array name="voice_commands_copy_result">
+        <item>көшір</item>
+        <item>мұны көшір</item>
+        <item>сипаттаманы көшір</item>
+        <item>жаңа айтқаныңды көшір</item>
+        <item>соңғы оқылған сөз тіркесін көшір</item>
+        <item>соңғы сөз тіркесін көшір</item>
+    </string-array>
+    <string-array name="voice_commands_wait">
+        <item>{n} секунд күт</item>
+        <item>бір секунд күт</item>
+        <item>күт</item>
+    </string-array>
+    <string-array name="voice_commands_type_text">
+        <item>{text} тер</item>
+        <item>{text} жаз</item>
+        <item>{text} енгіз</item>
+    </string-array>
+    <string-array name="voice_commands_run">
+        <item>{command} макросын орында</item>
+        <item>{command} пәрменін орында</item>
+        <item>{command} орында</item>
+        <item>{command} іске қос</item>
+    </string-array>
+    <string-array name="voice_commands_open">
+        <item>{app} қолданбасын аш</item>
+        <item>{app} аш</item>
+        <item>{app} қолданбасын іске қос</item>
+        <item>{app} іске қос</item>
+        <item>{app} қолданбасына ауыс</item>
+    </string-array>
+    <string-array name="voice_commands_tap">
+        <item>{label} элементін екі рет түрт</item>
+        <item>{label} элементін түрт</item>
+        <item>{label} элементін бас</item>
+        <item>{label} элементін іске қос</item>
+        <item>{label} элементін таңда</item>
+    </string-array>
+</resources>

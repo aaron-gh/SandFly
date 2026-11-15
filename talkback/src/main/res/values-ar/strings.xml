@@ -2053,4 +2053,141 @@
   <string name="title_select_last_spoken_phrase_word_by_word">تحديد آخر عبارة منطوقة كلمة بكلمة</string>
   <string name="no_words_selected">لم يتم تحديد أي كلمات</string>
   <string name="no_phrase_to_select">لا توجد عبارة لتحديدها</string>
+    <string name="title_pref_speech_equalizer_save_preset">حفظ كإعداد مسبق</string>
+    <string name="title_pref_speech_equalizer_saved_presets">الإعدادات المسبقة المحفوظة</string>
+    <string name="speech_equalizer_preset_name">الاسم</string>
+    <string name="speech_equalizer_preset_name_taken">يوجد إعداد مسبق بالاسم <xliff:g id="name" example="Podcast">%1$s</xliff:g></string>
+    <string name="speech_equalizer_presets_full">لا يمكن حفظ المزيد من الإعدادات المسبقة. احذف أحدها لحفظ آخر.</string>
+    <string name="speech_equalizer_preset_saved">تم حفظ <xliff:g id="name" example="Podcast">%1$s</xliff:g></string>
+    <string name="speech_equalizer_preset_rename">إعادة التسمية</string>
+    <string name="speech_equalizer_preset_delete">حذف</string>
+    <string name="speech_equalizer_preset_delete_confirm">هل تريد حذف <xliff:g id="name" example="Podcast">%1$s</xliff:g>؟</string>
+    <string name="speech_equalizer_preset_deleted">تم حذف <xliff:g id="name" example="Podcast">%1$s</xliff:g></string>
+    <string name="title_pref_emoji_voice">صوت الرموز التعبيرية</string>
+    <string name="value_emoji_voice_same">مثل الكلام</string>
+    <string name="title_pref_emoji_rate">سرعة كلام الرموز التعبيرية</string>
+    <string name="title_pref_line_breaks_as_spaces">قراءة فواصل الأسطر كمسافات</string>
+    <string name="title_pref_language_voices">الأصوات حسب اللغة</string>
+    <string name="title_pref_identify_languages_from_words">تحديد اللغات من الكلمات</string>
+    <string name="title_pref_add_language">إضافة لغة</string>
+    <string name="title_pref_remove_language">إزالة اللغة</string>
+    <string name="title_pref_script_language">كتابة %1$s</string>
+    <string name="title_pref_screen_on_notification_count">عدد الإشعارات</string>
+    <plurals name="template_screen_on_notification_count">
+        <item quantity="one">إشعار واحد</item>
+        <item quantity="two">إشعاران</item>
+        <item quantity="few"><xliff:g id="count" example="6">%d</xliff:g> إشعارات</item>
+        <item quantity="many"><xliff:g id="count" example="6">%d</xliff:g> إشعارًا</item>
+        <item quantity="other"><xliff:g id="count" example="6">%d</xliff:g> إشعار</item>
+        <item quantity="zero">لا إشعارات</item>
+    </plurals>
+    <string name="title_pref_phonetic_letters_review">نطق الحروف صوتيًا عند المراجعة</string>
+    <string name="title_pref_phonetic_letters_typing">نطق الحروف صوتيًا عند الكتابة</string>
+    <string name="title_pref_emoji_suffix">نطق \"رمز تعبيري\" بعد أسماء الرموز التعبيرية</string>
+    <string name="overview_shizuku_not_running">Shizuku لا يعمل</string>
+    <string name="overview_shizuku_not_allowed">Shizuku لا يسمح لـ SandFly</string>
+    <string name="overview_no_older_app">لا يوجد تطبيق أقدم</string>
+    <string name="overview_no_newer_app">لا يوجد تطبيق أحدث</string>
+    <string name="stream_volume_needs_access">اسمح بالوصول إلى \"عدم الإزعاج\" لتغيير مستوى الصوت هذا.</string>
+    <string name="corner_gestures_title">الزوايا</string>
+    <string name="shortcut_move_to_item_below">الانتقال إلى العنصر التالي</string>
+    <string name="shortcut_move_to_item_above">الانتقال إلى العنصر السابق</string>
+    <string name="shortcut_older_app">التطبيق الأقدم</string>
+    <string name="shortcut_newer_app">التطبيق الأحدث</string>
+    <string name="shortcut_answer_call">الرد على المكالمة</string>
+    <string name="answer_call_no_call">لا توجد مكالمة واردة</string>
+    <string name="answer_call_permission">مطلوب إذن للرد على المكالمات</string>
+    <string name="shortcut_switch_keyboard">تبديل لوحة المفاتيح</string>
+    <string name="switch_keyboard_none">لا توجد لوحة مفاتيح أخرى مفعّلة</string>
+    <string name="switch_keyboard_failed">لم يتم تبديل لوحة المفاتيح</string>
+    <string name="clipboard_history_hint">مرِّر سريعًا للأعلى أو للأسفل للاختيار، ثم انقر مرتين للصق</string>
+    <string name="title_speech_history">سجلّ الكلام</string>
+    <string name="speech_history_empty">لا يوجد كلام</string>
+    <string name="speech_history_clear">مسح السجلّ</string>
+    <string name="title_pref_shortcut_corner_top_left_tap">النقر على الزاوية العلوية اليسرى</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap">النقر مرتين على الزاوية العلوية اليسرى</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap">النقر ثلاث مرات على الزاوية العلوية اليسرى</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap_hold">النقر مرتين مع الاستمرار على الزاوية العلوية اليسرى</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap_hold">النقر ثلاث مرات مع الاستمرار على الزاوية العلوية اليسرى</string>
+    <string name="title_pref_shortcut_corner_top_right_tap">النقر على الزاوية العلوية اليمنى</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap">النقر مرتين على الزاوية العلوية اليمنى</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap">النقر ثلاث مرات على الزاوية العلوية اليمنى</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap_hold">النقر مرتين مع الاستمرار على الزاوية العلوية اليمنى</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap_hold">النقر ثلاث مرات مع الاستمرار على الزاوية العلوية اليمنى</string>
+    <string name="title_pref_shortcut_corner_bottom_left_tap">النقر على الزاوية السفلية اليسرى</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap">النقر مرتين على الزاوية السفلية اليسرى</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap">النقر ثلاث مرات على الزاوية السفلية اليسرى</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap_hold">النقر مرتين مع الاستمرار على الزاوية السفلية اليسرى</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap_hold">النقر ثلاث مرات مع الاستمرار على الزاوية السفلية اليسرى</string>
+    <string name="title_pref_shortcut_corner_bottom_right_tap">النقر على الزاوية السفلية اليمنى</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap">النقر مرتين على الزاوية السفلية اليمنى</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap">النقر ثلاث مرات على الزاوية السفلية اليمنى</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap_hold">النقر مرتين مع الاستمرار على الزاوية السفلية اليمنى</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap_hold">النقر ثلاث مرات مع الاستمرار على الزاوية السفلية اليمنى</string>
+    <string name="title_pref_swipe_start_time">وقت بدء الإيماءة</string>
+    <string name="title_pref_swipes_before_lift">التعرّف على التمريرات السريعة قبل رفع الإصبع</string>
+    <string name="summary_pref_swipes_before_lift">يؤدي إلى إيقاف إيماءات الذهاب والإياب والإيماءات بزاوية.</string>
+    <string name="title_pref_corner_size_mm">حجم الزاوية</string>
+    <string name="value_corner_size_edge_width">مثل عرض الحافة</string>
+    <string name="title_pref_corner_tap_time_ms">المدة القصوى للنقر في الزاوية</string>
+    <string name="value_corner_tap_time_system">الإعداد التلقائي للنظام</string>
+    <string name="title_pref_edge_speak_commands">نطق الأمر عند كل نقرة</string>
+    <string-array name="pref_volume_change_feedback_entries">
+        <item>@string/volume_change_feedback_off</item>
+        <item>@string/volume_change_feedback_tone</item>
+        <item>@string/volume_change_feedback_spoken</item>
+        <item>@string/volume_change_feedback_tone_and_spoken</item>
+    </string-array>
+    <string name="title_pref_volume_change_tone_during_media">إسكات النغمة أثناء تشغيل الوسائط</string>
+    <string name="title_pref_volume_change_speech_during_media">إسكات الكلام أثناء تشغيل الوسائط</string>
+    <string name="title_pref_volume_change_interrupts_speech">مقاطعة الكلام للإعلان عن مستوى الصوت</string>
+    <string name="title_pref_volume_keys_speech_volume_while_speaking">مفاتيح مستوى الصوت تغيّر مستوى صوت الكلام أثناء النطق</string>
+    <string name="title_pref_double_tap_moves_cursor">النقر مرتين ينقل المؤشر إلى البداية أو النهاية</string>
+    <string name="title_pref_scroll_ahead">التمرير مسبقًا إلى العنصر التالي</string>
+    <string name="title_pref_speak_while_scrolling">نطق العنصر التالي أثناء التمرير</string>
+    <string-array name="pref_text_entities_entries">
+    <item>@string/text_entity_web</item>
+    <item>@string/text_entity_email</item>
+    <item>@string/text_entity_phone</item>
+    <item>@string/text_entity_code</item>
+  </string-array>
+    <string name="value_keep_models_until_stopped">حتى يتوقف SandFly</string>
+    <string name="title_pref_model_download_server">خادم تنزيل النماذج</string>
+    <string name="title_pref_settings_profiles">ملفات الإعدادات</string>
+    <string name="title_pref_new_settings_profile">ملف إعدادات جديد</string>
+    <string name="settings_profile_new_name">ملف <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="settings_profile_name_taken">يوجد ملف إعدادات بالاسم <xliff:g id="name" example="Demo">%1$s</xliff:g></string>
+    <string name="settings_profile_in_use">قيد الاستخدام</string>
+    <string name="settings_profile_menu_item_in_use"><xliff:g id="name" example="Demo">%1$s</xliff:g>، قيد الاستخدام</string>
+    <string name="settings_profile_none">بدون ملف إعدادات</string>
+    <string name="settings_profile_use_now">استخدام الآن</string>
+    <string name="settings_profile_stop_using">إيقاف الاستخدام</string>
+    <string name="settings_profile_change_settings">تغيير الإعدادات</string>
+    <string name="settings_profile_editing">تُحفظ التغييرات في <xliff:g id="name" example="Messaging">%1$s</xliff:g></string>
+    <string name="settings_profile_edit_saved">تم حفظ التغييرات في <xliff:g id="name" example="Messaging">%1$s</xliff:g></string>
+    <string name="settings_profile_use_automatically">الاستخدام التلقائي</string>
+    <string name="settings_profile_web">محتوى الويب</string>
+    <string name="settings_profile_reading">القراءة بدون توقّف</string>
+    <string name="settings_profile_text_editing">تعديل النصوص</string>
+    <string name="settings_profile_apps">التطبيقات</string>
+    <string name="settings_profile_add_app">إضافة تطبيق</string>
+    <string name="settings_profile_settings">الإعدادات في هذا الملف</string>
+    <string name="settings_profile_no_settings">بدون</string>
+    <string name="settings_profile_remove_confirm">هل تريد إزالة <xliff:g id="item" example="Speech rate">%1$s</xliff:g> من <xliff:g id="name" example="Messaging">%2$s</xliff:g>؟</string>
+    <string name="settings_profile_not_saved">تعذّر حفظ ملف الإعدادات</string>
+    <string name="settings_profile_in_use_announcement">ملف <xliff:g id="name" example="Demo">%1$s</xliff:g></string>
+    <string name="settings_profile_not_changed">لم يتغيّر ملف الإعدادات</string>
+    <string name="title_settings_profile">ملف الإعدادات</string>
+    <string name="shortcut_settings_profiles">اختيار ملف الإعدادات</string>
+    <string name="shortcut_next_settings_profile">ملف الإعدادات التالي</string>
+    <string name="shortcut_previous_settings_profile">ملف الإعدادات السابق</string>
+    <string name="word_selection_list_cut_off">تم اقتطاع القائمة عند <xliff:g id="count" example="1000">%1$d</xliff:g> عنصر</string>
+    <plurals name="word_selection_copied">
+        <item quantity="zero">لم يتم نسخ أي عنصر</item>
+        <item quantity="one">تم نسخ عنصر واحد</item>
+        <item quantity="two">تم نسخ عنصرين</item>
+        <item quantity="few">تم نسخ <xliff:g id="count" example="5">%1$d</xliff:g> عناصر</item>
+        <item quantity="many">تم نسخ <xliff:g id="count" example="5">%1$d</xliff:g> عنصرًا</item>
+        <item quantity="other">تم نسخ <xliff:g id="count" example="5">%1$d</xliff:g> عنصر</item>
+    </plurals>
 </resources>

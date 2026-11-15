@@ -61,6 +61,16 @@ object SpeechDictionary {
 
   private var ownPackage: String = ""
 
+  // Whether text in SandFly's own windows is changed, as in the notification list.
+  @Volatile private var appliesInOwnWindows: Boolean = false
+
+  /** Sets whether entries apply in SandFly's own windows, which the notification list needs. */
+  @JvmStatic
+  fun setAppliesInOwnWindows(applies: Boolean) {
+    if (appliesInOwnWindows != applies) replacedCharacters.clear()
+    appliesInOwnWindows = applies
+  }
+
   /** Reads the entries from [prefs], and applies them to speech while there are any. */
   @JvmStatic
   fun load(context: Context, prefs: SharedPreferences) {
@@ -106,7 +116,7 @@ object SpeechDictionary {
   fun replaces(key: Char): Boolean =
     replacedCharacters.getOrPut(key) {
       val app = app
-      app != ownPackage && SymbolDictionary.apply(key.toString(), app)?.isNotBlank() == true
+      (app != ownPackage || appliesInOwnWindows) && SymbolDictionary.apply(key.toString(), app)?.isNotBlank() == true
     }
 
   /** Returns [text] with the entries applied, or null when none changed it. */
@@ -120,7 +130,7 @@ object SpeechDictionary {
    */
   fun applyInCurrentApp(text: CharSequence, entries: List<DictionaryEntry>): CharSequence? {
     val app = app
-    if (app == ownPackage) return null
+    if (app == ownPackage && !appliesInOwnWindows) return null
     val changed = apply(text, entries, app)
     return SymbolDictionary.apply(changed ?: text, app) ?: changed
   }

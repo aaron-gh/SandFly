@@ -18,6 +18,7 @@ package com.google.android.accessibility.talkback.clipboard
 
 import android.accessibilityservice.AccessibilityService
 import android.content.Context
+import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.content.res.Configuration
 import android.graphics.PixelFormat
@@ -47,6 +48,7 @@ import com.google.android.accessibility.talkback.Feedback
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.TalkBackService
 import com.google.android.accessibility.talkback.actor.SystemActionPerformer
+import com.google.android.accessibility.talkback.backup.ItemFileLauncher
 import com.google.android.accessibility.talkback.shizuku.ShizukuClipboard
 import com.google.android.accessibility.talkback.shizuku.ShizukuShell
 import com.google.android.accessibility.utils.ClipboardHistory
@@ -57,8 +59,10 @@ import com.google.android.libraries.accessibility.utils.log.LogUtils
 /**
  * The texts copied, newest first, in an accessibility overlay over the screen the history was
  * opened from, which stays open under it. Each text can be pasted into the edit box the history was
- * opened from, copied again, added to the end of the clipboard's text, or removed. The list shows
- * long texts shortened, and the actions use the whole text.
+ * opened from, copied again, added to the end of the clipboard's text, edited or removed, and the
+ * whole history exported to a text file. The list shows long texts shortened, and the actions use
+ * the whole text. Edit and Export to file take place in [ClipboardHistoryActivity], while the
+ * window is closed; it shows again when they end.
  *
  * Opened for an edit box, the window doesn't take input focus, so that the edit box's window keeps
  * it and its app can read the clipboard for Paste. Opened without one, the window takes input
@@ -127,9 +131,20 @@ object ClipboardHistoryOverlay {
   /** The text whose actions are shown, or null while the list is shown. */
   private var chosen: String? = null
 
+  /** What the window showed before [ClipboardHistoryActivity] opened, to show again after it. */
+  private class Suspended(
+    val target: AccessibilityNodeInfo?,
+    val before: AccessibilityNodeInfo?,
+    val over: CharSequence?,
+    val entry: String?,
+  )
+
+  private var suspended: Suspended? = null
+
   // The list's parts, while it is shown.
   private var entries: List<String> = emptyList()
   private var listAdapter: ArrayAdapter<String>? = null
+  private var exportButton: View? = null
   private var clearButton: View? = null
 
   // Whether a Back or Escape press went down while the window showed: its release is the window's.
@@ -162,6 +177,7 @@ object ClipboardHistoryOverlay {
     if (ScreenMonitor.isDeviceLocked(service)) return false
     // A paste from a history closed before stops once the history opens again.
     PasteAttempts.cancel()
+    suspended = null
     val wasShowing = isShowing
     val target = editBox?.takeIf { it.isEditable } ?: if (wasShowing) pasteTarget else null
     val before =
@@ -176,10 +192,40 @@ object ClipboardHistoryOverlay {
     return show(service, target, before, over)
   }
 
-  /** Removes the window, such as when the screen turns off or SandFly stops. */
+  /**
+   * Removes the window, such as when the screen turns off or SandFly stops. The window doesn't show
+   * again after [ClipboardHistoryActivity].
+   */
   @JvmStatic
   fun close() {
+    suspended = null
     close(restoreFocus = false)
+  }
+
+  /** The text that [ClipboardHistoryActivity] edits, or null when it doesn't edit one. */
+  @JvmStatic
+  val editedEntry: String?
+    get() = suspended?.entry
+
+  /**
+   * Shows the window again once [ClipboardHistoryActivity] has ended, as it was before, with focus
+   * on [focusText]'s row, or else on the title. Does nothing when the window was closed meanwhile,
+   * such as when the screen turned off.
+   */
+  @JvmStatic
+  fun resume(focusText: String?) {
+    val state = suspended ?: return
+    suspended = null
+    val service = TalkBackService.getInstance() ?: return
+    if (isShowing || ScreenMonitor.isDeviceLocked(service)) return
+    val target = state.target?.takeIf { it.refresh() }
+    show(service, target, state.before, state.over, focusText)
+  }
+
+  /** Forgets the window, which doesn't show again after [ClipboardHistoryActivity]. */
+  @JvmStatic
+  fun forgetSuspended() {
+    suspended = null
   }
 
   /** Shows the list again from the actions of a text, or else closes the window. */
@@ -273,6 +319,18 @@ object ClipboardHistoryOverlay {
     show(service, target, before, over)
   }
 
+  /**
+   * Pastes [text] into [target], an edit box: puts it on the clipboard and at the top of the
+   * history, then pastes, trying again while the edit box's app is busy. Plays the complete sound
+   * when the paste failed. Returns false when [text] is empty.
+   */
+  @JvmStatic
+  fun pasteEntry(service: AccessibilityService, target: AccessibilityNodeInfo, text: String): Boolean {
+    if (!ClipboardHistory.copy(service, text)) return false
+    startPaste(service, target)
+    return true
+  }
+
   /** Whether [window] is the clipboard history's window. */
   @JvmStatic
   fun isOwnWindow(context: Context, window: AccessibilityWindowInfo): Boolean =
@@ -291,6 +349,7 @@ object ClipboardHistoryOverlay {
     target: AccessibilityNodeInfo?,
     before: AccessibilityNodeInfo?,
     over: CharSequence?,
+    focusText: String? = null,
   ): Boolean {
     val context = ContextThemeWrapper(service, R.style.TalkBackSettings)
     val padding = dp(context, PADDING_DP)
@@ -334,7 +393,7 @@ object ClipboardHistoryOverlay {
     ClipboardHistory.addListener(onChange)
     content.viewTreeObserver.addOnWindowFocusChangeListener(onWindowFocus)
     recordClipboard()
-    showList(focusText = null, focusDelayMs = WINDOW_FOCUS_DELAY_MS)
+    showList(focusText = focusText, focusDelayMs = WINDOW_FOCUS_DELAY_MS)
     return true
   }
 
@@ -355,6 +414,7 @@ object ClipboardHistoryOverlay {
     chosen = null
     entries = emptyList()
     listAdapter = null
+    exportButton = null
     clearButton = null
     try {
       service?.getSystemService(WindowManager::class.java)?.removeViewImmediate(view)
@@ -410,6 +470,13 @@ object ClipboardHistoryOverlay {
     page.addView(empty, fillHeight())
     list.emptyView = empty
     listAdapter = adapter
+    // Watches have no file picker.
+    if (ItemFileLauncher.isAvailable) {
+      exportButton =
+        button(page, R.string.item_file_export) {
+          openActivity(ClipboardHistoryActivity.MODE_EXPORT, entry = null)
+        }
+    }
     clearButton =
       button(page, R.string.clipboard_history_clear) {
         ClipboardHistory.clear(context)
@@ -436,7 +503,9 @@ object ClipboardHistoryOverlay {
     adapter.clear()
     adapter.addAll(entries.map(::shortened))
     adapter.notifyDataSetChanged()
-    clearButton?.visibility = if (entries.isEmpty()) View.GONE else View.VISIBLE
+    val visibility = if (entries.isEmpty()) View.GONE else View.VISIBLE
+    exportButton?.visibility = visibility
+    clearButton?.visibility = visibility
   }
 
   /** Shows what can be done with [text], in place of the list. */
@@ -445,6 +514,7 @@ object ClipboardHistoryOverlay {
     val context = page.context
     chosen = text
     listAdapter = null
+    exportButton = null
     clearButton = null
     page.removeAllViews()
     val title = heading(page, shortened(text)).apply { maxLines = MAX_LINES }
@@ -454,6 +524,7 @@ object ClipboardHistoryOverlay {
         android.R.string.copy to { done(text) { ClipboardHistory.copy(context, text) } },
         // As the Add to clipboard command does, with the whole text rather than the shortened one.
         R.string.shortcut_add_to_clipboard to { done(text) { ClipboardHistory.append(context, text) } },
+        R.string.notification_edit to { openActivity(ClipboardHistoryActivity.MODE_EDIT, text) },
         R.string.notification_remove to { done(text) { ClipboardHistory.remove(context, text) } },
       )
     val list = ListView(context)
@@ -471,12 +542,37 @@ object ClipboardHistoryOverlay {
     showList(focusText = text)
   }
 
+  /**
+   * Closes the window and opens [ClipboardHistoryActivity] in [mode], for [entry] when it edits
+   * one. The window shows again when the activity ends.
+   */
+  private fun openActivity(mode: String, entry: String?) {
+    val service = service ?: return
+    val state = Suspended(pasteTarget, focusBefore, openedOver, entry)
+    close(restoreFocus = false)
+    suspended = state
+    try {
+      service.startActivity(
+        Intent(service, ClipboardHistoryActivity::class.java)
+          .putExtra(ClipboardHistoryActivity.EXTRA_MODE, mode)
+          .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+      )
+    } catch (e: RuntimeException) {
+      LogUtils.e(TAG, "Could not open the clipboard history activity: %s", e)
+      resume(entry)
+    }
+  }
+
   /** Copies [text], closes the history and pastes it into the edit box it was opened from. */
   private fun paste(text: String) {
     val service = service ?: return
     val target = pasteTarget ?: return
     if (!ClipboardHistory.copy(service, text)) return
     close(restoreFocus = true)
+    startPaste(service, target)
+  }
+
+  private fun startPaste(service: AccessibilityService, target: AccessibilityNodeInfo) {
     // The edit box's window kept input focus, so the paste normally works at once; it is tried
     // again while the edit box's app is busy.
     PasteAttempts.start(
@@ -545,7 +641,9 @@ object ClipboardHistoryOverlay {
         }
     }
 
-  private fun shortened(text: String): String =
+  /** [text], cut to [TITLE_LENGTH] characters, as the list shows and reads it. */
+  @JvmStatic
+  fun shortened(text: String): String =
     if (text.length > TITLE_LENGTH) text.take(TITLE_LENGTH) + "…" else text
 
   private fun themeColor(context: Context, attr: Int): Int {

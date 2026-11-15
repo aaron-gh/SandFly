@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_macros">Fjölvar</string>
+    <string name="shortcut_stop_macro">Stöðva fjölva</string>
+    <string name="macro_add">Bæta við fjölva</string>
+    <string name="macro_run_now">Keyra núna</string>
+    <string name="macro_add_step">Bæta við skrefi</string>
+    <string name="macro_add_at_end">Í lokin</string>
+    <string name="macro_add_at_start">Í upphafi</string>
+    <string name="macro_add_after">Á eftir skrefi <xliff:g id="step" example="2">%1$d</xliff:g>: <xliff:g id="name" example="If App in front: Chrome">%2$s</xliff:g></string>
+    <string name="macro_steps">Skref</string>
+    <string name="macro_no_steps">Engin skref</string>
+    <string name="macro_delete">Eyða fjölva</string>
+    <string name="macro_delete_confirm">Eyða <xliff:g id="name" example="Send message">%1$s</xliff:g>?</string>
+    <string name="macro_step_command">Keyra skipun</string>
+    <string name="macro_step_wait">Bíða</string>
+    <string name="macro_step_tap">Ýta á atriði</string>
+    <string name="macro_step_focus">Fókus á atriði</string>
+    <string name="macro_step_speak_item">Lesa upp atriði</string>
+    <string name="macro_step_speak_text">Lesa upp texta</string>
+    <string name="macro_step_type">Slá inn texta</string>
+    <string name="macro_step_tap_value">Ýta á <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_focus_value">Fókus á <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_item_value">Lesa upp <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_text_value">Lesa upp <xliff:g id="text" example="Done">%1$s</xliff:g></string>
+    <string name="macro_step_type_value">Slá inn <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <string name="macro_step_replace_value">Skipta út texta fyrir <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <plurals name="macro_step_wait_seconds">
+        <item quantity="one">Bíða í <xliff:g id="count" example="2">%d</xliff:g> sekúndu</item>
+        <item quantity="other">Bíða í <xliff:g id="count" example="2">%d</xliff:g> sekúndur</item>
+    </plurals>
+    <plurals name="macro_step_wait_milliseconds">
+        <item quantity="one">Bíða í <xliff:g id="count" example="500">%d</xliff:g> millisekúndu</item>
+        <item quantity="other">Bíða í <xliff:g id="count" example="500">%d</xliff:g> millisekúndur</item>
+    </plurals>
+    <string name="macro_step_unavailable">Ekki tiltækt</string>
+    <string name="macro_seconds">Sekúndur</string>
+    <string name="macro_invalid_seconds">Sláðu inn fjölda sekúndna upp að <xliff:g id="max" example="600">%1$d</xliff:g></string>
+    <string name="macro_tap_label">Texti atriðis</string>
+    <string name="macro_tap_timeout">Sekúndur til að bíða eftir atriðinu</string>
+    <string name="macro_text">Texti</string>
+    <string name="macro_replace_text">Skipta út texta í reit</string>
+    <string name="macro_item_not_found">Fjölvi stöðvaður. Fannst ekki: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_failed">Fjölvi stöðvaður. Mistókst: <xliff:g id="step" example="Open Gmail">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until">Bíða þar til</string>
+    <string name="macro_step_if">Ef</string>
+    <string name="macro_step_else_if">Annars ef</string>
+    <string name="macro_step_else">Annars</string>
+    <string name="macro_step_end_if">Ef lýkur</string>
+    <string name="macro_step_repeat">Endurtaka</string>
+    <string name="macro_step_repeat_while">Endurtaka á meðan</string>
+    <string name="macro_step_end_repeat">Endurtekningu lýkur</string>
+    <string name="macro_step_exit_loop">Hætta í lykkju</string>
+    <string name="macro_step_if_value">Ef <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_else_if_value">Annars ef <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_repeat_while_value">Endurtaka á meðan <xliff:g id="condition" example="Item on screen: Load more">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until_value">Bíða þar til <xliff:g id="condition" example="Item on screen: Send">%1$s</xliff:g></string>
+    <plurals name="macro_step_repeat_value">
+        <item quantity="one">Endurtaka <xliff:g id="count" example="3">%d</xliff:g> sinni</item>
+        <item quantity="other">Endurtaka <xliff:g id="count" example="3">%d</xliff:g> sinnum</item>
+    </plurals>
+    <string name="macro_times">Skipti</string>
+    <string name="macro_invalid_times">Sláðu inn tölu frá 1 til <xliff:g id="max" example="1000">%1$d</xliff:g></string>
+    <string name="macro_run_only_when">Keyra aðeins þegar</string>
+    <string name="macro_always">Alltaf</string>
+    <string name="macro_no_tests">Engin próf</string>
+    <string name="macro_add_test">Bæta við prófi</string>
+    <string name="macro_tests">Próf</string>
+    <string name="macro_choose_test">Próf</string>
+    <string name="macro_test_item">Atriði á skjá</string>
+    <string name="macro_test_focused">Atriði með fókus</string>
+    <string name="macro_test_app">Forrit í forgrunni</string>
+    <string name="macro_test_keyboard">Lyklaborð sýnt</string>
+    <string name="macro_test_keyboard_hidden">Lyklaborð falið</string>
+    <string name="macro_test_locked">Skjár læstur</string>
+    <string name="macro_test_unlocked">Skjár ólæstur</string>
+    <string name="macro_test_item_value">Atriði á skjá: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_no_item_value">Ekkert atriði á skjá: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_focused_value">Atriði með fókus: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_not_focused_value">Atriði með fókus er ekki: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_app_value">Forrit í forgrunni: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_not_app_value">Forrit ekki í forgrunni: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_label_kind"><xliff:g id="label" example="Send">%1$s</xliff:g>, <xliff:g id="kind" example="Clickable">%2$s</xliff:g></string>
+    <string name="macro_join_and"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g> og <xliff:g id="second" example="Focused item: Editable">%2$s</xliff:g></string>
+    <string name="macro_join_or"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g>, eða <xliff:g id="second" example="Screen locked">%2$s</xliff:g></string>
+    <string name="macro_regex">Regluleg segð</string>
+    <string name="macro_invalid_regex">Ekki nothæf regluleg segð. Endurteknir hópar mega ekki innihalda endurtekningu eða |.</string>
+    <string name="macro_match_in">Samsvörun í</string>
+    <string name="macro_field_any">Hvaða texti sem er</string>
+    <string name="macro_field_text">Texti</string>
+    <string name="macro_field_description">Lýsing</string>
+    <string name="macro_field_hint">Vísbending</string>
+    <string name="macro_field_state">Staða</string>
+    <string name="macro_field_id">Auðkenni tilfangs</string>
+    <string name="macro_field_value"><xliff:g id="label" example="send">%1$s</xliff:g> (<xliff:g id="field" example="Resource ID">%2$s</xliff:g>)</string>
+    <string name="macro_field_regex_value"><xliff:g id="pattern" example="^Reply">%1$s</xliff:g> (<xliff:g id="field" example="Description">%2$s</xliff:g>, regluleg segð)</string>
+    <string name="macro_regex_value"><xliff:g id="pattern" example="Reply.*Anna">%1$s</xliff:g> (regluleg segð)</string>
+    <string name="macro_test_label_optional">Texti atriðis (valfrjálst)</string>
+    <string name="macro_item_kind">Tegund atriðis</string>
+    <string name="macro_kind_any">Hvaða tegund sem er</string>
+    <string name="macro_kind_clickable">Smellanlegt</string>
+    <string name="macro_kind_long_clickable">Langsmellanlegt</string>
+    <string name="macro_kind_editable">Breytanlegt</string>
+    <string name="macro_kind_scrollable">Flettanlegt</string>
+    <string name="macro_kind_adjustable">Stillanlegt</string>
+    <string name="macro_kind_checkable">Hakanlegt</string>
+    <string name="macro_kind_checked">Valið</string>
+    <string name="macro_kind_selected">Valið</string>
+    <string name="macro_kind_heading">Fyrirsögn</string>
+    <string name="macro_kind_enabled">Virkt</string>
+    <string name="macro_change_to">Breyta í: <xliff:g id="test" example="Keyboard hidden">%1$s</xliff:g></string>
+    <string name="macro_join_with_and">Tengja með og</string>
+    <string name="macro_join_with_or">Tengja með eða</string>
+    <string name="macro_clause_and">og <xliff:g id="test" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_clause_or">eða <xliff:g id="test" example="Screen locked">%1$s</xliff:g></string>
+    <string name="macro_wait_timeout">Sekúndur til að bíða</string>
+    <string name="macro_add_step_after">Bæta við skrefi á eftir</string>
+    <string name="macro_problem">Skref <xliff:g id="step" example="3">%1$d</xliff:g>: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_problem_no_if">Annars ef, Annars eða Ef lýkur án Ef</string>
+    <string name="macro_problem_after_else">Annars ef eða Annars á eftir Annars</string>
+    <string name="macro_problem_no_repeat">Endurtekningu lýkur án Endurtaka</string>
+    <string name="macro_problem_no_end_if">Ef án Ef lýkur</string>
+    <string name="macro_problem_no_end_repeat">Endurtaka án Endurtekningu lýkur</string>
+    <string name="macro_problem_exit">Hætta í lykkju utan endurtekningar</string>
+    <string name="macro_stopped_problem">Fjölvi stöðvaður. Skref <xliff:g id="step" example="3">%1$d</xliff:g>: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_stopped_repeats">Fjölvi stöðvaður. Endurtekið <xliff:g id="count" example="1000">%1$d</xliff:g> sinnum: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
+    <string name="macro_stopped_timeout">Fjölvi stöðvaður. Tímamörk runnu út: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
+    <string name="macro_not_met">Fjölvi var ekki keyrður. Keyra aðeins þegar: ekki uppfyllt</string>
+</resources>

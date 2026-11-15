@@ -42,6 +42,9 @@ public class NodeCachedBoundsCalculator {
   private final Rect tempRect = new Rect();
   private Map<AccessibilityNodeInfoCompat, Boolean> speakingNodesCache;
   private int maxNodes = Integer.MAX_VALUE;
+  private Runnable beforeNodeRead = () -> {};
+
+  void setBeforeNodeRead(Runnable check) { beforeNodeRead = check; }
 
   /** Thrown when the bounds of more nodes are needed than {@link #setMaxNodes} allows. */
   public static final class TooManyNodesException extends RuntimeException {
@@ -78,6 +81,7 @@ public class NodeCachedBoundsCalculator {
   }
 
   private Rect getBoundsInternal(AccessibilityNodeInfoCompat node) {
+    beforeNodeRead.run();
     if (node == null) {
       return EMPTY_RECT;
     }
@@ -120,6 +124,7 @@ public class NodeCachedBoundsCalculator {
     AccessibilityNodeInfoCompat child = null;
     boolean hasChildBounds = false;
     for (int i = 0; i < childCount; i++) {
+      beforeNodeRead.run();
       try {
         child = node.getChild(i);
         Rect bounds = getBoundsInternal(child);

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_macros">ማክሮዎች</string>
+    <string name="shortcut_stop_macro">ማክሮ አቁም</string>
+    <string name="macro_add">ማክሮ አክል</string>
+    <string name="macro_run_now">አሁን አሂድ</string>
+    <string name="macro_add_step">እርምጃ አክል</string>
+    <string name="macro_add_at_end">መጨረሻ ላይ</string>
+    <string name="macro_add_at_start">መጀመሪያ ላይ</string>
+    <string name="macro_add_after">ከእርምጃ <xliff:g id="step" example="2">%1$d</xliff:g> በኋላ፦ <xliff:g id="name" example="If App in front: Chrome">%2$s</xliff:g></string>
+    <string name="macro_steps">እርምጃዎች</string>
+    <string name="macro_no_steps">ምንም እርምጃ የለም</string>
+    <string name="macro_delete">ማክሮ ሰርዝ</string>
+    <string name="macro_delete_confirm"><xliff:g id="name" example="Send message">%1$s</xliff:g> ይሰረዝ?</string>
+    <string name="macro_step_command">ትዕዛዝ አሂድ</string>
+    <string name="macro_step_wait">ጠብቅ</string>
+    <string name="macro_step_tap">ንጥል መታ አድርግ</string>
+    <string name="macro_step_focus">ንጥል ላይ አተኩር</string>
+    <string name="macro_step_speak_item">ንጥል ተናገር</string>
+    <string name="macro_step_speak_text">ጽሑፍ ተናገር</string>
+    <string name="macro_step_type">ጽሑፍ ተይብ</string>
+    <string name="macro_step_tap_value"><xliff:g id="label" example="Send">%1$s</xliff:g> መታ አድርግ</string>
+    <string name="macro_step_focus_value"><xliff:g id="label" example="Send">%1$s</xliff:g> ላይ አተኩር</string>
+    <string name="macro_step_speak_item_value"><xliff:g id="label" example="Send">%1$s</xliff:g> ተናገር</string>
+    <string name="macro_step_speak_text_value"><xliff:g id="text" example="Done">%1$s</xliff:g> ተናገር</string>
+    <string name="macro_step_type_value"><xliff:g id="text" example="On my way">%1$s</xliff:g> ተይብ</string>
+    <string name="macro_step_replace_value">ጽሑፉን በ<xliff:g id="text" example="On my way">%1$s</xliff:g> ተካ</string>
+    <plurals name="macro_step_wait_seconds">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> ሰከንድ ጠብቅ</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> ሰከንዶች ጠብቅ</item>
+    </plurals>
+    <plurals name="macro_step_wait_milliseconds">
+        <item quantity="one"><xliff:g id="count" example="500">%d</xliff:g> ሚሊሰከንድ ጠብቅ</item>
+        <item quantity="other"><xliff:g id="count" example="500">%d</xliff:g> ሚሊሰከንዶች ጠብቅ</item>
+    </plurals>
+    <string name="macro_step_unavailable">አይገኝም</string>
+    <string name="macro_seconds">ሰከንዶች</string>
+    <string name="macro_invalid_seconds">እስከ <xliff:g id="max" example="600">%1$d</xliff:g> ድረስ የሰከንዶች ብዛት ያስገቡ</string>
+    <string name="macro_tap_label">የንጥል ጽሑፍ</string>
+    <string name="macro_tap_timeout">ንጥሉን ለመጠበቅ የሚፈጀው ሰከንዶች</string>
+    <string name="macro_text">ጽሑፍ</string>
+    <string name="macro_replace_text">በመስክ ውስጥ ጽሑፍ ተካ</string>
+    <string name="macro_item_not_found">ማክሮ ቆሟል። አልተገኘም፦ <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_failed">ማክሮ ቆሟል። አልተሳካም፦ <xliff:g id="step" example="Open Gmail">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until">እስከ ... ድረስ ጠብቅ</string>
+    <string name="macro_step_if">ከሆነ</string>
+    <string name="macro_step_else_if">ካልሆነ፣ ከሆነ</string>
+    <string name="macro_step_else">ካልሆነ</string>
+    <string name="macro_step_end_if">የ«ከሆነ» መጨረሻ</string>
+    <string name="macro_step_repeat">ድገም</string>
+    <string name="macro_step_repeat_while">እስከሆነ ድረስ ድገም</string>
+    <string name="macro_step_end_repeat">የ«ድገም» መጨረሻ</string>
+    <string name="macro_step_exit_loop">ከዑደቱ ውጣ</string>
+    <string name="macro_step_if_value">ከሆነ <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_else_if_value">ካልሆነ፣ ከሆነ <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_repeat_while_value"><xliff:g id="condition" example="Item on screen: Load more">%1$s</xliff:g> እስከሆነ ድረስ ድገም</string>
+    <string name="macro_step_wait_until_value"><xliff:g id="condition" example="Item on screen: Send">%1$s</xliff:g> እስኪሆን ድረስ ጠብቅ</string>
+    <plurals name="macro_step_repeat_value">
+        <item quantity="one"><xliff:g id="count" example="3">%d</xliff:g> ጊዜ ድገም</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> ጊዜ ድገም</item>
+    </plurals>
+    <string name="macro_times">ጊዜያት</string>
+    <string name="macro_invalid_times">ከ1 እስከ <xliff:g id="max" example="1000">%1$d</xliff:g> ያለ ቁጥር ያስገቡ</string>
+    <string name="macro_run_only_when">የሚሄደው ሲሆን ብቻ</string>
+    <string name="macro_always">ሁልጊዜ</string>
+    <string name="macro_no_tests">ምንም ሙከራ የለም</string>
+    <string name="macro_add_test">ሙከራ አክል</string>
+    <string name="macro_tests">ሙከራዎች</string>
+    <string name="macro_choose_test">ሙከራ</string>
+    <string name="macro_test_item">በማያ ገጹ ላይ ያለ ንጥል</string>
+    <string name="macro_test_focused">የተተኮረ ንጥል</string>
+    <string name="macro_test_app">ፊት ያለ መተግበሪያ</string>
+    <string name="macro_test_keyboard">የቁልፍ ሰሌዳ ይታያል</string>
+    <string name="macro_test_keyboard_hidden">የቁልፍ ሰሌዳ ተደብቋል</string>
+    <string name="macro_test_locked">ማያ ገጽ ተቆልፏል</string>
+    <string name="macro_test_unlocked">ማያ ገጽ ተከፍቷል</string>
+    <string name="macro_test_item_value">በማያ ገጹ ላይ ያለ ንጥል፦ <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_no_item_value">በማያ ገጹ ላይ ንጥል የለም፦ <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_focused_value">የተተኮረ ንጥል፦ <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_not_focused_value">የተተኮረ ንጥል አይደለም፦ <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_app_value">ፊት ያለ መተግበሪያ፦ <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_not_app_value">ፊት ያልሆነ መተግበሪያ፦ <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_label_kind"><xliff:g id="label" example="Send">%1$s</xliff:g>፣ <xliff:g id="kind" example="Clickable">%2$s</xliff:g></string>
+    <string name="macro_join_and"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g> እና <xliff:g id="second" example="Focused item: Editable">%2$s</xliff:g></string>
+    <string name="macro_join_or"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g>፣ ወይም <xliff:g id="second" example="Screen locked">%2$s</xliff:g></string>
+    <string name="macro_regex">መደበኛ አገላለጽ</string>
+    <string name="macro_invalid_regex">ጥቅም ላይ ሊውል የሚችል መደበኛ አገላለጽ አይደለም። ተደጋጋሚ ቡድኖች መደጋገም ወይም | ሊይዙ አይችሉም።</string>
+    <string name="macro_match_in">የሚመሳሰልበት</string>
+    <string name="macro_field_any">ማንኛውም ጽሑፍ</string>
+    <string name="macro_field_text">ጽሑፍ</string>
+    <string name="macro_field_description">መግለጫ</string>
+    <string name="macro_field_hint">ፍንጭ</string>
+    <string name="macro_field_state">ሁኔታ</string>
+    <string name="macro_field_id">የሀብት መታወቂያ</string>
+    <string name="macro_field_value"><xliff:g id="label" example="send">%1$s</xliff:g> (<xliff:g id="field" example="Resource ID">%2$s</xliff:g>)</string>
+    <string name="macro_field_regex_value"><xliff:g id="pattern" example="^Reply">%1$s</xliff:g> (<xliff:g id="field" example="Description">%2$s</xliff:g>፣ መደበኛ አገላለጽ)</string>
+    <string name="macro_regex_value"><xliff:g id="pattern" example="Reply.*Anna">%1$s</xliff:g> (መደበኛ አገላለጽ)</string>
+    <string name="macro_test_label_optional">የንጥል ጽሑፍ (አማራጭ)</string>
+    <string name="macro_item_kind">የንጥል ዓይነት</string>
+    <string name="macro_kind_any">ማንኛውም ዓይነት</string>
+    <string name="macro_kind_clickable">ጠቅ ሊደረግ የሚችል</string>
+    <string name="macro_kind_long_clickable">ረጅም ጠቅ ሊደረግ የሚችል</string>
+    <string name="macro_kind_editable">ሊስተካከል የሚችል</string>
+    <string name="macro_kind_scrollable">ሊሸበለል የሚችል</string>
+    <string name="macro_kind_adjustable">ሊስተካከል የሚችል (ተንሸራታች)</string>
+    <string name="macro_kind_checkable">ምልክት ሊደረግበት የሚችል</string>
+    <string name="macro_kind_checked">ምልክት ተደርጎበታል</string>
+    <string name="macro_kind_selected">ተመርጧል</string>
+    <string name="macro_kind_heading">ርዕስ</string>
+    <string name="macro_kind_enabled">ነቅቷል</string>
+    <string name="macro_change_to">ቀይር ወደ፦ <xliff:g id="test" example="Keyboard hidden">%1$s</xliff:g></string>
+    <string name="macro_join_with_and">በ«እና» አጣምር</string>
+    <string name="macro_join_with_or">በ«ወይም» አጣምር</string>
+    <string name="macro_clause_and">እና <xliff:g id="test" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_clause_or">ወይም <xliff:g id="test" example="Screen locked">%1$s</xliff:g></string>
+    <string name="macro_wait_timeout">የሚጠበቁ ሰከንዶች</string>
+    <string name="macro_add_step_after">ከዚህ በኋላ እርምጃ አክል</string>
+    <string name="macro_problem">እርምጃ <xliff:g id="step" example="3">%1$d</xliff:g>፦ <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_problem_no_if">«ካልሆነ፣ ከሆነ»፣ «ካልሆነ» ወይም «የከሆነ መጨረሻ» ያለ «ከሆነ»</string>
+    <string name="macro_problem_after_else">«ካልሆነ፣ ከሆነ» ወይም «ካልሆነ» ከ«ካልሆነ» በኋላ</string>
+    <string name="macro_problem_no_repeat">«የድገም መጨረሻ» ያለ «ድገም»</string>
+    <string name="macro_problem_no_end_if">«ከሆነ» ያለ «የከሆነ መጨረሻ»</string>
+    <string name="macro_problem_no_end_repeat">«ድገም» ያለ «የድገም መጨረሻ»</string>
+    <string name="macro_problem_exit">ከ«ድገም» ውጭ «ከዑደቱ ውጣ»</string>
+    <string name="macro_stopped_problem">ማክሮ ቆሟል። እርምጃ <xliff:g id="step" example="3">%1$d</xliff:g>፦ <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_stopped_repeats">ማክሮ ቆሟል። <xliff:g id="count" example="1000">%1$d</xliff:g> ጊዜ ተደግሟል፦ <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
+    <string name="macro_stopped_timeout">ማክሮ ቆሟል። ጊዜው አብቅቷል፦ <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
+    <string name="macro_not_met">ማክሮ አልሄደም። የሚሄደው ሲሆን ብቻ፦ አልተሟላም</string>
+</resources>

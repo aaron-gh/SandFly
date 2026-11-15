@@ -178,10 +178,12 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
   /** Plays [clip] at [left] and [right] volumes from 0 to 1, and [rate], 1 for its own speed. */
   fun play(clip: Clip, left: Float, right: Float, rate: Float) {
     // A clip made for a player at another rate, before this one replaced it, still plays in tune.
-    val step = rate.toDouble().coerceIn(0.25, 4.0) * clip.rate / sampleRate
+    // A NaN rate would never reach the clip's end, and a NaN volume would fill every burst.
+    val speed = if (rate.isFinite()) rate.toDouble().coerceIn(0.25, 4.0) else 1.0
+    val step = speed * clip.rate / sampleRate
     synchronized(lock) {
       if (released || broken) return
-      clips += PlayingClip(clip, left, right, step)
+      clips += PlayingClip(clip, finiteVolume(left), finiteVolume(right), step)
       wake()
     }
   }
@@ -566,7 +568,13 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
     synchronized(lock) {
       val stream =
         SpeechStream(
-          id, volume.coerceIn(0f, 1f), pan.coerceIn(-1f, 1f), equalizer, expectsSound, listener)
+          id,
+          finiteVolume(volume),
+          if (pan.isFinite()) pan.coerceIn(-1f, 1f) else 0f,
+          equalizer,
+          expectsSound,
+          listener,
+        )
       if (released || broken) {
         // Shut down or given up on since it was got: said the usual way instead.
         stream.abandon(playerFailed = true)
@@ -897,11 +905,12 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
           (frames[at + right] * (1 - fraction) + frames[after + right] * fraction) * playing.right
         playing.position += playing.step
       }
-      if (playing.position >= total) iterator.remove()
+      if (!(playing.position < total)) iterator.remove()
     }
     val head = if (held) null else streams.peekFirst()
     if (head != null && !head.mixInto(out, burstFrames)) streams.removeFirst()
-    for (i in out.indices) out[i] = out[i].coerceIn(-1f, 1f)
+    // NaN passes coerceIn. In a float track it plays as a full-scale pop and then silence.
+    for (i in out.indices) out[i] = out[i].let { if (it.isNaN()) 0f else it.coerceIn(-1f, 1f) }
   }
 
   private fun createTrack(): AudioTrack? =
@@ -1355,6 +1364,10 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
           .getOrPut(attributes.usage) { LowLatencyAudio(context.applicationContext, attributes) }
           .takeIf { it.track != null && !it.broken }
       }
+
+    /** [volume] from 0 to 1, or 0 when it is NaN or infinite. */
+    internal fun finiteVolume(volume: Float): Float =
+      if (volume.isFinite()) volume.coerceIn(0f, 1f) else 0f
 
     /** Turns interleaved audio with [channels] channels into stereo frames. */
     @JvmStatic

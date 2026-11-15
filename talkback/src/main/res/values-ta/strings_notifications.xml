@@ -390,4 +390,12 @@
         <item>@string/notification_shake_3</item>
     </string-array>
     <string name="notification_clock_voice_notifications">அறிவிப்புக் குரல்</string>
+    <string name="notification_exact_alarms_title">அலாரங்கள் மற்றும் நினைவூட்டல்களை இயக்கு</string>
+    <string name="shortcut_toggle_time_announcements">நேர அறிவிப்புகளை இயக்கு அல்லது முடக்கு</string>
+    <string name="notification_clock_now_on">நேர அறிவிப்புகள் இயக்கப்பட்டன</string>
+    <string name="notification_clock_now_off">நேர அறிவிப்புகள் முடக்கப்பட்டன</string>
+    <plurals name="notification_clock_battery">
+        <item quantity="one"><xliff:g id="percent" example="1">%d</xliff:g> சதவீதம்</item>
+        <item quantity="other"><xliff:g id="percent" example="76">%d</xliff:g> சதவீதம்</item>
+    </plurals>
 </resources>

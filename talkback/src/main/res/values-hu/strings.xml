@@ -2025,4 +2025,144 @@
     <string name="value_keep_models_5">5 perc</string>
     <string name="value_keep_models_15">15 perc</string>
     <string name="value_keep_models_30">30 perc</string>
+    <string name="title_pref_speech_equalizer_save_preset">Mentés beállításkészletként</string>
+    <string name="title_pref_speech_equalizer_saved_presets">Mentett beállításkészletek</string>
+    <string name="speech_equalizer_preset_name">Név</string>
+    <string name="speech_equalizer_preset_name_taken">Már van ilyen nevű beállításkészlet: <xliff:g id="name" example="Podcast">%1$s</xliff:g></string>
+    <string name="speech_equalizer_presets_full">Több beállításkészlet nem menthető. Törölje az egyiket egy másik mentéséhez.</string>
+    <string name="speech_equalizer_preset_saved"><xliff:g id="name" example="Podcast">%1$s</xliff:g> mentve</string>
+    <string name="speech_equalizer_preset_rename">Átnevezés</string>
+    <string name="speech_equalizer_preset_delete">Törlés</string>
+    <string name="speech_equalizer_preset_delete_confirm">Törli a következőt: <xliff:g id="name" example="Podcast">%1$s</xliff:g>?</string>
+    <string name="speech_equalizer_preset_deleted"><xliff:g id="name" example="Podcast">%1$s</xliff:g> törölve</string>
+    <string name="title_pref_emoji_voice">Emoji hangja</string>
+    <string name="value_emoji_voice_same">Ugyanaz, mint a beszédé</string>
+    <string name="title_pref_emoji_rate">Emoji beszédsebessége</string>
+    <string name="title_pref_line_breaks_as_spaces">Sortörések olvasása szóközként</string>
+    <string name="title_pref_language_voices">Hangok nyelvenként</string>
+    <string name="title_pref_identify_languages_from_words">Nyelvek felismerése szavakból</string>
+    <string name="title_pref_add_language">Nyelv hozzáadása</string>
+    <string name="title_pref_remove_language">Nyelv eltávolítása</string>
+    <string name="title_pref_script_language">%1$s írásrendszer</string>
+    <string name="title_pref_screen_on_notification_count">Értesítések száma</string>
+    <plurals name="template_screen_on_notification_count">
+        <item quantity="one"><xliff:g id="count" example="6">%d</xliff:g> értesítés</item>
+        <item quantity="other"><xliff:g id="count" example="6">%d</xliff:g> értesítés</item>
+    </plurals>
+    <string name="title_pref_phonetic_letters_review">Betűk fonetikus kimondása áttekintéskor</string>
+    <string name="title_pref_phonetic_letters_typing">Betűk fonetikus kimondása gépeléskor</string>
+    <string name="title_pref_emoji_suffix">„Emoji” kimondása az emoji nevei után</string>
+    <string name="overview_shizuku_not_running">A Shizuku nem fut</string>
+    <string name="overview_shizuku_not_allowed">A Shizuku nem engedélyezi a SandFly használatát</string>
+    <string name="overview_no_older_app">Nincs régebbi alkalmazás</string>
+    <string name="overview_no_newer_app">Nincs újabb alkalmazás</string>
+    <string name="stream_volume_needs_access">Engedélyezze a Ne zavarjanak hozzáférést a hangerő módosításához.</string>
+    <string name="corner_gestures_title">Sarkok</string>
+    <string name="shortcut_move_to_item_below">Ugrás az alatta lévő elemre</string>
+    <string name="shortcut_move_to_item_above">Ugrás a fölötte lévő elemre</string>
+    <string name="shortcut_older_app">Régebbi alkalmazás</string>
+    <string name="shortcut_newer_app">Újabb alkalmazás</string>
+    <string name="shortcut_answer_call">Hívás fogadása</string>
+    <string name="answer_call_no_call">Nincs bejövő hívás</string>
+    <string name="answer_call_permission">A hívások fogadásához engedély szükséges</string>
+    <string name="shortcut_switch_keyboard">Billentyűzet váltása</string>
+    <string name="switch_keyboard_none">Nincs másik bekapcsolt billentyűzet</string>
+    <string name="switch_keyboard_failed">A billentyűzet nem váltott</string>
+    <string name="clipboard_history_hint">Csúsztasson felfelé vagy lefelé a választáshoz, majd koppintson duplán a beillesztéshez</string>
+    <string name="title_speech_history">Beszédelőzmények</string>
+    <string name="speech_history_empty">Nincs beszéd</string>
+    <string name="speech_history_clear">Előzmények törlése</string>
+    <string name="title_pref_shortcut_corner_top_left_tap">Koppintás a bal felső sarokra</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap">Dupla koppintás a bal felső sarokra</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap">Tripla koppintás a bal felső sarokra</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap_hold">Dupla koppintás és tartás a bal felső sarkon</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap_hold">Tripla koppintás és tartás a bal felső sarkon</string>
+    <string name="title_pref_shortcut_corner_top_right_tap">Koppintás a jobb felső sarokra</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap">Dupla koppintás a jobb felső sarokra</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap">Tripla koppintás a jobb felső sarokra</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap_hold">Dupla koppintás és tartás a jobb felső sarkon</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap_hold">Tripla koppintás és tartás a jobb felső sarkon</string>
+    <string name="title_pref_shortcut_corner_bottom_left_tap">Koppintás a bal alsó sarokra</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap">Dupla koppintás a bal alsó sarokra</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap">Tripla koppintás a bal alsó sarokra</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap_hold">Dupla koppintás és tartás a bal alsó sarkon</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap_hold">Tripla koppintás és tartás a bal alsó sarkon</string>
+    <string name="title_pref_shortcut_corner_bottom_right_tap">Koppintás a jobb alsó sarokra</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap">Dupla koppintás a jobb alsó sarokra</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap">Tripla koppintás a jobb alsó sarokra</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap_hold">Dupla koppintás és tartás a jobb alsó sarkon</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap_hold">Tripla koppintás és tartás a jobb alsó sarkon</string>
+    <string name="title_pref_swipe_start_time">Kézmozdulat indítási ideje</string>
+    <string name="title_pref_swipes_before_lift">Csúsztatások felismerése az ujj felemelése előtt</string>
+    <string name="summary_pref_swipes_before_lift">Kikapcsolja az oda-vissza és a szögletes kézmozdulatokat.</string>
+    <string name="title_pref_corner_size_mm">Sarok mérete</string>
+    <string name="value_corner_size_edge_width">Ugyanaz, mint a szél szélessége</string>
+    <string name="title_pref_corner_tap_time_ms">Sarokkoppintás időkorlátja</string>
+    <string name="value_corner_tap_time_system">Rendszerbeállítás</string>
+    <string name="title_pref_edge_speak_commands">Parancs kimondása minden kattanásnál</string>
+    <string-array name="pref_volume_change_feedback_entries">
+        <item>@string/volume_change_feedback_off</item>
+        <item>@string/volume_change_feedback_tone</item>
+        <item>@string/volume_change_feedback_spoken</item>
+        <item>@string/volume_change_feedback_tone_and_spoken</item>
+    </string-array>
+    <string name="title_pref_volume_change_tone_during_media">Hang némítása médialejátszás közben</string>
+    <string name="title_pref_volume_change_speech_during_media">Beszéd némítása médialejátszás közben</string>
+    <string name="title_pref_volume_change_interrupts_speech">Beszéd megszakítása a hangerő bejelentéséhez</string>
+    <string name="title_pref_volume_keys_speech_volume_while_speaking">A hangerőgombok a beszéd hangerejét módosítják felolvasás közben</string>
+    <string name="title_pref_double_tap_moves_cursor">Dupla koppintás a kurzort az elejére vagy a végére viszi</string>
+    <string name="title_pref_scroll_ahead">Előregörgetés a következő elemhez</string>
+    <string name="title_pref_speak_while_scrolling">A következő elem felolvasása görgetés közben</string>
+    <string-array name="pref_text_entities_entries">
+        <item>@string/text_entity_web</item>
+        <item>@string/text_entity_email</item>
+        <item>@string/text_entity_phone</item>
+        <item>@string/text_entity_code</item>
+    </string-array>
+    <string name="value_keep_models_until_stopped">A SandFly leállásáig</string>
+    <string name="title_pref_model_download_server">Modell-letöltési kiszolgáló</string>
+    <string name="title_pref_settings_profiles">Beállításprofilok</string>
+    <string name="title_pref_new_settings_profile">Új beállításprofil</string>
+    <string name="settings_profile_new_name"><xliff:g id="number" example="2">%1$d</xliff:g>. profil</string>
+    <string name="settings_profile_name_taken">Már van ilyen nevű beállításprofil: <xliff:g id="name" example="Demo">%1$s</xliff:g></string>
+    <string name="settings_profile_in_use">Használatban</string>
+    <string name="settings_profile_menu_item_in_use"><xliff:g id="name" example="Demo">%1$s</xliff:g>, használatban</string>
+    <string name="settings_profile_none">Nincs beállításprofil</string>
+    <string name="settings_profile_use_now">Használat most</string>
+    <string name="settings_profile_stop_using">Használat leállítása</string>
+    <string name="settings_profile_change_settings">Beállítások módosítása</string>
+    <string name="settings_profile_editing">A módosítások ide kerülnek: <xliff:g id="name" example="Messaging">%1$s</xliff:g></string>
+    <string name="settings_profile_edit_saved">A módosítások mentve ide: <xliff:g id="name" example="Messaging">%1$s</xliff:g></string>
+    <string name="settings_profile_use_automatically">Automatikus használat</string>
+    <string name="settings_profile_web">Webtartalom</string>
+    <string name="settings_profile_reading">Folyamatos olvasás</string>
+    <string name="settings_profile_text_editing">Szövegszerkesztés</string>
+    <string name="settings_profile_apps">Alkalmazások</string>
+    <string name="settings_profile_add_app">Alkalmazás hozzáadása</string>
+    <string name="settings_profile_settings">A profil beállításai</string>
+    <string name="settings_profile_no_settings">Nincs</string>
+    <string name="settings_profile_remove_confirm">Eltávolítja a következőt: <xliff:g id="item" example="Speech rate">%1$s</xliff:g>, innen: <xliff:g id="name" example="Messaging">%2$s</xliff:g>?</string>
+    <string name="settings_profile_not_saved">A beállításprofil nem menthető</string>
+    <string name="settings_profile_in_use_announcement"><xliff:g id="name" example="Demo">%1$s</xliff:g> profil</string>
+    <string name="settings_profile_not_changed">A beállításprofil nem változott</string>
+    <string name="title_settings_profile">Beállításprofil</string>
+    <string name="shortcut_settings_profiles">Beállításprofil kiválasztása</string>
+    <string name="shortcut_next_settings_profile">Következő beállításprofil</string>
+    <string name="shortcut_previous_settings_profile">Előző beállításprofil</string>
+    <string name="title_copy_text_from_screen">Szöveg másolása a képernyőről</string>
+    <string name="granularity_label">Részletesség</string>
+    <string name="granularity_characters">Karakterek</string>
+    <string name="granularity_words">Szavak</string>
+    <string name="granularity_paragraphs">Bekezdések</string>
+    <string name="button_select_all">Összes kijelölése</string>
+    <string name="no_text_selected">Nincs kijelölt szöveg</string>
+    <string name="no_text_on_screen">Nincs szöveg a képernyőn</string>
+    <string name="title_select_last_spoken_phrase_word_by_word">Utolsó felolvasott kifejezés kijelölése szavanként</string>
+    <string name="no_words_selected">Nincs kijelölt szó</string>
+    <string name="no_phrase_to_select">Nincs kijelölhető kifejezés</string>
+    <string name="word_selection_list_cut_off">A lista <xliff:g id="count" example="1000">%1$d</xliff:g> elemnél megszakad</string>
+    <plurals name="word_selection_copied">
+        <item quantity="one"><xliff:g id="count" example="5">%1$d</xliff:g> elem másolva</item>
+        <item quantity="other"><xliff:g id="count" example="5">%1$d</xliff:g> elem másolva</item>
+    </plurals>
 </resources>

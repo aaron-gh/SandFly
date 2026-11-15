@@ -167,6 +167,39 @@ class VoiceGrammarTest {
     assertEquals("Hi there?", VoiceGrammar.trimText(" , Hi there?. "))
   }
 
+  @Test
+  fun languagesWithoutSpacesMatchWithoutSpaces() {
+    val chinese =
+      VoiceGrammar.Phrases(
+        chain = listOf("然后"),
+        and = listOf("和"),
+        fillersStart = listOf("请"),
+        fillersEnd = emptyList(),
+        cancel = listOf("取消"),
+        sendImageDescription = emptyList(),
+        sendScreenDescription = emptyList(),
+        sendPrevious = emptyList(),
+        message = emptyList(),
+        call = listOf("给 {who} 打电话", "打电话给 {who}"),
+        describeScreen = emptyList(),
+        describeImage = emptyList(),
+        copy = emptyList(),
+        wait = emptyList(),
+        type = emptyList(),
+        run = emptyList(),
+        open = listOf("打开 {app}"),
+        tap = listOf("点击 {label}"),
+      )
+    val grammar = VoiceGrammar(chinese, resolver, Locale.SIMPLIFIED_CHINESE)
+    val result = grammar.parse("请打开Chrome然后给小明打电话")
+    assertTrue(result.unparsed.toString(), result.complete)
+    assertEquals(
+      listOf(VoiceStep.OpenApp("Chrome", "OPEN_APP:chrome"), VoiceStep.Call("小明")),
+      result.steps,
+    )
+    assertEquals(listOf(VoiceStep.Call("小明")), grammar.parse("打电话给 小明").steps)
+  }
+
   companion object {
     private fun englishPhrases(): VoiceGrammar.Phrases {
       val file =

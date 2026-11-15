@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_macros">매크로</string>
+    <string name="shortcut_stop_macro">매크로 중지</string>
+    <string name="macro_add">매크로 추가</string>
+    <string name="macro_run_now">지금 실행</string>
+    <string name="macro_add_step">단계 추가</string>
+    <string name="macro_add_at_end">끝에</string>
+    <string name="macro_add_at_start">처음에</string>
+    <string name="macro_add_after"><xliff:g id="step" example="2">%1$d</xliff:g>단계 뒤: <xliff:g id="name" example="If App in front: Chrome">%2$s</xliff:g></string>
+    <string name="macro_steps">단계</string>
+    <string name="macro_no_steps">단계 없음</string>
+    <string name="macro_delete">매크로 삭제</string>
+    <string name="macro_delete_confirm"><xliff:g id="name" example="Send message">%1$s</xliff:g>을(를) 삭제하시겠습니까?</string>
+    <string name="macro_step_command">명령 실행</string>
+    <string name="macro_step_wait">대기</string>
+    <string name="macro_step_tap">항목 탭</string>
+    <string name="macro_step_focus">항목에 포커스</string>
+    <string name="macro_step_speak_item">항목 읽기</string>
+    <string name="macro_step_speak_text">텍스트 읽기</string>
+    <string name="macro_step_type">텍스트 입력</string>
+    <string name="macro_step_tap_value"><xliff:g id="label" example="Send">%1$s</xliff:g> 탭</string>
+    <string name="macro_step_focus_value"><xliff:g id="label" example="Send">%1$s</xliff:g>에 포커스</string>
+    <string name="macro_step_speak_item_value"><xliff:g id="label" example="Send">%1$s</xliff:g> 읽기</string>
+    <string name="macro_step_speak_text_value"><xliff:g id="text" example="Done">%1$s</xliff:g> 읽기</string>
+    <string name="macro_step_type_value"><xliff:g id="text" example="On my way">%1$s</xliff:g> 입력</string>
+    <string name="macro_step_replace_value">텍스트를 <xliff:g id="text" example="On my way">%1$s</xliff:g>(으)로 바꾸기</string>
+    <plurals name="macro_step_wait_seconds">
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g>초 대기</item>
+    </plurals>
+    <plurals name="macro_step_wait_milliseconds">
+        <item quantity="other"><xliff:g id="count" example="500">%d</xliff:g>밀리초 대기</item>
+    </plurals>
+    <string name="macro_step_unavailable">사용할 수 없음</string>
+    <string name="macro_seconds">초</string>
+    <string name="macro_invalid_seconds"><xliff:g id="max" example="600">%1$d</xliff:g> 이하의 초 수를 입력하세요</string>
+    <string name="macro_tap_label">항목 텍스트</string>
+    <string name="macro_tap_timeout">항목을 기다릴 초 수</string>
+    <string name="macro_text">텍스트</string>
+    <string name="macro_replace_text">입력란의 텍스트 바꾸기</string>
+    <string name="macro_item_not_found">매크로가 중지되었습니다. 찾을 수 없음: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_failed">매크로가 중지되었습니다. 실패: <xliff:g id="step" example="Open Gmail">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until">다음까지 대기</string>
+    <string name="macro_step_if">만약</string>
+    <string name="macro_step_else_if">아니면 만약</string>
+    <string name="macro_step_else">아니면</string>
+    <string name="macro_step_end_if">만약 끝</string>
+    <string name="macro_step_repeat">반복</string>
+    <string name="macro_step_repeat_while">다음 동안 반복</string>
+    <string name="macro_step_end_repeat">반복 끝</string>
+    <string name="macro_step_exit_loop">반복 종료</string>
+    <string name="macro_step_if_value">만약 <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_else_if_value">아니면 만약 <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_repeat_while_value"><xliff:g id="condition" example="Item on screen: Load more">%1$s</xliff:g> 동안 반복</string>
+    <string name="macro_step_wait_until_value"><xliff:g id="condition" example="Item on screen: Send">%1$s</xliff:g>까지 대기</string>
+    <plurals name="macro_step_repeat_value">
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g>회 반복</item>
+    </plurals>
+    <string name="macro_times">횟수</string>
+    <string name="macro_invalid_times">1부터 <xliff:g id="max" example="1000">%1$d</xliff:g>까지의 숫자를 입력하세요</string>
+    <string name="macro_run_only_when">다음일 때만 실행</string>
+    <string name="macro_always">항상</string>
+    <string name="macro_no_tests">조건 없음</string>
+    <string name="macro_add_test">조건 추가</string>
+    <string name="macro_tests">조건</string>
+    <string name="macro_choose_test">조건</string>
+    <string name="macro_test_item">화면의 항목</string>
+    <string name="macro_test_focused">포커스된 항목</string>
+    <string name="macro_test_app">전면의 앱</string>
+    <string name="macro_test_keyboard">키보드 표시됨</string>
+    <string name="macro_test_keyboard_hidden">키보드 숨김</string>
+    <string name="macro_test_locked">화면 잠김</string>
+    <string name="macro_test_unlocked">화면 잠금 해제됨</string>
+    <string name="macro_test_item_value">화면의 항목: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_no_item_value">화면에 항목 없음: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_focused_value">포커스된 항목: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_not_focused_value">포커스된 항목 아님: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_app_value">전면의 앱: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_not_app_value">전면의 앱 아님: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_label_kind"><xliff:g id="label" example="Send">%1$s</xliff:g>, <xliff:g id="kind" example="Clickable">%2$s</xliff:g></string>
+    <string name="macro_join_and"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g> 그리고 <xliff:g id="second" example="Focused item: Editable">%2$s</xliff:g></string>
+    <string name="macro_join_or"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g>, 또는 <xliff:g id="second" example="Screen locked">%2$s</xliff:g></string>
+    <string name="macro_regex">정규 표현식</string>
+    <string name="macro_invalid_regex">사용할 수 없는 정규 표현식입니다. 반복되는 그룹에는 반복이나 |를 넣을 수 없습니다.</string>
+    <string name="macro_match_in">일치 대상</string>
+    <string name="macro_field_any">모든 텍스트</string>
+    <string name="macro_field_text">텍스트</string>
+    <string name="macro_field_description">설명</string>
+    <string name="macro_field_hint">힌트</string>
+    <string name="macro_field_state">상태</string>
+    <string name="macro_field_id">리소스 ID</string>
+    <string name="macro_field_value"><xliff:g id="label" example="send">%1$s</xliff:g>(<xliff:g id="field" example="Resource ID">%2$s</xliff:g>)</string>
+    <string name="macro_field_regex_value"><xliff:g id="pattern" example="^Reply">%1$s</xliff:g>(<xliff:g id="field" example="Description">%2$s</xliff:g>, 정규 표현식)</string>
+    <string name="macro_regex_value"><xliff:g id="pattern" example="Reply.*Anna">%1$s</xliff:g>(정규 표현식)</string>
+    <string name="macro_test_label_optional">항목 텍스트(선택사항)</string>
+    <string name="macro_item_kind">항목 유형</string>
+    <string name="macro_kind_any">모든 유형</string>
+    <string name="macro_kind_clickable">클릭 가능</string>
+    <string name="macro_kind_long_clickable">길게 클릭 가능</string>
+    <string name="macro_kind_editable">수정 가능</string>
+    <string name="macro_kind_scrollable">스크롤 가능</string>
+    <string name="macro_kind_adjustable">조절 가능</string>
+    <string name="macro_kind_checkable">선택 가능</string>
+    <string name="macro_kind_checked">체크됨</string>
+    <string name="macro_kind_selected">선택됨</string>
+    <string name="macro_kind_heading">제목</string>
+    <string name="macro_kind_enabled">사용 설정됨</string>
+    <string name="macro_change_to">변경 후: <xliff:g id="test" example="Keyboard hidden">%1$s</xliff:g></string>
+    <string name="macro_join_with_and">그리고로 연결</string>
+    <string name="macro_join_with_or">또는으로 연결</string>
+    <string name="macro_clause_and">그리고 <xliff:g id="test" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_clause_or">또는 <xliff:g id="test" example="Screen locked">%1$s</xliff:g></string>
+    <string name="macro_wait_timeout">대기할 초 수</string>
+    <string name="macro_add_step_after">다음 뒤에 단계 추가</string>
+    <string name="macro_problem"><xliff:g id="step" example="3">%1$d</xliff:g>단계: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_problem_no_if">만약 없이 아니면 만약, 아니면 또는 만약 끝이 있음</string>
+    <string name="macro_problem_after_else">아니면 뒤에 아니면 만약 또는 아니면이 있음</string>
+    <string name="macro_problem_no_repeat">반복 없이 반복 끝이 있음</string>
+    <string name="macro_problem_no_end_if">만약 끝이 없는 만약</string>
+    <string name="macro_problem_no_end_repeat">반복 끝이 없는 반복</string>
+    <string name="macro_problem_exit">반복 밖의 반복 종료</string>
+    <string name="macro_stopped_problem">매크로가 중지되었습니다. <xliff:g id="step" example="3">%1$d</xliff:g>단계: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_stopped_repeats">매크로가 중지되었습니다. <xliff:g id="count" example="1000">%1$d</xliff:g>회 반복함: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
+    <string name="macro_stopped_timeout">매크로가 중지되었습니다. 시간 초과: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
+    <string name="macro_not_met">매크로가 실행되지 않았습니다. 다음일 때만 실행: 조건을 충족하지 않음</string>
+</resources>

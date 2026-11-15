@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_voice_commands">صوتی کمانڈز</string>
+    <string name="title_pref_voice_commands_ai">AI سے صوتی کمانڈز سمجھیں</string>
+    <string name="voice_commands_custom">حسب ضرورت صوتی کمانڈز</string>
+    <string name="voice_command_add">صوتی کمانڈ شامل کریں</string>
+    <string name="voice_command_phrase">فقرہ</string>
+    <string name="voice_command_change_phrase">فقرہ تبدیل کریں</string>
+    <string name="voice_command_change_command">کمانڈ تبدیل کریں</string>
+    <string name="voice_command_delete_confirm">“<xliff:g id="phrase" example="Good morning">%1$s</xliff:g>” حذف کریں؟</string>
+    <string name="voice_command_phrase_exists">“<xliff:g id="phrase" example="Good morning">%1$s</xliff:g>” پہلے سے صوتی کمانڈ ہے</string>
+    <string name="voice_commands_not_understood">سمجھ میں نہیں آیا: <xliff:g id="text" example="open the door">%1$s</xliff:g></string>
+    <string name="voice_commands_not_available">دستیاب نہیں: <xliff:g id="name" example="Morning macro">%1$s</xliff:g></string>
+    <string name="voice_commands_not_found">نہیں ملا: <xliff:g id="label" example="Settings">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app">“<xliff:g id="name" example="Signal">%1$s</xliff:g>” نام کی کوئی ایپ نہیں</string>
+    <string name="voice_commands_no_app_for_action">اس کارروائی کے لیے کوئی ایپ نہیں</string>
+    <string name="voice_commands_calling">کال کی جا رہی ہے: <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_call_permission">فون کالز کی اجازت دیں، پھر کمانڈ دوبارہ کہیں۔</string>
+    <string name="voice_commands_contacts_permission">رابطوں تک رسائی کی اجازت دیں، پھر کمانڈ دوبارہ کہیں۔</string>
+    <string name="voice_commands_no_contact">“<xliff:g id="name" example="Sam">%1$s</xliff:g>” نام کا کوئی رابطہ نہیں</string>
+    <string name="voice_commands_contacts_several">“<xliff:g id="name" example="Sam">%1$s</xliff:g>” نام کے ایک سے زیادہ رابطے ہیں: <xliff:g id="names" example="Sam Jones, Sam Smith">%2$s</xliff:g></string>
+    <string name="voice_commands_message_text">پیغام برائے <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_message_confirm"><xliff:g id="name" example="Sam">%1$s</xliff:g> کو بھیجیں: <xliff:g id="text" example="I am on my way">%2$s</xliff:g>؟</string>
+    <string name="voice_commands_message_confirm_result"><xliff:g id="name" example="Sam">%1$s</xliff:g> کو بھیجیں؟</string>
+    <string name="voice_commands_message_not_sent">پیغام نہیں بھیجا گیا</string>
+    <string name="voice_commands_send_pressed">بھیجیں دبایا گیا</string>
+    <string name="voice_commands_send_button">بھیجیں</string>
+    <string name="voice_commands_no_description">کوئی تفصیل موصول نہیں ہوئی</string>
+    <string name="voice_commands_copied">کاپی ہو گیا</string>
+    <string-array name="voice_commands_chain_words">
+        <item>اور پھر</item>
+        <item>پھر</item>
+        <item>اس کے بعد</item>
+        <item>بعد میں</item>
+    </string-array>
+    <string-array name="voice_commands_and_words">
+        <item>اور</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_start">
+        <item>براہ کرم</item>
+        <item>پلیز</item>
+        <item>کیا آپ</item>
+        <item>کیا تم</item>
+        <item>میں چاہتا ہوں</item>
+        <item>میں چاہتی ہوں</item>
+        <item>ابھی</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_end">
+        <item>براہ کرم</item>
+        <item>پلیز</item>
+        <item>میرے لیے</item>
+        <item>ابھی</item>
+    </string-array>
+    <string-array name="voice_commands_cancel_words">
+        <item>رکو</item>
+        <item>روکیں</item>
+        <item>منسوخ</item>
+        <item>منسوخ کریں</item>
+        <item>چھوڑو</item>
+        <item>خاموش</item>
+    </string-array>
+    <string-array name="voice_commands_yes">
+        <item>ہاں</item>
+        <item>جی</item>
+        <item>جی ہاں</item>
+        <item>بھیجیں</item>
+        <item>بھیج دو</item>
+        <item>ٹھیک ہے</item>
+        <item>اوکے</item>
+        <item>ضرور</item>
+        <item>کر دو</item>
+    </string-array>
+    <string-array name="voice_commands_sms_names">
+        <item>SMS</item>
+        <item>ایس ایم ایس</item>
+        <item>ٹیکسٹ</item>
+        <item>ٹیکسٹ میسج</item>
+        <item>پیغامات</item>
+    </string-array>
+    <string-array name="voice_commands_send_image_description">
+        <item>{who} کو تصویر کی تفصیل بھیجیں</item>
+        <item>{who} کو تصویر کی تفصیل بھیجو</item>
+        <item>{who} کو فوٹو کی تفصیل بھیجیں</item>
+        <item>{who} کو اس تصویر کی تفصیل بھیجیں</item>
+    </string-array>
+    <string-array name="voice_commands_send_screen_description">
+        <item>{who} کو اسکرین کی تفصیل بھیجیں</item>
+        <item>{who} کو اسکرین کی تفصیل بھیجو</item>
+    </string-array>
+    <string-array name="voice_commands_send_previous">
+        <item>اسے {who} کو {app} پر بھیجیں</item>
+        <item>اسے {who} کو بھیجیں</item>
+        <item>اسے {who} کو بھیجو</item>
+        <item>تفصیل {who} کو بھیجیں</item>
+        <item>اسے {who} کے ساتھ شیئر کریں</item>
+    </string-array>
+    <string-array name="voice_commands_message">
+        <item>{who} کو {app} پر پیغام بھیجیں {text}</item>
+        <item>{who} کو {app} پر پیغام بھیجیں کہ {text}</item>
+        <item>{who} کو پیغام بھیجیں {text}</item>
+        <item>{who} کو پیغام بھیجیں کہ {text}</item>
+        <item>پیغام بھیجیں {whoandtext}</item>
+        <item>{who} کو {app} پیغام بھیجیں {text}</item>
+        <item>{who} کو {app} پر لکھیں {text}</item>
+        <item>{who} کو لکھیں {text}</item>
+        <item>{who} کو {app} پر بتائیں {text}</item>
+        <item>{who} کو میسج کریں {text}</item>
+        <item>میسج کریں {whoandtext}</item>
+    </string-array>
+    <string-array name="voice_commands_call">
+        <item>{who} کو کال کریں</item>
+        <item>{who} کو کال کرو</item>
+        <item>{who} کو فون کریں</item>
+        <item>{who} کو فون کرو</item>
+        <item>{who} کا نمبر ملائیں</item>
+    </string-array>
+    <string-array name="voice_commands_describe_screen">
+        <item>اسکرین کی تفصیل بتائیں</item>
+        <item>اسکرین کی تفصیل بتاؤ</item>
+        <item>اسکرین پر کیا ہے</item>
+        <item>میری اسکرین پر کیا ہے</item>
+    </string-array>
+    <string-array name="voice_commands_describe_image">
+        <item>[اس] تصویر کی تفصیل بتائیں</item>
+        <item>[اس] تصویر کی تفصیل بتاؤ</item>
+        <item>[اس] فوٹو کی تفصیل بتائیں</item>
+        <item>[اس] تصویر میں کیا ہے</item>
+        <item>[اس] فوٹو میں کیا ہے</item>
+    </string-array>
+    <string-array name="voice_commands_copy_result">
+        <item>اسے کاپی کریں</item>
+        <item>اسے کاپی کرو</item>
+        <item>تفصیل کاپی کریں</item>
+        <item>جو [ابھی] کہا اسے کاپی کریں</item>
+        <item>آخری بولا گیا فقرہ کاپی کریں</item>
+        <item>آخری فقرہ کاپی کریں</item>
+    </string-array>
+    <string-array name="voice_commands_wait">
+        <item>{n} سیکنڈ انتظار کریں</item>
+        <item>{n} سیکنڈ رکیں</item>
+        <item>ایک سیکنڈ انتظار کریں</item>
+        <item>انتظار کریں</item>
+        <item>رکیں</item>
+    </string-array>
+    <string-array name="voice_commands_type_text">
+        <item>{text} ٹائپ کریں</item>
+        <item>{text} ٹائپ کرو</item>
+        <item>{text} لکھیں</item>
+        <item>{text} درج کریں</item>
+    </string-array>
+    <string-array name="voice_commands_run">
+        <item>{command} میکرو چلائیں</item>
+        <item>میکرو {command} چلائیں</item>
+        <item>{command} چلائیں</item>
+        <item>{command} کریں</item>
+    </string-array>
+    <string-array name="voice_commands_open">
+        <item>{app} کھولیں</item>
+        <item>{app} کھولو</item>
+        <item>{app} شروع کریں</item>
+        <item>{app} پر جائیں</item>
+    </string-array>
+    <string-array name="voice_commands_tap">
+        <item>{label} پر دو بار تھپتھپائیں</item>
+        <item>{label} پر تھپتھپائیں</item>
+        <item>{label} پر کلک کریں</item>
+        <item>{label} دبائیں</item>
+        <item>{label} کو فعال کریں</item>
+        <item>{label} منتخب کریں</item>
+    </string-array>
+</resources>

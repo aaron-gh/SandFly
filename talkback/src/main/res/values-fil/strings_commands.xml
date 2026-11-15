@@ -59,4 +59,24 @@
     <string name="keycombo_menu_navigate_next_by_setting">Susunod ayon sa setting ng navigation</string>
     <string name="keycombo_menu_navigate_previous_by_setting">Nakaraan ayon sa setting ng navigation</string>
     <string name="title_pref_overview_screen">Overview</string>
+    <string name="title_pref_custom_menus">Mga custom na menu</string>
+    <string name="commands_category_setting_values">Mga value ng setting</string>
+    <string name="command_next_value"><xliff:g id="setting" example="Punctuation">%1$s</xliff:g>: susunod na value</string>
+    <string name="command_previous_value"><xliff:g id="setting" example="Punctuation">%1$s</xliff:g>: nakaraang value</string>
+    <string name="shortcut_script_commands">Mga script command</string>
+    <string name="shortcut_set_reading_control">Itakda ang kontrol sa pagbabasa sa <xliff:g id="control" example="Headings">%1$s</xliff:g></string>
+    <string name="title_pref_custom_reading_controls">Mga custom na kontrol sa pagbabasa</string>
+    <string name="menu_add_reading_control">Magdagdag ng kontrol sa pagbabasa</string>
+    <string name="menu_add_submenu">Magdagdag ng submenu</string>
+    <string name="menu_add_menu">Magdagdag ng menu</string>
+    <string name="menu_name">Pangalan</string>
+    <string name="menu_open">Buksan</string>
+    <string name="menu_move_to">Ilipat sa</string>
+    <string name="menu_rename">Palitan ang pangalan</string>
+    <string name="menu_delete">I-delete</string>
+    <string name="menu_delete_confirm">I-delete ang <xliff:g id="name" example="AI">%1$s</xliff:g> at lahat ng nasa loob nito?</string>
+    <string name="menu_moved">Inilipat sa <xliff:g id="place" example="AI">%1$s</xliff:g></string>
+    <string name="menu_reset">I-reset sa default</string>
+    <string name="menu_reset_confirm">I-reset ang menu ng SandFly sa mga default na item at pagkakasunod-sunod nito?</string>
+    <string name="menu_assign">Mga galaw at keyboard shortcut</string>
 </resources>

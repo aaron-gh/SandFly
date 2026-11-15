@@ -125,9 +125,16 @@ public final class ScrollAhead {
     switch (event.getEventType()) {
       case AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED -> {
         TraversalTreeCache.forgetScrolledAway();
-        AccessibilityNodeInfoCompat source =
-            event.getSource() == null ? null : AccessibilityNodeInfoCompat.wrap(event.getSource());
-        scrollAhead.onFocused(source);
+        // HTML navigation cannot produce a native scroll-ahead plan. Cancel the old plan
+        // without asking the app for a node that onFocused/planScrollAhead would discard.
+        boolean htmlNavigation = event.getAction() == AccessibilityNodeInfoCompat.ACTION_NEXT_HTML_ELEMENT
+            || event.getAction() == AccessibilityNodeInfoCompat.ACTION_PREVIOUS_HTML_ELEMENT;
+        if (!enabled || htmlNavigation) {
+          scrollAhead.onFocused(null);
+          break;
+        }
+        android.view.accessibility.AccessibilityNodeInfo raw = event.getSource();
+        scrollAhead.onFocused(raw == null ? null : AccessibilityNodeInfoCompat.wrap(raw));
       }
       case AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUS_CLEARED -> {
         scrollAhead.onFocusCleared();

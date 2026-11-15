@@ -64,7 +64,6 @@ import android.content.SharedPreferences.Editor;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.content.res.Resources;
 import android.media.AudioManager;
-import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.text.TextUtils;
@@ -86,6 +85,7 @@ import com.google.android.accessibility.talkback.Interpretation;
 import com.google.android.accessibility.talkback.Pipeline;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.TalkBackService;
+import com.google.android.accessibility.talkback.clipboard.ClipboardHistoryOverlay;
 import com.google.android.accessibility.talkback.gesture.GestureLayout;
 import com.google.android.accessibility.talkback.preference.ItemOrder;
 import com.google.android.accessibility.talkback.UserInterface.UserInputEventListener;
@@ -119,6 +119,7 @@ import com.google.android.accessibility.talkback.selector.SelectorController.Set
 import com.google.android.accessibility.talkback.speech.VoiceProfileNames;
 import com.google.android.accessibility.talkback.translation.TranslationSettings;
 import com.google.android.accessibility.talkback.utils.VerbosityPreferences;
+import com.google.android.accessibility.utils.ClipboardHistory;
 import com.google.android.accessibility.utils.FeatureSupport;
 import com.google.android.accessibility.utils.FormFactorUtils;
 import com.google.android.accessibility.utils.Performance.EventId;
@@ -129,6 +130,7 @@ import com.google.android.accessibility.utils.WebInterfaceUtils;
 import com.google.android.accessibility.utils.input.CursorGranularity;
 import com.google.android.accessibility.utils.input.TextEventFilter.TypingInput;
 import com.google.android.accessibility.utils.monitor.CollectionState;
+import com.google.android.accessibility.utils.monitor.ScreenMonitor;
 import com.google.android.accessibility.utils.output.FailoverTextToSpeech;
 import com.google.android.accessibility.utils.output.FeedbackItem;
 import com.google.android.accessibility.utils.output.SessionEqualizer;
@@ -141,7 +143,6 @@ import com.google.common.base.Ascii;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import java.text.Normalizer;
-import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -182,6 +183,8 @@ public class SelectorController implements UserInputEventListener {
   // The address or number that the reading control last said, which double-tap opens, calls or
   // copies until focus moves.
   private TextEntityMenu.@Nullable Entity chosenTextEntity;
+  // The Clipboard history reading control, in edit boxes.
+  private final ClipboardHistorySetting clipboardHistorySetting;
 
   /** Audial feedback announce types. */
   public enum AnnounceType {
@@ -316,6 +319,10 @@ public class SelectorController implements UserInputEventListener {
         R.string.pref_selector_text_entities_key,
         R.string.selector_text_entities,
         R.bool.pref_selector_text_entities_default),
+    CLIPBOARD_HISTORY(
+        R.string.pref_selector_clipboard_history_key,
+        R.string.selector_clipboard_history,
+        R.bool.pref_selector_clipboard_history_default),
     ACTIONS(
         R.string.pref_selector_actions_key,
         R.string.selector_actions,
@@ -753,6 +760,7 @@ public class SelectorController implements UserInputEventListener {
           Setting.GRANULARITY_TYPO,
           Setting.ACTIONS,
           Setting.TEXT_ENTITIES,
+          Setting.CLIPBOARD_HISTORY,
           // Puts table navigation granularities on top of the selector.
           Setting.GRANULARITY_ROW_COLUMN,
           Setting.GRANULARITY_ROW,
@@ -951,6 +959,7 @@ public class SelectorController implements UserInputEventListener {
       hiddenSettingsBuilder.add(Setting.LIVE_RECOGNITION);
       hiddenSettingsBuilder.add(Setting.AI_ACTIONS);
       hiddenSettingsBuilder.add(Setting.TEXT_ENTITIES);
+      hiddenSettingsBuilder.add(Setting.CLIPBOARD_HISTORY);
     }
     // Hide SEARCH in selector.
     if (!FeatureFlagReader.enableScreenSearchNavigation(context)
@@ -976,6 +985,8 @@ public class SelectorController implements UserInputEventListener {
     contextualSettingsBuilder.add(new AdjustableWidgetSetting());
     contextualSettingsBuilder.add(new ActionsSetting(nodeMenuCreator, accessibilityFocusMonitor));
     contextualSettingsBuilder.add(new TypoGranularity(accessibilityFocusMonitor));
+    clipboardHistorySetting = new ClipboardHistorySetting(accessibilityFocusMonitor);
+    contextualSettingsBuilder.add(clipboardHistorySetting);
     contextualSettings = contextualSettingsBuilder.build();
 
     resetActionMenuToDefault();
@@ -1185,11 +1196,7 @@ public class SelectorController implements UserInputEventListener {
         hint = getAdjustSelectedSettingGestures();
       }
       case MEDIA_VOLUME, CALL_VOLUME, RING_VOLUME, NOTIFICATION_VOLUME, ALARM_VOLUME -> {
-        StreamVolume volume = STREAM_VOLUMES.get(setting);
-        actionDescription =
-            context.getString(volume.titleResId)
-                + ", "
-                + StreamVolumeControl.percentText(context, volume.stream);
+        actionDescription = context.getString(STREAM_VOLUMES.get(setting).titleResId);
         hint = getAdjustSelectedSettingGestures();
       }
       case SOUND_MODE -> {
@@ -1264,12 +1271,8 @@ public class SelectorController implements UserInputEventListener {
           EQUALIZER_6K,
           EQUALIZER_8K,
           EQUALIZER_16K -> {
-        int band = EQUALIZER_BANDS.indexOf(setting);
         actionDescription =
-            context.getString(EQUALIZER_BAND_TITLES[band])
-                + ", "
-                + equalizerGainText(
-                    SpeechEqualizer.read(prefs, VoiceProfiles.activeId(prefs))[band]);
+            context.getString(EQUALIZER_BAND_TITLES[EQUALIZER_BANDS.indexOf(setting)]);
         hint = getAdjustSelectedSettingGestures();
       }
       case GESTURE_PROFILE -> {
@@ -1293,6 +1296,11 @@ public class SelectorController implements UserInputEventListener {
         chosenTextEntity = null;
         actionDescription = context.getString(R.string.title_text_entities);
         hint = context.getString(R.string.text_entities_hint);
+      }
+      case CLIPBOARD_HISTORY -> {
+        clipboardHistorySetting.reset();
+        actionDescription = context.getString(R.string.title_clipboard_history);
+        hint = context.getString(R.string.clipboard_history_hint);
       }
       case ACTIONS -> {
         // Reset currentActionId to the default action.
@@ -1367,6 +1375,56 @@ public class SelectorController implements UserInputEventListener {
   }
 
   /**
+   * The value of {@code setting} said after its name when it is selected, such as "60 percent" for
+   * Speech rate, or null for a reading control without a value.
+   */
+  private @Nullable String settingValue(Setting setting) {
+    switch (setting) {
+      case SPEECH_RATE -> {
+        return context.getString(
+            R.string.tb_template_percent,
+            String.valueOf(actorState.getSpeechRateState().getSpeechRatePercentage()));
+      }
+      case LANGUAGE -> {
+        // A voice profile in use sets the language, and the reading control can't change it.
+        return VoiceProfiles.isProfileActive()
+            ? null
+            : actorState.getLanguageState().getCurrentLanguageString();
+      }
+      case HIDE_SCREEN -> {
+        return ReadingControlValues.onOff(context, actorState.getDimScreen().isDimmingEnabled());
+      }
+      case MEDIA_VOLUME, CALL_VOLUME, RING_VOLUME, NOTIFICATION_VOLUME, ALARM_VOLUME -> {
+        return StreamVolumeControl.percentText(context, STREAM_VOLUMES.get(setting).stream);
+      }
+      case EQUALIZER_32,
+          EQUALIZER_64,
+          EQUALIZER_125,
+          EQUALIZER_250,
+          EQUALIZER_500,
+          EQUALIZER_1K,
+          EQUALIZER_2K,
+          EQUALIZER_3K,
+          EQUALIZER_4K,
+          EQUALIZER_6K,
+          EQUALIZER_8K,
+          EQUALIZER_16K -> {
+        return equalizerGainText(
+            SpeechEqualizer.read(prefs, VoiceProfiles.activeId(prefs))[
+                EQUALIZER_BANDS.indexOf(setting)]);
+      }
+      default -> {
+        return ReadingControlValues.of(context, prefs, setting);
+      }
+    }
+  }
+
+  /** {@code name} followed by {@code value}, or {@code name} alone without a value. */
+  private static String withValue(String name, @Nullable String value) {
+    return ReadingControlValues.withValue(name, value);
+  }
+
+  /**
    * Called after screen search action performed. It set search granularity in selector settings
    * automatically that make user easier to use screen search navigation.
    */
@@ -1403,17 +1461,20 @@ public class SelectorController implements UserInputEventListener {
       return;
     }
 
-    if (announceType == AnnounceType.DESCRIPTION) {
-      announceSetting(eventId, descriptionAndHint.description, null);
-    } else if (announceType == AnnounceType.DESCRIPTION_AND_HINT) {
-      announceSetting(eventId, descriptionAndHint.description, descriptionAndHint.hint);
-    }
-    if (showOverlay) {
-      if (actorState.getDimScreen().isDimmingEnabled()
-          && !actorState.getDimScreen().isInstructionDisplayed()) {
-        LogUtils.d(TAG, "Hide the UI if the screen is dimming.");
-      } else {
-        showQuickMenuOverlay(eventId, descriptionAndHint.description);
+    if (announceType != AnnounceType.SILENCE || showOverlay) {
+      String description = withValue(descriptionAndHint.description, settingValue(newSetting));
+      if (announceType == AnnounceType.DESCRIPTION) {
+        announceSetting(eventId, description, null);
+      } else if (announceType == AnnounceType.DESCRIPTION_AND_HINT) {
+        announceSetting(eventId, description, descriptionAndHint.hint);
+      }
+      if (showOverlay) {
+        if (actorState.getDimScreen().isDimmingEnabled()
+            && !actorState.getDimScreen().isInstructionDisplayed()) {
+          LogUtils.d(TAG, "Hide the UI if the screen is dimming.");
+        } else {
+          showQuickMenuOverlay(eventId, description);
+        }
       }
     }
     // Update cursor granularity if the setting related to granularity.
@@ -1518,6 +1579,7 @@ public class SelectorController implements UserInputEventListener {
       requestServiceHandlesDoubleTap(EVENT_ID_UNTRACKED, false);
     }
     chosenTextEntity = null;
+    clipboardHistorySetting.reset();
     // Reset currentActionId to the default action.
     resetActionMenuToDefault();
 
@@ -1534,9 +1596,20 @@ public class SelectorController implements UserInputEventListener {
     if (nodeInfo == null || nodeInfo.equals(lastFocusedNode)) {
       return;
     }
-    if (touchActive) {
+    NavigationAction navigation = focusActionInfo.navigationAction;
+    boolean defaultTouchNavigation = WebInterfaceUtils.supportsWebActions(
+        AccessibilityNodeInfoCompat.wrap(nodeInfo)) && navigation != null
+        && navigation.inputMode == INPUT_MODE_TOUCH
+        && navigation.actionType == NavigationAction.DIRECTIONAL_NAVIGATION
+        && (navigation.originalNavigationGranularity == null
+            || navigation.originalNavigationGranularity == CursorGranularity.DEFAULT)
+        && !needsImmediateTableSwitch(nodeInfo);
+    if (touchActive || defaultTouchNavigation) {
       handler.removeCallbacks(switchAfterTouch);
       lastFocusedNode = nodeInfo;
+      // Browser focus often arrives after touch-end. It is still the answer to a swipe, and
+      // matching controls for that item can wait until the same short idle interval ends.
+      if (!touchActive) handler.postDelayed(switchAfterTouch, SWITCH_AFTER_TOUCH_MS);
     } else {
       handler.removeCallbacks(switchAfterTouch);
       switchCurrentSetting(nodeInfo);
@@ -1676,12 +1749,26 @@ public class SelectorController implements UserInputEventListener {
     }
   }
 
+  /** Table navigation can change what left/right gestures mean; keep that match immediate. */
+  public void applyPendingSwitchForDefaultNavigation() {
+    if (lastFocusedNode != null && (!WebInterfaceUtils.supportsWebActions(
+        AccessibilityNodeInfoCompat.wrap(lastFocusedNode)) || needsImmediateTableSwitch(lastFocusedNode))) {
+      applyPendingSwitch();
+    }
+  }
+
+  private boolean needsImmediateTableSwitch(AccessibilityNodeInfo node) {
+    return isTableNavigation(getCurrentSetting(context, prefs))
+        || rowColumnGranularity.shouldActivateSetting(context, AccessibilityNodeInfoCompat.wrap(node));
+  }
+
   /** Forgets the item waiting for its reading control, such as when SandFly turns off. */
   public void shutdown() {
     handler.removeCallbacks(switchAfterTouch);
     cancelPageScroll();
     lastFocusedNode = null;
     chosenTextEntity = null;
+    clipboardHistorySetting.reset();
   }
 
   /** Selects the previous or next setting. For selecting setting via gesture. */
@@ -2134,6 +2221,12 @@ public class SelectorController implements UserInputEventListener {
         return FeatureSupport.doesServiceHandleDoubleTap()
             && !TextEntityMenu.included(context).isEmpty();
       }
+      case CLIPBOARD_HISTORY -> {
+        // The history can hold private text.
+        return FeatureSupport.doesServiceHandleDoubleTap()
+            && !ScreenMonitor.isDeviceLocked(context)
+            && clipboardHistorySetting.isNodeSupportSetting(context, node);
+      }
       case ACTIONS -> {
         Optional<ContextualSetting> actions = findContextualSetting(ACTIONS);
         if (actions.isEmpty()) {
@@ -2501,6 +2594,10 @@ public class SelectorController implements UserInputEventListener {
         changeTextEntity(eventId, isNext);
         return;
       }
+      case CLIPBOARD_HISTORY -> {
+        changeClipboardEntry(eventId, isNext);
+        return;
+      }
       case SPEECH_RATE -> {
         // TODO: Increase speech rate when swipe-up is assigned to the selected setting's
         // previous action, which will be the default assignment.
@@ -2755,7 +2852,45 @@ public class SelectorController implements UserInputEventListener {
       TextEntityMenu.Entity entity = chosenTextEntity;
       return entity != null && textEntityMenu.choose(context, entity);
     }
+    if (setting == Setting.CLIPBOARD_HISTORY) {
+      return pasteClipboardEntry();
+    }
     return false;
+  }
+
+  /**
+   * Says the next or previous text of the clipboard history, newest first, which double-tap then
+   * pastes into the edit box.
+   */
+  private void changeClipboardEntry(EventId eventId, boolean isNext) {
+    List<String> entries =
+        ScreenMonitor.isDeviceLocked(context) ? List.of() : ClipboardHistory.entries(context);
+    @Nullable String text = clipboardHistorySetting.step(entries, isNext);
+    if (text == null) {
+      doubleTapArmed = false;
+      requestServiceHandlesDoubleTap(eventId, false);
+      announceSetting(eventId, context.getString(R.string.clipboard_history_empty), null);
+      return;
+    }
+    doubleTapArmed = true;
+    requestServiceHandlesDoubleTap(eventId, true);
+    announceSetting(
+        eventId,
+        ClipboardHistoryOverlay.shortened(text),
+        context.getString(R.string.clipboard_history_hint));
+  }
+
+  /** Pastes the clipboard history's text said last into the edit box with focus. */
+  private boolean pasteClipboardEntry() {
+    @Nullable String text = clipboardHistorySetting.getChosen();
+    @Nullable AccessibilityNodeInfoCompat editBox = clipboardHistorySetting.editBox(null);
+    if (text == null
+        || editBox == null
+        || !(context instanceof AccessibilityService service)
+        || ScreenMonitor.isDeviceLocked(context)) {
+      return false;
+    }
+    return ClipboardHistoryOverlay.pasteEntry(service, editBox.unwrap(), text);
   }
 
   /**
@@ -2996,8 +3131,7 @@ public class SelectorController implements UserInputEventListener {
 
   /** A band's gain as spoken, such as "+3 dB". */
   private String equalizerGainText(int gain) {
-    String number = (gain > 0 ? "+" : "") + NumberFormat.getIntegerInstance().format(gain);
-    return context.getString(R.string.speech_equalizer_gain_db, number);
+    return ReadingControlValues.equalizerGainText(context, gain);
   }
 
   /**
@@ -3238,7 +3372,7 @@ public class SelectorController implements UserInputEventListener {
   }
 
   /** Returns the way of typing whose keyboard echo a keyboard echo reading control changes. */
-  private static TypingInput keyboardEchoInput(Setting setting) {
+  static TypingInput keyboardEchoInput(Setting setting) {
     return switch (setting) {
       case KEYBOARD_ECHO_PHYSICAL -> TypingInput.PHYSICAL_KEYBOARD;
       case KEYBOARD_ECHO_BRAILLE_KEYBOARD -> TypingInput.BRAILLE_KEYBOARD;
@@ -3528,46 +3662,15 @@ public class SelectorController implements UserInputEventListener {
   }
 
   private int accessibilityVolumePercent() {
-    AudioManager audioManager = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
-    int min =
-        Build.VERSION.SDK_INT >= Build.VERSION_CODES.P
-            ? audioManager.getStreamMinVolume(AudioManager.STREAM_ACCESSIBILITY)
-            : 0;
-    int max = audioManager.getStreamMaxVolume(AudioManager.STREAM_ACCESSIBILITY);
-    int volume = audioManager.getStreamVolume(AudioManager.STREAM_ACCESSIBILITY);
-    return max > min ? Math.round(100f * (volume - min) / (max - min)) : 100;
+    return ReadingControlValues.accessibilityVolumePercent(context);
   }
 
   private String focusDelayText() {
-    int timeout =
-        SharedPreferencesUtils.getIntFromStringPref(
-            prefs,
-            context.getResources(),
-            R.string.pref_touch_focus_time_out_key,
-            R.string.pref_touch_focus_time_out_default);
-    for (FocusDelayPrefFragment.FocusDelayPref source :
-        FocusDelayPrefFragment.FocusDelayPref.values()) {
-      if (timeout == source.getDelay()) {
-        return context.getString(source.getTitleId());
-      }
-    }
-    return "";
+    return ReadingControlValues.focusDelayText(context, prefs);
   }
 
   private String typingFocusDelayText() {
-    int timeout =
-        SharedPreferencesUtils.getIntFromStringPref(
-            prefs,
-            context.getResources(),
-            R.string.pref_typing_focus_time_out_key,
-            R.string.pref_touch_explore_time_out_default);
-    for (TypingFocusDelayPrefFragment.TypingFocusDelayPref source :
-        TypingFocusDelayPrefFragment.TypingFocusDelayPref.values()) {
-      if (timeout == source.getDelay()) {
-        return context.getString(source.getTitleId());
-      }
-    }
-    return "";
+    return ReadingControlValues.typingFocusDelayText(context, prefs);
   }
 
   private void updateFocusDelayPreference(EventId eventId) {

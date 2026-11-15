@@ -46,4 +46,17 @@
     <string name="granular_editing_not_saved">Ez da gorde: testu-eremua desagertu egin da. Testua kopiatu da.</string>
     <string name="granular_editing_no_text">Ez dago editatzeko testurik</string>
     <string name="granular_editing_password">Ez dago erabilgarri pasahitz eremuetan</string>
+    <plurals name="granular_editing_spaces">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> zuriune</item>
+        <item quantity="other"><xliff:g id="count" example="1">%d</xliff:g> zuriune</item>
+    </plurals>
+    <plurals name="granular_editing_new_lines">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> lerro berri</item>
+        <item quantity="other"><xliff:g id="count" example="1">%d</xliff:g> lerro berri</item>
+    </plurals>
+    <plurals name="granular_editing_tabs">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> tabulazio</item>
+        <item quantity="other"><xliff:g id="count" example="1">%d</xliff:g> tabulazio</item>
+    </plurals>
+    <string name="granular_editing_blank_line">Lerro hutsa</string>
 </resources>

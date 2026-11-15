@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_macros">Макрои</string>
+    <string name="shortcut_stop_macro">Заустави макро</string>
+    <string name="macro_add">Додај макро</string>
+    <string name="macro_run_now">Покрени сада</string>
+    <string name="macro_add_step">Додај корак</string>
+    <string name="macro_add_at_end">На крај</string>
+    <string name="macro_add_at_start">На почетак</string>
+    <string name="macro_add_after">После корака <xliff:g id="step" example="2">%1$d</xliff:g>: <xliff:g id="name" example="If App in front: Chrome">%2$s</xliff:g></string>
+    <string name="macro_steps">Кораци</string>
+    <string name="macro_no_steps">Нема корака</string>
+    <string name="macro_delete">Избриши макро</string>
+    <string name="macro_delete_confirm">Избрисати <xliff:g id="name" example="Send message">%1$s</xliff:g>?</string>
+    <string name="macro_step_command">Покрени команду</string>
+    <string name="macro_step_wait">Чекај</string>
+    <string name="macro_step_tap">Додирни ставку</string>
+    <string name="macro_step_focus">Фокусирај ставку</string>
+    <string name="macro_step_speak_item">Изговори ставку</string>
+    <string name="macro_step_speak_text">Изговори текст</string>
+    <string name="macro_step_type">Укуцај текст</string>
+    <string name="macro_step_tap_value">Додирни: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_focus_value">Фокусирај: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_item_value">Изговори: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_text_value">Изговори: <xliff:g id="text" example="Done">%1$s</xliff:g></string>
+    <string name="macro_step_type_value">Укуцај: <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <string name="macro_step_replace_value">Замени текст са: <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <plurals name="macro_step_wait_seconds">
+        <item quantity="one">Чекај <xliff:g id="count" example="2">%d</xliff:g> секунду</item>
+        <item quantity="few">Чекај <xliff:g id="count" example="2">%d</xliff:g> секунде</item>
+        <item quantity="other">Чекај <xliff:g id="count" example="2">%d</xliff:g> секунди</item>
+    </plurals>
+    <plurals name="macro_step_wait_milliseconds">
+        <item quantity="one">Чекај <xliff:g id="count" example="500">%d</xliff:g> милисекунду</item>
+        <item quantity="few">Чекај <xliff:g id="count" example="500">%d</xliff:g> милисекунде</item>
+        <item quantity="other">Чекај <xliff:g id="count" example="500">%d</xliff:g> милисекунди</item>
+    </plurals>
+    <string name="macro_step_unavailable">Није доступно</string>
+    <string name="macro_seconds">Секунде</string>
+    <string name="macro_invalid_seconds">Унесите број секунди до <xliff:g id="max" example="600">%1$d</xliff:g></string>
+    <string name="macro_tap_label">Текст ставке</string>
+    <string name="macro_tap_timeout">Секунде чекања на ставку</string>
+    <string name="macro_text">Текст</string>
+    <string name="macro_replace_text">Замени текст у пољу</string>
+    <string name="macro_item_not_found">Макро је заустављен. Није пронађено: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_failed">Макро је заустављен. Није успело: <xliff:g id="step" example="Open Gmail">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until">Чекај док</string>
+    <string name="macro_step_if">Ако</string>
+    <string name="macro_step_else_if">Иначе ако</string>
+    <string name="macro_step_else">Иначе</string>
+    <string name="macro_step_end_if">Крај Ако</string>
+    <string name="macro_step_repeat">Понови</string>
+    <string name="macro_step_repeat_while">Понови док</string>
+    <string name="macro_step_end_repeat">Крај понављања</string>
+    <string name="macro_step_exit_loop">Изађи из петље</string>
+    <string name="macro_step_if_value">Ако <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_else_if_value">Иначе ако <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_repeat_while_value">Понови док <xliff:g id="condition" example="Item on screen: Load more">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until_value">Чекај док <xliff:g id="condition" example="Item on screen: Send">%1$s</xliff:g></string>
+    <plurals name="macro_step_repeat_value">
+        <item quantity="one">Понови <xliff:g id="count" example="3">%d</xliff:g> пут</item>
+        <item quantity="few">Понови <xliff:g id="count" example="3">%d</xliff:g> пута</item>
+        <item quantity="other">Понови <xliff:g id="count" example="3">%d</xliff:g> пута</item>
+    </plurals>
+    <string name="macro_times">Пута</string>
+    <string name="macro_invalid_times">Унесите број од 1 до <xliff:g id="max" example="1000">%1$d</xliff:g></string>
+    <string name="macro_run_only_when">Покрени само када</string>
+    <string name="macro_always">Увек</string>
+    <string name="macro_no_tests">Нема провера</string>
+    <string name="macro_add_test">Додај проверу</string>
+    <string name="macro_tests">Провере</string>
+    <string name="macro_choose_test">Провера</string>
+    <string name="macro_test_item">Ставка на екрану</string>
+    <string name="macro_test_focused">Фокусирана ставка</string>
+    <string name="macro_test_app">Апликација је у првом плану</string>
+    <string name="macro_test_keyboard">Тастатура је приказана</string>
+    <string name="macro_test_keyboard_hidden">Тастатура је скривена</string>
+    <string name="macro_test_locked">Екран је закључан</string>
+    <string name="macro_test_unlocked">Екран је откључан</string>
+    <string name="macro_test_item_value">Ставка на екрану: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_no_item_value">Нема ставке на екрану: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_focused_value">Фокусирана ставка: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_not_focused_value">Фокусирана ставка није: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_app_value">Апликација у првом плану: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_not_app_value">Апликација није у првом плану: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_label_kind"><xliff:g id="label" example="Send">%1$s</xliff:g>, <xliff:g id="kind" example="Clickable">%2$s</xliff:g></string>
+    <string name="macro_join_and"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g> и <xliff:g id="second" example="Focused item: Editable">%2$s</xliff:g></string>
+    <string name="macro_join_or"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g> или <xliff:g id="second" example="Screen locked">%2$s</xliff:g></string>
+    <string name="macro_regex">Регуларни израз</string>
+    <string name="macro_invalid_regex">Није употребљив регуларни израз. Груписани изрази који се понављају не могу да садрже понављање или |.</string>
+    <string name="macro_match_in">Поклапање у</string>
+    <string name="macro_field_any">Било који текст</string>
+    <string name="macro_field_text">Текст</string>
+    <string name="macro_field_description">Опис</string>
+    <string name="macro_field_hint">Савет</string>
+    <string name="macro_field_state">Стање</string>
+    <string name="macro_field_id">ИД ресурса</string>
+    <string name="macro_field_value"><xliff:g id="label" example="send">%1$s</xliff:g> (<xliff:g id="field" example="Resource ID">%2$s</xliff:g>)</string>
+    <string name="macro_field_regex_value"><xliff:g id="pattern" example="^Reply">%1$s</xliff:g> (<xliff:g id="field" example="Description">%2$s</xliff:g>, регуларни израз)</string>
+    <string name="macro_regex_value"><xliff:g id="pattern" example="Reply.*Anna">%1$s</xliff:g> (регуларни израз)</string>
+    <string name="macro_test_label_optional">Текст ставке (опционо)</string>
+    <string name="macro_item_kind">Тип ставке</string>
+    <string name="macro_kind_any">Било који тип</string>
+    <string name="macro_kind_clickable">Може да се кликне</string>
+    <string name="macro_kind_long_clickable">Може да се дуго кликне</string>
+    <string name="macro_kind_editable">Може да се мења</string>
+    <string name="macro_kind_scrollable">Може да се помера</string>
+    <string name="macro_kind_adjustable">Може да се подешава</string>
+    <string name="macro_kind_checkable">Може да се означи</string>
+    <string name="macro_kind_checked">Означено</string>
+    <string name="macro_kind_selected">Изабрано</string>
+    <string name="macro_kind_heading">Наслов</string>
+    <string name="macro_kind_enabled">Омогућено</string>
+    <string name="macro_change_to">Промени у: <xliff:g id="test" example="Keyboard hidden">%1$s</xliff:g></string>
+    <string name="macro_join_with_and">Повежи са „и“</string>
+    <string name="macro_join_with_or">Повежи са „или“</string>
+    <string name="macro_clause_and">и <xliff:g id="test" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_clause_or">или <xliff:g id="test" example="Screen locked">%1$s</xliff:g></string>
+    <string name="macro_wait_timeout">Секунде чекања</string>
+    <string name="macro_add_step_after">Додај корак после</string>
+    <string name="macro_problem">Корак <xliff:g id="step" example="3">%1$d</xliff:g>: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_problem_no_if">Иначе ако, Иначе или Крај Ако без Ако</string>
+    <string name="macro_problem_after_else">Иначе ако или Иначе после Иначе</string>
+    <string name="macro_problem_no_repeat">Крај понављања без Понови</string>
+    <string name="macro_problem_no_end_if">Ако без Крај Ако</string>
+    <string name="macro_problem_no_end_repeat">Понови без Крај понављања</string>
+    <string name="macro_problem_exit">Изађи из петље ван понављања</string>
+    <string name="macro_stopped_problem">Макро је заустављен. Корак <xliff:g id="step" example="3">%1$d</xliff:g>: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_stopped_repeats">Макро је заустављен. Поновљено <xliff:g id="count" example="1000">%1$d</xliff:g> пута: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
+    <string name="macro_stopped_timeout">Макро је заустављен. Време је истекло: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
+    <string name="macro_not_met">Макро није покренут. Покрени само када: није испуњено</string>
+</resources>

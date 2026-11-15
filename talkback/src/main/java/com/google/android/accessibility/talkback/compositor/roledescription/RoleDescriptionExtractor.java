@@ -25,6 +25,7 @@ import com.google.android.accessibility.talkback.compositor.CompositorUtils;
 import com.google.android.accessibility.talkback.compositor.GlobalVariables;
 import com.google.android.accessibility.talkback.imagecaption.ImageContents;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
+import com.google.android.accessibility.utils.ConcurrentNodeQueries;
 import com.google.android.accessibility.utils.Role;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -199,7 +200,7 @@ public class RoleDescriptionExtractor {
         AccessibilityNodeInfoCompat parentNode = node.getParent();
         if (parentNode != null
             && Role.getRole(parentNode) == Role.ROLE_PAGER
-            && AccessibilityNodeInfoUtils.countVisibleChildren(parentNode) == 1) {
+            && ConcurrentNodeQueries.hasExactlyOneVisibleChild(parentNode)) {
           return pagerPageDescription;
         }
         return defaultDescription;

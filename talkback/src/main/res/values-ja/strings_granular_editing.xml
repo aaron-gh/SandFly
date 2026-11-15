@@ -46,4 +46,14 @@
     <string name="granular_editing_not_saved">保存されませんでした: テキスト フィールドがなくなりました。テキストはコピーされました。</string>
     <string name="granular_editing_no_text">編集するテキストがありません</string>
     <string name="granular_editing_password">パスワード フィールドでは使用できません</string>
+    <plurals name="granular_editing_spaces">
+        <item quantity="other">スペース <xliff:g id="count" example="3">%d</xliff:g> 個</item>
+    </plurals>
+    <plurals name="granular_editing_new_lines">
+        <item quantity="other">改行 <xliff:g id="count" example="3">%d</xliff:g> 個</item>
+    </plurals>
+    <plurals name="granular_editing_tabs">
+        <item quantity="other">タブ <xliff:g id="count" example="3">%d</xliff:g> 個</item>
+    </plurals>
+    <string name="granular_editing_blank_line">空行</string>
 </resources>

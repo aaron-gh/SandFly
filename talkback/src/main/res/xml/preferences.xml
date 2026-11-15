@@ -131,6 +131,10 @@
       android:key="pref_updates_screen"
       android:title="@string/title_pref_updates" />
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+      android:fragment="com.google.android.accessibility.talkback.preference.base.ShizukuRootFragment"
+      android:key="pref_shizuku_root_screen"
+      android:title="@string/title_pref_shizuku_root_screen" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
       android:fragment="com.google.android.accessibility.talkback.preference.base.HelpFragment"
       android:key="pref_help_screen"
       android:title="@string/title_pref_help_and_feedback" />

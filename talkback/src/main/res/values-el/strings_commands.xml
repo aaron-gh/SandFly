@@ -59,4 +59,24 @@
     <string name="keycombo_menu_navigate_next_by_setting">Επόμενο βάσει ρύθμισης πλοήγησης</string>
     <string name="keycombo_menu_navigate_previous_by_setting">Προηγούμενο βάσει ρύθμισης πλοήγησης</string>
     <string name="title_pref_overview_screen">Επισκόπηση</string>
+    <string name="title_pref_custom_menus">Προσαρμοσμένα μενού</string>
+    <string name="commands_category_setting_values">Τιμές ρυθμίσεων</string>
+    <string name="command_next_value"><xliff:g id="setting" example="Punctuation">%1$s</xliff:g>: επόμενη τιμή</string>
+    <string name="command_previous_value"><xliff:g id="setting" example="Punctuation">%1$s</xliff:g>: προηγούμενη τιμή</string>
+    <string name="shortcut_script_commands">Εντολές σεναρίων</string>
+    <string name="shortcut_set_reading_control">Ορισμός στοιχείου ελέγχου ανάγνωσης σε <xliff:g id="control" example="Headings">%1$s</xliff:g></string>
+    <string name="title_pref_custom_reading_controls">Προσαρμοσμένα στοιχεία ελέγχου ανάγνωσης</string>
+    <string name="menu_add_reading_control">Προσθήκη στοιχείου ελέγχου ανάγνωσης</string>
+    <string name="menu_add_submenu">Προσθήκη υπομενού</string>
+    <string name="menu_add_menu">Προσθήκη μενού</string>
+    <string name="menu_name">Όνομα</string>
+    <string name="menu_open">Άνοιγμα</string>
+    <string name="menu_move_to">Μετακίνηση σε</string>
+    <string name="menu_rename">Μετονομασία</string>
+    <string name="menu_delete">Διαγραφή</string>
+    <string name="menu_delete_confirm">Διαγραφή του <xliff:g id="name" example="AI">%1$s</xliff:g> και όλου του περιεχομένου του;</string>
+    <string name="menu_moved">Μετακινήθηκε σε <xliff:g id="place" example="AI">%1$s</xliff:g></string>
+    <string name="menu_reset">Επαναφορά προεπιλογών</string>
+    <string name="menu_reset_confirm">Επαναφορά του μενού SandFly στα προεπιλεγμένα στοιχεία και τη σειρά τους;</string>
+    <string name="menu_assign">Κινήσεις και συντόμευση πληκτρολογίου</string>
 </resources>

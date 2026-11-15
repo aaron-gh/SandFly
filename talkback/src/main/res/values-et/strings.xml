@@ -2025,4 +2025,144 @@
     <string name="value_keep_models_5">5 minutit</string>
     <string name="value_keep_models_15">15 minutit</string>
     <string name="value_keep_models_30">30 minutit</string>
+    <string name="title_pref_speech_equalizer_save_preset">Salvesta eelseadistusena</string>
+    <string name="title_pref_speech_equalizer_saved_presets">Salvestatud eelseadistused</string>
+    <string name="speech_equalizer_preset_name">Nimi</string>
+    <string name="speech_equalizer_preset_name_taken">Eelseadistus nimega <xliff:g id="name" example="Podcast">%1$s</xliff:g> on juba olemas</string>
+    <string name="speech_equalizer_presets_full">Rohkem eelseadistusi ei saa salvestada. Kustutage üks, et salvestada teine.</string>
+    <string name="speech_equalizer_preset_saved"><xliff:g id="name" example="Podcast">%1$s</xliff:g> salvestatud</string>
+    <string name="speech_equalizer_preset_rename">Nimeta ümber</string>
+    <string name="speech_equalizer_preset_delete">Kustuta</string>
+    <string name="speech_equalizer_preset_delete_confirm">Kustutada <xliff:g id="name" example="Podcast">%1$s</xliff:g>?</string>
+    <string name="speech_equalizer_preset_deleted"><xliff:g id="name" example="Podcast">%1$s</xliff:g> kustutatud</string>
+    <string name="title_pref_emoji_voice">Emotikoni hääl</string>
+    <string name="value_emoji_voice_same">Sama mis kõnel</string>
+    <string name="title_pref_emoji_rate">Emotikonide kõne kiirus</string>
+    <string name="title_pref_line_breaks_as_spaces">Loe reavahetused tühikutena</string>
+    <string name="title_pref_language_voices">Hääled keele järgi</string>
+    <string name="title_pref_identify_languages_from_words">Tuvasta keeled sõnade järgi</string>
+    <string name="title_pref_add_language">Lisa keel</string>
+    <string name="title_pref_remove_language">Eemalda keel</string>
+    <string name="title_pref_script_language">%1$s kiri</string>
+    <string name="title_pref_screen_on_notification_count">Märguannete arv</string>
+    <plurals name="template_screen_on_notification_count">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> märguanne</item>
+        <item quantity="other"><xliff:g id="count" example="6">%d</xliff:g> märguannet</item>
+    </plurals>
+    <string name="title_pref_phonetic_letters_review">Loe tähed ette foneetiliselt ülevaatamisel</string>
+    <string name="title_pref_phonetic_letters_typing">Loe tähed ette foneetiliselt sisestamisel</string>
+    <string name="title_pref_emoji_suffix">Loe emotikonide nimede järel ette „emotikon“</string>
+    <string name="overview_shizuku_not_running">Shizuku ei tööta</string>
+    <string name="overview_shizuku_not_allowed">Shizuku ei luba rakendust SandFly</string>
+    <string name="overview_no_older_app">Vanemat rakendust pole</string>
+    <string name="overview_no_newer_app">Uuemat rakendust pole</string>
+    <string name="stream_volume_needs_access">Selle helitugevuse muutmiseks lubage juurdepääs funktsioonile Mitte segada.</string>
+    <string name="corner_gestures_title">Nurgad</string>
+    <string name="shortcut_move_to_item_below">Liigu allolevale üksusele</string>
+    <string name="shortcut_move_to_item_above">Liigu ülaolevale üksusele</string>
+    <string name="shortcut_older_app">Vanem rakendus</string>
+    <string name="shortcut_newer_app">Uuem rakendus</string>
+    <string name="shortcut_answer_call">Vasta kõnele</string>
+    <string name="answer_call_no_call">Sissetulevat kõnet pole</string>
+    <string name="answer_call_permission">Kõnedele vastamiseks on vaja luba</string>
+    <string name="shortcut_switch_keyboard">Vaheta klaviatuuri</string>
+    <string name="switch_keyboard_none">Muud klaviatuuri pole sisse lülitatud</string>
+    <string name="switch_keyboard_failed">Klaviatuuri ei vahetatud</string>
+    <string name="clipboard_history_hint">Valimiseks pühkige üles või alla, kleepimiseks topeltpuudutage</string>
+    <string name="title_speech_history">Kõneajalugu</string>
+    <string name="speech_history_empty">Kõnet pole</string>
+    <string name="speech_history_clear">Tühjenda ajalugu</string>
+    <string name="title_pref_shortcut_corner_top_left_tap">Ülemise vasaku nurga puudutamine</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap">Ülemise vasaku nurga topeltpuudutamine</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap">Ülemise vasaku nurga kolmikpuudutamine</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap_hold">Ülemise vasaku nurga topeltpuudutamine ja all hoidmine</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap_hold">Ülemise vasaku nurga kolmikpuudutamine ja all hoidmine</string>
+    <string name="title_pref_shortcut_corner_top_right_tap">Ülemise parema nurga puudutamine</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap">Ülemise parema nurga topeltpuudutamine</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap">Ülemise parema nurga kolmikpuudutamine</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap_hold">Ülemise parema nurga topeltpuudutamine ja all hoidmine</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap_hold">Ülemise parema nurga kolmikpuudutamine ja all hoidmine</string>
+    <string name="title_pref_shortcut_corner_bottom_left_tap">Alumise vasaku nurga puudutamine</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap">Alumise vasaku nurga topeltpuudutamine</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap">Alumise vasaku nurga kolmikpuudutamine</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap_hold">Alumise vasaku nurga topeltpuudutamine ja all hoidmine</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap_hold">Alumise vasaku nurga kolmikpuudutamine ja all hoidmine</string>
+    <string name="title_pref_shortcut_corner_bottom_right_tap">Alumise parema nurga puudutamine</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap">Alumise parema nurga topeltpuudutamine</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap">Alumise parema nurga kolmikpuudutamine</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap_hold">Alumise parema nurga topeltpuudutamine ja all hoidmine</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap_hold">Alumise parema nurga kolmikpuudutamine ja all hoidmine</string>
+    <string name="title_pref_swipe_start_time">Liigutuse algusaeg</string>
+    <string name="title_pref_swipes_before_lift">Tuvasta pühkimised enne sõrme tõstmist</string>
+    <string name="summary_pref_swipes_before_lift">Lülitab välja edasi-tagasi ja nurga liigutused.</string>
+    <string name="title_pref_corner_size_mm">Nurga suurus</string>
+    <string name="value_corner_size_edge_width">Sama mis serva laius</string>
+    <string name="title_pref_corner_tap_time_ms">Nurga puudutuse ajapiir</string>
+    <string name="value_corner_tap_time_system">Süsteemi vaikeseade</string>
+    <string name="title_pref_edge_speak_commands">Loe käsk ette igal klõpsul</string>
+    <string-array name="pref_volume_change_feedback_entries">
+        <item>@string/volume_change_feedback_off</item>
+        <item>@string/volume_change_feedback_tone</item>
+        <item>@string/volume_change_feedback_spoken</item>
+        <item>@string/volume_change_feedback_tone_and_spoken</item>
+    </string-array>
+    <string name="title_pref_volume_change_tone_during_media">Vaigista toon meedia esitamise ajal</string>
+    <string name="title_pref_volume_change_speech_during_media">Vaigista kõne meedia esitamise ajal</string>
+    <string name="title_pref_volume_change_interrupts_speech">Katkesta kõne helitugevuse teatamiseks</string>
+    <string name="title_pref_volume_keys_speech_volume_while_speaking">Helitugevuse klahvid muudavad kõne helitugevust kõne ajal</string>
+    <string name="title_pref_double_tap_moves_cursor">Topeltpuudutus liigutab kursori algusesse või lõppu</string>
+    <string name="title_pref_scroll_ahead">Keri järgmise üksuseni ette</string>
+    <string name="title_pref_speak_while_scrolling">Loe järgmine üksus ette kerimise ajal</string>
+    <string-array name="pref_text_entities_entries">
+    <item>@string/text_entity_web</item>
+    <item>@string/text_entity_email</item>
+    <item>@string/text_entity_phone</item>
+    <item>@string/text_entity_code</item>
+  </string-array>
+    <string name="value_keep_models_until_stopped">Kuni SandFly peatub</string>
+    <string name="title_pref_model_download_server">Mudelite allalaadimisserver</string>
+    <string name="title_pref_settings_profiles">Seadete profiilid</string>
+    <string name="title_pref_new_settings_profile">Uus seadete profiil</string>
+    <string name="settings_profile_new_name">Profiil <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="settings_profile_name_taken">Seadete profiil nimega <xliff:g id="name" example="Demo">%1$s</xliff:g> on juba olemas</string>
+    <string name="settings_profile_in_use">Kasutusel</string>
+    <string name="settings_profile_menu_item_in_use"><xliff:g id="name" example="Demo">%1$s</xliff:g>, kasutusel</string>
+    <string name="settings_profile_none">Seadete profiili pole</string>
+    <string name="settings_profile_use_now">Kasuta kohe</string>
+    <string name="settings_profile_stop_using">Lõpeta kasutamine</string>
+    <string name="settings_profile_change_settings">Muuda seadeid</string>
+    <string name="settings_profile_editing">Muudatused lähevad profiili <xliff:g id="name" example="Messaging">%1$s</xliff:g></string>
+    <string name="settings_profile_edit_saved">Muudatused salvestatud profiili <xliff:g id="name" example="Messaging">%1$s</xliff:g></string>
+    <string name="settings_profile_use_automatically">Kasuta automaatselt</string>
+    <string name="settings_profile_web">Veebisisu</string>
+    <string name="settings_profile_reading">Pidev lugemine</string>
+    <string name="settings_profile_text_editing">Teksti redigeerimine</string>
+    <string name="settings_profile_apps">Rakendused</string>
+    <string name="settings_profile_add_app">Lisa rakendus</string>
+    <string name="settings_profile_settings">Selle profiili seaded</string>
+    <string name="settings_profile_no_settings">Puuduvad</string>
+    <string name="settings_profile_remove_confirm">Eemaldada <xliff:g id="item" example="Speech rate">%1$s</xliff:g> profiilist <xliff:g id="name" example="Messaging">%2$s</xliff:g>?</string>
+    <string name="settings_profile_not_saved">Seadete profiili ei saanud salvestada</string>
+    <string name="settings_profile_in_use_announcement">Profiil <xliff:g id="name" example="Demo">%1$s</xliff:g></string>
+    <string name="settings_profile_not_changed">Seadete profiili ei muudetud</string>
+    <string name="title_settings_profile">Seadete profiil</string>
+    <string name="shortcut_settings_profiles">Vali seadete profiil</string>
+    <string name="shortcut_next_settings_profile">Järgmine seadete profiil</string>
+    <string name="shortcut_previous_settings_profile">Eelmine seadete profiil</string>
+    <string name="title_copy_text_from_screen">Kopeeri tekst ekraanilt</string>
+    <string name="granularity_label">Üksus</string>
+    <string name="granularity_characters">Märgid</string>
+    <string name="granularity_words">Sõnad</string>
+    <string name="granularity_paragraphs">Lõigud</string>
+    <string name="button_select_all">Vali kõik</string>
+    <string name="no_text_selected">Teksti pole valitud</string>
+    <string name="no_text_on_screen">Ekraanilt ei leitud teksti</string>
+    <string name="title_select_last_spoken_phrase_word_by_word">Vali viimati loetud fraas sõna kaupa</string>
+    <string name="no_words_selected">Sõnu pole valitud</string>
+    <string name="no_phrase_to_select">Valitavat fraasi pole</string>
+    <string name="word_selection_list_cut_off">Loend lõpeb <xliff:g id="count" example="1000">%1$d</xliff:g> üksuse juures</string>
+    <plurals name="word_selection_copied">
+        <item quantity="one">Kopeeritud <xliff:g id="count" example="1">%1$d</xliff:g> üksus</item>
+        <item quantity="other">Kopeeritud <xliff:g id="count" example="5">%1$d</xliff:g> üksust</item>
+    </plurals>
 </resources>

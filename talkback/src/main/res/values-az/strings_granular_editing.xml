@@ -46,4 +46,17 @@
     <string name="granular_editing_not_saved">Saxlanılmadı: mətn sahəsi artıq mövcud deyil. Mətn kopyalandı.</string>
     <string name="granular_editing_no_text">Redaktə etmək üçün mətn yoxdur</string>
     <string name="granular_editing_password">Parol sahələrində mövcud deyil</string>
+    <plurals name="granular_editing_spaces">
+        <item quantity="one"><xliff:g id="count" example="3">%d</xliff:g> boşluq</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> boşluq</item>
+    </plurals>
+    <plurals name="granular_editing_new_lines">
+        <item quantity="one"><xliff:g id="count" example="3">%d</xliff:g> yeni sətir</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> yeni sətir</item>
+    </plurals>
+    <plurals name="granular_editing_tabs">
+        <item quantity="one"><xliff:g id="count" example="3">%d</xliff:g> tabulyasiya</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> tabulyasiya</item>
+    </plurals>
+    <string name="granular_editing_blank_line">Boş sətir</string>
 </resources>

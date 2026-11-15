@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_voice_commands">အသံကွန်မန်းများ</string>
+    <string name="title_pref_voice_commands_ai">AI ဖြင့် အသံကွန်မန်းများကို နားလည်ရန်</string>
+    <string name="voice_commands_custom">စိတ်ကြိုက် အသံကွန်မန်းများ</string>
+    <string name="voice_command_add">အသံကွန်မန်း ထည့်ရန်</string>
+    <string name="voice_command_phrase">စကားရပ်</string>
+    <string name="voice_command_change_phrase">စကားရပ် ပြောင်းရန်</string>
+    <string name="voice_command_change_command">ကွန်မန်း ပြောင်းရန်</string>
+    <string name="voice_command_delete_confirm"><xliff:g id="phrase" example="Good morning">%1$s</xliff:g> ကို ဖျက်မလား။</string>
+    <string name="voice_command_phrase_exists"><xliff:g id="phrase" example="Good morning">%1$s</xliff:g> သည် အသံကွန်မန်း ဖြစ်ပြီးသား ဖြစ်သည်</string>
+    <string name="voice_commands_not_understood">နားမလည်ပါ- <xliff:g id="text" example="open the door">%1$s</xliff:g></string>
+    <string name="voice_commands_not_available">မရနိုင်ပါ- <xliff:g id="name" example="Morning macro">%1$s</xliff:g></string>
+    <string name="voice_commands_not_found">မတွေ့ပါ- <xliff:g id="label" example="Settings">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app"><xliff:g id="name" example="Signal">%1$s</xliff:g> အမည်ရှိ အက်ပ် မရှိပါ</string>
+    <string name="voice_commands_no_app_for_action">ဤလုပ်ဆောင်ချက်အတွက် အက်ပ် မရှိပါ</string>
+    <string name="voice_commands_calling"><xliff:g id="name" example="Sam">%1$s</xliff:g> ကို ခေါ်နေသည်</string>
+    <string name="voice_commands_call_permission">ဖုန်းခေါ်ဆိုခြင်းကို ခွင့်ပြုပြီး ကွန်မန်းကို ထပ်ပြောပါ။</string>
+    <string name="voice_commands_contacts_permission">အဆက်အသွယ်များသို့ ဝင်ရောက်ခွင့်ကို ခွင့်ပြုပြီး ကွန်မန်းကို ထပ်ပြောပါ။</string>
+    <string name="voice_commands_no_contact"><xliff:g id="name" example="Sam">%1$s</xliff:g> အမည်ရှိ အဆက်အသွယ် မရှိပါ</string>
+    <string name="voice_commands_contacts_several"><xliff:g id="name" example="Sam">%1$s</xliff:g> အမည်ရှိ အဆက်အသွယ် တစ်ဦးထက်ပို ရှိသည်- <xliff:g id="names" example="Sam Jones, Sam Smith">%2$s</xliff:g></string>
+    <string name="voice_commands_message_text"><xliff:g id="name" example="Sam">%1$s</xliff:g> သို့ မက်ဆေ့ဂျ်</string>
+    <string name="voice_commands_message_confirm"><xliff:g id="name" example="Sam">%1$s</xliff:g> သို့ ပို့မလား- <xliff:g id="text" example="I am on my way">%2$s</xliff:g></string>
+    <string name="voice_commands_message_confirm_result"><xliff:g id="name" example="Sam">%1$s</xliff:g> သို့ ပို့မလား။</string>
+    <string name="voice_commands_message_not_sent">မက်ဆေ့ဂျ် မပို့ပါ</string>
+    <string name="voice_commands_send_pressed">ပို့ခလုတ်ကို နှိပ်ပြီး</string>
+    <string name="voice_commands_send_button">ပို့ပါ</string>
+    <string name="voice_commands_no_description">ဖော်ပြချက် မရရှိပါ</string>
+    <string name="voice_commands_copied">မိတ္တူကူးပြီး</string>
+    <string-array name="voice_commands_chain_words">
+        <item>ပြီးမှ</item>
+        <item>ပြီးနောက်</item>
+        <item>ထို့နောက်</item>
+        <item>အဲဒီနောက်</item>
+    </string-array>
+    <string-array name="voice_commands_and_words">
+        <item>နှင့်</item>
+        <item>ပြီးတော့</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_start">
+        <item>ကျေးဇူးပြု၍</item>
+        <item>ကျေးဇူးပြုပြီး</item>
+        <item>ကူညီပြီး</item>
+        <item>ကျွန်ုပ်ကို</item>
+        <item>ကျွန်ုပ် လုပ်ချင်တာက</item>
+        <item>ယခု</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_end">
+        <item>ကျေးဇူးပြု၍</item>
+        <item>ကျွန်ုပ်အတွက်</item>
+        <item>ယခု</item>
+    </string-array>
+    <string-array name="voice_commands_cancel_words">
+        <item>ရပ်</item>
+        <item>ရပ်ပါ</item>
+        <item>မလုပ်တော့</item>
+        <item>ပယ်ဖျက်</item>
+        <item>ထားလိုက်ပါ</item>
+        <item>တိတ်</item>
+    </string-array>
+    <string-array name="voice_commands_yes">
+        <item>ဟုတ်</item>
+        <item>ဟုတ်ကဲ့</item>
+        <item>ပို့</item>
+        <item>ပို့လိုက်</item>
+        <item>အိုကေ</item>
+        <item>ရပါတယ်</item>
+        <item>လုပ်ပါ</item>
+    </string-array>
+    <string-array name="voice_commands_sms_names">
+        <item>SMS</item>
+        <item>စာတို</item>
+        <item>မက်ဆေ့ဂျ်</item>
+    </string-array>
+    <string-array name="voice_commands_send_image_description">
+        <item>{who} ထံ ပုံ ဖော်ပြချက် ပို့ပါ</item>
+        <item>{who} ထံ ဤပုံ၏ ဖော်ပြချက် ပို့ပါ</item>
+        <item>{who} ထံ ဓာတ်ပုံ ဖော်ပြချက် ပို့ပါ</item>
+        <item>{who} ထံ ဤဓာတ်ပုံ၏ ဖော်ပြချက် ပို့ပါ</item>
+    </string-array>
+    <string-array name="voice_commands_send_screen_description">
+        <item>{who} ထံ မျက်နှာပြင် ဖော်ပြချက် ပို့ပါ</item>
+        <item>{who} ထံ မျက်နှာပြင်၏ ဖော်ပြချက် ပို့ပါ</item>
+    </string-array>
+    <string-array name="voice_commands_send_previous">
+        <item>{who} ထံ {app} ဖြင့် ပို့ပါ</item>
+        <item>{who} ထံ ပို့ပါ</item>
+        <item>{who} ထံ ထိုအရာကို ပို့ပါ</item>
+        <item>{who} ထံ ဖော်ပြချက် ပို့ပါ</item>
+        <item>{who} နှင့် မျှဝေပါ</item>
+    </string-array>
+    <string-array name="voice_commands_message">
+        <item>{who} ထံ {app} ဖြင့် {text} ဟု မက်ဆေ့ဂျ်ပို့ပါ</item>
+        <item>{who} ထံ {text} ဟု မက်ဆေ့ဂျ်ပို့ပါ</item>
+        <item>{whoandtext} ဟု မက်ဆေ့ဂျ်ပို့ပါ</item>
+        <item>{who} ထံ {app} မက်ဆေ့ဂျ် {text} ဟု ပို့ပါ</item>
+        <item>{who} ထံ {app} မက်ဆေ့ဂျ် ပို့ပါ</item>
+        <item>{who} ထံ {app} ဖြင့် မက်ဆေ့ဂျ်ပို့ပါ</item>
+        <item>{who} ထံ မက်ဆေ့ဂျ်ပို့ပါ</item>
+        <item>{who} ထံ SMS ဖြင့် {text} ဟု ပို့ပါ</item>
+        <item>{who} ကို {app} ဖြင့် {text} ဟု ပြောပါ</item>
+        <item>{who} ကို {text} ဟု ပြောပါ</item>
+        <item>{whoandtext} ဟု SMS ပို့ပါ</item>
+    </string-array>
+    <string-array name="voice_commands_call">
+        <item>{who} ကို ခေါ်ပါ</item>
+        <item>{who} ကို ဖုန်းဆက်ပါ</item>
+        <item>{who} ထံ ဖုန်းခေါ်ပါ</item>
+        <item>{who} ကို ခေါ်ဆိုပါ</item>
+    </string-array>
+    <string-array name="voice_commands_describe_screen">
+        <item>မျက်နှာပြင်ကို ဖော်ပြပါ</item>
+        <item>မျက်နှာပြင်ပေါ်တွင် ဘာရှိသလဲ</item>
+        <item>မျက်နှာပြင်ပေါ်ရှိ အရာကို ဖော်ပြပါ</item>
+    </string-array>
+    <string-array name="voice_commands_describe_image">
+        <item>ဤပုံကို ဖော်ပြပါ</item>
+        <item>ပုံကို ဖော်ပြပါ</item>
+        <item>ဤဓာတ်ပုံကို ဖော်ပြပါ</item>
+        <item>ဓာတ်ပုံကို ဖော်ပြပါ</item>
+        <item>ဤပုံထဲတွင် ဘာရှိသလဲ</item>
+        <item>ဤဓာတ်ပုံထဲတွင် ဘာရှိသလဲ</item>
+    </string-array>
+    <string-array name="voice_commands_copy_result">
+        <item>ထိုအရာကို မိတ္တူကူးပါ</item>
+        <item>ဖော်ပြချက်ကို မိတ္တူကူးပါ</item>
+        <item>ခုနကပြောတာကို မိတ္တူကူးပါ</item>
+        <item>နောက်ဆုံးပြောခဲ့သော စကားရပ်ကို မိတ္တူကူးပါ</item>
+        <item>နောက်ဆုံးစကားရပ်ကို မိတ္တူကူးပါ</item>
+    </string-array>
+    <string-array name="voice_commands_wait">
+        <item>{n} စက္ကန့် စောင့်ပါ</item>
+        <item>တစ်စက္ကန့် စောင့်ပါ</item>
+        <item>စောင့်ပါ</item>
+    </string-array>
+    <string-array name="voice_commands_type_text">
+        <item>{text} ရိုက်ပါ</item>
+        <item>{text} ရေးပါ</item>
+        <item>{text} ထည့်ပါ</item>
+    </string-array>
+    <string-array name="voice_commands_run">
+        <item>{command} မက်ခရိုကို လုပ်ဆောင်ပါ</item>
+        <item>{command} ကို လုပ်ဆောင်ပါ</item>
+        <item>{command} လုပ်ပါ</item>
+    </string-array>
+    <string-array name="voice_commands_open">
+        <item>{app} ကို ဖွင့်ပါ</item>
+        <item>{app} ကို စတင်ပါ</item>
+        <item>{app} သို့ ပြောင်းပါ</item>
+    </string-array>
+    <string-array name="voice_commands_tap">
+        <item>{label} ကို နှစ်ချက်တို့ပါ</item>
+        <item>{label} ကို တို့ပါ</item>
+        <item>{label} ကို နှိပ်ပါ</item>
+        <item>{label} ကို ရွေးပါ</item>
+        <item>{label} ကို အသက်သွင်းပါ</item>
+    </string-array>
+</resources>

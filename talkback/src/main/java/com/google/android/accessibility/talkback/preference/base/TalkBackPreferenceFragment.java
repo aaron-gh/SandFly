@@ -117,6 +117,11 @@ public class TalkBackPreferenceFragment extends TalkbackBaseFragment {
       if (updates != null) {
         updates.setVisible(false);
       }
+      // The Google Play build has no root mode.
+      Preference shizukuRoot = findPreference("pref_shizuku_root_screen");
+      if (shizukuRoot != null) {
+        shizukuRoot.setVisible(false);
+      }
     }
 
     // During setup, do not allow user access below settings.

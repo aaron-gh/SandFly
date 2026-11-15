@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="item_file_import">الاستيراد من ملف</string>
+    <string name="item_file_export">التصدير إلى ملف</string>
+    <string name="title_pref_export_item_file_reference">تصدير مرجع تنسيق الملف</string>
+    <string name="item_file_keymaps">مخططات المفاتيح</string>
+    <string name="item_file_exported">تم التصدير</string>
+    <string name="item_file_export_failed">تعذّر التصدير</string>
+    <string name="item_file_not_read">هذا الملف ليس ملف عناصر SandFly أو تعذّرت قراءته</string>
+    <string name="item_file_settings_file">هذا ملف إعدادات. استورده من \"الاحتفاظ بنسخة احتياطية والاستعادة\" &gt; \"استيراد الإعدادات\"</string>
+    <string name="item_file_newer">هذا الملف من إصدار أحدث من SandFly</string>
+    <string name="item_file_nothing_imported">لم يتم استيراد شيء</string>
+    <string name="item_file_imported">تم استيراد <xliff:g id="items" example="2 macros, 1 gesture profile">%1$s</xliff:g></string>
+    <string name="item_file_left_out">ما تم استبعاده:</string>
+    <string name="item_file_problem_not_read"><xliff:g id="kind" example="Macros">%1$s</xliff:g>، العنصر <xliff:g id="number" example="3">%2$d</xliff:g>: لم تتم قراءته</string>
+    <string name="item_file_problem_command"><xliff:g id="item" example="Open mail">%1$s</xliff:g>: أمر غير معروف <xliff:g id="command" example="READ_ALL">%2$s</xliff:g></string>
+    <string name="item_file_problem_gesture"><xliff:g id="item" example="Reading">%1$s</xliff:g>: إيماءة غير معروفة <xliff:g id="gesture" example="pref_shortcut_spin">%2$s</xliff:g></string>
+    <string name="item_file_problem_keys"><xliff:g id="item" example="My keymap">%1$s</xliff:g>: مفاتيح غير مفهومة: <xliff:g id="keys" example="SandFly+Foo">%2$s</xliff:g></string>
+    <string name="item_file_problem_keys_taken"><xliff:g id="item" example="My keymap">%1$s</xliff:g>: المفاتيح مستخدمة بالفعل: <xliff:g id="keys" example="SandFly+H">%2$s</xliff:g></string>
+    <string name="item_file_problem_setting"><xliff:g id="item" example="Reading">%1$s</xliff:g>: الإعداد <xliff:g id="key" example="pref_vibration">%2$s</xliff:g> غير معروف، أو لا يمكن أن يكون في ملف إعدادات، أو قيمته من نوع خاطئ</string>
+    <string name="item_file_problem_regex"><xliff:g id="dictionary" example="Speech dictionary">%1$s</xliff:g>: تم رفض التعبير النمطي: <xliff:g id="expression" example="(a+)+">%2$s</xliff:g></string>
+    <string name="item_file_problem_limit"><xliff:g id="kind" example="Symbol dictionary">%1$s</xliff:g>: <xliff:g id="number" example="500">%2$d</xliff:g> عنصر كحد أقصى</string>
+    <string name="item_file_problem_more">تم استبعاد المزيد</string>
+    <plurals name="item_file_count_macros">
+        <item quantity="one">ماكرو واحد</item>
+        <item quantity="two">ماكروان</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> وحدات ماكرو</item>
+        <item quantity="many"><xliff:g id="count" example="2">%d</xliff:g> وحدة ماكرو</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> وحدة ماكرو</item>
+        <item quantity="zero">لا وحدات ماكرو</item>
+    </plurals>
+    <plurals name="item_file_count_gesture_profiles">
+        <item quantity="one">ملف إيماءات واحد</item>
+        <item quantity="two">ملفا إيماءات</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> ملفات إيماءات</item>
+        <item quantity="many"><xliff:g id="count" example="2">%d</xliff:g> ملف إيماءات</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> ملف إيماءات</item>
+        <item quantity="zero">لا ملفات إيماءات</item>
+    </plurals>
+    <plurals name="item_file_count_keymaps">
+        <item quantity="one">مخطط مفاتيح واحد</item>
+        <item quantity="two">مخططا مفاتيح</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> مخططات مفاتيح</item>
+        <item quantity="many"><xliff:g id="count" example="2">%d</xliff:g> مخطط مفاتيح</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> مخطط مفاتيح</item>
+        <item quantity="zero">لا مخططات مفاتيح</item>
+    </plurals>
+    <plurals name="item_file_count_apps">
+        <item quantity="one">إيماءات واختصارات لوحة المفاتيح لتطبيق واحد</item>
+        <item quantity="two">إيماءات واختصارات لوحة المفاتيح لتطبيقين</item>
+        <item quantity="few">إيماءات واختصارات لوحة المفاتيح لـ<xliff:g id="count" example="2">%d</xliff:g> تطبيقات</item>
+        <item quantity="many">إيماءات واختصارات لوحة المفاتيح لـ<xliff:g id="count" example="2">%d</xliff:g> تطبيقًا</item>
+        <item quantity="other">إيماءات واختصارات لوحة المفاتيح لـ<xliff:g id="count" example="2">%d</xliff:g> تطبيق</item>
+        <item quantity="zero">إيماءات واختصارات لوحة المفاتيح لـ<xliff:g id="count" example="2">%d</xliff:g> تطبيق</item>
+    </plurals>
+    <plurals name="item_file_count_settings_profiles">
+        <item quantity="one">ملف إعدادات واحد</item>
+        <item quantity="two">ملفا إعدادات</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> ملفات إعدادات</item>
+        <item quantity="many"><xliff:g id="count" example="2">%d</xliff:g> ملف إعدادات</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> ملف إعدادات</item>
+        <item quantity="zero">لا ملفات إعدادات</item>
+    </plurals>
+    <plurals name="item_file_count_speech_dictionary">
+        <item quantity="one">إدخال واحد في قاموس النطق</item>
+        <item quantity="two">إدخالان في قاموس النطق</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> إدخالات في قاموس النطق</item>
+        <item quantity="many"><xliff:g id="count" example="2">%d</xliff:g> إدخالًا في قاموس النطق</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> إدخال في قاموس النطق</item>
+        <item quantity="zero">لا إدخالات في قاموس النطق</item>
+    </plurals>
+    <plurals name="item_file_count_symbol_dictionary">
+        <item quantity="one">إدخال واحد في قاموس الرموز</item>
+        <item quantity="two">إدخالان في قاموس الرموز</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> إدخالات في قاموس الرموز</item>
+        <item quantity="many"><xliff:g id="count" example="2">%d</xliff:g> إدخالًا في قاموس الرموز</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> إدخال في قاموس الرموز</item>
+        <item quantity="zero">لا إدخالات في قاموس الرموز</item>
+    </plurals>
+    <plurals name="item_file_count_braille_dictionary">
+        <item quantity="one">إدخال واحد في قاموس برايل</item>
+        <item quantity="two">إدخالان في قاموس برايل</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> إدخالات في قاموس برايل</item>
+        <item quantity="many"><xliff:g id="count" example="2">%d</xliff:g> إدخالًا في قاموس برايل</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> إدخال في قاموس برايل</item>
+        <item quantity="zero">لا إدخالات في قاموس برايل</item>
+    </plurals>
+    <plurals name="item_file_count_voice_commands">
+        <item quantity="one">أمر صوتي مخصّص واحد</item>
+        <item quantity="two">أمران صوتيان مخصّصان</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> أوامر صوتية مخصّصة</item>
+        <item quantity="many"><xliff:g id="count" example="2">%d</xliff:g> أمرًا صوتيًا مخصّصًا</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> أمر صوتي مخصّص</item>
+        <item quantity="zero">لا أوامر صوتية مخصّصة</item>
+    </plurals>
+</resources>

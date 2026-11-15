@@ -2022,4 +2022,144 @@
     <string name="value_keep_models_5">৫ মিনিট</string>
     <string name="value_keep_models_15">১৫ মিনিট</string>
     <string name="value_keep_models_30">৩০ মিনিট</string>
+    <string name="title_pref_speech_equalizer_save_preset">প্ৰিছেট হিচাপে ছেভ কৰক</string>
+    <string name="title_pref_speech_equalizer_saved_presets">ছেভ কৰা প্ৰিছেট</string>
+    <string name="speech_equalizer_preset_name">নাম</string>
+    <string name="speech_equalizer_preset_name_taken"><xliff:g id="name" example="Podcast">%1$s</xliff:g> নামৰ প্ৰিছেট আগৰেপৰা আছে</string>
+    <string name="speech_equalizer_presets_full">আৰু প্ৰিছেট ছেভ কৰিব নোৱাৰি। আনটো ছেভ কৰিবলৈ এটা মচক।</string>
+    <string name="speech_equalizer_preset_saved"><xliff:g id="name" example="Podcast">%1$s</xliff:g> ছেভ কৰা হ’ল</string>
+    <string name="speech_equalizer_preset_rename">নতুন নাম দিয়ক</string>
+    <string name="speech_equalizer_preset_delete">মচক</string>
+    <string name="speech_equalizer_preset_delete_confirm"><xliff:g id="name" example="Podcast">%1$s</xliff:g> মচিব নেকি?</string>
+    <string name="speech_equalizer_preset_deleted"><xliff:g id="name" example="Podcast">%1$s</xliff:g> মচা হ’ল</string>
+    <string name="title_pref_emoji_voice">ইম’জিৰ কণ্ঠ</string>
+    <string name="value_emoji_voice_same">কথনৰ দৰেই</string>
+    <string name="title_pref_emoji_rate">ইম’জিৰ কথা কোৱাৰ হাৰ</string>
+    <string name="title_pref_line_breaks_as_spaces">লাইন ব্ৰেক স্পেচ হিচাপে পঢ়ক</string>
+    <string name="title_pref_language_voices">ভাষা অনুসৰি কণ্ঠ</string>
+    <string name="title_pref_identify_languages_from_words">শব্দৰ পৰা ভাষা চিনাক্ত কৰক</string>
+    <string name="title_pref_add_language">ভাষা যোগ দিয়ক</string>
+    <string name="title_pref_remove_language">ভাষা আঁতৰাওক</string>
+    <string name="title_pref_script_language">%1$s লিপি</string>
+    <string name="title_pref_screen_on_notification_count">জাননীৰ সংখ্যা</string>
+    <plurals name="template_screen_on_notification_count">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g>টা জাননী</item>
+        <item quantity="other"><xliff:g id="count" example="6">%d</xliff:g>টা জাননী</item>
+    </plurals>
+    <string name="title_pref_phonetic_letters_review">পুনৰীক্ষণৰ সময়ত আখৰ ধ্বনি অনুসৰি কওক</string>
+    <string name="title_pref_phonetic_letters_typing">টাইপ কৰাৰ সময়ত আখৰ ধ্বনি অনুসৰি কওক</string>
+    <string name="title_pref_emoji_suffix">ইম’জিৰ নামৰ পিছত \"ইম’জি\" কওক</string>
+    <string name="overview_shizuku_not_running">Shizuku চলি থকা নাই</string>
+    <string name="overview_shizuku_not_allowed">Shizukuএ SandFly ক অনুমতি নিদিয়ে</string>
+    <string name="overview_no_older_app">পুৰণি এপ নাই</string>
+    <string name="overview_no_newer_app">নতুন এপ নাই</string>
+    <string name="stream_volume_needs_access">এই ভলিউম সলনি কৰিবলৈ অসুবিধা নিদিব এক্সেছৰ অনুমতি দিয়ক।</string>
+    <string name="corner_gestures_title">চুকসমূহ</string>
+    <string name="shortcut_move_to_item_below">তলৰ বস্তুলৈ যাওক</string>
+    <string name="shortcut_move_to_item_above">ওপৰৰ বস্তুলৈ যাওক</string>
+    <string name="shortcut_older_app">পুৰণি এপ</string>
+    <string name="shortcut_newer_app">নতুন এপ</string>
+    <string name="shortcut_answer_call">কলৰ উত্তৰ দিয়ক</string>
+    <string name="answer_call_no_call">কোনো ইনকাম’ং কল নাই</string>
+    <string name="answer_call_permission">কলৰ উত্তৰ দিবলৈ অনুমতি লাগে</string>
+    <string name="shortcut_switch_keyboard">কীব’ৰ্ড সলনি কৰক</string>
+    <string name="switch_keyboard_none">আন কোনো কীব’ৰ্ড অন কৰা নাই</string>
+    <string name="switch_keyboard_failed">কীব’ৰ্ড সলনি কৰা হোৱা নাই</string>
+    <string name="clipboard_history_hint">বাছনি কৰিবলৈ ওপৰলৈ বা তললৈ ছোৱাইপ কৰক, তাৰ পিছত পেষ্ট কৰিবলৈ দুবাৰ টিপক</string>
+    <string name="title_speech_history">কথনৰ ইতিহাস</string>
+    <string name="speech_history_empty">কোনো কথন নাই</string>
+    <string name="speech_history_clear">ইতিহাস মচক</string>
+    <string name="title_pref_shortcut_corner_top_left_tap">ওপৰৰ বাওঁফালৰ চুক টিপক</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap">ওপৰৰ বাওঁফালৰ চুক দুবাৰ টিপক</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap">ওপৰৰ বাওঁফালৰ চুক তিনিবাৰ টিপক</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap_hold">ওপৰৰ বাওঁফালৰ চুক দুবাৰ টিপি ধৰি ৰাখক</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap_hold">ওপৰৰ বাওঁফালৰ চুক তিনিবাৰ টিপি ধৰি ৰাখক</string>
+    <string name="title_pref_shortcut_corner_top_right_tap">ওপৰৰ সোঁফালৰ চুক টিপক</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap">ওপৰৰ সোঁফালৰ চুক দুবাৰ টিপক</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap">ওপৰৰ সোঁফালৰ চুক তিনিবাৰ টিপক</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap_hold">ওপৰৰ সোঁফালৰ চুক দুবাৰ টিপি ধৰি ৰাখক</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap_hold">ওপৰৰ সোঁফালৰ চুক তিনিবাৰ টিপি ধৰি ৰাখক</string>
+    <string name="title_pref_shortcut_corner_bottom_left_tap">তলৰ বাওঁফালৰ চুক টিপক</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap">তলৰ বাওঁফালৰ চুক দুবাৰ টিপক</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap">তলৰ বাওঁফালৰ চুক তিনিবাৰ টিপক</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap_hold">তলৰ বাওঁফালৰ চুক দুবাৰ টিপি ধৰি ৰাখক</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap_hold">তলৰ বাওঁফালৰ চুক তিনিবাৰ টিপি ধৰি ৰাখক</string>
+    <string name="title_pref_shortcut_corner_bottom_right_tap">তলৰ সোঁফালৰ চুক টিপক</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap">তলৰ সোঁফালৰ চুক দুবাৰ টিপক</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap">তলৰ সোঁফালৰ চুক তিনিবাৰ টিপক</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap_hold">তলৰ সোঁফালৰ চুক দুবাৰ টিপি ধৰি ৰাখক</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap_hold">তলৰ সোঁফালৰ চুক তিনিবাৰ টিপি ধৰি ৰাখক</string>
+    <string name="title_pref_swipe_start_time">আঙুলিৰ স্পৰ্শৰে নিৰ্দেশ আৰম্ভ হোৱাৰ সময়</string>
+    <string name="title_pref_swipes_before_lift">আঙুলি তুলিবৰ আগতে ছোৱাইপ চিনাক্ত কৰক</string>
+    <string name="summary_pref_swipes_before_lift">আগপিছ আৰু কোণৰ নিৰ্দেশ অফ কৰে।</string>
+    <string name="title_pref_corner_size_mm">চুকৰ আকাৰ</string>
+    <string name="value_corner_size_edge_width">কাষৰ বহলৰ সমান</string>
+    <string name="title_pref_corner_tap_time_ms">চুকত টিপাৰ সময়সীমা</string>
+    <string name="value_corner_tap_time_system">ছিষ্টেমৰ ডিফ’ল্ট</string>
+    <string name="title_pref_edge_speak_commands">প্ৰতিটো ক্লিকত কামাণ্ড কওক</string>
+    <string-array name="pref_volume_change_feedback_entries">
+        <item>@string/volume_change_feedback_off</item>
+        <item>@string/volume_change_feedback_tone</item>
+        <item>@string/volume_change_feedback_spoken</item>
+        <item>@string/volume_change_feedback_tone_and_spoken</item>
+    </string-array>
+    <string name="title_pref_volume_change_tone_during_media">মিডিয়া প্লে’বেকৰ সময়ত টোন নিঃশব্দ কৰক</string>
+    <string name="title_pref_volume_change_speech_during_media">মিডিয়া প্লে’বেকৰ সময়ত কথন নিঃশব্দ কৰক</string>
+    <string name="title_pref_volume_change_interrupts_speech">ভলিউম জনাবলৈ কথন বাধা দিয়ক</string>
+    <string name="title_pref_volume_keys_speech_volume_while_speaking">কথা কওঁতে ভলিউম কীয়ে কথনৰ ভলিউম সলনি কৰে</string>
+    <string name="title_pref_double_tap_moves_cursor">দুবাৰ টিপিলে কাৰ্ছাৰ আৰম্ভণি বা শেষলৈ যায়</string>
+    <string name="title_pref_scroll_ahead">পৰৱৰ্তী বস্তুলৈকে আগতীয়াকৈ স্ক্ৰ’ল কৰক</string>
+    <string name="title_pref_speak_while_scrolling">স্ক্ৰ’ল কৰোঁতে পৰৱৰ্তী বস্তু কওক</string>
+    <string-array name="pref_text_entities_entries">
+    <item>@string/text_entity_web</item>
+    <item>@string/text_entity_email</item>
+    <item>@string/text_entity_phone</item>
+    <item>@string/text_entity_code</item>
+  </string-array>
+    <string name="value_keep_models_until_stopped">SandFly বন্ধ নোহোৱালৈকে</string>
+    <string name="title_pref_model_download_server">মডেল ডাউনলোড ছাৰ্ভাৰ</string>
+    <string name="title_pref_settings_profiles">ছেটিং প্ৰ’ফাইল</string>
+    <string name="title_pref_new_settings_profile">নতুন ছেটিং প্ৰ’ফাইল</string>
+    <string name="settings_profile_new_name">প্ৰ’ফাইল <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="settings_profile_name_taken"><xliff:g id="name" example="Demo">%1$s</xliff:g> নামৰ ছেটিং প্ৰ’ফাইল আগৰেপৰা আছে</string>
+    <string name="settings_profile_in_use">ব্যৱহাৰ হৈ আছে</string>
+    <string name="settings_profile_menu_item_in_use"><xliff:g id="name" example="Demo">%1$s</xliff:g>, ব্যৱহাৰ হৈ আছে</string>
+    <string name="settings_profile_none">কোনো ছেটিং প্ৰ’ফাইল নাই</string>
+    <string name="settings_profile_use_now">এতিয়া ব্যৱহাৰ কৰক</string>
+    <string name="settings_profile_stop_using">ব্যৱহাৰ বন্ধ কৰক</string>
+    <string name="settings_profile_change_settings">ছেটিং সলনি কৰক</string>
+    <string name="settings_profile_editing">সলনিসমূহ <xliff:g id="name" example="Messaging">%1$s</xliff:g> লৈ যায়</string>
+    <string name="settings_profile_edit_saved">সলনিসমূহ <xliff:g id="name" example="Messaging">%1$s</xliff:g> ত ছেভ কৰা হ’ল</string>
+    <string name="settings_profile_use_automatically">স্বয়ংক্ৰিয়ভাৱে ব্যৱহাৰ কৰক</string>
+    <string name="settings_profile_web">ৱেব সমল</string>
+    <string name="settings_profile_reading">অবিৰত পঢ়া</string>
+    <string name="settings_profile_text_editing">পাঠ সম্পাদনা</string>
+    <string name="settings_profile_apps">এপ</string>
+    <string name="settings_profile_add_app">এপ যোগ দিয়ক</string>
+    <string name="settings_profile_settings">এই প্ৰ’ফাইলৰ ছেটিং</string>
+    <string name="settings_profile_no_settings">একো নাই</string>
+    <string name="settings_profile_remove_confirm"><xliff:g id="name" example="Messaging">%2$s</xliff:g> ৰ পৰা <xliff:g id="item" example="Speech rate">%1$s</xliff:g> আঁতৰাব নেকি?</string>
+    <string name="settings_profile_not_saved">ছেটিং প্ৰ’ফাইল ছেভ কৰিব পৰা নগ’ল</string>
+    <string name="settings_profile_in_use_announcement"><xliff:g id="name" example="Demo">%1$s</xliff:g> প্ৰ’ফাইল</string>
+    <string name="settings_profile_not_changed">ছেটিং প্ৰ’ফাইল সলনি কৰা হোৱা নাই</string>
+    <string name="title_settings_profile">ছেটিং প্ৰ’ফাইল</string>
+    <string name="shortcut_settings_profiles">ছেটিং প্ৰ’ফাইল বাছনি কৰক</string>
+    <string name="shortcut_next_settings_profile">পৰৱৰ্তী ছেটিং প্ৰ’ফাইল</string>
+    <string name="shortcut_previous_settings_profile">পূৰ্বৰ ছেটিং প্ৰ’ফাইল</string>
+    <string name="title_copy_text_from_screen">স্ক্ৰীনৰ পাঠ প্ৰতিলিপি কৰক</string>
+    <string name="granularity_label">গ্ৰেনিউলাৰিটি</string>
+    <string name="granularity_characters">বৰ্ণসমূহ</string>
+    <string name="granularity_words">শব্দসমূহ</string>
+    <string name="granularity_paragraphs">পেৰাগ্ৰাফসমূহ</string>
+    <string name="button_select_all">সকলো বাছনি কৰক</string>
+    <string name="no_text_selected">কোনো পাঠ বাছনি কৰা হোৱা নাই</string>
+    <string name="no_text_on_screen">স্ক্ৰীনত কোনো পাঠ পোৱা নগ’ল</string>
+    <string name="title_select_last_spoken_phrase_word_by_word">শেষত কোৱা বাক্যাংশ শব্দ অনুসৰি বাছনি কৰক</string>
+    <string name="no_words_selected">কোনো শব্দ বাছনি কৰা হোৱা নাই</string>
+    <string name="no_phrase_to_select">বাছনি কৰিবলৈ বাক্যাংশ নাই</string>
+    <string name="word_selection_list_cut_off">তালিকা <xliff:g id="count" example="1000">%1$d</xliff:g>টা বস্তুত কাটি দিয়া হ’ল</string>
+    <plurals name="word_selection_copied">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g>টা বস্তু প্ৰতিলিপি কৰা হ’ল</item>
+        <item quantity="other"><xliff:g id="count" example="5">%1$d</xliff:g>টা বস্তু প্ৰতিলিপি কৰা হ’ল</item>
+    </plurals>
 </resources>

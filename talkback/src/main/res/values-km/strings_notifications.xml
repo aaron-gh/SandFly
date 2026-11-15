@@ -390,4 +390,11 @@
         <item>@string/notification_shake_3</item>
     </string-array>
     <string name="notification_clock_voice_notifications">សំឡេងការជូនដំណឹង</string>
+    <string name="notification_exact_alarms_title">បើកម៉ោងរោទិ៍ និងការរំលឹក</string>
+    <string name="shortcut_toggle_time_announcements">បើក ឬបិទការប្រកាសម៉ោង</string>
+    <string name="notification_clock_now_on">ការប្រកាសម៉ោងបើក</string>
+    <string name="notification_clock_now_off">ការប្រកាសម៉ោងបិទ</string>
+    <plurals name="notification_clock_battery">
+        <item quantity="other"><xliff:g id="percent" example="1">%d</xliff:g> ភាគរយ</item>
+    </plurals>
 </resources>

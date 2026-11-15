@@ -47,4 +47,17 @@
     <string name="granular_editing_not_saved">Non enregistré : le champ de texte n\'existe plus. Le texte a été copié.</string>
     <string name="granular_editing_no_text">Aucun texte à modifier</string>
     <string name="granular_editing_password">Non disponible dans les champs de mot de passe</string>
+    <plurals name="granular_editing_spaces">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> espace</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> espaces</item>
+    </plurals>
+    <plurals name="granular_editing_new_lines">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> nouvelle ligne</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> nouvelles lignes</item>
+    </plurals>
+    <plurals name="granular_editing_tabs">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> tabulation</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> tabulations</item>
+    </plurals>
+    <string name="granular_editing_blank_line">Ligne vide</string>
 </resources>

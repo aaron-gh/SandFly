@@ -53,6 +53,7 @@ import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.notificationlist.NotificationReplyActivity.Companion.keepButtonCase
 import com.google.android.accessibility.talkback.TalkBackService
 import com.google.android.accessibility.talkback.quicksettings.QuickSettingsActivity
+import com.google.android.accessibility.talkback.speechdictionary.SpeechDictionary
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 
 /**
@@ -150,6 +151,7 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
 
   override fun onStart() {
     super.onStart()
+    SpeechDictionary.setAppliesInOwnWindows(true)
     NotificationList.addListener(this)
     opening = true
     parts = NotificationParts.enabledParts(SharedPreferencesUtils.getSharedPreferences(this))
@@ -164,6 +166,7 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
     NotificationList.removeListener(this)
     mediaControllers.values.forEach { it.unregisterCallback(playbackListener) }
     mediaControllers.clear()
+    SpeechDictionary.setAppliesInOwnWindows(false)
     super.onStop()
     // Like the system's shade, the list closes when the user leaves it.
     if (!isChangingConfigurations) {

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_macros">Makrot</string>
+    <string name="shortcut_stop_macro">Ndalo makron</string>
+    <string name="macro_add">Shto makro</string>
+    <string name="macro_run_now">Ekzekuto tani</string>
+    <string name="macro_add_step">Shto hap</string>
+    <string name="macro_add_at_end">Në fund</string>
+    <string name="macro_add_at_start">Në fillim</string>
+    <string name="macro_add_after">Pas hapit <xliff:g id="step" example="2">%1$d</xliff:g>: <xliff:g id="name" example="If App in front: Chrome">%2$s</xliff:g></string>
+    <string name="macro_steps">Hapat</string>
+    <string name="macro_no_steps">Asnjë hap</string>
+    <string name="macro_delete">Fshi makron</string>
+    <string name="macro_delete_confirm">Të fshihet <xliff:g id="name" example="Send message">%1$s</xliff:g>?</string>
+    <string name="macro_step_command">Ekzekuto komandën</string>
+    <string name="macro_step_wait">Prit</string>
+    <string name="macro_step_tap">Trokit në artikull</string>
+    <string name="macro_step_focus">Fokuso artikullin</string>
+    <string name="macro_step_speak_item">Thuaj artikullin</string>
+    <string name="macro_step_speak_text">Thuaj tekstin</string>
+    <string name="macro_step_type">Shkruaj tekst</string>
+    <string name="macro_step_tap_value">Trokit në <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_focus_value">Fokuso <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_item_value">Thuaj <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_text_value">Thuaj <xliff:g id="text" example="Done">%1$s</xliff:g></string>
+    <string name="macro_step_type_value">Shkruaj <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <string name="macro_step_replace_value">Zëvendëso tekstin me <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <plurals name="macro_step_wait_seconds">
+        <item quantity="one">Prit <xliff:g id="count" example="2">%d</xliff:g> sekondë</item>
+        <item quantity="other">Prit <xliff:g id="count" example="2">%d</xliff:g> sekonda</item>
+    </plurals>
+    <plurals name="macro_step_wait_milliseconds">
+        <item quantity="one">Prit <xliff:g id="count" example="500">%d</xliff:g> milisekondë</item>
+        <item quantity="other">Prit <xliff:g id="count" example="500">%d</xliff:g> milisekonda</item>
+    </plurals>
+    <string name="macro_step_unavailable">Nuk disponohet</string>
+    <string name="macro_seconds">Sekonda</string>
+    <string name="macro_invalid_seconds">Shkruaj një numër sekondash deri në <xliff:g id="max" example="600">%1$d</xliff:g></string>
+    <string name="macro_tap_label">Teksti i artikullit</string>
+    <string name="macro_tap_timeout">Sekondat e pritjes për artikullin</string>
+    <string name="macro_text">Teksti</string>
+    <string name="macro_replace_text">Zëvendëso tekstin në fushë</string>
+    <string name="macro_item_not_found">Makroja u ndal. Nuk u gjet: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_failed">Makroja u ndal. Dështoi: <xliff:g id="step" example="Open Gmail">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until">Prit derisa</string>
+    <string name="macro_step_if">Nëse</string>
+    <string name="macro_step_else_if">Përndryshe nëse</string>
+    <string name="macro_step_else">Përndryshe</string>
+    <string name="macro_step_end_if">Fundi i Nëse</string>
+    <string name="macro_step_repeat">Përsërit</string>
+    <string name="macro_step_repeat_while">Përsërit derisa</string>
+    <string name="macro_step_end_repeat">Fundi i përsëritjes</string>
+    <string name="macro_step_exit_loop">Dil nga cikli</string>
+    <string name="macro_step_if_value">Nëse <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_else_if_value">Përndryshe nëse <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_repeat_while_value">Përsërit derisa <xliff:g id="condition" example="Item on screen: Load more">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until_value">Prit derisa <xliff:g id="condition" example="Item on screen: Send">%1$s</xliff:g></string>
+    <plurals name="macro_step_repeat_value">
+        <item quantity="one">Përsërit <xliff:g id="count" example="3">%d</xliff:g> herë</item>
+        <item quantity="other">Përsërit <xliff:g id="count" example="3">%d</xliff:g> herë</item>
+    </plurals>
+    <string name="macro_times">Herë</string>
+    <string name="macro_invalid_times">Shkruaj një numër nga 1 deri në <xliff:g id="max" example="1000">%1$d</xliff:g></string>
+    <string name="macro_run_only_when">Ekzekuto vetëm kur</string>
+    <string name="macro_always">Gjithmonë</string>
+    <string name="macro_no_tests">Asnjë provë</string>
+    <string name="macro_add_test">Shto provë</string>
+    <string name="macro_tests">Provat</string>
+    <string name="macro_choose_test">Prova</string>
+    <string name="macro_test_item">Artikull në ekran</string>
+    <string name="macro_test_focused">Artikulli i fokusuar</string>
+    <string name="macro_test_app">Aplikacioni në plan të parë</string>
+    <string name="macro_test_keyboard">Tastiera e shfaqur</string>
+    <string name="macro_test_keyboard_hidden">Tastiera e fshehur</string>
+    <string name="macro_test_locked">Ekrani i kyçur</string>
+    <string name="macro_test_unlocked">Ekrani i shkyçur</string>
+    <string name="macro_test_item_value">Artikull në ekran: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_no_item_value">Nuk ka artikull në ekran: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_focused_value">Artikulli i fokusuar: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_not_focused_value">I fokusuar nuk është: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_app_value">Aplikacioni në plan të parë: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_not_app_value">Aplikacioni nuk është në plan të parë: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_label_kind"><xliff:g id="label" example="Send">%1$s</xliff:g>, <xliff:g id="kind" example="Clickable">%2$s</xliff:g></string>
+    <string name="macro_join_and"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g> dhe <xliff:g id="second" example="Focused item: Editable">%2$s</xliff:g></string>
+    <string name="macro_join_or"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g> ose <xliff:g id="second" example="Screen locked">%2$s</xliff:g></string>
+    <string name="macro_regex">Shprehje e rregullt</string>
+    <string name="macro_invalid_regex">Nuk është shprehje e rregullt e përdorshme. Grupet e përsëritura nuk mund të përmbajnë përsëritje ose |.</string>
+    <string name="macro_match_in">Përputhje në</string>
+    <string name="macro_field_any">Çdo tekst</string>
+    <string name="macro_field_text">Teksti</string>
+    <string name="macro_field_description">Përshkrimi</string>
+    <string name="macro_field_hint">Sugjerimi</string>
+    <string name="macro_field_state">Gjendja</string>
+    <string name="macro_field_id">ID e burimit</string>
+    <string name="macro_field_value"><xliff:g id="label" example="send">%1$s</xliff:g> (<xliff:g id="field" example="Resource ID">%2$s</xliff:g>)</string>
+    <string name="macro_field_regex_value"><xliff:g id="pattern" example="^Reply">%1$s</xliff:g> (<xliff:g id="field" example="Description">%2$s</xliff:g>, shprehje e rregullt)</string>
+    <string name="macro_regex_value"><xliff:g id="pattern" example="Reply.*Anna">%1$s</xliff:g> (shprehje e rregullt)</string>
+    <string name="macro_test_label_optional">Teksti i artikullit (opsional)</string>
+    <string name="macro_item_kind">Lloji i artikullit</string>
+    <string name="macro_kind_any">Çdo lloj</string>
+    <string name="macro_kind_clickable">I klikueshëm</string>
+    <string name="macro_kind_long_clickable">I klikueshëm gjatë</string>
+    <string name="macro_kind_editable">I redaktueshëm</string>
+    <string name="macro_kind_scrollable">I lëvizshëm</string>
+    <string name="macro_kind_adjustable">I rregullueshëm</string>
+    <string name="macro_kind_checkable">I shënueshëm</string>
+    <string name="macro_kind_checked">I shënuar</string>
+    <string name="macro_kind_selected">Zgjedhur</string>
+    <string name="macro_kind_heading">Titulli</string>
+    <string name="macro_kind_enabled">Aktiv</string>
+    <string name="macro_change_to">Ndrysho në: <xliff:g id="test" example="Keyboard hidden">%1$s</xliff:g></string>
+    <string name="macro_join_with_and">Bashko me dhe</string>
+    <string name="macro_join_with_or">Bashko me ose</string>
+    <string name="macro_clause_and">dhe <xliff:g id="test" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_clause_or">ose <xliff:g id="test" example="Screen locked">%1$s</xliff:g></string>
+    <string name="macro_wait_timeout">Sekondat e pritjes</string>
+    <string name="macro_add_step_after">Shto hap pas</string>
+    <string name="macro_problem">Hapi <xliff:g id="step" example="3">%1$d</xliff:g>: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_problem_no_if">Përndryshe nëse, Përndryshe ose Fundi i Nëse pa Nëse</string>
+    <string name="macro_problem_after_else">Përndryshe nëse ose Përndryshe pas Përndryshe</string>
+    <string name="macro_problem_no_repeat">Fundi i përsëritjes pa Përsërit</string>
+    <string name="macro_problem_no_end_if">Nëse pa Fundi i Nëse</string>
+    <string name="macro_problem_no_end_repeat">Përsërit pa Fundi i përsëritjes</string>
+    <string name="macro_problem_exit">Dil nga cikli jashtë një përsëritjeje</string>
+    <string name="macro_stopped_problem">Makroja u ndal. Hapi <xliff:g id="step" example="3">%1$d</xliff:g>: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_stopped_repeats">Makroja u ndal. U përsërit <xliff:g id="count" example="1000">%1$d</xliff:g> herë: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
+    <string name="macro_stopped_timeout">Makroja u ndal. Koha skadoi: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
+    <string name="macro_not_met">Makroja nuk u ekzekutua. Ekzekuto vetëm kur: nuk plotësohet</string>
+</resources>

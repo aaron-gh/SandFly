@@ -390,4 +390,12 @@
         <item>@string/notification_shake_3</item>
     </string-array>
     <string name="notification_clock_voice_notifications">Zëri i njoftimeve</string>
+    <string name="notification_exact_alarms_title">Aktivizo Alarmet dhe kujtesat</string>
+    <string name="shortcut_toggle_time_announcements">Njoftimet e kohës aktive ose joaktive</string>
+    <string name="notification_clock_now_on">Njoftimet e kohës aktive</string>
+    <string name="notification_clock_now_off">Njoftimet e kohës joaktive</string>
+    <plurals name="notification_clock_battery">
+        <item quantity="one"><xliff:g id="percent" example="76">%d</xliff:g> përqind</item>
+        <item quantity="other"><xliff:g id="percent" example="76">%d</xliff:g> përqind</item>
+    </plurals>
 </resources>

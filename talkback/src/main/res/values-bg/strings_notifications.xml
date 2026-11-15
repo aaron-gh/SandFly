@@ -390,4 +390,12 @@
         <item>@string/notification_shake_3</item>
     </string-array>
     <string name="notification_clock_voice_notifications">Глас за известията</string>
+    <string name="notification_exact_alarms_title">Включете „Будилници и напомняния“</string>
+    <string name="shortcut_toggle_time_announcements">Съобщаване на часа включено или изключено</string>
+    <string name="notification_clock_now_on">Съобщаването на часа е включено</string>
+    <string name="notification_clock_now_off">Съобщаването на часа е изключено</string>
+    <plurals name="notification_clock_battery">
+        <item quantity="one"><xliff:g id="percent" example="1">%d</xliff:g> процент</item>
+        <item quantity="other"><xliff:g id="percent" example="1">%d</xliff:g> процента</item>
+    </plurals>
 </resources>

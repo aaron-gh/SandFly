@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_voice_commands">குரல் கட்டளைகள்</string>
+    <string name="title_pref_voice_commands_ai">AI மூலம் குரல் கட்டளைகளைப் புரிந்துகொள்</string>
+    <string name="voice_commands_custom">தனிப்பயன் குரல் கட்டளைகள்</string>
+    <string name="voice_command_add">குரல் கட்டளையைச் சேர்</string>
+    <string name="voice_command_phrase">சொற்றொடர்</string>
+    <string name="voice_command_change_phrase">சொற்றொடரை மாற்று</string>
+    <string name="voice_command_change_command">கட்டளையை மாற்று</string>
+    <string name="voice_command_delete_confirm"><xliff:g id="phrase" example="Good morning">%1$s</xliff:g> ஐ நீக்கவா?</string>
+    <string name="voice_command_phrase_exists"><xliff:g id="phrase" example="Good morning">%1$s</xliff:g> ஏற்கனவே ஒரு குரல் கட்டளை</string>
+    <string name="voice_commands_not_understood">புரியவில்லை: <xliff:g id="text" example="open the door">%1$s</xliff:g></string>
+    <string name="voice_commands_not_available">கிடைக்கவில்லை: <xliff:g id="name" example="Morning macro">%1$s</xliff:g></string>
+    <string name="voice_commands_not_found">கிடைக்கவில்லை: <xliff:g id="label" example="Settings">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app"><xliff:g id="name" example="Signal">%1$s</xliff:g> என்ற ஆப்ஸ் இல்லை</string>
+    <string name="voice_commands_no_app_for_action">இந்தச் செயலுக்கு ஆப்ஸ் இல்லை</string>
+    <string name="voice_commands_calling"><xliff:g id="name" example="Sam">%1$s</xliff:g> ஐ அழைக்கிறது</string>
+    <string name="voice_commands_call_permission">தொலைபேசி அழைப்புகளை அனுமதித்து, கட்டளையை மீண்டும் கூறவும்.</string>
+    <string name="voice_commands_contacts_permission">தொடர்புகளுக்கான அணுகலை அனுமதித்து, கட்டளையை மீண்டும் கூறவும்.</string>
+    <string name="voice_commands_no_contact"><xliff:g id="name" example="Sam">%1$s</xliff:g> என்ற தொடர்பு இல்லை</string>
+    <string name="voice_commands_contacts_several"><xliff:g id="name" example="Sam">%1$s</xliff:g> என்ற பெயரில் ஒன்றுக்கு மேற்பட்ட தொடர்புகள் உள்ளன: <xliff:g id="names" example="Sam Jones, Sam Smith">%2$s</xliff:g></string>
+    <string name="voice_commands_message_text"><xliff:g id="name" example="Sam">%1$s</xliff:g> க்கான செய்தி</string>
+    <string name="voice_commands_message_confirm"><xliff:g id="name" example="Sam">%1$s</xliff:g> க்கு அனுப்பவா: <xliff:g id="text" example="I am on my way">%2$s</xliff:g>?</string>
+    <string name="voice_commands_message_confirm_result"><xliff:g id="name" example="Sam">%1$s</xliff:g> க்கு அனுப்பவா?</string>
+    <string name="voice_commands_message_not_sent">செய்தி அனுப்பப்படவில்லை</string>
+    <string name="voice_commands_send_pressed">அனுப்பு அழுத்தப்பட்டது</string>
+    <string name="voice_commands_send_button">அனுப்பு</string>
+    <string name="voice_commands_no_description">விளக்கம் பெறப்படவில்லை</string>
+    <string name="voice_commands_copied">நகலெடுக்கப்பட்டது</string>
+    <string-array name="voice_commands_chain_words">
+        <item>அதன் பிறகு</item>
+        <item>பிறகு</item>
+        <item>அதற்குப் பிறகு</item>
+        <item>அப்புறம்</item>
+        <item>பின்னர்</item>
+    </string-array>
+    <string-array name="voice_commands_and_words">
+        <item>மற்றும்</item>
+        <item>அத்துடன்</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_start">
+        <item>தயவுசெய்து</item>
+        <item>தயவு செய்து</item>
+        <item>இப்போது</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_end">
+        <item>தயவுசெய்து</item>
+        <item>தயவு செய்து</item>
+        <item>எனக்காக</item>
+        <item>இப்போது</item>
+    </string-array>
+    <string-array name="voice_commands_cancel_words">
+        <item>நிறுத்து</item>
+        <item>நிறுத்துங்கள்</item>
+        <item>ரத்து செய்</item>
+        <item>ரத்து</item>
+        <item>வேண்டாம்</item>
+        <item>பரவாயில்லை</item>
+        <item>விடு</item>
+        <item>அமைதி</item>
+    </string-array>
+    <string-array name="voice_commands_yes">
+        <item>ஆம்</item>
+        <item>ஆமாம்</item>
+        <item>சரி</item>
+        <item>ஓகே</item>
+        <item>அனுப்பு</item>
+        <item>அனுப்பிடு</item>
+        <item>நிச்சயமாக</item>
+        <item>செய்</item>
+    </string-array>
+    <string-array name="voice_commands_sms_names">
+        <item>SMS</item>
+        <item>எஸ்எம்எஸ்</item>
+        <item>குறுஞ்செய்தி</item>
+        <item>டெக்ஸ்ட்</item>
+        <item>மெசேஜஸ்</item>
+    </string-array>
+    <string-array name="voice_commands_send_image_description">
+        <item>[இந்தப்] படத்தின் விளக்கத்தை {who} க்கு அனுப்பு</item>
+        <item>{who} க்கு [இந்தப்] படத்தின் விளக்கத்தை அனுப்பு</item>
+        <item>[இந்தப்] புகைப்படத்தின் விளக்கத்தை {who} க்கு அனுப்பு</item>
+        <item>{who} க்கு [இந்தப்] புகைப்படத்தின் விளக்கத்தை அனுப்பு</item>
+        <item>பட விளக்கத்தை {who} க்கு அனுப்பு</item>
+    </string-array>
+    <string-array name="voice_commands_send_screen_description">
+        <item>திரை விளக்கத்தை {who} க்கு அனுப்பு</item>
+        <item>திரையின் விளக்கத்தை {who} க்கு அனுப்பு</item>
+        <item>{who} க்கு திரையின் விளக்கத்தை அனுப்பு</item>
+    </string-array>
+    <string-array name="voice_commands_send_previous">
+        <item>அதை {who} க்கு {app} இல் அனுப்பு</item>
+        <item>அதை {who} க்கு அனுப்பு</item>
+        <item>இதை {who} க்கு அனுப்பு</item>
+        <item>விளக்கத்தை {who} க்கு அனுப்பு</item>
+        <item>அதை {who} உடன் பகிர்</item>
+    </string-array>
+    <string-array name="voice_commands_message">
+        <item>{who} க்கு {app} இல் {text} என்று செய்தி அனுப்பு</item>
+        <item>{who} க்கு {text} என்று செய்தி அனுப்பு</item>
+        <item>{who} க்கு {app} இல் {text} என்று மெசேஜ் அனுப்பு</item>
+        <item>{who} க்கு {text} என்று மெசேஜ் அனுப்பு</item>
+        <item>செய்தி அனுப்பு {whoandtext}</item>
+        <item>{app} செய்தி அனுப்பு {who} {text}</item>
+        <item>{who} க்கு {app} செய்தி அனுப்பு</item>
+        <item>{who} க்கு {app} இல் செய்தி அனுப்பு {text}</item>
+        <item>{who} இடம் {app} இல் {text} என்று சொல்</item>
+        <item>{who} இடம் {text} என்று சொல்</item>
+        <item>{who} க்கு மெசேஜ் {text}</item>
+        <item>மெசேஜ் {whoandtext}</item>
+        <item>SMS அனுப்பு {whoandtext}</item>
+    </string-array>
+    <string-array name="voice_commands_call">
+        <item>{who} ஐ அழை</item>
+        <item>{who} ஐ அழைக்கவும்</item>
+        <item>{who} க்கு கால் செய்</item>
+        <item>{who} க்கு போன் செய்</item>
+        <item>{who} ஐ டயல் செய்</item>
+        <item>{who} க்கு அழைப்பு விடு</item>
+    </string-array>
+    <string-array name="voice_commands_describe_screen">
+        <item>திரையை விவரி</item>
+        <item>திரையை விவரிக்கவும்</item>
+        <item>திரையில் என்ன உள்ளது</item>
+        <item>திரையில் என்ன இருக்கிறது</item>
+        <item>திரையின் விளக்கம்</item>
+    </string-array>
+    <string-array name="voice_commands_describe_image">
+        <item>[இந்தப்] படத்தை விவரி</item>
+        <item>[இந்தப்] புகைப்படத்தை விவரி</item>
+        <item>[இந்தப்] படத்தில் என்ன உள்ளது</item>
+        <item>[இந்தப்] புகைப்படத்தில் என்ன உள்ளது</item>
+        <item>படத்தை விவரிக்கவும்</item>
+    </string-array>
+    <string-array name="voice_commands_copy_result">
+        <item>அதை நகலெடு</item>
+        <item>இதை நகலெடு</item>
+        <item>விளக்கத்தை நகலெடு</item>
+        <item>நீ [இப்போது] சொன்னதை நகலெடு</item>
+        <item>கடைசியாகப் பேசியதை நகலெடு</item>
+        <item>கடைசி சொற்றொடரை நகலெடு</item>
+    </string-array>
+    <string-array name="voice_commands_wait">
+        <item>{n} வினாடிகள் காத்திரு</item>
+        <item>{n} வினாடி காத்திரு</item>
+        <item>ஒரு வினாடி காத்திரு</item>
+        <item>காத்திரு</item>
+    </string-array>
+    <string-array name="voice_commands_type_text">
+        <item>{text} என்று தட்டச்சு செய்</item>
+        <item>{text} எழுது</item>
+        <item>{text} உள்ளிடு</item>
+    </string-array>
+    <string-array name="voice_commands_run">
+        <item>{command} மேக்ரோவை இயக்கு</item>
+        <item>மேக்ரோ {command} இயக்கு</item>
+        <item>{command} இயக்கு</item>
+        <item>{command} செய்</item>
+    </string-array>
+    <string-array name="voice_commands_open">
+        <item>{app} ஐத் திற</item>
+        <item>{app} ஐ திற</item>
+        <item>{app} ஐத் தொடங்கு</item>
+        <item>{app} க்கு மாறு</item>
+    </string-array>
+    <string-array name="voice_commands_tap">
+        <item>{label} ஐ இருமுறை தட்டு</item>
+        <item>{label} ஐத் தட்டு</item>
+        <item>{label} ஐ கிளிக் செய்</item>
+        <item>{label} ஐ அழுத்து</item>
+        <item>{label} ஐ செயல்படுத்து</item>
+        <item>{label} ஐத் தேர்ந்தெடு</item>
+    </string-array>
+</resources>

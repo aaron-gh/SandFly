@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_macros">Makro</string>
+    <string name="shortcut_stop_macro">Apturēt makro</string>
+    <string name="macro_add">Pievienot makro</string>
+    <string name="macro_run_now">Palaist tagad</string>
+    <string name="macro_add_step">Pievienot soli</string>
+    <string name="macro_add_at_end">Beigās</string>
+    <string name="macro_add_at_start">Sākumā</string>
+    <string name="macro_add_after">Pēc soļa <xliff:g id="step" example="2">%1$d</xliff:g>: <xliff:g id="name" example="If App in front: Chrome">%2$s</xliff:g></string>
+    <string name="macro_steps">Soļi</string>
+    <string name="macro_no_steps">Nav soļu</string>
+    <string name="macro_delete">Dzēst makro</string>
+    <string name="macro_delete_confirm">Vai dzēst <xliff:g id="name" example="Send message">%1$s</xliff:g>?</string>
+    <string name="macro_step_command">Palaist komandu</string>
+    <string name="macro_step_wait">Gaidīt</string>
+    <string name="macro_step_tap">Pieskarties vienumam</string>
+    <string name="macro_step_focus">Fokusēt vienumu</string>
+    <string name="macro_step_speak_item">Izrunāt vienumu</string>
+    <string name="macro_step_speak_text">Izrunāt tekstu</string>
+    <string name="macro_step_type">Ievadīt tekstu</string>
+    <string name="macro_step_tap_value">Pieskarties: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_focus_value">Fokusēt: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_item_value">Izrunāt: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_text_value">Izrunāt: <xliff:g id="text" example="Done">%1$s</xliff:g></string>
+    <string name="macro_step_type_value">Ievadīt: <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <string name="macro_step_replace_value">Aizstāt tekstu ar: <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <plurals name="macro_step_wait_seconds"><item quantity="zero">Gaidīt <xliff:g id="count" example="2">%d</xliff:g> sekunžu</item><item quantity="one">Gaidīt <xliff:g id="count" example="2">%d</xliff:g> sekundi</item><item quantity="other">Gaidīt <xliff:g id="count" example="2">%d</xliff:g> sekundes</item></plurals>
+    <plurals name="macro_step_wait_milliseconds"><item quantity="zero">Gaidīt <xliff:g id="count" example="500">%d</xliff:g> milisekunžu</item><item quantity="one">Gaidīt <xliff:g id="count" example="500">%d</xliff:g> milisekundi</item><item quantity="other">Gaidīt <xliff:g id="count" example="500">%d</xliff:g> milisekundes</item></plurals>
+    <string name="macro_step_unavailable">Nav pieejams</string>
+    <string name="macro_seconds">Sekundes</string>
+    <string name="macro_invalid_seconds">Ievadiet sekunžu skaitu līdz <xliff:g id="max" example="600">%1$d</xliff:g></string>
+    <string name="macro_tap_label">Vienuma teksts</string>
+    <string name="macro_tap_timeout">Sekundes, cik gaidīt vienumu</string>
+    <string name="macro_text">Teksts</string>
+    <string name="macro_replace_text">Aizstāt tekstu laukā</string>
+    <string name="macro_item_not_found">Makro apturēts. Nav atrasts: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_failed">Makro apturēts. Neizdevās: <xliff:g id="step" example="Open Gmail">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until">Gaidīt, līdz</string>
+    <string name="macro_step_if">Ja</string>
+    <string name="macro_step_else_if">Citādi, ja</string>
+    <string name="macro_step_else">Citādi</string>
+    <string name="macro_step_end_if">Beigt ja</string>
+    <string name="macro_step_repeat">Atkārtot</string>
+    <string name="macro_step_repeat_while">Atkārtot, kamēr</string>
+    <string name="macro_step_end_repeat">Beigt atkārtošanu</string>
+    <string name="macro_step_exit_loop">Iziet no cikla</string>
+    <string name="macro_step_if_value">Ja <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_else_if_value">Citādi, ja <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_repeat_while_value">Atkārtot, kamēr <xliff:g id="condition" example="Item on screen: Load more">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until_value">Gaidīt, līdz <xliff:g id="condition" example="Item on screen: Send">%1$s</xliff:g></string>
+    <plurals name="macro_step_repeat_value"><item quantity="zero">Atkārtot <xliff:g id="count" example="3">%d</xliff:g> reižu</item><item quantity="one">Atkārtot <xliff:g id="count" example="3">%d</xliff:g> reizi</item><item quantity="other">Atkārtot <xliff:g id="count" example="3">%d</xliff:g> reizes</item></plurals>
+    <string name="macro_times">Reizes</string>
+    <string name="macro_invalid_times">Ievadiet skaitli no 1 līdz <xliff:g id="max" example="1000">%1$d</xliff:g></string>
+    <string name="macro_run_only_when">Palaist tikai tad, ja</string>
+    <string name="macro_always">Vienmēr</string>
+    <string name="macro_no_tests">Nav pārbaužu</string>
+    <string name="macro_add_test">Pievienot pārbaudi</string>
+    <string name="macro_tests">Pārbaudes</string>
+    <string name="macro_choose_test">Pārbaude</string>
+    <string name="macro_test_item">Vienums ekrānā</string>
+    <string name="macro_test_focused">Fokusētais vienums</string>
+    <string name="macro_test_app">Priekšplāna lietotne</string>
+    <string name="macro_test_keyboard">Tastatūra parādīta</string>
+    <string name="macro_test_keyboard_hidden">Tastatūra paslēpta</string>
+    <string name="macro_test_locked">Ekrāns bloķēts</string>
+    <string name="macro_test_unlocked">Ekrāns atbloķēts</string>
+    <string name="macro_test_item_value">Vienums ekrānā: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_no_item_value">Nav vienuma ekrānā: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_focused_value">Fokusētais vienums: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_not_focused_value">Fokusētais vienums nav: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_app_value">Priekšplāna lietotne: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_not_app_value">Nav priekšplāna lietotne: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_label_kind"><xliff:g id="label" example="Send">%1$s</xliff:g>, <xliff:g id="kind" example="Clickable">%2$s</xliff:g></string>
+    <string name="macro_join_and"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g> un <xliff:g id="second" example="Focused item: Editable">%2$s</xliff:g></string>
+    <string name="macro_join_or"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g> vai <xliff:g id="second" example="Screen locked">%2$s</xliff:g></string>
+    <string name="macro_regex">Regulārā izteiksme</string>
+    <string name="macro_invalid_regex">Nav derīga regulārā izteiksme. Atkārtotās grupās nedrīkst būt atkārtojums vai |.</string>
+    <string name="macro_match_in">Meklēt laukā</string>
+    <string name="macro_field_any">Jebkurš teksts</string>
+    <string name="macro_field_text">Teksts</string>
+    <string name="macro_field_description">Apraksts</string>
+    <string name="macro_field_hint">Norāde</string>
+    <string name="macro_field_state">Stāvoklis</string>
+    <string name="macro_field_id">Resursa ID</string>
+    <string name="macro_field_value"><xliff:g id="label" example="send">%1$s</xliff:g> (<xliff:g id="field" example="Resource ID">%2$s</xliff:g>)</string>
+    <string name="macro_field_regex_value"><xliff:g id="pattern" example="^Reply">%1$s</xliff:g> (<xliff:g id="field" example="Description">%2$s</xliff:g>, regulārā izteiksme)</string>
+    <string name="macro_regex_value"><xliff:g id="pattern" example="Reply.*Anna">%1$s</xliff:g> (regulārā izteiksme)</string>
+    <string name="macro_test_label_optional">Vienuma teksts (neobligāti)</string>
+    <string name="macro_item_kind">Vienuma tips</string>
+    <string name="macro_kind_any">Jebkurš tips</string>
+    <string name="macro_kind_clickable">Noklikšķināms</string>
+    <string name="macro_kind_long_clickable">Ilgi noklikšķināms</string>
+    <string name="macro_kind_editable">Rediģējams</string>
+    <string name="macro_kind_scrollable">Ritināms</string>
+    <string name="macro_kind_adjustable">Pielāgojams</string>
+    <string name="macro_kind_checkable">Atzīmējams</string>
+    <string name="macro_kind_checked">Atzīmēts</string>
+    <string name="macro_kind_selected">Atlasīts</string>
+    <string name="macro_kind_heading">Virsraksts</string>
+    <string name="macro_kind_enabled">Iespējots</string>
+    <string name="macro_change_to">Mainīt uz: <xliff:g id="test" example="Keyboard hidden">%1$s</xliff:g></string>
+    <string name="macro_join_with_and">Savienot ar un</string>
+    <string name="macro_join_with_or">Savienot ar vai</string>
+    <string name="macro_clause_and">un <xliff:g id="test" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_clause_or">vai <xliff:g id="test" example="Screen locked">%1$s</xliff:g></string>
+    <string name="macro_wait_timeout">Sekundes, cik gaidīt</string>
+    <string name="macro_add_step_after">Pievienot soli pēc</string>
+    <string name="macro_problem">Solis <xliff:g id="step" example="3">%1$d</xliff:g>: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_problem_no_if">Citādi, ja, Citādi vai Beigt ja bez Ja</string>
+    <string name="macro_problem_after_else">Citādi, ja vai Citādi pēc Citādi</string>
+    <string name="macro_problem_no_repeat">Beigt atkārtošanu bez Atkārtot</string>
+    <string name="macro_problem_no_end_if">Ja bez Beigt ja</string>
+    <string name="macro_problem_no_end_repeat">Atkārtot bez Beigt atkārtošanu</string>
+    <string name="macro_problem_exit">Iziet no cikla ārpus atkārtošanas</string>
+    <string name="macro_stopped_problem">Makro apturēts. Solis <xliff:g id="step" example="3">%1$d</xliff:g>: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_stopped_repeats">Makro apturēts. Atkārtots <xliff:g id="count" example="1000">%1$d</xliff:g> reizes: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
+    <string name="macro_stopped_timeout">Makro apturēts. Noildze: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
+    <string name="macro_not_met">Makro nav palaists. Palaist tikai tad, ja: nav izpildīts</string>
+</resources>

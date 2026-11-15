@@ -42,7 +42,7 @@ public class OnboardingInitiator {
 
   // LINT.IfChange(onboarding_update)
   @StringRes @VisibleForTesting
-  public static final int NEW_FEATURE_SHOWN_KEY = R.string.pref_update_welcome_sandfly_0_5_0_shown_key;
+  public static final int NEW_FEATURE_SHOWN_KEY = R.string.pref_update_welcome_sandfly_0_6_0_shown_key;
 
   /** A list of legacy preferences for old onboardings. */
   @VisibleForTesting
@@ -63,6 +63,7 @@ public class OnboardingInitiator {
     R.string.pref_update_welcome_sandfly_0_2_0_shown_key,
     R.string.pref_update_welcome_sandfly_0_3_0_shown_key,
     R.string.pref_update_welcome_sandfly_0_4_0_shown_key,
+    R.string.pref_update_welcome_sandfly_0_5_0_shown_key,
   };
 
   // LINT.ThenChange(

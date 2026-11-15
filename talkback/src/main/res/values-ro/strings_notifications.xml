@@ -398,4 +398,13 @@
         <item>@string/notification_shake_3</item>
     </string-array>
     <string name="notification_clock_voice_notifications">Vocea notificărilor</string>
+    <string name="notification_exact_alarms_title">Activează Alarme și mementouri</string>
+    <string name="shortcut_toggle_time_announcements">Anunțarea orei activată sau dezactivată</string>
+    <string name="notification_clock_now_on">Anunțarea orei activată</string>
+    <string name="notification_clock_now_off">Anunțarea orei dezactivată</string>
+    <plurals name="notification_clock_battery">
+        <item quantity="one"><xliff:g id="percent" example="1">%d</xliff:g> la sută</item>
+        <item quantity="few"><xliff:g id="percent" example="16">%d</xliff:g> la sută</item>
+        <item quantity="other"><xliff:g id="percent" example="76">%d</xliff:g> la sută</item>
+    </plurals>
 </resources>

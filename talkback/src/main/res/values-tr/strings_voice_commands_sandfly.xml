@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_voice_commands">Sesli komutlar</string>
+    <string name="title_pref_voice_commands_ai">Sesli komutları yapay zekayla anla</string>
+    <string name="voice_commands_custom">Özel sesli komutlar</string>
+    <string name="voice_command_add">Sesli komut ekle</string>
+    <string name="voice_command_phrase">İfade</string>
+    <string name="voice_command_change_phrase">İfadeyi değiştir</string>
+    <string name="voice_command_change_command">Komutu değiştir</string>
+    <string name="voice_command_delete_confirm"><xliff:g id="phrase" example="Good morning">%1$s</xliff:g> silinsin mi?</string>
+    <string name="voice_command_phrase_exists"><xliff:g id="phrase" example="Good morning">%1$s</xliff:g> zaten bir sesli komut</string>
+    <string name="voice_commands_not_understood">Anlaşılamadı: <xliff:g id="text" example="open the door">%1$s</xliff:g></string>
+    <string name="voice_commands_not_available">Kullanılamıyor: <xliff:g id="name" example="Morning macro">%1$s</xliff:g></string>
+    <string name="voice_commands_not_found">Bulunamadı: <xliff:g id="label" example="Settings">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app"><xliff:g id="name" example="Signal">%1$s</xliff:g> adlı uygulama yok</string>
+    <string name="voice_commands_no_app_for_action">Bu işlem için uygulama yok</string>
+    <string name="voice_commands_calling">Aranıyor: <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_call_permission">Telefon aramalarına izin verin, sonra komutu yeniden söyleyin.</string>
+    <string name="voice_commands_contacts_permission">Kişilere erişime izin verin, sonra komutu yeniden söyleyin.</string>
+    <string name="voice_commands_no_contact"><xliff:g id="name" example="Sam">%1$s</xliff:g> adlı kişi yok</string>
+    <string name="voice_commands_contacts_several"><xliff:g id="name" example="Sam">%1$s</xliff:g> adlı birden fazla kişi var: <xliff:g id="names" example="Sam Jones, Sam Smith">%2$s</xliff:g></string>
+    <string name="voice_commands_message_text">Mesaj alıcısı: <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_message_confirm"><xliff:g id="name" example="Sam">%1$s</xliff:g> kişisine gönderilsin mi: <xliff:g id="text" example="I am on my way">%2$s</xliff:g>?</string>
+    <string name="voice_commands_message_confirm_result"><xliff:g id="name" example="Sam">%1$s</xliff:g> kişisine gönderilsin mi?</string>
+    <string name="voice_commands_message_not_sent">Mesaj gönderilmedi</string>
+    <string name="voice_commands_send_pressed">Gönder\'e basıldı</string>
+    <string name="voice_commands_send_button">Gönder</string>
+    <string name="voice_commands_no_description">Açıklama alınamadı</string>
+    <string name="voice_commands_copied">Kopyalandı</string>
+    <string-array name="voice_commands_chain_words">
+        <item>ve sonra</item>
+        <item>sonra</item>
+        <item>ardından</item>
+        <item>daha sonra</item>
+        <item>ondan sonra</item>
+    </string-array>
+    <string-array name="voice_commands_and_words">
+        <item>ve</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_start">
+        <item>lütfen</item>
+        <item>şimdi</item>
+        <item>hadi</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_end">
+        <item>lütfen</item>
+        <item>benim için</item>
+        <item>şimdi</item>
+        <item>yapar mısın</item>
+        <item>eder misin</item>
+    </string-array>
+    <string-array name="voice_commands_cancel_words">
+        <item>dur</item>
+        <item>durdur</item>
+        <item>iptal</item>
+        <item>iptal et</item>
+        <item>vazgeç</item>
+        <item>boş ver</item>
+        <item>sus</item>
+        <item>çık</item>
+    </string-array>
+    <string-array name="voice_commands_yes">
+        <item>evet</item>
+        <item>tamam</item>
+        <item>olur</item>
+        <item>gönder</item>
+        <item>yolla</item>
+        <item>tabii</item>
+        <item>peki</item>
+        <item>ok</item>
+    </string-array>
+    <string-array name="voice_commands_sms_names">
+        <item>SMS</item>
+        <item>kısa mesaj</item>
+        <item>mesaj</item>
+        <item>mesajlar</item>
+        <item>metin mesajı</item>
+    </string-array>
+    <string-array name="voice_commands_send_image_description">
+        <item>{who} kişisine [bu] resmin açıklamasını gönder</item>
+        <item>{who} kişisine [bu] görselin açıklamasını gönder</item>
+        <item>{who} kişisine [bu] fotoğrafın açıklamasını gönder</item>
+        <item>resim açıklamasını {who} kişisine gönder</item>
+        <item>görsel açıklamasını {who} kişisine gönder</item>
+        <item>fotoğraf açıklamasını {who} kişisine gönder</item>
+    </string-array>
+    <string-array name="voice_commands_send_screen_description">
+        <item>{who} kişisine ekran açıklamasını gönder</item>
+        <item>ekran açıklamasını {who} kişisine gönder</item>
+        <item>{who} kişisine ekranın açıklamasını gönder</item>
+    </string-array>
+    <string-array name="voice_commands_send_previous">
+        <item>bunu {who} kişisine {app} üzerinden gönder</item>
+        <item>bunu {who} kişisine gönder</item>
+        <item>onu {who} kişisine gönder</item>
+        <item>şunu {who} kişisine gönder</item>
+        <item>açıklamayı {who} kişisine gönder</item>
+        <item>bunu {who} ile paylaş</item>
+    </string-array>
+    <string-array name="voice_commands_message">
+        <item>{who} kişisine {app} üzerinden {text} diye mesaj gönder</item>
+        <item>{who} kişisine {app} üzerinden mesaj gönder {text}</item>
+        <item>{who} kişisine {text} diye mesaj gönder</item>
+        <item>{who} kişisine mesaj gönder {text}</item>
+        <item>{whoandtext} diye mesaj gönder</item>
+        <item>{who} kişisine {app} mesajı gönder {text}</item>
+        <item>{who} kişisine {app} mesajı gönder</item>
+        <item>{who} kişisine {app} üzerinden {text} yaz</item>
+        <item>{who} kişisine {text} yaz</item>
+        <item>{who} kişisine {app} üzerinden söyle {text}</item>
+        <item>{whoandtext} diye mesaj at</item>
+        <item>{whoandtext} yaz</item>
+    </string-array>
+    <string-array name="voice_commands_call">
+        <item>{who} kişisini ara</item>
+        <item>{who} ara</item>
+        <item>{who} için arama yap</item>
+        <item>{who} numarasını çevir</item>
+    </string-array>
+    <string-array name="voice_commands_describe_screen">
+        <item>ekranı açıkla</item>
+        <item>ekranı tarif et</item>
+        <item>ekranda ne var</item>
+        <item>ekranımda ne var</item>
+        <item>ekranda ne olduğunu açıkla</item>
+    </string-array>
+    <string-array name="voice_commands_describe_image">
+        <item>[bu] resmi açıkla</item>
+        <item>[bu] resmi tarif et</item>
+        <item>[bu] fotoğrafı açıkla</item>
+        <item>[bu] görseli açıkla</item>
+        <item>resimde ne var</item>
+        <item>fotoğrafta ne var</item>
+        <item>görselde ne var</item>
+    </string-array>
+    <string-array name="voice_commands_copy_result">
+        <item>kopyala</item>
+        <item>bunu kopyala</item>
+        <item>açıklamayı kopyala</item>
+        <item>az önce söylediğini kopyala</item>
+        <item>son okunan ifadeyi kopyala</item>
+        <item>son söyleneni kopyala</item>
+    </string-array>
+    <string-array name="voice_commands_wait">
+        <item>{n} saniye bekle</item>
+        <item>bir saniye bekle</item>
+        <item>bekle</item>
+    </string-array>
+    <string-array name="voice_commands_type_text">
+        <item>{text} yaz</item>
+        <item>{text} gir</item>
+        <item>{text} yazdır</item>
+    </string-array>
+    <string-array name="voice_commands_run">
+        <item>{command} makrosunu çalıştır</item>
+        <item>{command} komutunu çalıştır</item>
+        <item>{command} çalıştır</item>
+        <item>{command} yap</item>
+    </string-array>
+    <string-array name="voice_commands_open">
+        <item>{app} uygulamasını aç</item>
+        <item>{app} aç</item>
+        <item>{app} başlat</item>
+        <item>{app} uygulamasına geç</item>
+    </string-array>
+    <string-array name="voice_commands_tap">
+        <item>{label} öğesine çift dokun</item>
+        <item>{label} öğesine dokun</item>
+        <item>{label} öğesine tıkla</item>
+        <item>{label} öğesine bas</item>
+        <item>{label} öğesini etkinleştir</item>
+        <item>{label} öğesini seç</item>
+    </string-array>
+</resources>

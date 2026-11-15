@@ -2041,4 +2041,133 @@
   <string name="title_select_last_spoken_phrase_word_by_word">Selecionar última frase palavra por palavra</string>
   <string name="no_words_selected">Nenhuma palavra selecionada</string>
   <string name="no_phrase_to_select">Nenhuma frase para selecionar</string>
+    <string name="title_pref_speech_equalizer_save_preset">Salvar como predefinição</string>
+    <string name="title_pref_speech_equalizer_saved_presets">Predefinições salvas</string>
+    <string name="speech_equalizer_preset_name">Nome</string>
+    <string name="speech_equalizer_preset_name_taken">Já existe uma predefinição chamada <xliff:g id="name" example="Podcast">%1$s</xliff:g></string>
+    <string name="speech_equalizer_presets_full">Não é possível salvar mais predefinições. Exclua uma para salvar outra.</string>
+    <string name="speech_equalizer_preset_saved"><xliff:g id="name" example="Podcast">%1$s</xliff:g> salva</string>
+    <string name="speech_equalizer_preset_rename">Renomear</string>
+    <string name="speech_equalizer_preset_delete">Excluir</string>
+    <string name="speech_equalizer_preset_delete_confirm">Excluir <xliff:g id="name" example="Podcast">%1$s</xliff:g>?</string>
+    <string name="speech_equalizer_preset_deleted"><xliff:g id="name" example="Podcast">%1$s</xliff:g> excluída</string>
+    <string name="title_pref_emoji_voice">Voz de emojis</string>
+    <string name="value_emoji_voice_same">Igual à fala</string>
+    <string name="title_pref_emoji_rate">Velocidade da fala de emojis</string>
+    <string name="title_pref_line_breaks_as_spaces">Ler quebras de linha como espaços</string>
+    <string name="title_pref_language_voices">Vozes por idioma</string>
+    <string name="title_pref_identify_languages_from_words">Identificar idiomas pelas palavras</string>
+    <string name="title_pref_add_language">Adicionar idioma</string>
+    <string name="title_pref_remove_language">Remover idioma</string>
+    <string name="title_pref_script_language">Escrita %1$s</string>
+    <string name="title_pref_screen_on_notification_count">Número de notificações</string>
+    <plurals name="template_screen_on_notification_count">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> notificação</item>
+        <item quantity="other"><xliff:g id="count" example="6">%d</xliff:g> notificações</item>
+    </plurals>
+    <string name="title_pref_phonetic_letters_review">Falar letras foneticamente ao revisar</string>
+    <string name="title_pref_phonetic_letters_typing">Falar letras foneticamente ao digitar</string>
+    <string name="title_pref_emoji_suffix">Falar \"emoji\" depois dos nomes de emojis</string>
+    <string name="overview_shizuku_not_running">Shizuku não está em execução</string>
+    <string name="overview_shizuku_not_allowed">Shizuku não permite o SandFly</string>
+    <string name="overview_no_older_app">Nenhum app mais antigo</string>
+    <string name="overview_no_newer_app">Nenhum app mais recente</string>
+    <string name="stream_volume_needs_access">Permita o acesso a Não perturbe para mudar este volume.</string>
+    <string name="corner_gestures_title">Cantos</string>
+    <string name="shortcut_move_to_item_below">Mover para o item abaixo</string>
+    <string name="shortcut_move_to_item_above">Mover para o item acima</string>
+    <string name="shortcut_older_app">App mais antigo</string>
+    <string name="shortcut_newer_app">App mais recente</string>
+    <string name="shortcut_answer_call">Atender chamada</string>
+    <string name="answer_call_no_call">Nenhuma chamada recebida</string>
+    <string name="answer_call_permission">Permissão necessária para atender chamadas</string>
+    <string name="shortcut_switch_keyboard">Trocar de teclado</string>
+    <string name="switch_keyboard_none">Nenhum outro teclado ativado</string>
+    <string name="switch_keyboard_failed">Teclado não trocado</string>
+    <string name="clipboard_history_hint">Deslize para cima ou para baixo para escolher e toque duas vezes para colar</string>
+    <string name="title_speech_history">Histórico de fala</string>
+    <string name="speech_history_empty">Nenhuma fala</string>
+    <string name="speech_history_clear">Limpar histórico</string>
+    <string name="title_pref_shortcut_corner_top_left_tap">Tocar no canto superior esquerdo</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap">Tocar duas vezes no canto superior esquerdo</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap">Tocar três vezes no canto superior esquerdo</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap_hold">Tocar duas vezes e segurar no canto superior esquerdo</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap_hold">Tocar três vezes e segurar no canto superior esquerdo</string>
+    <string name="title_pref_shortcut_corner_top_right_tap">Tocar no canto superior direito</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap">Tocar duas vezes no canto superior direito</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap">Tocar três vezes no canto superior direito</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap_hold">Tocar duas vezes e segurar no canto superior direito</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap_hold">Tocar três vezes e segurar no canto superior direito</string>
+    <string name="title_pref_shortcut_corner_bottom_left_tap">Tocar no canto inferior esquerdo</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap">Tocar duas vezes no canto inferior esquerdo</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap">Tocar três vezes no canto inferior esquerdo</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap_hold">Tocar duas vezes e segurar no canto inferior esquerdo</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap_hold">Tocar três vezes e segurar no canto inferior esquerdo</string>
+    <string name="title_pref_shortcut_corner_bottom_right_tap">Tocar no canto inferior direito</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap">Tocar duas vezes no canto inferior direito</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap">Tocar três vezes no canto inferior direito</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap_hold">Tocar duas vezes e segurar no canto inferior direito</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap_hold">Tocar três vezes e segurar no canto inferior direito</string>
+    <string name="title_pref_swipe_start_time">Tempo de início do gesto</string>
+    <string name="title_pref_swipes_before_lift">Reconhecer deslizes antes de levantar o dedo</string>
+    <string name="summary_pref_swipes_before_lift">Desativa os gestos de vai-e-vem e de ângulo.</string>
+    <string name="title_pref_corner_size_mm">Tamanho do canto</string>
+    <string name="value_corner_size_edge_width">Igual à largura da borda</string>
+    <string name="title_pref_corner_tap_time_ms">Limite de tempo do toque no canto</string>
+    <string name="value_corner_tap_time_system">Padrão do sistema</string>
+    <string name="title_pref_edge_speak_commands">Falar o comando a cada clique</string>
+    <string-array name="pref_volume_change_feedback_entries">
+        <item>@string/volume_change_feedback_off</item>
+        <item>@string/volume_change_feedback_tone</item>
+        <item>@string/volume_change_feedback_spoken</item>
+        <item>@string/volume_change_feedback_tone_and_spoken</item>
+    </string-array>
+    <string name="title_pref_volume_change_tone_during_media">Silenciar o tom durante a reprodução de mídia</string>
+    <string name="title_pref_volume_change_speech_during_media">Silenciar a fala durante a reprodução de mídia</string>
+    <string name="title_pref_volume_change_interrupts_speech">Interromper a fala para anunciar o volume</string>
+    <string name="title_pref_volume_keys_speech_volume_while_speaking">As teclas de volume mudam o volume da fala enquanto ela é reproduzida</string>
+    <string name="title_pref_double_tap_moves_cursor">Tocar duas vezes move o cursor para o início ou o fim</string>
+    <string name="title_pref_scroll_ahead">Rolar adiante até o próximo item</string>
+    <string name="title_pref_speak_while_scrolling">Falar o próximo item durante a rolagem</string>
+    <string-array name="pref_text_entities_entries">
+        <item>@string/text_entity_web</item>
+        <item>@string/text_entity_email</item>
+        <item>@string/text_entity_phone</item>
+        <item>@string/text_entity_code</item>
+    </string-array>
+    <string name="value_keep_models_until_stopped">Até o SandFly parar</string>
+    <string name="title_pref_model_download_server">Servidor de download de modelos</string>
+    <string name="title_pref_settings_profiles">Perfis de configurações</string>
+    <string name="title_pref_new_settings_profile">Novo perfil de configurações</string>
+    <string name="settings_profile_new_name">Perfil <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="settings_profile_name_taken">Já existe um perfil de configurações chamado <xliff:g id="name" example="Demo">%1$s</xliff:g></string>
+    <string name="settings_profile_in_use">Em uso</string>
+    <string name="settings_profile_menu_item_in_use"><xliff:g id="name" example="Demo">%1$s</xliff:g>, em uso</string>
+    <string name="settings_profile_none">Nenhum perfil de configurações</string>
+    <string name="settings_profile_use_now">Usar agora</string>
+    <string name="settings_profile_stop_using">Parar de usar</string>
+    <string name="settings_profile_change_settings">Alterar configurações</string>
+    <string name="settings_profile_editing">As alterações vão para <xliff:g id="name" example="Messaging">%1$s</xliff:g></string>
+    <string name="settings_profile_edit_saved">Alterações salvas em <xliff:g id="name" example="Messaging">%1$s</xliff:g></string>
+    <string name="settings_profile_use_automatically">Usar automaticamente</string>
+    <string name="settings_profile_web">Conteúdo da Web</string>
+    <string name="settings_profile_reading">Leitura contínua</string>
+    <string name="settings_profile_text_editing">Edição de texto</string>
+    <string name="settings_profile_apps">Apps</string>
+    <string name="settings_profile_add_app">Adicionar app</string>
+    <string name="settings_profile_settings">Configurações neste perfil</string>
+    <string name="settings_profile_no_settings">Nenhuma</string>
+    <string name="settings_profile_remove_confirm">Remover <xliff:g id="item" example="Speech rate">%1$s</xliff:g> de <xliff:g id="name" example="Messaging">%2$s</xliff:g>?</string>
+    <string name="settings_profile_not_saved">Não foi possível salvar o perfil de configurações</string>
+    <string name="settings_profile_in_use_announcement">Perfil <xliff:g id="name" example="Demo">%1$s</xliff:g></string>
+    <string name="settings_profile_not_changed">Perfil de configurações não alterado</string>
+    <string name="title_settings_profile">Perfil de configurações</string>
+    <string name="shortcut_settings_profiles">Escolher perfil de configurações</string>
+    <string name="shortcut_next_settings_profile">Próximo perfil de configurações</string>
+    <string name="shortcut_previous_settings_profile">Perfil de configurações anterior</string>
+    <string name="word_selection_list_cut_off">Lista cortada em <xliff:g id="count" example="1000">%1$d</xliff:g> itens</string>
+    <plurals name="word_selection_copied">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> item copiado</item>
+        <item quantity="other"><xliff:g id="count" example="5">%1$d</xliff:g> itens copiados</item>
+    </plurals>
 </resources>

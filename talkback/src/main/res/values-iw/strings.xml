@@ -2029,4 +2029,146 @@
     <string name="value_keep_models_5">5 דקות</string>
     <string name="value_keep_models_15">15 דקות</string>
     <string name="value_keep_models_30">30 דקות</string>
+    <string name="title_pref_speech_equalizer_save_preset">שמירה כהגדרה קבועה מראש</string>
+    <string name="title_pref_speech_equalizer_saved_presets">הגדרות קבועות מראש שנשמרו</string>
+    <string name="speech_equalizer_preset_name">שם</string>
+    <string name="speech_equalizer_preset_name_taken">כבר יש הגדרה קבועה מראש בשם \"<xliff:g id="name" example="Podcast">%1$s</xliff:g>\"</string>
+    <string name="speech_equalizer_presets_full">אי אפשר לשמור עוד הגדרות קבועות מראש. צריך למחוק אחת כדי לשמור אחרת.</string>
+    <string name="speech_equalizer_preset_saved">\"<xliff:g id="name" example="Podcast">%1$s</xliff:g>\" נשמרה</string>
+    <string name="speech_equalizer_preset_rename">שינוי שם</string>
+    <string name="speech_equalizer_preset_delete">מחיקה</string>
+    <string name="speech_equalizer_preset_delete_confirm">למחוק את \"<xliff:g id="name" example="Podcast">%1$s</xliff:g>\"?</string>
+    <string name="speech_equalizer_preset_deleted">\"<xliff:g id="name" example="Podcast">%1$s</xliff:g>\" נמחקה</string>
+    <string name="title_pref_emoji_voice">קול של אימוג\'י</string>
+    <string name="value_emoji_voice_same">כמו הדיבור</string>
+    <string name="title_pref_emoji_rate">קצב דיבור של אימוג\'י</string>
+    <string name="title_pref_line_breaks_as_spaces">קריאת מעברי שורה כרווחים</string>
+    <string name="title_pref_language_voices">קולות לפי שפה</string>
+    <string name="title_pref_identify_languages_from_words">זיהוי שפות לפי מילים</string>
+    <string name="title_pref_add_language">הוספת שפה</string>
+    <string name="title_pref_remove_language">הסרת שפה</string>
+    <string name="title_pref_script_language">כתב %1$s</string>
+    <string name="title_pref_screen_on_notification_count">מספר ההתראות</string>
+    <plurals name="template_screen_on_notification_count">
+        <item quantity="one">התראה אחת</item>
+        <item quantity="two">שתי התראות</item>
+        <item quantity="other"><xliff:g id="count" example="6">%d</xliff:g> התראות</item>
+    </plurals>
+    <string name="title_pref_phonetic_letters_review">הקראת אותיות באופן פונטי בסקירה</string>
+    <string name="title_pref_phonetic_letters_typing">הקראת אותיות באופן פונטי בהקלדה</string>
+    <string name="title_pref_emoji_suffix">אמירת \"אימוג\'י\" אחרי שמות של אימוג\'י</string>
+    <string name="overview_shizuku_not_running">Shizuku לא פועל</string>
+    <string name="overview_shizuku_not_allowed">Shizuku לא מאפשר את SandFly</string>
+    <string name="overview_no_older_app">אין אפליקציה ישנה יותר</string>
+    <string name="overview_no_newer_app">אין אפליקציה חדשה יותר</string>
+    <string name="stream_volume_needs_access">צריך לאפשר גישה אל \"נא לא להפריע\" כדי לשנות את העוצמה הזו.</string>
+    <string name="corner_gestures_title">פינות</string>
+    <string name="shortcut_move_to_item_below">מעבר לפריט שמתחת</string>
+    <string name="shortcut_move_to_item_above">מעבר לפריט שמעל</string>
+    <string name="shortcut_older_app">אפליקציה ישנה יותר</string>
+    <string name="shortcut_newer_app">אפליקציה חדשה יותר</string>
+    <string name="shortcut_answer_call">מענה לשיחה</string>
+    <string name="answer_call_no_call">אין שיחה נכנסת</string>
+    <string name="answer_call_permission">נדרשת הרשאה כדי לענות לשיחות</string>
+    <string name="shortcut_switch_keyboard">החלפת מקלדת</string>
+    <string name="switch_keyboard_none">אין מקלדת אחרת מופעלת</string>
+    <string name="switch_keyboard_failed">המקלדת לא הוחלפה</string>
+    <string name="clipboard_history_hint">מחליקים למעלה או למטה כדי לבחור, ואז לוחצים לחיצה כפולה כדי להדביק</string>
+    <string name="title_speech_history">היסטוריית דיבור</string>
+    <string name="speech_history_empty">אין דיבור</string>
+    <string name="speech_history_clear">ניקוי ההיסטוריה</string>
+    <string name="title_pref_shortcut_corner_top_left_tap">לחיצה על הפינה השמאלית העליונה</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap">לחיצה כפולה על הפינה השמאלית העליונה</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap">לחיצה משולשת על הפינה השמאלית העליונה</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap_hold">לחיצה פעמיים והמשך לחיצה על הפינה השמאלית העליונה</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap_hold">לחיצה שלוש פעמים והמשך לחיצה על הפינה השמאלית העליונה</string>
+    <string name="title_pref_shortcut_corner_top_right_tap">לחיצה על הפינה הימנית העליונה</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap">לחיצה כפולה על הפינה הימנית העליונה</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap">לחיצה משולשת על הפינה הימנית העליונה</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap_hold">לחיצה פעמיים והמשך לחיצה על הפינה הימנית העליונה</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap_hold">לחיצה שלוש פעמים והמשך לחיצה על הפינה הימנית העליונה</string>
+    <string name="title_pref_shortcut_corner_bottom_left_tap">לחיצה על הפינה השמאלית התחתונה</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap">לחיצה כפולה על הפינה השמאלית התחתונה</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap">לחיצה משולשת על הפינה השמאלית התחתונה</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap_hold">לחיצה פעמיים והמשך לחיצה על הפינה השמאלית התחתונה</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap_hold">לחיצה שלוש פעמים והמשך לחיצה על הפינה השמאלית התחתונה</string>
+    <string name="title_pref_shortcut_corner_bottom_right_tap">לחיצה על הפינה הימנית התחתונה</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap">לחיצה כפולה על הפינה הימנית התחתונה</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap">לחיצה משולשת על הפינה הימנית התחתונה</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap_hold">לחיצה פעמיים והמשך לחיצה על הפינה הימנית התחתונה</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap_hold">לחיצה שלוש פעמים והמשך לחיצה על הפינה הימנית התחתונה</string>
+    <string name="title_pref_swipe_start_time">זמן התחלה של תנועה</string>
+    <string name="title_pref_swipes_before_lift">זיהוי החלקות לפני הרמת האצבע</string>
+    <string name="summary_pref_swipes_before_lift">משבית תנועות הלוך ושוב ותנועות בזווית.</string>
+    <string name="title_pref_corner_size_mm">גודל הפינה</string>
+    <string name="value_corner_size_edge_width">כמו רוחב הקצה</string>
+    <string name="title_pref_corner_tap_time_ms">מגבלת זמן ללחיצה בפינה</string>
+    <string name="value_corner_tap_time_system">ברירת המחדל של המערכת</string>
+    <string name="title_pref_edge_speak_commands">אמירת הפקודה בכל לחיצה</string>
+    <string-array name="pref_volume_change_feedback_entries">
+        <item>@string/volume_change_feedback_off</item>
+        <item>@string/volume_change_feedback_tone</item>
+        <item>@string/volume_change_feedback_spoken</item>
+        <item>@string/volume_change_feedback_tone_and_spoken</item>
+    </string-array>
+    <string name="title_pref_volume_change_tone_during_media">השתקת הצליל בזמן ניגון מדיה</string>
+    <string name="title_pref_volume_change_speech_during_media">השתקת הדיבור בזמן ניגון מדיה</string>
+    <string name="title_pref_volume_change_interrupts_speech">הפסקת הדיבור כדי להכריז על העוצמה</string>
+    <string name="title_pref_volume_keys_speech_volume_while_speaking">מקשי עוצמת הקול משנים את עוצמת הדיבור בזמן דיבור</string>
+    <string name="title_pref_double_tap_moves_cursor">לחיצה כפולה מעבירה את הסמן להתחלה או לסוף</string>
+    <string name="title_pref_scroll_ahead">גלילה מראש לפריט הבא</string>
+    <string name="title_pref_speak_while_scrolling">הקראת הפריט הבא בזמן גלילה</string>
+    <string-array name="pref_text_entities_entries">
+    <item>@string/text_entity_web</item>
+    <item>@string/text_entity_email</item>
+    <item>@string/text_entity_phone</item>
+    <item>@string/text_entity_code</item>
+  </string-array>
+    <string name="value_keep_models_until_stopped">עד ש-SandFly נעצר</string>
+    <string name="title_pref_model_download_server">שרת להורדת מודלים</string>
+    <string name="title_pref_settings_profiles">פרופילי הגדרות</string>
+    <string name="title_pref_new_settings_profile">פרופיל הגדרות חדש</string>
+    <string name="settings_profile_new_name">פרופיל <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="settings_profile_name_taken">כבר יש פרופיל הגדרות בשם \"<xliff:g id="name" example="Demo">%1$s</xliff:g>\"</string>
+    <string name="settings_profile_in_use">בשימוש</string>
+    <string name="settings_profile_menu_item_in_use"><xliff:g id="name" example="Demo">%1$s</xliff:g>, בשימוש</string>
+    <string name="settings_profile_none">אין פרופיל הגדרות</string>
+    <string name="settings_profile_use_now">שימוש עכשיו</string>
+    <string name="settings_profile_stop_using">הפסקת השימוש</string>
+    <string name="settings_profile_change_settings">שינוי הגדרות</string>
+    <string name="settings_profile_editing">השינויים נשמרים ב-\"<xliff:g id="name" example="Messaging">%1$s</xliff:g>\"</string>
+    <string name="settings_profile_edit_saved">השינויים נשמרו ב-\"<xliff:g id="name" example="Messaging">%1$s</xliff:g>\"</string>
+    <string name="settings_profile_use_automatically">שימוש אוטומטי</string>
+    <string name="settings_profile_web">תוכן אינטרנט</string>
+    <string name="settings_profile_reading">הקראה רציפה</string>
+    <string name="settings_profile_text_editing">עריכת טקסט</string>
+    <string name="settings_profile_apps">אפליקציות</string>
+    <string name="settings_profile_add_app">הוספת אפליקציה</string>
+    <string name="settings_profile_settings">הגדרות בפרופיל הזה</string>
+    <string name="settings_profile_no_settings">ללא</string>
+    <string name="settings_profile_remove_confirm">להסיר את \"<xliff:g id="item" example="Speech rate">%1$s</xliff:g>\" מ-\"<xliff:g id="name" example="Messaging">%2$s</xliff:g>\"?</string>
+    <string name="settings_profile_not_saved">לא ניתן היה לשמור את פרופיל ההגדרות</string>
+    <string name="settings_profile_in_use_announcement">פרופיל <xliff:g id="name" example="Demo">%1$s</xliff:g></string>
+    <string name="settings_profile_not_changed">פרופיל ההגדרות לא השתנה</string>
+    <string name="title_settings_profile">פרופיל הגדרות</string>
+    <string name="shortcut_settings_profiles">בחירת פרופיל הגדרות</string>
+    <string name="shortcut_next_settings_profile">פרופיל ההגדרות הבא</string>
+    <string name="shortcut_previous_settings_profile">פרופיל ההגדרות הקודם</string>
+    <string name="title_copy_text_from_screen">העתקת טקסט מהמסך</string>
+    <string name="granularity_label">רזולוציית הניווט</string>
+    <string name="granularity_characters">תווים</string>
+    <string name="granularity_words">מילים</string>
+    <string name="granularity_paragraphs">פסקאות</string>
+    <string name="button_select_all">סימון הכול</string>
+    <string name="no_text_selected">לא נבחר טקסט</string>
+    <string name="no_text_on_screen">לא נמצא טקסט במסך</string>
+    <string name="title_select_last_spoken_phrase_word_by_word">בחירת הביטוי האחרון שהוקרא מילה אחר מילה</string>
+    <string name="no_words_selected">לא נבחרו מילים</string>
+    <string name="no_phrase_to_select">אין ביטוי לבחירה</string>
+    <string name="word_selection_list_cut_off">הרשימה נחתכה אחרי <xliff:g id="count" example="1000">%1$d</xliff:g> פריטים</string>
+    <plurals name="word_selection_copied">
+        <item quantity="one">פריט אחד הועתק</item>
+        <item quantity="two">שני פריטים הועתקו</item>
+        <item quantity="other"><xliff:g id="count" example="5">%1$d</xliff:g> פריטים הועתקו</item>
+    </plurals>
 </resources>

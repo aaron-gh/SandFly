@@ -59,4 +59,24 @@
     <string name="keycombo_menu_navigate_next_by_setting">Наступне за налаштуванням навігації</string>
     <string name="keycombo_menu_navigate_previous_by_setting">Попереднє за налаштуванням навігації</string>
     <string name="title_pref_overview_screen">Огляд</string>
+    <string name="title_pref_custom_menus">Власні меню</string>
+    <string name="commands_category_setting_values">Значення налаштувань</string>
+    <string name="command_next_value"><xliff:g id="setting" example="Punctuation">%1$s</xliff:g>: наступне значення</string>
+    <string name="command_previous_value"><xliff:g id="setting" example="Punctuation">%1$s</xliff:g>: попереднє значення</string>
+    <string name="shortcut_script_commands">Команди скрипта</string>
+    <string name="shortcut_set_reading_control">Вибрати елемент керування читанням: <xliff:g id="control" example="Headings">%1$s</xliff:g></string>
+    <string name="title_pref_custom_reading_controls">Власні елементи керування читанням</string>
+    <string name="menu_add_reading_control">Додати елемент керування читанням</string>
+    <string name="menu_add_submenu">Додати підменю</string>
+    <string name="menu_add_menu">Додати меню</string>
+    <string name="menu_name">Назва</string>
+    <string name="menu_open">Відкрити</string>
+    <string name="menu_move_to">Перемістити до</string>
+    <string name="menu_rename">Перейменувати</string>
+    <string name="menu_delete">Видалити</string>
+    <string name="menu_delete_confirm">Видалити <xliff:g id="name" example="AI">%1$s</xliff:g> і все, що в ньому?</string>
+    <string name="menu_moved">Переміщено до <xliff:g id="place" example="AI">%1$s</xliff:g></string>
+    <string name="menu_reset">Скинути до стандартних</string>
+    <string name="menu_reset_confirm">Скинути меню SandFly до стандартних елементів і порядку?</string>
+    <string name="menu_assign">Жести та комбінація клавіш</string>
 </resources>

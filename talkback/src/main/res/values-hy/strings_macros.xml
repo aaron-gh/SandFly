@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_macros">Մակրոներ</string>
+    <string name="shortcut_stop_macro">Դադարեցնել մակրոն</string>
+    <string name="macro_add">Ավելացնել մակրո</string>
+    <string name="macro_run_now">Կատարել հիմա</string>
+    <string name="macro_add_step">Ավելացնել քայլ</string>
+    <string name="macro_add_at_end">Վերջում</string>
+    <string name="macro_add_at_start">Սկզբում</string>
+    <string name="macro_add_after"><xliff:g id="step" example="2">%1$d</xliff:g>-րդ քայլից հետո՝ <xliff:g id="name" example="If App in front: Chrome">%2$s</xliff:g></string>
+    <string name="macro_steps">Քայլեր</string>
+    <string name="macro_no_steps">Քայլեր չկան</string>
+    <string name="macro_delete">Ջնջել մակրոն</string>
+    <string name="macro_delete_confirm">Ջնջե՞լ «<xliff:g id="name" example="Send message">%1$s</xliff:g>»-ը</string>
+    <string name="macro_step_command">Կատարել հրաման</string>
+    <string name="macro_step_wait">Սպասել</string>
+    <string name="macro_step_tap">Հպել տարրին</string>
+    <string name="macro_step_focus">Ֆոկուսել տարրը</string>
+    <string name="macro_step_speak_item">Ասել տարրը</string>
+    <string name="macro_step_speak_text">Ասել տեքստը</string>
+    <string name="macro_step_type">Մուտքագրել տեքստ</string>
+    <string name="macro_step_tap_value">Հպել՝ <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_focus_value">Ֆոկուսել՝ <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_item_value">Ասել՝ <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_text_value">Ասել՝ <xliff:g id="text" example="Done">%1$s</xliff:g></string>
+    <string name="macro_step_type_value">Մուտքագրել՝ <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <string name="macro_step_replace_value">Փոխարինել տեքստը՝ <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <plurals name="macro_step_wait_seconds">
+        <item quantity="one">Սպասել <xliff:g id="count" example="1">%d</xliff:g> վայրկյան</item>
+        <item quantity="other">Սպասել <xliff:g id="count" example="2">%d</xliff:g> վայրկյան</item>
+    </plurals>
+    <plurals name="macro_step_wait_milliseconds">
+        <item quantity="one">Սպասել <xliff:g id="count" example="1">%d</xliff:g> միլիվայրկյան</item>
+        <item quantity="other">Սպասել <xliff:g id="count" example="500">%d</xliff:g> միլիվայրկյան</item>
+    </plurals>
+    <string name="macro_step_unavailable">Հասանելի չէ</string>
+    <string name="macro_seconds">Վայրկյաններ</string>
+    <string name="macro_invalid_seconds">Մուտքագրեք վայրկյանների քանակ՝ մինչև <xliff:g id="max" example="600">%1$d</xliff:g></string>
+    <string name="macro_tap_label">Տարրի տեքստ</string>
+    <string name="macro_tap_timeout">Տարրին սպասելու վայրկյաններ</string>
+    <string name="macro_text">Տեքստ</string>
+    <string name="macro_replace_text">Փոխարինել տեքստը դաշտում</string>
+    <string name="macro_item_not_found">Մակրոն դադարեց։ Չգտնվեց՝ <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_failed">Մակրոն դադարեց։ Չհաջողվեց՝ <xliff:g id="step" example="Open Gmail">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until">Սպասել մինչև</string>
+    <string name="macro_step_if">Եթե</string>
+    <string name="macro_step_else_if">Այլապես, եթե</string>
+    <string name="macro_step_else">Այլապես</string>
+    <string name="macro_step_end_if">Եթե-ի ավարտ</string>
+    <string name="macro_step_repeat">Կրկնել</string>
+    <string name="macro_step_repeat_while">Կրկնել մինչև</string>
+    <string name="macro_step_end_repeat">Կրկնման ավարտ</string>
+    <string name="macro_step_exit_loop">Դուրս գալ ցիկլից</string>
+    <string name="macro_step_if_value">Եթե <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_else_if_value">Այլապես, եթե <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_repeat_while_value">Կրկնել, քանի դեռ <xliff:g id="condition" example="Item on screen: Load more">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until_value">Սպասել մինչև <xliff:g id="condition" example="Item on screen: Send">%1$s</xliff:g></string>
+    <plurals name="macro_step_repeat_value">
+        <item quantity="one">Կրկնել <xliff:g id="count" example="1">%d</xliff:g> անգամ</item>
+        <item quantity="other">Կրկնել <xliff:g id="count" example="3">%d</xliff:g> անգամ</item>
+    </plurals>
+    <string name="macro_times">Անգամներ</string>
+    <string name="macro_invalid_times">Մուտքագրեք թիվ՝ 1-ից մինչև <xliff:g id="max" example="1000">%1$d</xliff:g></string>
+    <string name="macro_run_only_when">Կատարել միայն երբ</string>
+    <string name="macro_always">Միշտ</string>
+    <string name="macro_no_tests">Պայմաններ չկան</string>
+    <string name="macro_add_test">Ավելացնել պայման</string>
+    <string name="macro_tests">Պայմաններ</string>
+    <string name="macro_choose_test">Պայման</string>
+    <string name="macro_test_item">Տարր էկրանին</string>
+    <string name="macro_test_focused">Ֆոկուսված տարր</string>
+    <string name="macro_test_app">Հավելված առաջին պլանում</string>
+    <string name="macro_test_keyboard">Ստեղնաշարը ցուցադրված է</string>
+    <string name="macro_test_keyboard_hidden">Ստեղնաշարը թաքցված է</string>
+    <string name="macro_test_locked">Էկրանը կողպված է</string>
+    <string name="macro_test_unlocked">Էկրանը ապակողպված է</string>
+    <string name="macro_test_item_value">Տարր էկրանին՝ <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_no_item_value">Տարր էկրանին չկա՝ <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_focused_value">Ֆոկուսված տարր՝ <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_not_focused_value">Ֆոկուսված տարրը չէ՝ <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_app_value">Հավելված առաջին պլանում՝ <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_not_app_value">Հավելվածը առաջին պլանում չէ՝ <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_label_kind"><xliff:g id="label" example="Send">%1$s</xliff:g>, <xliff:g id="kind" example="Clickable">%2$s</xliff:g></string>
+    <string name="macro_join_and"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g> և <xliff:g id="second" example="Focused item: Editable">%2$s</xliff:g></string>
+    <string name="macro_join_or"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g>, կամ <xliff:g id="second" example="Screen locked">%2$s</xliff:g></string>
+    <string name="macro_regex">Կանոնավոր արտահայտություն</string>
+    <string name="macro_invalid_regex">Անվավեր կանոնավոր արտահայտություն։ Կրկնվող խմբերը չեն կարող պարունակել կրկնություն կամ |։</string>
+    <string name="macro_match_in">Համապատասխանեցնել՝</string>
+    <string name="macro_field_any">Ցանկացած տեքստ</string>
+    <string name="macro_field_text">Տեքստ</string>
+    <string name="macro_field_description">Նկարագրություն</string>
+    <string name="macro_field_hint">Հուշում</string>
+    <string name="macro_field_state">Վիճակ</string>
+    <string name="macro_field_id">Ռեսուրսի ID</string>
+    <string name="macro_field_value"><xliff:g id="label" example="send">%1$s</xliff:g> (<xliff:g id="field" example="Resource ID">%2$s</xliff:g>)</string>
+    <string name="macro_field_regex_value"><xliff:g id="pattern" example="^Reply">%1$s</xliff:g> (<xliff:g id="field" example="Description">%2$s</xliff:g>, կանոնավոր արտահայտություն)</string>
+    <string name="macro_regex_value"><xliff:g id="pattern" example="Reply.*Anna">%1$s</xliff:g> (կանոնավոր արտահայտություն)</string>
+    <string name="macro_test_label_optional">Տարրի տեքստ (ըստ ցանկության)</string>
+    <string name="macro_item_kind">Տարրի տեսակ</string>
+    <string name="macro_kind_any">Ցանկացած տեսակ</string>
+    <string name="macro_kind_clickable">Սեղմելի</string>
+    <string name="macro_kind_long_clickable">Երկար սեղմելի</string>
+    <string name="macro_kind_editable">Խմբագրելի</string>
+    <string name="macro_kind_scrollable">Ոլորվող</string>
+    <string name="macro_kind_adjustable">Կարգավորելի</string>
+    <string name="macro_kind_checkable">Նշվող</string>
+    <string name="macro_kind_checked">Նշված է</string>
+    <string name="macro_kind_selected">Ընտրված է</string>
+    <string name="macro_kind_heading">Վերնագիր</string>
+    <string name="macro_kind_enabled">Միացված է</string>
+    <string name="macro_change_to">Փոխել՝ <xliff:g id="test" example="Keyboard hidden">%1$s</xliff:g></string>
+    <string name="macro_join_with_and">Միացնել «և»-ով</string>
+    <string name="macro_join_with_or">Միացնել «կամ»-ով</string>
+    <string name="macro_clause_and">և <xliff:g id="test" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_clause_or">կամ <xliff:g id="test" example="Screen locked">%1$s</xliff:g></string>
+    <string name="macro_wait_timeout">Սպասելու վայրկյաններ</string>
+    <string name="macro_add_step_after">Ավելացնել քայլ հետո</string>
+    <string name="macro_problem">Քայլ <xliff:g id="step" example="3">%1$d</xliff:g>՝ <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_problem_no_if">«Այլապես, եթե», «Այլապես» կամ «Եթե-ի ավարտ» առանց «Եթե»-ի</string>
+    <string name="macro_problem_after_else">«Այլապես, եթե» կամ «Այլապես» «Այլապես»-ից հետո</string>
+    <string name="macro_problem_no_repeat">«Կրկնման ավարտ» առանց «Կրկնել»-ի</string>
+    <string name="macro_problem_no_end_if">«Եթե» առանց «Եթե-ի ավարտ»-ի</string>
+    <string name="macro_problem_no_end_repeat">«Կրկնել» առանց «Կրկնման ավարտ»-ի</string>
+    <string name="macro_problem_exit">«Դուրս գալ ցիկլից» կրկնումից դուրս</string>
+    <string name="macro_stopped_problem">Մակրոն դադարեց։ Քայլ <xliff:g id="step" example="3">%1$d</xliff:g>՝ <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_stopped_repeats">Մակրոն դադարեց։ Կրկնվեց <xliff:g id="count" example="1000">%1$d</xliff:g> անգամ՝ <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
+    <string name="macro_stopped_timeout">Մակրոն դադարեց։ Ժամանակը սպառվեց՝ <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
+    <string name="macro_not_met">Մակրոն չկատարվեց։ Կատարել միայն երբ՝ պայմանը չի բավարարվել</string>
+</resources>

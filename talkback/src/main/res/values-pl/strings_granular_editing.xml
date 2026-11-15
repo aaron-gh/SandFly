@@ -48,4 +48,23 @@
     <string name="granular_editing_not_saved">Niezapisano: pole tekstowe zniknęło. Tekst został skopiowany.</string>
     <string name="granular_editing_no_text">Brak tekstu do edycji</string>
     <string name="granular_editing_password">Niedostępne w polach haseł</string>
+    <plurals name="granular_editing_spaces">
+        <item quantity="one"><xliff:g id="count" example="3">%d</xliff:g> spacja</item>
+        <item quantity="few"><xliff:g id="count" example="3">%d</xliff:g> spacje</item>
+        <item quantity="many"><xliff:g id="count" example="3">%d</xliff:g> spacji</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> spacji</item>
+    </plurals>
+    <plurals name="granular_editing_new_lines">
+        <item quantity="one"><xliff:g id="count" example="3">%d</xliff:g> nowy wiersz</item>
+        <item quantity="few"><xliff:g id="count" example="3">%d</xliff:g> nowe wiersze</item>
+        <item quantity="many"><xliff:g id="count" example="3">%d</xliff:g> nowych wierszy</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> nowego wiersza</item>
+    </plurals>
+    <plurals name="granular_editing_tabs">
+        <item quantity="one"><xliff:g id="count" example="3">%d</xliff:g> tabulator</item>
+        <item quantity="few"><xliff:g id="count" example="3">%d</xliff:g> tabulatory</item>
+        <item quantity="many"><xliff:g id="count" example="3">%d</xliff:g> tabulatorów</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> tabulatora</item>
+    </plurals>
+    <string name="granular_editing_blank_line">Pusty wiersz</string>
 </resources>

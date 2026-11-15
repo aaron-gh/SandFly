@@ -29,6 +29,7 @@ import androidx.core.view.accessibility.AccessibilityNodeInfoCompat.CollectionIt
 import com.google.android.accessibility.utils.AccessibilityEventUtils;
 import com.google.android.accessibility.utils.AccessibilityNode;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
+import com.google.android.accessibility.utils.ConcurrentNodeQueries;
 import com.google.android.accessibility.utils.Filter;
 import com.google.android.accessibility.utils.Role;
 import java.lang.annotation.Retention;
@@ -1007,7 +1008,7 @@ public class CollectionState {
     // We only announce hierarchies of collections if they are explicitly marked hierarchical.
     // Otherwise we announce only the innermost collection.
     if (FILTER_FLAT_COLLECTION.accept(collectionRoot)
-        && AccessibilityNodeInfoUtils.hasMatchingDescendant(
+        && ConcurrentNodeQueries.hasMatchingDescendant(
             collectionRoot, FILTER_FLAT_COLLECTION)) {
       return false;
     }

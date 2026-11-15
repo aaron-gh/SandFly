@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_voice_commands">음성 명령</string>
+    <string name="title_pref_voice_commands_ai">AI로 음성 명령 이해</string>
+    <string name="voice_commands_custom">맞춤 음성 명령</string>
+    <string name="voice_command_add">음성 명령 추가</string>
+    <string name="voice_command_phrase">문구</string>
+    <string name="voice_command_change_phrase">문구 변경</string>
+    <string name="voice_command_change_command">명령 변경</string>
+    <string name="voice_command_delete_confirm"><xliff:g id="phrase" example="Good morning">%1$s</xliff:g>을(를) 삭제하시겠습니까?</string>
+    <string name="voice_command_phrase_exists"><xliff:g id="phrase" example="Good morning">%1$s</xliff:g>은(는) 이미 음성 명령입니다</string>
+    <string name="voice_commands_not_understood">이해하지 못함: <xliff:g id="text" example="open the door">%1$s</xliff:g></string>
+    <string name="voice_commands_not_available">사용할 수 없음: <xliff:g id="name" example="Morning macro">%1$s</xliff:g></string>
+    <string name="voice_commands_not_found">찾을 수 없음: <xliff:g id="label" example="Settings">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app">이름이 <xliff:g id="name" example="Signal">%1$s</xliff:g>인 앱 없음</string>
+    <string name="voice_commands_no_app_for_action">이 작업을 할 수 있는 앱 없음</string>
+    <string name="voice_commands_calling"><xliff:g id="name" example="Sam">%1$s</xliff:g>에게 전화 거는 중</string>
+    <string name="voice_commands_call_permission">전화 걸기를 허용한 다음 명령을 다시 말하세요.</string>
+    <string name="voice_commands_contacts_permission">연락처 접근을 허용한 다음 명령을 다시 말하세요.</string>
+    <string name="voice_commands_no_contact">이름이 <xliff:g id="name" example="Sam">%1$s</xliff:g>인 연락처 없음</string>
+    <string name="voice_commands_contacts_several">이름이 <xliff:g id="name" example="Sam">%1$s</xliff:g>인 연락처가 둘 이상 있음: <xliff:g id="names" example="Sam Jones, Sam Smith">%2$s</xliff:g></string>
+    <string name="voice_commands_message_text"><xliff:g id="name" example="Sam">%1$s</xliff:g>에게 보낼 메시지</string>
+    <string name="voice_commands_message_confirm"><xliff:g id="name" example="Sam">%1$s</xliff:g>에게 보낼까요: <xliff:g id="text" example="I am on my way">%2$s</xliff:g></string>
+    <string name="voice_commands_message_confirm_result"><xliff:g id="name" example="Sam">%1$s</xliff:g>에게 보낼까요?</string>
+    <string name="voice_commands_message_not_sent">메시지를 보내지 않음</string>
+    <string name="voice_commands_send_pressed">보내기를 누름</string>
+    <string name="voice_commands_send_button">보내기</string>
+    <string name="voice_commands_no_description">설명을 받지 못함</string>
+    <string name="voice_commands_copied">복사함</string>
+    <string-array name="voice_commands_chain_words">
+        <item>그리고 나서</item>
+        <item>그다음</item>
+        <item>그 다음</item>
+        <item>그런 다음</item>
+        <item>그 후에</item>
+    </string-array>
+    <string-array name="voice_commands_and_words">
+        <item>그리고</item>
+        <item>및</item>
+        <item>하고</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_start">
+        <item>제발</item>
+        <item>부탁해</item>
+        <item>좀</item>
+        <item>지금</item>
+        <item>저기</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_end">
+        <item>줘</item>
+        <item>해 줘</item>
+        <item>주세요</item>
+        <item>해 주세요</item>
+        <item>좀</item>
+        <item>지금</item>
+        <item>부탁해</item>
+        <item>부탁합니다</item>
+    </string-array>
+    <string-array name="voice_commands_cancel_words">
+        <item>중지</item>
+        <item>취소</item>
+        <item>종료</item>
+        <item>그만</item>
+        <item>그만해</item>
+        <item>그만둬</item>
+        <item>됐어</item>
+        <item>조용히</item>
+    </string-array>
+    <string-array name="voice_commands_yes">
+        <item>네</item>
+        <item>예</item>
+        <item>응</item>
+        <item>어</item>
+        <item>보내</item>
+        <item>보내 줘</item>
+        <item>전송</item>
+        <item>전송해</item>
+        <item>보내기</item>
+        <item>확인</item>
+        <item>좋아</item>
+        <item>그래</item>
+        <item>오케이</item>
+    </string-array>
+    <string-array name="voice_commands_sms_names">
+        <item>SMS</item>
+        <item>문자</item>
+        <item>문자 메시지</item>
+        <item>메시지</item>
+    </string-array>
+    <string-array name="voice_commands_send_image_description">
+        <item>{who} 에게 이미지 설명 보내</item>
+        <item>{who} 에게 이미지 설명 보내 줘</item>
+        <item>{who} 에게 이미지 설명 전송</item>
+        <item>{who} 에게 사진 설명 보내</item>
+        <item>{who} 에게 사진 설명 보내 줘</item>
+        <item>{who} 이미지 설명 보내</item>
+        <item>{who} 사진 설명 보내</item>
+        <item>이미지 설명 {who} 에게 보내</item>
+        <item>사진 설명 {who} 에게 보내</item>
+    </string-array>
+    <string-array name="voice_commands_send_screen_description">
+        <item>{who} 에게 화면 설명 보내</item>
+        <item>{who} 에게 화면 설명 보내 줘</item>
+        <item>{who} 에게 화면 설명 전송</item>
+        <item>{who} 화면 설명 보내</item>
+        <item>화면 설명 {who} 에게 보내</item>
+    </string-array>
+    <string-array name="voice_commands_send_previous">
+        <item>{app} 으로 {who} 에게 보내</item>
+        <item>{who} 에게 {app} 으로 보내</item>
+        <item>{who} 에게 보내</item>
+        <item>{who} 에게 보내 줘</item>
+        <item>{who} 에게 전송</item>
+        <item>{who} 에게 설명 보내</item>
+        <item>{who} 에게 공유</item>
+        <item>{who} 보내</item>
+    </string-array>
+    <string-array name="voice_commands_message">
+        <item>{app} 으로 {who} 에게 메시지 {text}</item>
+        <item>{app} 으로 {who} 에게 {text} 라고 보내</item>
+        <item>{who} 에게 {app} 으로 메시지 {text}</item>
+        <item>{who} 에게 {text} 라고 메시지 보내</item>
+        <item>{who} 에게 {text} 라고 보내 줘</item>
+        <item>{who} 에게 {text} 라고 전해 줘</item>
+        <item>{who} 에게 메시지 보내 {text}</item>
+        <item>{who} 에게 메시지 {text}</item>
+        <item>{who} 에게 문자 {text}</item>
+        <item>{who} 한테 {text} 라고 보내</item>
+        <item>{who} 한테 메시지 {text}</item>
+        <item>{who} 한테 문자 {text}</item>
+        <item>메시지 보내 {whoandtext}</item>
+        <item>메시지 {whoandtext}</item>
+        <item>문자 {whoandtext}</item>
+    </string-array>
+    <string-array name="voice_commands_call">
+        <item>{who} 에게 전화</item>
+        <item>{who} 에게 전화해</item>
+        <item>{who} 에게 전화해 줘</item>
+        <item>{who} 에게 전화 걸어</item>
+        <item>{who} 한테 전화해</item>
+        <item>{who} 전화</item>
+        <item>{who} 전화해</item>
+        <item>{who} 전화해 줘</item>
+        <item>전화 {who}</item>
+        <item>전화 걸어 {who}</item>
+    </string-array>
+    <string-array name="voice_commands_describe_screen">
+        <item>화면 설명</item>
+        <item>화면 설명해</item>
+        <item>화면 설명해 줘</item>
+        <item>화면 설명해줘</item>
+        <item>화면에 뭐가 있어</item>
+        <item>화면에 뭐가 있나요</item>
+        <item>화면에 무엇이 있는지 알려 줘</item>
+    </string-array>
+    <string-array name="voice_commands_describe_image">
+        <item>이미지 설명</item>
+        <item>이미지 설명해</item>
+        <item>이미지 설명해 줘</item>
+        <item>이 이미지 설명해줘</item>
+        <item>사진 설명</item>
+        <item>사진 설명해 줘</item>
+        <item>이 사진 설명해줘</item>
+        <item>이미지에 뭐가 있어</item>
+        <item>사진에 뭐가 있어</item>
+    </string-array>
+    <string-array name="voice_commands_copy_result">
+        <item>복사</item>
+        <item>복사해</item>
+        <item>복사해 줘</item>
+        <item>그거 복사</item>
+        <item>설명 복사</item>
+        <item>방금 말한 거 복사</item>
+        <item>마지막으로 읽은 문구 복사</item>
+        <item>마지막 문구 복사</item>
+    </string-array>
+    <string-array name="voice_commands_wait">
+        <item>{n} 초 기다려</item>
+        <item>{n} 초 기다려 줘</item>
+        <item>{n} 초 대기</item>
+        <item>1 초 기다려</item>
+        <item>잠깐</item>
+        <item>기다려</item>
+        <item>대기</item>
+    </string-array>
+    <string-array name="voice_commands_type_text">
+        <item>{text} 입력</item>
+        <item>{text} 입력해</item>
+        <item>{text} 라고 입력</item>
+        <item>{text} 라고 써</item>
+        <item>입력 {text}</item>
+        <item>입력해 {text}</item>
+    </string-array>
+    <string-array name="voice_commands_run">
+        <item>{command} 매크로 실행</item>
+        <item>{command} 매크로 실행해</item>
+        <item>매크로 {command} 실행</item>
+        <item>{command} 실행</item>
+        <item>{command} 실행해</item>
+        <item>{command} 실행해 줘</item>
+    </string-array>
+    <string-array name="voice_commands_open">
+        <item>{app} 열어</item>
+        <item>{app} 열어 줘</item>
+        <item>{app} 열기</item>
+        <item>{app} 실행</item>
+        <item>{app} 실행해</item>
+        <item>{app} 로 전환</item>
+        <item>{app} 시작</item>
+    </string-array>
+    <string-array name="voice_commands_tap">
+        <item>{label} 두 번 탭</item>
+        <item>{label} 탭</item>
+        <item>{label} 탭해</item>
+        <item>{label} 클릭</item>
+        <item>{label} 눌러</item>
+        <item>{label} 눌러 줘</item>
+        <item>{label} 활성화</item>
+        <item>{label} 선택</item>
+    </string-array>
+</resources>

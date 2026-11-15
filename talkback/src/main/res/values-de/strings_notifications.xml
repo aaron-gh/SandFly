@@ -390,4 +390,12 @@
         <item>@string/notification_shake_3</item>
     </string-array>
     <string name="notification_clock_voice_notifications">Stimme für Benachrichtigungen</string>
+    <string name="notification_exact_alarms_title">„Wecker und Erinnerungen“ aktivieren</string>
+    <string name="shortcut_toggle_time_announcements">Zeitansagen ein- oder ausschalten</string>
+    <string name="notification_clock_now_on">Zeitansagen ein</string>
+    <string name="notification_clock_now_off">Zeitansagen aus</string>
+    <plurals name="notification_clock_battery">
+        <item quantity="one"><xliff:g id="percent" example="1">%d</xliff:g> Prozent</item>
+        <item quantity="other"><xliff:g id="percent" example="76">%d</xliff:g> Prozent</item>
+    </plurals>
 </resources>

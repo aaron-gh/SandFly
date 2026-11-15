@@ -48,4 +48,23 @@
     <string name="granular_editing_not_saved">Ni shranjeno: besedilnega polja ni več. Besedilo je kopirano.</string>
     <string name="granular_editing_no_text">Ni besedila za urejanje</string>
     <string name="granular_editing_password">Ni na voljo v poljih za geslo</string>
+    <plurals name="granular_editing_spaces">
+        <item quantity="one"><xliff:g id="count" example="3">%d</xliff:g> presledek</item>
+        <item quantity="two"><xliff:g id="count" example="3">%d</xliff:g> presledka</item>
+        <item quantity="few"><xliff:g id="count" example="3">%d</xliff:g> presledki</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> presledkov</item>
+    </plurals>
+    <plurals name="granular_editing_new_lines">
+        <item quantity="one"><xliff:g id="count" example="3">%d</xliff:g> nova vrstica</item>
+        <item quantity="two"><xliff:g id="count" example="3">%d</xliff:g> novi vrstici</item>
+        <item quantity="few"><xliff:g id="count" example="3">%d</xliff:g> nove vrstice</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> novih vrstic</item>
+    </plurals>
+    <plurals name="granular_editing_tabs">
+        <item quantity="one"><xliff:g id="count" example="3">%d</xliff:g> tabulator</item>
+        <item quantity="two"><xliff:g id="count" example="3">%d</xliff:g> tabulatorja</item>
+        <item quantity="few"><xliff:g id="count" example="3">%d</xliff:g> tabulatorji</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> tabulatorjev</item>
+    </plurals>
+    <string name="granular_editing_blank_line">Prazna vrstica</string>
 </resources>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_voice_commands">الطلبات الصوتية</string>
+    <string name="title_pref_voice_commands_ai">فهم الطلبات الصوتية بالذكاء الاصطناعي</string>
+    <string name="voice_commands_custom">الطلبات الصوتية المخصّصة</string>
+    <string name="voice_command_add">إضافة طلب صوتي</string>
+    <string name="voice_command_phrase">العبارة</string>
+    <string name="voice_command_change_phrase">تغيير العبارة</string>
+    <string name="voice_command_change_command">تغيير الأمر</string>
+    <string name="voice_command_delete_confirm">هل تريد حذف <xliff:g id="phrase" example="Good morning">%1$s</xliff:g>؟</string>
+    <string name="voice_command_phrase_exists"><xliff:g id="phrase" example="Good morning">%1$s</xliff:g> طلب صوتي بالفعل</string>
+    <string name="voice_commands_not_understood">لم يتم الفهم: <xliff:g id="text" example="open the door">%1$s</xliff:g></string>
+    <string name="voice_commands_not_available">غير متاح: <xliff:g id="name" example="Morning macro">%1$s</xliff:g></string>
+    <string name="voice_commands_not_found">لم يتم العثور على: <xliff:g id="label" example="Settings">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app">لا يوجد تطبيق باسم <xliff:g id="name" example="Signal">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app_for_action">لا يوجد تطبيق لهذا الإجراء</string>
+    <string name="voice_commands_calling">الاتصال بـ<xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_call_permission">اسمح بالمكالمات الهاتفية، ثم انطق الأمر مرة أخرى.</string>
+    <string name="voice_commands_contacts_permission">اسمح بالوصول إلى جهات الاتصال، ثم انطق الأمر مرة أخرى.</string>
+    <string name="voice_commands_no_contact">لا توجد جهة اتصال باسم <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_contacts_several">توجد أكثر من جهة اتصال باسم <xliff:g id="name" example="Sam">%1$s</xliff:g>: <xliff:g id="names" example="Sam Jones, Sam Smith">%2$s</xliff:g></string>
+    <string name="voice_commands_message_text">رسالة إلى <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_message_confirm">إرسال إلى <xliff:g id="name" example="Sam">%1$s</xliff:g>: <xliff:g id="text" example="I am on my way">%2$s</xliff:g>؟</string>
+    <string name="voice_commands_message_confirm_result">إرسال إلى <xliff:g id="name" example="Sam">%1$s</xliff:g>؟</string>
+    <string name="voice_commands_message_not_sent">لم تُرسل الرسالة</string>
+    <string name="voice_commands_send_pressed">تم الضغط على إرسال</string>
+    <string name="voice_commands_send_button">إرسال</string>
+    <string name="voice_commands_no_description">لم يتم استلام وصف</string>
+    <string name="voice_commands_copied">تم النسخ</string>
+    <string-array name="voice_commands_chain_words">
+        <item>ثم</item>
+        <item>وبعد ذلك</item>
+        <item>بعد ذلك</item>
+        <item>لاحقًا</item>
+    </string-array>
+    <string-array name="voice_commands_and_words">
+        <item>و</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_start">
+        <item>من فضلك</item>
+        <item>هل يمكنك</item>
+        <item>هل تستطيع</item>
+        <item>أريد أن</item>
+        <item>أود أن</item>
+        <item>أرغب في</item>
+        <item>الآن</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_end">
+        <item>من فضلك</item>
+        <item>لي</item>
+        <item>الآن</item>
+    </string-array>
+    <string-array name="voice_commands_cancel_words">
+        <item>توقف</item>
+        <item>إلغاء</item>
+        <item>ألغِ</item>
+        <item>لا يهم</item>
+        <item>انسَ الأمر</item>
+        <item>اسكت</item>
+    </string-array>
+    <string-array name="voice_commands_yes">
+        <item>نعم</item>
+        <item>أجل</item>
+        <item>إرسال</item>
+        <item>أرسلها</item>
+        <item>موافق</item>
+        <item>حسنًا</item>
+        <item>تمام</item>
+        <item>بالتأكيد</item>
+        <item>نفّذ</item>
+    </string-array>
+    <string-array name="voice_commands_sms_names">
+        <item>SMS</item>
+        <item>رسالة نصية</item>
+        <item>رسائل نصية</item>
+        <item>الرسائل</item>
+    </string-array>
+    <string-array name="voice_commands_send_image_description">
+        <item>أرسل وصف [الصورة|هذه الصورة] إلى {who}</item>
+        <item>أرسل [وصفًا] لـ[الصورة|هذه الصورة] إلى {who}</item>
+        <item>أرسل وصف اللقطة إلى {who}</item>
+        <item>أرسل [وصفًا] لـ[اللقطة|هذه اللقطة] إلى {who}</item>
+        <item>أرسل وصف الصورة الفوتوغرافية إلى {who}</item>
+    </string-array>
+    <string-array name="voice_commands_send_screen_description">
+        <item>أرسل وصف الشاشة إلى {who}</item>
+        <item>أرسل وصف محتوى الشاشة إلى {who}</item>
+    </string-array>
+    <string-array name="voice_commands_send_previous">
+        <item>أرسلها إلى {who} على {app}</item>
+        <item>أرسلها إلى {who}</item>
+        <item>أرسل ذلك إلى {who}</item>
+        <item>أرسل الوصف إلى {who}</item>
+        <item>شاركها مع {who}</item>
+    </string-array>
+    <string-array name="voice_commands_message">
+        <item>أرسل رسالة إلى {who} على {app} تقول {text}</item>
+        <item>أرسل رسالة إلى {who} على {app} مفادها {text}</item>
+        <item>أرسل رسالة إلى {who} تقول {text}</item>
+        <item>أرسل رسالة إلى {who} مفادها {text}</item>
+        <item>أرسل رسالة إلى {whoandtext}</item>
+        <item>أرسل رسالة {app} إلى {who} تقول {text}</item>
+        <item>أرسل رسالة {app} إلى {who} مفادها {text}</item>
+        <item>أرسل رسالة {app} إلى {who}</item>
+        <item>أرسل إلى {who} رسالة تقول {text}</item>
+        <item>راسل {who} على {app} قائلًا {text}</item>
+        <item>راسل {who} قائلًا {text}</item>
+        <item>أرسل نصًا إلى {who} قائلًا {text}</item>
+        <item>قل لـ{who} على {app} {text}</item>
+        <item>راسل {whoandtext}</item>
+        <item>أرسل نصًا إلى {whoandtext}</item>
+    </string-array>
+    <string-array name="voice_commands_call">
+        <item>اتصل بـ{who}</item>
+        <item>كلّم {who} هاتفيًا</item>
+        <item>رن على {who}</item>
+        <item>اطلب {who}</item>
+        <item>أجرِ مكالمة مع {who}</item>
+    </string-array>
+    <string-array name="voice_commands_describe_screen">
+        <item>صف الشاشة</item>
+        <item>صف ما على الشاشة</item>
+        <item>ماذا على الشاشة</item>
+        <item>ما الموجود على الشاشة</item>
+    </string-array>
+    <string-array name="voice_commands_describe_image">
+        <item>صف [هذه] الصورة</item>
+        <item>صف [هذه] اللقطة</item>
+        <item>صف [هذه] الصورة الفوتوغرافية</item>
+        <item>ماذا في [هذه] الصورة</item>
+        <item>ماذا في [هذه] اللقطة</item>
+        <item>ماذا في [هذه] الصورة الفوتوغرافية</item>
+    </string-array>
+    <string-array name="voice_commands_copy_result">
+        <item>انسخها</item>
+        <item>انسخ ذلك</item>
+        <item>انسخ الوصف</item>
+        <item>انسخ ما قلته [للتو]</item>
+        <item>انسخ آخر عبارة منطوقة</item>
+        <item>انسخ آخر عبارة</item>
+        <item>انسخ آخر ما قيل</item>
+    </string-array>
+    <string-array name="voice_commands_wait">
+        <item>انتظر {n} ثوانٍ</item>
+        <item>انتظر {n} ثانية</item>
+        <item>انتظر ثانية</item>
+        <item>انتظر</item>
+    </string-array>
+    <string-array name="voice_commands_type_text">
+        <item>اكتب {text}</item>
+        <item>دوّن {text}</item>
+        <item>أدخل {text}</item>
+    </string-array>
+    <string-array name="voice_commands_run">
+        <item>شغّل ماكرو {command}</item>
+        <item>شغّل {command}</item>
+        <item>نفّذ {command}</item>
+        <item>قم بتشغيل {command}</item>
+    </string-array>
+    <string-array name="voice_commands_open">
+        <item>افتح {app}</item>
+        <item>شغّل التطبيق {app}</item>
+        <item>ابدأ {app}</item>
+        <item>انتقل إلى {app}</item>
+    </string-array>
+    <string-array name="voice_commands_tap">
+        <item>انقر مرتين على {label}</item>
+        <item>انقر على {label}</item>
+        <item>اضغط على {label}</item>
+        <item>اضغط {label}</item>
+        <item>فعّل {label}</item>
+        <item>اختر {label}</item>
+    </string-array>
+</resources>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_voice_commands">Үн буйруктары</string>
+    <string name="title_pref_voice_commands_ai">Үн буйруктарын AI менен түшүнүү</string>
+    <string name="voice_commands_custom">Өзгөчө үн буйруктары</string>
+    <string name="voice_command_add">Үн буйругун кошуу</string>
+    <string name="voice_command_phrase">Сөз айкашы</string>
+    <string name="voice_command_change_phrase">Сөз айкашын өзгөртүү</string>
+    <string name="voice_command_change_command">Буйрукту өзгөртүү</string>
+    <string name="voice_command_delete_confirm"><xliff:g id="phrase" example="Good morning">%1$s</xliff:g> өчүрүлсүнбү?</string>
+    <string name="voice_command_phrase_exists"><xliff:g id="phrase" example="Good morning">%1$s</xliff:g> үн буйругу бар</string>
+    <string name="voice_commands_not_understood">Түшүнүксүз: <xliff:g id="text" example="open the door">%1$s</xliff:g></string>
+    <string name="voice_commands_not_available">Жеткиликсиз: <xliff:g id="name" example="Morning macro">%1$s</xliff:g></string>
+    <string name="voice_commands_not_found">Табылган жок: <xliff:g id="label" example="Settings">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app"><xliff:g id="name" example="Signal">%1$s</xliff:g> деген колдонмо жок</string>
+    <string name="voice_commands_no_app_for_action">Бул аракет үчүн колдонмо жок</string>
+    <string name="voice_commands_calling">Чалынууда: <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_call_permission">Телефон чалууларына уруксат берип, буйрукту кайра айтыңыз.</string>
+    <string name="voice_commands_contacts_permission">Байланыштарга мүмкүнчүлүк берип, буйрукту кайра айтыңыз.</string>
+    <string name="voice_commands_no_contact"><xliff:g id="name" example="Sam">%1$s</xliff:g> деген байланыш жок</string>
+    <string name="voice_commands_contacts_several"><xliff:g id="name" example="Sam">%1$s</xliff:g> деген байланыш бирден көп: <xliff:g id="names" example="Sam Jones, Sam Smith">%2$s</xliff:g></string>
+    <string name="voice_commands_message_text">Билдирүү алуучу: <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_message_confirm"><xliff:g id="name" example="Sam">%1$s</xliff:g> адамына жөнөтүлсүнбү: <xliff:g id="text" example="I am on my way">%2$s</xliff:g>?</string>
+    <string name="voice_commands_message_confirm_result"><xliff:g id="name" example="Sam">%1$s</xliff:g> адамына жөнөтүлсүнбү?</string>
+    <string name="voice_commands_message_not_sent">Билдирүү жөнөтүлгөн жок</string>
+    <string name="voice_commands_send_pressed">Жөнөтүү басылды</string>
+    <string name="voice_commands_send_button">Жөнөтүү</string>
+    <string name="voice_commands_no_description">Сүрөттөмө алынган жок</string>
+    <string name="voice_commands_copied">Көчүрүлдү</string>
+    <string-array name="voice_commands_chain_words">
+        <item>анан</item>
+        <item>андан кийин</item>
+        <item>кийин</item>
+        <item>ошондон кийин</item>
+    </string-array>
+    <string-array name="voice_commands_and_words">
+        <item>жана</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_start">
+        <item>сураныч</item>
+        <item>азыр</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_end">
+        <item>сураныч</item>
+        <item>мен үчүн</item>
+        <item>азыр</item>
+    </string-array>
+    <string-array name="voice_commands_cancel_words">
+        <item>токто</item>
+        <item>токтот</item>
+        <item>жокко чыгар</item>
+        <item>чыгуу</item>
+        <item>кереги жок</item>
+        <item>койчу</item>
+        <item>унчукпа</item>
+    </string-array>
+    <string-array name="voice_commands_yes">
+        <item>ооба</item>
+        <item>макул</item>
+        <item>болот</item>
+        <item>жөнөт</item>
+        <item>ок</item>
+        <item>албетте</item>
+        <item>жакшы</item>
+    </string-array>
+    <string-array name="voice_commands_sms_names">
+        <item>SMS</item>
+        <item>текст билдирүүсү</item>
+        <item>билдирүү</item>
+        <item>билдирүүлөр</item>
+    </string-array>
+    <string-array name="voice_commands_send_image_description">
+        <item>{who} адамына [бул] сүрөттүн сүрөттөмөсүн жөнөт</item>
+        <item>{who} адамына [бул] фотонун сүрөттөмөсүн жөнөт</item>
+        <item>сүрөттүн сүрөттөмөсүн {who} адамына жөнөт</item>
+        <item>фотонун сүрөттөмөсүн {who} адамына жөнөт</item>
+    </string-array>
+    <string-array name="voice_commands_send_screen_description">
+        <item>{who} адамына экрандын сүрөттөмөсүн жөнөт</item>
+        <item>экрандын сүрөттөмөсүн {who} адамына жөнөт</item>
+    </string-array>
+    <string-array name="voice_commands_send_previous">
+        <item>муну {who} адамына {app} аркылуу жөнөт</item>
+        <item>муну {who} адамына жөнөт</item>
+        <item>аны {who} адамына жөнөт</item>
+        <item>сүрөттөмөнү {who} адамына жөнөт</item>
+        <item>муну {who} менен бөлүш</item>
+    </string-array>
+    <string-array name="voice_commands_message">
+        <item>{who} адамына {app} аркылуу {text} деп билдирүү жөнөт</item>
+        <item>{who} адамына {text} деп билдирүү жөнөт</item>
+        <item>{who} адамына {app} аркылуу билдирүү жөнөт {text}</item>
+        <item>{who} адамына билдирүү жөнөт {text}</item>
+        <item>{whoandtext} деп билдирүү жөнөт</item>
+        <item>{who} адамына {app} билдирүүсүн жөнөт {text}</item>
+        <item>{who} адамына {app} билдирүүсүн жөнөт</item>
+        <item>{who} адамына {app} аркылуу {text} деп жаз</item>
+        <item>{who} адамына {text} деп жаз</item>
+        <item>{whoandtext} деп жаз</item>
+    </string-array>
+    <string-array name="voice_commands_call">
+        <item>{who} адамына чал</item>
+        <item>{who} номерине чал</item>
+        <item>{who} чал</item>
+        <item>{who} номерин тер</item>
+    </string-array>
+    <string-array name="voice_commands_describe_screen">
+        <item>экранды сүрөттөп бер</item>
+        <item>экранда эмне бар</item>
+        <item>менин экранымда эмне бар</item>
+        <item>экрандагыны сүрөттө</item>
+    </string-array>
+    <string-array name="voice_commands_describe_image">
+        <item>[бул] сүрөттү сүрөттөп бер</item>
+        <item>[бул] фотону сүрөттөп бер</item>
+        <item>сүрөттө эмне бар</item>
+        <item>фотодо эмне бар</item>
+    </string-array>
+    <string-array name="voice_commands_copy_result">
+        <item>көчүр</item>
+        <item>муну көчүр</item>
+        <item>сүрөттөмөнү көчүр</item>
+        <item>жаңы эле айтканыңды көчүр</item>
+        <item>акыркы окулган сөз айкашын көчүр</item>
+        <item>акыркы сөз айкашын көчүр</item>
+    </string-array>
+    <string-array name="voice_commands_wait">
+        <item>{n} секунд күт</item>
+        <item>бир секунд күт</item>
+        <item>күт</item>
+    </string-array>
+    <string-array name="voice_commands_type_text">
+        <item>{text} тер</item>
+        <item>{text} жаз</item>
+        <item>{text} киргиз</item>
+    </string-array>
+    <string-array name="voice_commands_run">
+        <item>{command} макросун иштет</item>
+        <item>{command} буйругун иштет</item>
+        <item>{command} иштет</item>
+        <item>{command} аткар</item>
+    </string-array>
+    <string-array name="voice_commands_open">
+        <item>{app} колдонмосун ач</item>
+        <item>{app} ач</item>
+        <item>{app} колдонмосун иштет</item>
+        <item>{app} иштет</item>
+        <item>{app} колдонмосуна өт</item>
+    </string-array>
+    <string-array name="voice_commands_tap">
+        <item>{label} объектисин эки жолу тап</item>
+        <item>{label} объектисин тап</item>
+        <item>{label} объектисин бас</item>
+        <item>{label} объектисин активдештир</item>
+        <item>{label} объектисин танда</item>
+    </string-array>
+</resources>

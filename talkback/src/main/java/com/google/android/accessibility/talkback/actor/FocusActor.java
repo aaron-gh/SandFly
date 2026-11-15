@@ -107,7 +107,17 @@ public class FocusActor implements UserInputEventListener {
     focusManagerInternal =
         new FocusManagerInternal(
             service, focusFinder, screenState, history, accessibilityFocusMonitor);
-    webActor = new WebActor(service, this::updateFocusHistory);
+    webActor = new WebActor(service, new WebActor.UpdateFocusHistory() {
+      @Override
+      public void beforeNavigation(AccessibilityNodeInfoCompat start) {
+        focusManagerInternal.completePendingWebFocus(start);
+      }
+
+      @Override
+      public void updateHistory(AccessibilityNodeInfoCompat start, FocusActionInfo info, long actionTime) {
+        focusManagerInternal.updateFocusHistory(start, info, actionTime);
+      }
+    });
   }
 
   public void setActorState(ActorStateWritable actorState) {
@@ -280,12 +290,6 @@ public class FocusActor implements UserInputEventListener {
 
   public WebActor getWebActor() {
     return webActor;
-  }
-
-  /** Passes through to FocusManagerInternal.updateFocusHistory() */
-  private void updateFocusHistory(
-      @NonNull AccessibilityNodeInfoCompat pivot, @NonNull FocusActionInfo focusActionInfo) {
-    focusManagerInternal.updateFocusHistory(pivot, focusActionInfo);
   }
 
   /**

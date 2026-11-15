@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="item_file_import">I-import mula sa file</string>
+    <string name="item_file_export">I-export sa file</string>
+    <string name="title_pref_export_item_file_reference">Reference ng format ng export file</string>
+    <string name="item_file_keymaps">Mga keymap</string>
+    <string name="item_file_exported">Na-export</string>
+    <string name="item_file_export_failed">Hindi ma-export</string>
+    <string name="item_file_not_read">Hindi ito item file ng SandFly, o hindi ito mabasa</string>
+    <string name="item_file_settings_file">Ito ay settings file. I-import ito gamit ang Pag-back up at pag-restore > I-import ang mga setting</string>
+    <string name="item_file_newer">Mula sa mas bagong bersyon ng SandFly ang file na ito</string>
+    <string name="item_file_nothing_imported">Walang na-import</string>
+    <string name="item_file_imported">Na-import: <xliff:g id="items" example="2 macros, 1 gesture profile">%1$s</xliff:g></string>
+    <string name="item_file_left_out">Hindi isinama:</string>
+    <string name="item_file_problem_not_read"><xliff:g id="kind" example="Macros">%1$s</xliff:g>, item <xliff:g id="number" example="3">%2$d</xliff:g>: hindi nabasa</string>
+    <string name="item_file_problem_command"><xliff:g id="item" example="Open mail">%1$s</xliff:g>: hindi kilalang command na <xliff:g id="command" example="READ_ALL">%2$s</xliff:g></string>
+    <string name="item_file_problem_gesture"><xliff:g id="item" example="Reading">%1$s</xliff:g>: hindi kilalang galaw na <xliff:g id="gesture" example="pref_shortcut_spin">%2$s</xliff:g></string>
+    <string name="item_file_problem_keys"><xliff:g id="item" example="My keymap">%1$s</xliff:g>: hindi maunawaan ang mga key: <xliff:g id="keys" example="SandFly+Foo">%2$s</xliff:g></string>
+    <string name="item_file_problem_keys_taken"><xliff:g id="item" example="My keymap">%1$s</xliff:g>: ginagamit na ang mga key: <xliff:g id="keys" example="SandFly+H">%2$s</xliff:g></string>
+    <string name="item_file_problem_setting"><xliff:g id="item" example="Reading">%1$s</xliff:g>: hindi kilala ang setting na <xliff:g id="key" example="pref_vibration">%2$s</xliff:g>, hindi maaaring nasa profile, o mali ang uri ng value</string>
+    <string name="item_file_problem_regex"><xliff:g id="dictionary" example="Speech dictionary">%1$s</xliff:g>: tinanggihan ang regular expression: <xliff:g id="expression" example="(a+)+">%2$s</xliff:g></string>
+    <string name="item_file_problem_limit"><xliff:g id="kind" example="Symbol dictionary">%1$s</xliff:g>: hanggang <xliff:g id="number" example="500">%2$d</xliff:g> item lang</string>
+    <string name="item_file_problem_more">May iba pang hindi isinama</string>
+    <plurals name="item_file_count_macros">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> macro</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> macro</item>
+    </plurals>
+    <plurals name="item_file_count_gesture_profiles">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> profile ng galaw</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> profile ng galaw</item>
+    </plurals>
+    <plurals name="item_file_count_keymaps">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> keymap</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> keymap</item>
+    </plurals>
+    <plurals name="item_file_count_apps">
+        <item quantity="one">mga galaw at keyboard shortcut ng <xliff:g id="count" example="2">%d</xliff:g> app</item>
+        <item quantity="other">mga galaw at keyboard shortcut ng <xliff:g id="count" example="2">%d</xliff:g> app</item>
+    </plurals>
+    <plurals name="item_file_count_settings_profiles">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> profile ng setting</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> profile ng setting</item>
+    </plurals>
+    <plurals name="item_file_count_speech_dictionary">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> entry sa diksyunaryo ng pagsasalita</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> entry sa diksyunaryo ng pagsasalita</item>
+    </plurals>
+    <plurals name="item_file_count_symbol_dictionary">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> entry sa diksyunaryo ng simbolo</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> entry sa diksyunaryo ng simbolo</item>
+    </plurals>
+    <plurals name="item_file_count_braille_dictionary">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> entry sa diksyunaryo ng braille</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> entry sa diksyunaryo ng braille</item>
+    </plurals>
+    <plurals name="item_file_count_voice_commands">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> custom na command gamit ang boses</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> custom na command gamit ang boses</item>
+    </plurals>
+</resources>

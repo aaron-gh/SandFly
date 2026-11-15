@@ -224,8 +224,26 @@ public class FocusManagerInternal {
     return isAccessibilityFocusActionPerformedSuccessfully;
   }
 
+  void completePendingWebFocus(@NonNull AccessibilityNodeInfoCompat pivot) {
+    if (pivot.isAccessibilityFocused() && WebInterfaceUtils.supportsWebActions(pivot)) {
+      history.completePendingWebFocusFromPivot(pivot);
+    }
+  }
+
   void updateFocusHistory(
-      @NonNull AccessibilityNodeInfoCompat pivot, @NonNull FocusActionInfo focusActionInfo) {
+      @NonNull AccessibilityNodeInfoCompat pivot, @NonNull FocusActionInfo focusActionInfo,
+      long actionTime) {
+    if (WebInterfaceUtils.supportsWebActions(pivot)
+        && focusActionInfo.navigationAction != null
+        && focusActionInfo.navigationAction.originalNavigationGranularity == CursorGranularity.DEFAULT) {
+      // The browser sends the actual target in its focus event. Looking it up immediately
+      // reads the old cached focus, refreshes it, and builds a path before that event clears
+      // the cache again. Use the existing event-driven history path for default navigation.
+      history.onPendingWebNavigationAction(
+          updateFocusActionInfoIfNecessary(focusActionInfo, null), actionTime,
+          screenState.getStableScreenState(), pivot);
+      return;
+    }
     // Cache the accessibility focus action history.
     long currentTime = SystemClock.uptimeMillis();
     AccessibilityNodeInfoCompat newFocus = focusFinder.findFocusCompat(FOCUS_ACCESSIBILITY);

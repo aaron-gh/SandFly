@@ -2025,4 +2025,144 @@
     <string name="value_keep_models_5">Dakika 5</string>
     <string name="value_keep_models_15">Dakika 15</string>
     <string name="value_keep_models_30">Dakika 30</string>
+    <string name="title_pref_speech_equalizer_save_preset">Hifadhi kama mipangilio awali</string>
+    <string name="title_pref_speech_equalizer_saved_presets">Mipangilio awali iliyohifadhiwa</string>
+    <string name="speech_equalizer_preset_name">Jina</string>
+    <string name="speech_equalizer_preset_name_taken">Tayari kuna mipangilio awali inayoitwa <xliff:g id="name" example="Podcast">%1$s</xliff:g></string>
+    <string name="speech_equalizer_presets_full">Hakuna mipangilio awali zaidi inayoweza kuhifadhiwa. Futa mmoja ili uhifadhi mwingine.</string>
+    <string name="speech_equalizer_preset_saved"><xliff:g id="name" example="Podcast">%1$s</xliff:g> imehifadhiwa</string>
+    <string name="speech_equalizer_preset_rename">Badilisha jina</string>
+    <string name="speech_equalizer_preset_delete">Futa</string>
+    <string name="speech_equalizer_preset_delete_confirm">Futa <xliff:g id="name" example="Podcast">%1$s</xliff:g>?</string>
+    <string name="speech_equalizer_preset_deleted"><xliff:g id="name" example="Podcast">%1$s</xliff:g> imefutwa</string>
+    <string name="title_pref_emoji_voice">Sauti ya emoji</string>
+    <string name="value_emoji_voice_same">Sawa na matamshi</string>
+    <string name="title_pref_emoji_rate">Kasi ya kutamka emoji</string>
+    <string name="title_pref_line_breaks_as_spaces">Soma ukatizaji wa mstari kama nafasi</string>
+    <string name="title_pref_language_voices">Sauti kulingana na lugha</string>
+    <string name="title_pref_identify_languages_from_words">Tambua lugha kutoka kwa maneno</string>
+    <string name="title_pref_add_language">Ongeza lugha</string>
+    <string name="title_pref_remove_language">Ondoa lugha</string>
+    <string name="title_pref_script_language">Hati ya %1$s</string>
+    <string name="title_pref_screen_on_notification_count">Idadi ya arifa</string>
+    <plurals name="template_screen_on_notification_count">
+        <item quantity="one">Arifa <xliff:g id="count" example="6">%d</xliff:g></item>
+        <item quantity="other">Arifa <xliff:g id="count" example="6">%d</xliff:g></item>
+    </plurals>
+    <string name="title_pref_phonetic_letters_review">Tamka herufi kifonetiki wakati wa kukagua</string>
+    <string name="title_pref_phonetic_letters_typing">Tamka herufi kifonetiki wakati wa kuandika</string>
+    <string name="title_pref_emoji_suffix">Tamka \"emoji\" baada ya majina ya emoji</string>
+    <string name="overview_shizuku_not_running">Shizuku haifanyi kazi</string>
+    <string name="overview_shizuku_not_allowed">Shizuku hairuhusu SandFly</string>
+    <string name="overview_no_older_app">Hakuna programu ya zamani zaidi</string>
+    <string name="overview_no_newer_app">Hakuna programu mpya zaidi</string>
+    <string name="stream_volume_needs_access">Ruhusu ufikiaji wa Usinisumbue ili ubadilishe sauti hii.</string>
+    <string name="corner_gestures_title">Pembe</string>
+    <string name="shortcut_move_to_item_below">Nenda kwenye kipengee cha chini</string>
+    <string name="shortcut_move_to_item_above">Nenda kwenye kipengee cha juu</string>
+    <string name="shortcut_older_app">Programu ya zamani zaidi</string>
+    <string name="shortcut_newer_app">Programu mpya zaidi</string>
+    <string name="shortcut_answer_call">Pokea simu</string>
+    <string name="answer_call_no_call">Hakuna simu inayoingia</string>
+    <string name="answer_call_permission">Ruhusa inahitajika ili kupokea simu</string>
+    <string name="shortcut_switch_keyboard">Badilisha kibodi</string>
+    <string name="switch_keyboard_none">Hakuna kibodi nyingine iliyowashwa</string>
+    <string name="switch_keyboard_failed">Kibodi haikubadilishwa</string>
+    <string name="clipboard_history_hint">Telezesha kidole juu au chini ili uchague, kisha ugonge mara mbili ili ubandike</string>
+    <string name="title_speech_history">Historia ya matamshi</string>
+    <string name="speech_history_empty">Hakuna matamshi</string>
+    <string name="speech_history_clear">Futa historia</string>
+    <string name="title_pref_shortcut_corner_top_left_tap">Gusa pembe ya juu kushoto</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap">Gusa mara mbili pembe ya juu kushoto</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap">Gusa mara tatu pembe ya juu kushoto</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap_hold">Gusa mara mbili na ushikilie pembe ya juu kushoto</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap_hold">Gusa mara tatu na ushikilie pembe ya juu kushoto</string>
+    <string name="title_pref_shortcut_corner_top_right_tap">Gusa pembe ya juu kulia</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap">Gusa mara mbili pembe ya juu kulia</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap">Gusa mara tatu pembe ya juu kulia</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap_hold">Gusa mara mbili na ushikilie pembe ya juu kulia</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap_hold">Gusa mara tatu na ushikilie pembe ya juu kulia</string>
+    <string name="title_pref_shortcut_corner_bottom_left_tap">Gusa pembe ya chini kushoto</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap">Gusa mara mbili pembe ya chini kushoto</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap">Gusa mara tatu pembe ya chini kushoto</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap_hold">Gusa mara mbili na ushikilie pembe ya chini kushoto</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap_hold">Gusa mara tatu na ushikilie pembe ya chini kushoto</string>
+    <string name="title_pref_shortcut_corner_bottom_right_tap">Gusa pembe ya chini kulia</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap">Gusa mara mbili pembe ya chini kulia</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap">Gusa mara tatu pembe ya chini kulia</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap_hold">Gusa mara mbili na ushikilie pembe ya chini kulia</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap_hold">Gusa mara tatu na ushikilie pembe ya chini kulia</string>
+    <string name="title_pref_swipe_start_time">Muda wa kuanza ishara</string>
+    <string name="title_pref_swipes_before_lift">Tambua telezesha kabla ya kuinua kidole</string>
+    <string name="summary_pref_swipes_before_lift">Huzima ishara za kwenda na kurudi na za pembe.</string>
+    <string name="title_pref_corner_size_mm">Ukubwa wa pembe</string>
+    <string name="value_corner_size_edge_width">Sawa na upana wa ukingo</string>
+    <string name="title_pref_corner_tap_time_ms">Kikomo cha muda wa kugusa pembe</string>
+    <string name="value_corner_tap_time_system">Chaguomsingi la mfumo</string>
+    <string name="title_pref_edge_speak_commands">Tamka amri kwa kila mbofyo</string>
+    <string-array name="pref_volume_change_feedback_entries">
+        <item>@string/volume_change_feedback_off</item>
+        <item>@string/volume_change_feedback_tone</item>
+        <item>@string/volume_change_feedback_spoken</item>
+        <item>@string/volume_change_feedback_tone_and_spoken</item>
+    </string-array>
+    <string name="title_pref_volume_change_tone_during_media">Nyamazisha mlio wakati wa kucheza maudhui</string>
+    <string name="title_pref_volume_change_speech_during_media">Nyamazisha matamshi wakati wa kucheza maudhui</string>
+    <string name="title_pref_volume_change_interrupts_speech">Katiza matamshi ili kutangaza sauti</string>
+    <string name="title_pref_volume_keys_speech_volume_while_speaking">Vitufe vya sauti hubadilisha sauti ya matamshi wakati wa kutamka</string>
+    <string name="title_pref_double_tap_moves_cursor">Kugusa mara mbili husogeza kiashiria hadi mwanzo au mwisho</string>
+    <string name="title_pref_scroll_ahead">Sogeza mbele hadi kipengee kinachofuata</string>
+    <string name="title_pref_speak_while_scrolling">Tamka kipengee kinachofuata wakati wa kusogeza</string>
+    <string-array name="pref_text_entities_entries">
+    <item>@string/text_entity_web</item>
+    <item>@string/text_entity_email</item>
+    <item>@string/text_entity_phone</item>
+    <item>@string/text_entity_code</item>
+  </string-array>
+    <string name="value_keep_models_until_stopped">Hadi SandFly ikome</string>
+    <string name="title_pref_model_download_server">Seva ya kupakua miundo</string>
+    <string name="title_pref_settings_profiles">Wasifu wa mipangilio</string>
+    <string name="title_pref_new_settings_profile">Wasifu mpya wa mipangilio</string>
+    <string name="settings_profile_new_name">Wasifu <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="settings_profile_name_taken">Tayari kuna wasifu wa mipangilio unaoitwa <xliff:g id="name" example="Demo">%1$s</xliff:g></string>
+    <string name="settings_profile_in_use">Unatumika</string>
+    <string name="settings_profile_menu_item_in_use"><xliff:g id="name" example="Demo">%1$s</xliff:g>, unatumika</string>
+    <string name="settings_profile_none">Hakuna wasifu wa mipangilio</string>
+    <string name="settings_profile_use_now">Tumia sasa</string>
+    <string name="settings_profile_stop_using">Acha kutumia</string>
+    <string name="settings_profile_change_settings">Badilisha mipangilio</string>
+    <string name="settings_profile_editing">Mabadiliko yanaenda kwa <xliff:g id="name" example="Messaging">%1$s</xliff:g></string>
+    <string name="settings_profile_edit_saved">Mabadiliko yamehifadhiwa kwa <xliff:g id="name" example="Messaging">%1$s</xliff:g></string>
+    <string name="settings_profile_use_automatically">Tumia kiotomatiki</string>
+    <string name="settings_profile_web">Maudhui ya wavuti</string>
+    <string name="settings_profile_reading">Kusoma kuendelea</string>
+    <string name="settings_profile_text_editing">Kuhariri maandishi</string>
+    <string name="settings_profile_apps">Programu</string>
+    <string name="settings_profile_add_app">Ongeza programu</string>
+    <string name="settings_profile_settings">Mipangilio katika wasifu huu</string>
+    <string name="settings_profile_no_settings">Hakuna</string>
+    <string name="settings_profile_remove_confirm">Ondoa <xliff:g id="item" example="Speech rate">%1$s</xliff:g> kutoka <xliff:g id="name" example="Messaging">%2$s</xliff:g>?</string>
+    <string name="settings_profile_not_saved">Wasifu wa mipangilio haukuweza kuhifadhiwa</string>
+    <string name="settings_profile_in_use_announcement">Wasifu wa <xliff:g id="name" example="Demo">%1$s</xliff:g></string>
+    <string name="settings_profile_not_changed">Wasifu wa mipangilio haukubadilishwa</string>
+    <string name="title_settings_profile">Wasifu wa mipangilio</string>
+    <string name="shortcut_settings_profiles">Chagua wasifu wa mipangilio</string>
+    <string name="shortcut_next_settings_profile">Wasifu unaofuata wa mipangilio</string>
+    <string name="shortcut_previous_settings_profile">Wasifu uliotangulia wa mipangilio</string>
+    <string name="title_copy_text_from_screen">Nakili maandishi kutoka skrini</string>
+    <string name="granularity_label">Kiwango cha undani</string>
+    <string name="granularity_characters">Herufi</string>
+    <string name="granularity_words">Maneno</string>
+    <string name="granularity_paragraphs">Aya</string>
+    <string name="button_select_all">Chagua yote</string>
+    <string name="no_text_selected">Hakuna maandishi yaliyochaguliwa</string>
+    <string name="no_text_on_screen">Hakuna maandishi yaliyopatikana kwenye skrini</string>
+    <string name="title_select_last_spoken_phrase_word_by_word">Chagua kifungu kilichotamkwa mwisho neno kwa neno</string>
+    <string name="no_words_selected">Hakuna maneno yaliyochaguliwa</string>
+    <string name="no_phrase_to_select">Hakuna kifungu cha kuchagua</string>
+    <string name="word_selection_list_cut_off">Orodha imekatwa kwenye vipengee <xliff:g id="count" example="1000">%1$d</xliff:g></string>
+    <plurals name="word_selection_copied">
+        <item quantity="one">Kipengee <xliff:g id="count" example="5">%1$d</xliff:g> kimenakiliwa</item>
+        <item quantity="other">Vipengee <xliff:g id="count" example="5">%1$d</xliff:g> vimenakiliwa</item>
+    </plurals>
 </resources>

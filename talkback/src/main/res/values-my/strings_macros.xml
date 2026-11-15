@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_macros">မက်ခရိုများ</string>
+    <string name="shortcut_stop_macro">မက်ခရို ရပ်ရန်</string>
+    <string name="macro_add">မက်ခရို ထည့်ရန်</string>
+    <string name="macro_run_now">ယခု လုပ်ဆောင်ရန်</string>
+    <string name="macro_add_step">အဆင့် ထည့်ရန်</string>
+    <string name="macro_add_at_end">အဆုံးတွင်</string>
+    <string name="macro_add_at_start">အစတွင်</string>
+    <string name="macro_add_after">အဆင့် <xliff:g id="step" example="2">%1$d</xliff:g> ပြီးနောက်- <xliff:g id="name" example="If App in front: Chrome">%2$s</xliff:g></string>
+    <string name="macro_steps">အဆင့်များ</string>
+    <string name="macro_no_steps">အဆင့် မရှိပါ</string>
+    <string name="macro_delete">မက်ခရို ဖျက်ရန်</string>
+    <string name="macro_delete_confirm"><xliff:g id="name" example="Send message">%1$s</xliff:g> ကို ဖျက်မလား။</string>
+    <string name="macro_step_command">ကွန်မန်း လုပ်ဆောင်ရန်</string>
+    <string name="macro_step_wait">စောင့်ရန်</string>
+    <string name="macro_step_tap">အရာကို တို့ရန်</string>
+    <string name="macro_step_focus">အရာကို ဖိုကပ်စ်လုပ်ရန်</string>
+    <string name="macro_step_speak_item">အရာကို ပြောရန်</string>
+    <string name="macro_step_speak_text">စာသား ပြောရန်</string>
+    <string name="macro_step_type">စာသား ရိုက်ရန်</string>
+    <string name="macro_step_tap_value"><xliff:g id="label" example="Send">%1$s</xliff:g> ကို တို့ရန်</string>
+    <string name="macro_step_focus_value"><xliff:g id="label" example="Send">%1$s</xliff:g> ကို ဖိုကပ်စ်လုပ်ရန်</string>
+    <string name="macro_step_speak_item_value"><xliff:g id="label" example="Send">%1$s</xliff:g> ကို ပြောရန်</string>
+    <string name="macro_step_speak_text_value"><xliff:g id="text" example="Done">%1$s</xliff:g> ကို ပြောရန်</string>
+    <string name="macro_step_type_value"><xliff:g id="text" example="On my way">%1$s</xliff:g> ကို ရိုက်ရန်</string>
+    <string name="macro_step_replace_value">စာသားကို <xliff:g id="text" example="On my way">%1$s</xliff:g> ဖြင့် အစားထိုးရန်</string>
+    <plurals name="macro_step_wait_seconds">
+        <item quantity="other"><xliff:g id="count" example="1">%d</xliff:g> စက္ကန့် စောင့်ရန်</item>
+    </plurals>
+    <plurals name="macro_step_wait_milliseconds">
+        <item quantity="other"><xliff:g id="count" example="1">%d</xliff:g> မီလီစက္ကန့် စောင့်ရန်</item>
+    </plurals>
+    <string name="macro_step_unavailable">မရနိုင်ပါ</string>
+    <string name="macro_seconds">စက္ကန့်</string>
+    <string name="macro_invalid_seconds"><xliff:g id="max" example="600">%1$d</xliff:g> အထိ စက္ကန့်အရေအတွက် ထည့်ပါ</string>
+    <string name="macro_tap_label">အရာ၏ စာသား</string>
+    <string name="macro_tap_timeout">အရာကို စောင့်ရန် စက္ကန့်</string>
+    <string name="macro_text">စာသား</string>
+    <string name="macro_replace_text">အကွက်ရှိ စာသားကို အစားထိုးရန်</string>
+    <string name="macro_item_not_found">မက်ခရို ရပ်သွားသည်။ မတွေ့ပါ- <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_failed">မက်ခရို ရပ်သွားသည်။ မအောင်မြင်ပါ- <xliff:g id="step" example="Open Gmail">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until">မည်သည့်အချိန်အထိ စောင့်ရန်</string>
+    <string name="macro_step_if">အကယ်၍</string>
+    <string name="macro_step_else_if">မဟုတ်ပါက အကယ်၍</string>
+    <string name="macro_step_else">မဟုတ်ပါက</string>
+    <string name="macro_step_end_if">အကယ်၍ ပြီးဆုံး</string>
+    <string name="macro_step_repeat">ထပ်ခါထပ်ခါလုပ်ရန်</string>
+    <string name="macro_step_repeat_while">ဆက်လက်၍ ထပ်လုပ်ရန်</string>
+    <string name="macro_step_end_repeat">ထပ်လုပ်ခြင်း ပြီးဆုံး</string>
+    <string name="macro_step_exit_loop">ကွင်းဆက်မှ ထွက်ရန်</string>
+    <string name="macro_step_if_value">အကယ်၍ <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_else_if_value">မဟုတ်ပါက အကယ်၍ <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_repeat_while_value"><xliff:g id="condition" example="Item on screen: Load more">%1$s</xliff:g> ဖြစ်နေစဉ် ထပ်လုပ်ရန်</string>
+    <string name="macro_step_wait_until_value"><xliff:g id="condition" example="Item on screen: Send">%1$s</xliff:g> အထိ စောင့်ရန်</string>
+    <plurals name="macro_step_repeat_value">
+        <item quantity="other"><xliff:g id="count" example="1">%d</xliff:g> ကြိမ် ထပ်လုပ်ရန်</item>
+    </plurals>
+    <string name="macro_times">အကြိမ်ရေ</string>
+    <string name="macro_invalid_times">၁ မှ <xliff:g id="max" example="1000">%1$d</xliff:g> အထိ နံပါတ်တစ်ခု ထည့်ပါ</string>
+    <string name="macro_run_only_when">ဤအခါမှသာ လုပ်ဆောင်ရန်</string>
+    <string name="macro_always">အမြဲတမ်း</string>
+    <string name="macro_no_tests">စစ်ဆေးမှု မရှိပါ</string>
+    <string name="macro_add_test">စစ်ဆေးမှု ထည့်ရန်</string>
+    <string name="macro_tests">စစ်ဆေးမှုများ</string>
+    <string name="macro_choose_test">စစ်ဆေးမှု</string>
+    <string name="macro_test_item">မျက်နှာပြင်ပေါ်ရှိ အရာ</string>
+    <string name="macro_test_focused">ဖိုကပ်စ်ရှိသော အရာ</string>
+    <string name="macro_test_app">ရှေ့ဆုံးရှိ အက်ပ်</string>
+    <string name="macro_test_keyboard">ကီးဘုတ် ပြထားသည်</string>
+    <string name="macro_test_keyboard_hidden">ကီးဘုတ် ဖျောက်ထားသည်</string>
+    <string name="macro_test_locked">မျက်နှာပြင် လော့ခ်ချထားသည်</string>
+    <string name="macro_test_unlocked">မျက်နှာပြင် လော့ခ်ဖွင့်ထားသည်</string>
+    <string name="macro_test_item_value">မျက်နှာပြင်ပေါ်ရှိ အရာ- <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_no_item_value">မျက်နှာပြင်ပေါ်တွင် အရာ မရှိ- <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_focused_value">ဖိုကပ်စ်ရှိသော အရာ- <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_not_focused_value">ဖိုကပ်စ်ရှိသော အရာ မဟုတ်- <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_app_value">ရှေ့ဆုံးရှိ အက်ပ်- <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_not_app_value">ရှေ့ဆုံးတွင် မရှိသော အက်ပ်- <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_label_kind"><xliff:g id="label" example="Send">%1$s</xliff:g>၊ <xliff:g id="kind" example="Clickable">%2$s</xliff:g></string>
+    <string name="macro_join_and"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g> နှင့် <xliff:g id="second" example="Focused item: Editable">%2$s</xliff:g></string>
+    <string name="macro_join_or"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g> သို့မဟုတ် <xliff:g id="second" example="Screen locked">%2$s</xliff:g></string>
+    <string name="macro_regex">Regular expression</string>
+    <string name="macro_invalid_regex">အသုံးပြု၍ မရသော regular expression ဖြစ်သည်။ ထပ်နေသော အုပ်စုများတွင် ထပ်ခြင်း သို့မဟုတ် | မပါနိုင်ပါ။</string>
+    <string name="macro_match_in">ကိုက်ညီမှု ရှာရာနေရာ</string>
+    <string name="macro_field_any">မည်သည့်စာသားမဆို</string>
+    <string name="macro_field_text">စာသား</string>
+    <string name="macro_field_description">ဖော်ပြချက်</string>
+    <string name="macro_field_hint">အကြံပြုချက်</string>
+    <string name="macro_field_state">အခြေအနေ</string>
+    <string name="macro_field_id">ရင်းမြစ် ID</string>
+    <string name="macro_field_value"><xliff:g id="label" example="send">%1$s</xliff:g> (<xliff:g id="field" example="Resource ID">%2$s</xliff:g>)</string>
+    <string name="macro_field_regex_value"><xliff:g id="pattern" example="^Reply">%1$s</xliff:g> (<xliff:g id="field" example="Description">%2$s</xliff:g>၊ regular expression)</string>
+    <string name="macro_regex_value"><xliff:g id="pattern" example="Reply.*Anna">%1$s</xliff:g> (regular expression)</string>
+    <string name="macro_test_label_optional">အရာ၏ စာသား (မဖြစ်မနေ မလို)</string>
+    <string name="macro_item_kind">အရာ အမျိုးအစား</string>
+    <string name="macro_kind_any">မည်သည့်အမျိုးအစားမဆို</string>
+    <string name="macro_kind_clickable">နှိပ်နိုင်သည်</string>
+    <string name="macro_kind_long_clickable">ဖိနှိပ်နိုင်သည်</string>
+    <string name="macro_kind_editable">တည်းဖြတ်နိုင်သည်</string>
+    <string name="macro_kind_scrollable">လှိမ့်နိုင်သည်</string>
+    <string name="macro_kind_adjustable">ချိန်ညှိနိုင်သည်</string>
+    <string name="macro_kind_checkable">အမှန်ခြစ်နိုင်သည်</string>
+    <string name="macro_kind_checked">အမှန်ခြစ်ပြီး</string>
+    <string name="macro_kind_selected">ရွေးထား</string>
+    <string name="macro_kind_heading">ခေါင်းစီး</string>
+    <string name="macro_kind_enabled">ဖွင့်ထားသည်</string>
+    <string name="macro_change_to">ပြောင်းရန်- <xliff:g id="test" example="Keyboard hidden">%1$s</xliff:g></string>
+    <string name="macro_join_with_and">\"နှင့်\" ဖြင့် ပေါင်းရန်</string>
+    <string name="macro_join_with_or">\"သို့မဟုတ်\" ဖြင့် ပေါင်းရန်</string>
+    <string name="macro_clause_and">နှင့် <xliff:g id="test" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_clause_or">သို့မဟုတ် <xliff:g id="test" example="Screen locked">%1$s</xliff:g></string>
+    <string name="macro_wait_timeout">စောင့်ရန် စက္ကန့်</string>
+    <string name="macro_add_step_after">အဆင့်ကို အောက်ပါအရာ၏နောက်တွင် ထည့်ရန်</string>
+    <string name="macro_problem">အဆင့် <xliff:g id="step" example="3">%1$d</xliff:g>- <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_problem_no_if">မဟုတ်ပါက အကယ်၍၊ မဟုတ်ပါက သို့မဟုတ် အကယ်၍ ပြီးဆုံး ကို အကယ်၍ မပါဘဲ သုံးထားသည်</string>
+    <string name="macro_problem_after_else">မဟုတ်ပါက အကယ်၍ သို့မဟုတ် မဟုတ်ပါက ကို မဟုတ်ပါက ၏နောက်တွင် သုံးထားသည်</string>
+    <string name="macro_problem_no_repeat">ထပ်လုပ်ခြင်း ပြီးဆုံး ကို ထပ်ခါထပ်ခါလုပ်ရန် မပါဘဲ သုံးထားသည်</string>
+    <string name="macro_problem_no_end_if">အကယ်၍ ကို အကယ်၍ ပြီးဆုံး မပါဘဲ သုံးထားသည်</string>
+    <string name="macro_problem_no_end_repeat">ထပ်ခါထပ်ခါလုပ်ရန် ကို ထပ်လုပ်ခြင်း ပြီးဆုံး မပါဘဲ သုံးထားသည်</string>
+    <string name="macro_problem_exit">ကွင်းဆက်မှ ထွက်ရန် ကို ထပ်လုပ်ခြင်းပြင်ပတွင် သုံးထားသည်</string>
+    <string name="macro_stopped_problem">မက်ခရို ရပ်သွားသည်။ အဆင့် <xliff:g id="step" example="3">%1$d</xliff:g>- <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_stopped_repeats">မက်ခရို ရပ်သွားသည်။ <xliff:g id="count" example="1000">%1$d</xliff:g> ကြိမ် ထပ်လုပ်ပြီး- <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
+    <string name="macro_stopped_timeout">မက်ခရို ရပ်သွားသည်။ အချိန်ကုန်သွားသည်- <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
+    <string name="macro_not_met">မက်ခရိုကို မလုပ်ဆောင်ပါ။ ဤအခါမှသာ လုပ်ဆောင်ရန်- မကိုက်ညီပါ</string>
+</resources>

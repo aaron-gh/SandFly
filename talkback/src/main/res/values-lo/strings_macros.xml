@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_macros">ມາໂຄຣ</string>
+    <string name="shortcut_stop_macro">ຢຸດມາໂຄຣ</string>
+    <string name="macro_add">ເພີ່ມມາໂຄຣ</string>
+    <string name="macro_run_now">ແລ່ນດຽວນີ້</string>
+    <string name="macro_add_step">ເພີ່ມຂັ້ນຕອນ</string>
+    <string name="macro_add_at_end">ຕອນທ້າຍ</string>
+    <string name="macro_add_at_start">ຕອນຕົ້ນ</string>
+    <string name="macro_add_after">ຫຼັງຂັ້ນຕອນ <xliff:g id="step" example="2">%1$d</xliff:g>: <xliff:g id="name" example="If App in front: Chrome">%2$s</xliff:g></string>
+    <string name="macro_steps">ຂັ້ນຕອນ</string>
+    <string name="macro_no_steps">ບໍ່ມີຂັ້ນຕອນ</string>
+    <string name="macro_delete">ລຶບມາໂຄຣ</string>
+    <string name="macro_delete_confirm">ລຶບ <xliff:g id="name" example="Send message">%1$s</xliff:g>?</string>
+    <string name="macro_step_command">ແລ່ນຄຳສັ່ງ</string>
+    <string name="macro_step_wait">ລໍຖ້າ</string>
+    <string name="macro_step_tap">ແຕະລາຍການ</string>
+    <string name="macro_step_focus">ໂຟກັສລາຍການ</string>
+    <string name="macro_step_speak_item">ອ່ານລາຍການ</string>
+    <string name="macro_step_speak_text">ອ່ານຂໍ້ຄວາມ</string>
+    <string name="macro_step_type">ພິມຂໍ້ຄວາມ</string>
+    <string name="macro_step_tap_value">ແຕະ <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_focus_value">ໂຟກັສ <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_item_value">ອ່ານ <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_text_value">ອ່ານ <xliff:g id="text" example="Done">%1$s</xliff:g></string>
+    <string name="macro_step_type_value">ພິມ <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <string name="macro_step_replace_value">ແທນຂໍ້ຄວາມດ້ວຍ <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <plurals name="macro_step_wait_seconds">
+        <item quantity="other">ລໍຖ້າ <xliff:g id="count" example="1">%d</xliff:g> ວິນາທີ</item>
+    </plurals>
+    <plurals name="macro_step_wait_milliseconds">
+        <item quantity="other">ລໍຖ້າ <xliff:g id="count" example="1">%d</xliff:g> ມິນລິວິນາທີ</item>
+    </plurals>
+    <string name="macro_step_unavailable">ບໍ່ສາມາດໃຊ້ໄດ້</string>
+    <string name="macro_seconds">ວິນາທີ</string>
+    <string name="macro_invalid_seconds">ໃສ່ຈຳນວນວິນາທີບໍ່ເກີນ <xliff:g id="max" example="600">%1$d</xliff:g></string>
+    <string name="macro_tap_label">ຂໍ້ຄວາມຂອງລາຍການ</string>
+    <string name="macro_tap_timeout">ວິນາທີທີ່ລໍຖ້າລາຍການ</string>
+    <string name="macro_text">ຂໍ້ຄວາມ</string>
+    <string name="macro_replace_text">ແທນຂໍ້ຄວາມໃນຊ່ອງ</string>
+    <string name="macro_item_not_found">ມາໂຄຣຢຸດແລ້ວ. ບໍ່ພົບ: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_failed">ມາໂຄຣຢຸດແລ້ວ. ບໍ່ສຳເລັດ: <xliff:g id="step" example="Open Gmail">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until">ລໍຖ້າຈົນກວ່າ</string>
+    <string name="macro_step_if">ຖ້າ</string>
+    <string name="macro_step_else_if">ຖ້າບໍ່ແມ່ນ ແລະ ຖ້າ</string>
+    <string name="macro_step_else">ຖ້າບໍ່ແມ່ນ</string>
+    <string name="macro_step_end_if">ສິ້ນສຸດຖ້າ</string>
+    <string name="macro_step_repeat">ເຮັດຊ້ຳ</string>
+    <string name="macro_step_repeat_while">ເຮັດຊ້ຳໃນຂະນະທີ່</string>
+    <string name="macro_step_end_repeat">ສິ້ນສຸດເຮັດຊ້ຳ</string>
+    <string name="macro_step_exit_loop">ອອກຈາກວົງວຽນ</string>
+    <string name="macro_step_if_value">ຖ້າ <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_else_if_value">ຖ້າບໍ່ແມ່ນ ແລະ ຖ້າ <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_repeat_while_value">ເຮັດຊ້ຳໃນຂະນະທີ່ <xliff:g id="condition" example="Item on screen: Load more">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until_value">ລໍຖ້າຈົນກວ່າ <xliff:g id="condition" example="Item on screen: Send">%1$s</xliff:g></string>
+    <plurals name="macro_step_repeat_value">
+        <item quantity="other">ເຮັດຊ້ຳ <xliff:g id="count" example="1">%d</xliff:g> ເທື່ອ</item>
+    </plurals>
+    <string name="macro_times">ຈຳນວນເທື່ອ</string>
+    <string name="macro_invalid_times">ໃສ່ຕົວເລກຈາກ 1 ຫາ <xliff:g id="max" example="1000">%1$d</xliff:g></string>
+    <string name="macro_run_only_when">ແລ່ນສະເພາະເມື່ອ</string>
+    <string name="macro_always">ສະເໝີ</string>
+    <string name="macro_no_tests">ບໍ່ມີເງື່ອນໄຂ</string>
+    <string name="macro_add_test">ເພີ່ມເງື່ອນໄຂ</string>
+    <string name="macro_tests">ເງື່ອນໄຂ</string>
+    <string name="macro_choose_test">ເງື່ອນໄຂ</string>
+    <string name="macro_test_item">ລາຍການໃນໜ້າຈໍ</string>
+    <string name="macro_test_focused">ລາຍການທີ່ໂຟກັສ</string>
+    <string name="macro_test_app">ແອັບທີ່ຢູ່ໜ້າສຸດ</string>
+    <string name="macro_test_keyboard">ສະແດງແປ້ນພິມ</string>
+    <string name="macro_test_keyboard_hidden">ເຊື່ອງແປ້ນພິມ</string>
+    <string name="macro_test_locked">ລັອກໜ້າຈໍ</string>
+    <string name="macro_test_unlocked">ປົດລັອກໜ້າຈໍ</string>
+    <string name="macro_test_item_value">ລາຍການໃນໜ້າຈໍ: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_no_item_value">ບໍ່ມີລາຍການໃນໜ້າຈໍ: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_focused_value">ລາຍການທີ່ໂຟກັສ: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_not_focused_value">ລາຍການທີ່ໂຟກັສບໍ່ແມ່ນ: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_app_value">ແອັບທີ່ຢູ່ໜ້າສຸດ: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_not_app_value">ແອັບທີ່ບໍ່ຢູ່ໜ້າສຸດ: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_label_kind"><xliff:g id="label" example="Send">%1$s</xliff:g>, <xliff:g id="kind" example="Clickable">%2$s</xliff:g></string>
+    <string name="macro_join_and"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g> ແລະ <xliff:g id="second" example="Focused item: Editable">%2$s</xliff:g></string>
+    <string name="macro_join_or"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g>, ຫຼື <xliff:g id="second" example="Screen locked">%2$s</xliff:g></string>
+    <string name="macro_regex">ນິພົດປົກກະຕິ</string>
+    <string name="macro_invalid_regex">ບໍ່ແມ່ນນິພົດປົກກະຕິທີ່ໃຊ້ໄດ້. ກຸ່ມທີ່ຊ້ຳບໍ່ສາມາດມີການຊ້ຳ ຫຼື | ໄດ້.</string>
+    <string name="macro_match_in">ຈັບຄູ່ໃນ</string>
+    <string name="macro_field_any">ຂໍ້ຄວາມໃດກໍໄດ້</string>
+    <string name="macro_field_text">ຂໍ້ຄວາມ</string>
+    <string name="macro_field_description">ລາຍລະອຽດ</string>
+    <string name="macro_field_hint">ຄຳແນະນຳ</string>
+    <string name="macro_field_state">ສະຖານະ</string>
+    <string name="macro_field_id">ID ຊັບພະຍາກອນ</string>
+    <string name="macro_field_value"><xliff:g id="label" example="send">%1$s</xliff:g> (<xliff:g id="field" example="Resource ID">%2$s</xliff:g>)</string>
+    <string name="macro_field_regex_value"><xliff:g id="pattern" example="^Reply">%1$s</xliff:g> (<xliff:g id="field" example="Description">%2$s</xliff:g>, ນິພົດປົກກະຕິ)</string>
+    <string name="macro_regex_value"><xliff:g id="pattern" example="Reply.*Anna">%1$s</xliff:g> (ນິພົດປົກກະຕິ)</string>
+    <string name="macro_test_label_optional">ຂໍ້ຄວາມຂອງລາຍການ (ບໍ່ບັງຄັບ)</string>
+    <string name="macro_item_kind">ປະເພດລາຍການ</string>
+    <string name="macro_kind_any">ປະເພດໃດກໍໄດ້</string>
+    <string name="macro_kind_clickable">ແຕະໄດ້</string>
+    <string name="macro_kind_long_clickable">ແຕະຄ້າງໄດ້</string>
+    <string name="macro_kind_editable">ແກ້ໄຂໄດ້</string>
+    <string name="macro_kind_scrollable">ເລື່ອນໄດ້</string>
+    <string name="macro_kind_adjustable">ປັບໄດ້</string>
+    <string name="macro_kind_checkable">ໝາຍໄດ້</string>
+    <string name="macro_kind_checked">ໝາຍແລ້ວ</string>
+    <string name="macro_kind_selected">ເລືອກແລ້ວ</string>
+    <string name="macro_kind_heading">ຫົວຂໍ້</string>
+    <string name="macro_kind_enabled">ເປີດໃຊ້ງານ</string>
+    <string name="macro_change_to">ປ່ຽນເປັນ: <xliff:g id="test" example="Keyboard hidden">%1$s</xliff:g></string>
+    <string name="macro_join_with_and">ເຊື່ອມດ້ວຍ ແລະ</string>
+    <string name="macro_join_with_or">ເຊື່ອມດ້ວຍ ຫຼື</string>
+    <string name="macro_clause_and">ແລະ <xliff:g id="test" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_clause_or">ຫຼື <xliff:g id="test" example="Screen locked">%1$s</xliff:g></string>
+    <string name="macro_wait_timeout">ວິນາທີທີ່ລໍຖ້າ</string>
+    <string name="macro_add_step_after">ເພີ່ມຂັ້ນຕອນຫຼັງ</string>
+    <string name="macro_problem">ຂັ້ນຕອນ <xliff:g id="step" example="3">%1$d</xliff:g>: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_problem_no_if">ຖ້າບໍ່ແມ່ນ ແລະ ຖ້າ, ຖ້າບໍ່ແມ່ນ ຫຼື ສິ້ນສຸດຖ້າ ໂດຍບໍ່ມີ ຖ້າ</string>
+    <string name="macro_problem_after_else">ຖ້າບໍ່ແມ່ນ ແລະ ຖ້າ ຫຼື ຖ້າບໍ່ແມ່ນ ຫຼັງ ຖ້າບໍ່ແມ່ນ</string>
+    <string name="macro_problem_no_repeat">ສິ້ນສຸດເຮັດຊ້ຳ ໂດຍບໍ່ມີ ເຮັດຊ້ຳ</string>
+    <string name="macro_problem_no_end_if">ຖ້າ ໂດຍບໍ່ມີ ສິ້ນສຸດຖ້າ</string>
+    <string name="macro_problem_no_end_repeat">ເຮັດຊ້ຳ ໂດຍບໍ່ມີ ສິ້ນສຸດເຮັດຊ້ຳ</string>
+    <string name="macro_problem_exit">ອອກຈາກວົງວຽນ ຢູ່ນອກ ເຮັດຊ້ຳ</string>
+    <string name="macro_stopped_problem">ມາໂຄຣຢຸດແລ້ວ. ຂັ້ນຕອນ <xliff:g id="step" example="3">%1$d</xliff:g>: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_stopped_repeats">ມາໂຄຣຢຸດແລ້ວ. ເຮັດຊ້ຳ <xliff:g id="count" example="1000">%1$d</xliff:g> ເທື່ອ: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
+    <string name="macro_stopped_timeout">ມາໂຄຣຢຸດແລ້ວ. ໝົດເວລາ: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
+    <string name="macro_not_met">ບໍ່ໄດ້ແລ່ນມາໂຄຣ. ແລ່ນສະເພາະເມື່ອ: ບໍ່ຕົງເງື່ອນໄຂ</string>
+</resources>

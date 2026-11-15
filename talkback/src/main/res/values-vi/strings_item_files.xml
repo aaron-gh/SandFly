@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="item_file_import">Nhập từ tệp</string>
+    <string name="item_file_export">Xuất ra tệp</string>
+    <string name="title_pref_export_item_file_reference">Tài liệu tham chiếu định dạng tệp xuất</string>
+    <string name="item_file_keymaps">Sơ đồ bàn phím</string>
+    <string name="item_file_exported">Đã xuất</string>
+    <string name="item_file_export_failed">Không xuất được</string>
+    <string name="item_file_not_read">Tệp này không phải tệp mục của SandFly hoặc không đọc được</string>
+    <string name="item_file_settings_file">Đây là tệp cài đặt. Hãy nhập tệp bằng Sao lưu và khôi phục &gt; Nhập cài đặt</string>
+    <string name="item_file_newer">Tệp này thuộc phiên bản SandFly mới hơn</string>
+    <string name="item_file_nothing_imported">Không nhập gì</string>
+    <string name="item_file_imported">Đã nhập <xliff:g id="items" example="2 macros, 1 gesture profile">%1$s</xliff:g></string>
+    <string name="item_file_left_out">Đã bỏ qua:</string>
+    <string name="item_file_problem_not_read"><xliff:g id="kind" example="Macros">%1$s</xliff:g>, mục <xliff:g id="number" example="3">%2$d</xliff:g>: không đọc được</string>
+    <string name="item_file_problem_command"><xliff:g id="item" example="Open mail">%1$s</xliff:g>: lệnh không xác định <xliff:g id="command" example="READ_ALL">%2$s</xliff:g></string>
+    <string name="item_file_problem_gesture"><xliff:g id="item" example="Reading">%1$s</xliff:g>: cử chỉ không xác định <xliff:g id="gesture" example="pref_shortcut_spin">%2$s</xliff:g></string>
+    <string name="item_file_problem_keys"><xliff:g id="item" example="My keymap">%1$s</xliff:g>: không hiểu các phím: <xliff:g id="keys" example="SandFly+Foo">%2$s</xliff:g></string>
+    <string name="item_file_problem_keys_taken"><xliff:g id="item" example="My keymap">%1$s</xliff:g>: các phím đã được dùng: <xliff:g id="keys" example="SandFly+H">%2$s</xliff:g></string>
+    <string name="item_file_problem_setting"><xliff:g id="item" example="Reading">%1$s</xliff:g>: cài đặt <xliff:g id="key" example="pref_vibration">%2$s</xliff:g> không xác định, không thể có trong hồ sơ hoặc có giá trị sai kiểu</string>
+    <string name="item_file_problem_regex"><xliff:g id="dictionary" example="Speech dictionary">%1$s</xliff:g>: biểu thức chính quy bị từ chối: <xliff:g id="expression" example="(a+)+">%2$s</xliff:g></string>
+    <string name="item_file_problem_limit"><xliff:g id="kind" example="Symbol dictionary">%1$s</xliff:g>: tối đa <xliff:g id="number" example="500">%2$d</xliff:g> mục</string>
+    <string name="item_file_problem_more">Còn nhiều mục khác bị bỏ qua</string>
+    <plurals name="item_file_count_macros">
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> macro</item>
+    </plurals>
+    <plurals name="item_file_count_gesture_profiles">
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> hồ sơ cử chỉ</item>
+    </plurals>
+    <plurals name="item_file_count_keymaps">
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> sơ đồ bàn phím</item>
+    </plurals>
+    <plurals name="item_file_count_apps">
+        <item quantity="other">Cử chỉ và phím tắt của <xliff:g id="count" example="2">%d</xliff:g> ứng dụng</item>
+    </plurals>
+    <plurals name="item_file_count_settings_profiles">
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> hồ sơ cài đặt</item>
+    </plurals>
+    <plurals name="item_file_count_speech_dictionary">
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> mục từ điển giọng nói</item>
+    </plurals>
+    <plurals name="item_file_count_symbol_dictionary">
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> mục từ điển ký hiệu</item>
+    </plurals>
+    <plurals name="item_file_count_braille_dictionary">
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> mục từ điển chữ nổi</item>
+    </plurals>
+    <plurals name="item_file_count_voice_commands">
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> lệnh thoại tuỳ chỉnh</item>
+    </plurals>
+</resources>

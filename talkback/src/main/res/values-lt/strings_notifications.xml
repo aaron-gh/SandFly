@@ -406,4 +406,14 @@
         <item>@string/notification_shake_3</item>
     </string-array>
     <string name="notification_clock_voice_notifications">Pranešimų balsas</string>
+    <string name="notification_exact_alarms_title">Įjungti Žadintuvus ir priminimus</string>
+    <string name="shortcut_toggle_time_announcements">Laiko skelbimai įjungti arba išjungti</string>
+    <string name="notification_clock_now_on">Laiko skelbimai įjungti</string>
+    <string name="notification_clock_now_off">Laiko skelbimai išjungti</string>
+    <plurals name="notification_clock_battery">
+        <item quantity="one"><xliff:g id="percent" example="1">%d</xliff:g> procentas</item>
+        <item quantity="few"><xliff:g id="percent" example="76">%d</xliff:g> procentai</item>
+        <item quantity="many"><xliff:g id="percent" example="76">%d</xliff:g> procento</item>
+        <item quantity="other"><xliff:g id="percent" example="76">%d</xliff:g> procentų</item>
+    </plurals>
 </resources>

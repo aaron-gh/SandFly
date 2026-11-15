@@ -2037,4 +2037,133 @@
   <string name="title_select_last_spoken_phrase_word_by_word">Zuletzt gesprochenen Satz Wort für Wort auswählen</string>
   <string name="no_words_selected">Keine Wörter ausgewählt</string>
   <string name="no_phrase_to_select">Kein Satz zum Auswählen vorhanden</string>
+    <string name="title_pref_speech_equalizer_save_preset">Als Voreinstellung speichern</string>
+    <string name="title_pref_speech_equalizer_saved_presets">Gespeicherte Voreinstellungen</string>
+    <string name="speech_equalizer_preset_name">Name</string>
+    <string name="speech_equalizer_preset_name_taken">Eine Voreinstellung mit dem Namen <xliff:g id="name" example="Podcast">%1$s</xliff:g> existiert bereits</string>
+    <string name="speech_equalizer_presets_full">Es können keine weiteren Voreinstellungen gespeichert werden. Lösche eine, um eine andere zu speichern.</string>
+    <string name="speech_equalizer_preset_saved"><xliff:g id="name" example="Podcast">%1$s</xliff:g> gespeichert</string>
+    <string name="speech_equalizer_preset_rename">Umbenennen</string>
+    <string name="speech_equalizer_preset_delete">Löschen</string>
+    <string name="speech_equalizer_preset_delete_confirm"><xliff:g id="name" example="Podcast">%1$s</xliff:g> löschen?</string>
+    <string name="speech_equalizer_preset_deleted"><xliff:g id="name" example="Podcast">%1$s</xliff:g> gelöscht</string>
+    <string name="title_pref_emoji_voice">Emoji-Stimme</string>
+    <string name="value_emoji_voice_same">Wie Sprachausgabe</string>
+    <string name="title_pref_emoji_rate">Emoji-Sprechgeschwindigkeit</string>
+    <string name="title_pref_line_breaks_as_spaces">Zeilenumbrüche als Leerzeichen vorlesen</string>
+    <string name="title_pref_language_voices">Stimmen nach Sprache</string>
+    <string name="title_pref_identify_languages_from_words">Sprachen anhand von Wörtern erkennen</string>
+    <string name="title_pref_add_language">Sprache hinzufügen</string>
+    <string name="title_pref_remove_language">Sprache entfernen</string>
+    <string name="title_pref_script_language">Schrift: %1$s</string>
+    <string name="title_pref_screen_on_notification_count">Anzahl der Benachrichtigungen</string>
+    <plurals name="template_screen_on_notification_count">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> Benachrichtigung</item>
+        <item quantity="other"><xliff:g id="count" example="6">%d</xliff:g> Benachrichtigungen</item>
+    </plurals>
+    <string name="title_pref_phonetic_letters_review">Buchstaben beim Durchsehen phonetisch vorlesen</string>
+    <string name="title_pref_phonetic_letters_typing">Buchstaben beim Tippen phonetisch vorlesen</string>
+    <string name="title_pref_emoji_suffix">„Emoji“ nach Emoji-Namen vorlesen</string>
+    <string name="overview_shizuku_not_running">Shizuku nicht aktiv</string>
+    <string name="overview_shizuku_not_allowed">Shizuku erlaubt SandFly nicht</string>
+    <string name="overview_no_older_app">Keine ältere App</string>
+    <string name="overview_no_newer_app">Keine neuere App</string>
+    <string name="stream_volume_needs_access">Erlaube den Zugriff auf „Bitte nicht stören“, um diese Lautstärke zu ändern.</string>
+    <string name="corner_gestures_title">Ecken</string>
+    <string name="shortcut_move_to_item_below">Zum Element darunter wechseln</string>
+    <string name="shortcut_move_to_item_above">Zum Element darüber wechseln</string>
+    <string name="shortcut_older_app">Ältere App</string>
+    <string name="shortcut_newer_app">Neuere App</string>
+    <string name="shortcut_answer_call">Anruf annehmen</string>
+    <string name="answer_call_no_call">Kein eingehender Anruf</string>
+    <string name="answer_call_permission">Berechtigung zum Annehmen von Anrufen erforderlich</string>
+    <string name="shortcut_switch_keyboard">Tastatur wechseln</string>
+    <string name="switch_keyboard_none">Keine andere Tastatur aktiviert</string>
+    <string name="switch_keyboard_failed">Tastatur nicht gewechselt</string>
+    <string name="clipboard_history_hint">Wische nach oben oder unten, um auszuwählen, und tippe dann doppelt, um einzufügen</string>
+    <string name="title_speech_history">Sprachverlauf</string>
+    <string name="speech_history_empty">Keine Sprachausgabe</string>
+    <string name="speech_history_clear">Verlauf löschen</string>
+    <string name="title_pref_shortcut_corner_top_left_tap">Obere linke Ecke tippen</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap">Obere linke Ecke doppeltippen</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap">Obere linke Ecke dreifach tippen</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap_hold">Obere linke Ecke doppeltippen und halten</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap_hold">Obere linke Ecke dreifach tippen und halten</string>
+    <string name="title_pref_shortcut_corner_top_right_tap">Obere rechte Ecke tippen</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap">Obere rechte Ecke doppeltippen</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap">Obere rechte Ecke dreifach tippen</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap_hold">Obere rechte Ecke doppeltippen und halten</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap_hold">Obere rechte Ecke dreifach tippen und halten</string>
+    <string name="title_pref_shortcut_corner_bottom_left_tap">Untere linke Ecke tippen</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap">Untere linke Ecke doppeltippen</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap">Untere linke Ecke dreifach tippen</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap_hold">Untere linke Ecke doppeltippen und halten</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap_hold">Untere linke Ecke dreifach tippen und halten</string>
+    <string name="title_pref_shortcut_corner_bottom_right_tap">Untere rechte Ecke tippen</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap">Untere rechte Ecke doppeltippen</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap">Untere rechte Ecke dreifach tippen</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap_hold">Untere rechte Ecke doppeltippen und halten</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap_hold">Untere rechte Ecke dreifach tippen und halten</string>
+    <string name="title_pref_swipe_start_time">Startzeit der Geste</string>
+    <string name="title_pref_swipes_before_lift">Wischgesten vor dem Loslassen erkennen</string>
+    <string name="summary_pref_swipes_before_lift">Deaktiviert Hin-und-her-Gesten und Winkelgesten.</string>
+    <string name="title_pref_corner_size_mm">Größe der Ecken</string>
+    <string name="value_corner_size_edge_width">Wie Randbreite</string>
+    <string name="title_pref_corner_tap_time_ms">Zeitlimit für Tippen in Ecken</string>
+    <string name="value_corner_tap_time_system">Systemstandard</string>
+    <string name="title_pref_edge_speak_commands">Befehl bei jedem Klick vorlesen</string>
+    <string-array name="pref_volume_change_feedback_entries">
+        <item>@string/volume_change_feedback_off</item>
+        <item>@string/volume_change_feedback_tone</item>
+        <item>@string/volume_change_feedback_spoken</item>
+        <item>@string/volume_change_feedback_tone_and_spoken</item>
+    </string-array>
+    <string name="title_pref_volume_change_tone_during_media">Ton bei Medienwiedergabe unterdrücken</string>
+    <string name="title_pref_volume_change_speech_during_media">Sprachausgabe bei Medienwiedergabe unterdrücken</string>
+    <string name="title_pref_volume_change_interrupts_speech">Sprachausgabe für Lautstärkeansage unterbrechen</string>
+    <string name="title_pref_volume_keys_speech_volume_while_speaking">Lautstärketasten ändern die Sprachlautstärke während der Sprachausgabe</string>
+    <string name="title_pref_double_tap_moves_cursor">Doppeltippen setzt Cursor an Anfang oder Ende</string>
+    <string name="title_pref_scroll_ahead">Zum nächsten Element vorausscrollen</string>
+    <string name="title_pref_speak_while_scrolling">Nächstes Element beim Scrollen vorlesen</string>
+    <string-array name="pref_text_entities_entries">
+    <item>@string/text_entity_web</item>
+    <item>@string/text_entity_email</item>
+    <item>@string/text_entity_phone</item>
+    <item>@string/text_entity_code</item>
+  </string-array>
+    <string name="value_keep_models_until_stopped">Bis SandFly beendet wird</string>
+    <string name="title_pref_model_download_server">Server für Modell-Downloads</string>
+    <string name="title_pref_settings_profiles">Einstellungsprofile</string>
+    <string name="title_pref_new_settings_profile">Neues Einstellungsprofil</string>
+    <string name="settings_profile_new_name">Profil <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="settings_profile_name_taken">Ein Einstellungsprofil mit dem Namen <xliff:g id="name" example="Demo">%1$s</xliff:g> existiert bereits</string>
+    <string name="settings_profile_in_use">In Verwendung</string>
+    <string name="settings_profile_menu_item_in_use"><xliff:g id="name" example="Demo">%1$s</xliff:g>, in Verwendung</string>
+    <string name="settings_profile_none">Kein Einstellungsprofil</string>
+    <string name="settings_profile_use_now">Jetzt verwenden</string>
+    <string name="settings_profile_stop_using">Nicht mehr verwenden</string>
+    <string name="settings_profile_change_settings">Einstellungen ändern</string>
+    <string name="settings_profile_editing">Änderungen gehen in <xliff:g id="name" example="Messaging">%1$s</xliff:g></string>
+    <string name="settings_profile_edit_saved">Änderungen in <xliff:g id="name" example="Messaging">%1$s</xliff:g> gespeichert</string>
+    <string name="settings_profile_use_automatically">Automatisch verwenden</string>
+    <string name="settings_profile_web">Webinhalte</string>
+    <string name="settings_profile_reading">Fortlaufendes Lesen</string>
+    <string name="settings_profile_text_editing">Textbearbeitung</string>
+    <string name="settings_profile_apps">Apps</string>
+    <string name="settings_profile_add_app">App hinzufügen</string>
+    <string name="settings_profile_settings">Einstellungen in diesem Profil</string>
+    <string name="settings_profile_no_settings">Keine</string>
+    <string name="settings_profile_remove_confirm"><xliff:g id="item" example="Speech rate">%1$s</xliff:g> aus <xliff:g id="name" example="Messaging">%2$s</xliff:g> entfernen?</string>
+    <string name="settings_profile_not_saved">Einstellungsprofil konnte nicht gespeichert werden</string>
+    <string name="settings_profile_in_use_announcement">Profil <xliff:g id="name" example="Demo">%1$s</xliff:g></string>
+    <string name="settings_profile_not_changed">Einstellungsprofil nicht geändert</string>
+    <string name="title_settings_profile">Einstellungsprofil</string>
+    <string name="shortcut_settings_profiles">Einstellungsprofil auswählen</string>
+    <string name="shortcut_next_settings_profile">Nächstes Einstellungsprofil</string>
+    <string name="shortcut_previous_settings_profile">Vorheriges Einstellungsprofil</string>
+    <string name="word_selection_list_cut_off">Liste bei <xliff:g id="count" example="1000">%1$d</xliff:g> Elementen abgeschnitten</string>
+    <plurals name="word_selection_copied">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> Element kopiert</item>
+        <item quantity="other"><xliff:g id="count" example="5">%1$d</xliff:g> Elemente kopiert</item>
+    </plurals>
 </resources>

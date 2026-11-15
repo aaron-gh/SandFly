@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_voice_commands">හඬ විධාන</string>
+    <string name="title_pref_voice_commands_ai">AI මගින් හඬ විධාන තේරුම් ගන්න</string>
+    <string name="voice_commands_custom">අභිරුචි හඬ විධාන</string>
+    <string name="voice_command_add">හඬ විධානයක් එක් කරන්න</string>
+    <string name="voice_command_phrase">වාක්‍ය ඛණ්ඩය</string>
+    <string name="voice_command_change_phrase">වාක්‍ය ඛණ්ඩය වෙනස් කරන්න</string>
+    <string name="voice_command_change_command">විධානය වෙනස් කරන්න</string>
+    <string name="voice_command_delete_confirm"><xliff:g id="phrase" example="Good morning">%1$s</xliff:g> මකන්නද?</string>
+    <string name="voice_command_phrase_exists"><xliff:g id="phrase" example="Good morning">%1$s</xliff:g> දැනටමත් හඬ විධානයකි</string>
+    <string name="voice_commands_not_understood">තේරුම් ගත නොහැකි විය: <xliff:g id="text" example="open the door">%1$s</xliff:g></string>
+    <string name="voice_commands_not_available">නොමැත: <xliff:g id="name" example="Morning macro">%1$s</xliff:g></string>
+    <string name="voice_commands_not_found">හමු නොවීය: <xliff:g id="label" example="Settings">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app"><xliff:g id="name" example="Signal">%1$s</xliff:g> නමින් යෙදුමක් නැත</string>
+    <string name="voice_commands_no_app_for_action">මෙම ක්‍රියාවට යෙදුමක් නැත</string>
+    <string name="voice_commands_calling"><xliff:g id="name" example="Sam">%1$s</xliff:g> අමතමින්</string>
+    <string name="voice_commands_call_permission">දුරකථන ඇමතුම්වලට ඉඩ දී, විධානය නැවත කියන්න.</string>
+    <string name="voice_commands_contacts_permission">සම්බන්ධතා වෙත ප්‍රවේශයට ඉඩ දී, විධානය නැවත කියන්න.</string>
+    <string name="voice_commands_no_contact"><xliff:g id="name" example="Sam">%1$s</xliff:g> නමින් සම්බන්ධතාවක් නැත</string>
+    <string name="voice_commands_contacts_several"><xliff:g id="name" example="Sam">%1$s</xliff:g> නමින් සම්බන්ධතා එකකට වඩා ඇත: <xliff:g id="names" example="Sam Jones, Sam Smith">%2$s</xliff:g></string>
+    <string name="voice_commands_message_text"><xliff:g id="name" example="Sam">%1$s</xliff:g> වෙත පණිවිඩය</string>
+    <string name="voice_commands_message_confirm"><xliff:g id="name" example="Sam">%1$s</xliff:g> වෙත යවන්නද: <xliff:g id="text" example="I am on my way">%2$s</xliff:g>?</string>
+    <string name="voice_commands_message_confirm_result"><xliff:g id="name" example="Sam">%1$s</xliff:g> වෙත යවන්නද?</string>
+    <string name="voice_commands_message_not_sent">පණිවිඩය යවා නැත</string>
+    <string name="voice_commands_send_pressed">යවන්න එබීය</string>
+    <string name="voice_commands_send_button">යවන්න</string>
+    <string name="voice_commands_no_description">විස්තරය ලැබුණේ නැත</string>
+    <string name="voice_commands_copied">පිටපත් කරන ලදී</string>
+    <string-array name="voice_commands_chain_words">
+        <item>ඉන්පසු</item>
+        <item>ඊට පස්සේ</item>
+        <item>ඊටපසු</item>
+        <item>පසුව</item>
+    </string-array>
+    <string-array name="voice_commands_and_words">
+        <item>සහ</item>
+        <item>හා</item>
+        <item>ඒ වගේම</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_start">
+        <item>කරුණාකර</item>
+        <item>දැන්</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_end">
+        <item>කරුණාකර</item>
+        <item>මා වෙනුවෙන්</item>
+        <item>දැන්</item>
+    </string-array>
+    <string-array name="voice_commands_cancel_words">
+        <item>නවත්වන්න</item>
+        <item>අවලංගු කරන්න</item>
+        <item>කමක් නැත</item>
+        <item>එපා</item>
+        <item>නිශ්ශබ්ද වන්න</item>
+    </string-array>
+    <string-array name="voice_commands_yes">
+        <item>ඔව්</item>
+        <item>හරි</item>
+        <item>ඕකේ</item>
+        <item>යවන්න</item>
+        <item>ඔව් යවන්න</item>
+        <item>ඇත්තෙන්ම</item>
+        <item>කරන්න</item>
+    </string-array>
+    <string-array name="voice_commands_sms_names">
+        <item>SMS</item>
+        <item>එස්එම්එස්</item>
+        <item>පෙළ පණිවිඩය</item>
+        <item>පණිවිඩ</item>
+        <item>ටෙක්ස්ට්</item>
+    </string-array>
+    <string-array name="voice_commands_send_image_description">
+        <item>[මෙම] රූපයේ විස්තරය {who} ට යවන්න</item>
+        <item>{who} ට [මෙම] රූපයේ විස්තරය යවන්න</item>
+        <item>[මෙම] ඡායාරූපයේ විස්තරය {who} ට යවන්න</item>
+        <item>{who} ට [මෙම] ඡායාරූපයේ විස්තරය යවන්න</item>
+    </string-array>
+    <string-array name="voice_commands_send_screen_description">
+        <item>තිර විස්තරය {who} ට යවන්න</item>
+        <item>{who} ට තිර විස්තරය යවන්න</item>
+        <item>තිරයේ විස්තරය {who} ට යවන්න</item>
+    </string-array>
+    <string-array name="voice_commands_send_previous">
+        <item>ඒක {who} ට {app} හි යවන්න</item>
+        <item>ඒක {who} ට යවන්න</item>
+        <item>මේක {who} ට යවන්න</item>
+        <item>විස්තරය {who} ට යවන්න</item>
+        <item>ඒක {who} සමඟ බෙදාගන්න</item>
+    </string-array>
+    <string-array name="voice_commands_message">
+        <item>{who} ට {app} හි {text} කියා පණිවිඩයක් යවන්න</item>
+        <item>{who} ට {text} කියා පණිවිඩයක් යවන්න</item>
+        <item>{who} ට {app} හි {text} කියා මැසේජ් එකක් යවන්න</item>
+        <item>{who} ට {text} කියා මැසේජ් එකක් යවන්න</item>
+        <item>පණිවිඩයක් යවන්න {whoandtext}</item>
+        <item>{who} ට {app} පණිවිඩයක් යවන්න</item>
+        <item>{who} ට {app} හි පණිවිඩයක් යවන්න {text}</item>
+        <item>{who} ට {app} හි {text} කියා කියන්න</item>
+        <item>{who} ට {text} කියා කියන්න</item>
+        <item>{who} ට මැසේජ් {text}</item>
+        <item>මැසේජ් {whoandtext}</item>
+        <item>SMS යවන්න {whoandtext}</item>
+    </string-array>
+    <string-array name="voice_commands_call">
+        <item>{who} ට අමතන්න</item>
+        <item>{who} ට කතා කරන්න</item>
+        <item>{who} ට ෆෝන් කරන්න</item>
+        <item>{who} ට ඩයල් කරන්න</item>
+        <item>{who} ට කෝල් කරන්න</item>
+    </string-array>
+    <string-array name="voice_commands_describe_screen">
+        <item>තිරය විස්තර කරන්න</item>
+        <item>තිරයේ ඇති දේ විස්තර කරන්න</item>
+        <item>තිරයේ ඇත්තේ මොනවාද</item>
+        <item>මගේ තිරයේ ඇත්තේ මොනවාද</item>
+    </string-array>
+    <string-array name="voice_commands_describe_image">
+        <item>[මෙම] රූපය විස්තර කරන්න</item>
+        <item>[මෙම] ඡායාරූපය විස්තර කරන්න</item>
+        <item>[මෙම] රූපයේ ඇත්තේ මොනවාද</item>
+        <item>[මෙම] ඡායාරූපයේ ඇත්තේ මොනවාද</item>
+    </string-array>
+    <string-array name="voice_commands_copy_result">
+        <item>ඒක පිටපත් කරන්න</item>
+        <item>මේක පිටපත් කරන්න</item>
+        <item>විස්තරය පිටපත් කරන්න</item>
+        <item>ඔබ [දැන්] කී දේ පිටපත් කරන්න</item>
+        <item>අවසන් කථිත වාක්‍ය ඛණ්ඩය පිටපත් කරන්න</item>
+        <item>අවසාන වාක්‍ය ඛණ්ඩය පිටපත් කරන්න</item>
+    </string-array>
+    <string-array name="voice_commands_wait">
+        <item>තත්පර {n} ක් රැඳී සිටින්න</item>
+        <item>තත්පරයක් රැඳී සිටින්න</item>
+        <item>රැඳී සිටින්න</item>
+    </string-array>
+    <string-array name="voice_commands_type_text">
+        <item>{text} කියා ටයිප් කරන්න</item>
+        <item>{text} ලියන්න</item>
+        <item>{text} ඇතුළු කරන්න</item>
+    </string-array>
+    <string-array name="voice_commands_run">
+        <item>{command} මැක්‍රෝව ක්‍රියාත්මක කරන්න</item>
+        <item>මැක්‍රෝ {command} ක්‍රියාත්මක කරන්න</item>
+        <item>{command} ක්‍රියාත්මක කරන්න</item>
+        <item>{command} කරන්න</item>
+    </string-array>
+    <string-array name="voice_commands_open">
+        <item>{app} විවෘත කරන්න</item>
+        <item>{app} ආරම්භ කරන්න</item>
+        <item>{app} වෙත මාරු වන්න</item>
+        <item>{app} ඔපන් කරන්න</item>
+    </string-array>
+    <string-array name="voice_commands_tap">
+        <item>{label} ද්විත්ව-තට්ටු කරන්න</item>
+        <item>{label} තට්ටු කරන්න</item>
+        <item>{label} ක්ලික් කරන්න</item>
+        <item>{label} එබීම කරන්න</item>
+        <item>{label} සක්‍රිය කරන්න</item>
+        <item>{label} තෝරන්න</item>
+    </string-array>
+</resources>

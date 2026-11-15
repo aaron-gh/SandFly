@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_macros">Macros</string>
+    <string name="shortcut_stop_macro">Atura la macro</string>
+    <string name="macro_add">Afegeix una macro</string>
+    <string name="macro_run_now">Executa ara</string>
+    <string name="macro_add_step">Afegeix un pas</string>
+    <string name="macro_add_at_end">Al final</string>
+    <string name="macro_add_at_start">Al principi</string>
+    <string name="macro_add_after">Després del pas <xliff:g id="step" example="2">%1$d</xliff:g>: <xliff:g id="name" example="If App in front: Chrome">%2$s</xliff:g></string>
+    <string name="macro_steps">Passos</string>
+    <string name="macro_no_steps">Cap pas</string>
+    <string name="macro_delete">Suprimeix la macro</string>
+    <string name="macro_delete_confirm">Vols suprimir <xliff:g id="name" example="Send message">%1$s</xliff:g>?</string>
+    <string name="macro_step_command">Executa una ordre</string>
+    <string name="macro_step_wait">Espera</string>
+    <string name="macro_step_tap">Toca l\'element</string>
+    <string name="macro_step_focus">Enfoca l\'element</string>
+    <string name="macro_step_speak_item">Digues l\'element</string>
+    <string name="macro_step_speak_text">Digues el text</string>
+    <string name="macro_step_type">Escriu text</string>
+    <string name="macro_step_tap_value">Toca <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_focus_value">Enfoca <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_item_value">Digues <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_text_value">Digues <xliff:g id="text" example="Done">%1$s</xliff:g></string>
+    <string name="macro_step_type_value">Escriu <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <string name="macro_step_replace_value">Substitueix el text per <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <plurals name="macro_step_wait_seconds">
+        <item quantity="one">Espera <xliff:g id="count" example="1">%d</xliff:g> segon</item>
+        <item quantity="other">Espera <xliff:g id="count" example="1">%d</xliff:g> segons</item>
+    </plurals>
+    <plurals name="macro_step_wait_milliseconds">
+        <item quantity="one">Espera <xliff:g id="count" example="1">%d</xliff:g> mil·lisegon</item>
+        <item quantity="other">Espera <xliff:g id="count" example="1">%d</xliff:g> mil·lisegons</item>
+    </plurals>
+    <string name="macro_step_unavailable">No disponible</string>
+    <string name="macro_seconds">Segons</string>
+    <string name="macro_invalid_seconds">Introdueix un nombre de segons fins a <xliff:g id="max" example="600">%1$d</xliff:g></string>
+    <string name="macro_tap_label">Text de l\'element</string>
+    <string name="macro_tap_timeout">Segons d\'espera de l\'element</string>
+    <string name="macro_text">Text</string>
+    <string name="macro_replace_text">Substitueix el text del camp</string>
+    <string name="macro_item_not_found">Macro aturada. No s\'ha trobat: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_failed">Macro aturada. Ha fallat: <xliff:g id="step" example="Open Gmail">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until">Espera fins que</string>
+    <string name="macro_step_if">Si</string>
+    <string name="macro_step_else_if">Si no, si</string>
+    <string name="macro_step_else">Si no</string>
+    <string name="macro_step_end_if">Fi del si</string>
+    <string name="macro_step_repeat">Repeteix</string>
+    <string name="macro_step_repeat_while">Repeteix mentre</string>
+    <string name="macro_step_end_repeat">Fi de repetir</string>
+    <string name="macro_step_exit_loop">Surt del bucle</string>
+    <string name="macro_step_if_value">Si <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_else_if_value">Si no, si <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_repeat_while_value">Repeteix mentre <xliff:g id="condition" example="Item on screen: Load more">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until_value">Espera fins que <xliff:g id="condition" example="Item on screen: Send">%1$s</xliff:g></string>
+    <plurals name="macro_step_repeat_value">
+        <item quantity="one">Repeteix <xliff:g id="count" example="1">%d</xliff:g> vegada</item>
+        <item quantity="other">Repeteix <xliff:g id="count" example="1">%d</xliff:g> vegades</item>
+    </plurals>
+    <string name="macro_times">Vegades</string>
+    <string name="macro_invalid_times">Introdueix un nombre de l\'1 al <xliff:g id="max" example="1000">%1$d</xliff:g></string>
+    <string name="macro_run_only_when">Executa només quan</string>
+    <string name="macro_always">Sempre</string>
+    <string name="macro_no_tests">Cap prova</string>
+    <string name="macro_add_test">Afegeix una prova</string>
+    <string name="macro_tests">Proves</string>
+    <string name="macro_choose_test">Prova</string>
+    <string name="macro_test_item">Element a la pantalla</string>
+    <string name="macro_test_focused">Element enfocat</string>
+    <string name="macro_test_app">Aplicació en primer pla</string>
+    <string name="macro_test_keyboard">Teclat visible</string>
+    <string name="macro_test_keyboard_hidden">Teclat amagat</string>
+    <string name="macro_test_locked">Pantalla bloquejada</string>
+    <string name="macro_test_unlocked">Pantalla desbloquejada</string>
+    <string name="macro_test_item_value">Element a la pantalla: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_no_item_value">Cap element a la pantalla: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_focused_value">Element enfocat: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_not_focused_value">Element enfocat diferent de: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_app_value">Aplicació en primer pla: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_not_app_value">Aplicació no en primer pla: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_label_kind"><xliff:g id="label" example="Send">%1$s</xliff:g>, <xliff:g id="kind" example="Clickable">%2$s</xliff:g></string>
+    <string name="macro_join_and"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g> i <xliff:g id="second" example="Focused item: Editable">%2$s</xliff:g></string>
+    <string name="macro_join_or"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g>, o <xliff:g id="second" example="Screen locked">%2$s</xliff:g></string>
+    <string name="macro_regex">Expressió regular</string>
+    <string name="macro_invalid_regex">No és una expressió regular utilitzable. Els grups repetits no poden contenir repetició ni |.</string>
+    <string name="macro_match_in">Cerca a</string>
+    <string name="macro_field_any">Qualsevol text</string>
+    <string name="macro_field_text">Text</string>
+    <string name="macro_field_description">Descripció</string>
+    <string name="macro_field_hint">Suggeriment</string>
+    <string name="macro_field_state">Estat</string>
+    <string name="macro_field_id">ID del recurs</string>
+    <string name="macro_field_value"><xliff:g id="label" example="send">%1$s</xliff:g> (<xliff:g id="field" example="Resource ID">%2$s</xliff:g>)</string>
+    <string name="macro_field_regex_value"><xliff:g id="pattern" example="^Reply">%1$s</xliff:g> (<xliff:g id="field" example="Description">%2$s</xliff:g>, expressió regular)</string>
+    <string name="macro_regex_value"><xliff:g id="pattern" example="Reply.*Anna">%1$s</xliff:g> (expressió regular)</string>
+    <string name="macro_test_label_optional">Text de l\'element (opcional)</string>
+    <string name="macro_item_kind">Tipus d\'element</string>
+    <string name="macro_kind_any">Qualsevol tipus</string>
+    <string name="macro_kind_clickable">Es pot tocar</string>
+    <string name="macro_kind_long_clickable">Es pot mantenir premut</string>
+    <string name="macro_kind_editable">Editable</string>
+    <string name="macro_kind_scrollable">Desplaçable</string>
+    <string name="macro_kind_adjustable">Ajustable</string>
+    <string name="macro_kind_checkable">Marcable</string>
+    <string name="macro_kind_checked">Marcat</string>
+    <string name="macro_kind_selected">Seleccionat</string>
+    <string name="macro_kind_heading">Títol</string>
+    <string name="macro_kind_enabled">Activat</string>
+    <string name="macro_change_to">Canvia a: <xliff:g id="test" example="Keyboard hidden">%1$s</xliff:g></string>
+    <string name="macro_join_with_and">Uneix amb i</string>
+    <string name="macro_join_with_or">Uneix amb o</string>
+    <string name="macro_clause_and">i <xliff:g id="test" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_clause_or">o <xliff:g id="test" example="Screen locked">%1$s</xliff:g></string>
+    <string name="macro_wait_timeout">Segons d\'espera</string>
+    <string name="macro_add_step_after">Afegeix un pas després de</string>
+    <string name="macro_problem">Pas <xliff:g id="step" example="3">%1$d</xliff:g>: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_problem_no_if">Si no, si; Si no; o Fi del si sense Si</string>
+    <string name="macro_problem_after_else">Si no, si o Si no després de Si no</string>
+    <string name="macro_problem_no_repeat">Fi de repetir sense Repeteix</string>
+    <string name="macro_problem_no_end_if">Si sense Fi del si</string>
+    <string name="macro_problem_no_end_repeat">Repeteix sense Fi de repetir</string>
+    <string name="macro_problem_exit">Surt del bucle fora d\'una repetició</string>
+    <string name="macro_stopped_problem">Macro aturada. Pas <xliff:g id="step" example="3">%1$d</xliff:g>: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_stopped_repeats">Macro aturada. Repetida <xliff:g id="count" example="1000">%1$d</xliff:g> vegades: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
+    <string name="macro_stopped_timeout">Macro aturada. Temps esgotat: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
+    <string name="macro_not_met">Macro no executada. Executa només quan: no es compleix</string>
+</resources>

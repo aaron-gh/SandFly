@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_voice_commands">Komandos balsu</string>
+    <string name="title_pref_voice_commands_ai">Suprasti komandas balsu naudojant AI</string>
+    <string name="voice_commands_custom">Tinkintos komandos balsu</string>
+    <string name="voice_command_add">Pridėti komandą balsu</string>
+    <string name="voice_command_phrase">Frazė</string>
+    <string name="voice_command_change_phrase">Keisti frazę</string>
+    <string name="voice_command_change_command">Keisti komandą</string>
+    <string name="voice_command_delete_confirm">Ištrinti „<xliff:g id="phrase" example="Good morning">%1$s</xliff:g>“?</string>
+    <string name="voice_command_phrase_exists">„<xliff:g id="phrase" example="Good morning">%1$s</xliff:g>“ jau yra komanda balsu</string>
+    <string name="voice_commands_not_understood">Nesuprasta: <xliff:g id="text" example="open the door">%1$s</xliff:g></string>
+    <string name="voice_commands_not_available">Nepasiekiama: <xliff:g id="name" example="Morning macro">%1$s</xliff:g></string>
+    <string name="voice_commands_not_found">Nerasta: <xliff:g id="label" example="Settings">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app">Nėra programos pavadinimu <xliff:g id="name" example="Signal">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app_for_action">Šiam veiksmui programos nėra</string>
+    <string name="voice_commands_calling">Skambinama: <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_call_permission">Leiskite telefono skambučius, tada komandą pasakykite dar kartą.</string>
+    <string name="voice_commands_contacts_permission">Leiskite prieigą prie kontaktų, tada komandą pasakykite dar kartą.</string>
+    <string name="voice_commands_no_contact">Nėra kontakto vardu <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_contacts_several">Yra keli kontaktai vardu <xliff:g id="name" example="Sam">%1$s</xliff:g>: <xliff:g id="names" example="Sam Jones, Sam Smith">%2$s</xliff:g></string>
+    <string name="voice_commands_message_text">Žinutė: <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_message_confirm">Siųsti <xliff:g id="name" example="Sam">%1$s</xliff:g>: <xliff:g id="text" example="I am on my way">%2$s</xliff:g>?</string>
+    <string name="voice_commands_message_confirm_result">Siųsti <xliff:g id="name" example="Sam">%1$s</xliff:g>?</string>
+    <string name="voice_commands_message_not_sent">Žinutė neišsiųsta</string>
+    <string name="voice_commands_send_pressed">Paspaustas siuntimas</string>
+    <string name="voice_commands_send_button">Siųsti</string>
+    <string name="voice_commands_no_description">Aprašo negauta</string>
+    <string name="voice_commands_copied">Nukopijuota</string>
+    <string-array name="voice_commands_chain_words">
+        <item>ir tada</item>
+        <item>tada</item>
+        <item>po to</item>
+        <item>paskui</item>
+    </string-array>
+    <string-array name="voice_commands_and_words">
+        <item>ir</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_start">
+        <item>prašau</item>
+        <item>gali</item>
+        <item>galite</item>
+        <item>ar galėtum</item>
+        <item>ar galėtumėte</item>
+        <item>noriu</item>
+        <item>dabar</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_end">
+        <item>prašau</item>
+        <item>man</item>
+        <item>dabar</item>
+    </string-array>
+    <string-array name="voice_commands_cancel_words">
+        <item>stop</item>
+        <item>atšaukti</item>
+        <item>atšauk</item>
+        <item>nutrauk</item>
+        <item>nesvarbu</item>
+        <item>užsičiaupk</item>
+    </string-array>
+    <string-array name="voice_commands_yes">
+        <item>taip</item>
+        <item>aha</item>
+        <item>siųsti</item>
+        <item>siųsk</item>
+        <item>išsiųsk</item>
+        <item>gerai</item>
+        <item>ok</item>
+        <item>žinoma</item>
+        <item>daryk</item>
+    </string-array>
+    <string-array name="voice_commands_sms_names">
+        <item>SMS</item>
+        <item>žinutė</item>
+        <item>trumpoji žinutė</item>
+        <item>žinutės</item>
+    </string-array>
+    <string-array name="voice_commands_send_image_description">
+        <item>siųsk {who} paveikslėlio aprašymą</item>
+        <item>siųsk {who} nuotraukos aprašymą</item>
+        <item>siųsk paveikslėlio aprašymą {who}</item>
+        <item>siųsk nuotraukos aprašymą {who}</item>
+        <item>siųsk {who} [šio] vaizdo aprašymą</item>
+    </string-array>
+    <string-array name="voice_commands_send_screen_description">
+        <item>siųsk {who} ekrano aprašymą</item>
+        <item>siųsk ekrano aprašymą {who}</item>
+    </string-array>
+    <string-array name="voice_commands_send_previous">
+        <item>siųsk tai {who} per {app}</item>
+        <item>siųsk tai {who}</item>
+        <item>siųsk aprašymą {who}</item>
+        <item>pasidalyk tuo su {who}</item>
+    </string-array>
+    <string-array name="voice_commands_message">
+        <item>siųsk žinutę {who} per {app} su tekstu {text}</item>
+        <item>siųsk žinutę {who} per {app}: {text}</item>
+        <item>siųsk {who} žinutę su tekstu {text}</item>
+        <item>siųsk {who} žinutę: {text}</item>
+        <item>siųsk žinutę {whoandtext}</item>
+        <item>siųsk {app} žinutę {who} su tekstu {text}</item>
+        <item>siųsk {app} žinutę {who}</item>
+        <item>parašyk {who} per {app} {text}</item>
+        <item>parašyk {who} {text}</item>
+        <item>pasakyk {who} per {app} {text}</item>
+        <item>parašyk žinutę {whoandtext}</item>
+        <item>parašyk {whoandtext}</item>
+    </string-array>
+    <string-array name="voice_commands_call">
+        <item>skambink {who}</item>
+        <item>paskambink {who}</item>
+        <item>surink {who}</item>
+        <item>skambinti {who}</item>
+    </string-array>
+    <string-array name="voice_commands_describe_screen">
+        <item>apibūdink ekraną</item>
+        <item>aprašyk ekraną</item>
+        <item>kas [yra] ekrane</item>
+        <item>kas [yra] mano ekrane</item>
+    </string-array>
+    <string-array name="voice_commands_describe_image">
+        <item>aprašyk [šį] paveikslėlį</item>
+        <item>aprašyk [šią] nuotrauką</item>
+        <item>kas [yra] [šiame] paveikslėlyje</item>
+        <item>kas [yra] [šioje] nuotraukoje</item>
+    </string-array>
+    <string-array name="voice_commands_copy_result">
+        <item>nukopijuok tai</item>
+        <item>nukopijuok aprašymą</item>
+        <item>nukopijuok ką [dabar] pasakei</item>
+        <item>nukopijuok paskutinę ištartą frazę</item>
+        <item>nukopijuok paskutinę frazę</item>
+    </string-array>
+    <string-array name="voice_commands_wait">
+        <item>palauk {n} sekundžių</item>
+        <item>palauk {n} sekundę</item>
+        <item>palauk sekundę</item>
+        <item>palauk</item>
+    </string-array>
+    <string-array name="voice_commands_type_text">
+        <item>įvesk {text}</item>
+        <item>įrašyk {text}</item>
+        <item>spausdink {text}</item>
+    </string-array>
+    <string-array name="voice_commands_run">
+        <item>paleisk makrokomandą {command}</item>
+        <item>vykdyk makrokomandą {command}</item>
+        <item>paleisk {command}</item>
+        <item>vykdyk {command}</item>
+    </string-array>
+    <string-array name="voice_commands_open">
+        <item>atidaryk {app}</item>
+        <item>paleisk {app}</item>
+        <item>įjunk {app}</item>
+        <item>pereik į {app}</item>
+    </string-array>
+    <string-array name="voice_commands_tap">
+        <item>dukart bakstelėk {label}</item>
+        <item>bakstelėk {label}</item>
+        <item>spustelėk {label}</item>
+        <item>paspausk {label}</item>
+        <item>aktyvuok {label}</item>
+        <item>pasirink {label}</item>
+    </string-array>
+</resources>

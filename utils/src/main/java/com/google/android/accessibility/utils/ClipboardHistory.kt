@@ -146,6 +146,40 @@ object ClipboardHistory {
     synchronized(this) { write(context, emptyList()) }
   }
 
+  /**
+   * Puts [edited] in the place of the entry [original]; another entry with the same text as
+   * [edited] is removed. When [original] is no longer in the history, [edited] goes at the top. The
+   * clipboard is left as it is. Returns false, changing nothing, when [edited] is blank.
+   */
+  @JvmStatic
+  fun replace(context: Context, original: String, edited: CharSequence): Boolean {
+    if (edited.isBlank()) return false
+    val entry = edited.toString().take(MAX_LENGTH)
+    synchronized(this) {
+      val entries = read(context)
+      if (original !in entries) {
+        write(context, (listOf(entry) + entries.filter { it != entry }).take(MAX_ENTRIES))
+      } else if (entry != original) {
+        write(context, entries.filter { it != entry }.map { if (it == original) entry else it })
+      }
+    }
+    return true
+  }
+
+  /** The name the exported history's file is offered with. */
+  const val EXPORT_FILE_NAME = "sandfly-clipboard-history.txt"
+
+  /** The line between two entries in the exported file. */
+  const val EXPORT_SEPARATOR = "---"
+
+  /**
+   * The text of the exported history: [entries] newest first, each as it is, with a blank line, a
+   * line of [EXPORT_SEPARATOR] and a blank line between two entries, and a line break at the end.
+   */
+  @JvmStatic
+  fun exportText(entries: List<String>): String =
+    if (entries.isEmpty()) "" else entries.joinToString("\n\n$EXPORT_SEPARATOR\n\n", postfix = "\n")
+
   /** Calls [listener] on the main thread each time the history changes. */
   fun addListener(listener: () -> Unit) {
     synchronized(listeners) { listeners += listener }

@@ -94,7 +94,10 @@ public final class EarconFeedbackUtils {
               ? rangeInfo.getCurrent()
               : AccessibilityNodeInfoUtils.getProgressPercent(srcNode);
     }
-    return Math.pow(2.0, ((value / 50.0) - 1));
+    if (!Double.isFinite(value)) {
+      return 1;
+    }
+    return Math.pow(2.0, ((Math.max(0, Math.min(100, value)) / 50.0) - 1));
   }
 
   /**

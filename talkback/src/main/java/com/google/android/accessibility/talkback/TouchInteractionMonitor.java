@@ -125,6 +125,7 @@ import com.google.android.accessibility.talkback.gesture.TwoFingerScrubTracker;
 import com.google.android.accessibility.talkback.preference.PreferencesActivityUtils;
 import com.google.android.accessibility.talkback.scripting.Scripts;
 import com.google.android.accessibility.talkback.tutorial.TutorialHooks;
+import com.google.android.accessibility.utils.input.ScrollEventInterpreter;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.AccessibilityServiceCompatUtils;
 import com.google.android.accessibility.utils.AccessibilityWindowInfoUtils;
@@ -867,6 +868,9 @@ public class TouchInteractionMonitor
   public void onMotionEvent(MotionEvent event) {
     if (event != null) {
       int action = event.getActionMasked();
+      if (event.getPointerCount() > 1) {
+        ScrollEventInterpreter.clearNavigationAt(event.getEventTime());
+      }
       if (action == ACTION_DOWN) {
         fingerDown = true;
       } else if (action == MotionEvent.ACTION_UP || action == MotionEvent.ACTION_CANCEL) {
@@ -1165,6 +1169,9 @@ public class TouchInteractionMonitor
       // The interaction has ended, so taps in a corner waiting for the next tap end now, in the
       // state they were made in, rather than at their timeout in CLEAR.
       onCornerTapResult(cornerTapTracker.resolveNow());
+    }
+    if (state == STATE_DRAGGING || state == STATE_DELEGATING || state == STATE_TOUCH_EXPLORING) {
+      ScrollEventInterpreter.clearNavigation();
     }
     touchPassedToApp = state == STATE_DELEGATING;
     if (this.state == STATE_CLEAR) {

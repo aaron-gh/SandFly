@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_voice_commands">Hlasové příkazy</string>
+    <string name="title_pref_voice_commands_ai">Rozumět hlasovým příkazům pomocí AI</string>
+    <string name="voice_commands_custom">Vlastní hlasové příkazy</string>
+    <string name="voice_command_add">Přidat hlasový příkaz</string>
+    <string name="voice_command_phrase">Fráze</string>
+    <string name="voice_command_change_phrase">Změnit frázi</string>
+    <string name="voice_command_change_command">Změnit příkaz</string>
+    <string name="voice_command_delete_confirm">Smazat <xliff:g id="phrase" example="Good morning">%1$s</xliff:g>?</string>
+    <string name="voice_command_phrase_exists"><xliff:g id="phrase" example="Good morning">%1$s</xliff:g> už je hlasový příkaz</string>
+    <string name="voice_commands_not_understood">Nerozuměno: <xliff:g id="text" example="open the door">%1$s</xliff:g></string>
+    <string name="voice_commands_not_available">Není k dispozici: <xliff:g id="name" example="Morning macro">%1$s</xliff:g></string>
+    <string name="voice_commands_not_found">Nenalezeno: <xliff:g id="label" example="Settings">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app">Žádná aplikace s názvem <xliff:g id="name" example="Signal">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app_for_action">Žádná aplikace pro tuto akci</string>
+    <string name="voice_commands_calling">Volání: <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_call_permission">Povolte telefonní hovory a potom příkaz řekněte znovu.</string>
+    <string name="voice_commands_contacts_permission">Povolte přístup ke kontaktům a potom příkaz řekněte znovu.</string>
+    <string name="voice_commands_no_contact">Žádný kontakt se jménem <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_contacts_several">Více kontaktů se jménem <xliff:g id="name" example="Sam">%1$s</xliff:g>: <xliff:g id="names" example="Sam Jones, Sam Smith">%2$s</xliff:g></string>
+    <string name="voice_commands_message_text">Zpráva pro: <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_message_confirm">Odeslat kontaktu <xliff:g id="name" example="Sam">%1$s</xliff:g>: <xliff:g id="text" example="I am on my way">%2$s</xliff:g>?</string>
+    <string name="voice_commands_message_confirm_result">Odeslat kontaktu <xliff:g id="name" example="Sam">%1$s</xliff:g>?</string>
+    <string name="voice_commands_message_not_sent">Zpráva nebyla odeslána</string>
+    <string name="voice_commands_send_pressed">Stisknuto Odeslat</string>
+    <string name="voice_commands_send_button">Odeslat</string>
+    <string name="voice_commands_no_description">Popis nebyl přijat</string>
+    <string name="voice_commands_copied">Zkopírováno</string>
+    <string-array name="voice_commands_chain_words">
+        <item>a potom</item>
+        <item>potom</item>
+        <item>poté</item>
+        <item>a pak</item>
+        <item>pak</item>
+        <item>potom ještě</item>
+    </string-array>
+    <string-array name="voice_commands_and_words">
+        <item>a</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_start">
+        <item>prosím</item>
+        <item>můžeš</item>
+        <item>můžete</item>
+        <item>můžeš prosím</item>
+        <item>můžete prosím</item>
+        <item>chci</item>
+        <item>chtěl bych</item>
+        <item>chtěla bych</item>
+        <item>teď</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_end">
+        <item>prosím</item>
+        <item>pro mě</item>
+        <item>teď</item>
+    </string-array>
+    <string-array name="voice_commands_cancel_words">
+        <item>stop</item>
+        <item>zrušit</item>
+        <item>zruš</item>
+        <item>zrušte</item>
+        <item>přestaň</item>
+        <item>přestaňte</item>
+        <item>nevadí</item>
+        <item>konec</item>
+    </string-array>
+    <string-array name="voice_commands_yes">
+        <item>ano</item>
+        <item>jo</item>
+        <item>jasně</item>
+        <item>pošli</item>
+        <item>pošli to</item>
+        <item>pošlete</item>
+        <item>odešli</item>
+        <item>odeslat</item>
+        <item>ok</item>
+        <item>okej</item>
+        <item>dobře</item>
+        <item>udělej to</item>
+    </string-array>
+    <string-array name="voice_commands_sms_names">
+        <item>SMS</item>
+        <item>textová zpráva</item>
+        <item>zprávy</item>
+    </string-array>
+    <string-array name="voice_commands_send_image_description">
+        <item>pošli popis obrázku kontaktu {who}</item>
+        <item>pošli popis tohoto obrázku kontaktu {who}</item>
+        <item>pošli popis fotky kontaktu {who}</item>
+        <item>pošli popis této fotky kontaktu {who}</item>
+        <item>pošlete popis obrázku kontaktu {who}</item>
+        <item>pošlete popis fotky kontaktu {who}</item>
+    </string-array>
+    <string-array name="voice_commands_send_screen_description">
+        <item>pošli popis obrazovky kontaktu {who}</item>
+        <item>pošlete popis obrazovky kontaktu {who}</item>
+    </string-array>
+    <string-array name="voice_commands_send_previous">
+        <item>pošli to kontaktu {who} přes {app}</item>
+        <item>pošli to kontaktu {who}</item>
+        <item>pošli popis kontaktu {who}</item>
+        <item>pošlete to kontaktu {who}</item>
+        <item>sdílej to s kontaktem {who}</item>
+    </string-array>
+    <string-array name="voice_commands_message">
+        <item>pošli zprávu kontaktu {who} přes {app} s textem {text}</item>
+        <item>pošli zprávu kontaktu {who} s textem {text}</item>
+        <item>pošli zprávu kontaktu {whoandtext}</item>
+        <item>pošli {app} zprávu kontaktu {who} s textem {text}</item>
+        <item>pošli {app} zprávu kontaktu {who}</item>
+        <item>pošlete zprávu kontaktu {who} s textem {text}</item>
+        <item>napiš kontaktu {who} přes {app} {text}</item>
+        <item>napiš kontaktu {who} {text}</item>
+        <item>napiš zprávu kontaktu {who} {text}</item>
+        <item>napiš SMS kontaktu {who} {text}</item>
+        <item>napište kontaktu {who} {text}</item>
+        <item>napiš kontaktu {whoandtext}</item>
+        <item>řekni kontaktu {who} přes {app} {text}</item>
+    </string-array>
+    <string-array name="voice_commands_call">
+        <item>zavolej kontaktu {who}</item>
+        <item>zavolej {who}</item>
+        <item>zavolejte {who}</item>
+        <item>volej {who}</item>
+        <item>vytoč {who}</item>
+        <item>zavolej na {who}</item>
+    </string-array>
+    <string-array name="voice_commands_describe_screen">
+        <item>popiš obrazovku</item>
+        <item>popiš, co je na obrazovce</item>
+        <item>co je na obrazovce</item>
+        <item>co mám na obrazovce</item>
+    </string-array>
+    <string-array name="voice_commands_describe_image">
+        <item>popiš [tento] obrázek</item>
+        <item>popiš [tuto] fotku</item>
+        <item>popiš [tuto] fotografii</item>
+        <item>co je na [tomto] obrázku</item>
+        <item>co je na [této] fotce</item>
+    </string-array>
+    <string-array name="voice_commands_copy_result">
+        <item>zkopíruj to</item>
+        <item>zkopíruj popis</item>
+        <item>zkopíruj poslední větu</item>
+        <item>zkopíruj poslední frázi</item>
+        <item>zkopíruj poslední řečené</item>
+        <item>zkopíruj co jsi [právě] řekl</item>
+    </string-array>
+    <string-array name="voice_commands_wait">
+        <item>počkej {n} sekund</item>
+        <item>počkej {n} sekundy</item>
+        <item>počkej {n} sekundu</item>
+        <item>počkej sekundu</item>
+        <item>počkej</item>
+        <item>počkejte</item>
+    </string-array>
+    <string-array name="voice_commands_type_text">
+        <item>napiš {text}</item>
+        <item>zadej {text}</item>
+        <item>vlož {text}</item>
+        <item>napište {text}</item>
+    </string-array>
+    <string-array name="voice_commands_run">
+        <item>spusť makro {command}</item>
+        <item>spusť příkaz {command}</item>
+        <item>spusť {command}</item>
+        <item>proveď {command}</item>
+    </string-array>
+    <string-array name="voice_commands_open">
+        <item>otevři {app}</item>
+        <item>otevři aplikaci {app}</item>
+        <item>spusť {app}</item>
+        <item>přepni na {app}</item>
+        <item>otevřete {app}</item>
+    </string-array>
+    <string-array name="voice_commands_tap">
+        <item>dvakrát klepni na {label}</item>
+        <item>klepni na {label}</item>
+        <item>klikni na {label}</item>
+        <item>stiskni {label}</item>
+        <item>aktivuj {label}</item>
+        <item>vyber {label}</item>
+    </string-array>
+</resources>

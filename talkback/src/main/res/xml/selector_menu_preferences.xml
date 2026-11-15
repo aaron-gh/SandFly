@@ -40,6 +40,10 @@
             <extra android:name="items" android:value="@string/pref_selector_text_entities_key" />
         </MultiSelectListPreference>
         <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
+            android:defaultValue="@bool/pref_selector_clipboard_history_default"
+            android:key="@string/pref_selector_clipboard_history_key"
+            android:title="@string/title_clipboard_history"/>
+        <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
             android:layout="@layout/listitem_2texts"
             android:defaultValue="@bool/pref_selector_granularity_typo_default"
             android:key="@string/pref_selector_granularity_typo_key"

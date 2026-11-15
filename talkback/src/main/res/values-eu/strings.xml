@@ -2025,4 +2025,144 @@
     <string name="value_keep_models_5">5 minutu</string>
     <string name="value_keep_models_15">15 minutu</string>
     <string name="value_keep_models_30">30 minutu</string>
+    <string name="title_pref_speech_equalizer_save_preset">Gorde aurrezarpen gisa</string>
+    <string name="title_pref_speech_equalizer_saved_presets">Gordetako aurrezarpenak</string>
+    <string name="speech_equalizer_preset_name">Izena</string>
+    <string name="speech_equalizer_preset_name_taken">Aurrezarpen baten izena <xliff:g id="name" example="Podcast">%1$s</xliff:g> da dagoeneko</string>
+    <string name="speech_equalizer_presets_full">Ezin da aurrezarpen gehiago gorde. Ezabatu bat beste bat gordetzeko.</string>
+    <string name="speech_equalizer_preset_saved"><xliff:g id="name" example="Podcast">%1$s</xliff:g> gorde da</string>
+    <string name="speech_equalizer_preset_rename">Aldatu izena</string>
+    <string name="speech_equalizer_preset_delete">Ezabatu</string>
+    <string name="speech_equalizer_preset_delete_confirm"><xliff:g id="name" example="Podcast">%1$s</xliff:g> ezabatu nahi duzu?</string>
+    <string name="speech_equalizer_preset_deleted"><xliff:g id="name" example="Podcast">%1$s</xliff:g> ezabatu da</string>
+    <string name="title_pref_emoji_voice">Emojien ahotsa</string>
+    <string name="value_emoji_voice_same">Hizketaren berbera</string>
+    <string name="title_pref_emoji_rate">Emojien hizketa-abiadura</string>
+    <string name="title_pref_line_breaks_as_spaces">Irakurri lerro-jauziak zuriune gisa</string>
+    <string name="title_pref_language_voices">Ahotsak hizkuntzaren arabera</string>
+    <string name="title_pref_identify_languages_from_words">Identifikatu hizkuntzak hitzen arabera</string>
+    <string name="title_pref_add_language">Gehitu hizkuntza</string>
+    <string name="title_pref_remove_language">Kendu hizkuntza</string>
+    <string name="title_pref_script_language">%1$s idazkera</string>
+    <string name="title_pref_screen_on_notification_count">Jakinarazpen kopurua</string>
+    <plurals name="template_screen_on_notification_count">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> jakinarazpen</item>
+        <item quantity="other"><xliff:g id="count" example="1">%d</xliff:g> jakinarazpen</item>
+    </plurals>
+    <string name="title_pref_phonetic_letters_review">Irakurri letrak fonetikoki berrikusterakoan</string>
+    <string name="title_pref_phonetic_letters_typing">Irakurri letrak fonetikoki idaztean</string>
+    <string name="title_pref_emoji_suffix">Irakurri \"emoji\" emojien izenen ondoren</string>
+    <string name="overview_shizuku_not_running">Shizuku ez dago martxan</string>
+    <string name="overview_shizuku_not_allowed">Shizuku-k ez dio SandFly-ri uzten</string>
+    <string name="overview_no_older_app">Ez dago aplikazio zaharragorik</string>
+    <string name="overview_no_newer_app">Ez dago aplikazio berriagorik</string>
+    <string name="stream_volume_needs_access">Baimendu Ez molestatu modurako sarbidea bolumen hau aldatzeko.</string>
+    <string name="corner_gestures_title">Izkinak</string>
+    <string name="shortcut_move_to_item_below">Joan beheko elementura</string>
+    <string name="shortcut_move_to_item_above">Joan goiko elementura</string>
+    <string name="shortcut_older_app">Aplikazio zaharragoa</string>
+    <string name="shortcut_newer_app">Aplikazio berriagoa</string>
+    <string name="shortcut_answer_call">Erantzun deiari</string>
+    <string name="answer_call_no_call">Ez dago deirik</string>
+    <string name="answer_call_permission">Deiei erantzuteko baimena behar da</string>
+    <string name="shortcut_switch_keyboard">Aldatu teklatua</string>
+    <string name="switch_keyboard_none">Ez dago beste teklaturik aktibatuta</string>
+    <string name="switch_keyboard_failed">Teklatua ez da aldatu</string>
+    <string name="clipboard_history_hint">Pasatu hatza gora edo behera aukeratzeko, eta sakatu birritan itsasteko</string>
+    <string name="title_speech_history">Hizketaren historia</string>
+    <string name="speech_history_empty">Hizketarik ez</string>
+    <string name="speech_history_clear">Garbitu historia</string>
+    <string name="title_pref_shortcut_corner_top_left_tap">Sakatu goiko ezkerreko izkina</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap">Sakatu birritan goiko ezkerreko izkina</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap">Sakatu hirutan goiko ezkerreko izkina</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap_hold">Sakatu birritan eta eduki sakatuta goiko ezkerreko izkina</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap_hold">Sakatu hirutan eta eduki sakatuta goiko ezkerreko izkina</string>
+    <string name="title_pref_shortcut_corner_top_right_tap">Sakatu goiko eskuineko izkina</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap">Sakatu birritan goiko eskuineko izkina</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap">Sakatu hirutan goiko eskuineko izkina</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap_hold">Sakatu birritan eta eduki sakatuta goiko eskuineko izkina</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap_hold">Sakatu hirutan eta eduki sakatuta goiko eskuineko izkina</string>
+    <string name="title_pref_shortcut_corner_bottom_left_tap">Sakatu beheko ezkerreko izkina</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap">Sakatu birritan beheko ezkerreko izkina</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap">Sakatu hirutan beheko ezkerreko izkina</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap_hold">Sakatu birritan eta eduki sakatuta beheko ezkerreko izkina</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap_hold">Sakatu hirutan eta eduki sakatuta beheko ezkerreko izkina</string>
+    <string name="title_pref_shortcut_corner_bottom_right_tap">Sakatu beheko eskuineko izkina</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap">Sakatu birritan beheko eskuineko izkina</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap">Sakatu hirutan beheko eskuineko izkina</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap_hold">Sakatu birritan eta eduki sakatuta beheko eskuineko izkina</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap_hold">Sakatu hirutan eta eduki sakatuta beheko eskuineko izkina</string>
+    <string name="title_pref_swipe_start_time">Keinuaren hasiera-denbora</string>
+    <string name="title_pref_swipes_before_lift">Hauteman hatza altxatu aurretik pasatzeak</string>
+    <string name="summary_pref_swipes_before_lift">Joan-etorriko keinuak eta angeluzko keinuak desaktibatzen ditu.</string>
+    <string name="title_pref_corner_size_mm">Izkinaren tamaina</string>
+    <string name="value_corner_size_edge_width">Ertzaren zabaleraren berbera</string>
+    <string name="title_pref_corner_tap_time_ms">Izkinako sakatzearen denbora-muga</string>
+    <string name="value_corner_tap_time_system">Sistemaren balio lehenetsia</string>
+    <string name="title_pref_edge_speak_commands">Irakurri agindua klik bakoitzean</string>
+    <string-array name="pref_volume_change_feedback_entries">
+        <item>@string/volume_change_feedback_off</item>
+        <item>@string/volume_change_feedback_tone</item>
+        <item>@string/volume_change_feedback_spoken</item>
+        <item>@string/volume_change_feedback_tone_and_spoken</item>
+    </string-array>
+    <string name="title_pref_volume_change_tone_during_media">Isilarazi tonua multimedia-edukia erreproduzitzean</string>
+    <string name="title_pref_volume_change_speech_during_media">Isilarazi hizketa multimedia-edukia erreproduzitzean</string>
+    <string name="title_pref_volume_change_interrupts_speech">Eten hizketa bolumena iragartzeko</string>
+    <string name="title_pref_volume_keys_speech_volume_while_speaking">Bolumen-botoiek hizketaren bolumena aldatzen dute hitz egitean</string>
+    <string name="title_pref_double_tap_moves_cursor">Birritan sakatuta, kurtsorea hasierara edo amaierara doa</string>
+    <string name="title_pref_scroll_ahead">Egin aurrera hurrengo elementura arte</string>
+    <string name="title_pref_speak_while_scrolling">Irakurri hurrengo elementua korritzean</string>
+    <string-array name="pref_text_entities_entries">
+        <item>@string/text_entity_web</item>
+        <item>@string/text_entity_email</item>
+        <item>@string/text_entity_phone</item>
+        <item>@string/text_entity_code</item>
+    </string-array>
+    <string name="value_keep_models_until_stopped">SandFly gelditu arte</string>
+    <string name="title_pref_model_download_server">Ereduen deskarga-zerbitzaria</string>
+    <string name="title_pref_settings_profiles">Ezarpen-profilak</string>
+    <string name="title_pref_new_settings_profile">Ezarpen-profil berria</string>
+    <string name="settings_profile_new_name"><xliff:g id="number" example="2">%1$d</xliff:g>. profila</string>
+    <string name="settings_profile_name_taken">Ezarpen-profil baten izena <xliff:g id="name" example="Demo">%1$s</xliff:g> da dagoeneko</string>
+    <string name="settings_profile_in_use">Erabiltzen ari da</string>
+    <string name="settings_profile_menu_item_in_use"><xliff:g id="name" example="Demo">%1$s</xliff:g>, erabiltzen ari da</string>
+    <string name="settings_profile_none">Ezarpen-profilik ez</string>
+    <string name="settings_profile_use_now">Erabili orain</string>
+    <string name="settings_profile_stop_using">Utzi erabiltzeari</string>
+    <string name="settings_profile_change_settings">Aldatu ezarpenak</string>
+    <string name="settings_profile_editing">Aldaketak <xliff:g id="name" example="Messaging">%1$s</xliff:g> profilean gordeko dira</string>
+    <string name="settings_profile_edit_saved">Aldaketak <xliff:g id="name" example="Messaging">%1$s</xliff:g> profilean gorde dira</string>
+    <string name="settings_profile_use_automatically">Erabili automatikoki</string>
+    <string name="settings_profile_web">Web-edukia</string>
+    <string name="settings_profile_reading">Etengabeko irakurketa</string>
+    <string name="settings_profile_text_editing">Testua editatzea</string>
+    <string name="settings_profile_apps">Aplikazioak</string>
+    <string name="settings_profile_add_app">Gehitu aplikazioa</string>
+    <string name="settings_profile_settings">Profil honetako ezarpenak</string>
+    <string name="settings_profile_no_settings">Bat ere ez</string>
+    <string name="settings_profile_remove_confirm"><xliff:g id="item" example="Speech rate">%1$s</xliff:g> kendu nahi duzu <xliff:g id="name" example="Messaging">%2$s</xliff:g> profiletik?</string>
+    <string name="settings_profile_not_saved">Ezin izan da gorde ezarpen-profila</string>
+    <string name="settings_profile_in_use_announcement"><xliff:g id="name" example="Demo">%1$s</xliff:g> profila</string>
+    <string name="settings_profile_not_changed">Ezarpen-profila ez da aldatu</string>
+    <string name="title_settings_profile">Ezarpen-profila</string>
+    <string name="shortcut_settings_profiles">Aukeratu ezarpen-profila</string>
+    <string name="shortcut_next_settings_profile">Hurrengo ezarpen-profila</string>
+    <string name="shortcut_previous_settings_profile">Aurreko ezarpen-profila</string>
+    <string name="title_copy_text_from_screen">Kopiatu pantailako testua</string>
+    <string name="granularity_label">Zehaztasuna</string>
+    <string name="granularity_characters">Karaktereak</string>
+    <string name="granularity_words">Hitzak</string>
+    <string name="granularity_paragraphs">Paragrafoak</string>
+    <string name="button_select_all">Hautatu dena</string>
+    <string name="no_text_selected">Ez da hautatu testurik</string>
+    <string name="no_text_on_screen">Ez da testurik aurkitu pantailan</string>
+    <string name="title_select_last_spoken_phrase_word_by_word">Hautatu irakurritako azken esaldia hitzez hitz</string>
+    <string name="no_words_selected">Ez da hitzik hautatu</string>
+    <string name="no_phrase_to_select">Ez dago hautatzeko esaldirik</string>
+    <string name="word_selection_list_cut_off">Zerrenda <xliff:g id="count" example="1000">%1$d</xliff:g> elementutan moztu da</string>
+    <plurals name="word_selection_copied">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> elementu kopiatu da</item>
+        <item quantity="other"><xliff:g id="count" example="1">%1$d</xliff:g> elementu kopiatu dira</item>
+    </plurals>
 </resources>

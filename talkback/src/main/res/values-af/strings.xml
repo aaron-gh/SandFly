@@ -2025,4 +2025,144 @@
     <string name="value_keep_models_5">5 minute</string>
     <string name="value_keep_models_15">15 minute</string>
     <string name="value_keep_models_30">30 minute</string>
+    <string name="title_pref_speech_equalizer_save_preset">Stoor as voorinstelling</string>
+    <string name="title_pref_speech_equalizer_saved_presets">Gestoorde voorinstellings</string>
+    <string name="speech_equalizer_preset_name">Naam</string>
+    <string name="speech_equalizer_preset_name_taken">’n Voorinstelling heet reeds <xliff:g id="name" example="Podcast">%1$s</xliff:g></string>
+    <string name="speech_equalizer_presets_full">Geen verdere voorinstellings kan gestoor word nie. Vee een uit om ’n ander te stoor.</string>
+    <string name="speech_equalizer_preset_saved"><xliff:g id="name" example="Podcast">%1$s</xliff:g> gestoor</string>
+    <string name="speech_equalizer_preset_rename">Hernoem</string>
+    <string name="speech_equalizer_preset_delete">Vee uit</string>
+    <string name="speech_equalizer_preset_delete_confirm">Vee <xliff:g id="name" example="Podcast">%1$s</xliff:g> uit?</string>
+    <string name="speech_equalizer_preset_deleted"><xliff:g id="name" example="Podcast">%1$s</xliff:g> uitgevee</string>
+    <string name="title_pref_emoji_voice">Emosiekoon-stem</string>
+    <string name="value_emoji_voice_same">Dieselfde as spraak</string>
+    <string name="title_pref_emoji_rate">Emosiekoon-spraaktempo</string>
+    <string name="title_pref_line_breaks_as_spaces">Lees reëlbreuke as spasies</string>
+    <string name="title_pref_language_voices">Stemme volgens taal</string>
+    <string name="title_pref_identify_languages_from_words">Identifiseer tale uit woorde</string>
+    <string name="title_pref_add_language">Voeg taal by</string>
+    <string name="title_pref_remove_language">Verwyder taal</string>
+    <string name="title_pref_script_language">%1$s-skrif</string>
+    <string name="title_pref_screen_on_notification_count">Aantal kennisgewings</string>
+    <plurals name="template_screen_on_notification_count">
+        <item quantity="one"><xliff:g id="count" example="6">%d</xliff:g> kennisgewing</item>
+        <item quantity="other"><xliff:g id="count" example="6">%d</xliff:g> kennisgewings</item>
+    </plurals>
+    <string name="title_pref_phonetic_letters_review">Spreek letters foneties uit tydens hersiening</string>
+    <string name="title_pref_phonetic_letters_typing">Spreek letters foneties uit tydens tik</string>
+    <string name="title_pref_emoji_suffix">Sê “emosiekoon” ná emosiekoon-name</string>
+    <string name="overview_shizuku_not_running">Shizuku loop nie</string>
+    <string name="overview_shizuku_not_allowed">Shizuku laat nie SandFly toe nie</string>
+    <string name="overview_no_older_app">Geen ouer app nie</string>
+    <string name="overview_no_newer_app">Geen nuwer app nie</string>
+    <string name="stream_volume_needs_access">Laat Moenie Steur Nie-toegang toe om hierdie volume te verander.</string>
+    <string name="corner_gestures_title">Hoeke</string>
+    <string name="shortcut_move_to_item_below">Gaan na item hieronder</string>
+    <string name="shortcut_move_to_item_above">Gaan na item hierbo</string>
+    <string name="shortcut_older_app">Ouer app</string>
+    <string name="shortcut_newer_app">Nuwer app</string>
+    <string name="shortcut_answer_call">Beantwoord oproep</string>
+    <string name="answer_call_no_call">Geen inkomende oproep nie</string>
+    <string name="answer_call_permission">Toestemming nodig om oproepe te beantwoord</string>
+    <string name="shortcut_switch_keyboard">Wissel sleutelbord</string>
+    <string name="switch_keyboard_none">Geen ander sleutelbord is aangeskakel nie</string>
+    <string name="switch_keyboard_failed">Sleutelbord nie gewissel nie</string>
+    <string name="clipboard_history_hint">Swiep op of af om te kies, dubbeltik dan om te plak</string>
+    <string name="title_speech_history">Spraakgeskiedenis</string>
+    <string name="speech_history_empty">Geen spraak nie</string>
+    <string name="speech_history_clear">Maak geskiedenis skoon</string>
+    <string name="title_pref_shortcut_corner_top_left_tap">Tik linkerbovenhoek</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap">Dubbeltik linkerbovenhoek</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap">Tripeltik linkerbovenhoek</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap_hold">Dubbeltik en hou linkerbovenhoek</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap_hold">Tripeltik en hou linkerbovenhoek</string>
+    <string name="title_pref_shortcut_corner_top_right_tap">Tik regterbovenhoek</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap">Dubbeltik regterbovenhoek</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap">Tripeltik regterbovenhoek</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap_hold">Dubbeltik en hou regterbovenhoek</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap_hold">Tripeltik en hou regterbovenhoek</string>
+    <string name="title_pref_shortcut_corner_bottom_left_tap">Tik linkeronderhoek</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap">Dubbeltik linkeronderhoek</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap">Tripeltik linkeronderhoek</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap_hold">Dubbeltik en hou linkeronderhoek</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap_hold">Tripeltik en hou linkeronderhoek</string>
+    <string name="title_pref_shortcut_corner_bottom_right_tap">Tik regteronderhoek</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap">Dubbeltik regteronderhoek</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap">Tripeltik regteronderhoek</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap_hold">Dubbeltik en hou regteronderhoek</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap_hold">Tripeltik en hou regteronderhoek</string>
+    <string name="title_pref_swipe_start_time">Gebaar-begintyd</string>
+    <string name="title_pref_swipes_before_lift">Herken swiepe voor oplig</string>
+    <string name="summary_pref_swipes_before_lift">Skakel heen-en-weer- en hoekgebare af.</string>
+    <string name="title_pref_corner_size_mm">Hoekgrootte</string>
+    <string name="value_corner_size_edge_width">Dieselfde as randwydte</string>
+    <string name="title_pref_corner_tap_time_ms">Hoek-tik-tydsbeperking</string>
+    <string name="value_corner_tap_time_system">Stelselverstek</string>
+    <string name="title_pref_edge_speak_commands">Spreek opdrag by elke klik uit</string>
+    <string-array name="pref_volume_change_feedback_entries">
+        <item>@string/volume_change_feedback_off</item>
+        <item>@string/volume_change_feedback_tone</item>
+        <item>@string/volume_change_feedback_spoken</item>
+        <item>@string/volume_change_feedback_tone_and_spoken</item>
+    </string-array>
+    <string name="title_pref_volume_change_tone_during_media">Demp toon tydens media-weergawe</string>
+    <string name="title_pref_volume_change_speech_during_media">Demp spraak tydens media-weergawe</string>
+    <string name="title_pref_volume_change_interrupts_speech">Onderbreek spraak om die volume aan te kondig</string>
+    <string name="title_pref_volume_keys_speech_volume_while_speaking">Volumesleutels verander spraakvolume terwyl daar gepraat word</string>
+    <string name="title_pref_double_tap_moves_cursor">Dubbeltik skuif wyser na begin of einde</string>
+    <string name="title_pref_scroll_ahead">Rol vooruit na die volgende item</string>
+    <string name="title_pref_speak_while_scrolling">Spreek die volgende item uit tydens rol</string>
+    <string-array name="pref_text_entities_entries">
+    <item>@string/text_entity_web</item>
+    <item>@string/text_entity_email</item>
+    <item>@string/text_entity_phone</item>
+    <item>@string/text_entity_code</item>
+  </string-array>
+    <string name="value_keep_models_until_stopped">Tot SandFly stop</string>
+    <string name="title_pref_model_download_server">Modelaflaaibediener</string>
+    <string name="title_pref_settings_profiles">Instellingsprofiele</string>
+    <string name="title_pref_new_settings_profile">Nuwe instellingsprofiel</string>
+    <string name="settings_profile_new_name">Profiel <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="settings_profile_name_taken">’n Instellingsprofiel heet reeds <xliff:g id="name" example="Demo">%1$s</xliff:g></string>
+    <string name="settings_profile_in_use">In gebruik</string>
+    <string name="settings_profile_menu_item_in_use"><xliff:g id="name" example="Demo">%1$s</xliff:g>, in gebruik</string>
+    <string name="settings_profile_none">Geen instellingsprofiel</string>
+    <string name="settings_profile_use_now">Gebruik nou</string>
+    <string name="settings_profile_stop_using">Hou op gebruik</string>
+    <string name="settings_profile_change_settings">Verander instellings</string>
+    <string name="settings_profile_editing">Veranderings gaan na <xliff:g id="name" example="Messaging">%1$s</xliff:g></string>
+    <string name="settings_profile_edit_saved">Veranderings gestoor in <xliff:g id="name" example="Messaging">%1$s</xliff:g></string>
+    <string name="settings_profile_use_automatically">Gebruik outomaties</string>
+    <string name="settings_profile_web">Webinhoud</string>
+    <string name="settings_profile_reading">Aaneenlopende lees</string>
+    <string name="settings_profile_text_editing">Teksredigering</string>
+    <string name="settings_profile_apps">Apps</string>
+    <string name="settings_profile_add_app">Voeg app by</string>
+    <string name="settings_profile_settings">Instellings in hierdie profiel</string>
+    <string name="settings_profile_no_settings">Geen</string>
+    <string name="settings_profile_remove_confirm">Verwyder <xliff:g id="item" example="Speech rate">%1$s</xliff:g> uit <xliff:g id="name" example="Messaging">%2$s</xliff:g>?</string>
+    <string name="settings_profile_not_saved">Instellingsprofiel kon nie gestoor word nie</string>
+    <string name="settings_profile_in_use_announcement"><xliff:g id="name" example="Demo">%1$s</xliff:g>-profiel</string>
+    <string name="settings_profile_not_changed">Instellingsprofiel nie verander nie</string>
+    <string name="title_settings_profile">Instellingsprofiel</string>
+    <string name="shortcut_settings_profiles">Kies instellingsprofiel</string>
+    <string name="shortcut_next_settings_profile">Volgende instellingsprofiel</string>
+    <string name="shortcut_previous_settings_profile">Vorige instellingsprofiel</string>
+    <string name="title_copy_text_from_screen">Kopieer teks van skerm</string>
+    <string name="granularity_label">Granulariteit</string>
+    <string name="granularity_characters">Karakters</string>
+    <string name="granularity_words">Woorde</string>
+    <string name="granularity_paragraphs">Paragrawe</string>
+    <string name="button_select_all">Kies alles</string>
+    <string name="no_text_selected">Geen teks gekies nie</string>
+    <string name="no_text_on_screen">Geen teks op die skerm gevind nie</string>
+    <string name="title_select_last_spoken_phrase_word_by_word">Kies laaste gesproke frase woord vir woord</string>
+    <string name="no_words_selected">Geen woorde gekies nie</string>
+    <string name="no_phrase_to_select">Geen frase om te kies nie</string>
+    <string name="word_selection_list_cut_off">Lys afgekap by <xliff:g id="count" example="1000">%1$d</xliff:g> items</string>
+    <plurals name="word_selection_copied">
+        <item quantity="one"><xliff:g id="count" example="5">%1$d</xliff:g> item gekopieer</item>
+        <item quantity="other"><xliff:g id="count" example="5">%1$d</xliff:g> items gekopieer</item>
+    </plurals>
 </resources>

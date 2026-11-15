@@ -48,4 +48,23 @@
     <string name="granular_editing_not_saved">Не захавана: тэкставае поле знікла. Тэкст скапіяваны.</string>
     <string name="granular_editing_no_text">Няма тэксту для рэдагавання</string>
     <string name="granular_editing_password">Недаступна ў палях пароляў</string>
+    <plurals name="granular_editing_spaces">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> прабел</item>
+        <item quantity="few"><xliff:g id="count" example="1">%d</xliff:g> прабелы</item>
+        <item quantity="many"><xliff:g id="count" example="1">%d</xliff:g> прабелаў</item>
+        <item quantity="other"><xliff:g id="count" example="1">%d</xliff:g> прабела</item>
+    </plurals>
+    <plurals name="granular_editing_new_lines">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> новы радок</item>
+        <item quantity="few"><xliff:g id="count" example="1">%d</xliff:g> новыя радкі</item>
+        <item quantity="many"><xliff:g id="count" example="1">%d</xliff:g> новых радкоў</item>
+        <item quantity="other"><xliff:g id="count" example="1">%d</xliff:g> новага радка</item>
+    </plurals>
+    <plurals name="granular_editing_tabs">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> табуляцыя</item>
+        <item quantity="few"><xliff:g id="count" example="1">%d</xliff:g> табуляцыі</item>
+        <item quantity="many"><xliff:g id="count" example="1">%d</xliff:g> табуляцый</item>
+        <item quantity="other"><xliff:g id="count" example="1">%d</xliff:g> табуляцыі</item>
+    </plurals>
+    <string name="granular_editing_blank_line">Пусты радок</string>
 </resources>

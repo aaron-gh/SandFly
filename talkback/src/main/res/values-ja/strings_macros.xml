@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_macros">マクロ</string>
+    <string name="shortcut_stop_macro">マクロを停止</string>
+    <string name="macro_add">マクロを追加</string>
+    <string name="macro_run_now">今すぐ実行</string>
+    <string name="macro_add_step">ステップを追加</string>
+    <string name="macro_add_at_end">末尾に</string>
+    <string name="macro_add_at_start">先頭に</string>
+    <string name="macro_add_after">ステップ <xliff:g id="step" example="2">%1$d</xliff:g> の後: <xliff:g id="name" example="If App in front: Chrome">%2$s</xliff:g></string>
+    <string name="macro_steps">ステップ</string>
+    <string name="macro_no_steps">ステップなし</string>
+    <string name="macro_delete">マクロを削除</string>
+    <string name="macro_delete_confirm"><xliff:g id="name" example="Send message">%1$s</xliff:g> を削除しますか?</string>
+    <string name="macro_step_command">コマンドを実行</string>
+    <string name="macro_step_wait">待機</string>
+    <string name="macro_step_tap">項目をタップ</string>
+    <string name="macro_step_focus">項目にフォーカス</string>
+    <string name="macro_step_speak_item">項目を読み上げ</string>
+    <string name="macro_step_speak_text">テキストを読み上げ</string>
+    <string name="macro_step_type">テキストを入力</string>
+    <string name="macro_step_tap_value"><xliff:g id="label" example="Send">%1$s</xliff:g> をタップ</string>
+    <string name="macro_step_focus_value"><xliff:g id="label" example="Send">%1$s</xliff:g> にフォーカス</string>
+    <string name="macro_step_speak_item_value"><xliff:g id="label" example="Send">%1$s</xliff:g> を読み上げ</string>
+    <string name="macro_step_speak_text_value"><xliff:g id="text" example="Done">%1$s</xliff:g> を読み上げ</string>
+    <string name="macro_step_type_value"><xliff:g id="text" example="On my way">%1$s</xliff:g> を入力</string>
+    <string name="macro_step_replace_value">テキストを <xliff:g id="text" example="On my way">%1$s</xliff:g> に置換</string>
+    <plurals name="macro_step_wait_seconds">
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> 秒待機</item>
+    </plurals>
+    <plurals name="macro_step_wait_milliseconds">
+        <item quantity="other"><xliff:g id="count" example="500">%d</xliff:g> ミリ秒待機</item>
+    </plurals>
+    <string name="macro_step_unavailable">利用できません</string>
+    <string name="macro_seconds">秒</string>
+    <string name="macro_invalid_seconds"><xliff:g id="max" example="600">%1$d</xliff:g> 以下の秒数を入力してください</string>
+    <string name="macro_tap_label">項目のテキスト</string>
+    <string name="macro_tap_timeout">項目を待つ秒数</string>
+    <string name="macro_text">テキスト</string>
+    <string name="macro_replace_text">フィールドのテキストを置換</string>
+    <string name="macro_item_not_found">マクロを停止しました。見つかりません: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_failed">マクロを停止しました。失敗: <xliff:g id="step" example="Open Gmail">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until">次まで待機</string>
+    <string name="macro_step_if">もし</string>
+    <string name="macro_step_else_if">そうでなくもし</string>
+    <string name="macro_step_else">そうでなければ</string>
+    <string name="macro_step_end_if">もし終わり</string>
+    <string name="macro_step_repeat">繰り返し</string>
+    <string name="macro_step_repeat_while">次の間繰り返し</string>
+    <string name="macro_step_end_repeat">繰り返し終わり</string>
+    <string name="macro_step_exit_loop">ループを終了</string>
+    <string name="macro_step_if_value">もし <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_else_if_value">そうでなくもし <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_repeat_while_value"><xliff:g id="condition" example="Item on screen: Load more">%1$s</xliff:g> の間繰り返し</string>
+    <string name="macro_step_wait_until_value"><xliff:g id="condition" example="Item on screen: Send">%1$s</xliff:g> まで待機</string>
+    <plurals name="macro_step_repeat_value">
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> 回繰り返し</item>
+    </plurals>
+    <string name="macro_times">回数</string>
+    <string name="macro_invalid_times">1 から <xliff:g id="max" example="1000">%1$d</xliff:g> までの数を入力してください</string>
+    <string name="macro_run_only_when">次の場合のみ実行</string>
+    <string name="macro_always">常に</string>
+    <string name="macro_no_tests">条件なし</string>
+    <string name="macro_add_test">条件を追加</string>
+    <string name="macro_tests">条件</string>
+    <string name="macro_choose_test">条件</string>
+    <string name="macro_test_item">画面上の項目</string>
+    <string name="macro_test_focused">フォーカス中の項目</string>
+    <string name="macro_test_app">前面のアプリ</string>
+    <string name="macro_test_keyboard">キーボード表示中</string>
+    <string name="macro_test_keyboard_hidden">キーボード非表示</string>
+    <string name="macro_test_locked">画面ロック中</string>
+    <string name="macro_test_unlocked">画面ロック解除中</string>
+    <string name="macro_test_item_value">画面上の項目: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_no_item_value">画面上に項目なし: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_focused_value">フォーカス中の項目: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_not_focused_value">フォーカス中の項目ではない: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_app_value">前面のアプリ: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_not_app_value">前面のアプリではない: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_label_kind"><xliff:g id="label" example="Send">%1$s</xliff:g>、<xliff:g id="kind" example="Clickable">%2$s</xliff:g></string>
+    <string name="macro_join_and"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g> かつ <xliff:g id="second" example="Focused item: Editable">%2$s</xliff:g></string>
+    <string name="macro_join_or"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g>、または <xliff:g id="second" example="Screen locked">%2$s</xliff:g></string>
+    <string name="macro_regex">正規表現</string>
+    <string name="macro_invalid_regex">使用できない正規表現です。繰り返しグループには繰り返しや | を含められません。</string>
+    <string name="macro_match_in">照合対象</string>
+    <string name="macro_field_any">任意のテキスト</string>
+    <string name="macro_field_text">テキスト</string>
+    <string name="macro_field_description">説明</string>
+    <string name="macro_field_hint">ヒント</string>
+    <string name="macro_field_state">状態</string>
+    <string name="macro_field_id">リソース ID</string>
+    <string name="macro_field_value"><xliff:g id="label" example="send">%1$s</xliff:g> (<xliff:g id="field" example="Resource ID">%2$s</xliff:g>)</string>
+    <string name="macro_field_regex_value"><xliff:g id="pattern" example="^Reply">%1$s</xliff:g> (<xliff:g id="field" example="Description">%2$s</xliff:g>、正規表現)</string>
+    <string name="macro_regex_value"><xliff:g id="pattern" example="Reply.*Anna">%1$s</xliff:g> (正規表現)</string>
+    <string name="macro_test_label_optional">項目のテキスト (省略可)</string>
+    <string name="macro_item_kind">項目の種類</string>
+    <string name="macro_kind_any">すべての種類</string>
+    <string name="macro_kind_clickable">クリック可能</string>
+    <string name="macro_kind_long_clickable">長押し可能</string>
+    <string name="macro_kind_editable">編集可能</string>
+    <string name="macro_kind_scrollable">スクロール可能</string>
+    <string name="macro_kind_adjustable">調整可能</string>
+    <string name="macro_kind_checkable">チェック可能</string>
+    <string name="macro_kind_checked">チェック済み</string>
+    <string name="macro_kind_selected">選択済み</string>
+    <string name="macro_kind_heading">見出し</string>
+    <string name="macro_kind_enabled">有効</string>
+    <string name="macro_change_to">変更後: <xliff:g id="test" example="Keyboard hidden">%1$s</xliff:g></string>
+    <string name="macro_join_with_and">かつで結合</string>
+    <string name="macro_join_with_or">またはで結合</string>
+    <string name="macro_clause_and">かつ <xliff:g id="test" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_clause_or">または <xliff:g id="test" example="Screen locked">%1$s</xliff:g></string>
+    <string name="macro_wait_timeout">待機する秒数</string>
+    <string name="macro_add_step_after">次の後にステップを追加</string>
+    <string name="macro_problem">ステップ <xliff:g id="step" example="3">%1$d</xliff:g>: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_problem_no_if">「もし」がないのに「そうでなくもし」、「そうでなければ」、「もし終わり」がある</string>
+    <string name="macro_problem_after_else">「そうでなければ」の後に「そうでなくもし」または「そうでなければ」がある</string>
+    <string name="macro_problem_no_repeat">「繰り返し」がないのに「繰り返し終わり」がある</string>
+    <string name="macro_problem_no_end_if">「もし終わり」がない「もし」</string>
+    <string name="macro_problem_no_end_repeat">「繰り返し終わり」がない「繰り返し」</string>
+    <string name="macro_problem_exit">繰り返しの外にある「ループを終了」</string>
+    <string name="macro_stopped_problem">マクロを停止しました。ステップ <xliff:g id="step" example="3">%1$d</xliff:g>: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_stopped_repeats">マクロを停止しました。<xliff:g id="count" example="1000">%1$d</xliff:g> 回繰り返しました: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
+    <string name="macro_stopped_timeout">マクロを停止しました。タイムアウト: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
+    <string name="macro_not_met">マクロは実行されませんでした。次の場合のみ実行: 条件を満たしていません</string>
+</resources>

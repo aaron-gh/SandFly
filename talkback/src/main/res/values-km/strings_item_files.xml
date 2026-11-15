@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="item_file_import">នាំចូលពីឯកសារ</string>
+    <string name="item_file_export">នាំចេញទៅឯកសារ</string>
+    <string name="title_pref_export_item_file_reference">ឯកសារយោងទ្រង់ទ្រាយឯកសារនាំចេញ</string>
+    <string name="item_file_keymaps">ផែនទីគ្រាប់ចុច</string>
+    <string name="item_file_exported">បាននាំចេញ</string>
+    <string name="item_file_export_failed">មិនអាចនាំចេញបានទេ</string>
+    <string name="item_file_not_read">ឯកសារនេះមិនមែនជាឯកសារធាតុ SandFly ឬមិនអាចអានបាន</string>
+    <string name="item_file_settings_file">នេះជាឯកសារការកំណត់។ នាំចូលវាដោយ បម្រុងទុក និងស្ដារ > នាំចូលការកំណត់</string>
+    <string name="item_file_newer">ឯកសារនេះមកពី SandFly កំណែថ្មីជាង</string>
+    <string name="item_file_nothing_imported">មិនបាននាំចូលអ្វីទេ</string>
+    <string name="item_file_imported">បាននាំចូល <xliff:g id="items" example="2 macros, 1 gesture profile">%1$s</xliff:g></string>
+    <string name="item_file_left_out">មិនបានរួមបញ្ចូល៖</string>
+    <string name="item_file_problem_not_read"><xliff:g id="kind" example="Macros">%1$s</xliff:g> ធាតុទី <xliff:g id="number" example="3">%2$d</xliff:g>៖ មិនអាចអាន</string>
+    <string name="item_file_problem_command"><xliff:g id="item" example="Open mail">%1$s</xliff:g>៖ ពាក្យបញ្ជាមិនស្គាល់ <xliff:g id="command" example="READ_ALL">%2$s</xliff:g></string>
+    <string name="item_file_problem_gesture"><xliff:g id="item" example="Reading">%1$s</xliff:g>៖ ចលនាមិនស្គាល់ <xliff:g id="gesture" example="pref_shortcut_spin">%2$s</xliff:g></string>
+    <string name="item_file_problem_keys"><xliff:g id="item" example="My keymap">%1$s</xliff:g>៖ មិនយល់គ្រាប់ចុច៖ <xliff:g id="keys" example="SandFly+Foo">%2$s</xliff:g></string>
+    <string name="item_file_problem_keys_taken"><xliff:g id="item" example="My keymap">%1$s</xliff:g>៖ គ្រាប់ចុចត្រូវបានប្រើរួចហើយ៖ <xliff:g id="keys" example="SandFly+H">%2$s</xliff:g></string>
+    <string name="item_file_problem_setting"><xliff:g id="item" example="Reading">%1$s</xliff:g>៖ ការកំណត់ <xliff:g id="key" example="pref_vibration">%2$s</xliff:g> មិនស្គាល់ មិនអាចនៅក្នុងកម្រងព័ត៌មាន ឬមានតម្លៃប្រភេទខុស</string>
+    <string name="item_file_problem_regex"><xliff:g id="dictionary" example="Speech dictionary">%1$s</xliff:g>៖ កន្សោមទៀងទាត់ត្រូវបានបដិសេធ៖ <xliff:g id="expression" example="(a+)+">%2$s</xliff:g></string>
+    <string name="item_file_problem_limit"><xliff:g id="kind" example="Symbol dictionary">%1$s</xliff:g>៖ យ៉ាងច្រើន <xliff:g id="number" example="500">%2$d</xliff:g> ធាតុ</string>
+    <string name="item_file_problem_more">មានច្រើនទៀតមិនបានរួមបញ្ចូល</string>
+    <plurals name="item_file_count_macros">
+        <item quantity="other"><xliff:g id="count" example="1">%d</xliff:g> ម៉ាក្រូ</item>
+    </plurals>
+    <plurals name="item_file_count_gesture_profiles">
+        <item quantity="other"><xliff:g id="count" example="1">%d</xliff:g> កម្រងព័ត៌មានចលនា</item>
+    </plurals>
+    <plurals name="item_file_count_keymaps">
+        <item quantity="other"><xliff:g id="count" example="1">%d</xliff:g> ផែនទីគ្រាប់ចុច</item>
+    </plurals>
+    <plurals name="item_file_count_apps">
+        <item quantity="other">ចលនា និងផ្លូវកាត់ក្ដារចុចរបស់កម្មវិធី <xliff:g id="count" example="1">%d</xliff:g></item>
+    </plurals>
+    <plurals name="item_file_count_settings_profiles">
+        <item quantity="other"><xliff:g id="count" example="1">%d</xliff:g> កម្រងព័ត៌មានការកំណត់</item>
+    </plurals>
+    <plurals name="item_file_count_speech_dictionary">
+        <item quantity="other"><xliff:g id="count" example="1">%d</xliff:g> ធាតុវចនានុក្រមការនិយាយ</item>
+    </plurals>
+    <plurals name="item_file_count_symbol_dictionary">
+        <item quantity="other"><xliff:g id="count" example="1">%d</xliff:g> ធាតុវចនានុក្រមនិមិត្តសញ្ញា</item>
+    </plurals>
+    <plurals name="item_file_count_braille_dictionary">
+        <item quantity="other"><xliff:g id="count" example="1">%d</xliff:g> ធាតុវចនានុក្រមអក្សរស្ទាប</item>
+    </plurals>
+    <plurals name="item_file_count_voice_commands">
+        <item quantity="other"><xliff:g id="count" example="1">%d</xliff:g> ពាក្យបញ្ជាដោយសំឡេងផ្ទាល់ខ្លួន</item>
+    </plurals>
+</resources>

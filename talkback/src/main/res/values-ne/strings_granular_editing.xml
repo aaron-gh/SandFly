@@ -46,4 +46,17 @@
     <string name="granular_editing_not_saved">बचत गरिएको छैन: पाठ क्षेत्र हराएको छ। पाठ प्रतिलिपि गरिएको छ।</string>
     <string name="granular_editing_no_text">सम्पादन गर्न कुनै पाठ छैन</string>
     <string name="granular_editing_password">पासवर्ड फिल्डहरूमा उपलब्ध छैन</string>
+    <plurals name="granular_editing_spaces">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> स्पेस</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> स्पेस</item>
+    </plurals>
+    <plurals name="granular_editing_new_lines">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> नयाँ लाइन</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> नयाँ लाइन</item>
+    </plurals>
+    <plurals name="granular_editing_tabs">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ट्याब</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> ट्याब</item>
+    </plurals>
+    <string name="granular_editing_blank_line">खाली लाइन</string>
 </resources>

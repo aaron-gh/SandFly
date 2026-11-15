@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_voice_commands">Komandat zanore</string>
+    <string name="title_pref_voice_commands_ai">Kupto komandat zanore me AI</string>
+    <string name="voice_commands_custom">Komandat zanore të personalizuara</string>
+    <string name="voice_command_add">Shto komandë zanore</string>
+    <string name="voice_command_phrase">Fraza</string>
+    <string name="voice_command_change_phrase">Ndrysho frazën</string>
+    <string name="voice_command_change_command">Ndrysho komandën</string>
+    <string name="voice_command_delete_confirm">Të fshihet <xliff:g id="phrase" example="Good morning">%1$s</xliff:g>?</string>
+    <string name="voice_command_phrase_exists"><xliff:g id="phrase" example="Good morning">%1$s</xliff:g> është tashmë komandë zanore</string>
+    <string name="voice_commands_not_understood">Nuk u kuptua: <xliff:g id="text" example="open the door">%1$s</xliff:g></string>
+    <string name="voice_commands_not_available">Nuk disponohet: <xliff:g id="name" example="Morning macro">%1$s</xliff:g></string>
+    <string name="voice_commands_not_found">Nuk u gjet: <xliff:g id="label" example="Settings">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app">Nuk ka aplikacion me emrin <xliff:g id="name" example="Signal">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app_for_action">Nuk ka aplikacion për këtë veprim</string>
+    <string name="voice_commands_calling">Po thirret <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_call_permission">Lejo thirrjet telefonike, pastaj thuaj komandën sërish.</string>
+    <string name="voice_commands_contacts_permission">Lejo qasjen te kontaktet, pastaj thuaj komandën sërish.</string>
+    <string name="voice_commands_no_contact">Nuk ka kontakt me emrin <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_contacts_several">Më shumë se një kontakt me emrin <xliff:g id="name" example="Sam">%1$s</xliff:g>: <xliff:g id="names" example="Sam Jones, Sam Smith">%2$s</xliff:g></string>
+    <string name="voice_commands_message_text">Mesazh për <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_message_confirm">Të dërgohet te <xliff:g id="name" example="Sam">%1$s</xliff:g>: <xliff:g id="text" example="I am on my way">%2$s</xliff:g>?</string>
+    <string name="voice_commands_message_confirm_result">Të dërgohet te <xliff:g id="name" example="Sam">%1$s</xliff:g>?</string>
+    <string name="voice_commands_message_not_sent">Mesazhi nuk u dërgua</string>
+    <string name="voice_commands_send_pressed">U shtyp Dërgo</string>
+    <string name="voice_commands_send_button">Dërgo</string>
+    <string name="voice_commands_no_description">Nuk u mor përshkrim</string>
+    <string name="voice_commands_copied">U kopjua</string>
+    <string-array name="voice_commands_chain_words">
+        <item>dhe pastaj</item>
+        <item>pastaj</item>
+        <item>pas kësaj</item>
+        <item>mandej</item>
+        <item>dhe mandej</item>
+    </string-array>
+    <string-array name="voice_commands_and_words">
+        <item>dhe</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_start">
+        <item>të lutem</item>
+        <item>ju lutem</item>
+        <item>mund të</item>
+        <item>a mund të</item>
+        <item>dua të</item>
+        <item>do të doja të</item>
+        <item>tani</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_end">
+        <item>të lutem</item>
+        <item>ju lutem</item>
+        <item>për mua</item>
+        <item>tani</item>
+    </string-array>
+    <string-array name="voice_commands_cancel_words">
+        <item>ndalo</item>
+        <item>anulo</item>
+        <item>lëre</item>
+        <item>harroje</item>
+        <item>s\'ka gjë</item>
+        <item>hesht</item>
+    </string-array>
+    <string-array name="voice_commands_yes">
+        <item>po</item>
+        <item>sigurisht</item>
+        <item>dërgo</item>
+        <item>dërgoje</item>
+        <item>në rregull</item>
+        <item>mirë</item>
+        <item>ok</item>
+        <item>okej</item>
+        <item>bëje</item>
+    </string-array>
+    <string-array name="voice_commands_sms_names">
+        <item>SMS</item>
+        <item>mesazh teksti</item>
+        <item>mesazhe</item>
+    </string-array>
+    <string-array name="voice_commands_send_image_description">
+        <item>dërgo përshkrimin e imazhit te {who}</item>
+        <item>dërgo përshkrimin e këtij imazhi te {who}</item>
+        <item>dërgo përshkrimin e fotos te {who}</item>
+        <item>dërgo përshkrimin e kësaj fotoje te {who}</item>
+    </string-array>
+    <string-array name="voice_commands_send_screen_description">
+        <item>dërgo përshkrimin e ekranit te {who}</item>
+        <item>dërgo përshkrimin e këtij ekrani te {who}</item>
+    </string-array>
+    <string-array name="voice_commands_send_previous">
+        <item>dërgoje te {who} në {app}</item>
+        <item>dërgoje te {who} me {app}</item>
+        <item>dërgoje te {who}</item>
+        <item>dërgo këtë te {who}</item>
+        <item>dërgo përshkrimin te {who}</item>
+        <item>ndaje me {who}</item>
+    </string-array>
+    <string-array name="voice_commands_message">
+        <item>dërgo një mesazh te {who} në {app} që thotë {text}</item>
+        <item>dërgo një mesazh te {who} me {app} që thotë {text}</item>
+        <item>dërgo një mesazh te {who} që thotë {text}</item>
+        <item>dërgo një mesazh te {whoandtext}</item>
+        <item>dërgo një mesazh {app} te {who} që thotë {text}</item>
+        <item>dërgo një mesazh {app} te {who}</item>
+        <item>dërgo mesazh te {who} {text}</item>
+        <item>shkruaj te {who} në {app} {text}</item>
+        <item>shkruaj te {who} {text}</item>
+        <item>shkruaj një SMS te {who} {text}</item>
+        <item>i thuaj {who} në {app} {text}</item>
+        <item>shkruaj te {whoandtext}</item>
+        <item>dërgo mesazh te {whoandtext}</item>
+    </string-array>
+    <string-array name="voice_commands_call">
+        <item>thirr {who}</item>
+        <item>telefono {who}</item>
+        <item>merr {who} në telefon</item>
+        <item>bëj një thirrje te {who}</item>
+        <item>formo numrin {who}</item>
+    </string-array>
+    <string-array name="voice_commands_describe_screen">
+        <item>përshkruaj ekranin</item>
+        <item>përshkruaj çfarë ka në ekran</item>
+        <item>çfarë ka në ekran</item>
+        <item>çfarë ka në ekranin tim</item>
+    </string-array>
+    <string-array name="voice_commands_describe_image">
+        <item>përshkruaj [këtë] imazh</item>
+        <item>përshkruaj [këtë] foto</item>
+        <item>çfarë ka në [këtë] imazh</item>
+        <item>çfarë ka në [këtë] foto</item>
+    </string-array>
+    <string-array name="voice_commands_copy_result">
+        <item>kopjoje</item>
+        <item>kopjo përshkrimin</item>
+        <item>kopjo frazën e fundit</item>
+        <item>kopjo të fundit të folurën</item>
+        <item>kopjo çfarë the [pikërisht]</item>
+    </string-array>
+    <string-array name="voice_commands_wait">
+        <item>prit {n} sekonda</item>
+        <item>prit {n} sekondë</item>
+        <item>prit [një] sekondë</item>
+        <item>prit</item>
+    </string-array>
+    <string-array name="voice_commands_type_text">
+        <item>shkruaj {text}</item>
+        <item>vendos {text}</item>
+        <item>fut {text}</item>
+    </string-array>
+    <string-array name="voice_commands_run">
+        <item>ekzekuto makron {command}</item>
+        <item>ekzekuto komandën {command}</item>
+        <item>ekzekuto {command}</item>
+        <item>bëj {command}</item>
+    </string-array>
+    <string-array name="voice_commands_open">
+        <item>hap {app}</item>
+        <item>hap aplikacionin {app}</item>
+        <item>nis {app}</item>
+        <item>kalo te {app}</item>
+    </string-array>
+    <string-array name="voice_commands_tap">
+        <item>trokit dy herë te {label}</item>
+        <item>trokit te {label}</item>
+        <item>kliko te {label}</item>
+        <item>shtyp {label}</item>
+        <item>aktivizo {label}</item>
+        <item>zgjidh {label}</item>
+    </string-array>
+</resources>

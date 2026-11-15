@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_macros">Makroak</string>
+    <string name="shortcut_stop_macro">Gelditu makroa</string>
+    <string name="macro_add">Gehitu makroa</string>
+    <string name="macro_run_now">Exekutatu orain</string>
+    <string name="macro_add_step">Gehitu urratsa</string>
+    <string name="macro_add_at_end">Amaieran</string>
+    <string name="macro_add_at_start">Hasieran</string>
+    <string name="macro_add_after"><xliff:g id="step" example="2">%1$d</xliff:g>. urratsaren ondoren: <xliff:g id="name" example="If App in front: Chrome">%2$s</xliff:g></string>
+    <string name="macro_steps">Urratsak</string>
+    <string name="macro_no_steps">Urratsik ez</string>
+    <string name="macro_delete">Ezabatu makroa</string>
+    <string name="macro_delete_confirm"><xliff:g id="name" example="Send message">%1$s</xliff:g> ezabatu nahi duzu?</string>
+    <string name="macro_step_command">Exekutatu agindua</string>
+    <string name="macro_step_wait">Itxaron</string>
+    <string name="macro_step_tap">Sakatu elementua</string>
+    <string name="macro_step_focus">Fokuratu elementua</string>
+    <string name="macro_step_speak_item">Irakurri elementua</string>
+    <string name="macro_step_speak_text">Irakurri testua</string>
+    <string name="macro_step_type">Idatzi testua</string>
+    <string name="macro_step_tap_value">Sakatu <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_focus_value">Fokuratu <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_item_value">Irakurri <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_text_value">Irakurri <xliff:g id="text" example="Done">%1$s</xliff:g></string>
+    <string name="macro_step_type_value">Idatzi <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <string name="macro_step_replace_value">Ordeztu testua honekin: <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <plurals name="macro_step_wait_seconds">
+        <item quantity="one">Itxaron <xliff:g id="count" example="1">%d</xliff:g> segundo</item>
+        <item quantity="other">Itxaron <xliff:g id="count" example="1">%d</xliff:g> segundo</item>
+    </plurals>
+    <plurals name="macro_step_wait_milliseconds">
+        <item quantity="one">Itxaron <xliff:g id="count" example="1">%d</xliff:g> milisegundo</item>
+        <item quantity="other">Itxaron <xliff:g id="count" example="1">%d</xliff:g> milisegundo</item>
+    </plurals>
+    <string name="macro_step_unavailable">Ez dago erabilgarri</string>
+    <string name="macro_seconds">Segundoak</string>
+    <string name="macro_invalid_seconds">Sartu <xliff:g id="max" example="600">%1$d</xliff:g> arteko segundo kopuru bat</string>
+    <string name="macro_tap_label">Elementuaren testua</string>
+    <string name="macro_tap_timeout">Elementuaren zain egoteko segundoak</string>
+    <string name="macro_text">Testua</string>
+    <string name="macro_replace_text">Ordeztu eremuko testua</string>
+    <string name="macro_item_not_found">Makroa gelditu da. Ez da aurkitu: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_failed">Makroa gelditu da. Huts egin du: <xliff:g id="step" example="Open Gmail">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until">Itxaron hau bete arte</string>
+    <string name="macro_step_if">Baldin</string>
+    <string name="macro_step_else_if">Bestela baldin</string>
+    <string name="macro_step_else">Bestela</string>
+    <string name="macro_step_end_if">Baldinaren amaiera</string>
+    <string name="macro_step_repeat">Errepikatu</string>
+    <string name="macro_step_repeat_while">Errepikatu bitartean</string>
+    <string name="macro_step_end_repeat">Errepikapenaren amaiera</string>
+    <string name="macro_step_exit_loop">Irten begiztatik</string>
+    <string name="macro_step_if_value">Baldin <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_else_if_value">Bestela baldin <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_repeat_while_value">Errepikatu bitartean <xliff:g id="condition" example="Item on screen: Load more">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until_value">Itxaron hau bete arte: <xliff:g id="condition" example="Item on screen: Send">%1$s</xliff:g></string>
+    <plurals name="macro_step_repeat_value">
+        <item quantity="one">Errepikatu <xliff:g id="count" example="1">%d</xliff:g> aldiz</item>
+        <item quantity="other">Errepikatu <xliff:g id="count" example="1">%d</xliff:g> aldiz</item>
+    </plurals>
+    <string name="macro_times">Aldiak</string>
+    <string name="macro_invalid_times">Sartu 1etik <xliff:g id="max" example="1000">%1$d</xliff:g>ra bitarteko zenbaki bat</string>
+    <string name="macro_run_only_when">Exekutatu hau betetzen bada soilik</string>
+    <string name="macro_always">Beti</string>
+    <string name="macro_no_tests">Probarik ez</string>
+    <string name="macro_add_test">Gehitu proba</string>
+    <string name="macro_tests">Probak</string>
+    <string name="macro_choose_test">Proba</string>
+    <string name="macro_test_item">Elementua pantailan</string>
+    <string name="macro_test_focused">Fokuratutako elementua</string>
+    <string name="macro_test_app">Aplikazioa aurreko planoan</string>
+    <string name="macro_test_keyboard">Teklatua erakutsita</string>
+    <string name="macro_test_keyboard_hidden">Teklatua ezkutatuta</string>
+    <string name="macro_test_locked">Pantaila blokeatuta</string>
+    <string name="macro_test_unlocked">Pantaila desblokeatuta</string>
+    <string name="macro_test_item_value">Elementua pantailan: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_no_item_value">Elementurik ez pantailan: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_focused_value">Fokuratutako elementua: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_not_focused_value">Fokuratutako elementua ez da: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_app_value">Aplikazioa aurreko planoan: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_not_app_value">Aplikazioa ez dago aurreko planoan: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_label_kind"><xliff:g id="label" example="Send">%1$s</xliff:g>, <xliff:g id="kind" example="Clickable">%2$s</xliff:g></string>
+    <string name="macro_join_and"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g> eta <xliff:g id="second" example="Focused item: Editable">%2$s</xliff:g></string>
+    <string name="macro_join_or"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g>, edo <xliff:g id="second" example="Screen locked">%2$s</xliff:g></string>
+    <string name="macro_regex">Adierazpen erregularra</string>
+    <string name="macro_invalid_regex">Ez da erabil daitekeen adierazpen erregular bat. Errepikatutako taldeek ezin dute errepikapenik edo | izan.</string>
+    <string name="macro_match_in">Bilatu hemen</string>
+    <string name="macro_field_any">Edozein testu</string>
+    <string name="macro_field_text">Testua</string>
+    <string name="macro_field_description">Azalpena</string>
+    <string name="macro_field_hint">Pista</string>
+    <string name="macro_field_state">Egoera</string>
+    <string name="macro_field_id">Baliabidearen IDa</string>
+    <string name="macro_field_value"><xliff:g id="label" example="send">%1$s</xliff:g> (<xliff:g id="field" example="Resource ID">%2$s</xliff:g>)</string>
+    <string name="macro_field_regex_value"><xliff:g id="pattern" example="^Reply">%1$s</xliff:g> (<xliff:g id="field" example="Description">%2$s</xliff:g>, adierazpen erregularra)</string>
+    <string name="macro_regex_value"><xliff:g id="pattern" example="Reply.*Anna">%1$s</xliff:g> (adierazpen erregularra)</string>
+    <string name="macro_test_label_optional">Elementuaren testua (aukerakoa)</string>
+    <string name="macro_item_kind">Elementu mota</string>
+    <string name="macro_kind_any">Edozein mota</string>
+    <string name="macro_kind_clickable">Sakagarria</string>
+    <string name="macro_kind_long_clickable">Luze sakagarria</string>
+    <string name="macro_kind_editable">Editagarria</string>
+    <string name="macro_kind_scrollable">Korritzeko modukoa</string>
+    <string name="macro_kind_adjustable">Doigarria</string>
+    <string name="macro_kind_checkable">Markatzeko modukoa</string>
+    <string name="macro_kind_checked">Markatuta</string>
+    <string name="macro_kind_selected">Hautatuta</string>
+    <string name="macro_kind_heading">Goiburua</string>
+    <string name="macro_kind_enabled">Gaituta</string>
+    <string name="macro_change_to">Aldatu hona: <xliff:g id="test" example="Keyboard hidden">%1$s</xliff:g></string>
+    <string name="macro_join_with_and">Lotu \"eta\" bidez</string>
+    <string name="macro_join_with_or">Lotu \"edo\" bidez</string>
+    <string name="macro_clause_and">eta <xliff:g id="test" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_clause_or">edo <xliff:g id="test" example="Screen locked">%1$s</xliff:g></string>
+    <string name="macro_wait_timeout">Itxaroteko segundoak</string>
+    <string name="macro_add_step_after">Gehitu urratsa ondoren</string>
+    <string name="macro_problem"><xliff:g id="step" example="3">%1$d</xliff:g>. urratsa: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_problem_no_if">Bestela baldin, Bestela edo Baldinaren amaiera Baldin gabe</string>
+    <string name="macro_problem_after_else">Bestela baldin edo Bestela, Bestela ondoren</string>
+    <string name="macro_problem_no_repeat">Errepikapenaren amaiera Errepikatu gabe</string>
+    <string name="macro_problem_no_end_if">Baldin Baldinaren amaiera gabe</string>
+    <string name="macro_problem_no_end_repeat">Errepikatu Errepikapenaren amaiera gabe</string>
+    <string name="macro_problem_exit">Irten begiztatik errepikapenetik kanpo</string>
+    <string name="macro_stopped_problem">Makroa gelditu da. <xliff:g id="step" example="3">%1$d</xliff:g>. urratsa: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_stopped_repeats">Makroa gelditu da. <xliff:g id="count" example="1000">%1$d</xliff:g> aldiz errepikatu da: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
+    <string name="macro_stopped_timeout">Makroa gelditu da. Denbora-muga amaitu da: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
+    <string name="macro_not_met">Makroa ez da exekutatu. Exekutatu hau betetzen bada soilik: ez da bete</string>
+</resources>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_voice_commands">Mga command gamit ang boses</string>
+    <string name="title_pref_voice_commands_ai">Unawain ang mga command gamit ang boses gamit ang AI</string>
+    <string name="voice_commands_custom">Mga custom na command gamit ang boses</string>
+    <string name="voice_command_add">Magdagdag ng command gamit ang boses</string>
+    <string name="voice_command_phrase">Parirala</string>
+    <string name="voice_command_change_phrase">Palitan ang parirala</string>
+    <string name="voice_command_change_command">Palitan ang command</string>
+    <string name="voice_command_delete_confirm">I-delete ang <xliff:g id="phrase" example="Good morning">%1$s</xliff:g>?</string>
+    <string name="voice_command_phrase_exists">Command na gamit ang boses na ang <xliff:g id="phrase" example="Good morning">%1$s</xliff:g></string>
+    <string name="voice_commands_not_understood">Hindi naunawaan: <xliff:g id="text" example="open the door">%1$s</xliff:g></string>
+    <string name="voice_commands_not_available">Hindi available: <xliff:g id="name" example="Morning macro">%1$s</xliff:g></string>
+    <string name="voice_commands_not_found">Hindi nahanap: <xliff:g id="label" example="Settings">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app">Walang app na may pangalang <xliff:g id="name" example="Signal">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app_for_action">Walang app para sa pagkilos na ito</string>
+    <string name="voice_commands_calling">Tinatawagan si <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_call_permission">Payagan ang mga tawag sa telepono, pagkatapos ay sabihin ulit ang command.</string>
+    <string name="voice_commands_contacts_permission">Payagan ang access sa mga contact, pagkatapos ay sabihin ulit ang command.</string>
+    <string name="voice_commands_no_contact">Walang contact na may pangalang <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_contacts_several">Higit sa isang contact ang may pangalang <xliff:g id="name" example="Sam">%1$s</xliff:g>: <xliff:g id="names" example="Sam Jones, Sam Smith">%2$s</xliff:g></string>
+    <string name="voice_commands_message_text">Mensahe para kay <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_message_confirm">Ipadala kay <xliff:g id="name" example="Sam">%1$s</xliff:g>: <xliff:g id="text" example="I am on my way">%2$s</xliff:g>?</string>
+    <string name="voice_commands_message_confirm_result">Ipadala kay <xliff:g id="name" example="Sam">%1$s</xliff:g>?</string>
+    <string name="voice_commands_message_not_sent">Hindi naipadala ang mensahe</string>
+    <string name="voice_commands_send_pressed">Pinindot ang Ipadala</string>
+    <string name="voice_commands_send_button">Ipadala</string>
+    <string name="voice_commands_no_description">Walang natanggap na paglalarawan</string>
+    <string name="voice_commands_copied">Nakopya</string>
+    <string-array name="voice_commands_chain_words">
+        <item>tapos</item>
+        <item>pagkatapos noon</item>
+        <item>pagkatapos nito</item>
+        <item>sunod</item>
+        <item>at pagkatapos</item>
+    </string-array>
+    <string-array name="voice_commands_and_words">
+        <item>at</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_start">
+        <item>pakiusap</item>
+        <item>paki</item>
+        <item>maaari mo bang</item>
+        <item>puwede mo bang</item>
+        <item>gusto kong</item>
+        <item>ngayon</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_end">
+        <item>pakiusap</item>
+        <item>para sa akin</item>
+        <item>ngayon</item>
+    </string-array>
+    <string-array name="voice_commands_cancel_words">
+        <item>ihinto</item>
+        <item>itigil</item>
+        <item>kanselahin</item>
+        <item>cancel</item>
+        <item>stop</item>
+        <item>huwag na</item>
+        <item>kalimutan mo na</item>
+        <item>tumahimik ka</item>
+    </string-array>
+    <string-array name="voice_commands_yes">
+        <item>oo</item>
+        <item>opo</item>
+        <item>sige</item>
+        <item>ipadala</item>
+        <item>ipadala mo</item>
+        <item>ok</item>
+        <item>okay</item>
+        <item>syempre</item>
+        <item>gawin mo</item>
+    </string-array>
+    <string-array name="voice_commands_sms_names">
+        <item>SMS</item>
+        <item>text</item>
+        <item>text message</item>
+        <item>mga mensahe</item>
+    </string-array>
+    <string-array name="voice_commands_send_image_description">
+        <item>ipadala ang paglalarawan ng larawan kay {who}</item>
+        <item>ipadala kay {who} ang paglalarawan ng larawan</item>
+        <item>ipadala ang paglalarawan ng [larawang|litratong] ito kay {who}</item>
+        <item>ipadala ang paglalarawan ng litrato kay {who}</item>
+    </string-array>
+    <string-array name="voice_commands_send_screen_description">
+        <item>ipadala ang paglalarawan ng screen kay {who}</item>
+        <item>ipadala kay {who} ang paglalarawan ng screen</item>
+        <item>ipadala ang paglalarawan ng screen na ito kay {who}</item>
+    </string-array>
+    <string-array name="voice_commands_send_previous">
+        <item>ipadala kay {who} sa {app}</item>
+        <item>ipadala ito kay {who} sa {app}</item>
+        <item>ipadala kay {who}</item>
+        <item>ipadala ito kay {who}</item>
+        <item>ipadala ang paglalarawan kay {who}</item>
+        <item>ibahagi ito kay {who}</item>
+    </string-array>
+    <string-array name="voice_commands_message">
+        <item>magpadala ng mensahe kay {who} sa {app} na nagsasabing {text}</item>
+        <item>magpadala ng mensahe kay {who} sa {app}: {text}</item>
+        <item>magpadala ng mensahe kay {who} na nagsasabing {text}</item>
+        <item>magpadala ng mensahe kay {who}: {text}</item>
+        <item>magpadala ng mensahe kay {whoandtext}</item>
+        <item>magpadala ng mensahe sa {app} kay {who} na nagsasabing {text}</item>
+        <item>magpadala ng mensahe sa {app} kay {who}</item>
+        <item>padalhan si {who} ng mensaheng nagsasabing {text}</item>
+        <item>padalhan ng mensahe si {who} sa {app}: {text}</item>
+        <item>i-message si {who} sa {app} na nagsasabing {text}</item>
+        <item>i-message si {who} na nagsasabing {text}</item>
+        <item>i-text si {who} na nagsasabing {text}</item>
+        <item>sabihin kay {who} sa {app} {text}</item>
+        <item>i-message si {whoandtext}</item>
+        <item>i-text si {whoandtext}</item>
+    </string-array>
+    <string-array name="voice_commands_call">
+        <item>tawagan si {who}</item>
+        <item>tumawag kay {who}</item>
+        <item>i-dial si {who}</item>
+        <item>i-call si {who}</item>
+        <item>makipag-ugnayan kay {who}</item>
+    </string-array>
+    <string-array name="voice_commands_describe_screen">
+        <item>ilarawan ang screen</item>
+        <item>ilarawan kung ano ang nasa screen</item>
+        <item>ano ang nasa screen</item>
+        <item>ano ang nasa [aking] screen</item>
+    </string-array>
+    <string-array name="voice_commands_describe_image">
+        <item>ilarawan ang [larawang|litratong] ito</item>
+        <item>ilarawan ang larawan</item>
+        <item>ilarawan ang litrato</item>
+        <item>ano ang nasa [larawang|litratong] ito</item>
+        <item>ano ang nasa larawan</item>
+        <item>ano ang nasa litrato</item>
+    </string-array>
+    <string-array name="voice_commands_copy_result">
+        <item>kopyahin ito</item>
+        <item>kopyahin iyon</item>
+        <item>kopyahin ang paglalarawan</item>
+        <item>kopyahin ang sinabi mo [kanina]</item>
+        <item>kopyahin ang huling binigkas na parirala</item>
+        <item>kopyahin ang huling parirala</item>
+        <item>kopyahin ang huling sinabi</item>
+    </string-array>
+    <string-array name="voice_commands_wait">
+        <item>maghintay ng {n} segundo</item>
+        <item>maghintay ng isang segundo</item>
+        <item>maghintay</item>
+    </string-array>
+    <string-array name="voice_commands_type_text">
+        <item>i-type ang {text}</item>
+        <item>isulat ang {text}</item>
+        <item>ilagay ang {text}</item>
+    </string-array>
+    <string-array name="voice_commands_run">
+        <item>patakbuhin ang macro na {command}</item>
+        <item>patakbuhin ang {command}</item>
+        <item>gawin ang {command}</item>
+    </string-array>
+    <string-array name="voice_commands_open">
+        <item>buksan ang {app}</item>
+        <item>ilunsad ang {app}</item>
+        <item>simulan ang {app}</item>
+        <item>lumipat sa {app}</item>
+    </string-array>
+    <string-array name="voice_commands_tap">
+        <item>mag-double tap sa {label}</item>
+        <item>i-double tap ang {label}</item>
+        <item>mag-tap sa {label}</item>
+        <item>i-tap ang {label}</item>
+        <item>i-click ang {label}</item>
+        <item>pindutin ang {label}</item>
+        <item>i-activate ang {label}</item>
+        <item>piliin ang {label}</item>
+    </string-array>
+</resources>

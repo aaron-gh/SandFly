@@ -28,6 +28,7 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.RuntimeEnvironment
+import org.robolectric.Shadows.shadowOf
 import org.robolectric.annotation.Config
 import org.robolectric.util.ReflectionHelpers
 
@@ -289,5 +290,90 @@ class WebFocusPathTest {
     b.add(a)
     assertEquals(2, descriptions(record(a).ancestorIdentityPath).size)
     assertEquals(2, descriptions(NodePathDescription.obtain(a)).size)
+  }
+  @Test fun aNestedFrameRecordsTheOutermostDocumentIdentity() {
+    val leaf = Node("leaf", web = true)
+    val inner = Node("inner", web = true).apply {
+      uniqueId = "inner-document"
+      extras.putString("AccessibilityNodeInfo.chromeRole", "rootWebArea")
+      add(leaf)
+    }
+    val outer = Node("outer", web = true).apply {
+      uniqueId = "outer-document"
+      extras.putString("AccessibilityNodeInfo.chromeRole", "rootWebArea")
+      add(inner)
+    }
+    Node("native host").apply { add(outer) }
+    assertEquals("outer-document", record(leaf).ancestorIdentityPath.savedChromiumDocument!!.uniqueId)
+  }
+
+  @Test fun aRemovedProviderIsNotSearchedAmongItsParentsReplacementChildren() {
+    val root = Node("root")
+    val frame = Node("frame")
+    val host = Node("host").apply { className = "android.webkit.WebView" }
+    val document = Node("document", web = true)
+    val leaf = Node("focused item", web = true)
+    root.add(Node("before frame"), frame)
+    frame.add(host)
+    host.add(document)
+    document.add(leaf)
+    val record = record(leaf)
+    shadowOf(host.unwrap()).setRefreshReturnValue(false)
+    host.failChildReads = true
+    document.failChildReads = true
+    frame.children.clear()
+    repeat(40) { frame.add(Node("replacement $it")) }
+
+    val path = descriptions(record.nodePathDescription)
+
+    assertEquals(0, frame.childReads)
+    assertEquals(-1, path[2].rawIndexInParent) // Missing native host, never in the new children.
+    assertEquals(1, path[3].rawIndexInParent) // Its live frame still gets normal context.
+    assertEquals("focused item", path[0].text.toString())
+  }
+
+  @Test fun aReplacedDocumentIsNotSearchedWhileItsNativeHostSurvives() {
+    val frame = Node("frame")
+    val host = Node("host").apply { className = "android.webkit.WebView" }
+    val document = Node("old document", web = true).apply {
+      extras.putString("AccessibilityNodeInfo.chromeRole", "rootWebArea")
+    }
+    val leaf = Node("focused item", web = true)
+    frame.add(host)
+    host.add(document)
+    document.add(leaf)
+    val record = record(leaf)
+    shadowOf(document.unwrap()).setRefreshReturnValue(false)
+    shadowOf(host.unwrap()).setRefreshReturnValue(true)
+    document.failChildReads = true
+    host.children.clear()
+    repeat(40) { host.add(Node("new document $it", web = true)) }
+
+    val path = descriptions(record.nodePathDescription)
+
+    assertEquals(0, host.childReads)
+    assertEquals(-1, path[1].rawIndexInParent)
+    assertEquals(0, path[2].rawIndexInParent)
+    assertEquals("focused item", path[0].text.toString())
+  }
+
+  @Test @Config(sdk = [32]) fun aRemovedProviderIsStillScopedWithoutParallelNodeQueries() {
+    aRemovedProviderIsNotSearchedAmongItsParentsReplacementChildren()
+  }
+
+  @Test fun aRemovedMiddleAncestorDoesNotScanItsParentsReplacementChildren() {
+    val tree = Tree()
+    val record = record(tree.leaf)
+    tree.root.children.clear()
+    repeat(40) { tree.root.add(Node("replacement $it", web = true)) }
+    val path = record.ancestorIdentityPath
+
+    path.addSiblingContext(1, NodePathDescription.Deadline.none(),
+      mapOf<AccessibilityNodeInfoCompat, AccessibilityNodeInfoCompat?>(tree.group to null))
+
+    assertEquals(0, tree.root.childReads)
+    assertEquals(-1, descriptions(path)[1].rawIndexInParent)
+    assertEquals(1, descriptions(path)[0].rawIndexInParent)
+    assertEquals("leaf", descriptions(path)[0].text.toString())
   }
 }

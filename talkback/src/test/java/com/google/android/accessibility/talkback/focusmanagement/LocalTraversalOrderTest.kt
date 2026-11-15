@@ -72,6 +72,8 @@ class LocalTraversalOrderTest {
 
     override fun getParent(): AccessibilityNodeInfoCompat? = up
 
+    override fun getParent(prefetchingStrategy: Int): AccessibilityNodeInfoCompat? = up
+
     override fun getTraversalBefore(): AccessibilityNodeInfoCompat? = before
 
     override fun getTraversalAfter(): AccessibilityNodeInfoCompat? = after

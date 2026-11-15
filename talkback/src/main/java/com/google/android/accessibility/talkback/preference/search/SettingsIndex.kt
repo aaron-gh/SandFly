@@ -388,6 +388,7 @@ object SettingsIndex {
     hideIf(true, R.string.pref_survey_setting_entry_point_key)
     hideIf(!BrailleFragment.isSupported(context), "pref_braille_screen")
     hideIf(Distribution.IS_PLAY, "pref_updates_screen")
+    hideIf(Distribution.IS_PLAY, "pref_shizuku_root_screen")
     hideIf(!ImageCaptioner.supportsImageCaption(context), R.string.pref_auto_image_captioning_key)
     // During setup.
     hideIf(!SettingsUtils.allowLinksOutOfSettings(context), R.string.pref_manage_labels_key)
@@ -464,6 +465,7 @@ object SettingsIndex {
     hideIf(noAiActions, R.string.pref_selector_ai_actions_key)
     hideIf(noAiActions, R.string.pref_ai_actions_included_key)
     hideIf(!FeatureSupport.doesServiceHandleDoubleTap(), R.string.pref_selector_text_entities_key)
+    hideIf(!FeatureSupport.doesServiceHandleDoubleTap(), R.string.pref_selector_clipboard_history_key)
 
     // ContextMenuFragment.
     hideIf(

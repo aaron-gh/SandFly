@@ -2025,4 +2025,144 @@
     <string name="value_keep_models_5">5 mínútur</string>
     <string name="value_keep_models_15">15 mínútur</string>
     <string name="value_keep_models_30">30 mínútur</string>
+    <string name="title_pref_speech_equalizer_save_preset">Vista sem forstillingu</string>
+    <string name="title_pref_speech_equalizer_saved_presets">Vistaðar forstillingar</string>
+    <string name="speech_equalizer_preset_name">Heiti</string>
+    <string name="speech_equalizer_preset_name_taken">Forstilling heitir nú þegar <xliff:g id="name" example="Podcast">%1$s</xliff:g></string>
+    <string name="speech_equalizer_presets_full">Ekki er hægt að vista fleiri forstillingar. Eyddu einni til að vista aðra.</string>
+    <string name="speech_equalizer_preset_saved"><xliff:g id="name" example="Podcast">%1$s</xliff:g> vistað</string>
+    <string name="speech_equalizer_preset_rename">Endurnefna</string>
+    <string name="speech_equalizer_preset_delete">Eyða</string>
+    <string name="speech_equalizer_preset_delete_confirm">Eyða <xliff:g id="name" example="Podcast">%1$s</xliff:g>?</string>
+    <string name="speech_equalizer_preset_deleted"><xliff:g id="name" example="Podcast">%1$s</xliff:g> eytt</string>
+    <string name="title_pref_emoji_voice">Rödd fyrir emoji</string>
+    <string name="value_emoji_voice_same">Sama og tal</string>
+    <string name="title_pref_emoji_rate">Talhraði fyrir emoji</string>
+    <string name="title_pref_line_breaks_as_spaces">Lesa línuskil sem bil</string>
+    <string name="title_pref_language_voices">Raddir eftir tungumáli</string>
+    <string name="title_pref_identify_languages_from_words">Greina tungumál út frá orðum</string>
+    <string name="title_pref_add_language">Bæta við tungumáli</string>
+    <string name="title_pref_remove_language">Fjarlægja tungumál</string>
+    <string name="title_pref_script_language">Letur: %1$s</string>
+    <string name="title_pref_screen_on_notification_count">Fjöldi tilkynninga</string>
+    <plurals name="template_screen_on_notification_count">
+        <item quantity="one"><xliff:g id="count" example="6">%d</xliff:g> tilkynning</item>
+        <item quantity="other"><xliff:g id="count" example="6">%d</xliff:g> tilkynningar</item>
+    </plurals>
+    <string name="title_pref_phonetic_letters_review">Lesa bókstafi upp hljóðrænt við yfirferð</string>
+    <string name="title_pref_phonetic_letters_typing">Lesa bókstafi upp hljóðrænt við innslátt</string>
+    <string name="title_pref_emoji_suffix">Segja „emoji“ á eftir heitum emoji</string>
+    <string name="overview_shizuku_not_running">Shizuku er ekki í gangi</string>
+    <string name="overview_shizuku_not_allowed">Shizuku leyfir ekki SandFly</string>
+    <string name="overview_no_older_app">Ekkert eldra forrit</string>
+    <string name="overview_no_newer_app">Ekkert nýrra forrit</string>
+    <string name="stream_volume_needs_access">Veittu aðgang að Ónáðið ekki til að breyta þessum hljóðstyrk.</string>
+    <string name="corner_gestures_title">Horn</string>
+    <string name="shortcut_move_to_item_below">Fara í atriðið fyrir neðan</string>
+    <string name="shortcut_move_to_item_above">Fara í atriðið fyrir ofan</string>
+    <string name="shortcut_older_app">Eldra forrit</string>
+    <string name="shortcut_newer_app">Nýrra forrit</string>
+    <string name="shortcut_answer_call">Svara símtali</string>
+    <string name="answer_call_no_call">Ekkert innhringt símtal</string>
+    <string name="answer_call_permission">Heimild þarf til að svara símtölum</string>
+    <string name="shortcut_switch_keyboard">Skipta um lyklaborð</string>
+    <string name="switch_keyboard_none">Ekkert annað lyklaborð er virkt</string>
+    <string name="switch_keyboard_failed">Lyklaborði var ekki skipt</string>
+    <string name="clipboard_history_hint">Strjúktu upp eða niður til að velja og ýttu svo tvisvar til að líma</string>
+    <string name="title_speech_history">Saga tals</string>
+    <string name="speech_history_empty">Ekkert tal</string>
+    <string name="speech_history_clear">Hreinsa sögu</string>
+    <string name="title_pref_shortcut_corner_top_left_tap">Ýttu á efra vinstra horn</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap">Ýttu tvisvar á efra vinstra horn</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap">Ýttu þrisvar á efra vinstra horn</string>
+    <string name="title_pref_shortcut_corner_top_left_double_tap_hold">Ýttu tvisvar og haltu inni á efra vinstra horn</string>
+    <string name="title_pref_shortcut_corner_top_left_triple_tap_hold">Ýttu þrisvar og haltu inni á efra vinstra horn</string>
+    <string name="title_pref_shortcut_corner_top_right_tap">Ýttu á efra hægra horn</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap">Ýttu tvisvar á efra hægra horn</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap">Ýttu þrisvar á efra hægra horn</string>
+    <string name="title_pref_shortcut_corner_top_right_double_tap_hold">Ýttu tvisvar og haltu inni á efra hægra horn</string>
+    <string name="title_pref_shortcut_corner_top_right_triple_tap_hold">Ýttu þrisvar og haltu inni á efra hægra horn</string>
+    <string name="title_pref_shortcut_corner_bottom_left_tap">Ýttu á neðra vinstra horn</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap">Ýttu tvisvar á neðra vinstra horn</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap">Ýttu þrisvar á neðra vinstra horn</string>
+    <string name="title_pref_shortcut_corner_bottom_left_double_tap_hold">Ýttu tvisvar og haltu inni á neðra vinstra horn</string>
+    <string name="title_pref_shortcut_corner_bottom_left_triple_tap_hold">Ýttu þrisvar og haltu inni á neðra vinstra horn</string>
+    <string name="title_pref_shortcut_corner_bottom_right_tap">Ýttu á neðra hægra horn</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap">Ýttu tvisvar á neðra hægra horn</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap">Ýttu þrisvar á neðra hægra horn</string>
+    <string name="title_pref_shortcut_corner_bottom_right_double_tap_hold">Ýttu tvisvar og haltu inni á neðra hægra horn</string>
+    <string name="title_pref_shortcut_corner_bottom_right_triple_tap_hold">Ýttu þrisvar og haltu inni á neðra hægra horn</string>
+    <string name="title_pref_swipe_start_time">Upphafstími bendingar</string>
+    <string name="title_pref_swipes_before_lift">Þekkja strok áður en fingri er lyft</string>
+    <string name="summary_pref_swipes_before_lift">Slekkur á bendingum fram og til baka og hornbendingum.</string>
+    <string name="title_pref_corner_size_mm">Stærð horna</string>
+    <string name="value_corner_size_edge_width">Sama og breidd brúnar</string>
+    <string name="title_pref_corner_tap_time_ms">Tímamörk fyrir ýtingu á horn</string>
+    <string name="value_corner_tap_time_system">Sjálfgefið í kerfinu</string>
+    <string name="title_pref_edge_speak_commands">Lesa upp skipun við hvern smell</string>
+    <string-array name="pref_volume_change_feedback_entries">
+        <item>@string/volume_change_feedback_off</item>
+        <item>@string/volume_change_feedback_tone</item>
+        <item>@string/volume_change_feedback_spoken</item>
+        <item>@string/volume_change_feedback_tone_and_spoken</item>
+    </string-array>
+    <string name="title_pref_volume_change_tone_during_media">Þagga tón við spilun miðla</string>
+    <string name="title_pref_volume_change_speech_during_media">Þagga tal við spilun miðla</string>
+    <string name="title_pref_volume_change_interrupts_speech">Rjúfa tal til að lesa upp hljóðstyrk</string>
+    <string name="title_pref_volume_keys_speech_volume_while_speaking">Hljóðstyrkstakkar breyta talstyrk meðan talað er</string>
+    <string name="title_pref_double_tap_moves_cursor">Að ýta tvisvar færir bendil í upphaf eða lok</string>
+    <string name="title_pref_scroll_ahead">Fletta áfram í næsta atriði</string>
+    <string name="title_pref_speak_while_scrolling">Lesa næsta atriði upp við flettingu</string>
+    <string-array name="pref_text_entities_entries">
+    <item>@string/text_entity_web</item>
+    <item>@string/text_entity_email</item>
+    <item>@string/text_entity_phone</item>
+    <item>@string/text_entity_code</item>
+  </string-array>
+    <string name="value_keep_models_until_stopped">Þar til SandFly stöðvast</string>
+    <string name="title_pref_model_download_server">Netþjónn fyrir niðurhal líkana</string>
+    <string name="title_pref_settings_profiles">Stillingasnið</string>
+    <string name="title_pref_new_settings_profile">Nýtt stillingasnið</string>
+    <string name="settings_profile_new_name">Snið <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="settings_profile_name_taken">Stillingasnið heitir nú þegar <xliff:g id="name" example="Demo">%1$s</xliff:g></string>
+    <string name="settings_profile_in_use">Í notkun</string>
+    <string name="settings_profile_menu_item_in_use"><xliff:g id="name" example="Demo">%1$s</xliff:g>, í notkun</string>
+    <string name="settings_profile_none">Ekkert stillingasnið</string>
+    <string name="settings_profile_use_now">Nota núna</string>
+    <string name="settings_profile_stop_using">Hætta notkun</string>
+    <string name="settings_profile_change_settings">Breyta stillingum</string>
+    <string name="settings_profile_editing">Breytingar fara í <xliff:g id="name" example="Messaging">%1$s</xliff:g></string>
+    <string name="settings_profile_edit_saved">Breytingar vistaðar í <xliff:g id="name" example="Messaging">%1$s</xliff:g></string>
+    <string name="settings_profile_use_automatically">Nota sjálfkrafa</string>
+    <string name="settings_profile_web">Vefefni</string>
+    <string name="settings_profile_reading">Samfelldur lestur</string>
+    <string name="settings_profile_text_editing">Texta breytt</string>
+    <string name="settings_profile_apps">Forrit</string>
+    <string name="settings_profile_add_app">Bæta við forriti</string>
+    <string name="settings_profile_settings">Stillingar í þessu sniði</string>
+    <string name="settings_profile_no_settings">Engar</string>
+    <string name="settings_profile_remove_confirm">Fjarlægja <xliff:g id="item" example="Speech rate">%1$s</xliff:g> úr <xliff:g id="name" example="Messaging">%2$s</xliff:g>?</string>
+    <string name="settings_profile_not_saved">Ekki tókst að vista stillingasniðið</string>
+    <string name="settings_profile_in_use_announcement">Sniðið <xliff:g id="name" example="Demo">%1$s</xliff:g></string>
+    <string name="settings_profile_not_changed">Stillingasniði var ekki breytt</string>
+    <string name="title_settings_profile">Stillingasnið</string>
+    <string name="shortcut_settings_profiles">Velja stillingasnið</string>
+    <string name="shortcut_next_settings_profile">Næsta stillingasnið</string>
+    <string name="shortcut_previous_settings_profile">Fyrra stillingasnið</string>
+    <string name="title_copy_text_from_screen">Afrita texta af skjá</string>
+    <string name="granularity_label">Smáatriðastig</string>
+    <string name="granularity_characters">Stafir</string>
+    <string name="granularity_words">Orð</string>
+    <string name="granularity_paragraphs">Málsgreinar</string>
+    <string name="button_select_all">Velja allt</string>
+    <string name="no_text_selected">Enginn texti valinn</string>
+    <string name="no_text_on_screen">Enginn texti fannst á skjánum</string>
+    <string name="title_select_last_spoken_phrase_word_by_word">Velja síðasta talaða frasa orð fyrir orð</string>
+    <string name="no_words_selected">Engin orð valin</string>
+    <string name="no_phrase_to_select">Enginn frasi til að velja</string>
+    <string name="word_selection_list_cut_off">Listi styttur við <xliff:g id="count" example="1000">%1$d</xliff:g> atriði</string>
+    <plurals name="word_selection_copied">
+        <item quantity="one"><xliff:g id="count" example="5">%1$d</xliff:g> atriði afritað</item>
+        <item quantity="other"><xliff:g id="count" example="5">%1$d</xliff:g> atriði afrituð</item>
+    </plurals>
 </resources>

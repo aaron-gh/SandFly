@@ -46,4 +46,17 @@
     <string name="granular_editing_not_saved">Ekki vistað: textareiturinn er horfinn. Textinn er afritaður.</string>
     <string name="granular_editing_no_text">Enginn texti til að breyta</string>
     <string name="granular_editing_password">Ekki í boði í lykilorðareitum</string>
+    <plurals name="granular_editing_spaces">
+        <item quantity="one"><xliff:g id="count" example="3">%d</xliff:g> bil</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> bil</item>
+    </plurals>
+    <plurals name="granular_editing_new_lines">
+        <item quantity="one"><xliff:g id="count" example="3">%d</xliff:g> ný lína</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> nýjar línur</item>
+    </plurals>
+    <plurals name="granular_editing_tabs">
+        <item quantity="one"><xliff:g id="count" example="3">%d</xliff:g> dálkstafur</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> dálkstafir</item>
+    </plurals>
+    <string name="granular_editing_blank_line">Auð lína</string>
 </resources>

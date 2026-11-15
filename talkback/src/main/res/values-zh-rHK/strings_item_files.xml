@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="item_file_import">從檔案匯入</string>
+    <string name="item_file_export">匯出到檔案</string>
+    <string name="title_pref_export_item_file_reference">匯出檔案格式參考</string>
+    <string name="item_file_keymaps">按鍵對應配置</string>
+    <string name="item_file_exported">已匯出</string>
+    <string name="item_file_export_failed">無法匯出</string>
+    <string name="item_file_not_read">這不是 SandFly 項目檔案，或無法讀取</string>
+    <string name="item_file_settings_file">這是設定檔案。請透過「備份與還原 > 匯入設定」匯入</string>
+    <string name="item_file_newer">此檔案來自較新版本的 SandFly</string>
+    <string name="item_file_nothing_imported">未匯入任何內容</string>
+    <string name="item_file_imported">已匯入<xliff:g id="items" example="2 macros, 1 gesture profile">%1$s</xliff:g></string>
+    <string name="item_file_left_out">已略過：</string>
+    <string name="item_file_problem_not_read"><xliff:g id="kind" example="Macros">%1$s</xliff:g>，第 <xliff:g id="number" example="3">%2$d</xliff:g> 項：無法讀取</string>
+    <string name="item_file_problem_command"><xliff:g id="item" example="Open mail">%1$s</xliff:g>：未知的命令 <xliff:g id="command" example="READ_ALL">%2$s</xliff:g></string>
+    <string name="item_file_problem_gesture"><xliff:g id="item" example="Reading">%1$s</xliff:g>：未知的手勢 <xliff:g id="gesture" example="pref_shortcut_spin">%2$s</xliff:g></string>
+    <string name="item_file_problem_keys"><xliff:g id="item" example="My keymap">%1$s</xliff:g>：無法辨識按鍵：<xliff:g id="keys" example="SandFly+Foo">%2$s</xliff:g></string>
+    <string name="item_file_problem_keys_taken"><xliff:g id="item" example="My keymap">%1$s</xliff:g>：按鍵已被使用：<xliff:g id="keys" example="SandFly+H">%2$s</xliff:g></string>
+    <string name="item_file_problem_setting"><xliff:g id="item" example="Reading">%1$s</xliff:g>：設定 <xliff:g id="key" example="pref_vibration">%2$s</xliff:g> 未知、不能放入設定檔，或值的類型錯誤</string>
+    <string name="item_file_problem_regex"><xliff:g id="dictionary" example="Speech dictionary">%1$s</xliff:g>：正規表示式遭拒：<xliff:g id="expression" example="(a+)+">%2$s</xliff:g></string>
+    <string name="item_file_problem_limit"><xliff:g id="kind" example="Symbol dictionary">%1$s</xliff:g>：最多 <xliff:g id="number" example="500">%2$d</xliff:g> 個項目</string>
+    <string name="item_file_problem_more">還有更多內容被略過</string>
+    <plurals name="item_file_count_macros">
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g>個巨集</item>
+    </plurals>
+    <plurals name="item_file_count_gesture_profiles">
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g>個手勢設定檔</item>
+    </plurals>
+    <plurals name="item_file_count_keymaps">
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g>個按鍵對應配置</item>
+    </plurals>
+    <plurals name="item_file_count_apps">
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g>個應用程式的手勢和鍵盤快速鍵</item>
+    </plurals>
+    <plurals name="item_file_count_settings_profiles">
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g>個設定檔</item>
+    </plurals>
+    <plurals name="item_file_count_speech_dictionary">
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g>個朗讀詞典項目</item>
+    </plurals>
+    <plurals name="item_file_count_symbol_dictionary">
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g>個符號字典項目</item>
+    </plurals>
+    <plurals name="item_file_count_braille_dictionary">
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g>個點字詞典項目</item>
+    </plurals>
+    <plurals name="item_file_count_voice_commands">
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g>個自訂語音指令</item>
+    </plurals>
+</resources>

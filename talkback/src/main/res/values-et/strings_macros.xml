@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_macros">Makrod</string>
+    <string name="shortcut_stop_macro">Peata makro</string>
+    <string name="macro_add">Lisa makro</string>
+    <string name="macro_run_now">Käivita kohe</string>
+    <string name="macro_add_step">Lisa samm</string>
+    <string name="macro_add_at_end">Lõppu</string>
+    <string name="macro_add_at_start">Algusesse</string>
+    <string name="macro_add_after">Pärast sammu <xliff:g id="step" example="2">%1$d</xliff:g>: <xliff:g id="name" example="If App in front: Chrome">%2$s</xliff:g></string>
+    <string name="macro_steps">Sammud</string>
+    <string name="macro_no_steps">Samme pole</string>
+    <string name="macro_delete">Kustuta makro</string>
+    <string name="macro_delete_confirm">Kustutada <xliff:g id="name" example="Send message">%1$s</xliff:g>?</string>
+    <string name="macro_step_command">Käivita käsk</string>
+    <string name="macro_step_wait">Oota</string>
+    <string name="macro_step_tap">Puuduta üksust</string>
+    <string name="macro_step_focus">Fokuseeri üksus</string>
+    <string name="macro_step_speak_item">Loe üksus ette</string>
+    <string name="macro_step_speak_text">Loe tekst ette</string>
+    <string name="macro_step_type">Sisesta tekst</string>
+    <string name="macro_step_tap_value">Puuduta: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_focus_value">Fokuseeri: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_item_value">Loe ette: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_text_value">Loe ette: <xliff:g id="text" example="Done">%1$s</xliff:g></string>
+    <string name="macro_step_type_value">Sisesta: <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <string name="macro_step_replace_value">Asenda tekst tekstiga <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <plurals name="macro_step_wait_seconds">
+        <item quantity="one">Oota <xliff:g id="count" example="1">%d</xliff:g> sekund</item>
+        <item quantity="other">Oota <xliff:g id="count" example="2">%d</xliff:g> sekundit</item>
+    </plurals>
+    <plurals name="macro_step_wait_milliseconds">
+        <item quantity="one">Oota <xliff:g id="count" example="1">%d</xliff:g> millisekund</item>
+        <item quantity="other">Oota <xliff:g id="count" example="500">%d</xliff:g> millisekundit</item>
+    </plurals>
+    <string name="macro_step_unavailable">Pole saadaval</string>
+    <string name="macro_seconds">Sekundid</string>
+    <string name="macro_invalid_seconds">Sisestage sekundite arv kuni <xliff:g id="max" example="600">%1$d</xliff:g></string>
+    <string name="macro_tap_label">Üksuse tekst</string>
+    <string name="macro_tap_timeout">Üksuse ootamise sekundid</string>
+    <string name="macro_text">Tekst</string>
+    <string name="macro_replace_text">Asenda väljal olev tekst</string>
+    <string name="macro_item_not_found">Makro peatus. Ei leitud: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_failed">Makro peatus. Ebaõnnestus: <xliff:g id="step" example="Open Gmail">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until">Oota, kuni</string>
+    <string name="macro_step_if">Kui</string>
+    <string name="macro_step_else_if">Muidu kui</string>
+    <string name="macro_step_else">Muidu</string>
+    <string name="macro_step_end_if">Kui lõpp</string>
+    <string name="macro_step_repeat">Korda</string>
+    <string name="macro_step_repeat_while">Korda niikaua, kui</string>
+    <string name="macro_step_end_repeat">Korduse lõpp</string>
+    <string name="macro_step_exit_loop">Välju tsüklist</string>
+    <string name="macro_step_if_value">Kui <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_else_if_value">Muidu kui <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_repeat_while_value">Korda niikaua, kui <xliff:g id="condition" example="Item on screen: Load more">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until_value">Oota, kuni <xliff:g id="condition" example="Item on screen: Send">%1$s</xliff:g></string>
+    <plurals name="macro_step_repeat_value">
+        <item quantity="one">Korda <xliff:g id="count" example="1">%d</xliff:g> kord</item>
+        <item quantity="other">Korda <xliff:g id="count" example="3">%d</xliff:g> korda</item>
+    </plurals>
+    <string name="macro_times">Korduste arv</string>
+    <string name="macro_invalid_times">Sisestage arv vahemikus 1 kuni <xliff:g id="max" example="1000">%1$d</xliff:g></string>
+    <string name="macro_run_only_when">Käivita ainult siis, kui</string>
+    <string name="macro_always">Alati</string>
+    <string name="macro_no_tests">Teste pole</string>
+    <string name="macro_add_test">Lisa test</string>
+    <string name="macro_tests">Testid</string>
+    <string name="macro_choose_test">Test</string>
+    <string name="macro_test_item">Üksus ekraanil</string>
+    <string name="macro_test_focused">Fokuseeritud üksus</string>
+    <string name="macro_test_app">Rakendus esiplaanil</string>
+    <string name="macro_test_keyboard">Klaviatuur kuvatud</string>
+    <string name="macro_test_keyboard_hidden">Klaviatuur peidetud</string>
+    <string name="macro_test_locked">Ekraan lukus</string>
+    <string name="macro_test_unlocked">Ekraan avatud</string>
+    <string name="macro_test_item_value">Üksus ekraanil: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_no_item_value">Üksust pole ekraanil: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_focused_value">Fokuseeritud üksus: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_not_focused_value">Fokuseeritud üksus pole: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_app_value">Rakendus esiplaanil: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_not_app_value">Rakendus pole esiplaanil: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_label_kind"><xliff:g id="label" example="Send">%1$s</xliff:g>, <xliff:g id="kind" example="Clickable">%2$s</xliff:g></string>
+    <string name="macro_join_and"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g> ja <xliff:g id="second" example="Focused item: Editable">%2$s</xliff:g></string>
+    <string name="macro_join_or"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g> või <xliff:g id="second" example="Screen locked">%2$s</xliff:g></string>
+    <string name="macro_regex">Regulaaravaldis</string>
+    <string name="macro_invalid_regex">Ei ole kasutatav regulaaravaldis. Korduvad rühmad ei tohi sisaldada kordust ega märki |.</string>
+    <string name="macro_match_in">Vaste asukoht</string>
+    <string name="macro_field_any">Mis tahes tekst</string>
+    <string name="macro_field_text">Tekst</string>
+    <string name="macro_field_description">Kirjeldus</string>
+    <string name="macro_field_hint">Vihje</string>
+    <string name="macro_field_state">Olek</string>
+    <string name="macro_field_id">Ressursi ID</string>
+    <string name="macro_field_value"><xliff:g id="label" example="send">%1$s</xliff:g> (<xliff:g id="field" example="Resource ID">%2$s</xliff:g>)</string>
+    <string name="macro_field_regex_value"><xliff:g id="pattern" example="^Reply">%1$s</xliff:g> (<xliff:g id="field" example="Description">%2$s</xliff:g>, regulaaravaldis)</string>
+    <string name="macro_regex_value"><xliff:g id="pattern" example="Reply.*Anna">%1$s</xliff:g> (regulaaravaldis)</string>
+    <string name="macro_test_label_optional">Üksuse tekst (valikuline)</string>
+    <string name="macro_item_kind">Üksuse tüüp</string>
+    <string name="macro_kind_any">Mis tahes tüüp</string>
+    <string name="macro_kind_clickable">Klõpsatav</string>
+    <string name="macro_kind_long_clickable">Pikalt klõpsatav</string>
+    <string name="macro_kind_editable">Muudetav</string>
+    <string name="macro_kind_scrollable">Keritav</string>
+    <string name="macro_kind_adjustable">Reguleeritav</string>
+    <string name="macro_kind_checkable">Märgitav</string>
+    <string name="macro_kind_checked">Märgitud</string>
+    <string name="macro_kind_selected">Valitud</string>
+    <string name="macro_kind_heading">Pealkiri</string>
+    <string name="macro_kind_enabled">Lubatud</string>
+    <string name="macro_change_to">Muuda: <xliff:g id="test" example="Keyboard hidden">%1$s</xliff:g></string>
+    <string name="macro_join_with_and">Ühenda sidesõnaga „ja“</string>
+    <string name="macro_join_with_or">Ühenda sidesõnaga „või“</string>
+    <string name="macro_clause_and">ja <xliff:g id="test" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_clause_or">või <xliff:g id="test" example="Screen locked">%1$s</xliff:g></string>
+    <string name="macro_wait_timeout">Ooteaeg sekundites</string>
+    <string name="macro_add_step_after">Lisa samm pärast</string>
+    <string name="macro_problem">Samm <xliff:g id="step" example="3">%1$d</xliff:g>: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_problem_no_if">Muidu kui, Muidu või Kui lõpp ilma sammuta Kui</string>
+    <string name="macro_problem_after_else">Muidu kui või Muidu pärast sammu Muidu</string>
+    <string name="macro_problem_no_repeat">Korduse lõpp ilma sammuta Korda</string>
+    <string name="macro_problem_no_end_if">Kui ilma sammuta Kui lõpp</string>
+    <string name="macro_problem_no_end_repeat">Korda ilma sammuta Korduse lõpp</string>
+    <string name="macro_problem_exit">Välju tsüklist väljaspool kordust</string>
+    <string name="macro_stopped_problem">Makro peatus. Samm <xliff:g id="step" example="3">%1$d</xliff:g>: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_stopped_repeats">Makro peatus. Korratud <xliff:g id="count" example="1000">%1$d</xliff:g> korda: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
+    <string name="macro_stopped_timeout">Makro peatus. Aegus: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
+    <string name="macro_not_met">Makrot ei käivitatud. Käivita ainult siis, kui: ei ole täidetud</string>
+</resources>

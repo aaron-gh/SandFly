@@ -46,4 +46,17 @@
     <string name="granular_editing_not_saved">Haijahifadhiwa: sehemu ya maandishi haipo tena. Maandishi yamenakiliwa.</string>
     <string name="granular_editing_no_text">Hakuna maandishi ya kuhariri</string>
     <string name="granular_editing_password">Haipatikani katika sehemu za nenosiri</string>
+    <plurals name="granular_editing_spaces">
+        <item quantity="one">Nafasi <xliff:g id="count" example="3">%d</xliff:g></item>
+        <item quantity="other">Nafasi <xliff:g id="count" example="3">%d</xliff:g></item>
+    </plurals>
+    <plurals name="granular_editing_new_lines">
+        <item quantity="one">Mstari mpya <xliff:g id="count" example="3">%d</xliff:g></item>
+        <item quantity="other">Mistari mipya <xliff:g id="count" example="3">%d</xliff:g></item>
+    </plurals>
+    <plurals name="granular_editing_tabs">
+        <item quantity="one">Kichupo <xliff:g id="count" example="3">%d</xliff:g></item>
+        <item quantity="other">Vichupo <xliff:g id="count" example="3">%d</xliff:g></item>
+    </plurals>
+    <string name="granular_editing_blank_line">Mstari mtupu</string>
 </resources>

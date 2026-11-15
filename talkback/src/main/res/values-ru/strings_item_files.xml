@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="item_file_import">Импортировать из файла</string>
+    <string name="item_file_export">Экспортировать в файл</string>
+    <string name="title_pref_export_item_file_reference">Описание формата файла экспорта</string>
+    <string name="item_file_keymaps">Раскладки клавиш</string>
+    <string name="item_file_exported">Экспортировано</string>
+    <string name="item_file_export_failed">Не удалось экспортировать</string>
+    <string name="item_file_not_read">Этот файл не является файлом объектов SandFly или не удалось его прочитать</string>
+    <string name="item_file_settings_file">Это файл настроек. Импортируйте его через «Резервное копирование и восстановление > Импортировать настройки»</string>
+    <string name="item_file_newer">Этот файл создан в более новой версии SandFly</string>
+    <string name="item_file_nothing_imported">Ничего не импортировано</string>
+    <string name="item_file_imported">Импортировано: <xliff:g id="items" example="2 macros, 1 gesture profile">%1$s</xliff:g></string>
+    <string name="item_file_left_out">Пропущено:</string>
+    <string name="item_file_problem_not_read"><xliff:g id="kind" example="Macros">%1$s</xliff:g>, объект <xliff:g id="number" example="3">%2$d</xliff:g>: не прочитан</string>
+    <string name="item_file_problem_command"><xliff:g id="item" example="Open mail">%1$s</xliff:g>: неизвестная команда <xliff:g id="command" example="READ_ALL">%2$s</xliff:g></string>
+    <string name="item_file_problem_gesture"><xliff:g id="item" example="Reading">%1$s</xliff:g>: неизвестный жест <xliff:g id="gesture" example="pref_shortcut_spin">%2$s</xliff:g></string>
+    <string name="item_file_problem_keys"><xliff:g id="item" example="My keymap">%1$s</xliff:g>: клавиши не распознаны: <xliff:g id="keys" example="SandFly+Foo">%2$s</xliff:g></string>
+    <string name="item_file_problem_keys_taken"><xliff:g id="item" example="My keymap">%1$s</xliff:g>: клавиши уже используются: <xliff:g id="keys" example="SandFly+H">%2$s</xliff:g></string>
+    <string name="item_file_problem_setting"><xliff:g id="item" example="Reading">%1$s</xliff:g>: настройка <xliff:g id="key" example="pref_vibration">%2$s</xliff:g> неизвестна, не может быть в профиле или имеет значение неверного типа</string>
+    <string name="item_file_problem_regex"><xliff:g id="dictionary" example="Speech dictionary">%1$s</xliff:g>: регулярное выражение отклонено: <xliff:g id="expression" example="(a+)+">%2$s</xliff:g></string>
+    <string name="item_file_problem_limit"><xliff:g id="kind" example="Symbol dictionary">%1$s</xliff:g>: не более <xliff:g id="number" example="500">%2$d</xliff:g> объектов</string>
+    <string name="item_file_problem_more">Пропущено и другое</string>
+    <plurals name="item_file_count_macros">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> макрос</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> макроса</item>
+        <item quantity="many"><xliff:g id="count" example="2">%d</xliff:g> макросов</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> макроса</item>
+    </plurals>
+    <plurals name="item_file_count_gesture_profiles">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> профиль жестов</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> профиля жестов</item>
+        <item quantity="many"><xliff:g id="count" example="2">%d</xliff:g> профилей жестов</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> профиля жестов</item>
+    </plurals>
+    <plurals name="item_file_count_keymaps">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> раскладка клавиш</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> раскладки клавиш</item>
+        <item quantity="many"><xliff:g id="count" example="2">%d</xliff:g> раскладок клавиш</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> раскладки клавиш</item>
+    </plurals>
+    <plurals name="item_file_count_apps">
+        <item quantity="one">жесты и быстрые клавиши <xliff:g id="count" example="2">%d</xliff:g> приложения</item>
+        <item quantity="few">жесты и быстрые клавиши <xliff:g id="count" example="2">%d</xliff:g> приложений</item>
+        <item quantity="many">жесты и быстрые клавиши <xliff:g id="count" example="2">%d</xliff:g> приложений</item>
+        <item quantity="other">жесты и быстрые клавиши <xliff:g id="count" example="2">%d</xliff:g> приложения</item>
+    </plurals>
+    <plurals name="item_file_count_settings_profiles">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> профиль настроек</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> профиля настроек</item>
+        <item quantity="many"><xliff:g id="count" example="2">%d</xliff:g> профилей настроек</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> профиля настроек</item>
+    </plurals>
+    <plurals name="item_file_count_speech_dictionary">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> запись словаря произношения</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> записи словаря произношения</item>
+        <item quantity="many"><xliff:g id="count" example="2">%d</xliff:g> записей словаря произношения</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> записи словаря произношения</item>
+    </plurals>
+    <plurals name="item_file_count_symbol_dictionary">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> запись словаря символов</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> записи словаря символов</item>
+        <item quantity="many"><xliff:g id="count" example="2">%d</xliff:g> записей словаря символов</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> записи словаря символов</item>
+    </plurals>
+    <plurals name="item_file_count_braille_dictionary">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> запись словаря Брайля</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> записи словаря Брайля</item>
+        <item quantity="many"><xliff:g id="count" example="2">%d</xliff:g> записей словаря Брайля</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> записи словаря Брайля</item>
+    </plurals>
+    <plurals name="item_file_count_voice_commands">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> пользовательская голосовая команда</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> пользовательские голосовые команды</item>
+        <item quantity="many"><xliff:g id="count" example="2">%d</xliff:g> пользовательских голосовых команд</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> пользовательские голосовые команды</item>
+    </plurals>
+</resources>

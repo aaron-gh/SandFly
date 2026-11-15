@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_macros">Макронууд</string>
+    <string name="shortcut_stop_macro">Макро зогсоох</string>
+    <string name="macro_add">Макро нэмэх</string>
+    <string name="macro_run_now">Одоо ажиллуулах</string>
+    <string name="macro_add_step">Алхам нэмэх</string>
+    <string name="macro_add_at_end">Төгсгөлд</string>
+    <string name="macro_add_at_start">Эхэнд</string>
+    <string name="macro_add_after"><xliff:g id="step" example="2">%1$d</xliff:g>-р алхмын дараа: <xliff:g id="name" example="If App in front: Chrome">%2$s</xliff:g></string>
+    <string name="macro_steps">Алхмууд</string>
+    <string name="macro_no_steps">Алхам алга</string>
+    <string name="macro_delete">Макро устгах</string>
+    <string name="macro_delete_confirm">«<xliff:g id="name" example="Send message">%1$s</xliff:g>»-г устгах уу?</string>
+    <string name="macro_step_command">Тушаал ажиллуулах</string>
+    <string name="macro_step_wait">Хүлээх</string>
+    <string name="macro_step_tap">Зүйл товших</string>
+    <string name="macro_step_focus">Зүйл дээр фокуслах</string>
+    <string name="macro_step_speak_item">Зүйл хэлэх</string>
+    <string name="macro_step_speak_text">Текст хэлэх</string>
+    <string name="macro_step_type">Текст бичих</string>
+    <string name="macro_step_tap_value">Товших: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_focus_value">Фокуслах: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_item_value">Хэлэх: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_speak_text_value">Хэлэх: <xliff:g id="text" example="Done">%1$s</xliff:g></string>
+    <string name="macro_step_type_value">Бичих: <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <string name="macro_step_replace_value">Текстийг <xliff:g id="text" example="On my way">%1$s</xliff:g>-ээр солих</string>
+    <plurals name="macro_step_wait_seconds">
+        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> секунд хүлээх</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> секунд хүлээх</item>
+    </plurals>
+    <plurals name="macro_step_wait_milliseconds">
+        <item quantity="one"><xliff:g id="count" example="500">%d</xliff:g> миллисекунд хүлээх</item>
+        <item quantity="other"><xliff:g id="count" example="500">%d</xliff:g> миллисекунд хүлээх</item>
+    </plurals>
+    <string name="macro_step_unavailable">Боломжгүй</string>
+    <string name="macro_seconds">Секунд</string>
+    <string name="macro_invalid_seconds"><xliff:g id="max" example="600">%1$d</xliff:g> хүртэлх секундийн тоог оруулна уу</string>
+    <string name="macro_tap_label">Зүйлийн текст</string>
+    <string name="macro_tap_timeout">Зүйлийг хүлээх секунд</string>
+    <string name="macro_text">Текст</string>
+    <string name="macro_replace_text">Талбар дахь текстийг солих</string>
+    <string name="macro_item_not_found">Макро зогслоо. Олдсонгүй: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_failed">Макро зогслоо. Амжилтгүй: <xliff:g id="step" example="Open Gmail">%1$s</xliff:g></string>
+    <string name="macro_step_wait_until">Хүртэл хүлээх</string>
+    <string name="macro_step_if">Хэрэв</string>
+    <string name="macro_step_else_if">Эс бөгөөс хэрэв</string>
+    <string name="macro_step_else">Эс бөгөөс</string>
+    <string name="macro_step_end_if">Хэрэв төгсгөл</string>
+    <string name="macro_step_repeat">Давтах</string>
+    <string name="macro_step_repeat_while">Хооронд давтах</string>
+    <string name="macro_step_end_repeat">Давталтын төгсгөл</string>
+    <string name="macro_step_exit_loop">Давталтаас гарах</string>
+    <string name="macro_step_if_value">Хэрэв <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_else_if_value">Эс бөгөөс хэрэв <xliff:g id="condition" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_step_repeat_while_value"><xliff:g id="condition" example="Item on screen: Load more">%1$s</xliff:g> байх хооронд давтах</string>
+    <string name="macro_step_wait_until_value"><xliff:g id="condition" example="Item on screen: Send">%1$s</xliff:g> болтол хүлээх</string>
+    <plurals name="macro_step_repeat_value">
+        <item quantity="one"><xliff:g id="count" example="3">%d</xliff:g> удаа давтах</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> удаа давтах</item>
+    </plurals>
+    <string name="macro_times">Удаа</string>
+    <string name="macro_invalid_times">1-ээс <xliff:g id="max" example="1000">%1$d</xliff:g> хүртэлх тоог оруулна уу</string>
+    <string name="macro_run_only_when">Зөвхөн дараахад ажиллуулах</string>
+    <string name="macro_always">Үргэлж</string>
+    <string name="macro_no_tests">Нөхцөл алга</string>
+    <string name="macro_add_test">Нөхцөл нэмэх</string>
+    <string name="macro_tests">Нөхцлүүд</string>
+    <string name="macro_choose_test">Нөхцөл</string>
+    <string name="macro_test_item">Дэлгэц дээрх зүйл</string>
+    <string name="macro_test_focused">Фокустай зүйл</string>
+    <string name="macro_test_app">Урд байгаа апп</string>
+    <string name="macro_test_keyboard">Гар харагдаж байна</string>
+    <string name="macro_test_keyboard_hidden">Гар нуугдсан</string>
+    <string name="macro_test_locked">Дэлгэц түгжигдсэн</string>
+    <string name="macro_test_unlocked">Дэлгэц түгжээгүй</string>
+    <string name="macro_test_item_value">Дэлгэц дээрх зүйл: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_no_item_value">Дэлгэц дээр зүйл алга: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
+    <string name="macro_test_focused_value">Фокустай зүйл: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_not_focused_value">Фокустай зүйл биш: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_app_value">Урд байгаа апп: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_not_app_value">Урд байгаа апп биш: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_test_label_kind"><xliff:g id="label" example="Send">%1$s</xliff:g>, <xliff:g id="kind" example="Clickable">%2$s</xliff:g></string>
+    <string name="macro_join_and"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g> ба <xliff:g id="second" example="Focused item: Editable">%2$s</xliff:g></string>
+    <string name="macro_join_or"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g>, эсвэл <xliff:g id="second" example="Screen locked">%2$s</xliff:g></string>
+    <string name="macro_regex">Регуляр илэрхийлэл</string>
+    <string name="macro_invalid_regex">Ашиглах боломжгүй регуляр илэрхийлэл. Давтагдах бүлэг давталт эсвэл | агуулж болохгүй.</string>
+    <string name="macro_match_in">Тохируулах газар</string>
+    <string name="macro_field_any">Дурын текст</string>
+    <string name="macro_field_text">Текст</string>
+    <string name="macro_field_description">Тодорхойлолт</string>
+    <string name="macro_field_hint">Зөвлөмж</string>
+    <string name="macro_field_state">Төлөв</string>
+    <string name="macro_field_id">Нөөцийн ID</string>
+    <string name="macro_field_value"><xliff:g id="label" example="send">%1$s</xliff:g> (<xliff:g id="field" example="Resource ID">%2$s</xliff:g>)</string>
+    <string name="macro_field_regex_value"><xliff:g id="pattern" example="^Reply">%1$s</xliff:g> (<xliff:g id="field" example="Description">%2$s</xliff:g>, регуляр илэрхийлэл)</string>
+    <string name="macro_regex_value"><xliff:g id="pattern" example="Reply.*Anna">%1$s</xliff:g> (регуляр илэрхийлэл)</string>
+    <string name="macro_test_label_optional">Зүйлийн текст (заавал биш)</string>
+    <string name="macro_item_kind">Зүйлийн төрөл</string>
+    <string name="macro_kind_any">Дурын төрөл</string>
+    <string name="macro_kind_clickable">Товших боломжтой</string>
+    <string name="macro_kind_long_clickable">Удаан товших боломжтой</string>
+    <string name="macro_kind_editable">Засах боломжтой</string>
+    <string name="macro_kind_scrollable">Гүйлгэх боломжтой</string>
+    <string name="macro_kind_adjustable">Тохируулах боломжтой</string>
+    <string name="macro_kind_checkable">Тэмдэглэх боломжтой</string>
+    <string name="macro_kind_checked">Тэмдэглэсэн</string>
+    <string name="macro_kind_selected">Сонгосон</string>
+    <string name="macro_kind_heading">Гарчиг</string>
+    <string name="macro_kind_enabled">Идэвхжүүлсэн</string>
+    <string name="macro_change_to">Өөрчлөх: <xliff:g id="test" example="Keyboard hidden">%1$s</xliff:g></string>
+    <string name="macro_join_with_and">«Ба»-гаар холбох</string>
+    <string name="macro_join_with_or">«Эсвэл»-ээр холбох</string>
+    <string name="macro_clause_and">ба <xliff:g id="test" example="Keyboard shown">%1$s</xliff:g></string>
+    <string name="macro_clause_or">эсвэл <xliff:g id="test" example="Screen locked">%1$s</xliff:g></string>
+    <string name="macro_wait_timeout">Хүлээх секунд</string>
+    <string name="macro_add_step_after">Дараа нь алхам нэмэх</string>
+    <string name="macro_problem"><xliff:g id="step" example="3">%1$d</xliff:g>-р алхам: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_problem_no_if">«Хэрэв» байхгүй «Эс бөгөөс хэрэв», «Эс бөгөөс» эсвэл «Хэрэв төгсгөл»</string>
+    <string name="macro_problem_after_else">«Эс бөгөөс»-ийн дараах «Эс бөгөөс хэрэв» эсвэл «Эс бөгөөс»</string>
+    <string name="macro_problem_no_repeat">«Давтах» байхгүй «Давталтын төгсгөл»</string>
+    <string name="macro_problem_no_end_if">«Хэрэв төгсгөл» байхгүй «Хэрэв»</string>
+    <string name="macro_problem_no_end_repeat">«Давталтын төгсгөл» байхгүй «Давтах»</string>
+    <string name="macro_problem_exit">Давталтаас гадна «Давталтаас гарах»</string>
+    <string name="macro_stopped_problem">Макро зогслоо. <xliff:g id="step" example="3">%1$d</xliff:g>-р алхам: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_stopped_repeats">Макро зогслоо. <xliff:g id="count" example="1000">%1$d</xliff:g> удаа давтагдсан: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
+    <string name="macro_stopped_timeout">Макро зогслоо. Хугацаа хэтэрсэн: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
+    <string name="macro_not_met">Макро ажиллаагүй. Зөвхөн дараахад ажиллуулах: биелээгүй</string>
+</resources>

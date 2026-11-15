@@ -406,4 +406,14 @@
         <item>@string/notification_shake_3</item>
     </string-array>
     <string name="notification_clock_voice_notifications">Голос уведомлений</string>
+    <string name="notification_exact_alarms_title">Включить «Будильники и напоминания»</string>
+    <string name="shortcut_toggle_time_announcements">Объявления времени: включить или отключить</string>
+    <string name="notification_clock_now_on">Объявления времени включены</string>
+    <string name="notification_clock_now_off">Объявления времени отключены</string>
+    <plurals name="notification_clock_battery">
+        <item quantity="one"><xliff:g id="percent" example="76">%d</xliff:g> процент</item>
+        <item quantity="few"><xliff:g id="percent" example="76">%d</xliff:g> процента</item>
+        <item quantity="many"><xliff:g id="percent" example="76">%d</xliff:g> процентов</item>
+        <item quantity="other"><xliff:g id="percent" example="76">%d</xliff:g> процента</item>
+    </plurals>
 </resources>

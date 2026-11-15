@@ -59,4 +59,24 @@
     <string name="keycombo_menu_navigate_next_by_setting">Следващ според настройката за навигиране</string>
     <string name="keycombo_menu_navigate_previous_by_setting">Предишен според настройката за навигиране</string>
     <string name="title_pref_overview_screen">Общ преглед</string>
+    <string name="title_pref_custom_menus">Персонализирани менюта</string>
+    <string name="commands_category_setting_values">Стойности на настройки</string>
+    <string name="command_next_value"><xliff:g id="setting" example="Punctuation">%1$s</xliff:g>: следваща стойност</string>
+    <string name="command_previous_value"><xliff:g id="setting" example="Punctuation">%1$s</xliff:g>: предишна стойност</string>
+    <string name="shortcut_script_commands">Команди на скриптове</string>
+    <string name="shortcut_set_reading_control">Задаване на контролата за четене на <xliff:g id="control" example="Headings">%1$s</xliff:g></string>
+    <string name="title_pref_custom_reading_controls">Персонализирани контроли за четене</string>
+    <string name="menu_add_reading_control">Добавяне на контрола за четене</string>
+    <string name="menu_add_submenu">Добавяне на подменю</string>
+    <string name="menu_add_menu">Добавяне на меню</string>
+    <string name="menu_name">Име</string>
+    <string name="menu_open">Отваряне</string>
+    <string name="menu_move_to">Преместване в</string>
+    <string name="menu_rename">Преименуване</string>
+    <string name="menu_delete">Изтриване</string>
+    <string name="menu_delete_confirm">Да се изтрие ли <xliff:g id="name" example="AI">%1$s</xliff:g> и всичко в него?</string>
+    <string name="menu_moved">Преместено в <xliff:g id="place" example="AI">%1$s</xliff:g></string>
+    <string name="menu_reset">Връщане към стандартните</string>
+    <string name="menu_reset_confirm">Да се върне ли менюто на SandFly към стандартните елементи и ред?</string>
+    <string name="menu_assign">Жестове и клавишна комбинация</string>
 </resources>

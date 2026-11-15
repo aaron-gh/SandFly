@@ -46,4 +46,17 @@
     <string name="granular_editing_not_saved">Ikke gemt: tekstfeltet er væk. Teksten er kopieret.</string>
     <string name="granular_editing_no_text">Ingen tekst at redigere</string>
     <string name="granular_editing_password">Ikke tilgængelig i adgangskodefelter</string>
+    <plurals name="granular_editing_spaces">
+        <item quantity="one"><xliff:g id="count" example="3">%d</xliff:g> mellemrum</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> mellemrum</item>
+    </plurals>
+    <plurals name="granular_editing_new_lines">
+        <item quantity="one"><xliff:g id="count" example="3">%d</xliff:g> ny linje</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> nye linjer</item>
+    </plurals>
+    <plurals name="granular_editing_tabs">
+        <item quantity="one"><xliff:g id="count" example="3">%d</xliff:g> tabulator</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> tabulatorer</item>
+    </plurals>
+    <string name="granular_editing_blank_line">Tom linje</string>
 </resources>

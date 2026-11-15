@@ -47,4 +47,17 @@
     <string name="granular_editing_not_saved">No s’ha desat: el camp de text ja no hi és. El text s’ha copiat.</string>
     <string name="granular_editing_no_text">No hi ha text per editar</string>
     <string name="granular_editing_password">No disponible als camps de contrasenya</string>
+    <plurals name="granular_editing_spaces">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> espai</item>
+        <item quantity="other"><xliff:g id="count" example="1">%d</xliff:g> espais</item>
+    </plurals>
+    <plurals name="granular_editing_new_lines">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> línia nova</item>
+        <item quantity="other"><xliff:g id="count" example="1">%d</xliff:g> línies noves</item>
+    </plurals>
+    <plurals name="granular_editing_tabs">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> tabulació</item>
+        <item quantity="other"><xliff:g id="count" example="1">%d</xliff:g> tabulacions</item>
+    </plurals>
+    <string name="granular_editing_blank_line">Línia en blanc</string>
 </resources>

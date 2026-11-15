@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_voice_commands">فرمان‌های صوتی</string>
+    <string name="title_pref_voice_commands_ai">فهمیدن فرمان‌های صوتی با هوش مصنوعی</string>
+    <string name="voice_commands_custom">فرمان‌های صوتی سفارشی</string>
+    <string name="voice_command_add">افزودن فرمان صوتی</string>
+    <string name="voice_command_phrase">عبارت</string>
+    <string name="voice_command_change_phrase">تغییر عبارت</string>
+    <string name="voice_command_change_command">تغییر فرمان</string>
+    <string name="voice_command_delete_confirm">«<xliff:g id="phrase" example="Good morning">%1$s</xliff:g>» حذف شود؟</string>
+    <string name="voice_command_phrase_exists">«<xliff:g id="phrase" example="Good morning">%1$s</xliff:g>» از قبل یک فرمان صوتی است</string>
+    <string name="voice_commands_not_understood">فهمیده نشد: <xliff:g id="text" example="open the door">%1$s</xliff:g></string>
+    <string name="voice_commands_not_available">در دسترس نیست: <xliff:g id="name" example="Morning macro">%1$s</xliff:g></string>
+    <string name="voice_commands_not_found">یافت نشد: <xliff:g id="label" example="Settings">%1$s</xliff:g></string>
+    <string name="voice_commands_no_app">برنامه‌ای به نام <xliff:g id="name" example="Signal">%1$s</xliff:g> وجود ندارد</string>
+    <string name="voice_commands_no_app_for_action">برنامه‌ای برای این کنش وجود ندارد</string>
+    <string name="voice_commands_calling">تماس با <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_call_permission">تماس تلفنی را مجاز کنید، سپس فرمان را دوباره بگویید.</string>
+    <string name="voice_commands_contacts_permission">دسترسی به مخاطبان را مجاز کنید، سپس فرمان را دوباره بگویید.</string>
+    <string name="voice_commands_no_contact">مخاطبی به نام <xliff:g id="name" example="Sam">%1$s</xliff:g> وجود ندارد</string>
+    <string name="voice_commands_contacts_several">بیش از یک مخاطب به نام <xliff:g id="name" example="Sam">%1$s</xliff:g>: <xliff:g id="names" example="Sam Jones, Sam Smith">%2$s</xliff:g></string>
+    <string name="voice_commands_message_text">پیام به <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_message_confirm">ارسال به <xliff:g id="name" example="Sam">%1$s</xliff:g>: <xliff:g id="text" example="I am on my way">%2$s</xliff:g>؟</string>
+    <string name="voice_commands_message_confirm_result">ارسال به <xliff:g id="name" example="Sam">%1$s</xliff:g>؟</string>
+    <string name="voice_commands_message_not_sent">پیام ارسال نشد</string>
+    <string name="voice_commands_send_pressed">ارسال فشرده شد</string>
+    <string name="voice_commands_send_button">ارسال</string>
+    <string name="voice_commands_no_description">توضیحی دریافت نشد</string>
+    <string name="voice_commands_copied">کپی شد</string>
+    <string-array name="voice_commands_chain_words">
+        <item>و سپس</item>
+        <item>سپس</item>
+        <item>بعد از آن</item>
+        <item>بعدش</item>
+    </string-array>
+    <string-array name="voice_commands_and_words">
+        <item>و</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_start">
+        <item>لطفاً</item>
+        <item>لطفا</item>
+        <item>میشه</item>
+        <item>می‌توانی</item>
+        <item>می‌توانید</item>
+        <item>می‌خواهم</item>
+        <item>الان</item>
+    </string-array>
+    <string-array name="voice_commands_fillers_end">
+        <item>لطفاً</item>
+        <item>لطفا</item>
+        <item>برای من</item>
+        <item>الان</item>
+    </string-array>
+    <string-array name="voice_commands_cancel_words">
+        <item>توقف</item>
+        <item>بس کن</item>
+        <item>لغو</item>
+        <item>لغو کن</item>
+        <item>ولش کن</item>
+        <item>ساکت شو</item>
+    </string-array>
+    <string-array name="voice_commands_yes">
+        <item>بله</item>
+        <item>آره</item>
+        <item>اره</item>
+        <item>ارسال</item>
+        <item>بفرست</item>
+        <item>باشه</item>
+        <item>اوکی</item>
+        <item>حتماً</item>
+        <item>حتما</item>
+        <item>انجام بده</item>
+    </string-array>
+    <string-array name="voice_commands_sms_names">
+        <item>SMS</item>
+        <item>اس‌ام‌اس</item>
+        <item>پیامک</item>
+        <item>پیام</item>
+        <item>پیام‌ها</item>
+    </string-array>
+    <string-array name="voice_commands_send_image_description">
+        <item>توضیح تصویر را برای {who} بفرست</item>
+        <item>توضیح عکس را برای {who} بفرست</item>
+        <item>توصیف تصویر را برای {who} بفرست</item>
+        <item>توصیف عکس را برای {who} بفرست</item>
+        <item>برای {who} توضیح تصویر بفرست</item>
+    </string-array>
+    <string-array name="voice_commands_send_screen_description">
+        <item>توضیح صفحه را برای {who} بفرست</item>
+        <item>توصیف صفحه را برای {who} بفرست</item>
+        <item>برای {who} توضیح صفحه بفرست</item>
+    </string-array>
+    <string-array name="voice_commands_send_previous">
+        <item>این را برای {who} در {app} بفرست</item>
+        <item>این را برای {who} بفرست</item>
+        <item>آن را برای {who} بفرست</item>
+        <item>توضیح را برای {who} بفرست</item>
+        <item>این را با {who} به اشتراک بگذار</item>
+    </string-array>
+    <string-array name="voice_commands_message">
+        <item>برای {who} در {app} پیام بفرست {text}</item>
+        <item>برای {who} در {app} پیام بفرست که {text}</item>
+        <item>برای {who} پیام بفرست {text}</item>
+        <item>برای {who} پیام بفرست که {text}</item>
+        <item>پیام بفرست برای {whoandtext}</item>
+        <item>برای {who} پیام {app} بفرست {text}</item>
+        <item>برای {who} پیام {app} بفرست</item>
+        <item>به {who} در {app} پیام بده {text}</item>
+        <item>به {who} پیام بده {text}</item>
+        <item>به {who} بگو {text}</item>
+        <item>به {who} در {app} بگو {text}</item>
+        <item>پیام بده به {whoandtext}</item>
+        <item>پیامک بده به {whoandtext}</item>
+    </string-array>
+    <string-array name="voice_commands_call">
+        <item>به {who} زنگ بزن</item>
+        <item>با {who} تماس بگیر</item>
+        <item>با {who} تماس بگیرید</item>
+        <item>شماره {who} را بگیر</item>
+        <item>تماس با {who}</item>
+    </string-array>
+    <string-array name="voice_commands_describe_screen">
+        <item>صفحه را توصیف کن</item>
+        <item>آنچه روی صفحه است را توصیف کن</item>
+        <item>روی صفحه چیست</item>
+        <item>روی صفحه من چیست</item>
+    </string-array>
+    <string-array name="voice_commands_describe_image">
+        <item>[این] تصویر را توصیف کن</item>
+        <item>[این] عکس را توصیف کن</item>
+        <item>در [این] تصویر چیست</item>
+        <item>در [این] عکس چیست</item>
+    </string-array>
+    <string-array name="voice_commands_copy_result">
+        <item>این را کپی کن</item>
+        <item>آن را کپی کن</item>
+        <item>توضیح را کپی کن</item>
+        <item>آنچه [همین الان] گفتی را کپی کن</item>
+        <item>آخرین عبارت گفته‌شده را کپی کن</item>
+        <item>آخرین عبارت را کپی کن</item>
+    </string-array>
+    <string-array name="voice_commands_wait">
+        <item>{n} ثانیه صبر کن</item>
+        <item>یک ثانیه صبر کن</item>
+        <item>[یک] لحظه صبر کن</item>
+        <item>صبر کن</item>
+    </string-array>
+    <string-array name="voice_commands_type_text">
+        <item>{text} را تایپ کن</item>
+        <item>تایپ کن {text}</item>
+        <item>بنویس {text}</item>
+    </string-array>
+    <string-array name="voice_commands_run">
+        <item>ماکروی {command} را اجرا کن</item>
+        <item>ماکرو {command} را اجرا کن</item>
+        <item>{command} را اجرا کن</item>
+        <item>{command} را انجام بده</item>
+    </string-array>
+    <string-array name="voice_commands_open">
+        <item>{app} را باز کن</item>
+        <item>{app} را اجرا کن</item>
+        <item>{app} را راه‌اندازی کن</item>
+        <item>برو به {app}</item>
+    </string-array>
+    <string-array name="voice_commands_tap">
+        <item>دو تک‌ضرب روی {label}</item>
+        <item>تک‌ضرب روی {label}</item>
+        <item>کلیک روی {label}</item>
+        <item>{label} را فشار بده</item>
+        <item>{label} را فعال کن</item>
+        <item>{label} را انتخاب کن</item>
+    </string-array>
+</resources>
