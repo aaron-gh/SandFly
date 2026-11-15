@@ -791,9 +791,10 @@ public class FocusProcessorForLogicalNavigation {
       @NonNull AccessibilityNodeInfoCompat pivot,
       @NonNull NavigationAction navigationAction,
       @Nullable EventId eventId) {
-    if (SheetsGrid.isScrolling()) {
-      // A quick swipe while the Sheets grid slides over: Sheets may have moved its focus off the
-      // cells meanwhile, so don't call that the table's end; the slide focuses the next cell.
+    if (SheetsGrid.isMoving() && SheetsGrid.isInSheets(pivot)) {
+      // A quick swipe while a Sheets move waits or the grid slides over: Sheets may have moved its
+      // focus off the cells meanwhile, so don't call that the table's end; the move focuses the
+      // cell it finds.
       return true;
     }
     if (SheetsGrid.touchGridIfLost(pivot)) {
@@ -822,8 +823,8 @@ public class FocusProcessorForLogicalNavigation {
       if (cell != null && setAccessibilityFocusInternal(cell, navigationAction, eventId)) {
         return true;
       }
-      if (cell == null && SheetsGrid.isScrolling()) {
-        // The grid is scrolling sideways; the cell is focused once it's on the screen.
+      if (cell == null && SheetsGrid.isMoving()) {
+        // The move waits for Sheets or scrolls the grid; the cell is focused once it's found.
         return true;
       }
       showFailureMessageForTableNavigationAction(navigationAction, eventId);

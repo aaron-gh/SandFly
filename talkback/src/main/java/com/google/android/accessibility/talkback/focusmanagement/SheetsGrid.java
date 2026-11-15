@@ -8,13 +8,15 @@ import android.graphics.Region;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
-import android.view.ViewConfiguration;
 import android.text.TextUtils;
+import android.view.ViewConfiguration;
 import android.view.accessibility.AccessibilityEvent;
+import android.view.accessibility.AccessibilityNodeInfo;
 import androidx.annotation.Nullable;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.focusmanagement.NavigationTarget.TargetType;
+import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionInfo;
 import com.google.android.accessibility.utils.traversal.TraversalStrategy;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import java.util.ArrayDeque;
@@ -32,6 +34,10 @@ import java.util.regex.Pattern;
  * in another row can only be reached by stepping through the cells in between. This class does
  * that stepping without speaking the cells passed over, and gives the target cell back for the
  * caller to focus and speak.
+ *
+ * <p>Each step waits for Sheets to list the cells around the newly focused one. The waiting is
+ * posted to the main thread, not slept, so a move that needs it ends later through {@link Later}.
+ * A touch on the screen or a focus move by the user stops the move in progress.
  */
 public final class SheetsGrid {
 
@@ -48,6 +54,15 @@ public final class SheetsGrid {
   private static final long SETTLE_TIMEOUT_MS = 300;
 
   private static final long POLL_MS = 8;
+
+  /** The longest a move runs on the main thread at a time before it lets other work run. */
+  private static final long MAX_BLOCK_MS = 30;
+
+  /** After this long, a move stops stepping through cells and takes the best cell found so far. */
+  private static final long MAX_STEPPING_MS = 10_000;
+
+  /** A move still running after this long (the service stopped, say) is dropped. */
+  private static final long MAX_MOVE_MS = 20_000;
 
   /** A column move scrolls the grid sideways at most this many times looking for the next cell. */
   private static final int MAX_SCROLLS = 3;
@@ -78,10 +93,13 @@ public final class SheetsGrid {
   /** How far a sideways drag stays from the grid's edges. */
   private static final int EDGE_MARGIN = 60;
 
+  /** How often, at most, the window is searched for a grid that lists no cells. */
+  private static final long GRID_SEARCH_INTERVAL_MS = 200;
+
   private static final Handler handler = new Handler(Looper.getMainLooper());
 
-  /** Whether a column move is waiting for the grid to scroll. */
-  private static boolean scrolling = false;
+  /** The move in progress, or null. Used on the main thread only. */
+  @Nullable private static Move active = null;
 
   /**
    * Whether an injected touch rests on the grid so Sheets lists its cells again: its hover events
@@ -89,12 +107,18 @@ public final class SheetsGrid {
    */
   private static boolean touching = false;
 
+  /**
+   * Whether a gesture SandFly injected is on the screen, so the touch interaction it starts isn't
+   * taken for the user's.
+   */
+  private static boolean injecting = false;
+
   /** Lets touches through to the app in a region of the screen, or stops that when null. */
   public interface PassThrough {
     void set(@Nullable Region region);
   }
 
-  /** Gets the cell a column move found after scrolling the grid, or null when there was none. */
+  /** Gets the cell a move found after waiting for Sheets, or null when there was none. */
   public interface Later {
     void found(@Nullable AccessibilityNodeInfoCompat cell);
   }
@@ -107,6 +131,11 @@ public final class SheetsGrid {
 
   /** The address to speak at the end of a move, the only cell not dropped while silent. */
   @Nullable private static volatile String silentTarget = null;
+
+  /** A cell whose next focus event is dropped until {@link #quietUntil}: a stopped move's pivot. */
+  @Nullable private static String quietAddress = null;
+
+  private static long quietUntil = 0;
 
   private SheetsGrid() {}
 
@@ -176,7 +205,7 @@ public final class SheetsGrid {
    */
   public static boolean touchGridIfLost(@Nullable AccessibilityNodeInfoCompat pivot) {
     if (pivot == null
-        || scrolling
+        || isMoving()
         || !TextUtils.equals(pivot.getPackageName(), PACKAGE)
         || cellOf(pivot) != null) {
       return false;
@@ -218,15 +247,40 @@ public final class SheetsGrid {
     return cellOf(node) != null;
   }
 
+  /** Returns whether the node belongs to Google Sheets. */
+  public static boolean isInSheets(@Nullable AccessibilityNodeInfoCompat node) {
+    return node != null && TextUtils.equals(node.getPackageName(), PACKAGE);
+  }
+
   /**
    * Returns whether a focus event comes from a cell passed over during a move and shouldn't be
-   * spoken.
+   * spoken. A touch interaction the user starts stops the move in progress.
    */
   public static boolean shouldDropFocusEvent(AccessibilityEvent event) {
+    int type = event.getEventType();
+    if (type == AccessibilityEvent.TYPE_TOUCH_INTERACTION_START && !injecting) {
+      // What the touch explores is spoken, and a gesture acts from the move's pivot.
+      cancel("The screen was touched", /* restorePivot= */ true);
+      silentUntil = 0;
+      silentTarget = null;
+      return false;
+    }
+    if (quietAddress != null && type == AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED) {
+      String quiet = quietAddress;
+      if (SystemClock.uptimeMillis() > quietUntil) {
+        quietAddress = null;
+      } else if (TextUtils.equals(event.getPackageName(), PACKAGE)) {
+        Cell cell = parse(event.getContentDescription());
+        if (cell != null && cell.address.equals(quiet)) {
+          quietAddress = null;
+          return true;
+        }
+      }
+    }
     if (silentUntil == 0) {
       return false;
     }
-    int type = event.getEventType();
+    boolean scrolling = isScrollingNow();
     if (touching
         && (type == AccessibilityEvent.TYPE_VIEW_HOVER_ENTER
             || type == AccessibilityEvent.TYPE_VIEW_HOVER_EXIT)) {
@@ -262,8 +316,20 @@ public final class SheetsGrid {
     return true;
   }
 
+  /**
+   * Called for each focus action SandFly takes: a focus move by the user (by gesture, key or
+   * reading) stops the move in progress, so it doesn't move the focus back.
+   */
+  public static void onFocusAction(@FocusActionInfo.SourceAction int sourceAction) {
+    if (active != null
+        && (sourceAction == FocusActionInfo.LOGICAL_NAVIGATION
+            || sourceAction == FocusActionInfo.KEYBOARD_SHORTCUT_REFOCUS)) {
+      cancel("The focus was moved", /* restorePivot= */ false);
+    }
+  }
+
   /** What a step through the cells decides about a cell. */
-  private interface Goal {
+  interface Goal {
     /** The cell is the target. */
     int FOUND = 0;
 
@@ -277,11 +343,149 @@ public final class SheetsGrid {
   }
 
   /**
+   * Returns what a move of {@code targetType} from {@code from} looks for, or null when there's
+   * nothing to look for.
+   */
+  @Nullable
+  static Goal goalFor(@TargetType int targetType, Cell from, boolean forward) {
+    switch (targetType) {
+      case NavigationTarget.TARGET_ROW -> {
+        // Next or previous row, same column.
+        int targetRow = from.row + (forward ? 1 : -1);
+        if (targetRow < 0) {
+          return null;
+        }
+        return cell -> {
+          if (cell.row == targetRow && cell.column == from.column) {
+            return Goal.FOUND;
+          }
+          // Passed the target's place in reading order: that row has no such column.
+          boolean beyond = forward ? cell.row > targetRow : cell.row < targetRow;
+          boolean pastInRow =
+              cell.row == targetRow
+                  && (forward ? cell.column > from.column : cell.column < from.column);
+          return beyond || pastInRow ? Goal.STOP : Goal.CONTINUE;
+        };
+      }
+      case NavigationTarget.TARGET_COLUMN -> {
+        // Next or previous cell in the same row.
+        return cell -> cell.row == from.row ? Goal.FOUND : Goal.STOP;
+      }
+      case NavigationTarget.TARGET_HTML_ELEMENT_ROW_BOUNDS -> {
+        // First or last cell of the row.
+        return cell -> cell.row == from.row ? Goal.CONTINUE : Goal.STOP;
+      }
+      case NavigationTarget.TARGET_HTML_ELEMENT_COLUMN_BOUNDS,
+          NavigationTarget.TARGET_HTML_ELEMENT_TABLE_BOUNDS -> {
+        // First or last cell of the column or the table.
+        return cell -> Goal.CONTINUE;
+      }
+      default -> {
+        return null;
+      }
+    }
+  }
+
+  /** One table move, from the first step to the cell it ends on. */
+  private static final class Move {
+    final AccessibilityNodeInfoCompat pivot;
+    final Cell from;
+    @TargetType final int targetType;
+    final boolean forward;
+
+    /** Whether the move goes to the first or last cell of a row, column or the table. */
+    final boolean toEnd;
+
+    final Goal goal;
+    final PassThrough passThrough;
+    final Later later;
+    final long start = SystemClock.uptimeMillis();
+
+    /** The cell the steps have reached, focused silently unless it's the pivot. */
+    AccessibilityNodeInfoCompat current;
+
+    Cell currentCell;
+
+    /** For moves to an end: the furthest cell found so far that qualifies. */
+    @Nullable AccessibilityNodeInfoCompat best;
+
+    @Nullable Cell bestCell;
+    int steps = 0;
+
+    /** Until when the current step waits for Sheets to list the cells around the current one. */
+    long stepDeadline;
+
+    /** Whether the focus was moved off the pivot. */
+    boolean focusedAway = false;
+
+    /** When the move last started running on the main thread. */
+    long chunkStart;
+
+    /** Whether {@link #navigate} returned already, so the result goes to {@link #later}. */
+    boolean async = false;
+
+    @Nullable AccessibilityNodeInfoCompat result;
+
+    /** The scroll in progress, or null while the move steps through the cells on the screen. */
+    @Nullable Scroll scroll;
+
+    /** Whether the pass-through region is set. */
+    boolean regionSet = false;
+
+    Move(
+        AccessibilityNodeInfoCompat pivot,
+        Cell from,
+        @TargetType int targetType,
+        boolean forward,
+        Goal goal,
+        PassThrough passThrough,
+        Later later) {
+      this.pivot = pivot;
+      this.from = from;
+      this.targetType = targetType;
+      this.forward = forward;
+      this.toEnd =
+          targetType == NavigationTarget.TARGET_HTML_ELEMENT_ROW_BOUNDS
+              || targetType == NavigationTarget.TARGET_HTML_ELEMENT_COLUMN_BOUNDS
+              || targetType == NavigationTarget.TARGET_HTML_ELEMENT_TABLE_BOUNDS;
+      this.goal = goal;
+      this.passThrough = passThrough;
+      this.later = later;
+      this.current = pivot;
+      this.currentCell = from;
+      this.chunkStart = start;
+      this.stepDeadline = start + SETTLE_TIMEOUT_MS;
+    }
+
+    long elapsed() {
+      return SystemClock.uptimeMillis() - start;
+    }
+
+    /** Runs {@code part} of the move later, if the move is still in progress then. */
+    void post(Runnable part, long delayMs) {
+      handler.postDelayed(() -> run(this, part), delayMs);
+    }
+
+    void setPassThrough(Region region) {
+      passThrough.set(region);
+      regionSet = true;
+    }
+
+    void clearPassThrough() {
+      if (regionSet) {
+        regionSet = false;
+        passThrough.set(null);
+      }
+    }
+  }
+
+  /**
    * Finds the cell a table move goes to, passing over the cells in between without speaking them.
-   * Returns the target cell, for the caller to focus, or null when there's none in that direction.
+   * Returns the target cell, for the caller to focus, or null.
    *
-   * <p>A column move past the last (or first) column on the screen returns null and scrolls the
-   * grid sideways, then gives the cell to {@code later}; {@link #isScrolling} is true meanwhile.
+   * <p>When the move has to wait for Sheets to list cells, or scrolls the grid, it returns null
+   * and {@link #isMoving} is true; the move then gives the cell, or null when there's none in that
+   * direction, to {@code later}. A move stopped by the user gives nothing to {@code later}.
    */
   @Nullable
   public static AccessibilityNodeInfoCompat navigate(
@@ -291,141 +495,266 @@ public final class SheetsGrid {
       PassThrough passThrough,
       Later later) {
     Cell from = cellOf(pivot);
-    if (from == null || scrolling) {
+    if (from == null || isMoving()) {
       return null;
     }
     boolean forward = searchDirection == TraversalStrategy.SEARCH_FOCUS_FORWARD;
-    boolean toEnd;
-    Goal goal;
-    switch (targetType) {
-      case NavigationTarget.TARGET_ROW -> {
-        // Next or previous row, same column.
-        int targetRow = from.row + (forward ? 1 : -1);
-        if (targetRow < 0) {
-          return null;
-        }
-        toEnd = false;
-        goal =
-            cell -> {
-              if (cell.row == targetRow && cell.column == from.column) {
-                return Goal.FOUND;
-              }
-              // Passed the target's place in reading order: that row has no such column.
-              boolean beyond = forward ? cell.row > targetRow : cell.row < targetRow;
-              boolean pastInRow =
-                  cell.row == targetRow
-                      && (forward ? cell.column > from.column : cell.column < from.column);
-              return beyond || pastInRow ? Goal.STOP : Goal.CONTINUE;
-            };
-      }
-      case NavigationTarget.TARGET_COLUMN -> {
-        // Next or previous cell in the same row.
-        toEnd = false;
-        goal = cell -> cell.row == from.row ? Goal.FOUND : Goal.STOP;
-      }
-      case NavigationTarget.TARGET_HTML_ELEMENT_ROW_BOUNDS -> {
-        // First or last cell of the row.
-        toEnd = true;
-        goal = cell -> cell.row == from.row ? Goal.CONTINUE : Goal.STOP;
-      }
-      case NavigationTarget.TARGET_HTML_ELEMENT_COLUMN_BOUNDS -> {
-        // First or last cell of the column.
-        toEnd = true;
-        goal = cell -> Goal.CONTINUE;
-      }
-      case NavigationTarget.TARGET_HTML_ELEMENT_TABLE_BOUNDS -> {
-        toEnd = true;
-        goal = cell -> Goal.CONTINUE;
-      }
-      default -> {
-        return null;
-      }
+    Goal goal = goalFor(targetType, from, forward);
+    if (goal == null) {
+      return null;
     }
-    boolean columnBounds = targetType == NavigationTarget.TARGET_HTML_ELEMENT_COLUMN_BOUNDS;
-    long start = SystemClock.uptimeMillis();
-    AccessibilityNodeInfoCompat current = pivot;
-    Cell currentCell = from;
-    // For moves to an end: the furthest cell found so far that qualifies.
-    @Nullable AccessibilityNodeInfoCompat best = null;
-    @Nullable Cell bestCell = null;
-    int steps = 0;
+    Move move = new Move(pivot, from, targetType, forward, goal, passThrough, later);
+    active = move;
     try {
-      while (steps < MAX_STEPS) {
-        AccessibilityNodeInfoCompat next = neighbor(current, currentCell, forward);
-        Cell nextCell = next == null ? null : cellOf(next);
-        if (targetType == NavigationTarget.TARGET_COLUMN
-            && (nextCell == null || nextCell.row != from.row)) {
+      step(move);
+    } catch (RuntimeException e) {
+      LogUtils.w(TAG, "The move from %s failed: %s", from, e);
+      fail(move);
+    }
+    if (active != move) {
+      return move.result;
+    }
+    move.async = true;
+    return null;
+  }
+
+  /** Returns whether a move is in progress: waiting for Sheets, or scrolling the grid. */
+  public static boolean isMoving() {
+    Move move = active;
+    if (move != null && move.elapsed() > MAX_MOVE_MS) {
+      cancel("The move took too long", /* restorePivot= */ false);
+      return false;
+    }
+    return move != null;
+  }
+
+  /** Returns whether the move in progress scrolls the grid. */
+  private static boolean isScrollingNow() {
+    Move move = active;
+    return move != null && move.scroll != null;
+  }
+
+  /**
+   * Steps through the cells towards the move's target. Returns when the move ended, or when it
+   * waits for Sheets, having posted the next step.
+   */
+  private static void step(Move move) {
+    boolean columnBounds = move.targetType == NavigationTarget.TARGET_HTML_ELEMENT_COLUMN_BOUNDS;
+    try {
+      while (move.steps < MAX_STEPS && move.elapsed() < MAX_STEPPING_MS) {
+        AccessibilityNodeInfoCompat parent = move.current.getParent();
+        Lookup lookup = parent == null ? null : lookNow(parent, move.currentCell, move.forward);
+        if (lookup != null
+            && !lookup.settled
+            && SystemClock.uptimeMillis() < move.stepDeadline) {
+          // Sheets hasn't listed the cells around the current one yet.
+          move.post(() -> step(move), POLL_MS);
+          return;
+        }
+        AccessibilityNodeInfoCompat next = lookup == null ? null : lookup.found;
+        Cell nextCell = cellOf(next);
+        if (move.targetType == NavigationTarget.TARGET_COLUMN
+            && (nextCell == null || nextCell.row != move.from.row)) {
           // Sheets lists only the columns on the screen, so past the last one the reading order
           // wraps to the next row: slide the grid over and look again.
-          if (startScroll(current, from, forward, passThrough, later)) {
-            return null;
+          if (startScroll(move, /* rows= */ false)) {
+            return;
           }
         }
-        if (targetType == NavigationTarget.TARGET_ROW
-            && (nextCell == null || goal.test(nextCell) == Goal.STOP)) {
+        if (move.targetType == NavigationTarget.TARGET_ROW
+            && (nextCell == null || move.goal.test(nextCell) == Goal.STOP)) {
           // The row is off the screen: slide the grid up or down and look again.
-          if (startRowScroll(current, from, forward, passThrough, later)) {
-            return null;
+          if (startScroll(move, /* rows= */ true)) {
+            return;
           }
         }
-        if (next == null) {
+        if (next == null || nextCell == null) {
           break;
         }
-        int decision = goal.test(nextCell);
+        int decision = move.goal.test(nextCell);
         if (decision == Goal.FOUND) {
-          LogUtils.d(TAG, "%s -> %s after %d steps, %d ms", from, nextCell, steps,
-              SystemClock.uptimeMillis() - start);
-          if (steps > 0) {
-            // Cells were passed over silently: speak the target, which the caller focuses now.
-            endSilence(nextCell.address);
-          }
-          return next;
+          LogUtils.d(TAG, "%s -> %s after %d steps, %d ms", move.from, nextCell, move.steps,
+              move.elapsed());
+          // Speak the target, which the caller focuses now, also when the end of an earlier
+          // move's silence is still running.
+          endSilence(nextCell.address);
+          complete(move, next);
+          return;
         }
         if (decision == Goal.STOP) {
           break;
         }
-        if (toEnd && (!columnBounds || nextCell.column == from.column)) {
-          best = next;
-          bestCell = nextCell;
+        if (move.toEnd && (!columnBounds || nextCell.column == move.from.column)) {
+          move.best = next;
+          move.bestCell = nextCell;
         }
         // Focus the cell silently so Sheets lists the one after it.
         silence(null);
+        move.focusedAway = true;
         if (!next.performAction(AccessibilityNodeInfoCompat.ACTION_ACCESSIBILITY_FOCUS)) {
           LogUtils.w(TAG, "Couldn't focus %s", nextCell);
           break;
         }
-        current = next;
-        currentCell = nextCell;
-        steps++;
+        move.current = next;
+        move.currentCell = nextCell;
+        move.steps++;
+        move.stepDeadline = SystemClock.uptimeMillis() + SETTLE_TIMEOUT_MS;
+        if (SystemClock.uptimeMillis() - move.chunkStart > MAX_BLOCK_MS) {
+          move.post(() -> step(move), 0);
+          return;
+        }
       }
     } catch (RuntimeException e) {
       LogUtils.w(TAG, "Stepping through cells failed: %s", e);
     }
-    LogUtils.d(TAG, "%s: stopped at %s after %d steps, %d ms, best=%s", from, currentCell, steps,
-        SystemClock.uptimeMillis() - start, bestCell);
-    if (best != null) {
-      if (best == current || currentCell == bestCell) {
+    endStepping(move);
+  }
+
+  /** Ends a move that stepped as far as it could without finding a target on the way. */
+  private static void endStepping(Move move) {
+    LogUtils.d(TAG, "%s: stopped at %s after %d steps, %d ms, best=%s", move.from,
+        move.currentCell, move.steps, move.elapsed(), move.bestCell);
+    if (move.best != null && move.bestCell != null) {
+      if (move.best == move.current || move.currentCell == move.bestCell) {
         // Focused silently already: clear it so focusing it again speaks it.
-        current.performAction(AccessibilityNodeInfoCompat.ACTION_CLEAR_ACCESSIBILITY_FOCUS);
+        move.current.performAction(AccessibilityNodeInfoCompat.ACTION_CLEAR_ACCESSIBILITY_FOCUS);
       }
-      endSilence(bestCell.address);
-      return best;
+      endSilence(move.bestCell.address);
+      complete(move, move.best);
+      return;
     }
-    if (steps > 0) {
+    endSilence(null);
+    if (move.focusedAway) {
       // Nothing found after passing over cells: go back silently to where the move started.
-      endSilence(null);
-      pivot.performAction(AccessibilityNodeInfoCompat.ACTION_ACCESSIBILITY_FOCUS);
+      move.pivot.performAction(AccessibilityNodeInfoCompat.ACTION_ACCESSIBILITY_FOCUS);
     }
-    return null;
+    complete(move, null);
   }
 
-  /** Returns whether a column move is waiting for the grid to scroll. */
-  public static boolean isScrolling() {
-    return scrolling;
+  /**
+   * Runs {@code part} of a move posted earlier, if the move is still the one in progress and
+   * Sheets is still in front. A failure ends the move.
+   */
+  private static void run(Move move, Runnable part) {
+    if (active != move) {
+      return;
+    }
+    if (move.elapsed() > MAX_MOVE_MS) {
+      cancel("The move took too long", /* restorePivot= */ false);
+      return;
+    }
+    if (!TalkBackService.isServiceActive() || otherAppInFront()) {
+      cancel("SandFly is suspended or Sheets is no longer in front", /* restorePivot= */ false);
+      return;
+    }
+    move.chunkStart = SystemClock.uptimeMillis();
+    try {
+      part.run();
+    } catch (RuntimeException e) {
+      LogUtils.w(TAG, "The move from %s failed: %s", move.from, e);
+      fail(move);
+    }
   }
 
-  /** A column move that scrolls the grid sideways. */
+  /** Ends the move with no target: the focus goes back silently to where it started. */
+  private static void fail(Move move) {
+    if (active != move) {
+      return;
+    }
+    endSilence(null);
+    if (move.focusedAway || move.scroll != null) {
+      try {
+        move.pivot.performAction(AccessibilityNodeInfoCompat.ACTION_ACCESSIBILITY_FOCUS);
+      } catch (RuntimeException e) {
+        LogUtils.w(TAG, "Couldn't focus %s again: %s", move.from, e);
+      }
+    }
+    complete(move, null);
+  }
+
+  /** Ends the move with {@code cell}, the cell to focus and speak, or null. */
+  private static void complete(Move move, @Nullable AccessibilityNodeInfoCompat cell) {
+    if (active != move) {
+      return;
+    }
+    active = null;
+    handler.removeCallbacksAndMessages(null);
+    move.clearPassThrough();
+    touching = false;
+    injecting = false;
+    move.result = cell;
+    if (move.async) {
+      move.later.found(cell);
+    }
+  }
+
+  /**
+   * Stops the move in progress without speaking: the user touched the screen or moved the focus,
+   * or left Sheets. With {@code restorePivot}, the focus goes back silently to the cell the move
+   * started from, if it's on the screen, so a gesture that follows acts from there and not from a
+   * cell passed over; what the touch explores takes the focus afterwards.
+   */
+  private static void cancel(String reason, boolean restorePivot) {
+    Move move = active;
+    if (move == null) {
+      return;
+    }
+    LogUtils.d(TAG, "The move from %s stopped: %s", move.from, reason);
+    active = null;
+    handler.removeCallbacksAndMessages(null);
+    move.clearPassThrough();
+    touching = false;
+    injecting = false;
+    silentUntil = 0;
+    silentTarget = null;
+    if (restorePivot && (move.focusedAway || move.scroll != null)) {
+      try {
+        if (move.pivot.refresh() && move.pivot.isVisibleToUser()) {
+          quietAddress = move.from.address;
+          quietUntil = SystemClock.uptimeMillis() + END_SILENCE_MS;
+          move.pivot.performAction(AccessibilityNodeInfoCompat.ACTION_ACCESSIBILITY_FOCUS);
+        }
+      } catch (RuntimeException e) {
+        LogUtils.w(TAG, "Couldn't focus %s again: %s", move.from, e);
+      }
+    }
+  }
+
+  /** Whether the active window belongs to an app other than Sheets. */
+  private static boolean otherAppInFront() {
+    AccessibilityService service = TalkBackService.getInstance();
+    if (service == null) {
+      return true;
+    }
+    AccessibilityNodeInfo root = service.getRootInActiveWindow();
+    return root != null && !TextUtils.equals(root.getPackageName(), PACKAGE);
+  }
+
+  /**
+   * Whether Sheets is the active window and the grid is still on the screen, found again if Sheets
+   * replaced it.
+   */
+  private static boolean gridInFront(Scroll scroll) {
+    AccessibilityService service = TalkBackService.getInstance();
+    AccessibilityNodeInfo root = service == null ? null : service.getRootInActiveWindow();
+    if (root == null || !TextUtils.equals(root.getPackageName(), PACKAGE)) {
+      return false;
+    }
+    if (scroll.grid.refresh() && scroll.grid.isVisibleToUser()) {
+      return true;
+    }
+    AccessibilityNodeInfoCompat found = findGrid(scroll.grid);
+    if (found == null) {
+      return false;
+    }
+    scroll.grid = found;
+    return true;
+  }
+
+  /** A move that scrolls the grid. */
   private static final class Scroll {
+    final Move move;
+
     /** The cell the move started from. */
     final Cell origin;
 
@@ -435,13 +764,8 @@ public final class SheetsGrid {
     @Nullable final Cell rowGoal;
 
     AccessibilityNodeInfoCompat grid;
-    final PassThrough passThrough;
-    final Later later;
     final long start = SystemClock.uptimeMillis();
     int scrollsLeft = MAX_SCROLLS;
-
-    /** The cell the last drag was measured from. */
-    @Nullable AccessibilityNodeInfoCompat lastCell;
 
     /** The cell the move started from, while it's still on the screen. */
     @Nullable AccessibilityNodeInfoCompat originNode;
@@ -452,25 +776,18 @@ public final class SheetsGrid {
     /** Whether the grid was touched to make Sheets list its cells again. */
     boolean touched = false;
 
-    /** How many times the touch was cancelled and sent again. */
-    int touchRetries = 0;
-
     /** How many drags were sent. */
     int drags = 0;
 
-    Scroll(
-        Cell origin,
-        boolean forward,
-        @Nullable Cell rowGoal,
-        AccessibilityNodeInfoCompat grid,
-        PassThrough passThrough,
-        Later later) {
-      this.origin = origin;
-      this.forward = forward;
+    /** When the window was last searched for the grid. */
+    long gridSearchedAt = 0;
+
+    Scroll(Move move, @Nullable Cell rowGoal, AccessibilityNodeInfoCompat grid) {
+      this.move = move;
+      this.origin = move.from;
+      this.forward = move.forward;
       this.rowGoal = rowGoal;
       this.grid = grid;
-      this.passThrough = passThrough;
-      this.later = later;
     }
 
     /**
@@ -478,20 +795,12 @@ public final class SheetsGrid {
      * move, whether it's the goal or past it.
      */
     boolean beyond(Cell cell) {
-      if (rowGoal != null) {
-        int order = cell.compareTo(rowGoal);
-        return forward ? order >= 0 : order <= 0;
-      }
-      int order = cell.compareTo(origin);
-      return forward ? order > 0 : order < 0;
+      return SheetsGrid.beyond(cell, origin, rowGoal, forward);
     }
 
     /** Whether a cell the walk reached is the one the move goes to. */
     boolean isTarget(Cell cell) {
-      if (rowGoal != null) {
-        return cell.row == rowGoal.row && cell.column == rowGoal.column;
-      }
-      return beyond(cell) && cell.row == origin.row;
+      return SheetsGrid.isTarget(cell, origin, rowGoal, forward);
     }
 
     /** The cell to start walking from, among those listed after a scroll. */
@@ -504,47 +813,54 @@ public final class SheetsGrid {
     }
   }
 
-  /**
-   * Starts dragging the grid by about one column so the column after (or before) {@code cell}
-   * comes onto the screen, then gives the next cell in the row to {@code later}. Returns false if
-   * the drag couldn't be started.
-   */
-  private static boolean startScroll(
-      AccessibilityNodeInfoCompat cell,
-      Cell address,
-      boolean forward,
-      PassThrough passThrough,
-      Later later) {
-    AccessibilityNodeInfoCompat grid = cell.getParent();
-    if (grid == null || (!forward && address.column == 0)) {
-      // Nothing comes before column A.
-      return false;
+  /** See {@link Scroll#beyond}. */
+  static boolean beyond(Cell cell, Cell origin, @Nullable Cell rowGoal, boolean forward) {
+    if (rowGoal != null) {
+      int order = cell.compareTo(rowGoal);
+      return forward ? order >= 0 : order <= 0;
     }
-    Scroll scroll = new Scroll(address, forward, null, grid, passThrough, later);
-    scroll.originNode = cell;
-    return drag(cell, scroll);
+    int order = cell.compareTo(origin);
+    return forward ? order > 0 : order < 0;
+  }
+
+  /** See {@link Scroll#isTarget}. */
+  static boolean isTarget(Cell cell, Cell origin, @Nullable Cell rowGoal, boolean forward) {
+    if (rowGoal != null) {
+      return cell.row == rowGoal.row && cell.column == rowGoal.column;
+    }
+    return beyond(cell, origin, null, forward) && cell.row == origin.row;
   }
 
   /**
-   * Starts dragging the grid by about one row so the row after (or before) {@code cell}'s comes
-   * onto the screen, then gives the cell in the origin's column to {@code later}.
+   * Starts dragging the grid so the row or column the move goes to comes onto the screen; the
+   * move then walks to its cell. Returns false if the drag couldn't be started.
    */
-  private static boolean startRowScroll(
-      AccessibilityNodeInfoCompat cell,
-      Cell origin,
-      boolean forward,
-      PassThrough passThrough,
-      Later later) {
-    AccessibilityNodeInfoCompat grid = cell.getParent();
-    int goalRow = origin.row + (forward ? 1 : -1);
-    if (grid == null || goalRow < 0) {
+  private static boolean startScroll(Move move, boolean rows) {
+    AccessibilityNodeInfoCompat grid = move.current.getParent();
+    if (grid == null) {
       return false;
     }
-    String letters = origin.address.replaceAll("[0-9]+$", "");
-    Cell goal = new Cell(goalRow, origin.column, letters + (goalRow + 1));
-    Scroll scroll = new Scroll(origin, forward, goal, grid, passThrough, later);
-    scroll.originNode = cell;
-    return drag(cell, scroll);
+    Cell rowGoal = null;
+    if (rows) {
+      int goalRow = move.from.row + (move.forward ? 1 : -1);
+      if (goalRow < 0) {
+        return false;
+      }
+      String letters = move.from.address.replaceAll("[0-9]+$", "");
+      rowGoal = new Cell(goalRow, move.from.column, letters + (goalRow + 1));
+    } else if (!move.forward && move.from.column == 0) {
+      // Nothing comes before column A.
+      return false;
+    }
+    Scroll scroll = new Scroll(move, rowGoal, grid);
+    // A failed scroll leaves the focus on the cell the move started from, not on one passed over.
+    scroll.originNode = move.pivot;
+    move.scroll = scroll;
+    if (drag(move.current, scroll)) {
+      return true;
+    }
+    move.scroll = null;
+    return false;
   }
 
   /**
@@ -553,19 +869,17 @@ public final class SheetsGrid {
    */
   private static boolean drag(AccessibilityNodeInfoCompat cell, Scroll scroll) {
     AccessibilityService service = TalkBackService.getInstance();
-    if (service == null || scroll.scrollsLeft <= 0) {
+    if (service == null || scroll.scrollsLeft <= 0 || !gridInFront(scroll)) {
       return false;
     }
     Rect before = new Rect();
     cell.getBoundsInScreen(before);
     Rect gridBounds = new Rect();
-    scroll.grid.refresh();
     scroll.grid.getBoundsInScreen(gridBounds);
     if (before.isEmpty() || gridBounds.isEmpty()) {
       return false;
     }
     scroll.scrollsLeft--;
-    scroll.lastCell = cell;
     boolean forward = scroll.forward;
     int slop = ViewConfiguration.get(service).getScaledTouchSlop();
     boolean vertical = scroll.rowGoal != null;
@@ -640,12 +954,12 @@ public final class SheetsGrid {
     GestureDescription.StrokeDescription still =
         stroke.continueStroke(rest, 0, REST_MS, /* willContinue= */ false);
 
-    scrolling = true;
+    Move move = scroll.move;
     // Sheets focuses the cell the drag starts on; don't speak it.
     silence(null, PASS_THROUGH_WAIT_MS + DRAG_MS + REST_MS + SCROLL_TIMEOUT_MS + RELIST_TIMEOUT_MS);
     // SandFly explores the screen by touch, and injected touches too, so the drag goes through a
-    // pass-through strip.
-    scroll.passThrough.set(
+    // pass-through strip. A real touch while it's set stops the move, which clears it.
+    move.setPassThrough(
         new Region(
             (int) Math.min(x, endX) - PASS_THROUGH_MARGIN,
             (int) Math.min(y, endY) - PASS_THROUGH_MARGIN,
@@ -653,41 +967,53 @@ public final class SheetsGrid {
             (int) Math.max(y, endY) + PASS_THROUGH_MARGIN));
     Runnable dragged =
         () -> {
-          scroll.passThrough.set(null);
-          waitForScroll(
-              cell, before, scroll, SystemClock.uptimeMillis() + SCROLL_TIMEOUT_MS);
+          injecting = false;
+          move.clearPassThrough();
+          waitForScroll(cell, before, scroll, SystemClock.uptimeMillis() + SCROLL_TIMEOUT_MS);
         };
     AccessibilityService.GestureResultCallback rested =
         new AccessibilityService.GestureResultCallback() {
           @Override
           public void onCompleted(GestureDescription description) {
-            dragged.run();
+            run(move, dragged);
           }
 
           @Override
           public void onCancelled(GestureDescription description) {
-            LogUtils.w(TAG, "The rest after the drag was cancelled");
-            dragged.run();
+            gestureCancelled(move, "The rest after the drag");
           }
         };
     AccessibilityService.GestureResultCallback moved =
         new AccessibilityService.GestureResultCallback() {
           @Override
           public void onCompleted(GestureDescription description) {
-            if (!service.dispatchGesture(
-                new GestureDescription.Builder().addStroke(still).build(), rested, handler)) {
-              dragged.run();
+            // Sent even when the move stopped meanwhile, so the finger lifts.
+            boolean sent;
+            try {
+              sent =
+                  service.dispatchGesture(
+                      new GestureDescription.Builder().addStroke(still).build(), rested, handler);
+            } catch (RuntimeException e) {
+              LogUtils.w(TAG, "The rest after the drag wasn't sent: %s", e);
+              sent = false;
+            }
+            if (!sent) {
+              run(move, dragged);
             }
           }
 
           @Override
           public void onCancelled(GestureDescription description) {
-            LogUtils.w(TAG, "The drag was cancelled");
-            dragged.run();
+            gestureCancelled(move, "The drag");
           }
         };
-    handler.postDelayed(
+    move.post(
         () -> {
+          if (!gridInFront(scroll)) {
+            cancel("Sheets is no longer in front", /* restorePivot= */ false);
+            return;
+          }
+          injecting = true;
           if (!service.dispatchGesture(
               new GestureDescription.Builder().addStroke(stroke).build(), moved, handler)) {
             LogUtils.w(TAG, "The drag wasn't sent");
@@ -696,6 +1022,16 @@ public final class SheetsGrid {
         },
         PASS_THROUGH_WAIT_MS);
     return true;
+  }
+
+  /**
+   * An injected gesture was cancelled: a finger touched the screen, or another gesture was sent.
+   * The move stops.
+   */
+  private static void gestureCancelled(Move move, String what) {
+    if (active == move) {
+      cancel(what + " was cancelled", /* restorePivot= */ true);
+    }
   }
 
   /** Waits for the cell to move after a drag. */
@@ -708,11 +1044,11 @@ public final class SheetsGrid {
     }
     if (!gone && after.equals(before)) {
       if (SystemClock.uptimeMillis() < deadline) {
-        handler.postDelayed(() -> waitForScroll(cell, before, scroll, deadline), POLL_MS * 2);
+        scroll.move.post(() -> waitForScroll(cell, before, scroll, deadline), POLL_MS * 2);
         return;
       }
-      // A swipe during the drag cancels it, and a drag on a selected cell selects instead of
-      // scrolling: try once more from another cell before calling this the edge.
+      // A drag on a selected cell selects instead of scrolling: try once more from another cell
+      // before calling this the edge.
       if (scroll.drags == 1 && drag(cell, scroll)) {
         LogUtils.d(TAG, "The grid didn't scroll for %s: dragging again", scroll.origin);
         return;
@@ -739,12 +1075,12 @@ public final class SheetsGrid {
         // focus: focus the origin again so it lists the cells around it.
         scroll.refocusedAt = now;
         LogUtils.d(TAG, "No cells listed after scrolling: focused %s again", scroll.origin);
-        handler.postDelayed(
+        scroll.move.post(
             () -> waitForCells(scroll, Math.max(deadline, now + RELIST_STEP_MS)), POLL_MS * 2);
         return;
       }
       if (now < deadline) {
-        handler.postDelayed(() -> waitForCells(scroll, deadline), POLL_MS * 2);
+        scroll.move.post(() -> waitForCells(scroll, deadline), POLL_MS * 2);
         return;
       }
       LogUtils.w(TAG, "No cells listed after scrolling; grid: %s", describe(scroll.grid));
@@ -757,6 +1093,10 @@ public final class SheetsGrid {
     AccessibilityNodeInfoCompat anchor = nearest(cells, scroll.anchor(), null);
     String listed = addresses(cells);
     LogUtils.d(TAG, "Listed after scrolling (%d ms): %s", scroll.elapsed(), listed);
+    if (anchor == null) {
+      finish(scroll, null);
+      return;
+    }
     // Sheets lists the cells around the focused one again only when the focus moves, and the
     // list may still be the one from before the scroll: focus another cell, then come back, each
     // time waiting for the list to change.
@@ -799,13 +1139,18 @@ public final class SheetsGrid {
     void run(List<AccessibilityNodeInfoCompat> cells);
   }
 
+  /** Something to do with a cell found, or null. */
+  private interface NodeCallback {
+    void run(@Nullable AccessibilityNodeInfoCompat node);
+  }
+
   /** Waits for the listed cells to differ from {@code before}, or for the deadline. */
   private static void waitForChange(
       Scroll scroll, String before, long deadline, CellsCallback then) {
     List<AccessibilityNodeInfoCompat> cells = listedCells(scroll);
     String now = addresses(cells);
     if ((cells.isEmpty() || now.equals(before)) && SystemClock.uptimeMillis() < deadline) {
-      handler.postDelayed(() -> waitForChange(scroll, before, deadline, then), POLL_MS * 2);
+      scroll.move.post(() -> waitForChange(scroll, before, deadline, then), POLL_MS * 2);
       return;
     }
     LogUtils.d(TAG, "Relisted (%d ms): %s -> %s", scroll.elapsed(), before, now);
@@ -815,13 +1160,21 @@ public final class SheetsGrid {
   /** The cells the grid lists now, finding the grid again if Sheets replaced it. */
   private static List<AccessibilityNodeInfoCompat> listedCells(Scroll scroll) {
     List<AccessibilityNodeInfoCompat> cells = new ArrayList<>();
-    if (!scroll.grid.refresh() || cellsOf(scroll.grid, cells) == 0) {
-      AccessibilityNodeInfoCompat found = findGrid(scroll.grid);
-      if (found != null) {
-        scroll.grid = found;
-        cells.clear();
-        cellsOf(found, cells);
-      }
+    boolean present = scroll.grid.refresh();
+    if (present && cellsOf(scroll.grid, cells) > 0) {
+      return cells;
+    }
+    // The grid lists no cells, or is gone: search the window, but not on every poll.
+    long now = SystemClock.uptimeMillis();
+    if (present && now - scroll.gridSearchedAt < GRID_SEARCH_INTERVAL_MS) {
+      return cells;
+    }
+    scroll.gridSearchedAt = now;
+    AccessibilityNodeInfoCompat found = findGrid(scroll.grid);
+    if (found != null) {
+      scroll.grid = found;
+      cells.clear();
+      cellsOf(found, cells);
     }
     return cells;
   }
@@ -843,8 +1196,8 @@ public final class SheetsGrid {
     if (service == null) {
       return null;
     }
-    android.view.accessibility.AccessibilityNodeInfo root = service.getRootInActiveWindow();
-    if (root == null) {
+    AccessibilityNodeInfo root = service.getRootInActiveWindow();
+    if (root == null || !TextUtils.equals(root.getPackageName(), PACKAGE)) {
       return null;
     }
     ArrayDeque<AccessibilityNodeInfoCompat> queue = new ArrayDeque<>();
@@ -930,49 +1283,81 @@ public final class SheetsGrid {
    * that cell is in the origin's row, it's the target; if not, the row's next column is still off
    * the screen, so the grid scrolls again.
    */
-  private static void walk(AccessibilityNodeInfoCompat at, Cell atCell, Scroll scroll) {
-    boolean forward = scroll.forward;
-    AccessibilityNodeInfoCompat current = at;
-    Cell currentCell = atCell;
-    boolean focused = false;
-    try {
-      if (scroll.beyond(currentCell)) {
-        // Already past the origin: step back while the cell before is still past it.
-        for (int steps = 0; steps < MAX_STEPS; steps++) {
-          AccessibilityNodeInfoCompat back = neighborOrRefocus(current, currentCell, !forward);
+  private static void walk(AccessibilityNodeInfoCompat at, @Nullable Cell atCell, Scroll scroll) {
+    if (atCell == null) {
+      finish(scroll, null);
+      return;
+    }
+    if (scroll.beyond(atCell)) {
+      walkBack(scroll, at, atCell, /* focused= */ false, 0);
+    } else {
+      walkOn(scroll, at, atCell, 0);
+    }
+  }
+
+  /** Already past the origin: steps back while the cell before is still past it. */
+  private static void walkBack(
+      Scroll scroll,
+      AccessibilityNodeInfoCompat current,
+      Cell currentCell,
+      boolean focused,
+      int steps) {
+    if (steps >= MAX_STEPS) {
+      walked(scroll, current, currentCell, focused);
+      return;
+    }
+    neighborOrRefocus(
+        scroll.move,
+        current,
+        currentCell,
+        !scroll.forward,
+        back -> {
           Cell backCell = cellOf(back);
-          if (backCell == null || !scroll.beyond(backCell)) {
-            break;
+          if (back == null || backCell == null || !scroll.beyond(backCell)) {
+            walked(scroll, current, currentCell, focused);
+            return;
           }
           silence(null);
           if (!back.performAction(AccessibilityNodeInfoCompat.ACTION_ACCESSIBILITY_FOCUS)) {
-            break;
+            walked(scroll, current, currentCell, focused);
+            return;
           }
-          current = back;
-          currentCell = backCell;
-          focused = true;
-        }
-      } else {
-        // Step towards the origin and past it.
-        for (int steps = 0; steps < MAX_STEPS; steps++) {
-          silence(null);
-          current.performAction(AccessibilityNodeInfoCompat.ACTION_ACCESSIBILITY_FOCUS);
-          AccessibilityNodeInfoCompat next = neighborOrRefocus(current, currentCell, forward);
-          Cell nextCell = cellOf(next);
-          if (nextCell == null) {
-            break;
-          }
-          current = next;
-          currentCell = nextCell;
-          focused = false;
-          if (scroll.beyond(nextCell)) {
-            break;
-          }
-        }
-      }
-    } catch (RuntimeException e) {
-      LogUtils.w(TAG, "Walking through cells failed: %s", e);
+          walkBack(scroll, back, backCell, /* focused= */ true, steps + 1);
+        });
+  }
+
+  /** Steps towards the origin and past it. */
+  private static void walkOn(
+      Scroll scroll, AccessibilityNodeInfoCompat current, Cell currentCell, int steps) {
+    if (steps >= MAX_STEPS) {
+      walked(scroll, current, currentCell, /* focused= */ false);
+      return;
     }
+    silence(null);
+    boolean focused =
+        current.performAction(AccessibilityNodeInfoCompat.ACTION_ACCESSIBILITY_FOCUS);
+    neighborOrRefocus(
+        scroll.move,
+        current,
+        currentCell,
+        scroll.forward,
+        next -> {
+          Cell nextCell = cellOf(next);
+          if (next == null || nextCell == null) {
+            walked(scroll, current, currentCell, focused);
+            return;
+          }
+          if (scroll.beyond(nextCell)) {
+            walked(scroll, next, nextCell, /* focused= */ false);
+            return;
+          }
+          walkOn(scroll, next, nextCell, steps + 1);
+        });
+  }
+
+  /** Ends a walk at {@code current}: the move's target, its end, or a place to scroll on from. */
+  private static void walked(
+      Scroll scroll, AccessibilityNodeInfoCompat current, Cell currentCell, boolean focused) {
     if (scroll.isTarget(currentCell)) {
       LogUtils.d(TAG, "%s -> %s after scrolling, %d ms", scroll.origin, currentCell,
           scroll.elapsed());
@@ -995,13 +1380,20 @@ public final class SheetsGrid {
       return;
     }
     // The next column or row is still off the screen: scroll again.
-    AccessibilityNodeInfoCompat edge = current;
     if (scroll.beyond(currentCell)) {
-      AccessibilityNodeInfoCompat back = neighbor(current, currentCell, !forward);
-      if (back != null) {
-        edge = back;
-      }
+      awaitNeighbor(
+          scroll.move,
+          current,
+          currentCell,
+          !scroll.forward,
+          back -> dragOn(scroll, back != null ? back : current));
+    } else {
+      dragOn(scroll, current);
     }
+  }
+
+  /** Scrolls the grid on from {@code edge}, or ends the move. */
+  private static void dragOn(Scroll scroll, AccessibilityNodeInfoCompat edge) {
     // Only from the origin's row: if the walk ended in another row, Sheets lists cells far from
     // the origin (a swipe during the scroll moved its focus there), and scrolling on from there
     // would carry the move away from the origin's row.
@@ -1013,23 +1405,34 @@ public final class SheetsGrid {
   }
 
   /**
-   * Like {@link #neighbor}, but if Sheets lists nothing past {@code current}, focuses it again so
-   * Sheets lists the cells around it, and looks once more.
+   * Like {@link #awaitNeighbor}, but if Sheets lists nothing past {@code current}, focuses it
+   * again so Sheets lists the cells around it, and looks once more.
    */
-  @Nullable
-  private static AccessibilityNodeInfoCompat neighborOrRefocus(
-      AccessibilityNodeInfoCompat current, Cell currentCell, boolean forward) {
-    AccessibilityNodeInfoCompat found = neighbor(current, currentCell, forward);
-    if (found != null) {
-      return found;
-    }
-    silence(null);
-    current.performAction(AccessibilityNodeInfoCompat.ACTION_CLEAR_ACCESSIBILITY_FOCUS);
-    silence(null);
-    if (!current.performAction(AccessibilityNodeInfoCompat.ACTION_ACCESSIBILITY_FOCUS)) {
-      return null;
-    }
-    return neighbor(current, currentCell, forward);
+  private static void neighborOrRefocus(
+      Move move,
+      AccessibilityNodeInfoCompat current,
+      Cell currentCell,
+      boolean forward,
+      NodeCallback then) {
+    awaitNeighbor(
+        move,
+        current,
+        currentCell,
+        forward,
+        found -> {
+          if (found != null) {
+            then.run(found);
+            return;
+          }
+          silence(null);
+          current.performAction(AccessibilityNodeInfoCompat.ACTION_CLEAR_ACCESSIBILITY_FOCUS);
+          silence(null);
+          if (!current.performAction(AccessibilityNodeInfoCompat.ACTION_ACCESSIBILITY_FOCUS)) {
+            then.run(null);
+            return;
+          }
+          awaitNeighbor(move, current, currentCell, forward, then);
+        });
   }
 
   /** How long the touch that makes Sheets list its cells again rests on the grid. */
@@ -1046,6 +1449,11 @@ public final class SheetsGrid {
     if (service == null) {
       return false;
     }
+    if (!gridInFront(scroll)) {
+      cancel("Sheets is no longer in front", /* restorePivot= */ false);
+      return true;
+    }
+    Move move = scroll.move;
     Rect at = new Rect();
     AccessibilityNodeInfoCompat origin = scroll.originNode;
     if (origin != null && origin.refresh()) {
@@ -1069,11 +1477,7 @@ public final class SheetsGrid {
     // Touch exploration speaks what's under the finger; keep it quiet.
     silence(null, TOUCH_MS + RELIST_TIMEOUT_MS + 500);
     touching = true;
-    Runnable after =
-        () -> {
-          touching = false;
-          waitForCells(scroll, SystemClock.uptimeMillis() + RELIST_TIMEOUT_MS);
-        };
+    injecting = true;
     boolean sent =
         service.dispatchGesture(
             new GestureDescription.Builder()
@@ -1082,31 +1486,24 @@ public final class SheetsGrid {
             new AccessibilityService.GestureResultCallback() {
               @Override
               public void onCompleted(GestureDescription description) {
-                after.run();
+                run(
+                    move,
+                    () -> {
+                      touching = false;
+                      injecting = false;
+                      waitForCells(scroll, SystemClock.uptimeMillis() + RELIST_TIMEOUT_MS);
+                    });
               }
 
               @Override
               public void onCancelled(GestureDescription description) {
-                // A finger on the screen cancels it; try again once that's done.
-                LogUtils.d(TAG, "The touch was cancelled");
-                touching = false;
-                if (scroll.touchRetries++ < 2) {
-                  scroll.touched = false;
-                  handler.postDelayed(
-                      () -> {
-                        if (!touchToList(scroll)) {
-                          finish(scroll, null);
-                        }
-                      },
-                      400);
-                } else {
-                  after.run();
-                }
+                gestureCancelled(move, "The touch");
               }
             },
             handler);
     if (!sent) {
       touching = false;
+      injecting = false;
     }
     return sent;
   }
@@ -1118,8 +1515,7 @@ public final class SheetsGrid {
       return false;
     }
     silence(null);
-    boolean focused = origin.performAction(AccessibilityNodeInfoCompat.ACTION_ACCESSIBILITY_FOCUS);
-    return focused;
+    return origin.performAction(AccessibilityNodeInfoCompat.ACTION_ACCESSIBILITY_FOCUS);
   }
 
   private static void finish(Scroll scroll, @Nullable AccessibilityNodeInfoCompat cell) {
@@ -1129,8 +1525,7 @@ public final class SheetsGrid {
       refocusOrigin(scroll);
       endSilence(null);
     }
-    scrolling = false;
-    scroll.later.found(cell);
+    complete(scroll.move, cell);
   }
 
   private static void silence(@Nullable String target) {
@@ -1142,61 +1537,130 @@ public final class SheetsGrid {
 
   /**
    * Ends a move's silence: only events already on their way from the cells passed over are
-   * dropped, and {@code target}'s focus is spoken; focus the user moves afterwards is spoken.
+   * dropped, and {@code target}'s focus is spoken; focus the user moves afterwards is spoken. Does
+   * nothing when no silence is running.
    */
-  private static void endSilence(@Nullable String target) {
+  static void endSilence(@Nullable String target) {
+    if (silentUntil == 0 || SystemClock.uptimeMillis() > silentUntil) {
+      silentUntil = 0;
+      silentTarget = null;
+      return;
+    }
     silence(target, END_SILENCE_MS);
   }
 
-  private static void silence(@Nullable String target, long durationMs) {
+  static void silence(@Nullable String target, long durationMs) {
     silentUntil = SystemClock.uptimeMillis() + durationMs;
     silentTarget = target;
   }
 
+  /** What the grid lists past a cell. */
+  private static final class Lookup {
+    @Nullable final AccessibilityNodeInfoCompat found;
+
+    /**
+     * Whether the grid lists the cell itself and one past it, so it lists the cells around it
+     * already.
+     */
+    final boolean settled;
+
+    Lookup(@Nullable AccessibilityNodeInfoCompat found, boolean settled) {
+      this.found = found;
+      this.settled = settled;
+    }
+  }
+
+  /** Returns what {@code parent} lists just after or before {@code currentCell}, without waiting. */
+  private static Lookup lookNow(
+      AccessibilityNodeInfoCompat parent, Cell currentCell, boolean forward) {
+    parent.refresh();
+    List<AccessibilityNodeInfoCompat> nodes = new ArrayList<>();
+    List<Cell> cells = new ArrayList<>();
+    for (int i = 0; i < parent.getChildCount(); i++) {
+      AccessibilityNodeInfoCompat child = parent.getChild(i);
+      Cell cell = cellOf(child);
+      if (cell != null) {
+        nodes.add(child);
+        cells.add(cell);
+      }
+    }
+    int index = nextIndex(cells, currentCell, forward);
+    if (index < 0) {
+      return new Lookup(null, false);
+    }
+    return new Lookup(nodes.get(index), lists(cells, currentCell));
+  }
+
   /**
-   * Returns the cell just after or before {@code current} in reading order among the cells Sheets
-   * lists, waiting a moment for Sheets to list them after a focus change.
+   * Returns the index of the cell just after (or before) {@code current} in reading order, or -1
+   * when none of {@code cells} is past it.
    */
-  @Nullable
-  private static AccessibilityNodeInfoCompat neighbor(
-      AccessibilityNodeInfoCompat current, Cell currentCell, boolean forward) {
+  static int nextIndex(List<Cell> cells, Cell current, boolean forward) {
+    int found = -1;
+    for (int i = 0; i < cells.size(); i++) {
+      Cell cell = cells.get(i);
+      int order = cell.compareTo(current);
+      if (forward ? order <= 0 : order >= 0) {
+        continue;
+      }
+      if (found < 0
+          || (forward
+              ? cell.compareTo(cells.get(found)) < 0
+              : cell.compareTo(cells.get(found)) > 0)) {
+        found = i;
+      }
+    }
+    return found;
+  }
+
+  /** Returns whether {@code cells} has {@code cell}'s address. */
+  static boolean lists(List<Cell> cells, Cell cell) {
+    for (Cell c : cells) {
+      if (c.compareTo(cell) == 0) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  /**
+   * Gives {@code then} the cell just after or before {@code current} in reading order among the
+   * cells Sheets lists, once Sheets lists the cells around it, or what it lists after {@link
+   * #SETTLE_TIMEOUT_MS}. Waits by posting, not on the main thread.
+   */
+  private static void awaitNeighbor(
+      Move move,
+      AccessibilityNodeInfoCompat current,
+      Cell currentCell,
+      boolean forward,
+      NodeCallback then) {
     AccessibilityNodeInfoCompat parent = current.getParent();
     if (parent == null) {
-      return null;
+      then.run(null);
+      return;
     }
-    long deadline = SystemClock.uptimeMillis() + SETTLE_TIMEOUT_MS;
-    while (true) {
-      parent.refresh();
-      AccessibilityNodeInfoCompat found = null;
-      Cell foundCell = null;
-      boolean listsCurrent = false;
-      for (int i = 0; i < parent.getChildCount(); i++) {
-        AccessibilityNodeInfoCompat child = parent.getChild(i);
-        Cell cell = cellOf(child);
-        if (cell == null) {
-          continue;
-        }
-        int order = cell.compareTo(currentCell);
-        if (order == 0) {
-          listsCurrent = true;
-          continue;
-        }
-        if (forward ? order > 0 : order < 0) {
-          if (foundCell == null || (forward ? cell.compareTo(foundCell) < 0 : cell.compareTo(foundCell) > 0)) {
-            found = child;
-            foundCell = cell;
-          }
-        }
-      }
-      if (found != null && listsCurrent) {
-        return found;
-      }
-      if (SystemClock.uptimeMillis() >= deadline) {
-        // Sheets lists the cells around the focused one; with the current one listed and nothing
-        // past it, this is the grid's edge.
-        return found;
-      }
-      SystemClock.sleep(POLL_MS);
+    awaitNeighbor(
+        move, parent, currentCell, forward, SystemClock.uptimeMillis() + SETTLE_TIMEOUT_MS, then);
+  }
+
+  private static void awaitNeighbor(
+      Move move,
+      AccessibilityNodeInfoCompat parent,
+      Cell currentCell,
+      boolean forward,
+      long deadline,
+      NodeCallback then) {
+    Lookup lookup = lookNow(parent, currentCell, forward);
+    long now = SystemClock.uptimeMillis();
+    if (!lookup.settled && now < deadline) {
+      move.post(() -> awaitNeighbor(move, parent, currentCell, forward, deadline, then), POLL_MS);
+      return;
     }
+    if (now - move.chunkStart > MAX_BLOCK_MS) {
+      // Let other work run before the next step.
+      move.post(() -> then.run(lookup.found), 0);
+      return;
+    }
+    then.run(lookup.found);
   }
 }
