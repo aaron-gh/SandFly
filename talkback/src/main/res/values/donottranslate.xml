@@ -373,6 +373,8 @@
     <string name="pref_volume_change_speech_during_media_key" translatable="false">pref_volume_change_speech_during_media</string>
     <string name="pref_volume_change_interrupts_speech_key" translatable="false">pref_volume_change_interrupts_speech</string>
     <string name="pref_volume_keys_speech_volume_while_speaking_key" translatable="false">pref_volume_keys_speech_volume_while_speaking</string>
+    <string name="pref_volume_keys_take_all_key" translatable="false">pref_volume_keys_take_all</string>
+    <string name="pref_volume_keys_hide_panel_key" translatable="false">pref_volume_keys_hide_panel</string>
     <string name="pref_volume_up_double_press_key" translatable="false">pref_volume_up_double_press</string>
     <string name="pref_volume_up_triple_press_key" translatable="false">pref_volume_up_triple_press</string>
     <string name="pref_volume_up_long_press_key" translatable="false">pref_volume_up_long_press</string>
@@ -2104,6 +2106,8 @@
     <bool name="pref_volume_change_speech_during_media_default">false</bool>
     <bool name="pref_volume_change_interrupts_speech_default">true</bool>
     <bool name="pref_volume_keys_speech_volume_while_speaking_default">false</bool>
+    <bool name="pref_volume_keys_take_all_default">false</bool>
+    <bool name="pref_volume_keys_hide_panel_default">false</bool>
     <bool name="pref_speak_items_before_scroll_default">false</bool>
     <bool name="pref_scroll_ahead_default">true</bool>
     <bool name="pref_speak_while_scrolling_default">true</bool>
