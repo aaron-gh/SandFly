@@ -1041,6 +1041,8 @@ public class AccessibilityNodeInfoUtils {
       } else if (isClickableWithOnlyDecorativeChild(node)) {
         // A Compose icon-only control may expose its unlabelled drawing as a child. Keep the
         // clickable control reachable, just as an unlabelled control without children is.
+        logShouldFocusNode(
+            checkChildren, NONE, "Focus, is clickable with only a decorative child: ", node);
         return true;
       } else {
         logShouldFocusNode(
