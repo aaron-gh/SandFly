@@ -462,12 +462,20 @@ public class TalkBackService extends AccessibilityServiceCompat
     public void onClientConnected(ServerOnDestroyListener serverOnDestroyListener) {
       this.serverOnDestroyListener = serverOnDestroyListener;
       clientDisconnectedTimeStamp = 0;
+      @Nullable GestureController gestureController = talkBackService.gestureController;
+      if (gestureController != null) {
+        gestureController.onTrainingOpen(/* open= */ true);
+      }
     }
 
     @Override
     public void onClientDisconnected() {
       clearServerOnDestroyListener();
       clientDisconnectedTimeStamp = System.currentTimeMillis();
+      @Nullable GestureController gestureController = talkBackService.gestureController;
+      if (gestureController != null) {
+        gestureController.onTrainingOpen(/* open= */ false);
+      }
       setCaptureTrainingCombos(false);
 
       // Show TalkBack-exit watermark if training UI has TalkBack-exit banner. It means Training
@@ -540,6 +548,10 @@ public class TalkBackService extends AccessibilityServiceCompat
     public void onTrainingFinish() {
       hasTrainingFinished = true;
       talkBackService.setTrainingFinished(hasTrainingFinished);
+      @Nullable GestureController gestureController = talkBackService.gestureController;
+      if (gestureController != null) {
+        gestureController.onTrainingOpen(/* open= */ false);
+      }
       setCaptureTrainingCombos(false);
 
       // Request permissions after TalkBack tutorial is finished.

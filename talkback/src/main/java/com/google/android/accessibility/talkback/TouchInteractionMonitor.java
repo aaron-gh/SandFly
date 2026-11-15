@@ -112,6 +112,7 @@ import com.google.android.accessibility.talkback.gesture.EdgeMenus;
 import com.google.android.accessibility.talkback.gesture.EdgeSwipeTracker;
 import com.google.android.accessibility.talkback.gesture.EdgeSwipeTracker.Edge;
 import com.google.android.accessibility.talkback.gesture.EdgeSwipeTracker.MenuEdge;
+import com.google.android.accessibility.talkback.gesture.GestureController;
 import com.google.android.accessibility.talkback.gesture.GestureLog;
 import com.google.android.accessibility.talkback.gesture.GestureProfiles;
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping;
@@ -555,7 +556,9 @@ public class TouchInteractionMonitor
 
               @Override
               public boolean swipesBeforeLiftWhenNothingFollows() {
-                return swipesBeforeLiftSupported;
+                // Practice gestures says the back-and-forth or angle gesture performed.
+                return swipesBeforeLiftSupported
+                    && !GestureController.trainingTakesTwoDirectionSwipes();
               }
             },
             logger,
