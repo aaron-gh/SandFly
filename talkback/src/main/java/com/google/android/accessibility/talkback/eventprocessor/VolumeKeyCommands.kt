@@ -23,6 +23,7 @@ import android.media.AudioAttributes
 import android.media.AudioManager
 import android.os.Handler
 import android.os.Looper
+import android.os.PowerManager
 import android.util.Log
 import android.view.Display
 import android.view.KeyEvent
@@ -44,7 +45,14 @@ class VolumeKeyCommands(
   private val suggestedStream: () -> Int,
 ) {
   private val audioManager = context.getSystemService(AudioManager::class.java)
+  private val powerManager = context.getSystemService(PowerManager::class.java)
   private val handler = Handler(Looper.getMainLooper())
+
+  /** Volume keys > SandFly handles every volume key press. */
+  private var takesAllPresses = false
+
+  /** Volume keys > Hide volume panel. */
+  private var hidesVolumePanel = false
 
   private val presses =
     VolumeKeyPresses(
@@ -66,7 +74,13 @@ class VolumeKeyCommands(
         override fun perform(command: String) = perform(command)
 
         override fun adjustVolume(keyCode: Int, repeated: Boolean) {
-          adjustSuggestedVolume(audioManager, keyCode, repeated, suggestedStream())
+          adjustSuggestedVolume(
+            audioManager,
+            keyCode,
+            repeated,
+            suggestedStream(),
+            showUi = !hidesVolumePanel,
+          )
           onVolumeAdjusted()
         }
 
@@ -74,8 +88,18 @@ class VolumeKeyCommands(
       },
     )
 
-  /** Reads the commands of the presses from [prefs]. */
+  /** Reads the commands of the presses, and what the other presses do, from [prefs]. */
   fun reload(prefs: SharedPreferences) {
+    takesAllPresses =
+      prefs.getBoolean(
+        context.getString(R.string.pref_volume_keys_take_all_key),
+        context.resources.getBoolean(R.bool.pref_volume_keys_take_all_default),
+      )
+    hidesVolumePanel =
+      prefs.getBoolean(
+        context.getString(R.string.pref_volume_keys_hide_panel_key),
+        context.resources.getBoolean(R.bool.pref_volume_keys_hide_panel_default),
+      )
     val unassigned = context.getString(R.string.shortcut_value_unassigned)
     fun command(keyRes: Int): String? =
       prefs.getString(context.getString(keyRes), unassigned)?.takeIf {
@@ -126,17 +150,24 @@ class VolumeKeyCommands(
   /**
    * Handles a volume key event and returns whether it is kept from Android. [offReason] says why
    * presses may not be counted now, or gives null when they may, and is asked only when a volume
-   * key with a command is pressed.
+   * key with a command is pressed, or any volume key while one of the switches keeps every press.
    */
   fun onKeyEvent(event: KeyEvent, offReason: () -> String?): Boolean {
-    if (!presses.isUsed || !VolumeKeyPresses.isVolumeKey(event.keyCode)) {
+    if (
+      (!presses.isUsed && !takesAllPresses && !hidesVolumePanel) ||
+        !VolumeKeyPresses.isVolumeKey(event.keyCode)
+    ) {
       return false
     }
     // Asked again when the key is held, after the event may have been recycled.
     val keyCode = event.keyCode
     return when (event.action) {
       KeyEvent.ACTION_DOWN ->
-        presses.onKeyDown(keyCode, event.repeatCount > 0) {
+        presses.onKeyDown(
+          keyCode,
+          event.repeatCount > 0,
+          otherPresses(takesAllPresses, hidesVolumePanel, powerManager?.isInteractive == true),
+        ) {
           val reason = offReason() ?: if (isInCall()) "app call audio playing" else null
           if (reason != null) {
             logOff(keyCode, reason)
@@ -153,7 +184,7 @@ class VolumeKeyCommands(
    * so that a report shows why the presses changed the volume instead.
    */
   private fun logOff(keyCode: Int, reason: String) {
-    Log.i(TAG, "${KeyEvent.keyCodeToString(keyCode)} press commands off: $reason")
+    Log.i(TAG, "Volume key presses off for ${KeyEvent.keyCodeToString(keyCode)}: $reason")
   }
 
   /** Whether a double, triple or long press of [keyCode] has [command]. */
@@ -213,12 +244,35 @@ class VolumeKeyCommands(
       return display != null && display.state != Display.STATE_OFF
     }
 
-    /** Changes the volume as Android does for the key, starting from [stream]. */
+    /**
+     * What the presses with no command do: with the screen on, Volume keys > SandFly handles every
+     * volume key press, [takesAll], keeps them and changes no volume, and Hide volume panel,
+     * [hidesPanel], keeps them and changes the volume without Android's volume panel.
+     */
+    @JvmStatic
+    internal fun otherPresses(
+      takesAll: Boolean,
+      hidesPanel: Boolean,
+      interactive: Boolean,
+    ): VolumeKeyPresses.OtherPresses =
+      when {
+        !interactive -> VolumeKeyPresses.OtherPresses.ANDROID
+        takesAll -> VolumeKeyPresses.OtherPresses.NOTHING
+        hidesPanel -> VolumeKeyPresses.OtherPresses.VOLUME
+        else -> VolumeKeyPresses.OtherPresses.ANDROID
+      }
+
+    /**
+     * Changes the volume as Android does for the key, starting from [stream]: with
+     * [AudioManager.USE_DEFAULT_STREAM_TYPE], the stream of the call, the media playing or the
+     * ringer, as Android chooses. Android's volume panel shows only with [showUi].
+     */
     fun adjustSuggestedVolume(
       audioManager: AudioManager?,
       keyCode: Int,
       repeated: Boolean,
       stream: Int,
+      showUi: Boolean = true,
     ) {
       val direction =
         if (keyCode == KeyEvent.KEYCODE_VOLUME_UP) {
@@ -226,11 +280,20 @@ class VolumeKeyCommands(
         } else {
           AudioManager.ADJUST_LOWER
         }
-      var flags = AudioManager.FLAG_SHOW_UI or AudioManager.FLAG_VIBRATE
+      audioManager?.adjustSuggestedStreamVolume(direction, stream, volumeFlags(repeated, showUi))
+    }
+
+    /** The flags of a volume change for a key press, [repeated] while the key is held. */
+    @JvmStatic
+    internal fun volumeFlags(repeated: Boolean, showUi: Boolean): Int {
+      var flags = AudioManager.FLAG_VIBRATE
+      if (showUi) {
+        flags = flags or AudioManager.FLAG_SHOW_UI
+      }
       if (!repeated) {
         flags = flags or AudioManager.FLAG_PLAY_SOUND
       }
-      audioManager?.adjustSuggestedStreamVolume(direction, stream, flags)
+      return flags
     }
 
     /**

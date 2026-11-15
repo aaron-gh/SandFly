@@ -22,10 +22,11 @@ import android.view.KeyEvent
  * Recognizes double presses, triple presses and long presses of the volume keys that have a
  * command, and changes the volume for the presses that make up none of them.
  *
- * A key with no command passes to Android untouched. A key with a command is kept from Android
- * while it is pressed: when the presses end without making up a press with a command, each press
- * changes the volume once, and holding the key changes the volume repeatedly, as Android does. A
- * single press waits for a second press only when the key has a double or triple press command.
+ * A key with no command passes to Android untouched, unless [OtherPresses] keeps it. A key with a
+ * command is kept from Android while it is pressed: when the presses end without making up a press
+ * with a command, each press changes the volume once, and holding the key changes the volume
+ * repeatedly, as Android does, unless [OtherPresses.NOTHING]. A single press waits for a second
+ * press only when the key has a double or triple press command.
  *
  * Only one timer runs at a time, and only between the first press of a key and the end of its
  * presses.
@@ -54,6 +55,16 @@ class VolumeKeyPresses(private val timer: Timer, private val callbacks: Callback
 
     /** A press of [keyCode], which has a command, passes to Android because of [reason]. */
     fun passed(keyCode: Int, reason: String) {}
+  }
+
+  /** What happens to the presses of a volume key that run no command. */
+  enum class OtherPresses {
+    /** A key with no command passes to Android; other presses change the volume. */
+    ANDROID,
+    /** Every press is kept from Android; presses with no command change the volume. */
+    VOLUME,
+    /** Every press is kept from Android; presses with no command do nothing. */
+    NOTHING,
   }
 
   /** The commands of one volume key's presses, null when a press has none. */
@@ -96,6 +107,11 @@ class VolumeKeyPresses(private val timer: Timer, private val callbacks: Callback
     REPEATING,
     /** Nothing more happens until the key is released, which is kept from Android. */
     IGNORED,
+    /**
+     * A key with no command, kept from Android, is pressed: its press changed the volume, if
+     * [OtherPresses.VOLUME], and holding it changes the volume repeatedly.
+     */
+    NO_COMMAND,
   }
 
   private var upCommands = KeyCommands.NONE
@@ -112,6 +128,8 @@ class VolumeKeyPresses(private val timer: Timer, private val callbacks: Callback
   private var repeats = 0
   /** Whether presses may be counted now, as given with the press of [key]. */
   private var canUse: () -> Boolean = { false }
+  /** What happens to the presses of [key] that run no command, as given with its first press. */
+  private var others = OtherPresses.ANDROID
 
   /** Whether each volume key is pressed now, whether or not its presses have commands. */
   private var volumeUpDown = false
@@ -150,10 +168,16 @@ class VolumeKeyPresses(private val timer: Timer, private val callbacks: Callback
 
   /**
    * Handles a key press, or a [repeated] press while the key is held, and returns whether it is
-   * kept from Android. [canUse] says whether presses may be counted now; it is asked only when a key
-   * with a command is pressed.
+   * kept from Android. [others] says what happens to presses that run no command. [canUse] says
+   * whether presses may be counted now; it is asked only when a key with a command is pressed, or
+   * any key when [others] is not [OtherPresses.ANDROID].
    */
-  fun onKeyDown(keyCode: Int, repeated: Boolean, canUse: () -> Boolean): Boolean {
+  fun onKeyDown(
+    keyCode: Int,
+    repeated: Boolean,
+    others: OtherPresses = OtherPresses.ANDROID,
+    canUse: () -> Boolean,
+  ): Boolean {
     if (!isVolumeKey(keyCode)) {
       return false
     }
@@ -192,20 +216,31 @@ class VolumeKeyPresses(private val timer: Timer, private val callbacks: Callback
     }
     if (isDown(otherKey(keyCode))) {
       // Both volume keys, the first of which passed to Android.
-      if (!commandsFor(keyCode).isEmpty) {
+      if (!commandsFor(keyCode).isEmpty || others != OtherPresses.ANDROID) {
         callbacks.passed(keyCode, "other volume key held")
       }
       return false
     }
-    if (commandsFor(keyCode).isEmpty || !canUse()) {
+    val noCommand = commandsFor(keyCode).isEmpty
+    if (noCommand && others == OtherPresses.ANDROID || !canUse()) {
       return false
     }
     key = keyCode
     this.canUse = canUse
-    state = State.PRESSES
+    this.others = others
     presses = 0
     repeats = 0
     held = true
+    if (noCommand) {
+      // Changes the volume at once, as Android does, rather than after the presses end.
+      state = State.NO_COMMAND
+      if (others == OtherPresses.VOLUME) {
+        callbacks.adjustVolume(keyCode, /* repeated= */ false)
+        timer.schedule(timeouts.repeatStart) { onHeld() }
+      }
+      return true
+    }
+    state = State.PRESSES
     timer.schedule(holdDelay()) { onHeld() }
     return true
   }
@@ -243,12 +278,16 @@ class VolumeKeyPresses(private val timer: Timer, private val callbacks: Callback
     volumeDownDown = false
   }
 
-  /** Runs the command of the presses that ended, or changes the volume once for each press. */
+  /**
+   * Runs the command of the presses that ended, or changes the volume once for each press unless
+   * [OtherPresses.NOTHING].
+   */
   private fun finishPresses() {
     timer.cancel()
     val keyCode = key
     val count = presses
     val commands = commandsFor(keyCode)
+    val changesVolume = others != OtherPresses.NOTHING
     reset()
     val command =
       when (count) {
@@ -260,7 +299,9 @@ class VolumeKeyPresses(private val timer: Timer, private val callbacks: Callback
       callbacks.perform(command)
       return
     }
-    repeat(count) { callbacks.adjustVolume(keyCode, /* repeated= */ false) }
+    if (changesVolume) {
+      repeat(count) { callbacks.adjustVolume(keyCode, /* repeated= */ false) }
+    }
   }
 
   /** How long [key], pressed now, is held before [onHeld]. */
@@ -269,7 +310,7 @@ class VolumeKeyPresses(private val timer: Timer, private val callbacks: Callback
 
   /** The key is held long enough for a long press, or to change the volume repeatedly. */
   private fun onHeld() {
-    if (key == 0 || !held || state != State.PRESSES) {
+    if (key == 0 || !held || (state != State.PRESSES && state != State.NO_COMMAND)) {
       return
     }
     if (!canUse()) {
@@ -281,6 +322,11 @@ class VolumeKeyPresses(private val timer: Timer, private val callbacks: Callback
     if (presses == 0 && long != null) {
       state = State.LONG_PRESS_DONE
       callbacks.perform(long)
+      return
+    }
+    if (others == OtherPresses.NOTHING) {
+      // The release is kept from Android too.
+      state = State.IGNORED
       return
     }
     // A held key changes the volume, after the presses before it.
@@ -312,6 +358,7 @@ class VolumeKeyPresses(private val timer: Timer, private val callbacks: Callback
   private fun reset() {
     key = 0
     state = State.PRESSES
+    others = OtherPresses.ANDROID
     presses = 0
     held = false
     repeats = 0

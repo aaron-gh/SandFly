@@ -19,6 +19,7 @@ package com.google.android.accessibility.talkback.eventprocessor
 import android.view.KeyEvent.KEYCODE_VOLUME_DOWN
 import android.view.KeyEvent.KEYCODE_VOLUME_UP
 import com.google.android.accessibility.talkback.eventprocessor.VolumeKeyPresses.KeyCommands
+import com.google.android.accessibility.talkback.eventprocessor.VolumeKeyPresses.OtherPresses
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
@@ -37,6 +38,7 @@ class VolumeKeyPressesTest {
   private var taskAt = -1L
   private var task: Runnable? = null
   private var canUse = true
+  private var others = OtherPresses.ANDROID
 
   /** Presses with a command that passed to Android: "up: reason". */
   private val passes = mutableListOf<String>()
@@ -99,7 +101,7 @@ class VolumeKeyPressesTest {
 
   private fun down(key: Int, repeated: Boolean = false): Boolean {
     presses.onKeyState(key, down = true)
-    return presses.onKeyDown(key, repeated) { canUse }
+    return presses.onKeyDown(key, repeated, others) { canUse }
   }
 
   private fun up(key: Int): Boolean {
@@ -568,5 +570,111 @@ class VolumeKeyPressesTest {
   @Test
   fun hasCommand_falseWithoutCommands() {
     assertFalse(presses.hasCommand(KEYCODE_VOLUME_UP, "ANSWER_CALL"))
+  }
+  @Test
+  fun takeAll_unassignedKeyKeptAndChangesNothing() {
+    others = OtherPresses.NOTHING
+    assertTrue(press(KEYCODE_VOLUME_UP))
+    assertTrue(down(KEYCODE_VOLUME_DOWN))
+    advance(3000)
+    assertTrue(up(KEYCODE_VOLUME_DOWN))
+    assertTrue(log.isEmpty())
+    assertEquals(null, task)
+  }
+
+  @Test
+  fun takeAll_pressesWithoutCommandChangeNothing() {
+    others = OtherPresses.NOTHING
+    assign(up = KeyCommands("A", null, null))
+    assertTrue(press(KEYCODE_VOLUME_UP))
+    advance(1000)
+    // Held with no long press command.
+    assertTrue(down(KEYCODE_VOLUME_UP))
+    advance(3000)
+    assertTrue(up(KEYCODE_VOLUME_UP))
+    advance(1000)
+    assertTrue(log.isEmpty())
+    assertEquals(null, task)
+  }
+
+  @Test
+  fun takeAll_commandsStillRun() {
+    others = OtherPresses.NOTHING
+    assign(up = KeyCommands("A", null, "L"))
+    press(KEYCODE_VOLUME_UP)
+    advance(100)
+    press(KEYCODE_VOLUME_UP)
+    assertEquals(listOf("run A"), log)
+    advance(1000)
+    assertTrue(down(KEYCODE_VOLUME_UP))
+    advance(400)
+    assertTrue(up(KEYCODE_VOLUME_UP))
+    assertEquals(listOf("run A", "run L"), log)
+  }
+
+  @Test
+  fun takeAll_notUsable_keyPassesThrough() {
+    others = OtherPresses.NOTHING
+    canUse = false
+    assertFalse(press(KEYCODE_VOLUME_UP))
+    assertTrue(log.isEmpty())
+  }
+
+  @Test
+  fun takeAll_bothKeysHeld_secondKeyPasses() {
+    others = OtherPresses.NOTHING
+    assertTrue(down(KEYCODE_VOLUME_UP))
+    advance(100)
+    assertFalse(down(KEYCODE_VOLUME_DOWN))
+    advance(3000)
+    assertFalse(up(KEYCODE_VOLUME_DOWN))
+    assertTrue(up(KEYCODE_VOLUME_UP))
+    assertTrue(log.isEmpty())
+    assertEquals(listOf("down: both volume keys held"), passes)
+  }
+
+  @Test
+  fun hidePanel_unassignedKeyChangesVolumeAtPress() {
+    others = OtherPresses.VOLUME
+    assertTrue(down(KEYCODE_VOLUME_UP))
+    assertEquals(listOf("up"), log)
+    assertTrue(up(KEYCODE_VOLUME_UP))
+    advance(1000)
+    assertEquals(listOf("up"), log)
+    assertEquals(null, task)
+  }
+
+  @Test
+  fun hidePanel_unassignedKeyHeldChangesVolumeRepeatedly() {
+    others = OtherPresses.VOLUME
+    assertTrue(down(KEYCODE_VOLUME_DOWN))
+    advance(400)
+    assertEquals(listOf("down", "down"), log)
+    advance(100)
+    assertEquals(listOf("down", "down", "down repeated", "down repeated"), log)
+    assertTrue(up(KEYCODE_VOLUME_DOWN))
+    advance(1000)
+    assertEquals(4, log.size)
+    assertEquals(null, task)
+  }
+
+  @Test
+  fun hidePanel_singlePressOfAssignedKeyChangesVolumeAfterTimeout() {
+    others = OtherPresses.VOLUME
+    assign(up = KeyCommands("A", null, null))
+    assertTrue(press(KEYCODE_VOLUME_UP))
+    assertTrue(log.isEmpty())
+    advance(300)
+    assertEquals(listOf("up"), log)
+  }
+
+  @Test
+  fun modeOfFirstPressApplies_untilPressesEnd() {
+    others = OtherPresses.NOTHING
+    assign(up = KeyCommands("A", null, null))
+    press(KEYCODE_VOLUME_UP)
+    others = OtherPresses.ANDROID
+    advance(300)
+    assertTrue(log.isEmpty())
   }
 }

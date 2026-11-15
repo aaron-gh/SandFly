@@ -19,11 +19,17 @@ package com.google.android.accessibility.talkback.eventprocessor
 import android.media.AudioAttributes.USAGE_ASSISTANCE_ACCESSIBILITY
 import android.media.AudioAttributes.USAGE_MEDIA
 import android.media.AudioAttributes.USAGE_VOICE_COMMUNICATION
+import android.media.AudioManager.FLAG_PLAY_SOUND
+import android.media.AudioManager.FLAG_SHOW_UI
+import android.media.AudioManager.FLAG_VIBRATE
 import android.media.AudioManager.MODE_IN_CALL
 import android.media.AudioManager.MODE_IN_COMMUNICATION
 import android.media.AudioManager.MODE_NORMAL
 import com.google.android.accessibility.talkback.eventprocessor.VolumeKeyCommands.Companion.isAppCall
 import com.google.android.accessibility.talkback.eventprocessor.VolumeKeyCommands.Companion.longPressDuration
+import com.google.android.accessibility.talkback.eventprocessor.VolumeKeyCommands.Companion.otherPresses
+import com.google.android.accessibility.talkback.eventprocessor.VolumeKeyCommands.Companion.volumeFlags
+import com.google.android.accessibility.talkback.eventprocessor.VolumeKeyPresses.OtherPresses
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
@@ -83,5 +89,32 @@ class VolumeKeyCommandsTest {
       isAppCall(listOf(USAGE_VOICE_COMMUNICATION), USAGE_VOICE_COMMUNICATION, MODE_IN_CALL)
     )
     assertTrue(isAppCall(emptyList(), USAGE_VOICE_COMMUNICATION, MODE_IN_COMMUNICATION))
+  }
+  @Test
+  fun otherPresses_switchesOff_passToAndroid() {
+    assertEquals(OtherPresses.ANDROID, otherPresses(false, false, interactive = true))
+  }
+
+  @Test
+  fun otherPresses_takeAllWins() {
+    assertEquals(OtherPresses.NOTHING, otherPresses(true, false, interactive = true))
+    assertEquals(OtherPresses.NOTHING, otherPresses(true, true, interactive = true))
+  }
+
+  @Test
+  fun otherPresses_hidePanel_changesVolume() {
+    assertEquals(OtherPresses.VOLUME, otherPresses(false, true, interactive = true))
+  }
+
+  @Test
+  fun otherPresses_screenOff_passToAndroid() {
+    assertEquals(OtherPresses.ANDROID, otherPresses(true, true, interactive = false))
+  }
+
+  @Test
+  fun volumeFlags_panelOnlyWithShowUi() {
+    assertEquals(FLAG_SHOW_UI or FLAG_VIBRATE or FLAG_PLAY_SOUND, volumeFlags(false, true))
+    assertEquals(FLAG_VIBRATE or FLAG_PLAY_SOUND, volumeFlags(false, false))
+    assertEquals(FLAG_VIBRATE, volumeFlags(true, false))
   }
 }
