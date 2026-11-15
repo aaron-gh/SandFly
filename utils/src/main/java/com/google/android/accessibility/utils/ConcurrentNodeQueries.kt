@@ -47,11 +47,28 @@ object ConcurrentNodeQueries {
 
   /** Absent entries were not answered in this attempt; null entries are confirmed removed. */
   @JvmStatic
-  fun refreshForRecovery(nodes: List<AccessibilityNodeInfoCompat>, maxWaitMs: Long): Map<AccessibilityNodeInfoCompat, AccessibilityNodeInfoCompat?> {
+  fun refreshForRecovery(nodes: List<AccessibilityNodeInfoCompat>, maxWaitMs: Long): Map<AccessibilityNodeInfoCompat, AccessibilityNodeInfoCompat?> =
+    readForRecovery(nodes, maxWaitMs, true) { if (it.refresh()) it else null }
+
+  data class ParentRead(val child: AccessibilityNodeInfoCompat, val parent: AccessibilityNodeInfoCompat)
+
+  /** An optional current-link check; an old child's saved parent ID alone proves no membership. */
+  @JvmStatic
+  fun refreshParentsForRecovery(nodes: List<AccessibilityNodeInfoCompat>, maxWaitMs: Long): Map<AccessibilityNodeInfoCompat, ParentRead?> {
+    if (nodes.size > THREADS * 2) return emptyMap()
+    val end = SystemClock.uptimeMillis() + minOf(PATH_WAIT_MS, maxWaitMs.coerceAtLeast(0))
+    return readForRecovery(nodes, maxWaitMs, false) { copy ->
+      if (!copy.refresh() || SystemClock.uptimeMillis() >= end || Thread.currentThread().isInterrupted) null
+      else copy.getParent(0)?.let { ParentRead(copy, it) }
+    }
+  }
+
+  private fun <T> readForRecovery(nodes: List<AccessibilityNodeInfoCompat>, maxWaitMs: Long,
+    allowCallerRead: Boolean, readNode: (AccessibilityNodeInfoCompat) -> T?): Map<AccessibilityNodeInfoCompat, T?> {
     if (nodes.isEmpty() || maxWaitMs <= 0 || !executor.isAccepting || !eligible(nodes[0])) return emptyMap()
-    data class Answer(val node: AccessibilityNodeInfoCompat, val refreshed: AccessibilityNodeInfoCompat?)
+    data class Answer<T>(val node: AccessibilityNodeInfoCompat, val refreshed: T?)
     val pending = nodes.take(64)
-    val answers = ConcurrentLinkedQueue<Answer>()
+    val answers = ConcurrentLinkedQueue<Answer<T>>()
     val done = CountDownLatch(pending.size)
     val stopped = AtomicBoolean()
     val tasks = mutableListOf<Future<*>>()
@@ -63,14 +80,16 @@ object ConcurrentNodeQueries {
         val read = {
           try {
             if (!stopped.get() && !Thread.currentThread().isInterrupted && SystemClock.uptimeMillis() < end) {
-              val value = if (copy.refresh()) copy else null
+              val value = readNode(copy)
               if (!stopped.get()) answers.add(Answer(original, value))
             }
           } catch (failure: RuntimeException) { Log.w(TAG, "Could not refresh saved node", failure) }
           finally { done.countDown() }
         }
         try { tasks.add(executor.submit { read() }) }
-        catch (_: RejectedExecutionException) { read() }
+        catch (_: RejectedExecutionException) {
+          if (allowCallerRead) read() else done.countDown()
+        }
       }
       done.await((end - SystemClock.uptimeMillis()).coerceAtLeast(0), TimeUnit.MILLISECONDS)
     } catch (_: InterruptedException) { Thread.currentThread().interrupt() }

@@ -17,15 +17,25 @@
 package com.google.android.accessibility.talkback.interpreters
 
 import android.graphics.Rect
+import android.os.SystemClock
 import android.view.accessibility.AccessibilityNodeInfo
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
+import com.google.android.accessibility.utils.ConcurrentNodeQueries.ParentRead
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertSame
 import org.junit.Assert.assertTrue
+import org.junit.Assert.assertFalse
+import org.junit.Assert.assertNotNull
+import org.junit.Assert.assertNotSame
+import org.junit.Assert.assertNull
+import java.util.concurrent.CountDownLatch
+import java.util.concurrent.Executors
+import java.util.concurrent.TimeUnit
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
+import org.robolectric.util.ReflectionHelpers
 
 /** The steps that find an item of web content in view after the user scrolled the page. */
 @RunWith(RobolectricTestRunner::class)
@@ -34,6 +44,96 @@ class WebFocusRecoveryTest {
   /** The WebView on screen. */
   private val viewport = Rect(0, 100, 1000, 2000)
   private var reads = 0
+  private val parentThreads = java.util.Collections.synchronizedSet(mutableSetOf<Thread>())
+
+  private class IdentityNode(val identity: Int, uid: String?, native: Boolean = false,
+    val testWindow: Int = 12) : AccessibilityNodeInfoCompat(AccessibilityNodeInfo.obtain()) {
+    init {
+      uniqueId = uid
+      className = if (native) "android.webkit.WebView" else "android.view.View"
+      if (!native) addAction(ACTION_NEXT_HTML_ELEMENT)
+    }
+    override fun getWindowId() = testWindow
+    override fun equals(other: Any?) = other is IdentityNode && identity == other.identity
+      && testWindow == other.testWindow
+    override fun hashCode() = identity * 31 + testWindow
+  }
+
+  @Test
+  fun currentAncestorLinksKeepFreshMetadataOnlyAfterEveryLinkMatches() {
+    val focus = IdentityNode(1, "item")
+    val parent = IdentityNode(2, "section")
+    val host = IdentityNode(3, null, true)
+    val nowFocus = IdentityNode(1, "item").apply { isAccessibilityFocused = true }
+    val nowParent = IdentityNode(2, "section")
+    val cachedParent = IdentityNode(2, "section")
+    val nowHost = IdentityNode(3, null, true)
+    val current = WebFocusRecovery.verifiedAncestorNodes(listOf(focus, parent, host),
+      mapOf(focus to ParentRead(nowFocus, cachedParent), parent to ParentRead(nowParent, nowHost)))
+    assertEquals(listOf(nowFocus, nowParent, nowHost), current)
+    assertSame(nowParent, current[1])
+  }
+
+  @Test
+  fun aRecycledScrollSourceCannotContinueTheOldManualFling() {
+    assertTrue(WebFocusRecovery.sameIdentity(IdentityNode(1, "old"), IdentityNode(1, "old")))
+    assertFalse(WebFocusRecovery.sameIdentity(IdentityNode(1, "old"), IdentityNode(1, "new")))
+    assertFalse(WebFocusRecovery.sameIdentity(IdentityNode(1, "old"), IdentityNode(1, "old", testWindow = 13)))
+  }
+
+  @Test
+  fun aChangedParentOrRecycledIdentityRejectsTheOptionalPath() {
+    val focus = IdentityNode(1, "item")
+    val parent = IdentityNode(2, "section")
+    val host = IdentityNode(3, null, true)
+    val nowFocus = IdentityNode(1, "item").apply { isAccessibilityFocused = true }
+    for (changed in listOf(IdentityNode(4, "other"), IdentityNode(2, "replacement"),
+      IdentityNode(2, "section", testWindow = 13))) {
+      assertTrue(WebFocusRecovery.verifiedAncestorNodes(listOf(focus, parent, host),
+        mapOf(focus to ParentRead(nowFocus, changed), parent to ParentRead(parent, host))).isEmpty())
+    }
+  }
+
+  @Test
+  fun aMissingAnswerOrLostFocusKeepsTheLiveWalk() {
+    val focus = IdentityNode(1, "item")
+    val parent = IdentityNode(2, "section")
+    val host = IdentityNode(3, null, true)
+    val nowFocus = IdentityNode(1, "item").apply { isAccessibilityFocused = true }
+    assertTrue(WebFocusRecovery.verifiedAncestorNodes(listOf(focus, parent, host),
+      mapOf(focus to ParentRead(nowFocus, parent))).isEmpty())
+    nowFocus.isAccessibilityFocused = false
+    assertTrue(WebFocusRecovery.verifiedAncestorNodes(listOf(focus, parent, host),
+      mapOf(focus to ParentRead(nowFocus, parent), parent to ParentRead(parent, host))).isEmpty())
+  }
+
+  @Test
+  fun anUnverifiedVirtualDocumentDoesNotReplaceTheNativeViewport() {
+    val focus = IdentityNode(1, "item").apply { isAccessibilityFocused = true }
+    val document = IdentityNode(2, "document")
+    assertTrue(WebFocusRecovery.verifiedAncestorNodes(listOf(focus, document),
+      mapOf(focus to ParentRead(focus, document))).isEmpty())
+  }
+
+
+  @Test
+  fun nativeAndVirtualScrollSourcesMustBeTheSameDirectlyOwnedDocument() {
+    val host = IdentityNode(3, null, true)
+    fun document(id: Int, uid: String) = IdentityNode(id, uid).apply {
+      className = "android.webkit.WebView"
+      extras.putString("AccessibilityNodeInfo.chromeRole", "rootWebArea")
+    }
+    val document = document(2, "document")
+    val path = listOf(IdentityNode(1, "item"), document, host)
+    assertTrue(WebFocusRecovery.sameNativeViewport(host, document, path))
+    assertTrue(WebFocusRecovery.sameNativeViewport(document, host, path))
+    assertFalse(WebFocusRecovery.sameNativeViewport(host, document(2, "replacement"), path))
+    assertFalse(WebFocusRecovery.sameNativeViewport(IdentityNode(4, null, true), document, path))
+    assertFalse(WebFocusRecovery.sameNativeViewport(host, document, emptyList()))
+    val frame = document(5, "inner frame")
+    val nested = listOf(frame, IdentityNode(6, "frame element"), document, host)
+    assertFalse(WebFocusRecovery.sameNativeViewport(host, frame, nested))
+  }
 
   private inner class Node(
     bounds: Rect,
@@ -44,6 +144,9 @@ class WebFocusRecoveryTest {
   ) : AccessibilityNodeInfoCompat(AccessibilityNodeInfo.obtain()) {
     val nodes = children.toList()
     var parentNode: Node? = null
+    var parentReads = 0
+    var beforeParentRead: (() -> Unit)? = null
+    var beforeChildRead: ((Int) -> Unit)? = null
 
     init {
       setBoundsInScreen(bounds)
@@ -59,17 +162,26 @@ class WebFocusRecoveryTest {
       }
     }
 
+    override fun getChild(index: Int, flags: Int): AccessibilityNodeInfoCompat? = getChild(index)
+
+    override fun getParent(flags: Int): AccessibilityNodeInfoCompat? = getParent()
+
     override fun getChildCount() = nodes.size
 
     override fun getChild(index: Int): AccessibilityNodeInfoCompat {
+      beforeChildRead?.invoke(index)
       reads++
       return nodes[index]
     }
 
+
     override fun refresh() = true
 
     override fun getParent(): AccessibilityNodeInfoCompat? {
+      parentThreads.add(Thread.currentThread())
+      beforeParentRead?.invoke()
       reads++
+      parentReads++
       return parentNode
     }
 
@@ -104,6 +216,142 @@ class WebFocusRecoveryTest {
   }
 
   @Test
+  fun aBackgroundSearchKeepsTheSameTargetAndReadsOffTheCallerThread() {
+    val executor = Executors.newSingleThreadExecutor()
+    try {
+      val focus = above("Old item")
+      val target = item(500, 700, "Visible item")
+      val document = Node(viewport, null, true, true, focus, target)
+      inApp(document)
+      val recovery = WebFocusRecovery(focus, null, document, true, true, null, false)
+      val work = recovery.startInBackground(SystemClock.uptimeMillis() + 500) { read ->
+        executor.submit<Boolean> { read.get() }
+      }!!
+      assertTrue(work.get(2, TimeUnit.SECONDS))
+      assertSame(target, recovery.item())
+      assertTrue(parentThreads.isNotEmpty())
+      assertFalse(parentThreads.contains(Thread.currentThread()))
+    } finally { executor.shutdownNow() }
+  }
+
+  @Test
+  fun aCancelledSearchStopsAfterItsOutstandingNodeRead() {
+    val executor = Executors.newSingleThreadExecutor()
+    val entered = CountDownLatch(1)
+    val release = CountDownLatch(1)
+    try {
+      val focus = above("Old item").apply {
+        beforeParentRead = { entered.countDown(); release.await(2, TimeUnit.SECONDS) }
+      }
+      val document = Node(viewport, null, true, true, focus, item(500, 700, "Visible item"))
+      inApp(document)
+      val recovery = WebFocusRecovery(focus, null, document, true, true, null, false)
+      val work = recovery.startInBackground(SystemClock.uptimeMillis() + 500) { read ->
+        executor.submit<Boolean> { read.get() }
+      }!!
+      assertTrue(entered.await(2, TimeUnit.SECONDS))
+      recovery.cancelBackground()
+      release.countDown()
+      assertFalse(work.get(2, TimeUnit.SECONDS))
+      assertNull(recovery.item())
+      assertEquals(1, reads)
+    } finally { release.countDown(); executor.shutdownNow() }
+  }
+
+  @Test
+  fun aBackgroundSearchPublishesTheEdgeItemBeforeItsNextRead() {
+    val executor = Executors.newSingleThreadExecutor()
+    val entered = CountDownLatch(1)
+    val release = CountDownLatch(1)
+    try {
+      val focus = above("Old item")
+      val edge = item(50, 300, "Edge item")
+      val document = Node(viewport, null, true, true, focus, edge, item(500, 700, "Visible item"))
+      document.beforeChildRead = { index ->
+        if (index == 2) { entered.countDown(); release.await(2, TimeUnit.SECONDS) }
+      }
+      inApp(document)
+      val recovery = WebFocusRecovery(focus, null, document, true, true, null, false)
+      assertNull(recovery.publishedPartial())
+      val work = recovery.startInBackground(SystemClock.uptimeMillis() + 500) { read ->
+        executor.submit<Boolean> { read.get() }
+      }!!
+      assertTrue(entered.await(2, TimeUnit.SECONDS))
+      // The read of the next item is outstanding; the edge item is already available.
+      val published = recovery.publishedPartial()!!
+      assertEquals("Edge item", published.text.toString())
+      assertNotSame("The main thread gets its own copy", edge, published)
+      recovery.cancelBackground()
+      release.countDown()
+      assertFalse(work.get(2, TimeUnit.SECONDS))
+    } finally { release.countDown(); executor.shutdownNow() }
+  }
+
+  @Test
+  fun theStripIsCopiedBeforeTheWorkerStarts() {
+    val focus = above("Old item")
+    val strip = Node(Rect(0, 100, 1000, 200), null, false, true)
+    val document = Node(viewport, null, true, true, focus, strip, item(500, 700, "Visible item"))
+    inApp(document)
+    val recovery = WebFocusRecovery(focus, null, document, true, true, strip, true)
+    var stripWhenSubmitted: Any? = null
+    recovery.startInBackground(SystemClock.uptimeMillis() + 500) { _ ->
+      stripWhenSubmitted = ReflectionHelpers.getField(recovery, "strip")
+      null
+    }
+    assertNotNull(stripWhenSubmitted)
+    assertNotSame(strip, stripWhenSubmitted)
+  }
+
+  @Test
+  fun anExpiredBackgroundBudgetDoesNotReadTheApp() {
+    val focus = above("Old item")
+    val document = Node(viewport, null, true, true, focus, item(500, 700, "Visible item"))
+    inApp(document)
+    val recovery = WebFocusRecovery(focus, null, document, true, true, null, false)
+    val work = recovery.startInBackground(SystemClock.uptimeMillis() - 1) { read ->
+      java.util.concurrent.FutureTask<Boolean> { read.get() }.apply { run() }
+    }!!
+    assertTrue(work.get())
+    assertEquals(WebFocusRecovery.NOTHING_IN_VIEW, recovery.outcome())
+    assertEquals(0, reads)
+  }
+
+  @Test
+  fun aParentBatchUsesOnlyTheRemainingRecoveryBudget() {
+    assertEquals(80, WebFocusRecovery.readyPathWaitMs(600, 100))
+    assertEquals(7, WebFocusRecovery.readyPathWaitMs(107, 100))
+    assertEquals(0, WebFocusRecovery.readyPathWaitMs(100, 100))
+    assertEquals(0, WebFocusRecovery.readyPathWaitMs(99, 100))
+  }
+
+  @Test
+  fun anUnavailableWorkerKeepsTheOriginalStepSearch() {
+    val focus = above("Old item")
+    val target = item(500, 700, "Visible item")
+    val document = Node(viewport, null, true, true, focus, target)
+    inApp(document)
+    val recovery = WebFocusRecovery(focus, null, document, true, true, null, false)
+    assertNull(recovery.startInBackground(SystemClock.uptimeMillis() + 500) { null })
+    run(recovery)
+    assertSame(target, recovery.item())
+  }
+
+  @Test
+  fun aRejectedWorkerDoesNotJoinAParentBatchOnTheSerialFallback() {
+    val focus = above("Old item").apply { uniqueId = "focus" }
+    val target = item(500, 700, "Visible item")
+    val document = Node(viewport, null, true, true, focus, target).apply { uniqueId = "document" }
+    val host = Node(viewport, null, true, false, document)
+    val expectedSteps = run(WebFocusRecovery(focus, null, document, true, true, null, false))
+    val recovery = WebFocusRecovery(focus, null, document, true, true, null, false,
+      listOf(focus, document, host))
+    assertNull(recovery.startInBackground(SystemClock.uptimeMillis() + 500) { null })
+    assertEquals(expectedSteps, run(recovery))
+    assertSame(target, recovery.item())
+  }
+
+  @Test
   fun focusScrolledOutOfViewMovesToTheFirstItemInView() {
     val focus = above("Burger")
     val firstInView = item(300, 500, "Fries")
@@ -115,6 +363,73 @@ class WebFocusRecoveryTest {
 
     assertEquals(WebFocusRecovery.FOUND, recovery.outcome())
     assertSame(firstInView, recovery.item())
+  }
+
+  @Test
+  fun aSidewaysAncestorMustBeKnownBeforeSelectingAnInnerVisibleSibling() {
+    val focus = above("Old tab")
+    val inner = Node(viewport, null, false, true, focus, item(300, 500, "Other tab content"))
+    val strip = Node(Rect(0, 100, 1000, 600), null, false, true, inner).apply {
+      addAction(AccessibilityNodeInfoCompat.AccessibilityActionCompat.ACTION_SCROLL_LEFT)
+      addAction(AccessibilityNodeInfoCompat.AccessibilityActionCompat.ACTION_SCROLL_RIGHT)
+    }
+    val target = item(800, 1000, "Page content after the strip")
+    val document = Node(viewport, null, true, true, strip, target)
+    val host = Node(viewport, null, true, false, document)
+    val recovery = WebFocusRecovery(focus, null, host, false, true, null, false)
+    run(recovery)
+    assertSame(target, recovery.item())
+  }
+
+  @Test
+  fun aKnownWebScrollNeedsNoAncestorsAboveItsNativeWebView() {
+    for (scrollTheHost in listOf(false, true)) {
+      val focus = above("Burger")
+      val firstInView = item(300, 500, "Fries")
+      val document = Node(viewport, null, true, true, focus, firstInView)
+      val host = Node(viewport, null, true, false, document)
+      val container = Node(viewport, null, false, false, host)
+      Node(viewport, null, false, false, container)
+      val scrolled = if (scrollTheHost) host else document
+      val recovery = WebFocusRecovery(focus, null, scrolled, false, true, null, false)
+
+      run(recovery)
+
+      assertEquals(WebFocusRecovery.FOUND, recovery.outcome())
+      assertSame(firstInView, recovery.item())
+      assertEquals(0, container.parentReads)
+    }
+  }
+
+  @Test
+  fun aBackwardWebScrollNeedsNoAncestorsAboveItsNativeWebView() {
+    val lastInView = item(1500, 1900, "Fries")
+    val focus = Node(Rect(0, 2100, 1000, 2100), text = "Burger")
+    val document = Node(viewport, null, true, true, lastInView, focus)
+    val host = Node(viewport, null, true, false, document)
+    val container = Node(viewport, null, false, false, host)
+    val recovery = WebFocusRecovery(focus, null, document, false, false, null, false)
+
+    run(recovery)
+
+    assertSame(lastInView, recovery.item())
+    assertEquals(0, container.parentReads)
+  }
+
+  @Test
+  fun aNativeContainerScrollingTheWebViewStillChecksItsAncestors() {
+    val focus = above("Burger")
+    val firstInView = item(300, 500, "Fries")
+    val document = Node(viewport, null, true, true, focus, firstInView)
+    val host = Node(viewport, null, true, false, document)
+    val container = Node(viewport, null, false, false, host)
+    val recovery = WebFocusRecovery(focus, null, container, false, true, null, false)
+
+    run(recovery)
+
+    assertEquals(WebFocusRecovery.FOUND, recovery.outcome())
+    assertSame(firstInView, recovery.item())
+    assertTrue(container.parentReads > 0)
   }
 
   @Test

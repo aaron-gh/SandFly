@@ -36,6 +36,7 @@ class ConcurrentNodeQueriesTest {
     val node = node()
     val filters = AtomicInteger()
     assertTrue(ConcurrentNodeQueries.refreshForRecovery(listOf(node), 0).isEmpty())
+    assertTrue(ConcurrentNodeQueries.refreshParentsForRecovery(listOf(node), 0).isEmpty())
     val result = ConcurrentNodeQueries.findDocument(node, object : Filter<AccessibilityNodeInfoCompat>() {
       override fun accept(node: AccessibilityNodeInfoCompat): Boolean { filters.incrementAndGet(); return true }
     }, 0)!!
@@ -70,6 +71,31 @@ class ConcurrentNodeQueriesTest {
   @Test @Config(sdk = [32]) fun unsupportedAndroidVersionsKeepOptionalReadsOnTheNormalPath() {
     assertFalse(ConcurrentNodeQueries.canRead(node()))
     assertNull(ConcurrentNodeQueries.readAlongsidePath(node(), Supplier { error("Unexpected worker") }))
+    assertTrue(ConcurrentNodeQueries.refreshParentsForRecovery(listOf(node()), 80).isEmpty())
     assertTrue(ConcurrentNodeQueries.beginLiveRegions(emptyList(), 8).finish().isEmpty())
+  }
+
+  @Test fun aLongOrStoppedParentBatchStartsNoOptionalReads() {
+    assertTrue(ConcurrentNodeQueries.refreshParentsForRecovery(List(17) { node() }, 80).isEmpty())
+    ConcurrentNodeQueries.shutdown()
+    assertTrue(ConcurrentNodeQueries.refreshParentsForRecovery(listOf(node()), 80).isEmpty())
+  }
+
+  @Test fun parentReadsRemainBoundedWhenAllWorkersAreAlreadyRunningRecovery() {
+    val entered = CountDownLatch(8)
+    val release = CountDownLatch(1)
+    try {
+      val work = List(8) {
+        ConcurrentNodeQueries.readAlongsidePath(node(), Supplier {
+          entered.countDown()
+          release.await(2, TimeUnit.SECONDS)
+          ConcurrentNodeQueries.refreshParentsForRecovery(listOf(node(), node()), 80)
+          true
+        })!!
+      }
+      assertTrue(entered.await(2, TimeUnit.SECONDS))
+      release.countDown()
+      work.forEach { assertTrue(it.get(2, TimeUnit.SECONDS)) }
+    } finally { release.countDown() }
   }
 }

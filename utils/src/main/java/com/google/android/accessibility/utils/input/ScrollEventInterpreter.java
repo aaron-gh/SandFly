@@ -473,8 +473,13 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
         resetWebNavigation();
         break;
       case AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED:
+        // Both -1 deltas are also the framework record's defaults. Without list indices or
+        // scroll extents they do not turn an ordinary subtree change into a scroll event.
         if (((event.getContentChangeTypes() & AccessibilityEvent.CONTENT_CHANGE_TYPE_SUBTREE) == 0)
-            || !hasValidIndex(event)) {
+            || !hasValidIndex(event)
+            || (!hasValidAdapterViewIndex(event) && !hasValidScrollViewIndex(event)
+                && AccessibilityEventUtils.getScrollDeltaX(event) == -1
+                && AccessibilityEventUtils.getScrollDeltaY(event) == -1)) {
           break;
         }
         // fall through

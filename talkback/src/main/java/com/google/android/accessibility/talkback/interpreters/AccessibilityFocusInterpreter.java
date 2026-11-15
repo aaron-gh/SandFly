@@ -59,6 +59,7 @@ import com.google.android.accessibility.talkback.interpreters.ManualScrollInterp
 import com.google.android.accessibility.utils.AccessibilityEventUtils;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.BuildVersionUtils;
+import com.google.android.accessibility.utils.ConcurrentNodeQueries;
 import com.google.android.accessibility.utils.DisplayUtils;
 import com.google.android.accessibility.utils.FeatureSupport;
 import com.google.android.accessibility.utils.FormFactorUtils;
@@ -71,6 +72,13 @@ import com.google.android.accessibility.utils.monitor.TouchMonitor;
 import com.google.android.accessibility.utils.traversal.TraversalStrategy;
 import com.google.android.accessibility.utils.traversal.TraversalStrategy.SearchDirection;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
+import java.util.Collections;
+import java.util.List;
+import java.util.concurrent.CancellationException;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 /**
@@ -109,6 +117,8 @@ public class AccessibilityFocusInterpreter
 
   /** The last scroll event of the user's scroll of web content. */
   private @Nullable ManualScrollInterpretation webScroll;
+  private @Nullable AccessibilityNodeInfoCompat lastFingerScrolledWebSource;
+  private long lastFingerWebScrollTime = -1;
 
   /**
    * Whether the page scrolled a strip that holds the focus and scrolls only sideways, after the
@@ -248,7 +258,30 @@ public class AccessibilityFocusInterpreter
   public boolean shouldIgnoreManualScroll(
       AccessibilityEvent event, AccessibilityNodeInfoCompat scrolledNode) {
     return !FormFactorUtils.isAndroidWear() && WebScrollFocus.isWebContent(scrolledNode)
-        && ScrollEventInterpreter.isWebNavigationEvent(event);
+        && (ScrollEventInterpreter.isWebNavigationEvent(event)
+            || (isSubsidiaryOfPendingWebScroll(scrolledNode) && !isFingerScroll(event)));
+  }
+
+  private boolean isSubsidiaryOfPendingWebScroll(AccessibilityNodeInfoCompat scrolled) {
+    return webScroll != null
+        && webScroll.event().getWindowId() == scrolled.getWindowId()
+        && (pendingManualScroll == webScroll || webFocusRecoveryScroll == webScroll)
+        && !webScrollSource.userScrollIsSideways()
+        && WebScrollFocus.scrollsOnlySideways(scrolled);
+  }
+
+  @Override
+  public boolean onManualWebScroll(ManualScrollInterpretation interpretation) {
+    AccessibilityNodeInfoCompat scrolled =
+        AccessibilityEventUtils.sourceCompat(interpretation.event());
+    // A sideways strip needs the saved path to tell whether it holds focus. Other finger-driven
+    // web scrolls determine that from live ancestry during recovery, without blocking this event
+    // on the independent path capture. Keyboard, native and Wear scrolls keep their old handling.
+    return !FormFactorUtils.isAndroidWear()
+        && WebScrollFocus.isWebContent(scrolled)
+        && !WebScrollFocus.scrollsOnlySideways(scrolled)
+        && isUserScroll(interpretation, scrolled)
+        && onWebScroll(interpretation);
   }
 
   /** Handles {@link #pendingManualScroll} once scrolling settles, in place of any earlier scroll. */
@@ -276,7 +309,7 @@ public class AccessibilityFocusInterpreter
       return true;
     }
     // Keyboard and page-script scrolls keep the original non-touch handling.
-    if (!isUserScroll(interpretation)) return false;
+    if (!isUserScroll(interpretation, scrolled)) return false;
     @WebScrollSource.Kind
     int kind = webScrollSource.onScroll(scrolled, touchMonitor.getTouchStartTime());
     if (kind == WebScrollSource.USER_START) {
@@ -285,6 +318,12 @@ public class AccessibilityFocusInterpreter
       webStrip = scrolled;
     }
     if (kind == WebScrollSource.USER_START || kind == WebScrollSource.USER) {
+      if (isFingerScroll(interpretation.event())) {
+        long time = interpretation.event().getEventTime();
+        lastFingerWebScrollTime = scrolled.equals(lastFingerScrolledWebSource)
+            ? Math.max(lastFingerWebScrollTime, time) : time;
+        lastFingerScrolledWebSource = AccessibilityNodeInfoCompat.obtain(scrolled);
+      }
       // Copy the event, because the framework may recycle it after dispatch.
       webScroll =
           ManualScrollInterpretation.create(
@@ -319,7 +358,8 @@ public class AccessibilityFocusInterpreter
     AccessibilityNodeInfoCompat scrolled =
         AccessibilityEventUtils.sourceCompat(interpretation.event());
     if (!FormFactorUtils.isAndroidWear() && WebScrollFocus.isWebContent(scrolled)
-        && ScrollEventInterpreter.isWebNavigationEvent(interpretation.event())) {
+        && (ScrollEventInterpreter.isWebNavigationEvent(interpretation.event())
+            || hasNewerUserFocus(interpretation.event().getEventTime()))) {
       // A swipe can move focus after this scroll was queued. Neither web recovery nor the
       // native fallback may then pull focus away from the newer navigation.
       LogUtils.d(TAG, "Discard delayed web scroll after newer focus navigation");
@@ -329,7 +369,7 @@ public class AccessibilityFocusInterpreter
     AccessibilityNodeInfoCompat currentA11yFocusedNode =
         accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ false);
     if (!FormFactorUtils.isAndroidWear()
-        && startWebFocusRecovery(interpretation, currentA11yFocusedNode, stripScrolled)) {
+        && startWebFocusRecovery(interpretation, currentA11yFocusedNode, stripScrolled, scrolled)) {
       return;
     }
     moveFocusFromScrolledOutNode(interpretation, currentA11yFocusedNode);
@@ -379,8 +419,15 @@ public class AccessibilityFocusInterpreter
    */
   private static final long WEB_FOCUS_RECOVERY_TIME_LIMIT_MS = 500;
 
+  /**
+   * How long past {@link #WEB_FOCUS_RECOVERY_TIME_LIMIT_MS} polling waits for a worker read that
+   * was outstanding at the limit, before the item across an edge found so far is used.
+   */
+  private static final long WEB_FOCUS_RECOVERY_GRACE_MS = 150;
+
   /** The search for an item in view after the user scrolled web content, while it runs. */
   private @Nullable WebFocusRecovery webFocusRecovery;
+  private @Nullable Future<Boolean> webFocusRecoveryWork;
 
   /** The scroll that {@link #webFocusRecovery} handles. */
   private @Nullable ManualScrollInterpretation webFocusRecoveryScroll;
@@ -406,7 +453,8 @@ public class AccessibilityFocusInterpreter
   private boolean startWebFocusRecovery(
       ManualScrollInterpretation interpretation,
       @Nullable AccessibilityNodeInfoCompat focus,
-      boolean stripScrolled) {
+      boolean stripScrolled,
+      @Nullable AccessibilityNodeInfoCompat scrolled) {
     boolean forward = interpretation.direction() != TraversalStrategy.SEARCH_FOCUS_BACKWARD;
     // Chrome clears the focus of an item that leaves the page's node tree as the page scrolls. A
     // WebView or document node in focus fills the view, so it counts as in view, but the next
@@ -414,11 +462,9 @@ public class AccessibilityFocusInterpreter
     boolean focusLost = focus == null || Role.getRole(focus) == Role.ROLE_WEB_VIEW;
     if (focusLost) {
       if (ScrollEventInterpreter.isWebNavigationEvent(interpretation.event())
-          || !isUserScroll(interpretation)) {
+          || !isUserScroll(interpretation, scrolled)) {
         return false;
       }
-      AccessibilityNodeInfoCompat scrolled =
-          AccessibilityEventUtils.sourceCompat(interpretation.event());
       if (scrolled == null || !WebScrollFocus.isWebContent(scrolled)) {
         return false;
       }
@@ -441,11 +487,9 @@ public class AccessibilityFocusInterpreter
               /* focusMoved= */ true));
       return true;
     }
-    if (!WebInterfaceUtils.supportsWebActions(focus) || !isUserScroll(interpretation)) {
+    if (!WebInterfaceUtils.supportsWebActions(focus) || !isUserScroll(interpretation, scrolled)) {
       return false;
     }
-    AccessibilityNodeInfoCompat scrolled =
-        AccessibilityEventUtils.sourceCompat(interpretation.event());
     if (scrolled == null) {
       return false;
     }
@@ -473,8 +517,15 @@ public class AccessibilityFocusInterpreter
     }
     startWebFocusRecovery(
         interpretation,
-        new WebFocusRecovery(focus, null, scrolled, leftBehind, forward, strip, focusMoved));
+        new WebFocusRecovery(focus, null, scrolled, leftBehind, forward, strip, focusMoved,
+            readyAncestorsFor(focus)));
     return true;
+  }
+
+  private List<AccessibilityNodeInfoCompat> readyAncestorsFor(AccessibilityNodeInfoCompat focus) {
+    FocusActionRecord record = actorState.getFocusHistory().getLastFocusActionRecord();
+    return record != null && record.focusedNodeEquals(focus)
+        ? record.getReadyAncestorNodes() : Collections.emptyList();
   }
 
   /** Returns {@link #webStrip} if it is in the window of {@code scrolled}. */
@@ -505,6 +556,8 @@ public class AccessibilityFocusInterpreter
     webFocusRecoveryScroll = interpretation;
     webFocusRecoveryStartTime = SystemClock.uptimeMillis();
     webFocusRecoveryFocusTime = lastFocusActionTime();
+    webFocusRecoveryWork = recovery.startInBackground(
+        webFocusRecoveryStartTime + WEB_FOCUS_RECOVERY_TIME_LIMIT_MS);
     runWebFocusRecovery(/* yieldToInput= */ true);
   }
 
@@ -525,36 +578,88 @@ public class AccessibilityFocusInterpreter
       cancelWebFocusRecovery();
       return;
     }
-    long sliceEnd = SystemClock.uptimeMillis() + WEB_FOCUS_RECOVERY_SLICE_MS;
-    while (!recovery.step()) {
-      long now = SystemClock.uptimeMillis();
-      if (now - webFocusRecoveryStartTime >= WEB_FOCUS_RECOVERY_TIME_LIMIT_MS) {
-        LogUtils.w(TAG, "Stopped the search for a web item in view at its time limit");
-        recovery.stop();
-        break;
-      }
-      if (yieldToInput && now >= sliceEnd) {
-        // Posted behind the motion events and other messages that arrived meanwhile.
-        handler.post(continueWebFocusRecovery);
+    @WebFocusRecovery.Outcome int outcome;
+    @Nullable AccessibilityNodeInfoCompat item;
+    Future<Boolean> work = webFocusRecoveryWork;
+    if (work != null) {
+      long elapsed = SystemClock.uptimeMillis() - webFocusRecoveryStartTime;
+      if (yieldToInput && !work.isDone()
+          && elapsed < WEB_FOCUS_RECOVERY_TIME_LIMIT_MS + WEB_FOCUS_RECOVERY_GRACE_MS) {
+        // The worker stops starting reads at the deadline. A read outstanding then may still
+        // finish within the grace time. Keep polling without blocking input; new focus or
+        // another scroll still cancels it.
+        handler.postDelayed(continueWebFocusRecovery, WEB_FOCUS_RECOVERY_SLICE_MS);
         return;
       }
+      try {
+        // A gesture must start from the item in view. Waiting here uses only what is left
+        // of this recovery's original deadline; it never starts a second time budget.
+        long left = Math.max(0, WEB_FOCUS_RECOVERY_TIME_LIMIT_MS - elapsed);
+        if (!work.get(left, TimeUnit.MILLISECONDS)) {
+          cancelWebFocusRecovery();
+          return;
+        }
+        outcome = recovery.outcome();
+        item = recovery.item();
+      } catch (TimeoutException e) {
+        // A read is still outstanding at the time limit. As the serial search does at its limit,
+        // use the item across an edge of the view found so far, and stop the worker.
+        item = recovery.publishedPartial();
+        outcome = (item != null) ? WebFocusRecovery.FOUND : WebFocusRecovery.NOTHING_IN_VIEW;
+        LogUtils.w(TAG, "Stopped the search for a web item in view with a read outstanding");
+        recovery.cancelBackground();
+        ConcurrentNodeQueries.cancel(work);
+      } catch (InterruptedException e) {
+        Thread.currentThread().interrupt();
+        cancelWebFocusRecovery();
+        return;
+      } catch (ExecutionException | CancellationException e) {
+        LogUtils.w(TAG, "Web scroll recovery did not finish: %s", e);
+        cancelWebFocusRecovery();
+        return;
+      }
+    } else {
+      long sliceEnd = SystemClock.uptimeMillis() + WEB_FOCUS_RECOVERY_SLICE_MS;
+      while (!recovery.step()) {
+        long now = SystemClock.uptimeMillis();
+        if (now - webFocusRecoveryStartTime >= WEB_FOCUS_RECOVERY_TIME_LIMIT_MS) {
+          LogUtils.w(TAG, "Stopped the search for a web item in view at its time limit");
+          recovery.stop();
+          break;
+        }
+        if (yieldToInput && now >= sliceEnd) {
+          // Posted behind the motion events and other messages that arrived meanwhile.
+          handler.post(continueWebFocusRecovery);
+          return;
+        }
+      }
+      outcome = recovery.outcome();
+      item = recovery.item();
     }
+    webFocusRecoveryWork = null;
     webFocusRecovery = null;
     webFocusRecoveryScroll = null;
     if (!screenState.areMainWindowsStable()
         || lastFocusActionTime() != webFocusRecoveryFocusTime) {
       return;
     }
-    switch (recovery.outcome()) {
-      case WebFocusRecovery.FOUND ->
-          pipelineInterpretations.input(
+    switch (outcome) {
+      case WebFocusRecovery.FOUND -> {
+        boolean focused = pipelineInterpretations.input(
               interpretation.eventId(),
               interpretation.event(),
               ManualScroll.builder()
                   .setDirection(interpretation.direction())
                   .setScreenState(screenState.getStableScreenState())
-                  .setWebItemInView(recovery.item())
+                  .setWebItemInView(item)
                   .build());
+        if (focused && webScroll == interpretation) {
+          // Focusing the item may make its carousel scroll it sideways into view. That is
+          // not another reason to recover this already-handled vertical scroll.
+          webScroll = null;
+          pageScrolledFocusStrip = false;
+        }
+      }
       case WebFocusRecovery.NOTHING_IN_VIEW -> {
         LogUtils.d(TAG, "Web focus is out of view, and no item is in view");
         AccessibilityNodeInfoCompat focus =
@@ -574,8 +679,25 @@ public class AccessibilityFocusInterpreter
 
   private void cancelWebFocusRecovery() {
     handler.removeCallbacks(continueWebFocusRecovery);
+    if (webFocusRecovery != null) webFocusRecovery.cancelBackground();
+    if (webFocusRecoveryWork != null) ConcurrentNodeQueries.cancel(webFocusRecoveryWork);
+    webFocusRecoveryWork = null;
     webFocusRecovery = null;
     webFocusRecoveryScroll = null;
+  }
+
+  /** Drops this service's pending manual-scroll work before its node-query workers stop. */
+  public void shutdown() {
+    cancelWebFocusRecovery();
+    handler.removeCallbacks(handlePendingManualScroll);
+    pendingManualScroll = null;
+    webScroll = null;
+  }
+
+  /** Whether manual web-scroll recovery must finish before general lost-focus recovery runs. */
+  public boolean isWebScrollFocusPending() {
+    return webFocusRecovery != null
+        || (pendingManualScroll != null && pendingManualScroll == webScroll);
   }
 
   /**
@@ -615,11 +737,35 @@ public class AccessibilityFocusInterpreter
    * Whether the user's fingers scrolled the page. The page also scrolls itself to show an item that
    * a swipe or continuous reading focused, and that scroll is not one of SandFly's scroll actions.
    */
-  private boolean isUserScroll(ManualScrollInterpretation interpretation) {
-    return isUserScroll(interpretation.event());
+  private boolean isUserScroll(
+      ManualScrollInterpretation interpretation, @Nullable AccessibilityNodeInfoCompat scrolled) {
+    if (isFingerScroll(interpretation.event())) return true;
+    long eventTime = interpretation.event().getEventTime();
+    if (lastFingerScrolledWebSource == null || scrolled == null
+        || eventTime < lastFingerWebScrollTime
+        || eventTime - lastFingerWebScrollTime > WebScrollFocus.FLING_MS) return false;
+    FocusActionRecord record = actorState.getFocusHistory().getLastFocusActionRecord();
+    boolean continued = record != null
+        && WebScrollFocus.isPlainTouchNavigation(record.getExtraInfo().navigationAction)
+        && (WebFocusRecovery.sameIdentity(lastFingerScrolledWebSource, scrolled)
+            || WebFocusRecovery.sameNativeViewport(lastFingerScrolledWebSource, scrolled,
+                record.getReadyAncestorNodes()))
+        && WebScrollFocus.continuesManualScrollAfterNavigation(
+        interpretation.event().getEventTime(), lastFingerWebScrollTime, record.getActionTime(),
+        record.getExtraInfo().sourceAction,
+        interpretation.direction() != TraversalStrategy.SEARCH_FOCUS_BACKWARD,
+        record.getFocusedNode(), lastFingerScrolledWebSource);
+    return continued;
   }
 
-  private boolean isUserScroll(AccessibilityEvent event) {
+  private boolean hasNewerUserFocus(long eventTime) {
+    FocusActionRecord record = actorState.getFocusHistory().getLastFocusActionRecord();
+    return record != null && record.getActionTime() > eventTime
+        && (record.getExtraInfo().sourceAction == FocusActionInfo.LOGICAL_NAVIGATION
+            || record.getExtraInfo().sourceAction == FocusActionInfo.TOUCH_EXPLORATION);
+  }
+
+  private boolean isFingerScroll(AccessibilityEvent event) {
     return WebScrollFocus.isUserScroll(
         event.getEventTime(),
         touchMonitor.getTouchStartTime(),

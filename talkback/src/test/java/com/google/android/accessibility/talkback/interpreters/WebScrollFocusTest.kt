@@ -20,6 +20,10 @@ import android.graphics.Rect
 import android.view.accessibility.AccessibilityNodeInfo
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionInfo
+import com.google.android.accessibility.talkback.focusmanagement.NavigationTarget
+import com.google.android.accessibility.talkback.focusmanagement.action.NavigationAction
+import com.google.android.accessibility.utils.input.CursorGranularity
+import com.google.android.accessibility.utils.monitor.InputModeTracker
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNull
@@ -58,12 +62,15 @@ class WebScrollFocusTest {
       addAction(ACTION_PREVIOUS_HTML_ELEMENT)
     }
 
+    override fun getChild(index: Int, flags: Int): AccessibilityNodeInfoCompat? = getChild(index)
+
     override fun getChildCount() = nodes.size
 
     override fun getChild(index: Int): AccessibilityNodeInfoCompat {
       reads++
       return nodes[index]
     }
+
 
     override fun equals(other: Any?) = this === other
 
@@ -78,6 +85,71 @@ class WebScrollFocusTest {
 
   /** Chrome clips a node below the viewport to its bottom edge. */
   private fun below(text: String) = Node(Rect(0, 2300, 1000, 2000), text = text)
+
+  @Test
+  fun onlyDefaultTouchNavigationCanContinueTheManualFling() {
+    fun action() = NavigationAction.Builder().setAction(NavigationAction.DIRECTIONAL_NAVIGATION)
+      .setTarget(NavigationTarget.TARGET_DEFAULT).setInputMode(InputModeTracker.INPUT_MODE_TOUCH)
+      .setOriginalNavigationGranularity(CursorGranularity.DEFAULT)
+    assertTrue(WebScrollFocus.isPlainTouchNavigation(action().build()))
+    assertFalse(WebScrollFocus.isPlainTouchNavigation(null))
+    assertFalse(WebScrollFocus.isPlainTouchNavigation(
+      action().setTarget(NavigationTarget.TARGET_HEADING).build()))
+    assertFalse(WebScrollFocus.isPlainTouchNavigation(
+      action().setInputMode(InputModeTracker.INPUT_MODE_KEYBOARD).build()))
+    assertFalse(WebScrollFocus.isPlainTouchNavigation(
+      action().setOriginalNavigationGranularity(CursorGranularity.WORD).build()))
+    assertFalse(WebScrollFocus.isPlainTouchNavigation(
+      action().setAction(NavigationAction.JUMP_TO_TOP).build()))
+  }
+
+  @Test
+  fun aManualFlingCanContinueAfterAFlickToAnAlreadyVisibleItem() {
+    val focus = item(400, 600, "Next visible item")
+    val page = Node(viewport, null, false, true)
+    assertTrue(WebScrollFocus.continuesManualScrollAfterNavigation(
+      900, 100, 200, FocusActionInfo.LOGICAL_NAVIGATION, true, focus, page))
+  }
+
+  @Test
+  fun aFlingMovingAwayFromALateNavigationTargetIsStillManual() {
+    val page = Node(viewport, null, false, true)
+    assertTrue(WebScrollFocus.continuesManualScrollAfterNavigation(
+      900, 100, 200, FocusActionInfo.LOGICAL_NAVIGATION, true, above("Focus left above"), page))
+    assertTrue(WebScrollFocus.continuesManualScrollAfterNavigation(
+      900, 100, 200, FocusActionInfo.LOGICAL_NAVIGATION, false, below("Focus left below"), page))
+  }
+
+  @Test
+  fun unrelatedOrOldNavigationDoesNotBecomeManualScrolling() {
+    val focus = item(400, 600, "Next visible item")
+    val page = Node(viewport, null, false, true)
+    for ((event, manual, navigation) in listOf(Triple(150L, 100L, 200L),
+      Triple(900L, 200L, 100L), Triple(4000L, 100L, 200L), Triple(900L, -1L, 200L))) {
+      assertFalse(WebScrollFocus.continuesManualScrollAfterNavigation(
+        event, manual, navigation, FocusActionInfo.LOGICAL_NAVIGATION, true, focus, page))
+    }
+    for (source in listOf(FocusActionInfo.MANUAL_SCROLL, FocusActionInfo.TOUCH_EXPLORATION,
+      FocusActionInfo.SCREEN_STATE_CHANGE, FocusActionInfo.UNKNOWN)) {
+      assertFalse(WebScrollFocus.continuesManualScrollAfterNavigation(
+        900, 100, 200, source, true, focus, page))
+    }
+  }
+
+  @Test
+  fun browserNavigationToAnOffscreenItemKeepsItsNormalScrollHandling() {
+    val page = Node(viewport, null, false, true)
+    assertFalse(WebScrollFocus.continuesManualScrollAfterNavigation(
+      900, 100, 200, FocusActionInfo.LOGICAL_NAVIGATION, false, above("Earlier item"), page))
+    assertFalse(WebScrollFocus.continuesManualScrollAfterNavigation(
+      900, 100, 200, FocusActionInfo.LOGICAL_NAVIGATION, true, below("Later item"), page))
+    for (focus in listOf(item(400, 600, "Hidden item").apply { isVisibleToUser = false },
+      item(400, 600, "Text being edited").apply { isEditable = true },
+      Node(Rect(), text = "Unknown bounds"))) {
+      assertFalse(WebScrollFocus.continuesManualScrollAfterNavigation(
+        900, 100, 200, FocusActionInfo.LOGICAL_NAVIGATION, true, focus, page))
+    }
+  }
 
   @Test
   fun boundsClippedAtAnEdgeOfTheViewportAreOutsideIt() {
@@ -127,6 +199,97 @@ class WebScrollFocusTest {
       WebScrollFocus.findItemInView(page, listOf(focus, section, page), viewport, false)
 
     assertSame(lastInView, found)
+  }
+
+  @Test
+  fun aVisibleNextSiblingStillNeedsOnlyTheIndexAndOneChildRead() {
+    val items = Array(40) { index -> when (index) {
+      0 -> above("Focus")
+      1 -> item(400, 600, "Next item")
+      else -> below("Item $index")
+    } }
+    val page = Node(viewport, null, false, true, *items)
+    assertSame(items[1],
+      WebScrollFocus.findItemInView(page, listOf(items[0], page), viewport, true))
+    assertEquals(2, reads)
+  }
+
+  @Test
+  fun aVisibleFixedSiblingAfterTheFocusIsNotSkippedForALaterBodyItem() {
+    val items = Array(1600) { index -> when {
+      index == 20 -> item(600, 700, "Visible fixed sibling")
+      index < 1200 -> above("Item $index")
+      index == 1200 -> item(800, 1000, "Later body item")
+      else -> below("Item $index")
+    } }
+    val page = Node(viewport, null, false, true, *items)
+    assertSame(items[20],
+      WebScrollFocus.findItemInView(page, listOf(items[0], page), viewport, true))
+  }
+
+  @Test
+  fun aVisibleOverflowingSiblingOfTheFocusIsStillSearched() {
+    val focus = above("Old item")
+    val target = item(500, 700, "Visible overflowing child")
+    val clipped = Node(Rect(0, 100, 1000, 100), null, false, false, focus, target)
+    val page = Node(viewport, null, false, true, clipped)
+    assertSame(target,
+      WebScrollFocus.findItemInView(page, listOf(focus, clipped, page), viewport, true))
+  }
+
+  @Test
+  fun aBatchSizedGroupKeepsTheFirstVisibleItemInReadingOrder() {
+    val items = Array(40) { index -> when {
+      index == 2 -> item(200, 300, "Earlier fixed header")
+      index == 20 -> item(600, 700, "First visible item after the focus")
+      index == 35 -> item(800, 1000, "Later visible item")
+      else -> above("Item $index")
+    } }
+    val page = Node(viewport, null, false, true, *items)
+    assertSame(items[20],
+      WebScrollFocus.findItemInView(page, listOf(items[8], page), viewport, true))
+  }
+
+  @Test
+  fun aClippedOversizedContainerIsNotUsedAsTheTimeLimitsPartialItem() {
+    val wrapper = Node(Rect(0, 600, 1000, 2000), null, true, false,
+      item(700, 900, "Actual item")).apply {
+      extras.putInt("AccessibilityNodeInfo.unclippedHeight", 85000)
+    }
+    val page = Node(viewport, null, false, true, wrapper)
+    val search = WebScrollFocus.Search(page, null, viewport, true)
+    assertFalse(search.step())
+    search.stop()
+    assertNull(search.result())
+  }
+
+  @Test
+  fun anOversizedContainerClippedInsideTheViewportIsLookedInto() {
+    val target = item(400, 600, "Actual item")
+    val wrapper = Node(Rect(0, 200, 1000, 1000), null, true, false, target).apply {
+      extras.putInt("AccessibilityNodeInfo.unclippedHeight", Int.MAX_VALUE)
+    }
+    val page = Node(viewport, null, false, true, wrapper)
+    assertSame(target, WebScrollFocus.findItemInView(page, null, viewport, true))
+  }
+
+  @Test
+  fun anOrdinaryClickableCardStillKeepsItsOwnFocusTarget() {
+    val card = Node(Rect(0, 400, 1000, 900), null, true, false,
+      item(500, 600, "Card text")).apply {
+      extras.putInt("AccessibilityNodeInfo.unclippedHeight", 500)
+    }
+    val page = Node(viewport, null, false, true, card)
+    assertSame(card, WebScrollFocus.findItemInView(page, null, viewport, true))
+  }
+
+  @Test
+  fun aLargeLeafWithNoChildrenIsNotTreatedAsAnOversizedContainer() {
+    val leaf = item(400, 900, "Large image").apply {
+      extras.putInt("AccessibilityNodeInfo.unclippedHeight", 85000)
+    }
+    val page = Node(viewport, null, false, true, leaf)
+    assertSame(leaf, WebScrollFocus.findItemInView(page, null, viewport, true))
   }
 
   @Test

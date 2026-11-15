@@ -17,19 +17,31 @@
 package com.google.android.accessibility.talkback.interpreters;
 
 import android.graphics.Rect;
+import android.os.SystemClock;
 import androidx.annotation.IntDef;
 import androidx.annotation.VisibleForTesting;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
+import com.google.android.accessibility.utils.ConcurrentNodeQueries;
+import com.google.android.accessibility.utils.ConcurrentNodeQueries.ParentRead;
+import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.Role;
+import com.google.android.accessibility.utils.WebInterfaceUtils;
+import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.Future;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.function.Function;
+import java.util.function.Supplier;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 /**
- * Finds the item of web content to focus after the user scrolled the page, in steps that each read
- * at most one node from the app, so that the main thread can handle touch input between them.
+ * Finds the item of web content to focus after the user scrolled the page. Node reads can run on
+ * the existing bounded query pool; the serial fallback yields between individual reads.
  *
  * <p>The steps read the ancestors of the focus to find the WebView that holds it and whether the
  * scrolled view holds it, then run a {@link WebScrollFocus.Search}.
@@ -38,6 +50,10 @@ final class WebFocusRecovery {
 
   /** Most ancestors of a node read to find its WebView. */
   @VisibleForTesting static final int MAX_ANCESTORS_READ = 128;
+
+  /** The optional parallel check is limited to a short, already captured path. */
+  private static final int MAX_READY_PATH_PARENTS = 16;
+  private static final long READY_PATH_WAIT_MS = 80;
 
   /** What the recovery found. */
   @IntDef({RUNNING, FOUND, IN_VIEW, NOTHING_IN_VIEW, NOT_WEB_SCROLL})
@@ -64,7 +80,7 @@ final class WebFocusRecovery {
 
   private final @Nullable AccessibilityNodeInfoCompat focus;
   private final @Nullable AccessibilityNodeInfoCompat lastFocused;
-  private final AccessibilityNodeInfoCompat scrolled;
+  private AccessibilityNodeInfoCompat scrolled;
   private final boolean leftBehind;
   private final boolean forward;
 
@@ -105,8 +121,71 @@ final class WebFocusRecovery {
   private boolean scrolledInWebView;
 
   private WebScrollFocus.@Nullable Search search;
+  private List<AccessibilityNodeInfoCompat> readyPath = Collections.emptyList();
+  private int readySourceIndex;
+  private boolean readyPathChecked;
   private @Outcome int outcome = RUNNING;
   private @Nullable AccessibilityNodeInfoCompat item;
+  private final AtomicBoolean backgroundCancelled = new AtomicBoolean();
+  private long readDeadline = Long.MAX_VALUE;
+
+  /** A copy of the item across an edge of the view found so far by the worker. */
+  private volatile @Nullable AccessibilityNodeInfoCompat publishedPartial;
+  private @Nullable AccessibilityNodeInfoCompat publishedSource;
+
+  /**
+   * The item across an edge of the view that the worker found so far, or null. The main thread
+   * uses it when a read is still outstanding at the time limit.
+   */
+  @Nullable AccessibilityNodeInfoCompat publishedPartial() {
+    return publishedPartial;
+  }
+
+  private void publishPartial() {
+    AccessibilityNodeInfoCompat partial = (search == null) ? null : search.partial();
+    if (partial != null && partial != publishedSource) {
+      publishedSource = partial;
+      publishedPartial = AccessibilityNodeInfoCompat.obtain(partial);
+    }
+  }
+
+  /** Only node reads run on a worker; the caller still validates and applies the result. */
+  @Nullable Future<Boolean> startInBackground(long deadline) {
+    AccessibilityNodeInfoCompat anchor = focus != null ? focus
+        : lastFocused != null ? lastFocused : scrolled;
+    return startInBackground(deadline,
+        read -> ConcurrentNodeQueries.readAlongsidePath(anchor, read));
+  }
+
+  @VisibleForTesting
+  @Nullable Future<Boolean> startInBackground(
+      long deadline, Function<Supplier<Boolean>, Future<Boolean>> submit) {
+    // The strip is also kept by the interpreter. Copy it here, on the caller's thread, so that the
+    // worker never reads a node that the main thread can refresh.
+    if (strip != null) strip = AccessibilityNodeInfoCompat.obtain(strip);
+    Future<Boolean> work = submit.apply(() -> {
+      readDeadline = deadline;
+      if (backgroundCancelled.get() || Thread.currentThread().isInterrupted()) return false;
+      while (!backgroundCancelled.get() && !Thread.currentThread().isInterrupted()
+          && SystemClock.uptimeMillis() < deadline) {
+        boolean ended = step();
+        publishPartial();
+        if (ended) return !backgroundCancelled.get() && !Thread.currentThread().isInterrupted();
+      }
+      if (backgroundCancelled.get() || Thread.currentThread().isInterrupted()) return false;
+      LogUtils.w("WebFocusRecovery", "Stopped the search for a web item in view at its time limit");
+      stop();
+      return true;
+    });
+    // A rejected worker keeps the original one-read-at-a-time fallback. The optional
+    // parent batch must not introduce an 80 ms join on the main thread.
+    if (work == null) readyPath = Collections.emptyList();
+    return work;
+  }
+
+  void cancelBackground() {
+    backgroundCancelled.set(true);
+  }
 
   /**
    * @param focus the focused node, or null when focus was lost or is on a whole document, so that
@@ -133,6 +212,19 @@ final class WebFocusRecovery {
       boolean forward,
       @Nullable AccessibilityNodeInfoCompat strip,
       boolean focusMoved) {
+    this(focus, lastFocused, scrolled, leftBehind, forward, strip, focusMoved,
+        Collections.emptyList());
+  }
+
+  WebFocusRecovery(
+      @Nullable AccessibilityNodeInfoCompat focus,
+      @Nullable AccessibilityNodeInfoCompat lastFocused,
+      AccessibilityNodeInfoCompat scrolled,
+      boolean leftBehind,
+      boolean forward,
+      @Nullable AccessibilityNodeInfoCompat strip,
+      boolean focusMoved,
+      List<AccessibilityNodeInfoCompat> readyPath) {
     this.strip = strip;
     this.focusMoved = focusMoved;
     this.focus = focus;
@@ -144,11 +236,99 @@ final class WebFocusRecovery {
     if (focus != null) {
       focus.getBoundsInScreen(focusBounds);
       startWalk(WALK_FROM_FOCUS, focus);
+      selectReadyPath(readyPath);
     } else if (this.lastFocused != null) {
       startWalk(WALK_FROM_FOCUS, this.lastFocused);
     } else {
       startWalk(WALK_FROM_SCROLLED, scrolled);
     }
+  }
+
+  private void selectReadyPath(List<AccessibilityNodeInfoCompat> path) {
+    if (path.isEmpty() || focus == null || !sameIdentity(path.get(0), focus)) return;
+    int source = -1;
+    for (int i = 0; i < path.size() && i <= MAX_READY_PATH_PARENTS; i++) {
+      AccessibilityNodeInfoCompat node = path.get(i);
+      if (node.getWindowId() != focus.getWindowId()) return;
+      if (sameIdentity(node, scrolled)) source = i;
+      if (isNativeWebView(node)) {
+        if (i > 0 && source >= 0) {
+          readyPath = new ArrayList<>(path.subList(0, i + 1));
+          readyPath.set(0, focus);
+          readySourceIndex = source;
+        }
+        return;
+      }
+    }
+  }
+
+  private static boolean isNativeWebView(AccessibilityNodeInfoCompat node) {
+    return Role.getRole(node) == Role.ROLE_WEB_VIEW
+        && !WebInterfaceUtils.supportsWebActions(node);
+  }
+
+  static boolean sameIdentity(
+      AccessibilityNodeInfoCompat saved, AccessibilityNodeInfoCompat current) {
+    if (!saved.equals(current) || saved.getWindowId() != current.getWindowId()) return false;
+    String id = saved.getUniqueId();
+    return id != null ? id.equals(current.getUniqueId())
+        : current.getUniqueId() == null && isNativeWebView(saved) && isNativeWebView(current);
+  }
+
+  /** A native WebView and its own root document report the same physical viewport. */
+  @VisibleForTesting
+  static boolean sameNativeViewport(AccessibilityNodeInfoCompat first,
+      AccessibilityNodeInfoCompat second, List<AccessibilityNodeInfoCompat> path) {
+    for (int i = 0; i + 1 < path.size(); i++) {
+      AccessibilityNodeInfoCompat document = path.get(i);
+      AccessibilityNodeInfoCompat host = path.get(i + 1);
+      if (isNativeWebView(host) && Role.getRole(document) == Role.ROLE_WEB_VIEW
+          && "rootWebArea".contentEquals(String.valueOf(
+              AccessibilityNodeInfoUtils.getChromeRole(document)))
+          && ((sameIdentity(first, host) && sameIdentity(second, document))
+              || (sameIdentity(second, host) && sameIdentity(first, document)))) return true;
+    }
+    return false;
+  }
+
+  @VisibleForTesting
+  static List<AccessibilityNodeInfoCompat> verifiedAncestorNodes(
+      List<AccessibilityNodeInfoCompat> saved,
+      Map<AccessibilityNodeInfoCompat, ParentRead> reads) {
+    List<AccessibilityNodeInfoCompat> current = new ArrayList<>();
+    for (int i = 0; i + 1 < saved.size(); i++) {
+      ParentRead read = reads.get(saved.get(i));
+      if (read == null || !sameIdentity(saved.get(i), read.getChild())
+          || !sameIdentity(saved.get(i + 1), read.getParent())
+          || (i == 0 && !read.getChild().isAccessibilityFocused())) {
+        return Collections.emptyList();
+      }
+      current.add(read.getChild());
+      if (i + 2 == saved.size()) current.add(read.getParent());
+    }
+    return !current.isEmpty() && isNativeWebView(current.get(current.size() - 1))
+        ? current : Collections.emptyList();
+  }
+
+  private void tryCurrentAncestors() {
+    int last = readyPath.size() - 1;
+    Map<AccessibilityNodeInfoCompat, ParentRead> reads =
+        ConcurrentNodeQueries.refreshParentsForRecovery(
+            readyPath.subList(0, last), readyPathWaitMs(readDeadline, SystemClock.uptimeMillis()));
+    List<AccessibilityNodeInfoCompat> current = verifiedAncestorNodes(readyPath, reads);
+    if (current.isEmpty()) return;
+    focusAndAncestors.addAll(current);
+    current.get(0).getBoundsInScreen(focusBounds);
+    scrolled = current.get(readySourceIndex);
+    scrolled.getBoundsInScreen(scrolledBounds);
+    scrolledHoldsFocus = true;
+    webView = current.get(current.size() - 1);
+    walking = null;
+  }
+
+  @VisibleForTesting
+  static long readyPathWaitMs(long deadline, long now) {
+    return Math.min(READY_PATH_WAIT_MS, Math.max(0, deadline - now));
   }
 
   /** Returns what the recovery found, or {@link #RUNNING}. */
@@ -175,12 +355,15 @@ final class WebFocusRecovery {
     }
   }
 
-  /** Does one step, reading at most one node. Returns whether the recovery ended. */
+  /** Advances the bounded path check or one serial read. Returns whether recovery ended. */
   boolean step() {
     if (outcome != RUNNING) {
       return true;
     }
-    if (search != null) {
+    if (!readyPathChecked && !readyPath.isEmpty()) {
+      readyPathChecked = true;
+      tryCurrentAncestors();
+    } else if (search != null) {
       if (search.step()) {
         end(search.result());
       }
@@ -233,7 +416,10 @@ final class WebFocusRecovery {
       return;
     }
     ancestorsRead++;
-    AccessibilityNodeInfoCompat parent = node.getParent();
+    // Read the ancestry without unrelated sibling or descendant branches.
+    AccessibilityNodeInfoCompat parent = node.getParent(
+        AccessibilityNodeInfoCompat.FLAG_PREFETCH_ANCESTORS
+            | AccessibilityNodeInfoCompat.FLAG_PREFETCH_UNINTERRUPTIBLE);
     // The outermost of the nested documents that a WebView reports: a document inside a page is a
     // web element's child, not a WebView's.
     if (webView == null
@@ -242,6 +428,14 @@ final class WebFocusRecovery {
       webView = node;
       if (walk == WALK_FROM_SCROLLED) {
         scrolledInWebView = true;
+        walking = null;
+        return;
+      }
+      if (scrolledHoldsFocus
+          && WebScrollFocus.isWebContent(scrolled)
+          && !WebInterfaceUtils.supportsWebActions(node)) {
+        // The web source is already on this path. Native ancestors above its WebView
+        // cannot change the search; keep reading them only for a native scroll source.
         walking = null;
         return;
       }

@@ -120,6 +120,8 @@ public class Interpreters {
     // Event-interpreters are chained:
     // scrollEventInterpreter -> manualScrollInterpreter -> accessibilityFocusInterpreter
     manualScrollInterpreter.setListener(accessibilityFocusInterpreter);
+    subtreeChangeEventInterpreter.setWebScrollFocusPending(
+        accessibilityFocusInterpreter::isWebScrollFocusPending);
     scrollEventInterpreter.addListener(manualScrollInterpreter);
     scrollEventInterpreter.addListener(scrollPositionInterpreter);
     scrollEventInterpreter.addListener(autoScrollInterpreter);
