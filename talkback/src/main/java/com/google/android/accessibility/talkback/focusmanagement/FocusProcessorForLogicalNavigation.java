@@ -6185,7 +6185,8 @@ public class FocusProcessorForLogicalNavigation {
       next = TraversalStrategyUtils.searchFocus(strategy, pivot, direction, nodeFilter);
     }
     if (emptyItems.contains(next)) {
-      LogUtils.d(TAG, "Adjacent indexed item %d is empty; waiting for its content.", next.hashCode());
+      LogUtils.d(
+          TAG, "Adjacent indexed item %d is empty; waiting for its content.", next.hashCode());
       return null;
     }
     return next;

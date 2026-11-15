@@ -21,6 +21,7 @@ import android.text.TextUtils;
 import androidx.annotation.Nullable;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat.AccessibilityActionCompat;
+import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.Role;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -120,7 +121,8 @@ final class OffscreenContent {
   static boolean hasNothingAhead(
       AccessibilityNodeInfoCompat scrollable, AccessibilityNodeInfoCompat pivot, boolean forward) {
     if (scrollable.equals(pivot)
-        || scrollable.getActionList().contains(AccessibilityActionCompat.ACTION_SCROLL_TO_POSITION)) {
+        || AccessibilityNodeInfoUtils.supportsAction(
+            scrollable, AccessibilityActionCompat.ACTION_SCROLL_TO_POSITION.getId())) {
       return false;
     }
     List<AccessibilityNodeInfoCompat> nodes = new ArrayList<>();
