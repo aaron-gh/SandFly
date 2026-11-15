@@ -1725,7 +1725,10 @@ public class TalkBackService extends AccessibilityServiceCompat
     if (keyEvent.getAction() == KeyEvent.ACTION_DOWN) {
       RecentUserInput.mark();
       ScrollAhead.cancelAll("key");
-      stopContinuousCopy();
+      // Repeats of a held key, such as the one that started the collection, don't end it.
+      if (keyEvent.getRepeatCount() == 0) {
+        stopContinuousCopy();
+      }
       if (gestureController != null) {
         gestureController.onUserInputStarted();
       }
