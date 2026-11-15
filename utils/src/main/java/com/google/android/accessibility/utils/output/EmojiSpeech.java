@@ -315,6 +315,11 @@ public final class EmojiSpeech {
     suffix = on;
   }
 
+  /** Returns whether "emoji" is to be spoken after each emoji name. */
+  public static boolean speaksSuffix() {
+    return suffix;
+  }
+
   /** Returns whether the speech engine reads emoji, so text should keep them. */
   public static boolean engineSpeaksEmoji() {
     return mode.equals(MODE_ENGINE);
