@@ -1094,6 +1094,7 @@ object Commands {
           R.string.shortcut_value_previous_gesture_profile,
           R.string.shortcut_previous_gesture_profile,
         )
+        gesture(R.string.shortcut_value_app_gestures_for_app, R.string.shortcut_app_gestures_for_app)
         gesture(R.string.shortcut_value_settings_profiles, R.string.shortcut_settings_profiles)
         gesture(
           R.string.shortcut_value_next_settings_profile,

@@ -16,6 +16,8 @@
 
 package com.google.android.accessibility.talkback.commands
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.preference.PreferenceGroup
 import com.google.android.accessibility.talkback.R
@@ -26,7 +28,9 @@ import com.google.android.accessibility.talkback.gesture.AppGestures
 import com.google.android.accessibility.talkback.keyboard.KeyComboModel
 import com.google.android.accessibility.talkback.notifications.NotificationCodeFragment
 import com.google.android.accessibility.talkback.notifications.NotificationReader
+import com.google.android.accessibility.talkback.preference.TalkBackPreferencesActivity
 import com.google.android.accessibility.talkback.preference.base.KeyboardShortcutDialogPreference
+import com.google.android.accessibility.utils.preference.BasePreferencesActivity
 
 /**
  * Gestures > Gestures in apps, and Keyboard shortcuts > Keyboard shortcuts in apps: the apps in
@@ -138,9 +142,12 @@ class AppGestureFragment : NotificationCodeFragment(R.string.title_pref_app_gest
         files.export(getTitle().toString()) { ItemFiles.exportApps(it, setOf(packageName)) }
       }
     }
-    screen.action(getString(R.string.app_gestures_remove_app)) {
-      AppGestures.write(prefs, AppGestures.read(prefs) - packageName)
-      requireActivity().onBackPressedDispatcher.onBackPressed()
+    // Gestures for this app opens the screen of an app that has no gestures of its own yet.
+    if (app != null) {
+      screen.action(getString(R.string.app_gestures_remove_app)) {
+        AppGestures.write(prefs, AppGestures.read(prefs) - packageName)
+        requireActivity().onBackPressedDispatcher.onBackPressed()
+      }
     }
   }
 
@@ -227,6 +234,30 @@ class AppGestureFragment : NotificationCodeFragment(R.string.title_pref_app_gest
 
   companion object {
     const val ARG_PACKAGE = "package"
+
+    /** Whether Gestures for this app can open the screen of [packageName], the app in front. */
+    @JvmStatic
+    fun canOpen(context: Context, packageName: String): Boolean =
+      packageName.isNotEmpty() && packageName != context.packageName
+
+    /**
+     * Opens the screen of [packageName], the app in front, for Gestures for this app. Returns false
+     * when there is no app in front, or SandFly is.
+     */
+    @JvmStatic
+    fun open(context: Context, packageName: String): Boolean {
+      if (!canOpen(context, packageName)) return false
+      context.startActivity(
+        Intent(context, TalkBackPreferencesActivity::class.java)
+          .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+          .putExtra(BasePreferencesActivity.FRAGMENT_NAME, AppGestureFragment::class.java.name)
+          .putExtra(
+            BasePreferencesActivity.FRAGMENT_ARGS,
+            Bundle().apply { putString(ARG_PACKAGE, packageName) },
+          )
+      )
+      return true
+    }
 
     // The key the recording dialog is made for, which has no shortcut in the keymap.
     private const val RECORD_KEY = "pref_app_keys_record"

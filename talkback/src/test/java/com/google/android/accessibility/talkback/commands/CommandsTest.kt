@@ -80,6 +80,7 @@ class CommandsTest {
         R.string.shortcut_value_toggle_time_announcements,
         R.string.shortcut_value_speech_history,
         R.string.shortcut_value_switch_keyboard,
+        R.string.shortcut_value_app_gestures_for_app,
       )) {
       assertTrue(context.getString(res) in values)
     }
@@ -195,5 +196,17 @@ class CommandsTest {
       Commands.keyboardValue(context, TalkBackPhysicalKeyboardShortcut.NAVIGATE_BELOW),
       Commands.valueOfKeyboardAction(context, TalkBackPhysicalKeyboardShortcut.NAVIGATE_BELOW),
     )
+  }
+
+  @Test
+  fun gesturesForThisAppIsADefaultMenuItemAndOpensOnlyForAnotherApp() {
+    val value = context.getString(R.string.shortcut_value_app_gestures_for_app)
+    assertEquals(context.getString(R.string.shortcut_app_gestures_for_app), Commands.label(context, value))
+    val row = MenuCommands.rows(context).single { it.value == value }
+    assertFalse(row.menuOnly)
+    assertTrue(context.resources.getBoolean(row.showDefault))
+    assertFalse(AppGestureFragment.canOpen(context, ""))
+    assertFalse(AppGestureFragment.canOpen(context, context.packageName))
+    assertTrue(AppGestureFragment.canOpen(context, "com.example.player"))
   }
 }

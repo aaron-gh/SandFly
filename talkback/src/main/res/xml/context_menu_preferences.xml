@@ -223,6 +223,13 @@
             app:singleLineTitle="false"/>
         <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
             android:layout="@layout/listitem_2texts"
+            android:defaultValue="@bool/pref_show_context_menu_app_gestures_default"
+            android:key="@string/pref_show_context_menu_app_gestures_setting_key"
+            android:order="15"
+            android:title="@string/shortcut_app_gestures_for_app"
+            app:singleLineTitle="false"/>
+        <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
+            android:layout="@layout/listitem_2texts"
             android:defaultValue="@bool/pref_show_context_menu_voice_profile_default"
             android:key="@string/pref_show_context_menu_voice_profile_setting_key"
             android:order="15"

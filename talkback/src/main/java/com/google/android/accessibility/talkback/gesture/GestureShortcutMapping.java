@@ -963,6 +963,8 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
         R.string.shortcut_previous_gesture_profile),
     NEXT_GESTURE_PROFILE(
         R.string.shortcut_value_next_gesture_profile, R.string.shortcut_next_gesture_profile),
+    APP_GESTURES_FOR_APP(
+        R.string.shortcut_value_app_gestures_for_app, R.string.shortcut_app_gestures_for_app),
     SETTINGS_PROFILES(
         R.string.shortcut_value_settings_profiles, R.string.shortcut_settings_profiles),
     PREVIOUS_SETTINGS_PROFILE(
