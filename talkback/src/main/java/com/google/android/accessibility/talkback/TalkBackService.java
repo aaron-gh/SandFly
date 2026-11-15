@@ -984,6 +984,7 @@ public class TalkBackService extends AccessibilityServiceCompat
 
     instance = this;
     setServiceState(ServiceStateListener.SERVICE_STATE_INACTIVE);
+    FailoverTextToSpeech.setSettingsProfileWriting(SettingsProfiles::isWriting);
 
     systemUeh = Thread.getDefaultUncaughtExceptionHandler();
     Thread.setDefaultUncaughtExceptionHandler(this);

@@ -2844,11 +2844,13 @@ public class SpeechControllerImpl implements SpeechController {
       currentFeedbackItem = null;
     }
 
-    // A change of voice profile speaks the profile's name, which the engine's would cover.
+    // A change of voice profile speaks the profile's name, which the engine's would cover. A
+    // settings profile changes the engine as quietly as its voice profile.
     if (wasSwitchingEngines
         && ttsChangeAnnouncementEnabled
         && !mSkipNextTTSChangeAnnouncement
-        && !failoverTts.isEngineForVoiceProfile()) {
+        && !failoverTts.isEngineForVoiceProfile()
+        && !failoverTts.isEngineForSettingsProfile()) {
       speakCurrentEngine();
     } else if (!feedbackQueue.isEmpty()) {
       speakNextItem();

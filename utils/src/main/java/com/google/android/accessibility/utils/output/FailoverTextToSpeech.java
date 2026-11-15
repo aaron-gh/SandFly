@@ -95,6 +95,7 @@ import java.util.Objects;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentLinkedDeque;
+import java.util.function.BooleanSupplier;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 /**
@@ -499,7 +500,12 @@ public class FailoverTextToSpeech {
         }
         if (PREF_TTS_ENGINE_KEY.equals(key)) {
           preferredTtsEngine = readPreferredEngine(sharedPrefs);
-          updateDefaultEngine();
+          switchingForSettingsProfile = settingsProfileWriting.getAsBoolean();
+          try {
+            updateDefaultEngine();
+          } finally {
+            switchingForSettingsProfile = false;
+          }
           updateWarmEngines();
         } else if (PREF_USE_ACCESSIBILITY_STREAM_KEY.equals(key)
             || PREF_SPEECH_STREAM_KEY.equals(key)
@@ -641,6 +647,18 @@ public class FailoverTextToSpeech {
 
   /** Whether the engine in use was started for a change of voice profile. */
   private boolean engineForVoiceProfile;
+
+  /** Whether engines started now are for settings written by a settings profile. */
+  private boolean switchingForSettingsProfile;
+
+  /** Whether the engine loading into the temporary TTS is for a settings profile. */
+  private boolean tempTtsForSettingsProfile;
+
+  /** Whether the engine in use was started for settings written by a settings profile. */
+  private boolean engineForSettingsProfile;
+
+  /** Whether the settings being written now are a settings profile's. */
+  private static volatile BooleanSupplier settingsProfileWriting = () -> false;
 
   /** How long speech waits for an engine that a change of voice profile starts. */
   private static final long MAX_VOICE_PROFILE_ENGINE_WAIT_MS = 3000;
@@ -3094,6 +3112,7 @@ public class FailoverTextToSpeech {
     final int generation = ++tempTtsGeneration;
     tempTtsEngine = engine;
     tempTtsForVoiceProfile = switchingForVoiceProfile;
+    tempTtsForSettingsProfile = switchingForSettingsProfile;
     if (switchingForVoiceProfile) {
       voiceProfileEngineWaitEnd = SystemClock.uptimeMillis() + MAX_VOICE_PROFILE_ENGINE_WAIT_MS;
     }
@@ -3168,7 +3187,8 @@ public class FailoverTextToSpeech {
       return;
     }
 
-    useEngine(tempTts, tempTtsEngine, tempTtsForVoiceProfile, /* voices= */ null);
+    useEngine(
+        tempTts, tempTtsEngine, tempTtsForVoiceProfile, tempTtsForSettingsProfile, /* voices= */ null);
   }
 
   /**
@@ -3183,6 +3203,7 @@ public class FailoverTextToSpeech {
       TextToSpeech newTts,
       @Nullable String engine,
       boolean forVoiceProfile,
+      boolean forSettingsProfile,
       @Nullable Set<Voice> voices) {
     final Set<Voice> oldVoices;
     synchronized (ttsLock) {
@@ -3232,6 +3253,7 @@ public class FailoverTextToSpeech {
     LogUtils.i(TAG, "Switched to TTS engine: %s", engine);
 
     engineForVoiceProfile = forVoiceProfile;
+    engineForSettingsProfile = forSettingsProfile;
     for (FailoverTtsListener mListener : listeners) {
       mListener.onTtsInitialized(isSwitchingEngines, engine);
     }
@@ -3533,7 +3555,7 @@ public class FailoverTextToSpeech {
     }
     ttsFailures = 0;
     LogUtils.i(TAG, "Using started TTS engine: %s", engine);
-    useEngine(warm, engine, switchingForVoiceProfile, voices);
+    useEngine(warm, engine, switchingForVoiceProfile, switchingForSettingsProfile, voices);
     return true;
   }
 
@@ -3584,6 +3606,16 @@ public class FailoverTextToSpeech {
   /** Whether the engine in use was started for a change of voice profile. */
   public boolean isEngineForVoiceProfile() {
     return engineForVoiceProfile;
+  }
+
+  /** Whether the engine in use was started for settings written by a settings profile. */
+  public boolean isEngineForSettingsProfile() {
+    return engineForSettingsProfile;
+  }
+
+  /** Sets what tells whether the settings being written now are a settings profile's. */
+  public static void setSettingsProfileWriting(BooleanSupplier writing) {
+    settingsProfileWriting = writing;
   }
 
   public void updateDefaultEngine() {
