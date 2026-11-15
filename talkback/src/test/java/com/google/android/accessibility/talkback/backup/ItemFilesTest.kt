@@ -230,6 +230,18 @@ class ItemFilesTest {
   }
 
   @Test
+  fun settingsProfileKeyboardsAreImportedAndExported() {
+    imported(
+      """{"settingsProfiles":[{"name":"Braille",
+          "keyboards":["com.example.braille/com.example.braille.Ime","not an id"],"settings":{}}]}"""
+    )
+    val profile = SettingsProfiles.ready(context).profiles().single()
+    assertEquals(setOf("com.example.braille/.Ime"), profile.triggers.keyboards)
+    val exported = JSONObject(ItemFiles.exportSettingsProfiles(context)).getJSONArray("settingsProfiles").getJSONObject(0)
+    assertEquals("com.example.braille/.Ime", exported.getJSONArray("keyboards").getString(0))
+  }
+
+  @Test
   fun recognizesOtherFiles() {
     assertEquals(ItemFiles.Result.NotRead, ItemFiles.import(context, "not json"))
     assertEquals(ItemFiles.Result.NotRead, ItemFiles.import(context, """{"format":"other","macros":[]}"""))

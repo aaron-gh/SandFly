@@ -180,6 +180,7 @@ Each item is one app, by its package name, and replaces what that app had. In `k
   "web": false,
   "reading": true,
   "editing": false,
+  "keyboards": ["com.example.keyboard/.KeyboardService"],
   "settings": {
     "pref_vibration": false,
     "pref_soundback": true
@@ -187,7 +188,7 @@ Each item is one app, by its package name, and replaces what that app had. In `k
 }
 ```
 
-`apps`, `web`, `reading` and `editing` are when the profile is used without being chosen: in those apps, in web content, during continuous reading and while text is edited.
+`apps`, `web`, `reading`, `editing` and `keyboards` are when the profile is used without being chosen: in those apps, in web content, during continuous reading, while text is edited and while one of those keyboards is shown. Keyboards are input method IDs, as the list of keyboards of this phone shows them.
 
 `settings` holds each setting the profile sets, by its key, with a value of the type the file format reference shows for it now: `true` or `false`, a number, text in quotes, or a list of texts. A setting saved as text, such as a choice in a list, takes text: `"1.5"`, not `1.5`. `null` sets a setting back to its default while the profile is used. Settings of the braille keyboard and braille display have their file before the key, as the reference shows them: `"braille_keyboard/key"`.
 

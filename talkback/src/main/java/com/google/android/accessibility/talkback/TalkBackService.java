@@ -324,6 +324,7 @@ import com.google.android.accessibility.utils.BuildVersionUtils;
 import com.google.android.accessibility.utils.FeatureSupport;
 import com.google.android.accessibility.utils.FocusFinder;
 import com.google.android.accessibility.utils.FormFactorUtils;
+import com.google.android.accessibility.utils.KeyboardUtils;
 import com.google.android.accessibility.utils.Logger;
 import com.google.android.accessibility.utils.PackageManagerUtils;
 import com.google.android.accessibility.utils.Performance;
@@ -1350,6 +1351,13 @@ public class TalkBackService extends AccessibilityServiceCompat
         AppGestures.onWindowShown(frontApp);
         SettingsProfiles.onAppShown(frontApp, frontAppIsOverlay);
         ClipboardHistoryOverlay.onAppWindowShown(frontApp);
+      }
+      // The keyboard window comes and goes with a windows change.
+      if (SettingsProfiles.watchesKeyboards()) {
+        SettingsProfiles.onKeyboardShown(
+            AccessibilityServiceCompatUtils.isInputWindowOnScreen(this)
+                ? KeyboardUtils.getCurrentInputMethod(this)
+                : null);
       }
     }
     if (eventType == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED

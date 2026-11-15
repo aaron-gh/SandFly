@@ -65,6 +65,36 @@ class SettingsProfileStoreTest {
   }
 
   @Test
+  fun keyboardsAreReadBack() {
+    val store = store()
+    val braille = store.add("Braille")!!
+    val triggers = SettingsProfileStore.Triggers(keyboards = setOf("com.example.braille/.Ime"))
+    assertTrue(store.setTriggers(braille.id, triggers))
+
+    val read = store()
+    assertEquals(triggers, read.profile(braille.id)!!.triggers)
+    assertTrue(read.hasTriggers())
+  }
+
+  @Test
+  fun anIndexWithoutKeyboardsLoadsUnchanged() {
+    directory.mkdirs()
+    File(directory, "profiles.json")
+      .writeText(
+        """{"version": 2, "profiles": [{"id": "abc-1", "name": "Messaging",
+           "apps": ["org.telegram.messenger"], "editing": true}]}"""
+      )
+    File(directory, "abc-1.json").writeText("""{"version": 2, "settings": {}}""")
+
+    val triggers = store().profile("abc-1")!!.triggers
+    assertEquals(
+      SettingsProfileStore.Triggers(setOf("org.telegram.messenger"), editing = true),
+      triggers,
+    )
+    assertTrue(triggers.keyboards.isEmpty())
+  }
+
+  @Test
   fun settingsKeepTheirTypesAndUnsetOnes() {
     val store = store()
     val profile = store.add("Daily")!!

@@ -39,14 +39,19 @@ class SettingsProfileStore(
   private val recoveredName: (number: Int) -> String = { "Profile $it" },
 ) {
 
-  /** When a profile is used without being chosen: in [apps], and in the contexts switched on. */
+  /**
+   * When a profile is used without being chosen: in [apps], in the contexts switched on, and while
+   * one of [keyboards], by input method ID, is shown.
+   */
   data class Triggers(
     val apps: Set<String> = emptySet(),
     val web: Boolean = false,
     val reading: Boolean = false,
     val editing: Boolean = false,
+    val keyboards: Set<String> = emptySet(),
   ) {
-    fun isEmpty(): Boolean = apps.isEmpty() && !web && !reading && !editing
+    fun isEmpty(): Boolean =
+      apps.isEmpty() && !web && !reading && !editing && keyboards.isEmpty()
   }
 
   /** A settings profile. */
@@ -457,17 +462,24 @@ class SettingsProfileStore(
       if (triggers.web) item.put("web", true)
       if (triggers.reading) item.put("reading", true)
       if (triggers.editing) item.put("editing", true)
+      if (triggers.keyboards.isNotEmpty()) {
+        item.put("keyboards", JSONArray(triggers.keyboards.sorted()))
+      }
     }
 
-    private fun decodeTriggers(item: JSONObject): Triggers {
-      val array = item.optJSONArray("apps") ?: JSONArray()
-      val apps = (0 until array.length()).mapNotNull { array.optString(it).ifEmpty { null } }
-      return Triggers(
-        apps.toSet(),
+    private fun decodeTriggers(item: JSONObject): Triggers =
+      Triggers(
+        texts(item, "apps"),
         item.optBoolean("web"),
         item.optBoolean("reading"),
         item.optBoolean("editing"),
+        texts(item, "keyboards"),
       )
+
+    /** The texts in the array [name] of [item], empty when it has none. */
+    private fun texts(item: JSONObject, name: String): Set<String> {
+      val array = item.optJSONArray(name) ?: return emptySet()
+      return (0 until array.length()).mapNotNull { array.optString(it).ifEmpty { null } }.toSet()
     }
 
     /** [settings] as JSON, with null as a value of type "unset". */

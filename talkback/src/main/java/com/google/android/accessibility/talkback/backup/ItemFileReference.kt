@@ -17,6 +17,7 @@
 package com.google.android.accessibility.talkback.backup
 
 import android.content.Context
+import android.view.inputmethod.InputMethodManager
 import androidx.annotation.WorkerThread
 import com.google.android.accessibility.talkback.BuildConfig
 import com.google.android.accessibility.talkback.commands.Commands
@@ -57,6 +58,13 @@ object ItemFileReference {
     text.append("\n## Keys\n\nModifiers: ").append(KeyText.SANDFLY).append(", Shift, Ctrl, Alt, Meta.\n\n")
     text.append("Named keys: ").append(KeyText.namedKeys().joinToString(", ")).append(".\n\n")
     text.append("SandFly keys of keymaps: ").append(ItemFiles.sandFlyKeyNames().joinToString(", ")).append(".\n")
+
+    text.append("\n## Keyboards\n\n| Input method ID | Keyboard |\n| --- | --- |\n")
+    val inputMethods = context.getSystemService(InputMethodManager::class.java)?.enabledInputMethodList.orEmpty()
+    for (inputMethod in inputMethods) {
+      text.append("| `").append(cell(inputMethod.id)).append("` | ")
+        .append(cell(inputMethod.loadLabel(context.packageManager))).append(" |\n")
+    }
 
     text.append("\n## Settings\n\n")
     text.append("Settings that a settings profile can set, with the value each has now.\n\n")
