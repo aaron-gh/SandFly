@@ -2556,17 +2556,25 @@ public class SelectorController implements UserInputEventListener {
   }
 
   /**
-   * Runs {@code adjust}, which changes a reading control's value. With Wrap around off, a list of
-   * values stops at its first and last value, where the value is said again with the end sound.
+   * Whether the values of a reading control go around from the last to the first and back: Wrap
+   * around in reading controls, which follows Wrap around until it is set.
+   */
+  public static boolean wrapsReadingControlValues(SharedPreferences prefs, Resources res) {
+    String key = res.getString(R.string.pref_wrap_around_reading_controls_key);
+    if (prefs.contains(key)) {
+      return prefs.getBoolean(key, true);
+    }
+    return SharedPreferencesUtils.getBooleanPref(
+        prefs, res, R.string.pref_wrap_around_key, R.bool.pref_wrap_around_default);
+  }
+
+  /**
+   * Runs {@code adjust}, which changes a reading control's value. With Wrap around in reading
+   * controls off, a list of values stops at its first and last value, where the value is said again
+   * with the end sound.
    */
   private void adjustValues(EventId eventId, Runnable adjust) {
-    boolean wrap =
-        SharedPreferencesUtils.getBooleanPref(
-            prefs,
-            context.getResources(),
-            R.string.pref_wrap_around_key,
-            R.bool.pref_wrap_around_default);
-    if (ValueSteps.run(wrap, adjust)) {
+    if (ValueSteps.run(wrapsReadingControlValues(prefs, context.getResources()), adjust)) {
       pipeline.returnFeedback(eventId, Feedback.sound(R.raw.complete));
     }
   }

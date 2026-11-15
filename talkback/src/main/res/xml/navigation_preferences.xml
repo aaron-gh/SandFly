@@ -10,6 +10,10 @@
       android:dependency="@string/pref_wrap_around_key"
       android:key="@string/pref_stop_before_wrap_key"
       android:title="@string/title_pref_stop_before_wrap" />
+  <!-- No default: until it is set, it follows Wrap around, which NavigationPrefFragment shows. -->
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+      android:key="@string/pref_wrap_around_reading_controls_key"
+      android:title="@string/title_pref_wrap_around_reading_controls" />
   <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
       android:defaultValue="@bool/pref_focus_new_windows_default"
       android:key="@string/pref_focus_new_windows_key"

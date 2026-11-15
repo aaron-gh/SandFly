@@ -650,7 +650,9 @@ When you swipe past the last item on the screen, TalkBack stops once and then go
 
 To go back to the first item on the first swipe past the last one, turn off **Controls** > **Navigation** > **Stop at the last item before wrapping**. It is on by default and has no effect while **Wrap around** is off.
 
-With **Wrap around** off, reading controls that go through a list of values, such as **Speech engine**, **Audio output device**, **AI actions**, **Live recognition**, **Actions**, **Addresses and numbers**, **Punctuation** and **Sound mode**, stop at the first and last value: swiping past it says the value again with the end sound. **Punctuation** goes back to the previous value when you swipe up.
+With **Controls** > **Navigation** > **Wrap around in reading controls** off, reading controls that go through a list of values, such as **Speech engine**, **Audio output device**, **AI actions**, **Live recognition**, **Actions**, **Addresses and numbers**, **Punctuation** and **Sound mode**, stop at the first and last value: swiping past it says the value again with the end sound. **Punctuation** goes back to the previous value when you swipe up.
+
+**Wrap around in reading controls** follows **Wrap around** until you change it, so that items and reading control values can wrap differently, for example items stopping at the ends while **Actions** and **Voice profile** go around.
 
 **Wrap around** is also a reading control, so you can turn it on or off with a swipe up or down. It's on by default.
 
