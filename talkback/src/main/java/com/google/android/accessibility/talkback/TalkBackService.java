@@ -5354,13 +5354,17 @@ public class TalkBackService extends AccessibilityServiceCompat
 
   /**
    * Reloads the settings after settings profiles changed them, and the keyboard shortcuts when
-   * [keyboard] ones changed.
+   * [keyboard] ones changed. A change of the speech engine by the profiles isn't announced.
    */
-  public void onSettingsProfilesApplied(boolean keyboard) {
+  public void onSettingsProfilesApplied(boolean keyboard, boolean engine) {
     if (serviceState == ServiceStateListener.SERVICE_STATE_INACTIVE) {
       return;
     }
     PreparedFocusSpeech.clear();
+    if (engine && pipeline != null) {
+      // Skips the "Using" announcement of the engine the profiles changed to.
+      pipeline.onBoot(/* quiet= */ true);
+    }
     reloadPreferences();
     if (keyboard && keyComboManager != null) {
       keyComboManager.refreshKeyComboModel();

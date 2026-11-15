@@ -28,6 +28,7 @@ import androidx.core.view.accessibility.AccessibilityWindowInfoCompat
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.TalkBackService
 import com.google.android.accessibility.talkback.monitor.ScreenAnnouncementSettings
+import com.google.android.accessibility.utils.output.FailoverTextToSpeech
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils
 import com.google.android.accessibility.utils.WebInterfaceUtils
 import com.google.android.libraries.accessibility.utils.log.LogUtils
@@ -422,9 +423,11 @@ object SettingsProfiles {
       } finally {
         // The preference listeners run on the main thread before this.
         val keyboard = writes.keys.any { it.contains("keycombo") || it.contains("keymap") }
+        val engine =
+          writes.keys.any { SettingsBackup.keyOf(it) == FailoverTextToSpeech.PREF_TTS_ENGINE_KEY }
         mainHandler.post {
           writing = false
-          TalkBackService.getInstance()?.onSettingsProfilesApplied(keyboard)
+          TalkBackService.getInstance()?.onSettingsProfilesApplied(keyboard, engine)
         }
       }
     }
