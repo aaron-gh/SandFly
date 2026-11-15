@@ -3838,6 +3838,20 @@ public class FocusProcessorForLogicalNavigation {
       return false;
     }
 
+    // A scroll view lays out all of its content, so when nothing after the pivot is off screen,
+    // as with one long text, scrolling it only delays the move out of it.
+    @SearchDirection
+    int logicalDirection =
+        TraversalStrategyUtils.getLogicalDirection(navigationAction.searchDirection, rtl);
+    if ((logicalDirection == SEARCH_FOCUS_FORWARD || logicalDirection == SEARCH_FOCUS_BACKWARD)
+        && OffscreenContent.keepsAllContent(scrollableNode)
+        && OffscreenContent.hasNothingAhead(
+            scrollableNode, pivot, logicalDirection == SEARCH_FOCUS_FORWARD)) {
+      edgeScrollNote = kind + ":nothingOffscreen";
+      LogUtils.d(TAG, "autoScrollAtEdge: nothing after the pivot is off screen; not scrolling.");
+      return false;
+    }
+
     boolean scrolled = autoScroll(scrollableNodeInfo, pivot, navigationAction, eventId);
     edgeScrollNote = kind + ":result=" + scrolled;
     if (scrollableNodeInfo.isAnyRole()) {
