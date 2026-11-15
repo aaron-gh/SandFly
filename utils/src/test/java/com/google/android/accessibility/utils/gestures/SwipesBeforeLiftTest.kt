@@ -92,6 +92,7 @@ class SwipesBeforeLiftTest {
         "MAPPER_GESTURE_SWIPE_UP",
         "MAPPER_GESTURE_SWIPE_RIGHT_AND_LEFT",
         "MAPPER_GESTURE_SWIPE_LEFT_AND_UP",
+        "MAPPER_GESTURE_2_FINGER_SWIPE_RIGHT",
       ),
     )
   }
@@ -117,19 +118,46 @@ class SwipesBeforeLiftTest {
     }
   }
 
-  private fun move(dxCm: Float, dyCm: Float) {
-    repeat(4) {
+  private fun move(dxCm: Float, dyCm: Float, steps: Int = 4) {
+    repeat(steps) {
       ShadowLooper.idleMainLooper(10, TimeUnit.MILLISECONDS)
-      x += dxCm * pixelsPerCm / 4
-      y += dyCm * pixelsPerCm / 4
+      x += dxCm * pixelsPerCm / steps
+      y += dyCm * pixelsPerCm / steps
       send(MotionEvent.ACTION_MOVE)
     }
+  }
+
+  // Moves of 10 ms after a 40 ms swipe that pass the time a second finger may land.
+  private val stepsPastSecondFinger = GestureConfiguration.multiFingerSwipeFingerTimeoutMs(2) / 10 - 3
+
+  /** Swipes 1.5 cm in 40 ms, then 1 cm more, past the time a second finger may land. */
+  private fun swipePastSecondFinger(dxCm: Float, dyCm: Float) {
+    move(dxCm * 1.5f, dyCm * 1.5f)
+    move(dxCm, dyCm, steps = stepsPastSecondFinger)
+  }
+
+  /** Sends [action] for two fingers, the second at [secondX]. */
+  private fun sendTwo(action: Int, secondX: Float) {
+    val properties =
+      Array(2) { i -> MotionEvent.PointerProperties().apply { id = i; toolType = MotionEvent.TOOL_TYPE_FINGER } }
+    val coords =
+      arrayOf(
+        MotionEvent.PointerCoords().apply { this.x = x; this.y = y; pressure = 1f; size = 1f },
+        MotionEvent.PointerCoords().apply { this.x = secondX; this.y = y; pressure = 1f; size = 1f },
+      )
+    val event =
+      MotionEvent.obtain(downTime, SystemClock.uptimeMillis(), action, 2, properties, coords, 0, 0, 1f, 1f, 0, 0, 0, 0)
+    manifold.onMotionEvent(null, event)
+    event.recycle()
   }
 
   @Test
   fun swipeRight_runsBeforeTheLift() {
     send(MotionEvent.ACTION_DOWN)
     move(1.5f, 0f)
+    // A second finger may still land for a two-finger swipe.
+    assertTrue(completed.isEmpty())
+    move(1f, 0f, steps = stepsPastSecondFinger)
     assertEquals(listOf(GESTURE_SWIPE_RIGHT), completed)
     move(2f, 0f)
     send(MotionEvent.ACTION_UP)
@@ -139,7 +167,7 @@ class SwipesBeforeLiftTest {
   @Test
   fun swipeUp_runsBeforeTheLift() {
     send(MotionEvent.ACTION_DOWN)
-    move(0f, -1.5f)
+    swipePastSecondFinger(0f, -1f)
     assertEquals(listOf(GESTURE_SWIPE_UP), completed)
   }
 
@@ -147,7 +175,7 @@ class SwipesBeforeLiftTest {
   fun rightThenLeft_isTheRightSwipe() {
     assigned += GESTURE_SWIPE_RIGHT_AND_LEFT
     send(MotionEvent.ACTION_DOWN)
-    move(2f, 0f)
+    swipePastSecondFinger(1f, 0f)
     move(-2f, 0f)
     send(MotionEvent.ACTION_UP)
     assertEquals(listOf(GESTURE_SWIPE_RIGHT), completed)
@@ -218,7 +246,7 @@ class SwipesBeforeLiftTest {
     GestureConfiguration.setSwipesBeforeLift(false)
     whenNothingFollows = true
     send(MotionEvent.ACTION_DOWN)
-    move(1.5f, 0f)
+    swipePastSecondFinger(1f, 0f)
     assertEquals(listOf(GESTURE_SWIPE_RIGHT), completed)
     move(2f, 0f)
     send(MotionEvent.ACTION_UP)
@@ -256,7 +284,7 @@ class SwipesBeforeLiftTest {
     whenNothingFollows = true
     assigned += GESTURE_SWIPE_LEFT_AND_UP
     send(MotionEvent.ACTION_DOWN)
-    move(0f, -1.5f)
+    swipePastSecondFinger(0f, -1f)
     assertEquals(listOf(GESTURE_SWIPE_UP), completed)
     move(0f, -1f)
     send(MotionEvent.ACTION_UP)
@@ -285,7 +313,7 @@ class SwipesBeforeLiftTest {
     GestureConfiguration.setSwipesBeforeLift(false)
     whenNothingFollows = true
     send(MotionEvent.ACTION_DOWN)
-    move(1.5f, 0f)
+    swipePastSecondFinger(1f, 0f)
     send(MotionEvent.ACTION_UP)
     assertEquals(listOf(GESTURE_SWIPE_RIGHT), completed)
     assigned += GESTURE_SWIPE_RIGHT_AND_LEFT
@@ -297,7 +325,7 @@ class SwipesBeforeLiftTest {
     assertEquals(listOf(GESTURE_SWIPE_RIGHT, GESTURE_SWIPE_RIGHT_AND_LEFT), completed)
     assigned.clear()
     send(MotionEvent.ACTION_DOWN)
-    move(1.5f, 0f)
+    swipePastSecondFinger(1f, 0f)
     assertEquals(
       listOf(GESTURE_SWIPE_RIGHT, GESTURE_SWIPE_RIGHT_AND_LEFT, GESTURE_SWIPE_RIGHT),
       completed,
@@ -358,5 +386,28 @@ class SwipesBeforeLiftTest {
     assertFalse(GestureConfiguration.runsBeforeLift(GESTURE_SWIPE_UP, false, true, upHold))
     // Only one-finger swipes in one direction run before the lift.
     assertFalse(GestureConfiguration.runsBeforeLift(GESTURE_SWIPE_DOWN_AND_UP, true, true, none))
+  }
+
+  @Test
+  fun secondFingerLandingSoon_isNoOneFingerSwipe() {
+    GestureConfiguration.setSwipesBeforeLift(false)
+    whenNothingFollows = true
+    manifold.setMultiFingerGesturesEnabled(true)
+    send(MotionEvent.ACTION_DOWN)
+    // The first finger is past 1 cm before the second lands.
+    move(1.5f, 0f)
+    ShadowLooper.idleMainLooper(20, TimeUnit.MILLISECONDS)
+    val pointerDown =
+      MotionEvent.ACTION_POINTER_DOWN or (1 shl MotionEvent.ACTION_POINTER_INDEX_SHIFT)
+    sendTwo(pointerDown, x + pixelsPerCm)
+    repeat(8) {
+      ShadowLooper.idleMainLooper(10, TimeUnit.MILLISECONDS)
+      x += 0.25f * pixelsPerCm
+      sendTwo(MotionEvent.ACTION_MOVE, x + pixelsPerCm)
+    }
+    val pointerUp = MotionEvent.ACTION_POINTER_UP or (1 shl MotionEvent.ACTION_POINTER_INDEX_SHIFT)
+    sendTwo(pointerUp, x + pixelsPerCm)
+    send(MotionEvent.ACTION_UP)
+    assertFalse(GESTURE_SWIPE_RIGHT in completed)
   }
 }

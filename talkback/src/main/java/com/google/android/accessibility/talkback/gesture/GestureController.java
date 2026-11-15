@@ -179,6 +179,7 @@ import com.google.android.accessibility.utils.StringBuilderUtils;
 import com.google.android.accessibility.utils.TreeDebug;
 import com.google.android.accessibility.utils.TreeDebugRenderer;
 import com.google.android.accessibility.utils.WindowUtils;
+import com.google.android.accessibility.utils.gestures.GestureConfiguration;
 import com.google.android.accessibility.utils.input.CursorGranularity;
 import com.google.android.accessibility.utils.output.FeedbackItem;
 import com.google.android.accessibility.utils.output.GestureSpeechTiming;
@@ -231,6 +232,9 @@ public class GestureController {
   private final AiDictation dictation;
 
   private final @NonNull Map<Integer, Integer> captureGestureIdToAnnouncements = new HashMap<>();
+  // Whether an open training page, such as Practice gestures, takes back-and-forth or angle
+  // gestures, so that swipes wait for the lift as if those gestures had commands.
+  private static volatile boolean trainingTakesTwoDirectionSwipes;
   private final @NonNull Map<Integer, Integer> captureFingerprintGestureIdToAnnouncements =
       new HashMap<>();
   // Whether the action being performed is that of the one-finger double tap.
@@ -1332,6 +1336,29 @@ public class GestureController {
       this.captureFingerprintGestureIdToAnnouncements.putAll(
           captureFingerprintGestureIdToAnnouncements);
     }
+    onTrainingOpen(/* open= */ true);
+  }
+
+  /** Notes whether the training is open, whose current page may take gestures. */
+  public void onTrainingOpen(boolean open) {
+    boolean takes = false;
+    if (open) {
+      for (int gestureId : captureGestureIdToAnnouncements.keySet()) {
+        if (GestureConfiguration.isTwoDirectionSwipe(gestureId)) {
+          takes = true;
+          break;
+        }
+      }
+    }
+    trainingTakesTwoDirectionSwipes = takes;
+  }
+
+  /**
+   * Returns whether an open training page takes back-and-forth or angle gestures, which then need
+   * swipes to wait for the lift.
+   */
+  public static boolean trainingTakesTwoDirectionSwipes() {
+    return trainingTakesTwoDirectionSwipes;
   }
 
   /**
