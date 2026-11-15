@@ -45,13 +45,9 @@ import org.robolectric.annotation.Config
 import org.robolectric.util.ReflectionHelpers
 
 /**
- * Regression test for the fix that keeps the resume point {@link
- * FocusProcessorForLogicalNavigation#findNodeNearPivotPlace} hands back distinct from the pivot
- * that's actually accessibility-focused. The deferred settle-check callbacks
- * (`searchWhenListSlows`, `searchAgainWhenListMoves`) compare the real accessibility focus
- * against whichever node was passed in as `focusBeforeScroll` to decide whether to keep waiting
- * -- that node must stay the real pivot, never the resume point, since the resume point is never
- * actually focused.
+ * [FocusProcessorForLogicalNavigation] after an auto-scroll with the default target: the settle
+ * checks follow the focused pivot, also when the pivot is missing from the list's order and the
+ * search starts from the node at its place.
  */
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [35])
@@ -67,7 +63,15 @@ class AutoScrolledPivotSettleCheckTest {
     var parentNode: Node? = null
     val children = mutableListOf<Node>()
 
+    /** Bounds that [refresh] reads, as the list moves; unchanged if null. */
+    var boundsAfterRefresh: Rect? = null
+
     override fun getParent(): AccessibilityNodeInfoCompat? = parentNode
+
+    override fun refresh(): Boolean {
+      boundsAfterRefresh?.let { setBoundsInScreen(it) }
+      return true
+    }
 
     override fun getChildCount(): Int = children.size
 
@@ -154,42 +158,50 @@ class AutoScrolledPivotSettleCheckTest {
   }
 
   @Test
-  fun deferredSettleCheck_comparesTheRealFocusAgainstItselfInsteadOfTheResumePoint() {
+  fun missingPivot_waitsOnTheFocusedPivotAndSearchesFromItsPlace() {
     val itemAbove = item(Rect(0, 100, 200, 200))
-    val itemBelow = item(Rect(0, 400, 200, 500))
-    // Bounds chosen to equal itemAbove's own bounds further down: once the recovery below
-    // anchors on itemAbove, that makes it look (to the settle-check) like a pivot that fills the
-    // whole list and is therefore worth waiting on, exactly as a real auto-scrolled list would.
-    val scrolledNode = Node("android.widget.FrameLayout").apply { setBoundsInScreen(Rect(0, 100, 200, 200)) }
+    val itemBelow = item(Rect(0, 300, 200, 400))
+    val scrolledNode =
+      Node("android.widget.FrameLayout").apply { setBoundsInScreen(Rect(0, 200, 200, 300)) }
     scrolledNode.add(itemAbove, itemBelow)
-
-    // The real pivot: still refreshes fine and reports a valid on-screen place -- between
-    // itemAbove and itemBelow -- but, as if its underlying view had just been recycled by a
-    // large auto-scroll, was never added to scrolledNode's subtree, so it isn't a key in the
-    // freshly-built local tree.
-    val stalePivot = item(Rect(0, 200, 200, 300))
-    focusedNode = stalePivot
+    // The focused pivot fills the list and lists the list as its parent, but the list's children
+    // leave it out, so it is missing from the list's order.
+    val pivot = item(Rect(0, 200, 200, 300)).apply { parentNode = scrolledNode }
+    focusedNode = pivot
 
     ReflectionHelpers.setField(processor, "listSettled", false)
     ReflectionHelpers.setField(processor, "lastAutoScrollUptime", SystemClock.uptimeMillis())
 
-    handle(scrolledNode, stalePivot, settleChecksLeft = 1)
+    handle(scrolledNode, pivot, settleChecksLeft = 1)
 
-    // The recovery found itemAbove as the resume point, which happens to fill the whole list and
-    // the list still counts as moving, so resolution is deferred to a settle-check tick instead
-    // of resolving immediately.
+    // The pivot fills the list, which still moves: the search waits.
     assertTrue(focusFeedback().isEmpty())
 
-    // The list has now settled; let the deferred tick run.
     ReflectionHelpers.setField(processor, "listSettled", true)
     shadowOf(Looper.getMainLooper()).idleFor(Duration.ofMillis(100))
 
-    // With the real pivot kept distinct from the resume point used to search, the deferred tick
-    // recognizes that accessibility focus hasn't moved since the scroll and resumes the search,
-    // landing on itemBelow -- the node right after the resume point. Before the fix, the tick
-    // compared the real focus (stalePivot) against the resume point it had been handed instead
-    // (itemAbove), found them unequal, and gave up silently: no feedback is ever produced here,
-    // leaving the swipe without any effect.
+    // The wait checked the focus against the pivot, not against the node the search starts from,
+    // and the search from the pivot's place found the next item.
     assertEquals(itemBelow, focusFeedback().single().target())
+  }
+
+  @Test
+  fun pivotInOrder_movedSinceLastRead_waitsForTheList() {
+    val itemAbove = item(Rect(0, 0, 200, 100))
+    val pivot = item(Rect(0, 300, 200, 400)).apply { boundsAfterRefresh = Rect(0, 250, 200, 350) }
+    val scrolledNode =
+      Node("android.widget.FrameLayout").apply { setBoundsInScreen(Rect(0, 0, 200, 400)) }
+    scrolledNode.add(itemAbove, pivot)
+    focusedNode = pivot
+
+    ReflectionHelpers.setField(processor, "listSettled", false)
+    ReflectionHelpers.setField(processor, "lastAutoScrollUptime", SystemClock.uptimeMillis())
+
+    handle(scrolledNode, pivot, settleChecksLeft = 1)
+
+    // Nothing follows the pivot yet, and it moved since it was last read: the list still moves,
+    // so the search waits instead of navigating again.
+    assertTrue(feedback.isEmpty())
+    assertTrue(shadowOf(Looper.getMainLooper()).nextScheduledTaskTime > Duration.ZERO)
   }
 }
