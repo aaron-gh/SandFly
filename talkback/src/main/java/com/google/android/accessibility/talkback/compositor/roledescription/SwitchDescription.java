@@ -61,6 +61,11 @@ public final class SwitchDescription implements RoleDescription {
       Context context,
       ImageContents imageContents,
       GlobalVariables globalVariables) {
+    CharSequence replacingLabel =
+        AccessibilityNodeFeedbackUtils.getReplacingLabelText(node, imageContents);
+    if (!TextUtils.isEmpty(replacingLabel)) {
+      return replacingLabel;
+    }
     CharSequence contentAndSupplementalDescription =
         AccessibilityNodeFeedbackUtils.getNodeContentAndSupplementalDescription(
             node, context, globalVariables);

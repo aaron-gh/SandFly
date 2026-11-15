@@ -79,9 +79,22 @@ public abstract class TalkBackLabelManager implements LabelManager, Accessibilit
   }
 
   /**
-   * Gets the text of a <code>node</code> by returning the content description (if available) or by
-   * returning the text. Will use the specified <code>CustomLabelManager</code> as a fall back if
-   * both are null.
+   * Returns whether a custom label can replace the text and description of the given node: it isn't
+   * an edit field, whose text is what is typed, and its resource ID isn't one of Android's, which
+   * every app uses.
+   */
+  protected boolean canReplaceText(@Nullable AccessibilityNodeInfoCompat node) {
+    if (node == null || node.isEditable()) {
+      return false;
+    }
+    @Nullable String resourceName = node.getViewIdResourceName();
+    return resourceName != null && !resourceName.startsWith("android:");
+  }
+
+  /**
+   * Gets the text of a <code>node</code>: its custom label, unless it is an edit field, then the
+   * content description (if available) or the text. An edit field uses its custom label only when
+   * it has neither.
    *
    * @param node The node.
    * @param labelManager The label manager.
@@ -89,18 +102,18 @@ public abstract class TalkBackLabelManager implements LabelManager, Accessibilit
    */
   public static @Nullable CharSequence getNodeText(
       AccessibilityNodeInfoCompat node, TalkBackLabelManager labelManager) {
+    @Nullable Label label =
+        (labelManager != null && labelManager.isInitialized())
+            ? labelManager.getLabelForViewIdFromCache(node.getViewIdResourceName())
+            : null;
+    if (label != null && !TextUtils.isEmpty(label.getText()) && !node.isEditable()) {
+      return label.getText();
+    }
     CharSequence text = AccessibilityNodeInfoUtils.getNodeText(node);
     if (!TextUtils.isEmpty(text)) {
       return text;
     }
-
-    if (labelManager != null && labelManager.isInitialized()) {
-      Label label = labelManager.getLabelForViewIdFromCache(node.getViewIdResourceName());
-      if (label != null) {
-        return label.getText();
-      }
-    }
-    return null;
+    return label == null ? null : label.getText();
   }
 
   /** Whether this manager is properly initialized and ready to store and retrieve labels. */

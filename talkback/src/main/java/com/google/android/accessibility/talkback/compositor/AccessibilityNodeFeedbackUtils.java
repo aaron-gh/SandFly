@@ -158,11 +158,15 @@ public class AccessibilityNodeFeedbackUtils {
       Context context,
       ImageContents imageContents,
       GlobalVariables globalVariables) {
+    CharSequence replacingLabel = getReplacingLabelText(node, imageContents);
+    if (!TextUtils.isEmpty(replacingLabel)) {
+      return markCapital(node, replacingLabel, context, globalVariables);
+    }
     CharSequence nodeTextDescription = getNodeTextDescription(node, context, globalVariables);
     if (!TextUtils.isEmpty(nodeTextDescription)) {
       return nodeTextDescription;
     }
-    // Fallbacks to node label.
+    // Fallbacks to node label, for an edit field.
     CharSequence nodeLabelText = getNodeLabelText(node, imageContents);
     if (!TextUtils.isEmpty(nodeLabelText)) {
       return markCapital(node, nodeLabelText, context, globalVariables);
@@ -470,6 +474,19 @@ public class AccessibilityNodeFeedbackUtils {
   public static CharSequence getNodeLabelText(
       AccessibilityNodeInfoCompat node, @Nullable ImageContents imageContents) {
     return imageContents == null ? "" : imageContents.getLabel(node);
+  }
+
+  /**
+   * Returns the custom label that replaces the node's text and description, or an empty text. An
+   * edit field keeps its text, and its custom label names it only when it has none.
+   */
+  public static CharSequence getReplacingLabelText(
+      AccessibilityNodeInfoCompat node, @Nullable ImageContents imageContents) {
+    if (node.isEditable()) {
+      return "";
+    }
+    CharSequence label = getNodeLabelText(node, imageContents);
+    return label == null ? "" : label;
   }
 
   /** Returns the node description text from the label node. */
