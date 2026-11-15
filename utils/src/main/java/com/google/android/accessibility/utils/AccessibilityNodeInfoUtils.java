@@ -1042,6 +1042,12 @@ public class AccessibilityNodeInfoUtils {
         logShouldFocusNode(
             checkChildren, NONE, "Focus, is focusable and has something to speak: ", node);
         return true;
+      } else if (isClickableWithOnlyDecorativeChild(node)) {
+        // A Compose icon-only control may expose its unlabelled drawing as a child. Keep the
+        // clickable control reachable, just as an unlabelled control without children is.
+        logShouldFocusNode(
+            checkChildren, NONE, "Focus, is clickable with only a decorative child: ", node);
+        return true;
       } else {
         logShouldFocusNode(
             checkChildren,
@@ -1074,6 +1080,22 @@ public class AccessibilityNodeInfoUtils {
         "Don't focus, failed all focusability tests: ",
         node);
     return false;
+  }
+
+  /** A clickable focus target whose only child is an unimportant, non-interactive drawing. */
+  public static boolean isClickableWithOnlyDecorativeChild(AccessibilityNodeInfoCompat node) {
+    if (!node.isScreenReaderFocusable() || !isClickable(node) || node.getChildCount() != 1) {
+      return false;
+    }
+    AccessibilityNodeInfoCompat child = node.getChild(0);
+    return child != null
+        && child.getChildCount() == 0
+        && !child.isImportantForAccessibility()
+        && !takesFocusWhenVisible(child)
+        && !child.isScrollable()
+        && !child.isCheckable()
+        && !hasText(child)
+        && !hasStateDescription(child);
   }
 
   private static void logShouldFocusNode(

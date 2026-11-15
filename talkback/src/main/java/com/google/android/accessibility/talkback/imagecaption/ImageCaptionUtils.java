@@ -212,9 +212,9 @@ public class ImageCaptionUtils {
   /**
    * Checks if the node can be captioned automatically.
    *
-   * <p>Both images and small leaf views can be captioned. A WebView, which is also the class of a
-   * web document, and a scrolling web container are not, even when they report that they contain
-   * an image.
+   * <p>Both images and small leaf views can be captioned, as can a small control whose only child
+   * is a decorative drawing. A WebView, which is also the class of a web document, and a scrolling
+   * web container are not, even when they report that they contain an image.
    */
   public static boolean isCaptionable(Context context, @Nullable AccessibilityNodeInfoCompat node) {
     if (node == null || !FeatureSupport.canTakeScreenShotByAccessibilityService()) {
@@ -229,7 +229,9 @@ public class ImageCaptionUtils {
     // instead of a11y class name.
     if (isImageOrImageButton(role) || WebInterfaceUtils.containsImage(node)) {
       return true;
-    } else if (ENABLE_CAPTION_FOR_LEAF_VIEW && (node.getChildCount() == 0)) {
+    } else if (ENABLE_CAPTION_FOR_LEAF_VIEW
+        && (node.getChildCount() == 0
+            || AccessibilityNodeInfoUtils.isClickableWithOnlyDecorativeChild(node))) {
       return isSmallSizeNode(context, node);
     }
 
