@@ -231,6 +231,10 @@ public class TouchInteractionMonitor
           GESTURE_SWIPE_UP_AND_LEFT,
           GESTURE_SWIPE_UP_AND_RIGHT);
 
+  // Whether a one-finger swipe runs before the finger lifts when no back-and-forth or angle gesture
+  // that starts in its direction has an action, as with Recognize swipes before lifting.
+  private final boolean swipesBeforeLiftSupported = SwipesBeforeLift.isSupported();
+
   private boolean stateInActive = true;
   private int state;
   private int previousState;
@@ -547,6 +551,11 @@ public class TouchInteractionMonitor
               @Override
               public boolean holdsSwipeUntilLift() {
                 return edgeSwipeTracker.isPossible();
+              }
+
+              @Override
+              public boolean swipesBeforeLiftWhenNothingFollows() {
+                return swipesBeforeLiftSupported;
               }
             },
             logger,
@@ -2087,11 +2096,7 @@ public class TouchInteractionMonitor
   /** Returns whether the gesture runs a command, or a running script binds it. */
   private boolean isGestureAssigned(int gestureId) {
     GestureShortcutMapping mapping = service.getGestureShortcutMapping();
-    return (mapping != null
-            && !TextUtils.equals(
-                mapping.getActionKeyFromGestureId(gestureId),
-                context.getString(R.string.shortcut_value_unassigned)))
-        || Scripts.bindsGesture(gestureId);
+    return (mapping != null && mapping.isAssigned(gestureId)) || Scripts.bindsGesture(gestureId);
   }
 
   private final EdgeSwipeTracker.Listener edgeSwipeListener =

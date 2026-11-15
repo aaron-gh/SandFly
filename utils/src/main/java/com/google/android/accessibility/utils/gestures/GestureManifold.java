@@ -217,6 +217,14 @@ public class GestureManifold implements GestureMatcher.StateChangeListener {
     default boolean holdsSwipeUntilLift() {
       return false;
     }
+
+    /**
+     * Returns whether a one-finger swipe runs before the finger lifts while no gesture that starts
+     * with it, such as a back-and-forth or angle gesture, has an action.
+     */
+    default boolean swipesBeforeLiftWhenNothingFollows() {
+      return false;
+    }
   }
 
   public GestureManifold(

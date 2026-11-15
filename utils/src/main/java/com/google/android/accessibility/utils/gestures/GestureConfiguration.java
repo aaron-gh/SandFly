@@ -18,6 +18,7 @@ package com.google.android.accessibility.utils.gestures;
 
 import android.accessibilityservice.AccessibilityService;
 import android.view.ViewConfiguration;
+import java.util.function.IntPredicate;
 
 /** This class contains timeout values that control the behavior of gesture detection. */
 public final class GestureConfiguration {
@@ -154,6 +155,84 @@ public final class GestureConfiguration {
           gestureId <= GestureManifold.GESTURE_SWIPE_UP_AND_DOWN_AND_HOLD
               && gestureId >= GestureManifold.GESTURE_SWIPE_RIGHT_AND_DOWN_AND_HOLD;
     };
+  }
+
+  /**
+   * Returns the gestures that start with the one-finger swipe {@code swipeGestureId}: its swipe and
+   * hold, the back-and-forth and angle gestures that start in its direction, and their swipe and
+   * hold versions. Empty for every other gesture.
+   */
+  public static int[] gesturesStartingWith(int swipeGestureId) {
+    int[] twoDirection =
+        switch (swipeGestureId) {
+          case AccessibilityService.GESTURE_SWIPE_UP ->
+              new int[] {
+                AccessibilityService.GESTURE_SWIPE_UP_AND_DOWN,
+                AccessibilityService.GESTURE_SWIPE_UP_AND_LEFT,
+                AccessibilityService.GESTURE_SWIPE_UP_AND_RIGHT
+              };
+          case AccessibilityService.GESTURE_SWIPE_DOWN ->
+              new int[] {
+                AccessibilityService.GESTURE_SWIPE_DOWN_AND_UP,
+                AccessibilityService.GESTURE_SWIPE_DOWN_AND_LEFT,
+                AccessibilityService.GESTURE_SWIPE_DOWN_AND_RIGHT
+              };
+          case AccessibilityService.GESTURE_SWIPE_LEFT ->
+              new int[] {
+                AccessibilityService.GESTURE_SWIPE_LEFT_AND_RIGHT,
+                AccessibilityService.GESTURE_SWIPE_LEFT_AND_UP,
+                AccessibilityService.GESTURE_SWIPE_LEFT_AND_DOWN
+              };
+          case AccessibilityService.GESTURE_SWIPE_RIGHT ->
+              new int[] {
+                AccessibilityService.GESTURE_SWIPE_RIGHT_AND_LEFT,
+                AccessibilityService.GESTURE_SWIPE_RIGHT_AND_UP,
+                AccessibilityService.GESTURE_SWIPE_RIGHT_AND_DOWN
+              };
+          default -> new int[0];
+        };
+    if (twoDirection.length == 0) {
+      return twoDirection;
+    }
+    int[] gestures = new int[twoDirection.length * 2 + 1];
+    gestures[0] = GestureManifold.swipeAndHoldOf(swipeGestureId);
+    for (int i = 0; i < twoDirection.length; i++) {
+      gestures[1 + 2 * i] = twoDirection[i];
+      gestures[2 + 2 * i] = GestureManifold.swipeAndHoldOf(twoDirection[i]);
+    }
+    return gestures;
+  }
+
+  /**
+   * Returns whether the one-finger swipe {@code swipeGestureId} runs once it has moved the gesture
+   * confirm distance, before the finger lifts. A swipe whose swipe and hold has an action waits for
+   * the lift. Otherwise the swipe runs before the lift when {@code twoDirectionSwipesOff}, which is
+   * Recognize swipes before lifting, or, when {@code whenNothingFollows}, while no gesture that
+   * starts with it has an action.
+   *
+   * @param isAssigned whether a gesture has an action
+   */
+  public static boolean runsBeforeLift(
+      int swipeGestureId,
+      boolean twoDirectionSwipesOff,
+      boolean whenNothingFollows,
+      IntPredicate isAssigned) {
+    int[] following = gesturesStartingWith(swipeGestureId);
+    if (following.length == 0 || isAssigned.test(following[0])) {
+      return false;
+    }
+    if (twoDirectionSwipesOff) {
+      return true;
+    }
+    if (!whenNothingFollows) {
+      return false;
+    }
+    for (int gestureId : following) {
+      if (isAssigned.test(gestureId)) {
+        return false;
+      }
+    }
+    return true;
   }
 
   /**
