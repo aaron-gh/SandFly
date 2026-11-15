@@ -25,6 +25,8 @@ import android.net.wifi.SupplicantState
 import android.net.wifi.WifiManager
 import android.os.Build
 import android.provider.Settings
+import android.telephony.SubscriptionInfo
+import android.telephony.SubscriptionManager
 import android.telephony.TelephonyCallback
 import android.telephony.TelephonyDisplayInfo
 import android.telephony.TelephonyManager
@@ -56,35 +58,86 @@ class StatusReader(private val context: Context, private val batteryMonitor: Bat
   private val telephonyManager = context.getSystemService(TelephonyManager::class.java)
   private val audioManager = context.getSystemService(AudioManager::class.java)
   private val notificationManager = context.getSystemService(NotificationManager::class.java)
+  private val subscriptionManager = context.getSystemService(SubscriptionManager::class.java)
 
-  // The network type the status bar shows, which says 5G where the data network type says LTE.
-  private var overrideNetworkType = TelephonyDisplayInfo.OVERRIDE_NETWORK_TYPE_NONE
-  private var displayInfoCallback: TelephonyCallback? = null
+  // The network type the status bar shows for each active SIM, by subscription ID, which says 5G
+  // where the data network type says LTE.
+  private val overrideNetworkTypes = mutableMapOf<Int, Int>()
+  private val displayInfoCallbacks = mutableMapOf<Int, Pair<TelephonyManager, TelephonyCallback>>()
+  private var subscriptionsListener: SubscriptionManager.OnSubscriptionsChangedListener? = null
 
-  /** Starts following the network type that the status bar shows. */
+  /** Starts following the network type that the status bar shows for each active SIM. */
   fun start() {
-    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.S || displayInfoCallback != null) {
+    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.S || subscriptionsListener != null) {
       return
     }
+    val subscriptionManager = subscriptionManager ?: return
     if (!hasPermission(Manifest.permission.READ_PHONE_STATE)) {
       return
     }
-    val callback = DisplayInfoCallback()
+    // It is called once as it is added, and again when a SIM is added, removed or changed.
+    val listener =
+      object : SubscriptionManager.OnSubscriptionsChangedListener() {
+        override fun onSubscriptionsChanged() {
+          if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            followDisplayInfo()
+          }
+        }
+      }
     try {
-      telephonyManager?.registerTelephonyCallback(context.mainExecutor, callback)
-      displayInfoCallback = callback
+      subscriptionManager.addOnSubscriptionsChangedListener(context.mainExecutor, listener)
+      subscriptionsListener = listener
     } catch (e: SecurityException) {
-      LogUtils.w(TAG, "Cannot follow the network type: %s", e)
+      LogUtils.w(TAG, "Cannot follow the SIMs: %s", e)
     }
   }
 
   fun stop() {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-      displayInfoCallback?.let { telephonyManager?.unregisterTelephonyCallback(it) }
+      subscriptionsListener?.let { subscriptionManager?.removeOnSubscriptionsChangedListener(it) }
+      for ((manager, callback) in displayInfoCallbacks.values) {
+        manager.unregisterTelephonyCallback(callback)
+      }
     }
-    displayInfoCallback = null
-    overrideNetworkType = TelephonyDisplayInfo.OVERRIDE_NETWORK_TYPE_NONE
+    subscriptionsListener = null
+    displayInfoCallbacks.clear()
+    overrideNetworkTypes.clear()
   }
+
+  /** Follows the network type of each active SIM, and stops following removed ones. */
+  @RequiresApi(Build.VERSION_CODES.S)
+  private fun followDisplayInfo() {
+    if (subscriptionsListener == null) {
+      return
+    }
+    val telephonyManager = telephonyManager ?: return
+    val ids = activeSubscriptions().map { it.subscriptionId }.toSet()
+    val removed = displayInfoCallbacks.keys - ids
+    for (id in removed) {
+      displayInfoCallbacks.remove(id)?.let { (manager, callback) ->
+        manager.unregisterTelephonyCallback(callback)
+      }
+      overrideNetworkTypes.remove(id)
+    }
+    for (id in ids - displayInfoCallbacks.keys) {
+      val manager = telephonyManager.createForSubscriptionId(id)
+      val callback = DisplayInfoCallback(id)
+      try {
+        manager.registerTelephonyCallback(context.mainExecutor, callback)
+        displayInfoCallbacks[id] = manager to callback
+      } catch (e: SecurityException) {
+        LogUtils.w(TAG, "Cannot follow the network type: %s", e)
+      }
+    }
+  }
+
+  /** The active SIMs in slot order, or none without the phone permission. */
+  private fun activeSubscriptions(): List<SubscriptionInfo> =
+    try {
+      subscriptionManager?.activeSubscriptionInfoList.orEmpty()
+    } catch (e: SecurityException) {
+      emptyList()
+    }
 
   /**
    * Describes the items turned on in the status readout settings, in their order. Without
@@ -147,14 +200,51 @@ class StatusReader(private val context: Context, private val batteryMonitor: Bat
       LEGACY_WIFI_LEVELS - 1
     }
 
+  /**
+   * Describes the mobile network, or each SIM's network one after the other on a phone with more
+   * than one active SIM.
+   */
   private fun describeMobile(): String? {
     val telephonyManager = telephonyManager ?: return null
-    if (isAirplaneModeOn() || telephonyManager.simState != TelephonyManager.SIM_STATE_READY) {
+    if (isAirplaneModeOn()) {
       return null
     }
+    val subscriptions = activeSubscriptions()
+    if (subscriptions.size < 2) {
+      val id = subscriptions.singleOrNull()?.subscriptionId
+      val overrideNetworkType = id?.let { overrideNetworkTypes[it] }
+      return describeMobile(telephonyManager, overrideNetworkType, fallbackName = null)
+    }
+    return subscriptions
+      .mapNotNull {
+        describeMobile(
+          telephonyManager.createForSubscriptionId(it.subscriptionId),
+          overrideNetworkTypes[it.subscriptionId],
+          fallbackName = it.displayName?.toString(),
+        )
+      }
+      .joinToString(", ")
+      .ifEmpty { null }
+  }
+
+  /**
+   * Describes one SIM's network. [fallbackName], such as the name the SIM was given, is said when
+   * there is no carrier name, so that each SIM can be told apart.
+   */
+  private fun describeMobile(
+    telephonyManager: TelephonyManager,
+    overrideNetworkType: Int?,
+    fallbackName: String?,
+  ): String? {
+    if (telephonyManager.simState != TelephonyManager.SIM_STATE_READY) {
+      return null
+    }
+    val carrier =
+      telephonyManager.networkOperatorName?.trim().takeUnless { it.isNullOrEmpty() }
+        ?: fallbackName?.trim()
     val network =
       // A comma keeps speech engines from reading the carrier and network type as one word.
-      listOf(telephonyManager.networkOperatorName?.trim(), networkTypeName(telephonyManager))
+      listOf(carrier, networkTypeName(telephonyManager, overrideNetworkType))
         .filterNot { it.isNullOrBlank() }
         .joinToString(", ")
     val level =
@@ -173,7 +263,10 @@ class StatusReader(private val context: Context, private val batteryMonitor: Bat
     )
   }
 
-  private fun networkTypeName(telephonyManager: TelephonyManager): String? {
+  private fun networkTypeName(
+    telephonyManager: TelephonyManager,
+    overrideNetworkType: Int?,
+  ): String? {
     when (overrideNetworkType) {
       TelephonyDisplayInfo.OVERRIDE_NETWORK_TYPE_NR_NSA,
       TelephonyDisplayInfo.OVERRIDE_NETWORK_TYPE_NR_ADVANCED -> return "5G"
@@ -254,10 +347,13 @@ class StatusReader(private val context: Context, private val batteryMonitor: Bat
   }
 
   @RequiresApi(Build.VERSION_CODES.S)
-  private inner class DisplayInfoCallback :
+  private inner class DisplayInfoCallback(private val subscriptionId: Int) :
     TelephonyCallback(), TelephonyCallback.DisplayInfoListener {
     override fun onDisplayInfoChanged(displayInfo: TelephonyDisplayInfo) {
-      overrideNetworkType = displayInfo.overrideNetworkType
+      // A callback removed while this was queued leaves no entry behind.
+      if (displayInfoCallbacks[subscriptionId]?.second === this) {
+        overrideNetworkTypes[subscriptionId] = displayInfo.overrideNetworkType
+      }
     }
   }
 
