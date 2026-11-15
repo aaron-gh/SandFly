@@ -53,6 +53,7 @@ sign @ 345						commercial at	64		x0040
 
 include latinLetterDef6Dots.uti
 include digits6Dots.uti # Must come after letters.
+include litdigits6Dots.uti # Must come after letters.
 punctuation [ 12356			91
 sign \\ 6								92
 punctuation ] 23456			93
