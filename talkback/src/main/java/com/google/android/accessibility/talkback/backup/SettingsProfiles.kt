@@ -26,6 +26,7 @@ import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import androidx.core.view.accessibility.AccessibilityWindowInfoCompat
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.TalkBackService
+import com.google.android.accessibility.talkback.monitor.ScreenAnnouncementSettings
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils
 import com.google.android.accessibility.utils.WebInterfaceUtils
 import com.google.android.libraries.accessibility.utils.log.LogUtils
@@ -169,6 +170,32 @@ object SettingsProfiles {
     }
     if (!store.finishLegacy(converted)) LogUtils.e(TAG, "Cannot convert the settings profiles")
     updateWatches(store)
+  }
+
+  /**
+   * [settings] of a profile, by profile key, with the screen-on battery switch of a profile saved
+   * before the list replaced it set as the list. A profile that also sets the list keeps its value.
+   */
+  @VisibleForTesting
+  internal fun withCurrentKeys(settings: Map<String, Any?>): Map<String, Any?> {
+    val old = ScreenAnnouncementSettings.OLD_SCREEN_ON_BATTERY
+    if (settings.keys.none { SettingsBackup.keyOf(it) == old }) {
+      return settings
+    }
+    val result = LinkedHashMap<String, Any?>()
+    for ((profileKey, value) in settings) {
+      val (file, key) = SettingsBackup.splitProfileKey(profileKey) ?: (null to profileKey)
+      if (key != old) {
+        result[profileKey] = value
+        continue
+      }
+      val listKey =
+        file?.let { SettingsBackup.profileKey(it, ScreenAnnouncementSettings.SCREEN_ON_BATTERY) }
+          ?: ScreenAnnouncementSettings.SCREEN_ON_BATTERY
+      if (listKey in settings) continue
+      result[listKey] = (value as? Boolean)?.let { ScreenAnnouncementSettings.oldBatteryValue(it) }
+    }
+    return result
   }
 
   /** The settings of [target] that differ from [from], with null for those [target] doesn't set. */
@@ -323,7 +350,7 @@ object SettingsProfiles {
 
       val effective = LinkedHashMap<String, Pair<Any?, String>>()
       for (id in ids) {
-        val settings = store.settings(id) ?: continue
+        val settings = store.settings(id)?.let { withCurrentKeys(it) } ?: continue
         for ((key, value) in settings) {
           if (key in effective || !SettingsBackup.canSetProfileValue(context, key, value)) continue
           effective[key] = value to id

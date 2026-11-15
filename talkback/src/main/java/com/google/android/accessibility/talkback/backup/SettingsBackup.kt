@@ -30,6 +30,7 @@ import androidx.preference.PreferenceFragmentCompat
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.TalkBackService
 import com.google.android.accessibility.talkback.commands.RemovedCommands
+import com.google.android.accessibility.talkback.monitor.ScreenAnnouncementSettings
 import com.google.android.accessibility.talkback.migration.MigrationFiles
 import com.google.android.accessibility.utils.FormFactorUtils
 import com.google.android.accessibility.utils.SharedPreferencesUtils
@@ -529,6 +530,9 @@ object SettingsBackup {
     }
     // A file from an earlier version can hold bindings of removed commands.
     RemovedCommands.migrate(SharedPreferencesUtils.getSharedPreferences(context), force = true)
+    // And the screen-on battery switch without the list that replaced it, whose value the import
+    // removed.
+    ScreenAnnouncementSettings.migrateBattery(SharedPreferencesUtils.getSharedPreferences(context))
     return true
   }
 
@@ -610,6 +614,14 @@ object SettingsBackup {
     }
     // Backtalk's file can hold bindings of commands that SandFly replaced.
     stores["main"]?.let { RemovedCommands.migrate(it, force = true) }
+    // And its screen-on battery switch, which replaces the list's value.
+    val main = stores["main"]
+    if (main != null &&
+      edits.any { (prefs, values) ->
+        prefs === main && ScreenAnnouncementSettings.OLD_SCREEN_ON_BATTERY in values
+      }) {
+      ScreenAnnouncementSettings.migrateBattery(main, force = true)
+    }
     return true
   }
 

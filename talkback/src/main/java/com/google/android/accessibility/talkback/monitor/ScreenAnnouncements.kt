@@ -84,16 +84,25 @@ object ScreenAnnouncementSettings {
   @JvmStatic
   fun screenOnBattery(prefs: SharedPreferences): String =
     prefs.getString(SCREEN_ON_BATTERY, null)?.takeIf { it in BATTERY_VALUES }
-      ?: if (prefs.getBoolean(OLD_SCREEN_ON_BATTERY, false)) BATTERY_ALWAYS else BATTERY_OFF
+      ?: oldBatteryValue(prefs.getBoolean(OLD_SCREEN_ON_BATTERY, false))
 
-  /** Gives the battery list the old switch's matching value, unless the list has a value. */
+  /**
+   * Gives the battery list the old switch's matching value, unless the list has a value or
+   * [force], as after importing a file that holds the old switch.
+   */
   @JvmStatic
-  fun migrateBattery(prefs: SharedPreferences) {
-    if (prefs.contains(SCREEN_ON_BATTERY) || !prefs.contains(OLD_SCREEN_ON_BATTERY)) {
+  @JvmOverloads
+  fun migrateBattery(prefs: SharedPreferences, force: Boolean = false) {
+    if (!prefs.contains(OLD_SCREEN_ON_BATTERY) || (!force && prefs.contains(SCREEN_ON_BATTERY))) {
       return
     }
-    prefs.edit().putString(SCREEN_ON_BATTERY, screenOnBattery(prefs)).apply()
+    val value = oldBatteryValue(prefs.getBoolean(OLD_SCREEN_ON_BATTERY, false))
+    prefs.edit().putString(SCREEN_ON_BATTERY, value).apply()
   }
+
+  /** The battery list's value for the old switch [on]. */
+  @JvmStatic
+  fun oldBatteryValue(on: Boolean): String = if (on) BATTERY_ALWAYS else BATTERY_OFF
 
   /**
    * The status items to speak after the time as the screen turns on. [charging] is whether the

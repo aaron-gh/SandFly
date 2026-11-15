@@ -16,9 +16,21 @@
 
 package com.google.android.accessibility.talkback.preference.base
 
+import android.os.Bundle
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.talkback.monitor.ScreenAnnouncementSettings
+import com.google.android.accessibility.utils.SharedPreferencesUtils
 
 /** What Backtalk says when the screen turns off or on and when the phone is unlocked. */
 class ScreenAnnouncementsFragment : TalkbackBaseFragment(R.xml.screen_announcement_preferences) {
   override fun getTitle(): CharSequence = getText(R.string.title_pref_screen_announcements)
+
+  override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+    // Before the battery list is created, which would save its default over the old switch's
+    // value while the service hasn't migrated it, as after importing old settings.
+    ScreenAnnouncementSettings.migrateBattery(
+      SharedPreferencesUtils.getSharedPreferences(requireContext())
+    )
+    super.onCreatePreferences(savedInstanceState, rootKey)
+  }
 }
