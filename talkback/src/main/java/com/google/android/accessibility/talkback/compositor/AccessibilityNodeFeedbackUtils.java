@@ -34,6 +34,7 @@ import com.google.android.accessibility.talkback.compositor.Compositor.HandleEve
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.imagecaption.ImageContents;
 import com.google.android.accessibility.talkback.imagecaption.Result;
+import com.google.android.accessibility.talkback.labeling.TalkBackLabelManager;
 import com.google.android.accessibility.talkback.screenelements.ScreenElements;
 import com.google.android.accessibility.talkback.scripting.Scripts;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
@@ -477,8 +478,9 @@ public class AccessibilityNodeFeedbackUtils {
   }
 
   /**
-   * Returns the custom label that replaces the node's text and description, or an empty text. An
-   * edit field keeps its text, and its custom label names it only when it has none.
+   * Returns the custom label that replaces the node's text and description, or an empty text. Only
+   * a node that its resource ID names alone ({@link TalkBackLabelManager#canReplaceText}) has one;
+   * others, such as edit fields and list items, use their custom label only when they have no text.
    */
   public static CharSequence getReplacingLabelText(
       AccessibilityNodeInfoCompat node, @Nullable ImageContents imageContents) {
@@ -486,7 +488,7 @@ public class AccessibilityNodeFeedbackUtils {
       return "";
     }
     CharSequence label = getNodeLabelText(node, imageContents);
-    return label == null ? "" : label;
+    return TextUtils.isEmpty(label) || !TalkBackLabelManager.canReplaceText(node) ? "" : label;
   }
 
   /** Returns the node description text from the label node. */

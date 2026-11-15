@@ -23,6 +23,7 @@ import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.utils.AccessibilityEventListener;
 import com.google.android.accessibility.utils.AccessibilityEventUtils;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
+import com.google.android.accessibility.utils.Filter;
 import com.google.android.accessibility.utils.Performance.EventId;
 import com.google.android.accessibility.utils.Role;
 import com.google.android.accessibility.utils.labeling.Label;
@@ -79,22 +80,57 @@ public abstract class TalkBackLabelManager implements LabelManager, Accessibilit
   }
 
   /**
-   * Returns whether a custom label can replace the text and description of the given node: it isn't
-   * an edit field, whose text is what is typed, and its resource ID isn't one of Android's, which
-   * every app uses.
+   * Returns whether a custom label can replace the text and description of the given node, as its
+   * resource ID, by which labels are kept, names only it: it isn't an edit field, whose text is what
+   * is typed; its resource ID isn't one of Android's, which every app uses; it isn't an item of a
+   * list or grid, or in one, whose items share resource IDs; and no other item in its window has its
+   * resource ID. Other nodes use a custom label only when they have no text.
+   *
+   * <p>Asks the app for the items with the resource ID, so check for a label first.
    */
-  protected boolean canReplaceText(@Nullable AccessibilityNodeInfoCompat node) {
+  public static boolean canReplaceText(@Nullable AccessibilityNodeInfoCompat node) {
     if (node == null || node.isEditable()) {
       return false;
     }
     @Nullable String resourceName = node.getViewIdResourceName();
-    return resourceName != null && !resourceName.startsWith("android:");
+    if (resourceName == null || resourceName.startsWith("android:")) {
+      return false;
+    }
+    if (node.getCollectionItemInfo() != null
+        || AccessibilityNodeInfoUtils.hasMatchingAncestor(node, IN_COLLECTION_ITEM)) {
+      return false;
+    }
+    @Nullable AccessibilityNodeInfoCompat root = AccessibilityNodeInfoUtils.getRoot(node);
+    if (root == null) {
+      return false;
+    }
+    try {
+      return root.findAccessibilityNodeInfosByViewId(resourceName).size() <= 1;
+    } catch (IllegalStateException e) {
+      // A node that didn't come from an app can't be asked.
+      return false;
+    }
+  }
+
+  private static final Filter<AccessibilityNodeInfoCompat> IN_COLLECTION_ITEM =
+      Filter.node(node -> node.getCollectionItemInfo() != null);
+
+  /** Returns the custom label of the node if it replaces its text, as {@link #canReplaceText}. */
+  public static @Nullable String getReplacingLabel(
+      AccessibilityNodeInfoCompat node, @Nullable LabelManager labelManager) {
+    if (labelManager == null || node.isEditable()) {
+      return null;
+    }
+    @Nullable Label label = labelManager.getLabelForViewIdFromCache(node.getViewIdResourceName());
+    return label == null || TextUtils.isEmpty(label.getText()) || !canReplaceText(node)
+        ? null
+        : label.getText();
   }
 
   /**
-   * Gets the text of a <code>node</code>: its custom label, unless it is an edit field, then the
-   * content description (if available) or the text. An edit field uses its custom label only when
-   * it has neither.
+   * Gets the text of a <code>node</code>: its custom label if it replaces the text ({@link
+   * #canReplaceText}), then the content description (if available) or the text, then its custom
+   * label.
    *
    * @param node The node.
    * @param labelManager The label manager.
@@ -106,7 +142,9 @@ public abstract class TalkBackLabelManager implements LabelManager, Accessibilit
         (labelManager != null && labelManager.isInitialized())
             ? labelManager.getLabelForViewIdFromCache(node.getViewIdResourceName())
             : null;
-    if (label != null && !TextUtils.isEmpty(label.getText()) && !node.isEditable()) {
+    if (label != null
+        && !TextUtils.isEmpty(label.getText())
+        && canReplaceText(node)) {
       return label.getText();
     }
     CharSequence text = AccessibilityNodeInfoUtils.getNodeText(node);

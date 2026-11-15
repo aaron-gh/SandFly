@@ -98,7 +98,8 @@ public class CustomLabelManager extends TalkBackLabelManager {
 
     @Override
     public boolean supportsLabel(@Nullable AccessibilityNodeInfoCompat node) {
-      // A label of a control with text replaces that text; one added before stays editable.
+      // A label replaces the text of a control whose resource ID names only it; one added before
+      // stays editable.
       return canAddLabel(node)
           && (needsLabel(node)
               || canReplaceText(node)

@@ -724,6 +724,11 @@ public class BdController implements Controller {
       return talkBackForBrailleDisplay.getCustomLabelText(node);
     }
 
+    /** Gets the custom label that replaces the text of the node, or null. */
+    public CharSequence getReplacingLabelText(AccessibilityNodeInfoCompat node) {
+      return talkBackForBrailleDisplay.getReplacingLabelText(node);
+    }
+
     /** Returns whether {@param AccessibilityNodeInfoCompat node} needs a label. */
     public boolean needsLabel(AccessibilityNodeInfoCompat node) {
       return talkBackForBrailleDisplay.needsLabel(node);
