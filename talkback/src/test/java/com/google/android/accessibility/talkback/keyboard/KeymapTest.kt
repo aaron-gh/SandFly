@@ -374,4 +374,51 @@ class KeymapTest {
       NewKeyComboModel(context, Keymap.ORCA).getKeyComboForKey(key),
     )
   }
+
+  @Test
+  fun nvdaVoiceSettingsAndLastSpokenPhraseKeys() {
+    fun nvda(modifiers: Int, keyCode: Int) = KeyCombo(modifiers, 0, keyCode, true)
+    val repeat = context.getString(R.string.keycombo_shortcut_other_repeat_last_spoken_phrase)
+    val copy = context.getString(R.string.keycombo_shortcut_other_copy_last_spoken_phrase)
+    val tts = context.getString(R.string.keycombo_shortcut_other_open_tts_settings)
+    val model = NewKeyComboModel(context, Keymap.NVDA)
+    assertEquals(nvda(0, KeyEvent.KEYCODE_X), model.getKeyComboForKey(repeat))
+    assertEquals(nvda(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_X), model.getKeyComboForKey(copy))
+    assertEquals(nvda(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_V), model.getKeyComboForKey(tts))
+  }
+
+  @Test
+  fun version4SavedSpeechKeysGiveWayToNewOnes() {
+    val prefs = SharedPreferencesUtils.getSharedPreferences(context)
+    prefs.edit().putInt(Keymap.NVDA.persisterPrefix + "_defaults_version", 4).commit()
+    val persister = KeyComboPersister(context, Keymap.NVDA.persisterPrefix)
+    val copy = context.getString(R.string.keycombo_shortcut_other_copy_last_spoken_phrase)
+    val tts = context.getString(R.string.keycombo_shortcut_other_open_tts_settings)
+    persister.saveKeyCombo(copy, KeyCombo())
+    // The user gave Insert + Ctrl + V to another command.
+    val other = context.getString(R.string.keycombo_shortcut_global_announce_current_title)
+    persister.saveKeyCombo(other, KeyCombo(KeyEvent.META_CTRL_ON, 0, KeyEvent.KEYCODE_V, true))
+    persister.saveKeyCombo(tts, KeyCombo())
+    val model = NewKeyComboModel(context, Keymap.NVDA)
+    assertEquals(
+      KeyCombo(KeyEvent.META_CTRL_ON, 0, KeyEvent.KEYCODE_X, true),
+      model.getKeyComboForKey(copy),
+    )
+    assertEquals(KeyCombo(), model.getKeyComboForKey(tts))
+  }
+
+  @Test
+  fun repeatLastSpokenPhraseShortcutMovesToItsKeyboardAction() {
+    val value = context.getString(R.string.shortcut_value_repeat_last_spoken_phrase)
+    val oldKey = Commands.shortcutKey(value)
+    val actionKey = context.getString(R.string.keycombo_shortcut_other_repeat_last_spoken_phrase)
+    val persister = KeyComboPersister(context, Keymap.SANDFLY.persisterPrefix)
+    val shortcut = KeyCombo(KeyEvent.META_SHIFT_ON, 0, KeyEvent.KEYCODE_L, true)
+    persister.saveKeyCombo(oldKey, shortcut)
+    val model = NewKeyComboModel(context, Keymap.SANDFLY)
+    assertEquals(shortcut, model.getKeyComboForKey(actionKey))
+    assertFalse(persister.contains(oldKey))
+    val command = Commands.find(context, value)!!
+    assertEquals(actionKey, CommandBindings.keyboardKey(context, model, command))
+  }
 }

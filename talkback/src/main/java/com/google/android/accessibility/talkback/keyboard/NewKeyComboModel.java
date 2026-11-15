@@ -1465,6 +1465,7 @@ public class NewKeyComboModel implements KeyComboModel {
         context.getString(R.string.keycombo_shortcut_global_adjust_reading_settings_previous));
     addKeyCombo(context.getString(R.string.keycombo_shortcut_global_adjust_reading_setting_next));
     addKeyCombo(context.getString(R.string.keycombo_shortcut_other_copy_last_spoken_phrase));
+    addKeyCombo(context.getString(R.string.keycombo_shortcut_other_repeat_last_spoken_phrase));
     addKeyCombo(context.getString(R.string.keycombo_shortcut_global_hide_or_show_screen));
     addKeyCombo(context.getString(R.string.keycombo_shortcut_global_pause_backtalk));
     addKeyCombo(context.getString(R.string.keycombo_shortcut_other_voice_profiles));
@@ -1665,9 +1666,15 @@ public class NewKeyComboModel implements KeyComboModel {
       KeyCombo keyCombo = persister.getKeyCombo(key);
       // A command only the keyboard code performs keeps its shortcut under its keyboard action,
       // where settings show it. Earlier versions saved it under the command.
+      // A command that got a keyboard action later moves its shortcut there too.
       @Nullable String value = Commands.valueOfShortcutKey(key);
+      @Nullable String actionKey = null;
       if (value != null && value.startsWith(Commands.KEYBOARD_PREFIX)) {
-        String actionKey = value.substring(Commands.KEYBOARD_PREFIX.length());
+        actionKey = value.substring(Commands.KEYBOARD_PREFIX.length());
+      } else if (context.getString(R.string.shortcut_value_repeat_last_spoken_phrase).equals(value)) {
+        actionKey = context.getString(R.string.keycombo_shortcut_other_repeat_last_spoken_phrase);
+      }
+      if (actionKey != null) {
         if (keyComboMap.containsKey(actionKey)) {
           if (keyCombo.getKeyComboCode() != KEY_COMBO_CODE_UNASSIGNED) {
             persister.saveKeyCombo(actionKey, keyCombo);
