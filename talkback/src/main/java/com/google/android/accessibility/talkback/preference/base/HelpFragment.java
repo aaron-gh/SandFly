@@ -21,10 +21,14 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.widget.Toast;
+import androidx.annotation.StringRes;
 import androidx.preference.Preference;
 import com.google.android.accessibility.talkback.R;
 
-/** Help and feedback: the tutorial, gesture practice, problem reports and the privacy policy. */
+/**
+ * Help and feedback: the tutorial, gesture practice, problem reports, the version history and the
+ * privacy policy.
+ */
 public class HelpFragment extends AdvancedSettingFragment {
   public HelpFragment() {
     super(R.xml.help_and_feedback_preferences, R.string.title_pref_help_and_feedback);
@@ -33,19 +37,26 @@ public class HelpFragment extends AdvancedSettingFragment {
   @Override
   public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
     super.onCreatePreferences(savedInstanceState, rootKey);
-    Preference privacy = findPreference(getString(R.string.pref_privacy_policy_key));
-    if (privacy != null) {
-      privacy.setOnPreferenceClickListener(
-          preference -> {
-            String url = getString(R.string.privacy_policy_url);
-            try {
-              startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
-            } catch (ActivityNotFoundException e) {
-              // Watches often have no browser: show the address to open elsewhere.
-              Toast.makeText(getContext(), url, Toast.LENGTH_LONG).show();
-            }
-            return true;
-          });
+    opensUrl(R.string.pref_version_history_key, R.string.version_history_url);
+    opensUrl(R.string.pref_privacy_policy_key, R.string.privacy_policy_url);
+  }
+
+  /** Makes the preference with the key {@code keyRes} open the address {@code urlRes}. */
+  private void opensUrl(@StringRes int keyRes, @StringRes int urlRes) {
+    Preference preference = findPreference(getString(keyRes));
+    if (preference == null) {
+      return;
     }
+    preference.setOnPreferenceClickListener(
+        clicked -> {
+          String url = getString(urlRes);
+          try {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
+          } catch (ActivityNotFoundException e) {
+            // Watches often have no browser: show the address to open elsewhere.
+            Toast.makeText(getContext(), url, Toast.LENGTH_LONG).show();
+          }
+          return true;
+        });
   }
 }
