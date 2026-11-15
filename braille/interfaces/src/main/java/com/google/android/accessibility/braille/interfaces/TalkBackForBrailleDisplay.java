@@ -50,6 +50,9 @@ public interface TalkBackForBrailleDisplay {
   /** Gets defined custom label. */
   CharSequence getCustomLabelText(AccessibilityNodeInfoCompat node);
 
+  /** Gets the custom label that replaces the text of the node, or null. */
+  CharSequence getReplacingLabelText(AccessibilityNodeInfoCompat node);
+
   /** Returns whether {@param AccessibilityNodeInfoCompat node} needs a label. */
   boolean needsLabel(AccessibilityNodeInfoCompat node);
 

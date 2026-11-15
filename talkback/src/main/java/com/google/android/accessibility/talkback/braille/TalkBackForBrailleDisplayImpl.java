@@ -115,6 +115,11 @@ public class TalkBackForBrailleDisplayImpl implements TalkBackForBrailleDisplay 
   }
 
   @Override
+  public @Nullable String getReplacingLabelText(AccessibilityNodeInfoCompat node) {
+    return TalkBackLabelManager.getReplacingLabel(node, labelManager);
+  }
+
+  @Override
   public boolean needsLabel(AccessibilityNodeInfoCompat node) {
     return labelManager.stateReader().needsLabel(node);
   }

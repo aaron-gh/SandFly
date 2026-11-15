@@ -16,6 +16,7 @@
 
 package com.google.android.accessibility.talkback.labeling
 
+import android.view.View
 import android.view.accessibility.AccessibilityNodeInfo
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import com.google.android.accessibility.talkback.compositor.AccessibilityNodeFeedbackUtils
@@ -27,7 +28,10 @@ import org.junit.Assert.assertTrue
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
+import org.robolectric.RuntimeEnvironment
+import org.robolectric.Shadows.shadowOf
 import org.robolectric.annotation.Config
+import org.robolectric.util.ReflectionHelpers
 
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [34])
@@ -38,31 +42,59 @@ class CustomLabelReplacementTest {
       labels[resourceName]?.let {
         Label("com.example", null, resourceName!!.substringAfter(":id/"), it, "en", 1, null, 0)
       }
-
-    fun replaces(node: AccessibilityNodeInfoCompat) = canReplaceText(node)
   }
 
   private val send = "com.example:id/send"
   private val message = "com.example:id/message"
-  private val labels = Labels(mapOf(send to "Send now", message to "Message"))
+  private val title = "android:id/title"
+  private val row = "com.example:id/row"
+  private val labels =
+    Labels(mapOf(send to "Send now", message to "Message", title to "Name", row to "Chat"))
+
+  private fun info(
+    id: String?,
+    text: String? = null,
+    description: String? = null,
+    editable: Boolean = false,
+  ): AccessibilityNodeInfo =
+    AccessibilityNodeInfo().apply {
+      // A source, so that nodes can be told apart.
+      setSource(View(RuntimeEnvironment.getApplication()))
+      className = if (editable) "android.widget.EditText" else "android.widget.Button"
+      viewIdResourceName = id
+      this.text = text
+      contentDescription = description
+      isEditable = editable
+      isClickable = true
+      isEnabled = true
+    }
+
+  /** Sealed, as nodes from apps are, so that the items with its resource ID can be asked for. */
+  private fun sealed(info: AccessibilityNodeInfo): AccessibilityNodeInfoCompat {
+    ReflectionHelpers.callInstanceMethod<Any>(
+      info,
+      "setSealed",
+      ReflectionHelpers.ClassParameter.from(Boolean::class.javaPrimitiveType, true),
+    )
+    return AccessibilityNodeInfoCompat.wrap(info)
+  }
 
   private fun node(
     id: String?,
     text: String? = null,
     description: String? = null,
     editable: Boolean = false,
-  ): AccessibilityNodeInfoCompat =
-    AccessibilityNodeInfoCompat.wrap(
-      AccessibilityNodeInfo().apply {
-        className = if (editable) "android.widget.EditText" else "android.widget.Button"
-        viewIdResourceName = id
-        this.text = text
-        contentDescription = description
-        isEditable = editable
-        isClickable = true
-        isEnabled = true
-      }
-    )
+  ): AccessibilityNodeInfoCompat = sealed(info(id, text, description, editable))
+
+  /** A node whose window has [count] items with its resource ID. */
+  @Suppress("DEPRECATION")
+  private fun repeated(id: String, text: String, count: Int): AccessibilityNodeInfoCompat {
+    val info = info(id, text)
+    return object : AccessibilityNodeInfoCompat(info) {
+      override fun findAccessibilityNodeInfosByViewId(viewId: String) =
+        List(count) { AccessibilityNodeInfoCompat.wrap(info) }
+    }
+  }
 
   @Test
   fun aLabelReplacesTheTextAndDescriptionOfAControl() {
@@ -103,10 +135,48 @@ class CustomLabelReplacementTest {
 
   @Test
   fun labelledControlsCanBeRelabelledButNotEditFieldsOrAndroidIds() {
-    assertTrue(labels.replaces(node(send, text = "Send")))
-    assertFalse(labels.replaces(node(message, text = "Hello", editable = true)))
-    assertFalse(labels.replaces(node("android:id/title", text = "Wi-Fi")))
-    assertFalse(labels.replaces(node(null, text = "Send")))
+    assertTrue(TalkBackLabelManager.canReplaceText(node(send, text = "Send")))
+    assertFalse(TalkBackLabelManager.canReplaceText(node(message, text = "Hello", editable = true)))
+    assertFalse(TalkBackLabelManager.canReplaceText(node(title, text = "Wi-Fi")))
+    assertFalse(TalkBackLabelManager.canReplaceText(node(null, text = "Send")))
+  }
+
+  @Test
+  fun aLabelOnAnAndroidIdOnlyFillsIn() {
+    assertEquals("Wi-Fi", TalkBackLabelManager.getNodeText(node(title, text = "Wi-Fi"), labels).toString())
+    assertEquals("", AccessibilityNodeFeedbackUtils.getReplacingLabelText(node(title, text = "Wi-Fi"), ImageContents(labels, null)))
+    assertEquals("Name", TalkBackLabelManager.getNodeText(node(title), labels))
+  }
+
+  @Test
+  fun aLabelOfAListItemOrOfAnItemInOneOnlyFillsIn() {
+    val item =
+      info(row, text = "Anna").apply {
+        collectionItemInfo = AccessibilityNodeInfo.CollectionItemInfo(0, 1, 0, 1, false)
+      }
+    assertFalse(TalkBackLabelManager.canReplaceText(sealed(item)))
+    assertEquals("Anna", TalkBackLabelManager.getNodeText(AccessibilityNodeInfoCompat.wrap(item), labels).toString())
+
+    val parent = AccessibilityNodeInfo().apply {
+      setSource(View(RuntimeEnvironment.getApplication()))
+      collectionItemInfo = AccessibilityNodeInfo.CollectionItemInfo(0, 1, 0, 1, false)
+    }
+    val child = info(send, text = "Send")
+    shadowOf(parent).addChild(child)
+    assertFalse(TalkBackLabelManager.canReplaceText(sealed(child)))
+    assertEquals("Send", TalkBackLabelManager.getNodeText(AccessibilityNodeInfoCompat.wrap(child), labels).toString())
+  }
+
+  @Test
+  fun aLabelOfAResourceIdSharedInTheWindowOnlyFillsIn() {
+    assertFalse(TalkBackLabelManager.canReplaceText(repeated(row, "Anna", 2)))
+    assertEquals("Anna", TalkBackLabelManager.getNodeText(repeated(row, "Anna", 2), labels).toString())
+    assertEquals(
+      "",
+      AccessibilityNodeFeedbackUtils.getReplacingLabelText(repeated(row, "Anna", 2), ImageContents(labels, null)),
+    )
+    assertTrue(TalkBackLabelManager.canReplaceText(repeated(row, "Anna", 1)))
+    assertEquals("Chat", TalkBackLabelManager.getNodeText(repeated(row, "Anna", 1), labels))
   }
 
   @Test
