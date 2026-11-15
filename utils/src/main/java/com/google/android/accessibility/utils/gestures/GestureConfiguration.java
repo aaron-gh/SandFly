@@ -17,7 +17,9 @@
 package com.google.android.accessibility.utils.gestures;
 
 import android.accessibilityservice.AccessibilityService;
+import android.os.Build;
 import android.view.ViewConfiguration;
+import androidx.annotation.RequiresApi;
 import java.util.function.IntPredicate;
 
 /** This class contains timeout values that control the behavior of gesture detection. */
@@ -160,8 +162,10 @@ public final class GestureConfiguration {
   /**
    * Returns the gestures that start with the one-finger swipe {@code swipeGestureId}: its swipe and
    * hold, the back-and-forth and angle gestures that start in its direction, and their swipe and
-   * hold versions. Empty for every other gesture.
+   * hold versions. Empty for every other gesture. Swipe and hold gestures are SandFly's own
+   * detection's, from Android 13.
    */
+  @RequiresApi(Build.VERSION_CODES.TIRAMISU)
   public static int[] gesturesStartingWith(int swipeGestureId) {
     int[] twoDirection =
         switch (swipeGestureId) {
@@ -212,6 +216,7 @@ public final class GestureConfiguration {
    *
    * @param isAssigned whether a gesture has an action
    */
+  @RequiresApi(Build.VERSION_CODES.TIRAMISU)
   public static boolean runsBeforeLift(
       int swipeGestureId,
       boolean twoDirectionSwipesOff,
