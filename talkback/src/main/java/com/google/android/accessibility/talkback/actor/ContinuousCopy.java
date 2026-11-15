@@ -51,6 +51,7 @@ import org.checkerframework.checker.nullness.qual.Nullable;
 public final class ContinuousCopy {
 
   private static final String TAG = "ContinuousCopy";
+  private static final String WAKE_LOCK_TAG = "SandFly:ContinuousCopy";
 
   /** The most items collected. */
   @VisibleForTesting static final int MAX_ITEMS = 2000;
@@ -153,7 +154,8 @@ public final class ContinuousCopy {
     wakeLock =
         ((PowerManager) service.getSystemService(Context.POWER_SERVICE))
             .newWakeLock(
-                PowerManager.SCREEN_DIM_WAKE_LOCK | PowerManager.ON_AFTER_RELEASE, TAG);
+                PowerManager.SCREEN_DIM_WAKE_LOCK | PowerManager.ON_AFTER_RELEASE,
+                WAKE_LOCK_TAG);
     wakeLock.setReferenceCounted(false);
   }
 
