@@ -23,6 +23,7 @@ import android.media.AudioAttributes
 import android.media.AudioManager
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.view.Display
 import android.view.KeyEvent
 import android.view.ViewConfiguration
@@ -68,6 +69,8 @@ class VolumeKeyCommands(
           adjustSuggestedVolume(audioManager, keyCode, repeated, suggestedStream())
           onVolumeAdjusted()
         }
+
+        override fun passed(keyCode: Int, reason: String) = logOff(keyCode, reason)
       },
     )
 
@@ -121,19 +124,36 @@ class VolumeKeyCommands(
   }
 
   /**
-   * Handles a volume key event and returns whether it is kept from Android. [canUse] says whether
-   * presses may be counted now, and is asked only when a volume key with a command is pressed.
+   * Handles a volume key event and returns whether it is kept from Android. [offReason] says why
+   * presses may not be counted now, or gives null when they may, and is asked only when a volume
+   * key with a command is pressed.
    */
-  fun onKeyEvent(event: KeyEvent, canUse: () -> Boolean): Boolean {
+  fun onKeyEvent(event: KeyEvent, offReason: () -> String?): Boolean {
     if (!presses.isUsed || !VolumeKeyPresses.isVolumeKey(event.keyCode)) {
       return false
     }
+    // Asked again when the key is held, after the event may have been recycled.
+    val keyCode = event.keyCode
     return when (event.action) {
       KeyEvent.ACTION_DOWN ->
-        presses.onKeyDown(event.keyCode, event.repeatCount > 0) { canUse() && !isInCall() }
-      KeyEvent.ACTION_UP -> presses.onKeyUp(event.keyCode)
+        presses.onKeyDown(keyCode, event.repeatCount > 0) {
+          val reason = offReason() ?: if (isInCall()) "app call audio playing" else null
+          if (reason != null) {
+            logOff(keyCode, reason)
+          }
+          reason == null
+        }
+      KeyEvent.ACTION_UP -> presses.onKeyUp(keyCode)
       else -> false
     }
+  }
+
+  /**
+   * Logs at info level, which problem reports include, why a press of [keyCode] runs no command,
+   * so that a report shows why the presses changed the volume instead.
+   */
+  private fun logOff(keyCode: Int, reason: String) {
+    Log.i(TAG, "${KeyEvent.keyCodeToString(keyCode)} press commands off: $reason")
   }
 
   /** Whether a double, triple or long press of [keyCode] has [command]. */
@@ -164,6 +184,8 @@ class VolumeKeyCommands(
   }
 
   companion object {
+    private const val TAG = "VolumeKeyCommands"
+
     /** Shortest and longest stored long press times accepted, in milliseconds. */
     private const val MIN_LONG_PRESS_MS = 100L
     private const val MAX_LONG_PRESS_MS = 2000L

@@ -894,6 +894,7 @@ public class TalkBackService extends AccessibilityServiceCompat
   // event is in the time window between TYPE_TOUCH_INTERACTION_START and
   // TYPE_TOUCH_INTERACTION_END will be considered as passthrough window.
   private boolean isTouchInteracting = false;
+
   // In order to handle key action down/up in pair for the same functions.
   // Records whether the last keystroke of VolumeUp key occurred in the passthrough window.
   private boolean volumeUpKeyPressedInPassThroughWindow = false;
@@ -1728,10 +1729,11 @@ public class TalkBackService extends AccessibilityServiceCompat
     if (adjustSliderWithVolumeKey(keyEvent, triggerModifierPressed)) {
       return true;
     }
+    // The lambda uses keyCode, not keyEvent: the event may be recycled by the time a long press
+    // asks.
     if (volumeKeyCommands != null
         && volumeKeyCommands.onKeyEvent(
-            keyEvent,
-            () -> canUseVolumeKeyCommands(triggerModifierPressed, keyEvent.getKeyCode()))) {
+            keyEvent, () -> volumeKeyCommandsOffReason(triggerModifierPressed, keyCode))) {
       return true;
     }
     if (oneUiVolumeKeys != null
@@ -1845,15 +1847,25 @@ public class TalkBackService extends AccessibilityServiceCompat
   }
 
   /**
-   * Returns whether double, triple and long presses of the volume keys run their commands now: as
-   * for {@link #canUseVolumeKeyPresses}, and also while an always-on display shows the lock screen.
-   * While a call rings, only a key with Answer call among its presses' commands is counted.
+   * Returns null when double, triple and long presses of the volume key {@code keyCode} run their
+   * commands now, and otherwise why they don't. They run as for {@link #canUseVolumeKeyPresses},
+   * and also while an always-on display shows the lock screen. While a call rings, only a key with
+   * Answer call among its presses' commands is counted.
    */
-  private boolean canUseVolumeKeyCommands(boolean triggerModifierPressed, int keyCode) {
-    return canTakeVolumeKeys(triggerModifierPressed, isRingingCallAnsweredBy(keyCode))
-        && ringerModeAndScreenMonitor != null
-        && (ringerModeAndScreenMonitor.isInteractive()
-            || VolumeKeyCommands.canCountWhileNotInteractive(this));
+  private @Nullable String volumeKeyCommandsOffReason(boolean triggerModifierPressed, int keyCode) {
+    String reason =
+        volumeKeysTakenOffReason(triggerModifierPressed, isRingingCallAnsweredBy(keyCode));
+    if (reason != null) {
+      return reason;
+    }
+    if (ringerModeAndScreenMonitor == null) {
+      return "no screen monitor";
+    }
+    if (!ringerModeAndScreenMonitor.isInteractive()
+        && !VolumeKeyCommands.canCountWhileNotInteractive(this)) {
+      return "screen not interactive";
+    }
+    return null;
   }
 
   /** Whether a call rings and a press of the volume key {@code keyCode} has Answer call. */
@@ -1873,15 +1885,36 @@ public class TalkBackService extends AccessibilityServiceCompat
    * allows it while a call rings, though not during a call.
    */
   private boolean canTakeVolumeKeys(boolean triggerModifierPressed, boolean whileRinging) {
-    return isServiceActive()
-        // Shortcut Menu starts its safe mode, for a screen reader that stopped working, with three
-        // presses of volume up, so its keys go to it as they are.
-        && !SHORTCUT_MENU_PACKAGE.contentEquals(AppGestures.appShown())
-        && !isTouchInteracting
-        && !triggerModifierPressed
-        && !isBrailleImeTouchInteracting()
-        && !pipeline.getActorState().getContinuousRead().isActive()
-        && (whileRinging || !isPhoneCallActive());
+    return volumeKeysTakenOffReason(triggerModifierPressed, whileRinging) == null;
+  }
+
+  /** Why {@link #canTakeVolumeKeys} is false, or null when it is true. */
+  private @Nullable String volumeKeysTakenOffReason(
+      boolean triggerModifierPressed, boolean whileRinging) {
+    if (!isServiceActive()) {
+      return "service not active";
+    }
+    // Shortcut Menu starts its safe mode, for a screen reader that stopped working, with three
+    // presses of volume up, so its keys go to it as they are.
+    if (SHORTCUT_MENU_PACKAGE.contentEquals(AppGestures.appShown())) {
+      return "Shortcut Menu shown";
+    }
+    if (isTouchInteracting) {
+      return "touch interaction";
+    }
+    if (triggerModifierPressed) {
+      return "SandFly key held";
+    }
+    if (isBrailleImeTouchInteracting()) {
+      return "braille keyboard touched";
+    }
+    if (pipeline.getActorState().getContinuousRead().isActive()) {
+      return "continuous reading";
+    }
+    if (!whileRinging && isPhoneCallActive()) {
+      return "phone call, state " + voiceActionMonitor.getCurrentCallState();
+    }
+    return null;
   }
 
   /**
