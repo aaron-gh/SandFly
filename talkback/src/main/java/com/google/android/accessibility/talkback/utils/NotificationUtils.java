@@ -29,6 +29,7 @@ import android.content.Context;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.core.content.ContextCompat;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.permission.PermissionUtils;
@@ -130,6 +131,28 @@ public class NotificationUtils {
       ContextCompat.registerReceiver(context, broadcastReceiver, filter, RECEIVER_EXPORTED);
     }
     PermissionUtils.requestPermissions(context, permission.POST_NOTIFICATIONS);
+  }
+
+  /**
+   * Whether a notification from {@link #createDefaultNotificationBuilder} is shown: notifications
+   * are allowed for the app and its channel isn't turned off.
+   */
+  public static boolean canShowNotifications(Context context) {
+    if (!hasPostNotificationPermission(context)
+        || !NotificationManagerCompat.from(context).areNotificationsEnabled()) {
+      return false;
+    }
+    if (!FeatureSupport.supportNotificationChannel()) {
+      return true;
+    }
+    @Nullable NotificationManager notificationManager =
+        context.getSystemService(NotificationManager.class);
+    @Nullable NotificationChannel channel =
+        notificationManager == null
+            ? null
+            : notificationManager.getNotificationChannel(TALKBACK_CHANNEL_ID);
+    // A channel not created yet is created with high importance with the first notification.
+    return channel == null || channel.getImportance() != NotificationManager.IMPORTANCE_NONE;
   }
 
   public static boolean hasPostNotificationPermission(Context context) {

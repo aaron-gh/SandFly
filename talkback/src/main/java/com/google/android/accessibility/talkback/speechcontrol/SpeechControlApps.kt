@@ -17,10 +17,12 @@
 package com.google.android.accessibility.talkback.speechcontrol
 
 import android.content.SharedPreferences
+import androidx.annotation.VisibleForTesting
 
 /**
  * Which apps the user let speak through Backtalk, and which they didn't, and apart from that,
- * which they let speak while the device is locked.
+ * which they let speak while the device is locked. Also the apps that used the speech service
+ * before the user answered for them, so that Let other apps speak lists them.
  */
 object SpeechControlApps {
   enum class State {
@@ -34,6 +36,11 @@ object SpeechControlApps {
   private const val PREF_DENIED = "pref_speech_control_denied_apps"
   private const val PREF_LOCKED_ALLOWED = "pref_speech_control_locked_allowed_apps"
   private const val PREF_LOCKED_DENIED = "pref_speech_control_locked_denied_apps"
+  // Oldest first, one package name per line.
+  internal const val PREF_CONNECTED = "pref_speech_control_connected_apps"
+
+  /** At most this many unanswered apps are kept; the oldest is dropped first. */
+  @VisibleForTesting internal const val MAX_CONNECTED = 32
 
   fun state(prefs: SharedPreferences, app: String): State =
     when (app) {
@@ -49,8 +56,24 @@ object SpeechControlApps {
       .edit()
       .putStringSet(PREF_ALLOWED, if (allowed) allowedApps + app else allowedApps - app)
       .putStringSet(PREF_DENIED, if (allowed) deniedApps - app else deniedApps + app)
+      .putString(PREF_CONNECTED, join(connected(prefs) - app))
       .apply()
   }
+
+  /**
+   * Records that [app] used the speech service, so that it is listed before the user has answered
+   * for it. Nothing changes if the user has answered or it is already recorded.
+   */
+  fun recordConnected(prefs: SharedPreferences, app: String) {
+    if (state(prefs, app) != State.UNKNOWN) return
+    val apps = connected(prefs)
+    if (app in apps) return
+    prefs.edit().putString(PREF_CONNECTED, join((apps + app).takeLast(MAX_CONNECTED))).apply()
+  }
+
+  /** Apps that used the speech service and that the user hasn't answered for, oldest first. */
+  fun connected(prefs: SharedPreferences): List<String> =
+    prefs.getString(PREF_CONNECTED, null)?.split('\n')?.filter { it.isNotEmpty() }.orEmpty()
 
   /**
    * Whether the user let [app] speak while the device is locked, a separate answer from [state]:
@@ -75,19 +98,29 @@ object SpeechControlApps {
 
   /** Forgets the user's answers for [app], so it isn't listed. */
   fun forget(prefs: SharedPreferences, app: String) {
-    if (state(prefs, app) == State.UNKNOWN && lockedState(prefs, app) == State.UNKNOWN) return
+    val connected = connected(prefs)
+    if (
+      state(prefs, app) == State.UNKNOWN &&
+        lockedState(prefs, app) == State.UNKNOWN &&
+        app !in connected
+    ) {
+      return
+    }
     prefs
       .edit()
       .putStringSet(PREF_ALLOWED, set(prefs, PREF_ALLOWED) - app)
       .putStringSet(PREF_DENIED, set(prefs, PREF_DENIED) - app)
       .putStringSet(PREF_LOCKED_ALLOWED, set(prefs, PREF_LOCKED_ALLOWED) - app)
       .putStringSet(PREF_LOCKED_DENIED, set(prefs, PREF_LOCKED_DENIED) - app)
+      .putString(PREF_CONNECTED, join(connected - app))
       .apply()
   }
 
   /** Every app the user has answered for, allowed or not. */
   fun answered(prefs: SharedPreferences): Set<String> =
     set(prefs, PREF_ALLOWED) + set(prefs, PREF_DENIED)
+
+  private fun join(apps: List<String>): String = apps.joinToString("\n")
 
   private fun set(prefs: SharedPreferences, key: String): Set<String> =
     prefs.getStringSet(key, null).orEmpty()

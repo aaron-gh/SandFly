@@ -18,6 +18,7 @@ package com.google.android.accessibility.talkback.speechcontrol
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.content.pm.PackageManager
 import android.os.Bundle
 import androidx.preference.CheckBoxPreference
 import androidx.preference.Preference
@@ -27,8 +28,9 @@ import com.google.android.accessibility.talkback.preference.base.TalkbackBaseFra
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 
 /**
- * Turns speech from other apps on or off, and lists the apps that have asked, each of which can be
- * allowed or not, and, for an app that declares it can, allowed while the device is locked.
+ * Turns speech from other apps on or off, and lists the apps that have used the speech service or
+ * that the user answered for, each of which can be allowed or not, and, for an app that declares
+ * it can, allowed while the device is locked.
  */
 class SpeechControlFragment : TalkbackBaseFragment() {
   private lateinit var prefs: SharedPreferences
@@ -74,8 +76,10 @@ class SpeechControlFragment : TalkbackBaseFragment() {
         isIconSpaceReserved = false
       }
     screen.addPreference(category)
+    // An unanswered app that has since been uninstalled isn't listed.
+    val connected = SpeechControlApps.connected(prefs).filter { isInstalled(context, it) }
     val apps =
-      SpeechControlApps.answered(prefs)
+      (SpeechControlApps.answered(prefs) + connected)
         .map { it to SpeechControlApproval.label(context, it).toString() }
         .sortedBy { it.second.lowercase() }
     if (apps.isEmpty()) {
@@ -98,6 +102,7 @@ class SpeechControlFragment : TalkbackBaseFragment() {
             checked = SpeechControlApps.lockedState(prefs, app) == SpeechControlApps.State.ALLOWED,
           ) { checked ->
             SpeechControlApps.setAllowedWhileLocked(prefs, app, checked)
+            SpeechControlApproval.cancel(context, app)
           }
             .apply { isEnabled = allowed }
         } else {
@@ -106,6 +111,7 @@ class SpeechControlFragment : TalkbackBaseFragment() {
       category.addPreference(
         checkBox(context, title = label, summary = null, checked = allowed) { checked ->
           SpeechControlApps.setAllowed(prefs, app, checked)
+          SpeechControlApproval.cancel(context, app)
           // Speaking while locked only applies to an app that may speak at all.
           whileLocked?.isEnabled = checked
         }
@@ -114,6 +120,14 @@ class SpeechControlFragment : TalkbackBaseFragment() {
     }
     preferenceScreen = screen
   }
+
+  private fun isInstalled(context: Context, app: String): Boolean =
+    try {
+      context.packageManager.getApplicationInfo(app, 0)
+      true
+    } catch (e: PackageManager.NameNotFoundException) {
+      false
+    }
 
   private fun checkBox(
     context: Context,

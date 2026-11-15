@@ -16,7 +16,9 @@
 
 package com.google.android.accessibility.talkback.speechcontrol
 
+import android.Manifest
 import android.app.KeyguardManager
+import android.app.NotificationManager
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -37,6 +39,8 @@ import org.robolectric.RobolectricTestRunner
 import org.robolectric.RuntimeEnvironment
 import org.robolectric.Shadows.shadowOf
 import org.robolectric.annotation.Config
+import org.robolectric.shadows.ShadowSystemClock
+import java.time.Duration
 
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [34])
@@ -59,6 +63,7 @@ class SpeechControlTest {
   fun tearDown() {
     SpeechControl.detach()
     KeyboardSpeech.clear()
+    SpeechControlApproval.cancel(context, APP)
   }
 
   /** Installs [APP], declaring the permission to speak while the device is locked if [declares]. */
@@ -328,6 +333,83 @@ class SpeechControlTest {
     SpeechControlApps.setAllowed(prefs, APP, false)
     assertEquals(SpeechControlApps.State.DENIED, SpeechControlApps.state(prefs, APP))
     assertEquals(setOf(APP), SpeechControlApps.answered(prefs))
+  }
+
+  @Test
+  fun recordCaller_listsAnAppTheUserHasNotAnswered() {
+    SpeechControl.detach()
+    SpeechControl.recordCaller(context, listOf(APP))
+    assertEquals(listOf(APP), SpeechControlApps.connected(prefs))
+  }
+
+  @Test
+  fun recordCaller_skipsAnAnsweredApp() {
+    SpeechControlApps.setAllowed(prefs, APP, false)
+    SpeechControl.recordCaller(context, listOf(APP))
+    assertTrue(SpeechControlApps.connected(prefs).isEmpty())
+  }
+
+  @Test
+  fun recordCaller_skipsTheCurrentKeyboard() {
+    useKeyboard(APP)
+    SpeechControl.recordCaller(context, listOf(APP))
+    assertTrue(SpeechControlApps.connected(prefs).isEmpty())
+  }
+
+  @Test
+  fun setAllowed_movesAConnectedAppToTheAnsweredApps() {
+    SpeechControlApps.recordConnected(prefs, APP)
+    SpeechControlApps.setAllowed(prefs, APP, true)
+    assertTrue(SpeechControlApps.connected(prefs).isEmpty())
+    assertEquals(SpeechControlApps.State.ALLOWED, SpeechControlApps.state(prefs, APP))
+  }
+
+  @Test
+  fun forget_forgetsAConnectedApp() {
+    SpeechControlApps.recordConnected(prefs, APP)
+    SpeechControlApps.forget(prefs, APP)
+    assertTrue(SpeechControlApps.connected(prefs).isEmpty())
+  }
+
+  @Test
+  fun recordConnected_keepsTheNewestApps() {
+    val apps = (0..SpeechControlApps.MAX_CONNECTED).map { "com.example.app$it" }
+    apps.forEach { SpeechControlApps.recordConnected(prefs, it) }
+    SpeechControlApps.recordConnected(prefs, apps.last())
+    assertEquals(apps.drop(1), SpeechControlApps.connected(prefs))
+  }
+
+  @Test
+  fun ask_postsTheQuestionAgainWhenItIsNotShowing() {
+    shadowOf(RuntimeEnvironment.getApplication())
+      .grantPermissions(Manifest.permission.POST_NOTIFICATIONS)
+    val notifications = context.getSystemService(NotificationManager::class.java)
+    SpeechControlApproval.ask(context, APP)
+    assertEquals(1, shadowOf(notifications).size())
+
+    notifications.cancelAll()
+    SpeechControlApproval.ask(context, APP)
+    assertEquals(0, shadowOf(notifications).size())
+
+    ShadowSystemClock.advanceBy(Duration.ofMinutes(2))
+    SpeechControlApproval.ask(context, APP)
+    assertEquals(1, shadowOf(notifications).size())
+  }
+
+  @Test
+  fun ask_postsNothingWhileTheChannelIsOff() {
+    shadowOf(RuntimeEnvironment.getApplication())
+      .grantPermissions(Manifest.permission.POST_NOTIFICATIONS)
+    val notifications = context.getSystemService(NotificationManager::class.java)
+    SpeechControlApproval.ask(context, APP)
+    notifications.cancelAll()
+    SpeechControlApproval.cancel(context, APP)
+    notifications.notificationChannels.forEach {
+      it.importance = NotificationManager.IMPORTANCE_NONE
+      notifications.createNotificationChannel(it)
+    }
+    SpeechControlApproval.ask(context, APP)
+    assertEquals(0, shadowOf(notifications).size())
   }
 
   private companion object {

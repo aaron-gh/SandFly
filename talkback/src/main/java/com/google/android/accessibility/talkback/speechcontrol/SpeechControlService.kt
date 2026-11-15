@@ -41,12 +41,18 @@ class SpeechControlService : Service() {
         volume: Float,
       ) {
         val apps = callingApps()
-        mainHandler.post { SpeechControl.speak(apps, text, interrupt, rate, pitch, volume) }
+        mainHandler.post {
+          SpeechControl.recordCaller(applicationContext, apps)
+          SpeechControl.speak(apps, text, interrupt, rate, pitch, volume)
+        }
       }
 
       override fun stop() {
         val apps = callingApps()
-        mainHandler.post { SpeechControl.stop(apps) }
+        mainHandler.post {
+          SpeechControl.recordCaller(applicationContext, apps)
+          SpeechControl.stop(apps)
+        }
       }
 
       override fun setTypingSpoken(spoken: Boolean) {
