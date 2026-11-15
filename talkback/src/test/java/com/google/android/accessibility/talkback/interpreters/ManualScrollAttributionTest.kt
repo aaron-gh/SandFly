@@ -8,6 +8,8 @@ import android.view.accessibility.AccessibilityNodeInfo
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import com.google.android.accessibility.talkback.ActorState
 import com.google.android.accessibility.talkback.ActorStateWritable
+import com.google.android.accessibility.talkback.Pipeline
+import com.google.android.accessibility.talkback.focusmanagement.AccessibilityFocusMonitor
 import com.google.android.accessibility.talkback.focusmanagement.record.AccessibilityFocusActionHistory
 import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionInfo
 import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionRecord
@@ -118,7 +120,8 @@ class ManualScrollAttributionTest {
       ClassParameter.from(AccessibilityNodeInfoCompat::class.java, AccessibilityNodeInfoCompat.wrap(web)))
     assertFalse(handled)
   }
-  @Test fun aDelayedWebScrollAfterNewerUserNavigationDoesNotReadNativeFocusability() {
+  /** Runs a delayed web scroll at time 100 after a swipe at [focusTime]; returns focus queries and pipeline inputs. */
+  private fun delayedWebScrollAfterSwipeAt(focusTime: Long): Pair<Int, Int> {
     val context = RuntimeEnvironment.getApplication()
     val web = AccessibilityNodeInfo.obtain(View(context)).apply {
       addAction(AccessibilityNodeInfo.ACTION_NEXT_HTML_ELEMENT)
@@ -127,17 +130,26 @@ class ManualScrollAttributionTest {
     }
     val history = AccessibilityFocusActionHistory(context)
     val record = FocusActionRecord(AccessibilityNodeInfoCompat.wrap(web),
-      FocusActionInfo.builder().setSourceAction(FocusActionInfo.LOGICAL_NAVIGATION).build(), 200)
+      FocusActionInfo.builder().setSourceAction(FocusActionInfo.LOGICAL_NAVIGATION).build(), focusTime)
     ReflectionHelpers.getField<java.util.ArrayDeque<FocusActionRecord>>(history,
       "focusActionRecordList").add(record)
     val monitor = ReflectionHelpers.callConstructor(ScreenStateMonitor::class.java,
       ClassParameter.from(android.accessibilityservice.AccessibilityService::class.java, null),
       ClassParameter.from(InputMethodMonitor::class.java, null))
     ReflectionHelpers.setField(monitor, "areMainWindowsStable", true)
-    // No focus monitor: an obsolete scroll must return before any focus query.
-    val interpreter = AccessibilityFocusInterpreter(context, null, monitor.state, TouchMonitor(), null)
+    var focusQueries = 0
+    val focusMonitor = object : AccessibilityFocusMonitor(null, null, null) {
+      override fun getAccessibilityFocus(useInputFocusIfEmpty: Boolean): AccessibilityNodeInfoCompat? {
+        focusQueries++
+        return null
+      }
+    }
+    var inputs = 0
+    val interpreter =
+      AccessibilityFocusInterpreter(context, focusMonitor, monitor.state, TouchMonitor(), null)
     interpreter.setActorState(ActorState(ActorStateWritable(null, null, null, null,
       history.reader, null, null, null, null, null, null, null, null, null)))
+    interpreter.setPipeline(Pipeline.InterpretationReceiver { _, _, _, _ -> inputs++; true })
     val event = AccessibilityEvent.obtain(AccessibilityEvent.TYPE_VIEW_SCROLLED).apply {
       eventTime = 100
       org.robolectric.Shadows.shadowOf(this).setSourceNode(web)
@@ -146,6 +158,18 @@ class ManualScrollAttributionTest {
       ClassParameter.from(ManualScrollInterpretation::class.java,
         ManualScrollInterpretation.create(null, event, TraversalStrategy.SEARCH_FOCUS_FORWARD, true)),
       ClassParameter.from(Boolean::class.javaPrimitiveType, false))
+    assertNull(ReflectionHelpers.getField(interpreter, "webFocusRecovery"))
+    return focusQueries to inputs
   }
 
+  @Test fun aDelayedWebScrollAfterNewerUserNavigationDoesNotReadNativeFocusability() {
+    val (focusQueries, inputs) = delayedWebScrollAfterSwipeAt(focusTime = 200)
+    assertEquals("An obsolete scroll must return before any focus query", 0, focusQueries)
+    assertEquals("An obsolete scroll must not move focus", 0, inputs)
+  }
+
+  @Test fun aWebScrollAfterAnOlderSwipeStillChecksTheFocus() {
+    val (focusQueries, _) = delayedWebScrollAfterSwipeAt(focusTime = 50)
+    assertEquals(1, focusQueries)
+  }
 }
