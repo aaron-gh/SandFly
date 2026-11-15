@@ -37,6 +37,7 @@ import androidx.annotation.StringRes
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.IntentCompat
+import androidx.core.content.pm.PackageInfoCompat
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import com.google.android.accessibility.talkback.BuildConfig
@@ -555,6 +556,7 @@ object Updater {
           Intent(context, UpdateReceiver::class.java)
             .setAction(UpdateReceiver.ACTION_INSTALL_STATUS)
             .putExtra(UpdateReceiver.EXTRA_INSTALLED_PACKAGE, apkPackage)
+            .putExtra(UpdateReceiver.EXTRA_INSTALLED_VERSION, PackageInfoCompat.getLongVersionCode(info))
         // The installer fills in the status, so the intent must be mutable.
         val flags =
           PendingIntent.FLAG_UPDATE_CURRENT or
@@ -644,7 +646,13 @@ object Updater {
           onMoved(appContext, installed)
         }
       }
-      PackageInstaller.STATUS_FAILURE_ABORTED -> toast(appContext, R.string.update_install_canceled)
+      PackageInstaller.STATUS_FAILURE_ABORTED -> {
+        // Some installers report an abort after the install finished. Stay quiet if the
+        // installed version is already the one this session was installing.
+        if (!isInstalled(appContext, intent)) {
+          toast(appContext, R.string.update_install_canceled)
+        }
+      }
       else -> {
         LogUtils.e(
           TAG,
@@ -654,6 +662,21 @@ object Updater {
         )
         toast(appContext, R.string.update_install_failed)
       }
+    }
+  }
+
+  /** Returns true if the APK that the install session was installing is already installed. */
+  private fun isInstalled(context: Context, intent: Intent): Boolean {
+    val packageName = intent.getStringExtra(UpdateReceiver.EXTRA_INSTALLED_PACKAGE) ?: return false
+    val version = intent.getLongExtra(UpdateReceiver.EXTRA_INSTALLED_VERSION, -1L)
+    if (version < 0) {
+      return false
+    }
+    return try {
+      val current = context.packageManager.getPackageInfo(packageName, 0)
+      PackageInfoCompat.getLongVersionCode(current) >= version
+    } catch (e: PackageManager.NameNotFoundException) {
+      false
     }
   }
 
