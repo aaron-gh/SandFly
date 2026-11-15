@@ -116,6 +116,7 @@ import com.google.android.accessibility.utils.SettingsUtils;
 import com.google.android.accessibility.utils.SpannableUtils;
 import com.google.android.accessibility.utils.WebInterfaceUtils;
 import com.google.android.accessibility.utils.input.CursorGranularity;
+import com.google.android.accessibility.utils.monitor.RecentUserInput;
 import com.google.android.accessibility.utils.output.FeedbackItem;
 import com.google.android.accessibility.utils.output.SpeechController.SpeakOptions;
 import com.google.android.accessibility.utils.screencapture.ScreenshotCapture;
@@ -301,6 +302,7 @@ public class VoiceCommandProcessor {
       return false;
     }
     LogUtils.i(LOG_TAG, "handleSpeechCommand() command=\"%s\"", command);
+    RecentUserInput.mark();
     EventId eventId = EVENT_ID_UNTRACKED;
 
     // Gemini voice command

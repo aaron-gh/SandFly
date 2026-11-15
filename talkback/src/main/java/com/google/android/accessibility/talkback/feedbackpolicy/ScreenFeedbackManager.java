@@ -63,6 +63,7 @@ import com.google.android.accessibility.utils.StringBuilderUtils;
 import com.google.android.accessibility.utils.WindowUtils;
 import com.google.android.accessibility.utils.input.WindowEventInterpreter;
 import com.google.android.accessibility.utils.input.WindowEventInterpreter.Announcement;
+import com.google.android.accessibility.utils.monitor.RecentUserInput;
 import com.google.android.accessibility.utils.output.FeedbackItem;
 import com.google.android.accessibility.utils.output.SpeechController;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
@@ -103,8 +104,7 @@ public class ScreenFeedbackManager
   private static final int MASK_EVENTS_HANDLED_BY_SCREEN_FEEDBACK_MANAGER =
       AccessibilityEvent.TYPE_WINDOWS_CHANGED
           | TYPE_WINDOW_STATE_CHANGED
-          | AccessibilityEvent.TYPE_NOTIFICATION_STATE_CHANGED
-          | AccessibilityEvent.TYPE_TOUCH_INTERACTION_START;
+          | AccessibilityEvent.TYPE_NOTIFICATION_STATE_CHANGED;
 
   /**
    * How long after a notification arrives a pane that appears in a system window is taken to be
@@ -125,11 +125,8 @@ public class ScreenFeedbackManager
   /** Event time of the last key press that stopped speech, in uptime milliseconds. */
   private long speechStoppedByKeyTime = 0;
 
-  /** Event time of the last notification that arrived, in uptime milliseconds, or -1. */
+  /** When the last notification arrived, in uptime milliseconds, or -1. */
   private long notificationTime = -1;
-
-  /** Event time of the last touch or key press, in uptime milliseconds, or -1. */
-  private long userInputTime = -1;
 
   /**
    * Set from the Window names setting's "cut off by the first item" choice. When on, the window
@@ -199,12 +196,9 @@ public class ScreenFeedbackManager
         // Toasts come as this event type too, without a notification.
         if ((event.getParcelableData() instanceof Notification)
             || Notification.class.getName().contentEquals(String.valueOf(event.getClassName()))) {
-          notificationTime = event.getEventTime();
+          // The time it is received, as RecentUserInput records the user's input.
+          notificationTime = SystemClock.uptimeMillis();
         }
-        return;
-      }
-      case AccessibilityEvent.TYPE_TOUCH_INTERACTION_START -> {
-        userInputTime = event.getEventTime();
         return;
       }
       default -> {}
@@ -213,15 +207,11 @@ public class ScreenFeedbackManager
     getInterpreter().interpret(event, eventId, allowAnnounce(event));
   }
 
-  /** Records a key press, after which a pane that appears is not taken to be a notification's. */
-  public void onKeyPressed(KeyEvent keyEvent) {
-    userInputTime = keyEvent.getEventTime();
-  }
-
   /**
    * Returns whether a pane appeared in a system window for a notification that arrived, not for
    * something the user did: a notification arrived {@link #NOTIFICATION_PANE_MS} or less before
-   * {@code now}, and no touch or key press came after it. Some phones, such as Vivo's, show the
+   * {@code now}, and the user's last input, {@code userInputTime}, came before it: a touch, gesture,
+   * key, braille input or voice command, see {@link RecentUserInput}. Some phones, such as Vivo's, show the
    * notification shade's pane for a heads-up notification without the shade being opened.
    */
   @VisibleForTesting
@@ -235,7 +225,10 @@ public class ScreenFeedbackManager
   private boolean isNotificationPane(WindowEventInterpreter.EventInterpretation interpretation) {
     if (interpretation.getEventType() != TYPE_WINDOW_STATE_CHANGED
         || interpretation.getContentChangeTypes() != CONTENT_CHANGE_TYPE_PANE_APPEARED
-        || !followsNotification(notificationTime, userInputTime, SystemClock.uptimeMillis())) {
+        || !followsNotification(
+            notificationTime,
+            RecentUserInput.lastInputUptimeMs(),
+            SystemClock.uptimeMillis())) {
       return false;
     }
     int windowId = interpretation.getEventSourceWindow().getId();

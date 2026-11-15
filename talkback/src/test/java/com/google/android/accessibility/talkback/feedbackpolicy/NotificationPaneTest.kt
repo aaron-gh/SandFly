@@ -16,8 +16,10 @@
 
 package com.google.android.accessibility.talkback.feedbackpolicy
 
+import android.os.SystemClock
 import com.google.android.accessibility.talkback.feedbackpolicy.ScreenFeedbackManager.NOTIFICATION_PANE_MS
 import com.google.android.accessibility.talkback.feedbackpolicy.ScreenFeedbackManager.followsNotification
+import com.google.android.accessibility.utils.monitor.RecentUserInput
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test
@@ -38,6 +40,17 @@ class NotificationPaneTest {
   fun aPaneAfterATouchOrKey_doesNotFollowTheNotification() {
     assertFalse(followsNotification(10_000, 10_200, 10_400))
     assertFalse(followsNotification(10_000, 10_000, 10_400))
+  }
+
+  @Test
+  fun inputRecordedAfterTheNotification_isUserInput() {
+    SystemClock.sleep(10)
+    val notificationTime = SystemClock.uptimeMillis()
+    SystemClock.sleep(10)
+    RecentUserInput.mark()
+    assertFalse(
+      followsNotification(notificationTime, RecentUserInput.lastInputUptimeMs(), notificationTime + 100)
+    )
   }
 
   @Test
