@@ -4296,7 +4296,8 @@ public class FocusProcessorForLogicalNavigation {
             pivot,
             sourceAction.searchDirection,
             nodeFilter,
-            WindowUtils.isScreenLayoutRTL(service));
+            WindowUtils.isScreenLayoutRTL(service),
+            children);
     if (next == null || !AccessibilityNodeInfoUtils.isVisible(next)) {
       LogUtils.d(TAG, "A list item came on screen after %d ms, but nothing to focus yet.", elapsed);
       return false;
@@ -6133,26 +6134,62 @@ public class FocusProcessorForLogicalNavigation {
    * {@link #handleViewAutoScrolledForDirectionalNavigationWithDefaultTarget} does. Falls back to
    * {@link #findFocusAfterInvalidPivot} -- the first/last focusable in {@code scrolledNode}'s
    * subtree -- when {@code pivot} is outright invalid, or was itself at the relevant edge of
-   * what the tree currently has.
+   * what the tree currently has. Used while a scroll is moving: returns null for a known
+   * incomplete order or an empty indexed item, so the existing watcher can try again. {@code
+   * items} are the scrolled container's children already read by that watcher.
    */
-  private static @Nullable AccessibilityNodeInfoCompat searchFocusRecoveringMissingPivot(
+  @VisibleForTesting
+  static @Nullable AccessibilityNodeInfoCompat searchFocusRecoveringMissingPivot(
       TraversalStrategy strategy,
       AccessibilityNodeInfoCompat scrolledNode,
       AccessibilityNodeInfoCompat pivot,
       @SearchDirection int direction,
       Filter<AccessibilityNodeInfoCompat> nodeFilter,
-      boolean rtl) {
-    if (!pivot.refresh() || !AccessibilityNodeInfoUtils.isVisible(pivot)) {
-      return findFocusAfterInvalidPivot(strategy, scrolledNode, direction, nodeFilter);
+      boolean rtl,
+      List<AccessibilityNodeInfoCompat> items) {
+    // An unread child can be the adjacent item. The existing scroll watcher will try again.
+    if (strategy instanceof OrderedTraversalStrategy ordered && ordered.missesChildren()) {
+      LogUtils.d(TAG, "Early scroll order missed children; waiting for a complete order.");
+      return null;
     }
-    if (isMissingFromListOrder(strategy, scrolledNode, pivot)) {
+    Set<AccessibilityNodeInfoCompat> emptyItems = new HashSet<>();
+    if (scrolledNode.getCollectionInfo() == null
+        && AccessibilityNodeInfoUtils.supportsAction(
+            scrolledNode, AccessibilityActionCompat.ACTION_SCROLL_TO_POSITION.getId())) {
+      Filter<AccessibilityNodeInfoCompat> focusable = nodeFilter;
+      nodeFilter =
+          Filter.node(
+              node -> {
+                if (focusable.accept(node)) {
+                  return true;
+                }
+                // An indexed item may appear before the icon inside it is attached.
+                if (node.getChildCount() == 0 && items.contains(node)) {
+                  emptyItems.add(node);
+                  return true;
+                }
+                return false;
+              });
+    }
+    AccessibilityNodeInfoCompat next;
+    if (!pivot.refresh() || !AccessibilityNodeInfoUtils.isVisible(pivot)) {
+      next = findFocusAfterInvalidPivot(strategy, scrolledNode, direction, nodeFilter);
+    } else if (isMissingFromListOrder(strategy, scrolledNode, pivot)) {
       AccessibilityNodeInfoCompat nearest =
           findNodeNearPivotPlace((OrderedTraversalStrategy) strategy, pivot, direction, rtl);
-      return (nearest != null)
-          ? TraversalStrategyUtils.searchFocus(strategy, nearest, direction, nodeFilter)
-          : findFocusAfterInvalidPivot(strategy, scrolledNode, direction, nodeFilter);
+      next =
+          (nearest != null)
+              ? TraversalStrategyUtils.searchFocus(strategy, nearest, direction, nodeFilter)
+              : findFocusAfterInvalidPivot(strategy, scrolledNode, direction, nodeFilter);
+    } else {
+      next = TraversalStrategyUtils.searchFocus(strategy, pivot, direction, nodeFilter);
     }
-    return TraversalStrategyUtils.searchFocus(strategy, pivot, direction, nodeFilter);
+    if (emptyItems.contains(next)) {
+      LogUtils.d(
+          TAG, "Adjacent indexed item %d is empty; waiting for its content.", next.hashCode());
+      return null;
+    }
+    return next;
   }
 
   /**

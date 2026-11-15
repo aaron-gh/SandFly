@@ -19,6 +19,7 @@ package com.google.android.accessibility.talkback.focusmanagement
 import android.graphics.Rect
 import android.view.accessibility.AccessibilityNodeInfo
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat.AccessibilityActionCompat
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test
@@ -99,6 +100,21 @@ class OffscreenNothingAheadTest {
     val scroll = scrollView().add(Node("android.view.View"), text)
     assertTrue(OffscreenContent.hasNothingAhead(scroll, text, /* forward= */ true))
     assertTrue(OffscreenContent.hasNothingAhead(scroll, text, /* forward= */ false))
+  }
+
+  @Test
+  fun indexedScrollView_keepsScrollingAtBothEdgesOfTheLoadedItems() {
+    val first = Node("android.widget.Button").apply { text = "First loaded item" }
+    val last = Node("android.widget.Button").apply { text = "Last loaded item" }
+    val scroll =
+      scrollView().add(first, last).apply {
+        addAction(AccessibilityActionCompat.ACTION_SCROLL_TO_POSITION)
+      }
+
+    // A collection can report a ScrollView role without CollectionInfo and load more items later.
+    assertTrue(OffscreenContent.keepsAllContent(scroll))
+    assertFalse(OffscreenContent.hasNothingAhead(scroll, last, /* forward= */ true))
+    assertFalse(OffscreenContent.hasNothingAhead(scroll, first, /* forward= */ false))
   }
 
   @Test
