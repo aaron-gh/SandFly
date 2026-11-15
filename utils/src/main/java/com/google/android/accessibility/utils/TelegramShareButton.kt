@@ -21,32 +21,38 @@ import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 /**
  * The button beside a Telegram message, Share in channels, or Go to message where Telegram opens
  * the original chat instead. Telegram and its forks expose it as an image button child of the
- * message, so every message in a channel took two swipes. It isn't focused on its own; the
- * message's actions have it, under the label Telegram gives it.
+ * message, so every message in a channel took two swipes. Such buttons aren't focused on their
+ * own; the message's actions have each of them, under the label Telegram gives it.
  */
 object TelegramShareButton {
   private const val IMAGE_BUTTON = "android.widget.ImageButton"
-  private const val MAX_CHILDREN = 50
 
-  /** Whether [node] is the share button of a message. */
+  /**
+   * Whether [node] is a share button of a message. Every such child of a message is hidden, and
+   * each is an action of the message, so none is out of reach.
+   */
   @JvmStatic
   fun isShareButton(node: AccessibilityNodeInfoCompat): Boolean =
     looksLikeShareButton(node) && node.parent?.let { TelegramReplyQuote.isMessage(it) } == true
 
-  /** The share button among [message]'s children, or null when it has none. */
+  /** The share buttons among [message]'s children, in order; empty when it has none. */
   @JvmStatic
-  fun shareButtonOf(message: AccessibilityNodeInfoCompat): AccessibilityNodeInfoCompat? {
+  fun shareButtonsOf(message: AccessibilityNodeInfoCompat): List<AccessibilityNodeInfoCompat> {
     if (!TelegramReplyQuote.isTelegram(message.packageName) ||
       !TelegramReplyQuote.isMessage(message)
     ) {
-      return null
+      return emptyList()
     }
-    for (i in 0 until minOf(message.childCount, MAX_CHILDREN)) {
-      val child = message.getChild(i) ?: continue
-      if (looksLikeShareButton(child)) return child
-    }
-    return null
+    // All children, with no limit, so that every button hidden by isShareButton is offered, even
+    // after the many links of a long message.
+    return shareButtonsAmong((0 until message.childCount).map(message::getChild))
   }
+
+  /** The children in [children] that are share buttons, in order. */
+  @JvmStatic
+  fun shareButtonsAmong(
+    children: List<AccessibilityNodeInfoCompat?>
+  ): List<AccessibilityNodeInfoCompat> = children.filterNotNull().filter(::looksLikeShareButton)
 
   private fun looksLikeShareButton(node: AccessibilityNodeInfoCompat): Boolean =
     looksLikeShareButton(node.packageName, node.className, node.contentDescription, node.isClickable)
