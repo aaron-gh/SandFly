@@ -43,6 +43,7 @@ class OneUiVolumeKeys(
   private val onVolumeAdjusted: () -> Unit,
 ) {
   private val audioManager = context.getSystemService(AudioManager::class.java)
+  private val volume = VolumeKeyVolume(context)
   private val handler = Handler(Looper.getMainLooper())
   private val keptKeys = mutableSetOf<Int>()
   private var started = false
@@ -97,12 +98,7 @@ class OneUiVolumeKeys(
           }
         }
         if (event.keyCode !in keptKeys) return false
-        VolumeKeyCommands.adjustSuggestedVolume(
-          audioManager,
-          event.keyCode,
-          repeated,
-          suggestedStream(),
-        )
+        volume.adjust(event.keyCode, repeated, suggestedStream(), showUi = true)
         onVolumeAdjusted()
         true
       }

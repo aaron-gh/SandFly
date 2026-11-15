@@ -33,8 +33,9 @@ import com.google.android.accessibility.utils.monitor.ScreenMonitor
 import com.google.android.accessibility.utils.output.FailoverTextToSpeech
 
 /**
- * Volume keys > Volume up/down double press, triple press and long press: runs their commands, and
- * changes the volume itself for presses that are kept from Android but run no command.
+ * Volume keys > Volume up/down press, double press, triple press and long press: runs their
+ * commands, and changes the volume itself for presses that are kept from Android but run no
+ * command. The single press commands apply only with SandFly handles every volume key press.
  */
 class VolumeKeyCommands(
   private val context: Context,
@@ -45,6 +46,7 @@ class VolumeKeyCommands(
   private val suggestedStream: () -> Int,
 ) {
   private val audioManager = context.getSystemService(AudioManager::class.java)
+  private val volume = VolumeKeyVolume(context)
   private val powerManager = context.getSystemService(PowerManager::class.java)
   private val handler = Handler(Looper.getMainLooper())
 
@@ -74,13 +76,7 @@ class VolumeKeyCommands(
         override fun perform(command: String) = perform(command)
 
         override fun adjustVolume(keyCode: Int, repeated: Boolean) {
-          adjustSuggestedVolume(
-            audioManager,
-            keyCode,
-            repeated,
-            suggestedStream(),
-            showUi = !hidesVolumePanel,
-          )
+          volume.adjust(keyCode, repeated, suggestedStream(), showUi = !hidesVolumePanel)
           onVolumeAdjusted()
         }
 
@@ -111,11 +107,13 @@ class VolumeKeyCommands(
         double = command(R.string.pref_volume_up_double_press_key),
         triple = command(R.string.pref_volume_up_triple_press_key),
         long = command(R.string.pref_volume_up_long_press_key),
+        single = if (takesAllPresses) command(R.string.pref_volume_up_press_key) else null,
       ),
       VolumeKeyPresses.KeyCommands(
         double = command(R.string.pref_volume_down_double_press_key),
         triple = command(R.string.pref_volume_down_triple_press_key),
         long = command(R.string.pref_volume_down_long_press_key),
+        single = if (takesAllPresses) command(R.string.pref_volume_down_press_key) else null,
       ),
       VolumeKeyPresses.Timeouts(
         multiPress = ViewConfiguration.getDoubleTapTimeout().toLong(),
@@ -187,7 +185,7 @@ class VolumeKeyCommands(
     Log.i(TAG, "Volume key presses off for ${KeyEvent.keyCodeToString(keyCode)}: $reason")
   }
 
-  /** Whether a double, triple or long press of [keyCode] has [command]. */
+  /** Whether a single, double, triple or long press of [keyCode] has [command]. */
   fun hasCommand(keyCode: Int, command: String): Boolean = presses.hasCommand(keyCode, command)
 
   /** Forgets the presses so far, such as when another feature took the volume keys. */
@@ -261,40 +259,6 @@ class VolumeKeyCommands(
         hidesPanel -> VolumeKeyPresses.OtherPresses.VOLUME
         else -> VolumeKeyPresses.OtherPresses.ANDROID
       }
-
-    /**
-     * Changes the volume as Android does for the key, starting from [stream]: with
-     * [AudioManager.USE_DEFAULT_STREAM_TYPE], the stream of the call, the media playing or the
-     * ringer, as Android chooses. Android's volume panel shows only with [showUi].
-     */
-    fun adjustSuggestedVolume(
-      audioManager: AudioManager?,
-      keyCode: Int,
-      repeated: Boolean,
-      stream: Int,
-      showUi: Boolean = true,
-    ) {
-      val direction =
-        if (keyCode == KeyEvent.KEYCODE_VOLUME_UP) {
-          AudioManager.ADJUST_RAISE
-        } else {
-          AudioManager.ADJUST_LOWER
-        }
-      audioManager?.adjustSuggestedStreamVolume(direction, stream, volumeFlags(repeated, showUi))
-    }
-
-    /** The flags of a volume change for a key press, [repeated] while the key is held. */
-    @JvmStatic
-    internal fun volumeFlags(repeated: Boolean, showUi: Boolean): Int {
-      var flags = AudioManager.FLAG_VIBRATE
-      if (showUi) {
-        flags = flags or AudioManager.FLAG_SHOW_UI
-      }
-      if (!repeated) {
-        flags = flags or AudioManager.FLAG_PLAY_SOUND
-      }
-      return flags
-    }
 
     /**
      * Whether the audio [usages] playing and the audio [mode] make up an app call: audio with the
