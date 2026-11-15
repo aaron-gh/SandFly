@@ -401,6 +401,18 @@
         <item>window_opens</item>
         <item>never</item>
     </string-array>
+    <!-- Battery when the screen turns on. The values of ScreenAnnouncementSettings' BATTERY_
+         constants. -->
+    <string-array name="pref_screen_on_battery_entries">
+        <item>@string/screen_on_battery_off</item>
+        <item>@string/screen_on_battery_always</item>
+        <item>@string/screen_on_battery_while_charging</item>
+    </string-array>
+    <string-array name="pref_screen_on_battery_values" translatable="false">
+        <item>off</item>
+        <item>always</item>
+        <item>while_charging</item>
+    </string-array>
     <string name="pref_selector_tablet_held_up_faces_away_key" translatable="false">pref_selector_tablet_held_up_faces_away_key</string>
     <string name="pref_selector_live_recognition_key" translatable="false">pref_selector_live_recognition_key</string>
     <string name="pref_selector_ai_actions_key" translatable="false">pref_selector_ai_actions_key</string>

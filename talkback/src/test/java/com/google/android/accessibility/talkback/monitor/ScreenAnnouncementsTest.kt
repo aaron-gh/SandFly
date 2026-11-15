@@ -61,7 +61,10 @@ class ScreenAnnouncementsTest {
         ScreenAnnouncementSettings.SCREEN_ON_NOTIFICATION_COUNT,
       )
     )
-    assertEquals(emptyList<StatusItem>(), ScreenAnnouncementSettings.screenOnStatusItems(prefs))
+    assertEquals(
+      emptyList<StatusItem>(),
+      ScreenAnnouncementSettings.screenOnStatusItems(prefs, /* charging= */ true),
+    )
   }
 
   @Test
@@ -77,11 +80,115 @@ class ScreenAnnouncementsTest {
     prefs
       .edit()
       .putBoolean("pref_screen_on_wifi", true)
-      .putBoolean("pref_screen_on_battery", true)
+      .putString(
+        ScreenAnnouncementSettings.SCREEN_ON_BATTERY,
+        ScreenAnnouncementSettings.BATTERY_ALWAYS,
+      )
       .apply()
     assertEquals(
       listOf(StatusItem.BATTERY, StatusItem.WIFI),
-      ScreenAnnouncementSettings.screenOnStatusItems(prefs),
+      ScreenAnnouncementSettings.screenOnStatusItems(prefs, /* charging= */ false),
+    )
+  }
+
+  @Test
+  fun theBatteryOnlyWhileChargingIsSaidOnlyWhileCharging() {
+    val prefs = FakeSharedPreferences()
+    prefs
+      .edit()
+      .putString(
+        ScreenAnnouncementSettings.SCREEN_ON_BATTERY,
+        ScreenAnnouncementSettings.BATTERY_WHILE_CHARGING,
+      )
+      .apply()
+    assertEquals(
+      listOf(StatusItem.BATTERY),
+      ScreenAnnouncementSettings.screenOnStatusItems(prefs, /* charging= */ true),
+    )
+    assertEquals(
+      emptyList<StatusItem>(),
+      ScreenAnnouncementSettings.screenOnStatusItems(prefs, /* charging= */ false),
+    )
+  }
+
+  @Test
+  fun theBatteryOffIsNeverSaid() {
+    val prefs = FakeSharedPreferences()
+    prefs
+      .edit()
+      .putString(
+        ScreenAnnouncementSettings.SCREEN_ON_BATTERY,
+        ScreenAnnouncementSettings.BATTERY_OFF,
+      )
+      .putBoolean(ScreenAnnouncementSettings.OLD_SCREEN_ON_BATTERY, true)
+      .apply()
+    assertEquals(
+      emptyList<StatusItem>(),
+      ScreenAnnouncementSettings.screenOnStatusItems(prefs, /* charging= */ true),
+    )
+  }
+
+  @Test
+  fun theOldBatterySwitchOnBecomesAlways() {
+    val prefs = FakeSharedPreferences()
+    prefs.edit().putBoolean(ScreenAnnouncementSettings.OLD_SCREEN_ON_BATTERY, true).apply()
+    // Read before the migration, as after importing old settings.
+    assertEquals(
+      ScreenAnnouncementSettings.BATTERY_ALWAYS,
+      ScreenAnnouncementSettings.screenOnBattery(prefs),
+    )
+    ScreenAnnouncementSettings.migrateBattery(prefs)
+    assertEquals(
+      ScreenAnnouncementSettings.BATTERY_ALWAYS,
+      prefs.getString(ScreenAnnouncementSettings.SCREEN_ON_BATTERY, null),
+    )
+  }
+
+  @Test
+  fun theOldBatterySwitchOffBecomesOff() {
+    val prefs = FakeSharedPreferences()
+    prefs.edit().putBoolean(ScreenAnnouncementSettings.OLD_SCREEN_ON_BATTERY, false).apply()
+    ScreenAnnouncementSettings.migrateBattery(prefs)
+    assertEquals(
+      ScreenAnnouncementSettings.BATTERY_OFF,
+      prefs.getString(ScreenAnnouncementSettings.SCREEN_ON_BATTERY, null),
+    )
+  }
+
+  @Test
+  fun theMigrationKeepsAChosenBatteryValueAndSkipsNewInstalls() {
+    val prefs = FakeSharedPreferences()
+    ScreenAnnouncementSettings.migrateBattery(prefs)
+    assertFalse(prefs.contains(ScreenAnnouncementSettings.SCREEN_ON_BATTERY))
+    prefs
+      .edit()
+      .putBoolean(ScreenAnnouncementSettings.OLD_SCREEN_ON_BATTERY, true)
+      .putString(
+        ScreenAnnouncementSettings.SCREEN_ON_BATTERY,
+        ScreenAnnouncementSettings.BATTERY_WHILE_CHARGING,
+      )
+      .apply()
+    ScreenAnnouncementSettings.migrateBattery(prefs)
+    assertEquals(
+      ScreenAnnouncementSettings.BATTERY_WHILE_CHARGING,
+      prefs.getString(ScreenAnnouncementSettings.SCREEN_ON_BATTERY, null),
+    )
+  }
+
+  @Test
+  fun theBatteryListOnScreenMatchesTheValues() {
+    val screen = File("src/main/res/xml/screen_announcement_preferences.xml")
+    val lists =
+      DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(screen).getElementsByTagName(
+        "com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference"
+      )
+    val battery =
+      (0 until lists.length)
+        .map { lists.item(it) as Element }
+        .single { it.getAttribute("android:key") == ScreenAnnouncementSettings.SCREEN_ON_BATTERY }
+    assertEquals(
+      ScreenAnnouncementSettings.BATTERY_OFF,
+      battery.getAttribute("android:defaultValue"),
     )
   }
 

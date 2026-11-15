@@ -36,13 +36,24 @@ object ScreenAnnouncementSettings {
   const val SCREEN_ON_NOTIFICATION_COUNT = "pref_screen_on_notification_count"
 
   /**
-   * The status items that can be spoken after the time as the screen turns on, in the order they
-   * are spoken, with their switches. They are separate from the status gesture's, so that each can
-   * say different things. The time has its own older switch.
+   * When the battery is spoken first after the time as the screen turns on: [BATTERY_OFF],
+   * [BATTERY_ALWAYS] or [BATTERY_WHILE_CHARGING]. It replaced the on/off switch
+   * [OLD_SCREEN_ON_BATTERY], whose on is [BATTERY_ALWAYS].
+   */
+  const val SCREEN_ON_BATTERY = "pref_screen_on_battery_mode"
+  const val OLD_SCREEN_ON_BATTERY = "pref_screen_on_battery"
+  const val BATTERY_OFF = "off"
+  const val BATTERY_ALWAYS = "always"
+  const val BATTERY_WHILE_CHARGING = "while_charging"
+  private val BATTERY_VALUES = setOf(BATTERY_OFF, BATTERY_ALWAYS, BATTERY_WHILE_CHARGING)
+
+  /**
+   * The status items with a switch that can be spoken after the time and the battery as the screen
+   * turns on, in the order they are spoken. They are separate from the status gesture's, so that
+   * each can say different things. The time has its own older switch.
    */
   val SCREEN_ON_STATUS: Map<StatusItem, String> =
     linkedMapOf(
-      StatusItem.BATTERY to "pref_screen_on_battery",
       StatusItem.WIFI to "pref_screen_on_wifi",
       StatusItem.MOBILE to "pref_screen_on_mobile_network",
       StatusItem.RINGER to "pref_screen_on_ringer",
@@ -50,7 +61,7 @@ object ScreenAnnouncementSettings {
     )
 
   /**
-   * Each setting's default, which is what Backtalk said before these settings existed, except the
+   * Each switch's default, which is what Backtalk said before these settings existed, except the
    * number of notifications, which is new and on.
    */
   val DEFAULTS: Map<String, Boolean> =
@@ -66,8 +77,37 @@ object ScreenAnnouncementSettings {
   fun isOn(prefs: SharedPreferences, key: String): Boolean =
     prefs.getBoolean(key, DEFAULTS.getValue(key))
 
-  /** The status items to speak after the time as the screen turns on. */
+  /**
+   * Reads when the battery is spoken, or the old switch's matching value while [migrateBattery]
+   * hasn't run, as after importing settings from before the list.
+   */
   @JvmStatic
-  fun screenOnStatusItems(prefs: SharedPreferences): List<StatusItem> =
-    SCREEN_ON_STATUS.filterValues { isOn(prefs, it) }.keys.toList()
+  fun screenOnBattery(prefs: SharedPreferences): String =
+    prefs.getString(SCREEN_ON_BATTERY, null)?.takeIf { it in BATTERY_VALUES }
+      ?: if (prefs.getBoolean(OLD_SCREEN_ON_BATTERY, false)) BATTERY_ALWAYS else BATTERY_OFF
+
+  /** Gives the battery list the old switch's matching value, unless the list has a value. */
+  @JvmStatic
+  fun migrateBattery(prefs: SharedPreferences) {
+    if (prefs.contains(SCREEN_ON_BATTERY) || !prefs.contains(OLD_SCREEN_ON_BATTERY)) {
+      return
+    }
+    prefs.edit().putString(SCREEN_ON_BATTERY, screenOnBattery(prefs)).apply()
+  }
+
+  /**
+   * The status items to speak after the time as the screen turns on. [charging] is whether the
+   * charger is connected, for [BATTERY_WHILE_CHARGING].
+   */
+  @JvmStatic
+  fun screenOnStatusItems(prefs: SharedPreferences, charging: Boolean): List<StatusItem> {
+    val battery =
+      when (screenOnBattery(prefs)) {
+        BATTERY_ALWAYS -> true
+        BATTERY_WHILE_CHARGING -> charging
+        else -> false
+      }
+    return (if (battery) listOf(StatusItem.BATTERY) else emptyList()) +
+      SCREEN_ON_STATUS.filterValues { isOn(prefs, it) }.keys
+  }
 }
