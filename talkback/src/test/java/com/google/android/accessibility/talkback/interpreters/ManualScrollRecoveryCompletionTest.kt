@@ -8,6 +8,8 @@ import android.view.accessibility.AccessibilityNodeInfo
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import com.google.android.accessibility.talkback.ActorState
 import com.google.android.accessibility.talkback.ActorStateWritable
+import com.google.android.accessibility.talkback.Interpretation
+import com.google.android.accessibility.talkback.focusmanagement.AccessibilityFocusMonitor
 import com.google.android.accessibility.talkback.Pipeline
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.ScreenStateMonitor
 import com.google.android.accessibility.talkback.monitor.InputMethodMonitor
@@ -120,6 +122,85 @@ class ManualScrollRecoveryCompletionTest {
       "pendingManualScroll"))
     ReflectionHelpers.getField<android.os.Handler>(interpreter, "handler")
       .removeCallbacksAndMessages(null)
+  }
+
+  /**
+   * Runs a recovery whose worker read is still outstanding [elapsedMs] after it started, with the
+   * item [edge] across an edge of the view already published by the worker.
+   */
+  private fun runWithOutstandingRead(yieldToInput: Boolean, elapsedMs: Long,
+    published: Boolean = true): Triple<AccessibilityFocusInterpreter, FutureTask<Boolean>,
+      List<AccessibilityNodeInfoCompat?>> {
+    FormFactorUtils.initialize(context)
+    val source = node(false)
+    val focus = AccessibilityNodeInfoCompat.wrap(node(false))
+    val edge = AccessibilityNodeInfoCompat.wrap(node(false))
+    val history = AccessibilityFocusActionHistory(context)
+    val info = FocusActionInfo.builder().setSourceAction(FocusActionInfo.MANUAL_SCROLL).build()
+    ReflectionHelpers.getField<java.util.ArrayDeque<FocusActionRecord>>(history,
+      "focusActionRecordList").add(FocusActionRecord(focus, info, 1))
+    val actorState = ActorState(ActorStateWritable(null, null, null, null, history.reader,
+      null, null, null, null, null, null, null, null, null))
+    val monitor = ReflectionHelpers.callConstructor(ScreenStateMonitor::class.java,
+      ClassParameter.from(android.accessibilityservice.AccessibilityService::class.java, null),
+      ClassParameter.from(InputMethodMonitor::class.java, null))
+    ReflectionHelpers.setField(monitor, "areMainWindowsStable", true)
+    // Focus was lost: nothing to move away from when no item is found.
+    val focusMonitor = object : AccessibilityFocusMonitor(null, null, null) {
+      override fun getAccessibilityFocus(useInputFocusIfEmpty: Boolean): AccessibilityNodeInfoCompat? = null
+    }
+    val interpreter =
+      AccessibilityFocusInterpreter(context, focusMonitor, monitor.state, TouchMonitor(), null)
+    interpreter.setActorState(actorState)
+    val items = mutableListOf<AccessibilityNodeInfoCompat?>()
+    interpreter.setPipeline(Pipeline.InterpretationReceiver { _, _, interpretation, _ ->
+      items.add((interpretation as Interpretation.ManualScroll).webItemInView()); true
+    })
+    val recovery = WebFocusRecovery(focus, null, AccessibilityNodeInfoCompat.wrap(source),
+      true, true, null, false)
+    if (published) ReflectionHelpers.setField(recovery, "publishedPartial", edge)
+    // Never run: the worker's read does not return.
+    val work = FutureTask<Boolean> { true }
+    ReflectionHelpers.setField(interpreter, "webFocusRecovery", recovery)
+    ReflectionHelpers.setField(interpreter, "webFocusRecoveryScroll", scroll(source, 20))
+    ReflectionHelpers.setField(interpreter, "webFocusRecoveryWork", work)
+    ReflectionHelpers.setField(interpreter, "webFocusRecoveryFocusTime", 1L)
+    ReflectionHelpers.setField(interpreter, "webFocusRecoveryStartTime",
+      SystemClock.uptimeMillis() - elapsedMs)
+    ReflectionHelpers.callInstanceMethod<Unit>(interpreter, "runWebFocusRecovery",
+      ClassParameter.from(Boolean::class.javaPrimitiveType, yieldToInput))
+    if (published && items.isNotEmpty()) assertSame(edge, items[0])
+    return Triple(interpreter, work, items)
+  }
+
+  @Test fun aGestureAtTheDeadlineUsesTheEdgeItemFoundWhileAReadIsOutstanding() {
+    val (interpreter, work, items) = runWithOutstandingRead(yieldToInput = false, elapsedMs = 501)
+    assertEquals(1, items.size)
+    assertTrue("The outstanding worker read must be stopped", work.isCancelled)
+    assertNull(ReflectionHelpers.getField(interpreter, "webFocusRecovery"))
+    assertFalse(interpreter.isWebScrollFocusPending)
+  }
+
+  @Test fun aGestureAtTheDeadlineWithoutAnEdgeItemMovesNoFocusToAnItem() {
+    val (interpreter, work, items) =
+      runWithOutstandingRead(yieldToInput = false, elapsedMs = 501, published = false)
+    assertTrue(items.isEmpty())
+    assertTrue(work.isCancelled)
+    assertFalse(interpreter.isWebScrollFocusPending)
+  }
+
+  @Test fun pollingWaitsForAnOutstandingReadOnlyWithinTheGraceTime() {
+    val (waiting, waitingWork, none) = runWithOutstandingRead(yieldToInput = true, elapsedMs = 600)
+    assertTrue(none.isEmpty())
+    assertFalse(waitingWork.isCancelled)
+    assertTrue(waiting.isWebScrollFocusPending)
+    ReflectionHelpers.getField<android.os.Handler>(waiting, "handler")
+      .removeCallbacksAndMessages(null)
+
+    val (expired, work, items) = runWithOutstandingRead(yieldToInput = true, elapsedMs = 651)
+    assertEquals(1, items.size)
+    assertTrue(work.isCancelled)
+    assertFalse(expired.isWebScrollFocusPending)
   }
 
   @Test fun scrollingTheRecoveredCardSidewaysDoesNotRecoverTheSameVerticalScrollAgain() =

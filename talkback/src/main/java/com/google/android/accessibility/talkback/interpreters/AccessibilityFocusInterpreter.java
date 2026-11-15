@@ -419,6 +419,12 @@ public class AccessibilityFocusInterpreter
    */
   private static final long WEB_FOCUS_RECOVERY_TIME_LIMIT_MS = 500;
 
+  /**
+   * How long past {@link #WEB_FOCUS_RECOVERY_TIME_LIMIT_MS} polling waits for a worker read that
+   * was outstanding at the limit, before the item across an edge found so far is used.
+   */
+  private static final long WEB_FOCUS_RECOVERY_GRACE_MS = 150;
+
   /** The search for an item in view after the user scrolled web content, while it runs. */
   private @Nullable WebFocusRecovery webFocusRecovery;
   private @Nullable Future<Boolean> webFocusRecoveryWork;
@@ -572,29 +578,42 @@ public class AccessibilityFocusInterpreter
       cancelWebFocusRecovery();
       return;
     }
+    @WebFocusRecovery.Outcome int outcome;
+    @Nullable AccessibilityNodeInfoCompat item;
     Future<Boolean> work = webFocusRecoveryWork;
     if (work != null) {
-      if (yieldToInput && !work.isDone()) {
-        // The worker stops starting reads at the deadline. As with the serial path, an
-        // already outstanding IPC may finish later and supply the partial item. Keep
-        // polling without blocking input; new focus or another scroll still cancels it.
+      long elapsed = SystemClock.uptimeMillis() - webFocusRecoveryStartTime;
+      if (yieldToInput && !work.isDone()
+          && elapsed < WEB_FOCUS_RECOVERY_TIME_LIMIT_MS + WEB_FOCUS_RECOVERY_GRACE_MS) {
+        // The worker stops starting reads at the deadline. A read outstanding then may still
+        // finish within the grace time. Keep polling without blocking input; new focus or
+        // another scroll still cancels it.
         handler.postDelayed(continueWebFocusRecovery, WEB_FOCUS_RECOVERY_SLICE_MS);
         return;
       }
       try {
         // A gesture must start from the item in view. Waiting here uses only what is left
         // of this recovery's original deadline; it never starts a second time budget.
-        long left = Math.max(0, WEB_FOCUS_RECOVERY_TIME_LIMIT_MS
-            - (SystemClock.uptimeMillis() - webFocusRecoveryStartTime));
+        long left = Math.max(0, WEB_FOCUS_RECOVERY_TIME_LIMIT_MS - elapsed);
         if (!work.get(left, TimeUnit.MILLISECONDS)) {
           cancelWebFocusRecovery();
           return;
         }
+        outcome = recovery.outcome();
+        item = recovery.item();
+      } catch (TimeoutException e) {
+        // A read is still outstanding at the time limit. As the serial search does at its limit,
+        // use the item across an edge of the view found so far, and stop the worker.
+        item = recovery.publishedPartial();
+        outcome = (item != null) ? WebFocusRecovery.FOUND : WebFocusRecovery.NOTHING_IN_VIEW;
+        LogUtils.w(TAG, "Stopped the search for a web item in view with a read outstanding");
+        recovery.cancelBackground();
+        ConcurrentNodeQueries.cancel(work);
       } catch (InterruptedException e) {
         Thread.currentThread().interrupt();
         cancelWebFocusRecovery();
         return;
-      } catch (ExecutionException | CancellationException | TimeoutException e) {
+      } catch (ExecutionException | CancellationException e) {
         LogUtils.w(TAG, "Web scroll recovery did not finish: %s", e);
         cancelWebFocusRecovery();
         return;
@@ -614,6 +633,8 @@ public class AccessibilityFocusInterpreter
           return;
         }
       }
+      outcome = recovery.outcome();
+      item = recovery.item();
     }
     webFocusRecoveryWork = null;
     webFocusRecovery = null;
@@ -622,7 +643,7 @@ public class AccessibilityFocusInterpreter
         || lastFocusActionTime() != webFocusRecoveryFocusTime) {
       return;
     }
-    switch (recovery.outcome()) {
+    switch (outcome) {
       case WebFocusRecovery.FOUND -> {
         boolean focused = pipelineInterpretations.input(
               interpretation.eventId(),
@@ -630,7 +651,7 @@ public class AccessibilityFocusInterpreter
               ManualScroll.builder()
                   .setDirection(interpretation.direction())
                   .setScreenState(screenState.getStableScreenState())
-                  .setWebItemInView(recovery.item())
+                  .setWebItemInView(item)
                   .build());
         if (focused && webScroll == interpretation) {
           // Focusing the item may make its carousel scroll it sideways into view. That is

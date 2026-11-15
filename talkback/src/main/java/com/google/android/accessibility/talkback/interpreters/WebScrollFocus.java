@@ -343,6 +343,11 @@ final class WebScrollFocus {
       return result;
     }
 
+    /** The first item found so far that lies across an edge of the viewport, or null. */
+    @Nullable AccessibilityNodeInfoCompat partial() {
+      return partial;
+    }
+
     /** Ends the search, with an item across an edge of the viewport if one was found. */
     void stop() {
       finish(partial);

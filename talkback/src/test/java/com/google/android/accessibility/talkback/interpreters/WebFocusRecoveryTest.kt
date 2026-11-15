@@ -146,6 +146,7 @@ class WebFocusRecoveryTest {
     var parentNode: Node? = null
     var parentReads = 0
     var beforeParentRead: (() -> Unit)? = null
+    var beforeChildRead: ((Int) -> Unit)? = null
 
     init {
       setBoundsInScreen(bounds)
@@ -168,6 +169,7 @@ class WebFocusRecoveryTest {
     override fun getChildCount() = nodes.size
 
     override fun getChild(index: Int): AccessibilityNodeInfoCompat {
+      beforeChildRead?.invoke(index)
       reads++
       return nodes[index]
     }
@@ -253,6 +255,35 @@ class WebFocusRecoveryTest {
       assertFalse(work.get(2, TimeUnit.SECONDS))
       assertNull(recovery.item())
       assertEquals(1, reads)
+    } finally { release.countDown(); executor.shutdownNow() }
+  }
+
+  @Test
+  fun aBackgroundSearchPublishesTheEdgeItemBeforeItsNextRead() {
+    val executor = Executors.newSingleThreadExecutor()
+    val entered = CountDownLatch(1)
+    val release = CountDownLatch(1)
+    try {
+      val focus = above("Old item")
+      val edge = item(50, 300, "Edge item")
+      val document = Node(viewport, null, true, true, focus, edge, item(500, 700, "Visible item"))
+      document.beforeChildRead = { index ->
+        if (index == 2) { entered.countDown(); release.await(2, TimeUnit.SECONDS) }
+      }
+      inApp(document)
+      val recovery = WebFocusRecovery(focus, null, document, true, true, null, false)
+      assertNull(recovery.publishedPartial())
+      val work = recovery.startInBackground(SystemClock.uptimeMillis() + 500) { read ->
+        executor.submit<Boolean> { read.get() }
+      }!!
+      assertTrue(entered.await(2, TimeUnit.SECONDS))
+      // The read of the next item is outstanding; the edge item is already available.
+      val published = recovery.publishedPartial()!!
+      assertEquals("Edge item", published.text.toString())
+      assertNotSame("The main thread gets its own copy", edge, published)
+      recovery.cancelBackground()
+      release.countDown()
+      assertFalse(work.get(2, TimeUnit.SECONDS))
     } finally { release.countDown(); executor.shutdownNow() }
   }
 

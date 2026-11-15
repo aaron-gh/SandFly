@@ -129,6 +129,26 @@ final class WebFocusRecovery {
   private final AtomicBoolean backgroundCancelled = new AtomicBoolean();
   private long readDeadline = Long.MAX_VALUE;
 
+  /** A copy of the item across an edge of the view found so far by the worker. */
+  private volatile @Nullable AccessibilityNodeInfoCompat publishedPartial;
+  private @Nullable AccessibilityNodeInfoCompat publishedSource;
+
+  /**
+   * The item across an edge of the view that the worker found so far, or null. The main thread
+   * uses it when a read is still outstanding at the time limit.
+   */
+  @Nullable AccessibilityNodeInfoCompat publishedPartial() {
+    return publishedPartial;
+  }
+
+  private void publishPartial() {
+    AccessibilityNodeInfoCompat partial = (search == null) ? null : search.partial();
+    if (partial != null && partial != publishedSource) {
+      publishedSource = partial;
+      publishedPartial = AccessibilityNodeInfoCompat.obtain(partial);
+    }
+  }
+
   /** Only node reads run on a worker; the caller still validates and applies the result. */
   @Nullable Future<Boolean> startInBackground(long deadline) {
     AccessibilityNodeInfoCompat anchor = focus != null ? focus
@@ -148,7 +168,9 @@ final class WebFocusRecovery {
       if (backgroundCancelled.get() || Thread.currentThread().isInterrupted()) return false;
       while (!backgroundCancelled.get() && !Thread.currentThread().isInterrupted()
           && SystemClock.uptimeMillis() < deadline) {
-        if (step()) return !backgroundCancelled.get() && !Thread.currentThread().isInterrupted();
+        boolean ended = step();
+        publishPartial();
+        if (ended) return !backgroundCancelled.get() && !Thread.currentThread().isInterrupted();
       }
       if (backgroundCancelled.get() || Thread.currentThread().isInterrupted()) return false;
       LogUtils.w("WebFocusRecovery", "Stopped the search for a web item in view at its time limit");
