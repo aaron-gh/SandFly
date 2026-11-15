@@ -39,6 +39,7 @@ import com.google.android.accessibility.talkback.TouchInteractionMonitor;
 import com.google.android.accessibility.talkback.actor.helper.FocusActorHelper;
 import com.google.android.accessibility.talkback.focusmanagement.AccessibilityFocusMonitor;
 import com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForScreenStateChange;
+import com.google.android.accessibility.talkback.focusmanagement.SheetsGrid;
 import com.google.android.accessibility.talkback.focusmanagement.TraversalTreeCache;
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.ScreenState;
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.ScreenStateMonitor;
@@ -192,6 +193,7 @@ public class FocusManagerInternal {
       boolean forceRefocusIfAlreadyFocused,
       @NonNull FocusActionInfo focusActionInfo,
       @Nullable EventId eventId) {
+    SheetsGrid.onFocusAction(focusActionInfo.sourceAction);
     if (isAccessibilityFocused(node)) {
       // The isAccessibilityFocused() method for a node inside a WebView sometimes does not work
       // correctly, so always clearing a11y focus then performing an a11y focused action on the node
