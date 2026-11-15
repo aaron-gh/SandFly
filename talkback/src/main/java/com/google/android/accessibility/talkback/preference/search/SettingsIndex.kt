@@ -156,7 +156,12 @@ object SettingsIndex {
    * unless the returned [Runnable] runs first, which stops the build.
    */
   @JvmStatic
-  fun buildInBackground(context: Context, onBuilt: (List<Entry>) -> Unit): Runnable {
+  @JvmOverloads
+  fun buildInBackground(
+    context: Context,
+    includeHidden: Boolean = false,
+    onBuilt: (List<Entry>) -> Unit,
+  ): Runnable {
     // Read and written on the main thread only.
     var stopped = false
     val future =
@@ -164,7 +169,7 @@ object SettingsIndex {
         Runnable {
           val entries =
             try {
-              build(context)
+              build(context, includeHidden)
             } catch (e: InterruptedException) {
               return@Runnable
             } catch (e: Throwable) {
@@ -188,12 +193,15 @@ object SettingsIndex {
    * Returns the settings of every screen, in the order of the screens from the main one. [context]
    * is a settings screen's, with its theme. Off the main thread, the screens' fragments are created
    * on the main thread, and an interrupt stops the build with [InterruptedException].
+   * [includeHidden] adds the settings that the screens hide now or on this device, and those that
+   * can't be selected.
    */
   // The PreferenceManager constructor and inflateFromResource are what settings screens read their
   // XML with; they are restricted only to their library group.
   @SuppressLint("RestrictedApi")
   @JvmStatic
-  fun build(context: Context): List<Entry> {
+  @JvmOverloads
+  fun build(context: Context, includeHidden: Boolean = false): List<Entry> {
     val manager = PreferenceManager(context)
     manager.preferenceDataStore = NoStorage(SharedPreferencesUtils.getSharedPreferences(context))
     val entries = mutableListOf<Entry>()
@@ -230,7 +238,10 @@ object SettingsIndex {
       fun add(group: PreferenceGroup, path: List<String>) {
         for (i in 0 until group.preferenceCount) {
           val preference = group.getPreference(i)
-          if (!preference.isVisible || preference.key in unavailable || hiddenOption(preference)) {
+          if (
+            !includeHidden &&
+              (!preference.isVisible || preference.key in unavailable || hiddenOption(preference))
+          ) {
             continue
           }
           val title = textOf(preference.title)
@@ -238,7 +249,7 @@ object SettingsIndex {
             add(preference, if (title == null) path else path + title)
             continue
           }
-          if (title == null || !preference.isSelectable) {
+          if (title == null || (!includeHidden && !preference.isSelectable)) {
             continue
           }
           entries +=

@@ -42,8 +42,11 @@ class SettingsProfileFragment : NotificationCodeFragment(R.string.title_pref_set
   /** The settings the profile sets, once read. */
   private var profileSettings: Map<String, Any?>? = null
 
-  /** The title and the path of each setting by its key, once the settings screens are read. */
-  private var titles: Map<String, Pair<String, String>> = emptyMap()
+  /**
+   * The title of each setting by its key, and the titles of the screens that lead to it, once the
+   * settings screens are read.
+   */
+  private var titles: Map<String, Pair<String, List<String>>> = emptyMap()
 
   private var stopIndex: Runnable? = null
 
@@ -53,11 +56,14 @@ class SettingsProfileFragment : NotificationCodeFragment(R.string.title_pref_set
   override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
     super.onCreatePreferences(savedInstanceState, rootKey)
     stopIndex =
-      SettingsIndex.buildInBackground(requireContext()) { entries ->
-        titles =
-          entries
-            .filter { it.key != null }
-            .associate { it.key!! to (it.title to SettingsSearch.path(it.path)) }
+      // A profile can set settings that the screens hide now, or on this device.
+      SettingsIndex.buildInBackground(requireContext(), includeHidden = true) { entries ->
+        val byKey = mutableMapOf<String, Pair<String, List<String>>>()
+        for (entry in entries) {
+          val key = entry.key ?: continue
+          byKey.putIfAbsent(key, entry.title to entry.path)
+        }
+        titles = byKey
         if (isAdded) rebuild()
       }
   }
@@ -137,8 +143,10 @@ class SettingsProfileFragment : NotificationCodeFragment(R.string.title_pref_set
       }
       val shown =
         settings.keys.map { key ->
-          val (title, path) = titles[SettingsBackup.keyOf(key)] ?: (SettingsBackup.keyOf(key) to null)
-          Triple(key, title, path)
+          val name = SettingsBackup.keyOf(key)
+          val found = titles[name] ?: CodeSettingTitles.of(context, name, titles)
+          val (title, path) = found ?: (name to emptyList())
+          Triple(key, title, path.takeIf { it.isNotEmpty() }?.let { SettingsSearch.path(it) })
         }
       for ((key, title, path) in shown.sortedBy { it.second.lowercase() }) {
         list.action(title, path) {

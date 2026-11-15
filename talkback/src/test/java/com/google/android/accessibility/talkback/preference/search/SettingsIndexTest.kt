@@ -222,6 +222,17 @@ class SettingsIndexTest {
     assertTrue(TranslationFragment.KEY_SWAP in keys)
   }
 
+  @Test
+  fun hiddenSettingsAreFoundWhenAskedFor() {
+    val option = context.getString(R.string.pref_text_entities_key)
+    val survey = context.getString(R.string.pref_survey_setting_entry_point_key)
+    assertFalse(option in keys())
+    assertFalse(survey in keys())
+    val all = SettingsIndex.build(context, includeHidden = true).mapNotNull { it.key }.toSet()
+    assertTrue(option in all)
+    assertTrue(survey in all)
+  }
+
   private fun keys(): Set<String> = SettingsIndex.build(context).mapNotNull { it.key }.toSet()
 
   /** Returns [keys] as found while the device reports Android 9. */
