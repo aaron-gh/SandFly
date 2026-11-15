@@ -16,6 +16,7 @@
 
 package com.google.android.accessibility.talkback.backup
 
+import android.content.ComponentName
 import android.content.Context
 import android.content.SharedPreferences
 import androidx.annotation.PluralsRes
@@ -275,6 +276,7 @@ object ItemFiles {
           .put("web", triggers.web)
           .put("reading", triggers.reading)
           .put("editing", triggers.editing)
+          .put("keyboards", JSONArray(triggers.keyboards.sorted()))
           .put("settings", values)
       )
     }
@@ -796,12 +798,21 @@ object ItemFiles {
         val apps = item.optJSONArray("apps")?.let { array ->
           (0 until array.length()).mapNotNull { i -> array.optString(i).trim().takeIf { PACKAGE.matches(it) } }.toSet()
         }.orEmpty()
+        // Input method IDs: a package name, "/" and a class name.
+        val keyboards = item.optJSONArray("keyboards")?.let { array ->
+          (0 until array.length()).mapNotNull { i ->
+            ComponentName.unflattenFromString(array.optString(i).trim())
+              ?.takeIf { PACKAGE.matches(it.packageName) }
+              ?.flattenToShortString()
+          }.toSet()
+        }.orEmpty()
         val triggers =
           SettingsProfileStore.Triggers(
             apps,
             item.optBoolean("web", false),
             item.optBoolean("reading", false),
             item.optBoolean("editing", false),
+            keyboards,
           )
         if (SettingsProfiles.importProfile(context, name, triggers, settings)) {
           count++

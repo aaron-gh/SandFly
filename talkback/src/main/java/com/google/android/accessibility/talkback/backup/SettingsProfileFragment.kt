@@ -18,6 +18,7 @@ package com.google.android.accessibility.talkback.backup
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.inputmethod.InputMethodManager
 import androidx.preference.PreferenceGroup
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.notifications.NotificationCodeFragment
@@ -27,8 +28,9 @@ import com.google.android.accessibility.talkback.preference.search.SettingsIndex
 import com.google.android.accessibility.talkback.preference.search.SettingsSearch
 
 /**
- * One settings profile: Use now or Stop using, Change settings, when it is used automatically, the
- * settings it sets, and Rename, Move up, Move down and Delete.
+ * One settings profile: Use now or Stop using, Change settings, when it is used automatically, in
+ * which apps and with which keyboards, the settings it sets, and Rename, Move up, Move down and
+ * Delete.
  */
 class SettingsProfileFragment : NotificationCodeFragment(R.string.title_pref_settings_profiles) {
 
@@ -126,6 +128,8 @@ class SettingsProfileFragment : NotificationCodeFragment(R.string.title_pref_set
       }
     }
 
+    keyboards(screen, profile)
+
     val list = screen.category(R.string.settings_profile_settings)
     profileSettings?.let { settings ->
       if (settings.isEmpty()) {
@@ -165,6 +169,40 @@ class SettingsProfileFragment : NotificationCodeFragment(R.string.title_pref_set
       }
     }
     screen.action(getString(R.string.voice_profile_delete)) { delete(profile) }
+  }
+
+  /** Add keyboard and the keyboards that, while shown, use the profile. */
+  private fun keyboards(screen: PreferenceGroup, profile: SettingsProfileStore.Profile) {
+    val triggers = profile.triggers
+    val manager = requireContext().getSystemService(InputMethodManager::class.java) ?: return
+    val packageManager = requireContext().packageManager
+    val names =
+      manager.inputMethodList.associate { it.id to it.loadLabel(packageManager).toString() }
+    val addable =
+      manager.enabledInputMethodList
+        .filter { it.id !in triggers.keyboards }
+        .map { it.id to (names[it.id] ?: it.id) }
+        .sortedBy { it.second.lowercase() }
+    val keyboards = screen.category(R.string.settings_profile_keyboards)
+    if (addable.isNotEmpty()) {
+      keyboards.action(getString(R.string.settings_profile_add_keyboard)) {
+        choose(getString(R.string.settings_profile_add_keyboard), addable.map { it.second }) {
+          setTriggers(profile, triggers.copy(keyboards = triggers.keyboards + addable[it].first))
+        }
+      }
+    }
+    val added = triggers.keyboards.associateWith { names[it] ?: it }
+    for (id in triggers.keyboards.sortedBy { added.getValue(it).lowercase() }) {
+      val name = added.getValue(id)
+      keyboards.action(name) {
+        confirm(
+          getString(R.string.settings_profile_remove_confirm, name, profile.name),
+          R.string.quick_settings_remove,
+        ) {
+          setTriggers(profile, triggers.copy(keyboards = triggers.keyboards - id))
+        }
+      }
+    }
   }
 
   /** Sends the settings changed from here to the profile, and opens the settings. */

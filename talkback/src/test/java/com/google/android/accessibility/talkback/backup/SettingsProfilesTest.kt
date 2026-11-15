@@ -187,6 +187,55 @@ class SettingsProfilesTest {
   }
 
   @Test
+  fun aKeyboardUsesItsProfileWhileItIsShown() {
+    val braille = profile("Braille", mapOf(rate to 50), SettingsProfileStore.Triggers())
+    // Through SettingsProfiles, which then follows the keyboard shown.
+    SettingsProfiles.setTriggers(
+      context,
+      braille.id,
+      SettingsProfileStore.Triggers(keyboards = setOf("com.example.braille/.Ime")),
+    )
+    assertTrue(SettingsProfiles.watchesKeyboards())
+    inApp(app)
+
+    SettingsProfiles.onKeyboardShown("com.example.braille/com.example.braille.Ime")
+    SettingsProfiles.applyNow(context)
+    assertEquals(50, prefs.getInt("rate", 0))
+
+    SettingsProfiles.onKeyboardShown("com.example.other/.Ime")
+    SettingsProfiles.applyNow(context)
+    assertEquals(1, prefs.getInt("rate", 0))
+
+    SettingsProfiles.onKeyboardShown("com.example.braille/.Ime")
+    SettingsProfiles.applyNow(context)
+    assertEquals(50, prefs.getInt("rate", 0))
+
+    SettingsProfiles.onKeyboardShown(null)
+    SettingsProfiles.applyNow(context)
+    assertEquals(1, prefs.getInt("rate", 0))
+  }
+
+  @Test
+  fun profilesWithoutKeyboardsDontFollowTheKeyboard() {
+    val messaging = profile("Messaging", mapOf(rate to 80))
+    SettingsProfiles.setTriggers(context, messaging.id, messaging.triggers.copy(editing = true))
+    assertFalse(SettingsProfiles.watchesKeyboards())
+
+    SettingsProfiles.setContext("com.android.chrome", keyboard = "com.example.braille/.Ime")
+    SettingsProfiles.applyNow(context)
+    assertEquals(1, prefs.getInt("rate", 0))
+    assertTrue(SettingsProfiles.inUse().isEmpty())
+  }
+
+  @Test
+  fun keyboardProfilesAreNotUsedInSandFly() {
+    profile("Braille", mapOf(rate to 50), SettingsProfileStore.Triggers(keyboards = setOf("com.example.braille/.Ime")))
+    SettingsProfiles.setContext(context.packageName, keyboard = "com.example.braille/.Ime")
+    SettingsProfiles.applyNow(context)
+    assertEquals(1, prefs.getInt("rate", 0))
+  }
+
+  @Test
   fun profilesUsedAutomaticallyAreNotUsedInSandFly() {
     profile("Web", mapOf(rate to 20), SettingsProfileStore.Triggers(web = true))
     SettingsProfiles.setContext(context.packageName, web = true)

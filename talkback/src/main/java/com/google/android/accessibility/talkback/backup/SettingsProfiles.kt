@@ -16,6 +16,7 @@
 
 package com.google.android.accessibility.talkback.backup
 
+import android.content.ComponentName
 import android.content.Context
 import android.os.Handler
 import android.os.Looper
@@ -39,8 +40,8 @@ import java.util.function.Consumer
 /**
  * Settings profiles: named sets of settings that replace the settings while a profile is used. A
  * profile is used when it is chosen to be used everywhere, or in its apps and contexts: web content,
- * continuous reading and text editing. When profiles in use set the same setting, the chosen one
- * wins, then the one higher in the list. Profiles with triggers aren't used in SandFly's own app,
+ * continuous reading, text editing and while one of its keyboards is shown. When profiles in use
+ * set the same setting, the chosen one wins, then the one higher in the list. Profiles with triggers aren't used in SandFly's own app,
  * so that its settings show the settings without them.
  *
  * A setting changed while a profile sets it is saved to that profile. Other settings changed are
@@ -72,11 +73,14 @@ object SettingsProfiles {
   @Volatile private var inWeb = false
   @Volatile private var inEditing = false
   @Volatile private var inReading = false
+  /** The input method ID of the keyboard shown, or empty when none is. */
+  @Volatile private var keyboard = ""
 
   // Which contexts a profile is used in, so that the others aren't followed.
   @Volatile private var watchesApps = false
   @Volatile private var watchesFocus = false
   @Volatile private var watchesReading = false
+  @Volatile private var watchesKeyboards = false
 
   /** The profile whose settings are being changed, or null. */
   @Volatile private var editingId: String? = null
@@ -194,6 +198,9 @@ object SettingsProfiles {
     watchesApps = profiles.any { it.triggers.apps.isNotEmpty() }
     watchesFocus = profiles.any { it.triggers.web || it.triggers.editing }
     watchesReading = profiles.any { it.triggers.reading }
+    watchesKeyboards = profiles.any { it.triggers.keyboards.isNotEmpty() }
+    // Not followed, so not known.
+    if (!watchesKeyboards) keyboard = ""
   }
 
   /**
@@ -243,6 +250,26 @@ object SettingsProfiles {
     appContext?.let { scheduleApply(it) }
   }
 
+  /** Whether the keyboard shown is needed. */
+  @JvmStatic fun watchesKeyboards(): Boolean = watchesKeyboards
+
+  /**
+   * Notes the keyboard shown, by its input method ID, such as "com.example/.Keyboard", or null
+   * when none is.
+   */
+  @JvmStatic
+  @MainThread
+  fun onKeyboardShown(inputMethod: String?) {
+    val shown = inputMethod?.let(::normalizeInputMethod).orEmpty()
+    if (shown == keyboard) return
+    keyboard = shown
+    if (watchesKeyboards) appContext?.let { scheduleApply(it) }
+  }
+
+  /** [id] as [android.view.inputmethod.InputMethodInfo.getId] gives it, or itself. */
+  private fun normalizeInputMethod(id: String): String =
+    ComponentName.unflattenFromString(id)?.flattenToShortString() ?: id
+
   /** Notes that continuous reading started or stopped. */
   @JvmStatic
   fun onContinuousReading(active: Boolean) {
@@ -258,6 +285,7 @@ object SettingsProfiles {
     inWeb = false
     inEditing = false
     inReading = false
+    keyboard = ""
     scheduleApply(context.applicationContext)
   }
 
@@ -288,7 +316,8 @@ object SettingsProfiles {
     app in triggers.apps ||
       (triggers.web && inWeb) ||
       (triggers.reading && inReading) ||
-      (triggers.editing && inEditing)
+      (triggers.editing && inEditing) ||
+      (keyboard.isNotEmpty() && keyboard in triggers.keyboards)
 
   /**
    * Applies the profiles to use now, unless they are the ones applied, or [force]. First saves each
@@ -612,6 +641,7 @@ object SettingsProfiles {
     inWeb = false
     inEditing = false
     inReading = false
+    keyboard = ""
   }
 
   /** Sets where the user is, as the service would. */
@@ -621,10 +651,12 @@ object SettingsProfiles {
     web: Boolean = false,
     editing: Boolean = false,
     reading: Boolean = false,
+    keyboard: String = "",
   ) {
     this.app = app
     inWeb = web
     inEditing = editing
     inReading = reading
+    this.keyboard = keyboard
   }
 }
