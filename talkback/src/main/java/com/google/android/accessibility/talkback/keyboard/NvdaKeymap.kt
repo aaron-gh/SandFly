@@ -74,6 +74,8 @@ object NvdaKeymap : KeymapDefaults() {
       put(R.string.keycombo_shortcut_global_notifications, sandFly(SHIFT, KeyEvent.KEYCODE_MOVE_END))
       put(R.string.keycombo_shortcut_other_read_link_url, sandFly(NONE, KeyEvent.KEYCODE_K))
       put(R.string.keycombo_shortcut_global_describe_image, sandFly(SHIFT, KeyEvent.KEYCODE_R))
+      put(R.string.keycombo_shortcut_other_repeat_last_spoken_phrase, sandFly(NONE, KeyEvent.KEYCODE_X))
+      put(R.string.keycombo_shortcut_other_copy_last_spoken_phrase, sandFly(CTRL, KeyEvent.KEYCODE_X))
 
       // NVDA itself.
       put(R.string.keycombo_shortcut_other_talkback_context_menu, sandFly(NONE, KeyEvent.KEYCODE_N))
@@ -84,6 +86,7 @@ object NvdaKeymap : KeymapDefaults() {
         sandFly(NONE, KeyEvent.KEYCODE_P),
       )
       put(R.string.keycombo_shortcut_other_cycle_typing_echo, sandFly(NONE, KeyEvent.KEYCODE_2))
+      put(R.string.keycombo_shortcut_other_open_tts_settings, sandFly(CTRL, KeyEvent.KEYCODE_V))
       put(R.string.keycombo_shortcut_global_hide_or_show_screen, sandFly(CTRL, KeyEvent.KEYCODE_ESCAPE))
       putReadingControlKeys(CTRL or SHIFT)
       putSpeechKeys()

@@ -622,6 +622,7 @@ object Commands {
         gesture(
           R.string.shortcut_value_repeat_last_spoken_phrase,
           R.string.title_repeat_last_spoken_phrase,
+          Key.REPEAT_LAST_SPOKEN_PHRASE,
         )
         gesture(
           R.string.shortcut_value_spell_last_spoken_phrase,

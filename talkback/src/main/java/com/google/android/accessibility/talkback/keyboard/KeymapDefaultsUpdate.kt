@@ -27,7 +27,7 @@ import com.google.android.accessibility.utils.SharedPreferencesUtils
  */
 object KeymapDefaultsUpdate {
   /** The version of the defaults of the NVDA, JAWS and Orca keymaps. */
-  private const val VERSION = 4
+  private const val VERSION = 5
 
   private const val NONE = KeyComboModel.NO_MODIFIER
   private const val SHIFT = KeyEvent.META_SHIFT_ON
@@ -159,9 +159,23 @@ object KeymapDefaultsUpdate {
     mapOf(Keymap.NVDA to passKeys, Keymap.JAWS to passKeys, Keymap.ORCA to passKeys)
   }
 
+  /**
+   * The version 4 defaults of the commands whose defaults changed in version 5, when NVDA's voice
+   * settings and last spoken phrase keys came: none.
+   */
+  private val VERSION_4: Map<Keymap, Map<Int, KeyCombo>> by lazy {
+    mapOf(
+      Keymap.NVDA to
+        mapOf(
+          R.string.keycombo_shortcut_other_open_tts_settings to KeyCombo(),
+          R.string.keycombo_shortcut_other_copy_last_spoken_phrase to KeyCombo(),
+        )
+    )
+  }
+
   /** Each version's earlier defaults of the commands it changed. */
   private val CHANGES: List<Pair<Int, Map<Keymap, Map<Int, KeyCombo>>>> by lazy {
-    listOf(2 to VERSION_1, 3 to VERSION_2, 4 to VERSION_3)
+    listOf(2 to VERSION_1, 3 to VERSION_2, 4 to VERSION_3, 5 to VERSION_4)
   }
 
   @JvmStatic
