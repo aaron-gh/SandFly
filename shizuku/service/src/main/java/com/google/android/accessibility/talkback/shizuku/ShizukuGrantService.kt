@@ -30,11 +30,17 @@ import android.os.Handler
 import android.os.HandlerThread
 import android.os.IBinder
 import android.os.ParcelFileDescriptor
+import android.os.SystemClock
+import android.hardware.input.InputManager
+import android.view.InputDevice
+import android.view.InputEvent
+import android.view.MotionEvent
 import com.google.android.accessibility.talkback.audio.AccessibilityAudioOutput
 import java.io.File
 import java.io.IOException
 import java.io.InputStream
 import java.lang.reflect.InvocationTargetException
+import java.lang.reflect.Method
 import java.lang.reflect.Proxy
 import java.util.concurrent.CountDownLatch
 import java.util.concurrent.Executor
@@ -326,6 +332,80 @@ class ShizukuGrantService(private val context: Context?) : IShizukuGrants.Stub()
       else -> null
     }
   }
+
+  override fun injectHover(
+    action: Int,
+    downTime: Long,
+    x: Float,
+    y: Float,
+    waitForFinish: Boolean,
+  ): String? {
+    if (
+      action != MotionEvent.ACTION_HOVER_ENTER &&
+        action != MotionEvent.ACTION_HOVER_MOVE &&
+        action != MotionEvent.ACTION_HOVER_EXIT
+    ) {
+      return "Not a hover action: $action"
+    }
+    val properties =
+      MotionEvent.PointerProperties().apply {
+        id = 0
+        toolType = MotionEvent.TOOL_TYPE_FINGER
+      }
+    val coords =
+      MotionEvent.PointerCoords().apply {
+        this.x = x
+        this.y = y
+      }
+    // No device: an event of the touch screen's own would start a new stream of its events in the
+    // accessibility input filter, which would end the touch in progress.
+    val event =
+      MotionEvent.obtain(
+        downTime,
+        SystemClock.uptimeMillis(),
+        action,
+        1,
+        arrayOf(properties),
+        arrayOf(coords),
+        0,
+        0,
+        1f,
+        1f,
+        NO_DEVICE,
+        0,
+        InputDevice.SOURCE_TOUCHSCREEN,
+        0,
+      )
+    return try {
+      val mode = if (waitForFinish) INJECT_WAIT_FOR_FINISH else INJECT_ASYNC
+      val injected = inputManager().let { (manager, inject) -> inject.invoke(manager, event, mode) }
+      if (injected == false) "Not injected" else null
+    } catch (e: InvocationTargetException) {
+      e.targetException.toString()
+    } catch (e: Throwable) {
+      e.toString()
+    } finally {
+      event.recycle()
+    }
+  }
+
+  private var inputManager: Pair<Any, Method>? = null
+
+  /** InputManagerGlobal, or InputManager before Android 14, and its injectInputEvent. */
+  private fun inputManager(): Pair<Any, Method> =
+    inputManager
+      ?: run {
+        val type =
+          if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
+            Class.forName("android.hardware.input.InputManagerGlobal")
+          } else {
+            InputManager::class.java
+          }
+        val manager = type.getMethod("getInstance").invoke(null)!!
+        val inject =
+          type.getMethod("injectInputEvent", InputEvent::class.java, Int::class.javaPrimitiveType)
+        (manager to inject).also { inputManager = it }
+      }
 
   private fun hiddenInt(target: Any, field: String, default: Int): Int =
     try {
@@ -716,5 +796,11 @@ class ShizukuGrantService(private val context: Context?) : IShizukuGrants.Stub()
     const val SPLIT_POSITION_BOTTOM_OR_RIGHT = 1
     /** ActivityManager.START_SWITCHES_CANCELED, the first code of a start that didn't happen. */
     const val START_SWITCHES_CANCELED = 100
+    /** InputManager.INJECT_INPUT_EVENT_MODE_ASYNC. */
+    const val INJECT_ASYNC = 0
+    /** InputManager.INJECT_INPUT_EVENT_MODE_WAIT_FOR_FINISH. */
+    const val INJECT_WAIT_FOR_FINISH = 2
+    /** The device ID of an event from no input device. */
+    const val NO_DEVICE = -1
   }
 }

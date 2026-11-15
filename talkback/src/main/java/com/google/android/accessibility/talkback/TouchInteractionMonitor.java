@@ -117,6 +117,7 @@ import com.google.android.accessibility.talkback.gesture.GestureLog;
 import com.google.android.accessibility.talkback.gesture.GestureProfiles;
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping;
 import com.google.android.accessibility.talkback.gesture.KeyboardExploration;
+import com.google.android.accessibility.talkback.gesture.KeyboardHover;
 import com.google.android.accessibility.talkback.gesture.PinchTracker;
 import com.google.android.accessibility.talkback.gesture.SwipesBeforeLift;
 import com.google.android.accessibility.talkback.gesture.SyntheticTouches;
@@ -1249,6 +1250,9 @@ public class TouchInteractionMonitor
     tapToActivateTracker.clear();
     downOnKeyboard = false;
     gboardRoot = null;
+    if (exploringKeyboard) {
+      KeyboardHover.exit();
+    }
     exploringKeyboard = false;
     gboardPopup = null;
     gboardPopupKeys = ImmutableList.of();
@@ -2527,12 +2531,15 @@ public class TouchInteractionMonitor
     lastExploredNode = null;
     skipLookupsInLastExploredBounds = false;
     splitTappedKeyboard = false;
+    // Gboard plays its own feedback for keys, such as its vibration, for touch exploration's hover.
+    KeyboardHover.enter(lastFingerX, lastFingerY);
     exploreKeyboardAt(lastFingerX, lastFingerY);
   }
 
   private void exploreKeyboard(MotionEvent event) {
     switch (event.getActionMasked()) {
       case ACTION_MOVE -> {
+        KeyboardHover.move(lastFingerX, lastFingerY);
         if (Math.hypot(lastFingerX - lastExploredX, lastFingerY - lastExploredY)
                 >= KEYBOARD_EXPLORE_STEP_PX
             && !isOnLastExploredNode(lastFingerX, lastFingerY)) {
@@ -2560,6 +2567,7 @@ public class TouchInteractionMonitor
               SystemClock.uptimeMillis() - touchDownTimeMs);
           service.onKeyboardTouchEnded();
         }
+        KeyboardHover.exit();
         exploringKeyboard = false;
         lastExploredNode = null;
         skipLookupsInLastExploredBounds = false;
@@ -2652,6 +2660,7 @@ public class TouchInteractionMonitor
    */
   private void stopExploringKeyboard() {
     LogUtils.v(LOG_TAG, "The finger left the keyboard: touch exploration");
+    KeyboardHover.exit();
     exploringKeyboard = false;
     gboardRoot = null;
     lastExploredNode = null;
