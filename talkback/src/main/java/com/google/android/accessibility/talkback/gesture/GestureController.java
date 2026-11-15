@@ -80,6 +80,8 @@ import static com.google.android.accessibility.utils.monitor.InputModeTracker.IN
 import static com.google.android.accessibility.utils.output.SpeechController.QUEUE_MODE_UNINTERRUPTIBLE_BY_NEW_SPEECH;
 import static com.google.android.accessibility.utils.traversal.TraversalStrategy.SEARCH_FOCUS_BACKWARD;
 import static com.google.android.accessibility.utils.traversal.TraversalStrategy.SEARCH_FOCUS_FORWARD;
+import static com.google.android.accessibility.utils.traversal.TraversalStrategy.SEARCH_FOCUS_LEFT;
+import static com.google.android.accessibility.utils.traversal.TraversalStrategy.SEARCH_FOCUS_RIGHT;
 
 import android.accessibilityservice.AccessibilityService;
 import android.accessibilityservice.FingerprintGestureController;
@@ -405,6 +407,18 @@ public class GestureController {
       selectorController.moveVertically(eventId, /* isNext= */ true);
     } else if (action.equals(service.getString(R.string.shortcut_value_move_to_item_above))) {
       selectorController.moveVertically(eventId, /* isNext= */ false);
+    } else if (action.equals(service.getString(R.string.shortcut_value_move_to_item_left))
+        || action.equals(service.getString(R.string.shortcut_value_move_to_item_right))) {
+      // The nearest item on screen in that direction, as a D-pad moves.
+      boolean left = action.equals(service.getString(R.string.shortcut_value_move_to_item_left));
+      result =
+          pipeline.returnFeedback(
+              eventId,
+              Feedback.focusDirection(left ? SEARCH_FOCUS_LEFT : SEARCH_FOCUS_RIGHT)
+                  .setGranularity(DEFAULT)
+                  .setInputMode(INPUT_MODE_TOUCH)
+                  .setDefaultToInputFocus(true)
+                  .setScroll(true));
     } else if (OpenAppActions.isAction(action)) {
       result = OpenAppActions.open(service, action);
     } else if (AppShortcutActions.isAction(action)) {

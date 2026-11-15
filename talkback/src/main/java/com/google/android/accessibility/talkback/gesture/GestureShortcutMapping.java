@@ -880,6 +880,10 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
         R.string.shortcut_value_move_to_item_below, R.string.shortcut_move_to_item_below),
     MOVE_TO_ITEM_ABOVE(
         R.string.shortcut_value_move_to_item_above, R.string.shortcut_move_to_item_above),
+    MOVE_TO_ITEM_LEFT(
+        R.string.shortcut_value_move_to_item_left, R.string.shortcut_move_to_item_left),
+    MOVE_TO_ITEM_RIGHT(
+        R.string.shortcut_value_move_to_item_right, R.string.shortcut_move_to_item_right),
     FIRST_IN_SCREEN(R.string.shortcut_value_first_in_screen, R.string.shortcut_first_in_screen),
     LAST_IN_SCREEN(R.string.shortcut_value_last_in_screen, R.string.shortcut_last_in_screen),
     SCROLL_TO_TOP(R.string.shortcut_value_scroll_to_top, R.string.shortcut_scroll_to_top),

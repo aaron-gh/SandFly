@@ -2166,6 +2166,10 @@
     <string name="shortcut_move_to_item_below">Move to item below</string>
     <!-- Label for the shortcut that moves accessibility focus to the item above the focused one, past the other items of its row, as the Vertical navigation reading control does. [CHAR_LIMIT=40] -->
     <string name="shortcut_move_to_item_above">Move to item above</string>
+    <!-- Label for the shortcut that moves accessibility focus to the nearest item to the left of the focused one on screen. [CHAR_LIMIT=40] -->
+    <string name="shortcut_move_to_item_left">Move to item on the left</string>
+    <!-- Label for the shortcut that moves accessibility focus to the nearest item to the right of the focused one on screen. [CHAR_LIMIT=40] -->
+    <string name="shortcut_move_to_item_right">Move to item on the right</string>
     <!-- Label for the shortcut that speaks the screen coordinates of the centre of the focused item, in pixels, and copies them. [CHAR_LIMIT=40] -->
     <string name="shortcut_speak_coordinates">Speak coordinates</string>
     <!-- Spoken and copied by Speak coordinates: the centre of the focused item in pixels from the left (x) and from the top (y) of the screen. [CHAR_LIMIT=NONE] -->
