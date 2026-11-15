@@ -27,6 +27,10 @@ import com.google.android.accessibility.utils.SharedPreferencesUtils
  * distance, with the finger still down. Back-and-forth and angle gestures start the same way, so
  * they are off and hidden while it is on. Only SandFly's own gesture detection does this.
  *
+ * With it off, a swipe still runs before the lift while no back-and-forth or angle gesture that
+ * starts in its direction, and no swipe and hold of either, has a command (see
+ * [com.google.android.accessibility.utils.gestures.GestureConfiguration.runsBeforeLift]).
+ *
  * The switch on the Gestures screen is Default's. A gesture profile follows it unless the profile
  * is switched the other way.
  */

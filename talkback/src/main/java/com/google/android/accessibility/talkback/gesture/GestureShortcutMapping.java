@@ -1341,6 +1341,14 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
   }
 
   /**
+   * Returns whether the gesture runs a command, from the gesture profile in use, the app shown or
+   * the gesture set in use.
+   */
+  public boolean isAssigned(int gestureId) {
+    return !TextUtils.equals(getActionKeyFromGestureId(gestureId), actionUnassigned);
+  }
+
+  /**
    * Returns the action of the gesture of preference key {@code key}, without a gesture set, for
    * gestures that have no gesture ID such as back taps: the gesture profile in use first, then the
    * app shown, then the gesture set in use.

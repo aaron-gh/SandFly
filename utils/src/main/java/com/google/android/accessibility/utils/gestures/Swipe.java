@@ -89,7 +89,7 @@ class Swipe extends GestureMatcher {
   // before: a long rest cancels the swipe.
   private boolean holdAssigned;
   // Whether this one-direction swipe runs once it has moved the gesture confirm distance, before
-  // the finger lifts.
+  // the finger lifts. Decided when the finger goes down, from the actions gestures have then.
   private boolean runsBeforeLift;
   // Where the finger last moved beyond the touch slop, and when.
   private float restX;
@@ -222,9 +222,15 @@ class Swipe extends GestureMatcher {
       previousGestureX = baseX;
       previousGestureY = baseY;
       holdAssigned = holdGestureId != 0 && configProvider.isGestureAssigned(holdGestureId);
-      // A swipe and hold needs the rest at the end, so that swipe still waits for the lift.
+      // A swipe and hold needs the rest at the end, and a back-and-forth or angle gesture the turn,
+      // so a swipe that one of them with an action starts with still waits for the lift.
       runsBeforeLift =
-          directions.length == 1 && GestureConfiguration.swipesBeforeLift() && !holdAssigned;
+          directions.length == 1
+              && GestureConfiguration.runsBeforeLift(
+                  getGestureId(),
+                  GestureConfiguration.swipesBeforeLift(),
+                  configProvider.swipesBeforeLiftWhenNothingFollows(),
+                  configProvider::isGestureAssigned);
       restX = baseX;
       restY = baseY;
       restStartTime = baseTime;
