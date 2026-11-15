@@ -110,11 +110,12 @@ public class ActionsSetting implements SelectorController.ContextualSetting {
 
   /**
    * Returns whether {@code action} edits or selects text, rather than being an app's or script's
-   * action, a link or Go to quoted message.
+   * action, a link, Go to quoted message or a Telegram share button.
    */
   private static boolean isEditingOption(ContextMenuItem action) {
     return action.getGroupId() != CustomActionMenu.CUSTOM_ACTION_GROUP_ID
         && action.getGroupId() != R.id.group_links
-        && action.getItemId() != R.id.go_to_quoted_message;
+        && action.getItemId() != R.id.go_to_quoted_message
+        && action.getItemId() != R.id.telegram_share_button;
   }
 }

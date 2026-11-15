@@ -39,6 +39,7 @@ public class RuleAction extends NodeMenuRule {
   private final TypoSuggestionMenu typoSuggestionMenu;
   private final LinkMenu linkMenu;
   private final QuotedMessageMenu quotedMessageMenu;
+  private final TelegramShareMenu telegramShareMenu;
 
   public RuleAction(
       Pipeline.FeedbackReturner pipeline,
@@ -54,6 +55,7 @@ public class RuleAction extends NodeMenuRule {
     typoSuggestionMenu = new TypoSuggestionMenu(pipeline, actorState, accessibilityFocusMonitor);
     linkMenu = new LinkMenu(analytics);
     quotedMessageMenu = new QuotedMessageMenu(pipeline);
+    telegramShareMenu = new TelegramShareMenu(pipeline);
   }
 
   @Override
@@ -62,7 +64,8 @@ public class RuleAction extends NodeMenuRule {
         || editingAndSelectingMenu.accept(context, node)
         || typoSuggestionMenu.accept(context, node)
         || linkMenu.accept(context, node)
-        || quotedMessageMenu.accept(context, node);
+        || quotedMessageMenu.accept(context, node)
+        || telegramShareMenu.accept(context, node);
   }
 
   @Override
@@ -89,6 +92,10 @@ public class RuleAction extends NodeMenuRule {
 
     if (quotedMessageMenu.accept(context, node)) {
       actionItems.addAll(quotedMessageMenu.getMenuItemsForNode(context, node, includeAncestors));
+    }
+
+    if (telegramShareMenu.accept(context, node)) {
+      actionItems.addAll(telegramShareMenu.getMenuItemsForNode(context, node, includeAncestors));
     }
 
     return actionItems;

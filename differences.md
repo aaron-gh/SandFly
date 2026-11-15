@@ -772,6 +772,10 @@ Next container and Previous container (Action + Control + Alt + Right or Left ar
 
 In Telegram and its forks, such as Nekogram, the quote of the message that a message replies to was a separate item, often cut off. SandFly reads it with its message, after the time, as "replying to" the sender and text, with the whole quoted text when the quoted message is loaded. The quote isn't focused on its own; **Go to quoted message**, in the message's actions, shows the quoted message. To have the quote as an item of its own again, as Telegram has it, turn off **Read Telegram reply quotes with the message** in **Navigation**, under **Apps**; Go to quoted message isn't offered then.
 
+### Telegram share buttons
+
+In Telegram and its forks, the Share button beside each message in a channel was a separate item, so each message took two swipes. SandFly skips it when swiping and when touching the screen; it is in the message's actions, under the name Telegram gives it, such as **Share**.
+
 ### Web posts reached with a site's keyboard shortcuts
 
 When a web page moves focus to an element such as a post, as Mastodon does with J and K, TalkBack read only the element's text that isn't in a link, so a post was read without its author, the person who boosted it, its time, and its hashtags. SandFly reads the text of the links in it as well, but not its buttons. The spaces between links are no longer read as "Space".

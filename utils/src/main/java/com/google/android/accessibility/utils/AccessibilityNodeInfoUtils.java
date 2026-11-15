@@ -964,6 +964,10 @@ public class AccessibilityNodeInfoUtils {
       LogUtils.v(TAG, "Don't focus, a Telegram reply quote is read with its message");
       return false;
     }
+    if (TelegramShareButton.isShareButton(node)) {
+      LogUtils.v(TAG, "Don't focus, a Telegram share button is in its message's actions");
+      return false;
+    }
     if (NodeOverrides.grouped(node)) {
       return isVisible(node);
     }
