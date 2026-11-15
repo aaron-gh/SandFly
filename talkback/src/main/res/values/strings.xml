@@ -610,10 +610,10 @@
     <string name="summary_pref_speech_control">Apps that you allow can say text in your SandFly voice. While the device is locked, only apps that you also allow while locked can speak.</string>
     <!-- Title of the setting that plays a sound before each thing another app says through SandFly. [CHAR LIMIT=NONE] -->
     <string name="title_pref_speech_control_sound">Play a sound before other apps speak</string>
-    <!-- Heading of the list of apps that asked to speak through SandFly. [CHAR LIMIT=NONE] -->
+    <!-- Heading of the list of apps that connected to SandFly's speech service, each with a switch that allows it to speak through SandFly. [CHAR LIMIT=NONE] -->
     <string name="speech_control_apps_category">Apps</string>
-    <!-- Shown in that list before any app has asked to speak. [CHAR LIMIT=NONE] -->
-    <string name="speech_control_no_apps">No apps have asked to speak yet.</string>
+    <!-- Shown in that list before any app has connected to SandFly's speech service. [CHAR LIMIT=NONE] -->
+    <string name="speech_control_no_apps">No app has connected yet.</string>
     <!-- Title of the notification that asks whether an app may speak through SandFly. The app's name is filled in. [CHAR LIMIT=NONE] -->
     <string name="speech_control_ask_title">Allow <xliff:g id="app" example="Tasker">%1$s</xliff:g> to speak through SandFly?</string>
     <!-- Text of that notification. [CHAR LIMIT=NONE] -->
@@ -622,7 +622,7 @@
     <string name="speech_control_allow">Allow</string>
     <!-- Button in that notification that stops the app from speaking. [CHAR LIMIT=30] -->
     <string name="speech_control_deny">Don\'t allow</string>
-    <!-- In the list of apps that asked to speak through SandFly, the switch that lets an app also speak while the device is locked. The app's name is filled in. [CHAR LIMIT=NONE] -->
+    <!-- In the list of apps that connected to SandFly's speech service, the switch that lets an app also speak while the device is locked. The app's name is filled in. [CHAR LIMIT=NONE] -->
     <string name="speech_control_locked_app"><xliff:g id="app" example="Tasker">%1$s</xliff:g> while the device is locked</string>
     <!-- Title of the notification that asks whether an app may speak through SandFly while the device is locked. The app's name is filled in. [CHAR LIMIT=NONE] -->
     <string name="speech_control_ask_locked_title">Allow <xliff:g id="app" example="Tasker">%1$s</xliff:g> to speak through SandFly while the device is locked?</string>

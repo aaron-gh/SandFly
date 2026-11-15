@@ -137,6 +137,21 @@ object SpeechControl {
     SharedPreferencesUtils.getSharedPreferences(context).getBoolean(PREF_SOUND, false)
 
   /**
+   * Records the caller, the first of [apps], so that Let other apps speak lists it and the user can
+   * allow it there without the notification. Skipped if the user answered for one of [apps] or the
+   * caller is the current keyboard. Recorded while SandFly is off too.
+   */
+  @MainThread
+  fun recordCaller(context: Context, apps: List<String>) {
+    val app = apps.firstOrNull() ?: return
+    val prefs = SharedPreferencesUtils.getSharedPreferences(context)
+    if (app in SpeechControlApps.connected(prefs)) return
+    if (apps.any { SpeechControlApps.state(prefs, it) != SpeechControlApps.State.UNKNOWN }) return
+    if (KeyboardSpeech.currentKeyboard(context, apps) != null) return
+    SpeechControlApps.recordConnected(prefs, app)
+  }
+
+  /**
    * Says [text] for the first of [apps], the caller's packages, that the user allowed, and asks
    * the user about the caller if they haven't answered. Returns whether the text was passed on to
    * be said.

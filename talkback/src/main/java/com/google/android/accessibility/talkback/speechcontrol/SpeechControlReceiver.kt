@@ -37,6 +37,7 @@ class SpeechControlReceiver : BroadcastReceiver() {
       return
     }
     val apps = listOf(sender)
+    SpeechControl.recordCaller(context, apps)
     when (intent.action) {
       SpeechControl.ACTION_SPEAK ->
         SpeechControl.speak(

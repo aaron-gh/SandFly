@@ -24,6 +24,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
+import android.os.SystemClock
 import androidx.core.app.NotificationCompat
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.utils.NotificationUtils
@@ -46,18 +47,22 @@ object SpeechControlApproval {
   internal const val EXTRA_APP = "app"
   private const val NOTIFICATION_ID_BASE = 0x5ec0
 
-  // Apps already asked about since Backtalk started, so that each is asked once at a time.
-  private val asked = HashSet<String>()
-  private val askedLocked = HashSet<String>()
+  /** How long before an unanswered app is asked about again if its notification isn't showing. */
+  private const val RETRY_MS = 60_000L
+
+  // When each unanswered app was last asked about, so that each is asked once at a time. Asked
+  // again if its notification isn't showing, as when Android didn't show it or removed it.
+  private val asked = HashMap<String, Long>()
+  private val askedLocked = HashMap<String, Long>()
 
   /** Asks whether [app] may speak, unless it was asked already. Called on the main thread. */
   fun ask(context: Context, app: String) {
     // Not counted as asked when it can't be: it is asked once notifications are allowed.
-    if (!NotificationUtils.hasPostNotificationPermission(context)) {
-      LogUtils.w(TAG, "Can't ask about %s, since Backtalk can't post notifications", app)
+    if (!NotificationUtils.canShowNotifications(context)) {
+      LogUtils.w(TAG, "Can't ask about %s, since SandFly notifications are off", app)
       return
     }
-    if (!asked.add(app)) return
+    if (!shouldAsk(context, asked, app, notificationId(app))) return
     val label = label(context, app)
     val notification =
       NotificationUtils.createDefaultNotificationBuilder(context)
@@ -81,11 +86,11 @@ object SpeechControlApproval {
    * holding a locked phone can't give an app that. Called on the main thread.
    */
   fun askWhileLocked(context: Context, app: String) {
-    if (!NotificationUtils.hasPostNotificationPermission(context)) {
-      LogUtils.w(TAG, "Can't ask about %s while locked, since Backtalk can't post notifications", app)
+    if (!NotificationUtils.canShowNotifications(context)) {
+      LogUtils.w(TAG, "Can't ask about %s while locked, since SandFly notifications are off", app)
       return
     }
-    if (!askedLocked.add(app)) return
+    if (!shouldAsk(context, askedLocked, app, lockedNotificationId(app))) return
     val label = label(context, app)
     val allow =
       NotificationCompat.Action.Builder(
@@ -114,6 +119,47 @@ object SpeechControlApproval {
       .getSystemService(NotificationManager::class.java)
       ?.notify(lockedNotificationId(app), notification)
   }
+
+  /**
+   * Removes the questions about [app], once the user answered for it in Let other apps speak.
+   * Called on the main thread.
+   */
+  fun cancel(context: Context, app: String) {
+    asked.remove(app)
+    askedLocked.remove(app)
+    context.getSystemService(NotificationManager::class.java)?.let {
+      it.cancel(notificationId(app))
+      it.cancel(lockedNotificationId(app))
+    }
+  }
+
+  /**
+   * Whether to post the question with [id] about [app], recording when in [askedAt]: if it was
+   * never asked, or asked more than [RETRY_MS] ago and the notification isn't showing.
+   */
+  private fun shouldAsk(
+    context: Context,
+    askedAt: HashMap<String, Long>,
+    app: String,
+    id: Int,
+  ): Boolean {
+    val now = SystemClock.elapsedRealtime()
+    val last = askedAt[app]
+    if (last != null && now - last < RETRY_MS) return false
+    askedAt[app] = now
+    return last == null || !isShowing(context, id)
+  }
+
+  private fun isShowing(context: Context, id: Int): Boolean =
+    try {
+      context
+        .getSystemService(NotificationManager::class.java)
+        ?.activeNotifications
+        ?.any { it.id == id } ?: false
+    } catch (e: RuntimeException) {
+      // Unknown: treated as showing, so the question isn't posted again.
+      true
+    }
 
   /** The name the user knows the app by, or its package name if it has none. */
   fun label(context: Context, app: String): CharSequence =

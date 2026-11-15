@@ -6,9 +6,9 @@ An app can ask SandFly to say text in the user's own SandFly voice, with their s
 
 Nothing your app sends is said until the user allows it:
 
-1.  The user turns on **Apps** > **Let other apps speak** in SandFly. It's off by default.
+1.  The user turns on **Speech** > **Let other apps speak** in SandFly. It's off by default.
 2.  The first time your app asks to speak, SandFly posts a notification that asks the user whether to allow it. Until they choose **Allow**, nothing your app sends is said, and requests aren't saved for later.
-3.  The user can allow or block your app at any time in **Apps** > **Let other apps speak**.
+3.  Once your app has called the service or sent a broadcast, it is listed in **Speech** > **Let other apps speak**, with or without the notification. The user can allow or block it there at any time.
 
 Even for an allowed app:
 
@@ -49,7 +49,7 @@ Declaring it allows nothing by itself. It's a separate choice from **Allow**:
 
 1.  Allowing your app to speak doesn't allow it while the device is locked.
 2.  The first time your app asks to speak while the device is locked, SandFly posts a second notification that asks whether to allow that. **Allow** needs the device unlocked first, so that someone holding a locked phone can't choose it. Until the user allows it, nothing your app sends while the device is locked is said.
-3.  The user can turn it on or off at any time with the app's **while the device is locked** switch in **Apps** > **Let other apps speak**. The switch is listed only for apps that declare the permission.
+3.  The user can turn it on or off at any time with the app's **while the device is locked** switch in **Speech** > **Let other apps speak**. The switch is listed only for apps that declare the permission.
 
 Apps that don't declare the permission never speak while the device is locked. The rate limit and sound apply as at any other time. A device whose SandFly is older than this feature has no such permission, and says nothing from other apps while it's locked.
 
