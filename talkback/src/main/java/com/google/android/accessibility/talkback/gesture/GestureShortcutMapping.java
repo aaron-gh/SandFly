@@ -1016,6 +1016,7 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
     COPY_TEXT_FROM_SCREEN(
         R.string.shortcut_value_copy_text_from_screen,
         R.string.title_copy_text_from_screen),
+    CONTINUOUS_COPY(R.string.shortcut_value_continuous_copy, R.string.title_continuous_copy),
     BRAILLE_KEYBOARD(R.string.shortcut_value_braille_keyboard, R.string.shortcut_braille_keyboard),
 
     // Special features.

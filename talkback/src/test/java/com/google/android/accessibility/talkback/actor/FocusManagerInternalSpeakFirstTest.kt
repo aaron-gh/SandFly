@@ -131,4 +131,18 @@ class FocusManagerInternalSpeakFirstTest {
 
     assertEquals(listOf(focusAction), steps)
   }
+
+  @Test
+  fun mutedFocus_neverSpokenFirstUntilUnmuted() {
+    val manager = manager(Listener(speaks = false))
+    manager.setMuteFocus(true)
+
+    manager.performAccessibilityFocusActionInternal(node, info, null, /* maySpeakFirst= */ true)
+    manager.performAccessibilityFocusActionInternal(node, info, null, /* maySpeakFirst= */ true)
+    assertEquals(listOf(focusAction, focusAction), steps)
+
+    manager.setMuteFocus(false)
+    manager.performAccessibilityFocusActionInternal(node, info, null, /* maySpeakFirst= */ true)
+    assertEquals(listOf(focusAction, focusAction, "before", focusAction), steps)
+  }
 }

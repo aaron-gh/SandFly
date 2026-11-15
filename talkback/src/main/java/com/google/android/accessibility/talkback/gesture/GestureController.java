@@ -106,6 +106,7 @@ import com.google.android.accessibility.talkback.Pipeline;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.commands.Commands;
 import com.google.android.accessibility.talkback.TalkBackService;
+import com.google.android.accessibility.talkback.actor.ContinuousCopy;
 import com.google.android.accessibility.talkback.actor.SpeechRateAndPitchActor;
 import com.google.android.accessibility.talkback.actor.SystemActionPerformer;
 import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics;
@@ -367,6 +368,12 @@ public class GestureController {
     }
 
     maybeInterruptAllFeedback(action);
+    boolean continuousCopyAction =
+        action.equals(service.getString(R.string.shortcut_value_continuous_copy));
+    if (!continuousCopyAction) {
+      // Another command ends a collection, as a touch or key does.
+      service.stopContinuousCopy();
+    }
     boolean result = true;
     if (action.equals(service.getString(R.string.switch_gesture_set))) {
       speak(
@@ -882,6 +889,9 @@ public class GestureController {
       WordSelectionDialog.showForLastUtterance(service, pipeline, /* fromMenu= */ false);
     } else if (action.equals(service.getString(R.string.shortcut_value_copy_text_from_screen))) {
       WordSelectionDialog.showForScreen(service, pipeline);
+    } else if (continuousCopyAction) {
+      ContinuousCopy continuousCopy = service.getContinuousCopy();
+      result = continuousCopy != null && continuousCopy.start(eventId);
     } else if (action.equals(service.getString(R.string.shortcut_value_braille_keyboard))) {
       String inputMethodInfoId =
           KeyboardUtils.getImeId(
