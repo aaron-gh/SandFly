@@ -20,6 +20,7 @@ import android.graphics.Rect;
 import android.text.TextUtils;
 import androidx.annotation.Nullable;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat.AccessibilityActionCompat;
 import com.google.android.accessibility.utils.Role;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -113,11 +114,13 @@ final class OffscreenContent {
    * tree order that is off screen or cut off at the edge and has something to say or do, so
    * scrolling it can't bring a next item on screen. The pivot's own descendants don't count.
    * {@code false} when the pivot is the scroll view itself or isn't in it, when the content is too
-   * large to read, or when a collapsed or nested scrolling container comes after the pivot.
+   * large to read, when a collapsed or nested scrolling container comes after the pivot, or when
+   * the scroll view offers position-based scrolling and may expose only its loaded items.
    */
   static boolean hasNothingAhead(
       AccessibilityNodeInfoCompat scrollable, AccessibilityNodeInfoCompat pivot, boolean forward) {
-    if (scrollable.equals(pivot)) {
+    if (scrollable.equals(pivot)
+        || scrollable.getActionList().contains(AccessibilityActionCompat.ACTION_SCROLL_TO_POSITION)) {
       return false;
     }
     List<AccessibilityNodeInfoCompat> nodes = new ArrayList<>();
