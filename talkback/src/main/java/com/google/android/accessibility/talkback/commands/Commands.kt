@@ -396,6 +396,8 @@ object Commands {
         )
         gesture(R.string.shortcut_value_move_to_item_below, R.string.shortcut_move_to_item_below)
         gesture(R.string.shortcut_value_move_to_item_above, R.string.shortcut_move_to_item_above)
+        gesture(R.string.shortcut_value_move_to_item_left, R.string.shortcut_move_to_item_left)
+        gesture(R.string.shortcut_value_move_to_item_right, R.string.shortcut_move_to_item_right)
         keyboard(Key.NAVIGATE_BELOW)
         keyboard(Key.NAVIGATE_ABOVE)
         gesture(
@@ -651,6 +653,7 @@ object Commands {
         )
         gesture(R.string.shortcut_value_announce_status, R.string.shortcut_announce_status)
         gesture(R.string.shortcut_value_speak_position, R.string.shortcut_speak_position)
+        gesture(R.string.shortcut_value_speak_coordinates, R.string.shortcut_speak_coordinates)
         gesture(
           R.string.shortcut_value_announce_current_time_and_date,
           R.string.shortcut_announce_current_time_and_date,

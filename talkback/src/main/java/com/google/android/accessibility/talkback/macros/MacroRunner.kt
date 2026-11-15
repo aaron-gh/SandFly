@@ -16,17 +16,24 @@
 
 package com.google.android.accessibility.talkback.macros
 
+import android.accessibilityservice.AccessibilityService
+import android.accessibilityservice.GestureDescription
 import android.app.KeyguardManager
+import android.graphics.Path
+import android.graphics.Region
+import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.HandlerThread
 import android.os.Looper
 import android.os.SystemClock
 import android.util.Log
+import android.view.ViewConfiguration
 import android.view.accessibility.AccessibilityNodeInfo
 import android.view.accessibility.AccessibilityWindowInfo
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import com.google.android.accessibility.talkback.Feedback
+import com.google.android.accessibility.talkback.Feedback.PassThroughMode.Action.LOCK_PASS_THROUGH
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.TalkBackService
 import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionInfo
@@ -40,6 +47,7 @@ import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.accessibility.utils.output.FeedbackItem
 import com.google.android.accessibility.utils.output.SpeechController
 import com.google.android.accessibility.utils.output.SpeechController.SpeakOptions
+import com.google.android.libraries.accessibility.utils.device.ScreenUtils
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 
 /**
@@ -68,6 +76,9 @@ object MacroRunner {
 
   /** How long a Type text step waits for an edit field to have input focus. */
   private const val FIELD_TIMEOUT_MS = 3_000L
+
+  /** How long a Tap at position step waits for Android to apply the pass-through region. */
+  private const val PASS_THROUGH_WAIT_MS = 350L
 
   private const val MAX_NODES = 5_000
   private const val MAX_CLICK_PARENTS = 6
@@ -246,6 +257,7 @@ object MacroRunner {
           }
           is Macros.TypeText -> typeText(index, step, SystemClock.uptimeMillis() + FIELD_TIMEOUT_MS)
           is Macros.Tap -> findItem(index, step, step.label, step.regex, step.timeoutMillis)
+          is Macros.TapPosition -> tapAt(index, step)
           is Macros.FocusItem -> findItem(index, step, step.label, step.regex, step.timeoutMillis)
           is Macros.SpeakItem -> findItem(index, step, step.label, step.regex, step.timeoutMillis)
           is Macros.SpeakText -> {
@@ -390,6 +402,67 @@ object MacroRunner {
       // The text is set even when the field can't move its cursor.
       field.performAction(AccessibilityNodeInfo.ACTION_SET_SELECTION, cursor)
       return true
+    }
+
+    /**
+     * Taps the screen at the position of [step], with touch passed through to the app while the tap
+     * runs, as touch exploration would take it as a touch of its own. Fails when the position is
+     * outside the screen.
+     */
+    private fun tapAt(index: Int, step: Macros.TapPosition) {
+      if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) {
+        fail(index, step, "tap needs Android 11")
+        return
+      }
+      val size = ScreenUtils.getRealScreenSize(service)
+      if (step.x !in 0 until size.x || step.y !in 0 until size.y) {
+        fail(index, step, "position outside the screen of ${size.x} x ${size.y}")
+        return
+      }
+      val pipeline = service.feedbackReturner
+      if (pipeline == null) {
+        fail(index, step, "no feedback pipeline")
+        return
+      }
+      val path = Path().apply { moveTo(step.x.toFloat(), step.y.toFloat()) }
+      val gesture =
+        GestureDescription.Builder()
+          .addStroke(GestureDescription.StrokeDescription(path, 0, ViewConfiguration.getTapTimeout().toLong()))
+          .build()
+      pipeline.returnFeedback(
+        EVENT_ID_UNTRACKED,
+        Feedback.passThroughMode(LOCK_PASS_THROUGH, Region(0, 0, size.x, size.y)),
+      )
+      var ended = false
+      val end = { performed: Boolean ->
+        if (!ended) {
+          ended = true
+          pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.passThroughMode(LOCK_PASS_THROUGH, null))
+          ifActive {
+            if (performed) later(STEP_GAP_MS) { runStep(index + 1) }
+            else fail(index, step, "tap not performed")
+          }
+        }
+      }
+      val callback =
+        object : AccessibilityService.GestureResultCallback() {
+          override fun onCompleted(description: GestureDescription) = end(true)
+
+          override fun onCancelled(description: GestureDescription) = end(false)
+        }
+      // Posted without the run as token, so that pass-through also ends when the run is stopped.
+      // Android applies the pass-through region a moment later.
+      mainHandler.postDelayed(
+        {
+          try {
+            if (!active || !service.dispatchGesture(gesture, callback, mainHandler)) end(false)
+          } catch (e: RuntimeException) {
+            LogUtils.w(TAG, "Cannot tap: %s", e)
+            end(false)
+          }
+        },
+        PASS_THROUGH_WAIT_MS,
+      )
     }
 
     /**
