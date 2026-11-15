@@ -34,10 +34,12 @@ import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.actor.DimScreenActor;
 import com.google.android.accessibility.talkback.actor.gemini.GeminiConfiguration;
 import com.google.android.accessibility.talkback.clipboard.ClipboardHistoryOverlay;
+import com.google.android.accessibility.talkback.commands.AppGestureFragment;
 import com.google.android.accessibility.talkback.commands.CommandMenus;
 import com.google.android.accessibility.talkback.commands.Commands;
 import com.google.android.accessibility.talkback.commands.MenuCommands;
 import com.google.android.accessibility.talkback.contextmenu.ContextMenuItem.DeferredType;
+import com.google.android.accessibility.talkback.gesture.AppGestures;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.keyboardecho.KeyboardEchoSettings;
 import com.google.android.accessibility.talkback.menurules.NodeMenuRuleProcessor;
@@ -251,6 +253,7 @@ public class TalkbackMenuProcessor {
     addEmojiMenuIfValid(menu);
     // Gesture profile and voice profile
     addGestureProfileMenuIfValid(menu);
+    addAppGesturesMenuIfValid(menu);
     addVoiceProfileMenuIfValid(menu);
     addSplitScreenMenuIfValid(menu);
     // System Action
@@ -661,6 +664,33 @@ public class TalkbackMenuProcessor {
     if (!GestureProfileMenuProcessor.prepareGestureProfileSubMenu(service, pipeline, subMenu)) {
       menu.removeItem(R.id.gesture_profile_menu);
     }
+  }
+
+  /**
+   * Adds Gestures for this app, which opens the gestures of the app in front, unless SandFly or no
+   * app is in front.
+   */
+  private void addAppGesturesMenuIfValid(ContextMenu menu) {
+    menu.removeItem(R.id.app_gestures_menu);
+    if (!showMenuItem(R.string.pref_show_context_menu_app_gestures_setting_key)
+        || ScreenMonitor.isDeviceLocked(service)
+        || !SettingsUtils.allowLinksOutOfSettings(service)) {
+      return;
+    }
+    // The app in front before the menu opens, as the open menu is SandFly's own window.
+    String packageName = AppGestures.appShown();
+    if (!AppGestureFragment.canOpen(service, packageName)) {
+      return;
+    }
+    ContextMenuItem item =
+        menu.add(
+            /* groupId= */ 0,
+            R.id.app_gestures_menu,
+            ORDER_GESTURE_PROFILES,
+            R.string.shortcut_app_gestures_for_app);
+    item.setOnMenuItemClickListener(clicked -> AppGestureFragment.open(service, packageName));
+    // Opens once the menu is closed.
+    item.setDeferredType(DeferredType.WINDOWS_STABLE);
   }
 
   /** Adds a sub menu to choose how emoji are read, titled with the current choice. */

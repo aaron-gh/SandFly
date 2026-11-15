@@ -2772,6 +2772,10 @@
   <bool name="pref_show_context_menu_gesture_profile_default">true</bool>
   <item type="id" name="group_gesture_profile" />
   <item type="id" name="gesture_profile_menu" />
+  <string name="shortcut_value_app_gestures_for_app" translatable="false">APP_GESTURES_FOR_APP</string>
+  <string name="pref_show_context_menu_app_gestures_setting_key" translatable="false">pref_app_gestures_menu_setting_key</string>
+  <bool name="pref_show_context_menu_app_gestures_default">true</bool>
+  <item type="id" name="app_gestures_menu" />
   <string name="shortcut_value_settings_profiles" translatable="false">SETTINGS_PROFILES</string>
   <string name="shortcut_value_next_settings_profile" translatable="false">NEXT_SETTINGS_PROFILE</string>
   <string name="shortcut_value_previous_settings_profile" translatable="false">PREVIOUS_SETTINGS_PROFILE</string>

@@ -104,6 +104,7 @@ import com.google.android.accessibility.talkback.Feedback.TalkBackUI.Item;
 import com.google.android.accessibility.talkback.Feedback.TriggerIntent.Action;
 import com.google.android.accessibility.talkback.Pipeline;
 import com.google.android.accessibility.talkback.R;
+import com.google.android.accessibility.talkback.commands.AppGestureFragment;
 import com.google.android.accessibility.talkback.commands.Commands;
 import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.actor.SpeechRateAndPitchActor;
@@ -653,6 +654,8 @@ public class GestureController {
       selectorController.changeGestureProfile(eventId, /* isNext= */ false);
     } else if (action.equals(service.getString(R.string.shortcut_value_next_gesture_profile))) {
       selectorController.changeGestureProfile(eventId, /* isNext= */ true);
+    } else if (action.equals(service.getString(R.string.shortcut_value_app_gestures_for_app))) {
+      result = AppGestureFragment.open(service, AppGestures.appShown());
     } else if (action.equals(service.getString(R.string.shortcut_value_settings_profiles))) {
       result = menuManager.showMenu(SETTINGS_PROFILE, eventId);
     } else if (action.equals(service.getString(R.string.shortcut_value_previous_settings_profile))) {

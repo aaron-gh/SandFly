@@ -259,6 +259,12 @@ object MenuCommands {
       R.id.gesture_profile_menu,
     )
     command(
+      R.string.pref_show_context_menu_app_gestures_setting_key,
+      R.bool.pref_show_context_menu_app_gestures_default,
+      R.string.shortcut_value_app_gestures_for_app,
+      R.id.app_gestures_menu,
+    )
+    command(
       R.string.pref_show_context_menu_voice_profile_setting_key,
       R.bool.pref_show_context_menu_voice_profile_default,
       R.string.shortcut_value_voice_profiles,
