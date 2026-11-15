@@ -16,10 +16,18 @@
 
 package com.google.android.accessibility.utils
 
+import android.view.accessibility.AccessibilityNodeInfo
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
+import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test
+import org.junit.runner.RunWith
+import org.robolectric.RobolectricTestRunner
+import org.robolectric.annotation.Config
 
+@RunWith(RobolectricTestRunner::class)
+@Config(sdk = [33])
 class TelegramShareButtonTest {
   private val telegram = "org.telegram.messenger"
   private val imageButton = "android.widget.ImageButton"
@@ -48,5 +56,34 @@ class TelegramShareButtonTest {
   fun onlyTelegramApps() {
     assertFalse(TelegramShareButton.looksLikeShareButton("com.whatsapp", imageButton, "Share", true))
     assertFalse(TelegramShareButton.looksLikeShareButton(null, imageButton, "Share", true))
+  }
+
+  private fun child(className: String?, description: String?, clickable: Boolean = true) =
+    AccessibilityNodeInfoCompat.wrap(AccessibilityNodeInfo()).apply {
+      packageName = telegram
+      this.className = className
+      contentDescription = description
+      isClickable = clickable
+    }
+
+  @Test
+  fun everyShareButtonOfAMessageIsOffered() {
+    val children =
+      listOf(
+        child(null, "Reply, Ronan, Hi"),
+        child(imageButton, "Share"),
+        null,
+        child("android.widget.Button", "Comments"),
+        child(imageButton, "Open chat"),
+      )
+    assertEquals(
+      listOf("Share", "Open chat"),
+      TelegramShareButton.shareButtonsAmong(children).map { it.contentDescription.toString() },
+    )
+  }
+
+  @Test
+  fun aMessageWithoutOneOffersNone() {
+    assertTrue(TelegramShareButton.shareButtonsAmong(listOf(child(null, "Reply, Ronan, Hi"))).isEmpty())
   }
 }

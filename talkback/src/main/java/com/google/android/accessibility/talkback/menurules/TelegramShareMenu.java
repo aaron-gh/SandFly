@@ -33,9 +33,9 @@ import java.util.List;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 /**
- * The share button of a Telegram message, which isn't focused on its own, as an action of the
- * message, under the label Telegram gives the button. When Telegram refuses the click, the button
- * is tapped as a finger would.
+ * The share buttons of a Telegram message, which aren't focused on their own, as actions of the
+ * message, each under the label Telegram gives it. When Telegram refuses the click, the button is
+ * tapped as a finger would.
  */
 public class TelegramShareMenu implements NodeMenu {
 
@@ -49,34 +49,51 @@ public class TelegramShareMenu implements NodeMenu {
 
   @Override
   public boolean accept(Context context, AccessibilityNodeInfoCompat node) {
-    return TelegramShareButton.shareButtonOf(node) != null;
+    return !TelegramShareButton.shareButtonsOf(node).isEmpty();
   }
 
   @Override
   public List<ContextMenuItem> getMenuItemsForNode(
       Context context, AccessibilityNodeInfoCompat node, boolean includeAncestors) {
     List<ContextMenuItem> items = new ArrayList<>();
-    @Nullable AccessibilityNodeInfoCompat button = TelegramShareButton.shareButtonOf(node);
-    if (button == null) {
-      return items;
+    List<AccessibilityNodeInfoCompat> buttons = TelegramShareButton.shareButtonsOf(node);
+    for (int i = 0; i < buttons.size(); i++) {
+      AccessibilityNodeInfoCompat button = buttons.get(i);
+      String label = button.getContentDescription().toString().trim();
+      int index = i;
+      ContextMenuItem item =
+          ContextMenu.createMenuItem(
+              context, Menu.NONE, R.id.telegram_share_button, Menu.NONE, label);
+      item.setOnMenuItemClickListener(
+          menuItem -> {
+            press(current(node, index, label, button));
+            return true;
+          });
+      items.add(item);
     }
-    ContextMenuItem item =
-        ContextMenu.createMenuItem(
-            context,
-            Menu.NONE,
-            R.id.telegram_share_button,
-            Menu.NONE,
-            button.getContentDescription().toString().trim());
-    item.setOnMenuItemClickListener(
-        menuItem -> {
-          // The message list may have been refreshed since the menu opened.
-          @Nullable AccessibilityNodeInfoCompat current =
-              node.refresh() ? TelegramShareButton.shareButtonOf(node) : null;
-          press(current != null ? current : button);
-          return true;
-        });
-    items.add(item);
     return items;
+  }
+
+  /**
+   * The button now at [index] among [message]'s share buttons, if it still has [label], since the
+   * message list may have been refreshed since the menu opened; otherwise [button].
+   */
+  private static AccessibilityNodeInfoCompat current(
+      AccessibilityNodeInfoCompat message,
+      int index,
+      String label,
+      AccessibilityNodeInfoCompat button) {
+    if (!message.refresh()) {
+      return button;
+    }
+    List<AccessibilityNodeInfoCompat> buttons = TelegramShareButton.shareButtonsOf(message);
+    if (index < buttons.size()) {
+      @Nullable CharSequence description = buttons.get(index).getContentDescription();
+      if (description != null && label.equals(description.toString().trim())) {
+        return buttons.get(index);
+      }
+    }
+    return button;
   }
 
   private void press(AccessibilityNodeInfoCompat button) {
