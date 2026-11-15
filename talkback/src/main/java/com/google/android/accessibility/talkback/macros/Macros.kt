@@ -63,6 +63,12 @@ object Macros {
   ) : Step()
 
   /**
+   * Taps the screen at [x] and [y], in pixels from the top left of the screen. The step fails when
+   * the position is outside the screen.
+   */
+  data class TapPosition(val x: Int, val y: Int) : Step()
+
+  /**
    * Moves accessibility focus to the item a [Tap] with the same values would click, which is then
    * spoken, waiting up to [timeoutMillis] for it to appear.
    */
@@ -275,12 +281,16 @@ object Macros {
   /** The most characters of text a step types or speaks. */
   const val MAX_TEXT = 10_000
 
+  /** The largest X or Y of a Tap at position step, in pixels. */
+  const val MAX_COORDINATE = 10_000
+
   /** Starts the value of a macro's command. It must never change once released. */
   private const val COMMAND_PREFIX = "MACRO:"
 
   private const val TYPE_COMMAND = "command"
   private const val TYPE_WAIT = "wait"
   private const val TYPE_TAP = "tap"
+  private const val TYPE_TAP_POSITION = "tap_position"
   private const val TYPE_FOCUS_ITEM = "focus_item"
   private const val TYPE_SPEAK_ITEM = "speak_item"
   private const val TYPE_SPEAK_TEXT = "speak_text"
@@ -386,6 +396,13 @@ object Macros {
     return (number * 1000).roundToLong()
   }
 
+  /**
+   * Returns [text] as the X or Y of a Tap at position step, or null when it isn't a whole number
+   * from 0 to [MAX_COORDINATE].
+   */
+  @JvmStatic
+  fun parseCoordinate(text: String): Int? = text.trim().toIntOrNull()?.takeIf { it in 0..MAX_COORDINATE }
+
   /** Returns [millis] as seconds for a text field: whole seconds without a decimal point. */
   @JvmStatic
   fun secondsText(millis: Long): String =
@@ -400,6 +417,7 @@ object Macros {
         Commands.label(context, step.value) ?: context.getString(R.string.macro_step_unavailable)
       is Wait -> waitText(context, step.millis)
       is Tap -> context.getString(R.string.macro_step_tap_value, labelText(context, step.label, step.regex, step.field))
+      is TapPosition -> context.getString(R.string.macro_step_tap_position_value, step.x, step.y)
       is FocusItem ->
         context.getString(R.string.macro_step_focus_value, labelText(context, step.label, step.regex, step.field))
       is SpeakItem ->
@@ -822,6 +840,7 @@ object Macros {
           .put("timeout", step.timeoutMillis)
           .apply { if (step.regex) put("regex", true) }
           .apply { step.field?.let { put("field", it.key) } }
+      is TapPosition -> JSONObject().put("type", TYPE_TAP_POSITION).put("x", step.x).put("y", step.y)
       is FocusItem ->
         JSONObject()
           .put("type", TYPE_FOCUS_ITEM)
@@ -973,6 +992,11 @@ object Macros {
             Field.of(item.optString("field")),
           )
         }
+      TYPE_TAP_POSITION -> {
+        val x = coordinateOf(item, "x")
+        val y = coordinateOf(item, "y")
+        if (x != null && y != null) TapPosition(x, y) else null
+      }
       TYPE_FOCUS_ITEM ->
         item.optString("label").takeIf { it.isNotBlank() }?.let {
           FocusItem(
@@ -1013,5 +1037,13 @@ object Macros {
         )
       else -> null
     }
+  }
+
+  /** Returns the X or Y [name] of [item], or null when it is missing or out of range. */
+  private fun coordinateOf(item: JSONObject, name: String): Int? {
+    if (!item.has(name)) return null
+    val value = item.optDouble(name, Double.NaN)
+    if (value.isNaN() || value < 0 || value > MAX_COORDINATE) return null
+    return value.roundToLong().toInt()
   }
 }

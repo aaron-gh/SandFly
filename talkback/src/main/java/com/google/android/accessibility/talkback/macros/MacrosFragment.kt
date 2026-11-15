@@ -422,6 +422,7 @@ class MacroFragment : MacroEditorFragment() {
       listOf(
         R.string.macro_step_command,
         R.string.macro_step_tap,
+        R.string.macro_step_tap_position,
         R.string.macro_step_focus,
         R.string.macro_step_speak_item,
         R.string.macro_step_speak_text,
@@ -448,6 +449,7 @@ class MacroFragment : MacroEditorFragment() {
       when (kinds[chosen]) {
         R.string.macro_step_command -> chooseCommand(add)
         R.string.macro_step_tap -> askTap(null, add)
+        R.string.macro_step_tap_position -> askTapPosition(null, add)
         R.string.macro_step_focus -> askTap(null, add, R.string.macro_step_focus)
         R.string.macro_step_speak_item -> askTap(null, add, R.string.macro_step_speak_item)
         R.string.macro_step_speak_text -> askSpeakText(null, add)
@@ -478,6 +480,7 @@ class MacroFragment : MacroEditorFragment() {
       is Macros.RunCommand -> chooseCommand(replace)
       is Macros.Wait -> askWait(step, replace)
       is Macros.Tap -> askTap(step, replace)
+      is Macros.TapPosition -> askTapPosition(step, replace)
       is Macros.FocusItem ->
         askTap(
           Macros.Tap(step.label, step.timeoutMillis, step.regex, step.field),
@@ -610,6 +613,27 @@ class MacroFragment : MacroEditorFragment() {
           )
           null
         }
+      }
+    }
+  }
+
+  private fun askTapPosition(step: Macros.TapPosition?, then: (Macros.Step) -> Unit) {
+    askText(
+      getString(R.string.macro_step_tap_position),
+      text = step?.x?.toString().orEmpty(),
+      hint = getString(R.string.macro_tap_x),
+      secondHint = getString(R.string.macro_tap_y),
+      secondText = step?.y?.toString().orEmpty(),
+      inputType = InputType.TYPE_CLASS_NUMBER,
+      secondInputType = InputType.TYPE_CLASS_NUMBER,
+    ) { xText, yText, _ ->
+      val x = Macros.parseCoordinate(xText)
+      val y = Macros.parseCoordinate(yText)
+      if (x == null || y == null) {
+        getString(R.string.macro_invalid_position, Macros.MAX_COORDINATE)
+      } else {
+        then(Macros.TapPosition(x, y))
+        null
       }
     }
   }

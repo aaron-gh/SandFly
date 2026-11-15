@@ -17,10 +17,15 @@
 package com.google.android.accessibility.talkback.gesture
 
 import android.content.Context
+import android.graphics.Rect
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.talkback.scripting.copyToClipboard
 
-/** The Speak position command: where the focused item is in its list or table. */
+/**
+ * The Speak position command: where the focused item is in its list or table; and the Speak
+ * coordinates command: where it is on screen.
+ */
 object ItemPosition {
 
   // How far up from the focused item to look for the list item, and from there for the list.
@@ -54,6 +59,28 @@ object ItemPosition {
     }
     return context.getString(R.string.speak_position_none)
   }
+
+  /**
+   * Returns the centre of [focused] on screen, in pixels from the top left, to speak, and copies it.
+   * The position is the one a macro's Tap at position step takes.
+   */
+  @JvmStatic
+  fun coordinates(context: Context, focused: AccessibilityNodeInfoCompat?): String {
+    focused ?: return context.getString(R.string.script_inspect_no_item)
+    val bounds = Rect()
+    focused.getBoundsInScreen(bounds)
+    val text = coordinatesText(context, bounds)
+    return if (context.copyToClipboard(context.getString(R.string.shortcut_speak_coordinates), text)) {
+      context.getString(R.string.speak_coordinates_copied, text)
+    } else {
+      text
+    }
+  }
+
+  /** Returns the centre of [bounds] as X and Y. */
+  @JvmStatic
+  fun coordinatesText(context: Context, bounds: Rect): String =
+    context.getString(R.string.speak_coordinates_value, bounds.centerX(), bounds.centerY())
 
   private fun collectionOf(item: AccessibilityNodeInfoCompat): AccessibilityNodeInfoCompat? {
     var node = item.parent

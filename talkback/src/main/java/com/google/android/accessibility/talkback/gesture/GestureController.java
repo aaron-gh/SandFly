@@ -1052,6 +1052,13 @@ public class GestureController {
               Feedback.requestedSpeech(
                   ItemPosition.describe(
                       service, accessibilityFocusMonitor.getAccessibilityFocus(false))));
+    } else if (action.equals(service.getString(R.string.shortcut_value_speak_coordinates))) {
+      result =
+          pipeline.returnFeedback(
+              eventId,
+              Feedback.requestedSpeech(
+                  ItemPosition.coordinates(
+                      service, accessibilityFocusMonitor.getAccessibilityFocus(false))));
     } else if (action.equals(service.getString(R.string.shortcut_value_inspect_item))) {
       AccessibilityNodeInfoCompat focused =
           accessibilityFocusMonitor.getAccessibilityFocus(false);

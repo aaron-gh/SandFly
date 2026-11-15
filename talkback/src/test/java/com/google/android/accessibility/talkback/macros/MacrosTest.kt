@@ -18,11 +18,13 @@ package com.google.android.accessibility.talkback.macros
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.graphics.Rect
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.commands.CommandMenus
 import com.google.android.accessibility.talkback.commands.Commands
 import com.google.android.accessibility.talkback.gesture.AppGestures
 import com.google.android.accessibility.talkback.gesture.GestureProfiles
+import com.google.android.accessibility.talkback.gesture.ItemPosition
 import com.google.android.accessibility.talkback.macros.Macros.FocusItem
 import com.google.android.accessibility.talkback.macros.Macros.Macro
 import com.google.android.accessibility.talkback.macros.Macros.OpenApp
@@ -30,6 +32,7 @@ import com.google.android.accessibility.talkback.macros.Macros.RunCommand
 import com.google.android.accessibility.talkback.macros.Macros.SpeakItem
 import com.google.android.accessibility.talkback.macros.Macros.SpeakText
 import com.google.android.accessibility.talkback.macros.Macros.Tap
+import com.google.android.accessibility.talkback.macros.Macros.TapPosition
 import com.google.android.accessibility.talkback.macros.Macros.TypeText
 import com.google.android.accessibility.talkback.macros.Macros.Wait
 import com.google.android.accessibility.utils.FormFactorUtils
@@ -80,6 +83,8 @@ class MacrosTest {
           Tap("Reply.*Anna", 5_000, regex = true),
           Tap("send", 5_000, field = Macros.Field.RESOURCE_ID),
           Tap("^Reply", 5_000, regex = true, field = Macros.Field.DESCRIPTION),
+          TapPosition(540, 1200),
+          TapPosition(0, 0),
           FocusItem("Send", 5_000),
           FocusItem("^Reply", 5_000, regex = true, field = Macros.Field.DESCRIPTION),
           SpeakItem("Unread", 5_000),
@@ -134,6 +139,39 @@ class MacrosTest {
       ),
       Macros.fromJson(json).single().steps,
     )
+  }
+
+  @Test
+  fun tapPositionWithoutCoordinatesOrOutOfRangeIsLeftOut() {
+    val steps =
+      JSONArray()
+        .put(JSONObject().put("type", "tap_position").put("x", 540).put("y", 1200))
+        .put(JSONObject().put("type", "tap_position").put("x", "10").put("y", "20"))
+        .put(JSONObject().put("type", "tap_position").put("x", 540))
+        .put(JSONObject().put("type", "tap_position").put("y", 1200))
+        .put(JSONObject().put("type", "tap_position").put("x", -1).put("y", 1200))
+        .put(JSONObject().put("type", "tap_position").put("x", 540).put("y", Macros.MAX_COORDINATE + 1))
+        .put(JSONObject().put("type", "tap_position").put("x", "left").put("y", 1200))
+        .put(JSONObject().put("type", "tap_position"))
+    val json =
+      JSONArray().put(JSONObject().put("id", "a").put("name", "A").put("steps", steps)).toString()
+    assertEquals(listOf(TapPosition(540, 1200), TapPosition(10, 20)), Macros.fromJson(json).single().steps)
+  }
+
+  @Test
+  fun parseCoordinate() {
+    assertEquals(540, Macros.parseCoordinate(" 540 "))
+    assertEquals(0, Macros.parseCoordinate("0"))
+    assertEquals(Macros.MAX_COORDINATE, Macros.parseCoordinate(Macros.MAX_COORDINATE.toString()))
+    assertNull(Macros.parseCoordinate(""))
+    assertNull(Macros.parseCoordinate("-1"))
+    assertNull(Macros.parseCoordinate("1.5"))
+    assertNull(Macros.parseCoordinate((Macros.MAX_COORDINATE + 1).toString()))
+  }
+
+  @Test
+  fun speakCoordinatesGivesTheCentreThatTapAtPositionTakes() {
+    assertEquals("X 540, Y 1200", ItemPosition.coordinatesText(context, Rect(440, 1150, 640, 1250)))
   }
 
   @Test
@@ -226,6 +264,7 @@ class MacrosTest {
     assertEquals("Wait 500 milliseconds", Macros.describe(context, Wait(500)))
     assertEquals("Tap Send", Macros.describe(context, Tap("Send")))
     assertEquals("Tap ^Re (regular expression)", Macros.describe(context, Tap("^Re", regex = true)))
+    assertEquals("Tap at 540, 1200", Macros.describe(context, TapPosition(540, 1200)))
     assertEquals("Focus Send", Macros.describe(context, FocusItem("Send")))
     assertEquals("Focus ^Re (regular expression)", Macros.describe(context, FocusItem("^Re", regex = true)))
     assertEquals("Speak Send", Macros.describe(context, SpeakItem("Send")))

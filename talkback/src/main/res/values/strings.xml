@@ -2166,6 +2166,12 @@
     <string name="shortcut_move_to_item_below">Move to item below</string>
     <!-- Label for the shortcut that moves accessibility focus to the item above the focused one, past the other items of its row, as the Vertical navigation reading control does. [CHAR_LIMIT=40] -->
     <string name="shortcut_move_to_item_above">Move to item above</string>
+    <!-- Label for the shortcut that speaks the screen coordinates of the centre of the focused item, in pixels, and copies them. [CHAR_LIMIT=40] -->
+    <string name="shortcut_speak_coordinates">Speak coordinates</string>
+    <!-- Spoken and copied by Speak coordinates: the centre of the focused item in pixels from the left (x) and from the top (y) of the screen. [CHAR_LIMIT=NONE] -->
+    <string name="speak_coordinates_value">X <xliff:g id="x" example="540">%1$d</xliff:g>, Y <xliff:g id="y" example="1200">%2$d</xliff:g></string>
+    <!-- Spoken by Speak coordinates after it copies the coordinates of the focused item. coordinates is the text copied, such as X 540, Y 1200. [CHAR_LIMIT=NONE] -->
+    <string name="speak_coordinates_copied"><xliff:g id="coordinates" example="X 540, Y 1200">%1$s</xliff:g>. Copied</string>
     <!-- Label for the shortcut that tries to scroll current view forward. [CHAR_LIMIT=40] -->
     <string name="shortcut_scroll_forward">Scroll forward</string>
     <!-- Label for the shortcut that tries to scroll current view back. [CHAR_LIMIT=40] -->

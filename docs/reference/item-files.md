@@ -92,6 +92,7 @@ Steps, by `type`:
 | `command` | `command` | Runs a command |
 | `wait` | `ms` | Waits, up to 600000 ms |
 | `tap` | `label`, `timeout`, `regex`, `field` | Taps the item whose text contains `label` |
+| `tap_position` | `x`, `y` | Taps the screen at `x`, `y` in pixels from the top left |
 | `focus_item` | `label`, `timeout`, `regex`, `field` | Moves accessibility focus to the item |
 | `speak_item` | `label`, `timeout`, `regex`, `field` | Speaks the item |
 | `speak_text` | `text` | Speaks the text |
@@ -108,7 +109,7 @@ Steps, by `type`:
 | `stop` | | Stops the macro |
 | `wait_until` | `condition`, `timeout` | Waits until the condition is met; the macro stops after `timeout` ms |
 
-`timeout` of `tap`, `focus_item` and `speak_item` is how long to wait for the item, from 500 to 60000 ms; 3000 by default. `label` is found anywhere in the item's text, description, hint or state, ignoring case. With `"regex": true` it is a regular expression. `field` limits the search to `"text"`, `"description"`, `"hint"`, `"state"` or `"id"` (the resource ID). A macro has at most 200 steps.
+`timeout` of `tap`, `focus_item` and `speak_item` is how long to wait for the item, from 500 to 60000 ms; 3000 by default. `label` is found anywhere in the item's text, description, hint or state, ignoring case. With `"regex": true` it is a regular expression. `field` limits the search to `"text"`, `"description"`, `"hint"`, `"state"` or `"id"` (the resource ID). `x` and `y` of `tap_position` are from 0 to 10000; the step fails when the position is outside the screen. The Speak coordinates command speaks and copies the position of the centre of the focused item. A macro has at most 200 steps.
 
 A condition is a list of tests. Tests are joined with "and"; a test with `"or": true` starts a new group joined with "or". `"not": true` reverses a test. A condition has at most 20 tests.
 

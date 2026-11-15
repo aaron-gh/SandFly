@@ -30,6 +30,16 @@
     <string name="macro_step_wait">Wait</string>
     <!-- Kind of macro step, and the title of its dialog: finds an item on screen by its text and activates it. [CHAR LIMIT=40] -->
     <string name="macro_step_tap">Tap item</string>
+    <!-- Kind of macro step, and the title of its dialog: taps the screen at an X and Y position in pixels, from the top left of the screen. [CHAR LIMIT=40] -->
+    <string name="macro_step_tap_position">Tap at position</string>
+    <!-- A Tap at position step in a macro's list of steps. x and y are the position in pixels from the left and from the top of the screen. [CHAR LIMIT=NONE] -->
+    <string name="macro_step_tap_position_value">Tap at <xliff:g id="x" example="540">%1$d</xliff:g>, <xliff:g id="y" example="1200">%2$d</xliff:g></string>
+    <!-- Label of the text field of a Tap at position step for the X position: pixels from the left of the screen. [CHAR LIMIT=40] -->
+    <string name="macro_tap_x">X, pixels from the left</string>
+    <!-- Label of the text field of a Tap at position step for the Y position: pixels from the top of the screen. [CHAR LIMIT=40] -->
+    <string name="macro_tap_y">Y, pixels from the top</string>
+    <!-- Error in the dialog of a Tap at position step when X or Y is not a whole number in range. max is the largest number allowed. [CHAR LIMIT=NONE] -->
+    <string name="macro_invalid_position">Enter X and Y from 0 to <xliff:g id="max" example="10000">%1$d</xliff:g></string>
     <!-- Kind of macro step, and the title of its dialog: finds an item on screen by its text and moves the screen reader's focus to it, which speaks it, without activating it. [CHAR LIMIT=40] -->
     <string name="macro_step_focus">Focus item</string>
     <!-- Kind of macro step, and the title of its dialog: finds an item on screen by its text and speaks its name, without moving the screen reader's focus or activating it. [CHAR LIMIT=40] -->

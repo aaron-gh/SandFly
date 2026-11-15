@@ -650,6 +650,7 @@ object Commands {
         )
         gesture(R.string.shortcut_value_announce_status, R.string.shortcut_announce_status)
         gesture(R.string.shortcut_value_speak_position, R.string.shortcut_speak_position)
+        gesture(R.string.shortcut_value_speak_coordinates, R.string.shortcut_speak_coordinates)
         gesture(
           R.string.shortcut_value_announce_current_time_and_date,
           R.string.shortcut_announce_current_time_and_date,
