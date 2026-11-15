@@ -185,7 +185,7 @@ public final class ScrollAhead {
     if (bounds == null || list == null) {
       return;
     }
-    LogUtils.d(TAG, "The page moved the focused item at %s off screen.", bounds);
+    LogUtils.i(TAG, "The page moved the focused item at %s off screen.", bounds);
     // The page was planned to leave a part of the item on screen, so it was longer than learned.
     FocusProcessorForLogicalNavigation.distrustPage(list);
     TraversalTreeCache.rememberScrolledAway(
@@ -281,9 +281,11 @@ public final class ScrollAhead {
     plan.list.getBoundsInScreen(pageListBounds);
     lastPageUptime = SystemClock.uptimeMillis();
     pages++;
-    LogUtils.d(
+    LogUtils.i(
         TAG,
-        "Scrolling ahead of the focused item %s: page %d, last page %s px.",
+        "Scrolling ahead of the focused item at %s in the list at %s %s: page %d, last page %s px.",
+        plan.itemBounds,
+        pageListBounds,
         forward ? "forward" : "back",
         pages,
         plan.pagePx > 0 ? String.valueOf(plan.pagePx) : "not known");

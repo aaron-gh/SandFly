@@ -783,6 +783,18 @@ public class FocusProcessorForLogicalNavigation {
       } else {
         pivot = root;
       }
+      if (LogUtils.shouldLog(Log.INFO)) {
+        Rect bounds = new Rect();
+        if (pivot != null) {
+          pivot.getBoundsInScreen(bounds);
+        }
+        LogUtils.i(
+            TAG,
+            "No focus to move from; starting from %s at %s, %s.",
+            pivot == root ? "the window" : "the node near the last pivot",
+            bounds,
+            rowDescription(pivot));
+      }
     }
     return pivot;
   }
@@ -4002,6 +4014,19 @@ public class FocusProcessorForLogicalNavigation {
             ScrollTimeout.SCROLL_TIMEOUT_LONG,
             autoScrollChecker,
             eventId);
+    if (LogUtils.shouldLog(Log.INFO)) {
+      Rect listBounds = new Rect();
+      scrollableNodeInfo.getNode().getBoundsInScreen(listBounds);
+      LogUtils.i(
+          TAG,
+          "Scroll %s for a swipe, attempt %d: pivot %s at %s, list at %s, result=%s.",
+          AccessibilityNodeInfoUtils.actionToString(scrollAction),
+          navigationAction.autoScrollAttempt,
+          rowDescription(pivot),
+          pivotBefore,
+          listBounds,
+          scrolled);
+    }
     if (scrolled
         && scrollCallback != null
         && navigationAction.targetType == NavigationTarget.TARGET_DEFAULT) {
@@ -4205,7 +4230,16 @@ public class FocusProcessorForLogicalNavigation {
       LogUtils.d(TAG, "A list item came on screen after %d ms, but nothing to focus yet.", elapsed);
       return false;
     }
-    LogUtils.d(TAG, "Next item on screen %d ms after the scroll; focusing it now.", elapsed);
+    AccessibilityNodeInfoCompat target =
+        keepRowOrder(track.scrollable, next, sourceAction.searchDirection, "While scrolling");
+    if (LogUtils.shouldLog(Log.INFO)) {
+      LogUtils.i(
+          TAG,
+          "While scrolling: focusing %s %d ms after the scroll from row %s.",
+          rowDescription(target),
+          elapsed,
+          swipePivotRow == null ? "none" : String.valueOf(swipePivotRow.row()));
+    }
     trackedCallback = null;
     // The rest of the scroll changes nothing; its events find no callback.
     scrollCallback = null;
@@ -4213,11 +4247,11 @@ public class FocusProcessorForLogicalNavigation {
         NavigationAction.Builder.copy(sourceAction)
             .setAutoScrollAttempt(sourceAction.autoScrollAttempt + 1)
             .build();
-    setAccessibilityFocusInternal(next, navigationAction, track.eventId);
+    setAccessibilityFocusInternal(target, navigationAction, track.eventId);
     int serial = navigationSerial;
     int startDeltaSum = scrollStartDeltaSumY;
     earlyScrollCheckHandler.postDelayed(
-        () -> showWhenListStops(list, next, serial, track, startDeltaSum), SHOW_CHECK_MS);
+        () -> showWhenListStops(list, target, serial, track, startDeltaSum), SHOW_CHECK_MS);
     return true;
   }
 
@@ -4923,6 +4957,174 @@ public class FocusProcessorForLogicalNavigation {
     return row < rowCount ? row : -1;
   }
 
+  /** A row of a one-column list: the list, the row's index and how many rows it spans. */
+  @VisibleForTesting
+  record ListRow(AccessibilityNodeInfoCompat list, int row, int span) {}
+
+  /** The row that the swipe in progress started from, read when its first scroll started. */
+  private @Nullable ListRow swipePivotRow;
+
+  /**
+   * Returns the row of the one-column list item that is {@code node} or holds it within {@link
+   * #MAX_ITEM_DEPTH} layers, or null if it isn't in such a list.
+   */
+  @VisibleForTesting
+  static @Nullable ListRow rowOf(@Nullable AccessibilityNodeInfoCompat node) {
+    AccessibilityNodeInfoCompat item = node;
+    for (int depth = 0; item != null && depth <= MAX_ITEM_DEPTH; depth++) {
+      CollectionItemInfoCompat info = item.getCollectionItemInfo();
+      if (info != null) {
+        AccessibilityNodeInfoCompat list = item.getParent();
+        CollectionInfoCompat collection = (list == null) ? null : list.getCollectionInfo();
+        if (collection == null || collection.getColumnCount() != 1 || info.getRowIndex() < 0) {
+          return null;
+        }
+        return new ListRow(list, info.getRowIndex(), Math.max(1, info.getRowSpan()));
+      }
+      item = item.getParent();
+    }
+    return null;
+  }
+
+  /**
+   * Returns the row that a move {@code forward}, or back, goes to from {@code from}, in a list
+   * whose indexes run up the screen if {@code indexesRunUpward}.
+   */
+  @VisibleForTesting
+  static int rowAfterMove(ListRow from, boolean forward, boolean indexesRunUpward) {
+    return (forward == indexesRunUpward) ? from.row() - 1 : from.row() + from.span();
+  }
+
+  /** Returns the child of {@code list} on screen that is its item at {@code row}, if any. */
+  @VisibleForTesting
+  static @Nullable AccessibilityNodeInfoCompat itemAtRow(
+      AccessibilityNodeInfoCompat list, int row) {
+    int count = Math.min(list.getChildCount(), MAX_LIST_CHILDREN_CHECKED);
+    for (int i = 0; i < count; i++) {
+      AccessibilityNodeInfoCompat child = list.getChild(i);
+      if (child == null || !child.isVisibleToUser()) {
+        continue;
+      }
+      CollectionItemInfoCompat info = child.getCollectionItemInfo();
+      if (info != null && info.getRowIndex() == row) {
+        return child;
+      }
+    }
+    return null;
+  }
+
+  /**
+   * Returns whether {@code found}, a row of {@code list} or null if the found node is in none, lies
+   * past {@code nextRow}, the row after {@code fromRow} going the swipe's way.
+   */
+  @VisibleForTesting
+  static boolean liesPastRow(
+      @Nullable ListRow found, AccessibilityNodeInfoCompat list, int fromRow, int nextRow) {
+    if (found == null || !list.equals(found.list())) {
+      return false;
+    }
+    return (nextRow > fromRow) ? found.row() > nextRow : found.row() < nextRow;
+  }
+
+  /**
+   * Returns the node to focus in {@code item}, as a swipe {@code direction} would reach it: the
+   * item, or the first part of it that takes focus. Null if nothing in it does.
+   */
+  @VisibleForTesting
+  static @Nullable AccessibilityNodeInfoCompat focusIn(
+      AccessibilityNodeInfoCompat item,
+      TraversalStrategy strategy,
+      @SearchDirection int direction,
+      Filter<AccessibilityNodeInfoCompat> filter) {
+    AccessibilityNodeInfoCompat target =
+        filter.accept(item)
+            ? item
+            : TraversalStrategyUtils.findFirstFocusInNodeTree(strategy, item, direction, filter);
+    if (target == null
+        || !(target.equals(item) || AccessibilityNodeInfoUtils.hasAncestor(target, item))
+        || !AccessibilityNodeInfoUtils.isVisible(target)) {
+      return null;
+    }
+    return target;
+  }
+
+  /**
+   * Returns the node to focus after a swipe's scroll of {@code list}: {@code found}, or, in a
+   * one-column list, the row after the one the swipe started from, when that row is on screen and
+   * {@code found} lies past it or is null. A search from a starting item whose view the list has
+   * reused for a later row, or from the first item on screen after a scroll that went too far, would
+   * otherwise skip the rows in between, and finding nothing would scroll another page.
+   */
+  private @Nullable AccessibilityNodeInfoCompat keepRowOrder(
+      AccessibilityNodeInfoCompat list,
+      @Nullable AccessibilityNodeInfoCompat found,
+      @SearchDirection int searchDirection,
+      String when) {
+    ListRow from = swipePivotRow;
+    if (from == null || !from.list().equals(list)) {
+      return found;
+    }
+    int logicalDirection =
+        TraversalStrategyUtils.getLogicalDirection(
+            searchDirection, WindowUtils.isScreenLayoutRTL(service));
+    if (logicalDirection != SEARCH_FOCUS_FORWARD && logicalDirection != SEARCH_FOCUS_BACKWARD) {
+      return found;
+    }
+    // Only a node more than a row away, or none, is checked further.
+    ListRow foundRow = (found == null) ? null : rowOf(found);
+    if (found != null
+        && (foundRow == null || Math.abs(foundRow.row() - from.row()) <= from.span())) {
+      return found;
+    }
+    Boolean upward = indexesRunUpward(list);
+    if (upward == null) {
+      return found;
+    }
+    int nextRow = rowAfterMove(from, logicalDirection == SEARCH_FOCUS_FORWARD, upward);
+    if (found != null && !liesPastRow(foundRow, list, from.row(), nextRow)) {
+      return found;
+    }
+    AccessibilityNodeInfoCompat item = itemAtRow(list, nextRow);
+    AccessibilityNodeInfoCompat target = null;
+    if (item != null) {
+      TraversalStrategy strategy =
+          TraversalStrategyUtils.getTraversalStrategy(list, focusFinder, searchDirection);
+      target =
+          focusIn(
+              item,
+              strategy,
+              searchDirection,
+              NavigationTarget.createNodeFilter(
+                  NavigationTarget.TARGET_DEFAULT, strategy.getSpeakingNodesCache()));
+    }
+    if (target == null) {
+      if (found != null) {
+        LogUtils.i(
+            TAG,
+            "%s: row %d after row %d; row %d is not on screen or takes no focus.",
+            when,
+            foundRow.row(),
+            from.row(),
+            nextRow);
+      }
+      return found;
+    }
+    LogUtils.i(
+        TAG,
+        "%s: focusing row %d after row %d in place of %s.",
+        when,
+        nextRow,
+        from.row(),
+        found == null ? "another scroll" : "row " + foundRow.row());
+    return target;
+  }
+
+  /** Describes the list row of {@code node} for the log. */
+  private static String rowDescription(@Nullable AccessibilityNodeInfoCompat node) {
+    ListRow row = rowOf(node);
+    return (row == null) ? "a node in no list row" : "row " + row.row();
+  }
+
   /** Returns whether {@code itemBounds} reach the bottom of {@code listBounds}. */
   @VisibleForTesting
   static boolean reachesListBottom(Rect itemBounds, Rect listBounds) {
@@ -4968,7 +5170,7 @@ public class FocusProcessorForLogicalNavigation {
       int row,
       NavigationAction navigationAction,
       EventId eventId) {
-    LogUtils.d(TAG, "Jumping to row %d of the list.", row);
+    LogUtils.i(TAG, "Jumping to row %d of the list.", row);
     Rect pivotBefore = new Rect();
     pivot.getBoundsInScreen(pivotBefore);
     boolean scrolled =
@@ -5706,6 +5908,21 @@ public class FocusProcessorForLogicalNavigation {
               scrolledNode, focusBeforeScroll, sourceAction, eventId, settleChecksLeft - 1);
           return;
         }
+        // The row after the swipe's starting row may be on screen though the pivot shows another
+        // row now; scrolling again would pass it.
+        AccessibilityNodeInfoCompat inNextRow =
+            keepRowOrder(scrolledNode, null, sourceAction.searchDirection, "After the scroll");
+        if (inNextRow != null) {
+          setAccessibilityFocusInternal(inNextRow, navigationAction, eventId);
+          return;
+        }
+        if (LogUtils.shouldLog(Log.INFO)) {
+          LogUtils.i(
+              TAG,
+              "After the scroll: nothing after the pivot (%s); searching again, attempt %d.",
+              rowDescription(focusBeforeScroll),
+              navigationAction.autoScrollAttempt);
+        }
         if (settled
             && sourceAction.shouldScroll
             && sourceAction.isPrevScrolled
@@ -5806,6 +6023,17 @@ public class FocusProcessorForLogicalNavigation {
       AccessibilityNodeInfoCompat scrolledNode,
       NavigationAction navigationAction,
       EventId eventId) {
+    nodeToFocus =
+        keepRowOrder(
+            scrolledNode, nodeToFocus, navigationAction.searchDirection, "After the scroll");
+    if (LogUtils.shouldLog(Log.INFO)) {
+      LogUtils.i(
+          TAG,
+          "After the scroll: swipe from row %s, focusing %s.",
+          swipePivotRow == null ? "none" : String.valueOf(swipePivotRow.row()),
+          rowDescription(nodeToFocus));
+    }
+
     // If we're moving backward with default target from native views to WebView container node,
     // automatically descend to the last element in the WebView.
     int logicalDirection =
@@ -5992,7 +6220,7 @@ public class FocusProcessorForLogicalNavigation {
     if (!autoScroll(scrollableNodeInfo, pivot, navigationAction, eventId)) {
       return false;
     }
-    LogUtils.d(TAG, "No next item yet; scrolled again at once.");
+    LogUtils.i(TAG, "No next item yet; scrolled again at once.");
     return true;
   }
 
@@ -6289,6 +6517,15 @@ public class FocusProcessorForLogicalNavigation {
       parent.listSettled = false;
       parent.scrollStartedQuiet =
           SystemClock.uptimeMillis() - lastScrollEventUptime >= LIST_STOPPED_MS;
+      // The swipe's first scroll reads the starting row; later scrolls of the swipe keep it, as
+      // their pivot may since show another row.
+      if (sourceAction.autoScrollAttempt == 0) {
+        parent.swipePivotRow =
+            (sourceAction.actionType == NavigationAction.DIRECTIONAL_NAVIGATION
+                    && sourceAction.targetType == NavigationTarget.TARGET_DEFAULT)
+                ? rowOf(pivot)
+                : null;
+      }
       countScrollAction();
     }
 
