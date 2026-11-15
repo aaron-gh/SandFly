@@ -2596,6 +2596,20 @@
     <string name="shortcut_submit_text">Submit text</string>
     <!-- Label for the command that removes all text from the focused edit box. [CHAR_LIMIT=NONE] -->
     <string name="shortcut_clear_text">Clear text</string>
+    <!-- Label for the command that says how many characters and words the text in the focused edit box has. [CHAR LIMIT=NONE] -->
+    <string name="shortcut_character_count">Character count</string>
+    <!-- Spoken by the Character count command: the length of the text in the focused edit box. %1$s is the number of characters, such as "12 characters", %2$s the number of words, such as "3 words". [CHAR LIMIT=NONE] -->
+    <string name="character_count_template"><xliff:g id="characters" example="12 characters">%1$s</xliff:g>, <xliff:g id="words" example="3 words">%2$s</xliff:g></string>
+    <!-- Number of characters in the focused edit box, spoken by the Character count command. [CHAR LIMIT=NONE] -->
+    <plurals name="character_count_characters">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> character</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> characters</item>
+    </plurals>
+    <!-- Number of words in the focused edit box, spoken by the Character count command. [CHAR LIMIT=NONE] -->
+    <plurals name="character_count_words">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> word</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> words</item>
+    </plurals>
     <!-- Label for the command that switches to the next on-screen keyboard (input method) turned on in Android's keyboard settings. [CHAR LIMIT=NONE] -->
     <string name="shortcut_switch_keyboard">Switch keyboard</string>
     <!-- Spoken when the Switch keyboard command finds no keyboard turned on other than the current one. [CHAR LIMIT=NONE] -->
