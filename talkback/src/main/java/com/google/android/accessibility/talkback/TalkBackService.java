@@ -895,6 +895,20 @@ public class TalkBackService extends AccessibilityServiceCompat
   // event is in the time window between TYPE_TOUCH_INTERACTION_START and
   // TYPE_TOUCH_INTERACTION_END will be considered as passthrough window.
   private boolean isTouchInteracting = false;
+
+  /**
+   * The service flags that make Android set up touch exploration again when they change, ending
+   * the touch in progress without a {@link AccessibilityEvent#TYPE_TOUCH_INTERACTION_END}.
+   */
+  private static final int TOUCH_EXPLORATION_SETUP_FLAGS =
+      AccessibilityServiceInfo.FLAG_REQUEST_TOUCH_EXPLORATION_MODE
+          | FLAG_SERVICE_HANDLES_DOUBLE_TAP
+          | AccessibilityServiceInfo.FLAG_REQUEST_MULTI_FINGER_GESTURES
+          | AccessibilityServiceInfo.FLAG_REQUEST_2_FINGER_PASSTHROUGH
+          | AccessibilityServiceInfo.FLAG_SEND_MOTION_EVENTS;
+
+  @Nullable private ProcessorVolumeStream processorVolumeStream;
+
   // In order to handle key action down/up in pair for the same functions.
   // Records whether the last keystroke of VolumeUp key occurred in the passthrough window.
   private boolean volumeUpKeyPressedInPassThroughWindow = false;
@@ -1733,10 +1747,11 @@ public class TalkBackService extends AccessibilityServiceCompat
     if (adjustSliderWithVolumeKey(keyEvent, triggerModifierPressed)) {
       return true;
     }
+    // The lambda uses keyCode, not keyEvent: the event may be recycled by the time a long press
+    // asks.
     if (volumeKeyCommands != null
         && volumeKeyCommands.onKeyEvent(
-            keyEvent,
-            () -> canUseVolumeKeyCommands(triggerModifierPressed, keyEvent.getKeyCode()))) {
+            keyEvent, () -> volumeKeyCommandsOffReason(triggerModifierPressed, keyCode))) {
       return true;
     }
     if (oneUiVolumeKeys != null
@@ -1850,15 +1865,25 @@ public class TalkBackService extends AccessibilityServiceCompat
   }
 
   /**
-   * Returns whether double, triple and long presses of the volume keys run their commands now: as
-   * for {@link #canUseVolumeKeyPresses}, and also while an always-on display shows the lock screen.
-   * While a call rings, only a key with Answer call among its presses' commands is counted.
+   * Returns null when double, triple and long presses of the volume key {@code keyCode} run their
+   * commands now, and otherwise why they don't. They run as for {@link #canUseVolumeKeyPresses},
+   * and also while an always-on display shows the lock screen. While a call rings, only a key with
+   * Answer call among its presses' commands is counted.
    */
-  private boolean canUseVolumeKeyCommands(boolean triggerModifierPressed, int keyCode) {
-    return canTakeVolumeKeys(triggerModifierPressed, isRingingCallAnsweredBy(keyCode))
-        && ringerModeAndScreenMonitor != null
-        && (ringerModeAndScreenMonitor.isInteractive()
-            || VolumeKeyCommands.canCountWhileNotInteractive(this));
+  private @Nullable String volumeKeyCommandsOffReason(boolean triggerModifierPressed, int keyCode) {
+    String reason =
+        volumeKeysTakenOffReason(triggerModifierPressed, isRingingCallAnsweredBy(keyCode));
+    if (reason != null) {
+      return reason;
+    }
+    if (ringerModeAndScreenMonitor == null) {
+      return "no screen monitor";
+    }
+    if (!ringerModeAndScreenMonitor.isInteractive()
+        && !VolumeKeyCommands.canCountWhileNotInteractive(this)) {
+      return "screen not interactive";
+    }
+    return null;
   }
 
   /** Whether a call rings and a press of the volume key {@code keyCode} has Answer call. */
@@ -1878,15 +1903,36 @@ public class TalkBackService extends AccessibilityServiceCompat
    * allows it while a call rings, though not during a call.
    */
   private boolean canTakeVolumeKeys(boolean triggerModifierPressed, boolean whileRinging) {
-    return isServiceActive()
-        // Shortcut Menu starts its safe mode, for a screen reader that stopped working, with three
-        // presses of volume up, so its keys go to it as they are.
-        && !SHORTCUT_MENU_PACKAGE.contentEquals(AppGestures.appShown())
-        && !isTouchInteracting
-        && !triggerModifierPressed
-        && !isBrailleImeTouchInteracting()
-        && !pipeline.getActorState().getContinuousRead().isActive()
-        && (whileRinging || !isPhoneCallActive());
+    return volumeKeysTakenOffReason(triggerModifierPressed, whileRinging) == null;
+  }
+
+  /** Why {@link #canTakeVolumeKeys} is false, or null when it is true. */
+  private @Nullable String volumeKeysTakenOffReason(
+      boolean triggerModifierPressed, boolean whileRinging) {
+    if (!isServiceActive()) {
+      return "service not active";
+    }
+    // Shortcut Menu starts its safe mode, for a screen reader that stopped working, with three
+    // presses of volume up, so its keys go to it as they are.
+    if (SHORTCUT_MENU_PACKAGE.contentEquals(AppGestures.appShown())) {
+      return "Shortcut Menu shown";
+    }
+    if (isTouchInteracting) {
+      return "touch interaction";
+    }
+    if (triggerModifierPressed) {
+      return "SandFly key held";
+    }
+    if (isBrailleImeTouchInteracting()) {
+      return "braille keyboard touched";
+    }
+    if (pipeline.getActorState().getContinuousRead().isActive()) {
+      return "continuous reading";
+    }
+    if (!whileRinging && isPhoneCallActive()) {
+      return "phone call, state " + voiceActionMonitor.getCurrentCallState();
+    }
+    return null;
   }
 
   /**
@@ -1971,6 +2017,24 @@ public class TalkBackService extends AccessibilityServiceCompat
 
   private boolean isBrailleImeTouchInteracting() {
     return getBrailleImeForTalkBack() != null && getBrailleImeForTalkBack().isTouchInteracting();
+  }
+
+  /**
+   * Ends the touch interaction in progress, for when Android ends it without a {@link
+   * AccessibilityEvent#TYPE_TOUCH_INTERACTION_END}: when touch exploration is set up again or the
+   * touch is cancelled. Otherwise, until the next touch, the volume keys change speech volume only,
+   * their commands and cursor movement stay off, and notifications held for the touch stay held.
+   */
+  private void forgetTouchInteraction(String reason) {
+    if (!isTouchInteracting) {
+      return;
+    }
+    Log.i(TAG, "Touch interaction ended without its event: " + reason);
+    isTouchInteracting = false;
+    if (processorVolumeStream != null) {
+      processorVolumeStream.forgetTouchInteraction();
+    }
+    NotificationReader.onTouchEnded();
   }
 
   @Override
@@ -3052,7 +3116,7 @@ public class TalkBackService extends AccessibilityServiceCompat
 
     headphoneStateMonitor = new HeadphoneStateMonitor(this);
 
-    ProcessorVolumeStream processorVolumeStream =
+    processorVolumeStream =
         new ProcessorVolumeStream(pipeline.getActorState(), this, touchInteractingIndicator);
     addEventListener(processorVolumeStream);
     keyEventListeners.add(processorVolumeStream);
@@ -3078,6 +3142,10 @@ public class TalkBackService extends AccessibilityServiceCompat
                     : AudioManager.USE_DEFAULT_STREAM_TYPE);
     ringerModeAndScreenMonitor.addScreenChangedListener(
         (isInteractive, eventId) -> {
+          if (!isInteractive) {
+            // Android cancels the touch, which ends with no TYPE_TOUCH_INTERACTION_END.
+            forgetTouchInteraction("screen off");
+          }
           if (!isInteractive && volumeKeyCommands != null) {
             volumeKeyCommands.onScreenOff();
           }
@@ -3641,6 +3709,7 @@ public class TalkBackService extends AccessibilityServiceCompat
 
       LogUtils.v(TAG, "Accessibility Service flag set: 0x%X", info.flags);
       setServiceInfo(info);
+      forgetTouchInteraction("service flags set");
     }
 
     if (callStateMonitor != null) {
@@ -4977,6 +5046,9 @@ public class TalkBackService extends AccessibilityServiceCompat
 
     LogUtils.v(TAG, "Accessibility Service flag changed: 0x%X", info.flags);
     setServiceInfo(info);
+    if ((flags & TOUCH_EXPLORATION_SETUP_FLAGS) != 0) {
+      forgetTouchInteraction("touch exploration set up again");
+    }
     if ((flags & AccessibilityServiceInfo.FLAG_REQUEST_TOUCH_EXPLORATION_MODE)
             == AccessibilityServiceInfo.FLAG_REQUEST_TOUCH_EXPLORATION_MODE
         && newValue
@@ -5545,8 +5617,12 @@ public class TalkBackService extends AccessibilityServiceCompat
       // When gesture detection's enabled in the service side, FLAG_SERVICE_HANDLES_DOUBLE_TAP
       // will be set. And it won't be changed during the life time of service. Otherwise the touch
       // interaction controller will be affected.
+      boolean changed = (info.flags & FLAG_SERVICE_HANDLES_DOUBLE_TAP) == 0;
       info.flags |= FLAG_SERVICE_HANDLES_DOUBLE_TAP;
       setServiceInfo(info);
+      if (changed) {
+        forgetTouchInteraction("touch exploration set up again");
+      }
     }
 
     List<Display> displays = WindowUtils.getAllDisplays(getApplicationContext());

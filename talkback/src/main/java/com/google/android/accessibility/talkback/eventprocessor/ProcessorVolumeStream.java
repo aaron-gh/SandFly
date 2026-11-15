@@ -145,6 +145,11 @@ public class ProcessorVolumeStream
     }
   }
 
+  /** Ends the touch interaction in progress, which Android ended without its event. */
+  public void forgetTouchInteraction() {
+    isTouchInteracting = false;
+  }
+
   @Override
   public boolean onKeyEvent(KeyEvent event, EventId eventId) {
     boolean handled = patternDetector.onKeyEvent(event);

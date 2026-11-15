@@ -38,6 +38,9 @@ class VolumeKeyPressesTest {
   private var task: Runnable? = null
   private var canUse = true
 
+  /** Presses with a command that passed to Android: "up: reason". */
+  private val passes = mutableListOf<String>()
+
   private val timer =
     object : VolumeKeyPresses.Timer {
       override fun schedule(delayMs: Long, task: Runnable) {
@@ -65,6 +68,11 @@ class VolumeKeyPressesTest {
           override fun adjustVolume(keyCode: Int, repeated: Boolean) {
             val name = if (keyCode == KEYCODE_VOLUME_UP) "up" else "down"
             log += if (repeated) "$name repeated" else name
+          }
+
+          override fun passed(keyCode: Int, reason: String) {
+            val name = if (keyCode == KEYCODE_VOLUME_UP) "up" else "down"
+            passes += "$name: $reason"
           }
         },
       )
@@ -309,6 +317,31 @@ class VolumeKeyPressesTest {
     assertTrue(press(KEYCODE_VOLUME_UP))
     advance(300)
     assertEquals(listOf("up"), log)
+  }
+
+  @Test
+  fun bothKeysHeld_reportsWhyTheSecondPasses() {
+    assign(up = KeyCommands(null, null, "L"), down = KeyCommands(null, null, "M"))
+    assertTrue(down(KEYCODE_VOLUME_UP))
+    advance(100)
+    assertFalse(down(KEYCODE_VOLUME_DOWN))
+    assertEquals(listOf("down: both volume keys held"), passes)
+  }
+
+  @Test
+  fun otherKeyHeld_reportsWhyAssignedKeyPasses() {
+    assign(up = KeyCommands(null, null, "L"))
+    assertFalse(down(KEYCODE_VOLUME_DOWN))
+    assertTrue(passes.isEmpty())
+    assertFalse(down(KEYCODE_VOLUME_UP))
+    assertEquals(listOf("up: other volume key held"), passes)
+  }
+
+  @Test
+  fun unassignedKeyPassing_reportsNothing() {
+    assign(up = KeyCommands(null, null, "L"))
+    assertFalse(press(KEYCODE_VOLUME_DOWN))
+    assertTrue(passes.isEmpty())
   }
 
   @Test

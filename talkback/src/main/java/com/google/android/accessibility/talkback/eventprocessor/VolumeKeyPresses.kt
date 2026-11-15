@@ -51,6 +51,9 @@ class VolumeKeyPresses(private val timer: Timer, private val callbacks: Callback
 
     /** Changes the volume as a press of [keyCode] would, [repeated] when the key is held. */
     fun adjustVolume(keyCode: Int, repeated: Boolean)
+
+    /** A press of [keyCode], which has a command, passes to Android because of [reason]. */
+    fun passed(keyCode: Int, reason: String) {}
   }
 
   /** The commands of one volume key's presses, null when a press has none. */
@@ -177,6 +180,7 @@ class VolumeKeyPresses(private val timer: Timer, private val callbacks: Callback
         // Both volume keys: the accessibility shortcut, or stopping a notification readout.
         timer.cancel()
         state = State.IGNORED
+        callbacks.passed(keyCode, "both volume keys held")
         return false
       }
       if (held) {
@@ -188,6 +192,9 @@ class VolumeKeyPresses(private val timer: Timer, private val callbacks: Callback
     }
     if (isDown(otherKey(keyCode))) {
       // Both volume keys, the first of which passed to Android.
+      if (!commandsFor(keyCode).isEmpty) {
+        callbacks.passed(keyCode, "other volume key held")
+      }
       return false
     }
     if (commandsFor(keyCode).isEmpty || !canUse()) {
