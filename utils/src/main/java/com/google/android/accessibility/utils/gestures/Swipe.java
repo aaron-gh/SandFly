@@ -91,6 +91,10 @@ class Swipe extends GestureMatcher {
   // Whether this one-direction swipe runs once it has moved the gesture confirm distance, before
   // the finger lifts. Decided when the finger goes down, from the actions gestures have then.
   private boolean runsBeforeLift;
+  // When the finger went down. A swipe that runs before the lift waits until a second finger can
+  // no longer land for a two-finger swipe.
+  private long downTime;
+  private final int secondFingerTimeoutMs = GestureConfiguration.multiFingerSwipeFingerTimeoutMs(2);
   // Where the finger last moved beyond the touch slop, and when.
   private float restX;
   private float restY;
@@ -219,6 +223,7 @@ class Swipe extends GestureMatcher {
       baseX = event.getX();
       baseY = event.getY();
       baseTime = event.getEventTime();
+      downTime = baseTime;
       previousGestureX = baseX;
       previousGestureY = baseY;
       holdAssigned = holdGestureId != 0 && configProvider.isGestureAssigned(holdGestureId);
@@ -322,8 +327,10 @@ class Swipe extends GestureMatcher {
       previousGestureY = y;
       strokeBuffer.add(new PointF(x, y));
     }
+    // Before the second finger's time is up, the next move checks again.
     if (runsBeforeLift
         && getState() == STATE_GESTURE_STARTED
+        && time - downTime >= secondFingerTimeoutMs
         && !configProvider.holdsSwipeUntilLift()
         && strokeMatches(strokeWith(x, y))) {
       gestureMotionEventLog(VERBOSE, "Completed before the lift.");

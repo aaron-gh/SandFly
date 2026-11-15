@@ -112,7 +112,7 @@ class MultiFingerSwipe extends GestureMatcher {
     final float pixelsPerCmY = displayMetrics.ydpi / GestureUtils.CM_PER_INCH;
     minPixelsBetweenSamplesX = MIN_CM_BETWEEN_SAMPLES * pixelsPerCmX;
     minPixelsBetweenSamplesY = MIN_CM_BETWEEN_SAMPLES * pixelsPerCmY;
-    tapTimeout = targetFingerCount * ViewConfiguration.getTapTimeout();
+    tapTimeout = GestureConfiguration.multiFingerSwipeFingerTimeoutMs(targetFingerCount);
     touchSlop =
         ViewConfiguration.get(context).getScaledTouchSlop()
             * context.getResources().getInteger(R.integer.config_slop_default_multiplier);

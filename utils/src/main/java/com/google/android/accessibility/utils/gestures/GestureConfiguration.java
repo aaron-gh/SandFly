@@ -120,6 +120,14 @@ public final class GestureConfiguration {
             : DEFAULT_SWIPE_START_TIME_MS;
   }
 
+  /**
+   * Returns how long after a finger goes down the next finger of a {@code fingerCount}-finger swipe
+   * may land.
+   */
+  public static int multiFingerSwipeFingerTimeoutMs(int fingerCount) {
+    return fingerCount * ViewConfiguration.getTapTimeout();
+  }
+
   private static volatile boolean swipesBeforeLift = false;
 
   /**
