@@ -31,6 +31,13 @@
         android:key="@string/pref_vibration_strength_key"
         android:max="200"
         android:title="@string/title_pref_vibration_strength" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
+        android:dependency="@string/pref_vibration_key"
+        android:entries="@array/pref_vibration_type_entries"
+        android:entryValues="@array/pref_vibration_type_values"
+        android:key="@string/pref_vibration_type_key"
+        android:summary="%s"
+        android:title="@string/title_pref_vibration_type" />
   </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
       android:fragment="com.google.android.accessibility.talkback.individualfeedback.IndividualFeedbackFragment"

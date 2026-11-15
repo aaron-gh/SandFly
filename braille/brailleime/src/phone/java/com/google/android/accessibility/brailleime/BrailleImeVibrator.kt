@@ -26,7 +26,9 @@ import android.os.VibrationEffect.Composition.PRIMITIVE_QUICK_RISE
 import android.os.VibrationEffect.Composition.PRIMITIVE_TICK
 import android.os.Vibrator
 import androidx.annotation.RequiresApi
+import com.google.android.accessibility.utils.output.HapticPatternParser
 import com.google.android.accessibility.utils.output.ThemeVibrations
+import com.google.android.accessibility.utils.output.VibrationSettings
 
 /** Singleton class which presents vibrations in braille keyboard. */
 class BrailleImeVibrator private constructor(context: Context) {
@@ -103,15 +105,23 @@ class BrailleImeVibrator private constructor(context: Context) {
   }
 
   private fun playOwn(vibrationType: VibrationType) {
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R && isCompositionSupported(vibrationType)) {
+    val type = VibrationSettings.type
+    val playsPrimitives =
+      type != HapticPatternParser.TYPE_PULSES && type != HapticPatternParser.TYPE_ON_OFF
+    if (
+      playsPrimitives &&
+        Build.VERSION.SDK_INT >= Build.VERSION_CODES.R &&
+        isCompositionSupported(vibrationType)
+    ) {
       val composition = VibrationEffect.startComposition()
       vibrationType.steps.forEach { composition.addPrimitive(it.primitive, it.scale, it.delayMs) }
       vibrator.vibrate(composition.compose())
       return
     }
-    vibrator.vibrate(
-      VibrationEffect.createOneShot(vibrationType.duration, vibrationType.amplitude)
-    )
+    val amplitude =
+      if (type == HapticPatternParser.TYPE_ON_OFF) VibrationEffect.DEFAULT_AMPLITUDE
+      else vibrationType.amplitude
+    vibrator.vibrate(VibrationEffect.createOneShot(vibrationType.duration, amplitude))
   }
 
   @RequiresApi(Build.VERSION_CODES.R)

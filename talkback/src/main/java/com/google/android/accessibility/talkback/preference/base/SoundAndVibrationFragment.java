@@ -293,6 +293,37 @@ public class SoundAndVibrationFragment extends TalkbackBaseFragment {
       PreferenceSettingsUtils.hidePreference(
           getContext(), getPreferenceScreen(), R.string.pref_vibration_strength_key);
     }
+    setUpVibrationType(vibrator);
+  }
+
+  /** Lists only the Vibration types the vibrator can play, and hides the list if there is one. */
+  private void setUpVibrationType(@Nullable Vibrator vibrator) {
+    if (!(findPreference(getString(R.string.pref_vibration_type_key))
+        instanceof ListPreference type)) {
+      return;
+    }
+    List<String> available = HapticPatternParser.availableTypes(vibrator);
+    if (available.size() < 2) {
+      PreferenceSettingsUtils.hidePreference(
+          getContext(), getPreferenceScreen(), R.string.pref_vibration_type_key);
+      return;
+    }
+    String[] values = getResources().getStringArray(R.array.pref_vibration_type_values);
+    CharSequence[] names = getResources().getTextArray(R.array.pref_vibration_type_entries);
+    List<CharSequence> entries = new ArrayList<>();
+    List<CharSequence> entryValues = new ArrayList<>();
+    for (int i = 0; i < values.length; i++) {
+      if (available.contains(values[i])) {
+        entries.add(names[i]);
+        entryValues.add(values[i]);
+      }
+    }
+    type.setEntries(entries.toArray(new CharSequence[0]));
+    type.setEntryValues(entryValues.toArray(new CharSequence[0]));
+    // With no choice made, or one this vibrator cannot play, the most detailed type plays.
+    if (type.getValue() == null || !available.contains(type.getValue())) {
+      type.setValue(available.get(0));
+    }
   }
 
   /** Sets a slider to go from 5 to 100 percent in steps of 5. */

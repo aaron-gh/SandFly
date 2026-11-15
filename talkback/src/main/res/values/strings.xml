@@ -1729,6 +1729,19 @@
     <string name="title_pref_vibration">Vibration feedback</string>
     <!-- Title of the slider that sets how strong SandFly's vibrations are, in percent. [CHAR LIMIT=40] -->
     <string name="title_pref_vibration_strength">Vibration strength</string>
+    <!-- Setting title. Chooses which kind of vibration SandFly plays: the phone's haptic effects, pulses of set strength, or plain on and off vibration. -->
+    <string name="title_pref_vibration_type">Vibration type</string>
+    <!-- Vibration type: the haptic effects the phone maker provides (Android haptic primitives). -->
+    <string name="vibration_type_effects">Haptic effects</string>
+    <!-- Vibration type: short vibrations of set strength. -->
+    <string name="vibration_type_pulses">Pulses</string>
+    <!-- Vibration type: vibration that is only on or off, at the phone's default strength. -->
+    <string name="vibration_type_on_off">On and off</string>
+    <string-array name="pref_vibration_type_entries">
+        <item>@string/vibration_type_effects</item>
+        <item>@string/vibration_type_pulses</item>
+        <item>@string/vibration_type_on_off</item>
+    </string-array>
     <!--
       Source: Preference for whether to provide sound feedback in response to system events.
       Description: The user can check or not check this. [CHAR LIMIT=25]

@@ -732,9 +732,16 @@ public class FeedbackController {
     mHapticEnabled = enabled;
   }
 
-  /** Sets how strong vibrations are, from 0 to 1 of their full strength. */
+  /** Sets how strong vibrations are, as a share of the strength in each pattern. */
   public void setHapticStrength(float strength) {
     parser.setStrength(strength);
+    VibrationSettings.setStrength(strength);
+  }
+
+  /** Sets the Vibration type. See {@link HapticPatternParser#setType}. */
+  public void setVibrationType(@Nullable String type) {
+    parser.setType(type);
+    VibrationSettings.setType(type);
   }
 
   /**

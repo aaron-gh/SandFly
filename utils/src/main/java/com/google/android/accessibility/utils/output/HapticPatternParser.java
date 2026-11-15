@@ -13,6 +13,8 @@ import com.google.android.accessibility.utils.BuildVersionUtils;
 import com.google.android.accessibility.utils.IntPredicate;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import com.google.common.base.Function;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.BiFunction;
 
 /**
@@ -21,6 +23,9 @@ import java.util.function.BiFunction;
  * <p>Each array contains up to three definitions: a "fallback" haptic using createWaveform(), an
  * optional "amplitude" haptic using createWaveform() with amplitudes, and a "premium" haptic using
  * VibrationEffect.Composition.
+ *
+ * <p>The Vibration type setting ({@link #setType}) can rule out the premium haptic, or both the
+ * premium and the amplitude haptic.
  *
  * <p>The fallback comes first. The amplitude haptic follows a sentinel value of -9998, and the
  * premium follows a sentinel value of -9999. If there is no sentinel, the array is assumed to be a
@@ -54,6 +59,26 @@ public class HapticPatternParser {
   private final @Nullable BiFunction<long[], int[], VibrationEffect> amplitudeWaveformCreator;
   private final IntPredicate isPrimitiveSupported;
   private float strength = 1f;
+  private boolean playsPrimitives = true;
+  private boolean playsAmplitudes = true;
+
+  /** Vibration type: primitives where the vibrator has them. Also the default. */
+  public static final String TYPE_EFFECTS = "effects";
+
+  /** Vibration type: the amplitude form, never primitives. */
+  public static final String TYPE_PULSES = "pulses";
+
+  /** Vibration type: on and off times only. */
+  public static final String TYPE_ON_OFF = "on_off";
+
+  /** The primitives SandFly's own patterns use. */
+  private static final int[] PATTERN_PRIMITIVES = {
+    Composition.PRIMITIVE_CLICK,
+    Composition.PRIMITIVE_QUICK_RISE,
+    Composition.PRIMITIVE_SLOW_RISE,
+    Composition.PRIMITIVE_QUICK_FALL,
+    Composition.PRIMITIVE_TICK,
+  };
 
   /** Creates a new parser, using the given vibrator to determine compatibility. */
   public HapticPatternParser(Vibrator vibrator) {
@@ -100,6 +125,36 @@ public class HapticPatternParser {
   }
 
   /**
+   * Sets the Vibration type: {@link #TYPE_EFFECTS} (or null), {@link #TYPE_PULSES} or {@link
+   * #TYPE_ON_OFF}. A pattern without the form for the type plays the next simpler form it has.
+   */
+  public void setType(@Nullable String type) {
+    playsPrimitives = !TYPE_PULSES.equals(type) && !TYPE_ON_OFF.equals(type);
+    playsAmplitudes = !TYPE_ON_OFF.equals(type);
+  }
+
+  /** The Vibration types [vibrator] can play, most detailed first. */
+  public static List<String> availableTypes(@Nullable Vibrator vibrator) {
+    List<String> types = new ArrayList<>();
+    if (vibrator == null || !vibrator.hasVibrator()) {
+      return types;
+    }
+    if (BuildVersionUtils.isAtLeastR() && hasPatternPrimitives(vibrator)) {
+      types.add(TYPE_EFFECTS);
+    }
+    if (vibrator.hasAmplitudeControl()) {
+      types.add(TYPE_PULSES);
+    }
+    types.add(TYPE_ON_OFF);
+    return types;
+  }
+
+  @TargetApi(VERSION_CODES.R)
+  private static boolean hasPatternPrimitives(Vibrator vibrator) {
+    return vibrator.areAllPrimitivesSupported(PATTERN_PRIMITIVES);
+  }
+
+  /**
    * Parses the given pattern definition and returns an appropriate effect depending on the device
    * capabilities.
    *
@@ -107,7 +162,7 @@ public class HapticPatternParser {
    */
   public VibrationEffect parse(int[] pattern) {
     int splitIndex = indexOf(pattern, SENTINEL_SEPARATOR);
-    if (splitIndex >= 0 && BuildVersionUtils.isAtLeastR()) {
+    if (playsPrimitives && splitIndex >= 0 && BuildVersionUtils.isAtLeastR()) {
       @Nullable VibrationEffect effect = parseComposition(pattern, splitIndex + 1);
       if (effect == null) {
         LogUtils.v(TAG, "Haptic primitive unsupported on this device");
@@ -119,7 +174,7 @@ public class HapticPatternParser {
     int fallbackEnd = splitIndex >= 0 ? splitIndex : pattern.length;
     int amplitudeIndex = indexOf(pattern, AMPLITUDE_SEPARATOR);
     if (amplitudeIndex >= 0 && amplitudeIndex < fallbackEnd) {
-      if (amplitudeWaveformCreator != null) {
+      if (playsAmplitudes && amplitudeWaveformCreator != null) {
         return parseAmplitudes(pattern, amplitudeIndex + 1, fallbackEnd);
       }
       fallbackEnd = amplitudeIndex;
