@@ -1662,30 +1662,60 @@ public class NewKeyComboModel implements KeyComboModel {
 
   /** Adds the keyboard shortcuts set for commands that have no keyboard action of their own. */
   private void addCommandShortcuts() {
+    // A custom keymap's shortcuts as it was made move too, so that its defaults match.
+    if (originalPersister != null) {
+      moveCommandShortcutsToActions(originalPersister);
+    }
+    moveCommandShortcutsToActions(persister);
     for (String key : persister.keysStartingWith(Commands.SHORTCUT_KEY_PREFIX)) {
-      KeyCombo keyCombo = persister.getKeyCombo(key);
-      // A command only the keyboard code performs keeps its shortcut under its keyboard action,
-      // where settings show it. Earlier versions saved it under the command.
-      // A command that got a keyboard action later moves its shortcut there too.
-      @Nullable String value = Commands.valueOfShortcutKey(key);
-      @Nullable String actionKey = null;
-      if (value != null && value.startsWith(Commands.KEYBOARD_PREFIX)) {
-        actionKey = value.substring(Commands.KEYBOARD_PREFIX.length());
-      } else if (context.getString(R.string.shortcut_value_repeat_last_spoken_phrase).equals(value)) {
-        actionKey = context.getString(R.string.keycombo_shortcut_other_repeat_last_spoken_phrase);
+      keyComboMap.put(key, persister.getKeyCombo(key));
+    }
+  }
+
+  /**
+   * Moves the shortcuts [saved] keeps under commands that have a keyboard action to the action's
+   * key, where settings show them.
+   */
+  private void moveCommandShortcutsToActions(KeyComboPersister saved) {
+    for (String key : saved.keysStartingWith(Commands.SHORTCUT_KEY_PREFIX)) {
+      @Nullable String actionKey = actionKeyOfCommandShortcut(key);
+      if (actionKey == null || !keyComboMap.containsKey(actionKey)) {
+        continue;
       }
-      if (actionKey != null) {
-        if (keyComboMap.containsKey(actionKey)) {
-          if (keyCombo.getKeyComboCode() != KEY_COMBO_CODE_UNASSIGNED) {
-            persister.saveKeyCombo(actionKey, keyCombo);
-            keyComboMap.put(actionKey, keyCombo);
-          }
-          persister.remove(key);
-          continue;
+      KeyCombo keyCombo = saved.getKeyCombo(key);
+      if (keyCombo.getKeyComboCode() != KEY_COMBO_CODE_UNASSIGNED) {
+        saved.saveKeyCombo(actionKey, keyCombo);
+        if (saved == persister) {
+          keyComboMap.put(actionKey, keyCombo);
         }
       }
-      keyComboMap.put(key, keyCombo);
+      saved.remove(key);
+      if (saved == originalPersister) {
+        // Defaults were read before the move.
+        defaultKeyCombos.remove(actionKey);
+      }
     }
+  }
+
+  /**
+   * Returns the key of the keyboard action of the command whose shortcut is saved under [key], for
+   * commands that earlier versions kept shortcuts for under the command, or null.
+   */
+  @Nullable
+  private String actionKeyOfCommandShortcut(String key) {
+    @Nullable String value = Commands.valueOfShortcutKey(key);
+    if (value == null) {
+      return null;
+    }
+    // A command only the keyboard code performs.
+    if (value.startsWith(Commands.KEYBOARD_PREFIX)) {
+      return value.substring(Commands.KEYBOARD_PREFIX.length());
+    }
+    // A command that got a keyboard action later.
+    if (value.equals(context.getString(R.string.shortcut_value_repeat_last_spoken_phrase))) {
+      return context.getString(R.string.keycombo_shortcut_other_repeat_last_spoken_phrase);
+    }
+    return null;
   }
 
   private void addKeyCombo(String key) {
