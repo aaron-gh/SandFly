@@ -57,18 +57,30 @@ class JumpToNextRowTest {
   @Test
   fun itemMustReachListBottom() {
     val list = Rect(0, 200, 1000, 2000)
-    assertTrue(FocusProcessorForLogicalNavigation.reachesListBottom(Rect(0, 900, 1000, 2000), list))
+    assertTrue(FocusProcessorForLogicalNavigation.reachesListBottom(Rect(0, 900, 1000, 2000), list, 0))
     assertFalse(
-      FocusProcessorForLogicalNavigation.reachesListBottom(Rect(0, 900, 1000, 1990), list)
+      FocusProcessorForLogicalNavigation.reachesListBottom(Rect(0, 900, 1000, 1990), list, 0)
+    )
+  }
+
+  @Test
+  fun itemEndingWithinSlackReachesListBottom() {
+    // Nothing Phone (1) Developer options: the last row on screen ends 5 px above the list's bottom.
+    val list = Rect(0, 556, 1080, 2400)
+    assertTrue(
+      FocusProcessorForLogicalNavigation.reachesListBottom(Rect(0, 2198, 1080, 2395), list, 32)
+    )
+    assertFalse(
+      FocusProcessorForLogicalNavigation.reachesListBottom(Rect(0, 2000, 1080, 2300), list, 32)
     )
   }
 
   @Test
   fun emptyBoundsDoNotReachListBottom() {
     val list = Rect(0, 200, 1000, 2000)
-    assertFalse(FocusProcessorForLogicalNavigation.reachesListBottom(Rect(), list))
+    assertFalse(FocusProcessorForLogicalNavigation.reachesListBottom(Rect(), list, 32))
     assertFalse(
-      FocusProcessorForLogicalNavigation.reachesListBottom(Rect(0, 900, 1000, 2000), Rect())
+      FocusProcessorForLogicalNavigation.reachesListBottom(Rect(0, 900, 1000, 2000), Rect(), 32)
     )
   }
 
@@ -406,6 +418,39 @@ class JumpToNextRowTest {
   fun scrollAheadWaitsForTheListToStop() {
     assertFalse(ScrollAhead.isQuiet(1149, 1000))
     assertTrue(ScrollAhead.isQuiet(1150, 1000))
+  }
+
+  @Test
+  fun scrollViewItemsAreInItsOnlyChild() {
+    // Nothing Phone (1) Settings home: a ScrollView whose one child lays out the rows.
+    val scrollView = node()
+    val layout = node(scrollView)
+    val row = node(layout)
+    node(layout)
+    assertEquals(layout, FocusProcessorForLogicalNavigation.itemParentOf(scrollView, row))
+  }
+
+  @Test
+  fun listWithManyChildrenHoldsItsItems() {
+    val list = node()
+    val row = node(list)
+    node(list)
+    assertEquals(list, FocusProcessorForLogicalNavigation.itemParentOf(list, row))
+  }
+
+  @Test
+  fun onlyChildThatTakesFocusIsAnItem() {
+    val scrollView = node()
+    val row = node(scrollView)
+    node(row)
+    node(row)
+    assertEquals(scrollView, FocusProcessorForLogicalNavigation.itemParentOf(scrollView, row))
+    val other = node()
+    val clickable = node(other)
+    clickable.unwrap().isClickable = true
+    node(clickable)
+    node(clickable)
+    assertEquals(other, FocusProcessorForLogicalNavigation.itemParentOf(other, node()))
   }
 
   private fun node(parent: AccessibilityNodeInfoCompat? = null): AccessibilityNodeInfoCompat {

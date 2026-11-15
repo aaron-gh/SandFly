@@ -66,8 +66,9 @@ final class OffscreenContent {
    * nodes are on screen now. Showing the screen's worth at once keeps the next swipes on screen.
    *
    * <p>Nodes that are hidden rather than scrolled away are skipped: collapsed nodes with no size,
-   * everything inside a collapsed container, and everything inside a nested list, grid, pager or
-   * other scrolling container, whose off-screen content is off to the side or not laid out.
+   * everything inside a collapsed container, and everything inside a nested pager or scrolling
+   * container, whose off-screen content is off to the side or not laid out. A nested list that
+   * can't scroll, such as the rows of Android Settings' home page, lays out all of its items.
    */
   static @Nullable Ahead findAhead(
       AccessibilityNodeInfoCompat scrollable, AccessibilityNodeInfoCompat pivot, boolean forward) {
@@ -197,7 +198,7 @@ final class OffscreenContent {
 
   /**
    * Whether the children of a node inside the scroll view can be off screen without being scrolled
-   * away: in a collapsed container, or in a nested container that scrolls on its own.
+   * away: in a collapsed container, a pager, or a nested container that scrolls on its own.
    */
   @SuppressWarnings("deprecation") // getBoundsInParent is the only unclipped size a node reports.
   private static boolean hidesChildren(AccessibilityNodeInfoCompat node) {
@@ -206,7 +207,6 @@ final class OffscreenContent {
     return size.width() <= 0
         || size.height() <= 0
         || node.isScrollable()
-        || node.getCollectionInfo() != null
         || Role.getRole(node) == Role.ROLE_PAGER;
   }
 

@@ -573,7 +573,14 @@ public class FocusProcessorForLogicalNavigation {
   ///////////////////////////////////////////////////////////////////////////////////////////////
   // Methods
   public boolean onNavigationAction(NavigationAction navigationAction, EventId eventId) {
+    if (deferWhileSwipeScrolls(navigationAction, eventId)) {
+      return true;
+    }
     navigationSerial++;
+    return runNavigationAction(navigationAction, eventId);
+  }
+
+  private boolean runNavigationAction(NavigationAction navigationAction, EventId eventId) {
     if (navigationAction == null || navigationAction.actionType == NavigationAction.UNKNOWN) {
       LogUtils.w(TAG, "Cannot perform navigation action: action type undefined.");
       return false;
@@ -604,6 +611,59 @@ public class FocusProcessorForLogicalNavigation {
           onScrollOrPageAction(pivot, navigationAction, eventId);
       default -> false;
     };
+  }
+
+  // A swipe that comes while an earlier swipe's scroll hasn't yet focused the next item waits for
+  // it, and then moves on from that item. Otherwise it would start from the item the scroll moved
+  // off screen, or from the window, and skip items. Waits at most MAX_DEFER_MS after the scroll.
+  private static final long MAX_DEFER_MS = 1500;
+  private static final int MAX_DEFERRED_NAVIGATIONS = 4;
+  private final ArrayDeque<Pair<NavigationAction, EventId>> deferredNavigations =
+      new ArrayDeque<>();
+
+  /** Queues {@code navigationAction} while a swipe's scroll is pending. Returns whether it did. */
+  private boolean deferWhileSwipeScrolls(
+      @Nullable NavigationAction navigationAction, EventId eventId) {
+    if (navigationAction == null
+        || navigationAction.actionType != NavigationAction.DIRECTIONAL_NAVIGATION
+        || (deferredNavigations.isEmpty() && !isSwipeScrollPending())) {
+      return false;
+    }
+    if (deferredNavigations.size() >= MAX_DEFERRED_NAVIGATIONS) {
+      LogUtils.d(TAG, "Dropping a swipe: %d swipes already wait.", MAX_DEFERRED_NAVIGATIONS);
+      return true;
+    }
+    LogUtils.d(TAG, "Swipe waits for the list to show the item of the swipe before it.");
+    deferredNavigations.add(Pair.create(navigationAction, eventId));
+    if (deferredNavigations.size() == 1) {
+      earlyScrollCheckHandler.postDelayed(this::runDeferredNavigations, FRAME_MS);
+    }
+    return true;
+  }
+
+  /** Whether a swipe's scroll is still to focus the next item. */
+  private boolean isSwipeScrollPending() {
+    AutoScrollCallback callback = scrollCallback;
+    return callback != null
+        && callback.sourceAction.actionType == NavigationAction.DIRECTIONAL_NAVIGATION
+        && SystemClock.uptimeMillis() - lastAutoScrollUptime < MAX_DEFER_MS;
+  }
+
+  private void runDeferredNavigations() {
+    if (deferredNavigations.isEmpty()) {
+      return;
+    }
+    if (isSwipeScrollPending()) {
+      earlyScrollCheckHandler.postDelayed(this::runDeferredNavigations, FRAME_MS);
+      return;
+    }
+    Pair<NavigationAction, EventId> next = deferredNavigations.poll();
+    LogUtils.d(TAG, "Running a swipe that waited for the list.");
+    navigationSerial++;
+    runNavigationAction(next.first, next.second);
+    if (!deferredNavigations.isEmpty()) {
+      earlyScrollCheckHandler.postDelayed(this::runDeferredNavigations, FRAME_MS);
+    }
   }
 
   /**
@@ -4113,7 +4173,7 @@ public class FocusProcessorForLogicalNavigation {
         track.quietAtStart = scrollStartedQuiet;
         track.actionCountAtStart = scrollActionCount;
         if (watchItems) {
-          track.watchItems(itemOf(pivot, scrollable), contentUp);
+          track.watchItems(pivot, contentUp);
         }
         trackedCallback = callback;
         earlyScrollCheckHandler.postDelayed(() -> trackScroll(track), FIRST_TRACK_CHECK_MS);
@@ -4173,6 +4233,9 @@ public class FocusProcessorForLogicalNavigation {
     /** Whether the list's items are watched for the next item. */
     boolean watchItems;
 
+    /** The node whose children are the list's items. */
+    AccessibilityNodeInfoCompat itemParent;
+
     /** The list's item holding the pivot, if known. */
     @Nullable AccessibilityNodeInfoCompat pivotItem;
 
@@ -4197,17 +4260,19 @@ public class FocusProcessorForLogicalNavigation {
       this.scrollable = scrollable;
       this.node = node;
       this.eventId = eventId;
+      itemParent = scrollable;
       scrollable.getBoundsInScreen(listBounds);
       if (node != null) {
         node.getBoundsInScreen(last);
       }
     }
 
-    void watchItems(@Nullable AccessibilityNodeInfoCompat pivotItem, boolean itemsComeBelow) {
+    void watchItems(AccessibilityNodeInfoCompat pivot, boolean itemsComeBelow) {
       watchItems = true;
-      this.pivotItem = pivotItem;
+      itemParent = itemParentOf(scrollable, pivot);
+      this.pivotItem = itemOf(pivot, itemParent);
       this.itemsComeBelow = itemsComeBelow;
-      children = childrenOf(scrollable);
+      children = childrenOf(itemParent);
       Rect itemBounds = null;
       if (pivotItem != null) {
         itemBounds = new Rect();
@@ -4215,6 +4280,25 @@ public class FocusProcessorForLogicalNavigation {
       }
       roomBefore = leavesRoomPast(itemBounds, listBounds, itemsComeBelow);
     }
+  }
+
+  /**
+   * Returns the node whose children are the items of {@code scrollable}: the scrollable itself,
+   * or, as in a ScrollView, the layout that is its only child, down to {@link #MAX_ITEM_DEPTH}
+   * layers. A child that is {@code pivot} or takes focus is an item, not a layout.
+   */
+  @VisibleForTesting
+  static AccessibilityNodeInfoCompat itemParentOf(
+      AccessibilityNodeInfoCompat scrollable, AccessibilityNodeInfoCompat pivot) {
+    AccessibilityNodeInfoCompat parent = scrollable;
+    for (int depth = 0; depth < MAX_ITEM_DEPTH && parent.getChildCount() == 1; depth++) {
+      AccessibilityNodeInfoCompat child = parent.getChild(0);
+      if (child == null || child.equals(pivot) || child.isFocusable() || child.isClickable()) {
+        break;
+      }
+      parent = child;
+    }
+    return parent;
   }
 
   private static List<AccessibilityNodeInfoCompat> childrenOf(AccessibilityNodeInfoCompat node) {
@@ -4236,10 +4320,10 @@ public class FocusProcessorForLogicalNavigation {
    */
   private boolean focusNextItemIfShown(ScrollTrack track, long elapsed) {
     AccessibilityNodeInfoCompat list = track.scrollable;
-    if (!list.refresh()) {
+    if (!track.itemParent.refresh()) {
       return false;
     }
-    List<AccessibilityNodeInfoCompat> children = childrenOf(list);
+    List<AccessibilityNodeInfoCompat> children = childrenOf(track.itemParent);
     boolean childrenChanged = !children.equals(track.children);
     track.children = children;
     // An item already attached off screen comes on screen without changing the children; the
@@ -4929,10 +5013,11 @@ public class FocusProcessorForLogicalNavigation {
    * Returns the row after the focused item when the list can jump straight to it, or null to scroll
    * a page as usual. An item taller than the list took one scroll per screen, each waited for,
    * before the next item came into view. This is only done going forward, in a one-column list
-   * running down the screen whose item holds the pivot and reaches the list's bottom, so that the
-   * next item isn't on screen, and has no other part that takes focus on its own, which a jump
-   * would skip. Going backward a jump would land on the top of an item taller than the list and
-   * skip its parts further down, which a page scroll back reaches first.
+   * running down the screen whose item holds the pivot and reaches the list's bottom, or ends
+   * within {@link #JUMP_BOTTOM_SLACK_DP} of it, so that the next item isn't on screen, and has no
+   * other part that takes focus on its own, which a jump would skip. Going backward a jump would
+   * land on the top of an item taller than the list and skip its parts further down, which a page
+   * scroll back reaches first.
    */
   private @Nullable Integer rowToJumpTo(
       AccessibilityNodeInfoCompat list,
@@ -4988,7 +5073,8 @@ public class FocusProcessorForLogicalNavigation {
     itemNode.getBoundsInScreen(itemBounds);
     Rect listBounds = new Rect();
     list.getBoundsInScreen(listBounds);
-    if (!reachesListBottom(itemBounds, listBounds)) {
+    int slackPx = Math.round(JUMP_BOTTOM_SLACK_DP * density());
+    if (!reachesListBottom(itemBounds, listBounds, slackPx)) {
       LogUtils.v(TAG, "Not jumping: the focused item doesn't reach the list's bottom.");
       return null;
     }
@@ -5196,10 +5282,18 @@ public class FocusProcessorForLogicalNavigation {
     return (row == null) ? "a node in no list row" : "row " + row.row();
   }
 
-  /** Returns whether {@code itemBounds} reach the bottom of {@code listBounds}. */
+  /**
+   * A focused item ending this close to the list's bottom counts as reaching it. Android Settings
+   * can leave a few pixels below its last row on screen.
+   */
+  private static final float JUMP_BOTTOM_SLACK_DP = 12;
+
+  /** Returns whether {@code itemBounds} end within {@code slackPx} of {@code listBounds}' bottom. */
   @VisibleForTesting
-  static boolean reachesListBottom(Rect itemBounds, Rect listBounds) {
-    return !listBounds.isEmpty() && !itemBounds.isEmpty() && itemBounds.bottom >= listBounds.bottom;
+  static boolean reachesListBottom(Rect itemBounds, Rect listBounds, int slackPx) {
+    return !listBounds.isEmpty()
+        && !itemBounds.isEmpty()
+        && itemBounds.bottom >= listBounds.bottom - slackPx;
   }
 
   /**
