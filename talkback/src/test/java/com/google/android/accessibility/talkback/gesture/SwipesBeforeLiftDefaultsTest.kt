@@ -21,9 +21,11 @@ import android.accessibilityservice.AccessibilityService.GESTURE_SWIPE_LEFT
 import android.accessibilityservice.AccessibilityService.GESTURE_SWIPE_RIGHT
 import android.accessibilityservice.AccessibilityService.GESTURE_SWIPE_UP
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.utils.FormFactorUtils
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.accessibility.utils.gestures.GestureConfiguration
 import org.junit.After
+import org.junit.Before
 import org.junit.Assert.assertEquals
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -44,6 +46,12 @@ class SwipesBeforeLiftDefaultsTest {
   private val prefs = SharedPreferencesUtils.getSharedPreferences(context)
   private val unassigned = context.getString(R.string.shortcut_value_unassigned)
   private val swipes = listOf(GESTURE_SWIPE_UP, GESTURE_SWIPE_DOWN, GESTURE_SWIPE_LEFT, GESTURE_SWIPE_RIGHT)
+
+  @Before
+  fun setUp() {
+    // Other tests may or may not have done this already, depending on the order they run in.
+    FormFactorUtils.initialize(context)
+  }
 
   @After
   fun forget() {
