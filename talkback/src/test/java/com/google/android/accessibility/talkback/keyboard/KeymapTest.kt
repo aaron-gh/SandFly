@@ -421,4 +421,35 @@ class KeymapTest {
     val command = Commands.find(context, value)!!
     assertEquals(actionKey, CommandBindings.keyboardKey(context, model, command))
   }
+
+  @Test
+  fun customKeymapCommandShortcutsMoveToTheirActionsWithTheirDefaults() {
+    val repeatKey = context.getString(R.string.keycombo_shortcut_other_repeat_last_spoken_phrase)
+    val repeatOld =
+      Commands.shortcutKey(context.getString(R.string.shortcut_value_repeat_last_spoken_phrase))
+    val urlKey = context.getString(R.string.keycombo_shortcut_other_read_current_url)
+    val urlOld = Commands.shortcutKey(Commands.KEYBOARD_PREFIX + urlKey)
+    val repeat = KeyCombo(KeyEvent.META_SHIFT_ON, 0, KeyEvent.KEYCODE_L, true)
+    val url = KeyCombo(KeyEvent.META_SHIFT_ON, 0, KeyEvent.KEYCODE_U, true)
+    val custom =
+      CustomKeymaps.create(
+        context,
+        "Mine",
+        usesSequences = false,
+        SandFlyKey.META,
+        mapOf(repeatOld to repeat, urlOld to url),
+      )
+    val model = NewKeyComboModel(context, custom)
+    assertEquals(repeat, model.getKeyComboForKey(repeatKey))
+    assertEquals(repeat, model.getDefaultKeyCombo(repeatKey))
+    assertEquals(url, model.getKeyComboForKey(urlKey))
+    assertEquals(url, model.getDefaultKeyCombo(urlKey))
+    for (prefix in listOf(custom.persisterPrefix, custom.originalPersisterPrefix)) {
+      val persister = KeyComboPersister(context, prefix)
+      assertFalse(prefix, persister.contains(repeatOld))
+      assertFalse(prefix, persister.contains(urlOld))
+    }
+    assertFalse(model.keyComboMap.containsKey(repeatOld))
+    CustomKeymaps.delete(context, custom)
+  }
 }
