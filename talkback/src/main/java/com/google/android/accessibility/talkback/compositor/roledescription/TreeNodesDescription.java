@@ -310,10 +310,12 @@ public class TreeNodesDescription {
                 node, context, globalVariables));
     // A supplemental description describes the node's contents, so they aren't read again. So
     // does the text Chrome gives a web element named by its page, such as an X post named with
-    // aria-labelledby.
+    // aria-labelledby, and a custom label, which replaces the text of the node and its contents.
     boolean isDescriptionEmpty =
         isContentDescriptionEmpty
             && TextUtils.isEmpty(AccessibilityNodeFeedbackUtils.getSupplementalDescription(node))
+            && TextUtils.isEmpty(
+                AccessibilityNodeFeedbackUtils.getReplacingLabelText(node, imageContents))
             && (TextUtils.isEmpty(AccessibilityNodeInfoUtils.getChromeRole(node))
                 || TextUtils.isEmpty(node.getText()));
     // Samsung labels the notification card with its title but leaves the message in a child.

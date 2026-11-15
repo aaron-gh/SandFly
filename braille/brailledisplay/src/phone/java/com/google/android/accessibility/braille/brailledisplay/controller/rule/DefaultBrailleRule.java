@@ -136,6 +136,11 @@ public class DefaultBrailleRule implements BrailleRule {
     if (node == null) {
       return null;
     }
+    // A custom label replaces the text of a control, but not what is typed in an edit field.
+    CharSequence customLabel = node.isEditable() ? null : nodeTextSupplier.getCustomLabelText(node);
+    if (!TextUtils.isEmpty(customLabel)) {
+      return customLabel;
+    }
     CharSequence nodeText = AccessibilityNodeInfoUtils.getNodeText(node);
     if (!TextUtils.isEmpty(nodeText)) {
       return nodeText;

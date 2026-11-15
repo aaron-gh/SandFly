@@ -98,7 +98,11 @@ public class CustomLabelManager extends TalkBackLabelManager {
 
     @Override
     public boolean supportsLabel(@Nullable AccessibilityNodeInfoCompat node) {
-      return canAddLabel(node) && needsLabel(node);
+      // A label of a control with text replaces that text; one added before stays editable.
+      return canAddLabel(node)
+          && (needsLabel(node)
+              || canReplaceText(node)
+              || getLabelIdForNode(node) != Label.NO_ID);
     }
 
     @Override
@@ -261,7 +265,12 @@ public class CustomLabelManager extends TalkBackLabelManager {
 
   @Override
   public @Nullable Label getLabelForViewIdFromCache(String resourceName) {
-    if (!isInitialized()) {
+    // Asked for every item described, so without labels or a resource ID it returns at once, and
+    // other names, such as Compose test tags, aren't logged as unreadable.
+    if (!isInitialized()
+        || labelCache.isEmpty()
+        || resourceName == null
+        || !resourceName.contains(":id/")) {
       return null;
     }
 
