@@ -171,7 +171,8 @@ object TelegramReplyQuote {
       node.contentDescription?.let { parse(it) } != null
 
   /** A message in the chat: a focusable view group with the message as its text. */
-  private fun isMessage(node: AccessibilityNodeInfoCompat): Boolean =
+  @JvmStatic
+  fun isMessage(node: AccessibilityNodeInfoCompat): Boolean =
     node.className?.toString() == "android.view.ViewGroup" &&
       node.isFocusable &&
       !node.text.isNullOrEmpty()
