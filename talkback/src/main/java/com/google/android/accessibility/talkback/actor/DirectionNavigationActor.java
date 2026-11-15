@@ -42,6 +42,7 @@ import com.google.android.accessibility.talkback.focusmanagement.AccessibilityFo
 import com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForLogicalNavigation;
 import com.google.android.accessibility.talkback.focusmanagement.NavigationTarget;
 import com.google.android.accessibility.talkback.focusmanagement.NavigationTarget.TargetType;
+import com.google.android.accessibility.talkback.focusmanagement.SheetsGrid;
 import com.google.android.accessibility.talkback.focusmanagement.action.NavigationAction;
 import com.google.android.accessibility.talkback.focusmanagement.action.NavigationAction.ActionType;
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.ScreenStateMonitor;
@@ -725,6 +726,7 @@ public class DirectionNavigationActor implements UserInputEventListener {
     AccessibilityNodeInfoCompat current =
         accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ false);
     return AccessibilityNodeInfoUtils.getTableCellUnderTable(current) != null
+        || SheetsGrid.isCell(current)
         || (WebInterfaceUtils.hasNavigableWebContent(current)
             && AccessibilityNodeInfoUtils.getTableRoot(current) != null);
   }
