@@ -356,7 +356,7 @@ SandFly doesn't say "collapsed" for each notification on the lock screen and in 
 
 ### No shade name for a heads-up notification
 
-Some phones, such as Vivo's, show the notification shade's pane when a heads-up notification arrives, without the shade being opened, and TalkBack says the shade's name, such as "Notification Center". SandFly doesn't say the name of a pane that appears in a system window within 3 seconds after a notification arrives, unless the screen was touched or a key was pressed after the notification.
+Some phones, such as Vivo's, show the notification shade's pane when a heads-up notification arrives, without the shade being opened, and TalkBack says the shade's name, such as "Notification Center". SandFly doesn't say the name of a pane that appears in a system window within 3 seconds after a notification arrives, unless you touched the screen, pressed a key, used a braille display or gave a voice command after the notification.
 
 ### Notices that you can dismiss
 

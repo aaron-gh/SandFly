@@ -19,8 +19,8 @@ package com.google.android.accessibility.utils.monitor;
 import android.os.SystemClock;
 
 /**
- * When the user last did something: a touch, a gesture, a key, or input on the braille keyboard or
- * a braille display. Speech that soon after answers what the user did, such as the home screen
+ * When the user last did something: a touch, a gesture, a key, input on the braille keyboard or a
+ * braille display, or a voice command. Speech that soon after answers what the user did, such as the home screen
  * after the gesture that goes home, even when the app reports it rather than Backtalk.
  */
 public final class RecentUserInput {
@@ -45,6 +45,11 @@ public final class RecentUserInput {
    */
   public static boolean isRecentAfter(long uptimeMs) {
     return isRecent() && uptimeMs < lastInputUptimeMs;
+  }
+
+  /** When the user last did something, in {@link SystemClock#uptimeMillis()} time. */
+  public static long lastInputUptimeMs() {
+    return lastInputUptimeMs;
   }
 
   /** Whether the user did something within the last couple of seconds. */
