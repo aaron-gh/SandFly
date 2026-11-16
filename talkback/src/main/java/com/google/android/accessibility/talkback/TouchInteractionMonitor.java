@@ -1090,6 +1090,11 @@ public class TouchInteractionMonitor
                 Log.d(DEBUG_GESTURE_TAG, "Two fingers: dragging pointer " + draggingPointerId);
               }
               requestDragging(draggingPointerId, "handleMotionEventStateTouchInteracting");
+            } else if (scrubTracker.isTracking()) {
+              // The fingers of a scrub don't always move the same way, especially where they turn
+              // back. Delegating would stop the events that complete it.
+              logTwoFingerWait("possible scrub");
+              return;
             } else {
               if (GestureLog.getEnabled()) {
                 Log.d(DEBUG_GESTURE_TAG, "Two fingers: delegating, not a drag");
