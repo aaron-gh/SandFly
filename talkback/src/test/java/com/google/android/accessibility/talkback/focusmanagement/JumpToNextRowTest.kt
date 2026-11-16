@@ -285,6 +285,38 @@ class JumpToNextRowTest {
   }
 
   @Test
+  fun moveFromTheLastRowGoesPastTheList() {
+    assertTrue(FocusProcessorForLogicalNavigation.isPastLastRow(11, 11))
+    assertTrue(FocusProcessorForLogicalNavigation.isPastLastRow(-1, 11))
+    assertFalse(FocusProcessorForLogicalNavigation.isPastLastRow(10, 11))
+    // Row count not known.
+    assertFalse(FocusProcessorForLogicalNavigation.isPastLastRow(11, -1))
+    assertFalse(FocusProcessorForLogicalNavigation.isPastLastRow(-1, 0))
+  }
+
+  @Test
+  fun itemShownWholeOnlyWhenNotCutOff() {
+    val list = Rect(0, 320, 1080, 2378)
+    // CodeRelay's last message, 293 px, ending at the list's bottom.
+    assertTrue(
+      FocusProcessorForLogicalNavigation.isShownWhole(
+        Rect(0, 0, 1080, 293), Rect(0, 2085, 1080, 2378), list
+      )
+    )
+    // Taller than shown: cut off at the bottom.
+    assertFalse(
+      FocusProcessorForLogicalNavigation.isShownWhole(
+        Rect(0, 0, 1080, 900), Rect(0, 2085, 1080, 2378), list
+      )
+    )
+    assertFalse(
+      FocusProcessorForLogicalNavigation.isShownWhole(
+        Rect(0, 0, 1080, 293), Rect(0, 0, 0, 0), list
+      )
+    )
+  }
+
+  @Test
   fun oneEventListStopsAFrameAfterItsEvent() {
     val moving = FocusProcessorForLogicalNavigation.LIST_MOVING
     val stopped = FocusProcessorForLogicalNavigation.LIST_STOPPED

@@ -4140,6 +4140,12 @@ public class FocusProcessorForLogicalNavigation {
     NavigationAction supportedNavigationAction =
         NavigationAction.Builder.copy(navigationAction).setDirection(supportedDirection).build();
 
+    if (navigationAction.actionType == NavigationAction.DIRECTIONAL_NAVIGATION
+        && endsListWhole(scrollableNodeInfo.getNode(), pivot, supportedDirection)) {
+      LogUtils.d(TAG, "Not scrolling: the focused item is the list's last row and fully shown.");
+      return false;
+    }
+
     // Only the first attempt jumps. A jump that left the focused item where it was is repeated with
     // a page scroll, as a list can accept the action without moving.
     if (navigationAction.actionType == NavigationAction.DIRECTIONAL_NAVIGATION
@@ -5202,6 +5208,77 @@ public class FocusProcessorForLogicalNavigation {
       return null;
     }
     return row;
+  }
+
+  /**
+   * Whether the list item holding {@code pivot} is the last row of the one-column {@code list} in
+   * {@code direction} and is shown whole inside the list, so that a scroll that way can't show
+   * anything new. Some lists, such as a RecyclerView stacked from its end, offer a scroll forward
+   * there, accept it, don't move and send no scroll event, and the swipe then waited for the
+   * scroll's timeout.
+   */
+  @SuppressWarnings("deprecation") // getBoundsInParent is the only unclipped size a node reports.
+  private boolean endsListWhole(
+      AccessibilityNodeInfoCompat list,
+      AccessibilityNodeInfoCompat pivot,
+      @SearchDirection int direction) {
+    boolean forward;
+    if (direction == SEARCH_FOCUS_FORWARD || direction == SEARCH_FOCUS_DOWN) {
+      forward = true;
+    } else if (direction == SEARCH_FOCUS_BACKWARD || direction == SEARCH_FOCUS_UP) {
+      forward = false;
+    } else {
+      return false;
+    }
+    ListRow from = rowOf(pivot);
+    CollectionInfoCompat collection = list.getCollectionInfo();
+    if (from == null || !list.equals(from.list()) || collection == null) {
+      return false;
+    }
+    Boolean upward = indexesRunUpward(list);
+    if (upward == null) {
+      return false;
+    }
+    if (!isPastLastRow(rowAfterMove(from, forward, upward), collection.getRowCount())) {
+      return false;
+    }
+    AccessibilityNodeInfoCompat item = pivot;
+    AccessibilityNodeInfoCompat parent = pivot.getParent();
+    for (int depth = 0; parent != null && !parent.equals(list); depth++) {
+      if (depth >= MAX_ITEM_DEPTH) {
+        return false;
+      }
+      item = parent;
+      parent = parent.getParent();
+    }
+    if (parent == null || !item.isVisibleToUser()) {
+      return false;
+    }
+    Rect size = new Rect();
+    item.getBoundsInParent(size);
+    Rect shown = new Rect();
+    item.getBoundsInScreen(shown);
+    Rect listBounds = new Rect();
+    list.getBoundsInScreen(listBounds);
+    return isShownWhole(size, shown, listBounds);
+  }
+
+  /** Whether {@code row}, the row a move goes to, is outside a collection of {@code rowCount}. */
+  @VisibleForTesting
+  static boolean isPastLastRow(int row, int rowCount) {
+    return rowCount > 0 && (row < 0 || row >= rowCount);
+  }
+
+  /**
+   * Whether an item of unclipped {@code size}, shown at {@code shown}, is shown whole inside a
+   * list at {@code list}.
+   */
+  @VisibleForTesting
+  static boolean isShownWhole(Rect size, Rect shown, Rect list) {
+    return !shown.isEmpty()
+        && shown.height() >= size.height()
+        && shown.top >= list.top
+        && shown.bottom <= list.bottom;
   }
 
   /**
