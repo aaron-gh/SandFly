@@ -4441,6 +4441,20 @@ public class FocusProcessorForLogicalNavigation {
     if (target == null) {
       return false;
     }
+    Rect pivotNow = pivotBoundsNow(track.callback.pivot);
+    Rect targetBounds = new Rect();
+    target.getBoundsInScreen(targetBounds);
+    if (pivotNow != null && goesBackFromPivot(targetBounds, pivotNow, track.itemsComeBelow)) {
+      // Facebook's suggested people: from a person's Remove button, the search found the card of
+      // the same person, which holds the button on screen.
+      LogUtils.d(
+          TAG,
+          "While scrolling: not focusing the node at %s, which isn't past the focused item at %s;"
+              + " waiting for the list to stop.",
+          targetBounds,
+          pivotNow);
+      return false;
+    }
     if (LogUtils.shouldLog(Log.INFO)) {
       LogUtils.i(
           TAG,
@@ -4469,6 +4483,50 @@ public class FocusProcessorForLogicalNavigation {
     earlyScrollCheckHandler.postDelayed(
         () -> showWhenListStops(list, target, serial, track, startDeltaSum), SHOW_CHECK_MS);
     return true;
+  }
+
+  /**
+   * Returns where the swipe's {@code pivot} is on screen now: read again from the app, or, when it
+   * is gone, its place before the scroll moved by the scroll events' deltas, if they are pixels. Null
+   * if not known.
+   */
+  private @Nullable Rect pivotBoundsNow(AccessibilityNodeInfoCompat pivot) {
+    Rect bounds = new Rect();
+    AccessibilityNodeInfoCompat fresh = AccessibilityNodeInfoCompat.obtain(pivot);
+    if (fresh.refresh() && fresh.isVisibleToUser()) {
+      fresh.getBoundsInScreen(bounds);
+      return bounds.isEmpty() ? null : bounds;
+    }
+    // Compose lists send deltas of 1 whatever they scrolled.
+    int shift = scrollDeltaSumY - scrollStartDeltaSumY;
+    if (Math.abs(shift) < MIN_PIXEL_SHIFT) {
+      return null;
+    }
+    pivot.getBoundsInScreen(bounds);
+    if (bounds.isEmpty()) {
+      return null;
+    }
+    bounds.offset(0, -shift);
+    return bounds;
+  }
+
+  /** The least scroll, in pixels, whose deltas are taken as pixels to place a pivot that is gone. */
+  private static final int MIN_PIXEL_SHIFT = 100;
+
+  /**
+   * Whether a node at {@code target} would take a swipe back rather than on from the pivot, now at
+   * {@code pivot}, where new items come {@code below} it or above: it lies wholly before the pivot,
+   * or, going down, holds the pivot on screen, as a card holds its buttons.
+   */
+  @VisibleForTesting
+  static boolean goesBackFromPivot(Rect target, Rect pivot, boolean below) {
+    if (target.isEmpty() || pivot.isEmpty()) {
+      return false;
+    }
+    if (below) {
+      return target.bottom <= pivot.top || (target.contains(pivot) && !target.equals(pivot));
+    }
+    return target.top >= pivot.bottom;
   }
 
   /** While the pivot's item leaves room past it, the list's items are read at most this often. */
@@ -6552,8 +6610,10 @@ public class FocusProcessorForLogicalNavigation {
     }
     AccessibilityNodeInfoCompat next;
     if (!pivot.refresh() || !AccessibilityNodeInfoUtils.isVisible(pivot)) {
+      LogUtils.d(TAG, "While scrolling: the pivot is gone; searching from the list's edge.");
       next = findFocusAfterInvalidPivot(strategy, scrolledNode, direction, nodeFilter, pivot);
     } else if (isMissingFromListOrder(strategy, scrolledNode, pivot)) {
+      LogUtils.d(TAG, "While scrolling: the pivot is missing from the order; searching near it.");
       AccessibilityNodeInfoCompat nearest =
           findNodeNearPivotPlace((OrderedTraversalStrategy) strategy, pivot, direction, rtl);
       next =

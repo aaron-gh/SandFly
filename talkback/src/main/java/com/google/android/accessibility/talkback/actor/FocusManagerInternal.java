@@ -23,8 +23,10 @@ import static com.google.android.accessibility.talkback.Feedback.Focus.Action.IN
 import static com.google.android.accessibility.talkback.Feedback.Focus.Action.INITIAL_FOCUS_RESTORE;
 
 import android.accessibilityservice.AccessibilityService;
+import android.graphics.Rect;
 import android.os.Build;
 import android.os.SystemClock;
+import android.text.TextUtils;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.view.accessibility.AccessibilityWindowInfo;
 import androidx.annotation.VisibleForTesting;
@@ -62,6 +64,7 @@ import com.google.android.accessibility.utils.traversal.OrderedTraversalStrategy
 import com.google.android.accessibility.utils.traversal.TraversalStrategy;
 import com.google.android.accessibility.utils.traversal.TraversalStrategyUtils;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.checkerframework.checker.nullness.qual.NonNull;
@@ -486,6 +489,17 @@ public class FocusManagerInternal {
     AccessibilityNodeInfoCompat nodeToFocus =
         findInitialFocusFromTargetWindowRoot(
             service, root, stableScreenState, actorState.focusHistory, focusFinder, type);
+    if (type.get() != FocusActionInfo.RESTORED_LAST_FOCUS) {
+      // An app that draws its views again, as Facebook does while its lists scroll, takes focus off
+      // a node and shows the same item as a new node, which the record's path doesn't find. The
+      // window's first item would send the user back to the top of the screen.
+      AccessibilityNodeInfoCompat sameItem = findSameItemNearby(root, lastFocus);
+      if (sameItem != null) {
+        LogUtils.d(TAG, "%s: Focus returns to the item drawn again as a new node.", subTag);
+        nodeToFocus = sameItem;
+        type.set(FocusActionInfo.RESTORED_LAST_FOCUS);
+      }
+    }
     if (nodeToFocus == null) {
       return false;
     }
@@ -520,6 +534,73 @@ public class FocusManagerInternal {
       stableScreenState.consumeInterpretFirstTimeWhenWakeUp();
     }
     return success;
+  }
+
+  /** Most nodes read to find the item that lost focus drawn again. */
+  private static final int MAX_SAME_ITEM_NODES = 1500;
+
+  /**
+   * Returns a node under {@code root} other than {@code lastFocus} with its class and its content
+   * description, or text, on screen within a quarter of the window's height of where {@code
+   * lastFocus} was when it was focused, the nearest such node if several, or null.
+   */
+  private static @Nullable AccessibilityNodeInfoCompat findSameItemNearby(
+      AccessibilityNodeInfoCompat root, AccessibilityNodeInfoCompat lastFocus) {
+    CharSequence label = lastFocus.getContentDescription();
+    if (TextUtils.isEmpty(label)) {
+      label = lastFocus.getText();
+    }
+    CharSequence className = lastFocus.getClassName();
+    if (TextUtils.isEmpty(label) || className == null) {
+      return null;
+    }
+    Rect last = new Rect();
+    lastFocus.getBoundsInScreen(last);
+    Rect window = new Rect();
+    root.getBoundsInScreen(window);
+    if (last.isEmpty() || window.isEmpty()) {
+      return null;
+    }
+    int maxDistance = window.height() / 4;
+    String wanted = label.toString();
+    AccessibilityNodeInfoCompat best = null;
+    int bestDistance = Integer.MAX_VALUE;
+    Rect bounds = new Rect();
+    ArrayDeque<AccessibilityNodeInfoCompat> queue = new ArrayDeque<>();
+    queue.add(root);
+    int read = 0;
+    while (!queue.isEmpty() && read < MAX_SAME_ITEM_NODES) {
+      AccessibilityNodeInfoCompat node = queue.poll();
+      int count = node.getChildCount();
+      for (int i = 0; i < count && read < MAX_SAME_ITEM_NODES; i++) {
+        AccessibilityNodeInfoCompat child = node.getChild(i);
+        read++;
+        if (child == null) {
+          continue;
+        }
+        queue.add(child);
+        if (child.equals(lastFocus) || !className.equals(child.getClassName())) {
+          continue;
+        }
+        CharSequence childLabel = child.getContentDescription();
+        if (TextUtils.isEmpty(childLabel)) {
+          childLabel = child.getText();
+        }
+        if (childLabel == null
+            || !wanted.equals(childLabel.toString())
+            || !child.isVisibleToUser()
+            || !AccessibilityNodeInfoUtils.shouldFocusNode(child)) {
+          continue;
+        }
+        child.getBoundsInScreen(bounds);
+        int distance = Math.abs(bounds.centerY() - last.centerY());
+        if (distance <= maxDistance && distance < bestDistance) {
+          best = child;
+          bestDistance = distance;
+        }
+      }
+    }
+    return best;
   }
 
   /**

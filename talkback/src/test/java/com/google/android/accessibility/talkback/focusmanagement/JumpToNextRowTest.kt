@@ -285,6 +285,27 @@ class JumpToNextRowTest {
   }
 
   @Test
+  fun targetBeforeOrHoldingThePivotGoesBack() {
+    // Facebook: the Remove button of a person, inside that person's card, after a page scroll.
+    val remove = Rect(666, 684, 1053, 765)
+    val card = Rect(0, 538, 1080, 783)
+    val nextCard = Rect(0, 783, 1080, 1028)
+    assertTrue(FocusProcessorForLogicalNavigation.goesBackFromPivot(card, remove, true))
+    assertTrue(
+      FocusProcessorForLogicalNavigation.goesBackFromPivot(Rect(0, 293, 1080, 538), remove, true)
+    )
+    assertFalse(FocusProcessorForLogicalNavigation.goesBackFromPivot(nextCard, remove, true))
+    // A row-mate beside the pivot is left to the order.
+    assertFalse(
+      FocusProcessorForLogicalNavigation.goesBackFromPivot(Rect(23, 684, 640, 765), remove, true)
+    )
+    // Going up, the card before the button is the way on.
+    assertFalse(FocusProcessorForLogicalNavigation.goesBackFromPivot(card, remove, false))
+    assertTrue(FocusProcessorForLogicalNavigation.goesBackFromPivot(nextCard, remove, false))
+    assertFalse(FocusProcessorForLogicalNavigation.goesBackFromPivot(Rect(), remove, true))
+  }
+
+  @Test
   fun moveFromTheLastRowGoesPastTheList() {
     assertTrue(FocusProcessorForLogicalNavigation.isPastLastRow(11, 11))
     assertTrue(FocusProcessorForLogicalNavigation.isPastLastRow(-1, 11))
