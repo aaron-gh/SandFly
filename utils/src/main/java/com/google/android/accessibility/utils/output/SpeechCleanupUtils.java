@@ -385,6 +385,22 @@ public final class SpeechCleanupUtils {
     characterReplacement = replacement;
   }
 
+  private static volatile int spokenPunctuationVerbosity = ALL;
+
+  /** Sets the punctuation verbosity that {@link #isHiddenByVerbosity} compares against. */
+  public static void setPunctuationVerbosity(@PunctuationVerbosity int verbosity) {
+    spokenPunctuationVerbosity = verbosity;
+  }
+
+  /**
+   * Whether {@code key} is a punctuation or symbol that the punctuation verbosity leaves out of
+   * speech, so that nothing should say it, not even a dictionary entry.
+   */
+  public static boolean isHiddenByVerbosity(char key) {
+    Pair<Integer, Integer> pair = TALKBACK_PUNCTUATION_AND_SYMBOL.get(key);
+    return pair != null && key != ' ' && pair.second < spokenPunctuationVerbosity;
+  }
+
   private static boolean isReplaced(char key) {
     @Nullable CharacterReplacement replacement = characterReplacement;
     return replacement != null && replacement.replaces(key);

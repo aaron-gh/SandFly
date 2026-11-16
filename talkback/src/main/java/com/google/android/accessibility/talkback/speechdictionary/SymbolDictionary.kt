@@ -18,6 +18,7 @@ package com.google.android.accessibility.talkback.speechdictionary
 
 import android.content.SharedPreferences
 import android.text.SpannableStringBuilder
+import com.google.android.accessibility.utils.output.SpeechCleanupUtils
 
 /**
  * Symbol dictionary: symbols and symbol sequences replaced in speech and on a braille display. An
@@ -52,9 +53,15 @@ object SymbolDictionary {
   }
 
   /** Returns [text] with the entries applied for [app], or null when none changed it. */
-  fun apply(text: CharSequence, app: String): CharSequence? = apply(text, entries, app)
+  fun apply(text: CharSequence, app: String, forSpeech: Boolean = false): CharSequence? =
+    apply(text, entries, app, forSpeech)
 
-  internal fun apply(text: CharSequence, entries: List<DictionaryEntry>, app: String): CharSequence? {
+  internal fun apply(
+    text: CharSequence,
+    entries: List<DictionaryEntry>,
+    app: String,
+    forSpeech: Boolean = false,
+  ): CharSequence? {
     if (entries.isEmpty()) return null
     var builder: SpannableStringBuilder? = null
     var subject = text.toString()
@@ -63,6 +70,8 @@ object SymbolDictionary {
       val find = entry.replacement.find
       val replace = entry.replacement.replace
       if (find.isEmpty()) continue
+      // A symbol that the punctuation verbosity leaves out of speech stays out.
+      if (forSpeech && find.length == 1 && SpeechCleanupUtils.isHiddenByVerbosity(find[0])) continue
       val starts = ArrayList<Int>()
       var index = subject.indexOf(find)
       while (index >= 0) {

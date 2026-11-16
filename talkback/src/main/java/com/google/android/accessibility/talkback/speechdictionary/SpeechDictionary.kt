@@ -121,18 +121,22 @@ object SpeechDictionary {
 
   /** Returns [text] with the entries applied, or null when none changed it. */
   @JvmStatic
-  fun apply(text: CharSequence): CharSequence? = applyInCurrentApp(text, entries)
+  fun apply(text: CharSequence): CharSequence? = applyInCurrentApp(text, entries, forSpeech = true)
 
   /**
    * Returns [text] with [entries], such as the braille dictionary's, and then the symbol dictionary
    * applied for the app shown last, or null when none changed it. Text in SandFly's own windows is
    * left as it is.
    */
-  fun applyInCurrentApp(text: CharSequence, entries: List<DictionaryEntry>): CharSequence? {
+  fun applyInCurrentApp(
+    text: CharSequence,
+    entries: List<DictionaryEntry>,
+    forSpeech: Boolean = false,
+  ): CharSequence? {
     val app = app
     if (app == ownPackage && !appliesInOwnWindows) return null
     val changed = apply(text, entries, app)
-    return SymbolDictionary.apply(changed ?: text, app) ?: changed
+    return SymbolDictionary.apply(changed ?: text, app, forSpeech) ?: changed
   }
 
   internal fun apply(text: CharSequence, entries: List<DictionaryEntry>, app: String): CharSequence? {

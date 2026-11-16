@@ -564,6 +564,7 @@ public class SpeechControllerImpl implements SpeechController {
 
   public void setPunctuationVerbosity(@PunctuationVerbosity int punctuationVerbosity) {
     this.punctuationVerbosity = punctuationVerbosity;
+    SpeechCleanupUtils.setPunctuationVerbosity(punctuationVerbosity);
     // TalkBack handles speaking punctuation if Speak punctuation verbosity preference is All or
     // Most except Some.
     mUsePunctuation = punctuationVerbosity == ALL || punctuationVerbosity == MOST;
