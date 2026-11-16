@@ -2604,8 +2604,10 @@ public class FailoverTextToSpeech {
     }
     boolean idle = queueMode != QUEUE_ADD || unfinishedUtterances.isEmpty();
     if (queueMode != QUEUE_ADD) {
-      // The engine may never report on the speech this flushes.
+      // The engine may never report on the speech this flushes, so the wait for it ends, and the
+      // flushing speech starts its own, rather than inheriting how long the flushed speech waited.
       unfinishedUtterances.clear();
+      engineQuietSince = 0;
     }
     unfinishedUtterances.add(utteranceId);
     if (idle && engineQuietSince == 0) {
