@@ -6207,8 +6207,13 @@ public class FocusProcessorForLogicalNavigation {
             nodeFilter,
             focusBeforeScroll);
     if (edgeNode == null) {
-      // Since there is no visible/valid accessibility focus on screen, we play safe and don't
-      // repeat navigation action without a valid pivot node.
+      // Only the old pivot's row (or its children) may be on screen while the list still moves.
+      // Search again when it stops, rather than dropping the swipe.
+      if (settleChecksLeft > 0) {
+        searchAgainWhenListMoves(
+            scrolledNode, focusBeforeScroll, sourceAction, eventId, settleChecksLeft - 1);
+      }
+      // Without a valid pivot node, don't repeat the navigation action.
       return;
     }
 
