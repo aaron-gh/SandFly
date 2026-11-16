@@ -162,7 +162,9 @@ public class NodeMenuRuleProcessor implements NodeMenuProvider {
       }
 
       NodeMenuRule nodeMenuRule = menuItemCreator.getMenuRule(rule);
-      if (!nodeMenuRule.isEnabled(service) || !nodeMenuRule.accept(service, node)) {
+      if (!nodeMenuRule.isEnabled(service)
+          || !nodeMenuRule.accept(service, node)
+          || !nodeMenuRule.hasHint(service, node)) {
         continue;
       }
       List<ContextMenuItem> ruleResults =

@@ -502,7 +502,7 @@ object Commands {
           Key.SHOW_ACTIONS,
         )
         gesture(R.string.shortcut_value_text_entities, R.string.title_text_entities)
-        gesture(R.string.shortcut_value_label, R.string.title_labeling_controls)
+        gesture(R.string.shortcut_value_label, R.string.title_labeling_show_or_hide_controls)
         gesture(
           R.string.shortcut_value_talkback_breakout,
           R.string.shortcut_talkback_breakout,
