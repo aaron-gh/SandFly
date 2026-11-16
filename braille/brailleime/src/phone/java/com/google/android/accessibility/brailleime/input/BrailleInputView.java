@@ -107,6 +107,11 @@ public class BrailleInputView extends View
       return false;
     }
 
+    /** Whether the dots move toward where the fingers land while typing. */
+    default boolean isDotTrackingEnabled() {
+      return false;
+    }
+
     /**
      * Signals that the side of the charging port in tabletop mode was decided afresh, so turns of
      * the device on the table count from here.
@@ -315,6 +320,7 @@ public class BrailleInputView extends View
 
   @Override
   public void onViewDetachedFromWindow(View view) {
+    inputPlane.saveTrackedPoints();
     if (inTwoStepCalibration()) {
       callback.onCalibrationFailed(calibrationType);
     }
@@ -425,6 +431,11 @@ public class BrailleInputView extends View
         public void onTwoStepCalibrationFailed() {
           callback.onCalibrationFailed(calibrationType);
           invalidate();
+        }
+
+        @Override
+        public boolean isDotTrackingEnabled() {
+          return callback.isDotTrackingEnabled();
         }
 
         @Override

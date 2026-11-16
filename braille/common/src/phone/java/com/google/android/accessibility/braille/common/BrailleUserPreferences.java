@@ -76,6 +76,7 @@ public class BrailleUserPreferences {
   private static final boolean SPEAK_SUBMITTING_DEFAULT = true;
   private static final boolean CAPITALIZE_SENTENCES_DEFAULT = false;
   private static final boolean QUICK_CALIBRATION_DEFAULT = true;
+  private static final boolean DOT_TRACKING_DEFAULT = false;
   private static final boolean LAUNCH_TUTORIAL_DEFAULT = true;
   private static final int EXIT_KEYBOARD_DEFAULT = 0;
   private static final int SHOW_OPTION_DIALOG_DEFAULT = 0;
@@ -391,6 +392,21 @@ public class BrailleUserPreferences {
     getSharedPreferences(context, BRAILLE_SHARED_PREFS_FILENAME)
         .edit()
         .putBoolean(context.getString(R.string.pref_brailleime_quick_calibration), quickCalibration)
+        .apply();
+  }
+
+  /** Reads whether the braille keyboard dots move toward where the fingers land while typing. */
+  public static boolean readDotTracking(Context context) {
+    return getSharedPreferences(context, BRAILLE_SHARED_PREFS_FILENAME)
+        .getBoolean(
+            context.getString(R.string.pref_brailleime_dot_tracking), DOT_TRACKING_DEFAULT);
+  }
+
+  /** Writes whether the braille keyboard dots move toward where the fingers land while typing. */
+  public static void writeDotTracking(Context context, boolean dotTracking) {
+    getSharedPreferences(context, BRAILLE_SHARED_PREFS_FILENAME)
+        .edit()
+        .putBoolean(context.getString(R.string.pref_brailleime_dot_tracking), dotTracking)
         .apply();
   }
 

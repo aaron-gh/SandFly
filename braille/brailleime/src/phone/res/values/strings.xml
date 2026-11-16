@@ -188,6 +188,8 @@
   <string name="title_pref_capitalize_sentences">Capitalize sentences</string>
   <!-- Title of the option that updates the braille keyboard dot positions when the user holds the fingers of one hand on the screen, then adds the fingers of the other hand. "Update dot positions" is context_menu_layout_calibration. [CHAR_LIMIT=80] -->
   <string name="title_pref_quick_calibration">Update dot positions with one hand, then the other</string>
+  <!-- Title of the option that moves the braille keyboard dots toward where the fingers land while typing, and saves the new positions. "Update dot positions" is context_menu_layout_calibration. [CHAR_LIMIT=80] -->
+  <string name="title_pref_dot_tracking">Update dot positions while typing</string>
 
   <!-- Preferred braille grade summary while the contracted braille. [CHAR_LIMIT=45] -->
   <string name="bd_preference_braille_contracted">Contracted braille</string>

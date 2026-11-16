@@ -1031,6 +1031,16 @@ In braille keyboard settings, **Capitalize sentences** changes the first letter 
 
 To update the dot positions without holding six fingers on the screen for 2 seconds, hold three fingers of one hand on the screen for at least 0.4 seconds, then put down the three fingers of the other hand and keep all six still for 0.65 seconds. Either hand can go first, so dots 4, 5, and 6 and then 1, 2, and 3 works, as does the reverse. With eight-dot braille, use four fingers of each hand. Six fingers that land together, or that are lifted sooner, still type a full cell. With **Include all pressed dots** on, this is off. In braille keyboard settings, **Update dot positions with one hand, then the other** turns this off. It's on by default.
 
+### Update dot positions while typing
+
+In braille keyboard settings, **Update dot positions while typing** moves the dots toward where the fingers land, so the dots follow hands that shift during a typing session. Each typed cell moves all dots of a hand a little toward that hand's touches, and moves each touched dot further toward its finger. The positions are saved and used in the next session, for each layout as with dot calibration. It's off by default.
+
+Limitations:
+
+- A touch moves the dots only when it is clearly closer to its own dot than to any other. A finger that has already shifted far enough to type the wrong dot doesn't move the dots; update the dot positions instead.
+- The dots don't move off the screen, closer together than one dot width, or into an order that changes their dot numbers.
+- Only typed cells move the dots. Gestures, holds, and the tutorial don't.
+
 ### Swap top and bottom dots
 
 In braille keyboard settings, **Swap top and bottom dots** makes dot 1 trade places with dot 3, and dot 4 with dot 6. TalkBack's **Reverse dots** is called **Swap left and right dots** in SandFly. You can turn on both.

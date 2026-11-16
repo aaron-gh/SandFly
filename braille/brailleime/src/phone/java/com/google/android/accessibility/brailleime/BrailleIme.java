@@ -1768,6 +1768,11 @@ public class BrailleIme extends InputMethodService {
         }
 
         @Override
+        public boolean isDotTrackingEnabled() {
+          return BrailleUserPreferences.readDotTracking(BrailleIme.this);
+        }
+
+        @Override
         public boolean onHoldProduced(int pointersHeldCount) {
           RecentUserInput.mark();
           return brailleImeGestureController.performDotHoldAction(pointersHeldCount);
