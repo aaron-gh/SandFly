@@ -33,17 +33,18 @@ data class SourceScript(val file: String, val url: String, val name: String = fi
 /** One page of a source's files. [count] is how many entries the page held. */
 data class SourcePage(val scripts: List<SourceScript>, val count: Int, val next: String?)
 
-/**
- * What the files of a source are. Each kind has a list of sources of its own, which starts with
- * [official], the source that SandFly's developer publishes.
- */
-enum class SourceKind(
-  val prefs: String,
-  private val extensions: List<String>,
-  val official: String,
-) {
-  SCRIPTS("script_sources", listOf(".lua", ".zip"), ScriptSources.OFFICIAL_SCRIPTS),
-  SOUND_THEMES("sound_theme_sources", listOf(".zip"), ScriptSources.OFFICIAL_SOUND_THEMES);
+/** What the files of a source are. Each kind has a list of sources of its own. */
+enum class SourceKind(val prefs: String, private val extensions: List<String>) {
+  SCRIPTS("script_sources", listOf(".lua", ".zip")),
+  SOUND_THEMES("sound_theme_sources", listOf(".zip"));
+
+  /** The source that SandFly's developer publishes, which the list of sources starts with. */
+  val official: String
+    get() =
+      when (this) {
+        SCRIPTS -> ScriptSources.OFFICIAL_SCRIPTS
+        SOUND_THEMES -> ScriptSources.OFFICIAL_SOUND_THEMES
+      }
 
   fun lists(file: String): Boolean = extensions.any { file.endsWith(it, ignoreCase = true) }
 
