@@ -31,12 +31,15 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.PointF;
 import android.graphics.Typeface;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Size;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
 import androidx.annotation.ColorInt;
 import androidx.annotation.VisibleForTesting;
+import com.google.android.accessibility.braille.common.BrailleUserPreferences;
 import com.google.android.accessibility.braille.common.Constants.BrailleType;
 import com.google.android.accessibility.braille.interfaces.BrailleCharacter;
 import com.google.android.accessibility.brailleime.BrailleImeLog;
@@ -47,6 +50,7 @@ import com.google.android.accessibility.brailleime.input.MultitouchHandler.HoldR
 import com.google.android.accessibility.brailleime.input.MultitouchHandler.MultitouchResultListener;
 import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
@@ -75,6 +79,7 @@ public abstract class BrailleInputPlane {
   private static final int ANIMATION_DURATION_MS = 100;
   private static final int GROUP_COUNT = 2;
   private static final int CALIBRATION_MAXIMUM_FAIL_COUNT = 3;
+  private static final long TRACKED_POINTS_SAVE_DELAY_MS = 2000;
 
   protected final Context context;
   protected boolean isTableTopMode;
@@ -111,6 +116,10 @@ public abstract class BrailleInputPlane {
   private PointF[] dotCenterPosition;
   private TwoStepCalibrationState twoStepCalibrationState = NONE;
   private final CustomOnGestureListener customOnGestureListener;
+  private final Handler trackedPointsHandler = new Handler(Looper.getMainLooper());
+  private final Runnable saveTrackedPointsRunnable = this::saveTrackedPoints;
+  // Dot positions moved by dot tracking and not yet saved.
+  private boolean trackedPointsUnsaved;
   private final MultitouchResultListener multitouchResultListener =
       new MultitouchResultListener() {
         @Override
@@ -146,6 +155,11 @@ public abstract class BrailleInputPlane {
 
     /** Signals to retry the steps in two step calibration. */
     void onTwoStepCalibrationRetry(boolean isFirstStep);
+
+    /** Whether the dots move toward where the fingers land while typing. */
+    default boolean isDotTrackingEnabled() {
+      return false;
+    }
   }
 
   /**
@@ -242,6 +256,7 @@ public abstract class BrailleInputPlane {
   abstract Size getInputViewCaptionScreenSize(Size screenSize);
 
   public void setTableTopMode(boolean isTableTopMode) {
+    saveTrackedPoints();
     this.isTableTopMode = isTableTopMode;
     calibrationFailCount = 0;
     refresh();
@@ -257,6 +272,7 @@ public abstract class BrailleInputPlane {
   }
 
   public void setOptions(BrailleInputOptions options) {
+    saveTrackedPoints();
     this.options = options;
     refresh();
   }
@@ -376,6 +392,7 @@ public abstract class BrailleInputPlane {
    * @param screenSize used as the height and width of the canvas
    */
   public void setOrientation(int orientation, Size screenSize) {
+    saveTrackedPoints();
     this.orientation = orientation;
     this.sizeInPixels = screenSize;
     dotTargets = buildDotTargets(screenSize);
@@ -421,6 +438,7 @@ public abstract class BrailleInputPlane {
     }
     switch (touchResult.type) {
       case MultitouchResult.TYPE_TAP -> {
+        followFingers(touchResult.releasedPoints);
         return customOnGestureListener.detect(
             Optional.of(
                 BrailleInputPlaneResult.createTapAndRelease(
@@ -511,6 +529,7 @@ public abstract class BrailleInputPlane {
 
   /** Calibrates dots positions by two steps. */
   void calibrateByTwoSteps() {
+    discardTrackedPoints();
     twoStepCalibrationState = STEP1;
     calibrationFailCount = 0;
   }
@@ -639,6 +658,114 @@ public abstract class BrailleInputPlane {
     }
   }
 
+  /**
+   * Moves the dots toward the fingers of a typed cell when dot tracking is on. Keeps the dots in
+   * place when the move would change which dot number a position loads as.
+   */
+  private void followFingers(Collection<PointF> points) {
+    if (points == null
+        || options.tutorialMode()
+        || twoStepCalibrationState != NONE
+        || !customOnGestureListener.isDotTrackingEnabled()) {
+      return;
+    }
+    int dotCount = dotTargets.size();
+    float[] xs = new float[dotCount];
+    float[] ys = new float[dotCount];
+    int[] hands = new int[dotCount];
+    for (int i = 0; i < dotCount; i++) {
+      DotTarget dot = dotTargets.get(i);
+      xs[i] = dot.center.x;
+      ys[i] = dot.center.y;
+      hands[i] = DotTracking.handOf(dot.dotNumber);
+    }
+    List<DotTarget> touches = new ArrayList<>(matchTouchToTargets(points));
+    int[] touchedDots = new int[touches.size()];
+    float[] touchXs = new float[touches.size()];
+    float[] touchYs = new float[touches.size()];
+    for (int t = 0; t < touches.size(); t++) {
+      DotTarget touch = touches.get(t);
+      touchedDots[t] = indexOfDotNumber(touch.dotNumber);
+      touchXs[t] = touch.center.x;
+      touchYs[t] = touch.center.y;
+    }
+    float[][] moved =
+        DotTracking.follow(
+            xs,
+            ys,
+            hands,
+            touchedDots,
+            touchXs,
+            touchYs,
+            /* minSpacing= */ 2 * dotRadius,
+            sizeInPixels.getWidth(),
+            sizeInPixels.getHeight());
+    if (moved == null) {
+      return;
+    }
+    List<PointF> oldCenters = new ArrayList<>();
+    List<PointF> newCenters = new ArrayList<>();
+    for (int i = 0; i < dotCount; i++) {
+      oldCenters.add(dotTargets.get(i).center);
+      newCenters.add(new PointF(moved[0][i], moved[1][i]));
+    }
+    if (!Arrays.equals(sortedOrder(oldCenters), sortedOrder(newCenters))) {
+      return;
+    }
+    List<DotTarget> movedTargets = new ArrayList<>();
+    for (int i = 0; i < dotCount; i++) {
+      movedTargets.add(
+          new DotTarget(dotTargets.get(i).dotNumber, newCenters.get(i).x, newCenters.get(i).y));
+    }
+    dotTargets = movedTargets;
+    updateDotPosition(dotTargets);
+    trackedPointsUnsaved = true;
+    trackedPointsHandler.removeCallbacks(saveTrackedPointsRunnable);
+    trackedPointsHandler.postDelayed(saveTrackedPointsRunnable, TRACKED_POINTS_SAVE_DELAY_MS);
+  }
+
+  private int indexOfDotNumber(int dotNumber) {
+    for (int i = 0; i < dotTargets.size(); i++) {
+      if (dotTargets.get(i).dotNumber == dotNumber) {
+        return i;
+      }
+    }
+    return -1;
+  }
+
+  /** Where each of {@code centers} lands when the saved layout is sorted into dot order. */
+  private int[] sortedOrder(List<PointF> centers) {
+    List<PointF> sorted = new ArrayList<>(centers);
+    sortDotCenters(sorted);
+    int[] order = new int[sorted.size()];
+    for (int i = 0; i < sorted.size(); i++) {
+      order[i] = indexOfSame(centers, sorted.get(i));
+    }
+    return order;
+  }
+
+  /** Saves dot positions moved by dot tracking, if any. */
+  void saveTrackedPoints() {
+    trackedPointsHandler.removeCallbacks(saveTrackedPointsRunnable);
+    if (!trackedPointsUnsaved) {
+      return;
+    }
+    trackedPointsUnsaved = false;
+    // The saved points are keyed by the current typing language's dot count.
+    if (options.tutorialMode()
+        || twoStepCalibrationState != NONE
+        || BrailleUserPreferences.getCurrentTypingLanguageType(context).getDotCount()
+            != dotTargets.size()) {
+      return;
+    }
+    storeLayoutPoints();
+  }
+
+  private void discardTrackedPoints() {
+    trackedPointsHandler.removeCallbacks(saveTrackedPointsRunnable);
+    trackedPointsUnsaved = false;
+  }
+
   /** Stores points positions in the SharedPreference. */
   void storeLayoutPoints() {
     List<PointF> centerPoints = new ArrayList<>();
@@ -674,6 +801,8 @@ public abstract class BrailleInputPlane {
   }
 
   private void doCalibration(List<PointF> holdPoints) {
+    // Calibration replaces the tracked positions, and the keyboard saves them when it succeeds.
+    discardTrackedPoints();
     // Do 2-step calibration for 5/6/7 dots.
     if (holdPoints.size() == 5
         || ((holdPoints.size() == BrailleType.SIX_DOT.getDotCount()

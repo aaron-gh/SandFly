@@ -260,6 +260,19 @@ public class BrailleImePreferencesActivity extends PreferencesActivity {
       }
 
       {
+        // Update dot positions while typing preference.
+        SwitchPreferenceCompat dotTrackingPref =
+            findPreference(getString(R.string.pref_brailleime_dot_tracking));
+        dotTrackingPref.setChecked(BrailleUserPreferences.readDotTracking(getContext()));
+        dotTrackingPref.setOnPreferenceClickListener(
+            preference -> {
+              BrailleUserPreferences.writeDotTracking(
+                  getContext(), ((SwitchPreferenceCompat) preference).isChecked());
+              return true;
+            });
+      }
+
+      {
         // Say "Submitting text" preference.
         SwitchPreferenceCompat speakSubmittingPref =
             findPreference(getString(R.string.pref_brailleime_speak_submitting));
