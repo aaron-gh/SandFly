@@ -40,5 +40,7 @@ class UpdateReceiver : BroadcastReceiver() {
     const val EXTRA_API_DOWNLOAD_URL = "api_download_url"
     /** The app ID of the APK that the install session installs. */
     const val EXTRA_INSTALLED_PACKAGE = "installed_package"
+    /** The version code of the APK that the install session installs. */
+    const val EXTRA_INSTALLED_VERSION = "installed_version"
   }
 }
