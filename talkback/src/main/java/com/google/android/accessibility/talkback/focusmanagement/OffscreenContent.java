@@ -167,7 +167,8 @@ final class OffscreenContent {
       return true;
     }
     // Otherwise only the pivot, or a container of it, can reach past the edge, as one long text
-    // does.
+    // does. Such a text is larger than the scroll view; a row cut off at the edge that is smaller,
+    // as in the notification shade, has rows past it that the tree leaves out.
     Rect viewport = new Rect();
     scrollable.getBoundsInScreen(viewport);
     boolean vertical = Role.getRole(scrollable) != Role.ROLE_HORIZONTAL_SCROLL_VIEW;
@@ -199,11 +200,13 @@ final class OffscreenContent {
     node.getBoundsInScreen(shown);
     if (vertical) {
       return shown.height() < size.height()
+          && size.height() > viewport.height()
           && (towardEnd
               ? shown.bottom >= viewport.bottom - EDGE_SLACK
               : shown.top <= viewport.top + EDGE_SLACK);
     }
     return shown.width() < size.width()
+        && size.width() > viewport.width()
         && (towardEnd
             ? shown.right >= viewport.right - EDGE_SLACK
             : shown.left <= viewport.left + EDGE_SLACK);
