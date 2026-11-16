@@ -556,7 +556,10 @@ object Updater {
           Intent(context, UpdateReceiver::class.java)
             .setAction(UpdateReceiver.ACTION_INSTALL_STATUS)
             .putExtra(UpdateReceiver.EXTRA_INSTALLED_PACKAGE, apkPackage)
-            .putExtra(UpdateReceiver.EXTRA_INSTALLED_VERSION, PackageInfoCompat.getLongVersionCode(info))
+            .putExtra(
+              UpdateReceiver.EXTRA_INSTALLED_VERSION,
+              PackageInfoCompat.getLongVersionCode(info),
+            )
         // The installer fills in the status, so the intent must be mutable.
         val flags =
           PendingIntent.FLAG_UPDATE_CURRENT or
