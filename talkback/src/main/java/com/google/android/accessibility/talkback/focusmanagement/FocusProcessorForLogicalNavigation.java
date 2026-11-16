@@ -1058,9 +1058,20 @@ public class FocusProcessorForLogicalNavigation {
    */
   /** Whether {@code navigationAction} moves forward in reading order. */
   private boolean goesForward(NavigationAction navigationAction) {
-    return TraversalStrategyUtils.getLogicalDirection(
-            navigationAction.searchDirection, WindowUtils.isScreenLayoutRTL(service))
-        != SEARCH_FOCUS_BACKWARD;
+    boolean isRtl = WindowUtils.isScreenLayoutRTL(service);
+    if (navigationAction.searchDirection != TraversalStrategy.SEARCH_FOCUS_UNKNOWN) {
+      return TraversalStrategyUtils.getLogicalDirection(navigationAction.searchDirection, isRtl)
+          != SEARCH_FOCUS_BACKWARD;
+    }
+    // Scroll and jump actions carry no search direction.
+    return switch (navigationAction.actionType) {
+      case NavigationAction.SCROLL_BACKWARD,
+          NavigationAction.SCROLL_UP,
+          NavigationAction.JUMP_TO_BOTTOM -> false;
+      case NavigationAction.SCROLL_LEFT -> isRtl;
+      case NavigationAction.SCROLL_RIGHT -> !isRtl;
+      default -> true;
+    };
   }
 
   /** The node focus was last put on, from the focus history, or null. */
