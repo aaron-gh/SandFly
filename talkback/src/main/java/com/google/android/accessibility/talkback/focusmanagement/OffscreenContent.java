@@ -43,6 +43,7 @@ final class OffscreenContent {
   private static final int EDGE_SLACK = 1;
 
   private static final String SYSTEM_UI_PACKAGE = "com.android.systemui";
+  private static final String NOTIFICATION_LIST_ID = ":id/notification_stack_scroller";
 
   private OffscreenContent() {}
 
@@ -53,6 +54,12 @@ final class OffscreenContent {
    */
   static boolean keepsAllContent(AccessibilityNodeInfoCompat scrollable) {
     int role = Role.getRole(scrollable);
+    // The notification shade's list says it is a scroll view but leaves the notifications past its
+    // edge out of the tree.
+    String viewId = scrollable.getViewIdResourceName();
+    if (viewId != null && viewId.endsWith(NOTIFICATION_LIST_ID)) {
+      return false;
+    }
     return scrollable.isVisibleToUser()
         && scrollable.getCollectionInfo() == null
         && (role == Role.ROLE_SCROLL_VIEW || role == Role.ROLE_HORIZONTAL_SCROLL_VIEW);
@@ -132,7 +139,9 @@ final class OffscreenContent {
       boolean rtl) {
     if (scrollable.equals(pivot)
         || AccessibilityNodeInfoUtils.supportsAction(
-            scrollable, AccessibilityActionCompat.ACTION_SCROLL_TO_POSITION.getId())) {
+            scrollable, AccessibilityActionCompat.ACTION_SCROLL_TO_POSITION.getId())
+        // The shade's lists leave off-screen rows out of the tree.
+        || SYSTEM_UI_PACKAGE.contentEquals(String.valueOf(scrollable.getPackageName()))) {
       return false;
     }
     List<AccessibilityNodeInfoCompat> nodes = new ArrayList<>();
@@ -168,23 +177,14 @@ final class OffscreenContent {
     if (pastEdge) {
       return true;
     }
-    // Otherwise only the pivot, or a container of it, can reach past the edge, as one long text
-    // does. The notification shade's list leaves the rows past its edge out of the tree, so a row
-    // cut off there has more rows past it.
-    if (SYSTEM_UI_PACKAGE.contentEquals(String.valueOf(scrollable.getPackageName()))) {
-      return false;
-    }
+    // Otherwise only the pivot itself can reach past the edge, as one long text does. A container
+    // of the pivot cut off at the edge, with nothing of it past the edge in the tree, is a list
+    // that leaves its off-screen rows out of the tree, as a React Native FlatList does.
     Rect viewport = new Rect();
     scrollable.getBoundsInScreen(viewport);
     boolean vertical = Role.getRole(scrollable) != Role.ROLE_HORIZONTAL_SCROLL_VIEW;
     boolean towardEnd = vertical ? forward : forward != rtl;
-    for (int i = 1; i <= pivotIndex; i++) {
-      if ((i == pivotIndex || subtreeEnds.get(i) > pivotIndex)
-          && isCutOffAtEdge(nodes.get(i), viewport, vertical, towardEnd)) {
-        return true;
-      }
-    }
-    return false;
+    return isCutOffAtEdge(nodes.get(pivotIndex), viewport, vertical, towardEnd);
   }
 
   /**

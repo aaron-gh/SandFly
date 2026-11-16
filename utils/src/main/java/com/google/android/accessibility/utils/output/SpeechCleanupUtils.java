@@ -47,7 +47,7 @@ public final class SpeechCleanupUtils {
   // When the text contains any repeat of special characters, the collapse function applies.
   private static final String CONSECUTIVE_CHARACTER_REGEX =
       "("
-          + "[\\-\\\\/|!@#$%^&*\\(\\)=_+\\[\\]\\{\\}.?;'\":<>\\u2022]" // punctuation and symbols
+          + "[\\-\\\\/|!@#$%^&*\\(\\)=_+\\[\\]\\{\\}.?;'\":<>\\u2022\\u25E6\\u2023]" // punctuation and symbols
           + "|"
           + EmojiUtils.EMOJI_REGEX // Emoji
           + ")"
@@ -97,6 +97,9 @@ public final class SpeechCleanupUtils {
               .put('@', new Pair<>(R.string.symbol_at_sign, MOST))
               .put('\\', new Pair<>(R.string.symbol_backslash, MOST))
               .put('•', new Pair<>(R.string.symbol_bullet, MOST))
+              // Other bullets of nested lists, which TTS engines can leave silent.
+              .put('◦', new Pair<>(R.string.symbol_bullet, MOST))
+              .put('‣', new Pair<>(R.string.symbol_bullet, MOST))
               .put('^', new Pair<>(R.string.symbol_caret, MOST))
               .put('¢', new Pair<>(R.string.symbol_cent, ALL))
               .put(':', new Pair<>(R.string.symbol_colon, MOST))
