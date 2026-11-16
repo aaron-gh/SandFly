@@ -33,10 +33,17 @@ data class SourceScript(val file: String, val url: String, val name: String = fi
 /** One page of a source's files. [count] is how many entries the page held. */
 data class SourcePage(val scripts: List<SourceScript>, val count: Int, val next: String?)
 
-/** What the files of a source are. Each kind has a list of sources of its own. */
-enum class SourceKind(val prefs: String, private val extensions: List<String>) {
-  SCRIPTS("script_sources", listOf(".lua", ".zip")),
-  SOUND_THEMES("sound_theme_sources", listOf(".zip"));
+/**
+ * What the files of a source are. Each kind has a list of sources of its own, which starts with
+ * [official], the source that SandFly's developer publishes.
+ */
+enum class SourceKind(
+  val prefs: String,
+  private val extensions: List<String>,
+  val official: String,
+) {
+  SCRIPTS("script_sources", listOf(".lua", ".zip"), ScriptSources.OFFICIAL_SCRIPTS),
+  SOUND_THEMES("sound_theme_sources", listOf(".zip"), ScriptSources.OFFICIAL_SOUND_THEMES);
 
   fun lists(file: String): Boolean = extensions.any { file.endsWith(it, ignoreCase = true) }
 
@@ -54,6 +61,8 @@ object ScriptSources {
   private const val KEY_OFFICIAL_ADDED = "official_added"
   /** The scripts that SandFly's developer publishes. */
   const val OFFICIAL_SCRIPTS = "https://github.com/aaron-gh/sandfly-scripts"
+  /** The sound themes that SandFly's developer publishes. */
+  const val OFFICIAL_SOUND_THEMES = "https://github.com/aaron-gh/sandfly-themes"
   private const val CONNECT_TIMEOUT_MS = 15_000
   private const val READ_TIMEOUT_MS = 30_000
   private const val MAX_REDIRECTS = 5
@@ -72,12 +81,10 @@ object ScriptSources {
       } catch (e: JSONException) {
         emptyList()
       }
-    // SandFly's own scripts are listed first once, also for those who added sources before. Once
+    // SandFly's own source is listed first once, also for those who added sources before. Once
     // removed, the source stays removed.
-    if (kind != SourceKind.SCRIPTS || prefs.getBoolean(KEY_OFFICIAL_ADDED, false)) {
-      return sources
-    }
-    val official = ScriptSource.parse(OFFICIAL_SCRIPTS) ?: return sources
+    if (prefs.getBoolean(KEY_OFFICIAL_ADDED, false)) return sources
+    val official = ScriptSource.parse(kind.official) ?: return sources
     val withOfficial =
       if (sources.any { it.address.equals(official.address, ignoreCase = true) }) sources
       else listOf(official) + sources

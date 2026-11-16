@@ -58,7 +58,17 @@ class OfficialScriptSourceTest {
   }
 
   @Test
-  fun soundThemeSourcesHaveNoOfficialSource() {
-    assertEquals(emptyList<String>(), addresses(SourceKind.SOUND_THEMES))
+  fun soundThemeSourcesStartWithTheOfficialThemes() {
+    assertEquals(
+      listOf(ScriptSource.parse(ScriptSources.OFFICIAL_SOUND_THEMES)!!.address),
+      addresses(SourceKind.SOUND_THEMES),
+    )
+  }
+
+  @Test
+  fun aRemovedOfficialThemeSourceStaysRemoved() {
+    val kind = SourceKind.SOUND_THEMES
+    ScriptSources.remove(context, ScriptSources.all(context, kind).first(), kind)
+    assertEquals(emptyList<String>(), addresses(kind))
   }
 }
