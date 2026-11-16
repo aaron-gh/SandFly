@@ -1085,6 +1085,7 @@ public class TalkBackService extends AccessibilityServiceCompat
   @Override
   public void onDestroy() {
     unlockedBootHandler.removeCallbacks(checkUnlockedBoot);
+    AppGestures.setFrontAppRefresh(null);
     if (userInterface != null) {
       userInterface.unregisterAllListeners();
     }
@@ -1384,17 +1385,13 @@ public class TalkBackService extends AccessibilityServiceCompat
                 || (windowType == AccessibilityWindowInfoUtils.WINDOW_TYPE_NONE
                     && TextUtils.equals(lastWindowPackage, getPackageName())));
         ClipboardHistoryOverlay.onAppWindowShown(lastWindowPackage);
+        appWindowId = event.getWindowId();
+        appWindowSeen = false;
       }
     } else if (eventType == AccessibilityEvent.TYPE_WINDOWS_CHANGED && changesFrontWindow(event)) {
       // Some launchers, such as Xiaomi's, send no window state change when the home screen is shown
       // again, so the window list decides as well.
-      @Nullable CharSequence frontApp = frontAppPackage();
-      if (frontApp != null) {
-        SpeechDictionary.onWindowShown(frontApp);
-        AppGestures.onWindowShown(frontApp);
-        SettingsProfiles.onAppShown(frontApp, frontAppIsOverlay);
-        ClipboardHistoryOverlay.onAppWindowShown(frontApp);
-      }
+      updateFrontApp();
       // The keyboard window comes and goes with a windows change.
       if (SettingsProfiles.watchesKeyboards()) {
         SettingsProfiles.onKeyboardShown(
@@ -2472,6 +2469,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     StallLog.start(this);
     // Menus read the settings profiles on the main thread.
     SettingsProfiles.preload(this);
+    AppGestures.setFrontAppRefresh(this::updateFrontApp);
     EventId talkbackOnEventId =
         Performance.getInstance().onHintEventReceived(Performance.HINT_SUB_TYPE_TALKBACK_ON);
 
@@ -6090,21 +6088,48 @@ public class TalkBackService extends AccessibilityServiceCompat
 
   // The window frontAppPackage last found in front, whose package was then taken.
   private int lastFrontWindowId = -1;
+  // The window the app in use was taken from: the window last found in front, or the window of
+  // the last window state change that counted. -1 when not known.
+  private int appWindowId = -1;
+  // Whether appWindowId has been in the window list. A window state change can come before its
+  // window is listed.
+  private boolean appWindowSeen;
   // Whether the window frontAppPackage last found in front is one of SandFly's own overlays.
   private boolean frontAppIsOverlay;
 
+  /** Takes the app in front from the window list, when it changed. */
+  private void updateFrontApp() {
+    @Nullable CharSequence frontApp = frontAppPackage();
+    if (frontApp != null) {
+      SpeechDictionary.onWindowShown(frontApp);
+      AppGestures.onWindowShown(frontApp);
+      SettingsProfiles.onAppShown(frontApp, frontAppIsOverlay);
+      ClipboardHistoryOverlay.onAppWindowShown(frontApp);
+    }
+  }
+
   /**
    * The package of the app window in front: the active window if it is an app's or one of
-   * SandFly's own overlays, else the focused app window. Null when neither is shown, or when the
-   * window in front is the one last found, so its package isn't asked for again. Recognized screen
-   * elements and other services' overlays are over the app, which stays the app in front.
+   * SandFly's own overlays, else the focused app window. Null when neither is shown, or when
+   * nothing changed: the window in front is the one the app in use was taken from, or the one last
+   * found while the window of a later window state change is not yet listed or still shown. An
+   * unknown window decides only until the next windows change. Recognized screen elements and
+   * other services' overlays are over the app, which stays the app in front.
    */
   @Nullable
   private CharSequence frontAppPackage() {
     @Nullable AccessibilityWindowInfo front = null;
     // The root of an overlay in front, already asked for to check its package.
     @Nullable AccessibilityNodeInfo frontRoot = null;
-    for (AccessibilityWindowInfo window : AccessibilityServiceCompatUtils.getWindows(this)) {
+    List<AccessibilityWindowInfo> windows = AccessibilityServiceCompatUtils.getWindows(this);
+    boolean appWindowShown = false;
+    for (AccessibilityWindowInfo window : windows) {
+      if (window.getId() == appWindowId) {
+        appWindowShown = true;
+        break;
+      }
+    }
+    for (AccessibilityWindowInfo window : windows) {
       int type = window.getType();
       if (type != AccessibilityWindowInfo.TYPE_APPLICATION
           && type != AccessibilityWindowInfo.TYPE_ACCESSIBILITY_OVERLAY) {
@@ -6131,12 +6156,31 @@ public class TalkBackService extends AccessibilityServiceCompat
         break;
       }
     }
-    if (front == null || front.getId() == lastFrontWindowId) {
+    if (front == null) {
       return null;
     }
-    lastFrontWindowId = front.getId();
-    frontAppIsOverlay = front.getType() == AccessibilityWindowInfo.TYPE_ACCESSIBILITY_OVERLAY;
+    int frontId = front.getId();
+    if (appWindowShown) {
+      appWindowSeen = true;
+    }
+    // A window state change from another window, such as the SandFly menu's, decides until that
+    // window is gone. Closing it sends no window state change for the app under it.
+    if (frontId == appWindowId
+        || (frontId == lastFrontWindowId
+            && appWindowId != -1
+            && (appWindowShown || !appWindowSeen))) {
+      return null;
+    }
     @Nullable AccessibilityNodeInfo root = frontRoot != null ? frontRoot : front.getRoot();
-    return root == null ? null : root.getPackageName();
+    @Nullable CharSequence packageName = root == null ? null : root.getPackageName();
+    // A window just added can have no content yet; the next windows change asks again.
+    if (packageName == null) {
+      return null;
+    }
+    lastFrontWindowId = frontId;
+    appWindowId = frontId;
+    appWindowSeen = true;
+    frontAppIsOverlay = front.getType() == AccessibilityWindowInfo.TYPE_ACCESSIBILITY_OVERLAY;
+    return packageName;
   }
 }

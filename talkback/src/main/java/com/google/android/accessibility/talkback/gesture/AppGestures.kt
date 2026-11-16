@@ -17,6 +17,7 @@
 package com.google.android.accessibility.talkback.gesture
 
 import android.content.SharedPreferences
+import android.os.Looper
 import com.google.android.accessibility.talkback.keyboard.KeyCombo
 import org.json.JSONException
 import org.json.JSONObject
@@ -49,6 +50,21 @@ object AppGestures {
   // The package of the window shown last.
   @Volatile private var app: String = ""
 
+  // Takes the app in front from the window list when it changed, before a gesture or key is looked
+  // up, for window changes that sent no event.
+  @Volatile private var frontAppRefresh: Runnable? = null
+
+  /** Sets what takes the app in front from the window list, or null when nothing does. */
+  @JvmStatic
+  fun setFrontAppRefresh(refresh: Runnable?) {
+    frontAppRefresh = refresh
+  }
+
+  private fun refreshFrontApp() {
+    val refresh = frontAppRefresh ?: return
+    if (Looper.myLooper() == Looper.getMainLooper()) refresh.run()
+  }
+
   @JvmStatic
   fun load(prefs: SharedPreferences) {
     val read = read(prefs)
@@ -60,7 +76,12 @@ object AppGestures {
   }
 
   /** The keyboard shortcuts of the app shown, with the command each runs there. */
-  @JvmStatic fun keys(): List<Pair<KeyCombo, String>> = appKeys[app].orEmpty()
+  @JvmStatic
+  fun keys(): List<Pair<KeyCombo, String>> {
+    if (appKeys.isEmpty()) return emptyList()
+    refreshFrontApp()
+    return appKeys[app].orEmpty()
+  }
 
   /** The name a keyboard shortcut is kept under. */
   @JvmStatic
@@ -94,6 +115,7 @@ object AppGestures {
     if (gestureKey == null) return null
     val apps = apps
     if (apps.isEmpty()) return null
+    refreshFrontApp()
     return apps[app]?.gestures?.get(gestureKey)
   }
 
