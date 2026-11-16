@@ -17,14 +17,13 @@
 package com.google.android.accessibility.talkback.scripting
 
 import android.accessibilityservice.AccessibilityService
-import android.content.ClipData
-import android.content.ClipboardManager
 import android.content.Context
 import android.os.Handler
 import android.os.Looper
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils
+import com.google.android.accessibility.utils.ClipboardHistory
 import java.util.concurrent.LinkedBlockingQueue
 import java.util.concurrent.ThreadPoolExecutor
 import java.util.concurrent.TimeUnit
@@ -137,6 +136,6 @@ object ItemInspector {
     )
 }
 
+@Suppress("UNUSED_PARAMETER")
 fun Context.copyToClipboard(label: CharSequence, text: CharSequence): Boolean =
-  getSystemService(ClipboardManager::class.java)
-    ?.setPrimaryClip(ClipData.newPlainText(label, text)) != null
+  ClipboardHistory.copy(this, text)
