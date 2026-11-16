@@ -147,6 +147,11 @@ public class WebActor {
       }
       return true;
     } else {
+      if (navigationAction.targetType == NavigationTarget.TARGET_DEFAULT) {
+        // A swipe past the page's last item goes on outside the page; "No next Default" said
+        // nothing useful.
+        return false;
+      }
       int resId =
           webNavigationDirection == WebInterfaceUtils.DIRECTION_FORWARD
               ? R.string.end_of_page

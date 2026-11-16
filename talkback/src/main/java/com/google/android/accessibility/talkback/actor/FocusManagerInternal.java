@@ -42,6 +42,7 @@ import com.google.android.accessibility.talkback.actor.helper.FocusActorHelper;
 import com.google.android.accessibility.talkback.focusmanagement.AccessibilityFocusMonitor;
 import com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForScreenStateChange;
 import com.google.android.accessibility.talkback.focusmanagement.SheetsGrid;
+import com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForLogicalNavigation;
 import com.google.android.accessibility.talkback.focusmanagement.TraversalTreeCache;
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.ScreenState;
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.ScreenStateMonitor;
@@ -338,6 +339,10 @@ public class FocusManagerInternal {
       return true;
     }
 
+    if (FocusProcessorForLogicalNavigation.swipeScrollPending()) {
+      LogUtils.d(TAG, String.format("%s: Return, a swipe's scroll is still to focus an item.", subTag));
+      return false;
+    }
     // Scrolling ahead moved the focused item off screen; the next swipe goes on from it.
     AccessibilityWindowInfo activeWindow = state.getActiveWindow();
     if (activeWindow != null

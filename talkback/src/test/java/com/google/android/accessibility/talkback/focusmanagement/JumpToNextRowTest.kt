@@ -285,6 +285,17 @@ class JumpToNextRowTest {
   }
 
   @Test
+  fun gridTargetAtOrPastTheSuggestedCellIsTheNextItem() {
+    // File picker: suggested row 11 holds a section break; the next file is row 12.
+    assertTrue(FocusProcessorForLogicalNavigation.isAtOrPastCell(12, 0, 11, 0, true))
+    assertTrue(FocusProcessorForLogicalNavigation.isAtOrPastCell(11, 0, 11, 0, true))
+    assertFalse(FocusProcessorForLogicalNavigation.isAtOrPastCell(10, 2, 11, 0, true))
+    // Going back, the cell before the suggested one is past it.
+    assertTrue(FocusProcessorForLogicalNavigation.isAtOrPastCell(9, 3, 10, 3, false))
+    assertFalse(FocusProcessorForLogicalNavigation.isAtOrPastCell(11, 0, 10, 3, false))
+  }
+
+  @Test
   fun cardHoldsItsButton() {
     val remove = Rect(666, 684, 1053, 765)
     assertTrue(FocusProcessorForLogicalNavigation.holdsPivot(Rect(0, 538, 1080, 783), remove))
@@ -343,9 +354,20 @@ class JumpToNextRowTest {
       FocusProcessorForLogicalNavigation.goesBackFromPivot(Rect(0, 293, 1080, 538), remove, true)
     )
     assertFalse(FocusProcessorForLogicalNavigation.goesBackFromPivot(nextCard, remove, true))
-    // A row-mate beside the pivot is left to the order.
-    assertFalse(
+    // The Add Friend button left of Remove on its row comes before it.
+    assertTrue(
       FocusProcessorForLogicalNavigation.goesBackFromPivot(Rect(23, 684, 640, 765), remove, true)
+    )
+    // In a right-to-left layout the button right of the pivot comes before it.
+    assertFalse(
+      FocusProcessorForLogicalNavigation.goesBackFromPivot(
+        Rect(23, 684, 640, 765), remove, true, true
+      )
+    )
+    assertTrue(
+      FocusProcessorForLogicalNavigation.goesBackFromPivot(
+        Rect(1060, 684, 1080, 765), remove, true, true
+      )
     )
     // Going up, the card before the button is the way on.
     assertFalse(FocusProcessorForLogicalNavigation.goesBackFromPivot(card, remove, false))

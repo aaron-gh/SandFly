@@ -282,7 +282,12 @@ object TraversalTreeCache {
    * the rare path where the focused node disappeared, and a swipe would have built an order anyway.
    */
   @JvmStatic
-  fun pivotAfterRemoval(root: AccessibilityNodeInfoCompat): AccessibilityNodeInfoCompat? {
+  @JvmOverloads
+  fun pivotAfterRemoval(
+    root: AccessibilityNodeInfoCompat,
+    forward: Boolean = true,
+    lost: AccessibilityNodeInfoCompat? = null,
+  ): AccessibilityNodeInfoCompat? {
     if (lastPivotWindowId == NO_WINDOW_ID || root.windowId != lastPivotWindowId) {
       return null
     }
@@ -334,11 +339,62 @@ object TraversalTreeCache {
       }
       return lastNodeAbove(order, place, bounds)
     }
-    return lastNodeAbove(
+    return nodeNearPlace(
       order,
       placeAfterScrolls(lastPivotTop, FocusProcessorForLogicalNavigation.scrollDeltaSumY() - lastPivotDeltaSum),
       bounds,
+      forward,
+      lost,
     )
+  }
+
+  /** How far below the place a node drawn again for the lost one can start. */
+  private const val SAME_PLACE_SLACK_PX = 4
+
+  /**
+   * The node to search on from for lost focus that was at [place]: the node drawn again for [lost]
+   * at the place, if any; going [forward], the last node above the place, so the search lands on
+   * what now occupies it; going back, the first node at the place, so the search lands on the item
+   * before it. Nodes off screen, such as a pager's neighbour page, don't count.
+   */
+  private fun nodeNearPlace(
+    order: OrderedTraversalStrategy,
+    place: Int,
+    bounds: Rect,
+    forward: Boolean,
+    lost: AccessibilityNodeInfoCompat?,
+  ): AccessibilityNodeInfoCompat? {
+    val lostLabel = lost?.let { it.contentDescription?.toString() ?: it.text?.toString() }
+    var above: AccessibilityNodeInfoCompat? = null
+    var atPlace: AccessibilityNodeInfoCompat? = null
+    for (node in order.dumpTree()) {
+      if (node.windowId != lastPivotWindowId || !node.isVisibleToUser) {
+        continue
+      }
+      node.getBoundsInScreen(bounds)
+      if (bounds.top < place) {
+        if (atPlace == null) {
+          above = node
+        }
+        continue
+      }
+      if (bounds.top > place + SAME_PLACE_SLACK_PX) {
+        if (atPlace == null) {
+          atPlace = node
+        }
+        break
+      }
+      if (atPlace == null) {
+        atPlace = node
+      }
+      if (lostLabel != null && lostLabel.isNotEmpty() && node != lost &&
+        node.className == lost.className &&
+        lostLabel == (node.contentDescription?.toString() ?: node.text?.toString())
+      ) {
+        return node
+      }
+    }
+    return if (forward) above ?: atPlace else atPlace ?: above
   }
 
   /** The least shift, in pixels, taken as scroll deltas in pixels rather than Compose's 1 each. */
