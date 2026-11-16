@@ -2381,6 +2381,12 @@ public class FocusProcessorForLogicalNavigation {
         return true;
       }
       htmlActionFailed = true;
+      // The page's last item is focused, and the page is a row of a native list ending at its edge:
+      // scroll the list, so the rows past it come on screen.
+      if (navigationAction.shouldScroll
+          && scrollListHoldingWebView(pivot, navigationAction, logicalDirection, eventId)) {
+        return true;
+      }
     }
 
     // At the end of a list on screen, scroll at once rather than build the window's order first,
@@ -4437,9 +4443,12 @@ public class FocusProcessorForLogicalNavigation {
 
     // Only the first attempt jumps. A jump that left the focused item where it was is repeated with
     // a page scroll, as a list can accept the action without moving.
+    // A list still moving from an earlier scroll or a fling carries a row jumped to off by the rest
+    // of that scroll, past the rows between: page it instead.
     if (navigationAction.actionType == NavigationAction.DIRECTIONAL_NAVIGATION
         && navigationAction.targetType == NavigationTarget.TARGET_DEFAULT
-        && navigationAction.autoScrollAttempt == 0) {
+        && navigationAction.autoScrollAttempt == 0
+        && SystemClock.uptimeMillis() - lastScrollEventUptime >= LIST_STOPPED_MS) {
       Integer row =
           rowToJumpTo(
               scrollableNodeInfo.getNode(), pivot, supportedNavigationAction.searchDirection);
@@ -4458,6 +4467,7 @@ public class FocusProcessorForLogicalNavigation {
             scrollableNodeInfo.getNode(), navigationAction, scrollAction);
     Rect pivotBefore = new Rect();
     pivot.getBoundsInScreen(pivotBefore);
+    noteChildrenAtScrollStart(scrollableNodeInfo.getNode());
     // Use SCROLL_TIMEOUT_LONG_MS since auto scroll may find some scrollable containers that request
     // a longer time to finish the scrolling action(like home screen), a short timeout will make
     // TalkBack detects the scroll action always fail, even through it's actually success.
@@ -4471,6 +4481,24 @@ public class FocusProcessorForLogicalNavigation {
             ScrollTimeout.SCROLL_TIMEOUT_LONG,
             autoScrollChecker,
             eventId);
+    if (scrolled
+        && navigationAction.actionType == NavigationAction.DIRECTIONAL_NAVIGATION
+        && scrollCallback != null
+        && unmovingEndLists.containsKey(scrollableNodeInfo.getNode())
+        && endsListWhole(scrollableNodeInfo.getNode(), pivot, supportedDirection)) {
+      // This list accepted a scroll from its last row before without moving or a scroll event:
+      // look a few frames after the scroll rather than when the list is overdue.
+      AutoScrollCallback callback = scrollCallback;
+      AccessibilityNodeInfoCompat list = scrollableNodeInfo.getNode();
+      earlyScrollCheckHandler.postDelayed(
+          () -> {
+            if (scrollEventCount == scrollStartEventCount) {
+              moveOnFromUnscrolledListEnd(
+                  callback, list, SystemClock.uptimeMillis() - lastAutoScrollUptime);
+            }
+          },
+          KNOWN_UNMOVING_END_MS);
+    }
     if (scrolled && isOneEventList(scrollableNodeInfo.getNode())) {
       scrollOfOneEventList = true;
       oneEventScrollList = scrollableNodeInfo.getNode();
@@ -4576,6 +4604,9 @@ public class FocusProcessorForLogicalNavigation {
     /** Whether the pivot filled the list when the scroll started, so no new item comes soon. */
     boolean pivotFillsList;
 
+    /** Whether nothing else in the pivot's item takes focus, so the next stop is the next item. */
+    boolean pivotAlone;
+
     /** The node whose children are the list's items. */
     AccessibilityNodeInfoCompat itemParent;
 
@@ -4617,6 +4648,7 @@ public class FocusProcessorForLogicalNavigation {
       pivotFillsList = fillsList(pivotBounds, scrollable);
       itemParent = itemParentOf(scrollable, pivot);
       this.pivotItem = itemOf(pivot, itemParent);
+      pivotAlone = pivotItem != null && !hasPartsTakingFocus(pivotItem, pivot);
       this.itemsComeBelow = itemsComeBelow;
       children = childrenOf(itemParent);
       Rect itemBounds = null;
@@ -4694,6 +4726,7 @@ public class FocusProcessorForLogicalNavigation {
     track.lastLook = now;
     boolean shown = false;
     Rect bounds = new Rect();
+    AccessibilityNodeInfoCompat shownItem = null;
     for (AccessibilityNodeInfoCompat child : children) {
       if (child.equals(track.pivotItem)) {
         continue;
@@ -4705,6 +4738,10 @@ public class FocusProcessorForLogicalNavigation {
       fresh.getBoundsInScreen(bounds);
       if (isPastItem(bounds, itemBounds, track.itemsComeBelow)) {
         shown = true;
+        if (itemBounds != null
+            && meetsItem(bounds, itemBounds, track.itemsComeBelow, track.listBounds.height())) {
+          shownItem = fresh;
+        }
         break;
       }
     }
@@ -4712,26 +4749,53 @@ public class FocusProcessorForLogicalNavigation {
       return false;
     }
     NavigationAction sourceAction = track.callback.sourceAction;
-    readListAgain(list);
-    // Prefetch can span frames; use the list's current child IDs for the reading order.
-    if (!list.refresh()) {
-      return false;
+    AccessibilityNodeInfoCompat next = null;
+    if (track.pivotAlone && shownItem != null) {
+      // The item next to the pivot's, which holds nothing else to focus, has come on screen: its
+      // first part is the next stop. Reading only that item rather than the whole list kept the
+      // app's own scroll from stalling SandFly for hundreds of milliseconds. The node cache can
+      // hold a recycled row's old parts until the scroll events reach this thread, so read the
+      // item again.
+      if (BuildVersionUtils.isAtLeastT()) {
+        service.clearCachedSubtree(shownItem.unwrap());
+      }
+      TraversalStrategy itemStrategy =
+          TraversalStrategyUtils.getTraversalStrategy(
+              shownItem, focusFinder, sourceAction.searchDirection);
+      next =
+          TraversalStrategyUtils.findFirstFocusInNodeTree(
+              itemStrategy,
+              shownItem,
+              sourceAction.searchDirection,
+              NavigationTarget.createNodeFilter(
+                  sourceAction.targetType, itemStrategy.getSpeakingNodesCache()));
+      if (next != null && (!next.refresh() || !AccessibilityNodeInfoUtils.isVisible(next))) {
+        next = null;
+      }
     }
-    TraversalStrategy localTraversalStrategy =
-        TraversalStrategyUtils.getTraversalStrategy(list, focusFinder, sourceAction.searchDirection);
-    Filter<AccessibilityNodeInfoCompat> nodeFilter =
-        NavigationTarget.createNodeFilter(
-            sourceAction.targetType, localTraversalStrategy.getSpeakingNodesCache());
-    AccessibilityNodeInfoCompat pivot = AccessibilityNodeInfoCompat.obtain(track.callback.pivot);
-    AccessibilityNodeInfoCompat next =
-        searchFocusRecoveringMissingPivot(
-            localTraversalStrategy,
-            list,
-            pivot,
-            sourceAction.searchDirection,
-            nodeFilter,
-            WindowUtils.isScreenLayoutRTL(service),
-            children);
+    if (next == null) {
+      readListAgain(list);
+      // Prefetch can span frames; use the list's current child IDs for the reading order.
+      if (!list.refresh()) {
+        return false;
+      }
+      TraversalStrategy localTraversalStrategy =
+          TraversalStrategyUtils.getTraversalStrategy(
+              list, focusFinder, sourceAction.searchDirection);
+      Filter<AccessibilityNodeInfoCompat> nodeFilter =
+          NavigationTarget.createNodeFilter(
+              sourceAction.targetType, localTraversalStrategy.getSpeakingNodesCache());
+      AccessibilityNodeInfoCompat pivot = AccessibilityNodeInfoCompat.obtain(track.callback.pivot);
+      next =
+          searchFocusRecoveringMissingPivot(
+              localTraversalStrategy,
+              list,
+              pivot,
+              sourceAction.searchDirection,
+              nodeFilter,
+              WindowUtils.isScreenLayoutRTL(service),
+              children);
+    }
     if (next == null || !AccessibilityNodeInfoUtils.isVisible(next)) {
       LogUtils.d(TAG, "A list item came on screen after %d ms, but nothing to focus yet.", elapsed);
       return false;
@@ -4739,6 +4803,12 @@ public class FocusProcessorForLogicalNavigation {
     AccessibilityNodeInfoCompat target =
         keepRowOrder(track.scrollable, next, sourceAction.searchDirection, "While scrolling");
     if (target == null) {
+      return false;
+    }
+    if (!track.itemsComeBelow && showsPartOfItemWithHiddenParts(track, target)) {
+      // Going back, the item before comes in from the top: its parts above the shown strip, such
+      // as an overflow button, can come after the target in reading order and would be skipped.
+      LogUtils.d(TAG, "While scrolling: the item before is still coming on screen; waiting.");
       return false;
     }
     Rect pivotNow = pivotBoundsNow(track.callback.pivot);
@@ -4812,6 +4882,190 @@ public class FocusProcessorForLogicalNavigation {
     }
     bounds.offset(0, -shift);
     return bounds;
+  }
+
+  /**
+   * Whether the list item of {@code target}, among the items of {@code track}, is cut off at the
+   * list's top and has a part that takes focus but isn't on screen yet.
+   */
+  private static boolean showsPartOfItemWithHiddenParts(
+      ScrollTrack track, AccessibilityNodeInfoCompat target) {
+    AccessibilityNodeInfoCompat item = target;
+    AccessibilityNodeInfoCompat parent = target.getParent();
+    for (int depth = 0; parent != null && !parent.equals(track.itemParent); depth++) {
+      if (depth >= MAX_ITEM_DEPTH) {
+        return false;
+      }
+      item = parent;
+      parent = parent.getParent();
+    }
+    if (parent == null) {
+      return false;
+    }
+    Rect itemBounds = new Rect();
+    item.getBoundsInScreen(itemBounds);
+    Rect list = new Rect();
+    track.scrollable.getBoundsInScreen(list);
+    return itemBounds.top <= list.top && hasHiddenPartsTakingFocus(item);
+  }
+
+  /** Whether a descendant of {@code item} takes focus when visible but isn't visible now. */
+  @VisibleForTesting
+  static boolean hasHiddenPartsTakingFocus(AccessibilityNodeInfoCompat item) {
+    long deadline = SystemClock.uptimeMillis() + MAX_ITEM_CHECK_MS;
+    ArrayDeque<AccessibilityNodeInfoCompat> queue = new ArrayDeque<>();
+    queue.add(item);
+    int read = 0;
+    while (!queue.isEmpty()) {
+      AccessibilityNodeInfoCompat node = queue.poll();
+      if (node != item
+          && !node.isVisibleToUser()
+          && AccessibilityNodeInfoUtils.takesFocusWhenVisible(node)) {
+        return true;
+      }
+      int children = node.getChildCount();
+      for (int i = 0; i < children; i++) {
+        if (++read > MAX_ITEM_NODES_CHECKED || SystemClock.uptimeMillis() > deadline) {
+          return false;
+        }
+        AccessibilityNodeInfoCompat child = node.getChild(i);
+        if (child != null) {
+          queue.add(child);
+        }
+      }
+    }
+    return false;
+  }
+
+  /** The list scrolled last for navigation, and where its children were before that scroll. */
+  private @Nullable AccessibilityNodeInfoCompat listAtScrollStart;
+
+  private final Map<AccessibilityNodeInfoCompat, Rect> childrenAtScrollStart = new HashMap<>();
+
+  /** The first text in each of {@link #childrenAtScrollStart} then, to tell a recycled row. */
+  private final Map<AccessibilityNodeInfoCompat, String> childTextsAtScrollStart = new HashMap<>();
+
+  /** Notes where the children of {@code list} are as a scroll of it starts. */
+  private void noteChildrenAtScrollStart(AccessibilityNodeInfoCompat list) {
+    listAtScrollStart = list;
+    childrenAtScrollStart.clear();
+    childTextsAtScrollStart.clear();
+    int count = Math.min(list.getChildCount(), MAX_LIST_CHILDREN_CHECKED);
+    for (int i = 0; i < count; i++) {
+      AccessibilityNodeInfoCompat child = list.getChild(i);
+      if (child != null) {
+        Rect bounds = new Rect();
+        child.getBoundsInScreen(bounds);
+        childrenAtScrollStart.put(child, bounds);
+        childTextsAtScrollStart.put(child, firstText(child));
+      }
+    }
+  }
+
+  /**
+   * Whether {@code node} is in a child of {@code list} that is where it was when the last scroll
+   * of the list started. Once the list has moved, such a child is pinned, as a Compose sticky
+   * header at the list's top is; a swipe forward after a page would otherwise return to it.
+   */
+  private boolean isInPinnedChild(AccessibilityNodeInfoCompat node, AccessibilityNodeInfoCompat list) {
+    if (!list.equals(listAtScrollStart) || childrenAtScrollStart.isEmpty()) {
+      return false;
+    }
+    AccessibilityNodeInfoCompat child = node;
+    AccessibilityNodeInfoCompat parent = node.getParent();
+    for (int depth = 0; parent != null && !parent.equals(list); depth++) {
+      if (depth >= MAX_ITEM_DEPTH) {
+        return false;
+      }
+      child = parent;
+      parent = parent.getParent();
+    }
+    Rect before = parent == null ? null : childrenAtScrollStart.get(child);
+    if (before == null) {
+      return false;
+    }
+    Rect now = new Rect();
+    child.getBoundsInScreen(now);
+    // A recycled row can come back at the same place showing another item.
+    String then = childTextsAtScrollStart.get(child);
+    boolean pinned =
+        now.equals(before) && then != null && !then.isEmpty() && then.equals(firstText(child));
+    if (pinned) {
+      pinnedChildren.put(child, Boolean.TRUE);
+    }
+    return pinned;
+  }
+
+  /** Most nodes read for {@link #firstText}. */
+  private static final int MAX_FIRST_TEXT_NODES = 12;
+
+  /** The first content description or text in {@code node} or the nodes in it, or "". */
+  private static String firstText(AccessibilityNodeInfoCompat node) {
+    ArrayDeque<AccessibilityNodeInfoCompat> queue = new ArrayDeque<>();
+    queue.add(node);
+    for (int read = 0; !queue.isEmpty() && read < MAX_FIRST_TEXT_NODES; read++) {
+      AccessibilityNodeInfoCompat next = queue.poll();
+      CharSequence text =
+          next.getContentDescription() != null ? next.getContentDescription() : next.getText();
+      if (!TextUtils.isEmpty(text)) {
+        return text.toString();
+      }
+      for (int i = 0; i < next.getChildCount(); i++) {
+        AccessibilityNodeInfoCompat child = next.getChild(i);
+        if (child != null) {
+          queue.add(child);
+        }
+      }
+    }
+    return "";
+  }
+
+  /** Children of lists seen pinned while their list scrolled, such as sticky headers. */
+  private static final LinkedHashMap<AccessibilityNodeInfoCompat, Boolean> pinnedChildren =
+      new LinkedHashMap<>(FocusProcessorForLogicalNavigation.MAX_ONE_EVENT_LISTS, 0.75f, /* accessOrder= */ true) {
+        @Override
+        protected boolean removeEldestEntry(
+            Map.Entry<AccessibilityNodeInfoCompat, Boolean> eldest) {
+          return size() > FocusProcessorForLogicalNavigation.MAX_ONE_EVENT_LISTS;
+        }
+      };
+
+  /**
+   * Returns the bottom of a child of {@code list} seen pinned before that is at the list's top now,
+   * where the list's items start below it, or the list's top if there is none.
+   */
+  private static int topBelowPinnedChild(AccessibilityNodeInfoCompat list, Rect listBounds) {
+    if (pinnedChildren.isEmpty()) {
+      return listBounds.top;
+    }
+    int count = Math.min(list.getChildCount(), MAX_LIST_CHILDREN_CHECKED);
+    Rect bounds = new Rect();
+    for (int i = 0; i < count; i++) {
+      AccessibilityNodeInfoCompat child = list.getChild(i);
+      if (child != null && pinnedChildren.containsKey(child) && child.isVisibleToUser()) {
+        child.getBoundsInScreen(bounds);
+        if (Math.abs(bounds.top - listBounds.top) <= 1) {
+          return bounds.bottom;
+        }
+      }
+    }
+    return listBounds.top;
+  }
+
+  /** Whether some child noted at the last scroll's start has moved since. */
+  private boolean listMovedSinceScrollStart() {
+    Rect now = new Rect();
+    for (Map.Entry<AccessibilityNodeInfoCompat, Rect> entry : childrenAtScrollStart.entrySet()) {
+      AccessibilityNodeInfoCompat child = AccessibilityNodeInfoCompat.obtain(entry.getKey());
+      if (!child.refresh()) {
+        return true;
+      }
+      child.getBoundsInScreen(now);
+      if (!now.equals(entry.getValue())) {
+        return true;
+      }
+    }
+    return false;
   }
 
   /** Most nodes passed over by {@link #skipBackSteps}. */
@@ -4936,6 +5190,18 @@ public class FocusProcessorForLogicalNavigation {
   }
 
   private static final int ROOM_PX = 4;
+
+  /**
+   * Whether an item at {@code bounds} starts where the pivot's item at {@code itemBounds} ends, going
+   * {@code below} it or above, within a twentieth of a list {@code listHeight} tall, so no item lies
+   * between them.
+   */
+  @VisibleForTesting
+  static boolean meetsItem(Rect bounds, Rect itemBounds, boolean below, int listHeight) {
+    int slack = Math.max(16, listHeight / 20);
+    int gap = below ? bounds.top - itemBounds.bottom : itemBounds.top - bounds.bottom;
+    return gap >= -1 && gap <= slack;
+  }
 
   /**
    * Returns whether an item with {@code bounds} lies past the pivot's item, with {@code itemBounds}
@@ -5159,7 +5425,7 @@ public class FocusProcessorForLogicalNavigation {
           Math.abs(deltaY),
           track.quietAtStart,
           scrollActionCount != track.actionCountAtStart);
-      learnOneEventList(track.scrollable, events, uptime - lastScrollEventUptime);
+      learnOneEventList(track.scrollable, events, uptime - lastScrollEventUptime, deltaY);
       LogUtils.d(
           TAG,
           "List stopped %d ms after the scroll: %d scroll events, deltaY=%d; searching now.",
@@ -5314,13 +5580,27 @@ public class FocusProcessorForLogicalNavigation {
    * {@code sinceLastEvent} ms ago, scrolled a page in one event.
    */
   static void learnOneEventList(AccessibilityNodeInfoCompat list, int events, long sinceLastEvent) {
+    learnOneEventList(list, events, sinceLastEvent, /* deltaY= */ 0);
+  }
+
+  /**
+   * As {@link #learnOneEventList(AccessibilityNodeInfoCompat, int, long)}, with the page's sum of
+   * vertical scroll deltas {@code deltaY}. A page of a Compose lazy list sends one event with a
+   * delta of 1, which no animated list's page does, so one such page is enough to tell.
+   */
+  static void learnOneEventList(
+      AccessibilityNodeInfoCompat list, int events, long sinceLastEvent, int deltaY) {
     @Nullable Boolean oneEvent = oneEventScroll(events, sinceLastEvent);
     if (oneEvent == null) {
       return;
     }
     boolean known = isOneEventList(list);
     Integer scrolls = oneEventLists.get(list);
-    oneEventLists.put(list, nextOneEventScrolls(scrolls == null ? 0 : scrolls, oneEvent));
+    int next = nextOneEventScrolls(scrolls == null ? 0 : scrolls, oneEvent);
+    if (oneEvent && Math.abs(deltaY) == 1) {
+      next = ONE_EVENT_SCROLLS;
+    }
+    oneEventLists.put(list, next);
     if (known != isOneEventList(list)) {
       LogUtils.d(
           TAG,
@@ -5564,6 +5844,10 @@ public class FocusProcessorForLogicalNavigation {
     Rect itemBounds = new Rect();
     item.getBoundsInScreen(itemBounds);
     boolean forward = logicalDirection == TraversalStrategy.SEARCH_FOCUS_FORWARD;
+    if (!forward) {
+      // Going back under a sticky header, the list's items start below the header.
+      listBounds.top = topBelowPinnedChild(list, listBounds);
+    }
     if (!endsListOnScreen(itemBounds, listBounds, forward)
         || hasItemBeyond(list, item, itemBounds, forward)
         || hasPartsTakingFocus(item, pivot)
@@ -5578,6 +5862,59 @@ public class FocusProcessorForLogicalNavigation {
     }
     LogUtils.d(TAG, "The focused item ends the list on screen; scrolled without building the order.");
     return true;
+  }
+
+  /**
+   * Scrolls the native list holding the WebView of {@code webPivot} when that WebView's row ends the
+   * list on screen in {@code logicalDirection} and no other row is past it, as at a list end with
+   * the pivot itself. The search after the scroll goes on from the WebView. Returns whether it
+   * scrolled.
+   */
+  private boolean scrollListHoldingWebView(
+      AccessibilityNodeInfoCompat webPivot,
+      NavigationAction navigationAction,
+      @SearchDirection int logicalDirection,
+      EventId eventId) {
+    if (logicalDirection != SEARCH_FOCUS_FORWARD && logicalDirection != SEARCH_FOCUS_BACKWARD) {
+      return false;
+    }
+    AccessibilityNodeInfoCompat webView = WebInterfaceUtils.ascendToWebView(webPivot);
+    if (webView == null) {
+      return false;
+    }
+    ScrollableNodeInfo scrollableNodeInfo =
+        ScrollableNodeInfo.findScrollableNodeForDirection(
+            navigationAction.searchDirection,
+            webView,
+            /* includeSelf= */ false,
+            WindowUtils.isScreenLayoutRTL(service));
+    if (scrollableNodeInfo == null || !isItemList(scrollableNodeInfo.getNode())) {
+      return false;
+    }
+    AccessibilityNodeInfoCompat list = scrollableNodeInfo.getNode();
+    AccessibilityNodeInfoCompat item = webView;
+    AccessibilityNodeInfoCompat parent = webView.getParent();
+    for (int depth = 0; parent != null && !parent.equals(list); depth++) {
+      if (depth >= MAX_ITEM_DEPTH) {
+        return false;
+      }
+      item = parent;
+      parent = parent.getParent();
+    }
+    if (parent == null) {
+      return false;
+    }
+    Rect listBounds = new Rect();
+    list.getBoundsInScreen(listBounds);
+    Rect itemBounds = new Rect();
+    item.getBoundsInScreen(itemBounds);
+    boolean forward = logicalDirection == SEARCH_FOCUS_FORWARD;
+    if (!endsListOnScreen(itemBounds, listBounds, forward)
+        || hasItemBeyond(list, item, itemBounds, forward)) {
+      return false;
+    }
+    LogUtils.d(TAG, "The page in a list row has no item past this one; scrolling the list.");
+    return autoScroll(scrollableNodeInfo, webView, navigationAction, eventId);
   }
 
   /** Whether {@code list} shows items of an adapter, which creates only the items on screen. */
@@ -5619,7 +5956,10 @@ public class FocusProcessorForLogicalNavigation {
     Rect bounds = new Rect();
     for (int i = 0; i < children; i++) {
       AccessibilityNodeInfoCompat child = list.getChild(i);
-      if (child == null || child.equals(item) || !child.isVisibleToUser()) {
+      if (child == null
+          || child.equals(item)
+          || !child.isVisibleToUser()
+          || (!forward && pinnedChildren.containsKey(child))) {
         continue;
       }
       child.getBoundsInScreen(bounds);
@@ -5771,10 +6111,24 @@ public class FocusProcessorForLogicalNavigation {
         "The list sent no scroll event in %d ms and the focused item is its last row, fully"
             + " shown; moving on.",
         elapsed);
+    unmovingEndLists.put(list, Boolean.TRUE);
     trackedCallback = null;
     onAutoScrollFailed(scrollable);
     return true;
   }
+
+  /** How long after a scroll a list known not to move at its end is checked. */
+  private static final long KNOWN_UNMOVING_END_MS = 3 * FRAME_MS;
+
+  /** Lists that accepted a scroll from their last row shown whole without moving. Main thread. */
+  private static final LinkedHashMap<AccessibilityNodeInfoCompat, Boolean> unmovingEndLists =
+      new LinkedHashMap<>(MAX_ONE_EVENT_LISTS, 0.75f, /* accessOrder= */ true) {
+        @Override
+        protected boolean removeEldestEntry(
+            Map.Entry<AccessibilityNodeInfoCompat, Boolean> eldest) {
+          return size() > MAX_ONE_EVENT_LISTS;
+        }
+      };
 
   /** How long after a scroll a list without row numbers counts as not scrolled by it. */
   private static final long UNSCROLLED_LIST_MS = 450;
@@ -6386,6 +6740,10 @@ public class FocusProcessorForLogicalNavigation {
       AccessibilityNodeInfoCompat pivot) {
     if (focus.equals(scrolledNode)) {
       LogUtils.d(TAG, "Focus fell to the scrolled list; going on from the scroll.");
+      return true;
+    }
+    // The scroll went from a WebView row while focus is on the page's last item inside it.
+    if (AccessibilityNodeInfoUtils.hasAncestor(focus, pivot)) {
       return true;
     }
     if (AccessibilityNodeInfoUtils.hasAncestor(pivot, focus)
@@ -7011,6 +7369,13 @@ public class FocusProcessorForLogicalNavigation {
       Filter<AccessibilityNodeInfoCompat> nodeFilter,
       EventId eventId,
       int settleChecksLeft) {
+    if (goesForward(sourceAction)
+        && scrolledNode.equals(listAtScrollStart)
+        && listMovedSinceScrollStart()) {
+      Filter<AccessibilityNodeInfoCompat> unpinned =
+          Filter.node(node -> !isInPinnedChild(node, scrolledNode));
+      nodeFilter = nodeFilter.and(unpinned);
+    }
     AccessibilityNodeInfoCompat edgeNode =
         findFocusAfterInvalidPivot(
             localTraversalStrategy,

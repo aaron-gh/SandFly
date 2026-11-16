@@ -285,6 +285,16 @@ class JumpToNextRowTest {
   }
 
   @Test
+  fun nextItemMeetsThePivotsItem() {
+    val item = Rect(0, 1000, 1080, 1300)
+    assertTrue(FocusProcessorForLogicalNavigation.meetsItem(Rect(0, 1300, 1080, 1600), item, true, 2000))
+    // A gap of a whole row: another item may lie between.
+    assertFalse(FocusProcessorForLogicalNavigation.meetsItem(Rect(0, 1600, 1080, 1900), item, true, 2000))
+    assertTrue(FocusProcessorForLogicalNavigation.meetsItem(Rect(0, 700, 1080, 1000), item, false, 2000))
+    assertFalse(FocusProcessorForLogicalNavigation.meetsItem(Rect(0, 400, 1080, 700), item, false, 2000))
+  }
+
+  @Test
   fun gridTargetAtOrPastTheSuggestedCellIsTheNextItem() {
     // File picker: suggested row 11 holds a section break; the next file is row 12.
     assertTrue(FocusProcessorForLogicalNavigation.isAtOrPastCell(12, 0, 11, 0, true))
