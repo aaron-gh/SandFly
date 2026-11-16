@@ -684,7 +684,11 @@ public class TextEditActor {
     if (a11yFocusedNode != null && a11yFocusedNode.isEditable() && node != a11yFocusedNode) {
       a11yFocusedNode.performAction(FOCUS_INPUT);
       node = a11yFocusedNode;
+    } else if (!node.isFocused()) {
+      // An edit box that has only accessibility focus can't read the clipboard, so Paste fails.
+      node.performAction(FOCUS_INPUT);
     }
+    node.refresh();
     editTextActionHistory.beforePaste();
     boolean result =
         PerformActionUtils.performAction(node, AccessibilityNodeInfoCompat.ACTION_PASTE, eventId);
