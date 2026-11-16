@@ -340,6 +340,15 @@ class JumpToNextRowTest {
   }
 
   @Test
+  fun oneEventListNeedsTwoOneEventScrollsInARow() {
+    assertEquals(1, FocusProcessorForLogicalNavigation.nextOneEventScrolls(0, true))
+    assertEquals(2, FocusProcessorForLogicalNavigation.nextOneEventScrolls(1, true))
+    assertEquals(2, FocusProcessorForLogicalNavigation.nextOneEventScrolls(2, true))
+    assertEquals(0, FocusProcessorForLogicalNavigation.nextOneEventScrolls(2, false))
+    assertEquals(0, FocusProcessorForLogicalNavigation.nextOneEventScrolls(1, false))
+  }
+
+  @Test
   fun oneEventScrollIsToldAfterTheQuietTime() {
     assertEquals(true, FocusProcessorForLogicalNavigation.oneEventScroll(1, 150))
     assertNull(FocusProcessorForLogicalNavigation.oneEventScroll(1, 16))
