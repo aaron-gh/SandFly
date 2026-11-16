@@ -299,6 +299,8 @@ public class FocusProcessorForLogicalNavigation {
 
   // Counts navigation actions, so that a search waiting for a list to stop gives way to a newer one.
   private int navigationSerial;
+  // A consumed scroll callback can still have its focus search posted for the next frame.
+  private int pendingScrollSearchSerial = -1;
 
   /** Scrolls lists ahead of the focused item. */
   private final ScrollAhead scrollAhead;
@@ -644,9 +646,10 @@ public class FocusProcessorForLogicalNavigation {
   /** Whether a swipe's scroll is still to focus the next item. */
   private boolean isSwipeScrollPending() {
     AutoScrollCallback callback = scrollCallback;
-    return callback != null
-        && callback.sourceAction.actionType == NavigationAction.DIRECTIONAL_NAVIGATION
-        && SystemClock.uptimeMillis() - lastAutoScrollUptime < MAX_DEFER_MS;
+    return SystemClock.uptimeMillis() - lastAutoScrollUptime < MAX_DEFER_MS
+        && ((callback != null
+                && callback.sourceAction.actionType == NavigationAction.DIRECTIONAL_NAVIGATION)
+            || pendingScrollSearchSerial == navigationSerial);
   }
 
   private void runDeferredNavigations() {
@@ -824,6 +827,32 @@ public class FocusProcessorForLogicalNavigation {
       pivot = null;
     }
 
+    AccessibilityNodeInfoCompat rootForMissingPivot =
+        pivot == null ? AccessibilityServiceCompatUtils.getRootInActiveWindow(service) : null;
+    // A scroll focus can have succeeded while Android's cached focus is missing or still on the
+    // old node. Check our last successful native move only when it disagrees with that cache.
+    if (isMoveToNextOrPreviousItem(navigationAction)
+        && lastAutoScrollUptime != 0
+        && SystemClock.uptimeMillis() - lastAutoScrollUptime < MAX_DEFER_MS
+        && (pivot == null || !WebInterfaceUtils.supportsWebActions(pivot))
+        && actorState != null
+        && actorState.getFocusHistory() != null) {
+      FocusActionRecord record = actorState.getFocusHistory().getLastFocusActionRecord();
+      if (record != null && record.getExtraInfo().sourceAction == FocusActionInfo.LOGICAL_NAVIGATION) {
+        AccessibilityNodeInfoCompat latest = record.getFocusedNode();
+        AccessibilityNodeInfoCompat windowNode = pivot == null ? rootForMissingPivot : pivot;
+        if (!latest.equals(pivot)
+            && windowNode != null
+            && latest.getWindowId() == windowNode.getWindowId()
+            && !WebInterfaceUtils.supportsWebActions(latest)
+            && latest.refresh()
+            && latest.isAccessibilityFocused()
+            && AccessibilityNodeInfoUtils.isVisible(latest)) {
+          LogUtils.d(TAG, "Continuing from the native focus set after the scroll.");
+          pivot = latest;
+        }
+      }
+    }
 
     if (pivot != null && !pivot.isAccessibilityFocused()
         && isMoveToNextOrPreviousItem(navigationAction)
@@ -843,8 +872,7 @@ public class FocusProcessorForLogicalNavigation {
     // window.
     if (pivot == null) {
       // TODO: We might need to define our own "active window" in TalkBack side.
-      AccessibilityNodeInfoCompat root =
-          AccessibilityServiceCompatUtils.getRootInActiveWindow(service);
+      AccessibilityNodeInfoCompat root = rootForMissingPivot;
       // The focused node was removed from the window — an app re-laying-out its content, such as a
       // blocked ad slot collapsing, does this. Starting from the window root would send the user
       // back to the top of the page, so carry on from the node nearest where the last navigation
@@ -4367,6 +4395,10 @@ public class FocusProcessorForLogicalNavigation {
     }
     NavigationAction sourceAction = track.callback.sourceAction;
     readListAgain(list);
+    // Prefetch can span frames; use the list's current child IDs for the reading order.
+    if (!list.refresh()) {
+      return false;
+    }
     TraversalStrategy localTraversalStrategy =
         TraversalStrategyUtils.getTraversalStrategy(list, focusFinder, sourceAction.searchDirection);
     Filter<AccessibilityNodeInfoCompat> nodeFilter =
@@ -4388,6 +4420,9 @@ public class FocusProcessorForLogicalNavigation {
     }
     AccessibilityNodeInfoCompat target =
         keepRowOrder(track.scrollable, next, sourceAction.searchDirection, "While scrolling");
+    if (target == null) {
+      return false;
+    }
     if (LogUtils.shouldLog(Log.INFO)) {
       LogUtils.i(
           TAG,
@@ -4396,14 +4431,21 @@ public class FocusProcessorForLogicalNavigation {
           elapsed,
           swipePivotRow == null ? "none" : String.valueOf(swipePivotRow.row()));
     }
-    trackedCallback = null;
-    // The rest of the scroll changes nothing; its events find no callback.
-    scrollCallback = null;
     NavigationAction navigationAction =
         NavigationAction.Builder.copy(sourceAction)
             .setAutoScrollAttempt(sourceAction.autoScrollAttempt + 1)
             .build();
-    setAccessibilityFocusInternal(target, navigationAction, track.eventId);
+    if (!setAccessibilityFocusInternal(target, navigationAction, track.eventId)) {
+      LogUtils.d(TAG, "The new scroll item did not take focus; keep watching the list.");
+      return false;
+    }
+    // Only a successful focus consumes this scroll; a retired target is tried again next frame.
+    if (trackedCallback == track.callback) {
+      trackedCallback = null;
+    }
+    if (scrollCallback == track.callback) {
+      scrollCallback = null;
+    }
     int serial = navigationSerial;
     int startDeltaSum = scrollStartDeltaSumY;
     earlyScrollCheckHandler.postDelayed(
@@ -5946,8 +5988,12 @@ public class FocusProcessorForLogicalNavigation {
       EventId eventId,
       int settleChecksLeft) {
     int serial = navigationSerial;
+    pendingScrollSearchSerial = serial;
     earlyScrollCheckHandler.postDelayed(
         () -> {
+          if (pendingScrollSearchSerial == serial) {
+            pendingScrollSearchSerial = -1;
+          }
           if (serial != navigationSerial) {
             return;
           }
@@ -5970,11 +6016,8 @@ public class FocusProcessorForLogicalNavigation {
       NavigationAction sourceAction,
       EventId eventId,
       int settleChecksLeft) {
-    // Following a node has shown that the list has slowed down: no more waiting for it.
+    // Following a node has shown that the list has slowed down.
     boolean settled = listSettled;
-    if (settled) {
-      settleChecksLeft = 0;
-    }
     // Prior to focus on position for scroll in grid.
     if (sourceAction.positionForScroll != null) {
       AccessibilityNodeInfoCompat grid =
@@ -6003,6 +6046,11 @@ public class FocusProcessorForLogicalNavigation {
     focusBeforeScroll.getBoundsInScreen(previousRect);
     boolean validAccessibilityFocus =
         focusBeforeScroll.refresh() && AccessibilityNodeInfoUtils.isVisible(focusBeforeScroll);
+    // A missing pivot's edge can still leave the screen after a slowdown. Keep its existing
+    // stability checks; a valid pivot can continue as soon as the list has slowed down.
+    if (settled && validAccessibilityFocus) {
+      settleChecksLeft = 0;
+    }
 
     NavigationAction navigationAction =
         NavigationAction.Builder.copy(sourceAction)
@@ -6153,7 +6201,11 @@ public class FocusProcessorForLogicalNavigation {
       int settleChecksLeft) {
     AccessibilityNodeInfoCompat edgeNode =
         findFocusAfterInvalidPivot(
-            localTraversalStrategy, scrolledNode, sourceAction.searchDirection, nodeFilter);
+            localTraversalStrategy,
+            scrolledNode,
+            sourceAction.searchDirection,
+            nodeFilter,
+            focusBeforeScroll);
     if (edgeNode == null) {
       // Since there is no visible/valid accessibility focus on screen, we play safe and don't
       // repeat navigation action without a valid pivot node.
@@ -6267,14 +6319,14 @@ public class FocusProcessorForLogicalNavigation {
     }
     AccessibilityNodeInfoCompat next;
     if (!pivot.refresh() || !AccessibilityNodeInfoUtils.isVisible(pivot)) {
-      next = findFocusAfterInvalidPivot(strategy, scrolledNode, direction, nodeFilter);
+      next = findFocusAfterInvalidPivot(strategy, scrolledNode, direction, nodeFilter, pivot);
     } else if (isMissingFromListOrder(strategy, scrolledNode, pivot)) {
       AccessibilityNodeInfoCompat nearest =
           findNodeNearPivotPlace((OrderedTraversalStrategy) strategy, pivot, direction, rtl);
       next =
           (nearest != null)
               ? TraversalStrategyUtils.searchFocus(strategy, nearest, direction, nodeFilter)
-              : findFocusAfterInvalidPivot(strategy, scrolledNode, direction, nodeFilter);
+              : findFocusAfterInvalidPivot(strategy, scrolledNode, direction, nodeFilter, pivot);
     } else {
       next = TraversalStrategyUtils.searchFocus(strategy, pivot, direction, nodeFilter);
     }
@@ -6431,7 +6483,46 @@ public class FocusProcessorForLogicalNavigation {
       TraversalStrategy traversalStrategy,
       AccessibilityNodeInfoCompat scrolledNode,
       @SearchDirection int searchDirection,
-      Filter<AccessibilityNodeInfoCompat> nodeFilter) {
+      Filter<AccessibilityNodeInfoCompat> nodeFilter,
+      @Nullable AccessibilityNodeInfoCompat previousPivot) {
+    // A removed child can still claim to be visible in the cached order. Do not focus it again.
+    // Going forward must also not return to its parent, which precedes it in reading order.
+    if (previousPivot != null
+        && !previousPivot.equals(scrolledNode)
+        && !WebInterfaceUtils.supportsWebActions(scrolledNode)) {
+      Set<AccessibilityNodeInfoCompat> excluded = new HashSet<>();
+      excluded.add(previousPivot);
+      if (searchDirection == SEARCH_FOCUS_FORWARD) {
+        AccessibilityNodeInfoCompat parent = previousPivot.getParent();
+        for (int depth = 0;
+            parent != null && !parent.equals(scrolledNode) && depth < MAX_ITEM_DEPTH;
+            depth++) {
+          excluded.add(parent);
+          parent = parent.getParent();
+        }
+      }
+      nodeFilter = nodeFilter.and(Filter.node(node -> !excluded.contains(node)));
+      if (searchDirection == SEARCH_FOCUS_BACKWARD) {
+        // A row precedes its children in reading order. Moving backward from a removed row
+        // must not choose one of its cached children, which would move forward instead.
+        nodeFilter =
+            nodeFilter.and(
+                Filter.node(
+                    node -> {
+                      AccessibilityNodeInfoCompat parent = node.getParent();
+                      for (int depth = 0; parent != null && depth < MAX_ITEM_DEPTH; depth++) {
+                        if (parent.equals(previousPivot)) {
+                          return false;
+                        }
+                        if (parent.equals(scrolledNode)) {
+                          break;
+                        }
+                        parent = parent.getParent();
+                      }
+                      return true;
+                    }));
+      }
+    }
     return TraversalStrategyUtils.findFirstFocusInNodeTree(
         traversalStrategy, scrolledNode, searchDirection, nodeFilter);
   }
@@ -6482,8 +6573,12 @@ public class FocusProcessorForLogicalNavigation {
       EventId eventId,
       int settleChecksLeft) {
     int serial = navigationSerial;
+    pendingScrollSearchSerial = serial;
     earlyScrollCheckHandler.postDelayed(
         () -> {
+          if (pendingScrollSearchSerial == serial) {
+            pendingScrollSearchSerial = -1;
+          }
           if (serial != navigationSerial) {
             return;
           }

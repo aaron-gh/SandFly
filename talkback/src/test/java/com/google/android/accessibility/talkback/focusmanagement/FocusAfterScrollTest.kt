@@ -33,6 +33,7 @@ class FocusAfterScrollTest {
       root,
       TraversalStrategy.SEARCH_FOCUS_FORWARD,
       filter,
+      null,
     )
 
     assertEquals(first.text, result?.text)
@@ -53,6 +54,7 @@ class FocusAfterScrollTest {
       root,
       TraversalStrategy.SEARCH_FOCUS_BACKWARD,
       filter,
+      null,
     )
 
     assertEquals(last.text, result?.text)
