@@ -283,6 +283,9 @@ public class FocusProcessorForLogicalNavigation {
   /** Whether the list of the last auto scroll is known to scroll a page in one scroll event. */
   private boolean scrollOfOneEventList;
 
+  /** The list of the last auto scroll, when it is known to scroll a page in one scroll event. */
+  private @Nullable AccessibilityNodeInfoCompat oneEventScrollList;
+
   /** Records a scroll event, which tells whether a list scrolled by navigation still moves. */
   public static void onScrollEventReceived(AccessibilityEvent event) {
     lastScrollEventUptime = SystemClock.uptimeMillis();
@@ -4182,8 +4185,17 @@ public class FocusProcessorForLogicalNavigation {
             ScrollTimeout.SCROLL_TIMEOUT_LONG,
             autoScrollChecker,
             eventId);
-    if (scrolled) {
-      scrollOfOneEventList = isOneEventList(scrollableNodeInfo.getNode());
+    if (scrolled && isOneEventList(scrollableNodeInfo.getNode())) {
+      scrollOfOneEventList = true;
+      oneEventScrollList = scrollableNodeInfo.getNode();
+      int actionCount = scrollActionCount;
+      earlyScrollCheckHandler.postDelayed(
+          () -> {
+            if (scrollActionCount == actionCount) {
+              checkOneEventScroll();
+            }
+          },
+          LIST_STOPPED_MS + FRAME_MS);
     }
     if (LogUtils.shouldLog(Log.INFO)) {
       Rect listBounds = new Rect();
@@ -4823,43 +4835,75 @@ public class FocusProcessorForLogicalNavigation {
   }
 
   // Lists such as Compose lazy lists jump a whole page at once and send one scroll event for it.
-  // Once a page scroll of a list has sent one event and then none for LIST_STOPPED_MS, the list
-  // counts as stopped a frame after the first event of its later scrolls, rather than after
-  // LIST_STOPPED_MS. Paging through an item taller than the list then takes about a frame per page.
-  // A scroll that sends more than one event takes the list off.
+  // Once ONE_EVENT_SCROLLS page scrolls in a row of a list have each sent one event and then none
+  // for LIST_STOPPED_MS, the list counts as stopped a frame after the first event of its later
+  // scrolls, rather than after LIST_STOPPED_MS. Paging through an item taller than the list then
+  // takes about a frame per page. An animated list sends its first scroll event at once and the
+  // next one 100 ms later, but a scroll that ends within a frame, as near the end of the list, sends
+  // one: hence more than one such scroll in a row. A scroll that sends more than one event, also
+  // after one counted as stopped early, takes the list off.
   private static final int MAX_ONE_EVENT_LISTS = 8;
+  private static final int ONE_EVENT_SCROLLS = 2;
 
-  /** Lists known to scroll a page in one scroll event. Main thread. */
-  private static final LinkedHashMap<AccessibilityNodeInfoCompat, Boolean> oneEventLists =
+  /** Page scrolls in a row that sent one scroll event, of the lists measured last. Main thread. */
+  private static final LinkedHashMap<AccessibilityNodeInfoCompat, Integer> oneEventLists =
       new LinkedHashMap<>(MAX_ONE_EVENT_LISTS, 0.75f, /* accessOrder= */ true) {
         @Override
         protected boolean removeEldestEntry(
-            Map.Entry<AccessibilityNodeInfoCompat, Boolean> eldest) {
+            Map.Entry<AccessibilityNodeInfoCompat, Integer> eldest) {
           return size() > MAX_ONE_EVENT_LISTS;
         }
       };
 
   /** Whether {@code list} is known to scroll a page in one scroll event. */
   static boolean isOneEventList(AccessibilityNodeInfoCompat list) {
-    return Boolean.TRUE.equals(oneEventLists.get(list));
+    Integer scrolls = oneEventLists.get(list);
+    return scrolls != null && scrolls >= ONE_EVENT_SCROLLS;
   }
 
   /**
    * Records whether {@code list}, whose page scroll has sent {@code events} scroll events, the last
-   * {@code sinceLastEvent} ms ago, scrolls a page in one event.
+   * {@code sinceLastEvent} ms ago, scrolled a page in one event.
    */
   static void learnOneEventList(AccessibilityNodeInfoCompat list, int events, long sinceLastEvent) {
     @Nullable Boolean oneEvent = oneEventScroll(events, sinceLastEvent);
     if (oneEvent == null) {
       return;
     }
-    Boolean known = oneEventLists.put(list, oneEvent);
-    if (!oneEvent.equals(known)) {
+    boolean known = isOneEventList(list);
+    Integer scrolls = oneEventLists.get(list);
+    oneEventLists.put(list, nextOneEventScrolls(scrolls == null ? 0 : scrolls, oneEvent));
+    if (known != isOneEventList(list)) {
       LogUtils.d(
           TAG,
-          oneEvent
-              ? "The list scrolls a page in one scroll event; later scrolls wait a frame."
-              : "The list sends several scroll events for a page.");
+          known
+              ? "The list sends several scroll events for a page."
+              : "The list scrolls a page in one scroll event; later scrolls wait a frame.");
+    }
+  }
+
+  /**
+   * Returns the count of page scrolls in a row that sent one scroll event, after a scroll that did
+   * if {@code oneEvent}, given {@code scrolls} before it.
+   */
+  @VisibleForTesting
+  static int nextOneEventScrolls(int scrolls, boolean oneEvent) {
+    return oneEvent ? Math.min(scrolls + 1, ONE_EVENT_SCROLLS) : 0;
+  }
+
+  /**
+   * Takes the list of the last auto scroll off the lists known to scroll in one event if that
+   * scroll, counted as stopped after its first event, has sent more than one.
+   */
+  private void checkOneEventScroll() {
+    AccessibilityNodeInfoCompat list = oneEventScrollList;
+    if (!scrollOfOneEventList || list == null) {
+      return;
+    }
+    int events = scrollEventCount - scrollStartEventCount;
+    if (events > 1) {
+      oneEventScrollList = null;
+      learnOneEventList(list, events, /* sinceLastEvent= */ 0);
     }
   }
 
@@ -6988,12 +7032,15 @@ public class FocusProcessorForLogicalNavigation {
       this.sourceAction = sourceAction;
       this.pivot = pivot;
       this.assumeScrollSuccess = assumeScrollSuccess;
+      // The scroll before this one has sent all the events it will send before this one's.
+      parent.checkOneEventScroll();
       // Each callback is created as its scroll starts. See listStillMoving().
       parent.lastAutoScrollUptime = SystemClock.uptimeMillis();
       parent.scrollStartEventCount = scrollEventCount;
       parent.scrollStartDeltaSumY = scrollDeltaSumY;
       parent.listSettled = false;
       parent.scrollOfOneEventList = false;
+      parent.oneEventScrollList = null;
       parent.scrollStartedQuiet =
           SystemClock.uptimeMillis() - lastScrollEventUptime >= LIST_STOPPED_MS;
       // The swipe's first scroll reads the starting row; later scrolls of the swipe keep it, as
