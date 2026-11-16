@@ -22,6 +22,8 @@ A theme comes as a theme file, which is a ZIP file. There are several ways to in
 *   **From a source.** In **Sound themes**, under **Install a theme**, choose **From a source**,
     and add the address of a repository, or of a branch or folder in one, on GitHub, GitLab,
     Codeberg, Gitea or Bitbucket. Its theme files are listed, and choosing one installs it.
+    The list starts with SandFly's own themes,
+    [aaron-gh/sandfly-themes](https://github.com/aaron-gh/sandfly-themes), until it is removed.
     **Remove source** removes a source from the list; themes installed from it stay installed.
 
 Before installing, SandFly says who made the theme, what it has, and anything in it that it could
