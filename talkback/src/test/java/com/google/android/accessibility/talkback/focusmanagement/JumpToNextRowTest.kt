@@ -321,8 +321,10 @@ class JumpToNextRowTest {
   @Test
   fun itemLeftOnScreenByAPageWasDrawnAgain() {
     val list = Rect(0, 300, 1080, 2100)
-    // Moved up 1500 px to 200..500: still in the list.
-    assertTrue(ScrollAhead.stillOnScreenAfter(Rect(0, 1700, 1080, 2000), 1500, list))
+    // Moved up 1300 px to 400..700: still in the list.
+    assertTrue(ScrollAhead.stillOnScreenAfter(Rect(0, 1700, 1080, 2000), 1300, list))
+    // Moved up 1500 px to 200..500: partly above the list, so it may have gone on further.
+    assertFalse(ScrollAhead.stillOnScreenAfter(Rect(0, 1700, 1080, 2000), 1500, list))
     // Moved up 2000 px: gone above the list.
     assertFalse(ScrollAhead.stillOnScreenAfter(Rect(0, 1700, 1080, 2000), 2000, list))
     // Compose deltas tell nothing.

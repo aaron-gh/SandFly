@@ -211,6 +211,10 @@ public class FocusManagerInternal {
       @NonNull FocusActionInfo focusActionInfo,
       @Nullable EventId eventId) {
     SheetsGrid.onFocusAction(focusActionInfo.sourceAction);
+    if (focusActionInfo.sourceAction == FocusActionInfo.LOGICAL_NAVIGATION) {
+      // Keyboard and braille display users never touch the screen between such restores.
+      sameItemRestores = 0;
+    }
     if (isAccessibilityFocused(node)) {
       // The isAccessibilityFocused() method for a node inside a WebView sometimes does not work
       // correctly, so always clearing a11y focus then performing an a11y focused action on the node
@@ -517,6 +521,12 @@ public class FocusManagerInternal {
         sameItemRestores++;
         return focusSameItem(sameItem, eventId);
       }
+      if (sameItemUnclear && wasNavigatedTo(record)) {
+        // Several items like it are near, as the Add Friend buttons of a list of people. The next
+        // swipe goes on from its place; the window's first item would lose the place.
+        LogUtils.d(TAG, "%s: Focus left off for the next swipe to go on from its place.", subTag);
+        return true;
+      }
     }
     if (nodeToFocus == null) {
       return false;
@@ -570,6 +580,18 @@ public class FocusManagerInternal {
             .setTarget(item));
   }
 
+  /** Whether the last {@link #findSameItemNearby} found several matches or ran out of time. */
+  private static boolean sameItemUnclear;
+
+  /** How recent a navigation must be for its place to stand in for focus that was lost. */
+  private static final long NAVIGATED_RECENTLY_MS = 10_000;
+
+  /** Whether {@code record} is of a move to the next or previous item made shortly before. */
+  private static boolean wasNavigatedTo(FocusActionRecord record) {
+    return record.getExtraInfo().sourceAction == FocusActionInfo.LOGICAL_NAVIGATION
+        && SystemClock.uptimeMillis() - record.getActionTime() < NAVIGATED_RECENTLY_MS;
+  }
+
   /** Most nodes read to find the item that lost focus drawn again. */
   private static final int MAX_SAME_ITEM_NODES = 1500;
 
@@ -608,8 +630,10 @@ public class FocusManagerInternal {
     queue.add(root);
     int read = 0;
     long deadline = SystemClock.uptimeMillis() + MAX_SAME_ITEM_SEARCH_MS;
+    sameItemUnclear = false;
     while (!queue.isEmpty() && read < MAX_SAME_ITEM_NODES) {
       if (SystemClock.uptimeMillis() > deadline) {
+        sameItemUnclear = true;
         return null;
       }
       AccessibilityNodeInfoCompat node = queue.poll();
@@ -648,6 +672,7 @@ public class FocusManagerInternal {
     }
     // Several items with the label nearby, such as the Add Friend buttons of a list of people:
     // which one is the focused item can't be told.
+    sameItemUnclear = matches > 1;
     return matches == 1 ? best : null;
   }
 

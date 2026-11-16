@@ -173,7 +173,7 @@ class OffscreenNothingAheadTest {
     val first = row("Message 1", 0, 600)
     val last =
       row("Message 2", 600, 1000).apply { setBoundsInParent(Rect(0, 0, 900, 450)) }
-    val scroll = scrollView().add(first, last)
+    val scroll = scrollView().add(first, last).apply { packageName = "com.android.systemui" }
     assertFalse(OffscreenContent.hasNothingAhead(scroll, last, /* forward= */ true, /* rtl= */ false))
   }
 

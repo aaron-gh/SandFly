@@ -215,9 +215,11 @@ public final class ScrollAhead {
     if (list == null || Math.abs(shift) < MIN_PIXEL_SHIFT) {
       return false;
     }
+    // Scroll events come at most every 100 ms, so the deltas can fall short of how far the item
+    // went: only an item they leave wholly inside the list counts as still there.
     Rect moved = new Rect(bounds);
     moved.offset(0, -shift);
-    return Rect.intersects(moved, list);
+    return list.contains(moved);
   }
 
   private void cancel(String reason) {
