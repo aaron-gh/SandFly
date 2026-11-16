@@ -41,6 +41,20 @@ class AppGesturesTest {
     prefs.edit().clear().apply()
     AppGestures.load(prefs)
     AppGestures.onWindowShown(null)
+    AppGestures.setFrontAppRefresh(null)
+  }
+
+  @Test
+  fun gestureLooksUpTheAppInFrontAgain() {
+    AppGestures.write(
+      prefs,
+      mapOf("com.example.player" to AppGestures.App("Player", mapOf("pref_shortcut_up" to "FAST_FORWARD"))),
+    )
+    AppGestures.load(prefs)
+    // The app was taken from a menu window that closed without an event for the app under it.
+    AppGestures.onWindowShown("io.github.aaron_gh.sandfly")
+    AppGestures.setFrontAppRefresh { AppGestures.onWindowShown("com.example.player") }
+    assertEquals("FAST_FORWARD", AppGestures.action("pref_shortcut_up"))
   }
 
   @Test

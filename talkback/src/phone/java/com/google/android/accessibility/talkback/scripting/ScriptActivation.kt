@@ -17,6 +17,7 @@
 package com.google.android.accessibility.talkback.scripting
 
 import android.accessibilityservice.AccessibilityService
+import android.content.ComponentName
 import android.content.pm.PackageManager
 import android.view.accessibility.AccessibilityEvent
 import android.view.accessibility.AccessibilityWindowInfo
@@ -43,9 +44,33 @@ class ScriptActivation(private val service: AccessibilityService) {
   fun onWindowStateChanged(event: AccessibilityEvent) {
     val packageName = event.packageName?.toString() ?: return
     val className = event.className?.toString() ?: return
-    if (!className.startsWith("android.")) {
+    // Dialogs, drawers, popups and other views of an app send window state changes with their own
+    // class, and closing them sends none for the activity under them.
+    if (!className.startsWith("android.") && isActivity(packageName, className)) {
       activityByPackage[packageName] = className
     }
+  }
+
+  /** Whether [className] is an activity, or activity alias, that [packageName] declares. */
+  private fun isActivity(packageName: String, className: String): Boolean {
+    val key = "$packageName/$className"
+    knownActivities[key]?.let {
+      return it
+    }
+    val activity =
+      try {
+        @Suppress("DEPRECATION")
+        service.packageManager.getActivityInfo(
+          ComponentName(packageName, className),
+          PackageManager.MATCH_DISABLED_COMPONENTS,
+        )
+        true
+      } catch (e: PackageManager.NameNotFoundException) {
+        false
+      }
+    if (knownActivities.size >= MAX_KNOWN_ACTIVITIES) knownActivities.clear()
+    knownActivities[key] = activity
+    return activity
   }
 
   fun onFocusMoved(packageName: String?): Boolean =
@@ -131,5 +156,9 @@ class ScriptActivation(private val service: AccessibilityService) {
     // so what is known outlives the service. It can be out of date if the app changed activity while
     // Backtalk was off, until the app's next window change.
     val activityByPackage = ConcurrentHashMap<String, String>()
+
+    // Whether each "package/class" seen in a window state change is an activity of the package.
+    val knownActivities = ConcurrentHashMap<String, Boolean>()
+    const val MAX_KNOWN_ACTIVITIES = 512
   }
 }
