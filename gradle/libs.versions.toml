@@ -27,7 +27,7 @@ shizuku-api = { module = "dev.rikka.shizuku:api", version.ref = "shizuku" }
 shizuku-provider = { module = "dev.rikka.shizuku:provider", version.ref = "shizuku" }
 luajava = { module = "party.iroiro.luajava:luajava", version.ref = "luajava" }
 luajava-lua54 = { module = "party.iroiro.luajava:lua54", version.ref = "luajava" }
-robolectric = "org.robolectric:robolectric:4.17"
+robolectric = "org.robolectric:robolectric:4.18"
 json = "org.json:json:20250517"
 
 # AndroidX
