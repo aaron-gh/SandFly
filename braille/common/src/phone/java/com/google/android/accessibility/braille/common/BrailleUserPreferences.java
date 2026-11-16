@@ -76,7 +76,7 @@ public class BrailleUserPreferences {
   private static final boolean SPEAK_SUBMITTING_DEFAULT = true;
   private static final boolean CAPITALIZE_SENTENCES_DEFAULT = false;
   private static final boolean QUICK_CALIBRATION_DEFAULT = true;
-  private static final boolean DOT_TRACKING_DEFAULT = false;
+  private static final boolean DOT_TRACKING_DEFAULT = true;
   private static final boolean LAUNCH_TUTORIAL_DEFAULT = true;
   private static final int EXIT_KEYBOARD_DEFAULT = 0;
   private static final int SHOW_OPTION_DIALOG_DEFAULT = 0;
