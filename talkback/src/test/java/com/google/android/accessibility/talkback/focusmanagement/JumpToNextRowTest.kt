@@ -22,6 +22,7 @@ import android.view.accessibility.AccessibilityNodeInfo
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
+import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -281,6 +282,37 @@ class JumpToNextRowTest {
     assertEquals(moving, FocusProcessorForLogicalNavigation.watchedListState(300, 3, 60))
     assertEquals(stopped, FocusProcessorForLogicalNavigation.watchedListState(500, 5, 150))
     assertEquals(stopped, FocusProcessorForLogicalNavigation.watchedListState(1500, 9, 10))
+  }
+
+  @Test
+  fun oneEventListStopsAFrameAfterItsEvent() {
+    val moving = FocusProcessorForLogicalNavigation.LIST_MOVING
+    val stopped = FocusProcessorForLogicalNavigation.LIST_STOPPED
+    val notScrolled = FocusProcessorForLogicalNavigation.LIST_NOT_SCROLLED
+    assertEquals(moving, FocusProcessorForLogicalNavigation.watchedListState(30, 1, 10, true))
+    assertEquals(stopped, FocusProcessorForLogicalNavigation.watchedListState(40, 1, 16, true))
+    assertEquals(moving, FocusProcessorForLogicalNavigation.watchedListState(40, 1, 16, false))
+    // No event yet: waits for it as any list does.
+    assertEquals(moving, FocusProcessorForLogicalNavigation.watchedListState(100, 0, 100, true))
+    assertEquals(notScrolled, FocusProcessorForLogicalNavigation.watchedListState(180, 0, 180, true))
+    assertFalse(
+      FocusProcessorForLogicalNavigation.listStillMoving(1040, 1000, 1, 1020, 1, 1, true)
+    )
+    assertTrue(
+      FocusProcessorForLogicalNavigation.listStillMoving(1040, 1000, 1, 1020, 1, 1, false)
+    )
+    assertTrue(
+      FocusProcessorForLogicalNavigation.listStillMoving(1030, 1000, 1, 1020, 1, 1, true)
+    )
+    assertTrue(FocusProcessorForLogicalNavigation.listStillMoving(1100, 1000, 0, 0, 0, 0, true))
+  }
+
+  @Test
+  fun oneEventScrollIsToldAfterTheQuietTime() {
+    assertEquals(true, FocusProcessorForLogicalNavigation.oneEventScroll(1, 150))
+    assertNull(FocusProcessorForLogicalNavigation.oneEventScroll(1, 16))
+    assertNull(FocusProcessorForLogicalNavigation.oneEventScroll(0, 200))
+    assertEquals(false, FocusProcessorForLogicalNavigation.oneEventScroll(2, 16))
   }
 
   @Test
