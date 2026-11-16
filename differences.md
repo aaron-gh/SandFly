@@ -1033,7 +1033,7 @@ To update the dot positions without holding six fingers on the screen for 2 seco
 
 ### Update dot positions while typing
 
-In braille keyboard settings, **Update dot positions while typing** moves the dots toward where the fingers land, so the dots follow hands that shift during a typing session. Each typed cell moves all dots of a hand a little toward that hand's touches, and moves each touched dot further toward its finger. The positions are saved and used in the next session, for each layout as with dot calibration. It's off by default.
+In braille keyboard settings, **Update dot positions while typing** moves the dots toward where the fingers land, so the dots follow hands that shift during a typing session. Each typed cell moves all dots of a hand a little toward that hand's touches, and moves each touched dot further toward its finger. The positions are saved and used in the next session, for each layout as with dot calibration. It's on by default.
 
 Limitations:
 
