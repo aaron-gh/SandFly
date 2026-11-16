@@ -2347,7 +2347,12 @@ public class TalkBackService extends AccessibilityServiceCompat
 
   @Override
   public void onInterrupt() {
-    interruptAllFeedback(/* stopTtsSpeechCompletely= */ false);
+    if (ringerModeAndScreenMonitor != null) {
+      ringerModeAndScreenMonitor.onSystemInterrupt(
+          () -> interruptAllFeedback(/* stopTtsSpeechCompletely= */ false));
+    } else {
+      interruptAllFeedback(/* stopTtsSpeechCompletely= */ false);
+    }
   }
 
   @Override

@@ -47,6 +47,7 @@ import com.google.android.accessibility.talkback.clipboard.ClipboardHistoryOverl
 import com.google.android.accessibility.talkback.contextmenu.ListMenuManager;
 import com.google.android.accessibility.talkback.controller.TelevisionNavigationController;
 import com.google.android.accessibility.talkback.notificationlist.NotificationListService;
+import com.google.android.accessibility.talkback.pause.PauseController;
 import com.google.android.accessibility.talkback.status.StatusReader;
 import com.google.android.accessibility.talkback.status.StatusItem;
 import com.google.android.accessibility.talkback.utils.DateTimeUtils;
@@ -127,11 +128,15 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
 
   private final ExecutorService executor;
   private final Handler mainHandler = new Handler(Looper.getMainLooper());
+  private final WakeAnnouncementRecovery wakeAnnouncementRecovery;
 
   @Override
   public void onDisplayStateChanged(boolean displayOn) {
     final boolean preDisplayOn = defaultDisplayOn;
     defaultDisplayOn = displayOn;
+    if (!displayOn) {
+      wakeAnnouncementRecovery.cancel();
+    }
     if (defaultDisplayOn && !preDisplayOn) {
       screenOnRecorder.onScreenOnSignal(SystemClock.uptimeMillis());
       // When the display turns on, we announce the current time and the current ringer
@@ -171,6 +176,19 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
         ((PowerManager) service.getSystemService(Context.POWER_SERVICE)).isInteractive();
     isWatch = FormFactorUtils.isAndroidWear();
     executor = Executors.newSingleThreadExecutor();
+    wakeAnnouncementRecovery =
+        new WakeAnnouncementRecovery(
+            mainHandler,
+            () ->
+                isWatch
+                    && monitoring
+                    && defaultDisplayOn
+                    && isInteractive
+                    && enabledTellingTime
+                    && TalkBackService.isServiceActive()
+                    && !PauseController.isPaused()
+                    && isIdle(),
+            () -> speakForDisplayOn(EVENT_ID_UNTRACKED, /* allowRecovery= */ false));
   }
 
   public void startMonitoring(Context context) {
@@ -183,6 +201,7 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
   }
 
   public void stopMonitoring(Context context) {
+    wakeAnnouncementRecovery.cancel();
     if (monitoring) {
       context.unregisterReceiver(this);
       displayMonitor.removeDisplayStateChangedListener(this);
@@ -224,6 +243,7 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
       }
       case Intent.ACTION_SCREEN_OFF -> {
         isInteractive = false;
+        wakeAnnouncementRecovery.cancel();
         screenOnRecorder.onScreenOff();
         AudioDeviceRouter router = AudioDeviceRouter.getInstance();
         if (router != null) {
@@ -272,6 +292,9 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
   /** Enables or disables telling time feature while waking up the display. */
   public void enableTellingTime(boolean enabled) {
     enabledTellingTime = enabled;
+    if (!enabled) {
+      wakeAnnouncementRecovery.cancel();
+    }
     LogUtils.d(TAG, "enabledTellingTime=" + enabledTellingTime);
   }
 
@@ -426,6 +449,19 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
    * when phone is idle.
    */
   private void speakForDisplayOn(EventId eventId) {
+    speakForDisplayOn(eventId, /* allowRecovery= */ true);
+  }
+
+  /** The system's return to the watch face can interrupt the announcement already sent to TTS. */
+  public void onSystemInterrupt(Runnable interrupt) {
+    if (isWatch) {
+      wakeAnnouncementRecovery.onSystemInterrupt(interrupt);
+    } else {
+      interrupt.run();
+    }
+  }
+
+  private void speakForDisplayOn(EventId eventId, boolean allowRecovery) {
     final SpannableStringBuilder ttsText = new SpannableStringBuilder();
 
     if (isIdle()) {
@@ -451,6 +487,9 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
             .setQueueMode(SpeechController.QUEUE_MODE_GLOBALLY_UNINTERRUPTED)
             .setFlags(FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_AUDIO_PLAYBACK_ACTIVE);
 
+    if (isWatch && enabledTellingTime && allowRecovery && ttsText.length() > 0) {
+      speakOptions.setCompletedAction(wakeAnnouncementRecovery.track());
+    }
     pipeline.returnFeedback(eventId, Feedback.speech(ttsText, speakOptions));
   }
 
