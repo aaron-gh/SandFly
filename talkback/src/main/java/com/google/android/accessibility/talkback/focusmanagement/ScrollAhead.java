@@ -137,7 +137,9 @@ public final class ScrollAhead {
         scrollAhead.onFocused(raw == null ? null : AccessibilityNodeInfoCompat.wrap(raw));
       }
       case AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUS_CLEARED -> {
-        scrollAhead.onFocusCleared();
+        android.view.accessibility.AccessibilityNodeInfo cleared = event.getSource();
+        scrollAhead.onFocusCleared(
+            cleared == null ? null : AccessibilityNodeInfoCompat.wrap(cleared));
         scrollAhead.cancel(AccessibilityEvent.eventTypeToString(event.getEventType()));
       }
       case AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED,
@@ -173,8 +175,10 @@ public final class ScrollAhead {
    * Lets the next swipe go on from the focused item when its focus is cleared after a page: the
    * page has moved it off screen. Swipes and keys stop scrolling ahead before they move focus.
    */
-  private void onFocusCleared() {
-    if (focused != null && pages > 0) {
+  private void onFocusCleared(@Nullable AccessibilityNodeInfoCompat cleared) {
+    // Focus cleared from another node, such as one TalkBack moved focus from, says nothing of the
+    // focused item.
+    if (focused != null && pages > 0 && (cleared == null || cleared.equals(focused))) {
       noteScrolledAway(focused);
     }
   }
@@ -185,11 +189,37 @@ public final class ScrollAhead {
     if (bounds == null || list == null) {
       return;
     }
+    // With deltas in pixels, an item that the page left on screen lost focus because the app drew
+    // it again, not because it left: ensure-focus finds it, and the page was right.
+    int shift = FocusProcessorForLogicalNavigation.scrollDeltaSumY() - deltaSumAtScroll;
+    if (stillOnScreenAfter(bounds, shift, pageListBounds)) {
+      LogUtils.d(TAG, "The focused item at %s lost focus on screen after the page.", bounds);
+      return;
+    }
     LogUtils.i(TAG, "The page moved the focused item at %s off screen.", bounds);
     // The page was planned to leave a part of the item on screen, so it was longer than learned.
     FocusProcessorForLogicalNavigation.distrustPage(list);
     TraversalTreeCache.rememberScrolledAway(
         node.getWindowId(), bounds, pageListBounds, deltaSumAtScroll, forward);
+  }
+
+  /** The least shift, in pixels, taken as scroll deltas in pixels rather than Compose's 1 each. */
+  private static final int MIN_PIXEL_SHIFT = 100;
+
+  /**
+   * Whether an item at {@code bounds} before a page, moved by {@code shift} pixels of scroll
+   * deltas, is still inside a list at {@code list}. False when the deltas aren't pixels.
+   */
+  @VisibleForTesting
+  static boolean stillOnScreenAfter(Rect bounds, int shift, @Nullable Rect list) {
+    if (list == null || Math.abs(shift) < MIN_PIXEL_SHIFT) {
+      return false;
+    }
+    // Scroll events come at most every 100 ms, so the deltas can fall short of how far the item
+    // went: only an item they leave wholly inside the list counts as still there.
+    Rect moved = new Rect(bounds);
+    moved.offset(0, -shift);
+    return list.contains(moved);
   }
 
   private void cancel(String reason) {

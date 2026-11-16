@@ -108,6 +108,11 @@ public class FocusManagerInternal {
   // the ensure focus would need perform again.
   private boolean skipRefocus = false;
 
+  // An app that draws an item again and again, as Facebook does while images load, takes focus off
+  // it each time. Focus returns to the same item this many times between touches.
+  private static final int MAX_SAME_ITEM_RESTORES = 3;
+  private int sameItemRestores = 0;
+
   ////////////////////////////////////////////////////////////////////////////////////////////////
   // Construction methods
 
@@ -183,6 +188,7 @@ public class FocusManagerInternal {
 
   public void renewEnsureFocus() {
     skipRefocus = false;
+    sameItemRestores = 0;
   }
 
   /**
@@ -205,6 +211,10 @@ public class FocusManagerInternal {
       @NonNull FocusActionInfo focusActionInfo,
       @Nullable EventId eventId) {
     SheetsGrid.onFocusAction(focusActionInfo.sourceAction);
+    if (focusActionInfo.sourceAction == FocusActionInfo.LOGICAL_NAVIGATION) {
+      // Keyboard and braille display users never touch the screen between such restores.
+      sameItemRestores = 0;
+    }
     if (isAccessibilityFocused(node)) {
       // The isAccessibilityFocused() method for a node inside a WebView sometimes does not work
       // correctly, so always clearing a11y focus then performing an a11y focused action on the node
@@ -466,6 +476,18 @@ public class FocusManagerInternal {
     }
 
     final String subTag = "EnsureOnScreen";
+    if (skipRefocus
+        && record.getExtraInfo().isSourceEnsureOnScreen()
+        && sameItemRestores < MAX_SAME_ITEM_RESTORES) {
+      AccessibilityNodeInfoCompat sameRoot = AccessibilityNodeInfoUtils.getRoot(lastFocus);
+      AccessibilityNodeInfoCompat sameItem =
+          (sameRoot != null && sameRoot.refresh()) ? findSameItemNearby(sameRoot, lastFocus) : null;
+      if (sameItem != null) {
+        sameItemRestores++;
+        LogUtils.d(TAG, "%s: Focus returns again to the item drawn again as a new node.", subTag);
+        return focusSameItem(sameItem, eventId);
+      }
+    }
     if (skipRefocus && record.getExtraInfo().isSourceEnsureOnScreen()) {
       // If the last focus record is also from the source ENSURE_ON_SCREEN, doesn't request to
       // ensure the focus repeatedly.
@@ -496,8 +518,14 @@ public class FocusManagerInternal {
       AccessibilityNodeInfoCompat sameItem = findSameItemNearby(root, lastFocus);
       if (sameItem != null) {
         LogUtils.d(TAG, "%s: Focus returns to the item drawn again as a new node.", subTag);
-        nodeToFocus = sameItem;
-        type.set(FocusActionInfo.RESTORED_LAST_FOCUS);
+        sameItemRestores++;
+        return focusSameItem(sameItem, eventId);
+      }
+      if (sameItemUnclear && wasNavigatedTo(record)) {
+        // Several items like it are near, as the Add Friend buttons of a list of people. The next
+        // swipe goes on from its place; the window's first item would lose the place.
+        LogUtils.d(TAG, "%s: Focus left off for the next swipe to go on from its place.", subTag);
+        return true;
       }
     }
     if (nodeToFocus == null) {
@@ -536,13 +564,44 @@ public class FocusManagerInternal {
     return success;
   }
 
+  /** Focuses {@code item}, the focused item drawn again, without speaking it again. */
+  private boolean focusSameItem(AccessibilityNodeInfoCompat item, EventId eventId) {
+    FocusActionInfo focusActionInfo =
+        FocusActionInfo.builder()
+            .setForceMuteFeedback(true)
+            .setSourceAction(FocusActionInfo.ENSURE_ON_SCREEN)
+            .setInitialFocusType(FocusActionInfo.RESTORED_LAST_FOCUS)
+            .build();
+    return pipeline.returnFeedback(
+        eventId,
+        Focus.builder()
+            .setAction(Focus.Action.FOCUS)
+            .setFocusActionInfo(focusActionInfo)
+            .setTarget(item));
+  }
+
+  /** Whether the last {@link #findSameItemNearby} found several matches or ran out of time. */
+  private static boolean sameItemUnclear;
+
+  /** How recent a navigation must be for its place to stand in for focus that was lost. */
+  private static final long NAVIGATED_RECENTLY_MS = 10_000;
+
+  /** Whether {@code record} is of a move to the next or previous item made shortly before. */
+  private static boolean wasNavigatedTo(FocusActionRecord record) {
+    return record.getExtraInfo().sourceAction == FocusActionInfo.LOGICAL_NAVIGATION
+        && SystemClock.uptimeMillis() - record.getActionTime() < NAVIGATED_RECENTLY_MS;
+  }
+
   /** Most nodes read to find the item that lost focus drawn again. */
   private static final int MAX_SAME_ITEM_NODES = 1500;
 
+  /** Finding the item that lost focus drawn again stops after this long. */
+  private static final long MAX_SAME_ITEM_SEARCH_MS = 40;
+
   /**
-   * Returns a node under {@code root} other than {@code lastFocus} with its class and its content
-   * description, or text, on screen within a quarter of the window's height of where {@code
-   * lastFocus} was when it was focused, the nearest such node if several, or null.
+   * Returns the only node under {@code root} other than {@code lastFocus} with its class and its
+   * content description, or text, on screen within a quarter of the window's height of where {@code
+   * lastFocus} was when it was focused, or null if there is none or more than one.
    */
   private static @Nullable AccessibilityNodeInfoCompat findSameItemNearby(
       AccessibilityNodeInfoCompat root, AccessibilityNodeInfoCompat lastFocus) {
@@ -565,17 +624,24 @@ public class FocusManagerInternal {
     String wanted = label.toString();
     AccessibilityNodeInfoCompat best = null;
     int bestDistance = Integer.MAX_VALUE;
+    int matches = 0;
     Rect bounds = new Rect();
     ArrayDeque<AccessibilityNodeInfoCompat> queue = new ArrayDeque<>();
     queue.add(root);
     int read = 0;
+    long deadline = SystemClock.uptimeMillis() + MAX_SAME_ITEM_SEARCH_MS;
+    sameItemUnclear = false;
     while (!queue.isEmpty() && read < MAX_SAME_ITEM_NODES) {
+      if (SystemClock.uptimeMillis() > deadline) {
+        sameItemUnclear = true;
+        return null;
+      }
       AccessibilityNodeInfoCompat node = queue.poll();
       int count = node.getChildCount();
       for (int i = 0; i < count && read < MAX_SAME_ITEM_NODES; i++) {
         AccessibilityNodeInfoCompat child = node.getChild(i);
         read++;
-        if (child == null) {
+        if (child == null || !child.isVisibleToUser()) {
           continue;
         }
         queue.add(child);
@@ -594,13 +660,20 @@ public class FocusManagerInternal {
         }
         child.getBoundsInScreen(bounds);
         int distance = Math.abs(bounds.centerY() - last.centerY());
-        if (distance <= maxDistance && distance < bestDistance) {
+        if (distance > maxDistance) {
+          continue;
+        }
+        matches++;
+        if (distance < bestDistance) {
           best = child;
           bestDistance = distance;
         }
       }
     }
-    return best;
+    // Several items with the label nearby, such as the Add Friend buttons of a list of people:
+    // which one is the focused item can't be told.
+    sameItemUnclear = matches > 1;
+    return matches == 1 ? best : null;
   }
 
   /**

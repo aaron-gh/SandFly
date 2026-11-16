@@ -285,6 +285,54 @@ class JumpToNextRowTest {
   }
 
   @Test
+  fun cardHoldsItsButton() {
+    val remove = Rect(666, 684, 1053, 765)
+    assertTrue(FocusProcessorForLogicalNavigation.holdsPivot(Rect(0, 538, 1080, 783), remove))
+    assertFalse(FocusProcessorForLogicalNavigation.holdsPivot(Rect(remove), remove))
+    assertFalse(FocusProcessorForLogicalNavigation.holdsPivot(Rect(0, 783, 1080, 1028), remove))
+  }
+
+  @Test
+  fun otherWindowsScrollEventsAreLeftOutWhileAListIsFollowed() {
+    assertTrue(FocusProcessorForLogicalNavigation.isOtherWindowScroll(7, 3, 1000, 1500))
+    assertFalse(FocusProcessorForLogicalNavigation.isOtherWindowScroll(3, 3, 1000, 1500))
+    // Long after the scroll, or with no list followed, every event counts.
+    assertFalse(FocusProcessorForLogicalNavigation.isOtherWindowScroll(7, 3, 1000, 3000))
+    assertFalse(FocusProcessorForLogicalNavigation.isOtherWindowScroll(7, -1, 1000, 1500))
+  }
+
+  @Test
+  fun learnedPageNeedsTheSameListHeight() {
+    assertTrue(FocusProcessorForLogicalNavigation.sameHeight(2000, 2000))
+    assertTrue(FocusProcessorForLogicalNavigation.sameHeight(2000, 1950))
+    // The keyboard came up or went away.
+    assertFalse(FocusProcessorForLogicalNavigation.sameHeight(1100, 2000))
+    assertFalse(FocusProcessorForLogicalNavigation.sameHeight(null, 2000))
+  }
+
+  @Test
+  fun rememberedPlaceFollowsPixelScrolls() {
+    assertEquals(500, TraversalTreeCache.placeAfterScrolls(2000, 1500))
+    // Compose deltas of 1 per page aren't pixels.
+    assertEquals(2000, TraversalTreeCache.placeAfterScrolls(2000, 16))
+    assertEquals(Int.MIN_VALUE, TraversalTreeCache.placeAfterScrolls(Int.MIN_VALUE, 1500))
+  }
+
+  @Test
+  fun itemLeftOnScreenByAPageWasDrawnAgain() {
+    val list = Rect(0, 300, 1080, 2100)
+    // Moved up 1300 px to 400..700: still in the list.
+    assertTrue(ScrollAhead.stillOnScreenAfter(Rect(0, 1700, 1080, 2000), 1300, list))
+    // Moved up 1500 px to 200..500: partly above the list, so it may have gone on further.
+    assertFalse(ScrollAhead.stillOnScreenAfter(Rect(0, 1700, 1080, 2000), 1500, list))
+    // Moved up 2000 px: gone above the list.
+    assertFalse(ScrollAhead.stillOnScreenAfter(Rect(0, 1700, 1080, 2000), 2000, list))
+    // Compose deltas tell nothing.
+    assertFalse(ScrollAhead.stillOnScreenAfter(Rect(0, 1700, 1080, 2000), 1, list))
+    assertFalse(ScrollAhead.stillOnScreenAfter(Rect(0, 1700, 1080, 2000), 1500, null))
+  }
+
+  @Test
   fun targetBeforeOrHoldingThePivotGoesBack() {
     // Facebook: the Remove button of a person, inside that person's card, after a page scroll.
     val remove = Rect(666, 684, 1053, 765)

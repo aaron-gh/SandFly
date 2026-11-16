@@ -168,6 +168,17 @@ class OffscreenNothingAheadTest {
 
   @Test
   @Suppress("DEPRECATION")
+  fun shadeRowCutOffAtTheEdge_scrollsOnToTheRowsPastIt() {
+    // The last row shown is cut off by the shade's bottom edge; the rows past it aren't in the tree.
+    val first = row("Message 1", 0, 600)
+    val last =
+      row("Message 2", 600, 1000).apply { setBoundsInParent(Rect(0, 0, 900, 450)) }
+    val scroll = scrollView().add(first, last).apply { packageName = "com.android.systemui" }
+    assertFalse(OffscreenContent.hasNothingAhead(scroll, last, /* forward= */ true, /* rtl= */ false))
+  }
+
+  @Test
+  @Suppress("DEPRECATION")
   fun groupCutOffAtTheOtherEdge_scrollsOnToTheRowsAfterIt() {
     // An expanded group scrolled up past the top, with its last row fully on screen.
     val last = row("Message 8", 700, 900)

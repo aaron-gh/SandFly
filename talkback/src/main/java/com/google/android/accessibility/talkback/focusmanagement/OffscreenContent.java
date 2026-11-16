@@ -42,6 +42,8 @@ final class OffscreenContent {
   // Pixels by which a cut can miss the scroll view's edge through rounding.
   private static final int EDGE_SLACK = 1;
 
+  private static final String SYSTEM_UI_PACKAGE = "com.android.systemui";
+
   private OffscreenContent() {}
 
   /**
@@ -167,7 +169,11 @@ final class OffscreenContent {
       return true;
     }
     // Otherwise only the pivot, or a container of it, can reach past the edge, as one long text
-    // does.
+    // does. The notification shade's list leaves the rows past its edge out of the tree, so a row
+    // cut off there has more rows past it.
+    if (SYSTEM_UI_PACKAGE.contentEquals(String.valueOf(scrollable.getPackageName()))) {
+      return false;
+    }
     Rect viewport = new Rect();
     scrollable.getBoundsInScreen(viewport);
     boolean vertical = Role.getRole(scrollable) != Role.ROLE_HORIZONTAL_SCROLL_VIEW;

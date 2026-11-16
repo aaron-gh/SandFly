@@ -24,6 +24,7 @@ import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils
 import com.google.android.accessibility.utils.traversal.OrderedTraversalStrategy
 import com.google.android.libraries.accessibility.utils.log.LogUtils
+import kotlin.math.abs
 
 /**
  * Keeps the reading order of the window that the user last swiped in, so that swiping through a
@@ -119,6 +120,9 @@ object TraversalTreeCache {
   private var lastPivotTop = Int.MIN_VALUE
   private var lastPivotWindowId = NO_WINDOW_ID
 
+  /** The sum of scroll deltas when [lastPivotTop] was read, to follow the place as lists scroll. */
+  private var lastPivotDeltaSum = 0
+
   /**
    * Set when scrolling ahead moved the focused item off screen: its bounds and its list's before
    * the page, the sum of scroll deltas then (see
@@ -202,6 +206,7 @@ object TraversalTreeCache {
     pivot.getBoundsInScreen(bounds)
     lastPivotTop = bounds.top
     lastPivotWindowId = pivot.windowId
+    lastPivotDeltaSum = FocusProcessorForLogicalNavigation.scrollDeltaSumY()
     scrolledAwayBounds = null
   }
 
@@ -329,8 +334,23 @@ object TraversalTreeCache {
       }
       return lastNodeAbove(order, place, bounds)
     }
-    return lastNodeAbove(order, lastPivotTop, bounds)
+    return lastNodeAbove(
+      order,
+      placeAfterScrolls(lastPivotTop, FocusProcessorForLogicalNavigation.scrollDeltaSumY() - lastPivotDeltaSum),
+      bounds,
+    )
   }
+
+  /** The least shift, in pixels, taken as scroll deltas in pixels rather than Compose's 1 each. */
+  private const val MIN_PIXEL_SHIFT = 100
+
+  /**
+   * Where a place at [top] is after lists scrolled by [shift] pixels of deltas since it was read:
+   * the content moves up as the deltas grow. Deltas too small to be pixels leave it where it was.
+   */
+  @JvmStatic
+  fun placeAfterScrolls(top: Int, shift: Int): Int =
+    if (top == Int.MIN_VALUE || abs(shift) < MIN_PIXEL_SHIFT) top else top - shift
 
   /**
    * The index of the item that a swipe [forward] or back goes to after the focused item scrolled
