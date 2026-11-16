@@ -3906,7 +3906,7 @@ public class FocusProcessorForLogicalNavigation {
     if ((logicalDirection == SEARCH_FOCUS_FORWARD || logicalDirection == SEARCH_FOCUS_BACKWARD)
         && OffscreenContent.keepsAllContent(scrollableNode)
         && OffscreenContent.hasNothingAhead(
-            scrollableNode, pivot, logicalDirection == SEARCH_FOCUS_FORWARD)) {
+            scrollableNode, pivot, logicalDirection == SEARCH_FOCUS_FORWARD, rtl)) {
       edgeScrollNote = kind + ":nothingOffscreen";
       LogUtils.d(TAG, "autoScrollAtEdge: nothing after the pivot is off screen; not scrolling.");
       return false;

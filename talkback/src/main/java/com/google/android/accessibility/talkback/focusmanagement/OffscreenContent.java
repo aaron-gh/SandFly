@@ -39,6 +39,8 @@ final class OffscreenContent {
   // Large scroll views are rare, and walking a huge tree on every edge swipe would cost more than
   // the page scroll it saves.
   private static final int MAX_NODES = 1500;
+  // Pixels by which a cut can miss the scroll view's edge through rounding.
+  private static final int EDGE_SLACK = 1;
 
   private OffscreenContent() {}
 
@@ -116,11 +118,16 @@ final class OffscreenContent {
    * tree order that is off screen or cut off at the edge and has something to say or do, so
    * scrolling it can't bring a next item on screen. The pivot's own descendants don't count.
    * {@code false} when the pivot is the scroll view itself or isn't in it, when the content is too
-   * large to read, when a collapsed or nested scrolling container comes after the pivot, or when
-   * the scroll view offers position-based scrolling and may expose only its loaded items.
+   * large to read, when a collapsed or nested scrolling container comes after the pivot, when the
+   * scroll view offers position-based scrolling and may expose only its loaded items, or when the
+   * tree has no content past the edge at all. The notification shade's list says it is a scroll
+   * view but leaves the notifications past its edge out of the tree.
    */
   static boolean hasNothingAhead(
-      AccessibilityNodeInfoCompat scrollable, AccessibilityNodeInfoCompat pivot, boolean forward) {
+      AccessibilityNodeInfoCompat scrollable,
+      AccessibilityNodeInfoCompat pivot,
+      boolean forward,
+      boolean rtl) {
     if (scrollable.equals(pivot)
         || AccessibilityNodeInfoUtils.supportsAction(
             scrollable, AccessibilityActionCompat.ACTION_SCROLL_TO_POSITION.getId())) {
@@ -136,11 +143,13 @@ final class OffscreenContent {
     if (pivotIndex < 0) {
       return false;
     }
+    boolean pastEdge = false;
     if (forward) {
       for (int i = subtreeEnds.get(pivotIndex); i < nodes.size(); i++) {
         if (hidden.get(i) || isCandidate(nodes.get(i))) {
           return false;
         }
+        pastEdge |= isOffScreenOrCutOff(nodes.get(i));
       }
     } else {
       for (int i = pivotIndex - 1; i >= 0; i--) {
@@ -151,9 +160,53 @@ final class OffscreenContent {
         if (hidden.get(i) || isCandidate(nodes.get(i))) {
           return false;
         }
+        pastEdge |= isOffScreenOrCutOff(nodes.get(i));
       }
     }
-    return true;
+    if (pastEdge) {
+      return true;
+    }
+    // Otherwise only the pivot, or a container of it, can reach past the edge, as one long text
+    // does.
+    Rect viewport = new Rect();
+    scrollable.getBoundsInScreen(viewport);
+    boolean vertical = Role.getRole(scrollable) != Role.ROLE_HORIZONTAL_SCROLL_VIEW;
+    boolean towardEnd = vertical ? forward : forward != rtl;
+    for (int i = 1; i <= pivotIndex; i++) {
+      if ((i == pivotIndex || subtreeEnds.get(i) > pivotIndex)
+          && isCutOffAtEdge(nodes.get(i), viewport, vertical, towardEnd)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  /**
+   * Whether {@code node} is on screen but cut off at the edge of {@code viewport} that is past its
+   * bottom, or its right end, when {@code towardEnd}, and past its top or left end otherwise. A
+   * view's bounds on screen are clipped to the scroll view's own bounds, so a cut at the edge ends
+   * there; a node that ends short of the edge is cut off at the other one.
+   */
+  @SuppressWarnings("deprecation") // getBoundsInParent is the only unclipped size a node reports.
+  private static boolean isCutOffAtEdge(
+      AccessibilityNodeInfoCompat node, Rect viewport, boolean vertical, boolean towardEnd) {
+    if (!node.isVisibleToUser()) {
+      return false;
+    }
+    Rect size = new Rect();
+    node.getBoundsInParent(size);
+    Rect shown = new Rect();
+    node.getBoundsInScreen(shown);
+    if (vertical) {
+      return shown.height() < size.height()
+          && (towardEnd
+              ? shown.bottom >= viewport.bottom - EDGE_SLACK
+              : shown.top <= viewport.top + EDGE_SLACK);
+    }
+    return shown.width() < size.width()
+        && (towardEnd
+            ? shown.right >= viewport.right - EDGE_SLACK
+            : shown.left <= viewport.left + EDGE_SLACK);
   }
 
   /**
@@ -217,21 +270,24 @@ final class OffscreenContent {
    * Whether {@code node} is off screen or cut off at the edge, has a size, and has something to say
    * or do. A node cut off at the edge has not been read yet, and would go past the other edge.
    */
-  @SuppressWarnings("deprecation") // getBoundsInParent is the only unclipped size a node reports.
   private static boolean isCandidate(AccessibilityNodeInfoCompat node) {
+    return isOffScreenOrCutOff(node) && saysOrDoes(node);
+  }
+
+  /** Whether {@code node} has a size and is off screen or cut off at the edge. */
+  @SuppressWarnings("deprecation") // getBoundsInParent is the only unclipped size a node reports.
+  private static boolean isOffScreenOrCutOff(AccessibilityNodeInfoCompat node) {
     Rect size = new Rect();
     node.getBoundsInParent(size);
     if (size.width() <= 0 || size.height() <= 0) {
       return false;
     }
-    if (node.isVisibleToUser()) {
-      Rect shown = new Rect();
-      node.getBoundsInScreen(shown);
-      if (shown.width() >= size.width() && shown.height() >= size.height()) {
-        return false;
-      }
+    if (!node.isVisibleToUser()) {
+      return true;
     }
-    return saysOrDoes(node);
+    Rect shown = new Rect();
+    node.getBoundsInScreen(shown);
+    return shown.width() < size.width() || shown.height() < size.height();
   }
 
   private static boolean saysOrDoes(AccessibilityNodeInfoCompat node) {
