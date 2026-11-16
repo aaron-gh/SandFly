@@ -4143,12 +4143,6 @@ public class FocusProcessorForLogicalNavigation {
     NavigationAction supportedNavigationAction =
         NavigationAction.Builder.copy(navigationAction).setDirection(supportedDirection).build();
 
-    if (navigationAction.actionType == NavigationAction.DIRECTIONAL_NAVIGATION
-        && endsListWhole(scrollableNodeInfo.getNode(), pivot, supportedDirection)) {
-      LogUtils.d(TAG, "Not scrolling: the focused item is the list's last row and fully shown.");
-      return false;
-    }
-
     // Only the first attempt jumps. A jump that left the focused item where it was is repeated with
     // a page scroll, as a list can accept the action without moving.
     if (navigationAction.actionType == NavigationAction.DIRECTIONAL_NAVIGATION
@@ -4702,7 +4696,9 @@ public class FocusProcessorForLogicalNavigation {
       }
       trackedCallback = null;
       if (state == LIST_NOT_SCROLLED) {
-        LogUtils.d(TAG, "The list sent no scroll event in %d ms; waiting for it.", elapsed);
+        if (!moveOnFromUnscrolledListEnd(track.callback, track.scrollable, elapsed)) {
+          LogUtils.d(TAG, "The list sent no scroll event in %d ms; waiting for it.", elapsed);
+        }
         return;
       }
       int deltaY = scrollDeltaSumY - scrollStartDeltaSumY;
@@ -5255,11 +5251,41 @@ public class FocusProcessorForLogicalNavigation {
   }
 
   /**
+   * Ends the swipe's scroll as failed, so that focus moves on past the list, when {@code
+   * scrollable} has sent no scroll event in {@code elapsed} ms since the scroll and the focused item
+   * is still its last row in the swipe's direction, shown whole. Some lists, such as a RecyclerView
+   * stacked from its end, offer a scroll forward there, accept it, don't move and send no scroll
+   * event, and the swipe then waited for the scroll's timeout. The scroll is still made, as some
+   * apps load more items when their list is scrolled at its end; a list that has added rows since
+   * keeps the usual wait. Returns whether it ended the scroll.
+   */
+  private boolean moveOnFromUnscrolledListEnd(
+      AutoScrollCallback callback, AccessibilityNodeInfoCompat scrollable, long elapsed) {
+    if (scrollCallback != callback
+        || callback.sourceAction.actionType != NavigationAction.DIRECTIONAL_NAVIGATION) {
+      return false;
+    }
+    AccessibilityNodeInfoCompat list = AccessibilityNodeInfoCompat.obtain(scrollable);
+    AccessibilityNodeInfoCompat pivot = AccessibilityNodeInfoCompat.obtain(callback.pivot);
+    if (!list.refresh()
+        || !pivot.refresh()
+        || !endsListWhole(list, pivot, callback.sourceAction.searchDirection)) {
+      return false;
+    }
+    LogUtils.d(
+        TAG,
+        "The list sent no scroll event in %d ms and the focused item is its last row, fully"
+            + " shown; moving on.",
+        elapsed);
+    trackedCallback = null;
+    onAutoScrollFailed(scrollable);
+    return true;
+  }
+
+  /**
    * Whether the list item holding {@code pivot} is the last row of the one-column {@code list} in
-   * {@code direction} and is shown whole inside the list, so that a scroll that way can't show
-   * anything new. Some lists, such as a RecyclerView stacked from its end, offer a scroll forward
-   * there, accept it, don't move and send no scroll event, and the swipe then waited for the
-   * scroll's timeout.
+   * {@code direction} and is shown whole inside the list, so that a scroll that way didn't show
+   * anything new.
    */
   @SuppressWarnings("deprecation") // getBoundsInParent is the only unclipped size a node reports.
   private boolean endsListWhole(
@@ -5663,7 +5689,10 @@ public class FocusProcessorForLogicalNavigation {
     }
     int events = scrollEventCount - scrollStartEventCount;
     if (events == 0) {
-      LogUtils.d(TAG, "The list sent no scroll event; waiting for it.");
+      if (!moveOnFromUnscrolledListEnd(
+          callback, scrollable, SystemClock.uptimeMillis() - lastAutoScrollUptime)) {
+        LogUtils.d(TAG, "The list sent no scroll event; waiting for it.");
+      }
       return;
     }
     learnOneEventList(scrollable, events, SystemClock.uptimeMillis() - lastScrollEventUptime);
