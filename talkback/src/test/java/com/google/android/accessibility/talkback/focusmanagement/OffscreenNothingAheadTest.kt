@@ -98,8 +98,8 @@ class OffscreenNothingAheadTest {
   fun oneLongText_hasNothingAheadEitherWay() {
     val text = longText()
     val scroll = scrollView().add(Node("android.view.View"), text)
-    assertTrue(OffscreenContent.hasNothingAhead(scroll, text, /* forward= */ true))
-    assertTrue(OffscreenContent.hasNothingAhead(scroll, text, /* forward= */ false))
+    assertTrue(OffscreenContent.hasNothingAhead(scroll, text, /* forward= */ true, /* rtl= */ false))
+    assertTrue(OffscreenContent.hasNothingAhead(scroll, text, /* forward= */ false, /* rtl= */ false))
   }
 
   @Test
@@ -113,24 +113,24 @@ class OffscreenNothingAheadTest {
 
     // A collection can report a ScrollView role without CollectionInfo and load more items later.
     assertTrue(OffscreenContent.keepsAllContent(scroll))
-    assertFalse(OffscreenContent.hasNothingAhead(scroll, last, /* forward= */ true))
-    assertFalse(OffscreenContent.hasNothingAhead(scroll, first, /* forward= */ false))
+    assertFalse(OffscreenContent.hasNothingAhead(scroll, last, /* forward= */ true, /* rtl= */ false))
+    assertFalse(OffscreenContent.hasNothingAhead(scroll, first, /* forward= */ false, /* rtl= */ false))
   }
 
   @Test
   fun offscreenButtonAfterText_isAheadForwardOnly() {
     val text = longText()
     val scroll = scrollView().add(text, offscreenButton())
-    assertFalse(OffscreenContent.hasNothingAhead(scroll, text, /* forward= */ true))
-    assertTrue(OffscreenContent.hasNothingAhead(scroll, text, /* forward= */ false))
+    assertFalse(OffscreenContent.hasNothingAhead(scroll, text, /* forward= */ true, /* rtl= */ false))
+    assertTrue(OffscreenContent.hasNothingAhead(scroll, text, /* forward= */ false, /* rtl= */ false))
   }
 
   @Test
   fun offscreenButtonBeforeText_isAheadBackwardOnly() {
     val text = longText()
     val scroll = scrollView().add(offscreenButton(), text)
-    assertTrue(OffscreenContent.hasNothingAhead(scroll, text, /* forward= */ true))
-    assertFalse(OffscreenContent.hasNothingAhead(scroll, text, /* forward= */ false))
+    assertTrue(OffscreenContent.hasNothingAhead(scroll, text, /* forward= */ true, /* rtl= */ false))
+    assertFalse(OffscreenContent.hasNothingAhead(scroll, text, /* forward= */ false, /* rtl= */ false))
   }
 
   @Test
@@ -141,18 +141,69 @@ class OffscreenNothingAheadTest {
         .apply { isScrollable = true }
         .add(Node("android.widget.Button").apply { text = "Next" })
     val scroll = scrollView().add(message, nested)
-    assertFalse(OffscreenContent.hasNothingAhead(scroll, message, /* forward= */ true))
+    assertFalse(OffscreenContent.hasNothingAhead(scroll, message, /* forward= */ true, /* rtl= */ false))
+  }
+
+  /** A notification row of the shade, fully on screen from [top] to [bottom]. */
+  @Suppress("DEPRECATION")
+  private fun row(title: String, top: Int, bottom: Int) =
+    Node("android.widget.FrameLayout").apply {
+      text = title
+      isFocusable = true
+      setBoundsInParent(Rect(0, 0, 900, bottom - top))
+      setBoundsInScreen(Rect(0, top, 900, bottom))
+    }
+
+  @Test
+  fun shadeLeavesRowsPastTheEdgeOutOfTheTree_scrollsOnToThem() {
+    // The notification shade's list says it is a scroll view, but rows past its edge aren't in
+    // the tree, so nothing in the tree reaches past the edge.
+    val first = row("Message 1", 0, 450)
+    val last = row("Message 2", 450, 900)
+    val scroll = scrollView().add(first, last)
+    assertTrue(OffscreenContent.keepsAllContent(scroll))
+    assertFalse(OffscreenContent.hasNothingAhead(scroll, last, /* forward= */ true, /* rtl= */ false))
+    assertFalse(OffscreenContent.hasNothingAhead(scroll, first, /* forward= */ false, /* rtl= */ false))
+  }
+
+  @Test
+  @Suppress("DEPRECATION")
+  fun groupCutOffAtTheOtherEdge_scrollsOnToTheRowsAfterIt() {
+    // An expanded group scrolled up past the top, with its last row fully on screen.
+    val last = row("Message 8", 700, 900)
+    val group =
+      Node("android.widget.FrameLayout")
+        .apply {
+          setBoundsInParent(Rect(0, 0, 900, 1500))
+          setBoundsInScreen(Rect(0, 0, 900, 900))
+        }
+        .add(row("Message 7", 500, 700), last)
+    val scroll = scrollView().add(group)
+    assertFalse(OffscreenContent.hasNothingAhead(scroll, last, /* forward= */ true, /* rtl= */ false))
+  }
+
+  @Test
+  @Suppress("DEPRECATION")
+  fun silentContentPastTheEdge_hasNothingAhead() {
+    val text = row("Changes", 0, 900)
+    val spacer =
+      Node("android.view.View").apply {
+        isVisibleToUser = false
+        setBoundsInScreen(Rect())
+      }
+    val scroll = scrollView().add(text, spacer)
+    assertTrue(OffscreenContent.hasNothingAhead(scroll, text, /* forward= */ true, /* rtl= */ false))
   }
 
   @Test
   fun pivotIsTheScrollView_scrollsAsBefore() {
     val scroll = scrollView().add(longText())
-    assertFalse(OffscreenContent.hasNothingAhead(scroll, scroll, /* forward= */ true))
+    assertFalse(OffscreenContent.hasNothingAhead(scroll, scroll, /* forward= */ true, /* rtl= */ false))
   }
 
   @Test
   fun pivotOutsideTheScrollView_scrollsAsBefore() {
     val scroll = scrollView().add(longText())
-    assertFalse(OffscreenContent.hasNothingAhead(scroll, longText(), /* forward= */ true))
+    assertFalse(OffscreenContent.hasNothingAhead(scroll, longText(), /* forward= */ true, /* rtl= */ false))
   }
 }
