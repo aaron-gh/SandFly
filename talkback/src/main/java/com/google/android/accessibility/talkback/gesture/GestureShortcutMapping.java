@@ -1381,6 +1381,15 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
     return GestureProfiles.action(gestureIdToKey.get(gestureId));
   }
 
+  /**
+   * Returns the action the app shown gives the gesture, or null when the app leaves the gesture
+   * out.
+   */
+  @Nullable
+  public String getAppActionKeyFromGestureId(int gestureId) {
+    return AppGestures.action(gestureIdToKey.get(gestureId));
+  }
+
   private void loadGestureKeys() {
     Map<Integer, String> keys = new HashMap<>();
     for (TalkBackGesture gesture : TalkBackGesture.values()) {
