@@ -162,7 +162,6 @@ public class TalkBackPreferenceFragment extends TalkbackBaseFragment {
     AccessibilitySuitePreference ai = new AccessibilitySuitePreference(context);
     ai.setKey("pref_sandfly_ai_screen");
     ai.setPersistent(false);
-    ai.setIconSpaceReserved(false);
     ai.setTitle(features.settingsTitle(context));
     ai.setFragment(features.getSettingsFragment());
     ai.setOrder(order);
