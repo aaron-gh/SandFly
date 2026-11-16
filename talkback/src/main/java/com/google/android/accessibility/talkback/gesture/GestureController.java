@@ -164,6 +164,7 @@ import com.google.android.accessibility.talkback.utils.DebugProperties;
 import com.google.android.accessibility.talkback.utils.FocusIndicatorUtils;
 import com.google.android.accessibility.talkback.utils.GeminiCommandUtils;
 import com.google.android.accessibility.talkback.keyboard.KeyComboManager;
+import com.google.android.accessibility.talkback.labeling.LabelDialogManager;
 import com.google.android.accessibility.talkback.keyboard.NextKeyboard;
 import com.google.android.accessibility.talkback.overview.PreviousApp;
 import com.google.android.accessibility.talkback.overview.RecentAppSteps;
@@ -171,6 +172,8 @@ import com.google.android.accessibility.utils.AccessibilityServiceCompatUtils;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.monitor.RecentUserInput;
 import com.google.android.accessibility.utils.KeyboardUtils;
+import com.google.android.accessibility.utils.labeling.Label;
+import com.google.android.accessibility.utils.labeling.LabelManager;
 import com.google.android.accessibility.utils.Performance;
 import com.google.android.accessibility.utils.Performance.EventId;
 import com.google.android.accessibility.utils.Role;
@@ -961,6 +964,8 @@ public class GestureController {
                   service,
                   accessibilityFocusMonitor.getAccessibilityFocus(
                       /* useInputFocusIfEmpty= */ false)));
+    } else if (action.equals(service.getString(R.string.shortcut_value_label))) {
+      result = addOrEditLabel();
     } else if (action.equals(service.getString(R.string.shortcut_value_take_picture_and_describe))) {
       service.startActivity(
           new Intent(service, PictureDescriptionActivity.class)
@@ -1282,6 +1287,24 @@ public class GestureController {
       return;
     }
     performGestureAction(action, eventId, doubleTap);
+  }
+
+  /** Opens the Add label or Edit label dialog for the focused item. */
+  private boolean addOrEditLabel() {
+    AccessibilityNodeInfoCompat node =
+        accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ false);
+    LabelManager.State labels = actorState.getLabelManagerState();
+    if (node == null || !labels.supportsLabel(node)) {
+      pipeline.returnFeedback(
+          EVENT_ID_UNTRACKED,
+          Feedback.speech(service.getString(R.string.voice_commands_cannot_label_feedback)));
+      return false;
+    }
+    long labelId = labels.getLabelIdForNode(node);
+    return labelId == Label.NO_ID
+        ? LabelDialogManager.addLabel(
+            service, node.getViewIdResourceName(), /* needToRestoreFocus= */ true, pipeline)
+        : LabelDialogManager.editLabel(service, labelId, /* needToRestoreFocus= */ true, pipeline);
   }
 
   /** Performs [action] of a gesture, noting whether the gesture is the one-finger double tap. */

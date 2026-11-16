@@ -46,6 +46,11 @@ public abstract class NodeMenuRule implements NodeMenu {
         context.getResources().getBoolean(showPrefKeyResIdDefault));
   }
 
+  /** Returns whether the hint for the focused {@code node} names this rule's menu item. */
+  boolean hasHint(Context context, AccessibilityNodeInfoCompat node) {
+    return true;
+  }
+
   /**
    * Provides the menu rule processor with a potentially user-visible name for the submenu. If more
    * than one rule is applied to a node, each rule's menu items returned from {@link

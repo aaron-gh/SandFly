@@ -30,6 +30,7 @@ import com.google.android.accessibility.talkback.contextmenu.ContextMenu;
 import com.google.android.accessibility.talkback.contextmenu.ContextMenuItem;
 import com.google.android.accessibility.talkback.labeling.LabelDialogManager;
 import com.google.android.accessibility.utils.labeling.Label;
+import com.google.android.accessibility.utils.labeling.LabelManager;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,6 +54,13 @@ class RuleUnlabeledNode extends NodeMenuRule {
   @Override
   public boolean accept(Context context, AccessibilityNodeInfoCompat node) {
     return actorState.getLabelManagerState().supportsLabel(node);
+  }
+
+  /** Items with text or a custom label get Add label too, but only unlabelled items get the hint. */
+  @Override
+  boolean hasHint(Context context, AccessibilityNodeInfoCompat node) {
+    LabelManager.State labels = actorState.getLabelManagerState();
+    return labels.needsLabel(node) && labels.getLabelIdForNode(node) == Label.NO_ID;
   }
 
   @Override

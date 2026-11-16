@@ -122,7 +122,7 @@ object MenuCommands {
       R.string.shortcut_value_page_navigation,
       R.id.viewpager_menu,
     )
-    menuOnly(
+    command(
       R.string.pref_show_context_menu_labeling_setting_key,
       R.bool.pref_show_context_menu_labeling_default,
       R.string.shortcut_value_label,
