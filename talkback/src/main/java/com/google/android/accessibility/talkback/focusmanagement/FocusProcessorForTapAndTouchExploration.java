@@ -138,6 +138,18 @@ public class FocusProcessorForTapAndTouchExploration {
   private long longPressDuration = LIFT_TO_TYPE_LONG_PRESS_DELAY_MS;
   private final PostDelayHandler postDelayHandler;
 
+  /** Presses down the item with accessibility focus for the rest of the touch. */
+  public interface KeyHolder {
+    /** Returns whether the item with accessibility focus is now held down. */
+    boolean holdFocusedItemDown();
+  }
+
+  @Nullable private KeyHolder keyHolder;
+
+  // Whether a key touched until the hold delay ends is pressed down instead of long clicked, so
+  // that keys such as Delete repeat.
+  private boolean holdKeysDown = false;
+
   //////////////////////////////////////////////////////////////////////////////////////////////////
   // Settings
 
@@ -270,6 +282,31 @@ public class FocusProcessorForTapAndTouchExploration {
 
   public void setSingleTapEnabled(boolean enabled) {
     isSingleTapEnabled = enabled;
+  }
+
+  public void setKeyHolder(@Nullable KeyHolder keyHolder) {
+    this.keyHolder = keyHolder;
+  }
+
+  /** Sets whether a key touched until the hold delay ends is pressed down until the finger lifts. */
+  public void setHoldKeysDown(boolean holdKeysDown) {
+    this.holdKeysDown = holdKeysDown;
+  }
+
+  /**
+   * Presses {@code key} down for the rest of the touch, if keys are held down and it has
+   * accessibility focus, where Android presses. Returns whether it is held down.
+   */
+  private boolean holdKeyDown(@Nullable AccessibilityNodeInfoCompat key) {
+    if (!holdKeysDown
+        || keyHolder == null
+        || key == null
+        || Scripts.longPressAfterMs(key) > 0
+        || !supportsLiftToType(key)) {
+      return false;
+    }
+    key.refresh();
+    return key.isAccessibilityFocused() && keyHolder.holdFocusedItemDown();
   }
 
   public boolean getSingleTapEnabled() {
@@ -763,7 +800,10 @@ public class FocusProcessorForTapAndTouchExploration {
             parent.touchFocusedNode(parent.lastFocusableNodeBeingTouched, /* eventId= */ null);
         case MSG_LONG_CLICK_LAST_NODE -> {
           AccessibilityNodeInfoCompat node = parent.lastFocusableNodeBeingTouched;
-          if (parent.supportsLiftToType(node) || Scripts.longPressAfterMs(node) > 0) {
+          if (parent.holdKeyDown(node)) {
+            // The key goes up when the finger lifts, so lifting doesn't type it again.
+            parent.mayBeLiftToType = false;
+          } else if (parent.supportsLiftToType(node) || Scripts.longPressAfterMs(node) > 0) {
             // A hover sent to Gboard ends first: its exit on Gboard's popup of alternative
             // characters, which the long press opens, would type one.
             KeyboardHover.exitThen(

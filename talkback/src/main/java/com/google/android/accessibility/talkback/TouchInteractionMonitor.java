@@ -1172,6 +1172,22 @@ public class TouchInteractionMonitor
     return touchPassedToApp;
   }
 
+  /**
+   * Presses down the item with accessibility focus and passes the rest of the touch to the app, as
+   * the hold of a double tap and hold does, if a finger is exploring by touch now. A touch on Gboard
+   * is explored here without touch exploration and is left as it is. Returns whether the item is
+   * held down.
+   */
+  @MainThread
+  public boolean holdFocusedItemDown() {
+    if (!fingerDown || state != STATE_TOUCH_EXPLORING || downOnGboard || exploringKeyboard) {
+      return false;
+    }
+    LogUtils.d(LOG_TAG, "holdFocusedItemDown");
+    controller.performLongClickAndStartDrag();
+    return true;
+  }
+
   @MainThread
   @SuppressWarnings("Override")
   @Override

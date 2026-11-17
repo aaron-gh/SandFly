@@ -25,6 +25,10 @@
         android:key="@string/pref_typing_long_press_duration_key"
         android:summary="%s"
         android:title="@string/title_pref_typing_long_tap_duration" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="@bool/pref_typing_hold_keys_down_default"
+        android:key="@string/pref_typing_hold_keys_down_key"
+        android:title="@string/title_pref_typing_hold_keys_down" />
     <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
         android:fragment="com.google.android.accessibility.talkback.preference.base.TypingFocusDelayPrefFragment"
         android:key="@string/pref_typing_focus_time_out_key"
