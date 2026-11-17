@@ -1129,9 +1129,16 @@ public class GestureController {
     } else if (action.equals(service.getString(R.string.shortcut_value_inspect_item))) {
       AccessibilityNodeInfoCompat focused =
           accessibilityFocusMonitor.getAccessibilityFocus(false);
+      @Nullable String message = ItemInspector.show(service, focused);
+      result =
+          message == null
+              || pipeline.returnFeedback(eventId, Feedback.requestedSpeech(message));
+    } else if (action.equals(service.getString(R.string.shortcut_value_copy_item_details))) {
+      AccessibilityNodeInfoCompat focused =
+          accessibilityFocusMonitor.getAccessibilityFocus(false);
       result =
           pipeline.returnFeedback(
-              eventId, Feedback.requestedSpeech(ItemInspector.inspect(service, focused)));
+              eventId, Feedback.requestedSpeech(ItemInspector.copy(service, focused)));
     } else if (action.equals(service.getString(R.string.shortcut_value_copy_screen_tree))) {
       AccessibilityNodeInfoCompat focused =
           accessibilityFocusMonitor.getAccessibilityFocus(false);

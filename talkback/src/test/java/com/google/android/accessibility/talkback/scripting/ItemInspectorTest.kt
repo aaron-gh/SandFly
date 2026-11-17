@@ -16,13 +16,22 @@
 
 package com.google.android.accessibility.talkback.scripting
 
+import android.content.ClipboardManager
 import android.content.Context
+import android.view.View
+import android.view.ViewGroup
+import android.widget.Button
+import android.widget.TextView
+import androidx.core.view.ViewCompat
 import android.view.accessibility.AccessibilityNodeInfo
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
+import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
+import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
 import org.junit.Test
 import org.junit.runner.RunWith
+import org.robolectric.Robolectric
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.RuntimeEnvironment
 import org.robolectric.Shadows.shadowOf
@@ -41,7 +50,7 @@ class ItemInspectorTest {
     }
 
   @Test
-  fun buttonGivesMacroTextsAndTypes() {
+  fun buttonGivesMacroTextsAndTypesUnderHeadings() {
     val button = node {
       contentDescription = "New post"
       isClickable = true
@@ -49,12 +58,11 @@ class ItemInspectorTest {
     val icon = node { text = "Plus" }
     shadowOf(button).addChild(icon)
 
-    val details = ItemInspector.inspect(context, AccessibilityNodeInfoCompat.wrap(button))
+    val text = ItemInspector.plainText(context, ItemInspector.report(context, AccessibilityNodeInfoCompat.wrap(button)))
 
-    assertTrue(details, details.contains("description: New post"))
-    assertTrue(details, details.contains("item types: Clickable, Enabled"))
-    assertTrue(details, details.contains("inside text: Plus"))
-    assertFalse(details, details.contains("\ntext: "))
+    assertTrue(text, text.startsWith("Texts\ndescription: New post\n\nItem types\nClickable\nEnabled\n\nItems inside\ntext: Plus\n\nScript details\n"))
+    assertTrue(text, text.contains("No id, so script rules can't name it"))
+    assertFalse(text, text.contains("\ntext: New post"))
   }
 
   @Test
@@ -64,13 +72,42 @@ class ItemInspectorTest {
       isHeading = true
       hintText = "Title"
       stateDescription = "Draft"
+      viewIdResourceName = "com.example:id/title"
     }
 
-    val details = ItemInspector.inspect(context, AccessibilityNodeInfoCompat.wrap(heading))
+    val text = ItemInspector.plainText(context, ItemInspector.report(context, AccessibilityNodeInfoCompat.wrap(heading)))
 
-    assertTrue(details, details.contains("text: New post"))
-    assertTrue(details, details.contains("hint: Title"))
-    assertTrue(details, details.contains("state: Draft"))
-    assertTrue(details, details.contains("item types: Heading, Enabled"))
+    assertTrue(text, text.startsWith("Texts\ntext: New post\nhint: Title\nstate: Draft\n\nItem types\nHeading\nEnabled\n\nScript details\nid: com.example:id/title"))
+    assertFalse(text, text.contains("Items inside"))
+    assertFalse(text, text.contains("No id"))
+  }
+
+  @Test
+  fun showOpensWindowWithHeadingsAndCopyCopiesAll() {
+    val button = node {
+      contentDescription = "New post"
+      isClickable = true
+    }
+    val compat = AccessibilityNodeInfoCompat.wrap(button)
+
+    assertNull(ItemInspector.show(context, compat))
+    val intent = shadowOf(RuntimeEnvironment.getApplication()).nextStartedActivity
+    val activity = Robolectric.buildActivity(ItemDetailsActivity::class.java, intent).setup().get()
+    val headings = mutableListOf<String>()
+    val lines = mutableListOf<String>()
+    fun walk(view: View) {
+      if (view is ViewGroup) for (i in 0 until view.childCount) walk(view.getChildAt(i))
+      else if (view is TextView && view !is Button) {
+        if (ViewCompat.isAccessibilityHeading(view)) headings.add(view.text.toString()) else lines.add(view.text.toString())
+      }
+    }
+    walk(activity.window.decorView)
+    assertEquals(listOf("Item details", "Texts", "Item types", "Script details"), headings.take(4))
+    assertTrue(lines.toString(), lines.contains("description: New post"))
+
+    assertEquals("Copied item details", ItemInspector.copy(context, compat))
+    val clip = context.getSystemService(ClipboardManager::class.java).primaryClip!!.getItemAt(0).text.toString()
+    assertTrue(clip, clip.startsWith("Texts\ndescription: New post"))
+    assertEquals("No item has focus", ItemInspector.copy(context, null))
   }
 }

@@ -115,6 +115,7 @@ public class TalkbackMenuProcessor {
   private static final int ORDER_PAUSE_BACKTALK = 21;
   private static final int ORDER_SYSTEM_ACTIONS = 24;
   private static final int ORDER_INSPECT_ITEM = 26;
+  private static final int ORDER_COPY_ITEM_DETAILS = ORDER_INSPECT_ITEM;
   private static final int ORDER_COPY_SCREEN_TREE = ORDER_INSPECT_ITEM;
   private static final int ORDER_TELL_TIME = 27;
 
@@ -268,7 +269,19 @@ public class TalkbackMenuProcessor {
         ORDER_INSPECT_ITEM,
         R.string.pref_show_context_menu_inspect_item_setting_key,
         R.string.shortcut_inspect_item,
-        (node, say) -> say.accept(ItemInspector.inspect(service, node)));
+        (node, say) -> {
+          @Nullable String message = ItemInspector.show(service, node);
+          if (message != null) {
+            say.accept(message);
+          }
+        });
+    addScriptTool(
+        menu,
+        R.id.copy_item_details,
+        ORDER_COPY_ITEM_DETAILS,
+        R.string.pref_show_context_menu_copy_item_details_setting_key,
+        R.string.shortcut_copy_item_details,
+        (node, say) -> say.accept(ItemInspector.copy(service, node)));
     addScriptTool(
         menu,
         R.id.copy_screen_tree,

@@ -1152,6 +1152,7 @@ object Commands {
       category(R.string.title_pref_category_developer_settings) {
         val prefs = SharedPreferencesUtils.getSharedPreferences(context)
         gesture(R.string.shortcut_value_inspect_item, R.string.shortcut_inspect_item)
+        gesture(R.string.shortcut_value_copy_item_details, R.string.shortcut_copy_item_details)
         gesture(R.string.shortcut_value_copy_screen_tree, R.string.shortcut_copy_screen_tree)
         gesture(
           R.string.shortcut_value_print_node_tree,
