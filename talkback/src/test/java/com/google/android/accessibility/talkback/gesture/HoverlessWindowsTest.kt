@@ -69,7 +69,7 @@ class HoverlessWindowsTest {
       setBoundsInScreen(bounds)
       isVisibleToUser = true
       ReflectionHelpers.setField(this, "mWindowId", APP_ID)
-      shadowOf(this).setAccessibilityWindowInfo(window)
+      shadowOf(this).setAccessibilityWindowInfo(this@HoverlessWindowsTest.window)
     }
 
   private fun itemFor(touched: AccessibilityNodeInfo) =
