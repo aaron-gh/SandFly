@@ -179,6 +179,15 @@ class CommandsTest {
   }
 
   @Test
+  fun openKeyboardShortcutsSettingsKeepsItsOldValue() {
+    val key = TalkBackPhysicalKeyboardShortcut.OPEN_MANAGE_KEYBOARD_SHORTCUTS
+    val label = "Open keyboard shortcuts settings"
+    assertEquals(label, Commands.label(context, Commands.keyboardValue(context, key)))
+    assertEquals(key, Commands.keyboardActionOf(context, Commands.KEYBOARD_PREFIX))
+    assertEquals(label, Commands.label(context, Commands.KEYBOARD_PREFIX))
+  }
+
+  @Test
   fun gestureCommandsKeepTheirKeyboardAction() {
     val next = Commands.find(context, context.getString(R.string.shortcut_value_next))
     assertEquals(TalkBackPhysicalKeyboardShortcut.NAVIGATE_NEXT_DEFAULT, next?.keyboardAction)

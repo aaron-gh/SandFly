@@ -100,6 +100,10 @@ object Commands {
     if (value == null || !value.startsWith(KEYBOARD_PREFIX)) {
       return null
     }
+    // Open keyboard shortcuts settings had no key of its own before, so it was saved as the prefix.
+    if (value == KEYBOARD_PREFIX) {
+      return Key.OPEN_MANAGE_KEYBOARD_SHORTCUTS
+    }
     val action =
       TalkBackPhysicalKeyboardShortcut.getActionFromKey(
         context.resources,
@@ -1129,6 +1133,7 @@ object Commands {
         gesture(R.string.shortcut_value_verbosity_settings, R.string.title_pref_selector_verbosity)
         gesture(R.string.shortcut_value_turn_off_sandfly, R.string.turn_off_talkback)
         keyboard(Key.OPEN_TALKBACK_SETTINGS)
+        keyboard(Key.OPEN_MANAGE_KEYBOARD_SHORTCUTS)
         gesture(R.string.shortcut_value_tutorial, R.string.shortcut_tutorial, Key.SHOW_TUTORIAL)
         gesture(
           R.string.shortcut_value_practice_gestures,

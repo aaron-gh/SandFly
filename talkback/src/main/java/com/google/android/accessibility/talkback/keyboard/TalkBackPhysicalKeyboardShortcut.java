@@ -301,8 +301,8 @@ public enum TalkBackPhysicalKeyboardShortcut {
       R.string.keycombo_menu_granularity_decrease),
   OPEN_MANAGE_KEYBOARD_SHORTCUTS(
       /* KeyboardShortcut.KEYBOARD_SHORTCUT_OPEN_MANAGE_KEYBOARD_SHORTCUTS */ 66,
-      -1 /* ?? */,
-      R.string.gesture_name_unknown), // Deprecated
+      R.string.keycombo_shortcut_open_manage_keyboard_shortcuts,
+      R.string.keycombo_menu_other_open_keyboard_shortcuts),
   OPEN_TALKBACK_SETTINGS(
       /* KeyboardShortcut.KEYBOARD_SHORTCUT_OPEN_TALKBACK_SETTINGS */ 67,
       R.string.keycombo_shortcut_other_open_talkback_settings,
