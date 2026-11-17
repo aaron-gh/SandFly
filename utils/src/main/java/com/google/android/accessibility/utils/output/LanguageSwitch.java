@@ -63,10 +63,14 @@ public final class LanguageSwitch {
     }
   }
 
-  /** Sets the language the speech engine speaks unmarked text in. */
+  /**
+   * Sets the language the speech engine speaks unmarked text in, with two-letter codes where it has
+   * them, as an engine can give "eng" for English.
+   */
   static void setVoiceLanguage(Locale language) {
-    boolean changed = !language.equals(voiceLanguage);
-    voiceLanguage = language;
+    Locale normalized = LanguageVoices.normalized(language);
+    boolean changed = !normalized.equals(voiceLanguage);
+    voiceLanguage = normalized;
     if (changed) {
       EmojiSpeech.onLanguageChanged();
     }
