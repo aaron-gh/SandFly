@@ -875,9 +875,10 @@ object MacroRunner {
 
   /**
    * Returns whether [node] is of [kind]. For Clickable and Long-clickable, an item above it within
-   * a few levels counts too, as the text of a button is often an item in it.
+   * a few levels counts too, as the text of a button is often an item in it. Inspect focused item
+   * lists the kinds of an item with this.
    */
-  private fun isKind(node: AccessibilityNodeInfo, kind: Macros.Kind): Boolean =
+  internal fun isKind(node: AccessibilityNodeInfo, kind: Macros.Kind): Boolean =
     when (kind) {
       Macros.Kind.CLICKABLE -> nodeOrParent(node) { it.isClickable }
       Macros.Kind.LONG_CLICKABLE -> nodeOrParent(node) { it.isLongClickable }
