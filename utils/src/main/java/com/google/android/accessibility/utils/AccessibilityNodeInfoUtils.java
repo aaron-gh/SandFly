@@ -1024,6 +1024,25 @@ public class AccessibilityNodeInfoUtils {
       return accessibilityFocusable;
     }
 
+    if (focusTextInsideItems) {
+      if (!accessibilityFocusable) {
+        if ((hasText(node) || hasStateDescription(node)) && !hasScriptGroupAncestor(node)) {
+          logShouldFocusNode(
+              checkChildren, NONE, "Focus, has text and text inside items is separate: ", node);
+          return true;
+        }
+      } else if (node.getChildCount() > 0
+          && !hasOwnContentOrActions(node)
+          && hasSeparateTextInside(node, new HashSet<>(), 0)) {
+        logShouldFocusNode(
+            checkChildren,
+            FOCUS_FAIL_NOT_SPEAKABLE,
+            "Don't focus, the text inside it is focused separately: ",
+            node);
+        return false;
+      }
+    }
+
     // A node that is deemed accessibility focusable shouldn't actually get focus if it has
     // nothing to speak. For example, a view may be focusable, but if it has no text and all of
     // its children are clickable, focus should go on each child individually and not on this
@@ -1080,6 +1099,106 @@ public class AccessibilityNodeInfoUtils {
         "Don't focus, failed all focusability tests: ",
         node);
     return false;
+  }
+
+  private static volatile boolean focusTextInsideItems;
+
+  /**
+   * Sets whether text and states inside a focusable item get focus of their own, so that each can
+   * be reached by swiping and touch exploration. The item itself then keeps focus only when it has
+   * text, a state or actions of its own; activating its text activates it.
+   */
+  public static void setFocusTextInsideItems(boolean enabled) {
+    focusTextInsideItems = enabled;
+  }
+
+  public static boolean focusesTextInsideItems() {
+    return focusTextInsideItems;
+  }
+
+  /** Bounds the descent through text-less wrappers while looking for text inside an item. */
+  private static final int MAX_TEXT_INSIDE_DEPTH = 16;
+
+  /** Actions that a focused child reaches through its item: activation, focus and scrolling. */
+  private static final ImmutableSet<Integer> ACTIONS_REACHED_FROM_INSIDE =
+      ImmutableSet.of(
+          AccessibilityNodeInfoCompat.ACTION_FOCUS,
+          AccessibilityNodeInfoCompat.ACTION_CLEAR_FOCUS,
+          AccessibilityNodeInfoCompat.ACTION_SELECT,
+          AccessibilityNodeInfoCompat.ACTION_CLEAR_SELECTION,
+          AccessibilityNodeInfoCompat.ACTION_CLICK,
+          AccessibilityNodeInfoCompat.ACTION_LONG_CLICK,
+          AccessibilityNodeInfoCompat.ACTION_ACCESSIBILITY_FOCUS,
+          AccessibilityNodeInfoCompat.ACTION_CLEAR_ACCESSIBILITY_FOCUS,
+          AccessibilityNodeInfoCompat.ACTION_SCROLL_FORWARD,
+          AccessibilityNodeInfoCompat.ACTION_SCROLL_BACKWARD,
+          AccessibilityActionCompat.ACTION_SHOW_ON_SCREEN.getId(),
+          AccessibilityActionCompat.ACTION_SCROLL_UP.getId(),
+          AccessibilityActionCompat.ACTION_SCROLL_DOWN.getId(),
+          AccessibilityActionCompat.ACTION_SCROLL_LEFT.getId(),
+          AccessibilityActionCompat.ACTION_SCROLL_RIGHT.getId(),
+          AccessibilityActionCompat.ACTION_SHOW_TOOLTIP.getId(),
+          AccessibilityActionCompat.ACTION_HIDE_TOOLTIP.getId());
+
+  /**
+   * Whether an item keeps focus while the text inside it is focused separately: it has text or a
+   * state of its own, is editable, or has actions, such as custom actions, that its text doesn't
+   * reach.
+   */
+  private static boolean hasOwnContentOrActions(AccessibilityNodeInfoCompat node) {
+    if (hasText(node) || hasStateDescription(node) || node.isEditable()) {
+      return true;
+    }
+    List<AccessibilityActionCompat> actions = node.getActionList();
+    if (actions != null) {
+      for (AccessibilityActionCompat action : actions) {
+        if (!ACTIONS_REACHED_FROM_INSIDE.contains(action.getId())) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+
+  /**
+   * Whether a visible node with text or a state sits inside {@code node} without another focus
+   * stop between them, so that it is focused separately when text inside items is.
+   */
+  private static boolean hasSeparateTextInside(
+      AccessibilityNodeInfoCompat node, Set<AccessibilityNodeInfoCompat> visited, int depth) {
+    if (depth >= MAX_TEXT_INSIDE_DEPTH) {
+      return false;
+    }
+    for (int i = 0, count = node.getChildCount(); i < count; i++) {
+      AccessibilityNodeInfoCompat child = node.getChild(i);
+      if (child == null
+          || !visited.add(child)
+          || !isVisible(child)
+          || isFocusableOrClickable(child)
+          || NodeOverrides.hidden(child)
+          || WebInterfaceUtils.supportsWebActions(child)) {
+        continue;
+      }
+      if (hasText(child) || hasStateDescription(child)) {
+        return true;
+      }
+      if (hasSeparateTextInside(child, visited, depth + 1)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  /** Whether a script groups an ancestor of {@code node}, which then speaks it as one item. */
+  private static boolean hasScriptGroupAncestor(AccessibilityNodeInfoCompat node) {
+    return hasMatchingAncestor(
+        node,
+        new Filter<AccessibilityNodeInfoCompat>() {
+          @Override
+          public boolean accept(AccessibilityNodeInfoCompat ancestor) {
+            return NodeOverrides.grouped(ancestor);
+          }
+        });
   }
 
   /** A clickable focus target whose only child is an unimportant, non-interactive drawing. */

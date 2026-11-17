@@ -3853,6 +3853,8 @@
   <string name="title_pref_scroll_ahead">Scroll ahead to the next item</string>
   <!-- Switch on the Navigation screen: when on, a swipe that has to scroll a list focuses and speaks the next item as soon as it comes on screen, while the list still scrolls. [CHAR_LIMIT=NONE] -->
   <string name="title_pref_speak_while_scrolling">Speak the next item while scrolling</string>
+  <!-- Switch on the Navigation screen: when on, swiping and touch exploration focus each text and state inside an item, such as a list row or a button, as a separate item instead of the whole item at once. Activating one of them activates the item. [CHAR_LIMIT=NONE] -->
+  <string name="title_pref_focus_text_inside_items">Focus text inside items separately</string>
   <!--
   Source: Title for the sound and vibration.
   Description: The user can set sound and vibration. [CHAR_LIMIT=NONE]
