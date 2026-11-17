@@ -1309,6 +1309,11 @@ public class FocusProcessorForLogicalNavigation {
       @Nullable EventId eventId) {
     if (navigationAction.targetType == NavigationTarget.TARGET_WINDOW) {
       return navigateToWindowTarget(pivot, navigationAction, eventId);
+    } else if (isWindowNavigationSupported
+        && navigationAction.targetType != NavigationTarget.TARGET_SEARCH
+        && TraversalStrategyUtils.isLogicalDirection(navigationAction.searchDirection)
+        && pictureInPictureOf(pivot) != null) {
+      return leavePictureInPicture(pivot, navigationAction, eventId);
     } else if (NavigationTarget.supportsTableNavigation(navigationAction.targetType)) {
       return navigateToTableTarget(pivot, navigationAction, eventId);
     } else if (NavigationTarget.isWebOnlyTarget(navigationAction.targetType)
@@ -3198,6 +3203,43 @@ public class FocusProcessorForLogicalNavigation {
   }
 
   /**
+   * The picture-in-picture window that {@code node} is in, or whose menu it is in; null when
+   * neither.
+   */
+  private @Nullable AccessibilityWindowInfo pictureInPictureOf(AccessibilityNodeInfoCompat node) {
+    @Nullable AccessibilityWindowInfo window = AccessibilityNodeInfoUtils.getWindow(node.unwrap());
+    if (window == null) {
+      return null;
+    }
+    if (AccessibilityWindowInfoUtils.isPictureInPicture(window)) {
+      return window;
+    }
+    if (AccessibilityWindowInfoUtils.getType(window) != AccessibilityWindowInfo.TYPE_SYSTEM) {
+      return null;
+    }
+    return PictureInPictureItem.pipWindowFor(
+        AccessibilityServiceCompatUtils.getWindows(service), window.getId());
+  }
+
+  /**
+   * Moves from the picture-in-picture item, or from a control in it that touch focused, to the
+   * window before or after it: the window and its menu are one item.
+   */
+  private boolean leavePictureInPicture(
+      AccessibilityNodeInfoCompat pivot, NavigationAction navigationAction, EventId eventId) {
+    NavigationResult result = findTargetAcrossWindows(pivot, navigationAction, eventId);
+    if (result.shouldSkipNavigation()) {
+      return result.isFocusAvailable();
+    }
+    @Nullable AccessibilityNodeInfoCompat target = result.getNode();
+    if (target == null) {
+      LogUtils.d(TAG, "No window to move to from picture-in-picture");
+      return false;
+    }
+    return setAccessibilityFocusInternal(target, navigationAction, eventId);
+  }
+
+  /**
    * Finds the target node in the next or previous window, and the target window is determined by
    * {@code DirectionalNavigationWindowFilter}.
    *
@@ -3207,12 +3249,25 @@ public class FocusProcessorForLogicalNavigation {
       AccessibilityNodeInfoCompat pivot, NavigationAction navigationAction, EventId eventId) {
     WindowTraversal windowTraversal = new WindowTraversal(service);
     boolean isScreenRtl = WindowUtils.isScreenLayoutRTL(service);
+    List<AccessibilityWindowInfo> windows = AccessibilityServiceCompatUtils.getWindows(service);
+    // The picture-in-picture menu and other windows over a picture-in-picture window are part of
+    // its one item.
     DirectionalNavigationWindowFilter windowFilter =
-        new DirectionalNavigationWindowFilter(service, searchState);
+        new DirectionalNavigationWindowFilter(
+            service, searchState, PictureInPictureItem.overlayWindowIds(windows));
     int searchDirection = navigationAction.searchDirection;
     int logicalDirection = TraversalStrategyUtils.getLogicalDirection(searchDirection, isScreenRtl);
     @Nullable AccessibilityWindowInfo currentWindow =
         AccessibilityNodeInfoUtils.getWindow(pivot.unwrap());
+    if (currentWindow != null
+        && AccessibilityWindowInfoUtils.getType(currentWindow)
+            == AccessibilityWindowInfo.TYPE_SYSTEM) {
+      @Nullable AccessibilityWindowInfo pip =
+          PictureInPictureItem.pipWindowFor(windows, currentWindow.getId());
+      if (pip != null) {
+        currentWindow = pip;
+      }
+    }
 
     if (currentWindow == null) {
       // Ideally currentWindow should never be null. Do the null check in case of exception.
@@ -3606,6 +3661,16 @@ public class FocusProcessorForLogicalNavigation {
           && anchorNode != null
           && Role.getRole(anchorNode) == Role.ROLE_EDIT_TEXT
           && !currentFocus.equals(anchorNode)) {
+        continue;
+      }
+
+      // A picture-in-picture window is one item, its root, unless focus is already in it.
+      if (AccessibilityWindowInfoUtils.isPictureInPicture(targetWindow)) {
+        @Nullable AccessibilityNodeInfoCompat pipRoot =
+            AccessibilityWindowInfoUtils.getRootCompat(targetWindow);
+        if (pipRoot != null && nodeFilter.accept(pipRoot)) {
+          return pipRoot;
+        }
         continue;
       }
 
@@ -8399,15 +8464,20 @@ public class FocusProcessorForLogicalNavigation {
   private static class DirectionalNavigationWindowFilter extends Filter<AccessibilityWindowInfo> {
     final Context context;
     final UniversalSearchActor.State searchState;
+    final Set<Integer> pictureInPictureOverlayIds;
 
-    DirectionalNavigationWindowFilter(Context context, UniversalSearchActor.State searchState) {
+    DirectionalNavigationWindowFilter(
+        Context context,
+        UniversalSearchActor.State searchState,
+        Set<Integer> pictureInPictureOverlayIds) {
       this.context = context;
       this.searchState = searchState;
+      this.pictureInPictureOverlayIds = pictureInPictureOverlayIds;
     }
 
     @Override
     public boolean accept(AccessibilityWindowInfo window) {
-      if (window == null) {
+      if (window == null || pictureInPictureOverlayIds.contains(window.getId())) {
         return false;
       }
       int type = AccessibilityWindowInfoUtils.getType(window);

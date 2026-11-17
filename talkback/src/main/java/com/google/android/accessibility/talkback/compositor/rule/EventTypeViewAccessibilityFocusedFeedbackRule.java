@@ -31,6 +31,7 @@ import android.view.accessibility.AccessibilityWindowInfo;
 import androidx.annotation.VisibleForTesting;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.talkback.R;
+import com.google.android.accessibility.talkback.focusmanagement.PictureInPictureItem;
 import com.google.android.accessibility.talkback.screenelements.ScreenElements;
 import com.google.android.accessibility.talkback.compositor.AccessibilityEventFeedbackUtils;
 import com.google.android.accessibility.talkback.compositor.AccessibilityFocusEventInterpretation;
@@ -433,7 +434,11 @@ public final class EventTypeViewAccessibilityFocusedFeedbackRule {
           .append(String.format(", windowType=%s", windowType))
           .append(String.format(", currentWindowTitle=%s", currentWindowTitle));
 
-      if (windowType == WINDOW_TYPE_PICTURE_IN_PICTURE) {
+      if (windowType == WINDOW_TYPE_PICTURE_IN_PICTURE && PictureInPictureItem.isItem(node)) {
+        // The item's own label names the window.
+        logString.append(", picture-in-picture item");
+        windowTransitionState = "";
+      } else if (windowType == WINDOW_TYPE_PICTURE_IN_PICTURE) {
         logString.append(", hasWindowTransition for PIP window");
         windowTransitionState =
             context.getString(R.string.template_overlay_window, currentWindowTitle);

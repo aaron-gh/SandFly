@@ -41,6 +41,7 @@ import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.applauncher.AppNameSearch;
 import com.google.android.accessibility.talkback.applauncher.HomeScreenApps;
 import com.google.android.accessibility.talkback.focusmanagement.HomeScreenPages;
+import com.google.android.accessibility.talkback.focusmanagement.PictureInPictureItem;
 import com.google.android.accessibility.talkback.gesture.OpenAppActions;
 import com.google.android.accessibility.talkback.overview.RecentTasks;
 import com.google.android.accessibility.talkback.scripting.ScriptItemAction;
@@ -59,6 +60,7 @@ public class CustomActionMenu implements NodeMenu {
   public static final int CUSTOM_ACTION_GROUP_ID = 1;
   private static final int SCRIPT_ACTION_ID = 0x5c000000;
   private static final int OPEN_IN_SPLIT_ACTION_ID = 0x5bffffff;
+  private static final int PIP_CONTROL_ACTION_ID = 0x5b000000;
   private static final String TAG = "CustomActionMenu";
   private final Pipeline.FeedbackReturner pipeline;
   TalkBackAnalytics analytics;
@@ -70,7 +72,9 @@ public class CustomActionMenu implements NodeMenu {
 
   @Override
   public boolean accept(Context context, AccessibilityNodeInfoCompat node) {
-    return acceptCustomActionMenu(node) || !Scripts.itemActions(node).isEmpty();
+    return acceptCustomActionMenu(node)
+        || !Scripts.itemActions(node).isEmpty()
+        || PictureInPictureItem.isItem(node);
   }
 
   private static boolean acceptCustomActionMenu(AccessibilityNodeInfoCompat node) {
@@ -89,6 +93,7 @@ public class CustomActionMenu implements NodeMenu {
       populateCustomMenuItemsForNode(context, node, customItems, includeAncestors, visitedNodes);
     }
     addOpenInSplitItem(context, node, customItems);
+    addPictureInPictureControls(context, node, customItems);
     addScriptItems(context, scriptActions, /* first= */ false, customItems);
     return customItems;
   }
@@ -122,6 +127,39 @@ public class CustomActionMenu implements NodeMenu {
     item.setSkipRefocusEvents(true);
     item.setCheckable(false);
     menu.add(item);
+  }
+
+  /**
+   * Adds the controls of a picture-in-picture window and of its menu to the window's item, which
+   * swipes focus as one item.
+   */
+  private void addPictureInPictureControls(
+      Context context, AccessibilityNodeInfoCompat node, List<ContextMenuItem> menu) {
+    TalkBackService service = TalkBackService.getInstance();
+    if (service == null || !PictureInPictureItem.isItem(node)) {
+      return;
+    }
+    List<PictureInPictureItem.Control> controls = PictureInPictureItem.controls(service, node);
+    for (int i = 0; i < controls.size(); i++) {
+      PictureInPictureItem.Control control = controls.get(i);
+      ContextMenuItem item =
+          ContextMenu.createMenuItem(
+              context,
+              CUSTOM_ACTION_GROUP_ID,
+              PIP_CONTROL_ACTION_ID + i,
+              Menu.NONE,
+              control.getLabel());
+      item.setOnMenuItemClickListener(
+          clicked ->
+              pipeline.returnFeedback(
+                  EVENT_ID_UNTRACKED,
+                  Feedback.nodeAction(control.getNode(), AccessibilityNodeInfoCompat.ACTION_CLICK)
+                      .vibration(R.array.view_clicked_pattern)));
+      item.setDeferredType(DeferredType.WINDOWS_STABLE);
+      item.setSkipRefocusEvents(true);
+      item.setCheckable(false);
+      menu.add(item);
+    }
   }
 
   /**
