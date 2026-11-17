@@ -705,7 +705,9 @@ public class GestureController {
     } else if (ReadingControlLists.isCommand(action)) {
       List<String> controls =
           ReadingControlLists.controls(
-              SharedPreferencesUtils.getSharedPreferences(service), ReadingControlLists.idOf(action));
+              service,
+              SharedPreferencesUtils.getSharedPreferences(service),
+              ReadingControlLists.idOf(action));
       result =
           controls != null
               && selectorController.selectInReadingControlList(

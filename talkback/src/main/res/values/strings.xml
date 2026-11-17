@@ -2223,6 +2223,8 @@
     <string name="reading_control_list_new_name">List <xliff:g id="number" example="1">%1$d</xliff:g></string>
     <!-- Shown when a reading control list already has the name. [CHAR_LIMIT=NONE] -->
     <string name="reading_control_list_name_taken"><xliff:g id="name" example="Speech">%1$s</xliff:g> is already in use</string>
+    <!-- Heading above the reading controls that are not in a reading control list. name is the list's name. [CHAR_LIMIT=NONE] -->
+    <string name="item_list_not_in_reading_control_list">Not in <xliff:g id="name" example="Speech">%1$s</xliff:g></string>
     <!-- Command that selects the next reading control of a list. [CHAR_LIMIT=NONE] -->
     <string name="shortcut_next_in_reading_control_list">Next item in <xliff:g id="name" example="Speech">%1$s</xliff:g></string>
     <!-- Command that selects the previous reading control of a list. [CHAR_LIMIT=NONE] -->

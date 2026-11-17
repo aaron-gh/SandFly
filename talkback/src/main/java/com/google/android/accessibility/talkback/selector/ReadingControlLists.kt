@@ -19,6 +19,7 @@ package com.google.android.accessibility.talkback.selector
 import android.content.Context
 import android.content.SharedPreferences
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.talkback.preference.ItemOrder
 import java.util.UUID
 import org.json.JSONArray
 import org.json.JSONException
@@ -28,7 +29,7 @@ import org.json.JSONObject
  * Reading controls > Reading control lists: named lists of reading controls, apart from the main
  * list. Each list has its own Next item and Previous item commands, which select a control as the
  * current reading control. Each control is named by its preference key on the Reading controls
- * screen.
+ * screen. The commands go through a list's controls in its own order.
  */
 object ReadingControlLists {
   private const val KEY = "pref_reading_control_lists"
@@ -39,8 +40,17 @@ object ReadingControlLists {
   private const val NEXT = ":NEXT"
   private const val PREVIOUS = ":PREVIOUS"
 
-  /** A list: its name and the preference keys of its reading controls. */
-  data class ControlList(val id: String, val name: String, val controls: List<String>)
+  /**
+   * A list: its name and the preference keys of its reading controls. A list saved before lists had
+   * their own order is not [ordered]: its controls go in the order of the main list until the list
+   * is opened in settings.
+   */
+  data class ControlList(
+    val id: String,
+    val name: String,
+    val controls: List<String>,
+    val ordered: Boolean = true,
+  )
 
   @JvmStatic fun newId(): String = UUID.randomUUID().toString()
 
@@ -73,10 +83,40 @@ object ReadingControlLists {
       name,
     )
 
-  /** The preference keys of the reading controls in the list [id], or null without that list. */
+  /**
+   * The preference keys of the reading controls in the list [id], in the list's order, or null
+   * without that list.
+   */
   @JvmStatic
-  fun controls(prefs: SharedPreferences, id: String): List<String>? =
-    read(prefs).firstOrNull { it.id == id }?.controls
+  fun controls(context: Context, prefs: SharedPreferences, id: String): List<String>? {
+    val list = read(prefs).firstOrNull { it.id == id } ?: return null
+    return if (list.ordered) list.controls else inMainOrder(context, prefs, list).controls
+  }
+
+  /** [list] with its controls in the order of the main list, the order lists had before their own. */
+  @JvmStatic
+  fun inMainOrder(context: Context, prefs: SharedPreferences, list: ControlList): ControlList =
+    inOrder(
+      list,
+      ItemOrder.ordered(
+        prefs,
+        ItemOrder.READING_CONTROLS_KEY,
+        SelectorController.defaultOrderKeys(context),
+      ),
+    )
+
+  /** [list] with its controls in the order of [order], the keys of every control, as ordered. */
+  internal fun inOrder(list: ControlList, order: List<String>): ControlList {
+    val index = order.withIndex().associate { it.value to it.index }
+    return list.copy(controls = list.controls.sortedBy { index[it] ?: Int.MAX_VALUE }, ordered = true)
+  }
+
+  /** [controls] with the one at [from] moved to [to], or null when either is not in it. */
+  @JvmStatic
+  fun moved(controls: List<String>, from: Int, to: Int): List<String>? {
+    if (from !in controls.indices || to !in controls.indices) return null
+    return controls.toMutableList().apply { add(to, removeAt(from)) }
+  }
 
   @JvmStatic fun read(prefs: SharedPreferences): List<ControlList> = fromJson(prefs.getString(KEY, null))
 
@@ -123,6 +163,7 @@ object ReadingControlLists {
               .put("id", list.id)
               .put("name", list.name)
               .put("controls", JSONArray(list.controls))
+              .put("ordered", list.ordered)
           )
         }
       }
@@ -139,6 +180,7 @@ object ReadingControlLists {
           item.getString("id"),
           item.getString("name"),
           (0 until controls.length()).map { controls.getString(it) },
+          item.optBoolean("ordered", false),
         )
       }
     } catch (e: JSONException) {
