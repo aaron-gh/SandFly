@@ -395,4 +395,8 @@
     <string name="macro_do_camera_photo">Photo</string>
     <!-- Choice of an Open camera step. [CHAR LIMIT=40] -->
     <string name="macro_do_camera_video">Video</string>
+    <!-- A Set timer step with no label. %1$s is seconds. [CHAR LIMIT=NONE] -->
+    <string name="macro_do_set_timer_short">Set timer: %1$s s</string>
+    <!-- A Set alarm step with no label. %1$s is the time. [CHAR LIMIT=NONE] -->
+    <string name="macro_do_set_alarm_short">Set alarm: %1$s</string>
 </resources>

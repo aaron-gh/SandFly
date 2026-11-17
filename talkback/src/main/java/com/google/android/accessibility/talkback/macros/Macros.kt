@@ -786,10 +786,27 @@ object Macros {
       DoKind.VIBRATE -> context.getString(R.string.macro_do_vibrate_value, step.number)
       DoKind.PLAY_TONE -> context.getString(R.string.macro_do_play_tone_value, step.number)
       DoKind.SET_VOLUME -> context.getString(R.string.macro_do_set_volume_value, step.name, step.number)
-      DoKind.DEVICE_CONTROL -> context.getString(R.string.macro_do_device_control_value, step.name, step.text)
-      DoKind.SET_TIMER -> context.getString(R.string.macro_do_set_timer_value, secondsText(step.number * 1000L), step.text)
-      DoKind.SET_ALARM ->
-        context.getString(R.string.macro_do_set_alarm_value, "%02d:%02d".format(step.number / 60, step.number % 60), step.text)
+      DoKind.DEVICE_CONTROL -> {
+        val control = DeviceActions.CONTROLS[step.name]
+        val value =
+          when (step.text) {
+            "on" -> context.getString(R.string.macro_do_turn_on)
+            "off" -> context.getString(R.string.macro_do_turn_off)
+            "toggle" -> context.getString(R.string.macro_do_toggle)
+            else -> step.text
+          }
+        context.getString(R.string.macro_do_device_control_value, control?.let { context.getString(it.title) } ?: step.name, value)
+      }
+      DoKind.SET_TIMER -> {
+        val seconds = secondsText(step.number * 1000L)
+        if (step.text.isBlank()) context.getString(R.string.macro_do_set_timer_short, seconds)
+        else context.getString(R.string.macro_do_set_timer_value, seconds, step.text)
+      }
+      DoKind.SET_ALARM -> {
+        val time = "%02d:%02d".format(step.number / 60, step.number % 60)
+        if (step.text.isBlank()) context.getString(R.string.macro_do_set_alarm_short, time)
+        else context.getString(R.string.macro_do_set_alarm_value, time, step.text)
+      }
       DoKind.SEND_MESSAGE -> context.getString(R.string.macro_do_send_message_value, step.name, step.text)
       DoKind.SET_VALUE, DoKind.FETCH, DoKind.TRANSLATE ->
         context.getString(R.string.macro_do_into_value, context.getString(step.kind.title), step.text, step.name)
