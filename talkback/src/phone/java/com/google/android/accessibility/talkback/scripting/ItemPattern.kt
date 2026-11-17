@@ -134,6 +134,29 @@ object ItemPattern {
     else JSONObject().put("matches", pattern.regex).put("field", field)
   }
 
+  /** The texts in [item] a read part can take, each with its path of child numbers from 1. */
+  fun readChoices(item: JSONObject): List<Pair<List<Int>, String>> =
+    inners(item).mapNotNull { inner -> label(inner.json)?.let { inner.path.map { it + 1 } to it } }
+
+  /** What a rule's read [parts] make of [item], as SandFly would say them, or null. */
+  fun readText(item: JSONObject, parts: JSONArray?): String? {
+    val texts =
+      parts.objectList().mapNotNull { part ->
+        val path = part.optJSONArray("path")
+        val from = part.opt("from")
+        val target =
+          when {
+            path != null -> at(item, (0 until path.length()).map { path.optInt(it) - 1 })
+            from is JSONObject && from.length() == 0 -> item
+            from is JSONObject -> (listOf(item) + inners(item).map { it.json }).firstOrNull { matches(from, it) }
+            else -> null
+          }
+        val text = target?.let { if (it === item) label(it) else label(it) ?: inners(it).firstNotNullOfOrNull { inner -> label(inner.json) } }
+        text?.let { listOfNotNull(part.optString("before").trim().ifEmpty { null }, it).joinToString(" ") }
+      }
+    return texts.joinToString(", ").ifEmpty { null }
+  }
+
   /** How many of the inspected item and the items like it [query] names. */
   fun count(query: JSONObject?, sample: JSONObject?): Int {
     val item = item(sample) ?: return 0

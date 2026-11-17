@@ -132,3 +132,57 @@ class RuleButtonsTest {
     assertEquals(listOf("Share"), rule.skipButtons)
   }
 }
+
+@RunWith(RobolectricTestRunner::class)
+@Config(sdk = [35])
+class ReadPartsTest {
+  private fun node(description: String? = null, text: String? = null) =
+    AccessibilityNodeInfo.obtain().apply {
+      contentDescription = description
+      this.text = text
+      isVisibleToUser = true
+    }
+
+  private fun message(sender: String?, body: String, quote: String?): AccessibilityNodeInfo {
+    val row = node()
+    shadowOf(row).addChild(node(text = sender ?: ""))
+    shadowOf(row).addChild(node(text = body))
+    shadowOf(row).addChild(node(text = quote ?: ""))
+    return row
+  }
+
+  private val parts =
+    listOf(
+      ReadPart(path = listOf(1), fromAbove = true),
+      ReadPart(path = listOf(2)),
+      ReadPart(path = listOf(3), before = "in reply to"),
+    )
+
+  @Test
+  fun compose_takesPartsInOrder_withTextBefore_andTheSenderFromAbove() {
+    val list = node()
+    shadowOf(list).addChild(message("Alex", "Are you coming?", null))
+    shadowOf(list).addChild(message(null, "Running late", "Are you coming?"))
+    val second = AccessibilityNodeInfoCompat.wrap(list.getChild(1))
+    assertEquals("Alex, Running late, in reply to Are you coming?", ScriptReadParts.compose(second, parts))
+  }
+
+  @Test
+  fun readParts_parseFromAManifest_andPreviewOnASample() {
+    val json =
+      JSONArray()
+        .put(JSONObject().put("path", JSONArray().put(1)).put("fromAbove", true))
+        .put(JSONObject().put("path", JSONArray().put(2)))
+        .put(JSONObject().put("from", JSONArray()).put("before", "row"))
+    val rule = ManifestParser(strict = true).rule(JSONObject().put("match", JSONObject().put("id", "row")).put("read", json))
+    assertEquals(3, rule.read.size)
+    assertEquals(listOf(1), rule.read[0].path)
+    val item =
+      JSONObject()
+        .put("description", "Message")
+        .put("children", JSONArray().put(JSONObject().put("text", "Alex")).put(JSONObject().put("text", "Hi")))
+    json.getJSONObject(2).put("from", JSONObject())
+    assertEquals("Alex, Hi, row Message", ItemPattern.readText(item, json))
+    assertEquals(listOf(listOf(1) to "Alex", listOf(2) to "Hi"), ItemPattern.readChoices(item))
+  }
+}

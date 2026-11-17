@@ -508,4 +508,21 @@
     <string name="script_builder_skip_buttons">Buttons to leave out</string>
     <!-- Script builder: hint of the Buttons to leave out field. -->
     <string name="script_builder_skip_buttons_hint">Texts, separated by commas</string>
+    <!-- Script builder: screen and row that set what is read for a rule's item, in parts taken from it. -->
+    <string name="script_builder_read">Arrange what is read</string>
+    <!-- Script builder: how many parts are read for a rule's item. -->
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">%1$d part</item>
+        <item quantity="other">%1$d parts</item>
+    </plurals>
+    <!-- Script builder: adds a part to what is read for a rule's item. -->
+    <string name="script_builder_read_add">Add a part</string>
+    <!-- Script builder: a part of what is read that is the item's own description or text. -->
+    <string name="script_builder_read_own">The item\'s own text</string>
+    <!-- Script builder: a part of what is read taken from a place in the item. %1$s: child numbers, such as 2.1. -->
+    <string name="script_builder_read_place">Item %1$s in it</string>
+    <!-- Script builder: text said before a part, such as "in reply to". -->
+    <string name="script_builder_read_text_before">Text before it</string>
+    <!-- Script builder: an empty part is taken from the nearest item above in the same list, such as a message's sender. -->
+    <string name="script_builder_read_above">If empty, use the item above</string>
 </resources>

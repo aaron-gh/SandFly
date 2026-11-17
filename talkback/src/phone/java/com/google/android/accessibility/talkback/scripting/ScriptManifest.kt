@@ -86,6 +86,19 @@ enum class Hide {
   ALL,
 }
 
+/**
+ * A part of what is read for a rule's item: the text of the item at [path], child numbers from 1,
+ * counting the shown items in reading order, down from the rule's item, or else the first item [from] finds in it (an empty query is the
+ * item's own text), with [before] said first. With [fromAbove], an empty part is taken from the
+ * nearest of the items above in the same list that has it, such as the sender of a chat message.
+ */
+data class ReadPart(
+  val from: NodeQuery? = null,
+  val path: List<Int>? = null,
+  val before: String? = null,
+  val fromAbove: Boolean = false,
+)
+
 data class ScriptRule(
   val id: String? = null,
   val match: NodeQuery? = null,
@@ -118,6 +131,8 @@ data class ScriptRule(
   val buttonActions: Boolean = false,
   /** Texts of buttons left out of [buttonActions]: a button whose name contains one is skipped. */
   val skipButtons: List<String> = emptyList(),
+  /** What is read for the item instead of what it says: parts taken from it, in order. */
+  val read: List<ReadPart> = emptyList(),
 ) {
   val target: String
     get() = id ?: match.toString()
@@ -137,6 +152,7 @@ data class ScriptRule(
           longPressAfter,
         )
         .any { it != null } ||
+        read.isNotEmpty() ||
         hide != Hide.NONE ||
         silence != Hide.NONE ||
         group ||

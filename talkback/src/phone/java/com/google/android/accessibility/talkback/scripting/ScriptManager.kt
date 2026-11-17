@@ -150,13 +150,14 @@ class ScriptManager(
     if (rule?.hide == true) {
       return ""
     }
+    val said = rules.readParts(node)?.let { ScriptReadParts.compose(node, it) } ?: rule?.speak
     if (!speechHooks.hasListeners("focus")) {
-      return rule?.speak
+      return said
     }
     @Suppress("DEPRECATION") val copy = AccessibilityNodeInfoCompat.obtain(node)
-    return speechHooks.rewrite("focus", (rule?.speak ?: speech).toString()) {
+    return speechHooks.rewrite("focus", (said ?: speech).toString()) {
       it.snapshotIfAllowed(copy)
-    } ?: rule?.speak
+    } ?: said
   }
 
   override fun rewriteEventSpeech(event: AccessibilityEvent, speech: CharSequence): CharSequence? {

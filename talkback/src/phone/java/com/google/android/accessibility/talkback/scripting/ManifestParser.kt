@@ -117,6 +117,7 @@ class ManifestParser(private val strict: Boolean) {
         touchToActivate = json.optBoolean("touchToActivate", false),
         buttonActions = json.optBoolean("buttonActions", false),
         skipButtons = json.optJSONArray("skipButtons").strings().take(MAX_SKIP_BUTTONS),
+        read = json.optJSONArray("read").objects("read part", MAX_READ_PARTS).map(::readPart),
       )
     with(rule) {
       manifestCheck(id != null || match != null) { "A rule needs id or match" }
@@ -127,7 +128,7 @@ class ManifestParser(private val strict: Boolean) {
       manifestCheck(changesItem || actions.isNotEmpty() || buttonActions) {
         "The rule for $target needs label, speak, hide, silence, role, state, hint, heading, " +
           "group, readBefore, readAfter, activate, liftToActivate, longPressAfter, " +
-          "touchToActivate, actions or buttonActions"
+          "touchToActivate, read, actions or buttonActions"
       }
     }
     return rule
@@ -276,6 +277,38 @@ class ManifestParser(private val strict: Boolean) {
         RuleItemAction(title, verb, requiredTarget(value.get("textOf")), first = first)
       else -> manifestError("The action $title speaks text or { textOf: item }")
     }
+  }
+
+  /** A part of what is read for a rule's item: { from = query } or { path = { 2, 1 } }, before, fromAbove. */
+  private fun readPart(json: JSONObject): ReadPart {
+    json.allowOnly(setOf("from", "path", "before", "fromAbove"), "read part")
+    val path =
+      json.optJSONArray("path")?.let { list ->
+        manifestCheck(list.length() in 1..MAX_PATH) { "A read part's path has 1 to $MAX_PATH child numbers" }
+        (0 until list.length()).map { i ->
+          val number = list.opt(i) as? Number
+          manifestCheck(number != null && number.toDouble() == number.toInt().toDouble() && number.toInt() >= 1) {
+            "A read part's path is child numbers from 1"
+          }
+          number!!.toInt()
+        }
+      }
+    val from =
+      when (val value = json.opt("from")) {
+        null, JSONObject.NULL -> null
+        // The item's own text. Lua reads an empty table as an empty list.
+        is JSONObject if value.length() == 0 -> NodeQuery()
+        is JSONArray if value.length() == 0 -> NodeQuery()
+        else -> requiredTarget(value)
+      }
+    manifestCheck((path == null) != (from == null)) { "A read part has path or from" }
+    val fromAbove =
+      when (val flag = json.opt("fromAbove")) {
+        null, JSONObject.NULL -> false
+        is Boolean -> flag
+        else -> manifestError("fromAbove in a read part is true or false")
+      }
+    return ReadPart(from, path, json.optionalString("before"), fromAbove)
   }
 
   /**
@@ -442,6 +475,8 @@ class ManifestParser(private val strict: Boolean) {
     const val MAX_RULE_ACTIONS = 10
     private const val MAX_ACTION_STEPS = 10
     private const val MAX_SKIP_BUTTONS = 20
+    private const val MAX_READ_PARTS = 12
+    private const val MAX_PATH = 12
     private const val MAX_STEP_ALTERNATIVES = 6
     const val MAX_COMMANDS = 50
     const val MAX_NAVIGATION = 20
@@ -474,6 +509,7 @@ class ManifestParser(private val strict: Boolean) {
         "touchToActivate",
         "buttonActions",
         "skipButtons",
+        "read",
       )
   }
 }

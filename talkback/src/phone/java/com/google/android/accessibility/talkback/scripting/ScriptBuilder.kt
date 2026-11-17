@@ -674,6 +674,7 @@ end
     setOf(
       "label", "speak", "hide", "silence", "role", "state", "hint", "heading", "group",
       "readBefore", "readAfter", "activate", "liftToActivate", "longPressAfter", "touchToActivate",
+      "read",
     )
 
   /** The kinds of rule action, each the key that holds what it acts on. */

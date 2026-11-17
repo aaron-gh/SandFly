@@ -864,6 +864,18 @@ class ScriptRuleFragment : ScriptBuilderBaseFragment() {
       open(ScriptSpeechChangeFragment::class.java) { putInt(ScriptSpeechChangeFragment.ARG_INDEX, speechIndex) }
     }
 
+    val parts = rule.optJSONArray("read").objects()
+    val readSummary =
+      when {
+        parts.isEmpty() -> notSet()
+        sample != null -> ItemPattern.item(sample)?.let { ItemPattern.readText(it, rule.optJSONArray("read")) }
+          ?: resources.getQuantityString(R.plurals.script_builder_read_parts, parts.size, parts.size)
+        else -> resources.getQuantityString(R.plurals.script_builder_read_parts, parts.size, parts.size)
+      }
+    changes.action(getString(R.string.script_builder_read), readSummary) {
+      open(ScriptReadFragment::class.java) { putInt(ScriptReadFragment.ARG_INDEX, index) }
+    }
+
     val actions = screen.category(R.string.script_builder_actions)
     rule.optJSONArray("actions").objects().forEachIndexed { actionIndex, action ->
       actions.action(action.optString("title"), actionText(context, action)) { editAction(actionIndex) }
@@ -1408,6 +1420,106 @@ fun likeCountText(context: Context, query: JSONObject?, sample: JSONObject?): St
 }
 
 /** The item a rule, action or reading control names: the tests an item must pass. */
+/**
+ * What is read for a rule's item, in parts taken from it: each from a place in the item, an item
+ * found in it, or its own text, with a text before it, and taken from the item above when empty.
+ */
+class ScriptReadFragment : ScriptBuilderBaseFragment() {
+  private val index: Int by lazy { requireArguments().getInt(ARG_INDEX) }
+
+  private fun rule(): JSONObject? = draft()?.optJSONArray("rules")?.optJSONObject(index)
+
+  private fun editParts(change: (JSONArray) -> Unit) = edit { draft ->
+    val rule = draft.getJSONArray("rules").getJSONObject(index)
+    val parts = rule.getOrPutArray("read")
+    change(parts)
+    if (parts.length() == 0) rule.remove("read")
+  }
+
+  override fun getTitle(): CharSequence = getText(R.string.script_builder_read)
+
+  override fun build(screen: PreferenceGroup) {
+    val rule = rule() ?: return
+    val context = requireContext()
+    val sample =
+      ItemInspector.lastSample(context)?.takeIf { sample ->
+        rule.optJSONObject("match")?.let { match -> ItemPattern.item(sample)?.let { ItemPattern.tellsItem(match, it) } } == true
+      }
+    val item = ItemPattern.item(sample)
+    item?.let { ItemPattern.readText(it, rule.optJSONArray("read")) }?.let {
+      screen.action(it) {}.isSelectable = false
+    }
+    val parts = rule.optJSONArray("read").objects()
+    parts.forEachIndexed { i, part ->
+      val value = item?.let { ItemPattern.readText(it, JSONArray().put(JSONObject(part.toString()).apply { remove("before") })) }
+      screen.action(partTitle(context, part), value) { editPart(i, part) }
+    }
+    screen.action(getString(R.string.script_builder_read_add)) { addPart(item) }
+  }
+
+  private fun partTitle(context: Context, part: JSONObject): String {
+    val path = part.optJSONArray("path")
+    val from = part.optJSONObject("from")
+    val source =
+      when {
+        path != null -> getString(R.string.script_builder_read_place, (0 until path.length()).joinToString(".") { path.optInt(it).toString() })
+        from != null && from.length() == 0 -> getString(R.string.script_builder_read_own)
+        else -> ScriptBuilderFragment.describeQuery(context, from)
+      }
+    return listOfNotNull(part.optString("before").ifEmpty { null }, source).joinToString(" ")
+  }
+
+  /** Adds a part: one of the inspected item's texts by its place, its own text, or an item found in it. */
+  private fun addPart(item: JSONObject?) {
+    val choices = item?.let(ItemPattern::readChoices).orEmpty()
+    val names =
+      listOf(getString(R.string.script_builder_read_own)) + choices.map { it.second } + getString(R.string.script_builder_item)
+    choose(getString(R.string.script_builder_read_add), names) { which ->
+      when {
+        which == 0 -> editParts { it.put(JSONObject().put("from", JSONObject())) }
+        which <= choices.size -> editParts { it.put(JSONObject().put("path", JSONArray(choices[which - 1].first))) }
+        else -> {
+          editParts { it.put(JSONObject().put("from", JSONObject())) }
+          val at = rule()?.optJSONArray("read")?.length()?.minus(1) ?: return@choose
+          // An empty item to fill in, in place of the item's own text.
+          edit { draft -> Paths.put(draft, listOf("rules", index, "read", at, "from"), JSONObject()) }
+          openQuery(listOf("rules", index, "read", at, "from"))
+        }
+      }
+    }
+  }
+
+  private fun editPart(i: Int, part: JSONObject) {
+    val yes = getString(R.string.script_builder_yes)
+    val no = getString(R.string.script_builder_no)
+    val options =
+      listOf(
+        getString(R.string.script_builder_read_text_before),
+        getString(R.string.script_builder_state_choice, getString(R.string.script_builder_read_above), if (part.optBoolean("fromAbove")) yes else no),
+        getString(R.string.action_move_up),
+        getString(R.string.action_move_down),
+        getString(R.string.script_builder_remove),
+      ) + listOfNotNull(part.optJSONObject("from")?.takeIf { it.length() > 0 }?.let { getString(R.string.script_builder_item) })
+    choose(partTitle(requireContext(), part), options) { which ->
+      when (which) {
+        0 ->
+          askOptional(getString(R.string.script_builder_read_text_before), part.optString("before").ifEmpty { null }) { text ->
+            editParts { it.getJSONObject(i).putOrRemove("before", text) }
+          }
+        1 -> editParts { it.getJSONObject(i).putOrRemove("fromAbove", if (part.optBoolean("fromAbove")) null else true) }
+        2 -> editParts { move(it, i, -1) }
+        3 -> editParts { move(it, i, 1) }
+        4 -> editParts { it.removeAt(i) }
+        else -> openQuery(listOf("rules", index, "read", i, "from"))
+      }
+    }
+  }
+
+  companion object {
+    const val ARG_INDEX = "rule_index"
+  }
+}
+
 class ScriptQueryFragment : ScriptBuilderBaseFragment() {
   private val path: List<Any> by lazy { Paths.decode(requireArguments().getString(ARG_PATH).orEmpty()) }
 
