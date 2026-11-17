@@ -17,10 +17,13 @@
 package com.google.android.accessibility.talkback.directtouch
 
 import android.accessibilityservice.AccessibilityService
+import android.content.pm.ActivityInfo
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
 import android.graphics.Rect
+import android.graphics.RectF
+import android.os.Binder
 import android.os.Bundle
 import android.os.Looper
 import android.os.SystemClock
@@ -118,6 +121,14 @@ class DirectTouchControllerTest {
       return super.getApplicationInfo(packageName, flags)
     }
 
+    @Implementation
+    override fun getPackageInfo(packageName: String, flags: Int): PackageInfo? {
+      if (flags and PackageManager.GET_META_DATA != 0) {
+        manifestRequests++
+      }
+      return super.getPackageInfo(packageName, flags)
+    }
+
     companion object {
       var manifestRequests = 0
     }
@@ -129,6 +140,8 @@ class DirectTouchControllerTest {
   private lateinit var controller: DirectTouchController
   private val prefs = FakeSharedPreferences()
   private val transcript = mutableListOf<String>()
+  // Manifests that tests give apps, in place of reading them.
+  private val declared = HashMap<String, DirectTouchApp>()
 
   @Before
   fun setUp() {
@@ -144,8 +157,16 @@ class DirectTouchControllerTest {
           true
         },
         interpreter,
-      )
+      ) { pkg ->
+        declared[pkg]
+          ?: DirectTouchCapability.read(
+            service.packageManager,
+            pkg,
+            DirectTouchController.permissionName(service),
+          )
+      }
     interpreter.addListener(controller)
+    DirectTouchRequests.clear()
     installApp(GAME_PACKAGE, asksForDirectTouch = false)
     installApp(GAME2_PACKAGE, asksForDirectTouch = true)
     RootsShadow.rootRequests = 0
@@ -227,6 +248,86 @@ class DirectTouchControllerTest {
     assertEquals(1, ManifestsShadow.manifestRequests)
   }
 
+  @Test
+  fun appThatManagesDirectTouchGetsOnlyTheAreasItAsksFor() {
+    declared[GAME_PACKAGE] = DirectTouchApp(true, null, managesDirectTouch = true)
+
+    windowsChange(GAME, WINDOWS_CHANGE_ADDED, statusBar(), navigationBar(), game())
+    // Turned on by its manifest, but it hasn't said where yet.
+    assertTranscript()
+
+    request(DirectTouchTarget.Areas(screenAreas = listOf(Rect(0, 0, 1080, 1170))))
+    // The status bar stays with SandFly.
+    assertTranscript("region [0,80][1080,1170] complex=false", "say \"Direct touch on\"")
+
+    transcript.clear()
+    request(DirectTouchTarget.Screen)
+    request(DirectTouchTarget.None)
+    assertTranscript(
+      "region [0,80][1080,2220] complex=false",
+      "region none",
+      "say \"Direct touch off\"",
+    )
+  }
+
+  @Test
+  fun stopOverridesTheUsersChoiceUntilTheAppAsksAgain() {
+    DirectTouchSettings.setAppEnabled(prefs, GAME_PACKAGE, true)
+    windowsChange(GAME, WINDOWS_CHANGE_ADDED, statusBar(), navigationBar(), game())
+    transcript.clear()
+
+    request(DirectTouchTarget.None)
+    assertTranscript("region none", "say \"Direct touch off\"")
+
+    transcript.clear()
+    request(null)
+    assertTranscript("region [0,80][1080,2220] complex=false", "say \"Direct touch on\"")
+  }
+
+  @Test
+  fun requestsCountOnlyForAppsTurnedOn() {
+    declared[GAME_PACKAGE] = DirectTouchApp(false, null, managesDirectTouch = true)
+    windowsChange(GAME, WINDOWS_CHANGE_ADDED, statusBar(), navigationBar(), game())
+
+    request(DirectTouchTarget.Screen)
+
+    assertTranscript()
+  }
+
+  @Test
+  fun declarationFollowsTheActivityAndTheState() {
+    installApp(GAME_PACKAGE, asksForDirectTouch = false, activities = listOf(GAME_ACTIVITY))
+    declared[GAME_PACKAGE] =
+      DirectTouchApp(
+        true,
+        DirectTouchDeclaration(
+          listOf(
+            DirectTouchRule(GAME_ACTIVITY, null, screen = false, windowArea = RectF(0f, 0.5f, 1f, 1f)),
+            DirectTouchRule(null, "playing", screen = true),
+          )
+        ),
+        managesDirectTouch = true,
+      )
+
+    windowsChange(GAME, WINDOWS_CHANGE_ADDED, statusBar(), navigationBar(), game())
+    // A dialog's window state change names a class that isn't an activity.
+    windowStateChange(GAME_PACKAGE, "android.app.AlertDialog")
+    windowStateChange(GAME_PACKAGE, "com.example.game.Board")
+    assertTranscript()
+
+    windowStateChange(GAME_PACKAGE, GAME_ACTIVITY)
+    // The bottom half of the window, without the navigation bar.
+    assertTranscript("region [0,1170][1080,2220] complex=false", "say \"Direct touch on\"")
+
+    transcript.clear()
+    setState("playing")
+    setState(null)
+    assertTranscript(
+      "region [0,80][1080,2220] complex=false",
+      "region [0,1170][1080,2220] complex=false",
+    )
+  }
+
   // Screens
 
   private fun statusBar() =
@@ -269,9 +370,22 @@ class DirectTouchControllerTest {
     return window
   }
 
-  private fun installApp(packageName: String, asksForDirectTouch: Boolean) {
+  private fun installApp(
+    packageName: String,
+    asksForDirectTouch: Boolean,
+    activities: List<String> = emptyList(),
+  ) {
     val info = PackageInfo()
     info.packageName = packageName
+    info.activities =
+      activities
+        .map {
+          ActivityInfo().apply {
+            name = it
+            this.packageName = packageName
+          }
+        }
+        .toTypedArray()
     info.applicationInfo =
       ApplicationInfo().apply {
         this.packageName = packageName
@@ -282,7 +396,30 @@ class DirectTouchControllerTest {
     shadowOf(service.packageManager).installPackage(info)
   }
 
+  // Requests
+
+  private val client = Binder()
+
+  private fun request(target: DirectTouchTarget?) {
+    DirectTouchRequests.setRequest(GAME_UID, listOf(GAME_PACKAGE), client, target)
+    shadowOf(Looper.getMainLooper()).idleFor(Duration.ofSeconds(1))
+  }
+
+  private fun setState(state: String?) {
+    DirectTouchRequests.setState(GAME_UID, listOf(GAME_PACKAGE), client, state)
+    shadowOf(Looper.getMainLooper()).idleFor(Duration.ofSeconds(1))
+  }
+
   // Events
+
+  /** An app reports that [className] came to the front, and things settle. */
+  private fun windowStateChange(packageName: String, className: String) {
+    val event = AccessibilityEvent(AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED)
+    event.packageName = packageName
+    event.className = className
+    controller.onAccessibilityEvent(event)
+    shadowOf(Looper.getMainLooper()).idleFor(Duration.ofSeconds(1))
+  }
 
   /** The windows change to [windows], Android reports it, and things settle for a second. */
   private fun windowsChange(windowId: Int, changes: Int, vararg windows: AccessibilityWindowInfo) {
@@ -334,6 +471,8 @@ class DirectTouchControllerTest {
     const val GAME = 10
     const val GAME2 = 11
     const val GAME_PACKAGE = "com.example.game"
+    const val GAME_ACTIVITY = "com.example.game.GameActivity"
+    const val GAME_UID = 10123
     const val GAME2_PACKAGE = "com.example.game2"
     const val SYSTEM_UI = "com.android.systemui"
     const val SYSTEM = AccessibilityWindowInfo.TYPE_SYSTEM

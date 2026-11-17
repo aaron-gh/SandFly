@@ -18,7 +18,13 @@ package com.google.android.accessibility.talkback.directtouch
 
 import android.accessibilityservice.AccessibilityService
 import android.annotation.SuppressLint
+import android.content.BroadcastReceiver
+import android.content.ComponentName
+import android.content.Context
+import android.content.Intent
+import android.content.IntentFilter
 import android.content.SharedPreferences
+import android.content.pm.PackageManager
 import android.graphics.Rect
 import android.graphics.Region
 import android.media.AudioAttributes
@@ -31,6 +37,7 @@ import android.view.WindowManager
 import android.view.accessibility.AccessibilityEvent
 import android.view.accessibility.AccessibilityNodeInfo
 import android.view.accessibility.AccessibilityWindowInfo
+import androidx.core.content.ContextCompat
 import com.google.android.accessibility.talkback.Feedback
 import com.google.android.accessibility.talkback.Feedback.PassThroughMode.Action.DIRECT_TOUCH_REGION
 import com.google.android.accessibility.talkback.Pipeline
@@ -50,6 +57,7 @@ import com.google.android.accessibility.utils.output.SpeechController.QUEUE_MODE
 import com.google.android.accessibility.utils.output.SpeechController.QUEUE_MODE_UNINTERRUPTIBLE_BY_NEW_SPEECH_CAN_IGNORE_INTERRUPTS
 import com.google.android.accessibility.utils.output.SpeechController.SpeakOptions
 import com.google.android.accessibility.utils.output.ThemeVibrations
+import kotlin.math.roundToInt
 
 /**
  * Gives games direct touch. While an app the user turned on is in front, touches go straight to it.
@@ -59,16 +67,26 @@ import com.google.android.accessibility.utils.output.ThemeVibrations
  * is on for the app. A keyboard that is itself in the list, such as a self-voicing braille keyboard,
  * takes touches directly in every app, whether or not direct touch is on.
  *
- * Everything comes from Backtalk's own window, screen and display monitors, so there is no tree
- * scan. Turning direct touch off takes effect at once. Turning it on waits [DEBOUNCE_MS] so that a
- * burst of window changes settles first. All callbacks arrive on the main thread.
+ * An app can also choose where it gets direct touch: in its manifest, by activity and by a state
+ * it sets, and while it runs through [DirectTouchService]. See docs/direct-touch-api.md. Areas that
+ * follow views are looked up again when the app's content changes.
+ *
+ * Everything else comes from Backtalk's own window, screen and display monitors, so there is no
+ * tree scan. Turning direct touch off takes effect at once. Turning it on waits [DEBOUNCE_MS] so
+ * that a burst of window changes settles first. All callbacks arrive on the main thread.
  */
-class DirectTouchController(
+class DirectTouchController
+@JvmOverloads
+constructor(
   private val service: AccessibilityService,
   private val prefs: SharedPreferences,
   private val feedback: Pipeline.FeedbackReturner,
   /** Keeps the package of each window's root, which every look at the screen needs. */
   private val windowEventInterpreter: WindowEventInterpreter,
+  /** Reads what an app's manifest says about direct touch. */
+  private val readApp: (String) -> DirectTouchApp = { pkg ->
+    DirectTouchCapability.read(service.packageManager, pkg, permissionName(service))
+  },
 ) :
   WindowEventInterpreter.WindowEventHandler,
   RingerModeAndScreenMonitor.ScreenChangedListener,
@@ -92,6 +110,32 @@ class DirectTouchController(
   // False while the direct touch command changes the settings, as the command speaks the result.
   private var speakChanges = true
 
+  // What each app's manifest says, read once per app until it is updated.
+  private val apps = HashMap<String, DirectTouchApp>()
+  // The activity in front of each app with a declaration that names activities.
+  private val activityByPackage = HashMap<String, String>()
+  // Whether "package/class" is an activity of the package, as the package manager says.
+  private val knownActivities = HashMap<String, Boolean>()
+  // The app whose areas follow views, so that its content changes move them.
+  private var viewsPackage: String? = null
+  private var viewRecheckPosted = false
+  private val viewRecheck = Runnable {
+    viewRecheckPosted = false
+    evaluate()
+  }
+  private val requestsChanged = Runnable { evaluate() }
+
+  private val packageReceiver =
+    object : BroadcastReceiver() {
+      override fun onReceive(context: Context, intent: Intent) {
+        val pkg = intent.data?.schemeSpecificPart ?: return
+        apps.remove(pkg)
+        activityByPackage.remove(pkg)
+        knownActivities.keys.removeAll { it.startsWith("$pkg/") }
+        scheduleEvaluate()
+      }
+    }
+
   /** Runs on the main thread when [takesTouchesDirectly] changes. */
   var onTouchesDirectChanged: Runnable? = null
 
@@ -113,6 +157,21 @@ class DirectTouchController(
   init {
     DirectTouchSettings.migrateNavBarSetting(prefs)
     prefs.registerOnSharedPreferenceChangeListener(prefsListener)
+    DirectTouchRequests.onChanged = requestsChanged
+    val filter =
+      IntentFilter().apply {
+        addAction(Intent.ACTION_PACKAGE_ADDED)
+        addAction(Intent.ACTION_PACKAGE_REPLACED)
+        addAction(Intent.ACTION_PACKAGE_CHANGED)
+        addAction(Intent.ACTION_PACKAGE_REMOVED)
+        addDataScheme("package")
+      }
+    ContextCompat.registerReceiver(
+      service,
+      packageReceiver,
+      filter,
+      ContextCompat.RECEIVER_NOT_EXPORTED,
+    )
   }
 
   override fun handle(interpretation: EventInterpretation, eventId: EventId?) {
@@ -134,8 +193,15 @@ class DirectTouchController(
     if (!FeatureSupport.supportPassthrough()) {
       return
     }
-    if (event.eventType == AccessibilityEvent.TYPE_VIEW_CLICKED) {
-      speakNavBarButton(event)
+    when (event.eventType) {
+      AccessibilityEvent.TYPE_VIEW_CLICKED -> speakNavBarButton(event)
+      AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED -> noteActivity(event)
+      AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED,
+      AccessibilityEvent.TYPE_VIEW_SCROLLED -> {
+        if (viewsPackage != null && event.packageName?.toString() == viewsPackage) {
+          scheduleViewRecheck()
+        }
+      }
     }
     if (DirectTouchRegions.reassertsRegion(event.eventType)) {
       // Look again once things settle, like the original did after every window change. The active
@@ -273,8 +339,15 @@ class DirectTouchController(
   fun shutdown() {
     onTouchesDirectChanged = null
     prefs.unregisterOnSharedPreferenceChangeListener(prefsListener)
+    if (DirectTouchRequests.onChanged === requestsChanged) {
+      DirectTouchRequests.onChanged = null
+    }
+    try {
+      service.unregisterReceiver(packageReceiver)
+    } catch (_: IllegalArgumentException) {}
     handler.removeCallbacks(reevaluate)
     handler.removeCallbacks(recheck)
+    handler.removeCallbacks(viewRecheck)
     if (active || partRegionSent) {
       active = false
       partRegionSent = false
@@ -302,14 +375,27 @@ class DirectTouchController(
       textFieldFocused = service.findFocus(AccessibilityNodeInfo.FOCUS_INPUT)?.isEditable == true
     }
     val windows = service.windows.orEmpty()
-    val mainPackage = windows.firstOrNull { it.id == mainWindowId }?.let { rootPackage(it) }
+    val mainWindow = windows.firstOrNull { it.id == mainWindowId }
+    val mainPackage = mainWindow?.let { rootPackage(it) }
     val directTyping = mainPackage != null && DirectTouchSettings.isDirectTyping(prefs, mainPackage)
-    val shouldBeActive = mainPackage != null && shouldBeActive(windows, mainPackage)
+    val target =
+      if (mainWindow != null && mainPackage != null) target(windows, mainPackage)
+      else DirectTouchTarget.None
+    viewsPackage =
+      mainPackage.takeIf { target is DirectTouchTarget.Areas && target.viewIds.isNotEmpty() }
     val navBarDirect = isNavBarDirect()
     val keyboards = directKeyboards(windows)
-    if (shouldBeActive) {
+    val region =
+      when (target) {
+        DirectTouchTarget.None -> null
+        DirectTouchTarget.Screen -> screenRegion(windows, directTyping, navBarDirect, keyboards)
+        is DirectTouchTarget.Areas ->
+          areasRegion(windows, mainWindow!!, target, directTyping, navBarDirect, keyboards)
+      }
+    val shouldBeActive = region != null
+    if (region != null) {
       partRegionSent = false
-      applyRegion(windows, directTyping, navBarDirect, keyboards)
+      sendRegion(region)
     }
     if (shouldBeActive != active) {
       active = shouldBeActive
@@ -456,18 +542,20 @@ class DirectTouchController(
   private fun isSystemUiWindow(window: AccessibilityWindowInfo): Boolean =
     window.type == AccessibilityWindowInfo.TYPE_SYSTEM && rootPackage(window) == SYSTEM_UI
 
-  private fun shouldBeActive(
-    windows: List<AccessibilityWindowInfo>,
-    mainPackage: String,
-  ): Boolean {
+  /**
+   * Where the app in front gets direct touch: nowhere while the policy says no, else where the app
+   * last asked for it, else where its manifest declares it in this activity and state. An app that
+   * manages its own direct touch gets none until it says where, and any other app gets the whole
+   * screen.
+   */
+  private fun target(windows: List<AccessibilityWindowInfo>, mainPackage: String): DirectTouchTarget {
     // Off means off: not even the package manager lookups for apps seen for the first time.
     if (mainPackage in IGNORED_PACKAGES || !DirectTouchSettings.isMasterEnabled(prefs)) {
-      return false
+      return DirectTouchTarget.None
     }
-    // Only the first sight of an app uses its manifest, which the package manager has to read.
+    // The manifest is read the first time an app is seen, and then only while the app is turned on.
     if (!DirectTouchSettings.isSeen(prefs, mainPackage)) {
-      val capable = DirectTouchCapability.declaresDirectTouch(service.packageManager, mainPackage)
-      DirectTouchSettings.onFirstSight(prefs, mainPackage, capable)
+      DirectTouchSettings.onFirstSight(prefs, mainPackage, app(mainPackage).asksForDirectTouch)
     }
     // A dialog is a window of its own, so any other application window is either a dialog from the
     // same app or another app.
@@ -483,7 +571,66 @@ class DirectTouchController(
         foreignAppWindow = { otherApplicationWindows.any { rootPackage(it) != mainPackage } },
         systemUiCoversHalf = { systemUiCoversHalf(windows) },
       )
-    return DirectTouchPolicy.shouldBeActive(input)
+    if (!DirectTouchPolicy.shouldBeActive(input)) {
+      return DirectTouchTarget.None
+    }
+    val app = app(mainPackage)
+    return DirectTouchRequests.request(mainPackage)
+      ?: app.declaration?.target(
+        activityByPackage[mainPackage],
+        DirectTouchRequests.state(mainPackage),
+      )
+      ?: if (app.managesDirectTouch) DirectTouchTarget.None else DirectTouchTarget.Screen
+  }
+
+  private fun app(pkg: String): DirectTouchApp = apps.getOrPut(pkg) { readApp(pkg) }
+
+  /**
+   * Keeps the activity in front of an app whose declaration names activities, from the window
+   * state change it sends as the activity opens. Dialogs, menus and other views send them too,
+   * with their own class, so only the app's activities count. Apps not seen yet are looked at too,
+   * as they may be turned on by their manifest a moment later.
+   */
+  private fun noteActivity(event: AccessibilityEvent) {
+    val pkg = event.packageName?.toString() ?: return
+    val className = event.className?.toString() ?: return
+    if (
+      className.startsWith("android.") ||
+        pkg in IGNORED_PACKAGES ||
+        pkg == service.packageName ||
+        !DirectTouchSettings.isMasterEnabled(prefs) ||
+        (DirectTouchSettings.isSeen(prefs, pkg) && !DirectTouchSettings.isAppEnabled(prefs, pkg))
+    ) {
+      return
+    }
+    if (app(pkg).declaration?.namesActivities == true && isActivity(pkg, className)) {
+      activityByPackage[pkg] = className
+    }
+  }
+
+  private fun isActivity(pkg: String, className: String): Boolean =
+    knownActivities.getOrPut("$pkg/$className") {
+      if (knownActivities.size >= MAX_KNOWN_ACTIVITIES) {
+        knownActivities.clear()
+      }
+      try {
+        @Suppress("DEPRECATION")
+        service.packageManager.getActivityInfo(
+          ComponentName(pkg, className),
+          PackageManager.MATCH_DISABLED_COMPONENTS,
+        )
+        true
+      } catch (_: PackageManager.NameNotFoundException) {
+        false
+      }
+    }
+
+  /** Looks again shortly after the app's content changes, at most every [VIEW_RECHECK_MS]. */
+  private fun scheduleViewRecheck() {
+    if (!viewRecheckPosted) {
+      viewRecheckPosted = true
+      handler.postDelayed(viewRecheck, VIEW_RECHECK_MS)
+    }
   }
 
   private fun systemUiCoversHalf(windows: List<AccessibilityWindowInfo>): Boolean {
@@ -497,12 +644,77 @@ class DirectTouchController(
     }
   }
 
-  private fun applyRegion(
+  private fun screenRegion(
     windows: List<AccessibilityWindowInfo>,
     directTyping: Boolean,
     navBarDirect: Boolean,
     keyboards: List<AccessibilityWindowInfo>,
-  ) {
+  ): Region =
+    DirectTouchRegions.passthroughRegion(
+      displayBounds(),
+      excludedBounds(windows, directTyping, navBarDirect, keyboards),
+    )
+
+  /**
+   * The app's areas within its window, without the windows that stay with SandFly, or null when
+   * none of them is on screen. The navigation bar and keyboards that take touches directly are
+   * added, as they are for the whole screen.
+   */
+  private fun areasRegion(
+    windows: List<AccessibilityWindowInfo>,
+    mainWindow: AccessibilityWindowInfo,
+    target: DirectTouchTarget.Areas,
+    directTyping: Boolean,
+    navBarDirect: Boolean,
+    keyboards: List<AccessibilityWindowInfo>,
+  ): Region? {
+    val window = boundsOf(mainWindow)
+    val areas =
+      target.screenAreas +
+        target.windowAreas.map {
+          Rect(
+            window.left + (it.left * window.width()).roundToInt(),
+            window.top + (it.top * window.height()).roundToInt(),
+            window.left + (it.right * window.width()).roundToInt(),
+            window.top + (it.bottom * window.height()).roundToInt(),
+          )
+        } +
+        viewBounds(mainWindow, target.viewIds)
+    val excluded = excludedBounds(windows, directTyping, navBarDirect, keyboards)
+    val region = DirectTouchRegions.areasRegion(window, areas, excluded) ?: return null
+    if (navBarDirect) {
+      navigationBarBounds(windows).forEach { region.op(it, Region.Op.UNION) }
+    }
+    windows.forEach {
+      if (
+        it in keyboards || (directTyping && it.type == AccessibilityWindowInfo.TYPE_INPUT_METHOD)
+      ) {
+        region.op(boundsOf(it), Region.Op.UNION)
+      }
+    }
+    return region
+  }
+
+  /** Where the views with [viewIds] are on screen, for those shown in [window]. */
+  private fun viewBounds(window: AccessibilityWindowInfo, viewIds: List<String>): List<Rect> {
+    if (viewIds.isEmpty()) {
+      return emptyList()
+    }
+    val root = window.root ?: return emptyList()
+    return viewIds.flatMap { id ->
+      root.findAccessibilityNodeInfosByViewId(id).orEmpty().mapNotNull { node ->
+        Rect().takeIf { node.isVisibleToUser }?.also(node::getBoundsInScreen)
+      }
+    }
+  }
+
+  /** The windows that keep touches when the app has direct touch. */
+  private fun excludedBounds(
+    windows: List<AccessibilityWindowInfo>,
+    directTyping: Boolean,
+    navBarDirect: Boolean,
+    keyboards: List<AccessibilityWindowInfo>,
+  ): List<Rect> {
     val display = displayBounds()
     val excluded = mutableListOf<Rect>()
     windows.forEach { window ->
@@ -526,7 +738,7 @@ class DirectTouchController(
         }
       }
     }
-    sendRegion(DirectTouchRegions.passthroughRegion(display, excluded))
+    return excluded
   }
 
   private fun clearRegion() = sendRegion(Region())
@@ -575,21 +787,28 @@ class DirectTouchController(
     vibrator.vibrate(VibrationEffect.createWaveform(pattern, -1), VIBRATION_ATTRIBUTES)
   }
 
-  private companion object {
-    const val DEBOUNCE_MS = 150L
+  companion object {
+    /** The permission an app holds to use [DirectTouchService]. */
+    @JvmStatic
+    fun permissionName(context: Context): String = "${context.packageName}.permission.DIRECT_TOUCH"
+
+    private const val DEBOUNCE_MS = 150L
+    // How often areas that follow views are looked up again while the app's content changes.
+    private const val VIEW_RECHECK_MS = 200L
+    private const val MAX_KNOWN_ACTIVITIES = 500
     // Longer than the gap between the two reports of one press, shorter than a second tap.
-    const val REPEAT_MS = 250L
-    const val SYSTEM_UI = "com.android.systemui"
+    private const val REPEAT_MS = 250L
+    private const val SYSTEM_UI = "com.android.systemui"
     // The names a sound theme replaces the on and off vibrations by.
-    const val THEME_ON = "direct_touch_on"
-    const val THEME_OFF = "direct_touch_off"
-    val ON_PATTERN = longArrayOf(0, 15, 100, 15)
-    val OFF_PATTERN = longArrayOf(0, 40)
-    val VIBRATION_ATTRIBUTES: AudioAttributes =
+    private const val THEME_ON = "direct_touch_on"
+    private const val THEME_OFF = "direct_touch_off"
+    private val ON_PATTERN = longArrayOf(0, 15, 100, 15)
+    private val OFF_PATTERN = longArrayOf(0, 40)
+    private val VIBRATION_ATTRIBUTES: AudioAttributes =
       AudioAttributes.Builder()
         .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
         .setUsage(AudioAttributes.USAGE_ASSISTANCE_ACCESSIBILITY)
         .build()
-    val IGNORED_PACKAGES = setOf(SYSTEM_UI, "android", "com.google.android.gms")
+    private val IGNORED_PACKAGES = setOf(SYSTEM_UI, "android", "com.google.android.gms")
   }
 }
