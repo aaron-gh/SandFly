@@ -348,7 +348,7 @@
     <!-- Choice of a Device setting step: on when it is off, off when it is on. [CHAR LIMIT=40] -->
     <string name="macro_do_toggle">Turn on or off</string>
     <!-- Message of the dialog for the value of a slider such as Brightness. [CHAR LIMIT=NONE] -->
-    <string name="macro_do_slider_help">A number, a percent such as 50%, or +1 or -1.</string>
+    <string name="macro_do_slider_help" formatted="false">A number, a percent such as 50%, or +1 or -1.</string>
     <!-- Message of the dialog for the value of a choice such as Sound mode. Keep next as it is. [CHAR LIMIT=NONE] -->
     <string name="macro_do_choice_help">An option, such as Vibrate, or next.</string>
     <!-- Macro step that presses a media key, such as play or pause, for the app that plays media. [CHAR LIMIT=40] -->

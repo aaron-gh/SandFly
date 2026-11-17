@@ -149,7 +149,6 @@
     <string name="macro_do_link_hint">முகவரி</string>
     <string name="macro_do_keys_hint">விசைகள், எ.கா. tab enter</string>
     <string name="macro_number_range">%1$d முதல் %2$d வரை உள்ளிடவும்</string>
-    <string name="macro_values_help">மதிப்புகளை {name} என உள்ளிடலாம். {item}, {clipboard}, {time}, {date} ஆகியவையும் உள்ளன.</string>
     <string name="macro_value_name">மதிப்பின் பெயர்</string>
     <string name="macro_value_name_invalid">எழுத்துகள், எண்கள், புள்ளிகள், கோடுகள் அல்லது அடிக்கோடுகளைப் பயன்படுத்தவும்</string>
     <string name="macro_test_value">மதிப்பு</string>
@@ -157,4 +156,36 @@
     <string name="macro_test_value_set">%1$s மதிப்பு அமைக்கப்பட்டுள்ளது</string>
     <string name="macro_test_value_value">%1$s மதிப்பில் %2$s உள்ளது</string>
     <string name="macro_test_not">அல்ல: %1$s</string>
+    <string name="macro_values_help">மதிப்புகளை {name} என உள்ளிடலாம். {item}, {clipboard}, {time}, {date}, {battery}, {device.wifi} ஆகியவையும் உள்ளன.</string>
+    <string name="macro_do_device_control">சாதன அமைப்பு</string>
+    <string name="macro_do_device_control_value">%1$s: %2$s</string>
+    <string name="macro_do_turn_on">ஆன் செய்</string>
+    <string name="macro_do_turn_off">ஆஃப் செய்</string>
+    <string name="macro_do_toggle">ஆன் அல்லது ஆஃப் செய்</string>
+    <string name="macro_do_slider_help" formatted="false">ஓர் எண், 50% போன்ற சதவீதம், அல்லது +1 அல்லது -1.</string>
+    <string name="macro_do_choice_help">அதிர்வு போன்ற ஒரு விருப்பம், அல்லது next.</string>
+    <string name="macro_do_media">மீடியா விசை</string>
+    <string name="macro_media_play_pause">இயக்கு அல்லது இடைநிறுத்து</string>
+    <string name="macro_media_play">இயக்கு</string>
+    <string name="macro_media_pause">இடைநிறுத்து</string>
+    <string name="macro_media_next">அடுத்து</string>
+    <string name="macro_media_previous">முந்தையது</string>
+    <string name="macro_media_stop">நிறுத்து</string>
+    <string name="macro_media_rewind">ரிவைண்ட்</string>
+    <string name="macro_media_fast_forward">ஃபாஸ்ட் ஃபார்வர்டு</string>
+    <string name="macro_do_set_timer">டைமரை அமை</string>
+    <string name="macro_do_set_timer_value">டைமரை அமை: %1$s s, %2$s</string>
+    <string name="macro_do_timer_seconds">வினாடிகள்</string>
+    <string name="macro_do_label">லேபிள் (விருப்பத்திற்குரியது)</string>
+    <string name="macro_do_set_alarm">அலாரத்தை அமை</string>
+    <string name="macro_do_set_alarm_value">அலாரத்தை அமை: %1$s, %2$s</string>
+    <string name="macro_do_call">அழை</string>
+    <string name="macro_do_number">தொலைபேசி எண்</string>
+    <string name="macro_do_send_message">செய்தி அனுப்பு</string>
+    <string name="macro_do_send_message_value">%1$s என்பதற்குச் செய்தி: %2$s</string>
+    <string name="macro_do_open_camera">கேமராவைத் திற</string>
+    <string name="macro_do_camera_photo">புகைப்படம்</string>
+    <string name="macro_do_camera_video">வீடியோ</string>
+    <string name="macro_do_set_timer_short">டைமரை அமை: %1$s s</string>
+    <string name="macro_do_set_alarm_short">அலாரத்தை அமை: %1$s</string>
 </resources>

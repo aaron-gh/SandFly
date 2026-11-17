@@ -149,7 +149,6 @@
     <string name="macro_do_link_hint">Adres</string>
     <string name="macro_do_keys_hint">Toetsen, zoals tab enter</string>
     <string name="macro_number_range">Voer %1$d tot %2$d in</string>
-    <string name="macro_values_help">Waarden voeg je in als {name}. Ook {item}, {clipboard}, {time} en {date}.</string>
     <string name="macro_value_name">Naam van waarde</string>
     <string name="macro_value_name_invalid">Gebruik letters, cijfers, punten, streepjes of underscores</string>
     <string name="macro_test_value">Waarde</string>
@@ -157,4 +156,36 @@
     <string name="macro_test_value_set">Waarde %1$s is ingesteld</string>
     <string name="macro_test_value_value">Waarde %1$s bevat %2$s</string>
     <string name="macro_test_not">Niet: %1$s</string>
+    <string name="macro_values_help">Waarden voeg je in als {name}. Ook {item}, {clipboard}, {time}, {date}, {battery} en {device.wifi}.</string>
+    <string name="macro_do_device_control">Apparaatinstelling</string>
+    <string name="macro_do_device_control_value">%1$s: %2$s</string>
+    <string name="macro_do_turn_on">Aanzetten</string>
+    <string name="macro_do_turn_off">Uitzetten</string>
+    <string name="macro_do_toggle">Aan- of uitzetten</string>
+    <string name="macro_do_slider_help" formatted="false">Een getal, een percentage zoals 50%, of +1 of -1.</string>
+    <string name="macro_do_choice_help">Een optie, zoals Trillen, of next.</string>
+    <string name="macro_do_media">Mediatoets</string>
+    <string name="macro_media_play_pause">Afspelen of onderbreken</string>
+    <string name="macro_media_play">Afspelen</string>
+    <string name="macro_media_pause">Onderbreken</string>
+    <string name="macro_media_next">Volgende</string>
+    <string name="macro_media_previous">Vorige</string>
+    <string name="macro_media_stop">Stoppen</string>
+    <string name="macro_media_rewind">Terugspoelen</string>
+    <string name="macro_media_fast_forward">Vooruitspoelen</string>
+    <string name="macro_do_set_timer">Timer instellen</string>
+    <string name="macro_do_set_timer_value">Timer instellen: %1$s s, %2$s</string>
+    <string name="macro_do_timer_seconds">Seconden</string>
+    <string name="macro_do_label">Label (optioneel)</string>
+    <string name="macro_do_set_alarm">Wekker instellen</string>
+    <string name="macro_do_set_alarm_value">Wekker instellen: %1$s, %2$s</string>
+    <string name="macro_do_call">Bellen</string>
+    <string name="macro_do_number">Telefoonnummer</string>
+    <string name="macro_do_send_message">Bericht sturen</string>
+    <string name="macro_do_send_message_value">Bericht naar %1$s: %2$s</string>
+    <string name="macro_do_open_camera">Camera openen</string>
+    <string name="macro_do_camera_photo">Foto</string>
+    <string name="macro_do_camera_video">Video</string>
+    <string name="macro_do_set_timer_short">Timer instellen: %1$s s</string>
+    <string name="macro_do_set_alarm_short">Wekker instellen: %1$s</string>
 </resources>

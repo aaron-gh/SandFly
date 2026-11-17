@@ -149,7 +149,6 @@
     <string name="macro_do_link_hint">Adresse</string>
     <string name="macro_do_keys_hint">Taster, f.eks. tab enter</string>
     <string name="macro_number_range">Angiv %1$d til %2$d</string>
-    <string name="macro_values_help">Værdier indsættes som {name}. Også {item}, {clipboard}, {time} og {date}.</string>
     <string name="macro_value_name">Værdinavn</string>
     <string name="macro_value_name_invalid">Brug bogstaver, cifre, punktummer, bindestreger eller understregninger</string>
     <string name="macro_test_value">Værdi</string>
@@ -157,4 +156,36 @@
     <string name="macro_test_value_set">Værdien %1$s er angivet</string>
     <string name="macro_test_value_value">Værdien %1$s indeholder %2$s</string>
     <string name="macro_test_not">Ikke: %1$s</string>
+    <string name="macro_values_help">Værdier indsættes som {name}. Også {item}, {clipboard}, {time}, {date}, {battery} og {device.wifi}.</string>
+    <string name="macro_do_device_control">Enhedsindstilling</string>
+    <string name="macro_do_device_control_value">%1$s: %2$s</string>
+    <string name="macro_do_turn_on">Aktivér</string>
+    <string name="macro_do_turn_off">Deaktiver</string>
+    <string name="macro_do_toggle">Aktivér eller deaktiver</string>
+    <string name="macro_do_slider_help" formatted="false">Et tal, en procentdel som 50% eller +1 eller -1.</string>
+    <string name="macro_do_choice_help">En valgmulighed, f.eks. Vibration, eller next.</string>
+    <string name="macro_do_media">Medietast</string>
+    <string name="macro_media_play_pause">Afspil eller sæt på pause</string>
+    <string name="macro_media_play">Afspil</string>
+    <string name="macro_media_pause">Sæt på pause</string>
+    <string name="macro_media_next">Næste</string>
+    <string name="macro_media_previous">Forrige</string>
+    <string name="macro_media_stop">Stop</string>
+    <string name="macro_media_rewind">Spol tilbage</string>
+    <string name="macro_media_fast_forward">Spol frem</string>
+    <string name="macro_do_set_timer">Indstil timer</string>
+    <string name="macro_do_set_timer_value">Indstil timer: %1$s s, %2$s</string>
+    <string name="macro_do_timer_seconds">Sekunder</string>
+    <string name="macro_do_label">Etiket (valgfrit)</string>
+    <string name="macro_do_set_alarm">Indstil alarm</string>
+    <string name="macro_do_set_alarm_value">Indstil alarm: %1$s, %2$s</string>
+    <string name="macro_do_call">Ring op</string>
+    <string name="macro_do_number">Telefonnummer</string>
+    <string name="macro_do_send_message">Send besked</string>
+    <string name="macro_do_send_message_value">Besked til %1$s: %2$s</string>
+    <string name="macro_do_open_camera">Åbn kamera</string>
+    <string name="macro_do_camera_photo">Foto</string>
+    <string name="macro_do_camera_video">Video</string>
+    <string name="macro_do_set_timer_short">Indstil timer: %1$s s</string>
+    <string name="macro_do_set_alarm_short">Indstil alarm: %1$s</string>
 </resources>

@@ -149,7 +149,6 @@
     <string name="macro_do_link_hint">آدرس</string>
     <string name="macro_do_keys_hint">کلیدها، مانند tab enter</string>
     <string name="macro_number_range">عددی از %1$d تا %2$d وارد کنید</string>
-    <string name="macro_values_help">مقدارها به‌صورت {name} وارد می‌شوند. همچنین {item}، {clipboard}، {time} و {date}.</string>
     <string name="macro_value_name">نام مقدار</string>
     <string name="macro_value_name_invalid">از حرف، رقم، نقطه، خط تیره یا زیرخط استفاده کنید</string>
     <string name="macro_test_value">مقدار</string>
@@ -157,4 +156,36 @@
     <string name="macro_test_value_set">مقدار %1$s تنظیم شده است</string>
     <string name="macro_test_value_value">مقدار %1$s شامل %2$s است</string>
     <string name="macro_test_not">نه: %1$s</string>
+    <string name="macro_values_help">مقدارها به‌صورت {name} وارد می‌شوند. همچنین {item}، {clipboard}، {time}، {date}، {battery} و {device.wifi}.</string>
+    <string name="macro_do_device_control">تنظیم دستگاه</string>
+    <string name="macro_do_device_control_value">%1$s: %2$s</string>
+    <string name="macro_do_turn_on">روشن کردن</string>
+    <string name="macro_do_turn_off">خاموش کردن</string>
+    <string name="macro_do_toggle">روشن یا خاموش کردن</string>
+    <string name="macro_do_slider_help" formatted="false">یک عدد، یک درصد مانند 50%، یا +1 یا -1.</string>
+    <string name="macro_do_choice_help">یک گزینه، مانند لرزش، یا next.</string>
+    <string name="macro_do_media">کلید رسانه</string>
+    <string name="macro_media_play_pause">پخش یا توقف موقت</string>
+    <string name="macro_media_play">پخش</string>
+    <string name="macro_media_pause">توقف موقت</string>
+    <string name="macro_media_next">بعدی</string>
+    <string name="macro_media_previous">قبلی</string>
+    <string name="macro_media_stop">توقف</string>
+    <string name="macro_media_rewind">عقب بردن</string>
+    <string name="macro_media_fast_forward">جلو بردن</string>
+    <string name="macro_do_set_timer">تنظیم تایمر</string>
+    <string name="macro_do_set_timer_value">تنظیم تایمر: %1$s s، %2$s</string>
+    <string name="macro_do_timer_seconds">ثانیه</string>
+    <string name="macro_do_label">برچسب (اختیاری)</string>
+    <string name="macro_do_set_alarm">تنظیم زنگ هشدار</string>
+    <string name="macro_do_set_alarm_value">تنظیم زنگ هشدار: %1$s، %2$s</string>
+    <string name="macro_do_call">تماس</string>
+    <string name="macro_do_number">شماره تلفن</string>
+    <string name="macro_do_send_message">ارسال پیام</string>
+    <string name="macro_do_send_message_value">پیام به %1$s: %2$s</string>
+    <string name="macro_do_open_camera">باز کردن دوربین</string>
+    <string name="macro_do_camera_photo">عکس</string>
+    <string name="macro_do_camera_video">ویدیو</string>
+    <string name="macro_do_set_timer_short">تنظیم تایمر: %1$s s</string>
+    <string name="macro_do_set_alarm_short">تنظیم زنگ هشدار: %1$s</string>
 </resources>

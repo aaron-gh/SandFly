@@ -149,7 +149,6 @@
     <string name="macro_do_link_hint">Дарек</string>
     <string name="macro_do_keys_hint">Баскычтар, мисалы tab enter</string>
     <string name="macro_number_range">%1$d – %2$d аралыгында киргизиңиз</string>
-    <string name="macro_values_help">Маанилер {name} катары коюлат. Ошондой эле {item}, {clipboard}, {time} жана {date}.</string>
     <string name="macro_value_name">Маанинин аталышы</string>
     <string name="macro_value_name_invalid">Тамгаларды, сандарды, чекиттерди, сызыкчаларды же астынкы сызыктарды колдонуңуз</string>
     <string name="macro_test_value">Маани</string>
@@ -157,4 +156,36 @@
     <string name="macro_test_value_set">%1$s мааниси коюлган</string>
     <string name="macro_test_value_value">%1$s мааниси %2$s камтыйт</string>
     <string name="macro_test_not">Эмес: %1$s</string>
+    <string name="macro_values_help">Маанилер {name} катары коюлат. Ошондой эле {item}, {clipboard}, {time}, {date}, {battery} жана {device.wifi}.</string>
+    <string name="macro_do_device_control">Түзмөктүн параметри</string>
+    <string name="macro_do_device_control_value">%1$s: %2$s</string>
+    <string name="macro_do_turn_on">Күйгүзүү</string>
+    <string name="macro_do_turn_off">Өчүрүү</string>
+    <string name="macro_do_toggle">Күйгүзүү же өчүрүү</string>
+    <string name="macro_do_slider_help" formatted="false">Сан, 50% сыяктуу пайыз, же +1 же -1.</string>
+    <string name="macro_do_choice_help">Дирилдөө сыяктуу вариант, же next.</string>
+    <string name="macro_do_media">Медиа баскычы</string>
+    <string name="macro_media_play_pause">Ойнотуу же тындыруу</string>
+    <string name="macro_media_play">Ойнотуу</string>
+    <string name="macro_media_pause">Тындыруу</string>
+    <string name="macro_media_next">Кийинки</string>
+    <string name="macro_media_previous">Мурунку</string>
+    <string name="macro_media_stop">Токтотуу</string>
+    <string name="macro_media_rewind">Артка түрдүрүү</string>
+    <string name="macro_media_fast_forward">Алдыга түрдүрүү</string>
+    <string name="macro_do_set_timer">Таймер коюу</string>
+    <string name="macro_do_set_timer_value">Таймер коюу: %1$s s, %2$s</string>
+    <string name="macro_do_timer_seconds">Секунддар</string>
+    <string name="macro_do_label">Энбелги (милдеттүү эмес)</string>
+    <string name="macro_do_set_alarm">Ойготкуч коюу</string>
+    <string name="macro_do_set_alarm_value">Ойготкуч коюу: %1$s, %2$s</string>
+    <string name="macro_do_call">Чалуу</string>
+    <string name="macro_do_number">Телефон номери</string>
+    <string name="macro_do_send_message">Билдирүү жөнөтүү</string>
+    <string name="macro_do_send_message_value">%1$s номерине билдирүү: %2$s</string>
+    <string name="macro_do_open_camera">Камераны ачуу</string>
+    <string name="macro_do_camera_photo">Сүрөт</string>
+    <string name="macro_do_camera_video">Видео</string>
+    <string name="macro_do_set_timer_short">Таймер коюу: %1$s s</string>
+    <string name="macro_do_set_alarm_short">Ойготкуч коюу: %1$s</string>
 </resources>

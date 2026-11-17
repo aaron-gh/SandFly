@@ -149,7 +149,6 @@
     <string name="macro_do_link_hint">მისამართი</string>
     <string name="macro_do_keys_hint">კლავიშები, მაგალითად tab enter</string>
     <string name="macro_number_range">შეიყვანეთ %1$d-დან %2$d-მდე</string>
-    <string name="macro_values_help">მნიშვნელობები ჩაისმება როგორც {name}. ასევე {item}, {clipboard}, {time} და {date}.</string>
     <string name="macro_value_name">მნიშვნელობის სახელი</string>
     <string name="macro_value_name_invalid">გამოიყენეთ ასოები, ციფრები, წერტილები, დეფისები ან ქვედა ტირეები</string>
     <string name="macro_test_value">მნიშვნელობა</string>
@@ -157,4 +156,36 @@
     <string name="macro_test_value_set">მნიშვნელობა %1$s დაყენებულია</string>
     <string name="macro_test_value_value">მნიშვნელობა %1$s შეიცავს %2$s</string>
     <string name="macro_test_not">არა: %1$s</string>
+    <string name="macro_values_help">მნიშვნელობები ჩაისმება როგორც {name}. ასევე {item}, {clipboard}, {time}, {date}, {battery} და {device.wifi}.</string>
+    <string name="macro_do_device_control">მოწყობილობის პარამეტრი</string>
+    <string name="macro_do_device_control_value">%1$s: %2$s</string>
+    <string name="macro_do_turn_on">ჩართვა</string>
+    <string name="macro_do_turn_off">გამორთვა</string>
+    <string name="macro_do_toggle">ჩართვა ან გამორთვა</string>
+    <string name="macro_do_slider_help" formatted="false">რიცხვი, პროცენტი, მაგალითად 50%, ან +1 ან -1.</string>
+    <string name="macro_do_choice_help">ვარიანტი, მაგალითად ვიბრაცია, ან next.</string>
+    <string name="macro_do_media">მედიის კლავიში</string>
+    <string name="macro_media_play_pause">დაკვრა ან პაუზა</string>
+    <string name="macro_media_play">დაკვრა</string>
+    <string name="macro_media_pause">პაუზა</string>
+    <string name="macro_media_next">შემდეგი</string>
+    <string name="macro_media_previous">წინა</string>
+    <string name="macro_media_stop">შეჩერება</string>
+    <string name="macro_media_rewind">უკან გადახვევა</string>
+    <string name="macro_media_fast_forward">წინ გადახვევა</string>
+    <string name="macro_do_set_timer">ტაიმერის დაყენება</string>
+    <string name="macro_do_set_timer_value">ტაიმერის დაყენება: %1$s s, %2$s</string>
+    <string name="macro_do_timer_seconds">წამები</string>
+    <string name="macro_do_label">ლეიბლი (არასავალდებულო)</string>
+    <string name="macro_do_set_alarm">მაღვიძარას დაყენება</string>
+    <string name="macro_do_set_alarm_value">მაღვიძარას დაყენება: %1$s, %2$s</string>
+    <string name="macro_do_call">დარეკვა</string>
+    <string name="macro_do_number">ტელეფონის ნომერი</string>
+    <string name="macro_do_send_message">შეტყობინების გაგზავნა</string>
+    <string name="macro_do_send_message_value">შეტყობინება ნომერზე %1$s: %2$s</string>
+    <string name="macro_do_open_camera">კამერის გახსნა</string>
+    <string name="macro_do_camera_photo">ფოტო</string>
+    <string name="macro_do_camera_video">ვიდეო</string>
+    <string name="macro_do_set_timer_short">ტაიმერის დაყენება: %1$s s</string>
+    <string name="macro_do_set_alarm_short">მაღვიძარას დაყენება: %1$s</string>
 </resources>

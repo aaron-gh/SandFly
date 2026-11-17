@@ -149,7 +149,6 @@
     <string name="macro_do_link_hint">Հասցե</string>
     <string name="macro_do_keys_hint">Ստեղներ, օրինակ՝ tab enter</string>
     <string name="macro_number_range">Մուտքագրեք %1$d-ից %2$d</string>
-    <string name="macro_values_help">Արժեքները տեղադրվում են որպես {name}։ Նաև {item}, {clipboard}, {time} և {date}։</string>
     <string name="macro_value_name">Արժեքի անուն</string>
     <string name="macro_value_name_invalid">Օգտագործեք տառեր, թվանշաններ, կետեր, գծիկներ կամ ընդգծման նշաններ</string>
     <string name="macro_test_value">Արժեք</string>
@@ -157,4 +156,36 @@
     <string name="macro_test_value_set">%1$s արժեքը սահմանված է</string>
     <string name="macro_test_value_value">%1$s արժեքը պարունակում է %2$s</string>
     <string name="macro_test_not">Ոչ՝ %1$s</string>
+    <string name="macro_values_help">Արժեքները տեղադրվում են որպես {name}։ Նաև {item}, {clipboard}, {time}, {date}, {battery} և {device.wifi}։</string>
+    <string name="macro_do_device_control">Սարքի կարգավորում</string>
+    <string name="macro_do_device_control_value">%1$s՝ %2$s</string>
+    <string name="macro_do_turn_on">Միացնել</string>
+    <string name="macro_do_turn_off">Անջատել</string>
+    <string name="macro_do_toggle">Միացնել կամ անջատել</string>
+    <string name="macro_do_slider_help" formatted="false">Թիվ, տոկոս, օրինակ՝ 50%, կամ +1 կամ -1։</string>
+    <string name="macro_do_choice_help">Տարբերակ, օրինակ՝ Թրթռոց, կամ next։</string>
+    <string name="macro_do_media">Մեդիա ստեղն</string>
+    <string name="macro_media_play_pause">Նվագարկել կամ դադարեցնել</string>
+    <string name="macro_media_play">Նվագարկել</string>
+    <string name="macro_media_pause">Դադարեցնել</string>
+    <string name="macro_media_next">Հաջորդը</string>
+    <string name="macro_media_previous">Հետ</string>
+    <string name="macro_media_stop">Կանգնեցնել</string>
+    <string name="macro_media_rewind">Հետ փաթաթել</string>
+    <string name="macro_media_fast_forward">Առաջ փաթաթել</string>
+    <string name="macro_do_set_timer">Սահմանել ժամաչափ</string>
+    <string name="macro_do_set_timer_value">Սահմանել ժամաչափ՝ %1$s s, %2$s</string>
+    <string name="macro_do_timer_seconds">Վայրկյաններ</string>
+    <string name="macro_do_label">Պիտակ (ըստ ցանկության)</string>
+    <string name="macro_do_set_alarm">Սահմանել զարթուցիչ</string>
+    <string name="macro_do_set_alarm_value">Սահմանել զարթուցիչ՝ %1$s, %2$s</string>
+    <string name="macro_do_call">Զանգել</string>
+    <string name="macro_do_number">Հեռախոսահամար</string>
+    <string name="macro_do_send_message">Ուղարկել հաղորդագրություն</string>
+    <string name="macro_do_send_message_value">Հաղորդագրություն %1$s համարին՝ %2$s</string>
+    <string name="macro_do_open_camera">Բացել տեսախցիկը</string>
+    <string name="macro_do_camera_photo">Լուսանկար</string>
+    <string name="macro_do_camera_video">Տեսանյութ</string>
+    <string name="macro_do_set_timer_short">Սահմանել ժամաչափ՝ %1$s s</string>
+    <string name="macro_do_set_alarm_short">Սահմանել զարթուցիչ՝ %1$s</string>
 </resources>

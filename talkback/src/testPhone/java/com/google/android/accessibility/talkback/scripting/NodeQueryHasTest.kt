@@ -95,6 +95,23 @@ class NodeQueryHasTest {
     assertFalse(query.matches(AccessibilityNodeInfoCompat.wrap(cast)))
   }
 
+  @Test
+  fun hasDepthOne_matchesTheRowAndNotTheCardAroundIt() {
+    val card = node("ViewGroup")
+    val list = node("RecyclerView")
+    val row = node("ViewGroup")
+    val remove = node("Button", description = "Remove friend suggestion")
+    add(card, list)
+    add(list, row)
+    add(row, remove)
+
+    val query = NodeQuery.of(JSONObject("""{"className":"ViewGroup","has":{"contains":"Remove friend suggestion","field":"description"},"hasDepth":1}"""))
+
+    assertTrue(query.matches(AccessibilityNodeInfoCompat.wrap(row)))
+    assertFalse(query.matches(AccessibilityNodeInfoCompat.wrap(card)))
+    assertTrue(NodeQuery.of(JSONObject("""{"className":"ViewGroup","has":{"contains":"Remove friend suggestion"}}""")).matches(AccessibilityNodeInfoCompat.wrap(card)))
+  }
+
   private fun node(className: String, description: String? = null): AccessibilityNodeInfo =
     AccessibilityNodeInfo.obtain().apply {
       this.className = className

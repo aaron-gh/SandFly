@@ -149,7 +149,6 @@
     <string name="macro_do_link_hint">Cím</string>
     <string name="macro_do_keys_hint">Billentyűk, például tab enter</string>
     <string name="macro_number_range">Adjon meg %1$d és %2$d közötti számot</string>
-    <string name="macro_values_help">Az értékek {name} formában illeszthetők be. Továbbá {item}, {clipboard}, {time} és {date}.</string>
     <string name="macro_value_name">Érték neve</string>
     <string name="macro_value_name_invalid">Betűket, számjegyeket, pontokat, kötőjeleket vagy aláhúzásjeleket használjon</string>
     <string name="macro_test_value">Érték</string>
@@ -157,4 +156,36 @@
     <string name="macro_test_value_set">A(z) %1$s érték be van állítva</string>
     <string name="macro_test_value_value">A(z) %1$s érték tartalmazza: %2$s</string>
     <string name="macro_test_not">Nem: %1$s</string>
+    <string name="macro_values_help">Az értékek {name} formában illeszthetők be. Továbbá {item}, {clipboard}, {time}, {date}, {battery} és {device.wifi}.</string>
+    <string name="macro_do_device_control">Eszközbeállítás</string>
+    <string name="macro_do_device_control_value">%1$s: %2$s</string>
+    <string name="macro_do_turn_on">Bekapcsolás</string>
+    <string name="macro_do_turn_off">Kikapcsolás</string>
+    <string name="macro_do_toggle">Be- vagy kikapcsolás</string>
+    <string name="macro_do_slider_help" formatted="false">Szám, százalék (például 50%), vagy +1 vagy -1.</string>
+    <string name="macro_do_choice_help">Egy lehetőség (például Rezgés) vagy next.</string>
+    <string name="macro_do_media">Médiabillentyű</string>
+    <string name="macro_media_play_pause">Lejátszás vagy szüneteltetés</string>
+    <string name="macro_media_play">Lejátszás</string>
+    <string name="macro_media_pause">Szüneteltetés</string>
+    <string name="macro_media_next">Tovább</string>
+    <string name="macro_media_previous">Vissza</string>
+    <string name="macro_media_stop">Leállítás</string>
+    <string name="macro_media_rewind">Visszatekerés</string>
+    <string name="macro_media_fast_forward">Előretekerés</string>
+    <string name="macro_do_set_timer">Időzítő beállítása</string>
+    <string name="macro_do_set_timer_value">Időzítő beállítása: %1$s s, %2$s</string>
+    <string name="macro_do_timer_seconds">Másodperc</string>
+    <string name="macro_do_label">Címke (nem kötelező)</string>
+    <string name="macro_do_set_alarm">Ébresztés beállítása</string>
+    <string name="macro_do_set_alarm_value">Ébresztés beállítása: %1$s, %2$s</string>
+    <string name="macro_do_call">Hívás</string>
+    <string name="macro_do_number">Telefonszám</string>
+    <string name="macro_do_send_message">Üzenet küldése</string>
+    <string name="macro_do_send_message_value">Üzenet (%1$s): %2$s</string>
+    <string name="macro_do_open_camera">Kamera megnyitása</string>
+    <string name="macro_do_camera_photo">Fotó</string>
+    <string name="macro_do_camera_video">Videó</string>
+    <string name="macro_do_set_timer_short">Időzítő beállítása: %1$s s</string>
+    <string name="macro_do_set_alarm_short">Ébresztés beállítása: %1$s</string>
 </resources>

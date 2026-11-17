@@ -146,7 +146,6 @@
     <string name="macro_do_link_hint">Địa chỉ</string>
     <string name="macro_do_keys_hint">Phím, ví dụ tab enter</string>
     <string name="macro_number_range">Nhập từ %1$d đến %2$d</string>
-    <string name="macro_values_help">Giá trị được chèn dưới dạng {name}. Ngoài ra còn có {item}, {clipboard}, {time} và {date}.</string>
     <string name="macro_value_name">Tên giá trị</string>
     <string name="macro_value_name_invalid">Dùng chữ cái, chữ số, dấu chấm, dấu gạch ngang hoặc dấu gạch dưới</string>
     <string name="macro_test_value">Giá trị</string>
@@ -154,4 +153,36 @@
     <string name="macro_test_value_set">Đã đặt giá trị %1$s</string>
     <string name="macro_test_value_value">Giá trị %1$s chứa %2$s</string>
     <string name="macro_test_not">Không: %1$s</string>
+    <string name="macro_values_help">Giá trị được chèn dưới dạng {name}. Ngoài ra còn có {item}, {clipboard}, {time}, {date}, {battery} và {device.wifi}.</string>
+    <string name="macro_do_device_control">Cài đặt thiết bị</string>
+    <string name="macro_do_device_control_value">%1$s: %2$s</string>
+    <string name="macro_do_turn_on">Bật</string>
+    <string name="macro_do_turn_off">Tắt</string>
+    <string name="macro_do_toggle">Bật hoặc tắt</string>
+    <string name="macro_do_slider_help" formatted="false">Một số, một tỷ lệ phần trăm như 50%, hoặc +1 hay -1.</string>
+    <string name="macro_do_choice_help">Một tùy chọn, chẳng hạn như Rung, hoặc next.</string>
+    <string name="macro_do_media">Phím nội dung nghe nhìn</string>
+    <string name="macro_media_play_pause">Phát hoặc tạm dừng</string>
+    <string name="macro_media_play">Phát</string>
+    <string name="macro_media_pause">Tạm dừng</string>
+    <string name="macro_media_next">Tiếp theo</string>
+    <string name="macro_media_previous">Trước</string>
+    <string name="macro_media_stop">Dừng</string>
+    <string name="macro_media_rewind">Tua lại</string>
+    <string name="macro_media_fast_forward">Tua đi</string>
+    <string name="macro_do_set_timer">Đặt hẹn giờ</string>
+    <string name="macro_do_set_timer_value">Đặt hẹn giờ: %1$s s, %2$s</string>
+    <string name="macro_do_timer_seconds">Giây</string>
+    <string name="macro_do_label">Nhãn (không bắt buộc)</string>
+    <string name="macro_do_set_alarm">Đặt báo thức</string>
+    <string name="macro_do_set_alarm_value">Đặt báo thức: %1$s, %2$s</string>
+    <string name="macro_do_call">Gọi</string>
+    <string name="macro_do_number">Số điện thoại</string>
+    <string name="macro_do_send_message">Gửi tin nhắn</string>
+    <string name="macro_do_send_message_value">Tin nhắn đến %1$s: %2$s</string>
+    <string name="macro_do_open_camera">Mở máy ảnh</string>
+    <string name="macro_do_camera_photo">Ảnh</string>
+    <string name="macro_do_camera_video">Video</string>
+    <string name="macro_do_set_timer_short">Đặt hẹn giờ: %1$s s</string>
+    <string name="macro_do_set_alarm_short">Đặt báo thức: %1$s</string>
 </resources>

@@ -146,7 +146,6 @@
     <string name="macro_do_link_hint">アドレス</string>
     <string name="macro_do_keys_hint">キー (例: tab enter)</string>
     <string name="macro_number_range">%1$d から %2$d までの数を入力してください</string>
-    <string name="macro_values_help">値は {name} として挿入します。{item}、{clipboard}、{time}、{date} も使用できます。</string>
     <string name="macro_value_name">値の名前</string>
     <string name="macro_value_name_invalid">英字、数字、ドット、ハイフン、アンダースコアを使用してください</string>
     <string name="macro_test_value">値</string>
@@ -154,4 +153,36 @@
     <string name="macro_test_value_set">値 %1$s が設定済み</string>
     <string name="macro_test_value_value">値 %1$s が %2$s を含む</string>
     <string name="macro_test_not">否定: %1$s</string>
+    <string name="macro_values_help">値は {name} として挿入します。{item}、{clipboard}、{time}、{date}、{battery}、{device.wifi} も使用できます。</string>
+    <string name="macro_do_device_control">デバイスの設定</string>
+    <string name="macro_do_device_control_value">%1$s: %2$s</string>
+    <string name="macro_do_turn_on">ON にする</string>
+    <string name="macro_do_turn_off">OFF にする</string>
+    <string name="macro_do_toggle">ON / OFF を切り替える</string>
+    <string name="macro_do_slider_help" formatted="false">数値、50% などの割合、または +1 か -1。</string>
+    <string name="macro_do_choice_help">バイブレーションなどのオプション、または next。</string>
+    <string name="macro_do_media">メディアキー</string>
+    <string name="macro_media_play_pause">再生または一時停止</string>
+    <string name="macro_media_play">再生</string>
+    <string name="macro_media_pause">一時停止</string>
+    <string name="macro_media_next">次へ</string>
+    <string name="macro_media_previous">前へ</string>
+    <string name="macro_media_stop">停止</string>
+    <string name="macro_media_rewind">巻き戻し</string>
+    <string name="macro_media_fast_forward">早送り</string>
+    <string name="macro_do_set_timer">タイマーを設定</string>
+    <string name="macro_do_set_timer_value">タイマーを設定: %1$s s、%2$s</string>
+    <string name="macro_do_timer_seconds">秒</string>
+    <string name="macro_do_label">ラベル (省略可)</string>
+    <string name="macro_do_set_alarm">アラームを設定</string>
+    <string name="macro_do_set_alarm_value">アラームを設定: %1$s、%2$s</string>
+    <string name="macro_do_call">電話をかける</string>
+    <string name="macro_do_number">電話番号</string>
+    <string name="macro_do_send_message">メッセージを送信</string>
+    <string name="macro_do_send_message_value">%1$s へのメッセージ: %2$s</string>
+    <string name="macro_do_open_camera">カメラを開く</string>
+    <string name="macro_do_camera_photo">写真</string>
+    <string name="macro_do_camera_video">動画</string>
+    <string name="macro_do_set_timer_short">タイマーを設定: %1$s s</string>
+    <string name="macro_do_set_alarm_short">アラームを設定: %1$s</string>
 </resources>

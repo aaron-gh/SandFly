@@ -140,7 +140,6 @@
     <string name="macro_do_link_hint">Adrese</string>
     <string name="macro_do_keys_hint">Taustiņi, piemēram, tab enter</string>
     <string name="macro_number_range">Ievadiet no %1$d līdz %2$d</string>
-    <string name="macro_values_help">Vērtības ievieto kā {name}. Arī {item}, {clipboard}, {time} un {date}.</string>
     <string name="macro_value_name">Vērtības nosaukums</string>
     <string name="macro_value_name_invalid">Izmantojiet burtus, ciparus, punktus, defises vai pasvītras</string>
     <string name="macro_test_value">Vērtība</string>
@@ -148,4 +147,36 @@
     <string name="macro_test_value_set">Vērtība %1$s ir iestatīta</string>
     <string name="macro_test_value_value">Vērtība %1$s satur %2$s</string>
     <string name="macro_test_not">Ne: %1$s</string>
+    <string name="macro_values_help">Vērtības ievieto kā {name}. Arī {item}, {clipboard}, {time}, {date}, {battery} un {device.wifi}.</string>
+    <string name="macro_do_device_control">Ierīces iestatījums</string>
+    <string name="macro_do_device_control_value">%1$s: %2$s</string>
+    <string name="macro_do_turn_on">Ieslēgt</string>
+    <string name="macro_do_turn_off">Izslēgt</string>
+    <string name="macro_do_toggle">Ieslēgt vai izslēgt</string>
+    <string name="macro_do_slider_help" formatted="false">Skaitlis, procenti, piemēram, 50%, vai +1 vai -1.</string>
+    <string name="macro_do_choice_help">Opcija, piemēram, Vibrācija, vai next.</string>
+    <string name="macro_do_media">Multivides taustiņš</string>
+    <string name="macro_media_play_pause">Atskaņot vai pauzēt</string>
+    <string name="macro_media_play">Atskaņot</string>
+    <string name="macro_media_pause">Pauzēt</string>
+    <string name="macro_media_next">Tālāk</string>
+    <string name="macro_media_previous">Iepriekšējā</string>
+    <string name="macro_media_stop">Apturēt</string>
+    <string name="macro_media_rewind">Attīt atpakaļ</string>
+    <string name="macro_media_fast_forward">Pārtīt uz priekšu</string>
+    <string name="macro_do_set_timer">Iestatīt taimeri</string>
+    <string name="macro_do_set_timer_value">Iestatīt taimeri: %1$s s, %2$s</string>
+    <string name="macro_do_timer_seconds">Sekundes</string>
+    <string name="macro_do_label">Iezīme (neobligāti)</string>
+    <string name="macro_do_set_alarm">Iestatīt signālu</string>
+    <string name="macro_do_set_alarm_value">Iestatīt signālu: %1$s, %2$s</string>
+    <string name="macro_do_call">Zvanīt</string>
+    <string name="macro_do_number">Tālruņa numurs</string>
+    <string name="macro_do_send_message">Sūtīt ziņu</string>
+    <string name="macro_do_send_message_value">Ziņa uz numuru %1$s: %2$s</string>
+    <string name="macro_do_open_camera">Atvērt kameru</string>
+    <string name="macro_do_camera_photo">Fotoattēls</string>
+    <string name="macro_do_camera_video">Videoklips</string>
+    <string name="macro_do_set_timer_short">Iestatīt taimeri: %1$s s</string>
+    <string name="macro_do_set_alarm_short">Iestatīt signālu: %1$s</string>
 </resources>

@@ -152,7 +152,6 @@
     <string name="macro_do_link_hint">Adresă</string>
     <string name="macro_do_keys_hint">Taste, de exemplu tab enter</string>
     <string name="macro_number_range">Introdu o valoare de la %1$d la %2$d</string>
-    <string name="macro_values_help">Valorile se introduc ca {name}. De asemenea, {item}, {clipboard}, {time} și {date}.</string>
     <string name="macro_value_name">Numele valorii</string>
     <string name="macro_value_name_invalid">Folosește litere, cifre, puncte, cratime sau caractere de subliniere</string>
     <string name="macro_test_value">Valoare</string>
@@ -160,4 +159,36 @@
     <string name="macro_test_value_set">Valoarea %1$s este setată</string>
     <string name="macro_test_value_value">Valoarea %1$s conține %2$s</string>
     <string name="macro_test_not">Nu: %1$s</string>
+    <string name="macro_values_help">Valorile se introduc ca {name}. De asemenea, {item}, {clipboard}, {time}, {date}, {battery} și {device.wifi}.</string>
+    <string name="macro_do_device_control">Setare dispozitiv</string>
+    <string name="macro_do_device_control_value">%1$s: %2$s</string>
+    <string name="macro_do_turn_on">Activează</string>
+    <string name="macro_do_turn_off">Dezactivează</string>
+    <string name="macro_do_toggle">Activează sau dezactivează</string>
+    <string name="macro_do_slider_help" formatted="false">Un număr, un procent, cum ar fi 50%, sau +1 ori -1.</string>
+    <string name="macro_do_choice_help">O opțiune, cum ar fi Vibrații, sau next.</string>
+    <string name="macro_do_media">Tastă media</string>
+    <string name="macro_media_play_pause">Redă sau întrerupe</string>
+    <string name="macro_media_play">Redă</string>
+    <string name="macro_media_pause">Întrerupe</string>
+    <string name="macro_media_next">Piesa următoare</string>
+    <string name="macro_media_previous">Piesa anterioară</string>
+    <string name="macro_media_stop">Oprește</string>
+    <string name="macro_media_rewind">Derulează înapoi</string>
+    <string name="macro_media_fast_forward">Derulează înainte</string>
+    <string name="macro_do_set_timer">Setează un cronometru</string>
+    <string name="macro_do_set_timer_value">Setează un cronometru: %1$s s, %2$s</string>
+    <string name="macro_do_timer_seconds">Secunde</string>
+    <string name="macro_do_label">Etichetă (opțional)</string>
+    <string name="macro_do_set_alarm">Setează o alarmă</string>
+    <string name="macro_do_set_alarm_value">Setează o alarmă: %1$s, %2$s</string>
+    <string name="macro_do_call">Apelează</string>
+    <string name="macro_do_number">Număr de telefon</string>
+    <string name="macro_do_send_message">Trimite un mesaj</string>
+    <string name="macro_do_send_message_value">Mesaj către %1$s: %2$s</string>
+    <string name="macro_do_open_camera">Deschide camera</string>
+    <string name="macro_do_camera_photo">Fotografie</string>
+    <string name="macro_do_camera_video">Videoclip</string>
+    <string name="macro_do_set_timer_short">Setează un cronometru: %1$s s</string>
+    <string name="macro_do_set_alarm_short">Setează o alarmă: %1$s</string>
 </resources>

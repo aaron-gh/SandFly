@@ -155,7 +155,6 @@
     <string name="macro_do_link_hint">Adresa</string>
     <string name="macro_do_keys_hint">Klávesy, napríklad tab enter</string>
     <string name="macro_number_range">Zadajte %1$d až %2$d</string>
-    <string name="macro_values_help">Hodnoty sa vkladajú ako {name}. Tiež {item}, {clipboard}, {time} a {date}.</string>
     <string name="macro_value_name">Názov hodnoty</string>
     <string name="macro_value_name_invalid">Použite písmená, číslice, bodky, pomlčky alebo podčiarkovníky</string>
     <string name="macro_test_value">Hodnota</string>
@@ -163,4 +162,36 @@
     <string name="macro_test_value_set">Hodnota %1$s je nastavená</string>
     <string name="macro_test_value_value">Hodnota %1$s obsahuje %2$s</string>
     <string name="macro_test_not">Nie: %1$s</string>
+    <string name="macro_values_help">Hodnoty sa vkladajú ako {name}. Tiež {item}, {clipboard}, {time}, {date}, {battery} a {device.wifi}.</string>
+    <string name="macro_do_device_control">Nastavenie zariadenia</string>
+    <string name="macro_do_device_control_value">%1$s: %2$s</string>
+    <string name="macro_do_turn_on">Zapnúť</string>
+    <string name="macro_do_turn_off">Vypnúť</string>
+    <string name="macro_do_toggle">Zapnúť alebo vypnúť</string>
+    <string name="macro_do_slider_help" formatted="false">Číslo, percento, napríklad 50%, alebo +1 či -1.</string>
+    <string name="macro_do_choice_help">Možnosť, napríklad Vibrovanie, alebo next.</string>
+    <string name="macro_do_media">Mediálny kláves</string>
+    <string name="macro_media_play_pause">Prehrať alebo pozastaviť</string>
+    <string name="macro_media_play">Prehrať</string>
+    <string name="macro_media_pause">Pozastaviť</string>
+    <string name="macro_media_next">Ďalšia skladba</string>
+    <string name="macro_media_previous">Predchádzajúca skladba</string>
+    <string name="macro_media_stop">Zastaviť</string>
+    <string name="macro_media_rewind">Pretočiť dozadu</string>
+    <string name="macro_media_fast_forward">Pretočiť dopredu</string>
+    <string name="macro_do_set_timer">Nastaviť časovač</string>
+    <string name="macro_do_set_timer_value">Nastaviť časovač: %1$s s, %2$s</string>
+    <string name="macro_do_timer_seconds">Sekundy</string>
+    <string name="macro_do_label">Štítok (voliteľné)</string>
+    <string name="macro_do_set_alarm">Nastaviť budík</string>
+    <string name="macro_do_set_alarm_value">Nastaviť budík: %1$s, %2$s</string>
+    <string name="macro_do_call">Zavolať</string>
+    <string name="macro_do_number">Telefónne číslo</string>
+    <string name="macro_do_send_message">Odoslať správu</string>
+    <string name="macro_do_send_message_value">Správa pre %1$s: %2$s</string>
+    <string name="macro_do_open_camera">Otvoriť fotoaparát</string>
+    <string name="macro_do_camera_photo">Fotka</string>
+    <string name="macro_do_camera_video">Video</string>
+    <string name="macro_do_set_timer_short">Nastaviť časovač: %1$s s</string>
+    <string name="macro_do_set_alarm_short">Nastaviť budík: %1$s</string>
 </resources>

@@ -149,7 +149,6 @@
     <string name="macro_do_link_hint">Διεύθυνση</string>
     <string name="macro_do_keys_hint">Πλήκτρα, π.χ. tab enter</string>
     <string name="macro_number_range">Εισαγάγετε από %1$d έως %2$d</string>
-    <string name="macro_values_help">Οι τιμές εισάγονται ως {name}. Επίσης {item}, {clipboard}, {time} και {date}.</string>
     <string name="macro_value_name">Όνομα τιμής</string>
     <string name="macro_value_name_invalid">Χρησιμοποιήστε γράμματα, ψηφία, τελείες, παύλες ή κάτω παύλες</string>
     <string name="macro_test_value">Τιμή</string>
@@ -157,4 +156,36 @@
     <string name="macro_test_value_set">Η τιμή %1$s έχει οριστεί</string>
     <string name="macro_test_value_value">Η τιμή %1$s περιέχει %2$s</string>
     <string name="macro_test_not">Όχι: %1$s</string>
+    <string name="macro_values_help">Οι τιμές εισάγονται ως {name}. Επίσης {item}, {clipboard}, {time}, {date}, {battery} και {device.wifi}.</string>
+    <string name="macro_do_device_control">Ρύθμιση συσκευής</string>
+    <string name="macro_do_device_control_value">%1$s: %2$s</string>
+    <string name="macro_do_turn_on">Ενεργοποίηση</string>
+    <string name="macro_do_turn_off">Απενεργοποίηση</string>
+    <string name="macro_do_toggle">Ενεργοποίηση ή απενεργοποίηση</string>
+    <string name="macro_do_slider_help" formatted="false">Ένας αριθμός, ένα ποσοστό όπως 50%, ή +1 ή -1.</string>
+    <string name="macro_do_choice_help">Μια επιλογή, όπως Δόνηση, ή next.</string>
+    <string name="macro_do_media">Πλήκτρο μέσων</string>
+    <string name="macro_media_play_pause">Αναπαραγωγή ή παύση</string>
+    <string name="macro_media_play">Αναπαραγωγή</string>
+    <string name="macro_media_pause">Παύση</string>
+    <string name="macro_media_next">Επόμενο</string>
+    <string name="macro_media_previous">Προηγούμενο</string>
+    <string name="macro_media_stop">Διακοπή</string>
+    <string name="macro_media_rewind">Γρήγορη επιστροφή</string>
+    <string name="macro_media_fast_forward">Γρήγορη προώθηση</string>
+    <string name="macro_do_set_timer">Ορισμός χρονομέτρου</string>
+    <string name="macro_do_set_timer_value">Ορισμός χρονομέτρου: %1$s s, %2$s</string>
+    <string name="macro_do_timer_seconds">Δευτερόλεπτα</string>
+    <string name="macro_do_label">Ετικέτα (προαιρετικό)</string>
+    <string name="macro_do_set_alarm">Ορισμός ξυπνητηριού</string>
+    <string name="macro_do_set_alarm_value">Ορισμός ξυπνητηριού: %1$s, %2$s</string>
+    <string name="macro_do_call">Κλήση</string>
+    <string name="macro_do_number">Αριθμός τηλεφώνου</string>
+    <string name="macro_do_send_message">Αποστολή μηνύματος</string>
+    <string name="macro_do_send_message_value">Μήνυμα προς %1$s: %2$s</string>
+    <string name="macro_do_open_camera">Άνοιγμα κάμερας</string>
+    <string name="macro_do_camera_photo">Φωτογραφία</string>
+    <string name="macro_do_camera_video">Βίντεο</string>
+    <string name="macro_do_set_timer_short">Ορισμός χρονομέτρου: %1$s s</string>
+    <string name="macro_do_set_alarm_short">Ορισμός ξυπνητηριού: %1$s</string>
 </resources>

@@ -149,7 +149,6 @@
     <string name="macro_do_link_hint">Адреса</string>
     <string name="macro_do_keys_hint">Копчиња, на пр. tab enter</string>
     <string name="macro_number_range">Внесете од %1$d до %2$d</string>
-    <string name="macro_values_help">Вредностите се внесуваат како {name}. Исто така {item}, {clipboard}, {time} и {date}.</string>
     <string name="macro_value_name">Име на вредноста</string>
     <string name="macro_value_name_invalid">Користете букви, цифри, точки, цртички или долни црти</string>
     <string name="macro_test_value">Вредност</string>
@@ -157,4 +156,36 @@
     <string name="macro_test_value_set">Вредноста %1$s е поставена</string>
     <string name="macro_test_value_value">Вредноста %1$s содржи %2$s</string>
     <string name="macro_test_not">Не: %1$s</string>
+    <string name="macro_values_help">Вредностите се внесуваат како {name}. Исто така {item}, {clipboard}, {time}, {date}, {battery} и {device.wifi}.</string>
+    <string name="macro_do_device_control">Поставка на уредот</string>
+    <string name="macro_do_device_control_value">%1$s: %2$s</string>
+    <string name="macro_do_turn_on">Вклучи</string>
+    <string name="macro_do_turn_off">Исклучи</string>
+    <string name="macro_do_toggle">Вклучи или исклучи</string>
+    <string name="macro_do_slider_help" formatted="false">Број, процент како 50%, или +1 или -1.</string>
+    <string name="macro_do_choice_help">Опција, како Вибрирање, или next.</string>
+    <string name="macro_do_media">Мултимедијално копче</string>
+    <string name="macro_media_play_pause">Пушти или паузирај</string>
+    <string name="macro_media_play">Пушти</string>
+    <string name="macro_media_pause">Пауза</string>
+    <string name="macro_media_next">Следно</string>
+    <string name="macro_media_previous">Претходно</string>
+    <string name="macro_media_stop">Запри</string>
+    <string name="macro_media_rewind">Премотај назад</string>
+    <string name="macro_media_fast_forward">Премотај напред</string>
+    <string name="macro_do_set_timer">Постави тајмер</string>
+    <string name="macro_do_set_timer_value">Постави тајмер: %1$s s, %2$s</string>
+    <string name="macro_do_timer_seconds">Секунди</string>
+    <string name="macro_do_label">Етикета (незадолжително)</string>
+    <string name="macro_do_set_alarm">Постави аларм</string>
+    <string name="macro_do_set_alarm_value">Постави аларм: %1$s, %2$s</string>
+    <string name="macro_do_call">Повикај</string>
+    <string name="macro_do_number">Телефонски број</string>
+    <string name="macro_do_send_message">Испрати порака</string>
+    <string name="macro_do_send_message_value">Порака до %1$s: %2$s</string>
+    <string name="macro_do_open_camera">Отвори камера</string>
+    <string name="macro_do_camera_photo">Фотографија</string>
+    <string name="macro_do_camera_video">Видео</string>
+    <string name="macro_do_set_timer_short">Постави тајмер: %1$s s</string>
+    <string name="macro_do_set_alarm_short">Постави аларм: %1$s</string>
 </resources>

@@ -149,7 +149,6 @@
     <string name="macro_do_link_hint">Manzil</string>
     <string name="macro_do_keys_hint">Tugmalar, masalan, tab enter</string>
     <string name="macro_number_range">%1$d dan %2$d gacha kiriting</string>
-    <string name="macro_values_help">Qiymatlar {name} sifatida qoʻyiladi. Shuningdek, {item}, {clipboard}, {time} va {date}.</string>
     <string name="macro_value_name">Qiymat nomi</string>
     <string name="macro_value_name_invalid">Harflar, raqamlar, nuqtalar, chiziqchalar yoki pastki chiziqlardan foydalaning</string>
     <string name="macro_test_value">Qiymat</string>
@@ -157,4 +156,36 @@
     <string name="macro_test_value_set">%1$s qiymati belgilangan</string>
     <string name="macro_test_value_value">%1$s qiymatida %2$s bor</string>
     <string name="macro_test_not">Emas: %1$s</string>
+    <string name="macro_values_help">Qiymatlar {name} sifatida qoʻyiladi. Shuningdek, {item}, {clipboard}, {time}, {date}, {battery} va {device.wifi}.</string>
+    <string name="macro_do_device_control">Qurilma sozlamasi</string>
+    <string name="macro_do_device_control_value">%1$s: %2$s</string>
+    <string name="macro_do_turn_on">Yoqish</string>
+    <string name="macro_do_turn_off">Oʻchirish</string>
+    <string name="macro_do_toggle">Yoqish yoki oʻchirish</string>
+    <string name="macro_do_slider_help" formatted="false">Son, 50% kabi foiz yoki +1 yoki -1.</string>
+    <string name="macro_do_choice_help">Tebranish kabi variant yoki next.</string>
+    <string name="macro_do_media">Media tugmasi</string>
+    <string name="macro_media_play_pause">Ijro etish yoki pauza</string>
+    <string name="macro_media_play">Ijro etish</string>
+    <string name="macro_media_pause">Pauza</string>
+    <string name="macro_media_next">Keyingisi</string>
+    <string name="macro_media_previous">Avvalgisi</string>
+    <string name="macro_media_stop">Toʻxtatish</string>
+    <string name="macro_media_rewind">Orqaga oʻtkazish</string>
+    <string name="macro_media_fast_forward">Oldinga oʻtkazish</string>
+    <string name="macro_do_set_timer">Taymerni belgilash</string>
+    <string name="macro_do_set_timer_value">Taymerni belgilash: %1$s s, %2$s</string>
+    <string name="macro_do_timer_seconds">Soniyalar</string>
+    <string name="macro_do_label">Yorliq (ixtiyoriy)</string>
+    <string name="macro_do_set_alarm">Budilnikni belgilash</string>
+    <string name="macro_do_set_alarm_value">Budilnikni belgilash: %1$s, %2$s</string>
+    <string name="macro_do_call">Qoʻngʻiroq qilish</string>
+    <string name="macro_do_number">Telefon raqami</string>
+    <string name="macro_do_send_message">Xabar yuborish</string>
+    <string name="macro_do_send_message_value">%1$s raqamiga xabar: %2$s</string>
+    <string name="macro_do_open_camera">Kamerani ochish</string>
+    <string name="macro_do_camera_photo">Surat</string>
+    <string name="macro_do_camera_video">Video</string>
+    <string name="macro_do_set_timer_short">Taymerni belgilash: %1$s s</string>
+    <string name="macro_do_set_alarm_short">Budilnikni belgilash: %1$s</string>
 </resources>

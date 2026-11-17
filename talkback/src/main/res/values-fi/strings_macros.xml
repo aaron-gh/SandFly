@@ -149,7 +149,6 @@
     <string name="macro_do_link_hint">Osoite</string>
     <string name="macro_do_keys_hint">Näppäimet, esim. tab enter</string>
     <string name="macro_number_range">Anna luku %1$d–%2$d</string>
-    <string name="macro_values_help">Lisää arvot muodossa {name}. Myös {item}, {clipboard}, {time} ja {date}.</string>
     <string name="macro_value_name">Arvon nimi</string>
     <string name="macro_value_name_invalid">Käytä kirjaimia, numeroita, pisteitä, yhdysmerkkejä tai alaviivoja</string>
     <string name="macro_test_value">Arvo</string>
@@ -157,4 +156,36 @@
     <string name="macro_test_value_set">Arvo %1$s on asetettu</string>
     <string name="macro_test_value_value">Arvo %1$s sisältää %2$s</string>
     <string name="macro_test_not">Ei: %1$s</string>
+    <string name="macro_values_help">Lisää arvot muodossa {name}. Myös {item}, {clipboard}, {time}, {date}, {battery} ja {device.wifi}.</string>
+    <string name="macro_do_device_control">Laiteasetus</string>
+    <string name="macro_do_device_control_value">%1$s: %2$s</string>
+    <string name="macro_do_turn_on">Laita päälle</string>
+    <string name="macro_do_turn_off">Laita pois päältä</string>
+    <string name="macro_do_toggle">Laita päälle tai pois</string>
+    <string name="macro_do_slider_help" formatted="false">Luku, prosentti, kuten 50%, tai +1 tai -1.</string>
+    <string name="macro_do_choice_help">Vaihtoehto, kuten Värinä, tai next.</string>
+    <string name="macro_do_media">Medianäppäin</string>
+    <string name="macro_media_play_pause">Toista tai keskeytä</string>
+    <string name="macro_media_play">Toista</string>
+    <string name="macro_media_pause">Keskeytä</string>
+    <string name="macro_media_next">Seuraava</string>
+    <string name="macro_media_previous">Edellinen</string>
+    <string name="macro_media_stop">Lopeta</string>
+    <string name="macro_media_rewind">Kelaa taaksepäin</string>
+    <string name="macro_media_fast_forward">Kelaa eteenpäin</string>
+    <string name="macro_do_set_timer">Aseta ajastin</string>
+    <string name="macro_do_set_timer_value">Aseta ajastin: %1$s s, %2$s</string>
+    <string name="macro_do_timer_seconds">Sekunnit</string>
+    <string name="macro_do_label">Tunniste (valinnainen)</string>
+    <string name="macro_do_set_alarm">Aseta herätys</string>
+    <string name="macro_do_set_alarm_value">Aseta herätys: %1$s, %2$s</string>
+    <string name="macro_do_call">Soita</string>
+    <string name="macro_do_number">Puhelinnumero</string>
+    <string name="macro_do_send_message">Lähetä viesti</string>
+    <string name="macro_do_send_message_value">Viesti numeroon %1$s: %2$s</string>
+    <string name="macro_do_open_camera">Avaa kamera</string>
+    <string name="macro_do_camera_photo">Kuva</string>
+    <string name="macro_do_camera_video">Video</string>
+    <string name="macro_do_set_timer_short">Aseta ajastin: %1$s s</string>
+    <string name="macro_do_set_alarm_short">Aseta herätys: %1$s</string>
 </resources>

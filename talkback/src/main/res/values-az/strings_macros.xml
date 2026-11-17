@@ -149,7 +149,6 @@
     <string name="macro_do_link_hint">Ünvan</string>
     <string name="macro_do_keys_hint">Düymələr, məsələn tab enter</string>
     <string name="macro_number_range">%1$d ilə %2$d arasında daxil edin</string>
-    <string name="macro_values_help">Dəyərlər {name} kimi daxil edilir. Həmçinin {item}, {clipboard}, {time} və {date}.</string>
     <string name="macro_value_name">Dəyər adı</string>
     <string name="macro_value_name_invalid">Hərf, rəqəm, nöqtə, defis və ya alt xətt istifadə edin</string>
     <string name="macro_test_value">Dəyər</string>
@@ -157,4 +156,36 @@
     <string name="macro_test_value_set">%1$s dəyəri təyin edilib</string>
     <string name="macro_test_value_value">%1$s dəyərində %2$s var</string>
     <string name="macro_test_not">Deyil: %1$s</string>
+    <string name="macro_values_help">Dəyərlər {name} kimi daxil edilir. Həmçinin {item}, {clipboard}, {time}, {date}, {battery} və {device.wifi}.</string>
+    <string name="macro_do_device_control">Cihaz ayarı</string>
+    <string name="macro_do_device_control_value">%1$s: %2$s</string>
+    <string name="macro_do_turn_on">Aktiv edin</string>
+    <string name="macro_do_turn_off">Deaktiv edin</string>
+    <string name="macro_do_toggle">Aktiv və ya deaktiv edin</string>
+    <string name="macro_do_slider_help" formatted="false">Ədəd, 50% kimi faiz, və ya +1 ya da -1.</string>
+    <string name="macro_do_choice_help">Seçim, məsələn Vibrasiya, və ya next.</string>
+    <string name="macro_do_media">Media düyməsi</string>
+    <string name="macro_media_play_pause">Oxudun və ya fasilə verin</string>
+    <string name="macro_media_play">Oxudun</string>
+    <string name="macro_media_pause">Fasilə verin</string>
+    <string name="macro_media_next">Növbəti</string>
+    <string name="macro_media_previous">Əvvəlki</string>
+    <string name="macro_media_stop">Dayandırın</string>
+    <string name="macro_media_rewind">Geri çəkin</string>
+    <string name="macro_media_fast_forward">İrəli çəkin</string>
+    <string name="macro_do_set_timer">Taymer təyin edin</string>
+    <string name="macro_do_set_timer_value">Taymer təyin edin: %1$s s, %2$s</string>
+    <string name="macro_do_timer_seconds">Saniyə</string>
+    <string name="macro_do_label">Etiket (istəyə bağlı)</string>
+    <string name="macro_do_set_alarm">Zəngli saat təyin edin</string>
+    <string name="macro_do_set_alarm_value">Zəngli saat təyin edin: %1$s, %2$s</string>
+    <string name="macro_do_call">Zəng edin</string>
+    <string name="macro_do_number">Telefon nömrəsi</string>
+    <string name="macro_do_send_message">Mesaj göndərin</string>
+    <string name="macro_do_send_message_value">%1$s nömrəsinə mesaj: %2$s</string>
+    <string name="macro_do_open_camera">Kameranı açın</string>
+    <string name="macro_do_camera_photo">Foto</string>
+    <string name="macro_do_camera_video">Video</string>
+    <string name="macro_do_set_timer_short">Taymer təyin edin: %1$s s</string>
+    <string name="macro_do_set_alarm_short">Zəngli saat təyin edin: %1$s</string>
 </resources>

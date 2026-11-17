@@ -146,7 +146,6 @@
     <string name="macro_do_link_hint">網址</string>
     <string name="macro_do_keys_hint">按鍵，例如 tab enter</string>
     <string name="macro_number_range">請輸入 %1$d 到 %2$d</string>
-    <string name="macro_values_help">值以 {name} 插入。另有 {item}、{clipboard}、{time} 和 {date}。</string>
     <string name="macro_value_name">值的名稱</string>
     <string name="macro_value_name_invalid">請使用字母、數字、句點、連字號或底線</string>
     <string name="macro_test_value">值</string>
@@ -154,4 +153,36 @@
     <string name="macro_test_value_set">已設定值 %1$s</string>
     <string name="macro_test_value_value">值 %1$s 包含%2$s</string>
     <string name="macro_test_not">非：%1$s</string>
+    <string name="macro_values_help">值以 {name} 插入。另有 {item}、{clipboard}、{time}、{date}、{battery} 和 {device.wifi}。</string>
+    <string name="macro_do_device_control">裝置設定</string>
+    <string name="macro_do_device_control_value">%1$s：%2$s</string>
+    <string name="macro_do_turn_on">開啟</string>
+    <string name="macro_do_turn_off">關閉</string>
+    <string name="macro_do_toggle">開啟或關閉</string>
+    <string name="macro_do_slider_help" formatted="false">數字、百分比（例如 50%），或 +1、-1。</string>
+    <string name="macro_do_choice_help">選項（例如「振動」），或 next。</string>
+    <string name="macro_do_media">媒體鍵</string>
+    <string name="macro_media_play_pause">播放或暫停</string>
+    <string name="macro_media_play">播放</string>
+    <string name="macro_media_pause">暫停</string>
+    <string name="macro_media_next">下一首</string>
+    <string name="macro_media_previous">上一首</string>
+    <string name="macro_media_stop">停止</string>
+    <string name="macro_media_rewind">倒帶</string>
+    <string name="macro_media_fast_forward">快轉</string>
+    <string name="macro_do_set_timer">設定計時器</string>
+    <string name="macro_do_set_timer_value">設定計時器：%1$s s，%2$s</string>
+    <string name="macro_do_timer_seconds">秒數</string>
+    <string name="macro_do_label">標籤（選填）</string>
+    <string name="macro_do_set_alarm">設定鬧鐘</string>
+    <string name="macro_do_set_alarm_value">設定鬧鐘：%1$s，%2$s</string>
+    <string name="macro_do_call">撥打電話</string>
+    <string name="macro_do_number">電話號碼</string>
+    <string name="macro_do_send_message">傳送訊息</string>
+    <string name="macro_do_send_message_value">給 %1$s 的訊息：%2$s</string>
+    <string name="macro_do_open_camera">開啟相機</string>
+    <string name="macro_do_camera_photo">相片</string>
+    <string name="macro_do_camera_video">影片</string>
+    <string name="macro_do_set_timer_short">設定計時器：%1$s s</string>
+    <string name="macro_do_set_alarm_short">設定鬧鐘：%1$s</string>
 </resources>

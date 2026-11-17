@@ -149,7 +149,6 @@
     <string name="macro_do_link_hint">Ikheli</string>
     <string name="macro_do_keys_hint">Okhiye, njenge-tab enter</string>
     <string name="macro_number_range">Faka kusuka ku-%1$d kuze kube ngu-%2$d</string>
-    <string name="macro_values_help">Amanani afakwa njenge-{name}. Futhi {item}, {clipboard}, {time} no-{date}.</string>
     <string name="macro_value_name">Igama lenani</string>
     <string name="macro_value_name_invalid">Sebenzisa izinhlamvu, izinombolo, amachashazi, amadeshi noma ama-underscore</string>
     <string name="macro_test_value">Inani</string>
@@ -157,4 +156,36 @@
     <string name="macro_test_value_set">Inani %1$s lisethiwe</string>
     <string name="macro_test_value_value">Inani %1$s liqukethe %2$s</string>
     <string name="macro_test_not">Hhayi: %1$s</string>
+    <string name="macro_values_help">Amanani afakwa njenge-{name}. Futhi {item}, {clipboard}, {time}, {date}, {battery} no-{device.wifi}.</string>
+    <string name="macro_do_device_control">Isethingi yedivayisi</string>
+    <string name="macro_do_device_control_value">%1$s: %2$s</string>
+    <string name="macro_do_turn_on">Vula</string>
+    <string name="macro_do_turn_off">Vala</string>
+    <string name="macro_do_toggle">Vula noma vala</string>
+    <string name="macro_do_slider_help" formatted="false">Inombolo, iphesenti elifana no-50%, noma +1 noma -1.</string>
+    <string name="macro_do_choice_help">Okukhethwa kukho, okufana no-Dlidliza, noma next.</string>
+    <string name="macro_do_media">Inkinobho yemidiya</string>
+    <string name="macro_media_play_pause">Dlala noma misa isikhashana</string>
+    <string name="macro_media_play">Dlala</string>
+    <string name="macro_media_pause">Misa isikhashana</string>
+    <string name="macro_media_next">Okulandelayo</string>
+    <string name="macro_media_previous">Okwangaphambilini</string>
+    <string name="macro_media_stop">Misa</string>
+    <string name="macro_media_rewind">Buyisela emuva</string>
+    <string name="macro_media_fast_forward">Phambili ngokushesha</string>
+    <string name="macro_do_set_timer">Setha isibali sikhathi</string>
+    <string name="macro_do_set_timer_value">Setha isibali sikhathi: %1$s s, %2$s</string>
+    <string name="macro_do_timer_seconds">Amasekhondi</string>
+    <string name="macro_do_label">Ilebula (ongakhethwa)</string>
+    <string name="macro_do_set_alarm">Setha i-alamu</string>
+    <string name="macro_do_set_alarm_value">Setha i-alamu: %1$s, %2$s</string>
+    <string name="macro_do_call">Shaya</string>
+    <string name="macro_do_number">Inombolo yefoni</string>
+    <string name="macro_do_send_message">Thumela umlayezo</string>
+    <string name="macro_do_send_message_value">Umlayezo oya ku-%1$s: %2$s</string>
+    <string name="macro_do_open_camera">Vula ikhamera</string>
+    <string name="macro_do_camera_photo">Isithombe</string>
+    <string name="macro_do_camera_video">Ividiyo</string>
+    <string name="macro_do_set_timer_short">Setha isibali sikhathi: %1$s s</string>
+    <string name="macro_do_set_alarm_short">Setha i-alamu: %1$s</string>
 </resources>

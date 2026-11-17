@@ -149,7 +149,6 @@
     <string name="macro_do_link_hint">ලිපිනය</string>
     <string name="macro_do_keys_hint">යතුරු, උදා: tab enter</string>
     <string name="macro_number_range">%1$d සිට %2$d දක්වා ඇතුළත් කරන්න</string>
-    <string name="macro_values_help">අගයන් {name} ලෙස ඇතුළත් වේ. {item}, {clipboard}, {time} සහ {date} ද.</string>
     <string name="macro_value_name">අගයේ නම</string>
     <string name="macro_value_name_invalid">අකුරු, ඉලක්කම්, තිත්, ඉරි හෝ යටි ඉරි භාවිත කරන්න</string>
     <string name="macro_test_value">අගය</string>
@@ -157,4 +156,36 @@
     <string name="macro_test_value_set">%1$s අගය සකසා ඇත</string>
     <string name="macro_test_value_value">%1$s අගයේ %2$s ඇත</string>
     <string name="macro_test_not">නොවේ: %1$s</string>
+    <string name="macro_values_help">අගයන් {name} ලෙස ඇතුළත් වේ. {item}, {clipboard}, {time}, {date}, {battery} සහ {device.wifi} ද.</string>
+    <string name="macro_do_device_control">උපාංග සැකසීම</string>
+    <string name="macro_do_device_control_value">%1$s: %2$s</string>
+    <string name="macro_do_turn_on">ක්‍රියාත්මක කරන්න</string>
+    <string name="macro_do_turn_off">ක්‍රියාවිරහිත කරන්න</string>
+    <string name="macro_do_toggle">ක්‍රියාත්මක හෝ ක්‍රියාවිරහිත කරන්න</string>
+    <string name="macro_do_slider_help" formatted="false">අංකයක්, 50% වැනි ප්‍රතිශතයක්, හෝ +1 හෝ -1.</string>
+    <string name="macro_do_choice_help">කම්පනය වැනි විකල්පයක්, හෝ next.</string>
+    <string name="macro_do_media">මාධ්‍ය යතුර</string>
+    <string name="macro_media_play_pause">වාදනය හෝ විරාම කරන්න</string>
+    <string name="macro_media_play">වාදනය කරන්න</string>
+    <string name="macro_media_pause">විරාම කරන්න</string>
+    <string name="macro_media_next">ඊළඟ ගීතය</string>
+    <string name="macro_media_previous">පෙර ගීතය</string>
+    <string name="macro_media_stop">නවත්වන්න</string>
+    <string name="macro_media_rewind">ආපසු පෙරළන්න</string>
+    <string name="macro_media_fast_forward">ඉදිරියට යවන්න</string>
+    <string name="macro_do_set_timer">ටයිමරය සකසන්න</string>
+    <string name="macro_do_set_timer_value">ටයිමරය සකසන්න: %1$s s, %2$s</string>
+    <string name="macro_do_timer_seconds">තත්පර</string>
+    <string name="macro_do_label">ලේබලය (විකල්ප)</string>
+    <string name="macro_do_set_alarm">එලාමය සකසන්න</string>
+    <string name="macro_do_set_alarm_value">එලාමය සකසන්න: %1$s, %2$s</string>
+    <string name="macro_do_call">අමතන්න</string>
+    <string name="macro_do_number">දුරකථන අංකය</string>
+    <string name="macro_do_send_message">පණිවිඩය යවන්න</string>
+    <string name="macro_do_send_message_value">%1$s වෙත පණිවිඩය: %2$s</string>
+    <string name="macro_do_open_camera">කැමරාව විවෘත කරන්න</string>
+    <string name="macro_do_camera_photo">ඡායාරූපය</string>
+    <string name="macro_do_camera_video">වීඩියෝව</string>
+    <string name="macro_do_set_timer_short">ටයිමරය සකසන්න: %1$s s</string>
+    <string name="macro_do_set_alarm_short">එලාමය සකසන්න: %1$s</string>
 </resources>

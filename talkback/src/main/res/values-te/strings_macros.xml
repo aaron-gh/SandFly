@@ -149,7 +149,6 @@
     <string name="macro_do_link_hint">అడ్రస్</string>
     <string name="macro_do_keys_hint">కీలు, ఉదా. tab enter</string>
     <string name="macro_number_range">%1$d నుండి %2$d నమోదు చేయండి</string>
-    <string name="macro_values_help">విలువలు {name}గా వస్తాయి. అలాగే {item}, {clipboard}, {time}, {date}.</string>
     <string name="macro_value_name">విలువ పేరు</string>
     <string name="macro_value_name_invalid">అక్షరాలు, అంకెలు, చుక్కలు, డాష్‌లు లేదా అండర్‌స్కోర్‌లను ఉపయోగించండి</string>
     <string name="macro_test_value">విలువ</string>
@@ -157,4 +156,36 @@
     <string name="macro_test_value_set">విలువ %1$s సెట్ చేయబడింది</string>
     <string name="macro_test_value_value">విలువ %1$sలో %2$s ఉంది</string>
     <string name="macro_test_not">కాదు: %1$s</string>
+    <string name="macro_values_help">విలువలు {name}గా వస్తాయి. అలాగే {item}, {clipboard}, {time}, {date}, {battery}, {device.wifi}.</string>
+    <string name="macro_do_device_control">పరికర సెట్టింగ్</string>
+    <string name="macro_do_device_control_value">%1$s: %2$s</string>
+    <string name="macro_do_turn_on">ఆన్ చేయండి</string>
+    <string name="macro_do_turn_off">ఆఫ్ చేయండి</string>
+    <string name="macro_do_toggle">ఆన్ లేదా ఆఫ్ చేయండి</string>
+    <string name="macro_do_slider_help" formatted="false">ఒక సంఖ్య, 50% వంటి శాతం, లేదా +1 లేదా -1.</string>
+    <string name="macro_do_choice_help">వైబ్రేట్ వంటి ఒక ఆప్షన్, లేదా next.</string>
+    <string name="macro_do_media">మీడియా కీ</string>
+    <string name="macro_media_play_pause">ప్లే లేదా పాజ్ చేయండి</string>
+    <string name="macro_media_play">ప్లే చేయండి</string>
+    <string name="macro_media_pause">పాజ్ చేయండి</string>
+    <string name="macro_media_next">తర్వాత</string>
+    <string name="macro_media_previous">మునుపటి</string>
+    <string name="macro_media_stop">ఆపివేయి</string>
+    <string name="macro_media_rewind">రివైండ్ చేయి</string>
+    <string name="macro_media_fast_forward">ఫాస్ట్ ఫార్వర్డ్ చేయి</string>
+    <string name="macro_do_set_timer">టైమర్‌ను సెట్ చేయండి</string>
+    <string name="macro_do_set_timer_value">టైమర్‌ను సెట్ చేయండి: %1$s s, %2$s</string>
+    <string name="macro_do_timer_seconds">సెకన్లు</string>
+    <string name="macro_do_label">లేబుల్ (ఐచ్ఛికం)</string>
+    <string name="macro_do_set_alarm">అలారంను సెట్ చేయండి</string>
+    <string name="macro_do_set_alarm_value">అలారంను సెట్ చేయండి: %1$s, %2$s</string>
+    <string name="macro_do_call">కాల్ చేయండి</string>
+    <string name="macro_do_number">ఫోన్ నంబర్</string>
+    <string name="macro_do_send_message">సందేశాన్ని పంపండి</string>
+    <string name="macro_do_send_message_value">%1$sకు సందేశం: %2$s</string>
+    <string name="macro_do_open_camera">కెమెరాను తెరవండి</string>
+    <string name="macro_do_camera_photo">ఫోటో</string>
+    <string name="macro_do_camera_video">వీడియో</string>
+    <string name="macro_do_set_timer_short">టైమర్‌ను సెట్ చేయండి: %1$s s</string>
+    <string name="macro_do_set_alarm_short">అలారంను సెట్ చేయండి: %1$s</string>
 </resources>

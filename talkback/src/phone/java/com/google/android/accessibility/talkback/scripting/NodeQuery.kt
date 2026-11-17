@@ -47,6 +47,8 @@ data class NodeQuery(
   /** Queries that each match one of the items around this one. */
   val inside: List<NodeQuery> = emptyList(),
   val has: NodeQuery? = null,
+  /** How many levels down [has] looks: 1 for the items directly in it, up to [MAX_HAS_DEPTH]. */
+  val hasDepth: Int = MAX_HAS_DEPTH,
   /** Wanted values of the item's states, such as checked = true. */
   val states: Map<String, Boolean> = emptyMap(),
 ) {
@@ -115,7 +117,7 @@ data class NodeQuery(
   private fun hasInside(node: AccessibilityNodeInfoCompat, query: NodeQuery, textOf: TextOf): Boolean {
     var level = node.children()
     var visited = 0
-    repeat(MAX_HAS_DEPTH) {
+    repeat(hasDepth.coerceIn(1, MAX_HAS_DEPTH)) {
       val next = mutableListOf<AccessibilityNodeInfoCompat>()
       for (child in level) {
         if (++visited > MAX_HAS_VISITED) return false
@@ -162,7 +164,7 @@ data class NodeQuery(
 
   companion object {
     private const val MAX_VISITED = 3000
-    private const val MAX_HAS_DEPTH = 6
+    const val MAX_HAS_DEPTH = 6
     private const val MAX_HAS_VISITED = 60
     private val PLAIN_TEXT: TextOf = { it.text?.toString() }
 
@@ -216,6 +218,7 @@ data class NodeQuery(
         "parentId",
         "inside",
         "has",
+        "hasDepth",
       )
 
     /**
@@ -262,6 +265,7 @@ data class NodeQuery(
         inside = if (nested) emptyList() else insideOf(json.opt("inside")),
         // One level too: a nested one would search everything inside every item it looks at.
         has = if (nested) null else json.optJSONObject("has")?.let { of(it, nested = true) },
+        hasDepth = json.optInt("hasDepth", MAX_HAS_DEPTH).coerceIn(1, MAX_HAS_DEPTH),
         states = STATES.keys.filter(json::has).associateWith(json::getBoolean),
       )
     }

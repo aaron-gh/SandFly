@@ -146,7 +146,6 @@
     <string name="macro_do_link_hint">Alamat</string>
     <string name="macro_do_keys_hint">Tombol, seperti tab enter</string>
     <string name="macro_number_range">Masukkan %1$d hingga %2$d</string>
-    <string name="macro_values_help">Nilai dimasukkan sebagai {name}. Juga {item}, {clipboard}, {time}, dan {date}.</string>
     <string name="macro_value_name">Nama nilai</string>
     <string name="macro_value_name_invalid">Gunakan huruf, angka, titik, tanda hubung, atau garis bawah</string>
     <string name="macro_test_value">Nilai</string>
@@ -154,4 +153,36 @@
     <string name="macro_test_value_set">Nilai %1$s disetel</string>
     <string name="macro_test_value_value">Nilai %1$s berisi %2$s</string>
     <string name="macro_test_not">Bukan: %1$s</string>
+    <string name="macro_values_help">Nilai dimasukkan sebagai {name}. Juga {item}, {clipboard}, {time}, {date}, {battery}, dan {device.wifi}.</string>
+    <string name="macro_do_device_control">Setelan perangkat</string>
+    <string name="macro_do_device_control_value">%1$s: %2$s</string>
+    <string name="macro_do_turn_on">Aktifkan</string>
+    <string name="macro_do_turn_off">Nonaktifkan</string>
+    <string name="macro_do_toggle">Aktifkan atau nonaktifkan</string>
+    <string name="macro_do_slider_help" formatted="false">Angka, persentase seperti 50%, atau +1 atau -1.</string>
+    <string name="macro_do_choice_help">Opsi, seperti Bergetar, atau next.</string>
+    <string name="macro_do_media">Tombol media</string>
+    <string name="macro_media_play_pause">Putar atau jeda</string>
+    <string name="macro_media_play">Putar</string>
+    <string name="macro_media_pause">Jeda</string>
+    <string name="macro_media_next">Berikutnya</string>
+    <string name="macro_media_previous">Sebelumnya</string>
+    <string name="macro_media_stop">Berhenti</string>
+    <string name="macro_media_rewind">Mundur</string>
+    <string name="macro_media_fast_forward">Maju cepat</string>
+    <string name="macro_do_set_timer">Setel pengatur waktu</string>
+    <string name="macro_do_set_timer_value">Setel pengatur waktu: %1$s s, %2$s</string>
+    <string name="macro_do_timer_seconds">Detik</string>
+    <string name="macro_do_label">Label (opsional)</string>
+    <string name="macro_do_set_alarm">Setel alarm</string>
+    <string name="macro_do_set_alarm_value">Setel alarm: %1$s, %2$s</string>
+    <string name="macro_do_call">Telepon</string>
+    <string name="macro_do_number">Nomor telepon</string>
+    <string name="macro_do_send_message">Kirim pesan</string>
+    <string name="macro_do_send_message_value">Pesan ke %1$s: %2$s</string>
+    <string name="macro_do_open_camera">Buka kamera</string>
+    <string name="macro_do_camera_photo">Foto</string>
+    <string name="macro_do_camera_video">Video</string>
+    <string name="macro_do_set_timer_short">Setel pengatur waktu: %1$s s</string>
+    <string name="macro_do_set_alarm_short">Setel alarm: %1$s</string>
 </resources>
