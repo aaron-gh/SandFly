@@ -127,7 +127,7 @@ public class LanguageVoicesFragment extends TalkbackBaseFragment {
     List<Locale> languages = new ArrayList<>();
     languages.add(LanguageSwitch.voiceLanguage());
     for (String tag : LanguageVoices.languages(prefs)) {
-      Locale language = Locale.forLanguageTag(tag);
+      Locale language = LanguageVoices.normalized(Locale.forLanguageTag(tag));
       languages.add(language);
       String id = LanguageVoices.profileId(prefs, tag);
       String name = names.get(id);
@@ -201,7 +201,7 @@ public class LanguageVoicesFragment extends TalkbackBaseFragment {
     }
     int checked = Math.max(0, ids.indexOf(LanguageVoices.profileId(prefs, tag)));
     new AlertDialog.Builder(context)
-        .setTitle(Locale.forLanguageTag(tag).getDisplayName())
+        .setTitle(LanguageVoices.normalized(Locale.forLanguageTag(tag)).getDisplayName())
         .setSingleChoiceItems(
             entries.toArray(new CharSequence[0]),
             checked,
@@ -228,7 +228,7 @@ public class LanguageVoicesFragment extends TalkbackBaseFragment {
     }
     Set<String> added = new HashSet<>();
     for (String tag : LanguageVoices.languages(prefs)) {
-      added.add(Locale.forLanguageTag(tag).getLanguage());
+      added.add(LanguageVoices.languageCode(Locale.forLanguageTag(tag).getLanguage()));
     }
     Collator collator = Collator.getInstance();
     Map<String, String> byName = new TreeMap<>(collator);
@@ -278,7 +278,9 @@ public class LanguageVoicesFragment extends TalkbackBaseFragment {
                               if (available != null) {
                                 for (Locale locale : available) {
                                   if (!locale.getLanguage().isEmpty()) {
-                                    languages.add(locale.getLanguage());
+                                    // Some engines list "eng" for English, others "en".
+                                    languages.add(
+                                        LanguageVoices.languageCode(locale.getLanguage()));
                                   }
                                 }
                               }
