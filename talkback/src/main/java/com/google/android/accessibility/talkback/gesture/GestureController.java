@@ -1257,8 +1257,10 @@ public class GestureController {
     // A gesture profile's own gestures come before row and column navigation and scripts.
     boolean fromProfile = gestureShortcutMapping.getProfileActionKeyFromGestureId(gestureId) != null;
     String action = gestureShortcutMapping.getActionKeyFromGestureId(gestureId);
+    boolean fromApp = gestureShortcutMapping.getAppActionKeyFromGestureId(gestureId) != null;
     // Override the action if the current granularity is row/column.
     if (!fromProfile
+        && !fromApp
         && actorState.getDirectionNavigation().getCurrentGranularity()
             == CursorGranularity.ROW_COLUMN) {
       if (gestureId == AccessibilityService.GESTURE_SWIPE_LEFT) {
