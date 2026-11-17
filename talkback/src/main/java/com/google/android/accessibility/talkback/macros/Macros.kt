@@ -109,6 +109,30 @@ object Macros {
   /** Speaks [text]. */
   data class SpeakText(val text: String) : Step()
 
+  /** What an [ActOnItem] step does to its item. [key] is saved and must never change. */
+  enum class ItemAct(val key: String, @StringRes val title: Int, val action: Int) {
+    LONG_PRESS("long_press", R.string.macro_act_long_press, android.view.accessibility.AccessibilityNodeInfo.ACTION_LONG_CLICK),
+    SCROLL_FORWARD("scroll_forward", R.string.macro_act_scroll_forward, android.view.accessibility.AccessibilityNodeInfo.ACTION_SCROLL_FORWARD),
+    SCROLL_BACKWARD("scroll_backward", R.string.macro_act_scroll_backward, android.view.accessibility.AccessibilityNodeInfo.ACTION_SCROLL_BACKWARD);
+
+    companion object {
+      fun of(key: String?): ItemAct? = entries.firstOrNull { it.key == key }
+    }
+  }
+
+  /**
+   * Long-presses or scrolls, [times] times, the item a [Tap] with the same values would click, or
+   * the nearest item around it that can be, such as a seek bar holding a time.
+   */
+  data class ActOnItem(
+    val label: String,
+    val act: ItemAct,
+    val times: Int = 1,
+    val timeoutMillis: Long = DEFAULT_TAP_TIMEOUT_MS,
+    val regex: Boolean = false,
+    val field: Field? = null,
+  ) : Step()
+
   /** Opens the app of the [OpenAppActions] value [value]. */
   data class OpenApp(val value: String) : Step()
 
@@ -378,6 +402,13 @@ object Macros {
   /** The app of the active window is [packageName]. */
   data class AppInFront(val packageName: String) : Test()
 
+  /**
+   * The item with accessibility focus is inside an item, or is one, whose own text, description,
+   * hint or state, or only its [field], contains [label] or matches it for [regex]: such as a video
+   * player, found by its resource ID.
+   */
+  data class FocusInside(val label: String, val regex: Boolean = false, val field: Field? = null) : Test()
+
   /** The on-screen keyboard is shown. */
   data object KeyboardShown : Test()
 
@@ -493,6 +524,7 @@ object Macros {
   private const val TYPE_TAP_POSITION = "tap_position"
   private const val TYPE_TOUCH_HOLD = "touch_hold"
   private const val TYPE_FOCUS_ITEM = "focus_item"
+  private const val TYPE_ACT_ITEM = "act_item"
   private const val TYPE_SPEAK_ITEM = "speak_item"
   private const val TYPE_SPEAK_TEXT = "speak_text"
   private const val TYPE_OPEN_APP = "open_app"
@@ -510,6 +542,7 @@ object Macros {
 
   private const val TEST_ITEM = "item"
   private const val TEST_FOCUSED = "focused"
+  private const val TEST_FOCUS_INSIDE = "focus_inside"
   private const val TEST_APP = "app"
   private const val TEST_KEYBOARD = "keyboard"
   private const val TEST_LOCKED = "locked"
@@ -695,6 +728,12 @@ object Macros {
       }
       is FocusItem ->
         context.getString(R.string.macro_step_focus_value, labelText(context, step.label, step.regex, step.field))
+      is ActOnItem ->
+        if (step.times > 1) {
+          context.getString(R.string.macro_step_act_times_value, context.getString(step.act.title), labelText(context, step.label, step.regex, step.field), step.times)
+        } else {
+          context.getString(R.string.macro_step_act_value, context.getString(step.act.title), labelText(context, step.label, step.regex, step.field))
+        }
       is SpeakItem ->
         context.getString(R.string.macro_step_speak_item_value, labelText(context, step.label, step.regex, step.field))
       is SpeakText -> context.getString(R.string.macro_step_speak_text_value, step.text)
@@ -751,6 +790,11 @@ object Macros {
         context.getString(
           if (not) R.string.macro_test_not_focused_value else R.string.macro_test_focused_value,
           itemText(context, labelText(context, test.label, test.regex, test.field), test.kind),
+        )
+      is FocusInside ->
+        context.getString(
+          if (not) R.string.macro_test_not_focus_inside_value else R.string.macro_test_focus_inside_value,
+          labelText(context, test.label, test.regex, test.field),
         )
       is AppInFront ->
         context.getString(
@@ -1181,6 +1225,15 @@ object Macros {
           .put("timeout", step.timeoutMillis)
           .apply { if (step.regex) put("regex", true) }
           .apply { step.field?.let { put("field", it.key) } }
+      is ActOnItem ->
+        JSONObject()
+          .put("type", TYPE_ACT_ITEM)
+          .put("label", step.label)
+          .put("act", step.act.key)
+          .put("times", step.times)
+          .put("timeout", step.timeoutMillis)
+          .apply { if (step.regex) put("regex", true) }
+          .apply { step.field?.let { put("field", it.key) } }
       is FocusItem ->
         JSONObject()
           .put("type", TYPE_FOCUS_ITEM)
@@ -1242,6 +1295,12 @@ object Macros {
                 .put("kind", test.kind?.key)
                 .apply { if (test.regex) put("regex", true) }
                 .apply { test.field?.let { put("field", it.key) } }
+            is FocusInside ->
+              JSONObject()
+                .put("test", TEST_FOCUS_INSIDE)
+                .put("label", test.label)
+                .apply { if (test.regex) put("regex", true) }
+                .apply { test.field?.let { put("field", it.key) } }
             is AppInFront -> JSONObject().put("test", TEST_APP).put("package", test.packageName)
             KeyboardShown -> JSONObject().put("test", TEST_KEYBOARD)
             ScreenLocked -> JSONObject().put("test", TEST_LOCKED)
@@ -1288,6 +1347,10 @@ object Macros {
                     Field.of(item.optString("field")).takeIf { label.isNotBlank() },
                   )
               }
+              TEST_FOCUS_INSIDE ->
+                item.optString("label").take(MAX_LABEL).takeIf { it.isNotBlank() }?.let {
+                  FocusInside(it, item.optBoolean("regex", false), Field.of(item.optString("field")))
+                }
               TEST_APP -> item.optString("package").takeIf { it.isNotEmpty() }?.let { AppInFront(it) }
               TEST_KEYBOARD -> KeyboardShown
               TEST_LOCKED -> ScreenLocked
@@ -1366,6 +1429,19 @@ object Macros {
             item.optBoolean("regex", false),
             Field.of(item.optString("field")),
           )
+        }
+      TYPE_ACT_ITEM ->
+        item.optString("label").takeIf { it.isNotBlank() }?.let { label ->
+          ItemAct.of(item.optString("act"))?.let { act ->
+            ActOnItem(
+              label,
+              act,
+              item.optInt("times", 1).coerceIn(1, MAX_REPEATS),
+              item.optLong("timeout", DEFAULT_TAP_TIMEOUT_MS).coerceIn(MIN_TAP_TIMEOUT_MS, MAX_TAP_TIMEOUT_MS),
+              item.optBoolean("regex", false),
+              Field.of(item.optString("field")),
+            )
+          }
         }
       TYPE_FOCUS_ITEM ->
         item.optString("label").takeIf { it.isNotBlank() }?.let {

@@ -124,6 +124,7 @@ abstract class MacroEditorFragment : NotificationCodeFragment(R.string.title_pre
       listOf(
         R.string.macro_test_item,
         R.string.macro_test_focused,
+        R.string.macro_test_focus_inside,
         R.string.macro_test_app,
         R.string.macro_test_keyboard,
         R.string.macro_test_locked,
@@ -133,10 +134,11 @@ abstract class MacroEditorFragment : NotificationCodeFragment(R.string.title_pre
       when (old) {
         is Macros.ItemOnScreen -> 0
         is Macros.FocusedItem -> 1
-        is Macros.AppInFront -> 2
-        Macros.KeyboardShown -> 3
-        Macros.ScreenLocked -> 4
-        is Macros.ValueIs -> 5
+        is Macros.FocusInside -> 2
+        is Macros.AppInFront -> 3
+        Macros.KeyboardShown -> 4
+        Macros.ScreenLocked -> 5
+        is Macros.ValueIs -> 6
         null -> -1
       }
     choose(getString(R.string.macro_choose_test), kinds.map { getString(it) }, checked) { chosen ->
@@ -187,6 +189,27 @@ abstract class MacroEditorFragment : NotificationCodeFragment(R.string.title_pre
               val field = chosenField(fields).takeIf { label.isNotEmpty() }
               askKind(item?.kind, anyType = label.isNotEmpty()) { then(Macros.FocusedItem(label, it, regex, field)) }
               null
+            }
+          }
+        }
+        R.string.macro_test_focus_inside -> {
+          val inside = old as? Macros.FocusInside
+          val fields = fieldChoice(inside?.field)
+          askText(
+            getString(R.string.macro_test_focus_inside),
+            text = inside?.label.orEmpty(),
+            hint = getString(R.string.macro_tap_label),
+            checkLabels = listOf(getString(R.string.macro_regex)),
+            checked = listOf(inside?.regex == true),
+            inputType = InputType.TYPE_CLASS_TEXT,
+            choice = fields,
+          ) { text, _, checked ->
+            val label = text.take(Macros.MAX_LABEL)
+            val regex = checked.firstOrNull() == true
+            when {
+              label.isEmpty() -> ""
+              regex && Macros.compilePattern(label) == null -> getString(R.string.macro_invalid_regex)
+              else -> null.also { then(Macros.FocusInside(label, regex, chosenField(fields))) }
             }
           }
         }
@@ -466,6 +489,7 @@ class MacroFragment : MacroEditorFragment() {
         R.string.macro_step_touch_hold,
         R.string.macro_step_focus,
         R.string.macro_step_speak_item,
+        R.string.macro_step_act_item,
         R.string.macro_step_speak_text,
         R.string.macro_step_type,
         R.string.shortcut_title_open_app,
@@ -495,6 +519,7 @@ class MacroFragment : MacroEditorFragment() {
         R.string.macro_step_touch_hold -> askTouchHold(null, add)
         R.string.macro_step_focus -> askTap(null, add, R.string.macro_step_focus)
         R.string.macro_step_speak_item -> askTap(null, add, R.string.macro_step_speak_item)
+        R.string.macro_step_act_item -> askActOnItem(null, add)
         R.string.macro_step_speak_text -> askSpeakText(null, add)
         R.string.macro_step_type -> askTypeText(null, add)
         R.string.shortcut_title_open_app -> chooseOpenApp(add)
@@ -541,6 +566,7 @@ class MacroFragment : MacroEditorFragment() {
           replace,
           R.string.macro_step_speak_item,
         )
+      is Macros.ActOnItem -> askActOnItem(step, replace)
       is Macros.SpeakText -> askSpeakText(step, replace)
       is Macros.OpenApp -> chooseOpenApp(replace)
       is Macros.TypeText -> askTypeText(step, replace)
@@ -661,6 +687,39 @@ class MacroFragment : MacroEditorFragment() {
             }
           )
           null
+        }
+      }
+    }
+  }
+
+  /** Asks for a Long-press or scroll an item step: what to do, the item, and how many times. */
+  private fun askActOnItem(step: Macros.ActOnItem?, then: (Macros.Step) -> Unit) {
+    val acts = Macros.ItemAct.entries
+    choose(getString(R.string.macro_step_act_item), acts.map { getString(it.title) }, step?.let { acts.indexOf(it.act) } ?: -1) { chosen ->
+      val act = acts[chosen]
+      val fields = fieldChoice(step?.field)
+      askText(
+        getString(act.title),
+        text = step?.label.orEmpty(),
+        hint = getString(R.string.macro_tap_label),
+        secondHint = getString(R.string.macro_times),
+        secondText = (step?.times ?: 1).toString(),
+        checkLabels = listOf(getString(R.string.macro_regex)),
+        checked = listOf(step?.regex == true),
+        inputType = InputType.TYPE_CLASS_TEXT,
+        secondInputType = InputType.TYPE_CLASS_NUMBER,
+        choice = fields,
+      ) { label, timesText, checked ->
+        val regex = checked.firstOrNull() == true
+        val times = timesText.trim().toIntOrNull()?.takeIf { it in 1..Macros.MAX_REPEATS }
+        when {
+          label.isEmpty() -> ""
+          regex && Macros.compilePattern(label) == null -> getString(R.string.macro_invalid_regex)
+          times == null -> getString(R.string.macro_invalid_times, Macros.MAX_REPEATS)
+          else -> {
+            then(Macros.ActOnItem(label, act, times, step?.timeoutMillis ?: Macros.DEFAULT_TAP_TIMEOUT_MS, regex, chosenField(fields)))
+            null
+          }
         }
       }
     }

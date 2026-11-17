@@ -843,7 +843,7 @@ class ScriptRuntime(
       fun test(condition: Macros.Condition?) {
         condition?.clauses?.forEach { clause ->
           when (clause.test) {
-            is Macros.ItemOnScreen, is Macros.FocusedItem, is Macros.AppInFront, Macros.KeyboardShown ->
+            is Macros.ItemOnScreen, is Macros.FocusedItem, is Macros.FocusInside, is Macros.AppInFront, Macros.KeyboardShown ->
               needed += SCREEN
             else -> {}
           }
@@ -858,7 +858,7 @@ class ScriptRuntime(
             (if (step.value.startsWith(SANDFLY_PRO_COMMAND_PREFIX)) SYSTEM else COMMAND_PERMISSIONS[step.value])
               ?.let(needed::add)
           }
-          is Macros.Tap, is Macros.TouchHold, is Macros.FocusItem -> needed += setOf(SCREEN, ACTIONS)
+          is Macros.Tap, is Macros.TouchHold, is Macros.FocusItem, is Macros.ActOnItem -> needed += setOf(SCREEN, ACTIONS)
           is Macros.TapPosition, is Macros.TypeText -> needed += ACTIONS
           is Macros.SpeakItem -> needed += setOf(SCREEN, SPEECH)
           is Macros.SpeakText -> needed += SPEECH
