@@ -28,6 +28,7 @@ import androidx.annotation.Nullable;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.talkback.focusmanagement.HomeScreenPages;
 import com.google.android.accessibility.talkback.focusmanagement.action.TouchExplorationAction;
+import com.google.android.accessibility.talkback.gesture.HoverlessWindows;
 import com.google.android.accessibility.talkback.screenelements.ScreenElements;
 import com.google.android.accessibility.utils.AccessibilityEventListener;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
@@ -77,6 +78,12 @@ public class TouchExplorationInterpreter implements AccessibilityEventListener {
   private final PostDelayHandler postDelayHandler;
 
   private AccessibilityNodeInfoCompat lastTouchedNode;
+
+  /**
+   * The node of the hover whose empty touch action is pending: a hover that found nothing to focus.
+   * See {@link HoverlessWindows}.
+   */
+  private @Nullable AccessibilityNodeInfoCompat emptyTouchedNode;
 
   /**
    * How late a hover must be to be set aside rather than handled. Normal exploring keeps up, so it
@@ -295,6 +302,7 @@ public class TouchExplorationInterpreter implements AccessibilityEventListener {
       // event immediately. Instead, we post delay to dispatch it. If we receive hover enter event
       // from other node before timeout, we cancel this post-delayed action.
       postDelayHandler.postDelayEmptyTouchAction(eventId);
+      emptyTouchedNode = touchedNode;
     } else {
       postDelayHandler.cancelPendingEmptyTouchAction(/* dispatchPendingActionImmediately= */ false);
       LogUtils.v(
@@ -304,6 +312,24 @@ public class TouchExplorationInterpreter implements AccessibilityEventListener {
           eventId);
     }
     return false;
+  }
+
+  /**
+   * Dispatches the hover that found nothing to focus, once no other hover followed it. If the app
+   * reported it for an empty container as large as its window, the item under the finger is
+   * focused instead; see {@link HoverlessWindows}.
+   */
+  private void dispatchEmptyTouchAction(@Nullable EventId eventId) {
+    @Nullable AccessibilityNodeInfoCompat touched = emptyTouchedNode;
+    emptyTouchedNode = null;
+    @Nullable AccessibilityNodeInfoCompat item =
+        touched == null ? null : HoverlessWindows.itemUnderFinger(touched);
+    LogUtils.v(TAG, "dispatchEmptyTouchAction: HOVER_ENTER, touchedFocusableNode=%s", item);
+    if (dispatchTouchExplorationAction(
+            new TouchExplorationAction(TouchExplorationAction.HOVER_ENTER, item), eventId)
+        && item != null) {
+      setInputTouchMode();
+    }
   }
 
   /** @return {@code true} if any accessibility action is successfully performed. */
@@ -352,12 +378,8 @@ public class TouchExplorationInterpreter implements AccessibilityEventListener {
     @Override
     protected void handleMessage(Message msg, TouchExplorationInterpreter parent) {
       if (msg.what == MSG_EMPTY_TOUCH_ACTION) {
-        LogUtils.v(
-            TAG, "handleMessage: MSG_EMPTY_TOUCH_ACTION, HOVER_ENTER, touchedFocusableNode=null");
-        parent.dispatchTouchExplorationAction(
-            new TouchExplorationAction(
-                TouchExplorationAction.HOVER_ENTER, /* touchedFocusableNode= */ null),
-            (EventId) msg.obj);
+        LogUtils.v(TAG, "handleMessage: MSG_EMPTY_TOUCH_ACTION");
+        parent.dispatchEmptyTouchAction((EventId) msg.obj);
       } else if (msg.what == MSG_TOUCH_END_ACTION) {
         handleTouchEndAction();
       }
@@ -371,16 +393,15 @@ public class TouchExplorationInterpreter implements AccessibilityEventListener {
       boolean shouldDispatchEmptyTouchAction =
           dispatchPendingActionImmediately && hasMessages(MSG_EMPTY_TOUCH_ACTION);
       removeMessages(MSG_EMPTY_TOUCH_ACTION);
+      TouchExplorationInterpreter parent = getParent();
+      if (parent == null) {
+        return;
+      }
       if (shouldDispatchEmptyTouchAction) {
-        LogUtils.v(
-            TAG,
-            "cancelPendingEmptyTouchAction: shouldDispatchEmptyTouchAction, HOVER_ENTER,"
-                + " touchedFocusableNode=null");
-        getParent()
-            .dispatchTouchExplorationAction(
-                new TouchExplorationAction(
-                    TouchExplorationAction.HOVER_ENTER, /* touchedFocusableNode= */ null),
-                /* eventId= */ null);
+        LogUtils.v(TAG, "cancelPendingEmptyTouchAction: shouldDispatchEmptyTouchAction");
+        parent.dispatchEmptyTouchAction(/* eventId= */ null);
+      } else {
+        parent.emptyTouchedNode = null;
       }
     }
 

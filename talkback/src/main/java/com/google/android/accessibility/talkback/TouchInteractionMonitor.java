@@ -116,6 +116,7 @@ import com.google.android.accessibility.talkback.gesture.GestureController;
 import com.google.android.accessibility.talkback.gesture.GestureLog;
 import com.google.android.accessibility.talkback.gesture.GestureProfiles;
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping;
+import com.google.android.accessibility.talkback.gesture.HoverlessWindows;
 import com.google.android.accessibility.talkback.gesture.KeyboardExploration;
 import com.google.android.accessibility.talkback.gesture.KeyboardHover;
 import com.google.android.accessibility.talkback.gesture.PinchTracker;
@@ -702,6 +703,7 @@ public class TouchInteractionMonitor
 
   public void stop() {
     stateInActive = false;
+    HoverlessWindows.clearStart();
     // Nothing that is waiting runs a gesture or speaks after the service stops.
     clearCornerTaps();
     mainHandler.removeCallbacks(edgeSwipeStallCheck);
@@ -960,6 +962,7 @@ public class TouchInteractionMonitor
             SystemClock.uptimeMillis() - rootStartMs,
             rootStartMs - touchDownTimeMs);
       }
+      HoverlessWindows.clearStart();
     }
     if (handleEdgeSwipe(event)) {
       return;
@@ -2542,6 +2545,9 @@ public class TouchInteractionMonitor
           service.onTapExploration();
         }
         trackStateChangeRequest(STATE_TOUCH_EXPLORING, caller);
+        // Motion events stop once touch exploration starts: where the finger is now finds the item
+        // under it if the app's hover events find nothing.
+        HoverlessWindows.onTouchExplorationRequested(lastFingerX, lastFingerY);
         touchExplorationModeFailureReporter.onRequestTouchExploration();
         controller.requestTouchExploration();
       }
