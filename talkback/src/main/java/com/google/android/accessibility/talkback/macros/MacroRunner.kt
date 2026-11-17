@@ -573,6 +573,11 @@ object MacroRunner {
               is Macros.TouchHold -> {
                 val bounds = Rect()
                 it.getBoundsInScreen(bounds)
+                // Only the part in the item's window, so that the touch doesn't land on a window
+                // over it, such as the keyboard or the navigation bar.
+                val windowBounds = Rect()
+                it.window?.getBoundsInScreen(windowBounds)
+                if (!windowBounds.isEmpty && !bounds.intersect(windowBounds)) bounds.setEmpty()
                 if (bounds.isEmpty) NO_POSITION else bounds
               }
               else -> click(it)
