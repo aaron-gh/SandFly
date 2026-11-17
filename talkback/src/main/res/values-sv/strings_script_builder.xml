@@ -237,4 +237,13 @@
         <item quantity="one">Behåll den första delen</item>
         <item quantity="other">Behåll de första %1$d delarna</item>
     </plurals>
+    <string name="script_builder_like_inspected">Objekt som liknar det inspekterade objektet</string>
+    <plurals name="script_builder_like_count">
+        <item quantity="one">Matchar det inspekterade objektet och %1$d liknande objekt</item>
+        <item quantity="other">Matchar det inspekterade objektet och %1$d liknande objekt</item>
+    </plurals>
+    <string name="script_builder_inspected_category">Inspekterat objekt</string>
+    <string name="script_builder_one_item_actions">Läs som ett objekt, med knapparna som åtgärder</string>
+    <string name="script_builder_actions_value">Åtgärder: %1$s</string>
+    <string name="script_builder_choose_read">Välj vad som läses</string>
 </resources>

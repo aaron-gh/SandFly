@@ -242,4 +242,14 @@
         <item quantity="few">Zadrži prva %1$d dijela</item>
         <item quantity="other">Zadrži prvih %1$d dijelova</item>
     </plurals>
+    <string name="script_builder_like_inspected">Stavke poput ispitane stavke</string>
+    <plurals name="script_builder_like_count">
+        <item quantity="one">Odgovara ispitanoj stavci i %1$d sličnoj stavci</item>
+        <item quantity="few">Odgovara ispitanoj stavci i %1$d slične stavke</item>
+        <item quantity="other">Odgovara ispitanoj stavci i %1$d sličnih stavki</item>
+    </plurals>
+    <string name="script_builder_inspected_category">Ispitana stavka</string>
+    <string name="script_builder_one_item_actions">Čitaj kao jednu stavku, s njenim dugmadima kao radnjama</string>
+    <string name="script_builder_actions_value">Radnje: %1$s</string>
+    <string name="script_builder_choose_read">Odaberite šta se čita</string>
 </resources>

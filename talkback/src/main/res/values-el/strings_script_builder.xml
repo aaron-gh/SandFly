@@ -237,4 +237,13 @@
         <item quantity="one">Διατήρηση του πρώτου τμήματος</item>
         <item quantity="other">Διατήρηση των πρώτων %1$d τμημάτων</item>
     </plurals>
+    <string name="script_builder_like_inspected">Στοιχεία όπως το στοιχείο που επιθεωρήθηκε</string>
+    <plurals name="script_builder_like_count">
+        <item quantity="one">Αντιστοιχεί στο στοιχείο που επιθεωρήθηκε και σε %1$d παρόμοιο στοιχείο</item>
+        <item quantity="other">Αντιστοιχεί στο στοιχείο που επιθεωρήθηκε και σε %1$d παρόμοια στοιχεία</item>
+    </plurals>
+    <string name="script_builder_inspected_category">Στοιχείο που επιθεωρήθηκε</string>
+    <string name="script_builder_one_item_actions">Ανάγνωση ως ένα στοιχείο, με τα κουμπιά του ως ενέργειες</string>
+    <string name="script_builder_actions_value">Ενέργειες: %1$s</string>
+    <string name="script_builder_choose_read">Επιλογή του τι διαβάζεται</string>
 </resources>

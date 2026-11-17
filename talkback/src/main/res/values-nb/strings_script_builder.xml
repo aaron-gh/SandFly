@@ -237,4 +237,13 @@
         <item quantity="one">Behold den første delen</item>
         <item quantity="other">Behold de første %1$d delene</item>
     </plurals>
+    <string name="script_builder_like_inspected">Elementer som ligner det inspiserte elementet</string>
+    <plurals name="script_builder_like_count">
+        <item quantity="one">Treffer det inspiserte elementet og %1$d lignende element</item>
+        <item quantity="other">Treffer det inspiserte elementet og %1$d lignende elementer</item>
+    </plurals>
+    <string name="script_builder_inspected_category">Inspisert element</string>
+    <string name="script_builder_one_item_actions">Les som ett element, med knappene som handlinger</string>
+    <string name="script_builder_actions_value">Handlinger: %1$s</string>
+    <string name="script_builder_choose_read">Velg hva som leses</string>
 </resources>

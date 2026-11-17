@@ -247,4 +247,15 @@
         <item quantity="many">Zachowaj pierwszych %1$d części</item>
         <item quantity="other">Zachowaj pierwsze %1$d części</item>
     </plurals>
+    <string name="script_builder_like_inspected">Elementy podobne do sprawdzonego elementu</string>
+    <plurals name="script_builder_like_count">
+        <item quantity="one">Pasuje do sprawdzonego elementu i %1$d podobnego elementu</item>
+        <item quantity="few">Pasuje do sprawdzonego elementu i %1$d podobnych elementów</item>
+        <item quantity="many">Pasuje do sprawdzonego elementu i %1$d podobnych elementów</item>
+        <item quantity="other">Pasuje do sprawdzonego elementu i %1$d podobnego elementu</item>
+    </plurals>
+    <string name="script_builder_inspected_category">Sprawdzony element</string>
+    <string name="script_builder_one_item_actions">Czytaj jako jeden element, z jego przyciskami jako czynnościami</string>
+    <string name="script_builder_actions_value">Czynności: %1$s</string>
+    <string name="script_builder_choose_read">Wybierz, co jest czytane</string>
 </resources>

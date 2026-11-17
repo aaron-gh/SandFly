@@ -257,4 +257,17 @@
         <item quantity="many">الإبقاء على أول %1$d جزءًا</item>
         <item quantity="other">الإبقاء على أول %1$d جزء</item>
     </plurals>
+    <string name="script_builder_like_inspected">عناصر مشابهة للعنصر الذي تم فحصه</string>
+    <plurals name="script_builder_like_count">
+        <item quantity="zero">يطابق العنصر الذي تم فحصه و%1$d عنصر مشابه له</item>
+        <item quantity="one">يطابق العنصر الذي تم فحصه وعنصرًا واحدًا مشابهًا له</item>
+        <item quantity="two">يطابق العنصر الذي تم فحصه وعنصرين مشابهين له</item>
+        <item quantity="few">يطابق العنصر الذي تم فحصه و%1$d عناصر مشابهة له</item>
+        <item quantity="many">يطابق العنصر الذي تم فحصه و%1$d عنصرًا مشابهًا له</item>
+        <item quantity="other">يطابق العنصر الذي تم فحصه و%1$d عنصر مشابه له</item>
+    </plurals>
+    <string name="script_builder_inspected_category">العنصر الذي تم فحصه</string>
+    <string name="script_builder_one_item_actions">القراءة كعنصر واحد، مع أزراره كإجراءات</string>
+    <string name="script_builder_actions_value">الإجراءات: %1$s</string>
+    <string name="script_builder_choose_read">اختيار ما تتم قراءته</string>
 </resources>

@@ -237,4 +237,13 @@
         <item quantity="one">Keep the first part</item>
         <item quantity="other">Keep the first %1$d parts</item>
     </plurals>
+    <string name="script_builder_like_inspected">Items like the inspected item</string>
+    <plurals name="script_builder_like_count">
+        <item quantity="one">Matches the inspected item and %1$d item like it</item>
+        <item quantity="other">Matches the inspected item and %1$d items like it</item>
+    </plurals>
+    <string name="script_builder_inspected_category">Inspected item</string>
+    <string name="script_builder_one_item_actions">Read as one item, with its buttons as actions</string>
+    <string name="script_builder_actions_value">Actions: %1$s</string>
+    <string name="script_builder_choose_read">Choose what is read</string>
 </resources>

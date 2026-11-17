@@ -237,4 +237,13 @@
         <item quantity="one">Az első rész megtartása</item>
         <item quantity="other">Az első %1$d rész megtartása</item>
     </plurals>
+    <string name="script_builder_like_inspected">A vizsgált elemhez hasonló elemek</string>
+    <plurals name="script_builder_like_count">
+        <item quantity="one">Egyezik a vizsgált elemmel és %1$d hasonló elemmel</item>
+        <item quantity="other">Egyezik a vizsgált elemmel és %1$d hasonló elemmel</item>
+    </plurals>
+    <string name="script_builder_inspected_category">Vizsgált elem</string>
+    <string name="script_builder_one_item_actions">Felolvasás egy elemként, a gombjai műveletekként</string>
+    <string name="script_builder_actions_value">Műveletek: %1$s</string>
+    <string name="script_builder_choose_read">A felolvasott tartalom kiválasztása</string>
 </resources>

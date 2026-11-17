@@ -247,4 +247,15 @@
         <item quantity="few">Ohrani prve %1$d dele</item>
         <item quantity="other">Ohrani prvih %1$d delov</item>
     </plurals>
+    <string name="script_builder_like_inspected">Elementi, podobni pregledanemu elementu</string>
+    <plurals name="script_builder_like_count">
+        <item quantity="one">Ustreza pregledanemu elementu in %1$d podobnemu elementu</item>
+        <item quantity="two">Ustreza pregledanemu elementu in %1$d podobnima elementoma</item>
+        <item quantity="few">Ustreza pregledanemu elementu in %1$d podobnim elementom</item>
+        <item quantity="other">Ustreza pregledanemu elementu in %1$d podobnim elementom</item>
+    </plurals>
+    <string name="script_builder_inspected_category">Pregledani element</string>
+    <string name="script_builder_one_item_actions">Beri kot en element, z njegovimi gumbi kot dejanji</string>
+    <string name="script_builder_actions_value">Dejanja: %1$s</string>
+    <string name="script_builder_choose_read">Izberi, kaj se bere</string>
 </resources>

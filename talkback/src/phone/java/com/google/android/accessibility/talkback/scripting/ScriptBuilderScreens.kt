@@ -43,7 +43,7 @@ abstract class ScriptBuilderBaseFragment : NotificationCodeFragment(R.string.scr
   protected fun draft(): JSONObject? = ScriptBuilder.draft(store, scriptId)
 
   /** Changes the draft with [change], saves it and builds the screen again. */
-  protected fun edit(change: (JSONObject) -> Unit) {
+  protected open fun edit(change: (JSONObject) -> Unit) {
     val draft = draft() ?: return
     change(draft)
     try {
@@ -770,12 +770,24 @@ class ScriptRuleFragment : ScriptBuilderBaseFragment() {
       screen.action(getString(R.string.script_builder_not_used, it)) {}.isSelectable = false
     }
 
+    val match = rule.optJSONObject("match")
+    // The inspected item, when this rule names it: changes can be worked out from it.
+    val sample =
+      ItemInspector.lastSample(context)?.takeIf { sample ->
+        match != null && ItemPattern.item(sample)?.let { ItemPattern.tellsItem(match, it) } == true
+      }
     val item = screen.category(R.string.script_builder_applies_to)
-    item.action(getString(R.string.script_builder_item), ScriptBuilderFragment.describeQuery(context, rule.optJSONObject("match"))) {
+    val described = ScriptBuilderFragment.describeQuery(context, match)
+    item.action(
+      getString(R.string.script_builder_item),
+      listOfNotNull(described, likeCountText(context, match, sample)).joinToString("\n"),
+    ) {
       openQuery(path("match"))
     }
     textRow(item, "window", R.string.script_builder_only_window)
     textRow(item, "activity", R.string.script_builder_only_activity)
+
+    if (sample != null) inspectedRows(screen, rule, sample)
 
     val changes = screen.category(R.string.script_builder_changes)
     textRow(changes, "label", R.string.script_builder_label)
@@ -896,6 +908,154 @@ class ScriptRuleFragment : ScriptBuilderBaseFragment() {
         parentFragmentManager.popBackStack()
       }
     }
+  }
+
+  /**
+   * Changes worked out from the inspected item and the items like it: reading it as one item with
+   * its buttons as actions, and choosing which of its parts are read.
+   */
+  private fun inspectedRows(screen: PreferenceGroup, rule: JSONObject, sample: JSONObject) {
+    val category = screen.category(R.string.script_builder_inspected_category)
+    val buttons = ItemPattern.buttons(sample)
+    if (buttons.isNotEmpty()) {
+      category.action(
+        getString(R.string.script_builder_one_item_actions),
+        getString(R.string.script_builder_actions_value, buttons.joinToString(", ") { it.title }),
+      ) {
+        makeOneItem(sample, buttons)
+      }
+    }
+    val grouped = rule.optBoolean("group")
+    val text = ItemPattern.text(sample, grouped) ?: return
+    category.action(getString(R.string.script_builder_choose_read), spokenText(text, speechEdits(rule))) {
+      chooseRead(sample, grouped)
+    }
+  }
+
+  /** What SandFly says for [text] after [edits]. */
+  private fun spokenText(text: String, edits: JSONArray): String =
+    when (val result = SpeechEdits.apply(text, edits)) {
+      is SpeechEdits.Result.Speak -> result.text
+      SpeechEdits.Result.Silent -> getString(R.string.script_builder_change_silence)
+      SpeechEdits.Result.Unchanged -> text
+    }
+
+  /** Reads the item as one item, adds an action for each button in it, and stops reading the buttons. */
+  private fun makeOneItem(sample: JSONObject, buttons: List<ItemPattern.Button>) {
+    val item = ItemPattern.item(sample) ?: return
+    edit { draft ->
+      val rule = draft.getJSONArray("rules").getJSONObject(index)
+      rule.put("group", true)
+      val actions = rule.getOrPutArray("actions")
+      val titles = actions.objects().map { it.optString("title").lowercase() }
+      for (button in buttons) {
+        if (button.title.lowercase() !in titles) {
+          actions.put(JSONObject().put("title", button.title).put("click", JSONObject(button.target.toString())))
+        }
+      }
+      val parts = ItemPattern.parts(item, grouped = true)
+      editSpeech(draft) { edits ->
+        parts.forEachIndexed { i, part ->
+          if (buttons.any { it.value.equals(part, ignoreCase = true) }) {
+            ItemPattern.removePart(sample, true, i)?.let { addEdit(edits, it) }
+          }
+        }
+        if (parts.map { it.lowercase() }.distinct().size < parts.size) {
+          addEdit(edits, JSONObject().put("op", SpeechEdits.REMOVE_REPEATS))
+        }
+      }
+    }
+  }
+
+  /** Lists the parts SandFly reads for the inspected item; the ones unchecked are removed from every item like it. */
+  private fun chooseRead(sample: JSONObject, grouped: Boolean) {
+    val item = ItemPattern.item(sample) ?: return
+    val rule = rule() ?: return
+    val parts = ItemPattern.parts(item, grouped)
+    val kept = keptParts(parts, speechEdits(rule))
+    val checked = kept.copyOf()
+    dialog()
+      .setTitle(R.string.script_builder_choose_read)
+      .setMultiChoiceItems(parts.toTypedArray(), checked) { _, which, isChecked -> checked[which] = isChecked }
+      .setPositiveButton(android.R.string.ok) { _, _ ->
+        edit { draft ->
+          editSpeech(draft) { edits ->
+            parts.indices.forEach { i ->
+              if (kept[i] && !checked[i]) ItemPattern.removePart(sample, grouped, i)?.let { addEdit(edits, it) }
+              if (!kept[i] && checked[i]) {
+                val repeated = parts.take(i).any { it.equals(parts[i], ignoreCase = true) }
+                val removing =
+                  (0 until edits.length()).filter { j ->
+                    val edit = edits.optJSONObject(j) ?: return@filter false
+                    when (edit.optString("op")) {
+                      SpeechEdits.REMOVE_PARTS, SpeechEdits.REMOVE ->
+                        SpeechEdits.has(parts[i], edit.optString("find"), edit.optBoolean("regex"))
+                      SpeechEdits.REMOVE_REPEATS -> repeated
+                      else -> false
+                    }
+                  }
+                removing.reversed().forEach(edits::remove)
+              }
+            }
+          }
+        }
+      }
+      .setNegativeButton(android.R.string.cancel, null)
+      .show()
+  }
+
+  /** For each of [parts], whether it is still read after [edits]. */
+  private fun keptParts(parts: List<String>, edits: JSONArray): BooleanArray {
+    val text = parts.joinToString(", ")
+    val result =
+      when (val r = SpeechEdits.apply(text, edits)) {
+        is SpeechEdits.Result.Speak -> r.text
+        SpeechEdits.Result.Silent -> ""
+        SpeechEdits.Result.Unchanged -> text
+      }
+    val left = result.split(',').map { it.trim().lowercase() }.filter { it.isNotEmpty() }.toMutableList()
+    return BooleanArray(parts.size) { i -> left.remove(parts[i].lowercase()) }
+  }
+
+  private fun addEdit(edits: JSONArray, edit: JSONObject) {
+    val same = edits.objects().any { it.optString("op") == edit.optString("op") && it.optString("find") == edit.optString("find") }
+    if (!same) edits.put(edit)
+  }
+
+  /** The index of the speech change for this rule's item in [draft], or -1. */
+  private fun speechIndex(draft: JSONObject, match: JSONObject?): Int {
+    val list = draft.optJSONArray(ScriptBuilder.SPEECH) ?: return -1
+    val key = (match ?: JSONObject()).toString()
+    return (0 until list.length()).firstOrNull { i ->
+      val change = list.optJSONObject(i) ?: return@firstOrNull false
+      change.optString("when") == ScriptBuilder.WHEN_FOCUS && change.optJSONObject("match")?.toString() == key
+    } ?: -1
+  }
+
+  /** The edits of the speech change for this rule's item. */
+  private fun speechEdits(rule: JSONObject): JSONArray {
+    val draft = draft() ?: return JSONArray()
+    val at = speechIndex(draft, rule.optJSONObject("match"))
+    return if (at < 0) JSONArray() else ScriptBuilder.editsOf(draft.getJSONArray(ScriptBuilder.SPEECH).getJSONObject(at))
+  }
+
+  /** Changes the edits of the speech change for this rule's item, made when there is none. */
+  private fun editSpeech(draft: JSONObject, change: (JSONArray) -> Unit) {
+    val rule = draft.getJSONArray("rules").getJSONObject(index)
+    val list = draft.getOrPutArray(ScriptBuilder.SPEECH)
+    var at = speechIndex(draft, rule.optJSONObject("match"))
+    val edits = if (at < 0) JSONArray() else ScriptBuilder.editsOf(list.getJSONObject(at))
+    change(edits)
+    if (at < 0) {
+      if (edits.length() == 0) return
+      list.put(
+        JSONObject()
+          .put("when", ScriptBuilder.WHEN_FOCUS)
+          .put("match", JSONObject((rule.optJSONObject("match") ?: JSONObject()).toString()))
+      )
+      at = list.length() - 1
+    }
+    list.getJSONObject(at).put("edits", edits)
   }
 
   private fun textRow(group: PreferenceGroup, key: String, title: Int) {
@@ -1080,6 +1240,17 @@ class ScriptRuleFragment : ScriptBuilderBaseFragment() {
   }
 }
 
+/**
+ * How many items [query] names of the inspected item and the items like it, or null when it doesn't
+ * name the inspected item or none were found like it.
+ */
+fun likeCountText(context: Context, query: JSONObject?, sample: JSONObject?): String? {
+  val item = ItemPattern.item(sample) ?: return null
+  if (query == null || ItemPattern.similarCount(sample) == 0 || !ItemPattern.tellsItem(query, item)) return null
+  val others = ItemPattern.count(query, sample) - 1
+  return context.resources.getQuantityString(R.plurals.script_builder_like_count, others, others)
+}
+
 /** The item a rule, action or reading control names: the tests an item must pass. */
 class ScriptQueryFragment : ScriptBuilderBaseFragment() {
   private val path: List<Any> by lazy { Paths.decode(requireArguments().getString(ARG_PATH).orEmpty()) }
@@ -1089,6 +1260,26 @@ class ScriptQueryFragment : ScriptBuilderBaseFragment() {
     get() = path.any { it == "inside" || it == "has" }
 
   private fun query(): JSONObject? = Paths.get(draft(), path) as? JSONObject
+
+  /** The path of the item of the rule this screen is in, or null outside a rule's item. */
+  private val ruleMatch: List<Any>? by lazy {
+    path.take(3).takeIf { it.size == 3 && it[0] == "rules" && it[2] == "match" }
+  }
+
+  /** A rule's speech change for its item keeps naming the item when the item changes. */
+  override fun edit(change: (JSONObject) -> Unit) =
+    super.edit { draft ->
+      val match = ruleMatch
+      val old = match?.let { (Paths.get(draft, it) as? JSONObject)?.toString() }
+      change(draft)
+      val new = match?.let { Paths.get(draft, it) as? JSONObject } ?: return@edit
+      if (old == null || old == new.toString()) return@edit
+      for (speech in draft.optJSONArray(ScriptBuilder.SPEECH).objects()) {
+        if (speech.optString("when") == ScriptBuilder.WHEN_FOCUS && speech.optJSONObject("match")?.toString() == old) {
+          speech.put("match", JSONObject(new.toString()))
+        }
+      }
+    }
 
   private fun change(key: String, value: Any?) = edit { draft ->
     (Paths.get(draft, path) as? JSONObject)?.putOrRemove(key, value)
@@ -1100,6 +1291,19 @@ class ScriptQueryFragment : ScriptBuilderBaseFragment() {
     val query = query() ?: return
     val context = requireContext()
     screen.action(ScriptBuilderFragment.describeQuery(context, query)) {}.isSelectable = false
+    val sample = ItemInspector.lastSample(context)
+    ItemPattern.likeQuery(sample)?.let { like ->
+      screen.action(
+        getString(R.string.script_builder_like_inspected),
+        listOfNotNull(ScriptBuilderFragment.describeQuery(context, like), likeCountText(context, like, sample)).joinToString("\n"),
+      ) {
+        edit { draft ->
+          val target = Paths.get(draft, path) as? JSONObject ?: return@edit
+          for (key in QUERY_KEYS + "hasDepth") target.remove(key)
+          like.keys().forEach { target.put(it, like.get(it)) }
+        }
+      }
+    }
     ItemInspector.lastQuery(context)?.let { inspected ->
       screen.action(
         getString(R.string.script_builder_use_inspected),
@@ -1107,7 +1311,7 @@ class ScriptQueryFragment : ScriptBuilderBaseFragment() {
       ) {
         edit { draft ->
           val target = Paths.get(draft, path) as? JSONObject ?: return@edit
-          for (key in QUERY_KEYS) target.remove(key)
+          for (key in QUERY_KEYS + "hasDepth") target.remove(key)
           inspected.keys().forEach { target.put(it, inspected.get(it)) }
         }
       }
@@ -1192,7 +1396,12 @@ class ScriptQueryFragment : ScriptBuilderBaseFragment() {
         }
       }
     }
-    if (inside.size < MAX_INSIDE) {
+    if (inside.isEmpty()) {
+      group.action(getString(R.string.script_builder_inside), notSet()) {
+        insideAsList()
+        openQuery(path + "inside" + 0)
+      }
+    } else if (inside.size < MAX_INSIDE) {
       group.action(getString(R.string.script_builder_add_inside)) {
         insideAsList()
         openQuery(path + "inside" + inside.size)
@@ -1335,7 +1544,8 @@ class ScriptQueryFragment : ScriptBuilderBaseFragment() {
     const val ARG_PATH = "query_path"
 
     /** The fields of a query this screen sets, and Use the inspected item replaces. */
-    private val QUERY_KEYS = listOf("id", "contains", "matches", "field", "kind", "className", "role", "has")
+    private val QUERY_KEYS =
+      listOf("id", "contains", "matches", "field", "kind", "className", "role", "has", "text", "contentDescription")
 
     /** The texts an item can have exactly, by their query fields. */
     private val EXACT_FIELDS =
@@ -1408,12 +1618,17 @@ class ScriptRulePickFragment : NotificationCodeFragment(R.string.script_builder_
 
   override fun build(screen: PreferenceGroup) {
     val context = requireContext()
-    val query = ItemInspector.lastQuery(context)
+    val sample = ItemInspector.lastSample(context)
+    // Every item like the inspected one, such as each row of a list, or else the item itself.
+    val query = ItemPattern.likeQuery(sample) ?: ItemInspector.lastQuery(context)
     if (query == null) {
       screen.action(getString(R.string.script_builder_no_inspected)) {}.isSelectable = false
       return
     }
-    screen.action(getString(R.string.script_builder_item), ScriptBuilderFragment.describeQuery(context, query)) {}.isSelectable = false
+    screen.action(
+      getString(R.string.script_builder_item),
+      listOfNotNull(ScriptBuilderFragment.describeQuery(context, query), likeCountText(context, query, sample)).joinToString("\n"),
+    ) {}.isSelectable = false
     val app = ItemInspector.lastApp(context)
     if (app != null) {
       screen.action(getString(R.string.script_builder_new_for_app, ScriptBuilderFragment.appText(context, app))) {

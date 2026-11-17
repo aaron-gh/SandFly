@@ -247,4 +247,15 @@
         <item quantity="many">Залишити перші %1$d частин</item>
         <item quantity="other">Залишити перші %1$d частини</item>
     </plurals>
+    <string name="script_builder_like_inspected">Елементи, схожі на досліджений елемент</string>
+    <plurals name="script_builder_like_count">
+        <item quantity="one">Відповідає дослідженому елементу та %1$d схожому елементу</item>
+        <item quantity="few">Відповідає дослідженому елементу та %1$d схожим елементам</item>
+        <item quantity="many">Відповідає дослідженому елементу та %1$d схожим елементам</item>
+        <item quantity="other">Відповідає дослідженому елементу та %1$d схожим елементам</item>
+    </plurals>
+    <string name="script_builder_inspected_category">Досліджений елемент</string>
+    <string name="script_builder_one_item_actions">Читати як один елемент, з його кнопками як діями</string>
+    <string name="script_builder_actions_value">Дії: %1$s</string>
+    <string name="script_builder_choose_read">Вибрати, що читається</string>
 </resources>

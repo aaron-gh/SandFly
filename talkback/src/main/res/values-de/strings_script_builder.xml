@@ -237,4 +237,13 @@
         <item quantity="one">Ersten Teil behalten</item>
         <item quantity="other">Ersten %1$d Teile behalten</item>
     </plurals>
+    <string name="script_builder_like_inspected">Elemente wie das untersuchte Element</string>
+    <plurals name="script_builder_like_count">
+        <item quantity="one">Entspricht dem untersuchten Element und %1$d ähnlichen Element</item>
+        <item quantity="other">Entspricht dem untersuchten Element und %1$d ähnlichen Elementen</item>
+    </plurals>
+    <string name="script_builder_inspected_category">Untersuchtes Element</string>
+    <string name="script_builder_one_item_actions">Als ein Element vorlesen, mit seinen Tasten als Aktionen</string>
+    <string name="script_builder_actions_value">Aktionen: %1$s</string>
+    <string name="script_builder_choose_read">Festlegen, was vorgelesen wird</string>
 </resources>

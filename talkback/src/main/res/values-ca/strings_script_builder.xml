@@ -239,4 +239,14 @@
         <item quantity="many">Conserva les primeres %1$d parts</item>
         <item quantity="other">Conserva les primeres %1$d parts</item>
     </plurals>
+    <string name="script_builder_like_inspected">Elements com l\'element inspeccionat</string>
+    <plurals name="script_builder_like_count">
+        <item quantity="one">Coincideix amb l\'element inspeccionat i %1$d element com aquest</item>
+        <item quantity="many">Coincideix amb l\'element inspeccionat i %1$d elements com aquest</item>
+        <item quantity="other">Coincideix amb l\'element inspeccionat i %1$d elements com aquest</item>
+    </plurals>
+    <string name="script_builder_inspected_category">Element inspeccionat</string>
+    <string name="script_builder_one_item_actions">Llegeix com un sol element, amb els seus botons com a accions</string>
+    <string name="script_builder_actions_value">Accions: %1$s</string>
+    <string name="script_builder_choose_read">Tria què es llegeix</string>
 </resources>

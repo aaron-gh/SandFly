@@ -72,6 +72,7 @@ object ItemInspector {
       .putString(PREF_LAST_QUERY, scriptQuery(node).toString())
       .putString(PREF_LAST_APP, node.packageName?.toString())
       .putString(PREF_LAST_TEXT, spokenText(node))
+      .putString(PREF_LAST_SAMPLE, sample(node).toString())
       .apply()
     val role = ScriptRoles.role(node)
     val script =
@@ -149,6 +150,72 @@ object ItemInspector {
     if (!own.isNullOrEmpty()) return own
     return innerTexts(node).map { it.second }.distinct().joinToString(", ").ifEmpty { null }
   }
+
+  /**
+   * [node] and the items like it around it, such as the other rows of its list, with the items in
+   * each. The script builder finds what they have in common, to name them all in one rule.
+   */
+  fun sample(node: AccessibilityNodeInfoCompat): JSONObject =
+    JSONObject().put("item", sampleItem(node)).put("similar", JSONArray(similarItems(node).map(::sampleItem)))
+
+  /**
+   * The items in the same place as [node] under its parent, or else under an item further up: the
+   * other rows of a list, even when each row is wrapped in an item of its own.
+   */
+  private fun similarItems(node: AccessibilityNodeInfoCompat): List<AccessibilityNodeInfoCompat> {
+    val className = node.className ?: return emptyList()
+    val path = mutableListOf<Int>()
+    var child = node
+    for (level in 1..MAX_SIMILAR_LEVELS) {
+      val parent = child.parent ?: return emptyList()
+      val index = (0 until parent.childCount).firstOrNull { parent.getChild(it) == child } ?: return emptyList()
+      path.add(0, index)
+      val found =
+        (0 until parent.childCount)
+          .asSequence()
+          .filter { it != index }
+          .mapNotNull { start ->
+            path.drop(1).fold(parent.getChild(start) as AccessibilityNodeInfoCompat?) { item, i -> item?.getChild(i) }
+          }
+          .filter { it.className == className && it.isVisibleToUser }
+          .take(MAX_SIMILAR)
+          .toList()
+      if (found.isNotEmpty()) return found
+      child = parent
+    }
+    return emptyList()
+  }
+
+  /** [node] as JSON: its class, id, texts and whether it can be clicked, and the items in it. */
+  private fun sampleItem(node: AccessibilityNodeInfoCompat): JSONObject {
+    var count = 0
+    fun describe(item: AccessibilityNodeInfoCompat, depth: Int): JSONObject =
+      JSONObject().apply {
+        count++
+        putOpt("class", item.className?.toString())
+        putOpt("id", item.viewIdResourceName?.substringAfter(":id/"))
+        putOpt("text", item.text?.toString()?.trim()?.takeIf { it.isNotEmpty() && !item.isPassword })
+        putOpt("description", item.contentDescription?.toString()?.trim()?.ifEmpty { null })
+        if (item.isClickable) put("clickable", true)
+        if (depth < MAX_SAMPLE_DEPTH) {
+          val children =
+            item.childrenInReadingOrder().filter { it.isVisibleToUser }.takeWhile { count < MAX_SAMPLE_ITEMS }
+          putList("children", children.map { describe(it, depth + 1) }.toList())
+        }
+      }
+    return describe(node, 0)
+  }
+
+  /** What [sample] saved for the item last inspected, or null. */
+  @JvmStatic
+  fun lastSample(context: Context): JSONObject? =
+    SharedPreferencesUtils.getSharedPreferences(context).getString(PREF_LAST_SAMPLE, null)?.let {
+      try {
+        JSONObject(it)
+      } catch (e: org.json.JSONException) {
+        null
+      }
+    }
 
   /** The text of the item last inspected, as SandFly joins its texts, or null. */
   @JvmStatic
@@ -270,6 +337,14 @@ object ItemInspector {
   private const val PREF_LAST_QUERY = "item_inspector_last_query"
   private const val PREF_LAST_APP = "item_inspector_last_app"
   private const val PREF_LAST_TEXT = "item_inspector_last_text"
+  private const val PREF_LAST_SAMPLE = "item_inspector_last_sample"
+  /** How far up from the inspected item items like it are looked for. */
+  private const val MAX_SIMILAR_LEVELS = 3
+  /** The most items like the inspected item kept. */
+  private const val MAX_SIMILAR = 8
+  /** How deep, and how many items, of each item are kept. */
+  private const val MAX_SAMPLE_DEPTH = 5
+  private const val MAX_SAMPLE_ITEMS = 40
   private const val MAX_DEPTH = 60
   private const val MAX_ITEMS = 2000
   /** The most items in the inspected item whose texts Inspect focused item reads. */

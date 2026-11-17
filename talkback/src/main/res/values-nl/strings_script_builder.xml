@@ -237,4 +237,13 @@
         <item quantity="one">Eerste deel behouden</item>
         <item quantity="other">Eerste %1$d delen behouden</item>
     </plurals>
+    <string name="script_builder_like_inspected">Items zoals het geïnspecteerde item</string>
+    <plurals name="script_builder_like_count">
+        <item quantity="one">Komt overeen met het geïnspecteerde item en %1$d vergelijkbaar item</item>
+        <item quantity="other">Komt overeen met het geïnspecteerde item en %1$d vergelijkbare items</item>
+    </plurals>
+    <string name="script_builder_inspected_category">Geïnspecteerd item</string>
+    <string name="script_builder_one_item_actions">Lezen als één item, met de knoppen als acties</string>
+    <string name="script_builder_actions_value">Acties: %1$s</string>
+    <string name="script_builder_choose_read">Kiezen wat wordt gelezen</string>
 </resources>
