@@ -93,6 +93,10 @@ private constructor(
     return resolved
   }
 
+  /** The rules that make the buttons in [node] its actions, with their scripts. */
+  fun buttonRules(node: AccessibilityNodeInfoCompat): List<Pair<ScriptRuntime, ScriptRule>> =
+    withActions.matching(node).filter { it.rule.buttonActions }.map { it.runtime to it.rule }
+
   fun actions(node: AccessibilityNodeInfoCompat): List<Pair<ScriptRuntime, RuleItemAction>> =
     withActions.matching(node).flatMap { entry -> entry.rule.actions.map { entry.runtime to it } }
 
@@ -214,7 +218,7 @@ private constructor(
         all.filter { it.rule.changesItem && it.runtime.allowed(ScriptPermission.SPEECH, "Rules") }
       val actionEntries =
         all.filter {
-          it.rule.actions.isNotEmpty() &&
+          (it.rule.actions.isNotEmpty() || it.rule.buttonActions) &&
             it.runtime.allowed(ScriptPermission.INPUT, "Actions in rules")
         }
       return if (all.isEmpty()) EMPTY else ScriptRules(entries, actionEntries, ownPackage, front)

@@ -868,6 +868,27 @@ class ScriptRuleFragment : ScriptBuilderBaseFragment() {
     rule.optJSONArray("actions").objects().forEachIndexed { actionIndex, action ->
       actions.action(action.optString("title"), actionText(context, action)) { editAction(actionIndex) }
     }
+    actions.switch(getString(R.string.script_builder_button_actions), rule.optBoolean("buttonActions")) {
+      edit { draft ->
+        val edited = draft.getJSONArray("rules").getJSONObject(index)
+        edited.putOrRemove("buttonActions", if (it) true else null)
+        if (!it) edited.remove("skipButtons")
+      }
+    }
+    if (rule.optBoolean("buttonActions")) {
+      val skipped = rule.optJSONArray("skipButtons").strings()
+      actions.action(getString(R.string.script_builder_skip_buttons), skipped.joinToString(", ").ifEmpty { notSet() }) {
+        askText(
+          getString(R.string.script_builder_skip_buttons),
+          skipped.joinToString(", "),
+          hint = getString(R.string.script_builder_skip_buttons_hint),
+        ) { text, _, _ ->
+          val texts = text.split(',').map { it.trim() }.filter { it.isNotEmpty() }
+          change("skipButtons", if (texts.isEmpty()) null else JSONArray(texts))
+          null
+        }
+      }
+    }
     actions.action(getString(R.string.script_builder_add_action)) { addAction() }
     actions.action(getString(R.string.script_builder_record_action)) {
       askText(getString(R.string.script_builder_record_action), hint = getString(R.string.script_builder_title_field)) { title, _, _ ->

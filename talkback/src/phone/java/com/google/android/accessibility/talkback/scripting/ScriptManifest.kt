@@ -114,6 +114,10 @@ data class ScriptRule(
   val longPressAfter: Int? = null,
   /** Whether activating the item touches it on the screen instead of clicking it. */
   val touchToActivate: Boolean = false,
+  /** Whether each button in the item is an action of it, found when its actions are listed. */
+  val buttonActions: Boolean = false,
+  /** Texts of buttons left out of [buttonActions]: a button whose name contains one is skipped. */
+  val skipButtons: List<String> = emptyList(),
 ) {
   val target: String
     get() = id ?: match.toString()

@@ -96,3 +96,39 @@ class ScriptActionRecorderTest {
     assertEquals("^Download.+", target.getString("matches"))
   }
 }
+
+@RunWith(RobolectricTestRunner::class)
+@Config(sdk = [35])
+class RuleButtonsTest {
+  private fun node(description: String? = null, text: String? = null, clickable: Boolean = false) =
+    AccessibilityNodeInfo.obtain().apply {
+      contentDescription = description
+      this.text = text
+      isClickable = clickable
+      isVisibleToUser = true
+    }
+
+  @Test
+  fun buttonsIn_areTheOutermostButtonsByTheirNames() {
+    val row = node(description = "Episode 12, 41 minutes", clickable = true)
+    val download = node(description = "Download", clickable = true)
+    shadowOf(download).addChild(node(text = "Download"))
+    val more = node(clickable = true)
+    shadowOf(more).addChild(node(text = "More options"))
+    val group = node()
+    shadowOf(group).addChild(node(description = "Like", clickable = true))
+    shadowOf(group).addChild(node(description = "Share", clickable = true))
+    shadowOf(row).addChild(download)
+    shadowOf(row).addChild(more)
+    shadowOf(row).addChild(group)
+    val buttons = buttonsIn(AccessibilityNodeInfoCompat.wrap(row), listOf("share"))
+    assertEquals(listOf("Download", "More options", "Like"), buttons.map { it.first })
+  }
+
+  @Test
+  fun buttonActions_makeARuleWithoutOtherChanges() {
+    val rule = ManifestParser(strict = true).rule(JSONObject().put("match", JSONObject().put("id", "row")).put("buttonActions", true).put("skipButtons", JSONArray().put("Share")))
+    assertEquals(true, rule.buttonActions)
+    assertEquals(listOf("Share"), rule.skipButtons)
+  }
+}

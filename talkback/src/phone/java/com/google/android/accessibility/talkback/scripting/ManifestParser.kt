@@ -115,6 +115,8 @@ class ManifestParser(private val strict: Boolean) {
         liftToActivate = json.optBoolean("liftToActivate", false),
         longPressAfter = longPressAfterOf(json.opt("longPressAfter")),
         touchToActivate = json.optBoolean("touchToActivate", false),
+        buttonActions = json.optBoolean("buttonActions", false),
+        skipButtons = json.optJSONArray("skipButtons").strings().take(MAX_SKIP_BUTTONS),
       )
     with(rule) {
       manifestCheck(id != null || match != null) { "A rule needs id or match" }
@@ -122,10 +124,10 @@ class ManifestParser(private val strict: Boolean) {
       manifestCheck(readBefore == null || readAfter == null) {
         "The rule for $target has both readBefore and readAfter"
       }
-      manifestCheck(changesItem || actions.isNotEmpty()) {
+      manifestCheck(changesItem || actions.isNotEmpty() || buttonActions) {
         "The rule for $target needs label, speak, hide, silence, role, state, hint, heading, " +
           "group, readBefore, readAfter, activate, liftToActivate, longPressAfter, " +
-          "touchToActivate or actions"
+          "touchToActivate, actions or buttonActions"
       }
     }
     return rule
@@ -439,6 +441,7 @@ class ManifestParser(private val strict: Boolean) {
     const val MAX_MATCH_RULES = 100
     const val MAX_RULE_ACTIONS = 10
     private const val MAX_ACTION_STEPS = 10
+    private const val MAX_SKIP_BUTTONS = 20
     private const val MAX_STEP_ALTERNATIVES = 6
     const val MAX_COMMANDS = 50
     const val MAX_NAVIGATION = 20
@@ -469,6 +472,8 @@ class ManifestParser(private val strict: Boolean) {
         "liftToActivate",
         "longPressAfter",
         "touchToActivate",
+        "buttonActions",
+        "skipButtons",
       )
   }
 }

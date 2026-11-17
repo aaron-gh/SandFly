@@ -502,4 +502,10 @@
     <string name="script_builder_step_click_screen">Press %1$s</string>
     <!-- Script builder: a step that long-presses an item on screen. %1$s: the item. -->
     <string name="script_builder_step_long_click_screen">Long-press %1$s</string>
+    <!-- Script builder: switch that makes each button in the rule's item an action of it, whatever buttons it has. -->
+    <string name="script_builder_button_actions">Buttons inside as actions</string>
+    <!-- Script builder: texts of buttons left out of Buttons inside as actions. -->
+    <string name="script_builder_skip_buttons">Buttons to leave out</string>
+    <!-- Script builder: hint of the Buttons to leave out field. -->
+    <string name="script_builder_skip_buttons_hint">Texts, separated by commas</string>
 </resources>

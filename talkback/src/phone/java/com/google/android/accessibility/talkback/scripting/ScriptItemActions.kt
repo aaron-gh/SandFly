@@ -64,6 +64,33 @@ class ScriptItemActions(
   private fun fromRules(
     node: AccessibilityNodeInfoCompat,
     rules: ScriptRules,
+  ): List<ScriptItemAction> = fromSteps(node, rules) + fromButtons(node, rules)
+
+  /**
+   * An action for each button in [node], for rules with buttonActions: named by its description,
+   * its text or the first text in it, and left out when a rule's skipButtons names it.
+   */
+  private fun fromButtons(node: AccessibilityNodeInfoCompat, rules: ScriptRules): List<ScriptItemAction> {
+    val buttonRules =
+      rules.buttonRules(node).filter { (runtime, _) -> runtime.allowed(ScriptPermission.ACTIONS, "Buttons inside as actions") }
+    if (buttonRules.isEmpty()) return emptyList()
+    val skip = buttonRules.flatMap { it.second.skipButtons }
+    val runtime = buttonRules.first().first
+    return buttonsIn(node, skip).map { (title, button) ->
+      ScriptItemAction(title, false) {
+        handler.post {
+          ScriptThread.busy(runtime.id) {
+            val id = AccessibilityNodeInfoCompat.ACTION_CLICK
+            if (!doerOf(button, id).performAction(id)) feedback.playSound(R.raw.complete)
+          }
+        }
+      }
+    }
+  }
+
+  private fun fromSteps(
+    node: AccessibilityNodeInfoCompat,
+    rules: ScriptRules,
   ): List<ScriptItemAction> =
     rules
       .actions(node)
@@ -206,3 +233,38 @@ class ScriptItemActions(
     const val STEP_POLL_MS = 100L
   }
 }
+
+/** The buttons in [node], in reading order, outermost only: a button in a button is pressed by it. */
+internal fun buttonsIn(node: AccessibilityNodeInfoCompat, skip: List<String>): List<Pair<String, AccessibilityNodeInfoCompat>> {
+  val found = mutableListOf<Pair<String, AccessibilityNodeInfoCompat>>()
+  val titles = HashSet<String>()
+  val deadline = SystemClock.uptimeMillis() + BUTTONS_LIMIT_MS
+  fun visit(item: AccessibilityNodeInfoCompat, depth: Int) {
+    for (child in item.childrenInReadingOrder()) {
+      if (found.size >= MAX_BUTTONS || SystemClock.uptimeMillis() > deadline) return
+      if (!child.isVisibleToUser) continue
+      if (child.isClickable) {
+        val title = labelOf(child, LABEL_DEPTH)
+        if (title.isNotEmpty() && skip.none { title.contains(it, ignoreCase = true) } && titles.add(title.lowercase())) {
+          found += title to child
+        }
+        continue
+      }
+      if (depth < MAX_BUTTON_DEPTH) visit(child, depth + 1)
+    }
+  }
+  visit(node, 1)
+  return found
+}
+
+/** The description or text of [node], or else the first in the items in it. */
+private fun labelOf(node: AccessibilityNodeInfoCompat, depth: Int): String {
+  val own = (node.contentDescription?.takeIf { it.isNotBlank() } ?: node.text)?.toString()?.trim().orEmpty()
+  if (own.isNotEmpty() || depth == 0) return own
+  return node.childrenInReadingOrder().map { labelOf(it, depth - 1) }.firstOrNull { it.isNotEmpty() }.orEmpty()
+}
+
+private const val BUTTONS_LIMIT_MS = 150L
+private const val MAX_BUTTONS = 20
+private const val MAX_BUTTON_DEPTH = 8
+private const val LABEL_DEPTH = 3
