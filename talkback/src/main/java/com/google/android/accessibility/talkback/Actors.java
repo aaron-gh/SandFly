@@ -337,6 +337,8 @@ class Actors {
       switch (continuousRead.action()) {
         case START_AT_TOP -> continuousReader.startReadingFromBeginning(eventId);
         case START_AT_CURSOR -> continuousReader.startReadingFromFocusedNode(eventId);
+        case START_AT_CURSOR_BY_READING_CONTROL ->
+            continuousReader.startReadingFromFocusedNodeByReadingControl(eventId);
         case READ_FOCUSED_CONTENT -> continuousReader.readFocusedContent(eventId);
         case INTERRUPT -> continuousReader.interrupt();
         case IGNORE -> continuousReader.ignore();

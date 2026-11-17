@@ -38,11 +38,13 @@ import com.google.android.accessibility.talkback.eventprocessor.EventState;
 import com.google.android.accessibility.talkback.focusmanagement.AccessibilityFocusMonitor;
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.ScreenStateMonitor;
 import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionInfo;
+import com.google.android.accessibility.talkback.selector.SelectorController;
 import com.google.android.accessibility.talkback.tutorial.TutorialHooks;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.AccessibilityServiceCompatUtils;
 import com.google.android.accessibility.utils.Performance.EventId;
 import com.google.android.accessibility.utils.WeakReferenceHandler;
+import com.google.android.accessibility.utils.input.CursorGranularity;
 import com.google.android.accessibility.utils.output.SpeechController;
 import com.google.android.accessibility.utils.traversal.OrderedTraversalStrategy;
 import com.google.android.accessibility.utils.traversal.TraversalStrategy;
@@ -108,6 +110,12 @@ public class FullScreenReadActor {
 
   @Nullable AccessibilityNodeInfoCompat pausedNode;
 
+  /**
+   * What reading moves by: {@link CursorGranularity#DEFAULT} for every item, or the granularity of
+   * a reading control, such as headings, for Read from focused item by reading control.
+   */
+  private CursorGranularity readingGranularity = DEFAULT;
+
   ////////////////////////////////////////////////////////////////////////////////////////////////
   // State-reading interface
 
@@ -166,6 +174,24 @@ public class FullScreenReadActor {
 
   /** Starts linearly reading from the node with accessibility focus. */
   public void startReadingFromFocusedNode(EventId eventId) {
+    startReadingFromFocusedNode(eventId, DEFAULT);
+  }
+
+  /**
+   * Starts reading from the node with accessibility focus, and then moves only to items of the
+   * selected reading control, such as headings, links or controls. A reading control that doesn't
+   * move between items of one kind reads every item.
+   */
+  public void startReadingFromFocusedNodeByReadingControl(EventId eventId) {
+    CursorGranularity granularity = SelectorController.readingGranularity(service);
+    LogUtils.d(TAG, "Reading by reading control, granularity %s", granularity);
+    startReadingFromFocusedNode(eventId, granularity);
+  }
+
+  private void startReadingFromFocusedNode(EventId eventId, CursorGranularity granularity) {
+    if (!isActive()) {
+      readingGranularity = granularity;
+    }
     if (fullScreenReadDialog.getShouldShowDialogPref()) {
       stateWaitingForContentFocus = STATE_READING_FROM_NEXT;
       fullScreenReadDialog.showDialogBeforeReading(eventId);
@@ -199,6 +225,9 @@ public class FullScreenReadActor {
 
   /** Starts linearly reading from the top of the view hierarchy. */
   public void startReadingFromBeginning(EventId eventId) {
+    if (!isActive()) {
+      readingGranularity = DEFAULT;
+    }
     if (fullScreenReadDialog.getShouldShowDialogPref()) {
       // Show dialog before start reading.
       stateWaitingForContentFocus = STATE_READING_FROM_BEGINNING;
@@ -310,10 +339,13 @@ public class FullScreenReadActor {
 
   private void moveForward() {
     EventId eventId = EVENT_ID_UNTRACKED; // First node's speech is already performance tracked.
-    // Continuous reading mode (CRM) always uses default granularity.
+    // Continuous reading mode (CRM) uses default granularity, or that of the reading control it was
+    // started with.
     if (!pipeline.returnFeedback(
         eventId,
-        Feedback.focusDirection(SEARCH_FOCUS_FORWARD).setGranularity(DEFAULT).setScroll(true))) {
+        Feedback.focusDirection(SEARCH_FOCUS_FORWARD)
+            .setGranularity(readingGranularity)
+            .setScroll(true))) {
       pipeline.returnFeedback(eventId, Feedback.sound(R.raw.complete));
       interrupt(/* internal= */ true);
     }

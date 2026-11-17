@@ -622,6 +622,10 @@ object Commands {
           Key.READ_FROM_CURSOR_ITEM,
         )
         gesture(
+          R.string.shortcut_value_read_from_current_by_reading_control,
+          R.string.shortcut_read_from_current_by_reading_control,
+        )
+        gesture(
           R.string.shortcut_value_repeat_last_spoken_phrase,
           R.string.title_repeat_last_spoken_phrase,
           Key.REPEAT_LAST_SPOKEN_PHRASE,
