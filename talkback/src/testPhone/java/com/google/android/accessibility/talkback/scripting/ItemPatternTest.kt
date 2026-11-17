@@ -81,7 +81,7 @@ class ItemPatternTest {
     val query = ItemPattern.likeQuery(friends)!!
     assertEquals("android.widget.Button", query.getString("className"))
     // The Add Friend button holds a text described "Add friend", so a row is named by its Remove button.
-    assertEquals("^Remove", query.getJSONObject("has").getString("matches"))
+    assertEquals("^Remove.+", query.getJSONObject("has").getString("matches"))
     assertEquals(1, query.getInt("hasDepth"))
     assertEquals(3, ItemPattern.count(query, friends))
     for (button in listOf(3, 4)) {
@@ -89,11 +89,66 @@ class ItemPatternTest {
     }
   }
 
+  /** A row of Facebook's Friends tab as Inspect focused item listed it, with the levels. */
+  private fun facebookRow(name: String, mutual: String, add: String = "Add Friend", addText: String = "Add friend"): JSONObject =
+    node(
+      "android.widget.Button",
+      description = "$name, $mutual",
+      clickable = true,
+      children =
+        arrayOf(
+          node("android.widget.ImageView", description = name),
+          node(
+            "android.view.ViewGroup",
+            children =
+              arrayOf(
+                node("android.view.ViewGroup", text = name, description = name),
+                node("android.view.ViewGroup", text = mutual, description = mutual),
+                node("android.widget.Button", description = add, clickable = true, children = arrayOf(node("android.view.ViewGroup", text = addText, description = addText))),
+                node("android.widget.Button", description = "Remove $name", clickable = true, children = arrayOf(node("android.view.ViewGroup", text = "Remove", description = "Remove"))),
+              ),
+          ),
+        ),
+    )
+
+  @Test
+  fun facebookFriendsTab_namesRowsButNotTheirButtons() {
+    val heading = node("android.widget.Button", description = "See all", clickable = true, children = arrayOf(node("android.view.ViewGroup", text = "See all")))
+    val sample =
+      JSONObject()
+        .put("item", facebookRow("Chloe McCarthy", "1 mutual friend"))
+        .put(
+          "similar",
+          JSONArray()
+            .put(facebookRow("Allison Broderick", "3 mutual friends"))
+            .put(facebookRow("Sam Lee", "12 mutual friends", add = "Cancel request", addText = "Cancel"))
+            .put(heading),
+        )
+    val query = ItemPattern.likeQuery(sample)!!
+    assertEquals("^Remove.+", query.getJSONObject("has").getString("matches"))
+    // The heading row is built differently, so it isn't counted.
+    assertEquals(3, ItemPattern.count(query, sample))
+    val buttons = ItemPattern.buttons(sample)
+    assertEquals(listOf("Add Friend", "Remove"), buttons.map { it.title })
+    // Neither button, nor the texts in them, is a row.
+    val row = facebookRow("Bo Ng", "2 mutual friends")
+    val inside = row.getJSONArray("children").getJSONObject(1).getJSONArray("children")
+    for (i in 2..3) {
+      val button = inside.getJSONObject(i)
+      assertEquals(false, ItemPattern.matches(query, button))
+      assertEquals(false, ItemPattern.matches(query, button.getJSONArray("children").getJSONObject(0)))
+    }
+    assertEquals(true, ItemPattern.matches(query, row))
+    // Each action finds its own button in a row.
+    assertEquals(true, ItemPattern.matches(buttons[1].target, inside.getJSONObject(3)))
+    assertEquals(false, ItemPattern.matches(buttons[1].target, inside.getJSONObject(3).getJSONArray("children").getJSONObject(0)))
+  }
+
   @Test
   fun buttons_areTitledByWhatEveryRowHas() {
     val buttons = ItemPattern.buttons(friends)
     assertEquals(listOf("Add Friend", "Remove"), buttons.map { it.title })
-    assertEquals("^Remove", buttons[1].target.getString("matches"))
+    assertEquals("^Remove.+", buttons[1].target.getString("matches"))
     assertEquals("Remove Natalie Anderson", buttons[1].value)
   }
 
@@ -128,7 +183,7 @@ class ItemPatternTest {
     assertEquals("Add friend", query.getJSONObject("has").getString("contentDescription"))
     assertEquals(listOf("Add friend", "Remove friend suggestion"), ItemPattern.buttons(suggestion).map { it.title })
     val edit = ItemPattern.removePart(suggestion, true, 1)!!
-    assertEquals("'s profile picture$", edit.getString("find"))
+    assertEquals(".+'s profile picture$", edit.getString("find"))
     val result = SpeechEdits.apply("Anna Lee, Anna Lee's profile picture, Add friend", JSONArray().put(edit)) as SpeechEdits.Result.Speak
     assertEquals("Anna Lee, Add friend", result.text)
   }
@@ -138,7 +193,7 @@ class ItemPatternTest {
     val row = JSONObject().put("item", friendRow("Natalie Anderson", "3 mutual friends"))
     val buttons = ItemPattern.buttons(row)
     assertEquals(listOf("Add Friend", "Remove"), buttons.map { it.title })
-    assertEquals("^Remove", buttons[1].target.getString("matches"))
+    assertEquals("^Remove.+", buttons[1].target.getString("matches"))
   }
 }
 
