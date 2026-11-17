@@ -84,6 +84,15 @@ object BuiltScriptMacros : Macros.ExternalMacros {
 
   override fun canRename(id: String): Boolean = placeOf(id)?.list == COMMANDS
 
+  override fun assignScreen(id: String): Pair<String, android.os.Bundle>? {
+    val place = placeOf(id)?.takeIf { it.list == COMMANDS } ?: return null
+    return ScriptCommandFragment::class.java.name to
+      android.os.Bundle().apply {
+        putString(ScriptScreenFragment.ARG_ID, place.scriptId)
+        putString(ScriptCommandFragment.ARG_COMMAND, place.entryId)
+      }
+  }
+
   override fun delete(id: String) {
     val place = placeOf(id) ?: return
     val context = context ?: return

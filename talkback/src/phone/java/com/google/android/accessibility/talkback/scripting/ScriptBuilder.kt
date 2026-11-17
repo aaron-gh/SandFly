@@ -199,6 +199,7 @@ object ScriptBuilder {
     if (draft.optJSONArray(BuiltScriptMacros.COMMANDS).objects().isNotEmpty()) needed += ScriptPermission.INPUT
     for (entry in runnable(draft)) {
       BuiltScriptMacros.macroOf(entry)?.let { needed += ScriptRuntime.macroPermissions(it) }
+      if (entry.optString("when") == WHEN_NOTIFICATION) needed += ScriptPermission.NOTIFICATIONS
     }
     return needed
   }
@@ -233,7 +234,7 @@ object ScriptBuilder {
             }
         }
       }
-      WHEN_ANNOUNCEMENT -> if (trigger.optString("text").isBlank()) "The text is empty" else null
+      WHEN_ANNOUNCEMENT, WHEN_NOTIFICATION -> if (trigger.optString("text").isBlank()) "The text is empty" else null
       WHEN_APP, WHEN_WINDOW -> null
       else -> "Unknown trigger"
     }
@@ -261,6 +262,11 @@ object ScriptBuilder {
         }
         WHEN_APP -> append("sf.onAppEnter(function() $run end)\n")
         WHEN_WINDOW -> append("sf.onWindowChange(function() $run end)\n")
+        WHEN_NOTIFICATION -> {
+          val text = lua(trigger.getString("text").lowercase())
+          append("sf.onNotification(function(n) local t = string.lower((n.title or '') .. ' ' .. (n.text or '')) ")
+          append("if string.find(t, $text, 1, true) then $run end end)\n")
+        }
         WHEN_ANNOUNCEMENT -> {
           val text = lua(trigger.getString("text").lowercase())
           append("sf.onAnnouncement(function(a) if a.text and string.find(string.lower(a.text), $text, 1, true) then $run end end)\n")
@@ -280,6 +286,7 @@ object ScriptBuilder {
       WHEN_APP -> context.getString(R.string.script_builder_when_app)
       WHEN_WINDOW -> context.getString(R.string.script_builder_when_window)
       WHEN_ANNOUNCEMENT -> context.getString(R.string.script_builder_when_announcement_value, trigger.optString("text"))
+      WHEN_NOTIFICATION -> context.getString(R.string.script_builder_when_notification_value, trigger.optString("text"))
       else -> trigger.optString("when")
     }
 
@@ -300,6 +307,7 @@ object ScriptBuilder {
   const val WHEN_APP = "app"
   const val WHEN_WINDOW = "window"
   const val WHEN_ANNOUNCEMENT = "announcement"
+  const val WHEN_NOTIFICATION = "notification"
 
   private fun baseManifest(id: String, name: String): JSONObject =
     JSONObject()

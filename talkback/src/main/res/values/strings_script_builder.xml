@@ -232,4 +232,8 @@
     <string name="script_builder_existing">Add to a script</string>
     <!-- Shown when there is no inspected item to make a rule for. [CHAR LIMIT=NONE] -->
     <string name="script_builder_no_inspected">Inspect an item first, with Inspect focused item.</string>
+    <!-- Kind of trigger: a notification's title or text contains a text. [CHAR LIMIT=60] -->
+    <string name="script_builder_when_notification">When a notification has a text</string>
+    <!-- A trigger. %1$s is the text. [CHAR LIMIT=NONE] -->
+    <string name="script_builder_when_notification_value">When a notification has: %1$s</string>
 </resources>

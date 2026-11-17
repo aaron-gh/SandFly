@@ -261,13 +261,21 @@ class ScriptBuilderFragment : ScriptBuilderBaseFragment() {
   }
 
   private fun addTrigger() {
-    val kinds = listOf(ScriptBuilder.WHEN_FOCUS, ScriptBuilder.WHEN_APP, ScriptBuilder.WHEN_WINDOW, ScriptBuilder.WHEN_ANNOUNCEMENT)
+    val kinds =
+      listOf(
+        ScriptBuilder.WHEN_FOCUS,
+        ScriptBuilder.WHEN_APP,
+        ScriptBuilder.WHEN_WINDOW,
+        ScriptBuilder.WHEN_ANNOUNCEMENT,
+        ScriptBuilder.WHEN_NOTIFICATION,
+      )
     val names =
       listOf(
         getString(R.string.script_builder_when_focus),
         getString(R.string.script_builder_when_app),
         getString(R.string.script_builder_when_window),
         getString(R.string.script_builder_when_announcement),
+        getString(R.string.script_builder_when_notification),
       )
     choose(getString(R.string.script_builder_add_trigger), names) { which ->
       val entryId = newEntryId("t")
@@ -278,8 +286,8 @@ class ScriptBuilderFragment : ScriptBuilderBaseFragment() {
           val index = draft()?.optJSONArray(BuiltScriptMacros.TRIGGERS)?.length()?.minus(1) ?: return@choose
           openQuery(listOf(BuiltScriptMacros.TRIGGERS, index, "match"))
         }
-        ScriptBuilder.WHEN_ANNOUNCEMENT ->
-          askText(getString(R.string.script_builder_when_announcement), hint = getString(R.string.script_builder_text)) { text, _, _ ->
+        ScriptBuilder.WHEN_ANNOUNCEMENT, ScriptBuilder.WHEN_NOTIFICATION ->
+          askText(names[which], hint = getString(R.string.script_builder_text)) { text, _, _ ->
             if (text.isEmpty()) return@askText getString(R.string.script_builder_name_empty)
             edit { it.getOrPutArray(BuiltScriptMacros.TRIGGERS).put(trigger.put("text", text)) }
             openSteps(BuiltScriptMacros.TRIGGERS, entryId)
@@ -299,7 +307,7 @@ class ScriptBuilderFragment : ScriptBuilderBaseFragment() {
     val options = mutableListOf(getString(R.string.script_builder_steps))
     when (trigger.optString("when")) {
       ScriptBuilder.WHEN_FOCUS -> options += getString(R.string.script_builder_item)
-      ScriptBuilder.WHEN_ANNOUNCEMENT -> options += getString(R.string.script_builder_text)
+      ScriptBuilder.WHEN_ANNOUNCEMENT, ScriptBuilder.WHEN_NOTIFICATION -> options += getString(R.string.script_builder_text)
     }
     options += getString(R.string.script_builder_remove)
     choose(ScriptBuilder.triggerText(requireContext(), trigger), options) { which ->
