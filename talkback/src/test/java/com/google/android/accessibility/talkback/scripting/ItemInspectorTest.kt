@@ -61,7 +61,6 @@ class ItemInspectorTest {
     val text = ItemInspector.plainText(context, ItemInspector.report(context, AccessibilityNodeInfoCompat.wrap(button)))
 
     assertTrue(text, text.startsWith("Texts\ndescription: New post\n\nItem types\nClickable\nEnabled\n\nItems inside\ntext: Plus\n\nScript details\n"))
-    assertTrue(text, text.contains("No id, so script rules can't name it"))
     assertTrue(text, text.contains("kind: clickable, enabled"))
     assertFalse(text, text.contains("\ntext: New post"))
   }
@@ -80,7 +79,6 @@ class ItemInspectorTest {
 
     assertTrue(text, text.startsWith("Texts\ntext: New post\nhint: Title\nstate: Draft\n\nItem types\nHeading\nEnabled\n\nScript details\nid: com.example:id/title"))
     assertFalse(text, text.contains("Items inside"))
-    assertFalse(text, text.contains("No id"))
   }
 
   @Test

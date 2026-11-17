@@ -81,12 +81,7 @@ object ItemInspector {
         "className" to node.className,
         "kind" to kinds(node).joinToString(", ") { it.scriptName },
         "rules" to Scripts.rule(node)?.sources?.joinToString("; "),
-      ) +
-        listOfNotNull(
-          ("" to context.getString(R.string.item_details_no_id)).takeIf {
-            node.viewIdResourceName == null
-          }
-        )
+      )
     return listOf(
         Section(R.string.item_details_texts, lines(*texts(node).toTypedArray())),
         Section(R.string.item_details_types, itemTypes(context, node).map { "" to it }),
@@ -117,6 +112,12 @@ object ItemInspector {
       !id.isNullOrEmpty() -> query.put("id", id)
       description.isNotEmpty() -> query.put("contains", description).put("field", "contentDescription")
       text.isNotEmpty() && !node.isPassword -> query.put("contains", text).put("field", "text")
+      // A row whose texts are items in it, such as a settings row: the first of them names it.
+      else ->
+        innerTexts(node).firstOrNull { (name, _) -> name == "text" || name == "description" }?.let { (name, value) ->
+          val field = if (name == "text") "text" else "contentDescription"
+          query.put("has", JSONObject().put("contains", value).put("field", field))
+        }
     }
     val kinds = listOfNotNull("clickable".takeIf { node.isClickable }, "heading".takeIf { node.isHeading })
     when (kinds.size) {
