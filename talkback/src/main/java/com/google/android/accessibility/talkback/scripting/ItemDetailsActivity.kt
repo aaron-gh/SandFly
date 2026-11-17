@@ -32,6 +32,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat.AccessibilityActionCompat
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.talkback.preference.TalkBackPreferencesActivity
+import com.google.android.accessibility.utils.preference.BasePreferencesActivity
 
 /**
  * The details of an item from Inspect focused item, under a heading for each part. Copy all copies
@@ -59,6 +61,20 @@ class ItemDetailsActivity : AppCompatActivity() {
             }
           }
         )
+        if (RULE_SCREEN_AVAILABLE) {
+          addView(
+            Button(this@ItemDetailsActivity).apply {
+              setText(R.string.item_details_add_rule)
+              setOnClickListener {
+                startActivity(
+                  Intent(this@ItemDetailsActivity, TalkBackPreferencesActivity.TalkBackSubSettings::class.java)
+                    .putExtra(BasePreferencesActivity.FRAGMENT_NAME, RULE_SCREEN)
+                )
+                finish()
+              }
+            }
+          )
+        }
         for (section in sections) {
           addView(heading(getString(section.title), 18f).apply { setPadding(dp(16), dp(16), dp(16), dp(4)) })
           section.lines.forEach { addView(line(it)) }
@@ -108,6 +124,18 @@ class ItemDetailsActivity : AppCompatActivity() {
 
   companion object {
     private const val EXTRA_SECTIONS = "sections"
+
+    /** The script builder's screen that adds a rule for the inspected item, in builds with scripts. */
+    private const val RULE_SCREEN = "com.google.android.accessibility.talkback.scripting.ScriptRulePickFragment"
+
+    private val RULE_SCREEN_AVAILABLE: Boolean by lazy {
+      try {
+        Class.forName(RULE_SCREEN)
+        true
+      } catch (e: ClassNotFoundException) {
+        false
+      }
+    }
     private const val KEY_TITLE = "title"
     private const val KEY_NAMES = "names"
     private const val KEY_VALUES = "values"

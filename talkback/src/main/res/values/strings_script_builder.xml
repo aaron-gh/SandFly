@@ -216,4 +216,20 @@
         <item quantity="one">%1$d line</item>
         <item quantity="other">%1$d lines</item>
     </plurals>
+    <!-- What a rule, reading control or trigger needs before it is used: its item. [CHAR LIMIT=NONE] -->
+    <string name="script_builder_problem_item">set the item</string>
+    <!-- What a rule needs before it is used: the item of its reading order or Double-tap activates. [CHAR LIMIT=NONE] -->
+    <string name="script_builder_problem_other_item">set the item of Reading order or Double-tap activates</string>
+    <!-- What a rule needs before it is used: the item of one of its actions. %1$s is the action's title. [CHAR LIMIT=NONE] -->
+    <string name="script_builder_problem_action">set what the action %1$s does</string>
+    <!-- What a rule needs before it is used: a change or an action. [CHAR LIMIT=NONE] -->
+    <string name="script_builder_problem_change">set a change or add an action</string>
+    <!-- Title of the screen that chooses the built script a rule for the inspected item goes in. [CHAR LIMIT=40] -->
+    <string name="script_builder_rule_for_item">Add a rule for this item</string>
+    <!-- Action that makes a built script for an app, with a rule for the inspected item. %1$s is the app's name. [CHAR LIMIT=NONE] -->
+    <string name="script_builder_new_for_app">New script for %1$s</string>
+    <!-- Heading of the built scripts a rule can go in. [CHAR LIMIT=40] -->
+    <string name="script_builder_existing">Add to a script</string>
+    <!-- Shown when there is no inspected item to make a rule for. [CHAR LIMIT=NONE] -->
+    <string name="script_builder_no_inspected">Inspect an item first, with Inspect focused item.</string>
 </resources>

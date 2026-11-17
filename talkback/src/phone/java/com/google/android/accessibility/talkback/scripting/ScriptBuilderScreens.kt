@@ -143,7 +143,7 @@ class ScriptBuilderFragment : ScriptBuilderBaseFragment() {
     val navigation = draft.optJSONArray("navigation").objects()
     val navigationCategory = screen.category(R.string.script_builder_navigation)
     navigation.forEachIndexed { index, item ->
-      val problem = ScriptBuilder.navigationProblem(item)
+      val problem = ScriptBuilder.entryProblemText(context, item, ScriptBuilder.navigationProblem(item))
       val summary =
         if (problem != null) getString(R.string.script_builder_not_used, problem)
         else describeQuery(context, item.optJSONObject("match"))
@@ -180,7 +180,7 @@ class ScriptBuilderFragment : ScriptBuilderBaseFragment() {
     val triggers = draft.optJSONArray(BuiltScriptMacros.TRIGGERS).objects()
     val triggersCategory = screen.category(R.string.script_builder_triggers)
     triggers.forEachIndexed { index, trigger ->
-      val problem = ScriptBuilder.triggerProblem(trigger)
+      val problem = ScriptBuilder.entryProblemText(context, trigger, ScriptBuilder.triggerProblem(trigger))
       val summary = if (problem != null) getString(R.string.script_builder_not_used, problem) else stepsText(trigger)
       triggersCategory.action(ScriptBuilder.triggerText(context, trigger), summary) { editTrigger(index) }
     }
@@ -389,7 +389,7 @@ class ScriptBuilderFragment : ScriptBuilderBaseFragment() {
       describeQuery(context, rule.optJSONObject("match"))
 
     fun ruleSummary(context: Context, rule: JSONObject): String {
-      ScriptBuilder.ruleProblem(rule)?.let { return context.getString(R.string.script_builder_not_used, it) }
+      ScriptBuilder.ruleProblemText(context, rule)?.let { return context.getString(R.string.script_builder_not_used, it) }
       return changeTexts(context, rule).joinToString(", ")
     }
 
@@ -497,7 +497,7 @@ class ScriptRuleFragment : ScriptBuilderBaseFragment() {
   override fun build(screen: PreferenceGroup) {
     val rule = rule() ?: return
     val context = requireContext()
-    ScriptBuilder.ruleProblem(rule)?.let {
+    ScriptBuilder.ruleProblemText(context, rule)?.let {
       screen.action(getString(R.string.script_builder_not_used, it)) {}.isSelectable = false
     }
 
@@ -939,3 +939,68 @@ object Paths {
 
 fun JSONObject.getOrPutArray(key: String): JSONArray =
   optJSONArray(key) ?: JSONArray().also { put(key, it) }
+
+/**
+ * Adds a rule for the item last inspected to a built script, or to a new one for its app, and
+ * opens the rule. Opened from the Item details window.
+ */
+class ScriptRulePickFragment : NotificationCodeFragment(R.string.script_builder_rule_for_item) {
+  private val store: ScriptStore by lazy { ScriptStore.get(requireContext()) }
+
+  override fun build(screen: PreferenceGroup) {
+    val context = requireContext()
+    val query = ItemInspector.lastQuery(context)
+    if (query == null) {
+      screen.action(getString(R.string.script_builder_no_inspected)) {}.isSelectable = false
+      return
+    }
+    screen.action(getString(R.string.script_builder_item), ScriptBuilderFragment.describeQuery(context, query)) {}.isSelectable = false
+    val app = ItemInspector.lastApp(context)
+    if (app != null) {
+      screen.action(getString(R.string.script_builder_new_for_app, ScriptBuilderFragment.appText(context, app))) {
+        val name = ScriptBuilderFragment.appText(context, app)
+        val id =
+          try {
+            ScriptBuilder.create(context, name)
+          } catch (e: IOException) {
+            Toast.makeText(context, getString(R.string.script_builder_save_failed, e.message), Toast.LENGTH_LONG).show()
+            return@action
+          }
+        addRule(id, query, app)
+      }
+    }
+    val built = store.all().filter { ScriptBuilder.isBuilt(store, it.id) }
+    if (built.isEmpty()) return
+    val category = screen.category(R.string.script_builder_existing)
+    // Scripts for the item's app first.
+    val (forApp, others) = built.partition { script -> app != null && script.manifest.apps.any { it.packageName == app } }
+    for (script in forApp + others) {
+      category.action(script.manifest.name, requireContext().scriptSummary(script)) { addRule(script.id, query, app) }
+    }
+  }
+
+  private fun addRule(scriptId: String, query: JSONObject, app: String?) {
+    val context = requireContext()
+    val draft = ScriptBuilder.draft(store, scriptId) ?: return
+    val apps = draft.getOrPutArray("apps")
+    val listed = (0 until apps.length()).map { apps.get(it).let { a -> (a as? JSONObject)?.optString("package") ?: a.toString() } }
+    // A script for some apps runs in the item's app too; a script for all apps already does.
+    val isNew = draft.optJSONArray("rules").objects().isEmpty() && listed.isEmpty() && draft.optJSONArray("commands").objects().isEmpty()
+    if (app != null && app !in listed && (listed.isNotEmpty() || isNew)) apps.put(app)
+    draft.getOrPutArray("rules").put(JSONObject().put("match", JSONObject(query.toString())))
+    try {
+      ScriptBuilder.save(context, draft)
+    } catch (e: IOException) {
+      Toast.makeText(context, getString(R.string.script_builder_save_failed, e.message), Toast.LENGTH_LONG).show()
+      return
+    }
+    val index = draft.getJSONArray("rules").length() - 1
+    onPreferenceTreeClick(
+      Preference(context).apply {
+        fragment = ScriptRuleFragment::class.java.name
+        extras.putString(ScriptScreenFragment.ARG_ID, scriptId)
+        extras.putInt(ScriptRuleFragment.ARG_INDEX, index)
+      }
+    )
+  }
+}
