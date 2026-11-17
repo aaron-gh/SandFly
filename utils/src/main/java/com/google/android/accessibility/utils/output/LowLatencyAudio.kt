@@ -232,6 +232,14 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
      * speech should be dropped and said again the usual way when it resumes.
      */
     fun onHoldFull(id: String)
+
+    /**
+     * The engine has not finished making the stream it is working on and has given it nothing for
+     * [ENGINE_QUIET_MS]. A battery saver, such as Samsung's Freecess, may have frozen the engine's
+     * process, since the engine plays no audible audio itself. A call to the engine unfreezes it.
+     * Reported again every [ENGINE_QUIET_MS] while the engine gives nothing.
+     */
+    fun onEngineQuiet(id: String)
   }
 
   /**
@@ -279,6 +287,8 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
     // the engine gave sound for it after that.
     private var stalledWithoutSound = false
     private var lateSound = false
+    // When onEngineQuiet was last reported, or 0 before.
+    private var reportedQuietAt = 0L
 
     /** The engine started making this speech. */
     fun engineStarted() {
@@ -292,6 +302,20 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
      * The engine may be playing it itself; see [StreamListener.onPlayedByEngine].
      */
     fun wasStalledWithoutSound(): Boolean = synchronized(lock) { stalledWithoutSound }
+
+    /**
+     * Reports [StreamListener.onEngineQuiet] if the engine, still making this stream, has given it
+     * nothing for [ENGINE_QUIET_MS] at [now], or since this was last reported. Called with [lock]
+     * held.
+     */
+    internal fun reportIfEngineQuiet(now: Long) {
+      if (ended || finished) return
+      val quiet = now - lastActivity
+      if (quiet < ENGINE_QUIET_MS || now - reportedQuietAt < ENGINE_QUIET_MS) return
+      reportedQuietAt = now
+      LogUtils.d(TAG, "Speech %s got no audio for %d ms, calling the engine", id, quiet)
+      callbacks.execute { listener.onEngineQuiet(id) }
+    }
 
     /** Whether the engine gave sound for this stream after it was dropped as stalled. */
     fun hadLateSound(): Boolean = synchronized(lock) { lateSound }
@@ -684,6 +708,9 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
         head.abandon(playerFailed = false, stalled = true)
         LogUtils.w(TAG, "Speech %s got no audio in time", head.id)
       }
+      // The engine makes the streams in order, so the first it has not finished is the one it is
+      // making, or the next it makes.
+      streams.firstOrNull { !it.isEnded }?.reportIfEngineQuiet(now)
       val stuckFor = now - lastWrite
       val extra = if (waking) WAKE_STUCK_MS else 0L
       if (stuckFor > TRACK_STUCK_MS + extra) {
@@ -1104,6 +1131,9 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
      * speech itself. Engines make speech much faster than it plays.
      */
     const val ENGINE_PLAYED_MS = 250L
+
+    /** How long the engine may give a stream it is making nothing before it is called. */
+    const val ENGINE_QUIET_MS = 250L
 
     /** How often the watchdog looks for stalled speech and a stuck track. */
     private const val WATCHDOG_MS = 250L
