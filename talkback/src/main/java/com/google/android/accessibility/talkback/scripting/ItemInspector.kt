@@ -22,6 +22,8 @@ import android.os.Handler
 import android.os.Looper
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.talkback.macros.MacroRunner
+import com.google.android.accessibility.talkback.macros.Macros
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils
 import com.google.android.accessibility.utils.ClipboardHistory
 import java.util.concurrent.LinkedBlockingQueue
@@ -32,27 +34,67 @@ import org.json.JSONArray
 import org.json.JSONObject
 
 object ItemInspector {
+  /**
+   * Says and copies the details of [node]: the texts and item types macro tests match, the id and
+   * role scripts match, and the texts of the items in it.
+   */
   @JvmStatic
   fun inspect(context: Context, node: AccessibilityNodeInfoCompat?): String {
     node ?: return context.getString(R.string.script_inspect_no_item)
     val details =
-      listOf(
-          "id" to node.viewIdResourceName,
-          "className" to node.className,
-          "role" to ScriptRoles.role(node),
-          "appRole" to ScriptRoles.appRole(node).takeIf { it != ScriptRoles.role(node) },
-          "app" to node.packageName,
-          "activity" to Scripts.currentActivity(),
-          "window" to Scripts.currentWindowTitle(),
-          "text" to AccessibilityNodeInfoUtils.getText(node),
-          "contentDescription" to node.contentDescription,
-          "rules" to Scripts.rule(node)?.sources?.joinToString("; "),
-        )
+      (texts(node) +
+          listOf(
+            "item types" to itemTypes(context, node),
+            "id" to node.viewIdResourceName,
+            "role" to ScriptRoles.role(node),
+            "appRole" to ScriptRoles.appRole(node).takeIf { it != ScriptRoles.role(node) },
+            "className" to node.className,
+            "app" to node.packageName,
+            "activity" to Scripts.currentActivity(),
+            "window" to Scripts.currentWindowTitle(),
+            "rules" to Scripts.rule(node)?.sources?.joinToString("; "),
+          ) +
+          innerTexts(node))
         .filterNot { it.second.isNullOrEmpty() }
         .joinToString("\n") { (name, value) -> "$name: $value" }
     context.copyToClipboard(context.getString(R.string.script_inspect_clip_label), details)
     val message = node.viewIdResourceName?.let { R.string.script_inspect_copied }
     return context.getString(message ?: R.string.script_inspect_no_id, details)
+  }
+
+  /** The texts of [node] a macro's Match in can name, by the names in its list. */
+  private fun texts(node: AccessibilityNodeInfoCompat): List<Pair<String, CharSequence?>> =
+    listOf(
+      "text" to node.text,
+      "description" to node.contentDescription,
+      "hint" to node.hintText,
+      "state" to node.stateDescription,
+    )
+
+  /** The macro item types [node] is, by their titles in a test's Item type list. */
+  private fun itemTypes(context: Context, node: AccessibilityNodeInfoCompat): String =
+    Macros.Kind.entries
+      .filter { MacroRunner.isKind(node.unwrap(), it) }
+      .joinToString(", ") { context.getString(it.title) }
+
+  /**
+   * The texts of the items in [node], each as "inside text" and so on, up to [MAX_INNER_TEXTS]. A
+   * Focused item test matches these too; an Item on screen test matches the inner item itself.
+   */
+  private fun innerTexts(node: AccessibilityNodeInfoCompat): List<Pair<String, CharSequence?>> {
+    val found = mutableListOf<Pair<String, CharSequence?>>()
+    val queue = ArrayDeque(node.children())
+    var count = 0
+    while (queue.isNotEmpty() && count < MAX_INNER_ITEMS && found.size < MAX_INNER_TEXTS) {
+      val item = queue.removeFirst()
+      count++
+      if (!item.isVisibleToUser) continue
+      texts(item)
+        .filterNot { it.second.isNullOrEmpty() }
+        .forEach { (name, value) -> found.add("inside $name" to value) }
+      queue.addAll(item.children())
+    }
+    return found.take(MAX_INNER_TEXTS)
   }
 
   /**
@@ -117,6 +159,10 @@ object ItemInspector {
   }
   private const val MAX_DEPTH = 60
   private const val MAX_ITEMS = 2000
+  /** The most items in the inspected item whose texts Inspect focused item reads. */
+  private const val MAX_INNER_ITEMS = 30
+  /** The most texts of items in the inspected item that Inspect focused item gives. */
+  private const val MAX_INNER_TEXTS = 10
 
   private val FLAGS: List<Pair<String, (AccessibilityNodeInfoCompat) -> Boolean>> =
     listOf(
