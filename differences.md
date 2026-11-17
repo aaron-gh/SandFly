@@ -628,6 +628,10 @@ Under **Corners** in gesture settings, each corner of the screen has five one-fi
 
 A corner with no gesture assigned works as before. In a corner with a gesture assigned, a tap that SandFly doesn't use is an ordinary tap or double tap: a tap still waits for a second tap and then explores, and a double tap still activates. A double tap waits for a third tap only while the corner's **Triple-tap** or **Triple-tap and hold** has a command. A touch that moves, adds a finger or rests without a hold gesture is handed back as an ordinary touch, so swipes and edge gestures from the corner still work; touch exploration that starts with a finger resting in such a corner starts about 0.1 seconds later. Corner gestures don't start on the keyboard, so the keys in the corners type as usual. They require Android 13 or later and **Handle gestures in SandFly** turned on, and aren't on watches.
 
+### Tap, then swipe
+
+Under **Tap, then swipe** in gesture settings, there are gestures that tap once, twice or three times with two, three or four fingers and then swipe up, down, left or right with as many fingers, such as **Double-tap, then swipe up with 2 fingers**. They do nothing by default. The swipe is the next touch after the last tap and must start within 0.25 seconds of it. While one of these gestures has a command, the taps it starts with wait for the swipe as they wait for a further tap. They require Android 13 or later and **Handle gestures in SandFly** turned on, and aren't on watches.
+
 ### Pinch and spread
 
 You can assign actions to pinching and spreading with two, three or four fingers in gesture settings. They do nothing by default. A pinch or spread counts once the fingers have moved about half a centimeter toward or away from their middle, and by a third of the distance, without moving together or turning much. While a two-finger pinch or spread has an action, a two-finger movement that pinches more than it moves waits before it reaches the app, so apps that zoom with two fingers may not zoom until you set both to nothing. A scrub set to nothing is left to ordinary two-finger movements. While a scrub is still possible, a sideways scroll with two fingers waits for up to about half a second before it starts. Pinches and spreads require Android 13 or later and **Handle gestures in SandFly** turned on, and aren't on watches.
@@ -688,7 +692,7 @@ To let Android recognize gestures again, turn off **Advanced settings** > **Deve
 
 ### Multi-finger taps without the wait
 
-A tap with two, three or four fingers, or several such taps, runs its command as the fingers lift when no gesture of more taps, or more taps and hold, with as many fingers has a command. TalkBack waited about 0.3 seconds for a further tap. A triple-tap with two or four fingers and a quadruple-tap with three fingers always run at once. In the tutorial, these taps still wait. This requires **Handle gestures in SandFly**.
+A tap with two, three or four fingers, or several such taps, runs its command as the fingers lift when no gesture that goes on after these taps with as many fingers has a command: more taps, more taps and hold, or a [tap, then swipe](#tap-then-swipe) gesture. TalkBack waited about 0.3 seconds for a further tap. A quadruple-tap with three fingers always runs at once. In the tutorial, these taps still wait. This requires **Handle gestures in SandFly**.
 
 ## Navigation
 

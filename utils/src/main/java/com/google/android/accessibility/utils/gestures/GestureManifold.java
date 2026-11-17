@@ -138,6 +138,45 @@ public class GestureManifold implements GestureMatcher.StateChangeListener {
   public static final int GESTURE_CORNER_BOTTOM_RIGHT_DOUBLE_TAP_AND_HOLD = -84;
   public static final int GESTURE_CORNER_BOTTOM_RIGHT_TRIPLE_TAP_AND_HOLD = -85;
 
+  // Taps with two, three or four fingers followed by a swipe with as many fingers. Recognized by
+  // SandFly's own detection only while they have an action.
+  public static final int GESTURE_2_FINGER_SINGLE_TAP_SWIPE_UP = -86;
+  public static final int GESTURE_2_FINGER_SINGLE_TAP_SWIPE_DOWN = -87;
+  public static final int GESTURE_2_FINGER_SINGLE_TAP_SWIPE_LEFT = -88;
+  public static final int GESTURE_2_FINGER_SINGLE_TAP_SWIPE_RIGHT = -89;
+  public static final int GESTURE_2_FINGER_DOUBLE_TAP_SWIPE_UP = -90;
+  public static final int GESTURE_2_FINGER_DOUBLE_TAP_SWIPE_DOWN = -91;
+  public static final int GESTURE_2_FINGER_DOUBLE_TAP_SWIPE_LEFT = -92;
+  public static final int GESTURE_2_FINGER_DOUBLE_TAP_SWIPE_RIGHT = -93;
+  public static final int GESTURE_2_FINGER_TRIPLE_TAP_SWIPE_UP = -94;
+  public static final int GESTURE_2_FINGER_TRIPLE_TAP_SWIPE_DOWN = -95;
+  public static final int GESTURE_2_FINGER_TRIPLE_TAP_SWIPE_LEFT = -96;
+  public static final int GESTURE_2_FINGER_TRIPLE_TAP_SWIPE_RIGHT = -97;
+  public static final int GESTURE_3_FINGER_SINGLE_TAP_SWIPE_UP = -98;
+  public static final int GESTURE_3_FINGER_SINGLE_TAP_SWIPE_DOWN = -99;
+  public static final int GESTURE_3_FINGER_SINGLE_TAP_SWIPE_LEFT = -100;
+  public static final int GESTURE_3_FINGER_SINGLE_TAP_SWIPE_RIGHT = -101;
+  public static final int GESTURE_3_FINGER_DOUBLE_TAP_SWIPE_UP = -102;
+  public static final int GESTURE_3_FINGER_DOUBLE_TAP_SWIPE_DOWN = -103;
+  public static final int GESTURE_3_FINGER_DOUBLE_TAP_SWIPE_LEFT = -104;
+  public static final int GESTURE_3_FINGER_DOUBLE_TAP_SWIPE_RIGHT = -105;
+  public static final int GESTURE_3_FINGER_TRIPLE_TAP_SWIPE_UP = -106;
+  public static final int GESTURE_3_FINGER_TRIPLE_TAP_SWIPE_DOWN = -107;
+  public static final int GESTURE_3_FINGER_TRIPLE_TAP_SWIPE_LEFT = -108;
+  public static final int GESTURE_3_FINGER_TRIPLE_TAP_SWIPE_RIGHT = -109;
+  public static final int GESTURE_4_FINGER_SINGLE_TAP_SWIPE_UP = -110;
+  public static final int GESTURE_4_FINGER_SINGLE_TAP_SWIPE_DOWN = -111;
+  public static final int GESTURE_4_FINGER_SINGLE_TAP_SWIPE_LEFT = -112;
+  public static final int GESTURE_4_FINGER_SINGLE_TAP_SWIPE_RIGHT = -113;
+  public static final int GESTURE_4_FINGER_DOUBLE_TAP_SWIPE_UP = -114;
+  public static final int GESTURE_4_FINGER_DOUBLE_TAP_SWIPE_DOWN = -115;
+  public static final int GESTURE_4_FINGER_DOUBLE_TAP_SWIPE_LEFT = -116;
+  public static final int GESTURE_4_FINGER_DOUBLE_TAP_SWIPE_RIGHT = -117;
+  public static final int GESTURE_4_FINGER_TRIPLE_TAP_SWIPE_UP = -118;
+  public static final int GESTURE_4_FINGER_TRIPLE_TAP_SWIPE_DOWN = -119;
+  public static final int GESTURE_4_FINGER_TRIPLE_TAP_SWIPE_LEFT = -120;
+  public static final int GESTURE_4_FINGER_TRIPLE_TAP_SWIPE_RIGHT = -121;
+
   // Match the value of GESTURE_ID_2FINGER_1TAP_HOLD in TalkBack.
   public static final int GESTURE_2_FINGER_SINGLE_TAP_AND_HOLD = 63;
 

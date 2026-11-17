@@ -190,17 +190,22 @@ class MultiFingerMultiTap extends GestureMatcher {
         startGesture(event);
       }
       if (completedTapCount == mTargetTapCount) {
-        // Done. Another tap can only make a gesture that goes on after these taps, so without one
-        // that has an action there is nothing to wait for.
-        if (nothingFollows()) {
-          completeGesture(eventId, event);
-        } else {
-          completeAfterDoubleTapTimeout(eventId, event);
-        }
+        onTapsDone(eventId, event);
       }
     } else {
       // Either too many taps or nonsensical event stream.
       cancelGesture(event);
+    }
+  }
+
+  /** Called when the fingers lift from the last of the target number of taps. */
+  protected void onTapsDone(EventId eventId, MotionEvent event) {
+    // Done. Another tap can only make a gesture that goes on after these taps, so without one that
+    // has an action there is nothing to wait for.
+    if (nothingFollows()) {
+      completeGesture(eventId, event);
+    } else {
+      completeAfterDoubleTapTimeout(eventId, event);
     }
   }
 

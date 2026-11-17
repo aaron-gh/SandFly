@@ -46,6 +46,7 @@ import com.google.android.accessibility.talkback.gesture.EdgeSwipeTracker.MenuEd
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping
 import com.google.android.accessibility.utils.FormFactorUtils
 import com.google.android.accessibility.utils.SharedPreferencesUtils
+import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_DOUBLE_TAP_SWIPE_UP
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_PINCH
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_ROTATE_CLOCKWISE
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_ROTATE_COUNTERCLOCKWISE
@@ -750,6 +751,40 @@ class TrackedGestureTest {
     val upMs = multiFingerTaps(fingers = 2, taps = 2)
     runUntil(upMs + 20)
     assertEquals(listOf(AccessibilityService.GESTURE_2_FINGER_DOUBLE_TAP), service.gestures)
+  }
+
+  /** Two fingers land [downMs] after the start at y 400, move 200 pixels up and lift. */
+  private fun twoFingerSwipeUpAt(downMs: Long): Long {
+    val xs = floatArrayOf(60f, 100f)
+    var y = 400f
+    touchAt(ACTION_DOWN, downMs, xs[0], y)
+    touchAt(ACTION_POINTER_DOWN, downMs + 5, xs[0], y, xs[1], y, actionIndex = 1)
+    var time = downMs + 5
+    repeat(10) {
+      time += 10
+      y -= 20f
+      touchAt(ACTION_MOVE, time, xs[0], y, xs[1], y)
+    }
+    touchAt(ACTION_POINTER_UP, time + 5, xs[0], y, xs[1], y, actionIndex = 1)
+    touchAt(ACTION_UP, time + 10, xs[0], y)
+    return time + 10
+  }
+
+  @Test
+  fun twoFingerDoubleTapThenSwipeUpIsItsGestureWhenAssigned() {
+    assign(R.string.shortcut_value_home, R.string.pref_shortcut_2finger_2tap_swipe_up_key)
+    val upMs = twoFingerSwipeUpAt(multiFingerTaps(fingers = 2, taps = 2) + 100)
+    runUntil(upMs + 20)
+    assertEquals(listOf(GESTURE_2_FINGER_DOUBLE_TAP_SWIPE_UP), service.gestures)
+    assertEquals(false, requestedDragging())
+    assertEquals(false, requestedDelegating())
+  }
+
+  @Test
+  fun twoFingerDoubleTapThenSwipeUpIsNothingWhenUnassigned() {
+    val upMs = twoFingerSwipeUpAt(multiFingerTaps(fingers = 2, taps = 2) + 100)
+    runUntil(upMs + 1000)
+    assertEquals(false, service.gestures.contains(GESTURE_2_FINGER_DOUBLE_TAP_SWIPE_UP))
   }
 
   /** Whether Backtalk asked the system to pass the touch to the app as it is. */

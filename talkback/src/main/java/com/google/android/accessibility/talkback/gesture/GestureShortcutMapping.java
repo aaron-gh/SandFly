@@ -115,6 +115,7 @@ import com.google.android.accessibility.utils.Logger;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import com.google.android.accessibility.utils.WindowUtils;
 import com.google.android.accessibility.utils.gestures.GestureConfiguration;
+import com.google.android.accessibility.utils.gestures.GestureManifold;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -806,6 +807,187 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
         SINGLE_FINGER,
         R.string.pref_shortcut_corner_bottom_right_triple_tap_hold_key,
         R.string.pref_shortcut_corner_bottom_right_triple_tap_hold_default),
+    // Taps, then a swipe. Only recognized when SandFly detects gestures itself.
+    TWO_FINGER_SINGLE_TAP_SWIPE_UP(
+        GestureManifold.GESTURE_2_FINGER_SINGLE_TAP_SWIPE_UP,
+        MULTI_FINGER,
+        R.string.pref_shortcut_2finger_1tap_swipe_up_key,
+        R.string.pref_shortcut_2finger_1tap_swipe_up_default),
+    TWO_FINGER_SINGLE_TAP_SWIPE_DOWN(
+        GestureManifold.GESTURE_2_FINGER_SINGLE_TAP_SWIPE_DOWN,
+        MULTI_FINGER,
+        R.string.pref_shortcut_2finger_1tap_swipe_down_key,
+        R.string.pref_shortcut_2finger_1tap_swipe_down_default),
+    TWO_FINGER_SINGLE_TAP_SWIPE_LEFT(
+        GestureManifold.GESTURE_2_FINGER_SINGLE_TAP_SWIPE_LEFT,
+        MULTI_FINGER,
+        R.string.pref_shortcut_2finger_1tap_swipe_left_key,
+        R.string.pref_shortcut_2finger_1tap_swipe_left_default),
+    TWO_FINGER_SINGLE_TAP_SWIPE_RIGHT(
+        GestureManifold.GESTURE_2_FINGER_SINGLE_TAP_SWIPE_RIGHT,
+        MULTI_FINGER,
+        R.string.pref_shortcut_2finger_1tap_swipe_right_key,
+        R.string.pref_shortcut_2finger_1tap_swipe_right_default),
+    TWO_FINGER_DOUBLE_TAP_SWIPE_UP(
+        GestureManifold.GESTURE_2_FINGER_DOUBLE_TAP_SWIPE_UP,
+        MULTI_FINGER,
+        R.string.pref_shortcut_2finger_2tap_swipe_up_key,
+        R.string.pref_shortcut_2finger_2tap_swipe_up_default),
+    TWO_FINGER_DOUBLE_TAP_SWIPE_DOWN(
+        GestureManifold.GESTURE_2_FINGER_DOUBLE_TAP_SWIPE_DOWN,
+        MULTI_FINGER,
+        R.string.pref_shortcut_2finger_2tap_swipe_down_key,
+        R.string.pref_shortcut_2finger_2tap_swipe_down_default),
+    TWO_FINGER_DOUBLE_TAP_SWIPE_LEFT(
+        GestureManifold.GESTURE_2_FINGER_DOUBLE_TAP_SWIPE_LEFT,
+        MULTI_FINGER,
+        R.string.pref_shortcut_2finger_2tap_swipe_left_key,
+        R.string.pref_shortcut_2finger_2tap_swipe_left_default),
+    TWO_FINGER_DOUBLE_TAP_SWIPE_RIGHT(
+        GestureManifold.GESTURE_2_FINGER_DOUBLE_TAP_SWIPE_RIGHT,
+        MULTI_FINGER,
+        R.string.pref_shortcut_2finger_2tap_swipe_right_key,
+        R.string.pref_shortcut_2finger_2tap_swipe_right_default),
+    TWO_FINGER_TRIPLE_TAP_SWIPE_UP(
+        GestureManifold.GESTURE_2_FINGER_TRIPLE_TAP_SWIPE_UP,
+        MULTI_FINGER,
+        R.string.pref_shortcut_2finger_3tap_swipe_up_key,
+        R.string.pref_shortcut_2finger_3tap_swipe_up_default),
+    TWO_FINGER_TRIPLE_TAP_SWIPE_DOWN(
+        GestureManifold.GESTURE_2_FINGER_TRIPLE_TAP_SWIPE_DOWN,
+        MULTI_FINGER,
+        R.string.pref_shortcut_2finger_3tap_swipe_down_key,
+        R.string.pref_shortcut_2finger_3tap_swipe_down_default),
+    TWO_FINGER_TRIPLE_TAP_SWIPE_LEFT(
+        GestureManifold.GESTURE_2_FINGER_TRIPLE_TAP_SWIPE_LEFT,
+        MULTI_FINGER,
+        R.string.pref_shortcut_2finger_3tap_swipe_left_key,
+        R.string.pref_shortcut_2finger_3tap_swipe_left_default),
+    TWO_FINGER_TRIPLE_TAP_SWIPE_RIGHT(
+        GestureManifold.GESTURE_2_FINGER_TRIPLE_TAP_SWIPE_RIGHT,
+        MULTI_FINGER,
+        R.string.pref_shortcut_2finger_3tap_swipe_right_key,
+        R.string.pref_shortcut_2finger_3tap_swipe_right_default),
+    THREE_FINGER_SINGLE_TAP_SWIPE_UP(
+        GestureManifold.GESTURE_3_FINGER_SINGLE_TAP_SWIPE_UP,
+        MULTI_FINGER,
+        R.string.pref_shortcut_3finger_1tap_swipe_up_key,
+        R.string.pref_shortcut_3finger_1tap_swipe_up_default),
+    THREE_FINGER_SINGLE_TAP_SWIPE_DOWN(
+        GestureManifold.GESTURE_3_FINGER_SINGLE_TAP_SWIPE_DOWN,
+        MULTI_FINGER,
+        R.string.pref_shortcut_3finger_1tap_swipe_down_key,
+        R.string.pref_shortcut_3finger_1tap_swipe_down_default),
+    THREE_FINGER_SINGLE_TAP_SWIPE_LEFT(
+        GestureManifold.GESTURE_3_FINGER_SINGLE_TAP_SWIPE_LEFT,
+        MULTI_FINGER,
+        R.string.pref_shortcut_3finger_1tap_swipe_left_key,
+        R.string.pref_shortcut_3finger_1tap_swipe_left_default),
+    THREE_FINGER_SINGLE_TAP_SWIPE_RIGHT(
+        GestureManifold.GESTURE_3_FINGER_SINGLE_TAP_SWIPE_RIGHT,
+        MULTI_FINGER,
+        R.string.pref_shortcut_3finger_1tap_swipe_right_key,
+        R.string.pref_shortcut_3finger_1tap_swipe_right_default),
+    THREE_FINGER_DOUBLE_TAP_SWIPE_UP(
+        GestureManifold.GESTURE_3_FINGER_DOUBLE_TAP_SWIPE_UP,
+        MULTI_FINGER,
+        R.string.pref_shortcut_3finger_2tap_swipe_up_key,
+        R.string.pref_shortcut_3finger_2tap_swipe_up_default),
+    THREE_FINGER_DOUBLE_TAP_SWIPE_DOWN(
+        GestureManifold.GESTURE_3_FINGER_DOUBLE_TAP_SWIPE_DOWN,
+        MULTI_FINGER,
+        R.string.pref_shortcut_3finger_2tap_swipe_down_key,
+        R.string.pref_shortcut_3finger_2tap_swipe_down_default),
+    THREE_FINGER_DOUBLE_TAP_SWIPE_LEFT(
+        GestureManifold.GESTURE_3_FINGER_DOUBLE_TAP_SWIPE_LEFT,
+        MULTI_FINGER,
+        R.string.pref_shortcut_3finger_2tap_swipe_left_key,
+        R.string.pref_shortcut_3finger_2tap_swipe_left_default),
+    THREE_FINGER_DOUBLE_TAP_SWIPE_RIGHT(
+        GestureManifold.GESTURE_3_FINGER_DOUBLE_TAP_SWIPE_RIGHT,
+        MULTI_FINGER,
+        R.string.pref_shortcut_3finger_2tap_swipe_right_key,
+        R.string.pref_shortcut_3finger_2tap_swipe_right_default),
+    THREE_FINGER_TRIPLE_TAP_SWIPE_UP(
+        GestureManifold.GESTURE_3_FINGER_TRIPLE_TAP_SWIPE_UP,
+        MULTI_FINGER,
+        R.string.pref_shortcut_3finger_3tap_swipe_up_key,
+        R.string.pref_shortcut_3finger_3tap_swipe_up_default),
+    THREE_FINGER_TRIPLE_TAP_SWIPE_DOWN(
+        GestureManifold.GESTURE_3_FINGER_TRIPLE_TAP_SWIPE_DOWN,
+        MULTI_FINGER,
+        R.string.pref_shortcut_3finger_3tap_swipe_down_key,
+        R.string.pref_shortcut_3finger_3tap_swipe_down_default),
+    THREE_FINGER_TRIPLE_TAP_SWIPE_LEFT(
+        GestureManifold.GESTURE_3_FINGER_TRIPLE_TAP_SWIPE_LEFT,
+        MULTI_FINGER,
+        R.string.pref_shortcut_3finger_3tap_swipe_left_key,
+        R.string.pref_shortcut_3finger_3tap_swipe_left_default),
+    THREE_FINGER_TRIPLE_TAP_SWIPE_RIGHT(
+        GestureManifold.GESTURE_3_FINGER_TRIPLE_TAP_SWIPE_RIGHT,
+        MULTI_FINGER,
+        R.string.pref_shortcut_3finger_3tap_swipe_right_key,
+        R.string.pref_shortcut_3finger_3tap_swipe_right_default),
+    FOUR_FINGER_SINGLE_TAP_SWIPE_UP(
+        GestureManifold.GESTURE_4_FINGER_SINGLE_TAP_SWIPE_UP,
+        MULTI_FINGER,
+        R.string.pref_shortcut_4finger_1tap_swipe_up_key,
+        R.string.pref_shortcut_4finger_1tap_swipe_up_default),
+    FOUR_FINGER_SINGLE_TAP_SWIPE_DOWN(
+        GestureManifold.GESTURE_4_FINGER_SINGLE_TAP_SWIPE_DOWN,
+        MULTI_FINGER,
+        R.string.pref_shortcut_4finger_1tap_swipe_down_key,
+        R.string.pref_shortcut_4finger_1tap_swipe_down_default),
+    FOUR_FINGER_SINGLE_TAP_SWIPE_LEFT(
+        GestureManifold.GESTURE_4_FINGER_SINGLE_TAP_SWIPE_LEFT,
+        MULTI_FINGER,
+        R.string.pref_shortcut_4finger_1tap_swipe_left_key,
+        R.string.pref_shortcut_4finger_1tap_swipe_left_default),
+    FOUR_FINGER_SINGLE_TAP_SWIPE_RIGHT(
+        GestureManifold.GESTURE_4_FINGER_SINGLE_TAP_SWIPE_RIGHT,
+        MULTI_FINGER,
+        R.string.pref_shortcut_4finger_1tap_swipe_right_key,
+        R.string.pref_shortcut_4finger_1tap_swipe_right_default),
+    FOUR_FINGER_DOUBLE_TAP_SWIPE_UP(
+        GestureManifold.GESTURE_4_FINGER_DOUBLE_TAP_SWIPE_UP,
+        MULTI_FINGER,
+        R.string.pref_shortcut_4finger_2tap_swipe_up_key,
+        R.string.pref_shortcut_4finger_2tap_swipe_up_default),
+    FOUR_FINGER_DOUBLE_TAP_SWIPE_DOWN(
+        GestureManifold.GESTURE_4_FINGER_DOUBLE_TAP_SWIPE_DOWN,
+        MULTI_FINGER,
+        R.string.pref_shortcut_4finger_2tap_swipe_down_key,
+        R.string.pref_shortcut_4finger_2tap_swipe_down_default),
+    FOUR_FINGER_DOUBLE_TAP_SWIPE_LEFT(
+        GestureManifold.GESTURE_4_FINGER_DOUBLE_TAP_SWIPE_LEFT,
+        MULTI_FINGER,
+        R.string.pref_shortcut_4finger_2tap_swipe_left_key,
+        R.string.pref_shortcut_4finger_2tap_swipe_left_default),
+    FOUR_FINGER_DOUBLE_TAP_SWIPE_RIGHT(
+        GestureManifold.GESTURE_4_FINGER_DOUBLE_TAP_SWIPE_RIGHT,
+        MULTI_FINGER,
+        R.string.pref_shortcut_4finger_2tap_swipe_right_key,
+        R.string.pref_shortcut_4finger_2tap_swipe_right_default),
+    FOUR_FINGER_TRIPLE_TAP_SWIPE_UP(
+        GestureManifold.GESTURE_4_FINGER_TRIPLE_TAP_SWIPE_UP,
+        MULTI_FINGER,
+        R.string.pref_shortcut_4finger_3tap_swipe_up_key,
+        R.string.pref_shortcut_4finger_3tap_swipe_up_default),
+    FOUR_FINGER_TRIPLE_TAP_SWIPE_DOWN(
+        GestureManifold.GESTURE_4_FINGER_TRIPLE_TAP_SWIPE_DOWN,
+        MULTI_FINGER,
+        R.string.pref_shortcut_4finger_3tap_swipe_down_key,
+        R.string.pref_shortcut_4finger_3tap_swipe_down_default),
+    FOUR_FINGER_TRIPLE_TAP_SWIPE_LEFT(
+        GestureManifold.GESTURE_4_FINGER_TRIPLE_TAP_SWIPE_LEFT,
+        MULTI_FINGER,
+        R.string.pref_shortcut_4finger_3tap_swipe_left_key,
+        R.string.pref_shortcut_4finger_3tap_swipe_left_default),
+    FOUR_FINGER_TRIPLE_TAP_SWIPE_RIGHT(
+        GestureManifold.GESTURE_4_FINGER_TRIPLE_TAP_SWIPE_RIGHT,
+        MULTI_FINGER,
+        R.string.pref_shortcut_4finger_3tap_swipe_right_key,
+        R.string.pref_shortcut_4finger_3tap_swipe_right_default),
 
     // Fingerprint.
     FINGERPRINT_SWIPE_UP(
@@ -1929,6 +2111,78 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
           context.getString(R.string.title_pref_shortcut_corner_bottom_right_double_tap_hold);
       case GESTURE_CORNER_BOTTOM_RIGHT_TRIPLE_TAP_AND_HOLD ->
           context.getString(R.string.title_pref_shortcut_corner_bottom_right_triple_tap_hold);
+      case GestureManifold.GESTURE_2_FINGER_SINGLE_TAP_SWIPE_UP ->
+          context.getString(R.string.title_pref_shortcut_2finger_1tap_swipe_up);
+      case GestureManifold.GESTURE_2_FINGER_SINGLE_TAP_SWIPE_DOWN ->
+          context.getString(R.string.title_pref_shortcut_2finger_1tap_swipe_down);
+      case GestureManifold.GESTURE_2_FINGER_SINGLE_TAP_SWIPE_LEFT ->
+          context.getString(R.string.title_pref_shortcut_2finger_1tap_swipe_left);
+      case GestureManifold.GESTURE_2_FINGER_SINGLE_TAP_SWIPE_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_2finger_1tap_swipe_right);
+      case GestureManifold.GESTURE_2_FINGER_DOUBLE_TAP_SWIPE_UP ->
+          context.getString(R.string.title_pref_shortcut_2finger_2tap_swipe_up);
+      case GestureManifold.GESTURE_2_FINGER_DOUBLE_TAP_SWIPE_DOWN ->
+          context.getString(R.string.title_pref_shortcut_2finger_2tap_swipe_down);
+      case GestureManifold.GESTURE_2_FINGER_DOUBLE_TAP_SWIPE_LEFT ->
+          context.getString(R.string.title_pref_shortcut_2finger_2tap_swipe_left);
+      case GestureManifold.GESTURE_2_FINGER_DOUBLE_TAP_SWIPE_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_2finger_2tap_swipe_right);
+      case GestureManifold.GESTURE_2_FINGER_TRIPLE_TAP_SWIPE_UP ->
+          context.getString(R.string.title_pref_shortcut_2finger_3tap_swipe_up);
+      case GestureManifold.GESTURE_2_FINGER_TRIPLE_TAP_SWIPE_DOWN ->
+          context.getString(R.string.title_pref_shortcut_2finger_3tap_swipe_down);
+      case GestureManifold.GESTURE_2_FINGER_TRIPLE_TAP_SWIPE_LEFT ->
+          context.getString(R.string.title_pref_shortcut_2finger_3tap_swipe_left);
+      case GestureManifold.GESTURE_2_FINGER_TRIPLE_TAP_SWIPE_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_2finger_3tap_swipe_right);
+      case GestureManifold.GESTURE_3_FINGER_SINGLE_TAP_SWIPE_UP ->
+          context.getString(R.string.title_pref_shortcut_3finger_1tap_swipe_up);
+      case GestureManifold.GESTURE_3_FINGER_SINGLE_TAP_SWIPE_DOWN ->
+          context.getString(R.string.title_pref_shortcut_3finger_1tap_swipe_down);
+      case GestureManifold.GESTURE_3_FINGER_SINGLE_TAP_SWIPE_LEFT ->
+          context.getString(R.string.title_pref_shortcut_3finger_1tap_swipe_left);
+      case GestureManifold.GESTURE_3_FINGER_SINGLE_TAP_SWIPE_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_3finger_1tap_swipe_right);
+      case GestureManifold.GESTURE_3_FINGER_DOUBLE_TAP_SWIPE_UP ->
+          context.getString(R.string.title_pref_shortcut_3finger_2tap_swipe_up);
+      case GestureManifold.GESTURE_3_FINGER_DOUBLE_TAP_SWIPE_DOWN ->
+          context.getString(R.string.title_pref_shortcut_3finger_2tap_swipe_down);
+      case GestureManifold.GESTURE_3_FINGER_DOUBLE_TAP_SWIPE_LEFT ->
+          context.getString(R.string.title_pref_shortcut_3finger_2tap_swipe_left);
+      case GestureManifold.GESTURE_3_FINGER_DOUBLE_TAP_SWIPE_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_3finger_2tap_swipe_right);
+      case GestureManifold.GESTURE_3_FINGER_TRIPLE_TAP_SWIPE_UP ->
+          context.getString(R.string.title_pref_shortcut_3finger_3tap_swipe_up);
+      case GestureManifold.GESTURE_3_FINGER_TRIPLE_TAP_SWIPE_DOWN ->
+          context.getString(R.string.title_pref_shortcut_3finger_3tap_swipe_down);
+      case GestureManifold.GESTURE_3_FINGER_TRIPLE_TAP_SWIPE_LEFT ->
+          context.getString(R.string.title_pref_shortcut_3finger_3tap_swipe_left);
+      case GestureManifold.GESTURE_3_FINGER_TRIPLE_TAP_SWIPE_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_3finger_3tap_swipe_right);
+      case GestureManifold.GESTURE_4_FINGER_SINGLE_TAP_SWIPE_UP ->
+          context.getString(R.string.title_pref_shortcut_4finger_1tap_swipe_up);
+      case GestureManifold.GESTURE_4_FINGER_SINGLE_TAP_SWIPE_DOWN ->
+          context.getString(R.string.title_pref_shortcut_4finger_1tap_swipe_down);
+      case GestureManifold.GESTURE_4_FINGER_SINGLE_TAP_SWIPE_LEFT ->
+          context.getString(R.string.title_pref_shortcut_4finger_1tap_swipe_left);
+      case GestureManifold.GESTURE_4_FINGER_SINGLE_TAP_SWIPE_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_4finger_1tap_swipe_right);
+      case GestureManifold.GESTURE_4_FINGER_DOUBLE_TAP_SWIPE_UP ->
+          context.getString(R.string.title_pref_shortcut_4finger_2tap_swipe_up);
+      case GestureManifold.GESTURE_4_FINGER_DOUBLE_TAP_SWIPE_DOWN ->
+          context.getString(R.string.title_pref_shortcut_4finger_2tap_swipe_down);
+      case GestureManifold.GESTURE_4_FINGER_DOUBLE_TAP_SWIPE_LEFT ->
+          context.getString(R.string.title_pref_shortcut_4finger_2tap_swipe_left);
+      case GestureManifold.GESTURE_4_FINGER_DOUBLE_TAP_SWIPE_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_4finger_2tap_swipe_right);
+      case GestureManifold.GESTURE_4_FINGER_TRIPLE_TAP_SWIPE_UP ->
+          context.getString(R.string.title_pref_shortcut_4finger_3tap_swipe_up);
+      case GestureManifold.GESTURE_4_FINGER_TRIPLE_TAP_SWIPE_DOWN ->
+          context.getString(R.string.title_pref_shortcut_4finger_3tap_swipe_down);
+      case GestureManifold.GESTURE_4_FINGER_TRIPLE_TAP_SWIPE_LEFT ->
+          context.getString(R.string.title_pref_shortcut_4finger_3tap_swipe_left);
+      case GestureManifold.GESTURE_4_FINGER_TRIPLE_TAP_SWIPE_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_4finger_3tap_swipe_right);
       case GESTURE_SWIPE_UP_AND_HOLD ->
           context.getString(R.string.title_pref_shortcut_up_and_hold);
       case GESTURE_SWIPE_DOWN_AND_HOLD ->
