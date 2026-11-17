@@ -105,7 +105,7 @@ class SystemBarExitTest {
   }
 
   @Test
-  fun appWindows_focusedAppWindowComesFirst() {
+  fun appWindows_nextWindowInOrderComesFirst() {
     val top = window(1, AccessibilityWindowInfo.TYPE_APPLICATION)
     val focused = window(2, AccessibilityWindowInfo.TYPE_APPLICATION, focused = true)
     val keyboard = window(3, AccessibilityWindowInfo.TYPE_INPUT_METHOD)
@@ -113,8 +113,9 @@ class SystemBarExitTest {
     val order = listOf(top, focused, keyboard, navBar)
     val traversal = Ordered(order)
 
+    // Back from the navigation bar reaches the keyboard above it before the app.
     assertEquals(
-      listOf(focused, keyboard),
+      listOf(keyboard, focused),
       FocusProcessorForLogicalNavigation.appWindowsNextToSystemBar(
         order,
         traversal,
@@ -123,8 +124,9 @@ class SystemBarExitTest {
         /* forward= */ false,
       ),
     )
+    // Forward past the end of the screen goes to the top window, not the focused one below it.
     assertEquals(
-      listOf(focused, top),
+      listOf(top, focused),
       FocusProcessorForLogicalNavigation.appWindowsNextToSystemBar(
         order,
         traversal,

@@ -3394,6 +3394,14 @@ public class FocusProcessorForLogicalNavigation {
       LogUtils.d(TAG, "Leaving a system bar into window %d", window.getId());
       return result;
     }
+    // Nothing to focus outside the bar: stop at its end, or wrap around inside it, as at the last
+    // window.
+    if (!pastScreenEnd
+        && stopsLeavingSystemBar(/* pastScreenEnd= */ true, navigationAction.shouldWrap)) {
+      logEdge(pivot, navigationAction);
+      announceNativeElement(logicalDirection, navigationAction.targetType, eventId);
+      return NavigationResult.create(NavigationResult.Type.REACH_EDGE);
+    }
     return NavigationResult.create(NavigationResult.Type.EMPTY);
   }
 
@@ -3421,9 +3429,9 @@ public class FocusProcessorForLogicalNavigation {
   }
 
   /**
-   * The windows a swipe leaving the system bar {@code barWindow} tries, in order: the app window
-   * with input focus, the active app window, then the next window swipes go to in the direction of
-   * the swipe.
+   * The windows a swipe leaving the system bar {@code barWindow} tries, in order: the next window
+   * swipes go to in the direction of the swipe, such as the keyboard above the navigation bar, then
+   * the app window with input focus and the active app window.
    */
   @VisibleForTesting
   static List<AccessibilityWindowInfo> appWindowsNextToSystemBar(
@@ -3433,8 +3441,22 @@ public class FocusProcessorForLogicalNavigation {
       AccessibilityWindowInfo barWindow,
       boolean forward) {
     List<AccessibilityWindowInfo> result = new ArrayList<>();
+    @Nullable AccessibilityWindowInfo next = barWindow;
+    for (int i = 0; i < windows.size(); i++) {
+      next =
+          forward ? windowTraversal.getNextWindow(next) : windowTraversal.getPreviousWindow(next);
+      if (next == null || next.equals(barWindow)) {
+        break;
+      }
+      if (windowFilter.accept(next)) {
+        result.add(next);
+        break;
+      }
+    }
     for (AccessibilityWindowInfo window : windows) {
-      if (window.isFocused() && isAppWindowOutsideBar(window, windowFilter, barWindow)) {
+      if (window.isFocused()
+          && !result.contains(window)
+          && isAppWindowOutsideBar(window, windowFilter, barWindow)) {
         result.add(window);
         break;
       }
@@ -3444,22 +3466,6 @@ public class FocusProcessorForLogicalNavigation {
           && !result.contains(window)
           && isAppWindowOutsideBar(window, windowFilter, barWindow)) {
         result.add(window);
-        break;
-      }
-    }
-    @Nullable AccessibilityWindowInfo window = barWindow;
-    for (int i = 0; i < windows.size(); i++) {
-      window =
-          forward
-              ? windowTraversal.getNextWindow(window)
-              : windowTraversal.getPreviousWindow(window);
-      if (window == null || window.equals(barWindow)) {
-        break;
-      }
-      if (windowFilter.accept(window)) {
-        if (!result.contains(window)) {
-          result.add(window);
-        }
         break;
       }
     }
