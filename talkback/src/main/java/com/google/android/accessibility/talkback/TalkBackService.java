@@ -189,6 +189,7 @@ import com.google.android.accessibility.talkback.eventprocessor.ProcessorPhoneti
 import com.google.android.accessibility.talkback.eventprocessor.ProcessorVolumeStream;
 import com.google.android.accessibility.talkback.eventprocessor.ProcessorVolumeStream.TouchInteractingIndicator;
 import com.google.android.accessibility.talkback.eventprocessor.VolumeKeyCommands;
+import com.google.android.accessibility.talkback.eventprocessor.VolumeKeyPresses;
 import com.google.android.accessibility.talkback.feedbackpolicy.ScreenFeedbackManager;
 import com.google.android.accessibility.talkback.feedbackpolicy.WindowNamesSetting;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
@@ -307,6 +308,7 @@ import com.google.android.accessibility.talkback.report.ProblemReportSender;
 import com.google.android.accessibility.talkback.report.ReportInbox;
 import com.google.android.accessibility.talkback.report.StallLog;
 import com.google.android.accessibility.talkback.report.TurnOffLog;
+import com.google.android.accessibility.talkback.report.VolumeKeyLog;
 import com.google.android.accessibility.talkback.translation.AutomaticTranslation;
 import com.google.android.accessibility.talkback.translation.WordLanguageGuesser;
 import com.google.android.accessibility.talkback.updatetasks.TalkBackUpdateHelper;
@@ -1711,6 +1713,12 @@ public class TalkBackService extends AccessibilityServiceCompat
   @Override
   protected final boolean onKeyEvent(KeyEvent keyEvent) {
     boolean result = onKeyEventInternal(keyEvent);
+    if (VolumeKeyPresses.isVolumeKey(keyEvent.getKeyCode())) {
+      VolumeKeyLog.onKeyEvent(
+          keyEvent,
+          result,
+          volumeKeyCommands == null ? "no volume key commands" : volumeKeyCommands.describeState());
+    }
 
     if (primesController != null) {
       // We use keyEvent.getEventTime() as starting point because we don't know how long the

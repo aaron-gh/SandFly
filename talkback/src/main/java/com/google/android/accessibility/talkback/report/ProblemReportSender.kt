@@ -369,9 +369,9 @@ object ProblemReportSender {
 
   /**
    * The log, after SandFly's last crash, last turn-off and main thread stalls if there were any,
-   * which the log doesn't reach back to, and how its last processes ended, then the last gesture
-   * lines, and then the ends of the logs of SandFly's other processes, such as the one that runs
-   * on-device AI.
+   * which the log doesn't reach back to, how its last processes ended, the accessibility services
+   * turned on and the last volume key events, then the last gesture lines, and then the ends of the
+   * logs of SandFly's other processes, such as the one that runs on-device AI.
    */
   @WorkerThread
   private fun logWithCrash(context: Context, snapshot: LogcatSnapshot?): String? {
@@ -379,25 +379,26 @@ object ProblemReportSender {
     val turnOff = TurnOffLog.read(context)
     val stalls = StallLog.read(context)
     val exits = ExitReasons.describe(context)
+    val services = EnabledServices.describe(context)
+    val volumeKeys = VolumeKeyLog.read()
     val others = snapshot?.others ?: otherProcessLogs(context)
     val log = snapshot?.main ?: readLog(Process.myPid(), LOG_LINES, MAIN_LOG_PRIORITY)
     val gestures = snapshot?.gestures ?: readGestureLog(Process.myPid()).orEmpty()
-    if (
-      crash == null &&
-        turnOff == null &&
-        stalls == null &&
-        exits == null &&
-        others.isEmpty() &&
-        gestures.isEmpty()
-    ) {
+    val sections =
+      listOf(
+        "Last crash" to crash,
+        "Last turn-off" to turnOff,
+        "Main thread stalls" to stalls,
+        "Process exits" to exits,
+        "Enabled accessibility services" to services,
+        "Volume key log" to volumeKeys,
+      )
+    if (sections.all { it.second == null } && others.isEmpty() && gestures.isEmpty()) {
       return log
     }
     val head =
-      (if (crash == null) "" else "Last crash:\n$crash\n\n") +
-        (if (turnOff == null) "" else "Last turn-off:\n$turnOff\n\n") +
-        (if (stalls == null) "" else "Main thread stalls:\n$stalls\n\n") +
-        (if (exits == null) "" else "Process exits:\n$exits\n\n") +
-        (if (crash == null && turnOff == null && stalls == null && exits == null) "" else "Log:\n")
+      sections.joinToString("") { (title, text) -> if (text == null) "" else "$title:\n$text\n\n" } +
+        (if (sections.all { it.second == null }) "" else "Log:\n")
     return joinLog(head, log.orEmpty(), gestures, others)
   }
 

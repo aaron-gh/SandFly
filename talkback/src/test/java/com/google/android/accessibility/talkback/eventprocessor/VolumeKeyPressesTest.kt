@@ -119,6 +119,20 @@ class VolumeKeyPressesTest {
   }
 
   @Test
+  fun describe_showsLongPressWhoseReleaseDidNotCome() {
+    assign(down = KeyCommands(null, null, "L"))
+    assertEquals("presses: none; keys down: none", presses.describe())
+    down(KEYCODE_VOLUME_DOWN)
+    advance(400)
+    assertEquals(
+      "presses: down LONG_PRESS_DONE, 0 ended, held; keys down: down",
+      presses.describe(),
+    )
+    up(KEYCODE_VOLUME_DOWN)
+    assertEquals("presses: none; keys down: none", presses.describe())
+  }
+
+  @Test
   fun nothingAssigned_keysPassThroughWithoutTimers() {
     assertFalse(press(KEYCODE_VOLUME_UP))
     assertFalse(press(KEYCODE_VOLUME_DOWN, heldMs = 2000))
