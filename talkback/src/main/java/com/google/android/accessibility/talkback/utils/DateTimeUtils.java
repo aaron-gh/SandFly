@@ -30,7 +30,11 @@ import com.google.android.accessibility.talkback.monitor.RingerModeAndScreenMoni
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
+import java.text.SimpleDateFormat;
 import java.time.Clock;
+import java.util.Date;
+import java.util.Locale;
+import java.util.TimeZone;
 
 /** Utility class to get the current time and date. */
 public final class DateTimeUtils {
@@ -113,18 +117,39 @@ public final class DateTimeUtils {
     int currentTimeFlags = timeFlags & DateUtils.FORMAT_SHOW_TIME;
     String timeString = "";
     if (currentTimeFlags != 0) {
-      currentTimeFlags |=
+      boolean twentyFourHours =
           switch (timeFormat) {
-            case DateTimeUtils.TIME_FEEDBACK_FORMAT_12_HOURS -> DateUtils.FORMAT_12HOUR;
-            case DateTimeUtils.TIME_FEEDBACK_FORMAT_24_HOURS -> DateUtils.FORMAT_24HOUR;
-            default ->
-                DateFormat.is24HourFormat(context)
-                    ? DateUtils.FORMAT_24HOUR
-                    : DateUtils.FORMAT_12HOUR;
+            case DateTimeUtils.TIME_FEEDBACK_FORMAT_12_HOURS -> false;
+            case DateTimeUtils.TIME_FEEDBACK_FORMAT_24_HOURS -> true;
+            default -> DateFormat.is24HourFormat(context);
           };
+      if (includeSeconds(context)) {
+        return formatTimeWithSeconds(
+            millis, twentyFourHours, Locale.getDefault(), TimeZone.getDefault());
+      }
+      currentTimeFlags |= twentyFourHours ? DateUtils.FORMAT_24HOUR : DateUtils.FORMAT_12HOUR;
       timeString = DateUtils.formatDateTime(context, millis, currentTimeFlags);
     }
     return timeString;
+  }
+
+  /** Whether Include seconds in the time is on. */
+  private static boolean includeSeconds(Context context) {
+    return SharedPreferencesUtils.getBooleanPref(
+        SharedPreferencesUtils.getSharedPreferences(context),
+        context.getResources(),
+        R.string.pref_time_seconds_key,
+        R.bool.pref_time_seconds_default);
+  }
+
+  /** Returns the time at {@code millis} with hours, minutes and seconds, in {@code locale}. */
+  @VisibleForTesting
+  static String formatTimeWithSeconds(
+      long millis, boolean twentyFourHours, Locale locale, TimeZone zone) {
+    String pattern = DateFormat.getBestDateTimePattern(locale, twentyFourHours ? "Hms" : "hmsa");
+    SimpleDateFormat format = new SimpleDateFormat(pattern, locale);
+    format.setTimeZone(zone);
+    return format.format(new Date(millis));
   }
 
   private static String formatCurrentDate(Context context, long millis, int timeFlags) {
