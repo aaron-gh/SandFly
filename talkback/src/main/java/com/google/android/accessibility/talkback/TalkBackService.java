@@ -4450,6 +4450,10 @@ public class TalkBackService extends AccessibilityServiceCompat
     FocusProcessorForLogicalNavigation.setSpeakWhileScrolling(
         getBooleanPref(
             R.string.pref_speak_while_scrolling_key, R.bool.pref_speak_while_scrolling_default));
+    AccessibilityNodeInfoUtils.setFocusTextInsideItems(
+        getBooleanPref(
+            R.string.pref_focus_text_inside_items_key,
+            R.bool.pref_focus_text_inside_items_default));
 
     // If performance statistics changing enabled setting... clear collected stats.
     boolean performanceEnabled =
