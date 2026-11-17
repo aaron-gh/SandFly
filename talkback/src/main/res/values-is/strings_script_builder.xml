@@ -213,4 +213,28 @@
         <item quantity="one">Á %1$d mínútu fresti</item>
         <item quantity="other">Á %1$d mínútna fresti</item>
     </plurals>
+    <string name="script_builder_has_depth">Stig niður á við</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">Allt að %1$d stigi</item>
+        <item quantity="other">Allt að %1$d stigum</item>
+    </plurals>
+    <string name="script_builder_change_speech">Breyta tali</string>
+    <string name="script_builder_change_speech_summary">Fjarlægja, skipta út eða endurraða því sem SandFly segir fyrir atriðið</string>
+    <string name="script_builder_edits">Breytingar</string>
+    <string name="script_builder_add_edit">Bæta við breytingu</string>
+    <string name="script_builder_edit_remove">Fjarlægja texta</string>
+    <string name="script_builder_edit_replace">Skipta út texta</string>
+    <string name="script_builder_edit_remove_repeats">Fjarlægja endurtekna hluta</string>
+    <string name="script_builder_edit_remove_parts">Fjarlægja hluta sem innihalda texta</string>
+    <string name="script_builder_edit_keep_parts">Halda fyrstu hlutunum</string>
+    <string name="script_builder_edit_remove_value">Fjarlægja: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">Fjarlægja hluta með: %1$s</string>
+    <string name="script_builder_parts_help">Hlutar eru bútarnir á milli kommna.</string>
+    <string name="script_builder_regex_help">Með Regluleg segð er $1 í nýja textanum fyrsti hópurinn innan sviga.</string>
+    <string name="script_builder_preview">Forskoðun á skoðaða atriðinu</string>
+    <string name="script_builder_preview_silent">Segir ekkert</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">Halda fyrsta %1$d hluta</item>
+        <item quantity="other">Halda fyrstu %1$d hlutum</item>
+    </plurals>
 </resources>

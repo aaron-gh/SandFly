@@ -213,4 +213,28 @@
         <item quantity="one">Hər dəqiqə</item>
         <item quantity="other">Hər %1$d dəqiqədən bir</item>
     </plurals>
+    <string name="script_builder_has_depth">Aşağı səviyyələr</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">Birbaşa içində</item>
+        <item quantity="other">%1$d səviyyəyə qədər</item>
+    </plurals>
+    <string name="script_builder_change_speech">Nitqi dəyişin</string>
+    <string name="script_builder_change_speech_summary">SandFly-ın element üçün dediklərini silin, əvəz edin və ya yenidən sıralayın</string>
+    <string name="script_builder_edits">Düzəlişlər</string>
+    <string name="script_builder_add_edit">Düzəliş əlavə edin</string>
+    <string name="script_builder_edit_remove">Mətni silin</string>
+    <string name="script_builder_edit_replace">Mətni əvəz edin</string>
+    <string name="script_builder_edit_remove_repeats">Təkrarlanan hissələri silin</string>
+    <string name="script_builder_edit_remove_parts">Mətn olan hissələri silin</string>
+    <string name="script_builder_edit_keep_parts">İlk hissələri saxlayın</string>
+    <string name="script_builder_edit_remove_value">Silin: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">Bu olan hissələri silin: %1$s</string>
+    <string name="script_builder_parts_help">Hissələr vergüllər arasındakı parçalardır.</string>
+    <string name="script_builder_regex_help">Requlyar ifadə ilə yeni mətndəki $1 mötərizədəki birinci qrupdur.</string>
+    <string name="script_builder_preview">Yoxlanılmış elementdə önizləmə</string>
+    <string name="script_builder_preview_silent">Heç nə demir</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">İlk hissəni saxlayın</item>
+        <item quantity="other">İlk %1$d hissəni saxlayın</item>
+    </plurals>
 </resources>

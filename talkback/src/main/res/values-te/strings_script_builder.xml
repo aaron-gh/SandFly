@@ -213,4 +213,28 @@
         <item quantity="one">ప్రతి నిమిషం</item>
         <item quantity="other">ప్రతి %1$d నిమిషాలకు</item>
     </plurals>
+    <string name="script_builder_has_depth">కిందికి స్థాయిలు</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">నేరుగా లోపల</item>
+        <item quantity="other">%1$d స్థాయిల వరకు</item>
+    </plurals>
+    <string name="script_builder_change_speech">స్పీచ్‌ను మార్చండి</string>
+    <string name="script_builder_change_speech_summary">ఐటెమ్ కోసం SandFly చెప్పేదాన్ని తీసివేయండి, భర్తీ చేయండి లేదా క్రమం మార్చండి</string>
+    <string name="script_builder_edits">సవరణలు</string>
+    <string name="script_builder_add_edit">సవరణను జోడించండి</string>
+    <string name="script_builder_edit_remove">టెక్స్ట్‌ను తీసివేయండి</string>
+    <string name="script_builder_edit_replace">టెక్స్ట్‌ను భర్తీ చేయండి</string>
+    <string name="script_builder_edit_remove_repeats">పునరావృత భాగాలను తీసివేయండి</string>
+    <string name="script_builder_edit_remove_parts">టెక్స్ట్ ఉన్న భాగాలను తీసివేయండి</string>
+    <string name="script_builder_edit_keep_parts">మొదటి భాగాలను ఉంచండి</string>
+    <string name="script_builder_edit_remove_value">తీసివేయండి: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">ఇది ఉన్న భాగాలను తీసివేయండి: %1$s</string>
+    <string name="script_builder_parts_help">భాగాలు అంటే కామాల మధ్య ఉన్న ముక్కలు.</string>
+    <string name="script_builder_regex_help">రెగ్యులర్ ఎక్స్‌ప్రెషన్‌తో, కొత్త టెక్స్ట్‌లోని $1 అనేది బ్రాకెట్లలోని మొదటి గ్రూప్.</string>
+    <string name="script_builder_preview">తనిఖీ చేసిన ఐటెమ్‌పై ప్రివ్యూ</string>
+    <string name="script_builder_preview_silent">ఏమీ చెప్పదు</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">మొదటి భాగాన్ని ఉంచండి</item>
+        <item quantity="other">మొదటి %1$d భాగాలను ఉంచండి</item>
+    </plurals>
 </resources>

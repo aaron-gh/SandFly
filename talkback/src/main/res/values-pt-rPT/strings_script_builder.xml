@@ -216,4 +216,28 @@
         <item quantity="many">A cada %1$d de minutos</item>
         <item quantity="other">A cada %1$d minutos</item>
     </plurals>
+    <string name="script_builder_has_depth">Níveis abaixo</string>
+    <plurals name="script_builder_levels" tools:ignore="ImpliedQuantity">
+        <item quantity="one">Diretamente dentro</item>
+        <item quantity="other">Até %1$d níveis</item>
+    </plurals>
+    <string name="script_builder_change_speech">Alterar a fala</string>
+    <string name="script_builder_change_speech_summary">Remover, substituir ou reordenar o que o SandFly diz para o item</string>
+    <string name="script_builder_edits">Edições</string>
+    <string name="script_builder_add_edit">Adicionar edição</string>
+    <string name="script_builder_edit_remove">Remover texto</string>
+    <string name="script_builder_edit_replace">Substituir texto</string>
+    <string name="script_builder_edit_remove_repeats">Remover partes repetidas</string>
+    <string name="script_builder_edit_remove_parts">Remover partes que têm um texto</string>
+    <string name="script_builder_edit_keep_parts">Manter as primeiras partes</string>
+    <string name="script_builder_edit_remove_value">Remover: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">Remover partes com: %1$s</string>
+    <string name="script_builder_parts_help">As partes são os segmentos entre vírgulas.</string>
+    <string name="script_builder_regex_help">Com Expressão regular, $1 no novo texto é o primeiro grupo entre parênteses.</string>
+    <string name="script_builder_preview">Pré-visualizar no item inspecionado</string>
+    <string name="script_builder_preview_silent">Não diz nada</string>
+    <plurals name="script_builder_edit_keep_parts_value" tools:ignore="ImpliedQuantity">
+        <item quantity="one">Manter a primeira parte</item>
+        <item quantity="other">Manter as %1$d primeiras partes</item>
+    </plurals>
 </resources>

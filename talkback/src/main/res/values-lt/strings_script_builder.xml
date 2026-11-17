@@ -219,4 +219,32 @@
         <item quantity="many">Kas %1$d minutės</item>
         <item quantity="other">Kas %1$d minučių</item>
     </plurals>
+    <string name="script_builder_has_depth">Lygių gilyn</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">Iki %1$d lygio</item>
+        <item quantity="few">Iki %1$d lygių</item>
+        <item quantity="many">Iki %1$d lygio</item>
+        <item quantity="other">Iki %1$d lygių</item>
+    </plurals>
+    <string name="script_builder_change_speech">Keisti kalbą</string>
+    <string name="script_builder_change_speech_summary">Pašalinti, pakeisti arba pertvarkyti tai, ką SandFly sako apie elementą</string>
+    <string name="script_builder_edits">Keitimai</string>
+    <string name="script_builder_add_edit">Pridėti keitimą</string>
+    <string name="script_builder_edit_remove">Pašalinti tekstą</string>
+    <string name="script_builder_edit_replace">Pakeisti tekstą</string>
+    <string name="script_builder_edit_remove_repeats">Pašalinti pasikartojančias dalis</string>
+    <string name="script_builder_edit_remove_parts">Pašalinti dalis, kuriose yra tekstas</string>
+    <string name="script_builder_edit_keep_parts">Palikti pirmąsias dalis</string>
+    <string name="script_builder_edit_remove_value">Pašalinti: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">Pašalinti dalis su: %1$s</string>
+    <string name="script_builder_parts_help">Dalys yra teksto atkarpos tarp kablelių.</string>
+    <string name="script_builder_regex_help">Kai pažymėta „Reguliarioji išraiška“, $1 naujame tekste yra pirmoji grupė skliaustuose.</string>
+    <string name="script_builder_preview">Peržiūra su patikrintu elementu</string>
+    <string name="script_builder_preview_silent">Nieko nesakoma</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">Palikti %1$d pirmąją dalį</item>
+        <item quantity="few">Palikti %1$d pirmąsias dalis</item>
+        <item quantity="many">Palikti %1$d pirmosios dalies</item>
+        <item quantity="other">Palikti %1$d pirmųjų dalių</item>
+    </plurals>
 </resources>

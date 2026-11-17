@@ -216,4 +216,30 @@
         <item quantity="many">Toutes les %1$d minutes</item>
         <item quantity="other">Toutes les %1$d minutes</item>
     </plurals>
+    <string name="script_builder_has_depth">Niveaux de profondeur</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">Jusqu\'à %1$d niveau</item>
+        <item quantity="many">Jusqu\'à %1$d niveaux</item>
+        <item quantity="other">Jusqu\'à %1$d niveaux</item>
+    </plurals>
+    <string name="script_builder_change_speech">Modifier l\'énoncé</string>
+    <string name="script_builder_change_speech_summary">Supprimer, remplacer ou réordonner ce que SandFly dit pour l\'élément</string>
+    <string name="script_builder_edits">Modifications</string>
+    <string name="script_builder_add_edit">Ajouter une modification</string>
+    <string name="script_builder_edit_remove">Supprimer du texte</string>
+    <string name="script_builder_edit_replace">Remplacer du texte</string>
+    <string name="script_builder_edit_remove_repeats">Supprimer les parties répétées</string>
+    <string name="script_builder_edit_remove_parts">Supprimer les parties contenant un texte</string>
+    <string name="script_builder_edit_keep_parts">Garder les premières parties</string>
+    <string name="script_builder_edit_remove_value">Supprimer : %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">Supprimer les parties avec : %1$s</string>
+    <string name="script_builder_parts_help">Les parties sont les segments entre les virgules.</string>
+    <string name="script_builder_regex_help">Avec Expression régulière, $1 dans le nouveau texte correspond au premier groupe entre parenthèses.</string>
+    <string name="script_builder_preview">Aperçu sur l\'élément inspecté</string>
+    <string name="script_builder_preview_silent">Ne dit rien</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">Garder %1$d première partie</item>
+        <item quantity="many">Garder les %1$d premières parties</item>
+        <item quantity="other">Garder les %1$d premières parties</item>
+    </plurals>
 </resources>

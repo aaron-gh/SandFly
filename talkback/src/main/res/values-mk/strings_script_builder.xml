@@ -213,4 +213,28 @@
         <item quantity="one">Секоја %1$d минута</item>
         <item quantity="other">Секои %1$d минути</item>
     </plurals>
+    <string name="script_builder_has_depth">Нивоа надолу</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">До %1$d ниво</item>
+        <item quantity="other">До %1$d нивоа</item>
+    </plurals>
+    <string name="script_builder_change_speech">Промени го говорот</string>
+    <string name="script_builder_change_speech_summary">Отстрани, замени или преуреди што кажува SandFly за ставката</string>
+    <string name="script_builder_edits">Измени</string>
+    <string name="script_builder_add_edit">Додај измена</string>
+    <string name="script_builder_edit_remove">Отстрани текст</string>
+    <string name="script_builder_edit_replace">Замени текст</string>
+    <string name="script_builder_edit_remove_repeats">Отстрани повторени делови</string>
+    <string name="script_builder_edit_remove_parts">Отстрани делови што содржат текст</string>
+    <string name="script_builder_edit_keep_parts">Задржи ги првите делови</string>
+    <string name="script_builder_edit_remove_value">Отстрани: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">Отстрани делови со: %1$s</string>
+    <string name="script_builder_parts_help">Делови се парчињата текст меѓу запирките.</string>
+    <string name="script_builder_regex_help">Со „Регуларен израз“, $1 во новиот текст е првата група во загради.</string>
+    <string name="script_builder_preview">Преглед на проверената ставка</string>
+    <string name="script_builder_preview_silent">Не кажува ништо</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">Задржи %1$d прв дел</item>
+        <item quantity="other">Задржи ги првите %1$d дела</item>
+    </plurals>
 </resources>

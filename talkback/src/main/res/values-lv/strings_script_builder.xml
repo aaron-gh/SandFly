@@ -216,4 +216,30 @@
         <item quantity="one">Ik pēc %1$d minūtes</item>
         <item quantity="other">Ik pēc %1$d minūtēm</item>
     </plurals>
+    <string name="script_builder_has_depth">Līmeņu dziļums</string>
+    <plurals name="script_builder_levels">
+        <item quantity="zero">Līdz %1$d līmeņiem</item>
+        <item quantity="one">Līdz %1$d līmenim</item>
+        <item quantity="other">Līdz %1$d līmeņiem</item>
+    </plurals>
+    <string name="script_builder_change_speech">Mainīt runu</string>
+    <string name="script_builder_change_speech_summary">Noņemt, aizstāt vai pārkārtot to, ko SandFly saka par vienumu</string>
+    <string name="script_builder_edits">Labojumi</string>
+    <string name="script_builder_add_edit">Pievienot labojumu</string>
+    <string name="script_builder_edit_remove">Noņemt tekstu</string>
+    <string name="script_builder_edit_replace">Aizstāt tekstu</string>
+    <string name="script_builder_edit_remove_repeats">Noņemt atkārtotās daļas</string>
+    <string name="script_builder_edit_remove_parts">Noņemt daļas, kurās ir teksts</string>
+    <string name="script_builder_edit_keep_parts">Paturēt pirmās daļas</string>
+    <string name="script_builder_edit_remove_value">Noņemt: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">Noņemt daļas ar: %1$s</string>
+    <string name="script_builder_parts_help">Daļas ir teksta posmi starp komatiem.</string>
+    <string name="script_builder_regex_help">Ja atzīmēta opcija “Regulārā izteiksme”, $1 jaunajā tekstā ir pirmā grupa iekavās.</string>
+    <string name="script_builder_preview">Priekšskatījums pārbaudītajam vienumam</string>
+    <string name="script_builder_preview_silent">Neko nesaka</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="zero">Paturēt pirmās %1$d daļas</item>
+        <item quantity="one">Paturēt pirmo %1$d daļu</item>
+        <item quantity="other">Paturēt pirmās %1$d daļas</item>
+    </plurals>
 </resources>

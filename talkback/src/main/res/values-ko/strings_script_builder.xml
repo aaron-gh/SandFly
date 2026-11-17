@@ -210,4 +210,26 @@
     <plurals name="script_builder_when_every_value">
         <item quantity="other">%1$d분마다</item>
     </plurals>
+    <string name="script_builder_has_depth">하위 단계 수</string>
+    <plurals name="script_builder_levels">
+        <item quantity="other">최대 %1$d단계</item>
+    </plurals>
+    <string name="script_builder_change_speech">읽는 내용 변경</string>
+    <string name="script_builder_change_speech_summary">SandFly가 항목에 대해 읽는 내용 제거, 바꾸기 또는 순서 변경</string>
+    <string name="script_builder_edits">편집 내용</string>
+    <string name="script_builder_add_edit">편집 추가</string>
+    <string name="script_builder_edit_remove">텍스트 제거</string>
+    <string name="script_builder_edit_replace">텍스트 바꾸기</string>
+    <string name="script_builder_edit_remove_repeats">반복되는 부분 제거</string>
+    <string name="script_builder_edit_remove_parts">텍스트가 포함된 부분 제거</string>
+    <string name="script_builder_edit_keep_parts">처음 부분 유지</string>
+    <string name="script_builder_edit_remove_value">제거: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">다음이 포함된 부분 제거: %1$s</string>
+    <string name="script_builder_parts_help">부분은 쉼표 사이의 조각입니다.</string>
+    <string name="script_builder_regex_help">정규 표현식을 사용하면 새 텍스트의 $1은 괄호 안의 첫 번째 그룹입니다.</string>
+    <string name="script_builder_preview">검사한 항목의 미리보기</string>
+    <string name="script_builder_preview_silent">읽지 않음</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="other">처음 %1$d개 부분 유지</item>
+    </plurals>
 </resources>

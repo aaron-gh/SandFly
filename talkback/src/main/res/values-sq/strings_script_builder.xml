@@ -213,4 +213,28 @@
         <item quantity="one">Çdo minutë</item>
         <item quantity="other">Çdo %1$d minuta</item>
     </plurals>
+    <string name="script_builder_has_depth">Nivele poshtë</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">Drejtpërdrejt brenda</item>
+        <item quantity="other">Deri në %1$d nivele</item>
+    </plurals>
+    <string name="script_builder_change_speech">Ndrysho ligjërimin</string>
+    <string name="script_builder_change_speech_summary">Hiq, zëvendëso ose rirendit atë që thotë SandFly për artikullin</string>
+    <string name="script_builder_edits">Redaktimet</string>
+    <string name="script_builder_add_edit">Shto redaktim</string>
+    <string name="script_builder_edit_remove">Hiq tekstin</string>
+    <string name="script_builder_edit_replace">Zëvendëso tekstin</string>
+    <string name="script_builder_edit_remove_repeats">Hiq pjesët e përsëritura</string>
+    <string name="script_builder_edit_remove_parts">Hiq pjesët që kanë një tekst</string>
+    <string name="script_builder_edit_keep_parts">Mbaj pjesët e para</string>
+    <string name="script_builder_edit_remove_value">Hiq: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">Hiq pjesët me: %1$s</string>
+    <string name="script_builder_parts_help">Pjesët janë copat ndërmjet presjeve.</string>
+    <string name="script_builder_regex_help">Me Shprehje e rregullt, $1 në tekstin e ri është grupi i parë në kllapa.</string>
+    <string name="script_builder_preview">Pamja paraprake në artikullin e inspektuar</string>
+    <string name="script_builder_preview_silent">Nuk thotë asgjë</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">Mbaj pjesën e parë</item>
+        <item quantity="other">Mbaj %1$d pjesët e para</item>
+    </plurals>
 </resources>

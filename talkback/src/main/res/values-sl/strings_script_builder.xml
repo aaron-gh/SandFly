@@ -219,4 +219,32 @@
         <item quantity="few">Vsake %1$d minute</item>
         <item quantity="other">Vsakih %1$d minut</item>
     </plurals>
+    <string name="script_builder_has_depth">Ravni navzdol</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">Do %1$d ravni</item>
+        <item quantity="two">Do %1$d ravni</item>
+        <item quantity="few">Do %1$d ravni</item>
+        <item quantity="other">Do %1$d ravni</item>
+    </plurals>
+    <string name="script_builder_change_speech">Spremeni govor</string>
+    <string name="script_builder_change_speech_summary">Odstrani, zamenjaj ali prerazporedi, kar SandFly izgovori za element</string>
+    <string name="script_builder_edits">Urejanja</string>
+    <string name="script_builder_add_edit">Dodaj urejanje</string>
+    <string name="script_builder_edit_remove">Odstrani besedilo</string>
+    <string name="script_builder_edit_replace">Zamenjaj besedilo</string>
+    <string name="script_builder_edit_remove_repeats">Odstrani ponovljene dele</string>
+    <string name="script_builder_edit_remove_parts">Odstrani dele z besedilom</string>
+    <string name="script_builder_edit_keep_parts">Ohrani prve dele</string>
+    <string name="script_builder_edit_remove_value">Odstrani: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">Odstrani dele z besedilom: %1$s</string>
+    <string name="script_builder_parts_help">Deli so odseki med vejicami.</string>
+    <string name="script_builder_regex_help">Z možnostjo Regularni izraz je $1 v novem besedilu prva skupina v oklepajih.</string>
+    <string name="script_builder_preview">Predogled na pregledanem elementu</string>
+    <string name="script_builder_preview_silent">Ne izgovori ničesar</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">Ohrani prvi %1$d del</item>
+        <item quantity="two">Ohrani prva %1$d dela</item>
+        <item quantity="few">Ohrani prve %1$d dele</item>
+        <item quantity="other">Ohrani prvih %1$d delov</item>
+    </plurals>
 </resources>

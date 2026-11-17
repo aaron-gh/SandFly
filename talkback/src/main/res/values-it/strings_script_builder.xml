@@ -216,4 +216,30 @@
         <item quantity="many">Ogni %1$d minuti</item>
         <item quantity="other">Ogni %1$d minuti</item>
     </plurals>
+    <string name="script_builder_has_depth">Livelli in profondità</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">Direttamente all\'interno</item>
+        <item quantity="many">Fino a %1$d livelli</item>
+        <item quantity="other">Fino a %1$d livelli</item>
+    </plurals>
+    <string name="script_builder_change_speech">Modifica la voce</string>
+    <string name="script_builder_change_speech_summary">Rimuovi, sostituisci o riordina ciò che SandFly pronuncia per l\'elemento</string>
+    <string name="script_builder_edits">Modifiche</string>
+    <string name="script_builder_add_edit">Aggiungi modifica</string>
+    <string name="script_builder_edit_remove">Rimuovi testo</string>
+    <string name="script_builder_edit_replace">Sostituisci testo</string>
+    <string name="script_builder_edit_remove_repeats">Rimuovi parti ripetute</string>
+    <string name="script_builder_edit_remove_parts">Rimuovi parti che contengono un testo</string>
+    <string name="script_builder_edit_keep_parts">Mantieni le prime parti</string>
+    <string name="script_builder_edit_remove_value">Rimuovi: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">Rimuovi parti con: %1$s</string>
+    <string name="script_builder_parts_help">Le parti sono i pezzi tra le virgole.</string>
+    <string name="script_builder_regex_help">Con Espressione regolare, $1 nel nuovo testo è il primo gruppo tra parentesi.</string>
+    <string name="script_builder_preview">Anteprima sull\'elemento esaminato</string>
+    <string name="script_builder_preview_silent">Non pronuncia nulla</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">Mantieni la prima parte</item>
+        <item quantity="many">Mantieni le prime %1$d parti</item>
+        <item quantity="other">Mantieni le prime %1$d parti</item>
+    </plurals>
 </resources>

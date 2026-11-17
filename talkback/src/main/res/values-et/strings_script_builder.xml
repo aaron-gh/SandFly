@@ -213,4 +213,28 @@
         <item quantity="one">Iga minuti järel</item>
         <item quantity="other">Iga %1$d minuti järel</item>
     </plurals>
+    <string name="script_builder_has_depth">Tasemeid allapoole</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">Otse sees</item>
+        <item quantity="other">Kuni %1$d taset</item>
+    </plurals>
+    <string name="script_builder_change_speech">Muuda kõnet</string>
+    <string name="script_builder_change_speech_summary">Eemalda, asenda või järjesta ümber, mida SandFly üksuse kohta ütleb</string>
+    <string name="script_builder_edits">Muudatused</string>
+    <string name="script_builder_add_edit">Lisa muudatus</string>
+    <string name="script_builder_edit_remove">Eemalda tekst</string>
+    <string name="script_builder_edit_replace">Asenda tekst</string>
+    <string name="script_builder_edit_remove_repeats">Eemalda korduvad osad</string>
+    <string name="script_builder_edit_remove_parts">Eemalda teksti sisaldavad osad</string>
+    <string name="script_builder_edit_keep_parts">Jäta esimesed osad</string>
+    <string name="script_builder_edit_remove_value">Eemalda: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">Eemalda osad, milles on: %1$s</string>
+    <string name="script_builder_parts_help">Osad on komade vahel olevad lõigud.</string>
+    <string name="script_builder_regex_help">Regulaaravaldise korral on $1 uues tekstis esimene sulgudes olev rühm.</string>
+    <string name="script_builder_preview">Eelvaade uuritud üksusel</string>
+    <string name="script_builder_preview_silent">Ei ütle midagi</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">Jäta esimene osa</item>
+        <item quantity="other">Jäta esimesed %1$d osa</item>
+    </plurals>
 </resources>

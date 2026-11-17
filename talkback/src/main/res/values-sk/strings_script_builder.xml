@@ -219,4 +219,32 @@
         <item quantity="many">Každých %1$d minúty</item>
         <item quantity="other">Každých %1$d minút</item>
     </plurals>
+    <string name="script_builder_has_depth">Počet úrovní nadol</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">Priamo vnútri</item>
+        <item quantity="few">Do %1$d úrovní</item>
+        <item quantity="many">Do %1$d úrovne</item>
+        <item quantity="other">Do %1$d úrovní</item>
+    </plurals>
+    <string name="script_builder_change_speech">Zmeniť reč</string>
+    <string name="script_builder_change_speech_summary">Odstrániť, nahradiť alebo zmeniť poradie toho, čo SandFly hovorí pre položku</string>
+    <string name="script_builder_edits">Úpravy</string>
+    <string name="script_builder_add_edit">Pridať úpravu</string>
+    <string name="script_builder_edit_remove">Odstrániť text</string>
+    <string name="script_builder_edit_replace">Nahradiť text</string>
+    <string name="script_builder_edit_remove_repeats">Odstrániť opakované časti</string>
+    <string name="script_builder_edit_remove_parts">Odstrániť časti s textom</string>
+    <string name="script_builder_edit_keep_parts">Ponechať prvé časti</string>
+    <string name="script_builder_edit_remove_value">Odstrániť: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">Odstrániť časti s textom: %1$s</string>
+    <string name="script_builder_parts_help">Časti sú úseky medzi čiarkami.</string>
+    <string name="script_builder_regex_help">S možnosťou Regulárny výraz je $1 v novom texte prvá skupina v zátvorkách.</string>
+    <string name="script_builder_preview">Ukážka na skontrolovanej položke</string>
+    <string name="script_builder_preview_silent">Nehovorí nič</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">Ponechať prvú časť</item>
+        <item quantity="few">Ponechať prvé %1$d časti</item>
+        <item quantity="many">Ponechať prvých %1$d časti</item>
+        <item quantity="other">Ponechať prvých %1$d častí</item>
+    </plurals>
 </resources>

@@ -213,4 +213,28 @@
         <item quantity="one">ପ୍ରତି ମିନିଟରେ</item>
         <item quantity="other">ପ୍ରତି %1$d ମିନିଟରେ</item>
     </plurals>
+    <string name="script_builder_has_depth">ତଳକୁ ସ୍ତର</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">ସିଧାସଳଖ ଭିତରେ</item>
+        <item quantity="other">%1$d ସ୍ତର ପର୍ଯ୍ୟନ୍ତ</item>
+    </plurals>
+    <string name="script_builder_change_speech">ସ୍ପିଚ ବଦଳାନ୍ତୁ</string>
+    <string name="script_builder_change_speech_summary">ଆଇଟମ ପାଇଁ SandFly ଯାହା କୁହେ ତାହା ଅପସାରଣ କରନ୍ତୁ, ବଦଳାନ୍ତୁ କିମ୍ବା ପୁଣି କ୍ରମରେ ରଖନ୍ତୁ</string>
+    <string name="script_builder_edits">ସଂପାଦନାଗୁଡ଼ିକ</string>
+    <string name="script_builder_add_edit">ସଂପାଦନା ଯୋଡନ୍ତୁ</string>
+    <string name="script_builder_edit_remove">ଟେକ୍ସଟ ଅପସାରଣ କରନ୍ତୁ</string>
+    <string name="script_builder_edit_replace">ଟେକ୍ସଟ ବଦଳାନ୍ତୁ</string>
+    <string name="script_builder_edit_remove_repeats">ପୁନରାବୃତ୍ତ ଅଂଶ ଅପସାରଣ କରନ୍ତୁ</string>
+    <string name="script_builder_edit_remove_parts">ଟେକ୍ସଟ ଥିବା ଅଂଶ ଅପସାରଣ କରନ୍ତୁ</string>
+    <string name="script_builder_edit_keep_parts">ପ୍ରଥମ ଅଂଶଗୁଡ଼ିକ ରଖନ୍ତୁ</string>
+    <string name="script_builder_edit_remove_value">ଅପସାରଣ କରନ୍ତୁ: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">ଏହା ଥିବା ଅଂଶ ଅପସାରଣ କରନ୍ତୁ: %1$s</string>
+    <string name="script_builder_parts_help">କମାଗୁଡ଼ିକ ମଧ୍ୟରେ ଥିବା ଖଣ୍ଡଗୁଡ଼ିକ ହେଉଛି ଅଂଶ।</string>
+    <string name="script_builder_regex_help">ରେଗୁଲାର ଏକ୍ସପ୍ରେସନ ସହିତ, ନୂଆ ଟେକ୍ସଟରେ $1 ହେଉଛି ବନ୍ଧନୀରେ ଥିବା ପ୍ରଥମ ଗ୍ରୁପ।</string>
+    <string name="script_builder_preview">ଯାଞ୍ଚ କରାଯାଇଥିବା ଆଇଟମରେ ପ୍ରିଭ୍ୟୁ</string>
+    <string name="script_builder_preview_silent">କିଛି କୁହେ ନାହିଁ</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">ପ୍ରଥମ ଅଂଶ ରଖନ୍ତୁ</item>
+        <item quantity="other">ପ୍ରଥମ %1$d ଅଂଶ ରଖନ୍ତୁ</item>
+    </plurals>
 </resources>

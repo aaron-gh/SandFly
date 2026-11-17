@@ -213,4 +213,28 @@
         <item quantity="one">Joka minuutti</item>
         <item quantity="other">%1$d minuutin välein</item>
     </plurals>
+    <string name="script_builder_has_depth">Tasoja alaspäin</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">Suoraan sisällä</item>
+        <item quantity="other">Enintään %1$d tasoa</item>
+    </plurals>
+    <string name="script_builder_change_speech">Muuta puhetta</string>
+    <string name="script_builder_change_speech_summary">Poista, korvaa tai järjestä uudelleen, mitä SandFly sanoo kohteesta</string>
+    <string name="script_builder_edits">Muokkaukset</string>
+    <string name="script_builder_add_edit">Lisää muokkaus</string>
+    <string name="script_builder_edit_remove">Poista teksti</string>
+    <string name="script_builder_edit_replace">Korvaa teksti</string>
+    <string name="script_builder_edit_remove_repeats">Poista toistuvat osat</string>
+    <string name="script_builder_edit_remove_parts">Poista osat, joissa on teksti</string>
+    <string name="script_builder_edit_keep_parts">Säilytä ensimmäiset osat</string>
+    <string name="script_builder_edit_remove_value">Poista: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">Poista osat, joissa on: %1$s</string>
+    <string name="script_builder_parts_help">Osat ovat pilkkujen välisiä kappaleita.</string>
+    <string name="script_builder_regex_help">Kun Säännöllinen lauseke on valittu, $1 uudessa tekstissä on ensimmäinen sulkeissa oleva ryhmä.</string>
+    <string name="script_builder_preview">Esikatselu tarkastellusta kohteesta</string>
+    <string name="script_builder_preview_silent">Ei sano mitään</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">Säilytä ensimmäinen osa</item>
+        <item quantity="other">Säilytä ensimmäiset %1$d osaa</item>
+    </plurals>
 </resources>

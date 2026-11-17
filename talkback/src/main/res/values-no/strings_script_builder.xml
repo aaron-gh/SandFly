@@ -213,4 +213,28 @@
         <item quantity="one">Hvert minutt</item>
         <item quantity="other">Hvert %1$d. minutt</item>
     </plurals>
+    <string name="script_builder_has_depth">Nivåer ned</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">Rett inni</item>
+        <item quantity="other">Opptil %1$d nivåer</item>
+    </plurals>
+    <string name="script_builder_change_speech">Endre tale</string>
+    <string name="script_builder_change_speech_summary">Fjern, erstatt eller endre rekkefølgen på det SandFly sier for elementet</string>
+    <string name="script_builder_edits">Redigeringer</string>
+    <string name="script_builder_add_edit">Legg til redigering</string>
+    <string name="script_builder_edit_remove">Fjern tekst</string>
+    <string name="script_builder_edit_replace">Erstatt tekst</string>
+    <string name="script_builder_edit_remove_repeats">Fjern gjentatte deler</string>
+    <string name="script_builder_edit_remove_parts">Fjern deler som har en tekst</string>
+    <string name="script_builder_edit_keep_parts">Behold de første delene</string>
+    <string name="script_builder_edit_remove_value">Fjern: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">Fjern deler med: %1$s</string>
+    <string name="script_builder_parts_help">Deler er bitene mellom kommaene.</string>
+    <string name="script_builder_regex_help">Med Regulært uttrykk er $1 i den nye teksten den første gruppen i parentes.</string>
+    <string name="script_builder_preview">Forhåndsvisning på det inspiserte elementet</string>
+    <string name="script_builder_preview_silent">Sier ingenting</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">Behold den første delen</item>
+        <item quantity="other">Behold de første %1$d delene</item>
+    </plurals>
 </resources>

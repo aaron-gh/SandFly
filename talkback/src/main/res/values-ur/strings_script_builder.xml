@@ -213,4 +213,28 @@
         <item quantity="one">ہر منٹ</item>
         <item quantity="other">ہر %1$d منٹ</item>
     </plurals>
+    <string name="script_builder_has_depth">نیچے کی سطحیں</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">براہ راست اندر</item>
+        <item quantity="other">%1$d سطحوں تک</item>
+    </plurals>
+    <string name="script_builder_change_speech">اسپیچ تبدیل کریں</string>
+    <string name="script_builder_change_speech_summary">آئٹم کے لیے SandFly جو کہتا ہے اسے ہٹائیں، بدلیں یا اس کی ترتیب بدلیں</string>
+    <string name="script_builder_edits">ترامیم</string>
+    <string name="script_builder_add_edit">ترمیم شامل کریں</string>
+    <string name="script_builder_edit_remove">متن ہٹائیں</string>
+    <string name="script_builder_edit_replace">متن بدلیں</string>
+    <string name="script_builder_edit_remove_repeats">دہرائے گئے حصے ہٹائیں</string>
+    <string name="script_builder_edit_remove_parts">متن والے حصے ہٹائیں</string>
+    <string name="script_builder_edit_keep_parts">پہلے حصے رکھیں</string>
+    <string name="script_builder_edit_remove_value">ہٹائیں: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">ان حصوں کو ہٹائیں جن میں ہو: %1$s</string>
+    <string name="script_builder_parts_help">حصے کوما کے درمیان کے ٹکڑے ہیں۔</string>
+    <string name="script_builder_regex_help">ریگولر ایکسپریشن کے ساتھ، نئے متن میں $1 بریکٹ میں پہلا گروپ ہے۔</string>
+    <string name="script_builder_preview">معائنہ شدہ آئٹم پر پیش منظر</string>
+    <string name="script_builder_preview_silent">کچھ نہیں کہتا</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">پہلا حصہ رکھیں</item>
+        <item quantity="other">پہلے %1$d حصے رکھیں</item>
+    </plurals>
 </resources>

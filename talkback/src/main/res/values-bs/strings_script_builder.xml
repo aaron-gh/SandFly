@@ -216,4 +216,30 @@
         <item quantity="few">Svake %1$d minute</item>
         <item quantity="other">Svakih %1$d minuta</item>
     </plurals>
+    <string name="script_builder_has_depth">Nivoa nadolje</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">Do %1$d nivoa</item>
+        <item quantity="few">Do %1$d nivoa</item>
+        <item quantity="other">Do %1$d nivoa</item>
+    </plurals>
+    <string name="script_builder_change_speech">Promijeni govor</string>
+    <string name="script_builder_change_speech_summary">Ukloni, zamijeni ili promijeni redoslijed onoga što SandFly izgovara za stavku</string>
+    <string name="script_builder_edits">Izmjene</string>
+    <string name="script_builder_add_edit">Dodaj izmjenu</string>
+    <string name="script_builder_edit_remove">Ukloni tekst</string>
+    <string name="script_builder_edit_replace">Zamijeni tekst</string>
+    <string name="script_builder_edit_remove_repeats">Ukloni ponovljene dijelove</string>
+    <string name="script_builder_edit_remove_parts">Ukloni dijelove koji sadrže tekst</string>
+    <string name="script_builder_edit_keep_parts">Zadrži prve dijelove</string>
+    <string name="script_builder_edit_remove_value">Ukloni: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">Ukloni dijelove sa: %1$s</string>
+    <string name="script_builder_parts_help">Dijelovi su odsječci između zareza.</string>
+    <string name="script_builder_regex_help">Uz Regularni izraz, $1 u novom tekstu je prva grupa u zagradama.</string>
+    <string name="script_builder_preview">Pregled na ispitanoj stavci</string>
+    <string name="script_builder_preview_silent">Ne izgovara ništa</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">Zadrži prvi %1$d dio</item>
+        <item quantity="few">Zadrži prva %1$d dijela</item>
+        <item quantity="other">Zadrži prvih %1$d dijelova</item>
+    </plurals>
 </resources>

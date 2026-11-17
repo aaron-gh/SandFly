@@ -213,4 +213,28 @@
         <item quantity="one">Elke minuut</item>
         <item quantity="other">Elke %1$d minute</item>
     </plurals>
+    <string name="script_builder_has_depth">Vlakke diep</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">Direk binne</item>
+        <item quantity="other">Tot %1$d vlakke</item>
+    </plurals>
+    <string name="script_builder_change_speech">Verander spraak</string>
+    <string name="script_builder_change_speech_summary">Verwyder, vervang of herrangskik wat SandFly vir die item sê</string>
+    <string name="script_builder_edits">Wysigings</string>
+    <string name="script_builder_add_edit">Voeg wysiging by</string>
+    <string name="script_builder_edit_remove">Verwyder teks</string>
+    <string name="script_builder_edit_replace">Vervang teks</string>
+    <string name="script_builder_edit_remove_repeats">Verwyder herhaalde dele</string>
+    <string name="script_builder_edit_remove_parts">Verwyder dele met ’n teks</string>
+    <string name="script_builder_edit_keep_parts">Behou die eerste dele</string>
+    <string name="script_builder_edit_remove_value">Verwyder: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">Verwyder dele met: %1$s</string>
+    <string name="script_builder_parts_help">Dele is die stukke tussen kommas.</string>
+    <string name="script_builder_regex_help">Met Gewone uitdrukking is $1 in die nuwe teks die eerste groep tussen hakies.</string>
+    <string name="script_builder_preview">Voorskou op die geïnspekteerde item</string>
+    <string name="script_builder_preview_silent">Sê niks</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">Behou die eerste deel</item>
+        <item quantity="other">Behou die eerste %1$d dele</item>
+    </plurals>
 </resources>

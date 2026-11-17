@@ -213,4 +213,28 @@
         <item quantity="one">ყოველ წუთში</item>
         <item quantity="other">ყოველ %1$d წუთში</item>
     </plurals>
+    <string name="script_builder_has_depth">დონეები ქვემოთ</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">პირდაპირ შიგნით</item>
+        <item quantity="other">%1$d დონემდე</item>
+    </plurals>
+    <string name="script_builder_change_speech">მეტყველების შეცვლა</string>
+    <string name="script_builder_change_speech_summary">იმის ამოღება, ჩანაცვლება ან გადალაგება, რასაც SandFly ამბობს ერთეულისთვის</string>
+    <string name="script_builder_edits">რედაქტირებები</string>
+    <string name="script_builder_add_edit">რედაქტირების დამატება</string>
+    <string name="script_builder_edit_remove">ტექსტის ამოღება</string>
+    <string name="script_builder_edit_replace">ტექსტის ჩანაცვლება</string>
+    <string name="script_builder_edit_remove_repeats">განმეორებული ნაწილების ამოღება</string>
+    <string name="script_builder_edit_remove_parts">ტექსტის შემცველი ნაწილების ამოღება</string>
+    <string name="script_builder_edit_keep_parts">პირველი ნაწილების შენარჩუნება</string>
+    <string name="script_builder_edit_remove_value">ამოღება: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">ნაწილების ამოღება, რომლებიც შეიცავს: %1$s</string>
+    <string name="script_builder_parts_help">ნაწილები არის მონაკვეთები მძიმეებს შორის.</string>
+    <string name="script_builder_regex_help">როცა რეგულარული გამოხატულება მონიშნულია, ახალ ტექსტში $1 არის ფრჩხილებში მოთავსებული პირველი ჯგუფი.</string>
+    <string name="script_builder_preview">გადახედვა შემოწმებულ ერთეულზე</string>
+    <string name="script_builder_preview_silent">არაფერს ამბობს</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">პირველი ნაწილის შენარჩუნება</item>
+        <item quantity="other">პირველი %1$d ნაწილის შენარჩუნება</item>
+    </plurals>
 </resources>

@@ -210,4 +210,26 @@
     <plurals name="script_builder_when_every_value">
         <item quantity="other">每 %1$d 分钟</item>
     </plurals>
+    <string name="script_builder_has_depth">向下层数</string>
+    <plurals name="script_builder_levels">
+        <item quantity="other">最多%1$d层</item>
+    </plurals>
+    <string name="script_builder_change_speech">更改语音</string>
+    <string name="script_builder_change_speech_summary">移除、替换或重新排列 SandFly 为该项目读出的内容</string>
+    <string name="script_builder_edits">编辑</string>
+    <string name="script_builder_add_edit">添加编辑</string>
+    <string name="script_builder_edit_remove">移除文字</string>
+    <string name="script_builder_edit_replace">替换文字</string>
+    <string name="script_builder_edit_remove_repeats">移除重复部分</string>
+    <string name="script_builder_edit_remove_parts">移除包含文字的部分</string>
+    <string name="script_builder_edit_keep_parts">保留前几部分</string>
+    <string name="script_builder_edit_remove_value">移除：%1$s</string>
+    <string name="script_builder_edit_remove_parts_value">移除包含以下内容的部分：%1$s</string>
+    <string name="script_builder_parts_help">部分是指逗号之间的片段。</string>
+    <string name="script_builder_regex_help">使用正则表达式时，新文字中的 $1 是括号中的第一组。</string>
+    <string name="script_builder_preview">在检查过的项目上预览</string>
+    <string name="script_builder_preview_silent">不读出任何内容</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="other">保留前%1$d部分</item>
+    </plurals>
 </resources>

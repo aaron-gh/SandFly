@@ -213,4 +213,28 @@
         <item quantity="one">Njalo ngomzuzu</item>
         <item quantity="other">Njalo ngemizuzu engu-%1$d</item>
     </plurals>
+    <string name="script_builder_has_depth">Amazinga phansi</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">Kufika emazingeni angu-%1$d</item>
+        <item quantity="other">Kufika emazingeni angu-%1$d</item>
+    </plurals>
+    <string name="script_builder_change_speech">Shintsha inkulumo</string>
+    <string name="script_builder_change_speech_summary">Susa, shintsha noma hlela kabusha lokho okushiwo yi-SandFly ngento</string>
+    <string name="script_builder_edits">Ukuhlela</string>
+    <string name="script_builder_add_edit">Engeza ukuhlela</string>
+    <string name="script_builder_edit_remove">Susa umbhalo</string>
+    <string name="script_builder_edit_replace">Shintsha umbhalo</string>
+    <string name="script_builder_edit_remove_repeats">Susa izingxenye eziphindiwe</string>
+    <string name="script_builder_edit_remove_parts">Susa izingxenye ezinombhalo</string>
+    <string name="script_builder_edit_keep_parts">Gcina izingxenye zokuqala</string>
+    <string name="script_builder_edit_remove_value">Susa: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">Susa izingxenye eziqukethe: %1$s</string>
+    <string name="script_builder_parts_help">Izingxenye yizicucu eziphakathi kwamakhefu.</string>
+    <string name="script_builder_regex_help">Nge-Inkulumo evamile, u-$1 embhalweni omusha yiqembu lokuqala kubakaki.</string>
+    <string name="script_builder_preview">Buka kuqala entweni ehloliwe</string>
+    <string name="script_builder_preview_silent">Akusho lutho</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">Gcina izingxenye zokuqala ezingu-%1$d</item>
+        <item quantity="other">Gcina izingxenye zokuqala ezingu-%1$d</item>
+    </plurals>
 </resources>

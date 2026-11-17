@@ -213,4 +213,28 @@
         <item quantity="one">हरेक मिनेट</item>
         <item quantity="other">हरेक %1$d मिनेटमा</item>
     </plurals>
+    <string name="script_builder_has_depth">तलका तहहरू</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">सिधै भित्र</item>
+        <item quantity="other">%1$d तहसम्म</item>
+    </plurals>
+    <string name="script_builder_change_speech">स्पिच परिवर्तन गर्नुहोस्</string>
+    <string name="script_builder_change_speech_summary">वस्तुका लागि SandFly ले भन्ने कुरा हटाउनुहोस्, बदल्नुहोस् वा क्रम मिलाउनुहोस्</string>
+    <string name="script_builder_edits">सम्पादनहरू</string>
+    <string name="script_builder_add_edit">सम्पादन थप्नुहोस्</string>
+    <string name="script_builder_edit_remove">टेक्स्ट हटाउनुहोस्</string>
+    <string name="script_builder_edit_replace">टेक्स्ट बदल्नुहोस्</string>
+    <string name="script_builder_edit_remove_repeats">दोहोरिएका भागहरू हटाउनुहोस्</string>
+    <string name="script_builder_edit_remove_parts">टेक्स्ट भएका भागहरू हटाउनुहोस्</string>
+    <string name="script_builder_edit_keep_parts">पहिला भागहरू राख्नुहोस्</string>
+    <string name="script_builder_edit_remove_value">हटाउनुहोस्: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">यो भएका भागहरू हटाउनुहोस्: %1$s</string>
+    <string name="script_builder_parts_help">भागहरू अल्पविरामहरूबीचका टुक्राहरू हुन्।</string>
+    <string name="script_builder_regex_help">रेगुलर एक्सप्रेसन प्रयोग गर्दा, नयाँ टेक्स्टमा $1 कोष्ठकभित्रको पहिलो समूह हो।</string>
+    <string name="script_builder_preview">निरीक्षण गरिएको वस्तुमा प्रिभ्यू</string>
+    <string name="script_builder_preview_silent">केही पनि भनिँदैन</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">पहिलो भाग राख्नुहोस्</item>
+        <item quantity="other">पहिला %1$d भागहरू राख्नुहोस्</item>
+    </plurals>
 </resources>

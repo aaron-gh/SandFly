@@ -219,4 +219,32 @@
         <item quantity="many">Кожныя %1$d хвілін</item>
         <item quantity="other">Кожныя %1$d хвіліны</item>
     </plurals>
+    <string name="script_builder_has_depth">Узроўняў углыб</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">Да %1$d узроўню</item>
+        <item quantity="few">Да %1$d узроўняў</item>
+        <item quantity="many">Да %1$d узроўняў</item>
+        <item quantity="other">Да %1$d узроўня</item>
+    </plurals>
+    <string name="script_builder_change_speech">Змяніць маўленне</string>
+    <string name="script_builder_change_speech_summary">Выдаліць, замяніць або змяніць парадак таго, што SandFly кажа для элемента</string>
+    <string name="script_builder_edits">Праўкі</string>
+    <string name="script_builder_add_edit">Дадаць праўку</string>
+    <string name="script_builder_edit_remove">Выдаліць тэкст</string>
+    <string name="script_builder_edit_replace">Замяніць тэкст</string>
+    <string name="script_builder_edit_remove_repeats">Выдаліць паўторныя часткі</string>
+    <string name="script_builder_edit_remove_parts">Выдаліць часткі з тэкстам</string>
+    <string name="script_builder_edit_keep_parts">Пакінуць першыя часткі</string>
+    <string name="script_builder_edit_remove_value">Выдаліць: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">Выдаліць часткі з: %1$s</string>
+    <string name="script_builder_parts_help">Часткі — гэта фрагменты паміж коскамі.</string>
+    <string name="script_builder_regex_help">Калі ўключаны «Рэгулярны выраз», $1 у новым тэксце — першая група ў дужках.</string>
+    <string name="script_builder_preview">Папярэдні прагляд на даследаваным элеменце</string>
+    <string name="script_builder_preview_silent">Нічога не кажа</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">Пакінуць першую %1$d частку</item>
+        <item quantity="few">Пакінуць першыя %1$d часткі</item>
+        <item quantity="many">Пакінуць першыя %1$d частак</item>
+        <item quantity="other">Пакінуць першыя %1$d часткі</item>
+    </plurals>
 </resources>

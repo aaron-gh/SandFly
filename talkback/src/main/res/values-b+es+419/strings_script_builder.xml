@@ -216,4 +216,30 @@
         <item quantity="many">Cada %1$d minutos</item>
         <item quantity="other">Cada %1$d minutos</item>
     </plurals>
+    <string name="script_builder_has_depth">Niveles de profundidad</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">Directamente dentro</item>
+        <item quantity="many">Hasta %1$d niveles</item>
+        <item quantity="other">Hasta %1$d niveles</item>
+    </plurals>
+    <string name="script_builder_change_speech">Cambiar voz</string>
+    <string name="script_builder_change_speech_summary">Quitar, reemplazar o reordenar lo que SandFly dice del elemento</string>
+    <string name="script_builder_edits">Ediciones</string>
+    <string name="script_builder_add_edit">Agregar edición</string>
+    <string name="script_builder_edit_remove">Quitar texto</string>
+    <string name="script_builder_edit_replace">Reemplazar texto</string>
+    <string name="script_builder_edit_remove_repeats">Quitar partes repetidas</string>
+    <string name="script_builder_edit_remove_parts">Quitar partes que contienen un texto</string>
+    <string name="script_builder_edit_keep_parts">Mantener las primeras partes</string>
+    <string name="script_builder_edit_remove_value">Quitar: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">Quitar partes con: %1$s</string>
+    <string name="script_builder_parts_help">Las partes son los fragmentos entre comas.</string>
+    <string name="script_builder_regex_help">Con Expresión regular, $1 en el texto nuevo es el primer grupo entre paréntesis.</string>
+    <string name="script_builder_preview">Vista previa en el elemento inspeccionado</string>
+    <string name="script_builder_preview_silent">No dice nada</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">Mantener la primera parte</item>
+        <item quantity="many">Mantener las primeras %1$d partes</item>
+        <item quantity="other">Mantener las primeras %1$d partes</item>
+    </plurals>
 </resources>

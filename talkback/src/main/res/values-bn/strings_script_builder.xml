@@ -213,4 +213,28 @@
         <item quantity="one">প্রতি মিনিটে</item>
         <item quantity="other">প্রতি %1$d মিনিটে</item>
     </plurals>
+    <string name="script_builder_has_depth">নিচের দিকে স্তর</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">%1$dটি স্তর পর্যন্ত</item>
+        <item quantity="other">%1$dটি স্তর পর্যন্ত</item>
+    </plurals>
+    <string name="script_builder_change_speech">স্পিচ পরিবর্তন করুন</string>
+    <string name="script_builder_change_speech_summary">আইটেমের জন্য SandFly যা বলে তা সরান, প্রতিস্থাপন করুন বা নতুন ক্রমে সাজান</string>
+    <string name="script_builder_edits">সম্পাদনাগুলি</string>
+    <string name="script_builder_add_edit">সম্পাদনা যোগ করুন</string>
+    <string name="script_builder_edit_remove">টেক্সট সরান</string>
+    <string name="script_builder_edit_replace">টেক্সট প্রতিস্থাপন করুন</string>
+    <string name="script_builder_edit_remove_repeats">পুনরাবৃত্ত অংশ সরান</string>
+    <string name="script_builder_edit_remove_parts">টেক্সট থাকা অংশ সরান</string>
+    <string name="script_builder_edit_keep_parts">প্রথম অংশগুলি রাখুন</string>
+    <string name="script_builder_edit_remove_value">সরান: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">এটি থাকা অংশ সরান: %1$s</string>
+    <string name="script_builder_parts_help">অংশ হল কমার মাঝের টুকরোগুলি।</string>
+    <string name="script_builder_regex_help">রেগুলার এক্সপ্রেশন চালু থাকলে, নতুন টেক্সটে $1 হল বন্ধনীর ভিতরের প্রথম গ্রুপ।</string>
+    <string name="script_builder_preview">পরীক্ষা করা আইটেমে প্রিভিউ</string>
+    <string name="script_builder_preview_silent">কিছুই বলে না</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">প্রথম %1$dটি অংশ রাখুন</item>
+        <item quantity="other">প্রথম %1$dটি অংশ রাখুন</item>
+    </plurals>
 </resources>

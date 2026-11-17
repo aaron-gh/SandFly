@@ -216,4 +216,30 @@
         <item quantity="two">כל שתי דקות</item>
         <item quantity="other">כל %1$d דקות</item>
     </plurals>
+    <string name="script_builder_has_depth">רמות כלפי מטה</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">ישירות בתוך הפריט</item>
+        <item quantity="two">עד %1$d רמות</item>
+        <item quantity="other">עד %1$d רמות</item>
+    </plurals>
+    <string name="script_builder_change_speech">שינוי הדיבור</string>
+    <string name="script_builder_change_speech_summary">הסרה, החלפה או שינוי סדר של מה ש-SandFly אומר עבור הפריט</string>
+    <string name="script_builder_edits">עריכות</string>
+    <string name="script_builder_add_edit">הוספת עריכה</string>
+    <string name="script_builder_edit_remove">הסרת טקסט</string>
+    <string name="script_builder_edit_replace">החלפת טקסט</string>
+    <string name="script_builder_edit_remove_repeats">הסרת חלקים חוזרים</string>
+    <string name="script_builder_edit_remove_parts">הסרת חלקים שמכילים טקסט</string>
+    <string name="script_builder_edit_keep_parts">השארת החלקים הראשונים</string>
+    <string name="script_builder_edit_remove_value">הסרה: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">הסרת חלקים עם: %1$s</string>
+    <string name="script_builder_parts_help">חלקים הם הקטעים שבין הפסיקים.</string>
+    <string name="script_builder_regex_help">עם ביטוי רגולרי, $1 בטקסט החדש הוא הקבוצה הראשונה בסוגריים.</string>
+    <string name="script_builder_preview">תצוגה מקדימה על הפריט שנבדק</string>
+    <string name="script_builder_preview_silent">לא אומר כלום</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">השארת החלק הראשון</item>
+        <item quantity="two">השארת %1$d החלקים הראשונים</item>
+        <item quantity="other">השארת %1$d החלקים הראשונים</item>
+    </plurals>
 </resources>
