@@ -3214,7 +3214,7 @@ public class FocusProcessorForLogicalNavigation {
     if (AccessibilityWindowInfoUtils.isPictureInPicture(window)) {
       return window;
     }
-    if (AccessibilityWindowInfoUtils.getType(window) != AccessibilityWindowInfo.TYPE_SYSTEM) {
+    if (AccessibilityWindowInfoUtils.getType(window) != AccessibilityWindowInfoCompat.TYPE_SYSTEM) {
       return null;
     }
     return PictureInPictureItem.pipWindowFor(
@@ -3261,7 +3261,7 @@ public class FocusProcessorForLogicalNavigation {
         AccessibilityNodeInfoUtils.getWindow(pivot.unwrap());
     if (currentWindow != null
         && AccessibilityWindowInfoUtils.getType(currentWindow)
-            == AccessibilityWindowInfo.TYPE_SYSTEM) {
+            == AccessibilityWindowInfoCompat.TYPE_SYSTEM) {
       @Nullable AccessibilityWindowInfo pip =
           PictureInPictureItem.pipWindowFor(windows, currentWindow.getId());
       if (pip != null) {
@@ -3471,7 +3471,8 @@ public class FocusProcessorForLogicalNavigation {
       Filter<AccessibilityWindowInfo> windowFilter,
       AccessibilityWindowInfo barWindow) {
     return !window.equals(barWindow)
-        && AccessibilityWindowInfoUtils.getType(window) == AccessibilityWindowInfo.TYPE_APPLICATION
+        && AccessibilityWindowInfoUtils.getType(window)
+            == AccessibilityWindowInfoCompat.TYPE_APPLICATION
         && windowFilter.accept(window);
   }
 

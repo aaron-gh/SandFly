@@ -18,10 +18,12 @@ package com.google.android.accessibility.utils.gestures;
 
 import android.content.Context;
 import android.graphics.PointF;
+import android.os.Build;
 import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.ViewConfiguration;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import com.google.android.accessibility.utils.Performance.EventId;
 import com.google.android.accessibility.utils.gestures.GestureManifold.GestureConfigProvider;
 import java.util.ArrayList;
@@ -31,6 +33,7 @@ import java.util.Arrays;
  * This class matches multi-finger multi-tap gestures. The number of fingers and the number of taps
  * for each instance is specified in the constructor.
  */
+@RequiresApi(Build.VERSION_CODES.TIRAMISU)
 class MultiFingerMultiTap extends GestureMatcher {
 
   // The target number of taps.
