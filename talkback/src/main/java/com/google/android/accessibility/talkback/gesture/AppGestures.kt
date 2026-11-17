@@ -19,6 +19,7 @@ package com.google.android.accessibility.talkback.gesture
 import android.content.SharedPreferences
 import android.os.Looper
 import com.google.android.accessibility.talkback.keyboard.KeyCombo
+import java.util.function.BooleanSupplier
 import org.json.JSONException
 import org.json.JSONObject
 
@@ -31,6 +32,12 @@ import org.json.JSONObject
 object AppGestures {
 
   const val KEY = "pref_app_gestures"
+
+  /**
+   * System UI, whose notification shade, quick settings and lock screen are system windows that
+   * don't change the app in front: its gestures apply while one of them is the active window.
+   */
+  const val SYSTEM_UI = "com.android.systemui"
 
   /**
    * The gestures and keyboard shortcuts of an app: what each runs there, and the app's name for
@@ -54,10 +61,30 @@ object AppGestures {
   // up, for window changes that sent no event.
   @Volatile private var frontAppRefresh: Runnable? = null
 
+  // Tells whether a window of System UI is the active window.
+  @Volatile private var systemUiActive: BooleanSupplier? = null
+
   /** Sets what takes the app in front from the window list, or null when nothing does. */
   @JvmStatic
   fun setFrontAppRefresh(refresh: Runnable?) {
     frontAppRefresh = refresh
+  }
+
+  /** Sets what tells whether a window of System UI is the active window, or null if nothing. */
+  @JvmStatic
+  fun setSystemUiActive(check: BooleanSupplier?) {
+    systemUiActive = check
+  }
+
+  /**
+   * The package whose commands apply among [configured]: System UI while one of its windows is
+   * active and it has commands of its own, else the app in front.
+   */
+  private fun appInUse(configured: Map<String, *>): String {
+    if (SYSTEM_UI in configured && Looper.myLooper() == Looper.getMainLooper()) {
+      if (systemUiActive?.asBoolean == true) return SYSTEM_UI
+    }
+    return app
   }
 
   private fun refreshFrontApp() {
@@ -80,7 +107,7 @@ object AppGestures {
   fun keys(): List<Pair<KeyCombo, String>> {
     if (appKeys.isEmpty()) return emptyList()
     refreshFrontApp()
-    return appKeys[app].orEmpty()
+    return appKeys[appInUse(appKeys)].orEmpty()
   }
 
   /** The name a keyboard shortcut is kept under. */
@@ -116,7 +143,7 @@ object AppGestures {
     val apps = apps
     if (apps.isEmpty()) return null
     refreshFrontApp()
-    return apps[app]?.gestures?.get(gestureKey)
+    return apps[appInUse(apps)]?.gestures?.get(gestureKey)
   }
 
   /** Whether any app gives the gesture of preference key [gestureKey] a command of its own. */

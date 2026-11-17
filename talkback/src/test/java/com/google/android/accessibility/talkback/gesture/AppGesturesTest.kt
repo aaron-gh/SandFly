@@ -42,6 +42,40 @@ class AppGesturesTest {
     AppGestures.load(prefs)
     AppGestures.onWindowShown(null)
     AppGestures.setFrontAppRefresh(null)
+    AppGestures.setSystemUiActive(null)
+  }
+
+  @Test
+  fun systemUiGesturesRunWhileItsWindowIsActive() {
+    AppGestures.write(
+      prefs,
+      mapOf(
+        "com.example.player" to AppGestures.App("Player", mapOf("pref_shortcut_up" to "FAST_FORWARD")),
+        AppGestures.SYSTEM_UI to AppGestures.App("System UI", mapOf("pref_shortcut_down" to "HOME")),
+      ),
+    )
+    AppGestures.load(prefs)
+    // The notification shade is over the player, which stays the app in front.
+    AppGestures.onWindowShown("com.example.player")
+    var shadeActive = true
+    AppGestures.setSystemUiActive { shadeActive }
+    assertEquals("HOME", AppGestures.action("pref_shortcut_down"))
+    assertNull(AppGestures.action("pref_shortcut_up"))
+    shadeActive = false
+    assertNull(AppGestures.action("pref_shortcut_down"))
+    assertEquals("FAST_FORWARD", AppGestures.action("pref_shortcut_up"))
+  }
+
+  @Test
+  fun appGesturesStayUnderSystemUiWithoutItsOwn() {
+    AppGestures.write(
+      prefs,
+      mapOf("com.example.player" to AppGestures.App("Player", mapOf("pref_shortcut_up" to "FAST_FORWARD"))),
+    )
+    AppGestures.load(prefs)
+    AppGestures.onWindowShown("com.example.player")
+    AppGestures.setSystemUiActive { true }
+    assertEquals("FAST_FORWARD", AppGestures.action("pref_shortcut_up"))
   }
 
   @Test

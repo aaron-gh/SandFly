@@ -1086,6 +1086,7 @@ public class TalkBackService extends AccessibilityServiceCompat
   public void onDestroy() {
     unlockedBootHandler.removeCallbacks(checkUnlockedBoot);
     AppGestures.setFrontAppRefresh(null);
+    AppGestures.setSystemUiActive(null);
     if (userInterface != null) {
       userInterface.unregisterAllListeners();
     }
@@ -2475,6 +2476,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     // Menus read the settings profiles on the main thread.
     SettingsProfiles.preload(this);
     AppGestures.setFrontAppRefresh(this::updateFrontApp);
+    AppGestures.setSystemUiActive(this::isSystemUiActive);
     EventId talkbackOnEventId =
         Performance.getInstance().onHintEventReceived(Performance.HINT_SUB_TYPE_TALKBACK_ON);
 
@@ -6101,6 +6103,23 @@ public class TalkBackService extends AccessibilityServiceCompat
   private boolean appWindowSeen;
   // Whether the window frontAppPackage last found in front is one of SandFly's own overlays.
   private boolean frontAppIsOverlay;
+
+  /**
+   * Whether the active window is System UI's, such as the notification shade, quick settings or the
+   * lock screen. These are system windows, which don't change the app in front, as closing them
+   * sends no event for the app under them.
+   */
+  private boolean isSystemUiActive() {
+    for (AccessibilityWindowInfo window : AccessibilityServiceCompatUtils.getWindows(this)) {
+      if (!window.isActive()) {
+        continue;
+      }
+      @Nullable AccessibilityNodeInfo root = window.getRoot();
+      return root != null
+          && AppGestures.SYSTEM_UI.contentEquals(String.valueOf(root.getPackageName()));
+    }
+    return false;
+  }
 
   /** Takes the app in front from the window list, when it changed. */
   private void updateFrontApp() {
