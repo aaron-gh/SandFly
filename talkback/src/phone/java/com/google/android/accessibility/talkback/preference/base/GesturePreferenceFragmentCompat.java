@@ -59,7 +59,7 @@ public class GesturePreferenceFragmentCompat extends TalkbackBaseFragment {
 
   private static final String GESTURE_TITLE = "GESTURE_TITLE";
   private static final String GESTURE_INITIAL_VALUE = "GESTURE_INITIAL_VALUE";
-  private static final String GESTURE_ACTION_ITEMS = "GESTURE_ACTION_ITEMS";
+  private static final String GESTURE_DEFAULT_ROW_TEXT = "GESTURE_DEFAULT_ROW_TEXT";
 
   private Parcelable[] items;
   private CharSequence title;
@@ -131,7 +131,8 @@ public class GesturePreferenceFragmentCompat extends TalkbackBaseFragment {
     bundle.putString(ARG_PREFERENCE_ROOT, preference.getKey());
     bundle.putCharSequence(GESTURE_TITLE, preference.getTitle());
     bundle.putString(GESTURE_INITIAL_VALUE, preference.getCurrentValue());
-    bundle.putParcelableArray(GESTURE_ACTION_ITEMS, preference.getActionItems());
+    // The command list is rebuilt in the fragment: it is too large to keep in saved state.
+    bundle.putString(GESTURE_DEFAULT_ROW_TEXT, preference.getDefaultRowText());
     return bundle;
   }
 
@@ -182,7 +183,10 @@ public class GesturePreferenceFragmentCompat extends TalkbackBaseFragment {
     }
     title = bundle.getCharSequence(GESTURE_TITLE);
     initialValue = bundle.getString(GESTURE_INITIAL_VALUE);
-    items = bundle.getParcelableArray(GESTURE_ACTION_ITEMS);
+    items =
+        GestureListPreference.buildActionItems(
+                requireContext(), bundle.getString(GESTURE_DEFAULT_ROW_TEXT))
+            .toArray(new ActionItem[0]);
     preferenceKey = rootKey;
 
     PreferenceSettingsUtils.setPreferenceScreen(this, createPreferenceScreen());

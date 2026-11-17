@@ -269,27 +269,41 @@ public final class GestureListPreference extends AccessibilitySuiteDialogPrefere
     return getContext().getResources().getString(R.string.shortcut_unassigned);
   }
 
+  /**
+   * Returns the text of the Default row, or null when the preference isn't a row of a gesture
+   * profile and the list has no Default row.
+   */
+  @Nullable
+  String getDefaultRowText() {
+    return GestureProfiles.isRowKey(getKey()) ? defaultText() : null;
+  }
+
   private void populateActionItems() {
+    items = buildActionItems(getContext(), getDefaultRowText());
+  }
+
+  /**
+   * Lists the commands by category, as {@link Commands} lists them, after a Default row with {@code
+   * defaultRowText} when that isn't null.
+   */
+  static ImmutableList<ActionItem> buildActionItems(
+      Context context, @Nullable String defaultRowText) {
     ImmutableList.Builder<ActionItem> builder = ImmutableList.builder();
-    if (GestureProfiles.isRowKey(getKey())) {
-      builder.add(
-          new ActionItem(
-              defaultText(),
-              GestureProfiles.DEFAULT_VALUE,
-              TYPE_ACTION_ITEM));
+    if (defaultRowText != null) {
+      builder.add(new ActionItem(defaultRowText, GestureProfiles.DEFAULT_VALUE, TYPE_ACTION_ITEM));
     }
     builder.add(
         new ActionItem(
-            getContext().getResources().getString(R.string.shortcut_unassigned),
-            getContext().getResources().getString(R.string.shortcut_value_unassigned),
+            context.getResources().getString(R.string.shortcut_unassigned),
+            context.getResources().getString(R.string.shortcut_value_unassigned),
             TYPE_ACTION_ITEM));
-    for (Commands.Category category : Commands.categories(getContext())) {
-      builder.add(new ActionItem(getContext().getString(category.getTitleRes()), TYPE_TITLE));
+    for (Commands.Category category : Commands.categories(context)) {
+      builder.add(new ActionItem(context.getString(category.getTitleRes()), TYPE_TITLE));
       for (Commands.Command command : category.getCommands()) {
         builder.add(new ActionItem(command.getLabel(), command.getValue(), TYPE_ACTION_ITEM));
       }
     }
-    items = builder.build();
+    return builder.build();
   }
 
   /**
